@@ -1,0 +1,3 @@
+bin/zoom
+share/zoom/zoomrc
+@dirrm share/zoom

@@ -507,6 +507,7 @@
     SUBDIR += yamsweeper
     SUBDIR += zangband
     SUBDIR += znibbles
+    SUBDIR += zoom
     SUBDIR += ztrack
 
 .include <bsd.port.subdir.mk>

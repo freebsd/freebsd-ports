@@ -1,0 +1,8 @@
+Zoom is a Z-Machine, which means that it plays text adventure games written in
+ZCode. It plays V3-V8 including V6 graphics (you need the blb-files from 
+http://www.ifarchive.org/indexes/if-archiveXinfocomXmediaXblorb.html for
+original Infocom V6 games)
+
+WWW: http://www.logicalshift.demon.co.uk/unix/zoom/
+
+- Jan Stocker <Jan.Stocker@t-online.de>
