@@ -16,6 +16,8 @@ EXTRACT_ONLY=	pvk_2.1_full.tar.gz
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Half-Life mod Pirates, Vikings & Knights full server package for Linux
 
+IGNORE=		Current version is no longer available anywhere
+
 post-extract:
 	@${GZCAT} ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES:S/${EXTRACT_ONLY}//} \
 		> ${WRKSRC}/dlls/pvk_i386.so
