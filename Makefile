@@ -40,7 +40,6 @@ SUBDIR += net
 SUBDIR += net-mgmt
 SUBDIR += news
 SUBDIR += palm
-SUBDIR += picobsd
 SUBDIR += polish
 SUBDIR += portuguese
 SUBDIR += print
