@@ -9,7 +9,7 @@ Index: qemu/vl.c
  #else
  #include <linux/if.h>
  #include <linux/if_tun.h>
-@@ -1022,6 +1025,34 @@
+@@ -1059,6 +1062,34 @@
  
  #endif /* CONFIG_SLIRP */
  
@@ -44,14 +44,23 @@ Index: qemu/vl.c
  #if !defined(_WIN32)
  #ifdef _BSD
  static int tun_open(char *ifname, int ifname_size)
-@@ -1030,11 +1061,46 @@
+@@ -1067,11 +1098,55 @@
      char *dev;
      struct stat s;
  
 +#ifdef __FreeBSD__
 +    int i, kldtried = 0, enoentcount = 0, err = 0;
 +    char dname[100];
-+    for (i = -1; i < 10; i++) {
++#ifdef USE_DEVTAP
++    /*
++     * 5.x has /dev/tap, but that seems to just blindly increase its
++     * couter on every open() for some people(??), i.e. on every qemu run.
++     */
++    i = -1;
++#else
++    i = 0;
++#endif
++    for (; i < 10; i++) {
 +        if (i == -1)
 +	    strcpy(dname, "/dev/tap");
 +        else
