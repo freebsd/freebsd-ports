@@ -1,41 +1,62 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/POE/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/POE.pm
-lib/perl5/site_perl/%%PERL_VER%%/POE/Component.pm
-lib/perl5/site_perl/%%PERL_VER%%/POE/Component/Client/TCP.pm
-lib/perl5/site_perl/%%PERL_VER%%/POE/Component/Server/TCP.pm
-lib/perl5/site_perl/%%PERL_VER%%/POE/Driver.pm
-lib/perl5/site_perl/%%PERL_VER%%/POE/Driver/SysRW.pm
-lib/perl5/site_perl/%%PERL_VER%%/POE/Filter.pm
-lib/perl5/site_perl/%%PERL_VER%%/POE/Filter/Block.pm
-lib/perl5/site_perl/%%PERL_VER%%/POE/Filter/Grep.pm
-lib/perl5/site_perl/%%PERL_VER%%/POE/Filter/HTTPD.pm
-lib/perl5/site_perl/%%PERL_VER%%/POE/Filter/Line.pm
-lib/perl5/site_perl/%%PERL_VER%%/POE/Filter/Map.pm
-lib/perl5/site_perl/%%PERL_VER%%/POE/Filter/RecordBlock.pm
-lib/perl5/site_perl/%%PERL_VER%%/POE/Filter/Reference.pm
-lib/perl5/site_perl/%%PERL_VER%%/POE/Filter/Stackable.pm
-lib/perl5/site_perl/%%PERL_VER%%/POE/Filter/Stream.pm
-lib/perl5/site_perl/%%PERL_VER%%/POE/Kernel.pm
-lib/perl5/site_perl/%%PERL_VER%%/POE/Kernel/Event.pm
-lib/perl5/site_perl/%%PERL_VER%%/POE/Kernel/Gtk.pm
-lib/perl5/site_perl/%%PERL_VER%%/POE/Kernel/Poll.pm
-lib/perl5/site_perl/%%PERL_VER%%/POE/Kernel/Select.pm
-lib/perl5/site_perl/%%PERL_VER%%/POE/Kernel/Tk.pm
-lib/perl5/site_perl/%%PERL_VER%%/POE/Macro/UseBytes.pm
-lib/perl5/site_perl/%%PERL_VER%%/POE/NFA.pm
-lib/perl5/site_perl/%%PERL_VER%%/POE/Pipe.pm
-lib/perl5/site_perl/%%PERL_VER%%/POE/Pipe/OneWay.pm
-lib/perl5/site_perl/%%PERL_VER%%/POE/Pipe/TwoWay.pm
-lib/perl5/site_perl/%%PERL_VER%%/POE/Preprocessor.pm
-lib/perl5/site_perl/%%PERL_VER%%/POE/Session.pm
-lib/perl5/site_perl/%%PERL_VER%%/POE/Wheel.pm
-lib/perl5/site_perl/%%PERL_VER%%/POE/Wheel/Curses.pm
-lib/perl5/site_perl/%%PERL_VER%%/POE/Wheel/FollowTail.pm
-lib/perl5/site_perl/%%PERL_VER%%/POE/Wheel/ListenAccept.pm
-lib/perl5/site_perl/%%PERL_VER%%/POE/Wheel/ReadLine.pm
-lib/perl5/site_perl/%%PERL_VER%%/POE/Wheel/ReadWrite.pm
-lib/perl5/site_perl/%%PERL_VER%%/POE/Wheel/Run.pm
-lib/perl5/site_perl/%%PERL_VER%%/POE/Wheel/SocketFactory.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/.packlist
+%%SITE_PERL%%/POE.pm
+%%SITE_PERL%%/POE/Component.pm
+%%SITE_PERL%%/POE/Component/Client/TCP.pm
+%%SITE_PERL%%/POE/Component/Server/TCP.pm
+%%SITE_PERL%%/POE/Driver.pm
+%%SITE_PERL%%/POE/Driver/SysRW.pm
+%%SITE_PERL%%/POE/Filter.pm
+%%SITE_PERL%%/POE/Filter/Block.pm
+%%SITE_PERL%%/POE/Filter/Grep.pm
+%%SITE_PERL%%/POE/Filter/HTTPD.pm
+%%SITE_PERL%%/POE/Filter/Line.pm
+%%SITE_PERL%%/POE/Filter/Map.pm
+%%SITE_PERL%%/POE/Filter/RecordBlock.pm
+%%SITE_PERL%%/POE/Filter/Reference.pm
+%%SITE_PERL%%/POE/Filter/Stackable.pm
+%%SITE_PERL%%/POE/Filter/Stream.pm
+%%SITE_PERL%%/POE/Kernel.pm
+%%SITE_PERL%%/POE/Kernel/Event.pm
+%%SITE_PERL%%/POE/Kernel/Gtk.pm
+%%SITE_PERL%%/POE/Kernel/Poll.pm
+%%SITE_PERL%%/POE/Kernel/Select.pm
+%%SITE_PERL%%/POE/Kernel/Tk.pm
+%%SITE_PERL%%/POE/Loop.pm
+%%SITE_PERL%%/POE/Loop/Event.pm
+%%SITE_PERL%%/POE/Loop/Gtk.pm
+%%SITE_PERL%%/POE/Loop/Poll.pm
+%%SITE_PERL%%/POE/Loop/Select.pm
+%%SITE_PERL%%/POE/Loop/Tk.pm
+%%SITE_PERL%%/POE/Macro/UseBytes.pm
+%%SITE_PERL%%/POE/NFA.pm
+%%SITE_PERL%%/POE/Pipe.pm
+%%SITE_PERL%%/POE/Pipe/OneWay.pm
+%%SITE_PERL%%/POE/Pipe/TwoWay.pm
+%%SITE_PERL%%/POE/Preprocessor.pm
+%%SITE_PERL%%/POE/Queue.pm
+%%SITE_PERL%%/POE/Queue/Array.pm
+%%SITE_PERL%%/POE/Session.pm
+%%SITE_PERL%%/POE/Wheel.pm
+%%SITE_PERL%%/POE/Wheel/Curses.pm
+%%SITE_PERL%%/POE/Wheel/FollowTail.pm
+%%SITE_PERL%%/POE/Wheel/ListenAccept.pm
+%%SITE_PERL%%/POE/Wheel/ReadLine.pm
+%%SITE_PERL%%/POE/Wheel/ReadWrite.pm
+%%SITE_PERL%%/POE/Wheel/Run.pm
+%%SITE_PERL%%/POE/Wheel/SocketFactory.pm
+@unexec rmdir %D/%%SITE_PERL%%/POE/Component/Client 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/POE/Component/Server 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/POE/Component 2>/dev/null || true
+@dirrm %%SITE_PERL%%/POE/Driver
+@unexec rmdir %D/%%SITE_PERL%%/POE/Filter 2>/dev/null || true
+@dirrm %%SITE_PERL%%/POE/Kernel
+@dirrm %%SITE_PERL%%/POE/Loop
+@dirrm %%SITE_PERL%%/POE/Macro
+@dirrm %%SITE_PERL%%/POE/Pipe
+@dirrm %%SITE_PERL%%/POE/Queue
+@dirrm %%SITE_PERL%%/POE/Wheel
+@unexec rmdir %D/%%SITE_PERL%%/POE 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE 2>/dev/null || true
 %%PORTDOCS%%%%EXAMPLESDIR%%/create.perl
 %%PORTDOCS%%%%EXAMPLESDIR%%/fakelogin.perl
 %%PORTDOCS%%%%EXAMPLESDIR%%/filterchange.perl
@@ -66,14 +87,3 @@ lib/perl5/site_perl/%%PERL_VER%%/POE/Wheel/SocketFactory.pm
 %%PORTDOCS%%%%EXAMPLESDIR%%/wheels.perl
 %%PORTDOCS%%%%EXAMPLESDIR%%/wheels2.perl
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/POE/Component/Client 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/POE/Component/Server 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/POE/Component 2>/dev/null || true
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/POE/Driver
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/POE/Filter 2>/dev/null || true
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/POE/Kernel
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/POE/Macro
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/POE/Pipe
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/POE/Wheel
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/POE 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/POE 2>/dev/null || true
