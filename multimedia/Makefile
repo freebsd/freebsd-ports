@@ -1,6 +1,7 @@
 # $FreeBSD$
 #
     SUBDIR += avifile
+    SUBDIR += dvdrip
     SUBDIR += ffmpeg
     SUBDIR += ffmpeg045
     SUBDIR += gstreamer
