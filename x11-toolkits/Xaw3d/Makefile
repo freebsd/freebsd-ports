@@ -15,10 +15,19 @@ MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/xc/lib/Xaw3d
 USE_IMAKE=	yes
+.if exists(${X11BASE}/bin/XFree86)
+PLIST=		${WRKDIR}/PLIST
+.endif
 
 post-extract:
 	${MKDIR} ${WRKSRC}/X11/Xaw3d
 	cd ${WRKSRC}/X11/Xaw3d; ${LN} -sf ../../*.h .
+
+.if exists(${X11BASE}/bin/XFree86)
+post-build:
+	${CP} ${PKGDIR}/PLIST ${WRKDIR}/PLIST
+	${ECHO} "lib/libXaw3d.so.7" >> ${PLIST}
+.endif
 
 # Workaround a bug in egcs on FreeBSD/Alpha.
 .if ${MACHINE_ARCH} == "alpha"
@@ -31,6 +40,9 @@ post-install:
 	${LDCONFIG} -m ${PREFIX}/lib
 	${MKDIR} ${PREFIX}/share/doc/Xaw3d
 	${CP} ${WRKSRC}/README.XAW3D ${PREFIX}/share/doc/Xaw3d
+.if exists(${X11BASE}/bin/XFree86)
+	${LN} ${X11BASE}/lib/libXaw3d.so.7 ${X11BASE}/lib/libXaw3d.so.6
+.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
