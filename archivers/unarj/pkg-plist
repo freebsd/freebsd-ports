@@ -1,4 +1,4 @@
 bin/unarj
-%%DOCSDIR%%/unarj.doc
-%%DOCSDIR%%/technote.doc
+%%DOCSDIR%%/unarj.txt
+%%DOCSDIR%%/technote.txt
 @dirrm %%DOCSDIR%%
