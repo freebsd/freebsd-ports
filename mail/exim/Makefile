@@ -306,6 +306,8 @@ SEDLIST+=	-e 's,XX_DB_LIBS_XX,${DB_LIBS},' \
 
 .if defined(WITH_MYSQL_VER) && ${WITH_MYSQL_VER:L} != "auto"
 WANT_MYSQL_VER=	${WITH_MYSQL_VER}
+.else
+.undef WITH_MYSQL_VER
 .endif
 
 .if defined(WITH_MYSQL)
