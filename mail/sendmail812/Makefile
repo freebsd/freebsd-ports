@@ -19,6 +19,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 WCONF=		${WRKSRC}/devtools/Site
 SITE=		${FILESDIR}/site.config.m4.pre4
 PLIST=		${WRKDIR}/.PLIST.more
+PKGMESSAGE=	${WRKSRC}/pkg-message
 DOCS=		KNOWNBUGS LICENSE PGPKEYS README RELEASE_NOTES \
 		sendmail/TRACEFLAGS sendmail/SECURITY sendmail/TUNING
 MAN1=		mailq.1 newaliases.1 vacation.1
@@ -33,6 +34,7 @@ LDAP_PORT?=	net/openldap20-client
 # Options to define Features:
 # SENDMAIL_WITHOUT_IPV6=yes
 # SENDMAIL_WITHOUT_MILTER=yes
+# SENDMAIL_WITHOUT_SHMEM=yes
 # SENDMAIL_WITH_TLS=yes
 # SENDMAIL_WITH_SMTPS=yes
 # SENDMAIL_WITH_SASL=yes
@@ -103,6 +105,10 @@ post-extract:
 		> ${WRKSRC}/sm-client.sh
 	@${SED} -e "s=%%PREFIX%%=${PREFIX}=" ${FILESDIR}/sendmail.sh \
 		> ${WRKSRC}/sendmail.sh
+	@${SED} -e "s=%%PREFIX%%=${PREFIX}=g" \
+		-e "s=%%LOCALBASE%%=${LOCALBASE}=g" \
+		-e "s=%%PORTSDIR%%=${PORTSDIR}=g" \
+		${PKGDIR}/pkg-message > ${WRKSRC}/pkg-message
 
 do-configure:
 	@${MV} ${WRKSRC}/devtools/OS/FreeBSD ${WRKSRC}/devtools/OS/FreeBSD.sed
@@ -116,6 +122,11 @@ do-configure:
 .if defined(SENDMAIL_WITH_PICKY_HELO_CHECK)
 	${ECHO_CMD} \
 	 'APPENDDEF(`conf_sendmail_ENVDEF'\'', `-DPICKY_HELO_CHECK'\'')'  \
+		>> ${WCONF}/site.config.m4
+.endif
+.if defined(SENDMAIL_WITHOUT_SHMEM)
+	${ECHO_CMD} \
+	 'APPENDDEF(`confENVDEF'\'', `-DSM_CONF_SHM=0'\'')' \
 		>> ${WCONF}/site.config.m4
 .endif
 
@@ -133,17 +144,17 @@ pre-install:
 	if ! pw groupshow smmsp; then pw groupadd smmsp -g 25; fi
 	if ! pw usershow smmsp; then pw useradd smmsp -g smmsp -u 25 \
 		-h - -d /nonexistent -s /nonexistent -c "Sendmail Queue"; fi
-.if !defined(NOPORTDOCS)
 	@cd ${WRKSRC} && ${FIND} cf -type f | \
 	${AWK} '{print "share/sendmail/" $$1}' >>${PLIST}
 	@cd ${WRKSRC} && ${FIND} -d cf -type d | \
 	${AWK} '{print "@dirrm share/sendmail/" $$1}' >>${PLIST}
 	@${ECHO_CMD} "@dirrm share/sendmail" >>${PLIST}
+.if !defined(NOPORTDOCS)
 .for i in ${DOCS}
 	@${ECHO_CMD} `${BASENAME} ${i}` | \
-	${AWK} '{print "share/doc/sendmail/" $$1}' >>${PLIST}
+	${AWK} '{print "%%DOCSDIR%%/" $$1}' >>${PLIST}
 .endfor
-	@${ECHO_CMD} "@dirrm share/doc/sendmail" >>${PLIST}
+	@${ECHO_CMD} "@dirrm %%DOCSDIR%%" >>${PLIST}
 .endif
 
 # We want mail.local and rmail for our system.
@@ -180,10 +191,11 @@ post-install:
 	@${RM} -f ${MANPREFIX}/man/cat1/${i} ${MANPREFIX}/man/cat1/${i}.gz
 	${INSTALL_MAN} ${WRKSRC}/*/${i} ${MANPREFIX}/man/man1
 .endfor
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/sendmail ${DOCSDIR}
+	${MKDIR} ${PREFIX}/share/sendmail
 	@${TAR} -C ${WRKSRC} -cf - cf | \
 		${TAR} -C ${PREFIX}/share/sendmail -xf -
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/doc/op/op.ps ${DOCSDIR}/op.ps
 	${INSTALL_DATA} ${WRKSRC}/doc/op/op.txt ${DOCSDIR}/op.txt
@@ -199,7 +211,7 @@ post-install:
 .endif
 .endif
 .if exists(${DESTDIR}/etc/mail/mailer.conf)
-	@${SED} s!%%PREFIX%%!${PREFIX}!g ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 mailer.base:
 	@${SED} \
@@ -274,14 +286,14 @@ SITE+=	${FILESDIR}/site.config.m4.local
 .endif
 
 .if exists(${DESTDIR}/etc/mail/mailer.conf) && ${PREFIX} == "/usr"
-pre-everything:
+pre-everything::
 	@${ECHO_CMD} "#"
 	@${ECHO_CMD} "# You can't override the base sendmail this way."
 	@${ECHO_CMD} "# your version FreeBSD use mailwrapper."
 	@${ECHO_CMD} "#"
 	@${ECHO_CMD} "# Please install with normal PREFIX"
 	@${ECHO_CMD} "# and activate the port version with"
-	@${ECHO_CMD} "# cd /usr/ports/mail/sendmail && make mailer.conf"
+	@${ECHO_CMD} "# cd ${PORTSDIR}/mail/sendmail && make mailer.conf"
 	@${ECHO_CMD} "#"
 	@${FALSE}
 .endif
