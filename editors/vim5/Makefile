@@ -38,7 +38,7 @@ USE_PERL5=	yes
 DIST_SUBDIR=	vim
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 PATCH_DIST_ARGS=	-d ${WRKDIR}/${DISTNAME} --forward --quiet -E ${PATCH_DIST_STRIP}
-MAKE_FLAGS=	CONF_ARGS="--prefix=${PREFIX} --with-tlib=termlib" -f
+MAKE_FLAGS=	CONF_ARGS="--prefix=${PREFIX} --with-tlib=termlib --disable-pythoninterp" -f
 ALL_TARGET=	#
 PLIST_SUB=	VIM_VER=${DISTNAME:S/-//:S/.//}
 MAN1=		vim.1 vimtutor.1 xxd.1 ectags.1
