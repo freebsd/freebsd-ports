@@ -1,0 +1,18 @@
+**********************************************************************
+**********************************************************************
+This package does not create the spool directory, due to limitations in
+the packaging mechanism.
+
+Once the package is installed, please do the following (as root):
+
+	cd /var/spool
+	mkdir -p cups/tmp
+	chown -R daemon:wheel cups
+
+Thanks. 
+
+--
+AlanE, your friendly neighborhood cups maintainer and all around
+wild and crazy (ok, well just crazy) guy.
+**********************************************************************
+**********************************************************************
