@@ -1,15 +1,13 @@
---- /usr/ports/deskutils/xcalendar.orig/work/xcalendar/Imakefile	Sun Oct  1 12:19:17 1995
-+++ Imakefile	Mon May 13 00:55:07 2002
-@@ -1,4 +1,8 @@
+--- Imakefile.orig	Sun Oct  1 12:19:17 1995
++++ Imakefile	Mon Mar 21 14:30:06 2005
+@@ -1,4 +1,6 @@
  XCALENDAR_LIBDIR = $(LIBDIR)/xcalendar
 +XCALENDAR_JP_LIBDIR_EUCJP = $(LIBDIR)/ja_JP.eucJP/xcalendar
-+XCALENDAR_JP_LIBDIR_EUC = $(LIBDIR)/ja_JP.EUC/xcalendar
 +XCALENDAR_JP_APPDEFAULTS_EUCJP = $(LIBDIR)/ja_JP.eucJP/app-defaults
-+XCALENDAR_JP_APPDEFAULTS_EUC = $(LIBDIR)/ja_JP.EUC/app-defaults
          LIBFILES = larrow.xbm qmark.xbm quit.xbm rarrow.xbm xcalendar.hlp
  # Comment out the following two lines for the Motif version
  LOCAL_LIBRARIES = $(XAWLIB) $(XMULIB) $(XTOOLLIB) $(XLIB)
-@@ -12,7 +16,7 @@
+@@ -12,7 +14,7 @@
  #
  # for Internationalization
  #
@@ -18,7 +16,7 @@
  ##if !SharedLibXwchar
  #       _UseCat($(USRLIBDIR),$(CONTRIBSRC)/lib/Xwchar,/libXwchar.a)
  #       XWCHARLIB = LoaderLibPrefix _Use(-lXwchar,$(DEPXWCHARLIB))
-@@ -40,12 +44,36 @@
+@@ -40,12 +42,31 @@
  # for Internationalization
  #
  XCal-uj.ad: XCal-uj.sed
@@ -41,17 +39,12 @@
 +	MakeDir($(XCALENDAR_JP_APPDEFAULTS_EUCJP))
 +	$(INSTALL) -c $(INSTAPPFLAGS) XCal-uj.ad \
 +		$(XCALENDAR_JP_APPDEFAULTS_EUCJP)/XCalendar
-+	MakeDir($(XCALENDAR_JP_APPDEFAULTS_EUC))
-+	$(LN) $(XCALENDAR_JP_APPDEFAULTS_EUCJP)/XCalendar \
-+		$(XCALENDAR_JP_APPDEFAULTS_EUC)/
 +
 +	MakeDir($(XCALENDAR_JP_LIBDIR_EUCJP))
 +	$(INSTALL) -c $(INSTAPPFLAGS) $(FILESDIR)/xcalendar-uj.hol \
 +		$(XCALENDAR_JP_LIBDIR_EUCJP)/xcalendar.hol
 +	$(INSTALL) -c $(INSTAPPFLAGS) xcalendar-uj.hlp \
 +		$(XCALENDAR_JP_LIBDIR_EUCJP)/xcalendar.hlp
-+	$(LN) $(XCALENDAR_JP_LIBDIR_EUCJP) \
-+		$(XCALENDAR_JP_LIBDIR_EUC)
 +
 +	$(INSTALL) -c $(INSTMANFLAGS) xcalendar-uj.man \
 +		$(MANPATH)/ja/man1/xcalendar.1
