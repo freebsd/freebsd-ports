@@ -226,7 +226,6 @@
     SUBDIR += psutils-a4
     SUBDIR += psutils-letter
     SUBDIR += pup
-    SUBDIR += pxfonts
     SUBDIR += py-fonttools
     SUBDIR += py-freetype
     SUBDIR += py-reportlab
@@ -256,7 +255,6 @@
     SUBDIR += ttf2pt1
     SUBDIR += ttfquery
     SUBDIR += ttftot42
-    SUBDIR += txfonts
     SUBDIR += txtbdf2ps
     SUBDIR += typetools
     SUBDIR += virtualpaper
