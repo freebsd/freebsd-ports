@@ -16,7 +16,7 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	gnome@FreeBSD.org
 
 RUN_DEPENDS=	${X11BASE}/libexec/battstat-applet-2:${PORTSDIR}/x11/gnomeapplets2 \
-		CDDBSlave2:${PORTSDIR}/audio/gnomemedia2 \
+		gnome-cd:${PORTSDIR}/audio/gnomemedia2 \
 	 	archive-generator:${PORTSDIR}/misc/gnomeutils2 \
 		eog:${PORTSDIR}/graphics/eog2 \
 		gnome-control-center:${PORTSDIR}/sysutils/gnomecontrolcenter2 \
