@@ -50,8 +50,7 @@ CONFIGURE_ARGS+=	--enable-ipv6
 ENC_PATCHLEVEL=	22.2
 DISTFILES+=	${PORTNAME}-${PORTVERSION}-recode-csa${ENC_PATCHLEVEL}${EXTRACT_SUFX}:enc
 MASTER_SITES+=	${MASTER_SITE_SOURCEFORGE:S/$/:enc/}
-#MASTER_SITE_SUBDIR+=	rusxmms:enc		## Does not work
-_MASTER_SITE_SUBDIR_enc=	rusxmms
+MASTER_SITE_SUBDIR+=	rusxmms/:enc
 .endif
 
 .if !defined(WITHOUT_MIKMOD)
