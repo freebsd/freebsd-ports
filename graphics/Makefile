@@ -105,6 +105,7 @@
     SUBDIR += glide3
     SUBDIR += gliv
     SUBDIR += gltk
+    SUBDIR += gmt
     SUBDIR += gnofract4d
     SUBDIR += gnomecanvas
     SUBDIR += gnomeiconedit
