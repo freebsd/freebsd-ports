@@ -39,6 +39,7 @@ include/freetype2/freetype/ftsysmem.h
 include/freetype2/freetype/ftsystem.h
 include/freetype2/freetype/fttrigon.h
 include/freetype2/freetype/fttypes.h
+include/freetype2/freetype/ftwinfnt.h
 include/freetype2/freetype/ftxf86.h
 include/freetype2/freetype/internal/autohint.h
 include/freetype2/freetype/internal/bdftypes.h
