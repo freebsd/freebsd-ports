@@ -27,7 +27,10 @@ pre-patch:
 			s@../../src/@src/@g; s@g\+\+@${CC}@g; \
 			s@-L../smapi -lsmapibsd@-L${LOCALBASE}/lib -lsmapi@g" ${WRKSRC}/MakeFiles/FreeBSD/Makefile
 .for DIR in MakeFiles/FreeBSD src hpp doc/eng samples/tpl
-	${REINPLACE_CMD} -e 's!\r!!' ${WRKSRC}/${DIR}/*
+	for FILE in ${WRKSRC}/${DIR}/*; do \
+		${TR} -d '\015' < $${FILE} > $${FILE}.new; \
+		${MV} $${FILE}.new $${FILE}; \
+	done
 .endfor
 
 pre-configure:
