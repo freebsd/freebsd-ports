@@ -22,6 +22,13 @@ PATCHFILES=	nh-3.2.2-3.2.3.diff \
 
 MAINTAINER=	sf@FreeBSD.org
 
+.include <bsd.port.pre.mk>
+
+.if ${XFREE86_VERSION} == 4
+BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
+RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
+.endif
+
 USE_XPM=	yes
 USE_GTK=	yes
 USE_GMAKE=	yes
@@ -47,4 +54,4 @@ post-install:
 	${CP} ${WRKSRC}/doc/Guidebook.txt ${PREFIX}/share/doc/nethack
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
