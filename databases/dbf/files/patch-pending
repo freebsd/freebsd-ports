@@ -686,7 +686,7 @@ Hopefully, their next release will include these hunks.
 +			case SCREEN_OUTPUT:
 +				for (i=1; i < header_length; i++) {
 +					dbf = header[i];
-+					printf("%11.11s: %.*s", dbf->field_name,
++					printf("%11.11s: %.*s\n", dbf->field_name,
 +			     		    dbf->field_length, p);
 +					p += dbf->field_length;
  				}
