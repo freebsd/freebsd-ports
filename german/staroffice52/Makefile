@@ -31,6 +31,7 @@ DIST_SUBDIR=	staroffice52
 WRKSRC=		${WRKDIR}/office52
 TMPDIR=		${WRKDIR}/tmp
 LD_PATH=	${TMPDIR}:${WRKSRC}:${LINUXBASE}/lib:${LINUXBASE}/usr/lib
+INSTDB.INS=	${PREFIX}/office52/program/instdb.ins
 
 .include <bsd.port.pre.mk>
 
@@ -116,6 +117,9 @@ do-install:
 post-install:
 	@${PATCH} -s ${PREFIX}/office52/program/setup ${FILESDIR}/setup.patch
 	@${PATCH} -s ${PREFIX}/office52/program/soffice ${FILESDIR}/soffice.patch
+	@${CP} ${INSTDB.INS} ${INSTDB.INS}.orig
+	@${SED} -e 's%DefaultDestPath = "/usr/local/office52%DefaultDestPath = "office52%' \
+	    < ${INSTDB.INS}.orig > ${INSTDB.INS}
 
 install-user:
 	${PREFIX}/office52/program/setup
