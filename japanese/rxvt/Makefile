@@ -1,13 +1,13 @@
 # New ports collection Makefile for: ja-rxvt
-# Version required:	2.6.1
+# Version required:	2.7.2
 # Date created:         11 May 1999
 # Whom:                 HONDA Yasuhiro <honda@kashio.info.mie-u.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	rxvt-2.6.1
-PKGNAME=	ja-rxvt-2.6.1
+DISTNAME=	rxvt-2.7.2
+PKGNAME=	ja-rxvt-2.7.2
 CATEGORIES=	japanese x11
 MASTER_SITES=	ftp://ftp.rxvt.org/pub/rxvt/
 
@@ -18,19 +18,24 @@ LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-MAN1=		rxvt.1
+MAN1=		rxvt.1 rclock.1
 CONFIGURE_ARGS+=--enable-xpm-background --enable-transparency \
 		--enable-menubar --enable-graphics --enable-xim \
-		--enable-kanji --disable-backspace-key --disable-delete-key
+		--enable-languages --with-encoding=eucj \
+		--disable-backspace-key --disable-delete-key \
+		--enable-utmp --enable-wtmp
 
 DOCDIR=		${PREFIX}/share/doc/ja/rxvt
 RXVTLIB=	${PREFIX}/lib/X11/rxvt
 
 pre-install:
 	@${MKDIR} ${DOCDIR}
-	@${INSTALL_MAN} ${FILESDIR}/README.ja ${DOCDIR}
+	@${INSTALL_DATA} ${FILESDIR}/README.ja ${DOCDIR}
 	@${MKDIR} ${RXVTLIB}
-	@${INSTALL_MAN} ${FILESDIR}/ja.menu ${RXVTLIB}
-	@${INSTALL_MAN} ${FILESDIR}/terminal.menu ${RXVTLIB}
+	@${INSTALL_DATA} ${FILESDIR}/ja.menu ${RXVTLIB}
+	@${INSTALL_DATA} ${FILESDIR}/terminal.menu ${RXVTLIB}
+
+post-install:
+	@${CHMOD} 4711 ${PREFIX}/bin/rxvt
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
-*** src/feature.h.orig	Tue Aug 17 16:02:45 1999
---- src/feature.h	Sat Aug 21 00:52:08 1999
+*** src/feature.h.orig	Tue Dec 21 19:05:42 1999
+--- src/feature.h	Tue Jan 11 09:28:32 2000
 ***************
-*** 153,159 ****
+*** 148,154 ****
    * This has been superceded and is only for you older users
    */
   /* #define HOTKEY_CTRL */
@@ -9,7 +9,7 @@
   
   /*
    * To use
---- 153,159 ----
+--- 148,154 ----
    * This has been superceded and is only for you older users
    */
   /* #define HOTKEY_CTRL */
@@ -18,21 +18,27 @@
   /*
    * To use
 ***************
-*** 370,377 ****
-  #ifdef KANJI
-  # define NFONTS		5
-  # define FONT0_IDX	2
-! # define MFONT_LIST	"k14", "jiskan16", "jiskan18", "jiskan24", "jiskan26"
-! # define NFONT_LIST	"7x14", "8x16", "9x18", "12x24", "13x26"
+*** 390,400 ****
+   * Sizes between multi-char fonts sets (MFONT_LIST) and single-char font
+   * sets (NFONT_LIST) have been matched up
+   */
+! #define NFONTS		7
+  #define FONT0_IDX	2
+! #define NFONT_LIST	"7x14", "6x10", "6x13", "8x13", "8x16", "10x20", "12x24"
+  #ifdef MULTICHAR_SET		/* multichar glyph language support */
+! # define MFONT_LIST	NULL, NULL,  NULL, NULL, NULL, NULL, NULL
   #endif
-  #ifdef ZH
-  # define NFONTS		5
---- 370,377 ----
-  #ifdef KANJI
-  # define NFONTS		5
-  # define FONT0_IDX	2
+  
+  #endif
+--- 390,400 ----
+   * Sizes between multi-char fonts sets (MFONT_LIST) and single-char font
+   * sets (NFONT_LIST) have been matched up
+   */
+! #define NFONTS		5
+  #define FONT0_IDX	2
+! #define NFONT_LIST	"7x14", "a10", "r12", "8x16", "12x24"
+  #ifdef MULTICHAR_SET		/* multichar glyph language support */
 ! # define MFONT_LIST	"k14", "k10", "k12", "kanji16", "kanji24"
-! # define NFONT_LIST	"7x14", "a10", "r12", "8x16", "12x24"
   #endif
-  #ifdef ZH
-  # define NFONTS		5
+  
+  #endif

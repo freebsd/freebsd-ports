@@ -1,0 +1,293 @@
+*** rclock/rclock.c.orig	Mon Apr 20 16:31:04 1998
+--- rclock/rclock.c	Tue Jan 11 09:50:48 2000
+***************
+*** 69,74 ****
+--- 69,89 ----
+  
+  #include <X11/Intrinsic.h>	/* Xlib, Xutil, Xresource, Xfuncproto */
+  
++ #ifndef NO_XLOCALE
++ # if (XtSpecificationRelease < 6)
++ #  define NO_XLOCALE
++ # endif
++ #endif
++ 
++ #ifndef NO_XSETLOCALE
++ # define X_LOCALE
++ # include <X11/Xlocale.h>
++ #else
++ # ifndef NO_SETLOCALE
++ #  include <locale.h>
++ # endif
++ #endif                          /* NO_XLOCALE */
++ 
+  #define APL_CLASS	"Clock"
+  #define APL_NAME	"rclock"
+  #define MSG_CLASS	"Appointment"
+***************
+*** 122,129 ****
+--- 137,150 ----
+     int width, height;
+  } msgButton;
+  
++ #ifdef MULTICHAR_SET
++ static XFontSet Xfont;
++ static XFontSetExtents *extent;
++ #define FontHeight()	((extent->max_logical_extent.height)*4/5 + (extent->max_logical_extent.height)/5)
++ #else
+  static XFontStruct * Xfont;
+  #define FontHeight()	(Xfont->ascent + Xfont->descent)
++ #endif
+  static int	Msg_Mapped = 0;		/* message window mapped? */
+  static int	reminderTime = -1;
+  static char	message [256] = "";
+***************
+*** 184,189 ****
+--- 205,216 ----
+  #define REPLACE 0
+  #define UPDATE 1
+  
++ /* subroutine for MULTICHAR_SET declarations */
++ #ifdef MULTICHAR_SET
++ static XFontSet XLoadQueryFontSet(Display *, const char *);
++ #define XFreeFont XFreeFontSet
++ #define XTextWidth XmbTextEscapement
++ #endif
+  /*----------------------------------------------------------------------*/
+  
+  static void
+***************
+*** 201,206 ****
+--- 228,236 ----
+  	{ "-fg color",		"foreground color" },
+  #ifdef REMINDERS
+  	{ "-fn fontname",	"normal font for messages" },
++ #ifdef MULTICHAR_SET
++ 	{ "-fm fontname",	"multibyte font for messages" },
++ #endif /* MULTICHAR_SET */
+  #endif
+  #ifdef ICONWIN
+  	{ "-iconic",		"start iconic" },
+***************
+*** 277,283 ****
+--- 307,317 ----
+     XGCValues gcv;
+  
+  #ifdef REMINDERS
++ #ifndef MULTICHAR_SET
+     const char * rs_font = FONT_NAME;
++ #else
++    char rs_font[BUFSIZ];
++ #endif /* MULTICHAR_SET */
+  
+     /* find the ~/.rclock file */
+     if ((val = getenv ("HOME")) != NULL)
+***************
+*** 314,319 ****
+--- 348,356 ----
+     if ((display_name = getenv ("DISPLAY")) == NULL)
+       display_name = ":0";
+  
++ #ifdef MULTICHAR_SET
++    rs_font[0] = '\0';
++ #endif /* MULTICHAR_SET */
+     /* parse the command line */
+     for (i = 1; i < argc; i += 2)
+       {
+***************
+*** 345,351 ****
+--- 382,401 ----
+  	else if (!strcmp (opt, "fg"))		rs_color [fgColor] = val;
+  	else if (!strcmp (opt, "bg"))		rs_color [bgColor] = val;
+  #ifdef REMINDERS
++ #ifndef MULTICHAR_SET
+  	else if (!strcmp (opt, "fn"))		rs_font = val;
++ #else
++ 	else if (!strcmp (opt, "fn"))
++ 	  {
++              strncat(rs_font, val, BUFSIZ);
++              strncat(rs_font, ",", BUFSIZ);
++ 	  }
++ 	else if (!strcmp (opt, "fm"))
++ 	  {
++             strncat(rs_font, val, BUFSIZ);
++             strncat(rs_font, ",", BUFSIZ);
++ 	  }
++ #endif /* MULTICHAR_SET */
+  #endif
+  	else if (!strcmp (opt, "update"))
+  	  {
+***************
+*** 384,389 ****
+--- 434,449 ----
+  	  }
+       }
+  
++ #ifdef MULTICHAR_SET
++    if (strlen(rs_font) > 0)  rs_font[strlen(rs_font) - 1] = '\0';
++    else strncpy(rs_font, FONT_NAME, BUFSIZ);
++ #endif /* MULTICHAR_SET */
++ 
++ #if !defined(NO_XSETLOCALE) || !defined(NO_SETLOCALE)
++    /* set locale */
++    setlocale(LC_CTYPE, "");
++ #endif
++ 
+     /* open display */
+     Xdisplay = XOpenDisplay (display_name);
+     if (!Xdisplay)
+***************
+*** 418,430 ****
+--- 478,499 ----
+  
+  #ifdef REMINDERS
+     /* load the font for messages */
++ #ifdef MULTICHAR_SET
++    if ((Xfont = XLoadQueryFontSet (Xdisplay, rs_font)) == NULL)
++ #else
+     if ((Xfont = XLoadQueryFont (Xdisplay, rs_font)) == NULL)
++ #endif  /* MULTICHAR_SET */
+       {
+  	print_error ("can't load font \"%s\"", rs_font);
+  	goto Abort;
+       }
++ #ifndef MULTICHAR_SET
+     gcv.font = Xfont->fid;
++ #endif /* MULTICHAR_SET */
+  #endif
++ #ifdef MULTICHAR_SET
++    extent = XExtentsOfFontSet(Xfont);
++ #endif /* MULTICHAR_SET */
+  
+     Create_Windows (argc, argv);
+     /*  Create the graphics contexts */
+***************
+*** 433,439 ****
+--- 502,510 ----
+  
+     Xgc = XCreateGC (Xdisplay, Clock.win,
+  #ifdef REMINDERS
++ #ifndef MULTICHAR_SET
+  		    GCFont |
++ #endif /* MULTICHAR_SET */
+  #endif
+  		    GCForeground | GCBackground, &gcv);
+  
+***************
+*** 441,447 ****
+     gcv.background = PixColors [fgColor];
+     Xrvgc = XCreateGC (Xdisplay, Clock.win,
+  #ifdef REMINDERS
+! 		      GCFont |
+  #endif
+  		      GCForeground | GCBackground, &gcv);
+  
+--- 512,520 ----
+     gcv.background = PixColors [fgColor];
+     Xrvgc = XCreateGC (Xdisplay, Clock.win,
+  #ifdef REMINDERS
+! #ifndef MULTICHAR_SET
+! 		    GCFont |
+! #endif /* MULTICHAR_SET */
+  #endif
+  		      GCForeground | GCBackground, &gcv);
+  
+***************
+*** 806,836 ****
+--- 879,941 ----
+  		  next = end + 2;
+  	       }
+  
++ #ifdef MULTICHAR_SET
++ 	     XmbDrawString (Xdisplay, Msg.win, Xfont, 
++ #else
+  	     XDrawString (Xdisplay, Msg.win,
++ #endif /* MULTICHAR_SET */
+  			  Xgc,
+  			  (Msg.width -
+  			   XTextWidth (Xfont, beg, (end-beg))) / 2,
++ #ifdef MULTICHAR_SET
++ 			  10 + extent->max_logical_extent.height*4/5 + FontHeight () * lines,
++ #else
+  			  10 + Xfont->ascent + FontHeight () * lines,
++ #endif /* MULTICHAR_SET */
+  			  beg, (end-beg));
+  	  }
+  
++ #ifdef MULTICHAR_SET
++ 	XmbDrawString (Xdisplay, msgButton.Dismiss, Xfont, 
++ #else
+  	XDrawString (Xdisplay, msgButton.Dismiss,
++ #endif /* MULTICHAR_SET */
+  		     Xrvgc,
+  		     (msgButton.width - XTextWidth (Xfont, "Done", 4)) / 2,
++ #ifdef MULTICHAR_SET
++ 		     extent->max_logical_extent.height*4/5 + 2,
++ #else
+  		     Xfont->ascent + 2,
++ #endif /* MULTICHAR_SET */
+  		     "Done", 4);
+  
++ #ifdef MULTICHAR_SET
++ 	XmbDrawString (Xdisplay, msgButton.Defer, Xfont, 
++ #else
+  	XDrawString (Xdisplay, msgButton.Defer,
++ #endif /* MULTICHAR_SET */
+  		     Xrvgc,
+  		     (msgButton.width - XTextWidth (Xfont, "Defer", 5)) / 2,
++ #ifdef MULTICHAR_SET
++ 		     extent->max_logical_extent.height*4/5 + 2,
++ #else
+  		     Xfont->ascent + 2,
++ #endif /* MULTICHAR_SET */
+  		     "Defer", 5);
+  
+  # ifndef NO_REMINDER_EXEC
++ #ifdef MULTICHAR_SET
++ 	XmbDrawString (Xdisplay, msgButton.Start, Xfont, 
++ #else
+  	XDrawString (Xdisplay, msgButton.Start,
++ #endif /* MULTICHAR_SET */
+  		     Xrvgc,
+  		     (msgButton.width - XTextWidth (Xfont, "Start", 5)) / 2,
++ #ifdef MULTICHAR_SET
++ 		     extent->max_logical_extent.height*4/5 + 2,
++ #else
+  		     Xfont->ascent + 2,
++ #endif /* MULTICHAR_SET */
+  		     "Start", 5);
+  
+          if (strlen (execPrgm) > 1)
+***************
+*** 1469,1472 ****
+--- 1574,1603 ----
+     fprintf (stderr,"\n");
+     va_end (arg_ptr);
+  }
++ 
++ #ifdef MULTICHAR_SET
++ /*
++  * XLoadQueryFontSet
++  */
++ XFontSet XLoadQueryFontSet(Display *disp, const char *fontset_name)
++ {
++    XFontSet fontset;
++    int missing_charset_count;
++    char **missing_charset_list;
++    char *def_string;
++ 
++    fontset = XCreateFontSet(disp, fontset_name,
++ 			    &missing_charset_list,
++ 			    &missing_charset_count,
++ 			    &def_string);
++ /*
++    if (missing_charset_count) {
++       fprintf(stderr, "Missing charsets in FontSet(%s) creation.\n",
++               fontset_name);
++       XFreeStringList(missing_charset_list);
++    }
++ */
++    return fontset;
++ }
++ #endif /* MULTICHAR_SET */
+  /*----------------------- end-of-file (C source) -----------------------*/
