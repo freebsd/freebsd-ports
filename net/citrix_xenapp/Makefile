@@ -3,11 +3,11 @@
 # Date created:         20 Sep 1998
 # Whom:                 msmith
 #
-# $Id: Makefile,v 1.5 1999/01/04 16:26:59 obrien Exp $
+# $Id: Makefile,v 1.6 1999/01/07 02:31:46 simokawa Exp $
 #
 
 DISTNAME=       linux
-PKGNAME=	citrix_ica-2.8.1
+PKGNAME=	citrix_ica-3.0.15
 CATEGORIES=	comms
 MASTER_SITES=   "Distfile must be fetched manually"
 EXTRACT_SUFX=	.tar.z
