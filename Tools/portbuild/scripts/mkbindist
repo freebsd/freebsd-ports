@@ -34,11 +34,12 @@ mkdir -p ${tmpdir}
 
 # FTP the snapshot tarball chunks if required
 if [ "${ftp}" != 0 ]; then
+  cd ${here}
   rm -rf bindist/ftp
   mkdir -p bindist/ftp
   cd bindist/ftp
   for i in ${ftpdists}; do
-    /usr/bin/ftp -a "ftp://${ftpserver}/pub/FreeBSD/snapshots/${arch}/${rel}/$i.??"
+    /usr/bin/ftp -a "ftp://${ftpserver}/${ftpurl}/${rel}/$i.??"
   done
   cd ${here}
 fi
@@ -68,13 +69,6 @@ fi
 rm -rf $(cat ${here}/bindist/delete)
 mkdir -p $(cat ${here}/bindist/dirlist)
 (cd ${here}/bindist/files; find -dx . | cpio -dump ${tmpdir})
-
-# Prepare needed packages
-mkdir ${tmpdir}/packages
-if [ "$branch" = 5 ]; then
-	cd ${tmpdir}/packages
-	fetch ftp://${ftpsite}/pub/FreeBSD/ports/${arch}/packages-5-current/Latest/perl.tbz
-fi
 
 # Post-processing of installed world
 
