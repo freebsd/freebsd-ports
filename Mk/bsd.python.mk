@@ -79,6 +79,10 @@ Python_Include_MAINTAINER=	tg@FreeBSD.org
 # PYDISTUTILS:	Dependency line for the distutils extension. As of Python-2.0,
 #				the distutils are in the base distribution.
 #
+# PYNUMERIC:	Dependency line for the numeric extension. Py-Numeric-17
+# 				is the last release that works with Python versions older
+#				than 1.6.
+#
 # PYXML:		Dependency line for the XML extension. As of Python-2.0,
 #				this extension is in the base distribution.
 #
@@ -116,6 +120,7 @@ PYTHON_CMD?=		${PYTHONBASE}/bin/${PYTHON_VERSION}
 # Python-2.2
 .if ${PYTHON_VERSION} == "python2.2"
 PYDISTUTILS=	${PYTHON_LIBDIR}/distutils/core.py:${PYTHON_PORTSDIR}
+PYNUMERIC=		${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/py-numeric
 PYXML=			${PYTHON_SITELIBDIR}/_xmlplus/__init__.py:${PORTSDIR}/textproc/py-xml
 
 PYTHON_DISTFILE=	Python-${_PYTHON_PORTVERSION}.tgz
@@ -127,6 +132,7 @@ PYTHON_WRKSRC=		${WRKDIR}/Python-${_PYTHON_PORTVERSION}
 # Python-2.1
 .elif ${PYTHON_VERSION} == "python2.1"
 PYDISTUTILS=	${PYTHON_LIBDIR}/distutils/core.py:${PYTHON_PORTSDIR}
+PYNUMERIC=		${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/py-numeric
 PYXML=			${PYTHON_SITELIBDIR}/_xmlplus/__init__.py:${PORTSDIR}/textproc/py-xml
 
 PYTHON_DISTFILE=	Python-2.1.3.tgz
@@ -138,6 +144,7 @@ PYTHON_WRKSRC=		${WRKDIR}/Python-2.1.3
 # Python-2.0
 .elif ${PYTHON_VERSION} == "python2.0"
 PYDISTUTILS=	${PYTHON_LIBDIR}/distutils/core.py:${PYTHON_PORTSDIR}
+PYNUMERIC=		${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/py-numeric
 PYXML=			${PYTHON_SITELIBDIR}/_xmlplus/__init__.py:${PORTSDIR}/textproc/py-xml
 
 PYTHON_DISTFILE=	Python-2.0.1.tgz
@@ -153,6 +160,7 @@ PYTHON_WRKSRC=		${WRKDIR}/Python-2.0.1
 # are for those who still have 1.6 as their default version.
 .elif ${PYTHON_VERSION} == "python1.6"
 PYDISTUTILS=	${PYTHON_LIBDIR}/site-packages/distutils/core.py:${PORTSDIR}/misc/py-distutils
+PYNUMERIC=		${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/py-numeric17
 PYXML=			${PYTHON_SITELIBDIR}/xml/__init__.py:${PORTSDIR}/textproc/py-xml
 
 PYTHON_DISTFILE=	Python-1.6.tar.gz
@@ -164,6 +172,7 @@ PYTHON_WRKSRC=		${WRKDIR}/Python-1.6
 # Python-1.5
 .elif ${PYTHON_VERSION} == "python1.5"
 PYDISTUTILS=	${PYTHON_LIBDIR}/site-packages/distutils/core.py:${PORTSDIR}/misc/py-distutils
+PYNUMERIC=		${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/py-numeric17
 PYXML=			${PYTHON_SITELIBDIR}/xml/__init__.py:${PORTSDIR}/textproc/py-xml
 
 PYTHON_DISTFILE=	py152.tgz
@@ -175,6 +184,7 @@ PYTHON_WRKSRC=		${WRKDIR}/Python-1.5.2
 # Python versions in development
 .elif defined(FORCE_PYTHON_VERSION)
 PYDISTUTILS=	${PYTHON_LIBDIR}/distutils/core.py:${PYTHON_PORTSDIR}
+PYNUMERIC=		${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/py-numeric
 PYXML=			${PYTHON_SITELIBDIR}/_xmlplus/__init__.py:${PORTSDIR}/textproc/py-xml
 
 PYTHON_DISTFILE=	# empty
