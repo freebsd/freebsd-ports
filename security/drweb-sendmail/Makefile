@@ -1,4 +1,4 @@
-# New ports collection makefile for:   tas
+# New ports collection makefile for:   drweb_sendmail
 # Date created:        14 August 2001
 # Whom:                Anton Voronin <anton@urc.ac.ru>
 #
@@ -69,7 +69,19 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/../sendmail/readme.sendmail ${DOC_DIR}
 	${INSTALL_DATA} ${WRKSRC}/../sendmail/readme.sendmail.rus ${DOC_DIR}
 	${SED} 's#!!PREFIX!!#${PREFIX}#' < ${FILESDIR}/drweb-smf.sh >${WRKSRC}/drweb-smf.sh
-	${INSTALL_SCRIPT} ${WRKSRC}/drweb-smf.sh ${PREFIX}/etc/rc.d/drwebsmf.sh
+# drwebsmf.sh instead drweb-smf.sh to start after drwebd.sh
+	${INSTALL_DATA} ${WRKSRC}/drweb-smf.sh ${PREFIX}/etc/rc.d/drwebsmf.sh-dist
+	if [ ! -f ${PREFIX}/etc/rc.d/drwebsmf.sh ] ; then \
+		${INSTALL_DATA} ${WRKSRC}/drweb-smf.sh ${PREFIX}/etc/rc.d/drwebsmf.sh; \
+	fi
+
+post-install:
+	@echo
 	@${CAT} pkg-message
+	@echo
+	@echo "Read documentation about additional sendmail tuning needed"
+	@echo "in ${DOC_DIR}."
+	@echo "Inspect options used as example in ${PREFIX}/etc/rc.d/drwebsmf.sh"
+	@echo "and set bit x to really activate that script."
 
 .include <bsd.port.post.mk>
