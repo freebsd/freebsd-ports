@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	imlib
-PORTVERSION=	1.9.14
-PORTREVISION=	4
+PORTVERSION=	1.9.15
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/imlib/1.9
@@ -23,19 +22,19 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gtk12
+USE_GNOME=	gtk12 gnomehack
+USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/imlib --disable-modules \
-		--x-includes=${X11BASE}/include \
-		--x-libraries=${X11BASE}/lib
+CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/imlib --disable-modules
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
 MAN1=		imlib-config.1 imlib_config.1
 
 pre-configure:
-	${REINPLACE_CMD} -e "s^%%LOCALBASE%%^${LOCALBASE}^" ${WRKSRC}/imlib-config.in
+	@${REINPLACE_CMD} -e "s|10:15:9|5:0:0|" ${WRKSRC}/*/Makefile.in
+	@${REINPLACE_CMD} -e "s|glib-config|${GLIB_CONFIG}|" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|" ${WRKSRC}/imlib-config.in
 
 .include <bsd.port.mk>
