@@ -114,6 +114,9 @@ while [ "$1" ]; do
 			SUB_TEST=""
 			;;
 		\"IPv6\")
+			/usr/bin/dialog --msgbox "IPv6 is currently broken until kame updates patches" 5 60 > /dev/stderr
+			rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+			exit 1
 			if [ `uname -m` != "i386" ]; then
 				/usr/bin/dialog --msgbox "IPv6 patch currently only supported on i386!" 5 60 > /dev/stderr
 				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
@@ -126,7 +129,7 @@ while [ "$1" ]; do
 			fi
 			echo "PATCH_SITES+=	ftp://ftp.kame.net/pub/kame/misc/"
 			echo "PATCH_SITES+=	\${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/kame/misc/&,}"
-			echo "PATCHFILES+=	postfix-20010228pl02-v6-20010515a.diff.gz"
+			echo "PATCHFILES+=	postfix-20010225snap-v6-20010228a.diff.gz"
 			echo "PATCH_DIST_STRIP= -p1"
 			echo ""
 			;;
