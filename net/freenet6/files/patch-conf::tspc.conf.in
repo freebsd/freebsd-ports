@@ -1,0 +1,11 @@
+--- conf/tspc.conf.in.orig	Sat Nov 20 14:57:43 2004
++++ conf/tspc.conf.in	Sat Nov 20 14:57:53 2004
+@@ -87,7 +87,7 @@
+ # on unix, '.sh' is added to the name of the script. 
+ # on windows, '.bat' is added to the name of the script.
+ # 
+-template=@target@
++template=tspc-@target@
+ 
+ #
+ # 'server' is the tunnel broker identifier
