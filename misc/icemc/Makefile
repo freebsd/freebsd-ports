@@ -7,7 +7,7 @@
 
 PORTNAME=	icemc
 PORTVERSION=	0.2.4
-CATEGORIES=	x11-wm
+CATEGORIES=	misc
 MASTER_SITES=	http://www.algorithm.at/comp/icemc/
 
 MAINTAINER=	adamw@FreeBSD.org
