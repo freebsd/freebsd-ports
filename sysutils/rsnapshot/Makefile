@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	rsnapshot
-PORTVERSION=	1.0.9
+PORTVERSION=	1.1.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsnapshot.org/downloads/
 
 MAINTAINER=	r.vdooren@snow.nl
 COMMENT=	Filesystem snapshot utility based on rsync(1)
 
+BUILD_DEPENDS=  rsync:${PORTSDIR}/net/rsync
 RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync
 
 USE_PERL5=	yes
