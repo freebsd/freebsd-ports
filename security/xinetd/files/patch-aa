@@ -18,35 +18,3 @@
   /*
    * When explicit values are given for enum's, that is because the structures
 
---- xinetd/Makefile.orig	Mon Apr 14 05:29:01 1997
-+++ xinetd/Makefile	Wed Sep 24 04:54:21 1997
-@@ -131,7 +131,8 @@
- 
- XMODE		= -m 700		# mode for executables
- FMODE		= -m 640		# mode for anything but executables
--INSTALL		= install -c
-+INSTALL_PROGRAM	= install -c -s
-+INSTALL_DATA	= install -c
- 
- LINT_FLAGS	= -hbux
- PAGER		= less
-@@ -178,16 +179,16 @@
- 	rm -f $(OPT_SOURCE) $(OPT_HEADER)
- 
- install: $(PROGRAM)
--	$(INSTALL) $(XMODE) $(PROGRAM) $(INSTALLDIR)
-+	$(INSTALL_PROGRAM) $(XMODE) $(PROGRAM) $(INSTALLDIR)
- 
- install.man:
- 	if test "$(MANPROGDIR)" ; then \
--		$(INSTALL) $(FMODE) $(MANPROGFILE) $(MANPROGDIR)/$(MANPROGPAGE) ;\
-+		$(INSTALL_DATA) $(FMODE) $(MANPROGFILE) $(MANPROGDIR)/$(MANPROGPAGE) ;\
- 	fi
- 	if test "$(MANDATADIR)" ; then \
- 		for i in $(MANDATANAMES) ; do \
- 			name=$(PROGRAM).$$i ; \
--			$(INSTALL) $(FMODE) $$name.man $(MANDATADIR)/$$name.$(MANDATASECTION);\
-+			$(INSTALL_DATA) $(FMODE) $$name.man $(MANDATADIR)/$$name.$(MANDATASECTION);\
- 		done ;\
- 	fi
- 
