@@ -188,6 +188,7 @@
     SUBDIR += pysol-cardsets
     SUBDIR += pysol-music
     SUBDIR += pythoong
+    SUBDIR += q3server
     SUBDIR += qcc
     SUBDIR += qix
     SUBDIR += qkmj

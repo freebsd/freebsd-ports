@@ -1,0 +1,9 @@
+This package contains all of the items you'll need to run a
+Quake III Arena dedicated server under FreeBSD with Linux
+emulation. To run server in non-demo mode, which is what you
+want to do, copy pak0.pk3 from the retail CD to your baseq3
+directory.
+
+WWW: http://www.quake3arena.com/
+
+- Patrick Li <pat@databits.net>
