@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	gphoto-0.3.2
+DISTNAME=	gphoto-0.4.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.mustec.eu.org/~psj/downloads/ \
 		http://www.freenix.no/~anders/
@@ -25,6 +25,15 @@ CONFIGURE_ENV=	GLIB_CONFIG="${PREFIX}/bin/glib12-config" \
 
 MAN1=		gphoto.1
 
-ALL_TARGET=
+post-install:
+	@${INSTALL_DATA} ${WRKSRC}/COPYING ${PREFIX}/share/gphoto/doc
+	@${INSTALL_DATA} ${WRKSRC}/ChangeLog ${PREFIX}/share/gphoto/doc
+	@${INSTALL_DATA} ${WRKSRC}/FAQ ${PREFIX}/share/gphoto/doc
+	@${INSTALL_DATA} ${WRKSRC}/NEWS ${PREFIX}/share/gphoto/doc
+	@${INSTALL_DATA} ${WRKSRC}/PROGRAMMERS ${PREFIX}/share/gphoto/doc
+	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/gphoto/doc
+	@${INSTALL_DATA} ${WRKSRC}/THANKS ${PREFIX}/share/gphoto/doc
+	@${INSTALL_DATA} ${WRKSRC}/THEMES ${PREFIX}/share/gphoto/doc
+	@${INSTALL_DATA} ${WRKSRC}/TODO ${PREFIX}/share/gphoto/doc
 
 .include <bsd.port.mk>
