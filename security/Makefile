@@ -77,6 +77,7 @@
     SUBDIR += p5-Crypt-CBC
     SUBDIR += p5-Crypt-CipherSaber
     SUBDIR += p5-Crypt-DES
+    SUBDIR += p5-Crypt-ECB
     SUBDIR += p5-Crypt-IDEA
     SUBDIR += p5-Crypt-SSLeay
     SUBDIR += p5-Digest-MD5
