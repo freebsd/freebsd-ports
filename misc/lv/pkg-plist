@@ -1,0 +1,4 @@
+bin/lv
+bin/lgrep
+lib/lv/lv.hlp
+@dirrm lib/lv
