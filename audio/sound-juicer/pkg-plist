@@ -1,5 +1,4 @@
 bin/sound-juicer
-etc/gconf/schemas/sound-juicer.schemas
 share/gnome/applications/sound-juicer.desktop
 share/gnome/help/sound-juicer/C/fdl-appendix.xml
 share/gnome/help/sound-juicer/C/figures/prefs.png
