@@ -6,20 +6,21 @@
 #
 
 PORTNAME=	opera
-PKGNAMEPREFIX=	linux-
-OPERAVERSION=	6.0-20020412
-PORTVERSION=	${OPERAVERSION:S/-/./}
-PORTREVISION=	1
+PORTVERSION=	6.0.20020510
 CATEGORIES=	www linux
-MASTER_SITES=	http://opera.online.no/linux/600/beta2/ \
-		ftp://ftp.opera.com/pub/opera/linux/600/beta2/
-DISTNAME=	${PORTNAME}-${OPERAVERSION}.1-static-qt.i386
+MASTER_SITES=	http://opera.online.no/linux/600/final/en/qt_static/ \
+		ftp://ftp.opera.com/pub/opera/linux/600/final/en/qt_static/
+PKGNAMEPREFIX=	linux-
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/./-/}.1-static-qt.i386
 
 MAINTAINER=	des@FreeBSD.org
 
 RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXm.so.2:${PORTSDIR}/x11-toolkits/linux-openmotif \
 		${LINUXBASE}/usr/lib/libpng.so.2:${PORTSDIR}/graphics/linux-png
 
+FORBIDDEN=	Known javascript-related security hole
+
+USE_BZIP2=	yes
 USE_LINUX=	yes
 ONLY_FOR_ARCHS=	i386
 
