@@ -1,0 +1,11 @@
+mkisofs is effectively a pre-mastering program to generate the iso9660
+filesystem - it takes a snapshot of a given directory tree, and generates
+a binary image which will correspond to an iso9660 filesystem when written
+to a block device.
+
+This patched version supports CP949/Unicode conversion.
+
+--
+CHOI Junho <cjh@FreeBSD.org>
+
+WWW: http://natural.chonnam.ac.kr/linux/mkisofs/

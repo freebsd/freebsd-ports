@@ -1,0 +1,47 @@
+--- libscg/scg/scsireg.h.orig	Sun May 28 23:31:20 2000
++++ libscg/scg/scsireg.h	Thu Aug 17 20:31:45 2000
+@@ -170,7 +170,7 @@
+ 
+ #if	defined(_BIT_FIELDS_LTOH)	/* Intel byteorder */
+ 
+-struct scsi_mode_header {
++struct scg_scsi_mode_header {
+ 	Ucbit	sense_data_len	: 8;
+ 	u_char	medium_type;
+ 	Ucbit	res2		: 4;
+@@ -182,7 +182,7 @@
+ 
+ #else					/* Motorola byteorder */
+ 
+-struct scsi_mode_header {
++struct scg_scsi_mode_header {
+ 	Ucbit	sense_data_len	: 8;
+ 	u_char	medium_type;
+ 	Ucbit	write_prot	: 1;
+@@ -244,7 +244,7 @@
+ 
+ #if	defined(_BIT_FIELDS_LTOH)	/* Intel byteorder */
+ 
+-struct scsi_mode_page_header {
++struct scg_scsi_mode_page_header {
+ 	Ucbit	p_code		: 6;
+ 	Ucbit	res		: 1;
+ 	Ucbit	parsave		: 1;
+@@ -262,7 +262,7 @@
+ 
+ #else					/* Motorola byteorder */
+ 
+-struct scsi_mode_page_header {
++struct scg_scsi_mode_page_header {
+ 	Ucbit	parsave		: 1;
+ 	Ucbit	res		: 1;
+ 	Ucbit	p_code		: 6;
+@@ -988,7 +988,7 @@
+ 
+ 
+ struct scsi_mode_data {
+-	struct scsi_mode_header		header;
++	struct scg_scsi_mode_header		header;
+ 	struct scsi_mode_blockdesc	blockdesc;
+ 	union	pagex	{
+ 		struct acb_mode_data		acb;
