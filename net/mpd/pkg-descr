@@ -1,61 +1,20 @@
-MPD MULTI-LINK PPP DAEMON FOR FREEBSD
+Mpd is a user-mode implementation of the PPP protocol for FreeBSD.
+It supports several of the numerous PPP sub-protocols and extensions,
+such as:
 
-Version 2.0b1
-Written by Archie Cobbs <archie@whistle.com>
-Based on IIJ-PPP by Toshiharu OHNO <tony-o@iij.ad.jp>
+      Multi-link PPP capability 
+      PAP, CHAP, and MS-CHAP authentication 
+      DES encryption 
 
-* WHAT IS IT?
+Mpd also includes many additional features: 
 
-  A user-mode PPP daemon based on iij-ppp which supports multi-link PPP.
-  It is a complete re-write of the original iij-ppp code.
-
-* HOW STABLE IS IT?
-
-  Most of this code has been thoroughly tested. Some parts, such
-  as compression, have not been tested very much at all. However,
-  the core of the daemon is very solid.
-
-* HOW DO I BUILD AND INSTALL IT?
-
-  cd src
-  make depend all install
-
-* HOW DO I SET IT UP?
-
-  Complete documentation is included in the "doc" subdirectory.
-
-  You will need to create your own versions of the four required
-  configuration files in /etc/ppp:
-
-    mpd.conf    - General configuration
-    mpd.links   - Description of available links
-    mpd.script  - Modem scripts
-    mpd.secret  - Login/password pairs
-
-  If you're familiar with iij-ppp, the configuration method is
-  similar: commands are read from a file.
-
-  Check the "conf" subdirectory for configuration file examples.
-
-  Then append the following lines to /etc/syslog.conf and create an
-  empty /var/log/mpd.log file to get proper logging:
-
-    !mpd
-    *.*                        /var/log/mpd.log
-
-  Add a corresponding line to /etc/newsyslog.conf as well to get
-  proper log rotation.
-
-  If you want to start it as a background daemon at boot time,
-  add the appropriate line to /etc/rc.local, e.g.:
-
-    echo -n " mpd" ; /usr/local/bin/mpd -b
-
-* WHAT'S THE COPYRIGHT STATUS?
-
-  Berkeley style: see ``COPYRIGHT.iij'' and ``COPYRIGHT.whistle''.
-
-* WHERE CAN I GO FOR HELP?
-
-  Email questions to the freebsd-net@freebsd.org mailing list.
-
+      Dial-on-demand with idle timeout 
+      Multiple active connections running simultaneously 
+      Dynamic demand based link management (also known as ``rubber bandwidth'') 
+      Powerful chat scripting language for asynchronous serial ports 
+      Pre-tested chat scripts for automatic configuration of several
+	common modems and ISDN terminal adapters 
+      Support for the Netgraph kernel networking system 
+      Support for tunnelling PPP over TCP, and UDP
+      Clean device-type independent design 
+      Comprehensive logging 
