@@ -1,0 +1,36 @@
+--- Makefile.in.orig	Fri Sep 18 23:23:19 1998
++++ Makefile.in	Sun Apr 30 18:42:42 2000
+@@ -7,18 +7,19 @@
+ #############################################################################
+ 
+ # Executable name
+-INST_NAME = ../qp
++INST_NAME = qp
+ 
+ DEFINES = -DHAVE_CONFIG_H
+ 
+ # Do you have libjpeg already on your system?  If so, set this.
+-LIBJPEGPATH = ../jpeg-6a
++LIBJPEGPATH = ${PREFIX}/lib
++INCJPEGPATH = ${PREFIX}/include
+ 
++CC ?= gcc
++CFLAGS ?= -fno-strength-reduce -Wall -Wno-implicit @CFLAGS@
+ 
+-CC = gcc
+-CFLAGS = -fno-strength-reduce -Wall -Wno-implicit @CFLAGS@
+ CLINKFLAGS = @LIBS@
+-INCLUDEDIRS = -I. -I$(LIBJPEGPATH)
++INCLUDEDIRS = -I. -I$(INCJPEGPATH)
+ 
+ 
+ # No need to change anything below this line
+@@ -28,7 +29,7 @@
+ SOURCES = html.c qp.c image.c dir.c utility.c main.c
+ 
+ $(INST_NAME): $(OBJECTS)
+-	$(CC) -o $(INST_NAME) $(OBJECTS) $(LIBJPEGPATH)/libjpeg.a $(CLINKFLAGS)
++	$(CC) -o $(INST_NAME) $(OBJECTS) $(CLINKFLAGS) -ljpeg
+ 	@echo ""
+ 	@echo "Successful compile: $(INST_NAME)"
+ 	@echo ""

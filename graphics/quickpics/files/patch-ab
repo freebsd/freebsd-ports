@@ -1,0 +1,47 @@
+--- main.c.orig	Sun Apr 30 18:43:28 2000
++++ main.c	Sun Apr 30 18:44:14 2000
+@@ -21,7 +21,7 @@
+ /* Prototypes */
+ void	do_arg(char *arg);
+ 
+-void main(int argc, char **argv)
++int main(int argc, char **argv)
+ {
+ 	char	cwd[MAXTEXTLEN], yn[1024];
+ 	int	first_time = 0, i;
+@@ -53,7 +53,7 @@
+ 	if(!IsDirectory(QP.rootdir))
+ 	{
+ 		printf("*** ERROR: \"%s\" is not a directory.\n",QP.rootdir);
+-		return;
++		return 1;
+ 	}
+ 	chmod(QP.rootdir,0755);
+ 
+@@ -62,7 +62,7 @@
+ 	if(chdir(QP.rootdir) != 0)
+ 	{
+ 		printf("*** ERROR: Unable to change to directory \"%s\".\n",QP.rootdir);
+-		return;
++		return 1;
+ 	}
+ 
+ 	/* Read configfile from specified directory. */
+@@ -102,7 +102,7 @@
+ 			printf("  Execution halted.\n");
+ 			printf("  Config file is: %s/%s.\n",BaseFilename(QP.rootdir),QP.configfile);
+ 			printf("\n");
+-			return;
++			return 1;
+ 		}
+ 
+ 		printf("\n");
+@@ -169,7 +169,7 @@
+ 	printf("  Use the link \"%s/%s\" to view the gallery.\n",BaseFilename(QP.rootdir),QP.index_html);
+ 	printf("  Have fun!\n");
+ 	printf("\n");
+-	return;
++	return 0;
+ }
+ 
+ void do_arg(char *arg)
