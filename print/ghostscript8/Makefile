@@ -12,9 +12,10 @@ MASTER_SITES=	ftp://ftp.cs.wisc.edu/ghost/aladdin/gs601/ \
 		ftp://ftp.cs.wisc.edu/ghost/aladdin/fonts/ \
 		http://www.ozemail.com.au/~geoffk/pdfencrypt/ \
 		http://www.proaxis.com/~mgelhaus/linux/software/hp880c/1.31/ \
-		ftp://ftp.sbs.de/pub/graphics/ghostscript/pcl3/
+		ftp://ftp.sbs.de/pub/graphics/ghostscript/pcl3/ \
+		http://www.harsch.net/Download/
 DISTFILES=	${GS_SOURCES} ${GS_FONTS_STD} ${GS_FONTS_OTHER} \
-		${DECRYPT_PDF} ${HP8XX_DRV} ${HPDJ_DRV}
+		${DECRYPT_PDF} ${HP8XX_DRV} ${HPDJ_DRV} ${HP970_DRV}
 EXTRACT_ONLY=	${GS_SOURCES} ${HPDJ_DRV}
 
 MAINTAINER=	andreas@FreeBSD.org
@@ -54,6 +55,9 @@ HP8XX_DRV=	gdevcd8.tar.gz
 # ftp://ftp.sbs.de/pub/graphics/ghostscript/pcl3/pcl3.html
 HPDJ_DRV=	hpdj-2.6.tar.gz
 
+# additional driver for HP DeskJet 970, supports duplex printing
+HP970_DRV=	gdevdj9.c.gz
+
 # contributed uniprint profiles
 CONTRIB_UPP=	lqx70ch.upp lqx70cl.upp lqx70cm.upp \
 		stc740ih.upp stc740p.upp stc740pl.upp
@@ -82,6 +86,9 @@ post-extract:
 	@${CAT} ${WRKSRC}/src/contrib.mak-5.94.add >> ${WRKSRC}/src/contrib.mak
 	@${PATCH} -d ${WRKSRC}/src --forward --quiet -E \
 		< ${WRKSRC}/src/zmedia2.c-5.50.diff
+	@${CP} ${DISTDIR}/${HP970_DRV} ${WRKSRC}/src
+	@${GUNZIP_CMD} ${WRKSRC}/src/${HP970_DRV}
+	@${CAT} ${FILESDIR}/dj970.contrib.mak >> ${WRKSRC}/src/contrib.mak
 
 do-configure:
 .if defined(BATCH)

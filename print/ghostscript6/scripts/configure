@@ -49,6 +49,7 @@ Have fun with this new configuration style !     -andreas \n\n\
   "cdj850"   "HP DeskJet 850/855/870/1100" OFF \
   "cdj880"   "HP DeskJet 812/815/832/880/882/895/932/970 C (experimental)" OFF \
   "cdj890"   "HP DeskJet 890" OFF \
+  "cdj970"   "HP DeskJet 970, 3rd party" ON \
   "cdj1600"  "HP DeskJet 1600" OFF \
   "laserjet" "HP LaserJet" ON \
   "ljetplus" "HP LaserJet Plus" ON \
