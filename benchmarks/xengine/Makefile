@@ -3,7 +3,7 @@
 # Date created:		17 January 1997
 # Whom:			FURUSAWA,Kazuhisa <furusawa@com.cs.osakafu-u.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.3 1997/02/17 05:01:18 obrien Exp $
 #
 
 PKGNAME=	xengine-1.0.1
@@ -20,12 +20,12 @@ NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes
 
 EXTRACT_CMD=		zcat
-EXTRACT_SUFX=		.z
 EXTRACT_BEFORE_ARGS= 
 EXTRACT_AFTER_ARGS=	| gunshar -d $(WRKDIR)
+PATCH_DIST_STRIP=	-p1	# no ${PATCHFILES} but used below
 
 pre-patch:
-	@cd $(WRKSRC) ; patch < xengine.patch1
+	@cd $(WRKSRC) ; ${PATCH} ${PATCH_DIST_ARGS} < xengine.patch1
 
 post-install:
 .if !defined(NOPORTDOCS)
