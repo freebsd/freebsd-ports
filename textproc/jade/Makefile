@@ -7,11 +7,12 @@
 
 PORTNAME=	jade
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.jclark.com/pub/jade/
 
-PATCH_SITES=	http://ftp.debian.org/debian/dists/unstable/main/source/text/
-PATCHFILES=	jade_1.2.1-13.diff.gz
+PATCH_SITES=	http://ftp.debian.org/debian/pool/main/j/jade/
+PATCHFILES=	jade_1.2.1-18.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	kuriyama@FreeBSD.org
