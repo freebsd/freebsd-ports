@@ -5,6 +5,8 @@ lib/luma/base/__init__.py
 lib/luma/base/__init__.pyc
 lib/luma/base/backend/LumaConnection.py
 lib/luma/base/backend/LumaConnection.pyc
+lib/luma/base/backend/ObjectClassAttributeInfo.py
+lib/luma/base/backend/ObjectClassAttributeInfo.pyc
 lib/luma/base/backend/PluginLoader.py
 lib/luma/base/backend/PluginLoader.pyc
 lib/luma/base/backend/ServerList.py
@@ -51,10 +53,6 @@ lib/luma/base/utils/backend/CryptPwGenerator.py
 lib/luma/base/utils/backend/CryptPwGenerator.pyc
 lib/luma/base/utils/backend/DateHelper.py
 lib/luma/base/utils/backend/DateHelper.pyc
-lib/luma/base/utils/backend/LdifHelper.py
-lib/luma/base/utils/backend/LdifHelper.pyc
-lib/luma/base/utils/backend/ObjectClassAttributeInfo.py
-lib/luma/base/utils/backend/ObjectClassAttributeInfo.pyc
 lib/luma/base/utils/backend/__init__.py
 lib/luma/base/utils/backend/__init__.pyc
 lib/luma/base/utils/backend/mkpasswd.py
@@ -68,10 +66,24 @@ lib/luma/base/utils/gui/AddAttributeWizard.pyc
 lib/luma/base/utils/gui/AddAttributeWizardDesign.py
 lib/luma/base/utils/gui/AddAttributeWizardDesign.pyc
 lib/luma/base/utils/gui/AddAttributeWizardDesign.ui
+lib/luma/base/utils/gui/AdvancedObjectWidget.py
+lib/luma/base/utils/gui/AdvancedObjectWidget.pyc
 lib/luma/base/utils/gui/BrowserDialog.py
 lib/luma/base/utils/gui/BrowserDialog.pyc
 lib/luma/base/utils/gui/BrowserWidget.py
 lib/luma/base/utils/gui/BrowserWidget.pyc
+lib/luma/base/utils/gui/DeleteDialog.py
+lib/luma/base/utils/gui/DeleteDialog.pyc
+lib/luma/base/utils/gui/DeleteDialogDesign.py
+lib/luma/base/utils/gui/DeleteDialogDesign.pyc
+lib/luma/base/utils/gui/DeleteDialogDesign.ui
+lib/luma/base/utils/gui/EditorFactory.py
+lib/luma/base/utils/gui/EditorFactory.pyc
+lib/luma/base/utils/gui/ExportDialog.py
+lib/luma/base/utils/gui/ExportDialog.pyc
+lib/luma/base/utils/gui/ExportDialogDesign.py
+lib/luma/base/utils/gui/ExportDialogDesign.pyc
+lib/luma/base/utils/gui/ExportDialogDesign.ui
 lib/luma/base/utils/gui/FilterWizard.py
 lib/luma/base/utils/gui/FilterWizard.pyc
 lib/luma/base/utils/gui/FilterWizardDesign.py
@@ -82,18 +94,18 @@ lib/luma/base/utils/gui/LumaEntryBrowser.pyc
 lib/luma/base/utils/gui/LumaEntryBrowserDesign.py
 lib/luma/base/utils/gui/LumaEntryBrowserDesign.pyc
 lib/luma/base/utils/gui/LumaEntryBrowserDesign.ui
-lib/luma/base/utils/gui/LumaIconView.py
-lib/luma/base/utils/gui/LumaIconView.pyc
-lib/luma/base/utils/gui/LumaIconViewDesign.py
-lib/luma/base/utils/gui/LumaIconViewDesign.pyc
-lib/luma/base/utils/gui/LumaIconViewDesign.ui
+lib/luma/base/utils/gui/LumaErrorDialog.py
+lib/luma/base/utils/gui/LumaErrorDialog.pyc
+lib/luma/base/utils/gui/LumaErrorDialogDesign.py
+lib/luma/base/utils/gui/LumaErrorDialogDesign.pyc
+lib/luma/base/utils/gui/LumaErrorDialogDesign.ui
+lib/luma/base/utils/gui/LumaWarningDialog.py
+lib/luma/base/utils/gui/LumaWarningDialog.pyc
 lib/luma/base/utils/gui/MailDialog.py
 lib/luma/base/utils/gui/MailDialog.pyc
 lib/luma/base/utils/gui/MailDialogDesign.py
 lib/luma/base/utils/gui/MailDialogDesign.pyc
 lib/luma/base/utils/gui/MailDialogDesign.ui
-lib/luma/base/utils/gui/ObjectWidget.py
-lib/luma/base/utils/gui/ObjectWidget.pyc
 lib/luma/base/utils/gui/PasswordDialog.py
 lib/luma/base/utils/gui/PasswordDialog.pyc
 lib/luma/base/utils/gui/PasswordDialogDesign.py
@@ -114,14 +126,34 @@ lib/luma/base/utils/gui/SearchResultViewDesign.pyc
 lib/luma/base/utils/gui/SearchResultViewDesign.ui
 lib/luma/base/utils/gui/__init__.py
 lib/luma/base/utils/gui/__init__.pyc
+lib/luma/base/utils/gui/editors/BinaryEditor.py
+lib/luma/base/utils/gui/editors/BinaryEditor.pyc
+lib/luma/base/utils/gui/editors/BinaryEditorDesign.py
+lib/luma/base/utils/gui/editors/BinaryEditorDesign.pyc
+lib/luma/base/utils/gui/editors/BinaryEditorDesign.ui
+lib/luma/base/utils/gui/editors/PasswordEditor.py
+lib/luma/base/utils/gui/editors/PasswordEditor.pyc
+lib/luma/base/utils/gui/editors/PasswordEditorDesign.py
+lib/luma/base/utils/gui/editors/PasswordEditorDesign.pyc
+lib/luma/base/utils/gui/editors/PasswordEditorDesign.ui
+lib/luma/base/utils/gui/editors/RdnEditor.py
+lib/luma/base/utils/gui/editors/RdnEditor.pyc
+lib/luma/base/utils/gui/editors/RdnEditorDesign.py
+lib/luma/base/utils/gui/editors/RdnEditorDesign.pyc
+lib/luma/base/utils/gui/editors/RdnEditorDesign.ui
+lib/luma/base/utils/gui/editors/StandardEditor.py
+lib/luma/base/utils/gui/editors/StandardEditor.pyc
+lib/luma/base/utils/gui/editors/StandardEditorDesign.py
+lib/luma/base/utils/gui/editors/StandardEditorDesign.pyc
+lib/luma/base/utils/gui/editors/StandardEditorDesign.ui
+lib/luma/base/utils/gui/editors/__init__.py
+lib/luma/base/utils/gui/editors/__init__.pyc
 lib/luma/environment/__init__.py
 lib/luma/environment/__init__.pyc
 lib/luma/luma.py
 lib/luma/luma.pyc
 lib/luma/plugins/__init__.py
 lib/luma/plugins/__init__.pyc
-lib/luma/plugins/addressbook/Addressbook.py
-lib/luma/plugins/addressbook/Addressbook.pyc
 lib/luma/plugins/addressbook/AddressbookSettings.py
 lib/luma/plugins/addressbook/AddressbookSettings.pyc
 lib/luma/plugins/addressbook/AddressbookSettingsDesign.py
@@ -189,6 +221,18 @@ lib/luma/plugins/search_plugin/__init__.pyc
 lib/luma/plugins/search_plugin/plugin.meta
 lib/luma/plugins/search_plugin/search_plugin.py
 lib/luma/plugins/search_plugin/search_plugin.pyc
+lib/luma/plugins/schemabrowser/SchemaView.py
+lib/luma/plugins/schemabrowser/SchemaView.pyc
+lib/luma/plugins/schemabrowser/SchemaViewDesign.py
+lib/luma/plugins/schemabrowser/SchemaViewDesign.pyc
+lib/luma/plugins/schemabrowser/SchemaViewDesign.ui
+lib/luma/plugins/schemabrowser/SearchView.py
+lib/luma/plugins/schemabrowser/SearchView.pyc
+lib/luma/plugins/schemabrowser/__init__.py
+lib/luma/plugins/schemabrowser/__init__.pyc
+lib/luma/plugins/schemabrowser/plugin.meta
+lib/luma/plugins/schemabrowser/schemabrowser.py
+lib/luma/plugins/schemabrowser/schemabrowser.pyc
 lib/luma/plugins/template_plugin/AddAttributeDialog.py
 lib/luma/plugins/template_plugin/AddAttributeDialog.pyc
 lib/luma/plugins/template_plugin/AddAttributeDialogDesign.py
@@ -207,11 +251,6 @@ lib/luma/plugins/template_plugin/AddTemplateDialogDesign.ui
 lib/luma/plugins/template_plugin/ClassDeleteDialog.py
 lib/luma/plugins/template_plugin/ClassDeleteDialog.pyc
 lib/luma/plugins/template_plugin/ClassDeleteDialog.ui
-lib/luma/plugins/template_plugin/OClassDialog.py
-lib/luma/plugins/template_plugin/OClassDialog.pyc
-lib/luma/plugins/template_plugin/OClassDialogDesign.py
-lib/luma/plugins/template_plugin/OClassDialogDesign.pyc
-lib/luma/plugins/template_plugin/OClassDialogDesign.ui
 lib/luma/plugins/template_plugin/TemplateWidget.py
 lib/luma/plugins/template_plugin/TemplateWidget.pyc
 lib/luma/plugins/template_plugin/TemplateWidgetDesign.py
@@ -269,6 +308,7 @@ lib/luma/plugins/usermanagement/usermanagement_plugin.pyc
 %%DATADIR%%/icons/AdvancedObjectWidget/single.png
 %%DATADIR%%/icons/addattribute.png
 %%DATADIR%%/icons/binary.png
+%%DATADIR%%/icons/binary_big.png
 %%DATADIR%%/icons/clear.png
 %%DATADIR%%/icons/config.png
 %%DATADIR%%/icons/delete.png
@@ -277,9 +317,11 @@ lib/luma/plugins/usermanagement/usermanagement_plugin.pyc
 %%DATADIR%%/icons/displayall.png
 %%DATADIR%%/icons/edit.png
 %%DATADIR%%/icons/editdelete.png
+%%DATADIR%%/icons/editor.png
 %%DATADIR%%/icons/email.png
 %%DATADIR%%/icons/error.png
 %%DATADIR%%/icons/exportBinary.png
+%%DATADIR%%/icons/export_big.png
 %%DATADIR%%/icons/exportLdif.png
 %%DATADIR%%/icons/final.png
 %%DATADIR%%/icons/folder.png
@@ -337,18 +379,23 @@ lib/luma/plugins/usermanagement/usermanagement_plugin.pyc
 %%DATADIR%%/icons/server.png
 %%DATADIR%%/icons/single.png
 %%DATADIR%%/icons/tip.png
+%%DATADIR%%/icons/trashcan.png
+%%DATADIR%%/icons/trashcan_empty.svgz
 %%DATADIR%%/icons/view_icon.png
 %%DATADIR%%/icons/view_tree.png
 %%DATADIR%%/icons/warning.png
+%%DATADIR%%/icons/warning_big.png
 %%DATADIR%%/icons/world.png
 %%DATADIR%%/icons/worldmedium.png
 @dirrm lib/luma/base/backend
 @dirrm lib/luma/base/gui
 @dirrm lib/luma/base/utils/backend
+@dirrm lib/luma/base/utils/gui/editors
 @dirrm lib/luma/base/utils/gui
 @dirrm lib/luma/base/utils
 @dirrm lib/luma/base
 @dirrm lib/luma/environment
+@dirrm lib/luma/plugins/schemabrowser
 @dirrm lib/luma/plugins/addressbook
 @dirrm lib/luma/plugins/admin_utils
 @dirrm lib/luma/plugins/browser_plugin
