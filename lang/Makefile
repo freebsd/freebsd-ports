@@ -32,6 +32,7 @@
     SUBDIR += gcc27
     SUBDIR += gcc28
     SUBDIR += gcl
+    SUBDIR += gforth
     SUBDIR += ghc
     SUBDIR += glibstdc++28
     SUBDIR += gnat
