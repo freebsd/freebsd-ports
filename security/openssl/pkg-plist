@@ -78,7 +78,6 @@ libdata/pkgconfig/openssl.pc
 %%NOBASE%%openssl/misc/c_info
 %%NOBASE%%openssl/misc/c_issuer
 %%NOBASE%%openssl/misc/c_name
-%%NOBASE%%openssl/misc/der_chop
 %%NOBASE%%openssl/openssl.cnf.sample
 %%PORTDOCS%%%%DOCSDIR%%/openssl.txt
 @dirrm include/openssl
