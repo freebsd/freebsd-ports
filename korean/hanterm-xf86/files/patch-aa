@@ -1,41 +1,11 @@
-diff -c -r ../hanterm-xf86-v32-orig/Imakefile ./Imakefile
-*** ../hanterm-xf86-v32-orig/Imakefile	Thu Mar  6 02:07:55 1997
---- ./Imakefile	Sat Mar 22 14:08:30 1997
-***************
-*** 90,97 ****
-            MAINOBJ = main.o
-  #endif
-  #ifdef Hangul
-! 	  EXTRASRC = hangul.c chat.c automata.c hanja.c
-! 	  EXTRAOBJ = hangul.o chat.o automata.o hanja.o
-  #endif
-            SRCS1 = button.c charproc.c cursor.c data.c input.c \
-  		  $(MAINSRC) menu.c misc.c screen.c scrollbar.c tabs.c \
---- 90,97 ----
-            MAINOBJ = main.o
-  #endif
-  #ifdef Hangul
-!           EXTRASRC = hangul.c chat.c automata.c hanja.c
-!           EXTRAOBJ = hangul.o chat.o automata.o hanja.o
-  #endif
-            SRCS1 = button.c charproc.c cursor.c data.c input.c \
-  		  $(MAINSRC) menu.c misc.c screen.c scrollbar.c tabs.c \
-***************
-*** 183,190 ****
-  NormalProgramTarget(resize,$(OBJS2),$(DEPLIBS2),NullParameter,$(TERMCAPLIB))
-  InstallProgramWithFlags(resize,$(BINDIR),NullParameter)
-  
-! InstallAppDefaults(XTerm)
-! InstallAppDefaultsLong(XTerm-col,XTerm-color)
-! InstallManPage(xterm,$(MANDIR))
-  InstallManPage(resize,$(MANDIR))
-  DependTarget()
---- 183,190 ----
-  NormalProgramTarget(resize,$(OBJS2),$(DEPLIBS2),NullParameter,$(TERMCAPLIB))
-  InstallProgramWithFlags(resize,$(BINDIR),NullParameter)
-  
-! InstallAppDefaults(Hanterm)
-! InstallAppDefaultsLong(Hanterm-col,Hanterm-color)
-! InstallManPage(hanterm,$(MANDIR))
-  InstallManPage(resize,$(MANDIR))
-  DependTarget()
+--- Makefile.in.old	Sun Mar 15 21:11:33 1998
++++ Makefile.in	Sun Mar 15 21:11:18 1998
+@@ -10,7 +10,7 @@
+ INSTALL_DATA	= @INSTALL_DATA@
+ 
+ IMAKE_CFLAGS	= @IMAKE_CFLAGS@
+-CFLAGS		= @CFLAGS@ $(IMAKE_CFLAGS)
++CFLAGS		= @CFLAGS@ $(IMAKE_CFLAGS) $(CPPFLAGS)
+ LIBS		= @LIBS@
+ 
+ X_CFLAGS	= @X_CFLAGS@

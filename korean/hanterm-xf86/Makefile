@@ -1,29 +1,28 @@
-# New ports collection makefile for:	hanterm-xf86-v32
-# Version required:     xf86-v32
+# New ports collection makefile for:	hanterm-xf86
+# Version required:     hanterm-xf331-p11a
 # Date created:		22 Mar 1997
-# Whom:			Choi Jun Ho <junker@jazz.snu.ac.kr>
+# Whom:			CHOI Junho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.1.1.1 1997/04/18 08:45:48 asami Exp $
+# $Id: Makefile,v 1.2 1997/09/22 16:21:51 max Exp $
 #
 
-DISTNAME=       hanterm-xf86-v32
-PKGNAME=	ko-hanterm-xf86-3.2
+DISTNAME=	hanterm-xf331-p11a
+PKGNAME=	ko-hanterm-xf-3.3.1.11a
 CATEGORIES=	korean x11
-MASTER_SITES=	ftp://ftp.kaist.ac.kr/pub/hangul/incoming/ \
-		ftp://jazz.snu.ac.kr/pub/unix/util/X11/
-EXTRACT_SUFX=   .tgz
-
-RUN_DEPENDS=    ${PREFIX}/lib/X11/fonts/korean/johab:$(PORTSDIR)/korean/johabfonts
+MASTER_SITES=	ftp://ftp.kaist.ac.kr/pub/hangul/incoming/
 
 MAINTAINER=	junker@jazz.snu.ac.kr
 
-USE_IMAKE=	yes
-NO_INSTALL_MANPAGES= yes
+RUN_DEPENDS=	${PREFIX}/lib/X11/fonts/korean/johab:${PORTSDIR}/korean/johabfonts
 
-# rename app-defaults files
-post-extract:
-	@cd ${WRKSRC}; \
-	mv XTerm.ad Hanterm.ad; \
-	mv XTerm-col.ad Hanterm-col.ad
+WRKSRC=		${WRKDIR}/hanterm-xf331-p11
+
+USE_X11=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-x --build=i386--freebsd --prefix=${PREFIX}
+NO_INSTALL_MANPAGES=	yes
+
+post-install:
+	@${INSTALL_DATA} ${WRKSRC}/Hanterm.ad ${PREFIX}/lib/X11/app-defaults/Hanterm
 
 .include <bsd.port.mk>
