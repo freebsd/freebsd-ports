@@ -1,0 +1,6 @@
+bin/access2drbl
+bin/build_drbl
+share/drbl/README
+share/drbl/header
+share/drbl/zones
+@dirrm share/drbl
