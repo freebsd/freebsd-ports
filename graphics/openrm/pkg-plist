@@ -52,6 +52,8 @@ lib/librmv.so.1
 %%WITH_DEMOS%%share/examples/openrm/data/func10-yoffset.dio
 %%WITH_DEMOS%%share/examples/openrm/data/func10.dio
 %%WITH_DEMOS%%share/examples/openrm/data/greenpaper.x
+%%WITH_DEMOS%%share/examples/openrm/data/hydro.dat
+%%WITH_DEMOS%%share/examples/openrm/data/hydro.dio
 %%WITH_DEMOS%%share/examples/openrm/data/left.x
 %%WITH_DEMOS%%share/examples/openrm/data/op.small.x
 %%WITH_DEMOS%%share/examples/openrm/data/orangegrid.x
@@ -88,6 +90,7 @@ lib/librmv.so.1
 %%WITH_DEMOS%%share/examples/openrm/makeinclude
 %%WITH_DEMOS%%share/examples/openrm/markers2d.c
 %%WITH_DEMOS%%share/examples/openrm/offscreen.c
+%%WITH_DEMOS%%share/examples/openrm/orderTest.c
 %%WITH_DEMOS%%share/examples/openrm/pdb.c
 %%WITH_DEMOS%%share/examples/openrm/pdbwork.c
 %%WITH_DEMOS%%share/examples/openrm/pickListTest.c
@@ -97,9 +100,11 @@ lib/librmv.so.1
 %%WITH_DEMOS%%share/examples/openrm/rm2screen.c
 %%WITH_DEMOS%%share/examples/openrm/skeleton.c
 %%WITH_DEMOS%%share/examples/openrm/spotlight.c
+%%WITH_DEMOS%%share/examples/openrm/spriteTest.c
 %%WITH_DEMOS%%share/examples/openrm/switchtest.c
 %%WITH_DEMOS%%share/examples/openrm/tcube.c
 %%WITH_DEMOS%%share/examples/openrm/text2d.c
+%%WITH_DEMOS%%share/examples/openrm/textureTest.c
 %%WITH_DEMOS%%share/examples/openrm/tfly.c
 %%WITH_DEMOS%%share/examples/openrm/tmap2d.c
 %%WITH_DEMOS%%share/examples/openrm/trans2d.c
@@ -124,6 +129,7 @@ lib/librmv.so.1
 %%PORTDOCS%%share/doc/openrm/rmbitmap.c.html
 %%PORTDOCS%%share/doc/openrm/rmcamera.c.html
 %%PORTDOCS%%share/doc/openrm/rmclip.c.html
+%%PORTDOCS%%share/doc/openrm/rmcmpmgr.c.html
 %%PORTDOCS%%share/doc/openrm/rmcmpmgr.h.html
 %%PORTDOCS%%share/doc/openrm/rmcreatw.c.html
 %%PORTDOCS%%share/doc/openrm/rmerror.c.html

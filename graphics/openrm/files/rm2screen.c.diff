@@ -1,0 +1,12 @@
+--- ../rmdemo/rm2screen.c.~	Sat Apr 19 11:10:56 2003
++++ ../rmdemo/rm2screen.c	Sat Apr 19 11:12:21 2003
+@@ -411,7 +411,9 @@
+ #ifdef SOLARIS
+     glXInitThreadsSUN();
+ #else
++#ifndef __FreeBSD__
+     pthread_setconcurrency(12);
++#endif
+ #endif
+     
+     rmInit();

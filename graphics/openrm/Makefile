@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		openrm
-PORTVERSION=		1.4.2
+PORTVERSION=		1.4.3
 CATEGORIES=		graphics
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,7 +25,7 @@ LIB_DEPENDS=    jpeg.9:${PORTSDIR}/graphics/jpeg
 WRKSRC=		${WRKDIR}/rm${PORTVERSION:S/.//g}
 .ifdef (WITH_DEMOS)
 WRKSRC2=	${WRKDIR}/rmdemo
-EXTRA_PATCHES=	${PATCHDIR}/makeinclude.diff
+EXTRA_PATCHES=	${PATCHDIR}/makeinclude.diff ${PATCHDIR}/rm2screen.c.diff
 .endif
 
 USE_X_PREFIX=	yes
@@ -33,7 +33,7 @@ USE_MESA=	yes
 USE_REINPLACE=	yes
 ALL_TARGET=	linux docs
 INSTALLS_SHLIB=	yes
-MAKE_ENV=	RM_INSTALL=${X11BASE}
+ONLY_FOR_ARCHS=	i386
 
 .if !defined(WITH_DEMOS)
 PLIST_SUB=	WITH_DEMOS="@comment "
