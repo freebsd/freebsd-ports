@@ -1,15 +1,5 @@
 lib/perl5/site_perl/%%PERL_VER%%/Schedule/At.pm
-lib/perl5/site_perl/%%PERL_VER%%/auto/Schedule/At/AtCfg.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Schedule/At/AtCfg_dec_osf.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Schedule/At/AtCfg_freebsd.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Schedule/At/AtCfg_hpux.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Schedule/At/AtCfg_linux.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Schedule/At/AtCfg_solaris.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Schedule/At/AtCfg_sunos.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Schedule/At/autosplit.ix
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Schedule/At/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Schedule/At
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Schedule/At
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Schedule 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/auto/Schedule 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Schedule 2>/dev/null || true
