@@ -382,3 +382,4 @@ lib/ocaml/stublibs/dlllablgtk2.so
 %%RSVG%%%%PORTDOCS%%%%EXAMPLESDIR%%/rsvg/test_rsvg.ml
 %%RSVG%%%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/rsvg
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+@dirrm share/doc/ocaml
