@@ -3,7 +3,7 @@
 # Date created:         4 May 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.3 1995/05/18 10:59:27 asami Exp $
+# $Id: Makefile,v 1.4 1995/06/26 15:00:37 ache Exp $
 #
 
 DISTNAME=       pgp26ru
@@ -21,6 +21,9 @@ NO_WRKSUBDIR=   YES
 NO_CONFIGURE=   YES
 NO_PATCH=       YES
 NO_BUILD=       YES
+
+# Need to define USA_RESIDENT to YES or NO
+IS_INTERACTIVE=	YES
 
 PGPLIB=         ${PREFIX}/lib/pgp
 OBJS=           language.txt ru.hlp
