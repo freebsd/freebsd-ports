@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	libxode
-PORTVERSION=	0.9
+PORTVERSION=	1.0
 CATEGORIES=	textproc
-MASTER_SITES=	http://download.jabber.org/dists/0.9/final/
+MASTER_SITES=	http://download.jabber.org/dists/1.0/
 
 MAINTAINER=	lukin@okbmei.msk.su
 
