@@ -1,0 +1,8 @@
+#!/bin/csh -f
+if $2 == "POST-INSTALL"	then
+	echo "========================================================="
+	echo "                                                         "
+	echo "Please add users who want to use PPxP to the dialer group"
+	echo "                                                         "
+	echo "========================================================="
+endif

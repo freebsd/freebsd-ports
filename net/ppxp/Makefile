@@ -1,14 +1,14 @@
 # New ports collection makefile for: ppxp
-# Version required:	0.99030108
-# Date created:		8 May 1999
-# Whom:			Norio Suzuki
+# Version required:	0.99072807
+# Date created:		28 Jul 1999
+# Whom:			Norio Suzuki <nosuzuki@e-mail.ne.jp>
 #			KUNISHIMA Takeo <kunishi@c.oka-pu.ac.jp>
 #			Taguchi Takeshi <taguchi@tohoku.iij.ad.jp>
 #
-# $Id: Makefile,v 1.5 1999/05/09 16:45:36 steve Exp $
+# $Id: Makefile,v 1.6 1999/06/08 22:14:32 steve Exp $
 #
 
-DISTNAME=	ppxp-0.99030108
+DISTNAME=	ppxp-0.99072807
 CATEGORIES=	net tk80
 .if defined(USE_TCLJP)
 CATEGORIES+=	japanese
@@ -52,21 +52,22 @@ CONFIGURE_ARGS+= --with-tclsh=${PREFIX}/bin/tclsh8.0 \
 		--with-tcl-config=${PREFIX}/lib/tcl8.0/tclConfig.sh \
 		--with-tk-config=${PREFIX}/lib/tk8.0/tkConfig.sh
 .endif
-MAN1=		PPxP.1
+MAN1=		PPxP.1 plast.1
 MAN5=		ppxp-files.5
 MANLANG=	ja
 
 DOC_C=		QuickStart.txt
-DOC_ja_JP=	QuickStart.txt guide-1.html guide-2.html \
+DOC_ja_JP=	QuickStart.txt QuickUsage.txt guide-1.html guide-2.html \
 		guide-3.html guide-4.html guide-5.html guide-6.html \
 		guide-7.html guide-8.html guide-9.html guide-10.html \
-		guide.html
+		guide-11.html guide.html Answers.txt Report.txt
 
 post-patch:
 	@find ${WRKSRC} -name '*.orig' -exec ${RM} -f '{}' ';'
 
 post-install:
 	@${INSTALL_MAN} ${WRKSRC}/doc/ja_JP/PPxP.1 ${PREFIX}/man/${MANLANG}/man1
+	@${INSTALL_MAN} ${WRKSRC}/doc/ja_JP/plast.1 ${PREFIX}/man/${MANLANG}/man1
 	@${INSTALL_MAN} ${WRKSRC}/doc/ja_JP/ppxp-files.5 ${PREFIX}/man/${MANLANG}/man5
 	@${MKDIR} ${PREFIX}/share/doc/ppxp/C
 .for file in ${DOC_C}
@@ -80,5 +81,6 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/console/tcltk/README ${PREFIX}/share/doc/tkppxp
 	@${MKDIR} ${PREFIX}/share/doc/xppxp
 	@${INSTALL_DATA} ${WRKSRC}/console/xppxp/README ${PREFIX}/share/doc/xppxp
+	csh ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
