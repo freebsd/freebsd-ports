@@ -6,6 +6,7 @@
     SUBDIR += aescrypt
     SUBDIR += aide
     SUBDIR += altivore
+    SUBDIR += amap
     SUBDIR += amavis-perl
     SUBDIR += amavisd
     SUBDIR += amavisd-new

@@ -1,0 +1,5 @@
+Amap is a next-generation scanning tool, it identifies applications
+and services even if they are not listening to the default port
+by creating a bogus-communication.
+
+WWW: http://www.thehackerschoice.com/releases.php
