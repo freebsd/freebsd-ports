@@ -33,6 +33,7 @@
     SUBDIR += grass
     SUBDIR += gtksql
     SUBDIR += java-sqlrelay
+    SUBDIR += jdb
     SUBDIR += jdbc-oracle816
     SUBDIR += libdbi
     SUBDIR += libgda

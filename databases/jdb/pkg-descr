@@ -1,0 +1,14 @@
+JDB is a package of commands for manipulating flat-ASCII databases
+from shell scripts. JDB is useful to process medium amounts of data
+(with very little data you'd do it by hand, with megabytes you might
+want a real database). JDB is very good at doing things like:
+
+    * extracting measurements from experimental output
+    * re-examining data to address different hypotheses
+    * joining data from different experiments
+    * eliminating/detecting outliers
+    * computing statistics on data (mean, confidence intervals,
+      histograms, correlations)
+    * reformatting data for graphing programs
+
+WWW: http://www.isi.edu/~johnh/SOFTWARE/JDB/index.html
