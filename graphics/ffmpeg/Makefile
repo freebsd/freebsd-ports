@@ -26,7 +26,6 @@ USE_GMAKE=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ARGS= --cc="${CC}" --prefix="${PREFIX}" \
 		--make="${GMAKE}" --enable-shared \
-		--extra-cflags="-I${LOCALBASE}/include" \
 		--extra-libs="-lm -L${LOCALBASE}/lib"
 PLIST_SUB=	SHLIB_VERSION=${SHLIB_VERSION}
 INSTALLS_SHLIB=	yes
@@ -58,6 +57,16 @@ WITH_VORBIS=yes
 
 ## support activation
 ##
+## disable a52
+.ifndef(WITHOUT_A52)
+LIB_DEPENDS+=	a52.0:${PORTSDIR}/audio/liba52
+
+CONFIGURE_ARGS+=	--enable-a52 \
+			--enable-a52bin
+.else
+CONFIGURE_ARGS+=	--enable-a52 \
+			--disable-a52bin
+.endif
 ## disable mmx
 .ifdef(WITHOUT_MMX)
 CONFIGURE_ARGS+=	--disable-mmx
@@ -68,6 +77,13 @@ LIB_DEPENDS+=		mp3lame.0:${PORTSDIR}/audio/lame
 
 CONFIGURE_ARGS+=	--enable-mp3lame
 .endif
+## optimization
+.ifdef(WITH_OPTIMIZED_CFLAGS)
+CONFIGURE_ARGS+=	--extra-cflags="${CFLAGS} -I${LOCALBASE}/include \
+				-O3 -ffast-math -fomit-frame-pointer" 
+.else
+CONFIGURE_ARGS+=	--extra-cflags="${CFLAGS} -I${LOCALBASE}/include"
+.endif
 ## vorbis
 .ifdef(WITH_VORBIS)
 LIB_DEPENDS+=		vorbisenc.2:${PORTSDIR}/audio/libvorbis
@@ -76,11 +92,19 @@ CONFIGURE_ARGS+=	--enable-vorbis
 .endif
 
 pre-everything::
+.ifndef(WITHOUT_LIBA52)
+	@${ECHO_MSG} "You can disable liba52 support by defining WITHOUT_LIBA52"
+.endif
 .ifndef(WITHOUT_MMX)
 	@${ECHO_MSG} "Define WITHOUT_MMX if your system does not support MMX"
 .endif
 .ifndef(WITH_MP3)
 	@${ECHO_MSG} 'Define WITH_MP3 to enable lame MP3 codec'
+.endif
+.ifndef(WITH_OPTIMIZED_CFLAGS)
+	@${ECHO_MSG}
+	@${ECHO_MSG} 'You can enable additional compilation optimizations'
+	@${ECHO_MSG} 'by defining WITH_OPTIMIZED_CFLAGS'
 .endif
 .ifndef(WITH_VORBIS)
 	@${ECHO_MSG} 'Define WITH_VORBIS to enable libvorbisenc VORBIS codec'
@@ -117,6 +141,10 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		"s!VIDEO_INPUT METEOR_INPUT_DEV0!VIDEO_INPUT METEOR_INPUT_DEV${WITH_BKTR_DEV}!" \
 		${WRKSRC}/libav/grab_bsdbktr.c
+.endif
+.ifndef(WITHOUT_LIBA52)
+	@${REINPLACE_CMD} -e 's|-ldl||' \
+		${WRKSRC}/configure
 .endif
 
 post-install:
