@@ -40,15 +40,16 @@ do-install:
 	${INSTALL_DATA} "${WRKDIR}/Frodo/Frodo Logo" ${PREFIX}/libexec/frodo
 	${CP} "${WRKDIR}/Frodo/TkGui.tcl" ${PREFIX}/libexec/frodo
 	${MKDIR} ${PREFIX}/libexec/frodo/64prgs
-	@(${TAR} -C ${WRKDIR}/Frodo/64prgs -cf - . | ${TAR} -C ${PREFIX}/libexec/frodo/64prgs -xf -)
+	@${TAR} -C ${WRKDIR}/Frodo/64prgs -cf - . | \
+		${TAR} -C ${PREFIX}/libexec/frodo/64prgs -xf -
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/frodo
+	${MKDIR} ${DOCSDIR}
 .for i in CHANGES
-	${INSTALL_DATA} ${WRKDIR}/Frodo/${i} ${PREFIX}/share/doc/frodo
+	${INSTALL_DATA} ${WRKDIR}/Frodo/${i} ${DOCSDIR}/
 .endfor
-	@(${TAR} -C ${WRKDIR}/Frodo/Docs -cf - . | ${TAR} -C ${PREFIX}/share/doc/frodo -xf -)
+	@${TAR} -C ${WRKDIR}/Frodo/Docs -cf - . | ${TAR} -C ${DOCSDIR} -xf -
 .endif
 
 .include <bsd.port.mk>

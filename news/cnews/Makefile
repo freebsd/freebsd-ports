@@ -124,7 +124,7 @@ do-install:
 	@${ECHO} "!!!!!!!!"
 	@${ECHO} ""
 
-test: 
+test:
 	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 	${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} r)
 

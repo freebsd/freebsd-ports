@@ -31,11 +31,11 @@ CFLAGS:= ${CFLAGS:S/-O[0-9]*//g}	# gcc generates broken code in uwsmtp
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/unix-connect
+	${MKDIR} ${DOCSDIR}
 .for i in README INSTALL TODO ChangeLog ChangeLog.configure
-	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/unix-connect
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/
 .endfor
-	@cd ${WRKSRC}/docs; tar cf - . | (cd ${PREFIX}/share/doc/unix-connect; tar xf -)
+	@${TAR} -C ${WRKSRC}/docs -cf - . | ${TAR} -C ${DOCSDIR} -xf -
 .endif
 
 .include <bsd.port.mk>

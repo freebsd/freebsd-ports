@@ -25,6 +25,10 @@ FORBIDDEN=	indefinite hang
 USE_GMAKE=	yes
 USE_PERL5=	yes
 
+DOCLIST=	fidogate.texi fidogate.txt gatebau94.txt kludge-rfc.doc \			msgid.doc qmail.txt texinfo.tex dirs.html index.html \
+		template.html fido howto misc rfc gatebau/msgid.sgml \
+		gatebau/msgid.tex gatebau/msgid.txt
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 300000
@@ -32,40 +36,25 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-perl
 .endif
 
 pre-configure:
-	@${MV} ${WRKSRC}/config.make ${WRKSRC}/config.make.sed
-	@${SED} -e 's/\$${PREFIX}/${PREFIX:S/\//\\\//g}/g' \
-		< ${WRKSRC}/config.make.sed > ${WRKSRC}/config.make
+	@${PERL5} -pi -e "s=.{PREFIX}=${PREFIX}=g" ${WRKSRC}/config.make
+.if defined(FIDOGATE_RUNAS)
+	@${PERL5} -pi -e "s/OWNER.*= news/OWNER		= ${FIDOGATE_RUNAS}/" \
+		${WRKSRC}/config.make
+.endif
 
 pre-install:
 	${MKDIR} ${PREFIX}/libexec/fidogate
-	${MKDIR} ${PREFIX}/share/doc/fidogate/html
-	${MKDIR} ${PREFIX}/share/doc/fidogate/info
-	${MKDIR} ${PREFIX}/share/doc/fidogate/fido
-	${MKDIR} ${PREFIX}/share/doc/fidogate/howto
-	${MKDIR} ${PREFIX}/share/doc/fidogate/misc
-	${MKDIR} ${PREFIX}/share/doc/fidogate/gatebau
-
-DOCLIST=	\
-	fidogate.texi fidogate.txt \
-	gatebau94.txt kludge-rfc.doc msgid.doc \
-	qmail.txt texinfo.tex \
-	dirs.html index.html template.html \
-	fido \
-	howto \
-	misc \
-	rfc \
-	gatebau/msgid.sgml \
-	gatebau/msgid.tex \
-	gatebau/msgid.txt
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}/html ${DOCSDIR}/info ${DOCSDIR}/fido \
+		${DOCSDIR}/howto ${DOCSDIR}/misc ${DOCSDIR}/gatebau
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/fidogate
-	@cd ${WRKSRC}/doc; tar cf - ${DOCLIST} |\
-		(cd ${PREFIX}/share/doc/fidogate; tar xf -)
-	${MKDIR} ${PREFIX}/share/examples/fidogate
-	@cd ${WRKSRC}/examples; tar cf - . |\
-		(cd ${PREFIX}/share/examples/fidogate; tar xf -)
+	${MKDIR} ${DOCSDIR}
+	@${TAR} -C ${WRKSRC}/doc -cf - ${DOCLIST} | ${TAR} -C ${DOCSDIR} -xf -
+	${MKDIR} ${EXAMPLESDIR}
+	@${TAR} -C ${WRKSRC}/examples -cf - . | ${TAR} -C ${EXAMPLESDIR} -xf -
 .endif
 
 .include <bsd.port.post.mk>

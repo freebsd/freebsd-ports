@@ -17,8 +17,17 @@ MAINTAINER=	dinoex@FreeBSD.org
 MAN3=		parsedate.3
 MAN8=		ifmail.8 iftoss.8
 
+.if defined(IFMAIL_RUNAS)
+pre-configure:
+	@${PERL5} -pi -e "s/OWNER = ifmail/OWNER = ${IFMAIL_RUNAS}/" \
+		${WRKSRC}/CONFIG
+.endif
+
 pre-install:
-	@PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+.if !defined(IFMAIL_RUNAS)
+	if ! pw usershow ifmail; then pw useradd ifmail -g uucp -u 70 \
+		-h - -d /nonexistent -s /nonexistent -c "Ifmail Server"; fi
+.endif
 	${MKDIR} ${PREFIX}/libexec/ifmail
 
 post-install:
@@ -29,13 +38,13 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/iflib/${i} ${PREFIX}/man/man3
 .endfor
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/ifmail
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/ifmail
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
 .for i in ifcico ifgate iflib
-	${INSTALL_DATA} ${WRKSRC}/${i}/README ${PREFIX}/share/doc/ifmail/README.${i}
+	${INSTALL_DATA} ${WRKSRC}/${i}/README ${DOCSDIR}/README.${i}
 .endfor
+	${MKDIR} ${EXAMPLESDIR}
+	@${TAR} -C ${WRKSRC}/misc -cf - . | ${TAR} -C ${EXAMPLESDIR} -xf -
 .endif
-	${MKDIR} ${PREFIX}/share/examples/ifmail
-	@cd ${WRKSRC}/misc; tar cf - . | (cd ${PREFIX}/share/examples/ifmail; tar xf -)
 
 .include <bsd.port.mk>

@@ -68,12 +68,11 @@ post-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/Mk4py.so ${PYTHON_SITELIBDIR}/
 .endif
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/metakit
-	(${TAR} -C ${WRKSRC}/../doc -cf - . | \
-		${TAR} -C ${PREFIX}/share/doc/metakit --unlink -xf -)
+	${MKDIR} ${DOCSDIR}
+	${TAR} -C ${WRKSRC}/../doc -cf - . | \
+		${TAR} -C ${DOCSDIR} --unlink -xf -
 	${INSTALL_DATA} ${WRKSRC}/../MetaKit.html ${WRKSRC}/../CHANGES \
-		${WRKSRC}/../README ${WRKSRC}/../WHATSNEW \
-		${PREFIX}/share/doc/metakit
+		${WRKSRC}/../README ${WRKSRC}/../WHATSNEW ${DOCSDIR}/
 .endif
 
 test:

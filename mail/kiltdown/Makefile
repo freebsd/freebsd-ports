@@ -20,17 +20,17 @@ USE_X_PREFIX=	yes
 USE_QT_VER=	2
 USE_GMAKE=	yes
 MY_CONFIGURE_ARGS=	-release
-MY_CONFIGURE_ARGS+=	-qtinc /usr/X11R6/include/qt2 -qtlib /usr/X11R6/lib
-MY_CONFIGURE_ARGS+=	-dbinc /usr/local/include/db3 -dblib /usr/local/lib
+MY_CONFIGURE_ARGS+=	-qtinc ${X11BASE}/include/qt2 -qtlib ${X11BASE}/lib
+MY_CONFIGURE_ARGS+=	-dbinc ${LOCALBASE}/include/db3 -dblib ${LOCALBASE}/lib
 BUILD_ENV+=		PATH=${PATH}:${X11BASE}/bin
 
 post-patch:
 	@${PERL5} -pi \
 	 -e "s/SYS_CFLAGS=-pthread/SYS_CFLAGS=${PTHREAD_CFLAGS} ${CFLAGS}/" \
-		${WRKSRC}/configs/bsd-generic 
+		${WRKSRC}/configs/bsd-generic
 	@${PERL5} -pi \
 	 -e "s/SYS_LDFLAGS=-pthread/SYS_LDFLAGS=${PTHREAD_LIBS} ${LDFLAGS}/" \
-		${WRKSRC}/configs/bsd-generic 
+		${WRKSRC}/configs/bsd-generic
 
 do-configure:
 	(cd ${CONFIGURE_WRKSRC} && \
