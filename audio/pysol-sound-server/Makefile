@@ -13,12 +13,13 @@ MASTER_SITES=	http://wildsau.idv.uni-linz.ac.at/mfx/download/pysol/pysol-sound-s
 MAINTAINER=	sobomax@altavista.net
 
 BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
-LIB_DEPENDS=	SDL-1.0.2:${PORTSDIR}/devel/sdl \
-		smpeg.0:${PORTSDIR}/graphics/smpeg
+LIB_DEPENDS=	SDL-1.1.2:${PORTSDIR}/devel/sdl-devel \
+		smpeg.0:${PORTSDIR}/graphics/smpeg \
+		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
 RUN_DEPENDS=	python:${PORTSDIR}/lang/python
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	X11BASE="${X11BASE}"
+HAS_CONFIGURE=	yes
+ALL_TARGET=	pysolsoundservermodule.so
 
 .include <bsd.port.mk>
