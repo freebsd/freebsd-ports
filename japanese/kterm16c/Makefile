@@ -35,7 +35,7 @@ USE_XPM=	yes
 .include <bsd.port.pre.mk>
 
 .if ${XFREE86_VERSION} == 4
-BUILD_DEPENDS+=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
+EXTRACT_DEPENDS+=bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
 .endif
 
 DOCDIR=		${PREFIX}/share/doc/kterm16c
