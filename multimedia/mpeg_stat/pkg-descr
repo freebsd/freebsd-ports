@@ -1,0 +1,14 @@
+From the README:
+              MPEG Video Software Statistics Gatherer
+                  (Version 2.2; Feb 1, 1995)
+
+   Lawrence A. Rowe, Steve Smoot, Ketan Patel, and Brian Smith
+   Computer Science Division-EECS, Univ. of Calif. at Berkeley
+
+  This directory contains a public domain MPEG video statistics gatherer.
+  The decoder implements the standard described in the Committee 
+  Draft ISO/IEC CD 11172 dated December 6, 1991 which is
+  sometimes referred to as "Paris Format."
+
+eric.
+erich@FreeBSD.org
