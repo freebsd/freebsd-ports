@@ -1,6 +1,6 @@
 --- ../nas/nas-1.4.1.patch.orig	Thu Nov  1 17:27:31 2001
-+++ ../nas/nas-1.4.1.patch	Sun May 19 14:58:01 2002
-@@ -120,26 +120,137 @@
++++ ../nas/nas-1.4.1.patch	Thu Aug  8 16:47:25 2002
+@@ -120,26 +120,139 @@
    	    return(-1);
    	}
    
@@ -59,11 +59,13 @@
 + #endif						/* NEEDUSLEEP */
 +--- misc/nas-1.4.1/server/dda/voxware/auvoxware.c.orig	Sun Mar  5 03:40:55 2000
 ++++ misc/build/nas-1.4.1/server/dda/voxware/auvoxware.c	Sat Dec 16 22:11:35 2000
-+@@ -156,7 +156,9 @@
++@@ -155,8 +155,10 @@
++ #include <assert.h>
 + 
 + #ifdef __FreeBSD__
-+ # include <machine/soundcard.h>
++-# include <machine/soundcard.h>
 +-# include <machine/pcaudioio.h>
+++# include <sys/soundcard.h>
 ++# ifdef __i386__
 ++#  include <machine/pcaudioio.h>
 ++# endif
@@ -161,7 +163,7 @@
 +-#define NasConfigSearchPath /etc/nas/
 ++#define NasConfigSearchPath $(PROJECTROOT)/etc/
 + #endif
-+--- misc/build/nas-1.4.1/server/os/utils.c.orig	Tue Jul 23 23:48:23 2002
++--- misc/nas-1.4.1/server/os/utils.c.orig	Tue Jul 23 23:48:23 2002
 ++++ misc/build/nas-1.4.1/server/os/utils.c	Tue Jul 23 23:49:06 2002
 +@@ -120,7 +120,7 @@
 + 
