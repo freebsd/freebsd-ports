@@ -8,7 +8,7 @@ PORTNAME=	o2c
 PORTVERSION=	1.16
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.uni-kl.de/pub/informatik/software/ \
-		ftp://ftp.archive.de.uu.net/pub/programming/languages/oberon/www.uni-kl.de/OOC/files/misc/
+		http://www.breuninger.org/files/distfiles/
 
 MAINTAINER=	ob@breuninger.org
 
