@@ -3,7 +3,7 @@
 # Date created:		19 Sept. 1997
 # Whom:			Pedro Giffuni
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/11/17 10:50:50 tg Exp $
 #
 
 DISTNAME=	3.1.1
@@ -15,6 +15,7 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	giffunip@asme.org
 
+DIST_SUBDIR=	kaskade
 WRKSRC=         ${WRKDIR}/3.1
 MAKEFILE=	makefile
 ALL_TARGET=	k6
