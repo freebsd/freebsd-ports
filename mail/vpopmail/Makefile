@@ -42,6 +42,6 @@ QMAIL_DIR?=     /var/qmail
 #
 
 pre-configure:
-	@PKG_PREFIX=${PREFIX}/vpopmail ${PERL5} ${PKGDIR}/INSTALL
+	@PKG_PREFIX=${PREFIX}/vpopmail ${PERL5} ${PKGINSTALL}
 
 .include <bsd.port.mk>
