@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 #
-# $Id: log_accum.pl,v 1.34 1999/02/18 07:58:55 peter Exp $
+# $Id: log_accum.pl,v 1.35 1999/04/05 21:24:49 jdp Exp $
 #
 # Perl filter to handle the log messages from the checkin of files in
 # a directory.  This script will group the lists of files by log
@@ -627,7 +627,7 @@ for ($i = 0; ; $i++) {
 	    push(@text, &read_logfile("$SUMMARY_FILE.$i.$id", "  "));
 	}
     }
-    push(@text, "");
+    push(@text, "", "");
 }
 #
 # Put the log message at the beginning of the Changes file
