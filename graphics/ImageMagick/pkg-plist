@@ -1,10 +1,12 @@
 bin/Magick-config
 bin/animate
+bin/cgimagick
 bin/combine
 bin/convert
 bin/display
 bin/identify
 bin/import
+bin/iptcutil
 bin/mogrify
 bin/montage
 include/magick/PreRvIcccm.h
@@ -17,6 +19,7 @@ include/magick/classify.h
 include/magick/compress.h
 include/magick/config.h
 include/magick/delegates.h
+include/magick/draw.h
 include/magick/error.h
 include/magick/gems.h
 include/magick/image.h
