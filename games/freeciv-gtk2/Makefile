@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freeciv
-PORTVERSION=	1.13.0
+PORTVERSION=	1.14.0
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.freeciv.org/pub/freeciv/stable/ \
 		ftp://ftp.netc.pt/pub/freeciv/stable/ \
@@ -20,6 +20,7 @@ LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 USE_XPM=	yes
 USE_BZIP2=	yes
 WANT_GNOME=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
@@ -32,5 +33,8 @@ PKGNAMESUFFIX?=	-imlib
 .else
 LIB_DEPENDS+=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 .endif
+
+post-patch:
+	cd ${WRKSRC}; ${FIND} . -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e 's/@program_transform_name@//'
 
 .include <bsd.port.post.mk>
