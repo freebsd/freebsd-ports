@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dirmngr
-PORTVERSION=	0.5.6
+PORTVERSION=	0.9.0
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	alpha/dirmngr
@@ -17,13 +17,16 @@ COMMENT=	A client for managing and downloading certificate revocation lists
 BUILD_DEPENDS=	${LOCALBASE}/lib/libassuan.a:${PORTSDIR}/security/libassuan
 LIB_DEPENDS=	gcrypt.12:${PORTSDIR}/security/libgcrypt \
 		gpg-error:${PORTSDIR}/security/libgpg-error \
-		ksba.13:${PORTSDIR}/security/libksba
+		ksba.13:${PORTSDIR}/security/libksba \
+		pth:${PORTSDIR}/devel/pth
 
 USE_OPENLDAP=	yes
 USE_GETOPT_LONG=yes
 USE_LIBTOOL_VER=13
 USE_GMAKE=	yes
 INFO=		dirmngr
+
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=--disable-nls
