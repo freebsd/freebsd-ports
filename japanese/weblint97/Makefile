@@ -18,6 +18,8 @@ COMMENT=	An internationalized HTML checker with japanese message(EUC-JP)
 
 RUN_DEPENDS=	${SITE_PERL}/jcode.pl:${PORTSDIR}/japanese/jcode.pl
 
+BROKEN=		"Incomplete pkg-plist (port installs into nonstandard perl directory)"
+
 WRKSRC=		${WRKDIR}/weblint-97
 MANLANG=	ja
 MAN1=		jweblint.1
