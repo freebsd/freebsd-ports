@@ -1,74 +1,40 @@
-*** Makefile.freebsd	Sat Jun 19 07:44:14 1993
---- Makefile	Sun Nov 20 22:30:22 1994
-***************
-*** 30,36 ****
-  TMPDIR = /tmp
-  RECDIR = /usr/preserve
-  
-! JOVEHOME = /local
-  SHAREDIR = $(JOVEHOME)/lib/jove
-  LIBDIR = $(JOVEHOME)/lib/jove
-  BINDIR = $(JOVEHOME)/bin
---- 30,36 ----
-  TMPDIR = /tmp
-  RECDIR = /usr/preserve
-  
-! JOVEHOME = /usr/local
-  SHAREDIR = $(JOVEHOME)/lib/jove
-  LIBDIR = $(JOVEHOME)/lib/jove
-  BINDIR = $(JOVEHOME)/bin
+*** Makefile.orig	Tue Nov 22 14:46:24 1994
+--- Makefile	Tue Nov 22 14:50:29 1994
 ***************
 *** 39,49 ****
   DFLTSHELL = /bin/csh
   
   # to install executable files
 ! XINSTALL=cp
-! #XINSTALL=install -c -m 755 # -s
+! #XINSTALL=/usr/ucb/install -c -m 755 # -s
   # to install text files
 ! TINSTALL=cp
-! #TINSTALL=install -c -m 644
+! #TINSTALL=/usr/ucb/install -c -m 644
   
-  PROG = jove
-  VERSION = 4.14
+  # These should all just be right if the above ones are.
+  # You will confuse JOVE if you move anything from LIBDIR or SHAREDIR.
 --- 39,49 ----
   DFLTSHELL = /bin/csh
   
   # to install executable files
-! # XINSTALL=cp
+! #XINSTALL=cp
 ! XINSTALL=install -c -m 755 # -s
   # to install text files
-! # TINSTALL=cp
+! #TINSTALL=cp
 ! TINSTALL=install -c -m 644
   
-  PROG = jove
-  VERSION = 4.14
+  # These should all just be right if the above ones are.
+  # You will confuse JOVE if you move anything from LIBDIR or SHAREDIR.
 ***************
-*** 62,68 ****
-  # Select optimization level (flags passed to compiling and linking steps).
-  # On most systems, -g for debugging, -O for optimization.
-  
-! OPTFLAGS = -g
-  
-  # Select the right libraries for your system.
-  #	2.10BSD:LIBS = -ltermcap
---- 62,68 ----
-  # Select optimization level (flags passed to compiling and linking steps).
-  # On most systems, -g for debugging, -O for optimization.
-  
-! OPTFLAGS = -O
-  
-  # Select the right libraries for your system.
-  #	2.10BSD:LIBS = -ltermcap
-***************
-*** 121,127 ****
+*** 151,157 ****
   #
   # You can just say 'make SYSDEFS=-Dwhatever' on these systems.
   
-! SYSDEFS = 
+! SYSDEFS =
   
   # for SCO Xenix, set
   #	MEMFLAGS = -Mle
---- 121,127 ----
+--- 151,157 ----
   #
   # You can just say 'make SYSDEFS=-Dwhatever' on these systems.
   
@@ -76,22 +42,3 @@
   
   # for SCO Xenix, set
   #	MEMFLAGS = -Mle
-*** macvert.c.ORIG	Sun Apr 18 23:05:23 1993
---- macvert.c	Sun Nov 20 22:37:15 1994
-***************
-*** 56,67 ****
---- 56,69 ----
-  
-  #else
-  
-+ #ifndef __FreeBSD__
-  static long
-  ntohl(x)
-  register long x;
-  {
-  	return x;
-  }
-+ #endif /* __FreeBSD__ */
-  
-  #endif
-  
