@@ -75,6 +75,7 @@ bin/cons
 bin/cpgplot
 bin/cpgreport
 bin/cusp
+bin/cutgextract
 bin/cutseq
 bin/dan
 bin/dbiblast
@@ -237,6 +238,7 @@ share/EMBOSS/acd/corbatest.acd
 share/EMBOSS/acd/cpgplot.acd
 share/EMBOSS/acd/cpgreport.acd
 share/EMBOSS/acd/cusp.acd
+share/EMBOSS/acd/cutgextract.acd
 share/EMBOSS/acd/cutseq.acd
 share/EMBOSS/acd/dan.acd
 share/EMBOSS/acd/dbiblast.acd
@@ -842,9 +844,9 @@ share/doc/EMBOSS/programs/html/einverted.html
 share/doc/EMBOSS/programs/html/ekitsch.html
 share/doc/EMBOSS/programs/html/emboss_icon.gif
 share/doc/EMBOSS/programs/html/embossdata.html
-share/doc/EMBOSS/programs/html/embossversion.html
 share/doc/EMBOSS/programs/html/emix.html
 share/doc/EMBOSS/programs/html/emma.html
+share/doc/EMBOSS/programs/html/emnu.html
 share/doc/EMBOSS/programs/html/emowse.html
 share/doc/EMBOSS/programs/html/eneighbor.html
 share/doc/EMBOSS/programs/html/entret.html
@@ -971,7 +973,6 @@ share/doc/EMBOSS/programs/html/restml.html
 share/doc/EMBOSS/programs/html/restover.html
 share/doc/EMBOSS/programs/html/restrict.html
 share/doc/EMBOSS/programs/html/revseq.html
-share/doc/EMBOSS/programs/html/scopalign.html
 share/doc/EMBOSS/programs/html/scope.html
 share/doc/EMBOSS/programs/html/seealso.html
 share/doc/EMBOSS/programs/html/seqboot.html
@@ -981,7 +982,6 @@ share/doc/EMBOSS/programs/html/seqretall.html
 share/doc/EMBOSS/programs/html/seqretfeat.html
 share/doc/EMBOSS/programs/html/seqretset.html
 share/doc/EMBOSS/programs/html/seqretsplit.html
-share/doc/EMBOSS/programs/html/showalign.html
 share/doc/EMBOSS/programs/html/showdb.html
 share/doc/EMBOSS/programs/html/showfeat.html
 share/doc/EMBOSS/programs/html/showorf.html
@@ -990,7 +990,6 @@ share/doc/EMBOSS/programs/html/shuffleseq.html
 share/doc/EMBOSS/programs/html/sigcleave.html
 share/doc/EMBOSS/programs/html/silent.html
 share/doc/EMBOSS/programs/html/splitter.html
-share/doc/EMBOSS/programs/html/stamps.html
 share/doc/EMBOSS/programs/html/stretcher.html
 share/doc/EMBOSS/programs/html/stssearch.html
 share/doc/EMBOSS/programs/html/supermatcher.html
@@ -1086,9 +1085,9 @@ share/doc/EMBOSS/programs/text/egendist.txt
 share/doc/EMBOSS/programs/text/einverted.txt
 share/doc/EMBOSS/programs/text/ekitsch.txt
 share/doc/EMBOSS/programs/text/embossdata.txt
-share/doc/EMBOSS/programs/text/embossversion.txt
 share/doc/EMBOSS/programs/text/emix.txt
 share/doc/EMBOSS/programs/text/emma.txt
+share/doc/EMBOSS/programs/text/emnu.txt
 share/doc/EMBOSS/programs/text/emowse.txt
 share/doc/EMBOSS/programs/text/eneighbor.txt
 share/doc/EMBOSS/programs/text/entret.txt
@@ -1175,7 +1174,6 @@ share/doc/EMBOSS/programs/text/restml.txt
 share/doc/EMBOSS/programs/text/restover.txt
 share/doc/EMBOSS/programs/text/restrict.txt
 share/doc/EMBOSS/programs/text/revseq.txt
-share/doc/EMBOSS/programs/text/scopalign.txt
 share/doc/EMBOSS/programs/text/scope.txt
 share/doc/EMBOSS/programs/text/seealso.txt
 share/doc/EMBOSS/programs/text/seqboot.txt
@@ -1185,7 +1183,6 @@ share/doc/EMBOSS/programs/text/seqretall.txt
 share/doc/EMBOSS/programs/text/seqretfeat.txt
 share/doc/EMBOSS/programs/text/seqretset.txt
 share/doc/EMBOSS/programs/text/seqretsplit.txt
-share/doc/EMBOSS/programs/text/showalign.txt
 share/doc/EMBOSS/programs/text/showdb.txt
 share/doc/EMBOSS/programs/text/showfeat.txt
 share/doc/EMBOSS/programs/text/showorf.txt
@@ -1194,7 +1191,6 @@ share/doc/EMBOSS/programs/text/shuffleseq.txt
 share/doc/EMBOSS/programs/text/sigcleave.txt
 share/doc/EMBOSS/programs/text/silent.txt
 share/doc/EMBOSS/programs/text/splitter.txt
-share/doc/EMBOSS/programs/text/stamps.txt
 share/doc/EMBOSS/programs/text/stretcher.txt
 share/doc/EMBOSS/programs/text/stssearch.txt
 share/doc/EMBOSS/programs/text/supermatcher.txt
