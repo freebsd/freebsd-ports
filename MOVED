@@ -1036,3 +1036,8 @@ x11-servers/XttXF86srv-common||2004-04-10|removed broken port
 x11-servers/XttXF86srv-xfs||2004-04-10|removed broken port
 emulators/scummvm|games/scummvm|2004-04-13|new category
 www/mod_jk2|www/mod_jk-apache2|2004-04-18|prefer mod_jk2 for mod_jk 2.x branch 
+mail/smunge||2004-04-19|removed port depending on OpenLDAP 1.2
+net/eudc-emacs20||2004-04-19|removed port depending on OpenLDAP 1.2
+net/openldap12||2004-04-19|removed ancient port
+net/py-ldap1||2004-04-19|removed port depending on OpenLDAP 1.2
+www/web500gw||2004-04-19|removed port depending on OpenLDAP 1.2
