@@ -1,9 +1,20 @@
 @comment $FreeBSD$
-@unexec if cmp -s %D/etc/grenouillerc %D/etc/grenouillerc.sample; then rm -f %D/etc/grenouillerc; fi
-etc/grenouillerc.sample
+@unexec if cmp -s %D/%%CONF_DIR%%/grenouillerc %D/%%CONF_DIR%%/grenouillerc.sample; then rm -f %D/%%CONF_DIR%%/grenouillerc; fi
+%%CONF_DIR%%/grenouillerc.sample
 @comment no @exec: see pkg-install/+INSTALL for details.
-etc/rc.d/plgrenouille.sh
-libexec/plgrenouille
-%%PORTDOCS%%share/doc/plgrenouille/FAQ
-%%PORTDOCS%%share/doc/plgrenouille/README
-%%PORTDOCS%%@dirrm share/doc/plgrenouille
+%%RC_DIR%%/plgrenouille.sh
+%%LBIN_DIR%%/plgrenouille
+%%SITE_PERL%%/Grenouille/Comm.pm
+%%SITE_PERL%%/Grenouille/Config.pm
+%%SITE_PERL%%/Grenouille/Log.pm
+%%SITE_PERL%%/Grenouille/Numbers.pm
+%%SITE_PERL%%/Grenouille/Preferences.pm
+%%SITE_PERL%%/Grenouille/Queue.pm
+%%SITE_PERL%%/Grenouille/Scheduler.pm
+%%SITE_PERL%%/Grenouille/System.pm
+%%SITE_PERL%%/Grenouille/Vars.pm
+%%SITE_PERL%%/Grenouille/Version.pm
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%SITE_PERL%%/Grenouille
