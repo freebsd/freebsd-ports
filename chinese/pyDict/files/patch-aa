@@ -1,5 +1,5 @@
---- dict.py.orig	Wed Oct  4 14:37:47 2000
-+++ dict.py	Wed Oct  4 15:03:58 2000
+--- dict.py.orig	Mon Sep 18 07:31:48 2000
++++ dict.py	Sat Mar 17 02:23:23 2001
 @@ -252,7 +252,7 @@
      def execute(self,word):	# English to Chinese
  		# move self.index to top
@@ -18,6 +18,15 @@
  	if input == None:
  		inp = raw_input('word:')
  	else:
+@@ -503,7 +503,7 @@
+ 			console_c_dict()
+ 			return
+ 		else:	
+-			command = g_command + " '^" + inp + "=.*$' " + dict_path + lower(word[0]) + '.lib'
++			command = g_command + " '^" + inp + "=.*$' " + dict_path + lower(inp[0]) + '.lib'
+ 			result_line = os.popen(command,'r').readline()
+ 			#if result_lines:
+ 			if result_line:
 @@ -532,7 +532,7 @@
  
  def console_c_dict(input=None):
