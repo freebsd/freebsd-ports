@@ -1,0 +1,6 @@
+lib/perl5/site_perl/%%PERL_VER%%/Tk/Enscript.pm
+lib/perl5/site_perl/%%PERL_VER%%/Tk/enscript.cfg
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Enscript/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Enscript
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Tk 2>/dev/null || true
