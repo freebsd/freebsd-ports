@@ -19,6 +19,8 @@ lib/asis/a4g-a_sinput.adb
 lib/asis/a4g-a_sinput.ads
 lib/asis/a4g-a_types.adb
 lib/asis/a4g-a_types.ads
+lib/asis/a4g-asis_tables.adb
+lib/asis/a4g-asis_tables.ads
 lib/asis/a4g-c_u_info.adb
 lib/asis/a4g-c_u_info.ads
 lib/asis/a4g-contt-dp.adb
@@ -72,6 +74,8 @@ lib/asis/a4g-span_beginning.adb
 lib/asis/a4g-span_beginning.ads
 lib/asis/a4g-span_end.adb
 lib/asis/a4g-span_end.ads
+lib/asis/a4g-stand.adb
+lib/asis/a4g-stand.ads
 lib/asis/a4g-tree_rec.ads
 lib/asis/a4g-u_conv.adb
 lib/asis/a4g-u_conv.ads
@@ -95,6 +99,8 @@ lib/asis/asis-elements.adb
 lib/asis/asis-compilation_units.ads
 lib/asis/asis-data_decomposition-aux.adb
 lib/asis/asis-data_decomposition-aux.ads
+lib/asis/asis-data_decomposition-extensions.adb
+lib/asis/asis-data_decomposition-extensions.ads
 lib/asis/asis-data_decomposition-debug.adb
 lib/asis/asis-data_decomposition-debug.ads
 lib/asis/asis-data_decomposition-set_get.adb
@@ -203,6 +209,7 @@ lib/asis/a4g-a_output.ali
 lib/asis/a4g-a_sem.ali
 lib/asis/a4g-a_sinput.ali
 lib/asis/a4g-a_types.ali
+lib/asis/a4g-asis_tables.ali
 lib/asis/a4g-c_u_info.ali
 lib/asis/a4g-contt-dp.ali
 lib/asis/a4g-contt-sd.ali
@@ -231,6 +238,7 @@ lib/asis/a4g-s_u_info.ali
 lib/asis/a4g-skip_tb.ali
 lib/asis/a4g-span_beginning.ali
 lib/asis/a4g-span_end.ali
+lib/asis/a4g-stand.ali
 lib/asis/a4g-tree_rec.ali
 lib/asis/a4g-u_conv.ali
 lib/asis/a4g-unit_rec.ali
@@ -243,6 +251,7 @@ lib/asis/asis-compilation_units-relations.ali
 lib/asis/asis-compilation_units-times.ali
 lib/asis/asis-compilation_units.ali
 lib/asis/asis-data_decomposition-aux.ali
+lib/asis/asis-data_decomposition-extensions.ali
 lib/asis/asis-data_decomposition-set_get.ali
 lib/asis/asis-data_decomposition-vcheck.ali
 lib/asis/asis.ali
@@ -294,8 +303,8 @@ lib/asis/urealp.ali
 lib/asis/widechar.ali
 lib/libasis.a
 
-lib/libasis-3.12p.so
-lib/libasis-3.12p.so.1
+lib/libasis-3.13p.so
+lib/libasis-3.13p.so.1
 @exec /sbin/ldconfig -m %D/lib
 @unexec /sbin/ldconfig -R
 
