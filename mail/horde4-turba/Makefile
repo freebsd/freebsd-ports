@@ -27,6 +27,8 @@ COMMENT=	The Horde contact management application
 #
 # - WITHOUT_LDAP        : if you do not need OpenLDAP;
 #
+# - WITH_IMSP		: run IMSP cyrus-imspd.
+#
 #-----------------------------------------------------------------------
 
 RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/rpc.php:${PORTSDIR}/www/horde
@@ -55,11 +57,22 @@ CONFDIR=	${TURBADIR}/config
 
 HORDE_INC=	${LOCALBASE}/etc/horde
 
+.if exists(${LOCALBASE}/sbin/imspd)
+WITH_IMSP=	yes
+.endif
+.if defined(WITH_IMSP)
+RUN_DEPENDS+=	imspd:${PORTSDIR}/databases/cyrus-imspd
+.endif
+
 pre-configure:
+	@${RM} ${WRKSRC}/config/sources.php.dist.orig
 	@${SED} -e "s:/home/httpd/html/horde/turba:${TURBADIR}:g"	\
 		${FILESDIR}/httpd.conf.turba > ${WRKDIR}/httpd.conf.turba
 	@${REINPLACE_CMD} -e "s:/usr/bin/ldapadd:${LOCALBASE}/bin/ldapadd:"	\
 		${WRKSRC}/scripts/ldap/addou.pl
+.if defined(WITH_IMSP)
+	@${REINPLACE_CMD} -e "s://UNCOMMENTIFIMSP ::" ${WRKSRC}/config/sources.php.dist
+.endif
 
 do-install:
 	@${MKDIR}  ${TURBADIR}
