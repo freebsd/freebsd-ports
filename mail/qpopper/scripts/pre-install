@@ -8,7 +8,7 @@ if ! id -u pop > /dev/null 2>&1; then
   echo ""
   exit 1
 fi
-usrdir=${PREFIX}/etc/popper
+usrdir=${PREFIX}/etc/qpopper
 if [ ! -d $usrdir ]; then
   mkdir -p $usrdir
 fi
