@@ -9,8 +9,10 @@ PORTNAME=	mysql
 PORTREVISION=	0
 PKGNAMESUFFIX=	-client
 
-MASTERDIR=	${.CURDIR}/../mysql41-server
+MAINTAINER=	sysadmin@alexdupre.com
 COMMENT=	Multithreaded SQL database (client)
+
+MASTERDIR=	${.CURDIR}/../mysql41-server
 PKGINSTALL=	mustnotexist
 PLIST=		${PKGDIR}/pkg-plist.client
 
