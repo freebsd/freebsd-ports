@@ -4,7 +4,7 @@
 # Date created:		30 April 1999
 # Whom:			FUJISHIMA Satsuki <k5@respo.or.jp>
 #
-# $Id: Makefile,v 1.2 1999/05/01 02:06:34 steve Exp $
+# $Id: Makefile,v 1.3 1999/05/05 14:27:56 flathill Exp $
 #
 
 DISTNAME=       rarlnx25
@@ -16,7 +16,7 @@ EXTRACT_SUFX=   .sfx
 
 MAINTAINER=     k5@respo.or.jp
 
-RUN_DEPENDS=	/compat/linux/lib/ld-linux.so.2:${PORTSDIR}/emulators/linux_lib
+RUN_DEPENDS=	/compat/linux/lib/ld-linux.so.2:${PORTSDIR}/emulators/linux_base
 
 ONLY_FOR_ARCHS=	i386
 NO_PACKAGE=     Only unmodified original package can be distributed

@@ -3,7 +3,7 @@
 # Date created:         17 Mar 1998
 # Whom:                 CHOI Junho <cjh@kr.freebsd.org
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/05/29 08:32:13 kuriyama Exp $
 #
 
 DISTNAME=       hanIM-${HANIM_VER}-${HANIM_VER_PL}.i386
@@ -16,7 +16,7 @@ MAINTAINER=     cjh@kr.freebsd.org
 
 BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/misc/rpm
 RUN_DEPENDS=	${PREFIX}/lib/X11/fonts/local/mzgt16h1.pcf.gz:${PORTSDIR}/korean/mizifont \
-		/compat/linux/lib/libc.so.6:${PORTSDIR}/emulators/linux_lib \
+		/compat/linux/lib/libc.so.6:${PORTSDIR}/emulators/linux_base \
 		/compat/linux/usr/share/locale/ko/LC_MESSAGES/SYS_LC_MESSAGES:${PORTSDIR}/korean/linux_locale
 
 NO_CDROM=	"Not a free software"

@@ -4,7 +4,7 @@
 # Date created:         14 Feb 1998
 # Whom:                 obrien@cs.ucdavis.edu
 #
-# $Id: Makefile,v 1.8 1999/01/13 04:00:08 scrappy Exp $
+# $Id: Makefile,v 1.9 1999/01/31 22:23:03 obrien Exp $
 #
 
 DISTNAME=	communicator-v407-us.x86-unknown-linux2.0_libc5
@@ -15,7 +15,7 @@ MAINTAINER=	obrien@FreeBSD.ORG
 
 Y2K=		http://home.netscape.com/products/year2000/faq/client.html
 
-RUN_DEPENDS=	/compat/linux/lib/ld-linux.so.1:${PORTSDIR}/emulators/linux_lib
+RUN_DEPENDS=	/compat/linux/lib/ld-linux.so.1:${PORTSDIR}/emulators/linux_base
 
 RESTRICTED=	"Commerial & USA ITAR export restrictions"
 ONLY_FOR_ARCHS=	i386

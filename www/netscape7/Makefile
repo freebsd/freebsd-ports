@@ -4,7 +4,7 @@
 # Whom:				girgen@partitur.se
 # Based on work by:		thepish
 #
-# $Id:$
+# $Id: Makefile,v 1.10 1999/07/01 23:36:19 sada Exp $
 #
 
 MASTER_SITES?=	ftp://ftp.netscape.com/pub/communicator/english/4.61/unix/supported/linux20_libc5/complete_install/
@@ -12,7 +12,7 @@ DISTFILES?=	communicator-v461-export.x86-unknown-linux2.0.tar.gz
 
 MAINTAINER=	girgen@partitur.se
 
-RUN_DEPENDS=	/compat/linux/lib/libc.so.5:${PORTSDIR}/emulators/linux_lib
+RUN_DEPENDS=	/compat/linux/usr/i486-linux-libc5/lib/libc.so.5:${PORTSDIR}/emulators/linux_base
 
 WRKSRC=		${WRKDIR}/${BROWSER}-v461.x86-unknown-linux2.0
 

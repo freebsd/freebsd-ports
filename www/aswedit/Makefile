@@ -3,7 +3,7 @@
 # Date created:		25 June 1997
 # Whom:			brett@peloton.physics.montana.edu
 #
-# $Id: Makefile,v 1.3 1999/01/07 02:31:51 simokawa Exp $
+# $Id: Makefile,v 1.4 1999/05/05 13:45:58 flathill Exp $
 #
 
 DISTNAME=	asWedit-4.0-i386.linux
@@ -16,7 +16,7 @@ MASTER_SITES=	http://www.advasoft.com/asWedit/ \
 
 MAINTAINER=	brett@peloton.physics.montana.edu
 
-RUN_DEPENDS=    /compat/linux/lib/libc.so.5:${PORTSDIR}/emulators/linux_lib
+RUN_DEPENDS=    /compat/linux/usr/i486-linux-libc5/lib/libc.so.5:${PORTSDIR}/emulators/linux_base
 
 ONLY_FOR_ARCHS=	i386
 RESTRICTED=     "Commercial software"
