@@ -1,0 +1,14 @@
+bin/glewinfo
+include/GL/glew.h
+include/GL/glxew.h
+include/GL/wglew.h
+lib/libGLEW.a
+lib/libGLEW.so
+lib/libGLEW.so.1
+%%PORTDOCS%%%%DOCSDIR%%/glew.css
+%%PORTDOCS%%%%DOCSDIR%%/README.html
+%%PORTDOCS%%%%DOCSDIR%%/glew.html
+%%PORTDOCS%%%%DOCSDIR%%/glxew.html
+%%PORTDOCS%%%%DOCSDIR%%/wglew.html
+%%PORTDOCS%%%%DOCSDIR%%/glew.png
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -1,0 +1,11 @@
+The goal of the OpenGL Extension Wrangler Library (GLEW) is to assist
+C/C++ OpenGL developers with two tedious tasks: initializing and using
+extensions and writing portable applications. GLEW provides an efficient
+run-time mechanism to determine whether a certain extension is supported
+by the driver or not. OpenGL core and extension functionality is exposed
+via a single header file.
+
+WWW: http://glew.sourceforge.net/
+
+- Igor Pokrovsky
+tiamat@comset.net
