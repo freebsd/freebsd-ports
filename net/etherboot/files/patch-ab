@@ -1,0 +1,19 @@
+*** Config.orig	Fri Oct 22 09:20:07 1999
+--- Config	Fri Oct 22 09:20:40 1999
+***************
+*** 82,88 ****
+  CFLAGS+=	-DMOTD -DIMAGE_MENU
+  
+  # Enable for FreeBSD boot image support
+! # CFLAGS+=	-DAOUT_IMAGE -DELF_IMAGE
+  
+  # For prompting and default on timeout
+  # CFLAGS+=	-DASK_BOOT=2 -DANS_DEFAULT=ANS_NETWORK
+--- 82,88 ----
+  CFLAGS+=	-DMOTD -DIMAGE_MENU
+  
+  # Enable for FreeBSD boot image support
+! CFLAGS+=	-DAOUT_IMAGE -DELF_IMAGE
+  
+  # For prompting and default on timeout
+  # CFLAGS+=	-DASK_BOOT=2 -DANS_DEFAULT=ANS_NETWORK
