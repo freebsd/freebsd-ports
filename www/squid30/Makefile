@@ -25,11 +25,43 @@
 #   If you define SQUID_LANGUAGES, select which language should be the default
 #   (default: English)
 # SQUID_CONFIGURE_ARGS
-#   Additional configuration options, see below for a list
+#   Additional configuration options.
+#   To enable them, use an assignment like
+#   SQUID_CONFIGURE_ARGS="--enable-dlmalloc --enable-truncate"
+#   Below most of the additional configuration options are listed,
+#   please see the configure script in the squid source distribution for a
+#   complete list. Note that you probably do not need to worry about them.
+#
+#    --enable-dlmalloc
+#     Compile and use the malloc package from Doug Lea
+#    --enable-gnuregex
+#     Compile and use the supplied GNUregex routines instead of BSD regex.
+#    --enable-xmalloc-statistics
+#     Show malloc statistics in status page
+#    --enable-time-hack
+#     Optimize time updates to one per second rather than calling gettimeofday()
+#    --enable-cachemgr-hostname=some.hostname
+#     Set an explicit hostname in cachemgr.cgi
+#    --enable-truncate
+#     Use truncate() rather than unlink()
+#    --disable-unlinkd
+#     Do not use "unlinkd"
+#    --with-aufs-threads=N_THREADS
+#     Tune the number of worker threads for the aufs object
+#    --with-coss-membuf-size
+#     COSS membuf size (default: 1048576 bytes)
+#
+#    This option does not work on FreeBSD at the moment:
+#
+#    --enable-ipf-transparent
+#     Enable Transparent Proxy support for IP-Filter systems (incl 3.0)
+#     (IPFilter headers are not currently installed to the base system,
+#     PRs ports/60700 and misc/44148 describe the problem; see
+#     http://www.squid-cache.org/Doc/FAQ/FAQ-17.html for information
+#     about how to do transparent proxying with ipfw)
 
 PORTNAME=	squid
-PORTVERSION=	2.5.5
-PORTREVISION=	12
+PORTVERSION=	2.5.6
 CATEGORIES=	www
 MASTER_SITES=	\
 		ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
@@ -38,35 +70,11 @@ MASTER_SITES=	\
 		ftp://ftp.leo.org/pub/comp/general/infosys/www/servers/squid/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/squid/&,}
 MASTER_SITE_SUBDIR=	squid-2/STABLE
-DISTNAME=	squid-2.5.STABLE5
+DISTNAME=	squid-2.5.STABLE6
 DIST_SUBDIR=	squid2.5
 
 PATCH_SITES=	http://www.squid-cache.org/Versions/v2/2.5/bugs/
-PATCHFILES=	squid-2.5.STABLE5-ntlm_assert.patch \
-		squid-2.5.STABLE5-ldap.patch \
-		squid-2.5.STABLE5-helper_warning.patch \
-		squid-2.5.STABLE5-vary.patch \
-		squid-2.5.STABLE5-deny_info.patch \
-		squid-2.5.STABLE5-CONNECT_timeout.patch \
-		squid-2.5.STABLE5-cache_swap_log.patch \
-		squid-2.5.STABLE5-ntlm_warning.patch \
-		squid-2.5.STABLE5-rfc1035NameUnpack.patch \
-		squid-2.5.STABLE5-digest_blank.patch \
-		squid-2.5.STABLE5-post_assert.patch \
-		squid-2.5.STABLE5-digest_ERR.patch \
-		squid-2.5.STABLE5-turkish_ERR_DNS_FAIL.patch \
-		squid-2.5.STABLE5-vary_negatively.patch \
-		squid-2.5.STABLE5-range_offset_limit.patch \
-		squid-2.5.STABLE5-large_cache_mem.patch \
-		squid-2.5.STABLE5-least-load.patch \
-		squid-2.5.STABLE5-cacheCurrentUnlinkRequests.patch \
-		squid-2.5.STABLE5-debug_client_ip.patch \
-		squid-2.5.STABLE5-ftp_html_doctype.patch \
-		squid-2.5.STABLE5-dns_localhost.patch \
-		squid-2.5.STABLE5-msnt_auth_doc.patch \
-		squid-2.5.STABLE5-CONNECT_log_size.patch \
-		squid-2.5.STABLE5-proxy_abuse.patch \
-		squid-2.5.STABLE5-ntlm_auth_overflow.patch
+PATCHFILES=	squid-2.5.STABLE6.ufs_no_valid_dir.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	tmseck@netcologne.de
@@ -246,38 +254,7 @@ SQUID_DEFAULT_LANG?=	English
 CONFIGURE_ARGS+=	--enable-err-languages="${SQUID_LANGUAGES}" \
 			--enable-default-err-language=${SQUID_DEFAULT_LANG}
 
-# Other not so common configure options you can set via SQUID_CONFIGURE_ARGS:
-# Please see the configure script in the squid source distribution for a
-# complete list.
-#
-# --enable-dlmalloc
-#  Compile and use the malloc package from Doug Lea
-# --enable-gnuregex
-#  Compile and use the supplied GNUregex routines instead of BSD regex.
-# --enable-xmalloc-statistics
-#  Show malloc statistics in status page
-# --enable-time-hack
-#  Optimize time updates to one per second rather than calling gettimeofday()
-# --enable-cachemgr-hostname=some.hostname
-#  Set an explicit hostname in cachemgr.cgi
-# --enable-truncate
-#  Use truncate() rather than unlink()
-# --disable-unlinkd
-#  Do not use "unlinkd"
-# --with-aufs-threads=N_THREADS
-#  Tune the number of worker threads for the aufs object
-# --with-coss-membuf-size
-#  COSS membuf size (default: 1048576 bytes)
-#
-# This option does not yet work on FreeBSD:
-#
-# --enable-ipf-transparent
-#  Enable Transparent Proxy support for IP-Filter systems (incl 3.0)
-#  (IPFilter headers are not currently installed to the base system,
-#  PRs ports/60700 and misc/44148 describe the problem; see
-#  http://www.squid-cache.org/Doc/FAQ/FAQ-17.html for information
-#  about how to do transparent proxying with ipfw)
-
+# Finally, add additional user specified configuration options:
 CONFIGURE_ARGS+=	${SQUID_CONFIGURE_ARGS}
 
 CONFIGURE_ENV+=		CFLAGS="${CFLAGS}" \
