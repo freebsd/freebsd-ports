@@ -18,8 +18,6 @@ DISTFILES=	X335src-1.tgz X335src-2.tgz
 
 MAINTAINER=	jmz@FreeBSD.org
 
-.include <bsd.port.pre.mk>
-
 IS_INTERACTIVE=	yes	# configure script asks questions
 NO_PACKAGE=	package available from XFree86
 ALL_TARGET=	World
