@@ -1,5 +1,5 @@
-*** goferc.0	Thu Jun 23 16:00:00 1994
---- goferc	Wed Feb  8 01:12:53 1995
+*** ../scripts/goferc.0	Thu Jun 23 16:00:00 1994
+--- ../scripts/goferc	Wed Feb  8 01:12:53 1995
 ***************
 *** 29,39 ****
         ;;
