@@ -24,3 +24,5 @@ MD5 (rpm/i386/8.0/rpm-build-4.1-1.06.i386.rpm) = a6cc55182420e370ddbad6536e0297f
 SIZE (rpm/i386/8.0/rpm-build-4.1-1.06.i386.rpm) = 79313
 MD5 (rpm/i386/8.0/rpm-devel-4.1-1.06.i386.rpm) = dc6385128ffc4057cffa5ac66da9ab7c
 SIZE (rpm/i386/8.0/rpm-devel-4.1-1.06.i386.rpm) = 3255193
+MD5 (rpm/i386/8.0/glibc-kernheaders-2.4-7.20.i386.rpm) = d707704a0ec9af5e650001a591636279
+SIZE (rpm/i386/8.0/glibc-kernheaders-2.4-7.20.i386.rpm) = 846425
