@@ -1,15 +1,14 @@
---- makefile.orig	Sun Sep 10 19:59:06 2000
-+++ makefile	Sun Sep 10 20:00:41 2000
-@@ -10,9 +10,10 @@
- # Send bug-reports and/or questions to: gerard@research.bell-labs.com
+--- makefile.orig	Wed Feb 20 13:40:54 2002
++++ makefile	Sun Apr  7 17:44:50 2002
+@@ -11,8 +11,9 @@
  # The book is available frm www.amazon.com
  
--CC=cc -g		# or any other ansi compatible c compiler
-+# CC=cc -g		# or any other ansi compatible c compiler
- # CC=cc -g -DNXT	# if you need the X operator in LTL
+ # CC=cc -g		# or any other ansi compatible c compiler
+-CC=cc -g -DNXT	# if you need the X operator in LTL
 -CFLAGS=-ansi -D_POSIX_SOURCE	# on some systems add: -I/usr/include
++# CC=cc -g -DNXT	# if you need the X operator in LTL
 +# CFLAGS=-ansi -D_POSIX_SOURCE	# on some systems add: -I/usr/include
-+CC += -DNXT
++CFLAGS += -DNXT
  
  #	on Solaris:	add -DSOLARIS
  #	on PCs:		add -DPC
