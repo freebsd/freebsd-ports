@@ -6,19 +6,19 @@
 #
 
 PORTNAME=	shim-ruby18
-PORTVERSION=	1.8.0.p2.2003.04.19
-PORTREVISION=	1
+PORTVERSION=	1.8.1.p2
 CATEGORIES=	lang devel ruby
 MASTER_SITES=	${MASTER_SITE_RUBY}
 MASTER_SITE_SUBDIR=	shim
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-DISTNAME=	shim-ruby16_18-1.8.0-preview2-2003.04.19
+DISTNAME=	shim-ruby16_18-1.8.1-preview2
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A set of Ruby modules to provide Ruby 1.8 functionalities
 
 USE_BZIP2=	yes
+USE_OPENSSL=	yes
 
 USE_RUBY=	yes
 
