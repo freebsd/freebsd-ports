@@ -1,7 +1,0 @@
-%%PEARDIR%%/XML/RSS.php
-%%PKGREGDIR%%/package.xml
-%%PORTDOCS%%%%PEARDIR%%/tests/XML_RSS/test.rss
-%%PORTDOCS%%%%PEARDIR%%/tests/XML_RSS/01-parse.phpt
-@unexec rmdir %D/%%PEARDIR%%/XML 2>/dev/null || true
-@dirrm %%PKGREGDIR%%
-%%PORTDOCS%%@dirrm %%PEARDIR%%/tests/XML_RSS

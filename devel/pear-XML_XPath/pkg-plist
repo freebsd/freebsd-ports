@@ -1,9 +1,0 @@
-%%PEARDIR%%/XPath.php
-%%PEARDIR%%/XPath/common.php
-%%PEARDIR%%/XPath/error.php
-%%PEARDIR%%/XPath/result.php
-%%PKGREGDIR%%/package.xml
-%%PORTDOCS%%%%PEARDIR%%/docs/XML_XPath/XML_XPath_example.php
-@dirrm %%PEARDIR%%/XPath
-@dirrm %%PKGREGDIR%%
-%%PORTDOCS%%@dirrm %%PEARDIR%%/docs/XML_XPath

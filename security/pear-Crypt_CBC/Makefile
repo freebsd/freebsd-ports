@@ -7,7 +7,7 @@
 
 PORTNAME=	Crypt_CBC
 PORTVERSION=	0.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security www pear
 
 MAINTAINER=	ports@FreeBSD.org
@@ -16,12 +16,9 @@ COMMENT=	PEAR class to emulate Perl's Crypt::CBC module
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+CATEGORY=	Crypt
+FILES=		CBC.php
+
 .include <bsd.port.pre.mk>
-.include "${.CURDIR}/../../devel/pear-PEAR/Makefile.common"
-
-do-install:
-	@${MKDIR} ${PEARDIR}/Crypt
-	@${CP} -Rp ${WRKSRC}/CBC.php ${PEARDIR}/Crypt
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PEARDIR}/Crypt
-
+.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
 .include <bsd.port.post.mk>

@@ -7,6 +7,7 @@
 
 PORTNAME=	Net_URL
 PORTVERSION=	1.0.10
+PORTREVISION=	1
 CATEGORIES=	net www pear
 MASTER_SITES=	http://pear.php.net/get/
 PKGNAMEPREFIX=	pear-
@@ -19,13 +20,9 @@ COMMENT=	Easy parsing of Urls
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+CATEGORY=	Net
+FILES=		URL.php
+
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
-
-do-install:
-	@${INSTALL} -d -m 755 ${PKGREGDIR}
-	@${INSTALL} -d -m 755 ${PEARDIR}/Net
-	@${INSTALL_DATA} ${WRKDIR}/package.xml ${PKGREGDIR}
-	@${INSTALL_DATA} ${WRKSRC}/URL.php ${PEARDIR}/Net
-
 .include <bsd.port.post.mk>

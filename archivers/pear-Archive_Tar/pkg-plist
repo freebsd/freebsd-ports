@@ -1,9 +1,0 @@
-%%PEARDIR%%/Archive/Tar.php
-%%PKGREGDIR%%/package.xml
-%%PORTDOCS%%%%PEARDIR%%/docs/Archive_Tar/Archive_Tar.txt
-@dirrm %%PEARDIR%%/Archive
-@dirrm %%PKGREGDIR%%
-%%PORTDOCS%%@dirrm %%PEARDIR%%/docs/Archive_Tar
-@unexec rmdir %D/share/pear/docs 2> /dev/null || true
-@unexec rmdir %D/share/pear/.registry 2> /dev/null || true
-@unexec rmdir %D/share/pear/packages 2> /dev/null || true

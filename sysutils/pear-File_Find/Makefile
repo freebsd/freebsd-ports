@@ -7,6 +7,7 @@
 
 PORTNAME=	File_Find
 PORTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	sysutils www pear
 MASTER_SITES=	http://pear.php.net/get/
 PKGNAMEPREFIX=	pear-
@@ -19,10 +20,9 @@ COMMENT=	A PEAR Class to facilitate the search of filesystems
 BUILD_DEPENDS=	${PEARDIR}/File.php:${PORTSDIR}/sysutils/pear-File
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+CATEGORY=	File
+FILES=		Find.php
+
 .include <bsd.port.pre.mk>
-.include "${.CURDIR}/../../devel/pear-PEAR/Makefile.common"
-
-do-install:
-	@${INSTALL_DATA} ${WRKSRC}/Find.php ${PEARDIR}/File/Find.php
-
+.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
 .include <bsd.port.post.mk>

@@ -1,6 +1,0 @@
-%%PEARDIR%%/XML/Tree.php
-%%PEARDIR%%/XML/Tree/Node.php
-%%PKGREGDIR%%/package.xml
-@dirrm %%PEARDIR%%/XML/Tree
-@unexec rmdir %D/%%PEARDIR%%/XML 2>/dev/null || true
-@dirrm %%PKGREGDIR%%

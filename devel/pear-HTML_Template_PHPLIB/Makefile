@@ -7,6 +7,7 @@
 
 PORTNAME=	HTML_Template_PHPLIB
 PORTVERSION=	1.3.1
+PORTREVISION=	1
 CATEGORIES=	devel www pear
 
 MAINTAINER=	ports@FreeBSD.org
@@ -15,22 +16,16 @@ COMMENT=	PEAR template API ported from PHPLIB
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-.include <bsd.port.pre.mk>
-.include "${.CURDIR}/../../devel/pear-PEAR/Makefile.common"
+CATEGORY=	HTML/Template
+FILES=		PHPLIB.php
+DOCS=		README
+EXAMPLES=	block.ihtml block.php ittest.php tpl1.ihtml tpl1.php
+_DOCSDIR=	examples
 
-TESTDIR=	${PEARDIR}/tests/${PORTNAME}
-
-do-install:
-	@${MKDIR} ${PEARDIR}/HTML/Template
-	@${CP} -p ${WRKSRC}/PHPLIB.php ${PEARDIR}/HTML/Template
-	@${CHOWN} ${SHAREOWN}:${SHAREGRP} ${PEARDIR}/HTML/Template/PHPLIB.php
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${CP} -Rp ${WRKSRC}/examples/* ${DOCSDIR}
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
-	@${ECHO_MSG} "===> Examples installed in ${DOCSDIR}."
+do-install-tests-msg: .USE
 	@${ECHO_MSG} "     (These tests require PEAR::Benchmark - see"
 	@${ECHO_MSG} "     <http://pear.php.net/package-info.php?package=Benchmark>;;;)."
-.endif
 
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
 .include <bsd.port.post.mk>

@@ -7,6 +7,7 @@
 
 PORTNAME=	XML_XPath
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	devel www pear
 
 MAINTAINER=	ports@FreeBSD.org
@@ -15,27 +16,15 @@ COMMENT=	PEAR class provided an XPath/DOM XML manipulation
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-.include <bsd.port.pre.mk>
-.include "${.CURDIR}/../../devel/pear-PEAR/Makefile.common"
-
 .if defined(PACKAGE_BUILDING)
 IGNORE=		No package building: The default libraries in the PHP package do not support domxml by default.
 .endif
 
-MANIFEST=	common.php error.php result.php
+CATEGORY=	XML
+FILES=		XPath.php XPath/common.php XPath/error.php XPath/result.php
+EXAMPLES=	XML_XPath_example.php
+_EXAMPLESDIR=	docs
 
-do-install:
-	@${MKDIR} ${PEARDIR}/XPath
-	@${CP} -p ${WRKSRC}/XPath.php ${PEARDIR}
-.for FILE in ${MANIFEST}
-	@${CP} -p ${WRKSRC}/XPath/${FILE} ${PEARDIR}/XPath
-.endfor
-		@${CHOWN} ${SHAREOWN}:${SHAREGRP} ${PEARDIR}/XPath.php
-		@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PEARDIR}/XPath
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${CP} -p ${WRKSRC}/docs/XML_XPath_example.php ${DOCSDIR}
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
-.endif
-
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
 .include <bsd.port.post.mk>

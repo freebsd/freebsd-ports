@@ -7,7 +7,7 @@
 
 PORTNAME=	HTML_Select_Common
 PORTVERSION=	1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel www pear
 
 MAINTAINER=	ports@FreeBSD.org
@@ -17,27 +17,13 @@ BUILD_DEPENDS=	${PEARDIR}/HTML/Common.php:${PORTSDIR}/devel/pear-HTML_Common	\
 		${PEARDIR}/I18N/Common.php:${PORTSDIR}/devel/pear-I18N
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-EXAMPLESDIR=	${PEARDIR}/HTML/Select/Common/examples
+CATEGORY=	HTML
+
+FILES=		Select/Common/Country.php Select/Common/FRDepartements.php \
+		Select/Common/UKCounty.php Select/Common/USState.php
+EXAMPLES=	Country.php FRDepartements.php UKCounty.php USState.php
+_EXAMPLESDIR=	Select/Common/examples
 
 .include <bsd.port.pre.mk>
-.include "${.CURDIR}/../../devel/pear-PEAR/Makefile.common"
-
-MANIFEST=	Country.php FRDepartements.php UKCounty.php USState.php
-EXAMPLES=	Country.php FRDepartements.php UKCounty.php USState.php
-
-do-install:
-	@${MKDIR} ${PEARDIR}/HTML/Select/Common
-.for FILE in ${MANIFEST}
-	@${CP} -p ${WRKSRC}/Select/Common/${FILE} ${PEARDIR}/HTML/Select/Common
-.endfor
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PEARDIR}/HTML/Select/Common
-	@${CHMOD} a-x ${PEARDIR}/HTML/Select/Common/*
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${EXAMPLESDIR}
-.for FILE in ${EXAMPLES}
-	@${INSTALL_DATA} ${WRKSRC}/Select/Common/examples/${FILE} ${EXAMPLESDIR}
-.endfor
-	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
-.endif
-
+.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
 .include <bsd.port.post.mk>

@@ -7,6 +7,7 @@
 
 PORTNAME=	Net_SMTP
 PORTVERSION=	1.2.3
+PORTREVISION=	1
 CATEGORIES=	net mail www pear
 
 MAINTAINER=	ports@FreeBSD.org
@@ -17,13 +18,9 @@ BUILD_DEPENDS=	${PEARDIR}/Auth/SASL.php:${PORTSDIR}/security/pear-Auth_SASL \
 # The Auth_SASL package is no longer absolutely required, but it will be used if it is available.
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+CATEGORY=	Net
+FILES=		SMTP.php
+
 .include <bsd.port.pre.mk>
-.include "${.CURDIR}/../../devel/pear-PEAR/Makefile.common"
-
-MANIFEST=	Net/SMTP.php
-
-do-install:
-	@${CP} -p ${WRKSRC}/SMTP.php ${PEARDIR}/Net
-	@${CHOWN} ${SHAREOWN}:${SHAREGRP} ${PEARDIR}/${MANIFEST}
-
+.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
 .include <bsd.port.post.mk>

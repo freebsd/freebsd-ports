@@ -7,7 +7,7 @@
 
 PORTNAME=	Console_Getopt
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel www pear
 
 MAINTAINER=	ports@FreeBSD.org
@@ -16,12 +16,8 @@ COMMENT=	PEAR command-line option parser
 BUILD_DEPENDS=	pear:${PORTSDIR}/lang/php4
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+FILES=		Console/Getopt.php
+
 .include <bsd.port.pre.mk>
-.include "${.CURDIR}/../../devel/pear-PEAR/Makefile.common"
-
-do-install:
-	@${MKDIR} ${PEARDIR}/Console
-	@${CP} -Rp ${WRKSRC}/Console/Getopt.php ${PEARDIR}/Console
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PEARDIR}/Console
-
+.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
 .include <bsd.port.post.mk>

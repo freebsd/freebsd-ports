@@ -7,6 +7,7 @@
 
 PORTNAME=	Mail
 PORTVERSION=	1.1.2
+PORTREVISION=	1
 CATEGORIES=	mail www pear
 
 MAINTAINER=	ports@FreeBSD.org
@@ -15,12 +16,8 @@ COMMENT=	PEAR class that provides multiple interfaces for sending emails
 BUILD_DEPENDS=	${PEARDIR}/Net/SMTP.php:${PORTSDIR}/net/pear-Net_SMTP
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+FILES=		Mail.php Mail/mail.php Mail/sendmail.php Mail/smtp.php Mail/RFC822.php
+
 .include <bsd.port.pre.mk>
-.include "${.CURDIR}/../../devel/pear-PEAR/Makefile.common"
-
-do-install:
-	@${CP} -Rp ${WRKSRC}/* ${PEARDIR}
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PEARDIR}/Mail*
-	@${CHMOD} a-x ${PEARDIR}/Mail.php
-
+.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
 .include <bsd.port.post.mk>
