@@ -26,13 +26,13 @@ include/pspell/string_pair_emulation.h
 include/pspell/wordlist.h
 lib/libpspell-impl.a
 lib/libpspell-impl.so
-lib/libpspell-impl.so.3
+lib/libpspell-impl.so.4
 lib/libpspell-modules.a
 lib/libpspell-modules.so
 lib/libpspell-modules.so.1
 lib/libpspell.a
 lib/libpspell.so
-lib/libpspell.so.2
+lib/libpspell.so.4
 share/doc/pspell/man-html/1_Introduction.html
 share/doc/pspell/man-html/2_Getting.html
 share/doc/pspell/man-html/3_Library.html
@@ -70,6 +70,8 @@ share/doc/pspell/manual.tex
 share/pspell/cp1252.map
 share/pspell/iso8859-1.map
 share/pspell/iso8859-10.map
+share/pspell/iso8859-13.map
+share/pspell/iso8859-14.map
 share/pspell/iso8859-15.map
 share/pspell/iso8859-2.map
 share/pspell/iso8859-3.map
@@ -80,6 +82,7 @@ share/pspell/iso8859-7.map
 share/pspell/iso8859-8.map
 share/pspell/iso8859-9.map
 share/pspell/koi8-r.map
+share/pspell/region-to-spelling.map
 share/pspell/viscii.map
 @dirrm share/pspell
 @dirrm share/doc/pspell/man-text
