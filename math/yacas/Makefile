@@ -7,9 +7,10 @@
 #
 
 PORTNAME=	yacas
-PORTVERSION=	1.0.51
+PORTVERSION=	1.0.52
 CATEGORIES=	math
-MASTER_SITES=	http://www.xs4all.nl/~apinkus/backups/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/r/rev/}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -21,7 +22,7 @@ USE_GMAKE=	yes
 
 .if defined(WITH_GMP)
 .if ${OSVERSION} >= 500000
-LIB_DEPENDS+=	gmp.3:${PORTSDIR}/math/libgmp
+LIB_DEPENDS+=	gmp.5:${PORTSDIR}/math/libgmp4
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 .endif

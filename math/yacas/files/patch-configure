@@ -1,0 +1,19 @@
+--- configure.orig	Fri May 24 06:40:55 2002
++++ configure	Fri May 24 14:38:40 2002
+@@ -1787,13 +1787,14 @@
+ cat > conftest.$ac_ext <<EOF
+ #line 1789 "configure"
+ #include "confdefs.h"
++#include <gmp.h>
+ /* Override any gcc2 internal prototype to avoid an error.  */
+ /* We use char because int might match the return type of a gcc2
+     builtin and then its argument prototype would still apply.  */
+-char mpz_init();
+ 
+ int main() {
+-mpz_init()
++mpz_t integ;
++mpz_init(integ)
+ ; return 0; }
+ EOF
+ if { (eval echo configure:1800: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
