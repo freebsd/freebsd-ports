@@ -35,7 +35,7 @@ MAN1=			mahogany.1
 CONFIGURE_ARGS=		--with-threads
 
 post-install:
-	@strip ${PREFIX}/bin/mahogany
-	@cat pkg-message
+	@${STRIP_CMD} ${PREFIX}/bin/mahogany
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
