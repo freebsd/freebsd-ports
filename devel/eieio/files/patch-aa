@@ -1,0 +1,15 @@
+--- eieio.texi.orig	Sun Dec  9 19:00:01 2001
++++ eieio.texi	Sun Dec  9 19:26:09 2001
+@@ -7,9 +7,10 @@
+ 
+ @ifinfo
+ @format
+-START-INFO-DIR-ENTRY
++@dircategory The Emacs editor and associated tools
++@direntry
+ * eieio: (eieio).       Objects for Emacs
+-END-INFO-DIR-ENTRY
++@end direntry
+ @end format
+ @end ifinfo
+ 
