@@ -1,6 +1,6 @@
+bin/gcok
 bin/guavac
 bin/guavad
-bin/gcok
 man/man1/guavac.1.gz
 share/guavac/classes.zip
 @dirrm share/guavac
