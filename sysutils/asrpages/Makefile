@@ -6,11 +6,11 @@
 # $FreeBSD$
 #
 
-DISTNAME=	asrpages
+DISTNAME=	asr.pages
 PKGNAME=	asrpages-0.1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.winternet.com/users/eric/
-DISTFILES=	asr.pages.tar
+EXTRACT_SUFX=	.tar
 
 MAINTAINER=	sheldonh@FreeBSD.org
 
