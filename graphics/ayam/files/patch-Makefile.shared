@@ -125,13 +125,13 @@ $FreeBSD$
 +#AQSISOBJS = 
  # if you use Aqsis libslxargs (add -DAYUSESLXARGS to CFLAGS!):
 -#AQSISOBJS = $(AQSISLIBDIR)/rcdummy.o $(AQSISLIBDIR)/libshadervm.so $(AQSISLIBDIR)/libshaderexecenv.so $(AQSISLIBDIR)/libslxargs.so $(AQSISLIBDIR)/libaqsistypes.so -L /usr/local/lib -llog4cpp
-+AQSISOBJS = $(AQSISLIBDIR)/libaqsis.a $(AQSISLIBDIR)/libshadervm.so $(AQSISLIBDIR)/libshaderexecenv.so $(AQSISLIBDIR)/libslxargs.so $(AQSISLIBDIR)/libaqsistypes.so -L${LOCALBASE}/lib $(AQSISLIBDIR)/libraytrace.so -llog4cpp -lstdc++
++AQSISOBJS = $(AQSISLIBDIR)/libaqsis.a $(AQSISLIBDIR)/libshadervm.so $(AQSISLIBDIR)/libshaderexecenv.so $(AQSISLIBDIR)/libslxargs.so $(AQSISLIBDIR)/libaqsistypes.so -L${LOCALBASE}/lib $(AQSISLIBDIR)/libraytrace.so -lstdc++
  
  # if you do not use Aqsis libri2rib as BMRT libribout replacement:
  #AQSISRI2RIB =
  # if you use Aqsis libri2rib (add -DAYUSEAQSISRIB to CFLAGS above!):
 -AQSISRI2RIB = $(AQSISLIBDIR)/libri2rib.so -L /usr/local/lib -llog4cpp
-+AQSISRI2RIB = $(AQSISLIBDIR)/libri2rib.so -L${AQSISLIBDIR} -llog4cpp -lstdc++ ${PTHREAD_LIBS}
++AQSISRI2RIB = $(AQSISLIBDIR)/libri2rib.so -L${AQSISLIBDIR} -lstdc++ ${PTHREAD_LIBS}
  
  
  # BMRT
@@ -166,7 +166,7 @@ $FreeBSD$
 -AYSLXINCDIR = $(AQSISDIR)/include
 -AYSLXLIBS = $(AQSISDIR)/lib/rcdummy.o $(AQSISDIR)/lib/libshadervm.so $(AQSISDIR)/lib/libshaderexecenv.so $(AQSISDIR)/lib/libslxargs.so $(AQSISDIR)/lib/libaqsistypes.so -L/usr/local/lib -llog4cpp
 +AYSLXINCDIR = ${AQSISINCDIR}
-+AYSLXLIBS = -L${AQSISLIBDIR} $(AQSISDIR)/lib/libaqsis.so $(AQSISDIR)/lib/libshadervm.so $(AQSISDIR)/lib/libshaderexecenv.so $(AQSISDIR)/lib/libslxargs.so $(AQSISDIR)/lib/libaqsistypes.so -L${LOCALBASE}/lib -llog4cpp
++AYSLXLIBS = -L${AQSISLIBDIR} $(AQSISDIR)/lib/libaqsis.so $(AQSISDIR)/lib/libshadervm.so $(AQSISDIR)/lib/libshaderexecenv.so $(AQSISDIR)/lib/libslxargs.so $(AQSISDIR)/lib/libaqsistypes.so -L${LOCALBASE}/lib
  
  # Ayso Plugin (RenderDotC, RDC)
  RDCDIR = /usr/local/rdc

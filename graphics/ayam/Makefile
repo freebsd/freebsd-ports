@@ -18,8 +18,7 @@ COMMENT=	3D modeling environment for the RenderMan interface
 LIB_DEPENDS=	aqsis.0:${PORTSDIR}/graphics/aqsis \
 		tcl82.1:${PORTSDIR}/lang/tcl82 \
 		tk82.1:${PORTSDIR}/x11-toolkits/tk82 \
-		tiff.4:${PORTSDIR}/graphics/tiff \
-		log4cpp.4:${PORTSDIR}/devel/log4cpp
+		tiff.4:${PORTSDIR}/graphics/tiff
 
 USE_GCC=	3.4
 USE_GL=		yes
