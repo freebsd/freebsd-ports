@@ -2536,6 +2536,7 @@ hlserver-action	ports/games/hlserver-action
 hlserver-admin	ports/games/hlserver-admin
 hlserver-cs	ports/games/hlserver-cs
 hlserver-dod	ports/games/hlserver-dod
+hlserver-esf	ports/games/hlserver-esf
 hlserver-existence	ports/games/hlserver-existence
 hlserver-fa	ports/games/hlserver-fa
 hlserver-flf	ports/games/hlserver-flf
