@@ -18,7 +18,7 @@
  
 +libjbig.so.1: jbig.so jbig_tab.so
 +	rm -f libjbig.so.1
-+	$(CC) -o ${.TARGET} -shared -Wl,-rpath,${PREFIX}/lib -Wl,-soname,${.TARGET} ${.ALLSRC}         
++	$(CC) -o ${.TARGET} -shared -Wl,-soname,${.TARGET} ${.ALLSRC}         
 +	ln -sf libjbig.so.1 libjbig.so
 +	
  jbig.o: jbig.c jbig.h
