@@ -15,6 +15,7 @@ MAINTAINER=	sysadmin@alexdupre.com
 RESTRICTED=	"many odd restrictions on usage and distribution"
 
 INSTALLS_SHLIB=	yes
+USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 LIBTOOLFILES=	config/aclocal.m4
 USE_PERL5=	yes
