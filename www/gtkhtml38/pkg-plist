@@ -93,7 +93,7 @@ include/gtkhtml/htmlvspace.h
 lib/bonobo/plugin/libstorage_http.so
 lib/libgtkhtml.a
 lib/libgtkhtml.so
-lib/libgtkhtml.so.17
+lib/libgtkhtml.so.19
 share/gnome/apps/Settings/Documents/gtkhtml-properties.desktop
 share/gnome/control-center/Documents/gtkhtml-properties.desktop
 share/gnome/control-center/capplets/gtkhtml-properties.desktop
@@ -169,10 +169,12 @@ share/locale/it/LC_MESSAGES/gtkhtml.mo
 share/locale/ja/LC_MESSAGES/gtkhtml.mo
 share/locale/ko/LC_MESSAGES/gtkhtml.mo
 share/locale/lt/LC_MESSAGES/gtkhtml.mo
+share/locale/lv/LC_MESSAGES/gtkhtml.mo
 share/locale/nl/LC_MESSAGES/gtkhtml.mo
 share/locale/nn/LC_MESSAGES/gtkhtml.mo
 share/locale/no/LC_MESSAGES/gtkhtml.mo
 share/locale/pl/LC_MESSAGES/gtkhtml.mo
+share/locale/pt/LC_MESSAGES/gtkhtml.mo
 share/locale/pt_BR/LC_MESSAGES/gtkhtml.mo
 share/locale/ru/LC_MESSAGES/gtkhtml.mo
 share/locale/sk/LC_MESSAGES/gtkhtml.mo
