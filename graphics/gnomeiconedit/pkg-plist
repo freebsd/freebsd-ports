@@ -1,10 +1,8 @@
 bin/gnome-iconedit
-bin/gnome-iconedit-component
 etc/CORBA/servers/gnome-iconedit.gnorba
 share/gnome/apps/Graphics/gnome-iconedit.desktop
 share/gnome/help/gnome-iconedit/C/topic.dat
 share/gnome/idl/Iconedit.idl
-share/gnome/oaf/gnome-iconedit-component.oafinfo
 share/gnome/oaf/gnome-iconedit.oafinfo
 share/gnome/pixmaps/gnome-iconedit/cheques.png
 share/gnome/pixmaps/gnome-iconedit/dropper.png

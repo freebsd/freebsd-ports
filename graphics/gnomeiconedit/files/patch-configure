@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- configure	2001/08/31 13:23:25	1.1
++++ configure	2001/08/31 13:23:54
+@@ -2601,7 +2601,7 @@
+ 
+ 
+ 
+-if test x$enable_oaf = xyes; then
++if test x$enable_oaf = xfoo; then
+   BONOBO_TRUE=
+   BONOBO_FALSE='#'
+ else

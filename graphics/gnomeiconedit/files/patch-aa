@@ -1,0 +1,12 @@
+$NetBSD$
+
+--- src/menus.c.orig	Thu Jun 22 19:31:59 2000
++++ src/menus.c
+@@ -36,7 +36,6 @@
+ #include <libgnomeprint/gnome-print-preview.h>
+ #include <libgnomeprint/gnome-print-pixbuf.h>
+ #include <libgnomeprint/gnome-font.h>
+-#include <libgnomeprint/gnome-printer-profile.h>
+ #include <libgnomeprint/gnome-printer-dialog.h>
+ #include <libgnomeprint/gnome-print-master.h>
+ #include <libgnomeprint/gnome-print-master-preview.h>
