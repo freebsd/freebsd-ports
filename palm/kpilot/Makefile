@@ -3,7 +3,7 @@
 # Date created:        09 April 1998
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.21 1999/01/09 08:52:26 asami Exp $
+# $Id: Makefile,v 1.22 1999/05/24 02:31:44 steve Exp $
 #
 
 DISTNAME=	kpilot-3.0.2
@@ -24,9 +24,7 @@ LIB_DEPENDS=	gif.3:${PORTSDIR}/graphics/giflib \
 USE_QT=		yes
 KDEDIR?=	$(PREFIX)
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	"--with-extra-includes=$(PREFIX)/include/giflib"
 USE_GMAKE=	yes
-
 CONFIGURE_ENV=	CXXFLAGS="$(CFLAGS)" \
 		INSTALL_SCRIPT="install -c -m 555" \
 		KDEDIR="${KDEDIR}"

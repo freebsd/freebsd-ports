@@ -3,7 +3,7 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.30 1999/02/28 21:48:05 asami Exp $
+# $Id: Makefile,v 1.31 1999/05/03 22:28:56 se Exp $
 #
 
 DISTNAME=	kdeutils-1.1.1
@@ -21,10 +21,9 @@ USE_BZIP2=	yes
 USE_QT=		yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	"--prefix=$(PREFIX)" \
-		"--with-extra-includes=$(PREFIX)/include/giflib"
+		"--with-extra-includes=$(PREFIX)/include"
 CONFIGURE_ENV=	CXXFLAGS="$(CFLAGS)" \
 		INSTALL_SCRIPT="install -c -m 555"
 USE_GMAKE=	yes
-CFLAGS+=	"-I${PREFIX}/include"
 
 .include <bsd.port.mk>
