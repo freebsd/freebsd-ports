@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	spacehulk
-PORTVERSION=	1.4
+PORTVERSION=	1.4.1
 CATEGORIES=	games kde
-MASTER_SITES=	http://savannah.nongnu.org/download/${PORTNAME}/main.pkg/1.4/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	http://savannah.nongnu.org/download/${PORTNAME}/main.pkg/${PORTVERSION}/
 
 MAINTAINER=	ponomarew@oberon.net
 COMMENT=	Science-fiction board game in the world of Warhammer 40000
@@ -17,6 +16,4 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_KDELIBS_VER=3
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/x11/kde3/Makefile.kde"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
