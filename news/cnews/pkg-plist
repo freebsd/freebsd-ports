@@ -1,16 +1,6 @@
 @comment Package is not complete without minimal /var/news installation :-(
 @comment Basically just in.* and out.*    /var/news might be a symbolic link
 @comment and it might not exist yet :-(
-@exec ln -sf %D/newsspool /var/news
-@exec mkdir -p %D/newsspool/in.coming/bad
-@exec cd %D/newsspool; mkdir -p out.going out.master out.nntp
-@dirrm newsspool/in.coming/bad
-@dirrm newsspool/in.coming
-@dirrm newsspool/out.going
-@dirrm newsspool/out.master
-@dirrm newsspool/out.nntp
-@unexec if [ -h %D/newsspool ]; then rm -f %D/newsspool; fi
-@unexec if [ -d %D/newsspool ]; then rmdir %D/newsspool; fi
 bin/checknews
 bin/cnewsdo
 bin/inews
@@ -160,3 +150,32 @@ lib/libcnews.a
 @dirrm %%NEWSCTL%%/bin
 @dirrm %%NEWSCTL%%
 @dirrm news
+@exec mkdir %D/%%NEWSCTL%%/bin
+@exec mkdir -p %%NEWSOV%%/control
+@exec mkdir -p %%NEWSOV%%/junk
+@exec mkdir -p %%NEWSOV%%/news/announce/newusers
+@unexec rmdir %%NEWSOV%%/control
+@unexec rmdir %%NEWSOV%%/junk
+@unexec rmdir %%NEWSOV%%/news/announce/newusers
+@unexec rmdir %%NEWSOV%%/news/announce
+@unexec rmdir %%NEWSOV%%/news
+@unexec rmdir %%NEWSOV%%
+@exec mkdir -p %%NEWSARTS%%/control
+@exec mkdir -p %%NEWSARTS%%/junk
+@exec mkdir -p %%NEWSARTS%%/news/announce/newusers
+@exec mkdir -p %%NEWSARTS%%/in.coming/bad
+@exec mkdir -p %%NEWSARTS%%/out.going
+@exec mkdir -p %%NEWSARTS%%/out.master
+@exec mkdir -p %%NEWSARTS%%/out.nntp
+@exec chown -R news.news %%NEWSARTS%%
+@unexec rmdir %%NEWSARTS%%/control
+@unexec rmdir %%NEWSARTS%%/junk
+@unexec rmdir %%NEWSARTS%%/news/announce/newusers
+@unexec rmdir %%NEWSARTS%%/news/announce
+@unexec rmdir %%NEWSARTS%%/news
+@unexec rmdir %%NEWSARTS%%/in.coming/bad
+@unexec rmdir %%NEWSARTS%%/in.coming
+@unexec rmdir %%NEWSARTS%%/out.going
+@unexec rmdir %%NEWSARTS%%/out.master
+@unexec rmdir %%NEWSARTS%%/out.nntp
+@unexec rmdir %%NEWSARTS%%
