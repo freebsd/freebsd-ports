@@ -36,6 +36,7 @@
     SUBDIR += cdrdao
     SUBDIR += cdroot
     SUBDIR += cdrtools
+    SUBDIR += cdrtools-devel
     SUBDIR += cfengine
     SUBDIR += cfengine2
     SUBDIR += checkservice
@@ -168,6 +169,7 @@
     SUBDIR += mixer
     SUBDIR += mkfile
     SUBDIR += mkisofs
+    SUBDIR += mkisofs-devel
     SUBDIR += mksunbootcd
     SUBDIR += mktool
     SUBDIR += monitord
