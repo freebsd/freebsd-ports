@@ -14,8 +14,6 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ache@FreeBSD.org
 
-FORBIDDEN=	"Riddled with buffer overflows exploitable by a malicious server to execute code as the local user."
-
 USE_BZIP2=      YES
 NO_LATEST_LINK=	YES
 WRKSRC=         ${WRKDIR}/lynx2-8-3
