@@ -870,7 +870,6 @@ lib/%%PYTHON_VERSION%%/lib-dynload/cStringIO.so
 lib/%%PYTHON_VERSION%%/lib-dynload/cmath.so
 lib/%%PYTHON_VERSION%%/lib-dynload/crypt.so
 lib/%%PYTHON_VERSION%%/lib-dynload/dbm.so
-lib/%%PYTHON_VERSION%%/lib-dynload/errno.so
 lib/%%PYTHON_VERSION%%/lib-dynload/fcntl.so
 lib/%%PYTHON_VERSION%%/lib-dynload/fpectl.so
 lib/%%PYTHON_VERSION%%/lib-dynload/grp.so
