@@ -20,6 +20,7 @@
     SUBDIR += bidwatcher
     SUBDIR += bottlerocket
     SUBDIR += buffer
+    SUBDIR += cassowary
     SUBDIR += chord
     SUBDIR += cmatrix
     SUBDIR += colorls
@@ -48,6 +49,7 @@
     SUBDIR += gone
     SUBDIR += grun
     SUBDIR += gtkfind
+    SUBDIR += gtl
     SUBDIR += gyvescm
     SUBDIR += iselect
     SUBDIR += jargon
