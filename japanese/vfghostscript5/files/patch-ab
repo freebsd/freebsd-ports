@@ -1,7 +1,7 @@
---- zkfvflib.c.orig	Tue Nov 25 18:41:45 1997
-+++ zkfvflib.c	Tue Nov 25 18:41:47 1997
-@@ -19,7 +19,7 @@
- #include "files.h"
+--- zkfvflib.c.orig	Sat Mar 21 11:19:01 1998
++++ zkfvflib.c	Sat Mar 21 11:19:04 1998
+@@ -21,7 +21,7 @@
+ #include "store.h"
  
  /* Including the header file for VFlib. */
 -#include "VF.h"
