@@ -32,6 +32,40 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="927743d4-5ca9-11d9-a9e7-0001020eed82">
+    <topic>up-imapproxy -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>up-imapproxy</name>
+	<range><lt>1.2.3.rc2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Timo Sirainen reports:</p>
+	<blockquote cite="http://marc.theaimsgroup.com/?l=bugtraq&amp;m=109995749510773">
+	  <p>There are various bugs in up-imapproxy which can crash
+	    it. Since up-imapproxy runs in a single process with each
+	    connection handled in a separate thread, any crash kills
+	    all the connections and stops listening for new ones.</p>
+	  <p>In 64bit systems it might be possible to make it leak
+	    data (mails, passwords, ..) from other connections to
+	    attacker's connection. However I don't think up-imapproxy
+	    actually works in any 64bit system so this is just a
+	    theoretical problem.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>11630</bid>
+      <mlist msgid="1099851138.3716.3.camel@hurina">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=109995749510773</mlist>
+    </references>
+    <dates>
+      <discovery>2004-11-17</discovery>
+      <entry>2005-01-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="832e9d75-5bfc-11d9-a9e7-0001020eed82">
     <topic>kdelibs3 -- konqueror FTP command injection vulnerability</topic>
     <affects>
