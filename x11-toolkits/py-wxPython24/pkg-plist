@@ -84,6 +84,9 @@ lib/python1.5/site-packages/wxPython/demo/PrintFramework.pyo
 lib/python1.5/site-packages/wxPython/demo/PyShell.py
 lib/python1.5/site-packages/wxPython/demo/PyShell.pyc
 lib/python1.5/site-packages/wxPython/demo/PyShell.pyo
+lib/python1.5/site-packages/wxPython/demo/PyShellWindow.py
+lib/python1.5/site-packages/wxPython/demo/PyShellWindow.pyc
+lib/python1.5/site-packages/wxPython/demo/PyShellWindow.pyo
 lib/python1.5/site-packages/wxPython/demo/PythonEvents.py
 lib/python1.5/site-packages/wxPython/demo/PythonEvents.pyc
 lib/python1.5/site-packages/wxPython/demo/PythonEvents.pyo
@@ -135,6 +138,7 @@ lib/python1.5/site-packages/wxPython/demo/data/imagemap.htm
 lib/python1.5/site-packages/wxPython/demo/data/imagemap.png
 lib/python1.5/site-packages/wxPython/demo/data/pic.png
 lib/python1.5/site-packages/wxPython/demo/data/pic2.bmp
+lib/python1.5/site-packages/wxPython/demo/data/showTips
 lib/python1.5/site-packages/wxPython/demo/data/stc.h
 lib/python1.5/site-packages/wxPython/demo/data/tables.htm
 lib/python1.5/site-packages/wxPython/demo/data/test.htm
@@ -404,6 +408,9 @@ lib/python1.5/site-packages/wxPython/lib/layoutf.pyo
 lib/python1.5/site-packages/wxPython/lib/mvctree.py
 lib/python1.5/site-packages/wxPython/lib/mvctree.pyc
 lib/python1.5/site-packages/wxPython/lib/mvctree.pyo
+lib/python1.5/site-packages/wxPython/lib/pyshell.py
+lib/python1.5/site-packages/wxPython/lib/pyshell.pyc
+lib/python1.5/site-packages/wxPython/lib/pyshell.pyo
 lib/python1.5/site-packages/wxPython/lib/shell.py
 lib/python1.5/site-packages/wxPython/lib/shell.pyc
 lib/python1.5/site-packages/wxPython/lib/shell.pyo

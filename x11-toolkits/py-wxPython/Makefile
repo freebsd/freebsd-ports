@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	py-wxPython
-PORTVERSION=	2.1.16
+PORTVERSION=	2.2.1
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	http://alldunn.com/wxPython/dist/
 DISTNAME=	wxPython-${PORTVERSION}
