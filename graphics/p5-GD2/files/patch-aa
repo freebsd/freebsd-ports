@@ -1,49 +1,79 @@
---- Makefile.PL.orig	Wed Jun 19 14:02:59 2002
-+++ Makefile.PL	Sat Jun 22 21:25:18 2002
-@@ -3,40 +3,17 @@
- warn "NOTICE: This module requires libgd 1.8.4 or higher (shared library version 4.X).\n";
+--- Makefile.PL.orig   Wed Nov 27 16:29:57 2002
++++ Makefile.PL        Tue Mar 11 01:17:10 2003
+@@ -6,46 +6,23 @@
+ 
  
  # =====> PATHS: CHECK AND ADJUST <=====
--my @INC     = qw(-I/usr/local/include -I/usr/local/include/gd); 
--my @LIBPATH = qw(-L/usr/lib/X11 -L/usr/X11R6/lib -L/usr/X11/lib -L/usr/local/lib );
+-my @INC     = qw(-I/usr/local/include -I/usr/local/include/gd);
+-my @LIBPATH = qw(-L/usr/lib/X11 -L/usr/X11R6/lib -L/usr/X11/lib -L/usr/local/lib);
 -my @LIBS    = qw(-lgd -lpng -lz);
 -
+-if ($^O eq 'VMS'){
+-  warn "This is a build on OpenVMS. In case of problems with the build\n";
+-  warn "do not bother Lincoln Stein but get in touch with\n";
+-  warn "Martin P.J. Zinser (zinser\@decus.de)\n\n";
+-
+-  if ($ENV{"LIB_ROOT"} eq "") {
+-    warn "Define lib_root as a concealed logical pointing to the\n";
+-    warn "Top directory where you have your libraries installed\n";
+-    warn "E.g. define/job/trans=conc lib_root public$device:[public.util.libs.]\n";
+-    warn "Also define the logical pubbin to point to the location\n";
+-    warn "of the object libraries\n";
+-    warn "Then re-invoke Makefile.PL\n";
+-    warn "Exiting now...\n";
+-    exit;
+-  }
+-
+-  @INC     = qw(-I/lib_root/gd -I/lib_root/libpng -I/lib_root/zlib);
+-  @LIBPATH = qw(-Lpubbin);
+-  @LIBS    = qw(-llibgd.olb -llibpng.olb -llibz.olb);
+-}
++my @INC     = qw(-I$ENV{LOCALBASE}/include -I$ENV{LOCALBASE}/include/freetype2 -I$ENV{X11BASE}/include -I$ENV{X11BASE}/include/X11);
++my @LIBPATH = qw(-L$ENV{LOCALBASE}/lib -L$ENV{X11BASE}/lib);
++my @LIBS    = qw(-lfreetype -ljpeg -lgd -lpng -lz);
+ 
+ # path to libgd
+ warn "\n";
+-my $PREFIX = lc prompt('Where is libgd installed?','/usr/lib');
++my $PREFIX = "$ENV{LOCALBASE}/lib";
++
+ unless ($PREFIX eq '/usr/lib') {
+   $PREFIX =~ s!/lib$!!;
+   unshift @INC,"-I$PREFIX/include";
+   unshift @LIBPATH,"-L$PREFIX/lib";
+ }
+ 
 -# FEATURE FLAGS
 -warn "\nPlease choose the features that match how libgd was built:\n";
 -
 -my $JPEG    = lc prompt('Build JPEG support?','y') eq 'y';
--my $TTF     = lc prompt('Build FreeType support?','y') eq 'y';
+-my $FT      = lc prompt('Build FreeType support?','y') eq 'y';
 -my $XPM     = $^O !~ /^freebsd|MSWin32$/ && lc prompt('Build XPM support?','y') eq 'y';
--my $GIF		= lc prompt('Build GIF support (for patched versions of gd)?','n') eq 'y';
-+my @INC     = qw(-I/usr/local/include -I/usr/local/include/gd -I/usr/local/include/freetype -I/usr/X11R6/include -I/usr/X11R6/include/X11); 
-+my @LIBPATH = qw(-L/usr/local/lib -L/usr/X11R6/lib);
-+my @LIBS    = qw(-lfreetype -ljpeg -lgd -lpng -lz);
++$JPEG=1;
++$FT=1;
++$XPM=1;
  
  my $FCGI    = 0;   # set to 1 to build compatability with fastCGI
  
--warn "\nIf you experience compile problems, please check the \@INC, \@LIBPATH and \@LIBS\n",
--     "arrays defined in Makefile.PL and manually adjust, if necessary.\n\n";
--
--#### no user-serviceable parts below #####
--
--push @LIBS,'-lfreetype' if $TTF;
--push @LIBS,'-ljpeg' if $JPEG;
--push @LIBS, '-lm' unless $^O eq 'MSWin32';
--
+@@ -61,16 +38,13 @@
+ push @INC, '-I/lib_root/ft2/include/freetype' if ($FT && $^O eq 'VMS');
+ push @INC, '-I/X11' if ($XPM && $^O eq 'VMS');
+ 
 -# FreeBSD 3.3 with libgd built from ports croaks if -lXpm is specified 
 -if ($^O ne 'freebsd' && $^O ne 'MSWin32') { 
--  push @LIBS,'-lX11','-lXpm' if $XPM; 
--} 
-+push @LIBS,'-lX11','-lXpm' unless $^O eq 'MSWin32';
++if ($^O ne 'MSWin32') { 
+   push @LIBS,'-lX11','-lXpm' if $XPM; 
+ } 
  
  my $CAPI = defined $ExtUtils::MakeMaker::CAPI_support ? 'TRUE' : 'FALSE';
 -my $DEFINES = '';
 -$DEFINES    .= ' -DHAVE_JPEG' if $JPEG;
--$DEFINES    .= ' -DHAVE_TTF'  if $TTF;
+-$DEFINES    .= ' -DHAVE_FT'   if $FT;
 -$DEFINES    .= ' -DHAVE_XPM'  if $XPM;
--$DEFINES    .= ' -DHAVE_GIF'  if $GIF;
-+my $DEFINES = '-DHAVE_JPEG -DHAVE_TTF';
-+$DEFINES    .= ' -DHAVE_XPM' unless $^O eq 'MSWin32';
+++my $DEFINES = '-DHAVE_JPEG -DHAVE_TTF';
+++$DEFINES    .= ' -DHAVE_XPM' unless $^O eq 'MSWin32';
  $DEFINES    .= ' -DFCGI'      if $FCGI;
  
  WriteMakefile(
+
+
