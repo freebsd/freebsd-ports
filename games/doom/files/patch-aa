@@ -700,7 +700,7 @@ diff -ruN ../virgin/musserver/Makefile ./musserver/Makefile
 +
 +doom-patch:
 +	zcat doompat.tgz |(cd ../doom-1.8; pax -rv)
-+	@(cd ../doom-1.8; env PATH=$${PATH}:. sh muspat)
++	@cd ../doom-1.8; ./pat @mus11.pat@xdoom || (/usr/bin/linux; ./pat @mus11.pat@xdoom)
 +	touch doom-patch
 Binary files ../virgin/musserver/musserver and ./musserver/musserver differ
 diff -ruN ../virgin/musserver/musserver.c ./musserver/musserver.c
