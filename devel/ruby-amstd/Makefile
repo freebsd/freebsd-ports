@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	amstd
-PORTVERSION=	1.9.3
+PORTVERSION=	1.9.5
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://www1.u-netsurf.ne.jp/~brew/mine/soft/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
