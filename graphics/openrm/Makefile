@@ -1,0 +1,95 @@
+# New ports collection makefile for:	openrm
+# Date created:		8 July 2002
+# Whom:			Igor Pokrovsky <tiamat@telegraph.spb.ru>
+#
+# $FreeBSD$
+#
+
+PORTNAME=		openrm
+PORTVERSION=		1.4.2
+CATEGORIES=		graphics
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=		${PORTNAME}-devel-${PORTVERSION}
+EXTRACT_SUFX=		.tgz
+.ifdef (WITH_DEMOS)
+DISTFILES=		${PORTNAME}-devel-${PORTVERSION} \
+			${PORTNAME}-demo-${PORTVERSION}
+.endif
+
+MAINTAINER=	tiamat@telegraph.spb.ru
+COMMENT=	Development environment used to build 2D/3D/stereo graphics
+
+LIB_DEPENDS=    jpeg.9:${PORTSDIR}/graphics/jpeg
+
+WRKSRC=		${WRKDIR}/rm142
+.ifdef (WITH_DEMOS)
+WRKSRC2=	${WRKDIR}/rmdemo
+.endif
+
+USE_X_PREFIX=	yes
+USE_MESA=	yes
+ALL_TARGET=	linux docs
+INSTALLS_SHLIB=	yes
+MAKE_ENV=	RM_INSTALL=${X11BASE}
+
+.if !defined(WITH_DEMOS)
+PLIST_SUB=	WITH_DEMOS="@comment "
+.else
+PLIST_SUB=	WITH_DEMOS=""
+.endif
+
+.ifndef (WITH_DEMOS)
+pre-everything::
+	@${ECHO} "You can define WITH_DEMOS=yes to fetch and install available demos"
+.endif
+
+do-install:
+# install libraries
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/librm.so.1 ${PREFIX}/lib
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/librmaux.so.1 ${PREFIX}/lib
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/librmi.so.1 ${PREFIX}/lib
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/librmv.so.1 ${PREFIX}/lib
+	${LN} -fs ${PREFIX}/lib/librm.so.1 ${PREFIX}/lib/librm.so
+	${LN} -fs ${PREFIX}/lib/librmaux.so.1 ${PREFIX}/lib/librmaux.so
+	${LN} -fs ${PREFIX}/lib/librmi.so.1 ${PREFIX}/lib/librmi.so
+	${LN} -fs ${PREFIX}/lib/librmv.so.1 ${PREFIX}/lib/librmv.so
+	${INSTALL_DATA} ${WRKSRC}/lib/librm.a ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/lib/librmaux.a ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/lib/librmi.a ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/lib/librmv.a ${PREFIX}/lib
+
+# install includes
+	${INSTALL_DATA} ${WRKSRC}/include/rm.h ${PREFIX}/include
+	@${MKDIR} ${PREFIX}/include/rm
+	${INSTALL_DATA} ${WRKSRC}/include/rm/*.h ${PREFIX}/include/rm
+	@${MKDIR} ${PREFIX}/include/rmaux
+	${INSTALL_DATA} ${WRKSRC}/include/rmaux/*.h ${PREFIX}/include/rmaux
+	@${MKDIR} ${PREFIX}/include/rmi
+	${INSTALL_DATA} ${WRKSRC}/include/rmi/*.h ${PREFIX}/include/rmi
+	@${MKDIR} ${PREFIX}/include/rmv
+	${INSTALL_DATA} ${WRKSRC}/include/rmv/*.h ${PREFIX}/include/rmv
+
+.ifdef (WITH_DEMOS)
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC2}/README ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC2}/configure ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC2}/makeinclude ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC2}/Makefile.x11 ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC2}/*.c ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC2}/*.h ${EXAMPLESDIR}
+	@${MKDIR} ${EXAMPLESDIR}/data
+	${INSTALL_DATA} ${WRKSRC2}/data/* ${EXAMPLESDIR}/data
+.endif
+
+.ifndef (NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/FUTUREPLANS ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/RELEASENOTES ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/HTML/*.html ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}/images
+	${INSTALL_DATA} ${WRKSRC}/doc/HTML/images/* ${DOCSDIR}/images
+.endif
+
+.include <bsd.port.mk>

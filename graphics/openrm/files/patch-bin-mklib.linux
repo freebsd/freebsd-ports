@@ -1,0 +1,29 @@
+--- bin/mklib.linux.orig	Sun Jun  3 13:56:31 2001
++++ bin/mklib.linux	Sun Apr  6 15:26:58 2003
+@@ -58,7 +58,7 @@
+ MINOR=$1
+ shift 1
+ 
+-VERSION=$MAJOR.$MINOR
++VERSION=$MAJOR
+ 
+ OBJECTS=$*
+ 
+@@ -71,7 +71,7 @@
+ 
+ # Linux specific build
+ gcc -shared -Wl,-soname,${LIBRARY}.so.${VERSION} -o ${LIBRARY}.so.${VERSION} ${OBJECTS}
+-if [[ ${ARCHFLAGS##*-} != "debug" ]]; then
++if [ ${ARCHFLAGS##*-} != "debug" ]; then
+     strip ${LIBRARY}.so.${VERSION}
+     echo "library has been stripped (non-debug build)."
+ fi 
+@@ -83,7 +83,7 @@
+ 
+ 
+ # local install
+-if [[ -n ${RM_INSTALL} ]]; then
++if [ -n ${RM_INSTALL} ]; then
+     echo "Installing ${LIBRARY} librairies locally in ${RM_INSTALL}/lib..."
+     \cp -f ${LIBRARY}.a ${LIBRARY}.so.${VERSION} ${RM_INSTALL}/lib
+     \rm -f ${RM_INSTALL}/lib/${LIBRARY}.so
