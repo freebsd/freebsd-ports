@@ -144,6 +144,7 @@
     SUBDIR += spambnc
     SUBDIR += spruce
     SUBDIR += sqwebmail
+    SUBDIR += ssmtp
     SUBDIR += stuphead
     SUBDIR += sylpheed
     SUBDIR += teapop
