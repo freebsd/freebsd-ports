@@ -14,6 +14,12 @@ MAINTAINER=	markp@FreeBSD.org
 
 LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm
 
+USE_REINPLACE=	yes
+
+post-patch:
+	${REINPLACE_CMD} -e 's|filename\[80\]|filename[1024]|g; \
+		s|your_database|/var/db/filedupe.db|' ${WRKSRC}/filedupe.c
+
 do-install:
 	$(INSTALL_PROGRAM) ${WRKSRC}/filedupe ${PREFIX}/bin
 
