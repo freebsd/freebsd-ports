@@ -1,0 +1,11 @@
+--- ORIG/Makefile	Sat Jan 16 14:13:47 1999
++++ Makefile	Thu Feb 11 20:21:06 1999
+@@ -19,7 +19,7 @@
+ endif
+ 
+ override LDFLAGS           = $(LD_INC) 
+-override LIBS              = -ltiff34 -lXaw3d -lXmu -lXt -lXpm -lSM -lICE \
++override LIBS              = -ltiff -lXaw3d -lXmu -lXt -lXpm -lSM -lICE \
+                              -lXext -lX11 -lm
+ ifeq ($(HAVE_XFREE86),YES)
+   override LIBS           += -lXxf86dga -lXxf86vm
