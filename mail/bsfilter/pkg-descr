@@ -1,10 +1,13 @@
-- English and Japanese are supported.
-- Written in Ruby
-- Three interfaces are supported.
-- Local mail file. accesses files or stdin/out.
-- IMAP. accesses mails in a IMAP server.
-- POP proxy. works as a proxy between a POP server and MUA.
-- GPL
+bsfilter is a spam filter using Bayesian(statistical) algorithm.
+
+- a filter which distinguishes spam and non-spam mail
+- support mails written in English and Japanese language
+- written in Ruby
+- support 3 methods for access
+-- traditional unix-style filter. study and judge local files or pipe
+-- IMAP. study and judge mails in an IMAP server
+-- POP proxy. run between POP server and MUA
+- distributed under GPL
 
 Author:	nabeken
 WWW:	http://bsfilter.org/index-e.html

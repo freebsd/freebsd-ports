@@ -1,4 +1,17 @@
 bin/bsfilter
 %%PORTDOCS%%share/examples/bsfilter/bsfilter.conf.sample
 %%PORTDOCS%%share/examples/bsfilter/dot-qmail.sample
+%%PORTDOCS%%share/examples/bsfilter/mda/maildrop/mailfilter.header
+%%PORTDOCS%%share/examples/bsfilter/mda/procmail/procmailrc.black_gray
+%%PORTDOCS%%share/examples/bsfilter/mda/procmail/procmailrc.header
+%%PORTDOCS%%share/examples/bsfilter/mda/procmail/procmailrc.status
+%%PORTDOCS%%share/examples/bsfilter/mua/mew3/bs_clean
+%%PORTDOCS%%share/examples/bsfilter/mua/mew3/bs_mark
+%%PORTDOCS%%share/examples/bsfilter/mua/mew3/bs_spam
+%%PORTDOCS%%share/examples/bsfilter/mua/mew3/mew.el
+%%PORTDOCS%%@dirrm share/examples/bsfilter/mda/maildrop
+%%PORTDOCS%%@dirrm share/examples/bsfilter/mda/procmail
+%%PORTDOCS%%@dirrm share/examples/bsfilter/mda
+%%PORTDOCS%%@dirrm share/examples/bsfilter/mua/mew3
+%%PORTDOCS%%@dirrm share/examples/bsfilter/mua
 %%PORTDOCS%%@dirrm share/examples/bsfilter
