@@ -23,6 +23,7 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		ffi.2:${PORTSDIR}/devel/libffi
 
 USE_GNOME=	gtk20 libartlgpl2 pkgconfig
+USE_JAVA=	yes
 USE_JIKES=	yes
 USE_LIBTOOL_VER=15
 LIBTOOLFILES=	${CLASSPATHDIR}/configure
