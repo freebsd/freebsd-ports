@@ -1,6 +1,9 @@
 #!/bin/sh
 
-PATH=/usr/sbin
+PATH=/bin:/usr/sbin
+if [ -z "${DB_DIR}" ]; then
+	DB_DIR=/var/db/mysql
+fi
 
 case $2 in
 POST-INSTALL)
@@ -24,7 +27,7 @@ POST-INSTALL)
 		echo "You already have a user \"${USER}\", so I will use it."
 	else
 		if pw useradd ${USER} -u ${UID} -g ${GROUP} -h - \
-			-d /var/db/mysql -s /sbin/nologin -c "MySQL Daemon"
+			-d ${DB_DIR} -s /sbin/nologin -c "MySQL Daemon"
 		then
 			echo "Added user \"${USER}\"."
 		else
@@ -33,6 +36,6 @@ POST-INSTALL)
 		fi
 	fi
 
-	chown -R ${USER}.${GROUP} /var/db/mysql
+	chown -R ${USER}.${GROUP} ${DB_DIR}
 	;;
 esac
