@@ -1,0 +1,11 @@
+--- rfc822.c.orig	Fri Jul 12 19:45:03 2002
++++ rfc822.c	Sat Apr 17 21:05:01 2004
+@@ -156,7 +156,7 @@
+ 	} else {
+ 		j = i;
+ 		while (j < headervalue->l &&
+-			strchr(RFC822_WHITESPACE,headervalue->s[j]) == NULL)
++			strchr(RFC822_WHITESPACE,headervalue->s[j]) == NULL && headervalue->s[j] != ';')
+ 			j++;
+ 	}
+ 
