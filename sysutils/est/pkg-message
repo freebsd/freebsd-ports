@@ -1,0 +1,5 @@
+To load the Enhanced Speedstep kernel module at boot:
+	echo 'est_enable="YES"' >> /etc/rc.conf
+
+To log every change of CPU frequency:
+	echo 'est_verbose="YES"' >> /etc/rc.conf
