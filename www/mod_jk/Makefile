@@ -16,6 +16,7 @@ DISTNAME=	jakarta-tomcat-connectors-jk-${PORTVERSION}-src
 MAINTAINER=	girgen@pingpong.net
 COMMENT=	Apache JK module for Tomcat
 
+PATCH_DEPENDS=	${AUTOMAKE}:${PORTSDIR}/devel/automake
 BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
 RUN_DEPENDS=	${APXS}:${APACHE_PORT}
 
