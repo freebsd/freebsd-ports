@@ -1,0 +1,5 @@
+The QDraw 3D library provides platform independent hardware accelerated
+3D graphics through a well defined API. It runs on Linux, FreeBSD,
+Windows 98, Windows 2000, and on PlayStation 2.
+
+WWW: http://www.qubesoft.com

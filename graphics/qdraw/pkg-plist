@@ -1,0 +1,99 @@
+bin/triangle
+bin/tetra
+bin/varray
+bin/parray
+bin/ripples
+bin/water
+bin/sky.bmp
+bin/primitive
+bin/diff.bmp
+bin/spec.bmp
+bin/spot
+bin/skin
+bin/windowed
+bin/teapot
+bin/utahteapot.txt
+bin/teapot.bmp
+bin/teapot2.bmp
+bin/teapot3.bmp
+lib/libqmaths.so
+lib/libqutils.so
+lib/libqimage.so
+lib/libqsys.so
+lib/libQMemoryUnix.so
+lib/libqdevices.so
+lib/libQOSX11.so
+lib/libQDisplayNull.so
+lib/libQDisplayOpenGL.so
+lib/libQInputNull.so
+lib/libQInputRaw.so
+lib/libqdraw.so
+lib/libpatch.so
+include/linkage.h
+include/maths.h
+include/box2.h
+include/box3.h
+include/color4b.h
+include/matrix3.h
+include/matrix4.h
+include/mout.h
+include/plane4.h
+include/quat4.h
+include/ray.h
+include/vec2.h
+include/vec3.h
+include/vec4.h
+include/affine4.h
+include/sphere3.h
+include/cylinder3.h
+include/qsys/qtdir.h
+include/utils.h
+include/atree.h
+include/vector.h
+include/qarc.h
+include/wtree.h
+include/xdecl.h
+include/image.h
+include/qsys.h
+include/draw.h
+include/draw_os.h
+include/event.h
+include/keysym.h
+include/keysymdef.h
+include/patch.h
+@dirrm include/qsys
+share/examples/qdraw/triangle/triangle.cpp
+share/examples/qdraw/tetra/tetra.cpp
+share/examples/qdraw/varray/varray.cpp
+share/examples/qdraw/parray/parray.cpp
+share/examples/qdraw/ripples/ripples.cpp
+share/examples/qdraw/water/water.cpp
+share/examples/qdraw/primitive/primitive.cpp
+share/examples/qdraw/primitive/primbuilder.cpp
+share/examples/qdraw/primitive/primgen.cpp
+share/examples/qdraw/primitive/texmap.cpp
+share/examples/qdraw/spot/spot.cpp
+share/examples/qdraw/skin/skin.cpp
+share/examples/qdraw/skin/primbuilder.cpp
+share/examples/qdraw/skin/primgen.cpp
+share/examples/qdraw/skin/texmap.cpp
+share/examples/qdraw/windowed/windowed.cpp
+share/examples/qdraw/windowed/windowed_x11.cpp
+share/examples/qdraw/windowed/XtQ.c
+share/examples/qdraw/windowed/XtQ.h
+share/examples/qdraw/windowed/XtQP.h
+share/examples/qdraw/teapot/teapot.cpp
+share/examples/qdraw/teapot/genteapot.cpp
+share/examples/qdraw/teapot/utahteapot.txt
+@dirrm share/examples/qdraw/parray
+@dirrm share/examples/qdraw/primitive
+@dirrm share/examples/qdraw/ripples
+@dirrm share/examples/qdraw/skin
+@dirrm share/examples/qdraw/spot
+@dirrm share/examples/qdraw/teapot
+@dirrm share/examples/qdraw/tetra
+@dirrm share/examples/qdraw/triangle
+@dirrm share/examples/qdraw/varray
+@dirrm share/examples/qdraw/water
+@dirrm share/examples/qdraw/windowed
+@dirrm share/examples/qdraw
