@@ -1,0 +1,23 @@
+#!/bin/sh
+
+if ! PREFIX=$(expr $0 : "\(/.*\)/etc/rc\.d/$(basename $0)\$"); then
+	echo "$0: Cannot determine the PREFIX" >&2
+	exit 1
+fi
+
+case "$1" in
+start)
+	if [ -x ${PREFIX}/sbin/gini ]; then
+		su -m gini -c "cd /var/log/gini && ${PREFIX}/sbin/gini -z >/dev/null" \
+		    && echo -n ' gini'
+	fi
+	;;
+stop)
+	killall gini && echo -n ' gini'
+	;;
+*)
+	echo "Usage: `basename $0` {start|stop}" >&2
+	;;
+esac
+
+exit 0
