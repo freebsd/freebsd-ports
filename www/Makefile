@@ -25,7 +25,6 @@
     SUBDIR += checkbot
     SUBDIR += chimera
     SUBDIR += chimera2
-    SUBDIR += code2html
     SUBDIR += comline
     SUBDIR += demoroniser
     SUBDIR += erwn
