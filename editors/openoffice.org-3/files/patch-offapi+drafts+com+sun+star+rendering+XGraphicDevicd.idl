@@ -1,5 +1,9 @@
-http://www.openoffice.org/issues/show_bug.cgi?id=40177
+#iZ and CWS
+o http://www.openoffice.org/issues/show_bug.cgi?id=40177
+o http://eis.services.openoffice.org/EIS2/servlet/cws.ShowCWS?Id=1969&Path=SRC680%2Fpresperf01
+o presperf01
 
+Description
 Contains an illigal char.
 build breaks at odk project
 like

@@ -1,5 +1,7 @@
-http://www.openoffice.org/issues/show_bug.cgi?id=40178
+#iZ and CWS
+o http://www.openoffice.org/issues/show_bug.cgi?id=40178
 
+Description
 catch up recent version of
 bridges/source/cpp_uno/gcc3_linux_intel/cpp2uno.cxx
 Only difference is:

@@ -1,4 +1,9 @@
-http://www.openoffice.org/issues/show_bug.cgi?id=40179
+#iZ and CWS
+o http://www.openoffice.org/issues/show_bug.cgi?id=40179
+o http://eis.services.openoffice.org/EIS2/servlet/cws.ShowCWS?Id=2030&Path=SRC680%2Fpj16
+o pj16
+
+Description
 
 o source/config/ldap/makefile.mk needs -lcompat since re_comp is defined here.
 o FreeBSD doesn't have -ldl

@@ -1,4 +1,9 @@
-http://www.openoffice.org/issues/show_bug.cgi?id=40181
+#iZ and CWS
+o http://www.openoffice.org/issues/show_bug.cgi?id=40181
+o pyunofixes1
+
+Desctiption
+need FreeBSD's definition
 
 Index: python/Python-2.3.4.patch
 ===================================================================

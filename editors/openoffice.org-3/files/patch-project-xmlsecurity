@@ -1,6 +1,9 @@
-http://www.openoffice.org/issues/show_bug.cgi?id=39958
-http://www.openoffice.org/issues/show_bug.cgi?id=38417
+#iZ and CWS
+o http://www.openoffice.org/issues/show_bug.cgi?id=39958
+o http://www.openoffice.org/issues/show_bug.cgi?id=38417
+o xmlsec08
 
+Description
 o Not for integration, we should provide configure based one
   Note: malloc.h is deprecated for FreeBSD.
 o use configure to produce config.h
