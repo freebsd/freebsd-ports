@@ -1,0 +1,7 @@
+id3lib is a software library for manipulating ID3v1/v1.1 and ID3v2 tags.
+id3lib 3.0.x conforms to all ID3v2 standards up to and including the ID3v2.3.0
+informal standard.
+
+WWW: http://id3lib.sourceforge.net/
+
+Roman Shterenzon <roman@xpert.com>

@@ -62,6 +62,7 @@
     SUBDIR += holyshout
     SUBDIR += icecast
     SUBDIR += id3ed
+    SUBDIR += id3lib
     SUBDIR += id3ren
     SUBDIR += juke
     SUBDIR += kdemultimedia11
