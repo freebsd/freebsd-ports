@@ -6405,6 +6405,7 @@ qvwm		ports/x11-wm/qvwm
 qwt		ports/x11-toolkits/qwt
 race		ports/games/race
 racoon		ports/security/racoon
+radiator	ports/net/radiator
 radio		ports/audio/radio
 radiusclient	ports/net/radiusclient
 radiusd-cistron	ports/net/radiusd-cistron
