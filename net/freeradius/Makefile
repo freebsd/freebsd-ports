@@ -21,6 +21,7 @@ LOGDIR?=	/var/log
 
 CONFLICTS=	gnu-radius-1.* openradius-0.* radiusd-cistron-1.*
 USE_GMAKE=	yes
+USE_PERL5_BUILD=yes
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --quiet --with-logdir=${LOGDIR} \
 		--localstatedir=/var \
@@ -28,29 +29,16 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} --quiet --with-logdir=${LOGDIR} \
 		--with-ltdl-include=${LOCALBASE}/include \
 		--with-ltdl-lib=${LOCALBASE}/lib
 
-.if defined(WITH_OPENLDAP_VER)
-.if ${WITH_OPENLDAP_VER} == 20 || ${WITH_OPENLDAP_VER} == 21
-LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap${WITH_OPENLDAP_VER}
-LIB_DEPENDS+=	lber.2:${PORTSDIR}/net/openldap${WITH_OPENLDAP_VER}
-.else
-BROKEN=		"WITH_OPENLDAP_VER must be 20 or 21"
-.endif
+.if defined(WITH_OPENLDAP)
+USE_OPENLDAP=	YES
 PLIST_SUB+=	LDAP=""
 .else
 CONFIGURE_ARGS+=--without-rlm_ldap
 PLIST_SUB+=	LDAP="@comment "
 .endif
 
-.if defined(WITH_MYSQL_VER)
-.if ${WITH_MYSQL_VER} == 41
-LIB_DEPENDS+=	mysqlclient.14:${PORTSDIR}/databases/mysql41-client
-.elif ${WITH_MYSQL_VER} == 40
-LIB_DEPENDS+=	mysqlclient.12:${PORTSDIR}/databases/mysql40-client
-.elif ${WITH_MYSQL_VER} == 3
-LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
-.else
-BROKEN=		"WITH_MYSQL_VER must be 3, 40 or 41"
-.endif
+.if defined(WITH_MYSQL)
+USE_MYSQL=	YES
 PLIST_SUB+=	MYSQL=""
 .else
 CONFIGURE_ARGS+=--without-rlm_sql_mysql
