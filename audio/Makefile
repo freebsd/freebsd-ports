@@ -322,6 +322,7 @@
     SUBDIR += radio
     SUBDIR += raproxy
     SUBDIR += rawrec
+    SUBDIR += rbscrobbler
     SUBDIR += rebler
     SUBDIR += replay
     SUBDIR += resid
