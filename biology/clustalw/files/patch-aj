@@ -1,11 +1,15 @@
---- util.c.orig	Wed Jun  7 16:50:08 2000
-+++ util.c	Tue Aug  8 02:59:43 2000
-@@ -174,7 +174,7 @@
- void getstr(char *instr,char *outstr)
+--- util.c-orig	Thu Mar 21 10:15:59 2002
++++ util.c	Thu Mar 21 10:17:11 2002
+@@ -171,10 +171,10 @@
+ 	return str;
+ }
+ 
+-void getstr(char *instr,char *outstr)
++void getstr(char *instr,char *outstr, int len)
  {	
  	fprintf(stdout,"%s: ",instr);
 -	gets(outstr);
-+	fgets(outstr,sizeof(outstr),stdin);
++	fgets(outstr, len, stdin);
  }
  
  double getreal(char *instr,double minx,double maxx,double def)
@@ -14,7 +18,7 @@
  	while(TRUE) {
  		fprintf(stdout,"%s (%.1f-%.1f)   [%.1f]: ",instr,minx,maxx,def);
 -		gets(line);
-+		fgets(line,sizeof(line),stdin);
++		fgets(line, MAXLINE, stdin);
  		status=sscanf(line,"%f",&ret);
  		if(status == EOF) return def;
  		if(ret>maxx) {
@@ -23,7 +27,16 @@
  		fprintf(stdout,"%s (%d..%d)    [%d]: ",
  		instr,(pint)minx,(pint)maxx,(pint)def);
 -		gets(line);
-+		fgets(line,sizeof(line),stdin);
++		fgets(line, MAXLINE, stdin);
  		status=sscanf(line,"%d",&ret);
  		if(status == EOF) return def;
  		if(ret>maxx) {
+@@ -230,7 +230,7 @@
+ {
+ 	char line[MAXLINE];
+ 	
+-	getstr("\n\nEnter system command",line);
++	getstr("\n\nEnter system command",line,MAXLINE);
+ 	if(*line != EOS)
+ 		system(line);
+ 	fprintf(stdout,"\n\n");

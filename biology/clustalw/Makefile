@@ -7,6 +7,7 @@
 
 PORTNAME=	clustalw
 PORTVERSION=	1.82
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp-igbmc.u-strasbg.fr/pub/ClustalW/
 DISTNAME=	${PORTNAME}${PORTVERSION}.UNIX

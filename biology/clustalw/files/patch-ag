@@ -1,0 +1,128 @@
+--- interface.c-orig	Thu Mar 21 10:19:26 2002
++++ interface.c	Thu Mar 21 10:22:18 2002
+@@ -1170,7 +1170,7 @@
+ 				if(strstr(temp, help_marker)){
+ 				  	if(usemenu) {
+ 						fprintf(stdout,"\n");
+-				    		getstr("Press [RETURN] to continue",lin2);
++				    		getstr("Press [RETURN] to continue",lin2,MAXLINE);
+ 				  	}
+ 					fclose(help_file);
+ 					return;
+@@ -1182,7 +1182,7 @@
+ 			       if(usemenu) {
+ 			          if(nlines >= PAGE_LEN) {
+ 				     	   fprintf(stdout,"\n");
+-			 	  	   getstr("Press [RETURN] to continue or  X  to stop",lin2);
++			 	  	   getstr("Press [RETURN] to continue or  X  to stop",lin2,MAXLINE);
+ 				  	   if(toupper(*lin2) == 'X') {
+ 						   fclose(help_file);
+ 						   return;
+@@ -1194,7 +1194,7 @@
+ 			}
+ 			if(usemenu) {
+ 				fprintf(stdout,"\n");
+-				getstr("Press [RETURN] to continue",lin2);
++				getstr("Press [RETURN] to continue",lin2,MAXLINE);
+ 			}
+ 			fclose(help_file);
+ 		}
+@@ -1232,7 +1232,7 @@
+                 ++nlines;
+                 if(nlines >= PAGE_LEN) {
+                         fprintf(stdout,"\n");
+-                        getstr("Press [RETURN] to continue or  X  to stop",lin2);
++                        getstr("Press [RETURN] to continue or  X  to stop",lin2,MAXLINE);
+                         if(toupper(*lin2) == 'X') {
+                                 fclose(file);
+                                 return;
+@@ -1243,7 +1243,7 @@
+         }
+         fclose(file);
+         fprintf(stdout,"\n");
+-        getstr("Press [RETURN] to continue",lin2);
++        getstr("Press [RETURN] to continue",lin2,MAXLINE);
+ }
+ 
+ 
+@@ -1692,7 +1692,7 @@
+         FILE *infile;
+ 
+         if(usemenu)
+-                getstr("Enter name of the matrix file",lin2);
++                getstr("Enter name of the matrix file",lin2,MAXLINE);
+         else
+                 strcpy(lin2,str);
+ 
+@@ -1718,7 +1718,7 @@
+         FILE *infile;
+ 
+         if(usemenu)
+-                getstr("Enter name of the matrix file",lin2);
++                getstr("Enter name of the matrix file",lin2,MAXLINE);
+         else
+                 strcpy(lin2,str);
+ 
+@@ -2121,7 +2121,7 @@
+ 			strcpy(local_prompt,"\n\nEnter new name to avoid overwriting ");
+ 			strcat(local_prompt," [%s]: ");          
+ 			fprintf(stdout,local_prompt,file_name);
+-			gets(temp);
++			fgets(temp,FILENAMELEN+1,stdin);
+ 			if(*temp != EOS) strcpy(file_name,temp);
+ 		}
+ 	}
+@@ -2129,7 +2129,7 @@
+ 		strcpy(local_prompt,prompt);
+ 		strcat(local_prompt," [%s]: ");          
+ 		fprintf(stdout,local_prompt,file_name);
+-		gets(temp);
++		fgets(temp,FILENAMELEN+1,stdin);
+ 		if(*temp != EOS) strcpy(file_name,temp);
+ 	}
+ 
+@@ -2335,7 +2335,7 @@
+ 		if (usemenu)
+             	fprintf(stdout,"\nUse the existing GUIDE TREE file,  %s  (y/n) ? [y]: ",
+                                            tree_name);
+-                gets(temp);
++                fgets(temp,MAXLINE,stdin);
+                 if(*temp != 'n' && *temp != 'N') {
+                     strcpy(phylip_name,tree_name);
+                     use_tree = TRUE;
+@@ -2567,7 +2567,7 @@
+ 
+             fprintf(stdout,"\nEnter a name for the guide tree file [%s]: ",
+                                            phylip_name);
+-                	gets(temp);
++                	fgets(temp,MAXLINE,stdin);
+                 	if(*temp != EOS)
+                         	strcpy(phylip_name,temp);
+         	}
+@@ -2676,7 +2676,7 @@
+ #endif
+             	fprintf(stdout,"\nUse the existing GUIDE TREE file for Profile 1,  %s  (y/n) ? [y]: ",
+                                            tree_name);
+-                gets(temp);
++                fgets(temp,MAXLINE,stdin);
+                 if(*temp != 'n' && *temp != 'N') {
+                     strcpy(p1_tree_name,tree_name);
+                     use_tree1 = TRUE;
+@@ -2702,7 +2702,7 @@
+ #endif
+             	fprintf(stdout,"\nUse the existing GUIDE TREE file for Profile 2,  %s  (y/n) ? [y]: ",
+                                            tree_name);
+-                gets(temp);
++                fgets(temp,MAXLINE,stdin);
+                 if(*temp != 'n' && *temp != 'N') {
+                     strcpy(p2_tree_name,tree_name);
+                     use_tree2 = TRUE;
+@@ -3730,7 +3730,7 @@
+ 	if(usemenu) {
+         	fprintf(stdout,"\nEnter a name for the parameter output file [%s]: ",
+                                            parname);
+-               	gets(temp);
++               	fgets(temp,FILENAMELEN+1,stdin);
+                	if(*temp != EOS)
+                        	strcpy(parname,temp);
+        	}

@@ -1,0 +1,11 @@
+--- trees.c-orig	Thu Mar 21 10:23:04 2002
++++ trees.c	Thu Mar 21 10:23:20 2002
+@@ -845,7 +845,7 @@
+ 		fprintf(stdout,"\n           or 3) use the PHYLIP package.");
+ 		fprintf(stdout,"\n\n");
+ 		if (usemenu) 
+-			getstr("Press [RETURN] to continue",dummy);
++			getstr("Press [RETURN] to continue",dummy,10);
+ 	}
+ 
+ 

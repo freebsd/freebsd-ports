@@ -1,0 +1,138 @@
+--- amenu.c-orig	Tue Feb  6 03:15:01 2001
++++ amenu.c	Thu Mar 21 10:19:02 2002
+@@ -13,7 +13,8 @@
+ static jmp_buf jmpbuf;
+ #ifndef VMS
+ #ifndef AIX
+-#define BADSIG (void (*)())-1
++/* #define BADSIG (void (*)())-1 */
++#define BADSIG SIG_ERR
+ #endif
+ #endif
+ 
+@@ -176,7 +177,7 @@
+ 		fprintf(stdout,"     H. HELP\n");
+ 		fprintf(stdout,"     X. EXIT (leave program)\n\n\n");
+ 		
+-		getstr("Your choice",lin1);
++		getstr("Your choice",lin1,MAXLINE);
+ 
+ 		switch(toupper(*lin1)) {
+ 			case '1': seq_input(FALSE);
+@@ -260,7 +261,7 @@
+         fprintf(stdout,"    H.  HELP\n");
+         fprintf(stdout,"    or press [RETURN] to go back to main menu\n\n\n");
+ 
+-        getstr("Your choice",lin1);
++        getstr("Your choice",lin1,MAXLINE);
+         if(*lin1 == EOS) return;
+ 
+         switch(toupper(*lin1))
+@@ -353,7 +354,7 @@
+         fprintf(stdout,"    H.  HELP\n");
+         fprintf(stdout,"    or press [RETURN] to go back to main menu\n\n\n");
+ 
+-        getstr("Your choice",lin1);
++        getstr("Your choice",lin1,MAXLINE);
+         if(*lin1 == EOS) return;
+ 
+         switch(toupper(*lin1))
+@@ -449,7 +450,7 @@
+ 		fprintf(stdout,"\n\n");
+ 		fprintf(stdout,"     H. HELP\n\n\n");
+ 		
+-		getstr("Enter number (or [RETURN] to exit)",lin2);
++		getstr("Enter number (or [RETURN] to exit)",lin2,MAXLINE);
+ 		if( *lin2 == EOS) { 
+ 			return;
+ 		}
+@@ -525,7 +526,7 @@
+                 fprintf(stdout,"--\n");
+ 
+ 
+-                getstr("\n\nEnter number (or [RETURN] to exit)",lin2);
++                getstr("\n\nEnter number (or [RETURN] to exit)",lin2,MAXLINE);
+                 if(*lin2 == EOS) return(output_struct_penalties);
+ 
+         	switch(toupper(*lin2))
+@@ -594,7 +595,7 @@
+         fprintf(stdout,"    H.  HELP\n");
+         fprintf(stdout,"    or press [RETURN] to go back to main menu\n\n\n");
+ 
+-        getstr("Your choice",lin1);
++        getstr("Your choice",lin1,MAXLINE);
+         if(*lin1 == EOS) return;
+ 
+         switch(toupper(*lin1))
+@@ -669,7 +670,7 @@
+ 	fprintf(stdout,"\n");
+ 	fprintf(stdout,"     H. HELP\n\n\n");	
+ 	
+-		getstr("Enter number (or [RETURN] to exit)",lin2);
++		getstr("Enter number (or [RETURN] to exit)",lin2,MAXLINE);
+ 		if(*lin2 == EOS) return;
+ 		
+ 		switch(toupper(*lin2)) {
+@@ -752,7 +753,7 @@
+ 	fprintf(stdout,"\n");
+ 	fprintf(stdout,"     H. HELP\n\n\n");	
+ 	
+-		getstr("Enter number (or [RETURN] to exit)",lin2);
++		getstr("Enter number (or [RETURN] to exit)",lin2,MAXLINE);
+ 		if(*lin2 == EOS) return;
+ 		
+ 		switch(toupper(*lin2)) {
+@@ -886,7 +887,7 @@
+ 
+ 		fprintf(stdout,"     H. HELP\n\n\n");
+ 		
+-		getstr("Enter number (or [RETURN] to exit)",lin2);
++		getstr("Enter number (or [RETURN] to exit)",lin2,MAXLINE);
+ 		if( *lin2 == EOS) {
+                         if(dnaflag) {
+                                 dna_pw_go_penalty     = pw_go_penalty;
+@@ -1008,7 +1009,7 @@
+                 fprintf(stdout,"     8. Protein Gap Parameters\n\n");
+ 		fprintf(stdout,"     H. HELP\n\n\n");		
+ 
+-		getstr("Enter number (or [RETURN] to exit)",lin2);
++		getstr("Enter number (or [RETURN] to exit)",lin2,MAXLINE);
+ 
+ 		if(*lin2 == EOS) {
+ 			if(dnaflag) {
+@@ -1101,7 +1102,7 @@
+ 		fprintf(stdout,"     5. Toggle End Gap Separation         :%s\n\n",(!use_endgaps) ? "OFF" : "ON");
+ 		fprintf(stdout,"     H. HELP\n\n\n");		
+ 
+-		getstr("Enter number (or [RETURN] to exit)",lin2);
++		getstr("Enter number (or [RETURN] to exit)",lin2,MAXLINE);
+ 
+ 		if(*lin2 == EOS) return;
+ 		
+@@ -1115,7 +1116,7 @@
+ 			case '3':
+ 				fprintf(stdout,"Hydrophilic Residues Currently: %s\n",hyd_residues);
+ 
+-				getstr("Enter residues (or [RETURN] to quit)",lin1);
++				getstr("Enter residues (or [RETURN] to quit)",lin1,MAXLINE);
+                                 if (*lin1 != EOS) {
+                                         for (i=0;i<strlen(hyd_residues) && i<26;i++) {
+                                         c = lin1[i];
+@@ -1167,7 +1168,7 @@
+                 fprintf(stdout,"--\n");
+ 
+ 
+-                getstr("\n\nEnter number (or [RETURN] to exit)",lin2);
++                getstr("\n\nEnter number (or [RETURN] to exit)",lin2,MAXLINE);
+                 if(*lin2 == EOS) return(matn);
+ 
+                 i=toupper(*lin2)-'0';
+@@ -1202,7 +1203,7 @@
+ 	fprintf(stdout,"\n%s\n",title);
+ 	strcpy(line,prompt);
+ 	strcat(line, "(y/n) ? [y]");
+-	getstr(line,lin2);
++	getstr(line,lin2,80);
+ 	if ((*lin2 != 'n') && (*lin2 != 'N'))
+ 		return('y');
+ 	else
