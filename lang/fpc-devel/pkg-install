@@ -5,7 +5,7 @@
 PKGNAME=$1
 ACTION=$2
 
-FILES_DELETE="bin/ppc386 etc/ppc386.cfg etc/ppc386.cfg.orig"
+FILES_DELETE="bin/fpc etc/fpc.cfg etc/fpc.cfg.orig"
 
 LIBDIR=${PKG_PREFIX}/lib/fpc/${PKGNAME##fpc-}
 
@@ -19,7 +19,7 @@ case "$ACTION" in
 POST-INSTALL)
 		${CHMOD} 0555 ${LIBDIR}/ppc386
 		${CHMOD} 0555 ${LIBDIR}/samplecfg
-		${LN} -sf ${LIBDIR}/ppc386 ${PKG_PREFIX}/bin/ppc386
+		${LN} -sf ${LIBDIR}/ppc386 ${PKG_PREFIX}/bin/fpc
 		${SH} ${LIBDIR}/samplecfg ${LIBDIR} ${PKG_PREFIX}/etc
 	;;
 
