@@ -5,11 +5,11 @@
 # $FreeBSD$
 #
 
-PORTNAME=       	wapsh
+PORTNAME=		wapsh
 PORTVERSION=		1.0
 PORTREVISION=		1
-CATEGORIES=     	shells
-MASTER_SITES=   	http://www.exolution.de/wapsh/
+CATEGORIES=		shells
+MASTER_SITES=		http://www.exolution.de/wapsh/
 DISTNAME=		${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=		ports@FreeBSD.org
@@ -42,12 +42,6 @@ HTDOCS=			command.php command_html.inc command_wml.inc \
 			login_html.php login_wml.php scroll_wml.php \
 			shortcuts_wml.php
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
-.endif
-
 post-patch:
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' ${WRKSRC}/htshd/htshd.c > ${WRKDIR}/foo && \
 		${MV} ${WRKDIR}/foo ${WRKSRC}/htshd/htshd.c
@@ -74,21 +68,21 @@ do-install:
 .endfor
 
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/wapsh/admin_guide
-	${MKDIR} ${PREFIX}/share/doc/wapsh/implementation_notes
-	${MKDIR} ${PREFIX}/share/doc/wapsh/user_guide
+	${MKDIR} ${DOCSDIR}/admin_guide
+	${MKDIR} ${DOCSDIR}/implementation_notes
+	${MKDIR} ${DOCSDIR}/user_guide
 .for B in Image1.jpg Image2.jpg Image3.jpg index.html qpl.html
-	${INSTALL_DATA} ${WRKSRC}/docs/html/$B ${PREFIX}/share/doc/wapsh
+	${INSTALL_DATA} ${WRKSRC}/docs/html/$B ${DOCSDIR}
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/docs/html/admin_guide/index.html \
-		${PREFIX}/share/doc/wapsh/admin_guide
+		${DOCSDIR}/admin_guide
 .for I in index.html image57.gif
 	${INSTALL_DATA} ${WRKSRC}/docs/html/implementation_notes/$I \
-		${PREFIX}/share/doc/wapsh/implementation_notes
+		${DOCSDIR}/implementation_notes
 .endfor
 .for U in ${USERGUIDEDOCS}
 	${INSTALL_DATA} ${WRKSRC}/docs/html/user_guide/$U \
-		${PREFIX}/share/doc/wapsh/user_guide
+		${DOCSDIR}/user_guide
 .endfor
 .endif #if !defined(NOPORTDOCS)
 
@@ -102,4 +96,4 @@ post-install:
 	fi
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
