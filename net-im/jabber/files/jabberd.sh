@@ -22,5 +22,6 @@ start)
     su -f -m ${user} -c "jabberd -h ${hostname} -c ${PREFIX}/etc/jabber.xml" >${out} 2>&1 &;;
 
 stop)
-    killall jabberd;;
+    killall jabberd;
+    rm -f /var/tmp/jabber.pid;
 esac
