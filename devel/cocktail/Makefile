@@ -20,8 +20,8 @@ MAN2=		mtc.2
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64" || ${ARCH} == "amd64"
-BROKEN=		"Coredump during build on sparc64 and amd64"
+.if ${ARCH} != "i386"
+BROKEN=		"Coredump during build on !i386"
 .endif
 
 .include <bsd.port.post.mk>
