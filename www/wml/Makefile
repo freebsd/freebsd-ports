@@ -17,10 +17,6 @@ COMMENT=	Website META Language, webdesign toolkit for HTML generation
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
-BROKEN=		Does not compile
-EXPIRATION_DATE=2005-02-18
-DEPRECATED=	${BROKEN}
-
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-perl=${PERL5}
@@ -66,6 +62,10 @@ MAN7=	wml_intro.7 wml_macros.7 wml_tutorial.7 wml_faq.7 wml_tags.7
 
 .if ${ARCH} == "amd64"
 BROKEN=		"Build fails on amd64 (needs to build shared libraries with -fPIC)"
+.endif
+
+.if ${PERL_LEVEL} < 500600
+BROKEN=		"Does not compile with perl ${PERL_VERSION}"
 .endif
 
 #   catpages are usually not installed, so they are not compressed.
