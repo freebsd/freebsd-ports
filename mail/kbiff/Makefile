@@ -3,7 +3,7 @@
 # Date created:		So  14 Jun 1998 13:09:18 CEST
 # Whom:			andreas
 #
-# $Id: Makefile,v 1.9 1999/03/19 04:39:56 nectar Exp $
+# $Id: Makefile,v 1.10 1999/04/24 17:01:40 kris Exp $
 #
 
 DISTNAME=	kbiff-2.3
@@ -18,6 +18,6 @@ LIB_DEPENDS=	kdeui.2:${PORTSDIR}/x11/kdelibs11 \
 USE_QT=		yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CXXFLAGS="${CFLAGS}"
 
 .include <bsd.port.mk>
+
