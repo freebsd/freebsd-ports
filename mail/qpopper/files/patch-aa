@@ -1,45 +1,50 @@
---- popper/Makefile.in.orig	Thu Aug 17 01:36:14 2000
-+++ popper/Makefile.in	Wed Nov  1 11:37:31 2000
-@@ -74,9 +74,9 @@
- 			pop_msg.o pop_parse.o pop_pass.o pop_quit.o \
- 			pop_rset.o pop_send.o pop_stat.o pop_updt.o \
- 			pop_user.o pop_xtnd.o pop_xmit.o popper.o \
--			pop_bull.o xtnd_xlst.o pop_uidl.o mktemp.o \
--			pop_rpop.o pop_apop.o md5.o pop_auth.o pop_pope.o \
--                        pop_extend.o scram.o hmac.o base64.o pop_util.o \
-+			pop_bull.o xtnd_xlst.o pop_uidl.o \
-+			pop_rpop.o pop_apop.o pop_auth.o pop_pope.o \
-+                        pop_extend.o scram.o hmac.o pop_util.o \
-                         get_sub_opt.o msg_ptr.o drac.o pop_config.o main.o
+
+$FreeBSD$
+
+--- popper/Makefile.in.orig	Wed Apr  4 03:23:22 2001
++++ popper/Makefile.in	Fri Apr 13 19:03:27 2001
+@@ -106,9 +106,9 @@
+                     pop_msg.o pop_parse.o pop_pass.o pop_quit.o \
+                     pop_rset.o pop_send.o pop_stat.o pop_updt.o \
+                     pop_user.o pop_xtnd.o pop_xmit.o popper.o \
+-                    pop_bull.o xtnd_xlst.o pop_uidl.o mktemp.o \
+-                    pop_rpop.o pop_apop.o md5.o pop_auth.o pop_pope.o \
+-                    pop_extend.o scram.o hmac.o base64.o pop_util.o \
++                    pop_bull.o xtnd_xlst.o pop_uidl.o \
++                    pop_rpop.o pop_apop.o pop_auth.o pop_pope.o \
++                    pop_extend.o scram.o hmac.o pop_util.o \
+                     get_sub_opt.o msg_ptr.o drac.o pop_config.o pop_tls.o \
+                     pop_tls_openssl.o pop_tls_sslplus.o sslplus_utils.o \
+                     main.o pop_cache.o genpath.o
+@@ -119,17 +119,17 @@
+                     pop_msg.c pop_parse.c pop_pass.c pop_quit.c \
+                     pop_rset.c pop_send.c pop_stat.c pop_updt.c \
+                     pop_user.c pop_xtnd.c pop_xmit.c popper.c \
+-                    pop_bull.c xtnd_xlst.c pop_uidl.c mktemp.c \
+-                    pop_rpop.c pop_apop.c md5.c pop_auth.c pop_pope.c \
+-                    pop_extend.c scram.c hmac.c base64.c pop_util.c \
++                    pop_bull.c xtnd_xlst.c pop_uidl.c \
++                    pop_rpop.c pop_apop.c pop_auth.c pop_pope.c \
++                    pop_extend.c scram.c hmac.c pop_util.c \
+                     get_sub_opt.c msg_ptr.c drac.c pop_config.c pop_tls.c \
+                     pop_tls_openssl.c pop_tls_sslplus.c sslplus_utils.c \
+                     main.c pop_cache.c genpath.c
  
- SRCS		=	pop_dele.c pop_dropcopy.c \
-@@ -85,15 +85,15 @@
- 			pop_msg.c pop_parse.c pop_pass.c pop_quit.c \
- 			pop_rset.c pop_send.c pop_stat.c pop_updt.c \
- 			pop_user.c pop_xtnd.c pop_xmit.c popper.c \
--			pop_bull.c xtnd_xlst.c pop_uidl.c mktemp.c \
--			pop_rpop.c pop_apop.c md5.c pop_auth.c pop_pope.c \
--                        pop_extend.c scram.c hmac.c base64.c pop_util.c \
-+			pop_bull.c xtnd_xlst.c pop_uidl.c \
-+			pop_rpop.c pop_apop.c pop_auth.c pop_pope.c \
-+                        pop_extend.c scram.c hmac.c pop_util.c \
-                         get_sub_opt.c msg_ptr.c drac.c pop_config.c main.c
+-POPAUTHOBJS     =   base64.o scram.o md5.o \
++POPAUTHOBJS     =   scram.o \
+                     hmac.o popauth.o
  
--POPAUTHOBJS     =       base64.o scram.o md5.o \
-+POPAUTHOBJS     =       scram.o \
- 			hmac.o popauth.o
+-POPAUTHSRCS     =   base64.c scram.c md5.c \
++POPAUTHSRCS     =   scram.c \
+                     hmac.c popauth.c
  
--POPAUTHSRCS	=       base64.c scram.c md5.c \
-+POPAUTHSRCS	=       scram.c \
- 			hmac.c popauth.c
- 
- INCLUDES	=	${srcdir}/popper.h ${srcdir}/version.h \
-@@ -133,7 +133,7 @@
- 	        -I${common_srcdir} ${common_dir}/libcommon.a
+ INCLUDES        =   ${srcdir}/popper.h \
+@@ -180,7 +180,7 @@
+ 	        ${LIBS}
  
  popauth: ${POPAUTHOBJS}
 -	${CC}  -o popauth ${POPAUTHOBJS} ${NETWORK_LIBS} ${DBM_LIBS} \
 +	${CC}  -o popauth ${POPAUTHOBJS} ${LIBS} ${NETWORK_LIBS} ${DBM_LIBS} \
  		${common_dir}/libcommon.a
  
- .c.o: 
+ poppassd: common_library

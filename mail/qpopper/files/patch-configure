@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- configure.orig	Wed Apr  4 03:28:30 2001
++++ configure	Fri Apr 13 19:20:14 2001
+@@ -2559,7 +2559,7 @@
+ EOF
+ 
+     SSL_DIR_INC="-I${openssl}/include"
+-    SSL_LIBS="-L${openssl}/lib -lssl -lcrypto"
++    SSL_LIBS="-L${openssl}/lib -lrsaref -lssl -lcrypto ${RSAGLUE}"
+ fi
+ 
+ 
