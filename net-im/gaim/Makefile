@@ -7,7 +7,7 @@
 
 PORTNAME=	gaim
 PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -37,7 +37,7 @@ MAN1=		gaim.1 gaim-remote.1
 OPTIONS=	SILC "Secure Internet Live Conferencing support" off \
 		GTKSPELL "spell checking support" on \
 		AUDIO "audio support" on \
-		GNUTLS "GNUTLS encryption support" on \
+		GNUTLS "GNUTLS encryption support" off \
 		NSS "Mozilla NSS encryption support" on \
 		PERL "Perl scripting" off \
 		TCLTK "Tcl/Tk scripting" off
