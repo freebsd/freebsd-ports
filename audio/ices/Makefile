@@ -20,10 +20,13 @@ LIB_DEPENDS=	ogg.4:${PORTSDIR}/audio/libogg \
 		vorbis.2:${PORTSDIR}/audio/libvorbis \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
+AUTOMAKE_ARGS=  --add-missing
+AUTOMAKE_ENV=   CFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="${PTHREAD_LIBS} -L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-oggtest --disable-vorbistest --disable-shouttest
 CONFIGURE_ENV=	CFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${PTHREAD_LIBS} -L${LOCALBASE}/lib"
-GNU_CONFIGURE=	yes
+USE_AUTOMAKE_VER=15
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
