@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	NetPIPE
-PORTVERSION=	3.5
+PORTVERSION=	3.6
 CATEGORIES=	benchmarks net
 MASTER_SITES=	http://www.scl.ameslab.gov/Projects/Netpipe/code/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
