@@ -7,6 +7,7 @@
 
 PORTNAME=	edict
 PORTVERSION=	19990714
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.sedl.org/pub/mirrors/nihongo/ \
 		ftp://ftp.u-aizu.ac.jp/pub/SciEng/nihongo/ftp.cc.monash.edu.au/ \
@@ -22,19 +23,19 @@ BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 DIST_SUBDIR=	edict
 
 DICTFILES=	edict.gz edicth enamdict.gz compdic.gz \
-		jddict.v02.gz j_places.gz ediclsd3.zip \
+		j_places.gz ediclsd3.zip \
 		kanjidic.gz kanjd212.gz lawgledt.zip \
 		lingdic.zip geodic.gz pandpdic.zip \
 		aviation.zip findic.zip mktdic.zip \
-		compverb.gz 4jwords.gz concrete.zip
+		compverb.gz 4jword2.gz concrete.zip
 
 SRCFILES=	xjdic23.tgz
 
 DOCFILES=	edict_doc.txt edict_doc.html edicth.doc \
-		enamdict_doc.txt enamdict_doc.html jddict.doc \
+		enamdict_doc.txt enamdict_doc.html \
 		j_places.inf kanjidic.doc kanjd212.doc ediclsd3.rme \
 		lawgldoc.new lingdic.txt geodic.doc aviation.txt \
-		findic.doc mktdic.doc compverb.doc 4jwords.doc \
+		findic.doc mktdic.doc compverb.doc 4jword2.doc \
 		concrete.doc
 
 #
@@ -136,7 +137,6 @@ do-install:
 	@${ECHO_CMD} dicfile enamdict >> ${DATADIR}/.xjdicrc
 	@${ECHO_CMD} dicfile compdic >> ${DATADIR}/.xjdicrc
 	@${ECHO_CMD} dicfile ediclsd3 >> ${DATADIR}/.xjdicrc
-	# @${ECHO_CMD} dicfile jddict.v02 >> ${DATADIR}/.xjdicrc
 	@${ECHO_CMD} dicfile j_places >> ${DATADIR}/.xjdicrc
 	# @${ECHO_CMD} dicfile lawgledt >> ${DATADIR}/.xjdicrc
 	@${ECHO_CMD} dicfile geodic >> ${DATADIR}/.xjdicrc
@@ -145,7 +145,7 @@ do-install:
 	# @${ECHO_CMD} dicfile findic >> ${DATADIR}/.xjdicrc
 	# @${ECHO_CMD} dicfile mktdic >> ${DATADIR}/.xjdicrc
 	@${ECHO_CMD} dicfile compverb >> ${DATADIR}/.xjdicrc
-	@${ECHO_CMD} dicfile 4jwords >> ${DATADIR}/.xjdicrc
+	@${ECHO_CMD} dicfile 4jword2 >> ${DATADIR}/.xjdicrc
 	# @${ECHO_CMD} dicfile concrete.doc >> ${DATADIR}/.xjdicrc
 	# @${ECHO_CMD} dicfile lingdic >> ${DATADIR}/.xjdicrc
 	@${CHOWN} ${SHAREOWN}:${SHAREGRP} ${DATADIR}/.xjdicrc
