@@ -4,18 +4,15 @@
 #
 # $FreeBSD$
 #
-# Instructions on how to enable preferred extensions can be found in the
-# Makefile of the master port (lang/php4).
-#
 
 CATEGORIES=	www
+PKGNAMESUFFIX=	-cgi
 
-MAINTAINER=	sysadmin@alexdupre.com
+MAINTAINER=	ale@FreeBSD.org
+COMMENT=	PHP Common Gateway Interface
 
-PKGMESSAGE=	${.CURDIR}/pkg-message
 MASTERDIR=	${.CURDIR}/../../lang/php4
 
-WITHOUT_APACHE=	yes
-WITHOUT_CLI=	yes
+CONFLICTS=	php4-4* php4-cli-4* mod_php4-4*
 
 .include "${MASTERDIR}/Makefile"

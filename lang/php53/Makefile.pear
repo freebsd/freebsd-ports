@@ -1,0 +1,29 @@
+USE_GNOME=	libxml2
+
+GNU_CONFIGURE=	yes
+
+CONFIGURE_ARGS= --with-layout=GNU \
+		--disable-cgi \
+                --disable-all \
+                --with-pcre-regex=yes \
+                --enable-xml \
+                --with-libxml-dir=${LOCALBASE} \
+                --with-zlib-dir=/usr \
+                --with-pear
+
+NO_BUILD=	yes
+
+INSTALL_TARGET=	install-pear
+
+USE_PHP=	pcre xml
+WANT_PHP_SCR=	yes
+
+.include <bsd.port.pre.mk>
+
+post-patch:
+	@${SED} "s|%%PREFIX%%|${PREFIX}|g" \
+		${WRKSRC}/pear/scripts/pearcmd.php > ${WRKSRC}/pear/scripts/pear
+
+post-install:
+	@${INSTALL_SCRIPT} ${WRKSRC}/pear/scripts/pear ${PREFIX}/bin
+	@${SED} "s|\$${LOCALBASE}|${LOCALBASE}|g;s|\$${PREFIX}|${PREFIX}|g" < ${PKGMESSAGE}
