@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	drweb_postfix
-PORTVERSION=	4.29
+PORTVERSION=	4.29.10a
 CATEGORIES=	security mail
 MASTER_SITES=	ftp://ftp.drweb.ru/pub/unix/
-DISTNAME=	drweb-clients-${PORTVERSION}-sources
+DISTNAME=	drweb-clients-4.29.10-A-sources
 
 MAINTAINER=	zaa@ulstu.ru
 COMMENT=	Postfix message filter for virus processing through DrWeb daemon
@@ -21,12 +21,13 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 INST_PREFIX=	${PREFIX}/${PORTNAME}
 DOC_DIR=	${PREFIX}/share/doc/drweb-postfix
 
-LANGS=en-ru en-es
-CONFS=drweb_postfix users
-TMPLS=error-admin error-sender mailbomb-admin mailbomb-sender skip-sender \
+LANGS=en-ru
+CONFS=drweb_postfix users viruses addresses
+TMPLS=archive-admin archive-sender error-admin error-sender skip-sender \
       virus-admin virus-rcpts virus-sender
-DOCS=readme notify.rus.txt users_list.rus.txt conf_file.rus.txt notify.txt \
-	users_list.txt conf_file.txt readme.rus
+DOCS=addresses_list.rus.txt addresses_list.txt conf_file.rus.txt \
+	conf_file.txt notify.rus.txt notify.txt readme readme.rus \
+	users_list.rus.txt users_list.txt viruses_list.rus.txt viruses_list.txt
 
 post-patch:
 	cd ${WRKSRC} && \
@@ -39,6 +40,7 @@ post-patch:
 
 post-configure:
 	cd ${WRKSRC} && { \
+		${ECHO_CMD} ${PORTVERSION}; \
 		${ECHO_CMD} n; \
 		${ECHO_CMD} n; \
 		${ECHO_CMD} n; \
@@ -46,7 +48,6 @@ post-configure:
 		${ECHO_CMD} n; \
 		${ECHO_CMD} n; \
 		${ECHO_CMD} y; \
-		${ECHO_CMD} n; \
 		${ECHO_CMD} ${CFLAGS} ; \
 		${ECHO_CMD} y; \
 	} | ./configure
