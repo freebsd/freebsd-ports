@@ -695,13 +695,16 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-	<url>http://tigger.uic.edu/~jlongs2/holes/greed.txt</url>
-	<url>http://secunia.com/advisories/13534/</url>
-	<mlist msgid="653D74053BA6F54A81ED83DCF969DF08CFA2AA@pivxes1.pivx.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110321888413132</mlist>
+      <cvename>CAN-2004-1273</cvename>
+      <cvename>CAN-2004-1274</cvename>
+      <url>http://tigger.uic.edu/~jlongs2/holes/greed.txt</url>
+      <url>http://secunia.com/advisories/13534/</url>
+      <mlist msgid="653D74053BA6F54A81ED83DCF969DF08CFA2AA@pivxes1.pivx.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110321888413132</mlist>
     </references>
     <dates>
       <discovery>2004-12-15</discovery>
       <entry>2005-01-03</entry>
+      <modified>2005-01-13</modified>
     </dates>
   </vuln>
 
