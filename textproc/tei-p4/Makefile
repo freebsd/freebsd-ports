@@ -17,6 +17,8 @@ COMMENT=	DTD of the Text Encoding Initiative
 
 RUN_DEPENDS=	${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr
 
+BROKEN=		Size mismatch
+
 LATEST_LINK=	tei-p4
 USE_ZIP=	yes
 NO_BUILD=	yes

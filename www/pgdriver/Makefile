@@ -18,6 +18,8 @@ COMMENT=	A driver for AOLserver to PostgreSQL connectivity
 BUILD_DEPENDS=	${LOCALBASE}/aolserver/bin/nsd:${PORTSDIR}/www/aolserver
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		Size mismatch
+
 USE_PGSQL=	yes
 
 MAKEFILE=	makefile

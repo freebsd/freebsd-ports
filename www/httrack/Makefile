@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}-2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easy-to-use offline browser utility and website copier
 
+BROKEN=		Size mismatch
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_GNOME=	gnometarget

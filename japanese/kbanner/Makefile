@@ -15,6 +15,8 @@ DISTFILES=	${PORTNAME}2.tar.Z
 MAINTAINER=	sumikawa@FreeBSD.org
 COMMENT=	Displays large japanese letters on the standard output
 
+BROKEN=		Size mismatch
+
 WRKSRC=		${WRKDIR}/${PORTNAME}2
 ALL_TARGET=	kbanner
 MAN1=		kbanner.1
