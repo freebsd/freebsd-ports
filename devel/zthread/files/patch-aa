@@ -1,19 +1,30 @@
-*** Makefile.in.old	Mon Jul  2 16:27:25 2001
---- Makefile.in	Mon Jul  2 16:27:58 2001
-***************
-*** 378,384 ****
-  
-  install-exec-hook:
-  	$(mkinstalldirs) $(bindir)
-! 	$(INSTALL_PROGRAM) share/zthread-config $(bindir)
-  
-  install-data-hook:
-  	$(mkinstalldirs) $(datadir)/aclocal
---- 378,384 ----
-  
-  install-exec-hook:
-  	$(mkinstalldirs) $(bindir)
-! 	$(INSTALL_SCRIPT) share/zthread-config $(bindir)
-  
-  install-data-hook:
-  	$(mkinstalldirs) $(datadir)/aclocal
+--- Makefile.in.orig	Thu Jul 12 23:46:03 2001
++++ Makefile.in	Fri Aug  3 12:52:00 2001
+@@ -146,6 +146,9 @@
+ 	cd $(top_srcdir) && $(AUTOHEADER)
+ 	@echo timestamp > $(srcdir)/src/stamp-h.in 2> /dev/null
+ 
++$(srcdir)/libtool: ltconfig
++	$(srcdir)/ltconfig $(srcdir)/ltmain.sh
++
+ mostlyclean-hdr:
+ 
+ clean-hdr:
+@@ -327,7 +330,7 @@
+ uninstall-am: uninstall-local
+ uninstall: uninstall-recursive
+ all-am: Makefile
+-all-redirect: all-recursive
++all-redirect: $(srcdir)/libtool all-recursive
+ install-strip:
+ 	$(MAKE) $(AM_MAKEFLAGS) AM_INSTALL_PROGRAM_FLAGS=-s install
+ installdirs: installdirs-recursive
+@@ -382,7 +385,7 @@
+ 
+ install-exec-hook:
+ 	$(mkinstalldirs) $(bindir)
+-	$(INSTALL_PROGRAM) $(top_srcdir)/share/zthread-config $(bindir)
++	$(INSTALL_SCRIPT) $(top_srcdir)/share/zthread-config $(bindir)
+ 
+ install-data-hook:
+ 	$(mkinstalldirs) $(datadir)/aclocal
