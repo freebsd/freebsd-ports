@@ -12,6 +12,8 @@ MASTER_SITES=	http://xmps.sourceforge.net/sources/
 
 MAINTAINER=	sobomax@FreeBSD.org
 
+LIB_DEPENDS=	SDL-1.1.2:${PORTSDIR}/devel/sdl-devel
+
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 
 USE_X_PREFIX=	yes
