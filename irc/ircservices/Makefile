@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ircservices
-PATCHLEVEL=	18
+PATCHLEVEL=	20
 PORTVERSION=	5.0.${PATCHLEVEL}
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.ircservices.za.net/pub/ircservices/ \
@@ -23,6 +23,8 @@ COMMENT=	A system of IRC services for IRC networks
 USE_PERL5_BUILD=yes
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
+
+DIST_SUBDIR=	${PORTNAME}
 
 CONFIGURE_ARGS=	-prefix ${PREFIX} -cflags "${CFLAGS}" -cc "${CC}"
 
