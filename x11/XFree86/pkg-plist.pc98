@@ -624,6 +624,7 @@ lib/X11/doc/README.cyrix
 lib/X11/doc/README.epson
 lib/X11/doc/README.mouse
 lib/X11/doc/README.neo
+lib/X11/doc/README.r128
 lib/X11/doc/README.rendition
 lib/X11/doc/README.trident
 lib/X11/doc/README.tseng
