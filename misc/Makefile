@@ -120,7 +120,6 @@
     SUBDIR += proxyper
     SUBDIR += py-distutils
     SUBDIR += pybliographer
-    SUBDIR += qclock
     SUBDIR += qhacc
     SUBDIR += qlas
     SUBDIR += quotes
