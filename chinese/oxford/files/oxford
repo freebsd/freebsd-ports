@@ -1,0 +1,58 @@
+#!/usr/bin/perl
+
+$prefix="/usr/local";
+
+# modify file path below if needed
+$dicpath="$prefix/share/oxford/";
+$flag=0;
+
+# accept 4 parameters
+$input="$ARGV[0]";
+if ( $ARGV[1] ) { $input = $input." $ARGV[1]"; }
+if ( $ARGV[2] ) { $input = $input." $ARGV[2]"; }
+if ( $ARGV[3] ) { $input = $input." $ARGV[3]"; }
+
+# no argument
+if ( ! $input )
+{
+  print "Input your word/phrase please: ";
+  $input=<STDIN>;
+  chop($input);
+} 
+
+if( $input )
+{
+  $index=`echo $input | cut -c1 | tr "[A-Z]" "[a-z]"`;
+  chop($index);
+  $dicfilename=$dicpath."$index.dic";
+
+  open ( FHHH, $dicfilename )
+    or die("Dictionary perl script");
+
+  print "Searching Word: [ $input ]\n";
+
+  while ( <FHHH> )
+  {
+    if ( /^$input/i )
+    {
+       print $_;
+       print "\n";
+       $flag=1;
+       $matchline=1;
+    }
+    else
+    {
+       if ( $matchline eq 1 )
+       {      
+          # print explanations
+           print $_; 
+           print "\n";
+           $matchline = 0;
+       }
+    }
+  }
+  if ( $flag eq 0 )
+  {
+     print "not found.\n";
+  }
+}  # end of else of if ( ! $input )
