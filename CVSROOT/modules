@@ -9371,6 +9371,7 @@ screem		ports/www/screem
 screen		ports/misc/screen
 scriba		ports/lang/scriba
 scribus		ports/print/scribus
+script4rss	ports/www/script4rss
 scrollkeeper	ports/textproc/scrollkeeper
 scrollz		ports/irc/scrollz
 scrollz-doc	ports/irc/scrollz-doc
