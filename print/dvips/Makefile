@@ -8,7 +8,7 @@
 PORTNAME=	dvips
 PORTVERSION=	5.76
 CATEGORIES=	print
-MASTER_SITES=	ftp://ftp.tex.ac.uk/tex-archive/dviware/dvips/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
 DISTNAME=	dvips576
 
 MAINTAINER=	jmz@FreeBSD.org
