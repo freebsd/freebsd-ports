@@ -1,0 +1,25 @@
+%%SITE_PERL%%/Chart/Graph.pm
+%%SITE_PERL%%/Chart/Graph/Gnuplot.pm
+%%SITE_PERL%%/Chart/Graph/Utils.pm
+%%SITE_PERL%%/Chart/Graph/Xmgrace.pm
+%%SITE_PERL%%/Chart/Graph/Xmgrace/Axes.pm
+%%SITE_PERL%%/Chart/Graph/Xmgrace/Axis.pm
+%%SITE_PERL%%/Chart/Graph/Xmgrace/Axis_Option.pm
+%%SITE_PERL%%/Chart/Graph/Xmgrace/Axis_Options.pm
+%%SITE_PERL%%/Chart/Graph/Xmgrace/Base_Dataset_Option.pm
+%%SITE_PERL%%/Chart/Graph/Xmgrace/Base_Option.pm
+%%SITE_PERL%%/Chart/Graph/Xmgrace/Dataset.pm
+%%SITE_PERL%%/Chart/Graph/Xmgrace/Dataset_Options.pm
+%%SITE_PERL%%/Chart/Graph/Xmgrace/Grace.pm
+%%SITE_PERL%%/Chart/Graph/Xmgrace/Graph_Options.pm
+%%SITE_PERL%%/Chart/Graph/Xmgrace/Graph_Presentation_Type.pm
+%%SITE_PERL%%/Chart/Graph/Xmgrace/World_Option.pm
+%%SITE_PERL%%/Chart/Graph/Xrt2d.pm
+%%SITE_PERL%%/Chart/Graph/Xrt3d.pm
+%%SITE_PERL%%/Chart/Graph/XrtUtils.pm
+@dirrm %%SITE_PERL%%/Chart/Graph/Xmgrace
+@dirrm %%SITE_PERL%%/Chart/Graph
+@unexec rmdir %D/%%SITE_PERL%%/Chart 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Chart/Graph/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chart/Graph
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Chart 2>/dev/null || true
