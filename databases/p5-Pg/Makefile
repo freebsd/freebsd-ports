@@ -6,32 +6,25 @@
 #
 
 PORTNAME=	Pg
-POSTVERSION=	7.2
+PORTVERSION=	2.0.1
+PORTEPOCH=	1
 CATEGORIES=	databases perl5
+MASTER_SITES=	ftp://gborg.postgresql.org/pub/pgperl/stable/
 PKGNAMEPREFIX=	p5-
+DISTFILES=	pgperl-${PORTVERSION}${EXTRACT_SUFX}
+DIST_SUBDIR=	postgresql
 
-MAINTAINER=	girgen@partitur.se
+MAINTAINER=	girgen@pingpong.net
 
-POSTGRESQL_SUBPORT=YES
 POSTGRESQL_PORT?=	databases/postgresql7
-.include <${.CURDIR}/../../${POSTGRESQL_PORT}/Makefile>
 LIB_DEPENDS=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
 
 USE_PERL5=	yes
 
-CONFIGURE_ARGS=	--with-perl
-
 MAN3=		Pg.3
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
-MAKE_ARGS+=	-C src/interfaces/perl5
-MAKEFILE=	GNUmakefile
-
-post-patch:
-	cd ${WRKSRC}/src/interfaces/perl5 ;\
-	cp GNUmakefile GNUmakefile.old ;\
-	${SED} -e 's,\$$\$$abs_libpq_builddir,${LOCALBASE}/lib,; \
-		   s,Makefile\ libpq-all,Makefile,' \
-		 < GNUmakefile.old > GNUmakefile
+PERL_CONFIGURE=	YES
+CONFIGURE_ENV=	POSTGRES_INCLUDE=${LOCALBASE}/include POSTGRES_LIB=${LOCALBASE}/lib
 
 .include <bsd.port.mk>
