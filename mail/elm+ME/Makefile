@@ -4,7 +4,7 @@
 # Date created:         26 June 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.48 1998/08/28 19:51:38 hoek Exp $
+# $Id: Makefile,v 1.49 1998/08/28 20:51:28 hoek Exp $
 #
 
 DISTNAME=       elm-2.4ME+43
@@ -19,6 +19,7 @@ WRKSRC=         ${WRKDIR}/elm2.4.ME+.43
 MAN1=           answer.1 checkalias.1 elm.1 elmalias.1 fastmail.1 \
 		frm.1 listalias.1 messages.1 newalias.1 newmail.1 \
 		printmail.1 readmsg.1
+MLINKS=		frm.1 nfrm.1
 
 HAS_CONFIGURE=  Yes
 CONFIGURE_SCRIPT= Configure
@@ -35,10 +36,5 @@ post-install:
 		${INSTALL_DATA} \
 			${FILESDIR}/elm.mimetypes ${PREFIX}/lib; \
 	fi
-.if defined(NOMANCOMPRESS)
-	${LN} -f ${PREFIX}/man/man1/frm.1 ${PREFIX}/man/man1/nfrm.1
-.else
-	${LN} -sf ${PREFIX}/man/man1/frm.1.gz ${PREFIX}/man/man1/nfrm.1.gz
-.endif
 
 .include <bsd.port.mk>
