@@ -5751,6 +5751,7 @@ p5-Mail-Ezmlm	ports/mail/p5-Mail-Ezmlm
 p5-Mail-FilterXML	ports/mail/p5-Mail-FilterXML
 p5-Mail-Folder	ports/mail/p5-Mail-Folder
 p5-Mail-Freshmeat	ports/mail/p5-Mail-Freshmeat
+p5-Mail-GnuPG		ports/mail/p5-Mail-GnuPG
 p5-Mail-IMAPClient	ports/mail/p5-Mail-IMAPClient
 p5-Mail-ListDetector	ports/mail/p5-Mail-ListDetector
 p5-Mail-MailStats	ports/mail/p5-Mail-MailStats
@@ -5947,6 +5948,9 @@ p5-RDF-Core	ports/textproc/p5-RDF-Core
 p5-RDF-Notation3	ports/textproc/p5-RDF-Notation3
 p5-RDFStore	ports/textproc/p5-RDFStore
 p5-RPC-XML	ports/net/p5-RPC-XML
+p5-RTF-Parser	ports/textproc/p5-RTF-Parser
+p5-RTF-Tokenizer	ports/textproc/p5-RTF-Tokenizer
+p5-RTF-Writer	ports/textproc/p5-RTF-Writer
 p5-Rcs	ports/devel/p5-Rcs
 p5-Rcs-Agent	ports/devel/p5-Rcs-Agent
 p5-ReadLine-Gnu	ports/devel/p5-ReadLine-Gnu
@@ -6013,6 +6017,7 @@ p5-Sort-ArbBiLex	ports/textproc/p5-Sort-ArbBiLex
 p5-Sort-ArrayOfArrays	ports/devel/p5-Sort-ArrayOfArrays
 p5-Sort-Fields	ports/textproc/p5-Sort-Fields
 p5-Sort-PolySort	ports/textproc/p5-Sort-PolySort
+p5-Sort-Tree		ports/devel/p5-Sort-Tree
 p5-Sort-Versions	ports/devel/p5-Sort-Versions
 p5-Spread-Session	ports/net/p5-Spread-Session
 p5-Spreadsheet-ParseExcel	ports/textproc/p5-Spreadsheet-ParseExcel
@@ -6136,6 +6141,8 @@ p5-Tk-XMLViewer	ports/textproc/p5-Tk-XMLViewer
 p5-TraceFuncs	ports/devel/p5-TraceFuncs
 p5-Tree-DAG_Node	ports/devel/p5-Tree-DAG_Node
 p5-Tree-Nary	ports/textproc/p5-Tree-Nary
+p5-UML-Sequence	ports/textproc/p5-UML-Sequence
+p5-UML-State	ports/textproc/p5-UML-State
 p5-UNIVERSAL-exports	ports/devel/p5-UNIVERSAL-exports
 p5-UNIVERSAL-moniker	ports/devel/p5-UNIVERSAL-moniker
 p5-UPS-Nut	ports/sysutils/p5-UPS-Nut
