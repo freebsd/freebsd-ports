@@ -6,8 +6,6 @@
 %%PYTHON_SITELIBDIR%%/sqlite/main.pyo
 %%PYTHON_SITELIBDIR%%/_sqlite.so
 @dirrm %%PYTHON_SITELIBDIR%%/sqlite
-%%PORTDOCS%%share/doc/py-PySQLite/README
-%%PORTDOCS%%@dirrm share/doc/py-PySQLite
 %%PORTDOCS%%%%EXAMPLESDIR%%/converters.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/dbapi_transactions.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/manual_transactions.py
