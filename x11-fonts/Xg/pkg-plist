@@ -172,3 +172,5 @@ lib/X11/fonts/Xg/pelm.latineur.8.pcf.Z
 lib/X11/fonts/Xg/pelm.latineur.9.pcf.Z
 lib/X11/fonts/Xg/pelm.supsub.8.pcf.Z
 lib/X11/fonts/Xg/pelm.supsub.9.pcf.Z
+lib/X11/fonts/Xg/unicode.9.font
+@dirrm lib/X11/fonts/Xg

@@ -3,7 +3,7 @@
 # Date created:         Sun Aug 13 12:36:14 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.3 1996/11/12 02:19:29 obrien Exp $
+# $Id: Makefile,v 1.4 1997/09/08 12:23:55 tg Exp $
 #
 
 DISTNAME=	9menu-1.5
@@ -17,5 +17,8 @@ NO_WRKSUBDIR=	yes
 EXTRACT_CMD=		zcat
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	|sh
+
+MAN1=		9menu.1
+MANCOMPRESSED=	yes
 
 .include <bsd.port.mk>
