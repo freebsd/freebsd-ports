@@ -12,6 +12,7 @@
     SUBDIR += emiclock
     SUBDIR += eyeclock
     SUBDIR += gdesklets-clock
+    SUBDIR += gdesklets-countdown
     SUBDIR += glclock
     SUBDIR += kdetoys3
     SUBDIR += mlclock

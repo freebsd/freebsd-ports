@@ -1,0 +1,6 @@
+This desklet allows to countdown the remaining time until a configurable
+date. It then displays a victorious 'Hurrah!', or whatever you set.
+It also provides an increasing counter ('countup' feature), displaying
+the time elapsed from the specified date.
+
+WWW: http://gdesklets.gnomedesktop.org/

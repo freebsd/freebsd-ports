@@ -1,0 +1,17 @@
+##
+To view the README:
+
+	cat %%PREFIX%%/share/gnome/gdesklets/Displays/Countdown/README
+	cat %%PREFIX%%/share/gnome/gdesklets/Sensors/Countdown/README
+
+To view all installed applets:
+
+	ls %%PREFIX%%/share/gnome/gdesklets/Displays
+
+To use those applets:
+
+	gdesklets %%PREFIX%%/share/gnome/gdesklets/Displays/Countdown/Countdown.display
+
+NOTE: Be sure to login as your user when you use the gdesklets command,
+      as the configuration will be stored in the ~/.gdesklets/ directory.
+##
