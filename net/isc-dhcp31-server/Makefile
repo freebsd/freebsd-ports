@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	dhcp
-PORTVERSION=	3.0.r8
+PORTVERSION=	3.0.r8.2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.isc.org/isc/%SUBDIR%/ \
 		${US_MASTER_SITES} ${JAPAN_MASTER_SITES} \
@@ -40,11 +40,12 @@ PLIST_SUB=	DATA_DIR="${DATA_DIR}" RCD_SUBDIR="${RCD_SUBDIR}" \
 		INC_SUBDIR="${INC_SUBDIR}" LIB_SUBDIR="${LIB_SUBDIR}" \
 		DOC_SUBDIR="${DOC_SUBDIR}" SAMP_SUFFIX="${SAMP_SUFFIX}"
 
+MAN1=		omshell.1
 MAN3=		dhcpctl.3 omapi.3 omshell.3
 MAN5=		dhclient.conf.5 dhclient.leases.5 dhcp-contrib.5 \
 		dhcp-eval.5 dhcp-options.5 dhcpd.conf.5 \
 		dhcpd.leases.5
-MAN8=		dhclient.8 dhclient-script.8 dhcpd.8 dhcrelay.8 omshell.8
+MAN8=		dhclient.8 dhclient-script.8 dhcpd.8 dhcrelay.8
 
 #
 # Local variables
