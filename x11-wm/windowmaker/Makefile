@@ -7,6 +7,7 @@
 
 PORTNAME=	windowmaker
 PORTVERSION=	0.80.2
+PORTREVISION=	1
 CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	${MASTER_SITE_WINDOWMAKER}
 MASTER_SITE_SUBDIR=	source/release
@@ -17,8 +18,11 @@ MAINTAINER=	sobomax@FreeBSD.org
 LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		intl.4:${PORTSDIR}/devel/gettext \
-		Hermes.1:${PORTSDIR}/graphics/Hermes
+		intl.4:${PORTSDIR}/devel/gettext
+.if !defined(WITHOUT_HERMES)
+LIB_DEPENDS+=	Hermes.1:${PORTSDIR}/graphics/Hermes
+.endif
+
 RUN_DEPENDS=	${X11BASE}/share/WindowMaker/Themes/Checker.themed/style:${PORTSDIR}/graphics/wmicons
 
 USE_BZIP2=	yes
@@ -38,8 +42,14 @@ CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/include/X11/pixmaps \
 		--with-libs-from="-L${LOCALBASE}/lib" \
 		--with-incs-from="-I${LOCALBASE}/include" \
 		--with-appspath="${PREFIX}/GNUstep/Apps" \
-		--enable-hermes \
 		--disable-debug
+
+.if !defined(WITHOUT_HERMES)
+CONFIGURE_ARGS+=	--enable-hermes
+.else
+CONFIGURE_ARGS+=	--disable-hermes
+.endif
+
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 MANLANG=	"" sk
@@ -63,6 +73,12 @@ CONFIGURE_ARGS+=	--enable-kde
 .else
 pre-extract:
 	@${ECHO} "You can add hooks for KDE by defining WITH_KDE"
+.endif
+
+.if !defined(WITHOUT_HERMES)
+pre-everything::
+	@${ECHO} "You can disable the Hermes library by defining WITHOUT_HERMES"
+	@${ECHO}
 .endif
 
 post-patch:
