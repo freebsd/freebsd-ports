@@ -1,0 +1,6 @@
+Chgrep searches the input files (or standard input if no files are named)
+for oldstring and changes them to new string. If some file and file.lock
+exist then chgrep leaves both files unchanged. This program can be very use-
+full for mail servers. Chgrep is fast, much faster than grep or sed.
+
+WWW: http://www.bmk.bicom.pl/chgrep
