@@ -1,8 +1,0 @@
---- DTD/xhtml.soc.orig	Fri Aug  2 03:23:08 2002
-+++ DTD/xhtml.soc	Sat Jun 28 16:43:36 2003
-@@ -11,4 +11,4 @@
- PUBLIC	"-//W3C//ENTITIES Symbols for XHTML//EN" "xhtml-symbol.ent"
- PUBLIC	"-//W3C//ENTITIES Special for XHTML//EN" "xhtml-special.ent"
- 
--SGMLDECL "xhtml1.dcl"
-+-- SGMLDECL "xhtml1.dcl" --

@@ -1,9 +1,10 @@
 share/xml/dtd/xhtml/xhtml-lat1.ent
 share/xml/dtd/xhtml/xhtml-special.ent
 share/xml/dtd/xhtml/xhtml-symbol.ent
-@unexec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% remove %%DTDDIR%%/xhtml.soc
+@unexec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% remove %%DTDDIR%%/xhtml-dcl.soc
 share/xml/dtd/xhtml/xhtml.soc
-@exec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% add CATALOG %%DTDDIR%%/xhtml.soc
+share/xml/dtd/xhtml/xhtml-dcl.soc
+@exec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% add CATALOG %%DTDDIR%%/xhtml-dcl.soc
 @unexec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% remove %%DTDDIR%%/catalog.xml
 share/xml/dtd/xhtml/catalog.xml
 @exec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% add nextCatalog %%DTDDIR%%/catalog.xml
