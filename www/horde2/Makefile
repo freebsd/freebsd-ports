@@ -53,6 +53,7 @@ RUN_DEPENDS=	${PEARDIR}/Date.php:${PORTSDIR}/devel/pear-Date			\
 NO_BUILD=	yes
 USE_PHP=	domxml gettext session
 WANT_PHP_MOD=	yes
+BROKEN_WITH_PHP=5
 USE_REINPLACE=	yes
 
 .if !defined(NOCRYPT)
@@ -139,12 +140,12 @@ pre-install:
 .endif
 
 post-patch:
-	@${RM} ${WRKSRC}/po/translation.php.orig
-	@${RM} ${WRKSRC}/scripts/db/README.orig
-	@${RM} ${WRKSRC}/scripts/set_perms.sh.orig
-	@${RM} ${WRKSRC}/config/horde.php.dist.orig
-	@${RM} ${WRKSRC}/config/registry.php.dist.orig
-	@${RM} ${WRKSRC}/config/mime_drivers.php.dist.orig
+	@${RM} ${WRKSRC}/po/translation.php.orig	\
+		${WRKSRC}/scripts/db/README.orig	\
+		${WRKSRC}/scripts/set_perms.sh.orig	\
+		${WRKSRC}/config/horde.php.dist.orig	\
+		${WRKSRC}/config/registry.php.dist.orig	\
+		${WRKSRC}/config/mime_drivers.php.dist.orig
 
 do-install:
 	@${MKDIR}  ${HORDEDIR}
