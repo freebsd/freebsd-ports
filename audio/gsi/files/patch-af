@@ -1,12 +1,12 @@
---- ../gsi/lib/gsicd/Makefile	Wed Feb  2 19:02:51 2000
-+++ ./lib/gsicd/Makefile	Thu Dec  7 18:59:20 2000
+--- lib/device/gsicd/Makefile.orig	Tue Jan 30 21:12:12 2001
++++ lib/device/gsicd/Makefile	Fri May 16 16:58:53 2003
 @@ -23,14 +23,14 @@
  STATIC_LIB	= libgsicd.a
  DYNAMIC_LIB	= libgsicd.so
  LIB_NAME	= $(LIBGSICD)
 -VERSION		= .0.1
 +VERSION		= .0
- LIB_OBJS	= gsicd.o utils.o event.o
+ LIB_OBJS	= cd_functions.o utils.o event.o log.o
  
  
  
@@ -15,5 +15,5 @@
 -WARN		= -Wall -Wstrict-prototypes
 +WARN		= -Wall #-Wstrict-prototypes
  
- MY_CFLAGS	= $(CFLAGS) $(DEBUG) $(OPTIMIZE) $(WARN) $(SYSCONFIG_THREADS_CFLAGS)
+ MY_CFLAGS	= $(CFLAGS) $(DEBUG) $(OPTIMIZE) $(WARN) $(SYSCONFIG_THREADS_MAKELIB_CFLAGS)
  

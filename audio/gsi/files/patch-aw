@@ -1,0 +1,11 @@
+--- test/gsimidi_pcm/Makefile.orig	Tue Jan  2 09:42:20 2001
++++ test/gsimidi_pcm/Makefile	Fri May 16 17:15:09 2003
+@@ -33,7 +33,7 @@
+ 
+ 
+ CURRENT_GSI_LIBS= -L../../lib/device/gsipcm -L../../lib/gsimidi_pcm -L../../lib/gsif
+-LIBS		= $(CURRENT_GSI_LIBS) -L/usr/local/lib -lgsipcm -lgsimidi_pcm -lgsif -lm $(EXTRALIBS_PCM)
++LIBS		= $(CURRENT_GSI_LIBS) -lgsipcm -lgsimidi_pcm -lgsif -lm $(EXTRALIBS_PCM)
+ 
+ 
+ #-----------------------------------------------------------------------------#

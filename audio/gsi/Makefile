@@ -6,17 +6,18 @@
 #
 
 PORTNAME=	gsi
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.6
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	gsi
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	GSI - general sound interface
+COMMENT=	General sound interface
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
+USE_BZIP2=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" MYFLAGS="${CFLAGS}" OPTIMIZE=""
 INSTALLS_SHLIB=	yes
 
 MANCOMPRESSED=	no
@@ -27,33 +28,33 @@ MAN5=		gsi.conf.5
 MAN7=		gsi_overview.7
 MAN8=		gsi_server.8
 
+post-extract:
+	@${RM} -f ${WRKSRC}/lib/include/gsi/gsisynth.h
+
 post-patch:
-.for file in lib/gsimixer/api/mixer_oss.c lib/gsimixer/api/mixer_fbsd.c \
-	lib/gsipcm/api/pcm_oss.c lib/gsipcm/gsipcm.c \
-	lib/gsipcm/api/pcm_fbsd.c lib/gsisynth/api/synth_oss_gus.c \
-	lib/gsisynth/api/synth_oss_opl.c lib/gsisynth/api/synth_oss.c \
-	lib/gsisynth/api/midi_control_oss.c
-	@${SED} -e 's,machine/soundcard.h,sys/soundcard.h,' < \
-		${WRKSRC}/${file} > ${WRKSRC}/${file}.new
-	@${MV} ${WRKSRC}/${file}.new ${WRKSRC}/${file}
+.for file in lib/device/gsimixer/api/mixer_fbsd.c \
+	lib/device/gsipcm/api/pcm_fbsd.c
+	@${REINPLACE_CMD} -e \
+		's|machine/soundcard.h|sys/soundcard.h|g' ${WRKSRC}/${file}
+.endfor
+.for file in server/FINISH_host_allow.c server/client.c server/conf.c
+	@${REINPLACE_CMD} -e \
+		's|"/etc/|"${PREFIX}/etc/|g' ${WRKSRC}/${file}
 .endfor
 
-pre-configure:
+do-configure:
 	@${SH} ${FILESDIR}/configure.sh ${PREFIX} ${WRKSRC}
 
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/server.conf/gsi.conf.fbsd \
+	@${INSTALL_DATA} ${WRKSRC}/server/conf/gsi.conf.fbsd \
 		 ${PREFIX}/etc/gsi.conf.sample
 .for fileNdx in gsi_server gsifile gsiplay
 	@${STRIP_CMD} ${PREFIX}/bin/${fileNdx}
 .endfor
-.for lib in "" cd f midi_pcm mixer pcm synth
-	@${STRIP_CMD} ${PREFIX}/lib/libgsi${lib}.so.[02]
-.endfor
-	@${ECHO} "A sample configuration file was installed as" \
+	@${ECHO_MSG} "A sample configuration file was installed as" \
 		${PREFIX}/etc/gsi.conf.sample.
-	@${ECHO} "Copy and edit it to fit the system."
-	@${ECHO}
+	@${ECHO_MSG} "Copy and edit it to fit the system."
+	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

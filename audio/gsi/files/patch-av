@@ -1,11 +1,20 @@
---- ../gsi/test/server/threads/Makefile	Wed Feb  2 19:06:37 2000
-+++ ./test/server/threads/Makefile	Thu Dec  7 18:59:21 2000
-@@ -29,7 +29,7 @@
+--- test/server/threads/Makefile.orig	Wed Dec  6 16:33:01 2000
++++ test/server/threads/Makefile	Fri May 16 16:57:21 2003
+@@ -24,7 +24,7 @@
  
- INCLUDES	= -I../../../include
+ INCLUDES	= -I../../../lib/include
  
--CFLAGS		= -O2 -fomit-frame-pointer -DDEBUG -g -Wall
+-CFLAGS		= -O2 -DDEBUG -g -Wall
 +CFLAGS		+= -Wall -DDEBUG
- ALL_CFLAGS	= $(DEFINES) $(INCLUDES) $(CFLAGS)
+ ifeq ($(OS), OpenBSD)
+ ALL_CFLAGS	= $(DEFINES) $(INCLUDES) $(CFLAGS) -pthread
+ else
+@@ -50,7 +50,7 @@
+ else
+ CURSES		= ncurses
+ endif
+-LIBS		= $(CURRENT_GSI_LIBS) -L/usr/local/lib -lgsi -lgsif $(SYSCONFIG_THREADS_LFLAGS) -l$(CURSES) $(EXTRALIBS)
++LIBS		= $(CURRENT_GSI_LIBS) -lgsi -lgsif $(SYSCONFIG_THREADS_LFLAGS) -l$(CURSES) $(EXTRALIBS)
  
  
+ #-----------------------------------------------------------------------------#
