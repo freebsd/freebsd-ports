@@ -19,7 +19,7 @@ INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-cxx
+CONFIGURE_ARGS=	--enable-cxx --prefix=${PREFIX} --with-perl=${PERL}
 
 post-install:
 .if !defined(NOPORTDOCS)
