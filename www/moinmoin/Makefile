@@ -6,15 +6,12 @@
 #
 
 PORTNAME=	moinmoin
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	www python
-MASTER_SITES= 	${MASTER_SITE_SOURCEFORGE} \
-		http://twiki.org/p/pub/TWiki/TWikiDrawPlugin/:twiki \
-		http://fallin.lv/distfiles/:twiki
+MASTER_SITES= 	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	moin
 DISTNAME=	moin-${PORTVERSION}
-DISTFILES=	${DISTNAME}.tar.gz twikidraw.jar:twiki
-EXTRACT_ONLY=	${DISTNAME}.tar.gz
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	A Python CGI clone of WikiWiki
@@ -48,8 +45,6 @@ pre-install:
 	${SH} pkg-install ${PKGNAME} PRE-INSTALL
 
 post-install:
-	${INSTALL_DATA} ${DISTDIR}/twikidraw.jar ${MOINDIR}/htdocs/applets/TWikiDrawPlugin/
-
 	@# Install Wrapper
 	${MKDIR} ${CGIROOT}
 	${INSTALL_PROGRAM} ${WRKDIR}/moin ${CGIROOT}/

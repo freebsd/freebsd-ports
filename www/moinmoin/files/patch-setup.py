@@ -1,6 +1,6 @@
---- setup.py.orig	Tue Mar 12 09:25:00 2002
-+++ setup.py	Tue Mar 12 09:26:47 2002
-@@ -157,10 +157,10 @@
+--- setup.py.orig    Sun Nov  9 16:00:45 2003
++++ setup.py       Sun Dec  7 01:04:52 2003
+@@ -167,10 +167,10 @@
      'data_files': [
          ('share/moin/cgi-bin',
              glob.glob('wiki/cgi-bin/*.cgi') +
@@ -13,3 +13,4 @@
              filter(pagefile_filter, glob.glob('wiki/data/text/*'))),
          ('share/moin/data/backup', []),
          ('share/moin/data/cache', []),
+
