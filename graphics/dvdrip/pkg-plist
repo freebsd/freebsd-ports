@@ -50,6 +50,7 @@ lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Scan.pm
 lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Title.pm
 lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/splash.png
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Video/DVDRip
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Video 2>/dev/null || true
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/RPC
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/GUI/Cluster
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/GUI/Project
@@ -57,3 +58,4 @@ lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/splash.png
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Cluster/Job
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Cluster
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Video 2>/dev/null || true
