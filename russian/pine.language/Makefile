@@ -2,7 +2,7 @@
 # Date created:         2 Dec 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.3 1998/06/27 05:19:32 asami Exp $
+# $Id: Makefile,v 1.4 1998/07/25 12:35:50 asami Exp $
 #
 
 PKGNAME=        ru-pine-3.96
@@ -12,8 +12,8 @@ MAINTAINER=     ache@FreeBSD.org
 
 RUN_DEPENDS=    pine:${PORTSDIR}/mail/pine3
 
-NO_EXTRACT=     YES
-NO_WRKDIR=      YES
+EXTRACT_ONLY=   # empty
+NO_WRKSUBDIR=   YES
 NO_BUILD=       YES
 
 do-fetch:
