@@ -9,7 +9,7 @@
 DISTNAME=	Cgraph2.04
 PKGNAME=	Cgraph-2.04
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://pinoko.berkeley.edu/pub/software/
+MASTER_SITES=	http://totoro.berkeley.edu/software/
 
 MAINTAINER=	tobez@plab.ku.dk
 
