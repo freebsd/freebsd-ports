@@ -19,6 +19,7 @@ LIB_DEPENDS=	gd.1:${PORTSDIR}/graphics/gd \
 
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
+USE_XLIB=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/gd" \
 		LIBS="-L${LOCALBASE}/lib"
