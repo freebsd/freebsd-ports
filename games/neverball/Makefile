@@ -14,17 +14,14 @@ MAINTAINER=	mezz7@cox.net
 COMMENT=	Tilt the floor to guide a ball through an obstacle course
 
 BUILD_DEPENDS=	${FREETYPE_CONFIG}:${PORTSDIR}/print/freetype2
-LIB_DEPENDS=	SDL_ttf.3:${PORTSDIR}/graphics/sdl_ttf \
-		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
-		SDL_image.10:${PORTSDIR}/graphics/sdl_image
 
 FREETYPE_CONFIG?=	${LOCALBASE}/bin/freetype-config
 
 USE_BZIP2=	yes
-USE_SDL=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
+USE_SDL=	image mixer ttf sdl
 
 DIRS=		back bgm map mtrl png shot snd sol ttf
 
