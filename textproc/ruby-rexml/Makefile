@@ -26,11 +26,11 @@ DOCS=		README *.html doc
 do-install:
 	cd ${WRKSRC}; ${RUBY} bin/install.rb
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}/docs
+	${MKDIR} ${RUBY_MODDOCDIR}/docs
 .for f in ${DOCS}
-	${CP} -R ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/
+	${CP} -R ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/docs/*.html ${RUBY_DOCDIR}/${PORTNAME}/docs/
+	${INSTALL_DATA} ${WRKSRC}/docs/*.html ${RUBY_MODDOCDIR}/docs/
 .endif
 
 .include <bsd.port.mk>

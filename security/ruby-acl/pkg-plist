@@ -1,11 +1,11 @@
 %%RUBY_SITELIBDIR%%/acl.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/acl/acltest.rb
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/acl
-%%PORTDOCS%%%%RUBY_DOCDIR%%/acl/README
-%%PORTDOCS%%%%RUBY_DOCDIR%%/acl/acl.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/acl/acl.rd
-%%PORTDOCS%%%%RUBY_DOCDIR%%/acl/ja/README.ja
-%%PORTDOCS%%%%RUBY_DOCDIR%%/acl/ja/acl.html.ja
-%%PORTDOCS%%%%RUBY_DOCDIR%%/acl/ja/acl.rd.ja
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/acl/ja
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/acl
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/acltest.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/acl.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/acl.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/README.ja
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/acl.html.ja
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/acl.rd.ja
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

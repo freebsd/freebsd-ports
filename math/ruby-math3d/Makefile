@@ -24,8 +24,8 @@ INSTALL_TARGET=	site-install
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}/ja
-	${INSTALL_DATA} ${WRKSRC}/manual.jis ${RUBY_DOCDIR}/${PORTNAME}/ja/
+	${MKDIR} ${RUBY_MODDOCDIR}/ja
+	${INSTALL_DATA} ${WRKSRC}/manual.jis ${RUBY_MODDOCDIR}/ja/
 .endif
 
 .include <bsd.port.mk>

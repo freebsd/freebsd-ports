@@ -10,23 +10,23 @@
 %%RUBY_SITELIBDIR%%/nqxml/utils.rb
 %%RUBY_SITELIBDIR%%/nqxml/writer.rb
 @dirrm %%RUBY_SITELIBDIR%%/nqxml
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/nqxml/data.xml
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/nqxml/doc.xml
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/nqxml/dumpXML.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/nqxml/parseTestStream.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/nqxml/parseTestTree.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/nqxml/printEntityClassNames.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/nqxml/reverseTags.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/nqxml/reverseText.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/nqxml/write.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/nqxml/writeManualDoc.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/nqxml/writeParsedDoc.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/nqxml/dispatcher/autodis_1.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/nqxml/dispatcher/autodis_2.rb
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/nqxml/dispatcher
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/nqxml
-%%PORTDOCS%%%%RUBY_DOCDIR%%/nqxml/ChangeLog
-%%PORTDOCS%%%%RUBY_DOCDIR%%/nqxml/Credits
-%%PORTDOCS%%%%RUBY_DOCDIR%%/nqxml/README
-%%PORTDOCS%%%%RUBY_DOCDIR%%/nqxml/TODO
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/nqxml
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/data.xml
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/doc.xml
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/dumpXML.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/parseTestStream.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/parseTestTree.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/printEntityClassNames.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/reverseTags.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/reverseText.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/write.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/writeManualDoc.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/writeParsedDoc.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/dispatcher/autodis_1.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/dispatcher/autodis_2.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/dispatcher
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/Credits
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/TODO
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

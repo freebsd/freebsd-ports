@@ -25,13 +25,13 @@ INSTALL_TARGET=	site-install
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_EXAMPLESDIR}/pcap
-	${CP} -R ${WRKSRC}/examples/ ${RUBY_EXAMPLESDIR}/pcap/
-	${MKDIR} ${RUBY_DOCDIR}/pcap/ja
+	${MKDIR} ${RUBY_MODEXAMPLESDIR}
+	${CP} -R ${WRKSRC}/examples/ ${RUBY_MODEXAMPLESDIR}/
+	${MKDIR} ${RUBY_MODDOCDIR}/ja
 	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${WRKSRC}/README ${WRKSRC}/doc/* \
-		${RUBY_DOCDIR}/pcap/
+		${RUBY_MODDOCDIR}/
 	${INSTALL_DATA} ${WRKSRC}/README.ja ${WRKSRC}/doc-ja/* \
-		${RUBY_DOCDIR}/pcap/ja/
+		${RUBY_MODDOCDIR}/ja/
 .endif
 
 .include <bsd.port.mk>

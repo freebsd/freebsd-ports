@@ -23,43 +23,43 @@
 %%RUBY_SITELIBDIR%%/tmail/tmail.rb
 %%RUBY_SITELIBDIR%%/tmail/utils.rb
 @dirrm %%RUBY_SITELIBDIR%%/tmail
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/tmail/from-check.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/tmail/multipart.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/tmail/parse-bench.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/tmail/parse-test.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/tmail/sendmail.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/tmail/data/multipart
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/tmail/data/normal
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/tmail/data/sendtest
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/tmail/data/simple
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/tmail/data/test
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/tmail/data
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/tmail
-%%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/Incompatibilities
-%%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/README.en
-%%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/address.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/basics.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/config.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/details.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/index.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/mail.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/mbox.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/notes.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/port.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/tmail.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/usage.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/ja/Incompatibilities.ja
-%%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/ja/README.ja
-%%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/ja/address.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/ja/basics.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/ja/config.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/ja/details.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/ja/index.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/ja/mail.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/ja/mbox.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/ja/notes.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/ja/port.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/ja/tmail.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/ja/usage.html
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/tmail/ja
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/tmail
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/from-check.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/multipart.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/parse-bench.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/parse-test.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sendmail.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/data/multipart
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/data/normal
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/data/sendtest
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/data/simple
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/data/test
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/data
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/Incompatibilities
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README.en
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/address.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/basics.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/config.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/details.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/mail.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/mbox.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/notes.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/port.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/tmail.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/usage.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/Incompatibilities.ja
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/README.ja
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/address.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/basics.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/config.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/details.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/mail.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/mbox.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/notes.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/port.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/tmail.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/usage.html
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

@@ -1,8 +1,8 @@
 %%RUBY_SITEARCHLIBDIR%%/snmp.so
-%%PORTDOCS%%%%RUBY_DOCDIR%%/snmp/mib_view.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/snmp/rubysnmp.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/snmp/sampleout.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/snmp/snmp_module.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/snmp/snmp_session.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/snmp/snmp_var.html
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/snmp
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/mib_view.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rubysnmp.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/sampleout.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/snmp_module.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/snmp_session.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/snmp_var.html
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

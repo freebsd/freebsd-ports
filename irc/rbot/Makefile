@@ -29,9 +29,9 @@ do-install:
 	( cd ${WRKSRC}/rbotconf && ${TAR} -cf - * ) | \
 		${TAR} -C ${PREFIX}/etc/rbot -xkpf -
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_DOCDIR}/rbot
+	${MKDIR} ${RUBY_MODDOCDIR}
 	( cd ${WRKSRC}/doc && ${TAR} -cf - * ) | \
-		${TAR} -C ${RUBY_DOCDIR}/rbot -xpf -
+		${TAR} -C ${RUBY_MODDOCDIR} -xpf -
 .endif
 
 .include <bsd.port.mk>

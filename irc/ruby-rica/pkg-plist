@@ -1,14 +1,14 @@
 %%RUBY_SITELIBDIR%%/ctcpresponder.rb
 %%RUBY_SITELIBDIR%%/logholder.rb
 %%RUBY_SITELIBDIR%%/rica.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rica/erica.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rica/erica.txt
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rica/ricaco.rb
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/rica
-%%PORTDOCS%%%%RUBY_DOCDIR%%/rica/CHANGES
-%%PORTDOCS%%%%RUBY_DOCDIR%%/rica/README
-%%PORTDOCS%%%%RUBY_DOCDIR%%/rica/classes_and_methods.txt
-%%PORTDOCS%%%%RUBY_DOCDIR%%/rica/event.lst
-%%PORTDOCS%%%%RUBY_DOCDIR%%/rica/rica-omt.png
-%%PORTDOCS%%%%RUBY_DOCDIR%%/rica/rica_classes.png
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/rica
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/erica.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/erica.txt
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/ricaco.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/CHANGES
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes_and_methods.txt
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/event.lst
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rica-omt.png
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rica_classes.png
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

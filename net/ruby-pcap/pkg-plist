@@ -1,40 +1,40 @@
 %%RUBY_SITEARCHLIBDIR%%/pcap.so
 %%RUBY_SITELIBDIR%%/pcap_misc.rb
 %%RUBY_SITELIBDIR%%/pcaplet.rb
-%%PORTDOCS%%%%RUBY_DOCDIR%%/pcap/Capture.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/pcap/ChangeLog
-%%PORTDOCS%%%%RUBY_DOCDIR%%/pcap/Dumper.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/pcap/Filter.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/pcap/ICMPPacket.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/pcap/IPAddress.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/pcap/IPPacket.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/pcap/Packet.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/pcap/Pcap.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/pcap/PcapError.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/pcap/Pcaplet.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/pcap/README
-%%PORTDOCS%%%%RUBY_DOCDIR%%/pcap/TCPPacket.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/pcap/TruncatedPacket.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/pcap/UDPPacket.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/pcap/index.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/pcap/ja/Capture.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/pcap/ja/Dumper.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/pcap/ja/Filter.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/pcap/ja/ICMPPacket.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/pcap/ja/IPAddress.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/pcap/ja/IPPacket.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/pcap/ja/Packet.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/pcap/ja/Pcap.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/pcap/ja/PcapError.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/pcap/ja/Pcaplet.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/pcap/ja/README.ja
-%%PORTDOCS%%%%RUBY_DOCDIR%%/pcap/ja/TCPPacket.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/pcap/ja/TruncatedPacket.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/pcap/ja/UDPPacket.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/pcap/ja/index.html
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/pcap/httpdump.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/pcap/tcpdump.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/pcap/test.rb
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/pcap
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/pcap/ja
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/pcap
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/Capture.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/Dumper.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/Filter.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ICMPPacket.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/IPAddress.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/IPPacket.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/Packet.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/Pcap.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/PcapError.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/Pcaplet.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/TCPPacket.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/TruncatedPacket.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/UDPPacket.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/Capture.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/Dumper.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/Filter.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/ICMPPacket.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/IPAddress.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/IPPacket.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/Packet.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/Pcap.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/PcapError.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/Pcaplet.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/README.ja
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/TCPPacket.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/TruncatedPacket.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/UDPPacket.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/index.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/httpdump.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tcpdump.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

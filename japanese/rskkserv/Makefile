@@ -82,12 +82,12 @@ post-install:
 		${CHMOD} ${BINMODE} ${STARTUP_SCRIPT}; \
 	fi
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_DOCDIR}/rskkserv/ja
+	${MKDIR} ${RUBY_MODDOCDIR}/ja
 .for f in ${DOCS_EN}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/rskkserv/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
 .endfor
 .for f in ${DOCS_JA}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/rskkserv/ja/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja/
 .endfor
 .endif
 

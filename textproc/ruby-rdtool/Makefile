@@ -20,6 +20,8 @@ BUILD_DEPENDS=	${DEPEND_RUBY_AMSTD} \
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	optparse strscan
 
+RUBY_MODNAME=	rd
+
 RUBY_SHEBANG_FILES=	 ${WRKSRC}/rmi2html.rb
 
 EMACSLISPDIR=	${PREFIX}/share/emacs/site-lisp
@@ -53,14 +55,14 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/rd/rd2rmi-lib.rb ${RUBY_SITELIBDIR}/rd/
 	${INSTALL_SCRIPT} ${WRKSRC}/utils/rdswap.rb ${PREFIX}/bin/rdswap
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_EXAMPLESDIR}/rd
-	${INSTALL_DATA} ${WRKSRC}/rd/dot.rd2rc ${RUBY_EXAMPLESDIR}/rd/
-	${MKDIR} ${RUBY_DOCDIR}/rd/ja
+	${MKDIR} ${RUBY_MODEXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/rd/dot.rd2rc ${RUBY_MODEXAMPLESDIR}/
+	${MKDIR} ${RUBY_MODDOCDIR}/ja
 .for f in ${DOCS_EN}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/rd/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
 .endfor
 .for f in ${DOCS_JA}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/rd/ja/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja/
 .endfor
 .endif
 	@${CAT} ${PKGMESSAGE}

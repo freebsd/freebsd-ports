@@ -1,7 +1,7 @@
 %%RUBY_SITEARCHLIBDIR%%/panel_applet.so
 %%RUBY_SITELIBDIR%%/panel-applet.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/panel-applet/clock-applet.rb
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/panel-applet
-%%PORTDOCS%%%%RUBY_DOCDIR%%/panel-applet/ChangeLog
-%%PORTDOCS%%%%RUBY_DOCDIR%%/panel-applet/README
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/panel-applet
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/clock-applet.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

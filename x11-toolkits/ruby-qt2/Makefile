@@ -35,15 +35,15 @@ post-patch:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
-	${CP} -R ${WRKSRC}/examples/* ${RUBY_EXAMPLESDIR}/${PORTNAME}/
-	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}/ja
+	${MKDIR} ${RUBY_MODEXAMPLESDIR}
+	${CP} -R ${WRKSRC}/examples/* ${RUBY_MODEXAMPLESDIR}/
+	${MKDIR} ${RUBY_MODDOCDIR}/ja
 	${CP} -R ${WRKSRC}/tutorial ${WRKSRC}/util \
-		${RUBY_DOCDIR}/${PORTNAME}/
+		${RUBY_MODDOCDIR}/
 	${INSTALL_DATA} ${WRKSRC}/CHANGES.txt ${WRKSRC}/README.txt \
-		${RUBY_DOCDIR}/${PORTNAME}/
+		${RUBY_MODDOCDIR}/
 	${INSTALL_DATA} ${WRKSRC}/CHANGES.jp ${WRKSRC}/README.jp \
-		${RUBY_DOCDIR}/${PORTNAME}/ja/
+		${RUBY_MODDOCDIR}/ja/
 .endif
 
 .include "${.CURDIR}/Makefile.common"

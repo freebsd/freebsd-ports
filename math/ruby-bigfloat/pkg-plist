@@ -1,6 +1,6 @@
 %%RUBY_SITEARCHLIBDIR%%/bigfloat.so
-%%PORTDOCS%%%%RUBY_DOCDIR%%/bigfloat/ja/bigfloat.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/bigfloat/README
-%%PORTDOCS%%%%RUBY_DOCDIR%%/bigfloat/bigfloat_en.html
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/bigfloat/ja
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/bigfloat
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/bigfloat.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/bigfloat_en.html
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

@@ -22,8 +22,8 @@ NO_BUILD=	yes
 do-install:
 	cd ${WRKSRC}; ${RUBY} install.rb
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/README.txt ${RUBY_DOCDIR}/${PORTNAME}
+	${MKDIR} ${RUBY_MODDOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.txt ${RUBY_MODDOCDIR}
 .endif
 
 .include <bsd.port.mk>

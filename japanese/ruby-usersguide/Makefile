@@ -19,15 +19,16 @@ USE_RUBY=	yes
 RUBY_NO_BUILD_DEPENDS=	yes
 RUBY_NO_RUN_DEPENDS=	yes
 
+RUBY_MODNAME=	${PORTNAME}-jp
+
 SHORTNAME=	${PORTNAME:S/usersguide/uguide/}
 
 WRKSRC=		${WRKDIR}/${SHORTNAME}
 NO_BUILD=	yes
-DOCDIR=		${RUBY_DOCDIR}/${PORTNAME}-jp
 
 do-install:
-	${MKDIR} ${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/* ${DOCDIR}
-	${LN} -fs uguide00.html ${DOCDIR}/index.html
+	${MKDIR} ${RUBY_MODDOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/* ${RUBY_MODDOCDIR}
+	${LN} -fs uguide00.html ${RUBY_MODDOCDIR}/index.html
 
 .include <bsd.port.mk>

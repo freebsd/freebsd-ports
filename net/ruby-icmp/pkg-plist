@@ -1,5 +1,5 @@
 %%RUBY_SITEARCHLIBDIR%%/icmpmodule.so
 %%RUBY_SITELIBDIR%%/icmp.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/icmp/ping.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/icmp/traceroute.rb
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/icmp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/ping.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/traceroute.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%

@@ -35,11 +35,11 @@ bin/rdoc
 @dirrm %%RUBY_SITELIBDIR%%/rdoc/generators/template
 @dirrm %%RUBY_SITELIBDIR%%/rdoc/generators
 @dirrm %%RUBY_SITELIBDIR%%/rdoc
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rdoc/markup/sample.rb
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/rdoc/markup
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/rdoc
-%%PORTDOCS%%%%RUBY_DOCDIR%%/rdoc/ChangeLog
-%%PORTDOCS%%%%RUBY_DOCDIR%%/rdoc/NEW_FEATURES
-%%PORTDOCS%%%%RUBY_DOCDIR%%/rdoc/README
-%%PORTDOCS%%%%RUBY_DOCDIR%%/rdoc/ToDo
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/rdoc
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/markup/sample.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/markup
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/NEW_FEATURES
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ToDo
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

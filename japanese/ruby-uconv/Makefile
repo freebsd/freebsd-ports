@@ -29,14 +29,14 @@ EXAMPLES=	euc2unicode.rb \
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}${RUBY_PKGNAMEPREFIX}
 
 post-install:
-	${MKDIR} ${RUBY_EXAMPLESDIR}/uconv/ja
+	${MKDIR} ${RUBY_MODEXAMPLESDIR}/ja
 .for f in ${EXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/samples/${f} ${RUBY_EXAMPLESDIR}/uconv/ja
+	${INSTALL_DATA} ${WRKSRC}/samples/${f} ${RUBY_MODEXAMPLESDIR}/ja
 .endfor
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_DOCDIR}/uconv/ja
-	${INSTALL_DATA} ${WRKSRC}/README ${RUBY_DOCDIR}/uconv/
-	${INSTALL_DATA} ${WRKSRC}/README.ja ${RUBY_DOCDIR}/uconv/ja/
+	${MKDIR} ${RUBY_MODDOCDIR}/ja
+	${INSTALL_DATA} ${WRKSRC}/README ${RUBY_MODDOCDIR}/
+	${INSTALL_DATA} ${WRKSRC}/README.ja ${RUBY_MODDOCDIR}/ja/
 .endif
 
 .include <bsd.port.post.mk>

@@ -27,11 +27,11 @@ WRKDIR_TMAIL=	${WRKSRC}/packages/tmail
 
 do-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
-	${CP} -R ${WRKDIR_TMAIL}/sample/ ${RUBY_EXAMPLESDIR}/${PORTNAME}/
-	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}/ja
-	${CP} -R ${WRKDIR_TMAIL}/Incompatibilities ${WRKDIR_TMAIL}/README.en ${WRKDIR_TMAIL}/doc.en/* ${RUBY_DOCDIR}/${PORTNAME}/
-	${CP} -R ${WRKDIR_TMAIL}/Incompatibilities.ja ${WRKDIR_TMAIL}/README.ja ${WRKDIR_TMAIL}/doc.ja/* ${RUBY_DOCDIR}/${PORTNAME}/ja/
+	${MKDIR} ${RUBY_MODEXAMPLESDIR}
+	${CP} -R ${WRKDIR_TMAIL}/sample/ ${RUBY_MODEXAMPLESDIR}/
+	${MKDIR} ${RUBY_MODDOCDIR}/ja
+	${CP} -R ${WRKDIR_TMAIL}/Incompatibilities ${WRKDIR_TMAIL}/README.en ${WRKDIR_TMAIL}/doc.en/* ${RUBY_MODDOCDIR}/
+	${CP} -R ${WRKDIR_TMAIL}/Incompatibilities.ja ${WRKDIR_TMAIL}/README.ja ${WRKDIR_TMAIL}/doc.ja/* ${RUBY_MODDOCDIR}/ja/
 .endif
 
 .include <bsd.port.mk>

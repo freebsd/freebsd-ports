@@ -43,12 +43,12 @@ do-install:
 	${LN} -sf ${RUBY_ELISPDIR}/${f} ${XEMACSLISPDIR}/
 .endfor
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}/emacs
+	${MKDIR} ${RUBY_MODDOCDIR}/emacs
 .for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
 .endfor
 .for f in ${EMACS_DOCS}
-	${INSTALL_DATA} ${WRKSRC}/contrib/dblack/emacs/${f} ${RUBY_DOCDIR}/${PORTNAME}/emacs/
+	${INSTALL_DATA} ${WRKSRC}/contrib/dblack/emacs/${f} ${RUBY_MODDOCDIR}/emacs/
 .endfor
 .endif
 	@${CAT} ${PKGMESSAGE}

@@ -23,10 +23,8 @@ RUBY_NO_RUN_DEPENDS=	yes
 WRKSRC=		${WRKDIR}/ref
 NO_BUILD=	yes
 
-DOCDIR=		${RUBY_DOCDIR}/${PORTNAME}
-
 do-install:
-	${MKDIR} ${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/* ${DOCDIR}
+	${MKDIR} ${RUBY_MODDOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/* ${RUBY_MODDOCDIR}
 
 .include <bsd.port.mk>

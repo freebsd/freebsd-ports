@@ -3,15 +3,15 @@
 %%RUBY_SITELIBDIR%%/gyokuro/parts.rb
 %%RUBY_SITELIBDIR%%/gyokuro/table.rb
 @dirrm %%RUBY_SITELIBDIR%%/gyokuro
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gyokuro/example1.txt
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gyokuro/example2.txt
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gyokuro/example3.txt
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gyokuro/inspect.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gyokuro/katakana.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gyokuro/morpheme.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gyokuro/noun.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gyokuro/wakachi.rb
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/gyokuro
-%%PORTDOCS%%%%RUBY_DOCDIR%%/gyokuro/ja/README.ja.rd
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/gyokuro/ja
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/gyokuro
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/example1.txt
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/example2.txt
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/example3.txt
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/inspect.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/katakana.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/morpheme.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/noun.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/wakachi.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/README.ja.rd
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

@@ -33,16 +33,16 @@ DOCS_JA=	index-ja.html TIPS-ja.html TODO-ja.sdf
 do-install:
 	cd ${WRKSRC}; ${RUBY} install.rb
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
+	${MKDIR} ${RUBY_MODEXAMPLESDIR}
 .for f in ${EXAMPLES_EN}
-	${CP} -R ${WRKSRC}/${f} ${RUBY_EXAMPLESDIR}/${PORTNAME}/
+	${CP} -R ${WRKSRC}/${f} ${RUBY_MODEXAMPLESDIR}/
 .endfor
-	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}/ja
+	${MKDIR} ${RUBY_MODDOCDIR}/ja
 .for f in ${DOCS_EN}
-	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${RUBY_DOCDIR}/${PORTNAME}/
+	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${RUBY_MODDOCDIR}/
 .endfor
 .for f in ${DOCS_JA}
-	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${RUBY_DOCDIR}/${PORTNAME}/ja/
+	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${RUBY_MODDOCDIR}/ja/
 .endfor
 .endif
 

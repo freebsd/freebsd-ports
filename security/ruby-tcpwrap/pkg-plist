@@ -1,9 +1,9 @@
 %%RUBY_SITEARCHLIBDIR%%/tcpwrap.so
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/tcpwrap/echod.rb
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/tcpwrap
-%%PORTDOCS%%%%RUBY_DOCDIR%%/tcpwrap/README.en
-%%PORTDOCS%%%%RUBY_DOCDIR%%/tcpwrap/tcpwrap.html.en
-%%PORTDOCS%%%%RUBY_DOCDIR%%/tcpwrap/ja/README.ja
-%%PORTDOCS%%%%RUBY_DOCDIR%%/tcpwrap/ja/tcpwrap.html.ja
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/tcpwrap/ja
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/tcpwrap
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/echod.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README.en
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/tcpwrap.html.en
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/README.ja
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/tcpwrap.html.ja
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

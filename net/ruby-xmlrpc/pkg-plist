@@ -9,54 +9,54 @@
 %%RUBY_SITELIBDIR%%/xmlrpc/server.rb
 %%RUBY_SITELIBDIR%%/xmlrpc/utils.rb
 @dirrm %%RUBY_SITELIBDIR%%/xmlrpc
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/call.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/chat/client.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/chat/client.rb.tk
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/chat/server.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/multicall.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/xml.cgi
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/xml.fcgi
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/xml2.cgi
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/introspection/client.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/introspection/server.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/marshallable/client.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/marshallable/person.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/marshallable/server.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/monitor
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/perf_async.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/raa/raa.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/raa/raa_fox.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/raa/raa_test.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/raa/raa_tk.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/raa/responder.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/sandstorm/active.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/tcptunnel/README
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/validator/validator1.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/webrick/client.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/webrick/server.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/wwwsrv/srv.conf
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/wwwsrv/srv.rb
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/xmlrpc/chat
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/xmlrpc/introspection
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/xmlrpc/marshallable
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/xmlrpc/raa
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/xmlrpc/sandstorm
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/xmlrpc/tcptunnel
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/xmlrpc/validator
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/xmlrpc/webrick
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/xmlrpc/wwwsrv
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/xmlrpc
-%%PORTDOCS%%%%RUBY_DOCDIR%%/xmlrpc/ChangeLog
-%%PORTDOCS%%%%RUBY_DOCDIR%%/xmlrpc/README
-%%PORTDOCS%%%%RUBY_DOCDIR%%/xmlrpc/ToDo
-%%PORTDOCS%%%%RUBY_DOCDIR%%/xmlrpc/ChangeLog.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/xmlrpc/base64.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/xmlrpc/client.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/xmlrpc/datetime.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/xmlrpc/howto.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/xmlrpc/howto.rd
-%%PORTDOCS%%%%RUBY_DOCDIR%%/xmlrpc/index.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/xmlrpc/index.rd
-%%PORTDOCS%%%%RUBY_DOCDIR%%/xmlrpc/rubyStyle.css
-%%PORTDOCS%%%%RUBY_DOCDIR%%/xmlrpc/server.html
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/xmlrpc
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/call.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/chat/client.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/chat/client.rb.tk
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/chat/server.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/multicall.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/xml.cgi
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/xml.fcgi
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/xml2.cgi
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/introspection/client.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/introspection/server.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/marshallable/client.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/marshallable/person.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/marshallable/server.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/monitor
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/perf_async.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/raa/raa.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/raa/raa_fox.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/raa/raa_test.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/raa/raa_tk.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/raa/responder.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sandstorm/active.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tcptunnel/README
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/validator/validator1.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/webrick/client.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/webrick/server.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/wwwsrv/srv.conf
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/wwwsrv/srv.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/chat
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/introspection
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/marshallable
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/raa
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/sandstorm
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/tcptunnel
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/validator
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/webrick
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/wwwsrv
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ToDo
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/base64.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/client.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/datetime.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/howto.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/howto.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/index.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rubyStyle.css
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/server.html
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

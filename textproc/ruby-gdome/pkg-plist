@@ -1,13 +1,13 @@
 %%RUBY_SITEARCHLIBDIR%%/gdome.so
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gdome/examplea.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gdome/exampleb.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gdome/exampleb.xml
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gdome/examplec.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gdome/examplec.xml
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gdome/test-cdata.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gdome/test-dtd.dtd
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gdome/test-dtd.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gdome/test-dtd.xml
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/gdome
-%%PORTDOCS%%%%RUBY_DOCDIR%%/gdome/README
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/gdome
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/examplea.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/exampleb.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/exampleb.xml
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/examplec.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/examplec.xml
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test-cdata.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test-dtd.dtd
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test-dtd.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test-dtd.xml
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

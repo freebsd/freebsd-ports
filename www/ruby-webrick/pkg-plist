@@ -26,25 +26,25 @@
 %%RUBY_SITELIBDIR%%/webrick/version.rb
 @dirrm %%RUBY_SITELIBDIR%%/webrick/httpservlet
 @dirrm %%RUBY_SITELIBDIR%%/webrick
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/webrick/httpd/conf/sample.crt
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/webrick/httpd/conf/sample.key
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/webrick/httpd/htdocs/test.cgi
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/webrick/httpd/htdocs/test.rhtml
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/webrick/httpd/htproxy.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/webrick/httpd/httpd.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/webrick/httpd/httpsd.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/webrick/rfc/cache/.keep_me
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/webrick/rfc/rfc.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/webrick/webdic/ndtp.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/webrick/webdic/webdic.rb
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/webrick/webdic
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/webrick/rfc/cache
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/webrick/rfc
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/webrick/httpd/htdocs
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/webrick/httpd/conf
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/webrick/httpd
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/webrick
-%%PORTDOCS%%%%RUBY_DOCDIR%%/webrick/ChangeLog
-%%PORTDOCS%%%%RUBY_DOCDIR%%/webrick/README
-%%PORTDOCS%%%%RUBY_DOCDIR%%/webrick/webrick.rd
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/webrick
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/httpd/conf/sample.crt
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/httpd/conf/sample.key
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/httpd/htdocs/test.cgi
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/httpd/htdocs/test.rhtml
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/httpd/htproxy.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/httpd/httpd.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/httpd/httpsd.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rfc/cache/.keep_me
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rfc/rfc.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/webdic/ndtp.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/webdic/webdic.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/webdic
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rfc/cache
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rfc
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/httpd/htdocs
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/httpd/conf
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/httpd
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/webrick.rd
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

@@ -1,3 +1,3 @@
 %%RUBY_SITELIBDIR%%/TCPSocketPipe.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/tcpsocketpipe/monitor.rb
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/tcpsocketpipe
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/monitor.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%

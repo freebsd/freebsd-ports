@@ -2,22 +2,22 @@
 @unexec rmdir %B 2>/dev/null || true
 %%RUBY_SITELIBDIR%%/numru/netcdf.rb
 @unexec rmdir %B 2>/dev/null || true
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/netcdf/README
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/netcdf/demo1-create-alt.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/netcdf/demo1-create.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/netcdf/demo2-graphic.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/netcdf/demo2-graphic_withAdvancedDCL.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/netcdf/demo3-ncepclim.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/netcdf/demo3-ncepclim_withAdvancedDCL.rb
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/netcdf
-%%PORTDOCS%%%%RUBY_DOCDIR%%/netcdf/ChangeLog
-%%PORTDOCS%%%%RUBY_DOCDIR%%/netcdf/ToDo
-%%PORTDOCS%%%%RUBY_DOCDIR%%/netcdf/README_JP.txt
-%%PORTDOCS%%%%RUBY_DOCDIR%%/netcdf/Ref_man.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/netcdf/Ref_man.rd
-%%PORTDOCS%%%%RUBY_DOCDIR%%/netcdf/Ref_man_jp.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/netcdf/Ref_man_jp.rd
-%%PORTDOCS%%%%RUBY_DOCDIR%%/netcdf/Ref_man_jp_obsolete.doc
-%%PORTDOCS%%%%RUBY_DOCDIR%%/netcdf/Ref_man_jp_obsolete.pdf
-%%PORTDOCS%%%%RUBY_DOCDIR%%/netcdf/to_html
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/netcdf
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/README
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demo1-create-alt.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demo1-create.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demo2-graphic.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demo2-graphic_withAdvancedDCL.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demo3-ncepclim.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demo3-ncepclim_withAdvancedDCL.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ToDo
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README_JP.txt
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/Ref_man.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/Ref_man.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/Ref_man_jp.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/Ref_man_jp.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/Ref_man_jp_obsolete.doc
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/Ref_man_jp_obsolete.pdf
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/to_html
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
