@@ -4,7 +4,7 @@
  
  install:
  	cp helpsigs.val $(LIBDIR)
-+.if !defined(PORTDOCS)
++.if !defined(NOPORTDOCS)
  	test -d $(DOCDIR)/mosmllib || mkdir -p $(DOCDIR)/mosmllib
  	cp htmlsigs/*.html $(DOCDIR)/mosmllib
  	cp index.html $(DOCDIR)/mosmllib
