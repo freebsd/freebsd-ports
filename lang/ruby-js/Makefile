@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	js
-PORTVERSION=	0.0.3
+PORTVERSION=	0.0.4
 CATEGORIES=	lang ruby
 MASTER_SITES=	http://www.ruby-lang.org/~tamura/ruby/ruby-js/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
