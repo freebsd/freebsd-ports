@@ -1,0 +1,17 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBIx/DBSchema/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/DBIx/DBSchema.pm
+lib/perl5/site_perl/%%PERL_VER%%/DBIx/DBSchema/ColGroup.pm
+lib/perl5/site_perl/%%PERL_VER%%/DBIx/DBSchema/ColGroup/Unique.pm
+lib/perl5/site_perl/%%PERL_VER%%/DBIx/DBSchema/ColGroup/Index.pm
+lib/perl5/site_perl/%%PERL_VER%%/DBIx/DBSchema/Column.pm
+lib/perl5/site_perl/%%PERL_VER%%/DBIx/DBSchema/DBD.pm
+lib/perl5/site_perl/%%PERL_VER%%/DBIx/DBSchema/DBD/Pg.pm
+lib/perl5/site_perl/%%PERL_VER%%/DBIx/DBSchema/DBD/Sybase.pm
+lib/perl5/site_perl/%%PERL_VER%%/DBIx/DBSchema/DBD/mysql.pm
+lib/perl5/site_perl/%%PERL_VER%%/DBIx/DBSchema/Table.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBIx/DBSchema
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/DBIx/DBSchema/ColGroup
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/DBIx/DBSchema/DBD
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/DBIx/DBSchema
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBIx 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/DBIx 2>/dev/null || true
