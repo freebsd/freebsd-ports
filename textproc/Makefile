@@ -270,6 +270,7 @@
     SUBDIR += p5-XML-DBMS
     SUBDIR += p5-XML-DOM
     SUBDIR += p5-XML-DT
+    SUBDIR += p5-XML-DTDParser
     SUBDIR += p5-XML-Directory
     SUBDIR += p5-XML-Dumper
     SUBDIR += p5-XML-Encoding
