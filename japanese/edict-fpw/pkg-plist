@@ -1,0 +1,8 @@
+share/dict/edict-fpw/edict/data/honmon
+share/dict/edict-fpw/catalogs
+share/doc/edict-fpw/edict.doc
+share/doc/edict-fpw/README.pkg
+@dirrm share/dict/edict-fpw/edict/data
+@dirrm share/dict/edict-fpw/edict
+@dirrm share/dict/edict-fpw
+@dirrm share/doc/edict-fpw
