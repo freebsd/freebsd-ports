@@ -13,7 +13,7 @@ MASTER_SITES=	http://jdee.sunsite.dk/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 DISTNAME=	${PORTNAME}-latest
 
-MAINTAINER=	fuyuki@mj.0038.net
+MAINTAINER=	fuyuki@hadaly.org
 
 EMACS_PORT_NAME?=	emacs21
 
@@ -25,6 +25,8 @@ BUILD_DEPENDS=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/semantic/semantic.el:$
 		${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/elib/avltree.el:${PORTSDIR}/devel/elib${PORTNAMESUFFIX}
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+USE_REINPLACE=	yes
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 BUILD_WRKSRC=	${WRKSRC}/lisp
 MAKEFILE=	makefile
@@ -35,7 +37,7 @@ JAVADIR=	${PREFIX}/share/java/jde
 post-patch:
 # An ugly patch for a troublesome varname change in the browse-url.
 .if ${EMACS_PORT_NAME} == "emacs21"
-	${PERL} -pi -e 's/browse-url-new-window-p/browse-url-new-window-flag/' \
+	${REINPLACE_CMD} -e 's/browse-url-new-window-p/browse-url-new-window-flag/' \
 		${BUILD_WRKSRC}/*.el
 .endif
 
