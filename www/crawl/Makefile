@@ -22,6 +22,12 @@ CONFIGURE_ARGS+=	--with-libevent=${LOCALBASE} --program-transform-name=''
 
 MAN1=	crawl.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502000
+BROKEN=		"Does not compile"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/include/db2,${LOCALBASE}/include/db3,g' \
 		-e 's,db2,db3,g' ${WRKSRC}/configure.in
@@ -32,4 +38,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/crawl.conf ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
