@@ -43,9 +43,9 @@ WRKDIRBASE=	${WRKDIRPREFIX}${.CURDIR:S,/editors/mule-common$,,}
 		japanese/mule-wnn6 \
 		japanese/mule-wnn7 \
 		korean/mule-freewnn
-.if exists(${WRKDIRBASE}/${dir}/work/.build_done.${dir:S,editors/,,:S,chinese/,zh-,:S,japanese/,ja-,:S,korean/,ko-,}-${PORTVERSION}${_SUF1}${_SUF2})
+.if exists(${WRKDIRBASE}/${dir}/work/.build_done.${dir:S,editors/,,:S,chinese/,zh-,:S,japanese/,ja-,:S,korean/,ko-,}-${PORTVERSION}${_SUF1}${_SUF2}.${PREFIX:S/\//_/g})
 WRKDIR?=	${WRKDIRBASE}/${dir}/work
-MULEPKG?=	${dir:S,editors/,,:S,chinese/,zh-,:S,japanese/,ja-,:S,korean/,ko-,}-${PORTVERSION}${_SUF1}${_SUF2}
+MULEPKG?=	${dir:S,editors/,,:S,chinese/,zh-,:S,japanese/,ja-,:S,korean/,ko-,}-${PORTVERSION}${_SUF1}${_SUF2}.${PREFIX:S/\//_/g}
 .endif
 .endfor
 WRKSRC=		${WRKDIR}/mule-${MULE_VERSION}-${EMACS_VERSION}
