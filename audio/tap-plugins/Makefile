@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	tap-plugins
-PORTVERSION=	0.5.0
+PORTVERSION=	0.6.0
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tap-plugins
@@ -14,12 +14,12 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LADSPA Plugins by Tom Szilagy
 
 USE_REINPLACE=	yes
-INSTALLS_SHLIB=	yes
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -I. -c -fPIC -DPIC" \
+		LDFLAGS="-nostartfiles -shared -Wl,-Bsymbolic -lm"
 
 post-patch:
-	${REINPLACE_CMD} -e "s,-lrt,,; \
-	s,-O3 -Wall -fomit-frame-pointer -fstrength-reduce -funroll-loops -ffast-math,${CFLAGS}," \
-		${WRKSRC}/Makefile
+	@${GREP} -lR "<stdint\.h>" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
+		's|<stdint\.h>|<inttypes.h>|g'
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/ladspa
