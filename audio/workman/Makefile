@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications/WorkMan
 DISTNAME=	WorkMan-${PORTVERSION}
 
-MAINTAINER=	d_burr@ix.netcom.com
+MAINTAINER=	ports@FreeBSD.Org
 
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
