@@ -16,9 +16,8 @@ DISTNAME=	TTWType-1.0rc2
 MAINTAINER=	kaeru@inigo-tech.com
 COMMENT=	TTWType product for CMF/Plone
 
-RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/CMFPlone/__init__.py:${PORTSDIR}/www/plone \
-				${LOCALBASE}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/Formulator/__init__.py:${PORTSDIR}/www/zope-formulator \
-				${LOCALBASE}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/CMFFormController/__init__.py:${PORTSDIR}/www/zope-cmfformcontroller
+RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/Formulator/__init__.py:${PORTSDIR}/www/zope-formulator \
+		${LOCALBASE}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/CMFFormController/__init__.py:${PORTSDIR}/www/zope-cmfformcontroller
 
 USE_PYTHON=	yes
 USE_ZOPE=	yes
