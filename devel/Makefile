@@ -138,6 +138,7 @@
     SUBDIR += domc
     SUBDIR += dotconf
     SUBDIR += doxygen
+    SUBDIR += e4graph
     SUBDIR += ebnf2yacc
     SUBDIR += ecb
     SUBDIR += ecb-emacs20

@@ -1,0 +1,25 @@
+--- configure.orig	Wed May  8 00:04:10 2002
++++ configure	Tue Jul 16 03:14:40 2002
+@@ -731,9 +731,9 @@
+     # pointing at a Tcl installation in a non-standard place.
+ 
+     if test x"${with_tcl}" != x ; then
+-	if test -f "${with_tcl}/include/tcl.h" ; then
++	if test -f "${with_tcl}/include/tcl8.3/tcl.h" ; then
+ 	     ac_cv_c_tcl=`(cd ${with_tcl}; pwd)`
+-	     ac_cv_c_tcl_inc=${ac_cv_c_tcl}/include
++	     ac_cv_c_tcl_inc=${ac_cv_c_tcl}/include/tcl8.3
+ 	     ac_cv_c_tcl_lib=${ac_cv_c_tcl}/lib
+ 	else
+ 	     { echo "configure: error: ${with_tcl}/include doesn't contain tcl.h" 1>&2; exit 1; }
+@@ -804,8 +804,8 @@
+     if test x"${with_expat}" != x ; then
+ 	if test -f "${with_expat}/include/expat.h" ; then
+ 	    ac_cv_c_expat=`(cd ${with_expat}/include; pwd)`
+-	    ac_cv_c_expat_inc=${ac_cv_c_expat}/include
+-	    ac_cv_c_expat_lib=${ac_cv_c_expat}/lib
++	    ac_cv_c_expat_inc=${with_expat}/include
++	    ac_cv_c_expat_lib=${with_expat}/lib
+ 	else
+ 	    { echo "configure: error: ${with_expat}/include does not contain expat.h" 1>&2; exit 1; }
+ 	fi
