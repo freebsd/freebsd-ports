@@ -1,24 +1,25 @@
---- Makefile.PL.orig	Thu Nov 11 17:15:38 1999
-+++ Makefile.PL	Sat Dec 11 19:38:50 1999
-@@ -4,18 +4,12 @@
+--- Makefile.PL.orig	Tue Feb 22 03:52:27 2000
++++ Makefile.PL	Sun Feb 27 15:11:28 2000
+@@ -4,18 +4,13 @@
  my $CAPI = defined $ExtUtils::MakeMaker::CAPI_support ? 'TRUE' : 'FALSE';
  
  # CHECK AND ADJUST
 -my @extrasearch = qw( -L/usr/lib/X11 -L/usr/X11R6/lib -L/usr/X11/lib -L/usr/local/lib );
--my @extrainc    = '-I/usr/local/include', '-I/usr/local/include/gd'; 
+-my @extrainc    = ('-I/usr/local/include', '-I/usr/local/include/gd'); 
 +my @extrasearch = qw( -L/usr/X11R6/lib -L/usr/local/lib );
-+my @extrainc	= qw( -I/usr/local/include -I/usr/local/include/gd -I/usr/local/include/freetype -I/usr/X11R6/include -I/usr/X11R6/include/X11 ); 
++my @extrainc    = ('-I/usr/local/include', '-I/usr/local/include/gd -I/usr/local/include/freetype -I/usr/X11R6/include -I/usr/X11R6/include/X11'); 
  
  my @extralibs;
--push @extralibs, '-lgd','-lz','-lpng','-lttf';
-+push @extralibs,@extrasearch,'-lgd','-lz','-lpng','-lttf','-lXpm','-lX11';
+-push @extralibs, '-lgd','-lpng','-lttf','-lz';
++push @extralibs, @extrasearch, '-lgd','-lpng','-lttf','-lz';
  push @extralibs, "-lm" unless $^O eq 'MSWin32';
+-push @extralibs,'-lX11' unless $^O eq 'MSWin32';
 -
 -# FreeBSD 3.3 with libgd built from ports croaks if -lXpm is specified 
 -if ($^O ne 'freebsd') { 
--    push @extralibs,@extrasearch,'-lX11','-lXpm'; 
+-  push @extralibs,'-lXpm'; 
 -} 
-- 
++push @extralibs,'-lXpm -lX11' unless $^O eq 'MSWin32';
  
  WriteMakefile(
      'NAME'	=> 'GD',
