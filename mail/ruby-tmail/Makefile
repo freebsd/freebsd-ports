@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	tmail
-PORTVERSION=	0.9.3
+PORTVERSION=	0.9.6
 CATEGORIES=	mail ruby
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://www.xdsl.ne.jp/Cd/aamine/soft/
+MASTER_SITES=	http://www.loveruby.net/archive/
 MASTER_SITE_SUBDIR=	knu
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
@@ -23,7 +22,7 @@ USE_RUBY=	yes
 USE_RUBY_AMSTD=	yes
 USE_RUBY_SETUP=	yes
 
-CONFIGURE_ARGS=	--with=ext/mails,lib/tmail
+CONFIGURE_ARGS=	--with=ext/b64,ext/mails,lib/tmail
 
 do-install:
 .if !defined(NOPORTDOCS)
