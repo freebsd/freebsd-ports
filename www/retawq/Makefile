@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	retawq
-PORTVERSION=	0.0.6
-PORTREVISION=	1
+PORTVERSION=	0.1.1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,23 +16,22 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
-CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lintl
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
-MAKE_ENV=	LDFLAGS="${LDFLAGS}"
-ALL_TARGET=	# empty
+MAKE_ENV=	THREAD_CFLAGS="${PTHREAD_CFLAGS}" THREAD_LIBS="${PTHREAD_LIBS}"
+ALL_TARGET=	build_binary
 
-post-patch:
-	@${REINPLACE_CMD} -e "s,-lpthread,${PTHREAD_LIBS},g ; \
-		s,%%LOCALBASE%%,${LOCALBASE},g ; \
-		s,%%PREFIX%%,${PREFIX},g ; \
-		s,^CC,#CC,g ; s,^CFLAGS,#CFLAGS,g" ${WRKSRC}/Makefile
+MAN1=		retawq.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/retawq ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/docu/retawq.1 ${MANPREFIX}/man/man1
 .for lang in de es fr
-	${INSTALL_DATA} ${WRKSRC}/i18n/${lang}.mo ${PREFIX}/share/locale/${lang}/LC_MESSAGES/${PORTNAME}.mo
+	${INSTALL_DATA} ${WRKSRC}/i18n/${lang}.mo \
+		${PREFIX}/share/locale/${lang}/LC_MESSAGES/${PORTNAME}.mo
 .endfor
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docu/*.html ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>

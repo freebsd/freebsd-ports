@@ -2,3 +2,16 @@ bin/retawq
 share/locale/de/LC_MESSAGES/retawq.mo
 share/locale/es/LC_MESSAGES/retawq.mo
 share/locale/fr/LC_MESSAGES/retawq.mo
+%%PORTDOCS%%share/doc/retawq/arg.html
+%%PORTDOCS%%share/doc/retawq/changes.html
+%%PORTDOCS%%share/doc/retawq/coding_style.html
+%%PORTDOCS%%share/doc/retawq/credits.html
+%%PORTDOCS%%share/doc/retawq/ctconfig.html
+%%PORTDOCS%%share/doc/retawq/feature.html
+%%PORTDOCS%%share/doc/retawq/index.html
+%%PORTDOCS%%share/doc/retawq/key.html
+%%PORTDOCS%%share/doc/retawq/patent.html
+%%PORTDOCS%%share/doc/retawq/raq.html
+%%PORTDOCS%%share/doc/retawq/rfc.html
+%%PORTDOCS%%share/doc/retawq/rtconfig.html
+%%PORTDOCS%%@dirrm share/doc/retawq
