@@ -1,6 +1,7 @@
+bin/encapsulate
 bin/faucet
+bin/getpeername
+bin/getsockname
 bin/hose
 bin/sockdown
-bin/getpeername
-bin/encapsulate
 bin/timelimit
