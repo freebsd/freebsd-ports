@@ -8,7 +8,8 @@
 PORTNAME=	portmon
 PORTVERSION=	2.0
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://www.aboleo.net/software/portmon/downloads/
+MASTER_SITES=	http://voodoo.oberon.net/download/ \
+		http://www.aboleo.net/software/portmon/downloads/
 
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Daemon that monitor network services
