@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gnomemag
-PORTVERSION=	0.11.14
+PORTVERSION=	0.12.0
 CATEGORIES=	accessibility gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-mag/0.11
+MASTER_SITE_SUBDIR=	sources/gnome-mag/0.12
 DISTNAME=	gnome-mag-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
