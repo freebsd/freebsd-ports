@@ -1,4 +1,3 @@
-sbin/httpd_modperl
 share/doc/mod_perl/post-install-notes
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/Connection.pm
@@ -52,100 +51,9 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/Leak/Leak.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/Leak/Leak.so
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/Symbol/Symbol.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/Symbol/Symbol.so
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/include/alloc.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/include/ap.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/include/ap_compat.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/include/ap_config.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/include/ap_config_auto.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/include/ap_ctype.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/include/ap_md5.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/include/ap_mmn.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/include/ap_sha1.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/include/buff.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/include/compat.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/include/conf.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/include/explain.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/include/fnmatch.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/include/hsregex.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/include/http_conf_globals.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/include/http_config.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/include/http_core.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/include/http_log.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/include/http_main.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/include/http_protocol.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/include/http_request.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/include/http_vhost.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/include/httpd.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/include/multithread.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/include/rfc1413.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/include/scoreboard.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/include/util_date.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/include/util_md5.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/include/util_script.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/include/util_uri.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/lib/expat-lite/asciitab.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/lib/expat-lite/hashtable.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/lib/expat-lite/iasciitab.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/lib/expat-lite/latin1tab.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/lib/expat-lite/nametab.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/lib/expat-lite/utf8tab.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/lib/expat-lite/xmldef.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/lib/expat-lite/xmlparse.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/lib/expat-lite/xmlrole.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/lib/expat-lite/xmltok.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/lib/expat-lite/xmltok_impl.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/modules/perl/mod_perl.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/modules/perl/mod_perl_version.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/modules/perl/mod_perl_xs.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/modules/perl/perl_PL.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/modules/proxy/mod_proxy.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/modules/standard/mod_rewrite.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/os/bs2000/ebcdic.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/os/bs2000/os-inline.c
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/os/bs2000/os.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/os/os2/os-inline.c
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/os/os2/os.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/os/tpf/ebcdic.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/os/tpf/os-inline.c
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/os/tpf/os.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/os/unix/os-inline.c
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/os/unix/os.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/os/win32/getopt.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/os/win32/os.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/os/win32/passwd.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/os/win32/readdir.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/os/win32/registry.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/os/win32/resource.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/os/win32/service.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/os/win32/installer/installdll/test/resource.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/os/win32/installer/installdll/test/test.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/regex/cclass.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/regex/cname.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/regex/regex2.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/regex/utils.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/support/suexec.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/typemap
+libexec/apache/libperl.so
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/Leak
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/Symbol
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/include
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/lib/expat-lite
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/lib
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/modules/perl
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/modules/proxy
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/modules/standard
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/modules
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/os/bs2000
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/os/os2
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/os/tpf
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/os/unix
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/os/win32/installer/installdll/test
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/os/win32/installer/installdll
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/os/win32/installer
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/os/win32
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/os
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/regex
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/support
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/mod_perl
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/Constants
