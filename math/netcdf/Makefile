@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	netcdf
-PORTVERSION=	3.6.0
+PORTVERSION=	3.6.0p1
 CATEGORIES=	math
-MASTER_SITES=	ftp://unidata.ucar.edu/pub/netcdf/
+MASTER_SITES=	ftp://ftp.unidata.ucar.edu/pub/netcdf/
+DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for machine-independent, array-oriented data access
 
-BROKEN=		Unfetchable
-
-WRKSRC=		${WRKDIR}/${DISTNAME}/src
+WRKSRC=		${WRKDIR}/${PORTNAME}-3.6.0-p1/src
 
 CONFLICTS=	hdf-4.*
 
