@@ -1,0 +1,11 @@
+bin/antipolix-client
+bin/antipolix-server
+share/doc/antipolix/ANTIPOLIX_RULES
+share/doc/antipolix/CLIENT_USE
+share/doc/antipolix/COPYRIGHT
+share/doc/antipolix/SERVER_USE
+share/examples/antipolix/dot.motd.sample
+share/examples/antipolix/dot.players.sample
+share/examples/antipolix/dot.server_defaults.sample
+@dirrm share/doc/antipolix
+@dirrm share/examples/antipolix
