@@ -8,7 +8,7 @@
 PORTNAME=	l0phtcrack
 PORTVERSION=	1.5
 CATEGORIES=	security
-MASTER_SITES=	http://www.atstake.com/research/lc/dist/
+MASTER_SITES=	http://www.atstake.com/products/lc/dist/
 DISTNAME=	lcsrc
 DIST_SUBDIR=	${PORTNAME}
 
