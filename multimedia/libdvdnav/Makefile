@@ -20,9 +20,10 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	THREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		THREAD_LIBS="${PTHREAD_LIBS}"
 INSTALLS_SHLIB=	yes
+USE_REINPLACE=	yes
 
 post-patch:
-	@${PERL} -pi -e \
+	@${REINPLACE_CMD} -e \
 		's|THREAD_LIBS=.*$$|THREAD_LIBS="\$$THREAD_LIBS"|g ; \
 		 s|THREAD_CFLAGS=.*$$|THREAD_CFLAGS="\$$THREAD_CFLAGS"|g ; \
 		 s|-L/usr/local/lib|-L${LOCALBASE}/lib|g ; \
