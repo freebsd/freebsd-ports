@@ -33,7 +33,7 @@ use strict;
 use Fcntl;
 use Getopt::Long;
 
-my $VERSION	= "2.1";
+my $VERSION	= "2.2";
 my $COPYRIGHT	= "Copyright (c) 2000 Dag-Erling Smørgrav. All rights reserved.";
 
 # Constants
@@ -64,13 +64,15 @@ my $info      = 0;		# Show port info
 my $dontclean = 0;		# Don't clean after build
 my $packages  = 0;		# Build packages
 my $list      = 0;		# List ports
+my $plist     = 0;		# Print packing list
 my $build     = 0;		# Build ports
 my $update    = 0;		# Update ports tree from CVS
 my $verbose   = 0;		# Verbose mode
 
 # Global variables
 my %ports;			# Maps ports to their directory.
-my %strop;			# Inverse of the above map
+my %pkgname;			# Inverse of the above map
+my %masterport;			# Maps ports to their master ports
 my %reqd;			# Ports that need to be installed
 my %installed;			# Ports that are already installed
 my $suppressed;			# Suppress output
@@ -241,8 +243,10 @@ sub cvs($;@) {
     if (!$update) {
 	return "\n";
     }
-    push(@args, "-f", "-z3", "-R", "-d$cvsroot",
-	 $verbose ? "-q" : "-Q", $cmd, "-A");
+    if (!$verbose) {
+	push(@args, "-q");
+    }
+    push(@args, "-f", "-z3", "-R", "-d$cvsroot", $cmd, "-A");
     if ($cmd eq "checkout") {
 	push(@args, "-P");
     } elsif ($cmd eq "update") {
@@ -322,7 +326,7 @@ sub read_index() {
 	@port = split(/\|/, $line, 3);
 	$port[1] =~ s|^/usr/ports/*||;
 	$ports{$port[0]} = $port[1];
-	$strop{$port[1]} = $port[0];
+	$pkgname{$port[1]} = $port[0];
     }
     close(INDEX);
     info(keys(%ports) . " ports in index");
@@ -340,7 +344,7 @@ sub find_port($) {
     @suggest = grep(/^$port/i, keys(%ports));
     if (@suggest == 1 && $suggest[0] =~ m/^$port[0-9.-]/) {
 	$port = $ports{$suggest[0]};
-	stderr(", assuming you mean $strop{$port}.\n");
+	stderr(", assuming you mean $pkgname{$port}.\n");
 	return $port;
     } elsif (@suggest) {
 	stderr(", maybe you mean:\n  " . (join("\n  ", @suggest)));
@@ -357,7 +361,6 @@ sub add_port($$) {
     my $req = shift;		# Requirement (explicit or implicit)
 
     my $realport;		# Real port name
-    my $pkgname;		# Package name
     
     if ($port =~ m|^([^/]+/[^/]+)$|) {
 	$realport = $1;
@@ -387,6 +390,10 @@ sub find_master($) {
     local *FILE;		# File handle
     my $master;			# Master directory
 
+    if ($masterport{$port}) {
+	return $masterport{$port};
+    }
+    
     # Look for MASTERDIR in the Makefile. We can't use 'make -V'
     # because the Makefile might try to include the master port's
     # Makefile, which might not be checked out yet.
@@ -410,7 +417,7 @@ sub find_master($) {
 	    }
 	    close(FILE);
 	    info("$master is master for $port\n");
-	    return $master;
+	    return $masterport{$port} = $master;
 	}
     }
     close(FILE);
@@ -475,7 +482,7 @@ sub find_dependencies($) {
 	or bsd::errx(1, "failed to obtain dependency list");
     %depends = ();
     foreach $item (split(' ', $dependvars)) {
-	if ($item !~ m|^([^:]+):$portsdir/([^/:]+/[^/:]+)(:[^:]+)?$|) {
+	if ($item !~ m|^([^:]+):$portsdir/([^/:]+/[^/:]+)/?(:[^:]+)?$|) {
 	    bsd::warnx("invalid dependency: %s", $item);
 	}
 	($lhs, $rhs) = ($1, $2);
@@ -571,9 +578,9 @@ sub update_ports_tree(@) {
 	    }
 	    
 	    # Find the port's package name
-	    if (!exists($strop{$port})) {
-		if ($strop{$port} = suppress(\&make, ($port, "-VPKGNAME"))) {
-		    chomp($strop{$port});
+	    if (!exists($pkgname{$port})) {
+		if ($pkgname{$port} = suppress(\&make, ($port, "-VPKGNAME"))) {
+		    chomp($pkgname{$port});
 		} else {
 		    warnx("failed to obtain package name for $port");
 		}
@@ -610,7 +617,60 @@ sub show_port_info($) {
 	or bsd::err(1, "can't read description for $port");
     $info = join("| ", <FILE>);
     close(FILE);
-    print("+--- $port:\n| ${info}+---\n");
+    print("+--- Description for $port ($pkgname{$port}):\n| ${info}+---\n");
+}
+
+#
+# Show port plist
+#
+sub show_port_plist($) {
+    my $port = shift;		# Port to show plist for
+
+    my $master;			# Master port
+    local *FILE;		# File handle
+    my $file;			# File name
+    my %files;			# Files to list
+    my $prefix;			# Prefix
+
+    $prefix = suppress(\&make, ($port, "-VPREFIX"));
+    chomp($prefix);
+    $master = $port;
+    while (!-f "$portsdir/$master/pkg-plist") {
+	if (!($master = $masterport{$master})) {
+	    bsd:errx(1, "$port has no packing list");
+	}
+    }
+    sysopen(FILE, "$portsdir/$master/pkg-plist", O_RDONLY)
+	or bsd::err(1, "can't read packing list for $port");
+    while (<FILE>) {
+	chomp();
+	$file = undef;
+	if (m/^[^\@]/) {
+	    $file = $_;
+	} elsif (m/^\@cwd\s+(\S+)\s*$/) {
+	    $prefix = $1;
+	} elsif (m/^\@dirrm\s+(\S+)\s*$/) {
+	    $file = "$1/";
+	} elsif (m/^\@comment\s+/) {
+	    # ignore
+	} else {
+	    bsd::warnx("unrecognized plist directive: $_");
+	}
+	if (defined($file)) {
+	    if ($file !~ m/^\//) {
+		$file = "$prefix/$file";
+	    }
+	    $file =~ s|/+|/|g;
+	    $files{$file} = 1;
+	}
+    }
+    close(FILE);
+    # XXX list man pages?
+    print("+--- Packing list for $port ($pkgname{$port}):\n");
+    foreach (sort(keys(%files))) {
+	print("| $_\n");
+    }
+    print("+---\n");
 }
 
 #
@@ -738,6 +798,7 @@ Options:
   -h, --help               Show this information
   -i, --info               Show info about specified ports
   -k, --packages           Build packages for the specified ports
+  -L, --plist	           Show the packing lists for the specified ports
   -l, --list               List required ports and their dependencies
   -u, --update             Update relevant portions of the ports tree
   -V, --version	           Show version number
@@ -782,6 +843,7 @@ MAIN:{
 	       "h|help"			=> \&help,
 	       "i|info"			=> \$info,
 	       "k|packages"		=> \$packages,
+	       "L|plist"		=> \$plist,
 	       "l|list"			=> \$list,
 	       "p|portsdir=s"		=> \$portsdir,
 	       "r|cvsroot=s"		=> \$cvsroot,
@@ -793,11 +855,11 @@ MAIN:{
 	       )
 	or usage();
 
-    if (!$clean && !$info && !$build && !$fetch) {
+    if (!($clean || $fetch || $info || $list || $packages || $plist)) {
 	$build = 1;
     }
     
-    if (!@ARGV && (!$clean && !$info || $build || $fetch)) {
+    if (!@ARGV && ($build || $fetch || $list || $packages || $plist)) {
 	usage();
     }
         
@@ -824,7 +886,7 @@ MAIN:{
     if (!$cvsroot) {
 	$cvsroot = $ENV{'CVSROOT'};
     }
-    if (!$cvsroot) {
+    if ($update && !$cvsroot) {
 	bsd::errx(1, "No CVS root, please use the -r option or set \$CVSROOT");
     }
 
@@ -862,7 +924,7 @@ MAIN:{
     if ($exclude) {
 	foreach $port (keys(%reqd)) {
 	    if ((exists($installed{$port}) && $installed{$port} > 0) ||
-		-d "$dbdir/$strop{$port}") {
+		-d "$dbdir/$pkgname{$port}") {
 		info("$port is already installed");
 		delete $reqd{$port};
 	    }
@@ -874,7 +936,7 @@ MAIN:{
 	foreach $port (sort(keys(%reqd))) {
 	    next if ($reqd{$port} == &REQ_MASTER);
 	    print((($reqd{$port} & &REQ_EXPLICIT) ? " * " : "   "),
-		  "$port ($strop{$port})\n");
+		  "$port ($pkgname{$port})\n");
 	}
     }
 
@@ -891,7 +953,16 @@ MAIN:{
 	}
     }
 
-    # Step 7: clean the ports directories (or the entire tree)
+    # Step 7: show packing list
+    if ($plist) {
+	foreach $port (keys(%reqd)) {
+	    if ($reqd{$port} & &REQ_EXPLICIT) {
+		show_port_plist($port);
+	    }
+	}
+    }
+    
+    # Step 8: clean the ports directories (or the entire tree)
     if ($clean) {
 	if (!@ARGV) {
 	    clean_tree();
@@ -904,7 +975,7 @@ MAIN:{
 	}
     }
     
-    # Step 8: fetch distfiles
+    # Step 9: fetch distfiles
     if ($fetch) {
 	foreach $port (keys(%reqd)) {
 	    if ($reqd{$port} != &REQ_MASTER) {
@@ -913,7 +984,7 @@ MAIN:{
 	}
     }
 
-    # Step 9: build ports - only the explicitly required ones, since
+    # Step A: build ports - only the explicitly required ones, since
     # some dependencies (most commonly XFree86) may be bogus.
     if ($build || $packages) {
 	foreach $port (keys(%reqd)) {
