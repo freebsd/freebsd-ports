@@ -8,8 +8,7 @@
 PORTNAME=	flowscan
 PORTVERSION=    1.006
 CATEGORIES=	net
-MASTER_SITES=	http://net.doit.wisc.edu/~plonka/FlowScan/
-DISTFILES=	FlowScan-${PORTVERSION}.tar.gz
+MASTER_SITES=	http://net.doit.wisc.edu/~plonka/FlowScan/ DISTFILES=	FlowScan-${PORTVERSION}.tar.gz
 
 MAINTAINER=	andreas@freebsd.org
 
@@ -24,6 +23,7 @@ BUILD_DEPENDS=	ksh:${PORTSDIR}/shells/pdksh \
 CFLOWD_FLOWSCAN_PATCH=	yes
 HAS_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--prefix=${PREFIX}/var/flows
+WRKSRC=			${WRKDIR}/FlowScan-${PORTVERSION}
 
 pre-install:
 	${MKDIR} -p ${PREFIX}/var/flows/bin
