@@ -15,6 +15,7 @@
     SUBDIR += SciPlot
     SUBDIR += aalib
     SUBDIR += acidwarp
+    SUBDIR += agg
     SUBDIR += ale
     SUBDIR += allegrogl
     SUBDIR += animabob
