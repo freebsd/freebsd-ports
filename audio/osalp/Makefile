@@ -18,6 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 BUILD_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
+USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt"
@@ -27,7 +28,7 @@ INSTALLS_SHLIB=	yes
 PLIST_SUB=	VERSION=${PORTVERSION}
 
 post-patch:
-	@${PERL} -pi -e 's|/usr/local/lib/aflib|${PREFIX}/lib/aflib|g' \
+	@${REINPLACE_CMD} -e 's|/usr/local/lib/aflib|${PREFIX}/lib/aflib|g' \
 		${WRKSRC}/configure
 
 .include <bsd.port.mk>

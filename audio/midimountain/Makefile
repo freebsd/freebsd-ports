@@ -15,16 +15,17 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 USE_GTK=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
 post-patch:
 .for file in midimountain.conf main.cpp
-	@${PERL} -pi -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/midimountain/${file}
+	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/midimountain/${file}
 .endfor
 .for dir in pixmaps languages
-	${PERL} -pi -e "s, ${dir}/, ${DATADIR}/${dir}/,g" ${WRKSRC}/midimountain/${dir}/Makefile.in
+	${REINPLACE_CMD} -e "s, ${dir}/, ${DATADIR}/${dir}/,g" ${WRKSRC}/midimountain/${dir}/Makefile.in
 .endfor
 
 .include <bsd.port.mk>

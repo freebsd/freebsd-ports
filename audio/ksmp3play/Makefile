@@ -17,6 +17,7 @@ LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12 \
 		smpeg:${PORTSDIR}/graphics/smpeg \
 		gnugetopt:${PORTSDIR}/devel/libgnugetopt
 
+USE_REINPLACE=	yes
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	SDL_CONFIG=${SDL_CONFIG} \
@@ -24,7 +25,7 @@ CONFIGURE_ENV=	SDL_CONFIG=${SDL_CONFIG} \
 MAN1=	ksmp3play.1
 
 post-patch:
-	@${PERL} -pi -e "s,-lpthread,${PTHREAD_LIBS},g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s,-lpthread,${PTHREAD_LIBS},g" ${WRKSRC}/configure
 
 .if !defined(NOPORTDOCS)
 post-install:

@@ -17,11 +17,12 @@ RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123 \
 
 WRKSRC=		${WRKDIR}/pimp3
 
+USE_REINPLACE=	yes
 NO_BUILD=	yes
 USE_PYTHON=	yes
 
 post-patch:
-	@${PERL} -pi -ne "s!/usr/bin/python!${LOCALBASE}/bin/python!;" ${WRKSRC}/pimp3.py
+	@${REINPLACE_CMD} -e "s!/usr/bin/python!${LOCALBASE}/bin/python!" ${WRKSRC}/pimp3.py
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/*.py ${PREFIX}/bin/

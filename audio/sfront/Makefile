@@ -14,12 +14,13 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 USE_BISON=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 ALL_TARGET=	# empty
 
 post-patch:
-	@${PERL} -pi -e "s,^CFLAGS,#CFLAGS,g" ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e "s,^CFLAGS,#CFLAGS,g" ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/../bin/sfront ${PREFIX}/bin

@@ -20,6 +20,7 @@ LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
 		vorbis.1:${PORTSDIR}/audio/libvorbis \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
+USE_REINPLACE=	yes
 USE_GTK=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -29,11 +30,11 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	--disable-debug
 
 post-patch:
-	@${PERL} -pi -e 's|-O3|\$$CFLAGS|g ; \
+	@${REINPLACE_CMD} -e 's|-O3|\$$CFLAGS|g ; \
 		 s|\$$GTK_LIBS -lgthread|\$$GTK_LIBS \$$GLIB_LIBS|g ; \
 		 s|\$$GTK_FLAGS|\$$GTK_CFLAGS \$$GLIB_CFLAGS|g' \
 			${WRKSRC}/configure
-	@${PERL} -pi -e 's|-lpthread||g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|-lpthread||g' ${WRKSRC}/Makefile.in
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/muse ${PREFIX}/bin

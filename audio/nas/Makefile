@@ -13,6 +13,7 @@ EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 USE_IMAKE=	yes
 ALL_TARGET=	World
 # no need to "xmkmf -a" and create the Makefiles twice -- see above
@@ -25,7 +26,7 @@ INSTALLS_SHLIB=	yes
 
 post-patch:
 	@find ${WRKSRC} -name '*.[ch]' | xargs \
-		${PERL} -pi -e "s|<malloc.h>|<stdlib.h>|g"
+		${REINPLACE_CMD} -e "s|<malloc.h>|<stdlib.h>|g"
 
 post-install:
 	@${SED} -e 's:/usr/X11R6:${PREFIX}:g' ${PKGMESSAGE}

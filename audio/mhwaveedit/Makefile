@@ -16,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	sndfile.0:${PORTSDIR}/audio/libsndfile
 
+USE_REINPLACE=	yes
 USE_GTK=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
@@ -32,7 +33,7 @@ CONFIGURE_ARGS+=	--without-sdl
 .endif
 
 post-patch:
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${PERL} -pi -e \
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|^CFLAGS =.*$$|CFLAGS = \@CFLAGS\@|g'
 
 do-install:

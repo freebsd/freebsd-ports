@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 USE_BZIP2=	yes
 USE_XLIB=	yes
 USE_GMAKE=	yes
@@ -36,6 +37,6 @@ MAN1=		xmp.1
 MLINKS=		xmp.1 xxmp.1
 
 post-patch:
-	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/docs/xmp.1
+	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/docs/xmp.1
 
 .include <bsd.port.post.mk>

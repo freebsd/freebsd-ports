@@ -19,6 +19,7 @@ LIB_DEPENDS=	sigc:${PORTSDIR}/devel/libsigc++ \
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 
 pre-configure:
 .for file in install-sh missing mkinstalldirs
@@ -27,6 +28,6 @@ pre-configure:
 	@${RM} -f ${WRKSRC}/config.cache
 
 post-patch:
-	@${PERL} -pi -e "s,AFMT_S16_NE,AFMT_S16_LE,g" ${WRKSRC}/waveout/sound_driver_oss.cpp
+	@${REINPLACE_CMD} -e "s,AFMT_S16_NE,AFMT_S16_LE,g" ${WRKSRC}/waveout/sound_driver_oss.cpp
 
 .include <bsd.port.mk>
