@@ -1,0 +1,23 @@
+
+$FreeBSD$
+
+--- Makefile.in.orig
++++ Makefile.in
+@@ -48,7 +48,7 @@
+ conf:
+ 	sed -e 's|_BASE_|$(pkgdatadir)|g' sample.config.s \
+ 		> sample.config || cp sample.config.s sample.config
+-	cp sample.config ffproxy.conf
++	cp sample.config ffproxy.conf.sample
+ 
+ installdirs: mkinstalldirs
+ 	$(SHELL) $(srcdir)/mkinstalldirs $(DESTDIR)$(bindir) \
+@@ -73,7 +73,7 @@
+ 	$(INSTALL_DATA) ffproxy.8 $(DESTDIR)$(mandir)/man8
+ 
+ install_config: conf
+-	$(INSTALL_DATA) ffproxy.conf $(DESTDIR)$(sysconfdir)
++	$(INSTALL_DATA) ffproxy.conf.sample $(DESTDIR)$(sysconfdir)
+ 
+ install_sample: conf
+ 	$(INSTALL_DATA) sample.config $(DESTDIR)$(pkgdatadir)
