@@ -199,6 +199,7 @@
     SUBDIR += p5-XML-RegExp
     SUBDIR += p5-XML-SAX
     SUBDIR += p5-XML-SAX-Expat
+    SUBDIR += p5-XML-SAX-Machines
     SUBDIR += p5-XML-SAX-Writer
     SUBDIR += p5-XML-Sablotron
     SUBDIR += p5-XML-Simple
