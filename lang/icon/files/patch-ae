@@ -1,6 +1,6 @@
---- Makefile.orig	Fri Feb 13 15:18:30 1998
-+++ Makefile	Fri Feb 20 13:00:05 1998
-@@ -186,3 +186,16 @@
+--- Makefile.orig	Thu Jul  1 10:39:20 1999
++++ Makefile	Sat Aug 28 09:25:59 1999
+@@ -187,6 +187,19 @@
  		-cd tests;		$(MAKE) Clean
  
  ##################################################################
@@ -17,3 +17,6 @@
 +	install -c -g bin -o bin -m 644 bin/rt.a ${PREFIX}/share/icon/rt.a
 +	install -c -g bin -o bin -m 644 bin/rt.db ${PREFIX}/share/icon/rt.db
 +	install -c -g bin -o bin -m 644 bin/rt.h ${PREFIX}/share/icon/rt.h
+ # Entries beyond this point are for use at Arizona only.
+ #   *** Do not delete the line above; it is used in trimming Makefiles
+ #   for distribution ***
