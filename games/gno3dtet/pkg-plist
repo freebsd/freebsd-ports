@@ -1,0 +1,9 @@
+bin/gno3dtet
+share/gnome/apps/Games/gno3dtet.desktop
+share/gnome/help/gno3dtet/C/topic.dat
+share/gnome/help/gno3dtet/C/gno3dtet.html
+share/gnome/help/gno3dtet/C/copying.html
+share/pixmaps/gno3dtet.png
+var/games/gno3dtet.hof
+@dirrm share/gnome/help/gno3dtet/C
+@dirrm share/gnome/help/gno3dtet
