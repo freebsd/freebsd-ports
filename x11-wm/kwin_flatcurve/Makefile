@@ -14,6 +14,9 @@ DISTNAME=	4365-flatcurve-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bluecurve style window decoration for KDEs WM
 
+BROKEN=		"Does not build with KDE 3.2"
+IGNORE=		${BROKEN}
+
 USE_KDEBASE_VER=	3
 WRKSRC=		${WRKDIR}/flatcurve-${PORTVERSION}
 USE_GMAKE=	yes
