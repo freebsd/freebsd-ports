@@ -332,6 +332,7 @@
     SUBDIR += rwhois
     SUBDIR += samba
     SUBDIR += samba-devel
+    SUBDIR += sambasentinel
     SUBDIR += samplicator
     SUBDIR += satellite
     SUBDIR += scotty
