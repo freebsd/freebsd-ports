@@ -1,18 +1,18 @@
 # New ports collection makefile for:	exim
-# Version required:	2.11
+# Version required:	2.12
 # Date created:		23 June 1996
 # Whom:			markm@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.25 1998/12/17 10:54:23 markm Exp $
+# $Id: Makefile,v 1.26 1999/01/27 14:07:07 markm Exp $
 #
 
-DISTNAME=	exim-2.11
+DISTNAME=	exim-2.12
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cus.cam.ac.uk/pub/software/programs/exim/ \
 		ftp://ftp.quite.net/pub/exim/ \
 		http://www.exim.org/ftp/ \
 		ftp://ftp.is.co.za/networking/mail/transport/exim/
-DISTFILES=	exim-2.11.tar.gz exim-texinfo-2.10.tar.gz
+DISTFILES=	exim-2.12.tar.gz exim-texinfo-2.10.tar.gz
 
 MAINTAINER=	axl@iafrica.com
 
@@ -24,7 +24,7 @@ USE_PERL5=	YES
 
 do-configure:
 	${MKDIR} ${WRKSRC}/Local
-.if defined(USE_XLIB)
+.if defined(USE_XLIB) && ${USE_XLIB} == YES
 	${SED} -e "s#XX_PREFIX_XX#${PREFIX}#" \
 	    < ${FILESDIR}/Makefile \
 	    > ${WRKSRC}/Local/Makefile
