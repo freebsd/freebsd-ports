@@ -1,6 +1,9 @@
-SquishDot is a web-based news publishing and discussion product for the  
-Z Object Publishing Environment(ZOPE). It allows you to build a web-based 
-news site along with the capability to handle threaded discussions with  
-a minimum of configuration and day-to-day management. 
+The ZNavigator product was designed to simplify the construction of
+navigation bars. It was written to make navbar management easy for
+inexperienced contents managers, and provide some nifty features.
 
-WWW:	http://squishdot.org/
+Many of the features and their usage are demonstrated in the
+navigator_demo package, which you can import with the name
+'navigator_demo.zexp' from the Zope management interface.
+
+WWW:	http://www.zope.org/Members/jonas/ZNavigator/
