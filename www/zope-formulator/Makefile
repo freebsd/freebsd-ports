@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	formulator
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.1
 CATEGORIES=	www zope
 MASTER_SITES=	http://zope.org/Members/infrae/Formulator/Formulator-${PORTVERSION}/
 PKGNAMEPREFIX=	zope-

@@ -4,4 +4,4 @@ with a web-based management interface. When a form is submitted, many
 common validations, such as testing for required fields or certain 
 types of input, can be automated.
 
-WWW: http://www.zope.org/Members/faassen/Formulator 
+WWW: http://www.zope.org/Members/infrae/Formulator 
