@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_auth_imap
-PORTVERSION=	2.0
+PORTVERSION=	2.0.1
 CATEGORIES=	www
 MASTER_SITES=	http://www.zhen.org/software/mod_auth_imap/
 EXTRACT_SUFX=	.tgz
