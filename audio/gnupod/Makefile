@@ -21,6 +21,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/MP3/Info.pm:${PORTSD
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Getopt/Mixed.pm:${PORTSDIR}/devel/p5-Getopt-Mixed \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple
 
+INFO=		gnupod
+
 USE_PERL5=	yes
 HAS_CONFIGURE=	yes
 NO_BUILD=	yes
