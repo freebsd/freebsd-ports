@@ -3,7 +3,7 @@
 # Date created:		5 March 1995
 # Whom:			joerg
 #
-# $Id: Makefile,v 1.15 1999/02/01 23:32:44 se Exp $
+# $Id: Makefile,v 1.16 1999/02/03 10:37:11 asami Exp $
 #
 
 DISTNAME=	acm-5.0
@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.websimulations.com/download/
 
 MAINTAINER=	se@FreeBSD.org
 
+USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 MAN6=		acm.6
 
