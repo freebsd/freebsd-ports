@@ -7,7 +7,7 @@
 
 PORTNAME=	oidentd
 PORTVERSION=	2.0.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ojnk
@@ -16,6 +16,7 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Ident server that supports user-defined ident strings
 
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
@@ -25,11 +26,10 @@ PLIST_FILES=	sbin/oidentd
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500038
-RC_SUBR=	/etc/rc.subr
-.else
 USE_RC_SUBR=	yes
-.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,/etc/,${PREFIX}/,g' ${WRKSRC}/src/oidentd.h
 
 post-build:
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
