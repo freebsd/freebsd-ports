@@ -23,6 +23,8 @@ MASTER_SITES=	ftp://planetmirror.com/pub/mysql/Downloads/MySQL-5.0/ \
 PKGNAMESUFFIX?=	-server
 DISTNAME=	${PORTNAME}-${PORTVERSION}-alpha
 
+FORBIDDEN=	"http://vuxml.freebsd.org/e5e2883d-ceb9-11d8-8898-000d6111a684.html (security)"
+
 MAINTAINER=	ale@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
 
