@@ -5,65 +5,6 @@
 oopath=%%PREFIX%%/OpenOffice.org%%FRELEASE_NR%%/program/
 program=`echo $0 | sed -e 's|.*-%%RELEASE_NR%%-||'`
 
-if [ ! $LANG ]; then
-	export LANG=%%LANG%%
-fi
-
-save_common_xcu() {
-sed 's/^X//' > tmp/Common.xcu << 'END-of-Common.xcu'
-X<?xml version="1.0" encoding="UTF-8"?>
-X<oor:component-data xmlns:oor="http://openoffice.org/2001/registry" xmlns:xs="http://www.w3.org/2001/XMLSchema" oor:name="Common" oor:package="org.openoffice.Office">
-X <node oor:name="Internal">
-X  <prop oor:name="CurrentTempURL" oor:type="xs:string">
-X   <value/>
-X  </prop>
-X </node>
-X <node oor:name="Misc">
-X  <prop oor:name="FirstRun" oor:type="xs:boolean">
-X   <value>true</value>
-X  </prop>
-X </node>
-X <node oor:name="ExternalApps">
-X  <prop oor:name="file" oor:type="xs:string">
-X   <value/>
-X  </prop>
-X  <prop oor:name="ftp" oor:type="xs:string">
-X   <value/>
-X  </prop>
-X  <prop oor:name="http" oor:type="xs:string">
-X   <value>%%mozilla%%</value>
-X  </prop>
-X  <prop oor:name="https" oor:type="xs:string">
-X   <value/>
-X  </prop>
-X  <prop oor:name="mailto" oor:type="xs:string">
-X   <value/>
-X  </prop>
-X </node>
-X</oor:component-data>
-END-of-Common.xcu
-mozilla=`which mozilla`;
-if [ $? -eq 0 ]; then
-	sed -i orig -e 's#%%mozilla%%#'$mozilla'#g' tmp/Common.xcu
-fi
-mozilla=`which linux-mozilla`;
-if [ $? -eq 0 ]; then
-	sed -i orig -e 's#%%mozilla%%#'$mozilla'#g' tmp/Common.xcu
-fi
-mv tmp/Common.xcu user/registry/data/org/openoffice/Office
-}
-
-if [ -e $HOME/OpenOffice.org%%FRELEASE_NR%%/setup ]; then
-	cd $HOME/OpenOffice.org%%FRELEASE_NR%%
-	if [ ! -e $HOME/OpenOffice.org%%FRELEASE_NR%%/user/config/soffice.cfg ]; then
-		touch $HOME/OpenOffice.org%%FRELEASE_NR%%/user/config/soffice.cfg
-	fi
-	if [ ! -e user/registry/data/org/openoffice/Office/Common.xcu ]; then
-		mkdir -p tmp;
-		save_common_xcu;
-	fi
-fi
-
 case $program in
 $0)
 	cd $oopath && ./soffice "$@"
