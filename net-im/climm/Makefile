@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	micq
-PORTVERSION=	0.4.10.1
+PORTVERSION=	0.4.10.2
 CATEGORIES=	net
 MASTER_SITES=	http://micq.org/source/ \
 		http://micq.alpha345.com/source/ \
@@ -25,11 +25,12 @@ MAN1=		micq.1
 MAN5=		micqrc.5
 MAN7=		micq.7
 
-.if !defined(WITHOUT_LIBICONV)
+.if defined(WITHOUT_LIBICONV)
+CONFIGURE_ARGS+=	--disable-iconv
+.else
 LIB_DEPENDS+=	iconv.3:${PORTSDIR}/converters/libiconv
-CONFIGURE_ARGS+=	--enable-iconv
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib -liconv
 .endif
 
 post-install:
