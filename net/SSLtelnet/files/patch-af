@@ -1,5 +1,14 @@
---- telnetd/sys_term.c.orig	Sat Aug  2 14:37:00 1997
-+++ telnetd/sys_term.c	Sat Oct 17 22:11:51 1998
+--- telnetd/sys_term.c.orig	Sat Aug  2 01:37:00 1997
++++ telnetd/sys_term.c	Sun Aug  6 16:15:37 2000
+@@ -167,7 +167,7 @@
+ struct termios termbuf, termbuf2;	/* pty control structure */
+ #endif	/* USE_TERMIO */
+ 
+-extern long time();
++extern time_t time();
+ 
+ #ifndef STDIN_FILENO
+ #define STDIN_FILENO fileno(stdin)
 @@ -531,7 +531,7 @@
  	return(p);
  #else
@@ -68,3 +77,4 @@
 +	termbuf.c_iflag &= ~ISTRIP;
  #endif
  }
+ 
