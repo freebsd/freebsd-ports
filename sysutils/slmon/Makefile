@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	slmon
-PORTVERSION=	0.5.11
-PORTREVISION=	1
+PORTVERSION=	0.5.12
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,6 +18,7 @@ COMMENT=	S-Lang System Monitor
 LIB_DEPENDS=	gtop-2.0.2:${PORTSDIR}/devel/libgtop2 \
 		slang.1:${PORTSDIR}/devel/libslang
 
+USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
@@ -27,11 +27,6 @@ MAN1=		slmon.1
 
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib -lncurses
-
-.if !exists(/usr/include/getopt.h)
-LIB_DEPENDS+=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-LDFLAGS+=	-lgnugetopt
-.endif
 
 .include <bsd.port.pre.mk>
 
