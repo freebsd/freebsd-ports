@@ -2203,6 +2203,7 @@ gmetadom	ports/textproc/gmetadom
 gmime		ports/mail/gmime
 gmixer		ports/audio/gmixer
 gmrun		ports/x11/gmrun
+gmt		ports/graphics/gmt
 gmysql		ports/databases/gmysql
 gn		ports/www/gn
 gnapster	ports/audio/gnapster
