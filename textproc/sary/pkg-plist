@@ -1,0 +1,42 @@
+bin/mksary
+bin/sary
+bin/sary-config
+include/sary.h
+include/sary/array.h
+include/sary/bsearch.h
+include/sary/builder.h
+include/sary/cache.h
+include/sary/i.h
+include/sary/ipoint.h
+include/sary/merger.h
+include/sary/mkqsort.h
+include/sary/mmap.h
+include/sary/progress.h
+include/sary/saryconfig.h
+include/sary/saryer.h
+include/sary/sorter.h
+include/sary/str.h
+include/sary/text.h
+include/sary/writer.h
+@dirrm include/sary
+lib/libsary.a
+lib/libsary.la
+lib/libsary.so
+lib/libsary.so.8
+libdata/pkgconfig/sary.pc
+@unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true
+share/aclocal/sary.m4
+%%PORTDOCS%%share/doc/sary/en/libsary.html
+%%PORTDOCS%%share/doc/sary/en/suffix-array.html
+%%PORTDOCS%%share/doc/sary/images/figure1.png
+%%PORTDOCS%%share/doc/sary/images/figure2.png
+%%PORTDOCS%%share/doc/sary/images/figure3.png
+%%PORTDOCS%%share/doc/sary/images/figure4.png
+%%PORTDOCS%%share/doc/sary/images/figure5.png
+%%PORTDOCS%%share/doc/sary/ja/libsary.html
+%%PORTDOCS%%share/doc/sary/ja/suffix-array.html
+%%PORTDOCS%%share/doc/sary/sary.css
+%%PORTDOCS%%@dirrm share/doc/sary/en
+%%PORTDOCS%%@dirrm share/doc/sary/images
+%%PORTDOCS%%@dirrm share/doc/sary/ja
+%%PORTDOCS%%@dirrm share/doc/sary

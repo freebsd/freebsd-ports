@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Fri Aug 23 01:39:41 2002
++++ Makefile.in	Tue Oct  8 21:43:06 2002
+@@ -90,7 +90,7 @@
+ 
+ AUTOMAKE_OPTIONS = 1.4 no-dependencies
+ 
+-SUBDIRS = . docs man sary src tests debian
++SUBDIRS = . man sary src
+ 
+ include_HEADERS = sary.h
+ 
