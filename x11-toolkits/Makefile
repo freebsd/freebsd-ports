@@ -31,7 +31,7 @@
     SUBDIR += py-wxPython
     SUBDIR += qt-i18n
     SUBDIR += qt142
-    SUBDIR += qt201
+    SUBDIR += qt20
     SUBDIR += ruby-gtk
     SUBDIR += rubytk
     SUBDIR += slingshot
