@@ -64,6 +64,7 @@ share/aclocal/sdl11.m4
 %%EXAMPLESDIR%%/testcpuinfo.c
 %%EXAMPLESDIR%%/testdyngl.c
 %%EXAMPLESDIR%%/testerror.c
+%%EXAMPLESDIR%%/testendian.c
 %%EXAMPLESDIR%%/testgamma.c
 %%EXAMPLESDIR%%/testgl.c
 %%EXAMPLESDIR%%/testhread.c
