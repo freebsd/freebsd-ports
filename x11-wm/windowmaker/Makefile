@@ -1,12 +1,12 @@
 # New ports collection makefile for:	WindowMaker
-# Version required:	0.53.0
+# Version required:	0.60.0
 # Date created:		August 13, 1997
 # Whom:			handy@physics.montana.edu
 #
-# $Id: Makefile,v 1.50 1999/05/01 02:45:29 steve Exp $
+# $Id: Makefile,v 1.51 1999/05/27 07:32:49 tg Exp $
 
-DISTNAME=	WindowMaker-0.53.0
-PKGNAME=	windowmaker-0.53.0
+DISTNAME=	WindowMaker-0.60.0
+PKGNAME=	windowmaker-0.60.0
 CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	${MASTER_SITE_WINDOWMAKER} \
 		http://jgo.local.net/cool_downloads/wm/
@@ -49,5 +49,6 @@ post-configure:
 post-install:
 	@cd ${WRKDIR}/WindowMaker-extra-0.1; \
 		${MAKE} ${MAKE_ARGS} install
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
