@@ -40,6 +40,13 @@ WRKSRC=		${WRKDIR}/mozilla
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
+EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude */CVS/* \
+			--exclude */macbuild/*\
+			--exclude */package/* \
+			--exclude .cvsignore \
+			--exclude makefile.win \
+			--exclude MANIFEST
+
 FIREFOX=	${PORTNAME}
 FF_VER=		${PORTVERSION}
 
