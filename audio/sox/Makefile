@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	sox
-PORTVERSION=	12.16
+PORTVERSION=	12.17.1
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	apps/sound/convert
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	sox
 
 MAINTAINER=	dnelson@emsphone.com
 
-MAN1=		sox.1 play.1
+MAN1=		sox.1 play.1 soxexam.1
 MLINKS=		play.1 rec.1
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-fast-ulaw --enable-fast-alaw --with-oss-dsp
+CONFIGURE_ARGS=	--enable-fast-ulaw --enable-fast-alaw
 
 .if defined(WITH_GSM)
 CONFIGURE_ARGS+= --with-gsmlib=${PREFIX}/lib --with-gsminc=${PREFIX}/include
