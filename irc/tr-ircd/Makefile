@@ -17,11 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An irc daeemon based on Bahamut and hybrid-7
 
 USE_GMAKE=	yes
-
-MAN1=		md5sum.1
-MAN5=		ircd.conf.5
-MAN8=		ircd.8
-
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--libdir=${PREFIX}/lib/tr-ircd \
@@ -29,6 +25,10 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--enable-kqueue \
 		--enable-root \
 		--with-fakehost-postfix=COM
+
+MAN1=		md5sum.1
+MAN5=		ircd.conf.5
+MAN8=		ircd.8
 
 .if !defined(WITHOUT_SSL)
 USE_OPENSSL=	yes
@@ -41,13 +41,12 @@ CONFIGURE_ARGS+=--enable-small-nets
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
-BROKEN=		"Does not compile on amd64"
-.endif
-
 .if ${OSVERSION} >= 400014 && !defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=--enable-ipv6
 .endif
+
+post-patch:
+	${REINPLACE_CMD} -e "s,-O2,${CFLAGS}," ${WRKSRC}/configure
 
 post-install:
 	@${ECHO} "Installing ${PREFIX}/etc/rc.d/tr-ircd.sh.sample startup file."
