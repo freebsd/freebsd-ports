@@ -1,0 +1,32 @@
+--- makeconfig.org	Tue Sep 30 21:54:25 1997
++++ makeconfig	Tue Sep 30 21:55:50 1997
+@@ -11,15 +11,15 @@
+ 
+ # default compiling settings
+ CC=gcc
+-CFLAGS=-O2
++#CFLAGS=-O2
+ LDFLAGS=-s
+ 
+ # default installation settings
+ SPOOL=/var/spool/sendfile
+-BINDIR=/usr/local/bin
+-MANDIR=/usr/local/man
+-CONFIG=/usr/local/etc
+-SERVERDIR=/usr/local/sbin
++BINDIR=${PREFIX}/bin
++MANDIR=${PREFIX}/man
++CONFIG=${PREFIX}/etc
++SERVERDIR=${PREFIX}/sbin
+ INETDCONF=/etc/inetd.conf
+ SERVICES=/etc/services
+ 
+@@ -33,7 +33,7 @@
+ #PGP=/usr/local/bin/pgp
+ #RECODE=/usr/local/bin/recode
+ #METAMAIL=/usr/local/bin/metamail
+-#SENDMAIL=/usr/lib/sendmail
++SENDMAIL=/usr/sbin/sendmail
+            
+ ######################### END OF USER CONFIGURATION ##########################
+ 

@@ -1,0 +1,78 @@
+--- develop/install.orig	Tue Feb 24 14:06:09 1998
++++ develop/install	Tue Feb 24 14:09:09 1998
+@@ -98,31 +98,6 @@
+ if [ "$INETDCONF" = "" ]; then	INETDCONF=/etc/inetd.conf; fi
+ if [ "$SERVICES" = "" ]; then	SERVICES=/etc/services; fi
+ 
+-cat <<EOD
+-WARNING: this sendfile install script will create or write to:
+-
+-	spool directory =	$SPOOL
+-	binary directory =	$BINDIR
+-	manual directory =	$MANDIR
+-	sendfiled directory =	$SERVERDIR
+-	configuration files =	$CONFIG
+-				$DENY
+-
+-In /etc/services and /etc/inetd.conf apropriate ads will be inserted.
+-In /etc/profile and /etc/csh.login a call to sendfile_check will be added.
+-
+-To deinstall the sendfile-daemon, simply type: 	rm $SERVERDIR/sendfiled
+-
+-EOD
+-echo 'If you are satisfied with these defaults, then type "ok" now:'
+-read answer
+-if [ "$answer" != ok ]; then
+-  echo
+-  echo "You can install sendfile manually, too. Please type: more doc/README"
+-  echo
+-  exit
+-fi
+-
+ umask 022
+ 
+ echo "checking for directories"
+@@ -234,33 +209,9 @@
+   fi
+   RESTART=true
+   echo "configuring $INETDCONF"
+-  echo "#" >>$INETDCONF
+-  echo "# simple asynchronous file transfer" >>$INETDCONF
+   echo "saft	stream	tcp	nowait	root	$SFD" >>$INETDCONF
+ fi
+ 
+-if [ -f /etc/inetd.sec ]; then
+-  if [ "`grep '^saft' /etc/inetd.sec`" = "" ]; then
+-    echo >> /etc/inetd.sec
+-    echo "saft allow" >> /etc/inetd.sec
+-  fi
+-fi
+-
+-if [ -f /etc/profile ]; then
+-  if [ "`grep check_sendfile /etc/profile`" = "" ]; then
+-    echo "adding check_sendfile to /etc/profile"
+-    echo >>/etc/profile
+-    echo test -x $BINDIR/check_sendfile && $BINDIR/check_sendfile >>/etc/profile
+-  fi
+-fi
+-if [ -f /etc/csh.login ]; then
+-  if [ "`grep check_sendfile /etc/csh.login`" = "" ]; then
+-    echo "adding check_sendfile to /etc/csh.login"
+-    echo >>/etc/csh.login
+-    echo test -x $BINDIR/check_sendfile && $BINDIR/check_sendfile >>/etc/profile
+-  fi
+-fi
+-				
+ if [ ! -d "$SPOOL/OUTGOING" ]; then
+   echo "creating $SPOOL"
+   mkdir_recursive $SPOOL/OUTGOING
+@@ -303,9 +254,3 @@
+ echo "This will start an outgoing spooling sendfile daemon on boot time"
+ echo "which processes any old files in the outgoing spool."
+ echo
+-
+-if [ "$RESTART" = true ]; then
+-  echo
+-  echo "please restart now your inetd ( or simply reboot :-) )"
+-  echo
+-fi
