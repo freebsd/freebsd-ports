@@ -7,6 +7,7 @@
 %%SITE_PERL%%/HTTP/MobileAgent/JPhone.pm
 %%SITE_PERL%%/HTTP/MobileAgent/NonMobile.pm
 %%SITE_PERL%%/HTTP/MobileAgent/Request.pm
+%%SITE_PERL%%/HTTP/MobileAgent/Vodafone.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/MobileAgent/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/MobileAgent
 @dirrm %%SITE_PERL%%/HTTP/MobileAgent
