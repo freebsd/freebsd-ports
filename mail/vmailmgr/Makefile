@@ -7,13 +7,15 @@
 
 PORTNAME=	vmailmgr
 PORTVERSION=	0.96.9
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.vmailmgr.org/current/
 
 MAINTAINER=	patrick@rinke-bochum.de
 COMMENT=	Virtual MAIL ManaGeR for virtual mailboxes and domains
 
-RUN_DEPENDS=	/var/qmail/bin/qmail-start:${PORTSDIR}/mail/qmail
+RUN_DEPENDS=	/var/qmail/bin/qmail-start:${PORTSDIR}/mail/qmail \
+		unixserver:${PORTSDIR}/sysutils/ucspi-unix
 
 HAS_CONFIGURE=yes
 
