@@ -1,0 +1,14 @@
+The module is a probability based, corpus-trained tagger that assigns 
+POS tags to English text based on a lookup dictionary and probability 
+values. The tagger determines appropriate tags based on conditional 
+probabilities - it looks at the preceding tag to figure out what the 
+appropriate tag is for the current word. Unknown words will be classified 
+according to word morphology or can be set to be treated as nouns or 
+other parts of speech.
+
+The tagger also recursively extracts as many nouns and noun phrases as 
+it can, using a set of regular expressions.
+
+WWW:	http://search.cpan.org/dist/Lingua-EN-Tagger
+
+Author:	Aaron Coburn <acoburn@middlebury.edu>

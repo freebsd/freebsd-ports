@@ -217,6 +217,7 @@
     SUBDIR += p5-Lingua-EN-Squeeze
     SUBDIR += p5-Lingua-EN-Summarize
     SUBDIR += p5-Lingua-EN-Syllable
+    SUBDIR += p5-Lingua-EN-Tagger
     SUBDIR += p5-Lingua-Ident
     SUBDIR += p5-Lingua-Ispell
     SUBDIR += p5-Lingua-Preferred
