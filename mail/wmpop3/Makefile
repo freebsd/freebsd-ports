@@ -1,18 +1,17 @@
 # New ports collection makefile for:	wmpop3
-# Version required:		0.5.0a
+# Version required:		0.5.6a
 # Date created:			28 Mar 1999
-# Whom:				Jim Mock <jim@phrantic.phear.net>
+# Whom:				Jim Mock <jim@FreeBSD.org>
 #
-# $Id: Makefile,v 1.2 1999/06/19 23:32:45 cpiazza Exp $
+# $Id: Makefile,v 1.3 1999/07/17 04:04:32 cpiazza Exp $
 #
 
-DISTNAME=	WMPop3-0.5.5a
-PKGNAME=	wmpop3-0.5.5a
+DISTNAME=	WMPop3-0.5.6a
+PKGNAME=	wmpop3-0.5.6a
 CATEGORIES=	mail windowmaker
 MASTER_SITES=	http://www.cs.mun.ca/~scotth/download/
-EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jim@phrantic.phear.net
+MAINTAINER=	jim@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
@@ -26,21 +25,13 @@ pre-build:
 	(cd ${WRKSRC} && ${GMAKE} clean)
 
 post-install:
-	@${ECHO} "		"
-	@${ECHO} "-----------------------------------------------------------"
-	@${ECHO} "===> Installing wmpop3rc in ${PREFIX}/share/examples/wmpop3"
-	@${ECHO} "===> Modify to your config and copy to ~/.wmpop3rc"
-	@${ECHO} "-----------------------------------------------------------"
-	@${ECHO} "		"
+	@${ECHO} "===>   Installing wmpop3rc in ${PREFIX}/share/examples/wmpop3"
+	@${ECHO} "===>   Modify to your config and copy to ~/.wmpop3rc"
 	@${MKDIR} ${PREFIX}/share/examples/wmpop3 && chmod a+rx ${PREFIX}/share/examples/wmpop3
-	${INSTALL_DATA} ${WRKSRC}/wmpop3rc ${PREFIX}/share/examples/wmpop3
-	@${ECHO} "		"
-	@${ECHO} "-----------------------------------------------------------"
-	@${ECHO} "===> Installing README in ${PREFIX}/share/doc/wmpop3"
-	@${ECHO} "===> Please read it for usage instructions"
-	@${ECHO} "-----------------------------------------------------------"
-	@${ECHO} "		"
+	@${INSTALL_DATA} ${WRKSRC}/wmpop3rc ${PREFIX}/share/examples/wmpop3
+	@${ECHO} "===>   Installing README in ${PREFIX}/share/doc/wmpop3"
+	@${ECHO} "===>   Please read it for usage instructions"
 	@${MKDIR} ${PREFIX}/share/doc/wmpop3 && chmod a+rx ${PREFIX}/share/doc/wmpop3
-	${INSTALL_DATA} ${WRKDIR}/${PKGNAME}/README ${PREFIX}/share/doc/wmpop3
+	@${INSTALL_DATA} ${WRKDIR}/${PKGNAME}/README ${PREFIX}/share/doc/wmpop3
 
 .include <bsd.port.mk>
