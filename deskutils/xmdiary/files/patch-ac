@@ -1,0 +1,11 @@
+--- dtools/xtmEditAclUx.c	Sun May  4 18:25:10 1997
++++ dtools/xtmEditAclUx.c	Mon Jul 23 20:34:40 2001
+@@ -37,2 +37,3 @@
+ 
++#include <sys/types.h>
+ #include <grp.h>
+--- xdremove/xtmRemove.c	Sun May  4 18:02:15 1997
++++ xdremove/xtmRemove.c	Mon Jul 23 20:53:07 2001
+@@ -293 +293 @@
+-    gets( buffer );
++    fgets(buffer, sizeof(buffer), stdin);
