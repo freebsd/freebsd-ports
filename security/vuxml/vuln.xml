@@ -32,6 +32,59 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3e3c860d-7dae-11d9-a9e7-0001020eed82">
+    <topic>emacs -- movemail format string vulnerability</topic>
+    <affects>
+      <package>
+	<name>zh-emacs</name>
+	<name>emacs</name>
+	<range><lt>20.7_4</lt></range>
+	<range><gt>21.*</gt><lt>21.4</lt></range>
+      </package>
+      <package>
+	<name>xemacs</name>
+	<name>xemacs-mule</name>
+	<name>zh-xemacs</name>
+	<name>zh-xemacs-mule</name>
+	<range><lt>21.4.17</lt></range>
+      </package>
+      <package>
+	<name>xemacs-devel</name>
+	<range><lt>21.5.b19,1</lt></range>
+      </package>
+      <package>
+	<name>xemacs-devel-21.5</name>
+	<range><eq>b11</eq></range>
+      </package>
+      <package>
+	<name>xemacs-devel-mule</name>
+	<range><lt>21.5.b19</lt></range>
+      </package>
+      <package>
+	<name>mule-common</name>
+	<name>hanemacs</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Max Vozeler discovered several format string
+	  vulnerabilities in the movemail utility of Emacs.  They can
+	  be exploited when connecting to a malicious POP server and
+	  can allow an attacker can execute arbitrary code under the
+	  privileges of the user running Emacs.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-0100</cvename>
+      <bid>12462</bid>
+    </references>
+    <dates>
+      <discovery>2005-01-31</discovery>
+      <entry>2005-02-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bc4a7efa-7d9a-11d9-a9e7-0001020eed82">
     <topic>ngircd -- format string vulnerability</topic>
     <affects>
