@@ -61,6 +61,7 @@
     SUBDIR += gcalctool
     SUBDIR += gdcalc
     SUBDIR += geg
+    SUBDIR += geonext
     SUBDIR += gexpr
     SUBDIR += glgraph
     SUBDIR += glove
