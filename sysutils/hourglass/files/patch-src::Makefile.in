@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Mon Apr 12 09:27:10 2004
++++ src/Makefile.in	Mon Apr 12 09:28:02 2004
+@@ -188,7 +188,7 @@
+ AM_CFLAGS = -Wall -Wshadow -Wpointer-arith				\
+ 	-Wcast-qual -Wcast-align -Wwrite-strings -Wconversion		\
+ 	-Waggregate-return -Wstrict-prototypes				\
+-	-Wmissing-prototypes -g -O3					\
++	-Wmissing-prototypes -g					\
+ 	$(CMU_RK_INCLUDES) $(TS_RK_INCLUDES) $(HRTIMERS_INCLUDES)	\
+ 	$(HLS_INCLUDES) $(RTCTIMERS_INCLUDES)
+ 
