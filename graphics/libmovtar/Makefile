@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libmovtar
-PORTVERSION=	0.1.2
+PORTVERSION=	0.1.3
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mjpeg
@@ -17,7 +17,6 @@ LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12 \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_GTK=	yes
-USE_AUTOCONF=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --with-m4data-prefix=${PREFIX}/share
@@ -27,5 +26,13 @@ MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS=${PTHREAD_LIBS}
 
 SDL_CONFIG?=    ${LOCALBASE}/bin/sdl11-config
+
+post-patch:
+	@${PERL} -pi -e 's|SDL/|SDL11/|' \
+		${WRKSRC}/rtjpeg/rtjshow.c \
+		${WRKSRC}/movtar_play.c
+	@${PERL} -pi -e 's|^(LIBS="-ljpeg )|\1 -L${LOCALBASE}/lib|; \
+		s|(LIBS -ljpeg)"|\1 -L${LOCALBASE}/lib"|' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.mk>
