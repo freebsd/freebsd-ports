@@ -7,13 +7,15 @@
 #
 
 PORTNAME=	vcp
-PORTVERSION=	0.8
+PORTVERSION=	0.9
 CATEGORIES=	sysutils
 MASTER_SITES=	http://members.optusnet.com.au/~dbbryan/vcp/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	mich@freebsdcluster.org
 COMMENT=	Copy files in curses interface
+
+MAN1=		${PORTNAME}.1
 
 LDFLAGS+=	-lncurses
 
@@ -31,6 +33,7 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${PREFIX}/man/man1/
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
