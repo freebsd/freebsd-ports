@@ -3,6 +3,7 @@ bin/bell-properties-capplet
 bin/gnome-edit-properties-capplet
 bin/gnomecc
 bin/keyboard-properties
+bin/mime-type-capplet
 bin/mouse-properties-capplet
 bin/screensaver-properties-capplet
 bin/session-properties-capplet
@@ -15,7 +16,6 @@ etc/CORBA/servers/gnomecc.gnorba
 etc/cappletConf.sh
 include/capplet-widget.h
 lib/libcapplet.a
-lib/libcapplet.la
 lib/libcapplet.so
 lib/libcapplet.so.1.0
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
@@ -25,22 +25,19 @@ share/gnome/apps/Settings/Desktop/background-properties.desktop
 share/gnome/apps/Settings/Desktop/screensaver-properties.desktop
 share/gnome/apps/Settings/Desktop/theme-selector.desktop
 share/gnome/apps/Settings/Desktop/wm-properties.desktop
-@dirrm share/gnome/apps/Settings/Desktop
 share/gnome/apps/Settings/Multimedia/.directory
 share/gnome/apps/Settings/Multimedia/bell-properties.desktop
 share/gnome/apps/Settings/Multimedia/sound-properties.desktop
-@dirrm share/gnome/apps/Settings/Multimedia
 share/gnome/apps/Settings/Peripherals/.directory
 share/gnome/apps/Settings/Peripherals/keyboard-properties.desktop
 share/gnome/apps/Settings/Peripherals/mouse-properties.desktop
-@dirrm share/gnome/apps/Settings/Peripherals
 share/gnome/apps/Settings/UIOptions/.directory
 share/gnome/apps/Settings/UIOptions/application.desktop
 share/gnome/apps/Settings/UIOptions/dialogs.desktop
 share/gnome/apps/Settings/UIOptions/mdi.desktop
-@dirrm share/gnome/apps/Settings/UIOptions
 share/gnome/apps/Settings/gnome-edit-properties.desktop
 share/gnome/apps/Settings/gnomecc.desktop
+share/gnome/apps/Settings/mime-type.desktop
 share/gnome/apps/Settings/session-properties.desktop
 share/gnome/apps/Settings/url-properties.desktop
 share/gnome/control-center/.data/3d.desktop
@@ -149,31 +146,26 @@ share/gnome/control-center/.data/lisa.png
 share/gnome/control-center/.data/maze.png
 share/gnome/control-center/.data/qix.png
 share/gnome/control-center/.data/starfish.png
-@dirrm share/gnome/control-center/.data
 share/gnome/control-center/.directory
 share/gnome/control-center/Desktop/.directory
 share/gnome/control-center/Desktop/background-properties.desktop
 share/gnome/control-center/Desktop/screensaver-properties.desktop
 share/gnome/control-center/Desktop/theme-selector.desktop
 share/gnome/control-center/Desktop/wm-properties.desktop
-@dirrm share/gnome/control-center/Desktop
 share/gnome/control-center/Multimedia/.directory
 share/gnome/control-center/Multimedia/bell-properties.desktop
 share/gnome/control-center/Multimedia/sound-properties.desktop
-@dirrm share/gnome/control-center/Multimedia
 share/gnome/control-center/Peripherals/.directory
 share/gnome/control-center/Peripherals/keyboard-properties.desktop
 share/gnome/control-center/Peripherals/mouse-properties.desktop
-@dirrm share/gnome/control-center/Peripherals
 share/gnome/control-center/UIOptions/.directory
 share/gnome/control-center/UIOptions/application.desktop
 share/gnome/control-center/UIOptions/dialogs.desktop
 share/gnome/control-center/UIOptions/mdi.desktop
-@dirrm share/gnome/control-center/UIOptions
 share/gnome/control-center/gnome-edit-properties.desktop
+share/gnome/control-center/mime-type.desktop
 share/gnome/control-center/session-properties.desktop
 share/gnome/control-center/url-properties.desktop
-@dirrm share/gnome/control-center
 share/gnome/idl/control-center.idl
 share/gnome/pixmaps/control-center.png
 share/gnome/wm-properties/Enlightenment.desktop
@@ -195,3 +187,14 @@ share/locale/pl/LC_MESSAGES/control-center.mo
 share/locale/pt/LC_MESSAGES/control-center.mo
 share/locale/ru/LC_MESSAGES/control-center.mo
 share/locale/sv/LC_MESSAGES/control-center.mo
+@dirrm share/gnome/wm-properties
+@dirrm share/gnome/control-center/UIOptions
+@dirrm share/gnome/control-center/Peripherals
+@dirrm share/gnome/control-center/Multimedia
+@dirrm share/gnome/control-center/Desktop
+@dirrm share/gnome/control-center/.data
+@dirrm share/gnome/control-center
+@dirrm share/gnome/apps/Settings/UIOptions
+@dirrm share/gnome/apps/Settings/Peripherals
+@dirrm share/gnome/apps/Settings/Multimedia
+@dirrm share/gnome/apps/Settings/Desktop
