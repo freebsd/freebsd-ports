@@ -1,1 +1,5 @@
 bin/vcdgear
+%%PORTDOCS%%share/doc/vcdgear/faq.txt
+%%PORTDOCS%%share/doc/vcdgear/manual.txt
+%%PORTDOCS%%share/doc/vcdgear/whatsnew.txt
+%%PORTDOCS%%@dirrm share/doc/vcdgear
