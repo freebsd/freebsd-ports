@@ -12,6 +12,8 @@ MASTER_SITES=	ftp://ftp.stacken.kth.se/pub/arla/
 
 MAINTAINER=	assar@freebsd.org
 
+BROKEN=		"Does not build"
+
 USE_XLIB=	yes
 
 .if !exists(/usr/lib/libkafs.a)

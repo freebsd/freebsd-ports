@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Projects/cristal/camlp4/ \
 
 MAINTAINER=	user@unknown.nu
 
+BROKEN=		"Does not build"
+
 BUILD_DEPENDS=	ocamlc.opt:${PORTSDIR}/lang/ocaml
 
 HAS_CONFIGURE=	yes
