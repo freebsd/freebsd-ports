@@ -17,6 +17,7 @@ COMMENT=	An interpreter for the functional programming language Haskell 98
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
+OPTIONS=	HUGS_OPENGL "OpenGL/GLUT support" off
 HUGS_DATE=	Nov2003
 USE_REINPLACE=	yes
 USE_BISON=	yes
@@ -24,10 +25,17 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX} --enable-ffi
 CONFIGURE_ENV+=	CC="${CC}" CFLAGS="${CFLAGS}"
 ALL_TARGET=	default ffihugs
 
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_HUGS_OPENGL)
+CONFIGURE_ARGS+=	--enable-hopengl --enable-mesa
+USE_GL=	yes
+.endif
+
 MAN1=		hugs.1 hugs-package.1
 
 .if ${MACHINE_ARCH:L} == "amd64"
-CFLAGS+=       "-fPIC"
+CFLAGS+=	"-fPIC"
 .endif
 
 post-patch:
@@ -48,4 +56,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/../Readme ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
