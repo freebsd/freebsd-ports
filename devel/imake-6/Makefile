@@ -17,6 +17,8 @@ DISTFILES=	X11R6.7.0-src1.tar.gz \
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Imake and other utilities from X.Org
 
+CONFLICTS=	imake-4*
+
 PREFIX?=	${X11BASE}
 USE_PERL5=	YES
 USE_REINPLACE=	yes

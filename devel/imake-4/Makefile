@@ -16,6 +16,8 @@ DISTFILES=	X430src-1.tgz X430src-3.tgz
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Imake and other utilities from XFree86
 
+CONFLICTS=	imake-6*
+
 PREFIX?=	${X11BASE}
 USE_PERL5=	YES
 USE_REINPLACE=	yes
