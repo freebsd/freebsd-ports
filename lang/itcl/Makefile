@@ -3,7 +3,7 @@
 # Date created:		Aug 17 1996
 # Whom:			chuckr
 #
-# $Id: Makefile,v 1.14 1996/08/26 03:00:41 chuckr Exp $
+# $Id: Makefile,v 1.15 1996/11/12 02:18:30 obrien Exp $
 #
 
 DISTNAME=	itcl2.1
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.neosoft.com/pub/tcl/NEW/
 MAINTAINER=	chuckr@freebsd.org
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-shared
+CONFIGURE_ARGS=	--enable-shared --exec_prefix=${PREFIX}
 
 post-extract:
 	@$(RM) -f $(WRKSRC)/tcl7.5/library/*.c
