@@ -55,6 +55,10 @@ MODACCEL_FILE=	mod_accel-${VERSION_MODACCEL}${EXTRACT_SUFX}
 MODDEFLATE_FILE=	mod_deflate-${VERSION_MODDEFLATE}${EXTRACT_SUFX}
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
+.if !defined(WITHOUT_RC_SUBR)
+USE_RC_SUBR=	yes
+.endif
+
 .include <bsd.port.pre.mk>
 
 DATADIR=	${PREFIX}/www
@@ -68,11 +72,10 @@ check-depends::
 	@${FALSE}
 .endif
 
-.if !exists(${PREFIX}/etc/rc.d/apache.sh) && !defined(WITHOUT_RC_SUBR)
-USE_RC_SUBR=	yes
-PLIST_FILES+=	etc/rc.d/apache.sh
-.else
+.if exists(${PREFIX}/etc/rc.d/apache.sh)
 PLIST_FILES+=	etc/rc.d/apache.sh.sample
+.else
+PLIST_FILES+=	etc/rc.d/apache.sh
 .endif
 
 .if defined(WITH_APACHE_SUEXEC) && ${WITH_APACHE_SUEXEC} == yes
