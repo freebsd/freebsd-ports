@@ -1,4 +1,4 @@
-bin/netwox520
+bin/netwox%%SHORTPORTVERSION%%
 bin/netwox
 %%PORTDOCS%%%%DOCSDIR%%/html/examples.html
 %%PORTDOCS%%%%DOCSDIR%%/html/routerandfw.html
