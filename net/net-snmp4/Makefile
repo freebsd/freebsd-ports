@@ -19,6 +19,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 
 USE_AUTOCONF_VER=213
 USE_REINPLACE=	yes
+USE_PERL5=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
