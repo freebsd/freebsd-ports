@@ -28,6 +28,6 @@ USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 MAKEFILE=
 
-SLIDESHOWKIT_PORT?=	graphics/slideshowkit
+SLIDESHOWKIT_PORT?=	graphics/gnustep-slideshowkit
 
 .include <bsd.port.mk>
