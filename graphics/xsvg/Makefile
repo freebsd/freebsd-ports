@@ -20,6 +20,7 @@ USE_GETOPT_LONG=yes
 USE_XLIB=	yes
 
 PLIST_FILES=	bin/xsvg
+MAN1=		xsvg.1
 
 .include <bsd.port.pre.mk>
 
