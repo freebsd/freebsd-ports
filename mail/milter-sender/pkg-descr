@@ -6,4 +6,4 @@ intended to be a complete solution to the SPAM plague and so it should be
 used in conjunction with other tools such as DNS blacklists and content
 filters. Milter-sender also supports grey-listing.
 
-WWW: http://www.snert.com/Software/milter-sender/
+WWW: http://www.milter.info/milter-sender/
