@@ -7,6 +7,7 @@
 
 PORTNAME=	smtpclient
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.engelschall.com/sw/smtpclient/distrib/
 

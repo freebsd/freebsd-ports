@@ -1,5 +1,5 @@
---- smtpclient_main.c.orig	Wed Aug  1 15:25:22 2001
-+++ smtpclient_main.c	Wed Aug  1 15:33:07 2001
+--- smtpclient_main.c.orig	Tue Feb 24 11:49:07 2004
++++ smtpclient_main.c	Tue Feb 24 12:47:11 2004
 @@ -86,7 +86,7 @@ void log(char *str, ...)
      char buf[1024];
  
@@ -29,3 +29,26 @@
          }
          from_addr = strdup(buf);
      }
+@@ -453,8 +453,20 @@ int main(int argc, char **argv)
+     chat("MAIL FROM: <%s>\r\n", from_addr);
+     for (i = optind; i < argc; i++)
+         chat("RCPT TO: <%s>\r\n", argv[i]);
+-    if (cc_addr)
+-        chat("RCPT TO: <%s>\r\n", cc_addr);
++    if (cc_addr) {
++    	char *cc_tmp,*p;
++	if(!(cc_tmp=malloc(strlen(cc_addr+1)))) {
++	    log("memory allocation failed.");
++	    exit(1);
++	}
++	strcpy(cc_tmp,cc_addr);
++	p=strtok(cc_tmp,",");
++	while(p) {
++	    chat("RCPT TO: <%s>\r\n", p);
++	    p=strtok(NULL,",");
++	}
++	free(cc_tmp);
++    }
+     chat("DATA\r\n");
+ 
+     /* 
