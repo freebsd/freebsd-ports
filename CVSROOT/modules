@@ -7782,6 +7782,7 @@ php5-sybase_ct	ports/databases/php5-sybase_ct
 php5-sysvmsg	ports/devel/php5-sysvmsg
 php5-sysvsem	ports/devel/php5-sysvsem
 php5-sysvshm	ports/devel/php5-sysvshm
+php5-tokenizer	ports/devel/php5-tokenizer
 php5-xml	ports/textproc/php5-xml
 php5-zlib	ports/archivers/php5-zlib
 phpSysInfo	ports/www/phpSysInfo
