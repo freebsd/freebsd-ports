@@ -9,13 +9,13 @@ tmpindex=/tmp/index.$$
 
 # make a list of all pkgnames that don't have corresponding packages
 missing=$(/usr/bin/awk -v FS="|" -v pkgdir=$pkgdir '{
-        if (system(sprintf("test -e %s/All/%s.tbz\n", pkgdir, $1)))
+        if (system(sprintf("test -e %s/All/%s.t[bg]z\n", pkgdir, $1)))
         print $1 ;
 }' $index)
 
 # make an index for only the ports that have packages
 /usr/bin/awk -v FS="|" -v pkgdir=$pkgdir '{
-        if (system(sprintf("test ! -e %s/All/%s.tbz\n", pkgdir, $1)))
+        if (system(sprintf("test ! -e %s/All/%s.t[bg]z\n", pkgdir, $1)))
         print $0 ;
 }' $index > $tmpindex
 
