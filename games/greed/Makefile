@@ -8,7 +8,7 @@
 PORTNAME=	greed
 PORTVERSION=	3.3
 CATEGORIES=	games
-MASTER_SITES=	http://www.tuxedo.org/~esr/greed/
+MASTER_SITES=	http://catb.org/~esr/greed/
 PKGNAMESUFFIX=	-game
 
 MAINTAINER=	markp@FreeBSD.org
