@@ -66,6 +66,12 @@ CONFIGURE_ARGS+= --without-idea
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} > 500023
+LIB_DEPENDS+=	gmp.4:${PORTSDIR}/math/libgmp3
+MAKE_ENV+=	GMPINCDIR="${LOCALBASE}/include" \
+		GMPLIBDIR="${LOCALBASE}/lib"
+.endif
+
 .if (${OSVERSION} >= 400016 && !defined(REALLY_WANT_SSH))
 FORBIDDEN=		"OpenSSH is a superior version of SSH which has been included in the FreeBSD base system since 4.0-RELEASE. This port is now deprecated and will be removed at some point in the future. To override this warning set the REALLY_WANT_SSH environment variable and rebuild."
 .endif
