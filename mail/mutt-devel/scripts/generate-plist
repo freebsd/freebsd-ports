@@ -138,6 +138,9 @@ EOF
     if [ "$MUTT_EDIT_THREADS" = "yes" ]; then
       html=$(($html + 3))
     fi
+    if [ "$MUTT_IMAP_HEADER_CACHE" = "yes" ]; then
+      html=$(($html + 1))
+    fi
     if [ "$MUTT_SIGNATURE_MENU" = "yes" ]; then
       html=$(($html + 1))
     fi
@@ -145,7 +148,7 @@ EOF
       html=$(($html + 1))
     fi
     if [ "$MUTT_PGP_PATCH" = "yes" ]; then
-      html=$(($html + 1))
+      html=$(($html + 2))
     fi
     echo "%%DOCSDIR%%/html/manual.html" >> $tmp_first
     echo "%%DOCSDIR%%/html/manual_toc.html" >> $tmp_first 
