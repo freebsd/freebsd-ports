@@ -50,11 +50,12 @@
  48.7,		2.17,		"roberto"			# Les Ulis, France
  50.84121667,	0.128383333,	"joe"				# Brighton, East Sussex, UK
  52.2035,	0.1200,		"fanf"				# Cambridge, UK
- 51.5,		0.0,		" dfr"				# (CORE) London, UK
+ 51.5,		0.0,		" dfr"				# London, UK
  51.0,		0.0,		"greid"		align=left	# Farnborough, Hampshire, UK
  51.53,		-0.18,		"n_hibma"	align=above	# London, UK
  51.50,		-0.48,		"nik"		align=left	# West Drayton, Middx., UK
- 51.67,		-0.61,		"brian,markm"	align=left	# Amersham, Bucks, UK
+ 51.67,		-0.61,		"brian"		align=left	# Amersham, Bucks, UK
+ 51.67,		-0.61,		"markm"		align=left	# (CORE) Amersham, Bucks, UK
  53.22,		-1.29,		"ben"				# Sheffield, Yorkshire, UK
  51.44,		-2.06,		"marko"		align=left	# Chippenham, Wiltshire, UK
  51.29,		-3.10,		"ceri"				# Cardiff, UK
@@ -77,7 +78,7 @@
  43.09,		-77.68,		"jseger"			# Rochester, NY, USA
  35.73,		-78.91,		"bsd"				# Apex, NC, USA
  43.37,		-79.79,		"hoek"				# Burlington, ON, Canada
-#37.23,		-80.41,		"jhb"				# Blacksburg, VA, USA
+#37.23,		-80.41,		"jhb"				# (CORE) Blacksburg, VA, USA
  29.16,		-82.18,		"jedgar"			# Ocala, FL, USA
  42.933928,	-83.243644,	"will"				# Metamora, MI, USA
  34.8,		-86.7,		"steve"				# Harvest, AL, USA
@@ -91,7 +92,7 @@
  30.192,	-97.881,	"ade"				# Austin, TX, USA
  40.1,		-105.3,		"imp"				# (CORE) Boulder, CO, USA
  40.1,		-105.3,		"    ,gibbs,ken,fsmp"		# Boulder, CO, USA
- 40.55,		-111.90,	"wes"				# South Jordan, UT, USA
+ 40.55,		-111.90,	"wes"				# (CORE) South Jordan, UT, USA
  46.59,		-112.04,	"nate"				# Helena, MT, USA
  51.09,		-114.12,	"cpiazza"			# Calgary, AB, Canada
  34.13637,	-118.12704,	"mph"				# Pasadena, CA, USA
@@ -105,7 +106,7 @@
  37.75573,	-121.947116,	"peter"				# (CORE) San Ramon, CA, USA
  37.4014,	-121.9544,	"cjc"				# Santa Clara, CA, USA
  37.329278,	-121.962306,	"nsayer"			# Santa Clara, CA, USA
- 37.4,		-122.0,		"asami"				# (CORE) Santa Clara, CA, USA
+ 37.4,		-122.0,		"asami"				# Santa Clara, CA, USA
  37.68,		-122.03,	"bmah"				# Castro Valley, CA, USA
  37.38,		-122.04,	"billf"				# Sunnyvale, CA, USA
  37.39,		-122.06,	"marcel"			# Mountain View, CA, USA
@@ -117,7 +118,7 @@
  47.5,		-122.4,		"jdp"				# Seattle, WA, USA
 #37.80,		-122.43,	"julian"			# Downtown San Francisco, CA, USA
  37.77,		-122.44,	"archie"			# Haight, San Francisco, CA, USA
- 45.5,		-122.6,		"dg"				# (CORE) near Portland, OR, USA
+ 45.5,		-122.6,		"dg"				# near Portland, OR, USA
  44.04, 	-123.06,	"anholt"			# Eugene, OR, USA
  48.3898,	-123.4875,	"cy"				# Victoria, BC, Canada
- 40.0,		-123.5,		"jkh"				# (CORE) Miranda, CA, USA
+ 40.0,		-123.5,		"jkh"				# Miranda, CA, USA
