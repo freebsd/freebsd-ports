@@ -1,0 +1,19 @@
+*** src/subsys/error.c.orig	Mon Feb 27 13:33:44 1995
+--- src/subsys/error.c	Mon Feb 27 13:34:37 1995
+***************
+*** 80,86 ****
+  #ifdef WIN32
+          errpath = "c:\\windows\\dore";
+  #else
+! 	    errpath = "/usr/dore/data/errmsg";
+  #endif
+  
+      errmsgfilename = dor_space_allocate (strlen(errpath) + 20);
+--- 80,86 ----
+  #ifdef WIN32
+          errpath = "c:\\windows\\dore";
+  #else
+! 	    errpath = "%%PREFIX%%/share/dore/errmsg";
+  #endif
+  
+      errmsgfilename = dor_space_allocate (strlen(errpath) + 20);

@@ -1,7 +1,7 @@
-*** mk.stdx.orig	Thu Jan 12 14:14:12 1995
---- mk.stdx	Sat Feb 18 20:07:09 1995
+*** mk.stdx.orig	Fri Jan 13 07:14:12 1995
+--- mk.stdx	Tue Dec  7 21:33:21 1999
 ***************
-*** 24,33 ****
+*** 24,51 ****
   #
   
   # DORE_LOC is the full pathname of directory containing the dore directory
@@ -12,19 +12,10 @@
   
   # DORE_LIB_NAME specifies the name of the library to be created
   DORE_LIB_NAME=libdore.a
---- 24,33 ----
-  #
   
-  # DORE_LOC is the full pathname of directory containing the dore directory
-! DORE_LOC= ${PREFIX}/lib
-  
-  # DORE_OBJTYPE is the machine object type
-! DORE_OBJTYPE= i386
-  
-  # DORE_LIB_NAME specifies the name of the library to be created
-  DORE_LIB_NAME=libdore.a
-***************
-*** 38,51 ****
+  # Compile options
+! CC=cc
+! CFLAGS=
   
   # Link options when combining .o's
   LD=ld
@@ -39,7 +30,21 @@
   
   # Name of system module from doresys_config to be included in build
   DORE_SYSTEM=stdx
---- 38,51 ----
+--- 24,51 ----
+  #
+  
+  # DORE_LOC is the full pathname of directory containing the dore directory
+! #DORE_LOC=
+  
+  # DORE_OBJTYPE is the machine object type
+! DORE_OBJTYPE=${ARCH}
+  
+  # DORE_LIB_NAME specifies the name of the library to be created
+  DORE_LIB_NAME=libdore.a
+  
+  # Compile options
+! #CC=cc
+! #CFLAGS=
   
   # Link options when combining .o's
   LD=ld
@@ -77,7 +82,7 @@
   DORE_FONTTYPE=default_type
   
   # Install directory for fonts and error message file used by Dore
-! DORE_DATADIR=${PREFIX}/lib/dore/data
+! DORE_DATADIR=${PREFIX}/share/dore
   
   # 
   # Installing Dore
@@ -100,35 +105,96 @@
   
   # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
   
---- 90,103 ----
+--- 90,98 ----
   
   # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
   
-! all: dore
+! all:	dore
 ! 
-! dore:	pre-make compile library data prep-for-examples
-! 
-! pre-make:
-! 	mkdir -p ${DORE_DATADIR}
-! 	mkdir -p ${DORE_LIBDIR}
-! 	mkdir -p ${DORE_INCDIR}
+! dore:	compile library data prep-for-examples
   
   # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
   
 ***************
-*** 170,175 ****
---- 177,184 ----
+*** 170,181 ****
   
   # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
   
-+ install: install_dore install_data install_example
+  install_dore: check_doreloc  
+  	@ echo "Installing Dore' library and include files..."
+  	@ if [ -n "$(DORE_LIBDIR)"  ]; then			\
+  	     if [ -d $(DORE_LIBDIR) ]; then			\
+  		if [ -f $(LIB_PATH)/$(DORE_LIB_NAME) ]; then	\
+! 		    mv $(LIB_PATH)/$(DORE_LIB_NAME) $(DORE_LIBDIR); \
+  		    echo "$(DORE_LIB_NAME) installed in $(DORE_LIBDIR)";\
+  		else						\
+  		    echo "$(LIB_PATH)/$(DORE_LIB_NAME) does not exist";\
+--- 172,185 ----
+  
+  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+  
++ install: install_dore install_data install_example  
 + 
   install_dore: check_doreloc  
   	@ echo "Installing Dore' library and include files..."
   	@ if [ -n "$(DORE_LIBDIR)"  ]; then			\
+  	     if [ -d $(DORE_LIBDIR) ]; then			\
+  		if [ -f $(LIB_PATH)/$(DORE_LIB_NAME) ]; then	\
+! 		    ${BSD_INSTALL_DATA} $(LIB_PATH)/$(DORE_LIB_NAME) $(DORE_LIBDIR); \
+  		    echo "$(DORE_LIB_NAME) installed in $(DORE_LIBDIR)";\
+  		else						\
+  		    echo "$(LIB_PATH)/$(DORE_LIB_NAME) does not exist";\
+***************
+*** 192,205 ****
+  	@ if [ -n "$(DORE_INCDIR)" ]; then			\
+  	    if [ -d $(DORE_INCDIR) ]; then			\
+  		(cd $(DORE_LOC)/dore/include;			\
+! 		cp dore.h $(DORE_INCDIR);			\
+  		find dore_develop -print | 			\
+  				cpio -padmu $(DORE_INCDIR));	\
+  		echo "C include files installed in $(DORE_INCDIR)"; \
+  	        if [ ! -d $(DORE_INCDIR)/fortran ]; then	\
+  		    mkdir -p $(DORE_INCDIR)/fortran;		\
+  		fi;						\
+! 		cp $(DORE_LOC)/dore/include/fortran/* 		\
+  					$(DORE_INCDIR)/fortran;	\
+  		echo "Fortran include files installed in $(DORE_INCDIR)/fortran"; \
+  	    else						\
+--- 196,209 ----
+  	@ if [ -n "$(DORE_INCDIR)" ]; then			\
+  	    if [ -d $(DORE_INCDIR) ]; then			\
+  		(cd $(DORE_LOC)/dore/include;			\
+! 		${BSD_INSTALL_DATA} dore.h $(DORE_INCDIR);			\
+  		find dore_develop -print | 			\
+  				cpio -padmu $(DORE_INCDIR));	\
+  		echo "C include files installed in $(DORE_INCDIR)"; \
+  	        if [ ! -d $(DORE_INCDIR)/fortran ]; then	\
+  		    mkdir -p $(DORE_INCDIR)/fortran;		\
+  		fi;						\
+! 		${BSD_INSTALL_DATA} $(DORE_LOC)/dore/include/fortran/* 		\
+  					$(DORE_INCDIR)/fortran;	\
+  		echo "Fortran include files installed in $(DORE_INCDIR)/fortran"; \
+  	    else						\
+***************
+*** 221,227 ****
+  		if [ ! -d $(DORE_DATADIR)/errmsg ]; then	\
+  		    mkdir -p $(DORE_DATADIR)/errmsg;		\
+  		fi;						\
+! 	    	cp $(DORE_LOC)/dore/src/data/errmsg/errmsgfile 	\
+  					$(DORE_DATADIR)/errmsg;	\
+  	        echo "Error message file installed in $(DORE_DATADIR)/errmsg"; \
+  		if [ ! -d $(DORE_DATADIR)/fonts ]; then		\
+--- 225,231 ----
+  		if [ ! -d $(DORE_DATADIR)/errmsg ]; then	\
+  		    mkdir -p $(DORE_DATADIR)/errmsg;		\
+  		fi;						\
+! 	    	${BSD_INSTALL_DATA} $(DORE_LOC)/dore/src/data/errmsg/errmsgfile 	\
+  					$(DORE_DATADIR)/errmsg;	\
+  	        echo "Error message file installed in $(DORE_DATADIR)/errmsg"; \
+  		if [ ! -d $(DORE_DATADIR)/fonts ]; then		\
 ***************
 *** 331,336 ****
---- 340,356 ----
+--- 335,351 ----
   
   
   # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
@@ -139,7 +205,7 @@
 + 	@( cd examples/programs/simple; ${MAKE} )
 + 
 + install_example:
-+ 	@install -c -m 755 -s examples/programs/simple/render ${PREFIX}/bin/dore_example
++ 	@${BSD_INSTALL_PROGRAM} examples/programs/simple/render ${PREFIX}/bin/dore_example
 + 	@echo "Ok, look at ${PREFIX}/bin/dore_example for an example of"
 + 	@echo "Dore in action.  You may also wish to look in the work/dore/examples"
 + 	@echo "directory for more dore examples."
