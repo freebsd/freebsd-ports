@@ -6,14 +6,14 @@
 
 PORTNAME=	ldapmodule
 PORTVERSION=	1.10alpha3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	ftp://python-ldap.sourceforge.net/pub/python-ldap/
 DISTNAME=	python-ldap-${PORTVERSION}-src
 
 MAINTAINER=	dirk.meyer@dinoex.sub.org
 
-LIB_DEPENDS=	ldap.1:${PORTSDIR}/net/openldap
+LIB_DEPENDS=	ldap:${PORTSDIR}/net/openldap2
 BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
 RUN_DEPENDS=	python:${PORTSDIR}/lang/python
 

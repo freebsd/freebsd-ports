@@ -10,4 +10,3 @@ lib/%%PYTHON_VERSION%%/site-packages/python-ldap/perldap.pyo
 lib/%%PYTHON_VERSION%%/site-packages/_ldapmodule.so
 lib/%%PYTHON_VERSION%%/site-packages/ldap.pth
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/python-ldap
-@dirrm lib/%%PYTHON_VERSION%%/site-packages
