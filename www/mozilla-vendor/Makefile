@@ -7,6 +7,7 @@
 
 PORTNAME=	mozilla
 PORTVERSION=	1.0.rc1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
@@ -17,8 +18,6 @@ DISTFILES=	${PORTNAME}-source-${PORTVERSION}${EXTRACT_SUFX} \
 		libart_lgpl-${PORTVERSION}${EXTRACT_SUFX}:local
 
 MAINTAINER=	gnome@FreeBSD.org
-
-FORBIDDEN=	"malicious Web servers can upload files--see http://sec.greymagic.com/adv/gm001-ns/ or http://www.heise.de/ct/browsercheck/n6demo1.shtml "
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		freetype-config:${PORTSDIR}/print/freetype2
