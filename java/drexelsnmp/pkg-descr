@@ -1,0 +1,13 @@
+This provides an introduction to the Java SNMP package , an open-source
+implementation of the SNMP protocol in a Java package. It provides support for
+basic SNMP client operations as defined in SNMP versions 1 and 2 (excluding the
+security model proposed as part of SNMP version 2, which was never widely
+accept or deployed). The package provides a mechanism for "getting and setting"
+SNMP object identifier (OID) values through a simple communication interface,
+and represents SNMP structures and datatypes as corresponding Java objects.
+The package assumes familiarity with the SNMP protocol as detailed in RFC's
+1157, 1155, 1212, etc.; however, some simple examples are provided which
+illustrate its use for simple get/set operations (though a knowledge of the
+concepts of OIDs and SNMP datatypes is still required).
+
+WWW: http://edge.mcs.drexel.edu/GICL/people/sevy/snmp/
