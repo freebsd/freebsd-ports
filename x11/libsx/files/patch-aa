@@ -38,7 +38,7 @@
   # If you're daring, and you have OpenGL, try:
   #  CFLAGS = -g -D_POSIX_SOURCE -DOPENGL_SUPPORT
   #
-! CFLAGS = -O -D_POSIX_SOURCE -I$(X11BASE)/include
+! CFLAGS += -O -D_POSIX_SOURCE -I$(X11BASE)/include
   
   #
   # if you are on a System V (like the SGI) machine, just define RANLIB
