@@ -1,0 +1,7 @@
+lib/flash/ShockwaveFlash.class
+lib/flash/libflashplayer.so
+%%PLUGINSDIR%%/ShockwaveFlash.class
+%%PLUGINSDIR%%/libflashplayer.so
+share/doc/flash/README.Linux
+@dirrm lib/flash
+@dirrm share/doc/flash
