@@ -1,12 +1,12 @@
 # New ports collection makefile for: display
-# Version required:	1.0
 # Date created:		25 August 1997
 # Whom:			Stephen J. Roznowski <sjr@home.net>
 #
 # $FreeBSD$
 #
 
-DISTNAME=		display-1.1
+PORTNAME=		display
+PORTVERSION=		1.1
 CATEGORIES=		misc
 MASTER_SITES=		http://www.ipsmart.com/src/
 EXTRACT_SUFX=		.tgz

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	3.1R to 3-stable upgrade kit
-# Version required:	n/a
 # Date created:		8 Mar 1999
 # Whom:			asami
 #
 # $FreeBSD$
 #
 
-DISTNAME=	31upgrade-2000.02.02
+PORTNAME=	31upgrade
+PORTVERSION=	2000.02.02
 CATEGORIES=	misc
 DISTFILES=	# empty
 

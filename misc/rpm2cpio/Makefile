@@ -1,19 +1,19 @@
 # New ports collection makefile for:	rpm2cpio
-# Version required:	#no version#
 # Date created:		Sun Jul 18 21:51:23 MET DST 1999
 # Whom:			Juergen Lock <nox@jelal.kn-bremen.de>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	rpm2cpio
-PKGNAME=	rpm2cpio-1.0
+PORTNAME=	rpm2cpio
+PORTVERSION=	1.0
 CATEGORIES=	misc
 MASTER_SITES=	http://www.eleves.ens.fr:8080/home/espel/
-EXTRACT_SUFX=
+DISTFILES=	${PORTNAME}
 
 MAINTAINER=	nox@jelal.kn-bremen.de
 
+NO_WRKSUBDIR=	yes
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	.

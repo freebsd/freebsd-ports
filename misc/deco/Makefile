@@ -1,15 +1,15 @@
 # New ports collection makefile for:	deco
-# Version required:			3.8
 # Date created:				16 Dec 1997
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=		deco383
-PKGNAME=		deco-3.8.3
+PORTNAME=		deco
+PORTVERSION=		3.8.3
 CATEGORIES=		misc
 MASTER_SITES=		ftp://ftp.cronyx.ru/cronyx/deco/
+DISTNAME=		deco383
 EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		dima@Chg.RU

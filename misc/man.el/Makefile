@@ -1,12 +1,12 @@
 # New ports collection makefile for:	man.el with I18N
-# Version required:	1.1
 # Date created:		10 September 1998
 # Whom:			KIRIYAMA Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	i18n-man-1.1
+PORTNAME=	i18n-man
+PORTVERSION=	1.1
 CATEGORIES=	misc elisp
 MASTER_SITES=	ftp://daemon.jp.freebsd.org/pub/FreeBSD-jp/man-jp/ \
 		${MASTER_SITE_PORTS_JP}

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	ezload
-# Version required:	0.3.1
 # Date created:		18 november 1999
 # Whom:			n_hibma
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ezload-0.3.1
+PORTNAME=	ezload
+PORTVERSION=	0.3.1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.etla.net/~n_hibma/usb/
 

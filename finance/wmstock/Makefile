@@ -1,12 +1,12 @@
 # New ports collection makefile for:	wmstock
-# Version required:	0.06
 # Date created:		19 Jun 1999
 # Whom:			Will Andrews <andrews@technologist.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	wmstock-0.06
+PORTNAME=	wmstock
+PORTVERSION=	0.06
 CATEGORIES=	misc windowmaker
 MASTER_SITES=	http://mattfischer.com/wmstock/src/ \
 		http://www.psn.net/~andrews/wmstock/

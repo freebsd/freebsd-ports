@@ -1,12 +1,12 @@
 # New ports collection makefile for:	kcd
-# Version required:			4.11.1
 # Date created:				5 May 1999
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=		kcd-4.11.1
+PORTNAME=		kcd
+PORTVERSION=		4.11.1
 CATEGORIES=		misc
 MASTER_SITES=		${MASTER_SITE_SUNSITE} \
 			http://www-scf.usc.edu/~lerdsuwa/util/

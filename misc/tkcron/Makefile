@@ -1,12 +1,12 @@
 # New ports collection makefile for:	tkcron-2.12
-# Version required:	2.12
 # Date created:		30 July 1996
 # Whom:			Sander Vesik <sander@haldjas.folklore.ee>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	tkcron-2.12
+PORTNAME=	tkcron
+PORTVERSION=	2.12
 CATEGORIES=	misc tk82
 MASTER_SITES=	ftp://ftp.neosoft.com/languages/tcl/alcatel/code/
 EXTRACT_SUFX=	.tcl.gz

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	dejagnu
-# Version required:	1.3
 # Date created:		12 October 1996
 # Whom:			markm
 #
 # $FreeBSD$
 #
 
-DISTNAME=	dejagnu-1.3
+PORTNAME=	dejagnu
+PORTVERSION=	1.3
 CATEGORIES=	misc tk80
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	dejagnu

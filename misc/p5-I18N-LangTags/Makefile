@@ -1,16 +1,16 @@
 # New ports collection makefile for:    p5-I18N-LangTags
-# Version required:		0.12
 # Date created:			26 December 1999
 # Whom:	      			Dmitry Sivachenko <dima@Chg.RU>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	I18N-LangTags-0.12
-PKGNAME=	p5-I18N-LangTags-0.12
+PORTNAME=	I18N-LangTags
+PORTVERSION=	0.12
 CATEGORIES=	misc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	I18N
+PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dima@Chg.RU
 

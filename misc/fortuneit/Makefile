@@ -1,15 +1,15 @@
 # New ports collection makefile for:   fortuneit
-# Version required:    fortune.it-1.51
 # Date created:        25-01-1999
 # Whom:                gmarco@giovannelli.it
 #
 # $FreeBSD$
 #
 
-DISTNAME=	fortune.it-1.51
-PKGNAME=	fortuneit-1.51
+PORTNAME=	fortuneit
+PORTVERSION=	1.51
 CATEGORIES=	misc
 MASTER_SITES=	http://www.giovannelli.it/~gmarco/files/
+DISTNAME=	fortune.it-${PORTVERSION}
 
 MAINTAINER=	gmarco@giovannelli.it
 

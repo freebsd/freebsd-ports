@@ -1,12 +1,12 @@
 # New ports collection makefile for:	numchar
-# Version required:			1.0
 # Date created:				3 August 1999
 # Whom:					G. Adam Stanislav <adam@whizkidtech.net>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	numchar-1.0
+PORTNAME=	numchar
+PORTVERSION=	1.0
 CATEGORIES=	misc
 MASTER_SITES=	ftp://www.whizkidtech.net/unix/
 

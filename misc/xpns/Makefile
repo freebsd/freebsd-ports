@@ -1,16 +1,15 @@
 # New ports collection makefile for:	xpns
-# Version required:     1.0
 # Date created:         6 Apr 97
 # Whom:                 Pedro Giffuni
 #
 # $FreeBSD$
 #
 
-DISTNAME=	pns_source
-PKGNAME=	xpns-1.0
+PORTNAME=	xpns
+PORTVERSION=	1.0
 CATEGORIES=	misc cad
 MASTER_SITES=	http://www.ee.uwa.edu.au/~braunl/pns/ftp/
-EXTRACT_SUFX=	.tar.Z
+DISTFILES=	pns_source.tar.Z
 
 MAINTAINER=	giffunip@asme.org
 

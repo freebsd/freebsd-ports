@@ -3,20 +3,19 @@
 # http://rpkalf2.mach.uni-karlsruhe.de/~ferber/astrolog/
 # http://www.magitech.com/~cruiser1/astrolog.htm
 #
-# Version required:     5.*
 # Date created:         31 July 1995
 # Whom:                 faulkner@cactus.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=       ast54unx
-PKGNAME=        astrolog-5.40
+PORTNAME=       astrolog
+PORTVERSION=	5.40
 CATEGORIES=     misc
 MASTER_SITES=   http://www.astrolog.org/ftp/ephem/ \
 		http://www.astrolog.org/ftp/ \
 		ftp://ftp.kiarchive.ru/pub/unix/magick/astrology/astrolog/
-EXTRACT_ONLY=   ${DISTNAME}.shr
+EXTRACT_ONLY=   ast54unx.shr
 EPHEM=          LRZ5_24 CHI_24 CPJV_24
 DISTFILES=      ${EXTRACT_ONLY} ${EPHEM}
 

@@ -1,12 +1,12 @@
 # New ports collection makefile for:   kwatch
-# Version required:    Beta4
 # Date created:        23 May 1998
 # Whom:                Hans Petter Bieker <zerium@webindex.no>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	kwatch-0.3
+PORTNAME=	kwatch
+PORTVERSION=	0.3
 CATEGORIES=	misc kde
 MASTER_SITES=	$(MASTER_SITE_KDE)
 MASTER_SITE_SUBDIR= stable/1.1/apps/utils

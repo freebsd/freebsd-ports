@@ -1,12 +1,12 @@
 # New ports collection makefile for:	vat
-# Version required:	4.0b2
 # Date created:		2 November 1996
 # Whom:			fenner
 #
 # $FreeBSD$
 #
 
-DISTNAME=	vat-4.0b2
+PORTNAME=	vat
+PORTVERSION=	4.0b2
 CATEGORIES=	mbone tk82
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/conferencing/vat/alpha-test/
 DISTFILES=	vatsrc-4.0b2.tar.gz

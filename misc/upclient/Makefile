@@ -1,12 +1,12 @@
 # New ports collection makefile for:	upclient
-# Version required:	3.04
 # Date created:		20 Aug 1999
 # Whom:			Kelly Yancey <kbyanc@posi.net>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	upclient-3.04
+PORTNAME=	upclient
+PORTVERSION=	3.04
 CATEGORIES=	misc
 MASTER_SITES=	http://uptime.hexon.cx/download/
 

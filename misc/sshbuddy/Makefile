@@ -1,16 +1,15 @@
 # New ports collection makefile for:	sshbuddy
-# Version required: 	1.0
 # Date created:		26 September 1999
 # Whom:			Dan Moschuk <dan@freebsd.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	sshbuddy1.05
-PKGNAME=	sshbuddy-1.05
+PORTNAME=	sshbuddy
+PORTVERSION=	1.05
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.sundilla.net/pub/linux/apps/sshbuddy/beta1.05/
-EXTRACT_SUFX=	.tar
+DISTFILES=	${PORTNAME}${PORTVERSION}.tar
 
 MAINTAINER=	dan@freebsd.org
 

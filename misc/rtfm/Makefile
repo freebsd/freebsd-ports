@@ -1,12 +1,12 @@
 # New ports collection makefile for:	rtfm
-# Version required:	1.0
 # Date created:		20 July 1999
 # Whom:			Chris Costello <chris@calldei.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	rtfm-1.0
+PORTNAME=	rtfm
+PORTVERSION=	1.0
 CATEGORIES=	misc
 MASTER_SITES= 	http://people.FreeBSD.org/~chris/distfiles/
 

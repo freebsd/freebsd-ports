@@ -1,12 +1,12 @@
 # New ports collection makefile for:   misc/delay
-# Version required:    delay-1.4
 # Date created:        03 Mar 1999
 # Whom:                gmarco@giovannelli.it
 #
 # $FreeBSD$
 #
 
-DISTNAME=	delay-1.4
+PORTNAME=	delay
+PORTVERSION=	1.4
 CATEGORIES=	misc
 MASTER_SITES=	http://onegeek.org/~tom/software/delay/dl/
 

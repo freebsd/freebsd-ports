@@ -1,11 +1,11 @@
 # New ports collection makefile for:	wmWeather-1.28
-# Version required:     1.31
 # Date created:		26 January 1998
 # Whom:			Kris Kennaway <kkennawa@physics.adelaide.edu.au>
 #
 # $FreeBSD$
 
-DISTNAME=	wmWeather-1.31
+PORTNAME=	wmWeather
+PORTVERSION=	1.31
 CATEGORIES=	misc windowmaker
 MASTER_SITES= 	http://nis-www.lanl.gov/~mgh/WindowMaker/
 

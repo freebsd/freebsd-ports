@@ -6,10 +6,11 @@
 # $FreeBSD$
 #
 
-DISTNAME=	colorls-2.2.7
+PORTNAME=	colorls
+PORTVERSION=	2.2.7
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_LOCAL}
-DISTFILES=	ls-2.2.7.tar.gz
+DISTFILES=	ls-${PORTVERSION}.tar.gz
 
 MAINTAINER=	asami@FreeBSD.org
 

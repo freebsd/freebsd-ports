@@ -6,8 +6,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=	mshell
-PKGNAME=	mshell-1.0
+PORTNAME=	mshell
+PORTVERSION=	1.0
 CATEGORIES=	misc
 MASTER_SITES=	ftp://src.doc.ic.ac.uk/usenet/alt.sources/articles/07000-07999/
 DISTFILES=	7432.Z

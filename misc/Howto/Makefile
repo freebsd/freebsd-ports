@@ -1,13 +1,12 @@
-# ex:ts=8
 # Ports collection makefile for:  Howto
-# Version required:     	  1.0
 # Date created:			  Fri Oct 02, 1998
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
 # $FreeBSD$
 #
 
-DISTNAME=	Howto-1.0
+PORTNAME=	Howto
+PORTVERSION=	1.0
 CATEGORIES=	misc
 MASTER_SITES=	ftp://metalab.unc.edu/pub/Linux/docs/HOWTO/other-formats/sgml/ \
 		ftp://metalab.unc.edu/pub/Linux/docs/HOWTO/mini/other-formats/sgml/

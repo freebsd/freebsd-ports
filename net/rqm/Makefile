@@ -1,12 +1,12 @@
 # New ports collection makefile for:	rqm
-# Version required:	1.0.0
 # Date created:		30 January 2000
 # Whom:			fenner
 #
 # $FreeBSD$
 #
 
-DISTNAME=	rqm-1.0.0
+PORTNAME=	rqm
+PORTVERSION=	1.0.0
 CATEGORIES=	mbone
 MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/rqm/1.0.0/
 

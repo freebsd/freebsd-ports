@@ -1,12 +1,12 @@
 # New ports collection makefile for:	logsurfer
-# Version required:	1.41
 # Date created:		28 Jul 1996
 # Whom:			shanee@augusta.de
 #
 # $FreeBSD$
 #
 
-DISTNAME=	logsurfer-1.41
+PORTNAME=	logsurfer
+PORTVERSION=	1.41
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.fh-rosenheim.de/pub/mirror/cert.dfn/tools/audit/logsurfer/ \
 		ftp://ftp.tuwien.ac.at/infosys/security/dfn/tools/audit/logsurfer/ \
