@@ -1,0 +1,6 @@
+bin/micq
+share/doc/micq/README
+share/doc/micq/TODO
+share/doc/micq/WISHLIST
+share/doc/micq/commands.txt
+@dirrm share/doc/micq
