@@ -1,0 +1,14 @@
+$OpenBSD: patch-codes_c,v 1.1 2002/08/09 01:15:19 naddy Exp $
+--- codes.c.orig	Fri Aug  9 02:55:28 2002
++++ codes.c	Fri Aug  9 02:56:20 2002
+@@ -38,8 +38,9 @@ WITHOUT ANY EXPRESS OR IMPLIED WARRANTIE
+ #include <stdio.h>
+ #include <string.h>
+ #include <ctype.h>
++#include <sys/types.h>
++#include <md5.h>
+ #include "xmalloc.h"
+-#include "md5.h"
+ 
+ static char basis_64[] =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";

@@ -1,55 +1,43 @@
-*** Makefile.orig	Thu Feb 16 15:39:41 1995
---- Makefile	Sat May 15 19:18:04 1999
-***************
-*** 1,5 ****
-! CFLAGS=$(OPT) $(DEFINES)
-! OPT=-O
-  
-  
-  #Uncomment the following line if your system does not have strchr()
---- 1,5 ----
-! CFLAGS+=$(OPT) $(DEFINES)
-! #OPT=-O
-  
-  
-  #Uncomment the following line if your system does not have strchr()
-***************
-*** 28,34 ****
-  UNPACKOBJS = unixunpk.o decode.o uudecode.o codes.o unixos.o string.o \
-  		part.o xmalloc.o md5c.o getopt.o
-  
-! DESTDIR=/usr/local
-  
-  all: mpack munpack
-  
---- 28,34 ----
-  UNPACKOBJS = unixunpk.o decode.o uudecode.o codes.o unixos.o string.o \
-  		part.o xmalloc.o md5c.o getopt.o
-  
-! DESTDIR?=/usr/local
-  
-  all: mpack munpack
-  
-***************
-*** 42,51 ****
-  	-mkdir $(DESTDIR)/bin
-  	-mkdir $(DESTDIR)/man
-  	-mkdir $(DESTDIR)/man/man1
-! 	install -s -m 755 mpack $(DESTDIR)/bin
-! 	install -s -m 755 munpack $(DESTDIR)/bin
-! 	install -m 644 unixpk.man $(DESTDIR)/man/man1/mpack.1
-! 	install -m 644 unixunpk.man $(DESTDIR)/man/man1/munpack.1
-  
-  clean:
-  	rm -f *.o mpack munpack
---- 42,51 ----
-  	-mkdir $(DESTDIR)/bin
-  	-mkdir $(DESTDIR)/man
-  	-mkdir $(DESTDIR)/man/man1
-! 	install -c -s -m 755 mpack $(DESTDIR)/bin
-! 	install -c -s -m 755 munpack $(DESTDIR)/bin
-! 	install -c -m 644 unixpk.man $(DESTDIR)/man/man1/mpack.1
-! 	install -c -m 644 unixunpk.man $(DESTDIR)/man/man1/munpack.1
-  
-  clean:
-  	rm -f *.o mpack munpack
+--- Makefile.orig	Thu Feb 16 13:39:41 1995
++++ Makefile	Fri Jun 13 14:45:29 2003
+@@ -1,5 +1,5 @@
+-CFLAGS=$(OPT) $(DEFINES)
+-OPT=-O
++#CFLAGS=$(OPT) $(DEFINES)
++#OPT=-O
+ 
+ 
+ #Uncomment the following line if your system does not have strchr()
+@@ -22,13 +22,14 @@
+ #Uncomment the following lines on SVR4
+ #LIBS=-lsocket -lnsl
+ 
++LIBS=-lmd
+ 
+ PACKOBJS = unixpk.o encode.o codes.o magic.o unixos.o string.o \
+-		xmalloc.o md5c.o getopt.o
++		xmalloc.o
+ UNPACKOBJS = unixunpk.o decode.o uudecode.o codes.o unixos.o string.o \
+-		part.o xmalloc.o md5c.o getopt.o
++		part.o xmalloc.o
+ 
+-DESTDIR=/usr/local
++DESTDIR?=/usr/local
+ 
+ all: mpack munpack
+ 
+@@ -42,10 +43,10 @@
+ 	-mkdir $(DESTDIR)/bin
+ 	-mkdir $(DESTDIR)/man
+ 	-mkdir $(DESTDIR)/man/man1
+-	install -s -m 755 mpack $(DESTDIR)/bin
+-	install -s -m 755 munpack $(DESTDIR)/bin
+-	install -m 644 unixpk.man $(DESTDIR)/man/man1/mpack.1
+-	install -m 644 unixunpk.man $(DESTDIR)/man/man1/munpack.1
++	install -c -s -m 755 mpack $(DESTDIR)/bin
++	install -c -s -m 755 munpack $(DESTDIR)/bin
++	install -c -m 644 unixpk.man $(DESTDIR)/man/man1/mpack.1
++	install -c -m 644 unixunpk.man $(DESTDIR)/man/man1/munpack.1
+ 
+ clean:
+ 	rm -f *.o mpack munpack
