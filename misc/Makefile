@@ -47,6 +47,7 @@
     SUBDIR += gnomeutils
     SUBDIR += gnuls
     SUBDIR += gone
+    SUBDIR += grun
     SUBDIR += gtkfind
     SUBDIR += gyvescm
     SUBDIR += iselect
