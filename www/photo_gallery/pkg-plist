@@ -1,0 +1,6 @@
+www/data/photo_gallery/index.cgi
+www/data/photo_gallery/previews.cgi
+www/data/photo_gallery/readme.html
+www/data/photo_gallery/.header.html
+www/data/photo_gallery/.footer.html
+@dirrm www/data/photo_gallery
