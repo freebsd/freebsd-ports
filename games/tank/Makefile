@@ -1,9 +1,9 @@
 # New ports collection makefile for:    tank
 # Version required:     0.4a
 # Date created:         4 Mar 1998
-# Whom:                 Donald Burr <dburr@POBoxes.com>
+# Whom:                 Donald Burr <dburr@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1998/03/14 11:41:22 jkh Exp $
+# $Id: Makefile,v 1.2 1998/05/15 15:01:10 dburr Exp $
 #
 
 DISTNAME=	tank-0.4a-src
