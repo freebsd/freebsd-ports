@@ -1,4 +1,4 @@
-@comment $Id: PLIST,v 1.24 1999/07/04 20:58:11 obrien Exp $
+@comment $FreeBSD$
 bin/chill
 bin/eg++filt
 bin/eg++

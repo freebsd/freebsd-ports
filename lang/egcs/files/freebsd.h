@@ -1,4 +1,4 @@
-/* $Id: freebsd.h,v 1.5 1999/08/16 00:12:21 obrien Exp $ */
+/* $FreeBSD$ */
 /* Base configuration file for all FreeBSD targets.
    Copyright (C) 1999 Free Software Foundation, Inc.
 

@@ -1,4 +1,4 @@
-@comment $Id$
+@comment $FreeBSD$
 bin/bc-gcc
 bin/%%GNUHOST%%-bc-gcc
 @comment @unexec install-info --delete %D/info/cpp.info %D/info/dir

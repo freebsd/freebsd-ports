@@ -5,7 +5,7 @@
 
 #include <string.h>
 
-static char rcsid[] = "$Id$";
+static char rcsid[] = "$FreeBSD$";
 
 #ifndef LCCDIR
 #define LCCDIR "%%PREFIX%%/%%LCCDESTDIR%%/"
