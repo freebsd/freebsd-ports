@@ -1,0 +1,6 @@
+booktabs is to enable the easy production of tables such as should
+appear in published scientific books and journals.  What distinguishes
+these from plain LaTeX tables is the default use of additional space
+above and below rules, and rules of varying `thickness'.  What further
+distinguishes them from the tables many people do produce using LaTeX
+is the absence of vertical rules and double rules.
