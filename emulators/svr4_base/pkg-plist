@@ -1,0 +1,13 @@
+@comment $FreeBSD$
+compat/svr4/README
+compat/svr4/dev/SVR4_MAKEDEV
+compat/svr4/etc/default/init
+compat/svr4/etc/netconfig
+compat/svr4/etc/nsswitch.conf
+compat/svr4/etc/mnttab
+compat/svr4/lib
+compat/svr4/usr
+@dirrm compat/svr4/dev
+@dirrm compat/svr4/etc/default
+@dirrm compat/svr4/etc
+@dirrm compat/svr4

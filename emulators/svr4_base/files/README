@@ -1,0 +1,11 @@
+$FreeBSD$
+
+A skeleton /compat/svr4 tree for the svr4_mod System V Release 4 emulator
+suitable for Solaris 2.6.
+
+Installation instructions:
+
+1.  Mount a Solaris/x86 2.6 or higher CDROM on /cdrom.
+2.  cd /compat/svr4/dev
+    sh ./SVR4_MAKEDEV all
+

@@ -1,0 +1,13 @@
+These files are part of the SVR4 compatibility options for FreeBSD.
+
+To get SVR4 compat working you will need the system libraries from
+Solaris x86.  We cannot supply them to you as a Solaris license is
+required in order to use their libraries.
+
+In order to use the SVR4 emulation, simply mount a Solaris 2.5.1 x86 CDROM
+on /cdrom.
+To make things easier, currently symbolic links are made to the Solaris 
+CDROM, thus having it mounted is required when using SVR4 emulation.
+
+-- David.
+obrien@cs.ucdavis.edu

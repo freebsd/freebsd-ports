@@ -36,6 +36,7 @@
     SUBDIR += spim
     SUBDIR += stella
     SUBDIR += stonx
+    SUBDIR += svr4_base
     SUBDIR += tkhfs
     SUBDIR += truereality
     SUBDIR += tuxnes
