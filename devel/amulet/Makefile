@@ -3,7 +3,7 @@
 # Date created:       26 July 1997
 # Whom:               Filip Bovyn (bovynf@awe.be)
 #
-# $Id: Makefile,v 1.2 1998/08/05 09:30:47 asami Exp $
+# $Id: Makefile,v 1.3 1998/08/13 03:30:27 asami Exp $
 
 DISTNAME=	amulet
 PKGNAME=	amulet-3.0

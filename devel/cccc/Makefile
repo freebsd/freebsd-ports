@@ -3,7 +3,7 @@
 # Date created:				12 September 1997
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1997/11/03 10:02:36 tg Exp $
+# $Id: Makefile,v 1.2 1998/08/13 03:30:27 asami Exp $
 #
 
 DISTNAME=		cccc-2.1.1.src
