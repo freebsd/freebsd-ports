@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mjpegtools
-PORTVERSION=	1.6.1
-PORTREVISION=	2
+PORTVERSION=	1.6.2
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mjpeg
@@ -19,28 +18,33 @@ BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 LIB_DEPENDS=	aviplay.0:${PORTSDIR}/multimedia/avifile \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
-USE_GNOME=	glib12
+USE_GNOME=	glib12 lthack
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} ${PTHREAD_CFLAGS}" \
-		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS:S/"//g}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS:S/"//g}"
+CONFIGURE_ARGS= --program-transform-name=""
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
+		PTHREAD_LIBS="${PTHREAD_LIBS}"
 WANT_GNOME=	yes
 WANT_SDL=	yes
 
-MAN1=	divxdec.1 jpeg2yuv.1 lav2divx.1 lav2mpeg.1 lav2wav.1 lav2yuv.1 \
+INFO=	mjpeg-howto
+MAN1=	jpeg2yuv.1 lav2mpeg.1 lav2wav.1 lav2yuv.1 \
 	lavpipe.1 lavplay.1 lavrec.1 lavtrans.1 mjpegtools.1 mp2enc.1 \
-	mpeg2enc.1 mplex.1 ppmtoy4m.1 y4mcolorbars.1 y4mtoppm.1 \
-	yuv2divx.1 yuv2lav.1 yuvdenoise.1 yuvkineco.1 yuvmedianfilter.1 \
-	yuvplay.1 yuvscaler.1 yuvycsnoise.1
+	mpeg2enc.1 mplex.1 pgmtoy4m.1 ppmtoy4m.1 y4mcolorbars.1 y4mtoppm.1 \
+	yuv2lav.1 yuvdenoise.1 yuvfps.1 yuvinactive.1 yuvkineco.1 \
+	yuvmedianfilter.1 yuvplay.1 yuvscaler.1 yuvycsnoise.1
 MAN5=	yuv4mpeg.5
 
 DOC_FILES=	AUTHORS BUGS CHANGES COPYING ChangeLog HINTS NEWS \
 		PLANS README README.DV README.avilib README.glav \
+		README.AltiVec \
 		README.lavpipe README.transist TODO
+
+PORTDOCS=	${DOC_FILES}
 
 post-install:
 .ifndef(NOPORTDOCS)
@@ -136,10 +140,6 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -E -e 's|^(pkgconfigdir = )\$$\(libdir\)/(pkgconfig)|\1${PREFIX}/libdata/\2|' \
 		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|stdint.h|sys/types.h|' \
-		${WRKSRC}/lavtools/lav2divx.cpp \
-		${WRKSRC}/lavtools/yuv2divx.cpp \
-		${WRKSRC}/lavtools/divxdec.cpp
 	@${REINPLACE_CMD} -E -e 's@(-l(jpeg|openquicktime|png))@-L${LOCALBASE}/lib \1@; \
 		s|(-I) (\$$with_quicktime)|\1\2/include/openquicktime|; \
 		s|(-L\$$with_quicktime) |\1/lib |; \
