@@ -27,20 +27,21 @@ NO_BUILD=	YES
 MODULES=	Etext.pm File.pm Index.pm Network.pm PropList.pm
 
 post-patch:
-	${SED} "s#%%LOCALBASE%%#${LOCALBASE}#g" ${WRKSRC}/PGB.pm > ${WRKSRC}/tmp
-	${MV} ${WRKSRC}/tmp ${WRKSRC}/PGB.pm
+	@${SED} "s#%%LOCALBASE%%#${LOCALBASE}#g" ${WRKSRC}/PGB.pm > ${WRKSRC}/tmp
+	@${MV} ${WRKSRC}/tmp ${WRKSRC}/PGB.pm
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/gutenbook ${LOCALBASE}/bin/gutenbook
-	@${INSTALL_SCRIPT} ${WRKSRC}/PGB.pm ${site_perl}/PGB.pm
+	${INSTALL_SCRIPT} ${WRKSRC}/gutenbook ${PREFIX}/bin/gutenbook
+	${INSTALL_SCRIPT} ${WRKSRC}/PGB.pm ${site_perl}/PGB.pm
 	@${MKDIR} ${site_perl}/PGB
 .for module in ${MODULES}
-	@${INSTALL_SCRIPT} ${WRKSRC}/PGB/${module} ${site_perl}/PGB
+	${INSTALL_SCRIPT} ${WRKSRC}/PGB/${module} \
+		${PREFIX}/lib/perl5/site_perl/${PERL_VER}/PGB
 .endfor
 .if !defined(NOPORTDCS)
-	@${MKDIR} ${LOCALBASE}/share/doc/gutenbook
-	@${INSTALL_DATA} ${WRKSRC}/MANUAL ${LOCALBASE}/share/doc/gutenbook
-	@${INSTALL_DATA} ${WRKSRC}/gutenbook.spec ${LOCALBASE}/share/doc/gutenbook
+	@${MKDIR} ${PREFIX}/share/doc/gutenbook
+	${INSTALL_DATA} ${WRKSRC}/MANUAL ${PREFIX}/share/doc/gutenbook
+	${INSTALL_DATA} ${WRKSRC}/gutenbook.spec ${PREFIX}/share/doc/gutenbook
 .endif
 
 post-install:
