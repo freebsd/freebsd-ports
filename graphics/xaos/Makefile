@@ -3,7 +3,7 @@
 # Date created:				24 February 1996
 # Whom:					Joseph Koshy <koshy@india.hp.com>
 #
-# $Id: Makefile,v 1.1.1.1 1997/02/28 10:52:50 tg Exp $
+# $Id: Makefile,v 1.2 1997/03/02 09:49:00 asami Exp $
 #
 
 DISTNAME=	XaoS-2.2
@@ -15,7 +15,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB} \
 		http://www.paru.cas.cz/~hubicka/XaoS/dist/
 MASTER_SITE_SUBDIR=	graphics
 
-MAINTAINER=	ports@FreeBSD.ORG
+MAINTAINER=	koshy@india.hp.com
 
 # This port will benefit from all-stops-out optimization of the code
 
