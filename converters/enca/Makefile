@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	enca
-PORTVERSION=	0.99.3
+PORTVERSION=	1.2
 CATEGORIES=	converters textproc russian ukrainian
-MASTER_SITES=	http://physics.muni.cz/~yeti/Ftp/enca/
+MASTER_SITES=	http://kf.fyz.fce.vutbr.cz/~yeti/Ftp/enca/
 
 MAINTAINER=	never@nevermind.kiev.ua
 COMMENT=	A package for detecting encoding of text files
