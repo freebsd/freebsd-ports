@@ -18,7 +18,7 @@ COMMENT=	Readline wrapper
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500018
-BROKEN=		"Requires readline 4.2 or newer"
+IGNORE=		"Requires readline 4.2 or newer, only available in recent versions of FreeBSD 5.x"
 .endif
 
 USE_GETOPT_LONG=	yes
