@@ -31,6 +31,7 @@ CONFIGURE_ARGS+=--enable-final
 CONFIGURE_ARGS+=--disable-debug
 .endif
 USE_GMAKE=	yes
+CONFIGURE_ENV+=	PATH=${WRKSRC}/auto-bin:$$PATH
 MAKE_ENV=	${CONFIGURE_ENV}
 
 pre-configure:
@@ -41,7 +42,7 @@ pre-configure:
 .for AM in automake aclocal
 	${LN} -sf ${LOCALBASE}/bin/${AM}14 ${WRKSRC}/auto-bin/${AM}
 .endfor
-	cd ${WRKSRC} && env PATH=$$PATH:${WRKSRC}/auto-bin \
+	cd ${WRKSRC} && env PATH=${WRKSRC}/auto-bin:$$PATH \
 		${GMAKE} -f Makefile.cvs
 	${PERL} -pi -e "s:-lpthread:${PTHREAD_LIBS}:g" ${WRKSRC}/knode/Makefile.in
 	${PERL} -pi -e "s@all_includes=\"@all_includes=\"-I/usr/include @g" ${WRKSRC}/acinclude.m4 ${WRKSRC}/aclocal.m4
