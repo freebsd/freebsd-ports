@@ -1,10 +1,10 @@
 bin/acs
 share/acs/acs.rc
-share/doc/acs/acs-0.26.lsm
+share/doc/acs/acs-0.28.lsm
 share/doc/acs/acs-tutorial
 share/doc/acs/history
 share/doc/acs/man.pdf
-share/doc/acs/relnotes.026
+share/doc/acs/relnotes.028
 share/doc/acs/whatisit
 share/examples/acs/eq.doc
 share/examples/acs/eq2-145.ckt
@@ -15,6 +15,7 @@ share/examples/acs/eq4-2305.ckt
 share/examples/acs/eq4-4609.ckt
 share/examples/acs/eq4-6913.ckt
 share/examples/acs/eq4-9217.ckt
+share/examples/acs/eq4-9217.tran.ckt
 share/examples/acs/eqboost.ckt
 share/examples/acs/eqflat.ckt
 share/examples/acs/eqmodify.ckt
