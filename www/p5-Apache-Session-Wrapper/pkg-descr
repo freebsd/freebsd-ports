@@ -1,0 +1,12 @@
+This module is a simple wrapper around Apache::Session which provides some
+methods to simplify getting and setting the session id.
+
+It can uses cookies to store the session id, or it can look in a provided
+object for a specific parameter. Alternately, you can simply provide the
+session id yourself in the call to the session() method.
+
+If you're using Mason, you should probably take a look at
+MasonX::Request::WithApacheSession first, which integrates this module directly
+into Mason.
+
+WWW: http://search.cpan.org/dist/Apache-Session-Wrapper/
