@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.webdav.org/cadaver/
 
 MAINTAINER=	tarkhil@over.ru
 
+BROKEN=		"Dependency out of date"
+
 LIB_DEPENDS=	neon.18:${PORTSDIR}/www/neon \
 		intl.1:${PORTSDIR}/devel/gettext-old
 
