@@ -1,2 +1,8 @@
 bin/eog
+share/locale/da/LC_MESSAGES/eog.mo
+share/locale/es/LC_MESSAGES/eog.mo
+share/locale/gl/LC_MESSAGES/eog.mo
+share/locale/it/LC_MESSAGES/eog.mo
+share/locale/ja/LC_MESSAGES/eog.mo
+share/locale/ko/LC_MESSAGES/eog.mo
 share/locale/no/LC_MESSAGES/eog.mo
