@@ -31,42 +31,33 @@ check_use_font ()
 }
 
 
-CF=""
-FH=0
+VF=""
+FN=0
 for i in "$@" ; do 
-	if [ "$i" = "-fh" ]; then
-		FH=1;  continue;
+	if [ "$i" = "-fn" ]; then
+		FN=1;  continue;
 	fi
-	if [ "$FH" -eq 1 ]; then
-		CF=`check_use_font $i`
-		if [ "$CF" = "" ]; then
+	if [ "$FN" -eq 1 ]; then
+		VF=`check_use_font $i`
+		if [ "$VF" = "" ]; then
 			echo "Specified font doesn't exist in the X Window system."
 			exit 1
 		fi
 		break
     fi
-	FH=0
+	FN=0
 done
 
 
-if [ "$CF" = "" ]; then
-	if [ "$NAME" = "cxterm" ]; then
-		CF=`check_use_font $GB_FONTS`
-		if [ "$CF" = "" ]; then
-			echo "Cannot identify a Vietnamese font in the X Window system."
-			exit 1
-		fi
-		FH_OPT="-fh $CF"
-	elif [ "$NAME" = "cxtermb5" ]; then
-		CF=`check_use_font $BIG5_FONTS`
-		if [ "$CF" = "" ]; then
-			echo "Cannot identify a Vietnamese font in the X Window system."
-			exit 1
-		fi
-		FH_OPT="-fh $CF"
+if [ "$VF" = "" ]; then
+	VF=`check_use_font $VN_FONTS`
+	if [ "$VF" = "" ]; then
+		echo "Cannot identify a Vietnamese font in the X Window system."
+		exit 1
 	fi
+	FN_OPT="-fn $VF"
 fi
 
 XENVIRONMENT=$VNTERM_AD
 export XENVIRONMENT
-exec $VNTERM $FH_OPT $*
+exec $VNTERM $FN_OPT $*
