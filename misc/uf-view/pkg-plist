@@ -6,10 +6,15 @@ share/gnome/uf-view/at.desktop
 share/gnome/uf-view/ch.desktop
 share/gnome/uf-view/lg.desktop
 share/gnome/uf-view/uf.desktop
-share/gnome/uf-view/w9.desktop
+share/gnome/uf-view/pa.desktop
+share/gnome/uf-view/pvp.desktop
 share/locale/az/LC_MESSAGES/uf-view.mo
+share/locale/cs/LC_MESSAGES/uf-view.mo
+share/locale/de/LC_MESSAGES/uf-view.mo
 share/locale/fr/LC_MESSAGES/uf-view.mo
+share/locale/no/LC_MESSAGES/uf-view.mo
 share/locale/pl/LC_MESSAGES/uf-view.mo
+share/locale/pt_BR/LC_MESSAGES/uf-view.mo
 share/locale/ru/LC_MESSAGES/uf-view.mo
 share/locale/sk/LC_MESSAGES/uf-view.mo
 share/locale/sv/LC_MESSAGES/uf-view.mo

@@ -1,0 +1,13 @@
+--- po/Makefile.in.in.orig	Sun Apr 20 10:14:53 2003
++++ po/Makefile.in.in	Sun Apr 20 10:15:14 2003
+@@ -27,8 +27,8 @@
+ exec_prefix = @exec_prefix@
+ datadir = @datadir@
+ libdir = @libdir@
+-localedir = $(libdir)/locale
+-gnulocaledir = $(datadir)/locale
++localedir = $(prefix)/share/locale
++gnulocaledir = $(prefix)/share/locale
+ gettextsrcdir = $(datadir)/glib-2.0/gettext/po
+ subdir = po
+ 
