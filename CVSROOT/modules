@@ -3000,6 +3000,7 @@ iroffer		ports/irc/iroffer
 irrtoolset	ports/net/irrtoolset
 irsim		ports/cad/irsim
 irssi		ports/irc/irssi
+irssi+perl	ports/irc/irssi+perl
 isakmpd		ports/security/isakmpd
 isc-dhcp3	ports/net/isc-dhcp3
 isearch		ports/textproc/isearch
