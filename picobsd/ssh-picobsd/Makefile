@@ -28,24 +28,24 @@ BROKEN=		"Install fails"
 USE_AUTOCONF_VER=	213
 GNU_CONFIGURE=	YES
 USE_PERL5=	YES
-CONFIGURE_ENV+= PERL=${PERL5}
+CONFIGURE_ENV+=	PERL=${PERL5}
 
-CONFIGURE_ARGS+= --with-etcdir=${PREFIX}/etc
+CONFIGURE_ARGS+=	--with-etcdir=${PREFIX}/etc
 
 # Uncomment if all your users are in their own group and their homedir
 # is writeable by that group.  Beware the security implications!
 #
-#CONFIGURE_ARGS+= --enable-group-writeability
+#CONFIGURE_ARGS+=	--enable-group-writeability
 
 # Uncomment if you want to allow ssh to emulate an unencrypted rsh connection
 # over a secure medium (i.e. allow SSH connections without encryption).
 # This is normally dangerous since it can lead to the disclosure of keys
 # and passwords.
 #
-#CONFIGURE_ARGS+= --with-none
+#CONFIGURE_ARGS+=	--with-none
 
 .if defined(KRB5_HOME) && exists(${KRB5_HOME})
-CONFIGURE_ARGS+=--with-kerberos5=${KRB5_HOME} --enable-kerberos-tgt-passing \
+CONFIGURE_ARGS+=	--with-kerberos5=${KRB5_HOME} --enable-kerberos-tgt-passing \
 	--disable-suid-ssh
 .endif
 
@@ -53,7 +53,7 @@ CONFIGURE_ARGS+=--with-kerberos5=${KRB5_HOME} --enable-kerberos-tgt-passing \
 # Warning: untested !
 #
 .if defined(WITH_SECUREID)
-CONFIGURE_ARGS+= --with-secureid
+CONFIGURE_ARGS+=	--with-secureid
 .endif
 
 # Don't use IDEA. IDEA can be freely used for non-commercial use. However,
@@ -69,6 +69,6 @@ pre-patch:
 .include <bsd.port.pre.mk>
 
 # no IDEA, tcpwrap, IPV6, SOCKS, x11 for picobsd
-CONFIGURE_ARGS+= --disable-ipv6  --without-x --without-idea
+CONFIGURE_ARGS+=	--disable-ipv6  --without-x --without-idea
 
 .include <bsd.port.post.mk>

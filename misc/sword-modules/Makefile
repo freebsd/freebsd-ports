@@ -62,7 +62,7 @@ post-clean:
 	@${RM} -f ${MODFILE}
 
 do-install:
-	@${MKDIR} -p ${PREFIX}/share/sword
+	@${MKDIR} ${PREFIX}/share/sword
 	@for i in ${MODULE_FILES}; do \
 		${EXTRACT_CMD} -qo ${DISTDIR}/${DIST_SUBDIR}/$${i} -d ${PREFIX}/share/sword; \
 	 done
