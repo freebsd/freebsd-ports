@@ -4,5 +4,6 @@ share/ringtonetools/hemglass.mid
 share/ringtonetools/ionian.rtttl
 share/ringtonetools/usa.imelody
 share/ringtonetools/yngwie_trilogy.rtttl
+@dirrm share/ringtonetools
 %%PORTDOCS%%share/doc/ringtonetools/README
 %%PORTDOCS%%@dirrm share/doc/ringtonetools
