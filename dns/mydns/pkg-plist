@@ -4,7 +4,6 @@ bin/mydnsexport
 bin/mydnsimport
 bin/mydnsptrconvert
 etc/mydns.conf.sample
-etc/rc.d/mydns.sh.sample
 sbin/mydns
 %%NLS%%share/locale/es/LC_MESSAGES/mydns.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/mydns.mo
