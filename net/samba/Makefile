@@ -7,7 +7,7 @@
 
 PORTNAME=	samba
 PORTVERSION=	2.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.samba.org/pub/samba/%SUBDIR%/ \
 		ftp://samba.anu.edu.au/pub/samba/%SUBDIR%/ \
@@ -19,7 +19,7 @@ MASTER_SITE_SUBDIR=	. old-versions old
 MAINTAINER=	dwcjr@FreeBSD.org
 
 .if defined(WITH_CUPS)
-LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups
+LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-base
 .endif
 
 .if defined(WITH_RECYCLE)
