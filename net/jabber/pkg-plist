@@ -6,7 +6,6 @@ include/jabber/lib/lib.h
 include/jabber/lib/xmlparse.h
 include/jabber/platform-settings
 include/jabber/jabberd.h
-include/jabber/pth.h
 lib/jabber/dialback/dialback.so
 lib/jabber/dnsrv/dnsrv.so
 lib/jabber/jsm/jsm.so

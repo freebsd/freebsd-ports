@@ -1,0 +1,9 @@
+--- configure.orig      Mon Feb 11 11:14:06 2002
++++ configure   Sun Apr 14 18:38:40 2002
+@@ -32,7 +32,8 @@
+ LDFLAGS="$LDFLAGS"
+ LIBS="$LIBS"
+ XLDFLAGS="$XLDFLAGS "
+-JHOME=`pwd`
++JHOME="`cat .prefix-freebsd`/lib/jabber"
++WRKSRC="`cat .wrksrc-freebsd`"

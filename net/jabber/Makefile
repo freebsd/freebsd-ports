@@ -6,38 +6,38 @@
 #
 
 PORTNAME=	jabber
-PORTVERSION=	1.4.2
-PORTREVISION=	1
+PORTVERSION=	1.4.3
 CATEGORIES=	net
-MASTER_SITES=	http://jabberd.jabberstudio.org/downloads/ \
-		http://download.jabber.org/dists/1.4/final/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	http://jabberd.jabberstudio.org/1.4/dist/
+DISTNAME=	${PORTNAME}d-${PORTVERSION}
 DIST_SUBDIR=	jabber
 
 MAINTAINER=	seanc@FreeBSD.org
 COMMENT=	Online presence and instant messaging server
 
+LIB_DEPENDS=	pth.20:${PORTSDIR}/devel/pth
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
-USE_PERL5=	yes
 
 CONFIGURE_ARGS+=	--enable-ssl
-
-rc=${PREFIX}/etc/rc.d
+.if defined(WITH_IPV6)
+CONFIGURE_ARGS+=	--enable-ipv6
+.endif
 
 #JABDIR=		${PORTNAME}-${PORTVERSION}
 # Save this data for use later: jabber doesn't have an install target
 # or a sane set of defaults.
 post-patch:
-	@echo "${WRKSRC}" > ${WRKSRC}/.wrksrc-freebsd
-	@echo "${PREFIX}" > ${WRKSRC}/.prefix-freebsd
-	@echo "${INSTALL_DATA}" > ${WRKSRC}/.install_data-freebsd
-	@echo "${INSTALL_SCRIPT}" > ${WRKSRC}/.install_script-freebsd
-	@echo "${INSTALL_PROGRAM}" > ${WRKSRC}/.install_program-freebsd
+	${ECHO} "${WRKSRC}" > ${WRKSRC}/.wrksrc-freebsd
+	${ECHO} "${PREFIX}" > ${WRKSRC}/.prefix-freebsd
+	${ECHO} "${INSTALL_DATA}" > ${WRKSRC}/.install_data-freebsd
+	${ECHO} "${INSTALL_SCRIPT}" > ${WRKSRC}/.install_script-freebsd
+	${ECHO} "${INSTALL_PROGRAM}" > ${WRKSRC}/.install_program-freebsd
 
 post-install:
-	@PREFIX=${PREFIX} ${PERL5} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	${INSTALL_SCRIPT} ${FILESDIR}/jabberd.sh ${rc}
+	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	${INSTALL_DATA} ${FILESDIR}/jabberd.sh ${PREFIX}/etc/rc.d/
 
 .include <bsd.port.mk>
