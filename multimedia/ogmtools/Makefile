@@ -18,6 +18,7 @@ LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis
 
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
+USE_SIZE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ogg-prefix=${LOCALBASE} \
   		--with-vorbis-prefix=${LOCALBASE}

@@ -21,6 +21,7 @@ RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm
 ONLY_FOR_ARCHS=	i386
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12 imlib
+USE_SIZE=	yes
 
 DOC_FILES=	COPYING README
 

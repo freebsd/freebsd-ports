@@ -20,6 +20,7 @@ RUN_DEPENDS=	dctc:${PORTSDIR}/net/dctc
 
 USE_QT_VER=	3
 USE_REINPLACE=	yes
+USE_SIZE=	yes
 MAKE_ENV=	QTDIR="${QTDIR}"
 PLIST_FILES=	bin/dc-qt
 

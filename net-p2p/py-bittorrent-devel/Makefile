@@ -19,6 +19,7 @@ COMMENT?=	A peer-to-peer tool for distributing files written in Python
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_REINPLACE=	yes
+USE_SIZE=	yes
 
 DOC_FILES=	BUILD.windows.txt INSTALL.unix.txt LICENSE.txt \
 		README.txt credits.txt

@@ -15,6 +15,7 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Peer-to-peer network aiming at anonymity and freedom of speech
 
 USE_JAVA=	1.4+
+USE_SIZE=	yes
 NO_BUILD=	yes
 NO_BUILD_DEPENDS_JAVA=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}

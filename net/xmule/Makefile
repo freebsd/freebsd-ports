@@ -15,9 +15,6 @@ MASTER_SITE_SUBDIR=	xmule
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Port of eMule eDonkey P2P client using wxWindows class library
 
-#FORBIDDEN=	Multiple vulnerabilities, see \
-#	   	http://security.e-matters.de/advisories/022003.html
-
 LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2 \
 		wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
@@ -31,6 +28,7 @@ USE_GNOME=	gnomehier \
 		gnomeprefix
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
+USE_SIZE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-included-gettext \
 		--with-libintl-prefix=${LOCALBASE} \

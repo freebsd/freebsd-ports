@@ -15,6 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Perl module for parsing mathematical expressions into a tree structure
 
+USE_SIZE=	yes
 PERL_CONFIGURE=	yes
 
 MAN3=		Math::Expr.3 Math::Expr::FormulaDB.3 \

@@ -20,6 +20,7 @@ COMMENT=	Creates a web page with ed2k:// links to all your shared files
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
+USE_SIZE=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 PLIST_FILES=	bin/edonkey-tool-list

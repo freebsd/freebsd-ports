@@ -17,6 +17,7 @@ COMMENT=	Pagination utility that prints your images/comics in 'in folio' format
 USE_QT_VER=	3
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
+USE_SIZE=	yes
 
 QMAKE?=	${X11BASE}/bin/qmake
 QTDIR?=	${QT_PREFIX}

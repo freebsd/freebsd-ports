@@ -18,6 +18,7 @@ COMMENT=	A getopt(3) like library with a number of enhancements, from Redhat
 USE_GETTEXT=	yes
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
+USE_SIZE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

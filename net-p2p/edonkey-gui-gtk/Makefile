@@ -23,6 +23,7 @@ RUN_DEPENDS=	donkey:${PORTSDIR}/net/linux-edonkey-core
 USE_GNOME=	gtk20
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
+USE_SIZE=	yes
 GNU_CONFIGURE=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/ed2k_gui

@@ -22,6 +22,7 @@ RUN_DEPENDS=	donkey:${PORTSDIR}/net/linux-edonkey-core \
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
 USE_X_PREFIX=	yes
+USE_SIZE=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 STRIP=

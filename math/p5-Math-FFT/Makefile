@@ -15,6 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Perl module providing an interface to Fast Fourier Transform routines
 
+USE_SIZE=	yes
 PERL_CONFIGURE=	yes
 
 MAN3=		Math::FFT.3

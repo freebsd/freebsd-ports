@@ -19,6 +19,7 @@ COMMENT=	Nintendo GameBoy(tm) emulator (closed binary version of vgb)
 
 ONLY_FOR_ARCHS=	i386
 USE_X_PREFIX=	yes
+USE_SIZE=	yes
 NO_BUILD=	no
 NO_WRKSUBDIR=	no
 

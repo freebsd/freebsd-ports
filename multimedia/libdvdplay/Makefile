@@ -17,6 +17,7 @@ COMMENT=	Portable abstraction library for DVD navigation
 LIB_DEPENDS=	dvdread.3:${PORTSDIR}/multimedia/libdvdread
 
 USE_BZIP2=	yes
+USE_SIZE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-dvdread-tree=${LOCALBASE}/include
 INSTALLS_SHLIB=	yes

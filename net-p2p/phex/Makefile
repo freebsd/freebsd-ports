@@ -18,6 +18,7 @@ COMMENT=	A Java multi platform and spyware free gnutella client
 
 USE_JAVA=	1.3+
 USE_PERL5_BUILD=yes
+USE_SIZE=	yes
 USE_ZIP=	yes
 NO_BUILD=	yes
 NO_BUILD_DEPENDS_JAVA=	yes

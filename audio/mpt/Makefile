@@ -18,6 +18,7 @@ LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw \
 		songprint.1:${PORTSDIR}/audio/songprint
 
 USE_GNOME=	glib12
+USE_SIZE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

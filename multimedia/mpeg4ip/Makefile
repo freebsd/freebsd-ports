@@ -23,6 +23,7 @@ USE_GMAKE=	yes
 USE_SDL=	yes
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
+USE_SIZE=	yes
 CONFIGURE_ARGS=	--datadir=${DATADIR} \
 		--with-glib-prefix=${LOCALBASE} \
 		--with-gtk-prefix=${X11BASE} \

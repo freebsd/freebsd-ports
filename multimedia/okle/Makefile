@@ -20,6 +20,7 @@ RUN_DEPENDS=	ogle:${PORTSDIR}/multimedia/ogle
 USE_AUTOCONF_VER=	253
 USE_KDELIBS_VER=	3
 USE_REINPLACE=	yes
+USE_SIZE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ogle-dir=${LOCALBASE}/bin \
 		--with-ogle-includes=${LOCALBASE}/include \

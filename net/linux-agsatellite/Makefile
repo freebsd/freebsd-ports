@@ -21,6 +21,7 @@ WRKSRC=	${WRKDIR}/${DISTNAME:C/-.*//}
 USE_LINUX=	yes
 NO_BUILD=	yes
 USE_REINPLACE=	yes
+USE_SIZE=	yes
 STRIP=
 RESTRICTED=	no response from developer on licensing issues
 

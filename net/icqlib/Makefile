@@ -18,5 +18,6 @@ COMMENT=	A library required by kicq (not libicq)
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes
+USE_SIZE=	yes
 
 .include <bsd.port.mk>

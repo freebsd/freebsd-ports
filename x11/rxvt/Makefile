@@ -22,6 +22,7 @@ COMMENT=	A low memory usage xterm replacement that supports color
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
+USE_SIZE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-utmp --enable-wtmp \
 		--with-xpm --enable-xpm-background --enable-transparency

@@ -19,6 +19,7 @@ COMMENT=	A simple encoder using OpenQuicktime (TM)
 
 LIB_DEPENDS=	openquicktime.0:${PORTSDIR}/multimedia/openquicktime
 
+USE_SIZE=	yes
 MAKE_ENV=	SDL_CONFIG=${SDL_CONFIG}
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

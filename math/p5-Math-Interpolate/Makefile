@@ -15,6 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Perl routines for data sets interpolation and interval search
 
+USE_SIZE=	yes
 PERL_CONFIGURE=	yes
 
 MAN3=		Math::Interpolate.3 Math::IntervalSearch.3

@@ -16,6 +16,7 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Secure and Anonymous Instant Messaging
 
 USE_REINPLACE=	yes
+USE_SIZE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 INSTALL_WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

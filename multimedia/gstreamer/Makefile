@@ -28,6 +28,7 @@ USE_GNOME=	gnomehack \
 		glib20 \
 		pkgconfig \
 		libxml2
+USE_SIZE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --disable-tests \
 		--disable-failing-tests

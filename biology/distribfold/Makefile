@@ -17,6 +17,7 @@ COMMENT=	distributedfolding.org distributed protein folding project
 
 ONLY_FOR_ARCHS=	i386
 USE_REINPLACE=	yes
+USE_SIZE=	yes
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/distribfold

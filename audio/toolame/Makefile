@@ -19,6 +19,7 @@ COMMENT=	Optimized mpeg 1/2 layer 2 audio encoder
 
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
+USE_SIZE=	yes
 ALL_TARGET=	${PORTNAME}
 
 DOC_FILES=	FUTURE HISTORY LGPL.txt README

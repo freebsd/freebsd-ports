@@ -18,6 +18,7 @@ COMMENT=	A Bayesian anti-spam filter written in Python
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
+USE_SIZE=		yes
 
 DOC_FILES=	HAMMIE.txt INTEGRATION.txt LICENSE.txt README.txt \
 		TESTING.txt WHAT_IS_NEW.txt contrib/BULK.txt \

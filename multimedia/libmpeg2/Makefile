@@ -18,6 +18,7 @@ COMMENT=	A free library for decoding mpeg-2 and mpeg-1 video streams
 USE_XLIB=	yes
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
+USE_SIZE=	yes
 INSTALLS_SHLIB=	yes
 
 CONFIGURE_ARGS= --enable-shared \

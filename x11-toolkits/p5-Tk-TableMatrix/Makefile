@@ -18,6 +18,7 @@ COMMENT=	Table/matrix extension to perl/tk for displaying table formatted data
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Tk.pm:${PORTSDIR}/x11-toolkits/p5-Tk
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+USE_SIZE=	yes
 PERL_CONFIGURE=	yes
 
 MAN3=		Tk::TableMatrix.3 \

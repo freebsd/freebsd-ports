@@ -17,6 +17,7 @@ COMMENT=	OpenDivX decoding engine from Project Mayo
 ONLY_FOR_ARCHS=	i386
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
+USE_SIZE=	yes
 INSTALLS_SHLIB=	yes
 PLIST_SUB=	LIB_VERSION="${LIB_VERSION}"
 

@@ -17,6 +17,7 @@ COMMENT=	Checks which servers are either dead or alive in server.met
 
 WRKSRC=	${WRKDIR}/ed2k_slist
 USE_REINPLACE=	yes
+USE_SIZE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|||' ${WRKSRC}/*.[ch]

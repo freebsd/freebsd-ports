@@ -25,6 +25,7 @@ USE_GETOPT_LONG=	yes
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
+USE_SIZE=	yes
 CONFIGURE_ARGS= --cc="${CC}" --prefix="${PREFIX}" \
 		--make="${GMAKE}" --enable-shared \
 		--extra-libs="-lm -L${LOCALBASE}/lib"

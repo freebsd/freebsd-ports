@@ -30,6 +30,7 @@ USE_GNOME=	gnomehack \
 		libglade2 \
 		libgnomeui
 USE_LIBTOOL=	yes
+USE_SIZE=	yes
 CONFIGURE_ARGS=	--program-transform-name=''
 CONFIGURE_ENV=	PKG_CONFIG=${PKG_CONFIG}
 PLIST_SUB=	\
