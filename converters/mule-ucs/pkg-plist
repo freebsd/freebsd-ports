@@ -35,6 +35,7 @@
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/mucs.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/mucs.elc
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/mule-uni.el
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/mule-uni.elc
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/reldata/u-cns-1.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/reldata/u-cns-2.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/reldata/u-cns-3.el
@@ -44,8 +45,10 @@
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/reldata/u-cns-7.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/reldata/uascii.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/reldata/ubig5.el
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/reldata/uethiopic.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/reldata/ugb2312.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/reldata/uipa.el
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/reldata/uiscii.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/reldata/uiso8859-1.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/reldata/uiso8859-2.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/reldata/uiso8859-3.el
@@ -59,7 +62,10 @@
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/reldata/ujisx0208.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/reldata/ujisx0212.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/reldata/uksc5601.el
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/reldata/usisheng.el
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/reldata/usupple.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/reldata/utis620.el
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/reldata/uviscii.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/tae.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/tae.elc
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/tbl-mg.el
@@ -72,22 +78,26 @@
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/un-data.elc
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/un-define.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/un-define.elc
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/un-supple.el
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/un-supple.elc
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/un-tools.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/un-tools.elc
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/un-trbase.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/unicode.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/unicode.elc
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/unidata.el
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/unidata.elc
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/utf.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/utf.elc
 @dirrm %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/big5conv
 @dirrm %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/jisx0213
 @dirrm %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/reldata
 @dirrm %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs
-%%MULEUCSDOCDIR%%/ChangeLog
-%%MULEUCSDOCDIR%%/ChangeLog.jisx0213
-%%MULEUCSDOCDIR%%/MuleUni.txt
-%%MULEUCSDOCDIR%%/README
-%%MULEUCSDOCDIR%%/README.Unicode
-%%MULEUCSDOCDIR%%/README.big5conv
-%%MULEUCSDOCDIR%%/README.jisx0213
-@dirrm %%MULEUCSDOCDIR%%
+%%PORTDOCDIR%%/ChangeLog
+%%PORTDOCDIR%%/ChangeLog.jisx0213
+%%PORTDOCDIR%%/MuleUni.txt
+%%PORTDOCDIR%%/README
+%%PORTDOCDIR%%/README.Unicode
+%%PORTDOCDIR%%/README.big5conv
+%%PORTDOCDIR%%/README.jisx0213
+@dirrm %%PORTDOCDIR%%
