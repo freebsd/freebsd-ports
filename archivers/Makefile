@@ -14,6 +14,7 @@
     SUBDIR += gtar
     SUBDIR += ha
     SUBDIR += hpack.non-usa.only
+    SUBDIR += lbrate
     SUBDIR += lha
     SUBDIR += libarc
     SUBDIR += libcabinet

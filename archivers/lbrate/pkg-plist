@@ -1,0 +1,6 @@
+bin/lbrate
+%%PORTDOCS%%share/doc/lbrate/COPYING
+%%PORTDOCS%%share/doc/lbrate/ChangeLog
+%%PORTDOCS%%share/doc/lbrate/README
+%%PORTDOCS%%share/doc/lbrate/TODO
+%%PORTDOCS%%@dirrm share/doc/lbrate
