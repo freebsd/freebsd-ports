@@ -22,7 +22,7 @@ NOCLEANDEPENDS= yes
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	libgnomeui libbonobo
+USE_GNOME=	libgnomeui libbonobo gnomeprefix gnomehack
 USE_BISON=	yes
 # Clear configure target so we stop getting binaries prefixed with i386-portbld-freebsd46
 CONFIGURE_TARGET=
