@@ -1,3 +1,4 @@
+bin/adv1tov2
 bin/aecho
 bin/getzones
 bin/hqx2bin
@@ -33,7 +34,6 @@ include/atalk/rtmp.h
 include/atalk/server_child.h
 include/atalk/util.h
 include/atalk/zip.h
-@dirrm include/atalk
 lib/libatalk.a
 lib/libatalk_p.a
 libexec/afpd
@@ -62,19 +62,14 @@ libexec/filters/tfwmpap
 libexec/filters/tfwmpaprev
 libexec/filters/tfwpap
 libexec/filters/tfwpaprev
-@dirrm libexec/filters
 share/examples/netatalk/atalkd.conf
 share/examples/netatalk/papd.conf
-@dirrm share/examples/netatalk
+share/nls/netatalk/maccode.437
+share/nls/netatalk/maccode.850
+share/nls/netatalk/maccode.iso8859-1
 share/pagecount.ps
-@comment	Remove man page aliases
-@unexec rm -f %D/man/man1/hqx2bin.1*
-@unexec rm -f %D/man/man1/macbinary.1*
-@unexec rm -f %D/man/man1/single2bin.1*
-@unexec rm -f %D/man/man1/unbin.1*
-@unexec rm -f %D/man/man1/unhex.1*
-@unexec rm -f %D/man/man1/unsingle.1*
-@unexec rm -f %D/man/man1/nbplkup.1*
-@unexec rm -f %D/man/man1/nbprgstr.1*
-@unexec rm -f %D/man/man1/nbpunrgstr.1*
-@unexec rm -f %D/man/man1/papstatus.1*
+@dirrm include/atalk
+@dirrm libexec/filters
+@dirrm share/examples/netatalk
+@dirrm share/nls/netatalk
+@unexec if cmp -s %D/etc/afpd.conf %D/etc/afpd.conf.dist; then rm -f %D/etc/afpd.conf; fi
