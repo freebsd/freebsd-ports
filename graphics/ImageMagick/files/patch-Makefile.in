@@ -1,5 +1,5 @@
---- Makefile.in.orig	Thu Dec  9 00:26:37 2004
-+++ Makefile.in	Thu Dec  9 00:26:53 2004
+--- Makefile.in.orig	Fri Dec 10 01:43:10 2004
++++ Makefile.in	Fri Dec 10 21:19:20 2004
 @@ -1885,7 +1885,7 @@
  	$(UTILITIES_EXTRA_DIST) \
  	$(WAND_EXTRA_DIST)
@@ -9,3 +9,12 @@
  
  # Where architecture-independent configuration files get installed
  # (share/ImageMagick-version)
+@@ -9286,7 +9286,7 @@
+ 
+ @WITH_PERL_DYNAMIC_TRUE@@WITH_PERL_TRUE@install-exec-perl: $(PERLMAKEFILE)
+ @WITH_PERL_DYNAMIC_TRUE@@WITH_PERL_TRUE@	( cd $(PERLMAGICK) && $(MAKE) CC='@CC@' && \
+-@WITH_PERL_DYNAMIC_TRUE@@WITH_PERL_TRUE@	$(MAKE) CC='@CC@' install && \
++@WITH_PERL_DYNAMIC_TRUE@@WITH_PERL_TRUE@	$(MAKE) CC='@CC@' pure_install && \
+ @WITH_PERL_DYNAMIC_TRUE@@WITH_PERL_TRUE@	$(MAKE) clean && rm -f  Makefile.old )
+ 
+ @WITH_PERL_DYNAMIC_TRUE@@WITH_PERL_TRUE@all-perl:
