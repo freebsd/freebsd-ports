@@ -3,7 +3,7 @@
 # Date created:         11 Apr 1997
 # Whom:                 Makoto Matsushita <matusita@jp.freebsd.org>
 #
-# $Id: Makefile,v 1.19 1998/11/20 04:14:27 asami Exp $
+# $Id: Makefile,v 1.20 1999/01/06 05:00:25 simokawa Exp $
 #
 
 DISTNAME=	kon2-0.3
@@ -17,7 +17,7 @@ DISTFILES=	kon2-0.3.tar.gz \
 		k14.bdf 7x14rk.bdf \
 		jiskan16.bdf 8x16rk.bdf
 
-MAINTAINER=	shige@kuis.kyoto-u.ac.jp
+MAINTAINER=	shige@FreeBSD.ORG
 
 ONLY_FOR_ARCHS=	i386
 

@@ -3,7 +3,7 @@
 # Date created:		18 November 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.16 1997/12/25 22:29:38 asami Exp $
+# $Id: Makefile,v 1.17 1998/12/23 01:47:23 steve Exp $
 #
 
 DISTNAME=	kterm-6.2.0
@@ -12,7 +12,7 @@ CATEGORIES=	japanese x11
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
 
-MAINTAINER=	shige@kuis.kyoto-u.ac.jp
+MAINTAINER=	shige@FreeBSD.ORG
 
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm

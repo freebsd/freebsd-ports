@@ -3,10 +3,10 @@
 # Date created:		22 September 1998
 # Whom:			Shigeyuki FUKUSHIMA <shige@kuis.kyoto-u.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/01/02 13:26:51 kuriyama Exp $
 #
 
-MAINTAINER=	shige@kuis.kyoto-u.ac.jp
+MAINTAINER=	shige@FreeBSD.ORG
 
 # This is a slave port.
 PORTCLASS=	slave

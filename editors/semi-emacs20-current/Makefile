@@ -3,14 +3,14 @@
 # Date created:		23 September 1998
 # Whom:			Shigeyuki FUKUSHIMA <shige@kuis.kyoto-u.ac.jp>
 #
-# $Id: Makefile,v 1.2 1999/02/17 12:44:26 kuriyama Exp $
+# $Id: Makefile,v 1.3 1999/02/22 02:48:46 steve Exp $
 #
 
 DISTNAME=	semi-${SEMI_VER}
 CATEGORIES=	editors elisp
 MASTER_SITES=	ftp://ftp.jaist.ac.jp/pub/GNU/elisp/semi/semi-current/
 
-MAINTAINER?=	shige@kuis.kyoto-u.ac.jp
+MAINTAINER?=	shige@FreeBSD.ORG
 
 # distfile version
 FLIM_VER=	1.12.1

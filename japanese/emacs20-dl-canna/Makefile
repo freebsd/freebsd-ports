@@ -3,7 +3,7 @@
 # Date created:		10 October 1998
 # Whom:			shige
 #
-# $Id: Makefile,v 1.1.1.1 1999/01/11 14:19:16 kuriyama Exp $
+# $Id: Makefile,v 1.2 1999/01/15 10:57:06 asami Exp $
 #
 
 DISTNAME=	emacs-canna-1.0
@@ -11,7 +11,7 @@ PKGNAME=	ja-emacs20-dl-canna-1.0
 CATEGORIES=	japanese editors
 MASTER_SITES=	ftp://ftp.jaist.ac.jp/pub/GNU/elisp/emacs-20-dl/
 
-MAINTAINER=	shige@kuis.kyoto-u.ac.jp
+MAINTAINER=	shige@FreeBSD.ORG
 
 LIB_DEPENDS=	canna.1:${PORTSDIR}/japanese/Canna
 BUILD_DEPENDS=	emacs-dl-${EMACS_VER}:${EMACSDL_DIR} \

@@ -3,7 +3,7 @@
 # Date created:		23 January 1999
 # Whom:			shige
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/01/27 14:32:07 kuriyama Exp $
 #
 
 DISTNAME=	dtd-catalogs-1.0
@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	# empty
 DISTFILES=	# empty
 
-MAINTAINER=	shige@kuis.kyoto-u.ac.jp
+MAINTAINER=	shige@FreeBSD.ORG
 
 RUN_DEPENDS=	${ISO8879_CAT}:${PORTSDIR}/textproc/iso8879 \
 		${ISO12083_CAT}:${PORTSDIR}/textproc/iso12083 \
