@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	frost
-PORTVERSION=	1.2.0.6
+PORTVERSION=	1.2.0
+PORTEPOCH=	1
 CATEGORIES=	net java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	jtcfrost
-DISTNAME=	${PORTNAME}-wot-071203-${PORTVERSION}
+DISTNAME=	${PORTNAME}-wot-${VERSION_DATE}
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	File-sharing tool for FreeNet with Usenet like forum support
@@ -19,17 +20,19 @@ USE_JAVA=	1.4+
 USE_ZIP=	yes
 NO_BUILD=	yes
 NO_BUILD_DEPENDS_JAVA=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}
+#WRKSRC=		${WRKDIR}/${PORTNAME}
+NO_WRKSUBDIR=	yes
 PLIST_SUB=	JAR_DIR=${JAR_DIR}
+
+VERSION_DATE=	090603
 
 JAVAVM=		${LOCALBASE}/bin/javavm
 SHARE_DIR=	share/${PORTNAME}
 JAR_DIR=	share/java/jar/${PORTNAME}
 JAR_FILE=	frost.jar
-JAR_FILES=	frost/frost.jar frost/lib/fecImpl.jar \
-		frost/lib/genChkImpl.jar frost/lib/xercesImpl.jar \
-		frost/lib/xml-apis.jar frost/lib/xmlParserAPIs.jar \
-		convert/converter.jar
+JAR_FILES=	frost.jar lib/fecImpl.jar \
+		lib/genChkImpl.jar lib/xercesImpl.jar \
+		lib/xml-apis.jar lib/xmlParserAPIs.jar
 
 DOC_FILES=	doc/Frost.tex doc/authors.txt doc/gpl.txt \
 		help/faq.txt help/history.txt
@@ -41,10 +44,6 @@ post-patch:
 		s|%%JAR_FILE%%|${JAR_FILE}|; \
 		s|%%SHARE_DIR%%|${SHARE_DIR}|" \
 		${FILESDIR}/wrapper.sh > ${WRKDIR}/wrapper.sh
-	@${SED} -e "s|%%PREFIX%%|${PREFIX}|; \
-		s|%%JAVAVM%%|${JAVAVM}|; \
-		s|%%JAR_DIR%%|${JAR_DIR}|;" \
-		${FILESDIR}/wrapper-convert.sh > ${WRKDIR}/wrapper-convert.sh
 
 do-install:
 # docs
@@ -65,9 +64,5 @@ do-install:
 		${PREFIX}/${SHARE_DIR}
 # wrapper
 	@${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh ${PREFIX}/bin/${PORTNAME:L}
-	@${INSTALL_SCRIPT} ${WRKDIR}/wrapper-convert.sh ${PREFIX}/bin/frost-convert
-
-post-install:
-	@${CAT} ${PKGMESSAGE} | ${SED} -e "s,%%PREFIX%%,${PREFIX},g"
 
 .include <bsd.port.mk>
