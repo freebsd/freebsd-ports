@@ -7,7 +7,7 @@
 
 PORTNAME=	drac
 PORTVERSION=	1.12
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cc.umanitoba.ca/src/ \
 		http://atreides.freenix.no/~anders/ \
@@ -55,6 +55,7 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/rpc.dracd ${PREFIX}/sbin/
 	@${INSTALL_DATA} ${WRKSRC}/drac.h ${PREFIX}/include/
 	@${INSTALL_DATA} ${WRKSRC}/libdrac.a ${PREFIX}/lib/
+	@${INSTALL_DATA} ${WRKSRC}/dracd.allow-sample ${PREFIX}/etc/
 .if !defined(NOPORTDOCS)
 	@${INSTALL_MAN} ${WRKSRC}/dracauth.3 ${PREFIX}/man/man3/
 	@${INSTALL_MAN} ${WRKSRC}/rpc.dracd.1m ${PREFIX}/man/man1/rpc.dracd.1
