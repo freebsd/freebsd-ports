@@ -179,6 +179,7 @@
     SUBDIR += libjconv
     SUBDIR += libslang
     SUBDIR += linux-JM
+    SUBDIR += linux-mozillafirebird-gtk1
     SUBDIR += linux_locale
     SUBDIR += lipsf
     SUBDIR += lookup
