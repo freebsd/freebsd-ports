@@ -1,5 +1,5 @@
---- doc/example_mararc.orig	Mon Nov 12 08:48:06 2001
-+++ doc/example_mararc	Tue Nov 27 23:29:36 2001
+--- doc/en/examples/example_mararc.orig	Wed Jan 16 14:53:53 2002
++++ doc/en/examples/example_mararc	Mon Jan 28 20:16:41 2002
 @@ -29,7 +29,9 @@
  # The directory with all of the zone files
  chroot_dir = "/etc/maradns"
