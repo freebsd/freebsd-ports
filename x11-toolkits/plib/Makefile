@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	plib
-PORTVERSION=	1.8.3
-PORTREVISION=	2
+PORTVERSION=	1.8.4
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://plib.sourceforge.net/dist/
 
