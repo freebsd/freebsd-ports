@@ -7,6 +7,7 @@
 
 PORTNAME=	phoenix
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	www linux
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	phoenix/releases/${PORTVERSION}
@@ -61,11 +62,19 @@ do-install:
 	${CHMOD} 755 ${PREFIX}/lib/linux-phoenix
 	cd ${WRKSRC} && ${FIND} * | \
 		cpio -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/lib/linux-phoenix
-	${LN} -s ${PREFIX}/lib/linux-phoenix/phoenix \
+	${LN} -sf ${PREFIX}/lib/linux-phoenix/phoenix \
 		${PREFIX}/bin/linux-phoenix
 	${INSTALL_SCRIPT} ${WRKDIR}/linkfarm ${PREFIX}/lib/linux-phoenix
 
+NEW_LIBSTDCXX=	${LINUXBASE}/usr/lib/libstdc++-libc6.2-2.so.3
+OLD_LIBSTDCXX=	libstdc++-libc6.1-1.so.2
+
 post-install:
+	if [ ! -f ${NEW_LIBSTDCXX} ]; then \
+		${LN} -s ${OLD_LIBSTDCXX} ${NEW_LIBSTDCXX}; \
+	fi
+	${ECHO_CMD} "@exec if [ ! -f ${NEW_LIBSTDCXX} ]; then ${LN} -s ${OLD_LIBSTDCXX} ${NEW_LIBSTDCXX}; fi" >> ${TMPPLIST}
+	${ECHO_CMD} "@unexec if [ -L ${NEW_LIBSTDCXX} ]; then ${RM} -f ${NEW_LIBSTDCXX}; fi" >> ${TMPPLIST}
 	@${ECHO_CMD} \*\* After adding plugins to \(Linux\) Beonex,
 	@${ECHO_CMD} \*\* Mozilla or Netscape, run\
 		> ${PKGMESSAGE}
