@@ -27,6 +27,7 @@ DISTNAME=	${PKGNAME}
 DISTFILES=	${PCL3_DRV} ${DECRYPT_PDF} ${GS_SOURCES} \
 		${VFLIB_GS} ${KFFTYPE} ${KFFTYPE_PATCH} \
 		${HFFTYPE} ${GS_CID_PATCH}
+DIST_SUBDIR=	ghostscript
 EXTRACT_ONLY=	${GS_SOURCES} ${PCL3_DRV}
 
 MAINTAINER=	cjh@FreeBSD.org
@@ -76,20 +77,20 @@ post-extract:
 	@${PATCH} -d ${WRKSRC} --forward --quiet -E < ${WRKSRC}/zmedia2.c-5.10.diff
 
 pre-patch:
-	cd ${WRKSRC} && tar -xzf ${DISTDIR}/${VFLIB_GS} && \
+	cd ${WRKSRC} && tar -xzf ${_DISTDIR}/${VFLIB_GS} && \
 	${PATCH} -s -p1 < gs5.10-vflib-1.1/gs5.10-vflib-1.1.diff
-	cd ${WRKSRC} && tar -xzf ${DISTDIR}/${KFFTYPE} && \
+	cd ${WRKSRC} && tar -xzf ${_DISTDIR}/${KFFTYPE} && \
 	cd ${WRKSRC}/kfftype &&  \
 	for file in ${KFFTYPE_PATCH}; do \
-		${PATCH} -s -p0 < ${DISTDIR}/$$file; \
+		${PATCH} -s -p0 < ${_DISTDIR}/$$file; \
 	done && \
 	${CP} -r ${WRKSRC}/kfftype/* ${WRKSRC}/
-	cd ${WRKSRC} && tar -xzf ${DISTDIR}/${HFFTYPE} && \
+	cd ${WRKSRC} && tar -xzf ${_DISTDIR}/${HFFTYPE} && \
 	${CP} -r ${WRKSRC}/gs5-hfftype-0.2/* ${WRKSRC}/
 	cd ${WRKSRC} && ${PATCH} -s -p1 < \
 	${WRKSRC}/gs5-hfftype-0.2/gs5.10-hfftype.diff
 	cd ${WRKSRC} && ${PATCH} ${PATCH_DIST_ARGS} < \
-	${DISTDIR}/${GS_CID_PATCH}
+	${_DISTDIR}/${GS_CID_PATCH}
 
 do-configure:
 	@(cd ${WRKSRC}; ${SH} tar_cat )
@@ -104,7 +105,7 @@ pre-install:
 
 post-install:
 	strip ${PREFIX}/bin/gs
-	${INSTALL_DATA} ${DISTDIR}/${DECRYPT_PDF} \
+	${INSTALL_DATA} ${_DISTDIR}/${DECRYPT_PDF} \
 		${PREFIX}/share/ghostscript/5.10ft
 	$(MKDIR) ${PREFIX}/libexec/lpr
 	${INSTALL_SCRIPT} $(WRKSRC)/pj-gs.sh ${PREFIX}/libexec/lpr
