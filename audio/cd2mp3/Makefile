@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		cd2mp3
-PORTVERSION=		0.8
+PORTVERSION=		0.81
 PORTEPOCH=		1
 CATEGORIES=		audio
 MASTER_SITES=		http://download.cd2mp3.org.uk/${PORTVERSION}/
