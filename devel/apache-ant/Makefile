@@ -7,7 +7,7 @@
 
 PORTNAME=	jakarta-ant
 PORTVERSION=	1.5.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel java
 MASTER_SITES=	http://jakarta.apache.org/builds/${PORTNAME}/release/v${ANT_VERSION}/bin/ \
 		http://www.metaverse.nl/~ernst/ \
@@ -58,9 +58,10 @@ do-install:
 	@${MKDIR} ${PORTDESTDIR}/lib
 	@${ECHO_CMD} " [ DONE ]"
 
-	@${ECHO_CMD} -n ">> Installing script..."
+	@${ECHO_CMD} -n ">> Installing scripts..."
 	@cd ${INSTALL_WRKSRC}; \
-		${INSTALL_SCRIPT} ${WRKSRC}/bin/ant ${PREFIX}/bin;
+		${INSTALL_SCRIPT} ${WRKSRC}/bin/ant ${PREFIX}/bin; \
+		${INSTALL_SCRIPT} ${WRKSRC}/bin/antRun ${PREFIX}/bin;
 	@${ECHO_CMD} " [ DONE ]"
 
 	@${ECHO_CMD} -n ">> Installing readme files..."
