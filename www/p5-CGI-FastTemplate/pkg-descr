@@ -1,0 +1,4 @@
+CGI::FastTemplate manages templates and parses templates replacing
+variable names with values.  It was designed for mid to large scale web
+applications (CGI, mod_perl) where there are great benefits to separating
+the logic of an application from the specific implementation details.
