@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnomemeeting
-PORTVERSION=	0.98.4
-PORTREVISION=	1
+PORTVERSION=	0.98.5
 CATEGORIES=	net gnome
 MASTER_SITES=	http://www.gnomemeeting.org/downloads/0.98.0/sources/ \
 		ftp://ftp.gnome.org/pub/GNOME/sources/gnomemeeting/0.98/
@@ -22,6 +21,7 @@ BUILD_DEPENDS=  ${NONEXISTENT}:${PORTSDIR}/net/openh323:build
 # it all over again which can take several hours.
 NOCLEANDEPENDS= yes
 
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	libgnomeui libbonobo gnomeprefix gnomehack
