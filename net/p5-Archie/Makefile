@@ -3,7 +3,7 @@
 # Date created:				October 19th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.5 1997/05/24 13:17:12 jfitz Exp $
+#   $Id: Makefile,v 1.6 1997/06/24 18:43:04 jfitz Exp $
 #
 
 DISTNAME=	perl_archie.1.5
@@ -21,6 +21,7 @@ NO_BUILD=	YES
 
 do-install:
 		@ ${CP} ${WRKDIR}/Archie.pm ${WRKDIR}/Archie-1.5.pm
+		@ ${MKDIR} ${PREFIX}/lib/perl5/site_perl
 		@ ${INSTALL_DATA} ${WRKDIR}/Archie-1.5.pm ${PREFIX}/lib/perl5/site_perl/
 		@ ln -sf ${PREFIX}/lib/perl5/site_perl/Archie-1.5.pm ${PREFIX}/lib/perl5/site_perl/Archie.pm
 		@ ${INSTALL_DATA} ${WRKDIR}/archie_gateway ${PREFIX}/lib/perl5/site_perl/
