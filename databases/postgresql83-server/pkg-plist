@@ -117,7 +117,7 @@ postgres95/man/manl/drop.l.gz
 postgres95/man/manl/destroydb.l.gz
 postgres95/man/manl/copy.l.gz
 postgres95/man/manl/delete.l.gz
-postgres95/man/manl/createdb.l.gz
+postgres95/man/manl/create_database.l.gz
 postgres95/man/manl/create_view.l.gz
 postgres95/man/manl/create_version.l.gz
 postgres95/man/manl/create_type.l.gz
