@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xboard
-PORTVERSION=	4.2.2
+PORTVERSION=	4.2.3
 CATEGORIES=	games
 MASTER_SITES=	http://www.tim-mann.org/xboard/ \
 		${MASTER_SITE_GNU}
