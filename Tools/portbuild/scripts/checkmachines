@@ -20,8 +20,6 @@ buildroot=/var/portbuild
 
 arches=$*
 
-sleep 60
-
 while true; do
   for i in ${arches}; do
     mlist=${buildroot}/${i}/mlist
@@ -33,7 +31,7 @@ while true; do
     while [ $# -gt 1 ]; do
       m=$1
       l=$2
-      if (nc -w 5 $m infoseek > ${buildroot}/${i}/loads/$m < /dev/null); then
+      if (/usr/local/bin/nc -w 5 $m infoseek > ${buildroot}/${i}/loads/$m < /dev/null); then
         num=$(awk '{print $1}' ${buildroot}/${i}/loads/$m)
         if [ "x$num" = "x" ]; then
   #	logger "checkmachines: file ${buildroot}/${i}/loads/$m is empty"
