@@ -11,11 +11,11 @@ friend, which is encrypted by strong cryptograph.
 
 Info path and elisp load path would be set as follows :
 
-    Info path - /usr/local/info
-    load path - /usr/local/lib/mule/site-lisp/mew
+    Info path - ${PREFIX}/share/mule/19.28/site-lisp/mew   
+    load path - ${PREFIX}/share/mule/19.28/info
 
-You must be installed individual language Mule-depend Mew(chinese/mew, 
-japanese/mew, korean/mew, etc) after mew-mule installed.
+Before build this port, You must be prepared Mew-common-port
+(mail/mew-common). 
 
 - Kiriyama Kazuhiko
 kiri@kiri.toba-cmt.ac.jp

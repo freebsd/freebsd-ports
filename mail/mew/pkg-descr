@@ -11,24 +11,11 @@ friend, which is encrypted by strong cryptograph.
 
 Info path and elisp load path would be set as follows :
 
-    Info path - /usr/local/info
-    load path - /usr/local/share/emacs/site-lisp/mew
+    Info path - ${PREFIX}/share/emacs/19.34/site-lisp/mew   
+    load path - ${PREFIX}/share/emacs/19.34/info
 
-You must be setting your own environment:
-
-    1st -   Set up "~/.im/Config" correctly (execute imsetup)
-    2nd -   Set up "~/.emacs" correctly
- 
-(See info by C-h i and  selecting   "Mew", "Install" and "User" ).
-
-Sample files for those above are in /usr/local/share/examples/mew.
-
-Most easy going way to install user environment is to execute
-/usr/local/share/examples/mew/user-install on your home directory. You can
-easily set up your mail environment interactively. 
-
-If you have installed correctly, type "M-x mew", then you can see Mew
-greeting messages and little while later ready to use. Enjoy!
+Before build this port, You must be prepared Mew-common-port
+(mail/mew-common). 
 
 - Kiriyama Kazuhiko
 kiri@kiri.toba-cmt.ac.jp
