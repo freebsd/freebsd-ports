@@ -15,7 +15,6 @@ bin/perror
 bin/replace
 bin/resolve_stack_dump
 bin/resolveip
-etc/rc.d/mysql-server.sh
 lib/mysql/libdbug.a
 lib/mysql/libheap.a
 lib/mysql/libmerge.a
@@ -26,58 +25,6 @@ lib/mysql/libmysys.a
 lib/mysql/libnisam.a
 lib/mysql/libvio.a
 libexec/mysqld
-%%PORTDOCS%%%%DOCSDIR%%/Flags/argentina.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/armenia.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/australia.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/austria.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/belgium.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/brazil.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/bulgaria.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/canada.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/chile.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/china.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/costa-rica.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/croatia.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/czech-republic.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/denmark.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/estonia.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/finland.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/france.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/germany.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/great-britain.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/greece.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/hungary.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/iceland.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/indonesia.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/ireland.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/israel.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/italy.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/japan.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/latvia.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/mexico.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/netherlands.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/new-zealand.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/norway.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/philippines.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/poland.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/portugal.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/romania.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/russia.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/singapore.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/slovenia.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/south-africa.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/south-korea.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/spain.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/sweden.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/switzerland.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/taiwan.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/turkey.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/ukraine.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/usa.gif
-%%PORTDOCS%%%%DOCSDIR%%/Flags/yugoslavia.gif
-%%PORTDOCS%%%%DOCSDIR%%/manual.html
-%%PORTDOCS%%%%DOCSDIR%%/manual.txt
-%%PORTDOCS%%%%DOCSDIR%%/manual_toc.html
 %%DATADIR%%/Description.plist
 %%DATADIR%%/Info.plist
 %%DATADIR%%/MySQL-shared-compat.spec
@@ -140,7 +87,7 @@ libexec/mysqld
 %%DATADIR%%/my-large.cnf
 %%DATADIR%%/my-medium.cnf
 %%DATADIR%%/my-small.cnf
-%%DATADIR%%/mysql-%%MYSQL_VERSION%%.spec
+%%DATADIR%%/mysql-%%VER%%.spec
 %%DATADIR%%/mysql-log-rotate
 %%DATADIR%%/mysql.server
 %%DATADIR%%/norwegian-ny/errmsg.sys
@@ -164,8 +111,6 @@ libexec/mysqld
 %%DATADIR%%/ukrainian/errmsg.sys
 %%DATADIR%%/ukrainian/errmsg.txt
 @unexec rmdir %D/lib/mysql 2> /dev/null || true
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Flags
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/charsets
 @dirrm %%DATADIR%%/czech
 @dirrm %%DATADIR%%/danish
@@ -190,5 +135,4 @@ libexec/mysqld
 @dirrm %%DATADIR%%/swedish
 @dirrm %%DATADIR%%/ukrainian
 @dirrm %%DATADIR%%
-@exec [ -d %%DB_DIR%% ] || %D/bin/mysql_install_db --ldata=%%DB_DIR%%
 @unexec /usr/bin/killall mysqld > /dev/null 2>&1 || true
