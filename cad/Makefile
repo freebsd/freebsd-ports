@@ -42,6 +42,7 @@
     SUBDIR += spice
     SUBDIR += tkgate
     SUBDIR += transcalc
+    SUBDIR += varkon
     SUBDIR += vipec
     SUBDIR += xcircuit
 
