@@ -76,7 +76,7 @@ do-install:
 	fi
 
 	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1
-	${INSTALL} -c -m 644 -o ${CLIENTUSER} -g ${CLIENTGROUP} ${WRKDIR}/dnetc.ini ${BINDIR}/dnetc.ini.default
+	${INSTALL} -c -m 644 -o ${CLIENTUSER} -g ${CLIENTGROUP} ${WRKSRC}/dnetc.ini ${BINDIR}/dnetc.ini.default
 .if !exists(${BINDIR}/dnetc.ini)
 	@echo ""
 	@echo ""
@@ -92,7 +92,7 @@ do-install:
 	@echo ""
 	@echo ""
 	@echo ""
-	${INSTALL} -c -m 644 -o ${CLIENTUSER} -g ${CLIENTGROUP} ${WRKDIR}/dnetc.ini ${BINDIR}
+	${INSTALL} -c -m 644 -o ${CLIENTUSER} -g ${CLIENTGROUP} ${WRKSRC}/dnetc.ini ${BINDIR}
 .endif
 
 .include <bsd.port.post.mk>
