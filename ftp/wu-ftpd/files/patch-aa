@@ -1,5 +1,5 @@
---- src/ftpd.c.orig	Thu Oct 14 23:41:47 1999
-+++ src/ftpd.c	Wed Jun 14 14:48:27 2000
+--- src/ftpd.c.old	Sat Jun 24 15:03:05 2000
++++ src/ftpd.c	Sat Jun 24 15:04:01 2000
 @@ -1602,9 +1602,9 @@
      /* Display s/key challenge where appropriate. */
  
@@ -12,6 +12,54 @@
  		pwok ? "allowed" : "required", name);
      return (buf);
  }
+@@ -2008,9 +2008,9 @@
+ 	    s = strsep(&cp, "\n");
+ 	    if (cp == NULL || *cp == '\0')
+ 		break;
+-	    lreply(331, s);
++	    lreply(331, "%s", s);
+ 	}
+-	reply(331, s);
++	reply(331, "%s", s);
+     }
+     else {
+ #endif
+@@ -2491,7 +2491,7 @@
+ #ifdef BSD_AUTH
+ 	if (ext_auth) {
+ 	    if ((salt = check_auth(the_user, passwd))) {
+-		reply(530, salt);
++		reply(530, "%s", salt);
+ #ifdef LOG_FAILED		/* 27-Apr-93      EHK/BM          */
+ 		syslog(LOG_INFO, "failed login from %s",
+ 		       remoteident);
+@@ -3156,7 +3156,7 @@
+ 	reply(230, "User %s logged in.%s", pw->pw_name, guest ?
+ 	      "  Access restrictions apply." : "");
+ 	sprintf(proctitle, "%s: %s", remotehost, pw->pw_name);
+-	setproctitle(proctitle);
++	setproctitle("%s", proctitle);
+ 	if (logging)
+ 	    syslog(LOG_INFO, "FTP LOGIN FROM %s, %s", remoteident, pw->pw_name);
+ /* H* mod: if non-anonymous user, copy it to "authuser" so everyone can
+@@ -5888,7 +5888,7 @@
+ 
+     remotehost[sizeof(remotehost) - 1] = '\0';
+     sprintf(proctitle, "%s: connected", remotehost);
+-    setproctitle(proctitle);
++    setproctitle("%s", proctitle);
+ 
+     wu_authenticate();
+ /* Create a composite source identification string, to improve the logging
+@@ -6298,7 +6298,7 @@
+ 	dirlist = ftpglob(whichfiles);
+ 	sdirlist = dirlist;	/* save to free later */
+ 	if (globerr != NULL) {
+-	    reply(550, globerr);
++	    reply(550, "%s", globerr);
+ 	    goto globfree;
+ 	}
+ 	else if (dirlist == NULL) {
 @@ -6346,7 +6346,6 @@
  	    }
  	    goto globfree;
