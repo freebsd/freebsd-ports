@@ -1,18 +1,18 @@
---- src/Makefile.in.orig	Sat Feb 14 21:06:20 2004
-+++ src/Makefile.in	Sun Apr 25 10:12:19 2004
-@@ -175,9 +175,9 @@
+--- src/Makefile.in.orig	Sat Jan  1 23:53:52 2005
++++ src/Makefile.in	Sun Jan  2 16:46:20 2005
+@@ -180,9 +180,9 @@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@
  
 -AM_CFLAGS = @X_CFLAGS@ -DVERSION=\"@PACKAGE_VERSION@\"  $(am__append_1)
 +AM_CFLAGS = @X_CFLAGS@ -DVERSION=\"@PACKAGE_VERSION@\" @PTHREAD_CFLAGS@ $(am__append_1)
  
--AM_LDFLAGS = @X_LIBS@ -lpthread $(am__append_2) $(am__append_3)
-+AM_LDFLAGS = @X_LIBS@ @PTHREAD_LIBS@ $(am__append_2) $(am__append_3)
+-AM_LDFLAGS = @X_LIBS@  $(am__append_2) $(am__append_3)
++AM_LDFLAGS = @X_LIBS@ @PTHREAD_LIBS@ $(am__append_2) $(am__append_3) -lm
  
  
  # specific xvidcap / gvidcap
-@@ -1801,9 +1801,9 @@
+@@ -1805,9 +1805,9 @@
  
  
  install-data-hook:

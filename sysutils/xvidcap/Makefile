@@ -6,24 +6,24 @@
 #
 
 PORTNAME=		xvidcap
-PORTVERSION=		1.1.3
-PORTREVISION=		2
+PORTVERSION=		1.1.3.7
 CATEGORIES=		sysutils multimedia
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=		${PORTNAME}-${PORTVERSION:C/.7/-p7/}
 
 MAINTAINER=		thierry@FreeBSD.org
 COMMENT=		Capture your X display to individual frames or MPEG video
 
-LIB_DEPENDS=		avcodec.1:${PORTSDIR}/multimedia/ffmpeg
+#LIB_DEPENDS=		avcodec.1:${PORTSDIR}/multimedia/ffmpeg	# To be reactivated after 1.1.4
+#LIB_DEPENDS=		mp3lame.0:${PORTSDIR}/audio/lame
 RUN_DEPENDS=		animate:${PORTSDIR}/graphics/ImageMagick
-
-BROKEN=			"Does not compile with ffmpeg-0.4.9.p1"
 
 GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include"	\
-			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+#CONFIGURE_ENV=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include"	\
+#			LDFLAGS=-L${LOCALBASE}/lib
+CONFIGURE_ARGS=		--with-forced-embedded-ffmpeg	# To be removed after 1.1.4pre2?
 USE_GETOPT_LONG=	yes
 USE_REINPLACE=		yes
 
