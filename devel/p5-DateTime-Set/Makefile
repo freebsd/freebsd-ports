@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DateTime-Set
-PORTVERSION=	0.12.02
+PORTVERSION=	0.12.03
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DateTime
@@ -23,6 +23,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN3=		DateTime::Set.3 DateTime::Span.3 \
-		DateTime::SpanSet.3
+		DateTime::SpanSet.3 Set::Infinite::_recurrence.3
 
 .include <bsd.port.mk>
