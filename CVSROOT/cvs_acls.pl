@@ -212,7 +212,7 @@ sub expand_users {
 	foreach my $m (@members) {
 		if ($m =~ s/^://) {
 			if (!defined($GROUPS{$m})) {
-				warn "Group '$m' not defined before use in " . 
+				warn "Group '$m' not defined before use in " .
 				    "$cfg::AVAIL_FILE.\n";
 				next;
 			}

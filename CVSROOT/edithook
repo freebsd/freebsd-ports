@@ -228,7 +228,7 @@ while ($doedit) {
 	    s/^$tmp//;
 	}
     }
-    
+
     $new = join("\n",@loglines);
     if ($orig ne $new) {
 	@loglines = ( @statlines, @loglines );

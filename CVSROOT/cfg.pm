@@ -46,7 +46,7 @@ $FILE_PREFIX = "#cvs.files.$PID";
 
 # The file used to store the name of the last directory examined
 # when processing a multi-directory commit.
-$LAST_FILE = "$TMPDIR/$FILE_PREFIX.lastdir";                                         
+$LAST_FILE = "$TMPDIR/$FILE_PREFIX.lastdir";
 # System tools.
 $PROG_CVS =	'/usr/bin/cvs';		# cvs(1)
 $PROG_MV =	'/bin/mv';		# mv(1)
@@ -150,7 +150,7 @@ $NO_DOS_LINEBREAKS = 0;
 ####################
 
 # The command used to mail the log messages.
-# Usually something like '/usr/sbin/sendmail'.  
+# Usually something like '/usr/sbin/sendmail'.
 $MAILCMD = "/usr/sbin/sendmail";
 
 # Email addresses of recipients of commit mail.
@@ -266,7 +266,7 @@ sub add_cvsweb_entry {
 		}
 		push @output, "$baseurl$extra";
 	}
-	    
+
 	return @output;
 };
 

@@ -395,7 +395,7 @@ sub get_log_name {
 	}
 
 	return 'other';
-}    
+}
 
 
 sub do_changes_file {
@@ -531,7 +531,7 @@ sub format_summaries {
 			push @files, $f;
 		}
 		close FILE;
-	}    
+	}
 
 	# Format the output, extra spaces after "Changes"
 	# to match historic formatting.
@@ -693,7 +693,7 @@ if ($input_params =~ /Imported sources/) {
 	&mail_notification(@text);
 	&cleanup_tmpfiles();
 	exit 0;
-}    
+}
 
 #
 # Iterate over the body of the message collecting information.
