@@ -19,10 +19,15 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libcnews.a:${PORTSDIR}/news/cnews \
 WRKSRC=		${WRKDIR}/c-nocem
 CNEWSSRC?=	${.CURDIR}/../cnews/work
 NEWSBIN?=	${PREFIX}/libexec/cnews
-USE_PERL5=	yes	# build with perl4 fine too.
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-cnews=${WRKDIRPREFIX}${CNEWSSRC}
 PLIST_SUB+=	NEWSBIN=${NEWSBIN:S=${PREFIX}/==}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 500000
+USE_PERL5=	yes
+.endif
+
+.include <bsd.port.post.mk>
