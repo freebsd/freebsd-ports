@@ -1,0 +1,84 @@
+--- workloads/Makefile.in.orig	Sun Jul 29 06:45:59 2001
++++ workloads/Makefile.in	Sat Aug  3 13:56:45 2002
+@@ -45,55 +45,55 @@
+ default: all
+ 
+ datacomm-1.pg_install: install_dirs datacomm-1.pg
+-	$(INSTALL_DTA) datacomm-1.pg ${prefix}/workloads
++	$(INSTALL_DTA) datacomm-1.pg ${datadir}/polygraph/workloads
+ 
+ downtime-2.pg_install: install_dirs downtime-2.pg
+-	$(INSTALL_DTA) downtime-2.pg ${prefix}/workloads
++	$(INSTALL_DTA) downtime-2.pg ${datadir}/polygraph/workloads
+ 
+ nolb-l4-4.pg_install: install_dirs nolb-l4-4.pg
+-	$(INSTALL_DTA) nolb-l4-4.pg ${prefix}/workloads
++	$(INSTALL_DTA) nolb-l4-4.pg ${datadir}/polygraph/workloads
+ 
+ polyfill-2.pg_install: install_dirs polyfill-2.pg
+-	$(INSTALL_DTA) polyfill-2.pg ${prefix}/workloads
++	$(INSTALL_DTA) polyfill-2.pg ${datadir}/polygraph/workloads
+ 
+ polymix-1.pg_install: install_dirs polymix-1.pg
+-	$(INSTALL_DTA) polymix-1.pg ${prefix}/workloads
++	$(INSTALL_DTA) polymix-1.pg ${datadir}/polygraph/workloads
+ 
+ polymix-2.pg_install: install_dirs polymix-2.pg
+-	$(INSTALL_DTA) polymix-2.pg ${prefix}/workloads
++	$(INSTALL_DTA) polymix-2.pg ${datadir}/polygraph/workloads
+ 
+ polymix-3.pg_install: install_dirs polymix-3.pg
+-	$(INSTALL_DTA) polymix-3.pg ${prefix}/workloads
++	$(INSTALL_DTA) polymix-3.pg ${datadir}/polygraph/workloads
+ 
+ polymix-4.pg_install: install_dirs polymix-4.pg
+-	$(INSTALL_DTA) polymix-4.pg ${prefix}/workloads
++	$(INSTALL_DTA) polymix-4.pg ${datadir}/polygraph/workloads
+ 
+ pxylb-4.pg_install: install_dirs pxylb-4.pg
+-	$(INSTALL_DTA) pxylb-4.pg ${prefix}/workloads
++	$(INSTALL_DTA) pxylb-4.pg ${datadir}/polygraph/workloads
+ 
+ simple.pg_install: install_dirs simple.pg
+-	$(INSTALL_DTA) simple.pg ${prefix}/workloads
++	$(INSTALL_DTA) simple.pg ${datadir}/polygraph/workloads
+ 
+ srvlb-l4-4.pg_install: install_dirs srvlb-l4-4.pg
+-	$(INSTALL_DTA) srvlb-l4-4.pg ${prefix}/workloads
++	$(INSTALL_DTA) srvlb-l4-4.pg ${datadir}/polygraph/workloads
+ 
+ srvlb-l7-4.pg_install: install_dirs srvlb-l7-4.pg
+-	$(INSTALL_DTA) srvlb-l7-4.pg ${prefix}/workloads
++	$(INSTALL_DTA) srvlb-l7-4.pg ${datadir}/polygraph/workloads
+ 
+ test_csm.pg_install: install_dirs test_csm.pg
+-	$(INSTALL_DTA) test_csm.pg ${prefix}/workloads
++	$(INSTALL_DTA) test_csm.pg ${datadir}/polygraph/workloads
+ 
+ test_polypxy.pg_install: install_dirs test_polypxy.pg
+-	$(INSTALL_DTA) test_polypxy.pg ${prefix}/workloads
++	$(INSTALL_DTA) test_polypxy.pg ${datadir}/polygraph/workloads
+ 
+ webaxe-1.pg_install: install_dirs webaxe-1.pg
+-	$(INSTALL_DTA) webaxe-1.pg ${prefix}/workloads
++	$(INSTALL_DTA) webaxe-1.pg ${datadir}/polygraph/workloads
+ 
+ webaxe-3.pg_install: install_dirs webaxe-3.pg
+-	$(INSTALL_DTA) webaxe-3.pg ${prefix}/workloads
++	$(INSTALL_DTA) webaxe-3.pg ${datadir}/polygraph/workloads
+ 
+ webaxe-4.pg_install: install_dirs webaxe-4.pg
+-	$(INSTALL_DTA) webaxe-4.pg ${prefix}/workloads
++	$(INSTALL_DTA) webaxe-4.pg ${datadir}/polygraph/workloads
+ 
+ all: all_subdirs datacomm-1.pg downtime-2.pg nolb-l4-4.pg polyfill-2.pg polymix-1.pg polymix-2.pg polymix-3.pg polymix-4.pg pxylb-4.pg simple.pg srvlb-l4-4.pg srvlb-l7-4.pg test_csm.pg test_polypxy.pg webaxe-1.pg webaxe-3.pg webaxe-4.pg
+ 
+@@ -122,7 +122,7 @@
+ 
+ install: install_subdirs datacomm-1.pg downtime-2.pg nolb-l4-4.pg polyfill-2.pg polymix-1.pg polymix-2.pg polymix-3.pg polymix-4.pg pxylb-4.pg simple.pg srvlb-l4-4.pg srvlb-l7-4.pg test_csm.pg test_polypxy.pg webaxe-1.pg webaxe-3.pg webaxe-4.pg
+ install_dirs: 
+-	@for d in ${prefix}/workloads/; do \
++	@for d in ${datadir}/polygraph/workloads ; do \
+ 		if test ! -d $$d; then echo mkdir -p $$d; mkdir -p $$d; fi; \
+ 	done
+ 

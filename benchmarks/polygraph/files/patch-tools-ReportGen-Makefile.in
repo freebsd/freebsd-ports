@@ -1,0 +1,22 @@
+--- tools/ReportGen/Makefile.in.orig	Tue Jun 12 02:04:12 2001
++++ tools/ReportGen/Makefile.in	Sat Aug  3 13:55:53 2002
+@@ -15,7 +15,7 @@
+ exec_prefix	= @exec_prefix@
+ bindir		= @bindir@
+ 
+-rgen_dir	= @prefix@/ReportGen
++rgen_dir	= @prefix@/share/polygraph/ReportGen
+ 
+ INSTALL		= @INSTALL@
+ INSTALL_PROGRAM	= @INSTALL_PROGRAM@
+@@ -42,8 +42,8 @@
+ 	fi
+ 
+ install_mkdirs: 
+-	@for d in $(prefix) $(rgen_dir); do \
+-		if test ! -d $$d; then echo mkdir $$d; mkdir $$d; fi; \
++	@for d in $(rgen_dir); do \
++		if test ! -d $$d; then echo mkdir -p $$d; mkdir -p $$d; fi; \
+ 	done
+ 
+ clean: 
