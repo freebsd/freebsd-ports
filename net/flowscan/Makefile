@@ -15,7 +15,7 @@ MAINTAINER=	andreas@freebsd.org
 
 BUILD_DEPENDS=	ksh:${PORTSDIR}/shells/pdksh \
 		rrdtool:${PORTSDIR}/net/rrdtool \
-		cflowd:${PORTSDIR}/net/cflowd \
+		${LOCALBASE}/sbin/cflowd:${PORTSDIR}/net/cflowd \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Boulder/Stream.pm:${PORTSDIR}/converters/p5-Boulder \
 		${LOCALBASE}/lib/perl5/site_perl/${{PERL_VER}/ConfigReader/DirectiveStyle.pm:${PORTSDIR}/devel/p5-ConfigReader \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/HTML/Table.pm:${PORTSDIR}/www/p5-HTML-Table \
