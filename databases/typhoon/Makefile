@@ -3,13 +3,13 @@
 # Date created:		Wed Dec 11 15:16:19 CST 1996
 # Whom:			erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.1.1.1 1996/12/12 02:41:11 erich Exp $
+# $Id: Makefile,v 1.2 1996/12/12 05:18:10 asami Exp $
 #
 
 DISTNAME=	typhoon-1.10.3
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	devel/db
+MASTER_SITE_SUBDIR=	libs/db
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	erich@FreeBSD.org
