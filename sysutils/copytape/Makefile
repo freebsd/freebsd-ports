@@ -14,9 +14,9 @@ DISTNAME=		copytape
 EXTRACT_SUFX=		.Z
 
 MAINTAINER=		ports@FreeBSD.org
-COMMENT=	A program that is used to duplicate magtapes
+COMMENT=		A program that is used to duplicate magtapes
 
-BUILD_DEPENDS=		gunshar:${PORTSDIR}/archivers/sharutils
+EXTRACT_DEPENDS=	gunshar:${PORTSDIR}/archivers/sharutils
 
 NO_WRKSUBDIR=		yes
 
