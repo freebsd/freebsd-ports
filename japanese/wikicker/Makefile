@@ -43,7 +43,7 @@ BUILD_DEPENDS+=		${SITE_PERL}/Locale/Maketext.pm:${PORTSDIR}/devel/p5-Locale-Mak
 RUN_DEPENDS+=		${SITE_PERL}/${PERL_ARCH}/IPC/ShareLite.pm:${PORTSDIR}/devel/p5-IPC-ShareLite
 .endif
 .if !defined(WITHOUT_WIKICKER_MEMCACHED)
-RUN_DEPENDS+=		memcached:${PORTSDIR}/net/memcached
+RUN_DEPENDS+=		memcached:${PORTSDIR}/databases/memcached
 .endif
 
 PERL_CONFIGURE=		yes
