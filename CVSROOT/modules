@@ -2554,6 +2554,7 @@ he2		ports/hebrew/he2
 head		src/usr.bin/head
 healthd		ports/sysutils/healthd
 heimdal		ports/security/heimdal
+helium		ports/lang/helium
 hello		ports/misc/hello
 help2man	ports/misc/help2man
 hercules	ports/emulators/hercules
