@@ -1,0 +1,365 @@
+diff -urd --exclude=CVS ../cvs/qemu/Makefile qemu-0.5.5/Makefile
+--- ../cvs/qemu/Makefile	Mon May 17 21:06:42 2004
++++ qemu-0.5.5/Makefile	Sun May 30 05:26:19 2004
+@@ -70,7 +70,7 @@
+ 
+ # documentation
+ %.html: %.texi
+-	texi2html -monolithic -number $<
++	-texi2html -monolithic -number $<
+ 
+ qemu.1: qemu-doc.texi
+ 	./texi2pod.pl $< qemu.pod
+diff -urd --exclude=CVS ../cvs/qemu/block.c qemu-0.5.5/block.c
+--- ../cvs/qemu/block.c	Sat May  8 16:27:20 2004
++++ qemu-0.5.5/block.c	Sun May 30 16:36:53 2004
+@@ -27,6 +27,13 @@
+ #include <sys/mman.h>
+ #endif
+ 
++#ifdef _BSD
++#include <sys/types.h>
++#include <sys/stat.h>
++#include <sys/ioctl.h>
++#include <sys/disk.h>
++#endif
++
+ #include "cow.h"
+ 
+ struct BlockDriverState {
+@@ -81,7 +88,10 @@
+ {
+     int fd;
+     int64_t size;
+-    struct cow_header_v2 cow_header;
++    union {
++      struct cow_header_v2 cow_header;
++      uint8_t cow_buffer[2048];
++    } cow;
+ #ifndef _WIN32
+     char template[] = "/tmp/vl.XXXXXX";
+     int cow_fd;
+@@ -117,15 +127,15 @@
+     bs->fd = fd;
+ 
+     /* see if it is a cow image */
+-    if (read(fd, &cow_header, sizeof(cow_header)) != sizeof(cow_header)) {
++    if (read(fd, &cow.cow_header, sizeof(cow)) != sizeof(cow)) {
+         fprintf(stderr, "%s: could not read header\n", filename);
+         goto fail;
+     }
+ #ifndef _WIN32
+-    if (be32_to_cpu(cow_header.magic) == COW_MAGIC &&
+-        be32_to_cpu(cow_header.version) == COW_VERSION) {
++    if (be32_to_cpu(cow.cow_header.magic) == COW_MAGIC &&
++        be32_to_cpu(cow.cow_header.version) == COW_VERSION) {
+         /* cow image found */
+-        size = cow_header.size;
++        size = cow.cow_header.size;
+ #ifndef WORDS_BIGENDIAN
+         size = bswap64(size);
+ #endif    
+@@ -133,34 +143,41 @@
+ 
+         bs->cow_fd = fd;
+         bs->fd = -1;
+-        if (cow_header.backing_file[0] != '\0') {
+-            if (stat(cow_header.backing_file, &st) != 0) {
+-                fprintf(stderr, "%s: could not find original disk image '%s'\n", filename, cow_header.backing_file);
++        if (cow.cow_header.backing_file[0] != '\0') {
++            if (stat(cow.cow_header.backing_file, &st) != 0) {
++                fprintf(stderr, "%s: could not find original disk image '%s'\n", filename, cow.cow_header.backing_file);
+                 goto fail;
+             }
+-            if (st.st_mtime != be32_to_cpu(cow_header.mtime)) {
+-                fprintf(stderr, "%s: original raw disk image '%s' does not match saved timestamp\n", filename, cow_header.backing_file);
++            if (st.st_mtime != be32_to_cpu(cow.cow_header.mtime)) {
++                fprintf(stderr, "%s: original raw disk image '%s' does not match saved timestamp\n", filename, cow.cow_header.backing_file);
+                 goto fail;
+             }
+-            fd = open(cow_header.backing_file, O_RDONLY | O_LARGEFILE);
++            fd = open(cow.cow_header.backing_file, O_RDONLY | O_LARGEFILE);
+             if (fd < 0)
+                 goto fail;
+             bs->fd = fd;
+         }
+         /* mmap the bitmap */
+-        bs->cow_bitmap_size = ((bs->total_sectors + 7) >> 3) + sizeof(cow_header);
++        bs->cow_bitmap_size = ((bs->total_sectors + 7) >> 3) + sizeof(cow.cow_header);
+         bs->cow_bitmap_addr = mmap(get_mmap_addr(bs->cow_bitmap_size), 
+                                    bs->cow_bitmap_size, 
+                                    PROT_READ | PROT_WRITE,
+                                    MAP_SHARED, bs->cow_fd, 0);
+         if (bs->cow_bitmap_addr == MAP_FAILED)
+             goto fail;
+-        bs->cow_bitmap = bs->cow_bitmap_addr + sizeof(cow_header);
++        bs->cow_bitmap = bs->cow_bitmap_addr + sizeof(cow.cow_header);
+         bs->cow_sectors_offset = (bs->cow_bitmap_size + 511) & ~511;
+         snapshot = 0;
+     } else 
+ #endif
+     {
++#ifdef _BSD
++        struct stat sb;
++        if (!fstat(fd,&sb) && (S_IFCHR & sb.st_mode)) {
++            if (ioctl(fd, DIOCGMEDIASIZE, (off_t *)&size))
++                size = lseek(fd, 0LL, SEEK_END);
++        } else
++#endif                      
+         /* standard raw image */
+         size = lseek64(fd, 0, SEEK_END);
+         bs->total_sectors = size / 512;
+Only in qemu-0.5.5: block.c.bck
+diff -urd --exclude=CVS ../cvs/qemu/configure qemu-0.5.5/configure
+--- ../cvs/qemu/configure	Thu May 20 14:23:39 2004
++++ qemu-0.5.5/configure	Sun May 30 05:42:05 2004
+@@ -419,9 +419,11 @@
+ if [ "$bsd" = "yes" ] ; then
+   echo "#define O_LARGEFILE 0" >> $config_h
+   echo "#define lseek64 lseek" >> $config_h
++  echo "#define mkstemp64 mkstemp" >> $config_h
+   echo "#define ftruncate64 ftruncate" >> $config_h
+   echo "#define MAP_ANONYMOUS MAP_ANON" >> $config_h
+   echo "#define _BSD 1" >> $config_h
++  echo "#define off64_t off_t" >> $config_h
+ fi
+ 
+ for target in $target_list; do 
+Only in qemu-0.5.5: qemu.1
+diff -urd --exclude=CVS ../cvs/qemu/target-i386/cpu.h qemu-0.5.5/target-i386/cpu.h
+--- ../cvs/qemu/target-i386/cpu.h	Thu May 20 15:01:56 2004
++++ qemu-0.5.5/target-i386/cpu.h	Sun May 30 05:16:10 2004
+@@ -259,7 +259,7 @@
+     CC_OP_NB,
+ };
+ 
+-#if (defined(__i386__) || defined(__x86_64__)) && !defined(_BSD)
++#if defined(__i386__) || defined(__x86_64__)
+ #define USE_X86LDOUBLE
+ #endif
+ 
+diff -urd --exclude=CVS ../cvs/qemu/target-i386/exec.h qemu-0.5.5/target-i386/exec.h
+--- ../cvs/qemu/target-i386/exec.h	Sat May 29 12:08:52 2004
++++ qemu-0.5.5/target-i386/exec.h	Sun May 30 05:19:43 2004
+@@ -293,6 +293,22 @@
+ 
+ #endif /* !defined(CONFIG_USER_ONLY) */
+ 
++#if defined(_BSD) && defined(USE_X86LDOUBLE)
++#include <math.h>
++/*int rintl(long double __x);
++long int lrintl(long double __x);
++long long int llrintl(long double __x);
++long double powl(long double __x, long double __y);
++long double logl(long double __x);
++long double tanl(long double __x);
++long double atan2l(long double __y, long double __x);
++long double ceill(long double __x);
++long double floorl(long double __x);
++long double sqrtl(long double __x);
++long double sinl(long double __x);
++long double cosl(long double __x);*/
++#endif
++
+ #ifdef USE_X86LDOUBLE
+ /* use long double functions */
+ #define lrint lrintl
+@@ -310,7 +326,7 @@
+ #define rint rintl
+ #endif
+ 
+-#if !defined(_BSD)
++#if !defined(_BSD) || defined(USE_X86LDOUBLE)
+ extern int lrint(CPU86_LDouble x);
+ extern int64_t llrint(CPU86_LDouble x);
+ #else
+diff -urd --exclude=CVS ../cvs/qemu/target-i386/op.c qemu-0.5.5/target-i386/op.c
+--- ../cvs/qemu/target-i386/op.c	Sat May 29 12:08:52 2004
++++ qemu-0.5.5/target-i386/op.c	Sun May 30 05:40:54 2004
+@@ -1304,6 +1304,149 @@
+    functions comes from the LGPL'ed x86 emulator found in the Willows
+    TWIN windows emulator. */
+ 
++#if defined(_BSD) && defined(USE_X86LDOUBLE)
++
++CPU86_LDouble rintl(CPU86_LDouble __x) {
++  CPU86_LDouble __rintres;
++  __asm__ __volatile__
++    ("fistp %0"
++     : "=m" (__rintres) : "t" (__x) : "st");
++  return __rintres;
++}
++
++int lrintl(CPU86_LDouble __x) {
++  int __lrintres;
++  __asm__ __volatile__
++    ("fistpl %0"
++     : "=m" (__lrintres) : "t" (__x) : "st");
++  return __lrintres;
++}
++
++
++int64_t llrintl(CPU86_LDouble __x) {
++  int64_t __llrintres;
++  __asm__ __volatile__
++    ("fistpll %0"
++     : "=m" (__llrintres) : "t" (__x) : "st");
++  return __llrintres;
++}
++
++CPU86_LDouble powl(CPU86_LDouble __x, CPU86_LDouble __y) {
++  register CPU86_LDouble __value;
++  register long double __exponent;
++  __extension__ long long int __p = (long long int) __y;
++  if (__x == 0.0)
++    {
++       if (__y > 0.0)
++         return __y == (double) __p && (__p & 1) != 0 ? __x : 0.0;
++       else if (__y < 0.0)
++         return (__y == (double) __p && (-__p & 1) != 0
++                 ? 1.0 / __x : 1.0 / fabs (__x));
++    }
++  if (__y == (double) __p)
++    {
++      long double __r = 1.0;
++      if (__p == 0)
++        return 1.0;
++      if (__p < 0)
++        {
++          __p = -__p;
++          __x = 1.0 / __x;
++        }
++      while (1)
++        {
++          if (__p & 1)
++            __r *= __x;
++          __p >>= 1;
++          if (__p == 0)
++            return __r;
++          __x *= __x;
++        }
++      /* NOTREACHED */
++    }
++  __asm __volatile__
++    ("fyl2x" : "=t" (__value) : "0" (__x), "u" (1.0) : "st(1)");
++  __asm __volatile__
++    ("fmul      %%st(1)         # y * log2(x)\n\t"
++     "fst       %%st(1)\n\t"
++     "frndint                   # int(y * log2(x))\n\t"
++     "fxch\n\t"
++     "fsub      %%st(1)         # fract(y * log2(x))\n\t"
++     "f2xm1                     # 2^(fract(y * log2(x))) - 1\n\t"
++     : "=t" (__value), "=u" (__exponent) : "0" (__y), "1" (__value));
++  __value += 1.0;
++  __asm __volatile__
++    ("fscale"
++     : "=t" (__value) : "0" (__value), "u" (__exponent));
++  return __value;
++}
++
++CPU86_LDouble logl(CPU86_LDouble __x) {
++  register CPU86_LDouble __result;
++  __asm __volatile__ ("fldln2; fxch; fyl2x" : "=t" (__result) : "0" (__x) : "st(1)");
++  return __result;
++}
++
++CPU86_LDouble tanl(CPU86_LDouble __x) {
++  register CPU86_LDouble __value;
++  register CPU86_LDouble __value2 __attribute__ ((__unused__));
++  __asm __volatile__
++    ("fptan"
++     : "=t" (__value2), "=u" (__value) : "0" (__x));
++  return __value;
++}
++
++CPU86_LDouble atan2l(CPU86_LDouble __y, CPU86_LDouble __x) {
++  register CPU86_LDouble __value;
++  __asm __volatile__
++    ("fpatan"
++     : "=t" (__value) : "0" (__x), "u" (__y) : "st(1)");
++  return __value;
++}
++
++CPU86_LDouble ceill(CPU86_LDouble __x) {
++  register CPU86_LDouble __value;
++  __volatile unsigned short int __cw;
++  __volatile unsigned short int __cwtmp;
++  __asm __volatile ("fnstcw %0" : "=m" (__cw));
++  __cwtmp = (__cw & 0xf3ff) | 0x0800; /* rounding up */
++  __asm __volatile ("fldcw %0" : : "m" (__cwtmp));
++  __asm __volatile ("frndint" : "=t" (__value) : "0" (__x));
++  __asm __volatile ("fldcw %0" : : "m" (__cw));
++  return __value;
++}
++
++CPU86_LDouble floorl(CPU86_LDouble __x) {
++  register CPU86_LDouble __value;
++  __volatile unsigned short int __cw;
++  __volatile unsigned short int __cwtmp;
++  __asm __volatile ("fnstcw %0" : "=m" (__cw));
++  __cwtmp = (__cw & 0xf3ff) | 0x0400; /* rounding down */
++  __asm __volatile ("fldcw %0" : : "m" (__cwtmp));
++  __asm __volatile ("frndint" : "=t" (__value) : "0" (__x));
++  __asm __volatile ("fldcw %0" : : "m" (__cw));
++  return __value;
++}
++
++CPU86_LDouble sqrtl(CPU86_LDouble __x) {
++  register CPU86_LDouble __result;
++  __asm __volatile__ ("fsqrt" : "=t" (__result) : "0" (__x));
++  return __result;
++}
++
++CPU86_LDouble sinl(CPU86_LDouble __x) {
++  register CPU86_LDouble __result;
++  __asm __volatile__ ("fsin" : "=t" (__result) : "0" (__x));
++  return __result;
++}
++
++CPU86_LDouble cosl(CPU86_LDouble __x) {
++  register CPU86_LDouble __result;
++  __asm __volatile__ ("fcos" : "=t" (__result) : "0" (__x));
++  return __result;
++}
++#endif
++
+ #if defined(__powerpc__)
+ extern CPU86_LDouble copysign(CPU86_LDouble, CPU86_LDouble);
+ 
+diff -urd --exclude=CVS ../cvs/qemu/vl.c qemu-0.5.5/vl.c
+--- ../cvs/qemu/vl.c	Wed May 26 23:12:06 2004
++++ qemu-0.5.5/vl.c	Sun May 30 05:30:56 2004
+@@ -662,6 +662,14 @@
+     case QEMU_TIMER_REALTIME:
+ #ifdef _WIN32
+         return GetTickCount();
++#elif defined(_BSD)
++        {
++            struct timeval r;
++            if (!gettimeofday(&r, NULL)) {
++                return ((CLK_TCK * 1000LL) * (int64_t)r.tv_sec 
++                      + ((int64_t)r.tv_usec * CLK_TCK) / 1000) / timer_freq;
++            }
++        }        
+ #else
+         {
+             struct tms tp;
+@@ -828,6 +836,7 @@
+            the emulated kernel requested a too high timer frequency */
+         getitimer(ITIMER_REAL, &itv);
+ 
++#if defined(__linux__)
+         if (itv.it_interval.tv_usec > 1000) {
+             /* try to use /dev/rtc to have a faster timer */
+             if (start_rtc_timer() < 0)
+@@ -843,7 +852,9 @@
+             sigaction(SIGIO, &act, NULL);
+             fcntl(rtc_fd, F_SETFL, O_ASYNC);
+             fcntl(rtc_fd, F_SETOWN, getpid());
+-        } else {
++        } else 
++#endif
++        {
+         use_itimer:
+             pit_min_timer_count = ((uint64_t)itv.it_interval.tv_usec * 
+                                    PIT_FREQ) / 1000000;

@@ -68,6 +68,7 @@
     SUBDIR += prodosemu
     SUBDIR += psim-freebsd
     SUBDIR += qcl
+    SUBDIR += qemu
     SUBDIR += quasi88
     SUBDIR += rtc
     SUBDIR += sim

@@ -1,0 +1,12 @@
+Index: qemu/i386-dis.c
+@@ -2896,6 +2896,10 @@
+   OP_E (bytemode, sizeflag);
+ }
+ 
++#ifndef PRIx64
++#define PRIx64 "llx"
++#endif
++
+ static void
+ print_operand_value (buf, hex, disp)
+   char *buf;
