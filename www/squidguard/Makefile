@@ -19,6 +19,7 @@ COMMENT=	A fast redirector for squid
 LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
 RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid
 
+USE_SIZE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-db-inc=${LOCALBASE}/include/db3 \
 		--with-db-lib=${LOCALBASE}/lib \
