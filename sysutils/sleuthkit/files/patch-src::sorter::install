@@ -1,0 +1,11 @@
+--- src/sorter/install.orig	Mon Sep  8 04:18:36 2003
++++ src/sorter/install	Mon Sep  8 04:19:01 2003
+@@ -6,7 +6,7 @@
+ 
+ 
+ # Directories to search in
+-dirs='/usr/local/bin/ /usr/bin/ /usr/ccs/bin/ /bin/ /usr/ucb/bin/ /sbin/ /usr/sbin/ /usr/local/sbin/ /usr/pkg/bin/'
++dirs="${LOCALBASE}/bin/ /usr/bin/ /usr/ccs/bin/ /bin/ /usr/ucb/bin/ /sbin/ /usr/sbin/ ${LOCALBASE}/sbin/ /usr/pkg/bin/"
+ 
+ # Find Perl
+ found=0;
