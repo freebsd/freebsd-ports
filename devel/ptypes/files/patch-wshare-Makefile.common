@@ -1,0 +1,26 @@
+--- wshare/Makefile.common.orig	Fri Oct 18 09:01:35 2002
++++ wshare/Makefile.common	Tue Oct 22 07:36:40 2002
+@@ -16,11 +16,11 @@
+ 
+ .SUFFIXES:	.cxx .o
+ 
+-CXXDEFS     = -DDEBUG
++CXXDEFS     =
+ 
+ INCDIR      = ../include
+ 
+-CXXFLAGS    = $(CXXOPTS) $(CXXDEFS) -I$(INCDIR) -Wall -O2
++CXXFLAGS    = $(CXXOPTS) $(CXXDEFS) -I$(INCDIR) -Wall $(CFLAGS)
+ 
+ BINDEST     = ../bin
+ 
+@@ -36,7 +36,8 @@
+ 
+ 
+ wshare: $(OBJS) ../lib/libptypes.a
+-	$(CXX) $(CXXFLAGS) $(OBJS) $(LDLIBS) ../lib/libptypes.a -o $@
++	$(CXX) $(CXXFLAGS) $(OBJS) $(LDLIBS) ../lib/libptypes.a -o $@ \
++		${PTHREAD_LIBS} -lc_r
+ 	cp $@ $(BINDEST)/
+ 	strip $(BINDEST)/$@
+ 
