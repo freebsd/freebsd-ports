@@ -271,6 +271,7 @@
     SUBDIR += tkman
     SUBDIR += tkregexp
     SUBDIR += tkrunit
+    SUBDIR += translate
     SUBDIR += ttyrec
     SUBDIR += tvguide
     SUBDIR += txt2regex
