@@ -848,6 +848,7 @@ cl-asdf-sbcl	ports/devel/cl-asdf-sbcl
 cl-lml		ports/www/cl-lml
 cl-lml-clisp	ports/www/cl-lml-clisp
 cl-meta		ports/textproc/cl-meta
+cl-port		ports/devel/cl-port
 clamav		ports/security/clamav
 clamav-devel	ports/security/clamav-devel
 clanbomber	ports/games/clanbomber
