@@ -1,6 +1,6 @@
---- libgnome/gnome-help.c.orig	Fri Jul 24 02:08:29 1998
-+++ libgnome/gnome-help.c	Sat Sep 26 22:12:34 1998
-@@ -35,7 +35,7 @@
+--- libgnome/gnome-help.c.orig	Wed Dec 16 14:48:42 1998
++++ libgnome/gnome-help.c	Thu Dec 24 03:44:05 1998
+@@ -43,7 +43,7 @@
        lang= language_list->data;
  
        buf= g_string_new (NULL);
