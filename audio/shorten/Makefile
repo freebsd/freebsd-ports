@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	shorten
-PORTVERSION=	3.1
+PORTVERSION=	3.3
 CATEGORIES=	audio archivers
-MASTER_SITES=	http://www.etree.org/software/
+MASTER_SITES=	http://shnutils.etree.org/misc/
 
 MAINTAINER=	sec@42.org
 
 RESTRICTED=	"May not be sold."
 
-MAN1=		shorten.1
+GNU_CONFIGURE=	yes
 
-post-install:
-	strip ${PREFIX}/bin/shorten
+MAN1=		shorten.1
 
 .include <bsd.port.mk>
