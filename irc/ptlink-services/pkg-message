@@ -1,0 +1,11 @@
+======================================================================
+
+PTlink IRC services is now installed.
+
+Please copy the sample file %%PREFIX%%/etc/services.conf.sample to 
+%%PREFIX%%/etc/services.conf.
+
+Edit the configuration file %%PREFIX%%/etc/services.conf to suit your 
+needs.
+
+======================================================================
