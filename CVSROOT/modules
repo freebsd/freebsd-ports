@@ -8069,6 +8069,7 @@ pips880		ports/print/pips880
 pips900		ports/print/pips900
 pips940		ports/print/pips940
 pips970		ports/print/pips970
+pips970-cups	ports/print/pips970-cups
 pips980		ports/print/pips980
 pipsecd		ports/net/pipsecd
 pipsv500	ports/print/pipsv500
