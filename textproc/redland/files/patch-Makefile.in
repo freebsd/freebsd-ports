@@ -1,11 +1,11 @@
---- Makefile.in.orig	Sun Feb  1 03:20:27 2004
-+++ Makefile.in	Sun Feb  1 10:55:32 2004
-@@ -264,7 +264,7 @@
- man_MANS = redland-config.1
- 
- # Subdirectories to build/install etc.
--SUBDIRS = @SD_PRE@ librdf examples utils @SD_POST@ demos docs
-+SUBDIRS = @SD_PRE@ librdf utils @SD_POST@ demos docs
- CONFIG_SUBDIRS = raptor
- # Subdirectories to use for distribution
- DIST_SUBDIRS = librdf docs examples \
+--- Makefile.in.orig	Wed Aug  4 12:17:19 2004
++++ Makefile.in	Wed Aug  4 12:18:49 2004
+@@ -257,7 +257,7 @@
+ # to ensure that the raptor and rasqal subdirectories are called
+ # as CONFIG_SUBDIR directories.
+ #
+-SUBDIRS = @LOCAL_SUBDIRS@ librdf examples utils demos docs data
++SUBDIRS = @LOCAL_SUBDIRS@ librdf utils demos docs data
+ EXTRA_DIST = ChangeLog ChangeLog.1 ChangeLog.2 ChangeLog.3 ChangeLog.4 \
+ README      NEWS      LICENSE.txt  TODO \
+ README.html NEWS.html LICENSE.html TODO.html \
