@@ -1,11 +1,11 @@
---- opt/intel/compiler50/ia32/include/yvals.h.org	Thu Jan 24 11:42:22 2002
-+++ opt/intel/compiler50/ia32/include/yvals.h	Thu Jan 24 11:42:39 2002
+--- opt/intel/compiler60/ia32/include/yvals.h.orig	Wed Apr 24 12:13:04 2002
++++ opt/intel/compiler60/ia32/include/yvals.h	Wed Apr 24 12:13:26 2002
 @@ -4,10 +4,6 @@
  #define _YVALS
  #include <stdarg.h>
  
 -#include <features.h>	/* Get glibc version __GLIBC__ and __GLIBC_MINOR__*/
--#define __GLIBC_2_2	((__GLIBC__ >= 2) && (__GLIBC_MINOR__ >= 2))
+-#define __GLIBC_2_2     ((__GLIBC__ > 2) || ((__GLIBC__ >= 2) && (__GLIBC_MINOR__ >= 2)))
 -			/* true if glibc-2.2 and older is used */
 -
  #define _CPPLIB_VER	310
