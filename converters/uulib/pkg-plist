@@ -2,16 +2,16 @@ lib/libuu.a
 lib/libuu.so
 lib/libuu.so.2
 include/uudeview.h
-%%PORTDOCS%%share/doc/uulib/Makefile
-%%PORTDOCS%%share/doc/uulib/README
-%%PORTDOCS%%share/doc/uulib/binhex.fig
-%%PORTDOCS%%share/doc/uulib/library.ltx
-%%PORTDOCS%%share/doc/uulib/structure.fig
-%%PORTDOCS%%share/doc/uulib/td-v1.c
-%%PORTDOCS%%share/doc/uulib/td-v2.c
-%%PORTDOCS%%share/doc/uulib/td-v3.c
-%%PORTDOCS%%share/doc/uulib/test.txt
-%%PORTDOCS%%share/doc/uulib/porting.notes
-%%PORTDOCS%%share/doc/uulib/HISTORY
-%%PORTDOCS%%share/doc/uulib/COPYING
-%%PORTDOCS%%@dirrm share/doc/uulib
+%%PORTDOCS%%%%DOCSDIR%%/Makefile
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/binhex.fig
+%%PORTDOCS%%%%DOCSDIR%%/library.ltx
+%%PORTDOCS%%%%DOCSDIR%%/structure.fig
+%%PORTDOCS%%%%DOCSDIR%%/td-v1.c
+%%PORTDOCS%%%%DOCSDIR%%/td-v2.c
+%%PORTDOCS%%%%DOCSDIR%%/td-v3.c
+%%PORTDOCS%%%%DOCSDIR%%/test.txt
+%%PORTDOCS%%%%DOCSDIR%%/porting.notes
+%%PORTDOCS%%%%DOCSDIR%%/HISTORY
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

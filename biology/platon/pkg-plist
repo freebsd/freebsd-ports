@@ -1,90 +1,90 @@
 bin/platon
 bin/pluton
-share/doc/platon/TEST/ABSORB_EXAMPLE/s588a.hkl.gz
-share/doc/platon/TEST/ABSORB_EXAMPLE/s588a.hkp.gz
-share/doc/platon/TEST/ABSORB_EXAMPLE/s588a.ins
-share/doc/platon/TEST/ABSORB_EXAMPLE/s588a.lis
-share/doc/platon/TEST/ABSTOMPA_EXAMPLE/s555b.hkl.gz
-share/doc/platon/TEST/ABSTOMPA_EXAMPLE/s555b.hkp.gz
-share/doc/platon/TEST/ABSTOMPA_EXAMPLE/s555b.ins
-share/doc/platon/TEST/ABSTOMPA_EXAMPLE/s555b.lis.gz
-share/doc/platon/TEST/ABSTOMPA_EXAMPLE/s588a.hkl.gz
-share/doc/platon/TEST/ABSTOMPA_EXAMPLE/s588a.hkp.gz
-share/doc/platon/TEST/ABSTOMPA_EXAMPLE/s588a.ins
-share/doc/platon/TEST/ABSTOMPA_EXAMPLE/s588a.lis.gz
-share/doc/platon/TEST/ABSTOMPA_TEST/README
-share/doc/platon/TEST/ABSTOMPA_TEST/abstest.hkl
-share/doc/platon/TEST/ABSTOMPA_TEST/abstest.hkp
-share/doc/platon/TEST/ABSTOMPA_TEST/abstest.ins
-share/doc/platon/TEST/ABSTOMPA_TEST/abstest.lis
-share/doc/platon/TEST/ABSTOMPA_TEST/stand.hkl
-share/doc/platon/TEST/ABSTOMPA_TEST/stand.hkp
-share/doc/platon/TEST/ABSTOMPA_TEST/stand.ins
-share/doc/platon/TEST/ABSTOMPA_TEST/stand.lis
-share/doc/platon/TEST/ABSTOMPA_TEST/test1.hkl
-share/doc/platon/TEST/ABSTOMPA_TEST/test1.hkp
-share/doc/platon/TEST/ABSTOMPA_TEST/test1.ins
-share/doc/platon/TEST/ABSTOMPA_TEST/test1.lis
-share/doc/platon/TEST/ABSTOMPA_TEST/test2.hkl
-share/doc/platon/TEST/ABSTOMPA_TEST/test2.hkp
-share/doc/platon/TEST/ABSTOMPA_TEST/test2.ins
-share/doc/platon/TEST/ABSTOMPA_TEST/test2.lis
-share/doc/platon/TEST/ADDSYM_EXAMPLE/README
-share/doc/platon/TEST/ADDSYM_EXAMPLE/ex1.spf
-share/doc/platon/TEST/ADDSYM_EXAMPLE/ex2.ins
-share/doc/platon/TEST/ADDSYM_EXAMPLE/ex3.spf
-share/doc/platon/TEST/ASYM_EXAMPLE/README
-share/doc/platon/TEST/ASYM_EXAMPLE/asym.hkl.gz
-share/doc/platon/TEST/ASYM_EXAMPLE/asym.hkp.gz
-share/doc/platon/TEST/ASYM_EXAMPLE/asym.ins
-share/doc/platon/TEST/ASYM_EXAMPLE/asym.lis.gz
-share/doc/platon/TEST/DELABS_EXAMPLE/s588a.hkl.gz
-share/doc/platon/TEST/DELABS_EXAMPLE/s588a.hkp.gz
-share/doc/platon/TEST/DELABS_EXAMPLE/s588a.lis
-share/doc/platon/TEST/DELABS_EXAMPLE/s588a.res
-share/doc/platon/TEST/MULABS_EXAMPLE/shelx.hkl.gz
-share/doc/platon/TEST/MULABS_EXAMPLE/shelx.hkp.gz
-share/doc/platon/TEST/MULABS_EXAMPLE/shelx.ins.gz
-share/doc/platon/TEST/MULABS_EXAMPLE/shelx.lis.gz
-share/doc/platon/TEST/PSICOR_EXAMPLE/old_s588a.ps
-share/doc/platon/TEST/PSICOR_EXAMPLE/s588a.hkl
-share/doc/platon/TEST/PSICOR_EXAMPLE/s588a.hkp
-share/doc/platon/TEST/PSICOR_EXAMPLE/s588a.ins
-share/doc/platon/TEST/PSICOR_EXAMPLE/s588a.lis
-share/doc/platon/TEST/SQUEEZE_EXAMPLE/README.gz
-share/doc/platon/TEST/SQUEEZE_EXAMPLE/shelxl.hkl.gz
-share/doc/platon/TEST/SQUEEZE_EXAMPLE/shelxl.hkp.gz
-share/doc/platon/TEST/SQUEEZE_EXAMPLE/shelxl.lis.gz
-share/doc/platon/TEST/SQUEEZE_EXAMPLE/shelxl.res.gz
-share/doc/platon/TEST/SQUEEZE_EXAMPLE/shelxl.sqz.gz
-share/doc/platon/TEST/SQUEEZE_EXAMPLE/sqz.hkl.gz
-share/doc/platon/TEST/SQUEEZE_EXAMPLE/sqz.lis.gz
-share/doc/platon/TEST/SQUEEZE_EXAMPLE/sqz.res.gz
-share/doc/platon/README
-share/doc/platon/README.ADDSYM
-share/doc/platon/README.LEPAGE
-share/doc/platon/README.PLUTON
-share/doc/platon/VALIDATION.DOC
-share/doc/platon/azt.dat
-share/doc/platon/bucky.spf
-share/doc/platon/c476.spf
-share/doc/platon/c540.cart3d
-share/doc/platon/check.def
-share/doc/platon/cubane.spf
-share/doc/platon/cyto.spf
-share/doc/platon/ml.pdb
-share/doc/platon/s810c.cif
-share/doc/platon/s913a.res
-share/doc/platon/sucrose.spf
-share/doc/platon/platon_html.tar.gz
-@dirrm share/doc/platon/TEST/ABSORB_EXAMPLE
-@dirrm share/doc/platon/TEST/ABSTOMPA_EXAMPLE
-@dirrm share/doc/platon/TEST/ABSTOMPA_TEST
-@dirrm share/doc/platon/TEST/ADDSYM_EXAMPLE
-@dirrm share/doc/platon/TEST/ASYM_EXAMPLE
-@dirrm share/doc/platon/TEST/DELABS_EXAMPLE
-@dirrm share/doc/platon/TEST/MULABS_EXAMPLE
-@dirrm share/doc/platon/TEST/PSICOR_EXAMPLE
-@dirrm share/doc/platon/TEST/SQUEEZE_EXAMPLE
-@dirrm share/doc/platon/TEST
-@dirrm share/doc/platon
+%%DOCSDIR%%/TEST/ABSORB_EXAMPLE/s588a.hkl.gz
+%%DOCSDIR%%/TEST/ABSORB_EXAMPLE/s588a.hkp.gz
+%%DOCSDIR%%/TEST/ABSORB_EXAMPLE/s588a.ins
+%%DOCSDIR%%/TEST/ABSORB_EXAMPLE/s588a.lis
+%%DOCSDIR%%/TEST/ABSTOMPA_EXAMPLE/s555b.hkl.gz
+%%DOCSDIR%%/TEST/ABSTOMPA_EXAMPLE/s555b.hkp.gz
+%%DOCSDIR%%/TEST/ABSTOMPA_EXAMPLE/s555b.ins
+%%DOCSDIR%%/TEST/ABSTOMPA_EXAMPLE/s555b.lis.gz
+%%DOCSDIR%%/TEST/ABSTOMPA_EXAMPLE/s588a.hkl.gz
+%%DOCSDIR%%/TEST/ABSTOMPA_EXAMPLE/s588a.hkp.gz
+%%DOCSDIR%%/TEST/ABSTOMPA_EXAMPLE/s588a.ins
+%%DOCSDIR%%/TEST/ABSTOMPA_EXAMPLE/s588a.lis.gz
+%%DOCSDIR%%/TEST/ABSTOMPA_TEST/README
+%%DOCSDIR%%/TEST/ABSTOMPA_TEST/abstest.hkl
+%%DOCSDIR%%/TEST/ABSTOMPA_TEST/abstest.hkp
+%%DOCSDIR%%/TEST/ABSTOMPA_TEST/abstest.ins
+%%DOCSDIR%%/TEST/ABSTOMPA_TEST/abstest.lis
+%%DOCSDIR%%/TEST/ABSTOMPA_TEST/stand.hkl
+%%DOCSDIR%%/TEST/ABSTOMPA_TEST/stand.hkp
+%%DOCSDIR%%/TEST/ABSTOMPA_TEST/stand.ins
+%%DOCSDIR%%/TEST/ABSTOMPA_TEST/stand.lis
+%%DOCSDIR%%/TEST/ABSTOMPA_TEST/test1.hkl
+%%DOCSDIR%%/TEST/ABSTOMPA_TEST/test1.hkp
+%%DOCSDIR%%/TEST/ABSTOMPA_TEST/test1.ins
+%%DOCSDIR%%/TEST/ABSTOMPA_TEST/test1.lis
+%%DOCSDIR%%/TEST/ABSTOMPA_TEST/test2.hkl
+%%DOCSDIR%%/TEST/ABSTOMPA_TEST/test2.hkp
+%%DOCSDIR%%/TEST/ABSTOMPA_TEST/test2.ins
+%%DOCSDIR%%/TEST/ABSTOMPA_TEST/test2.lis
+%%DOCSDIR%%/TEST/ADDSYM_EXAMPLE/README
+%%DOCSDIR%%/TEST/ADDSYM_EXAMPLE/ex1.spf
+%%DOCSDIR%%/TEST/ADDSYM_EXAMPLE/ex2.ins
+%%DOCSDIR%%/TEST/ADDSYM_EXAMPLE/ex3.spf
+%%DOCSDIR%%/TEST/ASYM_EXAMPLE/README
+%%DOCSDIR%%/TEST/ASYM_EXAMPLE/asym.hkl.gz
+%%DOCSDIR%%/TEST/ASYM_EXAMPLE/asym.hkp.gz
+%%DOCSDIR%%/TEST/ASYM_EXAMPLE/asym.ins
+%%DOCSDIR%%/TEST/ASYM_EXAMPLE/asym.lis.gz
+%%DOCSDIR%%/TEST/DELABS_EXAMPLE/s588a.hkl.gz
+%%DOCSDIR%%/TEST/DELABS_EXAMPLE/s588a.hkp.gz
+%%DOCSDIR%%/TEST/DELABS_EXAMPLE/s588a.lis
+%%DOCSDIR%%/TEST/DELABS_EXAMPLE/s588a.res
+%%DOCSDIR%%/TEST/MULABS_EXAMPLE/shelx.hkl.gz
+%%DOCSDIR%%/TEST/MULABS_EXAMPLE/shelx.hkp.gz
+%%DOCSDIR%%/TEST/MULABS_EXAMPLE/shelx.ins.gz
+%%DOCSDIR%%/TEST/MULABS_EXAMPLE/shelx.lis.gz
+%%DOCSDIR%%/TEST/PSICOR_EXAMPLE/old_s588a.ps
+%%DOCSDIR%%/TEST/PSICOR_EXAMPLE/s588a.hkl
+%%DOCSDIR%%/TEST/PSICOR_EXAMPLE/s588a.hkp
+%%DOCSDIR%%/TEST/PSICOR_EXAMPLE/s588a.ins
+%%DOCSDIR%%/TEST/PSICOR_EXAMPLE/s588a.lis
+%%DOCSDIR%%/TEST/SQUEEZE_EXAMPLE/README.gz
+%%DOCSDIR%%/TEST/SQUEEZE_EXAMPLE/shelxl.hkl.gz
+%%DOCSDIR%%/TEST/SQUEEZE_EXAMPLE/shelxl.hkp.gz
+%%DOCSDIR%%/TEST/SQUEEZE_EXAMPLE/shelxl.lis.gz
+%%DOCSDIR%%/TEST/SQUEEZE_EXAMPLE/shelxl.res.gz
+%%DOCSDIR%%/TEST/SQUEEZE_EXAMPLE/shelxl.sqz.gz
+%%DOCSDIR%%/TEST/SQUEEZE_EXAMPLE/sqz.hkl.gz
+%%DOCSDIR%%/TEST/SQUEEZE_EXAMPLE/sqz.lis.gz
+%%DOCSDIR%%/TEST/SQUEEZE_EXAMPLE/sqz.res.gz
+%%DOCSDIR%%/README
+%%DOCSDIR%%/README.ADDSYM
+%%DOCSDIR%%/README.LEPAGE
+%%DOCSDIR%%/README.PLUTON
+%%DOCSDIR%%/VALIDATION.DOC
+%%DOCSDIR%%/azt.dat
+%%DOCSDIR%%/bucky.spf
+%%DOCSDIR%%/c476.spf
+%%DOCSDIR%%/c540.cart3d
+%%DOCSDIR%%/check.def
+%%DOCSDIR%%/cubane.spf
+%%DOCSDIR%%/cyto.spf
+%%DOCSDIR%%/ml.pdb
+%%DOCSDIR%%/s810c.cif
+%%DOCSDIR%%/s913a.res
+%%DOCSDIR%%/sucrose.spf
+%%DOCSDIR%%/platon_html.tar.gz
+@dirrm %%DOCSDIR%%/TEST/ABSORB_EXAMPLE
+@dirrm %%DOCSDIR%%/TEST/ABSTOMPA_EXAMPLE
+@dirrm %%DOCSDIR%%/TEST/ABSTOMPA_TEST
+@dirrm %%DOCSDIR%%/TEST/ADDSYM_EXAMPLE
+@dirrm %%DOCSDIR%%/TEST/ASYM_EXAMPLE
+@dirrm %%DOCSDIR%%/TEST/DELABS_EXAMPLE
+@dirrm %%DOCSDIR%%/TEST/MULABS_EXAMPLE
+@dirrm %%DOCSDIR%%/TEST/PSICOR_EXAMPLE
+@dirrm %%DOCSDIR%%/TEST/SQUEEZE_EXAMPLE
+@dirrm %%DOCSDIR%%/TEST
+@dirrm %%DOCSDIR%%

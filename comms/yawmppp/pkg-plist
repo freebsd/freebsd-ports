@@ -3,8 +3,8 @@ bin/yawmppp
 bin/yawmppp.log
 bin/yawmppp.pref
 bin/yawmppp.thin
-%%PORTDOCS%%share/doc/yawmppp/CHANGELOG
-%%PORTDOCS%%share/doc/yawmppp/FAQ
-%%PORTDOCS%%share/doc/yawmppp/README
-%%PORTDOCS%%share/doc/yawmppp/TODO
-%%PORTDOCS%%@dirrm share/doc/yawmppp
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

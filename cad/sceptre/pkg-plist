@@ -10,6 +10,6 @@ lib/libx2.a
 lib/libx3.a
 lib/usrlib.a
 lib/modellib.dat
-%%PORTDOCS%%share/doc/sceptre/doc_en.pdf
-%%PORTDOCS%%share/doc/sceptre/doc_ger.pdf
-%%PORTDOCS%%@dirrm share/doc/sceptre
+%%PORTDOCS%%%%DOCSDIR%%/doc_en.pdf
+%%PORTDOCS%%%%DOCSDIR%%/doc_ger.pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

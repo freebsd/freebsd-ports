@@ -1,6 +1,6 @@
 %%WITH_QICO_MORDA%%bin/qcc
 etc/qico.conf.sample
 libexec/qico
-%%PORTDOCS%%share/doc/qico/FAQ.ru
-%%PORTDOCS%%share/doc/qico/README.ru
-%%PORTDOCS%%@dirrm share/doc/qico
+%%PORTDOCS%%%%DOCSDIR%%/FAQ.ru
+%%PORTDOCS%%%%DOCSDIR%%/README.ru
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

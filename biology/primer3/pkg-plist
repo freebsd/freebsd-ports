@@ -1,5 +1,5 @@
-%%PORTDOCS%%share/doc/primer3/README
-%%PORTDOCS%%share/doc/primer3/example
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/example
 %%PORTDOCS%%share/examples/primer3/dpal_gen.pl
 %%PORTDOCS%%share/examples/primer3/dpal_input
 %%PORTDOCS%%share/examples/primer3/dpal_long_input
@@ -351,7 +351,7 @@ share/primer3/primer3_www_help.html
 share/primer3/primer3_www_results.cgi
 share/primer3/primer3_www_results_help.html
 @dirrm share/primer3
-%%PORTDOCS%%@dirrm share/doc/primer3/
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/
 %%PORTDOCS%%@dirrm share/examples/primer3/primer1_list_last
 %%PORTDOCS%%@dirrm share/examples/primer3/primer_global_err
 %%PORTDOCS%%@dirrm share/examples/primer3/primer_list_last

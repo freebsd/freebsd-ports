@@ -7,5 +7,5 @@ bin/evolver
 bin/mcmctree
 bin/pamp
 bin/yn00
-%%PORTDOCS%%share/doc/paml/pamlDOC.pdf
-%%PORTDOCS%%@dirrm share/doc/paml
+%%PORTDOCS%%%%DOCSDIR%%/pamlDOC.pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

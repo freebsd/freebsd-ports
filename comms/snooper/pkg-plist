@@ -1,3 +1,3 @@
 bin/snooper
-%%PORTDOCS%%share/doc/snooper/README
-%%PORTDOCS%%@dirrm share/doc/snooper
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -1,22 +1,22 @@
-%%PORTDOCS%%share/doc/fasta3/00README.1st
-%%PORTDOCS%%share/doc/fasta3/COPYRIGHT
-%%PORTDOCS%%share/doc/fasta3/README
-%%PORTDOCS%%share/doc/fasta3/fasta3x.doc
-%%PORTDOCS%%share/doc/fasta3/fasta3x.me
-%%PORTDOCS%%share/doc/fasta3/readme.mpi_3.3
-%%PORTDOCS%%share/doc/fasta3/readme.pvm_2.0
-%%PORTDOCS%%share/doc/fasta3/readme.pvm_3.0
-%%PORTDOCS%%share/doc/fasta3/readme.pvm_3.2
-%%PORTDOCS%%share/doc/fasta3/readme.pvm_3.3
-%%PORTDOCS%%share/doc/fasta3/readme.pvm_3.4
-%%PORTDOCS%%share/doc/fasta3/readme.v30
-%%PORTDOCS%%share/doc/fasta3/readme.v30t6
-%%PORTDOCS%%share/doc/fasta3/readme.v30t7
-%%PORTDOCS%%share/doc/fasta3/readme.v31t0
-%%PORTDOCS%%share/doc/fasta3/readme.v31t1
-%%PORTDOCS%%share/doc/fasta3/readme.v32t0
-%%PORTDOCS%%share/doc/fasta3/readme.v33t0
-%%PORTDOCS%%share/doc/fasta3/readme.w32
+%%PORTDOCS%%%%DOCSDIR%%/00README.1st
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/fasta3x.doc
+%%PORTDOCS%%%%DOCSDIR%%/fasta3x.me
+%%PORTDOCS%%%%DOCSDIR%%/readme.mpi_3.3
+%%PORTDOCS%%%%DOCSDIR%%/readme.pvm_2.0
+%%PORTDOCS%%%%DOCSDIR%%/readme.pvm_3.0
+%%PORTDOCS%%%%DOCSDIR%%/readme.pvm_3.2
+%%PORTDOCS%%%%DOCSDIR%%/readme.pvm_3.3
+%%PORTDOCS%%%%DOCSDIR%%/readme.pvm_3.4
+%%PORTDOCS%%%%DOCSDIR%%/readme.v30
+%%PORTDOCS%%%%DOCSDIR%%/readme.v30t6
+%%PORTDOCS%%%%DOCSDIR%%/readme.v30t7
+%%PORTDOCS%%%%DOCSDIR%%/readme.v31t0
+%%PORTDOCS%%%%DOCSDIR%%/readme.v31t1
+%%PORTDOCS%%%%DOCSDIR%%/readme.v32t0
+%%PORTDOCS%%%%DOCSDIR%%/readme.v33t0
+%%PORTDOCS%%%%DOCSDIR%%/readme.w32
 bin/fasta3
 bin/fasta3_t
 bin/fastf3
@@ -42,4 +42,4 @@ bin/tfastx3_t
 bin/tfasty3
 bin/tfasty3_t
 etc/fastlibs.sample
-%%PORTDOCS%%@dirrm share/doc/fasta3
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

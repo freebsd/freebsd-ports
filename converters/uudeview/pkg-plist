@@ -1,5 +1,5 @@
 bin/uudeview
 bin/uuenview
-%%PORTDOCS%%share/doc/uudeview/HISTORY
-%%PORTDOCS%%share/doc/uudeview/porting.notes
-%%PORTDOCS%%@dirrm share/doc/uudeview
+%%PORTDOCS%%%%DOCSDIR%%/HISTORY
+%%PORTDOCS%%%%DOCSDIR%%/porting.notes
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

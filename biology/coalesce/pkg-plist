@@ -1,4 +1,4 @@
 bin/coalesce
-%%PORTDOCS%%share/doc/coalesce/coalesce.doc
-%%PORTDOCS%%share/doc/coalesce/errors.doc
-%%PORTDOCS%%@dirrm share/doc/coalesce
+%%PORTDOCS%%%%DOCSDIR%%/coalesce.doc
+%%PORTDOCS%%%%DOCSDIR%%/errors.doc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

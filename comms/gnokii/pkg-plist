@@ -24,55 +24,55 @@ lib/libgnokii.so.1
 lib/pkgconfig/gnokii.pc
 sbin/gnokiid
 sbin/mgnokiidev
-%%PORTDOCS%%share/doc/gnokii/Bugs
-%%PORTDOCS%%share/doc/gnokii/CREDITS
-%%PORTDOCS%%share/doc/gnokii/DataCalls-QuickStart
-%%PORTDOCS%%share/doc/gnokii/README
-%%PORTDOCS%%share/doc/gnokii/README-2110
-%%PORTDOCS%%share/doc/gnokii/README-3810
-%%PORTDOCS%%share/doc/gnokii/README-6110
-%%PORTDOCS%%share/doc/gnokii/README-6510
-%%PORTDOCS%%share/doc/gnokii/README-7110
-%%PORTDOCS%%share/doc/gnokii/README-MacOSX
-%%PORTDOCS%%share/doc/gnokii/README-WIN32
-%%PORTDOCS%%share/doc/gnokii/README-dancall
-%%PORTDOCS%%share/doc/gnokii/README-ericsson
-%%PORTDOCS%%share/doc/gnokii/README-siemens
-%%PORTDOCS%%share/doc/gnokii/README.libsms
-%%PORTDOCS%%share/doc/gnokii/gettext-howto
-%%PORTDOCS%%share/doc/gnokii/gnokii-IrDA-Linux
-%%PORTDOCS%%share/doc/gnokii/gnokii-hackers-howto
-%%PORTDOCS%%share/doc/gnokii/gnokii-ir-howto
-%%PORTDOCS%%share/doc/gnokii/logos.txt
-%%PORTDOCS%%share/doc/gnokii/packaging-howto
-%%PORTDOCS%%share/doc/gnokii/ringtones.txt
-%%PORTDOCS%%share/doc/gnokii/sample/gnokiirc
-%%PORTDOCS%%share/doc/gnokii/sample/logo/bronto.xpm
-%%PORTDOCS%%share/doc/gnokii/sample/logo/gnokii.xpm
-%%PORTDOCS%%share/doc/gnokii/sample/logo/gnokiiop.xpm
-%%PORTDOCS%%share/doc/gnokii/sample/logo/horse.xpm
-%%PORTDOCS%%share/doc/gnokii/sample/logo/horse2.xpm
-%%PORTDOCS%%share/doc/gnokii/sample/logo/pacman.xpm
-%%PORTDOCS%%share/doc/gnokii/sample/magic
-%%PORTDOCS%%share/doc/gnokii/sample/ppp/cimd-connect
-%%PORTDOCS%%share/doc/gnokii/sample/ppp/options
-%%PORTDOCS%%share/doc/gnokii/sample/ppp/pap-secrets
-%%PORTDOCS%%share/doc/gnokii/sample/ppp/ppp-6210-modem
-%%PORTDOCS%%share/doc/gnokii/sample/ppp/ppp-FILES
-%%PORTDOCS%%share/doc/gnokii/sample/ppp/ppp-gnokii
-%%PORTDOCS%%share/doc/gnokii/sample/ppp/ppp-hscsd
-%%PORTDOCS%%share/doc/gnokii/sample/ppp/ppp-on
-%%PORTDOCS%%share/doc/gnokii/sample/ringtone/star.imelody
-%%PORTDOCS%%share/doc/gnokii/sample/ringtone/star.rtttl
-%%PORTDOCS%%share/doc/gnokii/sample/vCalendar/test.vcs
-%%PORTDOCS%%@dirrm share/doc/gnokii/sample/logo
-%%PORTDOCS%%@dirrm share/doc/gnokii/sample/ringtone
-%%PORTDOCS%%@dirrm share/doc/gnokii/sample/vCalendar
-%%PORTDOCS%%@dirrm share/doc/gnokii/sample/vCard
-%%PORTDOCS%%@dirrm share/doc/gnokii/sample/ppp
-%%PORTDOCS%%@dirrm share/doc/gnokii/sample
-%%PORTDOCS%%@dirrm share/doc/gnokii
-%%PORTDOCS%%@exec mkdir -m 755 %D/share/doc/gnokii/sample/vCard
+%%PORTDOCS%%%%DOCSDIR%%/Bugs
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/DataCalls-QuickStart
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README-2110
+%%PORTDOCS%%%%DOCSDIR%%/README-3810
+%%PORTDOCS%%%%DOCSDIR%%/README-6110
+%%PORTDOCS%%%%DOCSDIR%%/README-6510
+%%PORTDOCS%%%%DOCSDIR%%/README-7110
+%%PORTDOCS%%%%DOCSDIR%%/README-MacOSX
+%%PORTDOCS%%%%DOCSDIR%%/README-WIN32
+%%PORTDOCS%%%%DOCSDIR%%/README-dancall
+%%PORTDOCS%%%%DOCSDIR%%/README-ericsson
+%%PORTDOCS%%%%DOCSDIR%%/README-siemens
+%%PORTDOCS%%%%DOCSDIR%%/README.libsms
+%%PORTDOCS%%%%DOCSDIR%%/gettext-howto
+%%PORTDOCS%%%%DOCSDIR%%/gnokii-IrDA-Linux
+%%PORTDOCS%%%%DOCSDIR%%/gnokii-hackers-howto
+%%PORTDOCS%%%%DOCSDIR%%/gnokii-ir-howto
+%%PORTDOCS%%%%DOCSDIR%%/logos.txt
+%%PORTDOCS%%%%DOCSDIR%%/packaging-howto
+%%PORTDOCS%%%%DOCSDIR%%/ringtones.txt
+%%PORTDOCS%%%%DOCSDIR%%/sample/gnokiirc
+%%PORTDOCS%%%%DOCSDIR%%/sample/logo/bronto.xpm
+%%PORTDOCS%%%%DOCSDIR%%/sample/logo/gnokii.xpm
+%%PORTDOCS%%%%DOCSDIR%%/sample/logo/gnokiiop.xpm
+%%PORTDOCS%%%%DOCSDIR%%/sample/logo/horse.xpm
+%%PORTDOCS%%%%DOCSDIR%%/sample/logo/horse2.xpm
+%%PORTDOCS%%%%DOCSDIR%%/sample/logo/pacman.xpm
+%%PORTDOCS%%%%DOCSDIR%%/sample/magic
+%%PORTDOCS%%%%DOCSDIR%%/sample/ppp/cimd-connect
+%%PORTDOCS%%%%DOCSDIR%%/sample/ppp/options
+%%PORTDOCS%%%%DOCSDIR%%/sample/ppp/pap-secrets
+%%PORTDOCS%%%%DOCSDIR%%/sample/ppp/ppp-6210-modem
+%%PORTDOCS%%%%DOCSDIR%%/sample/ppp/ppp-FILES
+%%PORTDOCS%%%%DOCSDIR%%/sample/ppp/ppp-gnokii
+%%PORTDOCS%%%%DOCSDIR%%/sample/ppp/ppp-hscsd
+%%PORTDOCS%%%%DOCSDIR%%/sample/ppp/ppp-on
+%%PORTDOCS%%%%DOCSDIR%%/sample/ringtone/star.imelody
+%%PORTDOCS%%%%DOCSDIR%%/sample/ringtone/star.rtttl
+%%PORTDOCS%%%%DOCSDIR%%/sample/vCalendar/test.vcs
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/sample/logo
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/sample/ringtone
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/sample/vCalendar
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/sample/vCard
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/sample/ppp
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/sample
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@exec mkdir -m 755 %D/%%DOCSDIR%%/sample/vCard
 share/locale/cs/LC_MESSAGES/gnokii.mo
 share/locale/de/LC_MESSAGES/gnokii.mo
 share/locale/et/LC_MESSAGES/gnokii.mo

@@ -1,9 +1,9 @@
-%%PORTDOCS%%share/doc/t_coffee/README4T-COFFEE
-%%PORTDOCS%%share/doc/t_coffee/t_coffee.pdf
-%%PORTDOCS%%share/doc/t_coffee/t_coffee_doc.doc
-%%PORTDOCS%%share/doc/t_coffee/t_coffee_doc.html
-%%PORTDOCS%%share/doc/t_coffee/t_coffee_doc.pdf
-%%PORTDOCS%%share/doc/t_coffee/t_coffee_doc.ps
+%%PORTDOCS%%%%DOCSDIR%%/README4T-COFFEE
+%%PORTDOCS%%%%DOCSDIR%%/t_coffee.pdf
+%%PORTDOCS%%%%DOCSDIR%%/t_coffee_doc.doc
+%%PORTDOCS%%%%DOCSDIR%%/t_coffee_doc.html
+%%PORTDOCS%%%%DOCSDIR%%/t_coffee_doc.pdf
+%%PORTDOCS%%%%DOCSDIR%%/t_coffee_doc.ps
 %%PORTDOCS%%share/examples/t_coffee/seq/1aab_ref1.pep
 %%PORTDOCS%%share/examples/t_coffee/seq/1aboA_ref1.pep
 %%PORTDOCS%%share/examples/t_coffee/seq/1aboA_ref2.pep
@@ -302,4 +302,4 @@ bin/t_coffee
 %%PORTDOCS%%@dirrm share/examples/t_coffee/tc_aln
 %%PORTDOCS%%@dirrm share/examples/t_coffee/seq
 %%PORTDOCS%%@dirrm share/examples/t_coffee
-%%PORTDOCS%%@dirrm share/doc/t_coffee
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

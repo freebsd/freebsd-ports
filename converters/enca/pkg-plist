@@ -9,12 +9,12 @@ lib/libenca.a
 lib/libenca.so
 lib/libenca.so.3
 libdata/pkgconfig/enca.pc
-%%PORTDOCS%%share/doc/enca/libenca/c4.html
-%%PORTDOCS%%share/doc/enca/libenca/index.html
-%%PORTDOCS%%share/doc/enca/libenca/index.sgml
-%%PORTDOCS%%share/doc/enca/libenca/libenca-analyser.html
-%%PORTDOCS%%share/doc/enca/libenca/libenca-auxiliary-functions.html
-%%PORTDOCS%%share/doc/enca/libenca/libenca-charsets-and-surfaces.html
-%%PORTDOCS%%share/doc/enca/libenca/libenca-typedefs-and-constants.html
-%%PORTDOCS%%@dirrm share/doc/enca/libenca
-%%PORTDOCS%%@dirrm share/doc/enca
+%%PORTDOCS%%%%DOCSDIR%%/libenca/c4.html
+%%PORTDOCS%%%%DOCSDIR%%/libenca/index.html
+%%PORTDOCS%%%%DOCSDIR%%/libenca/index.sgml
+%%PORTDOCS%%%%DOCSDIR%%/libenca/libenca-analyser.html
+%%PORTDOCS%%%%DOCSDIR%%/libenca/libenca-auxiliary-functions.html
+%%PORTDOCS%%%%DOCSDIR%%/libenca/libenca-charsets-and-surfaces.html
+%%PORTDOCS%%%%DOCSDIR%%/libenca/libenca-typedefs-and-constants.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/libenca
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

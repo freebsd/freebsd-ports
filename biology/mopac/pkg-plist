@@ -1,7 +1,7 @@
 bin/MOPAC7
 bin/rmopac
-%%PORTDOCS%%share/doc/mopac/mopac.tex
-%%PORTDOCS%%share/doc/mopac/mopac.dvi
+%%PORTDOCS%%%%DOCSDIR%%/mopac.tex
+%%PORTDOCS%%%%DOCSDIR%%/mopac.dvi
 %%PORTDOCS%%share/examples/mopac/h2o.dat
 %%PORTDOCS%%share/mopac/test/test_cos.dat
 %%PORTDOCS%%share/mopac/test/test_cos.out
@@ -14,6 +14,6 @@ bin/rmopac
 %%PORTDOCS%%share/mopac/test/test_pol.out
 %%PORTDOCS%%share/mopac/test/test.csh
 %%PORTDOCS%%@dirrm share/examples/mopac
-%%PORTDOCS%%@dirrm share/doc/mopac
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTDOCS%%@dirrm share/mopac/test
 %%PORTDOCS%%@dirrm share/mopac

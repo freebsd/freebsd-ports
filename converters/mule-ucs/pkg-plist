@@ -97,11 +97,11 @@
 @dirrm %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/jisx0213
 @dirrm %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/reldata
 @dirrm %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs
-%%PORTDOCS%%share/doc/mule-ucs/ChangeLog
-%%PORTDOCS%%share/doc/mule-ucs/ChangeLog.jisx0213
-%%PORTDOCS%%share/doc/mule-ucs/MuleUni.txt
-%%PORTDOCS%%share/doc/mule-ucs/README
-%%PORTDOCS%%share/doc/mule-ucs/README.Unicode
-%%PORTDOCS%%share/doc/mule-ucs/README.big5conv
-%%PORTDOCS%%share/doc/mule-ucs/README.jisx0213
-%%PORTDOCS%%@dirrm share/doc/mule-ucs
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.jisx0213
+%%PORTDOCS%%%%DOCSDIR%%/MuleUni.txt
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.Unicode
+%%PORTDOCS%%%%DOCSDIR%%/README.big5conv
+%%PORTDOCS%%%%DOCSDIR%%/README.jisx0213
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
