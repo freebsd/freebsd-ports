@@ -1,71 +1,35 @@
---- Makefile.orig	Wed Oct  3 14:27:19 2001
-+++ Makefile	Thu Oct  4 20:46:16 2001
+--- Makefile.orig	Sun Dec  2 20:51:03 2001
++++ Makefile	Sun Dec  2 20:55:27 2001
 @@ -38,7 +38,7 @@
- #	-Ox   - optimize (it seems that -O3 also help to find out some errors);
+ #	-Ox   - optimize;
  #	-g    - produce debugging information.
  #
--CFLAGS=		-Wall -O -g
-+#CFLAGS=		-Wall -O -g
+-CFLAGS=		-Wall -O1 -g
++#CFLAGS=		-Wall -O1 -g
  
  #
- # DSTBINDIR - where to install binaries
-@@ -63,7 +63,7 @@
+ # PREFIX - prefix for all below listed paths
+@@ -97,10 +97,10 @@
  #
- # DSTSHAREDIR - where to install examples, etc.
+ # Some INSTALL_* variables
  #
--DSTSHAREDIR=	/usr/local/share/ipa
-+DSTSHAREDIR=	/usr/local/share/examples/ipa
+-INSTALL_MAN=		${INSTALL} -c -g wheel -o root -m 0444
+-INSTALL_DATA=		${INSTALL} -c -g wheel -o root -m 0444
+-INSTALL_PROGRAM=	${INSTALL} -c -g wheel -o root -m 0555
+-INSTALL_SCRIPT=		${INSTALL} -c -g wheel -o root -m 0500 
++INSTALL_MAN=		${BSD_INSTALL_MAN}
++INSTALL_DATA=		${BSD_INSTALL_DATA}
++INSTALL_PROGRAM=	${BSD_INSTALL_PROGRAM}
++INSTALL_SCRIPT=		${BSD_INSTALL_SCRIPT}
+ INSTALL_MAN_DIR=	${INSTALL} -d -m 0555 -g wheel -o root
+ INSTALL_DATA_DIR=	${INSTALL} -d -m 0555 -g wheel -o root
  
- #
- # IP6FW (FreeBSD only)
-@@ -204,10 +204,10 @@
+@@ -212,7 +212,7 @@
+ 	${RM} ${DSTMANDIR}/man5/ipa.conf.5 ${DSTMANDIR}/man5/ipa.5 ${DSTMANDIR}/man8/ipa.8 ${DSTMANDIR}/man8/ipastat.8
+ 	${RM} ${DSTMANDIR}/ru_SU.KOI8-R/man5/ipa.conf.5 ${DSTMANDIR}/ru_SU.KOI8-R/man5/ipa.5 ${DSTMANDIR}/ru_SU.KOI8-R/man8/ipa.8 ${DSTMANDIR}/ru_SU.KOI8-R/man8/ipastat.8
+ 	${RM} ${DSTETCDIR}/ipa.conf.default ${DSTRCDIR}/ipa.sh.sample
+-	
++
+ install:
+ .if !exists(./ipa) || !exists(./ipastat)
  	@${ECHO}
- .else
- 	@${ECHO} ">> Installing binaries, manual pages and miscellaneous files"
--	${INSTALL} -c -g wheel -o root -m 0555 ipa ipastat ${DSTBINDIR}
-+	${BSD_INSTALL_PROGRAM} ipa ipastat ${DSTBINDIR}
- 	${CHMOD} u+s ${DSTBINDIR}/ipastat
--	${INSTALL} -c -g wheel -o root -m 0444 man/ipa.5 man/ipa.conf.5 ${DSTMANDIR}/man5
--	${INSTALL} -c -g wheel -o root -m 0444 man/ipa.8 man/ipastat.8 ${DSTMANDIR}/man8
-+	${BSD_INSTALL_MAN} man/ipa.5 man/ipa.conf.5 ${DSTMANDIR}/man5
-+	${BSD_INSTALL_MAN} man/ipa.8 man/ipastat.8 ${DSTMANDIR}/man8
- .if !exists(${DSTMANDIR}/ru_SU.KOI8-R/man5)
- 	${INSTALL} -d -m 0555 ${DSTMANDIR}/ru_SU.KOI8-R/man5
- .endif
-@@ -216,13 +216,22 @@
- .endif
- .if !exists(${DSTMANDIR}/ru_RU.KOI8-R)
- 	${LN} -s ${DSTMANDIR}/ru_SU.KOI8-R ${DSTMANDIR}/ru_RU.KOI8-R
-+.else
-+.if !exists(${DSTMANDIR}/ru_RU.KOI8-R/man5)
-+	${INSTALL} -d -m 0555 ${DSTMANDIR}/ru_RU.KOI8-R/man5
-+.endif
-+.if !exists(${DSTMANDIR}/ru_RU.KOI8-R/man8)
-+	${INSTALL} -d -m 0555 ${DSTMANDIR}/ru_RU.KOI8-R/man8
-+.endif
-+.endif
-+	${BSD_INSTALL_MAN} man/ru_RU.KOI8-R/ipa.5 man/ru_RU.KOI8-R/ipa.conf.5 ${DSTMANDIR}/ru_RU.KOI8-R/man5
-+	${BSD_INSTALL_MAN} man/ru_RU.KOI8-R/ipa.8 man/ru_RU.KOI8-R/ipastat.8 ${DSTMANDIR}/ru_RU.KOI8-R/man8
-+.if !defined(NOPORTDOCS)
-+	${INSTALL} -d -m 0555 ${DSTSHAREDIR}
-+	${BSD_INSTALL_DATA} examples/* ${DSTSHAREDIR}
- .endif
--	${INSTALL} -c -g wheel -o root -m 0444 man/ru_RU.KOI8-R/ipa.5 man/ru_RU.KOI8-R/ipa.conf.5 ${DSTMANDIR}/ru_RU.KOI8-R/man5
--	${INSTALL} -c -g wheel -o root -m 0444 man/ru_RU.KOI8-R/ipa.8 man/ru_RU.KOI8-R/ipastat.8 ${DSTMANDIR}/ru_RU.KOI8-R/man8
--	${INSTALL} -d -m 0555 ${DSTSHAREDIR}/examples
--	${INSTALL} -c -g wheel -o root -m 0444 examples/* ${DSTSHAREDIR}/examples
- .if exists(${DSTRCDIR})
--	${INSTALL} -c -g wheel -o root -m 0500 etc/ipa.sh.sample ${DSTRCDIR}
-+	${BSD_INSTALL_DATA} etc/ipa.sh.sample ${DSTRCDIR}
- .else
- 	@${ECHO}
- 	@${ECHO} ">> Can't find directory ${DSTRCDIR}, skip installing of ipa.sh.sample"
-@@ -230,7 +239,7 @@
- 	@${ECHO}
- .endif
- .if exists(${DSTETCDIR})
--	${INSTALL} -c -g wheel -o root -m 0400 etc/ipa.conf.default ${DSTETCDIR}
-+	${BSD_INSTALL_DATA} etc/ipa.conf.default ${DSTETCDIR}
- .else
- 	@${ECHO}
- 	@${ECHO} ">> Can't find directory ${DSTETCDIR}, skip installing of ipa.conf.default"
