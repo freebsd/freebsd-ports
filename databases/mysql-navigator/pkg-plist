@@ -1,1 +1,3 @@
-bin/mn
+bin/mysql_navigator
+lib/libmysqlnavigator.so
+lib/libmysqlnavigator.so.1

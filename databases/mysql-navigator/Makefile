@@ -6,21 +6,22 @@
 #
 
 PORTNAME=	mysql-navigator
-PORTVERSION=	0.3.2
-CATEGORIES=	databases gnome
-MASTER_SITES=	http://sql.kldp.org/source/
-DISTNAME=	mysql_navigator_ver_${PORTVERSION}
+PORTVERSION=	0.7.0
+CATEGORIES=	databases kde
+MASTER_SITES=	http://sql.kldp.org/snapshots/ \
+		ftp://sise15.mizi.com/pub/
+DISTNAME=	mysql_navigator_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
+LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client \
+		kdecore.4:${PORTSDIR}/x11/kdelibs2
 
-USE_X_PREFIX=	yes
-USE_GNOME=	yes
-
-ALL_TARGET=
+USE_QT2=	yes
+INSTALLS_SHLIB=	yes
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/mn ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/mysql_navigator ${PREFIX}/bin/
+	${INSTALL_DATA} ${WRKSRC}/lib/libmysqlnavigator.* ${PREFIX}/lib/
 
 .include <bsd.port.mk>
