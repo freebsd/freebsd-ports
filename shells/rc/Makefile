@@ -3,12 +3,12 @@
 # Date created:         Sun Aug 13 12:36:14 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.3 1996/11/12 02:19:38 obrien Exp $
+# $Id: Makefile,v 1.4 1998/10/04 00:56:48 steve Exp $
 #
 
 DISTNAME=       rc-1.5betadev-1
 PKGNAME=	rc-1.5b1
-CATEGORIES=	plan9
+CATEGORIES=	plan9 shells
 MASTER_SITES=   ftp://ftp.sys.toronto.edu/pub/rc/
 
 MAINTAINER=	erich@FreeBSD.org

@@ -3,12 +3,12 @@
 # Date created:         Sun Aug 13 12:36:14 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.5 1996/12/07 23:43:56 asami Exp $
+# $Id: Makefile,v 1.6 1998/08/23 07:34:46 hoek Exp $
 #
 
 DISTNAME=       9term.1.6.3
 PKGNAME=	9term-1.6.3
-CATEGORIES=	plan9
+CATEGORIES=	plan9 x11
 MASTER_SITES=   ftp://ftp.ecf.toronto.edu/pub/plan9/matty/
 
 MAINTAINER=	erich@FreeBSD.org

@@ -3,11 +3,11 @@
 # Date created:         Sun Aug 13 12:36:14 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.4 1997/09/08 12:23:55 tg Exp $
+# $Id: Makefile,v 1.5 1998/10/04 00:56:43 steve Exp $
 #
 
 DISTNAME=	9menu-1.5
-CATEGORIES=	plan9
+CATEGORIES=	plan9 misc
 MASTER_SITES=	ftp://ftp.mathcs.emory.edu/pub/arnold/
 EXTRACT_SUFX=	.shar.gz
 
