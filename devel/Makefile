@@ -575,6 +575,7 @@
     SUBDIR += py-coro
     SUBDIR += py-cxx
     SUBDIR += py-fileutils
+    SUBDIR += py-freebsd
     SUBDIR += py-game
     SUBDIR += py-grouch
     SUBDIR += py-htmlkit
