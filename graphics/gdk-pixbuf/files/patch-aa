@@ -1,14 +1,45 @@
---- configure.orig	Thu Apr 26 18:41:47 2001
-+++ configure	Fri Apr 27 16:39:52 2001
-@@ -3593,4 +3593,4 @@
+
+$FreeBSD$
+
+--- configure.orig	Fri Apr 27 02:41:47 2001
++++ configure	Fri May 18 16:03:47 2001
+@@ -3443,6 +3443,8 @@
+         INSIDE_GNOME=yes
+ 	BUILD_CANVAS=yes
+ else
++
++if [ x"$BUILD_CANVAS" != x"no" ]; then
+         
+         # Extract the first word of "gnome-config", so it can be a program name with args.
+ set dummy gnome-config; ac_word=$2
+@@ -3474,6 +3476,10 @@
+ esac
+ fi
+ GNOME_CONFIG="$ac_cv_path_GNOME_CONFIG"
++else
++GNOME_CONFIG="no"
++fi
++
+ if test -n "$GNOME_CONFIG"; then
+   echo "$ac_t""$GNOME_CONFIG" 1>&6
+ else
+@@ -3591,8 +3597,8 @@
+ #define USE_GMODULE 1
+ EOF
  
 -   GMODULE_LIBS="`glib-config --libs gmodule`"
 -   GMODULE_FLAGS="`glib-config --cflags gmodule`"
 +   GMODULE_LIBS="`$GLIB_CONFIG --libs gmodule`"
 +   GMODULE_FLAGS="`$GLIB_CONFIG --cflags gmodule`"
     
-@@ -4470,3 +4470,3 @@
+    
+    echo "$ac_t""yes" 1>&6
+@@ -4468,7 +4474,7 @@
+ 
+ 
  if test "x$with_html_dir" = "x" ; then
 -  HTML_DIR='${datadir}/gnome/html'
 +  HTML_DIR='${datadir}/html'
  else
+   HTML_DIR=$with_html_dir
+ fi

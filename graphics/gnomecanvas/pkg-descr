@@ -1,0 +1,6 @@
+The GNOMECanvas library provides a number of features:
+
+	- Image loading facilities.
+	- Rendering of a GdkPixBuf into various formats:
+	  drawables (windows, pixmaps), GdkRGB buffers.
+	- A cache interface

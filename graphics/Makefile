@@ -67,6 +67,7 @@
     SUBDIR += gliv
     SUBDIR += gltk
     SUBDIR += gnofract4d
+    SUBDIR += gnomecanvas
     SUBDIR += gnomeiconedit
     SUBDIR += gozer
     SUBDIR += gpaint
