@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	programmingruby
-PORTVERSION=	0.3
+PORTVERSION=	0.3a
 CATEGORIES=	lang ruby
 MASTER_SITES=	http://dev.rubycentral.com/downloads/files/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -23,6 +23,9 @@ RUBY_NO_RUN_DEPENDS=	yes
 NO_BUILD=	yes
 
 DOCDIR=		${RUBY_DOCDIR}/${PORTNAME}
+
+post-extract:
+	${RM} -f ${WRKSRC}/html/.??*.swp ${WRKSRC}/xml/*~
 
 do-install:
 	${MKDIR} ${DOCDIR}

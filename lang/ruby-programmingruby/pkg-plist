@@ -2,6 +2,7 @@
 %%RUBY_DOCDIR%%/programmingruby/README
 %%RUBY_DOCDIR%%/programmingruby/html/builtins.html
 %%RUBY_DOCDIR%%/programmingruby/html/classes.html
+%%RUBY_DOCDIR%%/programmingruby/html/dot.gif
 %%RUBY_DOCDIR%%/programmingruby/html/ext_ruby.html
 %%RUBY_DOCDIR%%/programmingruby/html/ext_tk.html
 %%RUBY_DOCDIR%%/programmingruby/html/fadedcover.gif
@@ -15,6 +16,7 @@
 %%RUBY_DOCDIR%%/programmingruby/html/lib_standard.html
 %%RUBY_DOCDIR%%/programmingruby/html/lib_windows.html
 %%RUBY_DOCDIR%%/programmingruby/html/ospace.html
+%%RUBY_DOCDIR%%/programmingruby/html/pr_style.css
 %%RUBY_DOCDIR%%/programmingruby/html/preface.html
 %%RUBY_DOCDIR%%/programmingruby/html/rdtool.html
 %%RUBY_DOCDIR%%/programmingruby/html/ref_c_array.html
