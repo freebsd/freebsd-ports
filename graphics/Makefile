@@ -194,6 +194,7 @@
     SUBDIR += linux_mesa
     SUBDIR += linux_mesa3
     SUBDIR += maverik
+    SUBDIR += metapixel
     SUBDIR += ming
     SUBDIR += miniscrib
     SUBDIR += mmsclient
