@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sane-frontends
-PORTVERSION=	1.0.7
+PORTVERSION=	1.0.8
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.mostang.com/pub/sane/%SUBDIR%/ \
 		ftp://ftp.de.mostang.com/pub/sane/%SUBDIR%/ \
