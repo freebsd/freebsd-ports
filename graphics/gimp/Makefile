@@ -3,10 +3,10 @@
 # Date created:         Mon Nov 18 21:28:43 CST 1996
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.1.1.1 1996/08/24 18:32:45 chuckr Exp $
+# $Id: Makefile,v 1.1.1.1 1996/11/19 03:36:27 erich Exp $
 #
 
-DISTNAME=       gimp-devel
+DISTNAME=       gimp
 PKGNAME=        gimp-devel-96.10.01
 CATEGORIES=     graphics
 MASTER_SITES=   ftp://ftp.xcf.berkeley.edu/pub/gimp/developers/
