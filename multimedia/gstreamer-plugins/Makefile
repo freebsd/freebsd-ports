@@ -359,7 +359,7 @@ PLIST_SUB+=	LAME=""
 CONFIGURE_ARGS+=	--disable-a52dec
 PLIST_SUB+=	LIBA52="@comment "
 .else
-LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	a52.0:${PORTSDIR}/audio/liba52
 
 CONFIGURE_ARGS+=	--with-a52dec-prefix=${LOCALBASE}
 PLIST_SUB+=	LIBA52=""
@@ -533,7 +533,7 @@ PLIST_SUB+=	VORBIS=""
 CONFIGURE_ARGS+=	--disable-xmms
 PLIST_SUB+=	XMMS="@comment "
 .else
-LIB_DEPENDS+=	xmms.3:${PORTSDIR}/audio/xmms
+LIB_DEPENDS+=	xmms.3:${PORTSDIR}/multimedia/xmms
 
 CONFIGURE_ARGS+=	--with-xmms-prefix=${X11BASE} \
 			--with-xmms-exec-prefix=${X11BASE}
