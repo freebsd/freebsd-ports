@@ -1,0 +1,6 @@
+The Finally INteligent Editor.  A user friendly editor with
+a nie GUI (uses the Qt toolkit) that can parse syntax
+and colour keywords and other things.  It can also be programmed
+to insert text with keybindings.
+
+WWW: http://razor.fer.uni-lj.si/~bojank/fine.html
