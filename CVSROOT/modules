@@ -3917,7 +3917,6 @@ mowitz		ports/x11-toolkits/mowitz
 moxftp		ports/ftp/moxftp
 mozart		ports/lang/mozart
 mozilla		ports/www/mozilla
-mozilla+ipv6	ports/www/mozilla+ipv6
 mozilla-embedded ports/www/mozilla-embedded
 mozilla-fonts	ports/x11-fonts/mozilla-fonts
 mozilla-headers	ports/www/mozilla-headers
