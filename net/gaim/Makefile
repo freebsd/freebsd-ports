@@ -1,67 +1,47 @@
 # New ports collection makefile for:	gaim
 # Date created:			26 Mar 1999
 # Whom:				Jim Mock <jim@FreeBSD.org>
-#
 # $FreeBSD$
 #
 
 PORTNAME=	gaim
-PORTVERSION=	0.59.9
+PORTVERSION=	0.60
 CATEGORIES?=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER?=	marcus@FreeBSD.org
-COMMENT=	Gtk+ open-source 'clone' of AOL's Instant Messenger client
+COMMENT=	Gtk+-2.0 open-source 'clone' of AOL's Instant Messenger client
 
-USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-USE_GNOMENG=	yes
-USE_GNOME=	gnomeprefix gnomehack gtk12
+USE_GNOME=	gnomeprefix gnomehack gtk20
 WANT_GNOME=	yes
 USE_PERL5=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 MAN1=		gaim.1
 
-GNOME_PANEL2=	${X11BASE}/libdata/pkgconfig/libpanelapplet-2.0.pc
-
-.if !defined(WITHOUT_GDK_PIXBUF)
-# Note, gdk-pixbuf is needed for buddy icon support.
-USE_GNOME+=	gdkpixbuf
+.ifndef(WITHOUT_GTKSPELL)
+LIB_DEPENDS+=	gtkspell.0:${PORTSDIR}/textproc/gtkspell2
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${HAVE_GNOME:Mlibpanel}!= "" && !exists(${GNOME_PANEL2})
-USE_GNOME+=	libpanel
-RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
-CONFIGURE_ARGS+=	--enable-panel
-PKGNAMESUFFIX=	-gnome
-PLIST_SUB+=	PANEL:="" NOPANEL:="@comment "
-.else
-CONFIGURE_ARGS+=	--disable-gnome
-PLIST_SUB+=	PANEL:="@comment " NOPANEL:=""
+.ifndef(WITHOUT_AUDIO)
+LIB_DEPENDS+=	ao.3:${PORTSDIR}/audio/libao
 .endif
 
-.if ${HAVE_GNOME:Mesound}!=""
-USE_GNOME+=	esound
-.if defined(PKGNAMESUFFIX)
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-esound
-.else
-PKGNAMESUFFIX=	-esound
-.endif
-.else
-CONFIGURE_ARGS+=	--disable-esd
-.endif
+pre-everything::
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Gaim has the following tunable option(s):"
+	@${ECHO_MSG} "		WITHOUT_GTKSPELL	Turns off spell checking"
+	@${ECHO_MSG} "		WITHOUT_AUDIO		Disable audio support"
+	@${ECHO_MSG} ""
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthreads|${PTHREAD_LIBS:S/"//g}|g; \
 		s|-lpthread|${PTHREAD_LIBS:S/"//g}|g' ${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

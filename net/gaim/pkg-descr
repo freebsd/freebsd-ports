@@ -1,5 +1,5 @@
 GAIM is an Open Source 'clone' of America OnLine's Instant Messenger
-client using the GTK+ toolkit. It features most of the functionality
+client using the GTK+-2.0 toolkit. It features most of the functionality
 of the official AIM client while being much smaller and faster.  It
 features multiple groups, group chat, user information fetching and
 registration, time stamping, sound (for when you really do want to be
