@@ -11,7 +11,7 @@ PORTVERSION=	1.0.6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.xjack.org/logtool/logtool/
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
