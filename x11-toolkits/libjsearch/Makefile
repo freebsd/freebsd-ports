@@ -9,9 +9,8 @@ PORTNAME=	libjsearch
 PORTVERSION=	0.5.6
 PORTREVISION=	1
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	ftp://ftp.newplanetsoftware.com/pub/jx/source-1.5.3/ \
-		ftp://ftp.cs.itu.edu.tr/pub/linux/x11/jx/ \
-		ftp://gd.tuwien.ac.at/hci/jx/source-1.5.3/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	lioux
 DISTNAME=	JSearch_source-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
