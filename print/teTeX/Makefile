@@ -7,106 +7,44 @@
 
 PORTNAME=	teTeX
 PORTVERSION=	2.0.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	print
-MASTER_SITES=	ftp://sunsite.informatik.rwth-aachen.de/pub/comp/tex/teTeX/2.0/distrib/ \
-		${MASTER_SITE_TEX_CTAN} \
-		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/dvips/:1
-MASTER_SITE_SUBDIR=	systems/unix/teTeX/2.0/distrib/
-DISTFILES=	${TETEX_SRC} ${TETEX_TEXMF} dvipsk-jpatch-p1.6${EXTRACT_SUFX}:1
-DIST_SUBDIR=	teTeX
-EXTRACT_ONLY=	${TETEX_SRC} dvipsk-jpatch-p1.6${EXTRACT_SUFX}
+MASTER_SITES=	# empty
+DISTFILES=	# empty
+EXTRACT_ONLY=	# empty
 
-MAINTAINER=	demon@FreeBSD.org
-COMMENT=	Thomas Esser's distribution of TeX & friends
+MAINTAINER=	hrs@FreeBSD.org
+COMMENT=	A meta port for teTeX suite
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-		wwwcore.1:${PORTSDIR}/www/libwww \
-		t1.5:${PORTSDIR}/devel/t1lib
+RUN_DEPENDS=	${TETEX_MODESW}:${PORTSDIR}/print/tex-texmflocal \
+		${LOCALBASE}/share/texmf/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
+		latex:${PORTSDIR}/print/teTeX-base \
+		dvips:${PORTSDIR}/print/dvipsk-tetex \
+		xdvi:${PORTSDIR}/print/xdvik
 
-WRKSRC=		${WRKDIR}/tetex-src-${PORTVERSION}
-USE_REINPLACE=	yes
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-multiplatform \
-		--without-texinfo --without-dialog \
-		--with-system-ncurses --with-system-zlib \
-		--with-system-wwwlib --with-libwww-libdir=${LIBWWW_PREFIX}/lib \
-		--with-libwww-include=${LIBWWW_PREFIX}/include/w3c-libwww \
-		--with-system-pnglib --with-pnglib-libdir=${LIBPNG_PREFIX}/lib \
-		--with-pnglib-include=${LIBPNG_PREFIX}/include \
-		--with-system-t1lib --with-t1lib-libdir=${LIBT1_PREFIX}/lib \
-		--with-t1lib-include=${LIBT1_PREFIX}/include
-CONFIGURE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
-		INSTALL_DATA="${INSTALL_DATA}" \
-		INSTALL_PROGRAM="${INSTALL_PROGRAM}"
-PLIST_SUB=	MKTEXLSR=${MKTEXLSR} TEXMFCNF=${TEXMFCNF}
+TETEX_MODESW=	${LOCALBASE}/bin/tetex-modesw
+
 PKGINSTALL=	${WRKDIR}/pkg-install.sh
 PKGDEINSTALL=	${WRKDIR}/pkg-install.sh
-CONFLICTS=	ja-ptex-base*
+PKGINSTALL_SUB=	TETEX_MODESW=${TETEX_MODESW} \
+		MODE=${DEFAULT_MODE}
 
-MAN1=		MakeTeXPK.1 access.1 allcm.1 allneeded.1 \
-		amstex.1 bibtex.1 cont-de.1 cont-en.1 cont-nl.1 dmp.1 \
-		dvicopy.1 dvilj.1 dvired.1 dvitype.1 einitex.1 \
-		elatex.1 eplain.1 etex.1 fontexport.1 fontimport.1 \
-		gftodvi.1 gftopk.1 gftype.1 gsftopk.1 inimf.1 inimpost.1 \
-		iniomega.1 initex.1 kpsepath.1 kpsestat.1 kpsewhich.1 \
-		kpsexpand.1 lambda.1 latex.1 \
-		mag.1 makeindex.1 makempx.1 mf.1 mft.1 mktexlsr.1 mktexmf.1 \
-		mktexpk.1 mktextfm.1 mpost.1 mpto.1 newer.1 omega.1 patgen.1 \
-		pdfinitex.1 pdflatex.1 pdftex.1 pfb2pfa.1 pk2bm.1 \
-		pktogf.1 pktype.1 pltotf.1 pooltype.1 ps2frag.1 ps2pk.1 \
-		readlink.1 tangle.1 tex.1 texconfig.1 texi2html.1 \
-		tftopl.1 tie.1 vftovp.1 vptovf.1 weave.1 pdfetex.1 fontinst.1 \
-		cweb.1 dvihp.1 mkindex.1 dvi2fax.1 e2pall.1 \
-		epstopdf.1 kpsetool.1 pslatex.1 \
-		rubibtex.1 rumakeindex.1 texdoc.1 texexec.1 texi2pdf.1 \
-		texshow.1 texutil.1 thumbpdf.1 texdoctk.1 updmap.1 dvitomp.1
-MAN5=		fmtutil.cnf.5
-MAN8=		fmtutil.8 texlinks.8 mkfontdesc.8
-MLINKS=		allcm.1 allec.1 mktexlsr.1 texhash.1 tex.1 virtex.1 \
-		etex.1 evirtex.1 mf.1 virmf.1 mpost.1 virmpost.1 \
-		omega.1 viromega.1 pdftex.1 pdfvirtex.1
-INFO=		kpathsea latex web2c
+CONFLICTS=	*-teTeX* *-dvips* *-xdvi*
 
-OPTIONS=	DVIPSK "Build and install dvipsk" off \
-		XDVIK "Build and install xdvik" off \
-		X11 "Build with X Window System support" on
+# XXX: We always build in batch mode to disable OPTIONS
+#      in print/teTeX-base.
+DEPENDS_ARGS+=	BATCH=yes
+
+OPTIONS=	LETTERSIZE "Use letter size by default" off
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_DVIPSK)
-FLAVOR+=	dvipsk
-PLIST_SUB+=	DVIPSK=""
-MAN1+=		afm2tfm.1 dvips.1
-INFO+=		dvips
-CONFLICTS+=	dvips* ja-dvips*
+.if defined(WITH_LETTERSIZE)
+FLAVOR+=	letter
+DEPENDS_ARGS+=	WITH_LETTERSIZE=true
+DEFAULT_MODE=	tetex-letter
 .else
-CONFIGURE_ARGS+=	--without-dvipsk
-PLIST_SUB+=	DVIPSK="@comment "
-.endif
-
-.if defined(WITH_XDVIK) && !defined(WITHOUT_X11)
-FLAVOR+=	xdvik
-PLIST_SUB+=	XDVIK=""
-MAN1+=		xdvi.1 t1mapper.1 xdvizilla.1
-CONFLICTS+=	xdvi* ja-xdvi*
-.else
-USE_XLIB=	yes
-CONFIGURE_ARGS+=	 --without-xdvik
-PLIST_SUB+=	XDVIK="@comment "
-.endif
-
-.if !defined(WITHOUT_X11)
-PLIST_SUB+=	X11BITS=""
-USE_XLIB=	yes
-.else
-FLAVOR+=	nox11
-CONFIGURE_ARGS+=--without-x11 \
-		--without-oxdvik \
-		--without-xdvik \
-		--with-mfw=no
-PLIST_SUB+=	X11BITS="@comment "
+DEFAULT_MODE=	tetex
 .endif
 
 # XXX: this does not work
@@ -114,59 +52,18 @@ PLIST_SUB+=	X11BITS="@comment "
 #PKGNAMESUFFIX=	${FLAVOR:S,^,-,:Q:S,\\ ,,g:S,\\-,-,g}
 #.endif
 
-TETEX_SRC=	tetex-src-${PORTVERSION}.tar.gz
-TETEX_TEXMF=	tetex-texmf-${PORTVERSION}.tar.gz
-LIBPNG_PREFIX?=	${LOCALBASE}
-LIBWWW_PREFIX?=	${LOCALBASE}
-LIBT1_PREFIX?=	${LOCALBASE}
-TEXMF_TREE=	${PREFIX}/share/texmf
-MKTEXLSR?=	${LOCALBASE}/bin/mktexlsr
-TEXMFCNF=	${TEXMF_TREE}/web2c/texmf.cnf
-DVIPSKCNF=	${TEXMF_TREE}/dvips/config/config.ps
-
-pre-configure:
-	@${ECHO_MSG}
-	@${ECHO_MSG} "It will be ok if configure will complain about a missing texmf tree!"
-	@${ECHO_MSG}
-
-post-configure:
-	${SED} -e 's,%%TEXMFCNF%%,${TEXMFCNF},g;s,%%DVIPSKCNF%%,${DVIPSKCNF},g;s,%%WITH_DVIPSK%%,${WITH_DVIPSK},g;s,%%MKTEXLSR%%,${MKTEXLSR},g' \
+do-configure:
+	${SED} ${PKGINSTALL_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		< ${FILESDIR}/pkg-install.in > ${PKGINSTALL}
 	${CHMOD} 0755 ${PKGINSTALL}
 
-pre-install:
-	${MKDIR} ${TEXMF_TREE}
-	cd ${TEXMF_TREE} && \
-		${TAR} xUfz ${DISTDIR}/${DIST_SUBDIR}/${TETEX_TEXMF}
-	${INSTALL_DATA} ${FILESDIR}/listings.sty ${TEXMF_TREE}/tex/latex/listings/
-	${INSTALL_SCRIPT} ${WRKSRC}/utils/texinfo/util/texi2dvi ${PREFIX}/bin
-	${SED} -e "s|^TEXMFMAIN = .*|TEXMFMAIN = ${TEXMF_TREE}|g" \
-		< ${WRKSRC}/texk/kpathsea/texmf.cnf \
-		> ${TEXMF_TREE}/web2c/texmf.cnf
-	${CHMOD} 644 ${TEXMF_TREE}/web2c/texmf.cnf
+do-build:
+	@${DO_NADA}
+
+do-install: #emtpy
+	@${DO_NADA}
 
 post-install:
-	${SETENV} TEXMFMAIN=${TEXMF_TREE} \
-		${WRKSRC}/texk/tetex/texconfig font ro > /dev/null 2>&1
-	${SETENV} TEXMFMAIN=${TEXMF_TREE} \
-		${WRKSRC}/texk/tetex/texconfig font options appendonlydir varfonts
-.if !defined(WITH_XDVIK)
-	${RM} -f ${TEXMF_TREE}/xdvi/XDvi
-.endif
-	cd ${TEXMF_TREE}/dvips/pstricks && \
-		${PATCH} --quiet < ${WRKDIR}/PSTricks.patch && \
-		${RM} -f pst-text.pro.orig
-	${SED} -e 's,^\(o*\),%\1,' \
-		< ${TEXMF_TREE}/dvips/config/config.ps \
-		> ${TEXMF_TREE}/dvips/config/config.ps.tetex
-	${RM} -f ${TEXMF_TREE}/dvips/config/config.ps
-	cd ${TEXMF_TREE}/web2c && \
-		${MV} texmf.cnf texmf.cnf.tetex
 	@${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	@${ECHO_MSG}
-	@${ECHO_MSG} "You may want to run texconfig to configure teTeX for your"
-	@${ECHO_MSG} "local environment. You will find teTeX's local documentation"
-	@${ECHO_MSG} "in ${TEXMF_TREE}/doc/."
-	@${ECHO_MSG}
 
 .include <bsd.port.post.mk>
