@@ -40,13 +40,9 @@ CONFIGURE_ARGS?=	--verbose
 CONFIGURE_WRKSRC?=	${WRKDIR}/build-${LCLTARGET}
 CONFIGURE_SCRIPT?=	../${GDBNAME}/configure
 
-MAN1=		${LCLTARGET}-gdb.1
+PATCH_DIST_STRIP?=	-p1
 
-.if defined(PATCH_DEBUG)
-PATCH_DIST_ARGS=   -d ${WRKDIR} -E ${PATCH_DIST_STRIP}
-.else
-PATCH_DIST_ARGS=   -d ${WRKDIR} --forward --quiet -E ${PATCH_DIST_STRIP}
-.endif
+MAN1=		${LCLTARGET}-gdb.1
 
 pre-configure:
 	@(cd ${WRKDIR} ; ${MKDIR} build-${LCLTARGET})
