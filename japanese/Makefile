@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.55 1997/02/03 16:38:14 max Exp $
+# $Id: Makefile,v 1.56 1997/02/11 11:39:59 asami Exp $
 #
 
     SUBDIR += Canna
@@ -13,6 +13,7 @@
     SUBDIR += escpf
     SUBDIR += gawk
     SUBDIR += ghostscript
+    SUBDIR += gn-gnspool
     SUBDIR += grep
     SUBDIR += groff
     SUBDIR += gxditview
