@@ -458,6 +458,7 @@ share/apps/kile/pics/math3.png
 share/apps/kile/pics/math4.png
 share/apps/kile/pics/math5.png
 share/apps/kile/pics/mathmode.png
+share/apps/kile/pics/metapost.png
 share/apps/kile/pics/modified.png
 share/apps/kile/pics/newline.png
 share/apps/kile/pics/part.png
@@ -482,18 +483,24 @@ share/apps/kile/pics/xfig.png
 share/apps/kile/pics/xgfe.png
 share/doc/HTML/en/kile/index.html
 share/icons/hicolor/16x16/apps/kile.png
+share/icons/hicolor/22x22/apps/kile.png
 share/icons/hicolor/32x32/apps/kile.png
 share/icons/hicolor/48x48/apps/kile.png
+share/locale/ca/LC_MESSAGES/kile.mo
+share/locale/cs/LC_MESSAGES/kile.mo
 share/locale/de/LC_MESSAGES/kile.mo
 share/locale/el/LC_MESSAGES/kile.mo
 share/locale/es/LC_MESSAGES/kile.mo
 share/locale/eu/LC_MESSAGES/kile.mo
 share/locale/fr/LC_MESSAGES/kile.mo
 share/locale/hu/LC_MESSAGES/kile.mo
+share/locale/it/LC_MESSAGES/kile.mo
 share/locale/ja/LC_MESSAGES/kile.mo
+share/locale/nl/LC_MESSAGES/kile.mo
 share/locale/pt_BR/LC_MESSAGES/kile.mo
 share/locale/ru/LC_MESSAGES/kile.mo
 share/locale/sk/LC_MESSAGES/kile.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/kile.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/kile.mo
 @dirrm share/doc/HTML/en/kile
 @dirrm share/apps/kile/pics
