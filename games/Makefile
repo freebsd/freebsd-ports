@@ -379,6 +379,7 @@
     SUBDIR += qgo
     SUBDIR += qix
     SUBDIR += qkmj
+    SUBDIR += qnetwalk
     SUBDIR += qstat
     SUBDIR += quake2forge
     SUBDIR += quake2lnx
