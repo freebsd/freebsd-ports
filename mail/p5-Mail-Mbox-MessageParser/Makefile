@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	Mail-Mbox-MessageParser
-PORTVERSION=	1.12
+PORTVERSION=	1.13
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Mail
+PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	clsung@dragon2.net
 COMMENT=	A fast and simple mbox folder reader
@@ -28,8 +29,7 @@ MAN3=		Mail::Mbox::MessageParser.3 \
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500601
-BUILD_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
-RUN_DEPENDS+=	${BUILD_DEPENDS}
+IGNORE=		This port requires perl 5.6.x or later. Install lang/perl5 then try again
 .endif
 
 .include <bsd.port.post.mk>
