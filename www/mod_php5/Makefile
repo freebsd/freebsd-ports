@@ -1,17 +1,21 @@
 # New ports collection makefile for:    apache HTTPD and HTTPSD
-# Version required:     1.2b7
+# Version required:     1.2b8
 # Date created:         Fri Aug 25 16:42:36 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.27 1997/01/28 05:39:31 ache Exp $
+# $Id: Makefile,v 1.28 1997/02/26 01:23:10 ache Exp $
 #
 
-DISTNAME=       apache_1.2b7
-PKGNAME=        apache-1.2b7
+DISTNAME=       apache_1.2b8
+PKGNAME=        apache-1.2b8
 CATEGORIES=	www
 MASTER_SITES=   ftp://www.apache.org/apache/dist/
 
-MAINTAINER=	ache@freebsd.org
+.if !defined(SECURE_SERVER)
+MAINTAINER=     ache@freebsd.org
+.else
+MAINTAINER=	markm@freebsd.org
+.endif
 
 # User-controlled variables list
 # DIR_ACHE      - add SuppressHTMLPreamble option to directory index
@@ -35,7 +39,6 @@ post-patch:
 .if defined(SECURE_SERVER)
 
 BROKEN=		"SSLeay has changed, and the patches for apache need more work"
-MAINTAINER=	markm@freebsd.org
 PKGNAME=        apache_SSL-1.1.1
 MAIN_SRC=	${DISTNAME}${EXTRACT_SUFX}
 SSL_EXTRAS=	${DISTNAME}+1.3.ssl${EXTRACT_SUFX}
