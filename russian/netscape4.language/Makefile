@@ -1,12 +1,12 @@
 # New ports collection makefile for: netscape.language
-# Version required:     3.0b5a
+# Version required:     3.0b6
 # Date created:         8 Apr 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.5 1996/07/01 21:54:26 ache Exp $
+# $Id: Makefile,v 1.6 1996/07/05 12:57:32 ache Exp $
 #
 
-PKGNAME=        ru-netscape-3.0b5a
+PKGNAME=        ru-netscape-3.0b6
 CATEGORIES+=    russian www x11
 
 MAINTAINER=	ache@FreeBSD.ORG
@@ -29,7 +29,7 @@ do-fetch:
 
 do-install:
 	if [ -f ${APPDEF}/Netscape ] ; then \
-		grep -q '\.version:.*3\.0b5a$$' ${APPDEF}/Netscape || \
+		grep -q '\.version:.*3\.0b6$$' ${APPDEF}/Netscape || \
 			rm ${APPDEF}/Netscape; \
 	fi
 	if [ ! -f ${APPDEF}/Netscape ] ; then \
@@ -37,6 +37,5 @@ do-install:
 	fi
 	cd ${APPDEF}; grep -q koi8-r=BOLD Netscape || \
 		patch < ${FILESDIR}/koi8-r_patch;
-	@cat ${FILESDIR}/fix
 
 .include <bsd.port.mk>
