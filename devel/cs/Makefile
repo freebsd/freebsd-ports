@@ -1,7 +1,7 @@
 # New ports collection makefile for:	cs
 # Version required:			0.5
 # Date created:				22 May 1997
-# Whom:					Thomas Gellekum <tg@FreeBSD.ORG>
+# Whom:					Thomas Gellekum <tg@FreeBSD.org>
 #
 # $FreeBSD$
 #

@@ -16,7 +16,7 @@ PATCH_SITES=	http://www.freebsd.org/~flathill/distfiles/ \
 PATCHFILES=	gicq-0.33ja.patch
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	flathill@FreeBSD.ORG
+MAINTAINER=	flathill@FreeBSD.org
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12	\
 		icq.0:${PORTSDIR}/japanese/libicq

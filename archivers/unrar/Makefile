@@ -11,7 +11,7 @@ DISTNAME=       unrar-2.50
 CATEGORIES=	archivers
 MASTER_SITES=   ftp://ftp.kiarchive.ru/pub/unix/arcers/
 
-MAINTAINER=     ache@FreeBSD.ORG
+MAINTAINER=     ache@FreeBSD.org
 
 NO_WRKSUBDIR=   Yes
 

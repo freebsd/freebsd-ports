@@ -10,7 +10,7 @@ DISTNAME=	mirror-2.9
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://src.doc.ic.ac.uk/computing/archiving/mirror/
 
-MAINTAINER=	torstenb@FreeBSD.ORG
+MAINTAINER=	torstenb@FreeBSD.org
 
 USE_PERL5=	yes
 NO_WRKSUBDIR=	yes

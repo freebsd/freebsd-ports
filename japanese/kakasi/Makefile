@@ -1,7 +1,7 @@
 # New ports collection makefile for:	kakasi
 # Version required:		2.2.5
 # Date created:			26 Mar. 1996
-# Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
+# Whom:				Masafumi NAKANE <max@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -19,7 +19,7 @@ MASTER_SITES=	ftp://sunsite.sut.ac.jp/pub/asia-info/japanese-src/packages/ \
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} kakasidict.940620.gz \
 		kakasi-ext.tar.gz
 
-MAINTAINER=	max@FreeBSD.ORG
+MAINTAINER=	max@FreeBSD.org
 
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX} kakasi-ext.tar.gz
 WRKSRC=			${WRKDIR}/${DISTNAME}/src

@@ -10,7 +10,7 @@ DISTNAME=	xplot-0.90
 CATEGORIES=	math graphics net
 MASTER_SITES=	ftp://mercury.lcs.mit.edu/pub/shep/
 
-MAINTAINER=	fenner@FreeBSD.ORG
+MAINTAINER=	fenner@FreeBSD.org
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes

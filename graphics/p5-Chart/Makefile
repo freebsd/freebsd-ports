@@ -1,7 +1,7 @@
 # New ports collection makefile for:	p5-chart
 # Version required:	0.99b
 # Date Created:		8 April 1998
-# Whom:			Vanilla I. Shu <vanilla@FreeBSD.ORG>
+# Whom:			Vanilla I. Shu <vanilla@FreeBSD.org>
 #
 # $FreeBSD$
 #

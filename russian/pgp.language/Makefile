@@ -11,7 +11,7 @@ PKGNAME=        ru-pgp-2.6.3ia
 CATEGORIES=     russian
 MASTER_SITES=   ftp://ftp.kiarchive.ru/pub/unix/crypto/pgp/
 
-MAINTAINER=	ache@FreeBSD.ORG
+MAINTAINER=	ache@FreeBSD.org
 
 RESTRICTED=	"Crypto"
 

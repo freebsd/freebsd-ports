@@ -1,7 +1,7 @@
 # New ports collection makefile for:	apel for emacs
 # Version required:	9.20
 # Date created:		23 September 1998
-# Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.ORG>
+# Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	editors elisp
 MASTER_SITES=	ftp://ftp.etl.go.jp/pub/mule/apel/ \
 		ftp://ftp.center.osaka-u.ac.jp/mule/apel/
 
-MAINTAINER?=	shige@FreeBSD.ORG
+MAINTAINER?=	shige@FreeBSD.org
 
 # distfile version
 APEL_VER=	9.20

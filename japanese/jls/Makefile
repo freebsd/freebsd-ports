@@ -12,7 +12,7 @@ CATEGORIES=	japanese
 MASTER_SITES=	http://www.freebsd.org/~shige/ports/ \
 		http://www.yuasa.kuis.kyoto-u.ac.jp/~shige/FreeBSD/programs/
 
-MAINTAINER=	shige@FreeBSD.ORG
+MAINTAINER=	shige@FreeBSD.org
 
 MAN1=		jls.1
 MANCOMPRESSED=	yes

@@ -11,6 +11,6 @@ CATEGORIES=	devel
 MASTER_SITES=	http://resnet.uoregon.edu/~gurney_j/	\
 		http://d182-89.uoregon.edu/~jmg/
 
-MAINTAINER=	jmg@FreeBSD.ORG
+MAINTAINER=	jmg@FreeBSD.org
 
 .include <bsd.port.mk>

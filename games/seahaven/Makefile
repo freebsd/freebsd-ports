@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.cinenet.net/users/spitzak/seahaven/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	imp@FreeBSD.ORG
+MAINTAINER=	imp@FreeBSD.org
 
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes

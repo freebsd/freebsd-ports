@@ -16,7 +16,7 @@ EXTRACT_SUFX=		.Z
 PATCH_SITES=		${MASTER_SITES}
 PATCHFILES=		display.pch.Z
 
-MAINTAINER=		ports@FreeBSD.ORG
+MAINTAINER=		ports@FreeBSD.org
 
 BUILD_DEPENDS=		gunshar:${PORTSDIR}/archivers/gshar+gunshar
 

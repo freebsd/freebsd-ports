@@ -11,7 +11,7 @@ CATEGORIES=		x11
 MASTER_SITES=		${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
 
-MAINTAINER=		gpalmer@FreeBSD.ORG
+MAINTAINER=		gpalmer@FreeBSD.org
 
 LIB_DEPENDS=		Xpm.4:${PORTSDIR}/graphics/xpm
 

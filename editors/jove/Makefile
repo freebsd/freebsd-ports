@@ -10,7 +10,7 @@ DISTNAME=	jove-4.16
 CATEGORIES=	editors
 MASTER_SITES=	ftp://relay.cs.toronto.edu/pub/moraes/jove/
 
-MAINTAINER=	erich@FreeBSD.ORG
+MAINTAINER=	erich@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/jove
 MAN1=		jove.1 teachjove.1 xjove.1 jovetool.1

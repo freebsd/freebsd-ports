@@ -1,7 +1,7 @@
 # New ports collection makefile for:   fakebo
 # Version required:    0.3.3
 # Date created:        16 March 1999
-# Whom:                Kris Kennaway <kris@FreeBSD.ORG>
+# Whom:                Kris Kennaway <kris@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -15,7 +15,7 @@ MASTER_SITES=	http://yi.com/home/KosturjakVlatko/ \
 		ftp://ftp.ist.utl.pt/pub/linuxberg/files/console/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	kris@FreeBSD.ORG
+MAINTAINER=	kris@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${PKGNAME}
 

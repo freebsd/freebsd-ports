@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://anarres.cs.berkeley.edu/pub/ucblogo/
 MASTER_SITE_SUBDIR=	ucblogo
 
-MAINTAINER=	jmacd@FreeBSD.ORG
+MAINTAINER=	jmacd@FreeBSD.org
 
 USE_XLIB=	yes
 MAKEFILE=	makefile

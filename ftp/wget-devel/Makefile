@@ -1,7 +1,7 @@
 # New ports collection makefile for:	wget
 # Version required:	1.5.3
 # Date created:		31 December 1996
-# Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
+# Whom:			Thomas Gellekum <tg@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -15,7 +15,7 @@ MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.max.irk.ru/unix/net/www/wget/
 MASTER_SITE_SUBDIR=	wget
 
-MAINTAINER=	obrien@FreeBSD.ORG
+MAINTAINER=	obrien@FreeBSD.org
 
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 

@@ -10,7 +10,7 @@ DISTNAME=	html-4.0b
 CATEGORIES=	textproc
 MASTER_SITES=	http://fallout.campusview.indiana.edu/ports/distfiles/
 
-MAINTAINER=	jfieber@FreeBSD.ORG
+MAINTAINER=	jfieber@FreeBSD.org
 
 NO_MTREE=       yes
 EXTRACT_ONLY=	# empty

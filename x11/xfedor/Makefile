@@ -16,7 +16,7 @@ MASTER_SITES=   ftp://ftp.kiarchive.ru/pub/x11/util/
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
-MAINTAINER=     ache@FreeBSD.ORG
+MAINTAINER=     ache@FreeBSD.org
 
 USE_IMAKE=      yes
 

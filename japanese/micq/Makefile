@@ -18,7 +18,7 @@ PATCH_SITES=	http://www.tahoo.org/~taku/soft/micq-0.4.0-jp.patch \
 PATCHFILES=	micq-0.4.0-jp.patch
 PATCH_DIST_STRIP= -p1
 
-MAINTAINER=	flathill@FreeBSD.ORG
+MAINTAINER=	flathill@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/micq-0.4.0
 

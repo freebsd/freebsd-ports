@@ -14,7 +14,7 @@ MASTER_SITES=   ftp://ftp.walrus.com/pub/avatar/clients/ \
 		ftp://iclub.nsu.ru/pub/mud/clients/tintin++/
 EXTRACT_SUFX=   .tar.Z
 
-MAINTAINER=	ache@FreeBSD.ORG
+MAINTAINER=	ache@FreeBSD.org
 
 WRKSRC=         ${WRKDIR}/tintin++/src
 GNU_CONFIGURE=	yes

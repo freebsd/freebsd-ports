@@ -13,7 +13,7 @@ PKGNAME=	docbook-3.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.oasis-open.org/docbook/docbook/3.1/
 
-MAINTAINER=	nik@FreeBSD.ORG
+MAINTAINER=	nik@FreeBSD.org
 
 RUN_DEPENDS=	${ISOCAT}:${PORTSDIR}/textproc/iso8879
 

@@ -13,7 +13,7 @@ MASTER_SITES=		ftp://moon.csie.ntu.edu.tw/pub/X/ted/ \
 			ftp://freebsd.ntu.edu.tw/freebsd/ntu/moon/X/ted/
 EXTRACT_SUFX=		.tgz
 
-MAINTAINER=		vanilla@FreeBSD.ORG
+MAINTAINER=		vanilla@FreeBSD.org
 
 RUN_DEPENDS=		${X11BASE}/bin/xcin:${PORTSDIR}/chinese/xcin
 

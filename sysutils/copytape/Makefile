@@ -13,7 +13,7 @@ MASTER_SITE=		${MASTER_SITE_COMP_SOURCES}
 MASTER_SITE_SUBDIR=	unix/volume8
 EXTRACT_SUFX=		.Z
 
-MAINTAINER=		ports@FreeBSD.ORG
+MAINTAINER=		ports@FreeBSD.org
 
 BUILD_DEPENDS=		gunshar:${PORTSDIR}/archivers/gshar+gunshar
 

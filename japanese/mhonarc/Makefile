@@ -18,7 +18,7 @@ MASTER_SITES=	http://www.oac.uci.edu/indiv/ehood/tar/ \
 		http://www.freebsd.org/~flathill/distfiles/
 DISTFILES=	MHonArc2.3.3.tar.gz iso2022.pl
 
-MAINTAINER=	flathill@FreeBSD.ORG
+MAINTAINER=	flathill@FreeBSD.org
 
 EXTRACT_ONLY=	MHonArc2.3.3.tar.gz
 Y2K=		http://www.oac.uci.edu/indiv/ehood/MHonArc/doc/faq/general.html#y2k

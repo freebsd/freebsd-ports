@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES?=	ftp://ftp.netscape.com/pub/communicator/4.08/english/unix/unsupported/freebsd/professional_edition/
 DISTFILES?=	communicator-v408-export.x86-unknown-freebsd.tar.gz
 
-MAINTAINER?=	sada@FreeBSD.ORG
+MAINTAINER?=	sada@FreeBSD.org
 
 Y2K=		http://home.netscape.com/products/year2000/faq/client.html
 

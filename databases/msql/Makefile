@@ -9,7 +9,7 @@
 DISTNAME=	msql-2.0.4.1
 CATEGORIES=	databases
 
-MAINTAINER=	jfitz@FreeBSD.ORG
+MAINTAINER=	jfitz@FreeBSD.org
 
 # Not free for commercial use.  Must create a user on the local system
 NO_PACKAGE=	YES

@@ -10,7 +10,7 @@ DISTNAME=       xcept-2.1.2
 CATEGORIES=	comms
 MASTER_SITES=   ${MASTER_SITE_LOCAL}
 
-MAINTAINER=     joerg@FreeBSD.ORG
+MAINTAINER=     joerg@FreeBSD.org
 
 USE_XLIB=	yes
 MAN1=		xcept.1

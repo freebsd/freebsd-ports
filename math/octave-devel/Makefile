@@ -10,7 +10,7 @@ DISTNAME=	octave-2.0.13
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.che.wisc.edu/pub/octave/
 
-MAINTAINER=	chuckr@FreeBSD.ORG
+MAINTAINER=	chuckr@FreeBSD.org
 
 BUILD_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot

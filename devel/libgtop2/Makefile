@@ -1,7 +1,7 @@
 # New ports collection makefile for:	libgtop
 # Version required:		1.1.0
 # Date Created:			26 Sep 1998
-# Whom:				Vanilla I. Shu <vanilla@FreeBSD.ORG>
+# Whom:				Vanilla I. Shu <vanilla@FreeBSD.org>
 #
 # $FreeBSD$
 #

@@ -1,7 +1,7 @@
 # New ports collection makefile for:	rtpmon
 # Version required:			1.0a7
 # Date created:				1 November 1996
-# Whom:	      Bill Fenner <fenner@FreeBSD.ORG>
+# Whom:	      Bill Fenner <fenner@FreeBSD.org>
 #
 # $FreeBSD$
 #

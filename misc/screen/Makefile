@@ -12,7 +12,7 @@ MASTER_SITES=   ftp://ftp.uni-erlangen.de/pub/utilities/screen/ \
 		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	screen
 
-MAINTAINER=	ache@FreeBSD.ORG
+MAINTAINER=	ache@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 MAN1=		screen.1

@@ -1,7 +1,7 @@
 # New ports collection makefile for: comconsole
 # Version required:	0.1
 # Date created:		27 Dec 1998
-# Whom:			SADA Kenji <sada@FreeBSD.ORG>
+# Whom:			SADA Kenji <sada@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	#
 DISTFILES=
 
-MAINTAINER=	sada@FreeBSD.ORG
+MAINTAINER=	sada@FreeBSD.org
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

@@ -10,7 +10,7 @@ DISTNAME=	chimera-1.70p0
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.cs.unlv.edu/pub/chimera/
 
-MAINTAINER=	jseger@FreeBSD.ORG
+MAINTAINER=	jseger@FreeBSD.org
 
 BROKEN=		build
 

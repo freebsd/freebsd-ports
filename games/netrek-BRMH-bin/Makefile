@@ -1,7 +1,7 @@
 # New ports collection makefile for:    netrek
 # Version required:     BRMH 2.2p2
 # Date created:         15 Mar 1999
-# Whom:                 Donald Burr <dburr@FreeBSD.ORG>
+# Whom:                 Donald Burr <dburr@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.solace.mh.se/pub/netrek/clients/bsd/
 EXTRACT_SUFX=	.gz
 
-MAINTAINER=	dburr@FreeBSD.ORG
+MAINTAINER=	dburr@FreeBSD.org
 
 USE_X_PREFIX=		YES
 NO_BUILD=		YES

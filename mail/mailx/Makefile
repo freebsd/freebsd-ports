@@ -17,7 +17,7 @@ PATCH_SITES=	ftp://ports.jp.freebsd.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/ \
 PATCHFILES=	mailx.v05.patch.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	issei@jp.FreeBSD.ORG
+MAINTAINER=	issei@jp.FreeBSD.org
 
 EXTRACT_ONLY=	mail-2.2.8.tar.gz
 WRKSRC=		${WRKDIR}/mail-2.2.8

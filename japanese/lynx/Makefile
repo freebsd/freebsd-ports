@@ -1,7 +1,7 @@
 # New ports collection makefile for:	ja-lynx
 # Version required:     2.8.2 release 1
 # Date created:         10 August 1998
-# Whom:                 Shigeyuki FUKUSHIMA <shige@FreeBSD.ORG>
+# Whom:                 Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ PKGNAME=        ja-lynx-2.8.2.rel1
 CATEGORIES=	japanese www
 MASTER_SITES=   http://sol.slcc.edu/lynx/current/
 
-MAINTAINER=	shige@FreeBSD.ORG
+MAINTAINER=	shige@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/lynx2-8-2
 

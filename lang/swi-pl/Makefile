@@ -11,7 +11,7 @@ PKGNAME=	swi-pl-3.2.9
 CATEGORIES=	lang
 MASTER_SITES=	ftp://swi.psy.uva.nl/pub/SWI-Prolog/
 
-MAINTAINER=	max@FreeBSD.ORG
+MAINTAINER=	max@FreeBSD.org
 
 Y2K=		http://www.hio.hen.nl/faq/SWI-Prolog.html#7.__warranty
 

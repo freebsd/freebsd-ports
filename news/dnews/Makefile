@@ -12,7 +12,7 @@ CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.netwinsite.com/pub/netwinsite/dnews/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	ports@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.org
 
 Y2K=		http://netwinsite.com/dnews_y2k.htm
 

@@ -11,7 +11,7 @@ PKGNAME=	html2ps-1.0
 CATEGORIES=	print www perl5
 MASTER_SITES=	http://www.tdb.uu.se/~jan/
 
-MAINTAINER=	andreas@FreeBSD.ORG
+MAINTAINER=	andreas@FreeBSD.org
 
 BUILD_DEPENDS=	mogrify:${PORTSDIR}/graphics/ImageMagick \
 		djpeg:${PORTSDIR}/graphics/jpeg \

@@ -1,7 +1,7 @@
 # New ports collection makefile for:	pilot_makedoc
 # Version required:			0.7
 # Date created:				May 10th 1997
-# Whom:					jfitz@FreeBSD.ORG
+# Whom:					jfitz@FreeBSD.org
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	palm textproc
 MASTER_SITES=	http://www.concentric.net/~rbram/
 DISTFILES=	makedoc7.cpp
 
-MAINTAINER=	jfitz@FreeBSD.ORG
+MAINTAINER=	jfitz@FreeBSD.org
 
 NO_WRKSUBDIR=	YES
 ALL_TARGET=	pilot_makedoc

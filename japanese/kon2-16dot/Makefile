@@ -17,7 +17,7 @@ DISTFILES=	kon2-0.3.tar.gz \
 		k14.bdf 7x14rk.bdf \
 		jiskan16.bdf 8x16rk.bdf
 
-MAINTAINER=	shige@FreeBSD.ORG
+MAINTAINER=	shige@FreeBSD.org
 
 ONLY_FOR_ARCHS=	i386
 

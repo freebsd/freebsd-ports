@@ -11,7 +11,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	http://www.xs4all.nl/~graaff/checkbot/ \
 		http://www.freebsd.org/~wosch/src/
 
-MAINTAINER=	wosch@FreeBSD.ORG
+MAINTAINER=	wosch@FreeBSD.org
 
 site_perl=${PREFIX}/lib/perl5/site_perl/${PERL_VER}
 BUILD_DEPENDS=  \

@@ -1,7 +1,7 @@
 # New ports collection makefile for:	mimekit
 # Version required:		1.7
 # Date created:			9 April 1996
-# Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
+# Whom:				Masafumi NAKANE <max@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ CATEGORIES=	japanese devel mail
 MASTER_SITES=	ftp://etlport.etl.go.jp/pub/ccipr/DeleGate/ \
 		ftp://ftp.iij.ad.jp/pub/mail/mime/
 
-MAINTAINER=	max@FreeBSD.ORG
+MAINTAINER=	max@FreeBSD.org
 
 post-install:
 .if !defined(NOPORTDOCS)

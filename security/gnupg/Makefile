@@ -1,7 +1,7 @@
 # New ports collection makefile for:	gnupg
 # Version required:	0.9.10
 # Date created:		Sep 30, 1998
-# Whom:			kuriyama@FreeBSD.ORG
+# Whom:			kuriyama@FreeBSD.org
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.guug.de/pub/gcrypt/ \
 		ftp://pgp.iijlab.net/pub/gnupg/ \
 		ftp://ftp.win.or.jp/pub/network/gnupg/
 
-MAINTAINER=	kuriyama@FreeBSD.ORG
+MAINTAINER=	kuriyama@FreeBSD.org
 
 RESTRICTED=	"Crypto; export-controlled"
 GNU_CONFIGURE=	YES

@@ -1,7 +1,7 @@
 # New ports collection makefile for:	recode
 # Version required:	3.4
 # Date created:		14 Jul 1995
-# Whom:			torstenb@FreeBSD.ORG
+# Whom:			torstenb@FreeBSD.org
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	converters
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	recode
 
-MAINTAINER=	torstenb@FreeBSD.ORG
+MAINTAINER=	torstenb@FreeBSD.org
 
 GNU_CONFIGURE=	YES
 

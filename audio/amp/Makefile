@@ -12,7 +12,7 @@ CATEGORIES=	audio
 # the author's site seems dead.
 MASTER_SITES=	ftp://ftp.clara.net/pub/unix/Audio/
 
-MAINTAINER=	vanilla@FreeBSD.ORG
+MAINTAINER=	vanilla@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

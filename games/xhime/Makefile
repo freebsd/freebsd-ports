@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.tcp-ip.or.jp/~shochan/linux/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	flathill@FreeBSD.ORG
+MAINTAINER=	flathill@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/xhime1.51
 USE_IMAKE=	yes

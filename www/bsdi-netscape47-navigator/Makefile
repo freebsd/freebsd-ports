@@ -9,7 +9,7 @@
 MASTER_SITES=	ftp://ftp.netscape.com/pub/communicator/english/4.61/unix/unsupported/freebsd/navigator_standalone/
 DISTFILES=	navigator-v461-export.x86-unknown-freebsd.tar.gz
 
-MAINTAINER?=	sada@FreeBSD.ORG
+MAINTAINER?=	sada@FreeBSD.org
 
 BROWSER=	navigator
 INFILE_HEAD=	'Navigator,4.61.0.99147'

@@ -13,7 +13,7 @@ CATEGORIES=     security mail
 MASTER_SITES=   ftp://ftp.jpunix.com/pub/remailer-tools/ \
 		ftp://ftp.kiarchive.ru/unix/crypto/
 
-MAINTAINER=	ache@FreeBSD.ORG
+MAINTAINER=	ache@FreeBSD.org
 
 BUILD_DEPENDS+= pgp:${PORTSDIR}/security/pgp
 

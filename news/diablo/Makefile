@@ -12,7 +12,7 @@ CATEGORIES=	news
 MASTER_SITES=	http://www.backplane.com/diablo/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jfitz@FreeBSD.ORG
+MAINTAINER=	jfitz@FreeBSD.org
 
 BUILD_DEPENDS=	xmake:${PORTSDIR}/devel/xmake
 

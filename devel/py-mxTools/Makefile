@@ -1,7 +1,7 @@
 # New ports collection makefile for:	py-mxTools
 # Version required:	1.0.0
 # Date created:		20 May 1999
-# Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
+# Whom:			Thomas Gellekum <tg@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ PKGNAME=	py-mxTools-1.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	http://starship.skyport.net/~lemburg/
 
-MAINTAINER=	tg@FreeBSD.ORG
+MAINTAINER=	tg@FreeBSD.org
 
 BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
 RUN_DEPENDS=	python:${PORTSDIR}/lang/python

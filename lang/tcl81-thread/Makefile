@@ -11,7 +11,7 @@ PKGNAME=	tcl-8.1.b1-thread
 CATEGORIES=	lang tcl81
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_1/
 
-MAINTAINER=	ejc@FreeBSD.ORG
+MAINTAINER=	ejc@FreeBSD.org
 
 Y2K=            http://www.scriptics.com/Y2K.html
 

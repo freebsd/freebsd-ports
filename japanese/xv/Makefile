@@ -9,7 +9,7 @@
 PKGNAME=	ja-xv-3.10a
 CATEGORIES=	japanese graphics
 
-MAINTAINER=	shige@FreeBSD.ORG
+MAINTAINER=	shige@FreeBSD.org
 
 MASTERDIR=	${.CURDIR}/../../graphics/xv
 PKGDIR=		${.CURDIR}/pkg

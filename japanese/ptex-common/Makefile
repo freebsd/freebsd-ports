@@ -12,7 +12,7 @@ CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/ptex218/web2c/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} web-7.2.tar.gz texmflib-7.3.tar.gz
 
-MAINTAINER=	max@FreeBSD.ORG
+MAINTAINER=	max@FreeBSD.org
 
 MANUAL_PACKAGE_BUILD=	incompatible with other versions of ptex-*
 USE_GMAKE=	yes

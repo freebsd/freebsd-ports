@@ -10,7 +10,7 @@ DISTNAME=       sitecopy-0.6.0
 CATEGORIES=	www
 MASTER_SITES=   http://www.lyra.org/sitecopy/
 
-MAINTAINER=     nik@FreeBSD.ORG
+MAINTAINER=     nik@FreeBSD.org
 
 FETCH_BEFORE_ARGS=	-b
 GNU_CONFIGURE=  yes

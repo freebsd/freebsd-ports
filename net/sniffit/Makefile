@@ -13,7 +13,7 @@ CATEGORIES=	net security
 MASTER_SITES=	http://reptile.rug.ac.be/~coder/sniffit/files/  \
 		http://www.freebsd.org/~obrien/Distfiles/
 
-MAINTAINER=	obrien@FreeBSD.ORG
+MAINTAINER=	obrien@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 ALL_TARGET=

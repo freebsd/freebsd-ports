@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.wxftp.seul.org/pub/wxftp/0.4.4/ \
 		ftp://ftp.sunsite.auc.dk/disk2/linuxberg.com/files/x11/network/ \
 		ftp://ftp.bitcon.no/.10/linux/linuxberg/files/x11/network/
 
-MAINTAINER=	kris@FreeBSD.ORG
+MAINTAINER=	kris@FreeBSD.org
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 

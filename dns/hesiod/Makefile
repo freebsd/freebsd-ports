@@ -11,7 +11,7 @@ CATEGORIES=		net
 MASTER_SITES=		ftp://athena-dist.mit.edu/pub/ATHENA/hesiod/   \
 			http://www.nectar.cc/distfiles/
 
-MAINTAINER=		nectar@FreeBSD.ORG
+MAINTAINER=		nectar@FreeBSD.org
 
 MAN1=			hesinfo.1
 MAN3=			hesiod.3 hesiod_end.3 hesiod_free_list.3 	\

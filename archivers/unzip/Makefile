@@ -11,7 +11,7 @@ PKGNAME=        unzip-5.40
 CATEGORIES=	archivers
 MASTER_SITES=   ftp://ftp.cdrom.com/pub/infozip/src/
 
-MAINTAINER=     ache@FreeBSD.ORG
+MAINTAINER=     ache@FreeBSD.org
 
 Y2K=		http://www.cdrom.com/pub/infozip/FAQ.html#Y2K
 

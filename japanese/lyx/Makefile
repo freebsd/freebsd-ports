@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/ \
 		http://cgi.din.or.jp/~kawakami/product/LyX/
 DISTFILES=	lyx-1.0.0.tar.gz lyx-jp-kit0.04for1.0.0.tar.gz
 
-MAINTAINER=	flathill@FreeBSD.ORG
+MAINTAINER=	flathill@FreeBSD.org
 
 BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX

@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES?=   ftp://archive:oldies@archive.netscape.com/archive/navigator/3.04/shipping/english/unix/bsdi11/navigator_complete/
 DISTFILES=      netscape-v304-export.x86-unknown-bsd.tar.gz
 
-MAINTAINER=	sada@FreeBSD.ORG
+MAINTAINER=	sada@FreeBSD.org
 
 Y2K=		http://home.netscape.com/products/year2000/faq/client.html
 

@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.tardis.ed.ac.uk/pub/harvest/ \
 		http://www3.uniovi.es/~mirror/harvest-net/
 EXTRACT_SUFX=	-src.tar.gz
 
-MAINTAINER=	andreas@FreeBSD.ORG
+MAINTAINER=	andreas@FreeBSD.org
 
 pre-install:
 	${MKDIR} ${PREFIX}/harvest

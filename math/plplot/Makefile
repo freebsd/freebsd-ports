@@ -1,7 +1,7 @@
 # New ports collection makefile for:    plplot
 # Version required:     4p99j
 # Date created:         03 Oct 1997
-# Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
+# Whom:                 Thomas Gellekum <tg@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ PKGNAME=	plplot-4.99j
 CATEGORIES=	math
 MASTER_SITES=	ftp://dino.ph.utexas.edu/plplot/distrib/alpha/
 
-MAINTAINER=	tg@FreeBSD.ORG
+MAINTAINER=	tg@FreeBSD.org
 
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes

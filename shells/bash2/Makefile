@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	bash
 DISTFILES=      bash-2.03.tar.gz bash-doc-2.03.tar.gz
 .endif
 
-MAINTAINER=	ache@FreeBSD.ORG
+MAINTAINER=	ache@FreeBSD.org
 
 GNU_CONFIGURE=	Yes
 CONFIGURE_ARGS= --with-installed-readline

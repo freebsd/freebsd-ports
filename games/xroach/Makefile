@@ -11,7 +11,7 @@ PKGNAME=	xroach-4.4
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.cdrom.com/pub/bsd-sources/4.4BSD-Lite/usr/src/games/
 
-MAINTAINER=	markm@FreeBSD.ORG
+MAINTAINER=	markm@FreeBSD.org
 
 MAN6=		xroach.6
 MANCOMPRESSED=	maybe

@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.jwz.org/xdaliclock/ \
 		${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
 
-MAINTAINER=	gpalmer@FreeBSD.ORG
+MAINTAINER=	gpalmer@FreeBSD.org
 
 USE_IMAKE=	yes
 MAN1=		xdaliclock.1

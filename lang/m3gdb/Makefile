@@ -10,7 +10,7 @@ DISTNAME=      m3gdb-4.17
 CATEGORIES=    lang devel
 MASTER_SITES=  http://www.freebsd.org/~jdp/distfiles/
 
-MAINTAINER=    jdp@FreeBSD.ORG
+MAINTAINER=    jdp@FreeBSD.org
 
 MAN1=          m3gdb.1
 MANCOMPRESSED= yes

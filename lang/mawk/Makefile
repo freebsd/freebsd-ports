@@ -11,7 +11,7 @@ PKGNAME=	mawk-1.3.3
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.whidbey.net/pub/brennan/
 
-MAINTAINER=	ports@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		$(WRKDIR)/$(PKGNAME)
 GNU_CONFIGURE=	yes

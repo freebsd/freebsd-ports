@@ -12,7 +12,7 @@ CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		${MASTER_SITE_XCONTRIB}
 
-MAINTAINER=	ports@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.org
 
 DEPENDS=	${PORTSDIR}/x11-toolkits/xview:install
 

@@ -12,7 +12,7 @@ CATEGORIES=     converters mail news
 MASTER_SITES=   ftp://ftp.andrew.cmu.edu/pub/mpack/
 EXTRACT_SUFX=   .tar.Z
 
-MAINTAINER=     ache@FreeBSD.ORG
+MAINTAINER=     ache@FreeBSD.org
 
 WRKSRC=         ${WRKDIR}/mpack
 MAKEFLAGS=      -f

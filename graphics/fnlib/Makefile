@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://www.rasterman.com/pub/enlightenment/enlightenment/ \
 		ftp://ftp.enlightenment.org/pub/enlightenment/enlightenment/ \
 		ftp://ftp.labs.redhat.com/pub/imlib/TAR/
 
-MAINTAINER=	vanilla@FreeBSD.ORG
+MAINTAINER=	vanilla@FreeBSD.org
 
 LIB_DEPENDS=	Imlib.4:${PORTSDIR}/graphics/imlib
 

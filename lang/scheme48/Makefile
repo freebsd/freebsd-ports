@@ -11,7 +11,7 @@ CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp-swiss.ai.mit.edu/pub/s48/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER= 	jmacd@FreeBSD.ORG
+MAINTAINER= 	jmacd@FreeBSD.org
 
 GNU_CONFIGURE=  yes
 CONFIGURE_ARGS= --prefix=${PREFIX}

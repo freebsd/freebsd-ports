@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB} \
 		http://www.freebsd.org/~shige/ports/kterm/
 MASTER_SITE_SUBDIR=	applications
 
-MAINTAINER=	shige@FreeBSD.ORG
+MAINTAINER=	shige@FreeBSD.org
 
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm

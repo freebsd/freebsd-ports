@@ -1,7 +1,7 @@
 # New ports collection makefile for:	h2n
 # Version required:	1.29
 # Date created:		27 Nov 1997
-# Whom:			SADA Kenji <sada@FreeBSD.ORG>
+# Whom:			SADA Kenji <sada@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.iij.ad.jp/pub/published/oreilly/nutshell/dnsbind/ \
 		ftp://ftp.uu.net/published/oreilly/nutshell/dnsbind/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	sada@FreeBSD.ORG
+MAINTAINER=	sada@FreeBSD.org
 
 NO_BUILD=	YES
 NO_WRKSUBDIR=	YES

@@ -1,7 +1,7 @@
 # New ports collection makefile for:	mnews-gnspool
 # Version required:		1.21
 # Date created:			23 Sep 1996
-# Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
+# Whom:				Masafumi NAKANE <max@FreeBSD.org>
 #
 # $FreeBSD$
 #

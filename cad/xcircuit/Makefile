@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://bach.ece.jhu.edu/pub/tim/	\
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=apps/circuits
 
-MAINTAINER=     ports@FreeBSD.ORG
+MAINTAINER=     ports@FreeBSD.org
 
 BROKEN='bad MD5 checksum'
 

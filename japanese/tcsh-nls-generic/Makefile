@@ -1,7 +1,7 @@
 # New ports collection makefile for:	ja-tcsh NLS catalog (Generic Japanese)
 # Version required:	6.08.05
 # Date created:		19 August 1998
-# Whom:			Issei Suzuki <issei@jp.FreeBSD.ORG>
+# Whom:			Issei Suzuki <issei@jp.FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ CATEGORIES=	japanese shells
 MASTER_SITES=	ftp://ftp.astron.com/pub/tcsh/ ${MASTER_SITE_PORTS_JP}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}.add2${EXTRACT_SUFX}
 
-MAINTAINER=	issei@jp.FreeBSD.ORG
+MAINTAINER=	issei@jp.FreeBSD.org
 
 PATCH_DIST_STRIP=	-p1
 NLSSRC=		${DISTNAME}/nls/ja

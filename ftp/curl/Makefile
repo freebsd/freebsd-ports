@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.fts.frontec.se/~dast/stuff/ \
 		ftp://ftp.win.or.jp/pub/network/www/misc/ \
 		ftp://crydee.sai.msu.ru/zeus/unix/WWW/tools/mirror/
 
-MAINTAINER=	kris@FreeBSD.ORG
+MAINTAINER=	kris@FreeBSD.org
 
 .if defined(USE_SSL)
 BUILD_DEPENDS=	${PREFIX}/lib/libssl.a:${PORTSDIR}/security/openssl \

@@ -1,7 +1,7 @@
 # New ports collection makefile for:	ssh2
 # Version required:     2.0.*
 # Date created:		5 Oct 1998
-# Whom:			Issei Suzuki <issei@jp.FreeBSD.ORG>
+# Whom:			Issei Suzuki <issei@jp.FreeBSD.org>
 #
 # $FreeBSD$
 #

@@ -9,7 +9,7 @@
 PKGNAME=	ja-${DISTNAME}
 CATEGORIES=	japanese mail tk80
 
-MAINTAINER=	ports@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.org
 
 JAPANESE_EXMH=	yes
 

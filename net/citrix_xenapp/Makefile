@@ -12,7 +12,7 @@ CATEGORIES=	comms
 MASTER_SITES=   
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=     msmith@FreeBSD.ORG
+MAINTAINER=     msmith@FreeBSD.org
 
 RUN_DEPENDS=    /compat/linux/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
 

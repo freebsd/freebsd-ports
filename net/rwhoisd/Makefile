@@ -11,7 +11,7 @@ PKGNAME=	rwhois-1.0b9.2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.rwhois.net/pub/
 
-MAINTAINER=	jfitz@FreeBSD.ORG
+MAINTAINER=	jfitz@FreeBSD.org
 
 .if !exists(/usr/include/tcpd.h)
 LIB_DEPENDS=	wrap.7:${PORTSDIR}/security/tcp_wrapper

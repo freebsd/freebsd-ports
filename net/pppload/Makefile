@@ -11,7 +11,7 @@ CATEGORIES=	net sysutils
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=		system/network/serial/ppp
 
-MAINTAINER=	ports@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.org
 
 USE_QT=		yes
 USE_GMAKE=	yes

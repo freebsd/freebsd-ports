@@ -1,7 +1,7 @@
 # New ports collection makefile for:    p5-Locale-Codes
 # Version required:			1.00
 # Date created:				June 26th 1997
-# Whom:	      				James FitzGibbon <jfitz@FreeBSD.ORG>
+# Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ CATEGORIES=	misc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Locale
 
-MAINTAINER=	jfitz@FreeBSD.ORG
+MAINTAINER=	jfitz@FreeBSD.org
 
 USE_PERL5=	YES
 

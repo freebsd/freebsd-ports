@@ -11,7 +11,7 @@ PKGNAME=	xcolors-1.3
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.tut.ac.jp/X11/X11R6/contrib/programs/
 
-MAINTAINER=	ports@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/xcolors
 USE_IMAKE=	yes

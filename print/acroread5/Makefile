@@ -11,7 +11,7 @@ PKGNAME=	acroread-4.0
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp-pac.adobe.com/pub/adobe/acrobatreader/unix/4.x/
 
-MAINTAINER=	dima@FreeBSD.ORG
+MAINTAINER=	dima@FreeBSD.org
 
 RUN_DEPENDS=	/compat/linux/usr/i486-linux-libc5/lib/libc.so.5:${PORTSDIR}/emulators/linux_base
 

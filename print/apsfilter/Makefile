@@ -8,9 +8,9 @@
 
 DISTNAME=	apsfilter-5.1.3
 CATEGORIES=	print
-MASTER_SITES=	http://www.FreeBSD.ORG/~andreas/apsfilter/download/
+MASTER_SITES=	http://www.FreeBSD.org/~andreas/apsfilter/download/
 
-MAINTAINER=	andreas@FreeBSD.ORG
+MAINTAINER=	andreas@FreeBSD.org
 
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript55 \
 		html2ps:${PORTSDIR}/print/html2ps \

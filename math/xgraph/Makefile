@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.iis.u-tokyo.ac.jp/pub/X/misc/ \
 		ftp://ftp.tk.mesh.ad.jp/pub/X/misc/ \
 		ftp://ftp.eos.hokudai.ac.jp/pub/X11/misc/
 
-MAINTAINER=	ports@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.org
 
 USE_IMAKE=	yes
 MAN1=		xgraph.1

@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	id-utils
 
-MAINTAINER=	pst@FreeBSD.ORG
+MAINTAINER=	pst@FreeBSD.org
 
 Y2K=		http://www.gnu.org/software/year2000.html
 

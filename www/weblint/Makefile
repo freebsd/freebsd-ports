@@ -10,7 +10,7 @@ DISTNAME=	weblint-1.020
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.cre.canon.co.uk/pub/weblint/
 
-MAINTAINER=	pst@FreeBSD.ORG
+MAINTAINER=	pst@FreeBSD.org
 
 MAN1=		weblint.1
 

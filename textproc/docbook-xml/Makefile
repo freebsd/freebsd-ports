@@ -12,7 +12,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://nwalsh.com/docbook/xml/3.1.4/
 EXTRACT_SUFX=	.zip
 
-MAINTAINER=	kuriyama@FreeBSD.ORG
+MAINTAINER=	kuriyama@FreeBSD.org
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 

@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-MAINTAINER=	shige@FreeBSD.ORG
+MAINTAINER=	shige@FreeBSD.org
 
 PATCHFILES=	custom-1.9962.patch
 PATCH_SITES=	ftp://ftp.jpl.org/pub/elisp/semi-gnus-mule23@1934/

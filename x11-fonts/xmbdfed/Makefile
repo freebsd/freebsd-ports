@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://crl.nmsu.edu/CLR/multiling/General/
 PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	xmbdfed-3.9.patch1 xmbdfed-3.9.patch2
 
-MAINTAINER=	jfieber@FreeBSD.ORG
+MAINTAINER=	jfieber@FreeBSD.org
 
 .if defined(USE_FREETYPE)
 LIB_DEPENDS=	ttf.3:${PORTSDIR}/print/freetype

@@ -1,7 +1,7 @@
 # New ports collection makefile for:	py-mxStack
 # Version required:	0.3.0
 # Date created:		14 May 1999
-# Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
+# Whom:			Thomas Gellekum <tg@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ PKGNAME=	py-mxStack-0.3.0
 CATEGORIES=	devel python
 MASTER_SITES=	http://starship.skyport.net/~lemburg/
 
-MAINTAINER=	tg@FreeBSD.ORG
+MAINTAINER=	tg@FreeBSD.org
 
 BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
 RUN_DEPENDS=	python:${PORTSDIR}/lang/python

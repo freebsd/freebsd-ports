@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.neosoft.com/tcl/ftparchive/sorted/devel/ \
 		ftp://ftp.gwdg.de/pub/x11/tcl/ftp.xpi.com/ \
 		ftp://ftp.riken.go.jp/pub/lang/tcl/netsoft/sorted/packages-7.6/devel/
 
-MAINTAINER=	ports@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
 

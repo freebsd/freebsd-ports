@@ -1,7 +1,7 @@
 # New ports collection makefile for:	PostgreSQL
 # Version required:	6.4.2
 # Date created:		November 13, 1998
-# Whom:			Marc G. Fournier <scrappy@FreeBSD.ORG>
+# Whom:			Marc G. Fournier <scrappy@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.postgresql.org/pub/ \
 		ftp://ftp.incoma.ru/pub/unix/postgresql/ \
 		ftp://ftp.sunet.se/pub/unix/databases/relational/postgresql/
 
-MAINTAINER=	andreas@FreeBSD.ORG
+MAINTAINER=	andreas@FreeBSD.org
 
 .if ${MACHINE_ARCH} == "alpha"
 BROKEN=		doesn\'t build on the alpha yet

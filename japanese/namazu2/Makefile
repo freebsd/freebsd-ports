@@ -11,7 +11,7 @@ PKGNAME=	ja-namazu-1.3.0.8
 CATEGORIES=	japanese textproc
 MASTER_SITES=	http://openlab.ring.gr.jp/namazu/release/
 
-MAINTAINER=	flathill@FreeBSD.ORG
+MAINTAINER=	flathill@FreeBSD.org
 
 BUILD_DEPENDS=	kakasi:${PORTSDIR}/japanese/kakasi \
 		nkf:${PORTSDIR}/japanese/nkf

@@ -10,7 +10,7 @@ DISTNAME=	perlftlib-1.2
 CATEGORIES=	print perl5
 MASTER_SITES=	ftp://ftp.big.or.jp/pub/usr2/jam/ft/ \
 		${MASTER_SITE_PORTS_JP} \
-		http://WWW.FreeBSD.ORG/~sada/distfiles/
+		http://WWW.FreeBSD.org/~sada/distfiles/
 
 MAINTAINER=	taoka@FreeBSD.org
 

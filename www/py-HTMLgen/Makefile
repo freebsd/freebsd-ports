@@ -1,7 +1,7 @@
 # Ports collection Makefile for:	HTMLgen
 # Version required:			2.1
 # Date created:				03/20/1999
-# Whom:					nectar@FreeBSD.ORG
+# Whom:					nectar@FreeBSD.org
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ CATEGORIES=		www python
 MASTER_SITES=		http://starship.skyport.net/crew/friedrich/ \
 			http://www.nectar.cc/distfiles/
 
-MAINTAINER=		nectar@FreeBSD.ORG
+MAINTAINER=		nectar@FreeBSD.org
 
 BUILD_DEPENDS=		python:${PORTSDIR}/lang/python
 RUN_DEPENDS=		python:${PORTSDIR}/lang/python

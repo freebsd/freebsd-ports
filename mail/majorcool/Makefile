@@ -11,7 +11,7 @@ PKGNAME=	majorcool-1.3.0
 CATEGORIES=	mail
 MASTER_SITES=	http://ncrinfo.ncr.com/pub/contrib/unix/MajorCool/
 
-MAINTAINER=	andreas@FreeBSD.ORG
+MAINTAINER=	andreas@FreeBSD.org
 
 NO_BUILD=	yes
 NO_PACKAGE=	"Too many questions"

@@ -1,7 +1,7 @@
 # New ports collection makefile for:	nte
 # Version required:			1.5a23
 # Date created:				5 September 1996
-# Whom:	      Bill Fenner <fenner@FreeBSD.ORG>
+# Whom:	      Bill Fenner <fenner@FreeBSD.org>
 #
 # $FreeBSD$
 #

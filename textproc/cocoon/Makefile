@@ -1,7 +1,7 @@
 # New ports collection makefile for:	Coccon
 # Version required:	1.3.1
 # Date created:		27 June 1999
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.ORG>
+# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ CATEGORIES=	textproc www java
 MASTER_SITES=	http://java.apache.org/cocoon/dist/
 EXTRACT_SUFX=	.jar
 
-MAINTAINER=	kuriyama@FreeBSD.ORG
+MAINTAINER=	kuriyama@FreeBSD.org
 
 RUN_DEPENDS=	${PREFIX}/libexec/apache/mod_jserv.so:${PORTSDIR}/www/apache-jserv
 #		${PREFIX}/share/java/classes/lotusxsl.jar:${PORTSDIR}/textproc/lotusxsl

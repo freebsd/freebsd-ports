@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	ftp://phobos.illtel.denver.co.us/pub/qcread/ \
 		http://phobos.illtel.denver.co.us/pub/qcread/
 
-MAINTAINER=	billf@FreeBSD.ORG
+MAINTAINER=	billf@FreeBSD.org
 
 ONLY_FOR_ARCHS=	i386
 

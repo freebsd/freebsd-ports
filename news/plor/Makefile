@@ -11,7 +11,7 @@ CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.psy.unipd.it/pub/pluto/developers/ \
 		ftp://ftp.unipd.it/pub/Linux/pluto/developers/
 
-MAINTAINER=	hoek@FreeBSD.ORG
+MAINTAINER=	hoek@FreeBSD.org
 
 RUN_DEPENDS=    zip:${PORTSDIR}/archivers/zip
 

@@ -10,7 +10,7 @@ DISTNAME=	echoping-2.2.0
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.internatif.org/pub/unix/echoping/
 
-MAINTAINER=	peter@FreeBSD.ORG
+MAINTAINER=	peter@FreeBSD.org
 
 MAN1=		echoping.1
 

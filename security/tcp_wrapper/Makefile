@@ -11,7 +11,7 @@ PKGNAME=        tcp_wrappers-7.6
 CATEGORIES=	security net
 MASTER_SITES=	ftp://ftp.porcupine.org/pub/security/
 
-MAINTAINER=	torstenb@FreeBSD.ORG
+MAINTAINER=	torstenb@FreeBSD.org
 
 ALL_TARGET=	freebsd
 MAN3=		hosts_access.3

@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.ifi.uio.no/pub/cim/  \
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	devel/lang/simula
 
-MAINTAINER=	ports@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE= 	yes
 MAN1=		cim.1

@@ -10,7 +10,7 @@ DISTNAME=       ncftp-2.4.3
 CATEGORIES=	ftp
 MASTER_SITES=   ftp://ftp.ncftp.com/ncftp/
 
-MAINTAINER=	ache@FreeBSD.ORG
+MAINTAINER=	ache@FreeBSD.org
 
 GNU_CONFIGURE=  yes
 CONFIGURE_ENV=  ac_cv_func_getmaxyx=yes ac_cv_lib_readline=yes

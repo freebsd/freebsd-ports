@@ -11,7 +11,7 @@ DISTFILES=	perldap-1.2.2.tgz
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.mozilla.org/pub/directory/perldap/
 
-MAINTAINER=	paul@FreeBSD.ORG
+MAINTAINER=	paul@FreeBSD.org
 
 WRKSRC=			${WRKDIR}/perldap
 LIB_DEPENDS=	ldap.1:${PORTSDIR}/net/ldapsdk

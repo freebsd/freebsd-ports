@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.uni-koeln.de/windows/xcontrib/ \
 		http://www.lovett.com/~ade/FreeBSD/
 
-MAINTAINER=	ports@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.org
 
 USE_IMAKE=	yes
 INSTALL_TARGET=	install install.doc

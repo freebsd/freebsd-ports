@@ -16,7 +16,7 @@ PATCH_SITES=	http://www.freebsd.org/~flathill/distfiles/ \
 PATCHFILES=	libicq-0.33ja.patch
 PATCH_DIST_STRIP= -p1
 
-MAINTAINER=	flathill@FreeBSD.ORG
+MAINTAINER=	flathill@FreeBSD.org
 
 LIB_DEPENDS=    glib12.2:${PORTSDIR}/devel/glib12
 

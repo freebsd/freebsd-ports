@@ -1,7 +1,7 @@
 # New ports collection makefile for:	rmsg
 # Version required:	1.64
 # Date created:		9 October 1995
-# Whom:			torstenb@FreeBSD.ORG
+# Whom:			torstenb@FreeBSD.org
 #
 # $FreeBSD$
 #

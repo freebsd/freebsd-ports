@@ -12,7 +12,7 @@
 DISTNAME=	pgp262s
 CATEGORIES=	security
 
-MAINTAINER=	ache@FreeBSD.ORG
+MAINTAINER=	ache@FreeBSD.org
 
 # Need to define USA_RESIDENT to YES or NO
 IS_INTERACTIVE=	YES

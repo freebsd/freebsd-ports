@@ -11,7 +11,7 @@ PKGNAME=	ja-${DISTNAME}
 CATEGORIES=	japanese sysutils
 MASTER_SITES=	http://www.swlab.csce.kyushu-u.ac.jp/~nom/prj/paledit/
 
-MAINTAINER=	shige@FreeBSD.ORG
+MAINTAINER=	shige@FreeBSD.org
 
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes

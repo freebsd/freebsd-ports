@@ -11,7 +11,7 @@ PKGNAME=	rtf2latex-1.5
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.dante.de/pub/tex/support/rtf2latex/
 
-MAINTAINER=	ports@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/rtf2LaTeX
 MAN1=		rtf2LaTeX.1

@@ -1,7 +1,7 @@
 # New ports collection makefile for:	neXtaw
 # Version required:	0.5.1
 # Date created:		16 January 1997
-# Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
+# Whom:			Thomas Gellekum <tg@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.freebsd.org/~tg/		
 EXTRACT_SUFX=	.tar.gz.bin
 
-MAINTAINER=	tg@FreeBSD.ORG
+MAINTAINER=	tg@FreeBSD.org
 
 .if ${MACHINE_ARCH} == "alpha"
 BROKEN=		compiler error in funtion fixup_memory_subreg

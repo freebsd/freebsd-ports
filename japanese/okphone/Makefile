@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.fit.ac.jp/pub/Net/okphone/
 PATCH_SITES=	ftp://ftp.fit.ac.jp/pub/Net/okphone/patch/
 PATCHFILES=	okphone-1.2.FreeBSD-patch.rev2.gz
 
-MAINTAINER=	max@FreeBSD.ORG
+MAINTAINER=	max@FreeBSD.org
 
 PATCH_DIST_STRIP=	-p1
 MAN1=			phone.1

@@ -10,7 +10,7 @@ DISTNAME=	TenDRA-4.1.2
 CATEGORIES=	lang
 MASTER_SITES=	ftp://alph.dera.gov.uk/pub/TenDRA/
 
-MAINTAINER=	rnordier@FreeBSD.ORG
+MAINTAINER=	rnordier@FreeBSD.org
 
 ONLY_FOR_ARCHS=	i386
 OSRELEASE!=	uname -r

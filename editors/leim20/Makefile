@@ -11,7 +11,7 @@ CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	emacs
 
-MAINTAINER=	shige@FreeBSD.ORG
+MAINTAINER=	shige@FreeBSD.org
 
 BUILD_DEPENDS=	emacs-20.4:${PORTSDIR}/editors/emacs20
 RUN_DEPENDS=	emacs-20.4:${PORTSDIR}/editors/emacs20

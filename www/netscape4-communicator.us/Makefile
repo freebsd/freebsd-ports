@@ -11,7 +11,7 @@ DISTNAME=	communicator-v407-us.x86-unknown-linux2.0_libc5
 PKGNAME=	netscape-communicator-4.07.us
 CATEGORIES=	www
 
-MAINTAINER=	obrien@FreeBSD.ORG
+MAINTAINER=	obrien@FreeBSD.org
 
 Y2K=		http://home.netscape.com/products/year2000/faq/client.html
 

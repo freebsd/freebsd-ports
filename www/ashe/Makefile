@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.cs.rpi.edu/pub/puninj/ASHE/ASHE-1.1.2/src/ \
 		ftp://ftp.cs.rpi.edu/pub/puninj/ASHE/ASHE-1.1.2/libhtmlw/
 DISTFILES=	ashe_cci.tar.Z cci.tar.Z libhtmlw.tar.Z
 
-MAINTAINER=	ports@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.org
 
 MAN1=		xhtml.1
 MANCOMPRESSED=	yes

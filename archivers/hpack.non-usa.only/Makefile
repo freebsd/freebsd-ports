@@ -11,7 +11,7 @@ PKGNAME=        hpack-0.79a
 CATEGORIES=	archivers
 MASTER_SITES=   ftp://src.doc.ic.ac.uk/packages/hpack/
 
-MAINTAINER=     ache@FreeBSD.ORG
+MAINTAINER=     ache@FreeBSD.org
 
 RESTRICTED=	"Using this code inside USA will violate RSA copyright"
 NO_WRKSUBDIR=	yes

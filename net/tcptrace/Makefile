@@ -11,7 +11,7 @@ PKGNAME=	tcptrace-5.1.0
 CATEGORIES=	net
 MASTER_SITES=	http://jarok.cs.ohiou.edu/software/tcptrace/files/5.1.0/
 
-MAINTAINER=	fenner@FreeBSD.ORG
+MAINTAINER=	fenner@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/tcptrace_5.1.0
