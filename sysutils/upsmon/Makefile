@@ -1,0 +1,34 @@
+# New ports collection makefile for:	upsmon
+# Version required:	2.1.3
+# Date created:		5 Oct 1998
+# Whom:			Igor Vinokurov <igor@zynaps.ru>
+#
+# $Id: $
+#
+
+DISTNAME=	upsmon-2.1.3
+CATEGORIES=	sysutils
+MASTER_SITES=	ftp://newcorridor.com/pub/upsmon/
+
+MAINTAINER=	ports@FreeBSD.org
+
+MAKEFILE=	makefile.bsdi
+NO_PACKAGE=	"must provide without modifications"
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/upsstat ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/upsmond ${PREFIX}/sbin
+
+	${SED} -e 's#!!PREFIX!!#${PREFIX}#g' ${FILESDIR}/upsmon.sh \
+	> ${PREFIX}/etc/rc.d/upsmon.sh
+	@chmod +x ${PREFIX}/etc/rc.d/upsmon.sh
+
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/upsmon
+	${INSTALL_DATA} ${WRKSRC}/INSTALL ${PREFIX}/share/doc/upsmon
+.endif
+
+post-install:
+	${SED} -e 's#/usr/local#${PREFIX}#' ${PKGDIR}/MESSAGE
+
+.include <bsd.port.mk>

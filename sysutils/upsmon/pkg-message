@@ -1,0 +1,9 @@
+
+upsmon has been installed.
+
+See /usr/local/share/doc/upsmon/INSTALL for command line
+option details.
+
+NOTE: upsmond will dump core if you start upsstat without
+      SmartUPS properly attached to the specified port.
+
