@@ -28,6 +28,7 @@
     SUBDIR += cln
     SUBDIR += concorde
     SUBDIR += convertall
+    SUBDIR += coq
     SUBDIR += cxsc
     SUBDIR += dcdflib
     SUBDIR += diehard
