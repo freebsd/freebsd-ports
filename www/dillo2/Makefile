@@ -6,9 +6,11 @@
 #
 
 PORTNAME=       dillo
-PORTVERSION=	0.7.0
+PORTVERSION=	0.7.1
 CATEGORIES=     www
 MASTER_SITES=	http://dillo.auriga.wearlab.de/download/
+# hack to account for the bugfix version number
+DISTNAME=	${PORTNAME}-${PORTVERSION}.2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fast, small graphical Web browser built upon GTK+
@@ -16,6 +18,8 @@ COMMENT=	A fast, small graphical Web browser built upon GTK+
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		intl.4:${PORTSDIR}/devel/gettext
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_GNOMENG=	yes
 USE_GNOME=	gtk12
