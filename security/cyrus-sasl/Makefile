@@ -7,7 +7,7 @@
 
 PORTNAME=	cyrus-sasl
 PORTVERSION=	1.5.27
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/%SUBDIR%/ \
 		http://www.surf.org.uk/downloads/ \
@@ -17,7 +17,7 @@ MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/%SUBDIR%/ \
 MASTER_SITE_SUBDIR=	. OLD-VERSIONS/sasl cyrus-utils
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		sasl-${PORTVERSION}-ldap-ssl-filter-mysql-patch3.tgz
+		sasl-${PORTVERSION}-ldap-ssl-filter-mysql-patch4.tgz
 
 PATCH_SITES=	ftp://ftp.westbend.net/pub/cyrus-mail/contrib/ \
 		http://www.imasy.or.jp/~ume/ipv6/
@@ -27,7 +27,7 @@ PATCHFILES=	sasl_apop_patch.gz \
 MAINTAINER=	hetzels@westbend.net
 
 USE_SUBMAKE=	yes
-USE_OPENSSL=	YES
+USE_OPENSSL=	yes
 
 INSTALLS_SHLIB=	yes
 
@@ -98,7 +98,7 @@ PLIST_SUB=	PREFIX=${PREFIX} \
 		EBONES=${EBONES} \
 		DOCSDIR=${DOCSDIR:S/^${PREFIX}\///} \
 
-LDAP_MYSQL_PATCH=	ldap-mysql_sasl/sasl-ldap+mysql.patch
+LDAP_MYSQL_PATCH=	ldap-mysql_sasl-${PORTVERSION}/sasl-ldap+mysql.patch
 
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 PKGINSTALL=	${WRKDIR}/pkg-install
@@ -122,8 +122,7 @@ post-extract:
 	@${CP} ${FILESDIR}/pwcheck_pam.c ${WRKSRC}/pwcheck
 
 pre-patch:
-	@(cd ${WRKSRC} && ${PATCH} -p1 < ${WRKDIR}/${LDAP_MYSQL_PATCH} && \
-	${MV} configure.orig configure)
+	@(cd ${WRKSRC} && ${PATCH} -p1 < ${WRKDIR}/${LDAP_MYSQL_PATCH})
 
 # Fix sasldb name in pkg-install/deinstall scripts
 post-patch:

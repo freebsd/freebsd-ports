@@ -17,7 +17,7 @@ How to enable SMTP AUTH with FreeBSD default Sendmail 8.11
 
    TRUST_AUTH_MECH(`DIGEST-MD5 CRAM-MD5')dnl
    define(`confAUTH_MECHANISMS',`DIGEST-MD5 CRAM-MD5')dnl
-   define(`confDONT_BLAME_SENDMAIL',`GroupReadableSASLFile')dnl
+   define(`confDONT_BLAME_SENDMAIL',`GroupReadableSASLDBFile')dnl
    define(`confRUN_AS_USER',`root:mail')dnl
 
  ----
