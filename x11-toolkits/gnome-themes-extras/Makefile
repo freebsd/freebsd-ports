@@ -25,6 +25,8 @@ USE_GNOME=	gnomehack libgnomeui
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
+CONFLICTS=	gtk-smooth-engine-*
+
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
 		"/^themedir =.*metacity-1$$/s|themes|gnome/themes|"
