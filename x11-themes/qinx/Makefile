@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.usermode.org/code/
 MAINTAINER=	david@usermode.org
 COMMENT=	A QNX Photon like window decoration and widget style for KDE
 
+EXTRA_PATCHES=	${.CURDIR}/../../x11-themes/phase/files/patch-configure
+
 USE_KDEBASE_VER=3
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

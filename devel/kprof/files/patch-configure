@@ -1,0 +1,390 @@
+--- configure.orig	Thu Nov 11 20:46:33 2004
++++ configure	Thu Nov 11 20:48:03 2004
+@@ -6097,155 +6097,239 @@
+ fi
+ 
+ 
+-echo $ac_n "checking for pthread_create in -lpthread""... $ac_c" 1>&6
+-echo "configure:6102: checking for pthread_create in -lpthread" >&5
+-ac_lib_var=`echo pthread'_'pthread_create | sed 'y%./+-%__p_%'`
+-if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+-  echo $ac_n "(cached) $ac_c" 1>&6
+-else
+-  ac_save_LIBS="$LIBS"
+-LIBS="-lpthread  $LIBS"
+-cat > conftest.$ac_ext <<EOF
+-#line 6110 "configure"
+-#include "confdefs.h"
+-/* Override any gcc2 internal prototype to avoid an error.  */
+-/* We use char because int might match the return type of a gcc2
+-    builtin and then its argument prototype would still apply.  */
+-char pthread_create();
++                LIBPTHREAD=""
+ 
+-int main() {
+-pthread_create()
+-; return 0; }
+-EOF
+-if { (eval echo configure:6121: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+-  rm -rf conftest*
+-  eval "ac_cv_lib_$ac_lib_var=yes"
+-else
+-  echo "configure: failed program was:" >&5
+-  cat conftest.$ac_ext >&5
+-  rm -rf conftest*
+-  eval "ac_cv_lib_$ac_lib_var=no"
+-fi
+-rm -f conftest*
+-LIBS="$ac_save_LIBS"
++  if test -n "$PTHREAD_LIBS"; then
++    if test "x$PTHREAD_LIBS" = "x-pthread" ; then
++      LIBPTHREAD="PTHREAD"
++    else
++      PTHREAD_LIBS_save="$PTHREAD_LIBS"
++      PTHREAD_LIBS=`echo "$PTHREAD_LIBS_save" | sed -e 's,^-l,,g'`
++      echo "$as_me:$LINENO: checking for pthread_create in $PTHREAD_LIBS" >&5
++echo $ECHO_N "checking for pthread_create in $PTHREAD_LIBS... $ECHO_C" >&6
++
++     kde_save_LDFLAGS="$LDFLAGS"
++          kde_save_LIBS="$LIBS"
++     LDFLAGS="$LDFLAGS $all_libraries"
++     case $host_os in
++      aix*) LDFLAGS="-brtl $LDFLAGS"
++	test "$GCC" = yes && LDFLAGS="-Wl,$LDFLAGS"
++	;;
++     esac
++     as_ac_Lib=`echo "ac_cv_lib_$PTHREAD_LIBS''_pthread_create" | $as_tr_sh`
++echo "$as_me:$LINENO: checking for pthread_create in -l$PTHREAD_LIBS" >&5
++echo $ECHO_N "checking for pthread_create in -l$PTHREAD_LIBS... $ECHO_C" >&6
++if eval "test \"\${$as_ac_Lib+set}\" = set"; then
++  echo $ECHO_N "(cached) $ECHO_C" >&6
++else
++  ac_check_lib_save_LIBS=$LIBS
++LIBS="-l$PTHREAD_LIBS  $LIBS"
++cat >conftest.$ac_ext <<_ACEOF
++/* confdefs.h.  */
++_ACEOF
++cat confdefs.h >>conftest.$ac_ext
++cat >>conftest.$ac_ext <<_ACEOF
++/* end confdefs.h.  */
+ 
+-fi
+-if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+-  echo "$ac_t""yes" 1>&6
+-  LIBPTHREAD="-lpthread" 
+-else
+-  echo "$ac_t""no" 1>&6
++/* Override any gcc2 internal prototype to avoid an error.  */
++#ifdef __cplusplus
++extern "C"
++#endif
++/* We use char because int might match the return type of a gcc2
++   builtin and then its argument prototype would still apply.  */
++char pthread_create ();
++int
++main ()
++{
++pthread_create ();
++  ;
++  return 0;
++}
++_ACEOF
++rm -f conftest.$ac_objext conftest$ac_exeext
++if { (eval echo "$as_me:$LINENO: \"$ac_link\"") >&5
++  (eval $ac_link) 2>conftest.er1
++  ac_status=$?
++  grep -v '^ *+' conftest.er1 >conftest.err
++  rm -f conftest.er1
++  cat conftest.err >&5
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); } &&
++	 { ac_try='test -z "$ac_c_werror_flag"
++			 || test ! -s conftest.err'
++  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
++  (eval $ac_try) 2>&5
++  ac_status=$?
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); }; } &&
++	 { ac_try='test -s conftest$ac_exeext'
++  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
++  (eval $ac_try) 2>&5
++  ac_status=$?
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); }; }; then
++  eval "$as_ac_Lib=yes"
++else
++  echo "$as_me: failed program was:" >&5
++sed 's/^/| /' conftest.$ac_ext >&5
++
++eval "$as_ac_Lib=no"
++fi
++rm -f conftest.err conftest.$ac_objext \
++      conftest$ac_exeext conftest.$ac_ext
++LIBS=$ac_check_lib_save_LIBS
++fi
++echo "$as_me:$LINENO: result: `eval echo '${'$as_ac_Lib'}'`" >&5
++echo "${ECHO_T}`eval echo '${'$as_ac_Lib'}'`" >&6
++if test `eval echo '${'$as_ac_Lib'}'` = yes; then
++  LIBPTHREAD="$PTHREAD_LIBS_save"
+ fi
+ 
++     LDFLAGS="$kde_save_LDFLAGS"
++     LIBS="$kde_save_LIBS"
+ 
++      PTHREAD_LIBS="$PTHREAD_LIBS_save"
++    fi
++  fi
+ 
+-
+-    # Check whether --enable-kernel-threads or --disable-kernel-threads was given.
+-if test "${enable_kernel_threads+set}" = set; then
+-  enableval="$enable_kernel_threads"
+-  kde_use_kernthreads=$enableval
+-else
+-  kde_use_kernthreads=no
+-fi
+-
+-
+-    if test "$kde_use_kernthreads" = "yes"; then
+-      ac_save_CXXFLAGS="$CXXFLAGS"
+-      ac_save_CFLAGS="$CFLAGS"
+-      CXXFLAGS="-I/usr/local/include/pthread/linuxthreads $CXXFLAGS"
+-      CFLAGS="-I/usr/local/include/pthread/linuxthreads $CFLAGS"
+-      for ac_hdr in pthread/linuxthreads/pthread.h
+-do
+-ac_safe=`echo "$ac_hdr" | sed 'y%./+-%__p_%'`
+-echo $ac_n "checking for $ac_hdr""... $ac_c" 1>&6
+-echo "configure:6162: checking for $ac_hdr" >&5
+-if eval "test \"`echo '$''{'ac_cv_header_$ac_safe'+set}'`\" = set"; then
+-  echo $ac_n "(cached) $ac_c" 1>&6
+-else
+-  cat > conftest.$ac_ext <<EOF
+-#line 6167 "configure"
+-#include "confdefs.h"
+-#include <$ac_hdr>
+-EOF
+-ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
+-{ (eval echo configure:6172: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
+-ac_err=`grep -v '^ *+' conftest.out | grep -v "^conftest.${ac_ext}\$"`
+-if test -z "$ac_err"; then
+-  rm -rf conftest*
+-  eval "ac_cv_header_$ac_safe=yes"
++  if test -z "$LIBPTHREAD"; then
++    echo "$as_me:$LINENO: checking for pthread_create in -lpthread" >&5
++echo $ECHO_N "checking for pthread_create in -lpthread... $ECHO_C" >&6
++if test "${ac_cv_lib_pthread_pthread_create+set}" = set; then
++  echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+-  echo "$ac_err" >&5
+-  echo "configure: failed program was:" >&5
+-  cat conftest.$ac_ext >&5
+-  rm -rf conftest*
+-  eval "ac_cv_header_$ac_safe=no"
+-fi
+-rm -f conftest*
+-fi
+-if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
+-  echo "$ac_t""yes" 1>&6
+-    ac_tr_hdr=HAVE_`echo $ac_hdr | sed 'y%abcdefghijklmnopqrstuvwxyz./-%ABCDEFGHIJKLMNOPQRSTUVWXYZ___%'`
+-  cat >> confdefs.h <<EOF
+-#define $ac_tr_hdr 1
+-EOF
+- 
+-else
+-  echo "$ac_t""no" 1>&6
+-fi
+-done
++  ac_check_lib_save_LIBS=$LIBS
++LIBS="-lpthread  $LIBS"
++cat >conftest.$ac_ext <<_ACEOF
++/* confdefs.h.  */
++_ACEOF
++cat confdefs.h >>conftest.$ac_ext
++cat >>conftest.$ac_ext <<_ACEOF
++/* end confdefs.h.  */
+ 
+-      CXXFLAGS="$ac_save_CXXFLAGS"
+-      CFLAGS="$ac_save_CFLAGS"
+-      if test "$ac_cv_header_pthread_linuxthreads_pthread_h" = "no"; then
+-        kde_use_kernthreads=no
+-      else
+-                echo $ac_n "checking for pthread_join in -llthread""... $ac_c" 1>&6
+-echo "configure:6204: checking for pthread_join in -llthread" >&5
+-ac_lib_var=`echo lthread'_'pthread_join | sed 'y%./+-%__p_%'`
+-if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+-  echo $ac_n "(cached) $ac_c" 1>&6
+-else
+-  ac_save_LIBS="$LIBS"
+-LIBS="-llthread  $LIBS"
+-cat > conftest.$ac_ext <<EOF
+-#line 6212 "configure"
+-#include "confdefs.h"
+ /* Override any gcc2 internal prototype to avoid an error.  */
++#ifdef __cplusplus
++extern "C"
++#endif
+ /* We use char because int might match the return type of a gcc2
+-    builtin and then its argument prototype would still apply.  */
+-char pthread_join();
+-
+-int main() {
+-pthread_join()
+-; return 0; }
+-EOF
+-if { (eval echo configure:6223: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+-  rm -rf conftest*
+-  eval "ac_cv_lib_$ac_lib_var=yes"
+-else
+-  echo "configure: failed program was:" >&5
+-  cat conftest.$ac_ext >&5
+-  rm -rf conftest*
+-  eval "ac_cv_lib_$ac_lib_var=no"
+-fi
+-rm -f conftest*
+-LIBS="$ac_save_LIBS"
+-
+-fi
+-if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+-  echo "$ac_t""yes" 1>&6
+-  LIBPTHREAD="-llthread -llgcc_r"
+-else
+-  echo "$ac_t""no" 1>&6
+-fi
+-         if test "x$LIBPTHREAD" = "x"; then
+-          kde_use_kernthreads=no
+-        else
+-          USE_THREADS="-D_THREAD_SAFE -I/usr/local/include/pthread/linuxthreads"
+-        fi
+-      fi
+-    else 
+-      USE_THREADS=""
++   builtin and then its argument prototype would still apply.  */
++char pthread_create ();
++int
++main ()
++{
++pthread_create ();
++  ;
++  return 0;
++}
++_ACEOF
++rm -f conftest.$ac_objext conftest$ac_exeext
++if { (eval echo "$as_me:$LINENO: \"$ac_link\"") >&5
++  (eval $ac_link) 2>conftest.er1
++  ac_status=$?
++  grep -v '^ *+' conftest.er1 >conftest.err
++  rm -f conftest.er1
++  cat conftest.err >&5
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); } &&
++	 { ac_try='test -z "$ac_c_werror_flag"
++			 || test ! -s conftest.err'
++  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
++  (eval $ac_try) 2>&5
++  ac_status=$?
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); }; } &&
++	 { ac_try='test -s conftest$ac_exeext'
++  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
++  (eval $ac_try) 2>&5
++  ac_status=$?
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); }; }; then
++  ac_cv_lib_pthread_pthread_create=yes
++else
++  echo "$as_me: failed program was:" >&5
++sed 's/^/| /' conftest.$ac_ext >&5
++
++ac_cv_lib_pthread_pthread_create=no
++fi
++rm -f conftest.err conftest.$ac_objext \
++      conftest$ac_exeext conftest.$ac_ext
++LIBS=$ac_check_lib_save_LIBS
++fi
++echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthread_create" >&5
++echo "${ECHO_T}$ac_cv_lib_pthread_pthread_create" >&6
++if test $ac_cv_lib_pthread_pthread_create = yes; then
++  LIBPTHREAD="-lpthread"
++fi
++
++  fi
++
++    if test -z "$LIBPTHREAD" ; then
++    echo "$as_me:$LINENO: checking for pthread_create in -lpthread" >&5
++echo $ECHO_N "checking for pthread_create in -lpthread... $ECHO_C" >&6
++    kde_safe_libs=$LIBS
++    LIBS="$LIBS -lpthread"
++    cat >conftest.$ac_ext <<_ACEOF
++/* confdefs.h.  */
++_ACEOF
++cat confdefs.h >>conftest.$ac_ext
++cat >>conftest.$ac_ext <<_ACEOF
++/* end confdefs.h.  */
++#include <pthread.h>
++int
++main ()
++{
++(void)pthread_create(0,0,0,0);
++  ;
++  return 0;
++}
++_ACEOF
++rm -f conftest.$ac_objext conftest$ac_exeext
++if { (eval echo "$as_me:$LINENO: \"$ac_link\"") >&5
++  (eval $ac_link) 2>conftest.er1
++  ac_status=$?
++  grep -v '^ *+' conftest.er1 >conftest.err
++  rm -f conftest.er1
++  cat conftest.err >&5
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); } &&
++	 { ac_try='test -z "$ac_c_werror_flag"
++			 || test ! -s conftest.err'
++  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
++  (eval $ac_try) 2>&5
++  ac_status=$?
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); }; } &&
++	 { ac_try='test -s conftest$ac_exeext'
++  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
++  (eval $ac_try) 2>&5
++  ac_status=$?
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); }; }; then
++
++        echo "$as_me:$LINENO: result: yes" >&5
++echo "${ECHO_T}yes" >&6
++        LIBPTHREAD="-lpthread"
++else
++  echo "$as_me: failed program was:" >&5
++sed 's/^/| /' conftest.$ac_ext >&5
++
++
++	echo "$as_me:$LINENO: result: no" >&5
++echo "${ECHO_T}no" >&6
++fi
++rm -f conftest.err conftest.$ac_objext \
++      conftest$ac_exeext conftest.$ac_ext
++    LIBS=$kde_safe_libs
++  fi
++
++    if test "x$LIBPTHREAD" = "xPTHREAD" ; then
++    LIBPTHREAD=""
++  fi
++        
++	
++	
++	
++	USE_THREADS=""
+       if test -z "$LIBPTHREAD"; then
+         
+ echo $ac_n "checking whether $CXX supports -pthread""... $ac_c" 1>&6
+@@ -6306,7 +6390,7 @@
+ fi
+ 
+       fi
+-    fi
++    
+ 
+     case $host_os in
+  	solaris*)
