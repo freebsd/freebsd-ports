@@ -14,6 +14,7 @@
     SUBDIR += infobus
     SUBDIR += jad
     SUBDIR += jaf
+    SUBDIR += jakarta-regexp
     SUBDIR += janosvm
     SUBDIR += java-cup
     SUBDIR += javamail
