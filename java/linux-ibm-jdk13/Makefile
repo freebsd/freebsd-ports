@@ -7,7 +7,7 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}
-PORTREVISION=	2 # Service Release 10 : cx130-20010925
+PORTREVISION=	3 # Service Release 13a : cx130-20020124
 CATEGORIES=	java
 MASTER_SITES=	#
 PKGNAMEPREFIX=	linux-ibm-
@@ -16,10 +16,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	perky@fallin.lv
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper \
-		${X11BASE}/lib/X11/fonts/TrueType/wadalab-gothic.ttf:${PORTSDIR}/japanese/truetypefonts
-RUN_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper \
-		${X11BASE}/lib/X11/fonts/TrueType/wadalab-gothic.ttf:${PORTSDIR}/japanese/truetypefonts
+BUILD_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper
+RUN_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-SDK//}
 PLIST_SUB+=	TARGET_PREFIX=${TARGET_PREFIX:S/^${PREFIX}\///}
@@ -36,6 +34,14 @@ RESTRICTED=	"Redistribution of repackaged binaries not permitted"
 
 XARGS=		xargs
 FIND=		find
+
+.if defined(WITH_JAPANESE_FONTS)
+PLIST_SUB+=	JAPANESE=""
+BUILD_DEPENDS+=	${X11BASE}/lib/X11/fonts/TrueType/wadalab-gothic.ttf:${PORTSDIR}/japanese/truetypefonts
+RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/TrueType/wadalab-gothic.ttf:${PORTSDIR}/japanese/truetypefonts
+.else
+PLIST_SUB+=	JAPANESE="@comment "
+.endif
 
 .if defined(BATCH) || defined(PACKAGE_BUILDING)
 IGNORE=	"You can not legally distribute binaries"
@@ -62,7 +68,9 @@ do-install:
 	${LOCALBASE}/bin/registervm "${TARGET_PREFIX}/bin/java # IBM-JDK${PORTVERSION}_${PORTREVISION}"
 
 post-install:
+.if defined(WITH_JAPANESE_FONTS)
 	${LN} -sf ${X11BASE}/lib/X11/fonts/TrueType/wa*ttf ${TARGET_PREFIX}/jre/lib/fonts/
+.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
