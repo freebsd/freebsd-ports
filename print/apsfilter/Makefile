@@ -87,7 +87,7 @@ RUN_DEPENDS+=	htmldoc:${PORTSDIR}/textproc/htmldoc
 RUN_DEPENDS+=	psnup:${PORTSDIR}/print/psutils-${PAPERSIZE}
 .if !defined(WITHOUT_X11)
 # "xxx to ps" filter utilities that require X
-RUN_DEPENDS+=	acroread5:${PORTSDIR}/print/acroread5
+RUN_DEPENDS+=	acroread5:${PORTSDIR}/print/acroread
 RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
 RUN_DEPENDS+=	dvips:${PORTSDIR}/print/teTeX
 RUN_DEPENDS+=	wmf2eps:${PORTSDIR}/graphics/libwmf

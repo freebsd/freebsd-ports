@@ -26,7 +26,7 @@ BROKEN=		"Conflicting dependencies: apache 1.x and apache 2.x"
 RUN_DEPENDS+=	${X11BASE}/bin/pdftotext:${PORTSDIR}/graphics/xpdf
 . endif
 . if !defined(WITHOUT_ACROREAD)
-RUN_DEPENDS+=	${LOCALBASE}/bin/acroread:${PORTSDIR}/print/acroread5
+RUN_DEPENDS+=	${LOCALBASE}/bin/acroread:${PORTSDIR}/print/acroread
 . endif
 . if !defined(WITHOUT_WV)
 RUN_DEPENDS+=	${LOCALBASE}/bin/wvHtml:${PORTSDIR}/textproc/wv
