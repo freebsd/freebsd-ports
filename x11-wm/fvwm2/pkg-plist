@@ -1,7 +1,9 @@
 bin/FvwmCommand
 bin/fvwm2
 bin/xpmroot
-etc/system.fvwm2rc
+@unexec if cmp -s %D/etc/system.fvwm2rc %D/etc/system.fvwm2rc.dist; then rm -f %D/etc/system.fvwm2rc; fi
+etc/system.fvwm2rc.dist
+@exec [ -f %B/system.fvwm2rc ] || cp %B/%f %B/system.fvwm2rc
 lib/X11/fvwm2/pixmaps/Jlock.xpm
 lib/X11/fvwm2/pixmaps/Jnews.xpm
 lib/X11/fvwm2/pixmaps/Jrecycle.xpm
