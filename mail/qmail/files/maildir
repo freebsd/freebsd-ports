@@ -4,4 +4,4 @@
 # Using qmail-local to deliver messages to Maildir format by default
 
 exec env - PATH="@PREFIX@/qmail/bin:$PATH" \
-qmail-start ./Maildir/ splogger qmail
+qmail-start ./Maildir/ splogger qmail &
