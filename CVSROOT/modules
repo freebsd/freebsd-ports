@@ -2857,6 +2857,7 @@ ja-yc.el	ports/japanese/yc.el
 ja-zangband	ports/japanese/zangband
 ja-zipcodes	ports/japanese/zipcodes
 jabber		ports/net/jabber
+jabber-conference	ports/net/jabber-conference
 jad		ports/java/jad
 jade		ports/textproc/jade
 jadetex		ports/print/jadetex
