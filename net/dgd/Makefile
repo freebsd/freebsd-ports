@@ -3,7 +3,7 @@
 # Date created:		23 August 1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.63 1996/12/21 12:07:34 adam Exp $
+# $Id: Makefile,v 1.64 1997/01/08 11:41:44 adam Exp $
 #
 
 DISTNAME=	dgd-1.0.97
@@ -20,7 +20,8 @@ PATCHFILES=	1.0.91-1.0.92.gz \
 		1.0.93-1.0.94.gz \
 		1.0.94-1.0.95.gz \
 		1.0.95-1.0.96.gz \
-		1.0.96-1.0.97.gz
+		1.0.96-1.0.97.gz \
+		1.0.97a.gz
 
 MAINTAINER=	adam@veda.is
 
