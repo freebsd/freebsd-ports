@@ -1,0 +1,12 @@
+--- demos/rolodex.orig	Fri Dec 11 03:03:35 1998
++++ demos/rolodex	Fri Jan 31 15:34:45 2003
+@@ -22,7 +22,8 @@
+ 
+ # Create the menu object.
+ my $menu = new Cdk::Menu ('Menulist' => $menulist, 'Menuloc' => $menuloc);
+-$menu->draw();
++#$menu->draw("Box" => "FALSE");
++$menu->activate(0);
+ 
+ # Create the title.
+ my @title = ("<C></16/U>Cdk/Perl5 Rolodex", "<C></16>Written by Mike Glover");
