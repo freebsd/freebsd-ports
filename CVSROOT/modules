@@ -10477,6 +10477,7 @@ xldlas		ports/math/xldlas
 xless		ports/misc/xless
 xlhtml		ports/textproc/xlhtml
 xli		ports/graphics/xli
+xlibs		ports/x11/xlibs
 xlife		ports/games/xlife
 xlifegame	ports/games/xlifegame
 xlines		ports/games/xlines
