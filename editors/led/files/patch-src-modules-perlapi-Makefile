@@ -1,0 +1,11 @@
+--- src/modules/perlapi/Makefile.orig	Mon Mar 22 14:29:51 2004
++++ src/modules/perlapi/Makefile	Mon Mar 22 14:29:59 2004
+@@ -8,7 +8,7 @@
+ 
+ include ../Makefile.module
+ 
+-CFLAGS+=	`perl -MExtUtils::Embed -e ccopts`
++CFLAGS+=	`perl -MExtUtils::Embed -e ccopts` -fPIC
+ XSUBPPDIR=	`perl -MConfig -e 'print $$Config{privlib}'`/ExtUtils
+ XSUBPP=		$(XSUBPPDIR)/xsubpp
+ 

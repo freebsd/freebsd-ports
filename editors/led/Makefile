@@ -17,8 +17,4 @@ COMMENT=	A tiny text editor, with a number of useful programming features
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
 
-.if ${MACHINE_ARCH:L} == "amd64"
-CFLAGS+=	"-fPIC"
-.endif
-
 .include <bsd.port.mk>
