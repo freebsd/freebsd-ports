@@ -26,7 +26,7 @@ NO_BUILD=	yes
 .if exists(${LOCALBASE}/bin/php-config)
 PHP_BASE!=	${LOCALBASE}/bin/php-config --prefix
 .else
-PHP_BASE!=	${LOCALBASE}
+PHP_BASE=	${LOCALBASE}
 .endif
 
 LPHP_LIB=	lib/php
