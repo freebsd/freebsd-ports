@@ -8,7 +8,8 @@
 PORTNAME=	epstool
 PORTVERSION=	3.05
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/ghostgum/
+MASTER_SITES=	ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/ghostgum/ \
+		http://voodoo.oberon.net/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create or extract preview bitmaps in EPS files
