@@ -20,12 +20,8 @@ USE_IMAKE=	yes
 USE_XPM=	yes
 
 MAN1=		wmpinboard.1
-MANCOMPRESSED=	no
 
-do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/wmpinboard ${X11BASE}/bin
-
-post-install:
-	@${INSTALL_MAN} ${WRKSRC}/wmpinboard.1 ${PREFIX}/man/man1
+post-extract:
+	(cd ${WRKSRC}; ${CP} -p wmpinboard.1 wmpinboard.man)
 
 .include <bsd.port.mk>
