@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	analog
-PORTVERSION=	4.16
-PORTREVISION=	1
+PORTVERSION=	5.0
 CATEGORIES=	www
 MASTER_SITES=	http://www.analog.cx/ \
 		http://www.monash.edu.au/mirror/analog/ \
@@ -19,11 +18,9 @@ MASTER_SITES=	http://www.analog.cx/ \
 
 MAINTAINER=	mharo@FreeBSD.org
 
-MAKE_FLAGS=	-DPREFIX=${PREFIX} -f
 ALL_TARGET=	analog
 
 do-install:
-	${MKDIR} ${PREFIX}/share/doc/analog
 	${MKDIR} ${PREFIX}/share/analog/lang
 	${MKDIR} ${PREFIX}/www/data/images
 	${INSTALL_DATA} ${WRKSRC}/images/* ${PREFIX}/www/data/images
@@ -34,6 +31,7 @@ do-install:
 .endif
 	${INSTALL_DATA} ${WRKSRC}/analog.cfg ${PREFIX}/etc/analog.cfg-dist
 .if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/analog
 	${INSTALL_DATA} ${WRKSRC}/docs/* ${PREFIX}/share/doc/analog
 .endif
 
