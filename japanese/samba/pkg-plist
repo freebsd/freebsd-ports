@@ -784,8 +784,6 @@ share/examples/samba/VFS/README
 share/examples/samba/VFS/audit.c
 share/examples/samba/VFS/block/Makefile
 share/examples/samba/VFS/block/block.c
-share/examples/samba/VFS/block/block.o
-share/examples/samba/VFS/block/block.so
 share/examples/samba/VFS/block/samba-block.conf
 share/examples/samba/VFS/block/smb.conf
 share/examples/samba/VFS/recycle.c
