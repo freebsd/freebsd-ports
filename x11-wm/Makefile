@@ -28,6 +28,7 @@
     SUBDIR += evilwm
     SUBDIR += fbdesk
     SUBDIR += fluxbox
+    SUBDIR += fluxbox-devel
     SUBDIR += fluxconf
     SUBDIR += flwm
     SUBDIR += fvwm
