@@ -28,6 +28,7 @@ share/gnome/application-registry/totem.applications
 share/gnome/applications/totem.desktop
 share/gnome/mime-info/totem.keys
 share/gnome/pixmaps/media-player-48.png
+share/gnome/totem/filmholes.png
 share/gnome/totem/media-player-48.png
 share/gnome/totem/stock_media_next.png
 share/gnome/totem/stock_media_previous.png
@@ -41,9 +42,10 @@ share/gnome/totem/rhythmbox-volume-medium.png
 share/gnome/totem/rhythmbox-volume-min.png
 share/gnome/totem/rhythmbox-volume-zero.png
 share/gnome/totem/totem.glade
+share/gnome/totem/totem_logo.png
 share/gnome/totem/playlist.glade
-share/gnome/totem/totem_logo.mpv
 share/gnome/totem/properties.glade
+share/gnome/totem/uri.glade
 share/locale/am/LC_MESSAGES/totem.mo
 share/locale/be/LC_MESSAGES/totem.mo
 share/locale/ca/LC_MESSAGES/totem.mo
@@ -64,6 +66,7 @@ share/locale/ms/LC_MESSAGES/totem.mo
 share/locale/nl/LC_MESSAGES/totem.mo
 share/locale/no/LC_MESSAGES/totem.mo
 share/locale/pl/LC_MESSAGES/totem.mo
+share/locale/pt/LC_MESSAGES/totem.mo
 share/locale/pt_BR/LC_MESSAGES/totem.mo
 share/locale/ru/LC_MESSAGES/totem.mo
 share/locale/sv/LC_MESSAGES/totem.mo
