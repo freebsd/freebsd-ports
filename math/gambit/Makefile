@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gambit
-PORTVERSION=	0.97.0.5
-PORTREVISION=	3
+PORTVERSION=	0.97.0.7
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,10 +22,4 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	WX_CONFIG=${X11BASE}/bin/wxgtk2-2.4-config
 MAKE_ENV=	WX_CONFIG=${X11BASE}/bin/wxgtk2-2.4-config
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
