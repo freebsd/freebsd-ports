@@ -24,6 +24,8 @@ MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Text-to-speech system with OGI residual LPC synthesizer
 
 BROKEN=		"Does not fetch"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2004-06-18
 
 LIB_DEPENDS=	audio.2:${PORTSDIR}/audio/nas \
 		esd.2:${PORTSDIR}/audio/esound

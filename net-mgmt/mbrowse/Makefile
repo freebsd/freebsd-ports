@@ -21,6 +21,8 @@ LIB_DEPENDS=	netsnmp.6:${PORTSDIR}/net-mgmt/net-snmp
 .endif
 
 BROKEN=		"Configure fails"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2004-06-18
 
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/mbrowse

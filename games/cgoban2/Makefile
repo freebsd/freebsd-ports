@@ -15,6 +15,8 @@ MAINTAINER=	smazanek@steffen-mazanek.de
 COMMENT=	Internet Go Server client and game editor
 
 BROKEN=		"Unfetchable"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2004-06-18
 
 WRKSRC=		${WRKDIR}/cgoban
 INSTALLDIR=	${PREFIX}/share/java/cgoban2

@@ -15,6 +15,8 @@ MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Synthesizer plugin for SpiralLoops
 
 BROKEN=		"needs fltk 1.0.10"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2004-06-18
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 

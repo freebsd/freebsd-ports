@@ -17,6 +17,8 @@ MAINTAINER=	znerd@FreeBSD.org
 COMMENT=	Orion Application Server
 
 BROKEN=		"Checksum mismatch"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2004-06-18
 
 USE_JAVA=	1.2+
 USE_ZIP=	YES

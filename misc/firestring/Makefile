@@ -16,6 +16,8 @@ MAINTAINER=	dean@odyssey.apana.org.au
 COMMENT=	A library to make string handling easier in C
 
 BROKEN=		"Installs libraries into /usr/lib"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2004-06-18
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	PREFIX="${PREFIX}"

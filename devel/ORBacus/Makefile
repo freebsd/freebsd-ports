@@ -17,6 +17,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A CORBA 2 implementation
 
 BROKEN=		"Unfetchable"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2004-06-18
 
 RESTRICTED=	"Non-commercial use only"
 USE_XLIB=	yes

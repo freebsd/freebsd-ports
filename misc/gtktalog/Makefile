@@ -16,6 +16,8 @@ MAINTAINER=	rael@vectorstar.net
 COMMENT=	GTKtalog is a tool to make disk catalogs
 
 BROKEN=		"Broken pkg-plist"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2004-06-18
 
 USE_GNOME=	gnomeprefix gnomelibs
 GNU_CONFIGURE=	yes

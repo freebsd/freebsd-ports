@@ -29,6 +29,8 @@ BROKEN=		"Does not compile"
 .else
 BROKEN=		"Broken pkg-plist"
 .endif
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2004-06-18
 
 do-install:
 	${LN} -sf ${PREFIX}/lib/libxclass.so.0.8.2 ${PREFIX}/lib/libxclass.so

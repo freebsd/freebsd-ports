@@ -20,6 +20,8 @@ EXTRA_PATCHES=	${.CURDIR}/files/patch-index.c \
 #	${CAT} ${MASTERDIR}/pkg-plist >> ${PLIST}
 
 BROKEN=		"Does not patch"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2004-06-18
 
 .include "${MASTERDIR}/Makefile"
 
