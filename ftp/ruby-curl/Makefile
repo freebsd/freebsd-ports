@@ -7,6 +7,7 @@
 
 PORTNAME=	curl
 PORTVERSION=	0.0.1
+PORTREVISION=	1
 CATEGORIES=	ftp www ruby
 MASTER_SITES=	http://www.d1.dion.ne.jp/~matuyuki/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -16,7 +17,7 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-LIB_DEPENDS=	curl.1:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl.2:${PORTSDIR}/ftp/curl
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
