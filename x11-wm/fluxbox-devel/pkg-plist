@@ -36,14 +36,12 @@ share/fluxbox/styles/TDF
 share/fluxbox/styles/Twice
 share/fluxbox/styles/qnx-photon
 share/fluxbox/titlebar
-@unexec rm %D/share/fluxbox/nls/it
 @unexec rm %D/share/fluxbox/nls/fr
 @unexec rm %D/share/fluxbox/nls/es
 @unexec rm %D/share/fluxbox/nls/en_US   
 @unexec rm %D/share/fluxbox/nls/en   
 @unexec rm %D/share/fluxbox/nls/US_ASCII   
 @unexec rm %D/share/fluxbox/nls/POSIX   
-@exec ln -s it_IT %D/share/fluxbox/nls/it
 @exec ln -s fr_FR %D/share/fluxbox/nls/fr
 @exec ln -s es_ES %D/share/fluxbox/nls/es
 @exec ln -s C %D/share/fluxbox/nls/en_US
