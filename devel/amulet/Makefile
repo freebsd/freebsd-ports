@@ -22,6 +22,10 @@ MAKE_ENV=	AMULET_DIR=$(WRKSRC) AMULET_VARS_FILE=Makefile.vars.gcc.FreeBSD
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 .if $(PORTOBJFORMAT) == "elf"
 SO_VERSION=	3
 .else

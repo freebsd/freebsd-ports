@@ -18,6 +18,12 @@ RUN_DEPENDS=	tex:${PORTSDIR}/print/teTeX \
 		gs:${PORTSDIR}/print/ghostscript-gnu \
 		anytopnm:${PORTSDIR}/graphics/netpbm
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
@@ -63,4 +69,4 @@ post-install:
 	done
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

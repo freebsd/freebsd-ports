@@ -17,10 +17,16 @@ DISTNAME=		bttv-0.6.4
 MAINTAINER=		roger@freebsd.org
 COMMENT=	Get Videotext/Teletext (.vtx) and other VBI data from TV channels
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 WRKSRC=			${WRKDIR}/bttv/apps/vbidecode
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vbidecode ${PREFIX}/bin
 	@strip ${PREFIX}/bin/vbidecode
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

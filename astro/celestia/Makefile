@@ -19,6 +19,12 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 GNU_CONFIGURE=	yes
 PLIST=		${WRKDIR}/pkg-plist
 USE_GMAKE=	yes
@@ -98,4 +104,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/textures/medres/*.??? \
 		${DATADIR}/textures/medres/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

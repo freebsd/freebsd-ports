@@ -45,6 +45,10 @@ MANCOMPRESSED=	no
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 CFLAGS+=	-D__BSD_VISIBLE=1
 CONFIGURE_ARGS+=	--with-i18n --disable-pedantic --without-perl
 

@@ -13,6 +13,12 @@ MASTER_SITES=	http://www.pdos.lcs.mit.edu/click/
 MAINTAINER=	gnn@neville-neil.com
 COMMENT=	The Click Modular Router
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
@@ -95,4 +101,4 @@ post-install:
 	@echo "----------------------------------------------------"
 	@echo
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -21,6 +21,12 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU framework for 3D graphics production
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		png:${PORTSDIR}/graphics/png \
 		ungif:${PORTSDIR}/graphics/libungif
@@ -41,4 +47,4 @@ CPPFLAGS=	-I${LOCALBASE}/include/freetype1/freetype \
 		-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

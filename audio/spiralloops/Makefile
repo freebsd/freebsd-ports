@@ -16,6 +16,12 @@ COMMENT=	Loop-based sampler
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 DOCDIR=		share/doc/${PORTNAME}
 DOC_FILES=	CHANGES COPYING README
 GNU_CONFIGURE=	yes
@@ -50,4 +56,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

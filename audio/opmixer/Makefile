@@ -18,6 +18,12 @@ COMMENT=	Adjusts a mixer
 LIB_DEPENDS=	gtkmm.2:${PORTSDIR}/x11-toolkits/gtk-- \
 		intl.4:${PORTSDIR}/devel/gettext
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 DOCDIR=		share/doc/${PORTNAME}
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
@@ -41,4 +47,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/${DOCDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

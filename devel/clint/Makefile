@@ -16,6 +16,12 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A static source code checker for C++
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 USE_PYTHON=	yes
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
@@ -28,4 +34,4 @@ post-patch:
 post-install:
 	@install-info ${PREFIX}/info/clint.info ${PREFIX}/info/dir
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

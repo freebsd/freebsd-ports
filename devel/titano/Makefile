@@ -17,6 +17,12 @@ COMMENT=	An IDE for GNOME desktop
 
 LIB_DEPENDS=	gtkeditor.0:${PORTSDIR}/x11-toolkits/libgtkeditor
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 WRKSRC=		${WRKDIR}/${DISTNAME:S/b//}
 
 USE_REINPLACE=	yes
@@ -36,4 +42,4 @@ post-install:
 	${MKDIR} ${PREFIX}/share/gnome/pixmaps/titano
 	${INSTALL_DATA} ${WRKSRC}/src/xpm/* ${PREFIX}/share/gnome/pixmaps/titano
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

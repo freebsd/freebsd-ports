@@ -15,6 +15,12 @@ EXTRACT_SUFX=	-1.tar.gz
 MAINTAINER=	markp@FreeBSD.org
 COMMENT=	A featureful directory lister
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 ALL_TARGET=	compile
@@ -31,4 +37,4 @@ do-install:
 	${LN} -sf ndir ${PREFIX}/bin/lv
 	${INSTALL_MAN} ${WRKSRC}/ndir.1 ${PREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

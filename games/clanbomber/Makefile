@@ -16,10 +16,16 @@ COMMENT=	A bomberman-like multiplayer game
 
 LIB_DEPENDS=	clanCore.0:${PORTSDIR}/devel/clanlib
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS} -L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include"
 CFLAGS+=	-fpermissive
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

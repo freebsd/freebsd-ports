@@ -17,6 +17,12 @@ COMMENT=	A QNX style/theme for KDE3
 BUILD_DEPENDS=	autoconf213:${PORTSDIR}/devel/autoconf213 \
 		automake14:${PORTSDIR}/devel/automake14
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 KDELOOKITEM=	1444
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
@@ -25,4 +31,4 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
