@@ -1,0 +1,37 @@
+*** Makefile~	Mon Jan 23 19:28:24 1995
+--- Makefile	Tue Sep 19 00:46:41 1995
+***************
+*** 490,496 ****
+  local.h:
+  	set +e; [ -r local.h ]  ||  cp local.h.samp local.h
+  
+! msgs.h:	config.sh FRC
+  	@. ./config.sh; \
+  	  set $(SHELLDEBUG); \
+  	  set +e; \
+--- 490,496 ----
+  local.h:
+  	set +e; [ -r local.h ]  ||  cp local.h.samp local.h
+  
+! msgs.h:	config.sh 
+  	@. ./config.sh; \
+  	  set $(SHELLDEBUG); \
+  	  set +e; \
+***************
+*** 504,510 ****
+  	  else \
+  	    set -x; \
+  	    rm -f msgs.h; ln $$msgs msgs.h  ||  cp $$msgs msgs.h; \
+! 	  fi
+  
+  FRC:
+  
+--- 504,511 ----
+  	  else \
+  	    set -x; \
+  	    rm -f msgs.h; ln $$msgs msgs.h  ||  cp $$msgs msgs.h; \
+! 	  fi; \
+! 	touch msgs.h
+  
+  FRC:
+  
