@@ -17,13 +17,16 @@ LIB_DEPENDS=	rudiments.0:${PORTSDIR}/devel/rudiments \
 		giconv.2:${PORTSDIR}/converters/libiconv
 
 USE_GMAKE=	yes
-USE_AUTOCONF=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
 CONFIGURE_ARGS=	${SQLRELAY_CONFIGURE_ARGS} \
+		--without-java-prefix \
 		--without-perl-prefix \
+		--without-php-prefix \
 		--without-python-prefix \
 		--without-ruby-prefix \
-		--without-php-prefix
+		--without-zope-prefix
+MAKE_ARGS=	VERSION="${PORTVERSION:R}"
 INSTALLS_SHLIB=	yes
 
 .include "${.CURDIR}/Makefile.common"
@@ -74,11 +77,7 @@ IF_MSQL=	"@comment "
 
 .if defined(WITH_POSTGRESQL) && ${WITH_POSTGRESQL:L} != no
 LIB_DEPENDS+=		pq.2:${PORTSDIR}/databases/postgresql7
-.if defined(WITH_OLD_LAYOUT)
-CONFIGURE_ARGS+=	--with-postgresql-prefix="${LOCALBASE}/pgsql"
-.else
-CONFIGURE_ARGS+=	--with-postgresql-prefix="${WRKDIR}/prefixes/postgresql"
-.endif
+CONFIGURE_ARGS+=	--with-postgresql-prefix="${LOCALBASE}"
 IF_POSTGRESQL=	""
 .else
 IF_POSTGRESQL=	"@comment "
@@ -125,20 +124,13 @@ post-extract:
 	${MKDIR} ${WRKDIR}/prefixes/libxml
 	${LN} -s ${LOCALBASE}/include/libxml2 ${WRKDIR}/prefixes/libxml/include
 	${LN} -s ${LOCALBASE}/lib ${WRKDIR}/prefixes/libxml/lib
-.if defined(WITH_POSTGRESQL) && ${WITH_POSTGRESQL:L} != no
-.if !defined(WITH_OLD_LAYOUT)
-	${MKDIR} ${WRKDIR}/prefixes/postgresql
-	${LN} -s ${LOCALBASE}/include/pgsql ${WRKDIR}/prefixes/postgresql/include
-	${LN} -s ${LOCALBASE}/lib ${WRKDIR}/prefixes/postgresql/lib
-.endif
-.endif
 
 post-patch:
-	${PERL} -i -pe 's,\blibiconv\b,libgiconv,g;s,-liconv\b,-lgiconv,g' ${WRKSRC}/configure.in
-	find ${WRKSRC}/src/api -type f | xargs ${GREP} -Ele '-L(\.\./)?\.\./c\+\+/lib' /dev/null | xargs ${PERL} -i -pe 's|-L(?:\.\./)?\.\./c\+\+/lib|-L${LOCALBASE}/lib|'
-.if defined(WITH_GTK) && ${WITH_GTK:L} != no
-	${PERL} -i -pe 's,\bgtk-config\b,${GTK_CONFIG:T},g' ${WRKSRC}/configure.in
-.endif
+	${PERL} -i -p \
+		-e 's,\blibiconv\b,libgiconv,g;s,-liconv\b,-lgiconv,g;' \
+		-e 's,/usr/local\b,${PREFIX},g;' \
+		-e 's,\bgtk-config\b,${GTK_CONFIG:T},g;' \
+			${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)

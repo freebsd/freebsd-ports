@@ -63,6 +63,7 @@ lib/libsqlrclientwrapper.so.0
 %%PORTDOCS%%share/doc/sqlrelay/introduction.html
 %%PORTDOCS%%share/doc/sqlrelay/introtowebdb.html
 %%PORTDOCS%%share/doc/sqlrelay/invisible.gif
+%%PORTDOCS%%share/doc/sqlrelay/oraclentier.html
 %%PORTDOCS%%share/doc/sqlrelay/programming/binds.html
 %%PORTDOCS%%share/doc/sqlrelay/programming/c++.html
 %%PORTDOCS%%share/doc/sqlrelay/programming/c.html

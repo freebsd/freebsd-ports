@@ -14,7 +14,7 @@ DISTFILES=	# none
 
 MAINTAINER=	knu@FreeBSD.org
 
-BUILD_DEPENDS=	${NONEXISTENT}:${SQLRELAY_PORTDIR}:configure \
+BUILD_DEPENDS=	${NONEXISTENT}:${SQLRELAY_PORTDIR}:patch \
 		${LOCALBASE}/jdk${JDK_VERSION}/bin/java:${PORTSDIR}/java/jdk
 LIB_DEPENDS=	sqlrclient.0:${SQLRELAY_PORTDIR}
 RUN_DEPENDS=	${LOCALBASE}/jdk${JDK_VERSION}/bin/java:${PORTSDIR}/java/jdk
@@ -34,5 +34,6 @@ CONFIGURE_ARGS=	${SQLRELAY_CONFIGURE_ARGS} \
 do-extract:
 	${MKDIR} ${WRKDIR}
 	${LN} -fs `${SQLRELAY_WRKSRC_CMD}` ${WRKSRC}
+	${RM} -f ${WRKSRC}/config.cache
 
 .include <bsd.port.mk>

@@ -16,7 +16,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/dbi.rb:${RUBY_DBI_PORTDIR} \
-		${RUBY_SITEARCHLIBDIR}/SQLRelay.so:${.CURDIR}/../ruby-sqlrelay
+		${RUBY_SITEARCHLIBDIR}/sqlrelay.so:${.CURDIR}/../ruby-sqlrelay
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
