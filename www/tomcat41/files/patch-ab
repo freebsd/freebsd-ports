@@ -1,6 +1,6 @@
---- conf/server.xml.orig	Tue Dec 12 22:36:20 2000
-+++ conf/server.xml	Mon May 21 00:25:46 2001
-@@ -67,6 +67,7 @@
+--- conf/server.xml.orig	Tue Jul 17 18:57:46 2001
++++ conf/server.xml	Thu Jan 24 14:32:56 2002
+@@ -68,6 +68,7 @@
      -->
      <Logger name="tc_log" 
              verbosityLevel = "INFORMATION" 
@@ -8,3 +8,12 @@
      />
  
      <Logger name="servlet_log" 
+@@ -223,7 +224,7 @@
+             <Parameter name="handler" 
+                 value="org.apache.tomcat.service.http.HttpConnectionHandler"/>
+             <Parameter name="port" 
+-                value="8080"/>
++                value="%%LISTEN_PORT%%"/>
+         </Connector>
+ 
+         <!--

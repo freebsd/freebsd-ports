@@ -5,14 +5,14 @@
  # directories.
  #
 -workers.tomcat_home=c:\jakarta-tomcat
-+workers.tomcat_home=%%PREFIX%%/tomcat
++workers.tomcat_home=%%TOMCAT_HOME%%
  
  #
  # workers.java_home should point to your Java installation. Normally
  # you should have a bin and lib directories beneath it.
  #
 -workers.java_home=c:\jdk1.2.2
-+workers.java_home=%%PREFIX%%/jdk1.1.8
++workers.java_home=%%JAVA_HOME%%
  
  #
  # You should configure your environment slash... ps=\ on NT and / on UNIX
