@@ -1,0 +1,7 @@
+#! /bin/sh
+if [ "$2" = "DEINSTALL" ]; then
+  exit 0
+fi
+
+echo "Remember to add a FontPath entry to /etc/XF86Config to use non-cjk font:"
+echo "	FontPath    \"/usr/X11R6/lib/X11/fonts/non-cjk/\""

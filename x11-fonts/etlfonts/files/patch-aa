@@ -1,0 +1,51 @@
+*** /dev/null	Thu Oct 31 02:01:27 1996
+--- Makefile	Thu Oct 31 02:40:39 1996
+***************
+*** 0 ****
+--- 1,20 ----
++ all: .pcf_done
++ 
++ .pcf_done:
++ 	  sh convert.sh
++ 	  touch .pcf_done
++ 
++ install: .pcf_done
++ 	( \
++ 	  if [ ! -d /usr/X11R6/lib/X11/fonts/non-cjk ] ; \
++ 	    then mkdir -p /usr/X11R6/lib/X11/fonts/non-cjk ; \
++ 	  fi ; \
++ 	)
++ 	cp *pcf* fonts.alias /usr/X11R6/lib/X11/fonts/non-cjk
++ 	( \
++ 	  cd /usr/X11R6/lib/X11/fonts/non-cjk ; \
++ 	  mkfontdir ; \
++ 	)
++ 
++ clean:
++ 	rm *pcf* .pcf_done
+*** /dev/null	Thu Oct 31 02:01:27 1996
+--- convert.sh	Thu Oct 31 02:33:48 1996
+***************
+*** 0 ****
+--- 1,7 ----
++ #!/bin/sh
++ for i in *.bdf; \
++  do  \
++    j=`echo $i | sed -e 's/bdf/pcf/g'` ; \
++    bdftopcf $i > $j ; \
++    compress $j ; \
++  done
+*** /dev/null	Thu Oct 31 02:01:27 1996
+--- fonts.alias	Thu Oct 31 02:38:19 1996
+***************
+*** 0 ****
+--- 1,9 ----
++ a14 -ETL-Fixed-Medium-R-Normal--14-140-72-72-C-70-ISO8859-1
++ a16 -ETL-Fixed-Medium-R-Normal--16-160-72-72-C-80-ISO8859-1
++ a24 -ETL-Fixed-Medium-R-Normal--24-240-72-72-C-120-ISO8859-1
++ -ETL-Fixed-Medium-R-Normal--14-140-72-72-C-70-sisheng_cwnn-0 -ETL-Fixed-Medium-R-Normal--14-240-72-72-C-120-OMRON_UDC_ZH-0
++ -ETL-Fixed-Medium-R-Normal--16-160-72-72-C-80-sisheng_cwnn-0 -ETL-Fixed-Medium-R-Normal--16-240-72-72-C-120-OMRON_UDC_ZH-0
++ -ETL-Fixed-Medium-R-Normal--24-240-72-72-C-120-sisheng_cwnn-0 -ETL-Fixed-Medium-R-Normal--24-240-72-72-C-120-OMRON_UDC_ZH-0
++ -ETL-Fixed-Medium-R-Normal--14-140-72-72-C-70-Ethio-0 -Admas-ethiob14-Medium-R-Normal--44-140-300-300-C-363-ETHIO-0
++ -ETL-Fixed-Medium-R-Normal--16-160-72-72-C-80-Ethio-0 -Admas-Ethiom16d75-Medium-R-Normal--16-150-75-75-M-160-Admas-Fontspecific
++ -ETL-Fixed-Medium-R-Normal--24-240-72-72-C-120-Ethio-0 -admas-ethio24-medium-r-normal--24-240-75-75-m-208--fontspecific
