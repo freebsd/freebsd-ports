@@ -8,7 +8,8 @@
 PORTNAME=	wmScoreBoard
 PORTVERSION=	0.30
 CATEGORIES=	misc windowmaker
-MASTER_SITES=	http://home.att.net/~takuper/wmscoreboard/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	pat
 
 MAINTAINER=	pat@FreeBSD.org
 
@@ -21,12 +22,10 @@ USE_XPM=	yes
 
 post-install:
 .ifndef(NOPORTDOCS)
-	@${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 755 \
-		${PREFIX}/share/doc/${PORTNAME}
-	@${INSTALL_DATA} ${WRKSRC}/../BUGS ${PREFIX}/share/doc/${PORTNAME}
-	@${INSTALL_DATA} ${WRKSRC}/../CHANGES ${PREFIX}/share/doc/${PORTNAME}
-	@${INSTALL_DATA} ${WRKSRC}/../HINTS ${PREFIX}/share/doc/${PORTNAME}
-	@${INSTALL_DATA} ${WRKSRC}/../README ${PREFIX}/share/doc/${PORTNAME}
+	@${MKDIR} ${DOCSDIR}
+.for docs in BUGS CHANGES HINTS README
+	@${INSTALL_DATA} ${WRKSRC}/../${docs} ${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.mk>

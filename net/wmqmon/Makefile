@@ -8,7 +8,8 @@
 PORTNAME=	wmqmon
 PORTVERSION=	0.7
 CATEGORIES=	net windowmaker games
-MASTER_SITES=	http://www.gibfest.org/~w1nter/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	pat
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	pat@FreeBSD.org
@@ -19,21 +20,19 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 
-do-configure:
+pre-patch:
 	@${PERL} -pi -ne "s|/usr/X11R6/|${X11BASE}/|" \
 		${WRKSRC}/Makefile
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	@${ECHO} "===>   Installing wmqmon.rcfile.example in ${PREFIX}/share/examples/${PORTNAME}"
 	@${MKDIR} ${PREFIX}/share/examples/${PORTNAME}
-	@${INSTALL_DATA} ${WRKSRC}/wmqmon.rcfile.example ${PREFIX}/share/examples/${PORTNAME}
+	@${INSTALL_DATA} ${WRKSRC}/wmqmon.rcfile.example \
+		${PREFIX}/share/examples/${PORTNAME}
 .ifndef(NOPORTDOCS)
-	@${ECHO} "===>   Installing README in ${PREFIX}/share/doc/${PORTNAME}"
-	@${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 555 \
-		${PREFIX}/share/doc/${PORTNAME}
+	@${MKDIR} ${DOCSDIR}
 .for file in BUGS README
-	@${INSTALL_DATA} ${WRKSRC}/../${file} ${PREFIX}/share/doc/${PORTNAME}
+	@${INSTALL_DATA} ${WRKSRC}/../${file} ${DOCSDIR}
 .endfor
 .endif # !NOPORTDOCS
 	@${SED} -e "s|/usr/X11R6/|${PREFIX}/|" ${PKGMESSAGE}
