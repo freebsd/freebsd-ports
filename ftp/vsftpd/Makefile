@@ -21,7 +21,7 @@ MAN8=		vsftpd.8
 post-patch:
 	@${PERL} -pi -e 's@/etc/vsftpd.conf@${PREFIX}/etc/vsftpd.conf@' \
 		${WRKSRC}/defs.h
-	@${PERL} -pi -e 's@ -ldl@@; s@^CFLAGS.*$$@CFLAGS= -D"atoll(x)=strtoll(x, (char **)NULL, 10)"@' ${WRKSRC}/Makefile
+	@${PERL} -pi -e 's@ -ldl@@; s@^CFLAGS.*$$@CFLAGS+= -D"atoll(x)=strtoll(x, (char **)NULL, 10)"@' ${WRKSRC}/Makefile
 	@${ECHO_CMD} "secure_chroot_dir=${PREFIX}/share/vsftpd/empty" >> \
 		${WRKSRC}/vsftpd.conf
 
