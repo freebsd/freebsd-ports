@@ -11,6 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.io.com/~manoj/file/
 
 MAINTAINER=	jos@catnook.com
+COMMENT=	Portable tools to manage processes and networked services
 
 WRKSRC=		${WRKDIR}/mktool
 
