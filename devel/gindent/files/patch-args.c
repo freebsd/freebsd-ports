@@ -1,12 +1,6 @@
---- src/args.c.orig	Tue Jun 25 14:00:57 2002
-+++ src/args.c	Tue Jun 25 14:16:00 2002
-@@ -1,3 +1,5 @@
-+#define BERKELEY_DEFAULTS 1
-+
- /* Copyright (c) 1999, 2000 Carlo Wood.  All rights reserved.
-  * Copyright (c) 1994 Joseph Arceneaux.  All rights reserved.
-  * Copyright (c) 1992 Free Software Foundation, Inc.  All rights reserved.
-@@ -113,6 +115,7 @@
+--- src/args.c.orig	Mon Nov 11 06:02:48 2002
++++ src/args.c	Mon Mar  1 20:21:53 2004
+@@ -122,6 +122,7 @@
  static int exp_hnl  = 0;
  static int exp_i    = 0;
  static int exp_ip   = 0;
@@ -14,7 +8,7 @@
  static int exp_kr   = 0;
  static int exp_l    = 0;
  static int exp_lc   = 0;
-@@ -179,6 +182,30 @@
+@@ -189,6 +190,30 @@
                                   * variable must share the explicit flag.  */
  } pro_ty;
  
@@ -45,7 +39,7 @@
  #ifdef BERKELEY_DEFAULTS
  /* Settings for original defaults */
  const pro_ty pro[] =
-@@ -202,60 +229,63 @@
+@@ -212,61 +237,64 @@
  #endif
      {"pi",      PRO_INT,                               -1, ONOFF_NA, &settings.paren_indent,                     &exp_pi},
      {"pcs",     PRO_BOOL,                           false,       ON, &settings.proc_calls_space,                 &exp_pcs},
@@ -95,6 +89,7 @@
 +    {"ncdb",    PRO_BOOL,                           false,      OFF, &settings.comment_delimiter_on_blankline,   &exp_cdb},
      {"nbs",     PRO_BOOL,                           false,      OFF, &settings.blank_after_sizeof,               &exp_bs},
      {"nbfda",   PRO_BOOL,                           false,      OFF, &settings.break_function_decl_args,         &exp_bfda},
+     {"nbfde",   PRO_BOOL,                           false,      OFF, &settings.break_function_decl_args_end,     &exp_bfde},
      {"nbc",     PRO_BOOL,                            true,       ON, &settings.leave_comma,                      &exp_bc},
 -    {"nbbo",    PRO_BOOL,                            true,      OFF, &settings.break_before_boolean_operator,    &exp_bbo},
 -    {"nbbb",    PRO_BOOL,                           false,      OFF, &settings.blanklines_before_blockcomments,  &exp_bbb},
@@ -135,10 +130,10 @@
      {"cp",      PRO_INT,                               33, ONOFF_NA, &settings.else_endif_col,                   &exp_cp},
      {"cli",     PRO_INT,                                0, ONOFF_NA, &settings.case_indent,                      &exp_cli},
      {"ci",      PRO_INT,                                4, ONOFF_NA, &settings.continuation_indent,              &exp_ci},
-@@ -273,12 +303,12 @@
-     {"bli",     PRO_INT,                                0, ONOFF_NA, &settings.brace_indent,                     &exp_bli},
+@@ -287,12 +315,12 @@
      {"bl",      PRO_BOOL,                            true,      OFF, &settings.btype_2,                          &exp_bl},
      {"bfda",    PRO_BOOL,                           false,       ON, &settings.break_function_decl_args,         &exp_bfda},
+     {"bfde",    PRO_BOOL,                           false,       ON, &settings.break_function_decl_args_end,     &exp_bfde},
 -    {"bc",      PRO_BOOL,                            true,      OFF, &settings.leave_comma,                      &exp_bc},
 +    {"bc",      PRO_BOOL,                           false,      OFF, &settings.leave_comma,                      &exp_bc},
      {"bbo",     PRO_BOOL,                            true,       ON, &settings.break_before_boolean_operator,    &exp_bbo},
@@ -151,8 +146,8 @@
 +    {"bad",     PRO_BOOL,                            true,       ON, &settings.blanklines_after_declarations,    &exp_bad},
      {"bacc",    PRO_BOOL,                           false,       ON, &settings.blanklines_around_conditional_compilation, &exp_bacc},
      {"T",       PRO_KEY,                                0, ONOFF_NA, 0,                                          &exp_T},
-     /* Signify end of structure.  */
-@@ -309,7 +339,7 @@
+     {"ppi",     PRO_INT,                                0, ONOFF_NA, &settings.force_preproc_width,              &exp_ppi},
+@@ -324,7 +352,7 @@
  #endif
      {"pi",      PRO_INT,                               -1, ONOFF_NA, &settings.paren_indent,                     &exp_pi},
      {"pcs",     PRO_BOOL,                            true,       ON, &settings.proc_calls_space,                 &exp_pcs},
@@ -161,7 +156,7 @@
      {"o",       PRO_BOOL,                           false,       ON, &settings.expect_output_file,               &exp_o},
      {"nv",      PRO_BOOL,                           false,      OFF, &settings.verbose,                          &exp_v},
      {"nut",     PRO_BOOL,                            true,      OFF, &settings.use_tabs,                         &exp_ut},
-@@ -351,13 +381,14 @@
+@@ -367,13 +395,14 @@
      {"lp",      PRO_BOOL,                            true,       ON, &settings.lineup_to_parens,                 &exp_lp},
      {"lc",      PRO_INT,     DEFAULT_RIGHT_COMMENT_MARGIN, ONOFF_NA, &settings.comment_max_col,                  &exp_lc},
      {"l",       PRO_INT,             DEFAULT_RIGHT_MARGIN, ONOFF_NA, &settings.max_col,                          &exp_l},
@@ -178,7 +173,7 @@
      {"fca",     PRO_BOOL,                           false,       ON, &settings.format_comments,                  &exp_fca},
      {"fc1",     PRO_BOOL,                           false,       ON, &settings.format_col1_comments,             &exp_fc1},
      {"eei",     PRO_BOOL,                           false,       ON, &settings.extra_expression_indent,          &exp_eei},
-@@ -507,6 +538,9 @@
+@@ -531,6 +560,9 @@
      {"blank-lines-after-declarations",              "bad"},
      {"blank-lines-after-commas",                    "bc"},
      {"blank-before-sizeof",                         "bs"},
