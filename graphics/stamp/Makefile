@@ -8,7 +8,8 @@
 PORTNAME=	stamp
 PORTVERSION=	2.0.8
 CATEGORIES=	graphics
-MASTER_SITES=	http://stamp.netpedia.net/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	stamp
 
 MAINTAINER=	billf@FreeBSD.org
 
