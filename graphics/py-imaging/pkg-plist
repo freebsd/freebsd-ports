@@ -67,6 +67,9 @@ lib/python1.5/site-packages/PIL/ImageEnhance.pyo
 lib/python1.5/site-packages/PIL/ImageFile.py
 lib/python1.5/site-packages/PIL/ImageFile.pyc
 lib/python1.5/site-packages/PIL/ImageFile.pyo
+lib/python1.5/site-packages/PIL/ImageFileIO.py
+lib/python1.5/site-packages/PIL/ImageFileIO.pyc
+lib/python1.5/site-packages/PIL/ImageFileIO.pyo
 lib/python1.5/site-packages/PIL/ImageFilter.py
 lib/python1.5/site-packages/PIL/ImageFilter.pyc
 lib/python1.5/site-packages/PIL/ImageFilter.pyo
@@ -160,6 +163,9 @@ lib/python1.5/site-packages/PIL/TgaImagePlugin.pyo
 lib/python1.5/site-packages/PIL/TiffImagePlugin.py
 lib/python1.5/site-packages/PIL/TiffImagePlugin.pyc
 lib/python1.5/site-packages/PIL/TiffImagePlugin.pyo
+lib/python1.5/site-packages/PIL/TiffTags.py
+lib/python1.5/site-packages/PIL/TiffTags.pyc
+lib/python1.5/site-packages/PIL/TiffTags.pyo
 lib/python1.5/site-packages/PIL/WmfImagePlugin.py
 lib/python1.5/site-packages/PIL/WmfImagePlugin.pyc
 lib/python1.5/site-packages/PIL/WmfImagePlugin.pyo
@@ -169,9 +175,14 @@ lib/python1.5/site-packages/PIL/XbmImagePlugin.pyo
 lib/python1.5/site-packages/PIL/XpmImagePlugin.py
 lib/python1.5/site-packages/PIL/XpmImagePlugin.pyc
 lib/python1.5/site-packages/PIL/XpmImagePlugin.pyo
+lib/python1.5/site-packages/PIL/XVThumbImagePlugin.py
+lib/python1.5/site-packages/PIL/XVThumbImagePlugin.pyc
+lib/python1.5/site-packages/PIL/XVThumbImagePlugin.pyo
+lib/python1.5/site-packages/PIL/__init__.py
+lib/python1.5/site-packages/PIL/__init__.pyc
+lib/python1.5/site-packages/PIL/__init__.pyo
 lib/python1.5/site-packages/PIL.pth
 lib/python1.5/site-packages/_imaging.so
-lib/python1.5/site-packages/_tkinter.so
 share/doc/PIL/FORMATS
 share/doc/PIL/README
 share/examples/PIL/README
@@ -182,6 +193,7 @@ share/examples/PIL/gifmaker.py
 share/examples/PIL/image2py.py
 share/examples/PIL/painter.py
 share/examples/PIL/pilconvert.py
+share/examples/PIL/pildriver.py
 share/examples/PIL/pilfile.py
 share/examples/PIL/pilfont.py
 share/examples/PIL/pilprint.py
@@ -191,5 +203,3 @@ share/examples/PIL/viewer.py
 @dirrm lib/python1.5/site-packages/PIL
 @dirrm share/doc/PIL
 @dirrm share/examples/PIL
-@exec [ -f %D/lib/python1.5/lib-dynload/_tkinter.so ] && mv %D/lib/python1.5/lib-dynload/_tkinter.so %D/lib/python1.5/lib-dynload/_tkinter.so.save || true
-@unexec [ -f %D/lib/python1.5/lib-dynload/_tkinter.so.save ] && mv %D/lib/python1.5/lib-dynload/_tkinter.so.save %D/lib/python1.5/lib-dynload/_tkinter.so || true
