@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 MASTER_SITE_SUBDIR=	WWW
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	roam@FreeBSD.org
 COMMENT=	Perl binding interface for curl
 
 LIB_DEPENDS=	curl.2:${PORTSDIR}/ftp/curl:install
