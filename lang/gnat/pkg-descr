@@ -1,4 +1,4 @@
-The GNU Ada compiler system (GNAT 3.12p) built on GCC 2.8.1.
+The GNU Ada compiler system built on GCC 2.8.1.
 
 The libraries supplied with this version of GNAT support tasking
 with FreeBSD 3.x, and 4.x versions of libc_r.
