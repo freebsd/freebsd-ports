@@ -7290,7 +7290,6 @@ q3server-wfa	ports/games/q3server-wfa
 qadsl		ports/net/qadsl
 qbrew		ports/misc/qbrew
 qcad		ports/cad/qcad
-qcad2		ports/cad/qcad2
 qcc		ports/games/qcc
 qcl		ports/emulators/qcl
 qconfirm	ports/mail/qconfirm
