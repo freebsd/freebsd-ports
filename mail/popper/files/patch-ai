@@ -1,0 +1,31 @@
+*** pop_dropcopy.c.orig	Sun Jun 28 21:46:27 1998
+--- pop_dropcopy.c	Mon Jun 29 01:05:25 1998
+***************
+*** 484,495 ****
+  	    } else if (!strncasecmp("X-UIDL:", buffer, 7)) {
+  		if (!uidl_found) {
+  		    char *cp;
+  
+  		    uidl_found++;
+  		    /* Skip over header string */
+  		    cp = &buffer[7];
+                      while (*cp && (*cp == ' ' || *cp == '\t')) cp++;
+!                     if(strlen(cp) < DIG_SIZE) /* To account for the empty UIDL string */
+                      {
+                          uidl_found--; /*roll over as though it hasn't seen anything*/
+                          continue;
+--- 484,497 ----
+  	    } else if (!strncasecmp("X-UIDL:", buffer, 7)) {
+  		if (!uidl_found) {
+  		    char *cp;
++ 		    int l;
+  
+  		    uidl_found++;
+  		    /* Skip over header string */
+  		    cp = &buffer[7];
+                      while (*cp && (*cp == ' ' || *cp == '\t')) cp++;
+! 		    l = strlen(cp);
+! 		    if(l < DIG_SIZE || l > DIG_SIZE * 3) /* To account for the empty UIDL string */
+                      {
+                          uidl_found--; /*roll over as though it hasn't seen anything*/
+                          continue;
