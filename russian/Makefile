@@ -25,6 +25,7 @@
     SUBDIR += mueller-dic
     SUBDIR += muttprint
     SUBDIR += nagios
+    SUBDIR += napster
     SUBDIR += ooodict-ru_RU
     SUBDIR += openoffice-1.0
     SUBDIR += openoffice-1.1

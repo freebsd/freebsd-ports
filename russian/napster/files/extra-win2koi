@@ -1,0 +1,168 @@
+diff -urN src/cmds.c src/cmds.c
+--- src/cmds.c	Wed Jul 21 18:57:52 2004
++++ src/cmds.c	Wed Jul 21 19:10:36 2004
+@@ -52,6 +52,8 @@
+   #include "memwatch.h"
+ #endif
+ 
++#include "recoder.h"
++
+ extern info_t info;
+ extern scroll_t *mscroll, *mscrollend;
+ extern int lastlogflag;
+@@ -1744,8 +1746,10 @@
+   }
+   
+   msg = fixquotes(cstr(str, 2));
++  recodepage(msg,msg,1);
+   sendpack(s, NAP_TELL, "%s %s", tok[1], msg);
+   recent = findquery(chanl, tok[1]);
++  recodepage(msg,msg,2);
+   wp(win, "%s* --> (%s%s%s)%s %s\n", GREEN, WHITE, tok[1], GREEN, WHITE, msg);
+   drw(win);
+ 
+@@ -2712,6 +2716,7 @@
+ O_NAP_FUNC(dtopic)
+ {
+   chans_t *cur;
++  char *k_topic=curchan->topic;
+ 
+   if (num == 1)
+   {
+@@ -2738,7 +2743,8 @@
+     drw(win);
+     return(1);
+   }
+-      
++
++  recodepage(str,str,1);
+   sendpack(s, NAP_TOPIC, "%s", cstr(str, 1));
+   
+   return(1);
+@@ -2822,6 +2828,7 @@
+     return(-3);
+   }
+   
++  recodepage(str,str,1);
+   sendpack(s, NAP_ANNOUNCE, "%s", cstr(str, 1));
+   
+   return(1);
+@@ -4696,6 +4703,7 @@
+   }
+   else if (curchan->q == 2 && buf[0] != '\0')
+   {
++    recodepage(buf,buf,1);
+     ssock(ircsock, "PRIVMSG %s :%s\n", curchan->nm, buf);
+     recent = curchan;
+     wp(win, "%s<%s%s%s>%s %s\n", BRIGHT(MAGENTA), WHITE, mnick, BRIGHT(MAGENTA), WHITE, buf);
+diff -urN src/recoder.h src/recoder.h
+--- src/recoder.h	Thu Jan  1 07:00:00 1970
++++ src/recoder.h	Wed Jul 21 19:10:36 2004
+@@ -0,0 +1,51 @@
++/*
++
++  brj.pp.ru decoder library
++
++*/
++
++#include <stdio.h>
++#include <string.h>
++
++unsigned char kw[] = {128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,
++              144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,
++              160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,
++              176,177,178,179,180,181,182,183,184,185,186,187,188,189,190,191,
++              254,224,225,246,228,229,244,227,245,232,233,234,235,236,237,238,
++              239,255,240,241,242,243,230,226,252,251,231,248,253,249,247,250,
++              222,192,193,214,196,197,212,195,213,200,201,202,203,204,205,206,
++              207,223,208,209,210,211,198,194,220,219,199,216,221,217,215,218};
++
++unsigned char wk[] = {128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,
++              144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,
++              160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,
++              176,177,178,179,180,181,182,183,184,185,186,187,188,189,190,191,
++              225,226,247,231,228,229,246,250,233,234,235,236,237,238,239,240,
++              242,243,244,245,230,232,227,254,251,253,255,249,248,252,224,241,
++              193,194,215,199,196,197,214,218,201,202,203,204,205,206,207,208,
++              210,211,212,213,198,200,195,222,219,221,223,217,216,220,192,209};
++
++unsigned char *table;
++
++char *recodepage(char * source, char * dest, int codenum)
++{
++
++if((codenum == 1)){table=kw;}
++if((codenum == 2)){table=wk;}
++
++int j=0;
++
++strcpy(dest,source);
++
++int i=0;
++for(i=0;i<strlen(source);i++)
++{
++	j = source[i];
++	j &= 0377;
++	if(j & 0200)
++		j = table[j & 0177];
++	dest[i]=j;
++}
++return dest;
++
++}
+diff -urN src/scmds.c src/scmds.c
+--- src/scmds.c	Wed Jul 21 18:57:52 2004
++++ src/scmds.c	Wed Jul 21 19:11:59 2004
+@@ -498,6 +498,8 @@
+   if (!(recent = findchan(chanl, tok[0])))
+     return(1);  /* ?? we don't seem to be on that channel */
+ 
++  recodepage(str,str,2); 
++
+   /* highlight our own messages in MAGENTA, all others in BLUE */
+   if (!strcasecmp(info.user, tok[1])) {
+     hilit = MAGENTA;
+@@ -648,6 +650,7 @@
+ 
+ I_NAP_FUNC(snotice)
+ {
++  recodepage(str,str,2);
+   wp(win, "%s* %s%s\n", YELLOW, (str)?str:"", WHITE);
+   drw(win);
+   return(1);
+@@ -2014,6 +2017,7 @@
+ 
+ I_NAP_FUNC(sme)
+ {
++  recodepage(tok[2],tok[2],2);
+   if (!(recent = findchan(chanl, tok[0])))
+     return(1);
+   if (!strcasecmp(curchan->nm, tok[0]) || wmode)
+diff -urN src/winio.c src/winio.c
+--- src/winio.c	Wed Jul 21 18:57:52 2004
++++ src/winio.c	Wed Jul 21 19:13:10 2004
+@@ -1007,13 +1007,16 @@
+       drw(win);
+     } else if (curchan->q == 1) {
+       msg = fixquotes(strdup(command));
++      recodepage(msg,msg,1);
+       sendpack(s, NAP_TELL, "%s %s", curchan->nm, msg);
+       recent = curchan;
++      recodepage(msg,msg,2);
+       wp(win, "%s* --> (%s%s%s)%s %s\n", GREEN, WHITE, curchan->nm, GREEN, WHITE, msg);
+       drw(win);
+       free(msg);
+       recent = NULL;
+     } else if (curchan->q == 2) {
++      recodepage(command,command,1);
+       ssock(ircsock, "PRIVMSG %s :%s\n", curchan->nm, command);
+       recent = curchan;
+       wp(win, "%s<%s%s%s>%s %s\n", BRIGHT(MAGENTA), WHITE, mnick, BRIGHT(MAGENTA), WHITE, command);
+@@ -1021,6 +1024,7 @@
+       recent = NULL;
+     } else {
+       msg = fixquotes(strdup(command));
++      recodepage(msg,msg,1);
+       if (sendpack(s, NAP_SAY, "%s %s", curchan->nm, msg) == -1) {
+ 	delsock(s);  /* s is the server, or -1 if no server */
+       }
