@@ -208,6 +208,7 @@
     SUBDIR += mindguard
     SUBDIR += mirrormagic
     SUBDIR += miscom
+    SUBDIR += moon-buggy
     SUBDIR += myth2_demo
     SUBDIR += mythserver
     SUBDIR += nInvaders
