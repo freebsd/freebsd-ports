@@ -3,16 +3,16 @@
 # Date created:			4 Aug 1998
 # Whom:				Motoyuki Kasahara <m-kasahr@sra.co.jp>
 #
-# $Id: Makefile,v 1.5 1998/10/16 04:32:50 jseger Exp $
+# $Id: Makefile,v 1.6 1999/01/26 03:06:43 steve Exp $
 #
 
-DISTNAME=	ndtpd-2.2
-PKGNAME=	ja-ndtpd-2.2
+DISTNAME=	ndtpd-2.2.2
+PKGNAME=	ja-ndtpd-2.2.2
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/net/ndtp/ndtpd/ \
 		ftp://ftp.sra.co.jp/pub/net/ndtp/ndtpd/old/
 
-MAINTAINER=	m-kasahr@sra.co.jp
+MAINTAINER=	takamune@avrl.mei.co.jp
 
 LIB_DEPENDS=	eb.2:${PORTSDIR}/japanese/eb
 
