@@ -20,8 +20,8 @@
 ! CCFLAG		= $(CFLAGS) -DXFORMS86 -DPREFIX=\"$(PREFIX)\" -I$(X11BASE)/include
 ! #CC		= gcc
 ! COMMONLIBS	= -L$(X11BASE)/lib/ -lX11 -lm
-! SHAREDLIBS	= -lxforms
-! STATICLIBS	= -lXpm $(X11BASE)/lib/libxforms.a
+! SHAREDLIBS	= -lxforms -lXpm
+! STATICLIBS	= $(X11BASE)/lib/libxforms.a -lXpm
   ECHO		= echo
   RM		= rm
   RMOPTS		= -f
