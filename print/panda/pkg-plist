@@ -2,34 +2,33 @@ include/panda/constants.h
 include/panda/functions.h
 include/panda/legacy.h
 include/panda/objects.h
-include/panda/panda_spinlock.h
-include/panda/panda_tdb.h
 lib/libpanda.a
 lib/libpanda.so
 lib/libpanda.so.0
-%%PORTDOCS%%share/doc/panda/AUTHORS
-%%PORTDOCS%%share/doc/panda/CONTRIBUTORS
-%%PORTDOCS%%share/doc/panda/ChangeLog
-%%PORTDOCS%%share/doc/panda/DEV-HINTS
-%%PORTDOCS%%share/doc/panda/README
-%%PORTDOCS%%share/doc/panda/TODO
-%%PORTDOCS%%share/doc/panda/UNDERWAY
-%%PORTDOCS%%share/examples/panda/IMAGES
-%%PORTDOCS%%share/examples/panda/RedbrushAlpha.png
-%%PORTDOCS%%share/examples/panda/circles.c
-%%PORTDOCS%%share/examples/panda/empty.c
-%%PORTDOCS%%share/examples/panda/exercise.c
-%%PORTDOCS%%share/examples/panda/gnu-head.jpg
-%%PORTDOCS%%share/examples/panda/gnu.png
-%%PORTDOCS%%share/examples/panda/gnu_box.jpg
-%%PORTDOCS%%share/examples/panda/input.tif
-%%PORTDOCS%%share/examples/panda/input2.tif
-%%PORTDOCS%%share/examples/panda/legacymain.c
-%%PORTDOCS%%share/examples/panda/libpng.png
-%%PORTDOCS%%share/examples/panda/main.c
-%%PORTDOCS%%share/examples/panda/morecircles.c
-%%PORTDOCS%%share/examples/panda/pandaexample.cpp
-%%PORTDOCS%%share/examples/panda/template.c
-%%PORTDOCS%%@dirrm share/examples/panda
-%%PORTDOCS%%@dirrm share/doc/panda
+libdata/pkgconfig/panda.pc
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/DEV-HINTS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/UNDERWAY
+%%PORTDOCS%%%%EXAMPLESDIR%%/IMAGES
+%%PORTDOCS%%%%EXAMPLESDIR%%/RedbrushAlpha.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/circles.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/empty.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/exercise.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/gnu-head.jpg
+%%PORTDOCS%%%%EXAMPLESDIR%%/gnu.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/gnu_box.jpg
+%%PORTDOCS%%%%EXAMPLESDIR%%/input.tif
+%%PORTDOCS%%%%EXAMPLESDIR%%/input2.tif
+%%PORTDOCS%%%%EXAMPLESDIR%%/legacymain.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/libpng.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/main.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/morecircles.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/pandaexample.cpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/template.c
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/panda
