@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Mon Jan 24 13:38:33 2000
++++ src/Makefile.in	Mon Jan 24 13:38:41 2000
+@@ -36,7 +36,7 @@
+ exec_prefix = @exec_prefix@
+ install_lib_dir = @libdir@
+ install_include_dir = @includedir@
+-install_doc_dir = $(prefix)/doc/slang/@slang_version@
++install_doc_dir = $(prefix)/share/doc/slang/@slang_version@
+ DOC_FILES = ../changes.txt ../COPY* ../doc/slangdoc.html ../doc/text/*.txt
+ #---------------------------------------------------------------------------
+ # Misc commands (safe to leave these untouched)
