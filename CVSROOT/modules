@@ -4038,6 +4038,7 @@ latd		ports/net/latd
 latex		ports/print/latex
 latex-beamer	ports/print/latex-beamer
 latex-bibtopic	ports/print/latex-bibtopic
+latex-bibunits	ports/print/latex-bibunits
 latex-caption	ports/print/latex-caption
 latex-feynmf	ports/print/latex-feynmf
 latex-keystroke	ports/print/latex-keystroke
