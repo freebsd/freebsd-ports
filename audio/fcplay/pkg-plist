@@ -1,4 +1,0 @@
-bin/fcplay
-%%PORTDOCS%%%%DOCSDIR%%/ABOUT
-%%PORTDOCS%%%%DOCSDIR%%/POINTER
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
