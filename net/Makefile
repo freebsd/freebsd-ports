@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.91 1997/02/16 01:20:57 obrien Exp $
+# $Id: Makefile,v 1.92 1997/02/17 10:46:01 tg Exp $
 #
 
     SUBDIR += archie
@@ -13,6 +13,7 @@
     SUBDIR += dgd-lpmud
     SUBDIR += dgd-net
     SUBDIR += dip
+    SUBDIR += freewais-sf
     SUBDIR += fspclient
     SUBDIR += ftpsearch
     SUBDIR += ftptool
