@@ -7,7 +7,7 @@
 
 PORTNAME=	dspam-devel
 PORTVERSION=	3.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.nuclearelephant.com/projects/dspam/sources/ \
 		http://people.tecnik93.com/~itetcu/FreeBSD/ports/dspam-devel/sources/
@@ -333,7 +333,7 @@ CONFIGURE_ARGS+=\
 .if defined(WITH_CYRUS22_LDA)
 RUN_DEPENDS+=	${LOCALBASE}/cyrus/bin/deliver:${PORTSDIR}/mail/cyrus-imapd22
 CONFIGURE_ARGS+=\
---with-delivery-agent='${LOCALBASE}/cyrus/bin/deliver -e -r $${sender} -m $${extension} $${user} $$u"
+--with-delivery-agent='${LOCALBASE}/cyrus/bin/deliver -e -r $${sender} -m $${extension} $${user} $$u'
 .endif
 
 .if defined(WITH_SENDMAIL)
@@ -389,6 +389,8 @@ RUN_DEPENDS+=	${SITE_PERL}/mach/GD.pm:${PORTSDIR}/graphics/p5-GD
 RUN_DEPENDS+=	${SITE_PERL}/GD/Graph.pm:${PORTSDIR}/graphics/p5-GD-Graph
 RUN_DEPENDS+=	${SITE_PERL}/GD/Graph3d.pm:${PORTSDIR}/graphics/p5-GD-Graph3d
 RUN_DEPENDS+=	${SITE_PERL}/GD/Text.pm:${PORTSDIR}/graphics/p5-GD-TextUtil
+CONFIGURE_ARGS+=--enable-logging
+CONFIGURE_ARGS+=--enable-user-logging
 USE_PERL5_RUN=	yes
 PLIST_SUB+=	CGI=""
 .if !defined(CGI_PATH)
@@ -400,7 +402,8 @@ SED_SCRIPT+=	-e 's,%%DSPAM_HOME%%,${DSPAM_HOME},g'
 #SED_FILES=      ${LS} ${WRKSRC}/cgi/*.pl
 #SED_FILES+=     ${LS} $PWRKSRC}/cgi/*.cgi
 .else
-PLIT_SUB+=	CGI="@comment "
+PLIST_SUB+=	CGI="@comment "
+SED_SCRIPT+=	-e '/%%CGI%%/D'
 .endif
 
 MAN1=	dspam.1 dspam_clean.1 dspam_corpus.1 dspam_dump.1 dspam_merge.1 \
@@ -440,12 +443,12 @@ pre-configure:
 	@${ECHO_CMD} "You can only use one local delivery agent at once."
 	@${FALSE}
 .endif
-.if defined(WITH_NEURAL_NET) && !(defined(WITH_MYSQL) || defined(WITH_POSTGRESQL))
+.if defined(WITH_NEURAL_NET) && !(defined(WITH_MYSQL) || defined(WITH_POSTGRESQL73) || defined(WITH_POSTGRESQL74))
 	@${ECHO_CMD} "You need MySQL or POSTGRESQL to use neural networking."
 	@${FALSE}
 .endif
 .if defined(WITH_VIRT_USERS) && !(defined(WITH_MYSQL) || \
-	defined(WITH_POSTGRESQL) || defined(WITH_ORACLE))
+	defined(WITH_POSTGRESQL73) || defined(WITH_POSTGRESQL74) || defined(WITH_ORACLE))
 	@${ECHO_CMD} "You need MySQL, POSTGRESQL or ORACLE for virtual users."
 	@${FALSE}
 .endif
@@ -460,7 +463,7 @@ post-install:
 .endif
 .if defined(WITH_POSTGRESQL73) || defined(WITH_POSTGRESQL74)
 	@${MKDIR} ${EXAMPLESDIR}/pgsql
-	cd @${WRKSRC}/tools.pgsql_drv && \
+	@cd ${WRKSRC}/tools.pgsql_drv && \
 		${INSTALL_DATA} README *.sql ${EXAMPLESDIR}/pgsql
 	${INSTALL_DATA} ${FILESDIR}/pgsql.data ${EXAMPLESDIR}/pgsql
 .endif
