@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	vorbis
-PORTVERSION=	20001018
+PORTVERSION=	1.0b4
+PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	# empty
 DISTFILES=	# none
@@ -14,8 +15,8 @@ EXTRACT_ONLY=	# empty
 
 MAINTAINER=	t.vanklaveren@student.utwente.nl
 
-LIB_DEPENDS=	ao.0:${PORTSDIR}/audio/libao \
-		ogg.0:${PORTSDIR}/audio/libogg \
+LIB_DEPENDS=	ao.1:${PORTSDIR}/audio/libao \
+		ogg.1:${PORTSDIR}/audio/libogg \
 		vorbis.0:${PORTSDIR}/audio/libvorbis
 RUN_DEPENDS=	${X11BASE}/lib/xmms/Input/libvorbis.so:${PORTSDIR}/audio/vorbis-xmms \
 		ogg123:${PORTSDIR}/audio/vorbis-tools
