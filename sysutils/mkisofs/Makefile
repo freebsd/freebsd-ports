@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	cdrecord-1.8a36
+DISTNAME=	cdrecord-1.8a37
 PKGNAME=	mkisofs-${VERSION}
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/cdrecord/alpha/ \
