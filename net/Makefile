@@ -284,6 +284,7 @@
     SUBDIR += ntimelord
     SUBDIR += ntop
     SUBDIR += ntp
+    SUBDIR += ntp-devel
     SUBDIR += nttcp
     SUBDIR += nylon
     SUBDIR += obnc
