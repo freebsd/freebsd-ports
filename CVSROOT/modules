@@ -5133,6 +5133,7 @@ linux-vsound	ports/audio/linux-vsound
 linux-winetools	ports/emulators/linux-winetools
 linux-xmovie		ports/multimedia/linux-xmovie
 linux-ymessenger	ports/net/linux-ymessenger
+linux-zsnes	ports/emulators/linux-zsnes
 linux_base	ports/emulators/linux_base
 linux_base-6	ports/emulators/linux_base-6
 linux_base-8	ports/emulators/linux_base-8
