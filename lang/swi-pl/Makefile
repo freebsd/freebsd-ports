@@ -3,7 +3,7 @@
 # Date created:			10 August 1996
 # Whom:				Michael Butschky <butsch@computi.erols.com>
 #
-# $Id: Makefile,v 1.14 1999/03/11 21:47:12 scrappy Exp $
+# $Id: Makefile,v 1.15 1999/04/20 10:51:43 max Exp $
 #
 
 DISTNAME=	pl-3.2.5
@@ -25,7 +25,7 @@ PLIST_SUB=	DISTNAME=${DISTNAME}
 
 post-install:
 .for f in pl pl-bite plld plrc
-	@strip ${PREFIX}/lib/${DISTNAME}/bin/${ARCH}-freebsd/$f
+	@strip ${PREFIX}/lib/${DISTNAME}/bin/${PERL_ARCH}/$f
 .endfor
 
 .include <bsd.port.mk>
