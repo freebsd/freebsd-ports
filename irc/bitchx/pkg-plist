@@ -1,0 +1,4 @@
+bin/BitchX
+bin/wserv
+lib/BitchX/BitchX.help
+@dirrm lib/BitchX
