@@ -36,6 +36,8 @@ MANN=		BtnBox.n Balloon.n ChkList.n Destroy.n ComboBox.n Control.n \
 
 TIX_LIB=	libtix4182.so
 TIXSAM_LIB=	libtixsam4182.so
+TIX_LIB_FILE=	${TIX_LIB}.1
+TIXSAM_LIB_FILE=${TIXSAM_LIB}.1
 CFLAGS+=	-fwritable-strings
 
 .include <bsd.port.pre.mk>
