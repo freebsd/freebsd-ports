@@ -3,7 +3,7 @@
 # Date created:		Sat Aug 22 12:00:00 CDT 1998
 # Whom:			rse@engelschall.com
 #
-# $Id: Makefile,v 1.13 1999/01/02 17:37:06 rse Exp $
+# $Id: Makefile,v 1.14 1999/01/06 16:48:34 rse Exp $
 #
 
 DISTNAME=	apache_${VERSION_APACHE}
@@ -26,10 +26,10 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 MAINTAINER=	rse@engelschall.com
 
-BUILD_DEPENDS=	ssleay:${PORTSDIR}/security/SSLeay \
-		${PREFIX}/lib/libssl.a:${PORTSDIR}/security/SSLeay \
-		${PREFIX}/lib/libcrypto.a:${PORTSDIR}/security/SSLeay
-RUN_DEPENDS=	ssleay:${PORTSDIR}/security/SSLeay
+BUILD_DEPENDS=	ssleay:${PORTSDIR}/security/openssl \
+		${PREFIX}/lib/libssl.a:${PORTSDIR}/security/openssl \
+		${PREFIX}/lib/libcrypto.a:${PORTSDIR}/security/openssl
+RUN_DEPENDS=	ssleay:${PORTSDIR}/security/openssl
 
 VERSION_APACHE=	1.3.3
 VERSION_MODSSL=	2.1.6

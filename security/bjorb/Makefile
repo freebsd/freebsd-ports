@@ -3,7 +3,7 @@
 # Date created:		May 16, 1998
 # Whom:			issei@jp.FreeBSD.ORG
 #
-# $Id: Makefile,v 1.2 1998/08/30 15:35:03 steve Exp $
+# $Id: Makefile,v 1.3 1998/09/25 10:20:21 asami Exp $
 #
 
 DISTNAME=	bjorb-0.5.4p4
@@ -24,8 +24,8 @@ pre-fetch:
 LIB_DEPENDS=		rsaref.2:${PORTSDIR}/security/rsaref
 .endif
 .endif
-BUILD_DEPENDS=	ssleay:${PORTSDIR}/security/SSLeay
-RUN_DEPENDS=	ssleay:${PORTSDIR}/security/SSLeay
+BUILD_DEPENDS=	ssleay:${PORTSDIR}/security/openssl
+RUN_DEPENDS=	ssleay:${PORTSDIR}/security/openssl
 
 RESTRICTED=	"Cryptography"
 
