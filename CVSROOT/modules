@@ -3444,6 +3444,7 @@ lilypond	ports/print/lilypond
 limits		src/usr.bin/limits
 linalg		ports/math/linalg
 linbot		ports/www/linbot
+linc		ports/net/linc
 lincity		ports/games/lincity
 lincvs		ports/devel/lincvs
 linemode	ports/www/linemode
