@@ -1,0 +1,11 @@
+--- kfinger/Makefile.in.orig	Sat Mar  4 15:22:07 2000
++++ kfinger/Makefile.in	Sat Mar  4 15:22:18 2000
+@@ -213,7 +213,7 @@
+ LIBS = @LIBS@
+ kfinger_OBJECTS =  finger.o kfinger.o
+ kfinger_DEPENDENCIES = 
+-CXXFLAGS = @CXXFLAGS@
++CXXFLAGS = @CXXFLAGS@ -pedantic
+ CXXCOMPILE = $(CXX) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
+ LTCXXCOMPILE = $(LIBTOOL) --mode=compile $(CXX) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
+ CXXLD = $(CXX)
