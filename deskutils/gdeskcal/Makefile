@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gdeskcal
-PORTVERSION=	0.30
+PORTVERSION=	0.33
 CATEGORIES=	deskutils python gnome
 MASTER_SITES=	http://www.pycage.de/download/
 DISTNAME=	gDeskCal-${PORTVERSION:S/./_/}
@@ -38,9 +38,8 @@ do-install:
 		${PREFIX}/share/gnome/gdeskcal
 
 	${MKDIR} ${PREFIX}/share/locale/ar/LC_MESSAGES
-	${INSTALL_DATA} ${WRKSRC}/locale/ar_AE/LC_MESSAGES/gdeskcal.mo \
-		${PREFIX}/share/locale/ar/LC_MESSAGES
-.for i in cs de el es fr he hu it ja nl ru tr zh_CN
+
+.for i in ar cs de el es fr he hu it ja nl ru tr zh_CN
 	${MKDIR} ${PREFIX}/share/locale/${i}/LC_MESSAGES
 	${INSTALL_DATA} ${WRKSRC}/locale/${i}/LC_MESSAGES/gdeskcal.mo \
 		${PREFIX}/share/locale/${i}/LC_MESSAGES
