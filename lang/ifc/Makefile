@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ifc
-PORTVERSION=	8.0.039
+PORTVERSION=	8.0.039.p044.1
 CATEGORIES=	lang linux devel
 MASTER_SITES=
 DISTNAME=	l_fc_pc_${PORTVERSION:C/\.p.+$//}
@@ -21,6 +21,7 @@ DISTFILES+=	${DISTNAME}_${PATCHLEVEL}${EXTRACT_SUFX}
 .endif
 
 EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
+PATCH_DEPENDS=		${LINUXBASE}/etc/redhat-release:${PORTSDIR}/emulators/linux_base
 
 RESTRICTED=	Intel forbids any redistribution
 NO_PACKAGE=	${RESTRICTED}
@@ -45,15 +46,13 @@ IFC_SITE=	http://www.intel.com/software/products/compilers/
 .include <bsd.port.pre.mk>
 
 EXTRACT_AFTER_ARGS=	| tar -xf - \
+			--exclude intel-iidb\*.rpm \
 			--exclude intel-isubh\*.rpm \
 			--exclude \*ia64.rpm \
 			--exclude chklic.64 \
 			--exclude flexlm64
 
 IFCCFGVAL!=	${UNAME} -r | ${SED} -e 's/\..*//'
-
-BRANDELF?=	/usr/bin/brandelf
-OBJCOPY?=	/usr/bin/objcopy
 
 .for file in ${DISTFILES}
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/${file})
@@ -66,19 +65,17 @@ BROKEN=	Cannot coexist with linux_devtools
 .endif
 
 post-extract:
-.for i in \
-	intel-ifort8-8.0-47.i386.rpm
-#	intel-iidb7-7.3.2-98.i386.rpm
-	@cd ${WRKSRC} && rpm2cpio.pl 2>/dev/null ${i} | ${CPIO} -idu --quiet
-.endfor
+	@cd ${WRKSRC} && rpm2cpio.pl 2>/dev/null *.rpm | ${CPIO} -idu --quiet
 
-pre-patch:
+intel-patch: extract
 # Apply patches from Intel.
 .if ${PORTVERSION} != ${PATCHLEVEL}
 	@${BRANDELF} -t Linux ${WRKSRC}_${PATCHLEVEL}/papply
 	@${WRKSRC}_${PATCHLEVEL}/papply ${WRKSRC}_${PATCHLEVEL}/ifort.rtp \
 		${WRKSRC}/opt/${COMPILERDIR}
 .endif
+
+pre-patch: intel-patch
 # Remove files we do not need on FreeBSD.
 	@for i in `${CAT} ${FILESDIR}/exclude`; do \
 		${RM} -rf ${WRKSRC}/opt/${COMPILERDIR}/$$i; \
@@ -94,7 +91,7 @@ pre-patch:
 # Remove unneeded/unsafe access rights.
 .for i in doc include lib
 	@${FIND} ${WRKSRC}/opt/${COMPILERDIR}/${i} -type f -print0 | \
-		${XARGS} -0 ${CHMOD} a-x,g-w
+		${XARGS} -0 ${CHMOD} a-x,og-w
 .endfor
 	@${FIND} ${WRKSRC}/opt -type d -print0 | ${XARGS} -0 ${CHMOD} go-w
 
@@ -119,18 +116,11 @@ post-patch:
 .endfor
 # Provide a more FreeBSD'ish compile environment
 .for i in ifc.cfg ifort.cfg
-	@${ECHO_CMD} -e "-no-gcc\n-Qlocation,ld,${PREFIX}/${COMPILERDIR}/bin/ldwrapper\n-nothreads\n\n-D__FreeBSD__=${IFCCFGVAL}\n\n" >>${WRKSRC}/opt/${COMPILERDIR}/bin/${i}
+	@${ECHO_CMD} -e "-no-gcc\n-Qlocation,ld,${PREFIX}/${COMPILERDIR}/bin/ldwrapper\n-nothreads\n\n-Ulinux\n-U__linux__\n-U__linux\n-U__gnu_linux__\n\n-D__FreeBSD__=${IFCCFGVAL}\n\n" >>${WRKSRC}/opt/${COMPILERDIR}/bin/${i}
 	@${CHMOD} a-x,g-w ${WRKSRC}/opt/${COMPILERDIR}/bin/${i}
 .endfor
 	@cd ${WRKSRC}/opt/${COMPILERDIR}/bin/ && ${LN} -s ifc.cfg ifcbin.cfg \
 		&& ${LN} -s ifort.cfg ifortbin.cfg
-# Remove macros for linux in ifortbin,
-# because fortcom does not accept -U option.
-	@${REINPLACE_CMD} -i "" -e 's: -Dlinux:        :'                 \
-				-e 's: -D__linux :           :'           \
-				-e 's: -D__linux__ :             :'       \
-				-e 's: -D__gnu_linux__:                :' \
-		${WRKSRC}/opt/${COMPILERDIR}/bin/ifortbin
 
 .if ( ${OSVERSION} >= 470101 && ${OSVERSION} < 500000 ) || \
 	( ${OSVERSION} >= 500042 )
@@ -140,7 +130,7 @@ OBJCOPY_OPS=	--redefine-sym stdin=__stdinp \
 .endif
 
 do-build:
-# Use the Linux ABI for the binaries 
+# Use the Linux ABI for the binaries
 .for i in codecov fortcom fpp ifcbin ifortbin profmerge proforder tselect xiar xild
 	@${BRANDELF} -t Linux ${WRKSRC}/opt/${COMPILERDIR}/bin/${i}
 .endfor
@@ -174,6 +164,12 @@ do-build:
 .for i in ifcore ifcoremt
 	@${OBJCOPY} \
 		--redefine-sym ftruncate=l_ftruncate \
+		--redefine-sym lseek64=lseek \
+		--redefine-sym open64=open \
+		--redefine-sym freopen64=freopen \
+		--redefine-sym creat64=creat \
+		--redefine-sym ftruncate64=ftruncate \
+		--redefine-sym mkstemp64=mkstemp \
 		--redefine-sym __xpg_basename=basename \
 		--redefine-sym __strtod_internal=strtod \
 		--redefine-sym __strtof_internal=strtof \
@@ -200,20 +196,20 @@ do-install:
 		${CPIO} -pdu -R ${BINOWN}:${BINGRP} --quiet ${PREFIX}
 
 post-install:
-	@${ECHO_CMD} "${PKGNAME} is now installed in ${PREFIX}/${COMPILERDIR}, to use it you have to"
-	@${ECHO_CMD} "put your license into your \$${INTEL_FLEXLM_LICENSE} (default:"
-	@${ECHO_CMD} "${PREFIX}/${COMPILERDIR}/licenses) directory and add"
-	@${ECHO_CMD} "${PREFIX}/${COMPILERDIR}/bin to your PATH."
-	@${ECHO_CMD}
-	@${ECHO_CMD} "If you use ifc on a Pentium 4 make sure you have 'options CPU_ENABLE_SSE'"
-	@${ECHO_CMD} "in your kernel config (have a look at http://www.FreeBSD.org/handbook/"
-	@${ECHO_CMD} "if you do not know how to do this), else ifc will hang forever."
-	@${ECHO_CMD}
-	@${ECHO_CMD} "WARNING: If you use ifc while having linux_devtools installed, ifc will use"
-	@${ECHO_CMD} "the wrong includes and therefore will generate bogus (not working) binaries!"
-	@${ECHO_CMD}
-	@${ECHO_CMD} "If you encounter further problems with ifc please consult the errata at"
-	@${ECHO_CMD} "http://support.intel.com/support/performancetools/fortran/Fortran_Compiler_Errata.htm"
-	@${ECHO_CMD} "first."
+	@${ECHO} "${PKGNAME} is now installed in ${PREFIX}/${COMPILERDIR}, to use it you have to"
+	@${ECHO} "put your license into your \$${INTEL_FLEXLM_LICENSE} (default:"
+	@${ECHO} "${PREFIX}/${COMPILERDIR}/licenses) directory and add"
+	@${ECHO} "${PREFIX}/${COMPILERDIR}/bin to your PATH."
+	@${ECHO}
+	@${ECHO} "If you use ifc on a Pentium 4 make sure you have 'options CPU_ENABLE_SSE'"
+	@${ECHO} "in your kernel config (have a look at http://www.FreeBSD.org/handbook/"
+	@${ECHO} "if you do not know how to do this), else ifc will hang forever."
+	@${ECHO}
+	@${ECHO} "WARNING: If you use ifc while having linux_devtools installed, ifc will use"
+	@${ECHO} "the wrong includes and therefore will generate bogus (not working) binaries!"
+	@${ECHO}
+	@${ECHO} "If you encounter further problems with ifc please consult the errata at"
+	@${ECHO} "http://support.intel.com/support/performancetools/fortran/linux/"
+	@${ECHO} "first."
 
 .include <bsd.port.post.mk>
