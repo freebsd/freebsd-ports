@@ -226,5 +226,6 @@ share/locale/zh_TW/LC_MESSAGES/gdm.mo
 @dirrm etc/gdm
 @unexec /bin/rmdir %D/etc/dm/Sessions 2>/dev/null || /usr/bin/true
 @unexec /bin/rmdir %D/etc/dm 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/sbin 2>/dev/null || /usr/bin/true
 @unexec /bin/rmdir %D/share/gnome/log/gdm 2>/dev/null || /usr/bin/true
 @unexec /bin/rmdir %D/share/gnome/log 2>/dev/null || /usr/bin/true
