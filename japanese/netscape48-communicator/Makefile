@@ -3,7 +3,7 @@
 # Date created:		13 Mar 1998
 # Whom:			sada@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.19 1999/05/02 14:11:41 sada Exp $
+# $Id: Makefile,v 1.20 1999/05/20 17:37:19 sada Exp $
 #
 
 DISTNAME=	ja-netscape-${BROWSER}-${BROWSER_VERSION}
@@ -25,6 +25,7 @@ PKGINSTALL=	${WRKDIR}/INSTALL
 PLIST=		${.CURDIR}/pkg/PLIST
 PLIST_SUB=	NSUBDIR=${NSUBDIR} LANG=${LANG}
 WRKSRC=		${WRKDIR}/netscape-ja_euc
+FILESDIR?=	${.CURDIR}/files
 
 BROWSER?=	communicator
 BROWSER_BIN?=	${BROWSER}-${BROWSER_VERSION}.bin
@@ -42,10 +43,12 @@ MAKESCRIPT=	${SED} -e "s;@X11BASE@;${X11BASE};g" \
 MANDIR=		${MANPREFIX}/man/${MANLANG}
 NDIR=		${PREFIX}/${NSUBDIR}
 NSUBDIR?=	lib/netscape
-PORTKIT=	ja-netscape-portkit.1999.0502.tar.gz
+PORTKIT?=	ja-netscape-portkit.1999.0502.tar.gz
 PORTKIT_DIR=	${WRKDIR}/portkit
 PORTKIT_SITES=	${MASTER_SITE_PORTS_JP} \
 		http://WWW.FreeBSD.ORG/~sada/distfiles/
+NETHELP?=	nethelp-v406
+
 .SILENT:
 
 do-configure:
@@ -67,7 +70,7 @@ do-install:
 .for f in Netscape about splash
 	${INSTALL_DATA} ${WRKDIR}/$f ${NDIR}/${LANG}/
 .endfor
-	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${WRKSRC}/nethelp-v406.nif \
+	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${WRKSRC}/${NETHELP}.nif \
 		${EXTRACT_AFTER_ARGS} -C ${NDIR}/${LANG}
 	${INSTALL_SCRIPT} ${WRKDIR}/start.sh ${PREFIX}/bin/${BROWSER_CMD}
 	${LN} -sf ${BROWSER_CMD} ${PREFIX}/bin/netscape
