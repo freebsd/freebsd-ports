@@ -20,6 +20,8 @@ COMMENT=	Tools for remote and centralized audit data collection
 OPTIONS=	MYSQL "With MySQL support" off \
 		PGSQL "With PostGreSQL support" off
 
+MAKE_ARGS=	CFLAGS+="-fPIC -DPIC"
+
 .if defined(WITH_MYSQL)
 USE_MYSQL=	yes
 .endif
@@ -61,10 +63,6 @@ FIXPREFIX_CONF=	src/include/audconf.h src/auditd/auditd.8
 LIBVERSION=	1
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-BROKEN=		"Does not compile on amd64"
-.endif
 
 post-patch:
 	${REINPLACE_CMD} -e "s@Linux@FreeBSD@g" ${WRKSRC}/configure
