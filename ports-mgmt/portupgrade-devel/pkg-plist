@@ -1,6 +1,7 @@
 sbin/pkg_deinstall
 sbin/pkg_glob
 sbin/pkgdepfix
+sbin/portcvsweb
 sbin/portsclean
 sbin/portsdb
 sbin/portinstall
@@ -18,6 +19,7 @@ sbin/portversion
 share/zsh/site-functions/_pkg_deinstall
 share/zsh/site-functions/_pkg_glob
 share/zsh/site-functions/_pkgdepfix
+share/zsh/site-functions/_portsclean
 share/zsh/site-functions/_portupgrade
 share/zsh/site-functions/_portversion
 @unexec rmdir %D/share/zsh/site-functions 2>/dev/null || true
