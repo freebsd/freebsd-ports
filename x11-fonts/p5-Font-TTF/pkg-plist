@@ -69,6 +69,7 @@ lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/XMLparse.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Font/TTF/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/Kern
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/Mort
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Font/TTF
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Font/TTF
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Font 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Font 2>/dev/null || true
