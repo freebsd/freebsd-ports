@@ -1,0 +1,14 @@
+ Accrete is a physical simulation of solar system planet formation,
+originally published to Usenet-- probably comp.sources.unix-- in 1991
+by Joe Nowakowski. This software is in the public domain.
+
+This simulation works by modelling a dust cloud around a Sun-like
+star, injecting a series of masses which collect dust, and form
+planets. The simulation then determines what the planetary
+environments will be like in terms of temperature, atmospheric
+composition, and other factors. The system description is saved to a
+file named "New.System".
+
+WWW: http://sourceforge.net/projects/accrete
+
+-Chuck Swiger <chuck@pkix.net>

@@ -1,0 +1,25 @@
+--- Makefile.org	Tue Jul 29 14:53:03 2003
++++ Makefile	Tue Jul 29 14:53:37 2003
+@@ -7,17 +7,17 @@
+ INSTALL = /usr/bin/install -s
+ 
+ # installation prefix
+-PREFIX = /usr/local
++PREFIX = %%PREFIX%%
+ 
+ # Compiler flags
+-CC ?= cc
+-CDEBUG = -g -O -Wall
+-COPT = -O3 -ffast-math
++CC = %%CC%%
++CDEBUG =
++COPT = 
+ 
+ # Enable this to greatly increase the verbosity of the output
+ # DEFS = -DDEBUG -DVERBOSE
+ 
+-CFLAGS ?= -pipe $(CDEBUG) $(DEFS)
++CFLAGS = %%CFLAGS%%
+ 
+ # Any libraries that are needed...
+ LDFLAGS = -lm

@@ -2,6 +2,7 @@
 #
 
     SUBDIR += SETIsupport
+    SUBDIR += accrete
     SUBDIR += celestia
     SUBDIR += dgpsip
     SUBDIR += ephem
