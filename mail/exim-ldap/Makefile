@@ -6,12 +6,9 @@
 #
 
 PKGNAMESUFFIX=	-ldap
-CATEGORIES=	mail
-PKGDIR=		../exim
-FILESDIR=	${PKGDIR}/files
-PATCHDIR=	${PKGDIR}/files
+MASTERDIR=	${.CURDIR}/../exim
 
-# See ../exim/Makefile for options controlling the LDAP lookup type.
+# See ${MASTERDIR}/Makefile for options controlling the LDAP lookup type.
 WITH_LDAP=	yes
 
-.include "../exim/Makefile"
+.include "${MASTERDIR}/Makefile"

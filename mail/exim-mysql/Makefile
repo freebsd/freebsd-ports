@@ -6,11 +6,8 @@
 #
 
 PKGNAMESUFFIX=	-mysql
-CATEGORIES=	mail
-PKGDIR=		../exim
-FILESDIR=	${PKGDIR}/files
-PATCHDIR=	${PKGDIR}/files
+MASTERDIR=	${.CURDIR}/../exim
 
 WITH_MYSQL=	yes
 
-.include "../exim/Makefile"
+.include "${MASTERDIR}/Makefile"
