@@ -165,11 +165,7 @@ share/texmf/tex/blackdvi.tex
 share/texmf/tex/dvips.tex
 share/texmf/tex/dvipsmac.tex
 share/texmf/tex/latex/avantgarde.sty
-share/texmf/tex/latex/bookman.sty
-share/texmf/tex/latex/chancery.sty
 share/texmf/tex/latex/lucida.sty
 share/texmf/tex/latex/ncs.sty
-share/texmf/tex/latex/palatino.sty
 share/texmf/tex/latex/psfonts.sty
 share/texmf/tex/latex/psgreek.sty
-share/texmf/tex/latex/times.sty
