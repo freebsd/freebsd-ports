@@ -48,6 +48,8 @@ etc/prelude-nids/ruleset/web-misc.rules
 etc/prelude-nids/ruleset/web-php.rules
 etc/prelude-nids/ruleset/x11.rules
 etc/prelude-nids/ruleset/pop2.rules
+etc/prelude-nids/ruleset/classification.config
+etc/prelude-nids/ruleset/reference.config
 etc/prelude-nids/unitable.txt
 etc/prelude-nids/prelude-nids.conf-dist
 @unexec [ -f %D/etc/prelude-nids/prelude-nids.conf-dist ] && rm %D/etc/prelude-nids/prelude-nids.conf-dist || true

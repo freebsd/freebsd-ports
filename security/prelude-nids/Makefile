@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	prelude-nids
-PORTVERSION=	0.8.3
+PORTVERSION=	0.8.4
 CATEGORIES=	security
 MASTER_SITES=   http://www.prelude-ids.org/download/releases/
 
