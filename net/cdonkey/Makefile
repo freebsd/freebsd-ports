@@ -20,6 +20,7 @@ LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--with-berkeley-db="${LOCALBASE}/include/db3:${LOCALBASE}/lib"
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/cDonkey
