@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.nuclearelephant.com/projects/dspam/sources/
 
 MAINTAINER=	rob@debank.tv
 COMMENT=	A server-side bayesian spam filter
+BROKEN=		"port after repo copy from mail/dspam, work in progress"
 
 ## debug / log options
 OPTIONS=	NO_CONFLICTS "DO NOT conflict with dspam-2.x" off
