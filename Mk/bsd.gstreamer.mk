@@ -55,11 +55,11 @@ GST_SHLIB_VERSION=	1
 _USE_GSTREAMER_ALL=	a52dec aalib artsd audiofile cairo cdaudio cdparanoia \
 			dirac dts dv dvd esound faac faad ffmpeg flac \
 			gdkpixbuf gnomevfs gsm hermes ivorbis jack jpeg \
-			jpeg-mmx ladspa lame libcaca libfame libmng libpng \
-			libvisual mad mikmod mpeg2dec mpeg2enc mplex musepack \
-			musicbrainz nas sdl shout shout2 sidplay smoothwave \
-			sndfile speex theora ogg pango polypaudio swfdec \
-			vorbis xine xvid
+			jpeg-mmx ladspa lame libcaca libfame libmms libmng \
+			libpng libvisual mad mikmod mpeg2dec mpeg2enc mplex \
+			musepack musicbrainz nas sdl shout shout2 sidplay \
+			smoothwave sndfile speex theora ogg pango polypaudio \
+			swfdec vorbis xine xvid
 
 # other plugins
 OTHER_GSTREAMER_PLUGINS+=	core yes
@@ -200,6 +200,11 @@ theora_DEPENDS=	multimedia/gstreamer-plugins-theora
 xine_DEPENDS=	multimedia/gstreamer-plugins-xine
 
 xvid_DEPENDS=	multimedia/gstreamer-plugins-xvid
+
+# Net Plugins Section
+
+libmms_DEPENDS=	net/gstreamer-plugins-libmms
+libmms_PLIST=	libgstmms
 
 # X11-Toolkits Plugins Section
 pango_DEPENDS=	x11-toolkits/gstreamer-plugins-pango
