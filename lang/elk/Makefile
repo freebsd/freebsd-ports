@@ -1,29 +1,25 @@
 # New ports collection makefile for:    elk
-# Version required:     3.0
+# Version required:     3.0pl2
 # Date created:         08 March 1995
 # Whom:                 thomas@ghpc8.ihf.rwth-aachen.de
 #
-# $Id: Makefile,v 1.9 1995/12/20 08:40:58 tg Exp $
+# $Id: Makefile,v 1.10 1996/03/06 08:20:07 asami Exp $
 #
 
-DISTNAME=       elk-3.0
+DISTNAME=	elk-3.0
+PKGNAME=	elk-3.0.2
 CATEGORIES+=	lang
 MASTER_SITES=	ftp://ftp.uni-bremen.de/pub/programming/languages/scheme/elk/ \
 		ftp://crl.dec.com/pub/X11/contrib/devel_tools/ \
 		ftp://ftp.th-darmstadt.de/pub/X11/contrib/devel_tools/
 
-PATCHFILES=	elk-3.0-patch-1
-PATCH_SITES=	ftp://ftp.uni-bremen.de/pub/programming/languages/scheme/elk/
-
-MAINTAINER=	thomas@ghpc8.ihf.rwth-aachen.de
+MAINTAINER=	tg@freebsd.org
 
 PATCH_STRIP=	-p1
 ALL_TARGET=	default
 
 #
-# /usr/local/lib/elk is built into the port.
-# change it in ${WRKSRC}/config/site if you change it here and vice versa.
-# i also renamed /usr/local/bin/scheme to /usr/local/bin/elk
+# we install the scheme binary as ${PREFIX}/bin/elk
 # to avoid a clash with mit-scheme.
 #
 
