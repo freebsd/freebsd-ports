@@ -10,7 +10,7 @@ PORTVERSION=	3.2.1b
 CATEGORIES=	net python
 MASTER_SITES=	http://bitconjurer.org/BitTorrent/
 
-MAINTAINER=	winter@freebsd.org
+MAINTAINER=	mdodd@freebsd.org
 COMMENT=	"Peer to Peer file sharing/mirroring."
 
 RUN_DEPENDS=    ${PYTHON_SITELIBDIR}/wxPython/wxc.so:${PORTSDIR}/x11-toolkits/py-wxPython
