@@ -1,0 +1,13 @@
+$FreeBSD$
+
+--- firemake/libraries.orig	Tue Feb 24 13:37:56 2004
++++ firemake/libraries	Sat May  1 20:10:38 2004
+@@ -100,7 +100,7 @@
+ 			dispn "	$LIBRARY..."
+ 			$ECHO "	$INSTALL ${LIBRARY}.a \$(LIBDIR) $INSTALL_USER $INSTALL_GROUP 0755"
+ 			$ECHO "	$INSTALL ${LIBRARY}.so.$VERSION \$(LIBDIR) $INSTALL_USER $INSTALL_GROUP 0755"
+-			$ECHO "	ln -sf ${LIBRARY}.so.$VERSION \$(LIBDIR)/${LIBRARY}.so.$VERSION2"
++			$ECHO "	ln -sf ${LIBRARY}.so.$VERSION \$(LIBDIR)/${LIBRARY}.so.0"
+ 			$ECHO "	ln -sf ${LIBRARY}.so.$VERSION \$(LIBDIR)/${LIBRARY}.so"
+ 			disp "done"
+ 		done

@@ -1,0 +1,13 @@
+$FreeBSD$
+
+--- firemake/makefiletop.orig	Sat May  1 20:12:10 2004
++++ firemake/makefiletop	Sat May  1 20:11:26 2004
+@@ -3,7 +3,7 @@
+ #require make
+ #phase makefile
+ dispn "Writing Makefile top entries..."
+-if test "$MAKE_CONDSET" = "y"; then
++if test "$MAKE_CONDSET" = "never"; then
+ 	$ECHO "PREFIX ?= $FM_PREFIX"
+ 
+ 	if test "$FM_MANDIRSTRICT" = "y"; then

@@ -6,15 +6,14 @@ are in most libc's but not provided for by ANSI C, enabling
 programmers to write ANSI C-compliant code while using such
 safe functions (strcasecmp, strncasecmp, snprintf).
 
-libfirestring provides a set of functions for dealing with
-EStrings.  EStrings are binary-safe objects that, when used
-with the firestring functions, are overflow safe, because
-they include allocated memory size information with them.
-
 libfirestring also includes functions for dealing with
 reading configuration files in an easy to program fashion.
 
-WWW:	http://firestuff.org/
+This library uses long long, which is part of the C99 standard
+(previously a GNU extension).	Your compiler needs to support
+this in order for FireString to work.
+
+WWW: http://www.firestuff.org/
 
 - Dean
 dean@odyssey.apana.org.au
