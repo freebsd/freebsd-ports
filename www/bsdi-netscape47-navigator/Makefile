@@ -3,7 +3,7 @@
 # Date created:         20 Sept 1998
 # Whom:                 brett@peloton.physics.montana.edu
 #
-# $Id: Makefile,v 1.29 1998/11/19 22:54:44 billf Exp $
+# $Id: Makefile,v 1.30 1998/11/24 20:41:02 obrien Exp $
 #
 
 DISTNAME=       netscape-navigator-4.5
@@ -23,7 +23,7 @@ BINDIR=		${PREFIX}/bin
 .if defined(USE_128BIT)
 MASTER_SITES+=	ftp://ftp.fortify.net/pub/Fortify/ \
 		ftp://ftp.za.freebsd.org/pub/Fortify/
-DISTFILES+=	Fortify-1.3.0-unix-x86.tar.gz
+DISTFILES+=	Fortify-1.3.2-unix-x86.tar.gz
 RESTRICTED=     "Contains strong cryptography"
 .else
 pre-extract:
@@ -41,7 +41,7 @@ do-install:
 	    ${INSTALL_DATA} ${FILESDIR}/mailcap ${NDIR}; \
 	fi
 .if defined(USE_128BIT)
-	cd ${WRKDIR}/Fortify-1.3.0-unix-x86 && \
+	cd ${WRKDIR}/Fortify-1.3.2-unix-x86 && \
 		(${ECHO} yes ; ${ECHO} no) | ./Fortify.sh ${NDIR}/navigator-4.5.bin
 .endif
 	chown -R ${BINOWN}.${BINGRP} ${NDIR}

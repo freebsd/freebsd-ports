@@ -3,7 +3,7 @@
 # Date created:         24 Feb 1997
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.28 1998/12/08 05:11:25 asami Exp $
+# $Id: Makefile,v 1.29 1998/12/08 21:28:54 billf Exp $
 #
 
 DISTNAME=       netscape-navigator-4.07
@@ -26,7 +26,7 @@ INFILE_HEAD=	'Navigator,4.07.0.98272,'
 .if defined(USE_128BIT)
 MASTER_SITES+=	ftp://ftp.fortify.net/pub/Fortify/ \
 		ftp://ftp.za.freebsd.org/pub/Fortify/
-DISTFILES+=	Fortify-1.3.0-unix-x86.tar.gz
+DISTFILES+=	Fortify-1.3.2-unix-x86.tar.gz
 RESTRICTED=     "Contains strong cryptography"
 .endif
 
@@ -59,7 +59,7 @@ do-install:
 	fi
 	${RM} -rf ${NDIR}/movemail-src
 .if defined(USE_128BIT) && defined(USA_RESIDENT) && ${USA_RESIDENT} == NO
-	cd ${WRKDIR}/Fortify-1.3.0-unix-x86 && \
+	cd ${WRKDIR}/Fortify-1.3.2-unix-x86 && \
 		(${ECHO} yes ; ${ECHO} no) | ./Fortify.sh ${NDIR}/navigator-4.07.bin
 .endif
 	chown -R bin.bin ${NDIR}
