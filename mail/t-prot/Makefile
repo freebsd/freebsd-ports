@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	t-prot
-PORTVERSION=	1.44
+PORTVERSION=	1.47
 CATEGORIES=	mail
 MASTER_SITES=	http://www.escape.de/users/tolot/mutt/t-prot/downloads/
 
@@ -15,6 +15,7 @@ COMMENT=	TOFU Protection - Display Filter for RFC822 messages
 
 RUN_DEPENDS=	${SITE_PERL}/Getopt/Mixed.pm:${PORTSDIR}/devel/p5-Getopt-Mixed
 
+USE_GPG=	yes
 USE_PERL5=	yes
 NO_BUILD=	yes
 
