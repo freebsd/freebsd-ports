@@ -4,23 +4,22 @@ lib/dia/libcgm_filter.so
 lib/dia/libchronogram_objects.so
 lib/dia/libcustom_objects.so
 lib/dia/libdxf_filter.so
-lib/dia/libeml_objects.so
 lib/dia/liber_objects.so
 lib/dia/libflowchart_objects.so
 lib/dia/libfs_objects.so
 lib/dia/libgrafcet_objects.so
 lib/dia/libhpgl_filter.so
+lib/dia/libmetapost_filter.so
 lib/dia/libnetwork_objects.so
 lib/dia/libpstricks_filter.so
 lib/dia/libsadt_objects.so
 lib/dia/libshape_filter.so
 lib/dia/libstandard_objects.so
 lib/dia/libsvg_filter.so
-lib/dia/libsybase_objects.so
 lib/dia/libuml_objects.so
 lib/dia/libwpg_filter.so
 lib/dia/libxfig_filter.so
-%%GNOME:%%share/gnome/apps/Applications/dia.desktop
+share/gnome/apps/Applications/dia.desktop
 share/gnome/dia/dia_logo.png
 share/gnome/dia/shapes/Circuit/ground.shape
 share/gnome/dia/shapes/Circuit/ground.xpm
@@ -47,6 +46,8 @@ share/gnome/dia/shapes/Circuit/hzener.shape
 share/gnome/dia/shapes/Circuit/hzener.xpm
 share/gnome/dia/shapes/Circuit/lamp_de.shape
 share/gnome/dia/shapes/Circuit/lamp_de.xpm
+share/gnome/dia/shapes/Circuit/microphone_de.shape
+share/gnome/dia/shapes/Circuit/microphone_de.xpm
 share/gnome/dia/shapes/Circuit/nmos_de.shape
 share/gnome/dia/shapes/Circuit/nmos_de.xpm
 share/gnome/dia/shapes/Circuit/npn.shape
@@ -257,12 +258,34 @@ share/gnome/dia/shapes/MSE/small_extension_node.shape
 share/gnome/dia/shapes/MSE/small_extension_node.xpm
 share/gnome/dia/shapes/MSE/tacsat.shape
 share/gnome/dia/shapes/MSE/tacsat.xpm
+share/gnome/dia/shapes/Misc/file.png
+share/gnome/dia/shapes/Misc/file.shape
+share/gnome/dia/shapes/Misc/folder.png
+share/gnome/dia/shapes/Misc/folder.shape
+share/gnome/dia/shapes/Network/antenna.shape
+share/gnome/dia/shapes/Network/antenna.xpm
+share/gnome/dia/shapes/Network/computer.shape
+share/gnome/dia/shapes/Network/computer.xpm
 share/gnome/dia/shapes/Network/dat_external.shape
 share/gnome/dia/shapes/Network/dat_external.xpm
+share/gnome/dia/shapes/Network/disc.shape
+share/gnome/dia/shapes/Network/disc.xpm
 share/gnome/dia/shapes/Network/diskette.shape
 share/gnome/dia/shapes/Network/diskette.xpm
+share/gnome/dia/shapes/Network/firewall.shape
+share/gnome/dia/shapes/Network/firewall.xpm
+share/gnome/dia/shapes/Network/flash.shape
+share/gnome/dia/shapes/Network/flash.xpm
+share/gnome/dia/shapes/Network/genmonitor.shape
+share/gnome/dia/shapes/Network/genmonitor.xpm
+share/gnome/dia/shapes/Network/hub.shape
+share/gnome/dia/shapes/Network/hub.xpm
 share/gnome/dia/shapes/Network/mobile_phone.shape
 share/gnome/dia/shapes/Network/mobile_phone.xpm
+share/gnome/dia/shapes/Network/modem.shape
+share/gnome/dia/shapes/Network/modem.xpm
+share/gnome/dia/shapes/Network/modularswitch.shape
+share/gnome/dia/shapes/Network/modularswitch.xpm
 share/gnome/dia/shapes/Network/monitor.shape
 share/gnome/dia/shapes/Network/monitor.xpm
 share/gnome/dia/shapes/Network/nwcloud.shape
@@ -275,8 +298,14 @@ share/gnome/dia/shapes/Network/pc_miditower.shape
 share/gnome/dia/shapes/Network/pc_miditower.xpm
 share/gnome/dia/shapes/Network/pc_minitower.shape
 share/gnome/dia/shapes/Network/pc_minitower.xpm
+share/gnome/dia/shapes/Network/printer.shape
+share/gnome/dia/shapes/Network/printer.xpm
+share/gnome/dia/shapes/Network/rj45plug.shape
+share/gnome/dia/shapes/Network/rj45plug.xpm
 share/gnome/dia/shapes/Network/router-symbol.shape
 share/gnome/dia/shapes/Network/router-symbol.xpm
+share/gnome/dia/shapes/Network/sceadplug.shape
+share/gnome/dia/shapes/Network/sceadplug.xpm
 share/gnome/dia/shapes/Network/speaker.shape
 share/gnome/dia/shapes/Network/speaker.xpm
 share/gnome/dia/shapes/Network/speaker_amp.shape
@@ -285,6 +314,8 @@ share/gnome/dia/shapes/Network/switch-atm-symbol.shape
 share/gnome/dia/shapes/Network/switch-atm-symbol.xpm
 share/gnome/dia/shapes/Network/switch-symbol.shape
 share/gnome/dia/shapes/Network/switch-symbol.xpm
+share/gnome/dia/shapes/Network/telephone.png
+share/gnome/dia/shapes/Network/telephone.shape
 share/gnome/dia/shapes/Network/workstation.shape
 share/gnome/dia/shapes/Network/workstation.xpm
 share/gnome/dia/shapes/Network/zip-disk.shape
@@ -303,6 +334,8 @@ share/gnome/dia/shapes/Pneumatic/compilh.shape
 share/gnome/dia/shapes/Pneumatic/compilh.xpm
 share/gnome/dia/shapes/Pneumatic/compilp.shape
 share/gnome/dia/shapes/Pneumatic/compilp.xpm
+share/gnome/dia/shapes/Pneumatic/compush.shape
+share/gnome/dia/shapes/Pneumatic/compush.xpm
 share/gnome/dia/shapes/Pneumatic/comspr.shape
 share/gnome/dia/shapes/Pneumatic/comspr.xpm
 share/gnome/dia/shapes/Pneumatic/dejack.shape
@@ -393,6 +426,18 @@ share/gnome/dia/shapes/jigsaw/part_oooi.shape
 share/gnome/dia/shapes/jigsaw/part_oooi.xpm
 share/gnome/dia/shapes/jigsaw/part_oooo.shape
 share/gnome/dia/shapes/jigsaw/part_oooo.xpm
+share/gnome/dia/shapes/sybase/client.shape
+share/gnome/dia/shapes/sybase/client.xpm
+share/gnome/dia/shapes/sybase/dataserver.shape
+share/gnome/dia/shapes/sybase/dataserver.xpm
+share/gnome/dia/shapes/sybase/ltm.shape
+share/gnome/dia/shapes/sybase/ltm.xpm
+share/gnome/dia/shapes/sybase/repserver.shape
+share/gnome/dia/shapes/sybase/repserver.xpm
+share/gnome/dia/shapes/sybase/rsm.shape
+share/gnome/dia/shapes/sybase/rsm.xpm
+share/gnome/dia/shapes/sybase/stableq.shape
+share/gnome/dia/shapes/sybase/stableq.xpm
 share/gnome/dia/sheets/Circuit.sheet
 share/gnome/dia/sheets/Contact.sheet
 share/gnome/dia/sheets/EML.sheet
@@ -410,6 +455,7 @@ share/gnome/dia/sheets/GRAFCET/etapesp.xpm
 share/gnome/dia/sheets/GRAFCET/vergent_and.xpm
 share/gnome/dia/sheets/Logic.sheet
 share/gnome/dia/sheets/MSE.sheet
+share/gnome/dia/sheets/Misc.sheet
 share/gnome/dia/sheets/Pneumatic.sheet
 share/gnome/dia/sheets/SADT.sheet
 share/gnome/dia/sheets/SDL.sheet
@@ -421,56 +467,20 @@ share/gnome/dia/sheets/civil.sheet
 share/gnome/dia/sheets/jigsaw.sheet
 share/gnome/dia/sheets/network.sheet
 share/gnome/dia/sheets/sybase.sheet
-share/gnome/%%DIAHELP%%/C
-share/gnome/%%DIAHELP%%/en/background-color.html
-share/gnome/%%DIAHELP%%/en/canvas-chapter.html
-share/gnome/%%DIAHELP%%/en/colors.html
-share/gnome/%%DIAHELP%%/en/creating-canvas.html
-share/gnome/%%DIAHELP%%/en/docbook.css
-share/gnome/%%DIAHELP%%/en/graphics/greendots.png
-share/gnome/%%DIAHELP%%/en/graphics/home_network.png
-share/gnome/%%DIAHELP%%/en/graphics/line_props.png
-share/gnome/%%DIAHELP%%/en/gridlines.html
-share/gnome/%%DIAHELP%%/en/index.html
-share/gnome/%%DIAHELP%%/en/ln9.html
-share/gnome/%%DIAHELP%%/en/making-diagram.html
-share/gnome/%%DIAHELP%%/en/object-properties.html
-share/gnome/%%DIAHELP%%/en/objects-chapter.html
-share/gnome/%%DIAHELP%%/en/quickstart-chapter.html
-share/gnome/%%DIAHELP%%/en/quickstart-intro.html
-share/gnome/%%DIAHELP%%/en/rulers.html
-share/gnome/%%DIAHELP%%/en/save-print-diagram.html
-share/gnome/%%DIAHELP%%/en/starting-dia.html
-share/gnome/%%DIAHELP%%/en/stylesheet-images/caution.gif
-share/gnome/%%DIAHELP%%/en/stylesheet-images/home.gif
-share/gnome/%%DIAHELP%%/en/stylesheet-images/important.gif
-share/gnome/%%DIAHELP%%/en/stylesheet-images/next.gif
-share/gnome/%%DIAHELP%%/en/stylesheet-images/note.gif
-share/gnome/%%DIAHELP%%/en/stylesheet-images/prev.gif
-share/gnome/%%DIAHELP%%/en/stylesheet-images/tip.gif
-share/gnome/%%DIAHELP%%/en/stylesheet-images/toc-blank.gif
-share/gnome/%%DIAHELP%%/en/stylesheet-images/toc-minus.gif
-share/gnome/%%DIAHELP%%/en/stylesheet-images/toc-plus.gif
-share/gnome/%%DIAHELP%%/en/stylesheet-images/up.gif
-share/gnome/%%DIAHELP%%/en/stylesheet-images/warning.gif
-share/gnome/%%DIAHELP%%/en/topic.dat
-share/gnome/%%DIAHELP%%/en/using-objects.html
-share/gnome/%%DIAHELP%%/en/who-appeal-too.html
-share/gnome/%%DIAHELP%%/en/zooming.html
-%%GNOME:%%share/gnome/mime-info/dia.keys
-%%GNOME:%%share/gnome/mime-info/dia.mime
-%%GNOME:%%share/gnome/pixmaps/dia-diagram.png
-%%GNOME:%%share/gnome/pixmaps/dia_gnome_icon.png
-share/locale/az/LC_MESSAGES/dia.mo          
-share/locale/es/LC_MESSAGES/dia.mo          
-share/locale/nl/LC_MESSAGES/dia.mo          
-share/locale/pt_BR/LC_MESSAGES/dia.mo          
-share/locale/zh_CN.GB2312/LC_MESSAGES/dia.mo
+share/gnome/help/dia/C
+share/gnome/help/dia/en/topic.dat
+share/gnome/help/dia/pl/topic.dat
+share/gnome/mime-info/dia.keys
+share/gnome/mime-info/dia.mime
+share/gnome/pixmaps/dia-diagram.png
+share/gnome/pixmaps/dia_gnome_icon.png
+share/locale/az/LC_MESSAGES/dia.mo
 share/locale/ca/LC_MESSAGES/dia.mo
 share/locale/da/LC_MESSAGES/dia.mo
 share/locale/de/LC_MESSAGES/dia.mo
 share/locale/el/LC_MESSAGES/dia.mo
 share/locale/en_GB/LC_MESSAGES/dia.mo
+share/locale/es/LC_MESSAGES/dia.mo
 share/locale/fi/LC_MESSAGES/dia.mo
 share/locale/fr/LC_MESSAGES/dia.mo
 share/locale/ga/LC_MESSAGES/dia.mo
@@ -478,27 +488,34 @@ share/locale/hu/LC_MESSAGES/dia.mo
 share/locale/it/LC_MESSAGES/dia.mo
 share/locale/ja/LC_MESSAGES/dia.mo
 share/locale/ko/LC_MESSAGES/dia.mo
+share/locale/nl/LC_MESSAGES/dia.mo
+share/locale/nn/LC_MESSAGES/dia.mo
 share/locale/no/LC_MESSAGES/dia.mo
 share/locale/pl/LC_MESSAGES/dia.mo
 share/locale/pt/LC_MESSAGES/dia.mo
+share/locale/pt_BR/LC_MESSAGES/dia.mo
 share/locale/ru/LC_MESSAGES/dia.mo
+share/locale/sk/LC_MESSAGES/dia.mo
 share/locale/sl/LC_MESSAGES/dia.mo
 share/locale/sv/LC_MESSAGES/dia.mo
 share/locale/tr/LC_MESSAGES/dia.mo
 share/locale/uk/LC_MESSAGES/dia.mo
-share/locale/zh_TW.Big5/LC_MESSAGES/dia.mo
-@dirrm share/gnome/%%DIAHELP%%/en/stylesheet-images
-@dirrm share/gnome/%%DIAHELP%%/en/graphics
-@dirrm share/gnome/%%DIAHELP%%/en
-@dirrm share/gnome/%%DIAHELP%%
+share/locale/vi/LC_MESSAGES/dia.mo
+share/locale/zh_CN/LC_MESSAGES/dia.mo
+share/locale/zh_TW/LC_MESSAGES/dia.mo
+@dirrm share/gnome/help/dia/pl
+@dirrm share/gnome/help/dia/en
+@dirrm share/gnome/help/dia
 @dirrm share/gnome/dia/sheets/UML
 @dirrm share/gnome/dia/sheets/GRAFCET
 @dirrm share/gnome/dia/sheets/ER
 @dirrm share/gnome/dia/sheets
+@dirrm share/gnome/dia/shapes/sybase
 @dirrm share/gnome/dia/shapes/jigsaw
 @dirrm share/gnome/dia/shapes/SDL
 @dirrm share/gnome/dia/shapes/Pneumatic
 @dirrm share/gnome/dia/shapes/Network
+@dirrm share/gnome/dia/shapes/Misc
 @dirrm share/gnome/dia/shapes/MSE
 @dirrm share/gnome/dia/shapes/Logic
 @dirrm share/gnome/dia/shapes/Flowchart

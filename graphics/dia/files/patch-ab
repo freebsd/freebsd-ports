@@ -1,21 +1,36 @@
---- Makefile.in.orig	Fri May 11 05:04:49 2001
-+++ Makefile.in	Thu May 17 14:28:56 2001
-@@ -154,3 +154,4 @@
+
+$FreeBSD$
+
+--- Makefile.in.orig	Tue May 14 02:45:54 2002
++++ Makefile.in	Tue May 14 02:47:55 2002
+@@ -159,7 +159,8 @@
+ pixmapdir = $(gnomedatadir)/pixmaps
+ pixmap_DATA = dia_gnome_icon.png dia-diagram.png
  
 -Applicationsdir = $(gnomedatadir)/gnome/apps/Applications
 +ifdef HAVE_GNOME
 +Applicationsdir = $(gnomedatadir)/apps/Applications
- Applications_DATA = dia.desktop 
-@@ -159,2 +160,3 @@
+ applications_in_files = dia.desktop.in
+ Applications_DATA = $(applications_in_files:.desktop.in=.desktop)
+ 
+@@ -167,6 +168,7 @@
+ 
+ mimedir = $(gnomedatadir)/mime-info
  mime_DATA = dia.mime dia.keys
 +endif
  
-@@ -556,4 +558,8 @@
+ EXTRA_DIST = dia.xpm dia_gnome_icon.png dia_gnome_menu_icon.png 	dia.desktop.in dia.spec KNOWN_BUGS $(pkgdata_DATA) $(man_MANS) 	dia-diagram.png dia.mime dia.keys.in 	core-translation-report po-checktrans.py po-checktrans 	intltool-extract.in intltool-merge.in intltool-update.in 	RELEASE-PROCESS
+ 
+@@ -511,8 +513,12 @@
+ install-exec-am:
+ install-exec: install-exec-recursive
  
 +ifdef HAVE_GNOME
- install-data-am: install-ApplicationsDATA install-man install-mimeDATA \
- 	install-pixmapDATA install-pkgdataDATA
+ install-data-am: install-man install-ApplicationsDATA install-mimeDATA \
+ 		install-pixmapDATA install-pkgdataDATA
 +else
 +install-data-am: install-man install-pkgdataDATA
 +endif
+ install-data: install-data-recursive
  
+ install-am: all-am
