@@ -1,25 +1,25 @@
 # New ports collection makefile for:   gtkdps
-# Version required:    0.2.16
+# Version required:    0.3.1
 # Date created:        21 April 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gtkDPS-0.2.16
-PKGNAME=	gtkdps-0.2.16
+DISTNAME=	gtkDPS-0.3.1
+PKGNAME=	gtkdps-0.3.1
 CATEGORIES=	graphics
-MASTER_SITES= 	ftp://ftp.aist-nara.ac.jp/pub/personal/masata-y/gyve/fullkit/gyve-0.2.1/
+MASTER_SITES= 	ftp://ftp.aist-nara.ac.jp/pub/personal/masata-y/gtkDPS/
 
 MAINTAINER=	nacai@iname.com
 
-LIB_DEPENDS=	gtk10.1:${PORTSDIR}/x11-toolkits/gtk10
+LIB_DEPENDS=    gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
+
 BUILD_DEPENDS=	pswrap:${PORTSDIR}/x11/dgs
 
 CONFIGURE_ARGS=	--with-dps-includes=${X11BASE}/include \
 		--with-dps-libraries=${X11BASE}/lib
-CONFIGURE_ENV=	GTK_CONFIG="${X11BASE}/bin/gtk10-config"
+CONFIGURE_ENV=	GTK_CONFIG="${X11BASE}/bin/gtk12-config"
 USE_LIBTOOL=	yes
-USE_X_PREFIX=	yes
 
 .include <bsd.port.mk>
