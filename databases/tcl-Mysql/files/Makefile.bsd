@@ -1,0 +1,16 @@
+LIB	=	TclMySQL
+SHLIB_MAJOR=	1
+SHLIB_MINOR=	0
+
+SRCS	=	sql-mysql.cc sql.cc sql-manager.cc
+CFLAGS +=	-I${PREFIX}/include/tcl8.0/ -I${PREFIX}/include/mysql/
+LDADD  +=	-L${PREFIX}/lib -ltcl80
+LDADD  +=	-L${PREFIX}/lib/mysql -lmysqlclient
+LDADD  +=	-lgcc
+
+all: ${SHLIB_NAME}
+
+printname:
+	@echo ${SHLIB_NAME}
+
+.include <bsd.lib.mk>

@@ -1,0 +1,7 @@
+The sql package  adds the command sql to tcl.  The author's intention is
+to  build generic  database interface  for  TCL, but  currently he  only
+supports MySQL.
+
+The author's web-site is:
+
+WWW: http://www.binaryevolution.com/~tdarugar/

@@ -1,0 +1,9 @@
+--- sql.cc.orig	Fri Aug 13 15:28:56 1999
++++ sql.cc	Tue Aug 24 21:34:01 1999
+@@ -281,4 +281,4 @@
+        
+-	// Provide a package called Sample 
+-	if (Tcl_PkgProvide(interp, "Sql", "1.0") == TCL_ERROR)
++	// Provide a package called ``sql'' 
++	if (Tcl_PkgProvide(interp, "sql", "1.0") == TCL_ERROR)
+ 		return TCL_ERROR;

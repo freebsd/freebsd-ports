@@ -1,0 +1,7 @@
+lib/tcl8.0/sql1.0/libTclMySQL.so.1
+lib/tcl8.0/sql1.0/pkgIndex.tcl
+@dirrm lib/tcl8.0/sql1.0
+share/doc/tcl-MySQL/api.html
+share/doc/tcl-MySQL/sample.full.txt
+share/doc/tcl-MySQL/sample.simple.txt
+@dirrm share/doc/tcl-MySQL
