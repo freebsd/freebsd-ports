@@ -7,6 +7,7 @@
 
 PORTNAME=	libpci
 PORTVERSION=	2.1.11
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.kerneled.com/freebsd/ports/ \
 		ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/ \
@@ -34,9 +35,14 @@ pre-everything::
 	@${ECHO_MSG} "************************************************"
 	@${ECHO_MSG} ""
 
+post-build:
+	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/pci.h
+
 do-install:
 	@(${CP} ${WRKSRC}/lib/libpci.so ${PREFIX}/lib/libpci.so.2)
 	@(${CP} ${WRKSRC}/lib/libpci.a  ${PREFIX}/lib/libpci.a)
 	@(${LN} -sf ${PREFIX}/lib/libpci.so.2.1 ${PREFIX}/lib/libpci.so)
+	@(${MKDIR} ${PREFIX}/include/pci)
+	@(${CP} ${WRKSRC}/lib/pci.h ${PREFIX}/include/pci/pci.h)
 
 .include <bsd.port.mk>
