@@ -8,9 +8,10 @@ fi
 	--checklist "\n\
 Please select desired options:" -1 -1 9 \
 GD		"GD library support" ON \
+FreeType	"TrueType font rendering (implies GD)" OFF \
 zlib		"zlib library support" ON \
 MySQL		"MySQL database support" ON \
-PostgresSQL	"PostgresSQL database support" OFF \
+PostgreSQL	"PostgreSQL database support" OFF \
 mSQL		"mSQL database support" OFF \
 dBase		"dBase database support" OFF 2> /tmp/checklist.tmp.$$
 
@@ -38,6 +39,13 @@ while [ "$1" ]; do
 		\"GD\")
 			echo "BUILD_DEPENDS+=		\${PREFIX}/lib/libgd.a:\${PORTSDIR}/graphics/gd" >> ${CURDIR}/Makefile.inc
 			echo "PHP3_CONF_ARGS+=	--with-gd" >> ${CURDIR}/Makefile.inc
+			GD=1
+			;;
+		\"FreeType\")
+			echo "LIB_DEPENDS+=		ttf\\\\.2\\\\.:\${PORTSDIR}/print/freetype" >> ${CURDIR}/Makefile.inc
+			if [ -z "$GD" ]; then
+				set $* \"GD\"
+			fi
 			;;
 		\"zlib\")
 			echo "PHP3_CONF_ARGS+=	--with-zlib" >> ${CURDIR}/Makefile.inc
@@ -46,7 +54,7 @@ while [ "$1" ]; do
 			echo "BUILD_DEPENDS+=		mysql:\${PORTSDIR}/databases/mysql321" >> ${CURDIR}/Makefile.inc
 			echo "PHP3_CONF_ARGS+=	--with-mysql=\${PREFIX}" >> ${CURDIR}/Makefile.inc
 			;;
-		\"PostgresSQL\")
+		\"PostgreSQL\")
 			echo "BUILD_DEPENDS+=		\${PREFIX}/pgsql/bin/psql:\${PORTSDIR}/databases/postgresql" >> ${CURDIR}/Makefile.inc
 			echo "PHP3_CONF_ARGS+=	--with-pgsql=\${PREFIX}/pgsql" >> ${CURDIR}/Makefile.inc
 			;;
