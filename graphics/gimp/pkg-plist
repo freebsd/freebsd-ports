@@ -1283,7 +1283,6 @@ share/gimp/scripts/alien-glow-bullet.scm
 share/gimp/scripts/alien-glow-button.scm
 share/gimp/scripts/alien-glow-logo.scm
 share/gimp/scripts/alien-neon-logo.scm
-share/gimp/scripts/asc2img.scm
 share/gimp/scripts/basic1-logo.scm
 share/gimp/scripts/basic2-logo.scm
 share/gimp/scripts/beveled-button.scm
