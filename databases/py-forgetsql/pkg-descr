@@ -1,0 +1,6 @@
+forgetSQL is a Python module for accessing SQL databases by creating classes
+that maps SQL tables to objects, normally one class pr. SQL table. The idea is
+to forget everything about SQL and just worrying about normal classes and
+objects.
+
+WWW: http://soiland.no/software/forgetsql/
