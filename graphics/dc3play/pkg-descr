@@ -1,0 +1,21 @@
+dc3play
+	dc3play is a data downloading tool (via serial) for Ricoh DC-3
+	digital camera.
+
+EXAMPLE USAGE
+	% dc3play tty00
+		get the number of picts.
+	% dc3play -n10 -o tty00 > foo.jpg
+		get full-sized picture #10 to foo.jpg through stdout.
+	% dc3play -a -g tty00
+		get all full-sized pictures into "r0300001.jpg", "r0300002.jpg"
+		and so forth.
+
+REPORTING BUGS
+	Please use one of the following methods:
+	- via http://www.itojun.org/cgi-bin/gnats-send-pr
+	- via e-mail to: itojun@itojun.org
+
+AUTHOR
+	Copyright(c) 1997 by Jun-ichiro Itoh.  All rights reserved.
+	Jun-ichiro itojun Itoh <itojun@itojun.org>
