@@ -1,0 +1,22 @@
+Part of the NewWebScript an Apache module that allows webpage
+developers to embed Tcl code into their HTML, creating webpages
+with active content.
+
+This part is a general purpose part of NWS adding many convinience
+commands and procedures, including operating with serial devices,
+Berkeley DB2, and some client/server databases (Oracle, Postgres --
+if you have those installed).
+
+SYNOPSIS: package require Neo
+
+Unfortunately, the authors only distribute a GIANT source tarball
+including the entire Apache, db-2, TCL, itcl, gd, TclX, etc. This
+port will download the whole beast, but will only extract the neotcl
+part of it.
+
+The port is built without the LDAP support. Our port of OpenLDAP2
+uses DB3, and linking both DB2 and DB3 into the same executable is
+too ugly. Some day, Neo will be updated to use DB3, and we will all
+rejoice.
+
+WWW:	http://sourceforge.net/projects/nws/

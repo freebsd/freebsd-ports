@@ -1,0 +1,4 @@
+--- neo.h	Thu Apr 20 09:16:00 2000
++++ neo.h	Thu Aug 16 20:53:17 2001
+@@ -21 +20,0 @@
+-#include "neoXconfig.h"
