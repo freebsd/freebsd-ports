@@ -9,6 +9,9 @@ PORTNAME=	projectcenter.app
 PORTVERSION=	0.3.0
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/dev-apps/
+.if defined(GNUSTEP_GUI_DEVEL)
+PKGNAMESUFFIX?=	-devel
+.endif
 DISTNAME=	ProjectCenter-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org

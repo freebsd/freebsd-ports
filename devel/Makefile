@@ -213,6 +213,7 @@
     SUBDIR += gnomevfs
     SUBDIR += gnomevfs2
     SUBDIR += gnustep
+    SUBDIR += gnustep-devel
     SUBDIR += gnustep-make
     SUBDIR += gperf
     SUBDIR += gputils

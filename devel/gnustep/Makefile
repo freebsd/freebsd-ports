@@ -9,18 +9,22 @@ PORTNAME=	gnustep
 PORTVERSION=	1.5.0
 CATEGORIES=	devel lang
 MASTER_SITES=	# empty
+.if defined(GNUSTEP_GUI_DEVEL)
+PKGNAMESUFFIX?=	-devel
+.endif
 DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
 MAINTAINER=	dinoex@FreeBSD.org
 
-RUN_DEPENDS=	${PREFIX}/System/Makefiles/GNUstep.sh:${PORTSDIR}/devel/gnustep-make
+RUN_DEPENDS=	${LOCALBASE}/System/Makefiles/GNUstep.sh:${PORTSDIR}/devel/gnustep-make
 RUN_DEPENDS+=	${SYSLIBDIR}/libobjc.so:${PORTSDIR}/lang/gnustep-objc
 RUN_DEPENDS+=	${COMBOLIBDIR}/libgnustep-base.so:${PORTSDIR}/lang/gnustep-base
-RUN_DEPENDS+=	${COMBOLIBDIR}/libgnustep-gui.so:${PORTSDIR}/x11-toolkits/gnustep-gui
 .if defined(GNUSTEP_GUI_DEVEL)
+RUN_DEPENDS+=	${COMBOLIBDIR}/libgnustep-gui.so:${PORTSDIR}/x11-toolkits/gnustep-gui-devel
 RUN_DEPENDS+=	${XGPSBUNDLEDIR}/libgnustep-back:${PORTSDIR}/x11-toolkits/gnustep-back
 .else
+RUN_DEPENDS+=	${COMBOLIBDIR}/libgnustep-gui.so:${PORTSDIR}/x11-toolkits/gnustep-gui
 RUN_DEPENDS+=	${BACKBUNDLEDIR}/libgnustep-xgps:${PORTSDIR}/x11-toolkits/gnustep-xgps
 .endif
 
