@@ -1,0 +1,11 @@
+etc/rc.d/dnrd.sh
+sbin/dnrd
+share/doc/dnrd/AUTHORS
+share/doc/dnrd/COPYING
+share/doc/dnrd/ChangeLog
+share/doc/dnrd/NEWS
+share/doc/dnrd/README
+share/doc/dnrd/README-cache
+share/doc/dnrd/README-master
+share/doc/dnrd/master.sample
+@dirrm share/doc/dnrd
