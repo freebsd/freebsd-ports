@@ -30,15 +30,15 @@ post-configure:
 	${PERL} -pi -e "s:<wait.h:<sys/wait.h:g" ${WRKSRC}/*.c
 
 pre-install:
-	${ECHO} bin/${PORTNAME} > ${PLIST}
+	${ECHO_CMD} bin/${PORTNAME} > ${PLIST}
 .for i in ${SHARED}
-	${ECHO} share/denemo/$i >> ${PLIST}
+	${ECHO_CMD} share/denemo/$i >> ${PLIST}
 .endfor
 .for i in ${DOCS}
-	${ECHO} ${DOCDIR}/$i >> ${PLIST}
+	${ECHO_CMD} ${DOCDIR}/$i >> ${PLIST}
 .endfor
-	${ECHO} @dirrm ${DOCDIR} >> ${PLIST}
-	${ECHO} @dirrm share/denemo >> ${PLIST}
+	${ECHO_CMD} @dirrm ${DOCDIR} >> ${PLIST}
+	${ECHO_CMD} @dirrm share/denemo >> ${PLIST}
 
 do-install:
 	${MKDIR} ${PREFIX}/share/denemo

@@ -31,14 +31,14 @@ post-patch:
 pre-build:
 	@cd ${LIBASTROSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE}
 	@cd ${LIBIPSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE}
-	@${ECHO} 'XEphem.ShareDir: ${PREFIX}/lib/X11/xephem' > ${WRKSRC}/XEphem.ad
+	@${ECHO_CMD} 'XEphem.ShareDir: ${PREFIX}/lib/X11/xephem' > ${WRKSRC}/XEphem.ad
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/XEphem.ad ${PREFIX}/lib/X11/app-defaults/XEphem
 	@${MKDIR} ${PREFIX}/lib/X11/xephem
 	${TAR} -C ${WRKSRC} -cf - auxil catalogs fits fifos tools \
 		| ${TAR} -C ${PREFIX}/lib/X11/xephem --unlink -xf -
-	@find ${PREFIX}/lib/X11/xephem | xargs ${CHOWN} ${SHAREOWN}:${SHAREMODE}
-	@find ${PREFIX}/lib/X11/xephem -type f | xargs ${CHMOD} ${SHAREMODE}
+	@${FIND} ${PREFIX}/lib/X11/xephem | ${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREMODE}
+	@${FIND} ${PREFIX}/lib/X11/xephem -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
 
 .include <bsd.port.mk>

@@ -27,18 +27,18 @@ PLIST=		${WRKDIR}/pkg-plist
 USE_X_PREFIX=	yes
 
 pre-build:
-	find ${WRKDIR} -type f -exec ${CHMOD} 644 \{\} \;
+	${FIND} ${WRKDIR} -type f -exec ${CHMOD} 644 \{\} \;
 
 post-build:
 	${RM} -f ${PLIST}
 	for i in `find ${WRKDIR} -type f -perm 755`; do \
-		${ECHO} bin/`${BASENAME} $${i}` >> ${PLIST}; \
+		${ECHO_CMD} bin/`${BASENAME} $${i}` >> ${PLIST}; \
 	done
-	${ECHO} share/csound/csound.xmg >> ${PLIST}
-	${ECHO} "@dirrm share/csound" >> ${PLIST}
-	${ECHO} "*** WARNING ***" > ${PKGMESSAGE}
-	${ECHO} "The sources for the csound package have not been" >> ${PKGMESSAGE}
-	${ECHO} "thoroughly reviewed by the FreeBSD maintainer." >> ${PKGMESSAGE}
+	${ECHO_CMD} share/csound/csound.xmg >> ${PLIST}
+	${ECHO_CMD} "@dirrm share/csound" >> ${PLIST}
+	${ECHO_CMD} "*** WARNING ***" > ${PKGMESSAGE}
+	${ECHO_CMD} "The sources for the csound package have not been" >> ${PKGMESSAGE}
+	${ECHO_CMD} "thoroughly reviewed by the FreeBSD maintainer." >> ${PKGMESSAGE}
 
 post-patch:
 	${PERL} -pi -e "s:/usr/local/lib:${DATADIR}:g" ${WRKSRC}/getstring.c
