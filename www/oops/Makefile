@@ -23,6 +23,10 @@ CONFIGURE_ARGS?=--sbindir=${PREFIX}/sbin \
 MAN8=		oops.8 oopsctl.8
 OOPSVAR=	/var/run/oops
 
+SCRIPTS_ENV+=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
+		TOUCH="${TOUCH}" \
+		MKDIR="${MKDIR}"
+
 pre-fetch:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.oops
 
