@@ -1,0 +1,15 @@
+diff -druN servGL/hwglx/common/glx_symbols.c servGL/hwglx/common/glx_symbols.c
+--- servGL/hwglx/common/glx_symbols.c	Wed Mar 22 07:25:59 2000
++++ servGL/hwglx/common/glx_symbols.c	Sun Nov  5 19:22:23 2000
+@@ -187,9 +187,8 @@
+ static void *my_dlsym(void *handle, const char *name)
+ {
+    void *tmp = dlsym(handle, name);
+-   char *error;
+-   if ((error = dlerror()) != 0) {
+-      fprintf( stderr, "%s\n", error );
++   if (tmp == NULL) {
++      fputs( dlerror(), stderr );
+       any_error = 1;
+       return 0;
+    }

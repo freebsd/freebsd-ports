@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	sobomax
 
 MAINTAINER=	3d@FreeBSD.org
 
-BUILD_DEPENDS=	tclsh8.2:${PORTSDIR}/lang/tcl82 \
+BUILD_DEPENDS=	tclsh8.3:${PORTSDIR}/lang/tcl83 \
 		autoconf:${PORTSDIR}/devel/autoconf \
 		nonexistent:${PORTSDIR}/graphics/Mesa3:patch
 
@@ -33,7 +33,7 @@ CONFIGURE_ARGS=	--enable-extra \
 		--with-mesa=${WRKDIRPREFIX}${.CURDIR}/../../graphics/Mesa3/work/Mesa-3.2.1 \
 		--sysconfdir=${PREFIX}/etc \
 		--with-moduledir=${PREFIX}/lib/modules
-CONFIGURE_ENV=	TCLSH="tclsh8.2"
+CONFIGURE_ENV=	TCLSH="tclsh8.3"
 MAKE_ENV=	GLVER="${GLVER}" GLUTVER="${GLUTVER}"
 PLIST_SUB=	GLVER="${GLVER}" GLUTVER="${GLUTVER}"
 

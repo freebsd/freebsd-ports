@@ -1,0 +1,15 @@
+diff -druN servGL/hwglx/mga/mgasymbols.c servGL/hwglx/mga/mgasymbols.c
+--- servGL/hwglx/mga/mgasymbols.c	Tue Feb 29 12:40:30 2000
++++ servGL/hwglx/mga/mgasymbols.c	Sun Nov  5 19:18:33 2000
+@@ -29,9 +29,8 @@
+ static void *my_dlsym(void *handle, const char *name)
+ {
+    void *tmp = dlsym(handle, name);
+-   char *error;
+-   if ((error = dlerror()) != 0) {
+-      fputs(error, stderr);
++   if (tmp == NULL) {
++      fputs(dlerror(), stderr);
+       any_error = 1;
+       return 0;
+    }
