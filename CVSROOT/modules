@@ -5174,6 +5174,7 @@ p5-DateTime-Event-ICal	ports/devel/p5-DateTime-Event-ICal
 p5-DateTime-Event-NameDay	ports/devel/p5-DateTime-Event-NameDay
 p5-DateTime-Event-Recurrence	ports/devel/p5-DateTime-Event-Recurrence
 p5-DateTime-Event-Sunrise	ports/devel/p5-DateTime-Event-Sunrise
+p5-DateTime-Format-Baby	ports/devel/p5-DateTime-Format-Baby
 p5-DateTime-LeapSecond	ports/devel/p5-DateTime-LeapSecond
 p5-DateTime-Precise	ports/devel/p5-DateTime-Precise
 p5-DateTime-Set	ports/devel/p5-DateTime-Set
