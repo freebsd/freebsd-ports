@@ -245,6 +245,7 @@ xgs-*			ports/emulators/xgs	Contains ROM (C) by Apple
 xhime*.tgz		ports/games/xhime	Contains commercial character
 						data
 xinvaders-*		ports/games/xinvaders	Don't sell for profit
+xgobi.sh.gz		ports/math/xgobi	Don't sell for profit
 xmdiary-*		ports/deskutils/xmdiary	Don't sell for profit
 xothello-*		ports/games/xothello	Possible trademark infringement
 xrisk-*			ports/games/xrisk	Copyright/trademark violation?
