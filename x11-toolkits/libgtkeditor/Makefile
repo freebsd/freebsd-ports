@@ -15,20 +15,15 @@ DISTNAME=	${PORTNAME:S/lib//}-${PORTVERSION}
 MAINTAINER=	sobomax@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/share/automake/install-sh:${PORTSDIR}/devel/automake
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
-		unicode.0:${PORTSDIR}/devel/libunicode
+LIB_DEPENDS=	unicode.0:${PORTSDIR}/devel/libunicode
 
 USE_X_PREFIX=	yes
+USE_GTK=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 
-GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
-
-CONFIGURE_ENV=	GLIB_CONFIG="${GLIB_CONFIG}" \
-		GTK_CONFIG="${GTK_CONFIG}" \
-		CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 pre-configure:

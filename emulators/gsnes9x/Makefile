@@ -13,13 +13,10 @@ DISTNAME=	GSnes9x-3.0
 
 MAINTAINER=	kbyanc@posi.net
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext \
-		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
-		gnome.4:${PORTSDIR}/x11/gnomelibs \
-		esd.2:${PORTSDIR}/audio/esound
 RUN_DEPENDS=	snes9x:${PORTSDIR}/emulators/snes9x
 
 GNU_CONFIGURE=	yes
+USE_GNOME=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 
