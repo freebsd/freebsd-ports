@@ -1,0 +1,22 @@
+--- programs/Xserver/hw/xfree86/input/mouse/mouse.c.orig	Sat Aug 18 22:47:30 2001
++++ programs/Xserver/hw/xfree86/input/mouse/mouse.c	Thu Aug 23 17:13:44 2001
+@@ -1837,8 +1837,6 @@
+     if ((id = stateTab[pMse->emulateState][4][0]) != 0) {
+         xf86PostButtonEvent(pInfo->dev, 0, abs(id), (id >= 0), 0, 0);
+         pMse->emulateState = stateTab[pMse->emulateState][4][2];
+-    } else {
+-        ErrorF("Got unexpected buttonTimer in state %d\n", pMse->emulateState);
+     }
+ 
+     xf86UnblockSIGIO (sigstate);
+@@ -1892,11 +1890,6 @@
+             if (stateTab[pMse->emulateState][4][0] != 0) {
+                 timer = TimerSet(timer, 0, pMse->emulate3Timeout, buttonTimer,
+ 			     pInfo);
+-            } else {
+-                if (timer) {
+-                    TimerFree(timer);
+-                    timer = NULL;
+-                }
+             }
+         }
