@@ -1,4 +1,5 @@
 bin/dailystrips
+bin/dailystrips-clean
 share/dailystrips/strips.def
 %%PORTDOCS%%share/doc/dailystrips/README
 %%PORTDOCS%%share/doc/dailystrips/README.DEFS
