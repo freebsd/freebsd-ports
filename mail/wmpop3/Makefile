@@ -3,11 +3,11 @@
 # Date created:			28 Mar 1999
 # Whom:				Jim Mock <jim@phrantic.phear.net>
 #
-# $Id: Makefile,v 1.1.1.1 1999/03/30 19:05:47 taoka Exp $
+# $Id: Makefile,v 1.2 1999/06/19 23:32:45 cpiazza Exp $
 #
 
-DISTNAME=	WMPop3-0.5.0a
-PKGNAME=	wmpop3-0.5.0a
+DISTNAME=	WMPop3-0.5.5a
+PKGNAME=	wmpop3-0.5.5a
 CATEGORIES=	mail windowmaker
 MASTER_SITES=	http://www.cs.mun.ca/~scotth/download/
 EXTRACT_SUFX=	.tgz
