@@ -1,0 +1,16 @@
+Beacon Server
+
+The NLANR Multicast Beacon is active measurement software that monitors 
+the performance of a multicast session. It has two components: 
+
+Beacon Agent -- an active probing program running at each measurement machine. 
+A set of Beacons sends packets continuously to each other through a 
+multicast session, and measures the performance of the transmission. It 
+then reports to the Beacon Server periodically. The current version (v0.63) 
+is written in Java. 
+
+Beacon Server -- a central server collecting the performance information 
+from the Beacon Clients. The v0.8 version of the Beacon Server is written 
+in Perl. 
+
+WWW: http://dast.nlanr.net/Projects/Beacon/

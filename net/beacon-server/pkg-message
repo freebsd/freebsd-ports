@@ -1,0 +1,10 @@
+Beacon Server
+
+You must configure your beaconserver by editing:
+${PREFIX}/beaconserver/beaconserver_server.pl
+
+You should run 
+${PREFIX}/beaconserver/beaconserver_htmlgen.pl
+periodically (e.g. via cron) to generate HTML report of the measurement data.
+
+You should need a Web server to make the report available.
