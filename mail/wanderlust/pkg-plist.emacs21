@@ -22,8 +22,12 @@ share/doc/wanderlust/wl.texi
 %%WL_LISPDIR%%/elmo-date.elc
 %%WL_LISPDIR%%/elmo-dop.el
 %%WL_LISPDIR%%/elmo-dop.elc
+%%WL_LISPDIR%%/elmo-file.el
+%%WL_LISPDIR%%/elmo-file.elc
 %%WL_LISPDIR%%/elmo-filter.el
 %%WL_LISPDIR%%/elmo-filter.elc
+%%WL_LISPDIR%%/elmo-flag.el
+%%WL_LISPDIR%%/elmo-flag.elc
 %%WL_LISPDIR%%/elmo-imap4.el
 %%WL_LISPDIR%%/elmo-imap4.elc
 %%WL_LISPDIR%%/elmo-internal.el
@@ -36,8 +40,6 @@ share/doc/wanderlust/wl.texi
 %%WL_LISPDIR%%/elmo-maildir.elc
 %%WL_LISPDIR%%/elmo-map.el
 %%WL_LISPDIR%%/elmo-map.elc
-%%WL_LISPDIR%%/elmo-mark.el
-%%WL_LISPDIR%%/elmo-mark.elc
 %%WL_LISPDIR%%/elmo-mime.el
 %%WL_LISPDIR%%/elmo-mime.elc
 %%WL_LISPDIR%%/elmo-msgdb.el
@@ -58,6 +60,8 @@ share/doc/wanderlust/wl.texi
 %%WL_LISPDIR%%/elmo-sendlog.elc
 %%WL_LISPDIR%%/elmo-shimbun.el
 %%SHIMBUN%%%%WL_LISPDIR%%/elmo-shimbun.elc
+%%WL_LISPDIR%%/elmo-spam.el
+%%WL_LISPDIR%%/elmo-spam.elc
 %%WL_LISPDIR%%/elmo-split.el
 %%WL_LISPDIR%%/elmo-split.elc
 %%WL_LISPDIR%%/elmo-util.el
@@ -68,8 +72,24 @@ share/doc/wanderlust/wl.texi
 %%WL_LISPDIR%%/elmo-version.elc
 %%WL_LISPDIR%%/elmo.el
 %%WL_LISPDIR%%/elmo.elc
+%%WL_LISPDIR%%/elsp-bogofilter.el
+%%WL_LISPDIR%%/elsp-bogofilter.elc
+%%WL_LISPDIR%%/elsp-bsfilter.el
+%%WL_LISPDIR%%/elsp-bsfilter.elc
+%%WL_LISPDIR%%/elsp-sa.el
+%%WL_LISPDIR%%/elsp-sa.elc
+%%WL_LISPDIR%%/elsp-spamoracle.el
+%%WL_LISPDIR%%/elsp-spamoracle.elc
 %%WL_LISPDIR%%/im-wl.el
-@unexec rm -f %%WL_LISPDIR%%/im-wl.elc
+@unexec rm -f %D/%%WL_LISPDIR%%/im-wl.elc
+%%WL_LISPDIR%%/modb-entity.el
+%%WL_LISPDIR%%/modb-entity.elc
+%%WL_LISPDIR%%/modb-legacy.el
+%%WL_LISPDIR%%/modb-legacy.elc
+%%WL_LISPDIR%%/modb-standard.el
+%%WL_LISPDIR%%/modb-standard.elc
+%%WL_LISPDIR%%/modb.el
+%%WL_LISPDIR%%/modb.elc
 %%WL_LISPDIR%%/mmimap.el
 %%WL_LISPDIR%%/mmimap.elc
 %%WL_LISPDIR%%/pldap.el
@@ -84,12 +104,16 @@ share/doc/wanderlust/wl.texi
 %%WL_LISPDIR%%/utf7.elc
 %%WL_LISPDIR%%/wl-acap.el
 %%WL_LISPDIR%%/wl-acap.elc
+%%WL_LISPDIR%%/wl-action.el
+%%WL_LISPDIR%%/wl-action.elc
 %%WL_LISPDIR%%/wl-addrbook.el
 %%WL_LISPDIR%%/wl-addrbook.elc
 %%WL_LISPDIR%%/wl-address.el
 %%WL_LISPDIR%%/wl-address.elc
 %%WL_LISPDIR%%/wl-addrmgr.el
 %%WL_LISPDIR%%/wl-addrmgr.elc
+%%WL_LISPDIR%%/wl-batch.el
+%%WL_LISPDIR%%/wl-batch.elc
 %%WL_LISPDIR%%/wl-complete.el
 %%WL_LISPDIR%%/wl-complete.elc
 %%WL_LISPDIR%%/wl-demo.el
@@ -112,10 +136,14 @@ share/doc/wanderlust/wl.texi
 %%WL_LISPDIR%%/wl-message.elc
 %%WL_LISPDIR%%/wl-mime.el
 %%WL_LISPDIR%%/wl-mime.elc
+%%WL_LISPDIR%%/wl-news.el
+%%WL_LISPDIR%%/wl-news.elc
 %%WL_LISPDIR%%/wl-refile.el
 %%WL_LISPDIR%%/wl-refile.elc
 %%WL_LISPDIR%%/wl-score.el
 %%WL_LISPDIR%%/wl-score.elc
+%%WL_LISPDIR%%/wl-spam.el
+%%WL_LISPDIR%%/wl-spam.elc
 %%WL_LISPDIR%%/wl-summary.el
 %%WL_LISPDIR%%/wl-summary.elc
 %%WL_LISPDIR%%/wl-template.el
@@ -135,6 +163,7 @@ share/doc/wanderlust/wl.texi
 %%WL_ICONDIR%%/closed.xpm
 %%WL_ICONDIR%%/draft.xpm
 %%WL_ICONDIR%%/elmo.xpm
+%%WL_ICONDIR%%/file.xpm
 %%WL_ICONDIR%%/filter.xpm
 %%WL_ICONDIR%%/imap.xpm
 %%WL_ICONDIR%%/internal.xpm
@@ -199,10 +228,10 @@ share/doc/wanderlust/wl.texi
 %%WL_ICONDIR%%/wl-stable-xmas-logo.xbm
 %%WL_ICONDIR%%/wl-stable-xmas-logo.xpm
 %%WL_ICONDIR%%/wl-summary-delete-up.xpm
+%%WL_ICONDIR%%/wl-summary-dispose-up.xpm
 %%WL_ICONDIR%%/wl-summary-exit-up.xpm
 %%WL_ICONDIR%%/wl-summary-forward-up.xpm
 %%WL_ICONDIR%%/wl-summary-jump-to-current-message-up.xpm
-%%WL_ICONDIR%%/wl-summary-mark-as-important-up.xpm
 %%WL_ICONDIR%%/wl-summary-next-page-up.xpm
 %%WL_ICONDIR%%/wl-summary-next-up.xpm
 %%WL_ICONDIR%%/wl-summary-prev-page-up.xpm
@@ -210,6 +239,7 @@ share/doc/wanderlust/wl.texi
 %%WL_ICONDIR%%/wl-summary-read-up.xpm
 %%WL_ICONDIR%%/wl-summary-reply-up.xpm
 %%WL_ICONDIR%%/wl-summary-reply-with-citation-up.xpm
+%%WL_ICONDIR%%/wl-summary-set-flags-up.xpm
 %%WL_ICONDIR%%/wl-summary-sync-force-update-up.xpm
 %%WL_ICONDIR%%/wl-write-current-folder-up.xpm
 share/examples/wanderlust/en/dot.addresses
