@@ -3,7 +3,7 @@
 # Date created:         5 January 1995
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.14 1995/09/16 01:32:32 jmz Exp $
+# $Id: Makefile,v 1.15 1995/10/06 22:11:25 asami Exp $
 #
 
 #######################################################################
@@ -19,7 +19,7 @@
 
 #if you are compiling from a cdrom, set the directory where the
 # the patch files are
-X11FIXES = /usr/ports/distfiles/xc
+X11FIXES = ${DISTDIR}/xc
 
 #define this if you are short of space - save ~28 Mbytes
 #REMOVE_NOT_ESSENTIAL	=	yes
