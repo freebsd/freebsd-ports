@@ -1,0 +1,9 @@
+EasyGTK is a wrapper library around the GTK+ library to provide a much
+easier and simplier Application Programming Interface to the developer.
+
+Check the manual.html for a list of the available functions.
+See the file example.c for a working example of EasyGTK.
+
+This library is (C) 1999-2000 Patrick Lambert <drow@post.com>
+
+http://www.linsupport.com/sw/easygtk.html

@@ -1,0 +1,43 @@
+--- Makefile.orig	Wed Feb 16 00:07:21 2000
++++ Makefile	Wed Jan  3 16:03:42 2001
+@@ -1,23 +1,31 @@
+-CFLAGS = -Wall -O -I. -I/usr/X11R6/include -I/usr/lib/glib/include -I/usr/X11R6/include/X11 -DUSE_IMLIB -DUSE_GNOME -I/usr/include -DNEED_GNOMESUPPORT_H -I/usr/lib/gnome-libs/include -I/usr/X11R6/include -I/usr/lib/glib/include 
+-LIBS = -L. -L/usr/lib -L/usr/X11R6/lib -lgtk -lgdk -rdynamic -lgmodule -lglib -ldl -lXext -lX11 -lm -lgdk_imlib -L/usr/lib -lImlib -ljpeg -ltiff -lungif -lpng -lz -lm -lXext -L/usr/X11R6/lib -lSM -lICE -lXext -lX11 -I/usr/include/glib -rdynamic -L/usr/lib -L/usr/X11R6/lib -lgnomeui -lart_lgpl -lgdk_imlib -lSM -lICE -lgtk -lgdk -lgmodule -lXext -lX11 -lgnome -lgnomesupport -lesd -laudiofile -lm -ldb1 -lglib -ldl 
+-CC = gcc
++GNOME_CFLAGS != $(X11BASE)/bin/gnome-config --cflags gnomeui
++GNOME_LIBS != $(X11BASE)/bin/gnome-config --libs gnomeui
++CFLAGS += -I. -DUSE_IMLIB -DUSE_GNOME $(GNOME_CFLAGS)
++LIBS = $(GNOME_LIBS)
++CC ?= gcc
+ 
+ all: easygtk.c
+ 	$(CC) $(CFLAGS) -c easygtk.c
+ 	ar rc libeasygtk.a easygtk.o
+ 	ranlib libeasygtk.a
++	$(CC) $(CFLAGS) -shared -fpic easygtk.c -o libeasygtk.so.1 $(LIBS)
++	$(LN) -sf libeasygtk.so.1 libeasygtk.so
+ 
+ install:
+-	cp libeasygtk.a /usr/lib/libeasygtk.a
+-	cp easygtk.h /usr/include/easygtk.h
+-	mkdir -p /usr/doc/EasyGTK
+-	cp manual.html /usr/doc/EasyGTK/manual.html
++	$(BSD_INSTALL_DATA) libeasygtk.a $(PREFIX)/lib
++	$(BSD_INSTALL_DATA) easygtk.h $(PREFIX)/include
++	$(BSD_INSTALL_PROGRAM) libeasygtk.so.1 $(PREFIX)/lib
++	$(LN) -sf $(PREFIX)/lib/libeasygtk.so.1 $(PREFIX)/lib/libeasygtk.so
++	$(MKDIR) $(PREFIX)/share/doc/EasyGTK
++	$(BSD_INSTALL_MAN) manual.html $(PREFIX)/share/doc/EasyGTK
++	$(MKDIR) $(PREFIX)/share/examples/EasyGTK
++	$(BSD_INSTALL_DATA) example.c $(PREFIX)/share/examples/EasyGTK
+ 
+ clean:
+ 	rm example testtree *.o *.a .libdep* *~ core
+ 
+ example: example.c
+-	$(CC) $(CFLAGS) -o example example.c $(LIBS) libeasygtk.a
++	$(CC) $(CFLAGS) -o example example.c $(LIBS) -L./ -leasygtk
+ 
+ testtree: testtree.c
+-	$(CC) $(CFLAGS) -o testtree testtree.c $(LIBS) libeasygtk.a
++	$(CC) $(CFLAGS) -o testtree testtree.c $(LIBS) -L./ -leasygtk
