@@ -8,7 +8,7 @@
 PORTNAME=	gplbp
 PORTVERSION=	0.92
 CATEGORIES=	misc
-MASTER_SITES=	ftp://ftp.stampede.org/skibum/
+MASTER_SITES=	ftp://ftp.stampede.org/skibum/gplbp/
 
 MAINTAINER=	jedgar@FreeBSD.org
 
