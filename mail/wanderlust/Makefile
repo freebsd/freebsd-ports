@@ -81,7 +81,7 @@ post-configure:
 
 pre-build:
 .if (${EMACS_PORT} == "xemacs21-mule")
-	@${INSTALL_DATA} ${FILESDIR}/_pkg.el ${WRKSRC}/
+	@${CP} ${FILESDIR}/_pkg.el ${WRKSRC}/
 .endif
 
 pre-install:
