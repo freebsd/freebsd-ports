@@ -59,6 +59,7 @@ share/lyx/doc/cs_Tutorial.lyx
 share/lyx/doc/de_BUGS.lyx
 share/lyx/doc/de_Customization.lyx
 share/lyx/doc/de_Extended.lyx
+share/lyx/doc/de_FAQ.lyx
 share/lyx/doc/de_Intro.lyx
 share/lyx/doc/de_TOC.lyx
 share/lyx/doc/de_Tutorial.lyx
@@ -103,10 +104,13 @@ share/lyx/examples/ca_splash.lyx
 share/lyx/examples/de_beispiel_gelyxt.lyx
 share/lyx/examples/de_beispiel_roh.lyx
 share/lyx/examples/de_splash.lyx
+share/lyx/examples/decimal.lyx
 share/lyx/examples/docbook_example.lyx
 share/lyx/examples/es_ejemplo_con_lyx.lyx
 share/lyx/examples/es_ejemplo_sin_lyx.lyx
 share/lyx/examples/es_splash.lyx
+share/lyx/examples/eu_adibide_gordina.lyx
+share/lyx/examples/eu_adibide_lyx-atua.lyx
 share/lyx/examples/eu_splash.lyx
 share/lyx/examples/example_lyxified.lyx
 share/lyx/examples/example_raw.lyx
