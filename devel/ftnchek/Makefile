@@ -3,7 +3,7 @@
 # Date created:		4 May 1998
 # Whom:			kargl@apl.washington.edu
 #
-# $Id: Makefile,v 1.1.1.1 1998/05/05 05:07:48 mph Exp $
+# $Id: Makefile,v 1.2 1998/08/25 02:13:32 jseger Exp $
 
 DISTNAME=	ftnchek
 PKGNAME=	ftnchek-2.10.0
@@ -17,6 +17,10 @@ WRKSRC=		${WRKDIR}/${PKGNAME}
 MAN1=		dcl2inc.1 ftnchek.1
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	ac_cv_dir_lispdir=${PREFIX}/share/emacs/site-lisp
+
+pre-install:
+	${MKDIR} ${PREFIX}/share/emacs/site-lisp
 
 post-install:
 	strip ${PREFIX}/bin/ftnchek
