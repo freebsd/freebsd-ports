@@ -3723,6 +3723,7 @@ lprps-letter	ports/print/lprps-letter
 lptcontrol	src/usr.sbin/lptcontrol
 lrzsz		ports/comms/lrzsz
 ls		src/bin/ls
+lsdb		ports/databases/lsdb
 lsdev		src/usr.sbin/lsdev
 lsh		ports/security/lsh
 lsmlib		ports/sysutils/lsmlib
