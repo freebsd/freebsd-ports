@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	compaq-cc
-PORTVERSION=	6.2.9.504
+PORTVERSION=	6.2.9.506.1
 PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.compaq.com/pub/products/C-CXX/linux/compaq_c_v62/
-DISTFILES=	ccc-6.2.9.504-2.alpha.rpm libots-2.2.7-2.alpha.rpm
+DISTFILES=	ccc-6.2.9.506-1.alpha.rpm libots-2.2.7-2.alpha.rpm
 .if defined(WANT_EV6)
 DISTFILES+=	cpml_ev6-5.1.0-2.alpha.rpm
 .else
@@ -27,7 +27,7 @@ BUILD_DEPENDS=	rpm:${PORTSDIR}/misc/rpm
 ONLY_FOR_ARCHS=	alpha
 
 PREFIX=		/
-CCC_ROOT=	${PREFIX}/usr/lib/compaq/ccc-6.2.9.504-2
+CCC_ROOT=	${PREFIX}/usr/lib/compaq/ccc-6.2.9.506-1
 EXTRACT_CMD=		rpm2cpio
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	|cpio -idum
