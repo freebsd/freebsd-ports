@@ -5,20 +5,21 @@
 # $FreeBSD$
 #
 
-PORTNAME=	linux-flashplugin
-PORTVERSION=	4.0.r12
+PORTNAME=	flashplugin
+PORTVERSION=	5.0r47
 CATEGORIES=	www graphics linux
-MASTER_SITES=	http://download.macromedia.com/pub/shockwave/flash/english/linux/4.0r12/
-DISTNAME=	flash_linux
+MASTER_SITES=	http://download.macromedia.com/pub/shockwave/flash/english/linux/
+PKGNAMEPREFIX=	linux-
+DISTNAME=	5.0r47/flash_linux
 
-MAINTAINER=	matt@LUCIDA.QC.CA
+MAINTAINER=	pat@databits.net
 
 RUN_DEPENDS=	/compat/linux/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
 
 ONLY_FOR_ARCHS=	i386
 NO_CDROM=	"Redistribution not allowed"
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/Linux
+WRKSRC=		${WRKDIR}/flash_linux
 
 PLUGINSDIR=	lib/netscape-linux/plugins
 LIBFILES=	libflashplayer.so \
@@ -34,6 +35,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/lib/flash/
 	${LN} -sf ${PREFIX}/lib/flash/${f} ${PREFIX}/${PLUGINSDIR}/
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/README.Linux ${PREFIX}/share/doc/flash/
-
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/flash/
+	${INSTALL_DATA} ${WRKSRC}/ReadMe.htm ${PREFIX}/share/doc/flash/
 .include <bsd.port.mk>
