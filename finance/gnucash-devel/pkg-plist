@@ -1,4 +1,3 @@
-bin/dump-finance-quote
 bin/gnc-prices
 bin/gnc-test-env
 bin/gnucash
