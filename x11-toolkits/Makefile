@@ -166,6 +166,7 @@
     SUBDIR += ruby-gtk2
     SUBDIR += ruby-gtkglext
     SUBDIR += ruby-gtksourceview
+    SUBDIR += ruby-panelapplet
     SUBDIR += ruby-pango
     SUBDIR += ruby-tk
     SUBDIR += scintilla
