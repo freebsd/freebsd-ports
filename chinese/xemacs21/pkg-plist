@@ -1,0 +1,39 @@
+bin/b2m
+bin/ctags
+bin/etags
+bin/gnuattach
+bin/gnuclient
+bin/gnudoit
+bin/ootags
+bin/rcs-checkin
+bin/xemacs
+bin/xemacs-%%XEMACS_VER%%
+bin/xemacs21-mule
+lib/xemacs-%%XEMACS_VER%%/etc/app-defaults/zh_TW.Big5/Emacs
+lib/xemacs-%%XEMACS_VER%%/etc/app-defaults/zh_TW.Big5/sample.emacs
+lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/DOC
+lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/add-big-package.sh
+lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/config.values
+lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/cvtmail
+lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/digest-doc
+lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/fakemail
+lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/gnuserv
+lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/gzip-el.sh
+lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/hexl
+lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/make-docfile
+lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/make-path
+lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/mmencode
+lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/movemail
+lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/profile
+lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/rcs2log
+lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/sorted-doc
+lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/vcdiff
+lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/wakeup
+lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/yow
+@exec ln -sf ja %%PREFIX%%/lib/xemacs/mule-packages/etc/app-defaults/ja_JP.EUC
+@unexec rm -f %%PREFIX%%/lib/xemacs/mule-packages/etc/app-defaults/ja_JP.EUC
+@unexec rmdir %%PREFIX%%/lib/xemacs/mule-packages/etc/app-defaults 2>/dev/null || true
+@unexec rmdir %%PREFIX%%/lib/xemacs/mule-packages/etc 2>/dev/null || true
+@unexec rmdir %%PREFIX%%/lib/xemacs/mule-packages 2>/dev/null || true
+@dirrm lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%
+@dirrm lib/xemacs-%%XEMACS_VER%%/etc/app-defaults/zh_TW.Big5

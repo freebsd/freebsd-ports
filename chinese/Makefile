@@ -1,5 +1,6 @@
 # $FreeBSD$
 #
+    SUBDIR += xemacs21
     SUBDIR += xmms
 
     SUBDIR += CJK
