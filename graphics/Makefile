@@ -162,6 +162,7 @@
     SUBDIR += jpeg2ps-a4
     SUBDIR += jpeg2ps-letter
     SUBDIR += jpeginfo
+    SUBDIR += jpegoptim
     SUBDIR += jpegpixi
     SUBDIR += jpgraph
     SUBDIR += jpgtn
