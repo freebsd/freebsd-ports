@@ -3,7 +3,7 @@
 # Date created:		26 July 1998
 # Whom:			Malte Lance <malte.lance@gmx.net>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/08/19 22:48:18 steve Exp $
 #
 
 DISTNAME=		4va-1.21
@@ -14,6 +14,7 @@ EXTRACT_SUFX=		.tgz
 
 MAINTAINER=	malte.lance@gmx.net
 
+USE_XLIB=	yes
 MAN1=		4va.1
 
 4VA_REL_DATA_DIR=	share/4va-1.21
