@@ -1,8 +1,9 @@
-# $Id: Makefile,v 1.23 1997/09/30 06:14:59 asami Exp $
+# $Id: Makefile,v 1.24 1997/11/05 01:59:07 jmz Exp $
 #
 
     SUBDIR += LPRng
     SUBDIR += afio
+    SUBDIR += asrpages
     SUBDIR += cdrecord
     SUBDIR += cd-write
     SUBDIR += contool
