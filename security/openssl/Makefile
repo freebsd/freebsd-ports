@@ -834,6 +834,16 @@ INSTALLS_SHLIB=	yes
 .endif
 
 .if defined(OPENSSL_OVERWRITE_BASE)
+.if exists(/lib/libcrypto.so)
+pre-everything::
+	@${ECHO_CMD} "#"
+	@${ECHO_CMD} "# this ports does not support the dynamic root"
+	@${ECHO_CMD} "# please undefine OPENSSL_OVERWRITE_BASE"
+	@${ECHO_CMD} "# and use WITH_OPENSSL_PORT=yes instead."
+	@${ECHO_CMD} "#"
+	@${FALSE}
+
+.endif
 PKGNAMESUFFIX=	-overwrite-base
 PREFIX=		/usr
 OPENSSLDIR=	/etc/ssl
