@@ -1,0 +1,11 @@
+--- configure.orig	Mon Nov 22 19:20:33 2004
++++ configure	Sat Feb 12 22:55:06 2005
+@@ -3029,7 +3029,7 @@
+ 
+ 
+ 
+-for ac_header in elf.h getopt.h libelf.h libelf/libelf.h sgidefs.h sys/types.h
++for ac_header in getopt.h libelf.h libelf/libelf.h sgidefs.h sys/types.h
+ do
+ as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
+ if eval "test \"\${$as_ac_Header+set}\" = set"; then
