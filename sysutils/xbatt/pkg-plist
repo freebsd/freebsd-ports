@@ -1,0 +1,2 @@
+@cwd ${X11BASE}
+bin/xbatt
