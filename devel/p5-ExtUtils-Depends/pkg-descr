@@ -11,6 +11,3 @@ in the main .pm file) if you need to use functions defined in the
 module.
 
 WWW: http://search.cpan.org/dist/ExtUtils-Depends/
-
--- Sergey Skvortsov
-skv@FreeBSD.org
