@@ -7,7 +7,7 @@
 
 PORTNAME=	emcws
 PORTVERSION=	${EMACS_VER}
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	japanese editors ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	emacs
@@ -27,6 +27,7 @@ MAINTAINER=	nakaji@jp.freebsd.org
 COMMENT=	Emacs + Canna + Wnn + Sj3
 
 BUILD_DEPENDS=	emacs-${EMACS_VER}:${PORTSDIR}/editors/emacs
+RUN_DEPENDS=	emacs-${EMACS_VER}:${PORTSDIR}/editors/emacs
 
 WRKSRC=		${WRKDIR}/emacs-${EMACS_VER}
 
