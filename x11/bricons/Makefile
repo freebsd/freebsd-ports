@@ -3,7 +3,7 @@
 # Date created:		31 Jul 1996
 # Whom:			shanee@augusta.de
 #
-# $Id: Makefile,v 1.5 1998/09/17 00:32:59 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	bricons

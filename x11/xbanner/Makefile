@@ -3,7 +3,7 @@
 # Date created:		13 Jan 1999
 # Whom:			giffunip@asme.org
 #
-# $Id: Makefile,v 1.2 1999/02/02 03:27:50 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	XBanner1.31

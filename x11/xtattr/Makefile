@@ -3,7 +3,7 @@
 # Date created:		6 August 1997
 # Whom:			jeff@cetlink.net
 #
-# $Id: Makefile,v 1.1.1.1 1997/10/31 13:04:14 tg Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xtattr-1.0

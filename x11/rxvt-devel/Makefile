@@ -3,7 +3,7 @@
 # Date created:         5th December 1994
 # Whom:                 gpalmer@FreeBSD.org
 #
-# $Id: Makefile,v 1.26 1999/08/23 04:35:16 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	rxvt-2.6.1

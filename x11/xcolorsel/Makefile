@@ -3,7 +3,7 @@
 # Date Created:			11 November 1998
 # Whom:				Wayne Cuddy <wayne@crb-web.com>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=		xcolorsel-1.1a-src

@@ -3,7 +3,7 @@
 # Date created:		30 October 1998
 # Whom:			Sakai Hiroaki <sakai@miya.ee.kagu.sut.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1998/12/24 14:32:14 flathill Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xmangekyou-2.0

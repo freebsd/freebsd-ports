@@ -3,7 +3,7 @@
 # Date created:         5 January 1995
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.57 1999/07/27 14:27:28 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xc

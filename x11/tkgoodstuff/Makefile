@@ -3,7 +3,7 @@
 # Date created:		7 Oct 1996
 # Whom:			pst
 #
-# $Id: Makefile,v 1.12 1998/08/08 00:02:08 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	tkgoodstuff8.0-final

@@ -3,7 +3,7 @@
 # Date created:		20 Jul 1996
 # Whom:			Eric Blood <eblood@cs.unr.edu>
 #
-# $Id: Makefile,v 1.8 1999/01/18 03:02:41 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xautolock-pl15

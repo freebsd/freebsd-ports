@@ -3,7 +3,7 @@
 # Date created:		3 January 1998
 # Whom:			jraynard
 #
-# $Id: Makefile,v 1.4 1998/09/21 22:15:58 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	props-1.0

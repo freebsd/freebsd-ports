@@ -3,7 +3,7 @@
 # Date created:		17 January 1999
 # Whom:			Jim Mock <jim@FreeBSD.org>
 #
-# $Id: Makefile,v 1.5 1999/05/16 23:32:25 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	aterm-0.3.6

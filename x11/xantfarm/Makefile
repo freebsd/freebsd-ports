@@ -3,7 +3,7 @@
 # Date created:        13 February 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.2 1998/10/05 05:17:58 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xantfarm

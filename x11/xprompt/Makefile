@@ -3,7 +3,7 @@
 # Date created:        23 March 1997
 # Whom:                Matthew Hunt <mph@pobox.com>
 #
-# $Id: Makefile,v 1.3 1998/04/17 23:26:31 mph Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xprompt-1.4

@@ -3,7 +3,7 @@
 # Date created:		17 Aug 1998
 # Whom:			Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.6 1999/05/30 04:05:59 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gnome-1.0.0

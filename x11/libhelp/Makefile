@@ -3,7 +3,7 @@
 # Date created:		11 December 96
 # Whom:			Lars Koeller <Lars_Koeller@odie.physik2.uni-rostock.de>
 #
-# $Id: Makefile,v 1.2 1998/04/14 04:21:51 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	libhelp-1.8.1

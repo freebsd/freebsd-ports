@@ -3,7 +3,7 @@
 # Date created:		10 May 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.9 1998/01/22 00:41:36 fenner Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xcolors

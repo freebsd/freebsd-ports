@@ -3,7 +3,7 @@
 # Date created:         7 November 1996
 # Whom:                 asami
 #
-# $Id: Makefile,v 1.12 1998/11/23 21:52:11 jmz Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	X333contrib

@@ -3,7 +3,7 @@
 # Date created:         15 June 1998
 # Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1998/06/15 12:04:13 tg Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       xwit-1.0

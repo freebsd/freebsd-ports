@@ -3,7 +3,7 @@
 # Date created:			21 August 1999
 # Whom:                 Dominik Rothert <dr@domix.de>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	xtermset-0.4

@@ -3,7 +3,7 @@
 # Date created:		9 November 1994
 # Whom:			smace
 #
-# $Id: Makefile,v 1.45 1999/05/05 15:19:25 tg Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       xlockmore-4.14

@@ -3,7 +3,7 @@
 # Date created:         12 November 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.8 1998/10/05 05:18:03 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xsnow-1.40

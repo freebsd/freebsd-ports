@@ -3,7 +3,7 @@
 # Date created:         27 February 1995
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.13 1999/07/06 03:57:39 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xgrabsc.2_41

@@ -3,7 +3,7 @@
 # Date created:        16 Jan 1997
 # Whom:                Stefan Zehl <sec@42.org>
 #
-# $Id: Makefile,v 1.2 1998/04/21 01:23:58 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xmove.2.0beta2

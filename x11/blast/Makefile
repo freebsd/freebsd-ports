@@ -3,7 +3,7 @@
 # Date created:         9 Jul 1996
 # Whom:            searle
 #
-# $Id: Makefile,v 1.7 1998/04/11 02:35:57 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	blast-1.0-ss-10.20

@@ -3,7 +3,7 @@
 # Date created:		6 Jun 1997
 # Whom:			Satoshi TAOKA
 #
-# $Id: Makefile,v 1.1.1.1 1997/07/01 22:06:10 max Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xco

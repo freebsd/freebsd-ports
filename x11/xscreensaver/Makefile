@@ -3,7 +3,7 @@
 # Date created:         10 July 1995
 # Whom:                 dom@myrddin.demon.co.uk
 #
-# $Id: Makefile,v 1.21 1999/06/27 14:15:14 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xscreensaver-3.17

@@ -3,7 +3,7 @@
 # Date created:		August 31, 1998
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.22 1999/05/01 03:36:57 mharo Exp $
+# $FreeBSD$
 
 DISTNAME=	wdm-1.0
 CATEGORIES=	x11 windowmaker

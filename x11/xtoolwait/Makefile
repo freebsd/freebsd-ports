@@ -3,7 +3,7 @@
 # Date created:		31 May 1997
 # Whom:			jonny
 #
-# $Id: Makefile,v 1.1.1.1 1997/06/03 19:14:37 max Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xtoolwait-1.3

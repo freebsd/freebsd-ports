@@ -3,7 +3,7 @@
 # Date created:		Sat Jun 14 09:43:24 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.4 1998/08/05 09:31:42 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	fbsd-icons
