@@ -1,0 +1,7 @@
+This is a Perl 5 module that retrieves and parses information from the
+InterNIC 'whois' database.  If you are behind a firewall, you probably
+won't be able to use this module.
+
+This version supports only the information about domains.  Future work
+may include information about people and other entities about which
+the InterNIC keeps data.
