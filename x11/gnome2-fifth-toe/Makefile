@@ -7,6 +7,7 @@
 
 PORTNAME=	gnome2-fifth-toe
 PORTVERSION=	2.8.1
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -28,6 +29,7 @@ RUN_DEPENDS=	pan:${PORTSDIR}/news/pan2 \
 		${X11BASE}/lib/gtk-2.0/2.4.0/engines/libindustrial.so:${PORTSDIR}/x11-themes/gnome-themes-extras \
 		bluefish:${PORTSDIR}/www/bluefish-devel \
 		gossip:${PORTSDIR}/net/gossip \
+		inkscape:${PORTSDIR}/graphics/inkscape \
 		straw:${PORTSDIR}/net/straw \
 		liferea:${PORTSDIR}/net/liferea \
 		gnotime:${PORTSDIR}/deskutils/gnotime \
@@ -42,12 +44,6 @@ RUN_DEPENDS+=	totem:${PORTSDIR}/multimedia/totem
 
 NO_BUILD=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500000
-RUN_DEPENDS+=	inkscape:${PORTSDIR}/graphics/inkscape
-.endif
-
 do-install:	# empty
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
