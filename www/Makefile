@@ -377,7 +377,6 @@
     SUBDIR += p5-HTML-Embperl
     SUBDIR += p5-HTML-FillInForm
     SUBDIR += p5-HTML-FromText
-    SUBDIR += p5-HTML-MagicTemplate
     SUBDIR += p5-HTML-Mason
     SUBDIR += p5-HTML-Navigation
     SUBDIR += p5-HTML-Pager
