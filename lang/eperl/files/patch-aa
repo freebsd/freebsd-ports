@@ -1,0 +1,13 @@
+--- eperl_sys.c.original        Mon Jul 27 17:41:34 1998
++++ eperl_sys.c Mon May  1 15:07:34 2000
+@@ -239,8 +239,8 @@
+     char timestr[128];
+ 
+     tm = localtime(t);
+-    sprintf(timestr, "%02d-%02d-19%02d %02d:%02d",
+-                      tm->tm_mday, tm->tm_mon+1, tm->tm_year,
++    sprintf(timestr, "%02d-%02d-%04d %02d:%02d",
++                      tm->tm_mday, tm->tm_mon+1, tm->tm_year+1900,
+                       tm->tm_hour, tm->tm_min);
+     return strdup(timestr);
+ }
