@@ -19,7 +19,7 @@ MASTER_SITES=	${MASTER_SITE_GNU:S/$/:gs_fonts/} \
 		http://www.ucatv.ne.jp/~taeko/software/gs/:lips \
 		http://www.humblesoft.com/pub/:epag \
 		http://www.epkowa.on.arena.ne.jp/pips/data/gs65_304/:eplaser \
-		http://www.ceres.dti.ne.jp/~owatanab/gdevnpdl/:npdl \
+		http://www.hi.is.uec.ac.jp/~osamuw/gdevnpdl/:npdl \
 		http://www.linuxprinting.org/download/printing/samsung-gdi/:gdi \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/gnu/fonts/:fonts \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/gnu/gs705/
@@ -385,7 +385,12 @@ do-configure:
 .if defined(BATCH) || defined(PACKAGE_BUILDING)
 	${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.batch
 .else
+.if defined(WITHOUT_X11)
+	${GREP} -v '^  "x11' ${SCRIPTDIR}/configure > ${WRKDIR}/configure
+	${SETENV} ${SCRIPTS_ENV} ${SH} ${WRKDIR}/configure
+.else
 	${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure
+.endif
 .endif
 
 post-configure:
