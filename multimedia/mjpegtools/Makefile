@@ -27,7 +27,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=  CPPFLAGS="${CPPFLAGS} ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
-WANT_GTK=	yes
+WANT_GNOME=	yes
 
 MAN1=   divxdec.1 jpeg2yuv.1 lav2divx.1 lav2mpeg.1 lav2wav.1 lav2yuv.1 \
 	lavpipe.1 lavplay.1 lavrec.1 lavtrans.1 mjpegtools.1 mp2enc.1 \
@@ -77,8 +77,8 @@ WITH_SDL=	yes
 .endif
 
 # option activation
-.ifdef(HAVE_GTK)
-USE_GTK=	yes
+.if ${HAVE_GNOME:Mgtk12}!=""
+USE_GNOME+=	gtk12
 .endif
 #
 .ifdef(WITH_LIBDV)
@@ -107,8 +107,8 @@ CONFIGURE_ARGS+=	--with-quicktime=${LOCALBASE}
 .endif
 
 pre-everything::
-.ifndef(HAVE_GTK)
-	@${ECHO_MSG} "====> You can enable GTK support by defining WITH_GTK"
+.if ${HAVE_GNOME:Mgtk12}==""
+	@${ECHO_MSG} "====> You can enable GTK support by defining WITH_GNOME"
 .endif
 .ifndef(WITH_LIBDV)
 	@${ECHO_MSG} "====> You can enable DV support by defining WITH_LIBDV"
