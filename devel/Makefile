@@ -761,6 +761,7 @@
     SUBDIR += uml
     SUBDIR += understand_ada
     SUBDIR += understand_c
+    SUBDIR += upnp
     SUBDIR += ups-debug
     SUBDIR += varconf
     SUBDIR += vb2c

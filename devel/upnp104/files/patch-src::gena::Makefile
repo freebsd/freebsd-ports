@@ -1,0 +1,11 @@
+--- src/gena/Makefile.orig	Fri Jun 15 08:21:33 2001
++++ src/gena/Makefile	Sat Aug  3 16:29:39 2002
+@@ -61,7 +61,7 @@
+ 
+ TARGET = $(upnp_lib_dir)/gena.o
+ 
+-CFLAGS = -I$(upnp_inc_dir) -I$(upnp_src_inc_dir) -fpic -Wall -c -D_REENTRANT
++CFLAGS = -I$(upnp_inc_dir) -I$(upnp_src_inc_dir) -I$(PREFIX)/include -fpic -Wall -c -D_REENTRANT
+ 
+ ifeq ($(DEBUG),1)
+ CFLAGS += -g -O -DDEBUG
