@@ -29,7 +29,7 @@ CONFIGURE_ARGS=	--enable-nls \
 		--enable-ipv6 \
 		--enable-perl
 
-CONFLICTS=	xchat-*
+CONFLICTS=	xchat-1*
 
 .if defined(WITH_SOCKS)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libsocks5.a:${PORTSDIR}/net/socks5
