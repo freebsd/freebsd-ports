@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	another-htmllint
-PORTVERSION=	20040421
+PORTVERSION=	20040725
 CATEGORIES=	japanese www
 MASTER_SITES=	http://dist.bsdlab.org/
 
@@ -26,11 +26,19 @@ RULE=		*.rul
 HTML=		*.cgi *.html *.gif *.css
 SEDSUB=		${SED} -e 's@%PREFIX%@${PREFIX}@'
 
+# Please set this!
+HTMLLINT_ADMIN?=	kuriyama@FreeBSD.org
+
 do-build:
-	${SEDSUB} ${FILESDIR}/htmllint > ${WRKSRC}/htmllint
-	${SEDSUB} ${WRKSRC}/htmllintenv > ${WRKSRC}/htmllint.env
-	${SEDSUB} ${WRKSRC}/htmllint.cgi > ${WRKSRC}/htmllint.cgi.new
-	${MV} ${WRKSRC}/htmllint.cgi.new ${WRKSRC}/htmllint.cgi
+	@${SEDSUB} ${FILESDIR}/htmllint > ${WRKSRC}/htmllint
+	@${SEDSUB} ${WRKSRC}/htmllintenv > ${WRKSRC}/htmllint.env
+	@${SEDSUB} ${WRKSRC}/htmllint.cgi > ${WRKSRC}/htmllint.cgi.new
+	@${MV} ${WRKSRC}/htmllint.cgi.new ${WRKSRC}/htmllint.cgi
+	@${SED} -i.bak -e 's|^</address>|</address><br>Maintained by <address>${HTMLLINT_ADMIN}</address>|' ${WRKSRC}/*.html
+.if exists(${LOCALBASE}/bin/w3m)
+	@${ECHO_MSG} "Find w3m."
+	@${SED} -i.bak -e 's|^#$$W3M|$$W3M|' ${WRKSRC}/htmllint.env
+.endif
 
 do-install:
 	${MKDIR} ${DIR}/rule ${DIR}/html
