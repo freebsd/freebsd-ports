@@ -6,8 +6,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=	mswordview-0.5.14-bw2
-PKGNAME=	mswordview-0.5.14.2
+DISTNAME=	mswordview-0.5.14-bw6
+PKGNAME=	mswordview-0.5.14.6
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.csn.ul.ie/~caolan/publink/mswordview/
 
