@@ -7,7 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	1.030
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/updates/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -31,6 +31,7 @@ WEBMIN_MODULES=	bind8-1.030-1.wbm.gz \
 		sendmail-1.030-1.wbm.gz \
 		squid-1.030-1.wbm.gz \
 		sshd-1.030-1.wbm.gz \
+		status-1.030-1.wbm.gz \
 		telnet-1.030-1.wbm.gz
 
 WEBMIN_THEMES=
