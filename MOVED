@@ -24,7 +24,7 @@ chinese/netscape47-communicator||2002-11-17|security vulnerability
 chinese/netscape47-navigator||2002-11-17|security vulnerability
 japanese/linux-netscape47-communicator||2002-11-17|security vulnerability
 japanese/linux-netscape47-navigator||2002-11-17|security vulnerability
-japanese/netscape-fonts||2002-11-17|obsoleted by alias-fonts
+japanese/netscape-fonts|japanese/alias-fonts|2002-11-17|obsoleted by alias-fonts
 japanese/netscape3.language||2002-11-17|security vulnerability
 japanese/netscape4-communicator|japanese/netscape48-communicator|2002-11-17|security vulnerability
 japanese/netscape4-navigator|japanese/netscape48-navigator|2002-11-17|security vulnerability
