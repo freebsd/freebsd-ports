@@ -43,6 +43,7 @@
     SUBDIR += cmp3
     SUBDIR += cmt
     SUBDIR += cplay
+    SUBDIR += crip
     SUBDIR += csound
     SUBDIR += csound-manual
     SUBDIR += cymbaline

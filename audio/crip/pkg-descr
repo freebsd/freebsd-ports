@@ -1,0 +1,9 @@
+crip is a terminal-based ripper/encoder/tagger tool for creating Ogg
+Vorbis/FLAC files under UNIX/Linux. It is well-suited for anyone (especially
+the perfectionist) who seeks to make a lot of files from CDs and have them all
+properly labeled and professional-quality with a minimum of hassle and yet
+still have flexibility and full control over everything. 
+
+WWW: http://bach.dynet.com/crip/
+
+- Philip Paeps <philip@paeps.cx>
