@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	balsa
-PORTVERSION= 	0.9.3
+PORTVERSION= 	0.9.4
 CATEGORIES=	mail gnome
 MASTER_SITES=	ftp://ftp.newton.cx/pub/balsa/ \
 		http://www.theochem.kth.se/~pawsa/balsa/
