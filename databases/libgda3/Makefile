@@ -15,7 +15,8 @@ DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	glib-2.0.0:${PORTSDIR}/devel/glib20 \
+LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm \
+		glib-2.0.0:${PORTSDIR}/devel/glib20 \
 		xslt.1:${PORTSDIR}/textproc/libxslt
 
 USE_BZIP2=	yes
