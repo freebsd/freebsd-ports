@@ -1427,6 +1427,7 @@ share/enlightenment/themes/BrushedMetal-Tigert/tooltips/tooltips.cfg.zh_TW.Big5
 share/enlightenment/themes/BrushedMetal-Tigert/tooltips/images/cloud1.png
 share/enlightenment/themes/BrushedMetal-Tigert/tooltips/images/cloud2.png
 share/enlightenment/themes/BrushedMetal-Tigert/tooltips/images/cloud_logo.png
+share/enlightenment/themes/DEFAULT
 share/enlightenment/themes/Ganymede/ACTIVATE_BUTTONS
 share/enlightenment/themes/Ganymede/BUTTON_CONFIG_HOWTO
 share/enlightenment/themes/Ganymede/ChangeLog
@@ -3192,7 +3193,6 @@ share/locale/tr/LC_MESSAGES/enlightenment.mo
 @dirrm share/enlightenment/themes/Ganymede/Eterm
 @dirrm share/enlightenment/themes/Ganymede/ABOUT
 @dirrm share/enlightenment/themes/Ganymede
-@dirrm share/enlightenment/themes/DEFAULT
 @dirrm share/enlightenment/themes/BrushedMetal-Tigert/ttfonts
 @dirrm share/enlightenment/themes/BrushedMetal-Tigert/tooltips/images
 @dirrm share/enlightenment/themes/BrushedMetal-Tigert/tooltips
