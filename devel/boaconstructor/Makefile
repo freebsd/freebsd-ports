@@ -6,17 +6,18 @@
 #
 
 PORTNAME=	boaconstructor
-PORTVERSION=	0.0.4
+PORTVERSION=	0.0.5
 CATEGORIES=	devel python
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	http://ftp1.sourceforge.net/${MASTER_SITE_SUBDIR}/ \
+		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	boa-constructor
 DISTNAME=	Boa-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/wxPython/wxcmodule.so:${PORTSDIR}/x11-toolkits/py-wxPython
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/wxPython/wxc.so:${PORTSDIR}/x11-toolkits/py-wxPython
 
-WRKSRC=		${WRKDIR}/Boa
+WRKSRC=		${WRKDIR}/Boa-${PORTVERSION}
 
 USE_ZIP=	yes
 USE_PYTHON=	yes

@@ -1,9 +1,0 @@
---- Explorer.gtk.cfg	2000/12/12 14:15:57	1.1
-+++ Explorer.gtk.cfg	2000/12/12 14:16:24
-@@ -1,5 +1,5 @@
- [Explorer]
- Filesystem : ['/']
--Workspaces : {'wxPython': '/usr/lib/python1.5/site-packages/wxPython'}
-+Workspaces : {'wxPython': '%%PYTHON_SITELIBDIR%%/wxPython'}
- DefaultWorkspace : wxPython
- Zope : {'localhost': {'host': '127.0.0.1', 'httpport': 8080, 'ftpport': 8021, 'username': '', 'passwd': '', 'path': '/', 'name': ''}}
