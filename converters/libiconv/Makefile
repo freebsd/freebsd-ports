@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libiconv
-PORTVERSION=	1.9.1
-PORTREVISION=	3
+PORTVERSION=	1.9.2
 CATEGORIES=	converters devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +15,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A character set conversion library
 
 USE_REINPLACE=	yes
-USE_INC_LIBTOOL_VER=	13
+USE_LIBTOOL_VER=	15
 USE_GNOME=	gnometarget
 LIBTOOLFILES=	configure libcharset/configure
 CONFIGURE_ARGS=	--enable-static \
