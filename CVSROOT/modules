@@ -3857,6 +3857,7 @@ lcrzo		ports/security/lcrzo
 lcrzoex		ports/security/lcrzoex
 ldap-account-manager	ports/sysutils/ldap-account-manager
 ldap2dns	ports/net/ldap2dns
+ldapbrowser	ports/net/ldapbrowser
 ldapdiff	ports/net/ldapdiff
 ldapsdk		ports/net/ldapsdk
 ldmud		ports/games/ldmud
