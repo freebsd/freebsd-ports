@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	win32-codecs
-PORTVERSION=	2.${CODEC_MPLAYER_VERSION:S/pre/.p/}
+PORTVERSION=	3.${CODEC_MPLAYER_VERSION:S/pre/.p/}
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/codecs/ \
@@ -38,9 +38,9 @@ CODEC_MPLAYER_VERSION=	1.0pre5
 CODEC_DETECTION_FILE=	${LOCALBASE}/lib/win32/${PKGNAME}
 
 # additional codec packs
-ADDITIONAL_CODECS_DISTFILES=	qt63dlls-20040626.tar.bz2 \
-				qtextras-20040704.tar.bz2 \
-				rp9codecs-20040626.tar.bz2 \
+ADDITIONAL_CODECS_DISTFILES=	qt63dlls-20050115.tar.bz2 \
+				qtextras-20041107.tar.bz2 \
+				rp9codecs-20050115.tar.bz2 \
 				xanimdlls-20040626.tar.bz2
 
 # extraction wrksrc
