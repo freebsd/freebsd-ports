@@ -12,7 +12,7 @@ MASTER_SITES=	http://expect.nist.gov/src/
 EXPECT_VER=	5.37
 LIBEXPECT_VER=	537
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	jerry@thehutt.org
 
 .if !defined(WITHOUT_X11)
 LIB_DEPENDS?=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
