@@ -7,17 +7,17 @@
 
 PORTNAME=	emiclock
 PORTVERSION=	2.0.2
-PORTREVISIOIN=	1
+PORTREVISION=	1
 CATEGORIES=	x11-clocks
 MASTER_SITES=	ftp://ftp.noge.com/pub/EmiClock/X11/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hyper-animated face analog clock for X11
 
-BROKEN=		Incomplete pkg-plist
-
 .if ${MACHINE_ARCH} != "i386"
-PLIST=		${PKGDIR}/pkg-plist.nosound
+PLIST_SUB=	SOUND="@comment "
+.else
+PLIST_SUB=	SOUND=""
 .endif
 
 USE_IMAKE=	yes
@@ -27,15 +27,16 @@ LANGRES=	resources/R6/EUC/EmiClock.ad
 LANGDIR=	$(X11BASE)/lib/X11/ja_JP.eucJP/app-defaults
 LANGDIR2=	$(X11BASE)/lib/X11/ja_JP.EUC/app-defaults
 EMICLOCKDIR=	$(X11BASE)/lib/X11/EmiClock
-COPYRIGHTS=	COPYRIGHT COPYRIGHT.en
+PORTDOCS=	COPYRIGHT COPYRIGHT.en
 
 pre-install:
-	@if [ ! -d $(EMICLOCKDIR) ] ; then ${MKDIR} $(EMICLOCKDIR); fi
-	@if [ ! -d $(LANGDIR) ] ; then ${MKDIR} $(LANGDIR); fi
-	@if [ ! -d $(LANGDIR2) ] ; then ${MKDIR} $(LANGDIR2); fi
+	@${MKDIR} $(EMICLOCKDIR)
+	@${MKDIR} $(LANGDIR)
+	@${MKDIR} $(LANGDIR2)
 	cd $(WRKSRC); ${INSTALL_DATA} -c -m 0444 $(LANGRES) $(LANGDIR)/EmiClock
 	cd $(WRKSRC); ${INSTALL_DATA} -c -m 0444 $(LANGRES) $(LANGDIR2)/EmiClock
-	cd $(WRKSRC); ${INSTALL_DATA} -c -m 0444 $(COPYRIGHTS) $(EMICLOCKDIR)
+	@${MKDIR} ${DOCSDIR}
+	cd $(WRKSRC); ${INSTALL_DATA} -c -m 0444 ${PORTDOCS} ${DOCSDIR}
 #	cd $(WRKSRC); make install.man
 
 .include <bsd.port.mk>
