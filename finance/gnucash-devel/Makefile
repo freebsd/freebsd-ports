@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnucash
-PORTVERSION=	1.4.12
+PORTVERSION=	1.6.1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.gnucash.org/pub/gnucash/sources/stable/ \
 		ftp://ftp.gnucash.org/pub/gnucash/sources/stable/ \
@@ -17,9 +17,11 @@ MASTER_SITE_SUBDIR=	gnucash
 MAINTAINER=	gnome@FreeBSD.org
 
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/SWIG \
-		g-wrap:${PORTSDIR}/devel/g-wrap \
+		g-wrap-config:${PORTSDIR}/devel/g-wrap \
 		eperl:${PORTSDIR}/lang/eperl
-LIB_DEPENDS=	guile.9:${PORTSDIR}/lang/guile
+LIB_DEPENDS=	guile.9:${PORTSDIR}/lang/guile \
+		guppidata.11:${PORTSDIR}/math/guppi \
+		popt.0:${PORTSDIR}/devel/popt
 RUN_DEPENDS=	${LOCALBASE}/share/slib/Template.scm:${PORTSDIR}/lang/slib \
 		gnuplot:${PORTSDIR}/math/gnuplot \
 		${site_perl}/HTML/Base.pm:${PORTSDIR}/www/p5-HTML \
@@ -36,7 +38,7 @@ USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-glib-config=${GLIB_CONFIG}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lintl"
 
 MAN1=		gnc-prices.1 gnucash.1
 
@@ -50,8 +52,5 @@ pre-patch:
 
 post-install:
 	@strip ${PREFIX}/bin/gnucash
-	@${LDCONFIG} -m ${PREFIX}/lib/gnucash/perl
-	@cd ${LOCALBASE}/share/guile && ${LN} -sf ../slib .
-	@${LOCALBASE}/bin/guile -c "(use-modules (ice-9 slib)) (require 'new-catalog)"
 
 .include <bsd.port.mk>
