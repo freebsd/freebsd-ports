@@ -1,0 +1,21 @@
+bin/chinput
+bin/txt2tab
+bin/tab2txt
+share/chinput/pinyin.map
+share/chinput/usrphrase.tab
+share/chinput/sysphrase.tab
+share/chinput/Chinput.ad
+share/chinput/Table.cit
+share/chinput/doc/CHANGES
+share/chinput/doc/API
+share/chinput/doc/BUGS
+share/chinput/doc/COPYING
+share/chinput/doc/FAQ
+share/chinput/doc/INSTALL
+share/chinput/doc/README
+share/chinput/doc/README.znpy
+share/chinput/doc/USAGE
+share/chinput/doc/TODO
+share/chinput/doc/Makefile
+@dirrm share/chinput/doc
+@dirrm share/chinput
