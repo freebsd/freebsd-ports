@@ -6,51 +6,68 @@
 #
 
 PORTNAME=	commons-beanutils
-PORTVERSION=	1.6.1
-CATEGORIES=	java
-MASTER_SITES=	http://apache.cs.uu.nl/dist/jakarta/commons/beanutils/source/
+PORTVERSION=	1.7.0
+CATEGORIES=	java devel
+MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
+MASTER_SITE_SUBDIR=	commons/beanutils/source/
 PKGNAMEPREFIX=	jakarta-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	znerd@FreeBSD.org
 COMMENT=	JavaBeans utility library
 
-BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/apache-ant \
-		${LOCALBASE}/share/java/classes/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-logging \
-		${LOCALBASE}/share/java/classes/commons-collections.jar:${PORTSDIR}/java/jakarta-commons-collections
+BUILD_DEPENDS=	${JAR_DEPENDS}
+RUN_DEPENDS=	${JAR_DEPENDS}
 
-USE_JAVA=	1.2+
+JAR_DEPENDS=	${JAVALIBDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-logging \
+		${JAVALIBDIR}/commons-collections.jar:${PORTSDIR}/java/jakarta-commons-collections
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src
-PLIST_SUB+=	T=${TARGET_DIR:S/^${PREFIX}\///}
-ANT?=		${LOCALBASE}/bin/ant
-.if defined(NOPORTDOCS)
-ANT_TARGET=	dist
-.else
-ANT_TARGET=	dist
-.endif
-JAVASHAREDIR=	${PREFIX}/share/java
-JARDIR=		${JAVASHAREDIR}/classes
+USE_JAVA=	yes
+JAVA_VERSION=	1.2+
+
+USE_ANT=	yes
+ALL_TARGET=	dist
+MAKE_ARGS+=	-Dcommons-collections.api=${COMMONS_COLLECTIONS_API} \
+		-Dcommons-logging.api=${COMMONS_LOGGING_API} \
+		-Dcommons-collections.jar=${JAVALIBDIR}/commons-collections.jar \
+		-Dcommons-logging.jar=${JAVALIBDIR}/commons-logging.jar
+
+USE_REINPLACE=	yes
+
 JARFILE=	${PORTNAME}.jar
-DESTJARFILE=	${PORTNAME}.jar
+PLIST_FILES=	%%JAVAJARDIR%%/${JARFILE}
+.if !defined(NOPORTDOCS)
+APIDOCS=	api bean-collections
+OTHERDOCS=	LICENSE.txt NOTICE.txt README.txt RELEASE-NOTES.txt
+PORTDOCS=	${APIDOCS} ${OTHERDOCS}
+.endif
 
-post-extract:
-	@${CP} ${FILESDIR}/LICENSE ${WRKDIR}/${PORTNAME}-${PORTVERSION}-src/
-
-do-build:
-	@cd ${WRKSRC} && \
-		${SETENV} ANT_INCLUDE_SHARED_JARS=YES ${ANT} ${ANT_TARGET}
-
-do-install:
-	@${ECHO} -n ">> Installing JAR as ${JARDIR}/${DESTJARFILE}..."
-	@${CP} ${WRKSRC}/dist/${JARFILE} ${JARDIR}/${DESTJARFILE}
-	@${ECHO} " [ DONE ]"
+COMMONS_COLLECTIONS_API=${LOCALBASE}/share/doc/commons-collections/apidocs
+COMMONS_LOGGING_API=	${LOCALBASE}/share/doc/commons-logging/api
 
 .if !defined(NOPORTDOCS)
-	@${ECHO} -n ">> Installing documentation in ${DOCSDIR}..."
-	@${MKDIR} ${DOCSDIR}
-	@${CP} -r ${WRKSRC}/dist/docs/api/* ${DOCSDIR}
-	@${ECHO} " [ DONE ]"
+do-configure:
+	@if [ -d "${COMMONS_COLLECTIONS_API}" ] ; \
+	then \
+	  ${REINPLACE_CMD} -e 's,http://jakarta.apache.org/commons/collections/api/,${COMMONS_COLLECTIONS_API},' ${WRKSRC}/build.xml ; \
+	fi
+	@if [ -d "${COMMONS_LOGGING_API}" ] ; \
+	then \
+	  ${REINPLACE_CMD} -e 's,http://jakarta.apache.org/commons/logging/api/,${COMMONS_LOGGING_API},' ${WRKSRC}/build.xml ; \
+	fi
+.endif
+
+do-install:
+	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${JARFILE}..."
+	@${INSTALL_DATA} ${WRKSRC}/dist/${JARFILE} ${JAVAJARDIR}/${JARFILE}
+	@${ECHO_MSG} " [ DONE ]"
+.if !defined(NOPORTDOCS)
+	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
+	@cd ${WRKSRC}/dist/docs \
+	  && ${FIND} ${APIDOCS} -type d -exec ${MKDIR} ${DOCSDIR}/{} \; \
+	  && ${FIND} ${APIDOCS} -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
+	@${INSTALL_DATA} ${OTHERDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
+	@${ECHO_MSG} " [ DONE ]"
 .endif
 
 .include <bsd.port.mk>
