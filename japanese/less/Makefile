@@ -5,18 +5,19 @@
 # $FreeBSD$
 #
 
-PORTNAME=	less
-PORTVERSION=	358
+PORTNAME=	less+iso
+PORTVERSION=	358.254
 CATEGORIES=	japanese
 MASTER_SITES=	http://www.io.com/~kazushi/less/ \
 		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	less
+DISTNAME=	less-${PORTVERSION:R}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		regex_cs-lwp9k.shar.gz
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 PATCH_SITES=	http://www.io.com/~kazushi/less/
-PATCHFILES=	${DISTNAME}-iso249.patch.gz
+PATCHFILES=	${DISTNAME}-iso${PORTVERSION:E}.patch.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	k5@cheerful.com

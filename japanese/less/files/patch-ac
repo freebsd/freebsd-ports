@@ -1,8 +1,8 @@
---- version.c.orig	Mon Nov  6 05:30:59 2000
-+++ version.c	Mon Nov  6 05:32:35 2000
-@@ -677,4 +677,4 @@
- iso249 10/29/00	Joined with less-358.  Fixed some bugs caused by join.
+--- version.c.orig	Wed Dec  6 10:34:12 2000
++++ version.c	Wed Dec  6 10:34:58 2000
+@@ -685,4 +685,4 @@
+ 		in search.c.
  */
  
--char version[] = "358+iso249";
-+char version[] = "358+iso249+regex_cs-lwp9k";
+-char version[] = "358+iso254";
++char version[] = "358+iso254+regex_cs-lwp9k";
