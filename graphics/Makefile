@@ -176,6 +176,7 @@
     SUBDIR += qvplay
     SUBDIR += rayshade
     SUBDIR += ruby-gd
+    SUBDIR += ruby-gdk_imlib
     SUBDIR += ruby-libpng
     SUBDIR += ruby-ming
     SUBDIR += ruby-opengl
