@@ -1,0 +1,27 @@
+bin/peacock
+share/gnome/apps/Development/peacock.desktop
+share/gnome/help/peacock/C/docbook.css
+share/gnome/help/peacock/C/peacock.html
+share/gnome/help/peacock/C/topic.dat
+share/gnome/pixmaps/peacock/anchor.xpm
+share/gnome/pixmaps/peacock/br.xpm
+share/gnome/pixmaps/peacock/font_base.xpm
+share/gnome/pixmaps/peacock/font_minus.xpm
+share/gnome/pixmaps/peacock/font_plus.xpm
+share/gnome/pixmaps/peacock/font_sub.xpm
+share/gnome/pixmaps/peacock/font_sup.xpm
+share/gnome/pixmaps/peacock/h1.xpm
+share/gnome/pixmaps/peacock/h2.xpm
+share/gnome/pixmaps/peacock/h3.xpm
+share/gnome/pixmaps/peacock/h4.xpm
+share/gnome/pixmaps/peacock/h5.xpm
+share/gnome/pixmaps/peacock/h6.xpm
+share/gnome/pixmaps/peacock/help.xpm
+share/gnome/pixmaps/peacock/hr.xpm
+share/gnome/pixmaps/peacock/image.xpm
+share/gnome/pixmaps/peacock/nbsp.xpm
+share/gnome/pixmaps/peacock/paragraph.xpm
+@dirrm share/gnome/pixmaps/peacock
+@dirrm share/gnome/help/peacock/C/images
+@dirrm share/gnome/help/peacock/C
+@dirrm share/gnome/help/peacock
