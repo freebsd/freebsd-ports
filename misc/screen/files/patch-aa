@@ -1,0 +1,31 @@
+*** os.h.orig	Sun Nov 20 14:46:54 1994
+--- os.h	Sun Nov 20 15:00:33 1994
+***************
+*** 25,31 ****
+  #include <errno.h>
+  #include <sys/param.h>
+  
+! #if defined(BSDI) || defined(__386BSD__) || defined(_CX_UX)
+  # include <signal.h>
+  #endif /* BSDI || __386BSD__ || _CX_UX */
+  
+--- 25,31 ----
+  #include <errno.h>
+  #include <sys/param.h>
+  
+! #if defined(BSDI) || defined(__386BSD__) || defined(_CX_UX) || defined(__FreeBSD__)
+  # include <signal.h>
+  #endif /* BSDI || __386BSD__ || _CX_UX */
+  
+***************
+*** 48,54 ****
+--- 48,56 ----
+  #ifndef linux /* all done in <errno.h> */
+  extern int errno;
+  extern int sys_nerr;
++ #if BSD < 199306
+  extern char *sys_errlist[];
++ #endif
+  #endif /* linux */
+  
+  #ifdef sun
