@@ -24,8 +24,8 @@ EXAMPLEDIR=	${PREFIX}/share/examples/py-numeric
 
 .include <bsd.port.pre.mk>
 
+pre-fetch:
 .if ${PYTHON_REL} < 200
-.BEGIN:
 	@${ECHO} "Py-numeric doesn't work with Python versions < 2.0."
 	@${ECHO} "Please use the py-numeric17 port for these."
 	@${FALSE}
