@@ -31,6 +31,8 @@ INSTALLS_SHLIB=	yes
 PATCHFILES=	patch_gcc_3.3.gz
 PATCH_SITES=	${MASTER_SITES}
 PATCH_DIST_STRIP=-p1
+.else
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-sqlplusint-connection.cc
 .endif
 
 pre-configure:
@@ -43,13 +45,13 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/sqlplusint/.libs/libsqlplus.a ${PREFIX}/lib
 	@(cd ${PREFIX}/lib && ${RM} -f libsqlplus.so && ${LN} -s libsqlplus.so.1 libsqlplus.so)
 	@ranlib ${PREFIX}/lib/libsqlplus.a
-	@mkdir -p ${PREFIX}/include/mysql
+	@${MKDIR} ${PREFIX}/include/mysql
 	@(cd ${WRKSRC}/sqlplusint/; \
 	${INSTALL_DATA} mysql++ defs undef_short define_short *.hh ${PREFIX}/include/mysql)
 .if !defined(NOPORTDOCS)
-	@mkdir -p ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/man-text/* ${DOCSDIR}
-	@mkdir -p ${EXAMPLESDIR}
+	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/examples/*.cc ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${FILESDIR}/README ${EXAMPLESDIR}
 .endif
