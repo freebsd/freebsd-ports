@@ -76,6 +76,7 @@ lib/mozilla/chrome/all-packages.rdf
 lib/mozilla/chrome/all-skins.rdf
 lib/mozilla/chrome/classic.jar
 lib/mozilla/chrome/comm.jar
+lib/mozilla/chrome/content-packs.jar
 lib/mozilla/chrome/embed.jar
 lib/mozilla/chrome/en-US.jar
 lib/mozilla/chrome/en-unix.jar
@@ -151,6 +152,7 @@ lib/mozilla/components/libembedcomponents.so
 lib/mozilla/components/libgfx2.so
 lib/mozilla/components/libgfx_gtk.so
 lib/mozilla/components/libgfxps.so
+lib/mozilla/components/libgfxxprint.so
 lib/mozilla/components/libgkcontent.so
 lib/mozilla/components/libgklayout.so
 lib/mozilla/components/libgkplugin.so
@@ -201,7 +203,7 @@ lib/mozilla/components/librdf.so
 lib/mozilla/components/libregviewer.so
 lib/mozilla/components/libsample.so
 lib/mozilla/components/libshistory.so
-lib/mozilla/components/libsmime.so
+lib/mozilla/components/libsmimestb.so
 lib/mozilla/components/libstrres.so
 lib/mozilla/components/libtestdynamic.so
 lib/mozilla/components/libtimer_gtk.so
@@ -261,6 +263,7 @@ lib/mozilla/components/npsimple.xpt
 lib/mozilla/components/nsDictionary.js
 lib/mozilla/components/nsFilePicker.js
 lib/mozilla/components/nsHelperAppDlg.js
+lib/mozilla/components/nsLDAPPrefsService.js
 lib/mozilla/components/nsProxyAutoConfig.js
 lib/mozilla/components/nsSample.js
 lib/mozilla/components/nsSidebar.js
@@ -325,11 +328,15 @@ lib/mozilla/defaults/pref/security-prefs.js
 lib/mozilla/defaults/pref/unix.js
 lib/mozilla/defaults/pref/xpinstall.js
 lib/mozilla/defaults/profile/US/bookmarks.html
+lib/mozilla/defaults/profile/US/chrome/userChrome.css
+lib/mozilla/defaults/profile/US/chrome/userContent.css
 lib/mozilla/defaults/profile/US/localstore.rdf
 lib/mozilla/defaults/profile/US/mimeTypes.rdf
 lib/mozilla/defaults/profile/US/panels.rdf
 lib/mozilla/defaults/profile/US/search.rdf
 lib/mozilla/defaults/profile/bookmarks.html
+lib/mozilla/defaults/profile/chrome/userChrome.css
+lib/mozilla/defaults/profile/chrome/userContent.css
 lib/mozilla/defaults/profile/localstore.rdf
 lib/mozilla/defaults/profile/mimeTypes.rdf
 lib/mozilla/defaults/profile/panels.rdf
@@ -362,6 +369,7 @@ lib/mozilla/libnssckbi.so
 lib/mozilla/libnullplugin.so
 lib/mozilla/libplc4.so
 lib/mozilla/libplds4.so
+lib/mozilla/libxlibrgb.so
 lib/mozilla/libxpcom.so
 lib/mozilla/libxpistub.so
 lib/mozilla/lots
@@ -374,10 +382,6 @@ lib/mozilla/nsIFileTest
 lib/mozilla/nsTestSample
 lib/mozilla/nsinstall
 lib/mozilla/plugins/libnullplugin.so
-lib/mozilla/profile/defaults/profile/US/chrome/userChrome.css
-lib/mozilla/profile/defaults/profile/US/chrome/userContent.css
-lib/mozilla/profile/defaults/profile/chrome/userChrome.css
-lib/mozilla/profile/defaults/profile/chrome/userContent.css
 lib/mozilla/proxytests
 lib/mozilla/rdfcat
 lib/mozilla/rdfpoll
@@ -587,16 +591,12 @@ lib/mozilla/xpt_link
 @dirrm lib/mozilla/res/entityTables
 @dirrm lib/mozilla/res/builtin
 @dirrm lib/mozilla/res
-@dirrm lib/mozilla/profile/defaults/profile/chrome
-@dirrm lib/mozilla/profile/defaults/profile/US/chrome
-@dirrm lib/mozilla/profile/defaults/profile/US
-@dirrm lib/mozilla/profile/defaults/profile
-@dirrm lib/mozilla/profile/defaults
-@dirrm lib/mozilla/profile
 @dirrm lib/mozilla/plugins
 @dirrm lib/mozilla/icons
 @dirrm lib/mozilla/dtd
 @dirrm lib/mozilla/defaults/wallet
+@dirrm lib/mozilla/defaults/profile/chrome
+@dirrm lib/mozilla/defaults/profile/US/chrome
 @dirrm lib/mozilla/defaults/profile/US
 @dirrm lib/mozilla/defaults/profile
 @dirrm lib/mozilla/defaults/pref

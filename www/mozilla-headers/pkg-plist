@@ -252,6 +252,7 @@ include/mozilla/nsFrameTraversal.h
 include/mozilla/nsGUIEvent.h
 include/mozilla/nsGfxCIID.h
 include/mozilla/nsGfxPSCID.h
+include/mozilla/nsGfxXPrintCID.h
 include/mozilla/nsHTMLAtomList.h
 include/mozilla/nsHTMLAtoms.h
 include/mozilla/nsHTMLEntities.h
@@ -609,6 +610,8 @@ include/mozilla/nsIDeviceContextPS.h
 include/mozilla/nsIDeviceContextSpec.h
 include/mozilla/nsIDeviceContextSpecFactory.h
 include/mozilla/nsIDeviceContextSpecPS.h
+include/mozilla/nsIDeviceContextSpecXPrint.h
+include/mozilla/nsIDeviceContextXPrint.h
 include/mozilla/nsIDialogParamBlock.h
 include/mozilla/nsIDictionary.h
 include/mozilla/nsIDirectoryService.h
@@ -805,6 +808,7 @@ include/mozilla/nsILDAPErrors.h
 include/mozilla/nsILDAPMessage.h
 include/mozilla/nsILDAPMessageListener.h
 include/mozilla/nsILDAPOperation.h
+include/mozilla/nsILDAPPrefsService.h
 include/mozilla/nsILDAPServer.h
 include/mozilla/nsILDAPService.h
 include/mozilla/nsILDAPURL.h
@@ -1001,6 +1005,7 @@ include/mozilla/nsIPluginStreamPeer.h
 include/mozilla/nsIPluginStreamPeer2.h
 include/mozilla/nsIPluginTagInfo.h
 include/mozilla/nsIPluginTagInfo2.h
+include/mozilla/nsIPluginViewer.h
 include/mozilla/nsIPop3IncomingServer.h
 include/mozilla/nsIPop3Service.h
 include/mozilla/nsIPop3Sink.h
@@ -1084,6 +1089,8 @@ include/mozilla/nsIRequestObserverProxy.h
 include/mozilla/nsIResChannel.h
 include/mozilla/nsIResProtocolHandler.h
 include/mozilla/nsIRollupListener.h
+include/mozilla/nsIRuleNode.h
+include/mozilla/nsIRuleWalker.h
 include/mozilla/nsIRunnable.h
 include/mozilla/nsISHContainer.h
 include/mozilla/nsISHEntry.h
@@ -1527,6 +1534,7 @@ include/mozilla/nsSmtpService.h
 include/mozilla/nsSmtpUrl.h
 include/mozilla/nsSoftwareUpdateIIDs.h
 include/mozilla/nsSpecialSystemDirectory.h
+include/mozilla/nsStaticComponent.h
 include/mozilla/nsStaticNameTable.h
 include/mozilla/nsStatistics.h
 include/mozilla/nsStatusBarBiffManager.h
@@ -1714,6 +1722,7 @@ include/mozilla/typedefs.h
 include/mozilla/typedefs_md.h
 include/mozilla/uconvutil.h
 include/mozilla/winfile.h
+include/mozilla/xlibrgb.h
 include/mozilla/xmlparse.h
 include/mozilla/xp_core.h
 include/mozilla/xp_file.h
