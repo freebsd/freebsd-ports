@@ -107,7 +107,6 @@
     SUBDIR += libimg
     SUBDIR += libjcode
     SUBDIR += libslang
-    SUBDIR += libxpg4-ns
     SUBDIR += lipsf
     SUBDIR += lynx
     SUBDIR += lynx-current
