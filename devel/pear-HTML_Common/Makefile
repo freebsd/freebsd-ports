@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML_Common
-PORTVERSION=	1.2
+PORTVERSION=	1.2.1
 CATEGORIES=	devel www
 
 MAINTAINER=	ports@FreeBSD.org
