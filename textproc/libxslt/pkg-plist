@@ -11,6 +11,7 @@ include/libxslt/keys.h
 include/libxslt/namespaces.h
 include/libxslt/numbersInternals.h
 include/libxslt/pattern.h
+include/libxslt/preproc.h
 include/libxslt/templates.h
 include/libxslt/transform.h
 include/libxslt/variables.h
