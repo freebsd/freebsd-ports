@@ -1,0 +1,35 @@
+
+$FreeBSD$
+
+--- help/C/Makefile.in	2001/04/09 08:23:20	1.1
++++ help/C/Makefile.in	2001/04/09 08:37:19
+@@ -142,12 +142,14 @@
+ @SCROLLKEEPER_PRESENT_TRUE@gtranslator_help_DATA = $(gtranslator_htmlfiles) topic.dat $(gtranslator_sgmlfile)
+ @SCROLLKEEPER_PRESENT_FALSE@gtranslator_help_DATA = $(gtranslator_htmlfiles) topic.dat
+ 
+-EXTRA_DIST = $(gtranslator_sgmlfile) 	$(gtranslator_htmlfiles) 	$(gtranslator_omffile).presetup 	topic.dat
++@SCROLLKEEPER_PRESENT_TRUE@EXTRA_DIST = $(gtranslator_sgmlfile) 	$(gtranslator_htmlfiles) 	$(gtranslator_omffile).presetup	topic.dat
++@SCROLLKEEPER_PRESENT_FALSE@EXTRA_DIST = $(gtranslator_sgmlfile) 	$(gtranslator_htmlfiles) 	topic.dat
+ 
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../config.h
+ CONFIG_CLEAN_FILES = 
+-DATA =  $(gtranslator_help_DATA) $(gtranslator_omf_DATA)
++@SCROLLKEEPER_PRESENT_TRUE@DATA =  $(gtranslator_help_DATA) $(gtranslator_omf_DATA)
++@SCROLLKEEPER_PRESENT_FALSE@DATA =  $(gtranslator_help_DATA)
+ 
+ DIST_COMMON =  Makefile.am Makefile.in
+ 
+@@ -233,8 +235,10 @@
+ install-exec-am:
+ install-exec: install-exec-am
+ 
+-install-data-am: install-gtranslator_helpDATA \
+-		install-gtranslator_omfDATA install-data-local
++@SCROLLKEEPER_PRESENT_TRUE@install-data-am: install-gtranslator_helpDATA \
++@SCROLLKEEPER_PRESENT_TRUE@		install-gtranslator_omfDATA install-data-local
++@SCROLLKEEPER_PRESENT_FALSE@install-data-am: install-gtranslator_helpDATA \
++@SCROLLKEEPER_PRESENT_FALSE@		install-data-local
+ install-data: install-data-am
+ 
+ install-am: all-am

@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- data/mime/Makefile.in	2001/04/09 08:20:55	1.1
++++ data/mime/Makefile.in	2001/04/09 08:21:14
+@@ -301,7 +301,7 @@
+ all-am:
+ 	@mv $(srcdir)/gtranslator.keys.in gtranslator.keys.in.bak
+ 	@mv gtranslator.keys gtranslator.keys.in
+-	xml-i18n-merge -k $(top_srcdir)/po gtranslator.keys.in gtranslator.keys
++	$(XML_I18N_MERGE) -k $(top_srcdir)/po gtranslator.keys.in gtranslator.keys
+ 	@mv gtranslator.keys.in.bak $(srcdir)/gtranslator.keys.in
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
