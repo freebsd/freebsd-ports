@@ -831,8 +831,8 @@ cc65		ports/devel/cc65
 ccache		ports/devel/ccache
 ccaudio		ports/audio/ccaudio
 cccc		ports/devel/cccc
-ccdoc		ports/devel/ccdoc
 ccd2iso		ports/sysutils/ccd2iso
+ccdoc		ports/devel/ccdoc
 cclient		ports/mail/cclient
 ccmalloc	ports/devel/ccmalloc
 ccmath		ports/math/ccmath
@@ -7704,6 +7704,7 @@ plotutils	ports/graphics/plotutils
 plp		ports/comms/plp
 plplot		ports/math/plplot
 plucker		ports/palm/plucker
+plugdaemon	ports/net/plugdaemon
 plugger		ports/www/plugger
 plugger-plugins-hubbe	ports/www/plugger-plugins-hubbe
 plwm		ports/x11-wm/plwm
