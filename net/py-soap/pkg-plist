@@ -1,0 +1,10 @@
+%%PYTHON_SITELIBDIR%%/soaplib.py
+%%PYTHON_SITELIBDIR%%/soaplib.pyc
+%%PYTHON_SITELIBDIR%%/soapserver.py
+%%PORTDOCS%%share/doc/%%SHARE_SUBDIR%%/ANNOUNCE
+%%PORTDOCS%%share/doc/%%SHARE_SUBDIR%%/README
+%%PORTDOCS%%@dirrm share/doc/%%SHARE_SUBDIR%%
+%%PORTDOCS%%share/examples/%%SHARE_SUBDIR%%/test1.py
+%%PORTDOCS%%share/examples/%%SHARE_SUBDIR%%/test2.py
+%%PORTDOCS%%share/examples/%%SHARE_SUBDIR%%/test3.py
+%%PORTDOCS%%@dirrm share/examples/%%SHARE_SUBDIR%%
