@@ -35,7 +35,7 @@ CONFIGURE_ARGS+=	--enable-gimp
 CONFIGURE_ARGS+=	--disable-gimp
 .endif
 
-pre-everything:
+pre-everything::
 .if !defined(WITH_GIMP)
 	@${ECHO_MSG} "*** Note: XSane can be built with a standalone"
 	@${ECHO_MSG} "*** X scanner interface as well as a GIMP plug-in."

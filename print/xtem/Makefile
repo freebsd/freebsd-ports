@@ -23,7 +23,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 MAN1=		hyphen_show.1 xtem.1
 
-pre-everything:
+pre-everything::
 	@${CAT} ${FILESDIR}/makemsg.txt
 
 post-extract:

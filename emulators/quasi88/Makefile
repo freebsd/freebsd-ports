@@ -19,7 +19,7 @@ USE_GMAKE=	yes
 DATAFILES=	FAQ FORMAT GET-IMAGE HISTORY MANUAL QUASI88 _quasi88rc
 
 .if !defined(WITH_SOUND)
-pre-everything:
+pre-everything::
 	@ ${ECHO} "You can make quasi88 use sound by defining WITH_SOUND"
 .else
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-aa

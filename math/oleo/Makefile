@@ -32,7 +32,7 @@ USE_XLIB=	yes
 CONFIGURE_ARGS+=	--without-motif
 .endif
 
-pre-everything:
+pre-everything::
 .if !defined(WITH_MOTIF)
 	@${ECHO_MSG}
 	@${ECHO_MSG} "If you want to compile with Motif support,"

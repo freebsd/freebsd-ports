@@ -32,7 +32,7 @@ MANL=		cfdases.l cfdifmatrix.l cfdnets.l cfdnexthops.l \
 		cfdportmatrix.l cfdprotos.l cfdtos.l flowdump.l flowwatch.l
 
 .if !defined(CFLOWD_FLOWSCAN_PATCH)
-pre-everything:
+pre-everything::
 	@${ECHO} "you can compile cflowd with patches for FlowScan by typing:"
 	@${ECHO} "make CFLOWD_FLOWSCAN_PATCH=yes"
 .endif
