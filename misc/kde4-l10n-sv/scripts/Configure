@@ -7,14 +7,14 @@ if [ "${LINGUAS}" ]; then
 	set `echo $LINGUAS`
 else
 if [ "${BATCH}" ]; then
-	set \"ca\" \"cs\" \"da\" \"el\" \"eo\" \"es\" \"et\" \"fi\" \"he\" \"hu\" \"is\" \"it\" \"nl\" \"no\" \"no_NY\" \"pl\" \"pt\" \"pt_BR\" \"ro\" \"sk\" \"sl\" \"sr\" \"sv\" \"tr\"
+	set \"az\" \"bg\" \"ca\" \"cs\" \"da\" \"el\" \"en_GB\" \"eo\" \"es\" \"et\" \"fi\" \"he\" \"hu\" \"is\" \"it\" \"lt\" \"lv\" \"mt\" \"nl\" \"no_NY\" \"pl\" \"pt\" \"ro\" \"sk\" \"sl\" \"sr\" \"sv\" \"ta\" \"tr\"
 else
 	/usr/bin/dialog --title "Select languages" --clear \
 		--checklist "\n\
 Please select desired languages:" -1 -1 16 \
-pt_BR		"Brazil portuguese" OFF \
+az		"Azerbaijani Turkish" OFF \
+bg		"Bulgarisch" OFF \
 ca		"Canada" OFF \
-zh_TW.Big5	"Chinese" ON \
 cs		"Czech" OFF \
 da		"Danish" OFF \
 nl		"Dutch" OFF \
@@ -30,7 +30,9 @@ is		"Icelandic" OFF \
 it		"Italian" OFF \
 ja		"Japanese" ON \
 ko		"Korean" ON \
-no		"Norwegian (Bokmaal)" OFF \
+lt		"Lithuanian" ON \
+lv		"Latvian" ON \
+mt		"Maltese" ON \
 no_NY		"Norwegian (Nynorsk)" OFF \
 pl		"Polish" OFF \
 pt		"Portuguese" OFF \
@@ -43,6 +45,7 @@ sl		"Slovenian" OFF \
 es		"Spanish" OFF \
 sv		"Swedish" OFF \
 tr		"Turkish" OFF \
+en_GB		"UK English" OFF \
 uk		"Ukrainian" OFF \
 2> /tmp/chklist.tmp.$$
 
