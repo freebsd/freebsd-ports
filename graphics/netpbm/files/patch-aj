@@ -1,0 +1,36 @@
+--- pbmplus.h.orig	Tue Mar  1 18:46:36 1994
++++ pbmplus.h	Thu Jan  7 19:23:15 1999
+@@ -20,6 +20,9 @@
+ #include <perror.h>
+ #include <errno.h>
+ #endif
++#if (defined(__unix__) || defined(unix)) && !defined(USG)
++#include <sys/param.h>
++#endif
+ 
+ #if defined(USG) || defined(SVR4) || defined(VMS)
+ #define SYSV
+@@ -30,7 +33,9 @@
+ ** and if you run on an Amiga, set AMIGA. If your compiler is ANSI C, you're
+ ** probably better off setting SYSV - all it affects is string handling.
+ */
+-#define BSD
++#ifndef BSD
++#define BSD 1
++#endif
+ /* #define SYSV */
+ /* #define MSDOS */
+ /* #define AMIGA */
+@@ -119,10 +124,12 @@
+ #ifndef VMS
+ #include <unistd.h>
+ #endif
++#if !(defined(BSD) && (BSD >= 199306))
+ extern int atoi();
+ extern void exit();
+ extern long time();
+ extern int write();
++#endif
+ #endif
+ 
+ /* CONFIGURE: On most BSD systems, malloc() gets declared in stdlib.h, on
