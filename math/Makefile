@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.27 1997/06/03 22:21:36 asami Exp $
+# $Id: Makefile,v 1.28 1997/06/03 22:43:00 asami Exp $
 #
 
     SUBDIR += apc
@@ -18,6 +18,7 @@
     SUBDIR += numpy
     SUBDIR += octave
     SUBDIR += oleo
+    SUBDIR += simpack
     SUBDIR += ss
     SUBDIR += umatrix
     SUBDIR += wingz
