@@ -127,6 +127,15 @@ MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=no --without-x --enable-multibyte"
 MAKE_ARGS+=	CONF_OPT_PERL="--disable-perlinterp --disable-pythoninterp --disable-tclinterp --disable-rubyinterp"
 .endif	# LITE
 
+# Until the bsd.gnome.mk people fix their damned file
+.if defined(WITH_GTK)
+USE_XLIB=	yes
+.endif
+.if defined(USE_XLIB)
+post-patch:
+	${PERL} -pi.orig -e 's/ X11 //g' ${WRKSRC}/link.sh
+.endif
+
 pre-build:
 	@(cd ${WRKSRC}; ${MAKE} distclean)
 	@${PERL} -pi -e 's,8\.2,8.3,' ${WRKSRC}/auto/configure
