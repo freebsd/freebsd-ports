@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME:S/fop/Fop/}-${PORTVERSION}
 MAINTAINER=	kiri@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/jdk${JDKVERSION}/bin/java:${PORTSDIR}/java/jdk \
-		${LOCALBASE}/share/java/classes/xerces.jar:${PORTSDIR}/textproc/xerces
+		${LOCALBASE}/share/java/classes/xerces.jar:${PORTSDIR}/textproc/xerces-j
 
 WRKSRC=		${WRKDIR}/xml-fop
 NO_BUILD=	yes

@@ -17,7 +17,7 @@ MAINTAINER=	kiri@FreeBSD.org
 RUN_DEPENDS=	${LOCALBASE}/share/xml/docbook/readme.txt:${PORTSDIR}/textproc/docbook-xml \
 		${LOCALBASE}/share/xml/docbook/sdocbook/test.xml:${PORTSDIR}/textproc/sdocbook-xml \
 		${LOCALBASE}/share/java/xt/xt.htm:${PORTSDIR}/textproc/xt \
-		${LOCALBASE}/share/java/classes/xerces.jar:${PORTSDIR}/textproc/xerces \
+		${LOCALBASE}/share/java/classes/xerces.jar:${PORTSDIR}/textproc/xerces-j \
 		${LOCALBASE}/share/java/classes/fop.jar:${PORTSDIR}/textproc/fop
 
 USE_ZIP=	yes
