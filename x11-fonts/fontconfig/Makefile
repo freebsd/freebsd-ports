@@ -7,7 +7,7 @@
 
 PORTNAME=	fontconfig
 PORTVERSION=	2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.fontconfig.org/fontconfig/release/
 DISTNAME=	fcpackage.${PORTVERSION:S/./_/}
@@ -30,6 +30,8 @@ CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc/fonts \
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 WRKSRC=	${WRKDIR}/${DISTNAME}/fontconfig
 
+MAN3=		fontconfig.3
+
 .include <bsd.port.pre.mk>
 .if ${XFREE86_VERSION} == 3
 MTREE_FILE=     /etc/mtree/BSD.x11.dist
@@ -41,6 +43,8 @@ pre-patch:
 	@${REINPLACE_CMD} -e 's|[(]LIBDIR[)]/pkgconfig|(prefix)/libdata/pkgconfig|g' ${WRKSRC}/Makefile.in
 
 post-install:
+	@${INSTALL_DATA} ${WRKSRC}/src/fontconfig.man \
+		${PREFIX}/man/man3/fontconfig.3
 .if !defined(PACKAGE_BUILDING)
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
