@@ -25,6 +25,7 @@
     SUBDIR += washerdryer
     SUBDIR += wmcalclock
     SUBDIR += wmclock
+    SUBDIR += wmclockmon
     SUBDIR += wmdate
     SUBDIR += wmfishtime
     SUBDIR += wmfuzzy
