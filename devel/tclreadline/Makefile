@@ -17,14 +17,14 @@ MANN=		tclreadline.n
 
 .include <bsd.port.pre.mk>
 
-.if (!exists(${PREFIX}/bin/tclsh8.0) || exists(${PREFIX}/bin/tclsh8.2)) && (!defined(FORCE_80))
-LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82
-CONFIGURE_ARGS=	--with-tcl=${PREFIX}/lib/tcl8.2/ --with-tcl-includes=${PREFIX}/include/tcl8.2
-TCLVERMSG=	"Building for Tcl 8.2 define FORCE_80 to build for Tcl 8.0"
-.else
+.if (!exists(${PREFIX}/bin/tclsh8.2) || exists(${PREFIX}/bin/tclsh8.0)) && (defined(FORCE_80))
 LIB_DEPENDS=	tcl80.1:${PORTSDIR}/lang/tcl80
 CONFIGURE_ARGS=	--with-tcl=${PREFIX}/lib/tcl8.0/ --with-tcl-includes=${PREFIX}/include/tcl8.0
 TCLVERMSG=	"Building for Tcl 8.0"
+.else
+LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82
+CONFIGURE_ARGS=	--with-tcl=${PREFIX}/lib/tcl8.2/ --with-tcl-includes=${PREFIX}/include/tcl8.2
+TCLVERMSG=	"Building for Tcl 8.2 define FORCE_80 to build for Tcl 8.0"
 .endif
 
 pre-fetch:
