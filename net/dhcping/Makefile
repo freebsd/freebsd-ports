@@ -5,18 +5,16 @@
 # $FreeBSD$
 #
 
-PORTNAME=      dhcping
-PORTVERSION=   1.1
-CATEGORIES=    net
-MASTER_SITES=  http://www.mavetju.org/download/
+PORTNAME=	dhcping
+PORTVERSION=	1.2
+CATEGORIES=	net
+MASTER_SITES=	http://www.mavetju.org/download/
 
-MAINTAINER=    edwin@mavetju.org
+MAINTAINER=	edwin@mavetju.org
+
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix=${PREFIX}
 
 MAN8=		dhcping.8
-
-pre-build:
-	${PERL} -pi.orig -e "s@gcc@${CC}@g; \
-			s@-Wall -g@-Wall ${CFLAGS}@g; \
-			s@/usr/local@${PREFIX}@g" ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
