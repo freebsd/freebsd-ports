@@ -18,6 +18,7 @@
     SUBDIR += bfbtester
     SUBDIR += bjorb
     SUBDIR += borzoi
+    SUBDIR += botan
     SUBDIR += bro
     SUBDIR += bugs
     SUBDIR += ca-roots
@@ -123,7 +124,6 @@
     SUBDIR += nss
     SUBDIR += oidentd
     SUBDIR += op
-    SUBDIR += opencl
     SUBDIR += openssh
     SUBDIR += openssh-askpass
     SUBDIR += openssh-portable

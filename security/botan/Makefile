@@ -1,23 +1,22 @@
 # ex:ts=8
-# New ports collection makefile for:	opencl
+# New ports collection makefile for:	botan
 # Date created:			Mar 3, 2001
 # Whom:				Ying-Chieh Liao <ijliao@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	opencl
-PORTVERSION=	0.8.7
+PORTNAME=	botan
+PORTVERSION=	0.9.2
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	OpenCL-${PORTVERSION}
+MASTER_SITE_SUBDIR=	opencl
+DISTNAME=	Botan-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
 USE_REINPLACE=	yes
-USE_NEWGCC=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	configure.pl
 CONFIGURE_ARGS=	gcc-freebsd-generic

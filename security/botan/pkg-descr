@@ -1,5 +1,5 @@
-OpenCL aims to be a portable, easy to use, and efficient C++ crypto
-library. It currently supports the following algorithms: 
+Botan (formerly OpenCL) aims to be a portable, easy to use, and efficient
+C++ crypto library. It currently supports the following algorithms:
 
     Public Key Algorithms: RSA
     Block Ciphers: Blowfish, CAST256, CAST5, CS-Cipher, DES, GOST, IDEA,
