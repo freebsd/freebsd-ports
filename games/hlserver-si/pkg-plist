@@ -1,0 +1,165 @@
+%%HLDSDIR%%si/1024_textscheme.txt
+%%HLDSDIR%%si/1152_textscheme.txt
+%%HLDSDIR%%si/1280_textscheme.txt
+%%HLDSDIR%%si/1600_textscheme.txt
+%%HLDSDIR%%si/320_textscheme.txt
+%%HLDSDIR%%si/400_textscheme.txt
+%%HLDSDIR%%si/512_textscheme.txt
+%%HLDSDIR%%si/640_textscheme.txt
+%%HLDSDIR%%si/800_textscheme.txt
+%%HLDSDIR%%si/cached.wad
+%%HLDSDIR%%si/cl_dlls/client.dll
+%%HLDSDIR%%si/config.cfg
+%%HLDSDIR%%si/custom.hpk
+%%HLDSDIR%%si/delta.lst
+%%HLDSDIR%%si/dlls/si.dll
+%%HLDSDIR%%si/dlls/si_i386.so
+%%HLDSDIR%%si/game.cfg
+%%HLDSDIR%%si/gfx.wad
+%%HLDSDIR%%si/gfx/env/city1bk.tga
+%%HLDSDIR%%si/gfx/env/city1dn.tga
+%%HLDSDIR%%si/gfx/env/city1ft.tga
+%%HLDSDIR%%si/gfx/env/city1lf.tga
+%%HLDSDIR%%si/gfx/env/city1rt.tga
+%%HLDSDIR%%si/gfx/env/city1up.tga
+%%HLDSDIR%%si/gfx/shell/Logo.bmp
+%%HLDSDIR%%si/gfx/shell/btns_main.bmp
+%%HLDSDIR%%si/gfx/shell/cb_checked.bmp
+%%HLDSDIR%%si/gfx/shell/cb_down.bmp
+%%HLDSDIR%%si/gfx/shell/cb_over.bmp
+%%HLDSDIR%%si/gfx/shell/cls_d.bmp
+%%HLDSDIR%%si/gfx/shell/cls_f.bmp
+%%HLDSDIR%%si/gfx/shell/cls_n.bmp
+%%HLDSDIR%%si/gfx/shell/colors.lst
+%%HLDSDIR%%si/gfx/shell/divider.bmp
+%%HLDSDIR%%si/gfx/shell/dnarrowf.bmp
+%%HLDSDIR%%si/gfx/shell/dnarrowp.bmp
+%%HLDSDIR%%si/gfx/shell/down.bmp
+%%HLDSDIR%%si/gfx/shell/favorite.bmp
+%%HLDSDIR%%si/gfx/shell/head_advanced.bmp
+%%HLDSDIR%%si/gfx/shell/head_advoptions.bmp
+%%HLDSDIR%%si/gfx/shell/head_audio.bmp
+%%HLDSDIR%%si/gfx/shell/head_config.bmp
+%%HLDSDIR%%si/gfx/shell/head_controls.bmp
+%%HLDSDIR%%si/gfx/shell/head_creategame.bmp
+%%HLDSDIR%%si/gfx/shell/head_custom.bmp
+%%HLDSDIR%%si/gfx/shell/head_customize.bmp
+%%HLDSDIR%%si/gfx/shell/head_filter.bmp
+%%HLDSDIR%%si/gfx/shell/head_gameopts.bmp
+%%HLDSDIR%%si/gfx/shell/head_inetgames.bmp
+%%HLDSDIR%%si/gfx/shell/head_keyboard.bmp
+%%HLDSDIR%%si/gfx/shell/head_lan.bmp
+%%HLDSDIR%%si/gfx/shell/head_multi.bmp
+%%HLDSDIR%%si/gfx/shell/head_readme.bmp
+%%HLDSDIR%%si/gfx/shell/head_video.bmp
+%%HLDSDIR%%si/gfx/shell/head_vidmodes.bmp
+%%HLDSDIR%%si/gfx/shell/head_vidoptions.BMP
+%%HLDSDIR%%si/gfx/shell/kb_act.lst
+%%HLDSDIR%%si/gfx/shell/kb_def.lst
+%%HLDSDIR%%si/gfx/shell/larrowflyover.bmp
+%%HLDSDIR%%si/gfx/shell/larrowpressed.bmp
+%%HLDSDIR%%si/gfx/shell/min_d.bmp
+%%HLDSDIR%%si/gfx/shell/min_f.bmp
+%%HLDSDIR%%si/gfx/shell/min_n.bmp
+%%HLDSDIR%%si/gfx/shell/rarrowflyover.bmp
+%%HLDSDIR%%si/gfx/shell/rarrowpressed.bmp
+%%HLDSDIR%%si/gfx/shell/slider.bmp
+%%HLDSDIR%%si/gfx/shell/sm_dnarf.bmp
+%%HLDSDIR%%si/gfx/shell/splash.bmp
+%%HLDSDIR%%si/gfx/shell/strings.lst
+%%HLDSDIR%%si/gfx/shell/strings_old.txt
+%%HLDSDIR%%si/gfx/shell/up.bmp
+%%HLDSDIR%%si/gfx/shell/uparrowf.bmp
+%%HLDSDIR%%si/gfx/shell/uparrowp.bmp
+%%HLDSDIR%%si/liblist.gam
+%%HLDSDIR%%si/mapcycle.txt
+%%HLDSDIR%%si/maps/graphs/si_metropolis.nod
+%%HLDSDIR%%si/maps/graphs/si_metropolis.nrp
+%%HLDSDIR%%si/maps/graphs/si_overtime.nod
+%%HLDSDIR%%si/maps/graphs/si_overtime.nrp
+%%HLDSDIR%%si/maps/graphs/si_sewers.nod
+%%HLDSDIR%%si/maps/graphs/si_sewers.nrp
+%%HLDSDIR%%si/maps/graphs/si_urban.nod
+%%HLDSDIR%%si/maps/graphs/si_urban.nrp
+%%HLDSDIR%%si/maps/si_metropolis.bsp
+%%HLDSDIR%%si/maps/si_overtime.bsp
+%%HLDSDIR%%si/maps/si_rush.bsp
+%%HLDSDIR%%si/maps/si_sewers.bsp
+%%HLDSDIR%%si/maps/si_urban.bsp
+%%HLDSDIR%%si/media/logo.avi
+%%HLDSDIR%%si/models/dog.mdl
+%%HLDSDIR%%si/models/p_gi.mdl
+%%HLDSDIR%%si/models/player/afd_butch/afd_butch.mdl
+%%HLDSDIR%%si/models/player/afd_vinnie/afd_vinnie.mdl
+%%HLDSDIR%%si/models/player/mcl_butch/mcl_butch.mdl
+%%HLDSDIR%%si/models/player/mcl_vinnie/mcl_vinnie.mdl
+%%HLDSDIR%%si/models/v_357.mdl
+%%HLDSDIR%%si/models/v_briefcase.mdl
+%%HLDSDIR%%si/models/v_gi.mdl
+%%HLDSDIR%%si/models/v_mindray.mdl
+%%HLDSDIR%%si/models/w_gi.mdl
+%%HLDSDIR%%si/motd.txt
+%%HLDSDIR%%si/pak0.pak
+%%HLDSDIR%%si/pldecal.wad
+%%HLDSDIR%%si/server.cfg
+%%HLDSDIR%%si/settings.scr
+%%HLDSDIR%%si/si.wad
+%%HLDSDIR%%si/si1.ico
+%%HLDSDIR%%si/si2.ico
+%%HLDSDIR%%si/si_alley.wad
+%%HLDSDIR%%si/si_colony.wad
+%%HLDSDIR%%si/si_metropolis.wad
+%%HLDSDIR%%si/si_mill.wad
+%%HLDSDIR%%si/si_overtime.wad
+%%HLDSDIR%%si/si_urban.wad
+%%HLDSDIR%%si/si_wolf.wad
+%%HLDSDIR%%si/skill.cfg
+%%HLDSDIR%%si/sound/ambience/fallscream.wav
+%%HLDSDIR%%si/sound/ambience/rabiddingo1.wav
+%%HLDSDIR%%si/sound/materials.txt
+%%HLDSDIR%%si/sound/weapons/radio_change.wav
+%%HLDSDIR%%si/sound/weapons/radio_idle.wav
+%%HLDSDIR%%si/sound/weapons/radio_idle2.wav
+%%HLDSDIR%%si/sound/weapons/radio_idle3.wav
+%%HLDSDIR%%si/sound/weapons/radio_idle4.wav
+%%HLDSDIR%%si/sprites/640si2.spr
+%%HLDSDIR%%si/sprites/crosshairs.spr
+%%HLDSDIR%%si/sprites/hud.txt
+%%HLDSDIR%%si/sprites/weapon_briefcase.txt
+%%HLDSDIR%%si/sprites/weapon_transistor.txt
+%%HLDSDIR%%si/titles.txt
+%%HLDSDIR%%si/user.scr
+%%HLDSDIR%%si/ws.wad
+%%PORTDOCS%%%%HLDSDIR%%si/maps/si_metropolis.txt
+%%PORTDOCS%%%%HLDSDIR%%si/maps/si_rush.txt
+%%PORTDOCS%%%%HLDSDIR%%si/maps/si_sewers.txt
+%%PORTDOCS%%%%HLDSDIR%%si/readme096.txt
+%%PORTDOCS%%%%HLDSDIR%%si/readme096b.txt
+%%PORTDOCS%%%%HLDSDIR%%si/readme096c.txt
+@dirrm %%HLDSDIR%%si/sprites
+@dirrm %%HLDSDIR%%si/sound/weapons
+@dirrm %%HLDSDIR%%si/sound/ambience
+@dirrm %%HLDSDIR%%si/sound
+@dirrm %%HLDSDIR%%si/models/player/mcl_vinnie
+@dirrm %%HLDSDIR%%si/models/player/mcl_butch
+@dirrm %%HLDSDIR%%si/models/player/mcl
+@dirrm %%HLDSDIR%%si/models/player/afd_vinnie
+@dirrm %%HLDSDIR%%si/models/player/afd_butch
+@dirrm %%HLDSDIR%%si/models/player/afd
+@dirrm %%HLDSDIR%%si/models/player
+@dirrm %%HLDSDIR%%si/models
+@dirrm %%HLDSDIR%%si/media
+@dirrm %%HLDSDIR%%si/maps/graphs
+@dirrm %%HLDSDIR%%si/maps
+@dirrm %%HLDSDIR%%si/gfx/shell
+@dirrm %%HLDSDIR%%si/gfx/env
+@dirrm %%HLDSDIR%%si/gfx
+@dirrm %%HLDSDIR%%si/events
+@dirrm %%HLDSDIR%%si/dlls
+@dirrm %%HLDSDIR%%si/cl_dlls
+@dirrm %%HLDSDIR%%si/SAVE
+@exec mkdir -p %D/%%HLDSDIR%%si/SAVE
+@exec mkdir -p %D/%%HLDSDIR%%si/events
+@exec mkdir -p %D/%%HLDSDIR%%si/models/player/afd
+@exec mkdir -p %D/%%HLDSDIR%%si/models/player/mcl
+@unexec rmdir %D/%%HLDSDIR%%si 2>/dev/null || echo "If you are permanently removing this port, you should also ``rm -Rf ${PKG_PREFIX}/%%HLDSDIR%%si'' removing any configuration files left." | fmt
