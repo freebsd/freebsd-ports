@@ -67,10 +67,10 @@ bin/tksol
 %%DATADIR%%/cards/s9
 %%DATADIR%%/mask.xbm
 %%DATADIR%%/pictures/armidillo.xbm
-%%DATADIR%%/pictures/beasts.xbm
 %%DATADIR%%/pictures/bosch7a.xbm
 %%DATADIR%%/pictures/chess.xbm
 %%DATADIR%%/pictures/default
+%%DATADIR%%/pictures/dragon.xbm
 %%DATADIR%%/pictures/dugong.xbm
 %%DATADIR%%/pictures/fruit.xbm
 %%DATADIR%%/pictures/gem.xbm
@@ -80,9 +80,9 @@ bin/tksol
 %%DATADIR%%/pictures/hwowl.xbm
 %%DATADIR%%/pictures/kittyt.xbm
 %%DATADIR%%/pictures/mini/armidillo.xbm
-%%DATADIR%%/pictures/mini/beasts.xbm
 %%DATADIR%%/pictures/mini/bosch7a.xbm
 %%DATADIR%%/pictures/mini/chess.xbm
+%%DATADIR%%/pictures/mini/dragon.xbm
 %%DATADIR%%/pictures/mini/dugong.xbm
 %%DATADIR%%/pictures/mini/fruit.xbm
 %%DATADIR%%/pictures/mini/gem.xbm
@@ -93,11 +93,9 @@ bin/tksol
 %%DATADIR%%/pictures/mini/myth06.xbm
 %%DATADIR%%/pictures/mini/ratel.xbm
 %%DATADIR%%/pictures/mini/thewingedhorse.xbm
-%%DATADIR%%/pictures/mini/uncleremus.xbm
 %%DATADIR%%/pictures/myth06.xbm
 %%DATADIR%%/pictures/ratel.xbm
 %%DATADIR%%/pictures/thewingedhorse.xbm
-%%DATADIR%%/pictures/uncleremus.xbm
 %%DATADIR%%/place.xbm
 @dirrm %%DATADIR%%/pictures/mini
 @dirrm %%DATADIR%%/pictures
