@@ -8,8 +8,7 @@
 #
 
 PORTNAME=	festival
-PORTVERSION=	1.4.1
-PORTREVISION=	2
+PORTVERSION=	1.4.3
 CATEGORIES=	audio accessibility
 MASTER_SITES=	${MASTER_SITE_FESTIVAL}
 MASTER_SITE_SUBDIR=	${PORTVERSION}
@@ -21,6 +20,8 @@ COMMENT=	Multi-lingual speech synthesis system
 
 LIB_DEPENDS=	audio.2:${PORTSDIR}/audio/nas \
 		esd.2:${PORTSDIR}/audio/esound
+
+BROKEN=		Incorrect pkg-plist
 
 DIST_SUBDIR=	festival
 
