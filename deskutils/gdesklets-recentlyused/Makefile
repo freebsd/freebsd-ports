@@ -18,6 +18,7 @@ COMMENT=	A toolbar for the most recently used items from ~/.recently-used
 
 RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gdesklets-core.pc:${PORTSDIR}/deskutils/gdesklets
 
+USE_PYTHON=	yes
 USE_X_PREFIX=	yes
 NAME=		RecentlyUsed
 DATADIR=	${PREFIX}/share/gnome

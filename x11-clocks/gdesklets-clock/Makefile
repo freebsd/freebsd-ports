@@ -19,6 +19,7 @@ COMMENT=	Various clock displays for Gnome 2.x
 RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gdesklets-core.pc:${PORTSDIR}/deskutils/gdesklets
 
 USE_BZIP2=	yes
+USE_PYTHON=	yes
 USE_X_PREFIX=	yes
 
 NAME=		Clock
