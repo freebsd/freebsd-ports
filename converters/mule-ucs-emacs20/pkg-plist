@@ -66,6 +66,7 @@
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/reldata/uksc5601.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/reldata/usisheng.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/reldata/usupple.el
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/reldata/utibetan.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/reldata/utis620.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/reldata/uviscii.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/tae.el
@@ -95,11 +96,11 @@
 @dirrm %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/jisx0213
 @dirrm %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/reldata
 @dirrm %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs
-%%PORTDOCDIR%%/ChangeLog
-%%PORTDOCDIR%%/ChangeLog.jisx0213
-%%PORTDOCDIR%%/MuleUni.txt
-%%PORTDOCDIR%%/README
-%%PORTDOCDIR%%/README.Unicode
-%%PORTDOCDIR%%/README.big5conv
-%%PORTDOCDIR%%/README.jisx0213
-@dirrm %%PORTDOCDIR%%
+%%PORTDOCS%%%%PORTDOCDIR%%/ChangeLog
+%%PORTDOCS%%%%PORTDOCDIR%%/ChangeLog.jisx0213
+%%PORTDOCS%%%%PORTDOCDIR%%/MuleUni.txt
+%%PORTDOCS%%%%PORTDOCDIR%%/README
+%%PORTDOCS%%%%PORTDOCDIR%%/README.Unicode
+%%PORTDOCS%%%%PORTDOCDIR%%/README.big5conv
+%%PORTDOCS%%%%PORTDOCDIR%%/README.jisx0213
+%%PORTDOCS%%@dirrm %%PORTDOCDIR%%

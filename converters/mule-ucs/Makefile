@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	mule-ucs
-PORTVERSION=	0.83
+PORTVERSION=	0.84
 CATEGORIES=	converters elisp
-MASTER_SITES=	ftp://ftp.kddlabs.co.jp/Japan/m17n.org/mule/Mule-UCS/ \
+MASTER_SITES=	ftp://ftp.m17n.org/pub/mule/Mule-UCS/ \
 		ftp://ftp.etl.go.jp/pub/mule/Mule-UCS/ \
-		ftp://ftp.win.or.jp/pub/word/mule/Mule-UCS/ \
-		ftp://ftp.m17n.org/pub/mule/Mule-UCS/
+		ftp://ftp.kddlabs.co.jp/Japan/m17n.org/mule/Mule-UCS/ \
+		ftp://ftp.media.kyoto-u.ac.jp/mule/Mule-UCS/ \
+		ftp://ftp.nihon-u.ac.jp/pub/text/m17n/mule/Mule-UCS/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 DISTNAME=	Mule-UCS-${PORTVERSION}
 
@@ -19,20 +20,18 @@ MAINTAINER=	okazaki@FreeBSD.org
 
 EMACS_PORT_NAME=	emacs20
 
-ALL_TARGET=	elc
-
 PLIST_SUB=	PORTDOCDIR=${PORTDOCDIR}
 PORTDOCDIR=	share/doc/mule-ucs
-MULEUCS_DESTDIR= ${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/mule-ucs
+MULEUCS_DESTDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/mule-ucs
 EMACS_ARGS=	-q --no-site-file -batch
 
 do-build:
-	cd ${WRKSRC} && \
-	    ${EMACS_CMD} ${EMACS_ARGS} -l mucs-comp.el
 	cd ${WRKSRC}/lisp/big5conv && \
 	    ${EMACS_CMD} ${EMACS_ARGS} -l big5-comp.el
 	cd ${WRKSRC}/lisp/jisx0213 && \
 	    ${EMACS_CMD} ${EMACS_ARGS} -l x0213-comp.el
+	cd ${WRKSRC} && \
+	    ${EMACS_CMD} ${EMACS_ARGS} -l mucs-comp.el
 
 do-install:
 	@${MKDIR} ${MULEUCS_DESTDIR}
