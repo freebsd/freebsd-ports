@@ -16,7 +16,7 @@ MAINTAINER?=	sada@FreeBSD.org
 
 # ?= for ports that include this Makefile
 RUN_DEPENDS?=	${PREFIX}/bin/${BROWSER_ARC}-${BROWSER_VERSION}:${PORTSDIR}/www/netscape${BROWSER_VER}-${BROWSER_NAME}
-RUN_DEPENDS+=	${PKG_DBDIR}/ja-bdf-fonts-1.0_1:${PORTSDIR}/japanese/bdf-fonts
+RUN_DEPENDS+=	${PKG_DBDIR}/ja-alias-fonts-1.0:${PORTSDIR}/japanese/alias-fonts
 
 .if (!defined(BROWSER_VERSION) || ${PORTVERSION} == "4.76")
 IGNORE=		"has a serious security hole, use 4.77 instead"
