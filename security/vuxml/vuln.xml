@@ -32,6 +32,58 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6afa87d3-764b-11d9-b0e7-0000e249a0a2">
+    <topic>python -- SimpleXMLRPCServer.py allows unrestricted traversal</topic>
+    <affects>
+      <package>
+	<name>python</name>
+	<name>python23</name>
+	<name>python22</name>
+        <name>python-devel</name>
+	<range><ge>2.2</ge><lt>2.2.3_7</lt></range>
+	<range><ge>2.3</ge><lt>2.3.4_4</lt></range>
+	<range><ge>2.4</ge><lt>2.4_1</lt></range>
+	<range><ge>2.5.a0.20050129</ge><lt>2.5.a0.20050129_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+      	<p>According to Python Security Advisory PSF-2005-001,</p>
+	<blockquote cite="http://www.python.org/security/PSF-2005-001/">
+	  <p>The Python development team has discovered a flaw in
+	    the <code>SimpleXMLRPCServer</code> library module which
+	    can give remote attackers access to internals of the
+	    registered object or its module or possibly other modules.
+	    The flaw only affects Python XML-RPC servers that use the
+	    register_instance() method to register an object without
+	    a _dispatch() method.  Servers using only register_function()
+	    are not affected.</p>
+	  <p>On vulnerable XML-RPC servers, a remote attacker may
+	    be able to view or modify globals of the module(s)
+	    containing the registered instance's class(es), potentially
+	    leading to data loss or arbitrary code execution.  If the
+	    registered object is a module, the danger is particularly
+	    serious.  For example, if the registered module imports
+	    the os module, an attacker could invoke the os.system()
+	    function.</p>
+	</blockquote>
+	<p><strong>Note:</strong> This vulnerability affects your
+	  system only if you're running
+	  <code>SimpleXMLRPCServer</code>-based server.  This isn't
+	  harmful at all if you don't run any internet server written
+	  in Python or your server doesn't serve in XML-RPC protocol.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-0089</cvename>
+      <url>http://www.python.org/security/PSF-2005-001/</url>
+    </references>
+    <dates>
+      <discovery>2005-02-03</discovery>
+      <entry>2005-02-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a5eb760a-753c-11d9-a36f-000a95bc6fae">
     <topic>perl -- vulnerabilities in PERLIO_DEBUG handling</topic>
     <affects>
