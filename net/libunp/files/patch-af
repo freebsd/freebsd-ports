@@ -1,0 +1,48 @@
+--- configure.orig	Thu Jul 10 11:19:39 1997
++++ configure	Thu Sep 30 12:29:28 1999
+@@ -1101,10 +1101,12 @@
+ 	echo "$ac_t""yes" 1>&6
+ 	LIBUNP="$HOME/libunp.a"
+ 	LIBUNP_NAME=$HOME/libunp.a
++	LIBUNP_THREADSAFE_NAME=$HOME/libunp_r.a
+ else
+ 	echo "$ac_t""no" 1>&6
+ 	LIBUNP="../libunp.a"
+ 	LIBUNP_NAME=../libunp.a
++	LIBUNP_THREADSAFE_NAME=../libunp_r.a
+ fi
+ 
+ echo $ac_n "checking for $HOME/libunpxti.a""... $ac_c" 1>&6
+@@ -4288,7 +4290,6 @@
+ LIB_OBJS="$LIB_OBJS udp_connect.o"
+ LIB_OBJS="$LIB_OBJS udp_server.o"
+ LIB_OBJS="$LIB_OBJS wraplib.o"
+-LIB_OBJS="$LIB_OBJS wrapsock.o"
+ LIB_OBJS="$LIB_OBJS wrapstdio.o"
+ if test "$ac_cv_header_pthread_h" = yes ; then
+    LIB_OBJS="$LIB_OBJS wrappthread.o"
+@@ -4297,6 +4298,8 @@
+ LIB_OBJS="$LIB_OBJS write_fd.o"
+ LIB_OBJS="$LIB_OBJS writen.o"
+ LIB_OBJS="$LIB_OBJS writable_timeo.o"
++LIB_THREADSAFE_OBJS="$LIB_OBJS wrapsock_r.o"
++LIB_OBJS="$LIB_OBJS wrapsock.o"
+ 
+ LIBFREE_OBJS=
+ 
+@@ -4514,6 +4517,7 @@
+ s%@RANLIB@%$RANLIB%g
+ s%@CPP@%$CPP%g
+ s%@LIB_OBJS@%$LIB_OBJS%g
++s%@LIB_THREADSAFE_OBJS@%$LIB_THREADSAFE_OBJS%g
+ s%@LIBFREE_OBJS@%$LIBFREE_OBJS%g
+ s%@LIBGAI_OBJS@%$LIBGAI_OBJS%g
+ s%@LIBROUTE_OBJS@%$LIBROUTE_OBJS%g
+@@ -4522,6 +4526,7 @@
+ s%@LIBUNP@%$LIBUNP%g
+ s%@LIBUNPXTI@%$LIBUNPXTI%g
+ s%@LIBUNP_NAME@%$LIBUNP_NAME%g
++s%@LIBUNP_THREADSAFE_NAME@%$LIBUNP_THREADSAFE_NAME%g
+ s%@LIBUNPXTI_NAME@%$LIBUNPXTI_NAME%g
+ 
+ CEOF

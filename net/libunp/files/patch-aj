@@ -1,0 +1,16 @@
+--- libgai/Makefile.orig	Mon Jun  2 18:03:30 1997
++++ libgai/Makefile	Thu Sep 30 11:34:11 1999
+@@ -6,9 +6,13 @@
+ # appear in the book (too much clutter, given the amount of conditional
+ # testing for all the code in this directory).
+ 
++CFLAGS += -I..
++
+ all:	${LIBGAI_OBJS}
+ 		ar rv ${LIBUNP_NAME} $?
+ 		${RANLIB} ${LIBUNP_NAME}
++		ar rv ${LIBUNP_THREADSAFE_NAME} $?
++		${RANLIB} ${LIBUNP_THREADSAFE_NAME}
+ 
+ PROGS = testga test1
+ 
