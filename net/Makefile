@@ -404,6 +404,7 @@
     SUBDIR += openldap12
     SUBDIR += openldap20
     SUBDIR += openldap21
+    SUBDIR += openldap22
     SUBDIR += openmcu
     SUBDIR += openreg
     SUBDIR += openslp
