@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-RSS-Parser
-PORTVERSION=	2.01
+PORTVERSION=	2.14
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
@@ -15,7 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	clsung@dragon2.net
 COMMENT=	A liberal object-oriented parser for RSS Feeds
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
+		${SITE_PERL}/Class/XPath.pm:${PORTSDIR}/devel/p5-Class-XPath
 
 PERL_CONFIGURE=	yes
 
