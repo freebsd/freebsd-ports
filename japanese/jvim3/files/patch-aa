@@ -1,14 +1,7 @@
---- src/makjunix.mak.orig	Tue Nov 17 20:55:43 1998
-+++ src/makjunix.mak	Tue Nov 17 21:07:34 1998
-@@ -55,14 +55,14 @@
- ### root directory for X11 files (unless overruled in hardware-dependend part)
- ### Unfortunately there is no standard for these, everybody puts them
- ### somewhere else
--X11LIBDIR = /usr/openwin/lib
--X11INCDIR = /usr/openwin/include
-+#X11LIBDIR = /usr/openwin/lib
-+#X11INCDIR = /usr/openwin/include
- ### for some hpux systems:
+diff -u src/makjunix.mak.orig src/makjunix.mak
+--- src/makjunix.mak.orig	Tue Jan 26 09:17:50 1999
++++ src/makjunix.mak	Tue Jan 26 09:17:50 1999
+@@ -61,8 +61,8 @@
  #X11LIBDIR = /usr/lib/X11R5
  #X11INCDIR = /usr/include/X11R5
  ###
@@ -54,7 +47,7 @@
  		-DKANJI -DTRACK -DCRMARK -DFEXRC -DUSE_GREP -DUSE_OPT $(FEPOPT)
  
  #
-@@ -447,11 +448,11 @@
+@@ -453,11 +454,11 @@
  	chmod $(BINMOD) $(BINLOC)/$(TARGET)
  	$(STRIP) $(BINLOC)/$(TARGET)
  	-mkdir $(MANLOC)
@@ -70,7 +63,7 @@
  
  clean:
  	-rm -f $(OBJ) mkcmdtab.o version.o core $(TARGET) mkcmdtab cmdtab.h
-@@ -599,7 +600,7 @@
+@@ -605,7 +606,7 @@
  	$(CC) $(CFLAGS) fepbow.c
  
  fepcanna.o: fepcanna.c
