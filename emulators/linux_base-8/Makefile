@@ -99,7 +99,7 @@ FALLBACK_ELF_MIB=	kern.fallback_elf_brand
 LINUX_ELF=		3
 PREVIOUS_ELF!=		/sbin/sysctl -n ${FALLBACK_ELF_MIB}
 
-do-install:
+pre-install:
 #
 # Handle the loading of the linux loadable kernel module if required.
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
@@ -150,9 +150,8 @@ do-install:
 	cd ${WRKSRC} && ${FIND} -s . -type f -o -type l | \
 		${CUT} -c3-999 >> ${PLIST} \
 		&& ${FIND} -d * -type d | ${SED} -e 's:^:@dirrm :' >> ${PLIST}
-#
-# The real do-install:
-#
+
+do-install:
 	cd ${WRKSRC} && ${FIND} * | ${CPIO} -dmp ${PREFIX}
 	${FIND} ${PREFIX} -type d -exec ${CHMOD} 755 \{\} \;
 
