@@ -27,7 +27,7 @@
 -#RPC_WARNFLAGS = -Wno-unused -Wno-switch -Wno-uninitialized
 +CFLAGS += -Wall
 +INCLUDES = $(MYINCL) $(INCL)
-+THE_CC = cc
++THE_CC := $(CC)
 +RPC_WARNFLAGS = -Wno-unused -Wno-switch -Wno-uninitialized
  
  # For NetBsd
