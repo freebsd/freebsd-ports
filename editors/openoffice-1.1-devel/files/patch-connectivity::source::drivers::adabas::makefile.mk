@@ -4,8 +4,8 @@
  		$(SLO)$/BResultSetMetaData.obj			\
          $(SLO)$/BResultSet.obj
  		
--.IF "$(OS)"=="MACOSX" || "$(OS)"=="FREEBSD"
-+.IF "$(OS)"=="MACOSX"
+-.IF "$(OS)"=="MACOSX"
++.IF "$(OS)"=="MACOSX" || "$(OS)"=="FREEBSD"
  #SHL1VERSIONMAP=$(ADABAS_TARGET).$(DLLPOSTFIX).map
 -.ELSE
 +.ELSE      
