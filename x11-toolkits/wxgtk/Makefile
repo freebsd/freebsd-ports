@@ -8,7 +8,14 @@
 PORTNAME=	wxgtk
 PORTVERSION= 	2.1.15
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	ftp://wesley.informatik.uni-freiburg.de/pub/linux/wxxt/source/
+MASTER_SITES=	ftp://wesley.informatik.uni-freiburg.de/pub/linux/wxxt/source/ \
+		http://netfx-2000.linux.tucows.com/files/x11/dev/ \
+		http://linuxberg.is.co.za/files/x11/dev/ \
+		http://cyberec.linux.tucows.com/files/x11/dev/ \
+		http://gil.linux.tucows.com/files/x11/dev/ \
+		http://cyberbeach.linux.tucows.com/files/x11/dev/ \
+		http://bonn.linux.tucows.com/files/x11/dev/ \
+		http://matrix.linux.tucows.com/files/x11/dev/
 DISTNAME=	wxGTK-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
