@@ -1085,6 +1085,7 @@ ctm		src/usr.sbin/ctm
 ctrace		ports/net/ctrace
 ctwm		ports/x11-wm/ctwm
 cu-prolog	ports/lang/cu-prolog
+cube		ports/games/cube
 cucipop		ports/mail/cucipop
 cuecat		ports/misc/cuecat
 cups		ports/print/cups
