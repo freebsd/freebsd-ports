@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	adasockets
-PORTVERSION=	0.1.10
+PORTVERSION=	0.1.11
 CATEGORIES=	net
 MASTER_SITES=	http://www.infres.enst.fr/ANC/
 
