@@ -815,6 +815,7 @@ camlp4		ports/devel/camlp4
 camserv		ports/multimedia/camserv
 cantus		ports/audio/cantus
 cap		ports/net/cap
+cardpics	ports/games/cardpics
 carthage	ports/textproc/carthage
 cascade		ports/cad/cascade
 catdoc		ports/textproc/catdoc
@@ -4428,6 +4429,7 @@ liblrdf		ports/textproc/liblrdf
 libltdl		ports/devel/libltdl
 liblug		ports/graphics/liblug
 libmad		ports/audio/libmad
+libmaitretarot	ports/games/libmaitretarot
 libmal		ports/palm/libmal
 libmath++	ports/math/libmath++
 libmatroska	ports/multimedia/libmatroska
@@ -4441,6 +4443,7 @@ libmng		ports/graphics/libmng
 libmorph	ports/graphics/libmorph
 libmovtar	ports/multimedia/libmovtar
 libmpeg2	ports/multimedia/libmpeg2
+libmt_client	ports/games/libmt_client
 libmtrie	ports/devel/libmtrie
 libmusicbrainz	ports/audio/libmusicbrainz
 libnet		ports/net/libnet
@@ -4821,6 +4824,7 @@ mailsync	ports/mail/mailsync
 mailx		ports/mail/mailx
 maint		ports/sysutils/maint
 mairix		ports/mail/mairix
+maitretarot	ports/games/maitretarot
 majorcool	ports/mail/majorcool
 majordomo	ports/mail/majordomo
 make++		ports/devel/make++
@@ -5270,6 +5274,8 @@ msp430-libc		ports/devel/msp430-libc
 msql		ports/databases/msql
 msrc0		ports/devel/msrc0
 msyslog		ports/sysutils/msyslog
+mt_dolphin_ia	ports/games/mt_dolphin_ia
+mt_gtk_client	ports/games/mt_gtk_client
 mtf		ports/archivers/mtf
 mtl		ports/math/mtl
 mtools		ports/emulators/mtools
