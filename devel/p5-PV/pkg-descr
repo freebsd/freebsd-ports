@@ -1,0 +1,19 @@
+INTRO
+=====
+
+I needed a basic text-mode GUI framework to implement some
+nice-looking proggies on Linux. Didn't find any around, so necessity
+became the mother of PerlVision. And this beast kept growing as I made
+love to Perl, so now it's far from 'basic'. Provides 90% of the
+features you'd want for a user interface, including checkboxes,
+radiobuttons, three different styles (!) of pushbuttons, single and
+multiple selection listboxes, an extensible editbox that does
+autowrapping, a scrollable viewbox, single line text entry fields, a
+menubar with pulldown menus, and full popup dialog boxes with multiple
+controls.
+
+This version of PerlVision uses Will Setzer's Curses.pm dynaload
+module for Perl, so you need to get and compile that first, from
+ftp://ftp.ncsu.edu/pub/math/wsetzer/cursperl<whatever>.
+
+PerlVision will only work with Perl 5+ of-course (upgrade || die()!).
