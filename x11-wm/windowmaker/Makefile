@@ -1,12 +1,12 @@
 # New ports collection makefile for:	WindowMaker
-# Version required:	0.19.2
+# Version required:	0.19.3
 # Date created:		August 13, 1997
 # Whom:			handy@physics.montana.edu
 #
-# $Id: Makefile,v 1.23 1998/09/04 06:24:11 tg Exp $
+# $Id: Makefile,v 1.24 1998/09/09 05:57:17 tg Exp $
 
-DISTNAME=	WindowMaker-0.19.2
-PKGNAME=	windowmaker-0.19.2
+DISTNAME=	WindowMaker-0.19.3
+PKGNAME=	windowmaker-0.19.3
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.windowmaker.org/pub/beta/srcs/ \
 		ftp://ftp.io.com/pub/mirror/windowmaker/beta/srcs/ \
@@ -16,6 +16,7 @@ MAINTAINER=	handy@physics.montana.edu
 
 RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm \
+		gif\\.3\\.:${PORTSDIR}/graphics/giflib \
 		jpeg\\.9\\.:${PORTSDIR}/graphics/jpeg \
 		png\\.2\\.:${PORTSDIR}/graphics/png \
 		tiff34\\.1:${PORTSDIR}/graphics/tiff34

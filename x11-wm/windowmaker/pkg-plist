@@ -177,10 +177,12 @@ share/WindowMaker/Styles/Brown
 share/WindowMaker/Styles/Chumbo
 share/WindowMaker/Styles/Copper
 share/WindowMaker/Styles/DarkBlue
+share/WindowMaker/Styles/DarkRed
 share/WindowMaker/Styles/Fire
 share/WindowMaker/Styles/Food
 share/WindowMaker/Styles/Golden
 share/WindowMaker/Styles/Green
+share/WindowMaker/Styles/GreyBlue
 share/WindowMaker/Styles/Gtk
 share/WindowMaker/Styles/LightBlue
 share/WindowMaker/Styles/Pastel
@@ -190,6 +192,7 @@ share/WindowMaker/Styles/Purple
 share/WindowMaker/Styles/Rainbow
 share/WindowMaker/Styles/Red
 share/WindowMaker/Styles/RednBlue
+share/WindowMaker/Styles/ShinyBrown
 share/WindowMaker/Styles/Summer
 share/WindowMaker/Styles/Traditional
 share/WindowMaker/Styles/VioletBlue
