@@ -32,8 +32,8 @@ post-patch:
 
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/ixj.ko ${PREFIX}/modules
-	@${INSTALL_DATA} ${WRKSRC}/ixjuser.h ${PREFIX}/include
-	@${INSTALL_DATA} ${WRKSRC}/telephony.h ${PREFIX}/include
+	@${INSTALL_DATA} ${WRKSRC}/ixjuser.h ${PREFIX}/include/sys
+	@${INSTALL_DATA} ${WRKSRC}/telephony.h ${PREFIX}/include/sys
 	@${INSTALL_SCRIPT} ${WRKSRC}/ixj.sh ${PREFIX}/etc/rc.d/
 	@${CAT} ${PKGMESSAGE}
 
