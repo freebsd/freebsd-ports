@@ -66,7 +66,7 @@ $LAST_FILE = "$TMPDIR/$FILE_PREFIX.lastdir";
 # Check for instances of $IDHEADER in committed files, and
 # bomb out if they're not present, or corrupted.
 # Exclusions can be specified in the CVSROOT/exclude file.
-# Currently $IDHEADER must be an instance of $CVSHeader$, or an alias
+# Currently $IDHEADER must be an instance of '$ CVSHeader $', or an alias
 # defined in CVSROOT/options.
 $CHECK_HEADERS = 1;
 
