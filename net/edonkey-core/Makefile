@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	edonkey
-PORTVERSION=	0.44
+PORTVERSION=	0.45
 PORTEPOCH=	1
 CATEGORIES=	net linux
-MASTER_SITES=	http://sda.edonkey2000.com/files/
+MASTER_SITES=	http://www.overnet.com/files/
 PKGNAMESUFFIX=	-core
 DISTNAME=	eDonkey${PORTVERSION}
 
