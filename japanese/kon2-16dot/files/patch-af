@@ -1,0 +1,11 @@
+--- src/term.c.orig	Sat Jan 25 00:03:58 1997
++++ src/term.c	Sat Apr 26 03:54:03 1997
+@@ -205,7 +205,7 @@
+ 	    PollCursor(TRUE);
+ 	}
+ 	if (FD_ISSET(sockFd, &readFds)) SocketInterface(sockFd);
+-	if (mInfo.has_mouse) {
++	if (mInfo.has_mouse && mouseFd > 0) {
+ 	    if (FD_ISSET(mouseFd, &readFds) && con.active) {
+ 		i = read(mouseFd, buff, BUFSIZ);
+ 		if (i > 0) MouseGetPacket(buff, i);

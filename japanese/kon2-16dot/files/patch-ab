@@ -1,0 +1,43 @@
+--- src/child.c.orig	Fri Jan 24 09:36:14 1997
++++ src/child.c	Sat Apr 26 05:45:25 1997
+@@ -31,6 +31,7 @@
+ #include	<unistd.h>
+ #ifdef __FreeBSD__
+ #include        <errno.h>
++#include        <sys/ioctl.h>
+ #endif
+ 
+ #include	<getcap.h>
+@@ -87,6 +88,9 @@
+ {
+ 	char	*shell, *tail, *tcap;
+ 	char	buff[80];
++#if defined(__FreeBSD__)
++	struct winsize win;
++#endif
+ 
+ 	setgid(getgid());
+ 	setuid(getuid());
+@@ -97,6 +101,10 @@
+ 	sprintf(buff, "TERMCAP=:co#%d:li#%d:tc=console:",
+ 		dInfo.txmax + 1, dInfo.tymax + 1);
+ #elif defined(__FreeBSD__)
++	win.ws_row = dInfo.tymax + 1;
++	win.ws_col = dInfo.txmax + 1;
++	win.ws_xpixel = win.ws_ypixel = 0;
++	ioctl(STDIN_FILENO, TIOCSWINSZ, &win);
+ 	sprintf(buff,"TERM=vt100");
+ #endif
+ 
+@@ -107,7 +115,11 @@
+ 	    printf("\rKON2 Kanji On Console " VERSION
+ 		   " using VT number %c\r\n"
+ 		   "%*s\r\n"
++#if defined(__FreeBSD__)
++		   "%*s\r\n", *(ttyname(fileno(errfp))+9),
++#else   /* linux */
+ 		   "%*s\r\n", *(ttyname(fileno(errfp))+8),
++#endif
+ 		   dInfo.txmax,
+ 		   "Copyright (C) "
+ 		   "1993-1996  Takashi MANABE",
