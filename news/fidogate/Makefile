@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	fidogate
-PORTVERSION=	4.4.0
-CATEGORIES=	news
-MASTER_SITES=	${MASTER_SITE_SUNSITE} \
-		ftp://ftp.fido.de/pub/fidogate/ \
+PORTVERSION=	4.4.1
+CATEGORIES=	news mail
+MASTER_SITES=	ftp://ftp.fido.de/pub/fidogate/ \
 		ftp://ftp.gwdg.de/pub/linux/fido/fidogate/ \
-		ftp://ftp.fu-berlin.de/unix/news/fidogate/
+		ftp://ftp.fu-berlin.de/unix/news/fidogate/ \
+		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/fido
 
 MAINTAINER=	dirk.meyer@dinoex.sub.org
@@ -46,7 +46,7 @@ pre-install:
 	${MKDIR} ${PREFIX}/share/doc/fidogate/misc
 	${MKDIR} ${PREFIX}/share/doc/fidogate/gatebau
 
-DOCLIST = \
+DOCLIST=	\
 	fidogate.texi fidogate.txt \
 	gatebau94.txt kludge-rfc.doc msgid.doc \
 	qmail.txt texinfo.tex \
