@@ -3,7 +3,7 @@
 # Date created:         11 Apr 1997
 # Whom:                 Makoto Matsushita <matusita@jp.freebsd.org>
 #
-# $Id: Makefile,v 1.11 1997/07/21 19:21:03 max Exp $
+# $Id: Makefile,v 1.12 1997/09/14 21:34:50 max Exp $
 #
 
 DISTNAME=	kon2-0.3
@@ -11,7 +11,7 @@ PKGNAME=	ja-kon2-0.3
 CATEGORIES=	japanese
 # note kon is only in first directory and fonts are only in second directory
 MASTER_SITES=	ftp://ftp.tut.ac.jp/Linux/Packages/Utils/ \
-		ftp://ftp.iij.ad.jp/pub/X/XFree86/XFree86/3.1.1/untarred/xc/fonts/bdf/misc/
+		ftp://ftp.iij.ad.jp/pub/X/XFree86/XFree86/3.3.1/untarred/xc/fonts/bdf/misc/
 DISTFILES=	kon2-0.3.tar.gz k14.bdf 7x14rk.bdf
 
 MAINTAINER=	hideyuki@sat.t.u-tokyo.ac.jp
