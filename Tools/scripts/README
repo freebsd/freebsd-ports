@@ -19,6 +19,9 @@ prpatch - just does `patch $1 < pr-patch' (pr-patch is created by getpr)
 prdone  - checks in the port, attempting to fill out the commit message using
           information from the problem report and then takes you into edit-pr
           so you don't forget to close the PR.
+portsearch - A utility for searching the ports tree. It allows more detailed
+             search criteria than ``make search key=<string>'' and accepts
+             all perl(1) regular expressions.
 
 ----------------------------------------------------------------------
 
@@ -93,6 +96,45 @@ ${PORTSDIR}/x11/gnomelibs listed in {RUN,LIB}_DEPENDS for this port.
 Please be warned, that the this only means that the ports listed by the script
 required for correct removal of GNOME shared directories, not for the port
 functionality, so actual {RUN,LIB}_DEPENDS may have more entries.
+
+----------------------------------------------------------------------
+portsearch - A utility for searching the ports tree.
+
+     portsearch is a utility to for searching of the ports tree. It permits
+     much more detailed searches to be performed than ``make search
+     key=<string>'' by allowing you to specify which field(s) to search. It
+     also supports all valid perl(1) regular expressions for pattern matching.
+
+     portsearch displays matching ports in the same format as ``make search''
+     and also displays the number of matching ports found.
+
+     The following command line options are supported:
+
+	   -h	      Prints a multi-line help message and exits
+
+	   -n name    Search for name in the name field
+
+	   -p path    Search for path in the path field
+
+	   -i info    Search for info in the comments field
+
+	   -m maint   Search for maint in the Maintainer field
+
+	   -x index   Search for index in the category field
+
+	   -b b_deps  Search for b_deps in the build-depends field
+
+	   -r r_deps  Search for r_deps in the run-depends field
+
+	   -d deps    Search for deps in the both the build and run dependency
+		      fields. This option behaves differently to the other op-
+		      tions, see the EXAMPLES section
+
+	   -f file    Use the index file file instead of /usr/ports/INDEX
+
+     All searches are case-insensitive
+
+See the file README.portsearch for further information.
 
 ----------------------------------------------------------------------
 

@@ -1,0 +1,117 @@
+
+PORTSEARCH(1)		FreeBSD General Commands Manual 	 PORTSEARCH(1)
+
+NAME
+     portsearch - A utility for searching the ports tree.
+
+SYNOPSIS
+     portsearch [-h] [-n name] [-p path] [-i info] [-m maint] [-x index] [-b
+     b_deps] [-r r_deps] [-d deps] [-f file]
+
+DESCRIPTION
+     portsearch is a utility to for searching of the ports tree. It permits
+     much more detailed searches to be performed than ``make search
+     key=<string>'' by allowing you to specify which field(s) to search. It
+     also supports all valid perl(1) regular expressions for pattern matching.
+
+     portsearch displays matching ports in the same format as ``make search''
+     and also displays the number of matching ports found.
+
+     The following command line options are supported:
+
+	   -h	      Prints a multi-line help message and exits
+
+	   -n name    Search for name in the name field
+
+	   -p path    Search for path in the path field
+
+	   -i info    Search for info in the comments field
+
+	   -m maint   Search for maint in the Maintainer field
+
+	   -x index   Search for index in the category field
+
+	   -b b_deps  Search for b_deps in the build-depends field
+
+	   -r r_deps  Search for r_deps in the run-depends field
+
+	   -d deps    Search for deps in the both the build and run dependency
+		      fields. This option behaves differently to the other op-
+		      tions, see the EXAMPLES section
+
+	   -f file    Use the index file file instead of /usr/ports/INDEX
+
+     All searches are case-insensitive
+
+     /usr/ports/INDEX is not updated everytime a change is made to the ports
+     tree so in order to get the most accurate results from using portsearch
+     you should consider rebuilding the index thus:
+
+	   # cd /usr/ports && make index
+
+FILES
+     /usr/ports/INDEX  The ports master index file
+
+EXAMPLES
+     Find all ports whose name contains "emacs":
+
+	   portsearch -n emacs
+
+     Restrict the search to only those ports whose name begins with "emacs" by
+     anchoring the match to the beginning of the name:
+
+	   portsearch -n ^emacs
+
+
+     Find all the ports in the textproc, print, and www categories that are
+     maintained by Nik or Jim and have a run-time dependency on the tidy(1)
+     port:
+
+	   portsearch -x '(textproc|print|www)' -m '(nik|jim)' -r tidy
+
+     Note that the regular expression operators have to be quoted to protect
+     them from the shell.
+
+     The behaviour of the -d deps option is slightly different to the other
+     search options. If used it makes portsearch search both the build- and
+     run-dependency fields. If the -b b_deps and/or the -r r_deps are used as
+     well then they are ignored; the deps pattern is used to search both
+     fields.
+
+     Note that
+
+	   portsearch -d foobar
+
+     is not the same as
+
+	   portsearch -b foobar -r foobar
+
+     Normally all the options are logically ANDed together so in the above ex-
+     ample a port would need to have both a build and run dependency on
+     "foobar" to match, whereas the -d option logically ORs the two dependency
+     fields so that only a single dependency is required for a match. This is
+     primarily to provide an easy way of generating a list of all the depen-
+     dencies of a port; handy if the maintainer is making changes and needs to
+     know which other ports may be affected.
+
+DIAGNOSTICS
+     portsearch exits 0 on success or 1 if a help message was output.
+
+SEE ALSO
+     perlre(1),  ports(7)
+
+AUTHORS
+     Mark Ovens <marko@freebsd.org>
+
+BUGS
+     The "Index" field would probably be better named "Category" but it has
+     been left unchanged to be consistent with ``make search''.
+
+     perl(1) treats ``-'' as a word boundary so when a dependency field is
+     wrapped over more than one line a port name may get split like this:
+
+	   gettext-0.10.35 jpeg-6b libproplist-0.10.1 libungif-
+	   4.1.0 png-1.0.6
+
+
+FreeBSD 			 13 June 2000				     2
