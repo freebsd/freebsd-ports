@@ -55,6 +55,7 @@
     SUBDIR += hevea
     SUBDIR += htdig
     SUBDIR += html
+    SUBDIR += htmldoc
     SUBDIR += info2html
     SUBDIR += info_to_html
     SUBDIR += isearch
