@@ -1,30 +1,30 @@
-# New ports collection makefile for:    rus-ispell
-# Date created:         29.01.2001
-# Whom:                 ache
+# New ports collection makefile for:	rus-ispell
+# Date created:				29.01.2001
+# Whom:					ache
 #
 # $FreeBSD$
 #
 
 PORTNAME=	rus-ispell
-PORTVERSION=    0.99f3
+PORTVERSION=	0.99f4
 CATEGORIES=	russian textproc
-MASTER_SITES=   ftp://scon155.phys.msu.su/pub/russian/ispell/
+MASTER_SITES=	ftp://scon155.phys.msu.su/pub/russian/ispell/
 
 MAINTAINER=	ache@FreeBSD.org
 
 BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 
-USE_GMAKE=      yes
+USE_GMAKE=	yes
 .if defined(RUS_ISPELL_WITH_YO_ONLY)
-MAKE_ARGS+=     YO=1
+MAKE_ARGS+=	YO=1
 .endif
 .if defined(RUS_ISPELL_LOCAL_DICT)
-MAKE_ARGS+=     LOCAL_DICT=${RUS_ISPELL_LOCAL_DICT}
+MAKE_ARGS+=	LOCAL_DICT=${RUS_ISPELL_LOCAL_DICT}
 .endif
 
-ALL_TARGET=     koi
+ALL_TARGET=	koi
 
-NO_WRKSUBDIR=   yes
+NO_WRKSUBDIR=	yes
 
 do-install:
 	cd ${WRKSRC} && \
