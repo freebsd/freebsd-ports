@@ -16,4 +16,6 @@ MD5_FILE=	${.CURDIR}/../cdcl/distinfo
 DESCR=		${.CURDIR}/../cdcl/pkg-descr
 PLIST=		${.CURDIR}/../cdcl/pkg-plist
 
-.include	"${.CURDIR}/../cdcl/Makefile"
+MASTERDIR=	${.CURDIR}/../cdcl
+
+.include	"${MASTERDIR}/Makefile"
