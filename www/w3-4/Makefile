@@ -6,36 +6,29 @@
 #
 
 PORTNAME=	w3
-PORTVERSION=	2.2.26
+PORTVERSION=	4.0.p46
 CATEGORIES+=	www elisp
-MASTER_SITES=	ftp://ftp.iij.ad.jp/pub/network/WWW/w3/ \
-		ftp://ftp.cs.indiana.edu/pub/elisp/w3/
+MASTER_SITES=	${MASTER_SITE_XEMACS}
+MASTER_SITE_SUBDIR=	emacs-w3
+DISTNAME=	w3-4.0pre.46
 
-MAINTAINER=	kiri@kiri.toba-cmt.ac.jp
+MAINTAINER=	kiri@FreeBSD.org
 
-BUILD_DEPENDS?=	emacs-19.34:${PORTSDIR}/editors/emacs
-RUN_DEPENDS?=	emacs-19.34:${PORTSDIR}/editors/emacs
+BUILD_DEPENDS?=	emacs-20.7:${PORTSDIR}/editors/emacs20
+RUN_DEPENDS?=	emacs-20.7:${PORTSDIR}/editors/emacs20
 
-WRKSRC=		${WRKDIR}/w3
+GNU_CONFIGURE=	yes
+
 MAKE_ENV+=	EMACSCMD=${EMACSCMD} ELISPDIR=${ELISPDIR} \
 		MKDIR="${MKDIR}" CP=${CP} \
 		INFODIR=${INFODIR} \
 		INSTALL_DATA="${INSTALL_DATA}"
 
-PKGINSTALL=	${WRKDIR}/INSTALL
-PKGDEINSTALL=	${WRKDIR}/DEINSTALL
-VERSION=	2.2.26
-EMACSCMD?=	emacs-19.34
 PORTSDOCDIR=	${PREFIX}/share/doc/w3
 SAMPLEDIR=	${PREFIX}/share/examples/w3
-ELISPDIR?=	${PREFIX}/share/emacs/site-lisp
-INFODIR=	${PREFIX}/info
-ADDIR=		${X11BASE}/lib/X11/app-defaults
-DIRSECTION=	The Emacs editor and associated tools
-INFOFILE=	w3.info
 
 post-build:
-.for f in DEINSTALL INSTALL dot.emacs user-install
+.for f in dot.emacs user-install
 	@${SED} -e "s,%VERSION%,${VERSION},g" \
 		-e "s,%PREFIX%,${PREFIX},g" \
 		-e "s,%INFODIR%,${INFODIR},g" \
@@ -60,14 +53,8 @@ post-install:
 	@${INSTALL_DATA} ${WRKDIR}/${f} ${SAMPLEDIR}
 .endfor
 	@${INSTALL_SCRIPT} ${WRKDIR}/user-install ${SAMPLEDIR}
-.for f in W3.ad clean-cache Makefile w3.txi
-	@${INSTALL_DATA} ${WRKSRC}/${f}  ${PORTSDOCDIR}
-.endfor
+
 .endif
-	@${SETENV} MKDIR="${MKDIR}" TOUCH=${TOUCH} \
-		INFODIR=${INFODIR} INFOFILE=${INFOFILE} \
-		ELISPDIR=${ELISPDIR} ADDIR=${ADDIR} \
-		DIRSECTION="${DIRSECTION}" \
-		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL 
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
