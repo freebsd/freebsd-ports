@@ -1,0 +1,13 @@
+#!/bin/sh
+
+if [ "x$2" = "xPOST-INSTALL" ]; then
+	cd ${PKG_PREFIX}/%%FONTSDIR%%; ${PKG_PREFIX}/bin/mkfontdir
+	cd ${PKG_PREFIX}/%%T1_FONTSDIR%%; %%LOCALBASE%%/bin/type1inst -nogs -nolog -quiet
+	${PKG_PREFIX}/bin/xset fp rehash ||
+	(
+	 echo "**********************************************************"
+	 echo "You should restart X server or do 'xset fp rehash' command"
+	 echo "to enable this update."
+	 echo "**********************************************************"
+	)
+fi

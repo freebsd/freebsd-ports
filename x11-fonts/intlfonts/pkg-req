@@ -1,0 +1,22 @@
+#!/bin/sh
+
+if [ "x$1" = "x" ]; then
+	exit 1;
+fi
+if [ "x$2" != "xINSTALL" -a "x$2" != "xDEINSTALL" ]; then
+	exit 1;
+fi
+
+export FONTDIR; FONTDIR=${PKG_PREFIX}/lib/X11/fonts/local
+
+if [ "$2x" = "INSTALLx" -a ! -d ${FONTDIR} ]; then
+	echo '**********************************************************************'
+	echo "****** ${FONTDIR}/ doesn't exist."
+	echo "****** Creating ${FONTDIR}/"
+	echo '****** Please upgrade your XFree86 to 3.3.3 or upper,'
+	echo "****** or add this directory to your /etc/XF86Config's FontPath entry."
+	echo '**********************************************************************'
+	mkdir ${FONTDIR}
+fi
+
+exit 0;
