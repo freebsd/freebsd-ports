@@ -1,0 +1,19 @@
+*** doc/freefem/Makefile.in.orig	Wed Feb 26 12:38:22 1997
+--- doc/freefem/Makefile.in	Sun Jul  6 00:58:28 1997
+***************
+*** 79,85 ****
+  
+  SUFFIXES	=  .html
+  
+! htmldir		= $(prefix)/doc/$(PACKAGE)/html
+  html_DATA	= freefem.html  index.html  node1.html  node10.html  node11.html  node12.html  node13.html  node14.html  node15.html  node16.html  node17.html  node18.html  node19.html  node2.html  node20.html  node21.html  node22.html  node23.html  node24.html  node25.html  node26.html  node27.html  node28.html  node29.html  node3.html  node30.html  node31.html  node32.html  node33.html  node34.html  node35.html  node36.html  node37.html  node38.html  node39.html  node4.html  node40.html  node41.html  node42.html  node43.html  node44.html  node45.html  node46.html  node47.html  node48.html  node49.html  node5.html  node50.html  node51.html  node52.html  node53.html  node54.html  node55.html  node56.html  node57.html  node58.html  node59.html  node6.html  node60.html  node61.html  node62.html  node63.html  node64.html  node65.html  node66.html  node67.html  node68.html  node69.html  node7.html  node70.html  node71.html  node8.html  node9.html  blueball.gif  change_begin.gif  change_delete.gif  change_end.gif  contents_motif.gif  cross_ref_motif.gif  foot_motif.gif  greenball.gif  image.gif  img1.gif  img10.gif  img11.gif  img12.gif  img13.gif  img14.gif  img15.gif  img16.gif  img17.gif  img18.gif  img19.gif  img2.gif  img20.gif  img21.gif  img22.gif  img3.gif  img4.gif  img5.gif  img6.gif  img7.gif  img8.gif  img9.gif  index_motif.gif  next_group_motif.gif  next_group_motif_gr.gif  next_motif.gif  next_motif_gr.gif  orangeball.gif  pinkball.gif  previous_group_motif.gif  previous_group_motif_gr.gif  previous_motif.gif  previous_motif_gr.gif  purpleball.gif  redball.gif  up_motif.gif  up_motif_gr.gif  whiteball.gif  yellowball.gif  
+  
+  EXTRA_DIST	= $(html_DATA)
+--- 79,85 ----
+  
+  SUFFIXES	=  .html
+  
+! htmldir		= $(datadir)/doc/$(PACKAGE)/html
+  html_DATA	= freefem.html  index.html  node1.html  node10.html  node11.html  node12.html  node13.html  node14.html  node15.html  node16.html  node17.html  node18.html  node19.html  node2.html  node20.html  node21.html  node22.html  node23.html  node24.html  node25.html  node26.html  node27.html  node28.html  node29.html  node3.html  node30.html  node31.html  node32.html  node33.html  node34.html  node35.html  node36.html  node37.html  node38.html  node39.html  node4.html  node40.html  node41.html  node42.html  node43.html  node44.html  node45.html  node46.html  node47.html  node48.html  node49.html  node5.html  node50.html  node51.html  node52.html  node53.html  node54.html  node55.html  node56.html  node57.html  node58.html  node59.html  node6.html  node60.html  node61.html  node62.html  node63.html  node64.html  node65.html  node66.html  node67.html  node68.html  node69.html  node7.html  node70.html  node71.html  node8.html  node9.html  blueball.gif  change_begin.gif  change_delete.gif  change_end.gif  contents_motif.gif  cross_ref_motif.gif  foot_motif.gif  greenball.gif  image.gif  img1.gif  img10.gif  img11.gif  img12.gif  img13.gif  img14.gif  img15.gif  img16.gif  img17.gif  img18.gif  img19.gif  img2.gif  img20.gif  img21.gif  img22.gif  img3.gif  img4.gif  img5.gif  img6.gif  img7.gif  img8.gif  img9.gif  index_motif.gif  next_group_motif.gif  next_group_motif_gr.gif  next_motif.gif  next_motif_gr.gif  orangeball.gif  pinkball.gif  previous_group_motif.gif  previous_group_motif_gr.gif  previous_motif.gif  previous_motif_gr.gif  purpleball.gif  redball.gif  up_motif.gif  up_motif_gr.gif  whiteball.gif  yellowball.gif  
+  
+  EXTRA_DIST	= $(html_DATA)

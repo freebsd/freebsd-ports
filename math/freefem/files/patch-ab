@@ -1,0 +1,23 @@
+*** doc/Makefile.in.orig	Sun Jul  6 00:48:30 1997
+--- doc/Makefile.in	Sun Jul  6 00:50:23 1997
+***************
+*** 233,241 ****
+  
+  
+  install-data-hook:
+! 	$(mkinstalldirs) $(prefix)/doc/$(PACKAGE)
+  	for file in $(EXTRA_DIST); do \
+! 	$(INSTALL_DATA) $(srcdir)/doc/$$file $(prefix)/doc/$(PACKAGE);\
+  	done
+  
+  #.tex.dvi: freefem.tex
+--- 233,241 ----
+  
+  
+  install-data-hook:
+! 	$(mkinstalldirs) $(datadir)/doc/$(PACKAGE)
+  	for file in $(EXTRA_DIST); do \
+! 	$(INSTALL_DATA) $(srcdir)/doc/$$file $(datadir)/doc/$(PACKAGE);\
+  	done
+  
+  #.tex.dvi: freefem.tex
