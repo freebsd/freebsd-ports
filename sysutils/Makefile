@@ -91,6 +91,7 @@
     SUBDIR += e2fsprogs
     SUBDIR += eject
     SUBDIR += enteruser
+    SUBDIR += eroaster
     SUBDIR += etcmerge
     SUBDIR += extipl
     SUBDIR += fastest_cvsup
