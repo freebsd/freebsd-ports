@@ -1,0 +1,5 @@
+lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/PHP.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/Serialize/PHP.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/Session/Store/PHP.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/Session/PHP/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/Session/PHP
