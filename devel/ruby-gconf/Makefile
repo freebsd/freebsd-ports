@@ -18,6 +18,8 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Ruby interface to GConf (1.0.x)
 
+BROKEN=		"Build fails"
+
 LIB_DEPENDS=	gconf-gtk-1.1:${PORTSDIR}/devel/gconf
 
 USE_RUBY=	yes
