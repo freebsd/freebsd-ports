@@ -40,10 +40,11 @@ RPM_MIRRORS=		\
 	ftp://mirror.aarnet.edu.au/pub/linux/redhat/__DIR__/
 
 STDDIR=			linux/6.1/en/os/${MACHINE_ARCH}/RedHat/RPMS
-UPDDIR=			linux/updates/6.1/en/os/${MACHINE_ARCH}
+UPDDIR=			linux/updates/6.2/en/os/${MACHINE_ARCH}
 
 .include <bsd.port.pre.mk>
 
+UPDATES=		zlib-1.1.3-25.6.${MACHINE_ARCH}.rpm
 .if (${MACHINE_ARCH} == "i386")
 LIBC5_COMPAT=		ld.so-1.9.5-11.i386.rpm libc-5.3.12-31.i386.rpm
 RPM_BINUTILS=		binutils-2.9.1.0.23-6.i386.rpm
@@ -52,7 +53,7 @@ RPM_GLIBC=		glibc-2.1.2-11.i386.rpm
 RPM_LDCONFIG=		ldconfig-1.9.5-15.i386.rpm
 RPM_RPM=		rpm-3.0.3-2.i386.rpm
 RPM_X_LIBS=		XFree86-libs-3.3.5-3.i386.rpm
-UPDATES=		glib-1.2.6-2.i386.rpm
+UPDATES+=		glib-1.2.6-2.i386.rpm
 .else
 LIBC5_COMPAT=
 RPM_BINUTILS=		binutils-2.9.1.0.23-7.alpha.rpm
@@ -61,7 +62,7 @@ RPM_GLIBC=		glibc-2.1.2-17.alpha.rpm
 RPM_LDCONFIG=		ldconfig-1.9.5-16.alpha.rpm
 RPM_RPM=		rpm-3.0.3-6.alpha.rpm
 RPM_X_LIBS=		XFree86-libs-3.3.5-17.alpha.rpm
-UPDATES=
+UPDATES+=
 .endif
 
 #
@@ -76,7 +77,6 @@ RPM_SET2=		${RPM_GLIBC} \
 			libtermcap-2.0.8-18.${MACHINE_ARCH}.rpm \
 			bash-1.14.7-16.${MACHINE_ARCH}.rpm \
 			ncurses-4.2-25.${MACHINE_ARCH}.rpm \
-			zlib-1.1.3-5.${MACHINE_ARCH}.rpm \
 			info-3.12h-2.${MACHINE_ARCH}.rpm \
 			fileutils-4.0-8.${MACHINE_ARCH}.rpm \
 			grep-2.3-2.${MACHINE_ARCH}.rpm \
