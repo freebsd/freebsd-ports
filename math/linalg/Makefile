@@ -18,6 +18,12 @@ ALL_TARGET=	lib
 INSTALL_TARGET=	lib
 USE_GMAKE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 500035
+BROKEN=		"Does not compile under 5.x"
+.endif
+
 post-patch:
 	@( cd ${WRKSRC}; ${SED} -e 's|%%CXXFLAGS%%|${CXXFLAGS}|g' \
 	    -e 's|%%CXX%%|${CXX}|g' c++ > c++.sed; mv c++.sed c++; ${CHMOD} +x c++ )
@@ -38,4 +44,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/LinAlg
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
