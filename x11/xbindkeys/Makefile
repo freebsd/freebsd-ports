@@ -18,6 +18,7 @@ INSTALL_TARGET=	install-binPROGRAMS
 .if defined(WITH_GUI)
 RUN_DEPENDS=	wish:${PORTSDIR}/x11-toolkits/tk83
 PLIST_SUB+=	WITH_GUI=""
+SCRIPTS_ENV+=	WITH_GUI="YES"
 .else
 PLIST_SUB+=	WITH_GUI="@comment "
 .endif
