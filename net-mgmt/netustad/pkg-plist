@@ -1,32 +1,61 @@
 sbin/netustad
 sbin/netustadctl
 sbin/netustadpasswd
-etc/rc.d/netustad.sh.sample
-@unexec if [ -f %D/etc/rc.d/netustad.sh ]; then rm -f %D/etc/rc.d/netustad.sh; fi
+etc/rc.d/netustad.sh
 @unexec if cmp -s %D/etc/netustad.conf %D/etc/netustad.conf-dist; then rm -f %D/etc/netustad.conf; fi
 etc/netustad.conf-dist
 @exec [ -f %B/netustad.conf ] || cp %B/%f %B/netustad.conf
 %%DATADIR%%/script/English
-%%DATADIR%%/script/Turkce
 %%DATADIR%%/script/action1.inc
 %%DATADIR%%/script/action2.inc
 %%DATADIR%%/script/addform
 %%DATADIR%%/script/addrule.inc
 %%DATADIR%%/script/authform
-%%DATADIR%%/script/bg.png
-%%DATADIR%%/script/delete.jpg
 %%DATADIR%%/script/edit-parse
 %%DATADIR%%/script/editform
 %%DATADIR%%/script/editrule.inc
+%%DATADIR%%/script/footer
+%%DATADIR%%/script/header
 %%DATADIR%%/script/intf-parse
-%%DATADIR%%/script/loginform.inc
+%%DATADIR%%/script/loadindex
 %%DATADIR%%/script/maketable
 %%DATADIR%%/script/netustad.css
 %%DATADIR%%/script/proto.inc
 %%DATADIR%%/script/ruleoption1.inc
 %%DATADIR%%/script/ruleoption2.inc
+%%DATADIR%%/script/service-parse
 %%DATADIR%%/script/showrule
 %%DATADIR%%/script/static-parse
+%%DATADIR%%/script/images/action_allow.png
+%%DATADIR%%/script/images/action_checkstate.png
+%%DATADIR%%/script/images/action_count.png
+%%DATADIR%%/script/images/action_deny.png
+%%DATADIR%%/script/images/action_divert.png
+%%DATADIR%%/script/images/action_forward.png
+%%DATADIR%%/script/images/action_pipequeue.png
+%%DATADIR%%/script/images/action_skipto.png
+%%DATADIR%%/script/images/action_tee.png
+%%DATADIR%%/script/images/action_unreach.png
+%%DATADIR%%/script/images/banner-alt.png
+%%DATADIR%%/script/images/banner.png
+%%DATADIR%%/script/images/bg.png
+%%DATADIR%%/script/images/btn_bg.png
+%%DATADIR%%/script/images/buton_0.png
+%%DATADIR%%/script/images/buton_1.png
+%%DATADIR%%/script/images/buton_2.png
+%%DATADIR%%/script/images/buton_3.png
+%%DATADIR%%/script/images/buton_4.png
+%%DATADIR%%/script/images/buton_5.png
+%%DATADIR%%/script/images/buton_6.png
+%%DATADIR%%/script/images/buton_7.png
+%%DATADIR%%/script/images/editor.png
+%%DATADIR%%/script/images/editor_static.png
+%%DATADIR%%/script/images/eraser.png
+%%DATADIR%%/script/images/eraser_static.png
+%%DATADIR%%/script/images/menu_addrule.png
+%%DATADIR%%/script/images/menu_login.png
+%%DATADIR%%/script/images/menu_logout.png
+%%DATADIR%%/script/images/menu_rulelist.png
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
@@ -34,6 +63,7 @@ etc/netustad.conf-dist
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
 %%PORTDOCS%%%%DOCSDIR%%/TODO
+@dirrm %%DATADIR%%/script/images
 @dirrm %%DATADIR%%/script
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
