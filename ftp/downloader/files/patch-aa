@@ -1,41 +1,27 @@
---- Makefile.orig	Sat Dec 16 16:44:10 2000
-+++ Makefile	Fri Jan 12 19:12:32 2001
+--- Makefile.orig	Fri Jan 26 18:05:26 2001
++++ Makefile	Fri Jan 26 21:58:20 2001
 @@ -8,7 +8,7 @@
  CXXFLAGS=-Wall -O2 $(SOLARIS_TYPECASTED_X11_HEADERS)
  endif
  
--CXXFLAGS+=-D_REENTRANT -D_POSIX_PTHREAD_SEMANTICS $(SOLARIS_TYPECASTED_X11_HEADERS) -DDEBUG_ALL
-+CXXFLAGS+=-D_REENTRANT -D_POSIX_PTHREAD_SEMANTICS -D_THREAD_SAFE
+-CXXFLAGS+=-D_REENTRANT -D_POSIX_PTHREAD_SEMANTICS $(SOLARIS_TYPECASTED_X11_HEADERS)
++CXXFLAGS+=-D_THREAD_SAFE -D_REENTRANT -D_POSIX_PTHREAD_SEMANTICS $(SOLARIS_TYPECASTED_X11_HEADERS)
+ # -DDEBUG_ALL
  # -ggdb
  
- export CXXFLAGS LOCALEDIR
-@@ -21,10 +21,10 @@
+@@ -34,8 +34,9 @@
+ 
+ ifeq ($(OSTYPE),FreeBSD)
+ PTHREAD=-pthread
+-GTKCONFIG=gtk12-config
+-MAKE=gmake
++GTKCONFIG=${GTK_CONFIG}
++GLIBCONFIG=${GLIB_CONFIG}
++MAKE=${MAKE_CMD}
  endif
  
- LOCALEDIR=$(DEST)/share/locale
--PTHREAD=-lpthread
--GTKCONFIG=gtk-config
--GLIBCONFIG=glib-config
--MAKE=make
-+PTHREAD?=-lpthread
-+GTKCONFIG?=gtk-config
-+GLIBCONFIG?=glib-config
-+MAKE?=make
- 
- #next strings were added for BSD support
- ifeq ($(OSTYPE),BSD)
-@@ -39,8 +39,8 @@
- MAKE=gmake
- endif
- 
--GTKLIBS=$(shell $(GTKCONFIG) --libs) $(shell $(GLIBCONFIG) --libs)
--GTKFLAGS=$(shell $(GTKCONFIG) --cflags) $(shell $(GLIBCONFIG) --cflags)
-+GTKLIBS=$(shell $(GTKCONFIG) --libs) #$(shell $(GLIBCONFIG) --libs)
-+GTKFLAGS=$(shell $(GTKCONFIG) --cflags) #$(shell $(GLIBCONFIG) --cflags)
- 
- ifeq ($(OSTYPE),Irix)
- CTKFLIBS += lintl
-@@ -81,7 +81,7 @@
+ GTKLIBS=$(shell $(GTKCONFIG) --libs) $(shell $(GLIBCONFIG) --libs)
+@@ -80,7 +81,7 @@
  
  
  install: all
