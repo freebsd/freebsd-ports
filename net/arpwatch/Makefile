@@ -3,7 +3,7 @@
 # Date created:         March 24 1997
 # Whom:                 Brian Somers <brian@awfulhak.demon.co.uk>
 #
-# $Id: Makefile,v 1.1.1.1 1997/03/30 17:19:56 brian Exp $
+# $Id: Makefile,v 1.2 1997/03/30 18:11:58 obrien Exp $
 #
 
 DISTNAME=       arpwatch-2.0.1a1
@@ -17,11 +17,11 @@ MAINTAINER=     brian@awfulhak.demon.co.uk
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--quiet
 MAKE_FLAGS+=	CCOPT="-O2 -DPATH_SENDMAIL=\\\"/usr/sbin/sendmail\\\""
+INSTALL_TARGET= install install-man
 MAN8=           arpwatch.8 arpsnmp.8
 
 
 post-install:
-	cd ${WRKSRC}; make install-man
 	if [ ! -d ${PREFIX}/arpwatch ]; then	\
 		${MKDIR} ${PREFIX}/arpwatch;	\
 		chmod 775 ${PREFIX}/arpwatch;	\
