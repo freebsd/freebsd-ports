@@ -5,8 +5,8 @@
 # $FreeBSD$
 
 PORTNAME=	haxml
-PORTVERSION=	1.07a
-PORTREVISION=	1
+PORTVERSION=	1.07b
+PORTREVISION=	0
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.haskell.org/HaXml/ \
 		ftp://ftp.cs.york.ac.uk/pub/haskell/HaXml/
