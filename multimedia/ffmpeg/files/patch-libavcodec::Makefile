@@ -1,12 +1,22 @@
---- libavcodec/Makefile.orig	Sun Oct  6 12:26:38 2002
-+++ libavcodec/Makefile	Wed Oct  9 14:24:34 2002
-@@ -228,8 +228,7 @@
- install: all
- ifeq ($(BUILD_SHARED),yes)
+--- libavcodec/Makefile.orig	Sat Dec  6 02:32:47 2003
++++ libavcodec/Makefile	Sat Dec  6 03:00:14 2003
+@@ -162,7 +162,7 @@
+ 	$(CC) $(SHFLAGS) -Wl,--output-def,$(@:.dll=.def) -o $@ $(OBJS) $(EXTRALIBS) $(AMREXTRALIBS)
+ 	-lib /machine:i386 /def:$(@:.dll=.def)
+ else
+-	$(CC) $(SHFLAGS) -o $@ $(OBJS) $(EXTRALIBS) $(AMREXTRALIBS)
++	$(CC) $(SHFLAGS) $(LDFLAGS) -o $@ $(OBJS) $(EXTRALIBS) $(AMREXTRALIBS)
+ endif
+ 
+ dsputil.o: dsputil.c dsputil.h
+@@ -230,8 +230,8 @@
+ 	install -s -m 755 $(SLIB) "$(prefix)"
+ else
  	install -d $(prefix)/lib
 -	install -s -m 755 $(SLIB) $(prefix)/lib/libavcodec-$(VERSION).so
 -	ln -sf libavcodec-$(VERSION).so $(prefix)/lib/libavcodec.so
-+	install -s -m 755 $(SLIB) $(prefix)/lib/libavcodec.so
++	install -s -m 755 $(SLIB) $(prefix)/lib/libavcodec.so.0
++	cd $(prefix)/lib && ln -s libavcodec.so.0 libavcodec.so
  	ldconfig || true
- 	mkdir -p $(prefix)/include/ffmpeg
- 	install -m 644 $(VPATH)/avcodec.h $(prefix)/include/ffmpeg/avcodec.h
+ endif
+ else

@@ -7,6 +7,7 @@
 
 PORTNAME=	ffmpeg
 PORTVERSION=	0.4.8
+PORTREVISION=	1
 CATEGORIES=	multimedia audio net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ffmpeg
@@ -18,9 +19,13 @@ USE_GETOPT_LONG=	yes
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-CONFIGURE_ARGS= --cc="${CC}" --prefix="${PREFIX}" \
+CONFIGURE_ARGS=	--cc="${CC}" --prefix="${PREFIX}" \
 		--make="${GMAKE}" --enable-shared \
-		--extra-libs="-lm -L${LOCALBASE}/lib"
+		--extra-ldflags="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
+		--extra-libs"-lm" \
+		--disable-debug
+MAKE_ENV+=	LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
+
 PLIST_SUB=	SHLIB_VERSION=${SHLIB_VERSION}
 INSTALLS_SHLIB=	yes
 
@@ -35,6 +40,7 @@ DOC_DOCFILES=	TODO \
 HEADER_FILES=	libavcodec/avcodec.h libavcodec/common.h \
 		libavcodec/dsputil.h
 LIB_FILES=	libavcodec/libavcodec.a libavformat/libavformat.a
+MAN1=		ffmpeg.1 ffplay.1 ffserver.1
 
 .include <bsd.port.pre.mk>
 
@@ -53,7 +59,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-bktr-patch-libavformat::Makefile
 ##
 ## SDL
 .if exists(${LOCALBASE}/lib/libSDL-1.1.so)
-#WITH_SDL=yes
+WITH_SDL=yes
 .endif
 ## freetype2
 .if exists(${LOCALBASE}/lib/libfreetype.so)
@@ -120,11 +126,15 @@ CONFIGURE_ARGS+=	--enable-mp3lame
 .endif
 ## optimization
 .ifdef(WITH_OPTIMIZED_CFLAGS)
-CONFIGURE_ARGS+=	--extra-cflags="${CFLAGS} -I${LOCALBASE}/include \
-				-O3 -ffast-math -fomit-frame-pointer"
+CONFIGURE_ARGS+=	--extra-cflags="-I${LOCALBASE}/include \
+			-I${X11BASE}/include \
+			-ffast-math -fomit-frame-pointer"
 .else
-CONFIGURE_ARGS+=	--extra-cflags="${CFLAGS} -I${LOCALBASE}/include"
+CONFIGURE_ARGS+=	--extra-cflags="-I${LOCALBASE}/include \
+			-I${X11BASE}/include" \
+			--disable-opts
 .endif
+
 ## vhook
 .ifndef(WITHOUT_VHOOK)
 PLIST_SUB+=	VHOOK=""
@@ -254,8 +264,9 @@ post-install:
 .for file in ${LIB_FILES}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/lib/${file:T}
 .endfor
+
 # add shared lib link
 	@${LN} -sf libavcodec.so \
-		${PREFIX}/lib/libavcodec.so.${SHLIB_VERSION}
+	${PREFIX}/lib/libavcodec.so.${SHLIB_VERSION}
 
 .include <bsd.port.post.mk>
