@@ -1,20 +1,28 @@
-*** Makefile.dist	Thu Sep 25 00:26:00 1997
---- Makefile	Thu Sep 25 00:47:01 1997
-***************
-*** 132,138 ****
-  
-  
-  bsd:
-! 	miniconf.sh $(CPP)
-  	${MAKE} ${MFLAGS} DEFINES='-DBSD' ${PROG}
-  
-  posix:
---- 134,140 ----
-  
-  
-  bsd:
-! 	./miniconf.sh $(CPP)
-  	${MAKE} ${MFLAGS} DEFINES='-DBSD' ${PROG}
-  
-  posix:
-  
+--- Makefile.orig	Sun Jan 29 16:39:19 1995
++++ Makefile	Sun Apr  2 11:16:03 2000
+@@ -19,7 +19,6 @@
+ 
+ CC=cc
+ CPP=$(CC) -E
+-CDEBUGFLAGS= -O
+ MAKE=make
+ RM=rm -f
+ 
+@@ -31,7 +30,7 @@
+ 	${OBJ_GB_BIG5} ${OBJ_UNICODE_GB} ${OBJ_UNICODE_BIG5}
+ 
+ DEFINES= 
+-CFLAGS=${CDEBUGFLAGS} ${DEFINES} ${MODULES_DEF} -I.
++CFLAGS+=${CDEBUGFLAGS} ${DEFINES} ${MODULES_DEF} -I.
+ 
+ PROG = hztty
+ LIBS=
+@@ -132,7 +131,7 @@
+ 
+ 
+ bsd:
+-	miniconf.sh $(CPP)
++	./miniconf.sh $(CPP)
+ 	${MAKE} ${MFLAGS} DEFINES='-DBSD' ${PROG}
+ 
+ posix:

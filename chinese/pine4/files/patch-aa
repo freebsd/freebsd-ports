@@ -1,5 +1,5 @@
---- imap/src/osdep/unix/Makefile.orig	Thu Sep 30 13:54:13 1999
-+++ imap/src/osdep/unix/Makefile	Thu Oct 14 10:53:41 1999
+--- imap/src/osdep/unix/Makefile.orig	Wed Nov 17 10:26:06 1999
++++ imap/src/osdep/unix/Makefile	Sun Apr  2 12:22:00 2000
 @@ -86,7 +86,7 @@
  # Commands possibly overriden by the individual port
  
@@ -18,3 +18,12 @@
  MAKE=make
  MV=mv
  RM=rm -rf
+@@ -194,7 +194,7 @@
+ 	 SPOOLDIR=/var \
+ 	 ACTIVEFILE=/usr/local/news/lib/active \
+ 	 RSHPATH=/usr/bin/rsh \
+-	 BASECFLAGS="-g -O -pipe -DNFSKLUDGE" \
++	 BASECFLAGS="-pipe -DNFSKLUDGE" \
+ 	 BASELDFLAGS="-lcrypt"
+ 
+ bsi:	# BSD/i386

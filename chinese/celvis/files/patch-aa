@@ -1,11 +1,11 @@
---- Makefile.orig	Wed May 15 12:09:50 1991
-+++ Makefile	Thu Aug 15 04:47:32 1996
+--- Makefile.orig	Thu May 16 03:09:50 1991
++++ Makefile	Sun Apr  2 11:44:47 2000
 @@ -22,7 +22,7 @@
  SRC5=	regexp.c regexp.h regsub.c sysdos.c system.c tinytcap.c tio.c tmp.c
  SRC6=	vars.c vcmd.c vi.c vi.h ctags.c ref.c virec.c wildcard.c shell.c
  EXTRA=
 -CFLAGS=	-O
-+CFLAGS=	-O -D_HAVE_PARAM_H
++CFLAGS+=	-D_HAVE_PARAM_H
  LIBS=	-ltermcap
  
  all: $(PROGS)

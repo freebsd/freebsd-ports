@@ -1,8 +1,15 @@
---- Makefile.orig	Tue Feb 23 22:21:39 1993
-+++ Makefile	Tue Feb  4 02:10:15 1997
-@@ -1,4 +1,4 @@
+--- Makefile.orig	Wed Feb 24 14:21:39 1993
++++ Makefile	Sun Apr  2 11:42:44 2000
+@@ -1,9 +1,9 @@
 -CC=cc
 +CC=cc -DCHINDICT=\"$(PREFIX)/share/chinese/gb/TONEPY.tit\"
  
  all: c2t
  
+ c2t: c2t.o
+-	$(CC) -O -o c2t c2t.o
++	$(CC) $(CFLAGS) -o c2t c2t.o
+ 
+ c2t.o: c2t.c
+-	$(CC) -O -c c2t.c
++	$(CC) $(CFLAGS) -c c2t.c

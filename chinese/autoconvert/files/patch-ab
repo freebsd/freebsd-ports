@@ -1,8 +1,8 @@
 --- hzconvert/Makefile.orig	Wed Jan  5 13:12:31 2000
-+++ hzconvert/Makefile	Sun Mar 12 18:39:46 2000
-@@ -1,12 +1,12 @@
++++ hzconvert/Makefile	Sun Apr  2 11:37:24 2000
+@@ -1,12 +1,11 @@
  CC=gcc -I../include
- CFLAGS=-O2
+-CFLAGS=-O2
  OBJS=b2g.o b2u.o g2u.o hz2gb.o b2g_tables.o b2u_tables.o g2u_tables.o io.o unicode.o judge.o
 +all:libhzconvert
  %.o:%c

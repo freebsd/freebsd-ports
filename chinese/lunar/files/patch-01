@@ -4,7 +4,7 @@
  # Makefile of LUNAR
  
 -CFLAGS= -O
-+CFLAGS= -O -DBITMAPFILE=\"$(BITMAPFILE)\"
++CFLAGS+= -DBITMAPFILE=\"$(BITMAPFILE)\"
 +
 +BITMAPFILE= $(PREFIX)/share/chinese/lunar.bitmap
  
