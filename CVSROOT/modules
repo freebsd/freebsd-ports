@@ -2849,7 +2849,6 @@ ion		ports/x11-wm/ion
 iostat		src/usr.sbin/iostat
 iozone		ports/benchmarks/iozone
 iozone21	ports/benchmarks/iozone21
-ip-tun		ports/net/ip-tun
 ip6_int		ports/net/ip6_int
 ip6fw		src/sbin/ip6fw
 ipa		ports/sysutils/ipa
