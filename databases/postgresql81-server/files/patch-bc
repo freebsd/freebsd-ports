@@ -1,0 +1,5 @@
+--- bin/pg_ctl/postmaster.opts.default.sample~	Mon Apr 17 05:45:17 2000
++++ bin/pg_ctl/postmaster.opts.default.sample	Tue May 23 02:46:30 2000
+@@ -1 +1 @@
+-
++-i -o "-F"

@@ -182,6 +182,9 @@ post-install:
 	@ ${ECHO_MSG} "Putting postgresql.jar in"
 	@ ${ECHO_MSG} "${PREFIX}/share/java/classes/postgresql.jar"
 	@ ${ECHO_MSG} "Add this to your CLASSPATH!"
+	@ ${ECHO_MSG} "ALSO NOTE: path inside jar file modified from 6.5.x:"
+	@ ${ECHO_MSG} "  'postgresql.*' -> 'org.postgresql.*'!"
+	@ ${ECHO_MSG} "You will need to modify you applications' props files."
 	@ ${ECHO_MSG} "---------------------------------------------------------"
 	@ ${CAT} ${PKGDIR}/PLIST.jdbc >> ${TMPPLIST}
 .if !defined(NOPORTDOCS)
