@@ -8114,6 +8114,7 @@ wmcalclock	ports/x11-clocks/wmcalclock
 wmcdplay	ports/audio/wmcdplay
 wmcliphist	ports/x11/wmcliphist
 wmclock		ports/x11-clocks/wmclock
+wmclockmon	ports/x11-clocks/wmclockmon
 wmcp		ports/misc/wmcp
 wmcpuload	ports/sysutils/wmcpuload
 wmcube		ports/sysutils/wmcube
