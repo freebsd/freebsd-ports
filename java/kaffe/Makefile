@@ -3,13 +3,14 @@
 # Date created:         10 February 1997
 # Whom:                 Mark Huizer <xaa@stack.nl>
 #
-# $Id: Makefile,v 1.17 1997/02/18 11:36:08 obrien Exp $
+# $Id: Makefile,v 1.18 1997/02/28 10:47:17 tg Exp $
 #
 
-DISTNAME=	kaffe-0.8.0
+DISTNAME=	kaffe-0.8.1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.sarc.city.ac.uk/pub/kaffe/
 EXTRACT_SUFX=	.tgz
+DISTFILES=	${DISTNAME}.tgz kaffe-0.8.1-package-biss-net.com.tgz
 
 MAINTAINER=	xaa@stack.nl
 
@@ -29,7 +30,7 @@ pre-install:
 
 post-install:
 	${MKDIR} ${PREFIX}/share/kaffe
-	${INSTALL_DATA} ${WRKSRC}/license.terms ${PREFIX}/share/kaffe
+	${INSTALL_DATA} ${WRKSRC}/ENVIRONMENT ${WRKSRC}/license.terms ${PREFIX}/share/kaffe
 	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
