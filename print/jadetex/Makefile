@@ -6,25 +6,26 @@
 #
 
 PORTNAME=		jadetex
-PORTVERSION=		3.6
+PORTVERSION=		3.11
 CATEGORIES=		print
-MASTER_SITES=		http://www.tug.org/applications/jadetex/
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	jadetex
 
 MAINTAINER=		nik
 
-BUILD_DEPENDS=		tex:${PORTSDIR}/print/teTeX
+BUILD_DEPENDS=		hugelatex:${PORTSDIR}/print/hugelatex
 LIB_DEPENDS=		png.4:${PORTSDIR}/graphics/png
 RUN_DEPENDS=		tex:${PORTSDIR}/print/teTeX
 
 MAKE_ENV=		TEXMFCNF=${FILESDIR}:${PREFIX}/share/texmf/web2c
-USE_ZIP=		yes
 
 WRKSRC=			${WRKDIR}/${PORTNAME}
 MESSAGE=		${WRKDIR}/pkg-message
 
 post-extract:
-	@${ECHO} all: default > ${WRKSRC}/Makefile.tmp
-	@${SED} -e "s/huge//g" ${WRKSRC}/Makefile >> ${WRKSRC}/Makefile.tmp
+	@${ECHO} all: betterdefault > ${WRKSRC}/Makefile.tmp
+	@${ECHO} betterdefault: jadetex.fmt pdfjadetex.fmt >> ${WRKSRC}/Makefile.tmp
+	@${CAT} ${WRKSRC}/Makefile >> ${WRKSRC}/Makefile.tmp
 	@${MV} ${WRKSRC}/Makefile.tmp ${WRKSRC}/Makefile
 
 do-install:
