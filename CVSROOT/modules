@@ -8885,6 +8885,7 @@ vecfem		ports/math/vecfem
 vectoroids	ports/games/vectoroids
 ved		ports/editors/ved
 veepee		ports/devel/veepee
+velocity	ports/x11-fm/velocity
 vera		ports/misc/vera
 vertex		ports/graphics/vertex
 vgb		ports/emulators/vgb
