@@ -8,6 +8,8 @@ bin/mkgmsh.awk
 %%GIDDIR%%/problemtypes/tochnog.gid/tochnog.cnd
 %%GIDDIR%%/problemtypes/tochnog.gid/tochnog.mat
 @dirrm %%GIDDIR%%/problemtypes/tochnog.gid
+@dirrm %%GIDDIR%%/problemtypes
+@dirrm %%GIDDIR%%
 %%PORTDOCS%%%%EXAMPLESDIR%%/absorp1.dat
 %%PORTDOCS%%%%EXAMPLESDIR%%/axisym1.dat
 %%PORTDOCS%%%%EXAMPLESDIR%%/axisym2.dat
@@ -212,5 +214,3 @@ bin/mkgmsh.awk
 %%PORTDOCS%%%%EXAMPLESDIR%%/vonmis2.dat
 %%PORTDOCS%%%%EXAMPLESDIR%%/wave1.dat
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
-@unexec rmdir %%GIDDIR%%/problemtypes 2>/dev/null || true
-@unexec rmdir %%GIDDIR%% 2>/dev/null || true
