@@ -17,6 +17,8 @@ LIB_DEPENDS=	gd.1:${PORTSDIR}/graphics/gd
 
 NO_LATEST_LINK=	yes
 
+.include <bsd.port.pre.mk>
+
 WEBALIZER_LANG?=	german
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
@@ -64,4 +66,4 @@ post-install:
 			${PREFIX}/etc/${PKGNAMEPREFIX}webalizer.conf-dist ; \
 	fi
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
