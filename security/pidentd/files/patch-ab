@@ -36,3 +36,22 @@
   	@echo "Please specify the type of system you wish to build for."
   	@echo "Valid systems are:"
   	@echo ""
+*** src/Makefile.ORIG	Fri Oct 14 17:17:36 1994
+--- src/Makefile	Sat Mar  4 22:50:09 1995
+***************
+*** 11,17 ****
+  
+  foo:
+  	@echo 'Nono! Don't type "make" in this directory, use the one above!'
+! 	
+  in.identd:	identd.o $(COBJS)   idecrypt itest
+  	$(CC) $(LDFLAGS) -o in.identd identd.o $(COBJS) $(LIBS)
+  	@mv in.identd ..
+--- 11,17 ----
+  
+  foo:
+  	@echo 'Nono! Don't type "make" in this directory, use the one above!'
+! 
+  in.identd:	identd.o $(COBJS)   idecrypt itest
+  	$(CC) $(LDFLAGS) -o in.identd identd.o $(COBJS) $(LIBS)
+  	@mv in.identd ..
