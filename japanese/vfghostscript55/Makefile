@@ -3,42 +3,39 @@
 # Date created:		23 Nov 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/12/06 11:27:33 asami Exp $
 #
 
-DISTNAME=	ghostscript4.03
+DISTNAME=	ghostscript-4.03
 PKGNAME=	jp-vfghostscript-4.03
-CATEGORIES+=	japanese print
-MASTER_SITES=	${MASTER_SITE_GNU} \
-		ftp://ftp.iis.u-tokyo.ac.jp/GNU/ \
-		ftp://ftp.ae.keio.ac.jp/pub/msdos/gnu/ghostscript/ \
+CATEGORIES=	japanese print
+MASTER_SITES=	ftp://ftp.cs.wisc.edu/ghost/aladdin/ \
 		ftp://i1nws2.fukui-u.ac.jp/pub/TeX/dvipr/ \
 		ftp://ftp.mei.co.jp/free/gnu/util/ghostscript/drivers/
+		ftp://freefall.freebsd.org/pub/FreeBSD/LOCAL_PORTS/ \
+DISTFILES=	${GS_SOURCES} ${GS_DRIVERS} ${GS_FONTS_STD} ${GS_FONTS_OTHER}
 
 MAINTAINER=	mita@jp.FreeBSD.org
 
+LIB_DEPENDS=	VFlib\\.2\\.:${PORTSDIR}/japanese/vflib
+
+EXTRACT_ONLY=	ghostscript-4.03.tar.gz
+WRKSRC=		${WRKDIR}/gs4.03
+MAKEFILE=	unix-gcc.mak
+MAKE_FLAGS=	prefix=${PREFIX} zlibc_=-lz CFLAGS="${CFLAGS}" -f
+MAN1=		gs.1
+
+CFLAGS+=	-DA4
+DOC_DIR=	${PREFIX}/share/ghostscript/4.03vflib/doc 
+PRINTER=	${WRKSRC}/jp-printers
 GS_SOURCES=	ghostscript-4.03.tar.gz
 GS_SOURCES+=	ghostscript-4.03gnu.tar.gz
 GS_DRIVERS=	gs4.03-vflib.tar.gz
 GS_DRIVERS+=	gdevlips4-1.0.1.tar.gz
 GS_DRIVERS+=	gdevbitps-1.0.tar.gz
 GS_DRIVERS+=	gdevmjc-0.7.tar.gz
-GS_FONTS_STD=	ghostscript-fonts-std-4.01.tar.gz	# didn't change
-GS_FONTS_OTHER=	ghostscript-fonts-other-4.01.tar.gz	# didn't change
-
-DISTFILES=	${GS_SOURCES} ${GS_DRIVERS} ${GS_FONTS_STD} ${GS_FONTS_OTHER}
-
-LIB_DEPENDS=	VFlib\\.2\\.:${PORTSDIR}/japanese/vflib
-
-EXTRACT_ONLY=	ghostscript-4.03.tar.gz
-
-WRKSRC=		${WRKDIR}/gs4.03
-MAKEFILE=	unix-gcc.mak
-CFLAGS+=	-DA4
-DOC_DIR=	${PREFIX}/share/ghostscript/4.03vflib/doc 
-PRINTER=	${WRKSRC}/jp-printers
-MAKE_FLAGS=	prefix=${PREFIX} zlibc_=-lz CFLAGS="${CFLAGS}" -f
-MAN1=		gs.1
+GS_FONTS_STD=	ghostscript-fonts-std-4.0.tar.gz
+GS_FONTS_OTHER=	ghostscript-fonts-other-3.0.tar.gz
 
 pre-extract:
 	@(cd ${PORTSDIR}/graphics/jpeg ; ${MAKE} extract)
@@ -85,9 +82,8 @@ pre-install:
 	@tar -C ${PREFIX}/share/ghostscript -xzf ${DISTDIR}/${GS_FONTS_STD}
 	@tar -C ${PREFIX}/share/ghostscript -xzf ${DISTDIR}/${GS_FONTS_OTHER}
 
-
 post-install:
-	@strip ${PREFIX}/bin/gs ;
+	@strip ${PREFIX}/bin/gs
 	@( \
 	  ${CP} ${PRINTER}/gdevbitps/gdevbitps.jis ${DOC_DIR} ; \
 	  ${CP} ${PRINTER}/gdevep82/gdevep82.jis ${DOC_DIR} ; \
