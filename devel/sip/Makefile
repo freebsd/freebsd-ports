@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.river-bank.demon.co.uk/software/
 
 MAINTAINER=	adsharma@home.com
 
-BUILD_DEPENDS=	${LOCALBASE}/include/python1.5/Python.h:${PORTSDIR}/lang/python
+BUILD_DEPENDS=	${LOCALBASE}/include/python1.5/Python.h:${PORTSDIR}/lang/python15
 
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
