@@ -1,16 +1,16 @@
 # New ports collection makefile for:	wmtz
 # Version required:		0.4
 # Date created:			24 Apr 1999
-# Whom:				Jim Mock <jim@phrantic.phear.net>
+# Whom:				Jim Mock <jim@FreeBSD.org>
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/30 06:00:14 taoka Exp $
+# $Id: Makefile,v 1.2 1999/06/19 18:24:30 cpiazza Exp $
 #
 
 DISTNAME=	wmtz-0.4
 CATEGORIES=	x11-clocks windowmaker afterstep
 MASTER_SITES=	http://www.algonet.se/~jlin/
 
-MAINTAINER=	jim@phrantic.phear.net
+MAINTAINER=	jim@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
@@ -19,18 +19,10 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/wmtz
 USE_X_PREFIX=	yes
 
 post-install:
-	@${ECHO} "		"
-	@${ECHO} "-----------------------------------------------------------"
-	@${ECHO} "===> Installing wmtzrc in ${PREFIX}/share/examples/wmtz"
-	@${ECHO} "===> Modify to your config and copy to ~/.wmtzrc"
-	@${ECHO} "-----------------------------------------------------------"
-	@${ECHO} "		"
+	@${ECHO} "===>   Installing wmtzrc in ${PREFIX}/share/examples/wmtz"
+	@${ECHO} "===>   Modify to your config and copy to ~/.wmtzrc"
 	@${MKDIR} ${PREFIX}/share/examples/wmtz && chmod a+rx ${PREFIX}/share/examples/wmtz
-	${INSTALL_DATA} ${WRKSRC}/wmtzrc ${PREFIX}/share/examples/wmtz
-	@${ECHO} "		"
-	@${ECHO} "-----------------------------------------------------------"
-	@${ECHO} "===> Run wmtz --help for usage instructions"
-	@${ECHO} "-----------------------------------------------------------"
-	@${ECHO} "		"
+	@${INSTALL_DATA} ${WRKSRC}/wmtzrc ${PREFIX}/share/examples/wmtz
+	@${ECHO} "===>   Run wmtz --help for usage instructions"
 
 .include <bsd.port.mk>
