@@ -1,5 +1,5 @@
---- dsp.c.orig	Sat Oct 21 15:40:29 1995
-+++ dsp.c	Sat Jan 27 15:24:31 2001
+--- dsp.c.orig	Thu Aug 22 20:51:34 2002
++++ dsp.c	Thu Aug 22 20:54:31 2002
 @@ -22,14 +22,14 @@
   *  linux_dsp.c - Support for the Linux DSP driver from the Voxware(C) Drivers.
   */
@@ -13,7 +13,7 @@
  #include <sys/types.h>
 -#include <linux/soundcard.h>
 -#include <bytesex.h>
-+#include <machine/soundcard.h>
++#include <sys/soundcard.h>
 +#include <machine/endian.h>
  #include "main.h"
  #include "dsp.h"
