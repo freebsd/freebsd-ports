@@ -33,4 +33,10 @@ BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
 .endif
 
+post-patch:
+.if ${PERL_LEVEL} < 500600
+	@${PERL} -pi -e 's/(?:use|no) warnings;?//; s/our (%\w+)/use vars qw(\1);\n\1/' \
+		${WRKSRC}/lib/DBD/mysql/GetInfo.pm
+.endif
+
 .include <bsd.port.post.mk>
