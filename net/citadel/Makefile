@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-ux-${PORTVERSION}
 
 MAINTAINER=	brian@shadowcom.net
 
+BROKEN=		"Does not install/package"
+
 LIB_DEPENDS=    gdbm:${PORTSDIR}/databases/gdbm
 
 WRKSRC=		${WRKDIR}/citadel
