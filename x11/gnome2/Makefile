@@ -38,7 +38,7 @@ RUN_DEPENDS=	${X11BASE}/libexec/cdplayer_applet2:${PORTSDIR}/x11/gnomeapplets2 \
 		${X11BASE}/share/themes/HighContrast/gtk-2.0/gtkrc:${PORTSDIR}/x11-toolkits/gnome-themes \
 		ggv:${PORTSDIR}/print/ggv2 \
 		acme:${PORTSDIR}/multimedia/acme \
-		gok:${PORTSDIR}/sysutils/gok \
+		gok:${PORTSDIR}/accessibility/gok \
 		gpdf:${PORTSDIR}/graphics/gpdf \
 		nautilus-cd-burner:${PORTSDIR}/sysutils/nautilus-cd-burner \
 		gcalctool:${PORTSDIR}/math/gcalctool \
@@ -46,7 +46,7 @@ RUN_DEPENDS=	${X11BASE}/libexec/cdplayer_applet2:${PORTSDIR}/x11/gnomeapplets2 \
 		zenity:${PORTSDIR}/x11/zenity \
 		gst-thumbnail:${PORTSDIR}/multimedia/nautilus-media \
 		${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera \
-		gnopernicus:${PORTSDIR}/x11/gnopernicus
+		gnopernicus:${PORTSDIR}/accessibility/gnopernicus
 
 NO_BUILD=	yes
 
