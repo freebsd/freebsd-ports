@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pancho
-PORTVERSION=	7.0.0
+PORTVERSION=	7.1.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.panchoproject.org/archives/pancho/
 DISTNAME=	pancho-v${PORTVERSION}
@@ -14,7 +14,8 @@ DISTNAME=	pancho-v${PORTVERSION}
 MAINTAINER=	Nicolas.Jombart@hsc-labs.com
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/SNMP.pm:${PORTSDIR}/net/p5-Net-SNMP \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Config/IniFiles.pm:${PORTSDIR}/devel/p5-Config-IniFiles
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Config/IniFiles.pm:${PORTSDIR}/devel/p5-Config-IniFiles \
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Parallel/ForkManager.pm:${PORTSDIR}/devel/p5-Parallel-ForkManager
 
 USE_PERL5=	YES
 NO_BUILD=	YES
