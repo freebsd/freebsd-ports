@@ -1,5 +1,7 @@
+@comment $FreeBSD$
 bin/W
 bin/altavista
+bin/amazon
 bin/appwatch
 bin/ask
 bin/austlii
@@ -21,6 +23,7 @@ bin/newscientist
 bin/pubmed
 bin/raging
 bin/rhyme
+bin/scaleplus
 bin/slashdot
 bin/stockquote
 bin/sundocs
