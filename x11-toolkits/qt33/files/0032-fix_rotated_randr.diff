@@ -1,0 +1,94 @@
+qt-bugs@ issue : N34454
+bugs.kde.org number : 67101
+applied: no
+author: Hamish Rodda <rodda@kde.org>
+
+Qt doesn't take screen rotation into account when determining desktop width
+and height
+
+Qt doesn't detect a change in desktop size when the rotation of the screen
+changes to be at right angles (90 and 270 degrees) to the normal rotation (0
+degrees). The xlib functions DisplayWidth / DisplayHeight and WidthOfScreen /
+HeightOfScreen do not take into account the rotation of the screen.
+
+This causes KDE not to reconfigure itself when the rotation of the screen is
+changed.
+
+This patch switches width and height of the desktop when the screen is rotated
+to 90 or 270 degrees.  I've only done this for the non-xinerama case, and only
+for QDesktopWidget.  I imagine that xinerama needs to have this change made
+too.
+
+Index: src/kernel/qapplication_x11.cpp
+===================================================================
+RCS file: /home/kde/qt-copy/src/kernel/qapplication_x11.cpp,v
+retrieving revision 1.95
+diff -u -p -r1.95 qapplication_x11.cpp
+--- src/kernel/qapplication_x11.cpp	20 Oct 2003 13:53:50 -0000	1.95
++++ src/kernel/qapplication_x11.cpp	8 Nov 2003 03:05:57 -0000
+@@ -3493,10 +3493,23 @@ int QApplication::x11ProcessEvent( XEven
+ 
+ 	// update the size for desktop widget
+ 	int scr = XRRRootToScreen( appDpy, event->xany.window );
++
++	// Determine if we're at right-angles & thus DisplayWidth/DisplayHeight should be switched
++	XRRScreenConfiguration* xrrconfig;
++	xrrconfig = XRRGetScreenInfo( appDpy, event->xany.window );
++	Rotation rotation;
++	XRRConfigCurrentConfiguration( xrrconfig, &rotation );
++	XRRFreeScreenConfigInfo( xrrconfig );
++
+ 	QWidget *w = desktop()->screen( scr );
+ 	QSize oldSize( w->size() );
+-	w->crect.setWidth( DisplayWidth( appDpy, scr ) );
+-        w->crect.setHeight( DisplayHeight( appDpy, scr ) );
++	if (rotation & (RR_Rotate_90 | RR_Rotate_270)) {
++	    w->crect.setWidth( DisplayHeight( appDpy, scr ) );
++	    w->crect.setHeight( DisplayWidth( appDpy, scr ) );
++	} else {
++	    w->crect.setWidth( DisplayWidth( appDpy, scr ) );
++	    w->crect.setHeight( DisplayHeight( appDpy, scr ) );
++	}
+ 	if ( w->size() != oldSize ) {
+ 	    QResizeEvent e( w->size(), oldSize );
+ 	    QApplication::sendEvent( w, &e );
+Index: src/kernel/qdesktopwidget_x11.cpp
+===================================================================
+RCS file: /home/kde/qt-copy/src/kernel/qdesktopwidget_x11.cpp,v
+retrieving revision 1.19
+diff -u -p -r1.19 qdesktopwidget_x11.cpp
+--- src/kernel/qdesktopwidget_x11.cpp	16 May 2003 13:02:39 -0000	1.19
++++ src/kernel/qdesktopwidget_x11.cpp	8 Nov 2003 03:05:58 -0000
+@@ -44,6 +44,9 @@ extern int qt_x11_create_desktop_on_scre
+ // defined in qapplication_x11.cpp
+ extern Atom qt_net_workarea;
+ extern bool qt_net_supports(Atom atom);
++#ifndef QT_NO_XRANDR
++extern bool qt_use_xrandr;
++#endif
+ 
+ // function to update the workarea of the screen
+ static bool qt_desktopwidget_workarea_dirty = TRUE;
+@@ -154,6 +157,22 @@ void QDesktopWidgetPrivate::init()
+ 		y = 0;
+ 		w = WidthOfScreen(ScreenOfDisplay(QPaintDevice::x11AppDisplay(), i));
+ 		h = HeightOfScreen(ScreenOfDisplay(QPaintDevice::x11AppDisplay(), i));
++
++#ifndef QT_NO_XRANDR
++		if (qt_use_xrandr) {
++		    XRRScreenConfiguration* xrrconfig;
++		    xrrconfig = XRRGetScreenInfo(QPaintDevice::x11AppDisplay(), QPaintDevice::x11AppRootWindow( i ));
++		    Rotation rotation;
++		    XRRConfigCurrentConfiguration(xrrconfig, &rotation);
++		    XRRFreeScreenConfigInfo(xrrconfig);
++
++		    if (rotation & (RR_Rotate_90 | RR_Rotate_270)) {
++			int tmp = h;
++			h = w;
++			w = tmp;
++		    }
++		}
++#endif
+ 	    }
+ 
+ 	rects[i].setRect(x, y, w, h);

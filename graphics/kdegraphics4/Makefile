@@ -8,7 +8,6 @@
 
 PORTNAME=	kdegraphics
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	2
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -17,12 +16,14 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Graphics utilities for the KDE3 integrated X11 desktop
 
+BUILD_DEPENDS=	kpsewhich:${PORTSDIR}/print/teTeX-base
 LIB_DEPENDS=	art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl2 \
 		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
 		freetype:${PORTSDIR}/print/freetype2 \
 		fribidi:${PORTSDIR}/converters/fribidi \
 		glut:${PORTSDIR}/graphics/libglut \
-		lcms:${PORTSDIR}/graphics/lcms
+		lcms:${PORTSDIR}/graphics/lcms \
+		paper:${PORTSDIR}/print/libpaper
 RUN_DEPENDS=	pdfinfo:${PORTSDIR}/graphics/xpdf
 
 CONFLICTS=	kolourpaint-[0-9]*
@@ -35,7 +36,6 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 WANT_GNOME=	yes
 USE_GHOSTSCRIPT=yes
-_NO_KDE_CLOSURE=yes
 
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3

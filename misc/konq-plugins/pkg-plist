@@ -6,10 +6,12 @@ lib/kde3/kcm_kuick.la
 lib/kde3/kcm_kuick.so
 lib/kde3/konq_sidebarnews.la
 lib/kde3/konq_sidebarnews.so
-lib/kde3/konq_smbmounterplugin.la
-lib/kde3/konq_smbmounterplugin.so
 lib/kde3/konqsidebar_mediaplayer.la
 lib/kde3/konqsidebar_mediaplayer.so
+lib/kde3/libakregatorkonqfeedicon.la
+lib/kde3/libakregatorkonqfeedicon.so
+lib/kde3/libakregatorkonqplugin.la
+lib/kde3/libakregatorkonqplugin.so
 lib/kde3/libarkplugin.la
 lib/kde3/libarkplugin.so
 lib/kde3/libautorefresh.la
@@ -44,44 +46,51 @@ lib/kde3/libwebarchiverplugin.la
 lib/kde3/libwebarchiverplugin.so
 lib/kde3/webarchivethumbnail.la
 lib/kde3/webarchivethumbnail.so
-share/applications/kdeaddons-konq-plugins-3.3.2
+share/applications/kdeaddons-konq-plugins-3.4.0
 share/applnk/.hidden/arkplugin.desktop
-share/applnk/.hidden/babelfishplugin.desktop
-share/applnk/.hidden/crashesplugin.desktop
-share/applnk/.hidden/dirfilterplugin.desktop
-share/applnk/.hidden/domtreeviewerplugin.desktop
 share/applnk/.hidden/kcmkuick.desktop
-share/applnk/.hidden/khtmlsettingsplugin.desktop
 share/applnk/.hidden/kimgalleryplugin.desktop
 share/applnk/.hidden/kuickplugin.desktop
 share/applnk/.hidden/mediaplayerplugin.desktop
-share/applnk/.hidden/minitoolsplugin.desktop
-share/applnk/.hidden/searchbarplugin.desktop
-share/applnk/.hidden/smbmounterplugin.desktop
-share/applnk/.hidden/uachangerplugin.desktop
-share/applnk/.hidden/validatorsplugin.desktop
-share/applnk/.hidden/webarchiverplugin.desktop
+share/apps/akregator/pics/rss.png
+share/apps/domtreeviewer/domtreeviewerui.rc
 share/apps/fsview/fsview_part.rc
+share/apps/khtml/kpartplugins/akregator_konqfeedicon.desktop
+share/apps/khtml/kpartplugins/akregator_konqfeedicon.rc
+share/apps/khtml/kpartplugins/autorefresh.desktop
 share/apps/khtml/kpartplugins/autorefresh.rc
+share/apps/khtml/kpartplugins/babelfishplugin.desktop
+share/apps/khtml/kpartplugins/crashesplugin.desktop
 share/apps/khtml/kpartplugins/crashesplugin.rc
+share/apps/khtml/kpartplugins/domtreeviewerplugin.desktop
+share/apps/khtml/kpartplugins/khtmlsettingsplugin.desktop
 share/apps/khtml/kpartplugins/khtmlsettingsplugin.rc
+share/apps/khtml/kpartplugins/minitoolsplugin.desktop
 share/apps/khtml/kpartplugins/minitoolsplugin.rc
+share/apps/khtml/kpartplugins/plugin_babelfish.desktop
 share/apps/khtml/kpartplugins/plugin_babelfish.rc
+share/apps/khtml/kpartplugins/plugin_domtreeviewer.desktop
 share/apps/khtml/kpartplugins/plugin_domtreeviewer.rc
+share/apps/khtml/kpartplugins/plugin_rellinks.desktop
 share/apps/khtml/kpartplugins/plugin_rellinks.rc
+share/apps/khtml/kpartplugins/plugin_validators.desktop
 share/apps/khtml/kpartplugins/plugin_validators.rc
+share/apps/khtml/kpartplugins/plugin_webarchiver.desktop
 share/apps/khtml/kpartplugins/plugin_webarchiver.rc
+share/apps/khtml/kpartplugins/uachangerplugin.desktop
 share/apps/khtml/kpartplugins/uachangerplugin.rc
+share/apps/khtml/kpartplugins/validatorsplugin.desktop
+share/apps/khtml/kpartplugins/webarchiverplugin.desktop
 share/apps/konqiconview/kpartplugins/dirfilterplugin.rc
 share/apps/konqiconview/kpartplugins/kimgalleryplugin.rc
-share/apps/konqiconview/kpartplugins/smbmounterplugin.rc
 share/apps/konqlistview/kpartplugins/dirfilterplugin.rc
 share/apps/konqlistview/kpartplugins/kimgalleryplugin.rc
-share/apps/konqlistview/kpartplugins/smbmounterplugin.rc
 share/apps/konqsidebartng/add/mplayer_add.desktop
 share/apps/konqsidebartng/add/news_add.desktop
 share/apps/konqueror/icons/crystalsvg/16x16/actions/google.png
+share/apps/konqueror/kpartplugins/searchbar.desktop
 share/apps/konqueror/kpartplugins/searchbar.rc
+share/apps/konqueror/kpartplugins/searchbarplugin.desktop
 share/apps/konqueror/servicemenus/imageconverter.desktop
 share/apps/konqueror/servicemenus/jpegorient.desktop
 share/config.kcfg/konq_sidebarnews.kcfg
@@ -150,15 +159,14 @@ share/icons/crystalsvg/22x22/actions/validators.png
 share/icons/crystalsvg/22x22/actions/webarchiver.png
 share/icons/crystalsvg/22x22/apps/konqsidebar_mediaplayer.png
 share/icons/crystalsvg/32x32/apps/konqsidebar_mediaplayer.png
-share/icons/crystalsvg/32x32/apps/konqsidebar_news.png
 share/icons/crystalsvg/48x48/apps/konqsidebar_mediaplayer.png
-share/icons/crystalsvg/48x48/apps/konqsidebar_news.png
 share/icons/hicolor/22x22/apps/fsview.png
 share/icons/hicolor/32x32/apps/fsview.png
 share/icons/locolor/16x16/apps/autorefresh.png
 share/icons/locolor/32x32/apps/konqsidebar_mediaplayer.png
-share/mimelnk/application/x-webarchive.desktop
+share/services/akregator_konqplugin.desktop
 share/services/ark_plugin.desktop
+share/services/dirfilterplugin.desktop
 share/services/fsview_part.desktop
 share/services/kuick_plugin.desktop
 share/services/webarchivethumbnail.desktop
@@ -177,5 +185,7 @@ share/services/webarchivethumbnail.desktop
 @dirrm share/doc/HTML/en/konq-plugins/babel
 @dirrm share/doc/HTML/en/konq-plugins
 @dirrm share/apps/konqueror/kpartplugins
-@dirrm share/apps/khtml/kpartplugins
 @dirrm share/apps/fsview
+@dirrm share/apps/domtreeviewer
+@dirrm share/apps/akregator/pics
+@dirrm share/apps/akregator

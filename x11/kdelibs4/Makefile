@@ -8,7 +8,6 @@
 
 PORTNAME=	kdelibs
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	6
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -25,19 +24,20 @@ LIB_DEPENDS=	IlmImf:${PORTSDIR}/graphics/OpenEXR \
 		artsc.0:${PORTSDIR}/audio/arts \
 		aspell:${PORTSDIR}/textproc/aspell \
 		fam.0:${PORTSDIR}/devel/fam \
+		dns_sd:${PORTSDIR}/net/mDNSResponder \
 		idn:${PORTSDIR}/devel/libidn \
 		jasper:${PORTSDIR}/graphics/jasper \
+		pcre:${PORTSDIR}/devel/pcre \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
-		xslt.2:${PORTSDIR}/textproc/libxslt \
-		pcre.0:${PORTSDIR}/devel/pcre
+		xslt.2:${PORTSDIR}/textproc/libxslt
 RUN_DEPENDS=	${FONTSCALE}:${X_FONTS_TTF_PORT} \
 		${FONTENCOD}:${X_FONTS_ENCODINGS_PORT}
 
 .if ${PKGNAMESUFFIX} == -nocups
-CONFLICTS+=	kdebase-3.[0-1] kdebase-3.0.* kdebase-3.1.* kdepim-3.2.*
+CONFLICTS+=	kdeartwork-3.2* kdebase-3.[0-3]* kdepim-3.2*
 .else
-CONFLICTS+=	kdebase-3.[0-1] kdebase-3.0.* kdebase-3.1.* kdelibs-nocups-[0-9]* kdepim-3.2.*
+CONFLICTS+=	kdeartwork-3.2* kdebase-3.[0-3]* kdelibs-nocups-[0-9]* kdepim-3.2*
 LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
 .endif
 
@@ -50,7 +50,6 @@ USE_OPENLDAP=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-_NO_KDE_CLOSURE=yes
 
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
@@ -79,6 +78,7 @@ pre-configure:
 
 post-configure:
 	${TOUCH} ${WRKSRC}/dcop/dcop-path.h.in
+	${TOUCH} ${WRKSRC}/kdecore/kdemacros.h.in
 	${TOUCH} ${WRKSRC}/kio/kssl/ksslconfig.h.in
 
 post-install:

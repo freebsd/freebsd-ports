@@ -42,7 +42,5 @@ share/locale/xh/LC_MESSAGES/olefilterswinword97filter.mo
 share/locale/xh/LC_MESSAGES/thesaurus_tool.mo
 share/locale/xh/LC_MESSAGES/xsltexportfilter.mo
 share/locale/xh/LC_MESSAGES/xsltimportfilter.mo
-@dirrm share/locale/xh/LC_MESSAGES
-@dirrm share/locale/xh
 @dirrm share/doc/HTML/xh/kword
 @dirrm share/doc/HTML/xh/kugar

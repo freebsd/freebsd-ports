@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	arts
-PORTVERSION=	1.3.2
-PORTREVISION=	1
+PORTVERSION=	1.4.0
 PORTEPOCH=	1
 CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_KDE}
@@ -33,7 +32,6 @@ INSTALLS_SHLIB=	yes
 QTCPPFLAGS+=	-L${LOCALBASE}/lib
 USE_REINPLACE=	yes
 DO_NOT_COMPILE+=gmcop
-_NO_KDE_CLOSURE=yes
 _NO_KDE_FINAL=	yes
 
 CFLAGS+=	-DHAVE_VASPRINTF
@@ -47,6 +45,10 @@ OPTIONS=	ESD "Enable esound support" off \
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
+
+.if (${OSVERSION} < 500000 ) || (${OSVERSION} > 502102 )
+LIB_DEPENDS+=	jack:${PORTSDIR}/audio/jack
+.endif
 
 .if defined(WITH_ESD)
 USE_GNOME+=	esound
@@ -73,5 +75,9 @@ pre-configure:
 		-e 's|ac_cv_lib_audio_AuOpenServer=yes|ac_cv_lib_audio_AuOpenServer=no|g' \
 			${WRKSRC}/configure
 .endif
+
+post-configure:
+	${TOUCH} ${WRKSRC}/mcop/arts_export.h.in
+	${TOUCH} ${WRKSRC}/artsc/artsc_export.h.in
 
 .include <bsd.port.post.mk>

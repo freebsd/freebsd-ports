@@ -1,0 +1,189 @@
+qt-bugs@ issue : 25122
+applied: no
+author: Lubos Lunak <l.lunak@kde.org>
+
+ Hello,
+ 
+ for example: Open Konqueror window, showing some files. Start dragging one 
+ desktop icon. If you press/release Ctrl, there'll be a '+' attached to the 
+ icon, showing the DND operation. Now, while still doing DND, make the 
+ Konqueror window active (Alt+Tab with KDE-3.1.2+, hover over its taskbar 
+ entry, Ctrl+Fn to switch to a different virtual desktop, etc.). As soon as 
+ the app performing DND is not the active application, and the mouse is not 
+ moving, pressing/releasing Ctrl doesn't do anything, the state only updates 
+ when the mouse is moved.
+ 
+ This is caused by the fact that Qt has only pointer grab when doing DND, but 
+ doesn't have keyboard grab. I actually consider this a good thing, because 
+ the only keys important for DND are modifiers, and they come together with 
+ pointer events, and not having keyboard grab allows using keyboard shortcuts 
+ like Alt+Tab while DND. However, when the mouse is not moved, and only a 
+ modifier key is pressed/released, the app won't get any mouse event, and 
+ won't also get the keyboard event.
+
+ The attached patch changes Qt to explicitly check the modifiers state using 
+ XQueryPointer() if there's wasn't recently any mouse/keyboard event, which 
+ ensures the state is updated even in the situation described above.
+
+--- src/kernel/qapplication_x11.cpp.sav	2003-06-21 12:31:35.000000000 +0200
++++ src/kernel/qapplication_x11.cpp	2003-06-21 12:35:44.000000000 +0200
+@@ -4053,7 +4053,7 @@ void QApplication::closePopup( QWidget *
+ // Keyboard event translation
+ //
+ 
+-static int translateButtonState( int s )
++int qt_x11_translateButtonState( int s )
+ {
+     int bst = 0;
+     if ( s & Button1Mask )
+@@ -4119,7 +4119,7 @@ bool QETWidget::translateMouseEvent( con
+ 	pos.ry() = lastMotion.y;
+ 	globalPos.rx() = lastMotion.x_root;
+ 	globalPos.ry() = lastMotion.y_root;
+-	state = translateButtonState( lastMotion.state );
++	state = qt_x11_translateButtonState( lastMotion.state );
+ 	if ( qt_button_down && (state & (LeftButton |
+ 					 MidButton |
+ 					 RightButton ) ) == 0 )
+@@ -4143,7 +4143,7 @@ bool QETWidget::translateMouseEvent( con
+ 	pos.ry() = xevent->xcrossing.y;
+ 	globalPos.rx() = xevent->xcrossing.x_root;
+ 	globalPos.ry() = xevent->xcrossing.y_root;
+-	state = translateButtonState( xevent->xcrossing.state );
++	state = qt_x11_translateButtonState( xevent->xcrossing.state );
+ 	if ( qt_button_down && (state & (LeftButton |
+ 					 MidButton |
+ 					 RightButton ) ) == 0 )
+@@ -4155,7 +4155,7 @@ bool QETWidget::translateMouseEvent( con
+ 	pos.ry() = event->xbutton.y;
+ 	globalPos.rx() = event->xbutton.x_root;
+ 	globalPos.ry() = event->xbutton.y_root;
+-	state = translateButtonState( event->xbutton.state );
++	state = qt_x11_translateButtonState( event->xbutton.state );
+ 	switch ( event->xbutton.button ) {
+ 	case Button1: button = LeftButton; break;
+ 	case Button2: button = MidButton; break;
+@@ -4950,7 +4950,7 @@ bool QETWidget::translateKeyEventInterna
+     XKeyEvent xkeyevent = event->xkey;
+ 
+     // save the modifier state, we will use the keystate uint later by passing
+-    // it to translateButtonState
++    // it to qt_x11_translateButtonState
+     uint keystate = event->xkey.state;
+     // remove the modifiers where mode_switch exists... HPUX machines seem
+     // to have alt *AND* mode_switch both in Mod1Mask, which causes
+@@ -5064,7 +5064,7 @@ bool QETWidget::translateKeyEventInterna
+     }
+ #endif // !QT_NO_XIM
+ 
+-    state = translateButtonState( keystate );
++    state = qt_x11_translateButtonState( keystate );
+ 
+     static int directionKeyEvent = 0;
+     if ( qt_use_rtl_extensions && type == QEvent::KeyRelease ) {
+--- src/kernel/qdnd_x11.cpp.sav	2003-06-30 15:26:42.000000000 +0200
++++ src/kernel/qdnd_x11.cpp	2003-06-30 15:32:23.000000000 +0200
+@@ -114,6 +114,8 @@ Atom qt_xdnd_finished;
+ Atom qt_xdnd_type_list;
+ const int qt_xdnd_version = 4;
+ 
++extern int qt_x11_translateButtonState( int s );
++
+ // Actions
+ //
+ // The Xdnd spec allows for user-defined actions. This could be implemented
+@@ -198,6 +200,8 @@ static Atom qt_xdnd_source_current_time;
+ static int qt_xdnd_current_screen = -1;
+ // state of dragging... true if dragging, false if not
+ bool qt_xdnd_dragging = FALSE;
++// need to check state of keyboard modifiers
++static bool need_modifiers_check = FALSE;
+ 
+ // dict of payload data, sorted by type atom
+ static QIntDict<QByteArray> * qt_xdnd_target_data = 0;
+@@ -879,8 +883,20 @@ void qt_handle_xdnd_finished( QWidget *,
+ 
+ void QDragManager::timerEvent( QTimerEvent* e )
+ {
+-    if ( e->timerId() == heartbeat && qt_xdnd_source_sameanswer.isNull() )
+-	move( QCursor::pos() );
++    if ( e->timerId() == heartbeat ) {
++        if( need_modifiers_check ) {
++            Window root, child;
++            int root_x, root_y, win_x, win_y;
++            unsigned int mask;
++            XQueryPointer( qt_xdisplay(), qt_xrootwin( qt_xdnd_current_screen ),
++                &root, &child, &root_x, &root_y, &win_x, &win_y, &mask );
++            if( updateMode( (ButtonState)qt_x11_translateButtonState( mask )))
++                qt_xdnd_source_sameanswer = QRect(); // force move
++        }
++        need_modifiers_check = TRUE;
++        if( qt_xdnd_source_sameanswer.isNull() )
++	    move( QCursor::pos() );
++    }
+ }
+ 
+ static bool qt_xdnd_was_move = false;
+@@ -948,6 +964,7 @@ bool QDragManager::eventFilter( QObject 
+ 	    updateMode(me->stateAfter());
+ 	    move( me->globalPos() );
+ 	}
++        need_modifiers_check = FALSE;
+ 	return TRUE;
+     } else if ( e->type() == QEvent::MouseButtonRelease ) {
+ 	qApp->removeEventFilter( this );
+@@ -986,9 +1003,11 @@ bool QDragManager::eventFilter( QObject 
+ 	    beingCancelled = FALSE;
+ 	    qApp->exit_loop();
+ 	} else {
+-	    updateMode(ke->stateAfter());
+-	    qt_xdnd_source_sameanswer = QRect(); // force move
+-	    move( QCursor::pos() );
++	    if( updateMode(ke->stateAfter())) {
++	        qt_xdnd_source_sameanswer = QRect(); // force move
++	        move( QCursor::pos() );
++            }
++            need_modifiers_check = FALSE;
+ 	}
+ 	return TRUE; // Eat all key events
+     }
+@@ -1014,10 +1033,10 @@ bool QDragManager::eventFilter( QObject 
+ 
+ 
+ static Qt::ButtonState oldstate;
+-void QDragManager::updateMode( ButtonState newstate )
++bool QDragManager::updateMode( ButtonState newstate )
+ {
+     if ( newstate == oldstate )
+-	return;
++	return false;
+     const int both = ShiftButton|ControlButton;
+     if ( (newstate & both) == both ) {
+ 	global_requested_action = QDropEvent::Link;
+@@ -1041,6 +1060,7 @@ void QDragManager::updateMode( ButtonSta
+ 	}
+     }
+     oldstate = newstate;
++    return true;
+ }
+ 
+ 
+@@ -1707,6 +1727,7 @@ bool QDragManager::drag( QDragObject * o
+     qt_xdnd_source_sameanswer = QRect();
+     move(QCursor::pos());
+     heartbeat = startTimer(200);
++    need_modifiers_check = FALSE;
+ 
+ #ifndef QT_NO_CURSOR
+     qApp->setOverrideCursor( arrowCursor );
+--- src/kernel/qdragobject.h.sav	2003-05-19 22:34:43.000000000 +0200
++++ src/kernel/qdragobject.h	2001-01-01 01:01:00.000000000 +0100
+@@ -248,7 +248,7 @@ private:
+ 
+ private:
+     QDragObject * object;
+-    void updateMode( ButtonState newstate );
++    bool updateMode( ButtonState newstate );
+     void updateCursor();
+ 
+     QWidget * dragSource;

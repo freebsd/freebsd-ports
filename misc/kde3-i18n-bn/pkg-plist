@@ -130,7 +130,6 @@ share/locale/bn/LC_MESSAGES/konsole.mo
 share/locale/bn/LC_MESSAGES/kpartapp.mo
 share/locale/bn/LC_MESSAGES/kpersonalizer.mo
 share/locale/bn/LC_MESSAGES/kreadconfig.mo
-share/locale/bn/LC_MESSAGES/krec.mo
 share/locale/bn/LC_MESSAGES/kreversi.mo
 share/locale/bn/LC_MESSAGES/krunapplet.mo
 share/locale/bn/LC_MESSAGES/kscreensaver.mo
@@ -157,11 +156,6 @@ share/locale/bn/LC_MESSAGES/kturtle.mo
 share/locale/bn/LC_MESSAGES/kverbos.mo
 share/locale/bn/LC_MESSAGES/kvoctrain.mo
 share/locale/bn/LC_MESSAGES/kwin.mo
-share/locale/bn/LC_MESSAGES/kwin_b2_config.mo
-share/locale/bn/LC_MESSAGES/kwin_default_config.mo
-share/locale/bn/LC_MESSAGES/kwin_keramik_config.mo
-share/locale/bn/LC_MESSAGES/kwin_modernsys_config.mo
-share/locale/bn/LC_MESSAGES/kwin_quartz_config.mo
 share/locale/bn/LC_MESSAGES/kwordquiz.mo
 share/locale/bn/LC_MESSAGES/kwriteconfig.mo
 share/locale/bn/LC_MESSAGES/kxkb.mo

@@ -1,0 +1,56 @@
+qt-bugs@ issue : 38794
+bugs.kde.org number : 69519
+applied: no
+author: Lubos Lunak <l.lunak@kde.org>
+
+ Hello,
+ 
+please consider applying the attached patch. It changes XDND handling code to 
+put the drop timestamp in the right field in the XdndDrop message according 
+to http://www.newplanetsoftware.com/xdnd/ . I'm not quite sure why the code 
+has the field moved by one, and puts 1<<24 in the flags, but I see it has a 
+todo mark next to it. The last snippet of the patch changes it to match the 
+XDND spec. I tested briefly with Gtk, Mozilla and OOo, and they still work 
+with the patch.
+
+The rest of the patch is for fixing part of 
+http://bugs.kde.org/show_bug.cgi?id=69519, when the user drags some data to 
+the desktop, and desktop in response popups a dialog asking for filename. 
+Without the X user timestamp (qt-bugs@ issue 24923) being updated after the 
+drop, KWin's focus stealing prevention will refuse to activate the dialog. As 
+the XdndDrop message is kind of an user action too, the timestamp should be 
+updated.
+
+--- src/kernel/qdnd_x11.cpp.sav	2004-01-05 19:18:33.000000000 +0100
++++ src/kernel/qdnd_x11.cpp	2004-01-08 19:08:52.000000000 +0100
+@@ -81,6 +81,7 @@ extern void qt_leave_modal( QWidget *wid
+ extern Window qt_x11_findClientWindow( Window, Atom, bool );
+ extern Atom qt_wm_state;
+ extern Time qt_x_time;
++extern Time qt_x_user_time;
+ 
+ // this stuff is copied from qclb_x11.cpp
+ 
+@@ -834,6 +835,9 @@ void qt_handle_xdnd_drop( QWidget *, con
+ 	//       l[0], qt_xdnd_dragsource_xid );
+ 	return;
+     }
++    
++    if( l[2] != 0 )
++        qt_x_user_time = l[2];
+     if ( qt_xdnd_source_object )
+ 	qt_xdnd_source_object->setTarget( qt_xdnd_current_widget );
+ 
+@@ -1366,9 +1370,9 @@ void QDragManager::drop()
+     drop.format = 32;
+     drop.message_type = qt_xdnd_drop;
+     drop.data.l[0] = object->source()->winId();
+-    drop.data.l[1] = 1 << 24; // flags
+-    drop.data.l[2] = 0; // ###
+-    drop.data.l[3] = qt_x_time;
++    drop.data.l[1] = 0; // flags
++    drop.data.l[2] = qt_x_time;
++    drop.data.l[3] = 0;
+     drop.data.l[4] = 0;
+ 
+     QWidget * w = QWidget::find( qt_xdnd_current_proxy_target );

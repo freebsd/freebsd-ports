@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.usermode.org/code/
 MAINTAINER=	david@usermode.org
 COMMENT=	An original Qt/KDE widget style
 
+CONFLICTS=	kdeartwork-3.4.*
+
 USE_KDEBASE_VER=3
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

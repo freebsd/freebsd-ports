@@ -11,12 +11,14 @@ share/applnk/.hidden/kcmreslisa.desktop
 share/apps/konqsidebartng/virtual_folders/services/lisa.desktop
 share/apps/konqueror/dirtree/remote/lan.desktop
 share/apps/lisa/README
+share/apps/remoteview/lan.desktop
 share/doc/HTML/en/lisa/common
 share/doc/HTML/en/lisa/index.cache.bz2
 share/doc/HTML/en/lisa/index.docbook
 share/services/lan.protocol
 share/services/rlan.protocol
 @dirrm share/doc/HTML/en/lisa
+@dirrm share/apps/remoteview
 @dirrm share/apps/lisa
 @dirrm share/apps/konqueror/dirtree/remote
 @dirrm share/apps/konqueror/dirtree

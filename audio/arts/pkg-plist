@@ -7,6 +7,7 @@ bin/artsrec
 bin/artsshell
 bin/mcopidl
 include/arts/anyref.h
+include/arts/arts_export.h
 include/arts/artsflow.h
 include/arts/artsflow.idl
 include/arts/artsversion.h
@@ -86,6 +87,7 @@ include/arts/unixconnection.h
 include/arts/unixserver.h
 include/arts/weakreference.h
 include/artsc/artsc.h
+include/artsc/artsc_export.h
 lib/libartsc.la
 lib/libartsc.so
 lib/libartsc.so.0

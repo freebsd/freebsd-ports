@@ -1,0 +1,50 @@
+qt-bugs@ issue : N55198
+bugs.kde.org number : 61829
+applied: no
+author: Brad Hards <bradh@frogmouth.net>
+
+This patch fixes a bug report that was logged against KDE for not
+handling gamma correctly (http://bugs.kde.org/show_bug.cgi?id=61829).
+
+Using the example/showimg/showimg example in qt-3.3, the two test 
+case images (linked in the original bug report) look the same.
+That isn't the case with a non-Qt based application, such as Mozilla.
+
+The gamma-yes.png file should look a lot lighter in the blue section.
+
+The problem is in src/kernel/qpngio.cpp::setup_qt()
+    if ( screen_gamma != 0.0 && png_get_valid(png_ptr, info_ptr,PNG_INFO_gAMA) ) {
+        double file_gamma;
+        png_get_gAMA(png_ptr, info_ptr, &file_gamma);
+        png_set_gamma( png_ptr, screen_gamma, file_gamma );
+    }
+which is wrong, because file gamma needs to be handled whether or not 
+there is a non-default screen gamma value.
+
+
+--- src/kernel/qpngio.cpp	2 Mar 2004 12:50:32 -0000	1.55
++++ src/kernel/qpngio.cpp	25 Aug 2004 08:44:01 -0000
+@@ -109,12 +109,20 @@ void CALLBACK_CALL_TYPE qpiw_flush_fn( p
+ 
+ static
+ void setup_qt( QImage& image, png_structp png_ptr, png_infop info_ptr, float screen_gamma=0.0 )
+ {
+-    if ( screen_gamma != 0.0 && png_get_valid(png_ptr, info_ptr, PNG_INFO_gAMA) ) {
++    if ( 0.0 == screen_gamma )
++	// PNG docs say this is a good guess for a PC monitor
++        // in a dark room
++	screen_gamma = 2.2;
++    if ( png_get_valid(png_ptr, info_ptr, PNG_INFO_gAMA) ) {
++	// the file has a gAMA attribute
+ 	double file_gamma;
+-	png_get_gAMA(png_ptr, info_ptr, &file_gamma);
+-	png_set_gamma( png_ptr, screen_gamma, file_gamma );
++	if ( png_get_gAMA(png_ptr, info_ptr, &file_gamma))
++	    png_set_gamma( png_ptr, screen_gamma, file_gamma );
++    } else {
++	// no file gamma, use a reasonable default
++	png_set_gamma( png_ptr, screen_gamma, 0.45455 ); 
+     }
+ 
+     png_uint_32 width;
+     png_uint_32 height;

@@ -11,6 +11,14 @@
     SUBDIR += ac3dec
     SUBDIR += adpcm
     SUBDIR += afsp
+    SUBDIR += akode
+    SUBDIR += akode-plugins-jack
+    SUBDIR += akode-plugins-mpc
+    SUBDIR += akode-plugins-mpeg
+    SUBDIR += akode-plugins-oss
+    SUBDIR += akode-plugins-polypaudio
+    SUBDIR += akode-plugins-resampler
+    SUBDIR += akode-plugins-xiph
     SUBDIR += alac
     SUBDIR += alienwah
     SUBDIR += alsaplayer
@@ -205,6 +213,7 @@
     SUBDIR += ifp-line
     SUBDIR += jack
     SUBDIR += jamboree
+    SUBDIR += juk
     SUBDIR += juke
     SUBDIR += jxm
     SUBDIR += klira

@@ -1,0 +1,48 @@
+Index: kabc/resourcekolab.cpp
+===================================================================
+RCS file: /home/kde/kdepim/kresources/kolab/kabc/resourcekolab.cpp,v
+retrieving revision 1.17
+diff -u -3 -p -r1.17 resourcekolab.cpp
+--- kresources/kolab/kabc/resourcekolab.cpp	19 Jan 2005 15:18:12 -0000	1.17
++++ kresources/kolab/kabc/resourcekolab.cpp	13 Mar 2005 15:42:21 -0000
+@@ -80,7 +80,7 @@ KABC::ResourceKolab::ResourceKolab( cons
+     Kolab::ResourceKolabBase( "ResourceKolab-KABC" ),
+     mCachedSubresource( QString::null ), mLocked( false )
+ {
+-  setType( "kolab" );
++  setType( "imap" );
+ }
+ 
+ KABC::ResourceKolab::~ResourceKolab()
+Index: kcal/resourcekolab.cpp
+===================================================================
+RCS file: /home/kde/kdepim/kresources/kolab/kcal/resourcekolab.cpp,v
+retrieving revision 1.26
+diff -u -3 -p -r1.26 resourcekolab.cpp
+--- kresources/kolab/kcal/resourcekolab.cpp	22 Jan 2005 11:19:19 -0000	1.26
++++ kresources/kolab/kcal/resourcekolab.cpp	13 Mar 2005 15:42:21 -0000
+@@ -68,7 +68,7 @@ ResourceKolab::ResourceKolab( const KCon
+   : ResourceCalendar( config ), ResourceKolabBase( "ResourceKolab-libkcal" ),
+     mOpen( false )
+ {
+-  setType( "kolab" );
++  setType( "imap" );
+   connect( &mResourceChangedTimer, SIGNAL( timeout() ),
+            this, SLOT( slotEmitResourceChanged() ) );
+ }
+Index: knotes/resourcekolab.cpp
+===================================================================
+RCS file: /home/kde/kdepim/kresources/kolab/knotes/resourcekolab.cpp,v
+retrieving revision 1.12
+diff -u -3 -p -r1.12 resourcekolab.cpp
+--- kresources/kolab/knotes/resourcekolab.cpp	21 Feb 2005 23:33:09 -0000	1.12
++++ kresources/kolab/knotes/resourcekolab.cpp	13 Mar 2005 15:42:21 -0000
+@@ -52,7 +52,7 @@ static const char* inlineMimeType = "tex
+ ResourceKolab::ResourceKolab( const KConfig *config )
+   : ResourceNotes( config ), ResourceKolabBase( "ResourceKolab-KNotes" )
+ {
+-  setType( "kolab" );
++  setType( "imap" );
+ }
+ 
+ ResourceKolab::~ResourceKolab()

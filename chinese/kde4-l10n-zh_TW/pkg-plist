@@ -10,6 +10,9 @@ share/doc/HTML/zh_TW/common/8.png
 share/doc/HTML/zh_TW/common/9.png
 share/doc/HTML/zh_TW/common/appheader.html
 share/doc/HTML/zh_TW/common/artistic-license.html
+share/doc/HTML/zh_TW/common/bottom-left.png
+share/doc/HTML/zh_TW/common/bottom-middle.png
+share/doc/HTML/zh_TW/common/bottom-right.png
 share/doc/HTML/zh_TW/common/bottom1.png
 share/doc/HTML/zh_TW/common/bottom2.png
 share/doc/HTML/zh_TW/common/bsd-license.html
@@ -45,6 +48,9 @@ share/doc/HTML/zh_TW/common/mainfooter.html
 share/doc/HTML/zh_TW/common/mainheader.html
 share/doc/HTML/zh_TW/common/qpl-license.html
 share/doc/HTML/zh_TW/common/shadow.png
+share/doc/HTML/zh_TW/common/top-left.png
+share/doc/HTML/zh_TW/common/top-middle.png
+share/doc/HTML/zh_TW/common/top-right-konqueror.png
 share/doc/HTML/zh_TW/common/web-docbottom.png
 share/doc/HTML/zh_TW/common/web-doctop.png
 share/doc/HTML/zh_TW/common/x11-license.html

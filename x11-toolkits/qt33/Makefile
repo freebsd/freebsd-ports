@@ -55,6 +55,7 @@ EXTRACT_AFTER_ARGS=| ${TAR} -xf - \
 	--exclude '${DISTNAME}/include/np*'
 
 OPTIONS=	CUPS "Enable CUPS support" on \
+		KDE_PATCHES "Apply KDE patches" off \
 		NAS "Enable NAS support" on \
 		OPENGL "Enable OpenGL support" on \
 		XFT "Enable Xft support" on
@@ -106,6 +107,37 @@ LIB_DEPENDS+=	audio:${PORTSDIR}/audio/nas
 CONFIGURE_ARGS+=-system-nas-sound -no-pch
 .elseif defined(WITHOUT_NAS)
 CONFIGURE_ARGS+=-no-nas-sound
+.endif
+
+.if defined(WITH_KDE_PATCHES)
+EXTRA_PATCHES=	${PATCHDIR}/0001-dnd_optimization.patch \
+		${PATCHDIR}/0002-dnd_active_window_fix.patch \
+		${PATCHDIR}/0007-qpixmap_constants.patch \
+		${PATCHDIR}/0015-qiconview-finditem.patch \
+		${PATCHDIR}/0016-qiconview-rebuildcontainer.patch \
+		${PATCHDIR}/0017-qiconview-ctrl_rubber.patch \
+		${PATCHDIR}/0020-designer-deletetabs.patch \
+		${PATCHDIR}/0032-fix_rotated_randr.diff \
+		${PATCHDIR}/0035-qvaluelist-streaming-operator.patch \
+		${PATCHDIR}/0036-qprogressbar-optimization.patch \
+		${PATCHDIR}/0037-dnd-timestamp-fix.patch \
+		${PATCHDIR}/0038-dragobject-dont-prefer-unknown.patch \
+		${PATCHDIR}/0044-qscrollview-windowactivate-fix.diff \
+		${PATCHDIR}/0046-qiconview-no-useless-scrollbar.diff \
+		${PATCHDIR}/0047-fix-kmenu-width.diff \
+		${PATCHDIR}/0048-qclipboard_hack_80072.patch \
+		${PATCHDIR}/0049-qiconview-rubber_on_move.diff \
+		${PATCHDIR}/0051-qtoolbar_77047.patch \
+		${PATCHDIR}/0053-png-gamma-fix.diff \
+		${PATCHDIR}/0056-khotkeys_input_84434.patch \
+		${PATCHDIR}/0059-qpopup_has_mouse.patch \
+		${PATCHDIR}/0060-qpopup_ignore_mousepos.patch \
+		${PATCHDIR}/0061-qscrollview-propagate-horizontal-wheelevent.patch
+PKGNAMESUFFIX=	-copy
+COMMENT+=	(+ KDE patches)
+CONFLICTS+=	qt-3.3.*
+.elseif defined(WITHOUT_KDE_PATCHES)
+CONFLICTS+=	qt-copy-[0-9]*
 .endif
 
 .if ${X_WINDOW_SYSTEM:L} == xfree86-3

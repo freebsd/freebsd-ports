@@ -1,0 +1,14 @@
+bin/juk
+share/applications/kde/juk.desktop
+share/apps/juk/jukui-rtl.rc
+share/apps/juk/jukui.rc
+share/apps/juk/pics/playing.png
+share/apps/konqueror/servicemenus/jukservicemenu.desktop
+share/icons/crystalsvg/128x128/apps/juk.png
+share/icons/crystalsvg/16x16/apps/juk.png
+share/icons/crystalsvg/22x22/actions/juk_dock.png
+share/icons/crystalsvg/32x32/apps/juk.png
+share/icons/crystalsvg/48x48/apps/juk.png
+share/icons/crystalsvg/64x64/apps/juk.png
+@dirrm share/apps/juk/pics
+@dirrm share/apps/juk

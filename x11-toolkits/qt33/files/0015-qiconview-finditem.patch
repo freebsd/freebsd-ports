@@ -1,0 +1,43 @@
+qt-bugs@ issue : 18886
+applied: no
+author: Pascal Létourneau <pletourn@globetrotter.net>
+
+QIconView::findItem() should always search all ItemContainer to find the best 
+match.
+
+Example:
+
+-----        -----
+|   |        |   |       ItemContainer
+--------------------------------------
+|   |        |   |       boundary
+|   | -----  |   |
+|   | |   |  |   |
+----- -----  -----
+item1 item2  item3
+
+Right now, the focus goes from item1 to item3 when you press Key_Right.
+
+[ Since the mail was sent, I added the diff 'contains -> intersects' ]
+
+Index: src/iconview/qiconview.cpp
+===================================================================
+RCS file: /home/kde/qt-copy/src/iconview/qiconview.cpp,v
+retrieving revision 1.47
+diff -u -3 -p -r1.47 qiconview.cpp
+--- src/iconview/qiconview.cpp	16 May 2003 13:02:38 -0000	1.47
++++ src/iconview/qiconview.cpp	30 May 2003 20:32:34 -0000
+@@ -5200,11 +5201,11 @@ QIconViewItem* QIconView::findItem( Dire
+ 	d->findContainers( dir, relativeTo, searchRect);
+ 
+     cList->first();
+-    while ( cList->current() && !centerMatch ) {
++    while ( cList->current() ) {
+ 	QPtrList<QIconViewItem> &list = (cList->current())->items;
+ 	for ( item = list.first(); item; item = list.next() ) {
+ 	    if ( neighbourItem( dir, relativeTo, item ) &&
+-		 searchRect.contains( item->rect().center() ) &&
++		 searchRect.intersects( item->rect() ) &&
+ 		 item != currentItem() ) {
+  		int ml = (relativeTo - item->rect().center()).manhattanLength();
+ 		if ( centerMatch ) {

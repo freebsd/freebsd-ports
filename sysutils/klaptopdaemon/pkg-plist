@@ -26,7 +26,6 @@ share/apps/klaptopdaemon/icons/crystalsvg/22x22/actions/laptop_nocharge.png
 share/apps/klaptopdaemon/icons/crystalsvg/22x22/actions/laptop_power.png
 share/apps/klaptopdaemon/icons/crystalsvg/32x32/actions/power.png
 share/icons/crystalsvg/128x128/apps/laptop_battery.png
-share/icons/crystalsvg/16x16/apps/klaptopdaemon.png
 share/icons/crystalsvg/16x16/apps/laptop_battery.png
 share/icons/crystalsvg/16x16/apps/laptop_pcmcia.png
 share/icons/crystalsvg/32x32/apps/laptop_battery.png
@@ -34,6 +33,7 @@ share/icons/crystalsvg/32x32/apps/laptop_pcmcia.png
 share/icons/crystalsvg/48x48/apps/laptop_battery.png
 share/icons/crystalsvg/48x48/apps/laptop_pcmcia.png
 share/icons/crystalsvg/64x64/apps/laptop_battery.png
+share/icons/crystalsvg/scalable/apps/laptop_battery.svgz
 share/services/kded/klaptopdaemon.desktop
 @dirrm share/apps/klaptopdaemon/icons/crystalsvg/32x32/actions
 @dirrm share/apps/klaptopdaemon/icons/crystalsvg/32x32

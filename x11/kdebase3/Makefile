@@ -8,7 +8,6 @@
 
 PORTNAME=	kdebase
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	2
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -19,13 +18,16 @@ COMMENT=	Basic applications for the KDE system
 
 BUILD_DEPENDS=	mkfontdir:${X_CLIENTS_PORT} \
 		xmkmf:${X_IMAKE_PORT}
-LIB_DEPENDS=	smbclient:${PORTSDIR}/net/samba-libsmbclient
+LIB_DEPENDS=	sasl2:${PORTSDIR}/security/cyrus-sasl2 \
+		smbclient:${PORTSDIR}/net/samba-libsmbclient \
+		usb:${PORTSDIR}/devel/libusb
 
-CONFLICTS=	kdeutils-3.[0-2] kdeutils-3.0.* kdeutils-3.1.* kdeutils-3.2.*
+CONFLICTS=	kdelibs-3.[0-3]* kdeutils-3.[0-2]*
 
 USE_KDELIBS_VER=3
 PREFIX=		${KDE_PREFIX}
 
+USE_GETOPT_LONG=yes
 USE_OPENLDAP=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -38,8 +40,7 @@ GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 
-DO_NOT_COMPILE=	nsplugins
-CONFIGURE_ENV+=	RUN_KAPPFINDER=no
+CONFIGURE_ENV+=	RUN_KAPPFINDER=no kde_cv_utmp_file=/var/run/utmp
 CONFIGURE_ARGS+=--without-java			\
 		--with-qt-dir=${X11BASE}	\
 		--with-xdmdir=${X11BASE}/lib/X11/xdm
@@ -48,10 +49,6 @@ OPTIONS=	ARTSWRAPPER "Suid wrapper for aRts, req'd for realtime prio" on
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
-
-.if defined(DO_NOT_COMPILE)
-CONFIGURE_ENV+=DO_NOT_COMPILE="${DO_NOT_COMPILE}"
-.endif # defined(DO_NOT_COMPILE)
 
 .if !defined(WITHOUT_ARTSWRAPPER)
 RUN_DEPENDS+=	artswrapper:${PORTSDIR}/audio/artswrapper

@@ -1,0 +1,114 @@
+qt-bugs@ issue : none 
+applied: no
+author: Enrico Ros <eros.kde@email.it>
+
+Unwanted toggling QIconViewItem focus on click.
+
+This fixes the 'flashing' icon when clicking repeatedly on a QIconView or
+derivates (ie KIconView, KonqIconViewWidget, the KDesktop and so on..).
+The current behavior considers that if not over an icon, the user is
+clicking down to perform icons selection (with the rubberband).
+This is not always true, since a click might be used to give focus to a 
+window or unselect some icons.
+
+How this is fixed: when clicking down the mouse a flag is set. If the pointer
+is moved on the iconview with the button held down, then (and only at that
+moment) the rubber is created. Now a selection operation (the one done with
+the rubber) begins when moving the mouse and not only when clicking on the
+empty space.
+
+--- src.orig/iconview/qiconview.cpp	2004-05-05 18:55:55.471057880 +0000
++++ src/iconview/qiconview.cpp	2004-05-30 18:24:16.311014024 +0000
+@@ -236,6 +236,7 @@
+     QPoint dragStartPos;
+     QFontMetrics *fm;
+     int minLeftBearing, minRightBearing;
++    int rubberStartX, rubberStartY;
+ 
+     uint mousePressed		:1;
+     uint cleared		:1;
+@@ -255,6 +256,7 @@
+     uint firstSizeHint : 1;
+     uint showTips		:1;
+     uint pressedSelected	:1;
++    uint canStartRubber		:1;
+     uint dragging		:1;
+     uint drawActiveSelection	:1;
+     uint inMenuMode		:1;
+@@ -2733,6 +2735,7 @@
+     d->currentItem = 0;
+     d->highlightedItem = 0;
+     d->rubber = 0;
++    d->canStartRubber = FALSE;
+     d->scrollTimer = 0;
+     d->startDragItem = 0;
+     d->tmpCurrentItem = 0;
+@@ -4501,29 +4504,20 @@
+ 
+     setCurrentItem( item );
+ 
++    d->canStartRubber = FALSE;
+     if ( e->button() == LeftButton ) {
+-	if ( !item && ( d->selectionMode == Multi ||
+-				  d->selectionMode == Extended ) ) {
+-	    d->tmpCurrentItem = d->currentItem;
+-	    d->currentItem = 0;
+-	    repaintItem( d->tmpCurrentItem );
+-	    delete d->rubber;
+-	    d->rubber = new QRect( e->x(), e->y(), 0, 0 );
+-	    d->selectedItems.clear();
+-	    if ( ( e->state() & ControlButton ) == ControlButton ||
+-	         ( e->state() & ShiftButton ) == ShiftButton ) {
+-		for ( QIconViewItem *i = firstItem(); i; i = i->nextItem() )
+-		    if ( i->isSelected() )
+-			d->selectedItems.insert( i, i );
+-	    }
++	if ( !item && ( d->selectionMode == Multi || d->selectionMode == Extended ) )
++	{
++	    d->canStartRubber = TRUE;
++	    d->rubberStartX = e->x();
++	    d->rubberStartY = e->y();
+ 	}
+-
+ 	d->mousePressed = TRUE;
+ 	d->controlPressed = ( ( e->state() & ControlButton ) == ControlButton );
+     }
+ 
+  emit_signals:
+-    if ( !d->rubber ) {
++    if ( !d->canStartRubber ) {
+ 	emit mouseButtonPressed( e->button(), item, e->globalPos() );
+ 	emit pressed( item );
+ 	emit pressed( item, e->globalPos() );
+@@ -4567,6 +4561,7 @@
+     d->mousePressed = FALSE;
+     d->startDragItem = 0;
+ 
++    d->canStartRubber = FALSE;
+     if ( d->rubber ) {
+ 	QPainter p;
+ 	p.begin( viewport() );
+@@ -4656,7 +4651,22 @@
+ 	    if ( d->tmpCurrentItem )
+ 		repaintItem( d->tmpCurrentItem );
+ 	}
+-    } else if ( d->mousePressed && !d->currentItem && d->rubber ) {
++    } else if ( d->mousePressed && ((!d->currentItem && d->rubber) || d->canStartRubber) ) {
++	if ( d->canStartRubber ) {
++	    d->canStartRubber = FALSE;
++	    d->tmpCurrentItem = d->currentItem;
++	    d->currentItem = 0;
++	    repaintItem( d->tmpCurrentItem );
++	    delete d->rubber;
++	    d->rubber = new QRect( d->rubberStartX, d->rubberStartY, 0, 0 );
++	    d->selectedItems.clear();
++	    if ( ( e->state() & ControlButton ) == ControlButton ||
++	         ( e->state() & ShiftButton ) == ShiftButton ) {
++		for ( QIconViewItem *i = firstItem(); i; i = i->nextItem() )
++		    if ( i->isSelected() )
++			d->selectedItems.insert( i, i );
++	    }
++	}
+ 	doAutoScroll();
+     }
+ }

@@ -7,7 +7,6 @@
 
 PORTNAME=	mpeglib_artsplug
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	1
 CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -16,7 +15,7 @@ DISTNAME=	kdemultimedia-${PORTVERSION}
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Default KDE decoders for mp3/ogg
+COMMENT=	Legacy KDE audio backend
 
 LIB_DEPENDS=	ogg:${PORTSDIR}/audio/libogg \
 		vorbis.3:${PORTSDIR}/audio/libvorbis

@@ -1,0 +1,5 @@
+lib/libakode_xiph_decoder.la
+lib/libakode_xiph_decoder.so
+lib/mcop/akodeSpeexStreamPlayObject.mcopclass
+lib/mcop/akodeVorbisStreamPlayObject.mcopclass
+lib/mcop/akodeXiphPlayObject.mcopclass

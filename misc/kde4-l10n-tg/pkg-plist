@@ -1,8 +1,8 @@
-share/apps/khangman/data/tg/animals.txt
-share/apps/khangman/data/tg/easy.txt
-share/apps/khangman/data/tg/hard.txt
-share/apps/khangman/data/tg/medium.txt
-share/locale/tg/LC_MESSAGES/alarmdaemonctrl.mo
+share/apps/khangman/data/tg/animals.kvtml
+share/apps/khangman/data/tg/easy.kvtml
+share/apps/khangman/data/tg/hard.kvtml
+share/apps/khangman/data/tg/medium.kvtml
+share/apps/khangman/tg.txt
 share/locale/tg/LC_MESSAGES/alsaplayerui.mo
 share/locale/tg/LC_MESSAGES/amor.mo
 share/locale/tg/LC_MESSAGES/appletproxy.mo
@@ -25,7 +25,7 @@ share/locale/tg/LC_MESSAGES/clockapplet.mo
 share/locale/tg/LC_MESSAGES/crashesplugin.mo
 share/locale/tg/LC_MESSAGES/cupsdconf.mo
 share/locale/tg/LC_MESSAGES/cvsservice.mo
-share/locale/tg/LC_MESSAGES/dcopservice.mo
+share/locale/tg/LC_MESSAGES/dcoprss.mo
 share/locale/tg/LC_MESSAGES/devicesapplet.mo
 share/locale/tg/LC_MESSAGES/dirfilterplugin.mo
 share/locale/tg/LC_MESSAGES/display.mo
@@ -58,7 +58,6 @@ share/locale/tg/LC_MESSAGES/kaboodle.mo
 share/locale/tg/LC_MESSAGES/kaccess.mo
 share/locale/tg/LC_MESSAGES/kaddressbook.mo
 share/locale/tg/LC_MESSAGES/kalarm.mo
-share/locale/tg/LC_MESSAGES/kalarmdgui.mo
 share/locale/tg/LC_MESSAGES/kalzium.mo
 share/locale/tg/LC_MESSAGES/kandy.mo
 share/locale/tg/LC_MESSAGES/kappfinder.mo
@@ -232,7 +231,6 @@ share/locale/tg/LC_MESSAGES/kfile_kig.mo
 share/locale/tg/LC_MESSAGES/kfile_lnk.mo
 share/locale/tg/LC_MESSAGES/kfile_m3u.mo
 share/locale/tg/LC_MESSAGES/kfile_mp3.mo
-share/locale/tg/LC_MESSAGES/kfile_mpc.mo
 share/locale/tg/LC_MESSAGES/kfile_ogg.mo
 share/locale/tg/LC_MESSAGES/kfile_palm.mo
 share/locale/tg/LC_MESSAGES/kfile_pcx.mo
@@ -286,7 +284,6 @@ share/locale/tg/LC_MESSAGES/kio_floppy.mo
 share/locale/tg/LC_MESSAGES/kio_help.mo
 share/locale/tg/LC_MESSAGES/kio_imap4.mo
 share/locale/tg/LC_MESSAGES/kio_lan.mo
-share/locale/tg/LC_MESSAGES/kio_ldap.mo
 share/locale/tg/LC_MESSAGES/kio_mac.mo
 share/locale/tg/LC_MESSAGES/kio_man.mo
 share/locale/tg/LC_MESSAGES/kio_mobile.mo
@@ -299,10 +296,8 @@ share/locale/tg/LC_MESSAGES/kio_settings.mo
 share/locale/tg/LC_MESSAGES/kio_sftp.mo
 share/locale/tg/LC_MESSAGES/kio_sieve.mo
 share/locale/tg/LC_MESSAGES/kio_smb.mo
-share/locale/tg/LC_MESSAGES/kio_smbro.mo
 share/locale/tg/LC_MESSAGES/kio_smtp.mo
 share/locale/tg/LC_MESSAGES/kioexec.mo
-share/locale/tg/LC_MESSAGES/kit.mo
 share/locale/tg/LC_MESSAGES/kiten.mo
 share/locale/tg/LC_MESSAGES/kjobviewer.mo
 share/locale/tg/LC_MESSAGES/kjots.mo
@@ -388,7 +383,6 @@ share/locale/tg/LC_MESSAGES/kreadconfig.mo
 share/locale/tg/LC_MESSAGES/krec.mo
 share/locale/tg/LC_MESSAGES/kregexpeditor.mo
 share/locale/tg/LC_MESSAGES/kres_exchange.mo
-share/locale/tg/LC_MESSAGES/kres_imap.mo
 share/locale/tg/LC_MESSAGES/kres_remote.mo
 share/locale/tg/LC_MESSAGES/kres_xmlrpc.mo
 share/locale/tg/LC_MESSAGES/kreversi.mo
@@ -398,7 +392,6 @@ share/locale/tg/LC_MESSAGES/krunapplet.mo
 share/locale/tg/LC_MESSAGES/ksame.mo
 share/locale/tg/LC_MESSAGES/kscd.mo
 share/locale/tg/LC_MESSAGES/kscreensaver.mo
-share/locale/tg/LC_MESSAGES/kscreenshot_plugin.mo
 share/locale/tg/LC_MESSAGES/kshisen.mo
 share/locale/tg/LC_MESSAGES/ksig.mo
 share/locale/tg/LC_MESSAGES/ksim.mo
@@ -408,7 +401,6 @@ share/locale/tg/LC_MESSAGES/ksmiletris.mo
 share/locale/tg/LC_MESSAGES/ksmserver.mo
 share/locale/tg/LC_MESSAGES/ksnake.mo
 share/locale/tg/LC_MESSAGES/ksnapshot.mo
-share/locale/tg/LC_MESSAGES/ksokoban.mo
 share/locale/tg/LC_MESSAGES/kspaceduel.mo
 share/locale/tg/LC_MESSAGES/ksplash.mo
 share/locale/tg/LC_MESSAGES/ksplashthemes.mo
@@ -431,7 +423,6 @@ share/locale/tg/LC_MESSAGES/ktexteditor_docwordcompletion.mo
 share/locale/tg/LC_MESSAGES/ktexteditor_insertfile.mo
 share/locale/tg/LC_MESSAGES/ktexteditor_isearch.mo
 share/locale/tg/LC_MESSAGES/ktexteditor_kdatatool.mo
-share/locale/tg/LC_MESSAGES/kthememanager.mo
 share/locale/tg/LC_MESSAGES/ktimemon.mo
 share/locale/tg/LC_MESSAGES/ktimer.mo
 share/locale/tg/LC_MESSAGES/ktip.mo
@@ -463,25 +454,7 @@ share/locale/tg/LC_MESSAGES/kweather.mo
 share/locale/tg/LC_MESSAGES/kwifimanager.mo
 share/locale/tg/LC_MESSAGES/kwin.mo
 share/locale/tg/LC_MESSAGES/kwin4.mo
-share/locale/tg/LC_MESSAGES/kwin_b2_config.mo
-share/locale/tg/LC_MESSAGES/kwin_cde.mo
-share/locale/tg/LC_MESSAGES/kwin_cde_config.mo
-share/locale/tg/LC_MESSAGES/kwin_clients.mo
-share/locale/tg/LC_MESSAGES/kwin_default_config.mo
-share/locale/tg/LC_MESSAGES/kwin_glow.mo
-share/locale/tg/LC_MESSAGES/kwin_glow_config.mo
-share/locale/tg/LC_MESSAGES/kwin_icewm.mo
-share/locale/tg/LC_MESSAGES/kwin_icewm_config.mo
-share/locale/tg/LC_MESSAGES/kwin_kde1.mo
-share/locale/tg/LC_MESSAGES/kwin_keramik_config.mo
-share/locale/tg/LC_MESSAGES/kwin_kstep.mo
-share/locale/tg/LC_MESSAGES/kwin_modernsys_config.mo
-share/locale/tg/LC_MESSAGES/kwin_openlook.mo
-share/locale/tg/LC_MESSAGES/kwin_plastik.mo
-share/locale/tg/LC_MESSAGES/kwin_plastik_config.mo
-share/locale/tg/LC_MESSAGES/kwin_quartz_config.mo
-share/locale/tg/LC_MESSAGES/kwin_riscos.mo
-share/locale/tg/LC_MESSAGES/kwin_system.mo
+share/locale/tg/LC_MESSAGES/kwin_art_clients.mo
 share/locale/tg/LC_MESSAGES/kwireless.mo
 share/locale/tg/LC_MESSAGES/kwordquiz.mo
 share/locale/tg/LC_MESSAGES/kworldclock.mo

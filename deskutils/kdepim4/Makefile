@@ -7,7 +7,6 @@
 
 PORTNAME=	kdepim
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	1
 CATEGORIES=	deskutils mail news palm kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -18,9 +17,10 @@ COMMENT=	Personal Information Management tools for KDE
 
 LIB_DEPENDS=	gpgme:${PORTSDIR}/security/gpgme \
 		mal:${PORTSDIR}/palm/libmal \
-		pisock:${PORTSDIR}/palm/pilot-link
+		pisock:${PORTSDIR}/palm/pilot-link \
+		sasl2:${PORTSDIR}/security/cyrus-sasl2
 
-CONFLICTS=	kdenetwork-3.1.* kdeaddons-kontact-plugins-[0-9]* kdepim-kpilot-3.2.3
+CONFLICTS=	akregator-[0-9]* kdenetwork-3.1.* kdeaddons-kontact-plugins-[0-9]* kdepim-kpilot-3.2.3
 
 USE_KDELIBS_VER=3
 PREFIX=		${KDE_PREFIX}
@@ -40,6 +40,10 @@ OPTIONS=	GNOKII "KAdressbook import/export for Nokia phones" off
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500035
+RUN_DEPENDS+=	${LOCALBASE}/lib/libssl.so:${PORTSDIR}/security/openssl
+.endif
 
 .if exists(${LOCALBASE}/bin/gnokii)
 .	if !defined(WITH_GNOKII)
@@ -65,13 +69,5 @@ pre-everything::
 	@${ECHO_MSG} "**********************************************************"
 	@${ECHO_MSG}
 .endif
-
-.if ${OSVERSION} >= 501111 && !defined(NO_BLUETOOTH)
-_LBLUETOOTH=	-lbluetooth
-.endif
-
-pre-configure:
-	${REINPLACE_CMD} -e 's|-ldl||' ${WRKSRC}/configure
-	${REINPLACE_CMD} -e 's|-lgnokii|-lgnokii -liconv -lintl ${_LBLUETOOTH}|' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>

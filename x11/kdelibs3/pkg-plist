@@ -16,11 +16,11 @@ bin/dcopserver_shutdown
 bin/dcopstart
 bin/filesharelist
 bin/fileshareset
-bin/ghns
 bin/imagetops
 bin/kab2kabc
 bin/kaddprinterwizard
 bin/kbuildsycoca
+bin/kcmshell
 bin/kconf_update
 bin/kconfig_compiler
 bin/kcookiejar
@@ -74,6 +74,13 @@ include/dcopobject.h
 include/dcopref.h
 include/dcopstub.h
 include/dcoptypes.h
+include/dnssd/domainbrowser.h
+include/dnssd/publicservice.h
+include/dnssd/query.h
+include/dnssd/remoteservice.h
+include/dnssd/servicebase.h
+include/dnssd/servicebrowser.h
+include/dnssd/settings.h
 include/dom/css_rule.h
 include/dom/css_stylesheet.h
 include/dom/css_value.h
@@ -138,6 +145,7 @@ include/kabc/resourceldapkio.h
 include/kabc/resourcenet.h
 include/kabc/resourceselectdialog.h
 include/kabc/secrecy.h
+include/kabc/sortmode.h
 include/kabc/sound.h
 include/kabc/stdaddressbook.h
 include/kabc/timezone.h
@@ -201,6 +209,7 @@ include/kclipboard.h
 include/kcmdlineargs.h
 include/kcmenumngr.h
 include/kcmodule.h
+include/kcmodulecontainer.h
 include/kcmoduleinfo.h
 include/kcmoduleloader.h
 include/kcmoduleproxy.h
@@ -239,10 +248,12 @@ include/kdcopactionproxy.h
 include/kdcoppropertyproxy.h
 include/kdcopservicestarter.h
 include/kde.pot
+include/kde_file.h
 include/kde_terminal_interface.h
 include/kdebug.h
 include/kdebugclasses.h
 include/kdedmodule.h
+include/kdelibs_export.h
 include/kdemacros.h
 include/kdeprint/driver.h
 include/kdeprint/kiconselectaction.h
@@ -339,6 +350,7 @@ include/kiconeffect.h
 include/kiconloader.h
 include/kicontheme.h
 include/kiconview.h
+include/kiconviewsearchline.h
 include/kidna.h
 include/kimageeffect.h
 include/kimagefilepreview.h
@@ -354,6 +366,7 @@ include/kio/connection.h
 include/kio/davjob.h
 include/kio/defaultprogress.h
 include/kio/file.h
+include/kio/forwardingslavebase.h
 include/kio/global.h
 include/kio/http.h
 include/kio/http_slave_defaults.h
@@ -363,6 +376,7 @@ include/kio/jobclasses.h
 include/kio/kdesasl.h
 include/kio/kmdbase.h
 include/kio/kmdcodec.h
+include/kio/kntlm.h
 include/kio/metainfojob.h
 include/kio/netaccess.h
 include/kio/observer.h
@@ -422,6 +436,10 @@ include/kmainwindow.h
 include/kmainwindowiface.h
 include/kmanagerselection.h
 include/kmdcodec.h
+include/kmdi/global.h
+include/kmdi/mainwindow.h
+include/kmdi/tabwidget.h
+include/kmdi/toolviewaccessor.h
 include/kmdichildarea.h
 include/kmdichildfrm.h
 include/kmdichildfrmcaption.h
@@ -453,7 +471,9 @@ include/knewstuff/downloaddialog.h
 include/knewstuff/engine.h
 include/knewstuff/entry.h
 include/knewstuff/knewstuff.h
+include/knewstuff/knewstuffbutton.h
 include/knewstuff/knewstuffgeneric.h
+include/knewstuff/knewstuffsecure.h
 include/knewstuff/provider.h
 include/knewstuff/providerdialog.h
 include/knewstuff/uploaddialog.h
@@ -490,6 +510,8 @@ include/kpixmap.h
 include/kpixmapeffect.h
 include/kpixmapio.h
 include/kpixmapprovider.h
+include/kpixmapregionselectordialog.h
+include/kpixmapregionselectorwidget.h
 include/kpixmapsplitter.h
 include/kplugininfo.h
 include/kpluginselector.h
@@ -552,6 +574,7 @@ include/ksharedptr.h
 include/kshell.h
 include/kshellcompletion.h
 include/kshortcut.h
+include/kshortcutdialog.h
 include/kshortcutlist.h
 include/kshred.h
 include/ksimpleconfig.h
@@ -564,6 +587,8 @@ include/ksocketdevice.h
 include/ksocks.h
 include/ksockssocketdevice.h
 include/ksortablevaluelist.h
+include/kspeech.h
+include/kspeechsink.h
 include/kspell.h
 include/kspell2/backgroundchecker.h
 include/kspell2/broker.h
@@ -613,6 +638,7 @@ include/kstringhandler.h
 include/kstringvalidator.h
 include/kstyle.h
 include/ksvgiconengine.h
+include/kswap.h
 include/ksycoca.h
 include/ksycocaentry.h
 include/ksycocatype.h
@@ -651,6 +677,7 @@ include/ktexteditor/selectionextdcopinterface.h
 include/ktexteditor/selectioninterface.h
 include/ktexteditor/selectioninterfaceext.h
 include/ktexteditor/sessionconfiginterface.h
+include/ktexteditor/templateinterface.h
 include/ktexteditor/texthintinterface.h
 include/ktexteditor/undointerface.h
 include/ktexteditor/variableinterface.h
@@ -662,6 +689,7 @@ include/ktimewidget.h
 include/ktip.h
 include/ktoolbar.h
 include/ktoolbarbutton.h
+include/ktoolbarlabelaction.h
 include/ktoolbarradiogroup.h
 include/ktrader.h
 include/ktypelist.h
@@ -742,6 +770,8 @@ lib/kde3/kbzip2filter.la
 lib/kde3/kbzip2filter.so
 lib/kde3/kcm_kresources.la
 lib/kde3/kcm_kresources.so
+lib/kde3/kcmshell.la
+lib/kde3/kcmshell.so
 lib/kde3/kconf_update.la
 lib/kde3/kconf_update.so
 lib/kde3/kcookiejar.la
@@ -792,12 +822,16 @@ lib/kde3/kimg_jp2.la
 lib/kde3/kimg_jp2.so
 lib/kde3/kimg_pcx.la
 lib/kde3/kimg_pcx.so
+lib/kde3/kimg_psd.la
+lib/kde3/kimg_psd.so
 lib/kde3/kimg_rgb.la
 lib/kde3/kimg_rgb.so
 lib/kde3/kimg_tga.la
 lib/kde3/kimg_tga.so
 lib/kde3/kimg_tiff.la
 lib/kde3/kimg_tiff.so
+lib/kde3/kimg_xcf.la
+lib/kde3/kimg_xcf.so
 lib/kde3/kimg_xview.la
 lib/kde3/kimg_xview.so
 lib/kde3/kio_file.la
@@ -826,8 +860,8 @@ lib/kde3/kspell_aspell.la
 lib/kde3/kspell_aspell.so
 lib/kde3/kspell_ispell.la
 lib/kde3/kspell_ispell.so
-lib/kde3/ktexteditor_autobookmarker.la
-lib/kde3/ktexteditor_autobookmarker.so
+lib/kde3/kstyle_plastik_config.la
+lib/kde3/kstyle_plastik_config.so
 lib/kde3/ktexteditor_docwordcompletion.la
 lib/kde3/ktexteditor_docwordcompletion.so
 lib/kde3/ktexteditor_insertfile.la
@@ -852,12 +886,16 @@ lib/kde3/plugins/designer/kdewidgets.la
 lib/kde3/plugins/designer/kdewidgets.so
 lib/kde3/plugins/styles/highcolor.la
 lib/kde3/plugins/styles/highcolor.so
+lib/kde3/plugins/styles/highcontrast.la
+lib/kde3/plugins/styles/highcontrast.so
 lib/kde3/plugins/styles/keramik.la
 lib/kde3/plugins/styles/keramik.so
 lib/kde3/plugins/styles/kthemestyle.la
 lib/kde3/plugins/styles/kthemestyle.so
 lib/kde3/plugins/styles/light.la
 lib/kde3/plugins/styles/light.so
+lib/kde3/plugins/styles/plastik.la
+lib/kde3/plugins/styles/plastik.so
 lib/libDCOP.la
 lib/libDCOP.so
 lib/libDCOP.so.6
@@ -900,6 +938,8 @@ lib/libkdeinit_kaddprinterwizard.la
 lib/libkdeinit_kaddprinterwizard.so
 lib/libkdeinit_kbuildsycoca.la
 lib/libkdeinit_kbuildsycoca.so
+lib/libkdeinit_kcmshell.la
+lib/libkdeinit_kcmshell.so
 lib/libkdeinit_kconf_update.la
 lib/libkdeinit_kconf_update.so
 lib/libkdeinit_kcookiejar.la
@@ -927,6 +967,9 @@ lib/libkdesu.so.6
 lib/libkdeui.la
 lib/libkdeui.so
 lib/libkdeui.so.6
+lib/libkdnssd.la
+lib/libkdnssd.so
+lib/libkdnssd.so.1
 lib/libkhtml.la
 lib/libkhtml.so
 lib/libkhtml.so.6
@@ -945,6 +988,9 @@ lib/libkjs.so.3
 lib/libkmdi.la
 lib/libkmdi.so
 lib/libkmdi.so.1
+lib/libkmdi2.la
+lib/libkmdi2.so
+lib/libkmdi2.so.1
 lib/libkmediaplayer.la
 lib/libkmediaplayer.so
 lib/libkmediaplayer.so.0
@@ -954,6 +1000,9 @@ lib/libkmid.so.0
 lib/libknewstuff.la
 lib/libknewstuff.so
 lib/libknewstuff.so.1
+lib/libkntlm.la
+lib/libkntlm.so
+lib/libkntlm.so.0
 lib/libkparts.la
 lib/libkparts.so
 lib/libkparts.so.3
@@ -997,28 +1046,31 @@ share/apps/dcopidlng/Ast.pm
 share/apps/dcopidlng/Iter.pm
 share/apps/dcopidlng/kalyptus
 share/apps/dcopidlng/kalyptusCxxToDcopIDL.pm
-share/apps/dcopidlng/kalyptusDataDict.pm
 share/apps/dcopidlng/kdocAstUtil.pm
-share/apps/dcopidlng/kdocLib.pm
 share/apps/dcopidlng/kdocParseDoc.pm
 share/apps/dcopidlng/kdocUtil.pm
 share/apps/kabc/countrytransl.map
 share/apps/kabc/formats/binary.desktop
 share/apps/katepart/katepartreadonlyui.rc
 share/apps/katepart/katepartui.rc
+share/apps/katepart/syntax/abc.xml
 share/apps/katepart/syntax/ada.xml
 share/apps/katepart/syntax/ahdl.xml
 share/apps/katepart/syntax/alert.xml
 share/apps/katepart/syntax/ansic89.xml
+share/apps/katepart/syntax/asm-avr.xml
 share/apps/katepart/syntax/asm6502.xml
+share/apps/katepart/syntax/asp.xml
 share/apps/katepart/syntax/awk.xml
 share/apps/katepart/syntax/bash.xml
 share/apps/katepart/syntax/bibtex.xml
 share/apps/katepart/syntax/c.xml
 share/apps/katepart/syntax/cg.xml
+share/apps/katepart/syntax/cgis.xml
 share/apps/katepart/syntax/changelog.xml
 share/apps/katepart/syntax/cisco.xml
 share/apps/katepart/syntax/clipper.xml
+share/apps/katepart/syntax/cmake.xml
 share/apps/katepart/syntax/coldfusion.xml
 share/apps/katepart/syntax/commonlisp.xml
 share/apps/katepart/syntax/component-pascal.xml
@@ -1042,6 +1094,7 @@ share/apps/katepart/syntax/fgl-per.xml
 share/apps/katepart/syntax/fortran.xml
 share/apps/katepart/syntax/gdl.xml
 share/apps/katepart/syntax/gettext.xml
+share/apps/katepart/syntax/glsl.xml
 share/apps/katepart/syntax/gnuassembler.xml
 share/apps/katepart/syntax/haskell.xml
 share/apps/katepart/syntax/html-php.xml
@@ -1051,6 +1104,7 @@ share/apps/katepart/syntax/idl.xml
 share/apps/katepart/syntax/ilerpg.xml
 share/apps/katepart/syntax/inform.xml
 share/apps/katepart/syntax/java.xml
+share/apps/katepart/syntax/javadoc.xml
 share/apps/katepart/syntax/javascript-php.xml
 share/apps/katepart/syntax/javascript.xml
 share/apps/katepart/syntax/jsp.xml
@@ -1059,6 +1113,7 @@ share/apps/katepart/syntax/language.dtd
 share/apps/katepart/syntax/latex.xml
 share/apps/katepart/syntax/ldif.xml
 share/apps/katepart/syntax/lex.xml
+share/apps/katepart/syntax/lilypond.xml
 share/apps/katepart/syntax/literate-haskell.xml
 share/apps/katepart/syntax/logtalk.xml
 share/apps/katepart/syntax/lpc.xml
@@ -1070,8 +1125,10 @@ share/apps/katepart/syntax/matlab.xml
 share/apps/katepart/syntax/mips.xml
 share/apps/katepart/syntax/modula-2.xml
 share/apps/katepart/syntax/mup.xml
+share/apps/katepart/syntax/nasm.xml
 share/apps/katepart/syntax/objectivec.xml
 share/apps/katepart/syntax/ocaml.xml
+share/apps/katepart/syntax/octave.xml
 share/apps/katepart/syntax/pascal.xml
 share/apps/katepart/syntax/perl.xml
 share/apps/katepart/syntax/php.xml
@@ -1085,6 +1142,7 @@ share/apps/katepart/syntax/purebasic.xml
 share/apps/katepart/syntax/python.xml
 share/apps/katepart/syntax/r.xml
 share/apps/katepart/syntax/rexx.xml
+share/apps/katepart/syntax/rib.xml
 share/apps/katepart/syntax/rpmspec.xml
 share/apps/katepart/syntax/rsiidl.xml
 share/apps/katepart/syntax/ruby.xml
@@ -1094,9 +1152,11 @@ share/apps/katepart/syntax/sci.xml
 share/apps/katepart/syntax/sgml.xml
 share/apps/katepart/syntax/sieve.xml
 share/apps/katepart/syntax/sml.xml
+share/apps/katepart/syntax/spice.xml
 share/apps/katepart/syntax/sql-mysql.xml
 share/apps/katepart/syntax/sql-postgresql.xml
 share/apps/katepart/syntax/sql.xml
+share/apps/katepart/syntax/stata.xml
 share/apps/katepart/syntax/syntax.template
 share/apps/katepart/syntax/tcl.xml
 share/apps/katepart/syntax/tibasic.xml
@@ -1110,6 +1170,7 @@ share/apps/katepart/syntax/winehq.xml
 share/apps/katepart/syntax/xharbour.xml
 share/apps/katepart/syntax/xml.xml
 share/apps/katepart/syntax/xmldebug.xml
+share/apps/katepart/syntax/xslt.xml
 share/apps/katepart/syntax/yacas.xml
 share/apps/katepart/syntax/yacc.xml
 share/apps/kcertpart/kcertpart.rc
@@ -1235,6 +1296,29 @@ share/apps/kdeprint/testprint.ps
 share/apps/kdeprint/tiledown.png
 share/apps/kdeprint/tileup.png
 share/apps/kdeprint/tools/escputil.desktop
+share/apps/kdeui/about/bar-bottom-left.png
+share/apps/kdeui/about/bar-bottom-middle.png
+share/apps/kdeui/about/bar-bottom-right.png
+share/apps/kdeui/about/bar-middle-left.png
+share/apps/kdeui/about/bar-middle-right.png
+share/apps/kdeui/about/bar-top-left.png
+share/apps/kdeui/about/bar-top-middle.png
+share/apps/kdeui/about/bar-top-right.png
+share/apps/kdeui/about/bottom-left.png
+share/apps/kdeui/about/bottom-middle.png
+share/apps/kdeui/about/bottom-right.png
+share/apps/kdeui/about/box-bottom-left.png
+share/apps/kdeui/about/box-bottom-middle.png
+share/apps/kdeui/about/box-bottom-right.png
+share/apps/kdeui/about/box-middle-left.png
+share/apps/kdeui/about/box-middle-right.png
+share/apps/kdeui/about/box-top-left.png
+share/apps/kdeui/about/box-top-middle.png
+share/apps/kdeui/about/box-top-right.png
+share/apps/kdeui/about/kde_infopage.css
+share/apps/kdeui/about/kde_infopage_rtl.css
+share/apps/kdeui/about/top-left.png
+share/apps/kdeui/about/top-middle.png
 share/apps/kdeui/pics/aboutkde.png
 share/apps/kdeui/pics/ktip-background.png
 share/apps/kdeui/pics/ktip-bulb.png
@@ -1374,7 +1458,6 @@ share/apps/ksgmltools2/customization/cs/entities/underArtisticLicense.docbook
 share/apps/ksgmltools2/customization/cs/entities/underBSDLicense.docbook
 share/apps/ksgmltools2/customization/cs/entities/underFDL.docbook
 share/apps/ksgmltools2/customization/cs/entities/underGPL.docbook
-share/apps/ksgmltools2/customization/cs/entities/underLGPL.docbook
 share/apps/ksgmltools2/customization/cs/entities/underX11License.docbook
 share/apps/ksgmltools2/customization/cs/entities/update-doc.docbook
 share/apps/ksgmltools2/customization/cs/lang.entities
@@ -1647,6 +1730,7 @@ share/apps/ksgmltools2/customization/ja/strings.entities
 share/apps/ksgmltools2/customization/ja/user.entities
 share/apps/ksgmltools2/customization/kde-chunk-online.xsl
 share/apps/ksgmltools2/customization/kde-chunk.xsl
+share/apps/ksgmltools2/customization/kde-man.xsl
 share/apps/ksgmltools2/customization/kde-navig-online.xsl
 share/apps/ksgmltools2/customization/kde-navig.xsl
 share/apps/ksgmltools2/customization/kde-nochunk.xsl
@@ -1774,6 +1858,7 @@ share/apps/ksgmltools2/customization/pt-BR/entities/underArtisticLicense.docbook
 share/apps/ksgmltools2/customization/pt-BR/entities/underBSDLicense.docbook
 share/apps/ksgmltools2/customization/pt-BR/entities/underFDL.docbook
 share/apps/ksgmltools2/customization/pt-BR/entities/underGPL.docbook
+share/apps/ksgmltools2/customization/pt-BR/entities/underLGPL.docbook
 share/apps/ksgmltools2/customization/pt-BR/entities/underX11License.docbook
 share/apps/ksgmltools2/customization/pt-BR/entities/update-doc.docbook
 share/apps/ksgmltools2/customization/pt-BR/lang.entities
@@ -2016,6 +2101,24 @@ share/apps/ksgmltools2/customization/xx/entities/update-doc.docbook
 share/apps/ksgmltools2/customization/xx/lang.entities
 share/apps/ksgmltools2/customization/xx/strings.entities
 share/apps/ksgmltools2/customization/xx/user.entities
+share/apps/ksgmltools2/customization/zh-CN/catalog
+share/apps/ksgmltools2/customization/zh-CN/entities/fdl-notice.docbook
+share/apps/ksgmltools2/customization/zh-CN/entities/gpl-notice.docbook
+share/apps/ksgmltools2/customization/zh-CN/entities/help-menu.docbook
+share/apps/ksgmltools2/customization/zh-CN/entities/install-compile.docbook
+share/apps/ksgmltools2/customization/zh-CN/entities/install-intro.docbook
+share/apps/ksgmltools2/customization/zh-CN/entities/lgpl-notice.docbook
+share/apps/ksgmltools2/customization/zh-CN/entities/report-bugs.docbook
+share/apps/ksgmltools2/customization/zh-CN/entities/underArtisticLicense.docbook
+share/apps/ksgmltools2/customization/zh-CN/entities/underBSDLicense.docbook
+share/apps/ksgmltools2/customization/zh-CN/entities/underFDL.docbook
+share/apps/ksgmltools2/customization/zh-CN/entities/underGPL.docbook
+share/apps/ksgmltools2/customization/zh-CN/entities/underLGPL.docbook
+share/apps/ksgmltools2/customization/zh-CN/entities/underX11License.docbook
+share/apps/ksgmltools2/customization/zh-CN/entities/update-doc.docbook
+share/apps/ksgmltools2/customization/zh-CN/lang.entities
+share/apps/ksgmltools2/customization/zh-CN/strings.entities
+share/apps/ksgmltools2/customization/zh-CN/user.entities
 share/apps/ksgmltools2/customization/zh-TW/catalog
 share/apps/ksgmltools2/customization/zh-TW/entities/fdl-notice.docbook
 share/apps/ksgmltools2/customization/zh-TW/entities/gpl-notice.docbook
@@ -2105,6 +2208,11 @@ share/apps/ksgmltools2/docbook/xsl/VERSION
 share/apps/ksgmltools2/docbook/xsl/WhatsNew
 share/apps/ksgmltools2/docbook/xsl/common/ChangeLog
 share/apps/ksgmltools2/docbook/xsl/common/af.xml
+share/apps/ksgmltools2/docbook/xsl/common/ar.xml
+share/apps/ksgmltools2/docbook/xsl/common/autoidx-ng.xsl
+share/apps/ksgmltools2/docbook/xsl/common/bg.xml
+share/apps/ksgmltools2/docbook/xsl/common/bn.xml
+share/apps/ksgmltools2/docbook/xsl/common/bs.xml
 share/apps/ksgmltools2/docbook/xsl/common/ca.xml
 share/apps/ksgmltools2/docbook/xsl/common/common.xsl
 share/apps/ksgmltools2/docbook/xsl/common/cs.xml
@@ -2118,6 +2226,8 @@ share/apps/ksgmltools2/docbook/xsl/common/eu.xml
 share/apps/ksgmltools2/docbook/xsl/common/fi.xml
 share/apps/ksgmltools2/docbook/xsl/common/fr.xml
 share/apps/ksgmltools2/docbook/xsl/common/gentext.xsl
+share/apps/ksgmltools2/docbook/xsl/common/he.xml
+share/apps/ksgmltools2/docbook/xsl/common/hr.xml
 share/apps/ksgmltools2/docbook/xsl/common/hu.xml
 share/apps/ksgmltools2/docbook/xsl/common/id.xml
 share/apps/ksgmltools2/docbook/xsl/common/it.xml
@@ -2126,10 +2236,14 @@ share/apps/ksgmltools2/docbook/xsl/common/ko.xml
 share/apps/ksgmltools2/docbook/xsl/common/l10n.dtd
 share/apps/ksgmltools2/docbook/xsl/common/l10n.xml
 share/apps/ksgmltools2/docbook/xsl/common/l10n.xsl
+share/apps/ksgmltools2/docbook/xsl/common/la.xml
 share/apps/ksgmltools2/docbook/xsl/common/labels.xsl
+share/apps/ksgmltools2/docbook/xsl/common/lt.xml
 share/apps/ksgmltools2/docbook/xsl/common/nl.xml
 share/apps/ksgmltools2/docbook/xsl/common/nn.xml
 share/apps/ksgmltools2/docbook/xsl/common/no.xml
+share/apps/ksgmltools2/docbook/xsl/common/olink.xsl
+share/apps/ksgmltools2/docbook/xsl/common/pi.xsl
 share/apps/ksgmltools2/docbook/xsl/common/pl.xml
 share/apps/ksgmltools2/docbook/xsl/common/pt.xml
 share/apps/ksgmltools2/docbook/xsl/common/pt_br.xml
@@ -2138,57 +2252,72 @@ share/apps/ksgmltools2/docbook/xsl/common/ru.xml
 share/apps/ksgmltools2/docbook/xsl/common/sk.xml
 share/apps/ksgmltools2/docbook/xsl/common/sl.xml
 share/apps/ksgmltools2/docbook/xsl/common/sr.xml
+share/apps/ksgmltools2/docbook/xsl/common/sr_Latn.xml
 share/apps/ksgmltools2/docbook/xsl/common/subtitles.xsl
 share/apps/ksgmltools2/docbook/xsl/common/sv.xml
 share/apps/ksgmltools2/docbook/xsl/common/table.xsl
+share/apps/ksgmltools2/docbook/xsl/common/targetdatabase.dtd
+share/apps/ksgmltools2/docbook/xsl/common/targets.xsl
 share/apps/ksgmltools2/docbook/xsl/common/th.xml
 share/apps/ksgmltools2/docbook/xsl/common/titles.xsl
 share/apps/ksgmltools2/docbook/xsl/common/tr.xml
 share/apps/ksgmltools2/docbook/xsl/common/uk.xml
+share/apps/ksgmltools2/docbook/xsl/common/vi.xml
 share/apps/ksgmltools2/docbook/xsl/common/xh.xml
 share/apps/ksgmltools2/docbook/xsl/common/zh_cn.xml
 share/apps/ksgmltools2/docbook/xsl/common/zh_tw.xml
 share/apps/ksgmltools2/docbook/xsl/html/ChangeLog
 share/apps/ksgmltools2/docbook/xsl/html/admon.xsl
+share/apps/ksgmltools2/docbook/xsl/html/autoidx-ng.xsl
 share/apps/ksgmltools2/docbook/xsl/html/autoidx.xsl
 share/apps/ksgmltools2/docbook/xsl/html/autotoc.xsl
 share/apps/ksgmltools2/docbook/xsl/html/biblio.xsl
 share/apps/ksgmltools2/docbook/xsl/html/block.xsl
-share/apps/ksgmltools2/docbook/xsl/html/calc-chunks.xsl
 share/apps/ksgmltools2/docbook/xsl/html/callout.xsl
 share/apps/ksgmltools2/docbook/xsl/html/changebars.xsl
-share/apps/ksgmltools2/docbook/xsl/html/chunk-experimental.xsl
+share/apps/ksgmltools2/docbook/xsl/html/chunk-code.xsl
+share/apps/ksgmltools2/docbook/xsl/html/chunk-common.xsl
 share/apps/ksgmltools2/docbook/xsl/html/chunk.xsl
 share/apps/ksgmltools2/docbook/xsl/html/chunker.xsl
+share/apps/ksgmltools2/docbook/xsl/html/chunkfast.xsl
+share/apps/ksgmltools2/docbook/xsl/html/chunktoc.xsl
 share/apps/ksgmltools2/docbook/xsl/html/component.xsl
 share/apps/ksgmltools2/docbook/xsl/html/division.xsl
 share/apps/ksgmltools2/docbook/xsl/html/docbook.xsl
+share/apps/ksgmltools2/docbook/xsl/html/docbookng.xsl
 share/apps/ksgmltools2/docbook/xsl/html/ebnf.xsl
-share/apps/ksgmltools2/docbook/xsl/html/expchunk.xsl
 share/apps/ksgmltools2/docbook/xsl/html/footnote.xsl
 share/apps/ksgmltools2/docbook/xsl/html/formal.xsl
 share/apps/ksgmltools2/docbook/xsl/html/glossary.xsl
 share/apps/ksgmltools2/docbook/xsl/html/graphics.xsl
+share/apps/ksgmltools2/docbook/xsl/html/html-rtf.xsl
 share/apps/ksgmltools2/docbook/xsl/html/html.xsl
+share/apps/ksgmltools2/docbook/xsl/html/htmltbl.xsl
 share/apps/ksgmltools2/docbook/xsl/html/index.xsl
 share/apps/ksgmltools2/docbook/xsl/html/info.xsl
 share/apps/ksgmltools2/docbook/xsl/html/inline.xsl
 share/apps/ksgmltools2/docbook/xsl/html/keywords.xsl
 share/apps/ksgmltools2/docbook/xsl/html/lists.xsl
+share/apps/ksgmltools2/docbook/xsl/html/maketoc.xsl
+share/apps/ksgmltools2/docbook/xsl/html/manifest.xsl
 share/apps/ksgmltools2/docbook/xsl/html/math.xsl
 share/apps/ksgmltools2/docbook/xsl/html/oldchunker.xsl
 share/apps/ksgmltools2/docbook/xsl/html/onechunk.xsl
 share/apps/ksgmltools2/docbook/xsl/html/param.ent
-share/apps/ksgmltools2/docbook/xsl/html/param.html
 share/apps/ksgmltools2/docbook/xsl/html/param.xml
 share/apps/ksgmltools2/docbook/xsl/html/param.xsl
 share/apps/ksgmltools2/docbook/xsl/html/param.xweb
 share/apps/ksgmltools2/docbook/xsl/html/pi.xsl
+share/apps/ksgmltools2/docbook/xsl/html/profile-chunk-code.xsl
+share/apps/ksgmltools2/docbook/xsl/html/profile-chunk.xsl
+share/apps/ksgmltools2/docbook/xsl/html/profile-docbook.xsl
+share/apps/ksgmltools2/docbook/xsl/html/profile-onechunk.xsl
 share/apps/ksgmltools2/docbook/xsl/html/qandaset.xsl
 share/apps/ksgmltools2/docbook/xsl/html/refentry.xsl
 share/apps/ksgmltools2/docbook/xsl/html/sections.xsl
 share/apps/ksgmltools2/docbook/xsl/html/synop.xsl
 share/apps/ksgmltools2/docbook/xsl/html/table.xsl
+share/apps/ksgmltools2/docbook/xsl/html/task.xsl
 share/apps/ksgmltools2/docbook/xsl/html/titlepage.templates.xml
 share/apps/ksgmltools2/docbook/xsl/html/titlepage.templates.xsl
 share/apps/ksgmltools2/docbook/xsl/html/titlepage.xsl
@@ -2196,52 +2325,96 @@ share/apps/ksgmltools2/docbook/xsl/html/toc.xsl
 share/apps/ksgmltools2/docbook/xsl/html/verbatim.xsl
 share/apps/ksgmltools2/docbook/xsl/html/xref.xsl
 share/apps/ksgmltools2/docbook/xsl/images/ChangeLog
+share/apps/ksgmltools2/docbook/xsl/images/blank.png
+share/apps/ksgmltools2/docbook/xsl/images/callouts/1.gif
 share/apps/ksgmltools2/docbook/xsl/images/callouts/1.png
+share/apps/ksgmltools2/docbook/xsl/images/callouts/10.gif
 share/apps/ksgmltools2/docbook/xsl/images/callouts/10.png
+share/apps/ksgmltools2/docbook/xsl/images/callouts/11.gif
+share/apps/ksgmltools2/docbook/xsl/images/callouts/11.png
+share/apps/ksgmltools2/docbook/xsl/images/callouts/12.gif
+share/apps/ksgmltools2/docbook/xsl/images/callouts/12.png
+share/apps/ksgmltools2/docbook/xsl/images/callouts/13.gif
+share/apps/ksgmltools2/docbook/xsl/images/callouts/13.png
+share/apps/ksgmltools2/docbook/xsl/images/callouts/14.gif
+share/apps/ksgmltools2/docbook/xsl/images/callouts/14.png
+share/apps/ksgmltools2/docbook/xsl/images/callouts/15.gif
+share/apps/ksgmltools2/docbook/xsl/images/callouts/15.png
+share/apps/ksgmltools2/docbook/xsl/images/callouts/2.gif
 share/apps/ksgmltools2/docbook/xsl/images/callouts/2.png
+share/apps/ksgmltools2/docbook/xsl/images/callouts/3.gif
 share/apps/ksgmltools2/docbook/xsl/images/callouts/3.png
+share/apps/ksgmltools2/docbook/xsl/images/callouts/4.gif
 share/apps/ksgmltools2/docbook/xsl/images/callouts/4.png
+share/apps/ksgmltools2/docbook/xsl/images/callouts/5.gif
 share/apps/ksgmltools2/docbook/xsl/images/callouts/5.png
+share/apps/ksgmltools2/docbook/xsl/images/callouts/6.gif
 share/apps/ksgmltools2/docbook/xsl/images/callouts/6.png
+share/apps/ksgmltools2/docbook/xsl/images/callouts/7.gif
 share/apps/ksgmltools2/docbook/xsl/images/callouts/7.png
+share/apps/ksgmltools2/docbook/xsl/images/callouts/8.gif
 share/apps/ksgmltools2/docbook/xsl/images/callouts/8.png
+share/apps/ksgmltools2/docbook/xsl/images/callouts/9.gif
 share/apps/ksgmltools2/docbook/xsl/images/callouts/9.png
 share/apps/ksgmltools2/docbook/xsl/images/callouts/ChangeLog
+share/apps/ksgmltools2/docbook/xsl/images/caution.gif
 share/apps/ksgmltools2/docbook/xsl/images/caution.png
 share/apps/ksgmltools2/docbook/xsl/images/caution.tif
+share/apps/ksgmltools2/docbook/xsl/images/draft.png
+share/apps/ksgmltools2/docbook/xsl/images/home.gif
 share/apps/ksgmltools2/docbook/xsl/images/home.png
+share/apps/ksgmltools2/docbook/xsl/images/important.gif
 share/apps/ksgmltools2/docbook/xsl/images/important.png
 share/apps/ksgmltools2/docbook/xsl/images/important.tif
+share/apps/ksgmltools2/docbook/xsl/images/next.gif
 share/apps/ksgmltools2/docbook/xsl/images/next.png
+share/apps/ksgmltools2/docbook/xsl/images/note.gif
 share/apps/ksgmltools2/docbook/xsl/images/note.png
 share/apps/ksgmltools2/docbook/xsl/images/note.tif
+share/apps/ksgmltools2/docbook/xsl/images/prev.gif
 share/apps/ksgmltools2/docbook/xsl/images/prev.png
+share/apps/ksgmltools2/docbook/xsl/images/tip.gif
 share/apps/ksgmltools2/docbook/xsl/images/tip.png
 share/apps/ksgmltools2/docbook/xsl/images/tip.tif
 share/apps/ksgmltools2/docbook/xsl/images/toc-blank.png
 share/apps/ksgmltools2/docbook/xsl/images/toc-minus.png
 share/apps/ksgmltools2/docbook/xsl/images/toc-plus.png
+share/apps/ksgmltools2/docbook/xsl/images/up.gif
 share/apps/ksgmltools2/docbook/xsl/images/up.png
+share/apps/ksgmltools2/docbook/xsl/images/warning.gif
 share/apps/ksgmltools2/docbook/xsl/images/warning.png
 share/apps/ksgmltools2/docbook/xsl/images/warning.tif
 share/apps/ksgmltools2/docbook/xsl/lib/ChangeLog
+share/apps/ksgmltools2/docbook/xsl/lib/lib.xml
 share/apps/ksgmltools2/docbook/xsl/lib/lib.xsl
+share/apps/ksgmltools2/docbook/xsl/lib/lib.xweb
+share/apps/ksgmltools2/docbook/xsl/manpages/ChangeLog
+share/apps/ksgmltools2/docbook/xsl/manpages/README
+share/apps/ksgmltools2/docbook/xsl/manpages/docbook.xsl
+share/apps/ksgmltools2/docbook/xsl/manpages/lists.xsl
+share/apps/ksgmltools2/docbook/xsl/manpages/sect23.xsl
+share/apps/ksgmltools2/docbook/xsl/manpages/synop.xsl
+share/apps/ksgmltools2/docbook/xsl/manpages/xref.xsl
 share/apps/ksgmltools2/docbook/xsl/params/ChangeLog
 share/apps/ksgmltools2/docbook/xsl/params/admon.graphics.extension.xml
 share/apps/ksgmltools2/docbook/xsl/params/admon.graphics.path.xml
 share/apps/ksgmltools2/docbook/xsl/params/admon.graphics.xml
 share/apps/ksgmltools2/docbook/xsl/params/admon.style.xml
+share/apps/ksgmltools2/docbook/xsl/params/admon.textlabel.xml
 share/apps/ksgmltools2/docbook/xsl/params/admonition.properties.xml
 share/apps/ksgmltools2/docbook/xsl/params/admonition.title.properties.xml
 share/apps/ksgmltools2/docbook/xsl/params/alignment.xml
 share/apps/ksgmltools2/docbook/xsl/params/annotate.toc.xml
 share/apps/ksgmltools2/docbook/xsl/params/appendix.autolabel.xml
 share/apps/ksgmltools2/docbook/xsl/params/arbortext.extensions.xml
+share/apps/ksgmltools2/docbook/xsl/params/article.appendix.title.properties.xml
 share/apps/ksgmltools2/docbook/xsl/params/author.othername.in.middle.xml
 share/apps/ksgmltools2/docbook/xsl/params/autotoc.label.separator.xml
+share/apps/ksgmltools2/docbook/xsl/params/axf.extensions.xml
 share/apps/ksgmltools2/docbook/xsl/params/base.dir.xml
 share/apps/ksgmltools2/docbook/xsl/params/biblioentry.item.separator.xml
 share/apps/ksgmltools2/docbook/xsl/params/bibliography.collection.xml
+share/apps/ksgmltools2/docbook/xsl/params/bibliography.numbered.xml
 share/apps/ksgmltools2/docbook/xsl/params/blockquote.properties.xml
 share/apps/ksgmltools2/docbook/xsl/params/body.font.family.xml
 share/apps/ksgmltools2/docbook/xsl/params/body.font.master.xml
@@ -2261,78 +2434,179 @@ share/apps/ksgmltools2/docbook/xsl/params/callout.unicode.start.character.xml
 share/apps/ksgmltools2/docbook/xsl/params/callout.unicode.xml
 share/apps/ksgmltools2/docbook/xsl/params/callouts.extension.xml
 share/apps/ksgmltools2/docbook/xsl/params/chapter.autolabel.xml
-share/apps/ksgmltools2/docbook/xsl/params/chunk.datafile.xml
 share/apps/ksgmltools2/docbook/xsl/params/chunk.first.sections.xml
+share/apps/ksgmltools2/docbook/xsl/params/chunk.quietly.xml
 share/apps/ksgmltools2/docbook/xsl/params/chunk.section.depth.xml
 share/apps/ksgmltools2/docbook/xsl/params/chunk.sections.xml
+share/apps/ksgmltools2/docbook/xsl/params/chunk.separate.lots.xml
+share/apps/ksgmltools2/docbook/xsl/params/chunk.toc.xml
+share/apps/ksgmltools2/docbook/xsl/params/chunk.tocs.and.lots.xml
+share/apps/ksgmltools2/docbook/xsl/params/chunker.output.cdata-section-elements.xml
+share/apps/ksgmltools2/docbook/xsl/params/chunker.output.doctype-public.xml
+share/apps/ksgmltools2/docbook/xsl/params/chunker.output.doctype-system.xml
+share/apps/ksgmltools2/docbook/xsl/params/chunker.output.encoding.xml
+share/apps/ksgmltools2/docbook/xsl/params/chunker.output.indent.xml
+share/apps/ksgmltools2/docbook/xsl/params/chunker.output.media-type.xml
+share/apps/ksgmltools2/docbook/xsl/params/chunker.output.method.xml
+share/apps/ksgmltools2/docbook/xsl/params/chunker.output.omit-xml-declaration.xml
+share/apps/ksgmltools2/docbook/xsl/params/chunker.output.standalone.xml
 share/apps/ksgmltools2/docbook/xsl/params/citerefentry.link.xml
-share/apps/ksgmltools2/docbook/xsl/params/column.count.xml
+share/apps/ksgmltools2/docbook/xsl/params/collect.xref.targets.xml
+share/apps/ksgmltools2/docbook/xsl/params/column.count.back.xml
+share/apps/ksgmltools2/docbook/xsl/params/column.count.body.xml
+share/apps/ksgmltools2/docbook/xsl/params/column.count.front.xml
+share/apps/ksgmltools2/docbook/xsl/params/column.count.index.xml
+share/apps/ksgmltools2/docbook/xsl/params/column.count.lot.xml
+share/apps/ksgmltools2/docbook/xsl/params/column.count.titlepage.xml
+share/apps/ksgmltools2/docbook/xsl/params/column.gap.back.xml
+share/apps/ksgmltools2/docbook/xsl/params/column.gap.body.xml
+share/apps/ksgmltools2/docbook/xsl/params/column.gap.front.xml
+share/apps/ksgmltools2/docbook/xsl/params/column.gap.index.xml
+share/apps/ksgmltools2/docbook/xsl/params/column.gap.lot.xml
+share/apps/ksgmltools2/docbook/xsl/params/column.gap.titlepage.xml
+share/apps/ksgmltools2/docbook/xsl/params/compact.list.item.spacing.xml
+share/apps/ksgmltools2/docbook/xsl/params/component.label.includes.part.label.xml
 share/apps/ksgmltools2/docbook/xsl/params/component.title.properties.xml
 share/apps/ksgmltools2/docbook/xsl/params/css.decoration.xml
-share/apps/ksgmltools2/docbook/xsl/params/default.encoding.xml
+share/apps/ksgmltools2/docbook/xsl/params/current.docid.xml
+share/apps/ksgmltools2/docbook/xsl/params/default.float.class.xml
+share/apps/ksgmltools2/docbook/xsl/params/default.image.width.xml
 share/apps/ksgmltools2/docbook/xsl/params/default.table.width.xml
 share/apps/ksgmltools2/docbook/xsl/params/default.units.xml
 share/apps/ksgmltools2/docbook/xsl/params/dingbat.font.family.xml
 share/apps/ksgmltools2/docbook/xsl/params/double.sided.xml
+share/apps/ksgmltools2/docbook/xsl/params/draft.mode.xml
+share/apps/ksgmltools2/docbook/xsl/params/draft.watermark.image.xml
+share/apps/ksgmltools2/docbook/xsl/params/ebnf.assignment.xml
+share/apps/ksgmltools2/docbook/xsl/params/ebnf.statement.terminator.xml
 share/apps/ksgmltools2/docbook/xsl/params/ebnf.table.bgcolor.xml
 share/apps/ksgmltools2/docbook/xsl/params/ebnf.table.border.xml
+share/apps/ksgmltools2/docbook/xsl/params/eclipse.autolabel.xml
+share/apps/ksgmltools2/docbook/xsl/params/eclipse.plugin.id.xml
+share/apps/ksgmltools2/docbook/xsl/params/eclipse.plugin.name.xml
+share/apps/ksgmltools2/docbook/xsl/params/eclipse.plugin.provider.xml
 share/apps/ksgmltools2/docbook/xsl/params/emphasis.propagates.style.xml
+share/apps/ksgmltools2/docbook/xsl/params/entry.propagates.style.xml
+share/apps/ksgmltools2/docbook/xsl/params/equation.properties.xml
+share/apps/ksgmltools2/docbook/xsl/params/example.properties.xml
+share/apps/ksgmltools2/docbook/xsl/params/figure.properties.xml
 share/apps/ksgmltools2/docbook/xsl/params/firstterm.only.link.xml
+share/apps/ksgmltools2/docbook/xsl/params/footer.column.widths.xml
+share/apps/ksgmltools2/docbook/xsl/params/footer.content.properties.xml
+share/apps/ksgmltools2/docbook/xsl/params/footer.rule.xml
+share/apps/ksgmltools2/docbook/xsl/params/footers.on.blank.pages.xml
 share/apps/ksgmltools2/docbook/xsl/params/footnote.font.size.xml
+share/apps/ksgmltools2/docbook/xsl/params/footnote.number.format.xml
+share/apps/ksgmltools2/docbook/xsl/params/footnote.number.symbols.xml
+share/apps/ksgmltools2/docbook/xsl/params/footnote.sep.leader.properties.xml
 share/apps/ksgmltools2/docbook/xsl/params/fop.extensions.xml
 share/apps/ksgmltools2/docbook/xsl/params/formal.object.properties.xml
 share/apps/ksgmltools2/docbook/xsl/params/formal.procedures.xml
+share/apps/ksgmltools2/docbook/xsl/params/formal.title.placement.xml
 share/apps/ksgmltools2/docbook/xsl/params/formal.title.properties.xml
 share/apps/ksgmltools2/docbook/xsl/params/funcsynopsis.decoration.xml
 share/apps/ksgmltools2/docbook/xsl/params/funcsynopsis.style.xml
+share/apps/ksgmltools2/docbook/xsl/params/funcsynopsis.tabular.threshold.xml
 share/apps/ksgmltools2/docbook/xsl/params/function.parens.xml
-share/apps/ksgmltools2/docbook/xsl/params/generate.appendix.toc.xml
-share/apps/ksgmltools2/docbook/xsl/params/generate.article.toc.xml
-share/apps/ksgmltools2/docbook/xsl/params/generate.book.equation.lot.xml
-share/apps/ksgmltools2/docbook/xsl/params/generate.book.example.lot.xml
-share/apps/ksgmltools2/docbook/xsl/params/generate.book.figure.lot.xml
-share/apps/ksgmltools2/docbook/xsl/params/generate.book.table.lot.xml
-share/apps/ksgmltools2/docbook/xsl/params/generate.book.toc.xml
-share/apps/ksgmltools2/docbook/xsl/params/generate.chapter.toc.xml
-share/apps/ksgmltools2/docbook/xsl/params/generate.component.toc.xml
-share/apps/ksgmltools2/docbook/xsl/params/generate.division.equation.lot.xml
-share/apps/ksgmltools2/docbook/xsl/params/generate.division.example.lot.xml
-share/apps/ksgmltools2/docbook/xsl/params/generate.division.figure.lot.xml
-share/apps/ksgmltools2/docbook/xsl/params/generate.division.table.lot.xml
-share/apps/ksgmltools2/docbook/xsl/params/generate.division.toc.xml
+share/apps/ksgmltools2/docbook/xsl/params/generate.id.attributes.xml
 share/apps/ksgmltools2/docbook/xsl/params/generate.index.xml
 share/apps/ksgmltools2/docbook/xsl/params/generate.legalnotice.link.xml
-share/apps/ksgmltools2/docbook/xsl/params/generate.part.toc.xml
-share/apps/ksgmltools2/docbook/xsl/params/generate.preface.toc.xml
-share/apps/ksgmltools2/docbook/xsl/params/generate.qandadiv.toc.xml
-share/apps/ksgmltools2/docbook/xsl/params/generate.qandaset.toc.xml
-share/apps/ksgmltools2/docbook/xsl/params/generate.reference.toc.xml
+share/apps/ksgmltools2/docbook/xsl/params/generate.manifest.xml
+share/apps/ksgmltools2/docbook/xsl/params/generate.meta.abstract.xml
 share/apps/ksgmltools2/docbook/xsl/params/generate.section.toc.level.xml
-share/apps/ksgmltools2/docbook/xsl/params/generate.section.toc.xml
-share/apps/ksgmltools2/docbook/xsl/params/generate.set.toc.xml
+share/apps/ksgmltools2/docbook/xsl/params/generate.toc.xml
+share/apps/ksgmltools2/docbook/xsl/params/glossary.as.blocks.xml
 share/apps/ksgmltools2/docbook/xsl/params/glossary.collection.xml
+share/apps/ksgmltools2/docbook/xsl/params/glossentry.show.acronym.xml
+share/apps/ksgmltools2/docbook/xsl/params/glosslist.as.blocks.xml
 share/apps/ksgmltools2/docbook/xsl/params/glossterm.auto.link.xml
+share/apps/ksgmltools2/docbook/xsl/params/glossterm.separation.xml
+share/apps/ksgmltools2/docbook/xsl/params/glossterm.width.xml
 share/apps/ksgmltools2/docbook/xsl/params/graphic.default.extension.xml
+share/apps/ksgmltools2/docbook/xsl/params/graphicsize.extension.xml
+share/apps/ksgmltools2/docbook/xsl/params/header.column.widths.xml
+share/apps/ksgmltools2/docbook/xsl/params/header.content.properties.xml
+share/apps/ksgmltools2/docbook/xsl/params/header.rule.xml
+share/apps/ksgmltools2/docbook/xsl/params/headers.on.blank.pages.xml
 share/apps/ksgmltools2/docbook/xsl/params/html.base.xml
+share/apps/ksgmltools2/docbook/xsl/params/html.cellpadding.xml
+share/apps/ksgmltools2/docbook/xsl/params/html.cellspacing.xml
+share/apps/ksgmltools2/docbook/xsl/params/html.cleanup.xml
 share/apps/ksgmltools2/docbook/xsl/params/html.ext.xml
+share/apps/ksgmltools2/docbook/xsl/params/html.extra.head.links.xml
 share/apps/ksgmltools2/docbook/xsl/params/html.longdesc.link.xml
 share/apps/ksgmltools2/docbook/xsl/params/html.longdesc.xml
 share/apps/ksgmltools2/docbook/xsl/params/html.stylesheet.type.xml
 share/apps/ksgmltools2/docbook/xsl/params/html.stylesheet.xml
 share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.alias.file.xml
 share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.autolabel.xml
+share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.button.back.xml
+share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.button.forward.xml
+share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.button.hideshow.xml
+share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.button.home.url.xml
+share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.button.home.xml
+share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.button.jump1.title.xml
+share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.button.jump1.url.xml
+share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.button.jump1.xml
+share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.button.jump2.title.xml
+share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.button.jump2.url.xml
+share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.button.jump2.xml
+share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.button.locate.xml
+share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.button.next.xml
+share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.button.options.xml
+share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.button.prev.xml
+share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.button.print.xml
+share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.button.refresh.xml
+share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.button.stop.xml
+share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.button.zoom.xml
 share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.chm.xml
+share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.default.topic.xml
+share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.display.progress.xml
 share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.encoding.xml
+share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.enhanced.decompilation.xml
 share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.enumerate.images.xml
 share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.force.map.and.alias.xml
+share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.hhc.binary.xml
+share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.hhc.folders.instead.books.xml
 share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.hhc.section.depth.xml
+share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.hhc.show.root.xml
+share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.hhc.width.xml
 share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.hhc.xml
+share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.hhk.xml
 share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.hhp.tail.xml
+share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.hhp.window.xml
+share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.hhp.windows.xml
 share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.hhp.xml
 share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.map.file.xml
+share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.only.xml
+share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.remember.window.position.xml
+share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.show.advanced.search.xml
+share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.show.favorities.xml
+share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.show.menu.xml
+share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.show.toolbar.text.xml
+share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.title.xml
+share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.use.hhk.xml
+share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.window.geometry.xml
+share/apps/ksgmltools2/docbook/xsl/params/hyphenate.verbatim.xml
 share/apps/ksgmltools2/docbook/xsl/params/hyphenate.xml
+share/apps/ksgmltools2/docbook/xsl/params/ignore.image.scaling.xml
+share/apps/ksgmltools2/docbook/xsl/params/img.src.path.xml
+share/apps/ksgmltools2/docbook/xsl/params/index.on.role.xml
+share/apps/ksgmltools2/docbook/xsl/params/index.on.type.xml
+share/apps/ksgmltools2/docbook/xsl/params/index.prefer.titleabbrev.xml
+share/apps/ksgmltools2/docbook/xsl/params/index.preferred.page.properties.xml
+share/apps/ksgmltools2/docbook/xsl/params/informal.object.properties.xml
+share/apps/ksgmltools2/docbook/xsl/params/informalequation.properties.xml
+share/apps/ksgmltools2/docbook/xsl/params/informalexample.properties.xml
+share/apps/ksgmltools2/docbook/xsl/params/informalfigure.properties.xml
+share/apps/ksgmltools2/docbook/xsl/params/informaltable.properties.xml
 share/apps/ksgmltools2/docbook/xsl/params/inherit.keywords.xml
+share/apps/ksgmltools2/docbook/xsl/params/insert.olink.page.number.xml
+share/apps/ksgmltools2/docbook/xsl/params/insert.olink.pdf.frag.xml
 share/apps/ksgmltools2/docbook/xsl/params/insert.xref.page.number.xml
+share/apps/ksgmltools2/docbook/xsl/params/l10n.gentext.default.language.xml
+share/apps/ksgmltools2/docbook/xsl/params/l10n.gentext.language.xml
+share/apps/ksgmltools2/docbook/xsl/params/l10n.gentext.use.xref.language.xml
 share/apps/ksgmltools2/docbook/xsl/params/label.from.part.xml
 share/apps/ksgmltools2/docbook/xsl/params/line-height.xml
 share/apps/ksgmltools2/docbook/xsl/params/linenumbering.everyNth.xml
@@ -2342,23 +2616,38 @@ share/apps/ksgmltools2/docbook/xsl/params/linenumbering.width.xml
 share/apps/ksgmltools2/docbook/xsl/params/link.mailto.url.xml
 share/apps/ksgmltools2/docbook/xsl/params/list.block.spacing.xml
 share/apps/ksgmltools2/docbook/xsl/params/list.item.spacing.xml
+share/apps/ksgmltools2/docbook/xsl/params/make.graphic.viewport.xml
+share/apps/ksgmltools2/docbook/xsl/params/make.index.markup.xml
 share/apps/ksgmltools2/docbook/xsl/params/make.single.year.ranges.xml
 share/apps/ksgmltools2/docbook/xsl/params/make.valid.html.xml
 share/apps/ksgmltools2/docbook/xsl/params/make.year.ranges.xml
+share/apps/ksgmltools2/docbook/xsl/params/manifest.in.base.dir.xml
+share/apps/ksgmltools2/docbook/xsl/params/manifest.xml
+share/apps/ksgmltools2/docbook/xsl/params/manual.toc.xml
+share/apps/ksgmltools2/docbook/xsl/params/marker.section.level.xml
+share/apps/ksgmltools2/docbook/xsl/params/menuchoice.menu.separator.xml
+share/apps/ksgmltools2/docbook/xsl/params/menuchoice.separator.xml
 share/apps/ksgmltools2/docbook/xsl/params/monospace.font.family.xml
+share/apps/ksgmltools2/docbook/xsl/params/monospace.properties.xml
 share/apps/ksgmltools2/docbook/xsl/params/monospace.verbatim.properties.xml
 share/apps/ksgmltools2/docbook/xsl/params/navig.graphics.extension.xml
 share/apps/ksgmltools2/docbook/xsl/params/navig.graphics.path.xml
 share/apps/ksgmltools2/docbook/xsl/params/navig.graphics.xml
 share/apps/ksgmltools2/docbook/xsl/params/navig.showtitles.xml
+share/apps/ksgmltools2/docbook/xsl/params/nominal.image.depth.xml
+share/apps/ksgmltools2/docbook/xsl/params/nominal.image.width.xml
 share/apps/ksgmltools2/docbook/xsl/params/nominal.table.width.xml
 share/apps/ksgmltools2/docbook/xsl/params/normal.para.spacing.xml
+share/apps/ksgmltools2/docbook/xsl/params/olink.base.uri.xml
+share/apps/ksgmltools2/docbook/xsl/params/olink.debug.xml
+share/apps/ksgmltools2/docbook/xsl/params/olink.doctitle.xml
 share/apps/ksgmltools2/docbook/xsl/params/olink.fragid.xml
+share/apps/ksgmltools2/docbook/xsl/params/olink.lang.fallback.sequence.xml
 share/apps/ksgmltools2/docbook/xsl/params/olink.outline.ext.xml
+share/apps/ksgmltools2/docbook/xsl/params/olink.properties.xml
 share/apps/ksgmltools2/docbook/xsl/params/olink.pubid.xml
 share/apps/ksgmltools2/docbook/xsl/params/olink.resolver.xml
 share/apps/ksgmltools2/docbook/xsl/params/olink.sysid.xml
-share/apps/ksgmltools2/docbook/xsl/params/output.method.xml
 share/apps/ksgmltools2/docbook/xsl/params/page.height.portrait.xml
 share/apps/ksgmltools2/docbook/xsl/params/page.height.xml
 share/apps/ksgmltools2/docbook/xsl/params/page.margin.bottom.xml
@@ -2369,23 +2658,53 @@ share/apps/ksgmltools2/docbook/xsl/params/page.orientation.xml
 share/apps/ksgmltools2/docbook/xsl/params/page.width.portrait.xml
 share/apps/ksgmltools2/docbook/xsl/params/page.width.xml
 share/apps/ksgmltools2/docbook/xsl/params/paper.type.xml
+share/apps/ksgmltools2/docbook/xsl/params/para.propagates.style.xml
 share/apps/ksgmltools2/docbook/xsl/params/part.autolabel.xml
 share/apps/ksgmltools2/docbook/xsl/params/passivetex.extensions.xml
 share/apps/ksgmltools2/docbook/xsl/params/phrase.propagates.style.xml
+share/apps/ksgmltools2/docbook/xsl/params/pixels.per.inch.xml
+share/apps/ksgmltools2/docbook/xsl/params/points.per.em.xml
 share/apps/ksgmltools2/docbook/xsl/params/preface.autolabel.xml
+share/apps/ksgmltools2/docbook/xsl/params/prefer.internal.olink.xml
+share/apps/ksgmltools2/docbook/xsl/params/preferred.mediaobject.role.xml
+share/apps/ksgmltools2/docbook/xsl/params/procedure.properties.xml
 share/apps/ksgmltools2/docbook/xsl/params/process.empty.source.toc.xml
 share/apps/ksgmltools2/docbook/xsl/params/process.source.toc.xml
+share/apps/ksgmltools2/docbook/xsl/params/profile.arch.xml
+share/apps/ksgmltools2/docbook/xsl/params/profile.attribute.xml
+share/apps/ksgmltools2/docbook/xsl/params/profile.condition.xml
+share/apps/ksgmltools2/docbook/xsl/params/profile.conformance.xml
+share/apps/ksgmltools2/docbook/xsl/params/profile.lang.xml
+share/apps/ksgmltools2/docbook/xsl/params/profile.os.xml
+share/apps/ksgmltools2/docbook/xsl/params/profile.revision.xml
+share/apps/ksgmltools2/docbook/xsl/params/profile.revisionflag.xml
+share/apps/ksgmltools2/docbook/xsl/params/profile.role.xml
+share/apps/ksgmltools2/docbook/xsl/params/profile.security.xml
+share/apps/ksgmltools2/docbook/xsl/params/profile.separator.xml
+share/apps/ksgmltools2/docbook/xsl/params/profile.userlevel.xml
+share/apps/ksgmltools2/docbook/xsl/params/profile.value.xml
+share/apps/ksgmltools2/docbook/xsl/params/profile.vendor.xml
 share/apps/ksgmltools2/docbook/xsl/params/punct.honorific.xml
 share/apps/ksgmltools2/docbook/xsl/params/qanda.defaultlabel.xml
 share/apps/ksgmltools2/docbook/xsl/params/qanda.inherit.numeration.xml
+share/apps/ksgmltools2/docbook/xsl/params/qanda.title.level1.properties.xml
+share/apps/ksgmltools2/docbook/xsl/params/qanda.title.level2.properties.xml
+share/apps/ksgmltools2/docbook/xsl/params/qanda.title.level3.properties.xml
+share/apps/ksgmltools2/docbook/xsl/params/qanda.title.level4.properties.xml
+share/apps/ksgmltools2/docbook/xsl/params/qanda.title.level5.properties.xml
+share/apps/ksgmltools2/docbook/xsl/params/qanda.title.level6.properties.xml
+share/apps/ksgmltools2/docbook/xsl/params/qanda.title.properties.xml
 share/apps/ksgmltools2/docbook/xsl/params/qandadiv.autolabel.xml
 share/apps/ksgmltools2/docbook/xsl/params/refentry.generate.name.xml
 share/apps/ksgmltools2/docbook/xsl/params/refentry.generate.title.xml
+share/apps/ksgmltools2/docbook/xsl/params/refentry.pagebreak.xml
 share/apps/ksgmltools2/docbook/xsl/params/refentry.separator.xml
+share/apps/ksgmltools2/docbook/xsl/params/refentry.title.properties.xml
 share/apps/ksgmltools2/docbook/xsl/params/refentry.xref.manvolnum.xml
 share/apps/ksgmltools2/docbook/xsl/params/region.after.extent.xml
 share/apps/ksgmltools2/docbook/xsl/params/region.before.extent.xml
 share/apps/ksgmltools2/docbook/xsl/params/root.filename.xml
+share/apps/ksgmltools2/docbook/xsl/params/root.properties.xml
 share/apps/ksgmltools2/docbook/xsl/params/rootid.xml
 share/apps/ksgmltools2/docbook/xsl/params/runinhead.default.title.end.punct.xml
 share/apps/ksgmltools2/docbook/xsl/params/runinhead.title.end.punct.xml
@@ -2394,83 +2713,92 @@ share/apps/ksgmltools2/docbook/xsl/params/saxon.callouts.xml
 share/apps/ksgmltools2/docbook/xsl/params/saxon.character.representation.xml
 share/apps/ksgmltools2/docbook/xsl/params/saxon.linenumbering.xml
 share/apps/ksgmltools2/docbook/xsl/params/saxon.tablecolumns.xml
+share/apps/ksgmltools2/docbook/xsl/params/section.autolabel.max.depth.xml
 share/apps/ksgmltools2/docbook/xsl/params/section.autolabel.xml
 share/apps/ksgmltools2/docbook/xsl/params/section.label.includes.component.label.xml
+share/apps/ksgmltools2/docbook/xsl/params/section.level1.properties.xml
+share/apps/ksgmltools2/docbook/xsl/params/section.level2.properties.xml
+share/apps/ksgmltools2/docbook/xsl/params/section.level3.properties.xml
+share/apps/ksgmltools2/docbook/xsl/params/section.level4.properties.xml
+share/apps/ksgmltools2/docbook/xsl/params/section.level5.properties.xml
+share/apps/ksgmltools2/docbook/xsl/params/section.level6.properties.xml
+share/apps/ksgmltools2/docbook/xsl/params/section.properties.xml
+share/apps/ksgmltools2/docbook/xsl/params/section.title.level1.properties.xml
+share/apps/ksgmltools2/docbook/xsl/params/section.title.level2.properties.xml
+share/apps/ksgmltools2/docbook/xsl/params/section.title.level3.properties.xml
+share/apps/ksgmltools2/docbook/xsl/params/section.title.level4.properties.xml
+share/apps/ksgmltools2/docbook/xsl/params/section.title.level5.properties.xml
+share/apps/ksgmltools2/docbook/xsl/params/section.title.level6.properties.xml
+share/apps/ksgmltools2/docbook/xsl/params/section.title.properties.xml
 share/apps/ksgmltools2/docbook/xsl/params/segmentedlist.as.table.xml
 share/apps/ksgmltools2/docbook/xsl/params/shade.verbatim.style.xml
 share/apps/ksgmltools2/docbook/xsl/params/shade.verbatim.xml
 share/apps/ksgmltools2/docbook/xsl/params/show.comments.xml
 share/apps/ksgmltools2/docbook/xsl/params/show.revisionflag.xml
+share/apps/ksgmltools2/docbook/xsl/params/sidebar.properties.xml
+share/apps/ksgmltools2/docbook/xsl/params/simplesect.in.toc.xml
 share/apps/ksgmltools2/docbook/xsl/params/spacing.paras.xml
-share/apps/ksgmltools2/docbook/xsl/params/stylesheet.result.type.xml
+share/apps/ksgmltools2/docbook/xsl/params/subscript.properties.xml
+share/apps/ksgmltools2/docbook/xsl/params/superscript.properties.xml
+share/apps/ksgmltools2/docbook/xsl/params/suppress.footer.navigation.xml
+share/apps/ksgmltools2/docbook/xsl/params/suppress.header.navigation.xml
 share/apps/ksgmltools2/docbook/xsl/params/suppress.navigation.xml
-share/apps/ksgmltools2/docbook/xsl/params/table.border.color.xml
-share/apps/ksgmltools2/docbook/xsl/params/table.border.padding.xml
-share/apps/ksgmltools2/docbook/xsl/params/table.border.style.xml
-share/apps/ksgmltools2/docbook/xsl/params/table.border.thickness.xml
+share/apps/ksgmltools2/docbook/xsl/params/symbol.font.family.xml
 share/apps/ksgmltools2/docbook/xsl/params/table.borders.with.css.xml
+share/apps/ksgmltools2/docbook/xsl/params/table.cell.border.color.xml
+share/apps/ksgmltools2/docbook/xsl/params/table.cell.border.style.xml
+share/apps/ksgmltools2/docbook/xsl/params/table.cell.border.thickness.xml
+share/apps/ksgmltools2/docbook/xsl/params/table.cell.padding.xml
 share/apps/ksgmltools2/docbook/xsl/params/table.entry.padding.xml
+share/apps/ksgmltools2/docbook/xsl/params/table.footnote.number.format.xml
+share/apps/ksgmltools2/docbook/xsl/params/table.footnote.number.symbols.xml
+share/apps/ksgmltools2/docbook/xsl/params/table.frame.border.color.xml
+share/apps/ksgmltools2/docbook/xsl/params/table.frame.border.style.xml
+share/apps/ksgmltools2/docbook/xsl/params/table.frame.border.thickness.xml
+share/apps/ksgmltools2/docbook/xsl/params/table.properties.xml
+share/apps/ksgmltools2/docbook/xsl/params/table.table.properties.xml
 share/apps/ksgmltools2/docbook/xsl/params/tablecolumns.extension.xml
+share/apps/ksgmltools2/docbook/xsl/params/target.database.document.xml
+share/apps/ksgmltools2/docbook/xsl/params/targets.filename.xml
 share/apps/ksgmltools2/docbook/xsl/params/template.xml
+share/apps/ksgmltools2/docbook/xsl/params/tex.math.delims.xml
 share/apps/ksgmltools2/docbook/xsl/params/tex.math.file.xml
 share/apps/ksgmltools2/docbook/xsl/params/tex.math.in.alt.xml
+share/apps/ksgmltools2/docbook/xsl/params/textdata.default.encoding.xml
 share/apps/ksgmltools2/docbook/xsl/params/textinsert.extension.xml
 share/apps/ksgmltools2/docbook/xsl/params/title.font.family.xml
 share/apps/ksgmltools2/docbook/xsl/params/title.margin.left.xml
 share/apps/ksgmltools2/docbook/xsl/params/toc.indent.width.xml
 share/apps/ksgmltools2/docbook/xsl/params/toc.list.type.xml
 share/apps/ksgmltools2/docbook/xsl/params/toc.margin.properties.xml
+share/apps/ksgmltools2/docbook/xsl/params/toc.max.depth.xml
 share/apps/ksgmltools2/docbook/xsl/params/toc.section.depth.xml
+share/apps/ksgmltools2/docbook/xsl/params/ulink.footnote.number.format.xml
+share/apps/ksgmltools2/docbook/xsl/params/ulink.footnotes.xml
+share/apps/ksgmltools2/docbook/xsl/params/ulink.hyphenate.xml
+share/apps/ksgmltools2/docbook/xsl/params/ulink.show.xml
 share/apps/ksgmltools2/docbook/xsl/params/ulink.target.xml
+share/apps/ksgmltools2/docbook/xsl/params/use.embed.for.svg.xml
 share/apps/ksgmltools2/docbook/xsl/params/use.extensions.xml
 share/apps/ksgmltools2/docbook/xsl/params/use.id.as.filename.xml
 share/apps/ksgmltools2/docbook/xsl/params/use.id.function.xml
-share/apps/ksgmltools2/docbook/xsl/params/using.chunker.xml
+share/apps/ksgmltools2/docbook/xsl/params/use.local.olink.style.xml
+share/apps/ksgmltools2/docbook/xsl/params/use.role.as.xrefstyle.xml
+share/apps/ksgmltools2/docbook/xsl/params/use.role.for.mediaobject.xml
+share/apps/ksgmltools2/docbook/xsl/params/use.svg.xml
 share/apps/ksgmltools2/docbook/xsl/params/variablelist.as.blocks.xml
 share/apps/ksgmltools2/docbook/xsl/params/variablelist.as.table.xml
+share/apps/ksgmltools2/docbook/xsl/params/variablelist.max.termlength.xml
 share/apps/ksgmltools2/docbook/xsl/params/verbatim.properties.xml
+share/apps/ksgmltools2/docbook/xsl/params/wordml.template.xml
 share/apps/ksgmltools2/docbook/xsl/params/xep.extensions.xml
+share/apps/ksgmltools2/docbook/xsl/params/xep.index.item.properties.xml
+share/apps/ksgmltools2/docbook/xsl/params/xref.label-page.separator.xml
+share/apps/ksgmltools2/docbook/xsl/params/xref.label-title.separator.xml
 share/apps/ksgmltools2/docbook/xsl/params/xref.properties.xml
-share/apps/ksgmltools2/docbook/xsl/tools/ChangeLog
-share/apps/ksgmltools2/docbook/xsl/tools/olink/ChangeLog
-share/apps/ksgmltools2/docbook/xsl/tools/olink/olink-common.xsl
-share/apps/ksgmltools2/docbook/xsl/tools/olink/olink.xsl
-share/apps/ksgmltools2/docbook/xsl/tools/olink/olinkchunk.xsl
-share/apps/ksgmltools2/docbook/xsl/tools/olink/olinksum.dtd
-share/apps/ksgmltools2/docbook/xsl/tools/profile/ChangeLog
-share/apps/ksgmltools2/docbook/xsl/tools/profile/profile.xsl
+share/apps/ksgmltools2/docbook/xsl/params/xref.title-page.separator.xml
+share/apps/ksgmltools2/docbook/xsl/params/xref.with.number.and.title.xml
 share/apps/kssl/ca-bundle.crt
-share/apps/kstyle/pixmaps/aquaice.png
-share/apps/kstyle/pixmaps/black_combo.png
-share/apps/kstyle/pixmaps/blkmarble.png
-share/apps/kstyle/pixmaps/darkgraytexture.png
-share/apps/kstyle/pixmaps/darkslider.png
-share/apps/kstyle/pixmaps/elec_combo.png
-share/apps/kstyle/pixmaps/elec_combodown.png
-share/apps/kstyle/pixmaps/elec_groove.png
-share/apps/kstyle/pixmaps/elec_hdl.png
-share/apps/kstyle/pixmaps/elec_horizhdl.png
-share/apps/kstyle/pixmaps/elec_off.png
-share/apps/kstyle/pixmaps/elec_on.png
-share/apps/kstyle/pixmaps/elec_slider.png
-share/apps/kstyle/pixmaps/gold_checked.png
-share/apps/kstyle/pixmaps/gold_unchecked.png
-share/apps/kstyle/pixmaps/graybutton.png
-share/apps/kstyle/pixmaps/grayice.png
-share/apps/kstyle/pixmaps/graymarble.png
-share/apps/kstyle/pixmaps/graymarble_dark.png
-share/apps/kstyle/pixmaps/graytexture.png
-share/apps/kstyle/pixmaps/ice.png
-share/apps/kstyle/pixmaps/marble2.png
-share/apps/kstyle/pixmaps/marble3.png
-share/apps/kstyle/pixmaps/marble_checked.png
-share/apps/kstyle/pixmaps/marble_combo.png
-share/apps/kstyle/pixmaps/marble_off.png
-share/apps/kstyle/pixmaps/marble_on.png
-share/apps/kstyle/pixmaps/marble_unchecked.png
-share/apps/kstyle/pixmaps/minigray.png
-share/apps/kstyle/pixmaps/pinkmarble.png
-share/apps/kstyle/pixmaps/red_checkmark.png
 share/apps/kstyle/pixmaps/riscos/arrowdown.png
 share/apps/kstyle/pixmaps/riscos/arrowdown_down.png
 share/apps/kstyle/pixmaps/riscos/arrowleft.png
@@ -2503,40 +2831,14 @@ share/apps/kstyle/pixmaps/riscos/vscrollbar.png
 share/apps/kstyle/pixmaps/riscos/vscrollbar_down.png
 share/apps/kstyle/pixmaps/riscos/vscrollborder.png
 share/apps/kstyle/pixmaps/riscos/vtab.png
-share/apps/kstyle/pixmaps/sbdeco_brown.png
-share/apps/kstyle/pixmaps/sbdeco_elec.png
-share/apps/kstyle/pixmaps/sbdeco_elec_small.png
-share/apps/kstyle/pixmaps/sbdeco_elec_smalldown.png
-share/apps/kstyle/pixmaps/sbdeco_elecdown.png
-share/apps/kstyle/pixmaps/sbdeco_gray.png
-share/apps/kstyle/pixmaps/slate.png
-share/apps/kstyle/pixmaps/switch_off.png
-share/apps/kstyle/pixmaps/switch_on.png
-share/apps/kstyle/pixmaps/sysarrow_down.png
-share/apps/kstyle/pixmaps/sysarrow_idown.png
-share/apps/kstyle/pixmaps/sysarrow_ileft.png
-share/apps/kstyle/pixmaps/sysarrow_iright.png
-share/apps/kstyle/pixmaps/sysarrow_iup.png
-share/apps/kstyle/pixmaps/sysarrow_left.png
-share/apps/kstyle/pixmaps/sysarrow_right.png
-share/apps/kstyle/pixmaps/sysarrow_sdown.png
-share/apps/kstyle/pixmaps/sysarrow_sleft.png
-share/apps/kstyle/pixmaps/sysarrow_sright.png
-share/apps/kstyle/pixmaps/sysarrow_sup.png
-share/apps/kstyle/pixmaps/sysarrow_up.png
-share/apps/kstyle/pixmaps/sysborder.png
-share/apps/kstyle/pixmaps/sysborderdown.png
-share/apps/kstyle/pixmaps/whitemarble.png
-share/apps/kstyle/pixmaps/woodmenu.png
-share/apps/kstyle/pixmaps/yellow_off.png
-share/apps/kstyle/pixmaps/yellow_on.png
 share/apps/kstyle/themes/b3.themerc
 share/apps/kstyle/themes/default.themerc
 share/apps/kstyle/themes/highcolor.themerc
+share/apps/kstyle/themes/highcontrast.themerc
 share/apps/kstyle/themes/keramik.themerc
 share/apps/kstyle/themes/light-v2.themerc
 share/apps/kstyle/themes/light-v3.themerc
-share/apps/kstyle/themes/marble.themerc
+share/apps/kstyle/themes/plastik.themerc
 share/apps/kstyle/themes/qtcde.themerc
 share/apps/kstyle/themes/qtmotif.themerc
 share/apps/kstyle/themes/qtmotifplus.themerc
@@ -2544,8 +2846,6 @@ share/apps/kstyle/themes/qtplatinum.themerc
 share/apps/kstyle/themes/qtsgi.themerc
 share/apps/kstyle/themes/qtwindows.themerc
 share/apps/kstyle/themes/riscos.themerc
-share/apps/kstyle/themes/system.themerc
-share/apps/kstyle/themes/systemalt.themerc
 share/apps/ktexteditor_docwordcompletion/docwordcompletionui.rc
 share/apps/ktexteditor_insertfile/ktexteditor_insertfileui.rc
 share/apps/ktexteditor_isearch/ktexteditor_isearchui.rc
@@ -2555,13 +2855,13 @@ share/autostart/kab2kabc.desktop
 share/config/colors/40 Colors
 share/config/colors/Royal
 share/config/colors/Web
+share/config/katefiletyperc
 share/config/katesyntaxhighlightingrc
 share/config/kdebug.areas
 share/config/kdebugrc
 share/config/kdeprintrc
 share/config/khotnewstuffrc
 share/config/ksslcalist
-share/config/ktexteditor_autobookmarkerrc
 share/config/kthemestylerc
 share/config/language.codes
 share/config/ui/kprintpreviewui.rc
@@ -2579,6 +2879,9 @@ share/doc/HTML/en/common/8.png
 share/doc/HTML/en/common/9.png
 share/doc/HTML/en/common/appheader.html
 share/doc/HTML/en/common/artistic-license.html
+share/doc/HTML/en/common/bottom-left.png
+share/doc/HTML/en/common/bottom-middle.png
+share/doc/HTML/en/common/bottom-right.png
 share/doc/HTML/en/common/bottom1.png
 share/doc/HTML/en/common/bottom2.png
 share/doc/HTML/en/common/bsd-license.html
@@ -2609,6 +2912,9 @@ share/doc/HTML/en/common/mainfooter.html
 share/doc/HTML/en/common/mainheader.html
 share/doc/HTML/en/common/qpl-license.html
 share/doc/HTML/en/common/shadow.png
+share/doc/HTML/en/common/top-left.png
+share/doc/HTML/en/common/top-middle.png
+share/doc/HTML/en/common/top-right-konqueror.png
 share/doc/HTML/en/common/web-docbottom.png
 share/doc/HTML/en/common/web-doctop.png
 share/doc/HTML/en/common/x11-license.html
@@ -2617,11 +2923,73 @@ share/doc/HTML/en/kdelibs-apidocs/common
 share/doc/HTML/en/kspell/common
 share/doc/HTML/en/kspell/index.cache.bz2
 share/doc/HTML/en/kspell/index.docbook
+share/emoticons/Default/angry.png
+share/emoticons/Default/bat.png
+share/emoticons/Default/beer.png
+share/emoticons/Default/biggrin.png
+share/emoticons/Default/cake.png
+share/emoticons/Default/camera.png
+share/emoticons/Default/cat.png
+share/emoticons/Default/clock.png
+share/emoticons/Default/cocktail.png
+share/emoticons/Default/confused.png
+share/emoticons/Default/cry.png
+share/emoticons/Default/cup.png
+share/emoticons/Default/dog.png
+share/emoticons/Default/email.png
+share/emoticons/Default/embarassed.png
+share/emoticons/Default/emoticons.xml
+share/emoticons/Default/film.png
+share/emoticons/Default/foot_in_mouth.png
+share/emoticons/Default/innocent.png
+share/emoticons/Default/kiss.png
+share/emoticons/Default/lightbulb.png
+share/emoticons/Default/love.png
+share/emoticons/Default/note.png
+share/emoticons/Default/oh.png
+share/emoticons/Default/omg.png
+share/emoticons/Default/phone.png
+share/emoticons/Default/present.png
+share/emoticons/Default/rose.png
+share/emoticons/Default/sad.png
+share/emoticons/Default/shade.png
+share/emoticons/Default/sleep.png
+share/emoticons/Default/smile.png
+share/emoticons/Default/star.png
+share/emoticons/Default/teeth.png
+share/emoticons/Default/thumbs_down.png
+share/emoticons/Default/thumbs_up.png
+share/emoticons/Default/tongue.png
+share/emoticons/Default/undecided.png
+share/emoticons/Default/unhappy.png
+share/emoticons/Default/unlove.png
+share/emoticons/Default/wilted_rose.png
+share/emoticons/Default/wink.png
+share/icons/crystalsvg/128x128/actions/contents2.png
+share/icons/crystalsvg/128x128/actions/fileprint.png
+share/icons/crystalsvg/128x128/actions/filequickprint.png
+share/icons/crystalsvg/128x128/actions/frameprint.png
 share/icons/crystalsvg/128x128/actions/player_playlist.png
+share/icons/crystalsvg/128x128/actions/share.png
 share/icons/crystalsvg/128x128/apps/password.png
 share/icons/crystalsvg/128x128/devices/blockdevice.png
+share/icons/crystalsvg/128x128/devices/camera_mount.png
+share/icons/crystalsvg/128x128/devices/camera_unmount.png
 share/icons/crystalsvg/128x128/devices/chardevice.png
+share/icons/crystalsvg/128x128/devices/compact_flash_mount.png
+share/icons/crystalsvg/128x128/devices/compact_flash_unmount.png
+share/icons/crystalsvg/128x128/devices/hdd_mount.png
+share/icons/crystalsvg/128x128/devices/hdd_unmount.png
+share/icons/crystalsvg/128x128/devices/memory_stick_mount.png
+share/icons/crystalsvg/128x128/devices/memory_stick_unmount.png
 share/icons/crystalsvg/128x128/devices/mouse.png
+share/icons/crystalsvg/128x128/devices/print_class.png
+share/icons/crystalsvg/128x128/devices/printer1.png
+share/icons/crystalsvg/128x128/devices/sd_mmc_mount.png
+share/icons/crystalsvg/128x128/devices/sd_mmc_unmount.png
+share/icons/crystalsvg/128x128/devices/smart_media_mount.png
+share/icons/crystalsvg/128x128/devices/smart_media_unmount.png
+share/icons/crystalsvg/128x128/devices/system.png
 share/icons/crystalsvg/128x128/devices/usbpendrive_mount.png
 share/icons/crystalsvg/128x128/devices/usbpendrive_unmount.png
 share/icons/crystalsvg/128x128/filesystems/desktop.png
@@ -2705,7 +3073,6 @@ share/icons/crystalsvg/128x128/mimetypes/pk.png
 share/icons/crystalsvg/128x128/mimetypes/postscript.png
 share/icons/crystalsvg/128x128/mimetypes/quicktime.png
 share/icons/crystalsvg/128x128/mimetypes/readme.png
-share/icons/crystalsvg/128x128/mimetypes/real_doc.png
 share/icons/crystalsvg/128x128/mimetypes/recycled.png
 share/icons/crystalsvg/128x128/mimetypes/resource.png
 share/icons/crystalsvg/128x128/mimetypes/rpm.png
@@ -2779,6 +3146,7 @@ share/icons/crystalsvg/16x16/actions/connect_creating.png
 share/icons/crystalsvg/16x16/actions/connect_established.png
 share/icons/crystalsvg/16x16/actions/connect_no.png
 share/icons/crystalsvg/16x16/actions/contents.png
+share/icons/crystalsvg/16x16/actions/contents2.png
 share/icons/crystalsvg/16x16/actions/contexthelp.png
 share/icons/crystalsvg/16x16/actions/crop.png
 share/icons/crystalsvg/16x16/actions/decrypted.png
@@ -2903,6 +3271,10 @@ share/icons/crystalsvg/16x16/actions/player_start.png
 share/icons/crystalsvg/16x16/actions/player_stop.png
 share/icons/crystalsvg/16x16/actions/player_time.png
 share/icons/crystalsvg/16x16/actions/player_volume.png
+share/icons/crystalsvg/16x16/actions/presence_away.png
+share/icons/crystalsvg/16x16/actions/presence_offline.png
+share/icons/crystalsvg/16x16/actions/presence_online.png
+share/icons/crystalsvg/16x16/actions/presence_unknown.png
 share/icons/crystalsvg/16x16/actions/previous.png
 share/icons/crystalsvg/16x16/actions/project_open.png
 share/icons/crystalsvg/16x16/actions/queue.png
@@ -2969,6 +3341,7 @@ share/icons/crystalsvg/16x16/actions/viewmagfit.png
 share/icons/crystalsvg/16x16/actions/window_fullscreen.png
 share/icons/crystalsvg/16x16/actions/window_new.png
 share/icons/crystalsvg/16x16/actions/window_nofullscreen.png
+share/icons/crystalsvg/16x16/actions/window_suppressed.png
 share/icons/crystalsvg/16x16/actions/wizard.png
 share/icons/crystalsvg/16x16/apps/password.png
 share/icons/crystalsvg/16x16/devices/3floppy_mount.png
@@ -2985,12 +3358,16 @@ share/icons/crystalsvg/16x16/devices/cdrom_unmount.png
 share/icons/crystalsvg/16x16/devices/cdwriter_mount.png
 share/icons/crystalsvg/16x16/devices/cdwriter_unmount.png
 share/icons/crystalsvg/16x16/devices/chardevice.png
+share/icons/crystalsvg/16x16/devices/compact_flash_mount.png
+share/icons/crystalsvg/16x16/devices/compact_flash_unmount.png
 share/icons/crystalsvg/16x16/devices/dvd_mount.png
 share/icons/crystalsvg/16x16/devices/dvd_unmount.png
 share/icons/crystalsvg/16x16/devices/hdd_mount.png
 share/icons/crystalsvg/16x16/devices/hdd_unmount.png
 share/icons/crystalsvg/16x16/devices/joystick.png
 share/icons/crystalsvg/16x16/devices/memory.png
+share/icons/crystalsvg/16x16/devices/memory_stick_mount.png
+share/icons/crystalsvg/16x16/devices/memory_stick_unmount.png
 share/icons/crystalsvg/16x16/devices/mo_mount.png
 share/icons/crystalsvg/16x16/devices/mo_unmount.png
 share/icons/crystalsvg/16x16/devices/mouse.png
@@ -3001,6 +3378,11 @@ share/icons/crystalsvg/16x16/devices/pda_blue.png
 share/icons/crystalsvg/16x16/devices/print_class.png
 share/icons/crystalsvg/16x16/devices/printer1.png
 share/icons/crystalsvg/16x16/devices/scanner.png
+share/icons/crystalsvg/16x16/devices/sd_mmc_mount.png
+share/icons/crystalsvg/16x16/devices/sd_mmc_unmount.png
+share/icons/crystalsvg/16x16/devices/smart_media_mount.png
+share/icons/crystalsvg/16x16/devices/smart_media_unmount.png
+share/icons/crystalsvg/16x16/devices/system.png
 share/icons/crystalsvg/16x16/devices/tablet.png
 share/icons/crystalsvg/16x16/devices/tv.png
 share/icons/crystalsvg/16x16/devices/usbpendrive_mount.png
@@ -3041,6 +3423,7 @@ share/icons/crystalsvg/16x16/filesystems/folder_violet.png
 share/icons/crystalsvg/16x16/filesystems/folder_violet_open.png
 share/icons/crystalsvg/16x16/filesystems/folder_yellow.png
 share/icons/crystalsvg/16x16/filesystems/folder_yellow_open.png
+share/icons/crystalsvg/16x16/filesystems/ftp.png
 share/icons/crystalsvg/16x16/filesystems/link.png
 share/icons/crystalsvg/16x16/filesystems/lockoverlay.png
 share/icons/crystalsvg/16x16/filesystems/network.png
@@ -3100,7 +3483,6 @@ share/icons/crystalsvg/16x16/mimetypes/pk.png
 share/icons/crystalsvg/16x16/mimetypes/postscript.png
 share/icons/crystalsvg/16x16/mimetypes/quicktime.png
 share/icons/crystalsvg/16x16/mimetypes/readme.png
-share/icons/crystalsvg/16x16/mimetypes/real_doc.png
 share/icons/crystalsvg/16x16/mimetypes/recycled.png
 share/icons/crystalsvg/16x16/mimetypes/resource.png
 share/icons/crystalsvg/16x16/mimetypes/rpm.png
@@ -3170,6 +3552,7 @@ share/icons/crystalsvg/22x22/actions/connect_creating.png
 share/icons/crystalsvg/22x22/actions/connect_established.png
 share/icons/crystalsvg/22x22/actions/connect_no.png
 share/icons/crystalsvg/22x22/actions/contents.png
+share/icons/crystalsvg/22x22/actions/contents2.png
 share/icons/crystalsvg/22x22/actions/contexthelp.png
 share/icons/crystalsvg/22x22/actions/crop.png
 share/icons/crystalsvg/22x22/actions/decrypted.png
@@ -3220,6 +3603,8 @@ share/icons/crystalsvg/22x22/actions/goto.png
 share/icons/crystalsvg/22x22/actions/halfencrypted.png
 share/icons/crystalsvg/22x22/actions/help.png
 share/icons/crystalsvg/22x22/actions/history.png
+share/icons/crystalsvg/22x22/actions/idea.png
+share/icons/crystalsvg/22x22/actions/identity.png
 share/icons/crystalsvg/22x22/actions/inline_image.png
 share/icons/crystalsvg/22x22/actions/inline_table.png
 share/icons/crystalsvg/22x22/actions/kde.png
@@ -3259,6 +3644,7 @@ share/icons/crystalsvg/22x22/actions/math_sqrt.png
 share/icons/crystalsvg/22x22/actions/math_sum.png
 share/icons/crystalsvg/22x22/actions/message_reply.png
 share/icons/crystalsvg/22x22/actions/misc.png
+share/icons/crystalsvg/22x22/actions/mouse.png
 share/icons/crystalsvg/22x22/actions/move.png
 share/icons/crystalsvg/22x22/actions/music_32ndnote.png
 share/icons/crystalsvg/22x22/actions/music_cleficon.png
@@ -3303,13 +3689,12 @@ share/icons/crystalsvg/22x22/actions/rotate_ccw.png
 share/icons/crystalsvg/22x22/actions/rotate_cw.png
 share/icons/crystalsvg/22x22/actions/run.png
 share/icons/crystalsvg/22x22/actions/save_all.png
+share/icons/crystalsvg/22x22/actions/share.png
 share/icons/crystalsvg/22x22/actions/showmenu.png
 share/icons/crystalsvg/22x22/actions/signature.png
 share/icons/crystalsvg/22x22/actions/spellcheck.png
 share/icons/crystalsvg/22x22/actions/start.png
 share/icons/crystalsvg/22x22/actions/stop.png
-share/icons/crystalsvg/22x22/actions/sub.png
-share/icons/crystalsvg/22x22/actions/super.png
 share/icons/crystalsvg/22x22/actions/text.png
 share/icons/crystalsvg/22x22/actions/text_block.png
 share/icons/crystalsvg/22x22/actions/text_bold.png
@@ -3318,6 +3703,8 @@ share/icons/crystalsvg/22x22/actions/text_italic.png
 share/icons/crystalsvg/22x22/actions/text_left.png
 share/icons/crystalsvg/22x22/actions/text_right.png
 share/icons/crystalsvg/22x22/actions/text_strike.png
+share/icons/crystalsvg/22x22/actions/text_sub.png
+share/icons/crystalsvg/22x22/actions/text_super.png
 share/icons/crystalsvg/22x22/actions/text_under.png
 share/icons/crystalsvg/22x22/actions/thumbnail.png
 share/icons/crystalsvg/22x22/actions/today.png
@@ -3348,8 +3735,48 @@ share/icons/crystalsvg/22x22/actions/window_fullscreen.png
 share/icons/crystalsvg/22x22/actions/window_new.png
 share/icons/crystalsvg/22x22/actions/window_nofullscreen.png
 share/icons/crystalsvg/22x22/actions/wizard.png
+share/icons/crystalsvg/22x22/apps/password.png
+share/icons/crystalsvg/22x22/devices/3floppy_mount.png
+share/icons/crystalsvg/22x22/devices/3floppy_unmount.png
+share/icons/crystalsvg/22x22/devices/camera_mount.png
+share/icons/crystalsvg/22x22/devices/camera_unmount.png
+share/icons/crystalsvg/22x22/devices/cdaudio_unmount.png
+share/icons/crystalsvg/22x22/devices/compact_flash_mount.png
+share/icons/crystalsvg/22x22/devices/compact_flash_unmount.png
+share/icons/crystalsvg/22x22/devices/hdd_mount.png
+share/icons/crystalsvg/22x22/devices/hdd_unmount.png
+share/icons/crystalsvg/22x22/devices/joystick.png
+share/icons/crystalsvg/22x22/devices/memory_stick_mount.png
+share/icons/crystalsvg/22x22/devices/memory_stick_unmount.png
+share/icons/crystalsvg/22x22/devices/print_class.png
+share/icons/crystalsvg/22x22/devices/printer1.png
+share/icons/crystalsvg/22x22/devices/sd_mmc_mount.png
+share/icons/crystalsvg/22x22/devices/sd_mmc_unmount.png
+share/icons/crystalsvg/22x22/devices/smart_media_mount.png
+share/icons/crystalsvg/22x22/devices/smart_media_unmount.png
+share/icons/crystalsvg/22x22/devices/system.png
 share/icons/crystalsvg/22x22/devices/usbpendrive_mount.png
 share/icons/crystalsvg/22x22/devices/usbpendrive_unmount.png
+share/icons/crystalsvg/22x22/filesystems/desktop.png
+share/icons/crystalsvg/22x22/filesystems/folder.png
+share/icons/crystalsvg/22x22/filesystems/folder_green.png
+share/icons/crystalsvg/22x22/filesystems/folder_green_open.png
+share/icons/crystalsvg/22x22/filesystems/folder_grey.png
+share/icons/crystalsvg/22x22/filesystems/folder_grey_open.png
+share/icons/crystalsvg/22x22/filesystems/folder_home.png
+share/icons/crystalsvg/22x22/filesystems/folder_open.png
+share/icons/crystalsvg/22x22/filesystems/folder_orange.png
+share/icons/crystalsvg/22x22/filesystems/folder_orange_open.png
+share/icons/crystalsvg/22x22/filesystems/folder_print.png
+share/icons/crystalsvg/22x22/filesystems/folder_red.png
+share/icons/crystalsvg/22x22/filesystems/folder_red_open.png
+share/icons/crystalsvg/22x22/filesystems/folder_violet.png
+share/icons/crystalsvg/22x22/filesystems/folder_violet_open.png
+share/icons/crystalsvg/22x22/filesystems/folder_yellow.png
+share/icons/crystalsvg/22x22/filesystems/folder_yellow_open.png
+share/icons/crystalsvg/22x22/filesystems/network.png
+share/icons/crystalsvg/22x22/filesystems/trashcan_empty.png
+share/icons/crystalsvg/22x22/filesystems/trashcan_full.png
 share/icons/crystalsvg/22x22/filesystems/www.png
 share/icons/crystalsvg/22x22/mimetypes/applix.png
 share/icons/crystalsvg/22x22/mimetypes/ascii.png
@@ -3401,7 +3828,6 @@ share/icons/crystalsvg/22x22/mimetypes/pk.png
 share/icons/crystalsvg/22x22/mimetypes/postscript.png
 share/icons/crystalsvg/22x22/mimetypes/quicktime.png
 share/icons/crystalsvg/22x22/mimetypes/readme.png
-share/icons/crystalsvg/22x22/mimetypes/real_doc.png
 share/icons/crystalsvg/22x22/mimetypes/recycled.png
 share/icons/crystalsvg/22x22/mimetypes/rpm.png
 share/icons/crystalsvg/22x22/mimetypes/shellscript.png
@@ -3459,6 +3885,7 @@ share/icons/crystalsvg/32x32/actions/connect_creating.png
 share/icons/crystalsvg/32x32/actions/connect_established.png
 share/icons/crystalsvg/32x32/actions/connect_no.png
 share/icons/crystalsvg/32x32/actions/contents.png
+share/icons/crystalsvg/32x32/actions/contents2.png
 share/icons/crystalsvg/32x32/actions/contexthelp.png
 share/icons/crystalsvg/32x32/actions/decrypted.png
 share/icons/crystalsvg/32x32/actions/down.png
@@ -3557,6 +3984,10 @@ share/icons/crystalsvg/32x32/actions/player_playlist.png
 share/icons/crystalsvg/32x32/actions/player_rew.png
 share/icons/crystalsvg/32x32/actions/player_start.png
 share/icons/crystalsvg/32x32/actions/player_stop.png
+share/icons/crystalsvg/32x32/actions/presence_away.png
+share/icons/crystalsvg/32x32/actions/presence_offline.png
+share/icons/crystalsvg/32x32/actions/presence_online.png
+share/icons/crystalsvg/32x32/actions/presence_unknown.png
 share/icons/crystalsvg/32x32/actions/previous.png
 share/icons/crystalsvg/32x32/actions/project_open.png
 share/icons/crystalsvg/32x32/actions/queue.png
@@ -3583,6 +4014,9 @@ share/icons/crystalsvg/32x32/actions/text_center.png
 share/icons/crystalsvg/32x32/actions/text_italic.png
 share/icons/crystalsvg/32x32/actions/text_left.png
 share/icons/crystalsvg/32x32/actions/text_right.png
+share/icons/crystalsvg/32x32/actions/text_strike.png
+share/icons/crystalsvg/32x32/actions/text_sub.png
+share/icons/crystalsvg/32x32/actions/text_super.png
 share/icons/crystalsvg/32x32/actions/text_under.png
 share/icons/crystalsvg/32x32/actions/today.png
 share/icons/crystalsvg/32x32/actions/toggle_log.png
@@ -3627,12 +4061,16 @@ share/icons/crystalsvg/32x32/devices/cdrom_unmount.png
 share/icons/crystalsvg/32x32/devices/cdwriter_mount.png
 share/icons/crystalsvg/32x32/devices/cdwriter_unmount.png
 share/icons/crystalsvg/32x32/devices/chardevice.png
+share/icons/crystalsvg/32x32/devices/compact_flash_mount.png
+share/icons/crystalsvg/32x32/devices/compact_flash_unmount.png
 share/icons/crystalsvg/32x32/devices/dvd_mount.png
 share/icons/crystalsvg/32x32/devices/dvd_unmount.png
 share/icons/crystalsvg/32x32/devices/hdd_mount.png
 share/icons/crystalsvg/32x32/devices/hdd_unmount.png
 share/icons/crystalsvg/32x32/devices/joystick.png
 share/icons/crystalsvg/32x32/devices/memory.png
+share/icons/crystalsvg/32x32/devices/memory_stick_mount.png
+share/icons/crystalsvg/32x32/devices/memory_stick_unmount.png
 share/icons/crystalsvg/32x32/devices/mo_mount.png
 share/icons/crystalsvg/32x32/devices/mo_unmount.png
 share/icons/crystalsvg/32x32/devices/mouse.png
@@ -3643,6 +4081,11 @@ share/icons/crystalsvg/32x32/devices/pda_blue.png
 share/icons/crystalsvg/32x32/devices/print_class.png
 share/icons/crystalsvg/32x32/devices/printer1.png
 share/icons/crystalsvg/32x32/devices/scanner.png
+share/icons/crystalsvg/32x32/devices/sd_mmc_mount.png
+share/icons/crystalsvg/32x32/devices/sd_mmc_unmount.png
+share/icons/crystalsvg/32x32/devices/smart_media_mount.png
+share/icons/crystalsvg/32x32/devices/smart_media_unmount.png
+share/icons/crystalsvg/32x32/devices/system.png
 share/icons/crystalsvg/32x32/devices/tablet.png
 share/icons/crystalsvg/32x32/devices/tv.png
 share/icons/crystalsvg/32x32/devices/usbpendrive_mount.png
@@ -3680,6 +4123,7 @@ share/icons/crystalsvg/32x32/filesystems/folder_violet.png
 share/icons/crystalsvg/32x32/filesystems/folder_violet_open.png
 share/icons/crystalsvg/32x32/filesystems/folder_yellow.png
 share/icons/crystalsvg/32x32/filesystems/folder_yellow_open.png
+share/icons/crystalsvg/32x32/filesystems/ftp.png
 share/icons/crystalsvg/32x32/filesystems/link.png
 share/icons/crystalsvg/32x32/filesystems/lockoverlay.png
 share/icons/crystalsvg/32x32/filesystems/network.png
@@ -3738,7 +4182,6 @@ share/icons/crystalsvg/32x32/mimetypes/pk.png
 share/icons/crystalsvg/32x32/mimetypes/postscript.png
 share/icons/crystalsvg/32x32/mimetypes/quicktime.png
 share/icons/crystalsvg/32x32/mimetypes/readme.png
-share/icons/crystalsvg/32x32/mimetypes/real_doc.png
 share/icons/crystalsvg/32x32/mimetypes/recycled.png
 share/icons/crystalsvg/32x32/mimetypes/resource.png
 share/icons/crystalsvg/32x32/mimetypes/rpm.png
@@ -3777,18 +4220,30 @@ share/icons/crystalsvg/32x32/mimetypes/widget_doc.png
 share/icons/crystalsvg/32x32/mimetypes/wordprocessing.png
 share/icons/crystalsvg/48x48/actions/back.png
 share/icons/crystalsvg/48x48/actions/bookmark.png
+share/icons/crystalsvg/48x48/actions/contents2.png
 share/icons/crystalsvg/48x48/actions/down.png
 share/icons/crystalsvg/48x48/actions/exit.png
 share/icons/crystalsvg/48x48/actions/fileclose.png
+share/icons/crystalsvg/48x48/actions/filenew.png
+share/icons/crystalsvg/48x48/actions/fileprint.png
+share/icons/crystalsvg/48x48/actions/filequickprint.png
 share/icons/crystalsvg/48x48/actions/forward.png
+share/icons/crystalsvg/48x48/actions/frameprint.png
 share/icons/crystalsvg/48x48/actions/gear.png
+share/icons/crystalsvg/48x48/actions/identity.png
 share/icons/crystalsvg/48x48/actions/indent.png
 share/icons/crystalsvg/48x48/actions/lock.png
+share/icons/crystalsvg/48x48/actions/mail_new.png
+share/icons/crystalsvg/48x48/actions/mail_post_to.png
 share/icons/crystalsvg/48x48/actions/misc.png
 share/icons/crystalsvg/48x48/actions/player_playlist.png
+share/icons/crystalsvg/48x48/actions/presence_away.png
+share/icons/crystalsvg/48x48/actions/presence_offline.png
+share/icons/crystalsvg/48x48/actions/presence_online.png
 share/icons/crystalsvg/48x48/actions/share.png
 share/icons/crystalsvg/48x48/actions/unindent.png
 share/icons/crystalsvg/48x48/actions/up.png
+share/icons/crystalsvg/48x48/actions/wizard.png
 share/icons/crystalsvg/48x48/apps/password.png
 share/icons/crystalsvg/48x48/devices/3floppy_mount.png
 share/icons/crystalsvg/48x48/devices/3floppy_unmount.png
@@ -3804,12 +4259,16 @@ share/icons/crystalsvg/48x48/devices/cdrom_unmount.png
 share/icons/crystalsvg/48x48/devices/cdwriter_mount.png
 share/icons/crystalsvg/48x48/devices/cdwriter_unmount.png
 share/icons/crystalsvg/48x48/devices/chardevice.png
+share/icons/crystalsvg/48x48/devices/compact_flash_mount.png
+share/icons/crystalsvg/48x48/devices/compact_flash_unmount.png
 share/icons/crystalsvg/48x48/devices/dvd_mount.png
 share/icons/crystalsvg/48x48/devices/dvd_unmount.png
 share/icons/crystalsvg/48x48/devices/hdd_mount.png
 share/icons/crystalsvg/48x48/devices/hdd_unmount.png
 share/icons/crystalsvg/48x48/devices/joystick.png
 share/icons/crystalsvg/48x48/devices/memory.png
+share/icons/crystalsvg/48x48/devices/memory_stick_mount.png
+share/icons/crystalsvg/48x48/devices/memory_stick_unmount.png
 share/icons/crystalsvg/48x48/devices/mo_mount.png
 share/icons/crystalsvg/48x48/devices/mo_unmount.png
 share/icons/crystalsvg/48x48/devices/mouse.png
@@ -3820,6 +4279,11 @@ share/icons/crystalsvg/48x48/devices/pda_blue.png
 share/icons/crystalsvg/48x48/devices/print_class.png
 share/icons/crystalsvg/48x48/devices/printer1.png
 share/icons/crystalsvg/48x48/devices/scanner.png
+share/icons/crystalsvg/48x48/devices/sd_mmc_mount.png
+share/icons/crystalsvg/48x48/devices/sd_mmc_unmount.png
+share/icons/crystalsvg/48x48/devices/smart_media_mount.png
+share/icons/crystalsvg/48x48/devices/smart_media_unmount.png
+share/icons/crystalsvg/48x48/devices/system.png
 share/icons/crystalsvg/48x48/devices/tablet.png
 share/icons/crystalsvg/48x48/devices/tv.png
 share/icons/crystalsvg/48x48/devices/usbpendrive_mount.png
@@ -3859,6 +4323,7 @@ share/icons/crystalsvg/48x48/filesystems/folder_violet.png
 share/icons/crystalsvg/48x48/filesystems/folder_violet_open.png
 share/icons/crystalsvg/48x48/filesystems/folder_yellow.png
 share/icons/crystalsvg/48x48/filesystems/folder_yellow_open.png
+share/icons/crystalsvg/48x48/filesystems/ftp.png
 share/icons/crystalsvg/48x48/filesystems/link.png
 share/icons/crystalsvg/48x48/filesystems/lockoverlay.png
 share/icons/crystalsvg/48x48/filesystems/network.png
@@ -3919,7 +4384,6 @@ share/icons/crystalsvg/48x48/mimetypes/pk.png
 share/icons/crystalsvg/48x48/mimetypes/postscript.png
 share/icons/crystalsvg/48x48/mimetypes/quicktime.png
 share/icons/crystalsvg/48x48/mimetypes/readme.png
-share/icons/crystalsvg/48x48/mimetypes/real_doc.png
 share/icons/crystalsvg/48x48/mimetypes/recycled.png
 share/icons/crystalsvg/48x48/mimetypes/resource.png
 share/icons/crystalsvg/48x48/mimetypes/rpm.png
@@ -3957,9 +4421,14 @@ share/icons/crystalsvg/48x48/mimetypes/video.png
 share/icons/crystalsvg/48x48/mimetypes/widget_doc.png
 share/icons/crystalsvg/48x48/mimetypes/wordprocessing.png
 share/icons/crystalsvg/48x48/mimetypes/zip.png
+share/icons/crystalsvg/64x64/actions/contents2.png
 share/icons/crystalsvg/64x64/actions/favorites.png
+share/icons/crystalsvg/64x64/actions/fileprint.png
+share/icons/crystalsvg/64x64/actions/filequickprint.png
+share/icons/crystalsvg/64x64/actions/frameprint.png
 share/icons/crystalsvg/64x64/actions/knewstuff.png
 share/icons/crystalsvg/64x64/actions/player_playlist.png
+share/icons/crystalsvg/64x64/actions/share.png
 share/icons/crystalsvg/64x64/apps/password.png
 share/icons/crystalsvg/64x64/devices/3floppy_mount.png
 share/icons/crystalsvg/64x64/devices/3floppy_unmount.png
@@ -3975,12 +4444,16 @@ share/icons/crystalsvg/64x64/devices/cdrom_unmount.png
 share/icons/crystalsvg/64x64/devices/cdwriter_mount.png
 share/icons/crystalsvg/64x64/devices/cdwriter_unmount.png
 share/icons/crystalsvg/64x64/devices/chardevice.png
+share/icons/crystalsvg/64x64/devices/compact_flash_mount.png
+share/icons/crystalsvg/64x64/devices/compact_flash_unmount.png
 share/icons/crystalsvg/64x64/devices/dvd_mount.png
 share/icons/crystalsvg/64x64/devices/dvd_unmount.png
 share/icons/crystalsvg/64x64/devices/hdd_mount.png
 share/icons/crystalsvg/64x64/devices/hdd_unmount.png
 share/icons/crystalsvg/64x64/devices/joystick.png
 share/icons/crystalsvg/64x64/devices/memory.png
+share/icons/crystalsvg/64x64/devices/memory_stick_mount.png
+share/icons/crystalsvg/64x64/devices/memory_stick_unmount.png
 share/icons/crystalsvg/64x64/devices/mo_mount.png
 share/icons/crystalsvg/64x64/devices/mo_unmount.png
 share/icons/crystalsvg/64x64/devices/mouse.png
@@ -3991,6 +4464,11 @@ share/icons/crystalsvg/64x64/devices/pda_blue.png
 share/icons/crystalsvg/64x64/devices/print_class.png
 share/icons/crystalsvg/64x64/devices/printer1.png
 share/icons/crystalsvg/64x64/devices/scanner.png
+share/icons/crystalsvg/64x64/devices/sd_mmc_mount.png
+share/icons/crystalsvg/64x64/devices/sd_mmc_unmount.png
+share/icons/crystalsvg/64x64/devices/smart_media_mount.png
+share/icons/crystalsvg/64x64/devices/smart_media_unmount.png
+share/icons/crystalsvg/64x64/devices/system.png
 share/icons/crystalsvg/64x64/devices/tablet.png
 share/icons/crystalsvg/64x64/devices/tv.png
 share/icons/crystalsvg/64x64/devices/usbpendrive_mount.png
@@ -4084,7 +4562,6 @@ share/icons/crystalsvg/64x64/mimetypes/pk.png
 share/icons/crystalsvg/64x64/mimetypes/postscript.png
 share/icons/crystalsvg/64x64/mimetypes/quicktime.png
 share/icons/crystalsvg/64x64/mimetypes/readme.png
-share/icons/crystalsvg/64x64/mimetypes/real_doc.png
 share/icons/crystalsvg/64x64/mimetypes/recycled.png
 share/icons/crystalsvg/64x64/mimetypes/resource.png
 share/icons/crystalsvg/64x64/mimetypes/rpm.png
@@ -4124,52 +4601,71 @@ share/icons/crystalsvg/64x64/mimetypes/wordprocessing.png
 share/icons/crystalsvg/64x64/mimetypes/zip.png
 share/icons/crystalsvg/index.theme
 share/icons/crystalsvg/scalable/actions/about_kde.svgz
+share/icons/crystalsvg/scalable/actions/configure.svgz
+share/icons/crystalsvg/scalable/actions/contents2.svgz
+share/icons/crystalsvg/scalable/actions/exit.svgz
+share/icons/crystalsvg/scalable/actions/filenew.svgz
+share/icons/crystalsvg/scalable/actions/fileprint.svgz
+share/icons/crystalsvg/scalable/actions/filequickprint.svgz
+share/icons/crystalsvg/scalable/actions/frameprint.svgz
+share/icons/crystalsvg/scalable/actions/info.svgz
+share/icons/crystalsvg/scalable/actions/lock.svgz
+share/icons/crystalsvg/scalable/actions/mail_generic.svgz
+share/icons/crystalsvg/scalable/actions/mail_new.svgz
+share/icons/crystalsvg/scalable/actions/mail_post_to.svgz
+share/icons/crystalsvg/scalable/actions/share.svgz
+share/icons/crystalsvg/scalable/actions/text_bild.svgz
+share/icons/crystalsvg/scalable/actions/text_bold.svg
+share/icons/crystalsvg/scalable/actions/text_strike.svgz
+share/icons/crystalsvg/scalable/actions/text_sub.svgz
+share/icons/crystalsvg/scalable/actions/text_super.svgz
+share/icons/crystalsvg/scalable/actions/text_under.svgz
+share/icons/crystalsvg/scalable/actions/wizard.svgz
 share/icons/crystalsvg/scalable/devices/3floppy_mount.svgz
-share/icons/crystalsvg/scalable/devices/3floppy_umount.svgz
 share/icons/crystalsvg/scalable/devices/3floppy_unmount.svgz
 share/icons/crystalsvg/scalable/devices/5floppy_mount.svgz
-share/icons/crystalsvg/scalable/devices/5floppy_umount.svgz
 share/icons/crystalsvg/scalable/devices/5floppy_unmount.svgz
 share/icons/crystalsvg/scalable/devices/blockdevice.svgz
 share/icons/crystalsvg/scalable/devices/camera_mount.svgz
-share/icons/crystalsvg/scalable/devices/camera_umount.svgz
 share/icons/crystalsvg/scalable/devices/camera_unmount.svgz
 share/icons/crystalsvg/scalable/devices/cdaudio_mount.svgz
-share/icons/crystalsvg/scalable/devices/cdaudio_umount.svgz
 share/icons/crystalsvg/scalable/devices/cdaudio_unmount.svgz
 share/icons/crystalsvg/scalable/devices/cdrom_mount.svgz
-share/icons/crystalsvg/scalable/devices/cdrom_umount.svgz
 share/icons/crystalsvg/scalable/devices/cdrom_unmount.svgz
 share/icons/crystalsvg/scalable/devices/cdwriter_mount.svgz
-share/icons/crystalsvg/scalable/devices/cdwriter_umount.svgz
 share/icons/crystalsvg/scalable/devices/cdwriter_unmount.svgz
 share/icons/crystalsvg/scalable/devices/chardevice.svgz
+share/icons/crystalsvg/scalable/devices/compact_flash_mount.svgz
+share/icons/crystalsvg/scalable/devices/compact_flash_unmount.svgz
 share/icons/crystalsvg/scalable/devices/dvd_mount.svgz
-share/icons/crystalsvg/scalable/devices/dvd_umount.svgz
 share/icons/crystalsvg/scalable/devices/dvd_unmount.svgz
 share/icons/crystalsvg/scalable/devices/hdd_mount.svgz
-share/icons/crystalsvg/scalable/devices/hdd_umount.svgz
 share/icons/crystalsvg/scalable/devices/hdd_unmount.svgz
 share/icons/crystalsvg/scalable/devices/joystick.svgz
 share/icons/crystalsvg/scalable/devices/memory.svgz
+share/icons/crystalsvg/scalable/devices/memory_stick_mount.svgz
+share/icons/crystalsvg/scalable/devices/memory_stick_unmount.svgz
 share/icons/crystalsvg/scalable/devices/mo_mount.svgz
 share/icons/crystalsvg/scalable/devices/mo_umount.svgz
+share/icons/crystalsvg/scalable/devices/mo_unmount.svgz
 share/icons/crystalsvg/scalable/devices/mouse.svgz
 share/icons/crystalsvg/scalable/devices/nfs_mount.svgz
-share/icons/crystalsvg/scalable/devices/nfs_umount.svgz
 share/icons/crystalsvg/scalable/devices/nfs_unmount.svgz
 share/icons/crystalsvg/scalable/devices/pda_black.svgz
 share/icons/crystalsvg/scalable/devices/pda_blue.svgz
 share/icons/crystalsvg/scalable/devices/print_class.svgz
 share/icons/crystalsvg/scalable/devices/printer1.svgz
-share/icons/crystalsvg/scalable/devices/printer2.svgz
 share/icons/crystalsvg/scalable/devices/scanner.svgz
+share/icons/crystalsvg/scalable/devices/sd_mmc_mount.svgz
+share/icons/crystalsvg/scalable/devices/sd_mmc_unmount.svgz
+share/icons/crystalsvg/scalable/devices/smartmedia_mount.svgz
+share/icons/crystalsvg/scalable/devices/smartmedia_unmount.svgz
+share/icons/crystalsvg/scalable/devices/system.svgz
 share/icons/crystalsvg/scalable/devices/tablet.svgz
 share/icons/crystalsvg/scalable/devices/tv.svgz
 share/icons/crystalsvg/scalable/devices/usbpendrive_mount.svgz
 share/icons/crystalsvg/scalable/devices/usbpendrive_unmount.svgz
 share/icons/crystalsvg/scalable/devices/zip_mount.svgz
-share/icons/crystalsvg/scalable/devices/zip_umount.svgz
 share/icons/crystalsvg/scalable/devices/zip_unmount.svgz
 share/icons/crystalsvg/scalable/filesystems/desktop.svgz
 share/icons/crystalsvg/scalable/filesystems/exec.svgz
@@ -4182,6 +4678,7 @@ share/icons/crystalsvg/scalable/filesystems/folder_blue.svgz
 share/icons/crystalsvg/scalable/filesystems/folder_blue_open.svgz
 share/icons/crystalsvg/scalable/filesystems/folder_cyan.svgz
 share/icons/crystalsvg/scalable/filesystems/folder_cyan_open.svgz
+share/icons/crystalsvg/scalable/filesystems/folder_favorite.svgz
 share/icons/crystalsvg/scalable/filesystems/folder_green.svgz
 share/icons/crystalsvg/scalable/filesystems/folder_green_open.svgz
 share/icons/crystalsvg/scalable/filesystems/folder_grey.svgz
@@ -4195,6 +4692,7 @@ share/icons/crystalsvg/scalable/filesystems/folder_man2.svgz
 share/icons/crystalsvg/scalable/filesystems/folder_open.svgz
 share/icons/crystalsvg/scalable/filesystems/folder_orange.svgz
 share/icons/crystalsvg/scalable/filesystems/folder_orange_open.svgz
+share/icons/crystalsvg/scalable/filesystems/folder_print.svgz
 share/icons/crystalsvg/scalable/filesystems/folder_red.svgz
 share/icons/crystalsvg/scalable/filesystems/folder_red_open.svgz
 share/icons/crystalsvg/scalable/filesystems/folder_sound.svgz
@@ -4209,11 +4707,13 @@ share/icons/crystalsvg/scalable/filesystems/home_white.svgz
 share/icons/crystalsvg/scalable/filesystems/link.svgz
 share/icons/crystalsvg/scalable/filesystems/lockoverlay.svgz
 share/icons/crystalsvg/scalable/filesystems/network.svgz
+share/icons/crystalsvg/scalable/filesystems/network_local.svgz
 share/icons/crystalsvg/scalable/filesystems/pipe.svgz
 share/icons/crystalsvg/scalable/filesystems/services.svgz
 share/icons/crystalsvg/scalable/filesystems/temporary.svgz
 share/icons/crystalsvg/scalable/filesystems/trashcan_empty.svgz
 share/icons/crystalsvg/scalable/filesystems/trashcan_full.svgz
+share/icons/crystalsvg/scalable/filesystems/www.svgz
 share/icons/crystalsvg/scalable/filesystems/zip.svgz
 share/icons/crystalsvg/scalable/mimetypes/applix.svgz
 share/icons/crystalsvg/scalable/mimetypes/ascii.svgz
@@ -4257,7 +4757,6 @@ share/icons/crystalsvg/scalable/mimetypes/pk.svgz
 share/icons/crystalsvg/scalable/mimetypes/postscript.svgz
 share/icons/crystalsvg/scalable/mimetypes/quicktime.svgz
 share/icons/crystalsvg/scalable/mimetypes/readme.svgz
-share/icons/crystalsvg/scalable/mimetypes/real_doc.svgz
 share/icons/crystalsvg/scalable/mimetypes/recycled.svgz
 share/icons/crystalsvg/scalable/mimetypes/resource.svgz
 share/icons/crystalsvg/scalable/mimetypes/rpm.svgz
@@ -4295,6 +4794,15 @@ share/icons/crystalsvg/scalable/mimetypes/widget_doc.svgz
 share/icons/crystalsvg/scalable/mimetypes/wordprocessing.svgz
 share/icons/crystalsvg/scalable/mimetypes/zip.svgz
 share/icons/default.kde
+share/icons/hicolor/16x16/actions/show_side_panel.png
+share/icons/hicolor/16x16/actions/view_fit_width.png
+share/icons/hicolor/16x16/actions/view_fit_window.png
+share/icons/hicolor/22x22/actions/show_side_panel.png
+share/icons/hicolor/22x22/actions/view_fit_width.png
+share/icons/hicolor/22x22/actions/view_fit_window.png
+share/icons/hicolor/32x32/actions/show_side_panel.png
+share/icons/hicolor/32x32/actions/view_fit_width.png
+share/icons/hicolor/32x32/actions/view_fit_window.png
 share/icons/hicolor/index.theme
 share/locale/all_languages
 share/mimelnk/all/all.desktop
@@ -4316,12 +4824,24 @@ share/mimelnk/application/pkcs10.desktop
 share/mimelnk/application/pkcs7-mime.desktop
 share/mimelnk/application/pkcs7-signature.desktop
 share/mimelnk/application/postscript.desktop
+share/mimelnk/application/relaxng.desktop
 share/mimelnk/application/sieve.desktop
 share/mimelnk/application/smil.desktop
 share/mimelnk/application/vnd.mozilla.xul+xml.desktop
 share/mimelnk/application/vnd.ms-asf.desktop
 share/mimelnk/application/vnd.ms-excel.desktop
 share/mimelnk/application/vnd.ms-word.desktop
+share/mimelnk/application/vnd.oasis.opendocument.chart.desktop
+share/mimelnk/application/vnd.oasis.opendocument.formula.desktop
+share/mimelnk/application/vnd.oasis.opendocument.graphics-template.desktop
+share/mimelnk/application/vnd.oasis.opendocument.graphics.desktop
+share/mimelnk/application/vnd.oasis.opendocument.image.desktop
+share/mimelnk/application/vnd.oasis.opendocument.presentation-template.desktop
+share/mimelnk/application/vnd.oasis.opendocument.presentation.desktop
+share/mimelnk/application/vnd.oasis.opendocument.spreadsheet-template.desktop
+share/mimelnk/application/vnd.oasis.opendocument.spreadsheet.desktop
+share/mimelnk/application/vnd.oasis.opendocument.text-template.desktop
+share/mimelnk/application/vnd.oasis.opendocument.text.desktop
 share/mimelnk/application/vnd.palm.desktop
 share/mimelnk/application/vnd.rn-realmedia.desktop
 share/mimelnk/application/vnd.stardivision.calc.desktop
@@ -4341,6 +4861,7 @@ share/mimelnk/application/vnd.sun.xml.writer.desktop
 share/mimelnk/application/vnd.sun.xml.writer.master.desktop
 share/mimelnk/application/vnd.sun.xml.writer.template.desktop
 share/mimelnk/application/wordperfect.desktop
+share/mimelnk/application/x-7z.desktop
 share/mimelnk/application/x-abiword.desktop
 share/mimelnk/application/x-ace.desktop
 share/mimelnk/application/x-afm.desktop
@@ -4410,6 +4931,7 @@ share/mimelnk/application/x-linguist.desktop
 share/mimelnk/application/x-lyx.desktop
 share/mimelnk/application/x-lzop.desktop
 share/mimelnk/application/x-magicpoint.desktop
+share/mimelnk/application/x-mimearchive.desktop
 share/mimelnk/application/x-msaccess.desktop
 share/mimelnk/application/x-msdos-program.desktop
 share/mimelnk/application/x-msmetafile.desktop
@@ -4446,12 +4968,15 @@ share/mimelnk/application/x-tzo.desktop
 share/mimelnk/application/x-vnd.kde.kexi.desktop
 share/mimelnk/application/x-vnd.kde.kplato.desktop
 share/mimelnk/application/x-vnd.kde.kugar.mixed.desktop
+share/mimelnk/application/x-webarchive.desktop
 share/mimelnk/application/x-x509-ca-cert.desktop
+share/mimelnk/application/x-xliff.desktop
 share/mimelnk/application/x-zerosize.desktop
 share/mimelnk/application/x-zip.desktop
 share/mimelnk/application/x-zoo.desktop
 share/mimelnk/application/xhtml+xml.desktop
 share/mimelnk/application/xml.desktop
+share/mimelnk/application/xsd.desktop
 share/mimelnk/audio/aac.desktop
 share/mimelnk/audio/ac3.desktop
 share/mimelnk/audio/basic.desktop
@@ -4486,6 +5011,7 @@ share/mimelnk/image/jpeg.desktop
 share/mimelnk/image/pjpeg.desktop
 share/mimelnk/image/png.desktop
 share/mimelnk/image/svg+xml.desktop
+share/mimelnk/image/svg-xml.desktop
 share/mimelnk/image/tiff.desktop
 share/mimelnk/image/wmf.desktop
 share/mimelnk/image/x-bmp.desktop
@@ -4527,11 +5053,13 @@ share/mimelnk/text/css.desktop
 share/mimelnk/text/docbook.desktop
 share/mimelnk/text/enriched.desktop
 share/mimelnk/text/html.desktop
+share/mimelnk/text/javascript.desktop
 share/mimelnk/text/plain.desktop
 share/mimelnk/text/rdf.desktop
 share/mimelnk/text/rss.desktop
 share/mimelnk/text/rtf.desktop
 share/mimelnk/text/sgml.desktop
+share/mimelnk/text/vnd.abc.desktop
 share/mimelnk/text/vnd.wap.wml.desktop
 share/mimelnk/text/x-adasrc.desktop
 share/mimelnk/text/x-bibtex.desktop
@@ -4551,6 +5079,7 @@ share/mimelnk/text/x-lyx.desktop
 share/mimelnk/text/x-makefile.desktop
 share/mimelnk/text/x-moc.desktop
 share/mimelnk/text/x-mswinurl.desktop
+share/mimelnk/text/x-objchdr.desktop
 share/mimelnk/text/x-objcsrc.desktop
 share/mimelnk/text/x-pascal.desktop
 share/mimelnk/text/x-perl.desktop
@@ -4562,6 +5091,12 @@ share/mimelnk/text/x-vcard.desktop
 share/mimelnk/text/x-xslfo.desktop
 share/mimelnk/text/x-xslt.desktop
 share/mimelnk/text/xml.desktop
+share/mimelnk/uri/mms.desktop
+share/mimelnk/uri/mmst.desktop
+share/mimelnk/uri/mmsu.desktop
+share/mimelnk/uri/pnm.desktop
+share/mimelnk/uri/rtspt.desktop
+share/mimelnk/uri/rtspu.desktop
 share/mimelnk/video/avi.desktop
 share/mimelnk/video/mp4.desktop
 share/mimelnk/video/mpeg.desktop
@@ -4613,23 +5148,30 @@ share/services/kresources/kabc/dir.desktop
 share/services/kresources/kabc/file.desktop
 share/services/kresources/kabc/ldapkio.desktop
 share/services/kresources/kabc/net.desktop
+share/services/kresources/kabc_manager.desktop
 share/services/kspell_aspell.desktop
 share/services/kspell_ispell.desktop
-share/services/ktexteditor_autobookmarker.desktop
 share/services/ktexteditor_docwordcompletion.desktop
 share/services/ktexteditor_insertfile.desktop
 share/services/ktexteditor_isearch.desktop
 share/services/ktexteditor_kdatatool.desktop
 share/services/metainfo.protocol
 share/services/mms.protocol
+share/services/mmst.protocol
+share/services/mmsu.protocol
+share/services/mng.kimgio
 share/services/pbm.kimgio
 share/services/pcx.kimgio
 share/services/pgm.kimgio
 share/services/png.kimgio
+share/services/pnm.protocol
 share/services/ppm.kimgio
+share/services/psd.kimgio
 share/services/rgb.kimgio
 share/services/rlogin.protocol
 share/services/rtsp.protocol
+share/services/rtspt.protocol
+share/services/rtspu.protocol
 share/services/shellscript.desktop
 share/services/ssh.protocol
 share/services/telnet.protocol
@@ -4638,11 +5180,13 @@ share/services/tiff.kimgio
 share/services/webdav.protocol
 share/services/webdavs.protocol
 share/services/xbm.kimgio
+share/services/xcf.kimgio
 share/services/xpm.kimgio
 share/services/xv.kimgio
 share/servicetypes/application.desktop
 share/servicetypes/browserview.desktop
 share/servicetypes/dcopinstantmessenger.desktop
+share/servicetypes/dcoptexttospeech.desktop
 share/servicetypes/kbytesedit.desktop
 share/servicetypes/kcmodule.desktop
 share/servicetypes/kcomprfilter.desktop
@@ -4655,6 +5199,7 @@ share/servicetypes/kpart.desktop
 share/servicetypes/kplugininfo.desktop
 share/servicetypes/kpropsdlgplugin.desktop
 share/servicetypes/kregexpeditor.desktop
+share/servicetypes/kresources_manager.desktop
 share/servicetypes/kresources_plugin.desktop
 share/servicetypes/krop.desktop
 share/servicetypes/krwp.desktop
@@ -4680,7 +5225,10 @@ share/servicetypes/scriptinterface.desktop
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kparts/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/knewstuff/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/knewstuff/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kmdi/kmdi/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kmdi/kmdi/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kmdi/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kmdi/kmdi/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kmdi/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kjs/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kjs/html
@@ -4700,8 +5248,13 @@ share/servicetypes/scriptinterface.desktop
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kate/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kabc/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kabc/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/interfaces/kspeech/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/interfaces/kspeech/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/interfaces/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/interfaces/kspeech/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/interfaces/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/dnssd/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/dnssd/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/dcop/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/dcop/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/arts/html
@@ -4714,23 +5267,29 @@ share/servicetypes/scriptinterface.desktop
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kwallet/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kio/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/arts/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/dnssd/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/knewstuff/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kparts/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kresources/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kutils/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/libkmid/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/interfaces/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kdeprint/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kabc/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kmdi/kmdi/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kmdi/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/khtml/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/interfaces/kspeech/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/interfaces/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kate/html
 @dirrm share/services/kresources/kabc
 @dirrm share/services/kresources
 @dirrm share/services/kded
+@dirrm share/mimelnk/uri
 @dirrm share/icons/crystalsvg/scalable/mimetypes
 @dirrm share/icons/crystalsvg/32x32/actions/kde
 @dirrm share/icons/crystalsvg/22x22/actions/kde
+@dirrm share/emoticons/Default
+@dirrm share/emoticons
 @dirrm share/doc/HTML/en/kspell
 @dirrm share/doc/HTML/en/kdelibs-apidocs/libkmid/html
 @dirrm share/doc/HTML/en/kdelibs-apidocs/libkmid
@@ -4744,6 +5303,8 @@ share/servicetypes/scriptinterface.desktop
 @dirrm share/doc/HTML/en/kdelibs-apidocs/kparts
 @dirrm share/doc/HTML/en/kdelibs-apidocs/knewstuff/html
 @dirrm share/doc/HTML/en/kdelibs-apidocs/knewstuff
+@dirrm share/doc/HTML/en/kdelibs-apidocs/kmdi/kmdi/html
+@dirrm share/doc/HTML/en/kdelibs-apidocs/kmdi/kmdi
 @dirrm share/doc/HTML/en/kdelibs-apidocs/kmdi/html
 @dirrm share/doc/HTML/en/kdelibs-apidocs/kmdi
 @dirrm share/doc/HTML/en/kdelibs-apidocs/kjs/html
@@ -4764,8 +5325,12 @@ share/servicetypes/scriptinterface.desktop
 @dirrm share/doc/HTML/en/kdelibs-apidocs/kate
 @dirrm share/doc/HTML/en/kdelibs-apidocs/kabc/html
 @dirrm share/doc/HTML/en/kdelibs-apidocs/kabc
+@dirrm share/doc/HTML/en/kdelibs-apidocs/interfaces/kspeech/html
+@dirrm share/doc/HTML/en/kdelibs-apidocs/interfaces/kspeech
 @dirrm share/doc/HTML/en/kdelibs-apidocs/interfaces/html
 @dirrm share/doc/HTML/en/kdelibs-apidocs/interfaces
+@dirrm share/doc/HTML/en/kdelibs-apidocs/dnssd/html
+@dirrm share/doc/HTML/en/kdelibs-apidocs/dnssd
 @dirrm share/doc/HTML/en/kdelibs-apidocs/dcop/html
 @dirrm share/doc/HTML/en/kdelibs-apidocs/dcop
 @dirrm share/doc/HTML/en/kdelibs-apidocs/arts/html
@@ -4786,10 +5351,8 @@ share/servicetypes/scriptinterface.desktop
 @dirrm share/apps/kstyle/pixmaps
 @dirrm share/apps/kstyle
 @dirrm share/apps/kssl
-@dirrm share/apps/ksgmltools2/docbook/xsl/tools/profile
-@dirrm share/apps/ksgmltools2/docbook/xsl/tools/olink
-@dirrm share/apps/ksgmltools2/docbook/xsl/tools
 @dirrm share/apps/ksgmltools2/docbook/xsl/params
+@dirrm share/apps/ksgmltools2/docbook/xsl/manpages
 @dirrm share/apps/ksgmltools2/docbook/xsl/lib
 @dirrm share/apps/ksgmltools2/docbook/xsl/images/callouts
 @dirrm share/apps/ksgmltools2/docbook/xsl/images
@@ -4803,6 +5366,8 @@ share/servicetypes/scriptinterface.desktop
 @dirrm share/apps/ksgmltools2/docbook
 @dirrm share/apps/ksgmltools2/customization/zh-TW/entities
 @dirrm share/apps/ksgmltools2/customization/zh-TW
+@dirrm share/apps/ksgmltools2/customization/zh-CN/entities
+@dirrm share/apps/ksgmltools2/customization/zh-CN
 @dirrm share/apps/ksgmltools2/customization/xx/entities
 @dirrm share/apps/ksgmltools2/customization/xx
 @dirrm share/apps/ksgmltools2/customization/xsl
@@ -4912,6 +5477,7 @@ share/servicetypes/scriptinterface.desktop
 @dirrm share/apps/kdewidgets/pics
 @dirrm share/apps/kdewidgets
 @dirrm share/apps/kdeui/pics
+@dirrm share/apps/kdeui/about
 @dirrm share/apps/kdeui
 @dirrm share/apps/kdeprint/tools
 @dirrm share/apps/kdeprint/plugins
@@ -4952,6 +5518,7 @@ share/servicetypes/scriptinterface.desktop
 @dirrm include/kparts
 @dirrm include/knewstuff
 @dirrm include/kmediaplayer
+@dirrm include/kmdi
 @dirrm include/kjs
 @dirrm include/kio
 @dirrm include/khexedit
@@ -4961,5 +5528,6 @@ share/servicetypes/scriptinterface.desktop
 @dirrm include/kate
 @dirrm include/kabc
 @dirrm include/dom
+@dirrm include/dnssd
 @dirrm etc/xdg/menus
 @dirrm etc/xdg

@@ -7,7 +7,6 @@
 
 PORTNAME=	kdeedu
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	1
 CATEGORIES?=	misc kde
 MASTER_SITES=		${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -32,5 +31,11 @@ LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 500035
+LIB_DEPENDS+=	boost_python:${PORTSDIR}/devel/boost-python
+.else
+CONFIGURE_ARGS+=--disable-kig-python-scripting
+.endif
 
 .include <bsd.port.post.mk>

@@ -1,0 +1,29 @@
+qt-bugs@ issue : 54405
+applied: no
+author: Waldo Bastian <bastian@kde.org>
+
+KToolBarButton always uses a non-zero popup-delay because we would like
+to draw the menu-indicator on the toolbar buttons ourselves. Unfortunately
+that means that the menu-item in the toolbar-extension menu does not include
+any sub-menu either. With this patch, KToolBarButton can use a popup-delay
+of -1 so that we can still draw our own popup indicator _AND_ get the sub-menu
+in the toolbar-extension menu.
+
+This fixes http://bugs.kde.org/show_bug.cgi?id=77047
+
+Index: widgets/qtoolbar.cpp
+===================================================================
+RCS file: /home/kde/qt-copy/src/widgets/qtoolbar.cpp,v
+retrieving revision 1.56
+diff -u -p -r1.56 qtoolbar.cpp
+--- src/widgets/qtoolbar.cpp	21 Dec 2003 00:48:21 -0000	1.56
++++ src/widgets/qtoolbar.cpp	12 Aug 2004 11:42:21 -0000
+@@ -648,7 +648,7 @@ void QToolBar::createPopup()
+ 	        QString s = b->textLabel();
+ 	        if ( s.isEmpty() )
+ 		    s = b->text();
+-	        if ( b->popup() && b->popupDelay() == 0 )
++	        if ( b->popup() && b->popupDelay() <= 0 )
+ 		    id = d->extensionPopup->insertItem( b->iconSet(), s, b->popup() );
+ 		else
+ 		    id = d->extensionPopup->insertItem( b->iconSet(), s, b, SLOT( emulateClick() ) ) ;

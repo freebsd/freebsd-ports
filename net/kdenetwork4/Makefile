@@ -29,7 +29,6 @@ USE_PERL5=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-_NO_KDE_CLOSURE=yes
 
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
@@ -44,15 +43,9 @@ CONFIGURE_ENV+=DO_NOT_COMPILE="${DO_NOT_COMPILE}"
 .include <bsd.port.pre.mk>
 
 pre-configure:
-.if ${OSVERSION} < 500028
-	@${REINPLACE_CMD} -e 's|stdint.h|inttypes.h|g' \
-		${WRKSRC}/kopete/protocols/gadu/libgadu/libgadu-config.h.in
-.endif
 	@${REINPLACE_CMD} \
 	-E -e '/^SUBDIRS/s/lisa//g' \
 		${WRKSRC}/doc/Makefile.in
-	@${REINPLACE_CMD} -e 's|/bin/bash|${SH}|' \
-		${WRKSRC}/kopete/plugins/latex/kopete_latexconvert.sh
 
 post-configure:
 .if ${OSVERSION} < 500028
