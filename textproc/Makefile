@@ -116,6 +116,7 @@
     SUBDIR += pspell
     SUBDIR += pspell-ispell
     SUBDIR += py-HyperText
+    SUBDIR += py-expat
     SUBDIR += py-martel
     SUBDIR += py-mxTextTools
     SUBDIR += py-xml
