@@ -8,3 +8,5 @@ WinNT/Win95.
     - incremental, tries all character combinations;
     - external, allows you to define your own cracking mode.
     - MD5 based password files support
+
+WWW: http://www.openwall.com/john/
