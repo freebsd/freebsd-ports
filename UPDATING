@@ -93,8 +93,7 @@ upgrades.
   instance that files that were formerly found under
   PREFIX/share/sqwebmail/etc/ are now located under PREFIX/etc/sqwebmail.
   Furthermore you need to set sqwebmaild_enable=YES in your rc.conf 
-  because
-  the rc.d script has been migrated to use the rc.sub Subsystem
+  because the rc.d script has been migrated to use the rc.sub Subsystem
 
 20050108:
   AFFECTS: users of mail/courier-imap
@@ -104,6 +103,8 @@ upgrades.
   courier_imap_imapd_ssl_enable.
   The variable courier_imap_pop3dssl_enable have been renamed to
   courier_imap_pop3d_ssl_enable.
+  userdb stuff is now located in LOCALBASE/etc/authlib instead of
+  LOCALBASE/etc.
 
 20041231:
   AFFECTS: users of www/awstats
