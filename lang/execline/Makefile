@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	execline
-PORTVERSION=	1.05
+PORTVERSION=	1.06
 CATEGORIES=	lang shells
 MASTER_SITES=	http://www.skarnet.org/software/${PORTNAME}/
 
@@ -21,8 +21,11 @@ DOCS=		package/CHANGES package/README package/THANKS package/TODO \
 		doc/*.html
 
 do-configure:
-	${ECHO_CMD} "${LOCALBASE}/include/skalibs" > ${WRKSRC}/conf-compile/import
-	${ECHO_CMD} "${LOCALBASE}/lib/skalibs"    >> ${WRKSRC}/conf-compile/import
+	${ECHO_CMD} "FreeBSD"	> ${WRKSRC}/src/sys/systype
+	${ECHO_CMD} "${LOCALBASE}/include/skalibs" \
+		> ${WRKSRC}/conf-compile/import
+	${ECHO_CMD} "${LOCALBASE}/lib/skalibs" \
+		>> ${WRKSRC}/conf-compile/import
 
 do-build:
 	cd ${WRKSRC} && package/compile
