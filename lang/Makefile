@@ -121,6 +121,7 @@
     SUBDIR += objc
     SUBDIR += ocaml
     SUBDIR += ocaml-mode.el
+    SUBDIR += ohugs
     SUBDIR += onyx
     SUBDIR += oo2c
     SUBDIR += open-cobol
