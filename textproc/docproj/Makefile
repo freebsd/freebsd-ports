@@ -3,10 +3,11 @@
 # Date created:        27 June 1998
 # Whom:                Nik Clayton <nik@freebsd.org>
 #
-# $Id: Makefile,v 1.1.1.1 1998/06/29 16:12:51 nik Exp $
+# $Id: Makefile,v 1.2 1998/07/03 07:53:57 asami Exp $
 #
 
 DISTNAME=	docproj
+PKGNAME=	docproj-1.0
 CATEGORIES=	textproc
 MASTER_SITES=	# empty
 DISTFILES=	# empty
