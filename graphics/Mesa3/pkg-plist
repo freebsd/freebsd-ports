@@ -15,13 +15,13 @@ include/GL/svgamesa.h
 include/GL/wmesa.h
 include/GL/xmesa.h
 lib/libGL.a
-lib/libGL.so.13.5
+lib/libGL.so.13.6
 lib/libGLU.a
-lib/libGLU.so.13.5
+lib/libGLU.so.13.6
 lib/libMesaGL.a
-lib/libMesaGL.so.13.5
+lib/libMesaGL.so.13.6
 lib/libMesaGLU.a
-lib/libMesaGLU.so.13.5
+lib/libMesaGLU.so.13.6
 lib/libglut.a
 lib/libglut.so.3.6
 @exec ldconfig -m %B
