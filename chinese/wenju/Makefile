@@ -22,6 +22,17 @@ INSTALLS_SHLIB=	yes
 USE_GETOPT_LONG=	yes
 USE_LIBTOOL_VER=	13
 
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
+
 post-install:
 		gtk-query-immodules-2.0 > ${PREFIX}/etc/gtk-2.0/gtk.immodules
 
