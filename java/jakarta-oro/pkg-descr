@@ -1,0 +1,10 @@
+The Jakarta-ORO Java classes are a set of text-processing Java classes
+that provide Perl5 compatible regular expressions, AWK-like regular
+expressions, glob expressions, and utility classes for performing
+substitutions, splits, filtering filenames, etc.  This library is
+the successor to the OROMatcher, AwkTools, PerlTools, and TextTools
+libraries from ORO, Inc. (www.oroinc.com).  They have been donated to
+the Jakarta Project by Daniel Savarese (www.savarese.org), the
+copyright holder of the ORO libraries.
+
+WWW: http://jakarta.apache.org/oro/
