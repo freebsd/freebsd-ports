@@ -119,6 +119,7 @@
     SUBDIR += p5-IniConf
     SUBDIR += p5-IO-stringy
     SUBDIR += p5-PV
+    SUBDIR += p5-Parse-RecDescent
     SUBDIR += p5-Penguin
     SUBDIR += p5-Penguin-Easy
     SUBDIR += p5-Proc-Simple
