@@ -139,6 +139,7 @@ ksh93			ports/shells/ksh93	User must agree to "regularly monitor the Website".
 l_cc_pu_6.0.149.tar	ports/lang/icc		No redistribution allowed
 l_fc_p_6.0.140.tar	ports/lang/ifc		No redistribution allowed
 lgrind			ports/print/lgrind	Contains non-free code written by Van Jacobson
+limewire		ports/net/limewire	No redistribution allowed
 linux-netscape6		ports/www/linux-netscape6	Java plugin is from Sun.
 linuxq3ademo-*		ports/games/linux-q3ademo	Restrictive license by Loki Software
 linux-ibm-*		ports/java/linux-ibm-jdk13	Redistribution of repackaged
