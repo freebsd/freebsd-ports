@@ -9,7 +9,7 @@ PORTVERSION=	0.9.6
 CATEGORIES=	comms
 MASTER_SITES=	http://www.qsl.net/pg4i/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	matt@mattsnetwork.co.uk
 COMMENT=	Amateur Radio logging application
 
 USE_X_PREFIX=	yes
