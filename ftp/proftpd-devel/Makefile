@@ -3,7 +3,7 @@
 # Date created:		26 January 1998
 # Whom:			Stephane Legrand
 #
-# $Id: Makefile,v 1.8 1999/03/15 02:13:32 steve Exp $
+# $Id: Makefile,v 1.9 1999/04/02 03:35:02 steve Exp $
 #
 
 DISTNAME=	proftpd-1.2.0pre3
@@ -11,7 +11,7 @@ PKGNAME=	proftpd-1.2.0
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/
 
-MAINTAINER=	stephane@lituus.fr
+MAINTAINER=	ports@FreeBSD.org
 
 MAN1=	ftpcount.1
 MAN8=	proftpd.8 ftpshut.8
