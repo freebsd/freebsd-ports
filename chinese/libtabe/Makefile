@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	libtabe
-PORTVERSION=	0.1.6
+PORTVERSION=	0.1.7
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://xcin.linux.org.tw/pub/xcin/libtabe/devel/
-DISTNAME=	libtabe-0.1-6
 
 MAINTAINER=	keith@freebsd.sinica.edu.tw
 
@@ -38,7 +37,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/${DOC} ${PREFIX}/share/doc/tabe
 .endfor
 .endif
-	${TOUCH} ${PREFIX}/share/tabe/libtabe-0.1-6
+	${TOUCH} ${PREFIX}/share/tabe/libtabe-0.1.7
 .if ${PORTOBJFORMAT} == "elf"
 	${RM} -f ${PREFIX}/lib/libbims.so ${PREFIX}/lib/libbims.so.0
 	${MV} ${PREFIX}/lib/libbims.so.0.1 ${PREFIX}/lib/libbims.so.0

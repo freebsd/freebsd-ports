@@ -4,7 +4,7 @@
  ld_sharelib = @ld_sharelib@
  slib_ext    = @slib_ext@
  
--version     = 0.1-6
+-version     = 0.1.7
 -major_ver   = 0.1
 +version     = 0.1
 +major_ver   = 0
