@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sylpheed-claws
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.2
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws
@@ -125,7 +125,9 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/tools/README ${DOCSDIR}/README.tools
 .endif
 	@${MKDIR} ${DATADIR}
-.for i in eud2gc.py filter_conv.pl gif2xface.pl ldif-to-xml.py newscache_clean.pl
+.for i in OOo2sylpheed.pl calypso_convert.pl eud2gc.py filter_conv.pl \
+	gif2xface.pl gpg-sign-syl kmail2sylpheed.pl ldif-to-xml.py \
+	newscache_clean.pl outlook2sylpheed.pl update-po uudec
 	@${INSTALL_SCRIPT} ${WRKSRC}/tools/${i} ${DATADIR}
 .endfor
 .if !defined(WITHOUT_THEMES)

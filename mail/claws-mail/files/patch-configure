@@ -1,6 +1,6 @@
---- configure.orig	Tue Jul 30 22:54:16 2002
-+++ configure	Mon Aug  5 17:24:04 2002
-@@ -1170,7 +1170,7 @@
+--- configure.orig	Wed Aug 28 12:46:18 2002
++++ configure	Sun Sep  1 03:01:59 2002
+@@ -1169,7 +1169,7 @@
  PATH_SEPARATOR="$ac_path_separator"
  rm -f conftest.sh
  
@@ -9,7 +9,7 @@
  
  MAJOR_VERSION=0
  MINOR_VERSION=8
-@@ -1651,7 +1651,7 @@
+@@ -1650,7 +1650,7 @@
  
  fi
  
@@ -18,7 +18,7 @@
    SYLPHEED_GNOME_TRUE=
    SYLPHEED_GNOME_FALSE='#'
  else
-@@ -9829,9 +9829,9 @@
+@@ -9822,9 +9822,9 @@
  
  localedir='${prefix}/${DATADIRNAME}/locale'
  
