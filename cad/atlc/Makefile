@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	atlc
-PORTVERSION=	4.0.1
+PORTVERSION=	4.6.0
 CATEGORIES=	cad
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/%SUBDIR%/atlc/}
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -17,8 +17,18 @@ COMMENT=	A tool to calculate the impedance of transmission lines
 USE_REINPLACE=	YES
 GNU_CONFIGURE=	YES
 
-MAN1=		atlc.1 rect_in_rect.1 circ_in_circ.1 \
-		circ_in_rect.1 rect_cen_in_rect.1 readbin.1 sym_strip.1
+MAN1=		atlc.1 coax.1 create_bmp_for_circ_in_circ.1 \
+		create_bmp_for_circ_in_rect.1 \
+		create_bmp_for_microstrip_coupler.1 \
+		create_bmp_for_rect_cen_in_rect.1 \
+		create_bmp_for_rect_cen_in_rect_coupler.1 \
+		create_bmp_for_rect_in_circ.1 \
+		create_bmp_for_rect_in_rect.1 \
+		create_bmp_for_stripline_coupler.1 \
+		create_bmp_for_symmetrical_stripline.1 \
+		design_coupler.1 dualcoax.1 \
+		find_optimal_dimensions_for_microstrip_coupler.1 \
+		readbin.1 sysdata.1
 
 pre-everything::
 	@${ECHO_MSG}
@@ -34,19 +44,17 @@ post-patch:
 			${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 .endif
 
-post-install:
-		@${MKDIR} ${PREFIX}/share/examples/atlc
-		@${CP} ${WRKDIR}/${DISTNAME}/examples/*.bmp \
-			${PREFIX}/share/examples/atlc
 .if !defined(NOPORTDOCS)
-		@${MKDIR} ${PREFIX}/share/doc/atlc
-		@${INSTALL_DATA} \
-			${WRKDIR}/${DISTNAME}/docs/html-docs/*.html \
-			${PREFIX}/share/doc/atlc
-		@${MKDIR} ${PREFIX}/share/doc/atlc/jpgs
-		@${INSTALL_DATA} \
-			${WRKDIR}/${DISTNAME}/docs/html-docs/jpgs/*.jpg \
-			${PREFIX}/share/doc/atlc/jpgs
+.for file in docs/qex-december-1996/Makefile.in \
+		docs/html-docs/Makefile.in \
+		docs/html-docs/jpgs/Makefile.in
+	@${REINPLACE_CMD} -e 's|atlc/docs|doc/atlc|' ${WRKSRC}/${file}
+.endfor
+	@${REINPLACE_CMD} -e 's|atlc/examples|examples/atlc|' \
+		-e 's|cvsignore||' -e 's|create_for_Makefile.am||' \
+		${WRKSRC}/examples/Makefile.in
+.elseif
+	@${REINPLACE_CMD} -e 's|docs examples||' ${WRKSRC}/Makefile.in
 .endif
 
 .include <bsd.port.mk>
