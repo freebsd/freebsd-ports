@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	r2667	# 0.14.0
+PORTVERSION=	r2927	# 0.14.1
 CATEGORIES=	devel
-MASTER_SITES=	http://subversion.tigris.org/files/documents/15/578/
+MASTER_SITES=	http://subversion.tigris.org/files/documents/15/690/
 
 MAINTAINER=	rooneg@electricjellyfish.net
 
