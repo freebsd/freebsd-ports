@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	biew
-PORTVERSION=	5.5.0
-PORTREVISION=	1
+PORTVERSION=	5.6.0
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,7 +19,7 @@ COMMENT=	Binary vIEWer + editor for binary, hexadecimal and dis-asm modes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 
-MYPORTDOCS=	biew_en.txt biew_ru.txt develop.en develop.ru file_ini.en \
+PORTDOCS=	biew_en.txt biew_ru.txt develop.en develop.ru file_ini.en \
 		file_ini.ru licence.en licence.ru release.txt unix.txt
 
 .include <bsd.port.pre.mk>
@@ -57,7 +56,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/hlp/biew.hlp ${DATADIR}
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${DOCSDIR}
-.for file in ${MYPORTDOCS}
+.for file in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
 .endfor
 .endif
