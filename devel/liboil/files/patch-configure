@@ -1,0 +1,18 @@
+--- configure.orig	Sun Nov 28 19:14:30 2004
++++ configure	Sun Nov 28 19:15:34 2004
+@@ -20691,13 +20691,13 @@
+ 
+ fi
+ 
+-LIBOIL_CFLAGS="$LIBOIL_CFLAGS -D_GNU_SOURCE -D_POSIX_C_SOURCE=200112L -I\$(top_srcdir)"
++LIBOIL_CFLAGS="$LIBOIL_CFLAGS -D_GNU_SOURCE -I\$(top_srcdir)"
+ 
+ 
+ LIBOIL_LIBS="\$(top_builddir)/liboil/liboil-$LIBOIL_MAJORMINOR.la"
+ 
+ 
+-pkgconfigdir="\$(libdir)/pkgconfig"
++pkgconfigdir="\$(prefix)/libdata/pkgconfig"
+ 
+ 
+                                                                                                                         ac_config_files="$ac_config_files Makefile liboil/Makefile liboil/copy/Makefile liboil/dct/Makefile liboil/md5/Makefile liboil/jpeg/Makefile liboil/simdpack/Makefile testsuite/Makefile examples/Makefile examples/jpeg/Makefile examples/md5/Makefile liboil.pc"
