@@ -1,11 +1,13 @@
 --- Makefile.orig	Thu Aug  5 18:46:10 2004
-+++ Makefile	Mon Aug 30 11:02:44 2004
-@@ -27,8 +27,8 @@
++++ Makefile	Mon Feb 14 10:26:16 2005
+@@ -26,9 +26,9 @@
+ 	$(MAKE) -C init install
  	$(MAKE) -C man install
  	$(MAKE) -C doc install
- 	$(MKINSTALLDIRS) $(libdir)/pkgconfig
+-	$(MKINSTALLDIRS) $(libdir)/pkgconfig
 -	$(INSTALL) -m 0644 sqlrelay-c.pc $(libdir)/pkgconfig/sqlrelay-c.pc
 -	$(INSTALL) -m 0644 sqlrelay-c++.pc $(libdir)/pkgconfig/sqlrelay-c++.pc
++	$(MKINSTALLDIRS) $(prefix)/libdata/pkgconfig
 +	$(INSTALL) -m 0644 sqlrelay-c.pc $(prefix)/libdata/pkgconfig/sqlrelay-c.pc
 +	$(INSTALL) -m 0644 sqlrelay-c++.pc $(prefix)/libdata/pkgconfig/sqlrelay-c++.pc
  
