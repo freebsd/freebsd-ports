@@ -7,7 +7,7 @@ unavail
 avail||CVSROOT
 avail||distrib
 avail||doc
-avail||ports
+avail|asami,steve|ports
 avail||src
 avail||www
 unavail||src/sys/nfsclient
