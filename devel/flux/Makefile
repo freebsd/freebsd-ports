@@ -20,6 +20,12 @@ USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 REGEX=		"s@EXTRA_DIST \+@EXTRA_DIST @g"
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 500000
+BROKEN=		"Does not compile"
+.endif
+
 pre-configure:
 .for M in examples include src util
 	@${REINPLACE_CMD} -e ${REGEX} ${WRKSRC}/${M}/Makefile.am
@@ -48,4 +54,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
