@@ -1,24 +1,18 @@
---- support/config.h.dist.old	Wed Dec  9 15:05:45 1998
-+++ support/config.h.dist	Wed Dec  9 15:09:34 1998
-@@ -168,13 +168,13 @@
-  * if 'OPER_x' is undefined so you can't give local operators more rights
-  * than global ones.
-  */
--#undef	OPER_KILL
-+#define	OPER_KILL
- #define	OPER_REHASH
- #undef	OPER_RESTART
--#define	OPER_DIE
+--- support/config.h.dist.old	Mon Aug 18 15:17:52 2003
++++ support/config.h.dist	Mon Aug 18 15:17:52 2003
+@@ -121,1 +121,1 @@
+-#undef	 OPER_KILL
++#define OPER_KILL
+@@ -124,4 +124,4 @@
+-#define OPER_DIE
 +#undef	OPER_DIE
- #undef	OPER_REMOTE
--#undef	LOCOP_REHASH
--#undef	LOCOP_RESTART
-+#define	LOCOP_REHASH
-+#define	LOCOP_RESTART
- #undef	LOCOP_DIE
- 
- /*
-@@ -299,32 +299,32 @@
+-#undef	 OPER_REMOTE
++#define OPER_REMOTE
+-#undef	 LOCOP_REHASH
++#define LOCOP_REHASH
+-#undef	 LOCOP_RESTART
++#define LOCOP_RESTART
+@@ -249,32 +249,32 @@
   * this option is used unless you tell the system administrator beforehand
   * and obtain their permission to send messages to the system log files.
   */
@@ -60,7 +54,7 @@
  
  /*
   * If you want to store encrypted passwords in N-lines for server links,
-@@ -376,7 +376,7 @@
+@@ -323,7 +323,7 @@
   * send to the server without processing before disconnecting the client for
   * flooding it.  Values greater than 8000 make no difference to the server.
   */
@@ -69,7 +63,7 @@
  
  /* Remote query flood protection. */
  #define	CHREPLLEN	8192
-@@ -414,7 +414,7 @@
+@@ -461,7 +461,7 @@
   * The library and the include files must have been found by configure,
   * if you have installed the zlib after running configure, run it again.
   */
