@@ -1,23 +1,46 @@
 #!/bin/sh
-DAEMON=runsvdir
-PREFIX=%%PREFIX%%
-SVDIR=%%SERVICE_DIR%%
-LOG='...........................................................................................................................................................................................................................................................................................................................................................................................................'
+#
+# $FreeBSD$
+#
 
-PATH=/command:${PREFIX}/sbin:${PREFIX}/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# PROVIDE: /service
+# REQUIRE: 
+# BEFORE:  SERVERS
+# KEYWORD: shutdown
 
-case "$1" in
-  start)
-	echo -n " ${DAEMON}"
-	exec env - PATH=${PATH} ${PREFIX}/sbin/${DAEMON} $SVDIR $LOG & 
-	;;
+# Add the following line to /etc/rc.conf to enable `runsvdir':
+#
+#runsvdir_enable="YES"		(default: NO)
+#runsvdir_path="/service"	(default: /var/service)
+#
 
-  stop)
-	echo -n " ${DAEMON}"
-	/usr/bin/killall -HUP ${DAEMON}
-	;;
+. "/etc/rc.subr"
 
-  *)
-  	echo "Usage: $0 start | stop"
-	;;
-esac
+name="runsvdir"
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/sbin/runsvdir"
+
+start_cmd=runsvdir_start
+stop_postcmd=runsvdir_post_stop
+
+runsvdir_start()
+{
+	/bin/test -d ${runsvdir_path} || /bin/mkdir -p ${runsvdir_path}
+	/usr/bin/env -i \
+		PATH=/command:%%PREFIX%%/sbin:%%PREFIX%%/bin:/sbin:/bin:/usr/sbin:/usr/bin \
+		/usr/sbin/daemon \
+		${command} ${runsvdir_path}
+}
+
+runsvdir_post_stop()
+{
+	%%PREFIX%%/sbin/runsvctrl exit ${runsvdir_path}/* 
+}
+
+# read configuration and set defaults
+load_rc_config "$name"
+: ${runsvdir_enable="NO"}
+: ${runsvdir_path="/var/service"}
+
+run_rc_command "$1"

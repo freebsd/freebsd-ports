@@ -7,12 +7,14 @@
 
 PORTNAME=	runit
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://smarden.org/${PORTNAME}/
 
 MAINTAINER=	sergei@FreeBSD.org
-COMMENT=	A init scheme with service supervision
+COMMENT=	Service supervision tools compatible with DJB daemontools
 
+USE_RC_SUBR=	runsvdir.sh
 WRKSRC=		${WRKDIR}/admin/${DISTNAME}
 ALL_TARGET=	default
 
@@ -32,9 +34,6 @@ do-configure:
 do-build:
 	cd ${WRKSRC} && package/compile && package/check
 	@${MKDIR} ${WRKDIR}/etc/getty-ttyv4
-	@${SED} -e 's!%%PREFIX%%!${PREFIX}!' \
-		-e 's!%%SERVICE_DIR%%!${SERVICE_DIR}!' \
-		${FILESDIR}/runsvdir.sh.in > ${WRKDIR}/runsvdir.sh.sample
 .for file in ${CONFIG}
 	@${SED} -e 's!/etc/runit!${PREFIX}/etc/runit!g' \
 		-e 's!/service!${SERVICE_DIR}!g' \
@@ -45,7 +44,6 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/command/* ${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/man/*.8 ${MANPREFIX}/man/man8
-	${INSTALL_SCRIPT} ${WRKDIR}/runsvdir.sh.sample ${PREFIX}/etc/rc.d
 	@${MKDIR} ${PREFIX}/etc/runit/getty-ttyv4
 	${INSTALL_SCRIPT} ${WRKDIR}/etc/[123c]* ${PREFIX}/etc/runit
 	${INSTALL_SCRIPT} ${WRKDIR}/etc/getty-ttyv4/* \
