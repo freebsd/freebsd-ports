@@ -2555,6 +2555,7 @@ ja-emacs-manual	ports/japanese/emacs-manual
 ja-emacs20-dl-canna	ports/japanese/emacs20-dl-canna
 ja-emacs20-dl-wnn6	ports/japanese/emacs20-dl-wnn6
 ja-emacs20-emcws	ports/japanese/emacs20-emcws
+ja-emacs21-emcws	ports/japanese/emacs21-emcws
 ja-epic4	ports/japanese/epic4
 ja-epwutil	ports/japanese/epwutil
 ja-escpf	ports/japanese/escpf
