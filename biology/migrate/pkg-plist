@@ -1,0 +1,12 @@
+bin/migrate
+bin/migrate-n
+%%PORTDOCS%%share/doc/migrate/HISTORY
+%%PORTDOCS%%share/doc/migrate/HOWTO-PARALLEL
+%%PORTDOCS%%share/doc/migrate/README
+%%PORTDOCS%%share/doc/migrate/graphics/librarian.gif
+%%PORTDOCS%%share/doc/migrate/graphics/mail.gif
+%%PORTDOCS%%share/doc/migrate/graphics/migrate.gif
+%%PORTDOCS%%share/doc/migrate/graphics/packet.gif
+%%PORTDOCS%%share/doc/migrate/migrate.html
+%%PORTDOCS%%@dirrm share/doc/migrate/graphics
+%%PORTDOCS%%@dirrm share/doc/migrate
