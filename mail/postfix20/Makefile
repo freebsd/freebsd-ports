@@ -33,8 +33,8 @@ PATCHFILES=	postfix-2.0-ns-mx-acl-patch.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A secure alternative to widely-used Sendmail (old version)
 
-DEPRECATED=	"please consider migrating to postfix 2.1 (mail/postfix), which is stable"
-EXPIRATION_DATE=	"September 30, 2004"
+DEPRECATED=	please consider migrating to postfix 2.1 (mail/postfix), which is stable
+EXPIRATION_DATE=2004-09-30
 
 CONFLICTS=	courier-0.* postfix-1.* postfix-2.1.* sendmail-8.* sendmail-*-8.* smail-3.* zmailer-2.*
 LATEST_LINK=	postfix20
