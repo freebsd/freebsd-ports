@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.140 1999/08/01 03:21:45 steve Exp $
+# $Id: Makefile,v 1.141 1999/08/05 11:47:37 max Exp $
 #
 
     SUBDIR += Mosaic         # requires Motif
@@ -24,6 +24,7 @@
     SUBDIR += chimera
     SUBDIR += chimera2
     SUBDIR += comline
+    SUBDIR += demoroniser
     SUBDIR += evg
     SUBDIR += fcgi
     SUBDIR += fxhtml
