@@ -12,13 +12,14 @@
 #	distfile.	-- David O'Brien <obrien@FreeBSD.org>
 
 PORTNAME=	libgnugetopt
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	obrien
+MASTER_SITE_SUBDIR=	lioux
 
 MAINTAINER=	lioux@FreeBSD.org
 
+USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
 
 do-install:
