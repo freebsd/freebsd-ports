@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.59 1999/04/03 01:05:11 steve Exp $
+# $Id: Makefile,v 1.60 1999/04/03 02:14:13 steve Exp $
 #
 
     SUBDIR += PDL
@@ -46,6 +46,7 @@
     SUBDIR += superlu
     SUBDIR += umatrix
     SUBDIR += umfpack
+    SUBDIR += vtk
     SUBDIR += wingz
     SUBDIR += xgfe
     SUBDIR += xgraph
