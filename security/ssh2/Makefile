@@ -3,7 +3,7 @@
 # Date created:		30 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.27 1996/06/20 14:11:17 ache Exp $
+# $Id: Makefile,v 1.28 1996/07/16 00:33:10 ache Exp $
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_TCPWRAP
@@ -25,8 +25,7 @@ LIB_DEPENDS=    z\\.1\\.0:${PORTSDIR}/devel/libz
 
 .if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
 DISTFILES=	${DISTNAME}.tar.gz rsaref2.tar.gz
-MASTER_SITES=	\
-	ftp://ftp.cs.hut.fi/pub/ssh/ \
+MASTER_SITES+=   \
 	ftp://nic.funet.fi/pub/crypt/mirrors/ftp.dsi.unimi.it/applied-crypto/ \
 	ftp://rzsun2.informatik.uni-hamburg.de/pub/virus/crypt/ripem/ \
 	ftp://ftp.dsi.unimi.it/pub/security/crypt/math/ \
