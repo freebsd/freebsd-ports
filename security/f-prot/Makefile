@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	prot
-PORTVERSION=	4.3.0
+PORTVERSION=	4.3.1
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.f-prot.com/pub/bsd/
 PKGNAMEPREFIX=	f-
