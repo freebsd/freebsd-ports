@@ -7,6 +7,7 @@
 
 PORTNAME=	Howto
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	ftp://metalab.unc.edu/pub/Linux/docs/HOWTO/other-formats/sgml/ \
 		ftp://metalab.unc.edu/pub/Linux/docs/HOWTO/mini/other-formats/sgml/
@@ -18,7 +19,7 @@ DISTFILES=	Linux+FreeBSD.sgml.gz  \
 
 MAINTAINER=	ports@FreeBSD.org
 
-BUILD_DEPENDS=	sgmlfmt:${PORTSDIR}/textproc/sgmlformat
+#BUILD_DEPENDS=	sgmlfmt:${PORTSDIR}/textproc/sgmlformat
 
 DIST_SUBDIR=	Howto
 NO_WRKSUBDIR=	yes
