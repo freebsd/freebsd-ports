@@ -3,7 +3,7 @@
 # Date created:        27 July 1998
 # Whom:                Bill Fumerola <billf@chc-chimes.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/07/30 15:15:35 hoek Exp $
 #
 
 DISTNAME=	clig-1.0.2
