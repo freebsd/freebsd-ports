@@ -7,6 +7,7 @@
 
 PORTNAME=	liba52
 PORTVERSION=	0.7.3
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://liba52.sourceforge.net/files/
 DISTNAME=	a52dec-${PORTVERSION:S/.b/b/}
@@ -17,6 +18,14 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-oss --enable-shared
 USE_LIBTOOL=	yes
+
+.ifndef(WITHOUT_DJBFFT)
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libdjbfft.a:${PORTSDIR}/math/djbfft
+
+CONFIGURE_ENV+= CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+CONFIGURE_ARGS+=	--enable-djbfft
+.endif
 
 MAN1=	a52dec.1 extract_a52.1
 
@@ -29,11 +38,20 @@ pre-everything::
 	@${ECHO_MSG} ">>> For example, 'make WITH_OPTIMIZED_CFLAGS=yes'"
 	@${ECHO_MSG} ">>>"
 .endif
+.ifndef(WITHOUT_DJBFFT)
+	@${ECHO_MSG} '>>>'
+	@${ECHO_MSG} '>>> You can disable djbfft optimized FFT routines by defining WITHOUT_DJBFFT.'
+	@${ECHO_MSG} ">>> For example, 'make WITHOUT_DJBFFT=yes'"
+	@${ECHO_MSG} '>>>'
+.endif
 
 post-patch:
 .ifndef(WITH_OPTIMIZED_CFLAGS)
 	@${PERL} -pi.orig -e 's!-O3!${CFLAGS}!;s!-mcpu=[^"]+"!"!' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+.endif
+.ifndef(WITHOUT_DJBFFT)
+	@${PERL} -pi -e 's|(fftc4.h)|djbfft/\1|' ${WRKSRC}/liba52/imdct.c
 .endif
 
 post-configure:
