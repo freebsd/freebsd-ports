@@ -21,6 +21,7 @@ bin/nostereodune
 %%PORTDOCS%%%%DOCSDIR%%/commandline_examples/xinput_irix6.2_example.sh
 %%PORTDOCS%%%%DOCSDIR%%/deutsch.jpg
 %%PORTDOCS%%%%DOCSDIR%%/developer_docs/Doxyfile.in
+%%PORTDOCS%%%%DOCSDIR%%/developer_docs/Doxyf
 %%PORTDOCS%%%%DOCSDIR%%/developer_docs/Makefile
 %%PORTDOCS%%%%DOCSDIR%%/developer_docs/deutsch.jpg
 %%PORTDOCS%%%%DOCSDIR%%/developer_docs/dune.png
