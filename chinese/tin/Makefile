@@ -3,11 +3,11 @@
 # Date created:		2 Dec 1997
 # Whom:			Yen-Shuo Su <yssu@CCCA.NCTU.edu.tw>
 #
-# $Id: Makefile,v 1.2 1997/12/02 04:23:49 asami Exp $
+# $Id: Makefile,v 1.3 1997/12/04 22:42:40 vanilla Exp $
 #
 
-DISTNAME=       tinpre-1.4-971127
-PKGNAME=        zh-tin-1.4.971127
+DISTNAME=       tinpre-1.4-971204
+PKGNAME=        zh-tin-1.4.971204
 CATEGORIES=	chinese news
 MASTER_SITES=   ftp://nuxi.ucdavis.edu/pub/tin/ \
 		ftp://ftp.akk.uni-karlsruhe.de/pub/tin/ \
@@ -26,7 +26,8 @@ CONFIGURE_ARGS=  --with-nntp-default-server=news  \
 		 --enable-break-long-lines \
 		 --with-pgp=${PREFIX}/bin/pgp \
 		 --with-ispell=${PREFIX}/bin/ispell \
-		 --with-metamail=${PREFIX}/bin/metamail
+		 --with-metamail=${PREFIX}/bin/metamail \
+		 --disable-locale
 MAKEFILE=	makefile
 ALL_TARGET=     build
 MAN1=		tin.1
