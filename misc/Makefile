@@ -264,6 +264,7 @@
     SUBDIR += projectionlib
     SUBDIR += proxyper
     SUBDIR += py-distutils
+    SUBDIR += py-pexpect
     SUBDIR += pybliographer
     SUBDIR += pypanda
     SUBDIR += qbrew
