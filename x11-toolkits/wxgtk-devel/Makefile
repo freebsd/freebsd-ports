@@ -26,6 +26,7 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_MESA=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gtk12
@@ -34,7 +35,9 @@ CONFIGURE_ARGS=	--with-libpng=sys \
 		--with-libjpeg=sys \
 		--with-libtiff=sys \
 		--with-zlib=builtin \
-		--with-opengl
+		--with-opengl \
+		--host=${CONFIGURE_TARGET} \
+		--build=${CONFIGURE_TARGET}
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} \
 			  -I${WRKSRC}/include \
 			  -I${LOCALBASE}/include \
@@ -45,8 +48,7 @@ CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} \
 		GTK_CONFIG_2_0="no"
 
 pre-patch:
-	@${PERL} -pi -e 's|-l\$$THREADS_LIB|${PTHREAD_LIBS}|g ; \
-			 s|-l\$$THREADS_LINK|${PTHREAD_LIBS}|g' \
-				${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|[$$]THREADS_LINK|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>
