@@ -13,7 +13,6 @@ MASTER_SITES=	http://cr.yp.to/cdb/
 MAINTAINER=	ports@FreeBSD.org
 
 ALL_TARGET=	it
-INSTALL_TARGET=	setup
 
 do-configure:
 	@${MV} ${WRKSRC}/conf-home ${WRKSRC}/conf-home.orig
@@ -23,7 +22,13 @@ do-configure:
 	@${MV} ${WRKSRC}/conf-ld ${WRKSRC}/conf-ld.orig
 	${ECHO} ${CC} -s > ${WRKSRC}/conf-ld
 
-post-install:
+do-install:
+.for file in cdbdump cdbget cdbmake cdbstats cdbtest
+	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${PREFIX}/bin
+.endfor
+.for file in cdbmake-12 cdbmake-sv
+	${INSTALL_SCRIPT} ${WRKSRC}/${file} ${PREFIX}/bin
+.endfor
 	${INSTALL_DATA} ${WRKSRC}/cdb.h ${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/cdb.a ${PREFIX}/lib/libcdb.a
 
