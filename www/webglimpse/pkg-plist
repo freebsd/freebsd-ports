@@ -22,6 +22,7 @@ www/webglimpse/lib/URL.pl
 www/webglimpse/lib/config.pl
 www/webglimpse/lib/ftplib.pl
 www/webglimpse/lib/html2txt
+www/webglimpse/lib/html2txt.c
 www/webglimpse/lib/httpget
 www/webglimpse/lib/httpget.c
 www/webglimpse/lib/httpget.pl
