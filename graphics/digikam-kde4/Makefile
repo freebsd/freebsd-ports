@@ -7,7 +7,7 @@
 
 PORTNAME=	digikam
 PORTVERSION=	0.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	avleeuwen@piwebs.com
 COMMENT=	Photo album manager for KDE with gphoto2 backend
 
-LIB_DEPENDS=	kexif.0:${PORTSDIR}/graphics/libkexif \
+LIB_DEPENDS=	kexif.1:${PORTSDIR}/graphics/libkexif \
 		kipi.0:${PORTSDIR}/graphics/libkipi \
 		gphoto2.2:${PORTSDIR}/graphics/libgphoto2 \
 		Imlib2.3:${PORTSDIR}/graphics/imlib2 \
