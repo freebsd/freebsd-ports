@@ -54,6 +54,7 @@
     SUBDIR += gmanedit
     SUBDIR += gnotepad+
     SUBDIR += gxedit
+    SUBDIR += hexcurse
     SUBDIR += hexedit
     SUBDIR += hexpert
     SUBDIR += iiimecf

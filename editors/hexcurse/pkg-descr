@@ -1,0 +1,6 @@
+HexCurse is a versatile ncurses-based hex editor written in C that provides
+the user with many features. It currently supports searching, hex, and decimal
+address output, jumping to specified locations in a file, and quick keyboard
+shortcuts to commands.
+
+WWW: http://jewfish.net/description?title=HexCurse
