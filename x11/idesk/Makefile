@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	idesk
-PORTVERSION=	0.5.5
+PORTVERSION=	0.5.6
 CATEGORIES=	x11
 MASTER_SITES=	http://idesk.timmfin.net/releases/ \
 		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}/
 
 MAINTAINER=	sascha@root-login.org
 COMMENT=	Place launch icons directly on your desktop
@@ -31,6 +32,6 @@ do-install:
 		${MKDIR} ${DOCSDIR}
 		${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
 .endif
-		@${CAT} ${PKGMESSAGE}
+		@${SED} -e 's:%%PREFIX%%:${PREFIX}:' ${PKGMESSAGE}
 
 .include <bsd.port.mk>
