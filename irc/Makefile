@@ -15,6 +15,7 @@
     SUBDIR += ircatlite
     SUBDIR += ircd-hybrid
     SUBDIR += irchat-pj-emacs20
+    SUBDIR += irchat-pj-emacs21
     SUBDIR += irchat-pj-xemacs21-mule
     SUBDIR += iroffer
     SUBDIR += irssi
@@ -30,6 +31,7 @@
     SUBDIR += p5-POE-Component-IRC
     SUBDIR += party
     SUBDIR += pure-emacs20
+    SUBDIR += pure-emacs21
     SUBDIR += pure-xemacs21-mule
     SUBDIR += py-irclib
     SUBDIR += quirc

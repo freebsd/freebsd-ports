@@ -8,7 +8,7 @@
 MASTERDIR=	${.CURDIR}/../pure-emacs20
 
 EMACS_PORT_NAME=	xemacs21-mule
-LISPDIR=		${EMACS_LIBDIR}/site-packages/lisp
+LISPDIR=		${EMACS_LIBDIR}/site-packages/lisp/${PORTNAME}
 EMACS_ONLY=		"@comment "
 XEMACS_ONLY=		""
 ALL_TARGET=		package c
