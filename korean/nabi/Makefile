@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nabi
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 CATEGORIES=	korean gnome x11
 MASTER_SITES=	http://download.kldp.net/nabi/
 
@@ -26,4 +26,17 @@ CONFIGURE_ARGS=	--with-default-keyboard=39
 CONFIGURE_ARGS=	--with-default-keyboard=3f
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == amd64 || ${ARCH} == ia64 || ${ARCH} == sparc64
+# no appropriate iconv encoding for 64bit wchar_t
+VWCHARTENC=	NOPE
+.else
+VWCHARTENC=	UCS-4-INTERNAL
+.endif
+
+post-patch:
+	${REINPLACE_CMD} 's,WCHAR_T,${VWCHARTENC},g' \
+		${WRKSRC}/src/server.c
+
+.include <bsd.port.post.mk>
