@@ -15,7 +15,8 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	X11 interactive printed circuit board layout system
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
-		latex:${PORTSDIR}/print/teTeX \
+		wish:${PORTSDIR}/x11-toolkits/tk84
+RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		wish:${PORTSDIR}/x11-toolkits/tk84
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
