@@ -38,7 +38,7 @@ OPTIONS=	GSTREAMER "Enable Gstreamer backend" off
 CONFIGURE_ARGS+= --enable-gstreamer=yes
 USE_GNOME+=	gstreamerplugins
 .else
-LIB_DEPENDS+=	xine.9:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS+=	xine.12:${PORTSDIR}/multimedia/libxine
 .endif
 
 .include <bsd.port.post.mk>
