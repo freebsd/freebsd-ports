@@ -8,9 +8,10 @@
 PORTNAME=	jmirror
 PORTVERSION=	1.0b
 CATEGORIES=	ftp
-MASTER_SITES=	ftp://ftp.ruin.org/pub/All/
+MASTER_SITES=	http://galileo.spaceports.com/~jharris/distfiles/ \
+		ftp://ftp.ruin.org/pub/All/
 
-MAINTAINER=	ports@FreeBSD.Org
+MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/FTP.pm:${PORTSDIR}/net/p5-Net
 
