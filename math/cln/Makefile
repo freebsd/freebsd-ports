@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.ilog.fr/pub/Users/haible/gnu/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	gmp.5:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 
 USE_LIBTOOL=	yes
 CFLAGS+=	-I${LOCALBASE}/include
