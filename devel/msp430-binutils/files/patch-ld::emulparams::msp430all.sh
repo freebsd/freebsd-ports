@@ -1,0 +1,101 @@
+--- ld/emulparams/msp430all.sh.orig	Tue Aug  3 13:18:33 2004
++++ ld/emulparams/msp430all.sh	Tue Aug  3 13:26:30 2004
+@@ -412,6 +412,57 @@
+ STACK=0xa00
+ fi
+ 
++if [ "${MSP430_NAME}" = "msp430x1610" ] ; then
++ARCH=msp:16
++MACHINE=
++SCRIPT_NAME=elf32msp430
++OUTPUT_FORMAT="elf32-msp430"
++MAXPAGESIZE=1
++EMBEDDED=yes
++TEMPLATE_NAME=generic
++
++ROM_START=0x8000
++ROM_SIZE=0x7fe0
++RAM_START=0x1100
++RAM_SIZE=0x13ff
++
++STACK=0x1400
++fi
++
++if [ "${MSP430_NAME}" = "msp430x1611" ] ; then
++ARCH=msp:16
++MACHINE=
++SCRIPT_NAME=elf32msp430
++OUTPUT_FORMAT="elf32-msp430"
++MAXPAGESIZE=1
++EMBEDDED=yes
++TEMPLATE_NAME=generic
++
++ROM_START=0x4000
++ROM_SIZE=0xbfe0
++RAM_START=0x1100
++RAM_SIZE=0x27ff
++
++STACK=0x2800
++fi
++
++if [ "${MSP430_NAME}" = "msp430x1612" ] ; then
++ARCH=msp:16
++MACHINE=
++SCRIPT_NAME=elf32msp430
++OUTPUT_FORMAT="elf32-msp430"
++MAXPAGESIZE=1
++EMBEDDED=yes
++TEMPLATE_NAME=generic
++
++ROM_START=0x2800
++ROM_SIZE=0xd7e0
++RAM_START=0x1100
++RAM_SIZE=0x13ff
++
++STACK=0x1400
++fi
++
+ if [ "${MSP430_NAME}" = "msp430x311" ] ; then
+ ARCH=msp:31
+ MACHINE=
+@@ -597,6 +648,40 @@
+ RAM_SIZE=256
+ 
+ STACK=0x300
++fi
++
++if [ "${MSP430_NAME}" = "msp430x415" ] ; then
++ARCH=msp:41
++MACHINE=
++SCRIPT_NAME=elf32msp430
++OUTPUT_FORMAT="elf32-msp430"
++MAXPAGESIZE=1
++EMBEDDED=yes
++TEMPLATE_NAME=generic
++
++ROM_START=0xc000
++ROM_SIZE=0x3fe0
++RAM_START=0x0200
++RAM_SIZE=512
++
++STACK=0x400
++fi
++
++if [ "${MSP430_NAME}" = "msp430x417" ] ; then
++ARCH=msp:41
++MACHINE=
++SCRIPT_NAME=elf32msp430
++OUTPUT_FORMAT="elf32-msp430"
++MAXPAGESIZE=1
++EMBEDDED=yes
++TEMPLATE_NAME=generic
++
++ROM_START=0x8000
++ROM_SIZE=0x7fe0
++RAM_START=0x0200
++RAM_SIZE=1024
++
++STACK=0x600
+ fi
+ 
+ if [ "${MSP430_NAME}" = "msp430x435" ] ; then
