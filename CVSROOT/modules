@@ -1684,11 +1684,12 @@ gbiff		ports/mail/gbiff
 gbuffy		ports/mail/gbuffy
 gcal		ports/deskutils/gcal
 gcc-6811	ports/devel/gcc-6811
-gcc-devel	ports/lang/gcc-devel
 gcc27		ports/lang/gcc27
 gcc28		ports/lang/gcc28
 gcc295		ports/lang/gcc295
 gcc30		ports/lang/gcc30
+gcc31		ports/lang/gcc31
+gcc32		ports/lang/gcc32
 gcl		ports/lang/gcl
 gcolor		ports/graphics/gcolor
 gcombust	ports/sysutils/gcombust
