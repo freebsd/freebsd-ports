@@ -1,6 +1,9 @@
 #!/usr/bin/perl -w
 # ptimeout: executes command but kills it after a specified timeout
 # usage: ptimeout timeout command args ...
+
+require "ctime.pl";
+
 $timeout=$ARGV[0];
 splice(@ARGV, 0, 1);
 #print "timeout is ", $timeout, "\n";
@@ -26,7 +29,7 @@ if ($pid1 = fork) {
   else {
     # second child
     sleep $timeout;
-    print "ptimeout: killing @ARGV (pid $pid1) since timeout of $timeout expired\n";
+    print "ptimeout: killing @ARGV (pid $pid1) since timeout of $timeout expired at ", &ctime(time);
     kill 'TERM', $pid1;
     exit 1;
   }
