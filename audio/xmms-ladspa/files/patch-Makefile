@@ -1,11 +1,18 @@
---- Makefile.orig	Tue Apr  9 03:46:47 2002
-+++ Makefile	Sun May 12 02:37:50 2002
-@@ -5,7 +5,7 @@
+--- Makefile.orig	Thu May 30 21:36:13 2002
++++ Makefile	Thu May 30 21:37:11 2002
+@@ -1,5 +1,5 @@
+ 
+-CFLAGS= -fPIC `gtk-config --cflags`
++CFLAGS+= -fPIC `gtk12-config --cflags`
+ 
+ all: ladspa.so
+ 
+@@ -7,7 +7,7 @@
  	rm ladspa.so
  
  ladspa.so: ladspa.c
--	gcc -Wall -shared -o ladspa.so ladspa.c -fPIC `gtk-config --cflags`
-+	${CC} -Wall -shared -o ladspa.so ladspa.c ${CFLAGS} `gtk12-config --cflags`
+-	gcc -Wall -shared -o ladspa.so ladspa.c $(CFLAGS)
++	${CC} -Wall -shared -o ladspa.so ladspa.c $(CFLAGS)
  	@echo
  	@echo "Now copy ladspa.so into your XMMS Effect plugin directory"
  	@echo "e.g. ~/.xmms/Plugins/Effect or /usr/lib/xmms/Effect"
