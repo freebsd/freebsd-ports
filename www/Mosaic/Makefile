@@ -26,6 +26,12 @@ USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 pre-patch:
 	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,' \
 	${WRKSRC}/libXmx/Xmx.h ${WRKSRC}/libdtm/dtm.c \
@@ -43,4 +49,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/Mosaic ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/app-defaults.color ${PREFIX}/lib/X11/app-defaults/Mosaic
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
