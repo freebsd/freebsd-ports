@@ -6243,7 +6243,6 @@ sdcc		ports/devel/sdcc
 sdd		ports/sysutils/sdd
 sdf		ports/textproc/sdf
 sdiff		src/gnu/usr.bin/sdiff
-sdl10		ports/devel/sdl10
 sdl12		ports/devel/sdl12
 sdl_image	ports/graphics/sdl_image
 sdl_mixer	ports/audio/sdl_mixer
