@@ -47,7 +47,7 @@ lib/gauche/%%VERSION%%/include/gc_pthread_redirects.h
 lib/gauche/site/%%VERSION%%/%%TARGET%%/.keepme
 lib/libgauche.so
 lib/libgauche.so.0
-lib/libgauche.so.0.0.0
+lib/libgauche.so.0.8.1
 share/aclocal/gauche.m4
 share/gauche/%%VERSION%%/aclocal.m4
 share/gauche/%%VERSION%%/lib/binary/io.scm
