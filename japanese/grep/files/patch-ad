@@ -1,0 +1,11 @@
+--- grep.c.orig	Mon Feb 12 03:52:11 2001
++++ grep.c	Mon Feb 12 03:57:30 2001
+@@ -832,7 +832,7 @@
+       usage();
+ 
+   if (!matcher)
+-    matcher = prog;
++    matcher = prog[0] == 'j' ? prog + 1 : prog;
+ 
+   if (!setmatcher(matcher) && !setmatcher("default"))
+     abort();
