@@ -87,6 +87,7 @@
     SUBDIR += gone
     SUBDIR += gonvert
     SUBDIR += gplbp
+    SUBDIR += granulate
     SUBDIR += grc
     SUBDIR += grdb
     SUBDIR += grun
