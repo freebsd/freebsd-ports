@@ -1,6 +1,20 @@
---- sysdeps/freebsd/procmap.c.orig	Wed Mar 10 21:23:52 2004
-+++ sysdeps/freebsd/procmap.c	Thu Mar 11 21:45:33 2004
-@@ -104,7 +104,7 @@
+--- sysdeps/freebsd/procmap.c.orig	Wed Mar 10 06:18:59 2004
++++ sysdeps/freebsd/procmap.c	Thu Oct 28 21:08:55 2004
+@@ -47,7 +47,13 @@
+ #endif
+ #endif
+ 
++#ifdef __FreeBSD__
++#define _KVM_VNODE
++#endif
+ #include <sys/vnode.h>
++#ifdef __FreeBSD__
++#undef _KVM_VNODE
++#endif
+ #include <sys/mount.h>
+ #include <ufs/ufs/quota.h>
+ #include <ufs/ufs/inode.h>
+@@ -104,7 +110,7 @@
  	glibtop_map_entry *maps;
  #if defined __FreeBSD__
  	struct vnode vnode;
@@ -9,7 +23,7 @@
  	struct inode inode;
  #endif
  #endif
-@@ -122,8 +122,10 @@
+@@ -122,8 +128,10 @@
  
  	/* Get the process data */
  	pinfo = kvm_getprocs (server->machine.kd, KERN_PROC_PID, pid, &count);
@@ -21,7 +35,7 @@
  
  	/* Now we get the memory maps. */
  
-@@ -280,13 +282,9 @@
+@@ -280,13 +288,9 @@
  			      &inode, sizeof (inode)) != sizeof (inode))
  			glibtop_error_io_r (server, "kvm_read (inode)");
  
