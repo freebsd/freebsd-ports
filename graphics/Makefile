@@ -107,6 +107,7 @@
     SUBDIR += kdegraphics2
     SUBDIR += killustrator
     SUBDIR += kplot3d
+    SUBDIR += kuickshow
     SUBDIR += landscape
     SUBDIR += lcms
     SUBDIR += leafpak
