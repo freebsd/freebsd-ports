@@ -7,6 +7,7 @@
 
 PORTNAME=	SQL-Translator
 PORTVERSION=	0.06
+PORTREVISION=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	SQL
@@ -91,8 +92,7 @@ MAN3=		SQL::Translator.3 \
 .if ${PERL_LEVEL} < 500600
 BUILD_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec \
 		${SITE_PERL}/${PERL_ARCH}/IO/Dir.pm:${PORTSDIR}/devel/p5-IO
-EXTRA_PATCHES+=	${PATCHDIR}/5.005_03-patch-lib::SQL::Translator::Parser::Excel.pm \
-		${PATCHDIR}/5.005_03-patch-lib::SQL::Translator::Parser::xSV.pm \
+EXTRA_PATCHES+=	${PATCHDIR}/5.005_03-patch-lib::SQL::Translator::Parser::xSV.pm \
 		${PATCHDIR}/5.005_03-patch-lib::SQL::Translator::Producer::Diagram.pm \
 		${PATCHDIR}/5.005_03-patch-lib::SQL::Translator::Producer::GraphViz.pm \
 		${PATCHDIR}/5.005_03-patch-lib::SQL::Translator::Producer::HTML.pm \
@@ -100,11 +100,9 @@ EXTRA_PATCHES+=	${PATCHDIR}/5.005_03-patch-lib::SQL::Translator::Parser::Excel.p
 		${PATCHDIR}/5.005_03-patch-lib::SQL::Translator::Schema::Table.pm \
 		${PATCHDIR}/5.005_03-patch-lib::SQL::Translator::Utils.pm \
 		${PATCHDIR}/5.005_03-patch-t::05bgep-re.t \
-		${PATCHDIR}/5.005_03-patch-t::16xml-parser.t \
-		${PATCHDIR}/5.005_03-patch-t::17sqlfxml-producer.t \
-		${PATCHDIR}/5.005_03-patch-t::18ttschema-producer.t \
 		${PATCHDIR}/5.005_03-patch-t::19sybase-parser.t \
-		${PATCHDIR}/5.005_03-patch-t::27sqlite-parser.t
+		${PATCHDIR}/5.005_03-patch-t::27sqlite-parser.t \
+		${PATCHDIR}/5.005_03-patch-t::31dumper.t
 
 .endif
 
