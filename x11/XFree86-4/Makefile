@@ -28,7 +28,7 @@ RUN_DEPENDS=	xvinfo:${PORTSDIR}/x11/XFree86-4-clients \
 MAINTAINER=	jmz@FreeBSD.org
 
 NO_BUILD=	yes
-LATEST_LINK=	XFree86-4
+LATEST_LINK=	XFree86
 FONT100DPI=	${X11BASE}/lib/X11/fonts/100dpi/UTBI__10-ISO8859-1.pcf.gz
 FONT75DPI=	${X11BASE}/lib/X11/fonts/75dpi/UTBI__10-ISO8859-1.pcf.gz
 FONTCYR=	${X11BASE}/lib/X11/fonts/cyrillic/crox1c.pcf.gz
