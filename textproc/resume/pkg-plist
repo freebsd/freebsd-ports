@@ -32,7 +32,6 @@ share/xml/resume/xsl/us-text.xsl
 @dirrm share/xml/resume/xsl/common
 @dirrm share/xml/resume/xsl
 @dirrm share/xml/resume
-@unexec rmdir %D/share/xml 2>/dev/null || true
 share/examples/resume/Makefile
 share/examples/resume/addressing/Makefile
 share/examples/resume/addressing/README
@@ -51,6 +50,7 @@ share/examples/resume/example1.xml
 share/examples/resume/example2.xml
 @dirrm share/examples/resume/addressing
 @dirrm share/examples/resume/css
+@dirrm share/examples/resume
 %%PORTDOCS%%share/doc/resume/address.html
 %%PORTDOCS%%share/doc/resume/authors/index.html
 %%PORTDOCS%%share/doc/resume/changelog/index.html
