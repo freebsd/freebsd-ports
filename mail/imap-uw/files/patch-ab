@@ -1,6 +1,6 @@
---- src/osdep/unix/Makefile.orig	Tue May 12 01:35:34 1998
-+++ src/osdep/unix/Makefile	Sun May 24 10:46:34 1998
-@@ -94,7 +94,7 @@
+--- src/osdep/unix/Makefile.orig	Thu May 28 19:59:35 1998
++++ src/osdep/unix/Makefile	Sun May 31 18:50:58 1998
+@@ -93,7 +93,7 @@
   dummy.o pseudo.o netmsg.o flstring.o fdstring.o \
   rfc822.o nntp.o smtp.o imap4r1.o pop3.o \
   unix.o mbox.o mbx.o mmdf.o tenex.o mtx.o news.o phile.o mh.o mx.o
@@ -8,8 +8,8 @@
 +CFLAGS+=$(BASECFLAGS) $(EXTRACFLAGS)
  MAKE=make
  MV=mv
- 
-@@ -107,6 +107,11 @@
+ RM=rm -rf
+@@ -108,6 +108,11 @@
   PASSWDTYPE=$(PASSWDTYPE) AFSDIR=$(AFSDIR) GSSDIR=$(GSSDIR)
  BUILD=$(MAKE) build $(BUILDOPTIONS) $(EXTRASPECIALS)
  
@@ -21,7 +21,7 @@
  # Here if no make argument established
  
  missing: osdep.h
-@@ -178,11 +183,11 @@
+@@ -179,11 +184,11 @@
  	 BASECFLAGS="-g -Dconst= -DNFSKLUDGE"
  
  bsf:	# FreeBSD
@@ -36,19 +36,19 @@
  
  bsi:	# BSD/i386
 @@ -564,10 +569,17 @@
- 	$(ARRC) $(ARCHIVE) $(BINARIES)
- 	$(RANLIB) $(ARCHIVE)
+ 	@cat ARCHIVE
+ 	@$(SH) ARCHIVE
  
 +$(SHLIB): $(SOFILES)
 +	ld -Bshareable -x -o $(SHLIB) $(SOFILES)
 +
-+.c.so:		osdep.h   
++.c.so:		osdep.h
 +	$(CC) -fpic -DPIC -c $(CFLAGS) ${@:.so=.c} -o $@
 +
  # Cleanup
  
  clean:
- 	$(RM) *.o linkage.[ch] auths.c $(ARCHIVE) osdep.* *TYPE *FLAGS || true
+ 	$(RM) auths.c flockbsd.c linkage.[ch] siglocal.c osdep*.[ch] *.o ARCHIVE *FLAGS *TYPE $(ARCHIVE) || true
 +	$(RM) *.so $(SHLIB)
  
  
@@ -61,7 +61,7 @@
 +OSDEPS= mail.h misc.h env.h fs.h ftl.h nl.h tcp.h \
  	osdep.h env_unix.h tcp_unix.h \
  	osdep.c env_unix.c fs_unix.c ftl_unix.c nl_unix.c tcp_unix.c \
- 	auths.c flock.c fsync.c gethstid.c \
+ 	auths.c flock.c flockbsd.c flcksafe.c fsync.c gethstid.c \
 @@ -613,7 +625,12 @@
  	write.c \
  	strerror.c strpbrk.c strstr.c strtok.c strtoul.c \
