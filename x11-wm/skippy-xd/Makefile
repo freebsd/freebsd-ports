@@ -10,7 +10,7 @@ PORTVERSION=	0.5.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://thegraveyard.org/files/
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A full-screen X11 task-switcher like Apple's Expose
 
 LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft

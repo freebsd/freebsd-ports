@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://thegraveyard.org/files/
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A full-screen X11 task-switcher like Apple's Expose
 
 LIB_DEPENDS=	Imlib2.3:${PORTSDIR}/graphics/imlib2 \
