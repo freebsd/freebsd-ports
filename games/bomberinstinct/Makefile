@@ -22,8 +22,8 @@ SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
-		CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 pre-patch:
 	@find ${WRKSRC} -name "*.[ch]" | xargs ${PERL} -pi -e 's|<SDL/|<|g'
