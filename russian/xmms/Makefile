@@ -15,6 +15,7 @@ MASTERDIR=	${.CURDIR}/../../multimedia/xmms
 
 CONFLICTS=	xmms-[0-9]*
 
+BROKEN=		Does not compile with xmms version 1.2.9
 WITH_ENCODING_PATCH=	yes
 
 .include "${MASTERDIR}/Makefile"
