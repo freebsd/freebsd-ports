@@ -18,6 +18,7 @@
     SUBDIR += bbpager
     SUBDIR += bbrun
     SUBDIR += blackbox
+    SUBDIR += blwm
     SUBDIR += clementine
     SUBDIR += ctwm
     SUBDIR += e16utils
