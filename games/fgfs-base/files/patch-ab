@@ -1,7 +1,7 @@
 --- src/Main/Makefile.am.orig	Wed Jan 22 14:33:49 2003
 +++ src/Main/Makefile.am	Wed Jan 22 14:33:57 2003
 @@ -19,7 +19,7 @@
- THREAD_LIBS =
+ PSL_LIBS =
  endif
  
 -AM_CXXFLAGS = -DPKGLIBDIR=\"$(pkglibdir)\"
@@ -12,8 +12,8 @@
 --- src/Main/Makefile.in.orig	Wed Jan 22 14:33:49 2003
 +++ src/Main/Makefile.in	Wed Jan 22 14:34:16 2003
 @@ -97,7 +97,7 @@
- @WITH_THREADS_TRUE@THREAD_LIBS = -lsgthreads
- @WITH_THREADS_FALSE@THREAD_LIBS = 
+ @HAVE_PLIB_PSL_TRUE@THREAD_LIBS = -lplibpsl
+ @HAVE_PLIB_PSL_FALSE@THREAD_LIBS = 
  
 -AM_CXXFLAGS = -DPKGLIBDIR=\"$(pkglibdir)\"
 +AM_CXXFLAGS = -DPKGDATADIR=\"$(pkgdatadir)\"
