@@ -1,0 +1,12 @@
+--- doc/screen.texinfo.orig	Tue Nov 21 03:03:15 1995
++++ doc/screen.texinfo	Mon Jun 16 15:16:36 1997
+@@ -2,6 +2,9 @@
+ @c %**start of header
+ @setfilename screen.info
+ @settitle Screen User's Manual
++@direntry
++* Screen: (screen).             Full-screen window manager.
++@end direntry
+ @finalout
+ @setchapternewpage odd
+ @c %**end of header
