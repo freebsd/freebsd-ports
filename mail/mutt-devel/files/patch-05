@@ -63,17 +63,35 @@
    {
    case -1: /* abort - don't resort */
      return -1;
---- compose.c.orig	Mon Feb 12 18:02:38 2001
-+++ compose.c	Fri Mar 30 17:04:09 2001
-@@ -130,7 +130,7 @@
+--- compose.c.orig	Tue Mar 26 23:03:26 2002
++++ compose.c	Thu May  2 09:21:11 2002
+@@ -173,7 +173,7 @@
    char input_signas[SHORT_STRING];
  
-   switch (mutt_multi_choice (_("(e)ncrypt, (s)ign, sign (a)s, (b)oth, or (f)orget it? "),
+   switch (mutt_multi_choice (_("PGP (e)ncrypt, (s)ign, sign (a)s, (b)oth, or (f)orget it? "),
 -			     _("esabf")))
 +			     N_("esabf")))
    {
    case 1: /* (e)ncrypt */
-     bits |= PGPENCRYPT;
+     msg->security |= PGPENCRYPT;
+@@ -229,7 +229,7 @@
+     char *p;
+ 
+   switch (mutt_multi_choice (_("S/MIME (e)ncrypt, (s)ign, encrypt (w)ith, sign (a)s, (b)oth, or (f)orget it? "),
+-			     _("ewsabf")))
++			     N_("ewsabf")))
+   {
+   case 1: /* (e)ncrypt */
+     msg->security |= SMIMEENCRYPT;
+@@ -239,7 +239,7 @@
+     msg->security |= SMIMEENCRYPT;
+     switch (mutt_multi_choice (_("1: DES, 2: Tripple-DES, 3: RC2-40,"
+ 				 " 4: RC2-64, 5: RC2-128, or (f)orget it? "),
+-			       _("12345f"))) {
++			       N_("12345f"))) {
+     case 1:
+ 	mutt_str_replace (&SmimeCryptAlg, "des");
+ 	break;
 --- muttlib.c.orig	Sun Apr  9 14:39:02 2000
 +++ muttlib.c	Fri May 12 11:26:58 2000
 @@ -671,7 +671,7 @@

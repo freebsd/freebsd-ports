@@ -49,22 +49,16 @@
 #
 # If you want to enable the pgp_outlook_compat function for use with pgp define:
 #  WITH_MUTT_PGP_OUTLOOK_PATCH
-#
-# If you want to enable some functions whoch improve maildir handling define:
-#  WITH_MUTT_MAILDIR_PATCH
 
 PORTNAME=	mutt-devel
-PORTVERSION=	1.3.99
-PORTREVISION?=	2
+PORTVERSION=	1.5.1
+#PORTREVISION?=	0
 CATEGORIES+=	mail
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
 .endif
-MASTER_SITES=	ftp://ftp.demon.co.uk/pub/mirrors/mutt/ \
-		ftp://ftp.parodius.com/pub/mutt/ \
-		ftp://ftp.demon.co.uk/pub/mirrors/mutt/devel/ \
+MASTER_SITES=	ftp://ftp.demon.co.uk/pub/mirrors/mutt/devel/ \
 		ftp://ftp.parodius.com/pub/mutt/devel/ \
-		ftp://ftp.mutt.org/pub/mutt/ \
 		ftp://ftp.mutt.org/pub/mutt/devel/
 DISTNAME=	mutt-${PORTVERSION}i
 
@@ -101,18 +95,6 @@ pre-build:
 		s/^(AUTOMAKE = ).+/\1${AUTOMAKE}/; s/^(AUTOHEADER = ).+/\1${AUTOHEADER}/" \
 		${BUILD_WRKSRC}/Makefile
 
-.if defined(WITH_MUTT_MAILDIR_PATCH)
-.for file in Makefile.am globals.h init.h mh.c mutt.h
-EXTRA_PATCHES+=	${WRKSRC}/patch-${file}
-pre-patch::
-	${CP} ${PATCHDIR}/extra-maildir-patch-${file} ${WRKSRC}/patch-${file}
-.endfor
-.for file in maildir_clean_dir.h maildir_clean_dir.c
-pre-patch::
-	${CP} ${PATCHDIR}/${file} ${WRKSRC}/${file}
-.endfor
-.endif
-	
 .if !defined(PATCH_VERSION)
 PATCH_VERSION=	${PORTVERSION}
 .endif
@@ -208,8 +190,9 @@ MAN1=		flea.1 mutt.1 mutt_dotlock.1 muttbug.1
 MAN5=		muttrc.5 mbox.5
 
 post-patch::
-	 @${PERL} -pi.fbsd -e 's,/usr/bin/gpg,${LOCALBASE}/bin/gpg,g' \
+	@${PERL} -pi.fbsd -e 's,/usr/bin/gpg,${LOCALBASE}/bin/gpg,g' \
 		${WRKSRC}/contrib/gpg.rc
+	@${CP} ${PATCHDIR}/smime.h ${WRKSRC}
 
 pre-configure::
 	@(cd ${WRKSRC}; ${ACLOCAL} -I m4)
@@ -309,7 +292,7 @@ PLIST_SUB+=	SUB_ADD_D="@comment "
 PLIST_SUB+=	SUB_ADD_E="@comment "
 PLIST_SUB+=	SUB_ADD_F="@comment "
 PLIST_SUB+=	SUB_ADD_G="@comment "
-PLIST_SUB+=	SUB_PGP_A=""
+PLIST_SUB+=	SUB_PGP_A="@comment "
 .else # patches
 PLIST_SUB+=	SUB_ADD_A="@comment "
 PLIST_SUB+=	SUB_ADD_B="@comment "
@@ -345,20 +328,10 @@ PLIST_SUB+=	SUB_PGP_A="@comment "
 post-patch::
 	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-nodoc-contrib
 .endif
-.if defined(WITH_MUTT_PGP_OUTLOOK_PATCH) && !defined(WITH_MUTT_MAILDIR_PATCH)
+.if defined(WITH_MUTT_PGP_OUTLOOK_PATCH)
 PLIST_SUB+=	SUB_PGP=""
 .else
 PLIST_SUB+=	SUB_PGP="@comment "
-.endif
-.if defined(WITH_MUTT_MAILDIR_PATCH) && !defined(WITH_MUTT_PGP_OUTLOOK_PATCH)
-PLIST_SUB+=	SUB_MAILDIR=""
-.else
-PLIST_SUB+=	SUB_MAILDIR="@comment "
-.endif
-.if defined(WITH_MUTT_PGP_OUTLOOK_PATCH) && defined(WITH_MUTT_MAILDIR_PATCH)
-PLIST_SUB+=	SUB_MAILDIRPGP=""
-.else
-PLIST_SUB+=	SUB_MAILDIRPGP="@comment "
 .endif
 .if ${SGML_USED} == yes
 BUILD_DEPENDS+=	sgmlfmt:${PORTSDIR}/textproc/sgmlformat
