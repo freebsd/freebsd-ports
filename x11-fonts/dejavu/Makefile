@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-ttf-${PORTVERSION}
 
 MAINTAINER=	ahze@FreeBSD.org
-COMMENT=	Clone of Bitstream Vera Fonts with a wider range of characters
+COMMENT=	Bitstream Vera Fonts clone with a wider range of characters
 
 BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS=	${BUILD_DEPENDS}
