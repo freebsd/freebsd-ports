@@ -1,11 +1,20 @@
---- support/apxs.in.orig	Sat Apr  7 11:56:15 2001
-+++ support/apxs.in	Sat Apr  7 11:55:28 2001
-@@ -73,7 +73,7 @@
- my $prefix            = "$CFG_PREFIX";
- my $CFG_EXEC_PREFIX   = "@exec_prefix@";
- my $exec_prefix       = "$CFG_EXEC_PREFIX";
--my $CFG_SBINDIR       = "@bindir@";
-+my $CFG_SBINDIR       = "@sbindir@";
- my $CFG_INCLUDEDIR    = "@includedir@";
- my $CFG_LIBEXECDIR    = "@libexecdir@";
- my $CFG_SYSCONFDIR    = "@sysconfdir@";
+--- support/apxs.in.orig	Sat Nov  3 05:09:20 2001
++++ support/apxs.in	Sat Nov 17 02:51:43 2001
+@@ -66,7 +66,7 @@
+ 
+ # read the configuration variables once
+ my %config_vars = ();
+-get_config_vars("$prefix/build/config_vars.mk",\%config_vars);
++get_config_vars("$prefix/share/mk/apache/config_vars.mk",\%config_vars);
+ 
+ my $exec_prefix    = get_vars("exec_prefix");
+ my $CFG_TARGET     = get_vars("progname");
+@@ -218,7 +218,7 @@
+ ##
+ ##  Initial shared object support check
+ ##
+-my $httpd = get_vars("bindir") . "/" . get_vars("progname");
++my $httpd = get_vars("sbindir") . "/" . get_vars("progname");
+ $httpd = eval qq("$httpd");
+ $httpd = eval qq("$httpd");
+ 
