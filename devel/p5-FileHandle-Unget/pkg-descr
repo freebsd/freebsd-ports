@@ -1,0 +1,12 @@
+FileHandle::Unget is a drop-in replacement for FileHandle which allows more
+than one byte to be placed back on the input. It supports an ungetc(ORD) which
+can be called more than once in a row, and an ungets(SCALAR) which places a
+string of bytes back on the input.
+
+Version 0.11:
+- Fixed uninitialized value warnings
+- Create SourceForge project
+
+WWW: http://fh-unget.sourceforge.net/
+
+Author: David Coppit <david@coppit.org>
