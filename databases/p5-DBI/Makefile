@@ -59,7 +59,7 @@ pre-everything::
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-IGNORE=		Please install databases/p5-DBI-137 and try again
+IGNORE=		Please install databases/p5-DBI-137 instead
 .endif
 
 .include <bsd.port.post.mk>
