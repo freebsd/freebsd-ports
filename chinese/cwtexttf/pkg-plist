@@ -1,0 +1,7 @@
+share/fonts/TrueType/bbttf.ttf
+share/fonts/TrueType/fttf.ttf
+share/fonts/TrueType/kttf.ttf
+share/fonts/TrueType/mttf.ttf
+share/fonts/TrueType/rttf.ttf
+@unexec rmdir %D/share/fonts/TrueType 2>/dev/null || true
+@unexec rmdir %D/share/fonts 2>/dev/null || true

@@ -1,0 +1,35 @@
+#!/bin/sh
+
+if [ "$2" = "PRE-INSTALL" ]; then
+  exit 0
+fi
+
+PKGNAME=$1
+PREFIX=${PKG_PREFIX}
+TTFM=${PREFIX}/bin/ttfm.sh
+
+FONTDIR=${PREFIX}/share/fonts/TrueType
+FONTS="bbttf.ttf fttf.ttf kttf.ttf mttf.ttf rttf.ttf"
+
+if [ ! -x $TTFM ]; then
+    echo "$TTFM not found!"
+    exit 1
+fi
+
+rm -f $FONTDIR/$PKGNAME
+
+if [ "X$WANT_GS" != "X" ]; then
+    for f in $FONTS; do
+        $TTFM --add gscjk $FONTDIR/$f
+    done
+    echo "gscjk" >> $FONTDIR/$PKGNAME
+fi
+
+if [ "X$WITHOUT_X" = "X" ]; then
+    for f in $FONTS; do
+        $TTFM --add xttfm $FONTDIR/$f
+    done
+    echo "xttfm" >> $FONTDIR/$PKGNAME
+fi
+
+exit 0

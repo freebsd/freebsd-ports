@@ -31,6 +31,7 @@
     SUBDIR += cless
     SUBDIR += cmexfonts
     SUBDIR += cwtex
+    SUBDIR += cwtexttf
     SUBDIR += cxterm
     SUBDIR += dia
     SUBDIR += dictd
