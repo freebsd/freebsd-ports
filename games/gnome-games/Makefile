@@ -3,7 +3,7 @@
 # Date created:        03 July 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.2 1998/10/05 06:45:43 asami Exp $
+# $Id: Makefile,v 1.3 1998/10/10 13:22:16 vanilla Exp $
 #
 
 DISTNAME=	gnome-games-0.30
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.jimpick.com/pub/mirrors/gnome/sources/ \
 MAINTAINER=	Nakai@technologist.com
 
 LIB_DEPENDS=	gnome.0:${PORTSDIR}/x11/gnomelibs \
-		guile.2:${PORTSDIR}/lang/guile
+		guile.4:${PORTSDIR}/lang/guile
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
