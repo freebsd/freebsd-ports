@@ -329,7 +329,6 @@
     SUBDIR += oops
     SUBDIR += openvrml
     SUBDIR += opera
-    SUBDIR += opera-devel
     SUBDIR += orion
     SUBDIR += oscommerce
     SUBDIR += p5-Apache-ASP
@@ -660,6 +659,5 @@
     SUBDIR += zope-zmysqlda
     SUBDIR += zope-zpt
     SUBDIR += zope-zwiki
-#    SUBDIR += djvuplugin
 
 .include <bsd.port.subdir.mk>

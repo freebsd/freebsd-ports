@@ -174,6 +174,7 @@
     SUBDIR += cvstrac
     SUBDIR += cvsutils
     SUBDIR += cvsweb
+    SUBDIR += cvsweb3
     SUBDIR += cvswrap
     SUBDIR += cweb
     SUBDIR += cxmon
