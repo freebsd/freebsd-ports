@@ -1,0 +1,48 @@
+--- configure.in.orig	Mon Sep 30 20:26:28 2002
++++ configure.in	Fri Nov 29 00:51:28 2002
+@@ -981,13 +981,13 @@
+ AC_CACHE_VAL(ups_cv_var_global_files,[
+     ups_cv_var_global_files=no
+     if test $ups_cv_var_global_files = no ; then
+-	AC_EGREP_HEADER( __iob.*;, stdio.h, ups_cv_var_global_files=__iob)
++	AC_EGREP_HEADER( __iob\>.*;, stdio.h, ups_cv_var_global_files=__iob)
+     fi
+     if test $ups_cv_var_global_files = no ; then
+-	AC_EGREP_HEADER( _iob.*;, stdio.h, ups_cv_var_global_files=_iob)
++	AC_EGREP_HEADER( _iob\>.*;, stdio.h, ups_cv_var_global_files=_iob)
+     fi
+     if test $ups_cv_var_global_files = no ; then
+-	AC_EGREP_HEADER( __sF.*;, stdio.h, ups_cv_var_global_files=__sF)
++	AC_EGREP_HEADER( __sF\>.*;, stdio.h, ups_cv_var_global_files=__sF)
+     fi
+ ])
+ case "$ups_cv_var_global_files" in
+--- configure.orig	Wed Oct 23 01:37:31 2002
++++ configure	Fri Nov 29 00:51:12 2002
+@@ -6624,7 +6624,7 @@
+ #include <stdio.h>
+ EOF
+ if (eval "$ac_cpp conftest.$ac_ext") 2>&5 |
+-  egrep "__iob.*;" >/dev/null 2>&1; then
++  egrep "__iob\>.*;" >/dev/null 2>&1; then
+   rm -rf conftest*
+   ups_cv_var_global_files=__iob
+ fi
+@@ -6638,7 +6638,7 @@
+ #include <stdio.h>
+ EOF
+ if (eval "$ac_cpp conftest.$ac_ext") 2>&5 |
+-  egrep "_iob.*;" >/dev/null 2>&1; then
++  egrep "_iob\>.*;" >/dev/null 2>&1; then
+   rm -rf conftest*
+   ups_cv_var_global_files=_iob
+ fi
+@@ -6652,7 +6652,7 @@
+ #include <stdio.h>
+ EOF
+ if (eval "$ac_cpp conftest.$ac_ext") 2>&5 |
+-  egrep "__sF.*;" >/dev/null 2>&1; then
++  egrep "__sF\>.*;" >/dev/null 2>&1; then
+   rm -rf conftest*
+   ups_cv_var_global_files=__sF
+ fi
