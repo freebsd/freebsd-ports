@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.spaghetti-code.de/download/ktelnet/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/./-/}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kde@freebsd.org
 
 BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 

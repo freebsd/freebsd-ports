@@ -11,7 +11,7 @@ PORTVERSION=	0.2.2
 CATEGORIES=	misc python
 MASTER_SITES=	http://www.xecu.net/dougbell/flyway/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kde@freebsd.org
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/qt.py:${PORTSDIR}/x11-toolkits/py-qt
 

@@ -7,7 +7,7 @@
 
 MASTERDIR=      ${.CURDIR}/../nethack34
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kde@freebsd.org
 
 WITH_QT_GRAPHICS=	yes
 
