@@ -9,12 +9,13 @@ PORTNAME=		libspf-alt
 PORTVERSION=		0.4.0
 PORTREVISION=		1
 CATEGORIES=		mail
-MASTER_SITES=		http://www.midwestcs.com/spf/%SUBDIR%/
-MASTER_SITE_SUBDIR=	libspf-alt
+MASTER_SITES=		http://libspf2.org/spf/
 DISTNAME=		libspf_alt-${PORTVERSION}
 
 MAINTAINER=		daniel@roe.ch
 COMMENT=		Library that allows email systems such as Exim to check SPF records
+
+DEPRECATED=		Superceded by mail/libspf2
 
 GNU_CONFIGURE=		yes
 USE_ICONV=		yes
