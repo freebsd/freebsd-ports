@@ -3,7 +3,7 @@
 # Date created:		30 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.51 1998/03/10 13:56:14 jkh Exp $
+# $Id: Makefile,v 1.52 1998/03/10 13:58:16 jkh Exp $
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_TCPWRAP
@@ -26,6 +26,15 @@ MASTER_SITES=	\
 	ftp://idea.sec.dsi.unimi.it/pub/security/crypt/math/ \
 	ftp://ftp.univie.ac.at/security/crypt/cryptography/asymmetric/rsa/ \
 	ftp://isdec.vc.cvut.cz/pub/security/unimi/crypt/applied-crypto/
+.endif
+#
+# Use Phil Karn's asm patches to speed up DES on intel.
+# Download by hand from http://www.cryptography.org/cgi-bin/crypto.cgi/ssh/  
+# and put in distfiles directory.
+#
+.if defined(FAST_DES_PATCHKIT) && ${FAST_DES_PATCHKIT} == YES
+PATCHFILES=ssh-1.2.22-patchkit
+PATCH_DIST_STRIP=-p1
 .endif
 
 RESTRICTED=	"Crypto; export-controlled"
