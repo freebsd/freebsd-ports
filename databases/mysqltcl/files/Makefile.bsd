@@ -1,0 +1,16 @@
+LIB	=	mysqltcl
+SHLIB_MAJOR=	1
+SHLIB_MINOR=	0
+
+SRCS	=	mysqltcl.c
+CFLAGS +=	-I${PREFIX}/include/${TCL_VERSION}/
+CFLAGS +=	-I${PREFIX}/include/mysql/
+LDADD  +=	-L${PREFIX}/lib -l${TCL_NODOT}
+LDADD  +=	-L${PREFIX}/lib/mysql -lmysqlclient
+
+all: ${SHLIB_NAME}
+
+printname:
+	@echo ${SHLIB_NAME}
+
+.include <bsd.lib.mk>
