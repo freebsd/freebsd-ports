@@ -14,24 +14,21 @@ DIST_SUBDIR=	apache
 MAINTAINER=	clement@FreeBSD.org
 COMMENT=	Allows mass virtual hosting using a MySQL backend with Apache 2.0.x
 
-USE_APACHE=	YES
-WITH_APACHE2=	YES
-
+WANT_APACHE=	2
+AP_FAST_BUILD=	YES
+AP_GENPLIST=	YES
 USE_MYSQL=	YES
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
-APXS?=		${LOCALBASE}/sbin/apxs
-MYSQL_INC?=	${LOCALBASE}/include/mysql
-MYSQL_LIB?=	${LOCALBASE}/lib/mysql -lmysqlclient
+
+AP_INC+=	${LOCALBASE}/include/mysql
+AP_LIB+=	${LOCALBASE}/lib/mysql -lmysqlclient
 
 PORTDOCS=	AUTHORS README TODO
 
-do-build:
-	@(cd ${WRKSRC} && ${APXS} -I ${MYSQL_INC} -L ${MYSQL_LIB} -c ${PORTNAME}.c)
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/www/apache2/Makefile.modules.3rd"
 
-do-install:
-	@(cd ${WRKSRC} && ${APXS} -i -A -n ${PORTNAME:S/mod_//} ${PORTNAME}.la)
-
+post-install:
 .if !defined (NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .   for f in ${PORTDOCS}
@@ -39,4 +36,4 @@ do-install:
 .   endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
