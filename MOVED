@@ -803,3 +803,4 @@ devel/libgtop||2004-02-06|Obsolete and no longer maintained
 devel/ruby-libgtop||2004-02-06|Obsolete and no longer maintained
 devel/p5-GTop||2004-02-06|Obsolete and no longer maintained
 www/p5-Apache-VMonitor||2004-02-06|Depends on obsolete libgtop
+deskutils/loserjabber|deskutils/logjam2|2004-02-07|Renamed to Logjam
