@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gmpc
-PORTVERSION=	0.10.1
+PORTVERSION=	0.10.3
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -21,5 +21,11 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 
 CFLAGS+=	-I${PREFIX}/include
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/src/gmpc ${PREFIX}/bin/
+	${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/pixmaps/*.png ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/glade/gmpc.glade ${DATADIR}
 
 .include <bsd.port.mk>
