@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	less
-PORTVERSION=	332
+PORTVERSION=	358
 CATEGORIES=	japanese
 MASTER_SITES=	http://www.io.com/~kazushi/less/ \
-		http://www.pobox.com/~jam/less/ \
 		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	less
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -17,22 +16,28 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 PATCH_SITES=	http://www.io.com/~kazushi/less/
-PATCHFILES=	${DISTNAME}-iso242.patch.gz \
-		${DISTNAME}-iso242-243.patch.gz \
-		${DISTNAME}-iso243-244.patch.gz \
-		${DISTNAME}-iso244-245.patch.gz \
-		${DISTNAME}-iso245-247.patch.gz \
-		${DISTNAME}-iso247-248.patch.gz
+PATCHFILES=	${DISTNAME}-iso249.patch.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	nobu@psrc.isac.co.jp
+MAINTAINER=	k5@cheerful.com
 
+USE_AUTOCONF=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-cs-regex
 MAN1=		jless.1 jlesskey.1
 
+DOCDIR=		${PREFIX}/share/doc/less
+READMES=	README.iso README.regex README.iso.jp README.regex.jp
+
 post-patch:
 		(cd ${WRKSRC} ; \
-			zcat ${DISTDIR}/regex_cs-lwp9k.shar.gz | ${SH} )
+	 ${RM} -f configure COPYING; \
+	 ${GZCAT} ${DISTDIR}/regex_cs-lwp9k.shar.gz | ${SH} )
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCDIR}
+	(cd ${WRKSRC}; ${INSTALL_DATA} ${READMES} ${DOCDIR})
+.endif
 
 .include <bsd.port.mk>
