@@ -5892,6 +5892,7 @@ pop3gwd		ports/mail/pop3gwd
 pop3lite	ports/mail/pop3lite
 popa3d		ports/mail/popa3d
 popd		ports/mail/popd
+popenhs		ports/devel/popenhs
 poppassd	ports/mail/poppassd
 popper		ports/mail/popper
 poppwd		ports/mail/poppwd
