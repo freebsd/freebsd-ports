@@ -3,6 +3,7 @@ or specifically, sub-targets
 	vmatrix vvector vmatrix1 vmatrix2 vlastreams
 	vali vhjmin vfminbr vzeroin
 	vsvd vslesing sample_ult sample_adv
+	sample_fill tslesing tpseudo-inv
 
 See comments in a LinAlg/Makefile for details, as well as NumMath.dr.
 The verification code checks to see that all the functions in this

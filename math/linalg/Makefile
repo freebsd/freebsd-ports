@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	linalg
-PORTVERSION=	4.3
+PORTVERSION=	4.4
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	will
+MASTER_SITE_SUBDIR=	arved
 
 MAINTAINER=	oleg@pobox.com
 
@@ -19,14 +19,6 @@ INSTALL_TARGET=	lib
 USE_GMAKE=	yes
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 500035
-BROKEN=		"Does not compile under 5.x"
-.endif
-
-post-patch:
-	@( cd ${WRKSRC}; ${SED} -e 's|%%CXXFLAGS%%|${CXXFLAGS}|g' \
-	    -e 's|%%CXX%%|${CXX}|g' c++ > c++.sed; mv c++.sed c++; ${CHMOD} +x c++ )
 
 post-install:
 	$(INSTALL_DATA) ${WRKSRC}/libla.a ${PREFIX}/lib
