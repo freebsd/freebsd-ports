@@ -17,6 +17,8 @@ DISTNAME=	Regina-REXX-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Rexx interpreter
 
+CONFLICTS=	rexx-imc-*
+
 WRKSRC=		${WRKDIR}/Regina-${PORTVERSION}
 USE_REINPLACE=	yes
 USE_OPENSSL=	yes

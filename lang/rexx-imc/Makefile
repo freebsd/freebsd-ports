@@ -16,6 +16,8 @@ MASTER_SITES=	http://users.comlab.ox.ac.uk/ian.collier/distribution/ \
 MAINTAINER=	coop9211@uidaho.edu
 COMMENT=	A procedural programming language designed by IBM's UK Laboratories
 
+CONFLICTS=	rexx-regina-*
+
 HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	Make
 CONFIGURE_ENV=		CFLAGS="${CFLAGS}" \
