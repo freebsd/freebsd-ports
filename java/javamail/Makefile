@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	javamail
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.3
 CATEGORIES=	java
-DISTNAME=	javamail1_1_2
+DISTNAME=	${PORTNAME}${PORTVERSION:S/./_/g}
 EXTRACT_SUFX=	.zip
 
 MAINTAINER=	noway@nohow.demon.co.uk
 
-RUN_DEPENDS=	${PREFIX}/jdk${JDK_VERSION}/bin/java:${PORTSDIR}/java/jdk \
-		${PREFIX}/share/java/classes/activation.jar:${PORTSDIR}/java/jaf
+RUN_DEPENDS=	${LOCALBASE}/jdk${JDK_VERSION}/bin/java:${PORTSDIR}/java/jdk \
+		${LOCALBASE}/share/java/classes/activation.jar:${PORTSDIR}/java/jaf
 
 USE_ZIP=	YES
 
@@ -22,6 +22,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 JDK_VERSION=	1.1.8
 NO_BUILD=	yes
 NO_CDROM=	"See the license"
+
+PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
 .include <bsd.port.pre.mk>
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
