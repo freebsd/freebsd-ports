@@ -3,7 +3,7 @@
 # Date created:         6 November 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.14 1996/11/17 09:05:56 obrien Exp $
+# $Id: Makefile,v 1.15 1996/11/18 14:06:37 asami Exp $
 #
 
 DISTNAME=	ispell-3.1
@@ -15,8 +15,8 @@ DISTFILES=	ispell-3.1.20.tar.gz
 MAINTAINER=	jmz@FreeBSD.org
 
 # French
-#EXTRA_DICT=	   francais-IREQ-1.3.tar.gz
-#MASTER_SITES+=    ftp://ftp.ireq-robot.hydro.qc.ca/pub/ispell/
+#EXTRA_DICT=	   francais-IREQ-1.4.tar.gz
+#MASTER_SITES+=    ftp://ftp.robot.ireq.ca/pub/ispell/
 
 DISTFILES+=	   ${EXTRA_DICT}
 
