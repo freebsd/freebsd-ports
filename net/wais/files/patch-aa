@@ -1,49 +1,91 @@
-*** ir/irtfiles.c	Wed Jan 19 16:10:32 1994
---- ir/irtfiles.c	Fri Sep 16 23:14:03 1994
+*** src/ir/sockets.c.old	Wed Apr 26 12:18:43 1995
+--- src/ir/sockets.c	Tue Nov 12 23:20:17 1996
 ***************
-*** 75,80 ****
---- 75,81 ----
-  
-  #include <ctype.h>
-  #include <string.h>
-+ #include <sys/types.h>
-  #include "panic.h"  
-  #include "irdirent.h"
-  #include "irhash.h"
-*** ir/sockets.c.ORIG	Sat Jan 29 00:06:01 1994
---- ir/sockets.c	Sat Mar 18 23:34:57 1995
-***************
-*** 77,84 ****
-  extern int errno;
+*** 81,88 ****
+  #if (defined(ultrix) || defined(BSD) || defined(Mach))
+       extern int errno;
   #endif /* ultrix BSD or Mach */
-  
-- extern char *sys_errlist[];
-- 
-  
-  /* XXX
-  still need:
---- 77,82 ----
-*** ir/waisserver.c.ORIG	Thu Mar  3 04:04:51 1994
---- ir/waisserver.c	Sat Mar 18 23:35:49 1995
+!      
+       extern char *sys_errlist[];
+       
+       
+       /* XXX
+--- 81,90 ----
+  #if (defined(ultrix) || defined(BSD) || defined(Mach))
+       extern int errno;
+  #endif /* ultrix BSD or Mach */
+! 
+! #ifndef __bsdi__     
+       extern char *sys_errlist[];
++ #endif
+       
+       
+       /* XXX
 ***************
-*** 447,453 ****
-    struct dirent **list;
-    int naptime = 0;
-    extern int errno;
--   extern char *sys_errlist[];
-    extern void filename_finish_header_function();
-    dataopsrec	dataops;  
-    
---- 447,452 ----
-*** x/myAsciiSrc.c.ORIG	Sun Jan  9 06:01:37 1994
---- x/myAsciiSrc.c	Sat Mar 18 23:45:03 1995
-***************
-*** 116,122 ****
-  static String MyStrncpy(), StorePiecesInString();
-  static Boolean SetValues(), WriteToFile();
-  extern int errno, sys_nerr;
-- extern char* sys_errlist[];
+*** 203,209 ****
+    if(source.sin_family == AF_INET) {
+      struct hostent *peer = NULL;
   
-  #define superclass		(&textSrcClassRec)
-  MyAsciiSrcClassRec myasciiSrcClassRec = {
---- 116,121 ----
+! #if defined(__DGUX__) || defined(LINUX)
+      peer = gethostbyaddr((char *)&source.sin_addr.s_addr, 4, AF_INET);
+  #else
+      peer = gethostbyaddr((struct sockaddr_in*)&source.sin_addr, 4, AF_INET);
+--- 205,211 ----
+    if(source.sin_family == AF_INET) {
+      struct hostent *peer = NULL;
+  
+! #if defined(__DGUX__) || defined(LINUX) || defined(__bsdi__) /* XXX */
+      peer = gethostbyaddr((char *)&source.sin_addr.s_addr, 4, AF_INET);
+  #else
+      peer = gethostbyaddr((struct sockaddr_in*)&source.sin_addr, 4, AF_INET);
+*** src/ir/irfiles.c.old	Wed Apr 26 12:18:41 1995
+--- src/ir/irfiles.c	Tue Nov 12 23:27:43 1996
+***************
+*** 297,303 ****
+  
+    else {
+  
+!     if( utlk_using_lock_and_get_pid(db->database_file, LOCK_INDEX, (pid_t) &pid) &&
+         (pid != getpid()) ) {
+        waislog(WLOG_HIGH, WLOG_ERROR,
+  	      "an indexing is currently running on the database. Try again later.");
+--- 297,303 ----
+  
+    else {
+  
+!     if( utlk_using_lock_and_get_pid(db->database_file, LOCK_INDEX, (pid_t *) &pid) &&
+         (pid != getpid()) ) {
+        waislog(WLOG_HIGH, WLOG_ERROR,
+  	      "an indexing is currently running on the database. Try again later.");
+*** src/client/x/scommands.c.old	Wed Apr 26 12:18:39 1995
+--- src/client/x/scommands.c	Wed Nov 13 01:41:42 1996
+***************
+*** 159,165 ****
+      edit_source->maintainer = s_strdup(GetString(maintainerwid));
+  
+      if (edit_source->description != NULL) s_free(edit_source->description);
+!     edit_source->description = s_strdup(GetAsciiString(descwid));
+  
+      strncpy(edit_source->server, GetString(serverwid), STRINGSIZE);
+      strncpy(edit_source->service, GetString(servicewid), STRINGSIZE);
+--- 159,165 ----
+      edit_source->maintainer = s_strdup(GetString(maintainerwid));
+  
+      if (edit_source->description != NULL) s_free(edit_source->description);
+!     edit_source->description = s_strdup((String)GetAsciiString(descwid));
+  
+      strncpy(edit_source->server, GetString(serverwid), STRINGSIZE);
+      strncpy(edit_source->service, GetString(servicewid), STRINGSIZE);
+*** src/client/x/catalog.c.old	Wed Apr 26 12:18:39 1995
+--- src/client/x/catalog.c	Wed Nov 13 01:45:20 1996
+***************
+*** 27,32 ****
+--- 27,34 ----
+  #include "xwais.h"
+  #include "cat.h"
+  
++ #undef index
++ 
+  static Boolean busy = FALSE;
+  static long last_doc = -1;
+  static Catbuff scat = NULL;
