@@ -1,0 +1,6 @@
+bin/pthread-config
+include/pthread.h
+lib/libpthread.so
+lib/libpthread.so.10
+lib/libpthread.la
+lib/libpthread.a

@@ -280,6 +280,7 @@
     SUBDIR += ncurses
     SUBDIR += newlib-m68k
     SUBDIR += newt
+    SUBDIR += ngpt
     SUBDIR += noweb
     SUBDIR += oaf
     SUBDIR += ocamlweb
