@@ -16,6 +16,8 @@ COMMENT=	Utility to manipulate memory from running processes and core files
 HAS_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
+ONLY_FOR_ARCHS=	i386
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}/html
