@@ -3,11 +3,11 @@
 # Date created:		31 Jul 1996
 # Whom:			shanee@rabbit.augusta.de
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/11/25 09:52:55 tg Exp $
 #
 
 DISTNAME=	xvnews-2.3.2
-CATEGORIES=	news x11
+CATEGORIES=	news
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
 
@@ -21,6 +21,5 @@ MAN1=		xvnews.1
 
 post-install:
 	${INSTALL_MAN} $(WRKSRC)/xvnews.1 ${PREFIX}/man/man1/
-
 
 .include <bsd.port.mk>
