@@ -2,4 +2,6 @@ bin/puudecode
 bin/puuencode
 lib/perl5/site_perl/%%PERL_VER%%/Convert/UU.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Convert/UU/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Convert
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Convert/UU
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Convert
