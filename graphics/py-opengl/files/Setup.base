@@ -1,0 +1,71 @@
+*shared*
+
+###
+#
+# This is the Setup file for the PyOpenGL extensions.
+#
+# It should work with OpenGL 1.0, 1.1, or the corresponding versions
+# of Mesa.
+#
+
+# This module provides most of the interfaces to the standard OpenGL API
+_opengl	_openglmodule.c  -IX11BASE/include -LX11BASE/lib -lGL 
+
+# Some convenience functions contributed by users.
+openglutil	openglutil.c  -IX11BASE/include -LX11BASE/lib -lGL 
+
+# 
+# If you have the Numeric extensions installed, make sure the
+# following two modules are uncommented.  If you don't, make sure
+# they're commented out.
+# 
+# These modules provide a few more features than the two modules
+# above, and significantly more speed in some circumstances
+#
+_opengl_num	_opengl_nummodule.c  -DNUMERIC \
+	-ILOCALBASE/include/python1.5/numerical \
+	-IX11BASE/include -LX11BASE/lib -lGL 
+
+openglutil_num	openglutil_num.c  -DNUMERIC \
+	-ILOCALBASE/include/python1.5/numerical \
+	-IX11BASE/include -LX11BASE/lib -lGL 
+
+# The GLU utility library -- part of most standard OpenGL setups
+_glu	_glumodule.c  \
+	-IX11BASE/include -LX11BASE/lib -lGLU -lGL -lXext -lX11
+
+# The GLUT toolkit interface
+_glut	\
+# You'll definitely need this one:
+	-lglut  \
+# You'll definitely need these (or maybe edit them for MesaGL/MesaGLU:
+	-IX11BASE/include -LX11BASE/lib \
+	-lGLU -lGL  \
+# Various combinations of these depending on your platform:
+	-lXi -lXmu -lXext -lX11 \
+# on SGI IRIX 6, uncomment the following
+#	-lcvt  \
+_glutmodule.c  # putting this at the end for \ reasons
+
+
+## #
+## # TOGL 1.5b3
+## # This is a Tk widget module that lets PyOpenGL draw into a Tkinter window.
+## # If you don't want/have togl, comment out all of the following lines
+## #
+## togl	\
+## # This must match the name of the Togl source directory
+##         -I./Togl-1.5 \
+## # These must match the version you have installed
+##         -ILOCALBASE/include/tcl8.0 -ILOCALBASE/include/tk8.0 \
+##         -LLOCALBASE/lib -ltk80 -ltcl80 \
+## # You'll definitely need these (or maybe edit them for MesaGL/MesaGLU:
+##         -IX11BASE/include -LX11BASE/lib \
+##         -lGLU -lGL \
+## # Various combinations of these depending on your platform:
+##         -lX11 -lXmu -lXext -lXt \
+## # If you don't have this, something is really wrong!
+##         -lm \
+## # for Linux only?
+## #	-ldl \
+## togl.c  # putting this at the end for \ reasons
