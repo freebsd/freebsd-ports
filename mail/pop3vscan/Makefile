@@ -22,6 +22,7 @@ RUN_DEPENDS=	uvscan:${PORTSDIR}/security/vscan
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
+USE_GETOPT_LONG=yes
 
 pre-fetch:
 .if !defined(WITHOUT_UVSCAN)
@@ -37,7 +38,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,malloc.h,stdlib.h,g' ${WRKSRC}/*.c
 	@${REINPLACE_CMD} -e 's,#endif.*,#endif,g' ${WRKSRC}/*.h
 	@${REINPLACE_CMD} -e 's,make,${GMAKE},g' ${WRKSRC}/ripmime/build_tnef
-	@${REINPLACE_CMD} -e 's,=4321,=_BYTE_ORDER -include machine/endian.h,g' \
+	@${REINPLACE_CMD} -e 's,=4321,=_BYTE_ORDER -include /usr/include/machine/endian.h,g' \
 		${WRKSRC}/ripmime/tnef/Makefile
 
 do-install:
