@@ -7,6 +7,7 @@
 
 PORTNAME=	pointless
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,8 +23,6 @@ GSPORT?=	print/ghostscript-gnu
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/gnuplot:${PORTSDIR}/math/gnuplot \
 		${LOCALBASE}/bin/gs:${PORTSDIR}/${GSPORT} \
-		${LOCALBASE}/bin/latex:${PORTSDIR}/print/latex \
-		${LOCALBASE}/bin/dvips:${PORTSDIR}/print/dvips \
 		${LOCALBASE}/bin/a2ps:${PORTSDIR}/print/a2ps-letter \
 		${LOCALBASE}/bin/mpost:${PORTSDIR}/print/teTeX
 RUN_DEPENDS=	${BUILD_DEPENDS}
