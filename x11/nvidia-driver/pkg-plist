@@ -48,7 +48,7 @@ nvidia.ko
 %%FREEBSD4%%@unexec rm -f /dev/nvidia3
 %%FREEBSD4%%@unexec rm -f /dev/nvidiactl
 @cwd %%LINUXBASE%%
-usr/lib/libGL.so.1.0.3203
-usr/lib/libGLcore.so.1.0.3203
-@exec ln -sf %D/usr/lib/libGL.so.1.0.3203 %D/usr/lib/libGL.so.1
-@exec ln -sf %D/usr/lib/libGLcore.so.1.0.3203 %D/usr/lib/libGLcore.so.1
+usr/lib/libGL.so.1.0.%%NVVERSION%%
+usr/lib/libGLcore.so.1.0.%%NVVERSION%%
+@exec ln -sf %D/usr/lib/libGL.so.1.0.%%NVVERSION%% %D/usr/lib/libGL.so.1
+@exec ln -sf %D/usr/lib/libGLcore.so.1.0.%%NVVERSION%% %D/usr/lib/libGLcore.so.1
