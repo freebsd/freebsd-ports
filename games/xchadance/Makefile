@@ -24,6 +24,9 @@ EXTRACT_CMD=	lha
 EXTRACT_BEFORE_ARGS=	e
 EXTRACT_AFTER_ARGS=
 
+BROKEN=		"Unfetchable"
+DEPRECATED=	"This port will be removed on April 16 if still broken at that time."
+
 RESTRICTED=	'contains commercial character data'
 
 post-patch:
