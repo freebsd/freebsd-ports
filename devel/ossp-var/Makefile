@@ -1,5 +1,4 @@
 # ex:ts=8	-*-mode: makefile-*-
-#
 # New ports collection makefile for:	ossp-var
 # Date created:		2003-01-31
 # Whom:			Alan Eldridge <alane@geeksrus.net>
@@ -8,9 +7,7 @@
 #
 
 PORTNAME=	var
-PORTVERSION=	1.0.0
-PORTREVISION=	1
-PORTEPOCH=	0
+PORTVERSION=	1.1.0
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.ossp.org/pkg/lib/var/
 PKGNAMEPREFIX=	ossp-
@@ -25,7 +22,7 @@ INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "alpha" || ${ARCH} == "amd64"
+.if ${ARCH} == "alpha"
 BROKEN=		"Does not compile on alpha or amd64"
 .endif
 
