@@ -27,4 +27,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2
 
 MAN1=		sodipodi.1
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|g' \
+		${WRKSRC}/src/helper/action.c
+
 .include <bsd.port.mk>
