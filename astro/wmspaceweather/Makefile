@@ -22,4 +22,6 @@ ALL_TARGET=	clean all
 
 MAN1=	wmSpaceWeather.1
 
+PLIST_FILES=	bin/GetKp bin/wmSpaceWeather
+
 .include <bsd.port.mk>
