@@ -6,33 +6,30 @@
 #
 
 PORTNAME=	squid
-PORTVERSION=	2.3
+PORTVERSION=	2.4
 CATEGORIES=	www
 MASTER_SITES=  \
 	ftp://ftp.squid-cache.org/pub/squid-2/STABLE/ \
 	ftp://www.unimelb.edu.au/pub/cwis/servers/unix/squid/squid-2/STABLE/ \
 	ftp://sunsite.auc.dk/pub/infosystems/squid/squid-2/STABLE/ \
 	ftp://ftp.net.lut.ac.uk/squid/squid-2/STABLE/
-DISTNAME=	squid-2.3.STABLE4
+DISTNAME=	squid-2.4.STABLE1
 EXTRACT_SUFX=	-src.tar.gz
 
-PATCH_SITES=	http://www.squid-cache.org/Versions/v2/2.3/bugs/
-PATCHFILES=	squid-2.3.stable4-ftp_icon_not_found.patch \
-		squid-2.3.stable4-internal_dns_rcode_table_formatting.patch \
-		squid-2.3.stable4-ipfw_configure.patch \
-		squid-2.3.stable4-invalid_ip_acl_entry.patch \
-		squid-2.3.stable4-accel_only_access.patch \
-		squid-2.3.stable4-html_quoting.patch \
-		squid-2.3.stable4-carp-assertion.patch
+PATCH_SITES=	http://www.squid-cache.org/Versions/v2/2.4/bugs/
+PATCHFILES=
 
 MAINTAINER=	adrian@freebsd.org
 
-DIST_SUBDIR=	squid2.3
+DIST_SUBDIR=	squid2.4
 PATCH_DIST_STRIP= -p0
 GNU_CONFIGURE=	yes
 # Follow the apache port's lead...
 CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin  --sysconfdir=${PREFIX}/etc/squid \
-		--localstatedir=${PREFIX}/squid
+		--localstatedir=${PREFIX}/squid \
+		--enable-storeio="ufs diskd null" \
+		--enable-removal-policies="lru heap" \
+
 STRIP=		# won't install scripts correctly otherwise.
 MAKEFILE=	makefile
 
@@ -49,8 +46,6 @@ MAKEFILE=	makefile
 #CONFIGURE_ARGS+= --enable-xmalloc-statistics
 #  - Enable CARP support
 #CONFIGURE_ARGS+= --enable-carp
-#  - Use ASYNC disk I/O (Requires real threads, apparently runs on 3.0 libc_r)
-#CONFIGURE_ARGS+= --enable-async-io
 #  - Enable ICMP pinging for heirarchy stats and selection
 #CONFIGURE_ARGS+= --enable-icmp
 #  - Enable delay pools to limit bandwidth usage
@@ -101,7 +96,10 @@ post-extract:
 	@${PERL} -pi -e 's|-lpthread|-pthread|g' ${WRKSRC}/configure
 
 post-install:
-	cd ${WRKSRC}/src; make install-pinger
+#	I don't think many people use the pinger nowadays, and if you
+#	do you'll want squid in its own group so as to restrict access
+#	to it.
+#	cd ${WRKSRC}/src; make install-pinger
 .for file in client squid
 	if [ -f ${PREFIX}/sbin/${file} ] ; then \
 		strip ${PREFIX}/sbin/${file} ; \
