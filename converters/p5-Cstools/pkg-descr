@@ -1,0 +1,4 @@
+Tools for converting encoding of Czech (and Slovak) texts.
+Provides console program cstocs and Perl module Cz::Cstocs.
+
+WWW: http://www.fi.muni.cz/~adelton/perl/
