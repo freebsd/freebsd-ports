@@ -7538,6 +7538,7 @@ p5-Text-MagicTemplate	ports/textproc/p5-Text-MagicTemplate
 p5-Text-Metaphone	ports/textproc/p5-Text-Metaphone
 p5-Text-Netstring	ports/textproc/p5-Text-Netstring
 p5-Text-Ngrams	ports/textproc/p5-Text-Ngrams
+p5-Text-Original	ports/textproc/p5-Text-Original
 p5-Text-PDF	ports/print/p5-Text-PDF
 p5-Text-ParagraphDiff	ports/textproc/p5-Text-ParagraphDiff
 p5-Text-Query	ports/textproc/p5-Text-Query
