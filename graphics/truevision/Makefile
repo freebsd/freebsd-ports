@@ -19,6 +19,7 @@ COMMENT=	The GNOME 3D modeler
 LIB_DEPENDS=	gtkglext-x11-1.0.2:${PORTSDIR}/x11-toolkits/gtkglext
 
 USE_BZIP2=	yes
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GL=		yes
 USE_GNOME=	gnomehack gnomeprefix libgnomeui
@@ -33,16 +34,13 @@ MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
 post-extract:
 	@${FIND} ${WRKSRC} -type l -delete
 	@${FIND} ${WRKSRC} -name "*.o" -delete
 	@${FIND} ${WRKSRC} -name "config.cache" -delete
+	@${REINPLACE_CMD} -e 's/ enum Gdk/Gdk/' ${WRKSRC}/src/glview2d.cc \
+		${WRKSRC}/src/glview3d.cc ${WRKSRC}/src/mapedit.cc \
+		${WRKSRC}/src/slopemap.cc
 
 post-install:
 	@${MKDIR} ${PREFIX}/share/gnome/Truevision
@@ -50,4 +48,4 @@ post-install:
 		${TAR} -C ${PREFIX}/share/gnome/Truevision --unlink -xf -
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/gnome/Truevision
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
