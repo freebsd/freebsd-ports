@@ -1,6 +1,6 @@
---- Makefile.in.orig	Thu Jan  4 23:53:59 2001
-+++ Makefile.in	Thu Jan  4 23:58:48 2001
-@@ -181,21 +181,21 @@
+--- Makefile.in.orig	Wed Apr 25 20:43:09 2001
++++ Makefile.in	Wed Apr 25 20:42:53 2001
+@@ -186,21 +186,21 @@
  
  install:
  	#Installing X Northern Captain...
@@ -29,7 +29,7 @@
 +	$(INSTALL_PROGRAM) ./xsetup/xncsetup $(INSTDIR)
 +	$(INSTALL_PROGRAM) ./xjroot/xjpegroot $(INSTDIR)
 +	$(INSTALL_PROGRAM) ./launch/xnlaunch $(INSTDIR)
-+#	/bin/sh ./replace.script
++	# /bin/sh ./replace.script
  	mkdir -p $(INSTPLUG)
  	$(INS) ./plugins/five/libxncfive.so $(INSTPLUG)
- 	echo "Don't foget run 'xncsetup' before starting XNC"
+ 	$(INS) ./plugins/aqua/libxncaqua.so $(INSTPLUG)

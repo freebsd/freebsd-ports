@@ -1,5 +1,5 @@
---- filedir/makefile.in.orig	Wed Feb 16 15:38:53 2000
-+++ filedir/makefile.in	Wed Feb 16 15:39:08 2000
+--- filedir/makefile.in.orig	Wed Apr 25 20:11:20 2001
++++ filedir/makefile.in	Wed Apr 25 20:11:28 2001
 @@ -34,7 +34,7 @@
  @MCOMMON@
  
