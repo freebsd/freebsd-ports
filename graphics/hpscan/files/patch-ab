@@ -1,0 +1,232 @@
+diff -u old/colour.c colour.c
+--- old/colour.c	Fri Jun  3 14:39:39 1994
++++ colour.c	Fri Jan 12 17:25:53 1996
+@@ -19,7 +19,7 @@
+ 
+ static int allocate_colours(Colormap c);
+ 
+-static unsigned long colours[6*6*6], greys[33], black, white;
++static unsigned long *colours, greys[33], black, white;
+ 
+ /*
+  * Create a colourmap with 6 levels each of red, green and blue,
+@@ -27,12 +27,19 @@
+  * enough space, otherwise create a new one.
+  */
+ 
++#define shift(x)                                                            \
++	for(i = 31, m = 0x80000000L; (m & v->x##_mask) == 0; i--, m >>= 1)  \
++	    ;                                                               \
++	x##_shift = i;
++
+ Colormap create_colourmap(void)
+ {
+-    int r, g, b, n;
++    int r, g, b, n, i, m;
+     XColor colour;
+     Colormap cmap;
+-
++    Visual *v;
++    int red_shift, green_shift, blue_shift;
++    
+     if(screendepth == 1)
+     {
+ 	black = BlackPixelOfScreen(screen);
+@@ -51,42 +58,85 @@
+ 	XAllocColor(display, cmap, &colour);
+     }
+ 
+-    /* Allocate the colours */
++    if(screendepth <= 8)
++    {
++	/* Allocate the colours */
+ 
+-    n = 0;
+-    for(r=0; r<256; r+=51)
+-	for(g=0; g<256; g+=51)
+-	    for(b=0; b<256; b+=51)
+-	    {
+-		colour.red = r * 256;
+-		colour.green = g * 256;
+-		colour.blue = b * 256;
+-		if(XAllocColor(display, cmap, &colour) == 0)
++	colours = (unsigned long *)malloc(6*6*6 * sizeof(unsigned long));
++	if(colours == 0)
++	{
++	    fprintf(stderr, "Out of memory allocating the colour table.\n");
++	    exit(1);
++	}
++	n=0;
++	for(r=0; r<256; r+=51)
++	    for(g=0; g<256; g+=51)
++		for(b=0; b<256; b+=51)
+ 		{
+-		    fprintf(stderr, "using private colormap\n");
+-		    cmap = XCopyColormapAndFree(display, cmap);
+-		    XAllocColor(display, cmap, &colour);
++		    colour.red = r * 256;
++		    colour.green = g * 256;
++		    colour.blue = b * 256;
++		    if(XAllocColor(display, cmap, &colour) == 0)
++		    {
++			fprintf(stderr, "using private colormap\n");
++			cmap = XCopyColormapAndFree(display, cmap);
++			XAllocColor(display, cmap, &colour);
++		    }
++		    colours[n++] = colour.pixel;
+ 		}
+-		colours[n++] = colour.pixel;
+-	    }
+ 
+-    /* Allocate the greys */
++	/* Allocate the greys */
+ 
+-    for(n=0; n<33; n++)
+-    {
+-	colour.red = colour.green = colour.blue = n * 8 * 256 - (n == 32);
+-	if(XAllocColor(display, cmap, &colour) == 0)
++	for(n=0; n<33; n++)
+ 	{
+-	    fprintf(stderr, "using private colormap\n");
+-	    cmap = XCopyColormapAndFree(display, cmap);
+-	    XAllocColor(display, cmap, &colour);
++	    colour.red = colour.green = colour.blue = n * 8 * 256 - (n == 32);
++	    if(XAllocColor(display, cmap, &colour) == 0)
++	    {
++		fprintf(stderr, "using private colormap\n");
++		cmap = XCopyColormapAndFree(display, cmap);
++		XAllocColor(display, cmap, &colour);
++	    }
++	    greys[n] = colour.pixel;
+ 	}
+-	greys[n] = colour.pixel;
+-    }
+ 
+-    black = greys[0];
+-    white = greys[32];
++	black = greys[0];
++	white = greys[32];
++    }
++    else /* > 8 bit, assume truecolor display */
++    {
++	/* Use a 5*5*5 truecolor map */
++	colours = (unsigned long *)malloc(32768 * sizeof(unsigned long));
++	if(colours == 0)
++	{
++	    fprintf(stderr, "Out of memory allocating the colour table.\n");
++	    exit(1);
++	}
++	
++	v = DefaultVisualOfScreen(screen);
++	shift(red);
++	shift(green);
++	shift(blue);
++	n=0;
++	for(r=0; r<32; r++)
++	    for(g=0; g<32; g++)
++		for(b=0; b<32; b++)
++		{
++		    /*
++		     * We assume the default colormap has a certain
++		     * format, so we can compute the pixel values
++		     * without asking the XServer (which would take a
++		     * tremendous amount of time for 32k colours).
++		     */
++		    colours[n++] =
++			(r << (red_shift - 4)) |
++			(g << (green_shift - 4)) |
++			(b << (blue_shift - 4));
++		}
+ 
++	black = BlackPixelOfScreen(screen);
++	white = WhitePixelOfScreen(screen);
++    }
++    
+     return cmap;
+ }
+ 
+@@ -112,7 +162,7 @@
+ 	    pix_best = black;
+ 	}
+     }
+-    else
++    else if(screendepth <= 8)
+     {
+ 	int min = r < g ? (r < b ? r : b) : (g < b ? g : b);
+ 	int max = r > g ? (r > b ? r : b) : (g > b ? g : b);
+@@ -131,6 +181,21 @@
+ 	    b_best = ((b + 25) / 51) * 51;
+ 
+ 	    pix_best = colours[(r_best/51)*36 + (g_best/51)*6 + (b_best/51)];
++	}
++    }
++    else /* > 8 bit */
++    {
++	if(r == 255 && g == 255 && b == 255)
++	    pix_best = white;
++	else if(r == 0 && g == 0 && b == 0)
++	    pix_best = black;
++	else
++	{
++	    r_best = ((r + 4) / 8) * 8;
++	    g_best = ((g + 4) / 8) * 8;
++	    b_best = ((b + 4) / 8) * 8;
++
++	    pix_best = colours[(r_best/8)*1024 + (g_best/8)*32 + (b_best/8)];
+ 	}
+     }
+ 
+diff -u old/gui.c gui.c
+--- old/gui.c	Thu Jul 28 14:53:01 1994
++++ gui.c	Fri Jan 12 17:25:53 1996
+@@ -129,6 +129,7 @@
+ 
+     display = XtDisplay(shell);
+     screen = XtScreen(shell);
++    screendepth = DefaultDepthOfScreen(screen);
+     root = RootWindowOfScreen(screen);
+     
+     form = 
+@@ -555,21 +556,39 @@
+     XImage *im;
+     unsigned char *newdata, *p;
+     int x, y;
++    int pad;
+ 
++    switch(screendepth)
++      {
++      case 1:
++      case 8:
++	  pad = 8; break;
++      case 15:
++      case 16:
++	  pad = 16; break;
++      case 24:
++      case 32:
++	  pad = 32; break;
++      default:
++	  fprintf(stderr, "Don't know how to handle depth %d\n", screendepth);
++	  return 0;
++      }
++    
+     if(!raw)
+ 	return 0;
+ 
+     switch(raw->type)
+     {
+       case 5:			/* 24 bit colour */
+-	newdata = malloc(raw->width * raw->height);
++	newdata = malloc(raw->width * raw->height * (pad / 8));
+ 	if(!newdata)
+ 	{
+ 	    fprintf(stderr, "Can't malloc %d bytes\n", raw->width*raw->height);
+ 	    return 0;
+ 	}
+-	im = XCreateImage(display, visual, 8, ZPixmap, 0, newdata,
+-			  raw->width, raw->height, 8, raw->width);
++	im = XCreateImage(display, visual, screendepth, ZPixmap, 0, newdata,
++			  raw->width, raw->height, pad,
++			  raw->width * (pad/8));
+ 
+ 	/* Convert to fixed colour map using simple error propagation */
+ 
