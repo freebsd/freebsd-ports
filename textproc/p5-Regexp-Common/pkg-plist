@@ -31,7 +31,7 @@
 %%SITE_PERL%%/Regexp/Common/profanity.pm
 %%SITE_PERL%%/Regexp/Common.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp/Common
-@unexec rmdir %D/%%SITE_PERL%%/i386-freebsd/auto/Regexp 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp 2>/dev/null || true
 @dirrm %%SITE_PERL%%/Regexp/Common/URI
 @dirrm %%SITE_PERL%%/Regexp/Common
 @unexec rmdir %D/%%SITE_PERL%%/Regexp 2>/dev/null || true
