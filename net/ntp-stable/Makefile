@@ -1,24 +1,29 @@
 # New ports collection makefile for:	ntp
-# Version required:	4.0.72
+# Version required:	4.0.99g
 # Date created:		Di   5 Mai 1998 21:31:03 CEST
 # Whom:			andreas
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ntp-4.0.93a
+DISTNAME=	ntp-4.0.99g
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.udel.edu/pub/ntp/testing/
+MASTER_SITES=	ftp://ftp.udel.edu/pub/ntp/ntp4/
 
 MAINTAINER=	ports@FreeBSD.org
 
 # ntp's configure script created by autoconf 2.14.1 doesn't work
-# our autoconf version 2.13 produces better results
-USE_AUTOCONF=	yes
-GNU_CONFIGURE=	yes
+# if GNU_CONFIGURE is defined
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix=${PREFIX}
 
 post-install:
-	${MKDIR} ${PREFIX}/share/doc/ntp
-	${CP} -r ${WRKSRC}/html/* ${PREFIX}/share/doc/ntp
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${PREFIX}/share/doc/ntp
+	${TAR} -C ${WRKSRC}/html --exclude '.*' -cf - . | \
+		${TAR} -C ${PREFIX}/share/doc/ntp --unlink -xf -
+	find ${PREFIX}/share/doc/ntp | xargs ${CHOWN} ${SHAREOWN}:${SHAREGRP}
+	find ${PREFIX}/share/doc/ntp -type f | xargs ${CHMOD} ${SHAREMODE}
+.endif
 
 .include <bsd.port.mk>

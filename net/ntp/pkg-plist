@@ -3,10 +3,13 @@ bin/ntpdate
 bin/ntpdc
 bin/ntpq
 bin/ntptime
+bin/ntptimeset
 bin/ntptrace
 bin/tickadj
+share/doc/ntp/Oncore-SHMEM.htm
 share/doc/ntp/accopt.htm
 share/doc/ntp/assoc.htm
+share/doc/ntp/audio.htm
 share/doc/ntp/authopt.htm
 share/doc/ntp/biblio.htm
 share/doc/ntp/build.htm
@@ -19,6 +22,7 @@ share/doc/ntp/driver1.htm
 share/doc/ntp/driver10.htm
 share/doc/ntp/driver11.htm
 share/doc/ntp/driver12.htm
+share/doc/ntp/driver16.htm
 share/doc/ntp/driver18.htm
 share/doc/ntp/driver19.htm
 share/doc/ntp/driver2.htm
@@ -34,6 +38,10 @@ share/doc/ntp/driver3.htm
 share/doc/ntp/driver30.htm
 share/doc/ntp/driver32.htm
 share/doc/ntp/driver33.htm
+share/doc/ntp/driver34.htm
+share/doc/ntp/driver35.htm
+share/doc/ntp/driver36.htm
+share/doc/ntp/driver37.htm
 share/doc/ntp/driver4.htm
 share/doc/ntp/driver5.htm
 share/doc/ntp/driver6.htm
@@ -43,7 +51,6 @@ share/doc/ntp/driver9.htm
 share/doc/ntp/exec.htm
 share/doc/ntp/extern.htm
 share/doc/ntp/gadget.htm
-share/doc/ntp/hints.htm
 share/doc/ntp/hints/a-ux
 share/doc/ntp/hints/aix
 share/doc/ntp/hints/bsdi
@@ -58,6 +65,7 @@ share/doc/ntp/hints/refclocks
 share/doc/ntp/hints/rs6000
 share/doc/ntp/hints/sco.htm
 share/doc/ntp/hints/sgi
+share/doc/ntp/hints/solaris-dosynctodr.html
 share/doc/ntp/hints/solaris.html
 share/doc/ntp/hints/solaris.xtra.4023118
 share/doc/ntp/hints/solaris.xtra.4095849
@@ -68,7 +76,8 @@ share/doc/ntp/hints/svr4-dell
 share/doc/ntp/hints/svr4_package
 share/doc/ntp/hints/todo
 share/doc/ntp/hints/vxworks.html
-share/doc/ntp/hints/winnt
+share/doc/ntp/hints/winnt.htm
+share/doc/ntp/hints.htm
 share/doc/ntp/howto.htm
 share/doc/ntp/htmlprimer.htm
 share/doc/ntp/index.htm
@@ -109,6 +118,7 @@ share/doc/ntp/pic/appletree.gif
 share/doc/ntp/pic/barnstable.gif
 share/doc/ntp/pic/beaver.gif
 share/doc/ntp/pic/c51.jpg
+share/doc/ntp/pic/driver29.gif
 share/doc/ntp/pic/fg6021.gif
 share/doc/ntp/pic/flatheads.gif
 share/doc/ntp/pic/gadget.jpg
@@ -137,6 +147,7 @@ share/doc/ntp/pic/tonea.gif
 share/doc/ntp/porting.htm
 share/doc/ntp/pps.htm
 share/doc/ntp/prefer.htm
+share/doc/ntp/qth.htm
 share/doc/ntp/quick.htm
 share/doc/ntp/rdebug.htm
 share/doc/ntp/refclock.htm
