@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	muse
-PORTVERSION=	0.7.2
+PORTVERSION=	0.8.1
 CATEGORIES=	audio
 MASTER_SITES=	http://savannah.nongnu.org/download/muse/ \
 		http://muse.dyne.org/releases/
@@ -19,6 +19,7 @@ COMMENT=	Multiple Streaming Engine
 LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
 		vorbis.2:${PORTSDIR}/audio/libvorbis
 
+USE_GETOPT_LONG=	yes
 USE_REINPLACE=	yes
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
@@ -27,13 +28,10 @@ CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-debug
 
+MAN1=		muse.1
+
 CPPFLAGS=	-I${LOCALBASE}/include -DHAVE_DECL_GETOPT
 LDFLAGS=	-L${LOCALBASE}/lib
-
-.if !exists(/usr/include/getopt.h)
-LIB_DEPENDS+=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-LDFLAGS+=	-lgnugetopt
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CFLAGS=.*$$|CFLAGS="\$$CFLAGS"|g ; \
@@ -44,6 +42,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/muse ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/muse.1 ${MANPREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in AUTHORS ChangeLog KNOWN-BUGS NEWS README TODO USAGE
