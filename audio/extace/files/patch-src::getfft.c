@@ -1,5 +1,8 @@
---- extace/misc.c	2001/01/02 09:29:43	1.1
-+++ extace/misc.c	2001/01/02 09:30:30
+
+$FreeBSD$
+
+--- src/getfft.c	2002/08/30 12:59:05	1.1
++++ src/getfft.c	2002/08/30 12:59:26
 @@ -20,7 +20,9 @@
  #include <protos.h>
  #include <math.h>
