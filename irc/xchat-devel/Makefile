@@ -7,6 +7,7 @@
 
 PORTNAME=	xchat
 PORTVERSION=	1.5.7
+PORTREVISION=	1
 CATEGORIES=	irc gnome
 MASTER_SITES=	http://xchat.org/files/source/1.5/ \
 		http://xchat.linuxpower.org/files/source/1.5/
@@ -64,6 +65,11 @@ PLIST_SUB+=	GNOME:="@comment "
 CONFIGURE_ARGS+=--enable-gdk-pixbuf
 .else
 CONFIGURE_ARGS+=--disable-gdk-pixbuf
+.endif
+
+.if defined(WITH_SSL)
+USE_OPENSSL=	YES
+CONFIGURE_ARGS+=--enable-openssl
 .endif
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
