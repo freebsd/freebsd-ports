@@ -7,7 +7,7 @@
 
 PORTNAME=	edonkey
 PORTVERSION=	0.0.2
-CATEGORIES=	misc
+CATEGORIES=	misc linux
 MASTER_SITES=	http://users.aber.ac.uk/tpm01/ed2k_tools/
 PKGNAMESUFFIX=	-tool-recovermet
 DISTNAME=	ed2k_recovermet
