@@ -40,13 +40,10 @@ lib/zhcon/input/winzm.mb
 %%NLS%%share/locale/zh_CN.GB2312/LC_MESSAGES/zhcon.mo
 %%NLS%%share/locale/zh_CN.GBK/LC_MESSAGES/zhcon.mo
 %%NLS%%share/locale/zh_TW.Big5/LC_MESSAGES/zhcon.mo
-%%NLS%%@unexec rmdir %D/share/locale/zh_CN.GB2312/LC_MESSAGES 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/zh_CN.GB2312 2>/dev/null || true
 %%NLS%%@unexec rmdir %D/share/locale/zh_CN.GBK/LC_MESSAGES 2>/dev/null || true
 %%NLS%%@unexec rmdir %D/share/locale/zh_CN.GBK 2>/dev/null || true
 %%NLS%%@unexec rmdir %D/share/locale/zh_CN.EUC/LC_MESSAGES 2>/dev/null || true
 %%NLS%%@unexec rmdir %D/share/locale/zh_CN.EUC 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/zh_TW.Big5/LC_MESSAGES 2>/dev/null || true
 @dirrm lib/zhcon/input
 @dirrm lib/zhcon/font
 @dirrm lib/zhcon

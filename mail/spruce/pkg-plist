@@ -12,3 +12,5 @@ bin/spruce
 %%NLS%%share/locale/sk/LC_MESSAGES/spruce.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/spruce.mo
 %%NLS%%share/locale/zh_TW.Big5/LC_MESSAGES/spruce.mo
+%%NLS%%@unexec rmdir %D/share/locale/ru_RU/LC_MESSAGES 2> /dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/ru_RU 2> /dev/null || true

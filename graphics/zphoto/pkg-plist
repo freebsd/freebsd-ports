@@ -32,6 +32,8 @@ share/zphoto/doc/images/wxzphoto.png
 share/zphoto/fonts/EfontSerifB.fdb
 share/locale/ja/LC_MESSAGES/zphoto.mo
 share/locale/ja_JP.SJIS/LC_MESSAGES/zphoto.mo
+@unexec rmdir %D/share/locale/ja_JP.SJIS/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/ja_JP.SJIS 2> /dev/null || true
 @dirrm share/zphoto/templates/default/en
 @dirrm share/zphoto/templates/default/ja
 @dirrm share/zphoto/templates/default/all

@@ -50,3 +50,13 @@ share/locale/zh_TW/LC_MESSAGES/poedit.mo
 %%DATADIR%%/help.zip
 %%DATADIR%%/resources.zip
 @dirrm %%DATADIR%%
+@unexec rmdir %D/share/locale/af_ZA/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/af_ZA 2> /dev/null || true
+@unexec rmdir %D/share/locale/am_ET/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/am_ET 2> /dev/null || true
+@unexec rmdir %D/share/locale/pa_IN/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/pa_IN 2> /dev/null || true
+@unexec rmdir %D/share/locale/sq_AL/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/sq_AL 2> /dev/null || true
+@unexec rmdir %D/share/locale/sv_SE/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/sv_SE 2> /dev/null || true

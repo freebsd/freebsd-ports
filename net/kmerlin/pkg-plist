@@ -83,6 +83,10 @@ share/locale/zh-TW/LC_MESSAGES/kmerlin.mo
 share/icons/locolor/32x32/apps/kmerlin.png
 share/icons/locolor/16x16/apps/kmerlin.png
 share/applnk/Internet/kmerlin.desktop
+@unexec rmdir %D/share/locale/zh-CN/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/zh-CN 2> /dev/null || true
+@unexec rmdir %D/share/locale/zh-TW/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/zh-TW 2> /dev/null || true
 @dirrm share/doc/HTML/en/kmerlin
 @dirrm share/apps/kmerlin/icons/hicolor/16x16/actions
 @dirrm share/apps/kmerlin/icons/hicolor/16x16

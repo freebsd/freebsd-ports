@@ -53,9 +53,20 @@ share/locale/sv/LC_MESSAGES/texinfo.mo
 share/locale/tr/LC_MESSAGES/texinfo.mo
 share/locale/zh_CN/LC_MESSAGES/texinfo.mo
 share/locale/zh_TW/LC_MESSAGES/texinfo.mo
-@unexec rmdir %D/share/locale/*/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/* 2>/dev/null || true
-@unexec rmdir %D/share/locale 2>/dev/null || true
+@unexec rmdir %D/share/locale/cs/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/cs 2>/dev/null || true
+@unexec rmdir %D/share/locale/de_AT/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/de_AT 2>/dev/null || true
+@unexec rmdir %D/share/locale/no/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/no 2>/dev/null || true
+@unexec rmdir %D/share/locale/pl/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/pl 2>/dev/null || true
+@unexec rmdir %D/share/locale/ro/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/ro 2>/dev/null || true
+@unexec rmdir %D/share/locale/no/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/no 2>/dev/null || true
+@unexec rmdir %D/share/locale/zh_CN/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/zh_TW 2>/dev/null || true
 @unexec rmdir %D/%%TEXMFLOCAL%%/tex/generic/dvips 2>/dev/null || true
 @unexec rmdir %D/%%TEXMFLOCAL%%/pdftex/plain/misc 2>/dev/null || true
 @unexec rmdir %D/%%TEXMFLOCAL%%/pdftex/plain 2>/dev/null || true

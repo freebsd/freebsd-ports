@@ -153,3 +153,5 @@ share/pixmaps/xfe.png
 @dirrm lib/foxicons
 @dirrm lib/foxrc
 @dirrm share/pixmaps
+@unexec rmdir %D/share/locale/es_AR/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/es_AR 2> /dev/null || true

@@ -60,6 +60,8 @@ share/locale/sv/LC_MESSAGES/kbiff.mo
 share/locale/tr/LC_MESSAGES/kbiff.mo
 share/locale/uk/LC_MESSAGES/kbiff.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/kbiff.mo
+@unexec rmdir %D/share/locale/no_NY/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/no_NY 2> /dev/null || true
 @dirrm share/doc/HTML/fr/kbiff
 @dirrm share/doc/HTML/es/kbiff
 @dirrm share/doc/HTML/en/kbiff

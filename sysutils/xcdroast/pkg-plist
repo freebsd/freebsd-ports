@@ -50,3 +50,7 @@ share/locale/zh_TW.Big5/LC_MESSAGES/xcdroast.mo
 @dirrm lib/xcdroast-0.98/sound
 @dirrm lib/xcdroast-0.98
 @unexec if pw groupshow -n xcdwrite 2>/dev/null 1>&2; then pw groupdel -n xcdwrite; fi
+@unexec rmdir %D/share/locale/el_GR/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/el_GR 2> /dev/null || true
+@unexec rmdir %D/share/locale/sq_AL/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/sq_AL 2> /dev/null || true

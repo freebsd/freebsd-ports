@@ -89,6 +89,16 @@ share/locale/xh/LC_MESSAGES/gwenview.mo
 share/locale/zh_CN/LC_MESSAGES/gwenview.mo
 share/locale/zh_TW/LC_MESSAGES/gwenview.mo
 share/locale/zu/LC_MESSAGES/gwenview.mo
+@unexec rmdir %D/share/locale/fo/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/fo 2> /dev/null || true
+@unexec rmdir %D/share/locale/nso/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/nso 2> /dev/null || true
+@unexec rmdir %D/share/locale/ven/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/ven 2> /dev/null || true
+@unexec rmdir %D/share/locale/xh/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/xh 2> /dev/null || true
+@unexec rmdir %D/share/locale/zu/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/zu 2> /dev/null || true
 @unexec rmdir %D/share/icons/locolor/32x32/apps 2>/dev/null || true
 @unexec rmdir %D/share/icons/locolor/32x32 2>/dev/null || true
 @unexec rmdir %D/share/icons/locolor/16x16/apps 2>/dev/null || true

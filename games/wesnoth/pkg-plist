@@ -2771,6 +2771,8 @@ share/wesnoth/sounds/wolf-attack.wav
 share/wesnoth/sounds/wolf-cry.wav
 share/wesnoth/sounds/zombie-attack.wav
 share/wesnoth/sounds/zombie-hit.wav
+@unexec rmdir %D/share/locale/el_GR/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/el_GR 2> /dev/null || true
 @dirrm share/wesnoth/sounds
 %%LITE:%%@dirrm share/wesnoth/music
 @dirrm share/wesnoth/images/tools/exploder

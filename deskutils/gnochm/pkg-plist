@@ -25,3 +25,7 @@ share/mime/packages/gnochm.xml
 @dirrm share/gnome/gnochm
 @exec update-mime-database %D/share/mime
 @unexec update-mime-database %D/share/mime
+@unexec rmdir %D/share/locale/de_DE/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/de_DE 2> /dev/null || true
+@unexec rmdir %D/share/locale/tr_TR/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/tr_TR 2> /dev/null || true

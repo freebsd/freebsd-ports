@@ -40,3 +40,5 @@ share/zinf/themes/ZinfClassic.fat
 @dirrm lib/zinf
 @unexec rmdir %D/etc/sdr/plugins 2>/dev/null || true
 @unexec rmdir %D/etc/sdr 2>/dev/null || true
+@unexec rmdir %D/share/locale/ca_ES/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/ca_ES 2> /dev/null || true

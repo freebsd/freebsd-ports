@@ -59,4 +59,6 @@ share/locale/sk/LC_MESSAGES/gpsdrive.mo
 share/locale/sv/LC_MESSAGES/gpsdrive.mo
 share/locale/tr/LC_MESSAGES/gpsdrive.mo
 share/pixmaps/gpsicon.png
+@unexec rmdir %D/share/locale/gr/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/gr 2> /dev/null || true
 @dirrm share/gpsdrive

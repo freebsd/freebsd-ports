@@ -45,3 +45,5 @@ share/locale/is/LC_MESSAGES/gnubg.mo
 share/locale/it/LC_MESSAGES/gnubg.mo
 share/locale/ja/LC_MESSAGES/gnubg.mo
 share/locale/tr/LC_MESSAGES/gnubg.mo
+@unexec rmdir %D/share/locale/en_US/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/en_US 2> /dev/null || true

@@ -69,6 +69,12 @@ share/locale/vi/LC_MESSAGES/gnome-pim.mo
 share/locale/wa/LC_MESSAGES/gnome-pim.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-pim.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-pim.mo
+@unexec rmdir %D/share/locale/gd/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/gd 2> /dev/null || true
+@unexec rmdir %D/share/locale/gv/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/gv 2> /dev/null || true
+@unexec rmdir %D/share/locale/kw/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/kw 2> /dev/null || true
 @dirrm share/gnome/help/gnomecard/eu
 @dirrm share/gnome/help/gnomecard/C
 @dirrm share/gnome/help/gnomecard

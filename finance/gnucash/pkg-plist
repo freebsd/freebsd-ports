@@ -708,6 +708,8 @@ share/locale/tr/LC_MESSAGES/gnucash.mo
 share/locale/uk/LC_MESSAGES/gnucash.mo
 share/locale/zh_CN/LC_MESSAGES/gnucash.mo
 share/locale/zh_TW/LC_MESSAGES/gnucash.mo
+@unexec rmdir %D/share/locale/es_NI/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/es_NI 2> /dev/null || true
 @dirrm share/gnome/pixmaps/gnucash
 @dirrm share/gnome/gnucash/scm/qif-import
 @dirrm share/gnome/gnucash/scm/printing

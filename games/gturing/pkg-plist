@@ -41,8 +41,6 @@ share/gnome/help/gturing/C/gturing.xml
 share/gnome/help/gturing/C/figures/mainwin.png
 share/gnome/applications/gturing.desktop
 bin/gturing
-@unexec rmdir %D/share/locale/*/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/* 2>/dev/null || true
 %%PORTDOCS%%share/examples/gturing/subst.tur
 %%PORTDOCS%%share/examples/gturing/sort.tur
 %%PORTDOCS%%share/examples/gturing/dec2bin_shift.tur

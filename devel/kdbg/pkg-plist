@@ -102,10 +102,8 @@ share/locale/sr/LC_MESSAGES/kdbg.mo
 share/locale/sv/LC_MESSAGES/kdbg.mo
 share/locale/tr/LC_MESSAGES/kdbg.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/kdbg.mo
-@dirrm share/locale/zh_CN.GB2312/LC_MESSAGES
-@dirrm share/locale/zh_CN.GB2312
-@dirrm share/locale/no_NY/LC_MESSAGES
-@dirrm share/locale/no_NY
+@unexec rmdir %D/share/locale/no_NY/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/no_NY 2> /dev/null || true
 @dirrm share/doc/HTML/ru/kdbg
 @dirrm share/doc/HTML/en/kdbg
 @dirrm share/doc/HTML/de/kdbg

@@ -28,3 +28,5 @@ share/locale/ru/LC_MESSAGES/bubblemon.mo
 %%PORTDOCS%%share/doc/bubblemon2/TODO
 %%PORTDOCS%%share/doc/bubblemon2/TRANSLATIONS
 %%PORTDOCS%%@dirrm share/doc/bubblemon2
+@unexec rmdir %D/share/locale/sh/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/sh 2> /dev/null || true

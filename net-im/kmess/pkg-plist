@@ -112,6 +112,8 @@ share/sounds/kmess_chat.ogg
 share/sounds/kmess_logoff.ogg
 share/sounds/kmess_logon.ogg
 share/sounds/kmess_msg.ogg
+@unexec rmdir %D/share/locale/zh_CN.GB18030/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/zh_CN.GB18030 2> /dev/null || true
 @dirrm share/doc/HTML/en/kmess
 @dirrm share/apps/kmess/pics
 @dirrm share/apps/kmess/icons/hicolor/16x16/apps
