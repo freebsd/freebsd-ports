@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	icc
-PORTVERSION=	8.1.026
-PORTREVISION=	3
+PORTVERSION=	8.1.028
 CATEGORIES=	lang linux devel
 MASTER_SITES=
 DISTNAME=	l_cc_pc_${PORTVERSION:C/p.+$//}
@@ -64,7 +63,7 @@ PLIST_SUB+=	MACHINE__TYPES_H="@comment " STDARG_H="" SYS_CDEFS_H="" \
 		STDBOOL_H=""
 .else
 PLIST_SUB+=	STDARG_H="@comment " SYS_CDEFS_H="@comment "
-.if ( ${OSVERSION} < 600013 )
+.if ( ${OSVERSION} < 503103 || ( ${OSVERSION} >= 600000 && ${OSVERSION} < 600013 ) )
 PLIST_SUB+=	MACHINE__TYPES_H="" STDBOOL_H=""
 .else
 PLIST_SUB+=	MACHINE__TYPES_H="@comment " STDBOOL_H="@comment "
@@ -171,12 +170,12 @@ post-patch:
 	@${MKDIR} ${WRKSRC}/opt/${COMPILERDIR}/include/sys
 	@${CP} ${FILESDIR}/cdefs.h ${WRKSRC}/opt/${COMPILERDIR}/include/sys
 .endif
-.if ( ${OSVERSION} >= 502108 && ${OSVERSION} < 600013 )
+.if ( ( ${OSVERSION} >= 502108 && ${OSVERSION} < 503103 ) || ( ${OSVERSION} >= 600000 && ${OSVERSION} < 600013 ) )
 # Work around bug for ICC support in src/sys/i386/include/_types.h.
 	@${MKDIR} ${WRKSRC}/opt/${COMPILERDIR}/include/machine
 	@${CP} ${FILESDIR}/_types.h ${WRKSRC}/opt/${COMPILERDIR}/include/machine
 .endif
-.if ( ${OSVERSION} < 600013 )
+.if ( ${OSVERSION} < 503103 || ( ${OSVERSION} >= 600000 && ${OSVERSION} < 600013 ) )
 # Work around a bug in stdbool.h
 	@${SED} -e 's:__STDC_VERSION__ < 199901L.*:__STDC_VERSION__ < 199901L \&\& defined(__GNUC__) \&\& __GNUC__ < 3 \&\& !defined(__INTEL_COMPILER):g' \
 		</usr/include/stdbool.h \

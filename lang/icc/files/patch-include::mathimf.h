@@ -9,15 +9,6 @@
  # include <math.h>  /* utilize GNU math header */
  # if defined(fpclassify)
  #  undef fpclassify
-@@ -110,7 +110,7 @@
- #if defined(_DLL) && (defined(_WIN32) || defined(_WIN64))   /* Windows DLL */
- # define _LIBIMF_PUBAPI __declspec(dllimport) __cdecl
- # define _LIBIMF_PUBVAR __declspec(dllimport)
--#elif defined(__linux__)                          /* Linux */
-+#elif defined(__linux__) || defined(__FreeBSD__)  /* Linux || FreeBSD */
- # define _LIBIMF_PUBAPI /* do not change this line! */
- # define _LIBIMF_PUBVAR
- #else                                             /* Windows static */
 @@ -262,7 +262,7 @@
  
  /* Radian argument trigonometric functions */
