@@ -7,7 +7,7 @@
 
 PORTNAME=	mod_jk
 PORTVERSION=	3.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://jakarta.apache.org/Builds/jakarta-tomcat/release/v${PORTVERSION}/src/ \
 		http://www.metaverse.nl/~ernst/ \
@@ -17,23 +17,23 @@ DISTNAME=	jakarta-tomcat-${PORTVERSION}-src
 
 MAINTAINER=	znerd@FreeBSD.org
 
-BUILD_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13 \
-		${JAVA_HOME}/bin/javac:${JAVA_PORT}
-RUN_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13 \
-		${TOMCAT_HOME}/lib/webserver.jar:${PORTSDIR}/www/jakarta-tomcat3
+BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
+RUN_DEPENDS=	${APXS}:${APACHE_PORT} \
+		${TOMCAT_HOME}/lib/tomcat.jar:${PORTSDIR}/www/jakarta-tomcat3
 
 USE_GMAKE=	YES
+USE_JAVA=	1.2+
 MAKEFILE=	Makefile.freebsd
 WRKSRC=		${WRKDIR}/jakarta-tomcat-${PORTVERSION}-src/src/native/mod_jk/apache1.3
 
 APXS?=		${LOCALBASE}/sbin/apxs
-JAVA_HOME?=	${LOCALBASE}/jdk1.3.1
-JAVA_PORT?=	${PORTSDIR}/java/jdk13
 APACHE_PORT?=	${PORTSDIR}/www/apache13
 TOMCAT_HOME?=	${LOCALBASE}/jakarta-tomcat${PORTVERSION}
 
 post-extract:
 	${MV} ${WRKSRC}/Makefile.freebsd ${WRKSRC}/Makefile.freebsd.orig
+
+post-patch:
 	${SED} \
 	-e "s#%%APXS%%#${APXS}#g" \
 	-e "s#%%JAVA_HOME%%#${JAVA_HOME}#g" \
