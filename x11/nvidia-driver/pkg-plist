@@ -18,18 +18,33 @@ lib/libGLcore.so.1
 lib/libXvMCNVIDIA.so.1
 @exec ln -sf %D/lib/libXvMCNVIDIA.so.1 %D/lib/libXvMCNVIDIA.so
 @unexec rm -f %D/lib/libXvMCNVIDIA.so
+lib/libnvidia-tls.so.1
+@exec ln -sf %D/lib/libnvidia-tls.so.1 %D/lib/libnvidia-tls.so
+@unexec rm -f %D/lib/libnvidia-tls.so
 lib/libXvMCNVIDIA.a
 lib/modules/drivers/nvidia_drv.o
 lib/modules/extensions/libglx.so.1
 @exec ln -sf %D/lib/modules/extensions/libglx.so.1 %D/lib/modules/extensions/libglx.so
 @unexec rm -f %D/lib/modules/extensions/libglx.so
-share/doc/NVIDIA/README
-share/doc/NVIDIA/README.Linux
-share/doc/NVIDIA/XF86Config.sample
-share/doc/NVIDIA/license.txt
+%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/README
+%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/README.Linux
+%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/XF86Config.sample
+%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/license.txt
+%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/gl.h
+%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/glx.h
+%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/glext.h
+%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/glxtokens.h
+%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/agp.ko-hints.diff
+%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/machdep.c.diff
+%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/vm_map.c_4.10.diff
+%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/device_pager.c_4.10.diff
+%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/vm_object.c_5.2.diff
+%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/device_pager.c_5.2.diff
+%%PORTDOCS%%@dirrm share/doc/NVIDIA_GLX-1.0
 %%FREEBSD4%%@cwd /modules
 %%FREEBSD5%%@cwd /boot/modules
 nvidia.ko
+%%FREEBSD5%%@unexec kldxref %D
 %%FREEBSD4%%@cwd /dev
 %%FREEBSD4%%MAKEDEV.nvidia
 %%FREEBSD4%%@exec mknod /dev/nvidia0 c 180 0
@@ -47,8 +62,13 @@ nvidia.ko
 %%FREEBSD4%%@unexec rm -f /dev/nvidia2
 %%FREEBSD4%%@unexec rm -f /dev/nvidia3
 %%FREEBSD4%%@unexec rm -f /dev/nvidiactl
-@cwd %%LINUXBASE%%
-usr/lib/libGL.so.1.0.%%NVVERSION%%
-usr/lib/libGLcore.so.1.0.%%NVVERSION%%
-@exec ln -sf %D/usr/lib/libGL.so.1.0.%%NVVERSION%% %D/usr/lib/libGL.so.1
-@exec ln -sf %D/usr/lib/libGLcore.so.1.0.%%NVVERSION%% %D/usr/lib/libGLcore.so.1
+%%LINUX%%@cwd %%LINUXBASE%%
+%%LINUX%%usr/lib/libGL.so.1.0.%%NVVERSION%%
+%%LINUX%%usr/lib/libGLcore.so.1.0.%%NVVERSION%%
+%%LINUX%%usr/lib/libnvidia-tls.so.1.0.%%NVVERSION%%
+%%LINUX%%@exec ln -sf %D/usr/lib/libGL.so.1.0.%%NVVERSION%% %D/usr/lib/libGL.so.1
+%%LINUX%%@exec ln -sf %D/usr/lib/libGLcore.so.1.0.%%NVVERSION%% %D/usr/lib/libGLcore.so.1
+%%LINUX%%@exec ln -sf %D/usr/lib/libnvidia-tls.so.1.0.%%NVVERSION%% %D/usr/lib/liblibnvidia-tls.so.1
+%%LINUX%%@unexec rm -f %D/usr/lib/libGL.so.1
+%%LINUX%%@unexec rm -f %D/usr/lib/libGLcore.so.1
+%%LINUX%%@unexec rm -f %D/usr/lib/liblibnvidia-tls.so.1
