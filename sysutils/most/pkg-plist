@@ -1,8 +1,0 @@
-bin/most
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/changes.txt
-%%PORTDOCS%%%%DOCSDIR%%/lesskeys.rc
-%%PORTDOCS%%%%DOCSDIR%%/most-fun.txt
-%%PORTDOCS%%%%DOCSDIR%%/most.doc
-%%PORTDOCS%%%%DOCSDIR%%/most.rc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

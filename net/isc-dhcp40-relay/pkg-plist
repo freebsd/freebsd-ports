@@ -1,3 +1,0 @@
-@comment $FreeBSD: /tmp/pcvs/ports/net/isc-dhcp40-relay/Attic/pkg-plist,v 1.4 2004-06-26 08:46:05 eik Exp $
-etc/rc.d/isc-dhcrelay.sh
-sbin/dhcrelay

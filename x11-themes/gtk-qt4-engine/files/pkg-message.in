@@ -1,7 +1,0 @@
-=====================================================
-NOTE: Add the following line to your ~/.gtkrc-2.0 :
-
-include "/usr/X11R6/share/themes/Qt/gtk-2.0/gtkrc"
-
-More info: http://www.freedesktop.org/Software/gtk-qt
-=====================================================

@@ -1,7 +1,0 @@
-Bogofilter takes an email message or other text on standard input, parses it
-into words, does a statistical check against data bases of "good" and "bad"
-words, and returns a status code indicating whether or not the message is spam.
-Bogofilter decodes base64 or quoted-printable encoded texts and ignores non-text
-attachments and HTML comments.
-
-WWW: http://bogofilter.sourceforge.net/

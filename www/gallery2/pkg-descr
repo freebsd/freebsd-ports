@@ -1,9 +1,0 @@
-Gallery is a slick web based photo album written using PHP. Easy to install
-(it includes a config wizard), it provides users with the ability to create
-and maintain their own albums in the album collection via an intuitive web
-interface. Photo management includes automatic thumbnail creation, image
-resizing, rotation, ordering, captioning, searching and more. Albums can
-have read, write and caption permissions per individual authenticated user
-for an additional level of privacy.
-
-WWW: http://gallery.sourceforge.net/

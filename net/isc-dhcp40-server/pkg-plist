@@ -1,5 +1,0 @@
-@comment $FreeBSD$
-bin/omshell
-etc/dhcpd.conf.sample
-etc/rc.d/isc-dhcpd.sh
-sbin/dhcpd
