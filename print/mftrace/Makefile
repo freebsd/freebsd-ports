@@ -31,7 +31,7 @@ MAN1=	mftrace.1
 
 pre-everything::
 	@${CAT} ${PKGMESSAGE}
-	@{ECHO_CMD} Pausing ten seconds--press control-C to cancel build.
+	@${ECHO_CMD} Pausing ten seconds--press control-C to cancel build.
 	@sleep 10
 
 pre-install:
