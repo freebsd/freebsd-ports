@@ -6,24 +6,24 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	2003-05-08
-SNAPVER=	${SNAPDATE:S/-//g}
+SNAPDATE=	2003-05-14
 #CVS_DATE=	${SNAPDATE} 18:53:04 EDT
 
 PORTNAME=	gcc
 PORTVERSION=	3.3
-PORTREVISION=	${SNAPVER}
+PORTREVISION=	${SNAPDATE:S/-//g}
 CATEGORIES=	lang java
+VERSIONSTRING=	${PORTVERSION}
 MASTER_SITES=	${MASTER_SITE_GCC}
-MASTER_SITE_SUBDIR=	snapshots
+MASTER_SITE_SUBDIR=	releases/gcc-${VERSIONSTRING}
 .if !defined(CVS_DATE)
 DISTFILES=	\
-		gcc-core-${PORTVERSION}-${SNAPVER}${EXTRACT_SUFX} \
-		gcc-testsuite-${PORTVERSION}-${SNAPVER}${EXTRACT_SUFX} \
-		gcc-g++-${PORTVERSION}-${SNAPVER}${EXTRACT_SUFX} \
-		gcc-g77-${PORTVERSION}-${SNAPVER}${EXTRACT_SUFX} \
-		gcc-java-${PORTVERSION}-${SNAPVER}${EXTRACT_SUFX} \
-		gcc-objc-${PORTVERSION}-${SNAPVER}${EXTRACT_SUFX}
+		gcc-core-${VERSIONSTRING}${EXTRACT_SUFX} \
+		gcc-g++-${VERSIONSTRING}${EXTRACT_SUFX} \
+		gcc-g77-${VERSIONSTRING}${EXTRACT_SUFX} \
+		gcc-java-${VERSIONSTRING}${EXTRACT_SUFX} \
+		gcc-objc-${VERSIONSTRING}${EXTRACT_SUFX} \
+		gcc-testsuite-${VERSIONSTRING}${EXTRACT_SUFX}
 .endif
 
 MAINTAINER?=	ports@FreeBSD.org
@@ -43,16 +43,14 @@ NOMANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 
 GCC_REV=	${PORTVERSION:C/\.0$//}
-#SRCDIR=		${WRKDIR}/gcc-${GCC_REV}
-SRCDIR=		${WRKDIR}/gcc-${PORTVERSION}-${SNAPVER}
+SRCDIR=		${WRKDIR}/gcc-${VERSIONSTRING}
 WRKSRC=		${WRKDIR}/build
 TARGLIB=	${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}
 GCJINC=		${PREFIX}/include/gcj
 GNUINC=		${PREFIX}/include/gnu
 JAVAINC=	${PREFIX}/include/java
 JAVAINC2=	${PREFIX}/include/javax
-PLIST_SUB=	GCC_REV=${GCC_REV} GNU_HOST=${CONFIGURE_TARGET}  \
-		SNAPVER=${SNAPVER}
+PLIST_SUB=	GCC_REV=${GCC_REV} GNU_HOST=${CONFIGURE_TARGET}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_BISON=	yes
@@ -78,7 +76,8 @@ CONFIGURE_ARGS+=	--enable-threads=posix
 ALL_TARGET=	bootstrap
 MAN1=		cpp33.1 g++33.1 g77-33.1 gcc33.1 gcov33.1 \
 		gcj33.1 gcjh33.1 gij33.1 grepjar33.1 jar33.1 \
-		jcf-dump33.1 jv-scan33.1 jv-convert33.1
+		jcf-dump33.1 jv-scan33.1 jv-convert33.1 \
+		rmic33.1 rmiregistry33.1
 MAN7=		fsf-funding.7 gfdl.7 gpl.7
 
 pre-fetch:

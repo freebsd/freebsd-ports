@@ -37,7 +37,6 @@ lib/lib-org-w3c-dom.a
 share/java/libgcj-3.3.jar
 @dirrm share/java/classes
 @dirrm share/java
-@comment not needed post-libstdc++-v3:	%%GNU_HOST%%/include/_G_config.h
 @comment Insert PLIST.gcc-lib here
 @comment -=[ begin PLIST.gcc-lib ]=-
 @comment -=[ end PLIST.gcc-lib ]=-
@@ -65,5 +64,3 @@ info/fastjar.info
 @exec install-info %D/info/gccint.info %D/info/dir
 @exec install-info %D/info/gcj.info %D/info/dir
 @exec install-info %D/info/fastjar.info %D/info/dir
-@comment @dirrm %%GNU_HOST%%/include
-@comment @dirrm %%GNU_HOST%%
