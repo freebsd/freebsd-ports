@@ -53,12 +53,12 @@ $LAST_FILE = "$TMPDIR/$FILE_PREFIX.lastdir";
 # Make sure that these are also described in the rcstemplate to
 # make their usage clear to committers.
 %TEMPLATE_HEADERS = (
-	"Reviewed by"		=> '.*',
-	"Submitted by"		=> '.*',
-	"Obtained from"		=> '.*',
-	"Approved by"		=> '.*',
-	"PR"			=> '.*',
-	"MFC after"		=> '\d+(\s+(days?|weeks?|months?))?'
+#	"Reviewed by"		=> '.*',
+#	"Submitted by"		=> '.*',
+#	"Obtained from"		=> '.*',
+#	"Approved by"		=> '.*',
+#	"PR"			=> '.*',
+#	"MFC after"		=> '\d+(\s+(days?|weeks?|months?))?'
 );
 
 
@@ -71,19 +71,19 @@ $LAST_FILE = "$TMPDIR/$FILE_PREFIX.lastdir";
 # Exclusions can be specified in the CVSROOT/exclude file.
 # Currently $IDHEADER must be an instance of '$ CVSHeader $', or an alias
 # defined in CVSROOT/options.
-$CHECK_HEADERS = 1;
+$CHECK_HEADERS = 0;
 
 # WARNING: You will also need to be running the version of cvs that
 # the FreeBSD project is using; I believe that we have some local patches
 # that aren't in the main 'cvs' source.
 # Additionally you'll need to tweak CVSROOT/options if you wish to use your
 # own ident header.
-$IDHEADER = 'FreeBSD';	# Our RCS header is '$ FreeBSD $', 
+$IDHEADER = 'CVSHeader';
 
 # Contract any instances of $IDHEADER in the source file before committing.
 # This is useful because it means that expanded headers aren't stored in
 # the repository as part of the delta.
-$UNEXPAND_RCSID = 1;
+$UNEXPAND_RCSID = 0;
 
 
 ####################
@@ -92,15 +92,14 @@ $UNEXPAND_RCSID = 1;
 
 # The command used to mail the log messages.
 # Usually something like '/usr/sbin/sendmail'.  
-$MAILCMD = "/usr/local/bin/mailsend -H";
+$MAILCMD = "/usr/sbin/sendmail";
 
 # Email addresses of recipients of commit mail.
-# (might be overridden below)
 $MAILADDRS = 'nobody';
 
 # Extra banner added to the top of commit email.
-# i.e. $MAILBANNER = "Project X CVS Repository";
 # Use "" if you don't want one.
+# i.e. $MAILBANNER = "Project X CVS Repository";
 $MAILBANNER = "";
 
 # Send mail when directories are created in the repository.
@@ -108,8 +107,8 @@ $MAILBANNER = "";
 $MAIL_ON_DIR_CREATION = 0;
 
 # Include the names of the branches committed to in the commit email,
-# using this header (leave off the trailing ':').  Use "" if you don't
-# want one.
+# using this header (leave off the trailing ':').
+# Use "" if you don't want one.
 $MAIL_BRANCH_HDR  = "X-CVS-Branch";
 
 # This is a way to post-process the log email before it is mailed.
@@ -185,38 +184,10 @@ sub add_cvsweb_entry {
 };
 
 
-
-
-
-
-##############################################################
-##############################################################
-# FreeBSD site localisation [overrides configuration above].
-# Remember to comment out if using for other purposes.
-##############################################################
-##############################################################
-my $hostname = `/bin/hostname`;
-die "Can't determine hostname!\n" if $? >> 8;
-chomp $hostname;
-if ($hostname =~ /^(freefall|internat)\.freebsd\.org$/i) {
-	my $meister;
-
-	$MAILADDRS='cvs-committers@FreeBSD.org cvs-all@FreeBSD.org';
-	if ($1 =~ /freefall/i) {
-		$meister = 'peter@FreeBSD.org';
-	} else {
-		$meister = 'markm@FreeBSD.org';
-		$MAILBANNER = "FreeBSD International Crypto Repository";
-	}
-	$MAILADDRS = $meister if $DEBUG;
-
-
-	$MAIL_BRANCH_HDR  = "X-FreeBSD-CVS-Branch";
-}
-
-
+######################################################################
 # Load the local configuration file, that allows the entries in this
 # file to be overridden.
+######################################################################
 eval { require "$ENV{CVSROOT}/CVSROOT/cfg_local.pm" }
     if -e "$ENV{CVSROOT}/CVSROOT/cfg_local.pm";
 warn $@ if $@;
