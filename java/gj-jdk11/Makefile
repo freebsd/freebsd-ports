@@ -9,5 +9,6 @@ GJ_WITH_JDK11=	YES
 MASTERDIR=	${.CURDIR}/../gj
 MD5_FILE=	${.CURDIR}/distinfo
 PLIST=		${.CURDIR}/pkg-plist
+PLIST_FILES=	bin/gjc11 bin/gjcr11 bin/gj11
 
 .include "${MASTERDIR}/Makefile"

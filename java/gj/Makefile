@@ -5,10 +5,11 @@
 # $FreeBSD$
 #
 
-PORTNAME=	gj-${JDKSUBDIR}
+PORTNAME=	gj
 PORTVERSION=	0.6m
 CATEGORIES=	java
 MASTER_SITES=	http://www.cis.unisa.edu.au/~pizza/gj/Distribution/
+PKGNAMESUFFIX=	-${JDKSUBDIR}
 DISTNAME=	gjdist${GJDIST}
 
 MAINTAINER=	vs@FreeBSD.org
@@ -17,18 +18,20 @@ COMMENT=	Extension of the Java programming language that supports generic types
 WRKSRC=		${WRKDIR}/gj
 
 NO_BUILD=	YES
+USE_JAVA=	yes
 
 .if defined(GJ_WITH_JDK11)
 GJDIST=		1.1
-USE_JAVA=	1.1
 BINSUFX=	11
+JAVA_VERSION=	1.1
 .else
 GJDIST=		1.2
-USE_JAVA=	1.2+
+JAVA_VERSION=	1.2+
 .endif
 
 JDKSUBDIR=	jdk${GJDIST}
 PLIST_SUB+=	JDKSUBDIR=${JDKSUBDIR}
+PLIST_FILES?=	bin/gjc bin/gjcr bin/gj
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/gj/${JDKSUBDIR}

@@ -356,7 +356,4 @@ lib/gj/%%JDKSUBDIR%%/java/util/Vector.class
 @dirrm lib/gj/%%JDKSUBDIR%%/java/util
 @dirrm lib/gj/%%JDKSUBDIR%%/java
 @dirrm lib/gj/%%JDKSUBDIR%%
-@dirrm lib/gj
-bin/gjc
-bin/gjcr
-bin/gj
+@unexec rmdir %D/lib/gj 2>/dev/null || true

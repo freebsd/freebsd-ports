@@ -234,9 +234,6 @@ lib/gj/%%JDKSUBDIR%%/com/sun/java/util/collections/TreeSet.class
 lib/gj/%%JDKSUBDIR%%/com/sun/java/util/collections/UnsupportedOperationException.class
 lib/gj/%%JDKSUBDIR%%/com/sun/java/util/collections/Vector$1.class
 lib/gj/%%JDKSUBDIR%%/com/sun/java/util/collections/Vector.class
-bin/gjc11
-bin/gjcr11
-bin/gj11
 @dirrm lib/gj/%%JDKSUBDIR%%/com/sun/java/util/collections
 @dirrm lib/gj/%%JDKSUBDIR%%/com/sun/java/util
 @dirrm lib/gj/%%JDKSUBDIR%%/com/sun/java
