@@ -31,6 +31,8 @@ INSTALL_TARGET=	installbin
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_SERVER)
+BUILD_DEPENDS+=	xsltproc:${PORTSDIR}/textproc/libxslt
+RUN_DEPENDS+=	xsltproc:${PORTSDIR}/textproc/libxslt
 ALL_TARGET+=	darcs_cgi darcs-createrepo
 INSTALL_TARGET+=	installserver
 .if !exists(${PREFIX}/www) && exists(${PREFIX}/share/apache)
