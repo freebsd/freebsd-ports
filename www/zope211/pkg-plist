@@ -82,7 +82,6 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/ZServer/medusa/status_handler.pyc
 %%ZOPEBASEDIR%%/ZServer/medusa/test_logger.py
 %%ZOPEBASEDIR%%/ZServer/medusa/test_logger.pyc
-%%ZOPEBASEDIR%%/Zope.cgi.orig
 %%ZOPEBASEDIR%%/access
 %%ZOPEBASEDIR%%/doc/CHANGES.txt
 %%ZOPEBASEDIR%%/doc/CREDITS.txt
@@ -100,7 +99,6 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/doc/ZODB.txt
 %%ZOPEBASEDIR%%/import/README.txt
 %%ZOPEBASEDIR%%/import/ZopeTutorialExamples.zexp
-%%ZOPEBASEDIR%%/inituser
 %%ZOPEBASEDIR%%/inst/binary_install.py
 %%ZOPEBASEDIR%%/inst/binary_install.pyc
 %%ZOPEBASEDIR%%/inst/build_extensions.py
@@ -301,6 +299,15 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/App/dtml/distributionView.dtml
 %%ZOPEBASEDIR%%/lib/python/App/dtml/editFactory.dtml
 %%ZOPEBASEDIR%%/lib/python/App/dtml/editPermission.dtml
+%%ZOPEBASEDIR%%/lib/python/App/dtml/manage.dtml
+%%ZOPEBASEDIR%%/lib/python/App/dtml/manage_form_title.dtml
+%%ZOPEBASEDIR%%/lib/python/App/dtml/manage_page_footer.dtml
+%%ZOPEBASEDIR%%/lib/python/App/dtml/manage_page_header.dtml
+%%ZOPEBASEDIR%%/lib/python/App/dtml/manage_page_style.css.dtml
+%%ZOPEBASEDIR%%/lib/python/App/dtml/manage_style_test.dtml
+%%ZOPEBASEDIR%%/lib/python/App/dtml/manage_tabs.dtml
+%%ZOPEBASEDIR%%/lib/python/App/dtml/manage_top_frame.dtml
+%%ZOPEBASEDIR%%/lib/python/App/dtml/manage_zmi_prefs.dtml
 %%ZOPEBASEDIR%%/lib/python/App/dtml/menu.dtml
 %%ZOPEBASEDIR%%/lib/python/App/dtml/profile.dtml
 %%ZOPEBASEDIR%%/lib/python/App/dtml/readme.dtml
@@ -308,6 +315,7 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/App/dtml/undo.dtml
 %%ZOPEBASEDIR%%/lib/python/App/dtml/versionManager.dtml
 %%ZOPEBASEDIR%%/lib/python/App/dtml/zope_quick_start.dtml
+%%ZOPEBASEDIR%%/lib/python/App/manage.dtml
 %%ZOPEBASEDIR%%/lib/python/App/special_dtml.py
 %%ZOPEBASEDIR%%/lib/python/App/special_dtml.pyc
 %%ZOPEBASEDIR%%/lib/python/App/tar.py
@@ -633,6 +641,7 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/Products/MailHost/__init__.py
 %%ZOPEBASEDIR%%/lib/python/Products/MailHost/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/MailHost/dtml/addMailHost_form.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/MailHost/dtml/manageMailHost.dtml
 %%ZOPEBASEDIR%%/lib/python/Products/MailHost/help/Mail-Host.stx
 %%ZOPEBASEDIR%%/lib/python/Products/MailHost/help/Mail-Host_Add.stx
 %%ZOPEBASEDIR%%/lib/python/Products/MailHost/help/Mail-Host_Edit.stx
@@ -946,6 +955,8 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/Products/ZCatalog/dtml/catalogView.dtml
 %%ZOPEBASEDIR%%/lib/python/Products/ZCatalog/dtml/editCatalogerForm.dtml
 %%ZOPEBASEDIR%%/lib/python/Products/ZCatalog/dtml/edit_stop_syn.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/ZCatalog/dtml/manage_vocab.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/ZCatalog/dtml/vocab_manage_main.dtml
 %%ZOPEBASEDIR%%/lib/python/Products/ZCatalog/dtml/vocab_query.dtml
 %%ZOPEBASEDIR%%/lib/python/Products/ZCatalog/help/Vocabulary.py
 %%ZOPEBASEDIR%%/lib/python/Products/ZCatalog/help/Vocabulary.pyc
@@ -1355,7 +1366,6 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/ZODB/cPersistence.c
 %%ZOPEBASEDIR%%/lib/python/ZODB/cPersistence.h
 %%ZOPEBASEDIR%%/lib/python/ZODB/cPersistence.so
-%%ZOPEBASEDIR%%/lib/python/ZODB/cPickle.so
 %%ZOPEBASEDIR%%/lib/python/ZODB/cPickleCache.c
 %%ZOPEBASEDIR%%/lib/python/ZODB/cPickleCache.so
 %%ZOPEBASEDIR%%/lib/python/ZODB/config.c
@@ -1414,8 +1424,6 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/Zope/ClassFactory.pyc
 %%ZOPEBASEDIR%%/lib/python/Zope/__init__.py
 %%ZOPEBASEDIR%%/lib/python/Zope/__init__.pyc
-%%ZOPEBASEDIR%%/lib/python/cPickle.so
-%%ZOPEBASEDIR%%/lib/python/cStringIO.so
 %%ZOPEBASEDIR%%/lib/python/config.c
 %%ZOPEBASEDIR%%/lib/python/dcdb.py
 %%ZOPEBASEDIR%%/lib/python/dcdb.pyc
@@ -1484,6 +1492,7 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/pcgi/configure
 %%ZOPEBASEDIR%%/pcgi/configure.in
 %%ZOPEBASEDIR%%/pcgi/install-sh
+%%ZOPEBASEDIR%%/pcgi/manifest
 %%ZOPEBASEDIR%%/pcgi/parseinfo.c
 %%ZOPEBASEDIR%%/pcgi/parseinfo.o
 %%ZOPEBASEDIR%%/pcgi/pcgi-wrapper.c
@@ -1504,10 +1513,8 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/utilities/load_site.pyc
 %%ZOPEBASEDIR%%/utilities/testrunner.py
 %%ZOPEBASEDIR%%/utilities/testrunner.pyc
-%%ZOPEBASEDIR%%/var/.cvsignore
-@unexec if ! `grep -q %B/Data.fs %B/Data.fs.in`; then rm %B/Data.fs; fi
 %%ZOPEBASEDIR%%/var/Data.fs.in
-@exec if [ ! -f %B/Data.fs ]; then cp %B/Data.fs.in %B/Data.fs; fi
+@exec if [ ! -f %B/Data.fs ]; then cp %B/%f %B/Data.fs; fi
 %%ZOPEBASEDIR%%/w_pcgi.py
 %%ZOPEBASEDIR%%/w_pcgi.pyc
 %%ZOPEBASEDIR%%/wo_pcgi.py
@@ -1518,8 +1525,13 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/zpasswd.pyc
 %%CGIBINDIR%%/Zope.cgi
 %%CGIBINDIR%%/pcgi-wrapper
-@dirrm %%CGIBINDIR%%
-@dirrm %%ZOPEBASEDIR%%/var
+@unexec rm -f %D/%%ZOPEBASEDIR%%/inituser
+@unexec rm -f %D/%%ZOPEBASEDIR%%/var/*.pid
+@unexec rm -f %D/%%ZOPEBASEDIR%%/var/*.soc
+@unexec rm -f %D/%%ZOPEBASEDIR%%/var/*.tmp
+@unexec rm -f %D/%%ZOPEBASEDIR%%/var/*.lock
+@unexec rmdir %D/%%CGIBINDIR%% 2>/dev/null || true
+@unexec rmdir %D/%%ZOPEBASEDIR%%/var 2>/dev/null || true
 @dirrm %%ZOPEBASEDIR%%/utilities
 @dirrm %%ZOPEBASEDIR%%/pcgi/Win32
 @dirrm %%ZOPEBASEDIR%%/pcgi/Util
@@ -1591,6 +1603,7 @@ etc/rc.d/zope.sh
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/MailHost/dtml
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/MailHost
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/MIMETools
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/Hotfix_2001-02-23
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/ExternalMethod/www
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/ExternalMethod/help
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/ExternalMethod/dtml
@@ -1628,6 +1641,6 @@ etc/rc.d/zope.sh
 @dirrm %%ZOPEBASEDIR%%/ZServer/PubCore
 @dirrm %%ZOPEBASEDIR%%/ZServer
 @dirrm %%ZOPEBASEDIR%%/Extensions
-@dirrm %%ZOPEBASEDIR%%
-@dirrm www
-@dirrm etc/apache
+@unexec rmdir %D/%%ZOPEBASEDIR%% 2>/dev/null || true
+@unexec rmdir %D/%%WEBBASEDIR%% 2>/dev/null || true
+@unexec rmdir %D/%%APACHE_CONFDIR%% 2>/dev/null || true

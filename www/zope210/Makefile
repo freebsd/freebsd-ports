@@ -18,22 +18,21 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 MAINTAINER=	nbm@FreeBSD.org
 
-BUILD_DEPENDS=	python1.5:${PORTSDIR}/lang/python15
+USE_PYTHON=	yes
 
 #RUN_DEPENDS=	${LOCALBASE}/sbin/apache:${PORTSDIR}/www/apache13-modssl
 
 DIST_SUBDIR=	zope
 
 # Build has to be done in the final location after installing the sources
-# there. It were a major action to fix all paths otherwise.
+# there. It was a major action to fix all paths otherwise.
 do-build:	# empty, but needs to be there for the python dependency.
 
 # Change these, if you like, via the environment.
-WEBBASEDIR?=	www
-SZOPEBASEDIR?=	${WEBBASEDIR}/Zope
-SCGIBINDIR?=	${WEBBASEDIR}/cgi-bin.default
-APACHE_CONFDIR?=	${PREFIX}/etc/apache
-PYTHON15?=	${LOCALBASE}/bin/python1.5
+WEBBASEDIR?=		www
+SZOPEBASEDIR?=		${WEBBASEDIR}/Zope
+SCGIBINDIR?=		${WEBBASEDIR}/cgi-bin.default
+SAPACHE_CONFDIR?=	etc/apache
 
 WHOAMI!=	id -un
 .if ${WHOAMI} == "root"
@@ -45,10 +44,13 @@ NOBODY_USER?=	${WHOAMI}
 # Don't change these.
 ZOPEBASEDIR=	${PREFIX}/${SZOPEBASEDIR}
 CGIBINDIR=	${PREFIX}/${SCGIBINDIR}
+APACHE_CONFDIR=	${PREFIX}/${SAPACHE_CONFDIR}
 
 PLIST_SUB=	ZOPEBASEDIR=${SZOPEBASEDIR} \
 		CGIBINDIR=${SCGIBINDIR} \
-		VERSION=${PORTVERSION}
+		APACHE_CONFDIR=${SAPACHE_CONFDIR} \
+		VERSION=${PORTVERSION} \
+		WEBBASEDIR=${WEBBASEDIR}
 
 # I decided to consider the whole souce tree to be part of the package
 # since in there, Zope can live on its own. It does leave some *.o files
@@ -66,13 +68,14 @@ do-install:	#
 	@${CP} -Rp ${WRKDIR}/lib ${ZOPEBASEDIR}/
 	@#
 	@${CHMOD} -R u+w ${ZOPEBASEDIR}
-	@(cd ${ZOPEBASEDIR} && ${PYTHON15} w_pcgi.py)
+	@(cd ${ZOPEBASEDIR} && ${PYTHON_CMD} w_pcgi.py)
 	@${CHMOD} -R u+w ${ZOPEBASEDIR}
-	@(cd ${ZOPEBASEDIR} && ${PYTHON15} wo_pcgi.py)
+	@(cd ${ZOPEBASEDIR} && ${PYTHON_CMD} wo_pcgi.py)
 	@(cd ${ZOPEBASEDIR} && \
 		${MV} Zope.cgi Zope.cgi.orig ; \
 		${ECHO} "#! ${CGIBINDIR}/pcgi-wrapper" > Zope.cgi ; \
-		${CAT} Zope.cgi.orig >> Zope.cgi )
+		${CAT} Zope.cgi.orig >> Zope.cgi ; \
+		${RM} Zope.cgi.orig )
 	@#
 	@${MKDIR} ${CGIBINDIR}
 	@(cd ${ZOPEBASEDIR} ; \
@@ -84,10 +87,11 @@ do-install:	#
 	@${CHMOD} ugo+rwt ${ZOPEBASEDIR}/var
 	@${CHOWN} ${NOBODY_USER} ${ZOPEBASEDIR}/var
 	@${CHOWN} ${NOBODY_USER} ${ZOPEBASEDIR}/var/*
+	@${RM} ${ZOPEBASEDIR}/var/.cvsignore
 	@#
 	@${ECHO} "===>   Setting user/password to zopemaster/test..."
 	@(cd ${ZOPEBASEDIR} && \
-		${PYTHON15} zpasswd.py -u zopemaster \
+		${PYTHON_CMD} zpasswd.py -u zopemaster \
 			-p test -e CLEARTEXT access )
 	@#
 	@${CHOWN} ${NOBODY_USER} ${ZOPEBASEDIR}/access
