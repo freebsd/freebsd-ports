@@ -1,6 +1,5 @@
-diff -u team-3.1/Makefile ./Makefile
---- team-3.1/Makefile	Sat Jul  1 17:33:24 1995
-+++ ./Makefile	Sat Jul  1 17:53:20 1995
+--- Makefile.dist	Sat Jul  1 08:33:24 1995
++++ Makefile	Sun Mar 15 12:37:16 1998
 @@ -1,25 +1,8 @@
 -CFLAGS		=-O
 -LDFLAGS		=-s
@@ -12,7 +11,7 @@ diff -u team-3.1/Makefile ./Makefile
 +MANDIR=	${PREFIX}/man/man
  
 -DEST=		
-+CFLAGS+= -DHAVE_PARAM_H
++CFLAGS+= -DHAVE_PARAM_H -DHAVE_WAIT_H
  
 -MI		=$(DEST)/usr/
 -MD		=$(DEST)/usr/
