@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	linux-j
-PORTVERSION=	501b
+PORTVERSION=	502a
 CATEGORIES=	lang linux
 MASTER_SITES=	http://www.jsoftware.com/download/
 DISTNAME=	j${PORTVERSION}_linux
@@ -31,12 +31,12 @@ do-build:
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/jconsole ${PREFIX}/bin
 	@${INSTALL_SCRIPT} ${WRKSRC}/jw ${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/j501b/system/extras/help/man/${MAN1} ${PREFIX}/man/man1
+	@${INSTALL_MAN} ${WRKSRC}/j502a/system/extras/help/man/${MAN1} ${PREFIX}/man/man1
 	@${MKDIR} ${PREFIX}/lib/j
-	@cd ${WRKSRC}/j501b && \
+	@cd ${WRKSRC}/j502a && \
 		${TAR} -cf - system user profile.ijs readme.txt j.jar | \
 			${TAR} -xf - -C ${PREFIX}/lib/j
-	@${INSTALL_PROGRAM} ${WRKSRC}/j501b/jconsole ${PREFIX}/lib/j/jconsole
+	@${INSTALL_PROGRAM} ${WRKSRC}/j502a/jconsole ${PREFIX}/lib/j/jconsole
 	@brandelf -t Linux ${PREFIX}/lib/j/jconsole
 
 post-install:
