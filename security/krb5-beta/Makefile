@@ -8,9 +8,17 @@
 PORTNAME=		krb5
 PORTVERSION=		1.2.7b2
 CATEGORIES=		security
+# USE_MIT_TARBALL tells the port that the user has fetched the source
+# directly from MIT rather than the default crypto-publish.org.
+USE_MIT_TARBALL?=	NO
+.if defined(USE_MIT_TARBALL) && ${USE_MIT_TARBALL} == "YES"
 MASTER_SITES=		# manual download
 DISTNAME=		krb5-1.2.7-beta2
 EXTRACT_SUFX=		.tar
+.else
+MASTER_SITES=		http://www.crypto-publish.org/dist/mit-kerberos5/
+EXTRACT_SUFX=		.tar.gz
+.endif
 
 MAINTAINER=		cy@FreeBSD.org
 COMMENT=	An authentication system developed at MIT, successor to Kerberos IV
@@ -24,7 +32,7 @@ GNU_CONFIGURE=		yes
 CONFIGURE_ARGS?=	--enable-shared --with-ccopts="${CFLAGS}"
 CONFIGURE_ENV=		INSTALL="${INSTALL}" YACC=/usr/bin/yacc
 MAKE_ARGS=		INSTALL="${INSTALL}"
-KRB5_KRB4_COMPAT?=	YES
+KRB5_KRB4_COMPAT?=	NO
 
 .if !defined(KRB5_KRB4_COMPAT) || ${KRB5_KRB4_COMPAT} == "NO"
 CONFIGURE_ARGS+=	--without-krb4
@@ -37,7 +45,7 @@ PLIST_SUB+=		KRB4=""
 PREFIX=			${KRB5_HOME}
 .endif
 
-# Set USA_RESIDENT appropriately in /etc/make.conf if you like
+# Set USE_MIT_TARBALL appropriately in /etc/make.conf if you like
 
 INFO_FILES=		krb425.info krb5-admin.info krb5-admin.info-1 \
 			krb5-admin.info-2 krb5-admin.info-3 krb5-install.info \
@@ -63,13 +71,16 @@ HTML_DOCS=		admin.html install_foot.html user-guide.html          \
 			admin_toc.html krb425.html user-guide_toc.html        \
 			install.html krb425_toc.html
 
+.if defined(USE_MIT_TARBALL) && ${USE_MIT_TARBALL} == "YES"
 do-fetch:
 	@if [ ! -f ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ]; then        \
 	${ECHO} "";							\
 	${ECHO} ">> Kerberos V contains encryption software and is";    \
-	${ECHO} "   export restricted.  If you are not a USA resident,";\
-	${ECHO} "   then you cannot obtain the Kerberos V sources from";\
-	${ECHO} "   within the United States.";                         \
+	${ECHO} "   export restricted.  If you are not a USA or";       \
+	${ECHO} "   Canadian resident, you cannot obtain Kerberos V";   \
+	${ECHO} "   sources directly from MIT and must obtain the";     \
+	${ECHO} "   source from crypto-publish.org by unsetting";       \
+	${ECHO} "   USE_MIT_TARBALL or setting USE_MIT_TARBALL to NO."; \
 	${ECHO} "";							\
 	${ECHO} ">> The Kerberos V sources must be fetched manually.";  \
 	${ECHO} "   Please visit ${KERBEROSV_URL}";                     \
@@ -86,6 +97,7 @@ post-extract:
 		${CHMOD} -R ug-s,go-w ${WRKDIR}/${DISTNAME}; \
 		${CHOWN} -R 0:0 ${WRKDIR}/${DISTNAME}; \
 	fi
+.endif
 .endif
 
 pre-build:
