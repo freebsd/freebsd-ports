@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	vice
-PORTVERSION=	1.7
+PORTVERSION=	1.10
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.funet.fi/pub/cbm/crossplatform/emulators/VICE/
 
@@ -24,6 +24,7 @@ MLINKS=		vice.1 x64.1 \
 		vice.1 x128.1 \
 		vice.1 xvic.1 \
 		vice.1 xpet.1 \
+		vice.1 xplus4.1 \
 		vice.1 xcbm2.1
 
 .include <bsd.port.pre.mk>
@@ -47,6 +48,9 @@ post-patch:
 	@${MV} ${WRKSRC}/man/vice.1 ${WRKSRC}/man/vice.1.sed
 	${SED} -e "s=%%PREFIX%%=${PREFIX}=g" \
 		${WRKSRC}/man/vice.1.sed > ${WRKSRC}/man/vice.1
+
+pre-install:
+	@${MKDIR} ${DOCSDIR}/images ${DOCSDIR}/plain
 
 post-install:
 	@${LN} -sf vice_toc.html ${DOCSDIR}/index.html
