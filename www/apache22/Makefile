@@ -18,7 +18,7 @@ MASTER_SITES=	http://www.apache.org/dist/httpd/ \
 DISTNAME=	httpd-${PORTVERSION:S/./_/g}-beta
 
 PATCH_SITES=	http://fallin.lv/distfiles/
-PATCHFILES=	${PKGNAME}.diff
+PATCHFILES=	${PORTNAME}-${PORTVERSION}_1.diff
 
 MAINTAINER?=	perky@fallin.lv
 
