@@ -1,5 +1,4 @@
 %%SITE_PERL%%/XML/RSS/Parser.pm
-%%SITE_PERL%%/XML/RSS/Parser/Block.pm
 %%SITE_PERL%%/XML/RSS/Parser/Feed.pm
 %%SITE_PERL%%/XML/RSS/Parser/Element.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/RSS/Parser/.packlist
