@@ -7,7 +7,7 @@
 
 PORTNAME=	linuxpluginwrapper
 PORTVERSION=	20040310
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www linux
 MASTER_SITES=	http://people.FreeBSD.org/~nork/distfiles/ \
 		${MASTER_SITE_LOCAL}
@@ -18,15 +18,23 @@ COMMENT=	A wrapper allowing use of linux-plugins with native applications
 
 .include <bsd.port.pre.mk>
 
-RUN_DEPENDS=	${LOCALBASE}/Acrobat5/Browsers/intellinux/nppdf.so:${PORTSDIR}/print/acroread5 \
-		${LOCALBASE}/lib/linux-flashplugin6/libflashplayer.so:${PORTSDIR}/www/linux-flashplugin6
+.if		!defined(WITHOUT_PLUGINS)
+RUN_DEPENDS=	${LOCALBASE}/lib/linux-flashplugin6/libflashplayer.so:${PORTSDIR}/www/linux-flashplugin6
+.if		${OSVERSION} >= 500000
+RUN_DEPENDS+=	${LOCALBASE}/Acrobat5/Browsers/intellinux/nppdf.so:${PORTSDIR}/print/acroread5
+.else
+USE_MOTIF=	yes
+.endif
+.endif
 
 ONLY_FOR_ARCHS=	i386
 
 USE_XLIB=	yes
-USE_MOTIF=	yes
 USE_REINPLACE=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
+.if		defined(WITHOUT_PLUGINS)
+PLIST=		${WRKDIR}/pkg-plist
+.endif
 CONFLICTS=	flashpluginwrapper-*
 
 .if		${OSVERSION} >= 500000
@@ -71,15 +79,22 @@ post-build:
 		-e '/^%%LIBMAPCONF%%$$/r ${LIBMAPCONF}' \
 		-e '/^%%LIBMAPCONF%%$$/d' \
 		< ${.CURDIR}/pkg-message > ${PKGMESSAGE}
+.if		defined(WITHOUT_PLUGINS)
+	@${SED} -e "/exec/d" ${.CURDIR}/pkg-plist > ${PLIST}
+.endif
 
 pre-install:
 	@${MKDIR} ${X11BASE}/lib/browser_plugins
+.if		!defined(WITHOUT_PLUGINS)
+.if		${OSVERSION} >= 500000
 	@${LN} -sf ${LOCALBASE}/Acrobat5/Browsers/intellinux/nppdf.so \
 		${X11BASE}/lib/browser_plugins/
+.endif
 	@${LN} -sf ${LOCALBASE}/lib/linux-flashplugin6/flashplayer.xpt \
 		${X11BASE}/lib/browser_plugins/
 	@${LN} -sf ${LOCALBASE}/lib/linux-flashplugin6/libflashplayer.so \
 		${X11BASE}/lib/browser_plugins/
+.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
