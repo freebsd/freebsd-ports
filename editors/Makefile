@@ -54,6 +54,7 @@
     SUBDIR += glimmer
     SUBDIR += gmanedit
     SUBDIR += gnotepad+
+    SUBDIR += gnuserv
     SUBDIR += gnuserv-emacs20
     SUBDIR += gxedit
     SUBDIR += hexcurse
