@@ -1,1 +1,46 @@
 bin/xpenguins
+share/xpenguins/themes/Penguins/about
+share/xpenguins/themes/Penguins/angel.xpm
+share/xpenguins/themes/Penguins/ballooner.xpm
+share/xpenguins/themes/Penguins/bomber.xpm
+share/xpenguins/themes/Penguins/climber.xpm
+share/xpenguins/themes/Penguins/climber_skateboarder.xpm
+share/xpenguins/themes/Penguins/config
+share/xpenguins/themes/Penguins/digger.xpm
+share/xpenguins/themes/Penguins/exit.xpm
+share/xpenguins/themes/Penguins/explosion.xpm
+share/xpenguins/themes/Penguins/faller.xpm
+share/xpenguins/themes/Penguins/floater.xpm
+share/xpenguins/themes/Penguins/penguin.png
+share/xpenguins/themes/Penguins/reader.xpm
+share/xpenguins/themes/Penguins/skateboarder.xpm
+share/xpenguins/themes/Penguins/splat.xpm
+share/xpenguins/themes/Penguins/superpenguin.xpm
+share/xpenguins/themes/Penguins/tumbler.xpm
+share/xpenguins/themes/Penguins/walker.xpm
+share/xpenguins/themes/Penguins/zapped.xpm
+share/xpenguins/themes/Classic_Penguins/about
+share/xpenguins/themes/Classic_Penguins/bomber.xpm
+share/xpenguins/themes/Classic_Penguins/climber.xpm
+share/xpenguins/themes/Classic_Penguins/config
+share/xpenguins/themes/Classic_Penguins/explosion.xpm
+share/xpenguins/themes/Classic_Penguins/faller.xpm
+share/xpenguins/themes/Classic_Penguins/floater.xpm
+share/xpenguins/themes/Classic_Penguins/sitter.png
+share/xpenguins/themes/Classic_Penguins/tumbler.xpm
+share/xpenguins/themes/Classic_Penguins/walker.xpm
+share/xpenguins/themes/Turtles/about
+share/xpenguins/themes/Turtles/bomber.xpm
+share/xpenguins/themes/Turtles/climber.xpm
+share/xpenguins/themes/Turtles/config
+share/xpenguins/themes/Turtles/explosion.xpm
+share/xpenguins/themes/Turtles/faller.xpm
+share/xpenguins/themes/Turtles/floater.xpm
+share/xpenguins/themes/Turtles/tumbler.xpm
+share/xpenguins/themes/Turtles/turtle.png
+share/xpenguins/themes/Turtles/walker.xpm
+@dirrm share/xpenguins/themes/Penguins
+@dirrm share/xpenguins/themes/Classic_Penguins
+@dirrm share/xpenguins/themes/Turtles
+@dirrm share/xpenguins/themes
+@dirrm share/xpenguins
