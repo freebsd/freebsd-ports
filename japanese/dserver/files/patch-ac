@@ -1,6 +1,6 @@
 patch files for kenjiro
---- clients/kenjiro/sub.c.orig	Tue Jun 27 01:21:31 1995
-+++ clients/kenjiro/sub.c	Tue Jan 28 15:39:36 1997
+--- clients/kenjiro/sub.c.orig	Sun Dec  5 20:23:03 2004
++++ clients/kenjiro/sub.c	Sun Dec  5 21:50:51 2004
 @@ -1,6 +1,11 @@
  #include "kenjiro.h"
  
@@ -21,7 +21,7 @@ patch files for kenjiro
  int numk;
  int mode;
  int fd1 = 0;
-@@ -31,6 +37,26 @@
+@@ -39,6 +45,26 @@
  	ttynew.c_cc[VQUIT] = 0;
  	if (ioctl(0, TCSETA, &ttynew) < 0) return;
  #else
@@ -48,7 +48,7 @@ patch files for kenjiro
  	if (ioctl(0, TIOCGETP, &ttyorg) < 0) return;
  	ttynew = ttyorg;
  	ttynew.sg_flags |= CBREAK;
-@@ -41,7 +67,9 @@
+@@ -49,7 +75,9 @@
  	tcnew = tcorg;
  	tcnew.t_quitc = -1;
  	if (ioctl(0, TIOCSETC, &tcnew) < 0) return;
@@ -58,7 +58,7 @@ patch files for kenjiro
  	sttylevel++;
  	if (ioctl(0, TIOCGLTC, &ltcorg) < 0) return;
  	ltcnew = ltcorg;
-@@ -49,6 +77,7 @@
+@@ -57,6 +85,7 @@
  	ltcnew.t_dsuspc = -1;
  	if (ioctl(0, TIOCSLTC, &ltcnew) < 0) return;
  	sttylevel++;
@@ -66,7 +66,7 @@ patch files for kenjiro
  }
  
  void romakana_fixtty()
-@@ -60,12 +89,18 @@
+@@ -68,12 +97,18 @@
  	case 1:
  		ioctl(0, TCSETA, &ttyorg);
  #else
@@ -85,7 +85,35 @@ patch files for kenjiro
  #endif
  	}
  }
-@@ -128,7 +163,7 @@
+@@ -111,17 +146,17 @@
+ 
+ 	if ((fd1 = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP)) < 0){
+ 		fprintf(stderr, "Can not create socket\n");
+-		exit();
++		exit(1);
+ 	}
+ 	addr.sin_family = AF_INET;
+ 	if ((host = gethostbyname(server)) == NULL){
+ 		fprintf(stderr,"Can not get address %s\n", server);
+-		exit();
++		exit(1);
+ 	}
+ #ifdef SERVICE
+ 	if ((sp = getservbyname(service, "tcp")) == NULL){
+ 		fprintf(stderr, "%s is not found in /etc/services\n", service);
+-		exit();
++		exit(1);
+ 	}
+ 	addr.sin_port = sp->s_port;
+ #else
+@@ -130,13 +165,13 @@
+ 	bcopy(host->h_addr, &addr.sin_addr, host->h_length);
+ 	if (connect(fd1,&addr,sizeof(addr)) < 0) {
+ 		fprintf(stderr,"Can not connect\n");
+-		exit();
++		exit(1);
+ 	}
+ }
  
  void getttyval()
  {
