@@ -1,0 +1,10 @@
+--- Source_Files/ModelView/ModelRenderer.cpp.orig	Sun Sep  2 07:24:31 2001
++++ Source_Files/ModelView/ModelRenderer.cpp	Thu Feb  7 10:33:05 2002
+@@ -5,7 +5,6 @@
+ */
+ 
+ #include <string.h>
+-#include <alloca.h>
+ #include "cseries.h"
+ #include "ModelRenderer.h"
+ 
