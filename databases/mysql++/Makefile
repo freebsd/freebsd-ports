@@ -20,6 +20,9 @@ LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} -D_FIX_FOR_BSD_ -Wno-deprecated"
+CONFIGURE_ARGS=	--with-mysql=${LOCALBASE} \
+		--with-mysql-include=${LOCALBASE}/include/mysql/ \
+		--with-mysql-lib=${LOCALBASE}/lib/mysql/
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
