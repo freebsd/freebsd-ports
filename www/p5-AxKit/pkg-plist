@@ -24,6 +24,7 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/Plugin/Passthru.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/Plugin/QueryStringCache.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/Provider.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/Provider/File.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/Provider/FileWrite.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/Provider/Filter.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/Provider/Scalar.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/AxKit/StyleChooser/Cookie.pm
