@@ -1,0 +1,84 @@
+cybercalendar/calendar/admin/help/help_add.html
+cybercalendar/calendar/admin/help/help_calconfig.html
+cybercalendar/calendar/admin/help/help_controls.html
+cybercalendar/calendar/admin/help/help_index.html
+cybercalendar/calendar/admin/help/help_tags.html
+cybercalendar/calendar/admin/help/help_sec.html
+cybercalendar/calendar/admin/images/browse.png
+cybercalendar/calendar/admin/images/hd_cal.png
+cybercalendar/calendar/admin/images/save.png
+cybercalendar/calendar/admin/images/search.png
+cybercalendar/calendar/admin/images/select.png
+cybercalendar/calendar/admin/admin.pl
+cybercalendar/calendar/admin/index.pl
+cybercalendar/calendar/admin/setup.pl
+cybercalendar/calendar/admin/CyberCalendar
+cybercalendar/calendar/help/sm_calendar.png
+cybercalendar/calendar/help/browsebox.jpg
+cybercalendar/calendar/help/event.png
+cybercalendar/calendar/help/help_index.html
+cybercalendar/calendar/help/help_options.html
+cybercalendar/calendar/help/help_search.html
+cybercalendar/calendar/help/help_view.html
+cybercalendar/calendar/help/help_view_lg.html
+cybercalendar/calendar/help/lg_cal_day.png
+cybercalendar/calendar/help/lg_cal_thumb.png
+cybercalendar/calendar/help/options-email.png
+cybercalendar/calendar/help/options-printable.png
+cybercalendar/calendar/help/options-reminder.png
+cybercalendar/calendar/help/options-title.png
+cybercalendar/calendar/help/options-vcal.png
+cybercalendar/calendar/help/searchbox2.png
+cybercalendar/calendar/help/both.jpg
+cybercalendar/calendar/images/browse.png
+cybercalendar/calendar/images/hd_cal.png
+cybercalendar/calendar/images/help.png
+cybercalendar/calendar/images/save.png
+cybercalendar/calendar/images/search.png
+cybercalendar/calendar/images/select.png
+cybercalendar/calendar/templates/large_calendar.html
+cybercalendar/calendar/templates/small_calendar.html
+cybercalendar/calendar/printable.pl
+cybercalendar/calendar/event.vcs
+cybercalendar/calendar/vcal.pl
+cybercalendar/calendar/submit.pl
+cybercalendar/calendar/index.pl
+cybercalendar/calendar/optionform.pl
+cybercalendar/calendar/pda.pl
+cybercalendar/calendar/CyberCalendar
+cybercalendar/CyberCalendar/Util.pm
+cybercalendar/CyberCalendar/Application.pm
+cybercalendar/CyberCalendar/Auth.pm
+cybercalendar/CyberCalendar/Calendar.pm
+cybercalendar/CyberCalendar/Config.pm
+cybercalendar/CyberCalendar/Database.pm
+cybercalendar/CyberCalendar/Http.pm
+cybercalendar/CyberCalendar/PDA.pm
+cybercalendar/CyberCalendar/Setup.pm
+cybercalendar/CyberCalendar/Admin.pm
+cybercalendar/setup/cron_job/optimize_tables.pl
+cybercalendar/setup/cron_job/run_reminder.pl
+cybercalendar/setup/db/calendar.sql
+cybercalendar/setup/db/caluser.sql
+cybercalendar/setup/db/upgrade.sql
+cybercalendar/setup/db/upgrade_convert_acl.sql
+cybercalendar/setup/httpd.conf.changes
+@dirrm cybercalendar/calendar/admin/help
+@dirrm cybercalendar/calendar/admin/images
+@dirrm cybercalendar/calendar/admin
+@dirrm cybercalendar/calendar/help
+@dirrm cybercalendar/calendar/images
+@dirrm cybercalendar/calendar/templates
+@dirrm cybercalendar/calendar
+@dirrm cybercalendar/CyberCalendar
+@dirrm cybercalendar/setup/cron_job
+@dirrm cybercalendar/setup/db
+@dirrm cybercalendar/setup
+@dirrm cybercalendar/
+%%PORTDOCS%%share/doc/cybercalendar/CHANGES
+%%PORTDOCS%%share/doc/cybercalendar/COPYING
+%%PORTDOCS%%share/doc/cybercalendar/INSTALL
+%%PORTDOCS%%share/doc/cybercalendar/INSTALL.NOSITEPERL
+%%PORTDOCS%%share/doc/cybercalendar/README
+%%PORTDOCS%%share/doc/cybercalendar/TODO
+%%PORTDOCS%%@dirrm share/doc/cybercalendar

@@ -62,6 +62,7 @@
     SUBDIR += comclear
     SUBDIR += crawl
     SUBDIR += css-mode.el
+    SUBDIR += cybercalendar
     SUBDIR += dansguardian
     SUBDIR += dansguardian-devel
     SUBDIR += decss
