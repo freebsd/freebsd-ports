@@ -7,14 +7,10 @@
 
 PORTNAME=	emacs
 PORTVERSION=	21.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	editors ipv6
 MASTER_SITES=		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-
-PATCH_SITES=		http://www.nijino.com/ari/patches/
-PATCHFILES=		emacs-21.1-fontset-20011109.patch.gz
-PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	nobutaka@FreeBSD.org
 
@@ -28,12 +24,22 @@ USE_XLIB=	yes
 USE_XPM=	yes
 .endif
 
+.if !defined(WITHOUT_MENUBAR_FONTSET)
+PATCH_SITES=		http://www.nijino.com/ari/patches/
+PATCHFILES=		emacs-21.1-fontset-20011109.patch.gz
+PATCH_DIST_STRIP=	-p1
+.endif
+
 USE_AUTOCONF=	yes
 USE_GMAKE=	yes
+ALL_TARGET=	bootstrap
 
 CONFIGURE_TARGET=	${MACHINE_ARCH}--freebsd
 .if defined(WITHOUT_X11)
 CONFIGURE_ARGS=		--with-x=no
+.endif
+.if defined(WITHOUT_XIM)
+CONFIGURE_ARGS+=	--without-xim
 .endif
 
 MAN1=		ctags.1 emacs.1 etags.1 gfdl.1
