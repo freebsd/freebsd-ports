@@ -6,6 +6,22 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20050301:
+  AFFECTS: users of sysutils/ganglia-monitor-core
+  AUTHOR: brooks@FreeBSD.org
+
+  With the move to Ganglia 3.0.0, the configuration file for gmond has
+  changed completely.  The -r or --convert options may be used to
+  emit a file in the new format given one in the old.
+
+  Startup is now controlled by an RC_SUBR script so the gmond_enable and
+  gmetad_enable variables will need to be set for gmond and gmetad to be
+  started.  Existing gmond.sh and gmetad.sh scripts in PREFIX/etc/rc.d
+  should be removed.
+
+  Due to a bug in ganglia's build process, the previous version may need
+  to be removed before ganglia can be upgraded.
+
 20050224:
   AFFECTS: users of lang/ruby18 and any apps that depend on ruby18
   AUTHOR: mezz@FreeBSD.org

@@ -1,42 +1,17 @@
 @comment $FreeBSD$
+bin/ganglia-config
 bin/gstat
 bin/gmetric
+@unexec if cmp -s %D/etc/gmond.conf %D/etc/gmond.conf.sample; then rm -f %D/etc/gmond.conf; fi
 etc/gmond.conf.sample
+%%GMETAD%%@unexec cmp -s %D/etc/gmetad.conf %D/etc/gmetad.conf.sample && rm -f %D/etc/gmetad.conf
 %%GMETAD%%etc/gmetad.conf.sample
-etc/rc.d/gmond.sh.sample
-%%GMETAD%%etc/rc.d/gmetad.sh.sample
 include/ganglia.h
-include/ganglia/ascii.h
-include/ganglia/asciitab.h
-include/ganglia/daemon_inetd.h
-include/ganglia/daemon_init.h
-include/ganglia/debug_msg.h
-include/ganglia/error.h
-include/ganglia/file.h
-include/ganglia/hash.h
-include/ganglia/iasciitab.h
-include/ganglia/latin1tab.h
-include/ganglia/llist.h
-include/ganglia/my_inet_ntop.h
-include/ganglia/nametab.h
-include/ganglia/net.h
-include/ganglia/rdwr.h
-include/ganglia/utf8tab.h
-include/ganglia/xmldef.h
-include/ganglia/xmlparse.h
-include/ganglia/xmlrole.h
-include/ganglia/xmltok.h
-include/ganglia/xmltok_impl.h
-include/ganglia/gexec_funcs.h
-include/ganglia/fsusage.h
-include/ganglia/gexec_process.h
-include/ganglia/gmond_config.h
-lib/libganglia.so.2
+lib/libganglia-3.0.0.so.0
+lib/libganglia-3.0.0.so
 lib/libganglia.so
-lib/libganglia.la
 lib/libganglia.a
 %%GMETAD%%sbin/gmetad
 sbin/gmond
-@dirrm include/ganglia
 @unexec rmdir %D/var/db/ganglia/rrds 2>/dev/null || true
 @unexec rmdir %D/var/db/ganglia 2>/dev/null || true
