@@ -1,6 +1,6 @@
---- autogen.sh.orig	Fri Aug  1 04:40:52 2003
-+++ autogen.sh	Mon Aug 25 03:31:45 2003
-@@ -10,31 +10,31 @@
+--- autogen.sh.orig	Mon Oct  6 04:00:53 2003
++++ autogen.sh	Fri Oct 31 16:07:18 2003
+@@ -10,7 +10,7 @@
  
  rm -f autogen.err
  
@@ -9,15 +9,7 @@
  
  if [ $? -ne 0 ]; then
      echo "Error: you need automake 1.4 or later.  Please upgrade."
-     exit 1
- fi
- 
--if test ! -d `aclocal --print-ac-dir 2>> autogen.err`; then
--  echo "Bad aclocal (automake) installation"
-+if test ! -d `%%ACLOCAL%% --print-ac-dir 2>> autogen.err`; then
-+  echo "Bad %%ACLOCAL%% (automake) installation"
-   exit 1
- fi
+@@ -19,17 +19,17 @@
  
  # Produce aclocal.m4, so autoconf gets the automake macros it needs
  # 
@@ -40,7 +32,7 @@
      exit 1
    }
    pkgcheckdef=`grep PKG_CHECK_MODULES aclocal.m4 | grep AC_DEFUN`
-@@ -56,9 +56,9 @@
+@@ -51,9 +51,9 @@
  # Produce all the `GNUmakefile.in's and create neat missing things
  # like `install-sh', etc.
  # 
@@ -52,7 +44,7 @@
      echo ""
      echo "* * * warning: possible errors while running automake - check autogen.err"
      echo ""
-@@ -74,7 +74,7 @@
+@@ -69,7 +69,7 @@
  # 
  echo "Creating configure..."
  
