@@ -3568,6 +3568,7 @@ kpasswdd	src/libexec/kpasswdd
 kprof		ports/devel/kprof
 kprop		src/eBones/kprop
 kpropd		src/eBones/kpropd
+kpsk		ports/comms/kpsk
 krb		src/eBones/krb
 krb5		ports/security/krb5
 krbinclude	src/eBones/include
