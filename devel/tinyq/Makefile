@@ -23,6 +23,7 @@ CONFIGURE_ARGS+=-thread -stl
 CONFIGURE_ENV+=	QTDIR="${WRKSRC}"
 MAKE_ENV+=	QTDIR="${WRKSRC}"
 INSTALLDIR=	${PREFIX}/tinyq
+NO_FILTER_SHLIBS=yes
 
 .include <bsd.port.pre.mk>
 .include <bsd.port.post.mk>
