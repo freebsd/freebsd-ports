@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	portmanager
-PORTVERSION=	0.2.7
+PORTVERSION=	0.2.8
 PORTREVISION=	0
 #-----------------------------------------
 #for local use, remove before submitting PR
@@ -55,8 +55,18 @@ CONFIGURE_ARGS+=	--with-debug=yes
 
 INSTALLS_SHLIB=		yes
 USE_REINPLACE=		yes
-# Need INSTALL_TARGET to install ${PREFIX}/etc/portmanager/pm-020.conf.SAMPLE
 INSTALL_TARGET=		install info
+
+pre-fetch:
+.if !defined(WITH_DEBUG)
+	@${ECHO}	"***********************************************************************"
+	@${ECHO}	"* portmanager                                                         *"
+	@${ECHO}	"***********************************************************************"
+	@${ECHO}	"*                                                                     *"
+	@${ECHO}	"* WITH_DEBUG=yes enables debug support and all compile warninings     *"
+	@${ECHO}	"*                                                                     *"
+	@${ECHO}	"***********************************************************************"
+.endif
 
 post-configure:
 	@${REINPLACE_CMD} -e	\
@@ -64,28 +74,6 @@ post-configure:
 		 ${WRKSRC}/externVars.h
 
 post-install:
-	@${ECHO}	"***********************************************************************"
-	@${ECHO}	"* portmanager                                                         *"
-	@${ECHO}	"***********************************************************************"
-	@${ECHO}	"*                                                                     *"
-.if !defined(WITH_DEBUG)
-	@${ECHO}	"* WITH_DEBUG=yes enables debug support and all compile warninings     *"
-	@${ECHO}	"*                                                                     *"
-.endif
-	@${ECHO}	"* upgrade ports example:                                              *"
-	@${ECHO}	"*                                                                     *"
-	@${ECHO}	"* portmanager -u -ip editors/nedit editors/openoffice                 *"
-	@${ECHO}	"*                                                                     *"
-	@${ECHO}	"* upgrades everything except nedit,open office and their dependencies *"
-	@${ECHO}	"*                                                                     *"
-	@${ECHO}	"* portmanager -sl will show you leaf ports, these are safe to remove  *"
-	@${ECHO}	"*                                                                     *"
-	@${ECHO}	"* portmanager -slid will let you safely remove leaf ports             *"
-	@${ECHO}	"*                                                                     *"
-	@${ECHO}	"* see man portmanager(1) or http://portmanager.sunsite.dk             *"
-	@${ECHO}	"*                                                                     *"
-	@${ECHO}	"***********************************************************************"
-	@${ECHO}	"* all feedback is welcome, send to:                                   *"
-	@${ECHO}	"* Michael C. Shultz ringworm01@gmail.com                              *"
-	@${ECHO}	"***********************************************************************"
+	@${CAT} ${PKGMESSAGE}
+
 .include <bsd.port.mk>
