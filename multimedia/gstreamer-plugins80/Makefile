@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.8.1
-PORTREVISION=	2
+PORTVERSION=	0.8.2
 CATEGORIES=	multimedia audio
 MASTER_SITES=	${MASTER_SITE_GNOME} \
 		http://gstreamer.freedesktop.org/src/gst-plugins/
@@ -140,6 +139,11 @@ WITH_ARTS=yes
 # cdparanoia
 .if exists(${LOCALBASE}/lib/libcdda_paranoia.a)
 WITH_CDPARANOIA=yes
+.endif
+
+# dts
+.if exists(${LOCALBASE}/lib/libdts_pic.a)
+WITH_DTS=yes
 .endif
 
 # esound
@@ -382,6 +386,16 @@ PLIST_SUB+=	CDPARANOIA="@comment "
 LIB_DEPENDS+=	cdda_interface.0:${PORTSDIR}/audio/cdparanoia
 
 PLIST_SUB+=	CDPARANOIA=""
+.endif
+
+# dts
+.ifndef(WITH_DTS)
+CONFIGURE_ARGS+=	--disable-dts
+PLIST_SUB+=	DTS="@comment "
+.else
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libdts_pic.a:${PORTSDIR}/multimedia/libdts
+RUN_DEPENDS+=	${LOCALBASE}/lib/libdts_pic.a:${PORTSDIR}/multimedia/libdts
+PLIST_SUB+=	DTS=""
 .endif
 
 # esound
@@ -816,6 +830,10 @@ pre-everything::
 .ifndef(WITH_CDPARANOIA)
 	@${ECHO_MSG} '===>'
 	@${ECHO_MSG} '===> Define WITH_CDPARANOIA to enable cdparanoia Audio plugin'
+.endif
+.ifndef(WITH_DTS)
+	@${ECHO_MSG} '===>'
+	@${ECHO_MSG} '===> Define WITH_DTS to enable DTS decoding support'
 .endif
 .ifndef(WITH_ESOUND)
 	@${ECHO_MSG} '===>'
