@@ -104,16 +104,20 @@ BUILD_DEPENDS+=	openssl:\${PORTSDIR}/security/openssl \\
 		\${PREFIX}/lib/libcrypto.a:\${PORTSDIR}/security/openssl
 RUN_DEPENDS+=	openssl:\${PORTSDIR}/security/openssl
 
-VERSION_MODSSL=	2.2.5
+VERSION_MODSSL=	2.2.7
 
 RESTRICTED=	"Contains cryptography"
 
-CONFIGURE_ARGS+=--enable-module=ssl
+CONFIGURE_ARGS+=--enable-module=ssl \
+		--enable-module=define
 CONFIGURE_ENV+=	SSL_BASE='SYSTEM' PATH="\${PREFIX}/bin:\${PATH}"
 
-PATCHDIR=	\${.CURDIR}/patches.modssl
 PLIST=		\${PKGDIR}/PLIST.modssl
 SSL=		ssl
+
+TYPE=	test
+CRT=
+KEY=
 
 pre-patch:
 	@cd \${WRKDIR}/mod_ssl-\${VERSION_MODSSL}-\${VERSION_APACHE} \\
