@@ -5,13 +5,15 @@ bin/faxrm
 bin/faxstat
 bin/sendfax
 bin/sendpage
-etc/rc.d/hylafax.sh.sample
+etc/rc.d/hylafax-faxq.sh.sample
+etc/rc.d/hylafax-hfaxd.sh.sample
 lib/fax/faxcover.ps
 lib/fax/faxcover_example_sgi.ps
 lib/fax/faxmail.ps
 lib/fax/hfaxd.conf
 lib/fax/pagesizes
 lib/fax/typerules
+@dirrm lib/fax
 sbin/choptest
 sbin/cqtest
 sbin/dialtest
@@ -51,150 +53,264 @@ sbin/tiffcheck
 sbin/tsitest
 sbin/typetest
 sbin/xferfaxstats
-@dirrm lib/fax
-@cwd %%SPOOL%%
-COPYRIGHT
-bin/archive
-bin/faxrcvd
-bin/mkcover
-bin/notify
-bin/notify.awk
-@unexec if [ -f %D/bin/pdf2fax ]; then rm %D/bin/pdf2fax; fi
-bin/pdf2fax.gs
-bin/pcl2fax
-bin/pollrcvd
-@unexec if [ -f %D/bin/ps2fax ]; then rm %D/bin/ps2fax; fi
-bin/ps2fax.dps
-bin/ps2fax.gs
-bin/ps2fax.imp
-bin/tiff2fax
-bin/wedged
-config/att-dataport
-config/att-dataport-2
-config/att-dataport-2.0
-config/att-dpexpress-2
-config/cirrus
-config/class1
-config/class1.0
-config/class2
-config/class2.0
-config/class2.1
-config/digi
-config/digi-2
-config/digi-20
-config/davicom-2
-config/dsi-scout+
-config/e-tech
-config/eicon
-config/eicon-2
-config/elsa-microlink-56k-basic-2.0
-config/everex-2496d
-config/exar
-config/gvc-288
-config/gvc-288-2
-config/hayes
-config/intel-400e
-config/lucent
-config/lucent-isa
-config/lucent-mt-2
-config/lucent-mt-20
-config/lucent-mt-21
-config/moto-288
-config/mt-1432
-config/nuvo-voyager
-config/ppi-pm14400fxmt
-config/ppi-pm14400fxsa
-config/prometheus
-config/rc144ac
-config/rc144ac-1
-config/rc288dpi
-config/rc288dpi-1
-config/rc32acl
-config/rc32acl-1
-config/rockwell-k56
-config/rockwell-rc
-config/sierra
-config/skel
-config/telebit-qblazer
-config/telebit-t3000
-config/telebit-wb
-config/topic
-config/tricom2842
-config/uds-fastalk
-config/umc92144
-config/umc9624
-config/usr-2.0
-config/usr-rts
-config/usr-xon
-config/zyxel-1496e
-config/zyxel-1496e-1
-config/zyxel-1496e-2.0
-config/zyxel-2864
-@unexec if [ -f %D/dev/null ]; then rm %D/dev/null; fi
-etc/cover.templ
-etc/dialrules
-etc/dialrules.europe
-etc/dialrules.sf-ba
-etc/dpsprinter.ps
-etc/hosts.hfaxd
-etc/lutRS18.pcf
-etc/xferfaxlog
-@exec chown uucp:dialer %D/fax
-@comment pkg_* can't deal with fifos if specified as a file
-@exec mkfifo %D/FIFO
-@exec chown uucp:dialer %D/FIFO
-@exec chmod 600 %D/FIFO
-@unexec rm %D/FIFO*
-@exec mkdir %D/archive
-@exec chown uucp:dialer %D/archive
-@exec chmod 700 %D/archive
-@exec mkdir %D/client
-@exec chown uucp:dialer %D/client
-@exec chmod 755 %D/client
-@exec mkdir %D/dev
-@exec chown uucp:dialer %D/dev
-@exec chmod 755 %D/dev
-@exec mkdir %D/docq
-@exec chown uucp:dialer %D/docq
-@exec chmod 700 %D/docq
-@exec mkdir %D/doneq
-@exec chown uucp:dialer %D/doneq
-@exec chmod 700 %D/doneq
-@exec mkdir %D/info
-@exec chown uucp:dialer %D/info
-@exec chmod 755 %D/info
-@exec mkdir %D/log
-@exec chown uucp:dialer %D/log
-@exec chmod 755 %D/log
-@exec mkdir %D/pollq
-@exec chown uucp:dialer %D/pollq
-@exec chmod 700 %D/pollq
-@exec mkdir %D/recvq
-@exec chown uucp:dialer %D/recvq
-@exec chmod 755 %D/recvq
-@exec mkdir %D/sendq
-@exec chown uucp:dialer %D/sendq
-@exec chmod 700 %D/sendq
-@exec mkdir %D/status
-@exec chown uucp:dialer %D/status
-@exec chmod 755 %D/status
-@exec mkdir %D/tmp
-@exec chown uucp:dialer %D/tmp
-@exec chmod 700 %D/tmp
-@dirrm archive
-@dirrm bin
-@dirrm client
-@dirrm config
-@dirrm dev
-@dirrm docq
-@dirrm doneq
-@dirrm etc
-@dirrm info
-@dirrm log
-@dirrm pollq
-@dirrm recvq
-@dirrm sendq
-@dirrm status
-@dirrm tmp
-@cwd /
-@dirrm %%SPOOL%%
+%%PORTDOCS%%share/doc/hylafax/acknowledge.html
+%%PORTDOCS%%share/doc/hylafax/binary.html
+%%PORTDOCS%%share/doc/hylafax/building.html
+%%PORTDOCS%%share/doc/hylafax/cgi-bin/man2html
+%%PORTDOCS%%share/doc/hylafax/cgi-bin/manpage
+%%PORTDOCS%%share/doc/hylafax/cgi-bin/unquote
+%%PORTDOCS%%share/doc/hylafax/class1.html
+%%PORTDOCS%%share/doc/hylafax/class2.html
+%%PORTDOCS%%share/doc/hylafax/class2.0.html
+%%PORTDOCS%%share/doc/hylafax/contrib.html
+%%PORTDOCS%%share/doc/hylafax/copyright.html
+%%PORTDOCS%%share/doc/hylafax/documentation.html
+%%PORTDOCS%%share/doc/hylafax/faxgateway.html
+%%PORTDOCS%%share/doc/hylafax/ftpmail-help.html
+%%PORTDOCS%%share/doc/hylafax/ghostscript.html
+%%PORTDOCS%%share/doc/hylafax/HOWTO.html
+%%PORTDOCS%%share/doc/hylafax/hylafax.gif
+%%PORTDOCS%%share/doc/hylafax/hylafax3.0.html
+%%PORTDOCS%%share/doc/hylafax/hylafax4.0.html
+%%PORTDOCS%%share/doc/hylafax/icons/at_work_icon.gif
+%%PORTDOCS%%share/doc/hylafax/icons/back.gif
+%%PORTDOCS%%share/doc/hylafax/icons/ball_blue_icon.gif
+%%PORTDOCS%%share/doc/hylafax/icons/button.excl.gif
+%%PORTDOCS%%share/doc/hylafax/icons/contents.gif
+%%PORTDOCS%%share/doc/hylafax/icons/frog.gif
+%%PORTDOCS%%share/doc/hylafax/icons/improved.gif
+%%PORTDOCS%%share/doc/hylafax/icons/info_icon.gif
+%%PORTDOCS%%share/doc/hylafax/icons/new.gif
+%%PORTDOCS%%share/doc/hylafax/icons/next.gif
+%%PORTDOCS%%share/doc/hylafax/icons/smiley.gif
+%%PORTDOCS%%share/doc/hylafax/icons/warning_icon.gif
+%%PORTDOCS%%share/doc/hylafax/index.html
+%%PORTDOCS%%share/doc/hylafax/install-source.html
+%%PORTDOCS%%share/doc/hylafax/ixotap.html
+%%PORTDOCS%%share/doc/hylafax/mailing-lists.html
+%%PORTDOCS%%share/doc/hylafax/Majordomo/help.html
+%%PORTDOCS%%share/doc/hylafax/matthias.gif
+%%PORTDOCS%%share/doc/hylafax/matthias.html
+%%PORTDOCS%%share/doc/hylafax/modems.html
+%%PORTDOCS%%share/doc/hylafax/Modems/Hayes/hayes.html
+%%PORTDOCS%%share/doc/hylafax/Modems/Supra/class1.html
+%%PORTDOCS%%share/doc/hylafax/Modems/Supra/class2.html
+%%PORTDOCS%%share/doc/hylafax/Modems/Telebit/faxcmds.html
+%%PORTDOCS%%share/doc/hylafax/Modems/ZyXEL/autodetect.html
+%%PORTDOCS%%share/doc/hylafax/Modems/ZyXEL/codes.html
+%%PORTDOCS%%share/doc/hylafax/Modems/ZyXEL/commands.html
+%%PORTDOCS%%share/doc/hylafax/Modems/ZyXEL/compression.html
+%%PORTDOCS%%share/doc/hylafax/Modems/ZyXEL/examples.html
+%%PORTDOCS%%share/doc/hylafax/Modems/ZyXEL/voice.html
+%%PORTDOCS%%share/doc/hylafax/Modems/att-dataport.html
+%%PORTDOCS%%share/doc/hylafax/Modems/digicom-scout.html
+%%PORTDOCS%%share/doc/hylafax/Modems/everex-2496d.html
+%%PORTDOCS%%share/doc/hylafax/Modems/hayes-accura288.html
+%%PORTDOCS%%share/doc/hylafax/Modems/hayes-optima2400.html
+%%PORTDOCS%%share/doc/hylafax/Modems/index.html
+%%PORTDOCS%%share/doc/hylafax/Modems/multitech-1432.html
+%%PORTDOCS%%share/doc/hylafax/Modems/multitech-1932.html
+%%PORTDOCS%%share/doc/hylafax/Modems/multitech-2834.html
+%%PORTDOCS%%share/doc/hylafax/Modems/nuvo-96424pfx.html
+%%PORTDOCS%%share/doc/hylafax/Modems/ppi-pm14400fxmt.html
+%%PORTDOCS%%share/doc/hylafax/Modems/rockwell-56k.html
+%%PORTDOCS%%share/doc/hylafax/Modems/supra-v32bis.html
+%%PORTDOCS%%share/doc/hylafax/Modems/telebit-t3000.html
+%%PORTDOCS%%share/doc/hylafax/Modems/twincom-144df.html
+%%PORTDOCS%%share/doc/hylafax/Modems/ucom-traveller96.html
+%%PORTDOCS%%share/doc/hylafax/Modems/usr-courier.html
+%%PORTDOCS%%share/doc/hylafax/Modems/usr-sportster.html
+%%PORTDOCS%%share/doc/hylafax/Modems/zyxel-1496.html
+%%PORTDOCS%%share/doc/hylafax/Modems/zyxel-elite.html
+%%PORTDOCS%%share/doc/hylafax/Modems/zyxel-omni.html
+%%PORTDOCS%%share/doc/hylafax/namechange.html
+%%PORTDOCS%%share/doc/hylafax/operation.html
+%%PORTDOCS%%share/doc/hylafax/overview.html
+%%PORTDOCS%%share/doc/hylafax/sam.gif
+%%PORTDOCS%%share/doc/hylafax/sam.html
+%%PORTDOCS%%share/doc/hylafax/setup.html
+%%PORTDOCS%%share/doc/hylafax/setup-advanced.html
+%%PORTDOCS%%share/doc/hylafax/setup-client.html
+%%PORTDOCS%%share/doc/hylafax/source.html
+%%PORTDOCS%%share/doc/hylafax/toc.html
+%%PORTDOCS%%share/doc/hylafax/troubleshooting.html
+%%PORTDOCS%%share/doc/hylafax/upgrade4.0.html
+%%PORTDOCS%%share/doc/hylafax/v2.3beta036.html
+%%PORTDOCS%%share/doc/hylafax/v2.3beta036special.html
+%%PORTDOCS%%share/doc/hylafax/v3.0beta096.html
+%%PORTDOCS%%share/doc/hylafax/v3.0beta100.html
+%%PORTDOCS%%share/doc/hylafax/v3.0beta108.html
+%%PORTDOCS%%share/doc/hylafax/v3.0beta110.html
+%%PORTDOCS%%share/doc/hylafax/v3.0beta111.html
+%%PORTDOCS%%share/doc/hylafax/v3.0beta112.html
+%%PORTDOCS%%share/doc/hylafax/v3.0beta113.html
+%%PORTDOCS%%share/doc/hylafax/v3.0beta114.html
+%%PORTDOCS%%share/doc/hylafax/v4.0beta005.html
+%%PORTDOCS%%share/doc/hylafax/v4.0beta006.html
+%%PORTDOCS%%share/doc/hylafax/v4.0beta007.html
+%%PORTDOCS%%share/doc/hylafax/v4.0beta008.html
+%%PORTDOCS%%share/doc/hylafax/v4.0beta009.html
+%%PORTDOCS%%share/doc/hylafax/v4.0beta010.html
+%%PORTDOCS%%share/doc/hylafax/v4.0beta011.html
+%%PORTDOCS%%share/doc/hylafax/v4.0beta012.html
+%%PORTDOCS%%share/doc/hylafax/v4.0beta013.html
+%%PORTDOCS%%share/doc/hylafax/v4.0beta014.html
+%%PORTDOCS%%share/doc/hylafax/v4.0beta015.html
+%%PORTDOCS%%share/doc/hylafax/v4.0beta018.html
+%%PORTDOCS%%share/doc/hylafax/v4.0beta020.html
+%%PORTDOCS%%share/doc/hylafax/v4.0beta021.html
+%%PORTDOCS%%share/doc/hylafax/v4.0beta022.html
+%%PORTDOCS%%share/doc/hylafax/v4.0beta023.html
+%%PORTDOCS%%share/doc/hylafax/version.html
+%%PORTDOCS%%@dirrm share/doc/hylafax/cgi-bin
+%%PORTDOCS%%@dirrm share/doc/hylafax/icons
+%%PORTDOCS%%@dirrm share/doc/hylafax/Majordomo
+%%PORTDOCS%%@dirrm share/doc/hylafax/Modems/Hayes
+%%PORTDOCS%%@dirrm share/doc/hylafax/Modems/Supra
+%%PORTDOCS%%@dirrm share/doc/hylafax/Modems/Telebit
+%%PORTDOCS%%@dirrm share/doc/hylafax/Modems/ZyXEL
+%%PORTDOCS%%@dirrm share/doc/hylafax/Modems
+%%PORTDOCS%%@dirrm share/doc/hylafax
+@cwd /var/spool
+hylafax/COPYRIGHT
+@exec mkfifo %D/hylafax/FIFO
+@exec chown uucp:dialer %D/hylafax/FIFO
+@exec chmod 0600 %D/hylafax/FIFO
+@unexec rm %D/hylafax/FIFO*
+@exec mkdir %D/hylafax/archive
+@exec chown uucp:dialer %D/hylafax/archive
+@exec chmod 0700 %D/hylafax/archive
+hylafax/bin/archive
+hylafax/bin/faxrcvd
+hylafax/bin/mkcover
+hylafax/bin/notify
+hylafax/bin/notify.awk
+@unexec if [ -f %D/hylafax/bin/pdf2fax ]; then rm %D/hylafax/bin/pdf2fax; fi
+hylafax/bin/pdf2fax.gs
+hylafax/bin/pcl2fax
+hylafax/bin/pollrcvd
+@unexec if [ -f %D/hylafax/bin/ps2fax ]; then rm %D/hylafax/bin/ps2fax; fi
+hylafax/bin/ps2fax.dps
+hylafax/bin/ps2fax.gs
+hylafax/bin/ps2fax.imp
+hylafax/bin/tiff2fax
+hylafax/bin/wedged
+@exec mkdir %D/hylafax/client
+@exec chown uucp:dialer %D/hylafax/client
+@exec chmod 0755 %D/hylafax/client
+hylafax/config/att-dataport
+hylafax/config/att-dataport-2
+hylafax/config/att-dataport-2.0
+hylafax/config/att-dpexpress-2
+hylafax/config/cirrus
+hylafax/config/class1
+hylafax/config/class1.0
+hylafax/config/class2
+hylafax/config/class2.0
+hylafax/config/class2.1
+hylafax/config/digi
+hylafax/config/digi-2
+hylafax/config/digi-20
+hylafax/config/davicom-2
+hylafax/config/dsi-scout+
+hylafax/config/e-tech
+hylafax/config/eicon
+hylafax/config/eicon-2
+hylafax/config/elsa-microlink-56k-basic-2.0
+hylafax/config/everex-2496d
+hylafax/config/exar
+hylafax/config/gvc-288
+hylafax/config/gvc-288-2
+hylafax/config/hayes
+hylafax/config/intel-400e
+hylafax/config/lucent
+hylafax/config/lucent-isa
+hylafax/config/lucent-mt-2
+hylafax/config/lucent-mt-20
+hylafax/config/lucent-mt-21
+hylafax/config/moto-288
+hylafax/config/mt-1432
+hylafax/config/nuvo-voyager
+hylafax/config/ppi-pm14400fxmt
+hylafax/config/ppi-pm14400fxsa
+hylafax/config/prometheus
+hylafax/config/rc144ac
+hylafax/config/rc144ac-1
+hylafax/config/rc288dpi
+hylafax/config/rc288dpi-1
+hylafax/config/rc32acl
+hylafax/config/rc32acl-1
+hylafax/config/rockwell-k56
+hylafax/config/rockwell-rc
+hylafax/config/sierra
+hylafax/config/skel
+hylafax/config/telebit-qblazer
+hylafax/config/telebit-t3000
+hylafax/config/telebit-wb
+hylafax/config/topic
+hylafax/config/tricom2842
+hylafax/config/uds-fastalk
+hylafax/config/umc92144
+hylafax/config/umc9624
+hylafax/config/usr-2.0
+hylafax/config/usr-rts
+hylafax/config/usr-xon
+hylafax/config/zyxel-1496e
+hylafax/config/zyxel-1496e-1
+hylafax/config/zyxel-1496e-2.0
+hylafax/config/zyxel-2864
+@exec mkdir %D/hylafax/dev
+@exec chown uucp:dialer %D/hylafax/dev
+@exec chmod 0755 %D/hylafax/dev
+@unexec if [ -f %D/hylafax/dev/null ]; then rm %D/hylafax/dev/null; fi
+@exec mkdir %D/hylafax/docq
+@exec chown uucp:dialer %D/hylafax/docq
+@exec chmod 0700 %D/hylafax/docq
+@exec mkdir %D/hylafax/doneq
+@exec chown uucp:dialer %D/hylafax/doneq
+@exec chmod 0700 %D/hylafax/doneq
+hylafax/etc/cover.templ
+hylafax/etc/dialrules
+hylafax/etc/dialrules.europe
+hylafax/etc/dialrules.sf-ba
+hylafax/etc/dpsprinter.ps
+hylafax/etc/hosts.hfaxd
+hylafax/etc/lutRS18.pcf
+hylafax/etc/xferfaxlog
+@exec mkdir %D/hylafax/info
+@exec chown uucp:dialer %D/hylafax/info
+@exec chmod 755 %D/hylafax/info
+@exec mkdir %D/hylafax/log
+@exec chown uucp:dialer %D/hylafax/log
+@exec chmod 755 %D/hylafax/log
+@exec mkdir %D/hylafax/pollq
+@exec chown uucp:dialer %D/hylafax/pollq
+@exec chmod 700 %D/hylafax/pollq
+@exec mkdir %D/hylafax/recvq
+@exec chown uucp:dialer %D/hylafax/recvq
+@exec chmod 755 %D/hylafax/recvq
+@exec mkdir %D/hylafax/sendq
+@exec chown uucp:dialer %D/hylafax/sendq
+@exec chmod 700 %D/hylafax/sendq
+@exec mkdir %D/hylafax/status
+@exec chown uucp:dialer %D/hylafax/status
+@exec chmod 755 %D/hylafax/status
+@exec mkdir %D/hylafax/tmp
+@exec chown uucp:dialer %D/hylafax/tmp
+@exec chmod 700 %D/hylafax/tmp
+@dirrm hylafax/archive
+@dirrm hylafax/bin
+@dirrm hylafax/client
+@dirrm hylafax/config
+@dirrm hylafax/dev
+@dirrm hylafax/docq
+@dirrm hylafax/doneq
+@dirrm hylafax/etc
+@dirrm hylafax/info
+@dirrm hylafax/log
+@dirrm hylafax/pollq
+@dirrm hylafax/recvq
+@dirrm hylafax/sendq
+@dirrm hylafax/status
+@dirrm hylafax/tmp
+@dirrm hylafax

@@ -31,8 +31,16 @@ CONFIGURE_ARGS=	--with-INSTALL="" \
 		--with-DIR_HTML="${DOCSDIR}"
 
 # Defaults to "North American Letter".  Use "ISO A4" for A4.
-.ifdef PAGESIZE
+.if defined(PAGESIZE)
 CONFIGURE_ARGS+=--with-PAGESIZE="${PAGESIZE}"
+.endif
+
+# Want HTML documentation?
+.if defined(WITH_HTMLDOC)
+CONFIGURE_ARGS+=--with-HTML=yes
+PLIST_SUB+=	PORTDOCS=""
+.else
+PLIST_SUB+=	PORTDOCS="@comment "
 .endif
 
 .if defined(PACKAGE_BUILDING) || defined(BATCH)
@@ -44,46 +52,51 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	ENVOPTS="${CFLAGS}"
 USE_REINPLACE=	yes
 
-MAN1=	hylafax-client.1 faxalter.1 faxcover.1 faxmail.1 \
-	faxrm.1 faxstat.1 sendfax.1 \
-	sendpage.1 sgi2fax.1 textfmt.1 edit-faxcover.1
-MAN5=	pagesizes.5f typerules.5f hosts.hfaxd.5f xferfaxlog.5f \
-	cid.5f doneq.5f hylafax-config.5f destctrls.5f dialrules.5f \
+MAN1=	hylafax-client.1 faxalter.1 faxcover.1 faxmail.1 faxrm.1 faxstat.1 \
+	sendfax.1 sendpage.1 sgi2fax.1 textfmt.1 edit-faxcover.1
+
+MAN5=	pagesizes.5f typerules.5f hosts.hfaxd.5f xferfaxlog.5f cid.5f \
+	doneq.5f hylafax-config.5f destctrls.5f dialrules.5f \
 	hylafax-info.5f hylafax-log.5f pagermap.5f recvq.5f sendq.5f \
 	hylafax-server.5f hylafax-shutdown.5f status.5f tsi.5f
+
 MAN8=	cqtest.8c choptest.8c dialtest.8c faxabort.8c faxaddmodem.8c \
 	faxadduser.8c faxanswer.8c faxconfig.8c faxdeluser.8c faxmodem.8c \
 	faxstate.8c faxcron.8c faxgetty.8c faxinfo.8c faxlock.8c faxq.8c \
 	faxqclean.8c faxquit.8c faxrcvd.8c faxsend.8c faxsetup.8c \
 	faxwatch.8c hfaxd.8c mkcover.8c notify.8c pagesend.8c pdf2fax.8c \
-	pollrcvd.8c ps2fax.8c recvstats.8c \
-	tagtest.8c tiff2fax.8c tiffcheck.8c tsitest.8c wedged.8c \
-	xferfaxstats.8c
+	pollrcvd.8c ps2fax.8c recvstats.8c tagtest.8c tiff2fax.8c \
+	tiffcheck.8c tsitest.8c wedged.8c xferfaxstats.8c
 
 SUID_EXES=	${PREFIX}/sbin/faxgetty ${PREFIX}/sbin/faxq \
 		${PREFIX}/bin/faxrm ${PREFIX}/bin/faxalter
 
-post-extract:
-	${RM} -rf ${WRKSRC}/zlib ${WRKSRC}/regex
+pre-extract:
+	@if [ -d /var/db/pkg/tiff-3.6.1 ]; then \
+		${ECHO_MSG} ""; \
+		${ECHO_MSG} "Hylafax does not work with libtiff-3.6.1."; \
+		${ECHO_MSG} "Please upgrade to libtiff-3.6.1_1. (/usr/ports/graphics/tiff)"; \
+		${ECHO_MSG} ""; \
+		exit 1; \
+	fi
 
 post-patch:
 	${REINPLACE_CMD} \
 		-e 's,/usr/local,${LOCALBASE},g' \
 		${WRKSRC}/configure
-	${REINPLACE_CMD} \
-		-e 's,%%LOCALBASE%%,${LOCALBASE},g' \
-		${WRKSRC}/util/faxrcvd.sh.in
-
-pre-install:
-PLIST_SUB=	SPOOL="`${GREP} SPOOL ${WRKSRC}/defs | ${CUT} -c10-`"
 
 post-install:
 	${CHOWN} uucp ${SUID_EXES}
 	${CHMOD} 4555 ${SUID_EXES}
-	@if [ ! -f ${PREFIX}/etc/rc.d/hylafax.sh.sample ]; then	\
+	@if [ ! -f ${PREFIX}/etc/rc.d/hylafax-faxq.sh.sample ]; then \
 		${SED} 's^/usr/local^${PREFIX}^g' \
-			< ${FILESDIR}/hylafax.sh.sample \
-			> ${PREFIX}/etc/rc.d/hylafax.sh.sample;	\
+			< ${FILESDIR}/hylafax-faxq.sh.sample \
+			> ${PREFIX}/etc/rc.d/hylafax-faxq.sh.sample; \
+	fi
+	@if [ ! -f ${PREFIX}/etc/rc.d/hylafax-hfaxd.sh.sample ]; then \
+		${SED} 's^/usr/local^${PREFIX}^g' \
+			< ${FILESDIR}/hylafax-hfaxd.sh.sample \
+			> ${PREFIX}/etc/rc.d/hylafax-hfaxd.sh.sample; \
 	fi
 	@${SED} 's^/usr/local^${PREFIX}^g' < ${PKGMESSAGE}
 
