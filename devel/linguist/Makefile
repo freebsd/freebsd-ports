@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.trolltech.com/qt/pre-releases/
 DISTNAME=	${PORTNAME}-pre
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	tmake:${PORTSDIR}/devel/tmake
 
@@ -32,6 +32,10 @@ MAKE_ARGS=	-e
 .if ${MACHINE_ARCH} == "alpha"
 CFLAGS+=	-O0
 .endif
+
+pre-configure:
+	@find ${WRKSRC} -name '*.pro' | xargs ${PERL} -pi -e \
+		's/(^CONFIG.*)/\1 thread/'
 
 post-configure:
 	@${PERL} -pi -e 's|\$\(SUBDIRS\):.*tmake_all|\$\(SUBDIRS\):|' \
