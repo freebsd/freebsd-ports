@@ -10,7 +10,7 @@ diff -u -r1.49 _mysql.c
  	check_connection(self);
  	Py_BEGIN_ALLOW_THREADS
 +
-+#if MYSQL_VERSION_ID >= 040103
++#if MYSQL_VERSION_ID >= 40103
 +   r = mysql_shutdown(&(self->connection),
 +                      SHUTDOWN_DEFAULT);
 +#else
