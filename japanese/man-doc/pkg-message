@@ -1,0 +1,21 @@
+***********************************************************************
+*                                                                     *
+* Japanese online manual has been successfully installed.             *
+*                                                                     *
+* (1) First, see jman(1) with following command sequence:             *
+*        % setenv LC_ALL ja_JP.EUC                                    *
+*        % setenv PAGER jless                                         *
+*        % jman jman                                                  *
+*                                                                     *
+* (2) To get more info, please visit following web page (Japanese):   *
+*        Jpman project <URL:http://www.jp.freebsd.org/man-jp/>        *
+*                                                                     *
+* (3) If you have any questions, comments, bug reports, suggestions,  *
+*     and/or requests for modifications, please send e-mail to:       *
+*        Jpman project mailing list <man-jp@jp.freebsd.org>           *
+*                                                                     *
+*     When we receive your reports, we will be pleased to append your *
+*     name to the contributor list on the above web page with great   *
+*     thanks.                                                         *
+*                                                                     *
+***********************************************************************
