@@ -123,7 +123,7 @@ lib/libcanna16.so.1
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 sbin/cannakill
 sbin/cannaserver
-@exec mkdir /var/run/canna
+@exec mkdir -p /var/run/canna
 @exec chown bin.bin /var/run/canna
 @exec chown bin.bin %D/lib/canna/dic/canna
 @exec chmod 775 %D/lib/canna/dic/canna
