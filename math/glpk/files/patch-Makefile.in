@@ -1,11 +1,11 @@
---- Makefile.in.orig	Sat Dec 16 23:18:41 2000
-+++ Makefile.in	Sat Dec 16 23:19:44 2000
-@@ -294,8 +294,6 @@
+--- Makefile.in.orig	Tue Mar 13 14:14:56 2001
++++ Makefile.in	Tue Mar 13 14:15:05 2001
+@@ -344,8 +344,6 @@
  	for i in $(HDRS); do \
  		$(INSTALL_DATA) $(srcdir)/include/$$i \
  			$(DESTDIR)$(includedir)/$$i; \
 -		$(INSTALL_DATA) $(srcdir)/include/$$i \
--			$(DESTDIR)$(oldincludedir)/$$i; \
+-			$(DESTDIR)$(oldincludedir)/$$i || : ; \
  	done
  	$(INSTALL_DATA) libglpk.a $(DESTDIR)$(libdir)/libglpk.a
  
