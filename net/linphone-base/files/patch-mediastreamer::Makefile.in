@@ -1,37 +1,20 @@
-
-$FreeBSD$
-
---- mediastreamer/Makefile.in.orig	Thu Apr  1 05:40:41 2004
-+++ mediastreamer/Makefile.in	Thu Apr 15 03:30:15 2004
-@@ -222,7 +222,7 @@
- 
+--- mediastreamer/Makefile.in.orig	Tue Mar 22 00:53:39 2005
++++ mediastreamer/Makefile.in	Wed Mar 23 17:52:23 2005
+@@ -66,7 +66,7 @@
+ @BUILD_UGLIB_TRUE@	$(top_builddir)/support/libuglib.la
+ @BUILD_TRUESPEECH_TRUE@am__DEPENDENCIES_3 = ../win32acm/libwin32acm.a
+ libmediastreamer_la_DEPENDENCIES = $(am__DEPENDENCIES_1) \
+-	../gsmlib/libgsm.la ../lpc10-1.5/liblpc10.la \
++	../lpc10-1.5/liblpc10.la \
+ 	../oRTP/src/libortp.la $(am__DEPENDENCIES_1) \
+ 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_2) \
+ 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_3) \
+@@ -493,7 +493,7 @@
+ 							$(VIDEO_SOURCES)
  
  libmediastreamer_la_LIBADD = $(GLIB_LIBS) \
 -							../gsmlib/libgsm.la \
 +							-lgsm \
  							../lpc10-1.5/liblpc10.la \
  							../oRTP/src/libortp.la \
- 							$(SUPPORTLIB) \
-@@ -336,7 +336,6 @@
- 						-I$(top_srcdir)/mediastreamer \
- 						-I$(top_srcdir)/oRTP/src \
- 						-I$(top_srcdir)/oRTP \
--						-I$(top_srcdir)/gsmlib   \
- 						-I$(top_srcdir)/lpc10-1.5    \
-             -I$(top_srcdir)/ffmpeg/libavcodec \
- 						-I/usr/X11R6/include/X11 \
-@@ -352,12 +351,12 @@
- 
- libmediastreamer_la_LDFLAGS =
- @BUILD_TRUESPEECH_TRUE@libmediastreamer_la_DEPENDENCIES = \
--@BUILD_TRUESPEECH_TRUE@	../gsmlib/libgsm.la \
-+@BUILD_TRUESPEECH_TRUE@	-lgsm \
- @BUILD_TRUESPEECH_TRUE@	../lpc10-1.5/liblpc10.la \
- @BUILD_TRUESPEECH_TRUE@	../oRTP/src/libortp.la \
- @BUILD_TRUESPEECH_TRUE@	../win32acm/libwin32acm.a
- @BUILD_TRUESPEECH_FALSE@libmediastreamer_la_DEPENDENCIES = \
--@BUILD_TRUESPEECH_FALSE@	../gsmlib/libgsm.la \
-+@BUILD_TRUESPEECH_FALSE@	-lgsm \
- @BUILD_TRUESPEECH_FALSE@	../lpc10-1.5/liblpc10.la \
- @BUILD_TRUESPEECH_FALSE@	../oRTP/src/libortp.la
- @BUILD_TRUESPEECH_TRUE@am__objects_1 = mstruespeechencoder.lo \
+ 							$(JACK_LIBS)\
