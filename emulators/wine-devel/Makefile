@@ -3,12 +3,12 @@
 # Date created:         Tue Oct  1 19:48:32 MET 1996
 # Whom:			se
 #
-# $Id: Makefile,v 1.30 1996/08/26 21:24:25 se Exp $
+# $Id: Makefile,v 1.31 1996/10/01 18:04:18 se Exp $
 #
 
-DATE=		960928
+DATE=		961023
 DISTNAME=	Wine-${DATE}
-PKGNAME=	wine-96.09.28
+PKGNAME=	wine-96.10.23
 CATEGORIES+=	emulators x11
 MASTER_SITES=	ftp://sunsite.unc.edu/pub/Linux/ALPHA/wine/development/ \
 		ftp://tsx-11.mit.edu/pub/linux/ALPHA/Wine/development/ \
@@ -26,6 +26,9 @@ GNU_CONFIGURE=	yes
 pre-configure:
 	@echo "WINE_INI_GLOBAL \"${PREFIX}/etc/wine.conf\"" \
 		>> ${WRKSRC}/autoconf.h
+
+post-configure:
+		cd ${WRKSRC} && make depend
 
 do-install:
 	install -c ${WRKSRC}/wine ${PREFIX}/bin
