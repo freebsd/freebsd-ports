@@ -3,7 +3,7 @@
 # Date created:		Thu Jan 14 23:28:40 CET 1999
 # Whom:			Dirk Froemberg <dirk@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1999/01/17 18:20:48 dirk Exp $
+# $Id: Makefile,v 1.3 1999/03/15 23:40:26 dirk Exp $
 #
 
 DISTNAME=	BladeEnc-076-bsd-i386
@@ -13,11 +13,6 @@ MASTER_SITES=	http://home8.swipnet.se/~w-82625/encoder/binaries/ \
 		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
 
 MAINTAINER=	dirk@FreeBSD.ORG
-
-.include <bsd.port.pre.mk>
-.if ${OSVERSION} >= 400002
-BROKEN=		unable to execute BSDI executables
-.endif
 
 ONLY_FOR_ARCHS=	i386
 NO_WRKSUBDIR=	yes
@@ -30,4 +25,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/BladeEnc.html ${PREFIX}/share/doc/BladeEnc
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
