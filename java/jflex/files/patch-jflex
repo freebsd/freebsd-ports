@@ -1,3 +1,5 @@
+$FreeBSD$
+
 --- bin/jflex.orig	Mon Oct  1 04:18:48 2001
 +++ bin/jflex	Wed Feb 18 12:19:00 2004
 @@ -1,51 +1,19 @@
