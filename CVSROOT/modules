@@ -5854,6 +5854,7 @@ sidplay		ports/audio/sidplay
 siege		ports/benchmarks/siege
 sigit		ports/mail/sigit
 sigrot		ports/mail/sigrot
+silc-client	ports/net/silc-client
 sim		ports/emulators/sim
 sim4		ports/biology/sim4
 sim6811		ports/emulators/sim6811
