@@ -1,5 +1,22 @@
-*** pop_dropcopy.c	Sat Jun  8 14:44:01 1996
---- pop_dropcopy.c	Sat Jun  8 14:50:46 1996
+*** pop_dropcopy.c.orig	Sat Mar 29 07:30:36 1997
+--- pop_dropcopy.c	Wed Apr 23 07:34:06 1997
+***************
+*** 54,60 ****
+  # define L_XTND SEEK_END
+  #endif
+  
+! #include "md5.h"
+  
+  /* This macro comes from Mark Crispin's c-client code */
+  
+--- 54,60 ----
+  # define L_XTND SEEK_END
+  #endif
+  
+! #include <md5.h>
+  
+  /* This macro comes from Mark Crispin's c-client code */
+  
 ***************
 *** 755,760 ****
 --- 755,761 ----
@@ -11,8 +28,8 @@
       long                    offset;                 /*  Old/New boundary */
       int                     nchar;                  /*  Bytes written/read */
 ***************
-*** 788,793 ****
---- 789,805 ----
+*** 794,799 ****
+--- 795,811 ----
       }
   #endif
   
@@ -31,8 +48,8 @@
        * write over existing files by limiting how much work we do while
        * running as root.
 ***************
-*** 801,806 ****
---- 813,831 ----
+*** 807,812 ****
+--- 819,837 ----
   	pwp->pw_gid = mybuf.st_gid;
   # endif
   #endif
@@ -52,32 +69,3 @@
   
       /* Now we run as the user. */
       (void) setgid((GID_T)pwp->pw_gid);
-*** popauth.c	Sun Jun  9 12:56:38 1996
---- popauth.c	Sun Jun  9 13:00:51 1996
-***************
-*** 36,43 ****
-  #include <sys/file.h>
-  #endif
-  
-! #ifdef BSDI
-! #define BSD44_DBM
-  #endif
-  
-  #ifdef NEED_STRERROR
---- 36,51 ----
-  #include <sys/file.h>
-  #endif
-  
-! #ifdef		HAVE_PARAM_H
-! #include <sys/param.h>
-! # if (defined(BSD) && (BSD >= 199103))
-! #  define	HAVE_UNISTD_H
-! #  define	HAVE_VSPRINTF
-! #  define	BIND43
-! # endif
-! # if (defined(BSD) && (BSD >= 199306))
-! #  define	BSD44_DBM
-! # endif
-  #endif
-  
-  #ifdef NEED_STRERROR

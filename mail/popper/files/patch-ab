@@ -1,3 +1,5 @@
+SKEY + pw_expire patches
+
 *** pop_pass.c.orig	Fri May 24 22:26:25 1996
 --- pop_pass.c	Tue Dec 10 23:52:23 1996
 ***************
@@ -68,11 +70,11 @@
   }
   
   #endif	/* AUTH */
-*** pop_user.c.orig	Fri May 24 22:26:47 1996
---- pop_user.c	Thu Dec  5 02:19:59 1996
+*** pop_user.c.orig	Sat Mar 29 07:30:36 1997
+--- pop_user.c	Wed Apr 23 07:03:37 1997
 ***************
-*** 117,122 ****
---- 117,134 ----
+*** 163,168 ****
+--- 163,180 ----
       }
   #endif /* APOP */
   
@@ -91,8 +93,8 @@
       /*  Tell the user that the password is required */
       return (pop_msg(p,POP_SUCCESS,"Password required for %s.",p->user));
   }
-*** popper.h.orig	Wed May 22 22:26:25 1996
---- popper.h	Thu Dec  5 02:00:27 1996
+*** popper.h.orig	Tue Apr  1 00:10:18 1997
+--- popper.h	Wed Apr 23 07:33:12 1997
 ***************
 *** 35,40 ****
 --- 35,43 ----
@@ -106,7 +108,7 @@
   
   #ifdef BSDI
 ***************
-*** 110,116 ****
+*** 114,120 ****
   # define POP_MAILDIR     "/var/mail"
   # define POP_DROP        "/var/mail/.%s.pop"
   # define POP_TMPDROP     "/var/mail/tmpXXXXXX"
@@ -114,7 +116,7 @@
   # define MAIL_COMMAND	 "/usr/sbin/sendmail"
   # define OSDONE
   #endif
---- 113,119 ----
+--- 117,123 ----
   # define POP_MAILDIR     "/var/mail"
   # define POP_DROP        "/var/mail/.%s.pop"
   # define POP_TMPDROP     "/var/mail/tmpXXXXXX"
@@ -123,8 +125,8 @@
   # define OSDONE
   #endif
 ***************
-*** 337,342 ****
---- 340,348 ----
+*** 353,358 ****
+--- 356,364 ----
   extern AUTH_DAT kdata;
   #endif /* KERBEROS */
   
