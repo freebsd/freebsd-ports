@@ -1,0 +1,6 @@
+DateTime::Calendar::Pataphysical is the implementation of the pataphysical
+calendar. Each year in this calendar contains 13 months of 29 days. This
+regularity makes this a convenient alternative for the irregular Gregorian
+calendar.
+
+WWW: http://datetime.perl.org/
