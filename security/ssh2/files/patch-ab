@@ -1,5 +1,5 @@
-*** configure.orig	Thu Mar 27 09:04:06 1997
---- configure	Fri Mar 28 15:18:56 1997
+*** configure.orig	Sun Apr  6 03:56:58 1997
+--- configure	Wed Apr 16 22:52:47 1997
 ***************
 *** 1634,1645 ****
   
@@ -33,7 +33,7 @@
   ac_safe=`echo "$ac_hdr" | sed 'y%./+-%__p_%'`
   echo $ac_n "checking for $ac_hdr""... $ac_c" 1>&6
 ***************
-*** 6696,6702 ****
+*** 6749,6755 ****
   
   cat >> $CONFIG_STATUS <<EOF
   
@@ -41,7 +41,7 @@
   EOF
   cat >> $CONFIG_STATUS <<\EOF
   for ac_file in .. $CONFIG_FILES; do if test "x$ac_file" != x..; then
---- 6690,6696 ----
+--- 6743,6749 ----
   
   cat >> $CONFIG_STATUS <<EOF
   
@@ -50,8 +50,8 @@
   cat >> $CONFIG_STATUS <<\EOF
   for ac_file in .. $CONFIG_FILES; do if test "x$ac_file" != x..; then
 ***************
-*** 6900,6905 ****
---- 6894,6901 ----
+*** 6953,6958 ****
+--- 6947,6954 ----
     done
   
     for ac_config_dir in gmp-2.0.2-ssh-2; do

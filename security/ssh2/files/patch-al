@@ -1,8 +1,8 @@
-*** sshconnect.c.orig	Thu Mar 27 09:04:10 1997
---- sshconnect.c	Sat Mar 29 01:16:51 1997
+*** sshconnect.c.orig	Sun Apr  6 03:57:04 1997
+--- sshconnect.c	Wed Apr 16 23:04:17 1997
 ***************
-*** 298,303 ****
---- 298,309 ----
+*** 302,307 ****
+--- 302,313 ----
       {
         struct sockaddr_in sin;
         int p;
@@ -16,8 +16,8 @@
   	{
   	  sock = socket(AF_INET, SOCK_STREAM, 0);
 ***************
-*** 325,330 ****
---- 331,337 ----
+*** 329,334 ****
+--- 335,341 ----
   	    }
   	  fatal("bind: %.100s", strerror(errno));
   	}
