@@ -6,17 +6,17 @@
 #
 
 PORTNAME=		cryptopp
-PORTVERSION=		5.2
+PORTVERSION=		5.2.1
 CATEGORIES=		security
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE} \
 			http://www.eskimo.com/~weidai/ \
 			http://gd.tuwien.ac.at/privacy/crypto/libs/cryptlib/ \
 			http://www.mirrors.wiretapped.net/security/cryptography/libraries/cryptolib/
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=		crypto${PORTVERSION:S/.//g}
+DISTNAME=		cryptopp${PORTVERSION:S/.//g}
 EXTRACT_SUFX=		.zip
 
-MAINTAINER=		delphij@FreeBSD.org.cn
+MAINTAINER=		delphij@FreeBSD.org
 COMMENT=		A free C++ class library of Cryptographic Primitives
 
 NO_WRKSUBDIR=		yes

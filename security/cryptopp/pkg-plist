@@ -124,6 +124,6 @@ include/cryptopp/zinflate.h
 include/cryptopp/zlib.h
 lib/libcryptopp.a
 @dirrm include/cryptopp
-%%PORTDOCS%%share/doc/cryptopp/README
-%%PORTDOCS%%share/doc/cryptopp/License
-%%PORTDOCS%%@dirrm share/doc/cryptopp
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/License
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
