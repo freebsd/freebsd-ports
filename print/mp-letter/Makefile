@@ -3,13 +3,13 @@
 # Date created:         11 July 1996
 # Whom:                 David O'Brien <obrien@cs.ucdavis.edu>
 #
-# $Id: Makefile,v 1.2 1996/11/17 08:44:57 obrien Exp $
+# $Id: Makefile,v 1.3 1996/11/18 11:38:45 asami Exp $
 #
 
 DISTNAME=	mp-3.0.1
 PKGNAME=	mp-${PAPERSIZE}-3.0.1
 CATEGORIES=	print
-MASTER_SITES=	ftp://nuxi.cs.ucdavis.edu/pub/misc/ \
+MASTER_SITES=	ftp://ftp.NUXI.com/pub/misc/ \
 		ftp://ftp.win.tue.nl/pub/mail/
 
 MAINTAINER=	obrien@cs.ucdavis.edu
