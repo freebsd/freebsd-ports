@@ -2,6 +2,7 @@ bin/bonobo-application-x-mines
 bin/bonobo-audio-ulaw
 bin/bonobo-echo
 bin/bonobo-hello
+bin/bonobo-moniker-config
 bin/bonobo-text-plain
 bin/bonobo-ui-extract
 bin/echo-client
@@ -57,6 +58,7 @@ include/bonobo/bonobo-stream-client.h
 include/bonobo/bonobo-stream-fs.h
 include/bonobo/bonobo-stream-memory.h
 include/bonobo/bonobo-stream.h
+include/bonobo/bonobo-transient.h
 include/bonobo/bonobo-ui-compat.h
 include/bonobo/bonobo-ui-component.h
 include/bonobo/bonobo-ui-container.h
@@ -131,6 +133,7 @@ share/gnome/oaf/hello.oafinfo
 share/gnome/oaf/paint-component-simple.oafinfo
 share/gnome/oaf/std-moniker.oafinfo
 share/gnome/oaf/text-plain.oafinfo
+share/gnome/ui/bonobo-application-x-mines-ui.xml
 share/locale/ca/LC_MESSAGES/bonobo.mo
 share/locale/da/LC_MESSAGES/bonobo.mo
 share/locale/de/LC_MESSAGES/bonobo.mo
@@ -156,6 +159,7 @@ share/locale/sv/LC_MESSAGES/bonobo.mo
 share/locale/tr/LC_MESSAGES/bonobo.mo
 share/locale/uk/LC_MESSAGES/bonobo.mo
 share/locale/wa/LC_MESSAGES/bonobo.mo
+@dirrm share/gnome/ui
 @dirrm share/gnome/libefs/html/libefs
 @dirrm share/gnome/libefs/html
 @dirrm share/gnome/libefs
