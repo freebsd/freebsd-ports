@@ -1,10 +1,10 @@
---- configure.orig	Mon Jul 23 14:55:39 2001
-+++ configure	Fri Jun  7 10:27:58 2002
-@@ -9336,6 +9336,7 @@
-   LIBICONV=
-   if test "$am_cv_lib_iconv" = yes; then
-     LIBICONV="-liconv"
-+    LIBS="$LIBICONV $LIBS"
-   fi
-   
+--- configure.orig	Mon Jul 23 21:55:39 2001
++++ configure	Mon Jul 29 22:29:47 2002
+@@ -5982,6 +5982,7 @@
  
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'

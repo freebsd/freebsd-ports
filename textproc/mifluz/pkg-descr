@@ -12,3 +12,5 @@ is that it is fully dynamic (update, delete, insert), uses only a
 controled amount of memory while resolving a query, has higher upper 
 limits and has a simple storage scheme. Consuming more disk space 
 allows all this. 
+
+WWW: http://www.gnu.org/software/mifluz/
