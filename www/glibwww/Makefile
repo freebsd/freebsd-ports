@@ -1,14 +1,15 @@
-# New ports collection makefile for:	glibwww2
+# New ports collection makefile for:	glibwww
 # Date created:				26 July 2000
 # Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	glibwww2
-PORTVERSION=	0.1
+PORTNAME=	glibwww
+PORTVERSION=	0.2
 CATEGORIES=	www gnome
-MASTER_SITES=	http://www.geocities.com/lordzephyroth/
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	unstable/sources/glibwww
 
 MAINTAINER=	sobomax@FreeBSD.org
 

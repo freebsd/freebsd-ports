@@ -47,7 +47,7 @@
     SUBDIR += fxhtml
     SUBDIR += g-gcl
     SUBDIR += galeon
-    SUBDIR += glibwww2
+    SUBDIR += glibwww
     SUBDIR += gn
     SUBDIR += gnuinfo
     SUBDIR += gnujsp
