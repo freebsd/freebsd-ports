@@ -1,0 +1,11 @@
+--- term/parser/parser.c.orig	Mon May 31 09:29:42 1999
++++ term/parser/parser.c	Mon May 31 09:30:23 1999
+@@ -156,7 +156,7 @@
+ iparse(TermWidget w, int *fdp, XtInputId id)
+ {
+      Import int errno;
+-     Import int read();
++     /*Import int read();*/
+      int nread, fd = *fdp;
+ 
+      if (fd < 0)
