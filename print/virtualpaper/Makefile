@@ -7,54 +7,85 @@
 
 PORTNAME=	virtualpaper
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	print
-MASTER_SITES=	http://www.research.compaq.com/SRC/virtualpaper/cgi-bin/nph-download.tcl/sources.tar.Z?object=Virtual+Paper/
-DISTFILES=	sources.tar.Z
+DISTFILES=
 
 MAINTAINER=	jdp@FreeBSD.org
 
-BUILD_DEPENDS=	m3build-6:${PORTSDIR}/lang/modula-3
-LIB_DEPENDS=	m3.6:${PORTSDIR}/lang/modula-3-lib
+BUILD_DEPENDS=	${L1}libm3vbtkit${L2}:${PORTSDIR}/lang/pm3-forms
+RUN_DEPENDS=	${L1}libm3vbtkit${L2}:${PORTSDIR}/lang/pm3-forms
+DEPENDS=	${PORTSDIR}/lang/pm3-base:configure
 
-DIST_SUBDIR=	virtualpaper-1.4
-MAN1=		LecternClient.1 Lectern.1 BuildLectern.1 EditLectern.1
+DIST_SUBDIR=	pm3
+INSTALL_TARGET=	all
+MAN1=		BuildLectern.1 EditLectern.1 Lectern.1 LecternClient.1
+PLIST_SUB+=	SOVERSION=${SOVERSION} TARGET=${TARGET} \
+		TARGETDIR=${TARGETDIR} WORDSIZE=${WORDSIZE}
+WRKSRC=		${WRKDIRPREFIX}${.CURDIR}/../../lang/pm3-base/work/pm3-${PM3VERSION}
+
+BUILDDIRS=	graphics/lecternpkg/lecternclient \
+		graphics/lecternpkg/lecterndoc \
+		graphics/lecternpkg/lectern \
+		graphics/lecternpkg/ocr \
+		graphics/lecternpkg/buildlectern \
+		graphics/lecternpkg/editlectern
+L1=		${PREFIX}/lib/m3/${TARGET}/
+PM3VERSION=	1.1.15
+PROGS=		bin/BuildLectern \
+		bin/EditLectern \
+		bin/Lectern \
+		bin/LecternClient
+SOVERSION=	7
+# hack to work around bsd.port.mk problem
+USE_BZIP2=	yes
+
+.include <bsd.port.pre.mk>
+
+.if ${PORTOBJFORMAT} == "aout"
+L2=		.so.${SOVERSION}.0
+TARGET=		FreeBSD2
+TARGETDIR=	freebsd-2
+WORDSIZE=	32
+.elif ${ARCH} == "i386"
+L2=		.so.${SOVERSION}
+.if ${OSVERSION} < 400011
+TARGET=		FreeBSD3
+TARGETDIR=	freebsd-3
+.else
+TARGET=		FreeBSD4
+TARGETDIR=	freebsd-4
+.endif
+WORDSIZE=	32
+.elif ${ARCH} == "alpha"
+.if ${OSVERSION} < 400011
+BROKEN=		Not supported on older versions of FreeBSD/Alpha
+.endif
+CFLAGS+=	-mieee
+L2=		.so.${SOVERSION}
+TARGET=		FBSD_ALPHA
+TARGETDIR=	fbsd-alpha
+WORDSIZE=	64
+.endif
+
+.if empty(TARGET)
+pre-fetch:
+	@${ECHO_MSG} "Cannot determine M3 target for this architecture"
+	@${FALSE}
+.endif
 
 do-build:
-	@cd ${WRKSRC}/lecternclient; m3build
-	@cd ${WRKSRC}/lecterndoc; m3build
-	@cd ${WRKSRC}/lectern; m3build
-	@cd ${WRKSRC}/ocr; m3build
-	@cd ${WRKSRC}/buildlectern; m3build
-	@cd ${WRKSRC}/editlectern; m3build
+	@${ECHO_MSG} "This port does everything in the install step."
+	@${ECHO_MSG} "The build step is a no-op."
 
 do-install:
-	@${ECHO_MSG} "Installing files"
-	@cd ${WRKSRC}; \
-	    ${INSTALL_PROGRAM} \
-		lecternclient/FreeBSD2/LecternClient \
-		lectern/FreeBSD2/Lectern \
-		buildlectern/FreeBSD2/BuildLectern \
-		editlectern/FreeBSD2/EditLectern \
-		${PREFIX}/bin; \
-	    ${INSTALL_MAN} \
-		lecternclient/FreeBSD2/LecternClient.1 \
-		lectern/FreeBSD2/Lectern.1 \
-		buildlectern/FreeBSD2/BuildLectern.1 \
-		editlectern/FreeBSD2/EditLectern.1 \
-		${PREFIX}/man/man1; \
-	    ${INSTALL_MAN} \
-		lecternclient/FreeBSD2/LecternClient.1.html \
-		lectern/FreeBSD2/Lectern.1.html \
-		buildlectern/FreeBSD2/BuildLectern.1.html \
-		editlectern/FreeBSD2/EditLectern.1.html \
-		${PREFIX}/lib/m3/www; \
-	    if [ ! -d ${PREFIX}/share/virtualpaper ]; then \
-		${MKDIR} ${PREFIX}/share/virtualpaper; \
-		${CHMOD} 755 ${PREFIX}/share/virtualpaper; \
-	    fi; \
-	    ${INSTALL_DATA} COPYRIGHT ${PREFIX}/share/virtualpaper
-	@${ECHO_MSG} "Stripping programs"
-	@cd ${PREFIX}/bin; \
-	    strip LecternClient Lectern BuildLectern EditLectern
+	@for i in ${BUILDDIRS}; do \
+	    ${ECHO_MSG} "Building in $${i}"; \
+	    cd ${WRKSRC}/$${i} && ${PREFIX}/bin/m3build && \
+		${PREFIX}/bin/m3ship; \
+	done
+	@for i in ${PROGS}; do strip ${PREFIX}/$$i; done
+	@${MKDIR} ${PREFIX}/share/${PORTNAME}
+	@${INSTALL_DATA} ${WRKSRC}/src/COPYRIGHT ${PREFIX}/share/${PORTNAME}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
