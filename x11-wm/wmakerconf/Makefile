@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	wmakerconf
-PORTVERSION=	2.7
-PORTREVISION=	1
+PORTVERSION=	2.8.1
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://ulli.linuxave.net/wmakerconf/
+MASTER_SITES=	http://ulli.on.openave.net/wmakerconf/
 
 MAINTAINER=	dr@domix.de
 
