@@ -1,0 +1,11 @@
+--- mk/nasm.mak.orig	Fri Sep 20 17:54:48 2002
++++ mk/nasm.mak	Fri Sep 20 17:55:06 2002
+@@ -18,7 +18,7 @@
+ NASM.BIN = nasm
+ 
+ # NASM flags (well, PROC= is not quite useful (for now?))
+-NASMFLAGS = -DOS=$(OS) -DCOMP=$(COMP) -DPROC=$(PROC) $(NASMFLAGS.SYSTEM)
++NASMFLAGS = -DOS=$(OS) -DCOMP=$(COMP) -DPROC=$(PROC) -f elf
+ 
+ # If shared libraries use position-independent code, tell NASM about that
+ ifneq ($(substr pic,$(CFLAGS.DLL))$(substr PIC,$(CFLAGS.DLL)),)
