@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.69 1998/07/18 20:00:19 hoek Exp $
+# $Id: Makefile,v 1.70 1998/07/21 17:55:12 asami Exp $
 #
 
     SUBDIR += adcomplain
@@ -31,7 +31,6 @@
     SUBDIR += mmr
     SUBDIR += movemail
     SUBDIR += mutt
-    SUBDIR += mutt.with_pgp
     SUBDIR += nmh
     SUBDIR += p5-MIME-Tools
     SUBDIR += p5-Mail-Folder
