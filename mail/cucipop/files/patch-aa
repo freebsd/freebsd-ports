@@ -1,19 +1,71 @@
---- Makefile.orig	Fri Aug  1 05:00:30 1997
-+++ Makefile	Tue Oct  7 11:13:59 1997
-@@ -1,30 +1,29 @@
- #$Id: Makefile,v 1.3 1997/08/01 01:00:30 srb Exp $
+--- authenticate.c.orig	Tue Aug 25 17:35:12 1998
++++ authenticate.c	Tue Aug 25 17:35:28 1998
+@@ -44,7 +44,7 @@
+ #define VIRTUALUSER	"vpop"
+ 
+ #ifndef MAILSPOOLDIR
+-#define MAILSPOOLDIR	"/var/spool/mail/"	     /* watch the trailing / */
++#define MAILSPOOLDIR	"/var/mail/"	     /* watch the trailing / */
+ #endif
+ #ifndef MAILSPOOLHASH
+ #define MAILSPOOLHASH	0      /* 2 would deliver to /var/spool/mail/b/a/bar */
+--- xcreat.c.orig	Tue Aug 25 17:35:46 1998
++++ xcreat.c	Tue Aug 25 17:36:03 1998
+@@ -22,7 +22,7 @@
+ /*#define NOuname		      /* uncomment if uname is not available */
+ /*#define NOstrpbrk		    /* uncomment if strpbrk is not available */
+ /*#define strchr(s,c) index(s,c)     /* uncomment if strchr is not available */
+-#define const			      /* can be undefined for ANSI compilers */
++/*#define const			      /* can be undefined for ANSI compilers */
+ 
+ #include <unistd.h>			/* open() close() link() unlink()
+ 					   getpid() */
+--- config.h.orig	Wed May 13 05:09:14 1998
++++ config.h	Tue Aug 25 18:12:48 1998
+@@ -3,7 +3,7 @@
+ #define USEdot_lock	/**/
+ /*#define USEfcntl_lock /**/	    /* to test which combinations make sense */
+ /*#define USElockf	/**/	      /* run the lockingtest program part of */
+-/*#define USEflock	/**/		/* the procmail installation process */
++#define USEflock	/**/		/* the procmail installation process */
+ 
+ /*#define SHADOW_PASSWD /**/		  /* shadow password library support */
+ 
+@@ -84,6 +84,6 @@
+ #define MAXBULLETINS	64
+ #define MAXSTATEAGE	8388608				       /* > 3 months */
+ #define MEMORY_CACHE	(64*1024)
+-#define CUCIPOP_LIB	"/var/lib/cucipop"
++#define CUCIPOP_LIB	"/var/spool/cucipop"
+ #define STATE_DB	"state.db"
+ #define BULLETINS_PATH	CUCIPOP_LIB"/bulletins"
+--- Makefile.orig	Wed May 13 05:09:14 1998
++++ Makefile	Tue Aug 25 18:12:33 1998
+@@ -1,30 +1,30 @@
+ #$Id: Makefile,v 1.18 1998/05/12 21:09:14 srb Exp $
  
 -BASENAME= /usr
 +BASENAME= $(PREFIX)
  
- GCC_WARNINGS = -O2 -pedantic -Wreturn-type -Wunused -Wformat \
-  -Wpointer-arith -Wconversion -Waggregate-return \
+-GCC_WARNINGS = -O2 -pedantic -Wreturn-type -Wunused -Wformat \
+- -Wpointer-arith -Wconversion -Waggregate-return \
++#CC_WARNINGS = -O2 -pedantic -Wreturn-type -Wunused -Wformat \
++# -Wpointer-arith -Wconversion -Waggregate-return \
   #-Wimplicit -Wshadow #-Wuninitialized
  
--CFLAGS	= -O #$(GCC_WARNINGS)
--LDFLAGS =
-+#CFLAGS	= -O #$(GCC_WARNINGS)
+ #
+ # Omit USE_DB if you don't have the -ldb2 library (Berkeley DB, v2.x)
+ # WARNING: bulletins are not remembered to have been deleted without USE_DB
+ 
+-CFLAGS	= -O -DUSE_DB #$(GCC_WARNINGS)
+-LDFLAGS = -lcrypt -ldb2
++#CFLAGS	= -O -DUSE_DB #$(GCC_WARNINGS)
 +LDFLAGS += -lcrypt -lmd
+ 
+ # If you change this, edit config.h as well
+-CUCIPOPLIB=/var/lib/cucipop
++CUCIPOPLIB=/var/spool/cucipop
+ CUCIPOPBULLETINS=$(CUCIPOPLIB)/bulletins
  
  O=o
  
@@ -26,50 +78,33 @@
 -REGPERM=0644
 +INSTALL=install -o bin -m
 +BINPERM=02555 -s -g mail
-+REGPERM=0444 -g bin
++REGPERM=0444
  
  #
  # When compiling without APOP support, the md5 library can be omitted.
- 
+@@ -32,11 +32,11 @@
  MD5_OBJ=md5/md5c.$(O)
  
--OBJS=cucipop.$(O) authenticate.$(O) atotime.$(O) locking.$(O) xcreat.$(O) \
--	$(MD5_OBJ)
-+OBJS=cucipop.$(O) authenticate.$(O) atotime.$(O) locking.$(O) xcreat.$(O)
+ OBJS=cucipop.$(O) authenticate.$(O) atotime.$(O) locking.$(O) xcreat.$(O) \
+-	dbops.$(O) hsort.$(O) simplecrypt.$(O) $(MD5_OBJ)
++	dbops.$(O) hsort.$(O) simplecrypt.$(O)
  
- all: cucipop
+-BINS=cucipop makevpopdb
++BINS=cucipop# makevpopdb
  
---- authenticate.c.orig	Fri Aug  1 05:00:31 1997
-+++ authenticate.c	Tue Oct  7 11:14:31 1997
-@@ -36,7 +36,7 @@
- #include "authenticate.h"
+-MANS=cucipop.8 makevpopdb.8
++MANS=cucipop.8
  
- #ifndef MAILSPOOLDIR
--#define MAILSPOOLDIR	"/var/spool/mail/"	     /* watch the trailing / */
-+#define MAILSPOOLDIR	"/var/mail/"		     /* watch the trailing / */
- #endif
- #ifndef MAILSPOOLHASH
- #define MAILSPOOLHASH	0      /* 2 would deliver to /var/spool/mail/b/a/bar */
---- xcreat.c.orig	Thu Apr  3 05:53:24 1997
-+++ xcreat.c	Tue Oct  7 11:14:56 1997
-@@ -22,7 +22,7 @@
- /*#define NOuname		      /* uncomment if uname is not available */
- /*#define NOstrpbrk		    /* uncomment if strpbrk is not available */
- /*#define strchr(s,c) index(s,c)     /* uncomment if strchr is not available */
--#define const			      /* can be undefined for ANSI compilers */
-+/*#define const			      /* can be undefined for ANSI compilers */
+ all: $(BINS)
  
- #include <unistd.h>			/* open() close() link() unlink()
- 					   getpid() */
-
---- config.h.orig	Fri Aug  1 05:13:05 1997
-+++ config.h	Tue Oct  7 11:40:43 1997
-@@ -3,7 +3,7 @@
- #define USEdot_lock	/**/
- /*#define USEfcntl_lock /**/	    /* to test which combinations make sense */
- /*#define USElockf	/**/	      /* run the lockingtest program part of */
--/*#define USEflock	/**/		/* the procmail installation process */
-+#define USEflock	/**/		/* the procmail installation process */
- 
- /*#define SHADOW_PASSWD /**/		  /* shadow password library support */
+@@ -70,8 +70,8 @@
+ install: $(BINS) $(MANS)
+ 	$(INSTALL) $(BINPERM) $(BINS) $(BINDIR)
+ 	$(INSTALL) $(REGPERM) $(MANS) $(MANDIR)
+-	mkdir $(CUCIPOPLIB) 2>/dev/null; exit 0
+-	mkdir $(CUCIPOPBULLETINS) 2>/dev/null; exit 0
++	mkdir -p $(CUCIPOPLIB) 2>/dev/null; exit 0
++	mkdir -p $(CUCIPOPBULLETINS) 2>/dev/null; exit 0
+ 	@for a in $(BINS); do ls -l $(BINDIR)/$$a; done
+ 	@for a in $(MANS); do ls -l $(MANDIR)/$$a; done
  
