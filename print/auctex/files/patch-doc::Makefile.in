@@ -1,18 +1,50 @@
---- doc/Makefile.in.orig	Sat Aug 21 02:46:30 2004
-+++ doc/Makefile.in	Sat Aug 21 03:00:56 2004
-@@ -84,13 +84,13 @@
+--- doc/Makefile.in.orig	Fri Aug 20 11:22:59 2004
++++ doc/Makefile.in	Sat Aug 21 16:51:04 2004
+@@ -18,9 +18,9 @@
+ TEXIFILES = auctex.texi install.texi wininstall.texi intro.texi \
+ 	changes.texi todo.texi faq.texi
  
- install: auctex
- 	-$(MKINSTALLDIRS) $(infodir)
--	$(INSTALL_DATA) auctex $(infodir)
-+	$(INSTALL_DATA) auctex $(infodir)/auctex.info
+-all: auctex.dvi tex-ref.dvi auctex
++all: auctex.dvi tex-ref.dvi auctex.info
+ 
+-dist: auctex INSTALL INSTALL.windows README CHANGES TODO FAQ \
++dist: auctex.info INSTALL INSTALL.windows README CHANGES TODO FAQ \
+ 	auctex_toc.html auctex.ps auctex.pdf tex-ref.ps tex-ref.pdf
+ 
+ auctex_toc.html: auctex.texi
+@@ -48,8 +48,8 @@
+ auctex.ps: auctex.dvi
+ 	$(DVIPS) auctex.dvi -Ppdf -o auctex.ps
+ 
+-auctex: $(TEXIFILES)
+-	-$(MAKEINFO) auctex.texi
++auctex.info: $(TEXIFILES)
++	-$(MAKEINFO) --no-split --output auctex.info auctex.texi
+ 	@echo "**********************************************************"
+ 	@echo "** If this gave trouble, maybe you need to install"
+ 	@echo "** a newer version of texinfo?"
+@@ -83,20 +83,20 @@
+ 	-$(MAKEINFO) -D rawfile --no-headers --no-validate \
+ 		faq.texi --output FAQ
+ 
+-install: auctex
++install: auctex.info
+ 	-$(MKINSTALLDIRS) $(DESTDIR)$(infodir)
+-	$(INSTALL_DATA) auctex $(DESTDIR)$(infodir)
++	$(INSTALL_DATA) auctex.info $(DESTDIR)$(infodir)
  	for x in auctex-*; do \
  	  if [ -r $$x ]; then \
- 	    $(INSTALL_DATA) $$x $(infodir) ; \
+ 	    $(INSTALL_DATA) $$x $(DESTDIR)$(infodir) ; \
  	  fi; \
  	done
--	-$(INSTALL_INFO)  --info-dir=$(infodir) auctex
-+	$(INSTALL_INFO) $(infodir)/auctex.info $(infodir)/dir
+-	-$(INSTALL_INFO)  --info-dir=$(DESTDIR)$(infodir) auctex
++	-$(INSTALL_INFO) $(DESTDIR)$(infodir)/auctex.info $(DESTDIR)$(infodir)/dir
  
  clean:
  	rm -f *.dvi *.ps *.pdf *.aux *.cp *.fn *.info *.ky *.log *~ \#*\# \
+ 		*.tp *.vr *.pg *.toc *.tp *.bak *.cps *.kys *.tps \
+-		*.fns *.vrs *.pgs *.tmp auctex auctex-* *.html INSTALL \
++		*.fns *.vrs *.pgs *.tmp auctex.info auctex-* *.html INSTALL \
+ 		INSTALL.windows README CHANGES HISTORY TODO FAQ
+ 
+ distclean: clean
