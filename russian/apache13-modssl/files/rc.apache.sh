@@ -2,7 +2,7 @@
 
 case $1 in
 start)
-	!!PREFIX!!/sbin/apachectl start
+	!!PREFIX!!/sbin/apachectl startssl
 	echo -n ' apache'
     ;;
 

@@ -209,7 +209,6 @@ sbin/apxs
 sbin/httpd
 sbin/logresolve
 sbin/rotatelogs
-%%SUEXEC%%
 share/doc/apache/apache_pb.gif
 share/doc/apache/ra-powered.gif
 @exec mkdir -p %D/www

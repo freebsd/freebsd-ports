@@ -7,6 +7,7 @@
 
 PORTNAME=	apache+mod_ssl
 PORTVERSION= 	${VERSION_APACHE}+${RA_VERSION}+${VERSION_MODSSL}
+PKGNAMEPREFIX=	ru-
 CATEGORIES=	russian www security
 MASTER_SITES=	ftp://ftp.lexa.ru/pub/apache-rus/ \
 		ftp://ftp.lexa.ru/pub/apache-rus/old-versions/ \
@@ -34,7 +35,7 @@ USE_OPENSSL=	RSA
 
 VERSION_APACHE=	1.3.12
 VERSION_MODSSL=	2.6.5
-RA_VERSION=	29.4
+RA_VERSION=	29.5
 
 USE_PERL5=	yes
 HAS_CONFIGURE=	yes
@@ -63,10 +64,8 @@ CONFIGURE_ARGS+=--enable-suexec \
 		--suexec-uidmin=50000 \
 		--suexec-gidmin=60000
 MAN8+=		suexec.8
-PLIST_SUB=	SUEXEC=sbin/suexec
 .else
 	@${ECHO} "Define WITH_SUEXEC to build with suexec support."
-PLIST_SUB=	SUEXEC=
 .endif
 
 .if defined(APACHE_PERF_TUNING) && ${APACHE_PERF_TUNING} == YES
@@ -116,5 +115,8 @@ post-install:
 		${SED} -e "s#!!PREFIX!!#${PREFIX}#g" < ${FILESDIR}/rc.apache.sh > ${PREFIX}/etc/rc.d/apache.sh; \
 		${CHMOD} 751 ${PREFIX}/etc/rc.d/apache.sh; \
 	fi
+.if defined(WITH_SUEXEC)
+	@${ECHO} "sbin/suexec" >> ${TMPPLIST}
+.endif
 
 .include <bsd.port.post.mk>
