@@ -1,6 +1,6 @@
---- lib/sshsession/sshunixuser.c.orig	Tue May  4 20:09:15 1999
-+++ lib/sshsession/sshunixuser.c	Fri Jun 18 16:18:08 1999
-@@ -56,6 +56,10 @@
+--- lib/sshsession/sshunixuser.c.orig	Thu Mar 30 21:41:05 2000
++++ lib/sshsession/sshunixuser.c	Wed May 17 18:15:10 2000
+@@ -55,6 +55,10 @@
  
  #define SSH_DEBUG_MODULE "SshUnixUser"
  
@@ -11,7 +11,7 @@
  extern char *crypt(const char *key, const char *salt);
  
  /* Data type to hold machine-specific user data. */
-@@ -776,6 +780,24 @@
+@@ -736,6 +740,24 @@
    /* Set uid, gid, and groups. */
    if (getuid() == UID_ROOT || geteuid() == UID_ROOT)
      { 
@@ -36,10 +36,10 @@
        if (setgid(ssh_user_gid(uc)) < 0)
          {
            SSH_DEBUG(2, ("ssh_user_become: setgid: %s", strerror(errno)));
-@@ -830,6 +852,7 @@
+@@ -773,6 +795,7 @@
+                         (int)ssh_user_uid(uc)));
            return FALSE;
          }
- #endif /* HAVE_SIA */
 +#endif /* HAVE_LOGIN_CAP_H */
      }
    

@@ -1,15 +1,11 @@
---- apps/ssh/Makefile.in.orig	Tue May 11 17:35:06 1999
-+++ apps/ssh/Makefile.in	Fri Jun 18 16:04:37 1999
-@@ -140,9 +140,10 @@
+--- apps/ssh/Makefile.in.orig	Thu Mar 30 21:41:56 2000
++++ apps/ssh/Makefile.in	Wed May 17 18:09:57 2000
+@@ -134,7 +134,7 @@
+ INCLUDES = -I. -I$(srcdir) -I../.. -I$(srcdir) 	   -I$(top_builddir) -I$(top_srcdir) 	   -I../../include -I$(srcdir)/../../include
  
- INCLUDES = -I. -I$(srcdir) -I../.. -I$(srcdir) \
- 	   -I$(top_builddir) -I$(top_srcdir) \
--	   -I../../include -I$(srcdir)/../../include
-+ 	   -I$(srcdir)/../../include -I${PREFIX}/include \
-+	   -I${PREFIX}/include
  
--LDADD = -L. -L../../lib -lssh2 -lssh
-+LDADD = -L. -L../../lib -lssh2 -lssh -lz
+-LDADD = @ssh2_ldadd_options@
++LDADD = @ssh2_ldadd_options@ -lz
  DEPENDENCIES = ./libssh2.a ../../lib/libssh.a
  
- libssh2_a_SOURCES = agentclient.c sshchagent.c sshserver.c \
+ libssh2_a_SOURCES =  	agentclient.c 	sshchagent.c 	sshserver.c 	agentpath.c 	sshchsession.c 	sshstdiofilter.c 	authc-passwd.c 	sshchssh1agent.c 	sshunixconfig.c 	authc-pubkey.c 	sshchtcpfwd.c 	sshunixuserfiles.c 	auths-passwd.c 	sshchx11.c 	sshuserfiles.c 	auths-pubkey.c 	sshclient.c 	sshcommon.c 	readpass.c 	sshconfig.c 	sshauthmethodc.c 	sshauthmethods.c 	sshglob.c 	auths-common.c 	sshttyflags.c 	auths-hostbased.c 	authc-hostbased.c 	auths-hostbased-rhosts.c 	ssh2pgppub.c 	ssh2pgpsec.c 	ssh2pgputil.c 	sshappcommon.c 	sshfilecopy.c 	sshgetcwd.c 	sshfc_conn.c 	sshfc_glob.c 	sshfc_transfer.c 	sshfc_recurse.c 	sshserverprobe.c 	ssh1encode.c 	ssh1keydecode.c

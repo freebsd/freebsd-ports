@@ -1,10 +1,11 @@
---- lib/sshcrypt/Makefile.in.orig	Tue May 11 17:35:02 1999
-+++ lib/sshcrypt/Makefile.in	Fri Jun 18 16:02:38 1999
-@@ -179,7 +179,6 @@
- 	-I$(top_builddir) -I$(top_srcdir) \
- 	-I../sshutil -I$(srcdir)/../sshutil \
- 	-I../sshmath -I$(srcdir)/../sshmath \
--	-I../zlib -I$(srcdir)/../zlib \
- 	-I../sshscard -I$(srcdir)/../sshscard \
- 	-I../trq -I$(srcdir)/../trq
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+--- lib/sshcrypt/Makefile.in.orig	Thu Mar 30 21:41:53 2000
++++ lib/sshcrypt/Makefile.in	Wed May 17 18:05:36 2000
+@@ -140,7 +140,7 @@
+ LDADD = libsshcrypt.a 	../sshutil/libsshutil.a ../sshmath/libsshmath.a
+ 
+ 
+-ADD_INCLUDES = -I../.. -I. -I$(srcdir) 	-I$(top_builddir) -I$(top_srcdir) 	-I../sshutil -I$(srcdir)/../sshutil 	-I../sshmath -I$(srcdir)/../sshmath 	-I../zlib -I$(srcdir)/../zlib 	-I../sshscard -I$(srcdir)/../sshscard 	-I../sshexternalkey -I$(srcdir)/../sshexternalkey 	-I../trq -I$(srcdir)/../trq
++ADD_INCLUDES = -I../.. -I. -I$(srcdir) 	-I$(top_builddir) -I$(top_srcdir) 	-I../sshutil -I$(srcdir)/../sshutil 	-I../sshmath -I$(srcdir)/../sshmath 	-I../sshscard -I$(srcdir)/../sshscard 	-I../sshexternalkey -I$(srcdir)/../sshexternalkey 	-I../trq -I$(srcdir)/../trq
+ 
+ 
+ INCLUDES = $(ADD_INCLUDES) -I$(srcdir) -I. -I$(top_srcdir) -I$(top_builddir) -I$(top_builddir)/include -I$(top_srcdir)/lib/sshutil

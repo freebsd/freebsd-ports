@@ -4,19 +4,17 @@
 #
 # $FreeBSD$
 #
-# Maximal ssh2 package requires YES values for
-# WITH_SSH1, WITH_TCPWRAP
 
 PORTNAME=	ssh2
-PORTVERSION=	2.0.13
+PORTVERSION=	2.1.0p2
 CATEGORIES=	security net
 MASTER_SITES=	ftp://ftp.cs.hut.fi/pub/ssh/ \
 		ftp://sunsite.unc.edu/pub/packages/security/ssh/ \
 		ftp://ftp.kyoto.wide.ad.jp/pub/security/ssh/
-DISTNAME=	ssh-2.0.13
+DISTNAME=	ssh-secure-shell-2.1.0-noncommercial
 
-PATCHFILES=	patch-${DISTNAME}-bsd.tty.chown
-PATCH_SITES=	http://www.ssh.org/patches/
+PATCH_SITES=	${MASTER_SITES}
+PATCHFILES=	ssh-2.1.0-patch1
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	issei@jp.FreeBSD.org
@@ -60,20 +58,22 @@ CONFIGURE_ARGS+= --with-libwrap="-L ${PREFIX}/lib -lwrap"
 LIB_DEPENDS+=	wrap.7:${PORTSDIR}/security/tcp_wrapper
 .endif
 
-MAN1=	ssh2.1 ssh-keygen2.1 ssh-add2.1 ssh-agent2.1 \
-	scp2.1 sftp2.1
+MAN1=	ssh-add2.1 ssh-agent2.1 scp2.1 sftp2.1 sshregex.1 ssh-probe2.1 \
+	ssh-dummy-shell.1 ssh-pubkeymgr.1 ssh2.1 ssh-keygen2.1
 MAN8=	sshd2.8
 
-MLINKS=	ssh2.1 ssh.1 \
-	ssh-keygen2.1 ssh-keygen.1 \
+MLINKS=	scp2.1 scp.1 \
+	sftp2.1 sftp.1 \
 	ssh-add2.1 ssh-add.1 \
 	ssh-agent2.1 ssh-agent.1 \
-	scp2.1 scp.1 \
-	sftp2.1 sftp.1 \
+	ssh-keygen2.1 ssh-keygen.1 \
+	ssh-probe2.1 ssh-probe.1 \
+	ssh2.1 ssh.1  \
 	sshd2.8 sshd.8
 
-PORTDOCS=	CHANGES LICENSING README
-.if defined(WITHOUT_SSH1)
+PORTDOCS=	BUG.REPORT CHANGES FAQ INSTALL LICENSING README \
+		SSH2.QUICKSTART
+.if ${OSVERSION} >= 400016 || defined(WITHOUT_SSH1)
 PLIST=		${PKGDIR}/PLIST.ssh2_only
 .endif
 
@@ -83,7 +83,7 @@ post-patch:
 .endif
 
 post-install:
-.if !defined(WITHOUT_SSH1)
+.if ${OSVERSION} < 400016 && !defined(WITHOUT_SSH1)
 .for i in ssh ssh-keygen ssh-add ssh-agent scp
 	${MV} -f ${PREFIX}/man/man1/${i}.1${MAN_SUFX} ${PREFIX}/man/man1/${i}.old.1${MAN_SUFX}
 .endfor
