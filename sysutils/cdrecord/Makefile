@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cdrecord
-PORTVERSION=	1.8.1
+PORTVERSION=	1.9
 CATEGORIES=	sysutils audio
 MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/cdrecord/ \
 		ftp://ftp.cs.tu-berlin.de/pub/misc/cdrecord/ \
