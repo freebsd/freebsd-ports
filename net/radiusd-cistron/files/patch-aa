@@ -1,9 +1,9 @@
---- src/Makefile.BSD.orig	Fri Jun 26 06:00:17 1998
-+++ src/Makefile.BSD	Fri Oct 23 13:32:18 1998
-@@ -3,9 +3,9 @@
+--- src/Makefile.BSD.orig	Sun Sep 19 08:10:41 1999
++++ src/Makefile.BSD	Sat Jul 21 18:48:00 2001
+@@ -3,19 +3,19 @@
  #
  #
- 
+
 -CC	= gcc
 -CFLAGS	= -Wall -g -DNOSHADOW
 -LDFLAGS	= # -s #tatic
@@ -12,14 +12,18 @@
 +LDFLAGS	= -s #tatic
  LIBS	=
  LCRYPT	= -lcrypt
- 
-@@ -15,7 +15,7 @@
- #PAM	= -DPAM
- #PAMLIB	= -lpam
- 
+
+ DBM     = -DNDBM
+ DBMLIB  = #-ldb
+
+-#PAM	= -DPAM
+-#PAMLIB	= -lpam
++PAM	= -DPAM
++PAMLIB	= -lpam
+
 -BINDIR  = /usr/local/bin
 -SBINDIR = /usr/local/sbin
 +BINDIR  = $(PREFIX)/bin
 +SBINDIR = $(PREFIX)/sbin
- 
+
  .include "Make.inc"
