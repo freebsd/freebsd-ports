@@ -92,7 +92,7 @@ $MAILCMD = "/usr/local/bin/mailsend -H";
 
 # Email addresses of recipients of commit mail.
 # (might be overridden below)
-$MAILADDRS = "nobody";
+$MAILADDRS = 'nobody';
 
 # Extra banner added to the top of commit email.
 # i.e. $MAILBANNER = "Project X CVS Repository";
