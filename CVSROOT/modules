@@ -3638,12 +3638,6 @@ ja-ppxp		ports/japanese/ppxp
 ja-prn		ports/japanese/prn
 ja-ptex		ports/japanese/ptex
 ja-ptex-base	ports/japanese/ptex-base
-ja-ptex-pkfonts118	ports/japanese/ptex-pkfonts118
-ja-ptex-pkfonts240	ports/japanese/ptex-pkfonts240
-ja-ptex-pkfonts300	ports/japanese/ptex-pkfonts300
-ja-ptex-pkfonts360	ports/japanese/ptex-pkfonts360
-ja-ptex-pkfonts400	ports/japanese/ptex-pkfonts400
-ja-ptex-pkfonts600	ports/japanese/ptex-pkfonts600
 ja-ptex-tetex	ports/japanese/ptex-tetex
 ja-py-kanjilib	ports/japanese/py-kanjilib
 ja-pycodec	ports/japanese/pycodec
