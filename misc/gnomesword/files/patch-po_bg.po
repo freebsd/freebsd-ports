@@ -1,0 +1,72 @@
+--- po/bg.po.orig	Wed Dec 18 08:15:09 2002
++++ po/bg.po	Sun May  4 10:39:14 2003
+@@ -492,11 +492,6 @@
+ msgstr "______)B_$)B____/______ ______"
+ 
+ # src/gs_gui.c
+-# src/gs_html_editor.c
+-msgid "Copy"
+-msgstr "________"
+-
+-# src/gs_gui.c
+ msgid "Copy highlighted text from main window"
+ msgstr "______)B_ $)B________)B__ _ $)B______)B_ $)B________ ____)B_"
+ 
+@@ -699,10 +694,6 @@
+ msgstr "____)B_"
+ 
+ # src/gs_html.c
+-msgid "Show %s in main window"
+-msgstr "______)B_ %s _ $)B______)B_ $)B________r"
+-
+-# src/gs_html.c
+ #, fuzzy
+ msgid "Go to Strongs %s"
+ msgstr "______ __ %s __ ______)B_"
+@@ -712,11 +703,6 @@
+ msgstr "____)B_ $)B__ %s"
+ 
+ # src/gs_html_editor.c
+-# src/gs_html_editor.c
+-msgid "``%s'' has been modified.  Do you wish to save it?"
+-msgstr "____)B__$)B__ )B_ ,,%s''. $)B______)B_ $)B__ ____)B_$)B____ __ ____ ________)B_?"
+-
+-# src/gs_html_editor.c
+ msgid "-untitled-"
+ msgstr "-__)B_ $)B__)B_-"
+ 
+@@ -1011,21 +997,6 @@
+ msgstr "__)B_! __$)B________ __________)B_, _ $)B____)B_ $)B__)B_ $)B______)B_ $)B________"
+ 
+ # src/gs_preferences_dlg.c
+-#, fuzzy
+-msgid "Show Bible Texts notebook tabs"
+-msgstr "______ ______)B_ $)B__ ________)B_"
+-
+-# src/gs_preferences_dlg.c
+-#, fuzzy
+-msgid "Show Commentary notebook tabs"
+-msgstr "______ ______)B_ $)B__ __________)B_"
+-
+-# src/gs_preferences_dlg.c
+-#, fuzzy
+-msgid "Show Dict/Lex notebook tabs"
+-msgstr "______ ______)B_ $)B__ ________)B_/$)B__________)B_"
+-
+-# src/gs_preferences_dlg.c
+ # src/gs_setup.c
+ #, fuzzy
+ msgid "Use Verse Style"
+@@ -1111,12 +1082,6 @@
+ # src/gs_setup.c
+ msgid "Commentary"
+ msgstr "________"
+-
+-# src/gs_preferences_dlg.c
+-# src/gs_setup.c
+-# src/gs_shortcutbar.c x 2
+-msgid "Dict/Lex"
+-msgstr "______/________"
+ 
+ # src/gs_preferences_dlg.c
+ # src/gs_setup.c

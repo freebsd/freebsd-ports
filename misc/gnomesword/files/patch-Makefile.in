@@ -1,27 +1,11 @@
---- Makefile.in.orig	Fri Feb 28 16:49:32 2003
-+++ Makefile.in	Fri Feb 28 16:50:47 2003
-@@ -140,14 +140,7 @@
- EXTRA_DIST = gnomesword.desktop
+--- Makefile.in.orig	Tue Mar 25 22:35:58 2003
++++ Makefile.in	Sun May  4 08:12:53 2003
+@@ -388,7 +388,7 @@
+ install-exec-am:
+ install-exec: install-exec-recursive
  
- gnomesworddocdir = $(prefix)/doc/gnomesword
--gnomesworddoc_DATA = \
-- 	   README\
--	    COPYING\
--	    AUTHORS\
--	    ChangeLog\
--	    INSTALL\
--	    NEWS\
--	    TODO
-+gnomesworddoc_DATA = 
+-install-data-am: install-gnomesworddocDATA install-data-local
++install-data-am: install-data-local
+ install-data: install-data-recursive
  
- subdir = .
- ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
-@@ -155,7 +148,7 @@
- CONFIG_HEADER = config.h
- CONFIG_CLEAN_FILES = intl/Makefile
- DIST_SOURCES =
--DATA = $(gnomesworddoc_DATA)
-+DATA = # $(gnomesworddoc_DATA)
- 
- 
- RECURSIVE_TARGETS = info-recursive dvi-recursive install-info-recursive \
+ install-am: all-am
