@@ -143,13 +143,13 @@ sub check_version {
 
 	# The file should have had an rcsid in it!
 	unless ($found_rcsid) {
-		printf($NoId, $filename);
+		printf($NoId, "$directory/$filename");
 		return(1);
 	}
 
 	# Is the rcsid corrupt?
 	unless ($rcsid =~ /\$$HEADER(: ([^\$]* )?)?\$/) {
-		printf($BadId, $filename);
+		printf($BadId, "$directory/$filename");
 		return(1);
 	}
 	$rcsid_info = $2 || "";
@@ -163,7 +163,7 @@ sub check_version {
 	# A new file should have an unexpanded rcsid.
 	if ($lastversion eq '0') {
 		unless ($rcsid_info eq "") {
-			printf($NoName, $filename);
+			printf($NoName, "$directory/$filename");
 			return(1);
 		}
 		return(0);
@@ -178,7 +178,7 @@ sub check_version {
 #		# Don't know whether to allow or trap this.  It means
 #		# one could bypass the version spam checks by simply
 #		# using a bare tag.
-#		printf($DelPath, $filename);
+#		printf($DelPath, "$directory/$filename");
 #		return(1);
 	}
 
@@ -197,7 +197,7 @@ sub check_version {
 	# Check that the version in the rcsid matches reality.
 	if ($lastversion ne $version) {
 		printf($BadVersion, $filename, $lastversion,
-		    $version, $filename);
+		    $version, "$directory/$filename");
 		return(1);
 	}
 	return(0);
