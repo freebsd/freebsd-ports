@@ -1,6 +1,6 @@
 bin/xqf
-lib/charset.alias
 share/locale/ca/LC_MESSAGES/xqf.mo
 share/locale/de/LC_MESSAGES/xqf.mo
 share/locale/es/LC_MESSAGES/xqf.mo
-share/locale/locale.alias
+%%PORTDOCS%%share/doc/xqf/xqfdocs.html
+%%PORTDOCS%%@dirrm share/doc/xqf
