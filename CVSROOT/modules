@@ -7337,6 +7337,7 @@ stk		ports/lang/STk
 stldoc		ports/lang/stldoc
 stlload		src/usr.sbin/stallion/stlload
 stlport		ports/devel/stlport
+stlport-icc	ports/devel/stlport-icc
 stlstats	src/usr.sbin/stallion/stlstats
 stmpclean	ports/sysutils/stmpclean
 stockticker_applet ports/x11/stockticker_applet
