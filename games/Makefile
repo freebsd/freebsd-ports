@@ -177,6 +177,7 @@
     SUBDIR += lbreakout
     SUBDIR += lbreakout2
     SUBDIR += lexter
+    SUBDIR += lgeneral
     SUBDIR += libshhcards
     SUBDIR += lincity
     SUBDIR += linux-q3ademo
