@@ -7,9 +7,10 @@
 #
 
 PORTNAME=	bonnie++
-PORTVERSION=	1.03
+PORTVERSION=	1.93.03		# a=01, b=02, c=03, ..., z=26, etc...
 CATEGORIES=	benchmarks
-MASTER_SITES=	http://www.coker.com.au/bonnie++/
+MASTER_SITES=	http://www.coker.com.au/bonnie++/experimental/
+DISTNAME=	${PORTNAME}-1.93c
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
