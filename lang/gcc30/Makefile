@@ -8,6 +8,7 @@
 
 PORTNAME=	gcc30
 PORTVERSION=	3.0.1
+PORTREVISION=	1
 CATEGORIES=	lang java
 MASTER_SITES=	ftp://egcs.cygnus.com/pub/egcs/releases/gcc-${GCC_REV}/  \
 		${MASTER_SITE_SOURCEWARE}
@@ -46,6 +47,7 @@ USE_GMAKE=	yes
 USE_BISON=	yes
 CONFIGURE_ARGS=	--disable-nls --with-gnu-as --with-gnu-ld \
 		--with-gxx-include-dir=${TARGLIB}/include/g++
+CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 .if defined(WANT_SHAREDLIBS)
 CONFIGURE_ARGS+= --enable-shared
 .else
@@ -68,6 +70,7 @@ pre-configure:
 	@touch ${SRCDIR}/gcc/configure
 	@touch ${SRCDIR}/gcc/cstamp-h.in
 	@${MKDIR} ${CONFIGURE_WRKSRC}
+	@${RM} -f ${SRCDIR}/gcc/*/*.info*
 
 pre-build:
 	cd ${SRCDIR} ; contrib/gcc_update --touch
@@ -118,6 +121,7 @@ post-install:
 	cd ${PREFIX} ;\
 	    find ${TARGLIB:S/^${PREFIX}\///} -type d \
 	    	| sort -r | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.gcc-lib
+	(${ECHO} "@unexec rmdir %D/lib/gcc-lib/${CONFIGURE_TARGET} 2>&1 || true" ; ${ECHO} "@unexec rmdir %D/lib/gcc-lib 2>&1 || true") >> ${WRKDIR}/PLIST.gcc-lib
 	${ECHO} "r ${TMPPLIST}"			> ${WRKDIR}/ex.script
 	${ECHO} "/Insert PLIST.gcc-lib"		>> ${WRKDIR}/ex.script
 	${ECHO} "d"				>> ${WRKDIR}/ex.script
