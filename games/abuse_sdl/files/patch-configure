@@ -1,0 +1,11 @@
+--- configure.orig	Sat May 11 23:00:27 2002
++++ configure	Sat May 11 23:00:36 2002
+@@ -7568,7 +7568,7 @@
+ 
+ X_LIBS=-L$x_libraries
+ 
+-EXPDATADIR="-DEXPDATADIR=\\\"$datadir/games/abuse\\\""
++EXPDATADIR="-DEXPDATADIR=\\\"$datadir/abuse_sdl\\\""
+ 
+ echo "$as_me:7573: checking for XShmAttach in -lXext" >&5
+ echo $ECHO_N "checking for XShmAttach in -lXext... $ECHO_C" >&6

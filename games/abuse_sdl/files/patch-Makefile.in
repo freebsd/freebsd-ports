@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sat May 11 22:58:44 2002
++++ Makefile.in	Sat May 11 23:00:15 2002
+@@ -84,7 +84,7 @@
+ 
+ man_MANS = abuse-sdl.6
+ 
+-datafiledir = $(datadir)/games/abuse
++datafiledir = $(datadir)/abuse_sdl
+ datafile_DATA = abuse.bmp abuse.lsp abuse.png
+ 
+ EXTRA_DIST = abuse-sdl.6 abuse.bmp abuse.lsp abuse.png
