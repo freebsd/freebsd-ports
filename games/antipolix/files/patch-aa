@@ -1,0 +1,12 @@
+--- Imakefile  Thu Aug  3 22:29:38 1995
++++ /home/andy/tmp/wrk/Imakefile       Wed Dec  2 21:01:22 1998
+@@ -1,6 +1,6 @@
+-EXTRA_LIBRARIES=-lX11 -lm -lsocket
+-CC=gcc
+-CDEBUGFLAGS = -g
++EXTRA_LIBRARIES=-lX11 -lm
++CC?=cc
++CDEBUGFLAGS = -I${X11BASE}/include
+ 
+ PROGRAMS = client server
+ 
