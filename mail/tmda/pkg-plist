@@ -11,6 +11,8 @@ lib/%%PYTHON_VERSION%%/site-packages/TMDA/Cookie.py
 lib/%%PYTHON_VERSION%%/site-packages/TMDA/Cookie.pyc
 lib/%%PYTHON_VERSION%%/site-packages/TMDA/Defaults.py
 lib/%%PYTHON_VERSION%%/site-packages/TMDA/Defaults.pyc
+lib/%%PYTHON_VERSION%%/site-packages/TMDA/FilterParser.py
+lib/%%PYTHON_VERSION%%/site-packages/TMDA/FilterParser.pyc
 lib/%%PYTHON_VERSION%%/site-packages/TMDA/HMAC.py
 lib/%%PYTHON_VERSION%%/site-packages/TMDA/HMAC.pyc
 lib/%%PYTHON_VERSION%%/site-packages/TMDA/MTA.py
@@ -24,15 +26,20 @@ lib/%%PYTHON_VERSION%%/site-packages/TMDA/__init__.pyc
 %%PORTDOCS%%share/doc/tmda/ChangeLog
 %%PORTDOCS%%share/doc/tmda/INSTALL
 %%PORTDOCS%%share/doc/tmda/README
-%%PORTDOCS%%share/doc/tmda/README.RELAY
 %%PORTDOCS%%share/doc/tmda/THANKS
-%%PORTDOCS%%share/doc/tmda/TODO
 %%PORTDOCS%%share/doc/tmda/UPGRADE
-%%PORTDOCS%%share/doc/tmda/qmail-smtpd_auth.patch
-%%PORTDOCS%%share/doc/tmda/sample.tmdarc
-%%PORTDOCS%%share/doc/tmda/tmda.spec
+%%PORTDOCS%%share/doc/tmda/contrib/ChangeLog
+%%PORTDOCS%%share/doc/tmda/contrib/README.RELAY
+%%PORTDOCS%%share/doc/tmda/contrib/list2cdb
+%%PORTDOCS%%share/doc/tmda/contrib/list2dbm
+%%PORTDOCS%%share/doc/tmda/contrib/printcdb
+%%PORTDOCS%%share/doc/tmda/contrib/printdbm
+%%PORTDOCS%%share/doc/tmda/contrib/qmail-smtpd_auth.patch
+%%PORTDOCS%%share/doc/tmda/contrib/sample.tmdarc
+%%PORTDOCS%%share/doc/tmda/contrib/tmda.spec
 %%PORTDOCS%%share/doc/tmda/htdocs/bugs.html
 %%PORTDOCS%%share/doc/tmda/htdocs/config-client.html
+%%PORTDOCS%%share/doc/tmda/htdocs/config-filter.html
 %%PORTDOCS%%share/doc/tmda/htdocs/config-pre.html
 %%PORTDOCS%%share/doc/tmda/htdocs/config-server.html
 %%PORTDOCS%%share/doc/tmda/htdocs/config.html
@@ -50,6 +57,7 @@ lib/%%PYTHON_VERSION%%/site-packages/TMDA/__init__.pyc
 share/tmda/confirm_accept.txt
 share/tmda/confirm_request.txt
 @dirrm share/tmda
+%%PORTDOCS%%@dirrm share/doc/tmda/contrib
 %%PORTDOCS%%@dirrm share/doc/tmda/htdocs
 %%PORTDOCS%%@dirrm share/doc/tmda
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/TMDA
