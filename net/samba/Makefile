@@ -7,6 +7,7 @@
 
 PORTNAME=	samba
 PORTVERSION=	2.2.5
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.samba.org/pub/samba/ \
 		ftp://samba.anu.edu.au/pub/samba/ \
@@ -152,7 +153,8 @@ PLIST_SUB=      AUDIT=${AUDIT} \
 .if defined(WITH_RECYCLE) || defined(WITH_AUDIT)
 post-build:
 	cd ${WRKDIR}/${DISTNAME}/examples/VFS; \
-		${RM} config.cache;./configure;${GMAKE}
+		${RM} config.cache;./configure;${GMAKE}; \
+		${RM} -f config.cache config.log config.status
 .endif
 
 post-install:
@@ -166,6 +168,7 @@ post-install:
 .endif
 .endif
 	${MKDIR} ${PREFIX}/share/examples/samba
+	-${RM} -f ${WRKDIR}/${DISTNAME}/examples/libsmbclient/*.o
 	${CP} -rp ${WRKDIR}/${DISTNAME}/examples/* ${PREFIX}/share/examples/samba
 .if defined(WITH_AUDIT) || defined(WITH_RECYCLE)
 #	@${RM} -rf ${PREFIX}/share/examples/samba/VFS/.libs
