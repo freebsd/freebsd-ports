@@ -9,7 +9,8 @@ PORTNAME=	larbin
 PORTVERSION=	2.6.3
 PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	ftp://ftp.sourceforge.net/pub/sourceforge/larbin/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A powerful HTTP crawler with an easy interface
@@ -17,19 +18,12 @@ COMMENT=	A powerful HTTP crawler with an easy interface
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2 \
 		makedepend:${X_IMAKE_PORT}
 
-BROKEN=		Unfetchable
-
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
-PATCH_WRKSRC=	${WRKSRC}/src
 MAKE_ARGS=	CXX=${CXX}
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
 
 post-patch:
 	@${SED} -e 's,CC=,CC?=,' -e 's,CFLAGS=-O3,CFLAGS+=,' < \
