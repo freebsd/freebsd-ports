@@ -8,13 +8,8 @@
 PORTNAME=	crossfire
 PORTVERSION=	${MAJ}.${MIN}.${PL}
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		ftp://ftp.real-time.com/pub/games/crossfire/ \
-		ftp://ftp.ifi.uio.no/pub/crossfire/ \
-		ftp://ftp.pyramid.com/pub/crossfire/ \
-		ftp://ftp.sunet.se/pub/unix/games/crossfire/ \
-		ftp://ftp.cs.titech.ac.jp/pub/games/crossfire/
-MASTER_SITE_SUBDIR=	andreas
+MASTER_SITES=	ftp://ftp.ifi.uio.no/pub/crossfire/old/ \
+		ftp://ftp.sunet.se/pub/unix/games/crossfire/old/
 DISTFILES=	${CF_SOURCES} ${CF_DOC} ${CF_MAPS} ${CF_SOUNDS} \
 		${CF_ARCH} ${CF_CLSERV}
 
