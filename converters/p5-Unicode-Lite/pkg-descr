@@ -1,0 +1,10 @@
+This module includes string converting function from one and to another
+charset. Requires installed Unicode::String and Unicode::Map packages.
+
+Supported unicode charsets: unicode, utf16, ucs2, utf8, utf7, ucs4,
+uchr, uhex.
+
+Supported Single-Byte Charsets (SBCS): latin1 and all installed maps in
+Unicode::Map package.
+
+WWW: http://search.cpan.org/dist/Unicode-Lite/
