@@ -9,10 +9,10 @@
 PORTNAME=	oproute
 PORTVERSION=	0.7
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.opnix.com/pub/oproute/
+MASTER_SITES=	ftp://ftp.opnix.com/oproute/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 post-patch:
 	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/Makefile
