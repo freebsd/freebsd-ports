@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
+# $Id: Makefile,v 1.66 1997/11/26 07:55:38 tg Exp $
 #
 
     SUBDIR += Mosaic         # requires Motif
@@ -24,6 +24,7 @@
     SUBDIR += linemode
     SUBDIR += linux-netscape4
     SUBDIR += lynx
+    SUBDIR += lynx-current
     SUBDIR += mapedit
     SUBDIR += mhonarc
     SUBDIR += mmm
