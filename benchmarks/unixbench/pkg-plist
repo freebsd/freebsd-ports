@@ -31,7 +31,6 @@ lib/unixbench/pgms/pipe
 lib/unixbench/pgms/register
 lib/unixbench/pgms/report.awk
 lib/unixbench/pgms/report.sh
-lib/unixbench/pgms/select
 lib/unixbench/pgms/short
 lib/unixbench/pgms/spawn
 lib/unixbench/pgms/syscall
