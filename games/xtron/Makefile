@@ -3,11 +3,11 @@
 # Date created:				29 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/01/11 05:22:44 steve Exp $
 #
 
 DISTNAME=		xtron-1.1a
-CATEGORIES=		games x11
+CATEGORIES=		games
 MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/arcade
 EXTRACT_SUFX=		.tgz
