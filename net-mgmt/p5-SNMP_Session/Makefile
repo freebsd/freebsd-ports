@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	SNMP_Session
-PORTVERSION=	0.92
+PORTVERSION=	0.94
 CATEGORIES=	net perl5
 MASTER_SITES=	ftp://ftp.switch.ch/software/sources/network/snmp/perl/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old
