@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gps
-PORTVERSION=	0.9
+PORTVERSION=	0.93
 CATEGORIES=	mail security
 MASTER_SITES=	http://mimo.gn.apc.org/gps/
 PKGNAMEPREFIX=	postfix-
@@ -17,7 +17,7 @@ EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	Greylist Policy Service for postfix
 
-BROKEN=		Broken dependency
+BROKEN=		databases/libdbi-drivers package build does not build necessary files yet
 
 LIB_DEPENDS=	dbi.0:${PORTSDIR}/databases/libdbi
 RUN_DEPENDS=	${LOCALBASE}/lib/dbd:${PORTSDIR}/databases/libdbi-drivers
@@ -28,7 +28,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_AUTOCONF_VER=	259
 USE_AUTOMAKE_VER=	19
-USE_GCC=	3.3
+USE_GCC=	3.4
 CONFIGURE_ARGS=	--bindir=${PREFIX}/libexec --includedir=${PREFIX}/include
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${PREFIX}/include"	\
 		CXXFLAGS="${CXXFLAGS} -I${PREFIX}/include"	\
@@ -41,6 +41,6 @@ post-install:
 .for f in ${SCRIPT_FILES}
 	@${INSTALL_SCRIPT} ${_DISTDIR}/${f} ${PREFIX}/libexec
 .endfor
-	@${PAGER} pkg-message
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
