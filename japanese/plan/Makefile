@@ -1,6 +1,5 @@
 # ex:ts=8
 # Ports collection makefile for:  plan
-# Version required: 0.0
 # Date created:			  Sat Jan 31, 1998
 # Whom:				  David O'Brien (obrien@cs.ucdavis.edu)
 #
@@ -14,8 +13,6 @@ MAKE_ENV+=	JAPANESE=yes
 MASTERDIR=	${.CURDIR}/../../deskutils/plan
 
 .include	"${MASTERDIR}/Makefile"
-
-PKGNAME=	ja-${DISTNAME}
 
 MAINTAINER=	obrien@FreeBSD.org
 

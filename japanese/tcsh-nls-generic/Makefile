@@ -1,28 +1,33 @@
 # New ports collection makefile for:	ja-tcsh NLS catalog (Generic Japanese)
-# Version required:	6.08.05
 # Date created:		19 August 1998
 # Whom:			Issei Suzuki <issei@jp.FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-.if !defined(NLSSRC)
-DISTNAME=	tcsh-6.08.05
-PKGNAME=	ja-tcsh-nls-generic-6.08.05
+PORTNAME=	tcsh-nls
+PORTVERSION=	6.08.05
+PKGNAMESUFFIX=	-${CATALOGNAME}
 CATEGORIES=	japanese shells
-MASTER_SITES=	ftp://ftp.astron.com/pub/tcsh/ ${MASTER_SITE_PORTS_JP}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}.add2${EXTRACT_SUFX}
+MASTER_SITES=	${MASTER_SITE_PORTS_JP}
+DISTNAME=	tcsh-${PORTVERSION}.add2
 
 MAINTAINER=	issei@jp.FreeBSD.org
-
-PATCH_DIST_STRIP=	-p1
-NLSSRC=		${DISTNAME}/nls/ja
-.endif
 
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 RUN_DEPENDS=	tcsh:${PORTSDIR}/japanese/tcsh
 
-WRKSRC=		${WRKDIR}/tcsh-6.08.05.add2
+CATALOGNAME?=	generic
+
+.if ${CATALOGNAME} == generic
+MASTER_SITES+=	ftp://ftp.astron.com/pub/tcsh/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		tcsh-${PORTVERSION}${EXTRACT_SUFX}
+
+NLSSRC=		tcsh-${PORTVERSION}/nls/ja
+.else
+NLSSRC=		${DISTNAME}/nls/ja.${CATALOGNAME}
+.endif
 
 NLSDIR=		${PREFIX}/share/nls
 GENCAT=		/usr/bin/gencat

@@ -1,13 +1,12 @@
 # New ports collection Makefile for: ja-rxvt
-# Version required:	2.7.2
 # Date created:         11 May 1999
 # Whom:                 HONDA Yasuhiro <honda@kashio.info.mie-u.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	rxvt-2.7.2
-PKGNAME=	ja-rxvt-2.7.2
+PORTNAME=	rxvt
+PORTVERSION=	2.7.2
 CATEGORIES=	japanese x11
 MASTER_SITES=	ftp://ftp.rxvt.org/pub/rxvt/
 

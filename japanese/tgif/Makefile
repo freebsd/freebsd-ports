@@ -1,15 +1,15 @@
 # New ports collection makefile for:	tgif-j
-# Version required:	4.0.17
 # Date created:		8 Dec 1995
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ja-tgif-980222
-PKGNAME=	ja-tgif-4.1.16
+PORTNAME=	tgif
+PORTVERSION=	4.1.16
 CATEGORIES=	japanese
 MASTER_SITES=	http://home.jp.FreeBSD.org/~mita/LOCAL_PORTS/
+DISTNAME=	ja-${PORTNAME}-980222
 
 MAINTAINER=	mita@jp.FreeBSD.org
 

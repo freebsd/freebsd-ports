@@ -1,16 +1,16 @@
 # New ports collection makefile for:	typist
-# Version required:		2.0
 # Date created:			26 May 1997
 # Whom:				Satoshi TAOKA
 #
 # $FreeBSD$
 #
 
-DISTNAME=	typist2.0
-PKGNAME=	ja-typist-2.0
+PORTNAME=	typist
+PORTVERSION=	2.0
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://tuba.csedu.kobe-u.ac.jp/pub/UNIX/
 EXTRACT_SUFX=	.src.tar.gz
+DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	taoka@FreeBSD.org
 

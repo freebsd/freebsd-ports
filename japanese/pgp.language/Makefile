@@ -1,16 +1,16 @@
 # New ports collection makefile for: pgp.language (japanese)
-# Version required:     2.6.3ia
 # Date created:         9 May 1997
 # Whom:                 Hironori Ikura <hikura@kaisei.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	pgp263i-${PGP_LANGUAGE}
-PKGNAME=	jp-pgp-2.6.3
+PORTNAME=	pgp
+PORTVERSION=	2.6.3
 CATEGORIES=	japanese security
 MASTER_SITES=	ftp://ftp.win.or.jp/pub/network/pgp/2.x/lang/ \
 		ftp://ftp.ifi.uio.no/pub/pgp/2.x/lang/
+DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}i-japanese
 
 MAINTAINER=	hikura@kaisei.org
 

@@ -1,13 +1,12 @@
 # New ports collection makefile for:	plain2
-# Version required:	2.54
 # Date created:		20 April 1997
 # Whom:			nkazushi@highway.or.jp
 #
 # $FreeBSD$
 #
 
-DISTNAME=	plain2-2.54
-PKGNAME=	ja-plain2-2.54
+PORTNAME=	plain2
+PORTVERSION=	2.54
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.nec.co.jp/pub/packages/plain2/
 

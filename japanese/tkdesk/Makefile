@@ -1,18 +1,18 @@
 # New ports collection makefile for:	tkdesk
-# Version required:     1.1
 # Date created:         21 Sep 1999
 # Whom:                 Yoichi ASAI <yatt@msc.biglobe.ne.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	tkdesk-1.1
-PKGNAME=	ja-tkdesk-1.1p58
+PORTNAME=	tkdesk
+PORTVERSION=	${VERSION}${VERSION_PL}
 CATEGORIES=	japanese x11-fm tk42
 MASTER_SITES=	http://people.mainz.netsurf.de/~bolik/tkdesk/
+DISTNAME=	${PORTNAME}-${VERSION}
 
 PATCH_SITES=	http://www.linet.gr.jp/~mituiwa/
-PATCHFILES=	tkdesk-1.1-jmenu-p58.diff
+PATCHFILES=	tkdesk-${VERSION}-jmenu-${VERSION_PL}.diff
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	yatt@msc.biglobe.ne.jp
@@ -20,6 +20,9 @@ MAINTAINER=	yatt@msc.biglobe.ne.jp
 LIB_DEPENDS=	tk42jp.1:${PORTSDIR}/japanese/tk42
 RUN_DEPENDS=	imali:${PORTSDIR}/mail/im \
 		easypr:${PORTSDIR}/japanese/easypr
+
+VERSION=	1.1
+VERSION_PL=	p58
 
 USE_XLIB=	yes
 USE_GMAKE=	yes

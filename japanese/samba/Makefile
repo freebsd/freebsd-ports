@@ -1,20 +1,22 @@
 # New ports collection makefile for:	samba
-# Version required:			2.0.5a
 # Date created:				27 Dec 1999
 # Whom:					Shinya Sasaki <pcmaster@osk3.3web.ne.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	samba-2.0.5a-JP2-1.3
-PKGNAME=	ja-samba-2.0.5a.2
+PORTNAME=	samba
+PORTVERSION=	2.0.5a.2
 CATEGORIES=	japanese net
-MASTER_SITES=	ftp://ftp.samba.gr.jp/pub/samba-jp/samba-2.0.5a-JP2/ \
+MASTER_SITES=	ftp://ftp.samba.gr.jp/pub/samba-jp/${SAMBA_JP_NAME}/ \
 		http://www3.osk.3web.ne.jp/~pcmaster/network/samba/
+DISTNAME=	${SAMBA_JP_NAME}-1.3
 
 MAINTAINER=	pcmaster@osk3.3web.ne.jp
 
 Y2K=		http://us1.samba.org/samba/docs/sambay2k.html
+
+SAMBA_JP_NAME=	${PORTNAME}-${PORTVERSION:R}-JP${PORTVERSION:E}
 
 # directories
 VARDIR=		/var
@@ -36,7 +38,6 @@ CONFIGURE_ARGS+=--with-krb5=${KRB5_HOME}
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/source
-#WRKSRC=		${WRKDIR}/samba-2.0.5a-JP2/source
 
 MANLANG=	"" ja
 MAN1=		nmblookup.1 smbstatus.1 smbclient.1 smbrun.1 smbtar.1 \
@@ -47,7 +48,7 @@ MAN8=		smbd.8 nmbd.8 smbpasswd.8 swat.8 \
 		smbmount.8 smbumount.8 smbmnt.8
 
 post-extract:
-	${MV} ${WRKDIR}/samba-2.0.5a-JP2 ${WRKDIR}/${DISTNAME}
+	${MV} ${WRKDIR}/${SAMBA_JP_NAME} ${WRKDIR}/${DISTNAME}
 
 post-install:
 	${MKDIR} ${PREFIX}/share/examples/samba

@@ -1,18 +1,18 @@
 # New ports collection makefile for:	tcl7.6jp
-# Version required:	7.6p2jp
 # Date created:		11 March 1997
 # Whom:			taguchi@tohoku.iij.ad.jp
 #
 # $FreeBSD$
 #
 
-DISTNAME=	tcl7.6p2
-PKGNAME=	ja-tcl-7.6
+PORTNAME=	tcl
+PORTVERSION=	7.6
 CATEGORIES=	japanese lang
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl7_6/
+DISTNAME=	${PORTNAME}${PORTVERSION}p2
 
 PATCH_SITES=	ftp://ftp.sra.co.jp/pub/lang/tcl/jp/
-PATCHFILES=	tcl7.6jp-patch.gz
+PATCHFILES=	${PORTNAME}${PORTVERSION}jp-patch.gz
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
@@ -21,7 +21,7 @@ USE_AUTOCONF=	yes
 CONFIGURE_ARGS=	--enable-shared
 CONFIGURE_ENV=  PORTSDIR=${PORTSDIR}
 
-VERSION=	7.6jp
+VERSION=	${PORTVERSION}jp
 
 .if defined(PATCH_DEBUG)
 PATCH_DIST_ARGS=	-d ${WRKDIR}/${DISTNAME} -E ${PATCH_DIST_STRIP}
@@ -32,7 +32,7 @@ PATCH_DIST_ARGS=	-d ${WRKDIR}/${DISTNAME} --forward --quiet -E ${PATCH_DIST_STRI
 .include <bsd.port.pre.mk>
 
 post-extract:
-	@${MV} ${WRKDIR}/tcl7.6 ${WRKDIR}/${DISTNAME}
+	@${MV} ${WRKDIR}/${PORTNAME}${PORTVERSION} ${WRKDIR}/${DISTNAME}
 
 post-configure:
 	@${ECHO} "We will NOT only make shared library, but also static one."

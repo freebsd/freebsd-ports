@@ -1,15 +1,17 @@
 # New ports collection makefile for:	today
-# Version required:	2.11a
 # Date created:		24 June 1996
 # Whom:			ABURAYER Rewsirow <pcs51674@asciinet.or.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ja-today-2.11a
+PORTNAME=	today
+PORTVERSION=	2.11a
 CATEGORIES=	japanese games
 MASTER_SITES=	ftp://ftp.vector.co.jp/pack/dos/personal/calendar/today/
-DISTFILES=	td211as.lzh td211am.lzh
+DISTNAME=	ja-${PORTNAME}-${PORTVERSION}
+DISTFILES=	td${PORTVERSION:S/.//}s.lzh \
+		td${PORTVERSION:S/.//}m.lzh
 
 MAINTAINER=	rewsirow@ff.iij4u.or.jp
 

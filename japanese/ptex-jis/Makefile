@@ -1,16 +1,18 @@
 # New ports collection makefile for:	pTeX-jis
-# Version required:	2.1.8
 # Date created:		05 Oct 1997
 # Whom:			max
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ptex218
-PKGNAME=	ja-ptex-jis-2.1.8
+PORTNAME=	ptex
+PORTVERSION=	2.1.8
+PKGNAMESUFFIX=	-jis
 CATEGORIES=	japanese print
-MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/ptex218/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} plib-1.4-jis.tar.gz \
+MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/${DISTNAME}/
+DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		plib-1.4${PKGNAMESUFFIX}.tar.gz \
 		Makefile.in.patch.txt
 
 MAINTAINER=	max@FreeBSD.org
@@ -43,7 +45,7 @@ pre-patch:
 	  ${PATCH} ${PATCH_DIST_ARGS}
 
 pre-install:
-	@${TAR} -C ${PREFIX}/share -zxf ${DISTDIR}/${DIST_SUBDIR}/plib-1.4-jis.tar.gz
+	@${TAR} -C ${PREFIX}/share -zxf ${DISTDIR}/${DIST_SUBDIR}/plib-1.4${PKGNAMESUFFIX}.tar.gz
 
 post-install:
 .for bin in ${BINARIES}
