@@ -12,6 +12,7 @@ lib/%%MOZILLA%%/chrome/ja-mac.jar
 lib/%%MOZILLA%%/chrome/ja-unix.jar
 lib/%%MOZILLA%%/chrome/ja-win.jar
 lib/%%MOZILLA%%/components/xpti.dat
+lib/%%MOZILLA%%/defaults/messenger/JP/mailViews.dat
 lib/%%MOZILLA%%/defaults/pref/unix.js
 lib/%%MOZILLA%%/defaults/profile/JP/chrome/userChrome-example.css
 lib/%%MOZILLA%%/defaults/profile/JP/chrome/userContent-example.css
@@ -83,3 +84,4 @@ lib/%%MOZILLA%%/searchplugins/w3c.src
 @unexec mv %D/lib/%%MOZILLA%%/xpti.dat.orig %D/lib/%%MOZILLA%%/components/xpti.dat
 @dirrm lib/%%MOZILLA%%/defaults/profile/JP/chrome
 @dirrm lib/%%MOZILLA%%/defaults/profile/JP
+@dirrm lib/%%MOZILLA%%/defaults/messenger/JP
