@@ -1,0 +1,38 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Test/Unit/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Test/TestLister.pl
+lib/perl5/site_perl/%%PERL_VER%%/Test/TestRunner.pl
+lib/perl5/site_perl/%%PERL_VER%%/Test/TkTestRunner.pl
+lib/perl5/site_perl/%%PERL_VER%%/Test/Unit.pm
+lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/Assert.pm
+lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/Assertion.pm
+lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/Assertion/Boolean.pm
+lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/Assertion/CodeRef.pm
+lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/Assertion/Exception.pm
+lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/Assertion/Regexp.pm
+lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/Debug.pm
+lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/Decorator.pm
+lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/Error.pm
+lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/Exception.pm
+lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/Failure.pm
+lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/HarnessUnit.pm
+lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/Listener.pm
+lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/Loader.pm
+lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/Procedural.pm
+lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/Result.pm
+lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/Runner.pm
+lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/Runner/Terminal.pm
+lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/Setup.pm
+lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/Test.pm
+lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/TestCase.pm
+lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/TestRunner.pm
+lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/TestSuite.pm
+lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/TkTestRunner.pm
+lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/Tutorial.pm
+lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/UnitHarness.pm
+lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/Warning.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/Assertion
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Test/Unit/Runner
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Test/Unit
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Test/Unit
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Test 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Test 2>/dev/null || true

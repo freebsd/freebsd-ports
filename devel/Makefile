@@ -579,6 +579,7 @@
     SUBDIR += p5-Test-Harness
     SUBDIR += p5-Test-Inline
     SUBDIR += p5-Test-Simple
+    SUBDIR += p5-Test-Unit
     SUBDIR += p5-Tie-Cache
     SUBDIR += p5-Tie-DB_FileLock
     SUBDIR += p5-Tie-IxHash
