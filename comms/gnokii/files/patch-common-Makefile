@@ -1,24 +1,9 @@
---- common/Makefile.orig	Thu Jan  8 14:46:16 2004
-+++ common/Makefile	Thu Jan  8 15:12:15 2004
-@@ -73,8 +73,7 @@
- 	$(CC) -o gnokii-debug $(LIBS) $(XPM_LIBS) $(OBJS) phones/PHONES.o links/LINKS.o devices/DEVICES.o ../gnokii/gnokii.o
- 
- libgnokii.so: $(OBJS) phones/PHONES.o links/LINKS.o devices/DEVICES.o
--	$(CC) -shared -Wl,-soname,$(GNOKII_LIBM) -o $(GNOKII_LIBMM) $(OBJS) phones/PHONES.o links/LINKS.o devices/DEVICES.o
--	ln -sf $(GNOKII_LIBMM) $(GNOKII_LIBM)
-+	$(CC) -shared -Wl,-soname,$(GNOKII_LIBM) -o $(GNOKII_LIBM) $(OBJS) phones/PHONES.o links/LINKS.o devices/DEVICES.o
- 	ln -sf $(GNOKII_LIBM) $(GNOKII_LIB)
- 
- libgnokii.a: $(OBJS) phones/PHONES.o links/LINKS.o devices/DEVICES.o
-@@ -103,12 +102,11 @@
+--- common/Makefile.orig	Sun Feb  1 16:59:32 2004
++++ common/Makefile	Fri Feb 13 20:02:19 2004
+@@ -89,8 +89,8 @@
+ install:
  	$(INSTALL) -d $(DESTDIR)$(libdir)
- 	$(INSTALL) $(GNOKII_STATIC) $(DESTDIR)$(libdir)
- ifndef NO_SHARED
--	$(INSTALL) $(GNOKII_LIBMM) $(DESTDIR)$(libdir)
--	cd $(DESTDIR)$(libdir) && ln -sf $(GNOKII_LIBMM) $(GNOKII_LIBM)
-+	$(INSTALL) $(GNOKII_LIBM) $(DESTDIR)$(libdir)
- 	cd $(DESTDIR)$(libdir) && ln -sf $(GNOKII_LIBM) $(GNOKII_LIB)
- endif
+ 	$(LIBTOOL) --mode=install $(INSTALL) libgnokii.la $(DESTDIR)$(libdir)
 -	$(INSTALL) -d $(DESTDIR)$(libdir)/pkgconfig
 -	$(INSTALL_DATA) gnokii.pc $(DESTDIR)$(libdir)/pkgconfig
 +	$(INSTALL) -d $(DESTDIR)$(prefix)/libdata/pkgconfig

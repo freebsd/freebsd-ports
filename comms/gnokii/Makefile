@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	gnokii
-PORTVERSION=	0.5.8
-PORTREVISION=	1
+PORTVERSION=	0.5.10
 PORTEPOCH=	1
 CATEGORIES=	comms
 MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
-		ftp://ftp.pl.gnokii.org/pub/gnokii/ \
-		ftp://ftp.gnokii.org/pub/gnokii/
+		http://www.gnokii.org/download/ \
+		ftp://ftp.pl.gnokii.org/pub/gnokii/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Tools to talk to Nokia cellular phones
+MAINTAINER=	mad@madpilot.net
+COMMENT=	Tools to talk to GSM cellular phones
 
 USE_REINPLACE=	yes
 USE_GETTEXT=	yes
@@ -56,6 +55,7 @@ PLIST_SUB+=	MSM='@comment '
 USE_GNOME+=	glib12
 .else
 PLIST_SUB+=	SMSD=''
+MAN8+=		smsd.8
 .if exists(${LOCALBASE}/lib/mysql/libmysqlclient.so)
 USE_MYSQL=	yes
 PLIST_SUB+=	MSM=''
@@ -107,12 +107,12 @@ post-patch:
 post-build:
 .if defined(WITH_SMSD)
 	@cd ${WRKSRC}/smsd && ${GMAKE} all
-	@cd ${WRKSRC}/smsd && ${GMAKE} libfile.so LOCALBASE=${LOCALBASE}
+	@cd ${WRKSRC}/smsd && ${GMAKE} libfile.la LOCALBASE=${LOCALBASE}
 .if defined(WITH_MYSQL)
-	@cd ${WRKSRC}/smsd && ${GMAKE} libmysql.so LOCALBASE=${LOCALBASE}
+	@cd ${WRKSRC}/smsd && ${GMAKE} libmysql.la LOCALBASE=${LOCALBASE}
 .endif
 .if defined(WITH_PGSQL)
-	@cd ${WRKSRC}/smsd && ${GMAKE} libpq.so LOCALBASE=${LOCALBASE}
+	@cd ${WRKSRC}/smsd && ${GMAKE} libpq.la LOCALBASE=${LOCALBASE}
 .endif
 .endif
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' pkg-message > ${PKGMESSAGE}
@@ -128,17 +128,14 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/Docs/sample/gnokiirc \
 		${PREFIX}/etc/gnokiirc.sample
 .if defined(WITH_SMSD)
+	@cd ${WRKSRC}/smsd && ${GMAKE} install
 	${MKDIR} ${PREFIX}/share/smsd
-	${INSTALL_PROGRAM} ${WRKSRC}/smsd/smsd ${PREFIX}/sbin/smsd
 	${INSTALL_SCRIPT} ${WRKSRC}/smsd/action ${PREFIX}/share/smsd/action
 	${INSTALL_DATA} ${WRKSRC}/smsd/README ${PREFIX}/share/smsd/README
-	${INSTALL_PROGRAM} ${WRKSRC}/smsd/libfile.so ${PREFIX}/share/smsd/libfile.so
 .if defined(WITH_MYSQL)
-	${INSTALL_PROGRAM} ${WRKSRC}/smsd/libmysql.so ${PREFIX}/share/smsd/libmysql.so
 	${INSTALL_DATA} ${WRKSRC}/smsd/sms.tables.mysql.sql ${PREFIX}/share/smsd/sms.tables.mysql.sql
 .endif
 .if defined(WITH_PGSQL)
-	${INSTALL_PROGRAM} ${WRKSRC}/smsd/libpq.so ${PREFIX}/share/smsd/libpq.so
 	${INSTALL_DATA} ${WRKSRC}/smsd/sms.tables.pq.sql ${PREFIX}/share/smsd/sms.tables.pq.sql
 .endif
 .endif
