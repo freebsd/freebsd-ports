@@ -1,0 +1,6 @@
+%%PORTDOCS%%@unexec install-info --delete %D/info/exim.info %D/info/dir
+%%PORTDOCS%%info/exim.info
+%%PORTDOCS%%@exec install-info --section="Exim" --entry "* User guide: (exim).           Exim manual" %D/%F %B/dir
+%%PORTDOCS%%@unexec install-info --delete %D/info/exim_filter.info %D/info/dir
+%%PORTDOCS%%info/exim_filter.info
+%%PORTDOCS%%@exec install-info --section="Exim" --entry "* Filtering: (exim_filter).     Filtering mail with Exim" %D/%F %B/dir

@@ -59,6 +59,7 @@
     SUBDIR += exact
     SUBDIR += exim
     SUBDIR += exim-doc-html
+    SUBDIR += exim-doc-info
     SUBDIR += exim-doc-pdf
     SUBDIR += exim-doc-postscript
     SUBDIR += exim-ldap
