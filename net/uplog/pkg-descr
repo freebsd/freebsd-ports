@@ -1,0 +1,10 @@
+Uplog is an UDP-based ping program that gives an ASCII
+graphical log of packet loss. Once per second, it sends a UDP
+packet to the echo port of the target host and waits for a
+reply. If it gets a reply an X is written, otherwise a dot is
+written to the log file. If a packet with an incorrect sequence
+number arrives, a colon is written to the log file. By
+examining the log file, one can easily see when and how the
+packet losses occur.
+
+WWW: http://www.nerdlabs.org/projects/uplog.php
