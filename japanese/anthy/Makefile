@@ -7,7 +7,7 @@
 
 PORTNAME=	anthy
 PORTVERSION=	4700
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese
 MASTER_SITES=	http://downloads.sourceforge.jp/anthy/6621/:anthy
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:anthy
@@ -45,6 +45,7 @@ post-install:
 	${MKDIR} ${PREFIX}/${ELISPDIR}
 	${INSTALL_DATA} ${WRKSRC}/src-util/*.el ${PREFIX}/${ELISPDIR}
 .if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/ELISP ${PREFIX}/${DOCSDIR}
 .endif
 
