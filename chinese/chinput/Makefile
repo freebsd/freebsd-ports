@@ -17,6 +17,11 @@ MAINTAINER=	phj@cn.FreeBSD.org
 
 USE_XLIB=	yes
 
+.if defined(XFREE86_VERSION) && ${XFREE86_VERSION} == 4
+BUILD_DEPENDS=	xmkmf:${PORTSDIR}/devel/imake-4 \
+		mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
+.endif
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 post-extract:
