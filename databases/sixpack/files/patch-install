@@ -9,17 +9,17 @@
 -BINDEST=/usr/local/bin
 -SIXDIR=/usr/local/lib/sixpack
 -SIXDOC=$SIXDIR/doc
-+BPHOME=/opt/share/sixpack/bp
-+PICSDIR=/opt/share/sixpack/pix
-+BINDEST=/opt/bin
-+SIXDIR=/opt/share/sixpack
-+SIXDOC=/opt/share/doc/sixpack
++BPHOME=%%DATADIR%%/bp
++PICSDIR=%%DATADIR%%/pix
++BINDEST=%%PREFIX%%/bin
++SIXDIR=%%DATADIR%%
++SIXDOC=%%DOCSDIR%%/sixpack
  BIBXRESFILE=$SIXDIR/Bib
  
  
  # CONFDEST is the location of the configuration file.
 -CONFDEST=/etc/sixpack.rc
-+CONFDEST=/opt/etc/sixpack.rc
++CONFDEST=%%PREFIX%%/etc/sixpack.rc
  # CONFDEST=~/.sixpack.rc
  
  #these will be spliced into the conf files:
