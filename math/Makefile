@@ -150,6 +150,7 @@
     SUBDIR += surf
     SUBDIR += thx_1138
     SUBDIR += topaz
+    SUBDIR += tvmet
     SUBDIR += umatrix
     SUBDIR += umfpack
     SUBDIR += units

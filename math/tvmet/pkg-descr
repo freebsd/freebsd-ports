@@ -1,0 +1,6 @@
+This Tiny Vector and Matrix template library uses Meta and Expression
+Templates to evaluate results at compile time, thus making it fast for
+low-end systems. Temporaries are avoided because of this. The dimensions
+are static and bounded at compile time.
+
+WWW: http://tvmet.sourceforge.net/
