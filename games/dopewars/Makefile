@@ -1,16 +1,16 @@
 # New ports collection makefile for:	dopewars
 # Version required:		1.4.3
 # Date created:			16 May 1999
-# Whom:				Jim Mock <jim@phrantic.phear.net>
+# Whom:				Jim Mock <jim@FreeBSD.org>
 #
-# $Id: Makefile,v 1.1.1.1 1999/06/06 17:44:29 steve Exp $
+# $Id: Makefile,v 1.2 1999/06/26 08:37:27 cpiazza Exp $
 #
 
 DISTNAME=	dopewars-1.4.3
 CATEGORIES=	games
 MASTER_SITES=	http://bellatrix.pcl.ox.ac.uk/~ben/dopewars/
 
-MAINTAINER=	jim@phrantic.phear.net
+MAINTAINER=	jim@FreeBSD.org
 
 USE_GMAKE=	yes
 
@@ -21,8 +21,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dopewars ${PREFIX}/bin
 
 post-install:
-	@${ECHO} "		"
-	@${ECHO} "===> Run 'dopewars -h' for usage options."
-	@${ECHO} "		"
+	@${ECHO} "===>   Run 'dopewars -h' for usage options."
 
 .include <bsd.port.mk>
