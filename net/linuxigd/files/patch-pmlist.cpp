@@ -1,45 +1,44 @@
---- pmlist.cpp.orig	Fri May  3 00:16:28 2002
-+++ pmlist.cpp	Sat Aug  3 22:11:41 2002
-@@ -30,6 +30,9 @@
- #include <stdlib.h>
+--- pmlist.cpp.orig	Fri Jan  3 03:14:24 2003
++++ pmlist.cpp	Mon Jan 20 20:38:16 2003
+@@ -31,6 +31,8 @@
  #include <unistd.h>
- #include <iostream.h>
-+
+ #include <iostream>
+ 
 +extern char *ExtIf;
 +
  PortMapList::PortMapList()
  {
  
-@@ -190,9 +193,12 @@
- 	else
- 		strcpy (prt, "udp");
+@@ -182,8 +184,13 @@
+ {
+ 	char command[255];
  
--	sprintf(command,"/usr/sbin/iptables -t nat -A PREROUTING -p %s -d %s --dport %d -j DNAT --to %s:%d", prt, ExtIP, ExtPort, IntIP, IntPort);
--	
+-	sprintf(command,"/usr/sbin/iptables -t nat -A PREROUTING -p %s -d %s --dport %d -j DNAT --to %s:%d", Proto, ExtIP, ExtPort, IntIP, IntPort);
 -	system(command);
 +	FILE *ipnat = popen("/sbin/ipnat -f -", "w");
 +	if (ipnat == NULL)
 +		return 0;
-+	sprintf(command, "rdr %s %s/32 port %d -> %s port %d %s", ExtIf, ExtIP, ExtPort, IntIP, IntPort, prt);
++	sprintf(command, "rdr %s %s/32 port %d -> %s port %d %s",
++		ExtIf, ExtIP, ExtPort, IntIP, IntPort, Proto);
 +	fprintf(ipnat, command);
 +	pclose(ipnat);
  
- 	ret=1;
- 	return (ret);
-@@ -234,9 +240,13 @@
- 	else
- 		strcpy (prt, "udp");
- 
--	sprintf(command, "/usr/sbin/iptables -t nat -D PREROUTING -p %s -d %s --dport %d -j DNAT --to %s:%d", prt, ExtIP, ExtPort, IntIP, IntPort);
--	
--	system(command);
+ 	return (1);
+ }
+@@ -218,9 +225,14 @@
+ {
+ 	char command[255];
+ 	
 +	FILE *ipnat = popen("/sbin/ipnat -rf -", "w");
 +	if (ipnat == NULL)
 +		return 0;
-+	sprintf(command, "rdr %s %s/32 port %d -> %s port %d %s", ExtIf, ExtIP, ExtPort, IntIP, IntPort, prt);
++	sprintf(command, "rdr %s %s/32 port %d -> %s port %d %s",
++		ExtIf, ExtIP, ExtPort, IntIP, IntPort, Proto);
 +	fprintf(ipnat, command);
 +	pclose(ipnat);
-+
- 	ret = 1;
  
- 	return (ret);
+-	sprintf(command, "/usr/sbin/iptables -t nat -D PREROUTING -p %s -d %s --dport %d -j DNAT --to %s:%d", Proto, ExtIP, ExtPort, IntIP, IntPort);
+-	system(command);	
+ 	return (1);
+ }
+ 

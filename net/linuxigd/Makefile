@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	linuxigd
-PORTVERSION=	0.75
+PORTVERSION=	0.92
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	linux-igd
-DISTNAME=	gateway-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	leeym@FreeBSD.org
@@ -19,10 +18,8 @@ LIB_DEPENDS=	upnp.1:${PORTSDIR}/devel/upnp
 
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
+WRKSRC=		${WRKDIR}/linux-igd
 MAKE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS}
-
-post-extract:
-	@${CHMOD} 755 ${WRKSRC}/etc
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' ${WRKSRC}/gateway.h
