@@ -1,5 +1,8 @@
 bin/mod
 bin/monodoc
+bin/monodocer
+bin/monodocs2html
+bin/monodocs2slashdoc
 lib/mono/gac/monodoc/1.0.0.0__0738eb9f132ed756/monodoc.dll
 lib/mono/gac/monodoc/1.0.0.0__0738eb9f132ed756/monodoc.dll.config
 lib/mono/gtk-sharp/monodoc.dll
@@ -8,6 +11,9 @@ lib/monodoc/browser.exe
 lib/monodoc/cs2ecma.exe
 lib/monodoc/mod.exe
 lib/monodoc/monodoc.xml
+lib/monodoc/monodocer.exe
+lib/monodoc/monodocs2html.exe
+lib/monodoc/monodocs2slashdoc.exe
 lib/monodoc/normalize.exe
 lib/monodoc/sources/Mono.source
 lib/monodoc/sources/Mono.tree
@@ -36,12 +42,11 @@ lib/monodoc/sources/netdocs.zip
 lib/monodoc/sources/nunit-docs.source
 lib/monodoc/sources/nunit-docs.tree
 lib/monodoc/sources/nunit-docs.zip
-lib/monodoc/updater.exe
 lib/monodoc/validate.exe
 libdata/pkgconfig/monodoc.pc
 share/gnome/applications/monodoc.desktop
 share/gnome/pixmaps/monodoc.png
-@dirrm lib/mono/gac/monodoc/1.0.0.0__0738eb9f132ed756
-@dirrm lib/mono/gac/monodoc
 @dirrm lib/monodoc/sources
 @dirrm lib/monodoc
+@dirrm lib/mono/gac/monodoc/1.0.0.0__0738eb9f132ed756
+@dirrm lib/mono/gac/monodoc
