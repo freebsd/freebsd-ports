@@ -13,6 +13,7 @@ PORTVERSION=	3.6.0
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	math-atlas
+PKGNAMESUFFIX=  -devel
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	maho@FreeBSD.org
@@ -22,7 +23,6 @@ USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/ATLAS
 INSTALLS_SHLIB= yes
 USE_REINPLACE=  yes
-PKGNAMESUFFIX=  -devel
 NO_PACKAGE=	runtime performance heavily depends on building environment
 
 .include <bsd.port.pre.mk>
@@ -59,20 +59,27 @@ PICFLAG=-fpic
 .endif
 .endif
 
+ANSWER_i386?=	${PRINTF} "\n\n\n\n\n\n\n\n\n\n"
+ANSWER_ia64?=	${PRINTF} "\n\n\n2\n\n\n\n\nf77\n-O2 -static\n\n"
+
+.if !defined(ANSWER_${ARCH})
+ANSWER=	${ANSWER_i386}
+.else
+ANSWER=	${ANSWER_${ARCH}}
+.endif
+
 do-configure:
-	@(cd ${WRKSRC}; ${MAKE_ENV} ${MAKE} xconfig ; \
-		./xconfig -N 1 -c ${CC} -f ${FC} -a NON_THREADED < ${FILESDIR}/answer)
-	@(cd ${WRKSRC}; ${MAKE_ENV} ${MAKE} xconfig ; \
-		./xconfig -N 1 -c ${CC} -f ${FC} -a NON_THREADED_PIC \
+	@(cd ${WRKSRC}; ${MAKE_ENV} ${MAKE} xconfig && \
+		${ANSWER} | ./xconfig -N 1 -c ${CC} -f ${FC} -a NON_THREADED && \
+		${ANSWER} | ./xconfig -N 1 -c ${CC} -f ${FC} -a NON_THREADED_PIC \
 			-F c '${PICFLAG} -DPIC' -F f '${PICFLAG} -DPIC' \
-			-F m '${PICFLAG} -DPIC' -F x '${PICFLAG} -DPIC' < ${FILESDIR}/answer)
-	@(cd ${WRKSRC}; ${PATCH} < ${FILESDIR}/thread-patch)
-	@(cd ${WRKSRC}; ${MAKE_ENV} ${MAKE} xconfig ; \
-		./xconfig -c ${CC} -f ${FC} -a THREADED < ${FILESDIR}/answer)
-	@(cd ${WRKSRC}; ${MAKE_ENV} ${MAKE} xconfig ; \
-		./xconfig -c ${CC} -f ${FC} -a THREADED_PIC \
+			-F m '${PICFLAG} -DPIC' -F x '${PICFLAG} -DPIC')
+	@(cd ${WRKSRC}; ${PATCH} < ${FILESDIR}/thread-patch && \
+		${MAKE_ENV} ${MAKE} xconfig && \
+		${ANSWER} | ./xconfig -c ${CC} -f ${FC} -a THREADED && \
+		${ANSWER} | ./xconfig -c ${CC} -f ${FC} -a THREADED_PIC \
 			-F c '${PICFLAG} -DPIC' -F f '${PICFLAG} -DPIC' \
-			-F m '${PICFLAG} -DPIC' -F x '${PICFLAG} -DPIC' < ${FILESDIR}/answer)
+			-F m '${PICFLAG} -DPIC' -F x '${PICFLAG} -DPIC' )
 
 ATLAS_LIBS1=libalapack libatlas libcblas libf77blas libtstatlas
 ATLAS_LIBS2=libptcblas libptf77blas
