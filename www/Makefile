@@ -265,6 +265,7 @@
     SUBDIR += mod_roaming
     SUBDIR += mod_roaming2
     SUBDIR += mod_rpaf
+    SUBDIR += mod_rpaf2
     SUBDIR += mod_ruby
     SUBDIR += mod_scgi
     SUBDIR += mod_security
