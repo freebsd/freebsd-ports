@@ -1,0 +1,25 @@
+--- zip-2.3/unix/unix.c.orig    2004-11-05 15:44:41.000000000 -0500
++++ unix/unix.c 2004-11-05 15:50:28.000000000 -0500
+@@ -319,8 +319,8 @@ iztimes *t;             /* return value:
+    a file size of -1 */
+ {
+   struct stat s;        /* results of stat() */
+-  char name[FNMAX];
+-  int len = strlen(f);
++  char *name;
++  size_t len = strlen(f);
+ 
+   if (f == label) {
+     if (a != NULL)
+@@ -331,6 +331,11 @@ iztimes *t;             /* return value:
+       t->atime = t->mtime = t->ctime = label_utim;
+     return label_time;
+   }
++
++  name = malloc(len+1);
++  if (!name)
++    return 0;
++
+   strcpy(name, f);
+   if (name[len - 1] == '/')
+     name[len - 1] = '\0';
