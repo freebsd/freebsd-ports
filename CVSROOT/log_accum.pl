@@ -273,42 +273,35 @@ sub append_names_to_file {
 
 
 #
-# do an 'cvs -Qn status' on each file in the arguments, and extract info.
+# Summarise the file changes in the commit using 'cvs -Qn status'
+# on each file to extract the info.
 #
-
 sub change_summary_changed {
-	local($out, $tag, @filenames) = @_;
-	local(@revline);
-	local($file, $rev, $rcsfile, $line);
+	my $outfile = shift;		# File name of output file.
+	my $tag = shift;		# CVS branch tag.
+	my @filenames = @_;		# List of files to check.
 
-	while (@filenames) {
-		$file = shift @filenames;
+	foreach my $file (@filenames) {
+		next unless $file;
 
-		if ("$file" eq "") {
-			next;
-		}
+		my $rev = "";
+		my $delta = "";
+		my $rcsfile = "";
 
 		open(RCS, "-|") || exec 'cvs', '-Qn', 'status', $file;
-
-		$rev = "";
-		$delta = "";
-		$rcsfile = "";
-
-
 		while (<RCS>) {
 			if (/^[ \t]*Repository revision/) {
-				chop;
-				@revline = split(' ', $_);
+				chomp;
+				my @revline = split;
 				$rev = $revline[2];
-				$rcsfile = $revline[3];
-				$rcsfile =~ s,^$CVSROOT[/]+,,;
-				$rcsfile =~ s/,v$//;
+				$revline[3] =~ m|^$CVSROOT/+(.*),v$|;
+				$rcsfile = $1;
 				last;
 			}
 		}
-		close(RCS);
+		close RCS;
 
-		if ($rev ne '' && $rcsfile ne '') {
+		if ($rev and $rcsfile) {
 			open(RCS, "-|") || exec 'cvs', '-Qn', 'log', "-r$rev", $file;
 			while (<RCS>) {
 				if (/^date:.*lines:\s(.*)$/) {
@@ -316,10 +309,10 @@ sub change_summary_changed {
 					last;
 				}
 			}
-			close(RCS);
+			close RCS;
 		}
 
-		&append_line($out, "$rev,$delta,$rcsfile");
+		&append_line($outfile, "$rev,$delta,$rcsfile");
 	}
 }
 
@@ -330,12 +323,12 @@ sub change_summary_removed {
 }
 
 sub build_header {
-	local($header, $datestr);
 	delete $ENV{'TZ'};
 
-	$datestr = `/bin/date +"%Y/%m/%d %H:%M:%S %Z"`;
-	chop($datestr);
-	$header = sprintf("%-8s    %s", $login, $datestr);
+	my $datestr = `/bin/date +"%Y/%m/%d %H:%M:%S %Z"`;
+	chomp $datestr;
+
+	my $header = sprintf("%-8s    %s", $login, $datestr);
 
 	my @text;
 	push @text, $header;
@@ -346,79 +339,75 @@ sub build_header {
 }
 
 # !!! Mailing-list and commitlog history file mappings here !!!
+# This needs pulling out as a configuration block somewhere so
+# that others can easily change it.
 sub mlist_map {
-	local($dir) = @_;		# perl warns about this....
+	my $dir = shift;	# Directory name
+   
+	return 'cvs-CVSROOT'	if $dir =~ /^CVSROOT\//;
+	return 'cvs-ports'	if $dir =~ /^ports\//;
+	return 'cvs-www'	if $dir =~ /^www\//;
+	return 'cvs-doc'	if $dir =~ /^doc\//;
+	return 'cvs-distrib'	if $dir =~ /^distrib\//;
 
-	return 'cvs-CVSROOT'	if($dir =~ /^CVSROOT\//);
-	return 'cvs-ports'	if($dir =~ /^ports\//);
-	return 'cvs-www'	if($dir =~ /^www\//);
-	return 'cvs-doc'	if($dir =~ /^doc\//);
-	return 'cvs-distrib'	if($dir =~ /^distrib\//);
-
-	return 'cvs-other'	unless($dir =~ /^src\//);
+	return 'cvs-other'	unless $dir =~ /^src\//;
 
 	$dir =~ s,^src/,,;
 
-	return 'cvs-bin'	if($dir =~ /^bin\//);
-	return 'cvs-contrib'	if($dir =~ /^contrib\//);
-	return 'cvs-eBones'	if($dir =~ /^eBones\//);
-	return 'cvs-etc'	if($dir =~ /^etc\//);
-	return 'cvs-games'	if($dir =~ /^games\//);
-	return 'cvs-gnu'	if($dir =~ /^gnu\//);
-	return 'cvs-include'	if($dir =~ /^include\//);
-	return 'cvs-kerberosIV'	if($dir =~ /^kerberosIV\//);
-	return 'cvs-lib'	if($dir =~ /^lib\//);
-	return 'cvs-libexec'	if($dir =~ /^libexec\//);
-	return 'cvs-lkm'	if($dir =~ /^lkm\//);
-	return 'cvs-release'	if($dir =~ /^release\//);
-	return 'cvs-sbin'	if($dir =~ /^sbin\//);
-	return 'cvs-share'	if($dir =~ /^share\//);
-	return 'cvs-sys'	if($dir =~ /^sys\//);
-	return 'cvs-tools'	if($dir =~ /^tools\//);
-	return 'cvs-usrbin'	if($dir =~ /^usr\.bin\//);
-	return 'cvs-usrsbin'	if($dir =~ /^usr\.sbin\//);
+	return 'cvs-bin'	if $dir =~ /^bin\//;
+	return 'cvs-contrib'	if $dir =~ /^contrib\//;
+	return 'cvs-eBones'	if $dir =~ /^eBones\//;
+	return 'cvs-etc'	if $dir =~ /^etc\//;
+	return 'cvs-games'	if $dir =~ /^games\//;
+	return 'cvs-gnu'	if $dir =~ /^gnu\//;
+	return 'cvs-include'	if $dir =~ /^include\//;
+	return 'cvs-kerberosIV'	if $dir =~ /^kerberosIV\//;
+	return 'cvs-lib'	if $dir =~ /^lib\//;
+	return 'cvs-libexec'	if $dir =~ /^libexec\//;
+	return 'cvs-lkm'	if $dir =~ /^lkm\//;
+	return 'cvs-release'	if $dir =~ /^release\//;
+	return 'cvs-sbin'	if $dir =~ /^sbin\//;
+	return 'cvs-share'	if $dir =~ /^share\//;
+	return 'cvs-sys'	if $dir =~ /^sys\//;
+	return 'cvs-tools'	if $dir =~ /^tools\//;
+	return 'cvs-usrbin'	if $dir =~ /^usr\.bin\//;
+	return 'cvs-usrsbin'	if $dir =~ /^usr\.sbin\//;
 
 	return 'cvs-user';
-
 }    
 
 sub do_changes_file {
-	local($changes,$category,@mailaddrs);
-	local(@text) = @_;
-	local(%unique);
+	my @text = @_;
 
-	%unique = ();
-	@mailaddrs = &read_logfile("$MAIL_FILE.$PID");
-	foreach $category (@mailaddrs) {
+	my %unique = ();
+	my @mailaddrs = &read_logfile("$MAIL_FILE.$PID");
+	foreach my $category (@mailaddrs) {
 		next if ($unique{$category});
 		$unique{$category} = 1;
 		if ($category =~ /^cvs-/) {
 			# convert mailing list name back to category
-			$category =~ s,\n,,;
-			$category =~ s/^cvs-//;
-			$changes = "$CVSROOT/CVSROOT/commitlogs/$category";
 
-			open(CHANGES, ">>$changes") || die("Cannot open $changes.\n");
-			print(CHANGES join("\n", @text), "\n\n");
-			close(CHANGES);
+			$category =~ /^cvs-([a-z]*$)/ or die "Erp!";
+
+			my $changes = "$CVSROOT/CVSROOT/commitlogs/$1";
+			open CHANGES, ">>$changes"
+				or die "Cannot open $changes.\n";
+			print CHANGES join("\n", @text), "\n\n";
+			close CHANGES;
 		}
 	}
 }
 
 sub mail_notification {
-	local(@text) = @_;
-	local($line, $word, $subjlines, $subjwords, @mailaddrs);
-#	local(%unique);
-
-#	%unique = ();
+	my @text = @_;
 
 	print "Mailing the commit message...\n";
 
-	@mailaddrs = &read_logfile("$MAIL_FILE.$PID");
+	my @mailaddrs = &read_logfile("$MAIL_FILE.$PID");
 	open MAIL, "| $MAILCMD $MAILADDRS" or die 'Please check $MAILCMD.';
 
-
 # This is turned off since the To: lines go overboard.
+# Also it has bit-rotted since, and can't just be switched on again.
 # - but keep it for the time being in case we do something like cvs-stable
 #	print(MAIL 'To: cvs-committers' . $dom . ", cvs-all" . $dom);
 #	foreach $line (@mailaddrs) {
@@ -429,22 +418,25 @@ sub mail_notification {
 #	}
 #	print(MAIL "\n");
 
-	$subject = 'Subject: cvs commit:';
-	@subj = &read_logfile("$SUBJ_FILE.$PID");
-	$subjlines = 0;
-	$subjwords = 0;	# minimum of two "words" per line
+	my $subject = 'Subject: cvs commit:';
+	my @subj = &read_logfile("$SUBJ_FILE.$PID");
+	my $subjlines = 0;
+	my $subjwords = 0;	# minimum of two "words" per line
 	LINE: foreach $line (@subj) {
-		foreach $word (split(/ /, $line)) {
-			if ($subjwords > 2 && length($subject . " " . $word) > 75) {
+		foreach my $word (split(/ /, $line)) {
+			if ($subjwords > 2 &&
+			    length($subject . " " . $word) > 75) {
 				if ($subjlines > 2) {
 					$subject .= " ...";
 				}
-				print(MAIL $subject, "\n");
+				print MAIL $subject, "\n";
 				if ($subjlines > 2) {
 					$subject = "";
 					last LINE;
 				}
-				$subject = "        ";		# rfc822 continuation line
+
+				# rfc822 continuation line
+				$subject = "        ";
 				$subjwords = 0;
 				$subjlines++;
 			}
@@ -452,9 +444,7 @@ sub mail_notification {
 			$subjwords++;
 		}
 	}
-	if ($subject ne "") {
-		print(MAIL $subject, "\n");
-	}
+	print MAIL "$subject\n" if $subject;
 
 	# If required add a header to the mail msg showing
 	# which branches were modified during the commit.
@@ -463,10 +453,9 @@ sub mail_notification {
 		print  MAIL "$X_BRANCH_HDR ", join(",", sort keys %tags), "\n";
 	}
 
-	print (MAIL "\n");
-
-	print(MAIL join("\n", @text));
-	close(MAIL);
+	print MAIL "\n";
+	print MAIL join("\n", @text);
+	close MAIL;
 }
 
 # Return the length of the longest value in the list.
@@ -497,7 +486,8 @@ sub format_summaries {
 		close FILE;
 	}    
 
-	# Format the output
+	# Format the output, extra spaces after "Changes"
+	# to match historic formatting.
 	my $r_max = longest_value("Revision", @revs) + 2;
 	my $d_max = longest_value("Changes  ", @deltas) + 2;
 
