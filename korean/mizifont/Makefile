@@ -12,11 +12,9 @@ MASTER_SITES=	ftp://ftp.mizi.co.kr/pub/hanIM/
 DISTNAME=	xfntmizi-1.1-2.noarch
 EXTRACT_SUFX=	.rpm
 
-MAINTAINER=	cjh@kr.freebsd.org
+MAINTAINER=	cjh@FreeBSD.org
 
 BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/misc/rpm
-
-NO_CDROM=	"Not a free software, but redistributable on FreeBSD mirrors"
 
 USE_X_PREFIX=	yes
 NO_WRKSUBDIR=	yes

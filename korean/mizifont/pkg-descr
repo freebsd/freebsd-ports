@@ -4,11 +4,6 @@ Mizi Research's Korean X11 Fonts
 This fonts are from Mizi Research's hanIM Korean input method.
 Originally from Hangul & Computer Corp.
 
-This is not a free software. Please read copyright message.
-
-For more information, go http://www.mizi.co.kr
-
 --
-Ports by CHOI Junho <cjh@kr.freebsd.org>
-
-WWW: http://www.mizi.co.kr
+CHOI Junho <cjh@FreeBSD.org>
+WWW: http://www.mizi.com

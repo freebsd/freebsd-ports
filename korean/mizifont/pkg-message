@@ -1,11 +1,3 @@
-This is a product of MIZI Research
-----------------------------------
-
-1. This package should not be commercial use.
-2. This package should not be redistributed(except FreeBSD mirrors).
-
-For more information, contact to info@mizi.co.kr or http://www.mizi.co.kr
-
 Please note:
 
  This package installed fonts in /usr/X11R6/lib/X11/fonts/local directory.
@@ -25,4 +17,4 @@ Please note:
  add the correct font path after you reboots X.
 
 --
-CHOI Junho <cjh@kr.freebsd.org>
+CHOI Junho <cjh@FreeBSD.org>
