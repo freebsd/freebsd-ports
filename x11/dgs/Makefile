@@ -3,7 +3,7 @@
 # Date created:        22 April 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.4 1998/09/15 11:57:50 asami Exp $
+# $Id: Makefile,v 1.5 1998/09/17 00:50:51 asami Exp $
 #
 
 DISTNAME=	dgs-0.5.0
@@ -14,7 +14,7 @@ MAINTAINER=	Nakai@technologist.com
 
 LIB_DEPENDS= 	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.2:${PORTSDIR}/graphics/png \
-		tiff34\\.1\\.:${PORTSDIR}/graphics/tiff34
+		tiff34.1:${PORTSDIR}/graphics/tiff34
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/dgs
 

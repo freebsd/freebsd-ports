@@ -3,7 +3,7 @@
 # Date created:		Jan 5 1997
 # Whom:			cfs@ing.puc.cl (original)
 #
-# $Id: Makefile,v 1.5 1998/02/11 08:46:40 tg Exp $
+# $Id: Makefile,v 1.6 1998/02/11 08:48:26 tg Exp $
 #
 
 DISTNAME=	urt
@@ -14,7 +14,7 @@ DISTFILES=	urt-3.1b.tar.Z urt-doc.tar urt-img.tar
 
 MAINTAINER=	giffunip@asme.org
 
-LIB_DEPENDS=	tiff34\\.1\\.:${PORTSDIR}/graphics/tiff34
+LIB_DEPENDS=	tiff34.1:${PORTSDIR}/graphics/tiff34
 BUILD_DEPENDS=	${X11BASE}/lib/libpbm.a:${PORTSDIR}/graphics/netpbm
 
 EXTRACT_ONLY=	urt-3.1b.tar.Z
