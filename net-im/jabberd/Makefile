@@ -6,26 +6,27 @@
 #
 
 PORTNAME=	jabberd
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.3
 CATEGORIES=	net
 MASTER_SITES=	http://www.jabberstudio.org/files/jabberd2/
-DISTNAME=	${PORTNAME}-2.0s2
+DISTNAME=	${PORTNAME}-2.0s3
 DIST_SUBDIR=	jabber
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Online presence and instant messaging server
 
+LIB_DEPENDS=	idn.14:${PORTSDIR}/devel/libidn
+
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 USE_ICONV=	yes
+USE_RC_SUBR=	yes
 CONFIGURE_ARGS= --localstatedir=/var \
-		--with-libiconv-prefix=${LOCALBASE} \
-		--with-openssl=${OPENSSLBASE} \
-		--enable-storage='${STORAGE}' \
-		--enable-authreg='${AUTHREG}'
+		--enable-ssl \
+		--with-extra-include-path=${LOCALBASE}/include${EIP} \
+		--with-extra-library-path=${LOCALBASE}/lib${ELP}
 
-STORAGE+=	fs
-AUTHREG+=	anon pipe
+CONFIGURE_ARGS+=--enable-fs
 
 .if !defined(WITHOUT_DEBUG)
 CONFIGURE_ARGS+=--enable-debug
@@ -33,34 +34,40 @@ CONFIGURE_ARGS+=--enable-debug
 
 .if defined(WITH_POSTGRESQL)
 LIB_DEPENDS+=	pq.3:${PORTSDIR}/databases/postgresql7
-CONFIGURE_ARGS+=--with-pgsql=${LOCALBASE}/include:${LOCALBASE}/lib
-STORAGE+=	pgsql
-AUTHREG+=	pgsql
+CONFIGURE_ARGS+=--enable-pgsql
+.else
+CONFIGURE_ARGS+=--disable-pgsql
 .endif
 
 .if defined(WITH_MYSQL)
 USE_MYSQL=	yes
-CONFIGURE_ARGS+=--with-mysql=${LOCALBASE}/include/mysql:${LOCALBASE}/lib/mysql
-STORAGE+=	mysql
-AUTHREG+=	mysql
+CONFIGURE_ARGS+=--enable-mysql
+EIP+=:${LOCALBASE}/include/mysql
+ELP+=:${LOCALBASE}/lib/mysql
+.else
+CONFIGURE_ARGS+=--disable-mysql
 .endif
 
 .if defined(WITH_BDB)
 LIB_DEPENDS+=	db41.1:${PORTSDIR}/databases/db41
-CONFIGURE_ARGS+=--with-berkeley-db=${LOCALBASE}/include/db41:${LOCALBASE}/lib
-STORAGE+=	db
-AUTHREG+=	db
+CONFIGURE_ARGS+=--enable-db
+CONFIGURE_ARGS+=--oldincludedir=/nonexistant
+EIP+=:${LOCALBASE}/include/db41
+.else
+CONFIGURE_ARGS+=--disable-db
 .endif
 
 .if defined(WITH_LDAP)
 USE_OPENLDAP=	yes
-CONFIGURE_ARGS+=--with-ldap=${LOCALBASE}
-AUTHREG+=	ldap
+CONFIGURE_ARGS+=--enable-ldap
+.else
+CONFIGURE_ARGS+=--disable-ldap
 .endif
 
 .if defined(WITH_PAM)
-CONFIGURE_ARGS+=--with-pam
-AUTHREG+=	pam
+CONFIGURE_ARGS+=--enable-pam
+.else
+CONFIGURE_ARGS+=--disable-pam
 .endif
 
 MAN8=		c2s.8 jabberd.8 resolver.8 router.8 s2s.8 sm.8
@@ -79,11 +86,8 @@ pre-install:
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
-	${INSTALL_DATA} ${FILESDIR}/jabberd.sh ${PREFIX}/etc/rc.d/jabberd.sh-dist
-	@if [ ! -f ${PREFIX}/etc/rc.d/jabberd.sh ]; then \
-		${ECHO} "Installing ${PREFIX}/etc/rc.d/jabberd.sh startup file."; \
-		${INSTALL_SCRIPT} ${FILESDIR}/jabberd.sh ${PREFIX}/etc/rc.d/jabberd.sh; \
-	fi
+	${ECHO} "Installing ${PREFIX}/etc/rc.d/jabberd.sh startup file."
+	${INSTALL_SCRIPT} ${FILESDIR}/jabberd.sh ${PREFIX}/etc/rc.d/jabberd.sh
 	@${CHOWN} -R jabber:jabber ${PREFIX}/etc/jabberd
 	@${FIND} ${PREFIX}/etc/jabberd -type d | ${XARGS} ${CHMOD} 750
 	@${FIND} ${PREFIX}/etc/jabberd -type f | ${XARGS} ${CHMOD} 660
