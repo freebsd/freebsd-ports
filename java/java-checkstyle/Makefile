@@ -19,7 +19,7 @@ COMMENT=	Java style checker
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/ant:${PORTSDIR}/devel/apache-ant
 
-USE_JAVA=	1.3+
+USE_JAVA=	1.4+
 NEED_JAVAC=	YES
 
 PLIST=	${WRKDIR}/PLIST
