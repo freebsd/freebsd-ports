@@ -1,0 +1,43 @@
+--- configure.in.orig	Wed Nov 15 14:50:37 2000
++++ configure.in	Tue Jun 11 06:16:24 2002
+@@ -27,26 +27,26 @@
+ [dnl Check for a C++ interface, either version.
+ 
+ dnl 2.x.
+-AC_CACHE_CHECK([for Db::open in -ldb], djm_cv_lib_db_Dbopen,
++AC_CACHE_CHECK([for Db::open in -ldb3], djm_cv_lib_db_Dbopen,
+ [AC_LANG_SAVE
+ AC_LANG_CPLUSPLUS
+ djm_save_LIBS="$LIBS"
+-LIBS="$LIBS -ldb"
++LIBS="$LIBS -ldb3"
+ AC_TRY_LINK([#include <db_cxx.h>], [Db::open(NULL, DB_BTREE, DB_CREATE, 0, NULL, NULL, NULL);],
+ 	djm_cv_lib_db_Dbopen=yes, djm_cv_lib_db_Dbopen=no)
+ LIBS="$djm_save_LIBS"
+ AC_LANG_RESTORE])
+ 
+ if test $djm_cv_lib_db_Dbopen = yes; then
+-	LIBS="$LIBS -ldb"
++	LIBS="$LIBS -ldb3"
+ else
+ 
+ dnl 3.x.
+-AC_CACHE_CHECK([for Db::open in -ldb_cxx], djm_cv_lib_db_cxx_Dbopen,
++AC_CACHE_CHECK([for Db::open in -ldb3_cxx], djm_cv_lib_db_cxx_Dbopen,
+ [AC_LANG_SAVE
+ AC_LANG_CPLUSPLUS
+ djm_save_LIBS="$LIBS"
+-LIBS="$LIBS -ldb -ldb_cxx"
++LIBS="$LIBS -ldb3 -ldb3_cxx"
+ AC_TRY_LINK([#include <db_cxx.h>], [Db *d = new Db(NULL, 0);
+ d->open(NULL, NULL, DB_BTREE, DB_CREATE, 0);],
+ 	djm_cv_lib_db_cxx_Dbopen=yes, djm_cv_lib_db_cxx_Dbopen=no)
+@@ -54,7 +54,7 @@
+ AC_LANG_RESTORE])
+ 
+ if test $djm_cv_lib_db_cxx_Dbopen = yes; then
+-	LIBS="$LIBS -ldb -ldb_cxx"
++	LIBS="$LIBS -ldb3 -ldb3_cxx"
+ else
+ 	AC_MSG_ERROR([Berkeley DB library 2.x or 3.x configured with --enable-cxx is required])
+ fi

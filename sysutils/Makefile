@@ -53,6 +53,7 @@
     SUBDIR += eject
     SUBDIR += enteruser
     SUBDIR += extipl
+    SUBDIR += fastresolve
     SUBDIR += fcron
     SUBDIR += ffsrecov
     SUBDIR += file

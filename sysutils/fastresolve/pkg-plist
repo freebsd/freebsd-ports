@@ -1,0 +1,13 @@
+bin/dns-terror
+bin/btree-dump
+bin/convert-dom-db
+bin/convert-ip-db
+bin/expire-ip-db
+bin/getdominfo
+bin/rebuild-dom-db
+bin/rebuild-ip-db
+bin/reresolve
+bin/make-report
+share/fastresolve/AddrCycle.pm
+share/fastresolve/analog.cfg
+@dirrm share/fastresolve
