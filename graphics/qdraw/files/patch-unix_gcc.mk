@@ -3,6 +3,7 @@
 @@ -34,12 +34,18 @@
  GCCPATH=	/usr
  GCC=		cc
++ifneq "${freebsd}" "34"
  ifneq "${freebsd}" "40"
 +ifneq "${freebsd}" "41"
 +ifneq "${freebsd}" "42"
@@ -13,9 +14,10 @@
  GCCVER=		egcs-2.91.62
  GCCPATH=	${GCCBASE}/lib/gcc-lib/${GCCTARGET}/${GCCVER}
  GCC=		egcc
+ endif
 +endif
 +endif
 +endif
  endif
- endif
++endif
  endif
