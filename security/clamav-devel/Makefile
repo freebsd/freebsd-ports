@@ -91,7 +91,6 @@ SED_CONF=	-E -e 's|^\#?(Example)$$|\#\1|' \
 		-e 's|^\#?(Checks)$$|\#\1|' \
 		-e 's|^\#?(DatabaseDirectory) .*$$|\1 ${DBDIR}|' \
 		-e 's|^\#?(DatabaseOwner) .*$$|\1 ${CLAMAVUSER}|' \
-		-e 's|^\#?(UpdateLogFile) .*$$|\1 ${LOGDIR}/freshclam.log|' \
 		-e 's|^\#?(FixStaleSocket)$$|\1|'
 
 PLIST_SUB+=	CLAMAVUSER=${CLAMAVUSER} \
