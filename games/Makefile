@@ -139,6 +139,7 @@
     SUBDIR += hlserver-flf
     SUBDIR += hlserver-glbwar
     SUBDIR += hlserver-heroes
+    SUBDIR += hlserver-opera
     SUBDIR += hlserver-opfor
     SUBDIR += hlserver-psychostats
     SUBDIR += hlserver-pvk
