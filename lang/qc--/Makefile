@@ -16,6 +16,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Quick C-- Compiler
 
+BROKEN=		"Configure fails with current version of ocaml"
 DEPRECATED=	"Uses snapshots and is unmaintained"
 EXPIRATION_DATE=2004-06-18
 
