@@ -1,0 +1,11 @@
+xmlcatmgr is a command line script used to manipulate SGML and XML catalogs.
+It is designed with simplicity in mind:  it does not depend on external
+programs nor libraries, so it is ideal to manage catalog files from inside
+pkgsrc.  It is also useful to handle shared directories like share/sgml and
+share/xml.
+
+XML catalogs are files that contain mappings from public identifiers to
+system identifiers.  This allows XML parsers to locate public identifiers
+in the local system.
+
+WWW: http://xmlcatmgr.sourceforge.net/

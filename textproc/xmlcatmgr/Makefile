@@ -1,0 +1,38 @@
+# Ports collection makefile for:  xmlcatmgr
+# Date created:			  Sat May 24, 2003
+# Whom:				  Hiroki Sato <hrs@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	xmlcatmgr
+PORTVERSION=	0.2
+CATEGORIES=	textproc
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME:L}
+
+MAINTAINER=	hrs@FreeBSD.org
+COMMENT=	SGML/XML catalog manager
+
+MAN1=		xmlcatmgr.1
+
+CATALOG_MASTER_SGML_DIR?=	${PREFIX}/share/sgml
+CATALOG_MASTER_SGML?=		${CATALOG_MASTER_SGML_DIR}/catalog
+CATALOG_PORTS_SGML?=		${CATALOG_MASTER_SGML_DIR}/catalog.ports
+CATALOG_MASTER_XML_DIR?=	${PREFIX}/share/xml
+CATALOG_MASTER_XML?=		${CATALOG_MASTER_XML_DIR}/catalog
+CATALOG_PORTS_XML?=		${CATALOG_MASTER_XML_DIR}/catalog.ports
+
+MAKEFILE=	Makefile.boot
+MAKE_ENV+=	BT_PREFIX="${PREFIX}"
+MAKE_ENV+=	BT_PROG_AWK="${AWK}"
+MAKE_ENV+=	BT_PROG_SH="${SH}"
+MAKE_ENV+=	BT_DIR_CATALOG="${CATALOG_MASTER_XML_DIR}"
+MAKE_ENV+=	BT_INSTALL_DIR="${MKDIR}"
+MAKE_ENV+=	BT_INSTALL_BIN="${INSTALL_SCRIPT}"
+MAKE_ENV+=	BT_INSTALL_DATA="${INSTALL_DATA}"
+
+post-install:
+	@${ENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+
+.include <bsd.port.mk>
