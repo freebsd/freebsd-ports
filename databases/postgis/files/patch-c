@@ -1,0 +1,64 @@
+--- Makefile	Wed Dec 29 09:44:01 2004
++++ Makefile.new	Wed Dec 29 09:56:30 2004
+@@ -28,7 +28,7 @@
+ #
+ # Download from: http://geos.refractions.net
+ #
+-USE_GEOS=1
++#USE_GEOS=1
+ ifeq (${GEOS_DIR},) 
+ 	GEOS_DIR=/usr/local
+ endif
+@@ -105,10 +105,10 @@
+ SCRIPTS_VERSION=0.0.1
+ ifeq (${USE_VERSION}, 71) 
+ 	MODULE_FILENAME = $(LPATH)/$(shlib)
+-	MODULE_INSTALLDIR = $(libdir)
++	MODULE_INSTALLDIR = $(LIBDIR)
+ else
+ 	MODULE_FILENAME = $(LPATH)/$(shlib)
+-	MODULE_INSTALLDIR = $(pkglibdir)
++	MODULE_INSTALLDIR = $(LIBDIR)
+ endif
+ 
+ #---------------------------------------------------------------
+@@ -191,6 +191,10 @@
+ postgis_geos_wrapper.o: postgis_geos_wrapper.cpp
+ 
+ all: $(GEOS_RULES) all-lib postgis.sql postgis_undef.sql loaderdumper
++ifneq ($(WITH-DOC),)
++	$(MAKE) -C doc chunked-html
++endif
++
+ 
+ loaderdumper:
+ 	$(MAKE) -C loader
+@@ -207,11 +211,15 @@
+ 	perl create_undef.pl $< $(USE_VERSION) > $@ 
+ 
+ install: all installdirs install-postgis-lib
+-	$(INSTALL_DATA) postgis.sql $(DESTDIR)$(datadir)
+-	$(INSTALL_DATA) postgis_undef.sql $(DESTDIR)$(datadir)
+-	$(INSTALL_DATA) spatial_ref_sys.sql $(DESTDIR)$(datadir)
+-	$(INSTALL_DATA) README.postgis $(DESTDIR)$(datadir)
++	$(INSTALL_DATA) postgis.sql $(DESTDIR)$(DATADIR)/postgis.sql.default
++	$(INSTALL_DATA) postgis_undef.sql $(DESTDIR)$(DATADIR)
++	$(INSTALL_DATA) spatial_ref_sys.sql $(DESTDIR)$(DATADIR)
++	$(INSTALL_DATA) README.postgis $(DESTDIR)$(DATADIR)
+ 	$(MAKE) DESTDIR=$(DESTDIR) -C loader install
++ifneq ($(WITH-DOC),)
++	$(MAKE) INSTALL_DATA="$(INSTALL_DATA)" DOCSDIR=$(DOCSDIR) -C doc install
++endif
++
+ 
+ #- This has been copied from postgresql and adapted
+ install-postgis-lib: $(shlib)
+@@ -235,7 +243,7 @@
+ 	./geos_version.sh $(GEOS_DIR) > postgis_geos_version.h
+ 
+ installdirs:
+-	$(mkinstalldirs) $(docdir)/contrib $(datadir)/contrib $(libdir)
++	$(mkinstalldirs) $(DATADIR) $(libdir)
+ 
+ uninstall: uninstall-lib
+ 	@rm -f $(docdir)/contrib/README.postgis $(datadir)/contrib/postgis.sql

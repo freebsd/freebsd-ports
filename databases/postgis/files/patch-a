@@ -1,0 +1,45 @@
+--- doc/Makefile	Thu Sep  9 17:51:32 2004
++++ doc/Makefile.new	Wed Dec 29 09:49:05 2004
+@@ -5,14 +5,16 @@
+ postgis-out.xml: postgis.xml
+ 	cat $< | sed "s/@@LAST_RELEASE_VERSION@@/$(LAST_RELEASE_VERSION)/g" > $@
+ 
++# html/ch01.html html/ch02.html html/ch03.html html/ch04.html html/ch05.html html/index.html
++
+ chunked-html: postgis-out.xml
+-	xsltproc \
+-		--param shade.verbatim 1 \
++	xsltproc --param shade.verbatim 1 \
+ 		--param chunk.section.depth 0 \
++		--output html/ \
+ 		--stringparam html.stylesheet style.css \
+ 		--stringparam saxon.character.representation decimal \
+-		/usr/share/sgml/docbook/xsl-stylesheets/html/chunk.xsl \
+-		$<
++		/usr/local/share/xsl/docbook/html/chunk.xsl \
++		$< && touch chunked-html
+ 
+ html: postgis-out.xml
+ 	xsltproc \
+@@ -20,11 +22,20 @@
+ 		--param shade.verbatim 1 \
+ 		--param chunk.section.depth 0 \
+ 		--stringparam html.stylesheet style.css \
+-		/usr/share/sgml/docbook/xsl-stylesheets/html/docbook.xsl \
++		/usr/local/share/xsl/docbook/html/docbook.xsl \
+ 		$<
+ 
+ jw: postgis-out.xml
+ 	jw $(COMMONOPTS) -o html/ postgis-out.xml
+ 
+ clean:
++	rm -f postgis-out.xml chunked-html html/*.html
++
++install: chunked-html
++	$(INSTALL_DATA)	html/ch01.html $(DOCSDIR)/ch01.html
++	$(INSTALL_DATA)	html/ch02.html $(DOCSDIR)/ch02.html
++	$(INSTALL_DATA)	html/ch03.html $(DOCSDIR)/ch03.html
++	$(INSTALL_DATA)	html/ch04.html $(DOCSDIR)/ch04.html
++	$(INSTALL_DATA)	html/ch05.html $(DOCSDIR)/ch05.html
++	$(INSTALL_DATA)	html/index.html $(DOCSDIR)/index.html
+ 

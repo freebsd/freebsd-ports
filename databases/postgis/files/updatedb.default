@@ -1,0 +1,5 @@
+#!/bin/sh
+
+LIBDIR=%%LIBDIR%%
+
+sed "s|'.*/libpostgis.so.0'|'${LIBDIR}/libpostgis.so.0'|g" $1 > $1.updated

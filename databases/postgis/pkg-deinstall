@@ -1,0 +1,11 @@
+#!/bin/sh
+
+
+case "$2" in
+  "POST-DEINSTALL")
+	PREF=${PREFIX:-$PKG_PREFIX}
+	SHAREDIR=${PREF}/share/postgis
+	rm -f ${SHAREDIR}/postgis.sql ${SHAREDIR}/updatedb
+	rmdir ${SHAREDIR}
+  ;;
+esac
