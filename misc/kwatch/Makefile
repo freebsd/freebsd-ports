@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	misc kde
 MASTER_SITES=	http://www.m-j-s.net/pub/kde/ \
 		${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	unstable/apps/utils
+MASTER_SITE_SUBDIR=	stable/apps/KDE3.x/admin/
 
 MAINTAINER=	kde@freebsd.org
 
