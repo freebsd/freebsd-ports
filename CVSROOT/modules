@@ -4562,6 +4562,7 @@ ncftp2		ports/ftp/ncftp2
 ncftp3		ports/ftp/ncftp3
 ncftpd		ports/ftp/ncftpd
 nclever		ports/biology/nclever
+ncp		ports/net/ncp
 ncplib		ports/net/ncplib
 ncurses		ports/devel/ncurses
 nd		ports/www/nd
