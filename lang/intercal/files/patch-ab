@@ -1,0 +1,12 @@
+--- perpetrate.c.orig	Fri Dec 11 11:32:40 1998
++++ perpetrate.c	Fri Dec 11 11:33:10 1998
+@@ -56,7 +56,9 @@
+ extern int yyparse(void);
+ 
+ /* getopt declaration */
++#ifndef __FreeBSD__
+ int getopt(int, char**, char*);
++#endif
+ 
+ /* compilation options */
+ bool compile_only; 	/* just compile into C, don't run the linker */

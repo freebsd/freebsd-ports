@@ -4,4 +4,4 @@ languages.  This is the C-INTERCAL compiler, which compiles
 INTERCAL to C, and then invokes cc as a backend, much like the
 "f2c" Fortran compiler.
 
-The INTERCAL resource page: http://sagan.earthspace.net/intercal/
+The INTERCAL resource page: http://www.tuxedo.org/~esr/intercal/
