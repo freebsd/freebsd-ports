@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/mail/postfix21/scripts/Attic/configure.postfix,v 1.16 2002-02-11 17:48:50 dwcjr Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/postfix21/scripts/Attic/configure.postfix,v 1.17 2002-02-26 19:34:37 dwcjr Exp $
 
 if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
 	exit
@@ -79,8 +79,8 @@ while [ "$1" ]; do
 			echo "MAN8+=		tlsmgr.8"
 			echo "POSTFIX_CCARGS+=	-DHAS_SSL -I/usr/include/openssl"
 			echo "POSTFIX_AUXLIBS+=	-lssl -lcrypto"
-			echo "DISTFILES+=	\${DISTNAME}.tar.gz pfixtls-0.8.3-1.1.3-0.9.6c.tar.gz"
-			echo "EXTRA_PATCHES+=	\${WRKDIR}/pfixtls-0.8.3-1.1.3-0.9.6c/pfixtls.diff"
+			echo "DISTFILES+=	\${DISTNAME}.tar.gz pfixtls-0.8.4-1.1.4-0.9.6c.tar.gz"
+			echo "EXTRA_PATCHES+=	\${WRKDIR}/pfixtls-0.8.4-1.1.4-0.9.6c/pfixtls.diff"
 			echo "PATCH_STRIP=	-p1"
 			SUB_TLS=""
 			;;
