@@ -1,0 +1,8 @@
+QextMDI is a C++ GUI library extending Trolltech's Qt. It allows Qt
+programmers to create applications that provide both: an SDI and an
+MDI user interface.
+
+WWW: http://www.geocities.com/gigafalk/qextmdi.htm
+
+ Roland
+jesse@cs.uni-magdeburg.de

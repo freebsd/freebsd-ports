@@ -709,6 +709,7 @@
     SUBDIR += py_otp_interface
     SUBDIR += pychecker
     SUBDIR += pyrex
+    SUBDIR += qextmdi
     SUBDIR += qssl
     SUBDIR += qt-designer
     SUBDIR += qtez
