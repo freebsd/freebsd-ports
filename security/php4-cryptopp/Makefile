@@ -20,7 +20,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libcryptopp.a:${PORTSDIR}/security/cryptopp
 WRKSRC=		${WRKDIR}/${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAME}
 
-USE_PERL=	yes
+USE_PERL5=	yes
 USE_PHP=	yes
 USE_PHPEXT=	yes
 USE_PHPIZE=	yes
