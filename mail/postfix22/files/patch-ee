@@ -1,0 +1,13 @@
+*** ./src/master/master.c.orig	Tue Mar  7 10:25:07 2000
+--- ./src/master/master.c	Thu Jun  1 22:43:50 2000
+***************
+*** 104,107 ****
+  /* FILES
+! /*	/etc/postfix/main.cf: global configuration file.
+! /*	/etc/postfix/master.cf: master process configuration file.
+  /*	/var/spool/postfix/pid/master.pid: master lock file.
+--- 104,107 ----
+  /* FILES
+! /*	!!PREFIX!!/etc/postfix/main.cf: global configuration file.
+! /*	!!PREFIX!!/etc/postfix/master.cf: master process configuration file.
+  /*	/var/spool/postfix/pid/master.pid: master lock file.

@@ -9,10 +9,11 @@
 #
 #  make -DBATCH POSTFIX_OPTIONS="DB3 PCRE"
 #
-# the options are the same names as in the scripts/configure.postfix file
+# the options are the same names as in the scripts/configure.postfix file.
+# POSTFIX_OPTIONS can be set in /etc/make.conf also.
 
 PORTNAME=	postfix
-PORTVERSION=	1.1.12
+PORTVERSION=	2.0.0.2
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
@@ -44,6 +45,8 @@ MAN8=	bounce.8 cleanup.8 defer.8 error.8 flush.8 lmtp.8 local.8 \
 # TLS patch adds to MAN8 but doesn't have .html file, so avoid trying to
 # patch it.
 MAN8base=$(MAN8:S/tlsmgr.8//)
+
+NO_LATEST_LINK=	yes
 
 CONF1=	main.cf master.cf access aliases canonical pcre_table regexp_table \
 	relocated transport virtual
