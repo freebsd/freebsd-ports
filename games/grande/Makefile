@@ -8,10 +8,11 @@
 PORTNAME=	grande
 PORTVERSION=	0.5
 CATEGORIES=	games
-MASTER_SITES=	http://www2.mwnet.or.jp/~fc3srx7/download/
+MASTER_SITES=	http://kxl.hn.org/download/
 DISTNAME=	${PORTNAME}-KXL-${PORTVERSION}
 
 MAINTAINER=	nakai@FreeBSD.org
+COMMENT=	A Zanac type game
 
 BUILD_DEPENDS=	${X11BASE}/include/KXL.h:${PORTSDIR}/games/kxl
 

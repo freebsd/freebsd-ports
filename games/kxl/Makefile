@@ -8,10 +8,11 @@
 PORTNAME=	kxl
 PORTVERSION=	1.1.5
 CATEGORIES=	games
-MASTER_SITES=	http://www2.mwnet.or.jp/~fc3srx7/download/
+MASTER_SITES=	http://kxl.hn.org/download/
 DISTNAME=	KXL-${PORTVERSION}
 
 MAINTAINER=	nakai@FreeBSD.org
+COMMENT=	A visual, sound library for games
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
