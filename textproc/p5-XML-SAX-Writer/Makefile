@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	XML-SAX-Writer
-PORTVERSION=	0.20
+PORTVERSION=	0.39
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@protey.ru
+MAINTAINER=	skv@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/XML/SAX/Exception.pm:${PORTSDIR}/textproc/p5-XML-SAX \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/XML/NamespaceSupport.pm:${PORTSDIR}/textproc/p5-XML-NamespaceSupport \
