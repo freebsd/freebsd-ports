@@ -1,0 +1,620 @@
+--- po/ru.po.orig	Fri Jul 25 00:22:28 2003
++++ po/ru.po	Fri Jul 25 00:22:50 2003
+@@ -1,13 +1,13 @@
+-# translation of gthumb-2.0.1-ru.po to russian
++# translation of gthumb-2.1.3-ru.po to Russian
+ # Copyright (C) YEOCAR Free Software Foundation, Inc.
++# Диконов Вячеслав (Vyacheslav Dikonov) <sdiconov@mail.ru>, 2003
+ # Sergey Volozhanin <svo@asplinux.ru>, 2002
+-# Диконов Вячеслав (Vyacheslav Dikonov) <sdiconov@mail.ru>, 2002
+ # Yuri N. Sedunov <aris@altlinux.ru>, 2003
+ msgid ""
+ msgstr ""
+ "Project-Id-Version: gthumb\n"
+ "POT-Creation-Date: 2003-07-06 20:06+0200\n"
+-"PO-Revision-Date: 2003-06-29 05:05+0400\n"
++"PO-Revision-Date: 2003-07-09 05:05+0400\n"
+ "Last-Translator: Вячеслав Диконов <slava@altlinux.ru>\n"
+ "Language-Team: russian <ru@li.org>\n"
+ "MIME-Version: 1.0\n"
+@@ -103,9 +103,7 @@
+ #: components/image-viewer/GNOME_GThumb_Viewer.xml.in.h:14
+ #: src/gthumb-ui.xml.h:143
+ msgid "Start or stop current animation"
+-msgstr ""
+-"Начать/прекратить показ текущего "
+-"мультфильма"
++msgstr "Начать/прекратить показ текущего мультфильма"
+ 
+ #: components/image-viewer/GNOME_GThumb_Viewer.xml.in.h:15
+ msgid "Start/Stop _Animation"
+@@ -276,11 +274,11 @@
+ 
+ #: libgthumb/gnome-print-font-dialog.c:114
+ msgid "_Insert a new preview phrase."
+-msgstr ""
++msgstr "_Введите новый текст"
+ 
+ #: libgthumb/gnome-print-font-dialog.c:119
+ msgid "Modify preview phrase..."
+-msgstr ""
++msgstr "Изменить тестовую строку"
+ 
+ #: libgthumb/gnome-print-font-dialog.c:173
+ msgid "Preview"
+@@ -288,7 +286,7 @@
+ 
+ #: libgthumb/gnome-print-font-dialog.c:186
+ msgid "_Modify preview phrase..."
+-msgstr ""
++msgstr "_Изменить тестовую строку"
+ 
+ #: libgthumb/gnome-print-font-dialog.c:244
+ msgid "Font Selection"
+@@ -300,7 +298,7 @@
+ 
+ #: libgthumb/gnome-print-font-picker.c:180
+ msgid "The title of the selection dialog box"
+-msgstr ""
++msgstr "Заголовок окна выбора шрифта"
+ 
+ #: libgthumb/gnome-print-font-picker.c:200
+ msgid "Font name"
+@@ -312,39 +310,39 @@
+ 
+ #: libgthumb/gnome-print-font-picker.c:209
+ msgid "Preview text"
+-msgstr "Предварительный просмотр текста"
++msgstr "Тестовая строка"
+ 
+ #: libgthumb/gnome-print-font-picker.c:210
+ msgid "Preview text shown in the dialog"
+-msgstr ""
++msgstr "Тестовая строка в окне выбора шрифта"
+ 
+ #: libgthumb/gnome-print-font-picker.c:218
+ msgid "Use font in label"
+-msgstr "Использовать шрифт на метках"
++msgstr "Использовать шрифт для надписи"
+ 
+ #: libgthumb/gnome-print-font-picker.c:219
+ msgid "Use font in the label in font info mode"
+-msgstr ""
++msgstr "Использовать шрифт для надписи в режиме просмотра сведений о шрифте"
+ 
+ #: libgthumb/gnome-print-font-picker.c:227
+ msgid "Font size for label"
+-msgstr "Размер шрифта для меток"
++msgstr "Размер шрифта надписи"
+ 
+ #: libgthumb/gnome-print-font-picker.c:228
+ msgid "Font size for label in font info mode"
+-msgstr ""
++msgstr "Размер шрифта надписи в режиме просмотра сведений о шрифте"
+ 
+ #: libgthumb/gnome-print-font-picker.c:238
+ msgid "Show size"
+-msgstr "Показать размер"
++msgstr "Показывать размер"
+ 
+ #: libgthumb/gnome-print-font-picker.c:239
+ msgid "Show size in font info mode"
+-msgstr ""
++msgstr "Показывать размер в режиме просмотра сведений о шрифте"
+ 
+ #: libgthumb/gnome-print-font-picker.c:1018
+ msgid "Font"
+-msgstr "_Шрифт"
++msgstr "Шрифт"
+ 
+ #: libgthumb/gth-file-view-list.c:1376 src/gthumb-ui.xml.h:25
+ #: src/gthumb_comments.glade.h:8
+@@ -428,8 +426,8 @@
+ "The name \"%s\" is not valid because it contains the character \"/\". Please "
+ "use a different name."
+ msgstr ""
+-"Имя файла \"%s\" не является допустимым, так "
+-"как содержит символ \"/\". Введите, "
++"Имя файла \"%s\" недопустимо, поскольку "
++"содержит символ \"/\". Введите, "
+ "пожалуйста, другое имя."
+ 
+ #: src/commands-impl.c:319 src/dlg-convert.c:313
+@@ -457,11 +455,11 @@
+ 
+ #: src/commands-impl.c:453
+ msgid "Stop"
+-msgstr "_Остановить"
++msgstr "Остановить"
+ 
+ #: src/commands-impl.c:454
+ msgid "Continue"
+-msgstr "Про_должить"
++msgstr "Продолжить"
+ 
+ #: src/commands-impl.c:530
+ msgid "The selected images will be moved to the Trash, are you sure?"
+@@ -519,7 +517,7 @@
+ 
+ #: src/commands-impl.c:974 src/dlg-catalog.c:120
+ msgid "Enter the library name: "
+-msgstr "Введите имя коллекции:"
++msgstr "Введите имя коллекции: "
+ 
+ #: src/commands-impl.c:975
+ #, c-format
+@@ -630,8 +628,8 @@
+ #: src/commands-impl.c:2803
+ msgid "translator_credits"
+ msgstr ""
+-"Сергей Воложанин <svo@asplinux.ru>\n"
+-"Диконов Вячеслав <slava@altlinux.ru>"
++"Диконов Вячеслав <slava@altlinux.ru>\n"
++"Сергей Воложанин <svo@asplinux.ru>"
+ 
+ #: src/commands-impl.c:2812 src/gthumb-window.c:812 src/gthumb-window.c:4859
+ #: src/gthumb_png_exporter.glade.h:75 src/gthumb_web_exporter.glade.h:49
+@@ -811,7 +809,7 @@
+ 
+ #: src/dlg-image-prop.c:861 src/gthumb-window.c:450
+ msgid "Modified"
+-msgstr ""
++msgstr "Дата изменения"
+ 
+ #: src/dlg-image-prop.c:866
+ msgid "Information on Channel"
+@@ -823,7 +821,7 @@
+ 
+ #: src/dlg-image-prop.c:910 src/gthumb-window.c:5318 src/gthumb.glade.h:25
+ msgid "Value"
+-msgstr "яркость"
++msgstr "Значение"
+ 
+ #: src/dlg-image-prop.c:991
+ #, c-format
+@@ -879,7 +877,7 @@
+ 
+ #: src/dlg-web-exporter.c:649
+ msgid "Select Album Theme"
+-msgstr "Выбрать тему альбома"
++msgstr "Выбрать стиль оформления альбома"
+ 
+ #: src/fullscreen.c:782 src/gthumb-ui.xml.h:113
+ msgid "Restore Normal View"
+@@ -950,9 +948,8 @@
+ "цвета"
+ 
+ #: src/gthumb-ui.xml.h:10
+-#, fuzzy
+ msgid "Apply threshold"
+-msgstr "Порог"
++msgstr "Применить порог"
+ 
+ #: src/gthumb-ui.xml.h:11
+ msgid "Assign categories to selected images"
+@@ -1053,7 +1050,7 @@
+ 
+ #: src/gthumb-ui.xml.h:34
+ msgid "Create _Web Album"
+-msgstr "Создать альбом для Веб"
++msgstr "Создать _интернет-альбом"
+ 
+ #: src/gthumb-ui.xml.h:35
+ msgid "Create a new catalog"
+@@ -1113,7 +1110,7 @@
+ 
+ #: src/gthumb-ui.xml.h:49
+ msgid "Find images"
+-msgstr "_Поиск изображений"
++msgstr "Поиск изображений"
+ 
+ #: src/gthumb-ui.xml.h:50
+ msgid "Fit"
+@@ -1163,7 +1160,7 @@
+ 
+ #: src/gthumb-ui.xml.h:61
+ msgid "Image _Comment"
+-msgstr "Комментарий к изображению"
++msgstr "Ко_мментарий к изображению"
+ 
+ #: src/gthumb-ui.xml.h:62
+ msgid "In"
+@@ -1477,7 +1474,7 @@
+ 
+ #: src/gthumb-ui.xml.h:136
+ msgid "Show/_Hide"
+-msgstr "Показать/Скрыть"
++msgstr "Показать/_Скрыть"
+ 
+ #: src/gthumb-ui.xml.h:137 src/gthumb_preferences.glade.h:51
+ msgid "Slide Show"
+@@ -1703,7 +1700,7 @@
+ 
+ #: src/gthumb-ui.xml.h:186
+ msgid "_Adjust Color Levels"
+-msgstr "Автоматическая цветоко_ррекция"
++msgstr "_Цветокоррекция"
+ 
+ #: src/gthumb-ui.xml.h:187
+ msgid "_Back"
+@@ -1759,7 +1756,7 @@
+ 
+ #: src/gthumb-ui.xml.h:202
+ msgid "_Edit Bookmarks"
+-msgstr "_Редактировать закладки..."
++msgstr "_Редактировать закладки"
+ 
+ #: src/gthumb-ui.xml.h:203 src/gthumb_search.glade.h:25
+ msgid "_Edit Search"
+@@ -1767,7 +1764,7 @@
+ 
+ #: src/gthumb-ui.xml.h:204
+ msgid "_Equalize"
+-msgstr ""
++msgstr "_Уровни"
+ 
+ #: src/gthumb-ui.xml.h:205
+ msgid "_File"
+@@ -1819,7 +1816,7 @@
+ 
+ #: src/gthumb-ui.xml.h:219
+ msgid "_Image Preview"
+-msgstr "Предварительный просмотр изображения"
++msgstr "Предварительный _просмотр изображения"
+ 
+ #: src/gthumb-ui.xml.h:220
+ msgid "_Keyboard Shortcuts"
+@@ -1935,11 +1932,11 @@
+ 
+ #: src/gthumb-ui.xml.h:251
+ msgid "_Stretch Contrast"
+-msgstr "Растянуть контраст"
++msgstr "_Растянуть контраст"
+ 
+ #: src/gthumb-ui.xml.h:252
+ msgid "_Threshold"
+-msgstr "Порог"
++msgstr "_Порог"
+ 
+ #: src/gthumb-ui.xml.h:253 src/gthumb_preferences.glade.h:64
+ msgid "_Thumbnails"
+@@ -2141,7 +2138,7 @@
+ 
+ #: src/gthumb.glade.h:22
+ msgid "Photo _Data (EXIF)"
+-msgstr "_Дополнительные сведения (EXIF)"
++msgstr "_Данные EXIF"
+ 
+ #: src/gthumb.glade.h:23
+ msgid "R_ecent applications:"
+@@ -2181,7 +2178,7 @@
+ 
+ #: src/gthumb.glade.h:34
+ msgid "_Remove"
+-msgstr "Удалить"
++msgstr "_Удалить"
+ 
+ #: src/gthumb.glade.h:35
+ msgid "_Save the new image as:"
+@@ -2209,7 +2206,7 @@
+ 
+ #: src/gthumb_comments.glade.h:10
+ msgid "Current date"
+-msgstr "_Сегодняшняя дата"
++msgstr "Сегодняшняя дата"
+ 
+ #: src/gthumb_comments.glade.h:11 src/gthumb_tools.glade.h:25
+ msgid "Image c_reation date"
+@@ -2231,7 +2228,7 @@
+ #: src/gthumb_comments.glade.h:15
+ msgid "Photo digitalization date (From EXIF data)"
+ msgstr ""
+-"Дата оцифровки _фотографии (Из данных EXIF)"
++"Дата оцифровки фотографии (Из данных EXIF)"
+ 
+ #: src/gthumb_comments.glade.h:16
+ msgid "Remove selected category"
+@@ -2244,7 +2241,7 @@
+ 
+ #: src/gthumb_comments.glade.h:18 src/gthumb_tools.glade.h:42
+ msgid "The _following date:"
+-msgstr "_Указанная:"
++msgstr "_Произвольная:"
+ 
+ #: src/gthumb_comments.glade.h:19
+ msgid "The following date"
+@@ -2260,11 +2257,11 @@
+ 
+ #: src/gthumb_comments.glade.h:22
+ msgid "_New"
+-msgstr "Создать"
++msgstr "_Создать"
+ 
+ #: src/gthumb_comments.glade.h:23
+ msgid "_No date"
+-msgstr "Без даты"
++msgstr "_Без даты"
+ 
+ #: src/gthumb_comments.glade.h:24 src/gthumb_search.glade.h:27
+ msgid "_Place:"
+@@ -2515,7 +2512,7 @@
+ 
+ #: src/gthumb_edit.glade.h:33 src/gthumb_web_exporter.glade.h:51
+ msgid "pixels"
+-msgstr "в _пикселях"
++msgstr "в пикселях"
+ 
+ #: src/gthumb_png_exporter.glade.h:4
+ msgid "112"
+@@ -2871,7 +2868,7 @@
+ 
+ #: src/gthumb_preferences.glade.h:21
+ msgid "<b>Zoom quality</b>"
+-msgstr "<b>Качество мас_штабирования</b>"
++msgstr "<b>Качество масштабирования</b>"
+ 
+ #: src/gthumb_preferences.glade.h:22
+ msgid "Activate items with a double click"
+@@ -3088,7 +3085,7 @@
+ 
+ #: src/gthumb_print.glade.h:10
+ msgid "C_ustom:"
+-msgstr "Другой:"
++msgstr "_Другой:"
+ 
+ #: src/gthumb_print.glade.h:11
+ msgid "Center _on Page"
+@@ -3096,11 +3093,11 @@
+ 
+ #: src/gthumb_print.glade.h:12
+ msgid "Comment _font:"
+-msgstr "Шрифт комментарий:"
++msgstr "_Шрифт комментария:"
+ 
+ #: src/gthumb_print.glade.h:13
+ msgid "I_nclude comment"
+-msgstr "Включить комментарий"
++msgstr "_Включить комментарии"
+ 
+ #: src/gthumb_print.glade.h:14
+ msgid "Inches"
+@@ -3108,7 +3105,7 @@
+ 
+ #: src/gthumb_print.glade.h:15
+ msgid "Lan_dscape"
+-msgstr "Альбом"
++msgstr "_Альбомная"
+ 
+ #: src/gthumb_print.glade.h:16
+ msgid "Layout"
+@@ -3120,11 +3117,11 @@
+ 
+ #: src/gthumb_print.glade.h:18
+ msgid "P_ortrait"
+-msgstr "Портрет"
++msgstr "_Портретная"
+ 
+ #: src/gthumb_print.glade.h:19
+ msgid "Paper Details"
+-msgstr ""
++msgstr "Лист"
+ 
+ #: src/gthumb_print.glade.h:21
+ msgid "US E_xecutive"
+@@ -3192,15 +3189,15 @@
+ 
+ #: src/gthumb_search.glade.h:17
+ msgid "Match a_ll selected categories"
+-msgstr ""
++msgstr "Вс_е выбранные категории"
+ 
+ #: src/gthumb_search.glade.h:18
+ msgid "Match a_ny selected category"
+-msgstr ""
++msgstr "_Любая из выбранных категорий"
+ 
+ #: src/gthumb_search.glade.h:19
+ msgid "New _Search..."
+-msgstr "_Новый поиск..."
++msgstr "_Новый поиск"
+ 
+ #: src/gthumb_search.glade.h:20
+ msgid "No images found"
+@@ -3340,7 +3337,7 @@
+ 
+ #: src/gthumb_tools.glade.h:34
+ msgid "Rename Series"
+-msgstr "Переименовать _группу файлов"
++msgstr "Переименовать группу файлов"
+ 
+ #: src/gthumb_tools.glade.h:35
+ msgid "Restore Comments From a Backup File"
+@@ -3374,6 +3371,10 @@
+ "original filename. Use ? to insert the image date. Use ! to insert the image "
+ "size"
+ msgstr ""
++"Символами # обозначается место для порядкового номера. Символ * заменяется "
++"на исходное имя файла. Символ ? обозначает место для вставки даты, а символ "
++"! размера."
++
+ 
+ #: src/gthumb_tools.glade.h:46
+ msgid "_Sort original list:"
+@@ -3381,7 +3382,7 @@
+ 
+ #: src/gthumb_tools.glade.h:49
+ msgid "by Modification date"
+-msgstr "по времени изменения"
++msgstr "по времени"
+ 
+ #: src/gthumb_tools.glade.h:50
+ msgid "by Name"
+@@ -3417,17 +3418,15 @@
+ 
+ #: src/gthumb_web_exporter.glade.h:11
+ msgid "<b>Index Layout</b>"
+-msgstr ""
++msgstr "<b>Раскладка</b>"
+ 
+ #: src/gthumb_web_exporter.glade.h:12
+-#, fuzzy
+ msgid "<b>Personalize theme</b>"
+-msgstr "<b>Размер страницы</b>"
++msgstr "<b>Настройка оформления</b>"
+ 
+ #: src/gthumb_web_exporter.glade.h:13
+-#, fuzzy
+ msgid "<b>Photo data</b>"
+-msgstr "<b>Нижний колонтитул</b>"
++msgstr "<b>Технические сведения о фотоснимках</b>"
+ 
+ #: src/gthumb_web_exporter.glade.h:14
+ msgid "<b>Saving</b>"
+@@ -3435,103 +3434,99 @@
+ 
+ #: src/gthumb_web_exporter.glade.h:15
+ msgid "<b>Theme</b>"
+-msgstr "<b>Тема</b>"
++msgstr "<b>Стиль</b>"
+ 
+ #: src/gthumb_web_exporter.glade.h:16
+ msgid "Came_ra Model"
+-msgstr ""
++msgstr "_Модель фотоаппарата"
+ 
+ #: src/gthumb_web_exporter.glade.h:17
+-#, fuzzy
+ msgid "Caption"
+ msgstr "Подпись"
+ 
+ #: src/gthumb_web_exporter.glade.h:20
+ msgid "E_xposure mode"
+-msgstr ""
++msgstr "_Режим экспозиции"
+ 
+ #: src/gthumb_web_exporter.glade.h:21
+ msgid "Exposure _time"
+-msgstr ""
++msgstr "_Экспозиция"
+ 
+ #: src/gthumb_web_exporter.glade.h:24
+ msgid "Focal _length"
+-msgstr ""
++msgstr "Ф_окусное расстояние"
+ 
+ #: src/gthumb_web_exporter.glade.h:25
+-#, fuzzy
+ msgid "I_mage Caption..."
+-msgstr "Подпись"
++msgstr "Подпись к изобра_жению"
+ 
+ #: src/gthumb_web_exporter.glade.h:27
+ msgid "Inde_x file:"
+-msgstr "Файл индекса:"
++msgstr "Файл _индекса:"
+ 
+ #: src/gthumb_web_exporter.glade.h:29
+ msgid "Resi_ze images if larger than:"
+-msgstr ""
++msgstr "Мас_штабировать если размер превышает:"
+ 
+ #: src/gthumb_web_exporter.glade.h:30
+ msgid "Sor_t:"
+-msgstr "Сортировать:"
++msgstr "_Сортировать:"
+ 
+ #: src/gthumb_web_exporter.glade.h:31
+ msgid "Th_eme:"
+-msgstr "Тема:"
++msgstr "С_тиль:"
+ 
+ #: src/gthumb_web_exporter.glade.h:32
+ msgid "Web Album"
+-msgstr ""
++msgstr "Интернет-альбом"
+ 
+ #: src/gthumb_web_exporter.glade.h:33
+ msgid "Web Album Theme"
+-msgstr ""
++msgstr "Стиль оформления интернет-альбома"
+ 
+ #: src/gthumb_web_exporter.glade.h:34
+ msgid "_Aperture value"
+-msgstr ""
++msgstr "_Просвет диафрагмы"
+ 
+ #: src/gthumb_web_exporter.glade.h:35
+ msgid "_Copy images to destination"
+-msgstr ""
++msgstr "_Копировать изображения в каталог назначения"
+ 
+ #: src/gthumb_web_exporter.glade.h:36
+ msgid "_Date and Time"
+-msgstr ""
++msgstr "_Дата и время"
+ 
+ #: src/gthumb_web_exporter.glade.h:37
+ msgid "_Destination:"
+-msgstr ""
++msgstr "_Каталог:"
+ 
+ #: src/gthumb_web_exporter.glade.h:38
+-#, fuzzy
+ msgid "_Flash"
+-msgstr "Имена файлов"
++msgstr "_Вспышка"
+ 
+ #: src/gthumb_web_exporter.glade.h:39
+ msgid "_Go to Theme Folder"
+-msgstr "Перей_ти в каталог тем"
++msgstr "_Каталог стилей"
+ 
+ #: src/gthumb_web_exporter.glade.h:40
+ msgid "_Install Theme..."
+-msgstr "Установить тему..."
++msgstr "_Добавить стиль"
+ 
+ #: src/gthumb_web_exporter.glade.h:42
+ msgid "_Shutter speed"
+-msgstr ""
++msgstr "_Скорость затвора"
+ 
+ #: src/gthumb_web_exporter.glade.h:43
+-#, fuzzy
+ msgid "_Thumbnail Caption..."
+-msgstr "Миниат_юры"
++msgstr "Подпись миниат_юры"
+ 
+ #: src/gthumb_web_exporter.glade.h:44
+ msgid "_Title:"
+-msgstr "Заголовок:"
++msgstr "_Заголовок:"
+ 
+ #: src/gthumb_web_exporter.glade.h:45
+ msgid "by modified time"
+-msgstr ""
++msgstr "по времени"
+ 
+ #: src/gthumb_web_exporter.glade.h:50
+ msgid "index.html"
+@@ -3571,7 +3566,7 @@
+ 
+ #: src/main.c:167
+ msgid "GNOME"
+-msgstr "GNOME"
++msgstr "Рабочая среда GNOME"
+ 
+ #: src/main.c:168
+ msgid "Games"
+@@ -3598,9 +3593,4 @@
+ msgstr "Командная строка"
+ 
+ #~ msgid "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"
+-#~ msgstr ""
+-#~ "АаБбВвГгДдЕеЖжЗзИиЙйКкЛлМмНнОоПпРрСсТт�"
+-#~ "�уФфХх0123456789"
+-
+-#~ msgid "Pick a Font"
+-#~ msgstr "Выбрать шрифт"
++#~ msgstr "АаБбВвГгДдЕеЁёЖжЗзИиЙйКкЛлМмНнОоПпРрСсТтУуФфХхЦцЧчШшЩщЪъЫыЬьЭэЮюЯя"
+\ No newline at end of file

@@ -1,0 +1,685 @@
+--- po/zh_TW.po.orig	Fri Jul 25 00:22:38 2003
++++ po/zh_TW.po	Fri Jul 25 00:22:55 2003
+@@ -5,7 +5,7 @@
+ msgid ""
+ msgstr ""
+ "Project-Id-Version: gthumb 2.1.2\n"
+-"POT-Creation-Date: 2003-07-06 20:06+0200\n"
++"POT-Creation-Date: 2003-06-12 07:14+0800\n"
+ "PO-Revision-Date: 2003-06-12 08:46+0800\n"
+ "Last-Translator: Abel Cheung <maddog@linux.org.hk>\n"
+ "Language-Team: Chinese (traditioanl) <zh-l10n@linux.org.tw>\n"
+@@ -170,12 +170,12 @@
+ msgid "_Zoom Quality"
+ msgstr "縮放品質(_Z)"
+ 
+-#: components/image-viewer/viewer-stream.c:90 src/dlg-file-utils.c:517
++#: components/image-viewer/viewer-stream.c:90 src/dlg-file-utils.c:516
+ msgid "%d %b %Y, %H:%M"
+ msgstr "%x %H:%M"
+ 
+ #: components/image-viewer/viewer-stream.c:98 src/catalog-png-exporter.c:806
+-#: src/dlg-image-prop.c:656 src/fullscreen.c:218 src/gthumb-window.c:414
++#: src/dlg-image-prop.c:656 src/fullscreen.c:237 src/gthumb-window.c:409
+ #, c-format
+ msgid "%d x %d pixels"
+ msgstr "%d×%d 像素"
+@@ -220,16 +220,16 @@
+ msgid "Deleting old comments, wait please..."
+ msgstr "正在刪除舊的備註，請稍等..."
+ 
+-#: libgthumb/comments.c:747
++#: libgthumb/comments.c:746
+ msgid "%d %B %Y"
+ msgstr "%x"
+ 
+-#: libgthumb/comments.c:749 src/dlg-duplicates.c:551 src/dlg-image-prop.c:676
+-#: src/fullscreen.c:225 src/gthumb-window.c:411
++#: libgthumb/comments.c:748 src/dlg-duplicates.c:551 src/dlg-image-prop.c:676
++#: src/fullscreen.c:244 src/gthumb-window.c:406
+ msgid "%d %B %Y, %H:%M"
+ msgstr "%x %H:%M"
+ 
+-#: libgthumb/comments.c:759
++#: libgthumb/comments.c:758
+ msgid "(No Comment)"
+ msgstr "(沒有任何備註)"
+ 
+@@ -284,6 +284,18 @@
+ msgid "Font Selection"
+ msgstr "字型選擇"
+ 
++#: libgthumb/gnome-print-font-picker.c:92
++msgid "Sans Regular 12"
++msgstr "AR PL KaitiM Big5 12"
++
++#: libgthumb/gnome-print-font-picker.c:93
++msgid "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"
++msgstr "The following is Chinese: '中文測試'"
++
++#: libgthumb/gnome-print-font-picker.c:94
++msgid "Pick a Font"
++msgstr "選取字型"
++
+ #: libgthumb/gnome-print-font-picker.c:179
+ msgid "Title"
+ msgstr "標題"
+@@ -314,8 +326,7 @@
+ 
+ #: libgthumb/gnome-print-font-picker.c:219
+ msgid "Use font in the label in font info mode"
+-msgstr ""
+-"在字型資訊模式中，字型本身的形狀反映在字型名稱內"
++msgstr "在字型資訊模式中，字型本身的形狀反映在字型名稱內"
+ 
+ #: libgthumb/gnome-print-font-picker.c:227
+ msgid "Font size for label"
+@@ -343,16 +354,23 @@
+ msgstr "備註"
+ 
+ #: libgthumb/gth-file-view-list.c:1383 src/dlg-duplicates.c:372
+-#: src/dlg-image-prop.c:836 src/gthumb-window.c:429
++#: src/dlg-image-prop.c:836 src/gthumb-window.c:424
+ msgid "Name"
+ msgstr "名稱"
+ 
+-#: libgthumb/print-callbacks.c:919 libgthumb/print-callbacks.c:1499
++#: libgthumb/gtk-utils.c:128 libgthumb/gtk-utils.c:214
++#: libgthumb/gtk-utils.c:317 src/commands-impl.c:2812 src/gthumb-window.c:808
++#: src/gthumb-window.c:4843 src/gthumb_png_exporter.glade.h:75
++#: src/gthumb_web_exporter.glade.h:32 src/main.c:122
++msgid "gThumb"
++msgstr "gThumb"
++
++#: libgthumb/print-callbacks.c:917 libgthumb/print-callbacks.c:1497
+ #, c-format
+ msgid "Print %s"
+ msgstr "列印 %s"
+ 
+-#: libgthumb/print-callbacks.c:922
++#: libgthumb/print-callbacks.c:920
+ msgid "Print Image"
+ msgstr "列印圖像"
+ 
+@@ -374,28 +392,28 @@
+ msgid "Creating image: %s.%s"
+ msgstr "正在製作圖像：%s.%s"
+ 
+-#: src/catalog-web-exporter.c:1444
++#: src/catalog-web-exporter.c:1153
+ msgid "Saving thumbnails"
+ msgstr "儲存縮圖"
+ 
+-#: src/catalog-web-exporter.c:1512
++#: src/catalog-web-exporter.c:1221
+ msgid "Saving HTML pages: Images"
+ msgstr "儲存 HTML 頁面：圖像"
+ 
+-#: src/catalog-web-exporter.c:1589
++#: src/catalog-web-exporter.c:1298
+ msgid "Saving HTML pages: Indexes"
+ msgstr "儲存 HTML 頁面：索引"
+ 
+-#: src/catalog-web-exporter.c:1673
++#: src/catalog-web-exporter.c:1382
+ msgid "Saving images"
+ msgstr "正在儲存圖像"
+ 
+-#: src/catalog-web-exporter.c:1987
++#: src/catalog-web-exporter.c:1696
+ msgid "Could not create a temporary folder"
+ msgstr "無法建立暫存資料夾"
+ 
+ #. Load thumbnails.
+-#: src/catalog-web-exporter.c:2026
++#: src/catalog-web-exporter.c:1735
+ msgid "Loading images"
+ msgstr "圖像載入中"
+ 
+@@ -414,9 +432,7 @@
+ msgid ""
+ "The name \"%s\" is not valid because it contains the character \"/\". Please "
+ "use a different name."
+-msgstr ""
+-"名稱“%s”無效，因為它含有“/”字元。請使用另一個名�"
+-"�。"
++msgstr "名稱“%s”無效，因為它含有“/”字元。請使用另一個名稱。"
+ 
+ #: src/commands-impl.c:319 src/dlg-convert.c:313
+ msgid "_Overwrite"
+@@ -517,7 +533,7 @@
+ msgid "The selected folder will be moved to the Trash, are you sure?"
+ msgstr "選定的資料夾將會被丟進垃圾桶，是否確定？"
+ 
+-#: src/commands-impl.c:1219 src/dlg-file-utils.c:274
++#: src/commands-impl.c:1219 src/dlg-file-utils.c:273
+ msgid "_Move"
+ msgstr "移動(_M)"
+ 
+@@ -526,8 +542,8 @@
+ msgid "Could not copy the folder \"%s\": %s"
+ msgstr "無法複製資料夾“%s”：%s"
+ 
+-#: src/commands-impl.c:1340 src/dlg-file-utils.c:2297
+-#: src/dlg-file-utils.c:2299
++#: src/commands-impl.c:1340 src/dlg-file-utils.c:2295
++#: src/dlg-file-utils.c:2297
+ #, c-format
+ msgid "Could not move the folder \"%s\": %s"
+ msgstr "無法移動資料夾“%s”：%s"
+@@ -540,7 +556,7 @@
+ msgid "a folder with that name is already present."
+ msgstr "該名稱的資料夾已經存在。"
+ 
+-#: src/commands-impl.c:1453 src/dlg-file-utils.c:360 src/dlg-file-utils.c:449
++#: src/commands-impl.c:1453 src/dlg-file-utils.c:359 src/dlg-file-utils.c:448
+ msgid "Choose the destination folder"
+ msgstr "請選擇目的地資料夾"
+ 
+@@ -586,12 +602,6 @@
+ msgid "translator_credits"
+ msgstr "Abel Cheung <maddog@linux.org.hk>, 2002"
+ 
+-#: src/commands-impl.c:2812 src/gthumb-window.c:812 src/gthumb-window.c:4859
+-#: src/gthumb_png_exporter.glade.h:75 src/gthumb_web_exporter.glade.h:49
+-#: src/main.c:122
+-msgid "gThumb"
+-msgstr "gThumb"
+-
+ #: src/commands-impl.c:2815
+ msgid "An image viewer and browser for GNOME."
+ msgstr "適合在 GNOME 環境下使用的圖像瀏覽器。"
+@@ -663,77 +673,75 @@
+ "You don't have the right permissions to create images in the folder \"%s\""
+ msgstr "沒有足夠的權限，無法在資料夾“%s”中產生圖像"
+ 
+-#: src/dlg-file-utils.c:200
++#: src/dlg-file-utils.c:199
+ msgid "Could not delete the images:"
+ msgstr "無法刪除檔案："
+ 
+-#: src/dlg-file-utils.c:220
++#: src/dlg-file-utils.c:219
+ msgid ""
+ "The images cannot be moved to the Trash. Do you want to delete them "
+ "permanently?"
+ msgstr "無法將圖像丟進垃圾桶。是否永遠刪除圖像？"
+ 
+-#: src/dlg-file-utils.c:751 src/dlg-file-utils.c:852
++#: src/dlg-file-utils.c:750 src/dlg-file-utils.c:851
+ msgid "You didn't enter the new name"
+ msgstr "並未輸入新的名稱"
+ 
+-#: src/dlg-file-utils.c:763 src/dlg-file-utils.c:864
++#: src/dlg-file-utils.c:762 src/dlg-file-utils.c:863
+ #, c-format
+ msgid ""
+ "The name \"%s\" is already used in this folder. Please use a different name."
+-msgstr ""
+-"本資料夾中已經有檔案的名稱是“%s”。請使用另一個名稱"
+-"。"
++msgstr "本資料夾中已經有檔案的名稱是“%s”。請使用另一個名稱。"
+ 
+-#: src/dlg-file-utils.c:1003
++#: src/dlg-file-utils.c:1002
+ msgid "Could not rename the image:"
+ msgstr "無法更改圖像名稱："
+ 
+-#: src/dlg-file-utils.c:1005
++#: src/dlg-file-utils.c:1004
+ msgid "Could not rename the following images:"
+ msgstr "無法更改以下的圖像的名稱："
+ 
+-#: src/dlg-file-utils.c:1138
++#: src/dlg-file-utils.c:1137
+ msgid "Could not move the image:"
+ msgstr "無法移動圖像："
+ 
+-#: src/dlg-file-utils.c:1140
++#: src/dlg-file-utils.c:1139
+ msgid "Could not copy the image:"
+ msgstr "無法複製檔案："
+ 
+-#: src/dlg-file-utils.c:1164 src/dlg-file-utils.c:2320
++#: src/dlg-file-utils.c:1162 src/dlg-file-utils.c:2317
+ msgid "_Abort"
+ msgstr "中止(_A)"
+ 
+-#: src/dlg-file-utils.c:1165 src/dlg-file-utils.c:2321
++#: src/dlg-file-utils.c:1163 src/dlg-file-utils.c:2318
+ msgid "_Continue"
+ msgstr "繼續(_C)"
+ 
+-#: src/dlg-file-utils.c:1337
++#: src/dlg-file-utils.c:1335
+ #, c-format
+ msgid "Copying file %d of %d"
+ msgstr "正在複製第 %d 個檔案 (總共 %d 個)"
+ 
+-#: src/dlg-file-utils.c:1720 src/dlg-file-utils.c:1906
++#: src/dlg-file-utils.c:1718 src/dlg-file-utils.c:1904
+ msgid "Collecting images info"
+ msgstr "正在收集圖像資訊"
+ 
+-#: src/dlg-file-utils.c:1723 src/dlg-file-utils.c:1919
++#: src/dlg-file-utils.c:1721 src/dlg-file-utils.c:1917
+ #, c-format
+ msgid "Deleting file %ld of %ld"
+ msgstr "正在刪除第 %ld 個檔案 (總共 %ld 個)"
+ 
+-#: src/dlg-file-utils.c:1909
++#: src/dlg-file-utils.c:1907
+ #, c-format
+ msgid "Copying file %ld of %ld"
+ msgstr "正在複製第 %ld 個檔案 (總共 %ld 個)"
+ 
+-#: src/dlg-file-utils.c:1914
++#: src/dlg-file-utils.c:1912
+ #, c-format
+ msgid "Moving file %ld of %ld"
+ msgstr "正在移動第 %ld 個檔案 (總共 %ld 個)"
+ 
+-#: src/dlg-image-prop.c:841 src/gthumb-window.c:436
++#: src/dlg-image-prop.c:841 src/gthumb-window.c:431
+ msgid "Size"
+ msgstr "尺寸"
+ 
+@@ -741,11 +749,11 @@
+ msgid "Type"
+ msgstr "類型"
+ 
+-#: src/dlg-image-prop.c:851 src/gthumb-window.c:443
++#: src/dlg-image-prop.c:851 src/gthumb-window.c:438
+ msgid "Bytes"
+ msgstr "位元組"
+ 
+-#: src/dlg-image-prop.c:861 src/gthumb-window.c:450
++#: src/dlg-image-prop.c:861 src/gthumb-window.c:445
+ msgid "Modified"
+ msgstr "最後修改時間"
+ 
+@@ -753,11 +761,11 @@
+ msgid "Information on Channel"
+ msgstr "請選取色版"
+ 
+-#: src/dlg-image-prop.c:900 src/gthumb-window.c:5308
++#: src/dlg-image-prop.c:900 src/gthumb-window.c:5292
+ msgid "Field"
+ msgstr "欄位"
+ 
+-#: src/dlg-image-prop.c:910 src/gthumb-window.c:5318 src/gthumb.glade.h:25
++#: src/dlg-image-prop.c:910 src/gthumb-window.c:5302 src/gthumb.glade.h:25
+ msgid "Value"
+ msgstr "亮度"
+ 
+@@ -810,23 +818,23 @@
+ msgid "Folder"
+ msgstr "資料夾"
+ 
+-#: src/dlg-web-exporter.c:649
++#: src/dlg-web-exporter.c:661
+ msgid "Select Album Theme"
+ msgstr "選取相片簿佈景主題"
+ 
+-#: src/fullscreen.c:782 src/gthumb-ui.xml.h:113
++#: src/fullscreen.c:804 src/gthumb-ui.xml.h:113
+ msgid "Restore Normal View"
+ msgstr "還原為正常顯示模式"
+ 
+-#: src/fullscreen.c:800
++#: src/fullscreen.c:822
+ msgid "Image Info"
+ msgstr "圖像資訊"
+ 
+-#: src/fullscreen.c:818 src/gthumb-window.c:4252
++#: src/fullscreen.c:840 src/gthumb-window.c:4255
+ msgid "Back"
+ msgstr "上一頁"
+ 
+-#: src/fullscreen.c:836 src/gthumb-ui.xml.h:52
++#: src/fullscreen.c:858 src/gthumb-ui.xml.h:52
+ msgid "Forward"
+ msgstr "下一頁"
+ 
+@@ -879,7 +887,7 @@
+ msgstr "調整色相及彩度"
+ 
+ #: src/gthumb-ui.xml.h:10
+-msgid "Apply threshold"
++msgid "Aply threshold"
+ msgstr ""
+ 
+ #: src/gthumb-ui.xml.h:11
+@@ -1829,68 +1837,68 @@
+ msgid "by _Time"
+ msgstr "根據時間(_T)"
+ 
+-#: src/gthumb-window.c:692
++#: src/gthumb-window.c:687
+ msgid "[Press 'c' to add a comment]"
+ msgstr "[請按‘c’加上備註]"
+ 
+-#: src/gthumb-window.c:766 src/gthumb-window.c:789
++#: src/gthumb-window.c:762 src/gthumb-window.c:785
+ msgid "[modified]"
+ msgstr "[最後修改時間]"
+ 
+-#: src/gthumb-window.c:873
++#: src/gthumb-window.c:869
+ msgid "No image"
+ msgstr "沒有任何圖像"
+ 
+-#: src/gthumb-window.c:875
++#: src/gthumb-window.c:871
+ #, c-format
+ msgid "1 image (%s)"
+ msgstr "1 幅圖像 (%s)"
+ 
+-#: src/gthumb-window.c:878
++#: src/gthumb-window.c:874
+ #, c-format
+ msgid "%d images (%s)"
+ msgstr "%d 幅圖像 (%s)"
+ 
+-#: src/gthumb-window.c:885
++#: src/gthumb-window.c:881
+ #, c-format
+ msgid "1 selected (%s)"
+ msgstr "選取了 1 幅 (%s)"
+ 
+-#: src/gthumb-window.c:888
++#: src/gthumb-window.c:884
+ #, c-format
+ msgid "%d selected (%s)"
+ msgstr "選取了 %d 幅 (%s)"
+ 
+-#: src/gthumb-window.c:3360
++#: src/gthumb-window.c:3363
+ msgid "Dragged Images"
+ msgstr "拖曳的圖像"
+ 
+-#: src/gthumb-window.c:3556
++#: src/gthumb-window.c:3559
+ msgid "Could not move the items:"
+ msgstr "無法移動以下的項目："
+ 
+-#: src/gthumb-window.c:5189
++#: src/gthumb-window.c:5172
+ msgid "Image comment"
+ msgstr "圖像備註"
+ 
+-#: src/gthumb-window.c:5203
++#: src/gthumb-window.c:5186
+ msgid "Image data"
+ msgstr "圖像資料"
+ 
+-#: src/gthumb-window.c:5217
++#: src/gthumb-window.c:5200
+ msgid "Image preview"
+ msgstr "圖像預覽"
+ 
+-#: src/gthumb-window.c:6449
++#: src/gthumb-window.c:6458
+ #, c-format
+ msgid "Cannot load folder \"%s\": %s\n"
+ msgstr "無法載入資料夾“%s”：%s\n"
+ 
+-#: src/gthumb-window.c:6718
++#: src/gthumb-window.c:6727
+ msgid "The specified catalog does not exist."
+ msgstr "指定的圖像集不存在。"
+ 
+-#: src/gthumb-window.c:8064
++#: src/gthumb-window.c:8073
+ msgid "Wait please..."
+ msgstr "請稍等..."
+ 
+@@ -2352,7 +2360,7 @@
+ msgid "_Yellow-Blue:"
+ msgstr "黃色－藍色(_Y)："
+ 
+-#: src/gthumb_edit.glade.h:33 src/gthumb_web_exporter.glade.h:51
++#: src/gthumb_edit.glade.h:33 src/gthumb_web_exporter.glade.h:34
+ msgid "pixels"
+ msgstr "像素"
+ 
+@@ -2436,11 +2444,11 @@
+ msgid "Choose destination folder"
+ msgstr "建立目的地資料夾"
+ 
+-#: src/gthumb_png_exporter.glade.h:24 src/gthumb_web_exporter.glade.h:18
++#: src/gthumb_png_exporter.glade.h:24
+ msgid "Co_mment"
+ msgstr "備註(_M)"
+ 
+-#: src/gthumb_png_exporter.glade.h:25 src/gthumb_web_exporter.glade.h:19
++#: src/gthumb_png_exporter.glade.h:25 src/gthumb_web_exporter.glade.h:14
+ msgid "Col_umns:"
+ msgstr "列數(_U)："
+ 
+@@ -2460,7 +2468,7 @@
+ msgid "F_ooter:"
+ msgstr "頁尾(_O)："
+ 
+-#: src/gthumb_png_exporter.glade.h:30 src/gthumb_web_exporter.glade.h:22
++#: src/gthumb_png_exporter.glade.h:30
+ msgid "File _name"
+ msgstr "檔案名稱(_N)"
+ 
+@@ -2468,7 +2476,7 @@
+ msgid "File pa_th"
+ msgstr "檔案路徑(_T)"
+ 
+-#: src/gthumb_png_exporter.glade.h:32 src/gthumb_web_exporter.glade.h:23
++#: src/gthumb_png_exporter.glade.h:32
+ msgid "File si_ze"
+ msgstr "檔案大小(_Z)"
+ 
+@@ -2492,7 +2500,7 @@
+ msgid "Hei_ght:"
+ msgstr "高度(_G)："
+ 
+-#: src/gthumb_png_exporter.glade.h:38 src/gthumb_web_exporter.glade.h:26
++#: src/gthumb_png_exporter.glade.h:38
+ msgid "Image dim_ensions"
+ msgstr "圖像尺寸(_E)"
+ 
+@@ -2512,7 +2520,7 @@
+ msgid "Pi_xels"
+ msgstr "像素(_X)"
+ 
+-#: src/gthumb_png_exporter.glade.h:43 src/gthumb_web_exporter.glade.h:28
++#: src/gthumb_png_exporter.glade.h:43 src/gthumb_web_exporter.glade.h:16
+ msgid "Re_verse order"
+ msgstr "相反次序排列(_V)"
+ 
+@@ -2600,7 +2608,7 @@
+ msgid "_Image size:"
+ msgstr "圖像尺寸(_I)："
+ 
+-#: src/gthumb_png_exporter.glade.h:67 src/gthumb_web_exporter.glade.h:41
++#: src/gthumb_png_exporter.glade.h:67 src/gthumb_web_exporter.glade.h:26
+ msgid "_Rows:"
+ msgstr "行數(_R)："
+ 
+@@ -2612,15 +2620,15 @@
+ msgid "_Template:"
+ msgstr "樣式(_T)："
+ 
+-#: src/gthumb_png_exporter.glade.h:71 src/gthumb_web_exporter.glade.h:46
++#: src/gthumb_png_exporter.glade.h:71 src/gthumb_web_exporter.glade.h:29
+ msgid "by name"
+ msgstr "根據名稱"
+ 
+-#: src/gthumb_png_exporter.glade.h:72 src/gthumb_web_exporter.glade.h:47
++#: src/gthumb_png_exporter.glade.h:72 src/gthumb_web_exporter.glade.h:30
+ msgid "by path"
+ msgstr "根據路徑"
+ 
+-#: src/gthumb_png_exporter.glade.h:73 src/gthumb_web_exporter.glade.h:48
++#: src/gthumb_png_exporter.glade.h:73 src/gthumb_web_exporter.glade.h:31
+ msgid "by size"
+ msgstr "根據大小"
+ 
+@@ -3178,8 +3186,8 @@
+ "original filename. Use ? to insert the image date. Use ! to insert the image "
+ "size"
+ msgstr ""
+-"# 表示數字的位置。* 表示原來的檔案名稱。? "
+-"表示圖像檔的日期。! 表示圖像的尺寸。"
++"# 表示數字的位置。* 表示原來的檔案名稱。? 表示圖像檔的日期。! 表示圖像的尺"
++"寸。"
+ 
+ #: src/gthumb_tools.glade.h:46
+ msgid "_Sort original list:"
+@@ -3226,120 +3234,62 @@
+ msgstr "<b>索引圖排列</b>"
+ 
+ #: src/gthumb_web_exporter.glade.h:12
+-#, fuzzy
+-msgid "<b>Personalize theme</b>"
+-msgstr "<b>頁面大小</b>"
+-
+-#: src/gthumb_web_exporter.glade.h:13
+-#, fuzzy
+-msgid "<b>Photo data</b>"
+-msgstr "<b>頁尾</b>"
+-
+-#: src/gthumb_web_exporter.glade.h:14
+ msgid "<b>Saving</b>"
+ msgstr "<b>儲存</b>"
+ 
+-#: src/gthumb_web_exporter.glade.h:15
++#: src/gthumb_web_exporter.glade.h:13
+ msgid "<b>Theme</b>"
+ msgstr "<b>佈景主題</b>"
+ 
+-#: src/gthumb_web_exporter.glade.h:16
+-msgid "Came_ra Model"
+-msgstr ""
+-
+-#: src/gthumb_web_exporter.glade.h:17
+-#, fuzzy
+-msgid "Caption"
+-msgstr "圖像標題"
+-
+-#: src/gthumb_web_exporter.glade.h:20
+-msgid "E_xposure mode"
+-msgstr ""
+-
+-#: src/gthumb_web_exporter.glade.h:21
+-msgid "Exposure _time"
+-msgstr ""
+-
+-#: src/gthumb_web_exporter.glade.h:24
+-msgid "Focal _length"
+-msgstr ""
+-
+-#: src/gthumb_web_exporter.glade.h:25
+-#, fuzzy
+-msgid "I_mage Caption..."
+-msgstr "圖像標題"
+-
+-#: src/gthumb_web_exporter.glade.h:27
++#: src/gthumb_web_exporter.glade.h:15
+ msgid "Inde_x file:"
+ msgstr "索引檔(_X)："
+ 
+-#: src/gthumb_web_exporter.glade.h:29
++#: src/gthumb_web_exporter.glade.h:17
+ msgid "Resi_ze images if larger than:"
+ msgstr "圖像如果大於這個尺寸會重新調整尺寸(_Z)："
+ 
+-#: src/gthumb_web_exporter.glade.h:30
++#: src/gthumb_web_exporter.glade.h:18
+ msgid "Sor_t:"
+ msgstr "排序(_T)："
+ 
+-#: src/gthumb_web_exporter.glade.h:31
++#: src/gthumb_web_exporter.glade.h:19
+ msgid "Th_eme:"
+ msgstr "佈景主題(_E)："
+ 
+-#: src/gthumb_web_exporter.glade.h:32
++#: src/gthumb_web_exporter.glade.h:20
+ msgid "Web Album"
+ msgstr "網頁相片簿"
+ 
+-#: src/gthumb_web_exporter.glade.h:33
++#: src/gthumb_web_exporter.glade.h:21
+ msgid "Web Album Theme"
+ msgstr "網頁相片簿佈景"
+ 
+-#: src/gthumb_web_exporter.glade.h:34
+-msgid "_Aperture value"
+-msgstr ""
+-
+-#: src/gthumb_web_exporter.glade.h:35
++#: src/gthumb_web_exporter.glade.h:22
+ msgid "_Copy images to destination"
+ msgstr "將圖像複製至目的地(_C)"
+ 
+-#: src/gthumb_web_exporter.glade.h:36
+-msgid "_Date and Time"
+-msgstr ""
+-
+-#: src/gthumb_web_exporter.glade.h:37
++#: src/gthumb_web_exporter.glade.h:23
+ msgid "_Destination:"
+ msgstr "目的地(_D)："
+ 
+-#: src/gthumb_web_exporter.glade.h:38
+-#, fuzzy
+-msgid "_Flash"
+-msgstr "檔案名稱(_F)"
+-
+-#: src/gthumb_web_exporter.glade.h:39
++#: src/gthumb_web_exporter.glade.h:24
+ msgid "_Go to Theme Folder"
+ msgstr "前往佈景主題資料夾(_G)"
+ 
+-#: src/gthumb_web_exporter.glade.h:40
++#: src/gthumb_web_exporter.glade.h:25
+ msgid "_Install Theme..."
+ msgstr "安裝佈景主題(_I)..."
+ 
+-#: src/gthumb_web_exporter.glade.h:42
+-msgid "_Shutter speed"
+-msgstr ""
+-
+-#: src/gthumb_web_exporter.glade.h:43
+-#, fuzzy
+-msgid "_Thumbnail Caption..."
+-msgstr "縮圖(_T)"
+-
+-#: src/gthumb_web_exporter.glade.h:44
++#: src/gthumb_web_exporter.glade.h:27
+ msgid "_Title:"
+ msgstr "標題(_T)："
+ 
+-#: src/gthumb_web_exporter.glade.h:45
++#: src/gthumb_web_exporter.glade.h:28
+ msgid "by modified time"
+ msgstr "根據修改時間"
+ 
+-#: src/gthumb_web_exporter.glade.h:50
++#: src/gthumb_web_exporter.glade.h:33
+ msgid "index.html"
+ msgstr "index.html"
+ 
+@@ -3402,15 +3352,6 @@
+ #: src/main.c:308 src/main.c:374
+ msgid "Command Line"
+ msgstr "指令列"
+-
+-#~ msgid "Sans Regular 12"
+-#~ msgstr "AR PL KaitiM Big5 12"
+-
+-#~ msgid "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"
+-#~ msgstr "The following is Chinese: '中文測試'"
+-
+-#~ msgid "Pick a Font"
+-#~ msgstr "選取字型"
+ 
+ #~ msgid "A_3 (297 x 420 mm)"
+ #~ msgstr "A_3 (297×420 毫米)"

@@ -4,8 +4,10 @@ etc/gconf/gconf.xml.defaults/apps/gthumb/browser/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/convert_format/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/jpeg_saver/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/print/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/rename_series/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/scale_image/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/search/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/tga_saver/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/tiff_saver/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/web_album/%gconf.xml
@@ -22,8 +24,10 @@ etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/browser/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/convert_format/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/jpeg_saver/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/print/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/rename_series/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/scale_image/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/search/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/tga_saver/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/tiff_saver/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/web_album/%gconf.xml
@@ -139,22 +143,31 @@ share/gnome/omf/gthumb/gthumb-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gthumb/gthumb-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/gthumb.png
 share/locale/am/LC_MESSAGES/gthumb.mo
+share/locale/be/LC_MESSAGES/gthumb.mo
 share/locale/ca/LC_MESSAGES/gthumb.mo
 share/locale/cs/LC_MESSAGES/gthumb.mo
 share/locale/da/LC_MESSAGES/gthumb.mo
 share/locale/de/LC_MESSAGES/gthumb.mo
 share/locale/es/LC_MESSAGES/gthumb.mo
 share/locale/fr/LC_MESSAGES/gthumb.mo
+share/locale/ga/LC_MESSAGES/gthumb.mo
 share/locale/it/LC_MESSAGES/gthumb.mo
 share/locale/ja/LC_MESSAGES/gthumb.mo
 share/locale/ko/LC_MESSAGES/gthumb.mo
 share/locale/lv/LC_MESSAGES/gthumb.mo
+share/locale/mk/LC_MESSAGES/gthumb.mo
+share/locale/ml/LC_MESSAGES/gthumb.mo
 share/locale/ms/LC_MESSAGES/gthumb.mo
 share/locale/nl/LC_MESSAGES/gthumb.mo
 share/locale/no/LC_MESSAGES/gthumb.mo
+share/locale/pl/LC_MESSAGES/gthumb.mo
+share/locale/pt/LC_MESSAGES/gthumb.mo
 share/locale/pt_BR/LC_MESSAGES/gthumb.mo
 share/locale/ru/LC_MESSAGES/gthumb.mo
+share/locale/sr/LC_MESSAGES/gthumb.mo
+share/locale/sr@Latn/LC_MESSAGES/gthumb.mo
 share/locale/sv/LC_MESSAGES/gthumb.mo
+share/locale/uk/LC_MESSAGES/gthumb.mo
 share/locale/zh_TW/LC_MESSAGES/gthumb.mo
 @dirrm share/gnome/help/gthumb/C/figures
 @dirrm share/gnome/help/gthumb/C
@@ -181,8 +194,10 @@ share/locale/zh_TW/LC_MESSAGES/gthumb.mo
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/web_album
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/tiff_saver
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/tga_saver
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/search
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/scale_image
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/rename_series
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/print
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/jpeg_saver
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/convert_format
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs
@@ -199,8 +214,10 @@ share/locale/zh_TW/LC_MESSAGES/gthumb.mo
 @dirrm etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/web_album
 @dirrm etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/tiff_saver
 @dirrm etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/tga_saver
+@dirrm etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/search
 @dirrm etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/scale_image
 @dirrm etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/rename_series
+@dirrm etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/print
 @dirrm etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/jpeg_saver
 @dirrm etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/convert_format
 @dirrm etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs
