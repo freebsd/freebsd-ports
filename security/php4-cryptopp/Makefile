@@ -32,12 +32,12 @@ CONFIGURE_ARGS=	--with-cryptopp
 PORTDOCS=	README ${PORTNAME}.doc
 .endif
 
-post-extract:
-# convert sgml documentation to plain text
-	@${PERL} -e '$$/=">";' -e 'while(<>){s/<.*>//;print;}' < ${WRKSRC}/docs/${PORTNAME}.sgml > ${WRKSRC}/${PORTNAME}.doc
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-march=pentium3 -O3 -g -pipe -fomit-frame-pointer|${CFLAGS}|' ${WRKSRC}/config.m4
+
+post-build:
+# convert sgml documentation to plain text
+	@${PERL} -e '$$/=">";' -e 'while(<>){s/<.*>//;print;}' < ${WRKSRC}/docs/${PORTNAME}.sgml > ${WRKSRC}/${PORTNAME}.doc
 
 post-install:
 .if !defined(NOPORTDOCS)
