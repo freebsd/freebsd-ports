@@ -85,6 +85,7 @@
     SUBDIR += p5-DBI
     SUBDIR += p5-DBIWrapper
     SUBDIR += p5-DBIx-AnyDBD
+    SUBDIR += p5-DBIx-DBSchema
     SUBDIR += p5-DBIx-DataSource
     SUBDIR += p5-DBIx-Password
     SUBDIR += p5-DBIx-Recordset

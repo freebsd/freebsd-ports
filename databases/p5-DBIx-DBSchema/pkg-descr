@@ -1,0 +1,7 @@
+This module implements an OO-interface to database schemas.  Using this module,
+you can create a database schema with an OO Perl interface.  You can read the
+schema from an existing database.  You can save the schema to disk and restore
+it in a different process.  Most importantly, DBIx::DBSchema can write SQL
+CREATE statements for different databases from a single source.
+
+WWW: http://www.420.am/dbix-dbschema/
