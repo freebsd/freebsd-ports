@@ -17,15 +17,15 @@ all:
 install:
 	install -c -s -o bin -g bin musixflx $PREFIX/bin/
 	(cd $PREFIX/bin; ln -sf virtex musixtex)
-	install -c -o bin -g bin mf/*.mf $PREFIX/lib/texmf/mf/
-	install -c -o bin -g bin tfm/*.tfm $PREFIX/lib/texmf/fonts/tfm/
-	install -c -o bin -g bin tex/musixtex.fmt $PREFIX/lib/texmf/ini/
-	install -c -o bin -g bin tex/*.tex tex/*.sty $PREFIX/lib/texmf/tex/
+	install -c -o bin -g bin mf/*.mf $PREFIX/share/texmf/mf/
+	install -c -o bin -g bin tfm/*.tfm $PREFIX/share/texmf/fonts/tfm/
+	install -c -o bin -g bin tex/musixtex.fmt $PREFIX/share/texmf/ini/
+	install -c -o bin -g bin tex/*.tex tex/*.sty $PREFIX/share/texmf/tex/
 	install -c -o bin -g bin doc/musixdoc.tex  doc/musixdoc.sty doc/backgrnd.sty \\
-		$PREFIX/lib/texmf/documentation/
-	mkdir -p $PREFIX/lib/texmf/documentation/musixtex.examples
+		$PREFIX/share/texmf/documentation/
+	mkdir -p $PREFIX/share/texmf/documentation/musixtex.examples
 	for f in $examples; do install -c -o bin -g bin  examples/\$\$f \\
-		$PREFIX/lib/texmf/documentation/musixtex.examples/; done
+		$PREFIX/share/texmf/documentation/musixtex.examples/; done
 END
 
 exit 0

@@ -8,8 +8,8 @@ sed -e s:/usr/local/bin/perl:/usr/bin/perl: \
     -e s:/usr/local:$PREFIX:   <lj3-filter.orig >lj3-filter
 
 mv config.h config.h.orig || exit 1;
-sed -e s+/usr/local/lib/tex/pk300+$PREFIX/lib/texmf/fonts/pk:/tmp/pk+ \
-    -e s+/usr/local/lib/tex/+$PREFIX/lib/texmf/+ < config.h.orig > config.h
+sed -e s+/usr/local/lib/tex/pk300+$PREFIX/share/texmf/fonts/pk:/tmp/pk+ \
+    -e s+/usr/local/lib/tex/+$PREFIX/share/texmf/+ < config.h.orig > config.h
 
 chmod +w Makefile || exit 1;
 echo "FONTAREA=" >> Makefile || exit 1;
@@ -41,7 +41,7 @@ cat >>MakeTeXPK <<'EOF'
 #
 #   Of course, it needs to be set up for your site.
 #
-TEXDIR=$PREFIX/lib/texmf
+TEXDIR=$PREFIX/share/texmf
 LOCALDIR=/tmp
 DESTDIR=$LOCALDIR/pk
 #
@@ -105,7 +105,7 @@ then
 fi
 
 #  Something like the following is useful at some sites.
-# DESTDIR=/usr/local/lib/tex/fonts/pk.$MODE
+# DESTDIR=/usr/local/share/tex/fonts/pk.$MODE
 GFNAME=$NAME.$DPI'gf'
 PKNAME=$NAME.$DPI'pk'
 

@@ -3,7 +3,7 @@
 # Date created:         2 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.9 1996/11/17 08:45:13 obrien Exp $
+# $Id: Makefile,v 1.10 1996/12/17 12:33:49 asami Exp $
 #
 
 DISTNAME=	texinfo
@@ -41,10 +41,10 @@ do-build:
 
 do-install: 
 	@${INSTALL_DATA} ${WRKDIR}/texinfo.fmt \
-				${PREFIX}/lib/texmf/ini/
-	@if [ ! -f ${PREFIX}/lib/texmf/fonts/tfm/lcircle10.tfm ]; then \
+				${PREFIX}/share/texmf/web2c/
+	@if [ ! -f ${PREFIX}/share/texmf/fonts/tfm/lcircle10.tfm ]; then \
 	  ${INSTALL_DATA} ${WRKDIR}/lcircle10.tfm \
-				${PREFIX}/lib/texmf/fonts/tfm/;\
+				${PREFIX}/share/texmf/fonts/tfm/;\
 	 fi
 	@(cd ${PREFIX}/bin/; rm -f texinfo; ln -s virtex texinfo)
 
