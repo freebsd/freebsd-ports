@@ -1210,6 +1210,7 @@ cyrus-imspd	ports/databases/cyrus-imspd
 cyrus-sasl	ports/security/cyrus-sasl
 cyrus-sasl2	ports/security/cyrus-sasl2
 cyrus-sasl2-saslauthd	ports/security/cyrus-sasl2-saslauthd
+d2x		ports/games/d2x
 da-aspell	ports/textproc/da-aspell
 da-ooodict-DK	ports/editors/ooodict-da_DK
 daapd		ports/audio/daapd
