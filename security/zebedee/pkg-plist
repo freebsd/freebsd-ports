@@ -1,17 +1,17 @@
 bin/ftpgw.tcl
 bin/zebedee
 etc/server.zbd.sample
-share/examples/zebedee/client1.key
-share/examples/zebedee/client2.key
-share/examples/zebedee/clients.id
-share/examples/zebedee/server.id
-share/examples/zebedee/server.key
-share/examples/zebedee/vncserver.zbd
-share/examples/zebedee/vncviewer.zbd
-%%PORTDOCS%%share/doc/zebedee/CHANGES.txt
-%%PORTDOCS%%share/doc/zebedee/LICENCE.txt
-%%PORTDOCS%%share/doc/zebedee/README.txt
-%%PORTDOCS%%share/doc/zebedee/ftpgw.tcl.html
-%%PORTDOCS%%share/doc/zebedee/zebedee.html
-@dirrm share/examples/zebedee
-%%PORTDOCS%%@dirrm share/doc/zebedee
+%%EXAMPLESDIR%%/client1.key
+%%EXAMPLESDIR%%/client2.key
+%%EXAMPLESDIR%%/clients.id
+%%EXAMPLESDIR%%/server.id
+%%EXAMPLESDIR%%/server.key
+%%EXAMPLESDIR%%/vncserver.zbd
+%%EXAMPLESDIR%%/vncviewer.zbd
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENCE.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/ftpgw.tcl.html
+%%PORTDOCS%%%%DOCSDIR%%/zebedee.html
+@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

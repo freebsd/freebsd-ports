@@ -1,8 +1,8 @@
---- ./Makefile.orig	Thu May 30 00:42:08 2002
-+++ ./Makefile	Wed Sep 24 16:37:09 2003
+--- Makefile.orig	Tue Sep 23 14:37:56 2003
++++ Makefile	Mon Dec 15 19:56:14 2003
 @@ -5,7 +5,7 @@
  
- ZBD_VERSION = 2.4.1
+ ZBD_VERSION = 2.5.2
  
 -OS = 
 +OS = freebsd
@@ -15,11 +15,11 @@
  
 -CC_$(OS) = gcc
 -
- CC_win32 = c:/msys/1.0/mingw/bin/gcc
+ CC_win32 = gcc -mno-cygwin
  CC_linux = gcc -pthread
  CC_solaris = gcc
 -CC_freebsd = gcc -pthread
-+CC_freebsd = gcc
++CC_freebsd ?= gcc
  CC_tru64 = cc
  CC_irix = cc -n32 -woff 1110
  CC_hpux = cc -Ae +DAportable
@@ -27,8 +27,8 @@
  # Optimise/debug compilation
  
  #OPTIM = -Wall -g
--OPTIM = -O3
-+OPTIM = 
+-OPTIM = -Wall -O3
++OPTIM = -Wall
  
  # Location of gmp include and library
  #
@@ -65,7 +65,7 @@
  PERL = $(PERL_$(OS))
  
  BAT_win32 = .bat
-@@ -175,7 +174,8 @@
+@@ -182,7 +181,8 @@
  #### You REALLY shouldn't have to modify anything beyond here ...
  ####
  
@@ -75,7 +75,7 @@
  
  LIBS = $(GMPLIB) $(BFLIB) $(ZLIB) $(BZLIB) $(OSLIBS)
  
-@@ -195,7 +195,7 @@
+@@ -202,7 +202,7 @@
  	@ if test -z "$(OS)"; then echo "Use '$(MAKE) OS=xxx' where xxx is win32, linux, solaris, freebsd, tru64, irix, hpux, macosx or bsdi"; exit 1; fi
  
  zebedee$(EXE) : $(OBJS)

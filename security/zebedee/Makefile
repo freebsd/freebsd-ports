@@ -6,10 +6,12 @@
 #
 
 PORTNAME=	zebedee
-PORTVERSION=	2.4.1
+PORTVERSION=	2.5.2
 CATEGORIES=	security
-MASTER_SITES=	http://www.winton.org.uk/zebedee/ \
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://www.winton.org.uk/zebedee/ \
 		http://www.hewgill.com/zebedee/
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	greg@hewgill.com
 COMMENT=	Encrypted, secure compressed TCP tunnel
@@ -26,27 +28,25 @@ MAKE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 
 MAN1=		zebedee.1 ftpgw.tcl.1
 
+EXAMPLES=	vncviewer.zbd vncserver.zbd server.key server.id client1.key \
+		client2.key clients.id
+DOCS=		README.txt LICENCE.txt CHANGES.txt zebedee.html ftpgw.tcl.html
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/zebedee ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/ftpgw.tcl ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/zebedee.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/ftpgw.tcl.1 ${PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/server.zbd ${PREFIX}/etc/server.zbd.sample
-	${MKDIR} ${PREFIX}/share/examples/zebedee
-	${INSTALL_DATA} ${WRKSRC}/vncviewer.zbd ${PREFIX}/share/examples/zebedee
-	${INSTALL_DATA} ${WRKSRC}/vncserver.zbd ${PREFIX}/share/examples/zebedee
-	${INSTALL_DATA} ${WRKSRC}/server.key ${PREFIX}/share/examples/zebedee
-	${INSTALL_DATA} ${WRKSRC}/server.id ${PREFIX}/share/examples/zebedee
-	${INSTALL_DATA} ${WRKSRC}/client1.key ${PREFIX}/share/examples/zebedee
-	${INSTALL_DATA} ${WRKSRC}/client2.key ${PREFIX}/share/examples/zebedee
-	${INSTALL_DATA} ${WRKSRC}/clients.id ${PREFIX}/share/examples/zebedee
+	${MKDIR} ${EXAMPLESDIR}
+.for e in ${EXAMPLES}
+	${INSTALL_DATA} ${WRKSRC}/${e} ${EXAMPLESDIR}
+.endfor
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/zebedee
-	${INSTALL_DATA} ${WRKSRC}/README.txt ${PREFIX}/share/doc/zebedee
-	${INSTALL_DATA} ${WRKSRC}/LICENCE.txt ${PREFIX}/share/doc/zebedee
-	${INSTALL_DATA} ${WRKSRC}/CHANGES.txt ${PREFIX}/share/doc/zebedee
-	${INSTALL_DATA} ${WRKSRC}/zebedee.html ${PREFIX}/share/doc/zebedee
-	${INSTALL_DATA} ${WRKSRC}/ftpgw.tcl.html ${PREFIX}/share/doc/zebedee
+	@${MKDIR} ${DOCSDIR}
+.for d in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${d} ${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.mk>
