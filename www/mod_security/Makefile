@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	mod_security
-PORTVERSION=	1.7.2
+PORTVERSION=	1.7.3
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:S/_/-/}
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	sysadmin@alexdupre.com
 COMMENT=	An intrusion detection and prevention engine
+
 USE_APACHE=	yes
 
 .include <bsd.port.pre.mk>
