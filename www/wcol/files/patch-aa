@@ -1,5 +1,5 @@
---- Makefile.in.orig	Mon Jun 29 18:59:44 1998
-+++ Makefile.in	Sat Sep  4 01:13:54 1999
+--- Makefile.in.orig	Tue Dec  1 12:03:35 1998
++++ Makefile.in	Sat Sep  4 23:07:24 1999
 @@ -8,8 +8,8 @@
  
  
@@ -23,8 +23,16 @@
 +	-DDEFAULT_POOLDIR=\"${DEFAULT_POOLDIR}\" \
  	-DLOGGING_LOCALTIME \
  	-DMAX_REQUEST_QUEUE=2048 \
- 	-DMAX_HANDLER=4  -DNUM_HANDLER=4 \
-@@ -72,7 +76,7 @@
+-	-DMAX_HANDLER=4  -DNUM_HANDLER=4 \
++	-DMAX_HANDLER=2  -DNUM_HANDLER=2 \
+@@ -66,13 +70,14 @@
+ 	-DSESSION_TIMEOUT=60000 -DSESSION_LIFETIME=3600000 \
+ 	-DMAX_PROMPTER=2 -DNUM_PROMPTER=2 \
+ 	-DMAX_SPEAKER=2  -DNUM_SPEAKER=2 \
++	-DUSE_SYSLOG \
+ 	-DUSE_ICP_NOTIFY \
+ 	-DQUERY_TIMEOUT=2000
+ 
  
  LIBS = @LIBS@
  
@@ -33,16 +41,6 @@
  
  
  ###
-@@ -96,7 +100,8 @@
- ICP_OBJS    = _icp.o socket.o hname.o msg.o base.o url.o mem.o sigs.o
- FLOOD_OBJS  = flood.o icp.o socket.o hname.o msg.o base.o url.o mem.o sigs.o misc.o
- PLIST_OBJS  = plist.o msg.o base.o url.o info.o mem.o misc.o \
--    args.o rglobal.o accept.o pstate.o conv.o
-+    args.o rglobal.o accept.o pstate.o conv.o \
-+    reaper.o sigs.o ipc.o eqsort.o
- 
- OBJS = $(WCOL_OBJS) $(SSTATE_OBJS) $(HSTATE_OBJS) $(REAPER_OBJS) \
-     $(FTP_OBJS) $(PARSE_OBJS) $(JFILTER_OBJS) $(ICP_OBJS) $(FLOOD_OBJS) \
 @@ -155,6 +160,27 @@
  allclean:
  	-$(MAKE) clean
