@@ -7,22 +7,24 @@
 #
 
 PORTNAME=	sedsed
-PORTVERSION=	0.6
+PORTVERSION=	0.8
 CATEGORIES=	devel
 MASTER_SITES=	http://sedsed.sourceforge.net/
 EXTRACT_SUFX=	# empty
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	sed debugger/tokenizer/indenter
+COMMENT=	A Python script that masters SED scripts
 
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	${WRKDIR}
-USE_PYTHON=	yes
+
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
+USE_PYTHON=	yes
+
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/sedsed-0.6 ${PREFIX}/bin/sedsed
+	${INSTALL_SCRIPT} ${WRKSRC}/${DISTNAME} ${PREFIX}/bin/sedsed
 
 .include <bsd.port.mk>
