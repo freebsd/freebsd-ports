@@ -9,9 +9,10 @@
 # WITH_PASSIVETEX	Enable PassiveTex support for DVI/PDF/PS output
 
 PORTNAME=	xmlto
-PORTVERSION=	0.0.14
+PORTVERSION=	0.0.15.p1
 CATEGORIES=	textproc
 MASTER_SITES=	http://cyberelk.net/tim/data/xmlto/stable/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/pre/}
 
 MAINTAINER=	sergei@kolobov.com
 COMMENT=	Front-end to an XSL toolchain
@@ -42,8 +43,8 @@ PASSIVETEX=	${LOCALBASE}/share/texmf/tex/passivetex
 
 DOCBOOK_URL=	http://www.oasis-open.org/docbook/xml
 DOCBOOK_DIR=	${LOCALBASE}/share/xml/docbook
-XSL_URL=	http://docbook.sourceforge.net/release/xsl/current 
-XSL_DIR=	${LOCALBASE}/share/xsl/docbook   
+XSL_URL=	http://docbook.sourceforge.net/release/xsl/current
+XSL_DIR=	${LOCALBASE}/share/xsl/docbook
 
 MAN1=		xmlif.1 xmlto.1
 DOCS=		AUTHORS NEWS
