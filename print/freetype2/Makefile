@@ -36,6 +36,11 @@ CONFIGURE_WRKSRC=	${WRKSRC}/builds/unix
 CFLAGS+=	-DTT_CONFIG_OPTION_BYTECODE_INTERPRETER
 .endif
 
+.if defined(WITH_CJK)
+PATCH_SITES+=	http://bsdchat.com/dist/firefly-cjk-patchset/
+PATCHFILES+=	cjk-patch-freetype2-20041115.diff.gz
+.endif
+
 pre-everything::
 .if !defined(WITHOUT_TTF_BYTECODE_ENABLED)
 	@${ECHO_MSG}

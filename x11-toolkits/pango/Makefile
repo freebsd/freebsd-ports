@@ -59,4 +59,9 @@ post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
 
+.if defined(WITH_CJK)
+PATCH_SITES+=	http://bsdchat.com/dist/firefly-cjk-patchset/
+PATCHFILES+=	cjk-patch-pango-20041115.diff.gz
+.endif
+
 .include <bsd.port.mk>

@@ -31,4 +31,9 @@ MAN3=		Xft.3
 IGNORE=	Xft requires Render extension headers/library to build.
 .endif
 
+.if defined(WITH_CJK)
+PATCH_SITES=	http://bsdchat.com/dist/firefly-cjk-patchset/
+PATCHFILES+=	cjk-patch-libXft-20041115.diff.gz
+.endif
+
 .include <bsd.port.post.mk>

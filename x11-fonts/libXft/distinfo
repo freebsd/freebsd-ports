@@ -1,2 +1,4 @@
 MD5 (libXft-2.1.6.tar.gz) = 1ba6d9b1aec9a237b508663c46d8a979
 SIZE (libXft-2.1.6.tar.gz) = 334803
+MD5 (cjk-patch-libXft-20041115.diff.gz) = a642c3e2cd08ac738a1be0aa4ba4e38d
+SIZE (cjk-patch-libXft-20041115.diff.gz) = 3261
