@@ -5935,6 +5935,7 @@ sendmail	src/usr.sbin/sendmail
 sendmail-ldap	ports/mail/sendmail-ldap
 sendmail-old	ports/mail/sendmail-old
 sendmail-sasl	ports/mail/sendmail-sasl
+senso		ports/games/senso
 seqio		ports/biology/seqio
 serialmail	ports/mail/serialmail
 service-config	ports/sysutils/service-config
