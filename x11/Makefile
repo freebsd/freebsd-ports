@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.230 1998/08/14 22:46:52 asami Exp $
+# $Id: Makefile,v 1.231 1998/09/04 07:19:09 tg Exp $
 #
 
     SUBDIR += XFree86
@@ -26,6 +26,7 @@
     SUBDIR += emu
     SUBDIR += eterm
     SUBDIR += fbsd-icons
+    SUBDIR += gnomelibs
     SUBDIR += kb2mb2
     SUBDIR += kde
     SUBDIR += kdebase
