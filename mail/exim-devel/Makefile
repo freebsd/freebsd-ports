@@ -6,17 +6,20 @@
 #
 
 PORTNAME=	exim
-PORTVERSION=	3.33
-PORTREVISION=	6
+PORTVERSION=	3.951
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/email/exim/exim3/ \
-		http://www.exim.org/ftp/exim3/ \
-		ftp://ftp.is.co.za/networking/mail/transport/exim/exim3/
-DISTFILES=	exim-3.33.tar.bz2 exim-texinfo-3.30.tar.bz2
+MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/email/exim/Testing/ \
+		http://www.exim.org/ftp/Testing/ \
+		ftp://ftp.is.co.za/networking/mail/transport/exim/Testing/
+DISTFILES=	exim-3.951.tar.bz2 exim-texinfo-3.951.tar.bz2
 
 MAINTAINER=	sheldonh@FreeBSD.org
 
+NO_LATEST_LINK=	yes
+
 USE_BZIP2=	yes
+
+MAN8=		exim.8
 
 .if defined(NOPORTDOCS)
 PKGMESSAGE=	${FILESDIR}/POST-INSTALL-NOTES
@@ -80,6 +83,10 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/eximon:${PORTSDIR}/mail/exim-monitor
 .endif
 
 .include <bsd.port.pre.mk>
+
+PORTDOC_FILES=	Exim3.upgrade Exim4.upgrade OptionLists.txt README \
+		dbm.discuss.txt exim.8 filter.txt pcre.txt pcretest.txt \
+		spec.txt
 
 .if ${OSVERSION} < 400014
 WITHOUT_IPV6=	yes
@@ -183,7 +190,7 @@ do-configure:
 	${MKDIR} ${WRKSRC}/Local
 	${SED} ${SEDLIST} < ${WRKSRC}/src/EDITME > ${WRKSRC}/Local/Makefile
 	cd ${WRKSRC}/doc && \
-	for i in ../../exim-texinfo-3.30/doc/* ; do \
+	for i in ../../exim-texinfo-3.951/doc/* ; do \
 		${LN} -sf $$i ; \
 	done
 
@@ -194,9 +201,12 @@ post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/exim
 	${INSTALL_DATA} ${FILESDIR}/POST-INSTALL-NOTES ${PREFIX}/share/doc/exim
-	${INSTALL_DATA} ${WRKSRC}/doc/filter.txt ${PREFIX}/share/doc/exim
-	${INSTALL_DATA} ${WRKSRC}/doc/oview.txt ${PREFIX}/share/doc/exim
-	${INSTALL_DATA} ${WRKSRC}/doc/spec.txt ${PREFIX}/share/doc/exim
+.for file in ${PORTDOC_FILES}
+	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${PREFIX}/share/doc/exim
+.endfor
+.for file in ${MAN8}
+	${INSTALL_MAN} ${WRKSRC}/doc/${file} ${PREFIX}/man/man8
+.endfor
 .endif
 	@${CAT} ${PKGMESSAGE}
 
