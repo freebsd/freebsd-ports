@@ -10,6 +10,7 @@ DISTNAME=      linuxthreads
 PKGNAME=       linuxthreads-0.71
 CATEGORIES=    devel
 MASTER_SITES=  ftp://ftp.inria.fr/INRIA/Projects/cristal/Xavier.Leroy/
+ONLY_FOR_ARCHS= i386
 
 MAINTAINER=    dick@tar.com
 
