@@ -1,5 +1,5 @@
---- report.c.orig	Sun Oct  1 00:41:10 2000
-+++ report.c	Thu May 16 11:34:33 2002
+--- report.c.orig	Sat Sep 30 19:41:10 2000
++++ report.c	Tue Apr 13 17:47:16 2004
 @@ -45,6 +45,8 @@
  
  #include <ctype.h>
@@ -27,6 +27,15 @@
  	char *watchee = WATCHEE;
  	char *sendmail = PATH_SENDMAIL;
  	char *unknown = "<unknown>";
+@@ -303,7 +307,7 @@
+ 	(void)fprintf(f, "From: %s\n", watchee);
+ 	(void)fprintf(f, "To: %s\n", watcher);
+ 	hn = gethname(a);
+-	if (!isdigit(*hn))
++	if (hn != NULL)
+ 		(void)fprintf(f, "Subject: %s (%s)\n", title, hn);
+ 	else {
+ 		(void)fprintf(f, "Subject: %s\n", title);
 @@ -344,6 +348,25 @@
  		exit(1);
  	}
