@@ -7417,7 +7417,7 @@ misc.c:
     <affects>
       <package>
 	<name>inn</name>
-	<range><lt>2.4.1</lt></range>
+	<range><ge>2.4.*</ge><lt>2.4.1</lt></range>
       </package>
       <package>
 	<name>inn-stable</name>
@@ -7432,11 +7432,12 @@ misc.c:
       </body>
     </description>
     <references>
-      <mlist>http://lists.litech.org/pipermail/inn-workers/2004q1/002763.html</mlist>
+      <mlist msgid="87d69v7222.fsf@windlord.stanford.edu">http://marc.theaimsgroup.com/?l=inn-workers&amp;m=107351974008605</mlist>
     </references>
     <dates>
       <discovery>2004-01-07</discovery>
       <entry>2004-01-08</entry>
+      <modified>2004-10-21</modified>
     </dates>
   </vuln>
 
