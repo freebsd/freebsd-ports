@@ -690,11 +690,13 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <cvename>CAN-2004-0688</cvename>
       <url>http://freedesktop.org/pipermail/xorg/2004-September/003172.html</url>
       <url>http://scary.beasts.org/security/CESA-2004-003.txt</url>
+      <certvu>537878</certvu>
+      <certvu>882750</certvu>
     </references>
     <dates>
       <discovery>2004-09-15</discovery>
       <entry>2004-09-15</entry>
-      <modified>2004-09-18</modified>
+      <modified>2004-09-27</modified>
     </dates>
   </vuln>
 
