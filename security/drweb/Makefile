@@ -8,7 +8,7 @@
 PORTNAME=	drweb
 PORTVERSION=	4.30
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.drweb.ru/pub/unix/
+MASTER_SITES=	ftp://ftp.drweb.ru/pub/unix/archive/${PORTNAME}-${PORTVERSION}/
 DISTFILES=	${MAIN_NAME}.tar.gz
 
 MAINTAINER=	anton@chelcom.ru
