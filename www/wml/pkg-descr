@@ -19,5 +19,6 @@
   on top of the backends core languages. While not trivial and idiot proof WML
   provides most of the core features real hackers always wanted for HTML
   generation.
-                               http://www.engelschall.com/sw/wml/
-                                ftp://ftp.engelschall.com/sw/wml/
+
+WWW: http://www.engelschall.com/sw/wml/
+     ftp://ftp.engelschall.com/sw/wml/

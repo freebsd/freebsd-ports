@@ -9,7 +9,9 @@ and Communications servers, and probably any other Unix based web
 server software that supports CGI.
 
 CGIWrap was written by Nathan Neulinger <nneul@umr.edu>.  More
-information is available at:  http://wwwcgi.umr.edu/~cgiwrap
+information is available at the website
+
+WWW: http://wwwcgi.umr.edu/~cgiwrap
 
 Port to FreeBSD by
 Brent J. Nordquist <bjn@visi.com>

@@ -20,4 +20,4 @@ Each user is expected to create a ~/.chimera subdirectory for
 bookmarks and personal preferences, and a ~/.chimera/cache (which may
 be a symlink to somewhere else).
 
-Ref: <URL: http://www.unlv.edu/chimera/two/ >
+WWW: http://www.unlv.edu/chimera/two/
