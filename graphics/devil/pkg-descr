@@ -1,0 +1,18 @@
+Developer's Image Library (DevIL) is a programmer's library to develop
+applications with very powerful image loading capabilities, yet is easy for
+a developer to learn and use. Ultimate control of images is left to the
+developer, so unnecessary conversions, etc. are not performed. DevIL utilizes
+a simple, yet powerful, syntax. DevIL can load, save, convert, manipulate,
+filter and display a wide variety of image formats.
+
+Currently, DevIL can load and save many different image formats.
+
+DevIL currently supports the following APIs for display:
+OpenGL, Windows GDI, SDL, DirectX and Allegro.
+Compilers that can compile DevIL or use it include Djgpp, MSVC++, gcc,
+Delphi, Visual Basic, Power Basic and Dev-C++.
+
+Many people may have known DevIL as OpenIL, but the name was changed due to
+SGI's request.
+
+WWW: http://www.imagelib.org
