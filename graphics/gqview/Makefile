@@ -1,13 +1,13 @@
 # New ports collection makefile for:	gqview
-# Version required:	0.5.0
+# Version required:	0.5.1
 # Date Created:		27 Oct 1998
 # Whom:			Vanilla Pooh Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.5 1998/11/17 03:51:09 asami Exp $
+# $Id: Makefile,v 1.6 1998/11/18 12:22:28 asami Exp $
 #
 
-DISTNAME=	gqview-0.5.0.src
-PKGNAME=	gqview-0.5.0
+DISTNAME=	gqview-0.5.1.src
+PKGNAME=	gqview-0.5.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.geocities.com/SiliconValley/Haven/5235/
 EXTRACT_SUFX=	.tgz
@@ -18,7 +18,7 @@ LIB_DEPENDS=	gtk11.1:${PORTSDIR}/x11-toolkits/gtk11 \
 		Imlib.1:${PORTSDIR}/graphics/imlib
 
 USE_X_PREFIX=	yes
-WRKSRC=		${WRKDIR}/gqview-0.5.0
+WRKSRC=		${WRKDIR}/gqview-0.5.1
 ALL_TARGET=	gqview
 
 do-install:
