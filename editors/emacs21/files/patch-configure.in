@@ -1,6 +1,6 @@
---- configure.in.orig	Sun Mar 16 14:06:05 2003
-+++ configure.in	Thu Nov 20 13:54:06 2003
-@@ -179,6 +179,17 @@
+--- configure.in.orig	Sun Mar 16 17:06:05 2003
++++ configure.in	Thu Mar 18 13:31:10 2004
+@@ -179,6 +179,18 @@
  machine='' opsys='' unported=no
  case "${canonical}" in
  
@@ -9,6 +9,7 @@
 +    opsys=freebsd
 +    case "${canonical}" in
 +      alpha*-*-freebsd*)       machine=alpha ;;
++      amd64-*-freebsd*)        machine=amd64 ;;
 +      ia64-*-freebsd*)         machine=ia64 ;;
 +      i[3456]86-*-freebsd*)    machine=intel386 ;;
 +      sparc64-*-freebsd*)      machine=sparc ;;
@@ -18,7 +19,7 @@
    ## NetBSD ports
    *-*-netbsd* )
      opsys=netbsd
-@@ -1032,7 +1043,6 @@
+@@ -1032,7 +1044,6 @@
  				;;
        *-sysv4.2uw* )	  	opsys=unixware; NON_GNU_CPP=/lib/cpp ;;
        *-386bsd* )	        opsys=386bsd ;;
@@ -26,7 +27,7 @@
        *-nextstep* )             opsys=nextstep ;;
        ## Otherwise, we'll fall through to the generic opsys code at the bottom.
      esac
-@@ -2050,6 +2060,7 @@
+@@ -2050,6 +2061,7 @@
  # Solaris requires -lintl if you want strerror (which calls dgettext)
  # to return localized messages.
  AC_CHECK_LIB(intl, dgettext)
