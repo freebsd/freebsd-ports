@@ -6,15 +6,14 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	2002-05-21
+SNAPDATE=	2002-05-27
 SNAPVER=	${SNAPDATE:S/-//g}
 
 PORTNAME=	gcc
-PORTVERSION=	3.1
+PORTVERSION=	3.1.1
 PORTREVISION=	${SNAPVER}
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}  \
-		ftp://ftp.netwinder.org/pub/build/gcc/i386/${SNAPVER}/ \
 		ftp://egcs.cygnus.com/pub/egcs/snapshots/${SNAPDATE}/
 MASTER_SITE_SUBDIR=	gcc/snapshots/${SNAPDATE}
 DISTFILES=	\
@@ -23,7 +22,6 @@ DISTFILES=	\
 		gcc-g77-${SNAPVER}${EXTRACT_SUFX} \
 		gcc-java-${SNAPVER}${EXTRACT_SUFX} \
 		gcc-objc-${SNAPVER}${EXTRACT_SUFX}
-#		gcc-ss-3.1-0_${SNAPVER}.src.rpm
 
 PATCH_SITES=	ftp://relay.nuxi.com/obrien/
 PATCHFILES=	port_gcc31_${SNAPDATE}.diff
@@ -55,7 +53,7 @@ CONFIGURE_TARGET=	${ARCH}-portbld-freebsdaout${OSREL}
 .endif
 
 #GCC_REV=	${PORTVERSION:C/\.0$//}
-GCC_REV=	3.1
+GCC_REV=	3.1.1
 #SRCDIR=		${WRKDIR}/gcc-${GCC_REV}
 SRCDIR=		${WRKDIR}/gcc-${SNAPVER}
 WRKSRC=		${WRKDIR}/build
