@@ -1,11 +1,42 @@
---- Makefile.orig	Sun Jan 23 15:00:51 2000
-+++ Makefile	Sun Jan 23 15:00:56 2000
-@@ -3,7 +3,7 @@
+--- Makefile.orig	Thu Jan 13 13:04:47 2000
++++ Makefile	Sun Oct 19 01:44:36 2003
+@@ -3,7 +3,8 @@
  # Date created:		13 January 2000
  # Whom:			Bill Ross <bross@nas.nasa.gov> <ross@cgl.ucsf.edu>
  #
 -CC=	cc
-+CC?=	cc
++CC?=		cc
++CFLAGS?=	-O -pipe
  
  all:		libavltree.a
  
+@@ -12,7 +13,7 @@
+ 		strip libavltree.a
+ 
+ avltree.o: 	avltree.c avltree.h
+-		$(CC) -c avltree.c
++		$(CC) $(CFLAGS) -c avltree.c
+ 
+ install:	libavltree.a
+ 		install -c libavltree.a $(PREFIX)/lib
+@@ -25,16 +26,16 @@
+ extras:		test bench1 bench2
+ 
+ test:		test.o libavltree.a
+-		$(CC) -o test test.o libavltree.a
++		$(CC) $(CFLAGS) -o test test.o libavltree.a
+ 
+ bench1:		avl_bench.o libavltree.a
+-		$(CC) -o bench1 avl_bench.o libavltree.a
++		$(CC) $(CFLAGS) -o bench1 avl_bench.o libavltree.a
+ 
+ bench2:		avl_bench.o db_avl.o
+-		$(CC) -o bench2 avl_bench.o db_avl.o
++		$(CC) $(CFLAGS) -o bench2 avl_bench.o db_avl.o
+ 
+ bench3:		avl_bench.o bp_avl.o
+-		$(CC) -o bench3 avl_bench.o bp_avl.o bplus.a
++		$(CC) $(CFLAGS) -o bench3 avl_bench.o bp_avl.o bplus.a
+ 
+ #
+ ##################
