@@ -1,9 +1,9 @@
 # New ports collection makefile for:	freetype-ghostscript
 # Version required:	5.10ft
 # Date created:		Fri Mar 27 10:32:46 KST 1998
-# Whom:			CHOI Junho <junker@jazz.snu.ac.kr>
+# Whom:			CHOI Junho <cjh@kr.freebsd.org>
 #
-# $Id: Makefile,v 1.5 1998/12/22 08:12:20 asami Exp $
+# $Id: Makefile,v 1.6 1999/02/13 00:34:44 asami Exp $
 #
 # based on print/ghostscript5 and japanese/vfghostscript5
 # use Adobe's CID-keyed font sameple(korean) because there are no
@@ -13,8 +13,9 @@
 DISTNAME=	ko-ftghostscript-5.10
 CATEGORIES=	korean print
 MASTER_SITES=	ftp://ftp.cs.wisc.edu/ghost/aladdin/gs510/ \
-		http://freefall.freebsd.org/~andreas/download/ \
+		ftp://bonk.ethz.ch/gs-driver-distrib/ \
 		http://www.ozemail.com.au/~geoffk/pdfencrypt/ \
+		http://freefall.freebsd.org/~andreas/download/ \
 		http://www.ldl.jaist.ac.jp/~akr/nonresearch/free-software/ghostscript/ \
 		http://itohws03.ee.noda.sut.ac.jp/~matsuda/VFlib-FT/ \
 		ftp://jazz.snu.ac.kr/pub/unix/gs-ko/ \
@@ -25,10 +26,8 @@ DISTFILES=	${GS_SOURCES} ${GS_FONTS_STD} ${GS_FONTS_OTHER} \
 		${KFFTYPE_PATCH} ${HFFTYPE} ${GS_CID_PATCH} \
 		${CID_FONTS_KO} ${CID_CMAP_KO}
 
-MAINTAINER=	junker@jazz.snu.ac.kr
+MAINTAINER=	cjh@kr.freebsd.org
 
-
-BROKEN_ELF=	yes
 
 BUILD_DEPENDS=	/nonexistent:${PORTSDIR}/graphics/jpeg:extract \
 		/nonexistent:${PORTSDIR}/graphics/png:extract \
@@ -52,7 +51,7 @@ GS_FONTS_STD=	ghostscript-fonts-std-5.50.tar.gz
 GS_FONTS_OTHER=	ghostscript-fonts-other-5.10.tar.gz
 
 # Additional driver HP 850, see http://bonk.ethz.ch/hp850/hp850.html
-HP850_DRV=	hp850-1.2.zip
+HP850_DRV=	hp8xxs13.zip
 
 # replacement for pdf_sec.ps, that allows you to read encrypted PDF files
 DECRYPT_PDF=	pdf_sec.ps
@@ -79,15 +78,17 @@ CID_FONTS_KO=	Munhwa-Regular MunhwaGothic-Regular
 CID_CMAP_KO=	ak11.tar.Z
 
 # in Korea, A4 paper is default
-.if !defined(NOA4)
+.if defined(NOA4)
+CFLAGS+=
+.else
 CFLAGS+=	-DA4
 .endif
 
 pre-fetch:
 .if !defined(NOA4)
-	@${ECHO_MSG} "Type \"make NOA4=yes\" if you don't want A4 size default."
+	@${ECHO_MSG} "Type \"make NOA4=yes\" if you don't want -DA4 for compilation."
 .else
-	@${ECHO_MSG} "Default paper size is A4."
+	@${ECHO_MSG} "Using -DA4 for compilation."
 .endif
 .if !defined(PDFENCRYPT)
 	@${ECHO_MSG} "NOTE: You can have encrypted PDF support by adding "
@@ -101,9 +102,9 @@ post-extract:
 	${TOUCH} ${WRKSRC}/adler32.o
 	${TOUCH} ${WRKSRC}/deflate.o
 	${TOUCH} ${WRKSRC}/trees.o
-	ln -s ${WRKDIRPREFIX}${PORTSDIR}/graphics/jpeg/work/jpeg-6* ${WRKSRC}/jpeg-6a
+	ln -s ${WRKDIRPREFIX}${PORTSDIR}/graphics/jpeg/work/jpeg-6* ${WRKSRC}/jpeg-6b
 	ln -s ${WRKDIRPREFIX}${PORTSDIR}/graphics/png/work/libpng-1.* ${WRKSRC}/libpng
-	cd ${WRKSRC} && unzip -La ${DISTDIR}/${HP850_DRV}
+	cd ${WRKSRC} && unzip -Loa ${DISTDIR}/${HP850_DRV}
 	cd ${WRKSRC} && tar -xzf ${DISTDIR}/${CID_CMAP_KO}
 
 pre-patch:
