@@ -16,7 +16,7 @@ DIST_SUBDIR=	xc
 WRKSRC?=	${WRKDIR}/xc
 USE_IMAKE=	YES
 XFREE86_HTML_MAN=	yes
-PATCHDIR=	${.CURDIR}/../../x11/XFree86-4-libraries/files
+PATCHDIR?=	${.CURDIR}/../../x11/XFree86-4-libraries/files
 SCRIPTS_ENV+=	CC="${CC}" \
 		CXX="${CXX}" \
 		CFLAGS="${CFLAGS}"
