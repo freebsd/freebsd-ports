@@ -74,6 +74,7 @@
     SUBDIR += pspell
     SUBDIR += pspell-ispell
     SUBDIR += py-HyperText
+    SUBDIR += py-martel
     SUBDIR += py-mxTextTools
     SUBDIR += py-xml
     SUBDIR += rand
