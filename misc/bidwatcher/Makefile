@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		bidwatcher
-PORTVERSION=		1.3.5
+PORTVERSION=		1.3.6
 CATEGORIES=		misc
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,6 +16,8 @@ MAINTAINER=		mph@FreeBSD.org
 USE_GNOMENG=		yes
 USE_GNOME=		gtk12
 GNU_CONFIGURE=		YES
+
+CFLAGS+=		-UHAVE_GMTIME
 
 # The software includes a "fudge factor" for the snipe timer; by default
 # it snipes 5 minutes (300 seconds) before the time that you tell it to.
