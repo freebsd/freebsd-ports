@@ -28,7 +28,7 @@ HEADERS_SUFX=
 .if ${WITH_MOZILLA}=="mozilla-devel-gtk1"
 MOZILLA=	${WITH_MOZILLA}
 HEADERS_SUFX=	-devel-gtk1
-MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="1.6b"
+MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="trunk"
 .else
 MOZILLA=	mozilla-gtk1
 HEADERS_SUFX=
