@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	doxygen
-PORTVERSION=	1.2.12
+PORTVERSION=	1.2.13
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/dimitri/
 EXTRACT_SUFX=	.src.tar.gz
@@ -28,6 +28,14 @@ USE_GMAKE=	yes
 QT_NONSTANDARD=	yes	# non-standard configure arguments
 CONFIGURE_ARGS+=--prefix ${PREFIX} --perl ${PERL} --make ${GMAKE} \
 		--with-doxywizard
+
+# As of 1.2.13 the configure script bogusly checks for GNU options
+# in install so we need to override it's sillyness here.
+CONFIGURE_ARGS+=--install ${INSTALL}
+
+# XXX bsd.kde.mk fails to set QTDIR for QT_VER 2
+QTDIR?=		${X11BASE}
+CONFIGURE_ENV+=	QTDIR="${QTDIR}"
 
 .ifndef NOPORTDOCS
 ALL_TARGET=	all docs
