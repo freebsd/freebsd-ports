@@ -413,6 +413,7 @@
     SUBDIR += wavbreaker
     SUBDIR += waveplay
     SUBDIR += wavplay
+    SUBDIR += wmalbum
     SUBDIR += wmcdplay
     SUBDIR += wmfmixer
     SUBDIR += wmix

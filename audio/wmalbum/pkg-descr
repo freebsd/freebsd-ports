@@ -1,0 +1,8 @@
+WMalbum is a dock applet that displays album covers for songs being
+played by XMMS. You must already have images of the album covers stored
+near the file being played. WMAlbum provides a handy circular menu
+for play/skip/etc, and can replace wmxmms. Although dock applets are
+designed for the WindowMaker window manager, they also work in other
+window managers including openbox and blackbox.
+
+WWW: http://wmalbum.sourceforge.net/
