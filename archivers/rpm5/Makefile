@@ -24,7 +24,7 @@ LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 BUILD_DEPENDS+=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
 .endif
 
-USE_LIBTOOL_VER=14
+USE_LIBTOOL_VER=13
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_ICONV=	yes

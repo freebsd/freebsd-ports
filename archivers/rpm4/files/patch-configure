@@ -14,7 +14,7 @@
  
  # Always use our own libtool.
 -LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-+LIBTOOL='%%LOCALBASE%%/bin/libtool14'
++LIBTOOL='%%LOCALBASE%%/bin/libtool13'
  
  # Prevent multiple expansion
  
