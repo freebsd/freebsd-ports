@@ -118,6 +118,7 @@
     SUBDIR += icod
     SUBDIR += icontact
     SUBDIR += imagesort
+    SUBDIR += imc
     SUBDIR += imlib
     SUBDIR += imlib2
     SUBDIR += imlib2_loaders
