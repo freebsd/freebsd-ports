@@ -1,8 +1,0 @@
-;;
-;; @(#)semi-setupel.el -- semi emacs load-path setup elisp file.
-;;                                            --  by shige@FreeBSD.ORG
-
-(setq load-path (append '(
-	"@@LOCALBASE@@/@@EMACS_LIBDIR@@/site-lisp/semi"
- ) load-path))
-(provide 'semi-setupel)
