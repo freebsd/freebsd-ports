@@ -1,0 +1,12 @@
+*** BUILD	Sat Sep 24 11:28:46 1994
+--- BUILD	Sat Oct 29 12:20:18 1994
+***************
+*** 55,60 ****
+--- 55,61 ----
+  if ($UNAME == "ULTRIX")		setenv WWW_MACH	decstation
+  if ($UNAME == "AIX")    	setenv WWW_MACH	rs6000
+  if ($UNAME == "OSF1")   	setenv WWW_MACH	osf1
++ if ($UNAME == "FreeBSD")	setenv WWW_MACH	unix
+  if ($UNAME == "BSD/386")	setenv WWW_MACH	unix
+  if ($UNAME == "Linux")		setenv WWW_MACH	linux
+  if ($UNAME == "A/UX")		setenv WWW_MACH	aux
