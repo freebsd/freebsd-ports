@@ -3,11 +3,11 @@
 # Date created:				October 24th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.3 1996/11/17 07:42:45 obrien Exp $
+#   $Id: Makefile,v 1.4 1996/11/18 08:46:37 asami Exp $
 #
 
-DISTNAME=	MailTools-1.06
-PKGNAME=	p5-Mail-Tools-1.06
+DISTNAME=	MailTools-1.09
+PKGNAME=	p5-Mail-Tools-1.09
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Mail
@@ -20,7 +20,7 @@ BUILD_DEPENDS= 	perl5.003:${PORTSDIR}/lang/perl5 \
 RUN_DEPENDS=	perl5.003:${PORTSDIR}/lang/perl5
 
 MAN3=		Mail::Address.3 Mail::Cap.3 Mail::Field.3 Mail::Header.3 \
-		Mail::Internet.3 Mail::MIME.3 Mail::Mailer.3 Mail::Send.3 \
+		Mail::Internet.3 Mail::Alias.3 Mail::Mailer.3 Mail::Send.3 \
 		Mail::Util.3
 MANPREFIX=	${PREFIX}/lib/perl5
 
