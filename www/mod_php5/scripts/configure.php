@@ -323,7 +323,7 @@ while [ "$1" ]; do
 			echo "CONFIGURE_ARGS+=--with-hyperwave=yes"
 			;;
 		\"mcve\")
-			echo "LIB_DEPENDS+=	mcve.0:\${PORTSDIR}/devel/libmcve"
+			echo "LIB_DEPENDS+=	mcve.3:\${PORTSDIR}/devel/libmcve"
 			echo "CONFIGURE_ARGS+=--with-mcve=\${LOCALBASE}"
  			;;
 		\"ming\")
