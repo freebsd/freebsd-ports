@@ -3,7 +3,7 @@
 # Date created:		19 Feb 1998
 # Whom:			eivind
 #
-# $Id: Makefile,v 1.1.1.1 1998/02/19 12:01:16 eivind Exp $
+# $Id: Makefile,v 1.2 1998/02/25 07:44:50 asami Exp $
 #
 
 DISTNAME=	xscavenger-1.3
@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.epyx.com/dash/
 DISTFILES=	xscavenger-13.tgz
 
-MAINTAINER=	eivindFreeBSD.org
+MAINTAINER=	eivind@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 USE_IMAKE=	yes
