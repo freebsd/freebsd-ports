@@ -4,7 +4,7 @@
 # Date created:				03 Mar 1998
 # Whom:					David O'Brien <obrien@NUXI.com>
 #
-# $Id: Makefile,v 1.4 1998/08/07 22:49:30 asami Exp $
+# $Id: Makefile,v 1.5 1998/08/13 17:49:15 obrien Exp $
 #
 
 DISTNAME=	libstdc++-2.8.1.1
@@ -39,7 +39,7 @@ post-install:
 		${PREFIX}/${GCC28DIR}
 	${MV} ${PREFIX}/lib/libstdc++.a  \
 		${PREFIX}/${GCC28DIR}
-	${INSTALL_DATA} ${FILESDIR}/osfnc.h  \
+	${INSTALL_DATA} ${FILESDIR}/osfcn.h  \
 		${GCC28SUBDIR}/include/g++
 
 .include <bsd.port.mk>
