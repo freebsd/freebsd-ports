@@ -1,0 +1,11 @@
+--- map.C	Wed Mar 13 11:34:31 1996
++++ map.C.new	Mon Mar 20 22:00:29 2000
+@@ -26,6 +26,8 @@
+ 
+ void _map::init()
+ {
++    sx = 1 << MAP_SIZEX_LOG2;
++    sy = 1 << MAP_SIZEY_LOG2;
+     int i, j;
+     for (i=0; i<sx; i++)
+       for (j=0; j<sy; j++)
