@@ -1,5 +1,4 @@
 # New ports collection makefile for:	sip
-# Version required:	0.9
 # Date created:		Sun Oct 17 00:24:28 PDT 1999
 # Whom:			adsharma@home.com
 #
@@ -7,7 +6,7 @@
 #
 
 PORTNAME=	sip
-PORTVERSION=	0.11.1
+PORTVERSION=	0.12
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.river-bank.demon.co.uk/software/
 
