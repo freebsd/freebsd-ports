@@ -1,0 +1,16 @@
+--- func/event/include/facility.h.old	Fri Jan 21 15:52:05 2000
++++ func/event/include/facility.h	Fri Jan 21 15:52:29 2000
+@@ -12,11 +12,11 @@
+ created with the c++ API (Facility constructor).
+ -----------------------------------------------------------------------------*/
+ 
+-const MAX_FACILITIES = 1000; // max number of facilities
++const int MAX_FACILITIES = 1000; // max number of facilities
+ 
+ 
+ enum FacStatus {FREE, BUSY};
+-const MAX_FAC_NAME_LEN = 64;
++const int MAX_FAC_NAME_LEN = 64;
+ const double MINUS_INFINITY = -1.0e77; // for debug during development
+ 
+ /*=============================================================================

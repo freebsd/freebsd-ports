@@ -1,0 +1,23 @@
+--- func/event/include/vlist.h.old	Fri Jan 21 15:49:25 2000
++++ func/event/include/vlist.h	Fri Jan 21 15:49:48 2000
+@@ -136,9 +136,9 @@
+ -----------------------------------------------------------------------------*/
+ 
+ #if TURBOC
+-  const STANDARD_HEAP_CAPACITY = 100; // heap size
++  const int STANDARD_HEAP_CAPACITY = 100; // heap size
+ #else
+-  const STANDARD_HEAP_CAPACITY = 50000;
++  const int STANDARD_HEAP_CAPACITY = 50000;
+ #endif
+ 
+ class Heap : public Vlist
+@@ -227,7 +227,7 @@
+   const long MAX_NBUCKETS = 32768-1;
+ #endif
+ 
+-const LARGEST_CALENDAR_SAMPLE = 25;
++const int LARGEST_CALENDAR_SAMPLE = 25;
+ 
+ class Calendar : public Vlist
+   {

@@ -1,0 +1,18 @@
+--- func/event/include/capi.h.old	Fri Jan 21 15:47:27 2000
++++ func/event/include/capi.h	Fri Jan 21 15:47:52 2000
+@@ -18,11 +18,11 @@
+ 
+ // extract info from init_simpack()'s parameter:
+ 
+-    const FEL_TYPE_MASK     = 0x000f; // new
+-    const REMOVE_DUP_MASK   = 0x0010; // orig REMOVE_DUPLICATES was pound-defined as 16 but not used
+-    const REMOVE_DUPLICATES = 0x0010; // for compat w/simpack appl code qnet
+-    const RESEED_MASK       = 0x0020; // orig RESEED was pound-defined as 32 but not used
+-    const RESEED            = 0x0020; // for compat w/simpack
++    const int FEL_TYPE_MASK     = 0x000f; // new
++    const int REMOVE_DUP_MASK   = 0x0010; // orig REMOVE_DUPLICATES was pound-defined as 16 but not used
++    const int REMOVE_DUPLICATES = 0x0010; // for compat w/simpack appl code qnet
++    const int RESEED_MASK       = 0x0020; // orig RESEED was pound-defined as 32 but not used
++    const int RESEED            = 0x0020; // for compat w/simpack
+ 
+ // Group 1: related to class Future:
