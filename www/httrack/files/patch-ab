@@ -1,5 +1,5 @@
 --- Makefile.in.orig	Sun Oct 21 16:12:26 2001
-+++ Makefile.in	Fri Dec 21 17:58:09 2001
++++ Makefile.in	Fri Dec 21 18:15:25 2001
 @@ -22,7 +22,6 @@
  ### Makefile commands
  SHELL     = /bin/sh
@@ -43,3 +43,11 @@
  
  # Install binaries and conf files
  bininstall :
+@@ -392,7 +392,6 @@
+ 	@echo "Copying $(BOUTPUTSO) to $(LIBPATH)/.."
+ 	chmod 755 $(BOUTPUTSO)
+ 	cp -f $(BOUTPUTSO) $(LIBPATH)/
+-	ldconfig
+ 
+ # Uninstall binaries
+ binremove :
