@@ -6,6 +6,13 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20041018:
+  AFFECTS: users of mail/courier-imap
+  AUTHOR: oliver@FreeBSD.org
+
+  The courier-imap port must now be enabled / disabled in rc.conf.
+  See the script for details.
+
 20041015
   AFFECTS: users of www/apache2 with devel/apr
   AUTHOR: clement@FreeBSD.org
