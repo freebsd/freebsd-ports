@@ -14,7 +14,7 @@ MASTER_SITES=	http://gtk.no/archive/genmenu/
 MAINTAINER=	bogorodskiy@inbox.ru
 COMMENT=	Generating menus for Bbox, Fbox, Obox, WM and E
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 PLIST_FILES=	bin/genmenu
 USE_REINPLACE=	yes
