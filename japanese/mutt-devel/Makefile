@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mutt
-PORTVERSION=	${VERSION}.j${JP_VERSION}.b${JP_SUBVERSION}
+PORTVERSION=	${VERSION}.j${JP_VERSION}
 CATEGORIES=	japanese mail
 MASTER_SITES=	http://www.emaillab.org/mutt/1.3/ \
 		http://www.hiei.kit.ac.jp/~hitomi/mutt/ \
@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.emaillab.org/mutt/1.3/ \
 		http://www2.odn.ne.jp/~aab27060/ports/distfiles/
 DISTNAME=	${PORTNAME}-${VERSION}i
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		${DISTNAME}-ja${JP_VERSION}-beta${JP_SUBVERSION}${EXTRACT_SUFX} \
+		${DISTNAME}-ja${JP_VERSION}${EXTRACT_SUFX} \
 		manual_ja-${PRE_VERSION}i-1${EXTRACT_SUFX}
 
 MAINTAINER=	shuna@pop16.odn.ne.jp
@@ -32,7 +32,6 @@ RUN_DEPENDS=	urlview:${PORTSDIR}/textproc/urlview
 PRE_VERSION=	1.2
 VERSION=	1.3.10
 JP_VERSION=	0
-JP_SUBVERSION=	1
 
 DIST_SUBDIR=	mutt
 NO_LATEST_LINK=	yes
@@ -54,8 +53,8 @@ CONFIGURE_ARGS+=	--with-included-gettext
 MAN1=		flea.1 mutt.1 muttbug.1 mutt_dotlock.1
 MAN5=		muttrc.5 mbox.5
 
-DIFFDIR=	${WRKDIR}/${DISTNAME}-ja${JP_VERSION}-beta${JP_SUBVERSION}
-DIFFNAME=	${DISTNAME}-ja${JP_VERSION}-beta${JP_SUBVERSION}.diff
+DIFFDIR=	${WRKDIR}/${DISTNAME}-ja${JP_VERSION}
+DIFFNAME=	${DISTNAME}-ja${JP_VERSION}.diff
 DOCDIR=		${PREFIX}/share/doc/mutt
 
 pre-patch:
