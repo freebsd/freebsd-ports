@@ -55,7 +55,7 @@ fi
 
 dtd421=""
 for dtd in $found; do
-    check=`grep '//OASIS//DTD DocBook XML V4.1.2//EN' $dtd`
+    check=`grep '//OASIS//DTD DocBook XML V4.2//EN' $dtd`
     if [ "$check" != "" ] ; then
         dtd421=$dtd
         break
@@ -63,42 +63,42 @@ for dtd in $found; do
 done
 
 if [ "$dtd421" = "" ] ; then
-    echo could not locate version 4.1.2 of DocBook XML
+    echo could not locate version 4.2 of DocBook XML
     exit 1
 fi
 
 docbookdir=`dirname $dtd421`
-echo Found DocBook XML 4.1.2 DTD in $docbookdir
+echo Found DocBook XML 4.2 DTD in $docbookdir
 
 xmlcatalog --noout --add "public" \
-    "-//OASIS//ELEMENTS DocBook XML Information Pool V4.1.2//EN" \
+    "-//OASIS//ELEMENTS DocBook XML Information Pool V4.2//EN" \
     "file://$docbookdir/dbpoolx.mod" $CATALOG
 xmlcatalog --noout --add "public" \
-    "-//OASIS//DTD DocBook XML V4.1.2//EN" \
+    "-//OASIS//DTD DocBook XML V4.2//EN" \
     "file://$docbookdir/docbookx.dtd" $CATALOG
 xmlcatalog --noout --add "public" \
-    "-//OASIS//ENTITIES DocBook XML Character Entities V4.1.2//EN" \
+    "-//OASIS//ENTITIES DocBook XML Character Entities V4.2//EN" \
     "file://$docbookdir/dbcentx.mod" $CATALOG
 xmlcatalog --noout --add "public" \
-    "-//OASIS//ENTITIES DocBook XML Notations V4.1.2//EN" \
+    "-//OASIS//ENTITIES DocBook XML Notations V4.2//EN" \
     "file://$docbookdir/dbnotnx.mod" $CATALOG
 xmlcatalog --noout --add "public" \
-    "-//OASIS//ENTITIES DocBook XML Additional General Entities V4.1.2//EN" \
+    "-//OASIS//ENTITIES DocBook XML Additional General Entities V4.2//EN" \
     "file://$docbookdir/dbgenent.mod" $CATALOG
 xmlcatalog --noout --add "public" \
-    "-//OASIS//ELEMENTS DocBook XML Document Hierarchy V4.1.2//EN" \
+    "-//OASIS//ELEMENTS DocBook XML Document Hierarchy V4.2//EN" \
     "file://$docbookdir/dbhierx.mod" $CATALOG
 xmlcatalog --noout --add "public" \
     "-//OASIS//DTD XML Exchange Table Model 19990315//EN" \
     "file://$docbookdir/soextblx.dtd" $CATALOG
 xmlcatalog --noout --add "public" \
-    "-//OASIS//DTD DocBook XML CALS Table Model V4.1.2//EN" \
+    "-//OASIS//DTD DocBook XML CALS Table Model V4.2//EN" \
     "file://$docbookdir/calstblx.dtd" $CATALOG
 xmlcatalog --noout --add "rewriteSystem" \
-    "http://www.oasis-open.org/docbook/xml/4.1.2" \
+    "http://www.oasis-open.org/docbook/xml/4.2" \
     "file://$docbookdir" $CATALOG
 xmlcatalog --noout --add "rewriteURI" \
-    "http://www.oasis-open.org/docbook/xml/4.1.2" \
+    "http://www.oasis-open.org/docbook/xml/4.2" \
     "file://$docbookdir" $CATALOG
 
 xmlcatalog --noout --add "delegatePublic" \
@@ -230,7 +230,7 @@ if [ "$xsldir" = "" ] ; then
 fi
 echo Found DocBook XSLT stylesheets in $xsldir
 for version in current 1.39 1.40 1.41 1.42 1.43 1.44 1.45 1.46 1.47 \
-               1.48 1.49 1.50
+               1.48 1.49 1.50 1.51 1.52 1.53 1.54 1.55
 do
     xmlcatalog --noout --add "rewriteSystem" \
 	"http://docbook.sourceforge.net/release/xsl/$version" \

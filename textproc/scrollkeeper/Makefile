@@ -7,7 +7,7 @@
 
 PORTNAME=	scrollkeeper
 PORTVERSION=	0.3.11
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -31,7 +31,7 @@ RUN_DEPENDS=	intltool-extract:${PORTSDIR}/textproc/intltool \
 # put in the right place.
 PREFIX?=	${X11BASE}
 
-DOCBOOK_VERSION=	4.1.2
+DOCBOOK_VERSION=	4.2
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
