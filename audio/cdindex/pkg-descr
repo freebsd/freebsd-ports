@@ -7,8 +7,6 @@ This command line client reads the table of contents of an audio CD,
 calculates an Id and calls a web browser (netscape or lynx) for submission 
 or lookup of the CD information. 
 
-
-WWW: http://www.cdindex.org
-
+WWW: http://www.cdindex.org/
 
 Marc E E van Woerkom  <van.woerkom@netcologne.de>
