@@ -210,7 +210,6 @@ acidrip		ports/multimedia/acidrip
 acidwarp	ports/graphics/acidwarp
 aclgen		ports/misc/aclgen
 acm		ports/games/acm
-acme		ports/multimedia/acme
 acpicatools	ports/devel/acpicatools
 acrobatviewer	ports/print/acrobatviewer
 acron		ports/misc/acron
@@ -2556,7 +2555,6 @@ gnometerminal	ports/x11/gnometerminal
 gnomeuserdocs2	ports/misc/gnomeuserdocs2
 gnomeutils2	ports/deskutils/gnomeutils2
 gnomevfs	ports/devel/gnomevfs
-gnomevfs-extras	ports/devel/gnomevfs-extras
 gnomevfs2	ports/devel/gnomevfs2
 gnomoku		ports/games/gnomoku
 gnopernicus	ports/accessibility/gnopernicus
@@ -2723,7 +2721,6 @@ gstreamer-editor	ports/multimedia/gstreamer-editor
 gstreamer-player	ports/multimedia/gstreamer-player
 gstreamer-plugins	ports/multimedia/gstreamer-plugins
 gsubedit	ports/multimedia/gsubedit
-gswitchit ports/x11/gswitchit
 gtar		ports/archivers/gtar
 gtetrinet	ports/games/gtetrinet
 gtgt		ports/devel/gtgt
