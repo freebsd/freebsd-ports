@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	proxy-suite
-PORTVERSION=	1.9.2.1
-PORTREVISION=	1
+PORTVERSION=	1.9.2.2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.suse.com/pub/projects/proxy-suite/src/ \
 		ftp://ftp.gwdg.de/pub/linux/suse/ftp.suse.com/projects/proxy-suite/src/ \
@@ -18,10 +17,12 @@ COMMENT=	The SuSE Proxy-Suite, a set of programs to enhance firewall security
 
 USE_AUTOCONF_VER=	253
 USE_GMAKE=	yes
+USE_BZIP2=	yes
 
 #
 # basic configure args
 #
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
 CONFIGURE_ARGS=	--prefix=${PREFIX} --with-libwrap=/usr/lib --with-regex \
 		--localstatedir=/var/run \
 		--enable-warnings --enable-so-linger \
@@ -35,11 +36,11 @@ CONFIGURE_ARGS+=	--enable-rfc1579
 .endif
 
 #
-# OPTIONAL: include ldap-support - currently ldap.2 needs minor fixes...
+# OPTIONAL: include ldap-support
 #
 .if defined(WITH_LDAP)
+USE_OPENLDAP=		yes
 CONFIGURE_ARGS+=	--with-libldap=${LOCALBASE}/lib
-LIB_DEPENDS+=		ldap.1:${PORTSDIR}/net/openldap12
 .else
 CONFIGURE_ARGS+=	--without-libldap
 .endif
