@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	saoimage
-PORTVERSION=	1.28.5
+PORTVERSION=	1.29.3
 CATEGORIES=	astro
 MASTER_SITES=	ftp://cfa-ftp.harvard.edu/pub/gsc/SAOimage/ \
 		ftp://ftp.u-aizu.ac.jp/pub/graphics/image/SAO/SAOimage/
