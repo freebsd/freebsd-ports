@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- Makefile	2003/08/10 05:00:23	1.1
++++ Makefile	2003/08/10 05:00:34
+@@ -28,6 +28,8 @@
+ 
+ SRCS=	stacktraverse.c stacktraverse.h execinfo.c execinfo.h
+ 
++INCS=	execinfo.h
++
+ SHLIB_MAJOR=	1
+ SHLIB_MINOR=	0
+ 

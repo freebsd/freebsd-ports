@@ -314,6 +314,7 @@
     SUBDIR += libedit
     SUBDIR += libelf
     SUBDIR += libevent
+    SUBDIR += libexecinfo
     SUBDIR += libffi
     SUBDIR += libformat
     SUBDIR += libfs++
