@@ -17,7 +17,7 @@ COMMENT=	Modular FTP server configurable online using SITE commands
 USE_RC_SUBR=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_PERL=	yes
+USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 USE_INC_LIBTOOL_VER=13
@@ -61,10 +61,6 @@ CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
 
 .if ${PERL_LEVEL} < 500600
 PLIST_SUB+=	PERL="@comment "
