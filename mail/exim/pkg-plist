@@ -1,4 +1,5 @@
 etc/exim/configure.default
+etc/rc.d/exim.sh.sample
 info/exim_overview.info
 info/exim.info
 info/exim_filter.info

@@ -30,6 +30,11 @@ To run Exim instead of sendmail on startup:
    as appropriate in rc.conf(5).
 4) Start exim with appropriate command-line options.
 
+However, if Exim is linked against 3rd-party libraries that are not in
+the standard library search path (such as MySQL), then it should be
+started with ${PREFIX}/etc/rc.d/exim.sh, after said library support is
+enabled through its own startup script.
+
 You may also want to configure newsyslog(8) to rotate Exim log files:
 
 /var/log/exim/mainlog	mailnull:mail 640 7 * @T00 Z

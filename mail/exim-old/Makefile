@@ -198,6 +198,7 @@ pre-install:
 	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
+	${INSTALL_SCRIPT} ${FILESDIR}/exim.sh.sample ${PREFIX}/etc/rc.d
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/exim
 	${INSTALL_DATA} ${FILESDIR}/POST-INSTALL-NOTES ${PREFIX}/share/doc/exim
