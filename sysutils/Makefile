@@ -87,6 +87,7 @@
     SUBDIR += installwatch
     SUBDIR += ipa
     SUBDIR += ipsc
+    SUBDIR += jailutils
     SUBDIR += kdeadmin
     SUBDIR += kdeadmin3
     SUBDIR += koncd
