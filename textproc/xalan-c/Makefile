@@ -126,9 +126,7 @@ PLIST_SUB+=	NO_SAMPLES="@comment "
 .endif
 
 .if !defined(NOPORTDOCS)
-PLIST_SUB+=	NOPORTDOCS=""
-.else
-PLIST_SUB+=	NOPORTDOCS="@comment "
+PORTDOCS=	*
 .endif
 
 pre-everything::
