@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	webmin
-PORTVERSION=	0.93
-PORTREVISION=	2
+PORTVERSION=	0.94
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/webmin/updates/ \
 		http://www.webmin.com/webmin/download/
@@ -24,9 +23,7 @@ NO_BUILD=	yes
 USE_PERL5=	yes
 SCRIPTS_ENV+=	WRKDIR="${WRKDIR}"
 
-WEBMIN_MODULES=	samba-0.93-1.wbm.gz sendmail-0.93-1.wbm.gz \
-		file-0.93-2.wbm.gz custom-0.93-1.wbm.gz \
-		bind8-0.93-1.wbm.gz
+WEBMIN_MODULES=
 WEBMIN_THEMES=
 
 post-extract:
