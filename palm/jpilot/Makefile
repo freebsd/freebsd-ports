@@ -5,19 +5,21 @@
 #
 # $FreeBSD$
 #
+# "?=" and "+=" are for including this Makefile from japanese/jpilot
 
 DISTNAME=	jpilot-0.93.1
-CATEGORIES=	palm
+CATEGORIES=	palm comms
 MASTER_SITES=	http://jpilot.linuxbox.com/
 
-MAINTAINER=	varju@webct.com
+MAINTAINER?=	varju@webct.com
 
-LIB_DEPENDS=	pisock:${PORTSDIR}/palm/pilot-link \
+LIB_DEPENDS=	pisock.3:${PORTSDIR}/palm/pilot-link \
 		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
 PREFIX=		${LOCALBASE}/pilot
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-pilot-prefix=${PREFIX}
+CONFIGURE_ARGS+=--with-pilot-prefix=${PREFIX}
+CONFIGURE_ENV+=	GTK_CONFIG=${X11BASE}/bin/gtk12-config
 
 post-install:
 	@strip ${PREFIX}/bin/jpilot
