@@ -9,6 +9,5 @@ PKGNAMESUFFIX=	-ldap2
 MASTERDIR=	${.CURDIR}/../exim
 
 WITH_OPENLDAP=		yes
-WITH_OPENLDAP_VER=	21
 
 .include "${MASTERDIR}/Makefile"
