@@ -1,8 +1,0 @@
---- signal.cc.orig	Fri Dec 22 05:58:17 2000
-+++ signal.cc	Fri Jan  5 21:22:24 2001
-@@ -116 +116 @@
--#elseif defined(__mips__)
-+#else if defined(__mips__)
-@@ -119 +119 @@
--	pthread_mutex_init(&lock,&ma);
-+	pthread_mutex_init(lock,&ma);
