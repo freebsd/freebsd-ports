@@ -11,7 +11,7 @@ CATEGORIES=	irc
 MASTER_SITES=	http://druglord.freelsd.org/ezbounce/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/b/}
 
-MAINTAINER=	ab@astralblue.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A highly configurable IRC Proxy
 
 GNU_CONFIGURE=	yes
