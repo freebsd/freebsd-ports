@@ -6,42 +6,56 @@
 #
 
 PORTNAME=	povray
-PORTVERSION=	3.0.1
+PORTVERSION=	3.5
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.povray.org/pub/povray/%SUBDIR%/ \
 		ftp://ftp.gigabell.net/pub/unix/apps/graphics/povray/%SUBDIR%/ \
 		ftp://www.hensa.ac.uk/mirrors/povray/%SUBDIR%/ \
-		ftp://ftp.fh-aachen.de/pub/mirror/ftp.povray.org/povray/%SUBDIR%/
-MASTER_SITE_SUBDIR=	Old-Versions/Official-3.0/Unix
-DISTNAME=	povray3
-DISTFILES=	povuni_s.tgz povuni_d.tgz
-DIST_SUBDIR=	povray30
+		ftp://ftp.fh-aachen.de/pub/mirror/ftp.povray.org/povray/%SUBDIR%/ \
+		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/povray/%SUBDIR%,}
+MASTER_SITE_SUBDIR=	Official/Unix
+DISTNAME=	povuni_s
+EXTRACT_SUFX=   .tgz
+DIST_SUBDIR=	povray35
 
-MAINTAINER=	kris@FreeBSD.org
+MAINTAINER=	chat95@mbox.kyoto-inet.or.jp
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
+		tiff:${PORTSDIR}/graphics/tiff \
+		jpeg:${PORTSDIR}/graphics/jpeg \
+		vga:${PORTSDIR}/graphics/svgalib
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-3.50b
 USE_XLIB=	yes
+USE_REINPLACE=  yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=  yes
+CONFIGURE_TARGET= --target=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -L${LOCALBASE}/lib -I${LOCALBASE}/include"
+#		LDFLAGS="${LDFLAGS} -I${LOCALBASE}/lib"
+#		CFLAGS="${CFLAGS} -L${LOCALBASE}/lib"
+#		CXXFLAGS="${CXXFLAGS}
+#CC="${CC}" CFLAGS="${CFLAGS}" \
+#CONFIGURE_ENV=	CC="${CC}" CFLAGS="${CFLAGS}" \
+#		CXXFLAGS="${CXXFLAGS} -L${LOCALBASE}/lib" \
+#		CPPFLAGS="${CFLAGS} ${CPPFLAGS} -L${LOCALBASE}/lib -I${LOCALBASE}/include"
+#		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+#		CXXCPP="${CXXFLAGS} ${CXXCPP} -L${LOCALBASE}/lib -I${LOCALBASE}/lib"
+#CONFIGURE_ARGS= --includedir="${PREFIX}/include" --libdir="${PREFIX}/lib"
+
 MAN1=		povray.1
-NO_LATEST_LINK=	yes
 
-POVLIB=		${PREFIX}/lib/povray3
-
-do-build:
-	(cd ${WRKSRC}/source/unix; ${SETENV} ${MAKE_ENV} ${MAKE} newxwin)
+post-patch:
+	@${REINPLACE_CMD} -e 's+@PREFIX@+${PREFIX}+g;' ${WRKSRC}/povray.ini
 
 do-install:
-	@${MKDIR} ${POVLIB}/allscene
-	@${INSTALL_PROGRAM} ${WRKSRC}/source/unix/x-povray ${PREFIX}/bin/povray
-	@(cd ${WRKSRC}; ${TAR} cpf - pov3demo povscn docsdemo include texsamps) | \
-		(cd ${POVLIB}; ${TAR} xpf -)
-	@${INSTALL_DATA} ${WRKSRC}/*.ini ${POVLIB}/
-	@${INSTALL_DATA} ${WRKSRC}/*.doc ${POVLIB}/
-	@${INSTALL_DATA} ${WRKSRC}/*.gif ${WRKSRC}/*.xpm ${POVLIB}/
-	@${INSTALL_SCRIPT} ${WRKSRC}/allscene.sh ${POVLIB}/
+	@(cd ${WRKSRC} && ${GMAKE} install-exec)
+	@(cd ${WRKSRC} &&  ${GMAKE} install-data)
+.if !defined(NOPORTDOCS)
+	@(cd ${WRKSRC} && ${GMAKE} install-docDATA)
+	@(cd ${WRKSRC}/doc && ${GMAKE} install)
+.endif
 	@${RM} -f ${PREFIX}/man/man1/povray.1*
-	@${INSTALL_MAN} ${WRKSRC}/povray.1 ${PREFIX}/man/man1
-	@${CHMOD} -R og-r ${POVLIB}
-	@${CHMOD} -R a+r ${POVLIB}
+	@${INSTALL_MAN} ${WRKSRC}/doc/povray.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
