@@ -1,17 +1,22 @@
---- src/jserver.xml.in.orig	Mon Mar 20 11:01:32 2000
-+++ src/jserver.xml.in	Mon Apr 10 16:39:16 2000
-@@ -24,16 +24,16 @@
- The session log, make sure the folder exists!
- 
+--- src/jserver.xml.in.orig	Mon May  1 11:30:00 2000
++++ src/jserver.xml.in	Wed May 10 18:22:14 2000
+@@ -37,12 +37,12 @@
    <log>
+ 
+     <!-- replace with <error>syslog</error> to log to syslog instead, remove to log to STDERR -->
+-    <error>@prefix@/var/log/jserver.error</error>
++    <error>/var/log/jserver.error</error>
+ 
 -    <session>@prefix@/var/log/jserver.log</session>
 +    <session>/var/log/jserver.log</session>
+ 
      <!-- This will log some basic tracking information about every packet of data (TONS!)
 -      <packet>@prefix@/var/log/jserver_packet.log</packet>
 +      <packet>/var/log/jserver_packet.log</packet>
      -->
-   </log>
  
+   </log>
+@@ -50,7 +50,7 @@
  
  Data is stored on the filesystem for each user, make sure the folder exists!
  

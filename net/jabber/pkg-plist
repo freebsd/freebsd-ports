@@ -1,6 +1,6 @@
 bin/jserver
 etc/jserver.xml.default
-lib/jabber/mod_auth_sha1.so
+etc/rc.d/jserver.sh
 lib/jabber/mod_echo.so
 lib/jabber/mod_time.so
 lib/jabber/mod_version.so
