@@ -275,6 +275,7 @@
     SUBDIR += xipmsg
     SUBDIR += xisp
     SUBDIR += xtraceroute
+    SUBDIR += xtradius
     SUBDIR += xwhois
     SUBDIR += ytalk
     SUBDIR += zebra

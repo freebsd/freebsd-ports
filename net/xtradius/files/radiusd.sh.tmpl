@@ -1,0 +1,27 @@
+#!/bin/sh
+#
+PREFIX=/usr/local/sbin
+
+case "$1" in
+
+start)
+        if [ -x ${PREFIX}/radiusd ]
+        then
+                ${PREFIX}/radiusd -y & && echo -n " radiusd"
+        fi
+        ;;
+
+stop)
+        if [ -r /var/run/radiusd.pid ]
+        then
+                kill `cat /var/run/radiusd.pid` && echo -n " radiusd"
+        fi
+        ;;
+
+*)
+        echo "usage: $0 {start|stop}" 1>&2
+        exit 64
+        ;;
+
+esac
+
