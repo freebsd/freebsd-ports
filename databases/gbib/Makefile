@@ -6,25 +6,44 @@
 #
 
 PORTNAME=	gbib
-PORTVERSION=	0.1.1b
+PORTVERSION=	0.1.2
+PORTREVISION=	1
 CATEGORIES=	databases editors gnome
 MASTER_SITES=	ftp://ftp.seul.org/pub/gbib/src/ \
 		http://www.unixpages.org/distfiles/
+
+PATCH_SITES=	${MASTER_SITE_DEBIAN}
+PATCH_SITE_SUBDIR=      pool/main/g/gbib
+PATCHFILES=     ${PORTNAME}_${PORTVERSION}-1.diff.gz
+PATCH_DIST_STRIP=       -p1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Editor/browser for BibTeX bibliographic databases
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomelibs
-GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
+USE_GMAKE=	yes
+USE_AUTOCONF_VER=	213
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
+		AUTOHEADER="${TRUE}"
 
-.include <bsd.port.pre.mk>
+CFLAGS+=	-fpermissive
 
-.if ${OSVERSION} > 500000
-BROKEN=		"Does not build on 5.0"
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e 's|map.h,|map,|g ; \
+		 s|vector.h,|vector,|g' ${WRKSRC}/configure.in
+	@${REINPLACE_CMD} -e \
+		's|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/aclocal.m4
+	@${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|CXXFLAGS = -g|CXXFLAGS = @CXXFLAGS@|g ; \
+		 s|^exec_prefix =.*$$|exec_prefix = @exec_prefix@|g ; \
+		 s|^datadir =.*$$|datadir = @datadir@|g ; \
+		 s|^localedir =.*$$|localedir = $$(prefix)/share/locale|g'
 
 post-install:
-	${CAT} ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
