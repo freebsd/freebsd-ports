@@ -6,7 +6,11 @@
 #
 
 PORTNAME=	gnustep-gui
+.if defined(WITH_GNUSTEP_DEVEL)
+PORTVERSION=	0.8.6
+.else
 PORTVERSION=	0.8.5
+.endif
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNUSTEP} \
 		ftp://ftp.gnustep.org/pub/gnustep/%SUBDIR%/
