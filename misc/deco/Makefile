@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	deco
-PORTVERSION=	3.8.3
-PORTREVISION=	2
+PORTVERSION=	3.9
 CATEGORIES=	misc
-MASTER_SITES=	ftp://ftp.cronyx.ru/cronyx/deco/
-DISTNAME=	deco383
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=deco
+DISTNAME=	deco39
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Demos Commander, a free Norton Commander clone
 
-WRKSRC=		${WRKDIR}/deco383
+WRKSRC=		${WRKDIR}/${DISTNAME}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir=${PREFIX}/share
 CONFIGURE_ENV=	ac_cv_lib_ncurses_tgetent=no
