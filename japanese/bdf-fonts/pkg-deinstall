@@ -1,0 +1,22 @@
+#!/usr/bin/perl
+$prefix = $ENV{'PKG_PREFIX'};
+$dir = "$prefix/lib/X11/fonts/local";
+$to =  "$dir/fonts.alias";
+$from = "$to.orig";
+rename($to, $from) || die("Can't rename: $!");
+open(IN, $from) || die("Can't open $from: $!");
+open(OUT, ">$to") || die("Can't open $to: $!");
+while (<IN>) {
+	chop;
+	if (/^\s*!/ || /^\s*$/) {
+		print OUT "$_\n";
+	}
+	else {
+		@line = split(/\s+/, $_);
+		@elm = split(/-+/, $line[0]);
+		if ($elm[1] ne 'alias') {
+			print OUT "$_\n";
+		}
+	}
+}
+#system("$prefix/bin/xset fp rehash");

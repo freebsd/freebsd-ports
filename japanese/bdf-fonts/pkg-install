@@ -1,0 +1,118 @@
+#!/usr/bin/perl
+$prefix = $ENV{'PKG_PREFIX'};
+$dir = "$prefix/lib/X11/fonts/local";
+$to =  "$dir/fonts.alias";
+$from = "$to.orig";
+$option = $ARGV[1];
+exit 0 if $option ne 'POST-INSTALL';
+rename($to, $from) || die("Can't rename: $!");
+open(IN, $from) || die("Can't open $from: $!");
+open(OUT, ">$to") || die("Can't open $to: $!");
+while (<IN>) {
+	chop;
+	if (/^\s*!/ || /^\s*$/) {
+		print OUT "$_\n";
+	}
+	else {
+		@line = split(/\s+/, $_);
+		@elm = split(/-+/, $line[0]);
+		if ($elm[1] ne 'alias') { 
+			print OUT "$_\n";
+		}
+	}
+}
+for (split(/\n/, <<"END"))
+-alias-fixed-medium-r-normal--24-234-75-75-c-120-jisx0201.1976-0 -sony-fixed-medium-r-normal--24-170-100-100-c-120-jisx0201.1976-0
+-alias-fixed-medium-r-normal--20-190-75-75-c-200-jisx0201.1976-0 -kappa-fixed-medium-r-normal--20-190-75-75-c-100-jisx0201.1976-0
+-alias-fixed-bold-r-normal--20-190-75-75-c-200-jisx0201.1976-0 -kappa-fixed-bold-r-normal--20-190-75-75-c-100-jisx0201.1976-0
+-alias-fixed-medium-i-normal--20-190-75-75-c-200-jisx0201.1976-0 -kappa-fixed-medium-i-normal--20-190-75-75-c-100-jisx0201.1976-0
+-alias-fixed-bold-i-normal--20-190-75-75-c-200-jisx0201.1976-0 -kappa-fixed-bold-i-normal--20-190-75-75-c-100-jisx0201.1976-0
+-alias-fixed-medium-r-normal--16-156-75-75-c-80-jisx0201.1976-0 -shinonome-gothic-medium-r-normal--16-150-75-75-c-80-jisx0201.1976-0
+-alias-fixed-bold-r-normal--16-156-75-75-c-80-jisx0201.1976-0 -shinonome-gothic-bold-r-normal--16-150-75-75-c-80-jisx0201.1976-0
+-alias-fixed-medium-i-normal--16-156-75-75-c-80-jisx0201.1976-0 -shinonome-gothic-medium-i-normal--16-150-75-75-c-80-jisx0201.1976-0
+-alias-fixed-bold-i-normal--16-156-75-75-c-80-jisx0201.1976-0 -shinonome-gothic-bold-i-normal--16-150-75-75-c-80-jisx0201.1976-0
+-alias-fixed-medium-r-normal--14-130-75-75-c-70-jisx0201.1976-0 -shinonome-gothic-medium-r-normal--14-130-75-75-c-70-jisx0201.1976-0
+-alias-fixed-bold-r-normal--14-130-75-75-c-70-jisx0201.1976-0 -shinonome-gothic-bold-r-normal--14-130-75-75-c-70-jisx0201.1976-0
+-alias-fixed-medium-i-normal--14-130-75-75-c-70-jisx0201.1976-0 -shinonome-gothic-medium-i-normal--14-130-75-75-c-70-jisx0201.1976-0
+-alias-fixed-bold-i-normal--14-130-75-75-c-70-jisx0201.1976-0 -shinonome-gothic-bold-i-normal--14-130-75-75-c-70-jisx0201.1976-0
+-alias-fixed-medium-r-normal--12-104-75-75-c-60-jisx0201.1976-0 -shinonome-gothic-medium-r-normal--12-110-75-75-c-60-jisx0201.1976-0
+-alias-fixed-bold-r-normal--12-104-75-75-c-60-jisx0201.1976-0 -shinonome-gothic-bold-r-normal--12-110-75-75-c-60-jisx0201.1976-0
+-alias-fixed-medium-i-normal--12-104-75-75-c-60-jisx0201.1976-0 -shinonome-gothic-medium-i-normal--12-110-75-75-c-60-jisx0201.1976-0
+-alias-fixed-bold-i-normal--12-104-75-75-c-60-jisx0201.1976-0 -shinonome-gothic-bold-i-normal--12-110-75-75-c-60-jisx0201.1976-0
+-alias-fixed-medium-r-normal--10-78-75-75-c-100-jisx0201.1976-0 -misc-fixed-medium-r-normal--10-90-75-75-c-50-jisx0201.1976-0
+-alias-fixed-bold-r-normal--10-78-75-75-c-100-jisx0201.1976-0 -misc-fixed-bold-r-normal--10-90-75-75-c-50-jisx0201.1976-0
+-alias-fixed-medium-i-normal--10-78-75-75-c-100-jisx0201.1976-0 -misc-fixed-medium-i-normal--10-90-75-75-c-50-jisx0201.1976-0
+-alias-fixed-bold-i-normal--10-78-75-75-c-100-jisx0201.1976-0 -misc-fixed-bold-i-normal--10-90-75-75-c-50-jisx0201.1976-0
+-alias-fixed-medium-r-normal--8-70-75-75-c-120-jisx0201.1976-0 -hiro-fixed-medium-r-normal--8-70-75-75-c-40-jisx0201.1976-0
+-alias-fixed-medium-r-normal--26-250-75-75-c-260-jisx0208.1983-0 -jis-mincho-medium-r-normal--26-250-75-75-c-260-jisx0208.1983-0
+-alias-fixed-bold-r-normal--26-250-75-75-c-260-jisx0208.1983-0 -jis-mincho-bold-r-normal--26-250-75-75-c-260-jisx0208.1983-0
+-alias-fixed-medium-i-normal--26-250-75-75-c-260-jisx0208.1983-0 -jis-mincho-medium-i-normal--26-250-75-75-c-260-jisx0208.1983-0
+-alias-fixed-bold-i-normal--26-250-75-75-c-260-jisx0208.1983-0 -jis-mincho-bold-i-normal--26-250-75-75-c-260-jisx0208.1983-0
+-alias-fixed-medium-r-normal--24-234-75-75-c-240-jisx0208.1983-0 -jis-fixed-medium-r-normal--24-230-75-75-c-240-jisx0208.1983-0
+-alias-fixed-medium-r-normal--20-190-75-75-c-200-jisx0208.1983-0 -kappa-mincho-medium-r-normal--20-190-75-75-c-200-jisx0208.1983-0
+-alias-fixed-bold-r-normal--20-190-75-75-c-200-jisx0208.1983-0 -kappa-mincho-bold-r-normal--20-190-75-75-c-200-jisx0208.1983-0
+-alias-fixed-medium-i-normal--20-190-75-75-c-200-jisx0208.1983-0 -kappa-mincho-medium-i-normal--20-190-75-75-c-200-jisx0208.1983-0
+-alias-fixed-bold-i-normal--20-190-75-75-c-200-jisx0208.1983-0 -kappa-mincho-bold-i-normal--20-190-75-75-c-200-jisx0208.1983-0
+-alias-fixed-medium-r-normal--20-190-75-75-c-200-jisx0208.1990-0 -kappa-mincho-medium-r-normal--20-190-75-75-c-200-jisx0208.1990-0
+-alias-fixed-bold-r-normal--20-190-75-75-c-200-jisx0208.1990-0 -kappa-mincho-bold-r-normal--20-190-75-75-c-200-jisx0208.1990-0
+-alias-fixed-medium-i-normal--20-190-75-75-c-200-jisx0208.1990-0 -kappa-mincho-medium-i-normal--20-190-75-75-c-200-jisx0208.1990-0
+-alias-fixed-bold-i-normal--20-190-75-75-c-200-jisx0208.1990-0 -kappa-mincho-bold-i-normal--20-190-75-75-c-200-jisx0208.1990-0
+-alias-fixed-medium-r-normal--18-170-75-75-c-180-jisx0208.1983-0 -jis-gothic-medium-r-normal--18-170-75-75-c-180-jisx0208.1983-0
+-alias-fixed-bold-r-normal--18-170-75-75-c-180-jisx0208.1983-0 -jis-gothic-bold-r-normal--18-170-75-75-c-180-jisx0208.1983-0
+-alias-fixed-medium-i-normal--18-170-75-75-c-180-jisx0208.1983-0 -jis-gothic-medium-i-normal--18-170-75-75-c-180-jisx0208.1983-0
+-alias-fixed-bold-i-normal--18-170-75-75-c-180-jisx0208.1983-0 -jis-gothic-bold-i-normal--18-170-75-75-c-180-jisx0208.1983-0
+-alias-fixed-medium-r-normal--16-156-75-75-c-160-jisx0208.1983-0 -shinonome-gothic-medium-r-normal--16-150-75-75-c-160-jisx0208.1983-0
+-alias-fixed-bold-r-normal--16-156-75-75-c-160-jisx0208.1983-0 -shinonome-gothic-bold-r-normal--16-150-75-75-c-160-jisx0208.1983-0
+-alias-fixed-medium-i-normal--16-156-75-75-c-160-jisx0208.1983-0 -shinonome-gothic-medium-i-normal--16-150-75-75-c-160-jisx0208.1983-0
+-alias-fixed-bold-i-normal--16-156-75-75-c-160-jisx0208.1983-0 -shinonome-gothic-bold-i-normal--16-150-75-75-c-160-jisx0208.1983-0
+-alias-fixed-medium-r-normal--16-156-75-75-c-160-jisx0208.1990-0 -shinonome-gothic-medium-r-normal--16-150-75-75-c-160-jisx0208.1990-0
+-alias-fixed-bold-r-normal--16-156-75-75-c-160-jisx0208.1990-0 -shinonome-gothic-bold-r-normal--16-150-75-75-c-160-jisx0208.1990-0
+-alias-fixed-medium-i-normal--16-156-75-75-c-160-jisx0208.1990-0 -shinonome-gothic-medium-i-normal--16-150-75-75-c-160-jisx0208.1990-0
+-alias-fixed-bold-i-normal--16-156-75-75-c-160-jisx0208.1990-0 -shinonome-gothic-bold-i-normal--16-150-75-75-c-160-jisx0208.1990-0
+-alias-fixed-medium-r-normal--14-130-75-75-c-140-jisx0208.1983-0 -shinonome-gothic-medium-r-normal--14-130-75-75-c-140-jisx0208.1983-0
+-alias-fixed-bold-r-normal--14-130-75-75-c-140-jisx0208.1983-0 -shinonome-gothic-bold-r-normal--14-130-75-75-c-140-jisx0208.1983-0
+-alias-fixed-medium-i-normal--14-130-75-75-c-140-jisx0208.1983-0 -shinonome-gothic-medium-i-normal--14-130-75-75-c-140-jisx0208.1983-0
+-alias-fixed-bold-i-normal--14-130-75-75-c-140-jisx0208.1983-0 -shinonome-gothic-bold-i-normal--14-130-75-75-c-140-jisx0208.1983-0
+-alias-fixed-medium-r-normal--14-130-75-75-c-140-jisx0208.1990-0 -shinonome-gothic-medium-r-normal--14-130-75-75-c-140-jisx0208.1990-0
+-alias-fixed-bold-r-normal--14-130-75-75-c-140-jisx0208.1990-0 -shinonome-gothic-bold-r-normal--14-130-75-75-c-140-jisx0208.1990-0
+-alias-fixed-medium-i-normal--14-130-75-75-c-140-jisx0208.1990-0 -shinonome-gothic-medium-i-normal--14-130-75-75-c-140-jisx0208.1990-0
+-alias-fixed-bold-i-normal--14-130-75-75-c-140-jisx0208.1990-0 -shinonome-gothic-bold-i-normal--14-130-75-75-c-140-jisx0208.1990-0
+-alias-fixed-medium-r-normal--12-104-75-75-c-120-jisx0208.1983-0 -shinonome-gothic-medium-r-normal--12-110-75-75-c-120-jisx0208.1983-0
+-alias-fixed-bold-r-normal--12-104-75-75-c-120-jisx0208.1983-0 -shinonome-gothic-bold-r-normal--12-110-75-75-c-120-jisx0208.1983-0
+-alias-fixed-medium-i-normal--12-104-75-75-c-120-jisx0208.1983-0 -shinonome-gothic-medium-i-normal--12-110-75-75-c-120-jisx0208.1983-0
+-alias-fixed-bold-i-normal--12-104-75-75-c-120-jisx0208.1983-0 -shinonome-gothic-bold-i-normal--12-110-75-75-c-120-jisx0208.1983-0
+-alias-fixed-medium-r-normal--12-104-75-75-c-120-jisx0208.1990-0 -shinonome-gothic-medium-r-normal--12-110-75-75-c-120-jisx0208.1990-0
+-alias-fixed-bold-r-normal--12-104-75-75-c-120-jisx0208.1990-0 -shinonome-gothic-bold-r-normal--12-110-75-75-c-120-jisx0208.1990-0
+-alias-fixed-medium-i-normal--12-104-75-75-c-120-jisx0208.1990-0 -shinonome-gothic-medium-i-normal--12-110-75-75-c-120-jisx0208.1990-0
+-alias-fixed-bold-i-normal--12-104-75-75-c-120-jisx0208.1990-0 -shinonome-gothic-bold-i-normal--12-110-75-75-c-120-jisx0208.1990-0
+-alias-fixed-medium-r-normal--10-78-75-75-c-100-jisx0208.1983-0 -misc-fixed-medium-r-normal--10-90-75-75-c-100-jisx0208.1983-0
+-alias-fixed-bold-r-normal--10-78-75-75-c-100-jisx0208.1983-0 -misc-fixed-bold-r-normal--10-90-75-75-c-100-jisx0208.1983-0
+-alias-fixed-medium-i-normal--10-78-75-75-c-100-jisx0208.1983-0 -misc-fixed-medium-i-normal--10-90-75-75-c-100-jisx0208.1983-0
+-alias-fixed-bold-i-normal--10-78-75-75-c-100-jisx0208.1983-0 -misc-fixed-bold-i-normal--10-90-75-75-c-100-jisx0208.1983-0
+-alias-fixed-medium-r-normal--8-70-75-75-c-120-jisx0208.1983-0 -elisa100-fixed-medium-r-normal--8-70-75-75-c-80-jisx0208.1983-0
+-alias-fixed-medium-r-normal--12-110-75-75-c-120-jisx0213.2000-1 -misc-fixed-medium-r-normal--12-110-75-75-c-120-jisx0213.2000-1
+-alias-fixed-bold-r-normal--12-110-75-75-c-120-jisx0213.2000-1 -misc-fixed-bold-r-normal--12-110-75-75-c-120-jisx0213.2000-1
+-alias-fixed-medium-i-normal--12-110-75-75-c-120-jisx0213.2000-1 -misc-fixed-medium-i-normal--12-110-75-75-c-120-jisx0213.2000-1
+-alias-fixed-bold-i-normal--12-110-75-75-c-120-jisx0213.2000-1 -misc-fixed-bold-i-normal--12-110-75-75-c-120-jisx0213.2000-1
+-alias-fixed-medium-r-normal--12-110-75-75-c-120-jisx0213.2000-2 -misc-fixed-medium-r-normal--12-110-75-75-c-120-jisx0213.2000-2
+-alias-fixed-bold-r-normal--12-110-75-75-c-120-jisx0213.2000-2 -misc-fixed-bold-r-normal--12-110-75-75-c-120-jisx0213.2000-2
+-alias-fixed-medium-i-normal--12-110-75-75-c-120-jisx0213.2000-2 -misc-fixed-medium-i-normal--12-110-75-75-c-120-jisx0213.2000-2
+-alias-fixed-bold-i-normal--12-110-75-75-c-120-jisx0213.2000-2 -misc-fixed-bold-i-normal--12-110-75-75-c-120-jisx0213.2000-2
+-alias-fixed-medium-r-normal--14-130-75-75-c-140-jisx0213.2000-1 -misc-fixed-medium-r-normal--14-130-75-75-c-140-jisx0213.2000-1
+-alias-fixed-bold-r-normal--14-130-75-75-c-140-jisx0213.2000-1 -misc-fixed-bold-r-normal--14-130-75-75-c-140-jisx0213.2000-1
+-alias-fixed-medium-i-normal--14-130-75-75-c-140-jisx0213.2000-1 -misc-fixed-medium-i-normal--14-130-75-75-c-140-jisx0213.2000-1
+-alias-fixed-bold-i-normal--14-130-75-75-c-140-jisx0213.2000-1 -misc-fixed-bold-i-normal--14-130-75-75-c-140-jisx0213.2000-1
+-alias-fixed-medium-r-normal--14-130-75-75-c-140-jisx0213.2000-2 -misc-fixed-medium-r-normal--14-130-75-75-c-140-jisx0213.2000-2
+-alias-fixed-bold-r-normal--14-130-75-75-c-140-jisx0213.2000-2 -misc-fixed-bold-r-normal--14-130-75-75-c-140-jisx0213.2000-2
+-alias-fixed-medium-i-normal--14-130-75-75-c-140-jisx0213.2000-2 -misc-fixed-medium-i-normal--14-130-75-75-c-140-jisx0213.2000-2
+-alias-fixed-bold-i-normal--14-130-75-75-c-140-jisx0213.2000-2 -misc-fixed-bold-i-normal--14-130-75-75-c-140-jisx0213.2000-2
+-alias-fixed-medium-r-normal--16-150-75-75-c-160-jisx0213.2000-1 -misc-fixed-medium-r-normal--16-150-75-75-c-160-jisx0213.2000-1
+-alias-fixed-bold-r-normal--16-150-75-75-c-160-jisx0213.2000-1 -misc-fixed-bold-r-normal--16-150-75-75-c-160-jisx0213.2000-1
+-alias-fixed-medium-i-normal--16-150-75-75-c-160-jisx0213.2000-1 -misc-fixed-medium-i-normal--16-150-75-75-c-160-jisx0213.2000-1
+-alias-fixed-bold-i-normal--16-150-75-75-c-160-jisx0213.2000-1 -misc-fixed-bold-i-normal--16-150-75-75-c-160-jisx0213.2000-1
+-alias-mincho-bold-r-normal--20-190-75-75-c-200-jisx0213.2000-1 -kappa-mincho-bold-r-normal--20-190-75-75-c-200-jisx0213.2000-1
+-alias-mincho-bold-i-normal--20-190-75-75-c-200-jisx0213.2000-1 -kappa-mincho-bold-i-normal--20-190-75-75-c-200-jisx0213.2000-1
+END
+{
+	print OUT "$_\n";
+}
