@@ -1,0 +1,16 @@
+In contrast to security/portaudit, which is designed to be an
+install-and-forget solution, portaudit-db requires a current
+ports tree and generates a database that can be used locally
+or distributed over a network.
+
+Furthermore committers that want to add entries to the VuXML
+database may use this port to check their changes locally.
+It also features a file `database/portaudit.txt' where UUIDs
+for vulnerabilities can be allocated before they have been
+investigated thoroughly and moved to the VuXML database by
+the security officer team.
+
+Call `packaudit' after upgrading your ports tree.
+
+WWW: http://people.freebsd.org/~eik/portaudit/
+Oliver Eikemeier <eik@FreeBSD.org>

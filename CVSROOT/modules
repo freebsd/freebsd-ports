@@ -7748,6 +7748,7 @@ port-authoring-tools	ports/sysutils/port-authoring-tools
 port-maintenance-tools	ports/sysutils/port-maintenance-tools
 portaudio	ports/audio/portaudio
 portaudit	ports/security/portaudit
+portaudit-db	ports/security/portaudit-db
 portcheckout	ports/devel/portcheckout
 portdowngrade	ports/sysutils/portdowngrade
 porteasy	ports/misc/porteasy
