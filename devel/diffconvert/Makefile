@@ -7,7 +7,7 @@
 
 PORTNAME=	diffconvert
 PORTVERSION=	1.2
-CATEGORIES=	devel
+CATEGORIES=	devel textproc
 MASTER_SITES=	ftp://ftp.ilog.fr/pub/Users/haible/gnu/
 
 MAINTAINER=	ports@FreeBSD.org
