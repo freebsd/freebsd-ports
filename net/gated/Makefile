@@ -13,6 +13,8 @@ MASTER_SITES=   ftp://ftp.gated.merit.edu/net-research/gated/
 
 MAINTAINER=	peter@FreeBSD.org
 
+BROKEN=		Security hole (buffer overflow possibly yielding root)
+
 ALL_TARGET=	gated
 MAN8=		gated.8 ripquery.8 ospf_monitor.8 gdc.8
 
