@@ -1,0 +1,12 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Z3950/SimpleServer/SimpleServer.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Z3950/SimpleServer/SimpleServer.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Z3950/SimpleServer/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Z3950/SimpleServer/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/Z3950/GRS1.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/Z3950/OID.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/Z3950/SimpleServer.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/Z3950/grs_test.pl
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/Z3950/ztest.pl
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Z3950/SimpleServer
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Z3950
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/Z3950
