@@ -1,0 +1,11 @@
+--- examples/xgrep/Makefile.orig	Wed Dec  4 19:34:37 2002
++++ examples/xgrep/Makefile	Tue Nov  4 15:18:31 2003
+@@ -12,7 +12,7 @@
+ 
+ include $(MAKEDEFS)
+ 
+-XGREPLIBS = -L../../lib $(XERCESLIB) -ldl -lpathan -lstdc++
++XGREPLIBS = -L../../lib $(XERCESLIB) -lpathan -lstdc++
+ 
+ XGREPINCPATH = $(INCPATH) -I../common
+ 

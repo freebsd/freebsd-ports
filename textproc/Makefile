@@ -142,6 +142,7 @@
     SUBDIR += libcroco
     SUBDIR += libebml
     SUBDIR += liblrdf
+    SUBDIR += libpathan
     SUBDIR += libtre
     SUBDIR += libwpd
     SUBDIR += libxml
