@@ -10,8 +10,7 @@ PORTVERSION=	1.6
 PORTREVISION=	3
 CATEGORIES=	biology converters
 MASTER_SITES=	http://smog.com/chem/babel/files/ \
-		http://www.ccl.net/cca/software/UNIX/babel/ \
-		ftp://ccl.osc.edu/pub/chemistry/software/UNIX/babel/
+		http://www.ccl.net/cca/software/UNIX/babel/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
