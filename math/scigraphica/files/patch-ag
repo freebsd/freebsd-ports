@@ -1,0 +1,10 @@
+--- sg.desktop	2000/12/06 09:45:07	1.1
++++ sg.desktop	2000/12/06 09:45:20
+@@ -2,6 +2,6 @@
+ Name=SciGraphica
+ Comment=Data Plotting and Visualization
+ Exec=sga
+-Icon=sg_icon.xpm
++Icon=sg/sg_icon.xpm
+ Terminal=0
+ Type=Application

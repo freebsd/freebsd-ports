@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scigraphica
-PORTVERSION=	0.6
+PORTVERSION=	0.6.1
 CATEGORIES=	math gnome
 MASTER_SITES=	http://scigraphica.sourceforge.net/src/ \
 		http://magnet.fsu.edu/~feiguin/scigraphica/src/
