@@ -1,0 +1,4 @@
+Crypt::TripleDES is a perl module implementing the Triple-DES (3DES)
+cipher.  It is used via the crypt3() function.
+
+--will
