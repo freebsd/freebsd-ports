@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-Simple
-PORTVERSION=	2.12
+PORTVERSION=	2.13
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
@@ -24,7 +24,7 @@ MAN3=		XML::Simple.3 XML::Simple::FAQ.3
 
 .include <bsd.port.pre.mk>
 .if ${PERL_LEVEL} <= 500503
-EXTRA_PATCHES=	${PATCHDIR}/5.005_03-lib::XML::Simple.pm
+EXTRA_PATCHES=	${PATCHDIR}/5.005_03-lib::XML::Simple.pm ${PATCHDIR}/5.005_03-Makefile.PL
 
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
