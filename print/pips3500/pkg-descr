@@ -1,0 +1,19 @@
+This port is for a printer filter of EPSON PM-3500C. The filter is
+called Photo Image Print System for Linux and there exist the filters
+for other EPSON bubble jet printers. By using this driver you can
+print out as high quality as you use the Windows driver. See the below
+URL:
+
+WWW: http://www.epkowa.co.jp/
+
+And then this port has a modified filter "filter3500.rev" which is
+useful to print out more than one page. If you use it, you add the
+next entries into /etc/printcap.
+
+pm3500c|EPSON PM-3500C:\
+        :lp=/dev/lpt0:\
+        :sh:\
+        :if=/usr/local/libexec/pips3500/filter3500.rev:\
+        :sd=/var/spool/lpd/pm3500c:\
+        :mx#0:\
+        :lf=/var/log/lpd-errs
