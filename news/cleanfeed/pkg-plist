@@ -1,4 +1,3 @@
-news/bin/filter/filter_innd.pl
 news/bin/filter/bad_adult_paths
 news/bin/filter/bad_cancel_paths
 news/bin/filter/bad_hosts
