@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	etherape
-PORTVERSION=	0.8.0
+PORTVERSION=	0.8.2
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	petef@databits.net
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext \
-		gdk_pixbuf.2:${PORTSDIR}/x11/gnome
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	yes
