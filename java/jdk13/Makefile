@@ -7,7 +7,7 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}p${JDK_PATCHSET_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	# http://www.sun.com/software/java2/download.html
 #		 http://www.eyesbeyond.com/freebsddom/java/jdk13.html
@@ -48,6 +48,7 @@ JDK_PATCHSET_VERSION=	9
 
 ONLY_FOR_ARCHS=	i386
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 RESTRICTED=	"Redistribution of pre-compiled binaries is not permitted"
 NO_CDROM=	"Redistribution of pre-compiled binaries is not permitted"
 MAKE_ENV=	ALT_BOOTDIR="${JDK13DIR}" \
@@ -86,7 +87,6 @@ PLIST_SUB+=	DEBUG:=""
 .if defined(WITH_NATIVE_THREADS) || defined(WITH_HOTSPOT)
 PLIST_SUB+=	NATIVE:=""
 MAKE_ARGS+=	HPIS="green native"
-USE_REINPLACE=	yes
 .else
 PLIST_SUB+=	NATIVE:="@comment "
 .endif
@@ -191,6 +191,8 @@ pre-patch:
 
 post-patch:
 	@-${FIND} ${WRKDIR} -name SCCS -exec ${RM} -rf {} \;
+	@${REINPLACE_CMD} -e "s:%%LOCALBASE%%:${LOCALBASE}:" \
+		${WRKSRC}/../src/solaris/javavm/runtime/javai_md.c
 .if defined(WITH_NATIVE_THREADS) || defined(WITH_HOTSPOT)
 	@for file in ${PTHREAD_FILES}; do \
 		${REINPLACE_CMD} -e "s:-pthread:${PTHREAD_LIBS}:g" ${WRKSRC}/$${file}; \
