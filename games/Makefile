@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.143 1998/06/01 04:55:11 mph Exp $
+# $Id: Makefile,v 1.144 1998/06/04 02:38:32 mph Exp $
 #
 
     SUBDIR += 3dc
@@ -74,6 +74,7 @@
     SUBDIR += xchain
     SUBDIR += xchomp
     SUBDIR += xcogitate
+    SUBDIR += xconq
     SUBDIR += xcubes
     SUBDIR += xdeblock
     SUBDIR += xdemineur
