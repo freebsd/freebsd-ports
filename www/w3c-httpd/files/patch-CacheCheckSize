@@ -1,0 +1,147 @@
+*** /dev/null	Tue Feb  6 11:05:04 1996
+--- README-CACHE_CHECK_SIZE	Tue Feb  6 13:27:32 1996
+***************
+*** 0 ****
+--- 1,11 ----
++ Patch to avoid serving truncated files from the cache.
++ 
++ Apply the patch, modify WWW/All/<model>/Makefile.include (for your model
++ system) and add '-DCACHE_CHECK_SIZE' to CFLAGS.
++ 
++ With the patch, the server checks the size of a file in the cache before
++ returning it to the user; if the size is incorrect, the server will
++ refresh the file in the cache.
++ 
++ -- 
++ -- 19960205, Gertjan van Oosten, gertjan@West.NL, West Consulting bv
+*** WWW/Daemon/Implementation/HTCache.c.orig	Fri Aug 12 12:36:11 1994
+--- Daemon/Implementation/HTCache.c	Mon Feb  5 14:02:11 1996
+***************
+*** 382,387 ****
+--- 382,437 ----
+  }
+  
+  
++ #ifdef CACHE_CHECK_SIZE
++ /*
++ **	Check whether cache file has correct size
++ **
++ ** On exit:
++ **	return YES
++ **		if size is good
++ **	return NO
++ **		if size is too small or too large
++ **
++ */
++ PRIVATE BOOL cache_check_size ARGS2(char *, cfn,
++                                     struct stat *, stat_info)
++ {
++     char buf[BUF_SIZE+2];
++     FILE *cf;
++     long cl = 0, pos, size, actual;
++ 
++     if (!cfn)
++ 	return NO;
++ 
++     cf = fopen(cfn, "r");
++     if (!cf)
++ 	return NO;
++ 
++     while (fgets(buf, sizeof(buf), cf)) {
++ 	if (!buf[0]
++ 	    || (buf[0] == '\n' && !buf[1])
++ 	    || (buf[0] == '\r' && buf[1] == '\n' && !buf[2]))
++ 	    break;
++ 
++         if (!strncasecomp(buf, "content-length:", 15))
++ 	    sscanf(buf+15, "%ld", &cl);
++     }
++     pos = ftell(cf);
++     fclose(cf);
++ 
++     size = stat_info->st_size;
++ 
++     actual = size - pos;
++     if (TRACE) {
++ 	fprintf(stderr,"Cache....... checking \"%s\": content-length %ld =?= %ld\n",
++ 		cfn,cl,actual);
++     }
++ 
++     return (cl == actual ? YES : NO);
++ }
++ #endif /* CACHE_CHECK_SIZE */
++ 
++ 
+  PRIVATE BOOL do_caching ARGS1(char *, url)
+  {
+      HTList * cur = cc.no_caching;
+***************
+*** 460,465 ****
+--- 510,518 ----
+  				      time_t *,	expires)
+  {
+      struct stat stat_info;
++ #ifdef CACHE_CHECK_SIZE
++     BOOL size_ok;
++ #endif
+  
+      if (!url || !cfn || !cf || !if_ms) return CACHE_NO;
+      *cfn = NULL;
+***************
+*** 497,503 ****
+--- 550,563 ----
+  	    }
+  
+  	    success = HTCacheInfo_for(*cfn, &ld, &lc, &ex, &mu, &lm);
++ #ifdef CACHE_CHECK_SIZE
++ 	    /* Check whether file in cache has correct size */
++ 	    size_ok = cache_check_size(*cfn, &stat_info);
++ #endif
+  	    if (!success				  /* no entry */
++ #ifdef CACHE_CHECK_SIZE
++ 		|| !size_ok				  /* wrong size */
++ #endif
+  		|| ex - cc.cache_time_margin <= cur_time  /* expired */
+  		|| cur_time - lc >= refresh_interval	  /* time to refresh */
+  		|| in.no_cache_pragma) {		  /* override cache */
+***************
+*** 507,512 ****
+--- 567,576 ----
+  		if (TRACE) {
+  		    if (!success)
+  			fprintf(stderr, "NoEntry..... %s -- expiring\n",*cfn);
++ #ifdef CACHE_CHECK_SIZE
++ 		    else if (!size_ok)
++ 			fprintf(stderr, "Truncated...... %s -- refresh\n",*cfn);
++ #endif
+  		    else if (in.no_cache_pragma)
+  			fprintf(stderr, "Forced...... refresh of %s\n",*cfn);
+  		    else if (ex - cc.cache_time_margin <= cur_time)
+***************
+*** 527,533 ****
+--- 591,601 ----
+  		if (cc.cache_no_connect) {
+  		    CTRACE(stderr, "Standalone.. caching mode but expired\n");
+  		    cache_hit = YES;
++ #ifdef CACHE_CHECK_SIZE
++ 		    return size_ok ? CACHE_IF_MODIFIED : CACHE_CREATE;
++ #else
+  		    return CACHE_IF_MODIFIED;
++ #endif
+  		}
+  
+  		if (!(*cf = do_lock(*cfn))) {
+***************
+*** 550,556 ****
+--- 618,628 ----
+  		CTRACE(stderr,"IfModSince.. time: %s", ctime(if_ms));
+  
+  		free(backup);
++ #ifdef CACHE_CHECK_SIZE
++ 		return size_ok ? CACHE_IF_MODIFIED : CACHE_CREATE;
++ #else
+  		return CACHE_IF_MODIFIED;
++ #endif
+  	    }
+  	    else {
+  		CTRACE(stderr, "Cache....... not expired %s\n", *cfn);
