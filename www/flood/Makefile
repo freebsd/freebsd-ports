@@ -32,12 +32,6 @@ EX_DATA=	flood.dtd relative-averages-time.awk round-robin-dynamic.xml \
 		round-robin-relative-reports.xml round-robin-ssl.xml \
 		round-robin-timed.xml round-robin.xml
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 502111
-BROKEN=		"Does not build on FreeBSD >= 5.x"
-.endif
-
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 .for f in ${EX_SCRIPTS}
@@ -57,4 +51,4 @@ ANONCVS=	cvs -d :pserver:anoncvs@cvs.apache.org:/home/cvspublic
 maint-checkout:
 	${ANONCVS} co httpd-test/flood
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
