@@ -7,7 +7,7 @@
 
 PORTNAME=	foomatic-db
 PORTVERSION=	20040107
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 NO_CHECKSUM=	${DISTFILES}
@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Foomatic database
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
-		curl.2:${PORTSDIR}/ftp/curl
+		curl.3:${PORTSDIR}/ftp/curl
 
 USE_GMAKE=	yes
 USE_PERL5=	yes

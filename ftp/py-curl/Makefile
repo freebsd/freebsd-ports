@@ -7,6 +7,7 @@
 
 PORTNAME=	curl
 PORTVERSION=	7.11.0
+PORTREVISION?=	1
 CATEGORIES=	ftp python
 MASTER_SITES=	http://pycurl.sourceforge.net/download/ \
 		http://pycurl.sourceforge.net/download/00-OLD-VERSIONS/
@@ -16,7 +17,7 @@ DISTNAME=	py${PORTNAME}-${PORTVERSION}
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Python interface to libcurl
 
-LIB_DEPENDS=	curl.2:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

@@ -22,7 +22,7 @@
 
 PORTNAME=	php5
 PORTVERSION=	5.0.0.r2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	lang devel www
 MASTER_SITES=	${MASTER_SITE_PHP:S,$,:release,}
 MASTER_SITE_SUBDIR=	distributions/:release
@@ -234,7 +234,7 @@ CONFIGURE_ARGS+=--enable-ctype
 .endif
 
 .if defined(WITH_CURL)
-LIB_DEPENDS+=	curl.2:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	curl.3:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=--with-curl=${LOCALBASE}
 .endif
 

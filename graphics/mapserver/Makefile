@@ -7,6 +7,7 @@
 
 PORTNAME=		mapserver
 PORTVERSION=		4.0.2
+PORTREVISION?=	1
 CATEGORIES=		graphics www misc
 MASTER_SITES=		http://cvs.gis.umn.edu/dist/
 
@@ -37,7 +38,7 @@ CONFIGURE_ARGS+=	--with-pdf=${LOCALBASE}
 .endif
 
 .if defined(WITH_WMS)
-LIB_DEPENDS+=		curl.2:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=		curl.3:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=	--wmsclient
 .endif
 

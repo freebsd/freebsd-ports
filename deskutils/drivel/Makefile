@@ -7,7 +7,7 @@
 
 PORTNAME=	drivel
 PORTVERSION=	0.9.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	kwm@rainbow-runner.nl
 COMMENT=	The Gnome livejournal client
 
-LIB_DEPENDS=	curl.2:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomeui intlhack

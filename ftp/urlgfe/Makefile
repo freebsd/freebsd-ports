@@ -7,6 +7,7 @@
 
 PORTNAME=	urlgfe
 PORTVERSION=	0.7.1
+PORTREVISION?=	1
 CATEGORIES=	ftp www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	urlget
@@ -14,7 +15,7 @@ MASTER_SITE_SUBDIR=	urlget
 MAINTAINER=	chip-set@mail.ru
 COMMENT=	A download manager
 
-LIB_DEPENDS=	curl.2:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl
 
 USE_GNOME=	gtk20 lthack
 WANT_GNOME=	yes

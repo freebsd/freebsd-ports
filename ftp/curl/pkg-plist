@@ -1,6 +1,7 @@
 bin/curl
 bin/curl-config
 include/curl/curl.h
+include/curl/curlver.h
 include/curl/easy.h
 include/curl/mprintf.h
 include/curl/multi.h
@@ -21,6 +22,7 @@ lib/libcurl.so.%%SHLIB_VER%%
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/INTERNALS
 %%PORTDOCS%%%%DOCSDIR%%/KNOWN_BUGS
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE-MIXING
 %%PORTDOCS%%%%DOCSDIR%%/MANUAL
 %%PORTDOCS%%%%DOCSDIR%%/Makefile
 %%PORTDOCS%%%%DOCSDIR%%/Makefile.am
@@ -45,6 +47,7 @@ lib/libcurl.so.%%SHLIB_VER%%
 %%PORTDOCS%%%%DOCSDIR%%/examples/README
 %%PORTDOCS%%%%DOCSDIR%%/examples/curlgtk.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/curlx.c
+%%PORTDOCS%%%%DOCSDIR%%/examples/fileupload.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/fopen.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/ftpget.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/ftpgetresp.c
@@ -52,8 +55,10 @@ lib/libcurl.so.%%SHLIB_VER%%
 %%PORTDOCS%%%%DOCSDIR%%/examples/getinmemory.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/http-post.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/httpput.c
+%%PORTDOCS%%%%DOCSDIR%%/examples/https.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/makefile.dj
 %%PORTDOCS%%%%DOCSDIR%%/examples/multi-app.c
+%%PORTDOCS%%%%DOCSDIR%%/examples/multi-debugcallback.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/multi-double.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/multi-post.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/multi-single.c
@@ -88,6 +93,9 @@ lib/libcurl.so.%%SHLIB_VER%%
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_easy_setopt.3
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_easy_setopt.html
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_easy_setopt.pdf
+%%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_easy_strerror.3
+%%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_easy_strerror.html
+%%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_easy_strerror.pdf
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_escape.3
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_escape.html
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_escape.pdf
@@ -97,9 +105,6 @@ lib/libcurl.so.%%SHLIB_VER%%
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_formfree.3
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_formfree.html
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_formfree.pdf
-%%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_formparse.3
-%%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_formparse.html
-%%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_formparse.pdf
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_free.3
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_free.html
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_free.pdf
@@ -115,6 +120,9 @@ lib/libcurl.so.%%SHLIB_VER%%
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_global_init.3
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_global_init.html
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_global_init.pdf
+%%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_global_init_mem.3
+%%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_global_init_mem.html
+%%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_global_init_mem.pdf
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_mprintf.3
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_mprintf.html
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_mprintf.pdf
@@ -139,6 +147,9 @@ lib/libcurl.so.%%SHLIB_VER%%
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_multi_remove_handle.3
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_multi_remove_handle.html
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_multi_remove_handle.pdf
+%%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_multi_strerror.3
+%%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_multi_strerror.html
+%%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_multi_strerror.pdf
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_share_cleanup.3
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_share_cleanup.html
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_share_cleanup.pdf
@@ -148,6 +159,9 @@ lib/libcurl.so.%%SHLIB_VER%%
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_share_setopt.3
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_share_setopt.html
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_share_setopt.pdf
+%%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_share_strerror.3
+%%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_share_strerror.html
+%%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_share_strerror.pdf
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_slist_append.3
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_slist_append.html
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_slist_append.pdf
@@ -157,9 +171,6 @@ lib/libcurl.so.%%SHLIB_VER%%
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_strequal.3
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_strequal.html
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_strequal.pdf
-%%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_strnequal.3
-%%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_strnequal.html
-%%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_strnequal.pdf
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_unescape.3
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_unescape.html
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_unescape.pdf
