@@ -35,7 +35,7 @@ CONFIGURE_ARGS=		--enable-compat185 \
 			--target=${ARCH}-portbld-freebsd${OSREL}
 
 pre-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -Ee 's|-l?pthread|${PTHREAD_LIBS}|g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 post-patch:
 	@${CHMOD} 755 ${WRKSRC}/${CONFIGURE_SCRIPT}
