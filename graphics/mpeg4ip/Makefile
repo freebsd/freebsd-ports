@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mpeg4ip
-PORTVERSION=	0.9.5
+PORTVERSION=	0.9.6
 CATEGORIES=	graphics audio ipv6 net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,7 +26,6 @@ CONFIGURE_ARGS=	--datadir=${DATADIR} \
 		--with-glib-prefix=${LOCALBASE} \
 		--with-gtk-prefix=${LOCALBASE} \
 		--program-transform-name=''
-CONFIGURE_ENV=	PATH=${WRKDIR}/auto-bin:$$PATH
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 
@@ -126,6 +125,14 @@ post-install:
 
 .if ${ARCH} != "i386"
 WITHOUT_MMX=	yes
+.else 
+. if (defined(MACHINE_CPU) && ${MACHINE_CPU:Mi486} == "i486")
+WITH_OPTIMIZED_BYTESWAP=yes
+. endif
+
+. if defined(WITH_OPTIMIZED_BYTESWAP)
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-include::mpeg4ip_byteswap.h
+. endif
 .endif
 
 .if ${OSVERSION} >= 400014 && !defined(WITHOUT_IPV6)
@@ -138,10 +145,17 @@ CONFIGURE_ARGS+=	--disable-mmx
 
 pre-everything::
 .ifndef(WITHOUT_IPV6)
-	@${ECHO_MSG} 'Define WITHOUT_IPV6 if you want to disable IPv6 support'
+	@${ECHO_MSG} '===> Define WITHOUT_IPV6 if you want to disable IPv6 support'
 .endif
 .ifndef(WITHOUT_MMX)
-	@${ECHO_MSG} 'Define WITHOUT_MMX if your system does not support MMX'
+	@${ECHO_MSG} '===> Define WITHOUT_MMX if your system does not support MMX'
 .endif
+.ifndef(WITH_OPTIMIZED_BYTESWAP)
+	@${ECHO_MSG}
+	@${ECHO_MSG} '===> Define WITH_OPTIMIZED_BYTESWAP to use optimized byteswap'
+	@${ECHO_MSG} '===> routines. This works only in the i386 architecture, and'
+	@${ECHO_MSG} '===> only with 486 processors and above.'
+.endif
+
 
 .include <bsd.port.post.mk>
