@@ -32,6 +32,38 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0c4d5973-f2ab-11d8-9837-000c41e2cdad">
+    <topic>mysql -- mysqlhotcopy insecure temporary file creation</topic>
+    <affects>
+      <package>
+	<name>mysql-scripts</name>
+	<range><le>3.23.58</le></range>
+	<range><gt>4</gt><le>4.0.20</le></range>
+	<range><gt>4.1</gt><le>4.1.3</le></range>
+	<range><gt>5</gt><le>5.0.0_1</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>According to Christian Hammers:</p>
+	<blockquote cite="http://packages.debian.org/changelogs/pool/main/m/mysql-dfsg/mysql-dfsg_4.0.20-11/changelog">
+          <p>[mysqlhotcopy created] temporary files in /tmp which
+            had predictable filenames and such could be used for a
+            tempfile run attack.</p>
+	</blockquote>
+	<p>Jeroen van Wolffelaar is credited with discovering the issue.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0457</cvename>
+      <url>http://www.debian.org/security/2004/dsa-540</url>
+      <url>http://lists.mysql.com/internals/15185</url>
+    </references>
+    <dates>
+      <discovery>08-18-2004</discovery>
+      <entry>08-22-2004</entry>
+    </dates>
+  </vuln>
   <vuln vid="c4b025bb-f05d-11d8-9837-000c41e2cdad">
     <topic>tnftpd -- remotely exploitable vulnerability</topic>
     <affects>
