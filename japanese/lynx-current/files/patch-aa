@@ -1,7 +1,11 @@
---- makefile.in.orig	Fri Jul 31 18:34:41 1998
-+++ makefile.in	Mon Aug 10 02:12:53 1998
-@@ -37,7 +37,7 @@
+--- makefile.in.orig	Fri Nov  6 23:29:41 1998
++++ makefile.in	Tue Nov 10 23:38:26 1998
+@@ -41,10 +41,10 @@
  libdir= @libdir@
+ 
+ ## Where you want the doc-files installed
+-docdir= @libdir@/lynx_doc
++docdir= @datadir@/doc/lynx
  
  ## Where you want the help-files installed
 -helpdir= @libdir@/lynx_help
@@ -9,11 +13,11 @@
  
  ##set the relative location of the WWW library Implementation directory,
  ##from this directory
-@@ -250,6 +250,7 @@
- 	(cd $(srcdir)/lynx_help && tar cf - . ) | ( cd $(helpdir) && tar xf - )
+@@ -262,6 +262,7 @@
  	(cd $(srcdir) && tar cf - C[HO]* PROBLEMS README samples test ) | \
- 			       ( cd $(helpdir) && tar xf - )
-+	cp $(srcdir)/lynx.cfg $(helpdir)/samples/lynx.cfg
+ 			       ( cd $(docdir) && tar xf - )
  	-rm -f $(libdir)/lynx.tmp
- 	sh -c 'if test -f $(libdir)/lynx.cfg ; then \
- 		mv $(libdir)/lynx.cfg $(libdir)/lynx.tmp ; \
++	cp $(srcdir)/lynx.cfg $(docdir)/samples/lynx.cfg
+ 
+ # HPUX 'sed' does not seem to like '=' as pattern delimiter.
+ FIX_SED = tr '=' '%'
