@@ -92,6 +92,9 @@ WITH_INPUT_METHOD+=	--with-wnn6=-lwnn6_for_wnn7 --with-wnn-libraries=${LOCALBASE
 .endif
 COMP_ELC=	egg.elc wnn-egg.elc sj3-client.elc sj3-egg.elc canna.elc
 ELC_DIR=	../lisp
+
+.include <bsd.port.pre.mk>
+
 # Make a value of INPUT_METHOD
 .if defined(INPUT_METHOD)
 INPUT_METHOD!=	${ECHO_CMD} ${INPUT_METHOD} | sed -e 's/^/-/' -e 's/ /+/g'
@@ -184,4 +187,4 @@ post-install:
 post-package:
 	@${TOUCH} ${TOUCH_FLAGS} ${PACKAGE_COOKIE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
