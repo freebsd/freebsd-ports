@@ -2,6 +2,7 @@ bin/qgo
 share/qGo/pics/Bowl.png
 share/qGo/sounds/click.wav
 share/qGo/sounds/connect.wav
+share/qGo/sounds/connect2.wav
 share/qGo/sounds/enter.wav
 share/qGo/sounds/gameend.wav
 share/qGo/sounds/leave.wav
@@ -9,12 +10,15 @@ share/qGo/sounds/match.wav
 share/qGo/sounds/pass.wav
 share/qGo/sounds/say.wav
 share/qGo/sounds/stone.wav
+share/qGo/sounds/stone2.wav
 share/qGo/sounds/talk.wav
 share/qGo/sounds/tictoc.wav
+share/qGo/translations/qgo_cz.qm
 share/qGo/translations/qgo_de.qm
 share/qGo/translations/qgo_fr.qm
 share/qGo/translations/qgo_it.qm
 share/qGo/translations/qgo_nl.qm
+share/qGo/translations/qgo_zh.qm
 @dirrm share/qGo/translations
 @dirrm share/qGo/sounds
 @dirrm share/qGo/pics
