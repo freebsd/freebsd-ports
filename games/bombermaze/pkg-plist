@@ -29,15 +29,40 @@ share/gnome/bombermaze/themes/gnomed/player3.png
 share/gnome/bombermaze/themes/gnomed/player4.png
 share/gnome/bombermaze/themes/gnomed/powerup.png
 share/gnome/bombermaze/themes/gnomed/wall.png
+share/gnome/bombermaze/themes/icons3d/README
+share/gnome/bombermaze/themes/icons3d/bomb.png
+share/gnome/bombermaze/themes/icons3d/brick.png
+share/gnome/bombermaze/themes/icons3d/fire.png
+share/gnome/bombermaze/themes/icons3d/floor.png
+share/gnome/bombermaze/themes/icons3d/player1.png
+share/gnome/bombermaze/themes/icons3d/player2.png
+share/gnome/bombermaze/themes/icons3d/player3.png
+share/gnome/bombermaze/themes/icons3d/player4.png
+share/gnome/bombermaze/themes/icons3d/powerup.png
+share/gnome/bombermaze/themes/icons3d/wall.png
+share/gnome/bombermaze/themes/space/README
+share/gnome/bombermaze/themes/space/bomb.png
+share/gnome/bombermaze/themes/space/brick.png
+share/gnome/bombermaze/themes/space/fire.png
+share/gnome/bombermaze/themes/space/floor.png
+share/gnome/bombermaze/themes/space/player1.png
+share/gnome/bombermaze/themes/space/player2.png
+share/gnome/bombermaze/themes/space/player3.png
+share/gnome/bombermaze/themes/space/player4.png
+share/gnome/bombermaze/themes/space/powerup.png
+share/gnome/bombermaze/themes/space/wall.png
 share/gnome/help/bombermaze/C/animation.html
 share/gnome/help/bombermaze/C/index.html
 share/gnome/help/bombermaze/C/numeric.html
 share/gnome/help/bombermaze/C/topic.dat
 share/gnome/pixmaps/bombermaze.png
 share/locale/fr/LC_MESSAGES/bombermaze.mo
+share/locale/ja/LC_MESSAGES/bombermaze.mo
 share/locale/pt_BR/LC_MESSAGES/bombermaze.mo
 @dirrm share/gnome/help/bombermaze/C
 @dirrm share/gnome/help/bombermaze
+@dirrm share/gnome/bombermaze/themes/space
+@dirrm share/gnome/bombermaze/themes/icons3d
 @dirrm share/gnome/bombermaze/themes/gnomed
 @dirrm share/gnome/bombermaze/themes/default
 @dirrm share/gnome/bombermaze/themes
