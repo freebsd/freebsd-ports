@@ -1,4 +1,6 @@
 bin/mp3mover
-share/mp3mover/sample-.mp3moverrc
-share/mp3mover/shellperfect-.mp3moverrc
-@dirrm share/mp3mover
+%%PORTDOCS%%%%DOCSDIR%%/readme
+%%DATADIR%%/sample-.mp3moverrc
+%%DATADIR%%/shellperfect-.mp3moverrc
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

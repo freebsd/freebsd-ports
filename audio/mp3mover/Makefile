@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mp3mover
-PORTVERSION=	1.432
+PORTVERSION=	2.1.1
 CATEGORIES=	audio perl5
 MASTER_SITES=	http://www.doc.ic.ac.uk/~jsm00/scripts/
 
@@ -17,14 +17,18 @@ COMMENT=	Rename mp3s and manipulate them
 RUN_DEPENDS=	${SITE_PERL}/MP3/Tag.pm:${PORTSDIR}/audio/p5-tagged
 
 USE_PERL5=	yes
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/mp3mover.pl ${PREFIX}/bin/mp3mover
-	@${MKDIR} ${PREFIX}/share/${PORTNAME}
-	${CP} ${WRKSRC}/sample-.mp3moverrc ${PREFIX}/share/${PORTNAME}
-	${CP} ${WRKSRC}/shellperfect-.mp3moverrc ${PREFIX}/share/${PORTNAME}
+	@${MKDIR} ${DATADIR}
+	${CP} ${WRKSRC}/sample-.mp3moverrc ${DATADIR}
+	${CP} ${WRKSRC}/shellperfect-.mp3moverrc ${DATADIR}
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/readme ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
