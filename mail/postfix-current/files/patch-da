@@ -1,5 +1,5 @@
---- proto/regexp_table.orig	Tue Sep 17 18:54:42 2002
-+++ proto/regexp_table	Wed Sep 18 15:16:26 2002
+--- ./proto/regexp_table.orig	Tue Sep 17 18:54:42 2002
++++ ./proto/regexp_table	Wed Sep 18 15:16:26 2002
 @@ -4,11 +4,11 @@
  # SUMMARY
  #	format of Postfix regular expression tables

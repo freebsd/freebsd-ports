@@ -1,5 +1,5 @@
---- proto/pcre_table.orig	Tue Sep 17 18:54:38 2002
-+++ proto/pcre_table	Wed Sep 18 15:18:11 2002
+--- ./proto/pcre_table.orig	Tue Sep 17 18:54:38 2002
++++ ./proto/pcre_table	Wed Sep 18 15:18:11 2002
 @@ -4,11 +4,11 @@
  # SUMMARY
  #	format of Postfix PCRE tables
