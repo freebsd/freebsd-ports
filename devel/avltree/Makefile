@@ -9,7 +9,7 @@ PORTVERSION=	1.1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://odin.compchem.ucsf.edu/pub/amber/
 
-MAINTAINER=	bross@nas.nasa.gov
+MAINTAINER=	ports@FreeBSD.org
 
 MAN3=		avltree.3
 MANCOMPRESSED=	yes
