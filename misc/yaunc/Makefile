@@ -10,7 +10,7 @@ PORTVERSION=	0.02
 CATEGORIES=	misc
 MASTER_SITES=	http://www.redterror.net/code/yaunc/
 
-MAINTAINER=	nsayer@freebsd.org
+MAINTAINER=	ports@freebsd.org
 
 WRKSRC=		${WRKDIR}/yaunc
 

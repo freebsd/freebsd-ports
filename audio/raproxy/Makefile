@@ -11,7 +11,7 @@ CATEGORIES=	audio net
 MASTER_SITES=	http://docs.real.com/proxykit/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	nsayer@freebsd.org
+MAINTAINER=	ports@freebsd.org
 
 # Get it through http://www.real.com/firewall/fwdload/index.html
 # if the master site does not exists somehow.
