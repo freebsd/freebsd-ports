@@ -1,15 +1,15 @@
---- utils/Makefile.orig	Tue Oct 15 13:48:06 2002
-+++ utils/Makefile	Wed Oct 30 13:06:42 2002
+--- utils/Makefile.orig	Fri Nov  8 11:50:29 2002
++++ utils/Makefile	Wed Dec 25 15:41:44 2002
 @@ -9,10 +9,10 @@
  	$(CC) $(CFLAGS) ttf2font.c `freetype-config --cflags --libs` -o ttf2font
  
  data2c : data2c.c
--	$(CC) $(CFLAGS) data2c.c `sdl-config --cflags` -o data2c
-+	$(CC) $(CFLAGS) data2c.c `$(SDL_CONFIG) --cflags` -o data2c
+-	$(CC) $(CFLAGS) data2c.c `sdl-config --cflags --libs` -o data2c
++	$(CC) $(CFLAGS) data2c.c `$(SDL_CONFIG) --cflags --libs` -o data2c
  
  anim : anim.c
--	$(CC) $(CFLAGS) anim.c `sdl-config --cflags` -o anim
-+	$(CC) $(CFLAGS) anim.c `$(SDL_CONFIG) --cflags` -o anim
+-	$(CC) $(CFLAGS) anim.c `sdl-config --cflags --libs` -o anim
++	$(CC) $(CFLAGS) anim.c `$(SDL_CONFIG) --cflags --libs` -o anim
  
  clean :
  	rm -f *~ data2c ttf2font anim
