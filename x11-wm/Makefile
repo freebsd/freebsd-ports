@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.12 1999/04/02 04:44:33 steve Exp $
+# $Id: Makefile,v 1.13 1999/04/03 01:12:38 steve Exp $
 #
 
     SUBDIR += 9menu
@@ -14,6 +14,7 @@
     SUBDIR += flwm
     SUBDIR += fvwm
     SUBDIR += fvwm2
+    SUBDIR += fvwm2-i18n
     SUBDIR += fvwm95
     SUBDIR += fvwm95-i18n
     SUBDIR += gwm
