@@ -8,7 +8,7 @@
 PORTNAME=	jargon
 PORTVERSION=	4.3.3
 CATEGORIES=	misc
-MASTER_SITES=	http://www.tuxedo.org/~esr/jargon/
+MASTER_SITES=	http://www.catb.org/~esr/jargon/
 
 MAINTAINER=	sf@FreeBSD.org
 
