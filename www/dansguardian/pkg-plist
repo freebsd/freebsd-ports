@@ -10,8 +10,9 @@ etc/dansguardian/exceptionsitelist
 etc/dansguardian/exceptionuserlist
 etc/dansguardian/exceptioniplist
 etc/dansguardian/pics
-etc/dansguardian/logrotation
+etc/rc.d/dansguardian.sh
 sbin/dansguardian
-squid/logs/dansguardian.log
 www/cgi-bin/dansguardian.pl
 @dirrm etc/dansguardian
+@unexec echo If permanently deleting this package, /var/log/dansguardian.log must be removed manually
+

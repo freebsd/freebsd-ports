@@ -1,5 +1,5 @@
---- autoconf/fbsd.in.orig	Thu Mar 14 16:54:40 2002
-+++ autoconf/fbsd.in	Tue Mar 26 09:29:25 2002
+--- autoconf/fbsd.in.orig	Tue Apr  2 11:51:15 2002
++++ autoconf/fbsd.in	Tue Apr  2 11:54:12 2002
 @@ -17,7 +17,7 @@
                   dansguardian.conf config.cache Makefile logrotation
  
@@ -9,19 +9,20 @@
  PASSVARS += -DCONFFILELOCATION=\"${CONFFILELOCATION}dansguardian.conf\"
  PASSVARS += -DPIDDIR=\"${PIDDIR}\"
  
-@@ -29,7 +29,7 @@
- 
- 
- CFLAGS = $(OPTIMISE) $(WARNING)
--DGCFLAGS = $(OPTIMISE) $(PASSVARS) -lz $(STATIC)
-+DGCFLAGS = $(OPTIMISE) $(PASSVARS) $(PICS_FLAG) -lz $(STATIC)
- 
+@@ -34,36 +34,31 @@
  .cpp.o:
  	$(CPP) $(DEBUG) $(CFLAGS) -c $<
-@@ -44,26 +44,24 @@
- 	@test -d $(MANUALFILES)man8/ || install -d $(MANUALFILES)man8/
- 	@test -d $(LOGLOCATION) || install -d $(LOGLOCATION)
- 	@test -d $(BINARYLOCATION) || /usr/sbin/install -d $(BINARYLOCATION)
+ 
+ all:	$(OBJ) 
+ 	$(CPP) -o dansguardian $(DGCFLAGS) $(DEBUG) $(OBJ) $(LIBS) dansguardian.cpp
+ 
+ install:
+ 	@test -d $(SYSVLOCATION) || install -d $(SYSVLOCATION)
+ 	@test -d $(CONFFILELOCATION) || install -d $(CONFFILELOCATION)
+ 	@test -d $(CGIBINLOCATION) || install -d $(CGIBINLOCATION)
+-	@test -d $(MANUALFILES)man8/ || install -d $(MANUALFILES)man8/
+-	@test -d $(LOGLOCATION) || install -d $(LOGLOCATION)
+-	@test -d $(BINARYLOCATION) || /usr/sbin/install -d $(BINARYLOCATION)
 -	cp -f ./dansguardian $(BINARYLOCATION)dansguardian
 -	cp -f ./dansguardian.conf $(CONFFILELOCATION)dansguardian.conf
 -	cp -f ./bannedphraselist $(CONFFILELOCATION)bannedphraselist
@@ -42,6 +43,7 @@
 -	chown -R $(PROXYUSER).$(PROXYGROUP) $(LOGLOCATION)
 -	chmod -R u+wr $(LOGLOCATION)
 -	chmod u+wrx $(LOGLOCATION)
++	@test -d $(BINARYLOCATION) || install -d $(BINARYLOCATION)
 +	@install -m 755 -o root -g wheel ./dansguardian $(BINARYLOCATION)dansguardian
 +	@install -m 644 -o root -g wheel ./dansguardian.conf $(CONFFILELOCATION)dansguardian.conf
 +	@install -m 644 -o root -g wheel ./bannedphraselist $(CONFFILELOCATION)bannedphraselist
@@ -54,7 +56,6 @@
 +	@install -m 644 -o root -g wheel ./exceptionuserlist $(CONFFILELOCATION)exceptionuserlist
 +	@install -m 644 -o root -g wheel ./exceptioniplist $(CONFFILELOCATION)exceptioniplist
 +	@install -m 644 -o root -g wheel ./pics $(CONFFILELOCATION)pics
-+	@install -m 755 -o root -g wheel ./logrotation $(CONFFILELOCATION)logrotation
 +	@install -m 755 -o root -g wheel ./dansguardian.bsdv $(SYSVLOCATION)dansguardian.sh
 +	@install -m 755 -o root -g wheel ./dansguardian.pl $(CGIBINLOCATION)dansguardian.pl
 +	@install -m 644 -o root -g wheel ./dansguardian.8 $(MANUALFILES)man8/dansguardian.8
@@ -63,7 +64,7 @@
  
  uninstall:
  	rm -f $(BINARYLOCATION)dansguardian
-@@ -71,7 +69,7 @@
+@@ -71,7 +66,7 @@
  	rm -f $(CGIBINLOCATION)dansguardian.pl
  	rm -f $(MANUALFILES)man8/dansguardian.8.gz
  	rm -fr $(CONFFILELOCATION)

@@ -1,85 +1,11 @@
---- configure.orig	Thu Mar 14 16:54:40 2002
-+++ configure	Tue Mar 26 08:58:45 2002
-@@ -43,6 +43,7 @@
- mandir='/usr/man/'
- logdir='/var/log/dansguardian/'
- piddir='/var/run/'
-+with_pics_filter="yes"
- 
- 
- case `uname -s` in
-@@ -112,7 +113,10 @@
-   --runas_usr=USER        run as user DEFAULT [$runas_usr]
-   --runas_grp=GROUP       run as group DEFAULT [$runas_grp]
-   --piddir=DIR            pid file in DIR [$piddir] (ignores prefix)
-   --prefix=DIR            prefix root path DEFAULT [$prefixdir] (no trailing /)
-+Features and packages:
-+  --without-pics-filter   Disables PICS/ICRA filtering
-+
- Do not forget the heading *and* trailing / except for prefix which only needs
- a heading /
- EOF
-@@ -2668,6 +2672,13 @@
+--- configure.orig	Tue Apr  2 09:15:26 2002
++++ configure	Tue Apr  2 09:29:41 2002
+@@ -2667,7 +2667,7 @@
+ $extendedecho "SYSVLOCATION = \${PREFIX}$sysvdir" >>Makefile
+ $extendedecho "CGIBINLOCATION = \${PREFIX}$cgidir" >>Makefile
+ $extendedecho "MANUALFILES = \${PREFIX}$mandir" >>Makefile
+-$extendedecho "LOGLOCATION = \${PREFIX}$logdir" >>Makefile
++$extendedecho "LOGLOCATION = $logdir" >>Makefile
+ echo "PROXYUSER = $runas_usr" >>Makefile
  echo "PROXYGROUP = $runas_grp" >>Makefile
  echo "PIDDIR = $piddir" >>Makefile
- 
-+case "${with_pics_filter}" in
-+	no)
-+		$extendedecho "  Turning off PICS/ICRA filtering."
-+		$extendedecho "\n\${PICS_FLAG} = -DWITHOUT_PICS_FILTER" >> Makefile
-+	;;
-+esac
-+
- case `uname -s` in
- 	SunOS*)
- 		echo "#undef __BSD" >autoconf/platform.h
-@@ -2740,31 +2751,24 @@
-                 chmod u+x dansguardian.bsdv
- 	;;
- 	FreeBSD*)
--		if [ -f dansguardian.bsdv ]; then
--                        rm -f dansguardian.bsdv
--                fi
--                cat autoconf/bsdv.in > dansguardian.bsdv
--                $extendedecho "        [ -x $prefixdir$bindir\c" >> dansguardian.bsdv
--                $extendedecho "dansguardian ] && $prefixdir$bindir\c" >> dansguardian.bsdv
--                echo "dansguardian > /dev/null && $extendedecho ' dansguardian\c'" >> dansguardian.bsdv
--                echo "        ;;" >> dansguardian.bsdv
--                echo "stop)" >> dansguardian.bsdv
--                $extendedecho "        $prefixdir$bindir\c" >> dansguardian.bsdv
--                echo "dansguardian -q" >> dansguardian.bsdv
--                $extendedecho "        [ -r /tmp/\c" >> dansguardian.bsdv
--                echo ".dguardianipc ] && $extendedecho ' dansguardian\c'" >> dansguardian.bsdv
--                echo "        rm -f /tmp/.dguardianipc" >> dansguardian.bsdv
--                echo "        ;;" >> dansguardian.bsdv
--                echo "restart)" >> dansguardian.bsdv
--                echo "        \$0 stop" >> dansguardian.bsdv
--                echo "        \$0 start" >> dansguardian.bsdv
--                echo "        ;;" >> dansguardian.bsdv
--                echo "*)" >> dansguardian.bsdv
--                echo "        echo \"Usage: `basename \$0` {start|stop|restart}\" >&2" >> dansguardian.bsdv
--                echo "        ;;" >> dansguardian.bsdv
--                echo "esac" >> dansguardian.bsdv
--                echo "exit 0" >> dansguardian.bsdv
--                chmod u+x dansguardian.bsdv
-+		cat autoconf/bsdv.in > dansguardian.bsdv
-+		$extendedecho "\t[ -x /usr/local/sbin/dansguardian ] && /usr/local/sbin/dansguardian > /dev/null && echo -n \" dansguardian\"" >> dansguardian.bsdv
-+		$extendedecho "\t;;" >> dansguardian.bsdv
-+		$extendedecho "stop)" >> dansguardian.bsdv
-+		$extendedecho "\t/usr/local/sbin/dansguardian -q" >> dansguardian.bsdv
-+		$extendedecho "\t[ -r /tmp/.dguardianipc ] && echo -n \" dansguardian\"" >> dansguardian.bsdv
-+		$extendedecho "\trm -f /tmp/.dguardianipc" >> dansguardian.bsdv
-+		$extendedecho "\t;;" >> dansguardian.bsdv
-+		$extendedecho "restart)" >> dansguardian.bsdv
-+		$extendedecho "\t\$0 stop" >> dansguardian.bsdv
-+		$extendedecho "\t\$0 start" >> dansguardian.bsdv
-+		$extendedecho "\t;;" >> dansguardian.bsdv
-+		$extendedecho "*)" >> dansguardian.bsdv
-+		$extendedecho "\techo \"Usage: \$0 {start|stop|restart}\" >&2" >> dansguardian.bsdv
-+		$extendedecho "\t;;" >> dansguardian.bsdv
-+		$extendedecho "esac" >> dansguardian.bsdv
-+		$extendedecho "exit 0" >> dansguardian.bsdv
-+
- 	;;
- 	Linux*)
- 		if [ -f dansguardian.sysv ]; then
