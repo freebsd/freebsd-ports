@@ -11,7 +11,7 @@ CATEGORIES=	x11-clocks kde
 MASTER_SITES=	$(MASTER_SITE_KDE)
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/distribution/tar/generic/source/bz2
 
-MAINTAINER=	imura@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 LIB_DEPENDS=	kdecore.3:${PORTSDIR}/x11/kdelibs11

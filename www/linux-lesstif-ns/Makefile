@@ -1,6 +1,6 @@
 # New ports collection makefile for:	linux-lesstif-ns
 # Date created:		7 May 2000
-# Whom:			imura@FreeBSD.org
+# Whom:			imura@af.airnet.ne.jp
 #
 # $FreeBSD$
 #
@@ -19,7 +19,7 @@ PATCH_SITES=	http://cgi.shikoku.ne.jp/~fun/srpms/
 PATCHFILES=	${DISTNAME}-i18n.patch
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	imura@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	${LINUXBASE}/usr/bin/cc:${PORTSDIR}/devel/linux_devtools
 

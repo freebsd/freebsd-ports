@@ -1,6 +1,6 @@
 # New ports collection makefile for:    ja-linux_locale
 # Date created:         March 20 2000
-# Whom:                 imura@FreeBSD.org
+# Whom:                 imura@af.airnet.ne.jp
 #
 # $FreeBSD$
 #
@@ -8,12 +8,10 @@
 PORTNAME=	linux_locale
 PORTVERSION=	${VERSION}.0
 CATEGORIES=	japanese emulators linux
-MASTER_SITES=	ftp://ftp.debian.org/debian/dists/woody/main/source/admin/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	imura
+MASTER_SITES=	ftp://ftp.debian.org/debian/dists/woody/main/source/admin/
 DISTNAME=	locale-ja_${VERSION}
 
-MAINTAINER=	imura@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	${LCDEF_CMD}:${PORTSDIR}/emulators/linux_base
 
