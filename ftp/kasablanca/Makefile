@@ -21,7 +21,7 @@ USE_REINPLACE=	yes
 
 post-extract:
 	@${CP} ${FILESDIR}/subdirs ${WRKSRC}
-	@${TOUCH} -t 200404152151 ${WRKSRC}/subdirs
+	@${TOUCH} -t 200404130000 ${WRKSRC}/subdirs
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
