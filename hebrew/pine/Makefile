@@ -6,6 +6,7 @@
 
 PORTNAME=	pine
 PORTVERSION=	4.21.2.9
+PORTREVISION=	1
 CATEGORIES=	hebrew mail news
 MASTER_SITES=	ftp://www8.cc.huji.ac.il/pub/pine/
 DISTNAME=	pine4.21_heb2.09
