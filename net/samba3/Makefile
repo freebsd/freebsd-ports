@@ -1,13 +1,13 @@
 # New ports collection makefile for:	samba
-# Version required:			2.0.2
+# Version required:			2.0.3
 # Date created:				11th Feb 1995
 # Whom:					gpalmer
 #
-# $Id: Makefile,v 1.33 1999/02/09 15:25:01 hosokawa Exp $
+# $Id: Makefile,v 1.34 1999/02/10 00:26:02 hosokawa Exp $
 #
 
-DISTNAME=	samba-2.0.2
-#PKGNAME=	samba-2.0.2
+DISTNAME=	samba-2.0.3
+#PKGNAME=	samba-2.0.3
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.samba.org/pub/samba/ \
 		ftp://ring.asahi-net.or.jp/pub/net/samba/ \
