@@ -11,7 +11,7 @@ CATEGORIES=	devel kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	kcachegrind
 
-MAINTAINER=	barner@gmx.de
+MAINTAINER=	barner@FreeBSD.org
 COMMENT=	Profiling Visualization Tool
 
 RUN_DEPENDS=	callgrind:${PORTSDIR}/devel/callgrind

@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=boost/:boost_site
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:boost_site
 
-MAINTAINER=	barner@gmx.de
+MAINTAINER=	barner@FreeBSD.org
 COMMENT=	Free peer-reviewed portable C++ source libraries
 
 USE_BZIP2=	yes

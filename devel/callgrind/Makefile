@@ -10,7 +10,7 @@ PORTVERSION=	0.9.8
 CATEGORIES=	devel
 MASTER_SITES=	http://kcachegrind.sourceforge.net/
 
-MAINTAINER=	barner@gmx.de
+MAINTAINER=	barner@FreeBSD.org
 COMMENT=	Valgrind skin for cache simulation and call tracing
 
 RUN_DEPENDS=	valgrind:${PORTSDIR}/devel/valgrind

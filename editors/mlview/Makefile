@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.7
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	barner@gmx.de
+MAINTAINER=	barner@FreeBSD.org
 COMMENT=	A tree oriented XML editor for Gnome
 
 USE_BZIP2=	yes

@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Audio
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	barner@gmx.de
+MAINTAINER=	barner@FreeBSD.org
 COMMENT=	Fetch info from WMA audio files
 
 PERL_CONFIGURE=	yes
