@@ -1,6 +1,16 @@
---- sockobj.cc.orig	Sat Jan 29 00:54:37 2000
-+++ sockobj.cc	Sat Jan 29 00:55:34 2000
-@@ -645,7 +645,7 @@
+--- sockobj.cc.orig	Sat May 15 06:13:54 1999
++++ sockobj.cc	Sat May 27 14:57:47 2000
+@@ -53,6 +53,9 @@
+ #include <stdarg.h>
+ #include <errno.h>
+ #include <time.h>
++#if defined(__FreeBSD__) && __FreeBSD__ >= 5
++#include <machine/param.h> /* for ALIGN macro needed by CMSG_DATA */
++#endif
+ #include <sys/socket.h>
+ #include <sys/un.h>
+ #include <netinet/in.h>
+@@ -645,7 +648,7 @@
  global_nconnections++;
  if(xsocket->status==0){
   hisaddresslength=128;
@@ -9,7 +19,7 @@
   if(h<0) return;
   hisaddress=(struct sockaddr*)malloc(hisaddresslength);
   if(hisaddress) memcpy(hisaddress,s,hisaddresslength); else{
-@@ -1861,7 +1861,7 @@
+@@ -1861,7 +1864,7 @@
      if(fdarray[sockets[i]->handleindexforwheel].revents&POLLIN){
       fdarray[sockets[i]->handleindexforwheel].revents&=~POLLIN;
       hisaddresslength=128;
