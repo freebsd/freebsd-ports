@@ -3,8 +3,8 @@ news/bin/actmerge
 news/bin/actsync
 news/bin/actsyncd
 news/bin/archive
+news/bin/auth/passwd/auth_smb
 news/bin/auth/passwd/ckpasswd
-news/bin/auth/passwd/pwcheck
 news/bin/auth/passwd/radius
 news/bin/auth/resolv/domain
 news/bin/auth/resolv/ident
@@ -12,29 +12,20 @@ news/bin/batcher
 news/bin/buffchan
 news/bin/cnfsheadconf
 news/bin/cnfsstat
-news/bin/control/checkgroups
 news/bin/control/checkgroups.pl
-news/bin/control/default
-news/bin/control/ihave
 news/bin/control/ihave.pl
-news/bin/control/newgroup
 news/bin/control/newgroup.pl
-news/bin/control/rmgroup
 news/bin/control/rmgroup.pl
-news/bin/control/sendme
 news/bin/control/sendme.pl
-news/bin/control/sendsys
 news/bin/control/sendsys.pl
-news/bin/control/senduuname
 news/bin/control/senduuname.pl
-news/bin/control/version
 news/bin/control/version.pl
 news/bin/controlbatch
 news/bin/controlchan
 news/bin/convdate
 news/bin/ctlinnd
 news/bin/cvtbatch
-news/bin/dbprocs
+news/bin/docheckgroups
 news/bin/expire
 news/bin/expireover
 news/bin/expirerm
@@ -52,6 +43,7 @@ news/bin/filter/startup_innd.pl
 news/bin/getlist
 news/bin/gpgverify
 news/bin/grephistory
+news/bin/imapfeed
 news/bin/inews
 news/bin/inncheck
 news/bin/innconfval
@@ -62,6 +54,7 @@ news/bin/innfeed
 news/bin/innmail
 news/bin/innreport
 news/bin/innstat
+news/bin/innupgrade
 news/bin/innwatch
 news/bin/innxbatch
 news/bin/innxmit
@@ -71,14 +64,16 @@ news/bin/makehistory
 news/bin/mod-active
 news/bin/news.daily
 news/bin/news2mail
-news/bin/newsrequeue
+news/bin/ninpaths
 news/bin/nnrpd
 news/bin/nntpget
 news/bin/nntpsend
-news/bin/ovdb_recover
-news/bin/ovdb_upgrade
+news/bin/ovdb_init
+news/bin/ovdb_monitor
+news/bin/ovdb_server
+news/bin/ovdb_stat
 news/bin/overchan
-news/bin/parsecontrol
+news/bin/perl-nocem
 news/bin/pgpverify
 news/bin/procbatch
 news/bin/prunehistory
@@ -94,7 +89,7 @@ news/bin/scanspool
 news/bin/send-ihave
 news/bin/send-nntp
 news/bin/send-uucp
-news/bin/sendbatch
+news/bin/sendinpaths
 news/bin/sendxbatches
 news/bin/shlock
 news/bin/shrinkfile
@@ -103,6 +98,7 @@ news/bin/simpleftp
 news/bin/sm
 news/bin/startinnfeed
 news/bin/tally.control
+news/bin/tdx-util
 news/bin/writelog
 news/db/active
 news/db/active.times
@@ -111,6 +107,25 @@ news/db/history.dir
 news/db/history.hash
 news/db/history.index
 news/db/newsgroups
+news/doc/CONTRIBUTORS
+news/doc/GPL
+news/doc/HACKING
+news/doc/INSTALL
+news/doc/LICENSE
+news/doc/NEWS
+news/doc/README
+news/doc/README.snapshot
+news/doc/TODO
+news/doc/compliance-nntp
+news/doc/config-design
+news/doc/config-semantics
+news/doc/config-syntax
+news/doc/external-auth
+news/doc/history
+news/doc/hook-perl
+news/doc/hook-python
+news/doc/hook-tcl
+news/doc/sample-control
 news/etc/actsync.cfg
 news/etc/actsync.ign
 news/etc/buffindexed.conf
@@ -138,22 +153,50 @@ news/etc/sasl.conf
 news/etc/storage.conf
 news/etc/subscriptions
 news/include/clibrary.h
+news/include/conffile.h
 news/include/config.h
-news/include/configdata.h
 news/include/dbz.h
+news/include/inn/buffer.h
+news/include/inn/confparse.h
+news/include/inn/defines.h
+news/include/inn/hashtab.h
+news/include/inn/history.h
+news/include/inn/innconf.h
+news/include/inn/list.h
+news/include/inn/md5.h
+news/include/inn/messages.h
+news/include/inn/mmap.h
+news/include/inn/qio.h
+news/include/inn/sequence.h
+news/include/inn/system.h
+news/include/inn/timer.h
+news/include/inn/tst.h
+news/include/inn/vector.h
+news/include/inn/version.h
+news/include/inn/wire.h
+news/include/inndcomm.h
 news/include/libinn.h
+news/include/nntp.h
+news/include/ov.h
+news/include/paths.h
 news/include/storage.h
-news/lib/docheckgroups
 news/lib/innreport_inn.pm
 news/lib/innshellvars
 news/lib/innshellvars.pl
 news/lib/innshellvars.tcl
 news/lib/libinn.a
+news/lib/libinnhist.a
 news/lib/libstorage.a
-share/doc/inn/HISTORY
-share/doc/inn/INSTALL
-share/doc/inn/LICENSE
-@dirrm share/doc/inn
+%%PORTDOCS%%share/doc/inn/CONTRIBUTORS
+%%PORTDOCS%%share/doc/inn/HACKING
+%%PORTDOCS%%share/doc/inn/INSTALL
+%%PORTDOCS%%share/doc/inn/LICENSE
+%%PORTDOCS%%share/doc/inn/MANIFEST
+%%PORTDOCS%%share/doc/inn/NEWS
+%%PORTDOCS%%share/doc/inn/README
+%%PORTDOCS%%share/doc/inn/TODO
+%%PORTDOCS%%@dirrm share/doc/inn
+@dirrm news/tmp
 @dirrm news/spool/tmp
 @dirrm news/spool/overview
 @dirrm news/spool/outgoing
@@ -165,8 +208,10 @@ share/doc/inn/LICENSE
 @dirrm news/spool
 @dirrm news/run
 @dirrm news/lib
+@dirrm news/include/inn
 @dirrm news/include
 @dirrm news/etc
+@dirrm news/doc
 @dirrm news/db
 @dirrm news/bin/rnews.libexec
 @dirrm news/bin/filter
