@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	boinc-setiathome
-PORTVERSION=	4.03
+PORTVERSION=	4.07
 CATEGORIES=	astro
 MASTER_SITES=	http://boinc.berkeley.edu/seti_source/nightly/
-DISTNAME=	seti_boinc-client-cvs-2004-10-01
+DISTNAME=	seti_boinc-client-cvs-2004-11-09
 
 MAINTAINER=	fbsd@opal.com
 COMMENT=	Setiathome for boinc
@@ -20,7 +20,7 @@ LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw
 
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
-CONFIGURE_ENV=	LANG=C BOINCDIR=${LOCALBASE}/boinc CPPFLAGS=-I/usr/X11R6/include CFLAGS=-I/usr/X11R6/include LDFLAGS=-L/usr/local/lib
+CONFIGURE_ENV=	LANG=C BOINCDIR=${LOCALBASE}/boinc CPPFLAGS=-I${X11BASE}/include CFLAGS=-I${X11BASE}/include LDFLAGS=-L${LOCALBASE}/lib
 MAKE_ENV=	LANG=C
 USE_GMAKE=	yes
 PKGINSTALL=	${WRKDIR}/pkg-install
