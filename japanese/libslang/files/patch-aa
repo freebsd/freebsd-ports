@@ -1,115 +1,81 @@
-*** configure.orig	Thu Feb  3 05:30:44 2000
---- configure	Sat Feb  5 01:22:00 2000
-***************
-*** 1760,1766 ****
-    echo $ac_n "(cached) $ac_c" 1>&6
-  else
-    ac_save_LIBS="$LIBS"
-! LIBS="-ldl  $LIBS"
-  cat > conftest.$ac_ext <<EOF
-  #line 1766 "configure"
-  #include "confdefs.h"
---- 1760,1766 ----
-    echo $ac_n "(cached) $ac_c" 1>&6
-  else
-    ac_save_LIBS="$LIBS"
-! 
-  cat > conftest.$ac_ext <<EOF
-  #line 1766 "configure"
-  #include "confdefs.h"
-***************
-*** 1818,1824 ****
-  if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
-    echo "$ac_t""yes" 1>&6
-    
-! 		DYNAMIC_LINK_LIB="-ldl"
-  		cat >> confdefs.h <<\EOF
-  #define HAVE_DLFCN_H 1
-  EOF
---- 1818,1824 ----
-  if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
-    echo "$ac_t""yes" 1>&6
-    
-! 		DYNAMIC_LINK_LIB=""
-  		cat >> confdefs.h <<\EOF
-  #define HAVE_DLFCN_H 1
-  EOF
-***************
-*** 1866,1876 ****
-      fi
-      ;;
-    * )
-!     echo "Note: ELF compiler for host_os=$host_os may be wrong"
-!     ELF_CC="\$(CC)"
-!     ELF_CFLAGS="\$(CFLAGS) -fPIC"
-!     ELF_LINK="\$(CC) -shared"
-!     ELF_LINK_CMD="\$(ELF_LINK)"
-  esac
-  
-  
---- 1866,1884 ----
-      fi
-      ;;
-    * )
-!     if [ "$PORTOBJFORMAT" = elf ]; then
-!       DYNAMIC_LINK_FLAGS="-Wl,-export-dynamic"
-!       ELF_CC="\$(CC)"
-!       ELF_CFLAGS="\$(CFLAGS) -fPIC"
-!       ELF_LINK="\$(CC) -shared -Wl,-soname#"
-!       ELF_LINK_CMD="\$(ELF_LINK),\$(ELFLIB_MAJOR)"
-!     else
-!       DYNAMIC_LINK_FLAGS=""
-!       ELF_CC="\$(CC)"
-!       ELF_CFLAGS="\$(CFLAGS) -fPIC"
-!       ELF_LINK="ld -Bshareable -x"
-!       ELF_LINK_CMD="\$(ELF_LINK)"
-!     fi
-  esac
-  
-  
-***************
-*** 2183,2196 ****
-  echo "configure:2184: checking SLANG_VERSION" >&5
-  slang_version=`grep "^#define  *SLANG_VERSION " $srcdir/src/slang.h |
-                 awk '{ print $3 }'`
-! slang_major_version=`echo $slang_version |
-!  awk '{ print int($1/10000) }'`
-! slang_minor_version=`echo $slang_version $slang_major_version |
-!  awk '{ print int(($1 - $2*10000)/100) }'`
-! slang_mminor_version=`echo $slang_version $slang_major_version $slang_minor_version |
-!  awk '{ print ($1 - $2*10000 - $3*100) }'`
-! 
-! slang_minor_version="$slang_minor_version.$slang_mminor_version"
-  slang_version="$slang_major_version.$slang_minor_version"
-  echo "$ac_t""$slang_version" 1>&6
-  
---- 2191,2198 ----
-  echo "configure:2184: checking SLANG_VERSION" >&5
-  slang_version=`grep "^#define  *SLANG_VERSION " $srcdir/src/slang.h |
-                 awk '{ print $3 }'`
-! slang_major_version=2
-! slang_minor_version=2
-  slang_version="$slang_major_version.$slang_minor_version"
-  echo "$ac_t""$slang_version" 1>&6
-  
-***************
-*** 2712,2729 ****
-  
-  
-  echo ""
-- echo "Configuration complete.  You may need to edit src/Makefile."
-- echo "You are compiling SLANG with the following compiler configuration:"
-- echo "       CC =" "$CC"
-- echo "   CFLAGS =" "$CFLAGS"
-- echo "  LDFLAGS =" "$LDFLAGS $DYNAMIC_LINK_FLAGS"
-- echo ""
-- echo "   ELF_CC =" "$ELF_CC"
-- echo " ELF_LINK =" "$ELF_LINK"
-- echo "ELF_CFLAGS=" "$ELF_CFLAGS"
-- echo ""
-  echo "Installation Prefix:" "$prefix"
-  echo ""
-- echo "See also src/sl-feat.h for various features."
-- echo "Type 'make' to build normal library."
-- echo "On ELF systems, type 'make elf' to create ELF shared library."
---- 2714,2718 ----
+--- configure.orig	Thu Apr 27 22:32:55 2000
++++ configure	Tue Jul 18 10:58:01 2000
+@@ -1760,7 +1760,7 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-ldl  $LIBS"
++
+ cat > conftest.$ac_ext <<EOF
+ #line 1766 "configure"
+ #include "confdefs.h"
+@@ -1818,7 +1818,7 @@
+ if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+   
+-		DYNAMIC_LINK_LIB="-ldl"
++		DYNAMIC_LINK_LIB=""
+ 		cat >> confdefs.h <<\EOF
+ #define HAVE_DLFCN_H 1
+ EOF
+@@ -1866,11 +1866,19 @@
+     fi
+     ;;
+   * )
+-    echo "Note: ELF compiler for host_os=$host_os may be wrong"
+-    ELF_CC="\$(CC)"
+-    ELF_CFLAGS="\$(CFLAGS) -fPIC"
+-    ELF_LINK="\$(CC) -shared"
+-    ELF_LINK_CMD="\$(ELF_LINK)"
++    if [ "$PORTOBJFORMAT" = elf ]; then
++      DYNAMIC_LINK_FLAGS="-Wl,-export-dynamic"
++      ELF_CC="\$(CC)"
++      ELF_CFLAGS="\$(CFLAGS) -fPIC"
++      ELF_LINK="\$(CC) -shared -Wl,-soname#"
++      ELF_LINK_CMD="\$(ELF_LINK),\$(ELFLIB_MAJOR)"
++    else
++      DYNAMIC_LINK_FLAGS=""
++      ELF_CC="\$(CC)"
++      ELF_CFLAGS="\$(CFLAGS) -fPIC"
++      ELF_LINK="ld -Bshareable -x"
++      ELF_LINK_CMD="\$(ELF_LINK)"
++    fi
+ esac
+ 
+ 
+@@ -2201,14 +2209,8 @@
+ echo "configure:2202: checking SLANG_VERSION" >&5
+ slang_version=`grep "^#define  *SLANG_VERSION " $srcdir/src/slang.h |
+                awk '{ print $3 }'`
+-slang_major_version=`echo $slang_version |
+- awk '{ print int($1/10000) }'`
+-slang_minor_version=`echo $slang_version $slang_major_version |
+- awk '{ print int(($1 - $2*10000)/100) }'`
+-slang_mminor_version=`echo $slang_version $slang_major_version $slang_minor_version |
+- awk '{ print ($1 - $2*10000 - $3*100) }'`
+-
+-slang_minor_version="$slang_minor_version.$slang_mminor_version"
++slang_major_version=2
++slang_minor_version=3
+ slang_version="$slang_major_version.$slang_minor_version"
+ echo "$ac_t""$slang_version" 1>&6
+ 
+@@ -2730,18 +2732,5 @@
+ 
+ 
+ echo ""
+-echo "Configuration complete.  You may need to edit src/Makefile."
+-echo "You are compiling SLANG with the following compiler configuration:"
+-echo "       CC =" "$CC"
+-echo "   CFLAGS =" "$CFLAGS"
+-echo "  LDFLAGS =" "$LDFLAGS $DYNAMIC_LINK_FLAGS"
+-echo ""
+-echo "   ELF_CC =" "$ELF_CC"
+-echo " ELF_LINK =" "$ELF_LINK"
+-echo "ELF_CFLAGS=" "$ELF_CFLAGS"
+-echo ""
+ echo "Installation Prefix:" "$prefix"
+ echo ""
+-echo "See also src/sl-feat.h for various features."
+-echo "Type 'make' to build normal library."
+-echo "On ELF systems, type 'make elf' to create ELF shared library."
