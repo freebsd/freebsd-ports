@@ -30,7 +30,7 @@ post-extract:
 		${FILESDIR}/setup.py > ${WRKSRC}/setup.py
 
 post-install:
-.if !defined(NO_PORTDOCS)
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${EXAMPLE_DIR}
 .for file in ${EXAMPLE_FILES}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${EXAMPLE_DIR}

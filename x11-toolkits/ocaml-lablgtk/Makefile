@@ -79,7 +79,7 @@ post-install:
 	@${MKDIR} ${EXAMPLESDIR}/glade
 	@${INSTALL_DATA} ${WRKSRC}/examples/glade/* ${EXAMPLESDIR}/glade
 .endif
-.if !defined(NO_PORTDOCS)
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/README
 .endif

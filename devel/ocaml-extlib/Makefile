@@ -24,7 +24,7 @@ ALL_TARGET=	all opt doc
 DOCSDIR=	${PREFIX}/share/doc/ocaml/${PORTNAME}
 
 post-install:
-.if !defined(NO_PORTDOCS)
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
 .endif
