@@ -3,7 +3,7 @@
 # Date created:		17th February 1997
 # Whom:			Joel Sutton <sutton@aardvark.apana.org.au>
 #
-# $Id: Makefile,v 1.2 1997/06/30 09:02:25 max Exp $
+# $Id: Makefile,v 1.3 1998/08/23 14:01:19 jseger Exp $
 #
       
 DISTNAME=	dvi2tty
@@ -14,7 +14,6 @@ MASTER_SITES=	ftp://ctan.unsw.edu.au/ctan/tex-archive/dviware/
 MAINTAINER=	sutton@aardvark.apana.org.au
 
 IGNOREFILES=	${DISTFILES}
-# this WRKSRC courtesy of latest fetch(1) brain-damage
 MAN1=		dvi2tty.1
 
 .include <bsd.port.mk>
