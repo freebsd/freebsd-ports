@@ -109,10 +109,14 @@ do-install:
 	@${CHOWN} -R www:www ${TURBADIR}
 	@${CHMOD} -R o-rwx ${CONFDIR}
 	@${CP} -p ${FILESDIR}/httpd.conf.turba ${HORDE_INC}
-	@${PERL} -pi -e "s:/home/httpd/html/horde/turba:${TURBADIR}:g" \
+	@${PERL} -pi -e "s:/home/httpd/html/horde/turba:${TURBADIR}:g"	\
 		${HORDE_INC}/httpd.conf.turba
-	@${PERL} -pi -e "s://UNCOMMENTWHENINSTTURBA::" \
+	@${CP} -p ${HORDEDIR}/config/registry.php			\
+		${HORDEDIR}/config/registry.php.beforeTurba
+	@${PERL} -pi -e "s://UNCOMMENTWHENINSTTURBA::"			\
 		${HORDEDIR}/config/registry.php
+	@${CP} -p ${HORDEDIR}/config/registry.php			\
+		${HORDEDIR}/config/registry.php.afterTurba
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for FILE in ${DOCS}

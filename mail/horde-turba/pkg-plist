@@ -227,3 +227,4 @@ etc/horde/httpd.conf.turba
 @dirrm %%TURBADIR%%/templates/wml
 @dirrm %%TURBADIR%%/templates
 @dirrm %%TURBADIR%%
+@unexec if cmp -s %D/www/horde/config/registry.php %D/www/horde/config/registry.php.afterTurba; then rm -f %D/www/horde/config/registry.php.afterTurba; mv %D/www/horde/config/registry.php.beforeTurba %D/www/horde/config/registry.php; fi
