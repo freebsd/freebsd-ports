@@ -1,3 +1,4 @@
 etc/teapop.passwd.sample
 libexec/teapop
 sbin/cronpopauth.pl
+@unexec rmdir %D/var 2>/dev/null || true
