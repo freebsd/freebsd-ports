@@ -3,10 +3,7 @@
 #
 SRCS=	tclexpat.c
 
-LIB=	tclexpat
-SHLIB_MAJOR?=	1
-SHLIB_MINOR?=	1
-INTERNALLIB=	static library is useless
+SHLIB_NAME=	libtclexpat.so.1
 LIBDIR=	${LOCALBASE}/lib
 
 TCL_VERSION?=	8.3
