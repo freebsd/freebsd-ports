@@ -177,6 +177,7 @@
     SUBDIR += oneko
     SUBDIR += oneko-sakura
     SUBDIR += oonsoo
+    SUBDIR += pengpong
     SUBDIR += penguin-command
     SUBDIR += pentix
     SUBDIR += phalanx
