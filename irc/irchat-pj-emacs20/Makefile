@@ -9,8 +9,7 @@ PORTNAME=	irchat-pj
 PORTVERSION=	2.5.6
 PORTREVISION=	1
 CATEGORIES=	irc elisp
-MASTER_SITES=	ftp://ftp.fan.gr.jp/pub/elisp/irchat-pj/2.5/ \
-		ftp://ftp.fan.gr.jp/pub/elisp/irchat-pj/2.5/OLD/
+MASTER_SITES=	http://his.luky.org/ftp/mirrors/irchat-pj/2.5/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION}p
 
@@ -25,6 +24,7 @@ BUILD_DEPENDS=	${LOCALBASE}/${LISPDIR:S,${PORTNAME},pure,g}/pure-make.el:${PORTS
 RUN_DEPENDS=	${LOCALBASE}/${LISPDIR:S,${PORTNAME},pure,g}/pure-make.el:${PORTSDIR}/irc/pure-${EMACS_PORT_NAME} \
 		${LOCALBASE}/bin/dcc:${PORTSDIR}/irc/dcc
 
+USE_BZIP2=	yes
 EMACS_PORT_NAME?=	emacs20
 XEMACS_ONLY?=	"@comment "
 LISPDIR?=	${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
