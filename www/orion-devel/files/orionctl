@@ -1,0 +1,33 @@
+#!/bin/sh
+
+if [ "${LOCALBASE}a" = "a" ]; then
+	LOCALBASE=/usr/local
+fi
+
+JAVA_HOME=${LOCALBASE}/linux-jdk1.2.2
+ORION_HOME=${LOCALBASE}/orion
+LOG=${ORION_HOME}/log/orion.log
+PID_FILE=/var/run/orion.pid
+
+case "$1" in
+	start)
+		if [ -r ${ORION_HOME}/orion.jar ]; then
+			rm -rf ${PID_FILE}
+			touch ${PID_FILE}
+			chown root:wheel ${PID_FILE}
+			chmod 600 ${PID_FILE}
+			echo -n ' orion'
+			( cd ${ORION_HOME} && ${JAVA_HOME}/bin/java -jar orion.jar & echo $! > ${PID_FILE} ) > ${LOG} 2>&1
+		fi
+		;;
+	stop)
+		/bin/kill `cat ${PID_FILE}`
+		echo -n ' orion'
+		;;
+	*)
+		echo ""
+		echo "Usage: `basename $0` { start | stop }"
+		echo ""
+		exit 64
+		;;
+esac
