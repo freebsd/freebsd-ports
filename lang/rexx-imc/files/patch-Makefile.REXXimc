@@ -1,0 +1,37 @@
+--- Makefile.REXXimc	Thu Feb 11 07:05:44 1999
++++ Makefile.REXXimc.new	Fri Sep  7 18:53:43 2001
+@@ -1,7 +1,7 @@
+ #Makefile for REXX/imc
+ 
+ SO = librexx.so
+-SONAME= $(SO).$(VER)
++SONAME= $(SO).2
+ 
+ DATE = -DDAY=$(RXDAY) -DMONTH=$(RXMONTH) -DYEAR=$(RXYEAR)
+ 
+@@ -35,11 +35,13 @@
+ 
+ install-fn: $(MATH)
+ 	$(VERBOSE) "install-fn:"
+-	test -f rxmathfn.rxfn && cp -p rxmathfn.rxfn $(SRC)/rxmathfn.rxlib $(REXXLIBDIR) \
+-	|| cp -p $(SRC)/rxmathfn.rexx $(SRC)/rxmathfn.rxlib $(REXXLIBDIR)
++	test -f rxmathfn.rxfn  && \
++	cp -p rxmathfn.rxfn $(SRC)/rxmathfn.rxlib $(PREFIX)/lib || \
++	cp -p $(SRC)/rxmathfn.rexx $(SRC)/rxmathfn.rxlib $(PREFIX)/lib
+ 
+ install-man: rexx.1
+ 	$(VERBOSE) "install-man:"
++	mkdir -p $(MANDIR)
+ 	cp -p rexx.1 $(SRC)/rxque.1 $(SRC)/rxstack.1 $(MANDIR)
+ 
+ uninstall: uninstall-pgm uninstall-fn uninstall-man
+@@ -69,8 +71,7 @@
+ 
+ $(LIBDIR)/$(SO): $(LIBDIR)/$(SONAME)
+ 	$(VERBOSE) "$(LIBDIR)/$(SO):"
+-	rm -f $(LIBDIR)/$(SO)
+-	ln -s $(SONAME) $(LIBDIR)/$(SO)
++	ln -sf $(SONAME) $(LIBDIR)/$(SO)
+ 
+ $(LIBDIR)/librexx.a: $(LIBFILES)
+ 	$(VERBOSE) "$(LIBDIR)/librexx.a:"

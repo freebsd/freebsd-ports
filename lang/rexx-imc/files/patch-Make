@@ -1,0 +1,87 @@
+--- Make	Wed Nov  1 10:04:27 2000
++++ Make.new	Fri Sep  7 16:39:54 2001
+@@ -18,7 +18,7 @@
+ LD=ld                      # linker for shared objects
+ COMPILEFLAG=""             # general compilation flags for cc
+ LINKFLAG=""                # general linker flags *for cc*
+-#STUFF="-DSTUFF_STACK"     # uncomment if you like queuing stack to keyboard
++STUFF="-DSTUFF_STACK"      # uncomment if you like queuing stack to keyboard
+                            # (not guaranteed to work on all systems)
+ SMALL=false                # true if you like small executables (not guaranteed
+                            # and not for ELF executables either)
+@@ -98,6 +98,9 @@
+         SunOS:5.*)
+             PREFIX="/opt/REXXimc"
+             ;;
++	FreeBSD:*)
++	    PREFIX="${PREFIX}"
++	    ;;
+         *|unknown)
+             PREFIX="/usr/local"
+             ;;
+@@ -384,14 +387,14 @@
+         esac
+         egrep -q tm_gmtoff /usr/include/time.h && CCFLAG="$CCFLAG -DHAS_GMTOFF"
+         ;;
+-    FreeBSD:*)
++    FreeBSD:3.*)
+         REXXLIB="librexx.so"
+         RANLIB=ranlib
+         MATH=rxmathfn.rxfn
+         LIBRARIES=""
+         SOFLAG="-Bshareable"
+         DLLFLAG="-Bshareable"
+-#       LREXX='$(LIBDIR)/$(SONAME)'
++        LREXX='$(LIBDIR)/$(SONAME)'
+ #       Uncomment above line if you have problems with LD_LIBRARY_PATH
+         case $CC in
+             gcc)
+@@ -401,6 +404,48 @@
+             *)  echo "Warning: I don't know the options for $CC"\
+                       "- trying the gcc ones" >&2
+                 CCFLAG="-DHAS_TTYCOM -D_REQUIRED -DRENAME_UNDELETE -DHAS_GMTOFF"
++                PIC="-fPIC"
++                ;;
++        esac
++        ;;
++    FreeBSD:4.*)
++        REXXLIB="librexx.so"
++	SOLINK="librexx.so"
++        RANLIB=ranlib
++        MATH=rxmathfn.rxfn
++        LIBRARIES=""
++        SOFLAG="-shared --export-dynamic"
++        : ${RUNLIBS='-L$(LIBDIR) -Wl,-rpath,$(PREFIX)/lib'}
++        DLLFLAG="-shared --export-dynamic"
++        case $CC in
++            gcc)
++                CCFLAG="${CFLAGS} -DHAS_TTYCOM -DRENAME_UNDELETE -DHAS_GMTOFF"
++                PIC="-fPIC"
++                ;;
++            *)  echo "Warning: I don't know the options for $CC"\
++                      "- trying the gcc ones" >&2
++                CCFLAG="${CFLAGS} -DHAS_TTYCOM -DRENAME_UNDELETE -DHAS_GMTOFF"
++                PIC="-fPIC"
++                ;;
++        esac
++        ;;
++    FreeBSD:5.*)
++        REXXLIB="librexx.so"
++	SOLINK="librexx.so"
++        RANLIB=ranlib
++        MATH=rxmathfn.rxfn
++        LIBRARIES=""
++        SOFLAG="-shared --export-dynamic"
++        : ${RUNLIBS='-L$(LIBDIR) -Wl,-rpath,$(PREFIX)/lib'}
++        DLLFLAG="-shared --export-dynamic"
++        case $CC in
++            gcc)
++                CCFLAG="${CFLAGS} -DHAS_TTYCOM -D_REQUIRED -DHAS_GMTOFF"
++                PIC="-fPIC"
++                ;;
++            *)  echo "Warning: I don't know the options for $CC"\
++                      "- trying the gcc ones" >&2
++                CCFLAG="${CFLAGS} -DHAS_TTYCOM -D_REQUIRED -DHAS_GMTOFF"
+                 PIC="-fPIC"
+                 ;;
+         esac
