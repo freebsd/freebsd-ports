@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- src/video/vgl/SDL_vglvideo.c.orig	Sat Jan 27 17:45:48 2001
-+++ src/video/vgl/SDL_vglvideo.c	Sat Jan 27 18:13:31 2001
-@@ -0,0 +1,616 @@
+--- src/video/vgl/SDL_vglvideo.c.orig	Sat Jan 27 22:36:17 2001
++++ src/video/vgl/SDL_vglvideo.c	Sat Jan 27 23:14:47 2001
+@@ -0,0 +1,622 @@
 +/*
 +    SDL - Simple DirectMedia Layer
 +    Copyright (C) 1997, 1998, 1999, 2000  Sam Lantinga
@@ -34,6 +34,8 @@ $FreeBSD$
 +/* libvga based SDL video driver implementation.
 +*/
 +
++#include <err.h>
++#include <osreldate.h>
 +#include <stdlib.h>
 +#include <stdio.h>
 +#include <unistd.h>
@@ -232,9 +234,13 @@ $FreeBSD$
 +	}
 +
 +	/* Enable mouse and keyboard support */
-+	if (VGLKeyboardInit(VGL_CODEKEYS) != 0) {
-+		SDL_SetError("Unable to initialize keyboard");
-+		return -1;
++	if (getenv("SDL_NO_RAWKBD") == NULL) {
++		if (VGLKeyboardInit(VGL_CODEKEYS) != 0) {
++			SDL_SetError("Unable to initialize keyboard");
++			return -1;
++		}
++	} else {
++		warnx("Requiest to put keyboard into a raw mode ignored");
 +	}
 +	if (VGL_initkeymaps(STDIN_FILENO) != 0) {
 +		SDL_SetError("Unable to initialize keymap");
@@ -537,7 +543,7 @@ $FreeBSD$
 +    case V_INFO_MM_VGAX:
 +      vminfop->Type = VIDBUF8X;
 +      break;
-+#if __FreeBSD_version >= 500000
++#if defined(__FreeBSD_version) && __FreeBSD_version >= 500000
 +    case V_INFO_MM_DIRECT:
 +      vminfop->PixelBytes = minfo.vi_pixel_size;
 +      switch (vminfop->PixelBytes) {
