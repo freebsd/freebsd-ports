@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cairo
-PORTVERSION=	0.1.23
+PORTVERSION=	0.2.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.cairographics.org/snapshots/
 
@@ -25,9 +25,6 @@ INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CLFAGS}" \
 		LDFLAGS="${PTHREAD_LDFLAGS}"
 
-# glitz is out of sync with cairo
-CONFIGURE_ARGS=	--disable-gl
-
 PLIST_FILES=	include/cairo-features.h \
 		include/cairo.h \
 		lib/libcairo.a \
@@ -35,4 +32,13 @@ PLIST_FILES=	include/cairo-features.h \
 		lib/libcairo.so.1 \
 		libdata/pkgconfig/cairo.pc
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+post-patch:
+.if ${OSVERSION} < 500000
+	@${REINPLACE_CMD} -e 's|stdint.h|inttypes.h|' \
+		${WRKSRC}/src/*.*
+.endif
+
+.include <bsd.port.post.mk>
+
