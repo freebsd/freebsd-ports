@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	webmin
-PORTVERSION=	1.070
-PORTREVISION=	5
+PORTVERSION=	1.080
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/updates/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -25,23 +24,9 @@ NO_BUILD=	yes
 USE_PERL5=	yes
 SCRIPTS_ENV+=	WRKDIR="${WRKDIR}"
 
-WEBMIN_MODULES=	acl-1.070-5.wbm.gz \
-		custom-1.070-4.wbm.gz \
-		fetchmail-1.070-1.wbm.gz \
-		init-1.070-1.wbm.gz \
-		lpadmin-1.070-4.wbm.gz \
-		mount-1.070-6.wbm.gz \
-		net-1.070-7.wbm.gz \
-		postfix-1.070-2.wbm.gz \
-		proc-1.070-1.wbm.gz \
-		quota-1.070-1.wbm.gz \
-		sendmail-1.070-4.wbm.gz \
-		shell-1.070-1.wbm.gz \
-		squid-1.070-4.wbm.gz \
-		status-1.070-1.wbm.gz \
-		webmin-1.070-6.wbm.gz
+WEBMIN_MODULES=	net-1.080-7.wbm.gz
 
-WEBMIN_THEMES=	mscstyle3-1.070-1.wbt.gz
+WEBMIN_THEMES=
 
 post-extract:
 	@if [ "${WEBMIN_MODULES}" != "" ]; then \
@@ -66,7 +51,8 @@ post-patch:
 		mysql/config-freebsd postfix/config-freebsd \
 		postgresql/config-freebsd proftpd/config-freebsd \
 		samba/config-freebsd squid/config-freebsd stunnel/config \
-		wuftpd/config-freebsd xinetd/config-freebsd
+		wuftpd/config-freebsd xinetd/config-freebsd \
+		usermin/config
 	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/${file}
 .endfor
 
