@@ -16,5 +16,3 @@
    }
 +  signal(SIGCHLD, oldsig);
  }
- 
- 
