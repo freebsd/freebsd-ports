@@ -1,5 +1,5 @@
 # Sample yafic.conf(5) file for FreeBSD.
-# $Id: yafic.conf.sample,v 1.4 2002/03/18 00:44:23 asaddi Exp $
+# $Id: yafic.conf.sample 687 2003-04-26 20:09:44Z asaddi $
 
 #### / ####
 
@@ -50,6 +50,9 @@ $/dev		L
 
 # /usr/share/man
 =/usr/share/man	L
+
+# /usr/share/openssl/man
+=/usr/share/openssl/man	L
 
 # /usr/share/perl/man
 =/usr/share/perl/man	L
