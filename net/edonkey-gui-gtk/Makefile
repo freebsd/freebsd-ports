@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	edonkey
-PORTVERSION=	0.4.0.1
+PORTVERSION=	0.5.0
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ed2k-gtk-gui
 PKGNAMESUFFIX=	-gui-gtk
-DISTNAME=	ed2k-gtk-gui_0.4.0-1
+DISTNAME=	ed2k-gtk-gui_${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
 
@@ -23,8 +23,6 @@ USE_GNOME=	gtk12
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-
-WRKSRC=	${WRKDIR}/ed2k_gui-0.4.0
 
 post-patch:
 # CFLAGS safeness

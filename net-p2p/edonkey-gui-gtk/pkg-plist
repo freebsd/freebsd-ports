@@ -16,6 +16,7 @@ share/ed2k_gui/icons/default/cancel.xpm
 share/ed2k_gui/icons/default/columnhide.xpm
 share/ed2k_gui/icons/default/columnshow.xpm
 share/ed2k_gui/icons/default/connect.xpm
+share/ed2k_gui/icons/default/connections.xpm
 share/ed2k_gui/icons/default/core.xpm
 share/ed2k_gui/icons/default/disconnect.xpm
 share/ed2k_gui/icons/default/dotblue.xpm
@@ -31,10 +32,14 @@ share/ed2k_gui/icons/default/eyes.xpm
 share/ed2k_gui/icons/default/faq.xpm
 share/ed2k_gui/icons/default/fetch.xpm
 share/ed2k_gui/icons/default/folder.xpm
+share/ed2k_gui/icons/default/gnome1.xpm
+share/ed2k_gui/icons/default/gnome2.xpm
 share/ed2k_gui/icons/default/ignition.xpm
+share/ed2k_gui/icons/default/ignition_small.xpm
+share/ed2k_gui/icons/default/kde.xpm
 share/ed2k_gui/icons/default/mail.xpm
 share/ed2k_gui/icons/default/mainlogo.xpm
-share/ed2k_gui/icons/default/mainlogo_notgreen.xpm
+share/ed2k_gui/icons/default/mainlogo_overnet.xpm
 share/ed2k_gui/icons/default/monitor.xpm
 share/ed2k_gui/icons/default/ok.xpm
 share/ed2k_gui/icons/default/onestar.xpm
@@ -49,6 +54,7 @@ share/ed2k_gui/icons/default/resumeall.xpm
 share/ed2k_gui/icons/default/search.xpm
 share/ed2k_gui/icons/default/servers.xpm
 share/ed2k_gui/icons/default/skull.xpm
+share/ed2k_gui/icons/default/stats.xpm
 share/ed2k_gui/icons/default/status.xpm
 share/ed2k_gui/icons/default/threestars.xpm
 share/ed2k_gui/icons/default/tux.xpm
@@ -64,6 +70,7 @@ share/ed2k_gui/icons/gnome2/cancel.xpm
 share/ed2k_gui/icons/gnome2/columnhide.xpm
 share/ed2k_gui/icons/gnome2/columnshow.xpm
 share/ed2k_gui/icons/gnome2/connect.xpm
+share/ed2k_gui/icons/gnome2/connections.xpm
 share/ed2k_gui/icons/gnome2/core.xpm
 share/ed2k_gui/icons/gnome2/disconnect.xpm
 share/ed2k_gui/icons/gnome2/dotblue.xpm
@@ -79,10 +86,14 @@ share/ed2k_gui/icons/gnome2/eyes.xpm
 share/ed2k_gui/icons/gnome2/faq.xpm
 share/ed2k_gui/icons/gnome2/fetch.xpm
 share/ed2k_gui/icons/gnome2/folder.xpm
+share/ed2k_gui/icons/gnome2/gnome1.xpm
+share/ed2k_gui/icons/gnome2/gnome2.xpm
 share/ed2k_gui/icons/gnome2/ignition.xpm
+share/ed2k_gui/icons/gnome2/ignition_small.xpm
+share/ed2k_gui/icons/gnome2/kde.xpm
 share/ed2k_gui/icons/gnome2/mail.xpm
 share/ed2k_gui/icons/gnome2/mainlogo.xpm
-share/ed2k_gui/icons/gnome2/mainlogo_notgreen.xpm
+share/ed2k_gui/icons/gnome2/mainlogo_overnet.xpm
 share/ed2k_gui/icons/gnome2/monitor.xpm
 share/ed2k_gui/icons/gnome2/ok.xpm
 share/ed2k_gui/icons/gnome2/onestar.xpm
@@ -97,6 +108,7 @@ share/ed2k_gui/icons/gnome2/resumeall.xpm
 share/ed2k_gui/icons/gnome2/search.xpm
 share/ed2k_gui/icons/gnome2/servers.xpm
 share/ed2k_gui/icons/gnome2/skull.xpm
+share/ed2k_gui/icons/gnome2/stats.xpm
 share/ed2k_gui/icons/gnome2/status.xpm
 share/ed2k_gui/icons/gnome2/threestars.xpm
 share/ed2k_gui/icons/gnome2/tux.xpm
@@ -105,12 +117,66 @@ share/ed2k_gui/icons/gnome2/updown.xpm
 share/ed2k_gui/icons/gnome2/upload.xpm
 share/ed2k_gui/icons/gnome2/wizard.xpm
 share/ed2k_gui/icons/gnome2/wizard_off.xpm
+share/ed2k_gui/icons/h2o/200more.xpm
+share/ed2k_gui/icons/h2o/about.xpm
+share/ed2k_gui/icons/h2o/app.xpm
+share/ed2k_gui/icons/h2o/cancel.xpm
+share/ed2k_gui/icons/h2o/columnhide.xpm
+share/ed2k_gui/icons/h2o/columnshow.xpm
+share/ed2k_gui/icons/h2o/connect.xpm
+share/ed2k_gui/icons/h2o/connections.xpm
+share/ed2k_gui/icons/h2o/core.xpm
+share/ed2k_gui/icons/h2o/disconnect.xpm
+share/ed2k_gui/icons/h2o/dotblue.xpm
+share/ed2k_gui/icons/h2o/dotgreen.xpm
+share/ed2k_gui/icons/h2o/dotpurple.xpm
+share/ed2k_gui/icons/h2o/dotred.xpm
+share/ed2k_gui/icons/h2o/dotwhite.xpm
+share/ed2k_gui/icons/h2o/dotyellow.xpm
+share/ed2k_gui/icons/h2o/download.xpm
+share/ed2k_gui/icons/h2o/exit.xpm
+share/ed2k_gui/icons/h2o/extend.xpm
+share/ed2k_gui/icons/h2o/eyes.xpm
+share/ed2k_gui/icons/h2o/faq.xpm
+share/ed2k_gui/icons/h2o/folder.xpm
+share/ed2k_gui/icons/h2o/gnome1.xpm
+share/ed2k_gui/icons/h2o/gnome2.xpm
+share/ed2k_gui/icons/h2o/ignition.xpm
+share/ed2k_gui/icons/h2o/ignition_small.xpm
+share/ed2k_gui/icons/h2o/kde.xpm
+share/ed2k_gui/icons/h2o/mail.xpm
+share/ed2k_gui/icons/h2o/mainlogo.xpm
+share/ed2k_gui/icons/h2o/mainlogo_overnet.xpm
+share/ed2k_gui/icons/h2o/ok.xpm
+share/ed2k_gui/icons/h2o/onestar.xpm
+share/ed2k_gui/icons/h2o/optionoff.xpm
+share/ed2k_gui/icons/h2o/optionon.xpm
+share/ed2k_gui/icons/h2o/options.xpm
+share/ed2k_gui/icons/h2o/pause.xpm
+share/ed2k_gui/icons/h2o/pauseall.xpm
+share/ed2k_gui/icons/h2o/refresh.xpm
+share/ed2k_gui/icons/h2o/resume.xpm
+share/ed2k_gui/icons/h2o/resumeall.xpm
+share/ed2k_gui/icons/h2o/search.xpm
+share/ed2k_gui/icons/h2o/servers.xpm
+share/ed2k_gui/icons/h2o/skull.xpm
+share/ed2k_gui/icons/h2o/stats.xpm
+share/ed2k_gui/icons/h2o/status.xpm
+share/ed2k_gui/icons/h2o/threestar.xpm
+share/ed2k_gui/icons/h2o/threestars.xpm
+share/ed2k_gui/icons/h2o/tux.xpm
+share/ed2k_gui/icons/h2o/twostar.xpm
+share/ed2k_gui/icons/h2o/twostars.xpm
+share/ed2k_gui/icons/h2o/updown.xpm
+share/ed2k_gui/icons/h2o/upload.xpm
+share/ed2k_gui/icons/h2o/wizard.xpm
+share/ed2k_gui/icons/h2o/wizard_off.xpm
 share/locale/de/LC_MESSAGES/ed2k_gui.mo
 share/locale/es/LC_MESSAGES/ed2k_gui.mo
 share/locale/fr/LC_MESSAGES/ed2k_gui.mo
 share/locale/nl/LC_MESSAGES/ed2k_gui.mo
 share/locale/sl/LC_MESSAGES/ed2k_gui.mo
-@unexec rmdir %D/rmdir %D/share/locale/sl/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/sl/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/sl 2>/dev/null || true
 @unexec rmdir %D/share/locale/nl/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/nl 2>/dev/null || true
@@ -120,6 +186,7 @@ share/locale/sl/LC_MESSAGES/ed2k_gui.mo
 @unexec rmdir %D/share/locale/es 2>/dev/null || true
 @unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/de 2>/dev/null || true
+@dirrm share/ed2k_gui/icons/h2o
 @dirrm share/ed2k_gui/icons/gnome2
 @dirrm share/ed2k_gui/icons/default
 @dirrm share/ed2k_gui/icons
