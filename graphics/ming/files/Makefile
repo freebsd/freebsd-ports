@@ -12,6 +12,7 @@ SRCS=		blocklist.c \
 		movieclip.c \
 		position.c \
 		shape_util.c \
+		text_util.c \
 		actioncompiler/compile.c \
 		actioncompiler/compileaction.c \
 		actioncompiler/compiler.tab.c \
@@ -52,7 +53,8 @@ INCS=		blocklist.h \
 		movie.h \
 		movieclip.h \
 		position.h \
-		shape_util.h
+		shape_util.h \
+		text_util.h
 
 NOMAN=		YES
 LIBDIR=		${LOCALBASE}/lib

@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	ming
-PORTVERSION=	0.0.9b
-PORTREVISION=	1
+PORTVERSION=	0.1.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.opaque.net/ming/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${PORTNAME}-examples${EXTRACT_SUFX}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	knu@FreeBSD.org
@@ -24,7 +24,6 @@ UTILS=		gif2dbl \
 		gif2mask \
 		listfdb \
 		listjpeg \
-		listmp3 \
 		listswf \
 		makefdb \
 		png2dbl \
@@ -37,10 +36,11 @@ DOCS_UTIL=	README \
 		TODO
 
 post-extract:
+	${LN} -s ${WRKDIR}/${PORTNAME}-examples ${WRKSRC}/../examples
 	${MKDIR} ${WRKSRC}/c++
 	${CP} ${WRKSRC}/../c++_ext/ming.h ${WRKSRC}/c++/
 	cd ${WRKSRC}/../util && \
-	${RM} bindump.c hexdump.c
+	${RM} bindump.c hexdump.c listmp3.c
 
 post-patch:
 	${PERL} -i -p \
@@ -48,7 +48,6 @@ post-patch:
 		-e 's:"\.\./\.\./ming\.h":<ming.h>:g;' \
 		${WRKSRC}/../examples/c/* \
 		${WRKSRC}/../examples/c++/* \
-		${WRKSRC}/../examples/common/* \
 		${WRKSRC}/c++/ming.h
 
 pre-build:
@@ -65,8 +64,6 @@ post-build:
 	${CC} ${CFLAGS} -L${PREFIX}/lib -o listfdb listfdb.o blocktypes.o
 	cd ${WRKSRC}/../util && \
 	${CC} ${CFLAGS} -L${PREFIX}/lib -o listjpeg listjpeg.o
-	cd ${WRKSRC}/../util && \
-	${CC} ${CFLAGS} -L${PREFIX}/lib -o listmp3 listmp3.o
 	cd ${WRKSRC}/../util && \
 	${CC} ${CFLAGS} -L${PREFIX}/lib -o listswf listswf.o blocktypes.o decompile.o read.o -lz
 	cd ${WRKSRC}/../util && \

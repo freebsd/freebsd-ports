@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	ming
-PORTVERSION=	0.0.9b
+PORTVERSION=	0.1.0
 CATEGORIES=	graphics python
-MASTER_SITES=	http://www.opaque.net/ming/
+MASTER_SITES=	# none
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-EXTRACT_SUFX=	.tgz
+DISTFILES=	# none
 
 MAINTAINER=	knu@FreeBSD.org
 
+BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/graphics/ming:patch
 LIB_DEPENDS=	ming.2:${PORTSDIR}/graphics/ming
 
 USE_PYTHON=	yes
@@ -24,6 +25,10 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/py_ext
 MAKE_ARGS=	PYTHON_VERSION="${PYTHON_VERSION}"
 
 EXAMPLES=	shape.py test.py ../examples/python/*.py
+
+do-extract:
+	${MKDIR} ${WRKDIR}
+	${LN} -s `cd ${PORTSDIR}/graphics/ming && ${MAKE} -V WRKDIR`/* ${WRKDIR}/
 
 post-extract:
 	${LN} -sf ../ming.i ${WRKSRC}/

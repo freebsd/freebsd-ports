@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	ming
-PORTVERSION=	0.0.9b
+PORTVERSION=	0.1.0
 CATEGORIES=	graphics ruby
-MASTER_SITES=	http://www.opaque.net/ming/
+MASTER_SITES=	# none
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-EXTRACT_SUFX=	.tgz
+DISTFILES=	# none
 
 MAINTAINER=	knu@FreeBSD.org
 
-BUILD_DEPENDS=	swig1.3:${PORTSDIR}/devel/SWIG-devel
+BUILD_DEPENDS=	swig1.3:${PORTSDIR}/devel/SWIG-devel \
+		${NONEXISTENT}:${PORTSDIR}/graphics/ming:patch
 LIB_DEPENDS=	ming.2:${PORTSDIR}/graphics/ming
 
 USE_RUBY=	yes
@@ -30,6 +31,10 @@ INSTALL_TARGET=	site-install
 SWIG=		swig1.3
 
 EXAMPLES=	shape.rb test.rb
+
+do-extract:
+	${MKDIR} ${WRKDIR}
+	${LN} -s `cd ${PORTSDIR}/graphics/ming && ${MAKE} -V WRKDIR`/* ${WRKDIR}/
 
 post-extract:
 	${LN} -sf ../ming.i ${WRKSRC}/

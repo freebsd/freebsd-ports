@@ -1,6 +1,6 @@
---- Makefile.orig	Fri Jan  5 08:05:13 2001
-+++ Makefile	Sat Jan 20 05:05:03 2001
-@@ -1,12 +1,12 @@
+--- Makefile.orig	Mon Mar 19 10:26:33 2001
++++ Makefile	Tue Mar 20 18:28:05 2001
+@@ -1,13 +1,13 @@
  #PYINCDIR = /usr/local/include/python2.0
  #PYLIBDIR = /usr/local/lib/python2.0
  
@@ -9,16 +9,26 @@
 +PYINCDIR = ${LOCALBASE}/include/${PYTHON_VERSION}
 +PYLIBDIR = ${LOCALBASE}/lib/${PYTHON_VERSION}
  
- all:
--	gcc -g -Wall -I .. -I ${PYINCDIR} -fpic -c ming_wrap.c
--	gcc -g -Wall -L .. -shared -o mingcmodule.so ming_wrap.o  -lming
-+	${CC} ${CFLAGS} -g -Wall -I .. -I ${PYINCDIR} -fpic -c ming_wrap.c
+-all:
++all: mingcmodule.so
+ 
+ mingcmodule.so: ming_wrap.o ../libming.a
+-	gcc -g -Wall -shared -o mingcmodule.so ming_wrap.o ../libming.a
 +	${CC} -g -Wall -L .. -shared -o mingcmodule.so ming_wrap.o -L${LOCALBASE}/lib -lming
+ 
+ mingc.pyd: ming_wrap.o
+ 	dllwrap --dllname mingc.pyd --driver-name gcc --def mingc.def \
+@@ -15,7 +15,7 @@
+ 	  --target=i386-mingw32 -Llib/ -lpython15
+ 
+ ming_wrap.o: ming_wrap.c
+-	gcc -g -Wall -I .. -I ${PYINCDIR} -fpic -c ming_wrap.c
++	${CC} ${CFLAGS} -g -Wall -I .. -I ${PYINCDIR} -fpic -c ming_wrap.c
  
  swig:
  	swig -I.. -python ming.i
-@@ -15,4 +15,4 @@
- 	rm -f mingcmodule.so core *~ *.o
+@@ -24,4 +24,4 @@
+ 	rm -f mingcmodule.so core *~ *.o ming.pyc
  
  install:
 -	cp mingcmodule.so ming.py ${PYLIBDIR}/site-packages
