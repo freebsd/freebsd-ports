@@ -1,9 +1,12 @@
 bin/FreeFem++
+bin/FreeFem++-glx
 bin/FreeFem++-nw
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
-%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/HISTORY
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/manual.pdf
 %%PORTDOCS%%%%EXAMPLESDIR%%/D2.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/NSP1P1.edp
@@ -43,11 +46,16 @@ bin/FreeFem++-nw
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/load.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/load.link
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/myfunction.cpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/load/myfunction.so
 %%PORTDOCS%%%%EXAMPLESDIR%%/mpi/essai.edp
+%%PORTDOCS%%%%EXAMPLESDIR%%/mpi/regtests.sh
 %%PORTDOCS%%%%EXAMPLESDIR%%/mpi/schwarz-b.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/mpi/schwarz-c.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/mpi/schwarz.edp
+%%PORTDOCS%%%%EXAMPLESDIR%%/other/lap3-cpu.edp
+%%PORTDOCS%%%%EXAMPLESDIR%%/other/speedtest.sh
 %%PORTDOCS%%%%EXAMPLESDIR%%/parareal.edp
+%%PORTDOCS%%%%EXAMPLESDIR%%/regtests.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/testFE.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/testadp.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/teste.edp
@@ -93,12 +101,16 @@ bin/FreeFem++-nw
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/periodic4.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/plot.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/readmesh.edp
+%%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/refnoumf.edp
+%%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/refumf.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/region.edp
+%%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/regtests.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/saverestore.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/schwarz-gc.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/schwarz-no-overlap.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/schwarz-overlap.edp
-%%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/sparce-matrix.edp
+%%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/sparse-matrix.edp
+%%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/sphere.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/tablefunction.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/xyf
 %%PORTDOCS%%%%EXAMPLESDIR%%/wafer-heating-laser-axi.edp
@@ -106,6 +118,7 @@ bin/FreeFem++-nw
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/bug
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/eigen
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/load
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/other
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/mpi
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/tutorial
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
