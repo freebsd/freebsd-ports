@@ -1,12 +1,12 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Params/Validate/Validate.so
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Params/Validate/Validate.bs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Params/Validate/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Params/ValidateXS.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Params/ValidatePP.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Params/Validate.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Attribute/Params/Validate.pm
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Attribute/Params
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Attribute
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Params
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Params/Validate
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Params
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Params/Validate/Validate.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Params/Validate/Validate.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Params/Validate/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/Params/ValidateXS.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Params/ValidatePP.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Params/Validate.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Attribute/Params/Validate.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Attribute/Params
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Attribute
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Params
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Params/Validate
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Params
