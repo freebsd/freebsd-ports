@@ -62,9 +62,9 @@ include/bonobo/bonobo-transient.h
 include/bonobo/bonobo-ui-compat.h
 include/bonobo/bonobo-ui-component.h
 include/bonobo/bonobo-ui-container.h
-include/bonobo/bonobo-ui-item.h
 include/bonobo/bonobo-ui-node.h
 include/bonobo/bonobo-ui-toolbar-button-item.h
+include/bonobo/bonobo-ui-toolbar-control-item.h
 include/bonobo/bonobo-ui-toolbar-icon.h
 include/bonobo/bonobo-ui-toolbar-item.h
 include/bonobo/bonobo-ui-toolbar-popup-item.h
@@ -133,7 +133,6 @@ share/gnome/oaf/hello.oafinfo
 share/gnome/oaf/paint-component-simple.oafinfo
 share/gnome/oaf/std-moniker.oafinfo
 share/gnome/oaf/text-plain.oafinfo
-share/gnome/ui/bonobo-application-x-mines-ui.xml
 share/locale/ca/LC_MESSAGES/bonobo.mo
 share/locale/da/LC_MESSAGES/bonobo.mo
 share/locale/de/LC_MESSAGES/bonobo.mo
@@ -159,7 +158,6 @@ share/locale/sv/LC_MESSAGES/bonobo.mo
 share/locale/tr/LC_MESSAGES/bonobo.mo
 share/locale/uk/LC_MESSAGES/bonobo.mo
 share/locale/wa/LC_MESSAGES/bonobo.mo
-@dirrm share/gnome/ui
 @dirrm share/gnome/libefs/html/libefs
 @dirrm share/gnome/libefs/html
 @dirrm share/gnome/libefs
