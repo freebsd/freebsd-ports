@@ -1,2 +1,3 @@
 bin/dedit
+share/gnome/apps/Applications/dedit.desktop
 share/locale/ja/LC_MESSAGES/dedit.mo

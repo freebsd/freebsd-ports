@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	dedit
-PORTVERSION=	0.6.2
+PORTVERSION=	0.6.2.1
 CATEGORIES=	editors gnome
-MASTER_SITES=	ftp://ftp.debian.org/debian/dists/unstable/main/source/editors/
+MASTER_SITES=	ftp://ftp.debian.org/debian/dists/woody/main/source/editors/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	nakai@FreeBSD.org
@@ -27,6 +27,10 @@ MAN1=		dedit.1
 .if defined(KANJI)
 MANLANG=	"" ja
 .endif
+
+pre-patch:
+	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g'
 
 post-install:
 .if defined(KANJI)
