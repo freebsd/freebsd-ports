@@ -3,10 +3,10 @@
 # Date created:		Sat Oct  4 20:03:46 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.9 1997/12/28 22:23:19 andreas Exp $
+# $Id: Makefile,v 1.10 1998/01/04 15:17:23 andreas Exp $
 #
 
-DISTNAME=	pgaccess-0.73
+DISTNAME=	pgaccess-0.86
 CATEGORIES=	databases
 MASTER_SITES=	http://www.flex.ro/pgaccess/
 
