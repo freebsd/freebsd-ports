@@ -9,7 +9,7 @@
 PORTNAME=	rollemup
 PORTVERSION=	1.0
 CATEGORIES=	games linux
-MASTER_SITES=	ftp://usa.lostboys.nl/pub/medialab/rollemup/Linux/
+MASTER_SITES=	http://usa.lostboys.nl/medialab/rollemup/Linux/
 DISTNAME=	Rollemup
 
 MAINTAINER=	sanpei@sanpei.org
