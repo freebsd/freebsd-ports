@@ -14,7 +14,7 @@ DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS+=	libbonoboui-2.0:${PORTSDIR}/x11-toolkits/libbonoboui
+LIB_DEPENDS+=	bonoboui-2.0:${PORTSDIR}/x11-toolkits/libbonoboui
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
