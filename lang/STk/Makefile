@@ -3,15 +3,16 @@
 # Date created:         28 Dec 1994
 # Whom:                 jmacd@uclink.berkeley.edu
 #
-# $Id: Makefile,v 1.4 1995/04/01 12:46:39 jkh Exp $
+# $Id: Makefile,v 1.5 1995/04/15 05:44:28 asami Exp $
 #
 
 DISTNAME=       STk-2.1.6
 CATEGORIES+=	languages
 MASTER_SITES=	ftp://kaolin.unice.fr/pub/
 
+MAINTAINER=	jmacd@FreeBSD.ORG
+
 GNU_CONFIGURE=	yes
 MAKE_FLAGS=  	"prefix = ${PREFIX}"
-
 
 .include <bsd.port.mk>
