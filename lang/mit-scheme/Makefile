@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mit-scheme
-PORTVERSION=	7.5.12
+PORTVERSION=	7.5.13
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.swiss.ai.mit.edu/pub/scheme-7.5/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
