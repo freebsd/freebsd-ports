@@ -17,6 +17,7 @@ include/ginac/fderivative.h
 include/ginac/flags.h
 include/ginac/function.h
 include/ginac/ginac.h
+include/ginac/hash_map.h
 include/ginac/idx.h
 include/ginac/indexed.h
 include/ginac/inifcns.h
@@ -39,11 +40,9 @@ include/ginac/tensor.h
 include/ginac/tinfos.h
 include/ginac/version.h
 include/ginac/wildcard.h
-@unexec install-info --delete %D/info/ginac.info %D/info/dir
-info/ginac.info
-@exec install-info %D/info/ginac.info %D/info/dir
 lib/libginac.a
 lib/libginac.so
-lib/libginac.so.0
+lib/libginac-1.1.so
+lib/libginac-1.1.so.3
 share/aclocal/ginac.m4
 @dirrm include/ginac
