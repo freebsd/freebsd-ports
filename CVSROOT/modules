@@ -5108,6 +5108,7 @@ ocaml-pxp	ports/textproc/ocaml-pxp
 ocaml-wdialog	ports/www/ocaml-wdialog
 ocaml-yaxpo	ports/textproc/ocaml-yaxpo
 ocamlweb	ports/devel/ocamlweb
+ocrad		ports/graphics/ocrad
 octave		ports/math/octave
 odsclient	ports/dns/odsclient
 offix-clipboard	ports/x11/offix-clipboard
