@@ -15,6 +15,8 @@ DISTNAME=	mos20src
 
 MAINTAINER=	chuckr@freefall.FreeBSD.org
 
+LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
+
 MOSMLHOME=	$(PREFIX)/moscow_ml
 
 ALL_TARGET=	world MOSMLHOME=$(MOSMLHOME)
