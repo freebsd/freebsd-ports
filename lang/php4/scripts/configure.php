@@ -73,6 +73,7 @@ SNMP		"SNMP support (implies OPENSSL)" ${WITH_SNMP:-OFF} \
 SOCKETS		"sockets support" ${WITH_SOCKETS:-OFF} \
 SYBASEDB	"Sybase database support (DB-lib)" ${WITH_SYBASEDB:-OFF} \
 SYBASECT	"Sybase database support (CT-lib)" ${WITH_SYBASECT:-OFF} \
+SYSVMSG		"System V message support" ${WITH_SYSVMSG:-OFF} \
 SYSVSEM		"System V semaphore support" ${WITH_SYSVSEM:-OFF} \
 SYSVSHM		"System V shared memory support" ${WITH_SYSVSHM:-OFF} \
 TOKENIZER	"tokenizer support" ${WITH_TOKENIZER:-OFF} \

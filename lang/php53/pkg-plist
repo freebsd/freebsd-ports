@@ -221,11 +221,13 @@ lib/php/build/shtool
 %%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/DependencyDB.php
 %%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Downloader.php
 %%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/ErrorStack.php
+%%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Frontend/CLI.php
 %%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Installer.php
 %%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Packager.php
 %%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Registry.php
 %%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Remote.php
-%%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Frontend/CLI.php
+%%CLI%%%%PEAR%%share/pear/bootstrap/XML/RPC.php
+%%CLI%%%%PEAR%%share/pear/bootstrap/XML/RPC/Server.php
 @dirrm include/php/TSRM
 @dirrm include/php/Zend
 @dirrm include/php/ext/libxml
@@ -249,5 +251,7 @@ lib/php/build/shtool
 %%CLI%%%%PEAR%%@dirrm share/pear/bootstrap/PEAR/Command
 %%CLI%%%%PEAR%%@dirrm share/pear/bootstrap/PEAR/Frontend
 %%CLI%%%%PEAR%%@dirrm share/pear/bootstrap/PEAR
+%%CLI%%%%PEAR%%@dirrm share/pear/bootstrap/XML/RPC
+%%CLI%%%%PEAR%%@dirrm share/pear/bootstrap/XML
 %%CLI%%%%PEAR%%@dirrm share/pear/bootstrap
 %%CLI%%%%PEAR%%@unexec rmdir %D/share/pear 2> /dev/null || true
