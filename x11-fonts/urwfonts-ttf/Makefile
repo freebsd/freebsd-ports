@@ -14,6 +14,7 @@ DISTNAME=	urw-fonts-${PORTVERSION:S/b/pre/}-ttf
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unicode TrueType fonts from URW extended by Valek Filippov
 
+DISABLE_SIZE=	yes
 NO_WRKSUBDIR=	yes
 
 USE_BZIP2=	yes
