@@ -10,6 +10,6 @@
 %%CLASSDIR%%/caption.ins
 %%CLASSDIR%%/caption2.dtx
 %%CLASSDIR%%/caption2.sty
-@dirrm %%CLASSDIR%%
+%%CLASSDIR%%/caption3.sty
 @exec %%MKTEXLSR%%
 @unexec %%MKTEXLSR%%
