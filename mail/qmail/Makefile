@@ -359,10 +359,10 @@ disable-sendmail: thereal-disable-sendmail
 	@${ECHO_MSG} "===> You just told your system to not"
 	@${ECHO_MSG} "===> automaticaly start sendmail on your"
 	@${ECHO_MSG} "===> next startup."
-	@${ECHO_MSG} "===> (i.e., added sendmail_enable=\"NO\" to rc.conf)"
+	@${ECHO_MSG} "===> (i.e., added sendmail_enable=\"NONE\" to rc.conf)"
 	@if [ -f ${RC_CONF_FILE} ]; \
 	then \
-		${ECHO_CMD} sendmail_enable=\"NO\" >> ${RC_CONF_FILE} ; \
+		${ECHO_CMD} sendmail_enable=\"NONE\" >> ${RC_CONF_FILE} ; \
 	fi
 
 enable-sendmail: thereal-disable-sendmail
@@ -370,7 +370,7 @@ enable-sendmail: thereal-disable-sendmail
 	@${ECHO_MSG} "===> You just told your system to"
 	@${ECHO_MSG} "===> automaticaly start sendmail on your"
 	@${ECHO_MSG} "===> next startup."
-	@${ECHO_MSG} "===> (i.e., removed sendmail_enable=\"NO\" from rc.conf)"
+	@${ECHO_MSG} "===> (i.e., removed sendmail_enable=\"NONE\" from rc.conf)"
 
 enable-qmail: install disable-sendmail
 	@if [ -f ${MAILER_CONF_FILE} ]; \
