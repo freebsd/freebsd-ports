@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Module-CoreList
-PORTVERSION=	1.91
+PORTVERSION=	1.93
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../../authors/id/R/RC/RCLAMP
+MASTER_SITE_SUBDIR=	Module
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	autrijus@autrijus.org
@@ -18,7 +18,7 @@ COMMENT=	See what modules shipped with versions of perl
 BUILD_DEPENDS=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
 
 MAN1=		corelist.1
 MAN3=		Module::CoreList.3
