@@ -1,5 +1,5 @@
 --- generic/sha1.c	Wed Aug  9 15:13:18 2000
-+++ generic/sha1.c	Fri Feb  8 10:39:46 2002
++++ generic/sha1.c	Fri Jul  9 16:41:33 2004
 @@ -30,4 +30,7 @@
  #include "loadman.h"
  
@@ -8,20 +8,30 @@
 +
  /*
   * Generator description
-@@ -67,9 +70,9 @@
+@@ -49,9 +52,6 @@
+  */
+ 
+-static void MDsha1_Start     _ANSI_ARGS_ ((VOID* context));
+ static void MDsha1_Update    _ANSI_ARGS_ ((VOID* context, unsigned int character));
+-static void MDsha1_UpdateBuf _ANSI_ARGS_ ((VOID* context, unsigned char* buffer, int bufLen));
+ static void MDsha1_Final     _ANSI_ARGS_ ((VOID* context, VOID* digest));
+-static int  MDsha1_Check     _ANSI_ARGS_ ((Tcl_Interp* interp));
+ 
+ /*
+@@ -67,9 +67,9 @@
    sizeof (CTX_TYPE),
    DIGEST_SIZE,
 -  MDsha1_Start,
-+  SHA1_Init,
++  (Trf_MDStart *)SHA1_Init,
    MDsha1_Update,
 -  MDsha1_UpdateBuf,
-+  SHA1_Update,
++  (Trf_MDUpdateBuf *)SHA1_Update,
    MDsha1_Final,
 -  MDsha1_Check
 +  NULL
  };
  
-@@ -106,30 +109,4 @@
+@@ -106,30 +106,4 @@
   *------------------------------------------------------*
   *
 - *	MDsha1_Start --
@@ -52,7 +62,7 @@
 - *
   *	MDsha1_Update --
   *
-@@ -155,33 +132,5 @@
+@@ -155,33 +129,5 @@
    unsigned char buf = character;
  
 -  sha1f.update ((SHA_CTX*) context, &buf, 1);
@@ -87,7 +97,7 @@
 +  SHA1_Update ((SHA_CTX*) context, &buf, 1);
  }
  
-@@ -211,9 +160,9 @@
+@@ -211,9 +157,9 @@
  {
  #ifndef OTP
 -  sha1f.final ((unsigned char*) digest, (SHA_CTX*) context);
@@ -99,7 +109,7 @@
 +    SHA1_Final ((unsigned char*) result, (SHA_CTX*) context);
  
      result[0] ^= result[2];
-@@ -224,30 +173,3 @@
+@@ -224,30 +170,3 @@
      memcpy ((VOID *) digest, (VOID *) result, DIGEST_SIZE);
  #endif
 -}

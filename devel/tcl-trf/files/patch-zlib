@@ -1,13 +1,40 @@
 --- generic/adler.c	Wed Aug  9 15:13:17 2000
-+++ generic/adler.c	Fri Feb 15 15:09:44 2002
-@@ -63,5 +63,5 @@
++++ generic/adler.c	Fri Jul  9 16:30:50 2004
+@@ -49,5 +49,4 @@
+ static void MDAdler_UpdateBuf _ANSI_ARGS_ ((VOID* context, unsigned char* buffer, int bufLen));
+ static void MDAdler_Final     _ANSI_ARGS_ ((VOID* context, VOID* digest));
+-static int  MDAdler_Check     _ANSI_ARGS_ ((Tcl_Interp* interp));
+ 
+ /*
+@@ -63,5 +62,5 @@
    MDAdler_UpdateBuf,
    MDAdler_Final,
 -  MDAdler_Check
 +  NULL
  };
  
-@@ -222,36 +222,2 @@
+@@ -121,5 +120,5 @@
+   /* call md specific initialization here */
+ 
+-  ADLER = zf.adler32 (0L, Z_NULL, 0);
++  ADLER = adler32 (0L, Z_NULL, 0);
+ 
+   DONE (MDAdler_Start);
+@@ -154,5 +153,5 @@
+   unsigned char buf = character;
+ 
+-  ADLER = zf.adler32 (ADLER, &buf, 1);
++  ADLER = adler32 (ADLER, &buf, 1);
+ }
+ 
+@@ -184,5 +183,5 @@
+   /* call md specific update here */
+ 
+-  ADLER = zf.adler32 (ADLER, buffer, bufLen);
++  ADLER = adler32 (ADLER, buffer, bufLen);
+ }
+ 
+@@ -222,36 +221,2 @@
    out [3] = (char) ((adler >>  0) & 0xff);
  }
 -
@@ -45,15 +72,42 @@
 -}
 -
 --- generic/crc_zlib.c	Wed Aug  9 15:13:17 2000
-+++ generic/crc_zlib.c	Fri Feb 15 15:11:49 2002
-@@ -63,5 +63,5 @@
++++ generic/crc_zlib.c	Fri Jul  9 16:34:11 2004
+@@ -49,5 +49,4 @@
+ static void MDcrcz_UpdateBuf _ANSI_ARGS_ ((VOID* context, unsigned char* buffer, int bufLen));
+ static void MDcrcz_Final     _ANSI_ARGS_ ((VOID* context, VOID* digest));
+-static int  MDcrcz_Check     _ANSI_ARGS_ ((Tcl_Interp* interp));
+ 
+ /*
+@@ -63,5 +62,5 @@
    MDcrcz_UpdateBuf,
    MDcrcz_Final,
 -  MDcrcz_Check
 +  NULL
  };
  
-@@ -217,28 +217,2 @@
+@@ -118,5 +117,5 @@
+   /* call md specific initialization here */
+ 
+-  CRC = zf.crc32 (0L, Z_NULL, 0);
++  CRC = crc32 (0L, Z_NULL, 0);
+ }
+ 
+@@ -149,5 +148,5 @@
+   unsigned char buf = character;
+ 
+-  CRC = zf.crc32 (CRC, &buf, 1);
++  CRC = crc32 (CRC, &buf, 1);
+ }
+ 
+@@ -179,5 +178,5 @@
+   /* call md specific update here */
+ 
+-  CRC = zf.crc32 (CRC, buffer, bufLen);
++  CRC = crc32 (CRC, buffer, bufLen);
+ }
+ 
+@@ -217,28 +216,2 @@
    out [0] = (char) ((crc >>  0) & 0xff);
  }
 -

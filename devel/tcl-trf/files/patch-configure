@@ -1,5 +1,12 @@
 --- configure	Tue Aug 21 01:52:30 2001
 +++ configure	Fri Feb  8 11:52:30 2002
+@@ -1487,5 +1487,5 @@
+ #include "confdefs.h"
+ 
+-main(){return(0);}
++int main(){return(0);}
+ EOF
+ if { (eval echo configure:1492: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
 @@ -2658,7 +2658,7 @@
  
  if test "${SHARED_BUILD}" = "1" ; then
