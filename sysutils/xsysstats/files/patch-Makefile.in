@@ -1,0 +1,12 @@
+--- Makefile.in.orig	Tue May 30 08:07:38 2000
++++ Makefile.in	Sat Nov  9 08:50:56 2002
+@@ -1,6 +1,6 @@
+-CC = @CC@
+-CFLAGS = @CFLAGS@
+-CPPFLAGS = @CPPFLAGS@
++#CC = @CC@
++CFLAGS = -I@x_includes@
++#CPPFLAGS = @CPPFLAGS@
+ LIBS = @LIBS@
+ LDFLAGS = @LDFLAGS@
+ 
