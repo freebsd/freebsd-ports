@@ -1,0 +1,58 @@
+--- doc/Makefile.in.orig2	Tue Jan 15 17:22:04 2002
++++ doc/Makefile.in	Tue Jan 15 17:09:45 2002
+@@ -60,13 +60,16 @@
+ topsrcdir_DOCFILES = COPYRIGHT GPL INSTALL ChangeLog	\
+ 	README NEWS TODO README.SECURITY README.SSL 
+ 
+-all: 
++all: muttrc.man try-html try-txt try-latin1
+ 
+ try-html: ../makedoc
+-	test -f manual.html || $(MAKE) manual.html || cp $(srcdir)/manual*.html ./
++	rm -f *.html && $(MAKE) manual.html || cp $(srcdir)/manual*.html ./
+ 
+ try-txt: ../makedoc
+-	test -f manual.txt || $(MAKE) manual.txt || cp $(srcdir)/manual.txt ./
++	$(MAKE) manual.txt || cp $(srcdir)/manual.txt ./
++
++try-latin1: 
++	$(MAKE) manual.latin1 || cp $(srcdir)/manual.latin1 ./
+ 
+ install: all instdoc
+ 	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(mandir)/man1
+@@ -80,10 +83,10 @@
+ 	./instdoc $(srcdir)/mbox.man $(DESTDIR)$(mandir)/man5/mbox.5
+ 	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(docdir)
+ 	for f in $(srcdir_DOCFILES) ; do \
+-		$(INSTALL) -m 644 $(srcdir)/$$f $(DESTDIR)$(docdir) ; \
++	 	$(INSTALL) -m 644 $(srcdir)/$$f $(DESTDIR)$(docdir) ; \
+ 	done
+ 	for f in $(topsrcdir_DOCFILES) ; do \
+-		$(INSTALL) -m 644 $(top_srcdir)/$$f $(DESTDIR)$(docdir) ; \
++	 	$(INSTALL) -m 644 $(top_srcdir)/$$f $(DESTDIR)$(docdir) ; \
+ 	done
+ 	$(INSTALL) -m 644 manual.txt $(DESTDIR)$(docdir) || true
+ 	# $(top_srcdir)/mkinstalldirs $(DESTDIR)$(docdir)/html
+@@ -99,14 +102,18 @@
+ 
+ check:
+ manual.txt: manual.sgml
+-	if sgml2txt -c latin manual ; then \
+-		uniq < manual.txt | expand > _manual.txt ; \
+-		rm manual.txt ; \
++	if sgmlfmt -f ascii manual; then \
++		uniq < manual.ascii | expand > _manual.txt ; \
++		rm -f manual.txt manual.ascii; \
+ 		mv _manual.txt manual.txt ;\
+ 	fi
+ 
+ manual.html: manual.sgml
+-	sgml2html manual  || true
++	@# sgml2html manual  || true
++	sgmlfmt -f html manual  || true
++
++manual.latin1: manual.sgml
++	sgmlfmt -f latin1 manual  || true
+ 
+ manual.ps: manual.sgml
+ 	sgml2latex --output=ps manual || true

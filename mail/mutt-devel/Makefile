@@ -42,7 +42,7 @@
 
 PORTNAME=	mutt-devel
 PORTVERSION=	1.3.25
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES+=	mail
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -96,13 +96,10 @@ WITH_MUTT_SSL=		yes
 WITH_MUTT_SLANG=	yes
 WITH_MUTT_IMAP=		yes
 WITH_MUTT_POP=		yes
+WITH_MUTT_HTML=		yes
 BUILD_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
 RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell \
 		urlview:${PORTSDIR}/textproc/urlview
-.if ${MACHINE_ARCH} != "alpha"
-#  coredump in sgmls
-WITH_MUTT_HTML=	yes
-.endif
 .endif
 
 .if defined(WITH_MUTT_SLANG)
@@ -850,6 +847,10 @@ PLIST_SUB+=	SUB_ADD_O="@comment "
 post-patch::
 	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-nodoc
 	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-nodoc-contrib
+.endif
+.if defined(WITH_MUTT_HTML)
+post-patch::
+	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-html
 .endif
 
 post-install:
