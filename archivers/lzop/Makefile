@@ -8,7 +8,7 @@
 PORTNAME=	lzop
 PORTVERSION=	1.01
 CATEGORIES=	archivers
-MASTER_SITES=	http://www.oberhumer.com/opensource/lzop/download/
+MASTER_SITES=	http://www.lzop.org/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast file compressor similar to gzip, using the LZO library
