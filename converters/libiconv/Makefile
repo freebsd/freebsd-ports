@@ -26,6 +26,11 @@ INSTALLS_SHLIB=	yes
 MAN1=		iconv.1
 MAN3=		iconv.3 iconv_open.3 iconv_close.3
 
+.ifdef USE_ICONV
+.error USE_ICONV is defined as an environment variable, or in the arguments \
+	to "make".  Please unset it and restart the build.
+.endif
+
 .if !defined(WITHOUT_EXTRA_ENCODINGS)
 CONFIGURE_ARGS+=	--enable-extra-encodings
 .endif
