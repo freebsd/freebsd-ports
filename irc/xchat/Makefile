@@ -8,8 +8,8 @@
 
 DISTNAME=	xchat-1.2.0
 CATEGORIES=	irc
-MASTER_SITES=	http://xchat.org/files/beta/ \
-		http://xchat.linuxpower.org/files/beta/
+MASTER_SITES=	http://xchat.org/files/ \
+		http://xchat.linuxpower.org/files/
 
 MAINTAINER=	jim@FreeBSD.org
 
