@@ -26,6 +26,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/doc/silc/CREDITS:${.CURDIR}/../silc-doc
 .endif
 
 USE_BZIP2=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-silcd-config-file=${PREFIX}/etc/${PORTNAME}/silcd.conf \
 		--with-etcdir=${PREFIX}/etc/${PORTNAME} \
@@ -59,7 +60,7 @@ pre-everything::
 
 post-patch:
 .ifndef(WITH_OPTIMIZED_CFLAGS)
-	@${PERL} -pi -e 's/-O2//' ${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e 's/-O2//' ${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 .endif
 
 post-install:
