@@ -1,0 +1,12 @@
+Net::EasyTCP - Easily create TCP/IP clients and servers
+
+* One easy module to create both clients and servers 
+* Object Oriented interface 
+* Event-based callbacks in server mode 
+* Internal protocol to take care of all the common transport problems 
+* Transparent encryption 
+* Transparent compression 
+
+WWW: http://search.cpan.org/search?dist=EasyTCP
+
+Seamus Venasse <svenasse@polaris.ca>
