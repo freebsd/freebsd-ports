@@ -3,12 +3,15 @@
 # Date created:         17 Nov 1995
 # Whom:                 markm
 #
-# $Id: Makefile,v 1.1.1.1 1995/11/17 19:03:47 markm Exp $
+# $Id: Makefile,v 1.2 1995/11/17 19:09:27 markm Exp $
 #
 
 DISTNAME=       buffer-1.17
 CATEGORIES+=	utilities
 MASTER_SITES=   ftp://ftp.sun.ac.za/pub/unix/misc/
+
+MAINTAINER=	markm@FreeBSD.ORG
+
 NO_WRKSUBDIR=	yes
 
 post-install:
