@@ -1,5 +1,5 @@
---- doc/sendmail/configure.orig	Wed May 15 20:41:27 2002
-+++ doc/sendmail/configure	Sun Aug 25 06:42:08 2002
+--- doc/sendmail/configure.orig	Fri Sep 20 19:29:05 2002
++++ doc/sendmail/configure	Mon Oct  7 03:28:04 2002
 @@ -110,7 +110,7 @@
  # Read transport
  
@@ -9,25 +9,7 @@
      echo
      echo -n "Daemon pidfile not defined in ini-file ..."
      POS=`$GREP -i SocketMode $DAEMON_INI | $GREP -v ";" | $AWK '{ print match( $0, /[Tt][Cc][Pp]/ ) }'`
-@@ -178,7 +178,7 @@
- # Read transport
- 
- TMP=`$GREP -i Address $FILTER_CFG | $GREP -v "#"`
--DADR=`echo $TMP | $AWK '{ gsub( /["[:blank:]]/, "", $0 ); str = substr( $0, match( $0, /^Address=/ ), match( substr( $0, 2 ), /Address=/ ) ); print str; }'`
-+DADR=`echo $TMP | $AWK '{ gsub( /["[:blank:]]/, "", $0 ); str = substr( $0, match( $0, /^MilterAddress=/ ), match( substr( $0, 2 ), /MilterAddress=/ ) ); print str; }'`
- FADR=`echo $TMP | $AWK '{ gsub( /["[:blank:]]/, "", $0 ); str = substr( $0, 1+match( substr( $0, 2 ), /Address=/ ) ); print str; }'`
- DMODE=`echo $DADR | $AWK '{ str = substr( $0, 1+index( $0, "=" ), index( $0, ":" ) - index( $0, "=" ) - 1 ); print str; }'`
- FMODE=`echo $FADR | $AWK '{ str = substr( $0, 1+index( $0, "=" ), index( $0, ":" ) - index( $0, "=" ) - 1 ); print str; }'`
-@@ -243,7 +243,7 @@
- 
- SOCKET_TIMEOUT=`$GREP -i SocketTimeout $DAEMON_INI | $GREP -v ";" | $AWK '{ str = substr( $0, 1+match( $0, /=./ ) ); gsub( /["[:blank:]]/, "", str ); print str; }'`
- FILE_TIMEOUT=`$GREP -i FileTimeout $DAEMON_INI | $GREP -v ";" | $AWK '{ str = substr( $0, 1+match( $0, /=./ ) ); gsub( /["[:blank:]]/, "", str ); print str; }'`
--FILTER_TIMEOUT=`$GREP -i Timeout $FILTER_CFG | $GREP -v "#" | $AWK '{ str = substr( $0, 1+match( $0, /=./ ) ); gsub( /["[:blank:]]/, "", str ); print str; }'`
-+FILTER_TIMEOUT=`$GREP -i ^Timeout $FILTER_CFG | $GREP -v "#" | $AWK '{ str = substr( $0, 1+match( $0, /=./ ) ); gsub( /["[:blank:]]/, "", str ); print str; }'`
- if [ "x$SOCKET_TIMEOUT" != "x" -a "x$FILE_TIMEOUT" != "x" ] ; then
-     RFILTER_TIMEOUT=`expr 2 \* $SOCKET_TIMEOUT + 2 \* $FILE_TIMEOUT`
- elif [ "x$SOCKET_TIMEOUT" != "x" ] ; then
-@@ -265,8 +265,13 @@
+@@ -266,8 +266,13 @@
              echo "Edit one of configuration files and try again."
              exit 1
          fi 
