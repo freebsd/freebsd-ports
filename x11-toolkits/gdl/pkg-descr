@@ -2,13 +2,11 @@ Gnome Devtool Libraries
 =======================
 
 This package contains components and libraries that are intended to be
-shared between GNOME development tools, including gnome-debug,
-gnome-build, and gIDE.
+shared between Scaffold, the new GNOME 2 development system.
 
 The current pieces of GDL include:
 
- - A code-editing bonboo component based on the Scintilla
-   widget (scintilla-control).
+ - A code-editing bonboo component based on GtkSourceView
 
  - An utility library that also contains the stubs and skels for
    the above components (gdl).
