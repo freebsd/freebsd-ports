@@ -1,6 +1,6 @@
 bin/ctags
 bin/etags
-bin/ex
+@comment bin/ex
 bin/gex
 bin/gview
 bin/gvim
@@ -10,7 +10,7 @@ bin/rgview
 bin/rgvim
 bin/rview
 bin/rvim
-bin/view
+@comment bin/view
 bin/vim
 bin/xxd
 man/man1/ctags.1.gz
