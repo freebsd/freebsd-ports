@@ -381,6 +381,7 @@
 %%APP_NAME%%/xsl/js/caucho/defaultcopy.xsl
 %%APP_NAME%%/xsl/js/caucho/format.xsl
 %%APP_NAME%%/xsl/js/caucho/weblog.xsl
+%%APP_NAME%%/libexec/libresin.so
 etc/rc.d/%%APP_NAME%%.sh
 sbin/%%APP_NAME%%ctl
 %%MOD_DIR%%/mod_caucho.so
@@ -451,6 +452,7 @@ sbin/%%APP_NAME%%ctl
 @dirrm %%APP_NAME%%/xsl/js/caucho
 @dirrm %%APP_NAME%%/xsl/js
 @dirrm %%APP_NAME%%/xsl
+@dirrm %%APP_NAME%%/libexec
 @dirrm %%APP_NAME%%
 @unexec if cmp -s %D/etc/%%APP_NAME%%.xml %D/etc/%%APP_NAME%%.xml-dist; then rm -f %D/etc/%%APP_NAME%%.xml; else echo If permanently deleting this package, %D/etc/%%APP_NAME%%.xml must be removed manually; fi
 etc/%%APP_NAME%%.xml-dist

@@ -8,8 +8,7 @@
 #
 
 PORTNAME=	resin
-PORTVERSION=	2.1.11
-PORTREVISION=	1
+PORTVERSION=	2.1.12
 CATEGORIES=	www java
 MASTER_SITES=	http://www.caucho.com/download/
 
@@ -19,6 +18,7 @@ COMMENT=	Resin, a Java-based Application Server, 2.x branch
 USE_JAVA=	1.2+
 HAS_CONFIGURE=	yes
 USE_PERL5=	yes
+USE_REINPLACE=	yes
 
 # Customizable settings
 RUNASUSER?=	www
@@ -30,6 +30,7 @@ PORT?=	8080
 # If we used PKGNAMESUFFIX, the package name would be resin2-2.1.11
 APP_NAME_SUFFIX=	${PORTVERSION:C/\..*$//}
 APP_NAME?=	${PORTNAME}${APP_NAME_SUFFIX}
+LATEST_LINK=	${APP_NAME}
 APP_HOME?=	${PREFIX}/${APP_NAME}
 WITH_APACHE?=	NO
 WITH_APACHE2?=	NO
@@ -53,6 +54,7 @@ REPLACE_FILES=	${FILESDIR}/pkg-install \
 	${WRKSRC}/conf/resin.conf \
 	${WRKSRC}/bin/wrapper.pl.in \
 	${FILESDIR}/resin.sh.in
+COPYDIRS=	doc lib libexec xsl
 
 # Pass JAVA_HOME as determined by bsd.java.mk
 CONFIGURE_ARGS+=	--with-java-home=${JAVA_HOME}
@@ -88,6 +90,7 @@ PLIST_SUB+=	APXS=${APXS}
 SUBSTITUTIONS=	-e "s|%%APP_HOME%%|${APP_HOME}|g" \
 	-e "s|%%APP_NAME%%|${APP_NAME}|g" \
 	-e "s|%%APXS%%|${APXS}|g" \
+	-e "s|%%COPYDIRS%%|${COPYDIRS}|g" \
 	-e "s|%%FILESDIR%%|${FILESDIR}|g" \
 	-e "s|%%GROUP%%|${GROUP}|g" \
 	-e "s|%%GID%%|${GID}|g" \
@@ -106,7 +109,7 @@ SUBSTITUTIONS=	-e "s|%%APP_HOME%%|${APP_HOME}|g" \
 
 post-patch:
 .for FILE in ${REINPLACE_FILES}
-	@${SED} -i bak ${SUBSTITUTIONS} ${FILE}
+	@${REINPLACE_CMD} ${SUBSTITUTIONS} ${FILE}
 .endfor
 .for FILE in ${REPLACE_FILES}
 	@${SED} ${SUBSTITUTIONS} ${FILE} > ${WRKDIR}/`basename ${FILE}`
@@ -116,9 +119,9 @@ post-patch:
 defined(WITH_APACHE) && (${WITH_APACHE} == yes || ${WITH_APACHE} == YES))
 	@${ECHO_CMD} >> ${PKGMESSAGE}
 	@${ECHO_CMD} The Resin Apache module mod_caucho has been activated \
-	in the Apache configuration file, where you should also \
-	add a line to specify the location of the Resin configuration \
-	file, for example: | fmt -w 80 >> ${PKGMESSAGE}
+	    in the Apache configuration file, where you should also \
+	    add a line to specify the location of the Resin configuration \
+	    file, for example: | fmt -w 80 >> ${PKGMESSAGE}
 	@${ECHO_CMD} CauchoConfigFile ${PREFIX}/etc/${APP_NAME}.xml >> ${PKGMESSAGE}
 .endif
 	@${MV} ${WRKDIR}/wrapper.pl.in ${WRKSRC}/bin/wrapper.pl.in
