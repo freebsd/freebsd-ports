@@ -8,7 +8,9 @@ bin/thudboard
 %%DATADIR%%/img/check.gif
 %%DATADIR%%/img/colors
 %%DATADIR%%/img/copy.gif
+%%DATADIR%%/img/down.gif
 %%DATADIR%%/img/dwarf.gif
+%%DATADIR%%/img/info.gif
 %%DATADIR%%/img/list.gif
 %%DATADIR%%/img/lock.gif
 %%DATADIR%%/img/noclip.gif
