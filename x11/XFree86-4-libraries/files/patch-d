@@ -24,7 +24,7 @@
 + * (and FreeBSD 5.0-current in early 2000)
   */
 -#if OSMajorVersion == 4 && OSMinorVersion == 0 && OSTeenyVersion == 0
-+#if (OSMajorVersion == 4 || OSMajorVersion == 5) && OSMinorVersion == 0 && OSTeenyVersion == 0
++#if (OSMajorVersion == 4 || OSMajorVersion == 5)
  #define FreeBSDGccOptBug
  #endif
  
