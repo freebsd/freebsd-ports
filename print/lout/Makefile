@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lout
-PORTVERSION=	3.17
+PORTVERSION=	3.24
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
 		ftp://ftp.cs.usyd.edu.au/jeff/lout/
@@ -16,9 +16,9 @@ MAINTAINER=	ports@FreeBSD.org
 
 USE_GMAKE=	yes
 MAKEFILE=	makefile
-ALL_TARGET=	lout c2lout
+ALL_TARGET=	lout prg2lout
 INSTALL_TARGET=	install installman installdoc
 
-MAN1=		c2lout.1 lout.1
+MAN1=		prg2lout.1 lout.1
 
 .include <bsd.port.mk>

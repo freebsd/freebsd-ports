@@ -1,257 +1,152 @@
-*** makefile.orig	Fri Sep 17 10:53:35 1999
---- makefile	Tue Sep 21 19:53:01 1999
-***************
-*** 254,263 ****
-  
-  COLLATE	= 1
-  
-! BINDIR	= /usr/staff/jeff/bin
-! LIBDIR	= /usr/staff/jeff/lout.lib
-! DOCDIR	= /usr/staff/jeff/lout.doc
-! MANDIR	= /usr/staff/jeff/lout.man
-  
-  LIBFONT = font
-  LIBMAPS = maps
---- 254,263 ----
-  
-  COLLATE	= 1
-  
-! BINDIR	= ${PREFIX}/bin
-! LIBDIR	= ${PREFIX}/share/lout
-! DOCDIR	= ${PREFIX}/share/doc/lout
-! MANDIR	= ${PREFIX}/man/man1
-  
-  LIBFONT = font
-  LIBMAPS = maps
-***************
-*** 269,289 ****
-  CHARIN	= 1
-  CHAROUT	= 0
-  
-! USELOC	= 1
-  LOC_FR	= fr
-  LOC_DE	= de
-  
-! PDF_COMPRESSION	= 0
-! ZLIB		=
-  ZLIBPATH	=
-  
-! CC	= gcc
-  
-  RCOPY	= cp -r
-  
-! COPTS	= -ansi -pedantic -Wall
-  
-! CFLAGS	= -DOS_UNIX=$(OSUNIX)					\
-  	  -DOS_DOS=$(OSDOS)					\
-  	  -DOS_MAC=$(OSMAC)					\
-  	  -DDB_FIX=$(DBFIX)					\
---- 269,289 ----
-  CHARIN	= 1
-  CHAROUT	= 0
-  
-! USELOC	= 0
-  LOC_FR	= fr
-  LOC_DE	= de
-  
-! PDF_COMPRESSION	= 1
-! ZLIB		= -lz
-  ZLIBPATH	=
-  
-! #CC	= gcc
-  
-  RCOPY	= cp -r
-  
-! #COPTS	= -ansi -pedantic -Wall
-  
-! CFLAGS	+= -DOS_UNIX=$(OSUNIX)					\
-  	  -DOS_DOS=$(OSDOS)					\
-  	  -DOS_MAC=$(OSMAC)					\
-  	  -DDB_FIX=$(DBFIX)					\
-***************
-*** 301,307 ****
-  	  -DCHAR_OUT=$(CHAROUT)					\
-  	  -DLOCALE_ON=$(USELOC)					\
-  	  -DASSERT_ON=1 $(COPTS)				\
-! 	  -DDEBUG_ON=1  -g					\
-  	  -DPDF_COMPRESSION=$(PDF_COMPRESSION)			\
-  	  $(ZLIBPATH)
-  
---- 301,307 ----
-  	  -DCHAR_OUT=$(CHAROUT)					\
-  	  -DLOCALE_ON=$(USELOC)					\
-  	  -DASSERT_ON=1 $(COPTS)				\
-! #	  -DDEBUG_ON=1  -g					\
-  	  -DPDF_COMPRESSION=$(PDF_COMPRESSION)			\
-  	  $(ZLIBPATH)
-  
-***************
-*** 327,368 ****
-  install: lout c2lout
-  	@echo ""
-  	@echo "(a) Installing lout and c2lout binaries into BINDIR $(BINDIR)"
-! 	cp lout $(BINDIR)/lout
-! 	chmod 755 $(BINDIR)/lout
-! 	cp c2lout $(BINDIR)/c2lout
-! 	chmod 755 $(BINDIR)/c2lout
-  	@echo ""
-  	@echo "(b) Installing library files into LIBDIR $(LIBDIR)"
-! 	mkdir $(LIBDIR)
-  	chmod 755 $(LIBDIR)
-  	@echo ""
-! 	mkdir $(LIBDIR)/$(LIBINCL)
-  	chmod 755 $(LIBDIR)/$(LIBINCL)
-  	cp include/* $(LIBDIR)/$(LIBINCL)
-  	chmod 644 $(LIBDIR)/$(LIBINCL)/*
-  	@echo ""
-! 	mkdir $(LIBDIR)/$(LIBDATA)
-  	chmod 755 $(LIBDIR)/$(LIBDATA)
-  	cp data/* $(LIBDIR)/$(LIBDATA)
-  	chmod 644 $(LIBDIR)/$(LIBDATA)/*
-  	@echo ""
-! 	mkdir $(LIBDIR)/$(LIBHYPH)
-  	chmod 755 $(LIBDIR)/$(LIBHYPH)
-  	cp hyph/* $(LIBDIR)/$(LIBHYPH)
-  	chmod 644 $(LIBDIR)/$(LIBHYPH)/*
-  	@echo ""
-! 	mkdir $(LIBDIR)/$(LIBFONT)
-  	chmod 755 $(LIBDIR)/$(LIBFONT)
-  	cp font/* $(LIBDIR)/$(LIBFONT)
-  	chmod 644 $(LIBDIR)/$(LIBFONT)/*
-  	@echo ""
-! 	mkdir $(LIBDIR)/$(LIBMAPS)
-  	chmod 755 $(LIBDIR)/$(LIBMAPS)
-  	cp maps/* $(LIBDIR)/$(LIBMAPS)
-  	chmod 644 $(LIBDIR)/$(LIBMAPS)/*
-  	@echo ""
-! 	mkdir $(LIBDIR)/$(LIBLOCA)
-  	chmod 755 $(LIBDIR)/$(LIBLOCA)
-  	@echo ""
-  	@echo "(c) Initializing run (should be silent, no errors expected)"
-  	$(BINDIR)/lout -x -s $(LIBDIR)/$(LIBINCL)/init
---- 327,367 ----
-  install: lout c2lout
-  	@echo ""
-  	@echo "(a) Installing lout and c2lout binaries into BINDIR $(BINDIR)"
-! 	install -c -s -o bin -g bin lout $(BINDIR)/lout
-! 	install -c -s -o bin -g bin c2lout $(BINDIR)/c2lout
-  	@echo ""
-  	@echo "(b) Installing library files into LIBDIR $(LIBDIR)"
-! 	-mkdir $(LIBDIR)
-  	chmod 755 $(LIBDIR)
-  	@echo ""
-! 	-mkdir $(LIBDIR)/$(LIBINCL)
-  	chmod 755 $(LIBDIR)/$(LIBINCL)
-  	cp include/* $(LIBDIR)/$(LIBINCL)
-  	chmod 644 $(LIBDIR)/$(LIBINCL)/*
-  	@echo ""
-! 	-mkdir $(LIBDIR)/$(LIBDATA)
-  	chmod 755 $(LIBDIR)/$(LIBDATA)
-  	cp data/* $(LIBDIR)/$(LIBDATA)
-  	chmod 644 $(LIBDIR)/$(LIBDATA)/*
-  	@echo ""
-! 	-mkdir $(LIBDIR)/$(LIBHYPH)
-  	chmod 755 $(LIBDIR)/$(LIBHYPH)
-  	cp hyph/* $(LIBDIR)/$(LIBHYPH)
-  	chmod 644 $(LIBDIR)/$(LIBHYPH)/*
-  	@echo ""
-! 	-mkdir $(LIBDIR)/$(LIBFONT)
-  	chmod 755 $(LIBDIR)/$(LIBFONT)
-  	cp font/* $(LIBDIR)/$(LIBFONT)
-  	chmod 644 $(LIBDIR)/$(LIBFONT)/*
-  	@echo ""
-! 	-mkdir $(LIBDIR)/$(LIBMAPS)
-  	chmod 755 $(LIBDIR)/$(LIBMAPS)
-  	cp maps/* $(LIBDIR)/$(LIBMAPS)
-  	chmod 644 $(LIBDIR)/$(LIBMAPS)/*
-  	@echo ""
-! 	-mkdir $(LIBDIR)/$(LIBLOCA)
-  	chmod 755 $(LIBDIR)/$(LIBLOCA)
-+ 	touch $(LIBDIR)/$(LIBLOCA)/.place_holder
-  	@echo ""
-  	@echo "(c) Initializing run (should be silent, no errors expected)"
-  	$(BINDIR)/lout -x -s $(LIBDIR)/$(LIBINCL)/init
-***************
-*** 370,375 ****
---- 369,375 ----
-  	@echo "(d) Changing mode of files just created by initializing run"
-  	chmod 644 $(LIBDIR)/$(LIBDATA)/*
-  	chmod 644 $(LIBDIR)/$(LIBHYPH)/*
-+ 	chown -R bin:bin $(LIBDIR)
-  
-  installman:
-  	@echo ""
-***************
-*** 378,400 ****
-  	    -e "s@<DOCDIR>@$(DOCDIR)@" -e "s@<MANDIR>@$(MANDIR)@"	\
-  	man/lout.1 > $(MANDIR)/lout.1
-  	chmod 644 $(MANDIR)/lout.1
-  	cp man/c2lout.1 $(MANDIR)/c2lout.1
-  	chmod 644 $(MANDIR)/c2lout.1
-  
-  installdoc:
-  	@echo ""
-  	@echo "Creating DOCDIR $(DOCDIR) and copying documentation into it"
-! 	$(RCOPY) doc $(DOCDIR)
-  	chmod 755 $(DOCDIR)
-  	chmod 755 $(DOCDIR)/*
-  	chmod 644 $(DOCDIR)/*/*
-  
-  installfr:
-  	@echo ""
-  	@echo "Putting French error messages into $(LIBDIR)/$(LIBLOCA)/$(LOC_FR)"
-! 	mkdir $(LIBDIR)/$(LIBLOCA)/$(LOC_FR)
-  	chmod 755 $(LIBDIR)/$(LIBLOCA)/$(LOC_FR)
-! 	mkdir $(LIBDIR)/$(LIBLOCA)/$(LOC_FR)/LC_MESSAGES
-  	chmod 755 $(LIBDIR)/$(LIBLOCA)/$(LOC_FR)/LC_MESSAGES
-  	cp locale/msgs.fr $(LIBDIR)/$(LIBLOCA)/$(LOC_FR)/LC_MESSAGES/msgs.$(LOC_FR)
-  	gencat $(LIBDIR)/$(LIBLOCA)/$(LOC_FR)/LC_MESSAGES/errors.$(LOC_FR)	\
---- 378,404 ----
-  	    -e "s@<DOCDIR>@$(DOCDIR)@" -e "s@<MANDIR>@$(MANDIR)@"	\
-  	man/lout.1 > $(MANDIR)/lout.1
-  	chmod 644 $(MANDIR)/lout.1
-+ 	chown bin:bin $(MANDIR)/lout.1
-  	cp man/c2lout.1 $(MANDIR)/c2lout.1
-  	chmod 644 $(MANDIR)/c2lout.1
-+ 	chown bin:bin $(MANDIR)/c2lout.1
-  
-  installdoc:
-  	@echo ""
-  	@echo "Creating DOCDIR $(DOCDIR) and copying documentation into it"
-! 	-mkdir -p $(DOCDIR)
-! 	$(RCOPY) doc/* $(DOCDIR)
-  	chmod 755 $(DOCDIR)
-  	chmod 755 $(DOCDIR)/*
-  	chmod 644 $(DOCDIR)/*/*
-+ 	chown -R bin.bin $(DOCDIR)
-  
-  installfr:
-  	@echo ""
-  	@echo "Putting French error messages into $(LIBDIR)/$(LIBLOCA)/$(LOC_FR)"
-! 	-mkdir $(LIBDIR)/$(LIBLOCA)/$(LOC_FR)
-  	chmod 755 $(LIBDIR)/$(LIBLOCA)/$(LOC_FR)
-! 	-mkdir $(LIBDIR)/$(LIBLOCA)/$(LOC_FR)/LC_MESSAGES
-  	chmod 755 $(LIBDIR)/$(LIBLOCA)/$(LOC_FR)/LC_MESSAGES
-  	cp locale/msgs.fr $(LIBDIR)/$(LIBLOCA)/$(LOC_FR)/LC_MESSAGES/msgs.$(LOC_FR)
-  	gencat $(LIBDIR)/$(LIBLOCA)/$(LOC_FR)/LC_MESSAGES/errors.$(LOC_FR)	\
-***************
-*** 404,412 ****
-  installde:
-  	@echo ""
-  	@echo "Putting German error messages into $(LIBDIR)/$(LIBLOCA)/$(LOC_DE)"
-! 	mkdir $(LIBDIR)/$(LIBLOCA)/$(LOC_DE)
-  	chmod 755 $(LIBDIR)/$(LIBLOCA)/$(LOC_DE)
-! 	mkdir $(LIBDIR)/$(LIBLOCA)/$(LOC_DE)/LC_MESSAGES
-  	chmod 755 $(LIBDIR)/$(LIBLOCA)/$(LOC_DE)/LC_MESSAGES
-  	cp locale/msgs.de $(LIBDIR)/$(LIBLOCA)/$(LOC_DE)/LC_MESSAGES/msgs.$(LOC_DE)
-  	gencat $(LIBDIR)/$(LIBLOCA)/$(LOC_DE)/LC_MESSAGES/errors.$(LOC_DE)	\
---- 408,416 ----
-  installde:
-  	@echo ""
-  	@echo "Putting German error messages into $(LIBDIR)/$(LIBLOCA)/$(LOC_DE)"
-! 	-mkdir $(LIBDIR)/$(LIBLOCA)/$(LOC_DE)
-  	chmod 755 $(LIBDIR)/$(LIBLOCA)/$(LOC_DE)
-! 	-mkdir $(LIBDIR)/$(LIBLOCA)/$(LOC_DE)/LC_MESSAGES
-  	chmod 755 $(LIBDIR)/$(LIBLOCA)/$(LOC_DE)/LC_MESSAGES
-  	cp locale/msgs.de $(LIBDIR)/$(LIBLOCA)/$(LOC_DE)/LC_MESSAGES/msgs.$(LOC_DE)
-  	gencat $(LIBDIR)/$(LIBLOCA)/$(LOC_DE)/LC_MESSAGES/errors.$(LOC_DE)	\
+--- makefile.orig	Sat Oct  7 22:03:11 2000
++++ makefile	Wed Feb 14 02:03:07 2001
+@@ -276,10 +276,10 @@
+ # DEBUGGING = 1
+ # TRACING = -g
+ 
+-BINDIR	= /usr/staff/jeff/bin
+-LIBDIR	= /usr/staff/jeff/lout.lib
+-DOCDIR	= /usr/staff/jeff/lout.doc
+-MANDIR	= /usr/staff/jeff/lout.man
++BINDIR	= ${PREFIX}/bin
++LIBDIR	= ${PREFIX}/share/lout
++DOCDIR	= ${PREFIX}/share/doc/lout
++MANDIR	= ${PREFIX}/man/man1
+ 
+ LIBFONT = font
+ LIBMAPS = maps
+@@ -291,24 +291,24 @@
+ CHARIN	= 1
+ CHAROUT	= 0
+ 
+-USELOC	= 1
++USELOC	= 0
+ LOC_FR	= fr
+ LOC_DE	= de
+ 
+ COLLATE	= 1
+ 
+-PDF_COMPRESSION	= 0
+-ZLIB		=
++PDF_COMPRESSION	= 1
++ZLIB		= -lz
+ ZLIBPATH	=
+ 
+-CC	= gcc
++#CC	= gcc
+ 
+ RCOPY	= cp -r
+ 
+-COPTS	= -ansi -pedantic -Wall -O3
++#COPTS	= -ansi -pedantic -Wall -O3
+ # COPTS	= -ansi -pedantic -Wall
+ 
+-CFLAGS	= -DOS_UNIX=$(OSUNIX)					\
++CFLAGS	+= -DOS_UNIX=$(OSUNIX)					\
+ 	  -DOS_DOS=$(OSDOS)					\
+ 	  -DOS_MAC=$(OSMAC)					\
+ 	  -DDB_FIX=$(DBFIX)					\
+@@ -354,42 +354,41 @@
+ install: lout prg2lout
+ 	@echo ""
+ 	@echo "(a) Installing lout and prg2lout binaries into BINDIR $(BINDIR)"
+-	cp lout $(BINDIR)/lout
+-	chmod 755 $(BINDIR)/lout
+-	cp prg2lout $(BINDIR)/prg2lout
+-	chmod 755 $(BINDIR)/prg2lout
++	install -c -s -o bin -g bin lout $(BINDIR)/lout
++	install -c -s -o bin -g bin prg2lout $(BINDIR)/prg2lout
+ 	@echo ""
+ 	@echo "(b) Installing library files into LIBDIR $(LIBDIR)"
+-	mkdir $(LIBDIR)
++	-mkdir $(LIBDIR)
+ 	chmod 755 $(LIBDIR)
+ 	@echo ""
+-	mkdir $(LIBDIR)/$(LIBINCL)
++	-mkdir $(LIBDIR)/$(LIBINCL)
+ 	chmod 755 $(LIBDIR)/$(LIBINCL)
+ 	cp include/* $(LIBDIR)/$(LIBINCL)
+ 	chmod 644 $(LIBDIR)/$(LIBINCL)/*
+ 	@echo ""
+-	mkdir $(LIBDIR)/$(LIBDATA)
++	-mkdir $(LIBDIR)/$(LIBDATA)
+ 	chmod 755 $(LIBDIR)/$(LIBDATA)
+ 	cp data/* $(LIBDIR)/$(LIBDATA)
+ 	chmod 644 $(LIBDIR)/$(LIBDATA)/*
+ 	@echo ""
+-	mkdir $(LIBDIR)/$(LIBHYPH)
++	-mkdir $(LIBDIR)/$(LIBHYPH)
+ 	chmod 755 $(LIBDIR)/$(LIBHYPH)
+ 	cp hyph/* $(LIBDIR)/$(LIBHYPH)
+ 	chmod 644 $(LIBDIR)/$(LIBHYPH)/*
+ 	@echo ""
+-	mkdir $(LIBDIR)/$(LIBFONT)
++	-mkdir $(LIBDIR)/$(LIBFONT)
+ 	chmod 755 $(LIBDIR)/$(LIBFONT)
+ 	cp font/* $(LIBDIR)/$(LIBFONT)
+ 	chmod 644 $(LIBDIR)/$(LIBFONT)/*
+ 	@echo ""
+-	mkdir $(LIBDIR)/$(LIBMAPS)
++	-mkdir $(LIBDIR)/$(LIBMAPS)
+ 	chmod 755 $(LIBDIR)/$(LIBMAPS)
+ 	cp maps/* $(LIBDIR)/$(LIBMAPS)
+ 	chmod 644 $(LIBDIR)/$(LIBMAPS)/*
+ 	@echo ""
+-	mkdir $(LIBDIR)/$(LIBLOCA)
++	-mkdir $(LIBDIR)/$(LIBLOCA)
+ 	chmod 755 $(LIBDIR)/$(LIBLOCA)
++	touch $(LIBDIR)/$(LIBLOCA)/.place_holder
+ 	@echo ""
+ 	@echo "(c) Initializing run (should be silent, no errors expected)"
+ 	$(BINDIR)/lout -x -s $(LIBDIR)/$(LIBINCL)/init
+@@ -397,6 +396,7 @@
+ 	@echo "(d) Changing mode of files just created by initializing run"
+ 	chmod 644 $(LIBDIR)/$(LIBDATA)/*
+ 	chmod 644 $(LIBDIR)/$(LIBHYPH)/*
++	chown -R bin:bin $(LIBDIR)
+ 
+ installman:
+ 	@echo ""
+@@ -405,23 +405,27 @@
+ 	    -e "s@<DOCDIR>@$(DOCDIR)@" -e "s@<MANDIR>@$(MANDIR)@"	\
+ 	man/lout.1 > $(MANDIR)/lout.1
+ 	chmod 644 $(MANDIR)/lout.1
++	chown bin:bin $(MANDIR)/lout.1
+ 	cp man/prg2lout.1 $(MANDIR)/prg2lout.1
+ 	chmod 644 $(MANDIR)/prg2lout.1
++	chown bin:bin $(MANDIR)/prg2lout.1
+ 
+ installdoc:
+ 	@echo ""
+ 	@echo "Creating DOCDIR $(DOCDIR) and copying documentation into it"
+-	$(RCOPY) doc $(DOCDIR)
++	-mkdir -p $(DOCDIR)
++	$(RCOPY) doc/* $(DOCDIR)
+ 	chmod 755 $(DOCDIR)
+ 	chmod 755 $(DOCDIR)/*
+ 	chmod 644 $(DOCDIR)/*/*
++	chown -R bin.bin $(DOCDIR)
+ 
+ installfr:
+ 	@echo ""
+ 	@echo "Putting French error messages into $(LIBDIR)/$(LIBLOCA)/$(LOC_FR)"
+-	mkdir $(LIBDIR)/$(LIBLOCA)/$(LOC_FR)
++	-mkdir $(LIBDIR)/$(LIBLOCA)/$(LOC_FR)
+ 	chmod 755 $(LIBDIR)/$(LIBLOCA)/$(LOC_FR)
+-	mkdir $(LIBDIR)/$(LIBLOCA)/$(LOC_FR)/LC_MESSAGES
++	-mkdir $(LIBDIR)/$(LIBLOCA)/$(LOC_FR)/LC_MESSAGES
+ 	chmod 755 $(LIBDIR)/$(LIBLOCA)/$(LOC_FR)/LC_MESSAGES
+ 	cp locale/msgs.fr $(LIBDIR)/$(LIBLOCA)/$(LOC_FR)/LC_MESSAGES/msgs.$(LOC_FR)
+ 	gencat $(LIBDIR)/$(LIBLOCA)/$(LOC_FR)/LC_MESSAGES/errors.$(LOC_FR)	\
+@@ -431,9 +435,9 @@
+ installde:
+ 	@echo ""
+ 	@echo "Putting German error messages into $(LIBDIR)/$(LIBLOCA)/$(LOC_DE)"
+-	mkdir $(LIBDIR)/$(LIBLOCA)/$(LOC_DE)
++	-mkdir $(LIBDIR)/$(LIBLOCA)/$(LOC_DE)
+ 	chmod 755 $(LIBDIR)/$(LIBLOCA)/$(LOC_DE)
+-	mkdir $(LIBDIR)/$(LIBLOCA)/$(LOC_DE)/LC_MESSAGES
++	-mkdir $(LIBDIR)/$(LIBLOCA)/$(LOC_DE)/LC_MESSAGES
+ 	chmod 755 $(LIBDIR)/$(LIBLOCA)/$(LOC_DE)/LC_MESSAGES
+ 	cp locale/msgs.de $(LIBDIR)/$(LIBLOCA)/$(LOC_DE)/LC_MESSAGES/msgs.$(LOC_DE)
+ 	gencat $(LIBDIR)/$(LIBLOCA)/$(LOC_DE)/LC_MESSAGES/errors.$(LOC_DE)	\
