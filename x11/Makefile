@@ -11,7 +11,6 @@
     SUBDIR += XFree86-aoutlibs
     SUBDIR += XFree86-contrib
     SUBDIR += aterm
-    SUBDIR += backfract
     SUBDIR += bgrot
     SUBDIR += blast
     SUBDIR += bricons
