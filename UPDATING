@@ -27,7 +27,7 @@ upgrades.
 
   Also remember that 'make index' is only supported on _complete_
   ports-trees. If you are currently refusing whole categories by means
-  of a cvsup supfile, use 'make fetchindex' instead (or consider 
+  of a cvsup refuse file, use 'make fetchindex' instead (or consider 
   keeping an extra machine/jail with a complete ports-tree around to
   do INDEX builds on).
 
