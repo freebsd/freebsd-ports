@@ -1961,6 +1961,7 @@ gtkfig		ports/graphics/gtkfig
 gtkfind		ports/misc/gtkfind
 gtkgl		ports/x11-toolkits/gtkgl
 gtkglarea	ports/x11-toolkits/gtkglarea
+gtkglarea--	ports/x11-toolkits/gtkglarea--
 gtkgraph	ports/graphics/gtkgraph
 gtkhtml		ports/www/gtkhtml
 gtkicq		ports/net/gtkicq
