@@ -71,6 +71,7 @@
     SUBDIR += gtetrinet
     SUBDIR += gtkabale
     SUBDIR += gtkballs
+    SUBDIR += heretic
     SUBDIR += hex
     SUBDIR += icbm3d
     SUBDIR += ifm
