@@ -7,14 +7,14 @@
 
 PORTNAME=	Mail-SpamAssassin
 PORTVERSION=	2.31
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://spamassassin.org/released/ \
 		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Mail
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ports@geeksrus.net
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/DNS.pm:${PORTSDIR}/net/p5-Net-DNS \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools
@@ -34,6 +34,8 @@ MAN3=		Mail::SpamAssassin.3 Mail::SpamAssassin::PerMsgStatus.3 \
 		Mail::SpamAssassin::SMTP::SmartHost.3
 MAN1PREFIX=	${PREFIX}
 MAN1=		spamd.1 spamassassin.1 spamc.1 spamproxyd.1
+DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
+EXAMPLESDIR=	${PREFIX}/share/examples//${PKGNAMEPREFIX}${PORTNAME}
 
 post-patch:
 	@${FIND} ${WRKSRC} -name \*.orig -exec ${RM} {} \;

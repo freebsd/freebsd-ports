@@ -25,19 +25,19 @@ lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/Reporter.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/SMTP/SmartHost.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/TextCat.pm
 lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/SpamAssassin/SMTP/SmartHost/autosplit.ix
-%%PORTDOCS%%share/doc/Mail-SpamAssassin/Changes
-%%PORTDOCS%%share/doc/Mail-SpamAssassin/README
-%%PORTDOCS%%share/doc/Mail-SpamAssassin/README.SmartHost
-%%PORTDOCS%%share/doc/Mail-SpamAssassin/README.spamd
-%%PORTDOCS%%share/doc/Mail-SpamAssassin/README.spamd-vpopmail
-%%PORTDOCS%%share/doc/Mail-SpamAssassin/README.spamproxy
-%%PORTDOCS%%share/doc/Mail-SpamAssassin/README.sql
-%%PORTDOCS%%share/doc/Mail-SpamAssassin/TODO
-%%PORTDOCS%%share/doc/Mail-SpamAssassin/TRADEMARK
-%%PORTDOCS%%share/doc/Mail-SpamAssassin/procmailrc.example
-%%PORTDOCS%%share/doc/Mail-SpamAssassin/sample-nonspam.txt
-%%PORTDOCS%%share/doc/Mail-SpamAssassin/sample-spam.txt
-%%PORTDOCS%%share/doc/Mail-SpamAssassin/spamassassin.sql
+%%PORTDOCS%%share/doc/p5-Mail-SpamAssassin/Changes
+%%PORTDOCS%%share/doc/p5-Mail-SpamAssassin/README
+%%PORTDOCS%%share/doc/p5-Mail-SpamAssassin/README.SmartHost
+%%PORTDOCS%%share/doc/p5-Mail-SpamAssassin/README.spamd
+%%PORTDOCS%%share/doc/p5-Mail-SpamAssassin/README.spamd-vpopmail
+%%PORTDOCS%%share/doc/p5-Mail-SpamAssassin/README.spamproxy
+%%PORTDOCS%%share/doc/p5-Mail-SpamAssassin/README.sql
+%%PORTDOCS%%share/doc/p5-Mail-SpamAssassin/TODO
+%%PORTDOCS%%share/doc/p5-Mail-SpamAssassin/TRADEMARK
+%%PORTDOCS%%share/doc/p5-Mail-SpamAssassin/procmailrc.example
+%%PORTDOCS%%share/doc/p5-Mail-SpamAssassin/sample-nonspam.txt
+%%PORTDOCS%%share/doc/p5-Mail-SpamAssassin/sample-spam.txt
+%%PORTDOCS%%share/doc/p5-Mail-SpamAssassin/spamassassin.sql
 share/spamassassin/10_misc.cf
 share/spamassassin/20_body_tests.cf
 share/spamassassin/20_head_tests.cf
@@ -56,7 +56,7 @@ share/spamassassin/60_whitelist.cf
 share/spamassassin/languages
 share/spamassassin/triplets.txt
 share/spamassassin/user_prefs.template
-%%PORTDOCS%%@dirrm share/doc/Mail-SpamAssassin
+%%PORTDOCS%%@dirrm share/doc/p5-Mail-SpamAssassin
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail/SpamAssassin
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/SMTP
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin
