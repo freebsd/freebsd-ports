@@ -4417,6 +4417,7 @@ mew2		ports/mail/mew2
 mew2-emacs20	ports/mail/mew2-emacs20
 mew2-xemacs21	ports/mail/mew2-xemacs21
 mew2-xemacs21-mule	ports/mail/mew2-xemacs21-mule
+mftrace		ports/print/mftrace
 mg		ports/editors/mg
 mgapdesk	ports/x11/mgapdesk
 mgdiff		ports/textproc/mgdiff
@@ -6610,7 +6611,6 @@ pkg_tree	ports/sysutils/pkg_tree
 pkgconfig	ports/devel/pkgconfig
 pkill		ports/sysutils/pkill
 pks		ports/security/pks
-pktrace		ports/print/pktrace
 pktsuckers	ports/security/pktsuckers
 pl-aspell	ports/polish/aspell
 pl-openoffice	ports/polish/openoffice
@@ -8021,7 +8021,7 @@ sodipodi	ports/graphics/sodipodi
 sokoban		ports/games/sokoban
 sol		ports/games/sol
 solarwolf	ports/games/solarwolf
-solfege		ports/misc/solfege
+solfege		ports/audio/solfege
 solidpop3d	ports/mail/solidpop3d
 solitaire	ports/math/solitaire
 soltaire	ports/math/solitaire
