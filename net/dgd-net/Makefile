@@ -6,26 +6,10 @@
 #
 
 PORTNAME=	dgd-net
-PORTVERSION=	1.1.6
+PORTVERSION=	1.1.8
 CATEGORIES=	net lang
-MASTER_SITES=	ftp://ftp.imaginary.com/pub/LPC/servers/DGD/ \
-		ftp://ftp.lysator.liu.se/pub/lpmud/drivers/dgd/ \
-		ftp://ftp.veda.is/pub/mud/dgd/ \
-		ftp://ftp.dreamlabs.com/pub/mud/dgd/
-DISTFILES=	dgd-1.1.tar.gz
-
-PATCH_SITES=	ftp://ftp.imaginary.com/pub/LPC/servers/DGD/patches/ \
-		ftp://ftp.lysator.liu.se/pub/lpmud/drivers/dgd/patches/ \
-		ftp://ftp.lysator.liu.se/pub/lpmud/drivers/dgd/pkg/ \
-		ftp://ftp.veda.is/pub/mud/dgd/patches/ \
-		ftp://ftp.dreamlabs.com/pub/mud/dgd/patches/
-PATCHFILES=	net-10.dgd-1.1.gz \
-		1.1p1.gz \
-		1.1p2.gz \
-		1.1p3.gz \
-		1.1p4.gz \
-		1.1p5.gz \
-		1.1p6.gz
+MASTER_SITES=	ftp://ftp.imaginary.com/pub/LPC/servers/DGD/archive/
+DISTFILES=	dgd-1.1p8.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -42,6 +26,7 @@ PATCH_DIST_ARGS=	-d ${WRKDIR} --forward --quiet -E ${PATCH_DIST_STRIP}
 
 pre-patch:
 	@${LN} -s dgd ${WRKDIR}/dgd+net
+	@mkdir ${WRKDIR}/dgd/bin
 
 post-build:
 	@cd ${WRKSRC}; ${MAKE} install
@@ -57,3 +42,4 @@ do-install:
 		| tar -C ${PREFIX} -xpf -
 
 .include <bsd.port.mk>
+

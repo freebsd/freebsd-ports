@@ -1,90 +1,56 @@
-*** Makefile	Mon Jul 20 09:19:39 1998
---- Makefile.new	Mon Jul 20 09:23:57 1998
-***************
-*** 6,24 ****
-  DEBUG=
-  CCFLAGS=-O2 $(DEFINES) $(DEBUG)
-  CFLAGS=	-I. -Icomp -Ilex -Ied -Ikfun $(CCFLAGS)
-! LDFLAGS=
-! LIBS=
-! CC=	gcc
-  LD=	$(CC)
-  DMAKE=	make
-  BIN=	../bin
-  
-  OBJ=	alloc.o error.o hash.o swap.o str.o array.o object.o data.o path.o \
-! 	editor.o comm.net.o call_out.o interpret.o config.o dgd.o
-  EDOBJ=	alloc.o error.o
-  LEXOBJ=	alloc.o hash.o
-  COMPOBJ=alloc.o error.o hash.o path.o str.o array.o object.o data.o \
-! 	interpret.o config.o
-  
-  a.out:	$(OBJ) always
-  	cd comp; $(MAKE) 'DMAKE=$(DMAKE)' 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' dgd
---- 6,26 ----
-  DEBUG=
-  CCFLAGS=-O2 $(DEFINES) $(DEBUG)
-  CFLAGS=	-I. -Icomp -Ilex -Ied -Ikfun $(CCFLAGS)
-! LDFLAGS=-s
-! LIBS=-lcrypt -lgnuregex
-! CC=	cc
-  LD=	$(CC)
-  DMAKE=	make
-  BIN=	../bin
-  
-  OBJ=	alloc.o error.o hash.o swap.o str.o array.o object.o data.o path.o \
-! 	editor.o comm.net.o call_out.o interpret.o config.o dgd.o rgx.o
-  EDOBJ=	alloc.o error.o
-  LEXOBJ=	alloc.o hash.o
-  COMPOBJ=alloc.o error.o hash.o path.o str.o array.o object.o data.o \
-! 	interpret.o config.o rgx.o
-! 
-! all: a.out comp/a.out
-  
-  a.out:	$(OBJ) always
-  	cd comp; $(MAKE) 'DMAKE=$(DMAKE)' 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' dgd
-***************
-*** 38,44 ****
-  	-mv $(BIN)/driver $(BIN)/driver.old
-  	cp a.out $(BIN)/driver
-  
-! install: $(BIN)/driver
-  
-  comp.sub: $(COMPOBJ)
-  	@for i in $(COMPOBJ); do echo ../$$i; done > comp.sub
---- 40,50 ----
-  	-mv $(BIN)/driver $(BIN)/driver.old
-  	cp a.out $(BIN)/driver
-  
-! $(BIN)/precomp: comp/a.out
-! 	-mv $(BIN)/precomp $(BIN)/precomp.old
-! 	cp comp/a.out $(BIN)/precomp
-! 
-! install: $(BIN)/driver $(BIN)/precomp
-  
-  comp.sub: $(COMPOBJ)
-  	@for i in $(COMPOBJ); do echo ../$$i; done > comp.sub
-***************
-*** 54,60 ****
-  
-  comp/a.out:
-  	cd comp; $(DMAKE) 'DMAKE=$(DMAKE)' 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' \
-! 			  'LIBS=$(LIBS)' a.out
-  
-  clean:
-  	rm -f a.out $(OBJ) comp.sub lex.sub ed.sub
---- 60,66 ----
-  
-  comp/a.out:
-  	cd comp; $(DMAKE) 'DMAKE=$(DMAKE)' 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' \
-! 			'LDFLAGS=$(LDFLAGS)' 'LIBS=$(LIBS)' a.out
-  
-  clean:
-  	rm -f a.out $(OBJ) comp.sub lex.sub ed.sub
-***************
-*** 92,94 ****
---- 98,101 ----
-  call_out.o config.o dgd.o: call_out.h
-  error.o comm.o call_out.o config.o dgd.o: comm.h
-  config.o: version.h
-+ rgx.o: str.h array.h rgx.h interpret.h
+--- Makefile.orig	Sat Dec 15 14:14:50 2001
++++ Makefile	Sat Dec 15 14:17:42 2001
+@@ -6,19 +6,21 @@
+ DEBUG=
+ CCFLAGS=-O2 $(DEFINES) $(DEBUG)
+ CFLAGS=	-I. -Icomp -Ilex -Ied -Ikfun $(CCFLAGS)
+-LDFLAGS=
+-LIBS=
+-CC=	gcc
++LDFLAGS=	-s
++LIBS=	-lcrypt -lgnuregex
++CC?=	cc
+ LD=	$(CC)
+ DMAKE=	make
+ BIN=	../bin
+ 
+ OBJ=	alloc.o error.o hash.o swap.o str.o array.o object.o data.o path.o \
+-	editor.o comm.o call_out.o interpret.o config.o dgd.o
++	editor.o comm.o call_out.o interpret.o config.o dgd.o rgx.o
+ EDOBJ=	alloc.o error.o
+ LEXOBJ=	alloc.o hash.o
+ COMPOBJ=alloc.o error.o hash.o path.o str.o array.o object.o data.o \
+-	interpret.o config.o
++	interpret.o config.o rgx.o
++
++all: a.out comp/a.out
+ 
+ a.out:	$(OBJ) always
+ 	cd comp; $(MAKE) 'DMAKE=$(DMAKE)' 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' dgd
+@@ -38,7 +40,11 @@
+ 	-mv $(BIN)/driver $(BIN)/driver.old
+ 	cp a.out $(BIN)/driver
+ 
+-install: $(BIN)/driver
++$(BIN)/precomp: comp/a.out
++	-mv $(BIN)/precomp $(BIN)/precomp.old
++	cp comp/a.out $(BIN)/precomp
++
++install: $(BIN)/driver $(BIN)/precomp
+ 
+ comp.sub: $(COMPOBJ)
+ 	@for i in $(COMPOBJ); do echo ../$$i; done > comp.sub
+@@ -54,7 +60,7 @@
+ 
+ comp/a.out:
+ 	cd comp; $(DMAKE) 'DMAKE=$(DMAKE)' 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' \
+-			  'LIBS=$(LIBS)' a.out
++		'LDFLAGS=$(LDFLAGS)' 'LIBS=$(LIBS)' a.out
+ 
+ clean:
+ 	rm -f a.out $(OBJ) comp.sub lex.sub ed.sub
+@@ -92,3 +98,4 @@
+ call_out.o config.o dgd.o: call_out.h
+ error.o comm.o call_out.o config.o dgd.o: comm.h
+ config.o: version.h
++rgx.o: str.h array.h rgx.h interpret.h
