@@ -3,10 +3,10 @@
 # Date created:         4 May 1995
 # Whom:                 adam
 #
-# $Id: Makefile,v 1.5 1995/12/07 12:43:23 adam Exp $
+# $Id: Makefile,v 1.6 1995/12/08 22:07:46 asami Exp $
 #
 
-DISTNAME=       wn-1.12.2
+DISTNAME=       wn-1.12.3
 CATEGORIES+=	www
 MASTER_SITES=	ftp://ftp.acns.nwu.edu/pub/wn/
 
@@ -19,7 +19,7 @@ pre-patch:
 
 post-install:
 	@mkdir -p ${PREFIX}/wn
-	@cp -PR ${WRKSRC}/docs ${PREFIX}/wn
+	@cp -PR ${WRKSRC}/docs ${WRKSRC}/images ${PREFIX}/wn
 	@install -c -o bin -g bin  ${WRKSRC}/bin/wn ${PREFIX}/libexec
 	@install -c -o bin -g bin  ${WRKSRC}/bin/swn ${PREFIX}/sbin
 	@install -c -o bin -g bin  ${WRKSRC}/bin/wndex ${PREFIX}/bin
