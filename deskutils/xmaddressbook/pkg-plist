@@ -1,0 +1,4 @@
+bin/xmaddressbook
+lib/X11/app-defaults/XmAddressBook
+lib/X11/xmaddressbook/xmaddressbook.hlp
+man/man1/xmaddressbook.1.gz
