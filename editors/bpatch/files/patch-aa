@@ -1,0 +1,45 @@
+--- /dev/null	Mon Mar 18 12:50:49 1996
++++ Makefile	Mon Mar 18 19:30:47 1996
+@@ -0,0 +1,42 @@
++# This may have to change on your system.
++# You may have to fiddle with various combinations of curses, termcap,
++# terminfo, etc.  Good luck!
++PREFIX?=	/usr/local
++BINDIR=		${PREFIX}/bin
++MANDIR=		${PREFIX}/man/man1
++
++LIBS	= -lncurses -ltermcap
++#LIBS	= -ltermlib
++#LIBS	= -lterminfo
++#for sysV
++#LIBS	= -lcurses
++
++# However you need getopt.
++#GETOPT	= -lgetopt
++#not for sysV! (nor for some BSD)
++#GETOPT	=
++
++# If you're running on a 4.[23] system, you probably want this.
++#WORK	= -DMOD_HAX
++#sysV
++#WORK	=
++
++#BSD or thereabouts
++CFLAGS+= $(WORK)
++#Microport sysV/AT, large model, for sdb debugger
++#CFLAGS	= -g -Ml
++
++all: bpatch bpatch.1.gz
++
++clean:
++	rm -f bpatch bpatch.o bpatch.1.gz *.core
++
++bpatch:		bpatch.o
++	$(CC) -o bpatch $(CFLAGS) bpatch.o $(GETOPT) $(LIBS)
++
++bpatch.1.gz: bpatch.1
++	gzip -c < bpatch.1 > bpatch.1.gz
++
++install: bpatch bpatch.1.gz
++	install -c -o bin -g bin -m 555 bpatch ${DESTDIR}${BINDIR}
++	install -c -o bin -g bin -m 444 bpatch.1.gz ${DESTDIR}${MANDIR}

@@ -1,0 +1,147 @@
+--- bpatch.c.orig	Wed Jan 17 15:33:33 1990
++++ bpatch.c	Mon Mar 18 19:23:16 1996
+@@ -90,10 +90,15 @@
+ /*E*/
+ /*S includes, globals, and defines */
+ /*Page Eject*/
+-#include	<curses.h>
++#include <ncurses.h>
+ #include <fcntl.h>
+ #include <signal.h>
+ #include <ctype.h>
++#include <stdlib.h>
++#include <string.h>
++#include <unistd.h>
++#include <stdio.h>
++#include <termios.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ 
+@@ -103,14 +108,8 @@
+ void icc ();
+ void copyrec ();
+ void schwapp ();
+-
+-/* added declarations, mostly for cleanliness */
+-extern long lseek();
+-extern long atol();
+-extern char *strncpy();
+-extern void exit();
+-extern unsigned sleep();	/* signal problems ??? if sleep called */
+-extern void perror();
++void breakp ();
++void reset ();
+ 
+ /* set up for calls to outstr and errmsg, etc, */
+ /* by use of sprintf to fill outbuf */
+@@ -190,7 +189,7 @@
+ #ifdef	MOD_HAX
+ #else	/* use original code... */
+ 	/* plus some more for restoring terminal function */
+-	struct termio asis, aswas;
++	struct termios asis, aswas;
+ #endif	/* MOD_HAX */
+ 
+ /*S main - control all the work from here */
+@@ -210,12 +209,10 @@
+ 	extern WINDOW *newwin ();
+ 
+ 	register char	*cp;		/* general purpose char ptr	*/
+-	extern   char	*gets ();	/* get string from stdin	*/
+ 		  char	m = '\017';	/* mask for hex edit		*/
+ 		  char	response[512];	/* general purpose buffer	*/
+ 		  int 	z;		/* character read in		*/
+ 	 
+-	int		breakp ();	/* signal trapping function	*/
+ 	int		c;		/* current screen column	*/
+ 	int		change = 0;	/* true if cmd line option toggled */
+ 	int		fid;		/* file descriptor 		*/
+@@ -235,7 +232,6 @@
+ 
+ 	extern long getnum ();
+ 	extern char *instr ();		/* get a string from the cmd line */
+-	extern int reset ();		/* exit function - reset terminal */
+ 
+ 	/* ------------------------------------------------------------ */
+ 	/* set up signal handling					 */
+@@ -339,13 +335,13 @@
+ 		   but it's good enough.  -r$ */
+ 		raw();
+ #else	/* use original code... */
+-		ioctl (0, TCGETA, &asis);
++		tcgetattr (0, &asis);
+ 		aswas = asis;	/* save termio stuff for later restore */
+ 		asis.c_cc[VINTR] = '\0';
+ 		asis.c_iflag &= ~IXON;
+ 		asis.c_iflag &= ~IXOFF;
+ 		asis.c_iflag &= ~IXANY;
+-		ioctl (0, TCSETA, &asis);
++		tcsetattr (0, TCSANOW, &asis);
+ #endif	/* MOD_HAX */
+ 	}
+ 
+@@ -478,7 +474,9 @@
+ 				}
+ 				pbrk = 0;
+ 				fprintf (stderr, "\007");
+-				gets (response);
++				fgets (response, 512, stdin);
++				if ((cp = strchr (response, '\n')))
++					*cp = 0;
+ 
+ 				if (pbrk) status = EOF;
+ 			}
+@@ -832,7 +830,8 @@
+ 				touchwin (alphawin);
+ 				wrefresh (alphawin);
+ 
+-				while ((z = wgetch (alphawin)) != DEL)
++				while ((z = wgetch (alphawin)) != KEY_DC &&
++				       z != KEY_BACKSPACE)
+ 				{
+ 					if (!arrow (z, &r, &c))
+ 					{
+@@ -902,7 +901,8 @@
+ 				touchwin (hexwin);
+ 				wrefresh (hexwin);
+ 
+-				while ((z = wgetch (hexwin)) != DEL)
++				while ((z = wgetch (hexwin)) != KEY_DC
++				       && z != KEY_BACKSPACE)
+ 				{
+ 					if (!arrow (z, &r, &c))
+ 					{
+@@ -1281,7 +1281,7 @@
+ /*S breakp - set pbrk on interrupt */
+ /*H breakp */
+ /*E*/
+-int breakp (i)
++void breakp (i)
+ int i;
+ {
+ 	int s;
+@@ -1592,6 +1592,7 @@
+ /*S reset - reset terminal to original state */
+ /*H reset */
+ /*E*/
++void
+ reset (sig)
+ int sig;
+ {
+@@ -1600,7 +1601,7 @@
+ 		move (23, 0);
+ 		refresh ();
+ #ifndef MOD_HAX
+-		ioctl (0, TCSETA, &aswas);
++		tcsetattr (0, TCSANOW, &aswas);
+ #endif
+ 		endwin ();
+ 	}
+@@ -1610,7 +1611,6 @@
+ 		fprintf (stderr, "killed with signal %d\n", sig);
+ 		exit (sig);
+ 	}
+-	return (0);
+ }
+ /*S arrow - determine if current character is a cursor control key */
+ /*H arrow */

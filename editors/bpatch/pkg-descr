@@ -1,0 +1,12 @@
+BPATCH.C
+Original code written by Garry M. Johnson and Steven Lisk.
+
+Neat code and program.  Dump or edit files (binary or acsii), displayed
+by 256-byte records in side-by-side hex and ascii formats.  Various
+other features (eg, toggled swap within byte pairs).
+
+Jörg's remark:
+
+The most interesting feature of this editor is that it doesn't load the
+entire file at once, unlike all other hex editors.  Thus, you can browse
+and edit very large files or even raw disks.
