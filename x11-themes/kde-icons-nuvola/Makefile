@@ -7,9 +7,8 @@
 
 PORTNAME=	nuvola
 PORTVERSION=	1.0
+PORTREVISION=	1
 MASTER_SITES=	http://www.icon-king.com/files/
-DISTNAME=	${PORTNAME}-${PORTVERSION}beta
-EXTRACT_SUFX=	.tgz
 
 COMMENT=	KDE Nuvola iconset, SVG evolution of SKY
 
