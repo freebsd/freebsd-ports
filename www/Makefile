@@ -211,6 +211,7 @@
     SUBDIR += mod_jk
     SUBDIR += mod_jk2
     SUBDIR += mod_layout
+    SUBDIR += mod_layout2
     SUBDIR += mod_limitipconn
     SUBDIR += mod_log_sql
     SUBDIR += mod_mp3

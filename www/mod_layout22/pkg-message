@@ -1,0 +1,9 @@
+-----------------------------------------------------------------
+You have installed mod_layout, a module that can automatically add
+a footer or header to pages served.
+Please Add :
+	LoadModule layout_module libexec/apache2/liblayout.so
+to your httpd.conf.
+
+Please note that this module is an alpha version.
+-----------------------------------------------------------------
