@@ -6,24 +6,25 @@
 #
 
 PORTNAME=	wmwork
-PORTVERSION=	0.1.0
+PORTVERSION=	0.2.0
 CATEGORIES=	misc windowmaker afterstep
 MASTER_SITES=	http://wwwtcs.inf.tu-dresden.de/~godisch/debian/wmwork/
-DISTNAME=	wmwork_${PORTVERSION}.orig
+DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
-WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
-USE_GMAKE=	yes
-USE_XPM=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
+
 USE_X_PREFIX=	yes
+USE_XPM=	yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lgnugetopt"
 
 MAN1=	wmwork.1
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/wmwork ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/wmwork.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
