@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	AbiWord2
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.4
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.abisource.com/downloads/Version-${PORTVERSION}/lf/
@@ -20,9 +20,10 @@ COMMENT=	An open-source, cross-platform WYSIWYG word processor
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		iconv.3:${PORTSDIR}/converters/libiconv \
-		gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20 \
+		glade-2.0.0:${PORTSDIR}/devel/libglade2 \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
-		fribidi.0:${PORTSDIR}/converters/fribidi
+		fribidi.0:${PORTSDIR}/converters/fribidi \
+		aspell.15:${PORTSDIR}/textproc/aspell
 
 DIST_SUBDIR=	AbiWord
 
@@ -36,7 +37,6 @@ USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gnomehier
-WANT_GNOME=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -liconv"
 CONFIGURE_ARGS=	--enable-xft
@@ -45,8 +45,32 @@ MAKEFILE=	GNUmakefile
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/include/wv.h)
-BROKEN=	"This port cannot be built when textproc/wv is installed because of a header conflict.  Please remove textproc/wv, and resume the build.  If textproc/wv is no longer installed, please remove ${LOCALBASE}/include/wv.h, and resume the AbiWord build"
+BROKEN=	"This port cannot be built when textproc/wv is installed because of a header conflict.  Please remove textproc/wv, and resume the build.  If textproc/wv is no longer installed, please remove ${LOCALBASE}/include/wv.h, and resume the AbiWord2 build"
 .endif
+
+.if defined(WITH_GNOME) || \
+	( exists(${X11BASE}/libdata/pkgconfig/libnautilus.pc) && \
+		exists(${X11BASE}/libdata/pkgconfig/gal-2.0.pc) )
+LIB_DEPENDS+=		nautilus.2:${PORTSDIR}/x11-fm/nautilus2 \
+			gal-2.0.1:${PORTSDIR}/x11-toolkits/gal2
+CONFIGURE_ARGS+=	--enable-gnome
+PLIST_SUB+=		GNOME:=""
+PKGNAMESUFFIX=		-gnome
+.else
+PLIST_SUB+=		GNOME:="@comment "
+.endif
+
+.if defined(WITH_GUCHARMAP) || exists(${X11BASE}/libdata/pkgconfig/gucharmap.pc)
+LIB_DEPENDS+=		gucharmap.1:${PORTSDIR}/misc/gucharmap
+.else
+CONFIGURE_ARGS+=	--disable-gucharmap
+.endif
+
+pre-everything::
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "AbiWord2 has the following tunable option(s):"
+	@${ECHO_MSG} "	WITH_GUCHARMAP=yes	Enable use of Gucharmap as the symbol insertion tool (default: auto)"
+	@${ECHO_MSG} ""
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%AUTOMAKE%%|${AUTOMAKE}|g ; \
