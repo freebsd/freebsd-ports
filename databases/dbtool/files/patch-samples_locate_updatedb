@@ -1,0 +1,16 @@
+--- samples/locate/updatedb.orig	Sat Apr 20 17:14:18 2002
++++ samples/locate/updatedb	Sun Mar 23 12:24:47 2003
+@@ -11,10 +11,10 @@
+ # $Id: updatedb,v 1.2 2001/06/26 23:00:02 scip Exp $
+ #
+ 
+-dbtool="/usr/bin/dbtool";
++dbtool="%%PREFIX%%/bin/dbtool";
+ find="/usr/bin/find";
+-db="/var/local/locate.db";
+-egrep="/bin/egrep";
++db="/var/db/locate.db";
++egrep="/usr/bin/egrep";
+ cp="/bin/cp"
+ 
+ $cp /dev/null $db;
