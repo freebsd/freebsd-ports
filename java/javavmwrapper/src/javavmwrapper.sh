@@ -2,9 +2,9 @@
 #
 # javawrapper.sh
 #
-# Allows to install several Java Virtual Machines
-# on the same system and use config file/or environment
-# variable to select wichever to use
+# Allow the installation of several Java Virtual Machines on the system.
+# They can then be selected from based on environment variables and the
+# configuration file.
 #
 # ----------------------------------------------------------------------------
 # "THE BEER-WARE LICENSE" (Revision 42, (c) Poul-Henning Kamp):
@@ -58,8 +58,8 @@ tryJavaCommand () {
 createJavaLinks () {
     for exe in "${1}"/bin/* "${1}"/jre/bin/*; do
         if [ -x "${exe}" -a \
-	     ! -d "${exe}" -a \
-	     "`basename "${exe}"`" = "`basename "${exe}" .so`" -a \
+             ! -d "${exe}" -a \
+             "`basename "${exe}"`" = "`basename "${exe}" .so`" -a \
              ! -e "${PREFIX}/bin/`basename "${exe}"`" -a \
              -w "${PREFIX}/bin" ]; then
             ln -s "${PREFIX}/bin/javavm" \
@@ -88,8 +88,20 @@ sortConfiguration () {
     export JAVAVMS
     while read JAVAVM; do
         VM=`echo "${JAVAVM}" | sed -E 's|[[:space:]]*#.*||' 2>/dev/null`
-        # Check the VM actually exists
+        # Check that the VM exists and is "sane"
         if [ ! -e "${VM}" ]; then
+            continue
+        fi
+        if [ -d "${VM}" ]; then
+            continue
+        fi
+        if [ ! -x "${VM}" ]; then
+            continue
+        fi
+        if [ `basename "${VM}"` != "java" ]; then
+            continue
+        fi
+        if [ "`realpath "${VM}" 2>/dev/null `" = "${PREFIX}/bin/javavm" ]; then
             continue
         fi
         # Skip duplicate VMs
@@ -266,13 +278,25 @@ registerVM () {
         exit 1
     fi
 
-    # Check that the VM exists and is executable
+    # Check that the VM exists and is "sane"
     if [ ! -e "${VM}" ]; then
         echo "${IAM}: error: JavaVM \"${VM}\" does not exist" 1>&2
         exit 1
     fi
+    if [ -d "${VM}" ]; then
+        echo "${IAM}: error: JavaVM \"${VM}\" is a directory" 1>&2
+        exit 1
+    fi
     if [ ! -x "${VM}" ]; then
         echo "${IAM}: error: JavaVM \"${VM}\" is not executable" 1>&2
+        exit 1
+    fi
+    if [ `basename "${VM}"` != "java" ]; then
+        echo "${IAM}: error: JavaVM \"${VM}\" is not valid" 1>&2
+        exit 1
+    fi
+    if [ "`realpath "${VM}" 2>/dev/null `" = "${PREFIX}/bin/javavm" ]; then
+        echo "${IAM}: error: JavaVM \"${VM}\" is javavm!" 1>&2
         exit 1
     fi
 
