@@ -3,7 +3,7 @@
 # Date created:        14 March 1999
 # Whom:                Kris Kennaway <kkennawa@physics.adelaide.edu.au>
 #
-# $Id: Makefile,v 1.1.1.1 1999/03/14 11:38:21 kris Exp $
+# $Id: Makefile,v 1.2 1999/04/19 13:56:27 kris Exp $
 #
 
 DISTNAME=	wmMoonClock-1.25
@@ -24,7 +24,7 @@ ALL_TARGET=	clean all
 MAN1=		wmmoonclock.1
 
 do-install:
-	${INSTALL_MAN} ${WRKSRC}/wmMoonClock.1 ${PREFIX}/share/man/man1/wmmoonclock.1
+	${INSTALL_MAN} ${WRKSRC}/wmMoonClock.1 ${PREFIX}/man/man1/wmmoonclock.1
 	${INSTALL_PROGRAM} ${WRKSRC}/wmMoonClock ${PREFIX}/bin/wmmoonclock
 
 .include <bsd.port.mk>
