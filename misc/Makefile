@@ -200,7 +200,6 @@
     SUBDIR += rtfm
     SUBDIR += salias
     SUBDIR += screen
-    SUBDIR += scriptkit
     SUBDIR += seizedesktop
     SUBDIR += sh-utils
     SUBDIR += shc
