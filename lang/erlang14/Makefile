@@ -42,6 +42,7 @@ ERLANG_DOCS=	otp_html_R9C-0.tar.gz
 USE_GMAKE=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
+ONLY_FOR_ARCHS=	i386
 
 CONFIGURE_TARGET=	# Empty
 CONFIGURE_ARGS+=	--enable-threads --enable-hipe
