@@ -1,13 +1,16 @@
---- Makefile	2000/12/14 10:21:57	1.1
-+++ Makefile	2000/12/14 10:28:39
+
+$FreeBSD$
+
+--- Makefile.orig	Sun Feb 25 12:18:53 2001
++++ Makefile	Tue Feb 27 18:19:48 2001
 @@ -2,28 +2,18 @@
  
  NAME = GtkScintilla
  LIB_NAME = gtkscintilla
--VERSION = 0.2
+-VERSION = 0.3
 -PREFIX = $(shell gtk-config --prefix)
 +VERSION = 0
-+PREFIX ?= $(shell $(GTK_CONFIG) --prefix)
++PREFIX = $(shell $(GTK_CONFIG) --prefix)
  
  SCINTILLA_DIR = ./scintilla
 -SCINTILLA_INCLUDE = $(SCINTILLA_DIR)/include
@@ -31,7 +34,7 @@
 -LD = gcc
 +SCINTILLA_LIB = -lscintilla
 +LEXERS = -lscintilla_lexers
-+CFLAGS = $(shell $(GTK_CONFIG) --cflags) -g -Wall -DGTK -DSCI_LEXER -I$(SCINTILLA_INCLUDE)
++CFLAGS = $(shell $(GTK_CONFIG) --cflags) -Wall -DGTK -DSCI_LEXER -I$(SCINTILLA_INCLUDE)
 +LDFLAGS = $(shell $(GTK_CONFIG) --libs) $(SCINTILLA_LIB) $(LEXERS)
 +CC ?= gcc
 +LD = $(CC)
