@@ -126,6 +126,7 @@
     SUBDIR += sced
     SUBDIR += scwm-icons
     SUBDIR += sketch
+    SUBDIR += sodipodi
     SUBDIR += spigot
     SUBDIR += splitmpg
     SUBDIR += stamp
