@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	roadmap
-PORTVERSION=	0.13
+PORTVERSION=	0.14
 CATEGORIES=	astro
-MASTER_SITES=	http://www.geocities.com/pascal_f_martin/roadmap/
+MASTER_SITES=	http://roadmap.saignon.net/roadmap/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/}_src
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nick@netdot.net
-COMMENT=	RoadMap is a displays US maps provided by the US Census Bureau
+COMMENT=	Vector-based GPS moving map
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
@@ -24,17 +23,12 @@ INSTALL_WRKSRC=	${WRKSRC}/src
 
 USE_GNOMENG=	yes
 USE_GNOME=	gtk12
-USE_REINPLACE=	yes
 
 BINS=		buildmap buildus dumpmap
 GUI_BINS=	gtkroadmap gtkroadgps
 SCRIPTS=	rdmdownload rdmgetall rdmgenmaps rdmcompare
 DATA=		sprites preferences schema
 DOCS=		AUTHORS BUGS COPYING README TODO
-
-post-patch:
-	@${REINPLACE_CMD} -e 's,-Wall,-Wall -I${PREFIX}/include,g' ${BUILD_WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's,-lpopt,-lpopt -L${PREFIX}/lib,g' ${INSTALL_WRKSRC}/Makefile
 
 do-install:
 .for _GUI_BIN in ${GUI_BINS}
