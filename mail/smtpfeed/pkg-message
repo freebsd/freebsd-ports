@@ -2,7 +2,7 @@
 smtpfeed is installed into /usr/local/libexec/smtpfeed.
 You'll need to perform 2 steps, (a) to (b), to make smtpfeed
 work:
-	(a) replace /etc/sendmail.cf
+	(a) replace /etc/mail/sendmail.cf
 	(b) setting up /etc/syslog.conf
 
 (a) depends on what kind of configuration tool you are using
