@@ -29,6 +29,7 @@ duds=${pb}/${arch}/${branch}/duds
 
 unset DISPLAY
 
+export PACKAGE_BUILDING=1
 cd ${PORTSDIR}
 make -j${DUDSJOBS} ignorelist ECHO_MSG=true > ${duds} || exit 1
 sort ${duds} > ${duds}.tmp
