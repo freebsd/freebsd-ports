@@ -1,0 +1,39 @@
+--- autoconf/acconfig.h.orig	Mon Nov  3 02:00:52 1997
++++ autoconf/acconfig.h	Sat Nov 29 00:58:47 1997
+@@ -13,6 +13,9 @@
+ /* after compilation, rename executable as `crxvt' */
+ #undef BIG5
+ 
++/* Define if you want XCIN Chinese Input support */
++#undef XCIN
++
+ /* Define if Xlocale support doesn't work */
+ #undef NO_XLOCALE
+ 
+--- autoconf/config.h.in.orig	Mon Nov  3 02:00:52 1997
++++ autoconf/config.h.in	Sat Nov 29 00:58:47 1997
+@@ -58,6 +58,9 @@
+ /* after compilation, rename executable as `crxvt' */
+ #undef BIG5
+ 
++/* Define if you want XCIN Chinese Input support */
++#undef XCIN
++
+ /* Define if Xlocale support doesn't work */
+ #undef NO_XLOCALE
+ 
+--- autoconf/configure.in.orig	Mon Nov  3 02:00:52 1997
++++ autoconf/configure.in	Sat Nov 29 00:58:47 1997
+@@ -63,6 +63,12 @@
+     AC_DEFINE(BIG5)
+   fi])
+ 
++AC_ARG_ENABLE(xcin,
++[  --enable-xcin           enable XCIN support],
++[if test x$enableval = xyes; then
++  AC_DEFINE(XCIN)
++fi])
++
+ AC_ARG_ENABLE(greek,
+   [  --enable-greek          enable greek keyboard support],
+   [if test x$enableval = xyes; then
