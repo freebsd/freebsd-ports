@@ -3544,6 +3544,7 @@ jadetex		ports/print/jadetex
 jaf		ports/java/jaf
 jags		ports/net/jags
 jai		ports/java/jai
+jai-imageio	ports/java/jai-imageio
 jailer		ports/sysutils/jailer
 jailutils	ports/sysutils/jailutils
 jakarta-bcel	ports/java/jakarta-bcel
