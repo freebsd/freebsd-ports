@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	scim
-PORTVERSION=	0.99.5
-PORTREVISION=	1
+PORTVERSION=	0.99.6
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://freedesktop.org/~suzhe/sources/
@@ -38,6 +37,7 @@ PLIST_SUB=	NOSTABLE="@comment "
 .else
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -D__STDC_ISO_10646__" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"
+PLIST_SUB=	NOSTABLE=""
 .endif
 
 post-configure:

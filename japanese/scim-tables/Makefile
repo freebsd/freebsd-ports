@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scim-tables
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.1
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://freedesktop.org/~suzhe/sources/
