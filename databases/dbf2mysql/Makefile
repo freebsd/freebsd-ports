@@ -15,7 +15,7 @@ MAINTAINER=	jedgar@FreeBSD.org
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/dbf2mysql ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKDIR}/mysql2dbf ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/dbf2mysql ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/mysql2dbf ${PREFIX}/bin
 
 .include <bsd.port.mk>
