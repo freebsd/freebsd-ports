@@ -1,0 +1,11 @@
+--- ./Wnn/jlib/js.c.org	Thu Aug 18 18:30:48 1994
++++ ./Wnn/jlib/js.c	Fri Mar  3 05:20:31 1995
+@@ -221,7 +221,7 @@
+ #endif
+ 	return -1;
+     }
+-    if (connect(sd,(caddr_t)&saddr,strlen(saddr.sun_path)+sizeof(saddr.sun_family)) == ERROR) {
++    if (connect(sd,(caddr_t)&saddr,SUN_LEN(&saddr)) == ERROR) {
+ 
+ #if DEBUG
+ 	xerror("jslib:Can't connect socket.\n");
