@@ -83,6 +83,7 @@ share/gnome/sodipodi/fill_fractal.xpm
 share/gnome/sodipodi/fill_gradient.xpm
 share/gnome/sodipodi/fill_none.xpm
 share/gnome/sodipodi/fill_pattern.xpm
+share/gnome/sodipodi/fill_radial.xpm
 share/gnome/sodipodi/fill_solid.xpm
 share/gnome/sodipodi/flip_hor.xpm
 share/gnome/sodipodi/flip_ver.xpm
