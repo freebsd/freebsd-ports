@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	slony1
-PORTVERSION=	1.0.0.r1
+PORTVERSION=	1.0.0
 CATEGORIES=	databases
 MASTER_SITES=	http://developer.postgresql.org/~wieck/slony1/download/
-DISTNAME=	slony1-1.0.0.rc1
 
 MAINTAINER=	hsn@netmag.cz
 COMMENT=	PostgreSQL master to multiple slaves replication system
@@ -57,7 +56,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/implementation/Slony-I-implementation.pdf ${DOCSDIR}
 	${MKDIR} ${DOCSDIR}/howto
 	${INSTALL_DATA} ${WRKSRC}/doc/howto/*.txt ${DOCSDIR}/howto
-	${INSTALL_DATA} ${WRKSRC}/src/slonik/slonik_commands.html ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/howto/slonik_commands.html ${DOCSDIR}
 .endif
 	${CAT} ${PKGMESSAGE}
 
