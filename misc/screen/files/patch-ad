@@ -1,17 +1,19 @@
---- configure.orig	Thu May 17 21:05:43 2001
-+++ configure	Mon Jun 25 08:48:53 2001
-@@ -2158,29 +2158,6 @@
-   cat conftest.$ac_ext >&5
-   rm -rf conftest*
-   olibs="$LIBS"
+--- configure.orig	Thu Feb 14 22:11:21 2002
++++ configure	Tue Feb 19 13:26:23 2002
+@@ -3502,43 +3502,6 @@
+   echo "$as_me: failed program was:" >&5
+ cat conftest.$ac_ext >&5
+ olibs="$LIBS"
 -LIBS="-lcurses $olibs"
--echo "checking libcurses" 1>&6
--echo "configure:2164: checking libcurses" >&5
--cat > conftest.$ac_ext <<EOF
--#line 2166 "configure"
+-{ echo "$as_me:3506: checking libcurses..." >&5
+-echo "$as_me: checking libcurses..." >&6;}
+-cat >conftest.$ac_ext <<_ACEOF
+-#line 3509 "configure"
 -#include "confdefs.h"
 -
--int main() {
+-int
+-main ()
+-{
 -
 -#ifdef __hpux
 -__sorry_hpux_libcurses_is_totally_broken_in_10_10();
@@ -19,36 +21,48 @@
 -tgetent((char *)0, (char *)0);
 -#endif
 -
--; return 0; }
--EOF
--if { (eval echo configure:2179: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+-  ;
+-  return 0;
+-}
+-_ACEOF
+-rm -f conftest.$ac_objext conftest$ac_exeext
+-if { (eval echo "$as_me:3527: \"$ac_link\"") >&5
+-  (eval $ac_link) 2>&5
+-  ac_status=$?
+-  echo "$as_me:3530: \$? = $ac_status" >&5
+-  (exit $ac_status); } &&
+-         { ac_try='test -s conftest$ac_exeext'
+-  { (eval echo "$as_me:3533: \"$ac_try\"") >&5
+-  (eval $ac_try) 2>&5
+-  ac_status=$?
+-  echo "$as_me:3536: \$? = $ac_status" >&5
+-  (exit $ac_status); }; }; then
 -  :
 -else
--  echo "configure: failed program was:" >&5
--  cat conftest.$ac_ext >&5
--  rm -rf conftest*
-   LIBS="-ltermcap $olibs"
- echo "checking libtermcap" 1>&6
- echo "configure:2187: checking libtermcap" >&5
-@@ -2241,8 +2218,6 @@
- rm -f conftest*
+-  echo "$as_me: failed program was:" >&5
+-cat conftest.$ac_ext >&5
+ LIBS="-ltermcap $olibs"
+ { echo "$as_me:3543: checking libtermcap..." >&5
+ echo "$as_me: checking libtermcap..." >&6;}
+@@ -3643,8 +3606,6 @@
+ rm -f conftest.$ac_objext conftest$ac_exeext conftest.$ac_ext
  fi
- rm -f conftest*
+ rm -f conftest.$ac_objext conftest$ac_exeext conftest.$ac_ext
 -fi
--rm -f conftest*
+-rm -f conftest.$ac_objext conftest$ac_exeext conftest.$ac_ext
  
  if test "$cross_compiling" = yes; then
-     { echo "configure: error: can not run test program while cross compiling" 1>&2; exit 1; }
-@@ -2253,7 +2228,7 @@
+   { { echo "$as_me:3650: error: cannot run test program while cross compiling" >&5
+@@ -3657,7 +3618,7 @@
  
  main()
  {
 - exit(strcmp(tgoto("%p1%d", 0, 1), "1") ? 0 : 1);
 + exit(strcmp(tgoto("%d%d", 0, 1), "1") ? 0 : 1);
  }
- EOF
- if { (eval echo configure:2260: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext} && (./conftest; exit) 2>/dev/null
-@@ -2354,18 +2329,15 @@
+ _ACEOF
+ rm -f conftest$ac_exeext
+@@ -3861,18 +3822,15 @@
  fi
  rm -f conftest*
  
@@ -57,17 +71,17 @@
 -p1=`echo $ptys | tr ' ' '\012' | sed -e 's/^.*\(.\)$/\1/g'  | sort -u | tr -d '\012'`
 +# XXX: hardcoded, since port must be devfs and various setups independent
 +
- cat >> confdefs.h <<EOF
+ cat >>confdefs.h <<EOF
 -#define PTYRANGE0 "$p0"
 +#define PTYRANGE0 "pqrsPQRS"
  EOF
  
- cat >> confdefs.h <<EOF
+ cat >>confdefs.h <<EOF
 -#define PTYRANGE1 "$p1"
 +#define PTYRANGE1 "0123456789abcdefghijklmnopqrstuv"
  EOF
 -
 -fi
  
- echo "checking default tty permissions/group" 1>&6
- echo "configure:2372: checking default tty permissions/group" >&5
+ { echo "$as_me:3877: checking default tty permissions/group..." >&5
+ echo "$as_me: checking default tty permissions/group..." >&6;}

@@ -1,6 +1,6 @@
---- Makefile.in.orig	Fri May 25 18:50:54 2001
-+++ Makefile.in	Mon Jun 25 08:31:36 2001
-@@ -70,14 +70,8 @@
+--- Makefile.in.orig	Thu Feb 14 22:36:33 2002
++++ Makefile.in	Tue Feb 19 13:18:38 2002
+@@ -71,14 +71,8 @@
  	$(CC) -c -I. -I$(srcdir) $(M_CFLAGS) $(DEFS) $(OPTIONS) $(CFLAGS) $<
  
  install_bin: .version screen
@@ -11,9 +11,9 @@
 -# This doesn't work if $(bindir)/screen is a symlink
 -	-if [ -f $(DESTDIR)$(bindir)/screen ] && [ ! -f $(DESTDIR)$(bindir)/screen.old ]; then mv $(DESTDIR)$(bindir)/screen $(DESTDIR)$(bindir)/screen.old; fi
 -	rm -f $(DESTDIR)$(bindir)/screen
--	cd $(DESTDIR)$(bindir) && ln -sf $(SCREEN) screen
+-	(cd $(DESTDIR)$(bindir) && ln -sf $(SCREEN) screen)
 +	$(INSTALL_PROGRAM) screen $(DESTDIR)$(bindir)/screen
 +	-chown root:wheel $(DESTDIR)$(bindir)/screen && chmod 4755 $(DESTDIR)$(bindir)/screen
+ 	cp $(srcdir)/utf8encodings/?? $(DESTDIR)$(SCREENENCODINGS)
  
  ###############################################################################
- install: installdirs install_bin
