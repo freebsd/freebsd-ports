@@ -1,0 +1,6 @@
+include/stroke.h
+lib/libstroke.a
+lib/libstroke.so
+lib/libstroke.so.0
+share/aclocal/libgstroke.m4
+share/aclocal/libstroke.m4
