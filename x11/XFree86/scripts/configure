@@ -30,7 +30,8 @@ noyes() {
     esac
   done
 }
-F=$WRKDIR/.config
+F=$WRKDIR/config
+WH=$WRKDIR/xc/lib/Xdmcp/Wraphelp.c
 configure () {
 rm -f $F
 
@@ -354,8 +355,6 @@ END
 yesno "Do you want to enable XDM-AUTHORIZATION-1 support?"
 cpwh=NO
 if [ $answ = YES ]; then
-    WH=$WRKDIR/xc/lib/Xdmcp/Wraphelp.c
-
     if [ -f $WH ] ; then
 	echo "==> $WH found in source distribution."
     elif [ -f $DISTDIR/xc/Wraphelp.c ] ; then
@@ -387,7 +386,15 @@ echo "End of configuration questions. No more user input required"
 echo
 }
 
-configure
+if [ ! -r $F ]; then
+	configure
+elif grep 'HasXdmAuth.*YES' $F >/dev/null; then
+	for i in $DISTDIR/xc $FILESDIR; do
+		if [ -r $i/Wraphelp.c ]; then
+			cpwh=$i/Wraphelp.c
+		fi
+	done
+fi
 
 if [ X$cpwh != XNO ]; then
   tr -d '\r' < $cpwh > $WH
