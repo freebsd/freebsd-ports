@@ -10,7 +10,6 @@
     SUBDIR += chmview
     SUBDIR += cmios9
     SUBDIR += cn2jp
-    SUBDIR += cvs2svn
     SUBDIR += dosunix
     SUBDIR += dumpasn1
     SUBDIR += enca
