@@ -1,0 +1,21 @@
+$FreeBSD$
+
+--- term/post.trm.orig	Mon Jun 16 13:57:37 2003
++++ term/post.trm	Mon Jun 16 13:58:53 2003
+@@ -939,14 +939,14 @@
+ {
+ static char GPFAR psg1[] = "0 setgray\nnewpath\n";
+ struct termentry *t = term;
++float scale = (ps_common_encap ? 0.5 : 1.0)/PS_SC;
+ 
+ 	ps_page++;
+ 	if (!ps_common_encap)
+ 		fprintf(gpoutfile,"%%%%Page: %d %d\n",ps_page,ps_page);
+ 	fprintf(gpoutfile,"gnudict begin\ngsave\n");
+ 	fprintf(gpoutfile,"%d %d translate\n",ps_common_xoff, ps_common_yoff);
+-	fprintf(gpoutfile,"%.3f %.3f scale\n", (ps_common_encap ? 0.5 : 1.0)/PS_SC,
+-	                                     (ps_common_encap ? 0.5 : 1.0)/PS_SC);
++	fprintf(gpoutfile,"%.3f %.3f scale\n", scale, scale);
+ 	if (!ps_common_portrait) {
+ 	    fprintf(gpoutfile,"90 rotate\n0 %d translate\n", (int)(-PS_YMAX));
+ 	}
