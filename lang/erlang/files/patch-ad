@@ -1,0 +1,21 @@
+--- lib/os_mon/src/disksup.erl.orig	Sat Dec  2 22:19:26 2000
++++ lib/os_mon/src/disksup.erl	Sat Dec  2 22:19:34 2000
+@@ -81,6 +81,9 @@
+ check_disk_space(State) when State#state.os == {unix, solaris} ->
+     Result = os:cmd("/usr/bin/df -lk"),
+     check_disks_solaris(skip_to_eol(Result), State#state.threshold);
++check_disk_space(State) when State#state.os == {unix, freebsd} ->
++    Result = os:cmd("/bin/df -k -t ufs"),
++    check_disks_solaris(skip_to_eol(Result), State#state.threshold);
+ check_disk_space(State) when State#state.os == {unix, sunos4} ->
+     Result = os:cmd("df"),
+     check_disks_solaris(skip_to_eol(Result), State#state.threshold).
+@@ -162,6 +165,8 @@
+ 		{4,_,_} -> {unix, sunos4};
+ 		V -> exit({{unknown_os_version, V}, {disk_sup, get_os, []}})
+ 	    end;
++	{unix, freebsd} ->
++	    {unix, freebsd};
+ 	{win32,W} ->
+ 	    {win32,W};	    
+ 	Type ->

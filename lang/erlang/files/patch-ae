@@ -1,0 +1,18 @@
+--- erts/autoconf/configure.in.orig	Sat Dec  2 22:27:49 2000
++++ erts/autoconf/configure.in	Sat Dec  2 22:34:30 2000
+@@ -638,10 +638,13 @@
+ # Os mon stuff.
+ #--------------------------------------------------------------------
+ AC_SUBST(os_mon_programs)
+-AC_CHECK_LIB(kstat, kstat_open, [os_mon_programs="$os_mon_programs cpu_sup"])
++AC_SUBST(os_mon_kstat)
++AC_CHECK_LIB(kstat, kstat_open, [os_mon_kstat="-lkstat", os_mon_programs="$os_mon_programs cpu_sup"])
+ case $host_os in
+ 	solaris2*)
+ 		os_mon_programs="$os_mon_programs ferrule mod_syslog" ;;
++	freebsd*)
++		os_mon_programs="$os_mon_programs cpu_sup ferrule mod_syslog" ;;
+ esac
+ 
+
+# End
