@@ -1,16 +1,16 @@
 # New ports collection makefile for:    jetpack
-# Version required:     ?
 # Date created:         21 September 1994
 # Whom:                 jmz
 #
 # $FreeBSD$
 #
 
-DISTNAME=	jetpack
-PKGNAME=	jetpack-1.0
+PORTNAME=	jetpack
+PORTVERSION=	1.0
 CATEGORIES=	games
 MASTER_SITES=	ftp://qiclab.scn.rain.com/pub/games/
-DISTFILES=	jetpack.tar.Z
+DISTNAME=	${PORTNAME}
+EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	jmz@FreeBSD.org
 

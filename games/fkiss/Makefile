@@ -9,7 +9,7 @@ PORTNAME=	fkiss
 PORTVERSION=	0.28
 CATEGORIES=	games
 MASTER_SITES=	http://www.oersted.co.jp/~yav/soft/fkiss/
-DISTNAME=	${PORTNAME}${PORTVERSION}
+DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
 MAINTAINER=	flathill@FreeBSD.org
 

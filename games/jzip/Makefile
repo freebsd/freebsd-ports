@@ -1,15 +1,15 @@
 # New ports collection makefile for:	jzip
-# Version required:			2.0.1g
 # Date created:				7 May 1998
 # Whom:					Matthew Hunt <mph@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=		jzip201g
-PKGNAME=		jzip-2.0.1g
+PORTNAME=		jzip
+PORTVERSION=		2.0.1g
 CATEGORIES=		games
 MASTER_SITES=   	http://people.FreeBSD.org/~mph/distfiles/
+DISTNAME=		jzip201g
 
 MAINTAINER=		mph@freebsd.org
 

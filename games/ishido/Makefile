@@ -1,13 +1,13 @@
 # ex:ts=8
 # New ports collection makefile for:    ishido
-# Version required:     1.1
 # Date created:         Wed June 24, 1998
 # Whom:                 Steven H. Samorodin (samorodi@NUXI.com)
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ishido-1.1
+PORTNAME=	ishido
+PORTVERSION=	1.1
 CATEGORIES=	games
 MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/misc/ \
 		ftp://ftp.nuxi.com/pub/misc/

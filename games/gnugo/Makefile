@@ -1,12 +1,12 @@
 # New ports collection makefile for:	gnugo
-# Version required:	2.4
 # Date created:		29 December 1996
 # Whom:			jseger@scds.com
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gnugo-2.4
+PORTNAME=	gnugo
+PORTVERSION=	2.4
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gnugo

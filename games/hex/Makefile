@@ -1,12 +1,12 @@
 # New ports collection makefile for:	Hex
-# Version required:	0.0.2
 # Date created:		9 Aug 1999
 # Whom:			Will Andrews <andrews@technologist.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	hex-0.0.2
+PORTNAME=	hex
+PORTVERSION=	0.0.2
 CATEGORIES=	games
 MASTER_SITES=	http://www.nott.ac.uk/~psystrj/ \
 		http://www.psn.net/~andrews/dist/

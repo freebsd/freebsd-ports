@@ -1,16 +1,16 @@
 # New ports collection makefile for:	glheretic
-# Version required:	1.0
 # Date created:		04 Feb 2000
 # Whom:			Will Andrews <andrews@technologist.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	glheretic-1.0
-PKGNAME=	heretic-1.0
+PORTNAME=	heretic
+PORTVERSION=	1.0
 CATEGORIES=	games
 MASTER_SITES=	http://www.raven-games.com/linuxheretic/heretic/src/ \
 		http://www.raven-games.com/linuxheretic/wad/
+DISTNAME=	glheretic-1.0
 .if !defined(NO_WAD)
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} heretic_share.wad.gz
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
