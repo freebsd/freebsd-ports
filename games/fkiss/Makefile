@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	fkiss
-PORTVERSION=	0.28
+PORTVERSION=	0.32
 CATEGORIES=	games
 MASTER_SITES=	http://www.oersted.co.jp/~yav/soft/fkiss/
-DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	flathill@FreeBSD.org
 
@@ -17,18 +17,22 @@ RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha
 
 NOT_FOR_ARCHS=	alpha
 
-WRKSRC=		${WRKDIR}/fkiss
-USE_IMAKE=	yes
+WRKSRC=		${WRKDIR}/${DISTNAME}
+GNU_CONFIGURE=	yes
 MAN1=		fkiss.1
 
-INSTALL_TARGET=	install install.man
+INSTALL_TARGET=	install
 
 post-install:
+	${INSTALL_MAN} ${WRKSRC}/fkiss.man ${PREFIX}/man/man1/fkiss.1
 	${MKDIR} ${PREFIX}/share/examples/fkiss
 	${INSTALL_DATA} ${WRKSRC}/frkismi4.lzh ${PREFIX}/share/examples/fkiss
 .if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/fkiss
 	${MKDIR} ${PREFIX}/share/doc/ja/fkiss
-	${INSTALL_MAN} ${WRKSRC}/fkiss.doc ${PREFIX}/share/doc/ja/fkiss
+	${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/doc/fkiss
+	${INSTALL_MAN} ${WRKSRC}/README.euc ${PREFIX}/share/doc/ja/fkiss
+	${INSTALL_MAN} ${WRKSRC}/README.sjis ${PREFIX}/share/doc/ja/fkiss
 .endif
 
 .include <bsd.port.mk>
