@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}sdk-${PORTVERSION}
 
 MAINTAINER=	leeym@FreeBSD.org
+COMMENT=	Universal Plug and Play Software Development Kit
 
 LIB_DEPENDS=	uuid.1:${PORTSDIR}/sysutils/e2fsprogs
 
@@ -20,6 +21,7 @@ USE_GMAKE=	yes
 USE_REINPLACE=	yes
 MAKEFILE=	makefile
 MAKE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS}
+NOT_FOR_ARCHS=	sparc64
 INSTALLS_SHLIB=	yes
 
 post-patch:
