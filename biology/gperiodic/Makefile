@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	gperiodic
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.2
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.seul.org/pub/gperiodic/
 
 MAINTAINER=	ports@FreeBSD.org
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_X_PREFIX=	yes
 USE_GTK=	yes
@@ -24,15 +22,14 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 MAN1=		gperiodic.1
 
 post-extract:
-	@${RM} -f ${WRKSRC}/config.cache
 	@${LN} -sf Makefile.in.in ${WRKSRC}/po/Makefile.in
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/man/gperiodic.1 ${MANPREFIX}/man/man1
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/gperiodic
+	@${MKDIR} ${DOCSDIR}
 .for file in AUTHORS ChangeLog README
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/gperiodic
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 
