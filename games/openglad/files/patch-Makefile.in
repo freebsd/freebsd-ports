@@ -1,0 +1,46 @@
+--- Makefile.in.orig	Tue May 13 17:07:41 2003
++++ Makefile.in	Tue May 13 17:08:30 2003
+@@ -77,7 +77,7 @@
+ docs_DOCS = NEWS README ChangeLog release-notes.txt cheats.txt \
+ scen.txt AUTHORS COPYING INSTALL
+ 
+-docdir = ${DESTDIR}/$(prefix)/share/doc/@PACKAGE@
++docdir = $(prefix)/share/doc/@PACKAGE@
+ 
+ EXTRA_DIST = scen/*.fss start.tex glad.hlp openglad.cfg cheats.txt pix/*.pix \
+ $(docs_DOCS)
+@@ -121,20 +121,20 @@
+ uninstall-info-am:
+ install-dataDATA: $(data_DATA)
+ 	@$(NORMAL_INSTALL)
+-	$(mkinstalldirs) $(DESTDIR)$(datadir)
++	$(mkinstalldirs) $(datadir)
+ 	@list='$(data_DATA)'; for p in $$list; do \
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+ 	  f="`echo $$p | sed -e 's|^.*/||'`"; \
+-	  echo " $(INSTALL_DATA) $$d$$p $(DESTDIR)$(datadir)/$$f"; \
+-	  $(INSTALL_DATA) $$d$$p $(DESTDIR)$(datadir)/$$f; \
++	  echo " $(INSTALL_DATA) $$d$$p $(datadir)/$$f"; \
++	  $(INSTALL_DATA) $$d$$p $(datadir)/$$f; \
+ 	done
+ 
+ uninstall-dataDATA:
+ 	@$(NORMAL_UNINSTALL)
+ 	@list='$(data_DATA)'; for p in $$list; do \
+ 	  f="`echo $$p | sed -e 's|^.*/||'`"; \
+-	  echo " rm -f $(DESTDIR)$(datadir)/$$f"; \
+-	  rm -f $(DESTDIR)$(datadir)/$$f; \
++	  echo " rm -f $(datadir)/$$f"; \
++	  rm -f $(datadir)/$$f; \
+ 	done
+ 
+ # This directory's subdirectories are mostly independent; you can cd
+@@ -314,7 +314,7 @@
+ all-am: Makefile $(DATA)
+ installdirs: installdirs-recursive
+ installdirs-am:
+-	$(mkinstalldirs) $(DESTDIR)$(datadir)
++	$(mkinstalldirs) $(datadir)
+ install-exec: install-exec-recursive
+ install-data: install-data-recursive
+ 
