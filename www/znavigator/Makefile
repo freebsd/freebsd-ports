@@ -7,7 +7,7 @@
 
 PORTNAME=	znavigator
 PORTVERSION=	2.00
-CATEGORIES=	www
+CATEGORIES=	www zope
 MASTER_SITES=	http://www.zope.org/Members/jonas/ZNavigator/
 DISTNAME=	${ZOPEPRODUCTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
