@@ -325,9 +325,11 @@ MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
 
 .endif
 
+TKBASE?=	${PORTSDIR}/${PKGCATEGORY}/${LATEST_LINK}
+
 post-configure:
 	${REINPLACE_CMD} \
-		-e 's=${WRKDIRPREFIX}${.CURDIR}=$${WRKDIRPREFIX}${PORTSDIR}/${PKGCATEGORY}/${LATEST_LINK}=' \
+		-e 's|${WRKDIRPREFIX}${.CURDIR}|$${WRKDIRPREFIX}${TKBASE}|' \
 		${WRKSRC}/tkConfig.sh
 .if !defined(WITH_TK83_MAN)
 	${REINPLACE_CMD} -e 's|^MAN_INSTALL_DIR.*$$|MAN_INSTALL_DIR = ${WRKDIR}|' \
