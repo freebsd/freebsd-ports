@@ -3,11 +3,13 @@
 # Date created:		23.sept.1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.5 1995/04/12 20:31:13 asami Exp $
+# $Id: Makefile,v 1.6 1995/04/16 15:33:42 ache Exp $
 #
 
 VERSION=	3.1
-DISTNAME=	iv-${VERSION}
+# don't change this to "=" !
+DISTNAME?=	iv-${VERSION}
+MASTER_SITES=	ftp://interviews.stanford.edu/pub/
 EXTRACT_SUFX=	.tar.Z
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -18,7 +20,7 @@ MAKEFILE=	makefile
 pre-fetch:
 	@if [ ! -f ${DISTDIR}/${DISTFILES} ]; then \
 	    mkdir -p ${DISTDIR}/${DISTNAME} ; \
-	    ${MAKE} MASTER_SITES=ftp://interviews.stanford.edu/pub/ \
+	    ${MAKE} \
 		DISTDIR=${DISTDIR}/${DISTNAME} DISTNAME=${VERSION} fetch ; \
 	    mv ${DISTDIR}/${DISTNAME}/${VERSION}${EXTRACT_SUFX} \
 		${DISTDIR}/${DISTFILES} ; \
