@@ -16,12 +16,12 @@ MAINTAINER?=	nobutaka@FreeBSD.org
 LIB_DEPENDS=	gc.1:${PORTSDIR}/devel/boehm-gc
 
 W3M_VERSION=	0.2.1
-INU_VERSION=	1.4
-IMG_VERSION=	1.11
+INU_VERSION=	1.5
+IMG_VERSION=	1.12
 M17N_VERSION=	0.19
 
 .if !defined(M17N)
-PORTREVISION?=	2
+PORTREVISION?=	3
 .endif
 
 HAS_CONFIGURE=	yes
@@ -58,7 +58,8 @@ PATCH_SITES=	http://www.nobutaka.com/FreeBSD/ports/20011009/
 PATCHFILES=	${PORTNAME}-m17n-${M17N_VERSION}-security-fix.diff
 PATCH_DIST_STRIP=	-p0 -F3
 
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-XMakefile.m17n
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-XMakefile.m17n \
+			${PATCHDIR}/extra-patch-terms.c.m17n
 PLIST_SUB+=	M17N_ONLY="" NO_M17N="@comment "
 
 # Disable inline image support for w3m-m17n.
