@@ -908,7 +908,6 @@ COMM?=		/usr/bin/comm
 CP?=		/bin/cp
 CPIO?=		/usr/bin/cpio
 CUT?=		/usr/bin/cut
-DATE?=		/bin/date
 DC?=		/usr/bin/dc
 DIALOG?=	/usr/bin/dialog
 DIRNAME?=	/usr/bin/dirname
@@ -1885,17 +1884,19 @@ EXTRACT_CMD?=			${GZIP_CMD}
 
 # Figure out where the local mtree file is
 .if !defined(MTREE_FILE) && !defined(NO_MTREE)
-.if defined(USE_X_PREFIX)
+.if ${PREFIX} == ${X11BASE}
 .if ${X_WINDOW_SYSTEM:L} == xfree86-3
 MTREE_FILE=	/etc/mtree/BSD.x11.dist
 .else
 MTREE_FILE=	/etc/mtree/BSD.x11-4.dist
 .endif
 .else
-.if ${PREFIX} == /usr
+.if ${PREFIX} == ${LOCALBASE}
+MTREE_FILE=	/etc/mtree/BSD.local.dist
+.elif ${PREFIX} == /usr
 MTREE_FILE=	/etc/mtree/BSD.usr.dist
 .else
-MTREE_FILE=	/etc/mtree/BSD.local.dist
+NO_MTREE=	yes	# Can't figure out prefix, assume nonstandard
 .endif
 .endif
 .endif
@@ -2943,7 +2944,7 @@ check-vulnerable:
 	@if [ -f "${AUDITFILE}" ]; then \
 		audit_created=`${_EXTRACT_AUDITFILE} | \
 			${SED} -nEe "1s/^#CREATED: *([0-9]{4})-?([0-9]{2})-?([0-9]{2}).*$$/\1\2\3/p"`; \
-		audit_expiry=`${DATE} -u -v-14d "+%Y%m%d"`; \
+		audit_expiry=`/bin/date -u -v-14d "+%Y%m%d"`; \
 		if [ "$$audit_created" -lt "$$audit_expiry" ]; then \
 			${ECHO_MSG} "===>  WARNING: Vulnerability database out of date, checking anyway"; \
 		fi; \
