@@ -16,6 +16,9 @@ COMMENT=	Extended TCL
 
 LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
 
+DEPRECATED=	"no longer used by any other port\; supplanted by lang/tclX"
+EXPIRATION_DATE=	"May 12 2004"
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
