@@ -12,7 +12,7 @@ CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	jan@jungnickel.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Integrates XMMS into the KDE3 Panel
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
