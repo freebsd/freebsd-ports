@@ -658,6 +658,7 @@
     SUBDIR += p5-File-MMagic
     SUBDIR += p5-File-NCopy
     SUBDIR += p5-File-NFSLock
+    SUBDIR += p5-File-Path-Expand
     SUBDIR += p5-File-ReadBackwards
     SUBDIR += p5-File-Remove
     SUBDIR += p5-File-Slurp
