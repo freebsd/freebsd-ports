@@ -1,6 +1,53 @@
---- configure.orig	Tue Oct 10 10:27:58 2000
-+++ configure	Wed Oct 11 12:15:15 2000
-@@ -6677,6 +6677,6 @@
+--- configure.orig	Sun May 20 13:17:33 2001
++++ configure	Mon May 21 11:57:29 2001
+@@ -5591,4 +5591,19 @@
+ 
+-
+-
++# Actually configure libtool.  ac_aux_dir is where install-sh is found.
++CC="$CC" CFLAGS="$CFLAGS" CPPFLAGS="$CPPFLAGS" \
++LD="$LD" LDFLAGS="$LDFLAGS" LIBS="$LIBS" \
++LN_S="$LN_S" NM="$NM" RANLIB="$RANLIB" \
++DLLTOOL="$DLLTOOL" AS="$AS" OBJDUMP="$OBJDUMP" \
++${CONFIG_SHELL-/bin/sh} $ac_aux_dir/ltconfig --no-reexec \
++$libtool_flags $ac_aux_dir/ltmain.sh $lt_target \
++|| { echo "configure: error: libtool configure failed" 1>&2; exit 1; }
++
++# Reload cache, that may have been modified by ltconfig
++if test -r "$cache_file"; then
++  echo "loading cache $cache_file"
++  . $cache_file
++else
++  echo "creating cache $cache_file"
++  > $cache_file
++fi
+ 
+@@ -5596,3 +5611,3 @@
+ # This can be used to rebuild libtool when needed
+-LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++LIBTOOL_DEPS="$ac_aux_dir/ltconfig $ac_aux_dir/ltmain.sh"
+ 
+@@ -5601,16 +5616,7 @@
+ 
+-# Prevent multiple expansion
++# Redirect the config.log output again, so that the ltconfig log is not
++# clobbered by the next message.
++exec 5>>./config.log
+ 
+ 
+-
+-
+-	
+-	
+-	
+-	
+-	
+-	
+-	
+-	
+-
+ 	# Check whether --with-gnome-includes or --without-gnome-includes was given.
+@@ -10526,6 +10532,6 @@
  
 -  case "$ac_given_INSTALL" in
 -  [/$]*) INSTALL="$ac_given_INSTALL" ;;
