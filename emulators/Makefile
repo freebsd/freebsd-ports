@@ -60,6 +60,7 @@
     SUBDIR += minivmac
     SUBDIR += mips64emul
     SUBDIR += mtools
+    SUBDIR += mupen64
     SUBDIR += mupen64-base
     SUBDIR += mupen64-dummyaudio
     SUBDIR += mupen64-glide
