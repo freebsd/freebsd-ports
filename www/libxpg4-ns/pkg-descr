@@ -1,8 +1,0 @@
-libxpg4 (aout) for Netscape Browser. This is against browser's locale bug.
-Patches are created by <nagahama@yasuda.comm.waseda.ac.jp>.
-Refer to 
-
-WWW: http://www.yasuda.comm.waseda.ac.jp/~nagahama/freebsd.html
-
-- SADA Kenji
-sada@FreeBSD.ORG
