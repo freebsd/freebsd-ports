@@ -5,7 +5,7 @@
 #
 
 PORTNAME=	leafnode
-PORTVERSION=	1.9.26
+PORTVERSION=	1.9.27
 CATEGORIES=	news
 MASTER_SITES=	http://dl.sourceforge.net/sourceforge/leafnode/ \
 		http://www.dt.e-technik.uni-dortmund.de/~ma/${PORTNAME}/ \
@@ -34,9 +34,10 @@ post-install:
 		${INSTALL_SCRIPT} ${WRKSRC}/setup-daemontools.sh ${LOCALBASE}/sbin/
 .if !defined(NOPORTDOCS)
 		${MKDIR} ${LOCALBASE}/share/doc/${PORTNAME}
-		for i in ChangeLog COPYING CREDITS FAQ INSTALL NEWS README \
-			 README-FQDN README-FQDN.html README-daemontools README.FIRST TODO \
-			 TROUBLESHOOTING TROUBLESHOOTING.html ; do \
+		for i in ChangeLog COPYING CREDITS FAQ.txt FAQ.pdf FAQ.html \
+			 INSTALL NEWS README \
+			 README-FQDN README-FQDN.html README-daemontools \
+			 README.FIRST TODO ; do \
 		  ${INSTALL_MAN} ${WRKSRC}/$$i \
 			${LOCALBASE}/share/doc/${PORTNAME} ; done
 		${MKDIR} ${LOCALBASE}/share/doc/${PORTNAME}/doc_german

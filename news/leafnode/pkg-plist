@@ -14,7 +14,9 @@ sbin/setup-daemontools.sh
 share/doc/leafnode/ChangeLog
 share/doc/leafnode/COPYING
 share/doc/leafnode/CREDITS
-share/doc/leafnode/FAQ
+share/doc/leafnode/FAQ.txt
+share/doc/leafnode/FAQ.html
+share/doc/leafnode/FAQ.pdf
 share/doc/leafnode/INSTALL
 share/doc/leafnode/NEWS
 share/doc/leafnode/README
@@ -23,8 +25,6 @@ share/doc/leafnode/README-FQDN.html
 share/doc/leafnode/README-daemontools
 share/doc/leafnode/README.FIRST
 share/doc/leafnode/TODO
-share/doc/leafnode/TROUBLESHOOTING
-share/doc/leafnode/TROUBLESHOOTING.html
 share/doc/leafnode/doc_german/INSTALL_de
 share/doc/leafnode/doc_german/LIESMICH-daemontools
 share/doc/leafnode/doc_german/README
