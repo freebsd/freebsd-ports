@@ -9,13 +9,19 @@ PORTNAME=	BitchX
 PORTVERSION=	1.0c19
 CATEGORIES+=	irc gnome
 MASTER_SITES=	ftp://ftp.bitchx.com/pub/BitchX/source/ \
-		ftp://ftp.bitchx.org/pub/BitchX/source/
+		ftp://ftp.bitchx.org/pub/BitchX/source/ \
+		ftp://ftp.cyberpunkz.org/pub/BitchX/source/ \
+		ftp://ftp.cyberpunkz.org/pub/BitchX/tcl-o/:tcl
 DISTNAME=	ircii-pana-1.0c19
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+.if defined(WITH_TCL)
+DISTFILES+=	freebsd4-tcl83-bx1.0c19-tcl.o:tcl
+.endif
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	freebsdports@arved.de
 
 WRKSRC=		${WRKDIR}/BitchX
-
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 WANT_ESOUND=	yes
@@ -52,8 +58,6 @@ CONFIGURE_ARGS+=--with-tcl \
 		--with-tcl-includes=${LOCALBASE}/include/tcl8.3 \
 		--with-tcl-libs=${LOCALBASE}/lib
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/tcl8.3"
-post-extract:
-	@uudecode -p ${FILESDIR}/tcl-freebsd.o.uu > ${WRKSRC}/source/tcl.o
 .endif
 
 .if defined(WITH_SOCKS5)
@@ -93,6 +97,13 @@ pre-extract:
 .endif
 .if !defined(WITH_IPV6)
 	@${ECHO} "WITH_IPV6 - Build BitchX with IPV6 support"
+.endif
+
+.if defined(WITH_TCL)
+
+post-extract:
+	@${CP} ${DISTDIR}/freebsd4-tcl83-bx1.0c19-tcl.o ${WRKSRC}/source/tcl.o
+
 .endif
 
 post-install:
