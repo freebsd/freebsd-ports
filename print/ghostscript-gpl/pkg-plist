@@ -42,7 +42,6 @@ bin/wftopfa
 %%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/epag/gsepagif.sh
 %%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/epag/psprint
 %%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/eplaser/readme-eplaser-705.euc
-%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/eplaser/readme-eplaser-705-jp.euc
 %%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/gdi/README
 %%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/lips/Gdevlips.htm
 %%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/lxm3200/README
