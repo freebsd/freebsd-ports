@@ -5,7 +5,7 @@
  XCOMM and installed xfig.  This will be made automatic in the future.
  
 -XFIGLIBDIR =	/usr/local/lib/X11/xfig
-+XFIGLIBDIR =	$(PREFIX)lib/X11/xfig
++XFIGLIBDIR =	$(PREFIX)/lib/X11/xfig
  
  XCOMM If your system has the strerror() function (doesn't have sys_errlist) then
  XCOMM comment out NEED_STRERROR with an XCOMM comment.
