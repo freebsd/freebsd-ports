@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	sentinel
-PORTVERSION=	1.6.1b
+PORTVERSION=	1.6.4b
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	smfilter
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Sentinel is a sendmail milter API implementation
+COMMENT=	A sendmail milter API implementation
+
+LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 USE_REINPLACE=	yes
 
@@ -21,8 +23,10 @@ post-patch:
 		's|:/var|:${PREFIX}/var|g' ${WRKSRC}/sentinel.cf.SAMPLE
 
 do-build:
-	cd ${WRKSRC} && ${CC} ${CFLAGS} ${PTHREAD_CFLAGS} -o ${PORTNAME} \
-		${PORTNAME}.c -lmilter ${PTHREAD_LIBS} 
+	cd ${WRKSRC} && \
+		${CC} ${CFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS} \
+		-o ${PORTNAME} ${PORTNAME}.c -L${LOCALBASE}/lib \
+		-lmilter -lpcre ${PTHREAD_LIBS} 
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sentinel ${PREFIX}/sbin
