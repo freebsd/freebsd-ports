@@ -20,6 +20,8 @@ MAINTAINER=		stephen@math.missouri.edu
 
 BUILD_DEPENDS=		ocamlc:${PORTSDIR}/lang/ocaml
 
+PLIST_SUB=		HEVEAVERSION=${PORTVERSION}
+
 TEX_DIR=		${PREFIX}/share/texmf/tex/latex
 TEXHASH=		${PREFIX}/bin/texhash
 
