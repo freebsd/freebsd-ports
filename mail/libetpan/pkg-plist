@@ -44,7 +44,9 @@ include/libetpan/mailimap_types_helper.h
 include/libetpan/mailimf.h
 include/libetpan/mailimf_types.h
 include/libetpan/mailimf_types_helper.h
-include/libetpan/mailimf_write.h
+include/libetpan/mailimf_write_file.h
+include/libetpan/mailimf_write_generic.h
+include/libetpan/mailimf_write_mem.h
 include/libetpan/mailmbox.h
 include/libetpan/mailmbox_types.h
 include/libetpan/mailmessage.h
@@ -56,7 +58,9 @@ include/libetpan/mailmime_decode.h
 include/libetpan/mailmime_disposition.h
 include/libetpan/mailmime_types.h
 include/libetpan/mailmime_types_helper.h
-include/libetpan/mailmime_write.h
+include/libetpan/mailmime_write_file.h
+include/libetpan/mailmime_write_generic.h
+include/libetpan/mailmime_write_mem.h
 include/libetpan/mailpop3.h
 include/libetpan/mailpop3_helper.h
 include/libetpan/mailpop3_socket.h
