@@ -35,9 +35,13 @@ JARDIR=		${JAVASHAREDIR}/classes
 JARFILE=	${PORTNAME}-${PORTVERSION}-beta-2-dev.jar
 DESTJARFILE=	${PORTNAME}.jar
 
+.if !defined(NOPORTDOCS)
+PORTDOCS=	${WRKSRC}/target/docs/apidocs
+.endif
+
 do-build:
 	@${MKDIR} ${WRKSRC}/lib
-	@cd ${WRKSRC} && ${ANT} ${ANT_TARGET}
+	@cd ${WRKSRC} && ${SETENV} ANT_INCLUDE_SHARED_JARS=YES ${ANT} ${ANT_TARGET}
 
 do-install:
 	@${ECHO} -n ">> Installing JAR as ${JARDIR}/${DESTJARFILE}..."
