@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	evolution
-PORTVERSION=	1.0.7
+PORTVERSION=	1.0.8
 CATEGORIES=	mail gnome
 MASTER_SITES=	${MASTER_SITE_GNOME} \
 		http://people.FreeBSD.org/~sobomax/:local
@@ -38,13 +38,14 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_BISON=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomeprefix gnomehack gnomelibs
+USE_REINPLACE=	yes
 USE_OPENSSL=	yes
 USE_LIBTOOL=	yes
 LIBTOOLFILES=	configure libical/configure
 CONFIGURE_ARGS=	--with-db3-libs=${DB3_WRKSRC} \
 		--with-db3-includes=${DB3_WRKSRC} \
-		--with-html-dir=${PREFIX}/share/gnome/html \
 		--with-nspr-includes=${LOCALBASE}/include/nspr \
 		--with-nspr-libs=${LOCALBASE}/lib \
 		--with-nss-includes=${LOCALBASE}/include/nss/security \
@@ -58,24 +59,22 @@ CONFIGURE_ARGS+= --with-openldap=${LOCALBASE}
 CONFIGURE_ARGS+=	--with-pisock=${LOCALBASE} \
 			--enable-pilot-conduits=yes
 PLIST_SUB=	PILOT:=""
+USE_GNOME+=	gnomecc
 .else
 PLIST_SUB=	PILOT:="@comment "
 .endif
 CONFIGURE_ENV=	CPPFLAGS="-I${DB3_WRKSRC} -I${LOCALBASE}/include" \
-		LIBS="-pthread -L${LOCALBASE}/lib"
+		LIBS="${PTHREAD_LIBS} -L${LOCALBASE}/lib"
 
 PLIST_SUB+=	VERSION=${PORTVERSION}
 
 MAN1=		evolution.1
 
-pre-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in*" | xargs ${PERL} -pi -e \
-		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
-		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 	@find ${WRKSRC} -type f -name "*.[ch]" | xargs ${GREP} -l '<db.h>' | \
-		xargs ${PERL} -pi -e 's|<db.h>|<db3/db.h>|g'
+		xargs ${REINPLACE_CMD} -e 's|<db.h>|<db3/db.h>|g'
 
 # DB3 stuff. Ugly, I know, but that's life.
 DB3_WRKSRC=	${WRKDIR}/db-3.1.17/build_unix

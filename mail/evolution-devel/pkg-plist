@@ -526,6 +526,35 @@ share/gnome/help/evolution/no/usage-print.html
 share/gnome/help/evolution/no/usage-summary.html
 share/gnome/help/evolution/no/usage-sync.html
 share/gnome/help/evolution/no/usage.html
+share/gnome/html/evolution-devel-guide/alarm-trigger-generation-code.html
+share/gnome/html/evolution-devel-guide/calclient.html
+share/gnome/html/evolution-devel-guide/calcomponent.html
+share/gnome/html/evolution-devel-guide/calendar-alarm-generation.html
+share/gnome/html/evolution-devel-guide/calendar-architecture.html
+share/gnome/html/evolution-devel-guide/calendar-public-reference.html
+share/gnome/html/evolution-devel-guide/evolution-api-reference.html
+share/gnome/html/evolution-devel-guide/evolution-cal-util-cal-recur.html
+share/gnome/html/evolution-devel-guide/evolution-cal-util-cal-util.html
+share/gnome/html/evolution-devel-guide/evolution-cal-util-timeutil.html
+share/gnome/html/evolution-devel-guide/evolution-calendar.html
+share/gnome/html/evolution-devel-guide/fdl-section1.html
+share/gnome/html/evolution-devel-guide/fdl-section10.html
+share/gnome/html/evolution-devel-guide/fdl-section2.html
+share/gnome/html/evolution-devel-guide/fdl-section3.html
+share/gnome/html/evolution-devel-guide/fdl-section4.html
+share/gnome/html/evolution-devel-guide/fdl-section5.html
+share/gnome/html/evolution-devel-guide/fdl-section6.html
+share/gnome/html/evolution-devel-guide/fdl-section7.html
+share/gnome/html/evolution-devel-guide/fdl-section8.html
+share/gnome/html/evolution-devel-guide/fdl-section9.html
+share/gnome/html/evolution-devel-guide/fdl-using.html
+share/gnome/html/evolution-devel-guide/fdl.html
+share/gnome/html/evolution-devel-guide/generating-trigger-instances.html
+share/gnome/html/evolution-devel-guide/index.html
+share/gnome/html/evolution-devel-guide/introduction.html
+share/gnome/html/evolution-devel-guide/x102.html
+share/gnome/html/evolution-devel-guide/x125.html
+share/gnome/html/evolution-devel-guide/x134.html
 share/gnome/idl/Composer.idl
 share/gnome/idl/Evolution-Activity.idl
 share/gnome/idl/Evolution-Composer.idl
@@ -940,16 +969,20 @@ share/gnome/libical-evolution/zoneinfo/Asia/Kuala_Lumpur.ics
 share/gnome/libical-evolution/zoneinfo/Asia/Kuching.ics
 share/gnome/libical-evolution/zoneinfo/Asia/Kuwait.ics
 share/gnome/libical-evolution/zoneinfo/Asia/Macao.ics
+share/gnome/libical-evolution/zoneinfo/Asia/Macau.ics
 share/gnome/libical-evolution/zoneinfo/Asia/Magadan.ics
+share/gnome/libical-evolution/zoneinfo/Asia/Makassar.ics
 share/gnome/libical-evolution/zoneinfo/Asia/Manila.ics
 share/gnome/libical-evolution/zoneinfo/Asia/Muscat.ics
 share/gnome/libical-evolution/zoneinfo/Asia/Nicosia.ics
 share/gnome/libical-evolution/zoneinfo/Asia/Novosibirsk.ics
 share/gnome/libical-evolution/zoneinfo/Asia/Omsk.ics
+share/gnome/libical-evolution/zoneinfo/Asia/Oral.ics
 share/gnome/libical-evolution/zoneinfo/Asia/Phnom_Penh.ics
 share/gnome/libical-evolution/zoneinfo/Asia/Pontianak.ics
 share/gnome/libical-evolution/zoneinfo/Asia/Pyongyang.ics
 share/gnome/libical-evolution/zoneinfo/Asia/Qatar.ics
+share/gnome/libical-evolution/zoneinfo/Asia/Qyzylorda.ics
 share/gnome/libical-evolution/zoneinfo/Asia/Rangoon.ics
 share/gnome/libical-evolution/zoneinfo/Asia/Riyadh.ics
 share/gnome/libical-evolution/zoneinfo/Asia/Saigon.ics
@@ -1191,10 +1224,7 @@ share/locale/zh_TW/LC_MESSAGES/evolution.mo
 @dirrm share/gnome/images/evolution/conduits
 @dirrm share/gnome/images/evolution/buttons
 @dirrm share/gnome/images/evolution
-@dirrm share/gnome/images
 @dirrm share/gnome/html/evolution-devel-guide
-@dirrm share/gnome/html/evolution-cal-util
-@dirrm share/gnome/html/evolution-cal-client
 @dirrm share/gnome/help/evolution/no/stylesheet-images
 @dirrm share/gnome/help/evolution/no/sgml
 @dirrm share/gnome/help/evolution/no/figures
