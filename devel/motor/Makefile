@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	motor
-PORTVERSION=	3.2.2
+PORTVERSION=	3.2.3
 CATEGORIES=	devel
 MASTER_SITES=	http://konst.org.ua/download/
 
