@@ -7232,6 +7232,7 @@ p5-Math-BigInt	ports/math/p5-Math-BigInt
 p5-Math-BigIntFast	ports/math/p5-Math-BigIntFast
 p5-Math-Calc-Units	ports/math/p5-Math-Calc-Units
 p5-Math-Currency	ports/math/p5-Math-Currency
+p5-Math-Derivative	ports/math/p5-Math-Derivative
 p5-Math-Expr	ports/math/p5-Math-Expr
 p5-Math-FFT	ports/math/p5-Math-FFT
 p5-Math-Financial	ports/finance/p5-Math-Financial
