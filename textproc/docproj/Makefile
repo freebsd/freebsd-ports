@@ -13,6 +13,9 @@ DISTFILES=	# empty
 
 MAINTAINER=	nik@freebsd.org
 
+# This dependency list should be kept in sync with the list of
+# required ports in src/release/Makefile.inc.docports.
+
 RUN_DEPENDS=	instant:${PORTSDIR}/textproc/sgmlformat \
 		tidy:${PORTSDIR}/www/tidy \
 		${PREFIX}/share/sgml/docbook/dsssl/modular:${PORTSDIR}/textproc/dsssl-docbook-modular \
