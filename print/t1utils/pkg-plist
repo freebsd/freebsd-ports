@@ -1,5 +1,6 @@
 bin/t1ascii
-bin/t1binary
 bin/t1asm
+bin/t1binary
 bin/t1disasm
+bin/t1mac
 bin/t1unmac
