@@ -14,6 +14,8 @@ MAINTAINER=	sam@inf.enst.fr
 
 BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
 
+BROKEN=		"Missing header driver.h"
+
 USE_AUTOCONF=	yes
 USE_GMAKE=	yes
 
