@@ -30,6 +30,6 @@ post-extract:
 .endfor
 
 do-install:
-	cd ${WRKSRC}; ${PERL} install.pl -y
+	cd ${WRKSRC}; ${PERL} install.pl -y -c -bsdport
 
 .include <bsd.port.mk>
