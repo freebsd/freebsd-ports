@@ -8,6 +8,7 @@
 
 PORTNAME=	images
 PORTVERSION=	2.10
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Projects/cristal/caml-light/bazar-ocaml/
 PKGNAMEPREFIX=	ocaml-
@@ -19,10 +20,10 @@ COMMENT=	Objective Caml image processing library
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		lablgtk:${PORTSDIR}/x11-toolkits/ocaml-lablgtk \
-		gs:${PORTSDIR}/print/ghostscript-afpl
+		gs:${PORTSDIR}/print/ghostscript-gnu
 RUN_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		lablgtk:${PORTSDIR}/x11-toolkits/ocaml-lablgtk \
-		gs:${PORTSDIR}/print/ghostscript-afpl
+		gs:${PORTSDIR}/print/ghostscript-gnu
 LIB_DEPENDS=	ungif:${PORTSDIR}/graphics/libungif \
 		png:${PORTSDIR}/graphics/png \
 		jpeg:${PORTSDIR}/graphics/jpeg \
