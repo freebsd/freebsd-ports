@@ -1,0 +1,19 @@
+@cwd /etc/ppp
+ip-down
+ip-up
+@exec mkdir -p %D/peers
+peers/xisp_cuaa0
+peers/xisp_cuaa1
+peers/xisp_cuaa2
+peers/xisp_cuaa3
+peers/xisp_dialer
+
+@cwd /usr/X11R6
+bin/xisp
+bin/xispid
+bin/xisprccv
+
+@cwd /usr/local
+@exec mkdir -p %D/libexec
+libexec/xispdial
+libexec/xispterm
