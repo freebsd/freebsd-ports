@@ -1,0 +1,13 @@
+--- src/Makefile.in.orig	Mon Aug 13 13:01:30 2001
++++ src/Makefile.in	Mon Sep 16 22:04:55 2002
+@@ -67,8 +67,8 @@
+ 
+ bin_PROGRAMS = rpc
+ 
+-CFLAGS = -O2 -Wall
+-CXXFLAGS = -O2 -Wall
++CFLAGS = @CFLAGS@
++CXXFLAGS = @CXXFLAGS@
+ INCLUDES = @CURSES_INCLUDEDIR@
+ LDADD = -lm -lccm @CURSES_LIBS@
+ 
