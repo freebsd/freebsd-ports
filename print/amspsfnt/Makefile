@@ -7,38 +7,31 @@
 
 PORTNAME=	amspsfnt
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	print x11-fonts
 MASTER_SITES=	ftp://ftp.ams.org/pub/tex/psfonts/ams/
 DISTNAME=	amsps
 EXTRACT_SUFX=	-unix.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	AMSFonts PostScript Fonts (Adobe Type 1 format)
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/type1inst:${PORTSDIR}/x11-fonts/p5-type1inst
 
-SUB_FILES=	pkg-message
-
 WRKSRC=		${WRKDIR}/amspsfnt
-TEXDIR?=	${PREFIX}/share/texmf
-AMSFNTDIR=	${TEXDIR}/fonts/ams
+
+FONTSDIR=	share/fonts/amspsfont
+SUB_FILES=	pkg-message
 
 do-build:
 	(cd ${WRKSRC}/pfb; ${LOCALBASE}/bin/type1inst -nolog)
 
 do-install:
-	@${MKDIR} ${AMSFNTDIR}/tfm
-	${INSTALL_DATA} ${WRKSRC}/tfm/* ${AMSFNTDIR}/tfm
-	@${MKDIR} ${AMSFNTDIR}/type1
-	${INSTALL_DATA} ${WRKSRC}/pfb/* ${AMSFNTDIR}/type1
-	@${MKDIR} ${TEXDIR}/dvips/mapfiles.ams
-	${INSTALL_DATA} ${WRKSRC}/mapfiles/* ${TEXDIR}/dvips/mapfiles.ams
-	@${MKDIR} ${PREFIX}/lib/afm
-	${INSTALL_DATA} ${WRKSRC}/afm/* ${PREFIX}/lib/afm
-.ifndef (NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/READ.ME ${DOCSDIR}
-.endif
+	${MKDIR} ${PREFIX}/${FONTSDIR}/afm
+	${INSTALL_DATA} ${WRKSRC}/afm/* ${PREFIX}/${FONTSDIR}/afm
+	${MKDIR} ${PREFIX}/${FONTSDIR}/pfb
+	${INSTALL_DATA} ${WRKSRC}/pfb/* ${PREFIX}/${FONTSDIR}/pfb
+	${INSTALL_DATA} ${WRKSRC}/READ.ME ${PREFIX}/${FONTSDIR}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
