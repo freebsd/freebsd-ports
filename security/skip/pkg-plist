@@ -36,6 +36,7 @@ share/doc/skip/README.PATENT
 share/doc/skip/00README
 share/doc/skip/INSTALL
 share/doc/skip/README.FreeBSD
+share/doc/skip/README.FreeBSD+NAT
 share/doc/skip/advanced.TOPICS
 share/doc/skip/usersguide.txt
 share/doc/skip/usersguide.ps
