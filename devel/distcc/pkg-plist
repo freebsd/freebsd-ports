@@ -4,9 +4,7 @@ sbin/distccd
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/COPYING.FDL
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/OLDNEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/distcc.info.gz
 %%PORTDOCS%%%%DOCSDIR%%/distcc.sgml
 %%PORTDOCS%%%%DOCSDIR%%/html/distcc.html
 %%PORTDOCS%%%%DOCSDIR%%/html/distcc-1.html
