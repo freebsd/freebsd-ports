@@ -3,7 +3,7 @@
 # Date created:		17 January 1997
 # Whom:			FURUSAWA,Kazuhisa <furusawa@com.cs.osakafu-u.ac.jp>
 #
-# $Id: Makefile,v 1.3 1997/02/17 05:01:18 obrien Exp $
+# $Id: Makefile,v 1.4 1997/02/19 04:22:01 asami Exp $
 #
 
 PKGNAME=	xengine-1.0.1
@@ -11,7 +11,7 @@ CATEGORIES=	benchmarks x11
 MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/Usenet/comp.sources.x/volume09/xengine/
 DISTFILES=	part01.z patch1.z
 
-MAINTAINER=	furusawa@com.cs.osakafu-u.ac.jp
+MAINTAINER=	kazu@jp.freebsd.org
 
 BUILD_DEPENDS=	gunshar:${PORTSDIR}/archivers/gshar+gunshar
 
