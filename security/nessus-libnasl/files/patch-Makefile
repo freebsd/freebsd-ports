@@ -1,0 +1,16 @@
+--- Makefile.orig	Tue Jan 21 15:27:53 2003
++++ Makefile	Thu Jul  3 08:27:43 2003
+@@ -18,13 +18,6 @@
+ 	$(INSTALL) -c -m 0644 doc/nasl.1 $(DESTDIR)${mandir}/man1
+ 
+ 
+-	@echo
+-	@echo ' --------------------------------------------------------------'
+-	@echo ' libnasl has been sucessfully installed. '
+-	@echo " Make sure that $(bindir) is in your PATH before you"
+-	@echo " continue "
+-	@echo ' --------------------------------------------------------------'
+-	@echo
+ clean :
+ 	cd nasl && ${MAKE} clean
+ 
