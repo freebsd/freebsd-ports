@@ -21,6 +21,8 @@ EXTRACT_ONLY=	${NGOBJWEB_ADAPTOR}
 MAINTAINER=	frank@opengroupware.org
 COMMENT=	Groupware package including mail, calendar, palm sync and much more
 
+BROKEN=		Unfetchable
+
 INSTALL_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache2 \
 		${LOCALBASE}/bin/psql:${PORTSDIR}/databases/postgresql7 \
 		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash2 \
