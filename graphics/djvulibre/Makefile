@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	djvulibre
-PORTVERSION=	3.5.9
+PORTVERSION=	3.5.12
 CATEGORIES=	graphics www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	djvu
@@ -47,7 +47,7 @@ pre-everything::
 .if defined(LOCALBASE) && ${LOCALBASE} != "/usr/local"
 pre-configure:
 	${PERL} -pi -e 's,/usr/local,${LOCALBASE},g' `find ${WRKSRC} \
-		-type f -print0 | xargs -0 ${GREP} -Fl --mmap /usr/local`
+		-type f -print0 | ${xargs} -0 ${GREP} -Fl --mmap /usr/local`
 .endif
 
 .if !defined(WITH_OPTIMIZED_CFLAGS)
