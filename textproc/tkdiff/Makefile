@@ -6,18 +6,19 @@
 #
 
 PORTNAME=	tkdiff
-PORTVERSION= 	3.04
-CATEGORIES=	textproc tk82
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	kevlo
+PORTVERSION= 	3.05
+CATEGORIES=	textproc tk83
+MASTER_SITES=	http://people.freebsd.org/~kevlo/
 
 MAINTAINER=	kevlo@FreeBSD.org
 
-RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
+RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
 
 NO_BUILD=	yes
 
+NO_WRKSUBDIR=	yes
+
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/tkdiff ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/tkdiff-3.05.tcl.txt ${PREFIX}/bin/tkdiff
 
 .include <bsd.port.mk>
