@@ -15,4 +15,5 @@ bin/rcscmp
 %%EXAMPLESDIR%%/cvsyncd-FreeBSD.conf
 %%EXAMPLESDIR%%/cvsyncd-NetBSD.conf
 %%EXAMPLESDIR%%/cvsyncd-OpenBSD.conf
+%%STARTUPDIR%%/cvsyncd.sh
 @dirrm %%EXAMPLESDIR%%
