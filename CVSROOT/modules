@@ -5798,6 +5798,7 @@ p5-XML-TreeBuilder	ports/textproc/p5-XML-TreeBuilder
 p5-XML-Twig	ports/textproc/p5-XML-Twig
 p5-XML-Writer	ports/textproc/p5-XML-Writer
 p5-XML-XPath	ports/textproc/p5-XML-XPath
+p5-XML-XQL	ports/textproc/p5-XML-XQL
 p5-XML-XSH	ports/textproc/p5-XML-XSH
 p5-XML-XSLT	ports/textproc/p5-XML-XSLT
 p5-XML-XUpdate-LibXML	ports/textproc/p5-XML-XUpdate-LibXML
