@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Path-Class
-PORTVERSION=	0.07
+PORTVERSION=	0.08
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/K/KW/KWILLIAMS/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Cross-platform path specification manipulation
 
 PERL_CONFIGURE=	yes
