@@ -1,0 +1,8 @@
+  All static libraries, which are need to develop for Agenda VR3 PDA.
+  Agenda VR3 uses Linux VR (mipsel-linux gcc target) as OS.
+  So, this libraries was build with gcc-2.97 for mipsel-linux
+  target. 
+
+  This libraries need also to build mipsel-linux-gcc port.
+  
+WWW: http://dev.agendacomputing.org/
