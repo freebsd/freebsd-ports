@@ -1,8 +1,11 @@
---- Imakefile.orig	Sat Sep 18 11:34:00 1999
-+++ Imakefile	Sat Sep 18 11:34:39 1999
-@@ -27,7 +27,11 @@
+--- Imakefile.orig	Fri Dec 20 04:31:12 1996
++++ Imakefile	Sun Dec 10 17:12:58 2000
+@@ -25,9 +25,13 @@
+  */
+ 
  #if defined (FreeBSDArchitecture)
-   CC=              gcc
+-  CC=              gcc
++XCOMM  CC=              gcc
    EXTRA_DEFINES=   -D_HAVE_PARAM_H
 +#if defined (AlphaArchitecture)
 +  LOCAL_LIBRARIES= -lxforms -lXpm -lX11 -lm -lio
@@ -12,3 +15,11 @@
  #else
    CFLAGS=          -O2 -m486
    LOCAL_LIBRARIES= -lforms -lXpm -lX11 -lm
+@@ -55,6 +59,6 @@
+ 	callbacks.o \
+ 	led.o \
+ 
+-ComplexProgramTarget(xtuner)
++ComplexProgramTargetNoMan(xtuner)
+ 
+ 

@@ -17,6 +17,5 @@ LIB_DEPENDS=	xforms.0:${PORTSDIR}/x11-toolkits/xforms
 
 USE_IMAKE=	YES
 USE_XPM=	YES
-NO_INSTALL_MANPAGES=	YES
 
 .include <bsd.port.mk>
