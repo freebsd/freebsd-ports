@@ -9,23 +9,39 @@
 PORTNAME=	stlport
 PORTVERSION=	4.0
 CATEGORIES=	devel
-MASTER_SITES=	http://www.stlport.com/archive/
-DISTNAME=	STLport-${PORTVERSION}
+MASTER_SITES=	http://www.stlport.com/archive/  \
+		http://www.stlport.com/beta/
+DISTNAME=	STLport-${PORTVERSION:S/.b/-b/}
 
 MAINTAINER=	obrien@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/STLport-${PORTVERSION}/src
+WRKSRC=		${WRKDIR}/STLport-${PORTVERSION:S/.b/b/}/src
 MAKEFILE=	gcc.mak
 ALL_TARGET=	clean all
 USE_GMAKE=	yes
 
-do-install:
-	${MKDIR} ${PREFIX}/include/stlport
+pre-build:
+	${LN} -sf /usr/include/g++ ${WRKSRC}/../include
 
-.for include in *.h algorith algorithm deque functional hash_map hash_set \
-iterator list map memory numeric queue rope set slist stack utility vector \
-xmemory xutility
-	${INSTALL_DATA} ${WRKSRC}/${include} ${PREFIX}/include/stlport
+post-build:
+.for lib in libstlport_gcc.so libstlport_gcc_debug.so libstlport_gcc_stldebug.so
+	${MV} ${WRKSRC}/../lib/${lib} ${WRKSRC}/../lib/${lib}.4_0_${PORTREVISION}
 .endfor
+	-# get list from `export' files in version 4.1, rather than do this
+	cd ${WRKSRC}/../stlport ; ${RM} -rf BC50 SC5 config/new_compiler old_hp
+	find ${WRKSRC}/../stlport -name "*.orig" -delete
+
+do-install:
+	cd ${WRKSRC}/.. ; pax -rw stlport ${PREFIX}/include
+	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/include
+	${CHMOD} -R ${SHAREMODE} ${PREFIX}/include
+	${CHMOD} -R ugo+X ${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/../lib/* ${PREFIX}/lib
+.for lib in libstlport_gcc.so libstlport_gcc_debug.so libstlport_gcc_stldebug.so
+	cd ${PREFIX}/lib ; ${LN} -sf ${lib}.4_0_${PORTREVISION} ${lib}
+.endfor
+	${MKDIR} ${PREFIX}/share/doc/html/stlport/images
+	cd ${WRKSRC}/../doc ; ${INSTALL_MAN} *.css *.html ${PREFIX}/share/doc/html/stlport
+	cd ${WRKSRC}/../doc ; ${INSTALL_MAN} images/* ${PREFIX}/share/doc/html/stlport/images
 
 .include <bsd.port.mk>
