@@ -7,8 +7,8 @@
 
 PORTNAME=	tdiary
 PORTVERSION=	1.5.4
-PORTREVISION=	1
-CATEGORIES=	japanese ruby www
+PORTREVISION=	2
+CATEGORIES=	www ruby
 MASTER_SITES=	\
 		${MASTER_SITE_SOURCEFORGE} \
 		http://www.tdiary.org/download/
@@ -29,8 +29,11 @@ NO_BUILD=	yes
 USE_RUBY=	yes
 
 TDIARYDIR=	${PREFIX}/share/examples/${PORTNAME}
-
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+.if  !defined(TDIARY_LANG)
+TDIARY_LANG=	tdiary.conf-en
+.endif
 
 pre-everything::
 	@${ECHO_MSG}
@@ -47,6 +50,7 @@ do-install:
 	@if [ -d ${TDIARYDIR} ]; then ${RM} -rf ${TDIARYDIR}; fi
 	${MKDIR} ${TDIARYDIR}
 	@${SED} -e 's,@@@@PREFIX@@@@,${PREFIX},g' \
+		-e 's,@@@@LANG@@@@,${TDIARY_LANG},g' \
 		${FILESDIR}/tdiary-FreeBSD.sh.in > ${TDIARYDIR}/tdiary-FreeBSD.sh
 	@${CHMOD} ugo=rx ${TDIARYDIR}/tdiary-FreeBSD.sh
 	${CP} -pR ${WRKSRC}/ ${TDIARYDIR}
@@ -55,6 +59,10 @@ do-install:
 .endif
 .if defined(WITH_TDIARY_NORA)
 	${INSTALL_DATA} ${WRKSRC}/misc/plugin/disp_referrer.rb ${TDIARYDIR}/plugin
+.endif
+	${INSTALL_DATA} ${WRKSRC}/misc/plugin/comment_mail-sendmail.rb ${TDIARYDIR}/plugin
+.if ${TDIARY_LANG} == tdiary.conf-en
+	${INSTALL_DATA} ${WRKSRC}/misc/i18n/00lang.en.rb ${TDIARYDIR}/plugin
 .endif
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${TDIARYDIR}
 
@@ -65,6 +73,10 @@ post-install:
 .endif
 .if defined(WITH_TDIARY_NORA)
 	@${ECHO} 'share/examples/${PORTNAME}/plugin/disp_referrer.rb' >> ${TMPPLIST}
+.endif
+	@${ECHO} 'share/examples/${PORTNAME}/plugin/comment_mail-sendmail.rb' >> ${TMPPLIST}
+.if ${TDIARY_LANG} == tdiary.conf-en	
+	@${ECHO} 'share/examples/${PORTNAME}/plugin/00lang.en.rb' >> ${TMPPLIST}
 .endif
 	@cd ${WRKSRC} && ${FIND} . -type d -depth  | ${SED} -e 's,^\.,@dirrm share/examples/${PORTNAME},' >> ${TMPPLIST}
 	@${SED} -e "s,@@@@PREFIX@@@@,${PREFIX},g" ${PKGMESSAGE}
