@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smbfs
-PORTVERSION=	1.3.3
+PORTVERSION=	1.3.4
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.butya.kz/pub/smbfs/
 
