@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/flac
 bin/metaflac
 lib/libFLAC.a
@@ -13,7 +14,8 @@ lib/libFLAC.so.0
 %%PORTDOCS%%share/doc/flac/id.html
 %%PORTDOCS%%share/doc/flac/index.html
 %%PORTDOCS%%share/doc/flac/news.html
-%%PORTDOCS%%share/doc/flac/images/logo.jpg
 %%PORTDOCS%%share/doc/flac/images/1x1.gif
+%%PORTDOCS%%share/doc/flac/images/cafebug.gif
+%%PORTDOCS%%share/doc/flac/images/logo.jpg
 %%PORTDOCS%%@dirrm share/doc/flac/images
 %%PORTDOCS%%@dirrm share/doc/flac
