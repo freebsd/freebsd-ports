@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_dtcl
-PORTVERSION= 	0.8.1.1
+PORTVERSION=	0.8.1.1
 CATEGORIES=	www tcl83
 MASTER_SITES=	http://master.debian.org/~davidw/mod_dtcl/
 DISTNAME=	libapache-mod-dtcl_0.8.1-1

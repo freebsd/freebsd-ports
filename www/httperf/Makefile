@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	httperf
-PORTVERSION= 	0.6
+PORTVERSION=	0.6
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.hpl.hp.com/pub/httperf/
 

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	webstone
-PORTVERSION= 	2.5
+PORTVERSION=	2.5
 CATEGORIES=	www benchmarks
 MASTER_SITES=	ftp://ftp.mindcraft.com/webstone/
 DISTNAME=	ws25_src

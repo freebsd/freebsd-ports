@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	squidtimes
-PORTVERSION= 	1.12
+PORTVERSION=	1.12
 CATEGORIES=	www
 MASTER_SITES=	http://www.cineca.it/~nico/binaries/ \
 		${MASTER_SITE_LOCAL}

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bmsync
-PORTVERSION= 	0.2.0
+PORTVERSION=	0.2.0
 CATEGORIES=	www
 MASTER_SITES=	http://www.cs.cmu.edu/~dpelleg/sw/
 

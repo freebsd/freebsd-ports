@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	demoroniser
-PORTVERSION= 	1.0
+PORTVERSION=	1.0
 CATEGORIES=	www
 MASTER_SITES=	http://www.fourmilab.ch/webtools/demoroniser/ \
 		${MASTER_SITE_LOCAL}

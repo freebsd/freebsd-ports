@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	boa
-PORTVERSION= 	0.94.8.3
+PORTVERSION=	0.94.8.3
 CATEGORIES=	www
 MASTER_SITES=	http://www.boa.org/
 

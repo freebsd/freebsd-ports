@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xitami
-PORTVERSION= 	2.3d
+PORTVERSION=	2.3d
 CATEGORIES=	www
 MASTER_SITES=	http://www.imatix.com/pub/xitami/
 DISTNAME=	xiuni23d

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	roxen
-PORTVERSION= 	1.3.111
+PORTVERSION=	1.3.111
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.roxen.com/roxen/source/
 DISTNAME=	roxen_1.3.111-0.6-40bit

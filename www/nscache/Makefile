@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nscache
-PORTVERSION= 	0.2p2
+PORTVERSION=	0.2p2
 CATEGORIES=	www
 MASTER_SITES=	http://www.idata.sk/~ondrej/sw/
 DISTNAME=	nscache-0.2pl2

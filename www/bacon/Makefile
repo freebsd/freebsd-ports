@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bacon
-PORTVERSION= 	1.071999
+PORTVERSION=	1.071999
 CATEGORIES=	www
 MASTER_SITES=	ftp://samurai.ruin.org/pub/All/
 

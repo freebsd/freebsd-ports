@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	http-analyze
-PORTVERSION= 	2.01
+PORTVERSION=	2.01
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.rent-a-guru.de/pub/http-analyze2.01/
 DISTNAME=	${PORTNAME}${PORTVERSION}

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cgic
-PORTVERSION= 	1.06
+PORTVERSION=	1.06
 CATEGORIES=	www
 MASTER_SITES=	http://www.boutell.com/cgic/
 DISTNAME=	${PORTNAME}106

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnuinfo
-PORTVERSION= 	1.3
+PORTVERSION=	1.3
 CATEGORIES=	www
 MASTER_SITES=	http://user.cs.tu-berlin.de/~kraxel/info2html/
 

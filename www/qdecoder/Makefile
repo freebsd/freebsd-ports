@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qDecoder
-PORTVERSION= 	6.0.3
+PORTVERSION=	6.0.3
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.qDecoder.org/pub/qDecoder/\
 		ftp://ftp2.qDecoder.org/pub/qDecoder/

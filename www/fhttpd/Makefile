@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fhttpd
-PORTVERSION= 	0.4.2
+PORTVERSION=	0.4.2
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.fhttpd.org/
 

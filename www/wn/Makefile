@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wn
-PORTVERSION= 	1.18.6
+PORTVERSION=	1.18.6
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_LOCAL}	# ftp://ftp.acns.nwu.edu/pub/wn/
 MASTER_SITE_SUBDIR=	trevor

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	squid
-PORTVERSION= 	2.2
+PORTVERSION=	2.2
 CATEGORIES=	www
 MASTER_SITES=  \
 	ftp://squid.nlanr.net/pub/squid-2/STABLE/ \

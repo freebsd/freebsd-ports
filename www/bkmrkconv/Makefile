@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bkmrkconv
-PORTVERSION= 	1.08
+PORTVERSION=	1.08
 CATEGORIES=	www
 MASTER_SITES=	http://www.dcs.warwick.ac.uk/~csube/bkmrkconv/
 DISTFILES=	${PORTNAME}.tar.gz

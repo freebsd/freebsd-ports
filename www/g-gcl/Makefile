@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	g-gcl
-PORTVERSION= 	1.10
+PORTVERSION=	1.10
 CATEGORIES=	www graphics
 MASTER_SITES=	ftp://ftp.whizkidtech.net/cgi/gcl/ \
 		http://www.whizkidtech.net/gcl/

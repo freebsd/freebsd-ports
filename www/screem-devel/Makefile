@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	screem
-PORTVERSION= 	0.3.0
+PORTVERSION=	0.3.0
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.screem.org/src/

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	npc
-PORTVERSION= 	0.83
+PORTVERSION=	0.83
 CATEGORIES=	www
 MASTER_SITES=	http://www2.biglobe.ne.jp/%7Enir/soft/
 

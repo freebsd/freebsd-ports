@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	squid
-PORTVERSION= 	2.3
+PORTVERSION=	2.3
 CATEGORIES=	www
 MASTER_SITES=  \
 	ftp://ftp.squid-cache.org/pub/squid-2/STABLE/ \

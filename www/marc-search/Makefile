@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	marc-search
-PORTVERSION= 	4.3
+PORTVERSION=	4.3
 CATEGORIES=	www
 MASTER_SITES=	http://www.oac.uci.edu/indiv/ehood/contrib/marc-search/
 DISTNAME=	${PORTNAME}.${PORTVERSION}

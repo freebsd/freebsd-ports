@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gn
-PORTVERSION= 	2.24
+PORTVERSION=	2.24
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.acns.nwu.edu/pub/gn/
 

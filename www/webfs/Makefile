@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	webfs
-PORTVERSION= 	1.6
+PORTVERSION=	1.6
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.strusel007.de/linux/misc/
 DISTNAME=	${PORTNAME}_${PORTVERSION}

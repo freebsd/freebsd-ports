@@ -11,7 +11,7 @@ PORTVERSION=	4.75
 
 MAINTAINER=	trevor@FreeBSD.org
 
-FORBIDDEN= 	"buffer overflow in password field of HTML forms,\
+FORBIDDEN=	"buffer overflow in password field of HTML forms,\
 		reported by Michal Zalewski and fixed in 4.76--example at \
 		http://people.freebsd.org/~trevor/hostile-page.html"
 

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	web500gw
-PORTVERSION= 	2.1b3
+PORTVERSION=	2.1b3
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.tu-chemnitz.de/pub/Local/urz/web500gw/ \
 		http://www.tu-chemnitz.de/ftp-home/pub/Local/urz/web500gw/ \

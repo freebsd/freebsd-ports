@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	grail
-PORTVERSION= 	0.6
+PORTVERSION=	0.6
 CATEGORIES=	www python
 MASTER_SITES=	ftp://ftp.python.org/pub/grail/
 DISTFILES=	${PORTNAME}-06.tgz

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mhonarc
-PORTVERSION= 	2.4.7
+PORTVERSION=	2.4.7
 CATEGORIES=	www mail
 MASTER_SITES=	http://www.oac.uci.edu/indiv/ehood/tar/ \
 		http://mirror.ncsa.uiuc.edu/mhonarc.org/\

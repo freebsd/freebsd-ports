@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	udmsearch
-PORTVERSION= 	3.0.23
+PORTVERSION=	3.0.23
 CATEGORIES=	www databases
 MASTER_SITES=	http://mysearch.udm.net/Download/	\
 		ftp://ftp.izhcom.ru/pub/unix/UdmSearch/	\

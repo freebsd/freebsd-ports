@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wcolEpre
-PORTVERSION= 	1999.01.10
+PORTVERSION=	1999.01.10
 CATEGORIES=	www
 MASTER_SITES=	http://shika.aist-nara.ac.jp/products/DEST/Wcol/
 DISTNAME=	wcolEpre.990110_150126
