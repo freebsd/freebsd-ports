@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	nkf
-PORTVERSION=	0.01
+PORTVERSION=	1.92
 CATEGORIES=	japanese perl5
-MASTER_SITES=	ftp://ftp.ie.u-ryukyu.ac.jp/pub/software/kono/ \
-		ftp://ftp.win.ne.jp/pub/misc/ \
-		ftp://ftp.eos.hokudai.ac.jp/pub/tools/code-conv/nkf/
+MASTER_SITES=	ftp://ftp.ie.u-ryukyu.ac.jp/pub/software/kono/
+PKGNAMEPREFIX=	ja-p5-
+DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 EXTRACT_SUFX=	.shar
-DISTNAME=	${PORTNAME}171
 
 MAINTAINER=	max@FreeBSD.org
 
@@ -25,8 +24,14 @@ WRKSRC=		${WRKDIR}/NKF
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		NKF.3
 
-.include <bsd.port.pre.mk>
+do-extract:
+	@${RM} -rf ${WRKDIR}
+	@${MKDIR} ${WRKDIR}/NKF
+	@for file in ${EXTRACT_ONLY}; do \
+		if ! (cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/$$file ${EXTRACT_AFTER_ARGS});\
+		then \
+			exit 1; \
+		fi \
+	done
 
-PKGNAMEPREFIX:=	${PKGNAMEPREFIX}p5-
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
