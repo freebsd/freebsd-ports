@@ -146,6 +146,8 @@ PLIST_SUB+=	IDLED="@comment "
 .elif defined(WITHOUT_IDLE_IDLED) && defined(WITHOUT_IDLE_POLL)
 CONFIGURE_ARGS+=--with-idle=no
 PLIST_SUB+=	IDLED="@comment "
+.else
+PLIST_SUB+=	IDLED="@comment "
 .endif
 
 .if defined(WITH_LISTEXT)
