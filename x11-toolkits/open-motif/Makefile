@@ -37,6 +37,10 @@ DEMOS_SRC=	${WRKSRC}/demos/programs
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "amd64"
+CONFIGURE_ARGS+= --with-pic
+.endif
+
 # User config option: Build and install Motif demos
 .if defined(WITHOUT_OPENMOTIF_DEMOS)
 PLIST_SUB+=	MOTIF_DEMOS="@comment "
