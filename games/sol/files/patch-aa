@@ -1,0 +1,11 @@
+--- Makefile	Wed Aug 13 20:37:02 1997
++++ /home/andy/tmp/wrk/Makefile	Sun Apr 12 19:14:29 1998
+@@ -62,7 +62,7 @@
+ ###########################################################################
+ 
+ # Where do you want to install the program and the highscore file?
+-INSTLIBDIR	= /var/local/lib/games
++INSTLIBDIR	= /usr/X11R6/share/sol
+ INSTBINDIR	= /usr/local/games
+ INSTMANDIR	= /usr/local/man/man6
+ #INSTLIBDIR	= /hom/sverrehu/lib

@@ -1,0 +1,15 @@
+@owner games
+@group games
+@mode 6755
+bin/sol
+@owner
+@group
+@mode
+share/doc/sol/CREDITS
+share/doc/sol/README
+@owner games
+@group games
+@mode 660
+share/sol/sol.score
+@dirrm share/doc/sol
+@dirrm share/sol
