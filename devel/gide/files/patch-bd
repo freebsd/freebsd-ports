@@ -1,5 +1,14 @@
 --- src/Makefile.in.orig	Sun May 14 10:11:41 2000
-+++ src/Makefile.in	Wed May 17 09:46:40 2000
++++ src/Makefile.in	Tue Jun 13 17:33:29 2000
+@@ -137,7 +137,7 @@
+ # binaries
+ bin_PROGRAMS = gide gdbio
+ 
+-CFLAGS = @CFLAGS@ 	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" 	-DGIDE_CFGDIR=\"$(pkgdatadir)\" 	-DGIDE_PLUGINDIR=\"$(libdir)/gide/plugins/$(VERSION)/\"
++CFLAGS = @CFLAGS@ 	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" 	-DGIDE_CFGDIR=\"$(pkgdatadir)\" 	-DGIDE_PLUGINDIR=\"$(libdir)/gide/plugins/$(VERSION)/\"
+ 
+ 
+ INCLUDES =  	$(GNOME_INCLUDEDIR) 	$(GUILE_INCS) 	$(EDITOR_INCLUDES) 	-I$(srcdir)/dialogs
 @@ -161,7 +161,7 @@
  
  
