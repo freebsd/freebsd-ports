@@ -1,15 +1,15 @@
---- Makefile.in	Sat Dec 30 07:22:51 2000
-+++ Makefile.in	Sat Nov  9 10:16:13 2002
-@@ -66,6 +66,8 @@
- STRIP = @STRIP@
- VERSION = @VERSION@
- 
+--- Makefile.in~	Sat Mar  5 01:22:15 2005
++++ Makefile.in	Sat Mar  5 01:20:05 2005
+@@ -142,7 +142,7 @@
+ infodir = @infodir@
+ install_sh = @install_sh@
+ libdir = @libdir@
+-libexecdir = @libexecdir@
 +libexecdir = @libexecdir@/nullmailer
-+
  localstatedir = @localstatedir@/nullmailer
- sysconfdir = @sysconfdir@/nullmailer
- 
-@@ -368,8 +370,8 @@
+ mandir = @mandir@
+ mkdir_p = @mkdir_p@
+@@ -587,8 +587,8 @@
  	chown nullmail $(DESTDIR)$(localstatedir)/*
  	chown nullmail $(DESTDIR)$(sbindir)/nullmailer-queue
  	chmod u+s $(DESTDIR)$(sbindir)/nullmailer-queue
