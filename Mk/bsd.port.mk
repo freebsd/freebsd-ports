@@ -139,18 +139,54 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  the system or installed from a port.
 # USE_GMAKE		- Says that the port uses gmake.
 # GMAKE			- Set to path of GNU make if not in $PATH (default: gmake).
-# USE_AUTOMAKE	- Says that the port uses automake.  Implies USE_AUTOCONF.
+# USE_AUTOMAKE		- Says that the port uses automake.  Implies
+#			USE_AUTOCONF and USE_AUTOMAKE_VER?=14.
+# USE_AUTOMAKE_VER	- Says that the port uses automake. Possible
+#				values: 14, 15;
+#				each specify a version of automake to use
+#				and appropriatly set both AUTOMAKE{,_DIR}
+#				and ACLOCAL{,_DIR} variables.
+#				Implies USE_AUTOMAKE.  If set with
+#				unknown value, defaults to 14.
 # AUTOMAKE		- Set to path of GNU automake if not in $PATH (default:
-#				  automake).
-# AUTOMAKE_ARGS - Pass these args to automake if ${USE_AUTOMAKE} is set.
-# AUTOMAKE_ENV	- Pass these env (shell-like) to automake if
-#				  ${USE_AUTOMAKE} is set.
-# USE_AUTOCONF	- Says that the port uses autoconf.  Implies GNU_CONFIGURE.
-# AUTOCONF		- Set to path of GNU autoconf if not in $PATH (default:
-#				  autoconf).
-# AUTOCONF_ARGS - Pass these args to autoconf if ${USE_AUTOCONF} is set.
-# AUTOCONF_ENV	- Pass these env (shell-like) to autoconf if
-#				  ${USE_AUTOCONF} is set.
+#				according to USE_AUTOMAKE_VER value)
+# AUTOMAKE_ARGS	- Pass these args to ${AUTOMAKE} if ${USE_AUTOMAKE_VER} is set.
+# AUTOMAKE_ENV	- Pass these env (shell-like) to ${AUTOMAKE} if
+#				${USE_AUTOMAKE_VER} is set.
+# ACLOCAL	- Set to path of GNU automake aclocal if not in $PATH (default:
+#				according to USE_AUTOMAKE_VER value)
+# ACLOCAL_DIR	- Set to path of GNU automake aclocal shared directory (default:
+#				according to USE_AUTOMAKE_VER value)
+# AUTOMAKE_DIR	- Set to path of GNU automake shared directory (default:
+#				according to USE_AUTOMAKE_VER value)
+# USE_AUTOCONF_VER	- Says that the port uses autoconf. Possible
+#				values: 213;
+#				each specify a version of autoconf to use
+#				and appropriatly set both AUTOCONF{,_DIR}
+#				and ACLOCAL{,_DIR} variables.
+#				Implies USE_AUTOCONF.  If set with
+#				unknown value, defaults to 213.
+# USE_AUTOCONF	- Says that the port uses autoconf.  Implies
+#				GNU_CONFIGURE and USE_AUTOCONF_VER?=213.
+# AUTOCONF	- Set to path of GNU autoconf if not in $PATH (default:
+#				according to USE_AUTOCONF_VER value)
+# AUTOCONF_ARGS	- Pass these args to ${AUTOCONF} if ${USE_AUTOCONF} is set.
+# AUTOCONF_ENV	- Pass these env (shell-like) to ${AUTOCONF} if
+#				${USE_AUTOCONF} is set.
+# AUTOHEADER	- Set to path of GNU autoconf autoheader
+#				if not in $PATH (default: according
+#				to USE_AUTOCONF_VER value)
+# AUTORECONF	- Set to path of GNU autoconf autoreconf
+#				if not in $PATH (default: according
+#				to USE_AUTOCONF_VER value)
+# AUTOSCAN	- Set to path of GNU autoconf autoscan
+#				if not in $PATH (default: according
+#				to USE_AUTOCONF_VER value)
+# AUTOIFNAMES	- Set to path of GNU autoconf autoifnames
+#				if not in $PATH (default: according
+#				to USE_AUTOCONF_VER value)
+# AUTOCONF_DIR	- Set to path of GNU autoconf shared directory (default:
+#				according to USE_AUTOCONF_VER value)
 # USE_LIBTOOL	- Says that the port uses Libtool.  Implies GNU_CONFIGURE.
 # LIBTOOL		- Set to path of libtool (default: libtool).
 # LIBTOOLFILES	- Files to patch for libtool (defaults: "aclocal.m4" if
@@ -825,12 +861,33 @@ BUILD_DEPENDS+=		unzip:${PORTSDIR}/archivers/unzip
 BUILD_DEPENDS+=		gmake:${PORTSDIR}/devel/gmake
 CONFIGURE_ENV+=	MAKE=${GMAKE}
 .endif
-.if defined(USE_AUTOMAKE)
+.if defined(USE_AUTOMAKE) || defined(USE_AUTOMAKE_VER)
+USE_AUTOMAKE?=	yes
+USE_AUTOMAKE_VER?=	14
+
 USE_AUTOCONF=	yes
-BUILD_DEPENDS+=		automake14:${PORTSDIR}/devel/automake14
 .endif
-.if defined(USE_AUTOCONF)
+.if defined(USE_AUTOMAKE_VER)
+.if ${USE_AUTOMAKE_VER} == 15
+BUILD_DEPENDS+=		automake:${PORTSDIR}/devel/automake
+
+ACLOCAL?=		aclocal
+AUTOMAKE?=		automake
+ACLOCAL_DIR?=		${LOCALBASE}/share/aclocal
+AUTOMAKE_DIR?=		${LOCALBASE}/share/automake
+.else
+BUILD_DEPENDS+=		automake14:${PORTSDIR}/devel/automake14
+
+USE_AUTOCONF_VER?=	213
+.endif
+.endif
+.if defined(USE_AUTOCONF) || defined(USE_AUTOCONF_VER)
+USE_AUTOCONF?=	yes
+USE_AUTOCONF_VER?=	213
+
 GNU_CONFIGURE=	yes
+.endif
+.if defined(USE_AUTOCONF_VER)
 BUILD_DEPENDS+=		autoconf213:${PORTSDIR}/devel/autoconf213
 .endif
 .if defined(USE_LIBTOOL)
@@ -977,8 +1034,15 @@ NONEXISTENT?=	/nonexistent
 GMAKE?=			gmake
 ACLOCAL?=		aclocal14
 AUTOMAKE?=		automake14
+ACLOCAL_DIR?=		${LOCALBASE}/share/automake14/aclocal
+AUTOMAKE_DIR?=		${LOCALBASE}/share/automake14/automake
 AUTOCONF?=		autoconf213
 AUTOHEADER?=		autoheader213
+AUTORECONF?=		autoreconf213
+AUTOSCAN?=		autoscan213
+AUTOUPDATE?=		autoupdate213
+AUTOIFNAMES?=		ifnames213
+AUTOCONF_DIR?=		${LOCALBASE}/share/autoconf213/autoconf
 LIBTOOL?=		libtool
 XMKMF?=			xmkmf -a
 .if exists(/sbin/md5)
