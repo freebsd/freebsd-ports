@@ -3,7 +3,7 @@
 # Date created:				June 7th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id$
+#   $Id: Makefile,v 1.1.1.1 1997/06/07 04:07:27 jfitz Exp $
 #
 
 DISTNAME=	Net-Whois-0.21
@@ -14,8 +14,7 @@ MASTER_SITE_SUBDIR=	Net
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
-BUILD_DEPENDS= 	perl5.004:${PORTSDIR}/lang/perl5
-RUN_DEPENDS=	perl5.004:${PORTSDIR}/lang/perl5
+USE_PERL5=	YES
 
 MANPREFIX=	/usr/local/lib/perl5
 MAN3=		Net::Whois.3

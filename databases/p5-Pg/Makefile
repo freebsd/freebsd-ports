@@ -3,7 +3,7 @@
 # Date created:				October 19th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.8 1997/05/29 14:23:50 jfitz Exp $
+#   $Id: Makefile,v 1.9 1997/06/15 03:15:39 jfitz Exp $
 #
 
 DISTNAME=	pg95perl5-1.5.4
@@ -16,9 +16,9 @@ MAINTAINER=	jfitz@FreeBSD.ORG
 
 WRKSRC=		${WRKDIR}/pg95perl5
 
-BUILD_DEPENDS= 	perl5.004:${PORTSDIR}/lang/perl5 \
-		${PREFIX}/pgsql/lib/libpq.a:${PORTSDIR}/databases/postgresql
-RUN_DEPENDS=	perl5.004:${PORTSDIR}/lang/perl5
+BUILD_DEPENDS= 	${PREFIX}/pgsql/lib/libpq.a:${PORTSDIR}/databases/postgresql
+
+USE_PERL5=	YES
 
 MAN3=		Pg.3
 MANPREFIX=	${PREFIX}/lib/perl5

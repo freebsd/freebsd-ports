@@ -3,7 +3,7 @@
 # Date created:				April 18th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.2 1997/04/20 21:26:18 jfitz Exp $
+#   $Id: Makefile,v 1.3 1997/05/24 13:17:08 jfitz Exp $
 #
 
 DISTNAME=	perlvision
@@ -15,9 +15,9 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
-BUILD_DEPENDS= 	perl5.004:${PORTSDIR}/lang/perl5
-RUN_DEPENDS=	perl5.004:${PORTSDIR}/lang/perl5 \
-		${PREFIX}/lib/perl5/site_perl/Curses.pm:${PORTSDIR}/devel/p5-Curses
+RUN_DEPENDS=	${PREFIX}/lib/perl5/site_perl/Curses.pm:${PORTSDIR}/devel/p5-Curses
+
+USE_PERL5=	YES
 
 NO_WRKSUBDIR=	YES
 NO_BUILD=	YES

@@ -3,7 +3,7 @@
 # Date created:				October 17th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.6 1997/05/24 13:16:59 jfitz Exp $
+#   $Id: Makefile,v 1.7 1997/06/18 19:28:15 jfitz Exp $
 #
 
 DISTNAME=	DBI-0.83
@@ -14,8 +14,7 @@ MASTER_SITE_SUBDIR=	DBI
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
-BUILD_DEPENDS= 	perl5.004:${PORTSDIR}/lang/perl5
-RUN_DEPENDS=	perl5.004:${PORTSDIR}/lang/perl5
+USE_PERL5=	YES
 
 MAN3=		DBI.3 DBI::W32ODBC.3 DBI::FAQ.3
 MANPREFIX=	${PREFIX}/lib/perl5

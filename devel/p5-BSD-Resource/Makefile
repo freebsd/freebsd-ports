@@ -3,7 +3,7 @@
 # Date created:				October 20th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.5 1997/04/20 21:26:11 jfitz Exp $
+#   $Id: Makefile,v 1.6 1997/05/24 13:17:00 jfitz Exp $
 #
 
 DISTNAME=	BSD-Resource-1.05
@@ -14,8 +14,7 @@ MASTER_SITE_SUBDIR=	BSD
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
-BUILD_DEPENDS= 	perl5.004:${PORTSDIR}/lang/perl5
-RUN_DEPENDS=	perl5.004:${PORTSDIR}/lang/perl5
+USE_PERL5=	YES
 
 MAN3=		BSD::Resource.3
 MANPREFIX=	${PREFIX}/lib/perl5

@@ -3,7 +3,7 @@
 # Date created:				June 15th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.1.1.1 1997/06/16 02:45:08 jfitz Exp $
+#   $Id: Makefile,v 1.2 1997/06/17 22:48:05 jfitz Exp $
 #
 
 DISTNAME=	DProf-19970614
@@ -14,8 +14,7 @@ MASTER_SITE_SUBDIR=	Devel
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
-BUILD_DEPENDS= 	perl5.004:${PORTSDIR}/lang/perl5
-RUN_DEPENDS=	perl5.004:${PORTSDIR}/lang/perl5
+USE_PERL5=	YES
 
 MAN1PREFIX=	${PREFIX}
 MAN1=		dprofpp.1

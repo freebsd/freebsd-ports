@@ -3,7 +3,7 @@
 # Date created:				September 30th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.9 1997/05/24 13:17:16 jfitz Exp $
+#   $Id: Makefile,v 1.10 1997/06/21 12:47:42 ache Exp $
 #
 
 DISTNAME=       libwww-perl-5.10
@@ -14,11 +14,11 @@ MASTER_SITE_SUBDIR=	URI
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
-BUILD_DEPENDS= 	perl5.004:${PORTSDIR}/lang/perl5 \
-		${PREFIX}/lib/perl5/site_perl/MD5.pm:${PORTSDIR}/security/p5-MD5 \
+BUILD_DEPENDS= 	${PREFIX}/lib/perl5/site_perl/MD5.pm:${PORTSDIR}/security/p5-MD5 \
 		${PREFIX}/lib/perl5/site_perl/Net/FTP.pm:${PORTSDIR}/net/p5-Net \
 		${PREFIX}/lib/perl5/site_perl/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
-RUN_DEPENDS=	perl5.004:${PORTSDIR}/lang/perl5
+
+USE_PERL5=	YES
 
 MAN1=		lwp-mirror.1 lwp-request.1 lwp-rget.1 lwp-download.1
 MAN3=           Bundle::LWP.3 File::CounterFile.3 File::Listing.3 Font::AFM.3 \

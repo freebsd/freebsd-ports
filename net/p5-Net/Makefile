@@ -3,7 +3,7 @@
 # Date created:				September 30th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.9 1997/05/24 13:17:12 jfitz Exp $
+#   $Id: Makefile,v 1.10 1997/06/03 11:35:24 asami Exp $
 #
 
 DISTNAME=	libnet-1.05
@@ -14,9 +14,9 @@ MASTER_SITE_SUBDIR=	Net
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
-BUILD_DEPENDS= 	perl5.004:${PORTSDIR}/lang/perl5 \
-		${PREFIX}/lib/perl5/site_perl/Data/Dumper.pm:${PORTSDIR}/devel/p5-Data-Dumper
-RUN_DEPENDS=	perl5.004:${PORTSDIR}/lang/perl5
+BUILD_DEPENDS= 	${PREFIX}/lib/perl5/site_perl/Data/Dumper.pm:${PORTSDIR}/devel/p5-Data-Dumper
+
+USE_PERL5=	YES
 
 MAN3=		Net::Time.3 Net::DummyInetd.3 Net::NNTP.3 Net::SNPP.3 \
 		Net::POP3.3 Net::Cmd.3 Net::SMTP.3 Net::Domain.3 \

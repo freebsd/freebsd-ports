@@ -3,7 +3,7 @@
 # Date created:				October 17th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.6 1997/04/20 13:52:40 wosch Exp $
+#   $Id: Makefile,v 1.7 1997/05/24 13:17:11 jfitz Exp $
 #
 
 DISTNAME=	Array-PrintCols-1.2
@@ -14,8 +14,7 @@ MASTER_SITE_SUBDIR=	Array
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
-BUILD_DEPENDS= 	perl5.004:${PORTSDIR}/lang/perl5
-RUN_DEPENDS=	perl5.004:${PORTSDIR}/lang/perl5
+USE_PERL5=	YES
 
 NO_BUILD=	YES
 WRKSRC=		${WRKDIR}/Array-PrintCols

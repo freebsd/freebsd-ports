@@ -3,7 +3,7 @@
 # Date created:				October 17th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.5 1997/04/20 13:51:55 wosch Exp $
+#   $Id: Makefile,v 1.6 1997/05/24 13:17:01 jfitz Exp $
 #
 
 DISTNAME=	Curses-1.01
@@ -14,8 +14,7 @@ MASTER_SITE_SUBDIR=	Curses
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
-BUILD_DEPENDS= 	perl5.004:${PORTSDIR}/lang/perl5
-RUN_DEPENDS=	perl5.004:${PORTSDIR}/lang/perl5
+USE_PERL5=	YES
 
 MAN3=		Curses.3
 MANPREFIX=	${PREFIX}/lib/perl5
