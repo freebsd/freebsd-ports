@@ -41,7 +41,7 @@ PLIST_FILES=	bin/slon bin/slonik bin/slony_setup.pl \
 		share/postgresql/slony1_funcs.v74.sql \
 		share/postgresql/xxid.v73.sql \
 		share/postgresql/xxid.v74.sql
-PORTDOCS=	*.pdf howto/*.txt COPYRIGHT README slonik_commands.html
+PORTDOCS=	*.pdf howto COPYRIGHT README slonik_commands.html
 
 pre-configure:
 	cd ${PGSQL_SRC}/src/interfaces/libpq && ${GMAKE} all
