@@ -1,0 +1,11 @@
+--- data/scripts/pekwm_themeset.sh.orig	Tue Jan 13 06:42:34 2004
++++ data/scripts/pekwm_themeset.sh	Tue Dec 21 06:27:44 2004
+@@ -44,7 +44,7 @@
+ 		sed -e "s/Theme\ =\ \".*\"/Theme\ =\ \"$THEME\"/" $PEKWM_CONFIG_FILE > $TMPFILE;
+ 		cp $TMPFILE $PEKWM_CONFIG_FILE;
+ 		rm $TMPFILE
+-		pkill -HUP pekwm;
++		killall -HUP pekwm;
+ fi;
+ 
+ exit 0

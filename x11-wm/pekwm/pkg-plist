@@ -5,6 +5,9 @@ etc/pekwm/keys
 etc/pekwm/menu
 etc/pekwm/mouse
 etc/pekwm/start
+share/pekwm/scripts/pekwm_themeset.pl
+share/pekwm/scripts/pekwm_themeset.sh
+share/pekwm/scripts/pekwm_ws_menu.pl
 share/pekwm/themes/default/b-bottom-c.xpm
 share/pekwm/themes/default/b-bottom-l.xpm
 share/pekwm/themes/default/b-bottom-r.xpm
@@ -19,14 +22,41 @@ share/pekwm/themes/default/btn-b-left-un.xpm
 share/pekwm/themes/default/btn-b-right-fo.xpm
 share/pekwm/themes/default/btn-b-right-pr.xpm
 share/pekwm/themes/default/btn-b-right-un.xpm
+share/pekwm/themes/default/harbour.xpm
 share/pekwm/themes/default/sep-fo.xpm
 share/pekwm/themes/default/sep-un.xpm
-share/pekwm/themes/default/theme.in
+share/pekwm/themes/default/theme
 share/pekwm/themes/default/win-fo-sel.xpm
 share/pekwm/themes/default/win-fo.xpm
 share/pekwm/themes/default/win-un-sel.xpm
 share/pekwm/themes/default/win-un.xpm
-share/pekwm/themes/default/theme
+share/pekwm/themes/horizon/b-b.xpm
+share/pekwm/themes/horizon/b-bl.xpm
+share/pekwm/themes/horizon/b-br.xpm
+share/pekwm/themes/horizon/b-l.xpm
+share/pekwm/themes/horizon/b-r.xpm
+share/pekwm/themes/horizon/b-t.xpm
+share/pekwm/themes/horizon/b-tl.xpm
+share/pekwm/themes/horizon/b-tr.xpm
+share/pekwm/themes/horizon/btn-c-p.xpm
+share/pekwm/themes/horizon/btn-c-u.xpm
+share/pekwm/themes/horizon/btn-c.xpm
+share/pekwm/themes/horizon/btn-i-p.xpm
+share/pekwm/themes/horizon/btn-i-u.xpm
+share/pekwm/themes/horizon/btn-i.xpm
+share/pekwm/themes/horizon/btn-m-p.xpm
+share/pekwm/themes/horizon/btn-m-u.xpm
+share/pekwm/themes/horizon/btn-m.xpm
+share/pekwm/themes/horizon/h.xpm
+share/pekwm/themes/horizon/s-f-s.xpm
+share/pekwm/themes/horizon/s-f.xpm
+share/pekwm/themes/horizon/s-u-s.xpm
+share/pekwm/themes/horizon/s-u.xpm
+share/pekwm/themes/horizon/t-f-s.xpm
+share/pekwm/themes/horizon/t-f.xpm
+share/pekwm/themes/horizon/t-u-s.xpm
+share/pekwm/themes/horizon/t-u.xpm
+share/pekwm/themes/horizon/theme
 share/pekwm/themes/minimal/bd-hrz.xpm
 share/pekwm/themes/minimal/bd-vrt.xpm
 share/pekwm/themes/minimal/fo-bd-c.xpm
@@ -36,16 +66,17 @@ share/pekwm/themes/minimal/fo-btn-ma.xpm
 share/pekwm/themes/minimal/fo-win.xpm
 share/pekwm/themes/minimal/harbour.xpm
 share/pekwm/themes/minimal/se-win.xpm
-share/pekwm/themes/minimal/theme.in
+share/pekwm/themes/minimal/theme
 share/pekwm/themes/minimal/un-bd-c.xpm
+share/pekwm/themes/minimal/un-btn-cl.xpm
+share/pekwm/themes/minimal/un-btn-ic.xpm
+share/pekwm/themes/minimal/un-btn-ma.xpm
 share/pekwm/themes/minimal/un-win.xpm
 share/pekwm/themes/minimal/unse-win.xpm
-share/pekwm/themes/minimal/theme
-share/pekwm/scripts/pekwm_themeset.pl
-share/pekwm/scripts/pekwm_ws_menu.pl
+@dirrm share/pekwm/scripts
 @dirrm share/pekwm/themes/default
+@dirrm share/pekwm/themes/horizon
 @dirrm share/pekwm/themes/minimal
 @dirrm share/pekwm/themes
-@dirrm share/pekwm/scripts
 @dirrm share/pekwm
 @dirrm etc/pekwm
