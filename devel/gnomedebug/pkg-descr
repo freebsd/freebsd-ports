@@ -1,0 +1,5 @@
+This is the GNOME Debugging Framework (GDF).  GDF provides a number of 
+debugging services to applications such as Integrated Development 
+Environments and standalone debugging tools similar to DDD.
+
+WWW: http://www.gnome.org/
