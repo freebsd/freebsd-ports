@@ -34,8 +34,11 @@ CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/lib/libcdda_paranoia.so.0)
+.if exists(${LOCALBASE}/lib/libcdda_paranoia.a)
 WITH_CDPARANOIA=        yes
+.endif
+.if exists(${LOCALBASE}/lib/libfam.a)
+WITH_FAM=	yes
 .endif
 
 .if defined(WITH_CDPARANOIA)
@@ -43,6 +46,9 @@ LIB_DEPENDS+=   cdda_paranoia.0:${PORTSDIR}/audio/cdparanoia
 PLIST_SUB+=     CDPARANOIA=""
 .else
 PLIST_SUB+=     CDPARANOIA="@comment "
+.endif
+.if defined(WITH_FAM)
+LIB_DEPENDS+=	fam.0:${PORTSDIR}/devel/fam
 .endif
 
 post-patch:
