@@ -1,6 +1,19 @@
 bin/dotlock
 bin/maildirmake
 bin/maildrop
-bin/maildrop.maildirmake
+bin/makemime
 bin/reformail
 bin/reformime
+%%PORTDOCS%%share/maildrop/html/dotlock.html
+%%PORTDOCS%%share/maildrop/html/maildirmake.html
+%%PORTDOCS%%share/maildrop/html/maildrop.html
+%%PORTDOCS%%share/maildrop/html/maildropex.html
+%%PORTDOCS%%share/maildrop/html/maildropfilter.html
+%%PORTDOCS%%share/maildrop/html/maildropgdbm.html
+%%PORTDOCS%%share/maildrop/html/makemime.html
+%%PORTDOCS%%share/maildrop/html/reformail.html
+%%PORTDOCS%%share/maildrop/html/reformime.html
+%%PORTDOCS%%share/maildrop/html/rfc2045.html
+%%PORTDOCS%%share/maildrop/html/rfc822.html
+%%PORTDOCS%%@dirrm share/maildrop/html
+%%PORTDOCS%%@dirrm share/maildrop

@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	maildrop
-PORTVERSION=	0.64
+PORTVERSION=	1.3.0
 CATEGORIES=	mail
-MASTER_SITES=	http://www.flounder.net/~mrsam/maildrop/ \
-		${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR= system/mail/mailhandlers
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR= courier
 
 MAINTAINER=	tom@eborcom.com
 
@@ -21,7 +20,7 @@ MAINTAINER=	tom@eborcom.com
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgdbm.a:${PORTSDIR}/databases/gdbm
 .endif
 
-ALL_TARGET=	config.h xconfig.h all
+ALL_TARGET=	all
 INSTALL_TARGET=	install-strip
 
 # Maildrop will be installed with suid permissions for MAILDROP_SUID,
@@ -42,26 +41,15 @@ CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include" \
 GNU_CONFIGURE=	yes
 
 .if defined(NOPORTDOCS)
-INSTALL_TARGET=	install-exec all
+INSTALL_TARGET=	install-maildrop install-man
 .else
-MAN1=		dotlock.1 maildrop.1 maildrop.makegdbm.1 reformail.1 reformime.1
+MAN1=		dotlock.1 maildirmake.1 maildrop.1 makemime.1 reformail.1 reformime.1
 MAN5=		maildropex.5 maildropfilter.5 maildropgdbm.5
-MANCOMPRESSED=	yes
+MAN8=		maildirquota.8 deliverquota.8
 .endif
 
 .if defined(NO_GDBM)
-CONFIGURE_ARGS+=	--without-gdbm
-.endif
-
-PLIST=	${WRKDIR}/PLIST
-
-post-patch:
-	@${CP} ${PKGDIR}/pkg-plist ${PLIST}
-.if !defined(NO_GDBM)
-	@${CAT} ${PKGDIR}/pkg-plist.gdbm >> ${PLIST}
-.endif
-.if !defined(NOPORTDOCS)
-	@${CAT} ${PKGDIR}/pkg-plist.docs >> ${PLIST}
+CONFIGURE_ARGS+=	--without-db
 .endif
 
 .include <bsd.port.mk>
