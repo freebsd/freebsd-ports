@@ -3,11 +3,11 @@
 # Date created:         
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.1.1.1 1995/10/02 16:14:41 erich Exp $
+# $Id: Makefile,v 1.2 1996/10/10 16:01:56 erich Exp $
 #
 
 DISTNAME=	xcoral-2.5
-CATEGORIES+=	editors
+CATEGORIES=	editors
 MASTER_SITES=	ftp://public.x.org/contrib/editors/
 
 MAINTAINER=	erich@FreeBSD.ORG

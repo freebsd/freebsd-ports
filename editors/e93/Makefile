@@ -3,12 +3,12 @@
 # Date created:		21 June 1995
 # Whom:			Satoshi Asami (asami)
 #
-# $Id: Makefile,v 1.6 1996/06/12 02:35:37 asami Exp $
+# $Id: Makefile,v 1.7 1996/09/11 04:11:57 asami Exp $
 #
 
 DISTNAME=	e93-1.2r6X
 PKGNAME=	e93-1.2.6
-CATEGORIES+=	editors
+CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.x.org/contrib/editors/ \
 		ftp://crl.dec.com/pub/X11/contrib/editors/
 
