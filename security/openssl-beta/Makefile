@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	openssl
-PORTVERSION=	0.9.6g
+PKGNAMESUFFIX=	-beta
+PORTVERSION=	0.9.7-beta3
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.openssl.org/source/ \
 		ftp://ftp.openssl.org/source/ \
@@ -35,11 +36,12 @@ INSTALLS_SHLIB=	yes
 .endif
 
 .if defined(OPENSSL_OVERWRITE_BASE)
-PKGNAMESUFFIX=	-overwrite-base
+PKGNAMESUFFIX=	-beta-overwrite-base
 PREFIX=		/usr
 SHLIBVER=	2
 .endif
 
+NO_LATEST_LINK=	yes
 MANPREFIX=	${PREFIX}/openssl
 
 MAN1=		CA.pl.1 asn1parse.1 ca.1 ciphers.1 crl.1 crl2pkcs7.1 dgst.1 \
@@ -116,6 +118,11 @@ MAN3=		BN_CTX_new.3 BN_CTX_start.3 BN_add.3 BN_add_word.3 \
 MAN5=		config.5
 
 MAN7=		des_modes.7
+
+MAN1+=		ocsp.1
+MAN3+=		BN_swap.3 EVP_BytesToKey.3 SSL_CTX_set_generate_session_id.3 \
+		SSL_CTX_set_max_cert_list.3 SSL_CTX_set_msg_callback.3 \
+		pem.3 ui.3 ui_compat.3
 
 .if defined(BATCH) || defined(OPENSSL_WITH_386)
 EXTRACONFIGURE=	386

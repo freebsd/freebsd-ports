@@ -1,11 +1,11 @@
---- apps/dgst.c.orig	Thu Apr  5 13:08:50 2001
-+++ apps/dgst.c	Fri Apr 13 00:58:32 2001
-@@ -318,7 +318,7 @@
- 				err++;
- 				continue;
+--- apps/dgst.c.orig	Tue Jun 11 13:41:17 2002
++++ apps/dgst.c	Sat Aug 10 14:40:26 2002
+@@ -340,7 +340,7 @@
+ 			if(!out_bin)
+ 				{
+ 				tmp=tofree=OPENSSL_malloc(strlen(name)+strlen(argv[i])+5);
+-				sprintf(tmp,"%s(%s)= ",name,argv[i]);
++				sprintf(tmp,"%s(%s) = ",name,argv[i]);
  				}
--			if(!out_bin) BIO_printf(out, "%s(%s)= ",name,argv[i]);
-+			if(!out_bin) BIO_printf(out, "%s(%s) = ",name,argv[i]);
- 			do_fp(out, buf,inp,separator, out_bin, sigkey, 
- 								sigbuf, siglen);
- 			(void)BIO_reset(bmd);
+ 			else
+ 				tmp="";
