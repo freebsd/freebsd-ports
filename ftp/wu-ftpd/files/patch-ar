@@ -1,0 +1,11 @@
+--- configure.in.orig	Sat Jul  1 21:42:15 2000
++++ configure.in	Tue Feb 19 22:39:52 2002
+@@ -868,7 +870,7 @@
+ fi
+ if test $opie = yes; then
+ 	AC_DEFINE(OPIE)
+-	LIBS="$LIBS -lopie"
++	LIBS="$LIBS -lopie -lmd"
+ fi
+ if test $newcd = yes; then
+ 	AC_DEFINE(ALTERNATE_CD)
