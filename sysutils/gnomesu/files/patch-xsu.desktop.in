@@ -1,0 +1,11 @@
+--- xsu.desktop.in.orig	Mon Jan 13 21:56:41 2003
++++ xsu.desktop.in	Mon Jul 26 12:17:17 2004
+@@ -1,7 +1,7 @@
+ [Desktop Entry]
+ Name=Gnome SuperUser
+ Comment=Allows you to run programs as the root user
+-Exec=gsu
++Exec=gnomesu
+ Terminal=false
+ MultipleArgs=false
+ Type=Application
