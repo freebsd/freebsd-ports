@@ -1,0 +1,24 @@
+diff -uNr gs5.10-ori/gs_init.ps gs_init.ps
+--- gs5.10-ori/gs_init.ps       Mon Mar 30 19:08:48 1998
++++ gs_init.ps  Mon Mar 30 19:17:42 1998
+@@ -1465,3 +1465,20 @@
+ (END GC) VMDEBUG
+ 
+ % The interpreter will run the initial procedure (start).
++
++% unofficial patch:
++% make it possible to print from within acroread pdf viewer
++/Default currenthalftone /Halftone defineresource pop
++
++% load initial CID-keyed fonts(Korean. KSC-EUC-H).
++% It should be in Fontmap, but to avoid loading two or more time.
++% (it can stop the interpreter - /rangecheck error)
++%
++QUIET not { (Loading CID(Korean) Fonts: ) print } if
++% font loading start
++(Munhwa-Regular-KSC-EUC-H.gsf) runlibfile
++QUIET not { (Munhwa-Regular-KSC-EUC-H ) print } if
++(MunhwaGothic-Regular-KSC-EUC-H.gsf) runlibfile
++QUIET not { (MunhwaGothic-Regular-KSC-EUC-H ) print } if
++% end of font loading
++QUIET not { (\n) print } if
