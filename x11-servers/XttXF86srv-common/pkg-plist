@@ -1,0 +1,6 @@
+bin/mkfontdir.pl
+lib/libfont.so.1.0
+@exec /sbin/ldconfig -m %D/lib
+lib/X11/doc/Xtt/xtt06-readme.jis
+lib/X11/doc/Xtt/xtt06-example.jis
+@dirrm lib/X11/doc/Xtt

@@ -1,0 +1,64 @@
+CONFFILE=	host.def.local
+CP=		/bin/cp
+DO_NADA=	/usr/bin/true
+ECHO_MSG=	echo
+WRKDIR?=	.
+DISTDIR?=	/usr/ports/distfiles
+FILESDIR?=	../files
+
+#ifdef HasSecureRPC
+HASSECURERPC=	 HasSecureRPC
+#endif
+#ifdef HasXdmAuth
+HASXDMAUTH=	HasXdmAuth
+#endif
+#
+#ifdef HasKrb4
+HASKRB4=	HasKrb4
+#endif	
+
+all:: SecureRPCCheck XdmAuthCheck Krb4Check
+
+initialize::
+	@${ECHO_MSG} "Now checking your XFree86 environment."
+	@rm -f ${CONFFILE}
+
+SecureRPCCheck:: initialize
+.if defined(HASSECURERPC) && ${HASSECURERPC} == YES
+	@echo "#define HasSecureRPC ${HASSECURERPC}" >> ${CONFFILE}
+.else
+	@${DO_NADA}
+.endif
+
+XdmAuthCheck:: initialize
+.if defined(HASXDMAUTH) && ${HASXDMAUTH} == YES
+	@( \
+	echo "#define HasXdmAuth ${HASXDMAUTH}" >> ${CONFFILE} ; \
+	if [ ! -f ${WRKDIR}/xc/lib/Xdmcp/Wraphelp.c ]; then \
+	   if [ -f ${DISTDIR}/xc/Wraphelp.c ]; then \
+		${ECHO_MSG} "===> Whaphelp.c found in DISTDIR directory, copying it to source tree." ; \
+		${CP} ${DISTDIR}/xc/Wraphelp.c ${WRKDIR}/xc/lib/Xdmcp/ ; \
+	   elif [ -f ${FILESDIR}/Wraphelp.c ]; then \
+		${ECHO_MSG} "===> Whaphelp.c found in FILESDIR directory, copying it to source tree." ; \
+		${CP} ${FILESDIR}/Wraphelp.c ${WRKDIR}/xc/lib/Xdmcp/ ; \
+	   else \
+		${ECHO_MSG} "Wraphelp.c not found. You can not use XDM-AUTHORIZATION-1!" ; \
+		false ; \
+	   fi ; \
+	fi ; \
+	)
+.else
+	@${DO_NADA}
+.endif
+
+Krb4Check:: initialize
+.if defined(HASKRB4) && ${HASKRB4} == YES
+	@( \
+	echo "#define HasKrb4 ${HASKRB4}" >> ${CONFFILE} ; \
+	${ECHO_MSG} "===>  Applying KerberosIV patches" ; \
+	patch -s -d ${WRKDIR}/xc -E -p0 < ${FILESDIR}/kerberos4.diffs ; \
+	)
+.else
+	@${DO_NADA}
+.endif
+

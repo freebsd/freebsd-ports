@@ -1,0 +1,35 @@
+Common files for X True Type Servers.
+
+I. INSTALL:
+  For compiling this ports, you will need about 112 - 140
+MBye free space on your HDD.
+
+  XFree86 has many flags (such as "HasXdmAuth"), and they
+are related to Xservers. For using them, this port read 
+your configuration files in your ${PREFIX}/lib/X11/config/
+except "host.def" file. File host.def will be generated 
+by this port temporally. So you must write your own 
+configuration flags to "xf86site.def" or "site.def".  
+${PORTSDIR}/x11/XFree86 use xf86site.def. I recommend to 
+use it.
+
+II. CONFIGURATION
+  After installing this ports, following instructions are
+required.
+
+1. extract your True Type Font to FONTDIR.
+    # mkdir /usr/X11R6/lib/X11/fonts/TrueType
+    # cp *.ttf /usr/X11R6/lib/X11/fonts/TrueType/
+
+2. make font.dir file. mkfontdir.pl is a utility script.
+    # cd /usr/X11R6/lib/X11/fonts/TrueType/
+    # mkfontdir.pl > font.dir
+
+3. set FontPath in your XF86Config
+    add following line to your XF86Config
+
+    FontPath	"/usr/X11R6/lib/X11/fonts/TrueType"
+
+4. restart your X server.
+
+enjoy!
