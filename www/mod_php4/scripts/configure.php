@@ -64,7 +64,7 @@ while [ "$1" ]; do
 			echo "PHP3_CONF_ARGS+=	--with-pdflib=\${PREFIX}" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 			;;
 		\"MySQL\")
-			echo "LIB_DEPENDS+=		mysqlclient.5:\${PORTSDIR}/databases/mysql322" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+			echo "LIB_DEPENDS+=		mysqlclient.6:\${PORTSDIR}/databases/mysql322" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 			echo "PHP3_CONF_ARGS+=	--with-mysql=\${PREFIX}" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 			;;
 		\"PostgreSQL\")
