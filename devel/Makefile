@@ -22,6 +22,7 @@
     SUBDIR += allegro
     SUBDIR += amulet
     SUBDIR += anjuta
+    SUBDIR += antlr
     SUBDIR += apr
     SUBDIR += arch
     SUBDIR += arm-aout-binutils
