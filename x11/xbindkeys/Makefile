@@ -13,7 +13,7 @@ MASTER_SITES=	http://hocwp.free.fr/xbindkeys/
 
 MAINTAINER=	ports@FreeBSD.org
 
-WITH_XLIB=	yes
+USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${X11BASE}/include"
 
