@@ -267,11 +267,11 @@ mtree -deU -f ${chroot}/usr/src/etc/mtree/BSD.usr.dist -p ${chroot}/usr \
 mtree -deU -f ${chroot}/usr/src/etc/mtree/BSD.local.dist -p ${chroot}/usr/local \
   >/dev/null 2>&1
 
-if [ $XFREE86_VERSION = 4 ]; then
-  mtree -deU -f ${chroot}/usr/src/etc/mtree/BSD.x11-4.dist -p ${chroot}/usr/X11R6 \
+if [ $X_WINDOW_SYSTEM = "xfree86-3" ]; then
+  mtree -deU -f ${chroot}/usr/src/etc/mtree/BSD.x11.dist -p ${chroot}/usr/X11R6 \
     >/dev/null 2>&1
 else
-  mtree -deU -f ${chroot}/usr/src/etc/mtree/BSD.x11.dist -p ${chroot}/usr/X11R6 \
+  mtree -deU -f ${chroot}/usr/src/etc/mtree/BSD.x11-4.dist -p ${chroot}/usr/X11R6 \
     >/dev/null 2>&1
 fi
 
