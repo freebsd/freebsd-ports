@@ -1,0 +1,16 @@
+bin/medusa-config
+bin/medusa-indexd
+bin/medusa-searchd
+bin/msearch
+etc/vfs/modules/search-methods.conf
+include/libmedusa/medusa-common-private.h
+include/libmedusa/medusa-index-service-private.h
+include/libmedusa/medusa-search-service-private.h
+include/libmedusa/medusa-search-service.h
+lib/libmedusa.a
+lib/libmedusa.so
+lib/libmedusa.so.0
+lib/vfs/modules/libvfs-search.so
+share/gnome/medusa/file-index-stoplist
+@dirrm share/gnome/medusa
+@dirrm include/libmedusa
