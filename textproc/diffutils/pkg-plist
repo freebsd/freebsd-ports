@@ -1,0 +1,8 @@
+@comment $FreeBSD$
+bin/gcmp
+bin/gdiff
+bin/gdiff3
+bin/gsdiff
+@unexec install-info --quiet --delete %D/info/diff.info %D/info/dir
+info/diff.info
+@exec install-info %D/info/diff.info %D/info/dir
