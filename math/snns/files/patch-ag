@@ -1,0 +1,12 @@
+--- xgui/sources/ui_config.c.orig	Tue May 29 00:02:03 2001
++++ xgui/sources/ui_config.c	Tue May 29 00:03:03 2001
+@@ -492,7 +492,8 @@
+ 	err = fscanf(filePtr,"%*[^:]: %d\n", &noParams);
+ 	chkretline(1);
+ 	lines++;
+-	for (i=0; (i<UI_NO_LEARN_PARAMS+UI_NO_OF_CASCADE_PARAMS); i++){
++	for (i=0; (i<UI_NO_LEARN_PARAMS+UI_NO_OF_CASCADE_PARAMS)
++		&& (i<noParams); i++){
+ 	    err = fscanf(filePtr,"%*[^:]: %f\n", &ui_learnParameters[i]);
+ 	    chkretline(1);
+ 	    lines++;
