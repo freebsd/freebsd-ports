@@ -1,0 +1,15 @@
+ ============================================================================
+ To reduce the number of term windows opened, use -n:
+   %%PREFIX%%/%%ANGBANDBIN%% -- -n2
+
+ The binary will changed its owner to 'games:games' and added SETGID bit.
+ Then players can record their score to public score files.
+ You can set fonts by using environment variables such as ANGBAND_X11_FONT,
+ ANGBAND_X11_FONT_1 (the number represents sub-window id),
+ ANGBAND_X11_KFONT (for kanji support), etc.
+
+ WARNING!
+ You now have the following world-writable (mode 1777) directories:
+   %%PREFIX%%/%%ANGBANDLIB%%/save
+   %%PREFIX%%/%%ANGBANDLIB%%/user
+ ============================================================================

@@ -1,0 +1,39 @@
+--- src/makefile.std	Thu Jul 20 13:19:50 2000
++++ src/Makefile	Fri Aug 11 19:54:28 2000
+@@ -103,7 +103,7 @@
+ #
+ # This is my compiler of choice, it seems to work most everywhere
+ #
+-CC = gcc
++CC ?= gcc
+ 
+ 
+ #
+@@ -130,9 +130,9 @@
+ ## Note: Get the 16x16.bmp file, and put in Zdirectory/lib/xtra/graf
+ ##       to get 256 colours.
+ ##
+-CFLAGS = -Wall -O2 -fno-strength-reduce -m486 -pipe -g \
+-         -D"USE_X11" -D"USE_GCU" -D"USE_TRANSPARENCY"
+-LIBS = -lX11 -lcurses -ltermcap -L/usr/X11R6/lib
++#CFLAGS = -Wall -O2 -fno-strength-reduce -m486 -pipe -g \
++#         -D"USE_X11" -D"USE_GCU" -D"USE_TRANSPARENCY"
++#LIBS = -lX11 -lcurses -ltermcap -L/usr/X11R6/lib
+ 
+ #CFLAGS = -Wall -O2 -fno-strength-reduce -m486 -pipe -g \
+ #          -D"USE_XAW" -D"USE_GCU" -D"USE_TRANSPARENCY"
+@@ -236,6 +236,14 @@
+ ##
+ #CFLAGS = -Wall -O1 -pipe -g -D"USE_GCU" -arch m68k -arch i386
+ #LIBS = -lcurses -ltermcap
++
++
++
++##
++## Variation -- Compile for FreeBSD
++##
++CFLAGS += -D"USE_X11" -D"USE_GCU" -D"USE_TRANSPARENCY" ${EXTRA_CFLAGS}
++LIBS = -L${X11BASE}/lib -lX11 -lcurses -ltermcap
+ 
+ 
+ 
