@@ -275,6 +275,16 @@
     SUBDIR += xemacs-sumo-wnn6
     SUBDIR += xemacs-wnn4
     SUBDIR += xemacs-wnn6
+    SUBDIR += xemacs21-canna
+    SUBDIR += xemacs21-canna+wnn4
+    SUBDIR += xemacs21-canna+wnn6
+    SUBDIR += xemacs21-sumo-canna
+    SUBDIR += xemacs21-sumo-canna+wnn4
+    SUBDIR += xemacs21-sumo-canna+wnn6
+    SUBDIR += xemacs21-sumo-wnn4
+    SUBDIR += xemacs21-sumo-wnn6
+    SUBDIR += xemacs21-wnn4
+    SUBDIR += xemacs21-wnn6
     SUBDIR += xfig
     SUBDIR += xjman
     SUBDIR += xklock

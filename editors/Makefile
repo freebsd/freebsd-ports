@@ -113,6 +113,9 @@
     SUBDIR += xemacs-sumo-packages
     SUBDIR += xemacs20
     SUBDIR += xemacs21
+    SUBDIR += xemacs21-mule
+    SUBDIR += xemacs21-mule-common
+    SUBDIR += xemacs21-mule-sumo
     SUBDIR += xenon
     SUBDIR += xvile
     SUBDIR += yudit
