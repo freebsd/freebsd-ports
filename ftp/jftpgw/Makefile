@@ -22,7 +22,7 @@ do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/jftpgw ${PREFIX}/sbin/
 		${INSTALL_DATA} ${WRKSRC}/jftpgw.conf.sample ${PREFIX}/etc/
 		@${SED} -e 's:@PREFIX@:${PREFIX}:g' \
-			${FILESDIR}/jftpgw.sh.in > ${FILESDIR}/jftpgw.sh
-		${INSTALL_SCRIPT} ${FILESDIR}/jftpgw.sh ${PREFIX}/etc/rc.d
+			${FILESDIR}/jftpgw.sh.in > ${WRKDIR}/jftpgw.sh
+		${INSTALL_SCRIPT} ${WRKDIR}/jftpgw.sh ${PREFIX}/etc/rc.d
 
 .include <bsd.port.mk>
