@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	socat
-PORTVERSION=	1.3.2.1
+PORTVERSION=	1.3.2.2
 CATEGORIES=	net
 MASTER_SITES=	http://www.dest-unreach.org/socat/download/
 
@@ -22,15 +22,12 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 MAKE_ARGS=	CCOPT="${CFLAGS}"
 
 MAN1=		socat.1
-
 DOCS=		EXAMPLES README SECURITY
 
-post-install:
 .if !defined(NOPORTDOCS)
+post-install:
 	@${MKDIR} ${DOCSDIR}
-.for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.endfor
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
