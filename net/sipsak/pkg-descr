@@ -1,0 +1,7 @@
+Sipsak is a small command line tool for developers and administrators of
+Session Initiation Protocol (SIP) applications.  
+It can be used for some simple tests on SIP applications and services.
+
+WWW:	http://sipsak.berlios.de/
+
+- JesusR <jesusr@freebsd.org>
