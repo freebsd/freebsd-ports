@@ -1,8 +1,10 @@
-MSWordView is a program that can understand the microsofts word 8
-binary file format (office97), it currently converts word into html,
-which can then be read with a browser.
-It is also capable of converting Japanese MS Word document
+wv is a library which allows access to Microsoft Word files.
+It can load and parse the Word 6-9 formats (Word 6, 95, 97, 2000).
 
-WWW: http://www.csn.ul.ie/~caolan/docs/MSWordView.html
+And several converter executables called wvWare are also provided:
+	wvHtml, wvLatex, wvCleanLatex, wvDVI, wvPS, wvPDF,
+	wvText, wvAbw, wvWml, wvMime
 
-port made by: sumikawa@kame.net
+note: wvHtml is previously known as MSWordView.
+
+WWW: http://wvware.sourceforge.net/
