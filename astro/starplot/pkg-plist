@@ -11,8 +11,7 @@ bin/starplot
 %%EXAMPLESDIR%%/example.spec
 %%NLS%%share/locale/en@boldquot/LC_MESSAGES/starplot.mo
 %%NLS%%share/locale/en@quot/LC_MESSAGES/starplot.mo
-%%NLS%%share/locale/es_ES/LC_MESSAGES/starplot.mo
-%%NLS%%share/locale/es_ES@euro/LC_MESSAGES/starplot.mo
+%%NLS%%share/locale/es/LC_MESSAGES/starplot.mo
 share/starplot/sample.stars
 share/starplot/test.stars
 @dirrm share/starplot

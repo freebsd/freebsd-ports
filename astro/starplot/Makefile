@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	starplot
-PORTVERSION=	0.95
+PORTVERSION=	0.95.2
 CATEGORIES=	astro
 MASTER_SITES=	http://starplot.org/downloads/
 
