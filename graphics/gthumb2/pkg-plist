@@ -4,6 +4,7 @@ etc/gconf/gconf.xml.defaults/apps/gthumb/browser/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/convert_format/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/jpeg_saver/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/messages/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/print/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/rename_series/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/scale_image/%gconf.xml
@@ -24,6 +25,7 @@ etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/browser/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/convert_format/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/jpeg_saver/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/messages/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/print/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/rename_series/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/scale_image/%gconf.xml
@@ -79,6 +81,19 @@ share/gnome/gthumb/albumthemes/ClassicClips/prev.png
 share/gnome/gthumb/albumthemes/ClassicClips/right.png
 share/gnome/gthumb/albumthemes/ClassicClips/thumbnail.gthtml
 share/gnome/gthumb/albumthemes/ClassicClips/top.png
+share/gnome/gthumb/albumthemes/Clean/1.gif
+share/gnome/gthumb/albumthemes/Clean/back.gif
+share/gnome/gthumb/albumthemes/Clean/background.gif
+share/gnome/gthumb/albumthemes/Clean/bot.png
+share/gnome/gthumb/albumthemes/Clean/image.gthtml
+share/gnome/gthumb/albumthemes/Clean/index.gthtml
+share/gnome/gthumb/albumthemes/Clean/left.png
+share/gnome/gthumb/albumthemes/Clean/left_arrow.png
+share/gnome/gthumb/albumthemes/Clean/right.png
+share/gnome/gthumb/albumthemes/Clean/right_arrow.png
+share/gnome/gthumb/albumthemes/Clean/thumbnail.gthtml
+share/gnome/gthumb/albumthemes/Clean/top.png
+share/gnome/gthumb/albumthemes/Clean/up_arrow.png
 share/gnome/gthumb/albumthemes/NeatRound/1.gif
 share/gnome/gthumb/albumthemes/NeatRound/back.png
 share/gnome/gthumb/albumthemes/NeatRound/background.gif
@@ -177,6 +192,7 @@ share/locale/zh_TW/LC_MESSAGES/gthumb.mo
 @dirrm share/gnome/gthumb/albumthemes/Simple
 @dirrm share/gnome/gthumb/albumthemes/NeatSquare
 @dirrm share/gnome/gthumb/albumthemes/NeatRound
+@dirrm share/gnome/gthumb/albumthemes/Clean
 @dirrm share/gnome/gthumb/albumthemes/ClassicClips
 @dirrm share/gnome/gthumb/albumthemes/Classic
 @dirrm share/gnome/gthumb/albumthemes
@@ -198,6 +214,7 @@ share/locale/zh_TW/LC_MESSAGES/gthumb.mo
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/scale_image
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/rename_series
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/print
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/messages
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/jpeg_saver
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs/convert_format
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/dialogs
@@ -218,6 +235,7 @@ share/locale/zh_TW/LC_MESSAGES/gthumb.mo
 @dirrm etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/scale_image
 @dirrm etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/rename_series
 @dirrm etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/print
+@dirrm etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/messages
 @dirrm etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/jpeg_saver
 @dirrm etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs/convert_format
 @dirrm etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs
