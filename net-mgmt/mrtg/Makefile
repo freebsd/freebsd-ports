@@ -15,7 +15,7 @@ MASTER_SITES=	http://people.ee.ethz.ch/~oetiker/webtools/mrtg/pub/ \
 		ftp://ftp.nstu.ru/pub/sources/nettools/monitoring/ \
 		ftp://ftp.po.opole.pl/pub/unix/net/tools/mrtg/ \
 		ftp://ftp.ujf-grenoble.fr/mirror/networking/mrtg/
-MASTER_SITE_SUBDIR=	net-mgmt/mrtg
+MASTER_SITE_SUBDIR=	net/mrtg
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	The multi-router traffic grapher
