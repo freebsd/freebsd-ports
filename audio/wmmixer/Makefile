@@ -15,7 +15,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	rneswold@enteract.com
 
 WRKSRC=			${WRKDIR}/wmmixer
-FETCH_BEFORE_ARGS=	-t
 USE_IMAKE=		yes
 USE_XPM=		yes
 NO_INSTALL_MANPAGES=	yes

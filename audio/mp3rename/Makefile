@@ -12,8 +12,6 @@ MASTER_SITES=	http://www.rendo.dekooi.nl/~janssen/
 
 MAINTAINER=	janssen@rendo.dekooi.nl
 
-FETCH_BEFORE_ARGS=	-b
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mp3rename $(PREFIX)/bin/mp3rename
 
