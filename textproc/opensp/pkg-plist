@@ -141,8 +141,8 @@ include/OpenSP/rtti.h
 include/OpenSP/sptchar.h
 include/OpenSP/types.h
 include/OpenSP/xnew.h
+lib/charset.alias
 lib/libosp.a
-lib/libosp.la
 lib/libosp.so
 lib/libosp.so.3
 %%PORTDOCS%%%%DOCSDIR%%/archform.htm
@@ -195,6 +195,7 @@ share/sgml/openjade/OpenSP/unicode.sd
 share/sgml/openjade/OpenSP/unicode.syn
 share/sgml/openjade/OpenSP/xml.dcl
 share/sgml/openjade/OpenSP/xml.soc
+share/sgml/openjade/locale/locale.alias
 %%PORTDOCS%%share/sgml/openjade/doc/OpenSP/AUTHORS
 %%PORTDOCS%%share/sgml/openjade/doc/OpenSP/NEWS
 %%PORTDOCS%%share/sgml/openjade/doc/OpenSP/README
@@ -203,6 +204,7 @@ share/sgml/openjade/OpenSP/xml.soc
 %%PORTDOCS%%share/sgml/openjade/doc/OpenSP/releasenotes.ps
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/OpenSP
+@dirrm share/sgml/openjade/locale
 @dirrm share/sgml/openjade/OpenSP
 %%PORTDOCS%%@dirrm share/sgml/openjade/doc/OpenSP
 %%PORTDOCS%%@dirrm share/sgml/openjade/doc
