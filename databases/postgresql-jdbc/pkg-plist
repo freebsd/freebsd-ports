@@ -1,3 +1,8 @@
+%%PORTDOCS%%share/examples/postgresql/ImageViewer.java
+%%PORTDOCS%%share/examples/postgresql/README
+%%PORTDOCS%%share/examples/postgresql/Unicode.java
+%%PORTDOCS%%share/examples/postgresql/basic.java
+%%PORTDOCS%%share/examples/postgresql/blobtest.java
 %%PORTDOCS%%share/examples/postgresql/corba/StockClient.java
 %%PORTDOCS%%share/examples/postgresql/corba/StockDB.java
 %%PORTDOCS%%share/examples/postgresql/corba/StockDispenserImpl.java
@@ -6,21 +11,14 @@
 %%PORTDOCS%%share/examples/postgresql/corba/readme
 %%PORTDOCS%%share/examples/postgresql/corba/stock.idl
 %%PORTDOCS%%share/examples/postgresql/corba/stock.sql
-%%PORTDOCS%%@dirrm share/examples/postgresql/corba
-%%PORTDOCS%%share/examples/postgresql/ImageViewer.java
-%%PORTDOCS%%share/examples/postgresql/Unicode.java
-%%PORTDOCS%%share/examples/postgresql/basic.java
-%%PORTDOCS%%share/examples/postgresql/blobtest.java
 %%PORTDOCS%%share/examples/postgresql/datestyle.java
 %%PORTDOCS%%share/examples/postgresql/metadata.java
 %%PORTDOCS%%share/examples/postgresql/psql.java
 %%PORTDOCS%%share/examples/postgresql/threadsafe.java
-%%PORTDOCS%%share/examples/postgresql/README
-%%PORTDOCS%%share/examples/postgresql/Implementation
-%%PORTDOCS%%@dirrm share/examples/postgresql
+share/java/classes/postgresql.jar
+%%PORTDOCS%%@dirrm share/examples/postgresql/corba
+@unexec rmdir %D/share/examples/postgresql 2>/dev/null || true
 share/postgresql/java/postgresql-examples.jar
 share/postgresql/java/postgresql.jar
-share/postgresql/java/retepTools.jar
 @dirrm share/postgresql/java
 @unexec rmdir %D/share/postgresql 2>/dev/null || true
-share/java/classes/postgresql.jar
