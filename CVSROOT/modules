@@ -2307,7 +2307,6 @@ gtk-flat-theme	ports/x11-toolkits/gtk-flat-theme
 gtk-flat-theme2	ports/x11-toolkits/gtk-flat-theme2
 gtk-gnutella	ports/net/gtk-gnutella
 gtk-imonc	ports/sysutils/gtk-imonc
-gtk-industrial-theme	ports/x11-toolkits/gtk-industrial-theme
 gtk-knocker	ports/security/gtk-knocker
 gtk-qn-x11-theme	ports/x11-toolkits/gtk-qn-x11-theme
 gtk-qnxtheme	ports/x11-toolkits/gtk-qnxtheme
