@@ -1,7 +1,5 @@
 bin/iodbc-config
 %%GUI%%bin/iodbcadm-gtk
-%%GUI%%bin/iodbctest
-%%GUI%%bin/iodbctestw
 etc/libiodbc/odbc.ini.sample
 etc/libiodbc/odbcinst.ini.sample
 include/iodbcext.h

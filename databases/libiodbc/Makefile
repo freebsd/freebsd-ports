@@ -10,6 +10,7 @@
 
 PORTNAME=	libiodbc
 PORTVERSION=	3.52.1
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.iodbc.org/downloads/iODBC/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -36,7 +37,7 @@ INIDIR=		${PREFIX}/etc/${PORTNAME}
 
 .if !defined(WITHOUT_GUI)
 USE_GNOME+=	gtk12
-MAN1+=		iodbccadm-gtk.1
+MAN1+=		iodbcadm-gtk.1
 PLIST_SUB+=	GUI=""
 .else
 CONFIGURE_ARGS+=	--disable-gui
