@@ -529,6 +529,7 @@
     SUBDIR += silc-client
     SUBDIR += silc-doc
     SUBDIR += silc-server
+    SUBDIR += simicq
     SUBDIR += sing
     SUBDIR += sipcalc
     SUBDIR += sleuth

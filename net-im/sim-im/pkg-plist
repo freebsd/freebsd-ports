@@ -1,0 +1,25 @@
+bin/sim
+share/applnk/Internet/sim.desktop
+share/icons/locolor/32x32/apps/sim.png
+share/icons/locolor/16x16/apps/sim.png
+share/icons/hicolor/16x16/apps/sim.png
+share/icons/hicolor/32x32/apps/sim.png
+share/locale/de/LC_MESSAGES/sim.mo
+share/locale/zh_TW/LC_MESSAGES/sim.mo
+share/locale/ru/LC_MESSAGES/sim.mo
+share/locale/tr/LC_MESSAGES/sim.mo
+share/locale/it/LC_MESSAGES/sim.mo
+share/apps/sim/pict/splash.png
+share/apps/sim/sounds/auth.wav
+share/apps/sim/sounds/message.wav
+share/apps/sim/sounds/url.wav
+share/apps/sim/sounds/alert.wav
+share/apps/sim/sounds/sms.wav
+share/apps/sim/sounds/file.wav
+share/apps/sim/sounds/filedone.wav
+share/apps/sim/sounds/chat.wav
+share/apps/sim/sounds/startup.wav
+@dirrm share/apps/sim/icons
+@dirrm share/apps/sim/pict
+@dirrm share/apps/sim/sounds
+@dirrm share/apps/sim
