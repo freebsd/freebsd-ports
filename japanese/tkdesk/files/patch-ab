@@ -1,0 +1,48 @@
+--- Makefile.in.orig	Wed Oct 20 22:27:33 1999
++++ Makefile.in	Wed Oct 20 22:36:27 1999
+@@ -127,7 +127,7 @@
+ FVERSION =	11
+ PKGDIR =	$(PKGNAME)-$(VERSION)
+ 
+-all: shell client tkdesk_script man2text jisdecode catheader text2bin easypr
++all: shell client tkdesk_script man2text jisdecode catheader text2bin
+ 	@echo "========= Build complete."
+ 	@echo " "
+ 	@echo "You can try out TkDesk before installing it by commenting"
+@@ -139,7 +139,7 @@
+ 		tkAppInit.o libdesk/libdesk.a netscape-remote/libnetscape.a \
+ 		blt/libBLT.a $(LIBS)
+ 
+-static: makelibs tkAppInit-static.o client tkdesk_script man2text jisdecode catheader text2bin easypr
++static: makelibs tkAppInit-static.o client tkdesk_script man2text jisdecode catheader text2bin
+ 	$(CC) $(LDFLAGS) @TCL_LD_SEARCH_FLAGS@ -static -o tkdesksh \
+ 		tkAppInit-static.o libdesk/libdesk.a netscape-remote/libnetscape.a \
+ 		blt/libBLT.a itcl/libitcl.a $(LIBS_STATIC)
+@@ -211,7 +211,7 @@
+ 	find $(SCRIPT_INSTALL_DIR) -type f -exec chmod a+r {} \;
+ 	find $(SCRIPT_INSTALL_DIR) -type d -exec chmod a+rx {} \;
+ 	@echo "=== Creating index..."
+-	cd $(SCRIPT_INSTALL_DIR); $(BIN_INSTALL_DIR)/tkdesksh mkindex
++	cd $(SCRIPT_INSTALL_DIR); tclsh7.6jp mkindex
+ 	@echo "=== Installing the manual pages..."
+ 	@for f in tkdesk.1 cd-tkdesk.1 ed-tkdesk.1 od-tkdesk.1; do \
+ 	    echo "installing $$f" ;\
+@@ -222,9 +222,6 @@
+ 	cp text2bin $(BIN_INSTALL_DIR)
+ 	cp jisdecode $(BIN_INSTALL_DIR)
+ 	cp catheader $(BIN_INSTALL_DIR)
+-	cp easypr $(BIN_INSTALL_DIR)
+-	cp lpr2 $(BIN_INSTALL_DIR)
+-	chmod 755 $(BIN_INSTALL_DIR)/lpr2
+ 
+ 	@echo "=== Installation complete."
+ 
+@@ -253,7 +250,7 @@
+ 	cd libdesk ; $(MAKE) clean
+ 	cd tkdeskclient ; $(MAKE) clean
+ 	cd tcldesk ; rm -f #*#
+-	rm -f *.o tkdesksh man2text jisdecode catheader text2bin easypr
++	rm -f *.o tkdesksh man2text jisdecode catheader text2bin
+ 
+ tags:
+ 	find libdesk tcldesk \( -name "*.c" -o -name "*.h" -o -name "*.tcl" \) -print | etags -
