@@ -1,0 +1,12 @@
+NOTE: This is commercial software that only supplies you with
+an evaluation license valid for 30 days from the date of installation.
+Please read the LICENSE in "%%PREFIX%%/share/doc/ncftpd" before
+using this software.
+
+If you wish to allow anonymous FTP, an FTP user needs to be created
+for this purpose.  NcFTPd defaults to the users "daemon", "web", or "www"
+in the absence of an FTP user.  For details see the installation help file
+"%%PREFIX%%/share/doc/ncftpd/install.html".
+
+Remove "-dist" from the filenames of the configuration files in
+"%%PREFIX%%/etc/ncftpd" and edit them to suit.
