@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	autodia
-PORTVERSION=	1.9
+PORTVERSION=	2.01
 CATEGORIES=	devel perl5
 MASTER_SITES=	http://droogs.org/autodia/download/
 DISTNAME=	Autodia-${PORTVERSION}
@@ -19,13 +19,12 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template
 		${SITE_PERL}/Inline/Java.pm:${PORTSDIR}/devel/p5-Inline-Java \
 		${SITE_PERL}/GraphViz.pm:${PORTSDIR}/graphics/p5-GraphViz \
 		${SITE_PERL}/VCG.pm:${PORTSDIR}/graphics/p5-VCG \
-		${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple
+		${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
+		${SITE_PERL}/SpringGraph.pm:${PORTSDIR}/graphics/p5-SpringGraph
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN1=	autodia.pl.1 autodia_java.pl.1
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=	Autodia.3 autodia.3 autodia_java.3 \
 	Autodia::Diagram.3 \
 	Autodia::Diagram::Class.3 \
@@ -37,12 +36,10 @@ MAN3=	Autodia.3 autodia.3 autodia_java.3 \
 	Autodia::Handler::Perl.3 \
 	Autodia::Handler::SQL.3 \
 	Autodia::Handler::Torque.3 \
-	Autodia::Handler::dia.3
+	Autodia::Handler::dia.3 \
+	Autodia::Handler::umbrello.3
 
 DOCS=	CHANGES COPYING CREDITS DEVELOP FAQ INSTALL MANIFEST README TODO
-
-pre-install:
-	@${RM} -f ${WRKSRC}/blib/man3/*.3
 
 .if !defined(NOPORTDOCS)
 post-install:
