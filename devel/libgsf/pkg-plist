@@ -3,7 +3,6 @@ include/libgsf-1/gsf-gnome/gsf-input-gnomevfs.h
 include/libgsf-1/gsf-gnome/gsf-output-bonobo.h
 include/libgsf-1/gsf-gnome/gsf-output-gnomevfs.h
 include/libgsf-1/gsf-gnome/gsf-shared-bonobo-stream.h
-include/libgsf-1/gsf/gsf-command-context.h
 include/libgsf-1/gsf/gsf-doc-meta-data.h
 include/libgsf-1/gsf/gsf-impl-utils.h
 include/libgsf-1/gsf/gsf-infile-msole.h
@@ -15,12 +14,13 @@ include/libgsf-1/gsf/gsf-input-memory.h
 include/libgsf-1/gsf/gsf-input-stdio.h
 include/libgsf-1/gsf/gsf-input-textline.h
 include/libgsf-1/gsf/gsf-input.h
-include/libgsf-1/gsf/gsf-io-context.h
 include/libgsf-1/gsf/gsf-libxml.h
 include/libgsf-1/gsf/gsf-msole-utils.h
 include/libgsf-1/gsf/gsf-outfile-msole.h
 include/libgsf-1/gsf/gsf-outfile-zip.h
 include/libgsf-1/gsf/gsf-outfile.h
+include/libgsf-1/gsf/gsf-output-gzip.h
+include/libgsf-1/gsf/gsf-output-iochannel.h
 include/libgsf-1/gsf/gsf-output-memory.h
 include/libgsf-1/gsf/gsf-output-stdio.h
 include/libgsf-1/gsf/gsf-output.h
@@ -30,10 +30,10 @@ include/libgsf-1/gsf/gsf-utils.h
 include/libgsf-1/gsf/gsf.h
 lib/libgsf-1.a
 lib/libgsf-1.so
-lib/libgsf-1.so.6
+lib/libgsf-1.so.7
 lib/libgsf-gnome-1.a
 lib/libgsf-gnome-1.so
-lib/libgsf-gnome-1.so.6
+lib/libgsf-gnome-1.so.7
 libdata/pkgconfig/libgsf-1.pc
 libdata/pkgconfig/libgsf-gnome-1.pc
 share/doc/gsf/gsf-gsf-impl-utils.html
