@@ -11,7 +11,7 @@ CATEGORIES=		x11-fonts
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	artwizaleczapka
 
-MAINTAINER=	matt@rimasec.net
+MAINTAINER=	matt@bsdfly.org
 COMMENT=	A set of (improved) artwiz fonts
 
 NO_BUILD=	yes

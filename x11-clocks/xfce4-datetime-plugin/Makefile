@@ -11,10 +11,10 @@ PORTREVISION=	2
 CATEGORIES=	x11-clocks xfce
 MASTER_SITES=	http://download.berlios.de/xfce-goodies/ \
 		http://matt.nerim.net/xfce-goodies/ \
-		http://xfce.org/~kelnos/mirrors/xfce-goodies/ \
-		http://www.bsd-blax.org/ports/mirrors/
+		http://xfce.org/~kelnos/mirrors/xfce-goodies/
+DIST_SUBDIR=	xfce4
 
-MAINTAINER=	matt@rimasec.net
+MAINTAINER=	matt@bsdfly.org
 COMMENT=	XFce 4 additional clock module which also shows date
 
 BUILD_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel

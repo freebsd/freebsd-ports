@@ -10,10 +10,10 @@ PORTVERSION=	1.05
 PORTREVISION=	1
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	http://users.skynet.be/p0llux/files/ \
-		http://matt.nerim.net/xfce-goodies/ \
-		http://www.bsd-blax.org/ports/mirrors/
+		http://matt.nerim.net/xfce-goodies/
+DIST_SUBDIR=	xfce4
 
-MAINTAINER=	matt@rimasec.net
+MAINTAINER=	matt@bsdfly.org
 COMMENT=	Menu Editor for the XFce desktop environment
 
 LIB_DEPENDS=	xfce4util.1:${PORTSDIR}/x11/libxfce4util \
