@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mtr
-PORTVERSION=	0.45
+PORTVERSION=	0.49
 PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/ \
@@ -15,10 +15,10 @@ MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/ \
 
 MAINTAINER=	billf@FreeBSD.org
 
-HAS_CONFIGURE=	yes
+USE_AUTOCONF=	yes
 USE_GMAKE=	yes
 WANT_GTK=	yes
-WANT_IPV6=	yes
+#WANT_IPV6=	yes
 
 MAN8=	mtr.8
 
