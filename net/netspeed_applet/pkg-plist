@@ -54,6 +54,7 @@ share/locale/zh_CN/LC_MESSAGES/netspeed_applet.mo
 @dirrm share/gnome/help/netspeed_applet/cs
 @dirrm share/gnome/help/netspeed_applet/C/figures
 @dirrm share/gnome/help/netspeed_applet/C
+@dirrm share/gnome/help/netspeed_applet
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/netspeed_applet/netspeed_applet-C.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/netspeed_applet/netspeed_applet-cs.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/netspeed_applet/netspeed_applet-de.omf 2>/dev/null || /usr/bin/true
