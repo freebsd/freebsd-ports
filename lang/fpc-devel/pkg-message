@@ -1,0 +1,8 @@
+
+This port installed its configuration in either /etc/fpc.cfg.sample (if your prefix
+is /usr) or  ~/.fpc.cfg.sample (otherwise), this because FPC doesn't search prefix/etc yet.
+
+Rename the .sample file to fpc.cfg or .fpc.cfg respectively, and check that the
+prefix of the last three lines match your prefix.
+
+For global usage, /etc is the only serious location at the moment.
