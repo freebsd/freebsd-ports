@@ -7,7 +7,7 @@
 
 PORTNAME=	dansguardian
 PORTVERSION=	2.6.1.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	# empty, see below
 DISTNAME=	DansGuardian-${PORTVERSION:R}-${PORTVERSION:E}.source
@@ -19,6 +19,7 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid:install \
 		${LOCALBASE}/sbin/httpd:${PORTSDIR}/${APACHE_PORT}:install
 
 CONFLICTS=	dansguardian*
+LATEST_LINK=	dansguardian
 
 WRKSRC=		${WRKDIR}/DansGuardian-${PORTVERSION:R}
 GNU_CONFIGURE=	yes
@@ -30,6 +31,8 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--logdir=/var/log/ \
 		--cgidir=/www/cgi-bin/ \
 		--piddir=/var/run/
+
+OPTIONS=	WITH_GCC3 "Compile using GCC 3.x." off
 
 DG_URL=		http://dansguardian.org/index.php?page=copyright2
 
