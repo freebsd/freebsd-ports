@@ -1,9 +1,12 @@
---- docs/reference/Makefile.in.orig	Fri Dec 10 14:06:17 2004
-+++ docs/reference/Makefile.in	Fri Dec 10 14:06:33 2004
-@@ -87,7 +87,7 @@
- GTK_DOC_USE_LIBTOOL_FALSE = @GTK_DOC_USE_LIBTOOL_FALSE@
+
+$FreeBSD$
+
+--- docs/reference/Makefile.in.orig
++++ docs/reference/Makefile.in
+@@ -104,7 +104,7 @@
  GTK_DOC_USE_LIBTOOL_TRUE = @GTK_DOC_USE_LIBTOOL_TRUE@
- 
+ GTK_SHARP_CFLAGS = @GTK_SHARP_CFLAGS@
+ GTK_SHARP_LIBS = @GTK_SHARP_LIBS@
 -HTML_DIR = $(datadir)/gtk-doc/html
 +HTML_DIR = @HTML_DIR@
  INSTALL_DATA = @INSTALL_DATA@
