@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	phpldapadmin
-PORTVERSION=	0.9.4b
-PORTREVISION=	3
+DISTVERSION=	0.9.5
 CATEGORIES=	net www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	phpldapadmin
@@ -17,8 +16,6 @@ COMMENT=	A set of PHP-scripts to administer LDAP servers over the web
 
 NO_BUILD=	yes
 USE_PHP=	ldap openssl pcre session
-
-BROKEN_WITH_PHP=	5
 
 .if defined(WITH_SUPHP)
 
