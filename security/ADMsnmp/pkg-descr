@@ -1,0 +1,7 @@
+ADMsnmp is an snmpd audit scanner.
+ADMsnmp can brute force the snmp community name (with a wordfile) or
+make a wordfile list derived the hostname.
+ADMsnmp can report to you all valid community
+names found and inform you if writable access to the MIB has been attained.
+
+ADMsnmp is very easy to use and designed with speed in mind!
