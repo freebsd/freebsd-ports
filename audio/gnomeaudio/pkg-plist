@@ -1,18 +1,32 @@
 share/gnome/sounds/applause.wav
 share/gnome/sounds/card_shuffle.wav
 share/gnome/sounds/duck.wav
+share/gnome/sounds/gnibbles/appear.wav
+share/gnome/sounds/gnibbles/bonus.wav
+share/gnome/sounds/gnibbles/crash.wav
+share/gnome/sounds/gnibbles/gobble.wav
+share/gnome/sounds/gnibbles/laughter.wav
+share/gnome/sounds/gnibbles/life.wav
+share/gnome/sounds/gnibbles/pop.wav
+share/gnome/sounds/gnibbles/reverse.wav
+share/gnome/sounds/gnibbles/start.wav
+share/gnome/sounds/gnibbles/teleport.wav
 share/gnome/sounds/gnothello/flip-piece.wav
 share/gnome/sounds/gnothello/gameover.wav
 share/gnome/sounds/gtk-events/activate.wav
 share/gnome/sounds/gtk-events/clicked.wav
 share/gnome/sounds/gtk-events/toggled.wav
 share/gnome/sounds/impact-streak.wav
+share/gnome/sounds/login.wav
+share/gnome/sounds/logout.wav
 share/gnome/sounds/panel/slide.wav
 share/gnome/sounds/phone.wav
 share/gnome/sounds/ricochet.wav
+share/gnome/sounds/shutdown1.wav
 share/gnome/sounds/startup.wav
 share/gnome/sounds/startup1.wav
 share/gnome/sounds/startup2.wav
+@dirrm share/gnome/sounds/gnibbles
 @dirrm share/gnome/sounds/gnothello
 @dirrm share/gnome/sounds/gtk-events
 @dirrm share/gnome/sounds/panel
