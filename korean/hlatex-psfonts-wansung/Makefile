@@ -9,7 +9,7 @@
 DISTNAME=               HLaTeXpsfonts-wansung-0.98
 PKGNAME=                ko-HLaTeXpsfonts-${HLATEX_ENCODING}std-0.98
 CATEGORIES=             korean print
-MASTER_SITES=           ftp://ftp.linguistik.uni-erlangen.de/pub/HLaTeX/${HLATEX_ENCODING}/
+MASTER_SITES=		ftp://ftp.linguistik.uni-erlangen.de/pub/hangul/HLaTeX/packed/unsupported/
 DISTFILES=              ${HLATEX_PSFONTS_BASE}
 
 MAINTAINER=             cjh@kr.freebsd.org
