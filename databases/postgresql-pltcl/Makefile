@@ -6,7 +6,6 @@
 #
 
 PORTNAME=	postgresql-pltcl
-PORTVERSION=	7.2
 CATEGORIES=	databases tcl83
 
 MAINTAINER=	girgen@partitur.se
