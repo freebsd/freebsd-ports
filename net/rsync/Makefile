@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	rsync
-PORTVERSION=	2.5.5
-PORTREVISION=	1
+PORTVERSION=	2.5.6
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://samba.anu.edu.au/pub/rsync/  \
 		ftp://sunsite.auc.dk/pub/unix/rsync/  \
@@ -23,11 +22,13 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-debug
+
 .if defined(WITH_POPT_PORT)
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 .else
-CONFIGURE_ARGS=	--with-included-popt
+CONFIGURE_ARGS+=	--with-included-popt
 .endif
 
 .include <bsd.port.pre.mk>
@@ -39,14 +40,15 @@ USE_SSH?=	no
 .endif
 
 .if ${USE_SSH:U} == YES
-EXTRA_PATCHES=	${FILESDIR}/ssh-patch-*
+CONFIGURE_ARGS+=	--with-rsh=ssh
 .endif
 
 .if ${OSVERSION} >= 400014
-CONFIGURE_ARGS+=	--disable-debug --enable-ipv6
+CONFIGURE_ARGS+=	--enable-ipv6
 .else
-CONFIGURE_ARGS+=	--disable-debug --disable-ipv6
+CONFIGURE_ARGS+=	--disable-ipv6
 .endif
+
 MAN1=		rsync.1
 MAN5=		rsyncd.conf.5
 
@@ -62,18 +64,17 @@ pre-configure:
 		${WRKSRC}/rsync.h ${WRKSRC}/rsync.1 ${WRKSRC}/rsyncd.conf.5
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|g' \
 		${WRKSRC}/rsync.h ${WRKSRC}/zlib/zutil.h
-.if defined(WITH_SSH)
-	@${REINPLACE_CMD} -e 's/"rsh"/"ssh"/g' ${WRKSRC}/rsync.h
-.endif
 
 post-install:
-	@strip ${PREFIX}/bin/rsync
+	@{STRIP_CMD} ${PREFIX}/bin/rsync
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/rsync
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/rsync
-	${INSTALL_DATA} ${WRKSRC}/COPYING ${PREFIX}/share/doc/rsync
-	${INSTALL_DATA} ${WRKSRC}/tech_report.tex ${PREFIX}/share/doc/rsync
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README          ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/COPYING         ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/tech_report.tex ${DOCSDIR}
 .endif
+.if ${USE_SSH:U} == YES
 	@${CAT} ${PKGMESSAGE}
+.endif
 
 .include <bsd.port.post.mk>
