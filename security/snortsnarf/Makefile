@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	snortsnarf
-PORTVERSION=	010523
+PORTVERSION=	010821
 CATEGORIES=	security
 MASTER_SITES=	http://www.silicondefense.com/software/snortsnarf/
-DISTNAME=	SnortSnarf-052301.1
+DISTNAME=	SnortSnarf-${PORTVERSION}.1
 
 MAINTAINER=	kris@FreeBSD.org
 
