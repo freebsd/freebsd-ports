@@ -1,0 +1,13 @@
+This module provides a single function called dump() that takes a list of
+values as its argument and produces a string as its result. The string contains
+Perl code that, when evaled, produces a deep copy of the original arguments.
+The string is formatted for easy reading.
+
+If dump() is called in a void context, then the dump is printed on STDERR
+instead of being returned.
+
+If you don't like importing a function that overrides Perl's not-so-useful
+builtin, then you can also import the same function as pp(), mnemonic for
+"pretty-print".
+
+WWW: http://search.cpan.org/dist/Data-Dump/
