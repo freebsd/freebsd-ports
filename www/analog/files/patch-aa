@@ -1,15 +1,9 @@
---- Makefile.orig	Sat Jan 29 19:01:08 2000
-+++ Makefile	Tue Feb 15 22:20:06 2000
-@@ -1,11 +1,15 @@
- # Makefile for analog 4.02
- # Please read docs/Readme.html, or http://www.statslab.cam.ac.uk/~sret1/analog/
--CC = gcc           # which compiler to use: eg cc, acc, gcc. NB Different
-+#CC = gcc           # which compiler to use: eg cc, acc, gcc. NB Different
- #                    compilers need different CFLAGS, e.g., -O instead of -O2.
--CEXTRAFLAGS = -O2  # options, e.g. for optimisation or ANSI compilation.
-+#CEXTRAFLAGS = -O2  # options, e.g. for optimisation or ANSI compilation.
- #                    HP/UX cc requires CEXTRAFLAGS = -Aa (HP/UX 9) or ...
- #                    -Ae (HP/UX 10);       BS2000/OSD requires -XLLML -XLLMK
+--- Makefile.orig	Tue Mar 21 12:58:01 2000
++++ Makefile	Thu Mar 23 12:25:23 2000
+@@ -7,7 +7,11 @@
+ #                    -Ae (HP/UX 10);       BS2000/OSD requires -XLLML -XLLMK;
+ #                    NeXTSTEP apparently needs...
+ #                    CEXTRAFLAGS = -O2 -pipe -no-precomp 
 -DEFS =             # any of -DNOPIPES -DNODNS -DNODIRENT -DNOOPEN -DNOREGEX ...
 +#DEFS =             # any of -DNOPIPES -DNODNS -DNODIRENT -DNOOPEN -DNOREGEX ...
 +DEFS =  -DANALOGDIR=\"$(PREFIX)/lib/analog/\" \
@@ -19,12 +13,12 @@
  #                    ... -DEBCDIC -DNOGMTIME -DNEED_STRCMP -DNEED_MEMMOVE ...
  #                    ... -DNEED_STRTOUL -DNEED_DIFFTIME -DNEED_FLOATINGPOINT_H
  #                    Solaris 2 (SunOS 5) might need DEFS = -DNEED_STRCMP
-@@ -27,7 +31,7 @@
+@@ -29,7 +33,7 @@
  	input.o macinput.o macstuff.o output.o output2.o process.o settings.o \
  	sort.o tree.o utils.o win32.o
  HEADERS = anlghead.h anlghea2.h anlghea3.h anlghea4.h macdir.h
 -CFLAGS = $(CEXTRAFLAGS) $(DEFS) -D$(OS)
-+CFLAGS += $(CEXTRAFLAGS) $(DEFS) -D$(OS)
++CFLAGS += $(DEFS) -D$(OS)
  
  $(PROGRAM): $(OBJS) $(HEADERS) Makefile
  	$(CC) $(CEXTRAFLAGS) $(OBJS) -o $(PROGRAM) $(LIBS)
