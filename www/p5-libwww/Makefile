@@ -1,21 +1,22 @@
 # New ports collection makefile for:	p5-libwww
 # http://www.linpro.no/lwp/
-# Version required:                     5.36
+# Version required:                     5.*
 # Date created:				September 30th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.29 1999/02/02 02:57:08 asami Exp $
+# $Id: Makefile,v 1.30 1999/03/29 17:12:04 jfitz Exp $
 #
 
-DISTNAME=       libwww-perl-5.36
-PKGNAME=        p5-libwww-5.36
+DISTNAME=       libwww-perl-5.42
+PKGNAME=        p5-libwww-5.42
 CATEGORIES=     www perl5 devel
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=     LWP
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
-BUILD_DEPENDS= 	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/MD5.pm:${PORTSDIR}/security/p5-MD5 \
+BUILD_DEPENDS=  ${PREFIX}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Digest.pm:${PORTSDIR}/security/p5-Digest-MD5 \
+		${PREFIX}/lib/perl5/site_perl/${PERL_VER}/URI.pm:${PORTSDIR}/net/p5-URI \
 		${PREFIX}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Net/FTP.pm:${PORTSDIR}/net/p5-Net \
 		${PREFIX}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
 		${PREFIX}/lib/perl5/site_perl/${PERL_VER}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser
@@ -47,9 +48,6 @@ MAN3=           Bundle::LWP.3 \
 		LWP::RobotUA.3 \
 		LWP::Simple.3 \
 		LWP::UserAgent.3 \
-		URI::Escape.3 \
-		URI::Heuristic.3 \
-		URI::URL.3 \
 		WWW::RobotRules.3 \
 		WWW::RobotRules::AnyDBM_File.3 \
 		lwpcook.3

@@ -11,26 +11,22 @@ lib/perl5/site_perl/%%PERL_VER%%/HTTP/Cookies.pm
 lib/perl5/site_perl/%%PERL_VER%%/HTTP/Daemon.pm
 lib/perl5/site_perl/%%PERL_VER%%/HTTP/Date.pm
 lib/perl5/site_perl/%%PERL_VER%%/HTTP/Headers.pm
-lib/perl5/site_perl/%%PERL_VER%%/HTTP/Message.pm
-lib/perl5/site_perl/%%PERL_VER%%/HTTP/Negotiate.pm
-lib/perl5/site_perl/%%PERL_VER%%/HTTP/Request.pm
-lib/perl5/site_perl/%%PERL_VER%%/HTTP/Response.pm
-lib/perl5/site_perl/%%PERL_VER%%/HTTP/Status.pm
 lib/perl5/site_perl/%%PERL_VER%%/HTTP/Headers/Auth.pm
 lib/perl5/site_perl/%%PERL_VER%%/HTTP/Headers/ETag.pm
 lib/perl5/site_perl/%%PERL_VER%%/HTTP/Headers/Util.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTTP/Message.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTTP/Negotiate.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTTP/Request.pm
 lib/perl5/site_perl/%%PERL_VER%%/HTTP/Request/Common.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTTP/Response.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTTP/Status.pm
 lib/perl5/site_perl/%%PERL_VER%%/LWP.pm
+lib/perl5/site_perl/%%PERL_VER%%/LWP/Authen/Basic.pm
+lib/perl5/site_perl/%%PERL_VER%%/LWP/Authen/Digest.pm
 lib/perl5/site_perl/%%PERL_VER%%/LWP/Debug.pm
 lib/perl5/site_perl/%%PERL_VER%%/LWP/MediaTypes.pm
 lib/perl5/site_perl/%%PERL_VER%%/LWP/MemberMixin.pm
 lib/perl5/site_perl/%%PERL_VER%%/LWP/Protocol.pm
-lib/perl5/site_perl/%%PERL_VER%%/LWP/RobotUA.pm
-lib/perl5/site_perl/%%PERL_VER%%/LWP/Simple.pm
-lib/perl5/site_perl/%%PERL_VER%%/LWP/UserAgent.pm
-lib/perl5/site_perl/%%PERL_VER%%/LWP/media.types
-lib/perl5/site_perl/%%PERL_VER%%/LWP/Authen/Basic.pm
-lib/perl5/site_perl/%%PERL_VER%%/LWP/Authen/Digest.pm
 lib/perl5/site_perl/%%PERL_VER%%/LWP/Protocol/data.pm
 lib/perl5/site_perl/%%PERL_VER%%/LWP/Protocol/file.pm
 lib/perl5/site_perl/%%PERL_VER%%/LWP/Protocol/ftp.pm
@@ -39,90 +35,22 @@ lib/perl5/site_perl/%%PERL_VER%%/LWP/Protocol/http.pm
 lib/perl5/site_perl/%%PERL_VER%%/LWP/Protocol/https.pm
 lib/perl5/site_perl/%%PERL_VER%%/LWP/Protocol/mailto.pm
 lib/perl5/site_perl/%%PERL_VER%%/LWP/Protocol/nntp.pm
-lib/perl5/site_perl/%%PERL_VER%%/URI/Escape.pm
-lib/perl5/site_perl/%%PERL_VER%%/URI/Heuristic.pm
-lib/perl5/site_perl/%%PERL_VER%%/URI/URL.pm
-lib/perl5/site_perl/%%PERL_VER%%/URI/URL/_generic.pm
-lib/perl5/site_perl/%%PERL_VER%%/URI/URL/_login.pm
-lib/perl5/site_perl/%%PERL_VER%%/URI/URL/data.pm
-lib/perl5/site_perl/%%PERL_VER%%/URI/URL/file.pm
-lib/perl5/site_perl/%%PERL_VER%%/URI/URL/finger.pm
-lib/perl5/site_perl/%%PERL_VER%%/URI/URL/ftp.pm
-lib/perl5/site_perl/%%PERL_VER%%/URI/URL/gopher.pm
-lib/perl5/site_perl/%%PERL_VER%%/URI/URL/http.pm
-lib/perl5/site_perl/%%PERL_VER%%/URI/URL/https.pm
-lib/perl5/site_perl/%%PERL_VER%%/URI/URL/mailto.pm
-lib/perl5/site_perl/%%PERL_VER%%/URI/URL/news.pm
-lib/perl5/site_perl/%%PERL_VER%%/URI/URL/nntp.pm
-lib/perl5/site_perl/%%PERL_VER%%/URI/URL/prospero.pm
-lib/perl5/site_perl/%%PERL_VER%%/URI/URL/rlogin.pm
-lib/perl5/site_perl/%%PERL_VER%%/URI/URL/telnet.pm
-lib/perl5/site_perl/%%PERL_VER%%/URI/URL/tn3270.pm
-lib/perl5/site_perl/%%PERL_VER%%/URI/URL/wais.pm
-lib/perl5/site_perl/%%PERL_VER%%/URI/URL/webster.pm
-lib/perl5/site_perl/%%PERL_VER%%/URI/URL/whois.pm
+lib/perl5/site_perl/%%PERL_VER%%/LWP/RobotUA.pm
+lib/perl5/site_perl/%%PERL_VER%%/LWP/Simple.pm
+lib/perl5/site_perl/%%PERL_VER%%/LWP/UserAgent.pm
+lib/perl5/site_perl/%%PERL_VER%%/LWP/media.types
 lib/perl5/site_perl/%%PERL_VER%%/WWW/RobotRules.pm
 lib/perl5/site_perl/%%PERL_VER%%/WWW/RobotRules/AnyDBM_File.pm
-lib/perl5/site_perl/%%PERL_VER%%/auto/LWP/UserAgent/_need_proxy.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/LWP/UserAgent/autosplit.ix
-lib/perl5/site_perl/%%PERL_VER%%/auto/LWP/UserAgent/clone.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/LWP/UserAgent/env_proxy.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/LWP/UserAgent/is_protocol_supported.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/LWP/UserAgent/mirror.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/LWP/UserAgent/no_proxy.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/LWP/UserAgent/proxy.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/URI/URL/abs.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/URI/URL/as_string.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/URI/URL/autosplit.ix
-lib/perl5/site_perl/%%PERL_VER%%/auto/URI/URL/bad_method.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/URI/URL/base.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/URI/URL/crack.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/URI/URL/eq.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/URI/URL/newlocal.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/URI/URL/print_on.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/URI/URL/rel.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/URI/URL/scheme.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/URI/URL/strict.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/URI/URL/_generic/_netloc_elem.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/URI/URL/_generic/abs.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/URI/URL/_generic/autosplit.ix
-lib/perl5/site_perl/%%PERL_VER%%/auto/URI/URL/_generic/crack.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/URI/URL/_generic/eparams.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/URI/URL/_generic/epath.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/URI/URL/_generic/eq.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/URI/URL/_generic/equery.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/URI/URL/_generic/frag.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/URI/URL/_generic/host.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/URI/URL/_generic/params.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/URI/URL/_generic/password.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/URI/URL/_generic/path.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/URI/URL/_generic/path_components.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/URI/URL/_generic/port.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/URI/URL/_generic/query.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/URI/URL/_generic/rel.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/URI/URL/_generic/user.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/URI/URL/file/autosplit.ix
-lib/perl5/site_perl/%%PERL_VER%%/auto/URI/URL/file/dos_path.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/URI/URL/file/mac_path.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/URI/URL/file/newlocal.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/URI/URL/file/unix_path.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/URI/URL/file/vms_path.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/URI/URL/http/autosplit.ix
-lib/perl5/site_perl/%%PERL_VER%%/auto/URI/URL/http/keywords.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/URI/URL/http/query_form.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/libwww-perl/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/lwpcook.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/libwww-perl/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Bundle
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/File
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/HTTP/Headers
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/HTTP/Request
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/HTTP
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/LWP/Authen
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/LWP/Protocol
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/URI/URL
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/LWP
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/WWW/RobotRules
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/LWP/UserAgent
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/LWP
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/URI/URL/_generic
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/URI/URL/file
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/URI/URL/http
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/URI/URL
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/URI
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/libwww-perl
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/WWW
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/libwww-perl
