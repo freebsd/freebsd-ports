@@ -15,8 +15,6 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	obrien@FreeBSD.org
 
-NO_PACKAGE=	"links against crypt\(\) [thus is crypto in package form]"
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/slurp ${PREFIX}/sbin
 	${INSTALL_PROGRAM} ${WRKSRC}/slurpie ${PREFIX}/sbin
