@@ -41,5 +41,5 @@ TCLVND=		${TCL_VER:S/.//}
 
 .include <bsd.port.mk>
 
-PLIST_SUBP!=	${ENV} ${MAKE_ENV} ${MAKE} -f ${MAKEFILE} environ
+PLIST_SUBP!=	${SETENV} ${MAKE_ENV} ${MAKE} -f ${MAKEFILE} environ
 PLIST_SUB+=	${PLIST_SUBP}

@@ -41,5 +41,5 @@ post-install:
 
 .include <bsd.port.mk>
 
-PLIST_SUBP!=	${ENV} TCL_VER=${TCL_VER} ${MAKE} -f ${MAKEFILE} environ
+PLIST_SUBP!=	${SETENV} TCL_VER=${TCL_VER} ${MAKE} -f ${MAKEFILE} environ
 PLIST_SUB+=	${PLIST_SUBP}
