@@ -21,14 +21,14 @@ PORTCLASS?=	master
 
 # distfile version
 FLIM_TRUNK=	1.13
-FLIM_VER=	1.13.2
+SEMI_TRUNK=	1.13
 SEMI_VER=	1.13.7
 # setupel filename
 SEMI_SETUPEL=	semi-setupel.el
 # document install directory by install-doc target
 SEMIDOCDIR?=	share/doc/semi
-FLIM_COOKIE=	flim-${EMACS_PORT_NAME}-${FLIM_VER}.FreeBSD-packages
-SEMI_COOKIE=	semi-${EMACS_PORT_NAME}-${SEMI_VER}.FreeBSD-packages
+FLIM_COOKIE=	flim-${EMACS_PORT_NAME}-${FLIM_TRUNK}.FreeBSD-packages
+SEMI_COOKIE=	semi-${EMACS_PORT_NAME}-${SEMI_TRUNK}.FreeBSD-packages
 
 .if (${PORTCLASS} == "master")
 # emacs port setup

@@ -20,12 +20,13 @@ MAINTAINER?=	shige@FreeBSD.org
 PORTCLASS?=	master
 
 # distfile version
+FLIM_TRUNK=	1.13
 FLIM_VER=	1.13.2
 # setupel filename
 FLIM_SETUPEL=	flim-setupel.el
 # document install directory by install-doc target
 FLIMDOCDIR?=	share/doc/flim
-FLIM_COOKIE=	flim-${EMACS_PORT_NAME}-${FLIM_VER}.FreeBSD-packages
+FLIM_COOKIE=	flim-${EMACS_PORT_NAME}-${FLIM_TRUNK}.FreeBSD-packages
 
 .if (${PORTCLASS} == "master")
 # for emacs
