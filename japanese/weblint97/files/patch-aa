@@ -1,0 +1,30 @@
+--- Makefile.orig	Sat Mar  8 00:12:00 1997
++++ Makefile	Mon Jul 21 01:32:02 1997
+@@ -5,12 +5,15 @@
+ 
+ SHELL    = /bin/sh
+ 
+-BINDIR   = /usr/local/bin
+-LIBDIR   = /usr/lib/perl
++PREFIX  ?= /usr/local
++BINDIR   = ${PREFIX}/bin
++PERLLIBDIR?= ${PREFIX}/lib/perl
++LIBDIR   = ${PERLLIBDIR}
+ JPDIR    = ./l10n/ja-jp
+-JMANDIR  = /usr/local/man/ja/man1
++JMANDIR  = ${PREFIX}/man/ja_JP.EUC/man1
+ PROGRAM  = weblint
+ JPROGRAM = jweblint
++JPROGRAM_TMP = jweblint.tmp
+ EXTLIB   = html-ext.pl
+ I18NLIB  = htmli18n.pl
+ JCODE    = jcode.pl
+@@ -48,7 +51,7 @@
+ 
+ euc-jp:
+ 	patch < $(JPDIR)/euc-jp.patch
+-	mv $(PROGRAM) $(JPROGRAM)
++	mv $(PROGRAM) $(JPROGRAM_TMP)
+ 	mv $(JPDIR)/$(JCODE) .
+ 
+ sjis:
