@@ -1,6 +1,10 @@
 bin/kwordquiz
 share/applnk/Edutainment/Miscellaneous/kwordquiz.desktop
 share/apps/kwordquiz/eventsrc
+share/apps/kwordquiz/examples/example.kvtml
+share/apps/kwordquiz/examples/fill_in_the_blank.kvtml
+share/apps/kwordquiz/examples/french_verbs.kvtml
+share/apps/kwordquiz/examples/us_states_and_capitals.kvtml
 share/apps/kwordquiz/kwordquizui.rc
 share/apps/kwordquiz/pics/appicon.png
 share/apps/kwordquiz/pics/check.png
@@ -32,6 +36,24 @@ share/apps/kwordquiz/pics/tabflash.png
 share/apps/kwordquiz/pics/tabmultiple.png
 share/apps/kwordquiz/pics/tabqa.png
 share/apps/kwordquiz/pics/unmarkasblank.png
+share/doc/HTML/en/kwordquiz/common
+share/doc/HTML/en/kwordquiz/dlg-languages.png
+share/doc/HTML/en/kwordquiz/index.cache.bz2
+share/doc/HTML/en/kwordquiz/index.docbook
+share/doc/HTML/en/kwordquiz/kwq-dlg-characters.png
+share/doc/HTML/en/kwordquiz/kwq-dlg-configure-editor.png
+share/doc/HTML/en/kwordquiz/kwq-dlg-configure-quiz.png
+share/doc/HTML/en/kwordquiz/kwq-dlg-languages.png
+share/doc/HTML/en/kwordquiz/kwq-dlg-print-exam.png
+share/doc/HTML/en/kwordquiz/kwq-dlg-print-flashcard.png
+share/doc/HTML/en/kwordquiz/kwq-dlg-print-list.png
+share/doc/HTML/en/kwordquiz/kwq-dlg-print-type.png
+share/doc/HTML/en/kwordquiz/kwq-dlg-rowscolumns.png
+share/doc/HTML/en/kwordquiz/kwq-dlg-sort.png
+share/doc/HTML/en/kwordquiz/kwq-editor.png
+share/doc/HTML/en/kwordquiz/kwq-flashcard.png
+share/doc/HTML/en/kwordquiz/kwq-multiple.png
+share/doc/HTML/en/kwordquiz/kwq-qanda.png
 share/icons/crystalsvg/128x128/apps/kwordquiz.png
 share/icons/crystalsvg/128x128/mimetypes/kwordquiz_doc.png
 share/icons/crystalsvg/16x16/apps/kwordquiz.png
@@ -67,7 +89,11 @@ share/mimelnk/application/x-kwordquiz.desktop
 @unexec rmdir %D/share/icons/crystalsvg/128x128 2>/dev/null || true
 @unexec rmdir %D/share/icons/crystalsvg 2>/dev/null || true
 @unexec rmdir %D/share/icons 2>/dev/null || true
+@dirrm share/doc/HTML/en/kwordquiz
+@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML 2>/dev/null || true
 @dirrm share/apps/kwordquiz/pics
+@dirrm share/apps/kwordquiz/examples
 @dirrm share/apps/kwordquiz
 @unexec rmdir %D/share/apps 2>/dev/null || true
 @unexec rmdir %D/share/applnk/Edutainment/Miscellaneous 2>/dev/null || true
