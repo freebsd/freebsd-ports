@@ -1,14 +1,5 @@
 --- lib/rld.c.orig	Wed Aug  4 04:59:28 1999
 +++ lib/rld.c	Mon Feb 21 03:55:45 2000
-@@ -143,7 +143,7 @@
- static void DGetOriginalFunc(void **fptr, char *name, int libmask) {
-     /* Synchronize access to func and lib opening functions if we can...     */
- 
--#ifndef __FreeBSD__
-+#if !defined(__FreeBSD__) || __FreeBSD__ != 2
-     name++;
- #endif
- 
 @@ -197,6 +197,26 @@
      lsInRLDFunctions = 0;
      S5LogUpdate(S5LogDefaultHandle, S5_LOG_DEBUG(10), 0, "RLD: gethostbyname2 results: %s %s", name, hp?hp->h_name:"???");
