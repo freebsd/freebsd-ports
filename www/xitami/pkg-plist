@@ -29,3 +29,6 @@ xitami/cgi-bin/testcgi
 xitami/webpages/default.html
 @dirrm share/doc/xitami/html
 @dirrm share/doc/xitami
+@unexec rmdir %D/xitami/webpages 2>/dev/null || true
+@unexec rmdir %D/xitami/cgi-bin 2>/dev/null || true
+@unexec rmdir %D/xitami 2>/dev/null || true
