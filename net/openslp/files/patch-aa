@@ -1,5 +1,5 @@
---- Makefile.in.orig	Wed Sep 12 12:13:48 2001
-+++ Makefile.in	Sat Sep 15 15:57:54 2001
+--- Makefile.in.orig	Mon Dec 17 11:26:53 2001
++++ Makefile.in	Mon Dec 17 11:27:42 2001
 @@ -78,8 +78,7 @@
  VERSION = @VERSION@
  
@@ -10,10 +10,10 @@
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
  CONFIG_CLEAN_FILES =  slp.list
-@@ -343,10 +342,6 @@
- 	file=$(DESTDIR)$(sysconfdir)/slp.spi;\
- 	if [ -f $$file ]; then cp -f $$file $$file.bak; else true; fi
- 	cp -f $(srcdir)/etc/slp.spi $(DESTDIR)$(sysconfdir)
+@@ -347,10 +346,6 @@
+ 	if [ -f $$file ]; then true;\
+ 	else cp -f $(srcdir)/etc/slp.spi $(DESTDIR)$(sysconfdir);\
+ 	fi
 -	rm -rf $(DESTDIR)$(DOC_DIR)
 -	mkdir -p $(DESTDIR)$(DOC_DIR)
 -	cp -r $(srcdir)/doc/* $(DESTDIR)$(DOC_DIR)
