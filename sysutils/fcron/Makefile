@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	fcron
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.3
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://fcron.free.fr/
