@@ -1,6 +1,14 @@
 bin/gkrellm
 include/gkrellm/gkrellm.h
 include/gkrellm/gkrellm_public_proto.h
+%%PORTDOCS%%share/doc/gkrellm/COPYRIGHT
+%%PORTDOCS%%share/doc/gkrellm/README
+%%PORTDOCS%%share/doc/gkrellm/Themes.html
+share/locale/de/LC_MESSAGES/gkrellm.mo
+share/locale/es/LC_MESSAGES/gkrellm.mo
+share/locale/fr/LC_MESSAGES/gkrellm.mo
+share/locale/ja/LC_MESSAGES/gkrellm.mo
+%%PORTDOCS%%@dirrm share/doc/gkrellm
 @dirrm include/gkrellm
 @exec mkdir -p %D/libexec/gkrellm/plugins
 @exec mkdir -p %D/share/gkrellm/themes
@@ -8,11 +16,3 @@ include/gkrellm/gkrellm_public_proto.h
 @unexec rmdir %D/libexec/gkrellm 2>/dev/null || true
 @unexec rmdir %D/share/gkrellm/themes 2>/dev/null || true
 @unexec rmdir %D/share/gkrellm 2>/dev/null || true
-share/doc/gkrellm/COPYRIGHT
-share/doc/gkrellm/README
-share/doc/gkrellm/Themes.html
-share/locale/de/LC_MESSAGES/gkrellm.mo
-share/locale/es/LC_MESSAGES/gkrellm.mo
-share/locale/fr/LC_MESSAGES/gkrellm.mo
-share/locale/ja/LC_MESSAGES/gkrellm.mo
-@dirrm share/doc/gkrellm
