@@ -107,7 +107,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/bin/nasm:${PORTSDIR}/devel/nasm
 ONLY_FOR_ARCHS=	i386
 PLIST_SUB+=	WITH_NASM=""
 .else
-PLIST_SUB+=	WITH_NASM="@comment"
+PLIST_SUB+=	WITH_NASM="@comment "
 .endif
 
 .if defined(WITH_AVIFILE)
