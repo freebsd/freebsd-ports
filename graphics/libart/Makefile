@@ -10,7 +10,7 @@ PORTVERSION=	2.3.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.artofcode.com/${PORTNAME}/
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for high-performance 2D graphics
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_lgpl-${PORTVERSION}

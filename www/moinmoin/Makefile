@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	moin
 DISTNAME=	moin-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Python CGI clone of WikiWiki
 
 BROKEN=		"Uses unregistered uid/gid"
