@@ -7,6 +7,7 @@
 
 PORTNAME=	xp
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	textproc java
 MASTER_SITES=	ftp://ftp.jclark.com/pub/xml/
 DISTNAME=	${PORTNAME}
@@ -14,23 +15,33 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	mike@vee.net
 COMMENT=	An XML parser written in Java
 
-RUN_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/java:${PORTSDIR}/java/jdk11
-
-PLIST_SUB+=	XP_VERSION=${PORTVERSION}
+USE_JAVA=	yes
+JAVA_VERSION=	1.1+
 
 NO_WORKSUBDIR=	yes
 NO_BUILD=	yes
 USE_ZIP=	yes
 
-.include <bsd.port.pre.mk>
+.if !defined(NOPORTDOCS)
+PORTDOCS=	api copying.txt index.html
+.endif
+JARFILE=	${PORTNAME}.jar
+DESTJARFILE=	${PKGNAME}.jar
+PLIST_FILES+=	${JAVAJARDIR:S,^${PREFIX}/,,}/${DESTJARFILE}
 
 do-install:
-	${MKDIR} ${PREFIX}/share/java/classes ${PREFIX}/share/java/${PKGNAME}
-	${INSTALL_DATA} \
-		${WRKDIR}/xp.jar \
-		${PREFIX}/share/java/classes/${PKGNAME}.jar
-	cd ${WRKDIR}; \
-		${CP} -R docs ${PREFIX}/share/java/${PKGNAME}; \
-		${CP} -R com ${PREFIX}/share/java/${PKGNAME}
+	@${ECHO_CMD} -n ">> Installing JAR as ${JAVAJARDIR}/${DESTJARFILE}..."
+	@${MKDIR} ${JAVAJARDIR}
+	@${INSTALL_DATA} ${WRKDIR}/xp.jar ${JAVAJARDIR}/${DESTJARFILE}
+	@${ECHO_CMD} " [ DONE ]"
+.if !defined(NOPORTDOCS)
+	@${ECHO_CMD} -n ">> Installing documentation in ${DOCSDIR}..."
+	@${MKDIR} ${DOCSDIR}
+.for DOCFILE in ${PORTDOCS}
+	@${CP} -r ${WRKDIR}/docs/${DOCFILE} ${DOCSDIR}/
+	@${ECHO_CMD} -n " ${DOCFILE}"
+.endfor
+	@${ECHO_CMD} " [ DONE ]"
+.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
