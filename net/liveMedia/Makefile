@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	liveMedia
-PORTVERSION=	2004.09.02
+PORTVERSION=	2004.10.11
 PORTEPOCH=	1
 CATEGORIES=	net devel
 MASTER_SITES=	http://www.LIVE.COM/liveMedia/public/
-MASTER_SITES+=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	nork
+#MASTER_SITES+=	${MASTER_SITE_LOCAL}
+#MASTER_SITE_SUBDIR=	nork
 DISTNAME=	live.${PORTVERSION}
 
 MAINTAINER=	nork@FreeBSD.org
@@ -74,6 +74,7 @@ liveMedia=		\
 		liveMedia/include/ByteStreamMultiFileSource.hh \
 		liveMedia/include/DarwinInjector.hh \
 		liveMedia/include/DeviceSource.hh \
+		liveMedia/include/DigestAuthentication.hh \
 		liveMedia/include/FileSink.hh \
 		liveMedia/include/FileServerMediaSubsession.hh \
 		liveMedia/include/FramedFileSource.hh \
@@ -84,6 +85,7 @@ liveMedia=		\
 		liveMedia/include/H263plusVideoRTPSink.hh \
 		liveMedia/include/H263plusVideoRTPSource.hh \
 		liveMedia/include/HTTPSink.hh \
+		liveMedia/include/InputFile.hh \
 		liveMedia/include/JPEGVideoRTPSink.hh \
 		liveMedia/include/JPEGVideoRTPSource.hh \
 		liveMedia/include/JPEGVideoSource.hh \
