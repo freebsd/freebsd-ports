@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtkscintilla
-PORTVERSION=	0.3
+PORTVERSION=	0.3.1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.moleskine.f2s.com/files/
 DISTNAME=	GtkScintilla-${PORTVERSION}
