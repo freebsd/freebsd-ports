@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	conglomerate
-PORTVERSION=	0.7.14
+PORTVERSION=	0.7.15
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,8 +20,14 @@ USE_LIBTOOL_VER=	13
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
+.include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/libdata/pkgconfig/enchant.pc) || defined(WITH_ENCHANT)
+LIB_DEPENDS+=	enchant.2:${PORTSDIR}/textproc/enchant
+.endif
+
 post-install:
 	${MKDIR} ${PREFIX}/share/gnome/${PORTNAME}/help
 	${LN} -sf ${PREFIX}/share/gnome/help/${PORTNAME} ${PREFIX}/share/gnome/${PORTNAME}/help/${PORTNAME}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
