@@ -1,5 +1,5 @@
---- Makefile.orig	Mon Jan  1 04:13:48 2001
-+++ Makefile	Mon Jan  7 14:28:39 2002
+--- Makefile.orig	Sat Jul 13 07:33:16 2002
++++ Makefile	Tue Dec 14 23:47:23 2004
 @@ -18,23 +18,23 @@
  #
  
@@ -31,7 +31,7 @@
  
  # Set DESTPREF to null if you want to call the executables "tangle" and "weave"
  # (probably NOT a good idea; we recommend leaving DESTPREF=c)
-@@ -50,9 +50,9 @@
+@@ -50,13 +50,13 @@
  WCHANGES=
  
  # We keep debugging info around, for fun, but most users don't need it
@@ -43,25 +43,8 @@
  #LINKFLAGS = -s # for smaller (stripped) executables on many UNIX systems
  
  # What C compiler are you using?
-@@ -162,21 +162,16 @@
- 	  *.log *.dvi *.toc *.idx *.scn *.pdf core cweave ctangle
+-CC = cc
++#CC = cc
  
- install: all
--	- mkdir $(DESTDIR)
- 	$(CP) cweave $(DESTDIR)$(DESTPREF)weave
- 	chmod 755 $(DESTDIR)$(DESTPREF)weave
- 	$(CP) ctangle $(DESTDIR)$(DESTPREF)tangle
- 	chmod 755 $(DESTDIR)$(DESTPREF)tangle
--	- mkdir $(MANDIR)
- 	$(CP) cweb.1 $(MANDIR)/cweb.$(MANEXT)
- 	chmod 644 $(MANDIR)/cweb.$(MANEXT)
--	- mkdir $(MACROSDIR)
- 	$(CP) cwebmac.tex $(MACROSDIR)
- 	chmod 644 $(MACROSDIR)/cwebmac.tex
--	- mkdir $(EMACSDIR)
- 	$(CP) cweb.el $(EMACSDIR)
- 	chmod 644 $(EMACSDIR)/cweb.el
--	- mkdir $(CWEBINPUTS)
- 	$(CP) c++lib.w $(CWEBINPUTS)
- 	chmod 644 $(CWEBINPUTS)/c++lib.w
- 
+ # RM and CP are used below in case rm and cp are aliased
+ RM= /bin/rm
