@@ -1,0 +1,16 @@
+--- src/pm.c.orig	Sun Mar  2 01:43:27 1997
++++ src/pm.c	Fri Dec  4 20:43:58 1998
+@@ -174,4 +174,4 @@
+ 	*newv = exp (s * x) * c1 * (s * cos (t * x) - t * sin (t * x));
+ 
+-	if (_isnan(*newy) || _isnan (*newv)) {
++	if (isnan(*newy) || isnan (*newv)) {
+ 		printf ("Gotcha\n");
+--- src/interpolate.c.orig	Sun Mar  2 01:43:26 1997
++++ src/interpolate.c	Fri Dec  4 20:45:23 1998
+@@ -52,4 +52,4 @@
+ 	    if (x <= table->entry[i].x) {
+ 			result = table->entry[i].m * x + table->entry[i].b;
+-			if (_isnan (result)) {
++			if (isnan (result)) {
+ 				fprintf (stderr, "interpolate: internal error\n");

@@ -1,10 +1,6 @@
 bin/acm
-bin/acms
-bin/kill-acms
 games/acm/default-scene
-games/acm/maui-scene
-games/acm/kauai-scene
-games/acm/oahu-scene
+games/acm/dallas-scene
 games/acm/inventory
 games/acm/f16.obj
 games/acm/f18.obj
@@ -22,15 +18,6 @@ games/acm/mtn.obj
 games/acm/lake.obj
 games/acm/hangar.obj
 games/acm/surface.obj
-games/acm/oahu.obj
-games/acm/maui_ne.obj
-games/acm/maui_nw.obj
-games/acm/maui_sw.obj
-games/acm/maui_se.obj
-games/acm/kauai_ne.obj
-games/acm/kauai_nw.obj
-games/acm/kauai_sw.obj
-games/acm/kauai_se.obj
 games/acm/aconnon.au
 games/acm/cannon.au
 games/acm/crash.au

@@ -1,0 +1,16 @@
+--- configure.orig	Tue Sep 24 01:02:28 1996
++++ configure	Fri Dec  4 20:39:15 1998
+@@ -872,4 +872,5 @@
+ done
+ 
++if test $ac_cv_lib_elf = yes; then
+ ac_safe=`echo "elf.h" | tr './\055' '___'`
+ echo $ac_n "checking for elf.h""... $ac_c" 1>&6
+@@ -893,4 +894,7 @@
+ fi
+ rm -f conftest*
++fi
++else
++    eval "ac_cv_header_$ac_safe=no"
+ fi
+ if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
