@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fltk
-PORTVERSION=	0.4
+PORTVERSION=	0.5.0
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits ruby
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -28,7 +28,7 @@ INSTALL_TARGET=	site-install
 CONFIGURE_ARGS=	--with-fltk-dir="${X11BASE}" --with-gl-dir="${X11BASE}"
 MAKE_ARGS=	LOCAL_LIBS="-lgcc"
 
-DOCS_EN=	Changes doc/en/*.txt
+DOCS_EN=	Changes README doc/en/*.txt
 DOCS_JA=	doc/ja/*.txt
 
 post-install:

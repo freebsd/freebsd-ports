@@ -2,6 +2,7 @@
 %%RUBY_SITELIBDIR%%/fltk.rb
 %%RUBY_SITELIBDIR%%/fltk/canvas.rb
 %%RUBY_SITELIBDIR%%/fltk/drawable.rb
+%%RUBY_SITELIBDIR%%/fltk/image.rb
 %%RUBY_SITELIBDIR%%/fltk/listbox.rb
 %%RUBY_SITELIBDIR%%/fltk/canvas/circle.rb
 %%RUBY_SITELIBDIR%%/fltk/canvas/ellipse.rb
@@ -11,6 +12,7 @@
 %%RUBY_SITELIBDIR%%/fltk/canvas/rect.rb
 @dirrm %%RUBY_SITELIBDIR%%/fltk/canvas
 @dirrm %%RUBY_SITELIBDIR%%/fltk
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fltk/editor.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fltk/othello.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fltk/sample1.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fltk/sample2.rb
@@ -24,6 +26,7 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fltk/sample10.rb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/fltk
 %%PORTDOCS%%%%RUBY_DOCDIR%%/fltk/Changes
+%%PORTDOCS%%%%RUBY_DOCDIR%%/fltk/README
 %%PORTDOCS%%%%RUBY_DOCDIR%%/fltk/faq.txt
 %%PORTDOCS%%%%RUBY_DOCDIR%%/fltk/guide.txt
 %%PORTDOCS%%%%RUBY_DOCDIR%%/fltk/reference.txt
