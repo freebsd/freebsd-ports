@@ -11,7 +11,7 @@ CATEGORIES+=	x11	# `+=' is for slave ports
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mich@FreeBSD.org
 COMMENT=	A color vt102 terminal emulator with transparency support
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
