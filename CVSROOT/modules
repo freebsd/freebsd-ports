@@ -1185,6 +1185,7 @@ ebnf2yacc	ports/devel/ebnf2yacc
 eboard		ports/games/eboard
 ebuttons	ports/x11/ebuttons
 ecasound	ports/audio/ecasound
+ecawave	ports/audio/ecawave
 ecg2png		ports/graphics/ecg2png
 ecgi		ports/devel/ecgi
 echo		src/bin/echo
