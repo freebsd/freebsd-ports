@@ -6,8 +6,8 @@
 #
 
 PORTNAME=		jadetex
-PORTVERSION=		3.12
-PORTREVISION=		1
+PORTVERSION=		3.13
+PORTREVISION=		0
 CATEGORIES=		print
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	jadetex
@@ -15,9 +15,9 @@ MASTER_SITE_SUBDIR=	jadetex
 MAINTAINER=		nik@FreeBSD.org
 COMMENT=	A TeX backend for Jade, for typesetting SGML documents
 
-BUILD_DEPENDS=		tex:${PORTSDIR}/print/teTeX
+BUILD_DEPENDS=		tex:${PORTSDIR}/print/teTeX-base
 LIB_DEPENDS=		png.5:${PORTSDIR}/graphics/png
-RUN_DEPENDS=		tex:${PORTSDIR}/print/teTeX
+RUN_DEPENDS=		tex:${PORTSDIR}/print/teTeX-base
 
 MAKE_ENV=		TEXMFCNF=${FILESDIR}:${LOCALBASE}/share/texmf/web2c
 
