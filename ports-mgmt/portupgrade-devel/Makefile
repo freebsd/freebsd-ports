@@ -7,6 +7,7 @@
 
 PORTNAME=	portupgrade
 PORTVERSION=	20010823
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.iDaemons.org/distfiles/
@@ -49,7 +50,10 @@ DOCS=		ChangeLog README
 EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}
 
 post-patch:
-	${RUBY} -i -pe 'sub %r:/usr/local:, "${LOCALBASE}"' ${WRKSRC}/pkgdb.rb
+.for f in pkgdb.rb pkgtools.rb
+	${RUBY} -i~ -pe 'sub %r:/usr/local:, "${LOCALBASE}"' ${WRKSRC}/${f}
+.endfor
+	${RUBY} -i~ -pe 'sub %r:(PORTS_DBDIR = .* )PORTSDIR$$:, "\\1PORTS_DIR"' ${WRKSRC}/portsdb.rb
 
 do-install:
 	cd ${WRKSRC} && ${RUBY} install.rb
