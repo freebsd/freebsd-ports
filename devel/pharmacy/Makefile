@@ -8,7 +8,7 @@
 
 DISTNAME=	pharmacy-0.2.1
 CATEGORIES=	devel gnome
-MASTER_SITES=	http://pharmacy.learnrespect.org/
+MASTER_SITES=	http://home.earthlink.net/~nawalker/pharmacy/
 
 MAINTAINER=	jedgar@FreeBSD.org
 
