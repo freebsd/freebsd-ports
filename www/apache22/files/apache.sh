@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/www/apache22/files/Attic/apache.sh,v 1.7 2004-12-11 18:06:04 clement Exp $
+# $FreeBSD: /tmp/pcvs/ports/www/apache22/files/Attic/apache.sh,v 1.8 2005-01-11 13:45:05 clement Exp $
 #
 
 # PROVIDE: apache21
@@ -49,7 +49,7 @@ checkyesno apache21ssl_enable && \
 apache21_checkconfig()
 {
 	echo "Performing sanity check on apache21 configuration:"
-	${command} -t
+	${command} ${apache21_flags} -t
 }
 
 apache21_precmd() 

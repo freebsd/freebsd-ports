@@ -219,13 +219,22 @@ post-configure:
 pre-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
-post-install:
+install-startup-script:
+.if !exists(${WRKDIR}/apache2libs.sh) || !exists(${WRKDIR}/apache2.sh)
+	@${MKDIR} ${WRKDIR}
+	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${FILESDIR}/apache.sh > ${WRKDIR}/apache2.sh
+	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${FILESDIR}/apache2libs.sh > ${WRKDIR}/apache2libs.sh
+.endif
+	@${ECHO_CMD} "=> Installing ${PREFIX}/etc/rc.d/000.apache2libs.sh startup script."
+	@${INSTALL_SCRIPT} -m 555 ${WRKDIR}/apache2libs.sh ${PREFIX}/etc/rc.d/000.apache2libs.sh
+	@${ECHO_CMD} "=> Installing ${PREFIX}/etc/rc.d/apache2.sh startup script."
+	@${INSTALL_SCRIPT} -m 555 ${WRKDIR}/apache2.sh ${PREFIX}/etc/rc.d/apache2.sh
+
+post-install: install-startup-script
 	@${MKDIR} ${PREFIX}/etc/apache2/envvars.d
 	@${MKDIR} ${PREFIX}/etc/apache2/Includes
-	@${ECHO_CMD} "=> Installing ${PREFIX}/etc/rc.d/000.apache2libs.sh startup script."
-	@${INSTALL_SCRIPT} -m 751 ${WRKDIR}/apache2libs.sh ${PREFIX}/etc/rc.d/000.apache2libs.sh
-	@${ECHO_CMD} "=> Installing ${PREFIX}/etc/rc.d/apache2.sh startup script."
-	@${INSTALL_SCRIPT} -m 751 ${WRKDIR}/apache2.sh ${PREFIX}/etc/rc.d/apache2.sh
 	@${ECHO_CMD} ""
 	@${CAT} ${PKGMESSAGE}
 
