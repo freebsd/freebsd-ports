@@ -3,16 +3,23 @@
 # Date created:         25 Jan 1995
 # Whom:                 Thomas Gellekum <tg@FreeBSD.org>
 #
-# $Id$
+# $Id: Makefile,v 1.7 1997/08/26 07:12:19 tg Exp $
 #
 
-DISTNAME=	tr2latex-2.2
+DISTNAME=	tr2latex
+PKGNAME=	tr2latex-2.2
 CATEGORIES=	print
-MASTER_SITES=	ftp://ftp.cs.ruu.nl/pub/TEX/TOOLS/
+MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
+MASTER_SITE_SUBDIR=	support/
 
 MAINTAINER=	tg@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/tr2latex
 MAN1=		tr2latex.1
+
+post-extract:
+	${CP} ${WRKSRC}/Makefile.unix ${WRKSRC}/Makefile
+
+pre-install:
+	${MKDIR} ${PREFIX}/share/texmf/tex/latex/misc
 
 .include <bsd.port.mk>

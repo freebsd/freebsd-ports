@@ -1,0 +1,44 @@
+--- Makefile.orig	Tue Jan  6 09:45:40 1998
++++ Makefile	Tue Jan  6 09:50:35 1998
+@@ -14,7 +14,7 @@
+ #     (recommended by David Osborne, cczdao@mips.ccc.nottingham.ac.uk).
+ # Add -Dtops20 to CFLAGS if you're running it under tops20.
+ # Add -DDEBUG for some additional debugging code.
+-CFLAGS = -O -DDEBUG
++#CFLAGS = -O -DDEBUG
+ 
+ LINTFLAGS = -abchnpux
+ CFILES = tr2latex.c tr.c subs.c version.c
+@@ -28,10 +28,10 @@
+ 
+ # BINDIR gives the path where the executable should be placed after
+ # installation.
+-BINDIR = /sys/tex/bin
++BINDIR = ${PREFIX}/bin
+ 
+ # TEXDIR gives the path where the tex library resides (fonts, macros ...)
+-TEXDIR = /sys/tex/lib
++TEXDIR = ${PREFIX}/share/texmf/tex/latex/misc
+ 
+ # MANSECTION gives the section number of the online manual pages where to
+ # place the tr2latex manual page.
+@@ -41,8 +41,9 @@
+ # place the manual page into the local section by giving MANSECTION as
+ # l (``ell'') and setting MANDIR to /usr/man
+ MANSECTION = 1
+-MANDIR = /sys/tex/man
++MANDIR = ${PREFIX}/man
+ 
++all: tr2latex
+ 
+ tr2latex: tr2latex.o tr.o subs.o version.o
+ 	$(CC) $(CFLAGS) tr2latex.o tr.o subs.o version.o -o tr2latex
+@@ -60,7 +61,7 @@
+ 	install -c -m 0755 tr2latex $(BINDIR)/tr2latex
+ 	install -c -m 0444 tr2latex.man \
+ 			$(MANDIR)/man$(MANSECTION)/tr2latex.$(MANSECTION)
+-	install -c -m 0444 troffman.sty troffms.sty $(TEXDIR)/macros
++	install -c -m 0444 troffman.sty troffms.sty $(TEXDIR)
+ 
+ clean:
+ 	\rm -f *.o core *junk* tr2latex lint.lst *~ TAGS tags
