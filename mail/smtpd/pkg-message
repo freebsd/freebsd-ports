@@ -1,0 +1,33 @@
+
+You must follow the next steps, as root, in order to finish the installation:
+
+1) Make sure uucp is a trusted user to sendmail.
+   To do this, check if your sendmail.cf has a line with "Tuucp"
+
+2) Disable sendmail from answering smtp requests, but make sure it
+   handles queue delivering.  You have two choices:
+
+   a) Start sendmail without the "-bd" flag, but with the "-q30m" one.
+   b) Do not start sendmail as a daemon, and add an entry in /etc/crontab
+      to run sendmail -q when needed.  For example, add the following line
+      to your /etc/crontab:
+*/30	*	*	*	*	root	/usr/sbin/sendmail -q
+
+   In any case, you'll most likely have to edit /etc/rc.conf to change
+   sendmail configuration.
+
+3) Add smtpd to your inetd.conf:
+	smtp stream tcp nowait root /usr/local/sbin/smtpd smtpd
+
+4) smtpd runs in a chrooted environment, so you must feed this environment
+   with any configuration file it needs.  Make a copy of /etc/resolv.conf
+   and /etc/localtime to /var/smtpd/etc.  If you ever change any of these
+   files, remember to change the copies also.  Do not make a symbolic
+   link, as it will not work in the chrooted environment.
+
+5) Create your own /var/smtpd/etc/smtpd_check_rules.  There are some
+   examples in that directory.  If have any problem, take a look at
+   http://www.obtuse.com/juniper-docs/man/smtpd_address_check.html.
+
+6) Reboot !   (Or restart all those daemons manually, if you know how :^) )
+

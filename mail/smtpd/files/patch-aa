@@ -1,0 +1,86 @@
+--- Makefile.orig	Sun Oct 12 23:40:34 1997
++++ Makefile	Fri Feb  6 22:21:46 1998
+@@ -1,7 +1,7 @@
+ ##########################################################
+ ## Where do I get installed? #############################
+ ##########################################################
+-INSTALL_PREFIX = /usr/local/
++INSTALL_PREFIX = ${PREFIX}/
+ INSTALL_BIN = sbin/
+ INSTALL_MAN = man/
+ 
+@@ -41,9 +41,9 @@
+ # in SMTP_USER above.
+ #
+ # The chroot directory
+-SPOOLDIR = /usr/spool/smtpd
++SPOOLDIR = !!SPOOLBASE!!
+ # Where to store messages, relative to SPOOLDIR above.
+-SPOOLSUBDIR = .
++SPOOLSUBDIR = mqueue
+ #Use below instead of above if you don't want smtpd to chroot. This
+ #isn't normally a good idea if security is your main goal. A nice
+ #chroot jail may be a pain to build but should give you enough of a
+@@ -143,8 +143,8 @@
+ # indicating a DNS spoof of misconfiguration.
+ # If PARANOID_DNS is 0, smtpd will replace any evil characters it sees
+ # continue.
+-# PARANOID_DNS = 1
+-PARANOID_DNS = 0
++PARANOID_DNS = 1
++# PARANOID_DNS = 0
+ 
+ # The check above will clobber stuff in the headers from some
+ # non north-american localizations.
+@@ -181,8 +181,8 @@
+ # seem to have a bug in which they simply try the EHLO again. Sigh. 
+ # setting EHLO_KLUDGE to 1 will make smtpd accept a second EHLO as a helo, 
+ # thereby kludging around this bug in Communicator. 
+-#EHLO_KLUDGE=1  
+-EHLO_KLUDGE=0  
++EHLO_KLUDGE=1  
++#EHLO_KLUDGE=0  
+ 
+ 
+ # smtpd can check FROM and RCPT addresses, along with the connecting
+@@ -206,8 +206,8 @@
+ # build with CHECK_ADDRESS set to 1. You will get an error about
+ # juniper_firewall.h not existing if you forget this.
+ #
+-JUNIPER_SUPPORT=1
+-#JUNIPER_SUPPORT=0
++#JUNIPER_SUPPORT=1
++JUNIPER_SUPPORT=0
+ 
+ # Use regexp's in patterns?  If you have a POSIX <regex.h> and friends, 
+ # and you trust the regex lib enough for use, you can set USE_REGEX to 
+@@ -245,7 +245,7 @@
+ #
+ #NS_MATCH=0
+ NS_MATCH=1
+-LD_LIBS=-lresolv  # you may or may not need this.
++#LD_LIBS=-lresolv  # you may or may not need this.
+ 
+ # The rules file for address checking, if enabled, remember this file
+ # will be in the chroot jail, so the line below probably means
+@@ -325,7 +325,8 @@
+ ####################################################
+ 
+ # The Source is with you (*BSD 4.4, Linux)
+-CFLAGS = -g -O -Wall -DUSE_FLOCK -DUSE_MKSTEMP $(OPTIONS)
++#CFLAGS = -g -O -Wall -DUSE_FLOCK -DUSE_MKSTEMP $(OPTIONS)
++CFLAGS += -Wall -DUSE_FLOCK -DUSE_MKSTEMP $(OPTIONS)
+ 
+ 
+ #SunOS 5.X
+@@ -362,8 +363,8 @@
+ 	indent $(INDENT_ARGS) address_check.c
+ 
+ install:	smtpd smtpfwdd
+-	install -m 500 smtpd $(INSTALL_PREFIX)$(INSTALL_BIN)smtpd
+-	install -m 500 smtpfwdd $(INSTALL_PREFIX)$(INSTALL_BIN)smtpfwdd
++	install -cs -g 0 -o 0 -m 500 smtpd $(INSTALL_PREFIX)$(INSTALL_BIN)smtpd
++	install -cs -g 0 -o 0 -m 500 smtpfwdd $(INSTALL_PREFIX)$(INSTALL_BIN)smtpfwdd
+ 
+ clean:
+ 	/bin/rm -f  *.o 
