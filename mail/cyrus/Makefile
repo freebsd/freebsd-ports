@@ -39,7 +39,6 @@ post-configure:
 
 pre-install:
 		@ ${CP} ${WRKSRC}/man/quota.8 ${WRKSRC}/man/cyrquota.8
-		@${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 DOCS=	README acl-extension anoncvs bugs changes copyrights install \
 	mailing-list overview quota-extension server-design
