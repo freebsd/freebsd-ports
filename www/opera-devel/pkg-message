@@ -2,5 +2,7 @@
 If you are upgrading from version 6, it is recommended to backup your personal
 "~/.opera" directory and remove it before starting the upgraded Opera for the
 first time. This can be done from the command line using 
-"cp -Rp ~/.opera ~/.opera-mybackup" and "rm -rf ~/.opera".
+"mv ~/.opera ~/.opera-mybackup".
 
+If you are running FreeBSD 5.x and are experiencing a core dump when starting
+Opera, try updating the compat4x port.

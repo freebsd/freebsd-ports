@@ -1,6 +1,6 @@
---- install.sh.orig	Mon Aug 11 16:27:15 2003
-+++ install.sh	Tue Aug 12 22:44:18 2003
-@@ -712,27 +712,17 @@
+--- install.sh.orig	Wed Aug 27 18:18:06 2003
++++ install.sh	Sat Aug 30 13:24:01 2003
+@@ -711,9 +711,7 @@
  
      wrapper_opera_plugin_paths="    \"\${HOME}/.opera/plugins\" \\
      ${plugin_dir} \\
@@ -11,29 +11,15 @@
  
      case "${machine}:${os}" in
  	i[3456]86:Linux|i[3456]86:FreeBSD|i[3456]86:NetBSD|i[3456]86:OpenBSD)
- 	    wrapper_plugin_paths="
-     /usr/local/Acrobat[45]/Browsers/intellinux \\
--    /usr/lib/Acrobat[45]/Browsers/intellinux \\
--    /usr/X11R6/lib/Acrobat[45]/Browsers/intellinux \\
--    /opt/Acrobat[45]/Browsers/intellinux \\
--    /usr/Acrobat[45]/Browsers/intellinux \\
--    /usr/j2se/jre/plugin/i386/ns4 \\
--    /usr/java/jre1.4.0/plugin/i386/ns4 \\
--    /usr/java/jre1.3.1/plugin/i386/ns4 \\
--    /usr/lib/j2re1.3/plugin/i386/netscape4 \\
+@@ -727,7 +725,6 @@
+     /usr/java/jre1.4.0/plugin/i386/ns4 \\
+     /usr/java/jre1.3.1/plugin/i386/ns4 \\
+     /usr/lib/j2re1.3/plugin/i386/netscape4 \\
 -    /usr/local/jdk1.3.1/jre/plugin/i386/ns4 \\
--    /usr/local/linux-jdk1.3.1/jre/plugin/i386/ns4 \\"
-+    /usr/local/linux-sun-jdk1.[34].1/jre/plugin/i386/ns4 \\
-+    /usr/local/linux-blackdown-jdk1.[34].1/jre/plugin/i386/netscape4 \\"
+     /usr/local/linux-jdk1.3.1/jre/plugin/i386/ns4 \\"
  	    wrapper_ibmjava="
--	    IBMJava2-14/jre \\
--	    IBMJava2-131/jre \\"
-+	    linux-ibm-jdk1.3.1/jre \\
-+	    linux-ibm-jdk1.4.0/jre \\"
- 	    wrapper_sunjava_machine="i386"
- 	;;
- 
-@@ -779,15 +769,9 @@
+ 	    IBMJava2-141/jre \\
+@@ -779,15 +776,10 @@
  	;;
      esac
      wrapper_netscape_plugin_paths="
@@ -42,6 +28,7 @@
 -    /usr/lib/RealPlayer8 \\
 -    /usr/lib/realplay \\
 +    /usr/local/lib/RealPlayer8/Plugins \\
++    /usr/X11R6/lib/browser_plugins \\
      \"\${HOME}/.netscape/plugins\" \\
 -    /opt/netscape/plugins \\
 -    /usr/lib/netscape/plugins \\
@@ -51,41 +38,25 @@
  
      wrapper_file="${wrapper_dir}/opera"
      
-@@ -846,28 +830,13 @@
+@@ -909,7 +901,7 @@
  
- if test ! \"\${OPERA_JAVA_DIR}\"; then
+     # Workaround for the \"preloaded libXt\" problem.
+     # To disable the first workaround, comment the next line.
+-    JAVA_WORKAROUND=`LD_PRELOAD=\"\${OPERA_JAVA_DIR}/libawt.so\" /bin/echo works 2>/dev/null`
++    #JAVA_WORKAROUND=`LD_PRELOAD=\"\${OPERA_JAVA_DIR}/libawt.so\" /bin/echo works 2>/dev/null`
  
--    PREFIXES=\"
--	/usr
--	/usr/java
--	/usr/lib
--	/usr/local
--	/opt\"
-+    PREFIXES=\"/usr/local\"
- 
-     for SUNJAVA in \\
--	j2re1.4.1_01 \\
--	j2re1.4.1 \\
--	j2re1.4.0_01 \\
--	j2sdk1.4.0_01/jre \\
--	j2re1.4.0 \\
--	jre1.4.0 \\
--	j2se/1.4/jre \\
--	j2se/1.3/jre \\
--	j2se/jre \\
--	jre1.3.1_02 \\
--	jre1.3.1_01 \\
--	j2re1.3.1 \\
--	jre1.3.1 \\
--	j2re1.3 \\
-+	linux-blackdown-jdk1.3.1/jre \\
-+	linux-blackdown-jdk1.4.1/jre \\
-+	linux-sun-jdk1.3.1/jre \\
-+	linux-sun-jdk1.4.1/jre \\
- 	; do
- 	for PREFIX in \${PREFIXES}; do
- 	    if test -f \"\${PREFIX}/\${SUNJAVA}/lib/${wrapper_sunjava_machine}/libjava.so\"; then OPERA_JAVA_DIR=\"\${PREFIX}/\${SUNJAVA}/lib/${wrapper_sunjava_machine}\" && break; fi
-@@ -912,11 +881,8 @@
+     if test \"\${JAVA_WORKAROUND}\" = 'works'; then
+         LD_PRELOAD=\"\${OPERA_JAVA_DIR}/libawt.so\"
+@@ -918,7 +910,7 @@
+     fi
+ else
+     # To disable the second workaround, comment the next line.
+-    JAVA_WORKAROUND2=`LD_PRELOAD=\"libawt.so\" /bin/echo works 2>/dev/null`
++    #JAVA_WORKAROUND2=`LD_PRELOAD=\"libawt.so\" /bin/echo works 2>/dev/null`
+     if test \"\${JAVA_WORKAROUND2}\" = 'works'; then
+         LD_PRELOAD=\"libawt.so\"
+         OPERA_FORCE_JAVA_ENABLED=\"1\"
+@@ -943,11 +935,8 @@
  
  # Acrobat Reader
  for BINDIR in \\
@@ -99,9 +70,9 @@
      ; do
      if test -d \${BINDIR} ; then PATH=\${PATH}:\${BINDIR}; fi
  done
-@@ -1116,44 +1082,6 @@
- 	cp $cpv $cpf plugins/operamotifwrapper plugins/operaplugincleaner plugins/libnpp.so $plugin_dir/
-         chmod $chmodv 755 $plugin_dir/operamotifwrapper $plugin_dir/operaplugincleaner $plugin_dir/libnpp.so
+@@ -1178,44 +1167,6 @@
+ 	    echo "This package does not contain support for Netscape Plug-ins.\n"
+ 	fi
  
 -     # System wide configuration files
 -	config_dir='/usr/local/etc'
@@ -144,7 +115,7 @@
       # Shorcuts and Icons
  	icons
  	gnome
-@@ -1249,22 +1177,22 @@
+@@ -1311,22 +1262,22 @@
  
      debug_msg 0 "in icons()"
  
@@ -179,7 +150,7 @@
      fi
    
      if test ! -d /etc/X11/wmconfig/; then
-@@ -1330,36 +1258,36 @@
+@@ -1392,36 +1343,36 @@
        fi
        # end /opt/gnome share
  
@@ -238,7 +209,7 @@
     fi
     # Add ximian here
  }
-@@ -1396,12 +1324,12 @@
+@@ -1458,12 +1409,12 @@
  
      fi  
      
@@ -256,7 +227,7 @@
      fi
  }
  
-@@ -1425,8 +1353,8 @@
+@@ -1487,8 +1438,8 @@
        fi
        if test -w /opt/kde/share/applnk/Internet; then generate_desktop /opt/kde/share/applnk/Internet; fi
  
