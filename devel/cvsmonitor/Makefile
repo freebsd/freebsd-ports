@@ -7,6 +7,7 @@
 
 PORTNAME=	cvsmonitor
 PORTVERSION=	0.6.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -66,6 +67,7 @@ PLIST_SUB=	CVSMON="${CGIDIR}/cvsmonitor"
 DIRS_DATA=	html html/Admin html/Browse html/Error html/Search \
 		modules modules/AppLib modules/AppLib/Interface \
 		modules/CVSMonitor modules/CVSMonitor/Graph \
+		modules/CVSMonitor/Backend modules/CVSMonitor/HTML \
 		modules/CVSMonitor/Range modules/CVSMonitor/MetaData \
 		modules/CVSMonitor/MetaData/Abstract setup \
 		setup/html static/style static/images
