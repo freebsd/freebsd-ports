@@ -1,90 +1,15 @@
---- src/GNUmakefile.conf.orig	Thu Apr 22 08:01:59 1999
-+++ src/GNUmakefile.conf	Thu Dec  9 13:27:03 1999
-@@ -93,13 +93,13 @@
- #			START OF CONFIGURATION SECTION			   #
- #									   #
- ifeq ($(SYSTEM),					linux)
--  CC=		gcc
-+  CC:=		gcc
-   CCFLAGS:=	-O2 -g $(PROFILE) # -fomit-frame-pointer
- ifeq ($(UTSMAC),i386)
-   CCFLAGS+=	-malign-functions=2 -malign-jumps=3 -malign-loops=2
- endif
-   LDO=		ld -r
--  LD=		gcc -rdynamic
-+  LD=		$(CC) -rdynamic
-   LDFLAGS:=	 $(PROFILE)
-   SHCFLAGS:=	-O2 -g -fPIC
-   SHLDFLAGS:=	-rdynamic -shared
-@@ -110,11 +110,11 @@
- endif
- 
- ifeq ($(SYSTEM),					freebsd)
--  CC=		gcc
-+  CC:=		gcc
-   CCFLAGS:=	-O3 -fexpensive-optimizations -fomit-frame-pointer $(PROFILE)
-   INCDIRS:=	-I/usr/X11R6/include
-   LDO=		ld -r
--  LD=		gcc
-+  LD=		$(CC)
-   LDFLAGS:=	$(PROFILE)
-   SHCFLAGS:=	-O2 -g -fPIC
-   SHLDFLAGS:=	-rdynamic -shared
-@@ -125,7 +125,7 @@
- endif
- 
- ifeq ($(MACHINE)-$(SYSTEM),				alpha-osf1)
--  CC=		$(UTIL)decgcc
-+  CC:=		$(UTIL)decgcc
-   CCFLAGS:=	-O2 -g $(PROFILE)
-   LDO=		ld -taso -r
-   LD=		cc
-@@ -138,11 +138,11 @@
- endif
- 
- ifeq ($(MACHINE)-$(SYSTEM),				sparc-solaris)
--  CC=		gcc
-+  CC:=		gcc
-   CCFLAGS:=	-O2 -g $(PROFILE)
-   INCDIRS=	-I/usr/openwin/include
-   LDO=		ld -r
--  LD=		gcc
-+  LD=		$(CC)
-   LDFLAGS:=	$(PROFILE)
-   SHCFLAGS:=	-O2 -g -fPIC
-   SHLDFLAGS:=	-G
-@@ -153,10 +153,10 @@
- endif
- 
- ifeq ($(MACHINE)-$(SYSTEM),				sparc-sunos)
--  CC=		gcc
-+  CC:=		gcc
-   CCFLAGS:=	-O2 -g $(PROFILE)
-   LDO=		ld -r
--  LD=		gcc
-+  LD=		$(CC)
-   LDFLAGS:=	$(PROFILE)
-   SHCFLAGS:=	-O2 -g -fPIC
-   SHLDFLAGS:=	-rdynamic -shared
-@@ -166,10 +166,10 @@
- endif
- 
- ifeq ($(MACHINE)-$(SYSTEM),				hppa-hpux)
--  CC=		gcc
-+  CC:=		gcc
-   CCFLAGS:=	-O6 -g $(PROFILE)
-   LDO=		ld -r
--  LD=		gcc
-+  LD=		$(CC)
-   LDFLAGS:=	$(PROFILE)
-   SHCFLAGS:=	-O2 -g -fPIC
-   SHLDFLAGS:=	-rdynamic -shared
-@@ -179,7 +179,7 @@
- endif
- 
- ifeq ($(SYSTEM),					irix) 
--  CC=		cc -32 -mips2
-+  CC:=		cc -32 -mips2
-   CCFLAGS:=	-O3 $(PROFILE) 
-   LDO=		ld -32 -mips2 -r
-   LD=		cc
+--- conf/config.guess.orig	Mon Mar  6 11:52:02 2000
++++ conf/config.guess	Mon Mar  6 11:52:24 2000
+@@ -477,11 +477,7 @@
+ 	echo ${UNAME_MACHINE}-pc-bsdi${UNAME_RELEASE}
+ 	exit 0 ;;
+     *:FreeBSD:*:*)
+-	if test -x /usr/bin/objformat -a "elf" = "`/usr/bin/objformat`"; then
+-		echo ${UNAME_MACHINE}-unknown-freebsdelf`echo ${UNAME_RELEASE}|sed -e 's/[-(].*//'`
+-	else
+-		echo ${UNAME_MACHINE}-unknown-freebsd`echo ${UNAME_RELEASE}|sed -e 's/[-(].*//'`
+-	fi
++	echo freebsd
+ 	exit 0 ;;
+     *:NetBSD:*:*)
+ 	echo ${UNAME_MACHINE}-unknown-netbsd`echo ${UNAME_RELEASE}|sed -e 's/[-_].*/\./'`
