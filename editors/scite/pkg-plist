@@ -10,17 +10,22 @@ share/gnome/pixmaps/Sci48M.png
 %%DATADIR%%/SciTEDoc.html
 %%DATADIR%%/SciTEDownload.html
 %%DATADIR%%/SciTEExtension.html
+%%DATADIR%%/SciTEExternalLexer.html
 %%DATADIR%%/SciTEExtras.html
+%%DATADIR%%/SciTEFAQ.html
 %%DATADIR%%/SciTEGlobal.properties
 %%DATADIR%%/SciTEIco.png
 %%DATADIR%%/SciTEImage.html
 %%DATADIR%%/SciTELexer.html
+%%DATADIR%%/SciTELua.html
 %%DATADIR%%/SciTERegEx.html
 %%DATADIR%%/SciTETranslation.html
 %%DATADIR%%/SciTEWord.jpg
 %%DATADIR%%/abbrev.properties
 %%DATADIR%%/ada.properties
+%%DATADIR%%/asn1.properties
 %%DATADIR%%/asm.properties
+%%DATADIR%%/au3.properties
 %%DATADIR%%/ave.properties
 %%DATADIR%%/baan.properties
 %%DATADIR%%/bullant.properties
@@ -34,6 +39,7 @@ share/gnome/pixmaps/Sci48M.png
 %%DATADIR%%/forth.properties
 %%DATADIR%%/fortran.properties
 %%DATADIR%%/html.properties
+%%DATADIR%%/kix.properties
 %%DATADIR%%/latex.properties
 %%DATADIR%%/lisp.properties
 %%DATADIR%%/lot.properties
@@ -52,10 +58,12 @@ share/gnome/pixmaps/Sci48M.png
 %%DATADIR%%/python.properties
 %%DATADIR%%/ruby.properties
 %%DATADIR%%/scriptol.properties
+%%DATADIR%%/specman.properties
 %%DATADIR%%/sql.properties
 %%DATADIR%%/tcl.properties
 %%DATADIR%%/tex.properties
 %%DATADIR%%/vb.properties
 %%DATADIR%%/verilog.properties
+%%DATADIR%%/vhdl.properties
 %%DATADIR%%/yaml.properties
 @dirrm %%DATADIR%%
