@@ -3,3 +3,4 @@ include/cc++/script.h
 lib/libccscript.a
 lib/libccscript.so
 lib/libccscript.so.0
+@dirrm include/cc++
