@@ -57,6 +57,7 @@
     SUBDIR += glib12
     SUBDIR += gmake
     SUBDIR += gnustep
+    SUBDIR += gperf
     SUBDIR += gtksheet
     SUBDIR += id-utils
     SUBDIR += ilu
