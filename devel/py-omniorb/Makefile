@@ -16,8 +16,6 @@ DISTNAME=	omniORBpy-${PORTVERSION}
 MAINTAINER=	ak03@gte.com
 COMMENT=	Python bindings for omniORB4, a CORBA 2.6 ORB
 
-BROKEN=		"Does not compile"
-
 LIB_DEPENDS=	omniORB4.0:${PORTSDIR}/devel/omniORB
 RUN_DEPENDS=	omniidl:${PORTSDIR}/devel/omniORB
 # parts of omniORB4 source tree is required to build omniORBpy;
@@ -45,7 +43,7 @@ MODULEDIRS=	CosNaming CosNaming__POA omniORB
 DOCDIR=		${PREFIX}/share/doc/omniORBpy
 EGDIR=		${PREFIX}/share/examples/omniORBpy
 
-post-extract:
+pre-configure:
 	@ ${MKDIR} ${CONFIGURE_WRKSRC}
 	@ cd ${OMNIORB_WRKSRC} && find idl | ${CPIO} ${WRKSRC}
 
