@@ -34,9 +34,21 @@ case \$1 in
 		;;
 	stop)
 		killall setiathome
+		;;
+	register)
+		mkdir -p \${DBDIR}
+		chown \${USER} \${DBDIR}
+		chmod 755 \${DBDIR}
+
+		su -m nobody -c "cd \${DBDIR} && \${PREFIX}/bin/setiathome -login"
+		;;		
 esac
 EOF
 		chmod +x ${RCD}
+
+		if [ -n "${PACKAGE_BUILDING}" ]; then
+			exit 0
+		fi
 
 		echo "****  SETI@home requires a working directory for temporary files and"
 		echo "      a brief registration process."
@@ -47,20 +59,17 @@ EOF
 		echo ""
 		if [ "$a" = "N" -o "$a" = "n" ]; then
 			echo ""
-			echo "Please set up the working directory yourself.  See setiathome(1)"
-			echo "for details."
+			echo "Please set up the working directory yourself.  You can use"
+			echo "${RCD} register"
+			echo "to do so. See setiathome(1) for details."
 			exit 0
 		fi
 
-		mkdir -p ${DBDIR}
-		chown ${USER} ${DBDIR}
-		chmod 755 ${DBDIR}
-
-		su -m nobody -c "cd ${DBDIR} && ${PKG_PREFIX}/bin/setiathome -login"
+		${RCD} register
 
 		if [ ! -f ${DBDIR}/user_info.txt ]; then
 			echo "unable to start setiathome: it seems registration or login failed."
-			exit 72
+			exit 0
 		fi
 		${RCD} start >/dev/null
 		echo
