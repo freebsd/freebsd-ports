@@ -9,7 +9,8 @@ PORTNAME=	xtla
 PORTVERSION=	0.9
 PORTEPOCH=	1
 CATEGORIES=	devel elisp
-MASTER_SITES=	http://download.gna.org/xtla-el/
+MASTER_SITES=	http://download.gna.org/xtla-el/ \
+		http://bsdchat.com/dist/dryice/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER=	dryice@liu.com.cn

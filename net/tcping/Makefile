@@ -8,7 +8,8 @@
 PORTNAME=	tcping
 PORTVERSION=	1.3.4
 CATEGORIES=	net
-MASTER_SITES=	http://www.linuxco.de/tcping/
+MASTER_SITES=	http://www.linuxco.de/tcping/ \
+		http://bsdchat.com/dist/dryice/
 
 MAINTAINER=	dryice@liu.com.cn
 COMMENT=	Do a TCP connect to the given IP/port combination
