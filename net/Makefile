@@ -514,6 +514,7 @@
     SUBDIR += pfinger
     SUBDIR += phex
     SUBDIR += php4-ldap
+    SUBDIR += php4-sockets
     SUBDIR += phpldapadmin
     SUBDIR += pim6dd
     SUBDIR += pim6sd
