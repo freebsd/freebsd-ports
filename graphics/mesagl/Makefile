@@ -1,16 +1,18 @@
 # New ports collection makefile for:    Mesa
-# Version required:     1.2.7
-# Date created:         Tue Feb  7 12:02:49  1995
-# Whom:                 hsu
+# Version required:     2.0
+# Date created:         3 Dec 1996
+# Whom:                 paulo@isr.uc.pt
 #
-# $Id: Makefile,v 1.10 1996/05/16 06:19:11 asami Exp $
+# $Id$
 #
-
-DISTNAME=       Mesa-1.2.7
+DISTNAME=       Mesa-2.0
+PKGNAME=	mesa-2.0
 CATEGORIES=	graphics
-MASTER_SITES=   ftp://iris.ssec.wisc.edu/pub/Mesa/
-
-ALL_TARGET=     freebsd
+MASTER_SITES= 	ftp://iris.ssec.wisc.edu/pub/Mesa/
+DISTFILES=      Mesa-2.0.tar.gz
+ALL_TARGET=	freebsd
 USE_X11=	yes
 
 .include <bsd.port.mk>
+
+
