@@ -6,10 +6,11 @@
 #
 
 PORTNAME?=	${MASTERPORTNAME}
-PORTVERSION=	2.4.2
+PORTVERSION=	2.4.2p1
 PORTREVISION?=	0
 CATEGORIES=	misc
-MASTER_SITES=	ftp://ftp.amanda.org/pub/amanda/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	amanda
 DISTFILES=	amanda-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	jeh@FreeBSD.org
@@ -87,9 +88,9 @@ CONFIGURE_ARGS+=	--with-config=${AMANDA_CONFIG}
 #
 # Before 4.0, pre-CAM scsiio.h existed
 .if ${OSVERSION} < 400000
-PLIST_SUB+=	SCSICHG='@comment '
-.else
 PLIST_SUB+=	SCSICHG=''
+.else
+PLIST_SUB+=	SCSICHG='@comment '
 .endif
 
 # amanda24-client part
