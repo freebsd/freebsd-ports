@@ -7,15 +7,14 @@
 #
 
 PORTNAME=	hackedbox
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.2
 CATEGORIES=	x11-wm
-MASTER_SITES=	ftp://scrudgeware.org/
+MASTER_SITES=	ftp://scrudgeware.org/hackedbox/
 
 MAINTAINER=	dominic_marks@btinternet.com
 
 MAN1=		hackedbox.1
-DOCS=		AUTHORS ChangeLog ChangeLog.bsetbg INSTALL LICENSE \
-			README README.bsetbg TODO hackbox.pws
+DOCS=		AUTHORS ChangeLog INSTALL README TODO
 I10L=		C da_DK de_DE es_ES et_EE fr_FR it_IT nl_NL pt_BR ru_RU sl_SI \
 			sv_SE tr_TR
 STYLES=		artwiz bluebox cthulhain deep flux frobozz frobust nyz \
@@ -23,15 +22,16 @@ STYLES=		artwiz bluebox cthulhain deep flux frobozz frobust nyz \
 			steelblue2 the_orange trisb twice
 PLIST=		${WRKDIR}/pkg-plist
 #USE_GMAKE=	yes
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-bg-utils
 
 do-patch:
-	${PERL} -pi -e \
+	${REINPLACE_CMD} -e \
 		"s:/usr/local/share/hackedbox:${PREFIX}/share/hackedbox:g" \
 		${WRKSRC}/data/menu.in
-	${PERL} -pi -e \
+	${REINPLACE_CMD} -e \
 		"s:blackbox:hackedbox:g; s:Blackbox:Hackedbox:g; \
 		s:bsetroot:hsetroot:g; s:Bsetroot:Hsetroot:g" \
 		${WRKSRC}/data/styles/*
@@ -53,14 +53,14 @@ pre-install:
 	${ECHO_CMD} @dirrm share/hackedbox${ii} >> ${PLIST}
 .endfor
 .if !defined(NOPORTDOCS)
-.for ii in ${DOCS} Hackedbox.xml
+.for ii in ${DOCS}
 	${ECHO_CMD} share/doc/hackedbox/${ii} >> ${PLIST}
 .endfor
 .endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/util/bsetroot ${PREFIX}/bin/hsetroot
-	${INSTALL_PROGRAM} ${WRKSRC}/src/blackbox ${PREFIX}/bin/hackedbox
+	${INSTALL_PROGRAM} ${WRKSRC}/src/hackedbox ${PREFIX}/bin/hackedbox
 	${MKDIR} ${DATADIR}/styles ${DATADIR}/backgrounds
 	${INSTALL_DATA} ${WRKSRC}/data/menu ${DATADIR}
 .for ii in ${I10L}
@@ -81,7 +81,7 @@ do-install:
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}/nl_NL ${DOCSDIR}/sl_SI
-.for ii in ${DOCS} doc/Hackedbox.xml
+.for ii in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${ii} ${DOCSDIR}
 .endfor
 .endif
