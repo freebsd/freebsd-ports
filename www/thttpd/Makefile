@@ -19,13 +19,6 @@ IGNOREFILES=	notes.html
 
 GNU_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
-
-# Kqueue doesn't work in -current with thttpd.
-.if ${OSVERSION} >= 500000
-CFLAGS+=	-DHAVE_FREEBSD_CURRENT
-.endif
-
 MAN1=		makeweb.1 htpasswd.1
 MAN8=		thttpd.8 redirect.8 ssi.8 syslogtocern.8
 
@@ -87,4 +80,4 @@ config-message:
 	@${ECHO} ""
 	@${ECHO} "====================================================================="
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
