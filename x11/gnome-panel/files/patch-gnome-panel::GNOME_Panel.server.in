@@ -1,0 +1,13 @@
+
+$FreeBSD$
+
+--- gnome-panel/GNOME_Panel.server.in	2002/05/09 21:00:58	1.1
++++ gnome-panel/GNOME_Panel.server.in	2002/05/09 21:01:11
+@@ -1,6 +1,6 @@
+ <oaf_info>
+ 
+-<oaf_server iid="OAFIID:GNOME_PanelShell" type="exe" location="panel-2">
++<oaf_server iid="OAFIID:GNOME_PanelShell" type="exe" location="gnome-panel">
+ 	<oaf_attribute name="repo_ids" type="stringv">
+ 		<item value="IDL:GNOME/Vertigo/PanelShell:1.0"/>
+ 		<item value="IDL:Bonobo/Unknown:1.0"/>
