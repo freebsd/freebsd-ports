@@ -1,0 +1,24 @@
+PicMonger is an automated NNTP (Usenet News) client.  In short, you point it
+at your news server, select a group, and it scans the available (and not
+previously scanned) posts for UUencoded or MIME base64-encoded binaries
+(e.g. a JPEG image).  When a binary is found, it is automatically decoded
+back to its original form.   If desired, PicMonger can also create thumbnail
+preview pages, viewable in any web browser. 
+
+Features:
+* Intuitive GUI design 
+* Automatic customizable HTML thumbnail preview page generation 
+* Thumbnails maintain same aspect ratio as the original, within a size
+  constraint specified by the user 
+* Inter-session group memory (resumes scanning a newsgroup where you left off) 
+* Inter-session options memory (remembers all of your customized settings) 
+* GUI-based mangement of server and newsgroup lists 
+* Fixes filenames to be ext2fs (Linux/Unix) friendly before they are written 
+* Screens files and decodes only the file types you select 
+* Easy installation (uses GNU autoconf/automake) 
+* Error logging for easy troubleshooting (rarely an issue) 
+* Distributed under the GNU GPL 
+
+WWW: http://PicMonger.sourceforge.net/
+
+[ This port is maintained by Donald Burr <dburr@FreeBSD.ORG> ]

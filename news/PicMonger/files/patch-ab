@@ -1,0 +1,12 @@
+--- HtmlGenerator.h.old	Sun Jul 23 01:19:44 2000
++++ HtmlGenerator.h	Sun Jul 23 01:19:46 2000
+@@ -28,6 +28,9 @@
+ #include <list>
+ #include <fstream>
+ #include "Exceptions.h"
++#ifdef __FreeBSD__
++#include <sys/types.h>
++#endif
+ #include "PreviewPage.h"
+ 
+ class HtmlGenerator 

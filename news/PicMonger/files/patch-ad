@@ -1,0 +1,12 @@
+--- HtmlOptionState.cpp.old	Sun Jul 23 01:47:29 2000
++++ HtmlOptionState.cpp	Sun Jul 23 01:47:43 2000
+@@ -17,6 +17,9 @@
+ //	along with this program; if not, write to the Free Software
+ //	Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ 
++#ifdef __FreeBSD__
++#include <sys/types.h>
++#endif
+ #include "HtmlOptionState.h"
+ #include <fstream>
+ 

@@ -1,0 +1,12 @@
+--- InetSocket.h.old	Sun Jul 23 01:16:39 2000
++++ InetSocket.h	Sun Jul 23 01:16:49 2000
+@@ -24,6 +24,9 @@
+ #ifndef _INETSOCKET_H
+ #define _INETSOCKET_H
+ 
++#ifdef __FreeBSD__
++#include <sys/types.h>
++#endif
+ #include <sys/socket.h>
+ #include <netinet/in.h>
+ #include <arpa/inet.h>
