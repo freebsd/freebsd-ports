@@ -1994,7 +1994,6 @@ lib/modules/drivers/fbdev_drv.o
 lib/modules/drivers/glint_drv.o
 lib/modules/drivers/i740_drv.o
 lib/modules/drivers/mga_drv.o
-lib/modules/drivers/mouse_drv.o
 lib/modules/drivers/neomagic_drv.o
 lib/modules/drivers/nv_drv.o
 lib/modules/drivers/r128_drv.o
@@ -2023,6 +2022,7 @@ lib/modules/input/elo2300_drv.o
 lib/modules/input/elographics_drv.o
 lib/modules/input/magellan_drv.o
 lib/modules/input/microtouch_drv.o
+lib/modules/input/mouse_drv.o
 lib/modules/input/mutouch_drv.o
 lib/modules/input/spaceorb_drv.o
 lib/modules/input/wacom_drv.o
@@ -3168,6 +3168,7 @@ man/man4/i740.4.gz
 man/man4/keyboard.4.gz
 man/man4/mga.4.gz
 man/man4/microtouch.4.gz
+man/man4/mouse.4.gz
 man/man4/neomagic.4.gz
 man/man4/nv.4.gz
 man/man4/r128.4.gz
