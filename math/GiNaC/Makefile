@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	GiNaC
-PORTVERSION=	1.0.11
+PORTVERSION=	1.0.12
 PORTREVISION=	0
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftpthep.physik.uni-mainz.de/pub/GiNaC/ \
