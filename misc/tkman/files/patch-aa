@@ -1,12 +1,12 @@
---- ./Makefile.org	Fri Aug 18 17:07:54 1995
-+++ ./Makefile	Fri Aug 18 23:03:50 1995
-@@ -35,28 +35,28 @@
+--- Makefile.orig	Fri Nov  3 23:22:29 1995
++++ Makefile	Tue Dec  5 14:12:38 1995
+@@ -40,28 +40,28 @@
  ### you need to localize the paths on these lines
  
  # Tk's wish MUST be compiled with Tcl 7.4/Tk 4.0 or later versions
--WISH = /usr/sww/tcl-7.4b4/bin/wish
-+#WISH = /usr/sww/tcl-7.4b4/bin/wish
- #WISH = /home/orodruin/h/bair/phelps/bin/alpha/wish
+-WISH = /usr/sww/tcl-7.4/bin/wish-4.0
++#WISH = /usr/sww/tcl-7.4/bin/wish-4.0
+ #WISH = wish
 -#WISH = /usr/local/bin/wish
 +WISH = /usr/local/bin/wish4.0
  
@@ -36,8 +36,8 @@
 +manformat = {groff -Tascii -te -mandoc}
  # Ultrix users should uncomment the following line
  #manformat = {tbl | nroff -man | col}
- 
-@@ -120,10 +120,10 @@
+ # for BSDI
+@@ -127,10 +127,10 @@
  # so how can you lose?
  
  # BY DEFAULT ON
@@ -50,7 +50,7 @@
  # give the full path, if you'd like
  #glimpse = /usr/sww/bin/glimpse
  # variations (refer to the Glimpse manual page)
-@@ -150,9 +150,9 @@
+@@ -157,9 +157,9 @@
  # (`-debug' option), obtain the problemmatic glimpseindex command,
  # and make sure it works when executed by hand.
  
@@ -62,7 +62,7 @@
  # produce a larger index ("7-9%" of source text) allowing faster search w/"-o"
  # Need -o or -b if using -N above.
  #glimpseindex = "glimpseindex -o"
-@@ -170,7 +170,7 @@
+@@ -177,7 +177,7 @@
  # default MANPATH to use if user doesn't have a MANPATH environment variable set.
  # Leave this empty to have TkMan calculate a MANPATH based on a users PATH
  # (like Perl man does).
@@ -71,7 +71,7 @@
  #manpathdef = /usr/man:/usr/local/man
  #manpathdef = /usr/man:/usr/local/man:/usr/sww/man:/usr/sww/X11/man
  # for SGI
-@@ -223,13 +223,13 @@
+@@ -230,13 +230,13 @@
  
  # if you don't want to RosettaMan (rman) in your PATH, make the name fully qualified
  # (that's probably a good idea if tkman is installed on a central server)
@@ -88,9 +88,9 @@
  #manprint = {groff -man -Tascii -te -l}
  # printing string for preformatted pages without [tn]roff source
  catprint = lpr
-@@ -330,7 +330,7 @@
+@@ -342,7 +342,7 @@
  	$(CP) tkman $(BINDIR)
- 	chmod +x $(BINDIR)/tkman
+ 	chmod +rx $(BINDIR)/tkman
  	$(CP) tkman.1 $(MANDIR)
 -	@echo 'You also need RosettaMan to run TkMan.'
 +#	@echo 'You also need RosettaMan to run TkMan.'
