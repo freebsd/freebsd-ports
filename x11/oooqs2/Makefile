@@ -5,16 +5,17 @@
 # $FreeBSD$
 
 PORTNAME=	oooqs
-PORTVERSION=	2.0
+PORTVERSION=	2.0.2
 CATEGORIES=	x11
 MASTER_SITES=	http://download.berlios.de/segfaultskde/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.R./_rc/}
 
-MAINTAINER=	arved@FreeBSD.org
-COMMENT=	"Quick launcher for Open Office"
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Quick launcher for Open Office
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 USE_KDELIBS_VER=	3
+USE_GMAKE=	yes
 
 .include <bsd.port.mk>
