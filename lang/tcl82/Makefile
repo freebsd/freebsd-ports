@@ -375,13 +375,15 @@ MLINKS=	Access.3 Tcl_Access.3 \
 
 .endif
 
+TCLBASE?=	${PORTSDIR}/${PKGCATEGORY}/${LATEST_LINK}
+
 post-extract:
 	${MV} ${WRKDIR}/${DISTNAME}/doc/InitStubs.3 \
 	      ${WRKDIR}/${DISTNAME}/doc/Tcl_InitStubs.3
 
 post-configure:
 	${REINPLACE_CMD} \
-		-e 's=${WRKDIRPREFIX}${.CURDIR}=$${WRKDIRPREFIX}${PORTSDIR}/${PKGCATEGORY}/${LATEST_LINK}=' \
+		-e 's|${WRKDIRPREFIX}${.CURDIR}|$${WRKDIRPREFIX}${TCLBASE}|' \
 		${WRKSRC}/tclConfig.sh
 .if !defined(WITH_TCL82_MAN)
 	${REINPLACE_CMD} -e 's|^MAN_INSTALL_DIR.*$$|MAN_INSTALL_DIR = ${WRKDIR}|' \
