@@ -1,3 +1,6 @@
+bin/camserv
+bin/ccamcmd
+bin/relay
 lib/libjpg_filter.a
 lib/libjpg_filter.la
 lib/libjpg_filter.so
@@ -10,16 +13,14 @@ lib/libtext_filter.a
 lib/libtext_filter.la
 lib/libtext_filter.so
 lib/libtext_filter.so.0
-lib/libvideo_fbsd_bttv.a
-lib/libvideo_fbsd_bttv.la
-lib/libvideo_fbsd_bttv.so
-lib/libvideo_fbsd_bttv.so.0
 lib/libvideo_basic.a
 lib/libvideo_basic.la
 lib/libvideo_basic.so
 lib/libvideo_basic.so.0
-bin/camserv
-bin/relay
+lib/libvideo_fbsd_bttv.a
+lib/libvideo_fbsd_bttv.la
+lib/libvideo_fbsd_bttv.so
+lib/libvideo_fbsd_bttv.so.0
 share/camserv.cfg
 share/doc/camserv/README
 share/doc/camserv/javascript.txt
