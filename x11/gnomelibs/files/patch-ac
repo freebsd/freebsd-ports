@@ -1,5 +1,5 @@
---- gnome-config.in.orig	Fri Sep 10 13:25:18 1999
-+++ gnome-config.in	Thu Sep 23 12:18:53 1999
+--- gnome-config.in.orig	Sat Sep 11 03:25:18 1999
++++ gnome-config.in	Mon Oct 18 11:43:01 1999
 @@ -19,7 +19,7 @@
  pkglibdir=${libdir}/@PACKAGE@
  pkgincludedir=${includedir}/@PACKAGE@
@@ -37,14 +37,14 @@
      glib)
 -	the_libs="$the_libs `glib-config --libs`"
 -	the_flags="$the_flags `glib-config --cflags`"
-+	the_libs="$the_libs `$GLIB_CONFIG --libs`"
-+	the_flags="$the_flags `$GLIB_CONFIG --cflags`"
++	the_libs="$the_libs `glib12-config --libs`"
++	the_flags="$the_flags `glib12-config --cflags`"
  	;;
      gtk)
 -	the_libs="$the_libs `gtk-config --libs`"
 -	the_flags="$the_flags `gtk-config --cflags`"
-+	the_libs="$the_libs `$GTK_CONFIG --libs`"
-+	the_flags="$the_flags `$GTK_CONFIG --cflags`"
++	the_libs="$the_libs `gtk12-config --libs`"
++	the_flags="$the_flags `gtk12-config --cflags`"
  	;;
      gnome)
         	the_libs="$the_libs @GNOME_LIBDIR@ @GNOME_LIBS@"
