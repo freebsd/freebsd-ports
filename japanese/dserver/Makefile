@@ -16,8 +16,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${DISTNAME}.addtable.${EXTRACT_SUFX} \
 		kenjiro-ndtpd.diff \
 		kenjiro-dictlist.diff
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
-		${DISTNAME}.addtable.${EXTRACT_SUFX}
+EXTRACT_ONLY=	${DISTFILES:Nkenjiro-*}
 
 MAINTAINER=	mita@jp.FreeBSD.org
 
