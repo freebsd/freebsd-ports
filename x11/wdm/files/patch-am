@@ -1,0 +1,12 @@
+--- src/TestLogin.c.orig	Thu Jul  1 21:51:28 1999
++++ src/TestLogin.c	Tue Mar  7 22:05:04 2000
+@@ -67,7 +67,9 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <signal.h>
++#ifndef __STDC__
+ #include <malloc.h>
++#endif
+ 
+ 
+ #define forever 1
