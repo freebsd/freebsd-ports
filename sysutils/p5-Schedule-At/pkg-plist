@@ -1,5 +1,6 @@
 lib/perl5/site_perl/%%PERL_VER%%/Schedule/At.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Schedule/At/.packlist
+lib/perllocal.pod-Schedule-At
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Schedule/At
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Schedule 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Schedule 2>/dev/null || true
