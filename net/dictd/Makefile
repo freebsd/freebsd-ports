@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	dictd
-PORTVERSION=	1.7.1
-PORTREVISION=	1
+PORTVERSION=	1.8.0
 CATEGORIES+=	net textproc
 MASTER_SITES=	ftp://ftp.dict.org/pub/dict/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -21,7 +20,8 @@ MAN8=		dictd.8
 
 USE_REINPLACE=	yes
 USE_BISON=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
+CFLAGS+=	-I${PREFIX}/include
 CONFIGURE_ARGS=	--with-etcdir=${PREFIX}/etc --with-cflags="${CFLAGS}" \
 		--without-local-zlib
 CONFIGURE_ENV=	CFLAGS="${CFLAGS}"
@@ -31,7 +31,7 @@ ALL_TARGET=	dictd dictzip
 INSTALL_TARGET=	install.dictd install.dictzip
 
 post-patch:
-.for i in dict.1 dictd.8
+.for i in Makefile.in dict.1 dictd.8
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/$i
 .endfor
 .for i in example.conf
