@@ -1,21 +1,97 @@
-*** configure.h.dist	Sat Feb 17 09:13:18 1996
---- configure.h	Mon Mar 11 18:50:57 1996
-***************
-*** 47,54 ****
-  /***************************************************************************
-   * Define if you have uname. Otherwise, define gethostname
-   ***************************************************************************/
-! #define HAVE_UNAME 1
-! /* #define HAVE_GETHOSTNAME 1 */
-  
-  #endif /* End of do-it-yourself OS support section */
-  
---- 47,54 ----
-  /***************************************************************************
-   * Define if you have uname. Otherwise, define gethostname
-   ***************************************************************************/
-! /* #define HAVE_UNAME 1 */
-! #define HAVE_GETHOSTNAME 1
-  
-  #endif /* End of do-it-yourself OS support section */
-  
+--- Fvwm.tmpl.dist	Wed Jan 22 22:38:49 1997
++++ Fvwm.tmpl	Thu Jan 30 15:27:41 1997
+@@ -97,7 +97,7 @@
+  * Set this to YES if you would like the programs in the utils directory
+  * installed.
+  *************************************************************************/
+-#define InstallUtils NO
++#define InstallUtils YES
+ 
+ 
+ /**************************************************************************
+@@ -263,6 +263,9 @@
+ /* Or if you prefer a more minimal setup, you could try something like: */
+ /* OPTION_DEFINES = -DSHAPE -DVECTOR_BUTTONS */
+ 
++/* FreeBSD ports -- Assumes += notation is allowed */
++OPTION_DEFINES += -DENABLE_REMOTE_CHANGEDESKS
++/* FreeBSD ports */
+ 
+ /***************************************************************************
+  * The following section only needs to be changed if you do not want
+@@ -383,7 +386,7 @@
+ #endif
+ 
+ #ifndef FvwmIconPath
+-#define FvwmIconPath $(INCDIR)/bitmaps\:$(INCDIR)/pixmaps
++#define FvwmIconPath $(FVWMDIR)/pixmaps\:$(INCDIR)/bitmaps\:$(INCDIR)/pixmaps
+ #endif
+ 
+    ICONPATH = FvwmIconPath
+--- sample.fvwmrc/Imakefile.dist	Thu Apr 25 23:23:35 1996
++++ sample.fvwmrc/Imakefile	Thu Jan 30 15:47:29 1997
+@@ -8,5 +8,12 @@
+ NullMake()
+ 
+ #if InstallSample
+-InstallNonExecFile(system.fvwmrc,$(FVWMDIR))
++/* FreeBSD ports -- maybe a bug(typo?). reported. */
++InstallNonExecFile(system$(FVWMRC),$(FVWMDIR))
++/* FreeBSD ports */
++/* FreeBSD ports -- More informations are welcomed :-) */
++InstallNonExecFile(decor_examples,$(FVWMDIR))
++InstallNonExecFile(system.fvwm2rc-sample-1,$(FVWMDIR))
++InstallNonExecFile(system.fvwm2rc-sample-2,$(FVWMDIR))
++/* FreeBSD ports */
+ #endif
+--- sample.fvwmrc/system.fvwm2rc.dist	Thu Jan 16 05:29:42 1997
++++ sample.fvwmrc/system.fvwm2rc	Thu Jan 30 15:58:20 1997
+@@ -13,12 +13,12 @@
+ ClickTime 750
+ 
+ # make sure these fonts exist on your system:
+-WindowFont -adobe-times-bold-r-*-*-18-*-*-*-*-*-*-*
+-IconFont -adobe-helvetica-bold-r-*-*-10-*-*-*-*-*-*-*
++WindowFont -adobe-times-bold-r-*-*-18-*-*-*-*-*-*-*,-*-fixed-medium-r-normal-*-18-*-*-*-*-*-*-*,-*-gothic-medium-r-normal-*-18-*-*-*-*-*-*-*,-*-mincho-medium-r-normal-*-18-*-*-*-*-*-*-*,-*-*-medium-r-normal-*-18-*-*-*-*-*-*-*
++IconFont -adobe-helvetica-bold-r-*-*-10-*-*-*-*-*-*-*,-*-fixed-medium-r-normal-*-10-*-*-*-*-*-*-*,-*-gothic-medium-r-normal-*-10-*-*-*-*-*-*-*,-*-mincho-medium-r-normal-*-10-*-*-*-*-*-*-*,-*-*-medium-r-normal-*-10-*-*-*-*-*-*-*
+ 
+ HilightColor black palevioletred
+ DeskTopSize 2x2
+-MenuStyle maroon grey60 grey40 -adobe-times-bold-r-*-*-14-*-*-*-*-*-*-* fvwm
++MenuStyle maroon grey60 grey40 -adobe-times-bold-r-*-*-14-*-*-*-*-*-*-*,-*-fixed-medium-r-normal-*-14-*-*-*-*-*-*-*,-*-gothic-medium-r-normal-*-14-*-*-*-*-*-*-*,-*-mincho-medium-r-normal-*-14-*-*-*-*-*-*-*,-*-*-medium-r-normal-*-14-*-*-*-*-*-*-* fvwm
+ 
+ ColormapFocus FollowsMouse
+ 
+@@ -289,12 +289,12 @@
+ # Just choose colors and a fonts
+ *FvwmIdentBack MidnightBlue
+ *FvwmIdentFore Yellow
+-*FvwmIdentFont -adobe-helvetica-medium-r-*-*-12-*-*-*-*-*-*-*
++*FvwmIdentFont -adobe-helvetica-medium-r-*-*-12-*-*-*-*-*-*-*,-*-fixed-medium-r-normal-*-12-*-*-*-*-*-*-*,-*-gothic-medium-r-normal-*-12-*-*-*-*-*-*-*,-*-mincho-medium-r-normal-*-12-*-*-*-*-*-*-*,-*-*-medium-r-normal-*-12-*-*-*-*-*-*-*
+ 
+ ########################### Pager #########################################
+ *FvwmPagerBack #908090
+ *FvwmPagerFore #484048
+-*FvwmPagerFont -adobe-helvetica-bold-r-*-*-10-*-*-*-*-*-*-*
++*FvwmPagerFont -adobe-helvetica-bold-r-*-*-10-*-*-*-*-*-*-*,-*-fixed-medium-r-normal-*-10-*-*-*-*-*-*-*,-*-gothic-medium-r-normal-*-10-*-*-*-*-*-*-*,-*-mincho-medium-r-normal-*-10-*-*-*-*-*-*-*,-*-*-medium-r-normal-*-10-*-*-*-*-*-*-*
+ *FvwmPagerHilight #cab3ca
+ *FvwmPagerGeometry -1-1
+ *FvwmPagerLabel 0 Misc
+@@ -306,7 +306,7 @@
+ ##########################FvwmWinList##################################
+ *FvwmWinListBack #908090
+ *FvwmWinListFore Black
+-*FvwmWinListFont -adobe-helvetica-bold-r-*-*-10-*-*-*-*-*-*-*
++*FvwmWinListFont -adobe-helvetica-bold-r-*-*-10-*-*-*-*-*-*-*,-*-fixed-medium-r-normal-*-10-*-*-*-*-*-*-*,-*-gothic-medium-r-normal-*-10-*-*-*-*-*-*-*,-*-mincho-medium-r-normal-*-10-*-*-*-*-*-*-*,-*-*-medium-r-normal-*-10-*-*-*-*-*-*-*
+ *FvwmWinListAction Click1 Iconify -1,Focus
+ *FvwmWinListAction Click2 Iconify
+ *FvwmWinListAction Click3 Module "FvwmIdent" FvwmIdent
+@@ -334,7 +334,7 @@
+ #*FvwmIconBoxFore       blue
+ *FvwmIconBoxGeometry    5x1+0+0
+ *FvwmIconBoxMaxIconSize 64x38
+-*FvwmIconBoxFont        -adobe-helvetica-medium-r-*-*-12-*-*-*-*-*-*-*
++*FvwmIconBoxFont        -adobe-helvetica-medium-r-*-*-12-*-*-*-*-*-*-*,-*-fixed-medium-r-normal-*-12-*-*-*-*-*-*-*,-*-gothic-medium-r-normal-*-12-*-*-*-*-*-*-*,-*-mincho-medium-r-normal-*-12-*-*-*-*-*-*-*,-*-*-medium-r-normal-*-12-*-*-*-*-*-*-*
+ *FvwmIconBoxSortIcons   IconName
+ *FvwmIconBoxPadding     4
+ *FvwmIconBoxLines       10
