@@ -1,0 +1,34 @@
+# New ports collection makefile for:	p5-C-Scan
+# Version required:			0.3
+# Date created:				October 20th 1996
+# Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
+#
+#   $Id$
+#
+
+DISTNAME=	C-Scan-0.3
+PKGNAME=	p5-C-Scan-0.3
+CATEGORIES+=	devel
+MASTER_SITES=	ftp://ftp.digital.com/pub/plan/perl/CPAN/modules/by-module/C/ \
+		ftp://ftp.cdrom.com/pub/perl/CPAN/modules/by-module/C/ \
+		ftp://ftp.cis.ufl.edu/pub/perl/CPAN/modules/by-module/C/ \
+		ftp://ftp.leo.org/pub/comp/programming/languages/perl/CPAN/modules/by-module/C/ \
+		ftp://ftp.demon.co.uk/pub/mirrors/perl/CPAN/modules/by-module/C/ \
+		ftp://ftp.lab.kdd.co.jp/lang/perl/CPAN/modules/by-module/C/
+
+MAINTAINER=	jfitz@FreeBSD.ORG
+
+BUILD_DEPENDS= 	perl5.003:${PORTSDIR}/lang/perl5 \
+		${PREFIX}/lib/perl5/site_perl/Data/Flow.pm:${PORTSDIR}/perl5/Data-Flow
+
+do-configure:
+		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL
+
+post-install:
+.if !defined(NOMANCOMPRESS)
+		@ for file in C::Scan; do \
+			gzip -9nf ${PREFIX}/lib/perl5/man/man3/$$file.3; \
+		done
+.endif
+
+.include <bsd.port.mk>
