@@ -31,10 +31,14 @@ lib/python1.5/site-packages/DateTime/Timezone.pyo
 lib/python1.5/site-packages/DateTime/__init__.py
 lib/python1.5/site-packages/DateTime/__init__.pyc
 lib/python1.5/site-packages/DateTime/__init__.pyo
+lib/python1.5/site-packages/DateTime/mxDateTime/__init__.py
+lib/python1.5/site-packages/DateTime/mxDateTime/__init__.pyc
+lib/python1.5/site-packages/DateTime/mxDateTime/__init__.pyo
+lib/python1.5/site-packages/DateTime/mxDateTime/mxDateTime.so
+@dirrm lib/python1.5/site-packages/DateTime/mxDateTime
 lib/python1.5/site-packages/DateTime/timegm.py
 lib/python1.5/site-packages/DateTime/timegm.pyc
 lib/python1.5/site-packages/DateTime/timegm.pyo
-lib/python1.5/site-packages/mxDateTime.so
 @dirrm lib/python1.5/site-packages/DateTime
 share/doc/py-mxDateTime/mxDateTime-History.html
 share/doc/py-mxDateTime/mxDateTime.html

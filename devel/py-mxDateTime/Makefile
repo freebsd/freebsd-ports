@@ -32,9 +32,13 @@ post-extract:
 do-configure:
 	@(cd ${WRKSRC} && ${CONFIGURE_ENV} ${MAKE} -f Makefile.pre.in boot)
 
-post-install:
+do-install:
 	@${MKDIR} ${DATETIMEDIR}
 	${INSTALL_DATA} ${WRKDIR}/DateTime/*.py ${DATETIMEDIR}
+	@${MKDIR} ${DATETIMEDIR}/mxDateTime
+.for file in __init__.py mxDateTime.so
+	${INSTALL_DATA} ${WRKDIR}/DateTime/mxDateTime/${file} ${DATETIMEDIR}/mxDateTime
+.endfor
 	@${PREFIX}/bin/python ${PYTHONSCRIPTDIR}/compileall.py ${DATETIMEDIR}
 	@${PREFIX}/bin/python -O ${PYTHONSCRIPTDIR}/compileall.py ${DATETIMEDIR}
 	@${MKDIR} ${EXAMPLEDIR}
