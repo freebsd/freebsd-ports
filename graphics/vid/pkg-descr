@@ -4,7 +4,7 @@ Omnivision OV511 chipset.
 
 These include the
 
-  Creative Labs WebCam 3 
+  Creative Labs WebCam 3 (*** see note about the OV511+ below ***)
   D-Link DSB-C300 
   Puretek PT-6007 
   Alpha Vision Koala-Cam 
@@ -15,5 +15,12 @@ These include the
 The program was written by Peter Housel <housel@acm.org) and
 is heavily based on the Linux OV511 driver from http://alpha.dyndns.org/ov511/
 
+Notes On The OV511+
+-------------------
+There is a new version of the chipset called the OV511+.
+This is slightly different to the OV511 and is not supported by this
+program at this time.
+Josh Elasser has reported that newer versions of the Creative Labs
+WebCam3 use the OV511+ chipset and so cannot be used with this program.
 
 WWW: http://members.home.com/housel/
