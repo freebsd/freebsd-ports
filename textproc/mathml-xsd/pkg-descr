@@ -1,0 +1,10 @@
+This is the home of the MathML 2.0 XML Schema from the MathML Working Group.
+
+All the details needed to use it should be covered in appendix A of
+MathML 2.0, 2nd edition
+
+This schema is not normative. It is only provided as a tool to validate MathML
+instances, without any guarantee on the accuracy of the results. This version
+will be updated gradually to incorporate corrections or changes.
+
+WWW: http://www.w3.org/Math/XMLSchema/

@@ -177,6 +177,7 @@
     SUBDIR += maketeidtd
     SUBDIR += man2html
     SUBDIR += manued.el
+    SUBDIR += mathml-xsd
     SUBDIR += meld
     SUBDIR += mgdiff
     SUBDIR += mguesser
