@@ -6990,6 +6990,7 @@ wmpop3		ports/mail/wmpop3
 wmq3		ports/net/wmq3
 wmrecord	ports/audio/wmrecord
 wmsmixer	ports/audio/wmsmixer
+wmsolar		ports/astro/wmsolar
 wmspaceweather	ports/astro/wmspaceweather
 wmstock		ports/misc/wmstock
 wmsun		ports/astro/wmsun
