@@ -301,6 +301,7 @@ anjuta-devel	ports/devel/anjuta-devel
 ant-xinclude-task	ports/textproc/ant-xinclude-task
 anteater	ports/sysutils/anteater
 antipolix	ports/games/antipolix
+antivir-milter	ports/security/antivir-milter
 antiword	ports/textproc/antiword
 antlr		ports/devel/antlr
 anubis		ports/mail/anubis
