@@ -1,0 +1,91 @@
+*** Makefile.in.orig	Thu Nov 12 10:57:05 1998
+--- Makefile.in	Thu Nov 12 11:10:12 1998
+***************
+*** 99,105 ****
+  # You should not need to alter anything below this point.
+  #------------------------------------------------------------
+  
+! all: bin/dns-hosts bin/dns-ng bin/dns-rev
+  
+  common/ansi.o: common/ansi.c common/ac/stddef.h common/config.h \
+  		common/ac/stdlib.h common/ac/string.h common/main.h 
+--- 99,106 ----
+  # You should not need to alter anything below this point.
+  #------------------------------------------------------------
+  
+! all: bin/dns-bootp bin/dns-bootparams bin/dns-ethers bin/dns-filter \
+! 	bin/dns-hosts bin/dns-ng bin/dns-rev
+  
+  common/ansi.o: common/ansi.c common/ac/stddef.h common/config.h \
+  		common/ac/stdlib.h common/ac/string.h common/main.h 
+***************
+*** 584,589 ****
+--- 585,622 ----
+  	-mkdir bin
+  	@touch .bin
+  
++ dns_bootp_files = dns-bootp/main.o dns-bootp/filter.o
++ 
++ bin/dns-bootp: $(dns_bootp_files) common/lib.a .bin
++ 	$(CC) $(LDFLAGS) -o bin/dns-bootp $(dns_bootp_files) common/lib.a $(LIBS)
++ 
++ $(bindir)/dns-bootp: bin/dns-bootp
++ 	$(INSTALL_PROGRAM) bin/dns-bootp $(bindir)/dns-bootp
++ 
++ dns_bootparams_files = dns-bootparams/main.o dns-bootparams/filter.o
++ 
++ bin/dns-bootparams: $(dns_bootparams_files) common/lib.a .bin
++ 	$(CC) $(LDFLAGS) -o bin/dns-bootparams $(dns_bootparams_files) common/lib.a $(LIBS)
++ 
++ $(bindir)/dns-bootparams: bin/dns-bootparams
++ 	$(INSTALL_PROGRAM) bin/dns-bootparams $(bindir)/dns-bootparams
++ 
++ dns_ethers_files = dns-ethers/main.o dns-ethers/ethers.o
++ 
++ bin/dns-ethers: $(dns_ethers_files) common/lib.a .bin
++ 	$(CC) $(LDFLAGS) -o bin/dns-ethers $(dns_ethers_files) common/lib.a $(LIBS)
++ 
++ $(bindir)/dns-ethers: bin/dns-ethers
++ 	$(INSTALL_PROGRAM) bin/dns-ethers $(bindir)/dns-ethers
++ 
++ dns_filter_files = dns-filter/main.o dns-filter/filter.o
++ 
++ bin/dns-filter: $(dns_filter_files) common/lib.a .bin
++ 	$(CC) $(LDFLAGS) -o bin/dns-filter $(dns_filter_files) common/lib.a $(LIBS)
++ 
++ $(bindir)/dns-filter: bin/dns-filter
++ 	$(INSTALL_PROGRAM) bin/dns-filter $(bindir)/dns-filter
++ 
+  dns_hosts_files = dns-hosts/hosts.o dns-hosts/main.o
+  
+  bin/dns-hosts: $(dns_hosts_files) common/lib.a .bin
+***************
+*** 609,614 ****
+--- 642,649 ----
+  $(bindir)/dns-rev: bin/dns-rev
+  	$(INSTALL_PROGRAM) bin/dns-rev $(bindir)/dns-rev
+  
++ 
++ 
+  Txt2cObj = common/ansi.o common/arglex.o common/error.o common/mem.o \
+  		txt2c/main.o txt2c/txt2c.o 
+  
+***************
+*** 651,657 ****
+  distclean: clean
+  	rm -f Makefile common/config.h config.status
+  
+! install-bin: $(bindir)/dns-hosts $(bindir)/dns-ng $(bindir)/dns-rev
+  
+  install-man: $(mandir)/man1/dns-bootp.1 $(mandir)/man1/dns-bootprms.1 \
+  		$(mandir)/man1/dns-ethers.1 $(mandir)/man1/dns-filter.1 \
+--- 686,694 ----
+  distclean: clean
+  	rm -f Makefile common/config.h config.status
+  
+! install-bin: $(bindir)/dns-hosts $(bindir)/dns-ng $(bindir)/dns-rev \
+! 		$(bindir)/dns-ethers $(bindir)/dns-bootp \
+! 		$(bindir)/dns-bootparams $(bindir)/dns-filter
+  
+  install-man: $(mandir)/man1/dns-bootp.1 $(mandir)/man1/dns-bootprms.1 \
+  		$(mandir)/man1/dns-ethers.1 $(mandir)/man1/dns-filter.1 \

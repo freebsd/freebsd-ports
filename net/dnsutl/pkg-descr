@@ -1,0 +1,18 @@
+       The dnsutl package is a bunch of	programs I wrote to make
+       using DNS easier.  These	include:
+
+       dns-rev
+	       Take the	forward	DNS mapping and	generate the
+	       reverse mapping.
+
+       dns-hosts
+	       Take the	forward	DNS mapping and	generate the
+	       /etc/hosts file.
+
+       dns-ng
+	       Take the	forward	DNS mapping and	generate the
+	       /etc/netgroup file.
+
+       All of these programs are both faster than shell	scripts,
+       and more	robust when faced with all the peculiar	semantics
+       of DNS resource files.
