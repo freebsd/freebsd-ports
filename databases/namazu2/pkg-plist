@@ -30,8 +30,10 @@ include/namazu/wakati.h
 lib/libnmz.a
 lib/libnmz.la
 lib/libnmz.so
-lib/libnmz.so.3
+lib/libnmz.so.4
 libexec/namazu.cgi
+share/locale/es/LC_MESSAGES/namazu.mo
+share/locale/fr/LC_MESSAGES/namazu.mo
 share/locale/ja/LC_MESSAGES/namazu.mo
 share/locale/ja_JP.SJIS/LC_MESSAGES/namazu.mo
 share/namazu/doc/en/manual.html
@@ -49,6 +51,7 @@ share/namazu/doc/namazu.css
 share/namazu/etc/CREDITS
 share/namazu/etc/ChangeLog.1
 share/namazu/etc/INSTALL-ja
+share/namazu/etc/README-es
 share/namazu/etc/README-ja
 share/namazu/etc/namazu.png
 share/namazu/etc/namazu.spec
@@ -83,19 +86,35 @@ share/namazu/pl/var.pl
 share/namazu/pl/wakati.pl
 @dirrm share/namazu/pl
 share/namazu/template/NMZ.body
+share/namazu/template/NMZ.body.es
+share/namazu/template/NMZ.body.fr
 share/namazu/template/NMZ.body.ja
 share/namazu/template/NMZ.foot
+share/namazu/template/NMZ.foot.es
+share/namazu/template/NMZ.foot.fr
 share/namazu/template/NMZ.foot.ja
 share/namazu/template/NMZ.head
+share/namazu/template/NMZ.head.es
+share/namazu/template/NMZ.head.fr
 share/namazu/template/NMZ.head.ja
 share/namazu/template/NMZ.result.normal
+share/namazu/template/NMZ.result.normal.es
+share/namazu/template/NMZ.result.normal.fr
 share/namazu/template/NMZ.result.normal.ja
 share/namazu/template/NMZ.result.short
+share/namazu/template/NMZ.result.short.es
+share/namazu/template/NMZ.result.short.fr
 share/namazu/template/NMZ.result.short.ja
 share/namazu/template/NMZ.tips
+share/namazu/template/NMZ.tips.es
+share/namazu/template/NMZ.tips.fr
 share/namazu/template/NMZ.tips.ja
 @dirrm share/namazu/template
 @dirrm share/namazu
+@unexec rmdir %D/share/locale/es/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/ja_JP.SJIS/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/ja_JP.SJIS 2>/dev/null || true
 @unexec rmdir %D/var/namazu/index 2>/dev/null || true
 @unexec rmdir %D/var/namazu 2>/dev/null || true
 @unexec rmdir %D/var 2>/dev/null || true
