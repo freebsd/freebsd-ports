@@ -1,11 +1,11 @@
---- pixmaps/Makefile.in.orig	Sun May 23 18:00:24 2004
-+++ pixmaps/Makefile.in	Mon May 24 17:11:38 2004
-@@ -96,7 +96,7 @@
- VERSION = @VERSION@
- prefix = @prefix@
- 
+--- pixmaps/Makefile.in.orig	Sat Jan  8 16:17:58 2005
++++ pixmaps/Makefile.in	Sun Jan  9 19:17:13 2005
+@@ -103,7 +103,7 @@
+ am__include = @am__include@
+ am__quote = @am__quote@
+ install_sh = @install_sh@
 -grisbi_pixmapsdir = $(datadir)/pixmaps/grisbi
 +grisbi_pixmapsdir = $(pkgdatadir)/pixmaps
  
- grisbi_pixmaps_DATA =  	addresses.png 	banks.png 	currencies.png 	dollar.gif 	exec.png 	euro.gif 	files.png 	financial-years.png 	fonts.png 	form.png 	import.png 	payment-methods.png 	reconciliation.png 	transaction-list.png 	warnings.png 	grisbi-logo.png 	grisbi.png
- 
+ grisbi_pixmaps_DATA = \
+ 	addresses.png \
