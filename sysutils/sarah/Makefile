@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sarah
-PORTVERSION=	0.9b
+PORTVERSION=	0.9.1b
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.conundrum.com/pub/sarah/
 
