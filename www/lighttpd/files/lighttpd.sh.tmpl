@@ -37,7 +37,7 @@ stop_postcmd()
 lighttpd_enable=${lighttpd_enable:-"NO"}
 lighttpd_conf=${lighttpd_conf:-"%%PREFIX%%/etc/lighttpd.conf"}
 
-command_args="-f ${lighttpd_conf}"
-
 load_rc_config $name
+
+command_args="-f ${lighttpd_conf}"
 run_rc_command "$1"
