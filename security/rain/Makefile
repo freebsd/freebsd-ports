@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	rain
-PORTVERSION=	1.2.8r2
+PORTVERSION=	1.2.9.b1
 CATEGORIES=	security net
 MASTER_SITES=	http://www.tenebrous.com/rain/files/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/beta/}
 
 MAINTAINER=	pat@FreeBSD.org
 
