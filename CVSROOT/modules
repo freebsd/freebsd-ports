@@ -1675,6 +1675,7 @@ eperl		ports/lang/eperl
 ephem		ports/astro/ephem
 epic4		ports/irc/epic4
 epiphany	ports/www/epiphany
+epiphany-extensions	ports/www/epiphany-extensions
 epiwm		ports/x11-wm/epiwm
 epix		ports/graphics/epix
 epplets		ports/x11-wm/epplets
@@ -2718,6 +2719,7 @@ gss		ports/security/gss
 gstopd		ports/sysutils/gstopd
 gstreamer	ports/multimedia/gstreamer
 gstreamer-editor	ports/multimedia/gstreamer-editor
+gstreamer-ffmpeg	ports/multimedia/gstreamer-ffmpeg
 gstreamer-player	ports/multimedia/gstreamer-player
 gstreamer-plugins	ports/multimedia/gstreamer-plugins
 gsubedit	ports/multimedia/gsubedit
@@ -4384,6 +4386,7 @@ libfs++		ports/devel/libfs++
 libfwbuilder	ports/security/libfwbuilder
 libg++		ports/devel/libg++
 libgail-gnome	ports/x11-toolkits/libgail-gnome
+libgconf-java	ports/devel/libgconf-java
 libgcrypt	ports/security/libgcrypt
 libgcrypt-devel	ports/security/libgcrypt-devel
 libgda		ports/databases/libgda
@@ -4399,11 +4402,13 @@ libghthash	ports/devel/libghthash
 libghttp	ports/www/libghttp
 libgii		ports/devel/libgii
 libglade	ports/devel/libglade
+libglade-java	ports/devel/libglade-java
 libglade2	ports/devel/libglade2
 libglademm	ports/devel/libglademm
 libglut		ports/graphics/libglut
 libgmp-freebsd	ports/math/libgmp-freebsd
 libgmp4		ports/math/libgmp4
+libgnetwork	ports/net/libgnetwork
 libgnome	ports/x11/libgnome
 libgnomecanvas	ports/graphics/libgnomecanvas
 libgnomecanvasmm	ports/graphics/libgnomecanvasmm
@@ -4414,12 +4419,14 @@ libgnomeprint	ports/print/libgnomeprint
 libgnomeprintui	ports/x11-toolkits/libgnomeprintui
 libgnomeui	ports/x11-toolkits/libgnomeui
 libgnomeuimm	ports/x11-toolkits/libgnomeuimm
+libgnome-java	ports/x11/libgnome-java
 libgnugetopt	ports/devel/libgnugetopt
 libgpg-error	ports/security/libgpg-error
 libgphoto2	ports/graphics/libgphoto2
 libgrass5	ports/graphics/libgrass5
 libgringotts	ports/security/libgringotts
 libgsf		ports/devel/libgsf
+libgtk-java	ports/x11-toolkits/libgtk-java
 libgtkeditor	ports/x11-toolkits/libgtkeditor
 libgtkhtml	ports/www/libgtkhtml
 libgtop2	ports/devel/libgtop2
