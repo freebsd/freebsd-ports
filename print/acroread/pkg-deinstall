@@ -1,0 +1,2 @@
+#!/bin/sh
+rm -f ${PKG_PREFIX}/usr/bin/acroread7

@@ -4,3 +4,5 @@ you view, distribute, and print documents in Portable Document Format
 used to create the original file.  PDF files retain all the formatting, 
 fonts, and graphics of the original document, and virtually any 
 PostScript(TM) document can be converted into a PDF file.
+
+Use the "acroread7" command to run this program.
