@@ -7,6 +7,7 @@
 
 PORTNAME=	adodb
 PORTVERSION=	4.61
+PORTREVISION=	1
 CATEGORIES=	databases www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	adodb
@@ -42,7 +43,7 @@ do-install:
 	@${MKDIR} ${PREFIX}/${ADODB_DIR}
 	@cd ${WRKSRC}; ${FIND} ${ADODB_SUBDIRS} -type d \
 		-exec ${MKDIR} ${PREFIX}/${ADODB_DIR}/{} \;
-	@cd ${WRKSRC}; ${FIND} . -depth 1 -type f \( -name '*.php' -or -name '*.dtd' -or -name '*.zip' \) \
+	@cd ${WRKSRC}; ${FIND} . ! -path './*/*' -type f \( -name '*.php' -or -name '*.dtd' -or -name '*.zip' \) \
 		-exec ${INSTALL_DATA} ${WRKSRC}/{} ${PREFIX}/${ADODB_DIR}/{} \;
 	@cd ${WRKSRC}; ${FIND} ${ADODB_SUBDIRS} -type f \
 		-exec ${INSTALL_DATA} ${WRKSRC}/{} ${PREFIX}/${ADODB_DIR}/{} \;
@@ -56,7 +57,7 @@ do-install:
 post-install:
 .if !defined (NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR} ${DOCSDIR}/cute_icons_for_site
-	@cd ${WRKSRC}; ${FIND} . -depth 1 -type f -name '*.txt' \
+	@cd ${WRKSRC}; ${FIND} . ! -path './*/*' -type f -name '*.txt' \
 		-exec ${INSTALL_MAN} ${WRKSRC}/{} ${DOCSDIR}/{} \;
 	@cd ${WRKSRC}/docs; ${FIND} . -type f \
 		-exec ${INSTALL_MAN} ${WRKSRC}/docs/{} ${DOCSDIR}/{} \;
