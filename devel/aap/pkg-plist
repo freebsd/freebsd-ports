@@ -84,10 +84,10 @@ lib/aap/Exec-%%PORTVERSION%%/default.aap
 %%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/index.html
 %%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/license.html
 %%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/ln12.html
-%%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/p1820.html
-%%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/p5586.html
+%%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/p2801.html
+%%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/p6786.html
 %%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/p30.html
-%%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/p803.html
+%%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/p836.html
 %%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/ref-arguments.html
 %%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/ref-assign.html
 %%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/ref-attributes.html
@@ -108,6 +108,7 @@ lib/aap/Exec-%%PORTVERSION%%/default.aap
 %%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/tutor-start.html
 %%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/tutor-variant.html
 %%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/tutor-website.html
+%%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/user-autoconf.html
 %%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/user-autodep.html
 %%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/user-basics.html
 %%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/user-cvs.html
@@ -127,6 +128,8 @@ lib/aap/Exec-%%PORTVERSION%%/default.aap
 %%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/user-version.html
 lib/aap/Exec-%%PORTVERSION%%/tools/__init__.py
 lib/aap/Exec-%%PORTVERSION%%/tools/__init__.pyc
+lib/aap/Exec-%%PORTVERSION%%/tools/bcc.py
+lib/aap/Exec-%%PORTVERSION%%/tools/bcc.pyc
 lib/aap/Exec-%%PORTVERSION%%/tools/gcc.py
 lib/aap/Exec-%%PORTVERSION%%/tools/gcc.pyc
 lib/aap/Exec-%%PORTVERSION%%/tools/icc.py

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	aap
-PORTVERSION=	1.000
+PORTVERSION=	1.010
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	a-a-p
@@ -23,29 +23,16 @@ USE_ZIP=	yes
 USE_PYTHON=	yes
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
-# The files are installed in lib/aap/Exec-${PORTVERSION} and below.  Create
-# a symbolic link for bin/aap so that it's found in $PATH and still knows
-# where to find the Python modules.
-# Also create a link for share/doc/aap, so that more people can find the docs
-# without clobbering share/doc.
-INSTALLDIR=	${PREFIX}/lib/aap/Exec-${PORTVERSION}
-do-install:
-	cd ${WRKSRC} && \
-		${MKDIR} -m 755 ${INSTALLDIR}/tools && \
-		${INSTALL_SCRIPT} *.py aap ${INSTALLDIR} && \
-		${LN} -fhs ${INSTALLDIR}/aap ${PREFIX}/bin/aap && \
-		${INSTALL_SCRIPT} tools/*.py ${INSTALLDIR}/tools && \
-		${INSTALL_DATA} -m 644 COPYING README.txt default.aap ${INSTALLDIR} && \
-		${INSTALL_DATA} aap.1 ${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
-	cd ${WRKSRC} && \
-		${MKDIR} -m 755 ${INSTALLDIR}/doc ${INSTALLDIR}/doc/html && \
-		${INSTALL_DATA} doc/exec.pdf ${INSTALLDIR}/doc && \
-		${INSTALL_DATA} doc/*.html ${INSTALLDIR}/doc/html && \
-		${LN} -fhs ${INSTALLDIR}/doc ${PREFIX}/share/doc/aap
+FULLDOCS=yes
+.else
+FULLDOCS=no
 .endif
-	cd ${INSTALLDIR} && \
-		${PYTHON_CMD} -c "import compileall; compileall.compile_dir('.', 1)"
+
+do-install:
+	@cd ${WRKSRC} && \
+		${PYTHON_CMD} ./aap PREFIX="${PREFIX}" FULLDOCS=${FULLDOCS} \
+			HTMLDIR=/html install
 
 test: install
 	cd ${WRKSRC}; ${PREFIX}/bin/aap
