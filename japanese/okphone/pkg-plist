@@ -4,3 +4,4 @@ libexec/convd
 share/doc/okphone/NOTE
 share/doc/okphone/READ_ME
 share/doc/okphone/Readme.kana
+@dirrm share/doc/okphone
