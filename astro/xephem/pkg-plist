@@ -17,22 +17,13 @@ lib/X11/xephem/auxil/uranus.9910
 lib/X11/xephem/auxil/xephem.hlp
 lib/X11/xephem/auxil/xephem.sit
 lib/X11/xephem/auxil/xephem_skyhist
-lib/X11/xephem/catalogs/ISS.edb
 lib/X11/xephem/catalogs/Messier.edb
-lib/X11/xephem/catalogs/NGC.edb
-lib/X11/xephem/catalogs/README
 lib/X11/xephem/catalogs/YBS.edb
 lib/X11/xephem/fifos/Makefile
 lib/X11/xephem/fifos/README
 lib/X11/xephem/fits/Abell426.fts
-lib/X11/xephem/tools/README
+lib/X11/xephem/fits/horsehead.fts
 lib/X11/xephem/tools/astorb2edb.pl
-lib/X11/xephem/tools/extract.awk
-lib/X11/xephem/tools/gsc/Makefile
-lib/X11/xephem/tools/gsc/README
-lib/X11/xephem/tools/gsc/gscload.c
-lib/X11/xephem/tools/gsc/support.c
-lib/X11/xephem/tools/jost2edb.awk
 lib/X11/xephem/tools/lx200xed/GPL
 lib/X11/xephem/tools/lx200xed/Makefile
 lib/X11/xephem/tools/lx200xed/README
@@ -40,7 +31,6 @@ lib/X11/xephem/tools/lx200xed/liblx200.c
 lib/X11/xephem/tools/lx200xed/liblx200.h
 lib/X11/xephem/tools/lx200xed/lx200xed.c
 lib/X11/xephem/tools/mpcorb2edb.pl
-lib/X11/xephem/tools/tle2edb.pl
 lib/X11/xephem/tools/xephemdbd/INSTALL
 lib/X11/xephem/tools/xephemdbd/Makefile
 lib/X11/xephem/tools/xephemdbd/README
@@ -54,7 +44,6 @@ lib/X11/xephem/tools/xephemdbd/xephemdbd.html
 lib/X11/xephem/tools/xephemdbd/xephemdbd.pl
 @dirrm lib/X11/xephem/tools/xephemdbd
 @dirrm lib/X11/xephem/tools/lx200xed
-@dirrm lib/X11/xephem/tools/gsc
 @dirrm lib/X11/xephem/tools
 @dirrm lib/X11/xephem/fits
 @dirrm lib/X11/xephem/fifos

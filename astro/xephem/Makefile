@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	xephem
-PORTVERSION=	3.4
-PORTREVISION=	1
+PORTVERSION=	3.5
+#PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	http://www.clearskyinstitute.com/xephem/ \
 		ftp://iraf.noao.edu/contrib/xephem/ \
@@ -21,13 +21,12 @@ USE_MOTIF=	yes
 USE_IMAKE=	yes
 MAN1=		xephem.1
 
-LIBSRC=		${WRKDIR}/${DISTNAME}/libastro
-
-pre-configure:
-	@(cd ${LIBSRC} && ${SETENV} ${MAKE_ENV} ${XMKMF})
+LIBASTROSRC=	${WRKDIR}/${DISTNAME}/libastro
+LIBIPSRC=	${WRKDIR}/${DISTNAME}/libip
 
 pre-build:
-	@(cd ${LIBSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET})
+	@cd ${LIBASTROSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE}
+	@cd ${LIBIPSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE}
 	@${ECHO} 'XEphem.ShareDir: ${PREFIX}/lib/X11/xephem' > ${WRKSRC}/XEphem.ad
 
 post-install:
