@@ -1,0 +1,11 @@
+--- muttlib.c.orig	Wed Jul 19 03:25:03 2000
++++ muttlib.c	Wed Jul 19 03:26:06 2000
+@@ -1103,7 +1103,7 @@
+ void mutt_display_sanitize (char *s)
+ {
+ #ifdef KANJI
+-  if (strcmp(Charset, "iso-2022-jp") == 0)
++  if (strcmp(Charset, "iso-2022-jp") == 0 || strcmp(Charset, "euc-jp") == 0)
+     return;
+ #endif
+ 
