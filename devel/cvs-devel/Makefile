@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	cvs+ipv6
-PORTVERSION=	1.11.2
-PORTREVISION=	2
+PORTVERSION=	1.11.5
 CATEGORIES=	devel ipv6
 MASTER_SITES=	http://ftp.cvshome.org/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/cvs/&,}
-MASTER_SITE_SUBDIR=	cvs-1.11.2
+MASTER_SITE_SUBDIR=	cvs-${PORTVERSION}
 DISTNAME=	cvs-${PORTVERSION}
 
 PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/
-PATCHFILES=	cvs-1.11.2-v6-20020709.diff.gz
+PATCHFILES=	cvs-1.11.5-v6-20030123.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	sumikawa@FreeBSD.org
@@ -29,9 +28,12 @@ MAN5=		cvs.5
 MAN8=		cvsbug.8
 
 CVS_SITE?=	:pserver:anoncvs@anoncvs.FreeBSD.org:/home/ncvs
-CVS_VER?=	v1_11_2
+CVS_VER?=	v1_11_5
+
+USE_REINPLACE= yes
 
 post-patch:
+	${REINPLACE_CMD} 's/${PORTVERSION:S/./\./g}/&+IPv6/g' ${WRKSRC}/configure
 	@${CP} ${FILESDIR}/missing ${WRKSRC}
 
 replace:
