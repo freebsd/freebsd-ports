@@ -1,0 +1,5 @@
+share/java/classes/cryptix-jce-api.jar
+share/java/classes/cryptix-jce-compat.jar
+share/java/classes/cryptix-jce-provider.jar
+share/java/classes/cryptix-jce-tests.jar
+
