@@ -20,10 +20,13 @@ LIB_DEPENDS=	ao.3:${PORTSDIR}/audio/libao \
 		mad.2:${PORTSDIR}/audio/libmad
 
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--disable-mpg123-symlink
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		mpg321.1
+
+PLIST_FILES=	bin/mpg321
 
 .include <bsd.port.mk>
