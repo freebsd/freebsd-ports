@@ -1,0 +1,17 @@
+--- pim6sd/mtrace6/Makefile.orig	Tue Sep 23 20:09:10 2003
++++ pim6sd/mtrace6/Makefile	Wed Nov 24 19:00:05 2004
+@@ -77,8 +77,13 @@
+ .if exists(${.CURDIR}/../../Makefile.opsys)
+ .include "${.CURDIR}/../../Makefile.opsys"
+ .endif
+-
++PREFIX=/usr/local
+ BINDIR=	$(PREFIX)/sbin
++.if (${OPSYS} != NetBSD)
++MANDIR= $(PREFIX)/man/man
++.else
++MANDIR= $(PREFIX)/man
++.endif
+ PROG=	mtrace6
+ 
+ BINOWN  = root
