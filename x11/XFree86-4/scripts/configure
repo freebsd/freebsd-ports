@@ -36,13 +36,23 @@ if [ X$tkversion != X ]; then
   echo "#define TclLibDir		/usr/lib" >>$F
   echo "#define TclIncDir		/usr/include" >>$F
   echo "#define TclLibName		tcl75" >>$F
+else
+cat <<EOF
+*** I don't see the static library for tk version 4 in /usr/local/lib.
+*** XF86Setup will not be installed. If you want to build this program
+*** install tk first.
+
+EOF
 fi
 cat <<END
  Which servers do you wish to build, you can save a lot of disk space
  by only compiling the server you will be using.  It will also save you
  considerable compile time.
 END
-servers="SVGA VGA16 VGA16Dual Mono MonoDual S3 S3V I8514 Mach8 Mach32 Mach64 P9000 AGX  W32 I128"
+# force the compilation of the SVGA server.
+echo "#undef XF86SVGAServer"           >>$F
+echo "#define XF86SVGAServer     YES"  >>$F
+servers="VGA16 VGA16Dual Mono MonoDual S3 S3V I8514 Mach8 Mach32 Mach64 P9000 AGX  W32 I128"
 for i in $servers; do
   yesno "Do you want to build the $i server? [YES] "
   echo "#undef XF86${i}Server"           >>$F
