@@ -1,0 +1,55 @@
+lib/fpc/%%PORTVERSION%%/units/freebsd/fv/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/freebsd/fv/app.o
+lib/fpc/%%PORTVERSION%%/units/freebsd/fv/app.ppu
+lib/fpc/%%PORTVERSION%%/units/freebsd/fv/asciitab.o
+lib/fpc/%%PORTVERSION%%/units/freebsd/fv/asciitab.ppu
+lib/fpc/%%PORTVERSION%%/units/freebsd/fv/callspec.o
+lib/fpc/%%PORTVERSION%%/units/freebsd/fv/callspec.ppu
+lib/fpc/%%PORTVERSION%%/units/freebsd/fv/colortxt.o
+lib/fpc/%%PORTVERSION%%/units/freebsd/fv/colortxt.ppu
+lib/fpc/%%PORTVERSION%%/units/freebsd/fv/dialogs.o
+lib/fpc/%%PORTVERSION%%/units/freebsd/fv/dialogs.ppu
+lib/fpc/%%PORTVERSION%%/units/freebsd/fv/drivers.o
+lib/fpc/%%PORTVERSION%%/units/freebsd/fv/drivers.ppu
+lib/fpc/%%PORTVERSION%%/units/freebsd/fv/editors.o
+lib/fpc/%%PORTVERSION%%/units/freebsd/fv/editors.ppu
+lib/fpc/%%PORTVERSION%%/units/freebsd/fv/fileio.o
+lib/fpc/%%PORTVERSION%%/units/freebsd/fv/fileio.ppu
+lib/fpc/%%PORTVERSION%%/units/freebsd/fv/fvcommon.o
+lib/fpc/%%PORTVERSION%%/units/freebsd/fv/fvcommon.ppu
+lib/fpc/%%PORTVERSION%%/units/freebsd/fv/fvconsts.ppu
+lib/fpc/%%PORTVERSION%%/units/freebsd/fv/gadgets.o
+lib/fpc/%%PORTVERSION%%/units/freebsd/fv/gadgets.ppu
+lib/fpc/%%PORTVERSION%%/units/freebsd/fv/gfvgraph.o
+lib/fpc/%%PORTVERSION%%/units/freebsd/fv/gfvgraph.ppu
+lib/fpc/%%PORTVERSION%%/units/freebsd/fv/histlist.o
+lib/fpc/%%PORTVERSION%%/units/freebsd/fv/histlist.ppu
+lib/fpc/%%PORTVERSION%%/units/freebsd/fv/inplong.o
+lib/fpc/%%PORTVERSION%%/units/freebsd/fv/inplong.ppu
+lib/fpc/%%PORTVERSION%%/units/freebsd/fv/memory.o
+lib/fpc/%%PORTVERSION%%/units/freebsd/fv/memory.ppu
+lib/fpc/%%PORTVERSION%%/units/freebsd/fv/menus.o
+lib/fpc/%%PORTVERSION%%/units/freebsd/fv/menus.ppu
+lib/fpc/%%PORTVERSION%%/units/freebsd/fv/msgbox.o
+lib/fpc/%%PORTVERSION%%/units/freebsd/fv/msgbox.ppu
+lib/fpc/%%PORTVERSION%%/units/freebsd/fv/resource.o
+lib/fpc/%%PORTVERSION%%/units/freebsd/fv/resource.ppu
+lib/fpc/%%PORTVERSION%%/units/freebsd/fv/statuses.o
+lib/fpc/%%PORTVERSION%%/units/freebsd/fv/statuses.ppu
+lib/fpc/%%PORTVERSION%%/units/freebsd/fv/stddlg.o
+lib/fpc/%%PORTVERSION%%/units/freebsd/fv/stddlg.ppu
+lib/fpc/%%PORTVERSION%%/units/freebsd/fv/sysmsg.o
+lib/fpc/%%PORTVERSION%%/units/freebsd/fv/sysmsg.ppu
+lib/fpc/%%PORTVERSION%%/units/freebsd/fv/tabs.o
+lib/fpc/%%PORTVERSION%%/units/freebsd/fv/tabs.ppu
+lib/fpc/%%PORTVERSION%%/units/freebsd/fv/time.o
+lib/fpc/%%PORTVERSION%%/units/freebsd/fv/time.ppu
+lib/fpc/%%PORTVERSION%%/units/freebsd/fv/validate.o
+lib/fpc/%%PORTVERSION%%/units/freebsd/fv/validate.ppu
+lib/fpc/%%PORTVERSION%%/units/freebsd/fv/views.o
+lib/fpc/%%PORTVERSION%%/units/freebsd/fv/views.ppu
+@dirrm lib/fpc/%%PORTVERSION%%/units/freebsd/fv
+@dirrm lib/fpc/%%PORTVERSION%%/units/freebsd
+@dirrm lib/fpc/%%PORTVERSION%%/units
+@dirrm lib/fpc/%%PORTVERSION%%
+@dirrm lib/fpc
