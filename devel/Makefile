@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.44 1997/02/18 11:35:51 obrien Exp $
+# $Id: Makefile,v 1.45 1997/02/25 04:21:17 jkh Exp $
 #
 
     SUBDIR += SWIG
@@ -6,6 +6,7 @@
     SUBDIR += bcc
     SUBDIR += boehm-gc
     SUBDIR += cflow
+    SUBDIR += crossgo32
     SUBDIR += cutils
     SUBDIR += cxref
     SUBDIR += dmake
