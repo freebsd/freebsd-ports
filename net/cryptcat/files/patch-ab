@@ -1,0 +1,10 @@
+--- farm9crypt.cc.orig	Mon Oct  2 05:08:44 2000
++++ farm9crypt.cc	Wed Sep  4 19:27:56 2002
+@@ -21,6 +21,7 @@
+ #include <sys/types.h>    // suggested by several people -- for OpenBSD, FreeBSD compiles
+ #include <sys/socket.h>		/* basics, SO_ and AF_ defs, sockaddr, ... */
+ #include <stdlib.h>	
++#include <string.h>
+ #else
+ #include <fcntl.h>
+ #include <io.h>
