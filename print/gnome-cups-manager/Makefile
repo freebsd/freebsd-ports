@@ -5,11 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-cups-manager
-PORTVERSION=	0.17
-PORTREVISION=	2
+PORTVERSION=	0.18
 CATEGORIES=	print gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.17
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.18
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -23,6 +22,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomeprintui libgnomeui
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
@@ -35,6 +35,6 @@ post-patch:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/gnome-cups-manager.desktop \
-	${PREFIX}/share/gnome/applications
+		${PREFIX}/share/gnome/applications
 
 .include <bsd.port.mk>
