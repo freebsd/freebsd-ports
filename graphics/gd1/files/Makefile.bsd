@@ -1,0 +1,60 @@
+PROGS!=	${MAKE} -V BIN_PROGRAMS -f ${WRKSRC}/makefile.sample
+PROGS+=	gd2togif gdcmpgif giftogd2
+PROGS+=	annotate	# new utility, not included in makefile.sample
+TESTS=	gdtest gddemo gd2time gdtestft testac fontsizetest fontwheeltest
+SRCS=	gd.c gd_gd.c gd_gd2.c gd_io.c gd_io_dp.c gd_io_file.c \
+	gd_io_ss.c gd_jpeg.c gd_png.c gd_ss.c gd_topal.c \
+	gd_wbmp.c gdcache.c gdfontg.c gdfontl.c gdfontmb.c \
+	gdfonts.c gdfontt.c gdft.c gdhelpers.c gdhelpers.h \
+	gdkanji.c gdtables.c gdxpm.c jisx0208.h \
+	wbmp.c wbmp.h
+SRCS+=	gd_gif_in.c gd_gif_out.c gd_biggif_out.c gd_lzw_out.c
+MAKEDIR=/usr/share/mk
+LIB=gd
+SHLIB_MAJOR=4
+SHLIB_MINOR=0
+INCS=	gd.h gd_io.h gdcache.h gdfontg.h gdfontl.h gdfontmb.h \
+	gdfonts.h gdfontt.h
+SHLIB_NAME!=	${MAKE} -V SHLIB_NAME LIB=${LIB} \
+	SHLIB_MAJOR=${SHLIB_MAJOR} SHLIB_MINOR=${SHLIB_MINOR} -f ${MAKEDIR}/bsd.lib.mk
+
+CFLAGS+=-I${.CURDIR} -I${LOCALBASE}/include/freetype2/ \
+	-I${LOCALBASE}/include/freetype2/freetype -I${LOCALBASE}/include \
+	-DHAVE_LIBPNG -DHAVE_LIBJPEG -DHAVE_LIBFREETYPE -DHAVE_LIBZ
+LDADD=	-L${LOCALBASE}/lib -lpng -lz -ljpeg -lfreetype -lm
+
+.ifndef WITHOUT_X11
+CFLAGS+=-I${X11BASE}/include/X11 -I${X11BASE}/include -DHAVE_XPM
+LDADD+=	-L${X11BASE}/lib -lXpm -lX11
+.endif
+
+.ifdef WITH_LZW
+CFLAGS+=-DLZW_LICENCED
+.endif
+
+# The package comes with tests, but without any sort of test-harness,
+# to run them all automaticly. So building tests is disabled here.	-mi
+all: lib${LIB}.a ${SHLIB_NAME} ${PROGS} # ${TESTS}
+
+lib${LIB}.a ${SHLIB_NAME}: ${SRCS}
+	${MAKE} LIB=${LIB} SRCS="${SRCS}" \
+		SHLIB_MAJOR=${SHLIB_MAJOR} SHLIB_MINOR=${SHLIB_MINOR} \
+		CFLAGS="${CFLAGS}" -ECFLAGS LDADD="${LDADD}" \
+		-f ${MAKEDIR}/bsd.lib.mk ${.TARGET}
+
+${PROGS} ${TESTS}: ${SHLIB_NAME} lib${LIB}.a
+	${MAKE} PROG=${.TARGET} NOMAN=1 LDADD="-L. -lgd" \
+		CFLAGS="${CFLAGS}" -ECFLAGS -f ${MAKEDIR}/bsd.prog.mk
+
+install:
+	mkdir -p ${PREFIX}/include
+	${MAKE} LIB=${LIB} LIBDIR=${PREFIX}/lib NOPROFILE=true \
+		SHLIB_MAJOR=${SHLIB_MAJOR} SHLIB_MINOR=${SHLIB_MINOR} \
+		-f ${MAKEDIR}/bsd.lib.mk install
+	cd ${.CURDIR} && ${BSD_INSTALL_DATA} ${INCS} ${PREFIX}/include
+	cd ${.CURDIR} && ${BSD_INSTALL_PROGRAM} ${PROGS} ${PREFIX}/bin/
+	${BSD_INSTALL_SCRIPT} ${.CURDIR}/bdftogd ${PREFIX}/bin/
+
+.if exists(${.CURDIR}/Makefile.fonts)
+.include "Makefile.fonts"
+.endif
