@@ -7,13 +7,14 @@
 
 PORTNAME=	dvdrip
 PORTVERSION=	0.39.05
+PORTREVISION=	1	
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.exit1.org/dvdrip/dist/
 DISTNAME=	Video-DVDRip-${PORTVERSION:S/.05$//g}_05
 
 MAINTAINER=	michaelnottebrock@gmx.net
 
-.if defined(WITH_CLUSTER)
+.if !defined(WITHOUT_CLUSTER)
 RUN_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Event.pm:${PORTSDIR}/devel/p5-Event \
 		${LOCALBASE}/sbin/fping:${PORTSDIR}/net/fping \
@@ -37,10 +38,13 @@ MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Video::DVDRip.3
 
 pre-everything::
-.if defined(WITH_CLUSTER)
+.if !defined(WITHOUT_CLUSTER)
 	@${ECHO_MSG}
-	@${ECHO_MSG} "Cluster daemon disabled. Enable with WITHOUT_CLUSTER"
+	@${ECHO_MSG} "You can disable the cluster daemon and it's"
+	@${ECHO_MSG} "dependencies by defining WITHOUT_CLUSTER."
 	@${ECHO_MSG}
+	@${ECHO_MSG} "Warning: dvdrip does not like this and will"
+	@${ECHO_MSG} "throw cryptic error-messages. Use with caution."
 .endif
 .if !defined(WITH_XINE)
 	@${ECHO_MSG}
