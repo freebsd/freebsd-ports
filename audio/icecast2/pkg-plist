@@ -1,9 +1,9 @@
 bin/icecast
 etc/icecast.xml.sample
 etc/rc.d/icecast2.sh
-share/doc/icecast/ChangeLog
 share/doc/icecast/AUTHORS
 share/doc/icecast/COPYING
+share/doc/icecast/ChangeLog
 share/doc/icecast/NEWS
 share/doc/icecast/README
 share/doc/icecast/TODO
@@ -25,9 +25,10 @@ share/icecast/admin/manageauth.xsl
 share/icecast/admin/moveclients.xsl
 share/icecast/admin/response.xsl
 share/icecast/admin/stats.xsl
+share/icecast/admin/updatemetadata.xsl
 share/icecast/doc/icecast.xml.dist
-share/icecast/web/status.xsl
-share/icecast/web/status2.xsl
+share/icecast/doc/icecast_minimal.xml.dist
+share/icecast/doc/icecast_shoutcast_compat.xml.dist
 share/icecast/web/auth.xsl
 share/icecast/web/corner_bottomleft.jpg
 share/icecast/web/corner_bottomright.jpg
@@ -35,6 +36,8 @@ share/icecast/web/corner_topleft.jpg
 share/icecast/web/corner_topright.jpg
 share/icecast/web/icecast.png
 share/icecast/web/key.gif
+share/icecast/web/status.xsl
+share/icecast/web/status2.xsl
 share/icecast/web/style.css
 @dirrm share/icecast/web
 @dirrm share/icecast/doc
