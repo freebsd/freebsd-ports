@@ -1,0 +1,36 @@
+--- config.mk.orig	Fri Jul 13 12:25:24 2001
++++ config.mk	Tue Jul 24 06:15:59 2001
+@@ -1,26 +1,21 @@
+-PREFIX=/usr/local
++PREFIX=$(X11BASE)
+ PLUGINDIR=$(HOME)/.skipstone/plugins
+ 
+ MOZILLA_INCLUDES = \
+-	-I/usr/include/mozilla \
+-	-I/usr/local/include/mozilla \
+-	-I/usr/include/nspr \
+-	-I/usr/local/include/nspr \
+-	-I/usr/include/mozilla/nspr \
+-	-I/usr/local/include/mozilla/nspr
++	-I$(PREFIX)/include/mozilla \
++	-I$(PREFIX)/include/mozilla/nspr
+ 
+ MOZILLA_LIBS = \
+-	-L/usr/lib/mozilla \
+-	-L/usr/local/lib/mozilla \
++	-L$(PREFIX)/lib/mozilla-embedded \
+ 	-lgtkembedmoz -lplds4 -lplc4 -lnspr4 -lgtksuperwin -lxpcom
+ 
+-GTK_LIBS = $(shell gtk-config --libs)
+-GTK_INCLUDES = $(shell gtk-config --cflags)
++GTK_LIBS = $(shell $(GTK_CONFIG) --libs)
++GTK_INCLUDES = $(shell $(GTK_CONFIG) --cflags)
+ 
+ CC = gcc
+ CXX = g++
+ 
+ CPPFLAGS = $(GTK_INCLUDES) $(MOZILLA_INCLUDES)
+-CFLAGS = -g -O2 -Wall
++CFLAGS = -g -O2 -Wall -D_THREAD_SAFE
+ CXXFLAGS = $(CFLAGS) -fno-rtti
+ 

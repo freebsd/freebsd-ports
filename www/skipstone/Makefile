@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	skipstone
-PORTVERSION=	0.7.3
+PORTVERSION=	0.7.4
 CATEGORIES=	www
 MASTER_SITES=	http://www.muhri.net/skipstone/
 

@@ -1,0 +1,27 @@
+--- src/ipc.c.orig	Fri Jul 13 12:25:24 2001
++++ src/ipc.c	Tue Jul 24 05:43:12 2001
+@@ -88,13 +88,13 @@
+      	fclose(pidfile);
+      	if (kill(pid,0) == 0) { /* its alive */
+ 		if (argc < 2) { /* No args, just a new window */
+-		     	kill(pid,10);
++		     	kill(pid,SIGUSR1);
+ 		} else { /* Url, print it to file so we can read it when we launch the new window */
+ 		    	arg = g_strconcat(home,"/.skipstone/sig_url",NULL);
+       		     	url_file = fopen(arg,"w");
+ 		     	if (url_file == NULL) {
+ 			     	g_print(_("Could not open the url arg file for some reason\n"));
+-			     	kill(pid,10);
++			     	kill(pid,SIGUSR1);
+ 			     	g_free(arg);
+ 			} else {
+ 			     	gint i;
+@@ -108,7 +108,7 @@
+ 				     	fprintf(url_file,"url=%s\n",argv[i]);					     
+ 				}
+ 				fclose(url_file);			     	
+-			     	kill(pid,10);
++			     	kill(pid,SIGUSR1);
+ 			     	g_free(arg);
+ 			}
+ 		 
