@@ -2012,7 +2012,6 @@ ghfaxviewer	ports/comms/ghfaxviewer
 ghostscript-afpl	ports/print/ghostscript-afpl
 ghostscript-afpl-nox11	ports/print/ghostscript-afpl-nox11
 ghostscript-gnu		ports/print/ghostscript-gnu
-ghostscript-gnu-cjk	ports/print/ghostscript-gnu-cjk
 ghostscript-gnu-commfont	ports/print/ghostscript-gnu-commfont
 ghostscript-gnu-nox11	ports/print/ghostscript-gnu-nox11
 ghostview	ports/print/ghostview
