@@ -1,5 +1,6 @@
 bin/xchat
 bin/xchat-text
+%%NOGNOME:%%etc/X11/applnk/Internet/xchat.desktop
 %%PORTDOCS%%share/doc/xchat/ChangeLog
 %%PORTDOCS%%share/doc/xchat/README
 %%PORTDOCS%%share/doc/xchat/xchat-1.html
@@ -48,3 +49,8 @@ share/locale/uk/LC_MESSAGES/xchat.mo
 share/locale/vi/LC_MESSAGES/xchat.mo
 share/locale/zh_CN/LC_MESSAGES/xchat.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/xchat.mo
+%%NOGNOME:%%share/pixmaps/xchat.png
+%%NOGNOME:%%@unexec rmdir %D/etc/X11/applnk/Internet 2>/dev/null || true
+%%NOGNOME:%%@unexec rmdir %D/etc/X11/applnk 2>/dev/null || true
+%%NOGNOME:%%@unexec rmdir %D/etc/X11 2>/dev/null || true
+%%NOGNOME:%%@unexec rmdir %D/share/pixmaps 2>/dev/null || true
