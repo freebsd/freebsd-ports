@@ -1,0 +1,29 @@
+diff -ru code.ORIG/CBFnMenuUpdater.cc code/CBFnMenuUpdater.cc
+--- programs/code_crusader/code.ORIG/CBFnMenuUpdater.cc	Wed Sep 15 20:11:57 1999
++++ programs/code_crusader/code/CBFnMenuUpdater.cc	Sat Nov  6 13:22:12 1999
+@@ -21,13 +21,13 @@
+ #include <jStrStreamUtil.h>
+ #include <jAssert.h>
+ 
+-static const JCharacter* kCheckVersionCmd = "ctags --version";
++static const JCharacter* kCheckVersionCmd = "exctags --version";
+ static const JCharacter* kVersionMarker   = "Exuberant Ctags";
+-static const JCharacter* kCheckOptionsCmd = "ctags --help";
++static const JCharacter* kCheckOptionsCmd = "exctags --help";
+ static const JCharacter* kOptionMarker    = "--filter-terminator";
+ 
+ static const JCharacter* kGetFnListCmd =
+-	"ctags --filter=yes --filter-terminator=\f"
++	"exctags --filter=yes --filter-terminator=\f"
+ 	"      --c-types=f --eiffel-types=f --fortran-types=psf --java-types=m"
+ 	"      --format=1 --excmd=number --sort=no";
+ 
+@@ -122,7 +122,7 @@
+ 		itsIsActiveFlag = kFalse;
+ 
+ 		(JGetUserNotification())->ReportError(
+-			"ctags is not responding correctly, "
++			"exctags is not responding correctly, "
+ 			"so the Function menu will not work.");
+ 		}
+ }
