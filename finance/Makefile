@@ -27,6 +27,7 @@
     SUBDIR += p5-Business-OnlinePayment-TCLink
     SUBDIR += p5-Business-OnlinePayment-VirtualNet
     SUBDIR += p5-Business-OnlinePayment-eSec
+    SUBDIR += p5-Business-OnlinePayment-iAuthorizer
     SUBDIR += p5-Business-WorldPay-Junior
     SUBDIR += p5-Math-Financial
     SUBDIR += qhacc

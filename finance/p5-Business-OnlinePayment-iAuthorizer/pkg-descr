@@ -1,0 +1,3 @@
+This is Business::OnlinePayment::iAuthorizer, an Business::OnlinePayment
+backend module for iAuthorizer.  It is only useful if you have a merchant
+account with iAuthorizer: http://www.iauthorizer.net
