@@ -7,6 +7,7 @@
 
 PORTNAME=	bluefish
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	www editors
 MASTER_SITES=	http://pkedu.fbt.eitn.wau.nl/~olivier/${DOWNLOAD}/ \
 		ftp://bluefish.advancecreations.com/pub/bluefish/${DOWNLOAD}/ \
@@ -30,6 +31,7 @@ RUN_DEPENDS+=	tidy:${PORTSDIR}/www/tidy
 DOWNLOAD=	downloads
 USE_BZIP2=	yes
 USE_GNOME=	gnomehier gtk20 gnomevfs2
+WANT_GNOME=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
@@ -61,11 +63,13 @@ pre-everything::
 	@${ECHO_MSG} "  WITHOUT_SPLASH	disable the splash screen"
 	@${ECHO_MSG} ""
 
-post-patch:
-#	@${REINPLACE_CMD} -e 's|/applications/|/apps/Applications/|g' \
-#		${WRKSRC}/data/Makefile.in
-
 post-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/debian/bluefish.1 ${PREFIX}/man/man1/bluefish.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${HAVE_GNOME:Mlibgnomeui}!=""
+USE_GNOME+=	libgnomeui
+.endif
+
+.include <bsd.port.post.mk>
