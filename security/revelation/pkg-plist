@@ -46,6 +46,8 @@ bin/revelation
 %%PYTHON_SITELIBDIR%%/revelation/widget.pyo
 %%PYTHON_SITELIBDIR%%/revelation/io.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/revelation
+@unexec rmdir %D/%%PYTHON_SITELIBDIR%% 2>/dev/null || true
+@unexec rmdir %D/%%PYTHON_LIBDIR%% 2>/dev/null || true
 share/gnome/applications/revelation.desktop
 share/gnome/pixmaps/revelation.png
 share/gnome/revelation/pixmaps/account-creditcard.png
@@ -65,6 +67,3 @@ share/gnome/revelation/pixmaps/revelation.png
 share/gnome/revelation/pixmaps/revelation-16x16.png
 @dirrm share/gnome/revelation/pixmaps
 @dirrm share/gnome/revelation
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/revelation.schemas >/dev/null || /usr/bin/true
-etc/gconf/schemas/revelation.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/revelation.schemas >/dev/null || /usr/bin/true
