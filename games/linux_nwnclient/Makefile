@@ -15,7 +15,7 @@ DISTFILES=	nwclient129.tar.gz linuxclientupdate129to${PORTVERSION:S/.//}.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Neverwinter Nights Linux (x86) Client
 
-RUN_DEPENDS=	/compat/linux/usr/games/nwn/nwm:${PORTSDIR}/games/linux_nwndata \
+RUN_DEPENDS=	/compat/linux/usr/games/nwn/nwm:${PORTSDIR}/games/nwndata \
 		/compat/linux/usr/X11R6/lib/libGL.so.1.2:${PORTSDIR}/graphics/linux_dri
 
 USE_LINUX=	yes
