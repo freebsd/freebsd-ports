@@ -45,22 +45,22 @@ include/rdb/hash.h
 include/rdb/rdb.h
 include/rdb/uint32.h
 lib/libQwSpriteField.a
-lib/libQwSpriteField.so.7
+lib/libQwSpriteField.so.8
 lib/libjs.a
-lib/libjs.so.3
+lib/libjs.so.4
 lib/libmimelib.a
-lib/libmimelib.so.2
+lib/libmimelib.so.3
 lib/librdb.a
-lib/librdb.so.56
-@exec ln -sf libQwSpriteField.so.6 %D/lib/libQwSpriteField.so
-@exec ln -sf libjs.so.2 %D/lib/libjs.so
-@exec ln -sf libmimelib.so.1 %D/lib/libmimelib.so
-@exec ln -sf librdb.so.55 %D/lib/librdb.so
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+lib/librdb.so.57
+@exec ln -sf libQwSpriteField.so.7 %D/lib/libQwSpriteField.so
+@exec ln -sf libjs.so.4 %D/lib/libjs.so
+@exec ln -sf libmimelib.so.3 %D/lib/libmimelib.so
+@exec ln -sf librdb.so.57 %D/lib/librdb.so
+@exec /sbin/ldconfig -m %B
 @dirrm include/rdb
 @dirrm include/mimelib
 @unexec rm -f %D/lib/libQwSpriteField.so
 @unexec rm -f %D/lib/libjs.so
 @unexec rm -f %D/lib/libmimelib.so
 @unexec rm -f %D/lib/librdb.so
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+@unexec /sbin/ldconfig -R
