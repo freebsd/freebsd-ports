@@ -62,7 +62,7 @@ pre-extract:
 	@${ECHO_MSG} "if you abandon your attempt to build gettext.
 	@sleep 5
 .endif
-	
+
 post-build:
 .if exists(${PREFIX}/bin/kaffe)
 	${MV} ${PREFIX}/bin/jar.backup ${PREFIX}/bin/jar
