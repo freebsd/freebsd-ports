@@ -1,4 +1,3 @@
-bin/compile_et
 bin/des
 bin/ftp
 bin/kauth
@@ -8,6 +7,7 @@ bin/kgetcred
 bin/kinit
 bin/klist
 bin/kpasswd
+bin/krb5-config
 bin/login
 bin/mk_cmds
 bin/otp
@@ -82,22 +82,19 @@ lib/libkadm5srv.so
 lib/libkadm5srv.so.7
 lib/libkrb5.a
 lib/libkrb5.so
-lib/libkrb5.so.13
+lib/libkrb5.so.14
 lib/libotp.a
 lib/libotp.so
 lib/libotp.so.1
 lib/libroken.a
 lib/libroken.so
-lib/libroken.so.10
+lib/libroken.so.11
 lib/libsl.a
 lib/libsl.so
 lib/libsl.so.1
 lib/libss.a
 lib/libss.so
 lib/libss.so.1
-lib/libvers.a
-lib/libvers.so
-lib/libvers.so.1
 libexec/ftpd
 libexec/hprop
 libexec/hpropd
