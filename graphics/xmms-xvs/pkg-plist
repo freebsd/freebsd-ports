@@ -1,15 +1,14 @@
-lib/xmms/Visualization/libxvs.la
-lib/xmms/Visualization/libxvs.a
-share/gnome/xmms/xvs_presets/Beam
-share/gnome/xmms/xvs_presets/BlurScope
-share/gnome/xmms/xvs_presets/DotCrazy
-share/gnome/xmms/xvs_presets/Radar
-share/gnome/xmms/xvs_presets/Spot
-share/gnome/xmms/xvs_presets/Whirl
-@dirrm share/gnome/xmms/xvs_presets
-%%PORTDOCS%%share/doc/xvs/AUTHORS
-%%PORTDOCS%%share/doc/xvs/ChangeLog
-%%PORTDOCS%%share/doc/xvs/NEWS
-%%PORTDOCS%%share/doc/xvs/README
-%%PORTDOCS%%share/doc/xvs/TODO
-%%PORTDOCS%%@dirrm share/doc/xvs
+lib/xmms/Visualization/libxvs.so
+%%PORTDOCS%%share/doc/xmms-xvs/AUTHORS
+%%PORTDOCS%%share/doc/xmms-xvs/ChangeLog
+%%PORTDOCS%%share/doc/xmms-xvs/NEWS
+%%PORTDOCS%%share/doc/xmms-xvs/README
+%%PORTDOCS%%share/doc/xmms-xvs/TODO
+%%DATADIR%%/xmms/xvs_presets/Beam
+%%DATADIR%%/xmms/xvs_presets/BlurScope
+%%DATADIR%%/xmms/xvs_presets/DotCrazy
+%%DATADIR%%/xmms/xvs_presets/Radar
+%%DATADIR%%/xmms/xvs_presets/Spot
+%%DATADIR%%/xmms/xvs_presets/Whirl
+@dirrm %%DATADIR%%/xmms/xvs_presets
+%%PORTDOCS%%@dirrm share/doc/xmms-xvs
