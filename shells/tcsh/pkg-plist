@@ -5,4 +5,9 @@ bin/tcsh
 man/man1/tcsh.1
 share/nls/C/tcsh.cat
 share/nls/fr_FR.ISO_8859-1/tcsh.cat
+@exec ln -fs %F share/nls/fr_BE.ISO_8859-1/tcsh.cat
+@exec ln -fs %F share/nls/fr_CA.ISO_8859-1/tcsh.cat
+@exec ln -fs %F share/nls/fr_CH.ISO_8859-1/tcsh.cat
 share/nls/de_DE.ISO_8859-1/tcsh.cat
+@exec ln -fs %F share/nls/de_AT.ISO_8859-1/tcsh.cat
+@exec ln -fs %F share/nls/de_CH.ISO_8859-1/tcsh.cat
