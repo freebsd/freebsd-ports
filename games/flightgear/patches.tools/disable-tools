@@ -1,0 +1,67 @@
+--- FlightGear-0.6.1/configure.in.orig	Sun Jun 27 13:21:03 1999
++++ FlightGear-0.6.1/configure.in	Sun Jun 27 13:21:13 1999
+@@ -244,37 +244,6 @@
+ 
+ AM_CONDITIONAL(HAVE_XWINDOWS, test "x$ac_cv_lib_X11_XCreateWindow" = "xyes" )
+ 
+-dnl Check if Generic Polygon Clipping library is installed
+-dnl (from http://www.cs.man.ac.uk/aig/staff/alan/software/)
+-AC_CHECK_HEADERS( gpc.h )
+-if test "x$ac_cv_header_gpc_h" != "xyes"; then
+-    echo
+-    echo "You need to have the GPC library installed on your system to build"
+-    echo "some of the scenery generation tools, otherwise you won't be able."
+-    echo "to create scenery."
+-    echo
+-    echo "Please see README.gpc for more details."
+-    echo
+-    echo "(pausing 5 seconds)"
+-    sleep 5
+-    echo
+-fi
+-
+-dnl Check if  Geographic Foundation Classes library is installed
+-dnl (from ftp://ftp.flightgear.org/pub/fgfs/Source/)
+-AC_CHECK_HEADERS( gfc/gdbf.h )
+-if test "x$ac_cv_header_gfc_gdbf_h" != "xyes"; then
+-    echo
+-    echo "You need to have the GFC library installed on your system to build"
+-    echo "some of the scenery generation tools, otherwise, they may fail."
+-    echo
+-    echo "Please see README.gfc for more details."
+-    echo 
+-    echo "(pausing 5 seconds)"
+-    sleep 5
+-    echo
+-fi
+-
+ dnl Checks for header files.
+ AC_HEADER_STDC
+ AC_CHECK_HEADERS( \
+--- FlightGear-0.6.1/Makefile.in.orig	Sun Jun 27 19:14:27 1999
++++ FlightGear-0.6.1/Makefile.in	Sun Jun 27 19:15:08 1999
+@@ -67,7 +67,7 @@
+ base_LIBS = @base_LIBS@
+ opengl_LIBS = @opengl_LIBS@
+ 
+-SUBDIRS = Include Lib Simulator Tools Tests
++SUBDIRS = Include Lib Simulator Tests
+ 
+ EXTRA_DIST = FG-FAQ.v3 README.Unix README.Linux README.MacOS README.Win32 \
+ 	README.Win32-X README.autoconf README.gfc README.gpc README.plib \
+@@ -88,15 +88,9 @@
+ all: all-recursive all-am
+ 
+ .SUFFIXES:
+-$(srcdir)/Makefile.in: Makefile.am $(top_srcdir)/configure.in $(ACLOCAL_M4)
+-	cd $(top_srcdir) && $(AUTOMAKE) --gnu --include-deps Makefile
+-
+ Makefile: $(srcdir)/Makefile.in  $(top_builddir)/config.status
+ 	cd $(top_builddir) \
+ 	  && CONFIG_FILES=$@ CONFIG_HEADERS= $(SHELL) ./config.status
+-
+-$(ACLOCAL_M4):  configure.in 
+-	cd $(srcdir) && $(ACLOCAL)
+ 
+ config.status: $(srcdir)/configure
+ 	$(SHELL) ./config.status --recheck

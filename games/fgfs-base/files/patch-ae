@@ -1,0 +1,11 @@
+--- Lib/Makefile.in.orig	Sun Jun 27 21:48:15 1999
++++ Lib/Makefile.in	Sun Jun 27 21:48:20 1999
+@@ -197,7 +197,7 @@
+ install-data: install-data-recursive
+ 	@$(NORMAL_INSTALL)
+ 
+-install: install-recursive
++install: #install-recursive
+ 	@:
+ 
+ uninstall: uninstall-recursive

@@ -1,0 +1,11 @@
+--- Include/Makefile.in.orig	Thu Jul  1 15:20:48 1999
++++ Include/Makefile.in	Thu Jul  1 15:20:55 1999
+@@ -90,7 +90,7 @@
+ 
+ TAR = tar
+ GZIP = --best
+-all: Makefile config.h
++all:
+ 
+ .SUFFIXES:
+ $(srcdir)/Makefile.in: Makefile.am $(top_srcdir)/configure.in $(ACLOCAL_M4)

@@ -1,0 +1,10 @@
+FlightGear is a free, multi-platform civil aviation flight simulator
+package.  It features detailed, texture-mapped scenery, keyboard and
+joystick controls, a heads-up display, and optional realistic instrument
+panel.  A 3-D accelerator card supported by Mesa is highly recommended (3DFX
+Voodoo/Voodoo2 and nVIDIA Riva TNT are known to work.)
+
+WWW: http://www.flightgear.org/
+
+- Brian Buchanan
+brian@CSUA.Berkeley.EDU

@@ -1,0 +1,79 @@
+--- Simulator/Time/fg_time.cxx.orig	Mon Apr 19 13:18:31 1999
++++ Simulator/Time/fg_time.cxx	Sun Jun 27 19:34:43 1999
+@@ -49,6 +49,13 @@
+ #  include <sys/time.h>  // for get/setitimer, gettimeofday, struct timeval
+ #endif
+ 
++// The next lines are to define BSD
++// See http://www.freebsd.org/handbook/porting.html for why we do this
++
++#if (defined(__unix__) || defined(unix)) && !defined(USG)
++#include <sys/param.h>
++#endif
++
+ #include <Debug/logstream.hxx>
+ #include <Astro/sky.hxx>
+ #include <Astro/solarsystem.hxx>
+@@ -366,6 +373,11 @@
+     // For now we assume that if daylight is not defined in
+     // /usr/include/time.h that we have a machine with a BSD behaving
+     // mktime()
++#   ifdef BSD
++#       define USE_TIME_GM 1
++#   endif
++
++
+ #   if !defined(HAVE_DAYLIGHT)
+ #       define MK_TIME_IS_GMT 1
+ #   endif
+@@ -383,6 +395,10 @@
+     mt.tm_sec = sec;
+     mt.tm_isdst = -1; // let the system determine the proper time zone
+ 
++#   ifdef USE_TIME_GM
++    return ( timegm(&mt) );
++#   else
++
+ #   if defined( MK_TIME_IS_GMT )
+     return ( mktime(&mt) );
+ #   else // ! defined ( MK_TIME_IS_GMT )
+@@ -424,6 +440,7 @@
+     return ( start_gmt );
+ #   endif // ! defined( TIMEZONE_OFFSET_WORKS )
+ #   endif // ! defined ( MK_TIME_IS_GMT )
++#   endif
+ }
+ 
+ // Fix up timezone if using ftime()
+--- Tests/test-mktime.cxx.orig	Sun Jun 27 19:21:42 1999
++++ Tests/test-mktime.cxx	Sun Jun 27 19:34:13 1999
+@@ -20,6 +20,12 @@
+ #  include <sys/time.h>  // for get/setitimer, gettimeofday, struct timeval
+ #endif
+ 
++// The next lines are to define BSD
++// See http://www.freebsd.org/handbook/porting.html for why we do this
++#if (defined(__unix__) || defined(unix)) && !defined(USG)
++#include <sys/param.h>
++#endif
++
+ #define LST_MAGIC_TIME_1998 890481600
+ 
+ 
+@@ -73,6 +79,8 @@
+     mt.tm_sec = 0;
+     mt.tm_isdst = -1; // let the system determine the proper time zone
+ 
++#   ifdef BSD
++    return ( timegm(&mt) );
+ #   if defined( MK_TIME_IS_GMT )
+     return ( mktime(&mt) );
+ #   else // ! defined ( MK_TIME_IS_GMT )
+@@ -110,6 +118,7 @@
+     return ( start_gmt );
+ #   endif // ! defined( TIMEZONE_OFFSET_WORKS )
+ #   endif // ! defined ( MK_TIME_IS_GMT )
++#   endif
+ }
+ 
+ 

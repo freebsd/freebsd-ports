@@ -1,0 +1,12 @@
+--- Simulator/Main/splash.cxx.orig	Wed May 12 19:16:17 1999
++++ Simulator/Main/splash.cxx	Sat Jun 26 22:31:54 1999
+@@ -123,7 +123,8 @@
+     xglMatrixMode(GL_PROJECTION);
+     xglPushMatrix();
+     xglLoadIdentity();
+-    gluOrtho2D(0, current_view.get_winWidth(), 0, current_view.get_winHeight());
++    if (current_view.get_winWidth() && current_view.get_winHeight())
++      gluOrtho2D(0, current_view.get_winWidth(), 0, current_view.get_winHeight());
+     xglMatrixMode(GL_MODELVIEW);
+     xglPushMatrix();
+     xglLoadIdentity();

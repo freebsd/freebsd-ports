@@ -1,0 +1,19 @@
+# Unix/Linux makefile for GPC 2.31
+#
+# Riley Rainey  (riley.rainey@websimulations.com)
+
+CFLAGS = -O -g
+
+libgpc.a: gpc.o
+	rm -f $@
+	ar cr $@ $<
+	ranlib $@
+
+clean:
+	rm -f libgpc.a *.o core *~
+
+install: libgpc.a
+	-mkdir -p ${PREFIX}/lib
+	-mkdir -p ${PREFIX}/include
+	install -c libgpc.a ${PREFIX}/lib/libgpc.a
+	install -c gpc.h ${PREFIX}/include/gpc.h
