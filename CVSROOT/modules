@@ -8350,6 +8350,7 @@ udmsearch	ports/www/udmsearch
 udptunnel	ports/net/udptunnel
 uemacs		ports/editors/uemacs
 uf-view		ports/misc/uf-view
+ufmcontrol-i18n	ports/audio/ufmcontrol-i18n
 uhexen		ports/games/uhexen
 uisp		ports/devel/uisp
 uk-aspell	ports/ukrainian/aspell
