@@ -1,0 +1,14 @@
+GDAL - Geospatial Data Abstraction Library
+
+GDAL is a translator library for raster geospatial data formats that is
+released under an Open Source license. As a library, it presents a single
+abstract data model to the calling application for all supported formats.
+
+GDAL is in active use in a few projects, and includes a number of
+formats. Current translators include GeoTIFF (read/write), Erdas Imagine
+(read), ESRI .BIL (read/write), .aux labelled raw (read/write), DTED
+(read), SDTS DEM (read), CEOS (read), JPEG (read/write), PNG (read/write),
+Geosoft GXF (read) and Arc/Info Binary Grid (read). A full list is
+available in Supported Formats.
+
+WWW: http://www.remotesensing.org/gdal/

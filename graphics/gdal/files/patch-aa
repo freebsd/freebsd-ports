@@ -1,0 +1,33 @@
+--- frmts/ORIG/GNUmakefile	Tue Jul 17 09:51:13 2001
++++ frmts/GNUmakefile	Mon Aug 27 18:09:37 2001
+@@ -12,7 +12,7 @@
+ sub-libs:
+ 	@for dir in $(GDAL_FORMATS) ; do \
+ 	  if test -d $$dir ; then \
+-	    if (cd $$dir; $(MAKE) install-obj) ; then \
++	    if (cd $$dir; $(MAKE) install-obj) || exit 1 ; then \
+ 	      echo; \
+ 	    else \
+ 	      break; \
+@@ -26,7 +26,7 @@
+ 	rm -f *.o o/*.o o/*.a
+ 	@for dir in $(GDAL_FORMATS) ; do \
+ 	  if test -d $$dir ; then \
+-	    if (cd $$dir; $(MAKE) clean) ; then \
++	    if (cd $$dir; $(MAKE) clean) || exit 1 ; then \
+ 	      echo; \
+ 	    else \
+ 	      break; \
+--- ORIG/GDALmake.opt.in	Fri Jul 20 00:13:54 2001
++++ GDALmake.opt.in	Tue Aug 28 16:34:12 2001
+@@ -67,8 +67,8 @@
+ 
+ GDAL_VER	=	1.1
+ GDAL_LIB	= 	$(GDAL_ROOT)/gdal.a
+-GDAL_SLIB	=	$(GDAL_ROOT)/libgdal.$(GDAL_VER).$(SO_EXT)
+-GDAL_SLIB_LINK	=	-L$(GDAL_ROOT) -lgdal.$(GDAL_VER)
++GDAL_SLIB	=	$(GDAL_ROOT)/libgdal.$(SO_EXT).$(GDAL_VER)
++GDAL_SLIB_LINK	=	-L$(GDAL_ROOT) -lgdal
+ 
+ OGR_LIB		=	$(GDAL_ROOT)/ogr/ogr.a
+ CPL_LIB		=	$(GDAL_ROOT)/port/cpl.a
