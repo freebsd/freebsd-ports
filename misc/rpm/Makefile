@@ -9,7 +9,8 @@ PORTNAME=	rpm
 PORTVERSION=	3.0.6
 PORTREVISION=	4
 CATEGORIES=	misc
-MASTER_SITES=	ftp://ftp.rpm.org/pub/rpm/dist/rpm-3.0.x/
+MASTER_SITES=	ftp://ftp.rpm.org/pub/rpm/dist/rpm-3.0.x/ \
+		ftp://ftp.mirror.ac.uk/sites/ftp.rpm.org/pub/rpm/dist/rpm-3.0.x/
 
 MAINTAINER=	nakai@FreeBSD.org
 
