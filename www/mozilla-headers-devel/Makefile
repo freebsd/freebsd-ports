@@ -36,7 +36,7 @@ CPIOOWN=	-R ${INCOWN}:${INCGRP}
 pre-install:
 	${TOUCH} -f ${PLIST}
 	cd ${WRKSRC}/dist/include && ${FIND} -s * -type f -o -type l | \
-		${SED} -e ':^:include/mozilla-devel/:' >> ${PLIST} \
+		${SED} -e 's:^:include/mozilla-devel/:' >> ${PLIST} \
 		&& ${FIND} -d * -type f | \
 		${SED} -e 's:^:@dirrm include/mozilla-devel/:' >> ${PLIST}
 	${ECHO_CMD} @dirrm include/mozilla-devel >> ${PLIST}
