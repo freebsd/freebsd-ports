@@ -4,7 +4,8 @@ SHLIB_MAJOR=	1
 SHLIB_MINOR=	2
 
 LIBDIR	=	${LOCALBASE}/lib
-INCDIR	=	${LOCALBASE}/include
+INCSDIR	=	${LOCALBASE}/include
+INCDIR	=	${INCSDIR}		# for pre-bsd.incs.mk API
 
 NOPROFILE=	Don't want it
 CFLAGS+=	-DHAVE_WCHAR_H=1 -DHAVE_DLFCN_H=1 -Werror

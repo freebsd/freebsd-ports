@@ -9,7 +9,8 @@ SRCS=		conv.c info.c compat.c
 INCS=		jconv.h
 NOMAN=		YES
 LIBDIR=		${LOCALBASE}/lib
-INCDIR=		${LOCALBASE}/include
+INCSDIR=	${LOCALBASE}/include
+INCDIR=		${INCSDIR}		# for pre-bsd.incs.mk API
 ETCDIR=		${LOCALBASE}/etc
 
 .include <bsd.lib.mk>
