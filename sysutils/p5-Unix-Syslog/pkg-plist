@@ -3,6 +3,6 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unix/Syslog.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unix/Syslog/Syslog.so
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unix/Syslog/Syslog.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unix/Syslog/autosplit.ix
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unix
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unix/Syslog
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unix
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unix 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unix 2>/dev/null || true
