@@ -11,7 +11,8 @@ PORTNAME=	jpeg
 PORTVERSION=	6b
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.uu.net/graphics/jpeg/
+MASTER_SITES=	http://www.ijg.org/files/ \
+		ftp://ftp.uu.net/graphics/jpeg/
 DISTNAME=	jpegsrc.v${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
