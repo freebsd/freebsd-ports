@@ -53,6 +53,7 @@ lib/pango/%%VERSION%%/modules/pango-myanmar-x.so
 lib/pango/%%VERSION%%/modules/pango-tamil-x.so
 %%XFREE4:%%lib/pango/%%VERSION%%/modules/pango-tamil-xft.so
 lib/pango/%%VERSION%%/modules/pango-thai-x.so
+%%XFREE4:%%lib/pango/%%VERSION%%/modules/pango-thai-xft.so
 libdata/pkgconfig/pango.pc
 libdata/pkgconfig/pangoft2.pc
 libdata/pkgconfig/pangox.pc
