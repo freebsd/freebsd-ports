@@ -30,6 +30,7 @@ There are some wrappers installed for fast startup.
 Add "%%PREFIX%%/bin/" to your PATH and you will be able
 to use them.
 
+%%PREFIX%%/bin/openoffice.org
 %%PREFIX%%/bin/%%EXECBASE%%
 %%PREFIX%%/bin/%%EXECBASE%%-sagenda
 %%PREFIX%%/bin/%%EXECBASE%%-scalc
