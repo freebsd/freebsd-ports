@@ -7,6 +7,7 @@
 
 PORTNAME=	dante
 PORTVERSION=	1.1.13
+PORTREVISION=	1
 CATEGORIES=	net security
 MASTER_SITES=	ftp://ftp.inet.no/pub/socks/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/ \
@@ -27,12 +28,13 @@ MAN8=	sockd.8
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/example/socks.conf ${PREFIX}/etc/socks.conf.example
 	@${INSTALL_DATA} ${WRKSRC}/example/sockd.conf ${PREFIX}/etc/sockd.conf.example
+	@${INSTALL_SCRIPT} ${FILESDIR}/sockd.sh ${PREFIX}/etc/rc.d/sockd.sh-dist
 .if !defined(NOPORTDOCS)
-	${INSTALL} -d -m 555 ${PREFIX}/share/doc/dante
-	@${INSTALL_DATA} ${WRKSRC}/doc/README* ${PREFIX}/share/doc/dante
-	@${INSTALL_DATA} ${WRKSRC}/doc/rfc* ${PREFIX}/share/doc/dante
-	@${INSTALL_DATA} ${WRKSRC}/doc/SOCKS4.protocol ${PREFIX}/share/doc/dante
-	@${INSTALL_DATA} ${WRKSRC}/doc/faq.tex ${PREFIX}/share/doc/dante
+	${INSTALL} -d -m 555 ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/README* ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/rfc* ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/SOCKS4.protocol ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/faq.tex ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
