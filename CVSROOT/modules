@@ -9295,6 +9295,7 @@ rshell		ports/net/rshell
 rsnapshot	ports/sysutils/rsnapshot
 rssh		ports/shells/rssh
 rsync		ports/net/rsync
+rsyncmanager	ports/sysutils/rsyncmanager
 rsynth		ports/audio/rsynth
 rt2		ports/www/rt2
 rt2-demo	ports/games/rt2-demo
