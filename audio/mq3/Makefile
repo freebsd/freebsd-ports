@@ -13,7 +13,8 @@ MASTER_SITES=	http://www.mq3.org/source/
 MAINTAINER=	erich@tacni.net
 
 LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw \
-		vorbis.0:${PORTSDIR}/audio/libvorbis
+		vorbis.0:${PORTSDIR}/audio/libvorbis \
+		qthreads.0:${PORTSDIR}/lang/guile
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
 USE_QT_VER=	2

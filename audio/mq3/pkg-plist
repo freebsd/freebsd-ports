@@ -111,7 +111,7 @@ share/mq3/icons/default/large/stop-active.png
 share/mq3/icons/default/large/stop-disabled.png
 share/mq3/icons/default/large/stop.png
 @dirrm share/mq3/icons/default/large
-@dirrm share/mq3/icons/default/small  
+@dirrm share/mq3/icons/default/small
 @dirrm share/mq3/icons/default
 @dirrm share/mq3/icons
 @dirrm share/mq3
