@@ -8,7 +8,7 @@
 PORTNAME=	asmutils
 PORTVERSION=	0.14
 CATEGORIES=	devel
-MASTER_SITES=	ftp://linuxassembly.org/pub/asm/
+MASTER_SITES=	http://linuxassembly.org/asmutils/
 
 MAINTAINER=	greid@FreeBSD.org
 
