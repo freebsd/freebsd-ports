@@ -5,30 +5,54 @@
 # $FreeBSD$
 #
 
-PORTNAME=	xmame
-PORTVERSION=	0.37b11.2
+PORTNAME?=	xmame
+PORTVERSION?=	0.37b12.1
 CATEGORIES=	emulators
 MASTER_SITES=	http://x.mame.net/download/ \
 		ftp://ftp.kaupp.cx/pub/xmame/ \
-		http://www.ozemail.com.au/~knebauer/xmame/files/
+		http://www.ozemail.com.au/~knebauer/xmame/files/ \
+		http://www.mame.net/zips/ \
+		http://cheat.retrogames.com/ \
+		http://www.sys2064.com/files/mame/
+DISTNAME=	xmame-${PORTVERSION:S/p/pre/}
+DIST_SUBDIR=	xmame
+EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	c9710216@studentmail.newcastle.edu.au
+MAINTAINER?=	c9710216@studentmail.newcastle.edu.au
 
-USE_BZIP2=	yes
 USE_XPM=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 MAKEFILE=	makefile.unix
 
-MAN6=		xmame.6
+MAN6=		x${MAMEMESS}.6
 
-XMAMEDOCS=	changes.mame \
-		changes.unix \
+# Are we building MAME, MESS or WPCmame? (also set by slave ports)
+MAMEMESS?=	mame
+
+PLIST_SUB+=	MAMEMESS="x${MAMEMESS}" SPOOLGAMES="${SPOOLGAMES}"
+.if ${MAMEMESS} == "mame"
+PLIST_SUB+=	MAMEONLY="" MESSONLY="@comment " WPCMAMEONLY="@comment "
+.else
+.if ${MAMEMESS} == "mess"
+PLIST_SUB+=	MAMEONLY="@comment " MESSONLY="" WPCMAMEONLY="@comment "
+.else
+.if ${MAMEMESS} == "wpcmame"
+PLIST_SUB+=	MAMEONLY="@comment " MESSONLY="@comment " WPCMAMEONLY=""
+.else
+.error MAMEMESS must be set to one of "mame", "mess" or "wpcmame".
+.endif
+.endif
+.endif
+
+# Where do we want game spool data?
+SPOOLGAMES?=	/var/games
+
+# Docs list
+GENERALDOCS=	changes.unix \
 		credits.txt \
-		gamelist.mame \
 		liesmich.unix \
 		multiplayer-readme.txt \
-		readme.mame \
 		xmame-doc-1.html \
 		xmame-doc-2.html \
 		xmame-doc-3.html \
@@ -41,29 +65,156 @@ XMAMEDOCS=	changes.mame \
 		xmame-doc.ps \
 		xmame-doc.sgml \
 		xmame-doc.txt
+XMAMEDOCS=	changes.mame \
+		gamelist.mame \
+		readme.mame
+XMESSDOCS=	changes.mess \
+		gamelist.mess \
+		readme.mess \
+		messold.txt \
+		messroms.txt
+WPCMAMEDOCS=	wpcmame/simulation.txt \
+		wpcmame/whatsnew.txt \
+		wpcmame/wpcmame.txt
+.if ${MAMEMESS} == "mame"
+ALLDOCS=	${GENERALDOCS} ${XMAMEDOCS}
+.else
+.if ${MAMEMESS} == "mess"
+ALLDOCS=	${GENERALDOCS} ${XMESSDOCS}
+.else
+ALLDOCS=	${GENERALDOCS} ${WPCMAMEDOCS}
+.endif
+.endif
 
-# the large number of sed regexes here is intended to make this port a whole
+# CPS-2 patches - this enables extra games in MAME.
+.if ${MAMEMESS} == "mame"
+.if defined(WITH_CPS2) && ${WITH_CPS2} == "yes"
+CPS2VERSION=	20010309
+
+PATCH_SITES+=	http://www.win.tue.nl/~stijn/xmame/
+PATCHFILES+=	${DISTNAME}-cps2-${CPS2VERSION}.patch.gz
+.else
+pre-everything::
+	@${ECHO_MSG} "===> If you want to compile MAME with CPS-2 support, use \"make WITH_CPS2=yes\""
+.endif
+.endif
+
+# Datfiles - for history/bugs/cheats/highscores in MAME
+.if ${MAMEMESS} == "mame"
+.if defined(WITH_DATFILES) && ${WITH_DATFILES} == "yes"
+PLIST_SUB+=	DATFILES=""
+
+BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
+
+HIVER=		7
+
+DISTFILES+=	${DISTNAME}${EXTRACT_SUFX} \
+			hsdat${HIVER}.zip history.zip cheat.zip
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+
+post-extract:
+	cd ${WRKDIR} && \
+		unzip -q ${DISTDIR}/${DIST_SUBDIR}/hsdat${HIVER}.zip hiscore.dat
+	cd ${WRKDIR} && \
+		unzip -q ${DISTDIR}/${DIST_SUBDIR}/history.zip history.dat
+	cd ${WRKDIR} && \
+		unzip -q ${DISTDIR}/${DIST_SUBDIR}/cheat.zip cheat.dat
+.else
+PLIST_SUB+=	DATFILES="@comment "
+pre-everything::
+	@${ECHO_MSG} "===> If you want to install additional information with MAME (such as game"
+	@${ECHO_MSG} "     history, cheats, and highscores) use \"make WITH_DATFILES=yes\""
+.endif
+.endif
+
+# ASM 68k cores - disabled by default, because they break things (pbobble2
+# being a prime example). These also only work on i386. Should be enabled
+# by default when ready for prime time.
+.if defined(WITH_ASM68K) && ${WITH_ASM68K} == "yes"
+ASM_COMMENT=
+.else
+ASM_COMMENT=\#
+.endif
+
+# Heavy optimization - enabled by default because it doesn't seem
+# to break things, and enables considerable speedup.
+.if !defined(WITH_OPTIMIZATION) || ${WITH_OPTIMIZATION} != "no"
+CFLAGS+=	-O3 -march=i686 -Wall -Wno-unused -funroll-loops \
+		-fstrength-reduce -fomit-frame-pointer -ffast-math \
+		-malign-functions=4 -malign-jumps=4 -malign-loops=4
+.endif
+
+# SDL extension - enabled by default because x{mame,mess} can run full
+# screen without having to be setuid root.
+.if !defined(WITH_SDL) || ${WITH_SDL} != "no"
+LIB_DEPENDS=    SDL-1.1.3:${PORTSDIR}/devel/sdl-devel
+SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
+MAKE_ENV+=	SDL_CONFIG=${SDL_CONFIG}
+DISPLAY_METHOD=	SDL
+pre-everything::
+	@${ECHO_MSG} "===> If you don't want ${MAMEMESS:U} to be built with SDL support,"
+	@${ECHO_MSG} "     use \"make WITH_SDL=no\""
+.else
+DISPLAY_METHOD=	x11
+.endif
+
+# The large number of sed regexes here is intended to make this port a whole
 # lot easier to maintain - please don't convert them into a patch.
-post-patch:
-	${PERL} -pi -e "s@%%PREFIX%%@${PREFIX}@g" ${WRKSRC}/doc/xmamerc.dist
+do-configure:
 	@${CP} ${WRKSRC}/makefile.unix ${WRKSRC}/makefile.unix.sed
-	${SED} -e "s@= gcc@?=  ${CC}@g" -e "s@= -O -Wall@?=  ${CFLAGS}@g" \
-		-e "s@= cp@?=  ${INSTALL} ${COPY}@g" -e "s@/usr/games@${PREFIX}/bin@g" \
-		-e "s@/usr/local/man/man6@${PREFIX}/man/man6@g" \
-		-e "s@/usr/games/lib/\$\(NAME\)@${PREFIX}/share/\$\(NAME\)@g" \
-		-e "s@/usr/X11R6@${X11BASE}@g" -e "s@ARCH  = linux@ARCH  = freebsd@g" \
+	${SED} -e "s@= gcc@?=  ${CC}@g" \
+		-e "s@= -O2 -Wall@?=  ${CFLAGS}@g" \
+		-e "s@= cp@?=  ${INSTALL} ${COPY}@g" \
+		-e "s@lib/x\$$(TARGET)@share/x\$$(TARGET)@g" \
+		-e "s@/usr/X11R6@${X11BASE}@g" \
+		-e "s@ARCH  = linux@ARCH  = freebsd@g" \
+		-e "s@# X11_DGA@X11_DGA@g" \
+		-e "s@= x11@= ${DISPLAY_METHOD}@g" \
+		-e "s@= mame@= ${MAMEMESS}@g" \
+		-e "s@# X86_ASM@${ASM_COMMENT}X86_ASM@g" \
 			${WRKSRC}/makefile.unix.sed > ${WRKSRC}/makefile.unix
+.if !defined(WITH_SDL) || ${WITH_SDL} != "no"
+	${PERL} -pi -e 's@SDL/@SDL11/@' ${WRKSRC}/src/unix/video-drivers/SDL.c
+.endif
+
+post-build:
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} SDL_VIDEODRIVER=aalib \
+		${GMAKE} -f ${MAKEFILE} doc/x${MAMEMESS}.6
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} SDL_VIDEODRIVER=aalib \
+		${GMAKE} -f ${MAKEFILE} doc/x${MAMEMESS}rc.dist
+	@${CP} ${WRKSRC}/doc/x${MAMEMESS}rc.dist \
+		${WRKSRC}/doc/x${MAMEMESS}rc.dist.sed
+	${SED} -e "s@^spooldir.*\$$@spooldir		${SPOOLGAMES}/x${MAMEMESS}@" \
+		-e "s@^rompath.*\$$@rompath			${PREFIX}/share/x${MAMEMESS}/roms@" \
+		${WRKSRC}/doc/x${MAMEMESS}rc.dist.sed > ${WRKSRC}/doc/x${MAMEMESS}rc.dist
 
 post-install:
-	${MV} ${PREFIX}/bin/xmame.x11 ${PREFIX}/bin/xmame
-	${MKDIR} ${PREFIX}/share/xmame ${PREFIX}/share/xmame/hi ${PREFIX}/share/xmame/roms
-	${CHMOD} 777 ${PREFIX}/share/xmame/hi
-	${INSTALL_DATA} ${WRKSRC}/doc/xmamerc.dist ${PREFIX}/share/xmame/xmamerc
+	${MV} ${PREFIX}/bin/x${MAMEMESS}.${DISPLAY_METHOD} \
+		${PREFIX}/bin/x${MAMEMESS}
+	${CHOWN} root:games ${PREFIX}/bin/x${MAMEMESS}
+	${CHMOD} u-s,g+s ${PREFIX}/bin/x${MAMEMESS}
+	${MKDIR} ${PREFIX}/share/x${MAMEMESS} ${PREFIX}/share/x${MAMEMESS}/roms
+	${MKDIR} ${SPOOLGAMES}/x${MAMEMESS}
+	${CHOWN} -R root:games ${SPOOLGAMES}/x${MAMEMESS}
+	${CHMOD} 775 ${SPOOLGAMES}/x${MAMEMESS}
+	${INSTALL_DATA} ${WRKSRC}/doc/x${MAMEMESS}rc.dist \
+				${PREFIX}/etc/x${MAMEMESS}rc.sample
+	@if [ ! -e ${PREFIX}/etc/x${MAMEMESS}rc ]; then			\
+		( cd ${PREFIX}/etc && 					\
+		  ${LN} -sf x${MAMEMESS}rc.sample x${MAMEMESS}rc );	\
+	fi
+	${LN} -sf ${PREFIX}/etc/x${MAMEMESS}rc \
+				${PREFIX}/share/x${MAMEMESS}/x${MAMEMESS}rc
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/xmame
-.for file in ${XMAMEDOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${PREFIX}/share/doc/xmame
+	${MKDIR} ${PREFIX}/share/doc/x${MAMEMESS}
+.for file in ${ALLDOCS}
+	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${PREFIX}/share/doc/x${MAMEMESS}
 .endfor
 .endif
-	
+.if ${MAMEMESS} == "mame" && defined(WITH_DATFILES) && ${WITH_DATFILES} == "yes"
+	${INSTALL_DATA} ${WRKDIR}/hiscore.dat ${PREFIX}/share/xmame
+	${INSTALL_DATA} ${WRKDIR}/history.dat ${PREFIX}/share/xmame
+	${INSTALL_DATA} ${WRKDIR}/cheat.dat ${PREFIX}/share/xmame
+.endif
+
 .include <bsd.port.mk>

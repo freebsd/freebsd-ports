@@ -1,0 +1,28 @@
+--- src/unix/unix.mak.orig	Sat Mar 10 09:11:54 2001
++++ src/unix/unix.mak	Sun Mar 11 19:26:27 2001
+@@ -50,14 +50,14 @@
+ LIBS.xfx        = $(X11LIB) $(JOY_X11_LIBS) -lX11 -lXext -lglide2x
+ LIBS.svgafx     = $(X11LIB) -lvga -lvgagl -lglide2x
+ LIBS.openstep	= -framework AppKit
+-LIBS.SDL	= -ldl -lSDL -lpthread -D_REENTRANT
++LIBS.SDL	= `$(SDL_CONFIG) --libs`
+ LIBS.photon2	= -L/usr/lib -lph -lphrender
+ 
+ CFLAGS.x11      = $(X11INC) $(JOY_X11_CFLAGS)
+ CFLAGS.xgl      = $(X11INC) $(JOY_X11_CFLAGS) $(GLDRIVER)
+ CFLAGS.xfx      = $(X11INC) $(JOY_X11_CFLAGS) -I/usr/include/glide
+ CFLAGS.svgafx   = -I/usr/include/glide
+-CFLAGS.SDL      = -D_REENTRANT
++CFLAGS.SDL      = `$(SDL_CONFIG) --cflags`
+ CFLAGS.photon2	=
+ 
+ INST.x11        = doinstall
+@@ -326,7 +326,7 @@
+ 
+ doc/x$(TARGET).6: all src/unix/xmame.6-1 src/unix/xmame.6-3
+ 	cat src/unix/xmame.6-1 > doc/x$(TARGET).6
+-	./x$(TARGET).$(DISPLAY_METHOD) -manhelp >> doc/x$(TARGET).6
++	./x$(TARGET).$(DISPLAY_METHOD) -noloadconfig -manhelp >> doc/x$(TARGET).6
+ 	cat src/unix/xmame.6-3 >> doc/x$(TARGET).6
+ 
+ install: $(INST.$(DISPLAY_METHOD)) install-man
