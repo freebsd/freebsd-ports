@@ -16,6 +16,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python Documentation Utilities
 
+BROKEN=		Broken pkg-plist
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
