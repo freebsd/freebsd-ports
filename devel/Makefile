@@ -750,6 +750,7 @@
     SUBDIR += ragel
     SUBDIR += re2c
     SUBDIR += regexx
+    SUBDIR += regexxer
     SUBDIR += rhtvision
     SUBDIR += rinfo
     SUBDIR += rlwrap
