@@ -20,8 +20,7 @@ RUN_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 
-GHC_VERSION=	`${PREFIX}/bin/ghc --version 2>&1 | \
-			${SED} 's/^.*version[ ]*\([0-9.]*\).*/\1/'`
+GHC_VERSION=	`${LOCALBASE}/bin/ghc --numeric-version`
 PLIST_SUB+=	C2HS_VERSION="${PORTVERSION}" GHC_VERSION="${GHC_VERSION}"
 
 CONFIGURE_ARGS+=	--prefix=${PREFIX} --enable-add-package
