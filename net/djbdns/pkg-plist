@@ -5,6 +5,8 @@ bin/dnscache
 bin/dnscache-conf
 bin/dnsfilter
 bin/dnsip
+%%WITH_IPV6%%bin/dnsip6
+%%WITH_IPV6%%bin/dnsip6q
 bin/dnsipq
 bin/dnsmx
 bin/dnsname
