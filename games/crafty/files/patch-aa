@@ -1,5 +1,5 @@
---- Makefile.orig	Thu Nov  5 20:53:45 1998
-+++ Makefile	Wed Dec 16 21:15:04 1998
+--- Makefile.orig	Tue Feb  9 08:11:48 1999
++++ Makefile	Fri Feb 19 15:40:02 1999
 @@ -69,13 +69,13 @@
  #           -DUSE_ASSEMBLY_A -DUSE_ASSEMBLY_B
  # asm     = X86.o
@@ -26,13 +26,13 @@
  # Note: You have to uncomment exactly ONE of the `asm' lines below.
 -target  = LINUX
 -CC      = gcc
--CFLAGS  = -pipe -D_REENTRANT -mpentium -O -Wall
+-CFLAGS  = -pipe -D_REENTRANT -mpentium -O
 -LDFLAGS = -lpthread
 -opt     = -DCOMPACT_ATTACKS -DUSE_SPLIT_SHIFTS -DUSE_ATTACK_FUNCTIONS \
 -          -DUSE_ASSEMBLY_A -DUSE_ASSEMBLY_B -DFAST -DSMP -DCPUS=4
 +#target  = LINUX
 +#CC      = gcc
-+#CFLAGS  = -pipe -D_REENTRANT -mpentium -O -Wall
++#CFLAGS  = -pipe -D_REENTRANT -mpentium -O
 +#LDFLAGS = -lpthread
 +#opt     = -DCOMPACT_ATTACKS -DUSE_SPLIT_SHIFTS -DUSE_ATTACK_FUNCTIONS \
 +#          -DUSE_ASSEMBLY_A -DUSE_ASSEMBLY_B -DFAST -DSMP -DCPUS=4
@@ -58,3 +58,16 @@
  
  objects = searchr.o search.o thread.o searchmp.o repeat.o next.o nexte.o      \
          nextr.o history.o quiesce.o evaluate.o movgen.o make.o unmake.o       \
+@@ -172,9 +175,9 @@
+ dgt:    dgtdrv.o
+ 	@cc -O -o dgt dgtdrv.c
+ 
+-egtb.o: egtb.cpp
+-	@echo $(CC) -c $(CFLAGS) egtb.cpp
+-	@$(CC) -c -$(CFLAGS) $(opts) egtb.cpp
++#egtb.o: egtb.cpp
++#	@echo $(CC) -c $(CFLAGS) egtb.cpp
++#	@$(CC) -c -$(CFLAGS) $(opts) egtb.cpp
+ clean:
+ 	-rm -f *.o crafty X86-elf.X X86-aout.S
+ 
