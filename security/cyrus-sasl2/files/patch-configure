@@ -1,5 +1,7 @@
---- configure.orig	Mon Apr 14 20:07:48 2003
-+++ configure	Tue Apr 15 01:39:33 2003
+Index: configure
+diff -u configure.orig configure
+--- configure.orig	Tue Apr 15 03:07:48 2003
++++ configure	Tue May 27 17:29:16 2003
 @@ -2652,7 +2652,7 @@
  	    BDB_LIBADD=""
  	fi
@@ -18,7 +20,16 @@
            do
              echo $ac_n "checking for db_create in -l$dbname""... $ac_c" 1>&6
  echo "configure:3050: checking for db_create in -l$dbname" >&5
-@@ -5456,7 +5456,7 @@
+@@ -3761,6 +3761,8 @@
+   SASLAUTHD_TRUE='#'
+   SASLAUTHD_FALSE=
+ fi
++SASLAUTHD_TRUE='#'
++SASLAUTHD_FALSE=
+ echo $ac_n "checking if I should include saslauthd""... $ac_c" 1>&6
+ echo "configure:3766: checking if I should include saslauthd" >&5
+ echo "$ac_t""$with_saslauthd" 1>&6
+@@ -5456,7 +5458,7 @@
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
@@ -27,7 +38,7 @@
  cat > conftest.$ac_ext <<EOF
  #line 5462 "configure"
  #include "confdefs.h"
-@@ -5494,7 +5494,7 @@
+@@ -5494,7 +5496,7 @@
       GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lgssapi_krb5 -lkrb5 -lk5crypto -lcom_err"
       GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_LIBS $gssapi_dir/libgssapi_krb5.a $gssapi_dir/libkrb5.a $gssapi_dir/libk5crypto.a $gssapi_dir/libcom_err.a"
    elif test "$gss_impl" = "heimdal"; then

@@ -95,7 +95,7 @@ create_sasldb() {
 
 sendmail_conf() {
 	if [ ! -f ${PKG_PREFIX}/lib/sasl2/Sendmail.conf ]; then
-		echo "pwcheck_method: %%PWCHECK_METHOD%%" > ${PKG_PREFIX}/lib/sasl2/Sendmail.conf
+		echo "pwcheck_method: auxprop" > ${PKG_PREFIX}/lib/sasl2/Sendmail.conf
 	fi
 }
 
