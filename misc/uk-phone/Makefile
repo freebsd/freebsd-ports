@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	uk-phone
-PORTVERSION=	2.5
+PORTVERSION=	2.6
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.Awfulhak.org/pub/uk-phone/ \
 		http://people.FreeBSD.org/~brian/uk-phone/
