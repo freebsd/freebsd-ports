@@ -1,0 +1,26 @@
+--- pathchar.8.orig	Mon Jul 12 16:09:19 1999
++++ pathchar.8	Mon Jul 12 16:13:44 1999
+@@ -145,6 +145,10 @@
+ .br
+ Between hop 0 and 1 there was a measured bandwith of 30Mb/s, average round-trip-time
+ to hop 1 of 1.27 ms and a maximum round-trip-time of 2.93 ms to hop 1.
++.SH "SEE ALSO"
++ping(8) , traceroute(8)
++.br
++http://www.caida.org/Pathchar/pathcharnotes.html
+ .SH "AUTHOR"
+ Implemented by Van Jacobson.
+ The current version is available via anonymous ftp:
+@@ -153,12 +157,6 @@
+ .I ftp://ftp.ee.lbl.gov/pathchar/
+ .RE
+ .SH "COMMENTS"
+-Strongly to be continued.
+ Send comments about this manpage to man@fips.de
+ .br
+ Bugreports and other to pathchar@ee.lbl.gov.
+-.SH "SEE ALSO"
+-.BR traceroute (8), ping (1M), 
+-.br
+-http://www.caida.org/Pathchar/pathcharnotes.html
+-
