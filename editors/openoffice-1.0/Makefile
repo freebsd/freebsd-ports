@@ -14,7 +14,7 @@ MASTER_SITES+=	http://ny1.mirror.openoffice.org/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/&,} \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
 		http://ny1.mirror.openoffice.org/miscellaneous/helpcontent/:help \
-		http://people.freebsd.org/~mbr/patches/:moz
+		http://people.freebsd.org/~mbr/ooo/:moz
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 DISTFILES+=	OOo_${PORTVERSION}_source.tar.bz2 \
 		gpc231.tar.Z:gpc patch-openoffice-mozilla101-2002-10-14:moz
@@ -245,16 +245,23 @@ pre-fetch:
 	@${ECHO} "kern.maxdsiz=\"1073741824\""
 	@${ECHO} "kern.maxssiz=\"268435456\""
 .endif
+	@${ECHO}
+	@${ECHO} "REQUIRED SYSTEM PATCHES:"
+	@${ECHO}
+	@${ECHO} "OO.org can crash if you enter a non existing path"
+	@${ECHO} "or URL in the location bar. To fix these crashes"
+	@${ECHO} "you need a uncommitted system patch for rtld:"
+	@${ECHO}
+	@${ECHO} "http://people.freebsd.org/~mbr/ooo/rtld-symlookup.diff"
+	@${ECHO}
 .if ${OSVERSION} < 460001
-	@${ECHO} "SYSTEM PATCHES:"
 	@${ECHO}
 	@${ECHO} "OO setup is broken on STABLE < 4.6"
 	@${ECHO} "including 4.6 RELEASE."
 	@${ECHO} "You'll need a system patch to solve"
-	@${ECHO}
 	@${ECHO} "this problem:"
 	@${ECHO}
-	@${ECHO} "http://people.freebsd.org/~mbr/patches/rtld-elf.diff"
+	@${ECHO} "http://people.freebsd.org/~mbr/ooo/rtld-alloca.diff"
 	@${ECHO}
 .endif
 .if ${OSVERSION} < 460002
@@ -262,7 +269,7 @@ pre-fetch:
 	@${ECHO} "OO.org soffice binary can deadlock. You can work around"
 	@${ECHO} "this problem with this patch:"
 	@${ECHO}
-	@${ECHO} "http://people.freebsd.org/~mbr/patches/rtld-elf-patch2.diff"
+	@${ECHO} "http://people.freebsd.org/~mbr/ooo/rtld-deadlock.diff"
 	@${ECHO}
 .endif
 .if ${OSVERSION} < 500000
@@ -270,7 +277,7 @@ pre-fetch:
 	@${ECHO} "OO.org build can deadlock in regmerge. You can work around"
 	@${ECHO} "this problem with this patch:"
 	@${ECHO}
-	@${ECHO} "http://people.freebsd.org/~mbr/patches/rtld-elf-patch3.diff"
+	@${ECHO} "http://people.freebsd.org/~mbr/ooo/rtld-builddeadlock.diff"
 	@${ECHO}
 .endif
 .if !exists(/usr/include/langinfo.h)
