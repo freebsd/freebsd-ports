@@ -286,6 +286,7 @@
     SUBDIR += micq
     SUBDIR += mldonkey
     SUBDIR += mldonkey-gui
+    SUBDIR += mldonkey-src
     SUBDIR += mmucl
     SUBDIR += mopd
     SUBDIR += mpd
