@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	courier-imap
-PORTVERSION=	4.0.1
+PORTVERSION=	4.0.2
 PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
@@ -41,13 +41,15 @@ CONFIGURE_ENV=	CFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 #
 # options available:
 #
-# WITHOUT_OPENSSL:		Don't build in TLS support
-# WITH_FAM:			Build in fam support for IDLE command
-# WITH_DRAC:			Build in DRAC support
-# WITH_TRASHQUOTA:		Include deleted mails in the quota
-# WITH_GDBM:			Use gdbm files instead of bdb
-# WITHOUT_IPV6			Don't build ipv6 support
+# WITH_SYSLOG_FACILITY:         The syslogfacility to use
 #
+
+OPTIONS=	OPENSSL		"Build with OpenSSL support"		on \
+		FAM		"Build in fam support for IDLE command"	off \
+		DRAC		"Build in DRAC support"			off \
+		TRASHQUOTA	"Include deleted mails in the quota"	off \
+		GDBM		"Use gdbm files instead of bdb"		off \
+		IPV6		"Build with IPv6 support"		on
 
 CONFDIR?=	${PREFIX}/etc/${PORTNAME}
 RCDIR?=		${PREFIX}/etc/rc.d
@@ -69,22 +71,30 @@ CONFIGURE_ARGS=	--sysconfdir=${CONFDIR} \
 		--disable-root-check \
 		--with-locking-method=fcntl
 
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_SSL)
+# we can't use USE_OPENSSL=yes after including bsd.port.pre.mk
+.include "${PORTSDIR}/Mk/bsd.openssl.mk"
+PLIST_SUB+=	OPENSSLFLAG=
+CONFIGURE_ARGS+=--enable-ssl
+.else
+PLIST_SUB+=	OPENSSLFLAG="@comment "
+.endif
+
+.if defined(WITH_SYSLOG_FACILITY)
+CONFIGURE_ARGS+=--with-syslog=${WITH_SYSLOG_FACILITY}
+.endif
+
 # Without explicitly mentioning this, if gdbm libraries are present,
 # they are silently picked up and used by courier-imap in place of
 # the standard db (v1) files.
 #
 .if defined(WITH_GDBM)
 LIB_DEPENDS+=	gdbm.3:${PORTSDIR}/databases/gdbm
-CONFIGURE_ARGS+=	--with-db=gdbm
+CONFIGURE_ARGS+=--with-db=gdbm
 .else
-CONFIGURE_ARGS+=	--with-db=db
-.endif
-
-.if !defined(WITHOUT_OPENSSL)
-USE_OPENSSL=	YES
-PLIST_SUB+=	OPENSSLFLAG=
-.else
-PLIST_SUB+=	OPENSSLFLAG="@comment "
+CONFIGURE_ARGS+=--with-db=db
 .endif
 
 .if defined(WITHOUT_IPV6)
@@ -127,8 +137,6 @@ post-patch:
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|@LIBS@|@LIBS@ -rpath=:${LOCALBASE}/lib/courier-authlib|' \
 		${WRKSRC}/imap/Makefile.in
-
-.include <bsd.port.pre.mk>
 
 post-install:
 .for i in imapd pop3d
