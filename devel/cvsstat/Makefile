@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cvsstat
-PORTVERSION=	2.19
+PORTVERSION=	2.20
 CATEGORIES=	devel
 MASTER_SITES=	http://cvs.sslug.dk/cvs2html/utils/
 DISTNAME=	${PORTNAME}
