@@ -1,0 +1,30 @@
+bin/xwpl
+share/examples/xwpl/bomb.asc
+share/examples/xwpl/car_seg.asc
+share/examples/xwpl/caruso.asc
+share/examples/xwpl/chirp256.asc
+share/examples/xwpl/d.asc
+share/examples/xwpl/f+r.asc
+share/examples/xwpl/fort.asc
+share/examples/xwpl/fort_seg.asc
+share/examples/xwpl/linchirp.asc
+share/examples/xwpl/line.asc
+share/examples/xwpl/long.asc
+share/examples/xwpl/ping.asc
+share/examples/xwpl/quadchrp.asc
+share/examples/xwpl/r.asc
+share/examples/xwpl/s+100d.asc
+share/examples/xwpl/s+d.asc
+share/examples/xwpl/s+r.asc
+share/examples/xwpl/s.asc
+share/examples/xwpl/sgnr.asc
+share/examples/xwpl/spike.asc
+share/examples/xwpl/sxexpr.asc
+share/examples/xwpl/transien.asc
+share/examples/xwpl/twochrp1.asc
+share/examples/xwpl/twochrp2.asc
+share/examples/xwpl/zero.asc
+share/doc/xwpl/manual.ps
+share/doc/xwpl/README
+@dirrm share/examples/xwpl
+@dirrm share/doc/xwpl
