@@ -6,9 +6,10 @@
 #
 
 PORTNAME=		cyrproxy
-PORTVERSION=		1.4.2
+PORTVERSION=		1.4.2.20010208
 CATEGORIES=		russian net www
 MASTER_SITES=		ftp://ftp.lexa.ru/pub/domestic/lexa/
+DISTNAME=		cyrproxy-1.4.2
 
 MAINTAINER=		ports@FreeBSD.org
 
