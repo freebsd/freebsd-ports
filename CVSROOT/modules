@@ -5452,6 +5452,7 @@ py-sqlrelay	ports/databases/py-sqlrelay
 py-tkinter	ports/x11-toolkits/py-tkinter
 py-trex		ports/textproc/py-trex
 py-twisted	ports/devel/py-twisted
+py-twofish	ports/security/py-twofish
 py-unit		ports/devel/py-unit
 py-websvcs	ports/www/py-websvcs
 py-wxPython	ports/x11-toolkits/py-wxPython
