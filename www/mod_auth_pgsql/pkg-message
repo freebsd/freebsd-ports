@@ -1,0 +1,8 @@
+
+	================= Upgrading ===================
+
+Note on upgrading from earlier versions. All of the module's commands
+are now consistently named Auth_PG_*. Make sure to review your Apache
+config file(s) and, well, ``s/Auth_PG([^_])/Auth_PG_\1/g''.
+
+	===============================================

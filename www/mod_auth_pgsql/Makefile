@@ -42,15 +42,12 @@ AUTH_PGSQL_DOCS=	apache/manual/mod/mod_auth_pgsql
 
 PLIST_SUB+=	AUTH_PGSQL_DOCS="${AUTH_PGSQL_DOCS}"
 
-PKGMESSAGE=	${WRKSRC}/.install_notes
-
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-pgsql=${PREFIX} \
 		--with-apxs=${APXS}
 
-.if !defined(NOPORTDOCS)
-PLIST_SUB+=	DOC=''
 post-install:
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/${AUTH_PGSQL_DOCS}
 	${INSTALL_DATA} ${WRKSRC}/README \
 		${PREFIX}/share/doc/${AUTH_PGSQL_DOCS}/
@@ -61,8 +58,7 @@ post-install:
 	${CHOWN} ${SHAREOWN}:${SHAREGRP} \
 		${PREFIX}/share/doc/${AUTH_PGSQL_DOCS}/index.html
 	${LN} -sf ${AUTH_PGSQL_DOCS} ${PREFIX}/share/doc/
-.else
-PLIST_SUB+=	DOC='@comment '
 .endif
+	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
