@@ -3,7 +3,7 @@
 # Date created:				April 26th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.2 1997/05/24 13:17:14 jfitz Exp $
+#   $Id: Makefile,v 1.3 1997/05/25 08:46:07 jfitz Exp $
 #
 
 DISTNAME=	mod_perl-0.98
@@ -17,7 +17,7 @@ MAINTAINER=	jfitz@FreeBSD.ORG
 BUILD_DEPENDS=	perl5.004:${PORTSDIR}/lang/perl5
 RUN_DEPENDS=	perl5.004:${PORTSDIR}/lang/perl5
 
-CONFIGURE_ENV+=	PORTSDIR=${PORTSDIR} INSTALL_PROGRAM="${INSTALL_PROGRAM}"
+CONFIGURE_ENV=	PORTSDIR=${PORTSDIR} INSTALL_PROGRAM="${INSTALL_PROGRAM}"
 
 MAN3=		Apache.3 Apache::Constants.3  Apache::Options.3 \
 		Apache::Registry.3  Apache::Status.3  Bundle::Apache.3 \
