@@ -1,0 +1,11 @@
+Perl module for creation and manipulation of tar files.
+
+This module uses no C-coded parts in itself, but it will try to use
+the Compress::Zlib module to read and write gzipped tarfiles.
+Archive::Tar will still work without Zlib, it will just complain a
+little bit (and, of course, not be able to use compression). The
+complaining will be removed when the module leaves the alpha stage,
+and can be trivially removed by commenting out the offending print
+near the top of Tar.pm.
+
+Roman Shterenzon <roman@xpert.com>
