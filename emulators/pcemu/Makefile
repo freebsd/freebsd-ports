@@ -3,7 +3,7 @@
 # Date created:		7 March 1995
 # Whom:			joerg
 #
-# $Id: Makefile,v 1.11 1998/10/25 18:28:52 fenner Exp $
+# $Id: Makefile,v 1.12 1998/11/28 00:44:33 asami Exp $
 #
 
 DISTNAME=	pcemu1.01alpha
@@ -34,5 +34,6 @@ MASTER_SITES+=	ftp://ftp.cs.bris.ac.uk/pub/users/hedley/
 MAINTAINER=	joerg@FreeBSD.org
 
 USE_XLIB=	yes
+MAKE_ENV=	FILESDIR=${FILESDIR}
 
 .include <bsd.port.mk>
