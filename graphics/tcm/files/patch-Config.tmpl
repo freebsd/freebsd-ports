@@ -1,0 +1,74 @@
+--- src/Config.tmpl_freebsd.orig	Tue Jul 17 23:53:35 2001
++++ src/Config.tmpl_freebsd	Tue Jul 17 23:53:49 2001
+@@ -0,0 +1,71 @@
++# Configuration file for FreeBSD and gcc compiler.
++
++include $(TCM_HOME)/src/Config.GEN
++
++STRIP           = /usr/bin/strip --strip-debug
++# STRIP           = true
++
++CFLAGS          += -Wall -pedantic -fomit-frame-pointer
++# CFLAGS      	+= -g
++
++LEX		= flex
++YACC		= bison
++
++#XWIN_HOME	= /usr/X11R6
++XWIN_HOME	= $(X11BASE)
++
++SYSFLAGS        = -DBSD
++# SYSFLAGS += -DDEBUG
++
++# Uncomment one of the following Motif/Lesstif segments or
++# add your own.
++
++# Lesstif 1.2 (dynamic linked)
++#MOTIF_HOME = /usr/X11R6/LessTif/Motif1.2
++#LDLIBS = -lXm
++
++# Lesstif 1.2 (static linked)
++# MOTIF_HOME = /usr/X11R6/LessTif/Motif1.2
++# LDLIBS = $(MOTIF_LIB)/libXm.a
++
++# OSF/Motif 1.2 (dynamic linked)
++# MOTIF_HOME = /local/opt/motif12
++# LDLIBS = -lXm
++
++# OSF/Motif 1.2 (static linked)
++# MOTIF_HOME = /local/opt/motif12
++# LDLIBS = $(MOTIF_LIB)/libXm.a
++
++# OSF/Motif 2.0 (dynamic linked)
++# MOTIF_HOME = /local/opt/motif20
++# LDLIBS = -lXpm -lXm
++
++# OSF/Motif 2.0 (static linked)
++# MOTIF_HOME = /local/opt/motif20
++# LDLIBS = $(MOTIF_LIB)/libXpm.a $(MOTIF_LIB)/libXm.a
++
++# OSF/Motif 2.1 (dynamic linked)
++# MOTIF_HOME = /local/opt/motif21
++# LDLIBS = -lXp -lXm
++
++# OSF/Motif 2.1 (static linked)
++# MOTIF_HOME = /local/opt/motif21
++# LDLIBS = $(MOTIF_LIB)/libXm.a $(XWIN_LIB)/libXp.a
++
++# OpenMotif 2.1 (dynamic linked)
++MOTIF_HOME = $(XWIN_HOME)
++LDLIBS = -lXm -lXp
++
++# OpenMotif 2.1 (static linked)
++# MOTIF_HOME  = $(XWIN_HOME)
++# LDLIBS = $(MOTIF_LIB)/libXm.a -lXp
++
++# The other libraries (don't change these)
++LDLIBS += -lXt -lSM -lICE -lXext -lX11 -lm
++
++# 'make depend' and its flags
++MKDEPEND=$(TCM_HOME)/bin/makedepend.sh
++MKDEPENDFLAGS := $(CPPFLAGS) -D__i386__ -I/usr/include/g++-3 \
++                -I/usr/include/g++-2 \
++                -I/usr/include/g++
++

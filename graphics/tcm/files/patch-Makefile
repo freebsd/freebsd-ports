@@ -1,0 +1,32 @@
+--- Makefile.orig	Wed Dec 13 15:19:34 2000
++++ Makefile	Wed Jul 18 02:20:35 2001
+@@ -4,7 +4,7 @@
+ 
+ # change this if you want to install it in a different place
+ ifndef TCM_INSTALL_DIR
+-	TCM_INSTALL_DIR=/opt/tcm
++	TCM_INSTALL_DIR=$(PREFIX)/tcm
+ endif
+ 
+ # the current version.
+@@ -42,6 +42,11 @@
+     TCM_PLATFORM = osf1
+     TCM_COMPILER = gcc
+ endif
++ifeq ($(UNAME),FreeBSD)
++    TCM_PLATFORM = freebsd
++    TCM_COMPILER = gcc
++    TCM_INSTALL_CMD = /bin/cp -Rp
++endif
+ ifeq ($(UNAME),SunOS)
+     TCM_PLATFORM = solaris
+     TCM_COMPILER = suncc
+@@ -70,7 +75,7 @@
+ 	@echo make all: to do all this in one run
+ 	@echo make clean: to remove all binaries, object and temporary files.
+ 
+-all: config depend execs install
++all: config depend execs
+ 
+ execs:
+ 	(cd ./src; ${MAKE} TCM_HOME='$(TCM_COMPILE_DIR)' \
