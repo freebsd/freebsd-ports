@@ -1,0 +1,14 @@
+This is a simple Yahoo Messenger client that requires no windowing system,
+and it therefore can be quite useful in situations where a minimal system
+is being used or when a windowing system is otherwise unavailable or
+unfeasible.
+
+Ari's Yahoo Client is copyright (C) 2000 Ari Johnson, and this software
+is protected by the GNU General Public License, which should have been
+distributed along with this software as the file 'COPYING'.
+
+If you need to contact the developer, please e-mail him at:
+  ari@lusis.org
+
+- George Reid
+greid@ukug.uk.freebsd.org

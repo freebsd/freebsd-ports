@@ -18,6 +18,7 @@
     SUBDIR += alevt
     SUBDIR += amanda
     SUBDIR += amanda24
+    SUBDIR += ari-yahoo
     SUBDIR += asbutton
     SUBDIR += astrolog
     SUBDIR += bb
