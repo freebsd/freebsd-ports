@@ -1,0 +1,7 @@
+bin/babysit
+bin/bsok
+bin/envuidgid
+bin/execlp
+bin/setugid
+bin/tcpaccept
+bin/tcplisten

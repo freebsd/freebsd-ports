@@ -108,6 +108,7 @@
     SUBDIR += mkfile
     SUBDIR += mkisofs
     SUBDIR += mksunbootcd
+    SUBDIR += mktool
     SUBDIR += monitord
     SUBDIR += msyslog
     SUBDIR += muse
