@@ -39,6 +39,7 @@
     SUBDIR += libranlib
     SUBDIR += linalg
     SUBDIR += linpack
+    SUBDIR += matrix
     SUBDIR += metis
     SUBDIR += mtrxmath
     SUBDIR += netcdf
