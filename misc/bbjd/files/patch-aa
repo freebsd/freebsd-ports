@@ -1,0 +1,22 @@
+--- Makefile.orig	Mon Oct 26 05:47:44 1998
++++ Makefile	Sun Feb 14 17:39:37 1999
+@@ -13,8 +13,8 @@
+                -Wmissing-declarations -Wreturn-type \
+                -Wnested-externs -Wwrite-strings -Wcast-qual
+ INCDIR = -I. -I/usr/include 
+-CFLAGS = $(DEFINES) $(LANG_OPTIONS) $(WARN_OPTIONS) $(INCDIR)
+-COPTS = -O2
++CFLAGS?= -O2
++CFLAGS+= $(DEFINES) $(LANG_OPTIONS) $(WARN_OPTIONS) $(INCDIR)
+ 
+ ######## link options ########
+ LD = gcc
+@@ -36,7 +36,7 @@
+ 
+ %o: %c
+ 	@echo --- compiling: $< ---
+-	$(CC) $(CFLAGS) $(COPTS) -c $< -o $@
++	$(CC) $(CFLAGS) -c $< -o $@
+ 
+ clean:
+ 	rm -f probability.o interactive.o display.o simulate.o core
