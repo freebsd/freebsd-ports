@@ -1,0 +1,6 @@
+%%RUBY_SITEARCHLIBDIR%%/cdb.so
+%%RUBY_SITELIBDIR%%/cdb.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/cdb/sample.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/cdb
+%%PORTDOCS%%%%RUBY_DOCDIR%%/cdb/README
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/cdb
