@@ -7,7 +7,7 @@
 
 PORTNAME=	portupgrade
 PORTVERSION=	20020220.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.iDaemons.org/distfiles/
@@ -56,6 +56,7 @@ INSTALL_TARGET+=	install-doc
 .endif
 
 post-patch:
+	${RUBY} -i.orig -pe 'gsub(/abs_db_driver/, "abs_db_dir")' ${WRKSRC}/lib/pkgdb.rb
 	${RUBY} -i.orig -pe '$$. == 85 and sub(/_freebsd_pkgtools_which_files/, "_freebsd_pkgtools_ports")' ${WRKSRC}/misc/zsh/_pkgtools
 
 post-install:
