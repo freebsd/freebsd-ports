@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PySQLite
-PORTVERSION=	0.4.3
+PORTVERSION=	0.5.0
 CATEGORIES=	databases python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pysqlite
@@ -19,13 +19,12 @@ COMMENT=	A DB-API v2 Python library for the SQLite embedded SQL engine
 RUN_DEPENDS=	${DATETIME_DEP}:${PORTSDIR}/lang/py-mx-base
 LIB_DEPENDS=	sqlite.2:${PORTSDIR}/databases/sqlite
 
-WRKSRC=		${WRKDIR}/pysqlite-${PORTVERSION}
+WRKSRC=		${WRKDIR}/pysqlite
+EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
 DOCS=		README
-
-PLIST_SUB+=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S/^${LOCALBASE}\///g}
 
 DATETIME_DEP=	${PYTHON_SITELIBDIR}/mx/DateTime/__init__.py
 
@@ -37,6 +36,8 @@ post-install:
 .for file in ${DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
+	@${MKDIR} ${EXAMPLESDIR}
+	${CP} ${WRKSRC}/examples/*.py ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
