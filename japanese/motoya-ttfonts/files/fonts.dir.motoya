@@ -1,0 +1,9 @@
+8
+bw=0.5:nfa1kp.ttc	-motoya-aporo-medium-r-normal--0-0-0-p-jisx0201.1976-0
+nfa1kp.ttc		-motoya-aporo-medium-r-normal--0-0-0-p-jisx0208.1983-0
+bw=0.5:nfa1kp.ttc	-motoya-aporo-medium-r-normal--0-0-0-c-jisx0201.1976-0
+nfa1kp.ttc		-motoya-aporo-medium-r-normal--0-0-0-c-jisx0208.1983-0
+bw=0.5:nfc1kp.ttc	-motoya-cedar-medium-r-normal--0-0-0-p-jisx0201.1976-0
+nfc1kp.ttc		-motoya-cedar-medium-r-normal--0-0-0-p-jisx0208.1983-0
+bw=0.5:nfc1kp.ttc	-motoya-cedar-medium-r-normal--0-0-0-c-jisx0201.1976-0
+nfc1kp.ttc		-motoya-cedar-medium-r-normal--0-0-0-c-jisx0208.1983-0
