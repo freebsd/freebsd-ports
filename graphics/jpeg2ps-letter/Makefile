@@ -27,8 +27,8 @@ post-patch:
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/jpeg2ps ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/jpeg2ps
-	${INSTALL_DATA} ${WRKSRC}/jpeg2ps.txt ${PREFIX}/share/doc/jpeg2ps
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/jpeg2ps.txt ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
