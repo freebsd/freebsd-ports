@@ -1,0 +1,13 @@
+libGringotts is a small, easy-to-use, thread-safe C library originally
+developed for Gringotts; its purpose is to encapsulate data (generic: ASCII,
+but also binary data) in an encrypted and compressed structure, to be written
+in a file or used elseway. It makes use of strong encryption algorithms, to
+ensure the data are as safe as possible, and allow the user to have the
+complete control over all the algorithms used in the process. 
+
+For encryptions, libGringotts makes use of the MCrypt and MHash libs by Nikos
+Mavroyanopoulos.
+
+WWW: http://devel.pluto.linux.it/projects/libGringotts/
+
+- Anders Nordby <anders@fix.no>
