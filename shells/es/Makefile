@@ -7,7 +7,7 @@
 
 PORTNAME=	es
 PORTVERSION=	0.9.b1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	shells
 MASTER_SITES=	ftp://ftp.sys.toronto.edu/pub/es/
 DISTNAME=	es-0.9-beta1
@@ -22,10 +22,4 @@ ALL_TARGET=	es
 MAN1=		es.1
 PLIST_FILES=	bin/es
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-BROKEN=		"Does not compile on amd64"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
