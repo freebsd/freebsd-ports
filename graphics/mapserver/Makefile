@@ -17,6 +17,8 @@ COMMENT=		System for developing web-based GIS applications
 LIB_DEPENDS=		gd.4:${PORTSDIR}/graphics/gd \
 			proj.5:${PORTSDIR}/graphics/proj
 
+BROKEN=			"Does not install"
+
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--enable-runpath \
