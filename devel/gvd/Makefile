@@ -6,10 +6,11 @@
 #
 
 PORTNAME=		gvd
-PORTVERSION=		1.2.0
+PORTVERSION=		1.2.5
 CATEGORIES=		devel
 MASTER_SITES=		http://libre.act-europe.fr/gvd/
-DISTFILES=		${PORTNAME}-${PORTVERSION}-src.tgz
+DISTNAME=		${PORTNAME}-${PORTVERSION}-src
+EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		sam@inf.enst.fr
 
@@ -17,12 +18,17 @@ BUILD_DEPENDS=		adagcc:${PORTSDIR}/lang/gnat \
 			tex:${PORTSDIR}/print/teTeX
 LIB_DEPENDS=		gtkada.12:${PORTSDIR}/x11-toolkits/gtkada
 
-WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}-src
+WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ENV=		CC=adagcc
 MAKE_ENV=		CC=adagcc
 USE_X_PREFIX=		yes
 USE_GMAKE=		yes
+
+post-install:
+	${GMAKE} -C ${WRKSRC}/docs docdir=${PREFIX}/share/doc/gvd install
+	${MV} ${PREFIX}/share/doc/gvd/gvd.info ${PREFIX}/info/
+	install-info ${PREFIX}/info/gvd.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>
