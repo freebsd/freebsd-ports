@@ -1,6 +1,13 @@
---- libdib/Makefile.in.orig	Tue Jul 13 22:14:28 1999
-+++ libdib/Makefile.in	Tue May 30 19:22:58 2000
-@@ -28,25 +28,29 @@
+--- libdib/Makefile.in.orig	Fri Sep 22 04:14:36 2000
++++ libdib/Makefile.in	Sat Nov  4 20:27:35 2000
+@@ -22,30 +22,34 @@
+ libdir = @libdir@
+ mandir = @mandir@
+ 
+-CFLAGS = @CFLAGS@ @DEFS@ -I.
++CFLAGS = @CFLAGS@ @DEFS@ -I. -I..
+ 
+ MKINSTALLDIRS = $(srcdir)/mkinstalldirs
  
  SHELL = /bin/sh
  
@@ -8,7 +15,8 @@
 +.SUFFIXES: .c .o .so
  
  MYOBJECTS = \
-     bytelevel.o \
+-    ../bytelevel.o \
++    bytelevel.o \
      bintree.o \
      dibtoxpm.o
  
@@ -19,7 +27,7 @@
  	$(AR) rc libdib.a $(MYOBJECTS)
  	$(RANLIB) libdib.a 
  
-+libdib.so.1:  $(MYOBJECTS:.o=.so)
++libdib.so.1:	$(MYOBJECTS:.o=.so)
 +	$(CC) -shared -Wl,-soname,$@ -o $@ $(MYOBJECTS:.o=.so) $(LIBS)
 +	ln -sf libdib.so.1 libdib.so
 +
@@ -28,13 +36,11 @@
  
 -%.o: %.c
 -	$(CC) $(CFLAGS) -c $*.c
--
 +.c.so:
 +	$(CC) $(CFLAGS) -fPIC -DPIC -o $@ -c $<
-+       
+ 
  clean:
  	rm -rf *.o *.a test_dibtoxpm a.out core
- 
 @@ -60,6 +64,8 @@
  install: all installdirs
  	$(INSTALL_DATA) dibtoxpm.h $(INCLUDEDIR)/dibtoxpm.h

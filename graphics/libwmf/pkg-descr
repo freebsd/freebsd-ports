@@ -3,4 +3,4 @@ files into other formats, currently it supports a gd binding
 to convert to png, and an X one to draw direct to an X window
 or pixmap.
 
-WWW: http://www.csn.ul.ie/~caolan/docs/libwmf.html
+WWW: http://www.wvware.com/libwmf.html

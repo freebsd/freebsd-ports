@@ -1,3 +1,4 @@
+bin/wmftoeps
 bin/wmftofig
 bin/wmftopng
 bin/xwmf
@@ -20,6 +21,12 @@ lib/libXwmf.so.1
 lib/libdib.a
 lib/libdib.so
 lib/libdib.so.1
+lib/libeps.a
+lib/libeps.so
+lib/libeps.so.1
+lib/libepswmf.a
+lib/libepswmf.so
+lib/libepswmf.so.1
 lib/libgdwmf.a
 lib/libgdwmf.so
 lib/libgdwmf.so.1
