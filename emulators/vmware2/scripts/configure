@@ -1,0 +1,5 @@
+#!/bin/sh
+mkdir -p ${WRKDIRPREFIX}${CURDIR}
+. `dirname $0`/configure.linproc
+. `dirname $0`/configure.net
+
