@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bookcase
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.3
 CATEGORIES=	misc kde
 MASTER_SITES=	http://www.periapsis.org/bookcase/download/
 
