@@ -3,7 +3,7 @@
 # Date created:		15 April 1998
 # Whom:			Taguchi Takeshi <taguchi@tohoku.iij.ad.jp>
 #
-# $Id: Makefile,v 1.9 1998/12/01 03:06:46 asami Exp $
+# $Id: Makefile,v 1.10 1998/12/05 06:12:16 kuriyama Exp $
 #
 
 DISTNAME=	xc
@@ -24,7 +24,7 @@ PATCHFILES=	3.3.2-patch1 3.3.2-patch2 3.3.2-patch3 \
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
-LIB_DEPENDS=	ttf.2:${PORTSDIR}/print/freetype
+LIB_DEPENDS=	ttf.3:${PORTSDIR}/print/freetype
 
 .if !defined(XDM_DES) && defined(USA_RESIDENT)
 .if ${USA_RESIDENT} == NO

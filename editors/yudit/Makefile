@@ -3,7 +3,7 @@
 # Date created:		October 3, 1998
 # Whom:			rch@richard.eu.org
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/12/07 22:05:40 kuriyama Exp $
 #
 
 DISTNAME=	yudit-1.1
@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR= apps/editors/X
 
 MAINTAINER=	rch@WriteMe.Com
 
-LIB_DEPENDS=	ttf.2:${PORTSDIR}/print/freetype
+LIB_DEPENDS=	ttf.3:${PORTSDIR}/print/freetype
 
 CONFIGURE_ENV=	LC_ALL=C
 GNU_CONFIGURE=	YES
