@@ -38,18 +38,6 @@ MAN1=		vim.1 vimtutor.1 xxd.1
 MLINKS=		vim.1 rvim.1  vim.1 rview.1  ectags.1 etags.1
 MLINKS+=	vim.1 gvim.1  vim.1 gview.1  vim.1 rgvim.1  vim.1 rgview.1
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} >= 500800
-BROKEN=		"Does not compile with perl 5.8"
-.endif
-
-# Determine if we need xpg4.
-# No xpg4 in libc below 400020 and 500005
-.if ${OSVERSION} < 400020 && ${OSVERSION} < 500005
-MAKE_ARGS+=	LIBS=-lxpg4
-.endif
-
 .if !defined(LITE)
 MAKE_ARGS+=	CONF_OPT_MAX="--enable-max-features"
 I18N=		CONF_OPT_MULTIBYTE="--enable-multibyte --enable-fontset --enable-xim"
@@ -82,6 +70,18 @@ PKGNAMESUFFIX?=	-lite
 MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=no --without-x --enable-multibyte"
 MAKE_ARGS+=	CONF_OPT_PERL="--disable-perlinterp --disable-pythoninterp --disable-tclinterp"
 .endif	# LITE
+
+.include <bsd.port.pre.mk>
+
+# Determine if we need xpg4.
+# No xpg4 in libc below 400020 and 500005
+.if ${OSVERSION} < 400020 && ${OSVERSION} < 500005
+MAKE_ARGS+=	LIBS=-lxpg4
+.endif
+
+.if ${PERL_LEVEL} >= 500800
+BROKEN=		"Does not compile with perl 5.8"
+.endif
 
 pre-build:
 	@(cd ${WRKSRC}; ${MAKE} distclean)
