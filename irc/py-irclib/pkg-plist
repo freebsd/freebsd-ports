@@ -1,10 +1,9 @@
-%%EXAMPLESDIR%%/ircbot.py
-%%EXAMPLESDIR%%/irccat
-%%EXAMPLESDIR%%/irccat2
-%%EXAMPLESDIR%%/servermap
-%%EXAMPLESDIR%%/testbot.py
-@dirrm %%EXAMPLESDIR%%
-@cwd %%LOCALBASE%%
 %%PYTHON_SITELIBDIR%%/irclib.py
 %%PYTHON_SITELIBDIR%%/irclib.pyc
 %%PYTHON_SITELIBDIR%%/irclib.pyo
+%%PORTDOCS%%%%EXAMPLESDIR%%/ircbot.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/irccat
+%%PORTDOCS%%%%EXAMPLESDIR%%/irccat2
+%%PORTDOCS%%%%EXAMPLESDIR%%/servermap
+%%PORTDOCS%%%%EXAMPLESDIR%%/testbot.py
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
