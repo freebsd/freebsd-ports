@@ -19,7 +19,7 @@
  
 -gimpdatadir=$datadir/$PACKAGE/$GIMP_MAJOR_VERSION.$GIMP_MINOR_VERSION
 -gimpplugindir=$libdir/$PACKAGE/$GIMP_MAJOR_VERSION.$GIMP_MINOR_VERSION
-+gimpdatadir=$datadir/gimp
++gimpdatadir=$datadir/$PACKAGE
 +gimpplugindir=$libexecdir/$PACKAGE/$GIMP_MAJOR_VERSION.$GIMP_MINOR_VERSION
  localedir='${prefix}/${DATADIRNAME}/locale'
  
