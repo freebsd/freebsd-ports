@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cannadic
-PORTVERSION=	0.94c
+PORTVERSION=	0.94d
 CATEGORIES=	japanese
 MASTER_SITES=	http://cannadic.oucrc.org/
 
