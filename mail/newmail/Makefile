@@ -8,8 +8,7 @@
 PORTNAME=	newmail
 PORTVERSION=	1.0.1
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.ugh.net.au/pub/unix/newmail/ \
-		ftp://css.tuu.utas.edu.au/pub/unix/newmail/
+MASTER_SITES=	ftp://ftp.ugh.net.au/pub/unix/newmail/
 
 MAINTAINER=	andrew@ugh.net.au
 
