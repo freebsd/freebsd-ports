@@ -3,7 +3,7 @@
 # Date created:					May 4th 1997
 # Whom:						jfitz@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.7 1998/02/25 09:41:30 asami Exp $
+# $Id: Makefile,v 1.8 1998/09/23 15:36:26 stb Exp $
 #
 
 DISTNAME=	cyrus-imapd-v1.5.14
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/
 
 MAINTAINER=	stb@FreeBSD.ORG
 
-LIB_DEPENDS=	tcl80\\.1\\.:${PORTSDIR}/lang/tcl80
+LIB_DEPENDS=	tcl80.1:${PORTSDIR}/lang/tcl80
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 
 HAS_CONFIGURE=	YES
