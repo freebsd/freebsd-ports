@@ -6,7 +6,7 @@
 #			and apache-ssl port by Mark Murray <mark@grondar.za>.
 #			Oh, and with a little bit of help from Ben :)
 #
-# $Id: $
+# $Id: Makefile,v 1.48 1998/12/11 22:37:09 billf Exp $
 
 APACHE= 	1.3.3
 APACHE-SSL=	1.28
@@ -37,6 +37,8 @@ MAINTAINER=     Adam Laurie \<adam@algroup.co.uk\>
 
 
 RUN_DEPENDS=	ssleay:${PORTSDIR}/security/SSLeay
+
+BROKEN=		fails on patch
 
 EXTRACT_ONLY=   ${DISTNAME}${EXTRACT_SUFX}
 
