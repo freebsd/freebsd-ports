@@ -22,10 +22,4 @@ USE_XLIB=	yes
 PLIST_FILES=	bin/xsvg
 MAN1=		xsvg.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=	Does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
