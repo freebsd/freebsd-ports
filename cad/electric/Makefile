@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	electric
-PORTVERSION=	6.0.7
+PORTVERSION=	6.0.7.1
 CATEGORIES=	cad
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(.)$/\1/}
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/^(...)\./\1/}
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A Sophisticated electrical CAD system
@@ -20,6 +20,7 @@ USE_XLIB=	yes
 USE_MOTIF=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	-with-x
+WRKSRC=	${WRKDIR}/electric-6.07
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local/lib/electric/|${PREFIX}/share/electric/lib/|; \
