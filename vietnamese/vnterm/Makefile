@@ -7,12 +7,10 @@
 #
 
 PORTNAME=	vnterm
-PORTVERSION=	3.3
+PORTVERSION=	3.4	#11.6.5.1
 CATEGORIES=	vietnamese x11
-MASTER_SITES=	ftp://ftp.media.mit.edu/pub/Vietnet/Viscii/Unix/  \
-		ftp://ftp.monash.edu.au/pub/vietnam/unix/
-DISTNAME=	${PORTNAME}${PORTVERSION}
-EXTRACT_SUFX=	.tar.Z
+MASTER_SITES=	ftp://ftp.x.org/pub/R6.5.1/tars/
+DISTNAME=	xorg-1
 
 MAINTAINER=	obrien@FreeBSD.org
 
@@ -20,27 +18,27 @@ USE_IMAKE=	yes
 
 .include <bsd.port.pre.mk>
 
+BUILD_DEPENDS=  ${LOCALBASE}/lib/libviqr.a:${PORTSDIR}/vietnamese/libviet
+RUN_DEPENDS=	${PREFIX}/lib/X11/fonts/vietnamese/fonts.dir:${PORTSDIR}/vietnamese/vnxfonts
 .if ${XFREE86_VERSION} == 4
 RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
 .endif
 
+EXTRACT_AFTER_ARGS=	| ${TAR} -xf - xc/programs/xterm
+WRKSRC=		${WRKDIR}/xc/programs/xterm
 XMKMF=		xmkmf
 MAN1=		vnterm.1
-CFLAGS+=	-I../../include
+CFLAGS+=	-I${PREFIX}/include/viet
 
 post-patch:
-	@${LN} ${WRKSRC}/XTerm.ad ${WRKSRC}/VNTerm.ad
-	@${LN} ${WRKSRC}/vnterm.1V ${WRKSRC}/vnterm.man
+	@${CP} -p ${FILESDIR}/vnvars.* ${WRKSRC}
+
+pre-build:
+	${LN} -f ${WRKSRC}/XTerm.ad ${WRKSRC}/VNTerm.ad
+	${LN} -f ${FILESDIR}/vnterm.1V ${WRKSRC}/vnterm.man
 
 post-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/VNterm.sh ${PREFIX}/bin/VNterm
-	@${MKDIR} ${PREFIX}/lib/X11/fonts/vietnamese
-	@(cd ${WRKSRC}/../fonts/X ; \
-	${INSTALL_DATA} fonts.dir *.pcf.Z  \
-		${PREFIX}/lib/X11/fonts/vietnamese ; \
-	)
-	@${SETENV} PKG_PREFIX=${PREFIX} \
-		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/vnterm \
 		&& ${CHMOD} a+rx ${PREFIX}/share/doc/vnterm
