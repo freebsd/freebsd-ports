@@ -10,6 +10,7 @@ include/ulxr_connection.h
 include/ulxr_dispatcher.h
 include/ulxr_except.h
 include/ulxr_expatwrap.h
+include/ulxr_htmlform_handler.h
 include/ulxr_http_client.h
 include/ulxr_http_connection.h
 include/ulxr_http_server.h
