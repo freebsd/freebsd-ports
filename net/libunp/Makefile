@@ -9,8 +9,8 @@ PORTNAME=	libunp
 PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	net ipv6
-MASTER_SITES=	ftp://ftp.kohala.com/pub/rstevens/ \
-		http://www.cs.columbia.edu/networks98/stevens/
+MASTER_SITES=	http://www1.cs.columbia.edu/networks98/stevens/ \
+		ftp://ftp.kohala.com/pub/rstevens/
 DISTNAME=	unpv12e
 
 MAINTAINER=	ports@FreeBSD.org
