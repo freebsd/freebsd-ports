@@ -1,0 +1,18 @@
+bin/embryo
+bin/embryo_cc
+bin/embryo-config
+include/Embryo.h
+lib/libembryo.a
+lib/libembryo.so
+lib/libembryo.so.9
+libdata/pkgconfig/embryo.pc
+%%DATADIR%%/include/default.inc
+%%DATADIR%%/examples/example.inc
+%%DATADIR%%/examples/example.sma
+%%DATADIR%%/examples/recurse.inc
+%%DATADIR%%/examples/recurse.sma
+%%DATADIR%%/examples/test.inc
+%%DATADIR%%/examples/test.sma
+@dirrm %%DATADIR%%/examples
+@dirrm %%DATADIR%%/include
+@dirrm %%DATADIR%%
