@@ -1,38 +1,30 @@
-*** configure.orig	Wed Dec 14 16:28:40 1994
---- configure	Wed Dec 14 17:08:40 1994
+*** grabber-spigot.cc.orig	Fri Nov  1 16:11:59 1996
+--- grabber-spigot.cc	Fri Nov  1 16:17:36 1996
 ***************
-*** 101,109 ****
-  if ( -x /usr/local/bin/gcc || -x /usr/local/gcc || -x /usr/sww/bin/gcc ) set gcc='-e s/^#have-gcc#//'
-  if ( -x /bin/cxx ) set cxx='-e s/^#have-cxx#//'
-! if ( -d ../blt ) set bltdir=../blt
-! if ( -d /usr/src/local/blt ) set bltdir=/usr/src/local/blt
-! if ( -d ../blt-1.7 ) set bltdir=../blt-1.7
-! if ( -d /usr/src/local/blt-1.7 ) set bltdir=/usr/src/local/blt-1.7
-! if ( -d /usr/local/src/blt-1.7 ) set bltdir=/usr/local/src/blt-1.7
-  if ( ! $?bltdir ) then
-  	echo "configure: can't find blt (tcl/tk extension)"
---- 101,111 ----
-  if ( -x /usr/local/bin/gcc || -x /usr/local/gcc || -x /usr/sww/bin/gcc ) set gcc='-e s/^#have-gcc#//'
-  if ( -x /bin/cxx ) set cxx='-e s/^#have-cxx#//'
-! if ( -x /usr/bin/c++ ) set cxx='-e s/^#have-c++#//'
-! if ( -d ../blt/src ) set bltdir=../blt/src
-! if ( -d /usr/src/local/blt/src ) set bltdir=/usr/src/local/blt/src
-! if ( -d ../blt-1.7/src ) set bltdir=../blt-1.7/src
-! if ( -d /usr/src/local/blt-1.7/src ) set bltdir=/usr/src/local/blt-1.7/src
-! if ( -d /usr/local/src/blt-1.7/src ) set bltdir=/usr/local/src/blt-1.7/src
-! if ( -f /usr/local/lib/libBLT.a ) set bltdir=/usr/local/lib
-  if ( ! $?bltdir ) then
-  	echo "configure: can't find blt (tcl/tk extension)"
-***************
-*** 140,144 ****
-  set tkdir=`echo $tkdir | sed -e 's/\//\\\//'g`
-  set tkinc=`echo $tkinc | sed -e 's/\//\\\//'g`
-! set bltdir=`echo $bltdir/src | sed -e 's/\//\\\//'g`
-  sed $gcc $xil $rtvc $vpix $vl $svideo $cxx $dnet $irix5 $static $jv $xv \
-  	-e "s/@TKDIR@/$tkdir/" -e "s/@TKINC@/$tkinc/" \
---- 142,146 ----
-  set tkdir=`echo $tkdir | sed -e 's/\//\\\//'g`
-  set tkinc=`echo $tkinc | sed -e 's/\//\\\//'g`
-! set bltdir=`echo $bltdir | sed -e 's/\//\\\//'g`
-  sed $gcc $xil $rtvc $vpix $vl $svideo $cxx $dnet $irix5 $static $jv $xv \
-  	-e "s/@TKDIR@/$tkdir/" -e "s/@TKINC@/$tkinc/" \
+*** 202,212 ****
+  		hstart_ = 1;
+  		hstop_ = blkw_ - 1;
+  
+  		int	voff = (outh_ - inh_) / 2;
+- 		hwrap_ = outw_ - inw_ ;
+  		int	hoff = hwrap_ / 2;
+  		loff_ = outw_ * voff + hoff;
+  		coff_ = (outw_ >> 1) * (voff >> 1) + (hoff >> 1);
+  		hskip_ = 0;
+  		break;
+  	case f_411:
+--- 202,215 ----
+  		hstart_ = 1;
+  		hstop_ = blkw_ - 1;
+  
++ 		{
+  		int	voff = (outh_ - inh_) / 2;
+  		int	hoff = hwrap_ / 2;
++ 
++ 		hwrap_ = outw_ - inw_ ;
+  		loff_ = outw_ * voff + hoff;
+  		coff_ = (outw_ >> 1) * (voff >> 1) + (hoff >> 1);
++ 		}
+  		hskip_ = 0;
+  		break;
+  	case f_411:
