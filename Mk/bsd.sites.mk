@@ -34,7 +34,6 @@ MASTER_SITE_GNU+=	\
 	ftp://ftp.digital.com/pub/GNU/%SUBDIR%/ \
 	ftp://ftp.uu.net/archive/systems/gnu/%SUBDIR%/ \
 	ftp://ftp.de.uu.net/pub/gnu/%SUBDIR%/ \
-	ftp://ftp.ecrc.net/pub/gnu/%SUBDIR%/ \
 	ftp://ftp.sourceforge.net/pub/mirrors/gnu/%SUBDIR%/ \
 	ftp://ftp.funet.fi/pub/gnu/prep/%SUBDIR%/ \
 	ftp://ftp.leo.org/pub/comp/os/unix/gnu/%SUBDIR%/ \
