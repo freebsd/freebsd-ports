@@ -1,6 +1,6 @@
 IZ and CWS
 o http://www.openoffice.org/issues/show_bug.cgi?id=41006
-o CWS (not yet)
+o CWS sdksample
 
 offapi/drafts/com/sun/star/rendering/XParametricPolyPolygon2DFactory.idl 
 contains an illigal char

@@ -1,44 +1,18 @@
-#iZ and CWS data
-o http://www.openoffice.org/issues/show_bug.cgi?id=40176
-  http://www.openoffice.org/issues/show_bug.cgi?id=40226
-o http://eis.services.openoffice.org/EIS2/servlet/cws.ShowCWS?Id=1806&Path=SRC680%2Fconfigure4
-o configure4
-
-Description
-o Correct PTHREAD_CFLAGS, PTHREAD_LIBS
-o CUPS support via --enable-cups
-
+o http://www.openoffice.org/issues/show_bug.cgi?id=41516
+o configuretypofix
 Index: config_office/configure.in
 ===================================================================
 RCS file: /cvs/tools/config_office/configure.in,v
-retrieving revision 1.82
-diff -u -r1.82 configure.in
---- config_office/configure.in	5 Jan 2005 12:09:48 -0000	1.82
-+++ config_office/configure.in	9 Jan 2005 10:36:08 -0000
-@@ -449,7 +449,7 @@
- 		test_x=yes
- 		test_gtk=yes
-       test_kde=yes
--      test_cups=no
-+      test_cups=yes
- 		AC_MSG_CHECKING([the FreeBSD operating system release])
- 		if test -n "$with_os_version"; then
- 			OSVERSION="$with_os_version"
-@@ -457,13 +457,15 @@
- 			OSVERSION=`/sbin/sysctl -n kern.osreldate`
- 		fi
- 		AC_MSG_RESULT([found OSVERSION=$OSVERSION])
--		PTHREAD_CFLAGS="-D_THREAD_SAFE"
- 		if test "$OSVERSION" -lt "500016"; then
-+			PTHREAD_CFLAGS="-D_THREAD_SAFE"
- 			PTHREAD_LIBS="-pthread"
- 		elif test "$OSVERSION" -lt "502102"; then
-+			PTHREAD_CFLAGS="-D_THREAD_SAFE"
- 			PTHREAD_LIBS="-lc_r"
- 		else 
--			PTHREAD_LIBS="-lpthread"
-+			PTHREAD_CFLAGS=""
-+			PTHREAD_LIBS="-pthread"
- 		fi
- 		;;
- 	"OSF1")
+retrieving revision 1.87
+diff -u -r1.87 configure.in
+--- config_office/configure.in	25 Jan 2005 16:54:53 -0000	1.87
++++ config_office/configure.in	28 Jan 2005 09:26:37 -0000
+@@ -2408,7 +2408,7 @@
+    fi
+ 
+    AC_MSG_CHECKING([whether $GNUPATCH is GNU patch])
+-   if $GNUPATCH --version | grep "Free Software Foundation" >/dev/null 2>/deV/null; then
++   if $GNUPATCH --version | grep "Free Software Foundation" >/dev/null 2>/dev/null; then
+ 	AC_MSG_RESULT([yes])
+    else
+   	AC_MSG_ERROR([no, GNU patch needed. install or specifiy with --with-gnu-patch=/path/to/it])
