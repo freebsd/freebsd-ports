@@ -1,5 +1,5 @@
---- GNUmakefile.orig	Fri Jan 17 21:33:25 2003
-+++ GNUmakefile	Sat Jan 25 05:52:32 2003
+--- GNUmakefile.orig	Tue Jul  8 09:09:30 2003
++++ GNUmakefile	Wed Jul  9 02:04:50 2003
 @@ -8,11 +8,7 @@
  
  # Where to install.
@@ -11,9 +11,9 @@
 -endif
 +		INSTALL_DIR=${PREFIX}/bin
  
- PROGNAME	= hypersrc
- OUT			= out
-@@ -70,7 +66,7 @@
+ INSTALL			= install
+ INSTALL_OWNER	=
+@@ -74,7 +70,7 @@
  else
  
  ifndef DEBUG
@@ -22,7 +22,7 @@
  else
  C_OPTIMIZE = -O
  endif
-@@ -136,10 +132,10 @@
+@@ -145,10 +141,10 @@
  
  # -----	editing the rest should usually be unnecessary ------------------------
  
@@ -31,12 +31,12 @@
 +#CC			= gcc -c
 +CC_FLAGS	= -I$(INC_DIR) $(PROF_OPTS) $(C_DEBUG) $(C_OPTIMIZE) $(C_OPTS) $(C_WARNINGS) `gnome-config --cflags gnomeui`
  LD			= gcc
--LD_FLAGS	= $(PROF_OPTS) -pipe `$(GTK_CONFIG) --libs` `gnome-config --libs gnomeui`
-+LD_FLAGS	= $(PROF_OPTS) `gnome-config --libs gnomeui`
+-LD_FLAGS	+= $(PROF_OPTS) -pipe `$(GTK_CONFIG) --libs` `gnome-config --libs gnomeui`
++LD_FLAGS	+= $(PROF_OPTS) `gnome-config --libs gnomeui`
  C_SRCS		= $(addprefix $(SRC)/,$(C_SRCS_))
  C_OBJS_		= $(C_SRCS_:.c=.o)
  C_OBJS		= $(addprefix $(OUT)/,$(C_OBJS_))
-@@ -171,7 +167,7 @@
+@@ -180,7 +176,7 @@
  		$(LD) -o $(OUT)/hypersrc $(C_OBJS) $(LD_FLAGS) $(LIBS) $(OUT)/libparser.a
  
  $(OUT)/%.o:     $(SRC)/%.c
@@ -45,7 +45,7 @@
  
  # -----------------------------------------------------------------------------
  # parser (lex/yacc code that builds func graph/tree)
-@@ -209,13 +205,13 @@
+@@ -218,13 +214,13 @@
  		mv  y.tab.[cho] $(OUT)
  
  $(OUT)/y.tab.o:  $(OUT)/y.tab.c
@@ -62,7 +62,7 @@
  
  # -----------------------------------------------------------------------------
  
-@@ -233,10 +229,11 @@
+@@ -242,10 +238,11 @@
  		rm -f $(INSTALL_DIR)/ctags.pl
  		cat  Hypersrc.pl  \
  		| sed 's|\$hypersrc = "hypersrc"|\$hypersrc = "${INSTALL_DIR}/hypersrc"|'  \
