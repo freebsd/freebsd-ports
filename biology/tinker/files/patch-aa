@@ -1,5 +1,5 @@
 --- ../make/Makefile.orig	Mon Jan 15 12:39:52 2001
-+++ ../make/Makefile	Mon Jan 15 15:48:37 2001
++++ ../make/Makefile	Thu Apr 19 14:39:26 2001
 @@ -9,8 +9,8 @@
  ##
  ##   1. make all              Build all the TINKER executables
@@ -43,7 +43,7 @@
  
  ##
  ##  Machine:  IntelPC / Linux
-@@ -108,6 +108,35 @@
+@@ -108,6 +108,24 @@
  #LIBFLAGS = -crusv
  #LINKFLAGS =
  
@@ -52,23 +52,12 @@
 +##  CPU Type: Intel, AMD, Cyrix
 +##  Oper Sys: FreeBSD 4.2
 +##  Compiler: f77 , aka g77
++##
 +
 +F77 = ${FC}
-+.if ${FC}==f77
-+.if !defined(HAVE_G2C)
-+LIBS = -lU77
-+F77FLAGS = -NL400 -c -w
-+LINKFLAGS = -L${PREFIX}/lib
-+.else
 +LIBS =
 +F77FLAGS = -Wno-globals -fno-globals -c -w
 +LINKFLAGS =
-+.endif
-+.elseif ${FC}==g77
-+LIBS =
-+F77FLAGS = -Wno-globals -fno-globals -c -w
-+LINKFLAGS =
-+.endif
 +
 +OPTFLAGS = ${FFLAGS} -ffast-math
 +.if ${MACHINE_ARCH} == "i386"
@@ -79,7 +68,7 @@
  #################################################################
  ##  Should not be Necessary to Change Things Below this Point  ##
  #################################################################
-@@ -486,11 +515,13 @@
+@@ -486,11 +504,13 @@
             xyzpdb.x \
             xyzsybyl.x
  
@@ -95,7 +84,7 @@
  
  all:	${EXEFILES}
  
-@@ -501,56 +532,56 @@
+@@ -501,56 +521,56 @@
  	cat *.i *.f > tinker.txt
  
  rename:
@@ -202,7 +191,7 @@
  
  remove_links:
  	rm -f $(LINKDIR)/alchemy
-@@ -671,8 +702,8 @@
+@@ -671,8 +691,8 @@
          bspline.o \
          calendar.o \
          center.o \
