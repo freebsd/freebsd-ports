@@ -7,7 +7,7 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	java
 MASTER_SITES=	ftp://ftp.nluug.nl/pub/os/Linux/java/jdk/${DOWNLOAD_DIR}/ \
 		ftp://metalab.unc.edu/pub/linux/devel/lang/java/blackdown.org/${DOWNLOAD_DIR}/ \
@@ -55,6 +55,7 @@ do-install:
 
 	@${ECHO} -n ">> Copying files..."
 	@${CP} -R ${WRKSRC}/* ${APP_HOME}
+	@${INSTALL_DATA} ${FILESDIR}/cacerts ${APP_HOME}/jre/lib/security/cacerts
 	@${ECHO} " [ DONE ]"
 
 	@${ECHO} -n ">> Registering with javavm..."
