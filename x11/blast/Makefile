@@ -3,7 +3,7 @@
 # Date created:         9 Jul 1996
 # Whom:            searle
 #
-# $Id: porting.sgml,v 1.11 1995/12/07 13:22:15 jkh Exp $
+# $Id: Makefile,v 1.1.1.1 1996/07/31 22:07:51 chuckr Exp $
 #
 
 DISTNAME=	blast-1.0-ss-9.03
@@ -31,7 +31,7 @@ do-install:
 	$(INSTALL) -c $(WRKSRC)/blast $(PREFIX)/bin/blast
 	$(INSTALL) -c $(WRKSRC)/blast.man $(DESTDIR)$(MANDIR)/blast.1
 .if !defined(NOMANCOMPRESS)
-	gzip -9 $(MANDIR)/blast.1
+	gzip -9nf $(MANDIR)/blast.1
 .endif
 
 .include <bsd.port.mk>
