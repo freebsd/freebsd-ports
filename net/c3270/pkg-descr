@@ -1,0 +1,22 @@
+ From html/Intro.html:
+
+   c3270 is a curses-based IBM 3270 terminal emulator.  It can be used to
+   communicate with any IBM host that supports 3270-style connections
+   over TELNET.  It can also communicate with hosts that use line-by-line
+   ASCII mode to do initial login negotiation before switching to
+   full-screen 3270 mode.
+
+ From "pr3287/README":
+
+   pr3287 is an IBM 3287 printer emulator.  It connects to an IBM host via
+   TELNET, using TN3270 or TN3270E.  It supports SCS (SNA Character Stream).
+
+
+ This release provides some support for SSL, Tcl, and DBCS.
+
+ Graphics not (yet) supported.
+
+ Some extended highlighting not (yet) supported.
+
+WWW: http://x3270.bgp.nu/
+ or  http://www.geocities.com/SiliconValley/Peaks/7814

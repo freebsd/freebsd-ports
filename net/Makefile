@@ -51,6 +51,7 @@
     SUBDIR += bounce
     SUBDIR += bsdproxy
     SUBDIR += btqueue
+    SUBDIR += c3270
     SUBDIR += cacti
     SUBDIR += callgen
     SUBDIR += cap
