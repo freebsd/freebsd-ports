@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	edonkey
-PORTVERSION=	1.0.4
+PORTVERSION=	1.1.0
 CATEGORIES=	net java
 MASTER_SITES=	http://www.edonkey2000.com/files/
 PKGNAMESUFFIX=	-gui-java
-DISTNAME=	ed2k_4
+DISTNAME=	ed2k_1.1.0
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
 
