@@ -3441,6 +3441,7 @@ libast		ports/devel/libast
 libaudiofile	ports/audio/libaudiofile
 libaux		ports/graphics/libaux
 libavl		ports/devel/libavl
+libbf		ports/security/libbf
 libbonobo	ports/devel/libbonobo
 libbonoboui	ports/x11-toolkits/libbonoboui
 libcabinet	ports/archivers/libcabinet
