@@ -1,0 +1,12 @@
+Validate::Net is a class designed to assist with validation internet
+related strings.  It can be used to validate CGI forms, internally by
+modules, and in any place where you want to check that an internet
+related string is valid before handing it off to a Net::* class.
+
+Whenever a test is false, you can access the reason through the reason
+method.
+
+WWW: http://search.cpan.org/dist/Validate-Net/
+
+-- Sergey Skvortsov
+skv@FreeBSD.org

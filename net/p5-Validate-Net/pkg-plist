@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Validate/Net/.packlist
+%%SITE_PERL%%/Validate/Net.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Validate/Net
+@unexec rmdir %D/%%SITE_PERL%%/Validate 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Validate 2>/dev/null || true
