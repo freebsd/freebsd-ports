@@ -22,6 +22,11 @@ COMMENT=	OpenBSD IKE daemon
 BROKEN=		"requires IPsec support"
 .endif
 
+# If keynote is in use, bring the dependency
+.if defined(USE_KEYNOTE)
+BUILD_DEPENDS+=	keynote:${PORTSDIR}/security/keynote
+.endif
+
 USE_OPENSSL=	yes
 USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/isakmpd
