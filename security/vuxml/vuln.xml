@@ -747,7 +747,9 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
         <name>mysql-client</name>
-	<range><gt>3.2</gt></range>
+	<range><ge>4.0</ge><lt>4.0.20</lt></range>
+	<range><ge>4.1</ge><lt>4.1.0_2</lt></range>
+	<range><ge>5.0</ge><lt>5.0.0_2</lt></range>
       </package>
     </affects>
     <description>
@@ -770,7 +772,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-03-25</discovery>
       <entry>2004-04-16</entry>
-      <modified>2004-04-30</modified>
+      <modified>2004-05-18</modified>
     </dates>
   </vuln>
 
