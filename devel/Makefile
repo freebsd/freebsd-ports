@@ -359,6 +359,7 @@
     SUBDIR += nspr
     SUBDIR += oaf
     SUBDIR += objprelink
+    SUBDIR += ocaml-findlib
     SUBDIR += ocamlweb
     SUBDIR += omniORB
     SUBDIR += openzz
