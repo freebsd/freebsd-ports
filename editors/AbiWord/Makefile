@@ -31,10 +31,12 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/abi
 
 USE_GMAKE=	yes
 USE_GTK=	yes
-USE_AUTOMAKE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lgiconv"
 MAKEFILE=	GNUmakefile
+FIXME=		find ${WRKSRC} -name GNUmakefile.in | xargs ${PERL} -pi -e \
+		    's|\$$\(libdir\)/\@PACKAGE\@|\$$\(datadir\)/\@PACKAGE\@|g ; \
+		     s|\@DEFS\@|-I${WRKSRC}/../libiconv/include \@DEFS\@|g'
 
 pre-configure:
 	@cd ${WRKSRC} && ${TOUCH} NEWS README AUTHORS ChangeLog
