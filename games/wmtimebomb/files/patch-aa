@@ -8,7 +8,7 @@
   
  LOCAL_LIBRARIES = $(WMAKER) $(XPMLIB) $(XLIB)
  
-+EXTRA_INCLUDES= `get-wraster-flags --cflags` -I${LOCALBASE}/include
++EXTRA_INCLUDES= `get-wraster-flags --cflags` -I${LOCALBASE}/include -I${X11BASE}/include/WINGs
 +
  SRCS = timebomb.c
  OBJS = timebomb.o
