@@ -7,7 +7,7 @@
 
 PORTNAME=	Mail-SpamAssassin
 PORTVERSION=	3.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_APACHE:S/$/:apache/} ${MASTER_SITE_PERL_CPAN:S/$/:cpan/}
 MASTER_SITE_SUBDIR=	spamassassin/:apache Mail/:cpan
@@ -28,6 +28,10 @@ CONFIGURE_ARGS=	SYSCONFDIR="${PREFIX}/etc" \
 	       	CONTACT_ADDRESS="the administrator of that system" \
 		BUILD_SPAMC=yes RUN_NET_TESTS=yes
 
+.if defined(WITH_SPF_QUERY)
+RUN_DEPENDS+=	spfd:${PORTSDIR}/mail/p5-Mail-SPF-Query
+.endif
+
 .if !defined(WITHOUT_OPENSSL)
 USE_OPENSSL=	yes
 CFLAGS+=	-I${OPENSSLINC}
@@ -35,6 +39,16 @@ LDFLAGS+=	-L${OPENSSLLIB}
 CONFIGURE_ARGS+=	ENABLE_SSL=yes
 .else
 CONFIGURE_ARGS+=	ENABLE_SSL=no
+.endif
+
+.if defined(WITH_MYSQL)
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
+USE_SQLDB=	yes
+.endif
+
+.if defined(WITH_PGSQL)
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
+USE_SQLDB=	yes
 .endif
 
 MAN3=		Mail::SpamAssassin.3 \
@@ -74,6 +88,23 @@ PORTDOCS=	${DOCS} ${DOCSSQL:S|^|sql/|} ${DOCSCONTRIB:S|^|contrib/|} ${DOCSLDAP:S
 USE_RC_SUBR=	yes
 SED_SCRIPT=	-e 's|%%PREFIX%%|${PREFIX}|g' \
 		-e 's|%%RC_SUBR%%|${RC_SUBR}|g'
+.if defined(WITH_SQLDB)
+SED_SCRIPT+=	-e 's|%%SQL%%|-Q|g'
+.endif
+
+pre-patch:
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "================================================================"
+	@${ECHO_MSG} "You can use folowed options to install SpamAssassin with"
+	@${ECHO_MSG} "	an addition features:"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "WITHOUT_SSL=yes	 - disable SSL,"
+	@${ECHO_MSG} "WITH_MYSQL=yes	 - add MySQL support,"
+	@${ECHO_MSG} "WITH_PGSQL=yes	 - add PostgreSQL support,"
+	@${ECHO_MSG} "WITH_SPF_QUERY=yes - add SPF query support."
+	@${ECHO_MSG} "================================================================"
+	@${ECHO_MSG} ""
+
 post-patch:
 	@${FIND} ${WRKSRC} -name \*.orig -delete
 	@${SED} -e 's#B_CONFDIR)/local.cf#B_CONFDIR)/local.cf.sample#g' \
