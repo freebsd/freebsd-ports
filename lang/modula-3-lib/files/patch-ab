@@ -8,7 +8,7 @@ arguments.
 
 Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
 --- RTHeapDepC.c.orig	Sat Mar 23 14:52:21 1996
-+++ RTHeapDepC.c	Thu Jul 10 18:16:04 1997
++++ RTHeapDepC.c	Thu Jul 10 22:41:39 1997
 @@ -89,9 +89,20 @@
  #include <ufs/ufs/quota.h>
  #include <sys/signal.h>
@@ -487,7 +487,7 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
  int sigaltstack(ss, oss)   /* ok */
  const struct sigaltstack *ss;
  struct sigaltstack *oss;
-@@ -1239,20 +1111,42 @@
+@@ -1239,20 +1111,6 @@
    EXIT_CRITICAL;
    return result;
  }
@@ -495,50 +495,20 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
 -int sigstack(ss, oss)   /* ok */
 -const struct sigstack *ss;
 -struct sigstack *oss;
-+
-+int sigpending(set)
-+sigset_t *set;
- { int result;
- 
-   ENTER_CRITICAL;
+-{ int result;
+-
+-  ENTER_CRITICAL;
 -  MAKE_READABLE(ss);
 -  MAKE_WRITABLE(oss);
 -  result = syscall(SYS_sigstack, ss, oss);
-+  MAKE_WRITABLE(set);
-+  result = syscall(SYS_sigpending, set);
-+  EXIT_CRITICAL;
-+  return result;
-+}
-+
-+int sigprocmask(how, set, oset)
-+int how;
-+const sigset_t *set;
-+sigset_t *oset;
-+{ int result;
-+
-+  ENTER_CRITICAL;
-+  MAKE_READABLE(set);
-+  MAKE_WRITABLE(oset);
-+  result = syscall(SYS_sigprocmask, how, set, oset);
-+  EXIT_CRITICAL;
-+  return result;
-+}
-+
-+int sigsuspend(sigmask)
-+const sigset_t *sigmask;
-+{ int result;
-+
-+  ENTER_CRITICAL;
-+  MAKE_WRITABLE(sigmask);
-+  result = syscall(SYS_sigsuspend, sigmask);
-   EXIT_CRITICAL;
-   return result;
- }
+-  EXIT_CRITICAL;
+-  return result;
+-}
 -#endif
  
  int socketpair(d, type, protocol, sv)   /* ok */
  int d, type, protocol;
-@@ -1267,7 +1161,7 @@
+@@ -1267,7 +1125,7 @@
  }
  
  int stat(path, buf)   /* ok */
@@ -547,7 +517,7 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
  struct stat *buf;
  { int result;
  
-@@ -1280,7 +1174,7 @@
+@@ -1280,7 +1138,7 @@
  }
  
  int swapon(special)   /* ok */
@@ -556,7 +526,7 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
  { int result;
  
    ENTER_CRITICAL;
-@@ -1291,8 +1185,8 @@
+@@ -1291,8 +1149,8 @@
  }
  
  int symlink(name1, name2)   /* ok */
@@ -567,7 +537,7 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
  { int result;
  
    ENTER_CRITICAL;
-@@ -1304,14 +1198,14 @@
+@@ -1304,14 +1162,14 @@
  }
  
  int truncate(path, length)   /* ok */
@@ -586,7 +556,7 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
    EXIT_CRITICAL;
    return result;
  }
-@@ -1328,7 +1222,7 @@
+@@ -1328,7 +1186,7 @@
  }
  
  int unlink(path)   /* ok */
@@ -595,7 +565,7 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
  { int result;
  
    ENTER_CRITICAL;
-@@ -1414,19 +1308,6 @@
+@@ -1414,19 +1272,6 @@
    ENTER_CRITICAL;
    MAKE_WRITABLE(status);
    result = syscall(SYS_wait4, pid, status, options, NULL);
