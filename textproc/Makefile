@@ -379,6 +379,7 @@
     SUBDIR += p5-XML-Parser
     SUBDIR += p5-XML-Parser-EasyTree
     SUBDIR += p5-XML-Quote
+    SUBDIR += p5-XML-RAI
     SUBDIR += p5-XML-RSS
     SUBDIR += p5-XML-RSS-JavaScript
     SUBDIR += p5-XML-RSS-Parser
