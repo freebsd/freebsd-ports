@@ -13,7 +13,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	jonc@chen.org.nz
 
-LIB_DEPENDS=	qt-mt.3:${PORTSDIR}/x11-toolkits/qt30
+LIB_DEPENDS=	qt-mt.3:${PORTSDIR}/x11-toolkits/qt30 \
+		qssl.0:${PORTSDIR}/devel/qssl
 
 HAS_CONFIGURE=	yes
 USE_X_PREFIX=	yes
