@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.86 1997/09/11 02:54:02 peter Exp $
+# $Id: Makefile,v 1.87 1997/10/15 04:58:31 max Exp $
 #
 
     SUBDIR += acm
@@ -37,6 +37,7 @@
     SUBDIR += spider
     SUBDIR += starlanes
     SUBDIR += tksol
+    SUBDIR += tvp
     SUBDIR += xasteroids
     SUBDIR += xbat
     SUBDIR += xbattle
