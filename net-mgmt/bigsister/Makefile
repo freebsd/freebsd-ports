@@ -42,7 +42,7 @@ post-configure:
 	@${SED} ${SED_SCRIPT} < ${FILESDIR}/${PORTNAME}.sh > ${WRKDIR}/${PORTNAME}.sh
 
 pre-install:
-	@${SETENV} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/etc/rc.d
