@@ -31,7 +31,7 @@ pre-patch:
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/lftp.conf ${PREFIX}/etc/lftp.conf.sample
 # remove some empty directories
-	${RMDIR} ${PREFIX}/lib/lftp/2.4.0
+	${RMDIR} ${PREFIX}/lib/lftp/${PORTVERSION}
 	${RMDIR} ${PREFIX}/lib/lftp
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/lftp
