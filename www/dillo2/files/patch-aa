@@ -1,0 +1,38 @@
+--- configure.orig	Wed Dec 27 22:36:16 2000
++++ configure	Fri Feb 23 15:51:30 2001
+@@ -1617,7 +1617,7 @@
+ jpeg_ok=no
+ fi
+ done
+-
++jpeg_ok=yes
+   fi
+   echo "$ac_t""$jpeg_ok" 1>&6
+   if test "$jpeg_ok" = yes; then
+@@ -1627,14 +1627,14 @@
+   fi
+ fi
+ 
+-echo $ac_n "checking for pthread_create in -lpthread""... $ac_c" 1>&6
+-echo "configure:1632: checking for pthread_create in -lpthread" >&5
++echo $ac_n "checking for pthread_create in -lc_r""... $ac_c" 1>&6
++echo "configure:1632: checking for pthread_create in -lc_r" >&5
+ ac_lib_var=`echo pthread'_'pthread_create | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lpthread  $LIBS"
++LIBS="-lc_r  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 1640 "configure"
+ #include "confdefs.h"
+@@ -1668,7 +1668,7 @@
+ #define $ac_tr_lib 1
+ EOF
+ 
+-  LIBS="-lpthread $LIBS"
++  LIBS="-lc_r $LIBS"
+ 
+ else
+   echo "$ac_t""no" 1>&6

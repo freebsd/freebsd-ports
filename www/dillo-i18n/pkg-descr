@@ -1,0 +1,17 @@
+Dillo is a web browser project completely written in C (currently the code
+is based on gzilla-0.2.2's widget, and a new improved network engine
+written from scratch).
+
+Dillo is small; source and binary are less than 220 Kb each.
+
+Dillo aims to be a multiplataform browser alternative that's small,
+stable, developer-friendly, usable, fast, and extensible.
+
+Dillo is mainly based on GTK+ (GNOME is NOT required!)
+
+Dillo is very fast!
+
+WWW: http://dillo.sourceforge.net/
+
+- George Reid
+greid@ukug.uk.freebsd.org
