@@ -6,33 +6,33 @@
 #
 
 PORTNAME=	smlnj
-PORTVERSION=	110.37
+PORTVERSION=	110.39
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.research.bell-labs.com/dist/smlnj/working/${PORTVERSION}/ \
 		ftp://flint.cs.yale.edu/pub/smlnj/working/${PORTVERSION}/ \
-		ftp://sunsite.doc.ic.ac.uk/computing/programming/languages/ml/smlnj/working/${PORTVERSION}/ \
-		ftp://ftp.diku.dk/pub/smlnj/working/${PORTVERSION}/
+		ftp://gd.tuwien.ac.at/languages/smlnj/working/${PORTVERSION}/
 DISTFILES=	config.tgz runtime.tgz
 .if (${MACHINE_ARCH} == "i386")
 DISTFILES+=	boot.x86-unix.tgz
 .elif (${MACHINE_ARCH} == "alpha")
 DISTFILES+=	boot.alpha32-unix.tgz
 .endif
-DISTFILES+=	ckit.tgz ml-burg.tgz ml-lex.tgz \
-		ml-nlffi-lib.tgz ml-nlffigen.tgz \
-		ml-yacc.tgz smlnj-lib.tgz
-.if defined(WITH_CML) || defined(WITH_EXENE)
-DISTFILES+=	cml.tgz
-.endif
-.if defined(WITH_EXENE)
-DISTFILES+=	eXene.tgz
-.endif
-.if defined(WITH_SRC) || defined(WITH_RECOMPILE) || defined(WITH_FLINT)
-DISTFILES+=	MLRISC.tgz cm.tgz compiler.tgz system.tgz
+DISTFILES+=	ml-yacc.tgz ml-lex.tgz smlnj-lib.tgz
+.if defined(WITH_EVERYTHING) || defined(WITH_RECOMPILE) || defined(WITH_FLINT)
+DISTFILES+=	ml-burg.tgz \
+		ckit.tgz ml-nlffi-lib.tgz ml-nlffigen.tgz \
+		cml.tgz eXene.tgz \
+		MLRISC.tgz cm.tgz compiler.tgz system.tgz
 .endif
 EXTRACT_ONLY=	config.tgz
 
 MAINTAINER=	joemann@beefree.free.de
+
+DIST_SUBDIR=	sml-nj/${PORTVERSION}
+NO_WRKSUBDIR=	yes
+USE_GMAKE=	yes
+
+NO_LATEST_LINK=	yes
 
 .if (${MACHINE_ARCH} == "i386")
 MLARCH=		x86
@@ -42,61 +42,52 @@ MLARCH=		alpha32
 BROKEN=		not ported to ${MACHINE_ARCH}
 .endif
 
-MLTARGETS=	ml-burg ckit ml-nlffi-lib ml-nlffigen
-MLEXE=		ml-build ml-makedepend sml ml-yacc ml-lex ml-burg ml-nlffigen
-.if defined(WITH_CML) || defined(WITH_EXENE) || defined(WITH_SRC) || defined(WITH_RECOMPILE) || defined(WITH_FLINT)
+.if defined(WITH_FLINT)
+WITH_RECOMPILE?=	${WITH_FLINT}
+.endif
+.if defined(WITH_RECOMPILE)
+WITH_EVERYTHING?=	${WITH_RECOMPILE}
+.endif
+
+MLROOTRELATIVE=	smlnj
+MLROOT=	${PREFIX}/${MLROOTRELATIVE}
+MLBIN=		${MLROOT}/bin
+MLLIB=		${MLROOT}/lib
+MLSRCSBASE=	ckit src
+MLSRCSRELATIVE=	${MLROOTRELATIVE}/ckit ${MLROOTRELATIVE}/src
+MLSRCS=	${MLROOT}/ckit ${MLROOT}/src
+MLEXE=		sml ml-yacc ml-lex ml-build ml-makedepend
+.if defined(WITH_EVERYTHING)
+MLTARGETS=	ml-burg eXene src-smlnj \
+		ml-nlffi-lib ml-nlffigen nowhere pgraph-util
+MLEXE+=		ml-burg ml-nlffigen nowhere
 PLIST=		${WRKDIR}/.PLIST
-MLPLISTFILES=	${.CURDIR}/pkg-plist
 MLSRCPLIST=	${WRKDIR}/.PLIST.src
+MLPLISTFILES=	${.CURDIR}/pkg-plist ${FILESDIR}/plist-everything ${MLSRCPLIST}
+.if defined(WITH_FLINT)
+MLPLISTFILES+=	${FILESDIR}/plist-flint
 .endif
-
-.if defined(WITH_SRC) || defined(WITH_RECOMPILE) || defined(WITH_FLINT)
-# the pkg-plist for sources is large, so we'll generate it on the fly (during do-install)
-MLPLISTFILES+=	${MLSRCPLIST}
-MLTARGETS+=	src-smlnj
 .endif
-.if defined(WITH_CML) || defined(WITH_EXENE)
-MLPLISTFILES+=	${FILESDIR}/plist-cml
-MLTARGETS+=	cml cml-lib
-.endif
-.if defined(WITH_EXENE)
-MLPLISTFILES+=	${FILESDIR}/plist-eXene
-MLTARGETS+=	eXene
-.endif
-
-# Other mirror sites that generally carry only released versions of SML
-# 	ftp://rodin.stanford.edu/pub/smlnj/release/
-# 	ftp://ftp.cl.cam.ac.uk/MIRRORED/smlnj/release/
-# 	ftp://ftp.ntua.gr/pub/lang/smlnj/release/
-# Mirror sites that keep files around in gzipped format
-# 	ftp://flint.cs.yale.edu/pub/smlnj/working/110.9.1/
-
-DIST_SUBDIR=	sml-nj/${PORTVERSION}
-NO_WRKSUBDIR=	yes
-USE_GMAKE=	yes
-
-NO_LATEST_LINK=	yes
 
 pre-fetch:
 	@${ECHO}
-.if !defined(WITH_EXENE)
-.if !defined(WITH_CML)
-	@${ECHO} 'Use make WITH_CML=yes to build CML (Concurrent ML).'
+.if !defined(WITH_EVERYTHING)
+	@${ECHO} 'Use make WITH_EVERYTHING=yes to also build ml-burg,'
+	@${ECHO} ' CML (Concurrent ML), eXene (X Windows toolkit),'
+	@${ECHO} ' ml-nlffi (foreign function interface to C code),'
+	@${ECHO} ' nowhere (preprocessor for conditional patterns),'
+	@${ECHO} ' and all the sources.'
 .endif
-	@${ECHO} 'Use make WITH_EXENE=yes to build eXene (X Windows toolkit),'
-	@${ECHO} ' this implies WITH_CML.'
+.if !defined(WITH_RECOMPILE)
+	@${ECHO} 'Use make WITH_RECOMPILE=yes to recompile the compiler.'
+	@${ECHO} ' This implies WITH_EVERYTHING.'
 .endif
 .if !defined(WITH_FLINT)
-.if !defined(WITH_RECOMPILE)
-.if !defined(WITH_SRC)
-	@${ECHO} 'Use make WITH_SRC=yes to have the sources installed.'
-.endif
-	@${ECHO} 'Use make WITH_RECOMPILE=yes to recompile the compiler,'
-	@${ECHO} ' this implies WITH_SRC.'
-.endif
-	@${ECHO} 'Use make WITH_FLINT=yes to build sml with the FLINT'
-	@${ECHO} ' structures accessible (see http://flint.cs.yale.edu),'
-	@${ECHO} ' this implies WITH_RECOMPILE.'
+	@${ECHO} 'Use make WITH_FLINT=yes to apply a p''atch w''hich makes'
+	@${ECHO} ' the compiler'"'"'s FLINT structures visible (see'
+	@${ECHO} ' http://flint.cs.yale.edu/flint/publications/tcif.html),'
+	@${ECHO} ' use it with CM.autoload "$$smlnj/viscomp/core_flint.cm";'
+	@${ECHO} ' This implies WITH_RECOMPILE.'
 .endif
 	@${ECHO}
 
@@ -105,18 +96,19 @@ pre-fetch:
 post-extract:
 	cd ${WRKDIR} && ${LN} -sf ${_DISTDIR}/*  .
 
-# Configuring is done by uncommenting the appropriate #TARGETS="$TARGETS xxx"
-# lines of config/targets
+# Configuring is done by uncommenting the appropriate #request xxx
+# lines of config/targets. Dependency details are handled by
+# config/install.sh using config/dependencies.
 
+.if defined(WITH_EVERYTHING)
 do-configure:
-	test -f "${WRKDIR}/config/targets.orig" || \
-	${MV} "${WRKDIR}/config/targets" "${WRKDIR}/config/targets.orig"
 	${ECHO_CMD} -n > ${WRKDIR}/.tmp.sed
 .for t in ${MLTARGETS}
-	${ECHO_CMD} '/^#TARGETS="\$$TARGETS[ 	]+${t}"$$/s/#//' >> ${WRKDIR}/.tmp.sed
+	${ECHO_CMD} '/^#request[ 	]+${t}$$/s/^#//' >> ${WRKDIR}/.tmp.sed
 .endfor
-	${SED} -E -f ${WRKDIR}/.tmp.sed "${WRKDIR}/config/targets.orig" \
-	> "${WRKDIR}/config/targets"
+	${SED} -E -f ${WRKDIR}/.tmp.sed "${WRKDIR}/config/targets" \
+	> "${WRKDIR}/config/targets.customized"
+.endif
 
 # The build target builds and installs the system within the WRKDIR.
 # The src/runtime is not cleaned afterwards to avoid recompilation during
@@ -128,32 +120,45 @@ MLFLINTPATCH=	optional-patch-flint-access
 .endif
 
 do-build:
+.if defined(WITH_RECOMPILE)
+	${MV} "${WRKDIR}/config/targets.customized" "${WRKDIR}/config/targets.customized.later"
+	${SED} -E -e '/^#request[        ]+src-smlnj$$/s/^#//' \
+	"${WRKDIR}/config/targets" > "${WRKDIR}/config/targets.customized"
+.endif
 	cd ${WRKDIR} && unset PWD && \
 	FILESDIR="$(FILESDIR)" PATCH="$(PATCH)" PATCH_ARGS="$(PATCH_ARGS)" \
 	MLNORUNTIMECLEAN=yes	./config/install.sh
 .if defined(WITH_FLINT)
-	test -f "${WRKDIR}/.patch.${MLFLINTPATCH}" || \
+	${TEST} -f "${WRKDIR}/.patch.${MLFLINTPATCH}" || \
 	( cd ${WRKDIR} && \
 	${PATCH} < "${FILESDIR}/${MLFLINTPATCH}" && \
 	${TOUCH} "${WRKDIR}/.patch.${MLFLINTPATCH}" )
 .endif
-.if defined(WITH_RECOMPILE) || defined(WITH_FLINT)
+.if defined(WITH_RECOMPILE)
 	cd ${WRKDIR}/src/system && ( \
 	${ECHO_CMD} 'CM.autoload "$$smlnj/cmb.cm";' ; \
 	${ECHO_CMD} 'CMB.make ();' ) | \
 	../../bin/sml && \
 	./makeml && \
-	./installml &&
+	${RM} -rf ../../lib && ${MKDIR} ../../lib && \
+	${FIND} ../../bin/.heap -name '*.${MLARCH}-bsd' \
+	\! -name 'sml.${MLARCH}-bsd' -delete && \
+	./installml && \
+	${MV} "${WRKDIR}/config/targets.customized.later" \
+	"${WRKDIR}/config/targets.customized"
+	cd ${WRKDIR} && unset PWD && \
+	FILESDIR="$(FILESDIR)" PATCH="$(PATCH)" PATCH_ARGS="$(PATCH_ARGS)" \
+	MLNORUNTIMECLEAN=yes	./config/install.sh
 .endif
 
 # The install target installs the heaps and libraries to their final
-# location in ${PREFIX}/smlnj.
+# location in ${MLBIN} and ${MLLIB}.
 # In case of recompilation, installml installs the sml heap and the
-# libraries built during compiler bootstrap to ${PREFIX}/smlnj.
+# libraries built during compiler bootstrap to ${MLBIN} and ${MLLIB}.
 
-.if defined(WITH_SRC) || defined(WITH_RECOMPILE) || defined(WITH_FLINT)
+.if defined(WITH_EVERYTHING)
 MLNOINSTALL=	CM
-.if defined(WITH_RECOMPILE) || defined(WITH_FLINT)
+.if defined(WITH_RECOMPILE)
 MLNOINSTALL+=	sml.boot.${MLARCH}-unix sml.bin.${MLARCH}-unix
 .endif
 MLSRCEXCLUDES=
@@ -165,25 +170,41 @@ MLSRCEXCLUDES+=	--exclude "${excl}"
 PLIST_SUB=	MLARCH=${MLARCH}
 
 do-install:
-	${MKDIR} "${PREFIX}/smlnj"
+	${MKDIR} "${MLROOT}"
+.if defined(WITH_RECOMPILE)
+	${MV} "${WRKDIR}/config/targets.customized" "${WRKDIR}/config/targets.customized.later"
+	${ECHO_CMD} -n > "${WRKDIR}/config/targets.customized"
+.endif
 	cd ${WRKDIR} && unset PWD && \
 	FILESDIR="$(FILESDIR)" PATCH="$(PATCH)" PATCH_ARGS="$(PATCH_ARGS)" \
-	INSTALLDIR="$(PREFIX)/smlnj"	./config/install.sh
-.if defined(WITH_RECOMPILE) || defined(WITH_FLINT)
+	INSTALLDIR="$(MLROOT)"	./config/install.sh
+	MLARCHOPSYS=`$(MLBIN)/.arch-n-opsys` && \
+	( eval $${MLARCHOPSYS} ; \
+	$(STRIP_CMD) "$(MLBIN)/.run/run.$${ARCH}-$${OPSYS}" )
+.if defined(WITH_RECOMPILE)
 	cd ${WRKDIR}/src/system && \
-	INSTALLROOT="${PREFIX}/smlnj" ./makeml && \
-	INSTALLROOT="${PREFIX}/smlnj" ./installml
+	INSTALLROOT="${MLROOT}" ./makeml && \
+	${RM} -rf "${MLLIB}" && ${MKDIR} "${MLLIB}" && \
+	${FIND}  "${MLBIN}"/.heap -name '*.${MLARCH}-bsd' \
+	\! -name 'sml.${MLARCH}-bsd' -delete && \
+	INSTALLROOT="${MLROOT}" ./installml
+	${MV} "${WRKDIR}/config/targets.customized.later" \
+	"${WRKDIR}/config/targets.customized"
+	cd ${WRKDIR} && unset PWD && \
+	FILESDIR="$(FILESDIR)" PATCH="$(PATCH)" PATCH_ARGS="$(PATCH_ARGS)" \
+	INSTALLDIR="$(MLROOT)"	./config/install.sh
 .endif
-.if defined(WITH_SRC) || defined(WITH_RECOMPILE) || defined(WITH_FLINT)
+	@${CHOWN} -R ${BINOWN}:${BINGRP} "${MLBIN}" "${MLLIB}"
+.if defined(WITH_EVERYTHING)
 	cd ${WRKDIR}/src/runtime/objs && ${GMAKE} clean
-	@${ECHO} -n 'Installing sources into ${PREFIX}/smlnj ...'
-	@cd ${WRKDIR} && tar -cf - ${MLSRCEXCLUDES} ckit src | tar -xf - -C "${PREFIX}/smlnj"
+	@${ECHO} -n 'Installing sources into ${MLROOT} ...'
+	@cd ${WRKDIR} && ${TAR} -cf - ${MLSRCEXCLUDES} ${MLSRCSBASE} | \
+	${TAR} -xf - -C "${MLROOT}"
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${MLSRCS}
 	@${ECHO} ' done.'
-	cd "${PREFIX}" && ( find -s -d smlnj/src smlnj/ckit \! -type d ; \
-	( find -s -d smlnj/src smlnj/ckit -type d | ${AWK} '{ printf "@dirrm "; print }' ) \
-	) > ${MLSRCPLIST}
-.endif
-.if defined(WITH_CML) || defined(WITH_EXENE) || defined(WITH_SRC) || defined(WITH_RECOMPILE) || defined(WITH_FLINT)
+	cd "${PREFIX}" && ( ${FIND} -s -d ${MLSRCSRELATIVE} \! -type d ; \
+	( ${FIND} -s -d ${MLSRCSRELATIVE} -type d | \
+	${AWK} '{ printf "@dirrm "; print }' ) ) > ${MLSRCPLIST}
 	${GREP} -h ^[^@] ${MLPLISTFILES} | sort -u > ${PLIST}
 	${GREP} -h ^@dirrm ${MLPLISTFILES} | sort -r -u >> ${PLIST}
 .endif
@@ -191,7 +212,7 @@ do-install:
 post-install:
 	${MKDIR} $(PREFIX)/bin
 .for f in $(MLEXE)
-	${LN} -s $(PREFIX)/smlnj/bin/$f $(PREFIX)/bin/$f
+	${LN} -s $(MLBIN)/$f $(PREFIX)/bin/$f
 .endfor
 
 .include <bsd.port.mk>

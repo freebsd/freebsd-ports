@@ -1,0 +1,54 @@
+bin/ml-burg
+bin/ml-nlffigen
+bin/nowhere
+smlnj/bin/.heap/ml-burg.%%MLARCH%%-bsd
+smlnj/bin/.heap/ml-nlffigen.%%MLARCH%%-bsd
+smlnj/bin/.heap/nowhere.%%MLARCH%%-bsd
+smlnj/bin/ml-burg
+smlnj/bin/ml-nlffigen
+smlnj/bin/nowhere
+smlnj/lib/c-int.cm/CM/%%MLARCH%%-unix/c-int.cm
+smlnj/lib/c.cm/CM/%%MLARCH%%-unix/c.cm
+smlnj/lib/ckit-lib.cm/CM/%%MLARCH%%-unix/ckit-lib.cm
+smlnj/lib/cml/CM/%%MLARCH%%-unix/basis.cm
+smlnj/lib/cml/CM/%%MLARCH%%-unix/cml-internal.cm
+smlnj/lib/cml/CM/%%MLARCH%%-unix/cml.cm
+smlnj/lib/cml/CM/%%MLARCH%%-unix/core-cml.cm
+smlnj/lib/cml-lib/CM/%%MLARCH%%-unix/smlnj-lib.cm
+smlnj/lib/cml-lib/CM/%%MLARCH%%-unix/trace-cml.cm
+smlnj/lib/eXene.cm/CM/%%MLARCH%%-unix/eXene.cm
+smlnj/lib/memory.cm/CM/%%MLARCH%%-unix/memory.cm
+smlnj/lib/mlrisc-tools/CM/%%MLARCH%%-unix/match-compiler.cm
+smlnj/lib/mlrisc-tools/CM/%%MLARCH%%-unix/parser.cm
+smlnj/lib/mlrisc-tools/CM/%%MLARCH%%-unix/pp.cm
+smlnj/lib/mlrisc-tools/CM/%%MLARCH%%-unix/prec-parser.cm
+smlnj/lib/mlrisc-tools/CM/%%MLARCH%%-unix/sml-ast.cm
+smlnj/lib/mlrisc-tools/CM/%%MLARCH%%-unix/source-map.cm
+smlnj/lib/pgraph-util.cm/CM/%%MLARCH%%-unix/pgraph-util.cm
+@dirrm smlnj/lib/cml/CM/%%MLARCH%%-unix
+@dirrm smlnj/lib/cml/CM
+@dirrm smlnj/lib/cml
+@dirrm smlnj/lib/cml-lib/CM/%%MLARCH%%-unix
+@dirrm smlnj/lib/cml-lib/CM
+@dirrm smlnj/lib/cml-lib
+@dirrm smlnj/lib/eXene.cm/CM/%%MLARCH%%-unix
+@dirrm smlnj/lib/eXene.cm/CM
+@dirrm smlnj/lib/eXene.cm
+@dirrm smlnj/lib/c-int.cm/CM/%%MLARCH%%-unix
+@dirrm smlnj/lib/c-int.cm/CM
+@dirrm smlnj/lib/c-int.cm
+@dirrm smlnj/lib/c.cm/CM/%%MLARCH%%-unix
+@dirrm smlnj/lib/c.cm/CM
+@dirrm smlnj/lib/c.cm
+@dirrm smlnj/lib/ckit-lib.cm/CM/%%MLARCH%%-unix
+@dirrm smlnj/lib/ckit-lib.cm/CM
+@dirrm smlnj/lib/ckit-lib.cm
+@dirrm smlnj/lib/memory.cm/CM/%%MLARCH%%-unix
+@dirrm smlnj/lib/memory.cm/CM
+@dirrm smlnj/lib/memory.cm
+@dirrm smlnj/lib/mlrisc-tools/CM/%%MLARCH%%-unix
+@dirrm smlnj/lib/mlrisc-tools/CM
+@dirrm smlnj/lib/mlrisc-tools
+@dirrm smlnj/lib/pgraph-util.cm/CM/%%MLARCH%%-unix
+@dirrm smlnj/lib/pgraph-util.cm/CM
+@dirrm smlnj/lib/pgraph-util.cm
