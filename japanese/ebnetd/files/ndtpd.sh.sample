@@ -37,12 +37,12 @@ start)
     MakeWorkingDirectory
 
     if [ "${standalone}" = YES ]; then
-	ndtpd && echo -n " ndtpd"
+	@prefix@/sbin/ndtpd && echo -n " ndtpd"
     fi
     ;;
 stop)
     if [ "${standalone}" = YES ]; then
-	ndtpcontrol terminate && echo -n " ndtpd"
+	@prefix@/sbin/ndtpcontrol terminate && echo -n " ndtpd"
     fi
     ;;
 *)
