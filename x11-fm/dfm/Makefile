@@ -14,6 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_IMLIB=	yes
@@ -28,7 +29,7 @@ PORTDOCS=	ANNOUNCE BUGS COPYRIGHT CREDITS ChangeLog DOWNLOAD HELP.ERROR \
 		NO_WARRANTY README START TESTED TODO
 
 pre-patch:
-	@${PERL} -pi -e \
+	@${REINPLACE_CMD} -e \
 		's|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 
 post-install:

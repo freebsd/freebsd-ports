@@ -16,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	mtools:${PORTSDIR}/emulators/mtools
 
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GTK=	yes
 GNU_CONFIGURE=	yes
@@ -26,11 +27,11 @@ CONFIGURE_ARGS=	--with-conffile="${PREFIX}/etc/mtoolsfm.conf"
 MAN1=		mtoolsfm.1
 
 post-patch:
-	@${PERL} -pi -e 's|MToolsFM|mtoolsfm|g ; \
+	@${REINPLACE_CMD} -e 's|MToolsFM|mtoolsfm|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g ; \
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g ; \
 		 s|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/MToolsFM.1
-	@${FIND} ${WRKSRC} -name 'Makefile.in' | ${XARGS} ${PERL} -pi -e \
+	@${FIND} ${WRKSRC} -name 'Makefile.in' | ${XARGS} ${REINPLACE_CMD} -e \
 		's|MToolsFM|mtoolsfm|g'
 .for file in src/mtoolsfm.h po/de.po po/fr.po
 	@${MV} -f ${WRKSRC}/${file} ${WRKSRC}/${file}.preedit

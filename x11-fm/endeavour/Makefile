@@ -13,6 +13,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
@@ -27,8 +28,8 @@ MAKE_ARGS=	PREFIX="${PREFIX}" CC="${CC}" CPP="${CXX}" \
 		LIB_DIRS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 pre-patch:
-	@${PERL} -pi -e 's|make |\$$\(MAKE\) |g' ${WRKSRC}/Makefile
-	@find ${WRKSRC}/endeavour -type f | xargs ${PERL} -pi -e \
+	@${REINPLACE_CMD} -e 's|make |\$$\(MAKE\) |g' ${WRKSRC}/Makefile
+	@${FIND} ${WRKSRC}/endeavour -type f | ${XARGS} ${REINPLACE_CMD} -e \
 		's|#include <malloc.h>||g ; \
 		 s|#include <asm/types.h>||g ; \
 		 s|#include <sys/bitypes.h>||g ; \
