@@ -7,34 +7,39 @@
 #
 
 PORTNAME=	mpgtx
-PORTVERSION=	1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION}-1-src
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}-src
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-ALL_TARGET=	shared
-MAKE_ENV=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
-		INSTALL_MAN="${INSTALL_MAN}"
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
+
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix=${PREFIX}
+ALL_TARGET=	default
 
 MAN1=	mpgtx.1 tagmp3.1
-MLINKS=	mpgtx.1 mpgdemux.1 \
+MLINKS=	mpgtx.1 mpgcat.1 \
+	mpgtx.1 mpgdemux.1 \
+	mpgtx.1 mpginfo.1 \
 	mpgtx.1 mpgjoin.1 \
-	mpgtx.1 mpgsplit.1 \
-	mpgtx.1 mpgcat.1 \
-	mpgtx.1 mpginfo.1
+	mpgtx.1 mpgsplit.1
 
-post-install:
-	@(cd ${PREFIX}/bin ; \
-	${LN} -sf mpgtx mpgdemux ; \
-	${LN} -sf mpgtx mpgjoin ; \
-	${LN} -sf mpgtx mpgsplit ; \
-	${LN} -sf mpgtx mpgcat ; \
-	${LN} -sf mpgtx mpginfo ; \
-	${LN} -sf mpgtx tagmp3)
+pre-patch:
+	@${PERL} -pi -e 's|CFLAGS=|CFLAGS\+=|g ; \
+		 s|\$$cflags \$$optimization_cflags|\$$cflags|g ; \
+		 s|g\+\+|${CXX}|g' ${WRKSRC}/configure
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/mpgtx ${PREFIX}/bin
+.for link in mpgcat mpgdemux mpginfo mpgjoin mpgsplit tagmp3
+	${LN} -sf mpgtx ${PREFIX}/bin/${link}
+.endfor
+	${INSTALL_MAN} ${WRKSRC}/man/mpgtx.1 ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/tagmp3.1 ${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
