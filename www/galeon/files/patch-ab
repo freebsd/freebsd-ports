@@ -1,14 +1,14 @@
---- src/galeon.orig	Tue Aug  1 11:22:03 2000
-+++ src/galeon	Tue Aug  1 11:22:14 2000
-@@ -1,14 +1,14 @@
--#!/bin/bash
-+#!/bin/sh
+--- src/galeon.orig	Tue Sep 26 19:51:25 2000
++++ src/galeon	Tue Oct  3 10:12:08 2000
+@@ -1,15 +1,15 @@
+ #!/bin/sh
  
 -dist_bin=`dirname $0`
 +dist_bin=%%PREFIX%%/bin
  
  if test -n "$MOZILLA_FIVE_HOME"; then
- 	export LD_LIBRARY_PATH=$MOZILLA_FIVE_HOME:$LD_LIBRARY_PATH
+ 	LD_LIBRARY_PATH=$MOZILLA_FIVE_HOME:$LD_LIBRARY_PATH
+ 	export LD_LIBRARY_PATH
  	exec $dist_bin/galeon-bin $@
 -elif [ -f /usr/local/mozilla/libgtkembedmoz.so ]; then 
 -	MOZILLA_HOME=/usr/local/mozilla
