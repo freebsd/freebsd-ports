@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gmime
-PORTVERSION=	2.0.11
+PORTVERSION=	2.1.0
 CATEGORIES=	mail
 MASTER_SITES=	http://spruce.sourceforge.net/gmime/sources/
 
@@ -17,17 +17,17 @@ LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
 CONFLICTS=	gmime-0.*
 
-USE_X_PREFIX=	YES
-GNU_CONFIGURE=	YES
-USE_GMAKE=	YES
+USE_X_PREFIX=	yes
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 USE_GNOME=	glib20
-USE_LIBTOOL=	YES
+USE_LIBTOOL=	yes
 CONFIGURE_ARGS+=	--with-libiconv=${LOCALBASE}
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
-INSTALLS_SHLIB=		YES
+INSTALLS_SHLIB=		yes
 
 pre-configure:
 .if exists(${X11BASE}/lib/libgmime.so)
