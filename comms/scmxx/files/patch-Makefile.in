@@ -1,21 +1,25 @@
-*** Makefile.in.orig	Sun May 26 16:04:19 2002
---- Makefile.in	Wed May 29 15:14:31 2002
-***************
-*** 5,12 ****
-  bindir=@bindir@
-  mandir=@mandir@
-  
-! COMPILER=@CC@
-! CFLAGS= @CCADD@
-  LDFLAGS=@LDADD@
-  INSTALL=@INSTALL@
-  VERSION=`cat VERSION`
---- 5,12 ----
-  bindir=@bindir@
-  mandir=@mandir@
-  
-! COMPILER=@CC@ 
-! CFLAGS= @CCADD@ -I${LOCALBASE}/include
-  LDFLAGS=@LDADD@
-  INSTALL=@INSTALL@
-  VERSION=`cat VERSION`
+--- Makefile.in.orig	Wed Nov 20 10:50:12 2002
++++ Makefile.in	Wed Nov 20 10:51:01 2002
+@@ -7,7 +7,7 @@
+ BINARY=scmxx@EXEEXT@
+ 
+ all:
+-	make -C src all
++	$(MAKE) -C src all
+ 
+ install: all
+ 	$(INSTALL) -d $(DESTDIR)$(bindir)
+@@ -16,11 +16,11 @@
+ 	$(INSTALL) docs/scmxx.1  $(DESTDIR)$(mandir)/man1/$(BINARY).1
+ 
+ clean:
+-	make -C src clean
++	$(MAKE) -C src clean
+ 	rm -rf $(BINARY)
+ 
+ dist-clean:
+-	make -C src dist-clean
++	$(MAKE) -C src dist-clean
+ 	rm -rf $(BINARY) Makefile config.cache config.log config.status config.h
+ 
+ maintainer-clean: dist-clean

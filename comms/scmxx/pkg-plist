@@ -1,11 +1,12 @@
+@comment $FreeBSD$
 bin/scmxx
 %%PORTDOCS%%share/doc/scmxx/README
-%%PORTDOCS%%share/doc/scmxx/greekchars.txt
 %%PORTDOCS%%share/doc/scmxx/gsmcharset.txt
-%%PORTDOCS%%share/doc/scmxx/specialchars.txt
+%%PORTDOCS%%share/doc/scmxx/gsm0338.txt
 %%PORTDOCS%%share/doc/scmxx/doc_sources.txt
 %%PORTDOCS%%share/examples/scmxx/phonebook
-%%PORTDOCS%%share/examples/scmxx/sms
-%%PORTDOCS%%share/examples/scmxx/vCalendar
+%%PORTDOCS%%share/examples/scmxx/sms.txt
+%%PORTDOCS%%share/examples/scmxx/vCalendar.vcs
+%%PORTDOCS%%share/examples/scmxx/vCard.vcf
 %%PORTDOCS%%@dirrm share/doc/scmxx
 %%PORTDOCS%%@dirrm share/examples/scmxx

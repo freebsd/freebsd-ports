@@ -6,17 +6,20 @@
 #
 
 PORTNAME=	scmxx
-PORTVERSION=	0.6.1.6
+PORTVERSION=	0.6.3.1
 CATEGORIES=	comms
 MASTER_SITES=	http://ma2geo.mathematik.uni-karlsruhe.de/~hendrik/scmxx/download/
 
 MAINTAINER=	janos.mohacsi@bsd.hu
 
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
+		iconv.3:${PORTSDIR}/converters/libiconv
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		CFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 USE_GMAKE=	yes
 
 MAN1=		scmxx.1
@@ -27,7 +30,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/*.txt ${DOCSDIR}
 	@${MKDIR} ${EXAMPLESDIR}
-.for file in phonebook sms vCalendar
+.for file in phonebook sms.txt vCalendar.vcs vCard.vcf
 	${INSTALL_DATA} ${WRKSRC}/examples/${file} ${EXAMPLESDIR}
 .endfor
 .endif
