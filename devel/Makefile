@@ -133,6 +133,7 @@
     SUBDIR += clint
     SUBDIR += clisp-hyperspec
     SUBDIR += cmake
+    SUBDIR += cocktail
     SUBDIR += codecrusader
     SUBDIR += codeworker
     SUBDIR += colorer

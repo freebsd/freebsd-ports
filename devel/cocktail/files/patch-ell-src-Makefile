@@ -1,0 +1,19 @@
+--- ../../work/cocktail-9309//./ell/src/Makefile	Tue Feb 15 14:22:52 1994
++++ ./ell/src/Makefile	Wed Mar 31 22:43:34 2004
+@@ -48,13 +48,13 @@
+ 	sh -c "if test ! -d $(LIB)/ell; then mkdir -p $(LIB)/ell; else true; fi"
+ 
+ Scanner.mi Scanner.md:	ell.rex
+-	rex -d ell.rex;
++	$(REX) -d ell.rex;
+ 
+ Parser.mi Parser.md:	ell.ell
+-	ell -di ell.ell;
++	$(ELL) -di ell.ell;
+ 
+ Tree.mi Tree.md:	ell.ast
+-	cg -dimR ell.ast;
++	$(CG) -dimR ell.ast;
+ 
+ Semantics.md Semantics.mi:	Sem.estra
+ 	estra $(ESTRA) Sem.estra;

@@ -1,0 +1,25 @@
+--- ../../work/cocktail-9309//./puma/ffaba-c/Makefile	Tue Feb 15 14:26:16 1994
++++ ./puma/ffaba-c/Makefile	Wed Mar 31 22:35:05 2004
+@@ -1,13 +1,9 @@
+-LIB	= $(HOME)/lib
+-INCDIR	= $(LIB)/include
+-CFLAGS	= -I$(INCDIR)
+-CC	= cc -O
+ 
+ all:	main
+ 	time main
+ 
+ main:	ProTest.o Compiler.o
+-	cc -o main Compiler.o ProTest.o $(LIB)/libreuse.a
++	$(CC) -o main Compiler.o ProTest.o $(LIB)/libreuse.a
+ 
+ ProTest.o:	ProTest.h
+ Compiler.o:	ProTest.h
+@@ -24,5 +20,5 @@
+ clean:
+ 	rm -f core Compiler.* ProTest.* yy*.w main
+ 
+-.c.o:
+-	$(CC) $(CFLAGS) -c $*.c;
++.include "../../Makefile.inc"
++

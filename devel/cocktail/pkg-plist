@@ -1,0 +1,113 @@
+bin/rex
+bin/bnf
+bin/ell
+bin/lalr
+bin/l2r
+bin/y2l
+bin/r2l
+bin/l2cg
+bin/rpp
+bin/cg
+bin/ag
+bin/ast
+bin/gmdcpp
+bin/gmdupd
+bin/gmdrm
+bin/lpp
+bin/puma
+bin/estra
+bin/mtc
+libexec/cocktail/libreuse.a
+libexec/cocktail/rex/rex
+libexec/cocktail/rex/ScanDrv.c
+libexec/cocktail/rex/source.e
+libexec/cocktail/rex/scanner.e
+libexec/cocktail/rex/scanner.doc
+libexec/cocktail/rex/scandrv.e
+libexec/cocktail/rex/scanattribute.e
+libexec/cocktail/rex/lsarray.e
+libexec/cocktail/rex/attribute.e
+libexec/cocktail/rex/Source.mod
+libexec/cocktail/rex/Source.mi
+libexec/cocktail/rex/Source.md
+libexec/cocktail/rex/Source.h
+libexec/cocktail/rex/Source.def
+libexec/cocktail/rex/Source.c
+libexec/cocktail/rex/Scanner.mod
+libexec/cocktail/rex/Scanner.mi
+libexec/cocktail/rex/Scanner.md
+libexec/cocktail/rex/Scanner.h
+libexec/cocktail/rex/Scanner.def
+libexec/cocktail/rex/Scanner.c
+libexec/cocktail/rex/ScanDrv.mod
+libexec/cocktail/rex/ScanDrv.mi
+libexec/cocktail/rex/statecontrol.e
+libexec/cocktail/lalr/ErrorTab
+libexec/cocktail/lalr/bnf
+libexec/cocktail/lalr/lalr
+libexec/cocktail/lalr/ParserDrv.mi
+libexec/cocktail/lalr/sets.e
+libexec/cocktail/lalr/scanner.e
+libexec/cocktail/lalr/parserdrv.e
+libexec/cocktail/lalr/parser.e
+libexec/cocktail/lalr/lsarray.e
+libexec/cocktail/lalr/errors.e
+libexec/cocktail/lalr/scanattribute.e
+libexec/cocktail/lalr/attribute.e
+libexec/cocktail/lalr/Scanner.h
+libexec/cocktail/lalr/Scanner.c
+libexec/cocktail/lalr/Errors.h
+libexec/cocktail/lalr/Errors.c
+libexec/cocktail/lalr/Parser.h
+libexec/cocktail/lalr/Parser.c
+libexec/cocktail/lalr/ParserDrv.c
+libexec/cocktail/lalr/Scanner.mi
+libexec/cocktail/lalr/Scanner.md
+libexec/cocktail/lalr/Errors.mi
+libexec/cocktail/lalr/Errors.md
+libexec/cocktail/lalr/Parser.mi
+libexec/cocktail/lalr/bnf.cat
+libexec/cocktail/lalr/Parser.md
+libexec/cocktail/lalr/statecontrol.e
+libexec/cocktail/lalr/lalr.cat
+libexec/cocktail/lalr/bnf.syn
+libexec/cocktail/lalr/lalr.syn
+libexec/cocktail/ell/ell
+libexec/cocktail/ell/ErrorTab
+libexec/cocktail/r2l/r2l
+libexec/cocktail/l2cg/l2cg
+libexec/cocktail/cg/cg
+libexec/cocktail/cg/TypeTab.c
+libexec/cocktail/cg/TypeTab.m
+libexec/cocktail/puma/puma
+libexec/cocktail/puma/TypeTab.c
+libexec/cocktail/puma/TypeTab.m
+libexec/cocktail/estra/estra
+libexec/cocktail/estra/ErrorTab
+libexec/cocktail/mtc/Arguments.c
+libexec/cocktail/mtc/Arguments.h
+libexec/cocktail/mtc/SYSTEM_.c
+libexec/cocktail/mtc/SYSTEM_.h
+include/cocktail/DynArray.h
+include/cocktail/rSystem.h
+include/cocktail/rMemory.h
+include/cocktail/Time.h
+include/cocktail/StringMem.h
+include/cocktail/Source.h
+include/cocktail/Sets.h
+include/cocktail/Positions.h
+include/cocktail/Idents.h
+include/cocktail/General.h
+include/cocktail/Errors.h
+include/cocktail/ratc.h
+@dirrm libexec/cocktail/rex
+@dirrm libexec/cocktail/lalr
+@dirrm libexec/cocktail/ell
+@dirrm libexec/cocktail/r2l
+@dirrm libexec/cocktail/l2cg
+@dirrm libexec/cocktail/cg
+@dirrm libexec/cocktail/puma
+@dirrm libexec/cocktail/estra
+@dirrm libexec/cocktail/mtc/
+@dirrm libexec/cocktail
+@dirrm include/cocktail

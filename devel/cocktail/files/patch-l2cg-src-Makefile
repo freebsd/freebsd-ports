@@ -1,0 +1,20 @@
+--- ../../work/cocktail-9309//./l2cg/src/Makefile	Tue Feb 15 14:23:44 1994
++++ ./l2cg/src/Makefile	Wed Mar 31 22:45:23 2004
+@@ -14,14 +14,14 @@
+ 	mv ParserDrv l2cg
+ 
+ Scanner.md Scanner.mi:	l2cg.rex
+-	rex -d l2cg.rex;
++	$(REX) -d l2cg.rex;
+ 
+ Parser.md Parser.mi ParserDrv.mi:	l2cg.lalr
+-	lalr -b -d -p l2cg.lalr;
++	$(LALR) -b -d -p l2cg.lalr;
+ 
+ install:	l2cg l2cg.sh $(LIB)/l2cg
+ 	if test $(LIB) = $(BIN); then echo error: BIN = LIB; false; else true; fi
+-	sed 's;LIB;$(LIB);g' < l2cg.sh > $(BIN)/l2cg
++	$(SED) 's;LIB;$(LIB);g' < l2cg.sh > $(BIN)/l2cg
+ 	chmod a+rx $(BIN)/l2cg
+ 	install -c -s -m 755 l2cg $(LIB)/l2cg
+ 

@@ -1,0 +1,8 @@
+--- ../../work/cocktail-9309//./puma/ffaba-m/Makefile	Tue Feb 15 14:26:15 1994
++++ ./puma/ffaba-m/Makefile	Wed Mar 31 22:35:05 2004
+@@ -12,3 +12,5 @@
+ 
+ clean:
+ 	rm -f core Compiler.* ProTest.* main.[mor] main
++
++.include "../../Makefile.inc" 

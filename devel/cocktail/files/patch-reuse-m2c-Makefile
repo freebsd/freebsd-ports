@@ -1,0 +1,248 @@
+--- ../../work/cocktail-9309//./reuse/m2c/Makefile	Tue Feb 15 14:26:46 1994
++++ ./reuse/m2c/Makefile	Wed Mar 31 22:35:06 2004
+@@ -1,9 +1,6 @@
+-OPT	= -O
+-UNIX	= UNIX
+-CFLAGS	= $(OPT) -D$(UNIX)
+-CC	= cc
+-M2FLAGS	= -c -d/usr/local/lib/mocka/lib -o../m2c
+-# M2FLAGS	= -cu -d/usr/local/lib/mocka/lib -o../m2c
++
++.include "../../Makefile.inc" 
++
+ SYSTEM	= rSystem.o
+ 
+ OBJS	= Checks.o DynArray.o General.o Heap.o IO.o Idents.o Layout.o \
+@@ -13,12 +10,21 @@
+ CLIBS	= Arguments.o SYSTEM_.o
+ 
+ 
+-libreuse.a	: $(OBJS)
+-	ar ruc libreuse.a $(OBJS)
+-	ranlib libreuse.a
++$(REUSE)	: $(OBJS)
++	ar ruc $(REUSE) $(OBJS)
++	ranlib $(REUSE)
++
+ 
++all	: $(REUSE) 
+ 
+-all	: $(CLIBS)
++test:	DynArrDrv IODrv Main rMemoryDrv RelDrv SetsDrv SysIODrv ErrorsDrv
++
++clean	: cleantest
++	rm -f core *.o
++	rm -f $(REUSE)
++
++cleantest:
++	rm -f Main.o DynArrDrv IODrv Main rMemoryDrv RelDrv SetsDrv SysIODrv ErrorsDrv
+ 
+ # HEAD
+ 
+@@ -308,190 +314,27 @@
+ 
+ SYSTEM_.o	: SYSTEM_.c SYSTEM_.h
+ 
+-DynArrDrv	: $(SYSTEM)	\
+-	DynArrDrv.o	\
+-	IO.o	\
+-	rMemory.o	\
+-	General.o	\
+-	DynArray.o	\
+-;	$(CC) $(CFLAGS) -o DynArrDrv $(SYSTEM)	\
+-	DynArrDrv.o	\
+-	IO.o	\
+-	rMemory.o	\
+-	General.o	\
+-	DynArray.o	\
+-	$(CLIBS)
+-
+-ErrorsDrv	: $(SYSTEM)	\
+-	ErrorsDrv.o	\
+-	Errors.o	\
+-	Strings.o	\
+-	IO.o	\
+-	rMemory.o	\
+-	General.o	\
+-	Sort.o	\
+-	Sets.o	\
+-	DynArray.o	\
+-	Idents.o	\
+-	StringMem.o	\
+-	Positions.o	\
+-;	$(CC) $(CFLAGS) -o ErrorsDrv $(SYSTEM)	\
+-	ErrorsDrv.o	\
+-	Errors.o	\
+-	Strings.o	\
+-	IO.o	\
+-	rMemory.o	\
+-	General.o	\
+-	Sort.o	\
+-	Sets.o	\
+-	DynArray.o	\
+-	Idents.o	\
+-	StringMem.o	\
+-	Positions.o	\
+-	$(CLIBS)
+-
+-IODrv	: $(SYSTEM)	\
+-	IODrv.o	\
+-	IO.o	\
+-	rMemory.o	\
+-	General.o	\
+-;	$(CC) $(CFLAGS) -o IODrv $(SYSTEM)	\
+-	IODrv.o	\
+-	IO.o	\
+-	rMemory.o	\
+-	General.o	\
+-	$(CLIBS)
+-
+-Main	: $(SYSTEM)	\
+-	Main.o	\
+-	Times.o	\
+-	IO.o	\
+-	rMemory.o	\
+-	General.o	\
+-	Checks.o	\
+-	Pack.o	\
+-	Source.o	\
+-	Sort.o	\
+-	Errors.o	\
+-	Strings.o	\
+-	Sets.o	\
+-	DynArray.o	\
+-	Idents.o	\
+-	StringMem.o	\
+-	Positions.o	\
+-	Layout.o	\
+-	StdIO.o	\
+-	RelatsC.o	\
+-	SetsC.o	\
+-	Relations.o	\
+-	Texts.o	\
+-	Lists.o	\
+-	Heap.o	\
+-;	$(CC) $(CFLAGS) -o Main $(SYSTEM)	\
+-	Main.o	\
+-	Times.o	\
+-	IO.o	\
+-	rMemory.o	\
+-	General.o	\
+-	Checks.o	\
+-	Pack.o	\
+-	Source.o	\
+-	Sort.o	\
+-	Errors.o	\
+-	Strings.o	\
+-	Sets.o	\
+-	DynArray.o	\
+-	Idents.o	\
+-	StringMem.o	\
+-	Positions.o	\
+-	Layout.o	\
+-	StdIO.o	\
+-	RelatsC.o	\
+-	SetsC.o	\
+-	Relations.o	\
+-	Texts.o	\
+-	Lists.o	\
+-	Heap.o	\
+-	$(CLIBS)
+-
+-rMemoryDrv	: $(SYSTEM)	\
+-	rMemoryDrv.o	\
+-	IO.o	\
+-	rMemory.o	\
+-	General.o	\
+-;	$(CC) $(CFLAGS) -o rMemoryDrv $(SYSTEM)	\
+-	rMemoryDrv.o	\
+-	IO.o	\
+-	rMemory.o	\
+-	General.o	\
+-	$(CLIBS)
+-
+-RelDrv	: $(SYSTEM)	\
+-	RelDrv.o	\
+-	Relations.o	\
+-	Sets.o	\
+-	IO.o	\
+-	rMemory.o	\
+-	General.o	\
+-	DynArray.o	\
+-;	$(CC) $(CFLAGS) -o RelDrv $(SYSTEM)	\
+-	RelDrv.o	\
+-	Relations.o	\
+-	Sets.o	\
+-	IO.o	\
+-	rMemory.o	\
+-	General.o	\
+-	DynArray.o	\
+-	$(CLIBS)
+-
+-SetsDrv	: $(SYSTEM)	\
+-	SetsDrv.o	\
+-	IO.o	\
+-	rMemory.o	\
+-	General.o	\
+-	Sets.o	\
+-	DynArray.o	\
+-;	$(CC) $(CFLAGS) -o SetsDrv $(SYSTEM)	\
+-	SetsDrv.o	\
+-	IO.o	\
+-	rMemory.o	\
+-	General.o	\
+-	Sets.o	\
+-	DynArray.o	\
+-	$(CLIBS)
+-
+-SysIODrv	: $(SYSTEM)	\
+-	SysIODrv.o	\
+-	Checks.o	\
+-	IO.o	\
+-	rMemory.o	\
+-	General.o	\
+-;	$(CC) $(CFLAGS) -o SysIODrv $(SYSTEM)	\
+-	SysIODrv.o	\
+-	Checks.o	\
+-	IO.o	\
+-	rMemory.o	\
+-	General.o	\
+-	$(CLIBS)
++DynArrDrv: $(SYSTEM) $(REUSE) DynArrDrv.o
++	$(CC) $(CFLAGS) -o DynArrDrv DynArrDrv.o $(REUSE) 
+ 
+-# TAIL
++ErrorsDrv: $(SYSTEM) $(REUSE) ErrorsDrv.o
++	$(CC) $(CFLAGS) -o ErrorsDrv ErrorsDrv.o $(REUSE)
+ 
+-clean	:
+-	rm -f core *.o
++IODrv: $(SYSTEM) $(REUSE) IODrv.o
++	$(CC) $(CFLAGS) -o IODrv IODrv.o $(REUSE)
+ 
+-CLEAN	: clean
+-	rm -f libreuse.a
++Main: $(SYSTEM) $(REUSE) Main.o
++	$(CC) $(CFLAGS) -o Main Main.o $(REUSE)
+ 
+-cleanc	:
+-	rm -f Main.o DynArrDrv IODrv Main rMemoryDrv RelDrv SetsDrv SysIODrv ErrorsDrv
++rMemoryDrv: $(SYSTEM) $(REUSE) rMemoryDrv.o
++	$(CC) $(CFLAGS) -o rMemoryDrv rMemoryDrv.o $(REUSE)
+ 
+-.SUFFIXES: .md .mi .h .c .o
++RelDrv: $(SYSTEM) $(REUSE) RelDrv.o
++	$(CC) $(CFLAGS) -o RelDrv  RelDrv.o $(REUSE)
+ 
+-.mi.c:
+-	mtc2 $(M2FLAGS) $*.mi;
++SetsDrv: $(SYSTEM) SetsDrv.o $(REUSE)
++	$(CC) $(CFLAGS) -o SetsDrv SetsDrv.o $(REUSE)
+ 
+-.md.h:
+-	mtc2 $(M2FLAGS) $*.md;
++SysIODrv: $(SYSTEM) SysIODrv.o $(REUSE)
++	$(CC) $(CFLAGS) -o SysIODrv SysIODrv.o $(REUSE)
+ 
+-.c.o:
+-	$(CC) $(CFLAGS) -c $*.c

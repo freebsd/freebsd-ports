@@ -1,0 +1,20 @@
+--- ../../work/cocktail-9309//./r2l/src/Makefile	Tue Feb 15 14:26:26 1994
++++ ./r2l/src/Makefile	Wed Mar 31 22:57:18 2004
+@@ -15,14 +15,14 @@
+ 	echo p r2l | mc -d ../../reuse/src
+ 
+ Scanner.mi Scanner.md:	r2l.rex
+-	rex -d r2l.rex;
++	$(REX) -d r2l.rex;
+ 
+ Parser.mi Parser.md:	r2l.lalr
+-	lalr -b -d r2l.lalr;
++	$(LALR) -b -d r2l.lalr;
+ 
+ install:	r2l r2l.sh $(LIB)/r2l
+ 	if test $(LIB) = $(BIN); then echo error: BIN = LIB; false; else true; fi
+-	sed "s;LIB;$(LIB);g" < r2l.sh > $(BIN)/r2l
++	$(SED) "s;LIB;$(LIB);g" < r2l.sh > $(BIN)/r2l
+ 	chmod a+rx $(BIN)/r2l
+ 	install -c -s -m 755 r2l $(LIB)/r2l
+ 
