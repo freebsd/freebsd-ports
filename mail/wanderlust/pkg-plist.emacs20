@@ -58,6 +58,8 @@ share/doc/wanderlust/wl.texi
 %%WL_LISPDIR%%/elmo-sendlog.elc
 %%SHIMBUN%%%%WL_LISPDIR%%/elmo-shimbun.el
 %%SHIMBUN%%%%WL_LISPDIR%%/elmo-shimbun.elc
+%%WL_LISPDIR%%/elmo-split.el
+%%WL_LISPDIR%%/elmo-split.elc
 %%WL_LISPDIR%%/elmo-util.el
 %%WL_LISPDIR%%/elmo-util.elc
 %%WL_LISPDIR%%/elmo-vars.el
@@ -128,7 +130,7 @@ share/doc/wanderlust/wl.texi
 %%WL_LISPDIR%%/wl-version.elc
 %%WL_LISPDIR%%/wl.el
 %%WL_LISPDIR%%/wl.elc
-%%EMACS_LIBDIR_WITH_VER%%/site-lisp/wanderlust-startup.el
+%%STARTUPDIR%%/wanderlust-startup.el
 share/examples/wanderlust/en/dot.addresses
 share/examples/wanderlust/en/dot.folders
 share/examples/wanderlust/en/dot.wl

@@ -4,11 +4,11 @@ info/wl.info
 @unexec install-info --section="%%DIRSECTION%%" --delete %D/info/wl-ja.info %D/info/dir
 info/wl-ja.info
 @exec install-info --section="%%DIRSECTION%%" %D/info/wl-ja.info %D/info/dir
-share/doc/ja/wanderlust/README.ja
 share/doc/ja/wanderlust/NEWS.ja
+share/doc/ja/wanderlust/README.ja
 share/doc/ja/wanderlust/wl-ja.texi
-share/doc/wanderlust/README
 share/doc/wanderlust/NEWS
+share/doc/wanderlust/README
 share/doc/wanderlust/wl.texi
 %%WL_LISPDIR%%/acap.el
 %%WL_LISPDIR%%/acap.elc
@@ -58,6 +58,8 @@ share/doc/wanderlust/wl.texi
 %%WL_LISPDIR%%/elmo-sendlog.elc
 %%SHIMBUN%%%%WL_LISPDIR%%/elmo-shimbun.el
 %%SHIMBUN%%%%WL_LISPDIR%%/elmo-shimbun.elc
+%%WL_LISPDIR%%/elmo-split.el
+%%WL_LISPDIR%%/elmo-split.elc
 %%WL_LISPDIR%%/elmo-util.el
 %%WL_LISPDIR%%/elmo-util.elc
 %%WL_LISPDIR%%/elmo-vars.el
@@ -167,6 +169,7 @@ share/doc/wanderlust/wl.texi
 %%WL_ICONDIR%%/wl-beta-xmas-logo.xpm
 %%WL_ICONDIR%%/wl-draft-insert-signature-up.xpm
 %%WL_ICONDIR%%/wl-draft-kill-up.xpm
+%%WL_ICONDIR%%/wl-draft-save-and-exit-up.xpm
 %%WL_ICONDIR%%/wl-draft-send-from-toolbar-down.xpm
 %%WL_ICONDIR%%/wl-draft-send-from-toolbar-up.xpm
 %%WL_ICONDIR%%/wl-draft-up.xpm
@@ -174,6 +177,7 @@ share/doc/wanderlust/wl.texi
 %%WL_ICONDIR%%/wl-exit-up.xpm
 %%WL_ICONDIR%%/wl-folder-check-current-entity-up.xpm
 %%WL_ICONDIR%%/wl-folder-empty-trash-up.xpm
+%%WL_ICONDIR%%/wl-folder-goto-draft-folder-up.xpm
 %%WL_ICONDIR%%/wl-folder-jump-to-current-entity-no-sync-up.xpm
 %%WL_ICONDIR%%/wl-folder-jump-to-current-entity-up.xpm
 %%WL_ICONDIR%%/wl-folder-next-entity-up.xpm
@@ -207,6 +211,7 @@ share/doc/wanderlust/wl.texi
 %%WL_ICONDIR%%/wl-summary-reply-up.xpm
 %%WL_ICONDIR%%/wl-summary-reply-with-citation-up.xpm
 %%WL_ICONDIR%%/wl-summary-sync-force-update-up.xpm
+%%WL_ICONDIR%%/wl-write-current-folder-up.xpm
 share/examples/wanderlust/en/dot.addresses
 share/examples/wanderlust/en/dot.folders
 share/examples/wanderlust/en/dot.wl
