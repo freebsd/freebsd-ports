@@ -4200,6 +4200,7 @@ kdepim3		ports/deskutils/kdepim3
 kdesdk3		ports/devel/kdesdk3
 kdetoys3	ports/x11-clocks/kdetoys3
 kdeutils3	ports/misc/kdeutils3
+kdewebdev	ports/www/kdewebdev
 kdevelop	ports/devel/kdevelop
 kdiff3		ports/textproc/kdiff3
 kdirstat	ports/sysutils/kdirstat
@@ -4365,7 +4366,6 @@ koffice-kde3	ports/editors/koffice-kde3
 kolourpaint	ports/graphics/kolourpaint
 konq-plugins	ports/misc/konq-plugins
 konqueror-nsplugins	ports/www/konqueror-nsplugins
-kontact-plugins	ports/net/kontact-plugins
 konversation	ports/irc/konversation
 konverse	ports/net/konverse
 konwert		ports/converters/konwert
@@ -4377,7 +4377,6 @@ kpacman		ports/games/kpacman
 kphone		ports/net/kphone
 kpicframer	ports/games/kpicframer
 kpictorial	ports/games/kpictorial
-kpilot		ports/palm/kpilot
 kplayer		ports/multimedia/kplayer
 kpopup		ports/net/kpopup
 kprof		ports/devel/kprof
@@ -8924,7 +8923,6 @@ quake2forge	ports/games/quake2forge
 quake2lnx	ports/games/quake2lnx
 quakeforge	ports/games/quakeforge
 quakeserver	ports/games/quakeserver
-quanta		ports/www/quanta
 quantlib	ports/finance/quantlib
 quark		ports/multimedia/quark
 quasi88		ports/emulators/quasi88
