@@ -1,21 +1,21 @@
 bin/liferea
 bin/liferea-bin
-etc/gconf/gconf.xml.defaults/apps/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/liferea/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/liferea/%gconf.xml
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/liferea.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/liferea.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/liferea.schemas > /dev/null || /usr/bin/true
 lib/liferea/liblihtmlg.so
 %%MOZ%%lib/liferea/liblihtmlm.so
 share/gnome/applications/liferea.desktop
 share/gnome/liferea/css/liferea.css
+share/gnome/liferea/css/liferea2.css
 share/gnome/liferea/opml/feedlist.opml
 share/gnome/liferea/opml/feedlist_de.opml
 share/gnome/liferea/opml/feedlist_es.opml
 share/gnome/liferea/opml/feedlist_fr.opml
+share/gnome/liferea/opml/feedlist_sk.opml
 share/gnome/liferea/pixmaps/available.png
 share/gnome/liferea/pixmaps/directory.png
+share/gnome/liferea/pixmaps/edit.png
 share/gnome/liferea/pixmaps/empty.png
 share/gnome/liferea/pixmaps/flag.png
 share/gnome/liferea/pixmaps/liferea.png
@@ -23,6 +23,7 @@ share/gnome/liferea/pixmaps/ocs.png
 share/gnome/liferea/pixmaps/offline.png
 share/gnome/liferea/pixmaps/online.png
 share/gnome/liferea/pixmaps/read.xpm
+share/gnome/liferea/pixmaps/technorati.png
 share/gnome/liferea/pixmaps/unread.png
 share/gnome/liferea/pixmaps/vfolder.png
 share/gnome/pixmaps/liferea.png
@@ -43,5 +44,3 @@ share/locale/zh_TW/LC_MESSAGES/liferea.mo
 @dirrm share/gnome/liferea/css
 @dirrm share/gnome/liferea
 @dirrm lib/liferea
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/liferea
-@dirrm etc/gconf/gconf.xml.defaults/apps/liferea
