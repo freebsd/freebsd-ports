@@ -10,7 +10,9 @@ PORTVERSION=	1.3.2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/v1.3/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/gtk/v1.3/ \
-		http://www.ameth.org/gimp/gtk/v1.3/
+		http://www.ameth.org/gimp/gtk/v1.3/ \
+		${MASTER_SITE_RINGSERVER}
+MASTER_SITE_SUBDIR=	graphics/gimp/gtk/v1.3
 
 MAINTAINER=	vanilla@FreeBSD.org
 

@@ -11,7 +11,9 @@ PORTVERSION=	1.2.9
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/v1.2/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/gtk/v1.2/ \
-		http://www.ameth.org/gimp/gtk/v1.2/
+		http://www.ameth.org/gimp/gtk/v1.2/ \
+		${MASTER_SITE_RINGSERVER}
+MASTER_SITE_SUBDIR=	graphics/gimp/gtk/v1.2
 DISTNAME=	gtk+-${PORTVERSION}
 
 MAINTAINER=	vanilla@FreeBSD.org
