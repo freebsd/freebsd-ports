@@ -2,6 +2,7 @@ bin/analog
 @unexec [ -f %D/etc/analog.cfg ] && cmp -s %D/etc/analog.cfg %D/etc/analog.cfg-dist && rm -f %D/etc/analog.cfg
 etc/analog.cfg-dist
 @exec if [ ! -f %D/etc/analog.cfg ] ; then cp -p %D/%F %B/analog.cfg; fi
+lib/analog/lang/README.txt
 lib/analog/lang/am.lng
 lib/analog/lang/amdom.tab
 lib/analog/lang/ba.lng
@@ -30,6 +31,7 @@ lib/analog/lang/es.lng
 lib/analog/lang/esa.lng
 lib/analog/lang/esadom.tab
 lib/analog/lang/esdom.tab
+lib/analog/lang/esform.html
 lib/analog/lang/esh.lng
 lib/analog/lang/eshdom.tab
 lib/analog/lang/fi.lng
@@ -44,8 +46,12 @@ lib/analog/lang/frh.lng
 lib/analog/lang/frhdom.tab
 lib/analog/lang/gr.lng
 lib/analog/lang/gra.lng
+lib/analog/lang/hu.cfg
+lib/analog/lang/hu.lng
 lib/analog/lang/hua.lng
-lib/analog/lang/huh.lng
+lib/analog/lang/huadom.tab
+lib/analog/lang/hudom.tab
+lib/analog/lang/itform.html
 lib/analog/lang/is.lng
 lib/analog/lang/isa.lng
 lib/analog/lang/ish.lng
@@ -77,6 +83,7 @@ lib/analog/lang/pt.lng
 lib/analog/lang/pta.lng
 lib/analog/lang/pth.lng
 lib/analog/lang/ro.lng
+lib/analog/lang/rodom.tab
 lib/analog/lang/ru.lng
 lib/analog/lang/rua.lng
 lib/analog/lang/rudom.tab
@@ -211,6 +218,6 @@ www/data/images/html2.gif
 @dirrm lib/analog/lang
 @dirrm lib/analog
 @dirrm share/doc/analog
-@dirrm www/data/images
+@unexec rmdir %D/www/data/images 2>/dev/null || true
 @unexec rmdir %D/www/data 2>/dev/null || true
 @unexec rmdir %D/www 2>/dev/null || true

@@ -1,5 +1,4 @@
 # New ports collection makefile for: analog
-# http://www.analog.cx/
 # Date created:		October 21st 1996
 # Whom:			jfitz
 #
@@ -7,7 +6,7 @@
 #
 
 PORTNAME=	analog
-PORTVERSION=    4.1
+PORTVERSION=    4.11
 CATEGORIES=	www
 MASTER_SITES=   http://www.analog.cx/ \
 		http://brendanr.simplenet.com/analog/ \
@@ -27,28 +26,18 @@ MAKE_FLAGS=     -DPREFIX=${PREFIX} -f
 ALL_TARGET=     analog
 
 do-install:
-	install -d -o ${SHAREOWN} -g ${SHAREGRP} -m 555 \
-		${PREFIX}/share/doc/analog
-	install -d -o ${BINOWN} -g ${BINGRP} -m 755 \
-		${PREFIX}/lib/analog/lang
-	install -d -o nobody -g nogroup -m 755 \
-		${PREFIX}/www/data/images
-	cd ${WRKSRC}/images && \
-		${INSTALL_DATA} * ${PREFIX}/www/data/images
-	cd ${WRKSRC}/lang && \
-		${INSTALL_DATA} * ${PREFIX}/lib/analog/lang
-	cd ${WRKSRC} && \
-		${INSTALL_PROGRAM} analog ${PREFIX}/bin
-	cd ${WRKSRC} && \
-	for file in analog.cfg ; do \
-	    if [ ! -f ${PREFIX}/etc/$$file ] ; then \
-		${INSTALL_DATA} -m 644 $$file ${PREFIX}/etc/$$file ; \
-	    fi ; \
-	${INSTALL_DATA} -m 644 $$file ${PREFIX}/etc/$$file-dist ; \
-	done
+	${MKDIR} ${PREFIX}/share/doc/analog
+	${MKDIR} ${PREFIX}/lib/analog/lang
+	${MKDIR} ${PREFIX}/www/data/images
+	${INSTALL_DATA} ${WRKSRC}/images/* ${PREFIX}/www/data/images
+	${INSTALL_DATA} ${WRKSRC}/lang/* ${PREFIX}/lib/analog/lang
+	${INSTALL_PROGRAM} ${WRKSRC}/analog ${PREFIX}/bin
+.if !exists(${PREFIX}/etc/analog.cfg)
+	${INSTALL_DATA} ${WRKSRC}/analog.cfg ${PREFIX}/etc
+.endif
+	${INSTALL_DATA} ${WRKSRC}/analog.cfg ${PREFIX}/etc/analog.cfg.dist
 .if !defined(NOPORTDOCS)
-	cd ${WRKSRC}/docs && \
-		${INSTALL_DATA} * ${PREFIX}/share/doc/analog
+	${INSTALL_DATA} ${WRKSRC}/docs/* ${PREFIX}/share/doc/analog
 .endif
 
 .include <bsd.port.mk>
