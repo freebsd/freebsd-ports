@@ -9,7 +9,7 @@ PORTNAME=	qterm
 PORTVERSION=	0.1.3
 CATEGORIES=	chinese
 MASTER_SITES=	http://qterm.gnuchina.org/qterm-0.1.3/ \
-		http://freebsd.sinica.edu.tw/~statue/
+		ftp://freebsd.sinica.edu.tw/pub/statue/qterm/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 
 MAINTAINER=	statue@freebsd.sinica.edu.tw
