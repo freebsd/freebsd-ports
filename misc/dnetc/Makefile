@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dnetc
-PORTVERSION=	2.8015.472
+PORTVERSION=	2.8018.472
 PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	misc
@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.distributed.net/pub/dcti/%SUBDIR%/ \
 		http://http.distributed.net/pub/dcti/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION:S/^/v/:R}
 .include <bsd.port.pre.mk>
+
 .if ${ARCH} == "i386"
 DISTFILES=	dnetc${PORTVERSION:E}-freebsd-x86-elf.tar.gz
 .elif ${ARCH} == "alpha"
@@ -22,17 +23,15 @@ BROKEN=		"Not immediately available.  Please try again tomorrow."
 
 ONLY_FOR_ARCHS=	i386
 
-.if ${OSVERSION} < 220000
-BROKEN=		"dnetc is not available for your version of FreeBSD.  Please upgrade."
-.elif ${OSVERSION} < 300000
-BROKEN=		"No version is currently available for your system.  Please try again later."
+.if ${OSVERSION} < 300000
+BROKEN=		"No version is currently available for your system.  Please upgrade FreeBSD."
 .endif
 
 .if exists(${PREFIX}/distributed.net/rc5des)
 BROKEN=		"rc5des/dnetc conflict: Please deinstall all rc5des ports/packages first."
 .endif
 
-MAINTAINER=	dbaker@distributed.net
+MAINTAINER=	dbaker@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
@@ -55,7 +54,7 @@ do-configure:
 
 pre-install:
 	@${ECHO} "==>  Creating custom user to run dnetc..."
-	${PKGINSTALL} ${PKGNAME} PRE-INSTALL "${CLIENTUSER}" "${CLIENTGROUP}" 
+	${PKGINSTALL} ${PKGNAME} PRE-INSTALL "${CLIENTUSER}" "${CLIENTGROUP}"
 
 do-install:
 	@if [ ! -d ${BINDIR} ]; then \
