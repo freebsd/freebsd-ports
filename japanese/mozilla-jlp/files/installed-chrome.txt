@@ -10,6 +10,8 @@ locale,install,url,jar:resource:/chrome/ja-JP.jar!/locale/ja-JP/pipnss/
 locale,install,url,jar:resource:/chrome/ja-JP.jar!/locale/ja-JP/pippki/
 locale,install,url,jar:resource:/chrome/ja-JP.jar!/locale/ja-JP/help/
 locale,install,url,jar:resource:/chrome/ja-JP.jar!/locale/ja-JP/content-packs/
+locale,install,url,jar:resource:/chrome/ja-JP.jar!/locale/ja-JP/mozldap/
+locale,install,url,jar:resource:/chrome/ja-JP.jar!/locale/ja-JP/chatzilla/
 locale,install,url,jar:resource:/chrome/ja-unix.jar!/locale/ja-JP/global-platform/
 locale,install,url,jar:resource:/chrome/ja-unix.jar!/locale/ja-JP/communicator-platform/
 locale,install,url,jar:resource:/chrome/ja-unix.jar!/locale/ja-JP/navigator-platform/
