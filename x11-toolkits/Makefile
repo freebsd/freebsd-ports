@@ -192,7 +192,6 @@
     SUBDIR += wxgtk-common
     SUBDIR += wxgtk-contrib
     SUBDIR += wxgtk-contrib-common
-    SUBDIR += wxgtk-devel
     SUBDIR += wxgtk-docs
     SUBDIR += wxgtk2
     SUBDIR += wxgtk2-contrib
