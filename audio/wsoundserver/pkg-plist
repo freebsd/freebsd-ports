@@ -1,0 +1,9 @@
+bin/wmsound
+bin/nmaker
+bin/getsounds
+bin/setsounds
+include/wmsnd.h
+share/WindowMaker/Defaults/WMSound
+lib/libwmsnd.a
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R

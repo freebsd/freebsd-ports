@@ -1,0 +1,15 @@
+This is the sound server for Window Maker. To use it, execute "wmsound &" from 
+an xterm, then dock the application icon. This package comes with a utility 
+called nmaker that can be used to play .wav files. You can set nmaker to be 
+the application to play .au and .wav files that you drop onto the docked 
+wmsound icon.
+
+Recent versions of Window Maker are built with sound enabled by default. If 
+you are using an older version of Window Maker, you will have to add the 
+following argument to configure: "--enable-sound" and rebuild and reinstall 
+Window Maker, or upgrade to a newer version.
+
+You must set up your sounds to use for various events, ie., iconification. You 
+can get preset Sounsets from:
+
+http://www.frontiernet.net/~southgat/wmsound/sounds/index.shtml
