@@ -89,10 +89,10 @@ CFLAGS+=	-O3 -fno-omit-frame-pointer
 .if ${OSVERSION} > 500000 || (defined(USE_GCC) && (${USE_GCC} == 3.0 || ${USE_GCC} == 3.1 || ${USE_GCC} == 3.2 || ${USE_GCC} == 3.3))
 CFLAGS+=	-fno-gcse
 .endif
+.endif
 CXXFLAGS+=	${CFLAGS} -felide-constructors -fno-rtti
 .if ${OSVERSION} >= 400002
 CXXFLAGS+=	-fno-exceptions
-.endif
 .endif
 
 # MySQL-Server part
