@@ -1,13 +1,13 @@
 # New ports collection makefile for:    lsof
-# Version required:     3.75
+# Version required:     3.86
 # Date created:         Sat July 20, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.3 1996/11/18 11:40:12 asami Exp $
+# $Id: Makefile,v 1.4 1996/12/11 19:10:34 obrien Exp $
 #
 
-DISTNAME=	lsof_3.82_W
-PKGNAME=	lsof-3.82
+DISTNAME=	lsof_3.86_W
+PKGNAME=	lsof-3.86
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/  \
 		ftp://ftp.cert.dfn.de/pub/tools/admin/lsof/  \
