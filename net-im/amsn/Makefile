@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	amsn
-PORTVERSION=	0.92
+PORTVERSION=	0.93
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,13 +23,13 @@ BUILD_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_REINPLACE=	yes
-WRKSRC=		${WRKDIR}/msn
+WRKSRC=		${WRKDIR}/amsn-0_93
 
 LIBDIR=		${PREFIX}/lib/msn
 DOCSDIR=	${PREFIX}/share/doc/amsn
-CORE=		FAQ HELP README amsn jwakeup langlist amsn-remote remote.help \
+CORE=		FAQ HELP README amsn langlist amsn-remote remote.help \
 		*tcl *htm*
-SUBDIR=		icons lang skins plugins
+SUBDIR=		icons lang skins plugins utils docs
 DOC_FILES=	README TODO
 
 post-extract:
@@ -38,10 +38,8 @@ post-extract:
 	@${FIND} ${WRKSRC} -name .xvpics | ${XARGS} ${RM} -rf
 
 do-configure:
-	export WISH=`which wish8.4` && ${SED} s=!!PREFIX!!=`dirname $${WISH}|${SED} sx/binxxg`=g ${FILESDIR}/Makefile.traydoc | ${SED} s=!!X11BASE!!=${X11BASE}=g > ${WRKSRC}/plugins/traydock/Makefile
 
 do-build:
-	cd ${WRKSRC}/plugins/traydock && make && ${RM} Makefile
 
 do-install:
 	@${MKDIR} ${LIBDIR}
@@ -57,11 +55,10 @@ do-install:
 .endif
 
 post-install:
-	@${SED} -e "s=!!PREFIX!!=${PREFIX}=" < ${FILESDIR}/amsn \
-		> ${PREFIX}/bin/amsn
+	${LN} -s ${PREFIX}/lib/msn/amsn ${PREFIX}/bin/amsn
 	@${CHMOD} 555 ${PREFIX}/bin/amsn
 	@${CHMOD} 555 ${PREFIX}/lib/msn/amsn
-	@uudecode -o ${PREFIX}/lib/msn/skins/default/pixmaps/logolinmsn.gif \
-		${FILESDIR}/logolinmsn.gif.uue
+	@${CHMOD} 555 ${PREFIX}/lib/msn/amsn-remote
+	@${CHMOD} 555 ${PREFIX}/lib/msn/utils/amsnctl.pl
 
 .include <bsd.port.mk>
