@@ -1,14 +1,5 @@
 --- util.c.orig	Fri Oct 13 18:49:03 2000
 +++ util.c	Fri Jun 11 12:35:32 2004
-@@ -20,7 +20,7 @@
-  */
- #ifndef lint
- static const char rcsid[] =
--    "@(#) $Id: util.c,v 1.9 2000/10/13 22:48:55 leres Exp $ (LBL)";
-+    "@(#) $Id: util.c,v 1.5 2004/06/10 19:48:37 mdg Exp $ (LBL)";
- #endif
-
- /*
 @@ -39,6 +39,7 @@
  #include <stdlib.h>
  #include <string.h>
