@@ -1648,7 +1648,7 @@ fd		ports/shells/fd
 fdp-tools	ports/textproc/fdp-tools
 feh		ports/graphics/feh
 felis		ports/misc/felis
-felt		ports/cad/felt
+felt		ports/science/felt
 femlab		ports/math/femlab
 fep		ports/misc/fep
 ferite		ports/lang/ferite
