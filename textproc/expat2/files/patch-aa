@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sat Sep 30 00:54:52 2000
++++ Makefile.in	Thu Oct 12 00:04:32 2000
+@@ -76,7 +76,7 @@
+ RANLIB = @RANLIB@
+ VERSION = @VERSION@
+ 
+-SUBDIRS = lib
++SUBDIRS = lib xmlwf
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ CONFIG_HEADERS = config.h:config.hin
+ 

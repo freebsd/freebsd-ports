@@ -1,0 +1,10 @@
+--- xmlwf/Makefile.in.orig	Sat Sep 30 00:54:54 2000
++++ xmlwf/Makefile.in	Thu Oct 12 00:42:22 2000
+@@ -11,5 +11,7 @@
+ xmlwf: $(OBJS)
+ 	$(CC) -o xmlwf $(LDFLAGS) $(OBJS) $(LIBS)
+ 
++install:
++
+ clean:
+	rm -f xmlwf core *.o
