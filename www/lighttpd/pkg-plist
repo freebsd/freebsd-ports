@@ -10,11 +10,13 @@ lib/lighttpd/mod_compress.so
 lib/lighttpd/mod_evhost.so
 lib/lighttpd/mod_expire.so
 lib/lighttpd/mod_fastcgi.so
+lib/lighttpd/mod_mysql_vhost.so
 lib/lighttpd/mod_proxy.so
 lib/lighttpd/mod_redirect.so
 lib/lighttpd/mod_rewrite.so
 lib/lighttpd/mod_rrdtool.so
 lib/lighttpd/mod_secdownload.so
+lib/lighttpd/mod_setenv.so
 lib/lighttpd/mod_simple_vhost.so
 lib/lighttpd/mod_ssi.so
 lib/lighttpd/mod_status.so
