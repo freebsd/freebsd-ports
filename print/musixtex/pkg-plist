@@ -88,6 +88,7 @@ share/texmf/metafont/xslz20d.mf
 share/texmf/metafont/xtie20.mf
 share/texmf/documentation/backgrnd.sty
 share/texmf/documentation/musixdoc.tex
+share/texmf/documentation/musixdoc.sty
 share/texmf/documentation/musixtex.examples/angescax.tex
 share/texmf/documentation/musixtex.examples/angescao.tex
 share/texmf/documentation/musixtex.examples/avemaria.tex
