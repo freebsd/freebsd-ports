@@ -1,4 +1,6 @@
 bin/aps2file
+bin/apsfilter-bug
+bin/apspreview
 share/apsfilter/SETUP
 share/apsfilter/bin/apsfilter
 share/apsfilter/bin/setup_dvips.sh
@@ -55,6 +57,7 @@ share/apsfilter/driver/lexmark2070
 share/apsfilter/driver/lexmark2070c
 share/apsfilter/driver/lexmarkZ11
 share/apsfilter/driver/lj250
+share/apsfilter/driver/ljet4
 share/apsfilter/driver/lx5000
 share/apsfilter/driver/lxm3200
 share/apsfilter/driver/md2k
@@ -265,6 +268,7 @@ share/doc/apsfilter/README.TeX
 share/doc/apsfilter/apsfilter4.gif
 share/doc/apsfilter/handbook.html
 share/doc/apsfilter/paper
+@dirrm etc/apsfilter
 @dirrm share/apsfilter/bin
 @dirrm share/apsfilter/driver/hpdj
 @dirrm share/apsfilter/driver/hpijs
