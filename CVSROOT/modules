@@ -4086,6 +4086,7 @@ le		ports/editors/le
 leafnode	ports/news/leafnode
 leafnode+	ports/news/leafnode+
 leafpak		ports/graphics/leafpak
+leaktracer	ports/devel/leaktracer
 led		ports/editors/led
 leim20		ports/editors/leim20
 leim21		ports/editors/leim21
