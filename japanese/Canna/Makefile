@@ -27,7 +27,7 @@ MAINTAINER=	max@FreeBSD.org
 .include <bsd.port.pre.mk>
 
 .if ${XFREE86_VERSION} == 3
-#BUILD_DEPENDS=	xmkmf:${PORTSDIR}/devel/imake
+BUILD_DEPENDS=	xmkmf:${PORTSDIR}/devel/imake
 .endif
 
 USE_IMAKE=	yes
