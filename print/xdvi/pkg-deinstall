@@ -1,10 +1,14 @@
 #!/bin/sh
 
-prefix=/usr/local
+prefix=%%PREFIX%%
+
+if [ "$2" != "DEINSTALL" ]; then
+  exit 0
+fi
 
 cat << END
 
-Installing xdvi will remove $prefix/MakeTeXPK. This file may be used by
+Installing xdvi will remove $prefix/bin/MakeTeXPK. This file may be used by
 dvips or other programs. If this is the case, you must make a backup of
 this file now.
 
