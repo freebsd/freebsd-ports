@@ -1,0 +1,21 @@
+*** contrib.mak.orig	Mon Nov 16 00:06:51 1998
+--- contrib.mak	Mon Nov 16 00:07:10 1998
+***************
+*** 507,514 ****
+  lbp8.dev: $(lbp8_) page.dev
+  	$(SETPDEV) lbp8 $(lbp8_)
+  
+! lips3.dev: $(lbp8_) page.dev
+! 	$(SETPDEV) lips3 $(lbp8_)
+  
+  $(GLOBJ)gdevlbp8.$(OBJ): $(GLSRC)gdevlbp8.c $(PDEVH)
+  	$(GLCC) $(GLO_)gdevlbp8.$(OBJ) $(C_) $(GLSRC)gdevlbp8.c
+--- 507,514 ----
+  lbp8.dev: $(lbp8_) page.dev
+  	$(SETPDEV) lbp8 $(lbp8_)
+  
+! #lips3.dev: $(lbp8_) page.dev
+! #	$(SETPDEV) lips3 $(lbp8_)
+  
+  $(GLOBJ)gdevlbp8.$(OBJ): $(GLSRC)gdevlbp8.c $(PDEVH)
+  	$(GLCC) $(GLO_)gdevlbp8.$(OBJ) $(C_) $(GLSRC)gdevlbp8.c
