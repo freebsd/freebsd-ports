@@ -48,6 +48,7 @@ share/locale/sl/LC_MESSAGES/GConf.mo
 share/locale/sv/LC_MESSAGES/GConf.mo
 share/locale/tr/LC_MESSAGES/GConf.mo
 share/locale/uk/LC_MESSAGES/GConf.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/GConf.mo
 @dirrm share/gnome/gconf/1
 @dirrm share/gnome/gconf
 @dirrm lib/GConf/1
