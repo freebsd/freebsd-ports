@@ -10,8 +10,8 @@
 DISTNAME=	xacc-1.0.18
 PKGNAME=	gnucash-1.0.18
 CATEGORIES=	deskutils
-MASTER_SITES=	http://www.gnucash.org/xacc/download/  \
-		ftp://ftp.gnucash.org/pub/xacc/
+MASTER_SITES=	http://www.gnucash.org/pub/xacc/  \
+		ftp://ftp.gnucash.org/pub/gnucash/xacc/
 
 MAINTAINER=     obrien@FreeBSD.org
 
