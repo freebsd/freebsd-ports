@@ -1,23 +1,14 @@
-
-$FreeBSD$
-
---- Makefile.in.orig	Fri Jan 18 09:43:54 2002
-+++ Makefile.in	Fri Jan 18 09:45:49 2002
-@@ -149,7 +149,7 @@
- 
- AUTOMAKE_OPTIONS = 1.4
+--- Makefile.in.orig	Sun Dec 23 16:53:53 2001
++++ Makefile.in	Fri Feb  8 12:44:30 2002
+@@ -151,3 +151,3 @@
  
 -SUBDIRS = . m4macros glib gobject gmodule gthread tests build po docs
 +SUBDIRS = . m4macros glib gobject gmodule gthread build po docs
  
- bin_SCRIPTS = glib-gettextize
+@@ -192,4 +192,4 @@
  
-@@ -191,7 +191,7 @@
- 	glib-zip
- 
- 
+-
 -configexecincludedir = $(libdir)/glib-2.0/include
++glibincludedir = $(includedir)/glib-2.0
 +configexecincludedir = $(glibincludedir)
- 
- CONFIGURE_DEPENDENCIES = acglib.m4
  
