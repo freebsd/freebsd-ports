@@ -6,22 +6,22 @@
 #
 
 PORTNAME=	xemacs-oa-packages
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	editors elisp
 MASTER_SITES=	${MASTER_SITE_XEMACS}
 MASTER_SITE_SUBDIR=	packages
 DISTFILES=	\
-		calc-1.12-pkg.tar.gz \
-		calendar-1.14-pkg.tar.gz \
+		calc-1.13-pkg.tar.gz \
+		calendar-1.15-pkg.tar.gz \
 		forms-1.12-pkg.tar.gz \
 		frame-icon-1.08-pkg.tar.gz \
-		pc-1.17-pkg.tar.gz \
-		slider-1.11-pkg.tar.gz \
-		speedbar-1.16-pkg.tar.gz \
-		strokes-1.06-pkg.tar.gz
+		pc-1.18-pkg.tar.gz \
+		slider-1.12-pkg.tar.gz \
+		speedbar-1.17-pkg.tar.gz \
+		strokes-1.07-pkg.tar.gz
 DIST_SUBDIR=	xemacs
 
-MAINTAINER=	kiri@pis.toba-cmt.ac.jp
+MAINTAINER=	kiri@FreeBSD.org
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/xemacs-packages
@@ -46,7 +46,7 @@ post-install:
 	@${ECHO_MSG} "xemacs-packages, xemacs-basic-packages and xemacs-additional-packages. Where"
 	@${ECHO_MSG} "xemacs-additional-packages is a meta ports for packages out of xemacs, xemacs"
 	@${ECHO_MSG} "mule-basic and xemacs mule category packages."
-	@${ECHO_MSG} "    You can also install with running it as root and using the 'Manage Packes'"
+	@${ECHO_MSG} "    You can also install with running it as root and using the 'Manage Packages'"
 	@${ECHO_MSG} "menu within the 'Options' menu of the menubar. But using this xemacs package"
 	@${ECHO_MSG} "managing, you could not control under ports managing ;-)"
 
