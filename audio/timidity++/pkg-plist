@@ -6,4 +6,3 @@ bin/timidity
 @dirrm lib/timidity
 %%PORTDOCS%%@dirrm share/doc/ja/timidity++
 %%PORTDOCS%%@dirrm share/doc/timidity++
-@dirrm share/timidity
