@@ -6,7 +6,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=	dante-1.1.0
+DISTNAME=	dante-1.1.1-pre1
+PKGNAME=	dante-1.1.1
 CATEGORIES=	security net
 MASTER_SITES=	ftp://ftp.inet.no/pub/socks/ \
 		http://www.freenix.no/~anders/ \
