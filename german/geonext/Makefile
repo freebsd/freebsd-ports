@@ -7,9 +7,9 @@
 
 PORTNAME=	geonext
 PORTVERSION=	1.11
+PORTREVISION=	1
 CATEGORIES=	german
 MASTER_SITES=	http://geonext.uni-bayreuth.de/data/download/
-PKGNAMEPREFIX?=	de-
 DISTNAME=	geonext.${PORTVERSION}
 EXTRACT_SUFX=	.zip
 
@@ -31,7 +31,7 @@ do-install:
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DATA} ${GLOCATE}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${IMG} ${GLOCATE}
 	@${ECHO_MSG} '#!/bin/sh' > ${GLOCATE}/${GNAME}
-	@${ECHO_MSG} '${JAVA} -cp ${GLOCATE}/geonext.jar geonext/Geonext&'\
+	@${ECHO_MSG} '${JAVA} -cp ${GLOCATE}/geonext.jar geonext/Geonext language=de&'\
 	>>${GLOCATE}/${GNAME}
 	${CHMOD} a+x ${GLOCATE}/${GNAME}
 	${LN} ${GLOCATE}/${GNAME} ${GLOCATE}/geonext
