@@ -37,9 +37,11 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/gdeskcal \
 		${PREFIX}/share/gnome/gdeskcal
 
+	${MKDIR} ${PREFIX}/share/locale/ar/LC_MESSAGES
 	${INSTALL_DATA} ${WRKSRC}/locale/ar_AE/LC_MESSAGES/gdeskcal.mo \
 		${PREFIX}/share/locale/ar/LC_MESSAGES
 .for i in cs de el es fr he hu it ja nl ru tr zh_CN
+	${MKDIR} ${PREFIX}/share/locale/${i}/LC_MESSAGES
 	${INSTALL_DATA} ${WRKSRC}/locale/${i}/LC_MESSAGES/gdeskcal.mo \
 		${PREFIX}/share/locale/${i}/LC_MESSAGES
 .endfor
