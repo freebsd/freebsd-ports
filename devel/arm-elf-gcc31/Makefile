@@ -1,4 +1,4 @@
-# New ports collection makefile for:	gcc-arm
+# New ports collection makefile for:	arm-elf-gcc295
 # Date created:		3 November 2000
 # Whom:			Espen Skoglund <esk@ira.uka.de>
 #
@@ -8,9 +8,12 @@
 PORTNAME=	gcc
 PORTVERSION=	2.95.2
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	gcc
+MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
+MASTER_SITE_SUBDIR=	gcc/releases/${DISTNAME}
 PKGNAMEPREFIX=	arm-elf-
+DISTFILES=	gcc-core-${PORTVERSION}${EXTRACT_SUFX} \
+		gcc-g++-${PORTVERSION}${EXTRACT_SUFX} \
+		gcc-objc-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	esk@ira.uka.de
 
@@ -25,12 +28,10 @@ CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//} --enable-languages="c,c++,objc"
 CONFIGURE_ARGS+=	--with-cpu="${DEFAULT_CPU}"
 .endif
 
-MAKE_ENV=		PATH=${PREFIX}/bin:${PATH}
+MAKE_ENV=	PATH=${PREFIX}/bin:${PATH}
 USE_LIBTOOL=	yes
-LIBTOOLFILES=	configure etc/configure gcc/ch/configure gcc/configure \
-		libchill/configure libf2c/configure libf2c/libF77/configure \
-		libf2c/libI77/configure libf2c/libU77/configure \
-		libiberty/configure libobjc/configure texinfo/configure \
+LIBTOOLFILES=	configure etc/configure gcc/configure libiberty/configure \
+		libobjc/configure texinfo/configure \
 		texinfo/testsuite/configure
 MAN1=		${PKGNAMEPREFIX}g++.1 ${PKGNAMEPREFIX}gcc.1 cccp.1
 
