@@ -4,7 +4,7 @@
 # $FreeBSD$
 #
 
-PORTMK_VERSION=	20040717
+PORTMK_VERSION=	20050202
 
 .if defined(_PREMKINCLUDED)
 check-makefile::
@@ -13,6 +13,12 @@ check-makefile::
 .endif
 
 _PREMKINCLUDED=	yes
+
+.if defined(MAKE_VERSION)
+.if ${MAKE_VERSION} >= 5200408030 || ${MAKE_VERSION} >= 4200408030 && ${MAKE_VERSION} < 5000000000
+NOPRECIOUSSOFTMAKEVARS= yes
+.endif
+.endif
 
 AWK?=		/usr/bin/awk
 BASENAME?=	/usr/bin/basename
@@ -87,10 +93,6 @@ WHICH?=		/usr/bin/which
 XARGS?=		/usr/bin/xargs
 YACC?=		/usr/bin/yacc
 
-.if !defined(UID)
-UID!=	${ID} -u
-.endif
-
 # ECHO is defined in /usr/share/mk/sys.mk, which can either be "echo",
 # or "true" if the make flag -s is given.  Use ECHO_CMD where you mean
 # the echo command.
@@ -98,6 +100,9 @@ ECHO_CMD?=	echo				# Shell builtin
 
 # Used to print all the '===>' style prompts - override this to turn them off.
 ECHO_MSG?=		${ECHO_CMD}
+
+# Get the default maintainer
+MAINTAINER?=	ports@FreeBSD.org
 
 # Get the architecture
 .if !defined(ARCH)
@@ -188,7 +193,7 @@ _OPTIONSFILE!=	${ECHO_CMD} "${OPTIONSFILE}"
 .endif
 
 # check for old, crufty, makefile types, part 1:
-.if !defined(PORTNAME) || !defined(PORTVERSION) || defined(PKGNAME)
+.if !defined(PORTNAME) || !( defined(PORTVERSION) || defined (DISTVERSION) ) || defined(PKGNAME)
 check-makefile::
 	@${ECHO_CMD} "Makefile error: you need to define PORTNAME and PORTVERSION instead of PKGNAME."
 	@${ECHO_CMD} "(This port is too old for your bsd.port.mk, please update it to match"
@@ -200,6 +205,9 @@ check-makefile::
 .if ${PORTVERSION:M*[-_,]*}x != x
 BROKEN=			"PORTVERSION ${PORTVERSION} may not contain '-' '_' or ','"
 .endif
+DISTVERSION?=	${PORTVERSION:S/:/::/g}
+.elif defined(DISTVERSION)
+PORTVERSION=	${DISTVERSION:L:C/([a-z])[a-z]+/\1/g:C/([0-9])([a-z])/\1.\2/g:C/:(.)/\1/g:C/[^a-z0-9+]+/./g}
 .endif
 
 PORTREVISION?=	0
@@ -217,7 +225,7 @@ _SUF2=	,${PORTEPOCH}
 .if !defined(PKGNAME)
 PKGNAME=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION:C/[-_,]/./g}${_SUF1}${_SUF2}
 .endif
-DISTNAME?=	${PORTNAME}-${PORTVERSION}
+DISTNAME?=	${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION:C/:(.)/\1/g}${DISTVERSIONSUFFIX}
 
 # These need to be absolute since we don't know how deep in the ports
 # tree we are and thus can't go relative.  They can, of course, be overridden
@@ -228,7 +236,9 @@ X11BASE?=		/usr/X11R6
 LINUXBASE?=		/compat/linux
 DISTDIR?=		${PORTSDIR}/distfiles
 _DISTDIR?=		${DISTDIR}/${DIST_SUBDIR}
-.if ${OSVERSION} >= 500036
+.if ${OSVERSION} >= 600000
+INDEXFILE?=		INDEX-6
+.elif ${OSVERSION} >= 500036
 INDEXFILE?=		INDEX-5
 .else
 INDEXFILE?=		INDEX
@@ -263,9 +273,6 @@ USE_X_PREFIX=	yes
 .if defined(USE_X_PREFIX)
 USE_XLIB=		yes
 .endif
-.if defined(USE_LINUX_PREFIX)
-USE_LINUX=		yes
-.endif
 .if defined(USE_X_PREFIX)
 PREFIX?=		${X11BASE}
 .elif defined(USE_LINUX_PREFIX)
@@ -288,9 +295,9 @@ BUILD_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT}
 RUN_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT}
 .endif
 
-.if ${OSVERSION} >= 502100
-PERL_VERSION?=	5.8.4
-PERL_VER?=	5.8.4
+.if ${OSVERSION} >= 500036
+PERL_VERSION?=	5.8.6
+PERL_VER?=	5.8.6
 .else
 .if ${OSVERSION} >= 500032
 PERL_VERSION?=	5.6.1
@@ -381,7 +388,7 @@ PERL=		${LOCALBASE}/bin/perl
 .include "${PORTSDIR}/Mk/bsd.ruby.mk"
 .endif
 
-.if defined(USE_QT) || defined(USE_QT2) || defined(USE_QT_VER) || defined(USE_KDELIBS_VER) || defined(USE_KDEBASE_VER)
+.if defined(USE_QT_VER) || defined(USE_KDELIBS_VER) || defined(USE_KDEBASE_VER)
 .include "${PORTSDIR}/Mk/bsd.kde.mk"
 .endif
 
