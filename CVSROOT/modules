@@ -5711,6 +5711,7 @@ ruby-fltk	ports/x11-toolkits/ruby-fltk
 ruby-fnmatch	ports/devel/ruby-fnmatch
 ruby-format	ports/textproc/ruby-format
 ruby-fox	ports/x11-toolkits/ruby-fox
+ruby-freedb	ports/audio/ruby-freedb
 ruby-gconf	ports/devel/ruby-gconf
 ruby-gd		ports/graphics/ruby-gd
 ruby-gdbm	ports/databases/ruby-gdbm
