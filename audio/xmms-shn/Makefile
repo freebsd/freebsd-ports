@@ -14,6 +14,7 @@ MAINTAINER=	fenner@FreeBSD.Org
 
 LIB_DEPENDS=	glib12.3:${PORTSDIR}/devel/glib12 \
 		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
+BUILD_DEPENDS=	xmms-config:${PORTSDIR}/audio/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/audio/xmms
 
 USE_AUTOCONF=	yes
