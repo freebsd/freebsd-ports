@@ -1,13 +1,11 @@
-*** xio.c.orig	Thu Oct  7 23:24:38 1999
---- xio.c	Tue Aug  1 15:57:33 2000
-*************** xio_open_dpy(char *dpy, int argc, char *
-*** 170,175 ****
---- 170,177 ----
-      if (not(xio = malloc(sizeof(*xio))))
-  	goto fail1;
-  
-+     bzero(xio, sizeof *xio);
-+ 
-      if (not(xio->dpy = XOpenDisplay(dpy)))
-  	goto fail2;
-  
+--- xio.c.orig  Fri Oct  8 00:24:38 1999
++++ xio.c       Thu Aug  3 02:59:55 2000
+@@ -180,7 +180,7 @@
+     xio->screen = DefaultScreen(xio->dpy);
+     xio->depth = DefaultDepth(xio->dpy, xio->screen);
+     xio->width = DisplayWidth(xio->dpy, xio->screen);
+-    xio->height = DisplayHeight(xio->dpy, xio->height);
++    xio->height = DisplayHeight(xio->dpy, xio->screen);
+     xio->root = DefaultRootWindow(xio->dpy);
+     xio->cmap = DefaultColormap(xio->dpy, xio->screen);
+     xio->xa_del_win = XInternAtom(xio->dpy, "WM_DELETE_WINDOW", False);
