@@ -2,3 +2,4 @@
 %%SITE_PERL%%/Apache/AuthDBI.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/DBI/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/DBI
+@unexec rmdir %D/%%SITE_PERL%%/Apache 2>/dev/null || true
