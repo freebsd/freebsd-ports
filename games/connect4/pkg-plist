@@ -1,2 +1,3 @@
 bin/connect4
 lib/connect4/scores
+@dirrm lib/connect4

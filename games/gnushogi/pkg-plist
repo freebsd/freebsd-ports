@@ -14,3 +14,5 @@ share/doc/gnushogi/shogi.rules
 share/doc/gnushogi/tutorial1.gam
 share/doc/gnushogi/tutorial2.gam
 share/gnushogi/gnushogi.bbk
+@dirrm share/doc/gnushogi
+@dirrm share/gnushogi

@@ -29,3 +29,4 @@ lib/X11/xsoldier/PlayerShot3.xpm
 lib/X11/xsoldier/Star1.xpm
 lib/X11/xsoldier/Star2.xpm
 lib/X11/xsoldier/Title.xpm
+@dirrm lib/X11/xsoldier
