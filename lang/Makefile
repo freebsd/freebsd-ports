@@ -65,6 +65,7 @@
     SUBDIR += gauche
     SUBDIR += gawk
     SUBDIR += gcc-objc
+    SUBDIR += gcc-ooo
     SUBDIR += gcc27
     SUBDIR += gcc28
     SUBDIR += gcc295

@@ -77,6 +77,7 @@
     SUBDIR += bicyclerepair
     SUBDIR += bin86
     SUBDIR += bison
+    SUBDIR += bison-devel
     SUBDIR += bison1875
     SUBDIR += bnf
     SUBDIR += boaconstructor

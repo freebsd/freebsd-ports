@@ -1350,9 +1350,11 @@ japanese/estraier|textproc/estraier|2004-12-11|accurate category
 math/gnumeric2|math/gnumeric|2004-12-11|renamed to gnumeric
 chinese/gnumeric|math/gnumeric|2004-12-11|obsoleted by gtk2 version
 japanese/gnumeric|math/gnumeric|2004-12-11|obsoleted by gtk2 version
+devel/bison|devel/bison-devel|2004-12-11|finished repocopy and needs alpha version
 sysutils/bacula|sysutils/bacula-server|2004-12-12|split into client and server
 x11-toolkits/gtkextra--||2004-12-12|removed obsolete port
 games/gnomoku||2004-12-12|removed obsolete port
 net/gabber||2004-12-12|removed obsolete port
 x11-toolkits/gnome--||2004-12-12|removed obsolete port
 dns/dnssecwalker|dns/walker|2004-12-13|duplicate ports
+lang/gcc34|lang/gcc-ooo|2004-12-15|finished repocopy and required by OOo port
