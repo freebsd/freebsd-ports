@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gimp
-PORTVERSION=	2.0.pre1
+PORTVERSION=	2.0.pre2
 PORTEPOCH=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
@@ -50,7 +50,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 
 GIMP_DISTFILE=	${DISTDIR}/${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
-MAN1=		gimp-1.3.1 gimptool-1.3.1 gimp-remote-1.3.1
+MAN1=		gimp-1.3.1 gimptool-2.0.1 gimp-remote-1.3.1
 MAN5=		gimprc-1.3.5
 
 .if defined(WITH_PYTHON)
