@@ -7,11 +7,11 @@
 
 PORTNAME=	phpbb
 PORTVERSION=	2.0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	phpBB-${PORTVERSION}
+DISTNAME=	phpBB-${PORTVERSION}a
 
 MAINTAINER=	liukang@bjpu.edu.cn
 COMMENT=	A PHP-based bulletin board / discussion forum system
@@ -61,7 +61,6 @@ pre-everything::
 post-patch:
 	@ ${REINPLACE_CMD} -e "s#\.\./templates#/${PHPBBURL}/templates#" \
 	  ${WRKSRC}/docs/*.html
-	@ ${RM} ${WRKSRC}/*.orig
 
 post-configure:
 	@ ${SED} \
