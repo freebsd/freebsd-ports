@@ -6,7 +6,6 @@ apsfilter/global/GLOBAL.sh
 apsfilter/lib/redir_gs_msg.ps
 apsfilter/setup/README
 apsfilter/setup/compile
-apsfilter/setup/devices.txt
 apsfilter/setup/devices-5.50
 apsfilter/setup/devices-6.01
 apsfilter/setup/filtersetup
