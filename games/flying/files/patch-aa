@@ -1,0 +1,19 @@
+--- Imakefile.orig	Tue Oct  3 16:01:36 1995
++++ Imakefile	Wed Aug  7 20:53:56 1996
+@@ -1,6 +1,6 @@
+ 
+ XCOMM #####  where to put temporary data and pixmap files ...
+-DATA_DIRECTORY = \"/tmp\"
++DATA_DIRECTORY = \"/dev/null\"
+ 
+ XCOMM #####  parameter type of the system call select(), which usually is
+ XCOMM #####  fd_set, but at least on HP-UX, it is int ... I am still
+@@ -30,7 +30,7 @@
+ CCOPTIONS = #-Wall -g
+ 
+ LOCAL_LIBRARIES = -lX11 -lm
+-
++all: flying
+ flying: $(OBJS) $(DEPLIBS)
+ 	$(RM) $@
+ 	$(CXX) -o $@ $(OBJS) $(LDOPTIONS) $(LOCAL_LIBRARIES) $(LDLIBS) $(EXTRA_LOAD_FLAGS)
