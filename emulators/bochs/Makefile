@@ -1,9 +1,9 @@
 # New ports collection makefile for:   bochs
-# Version required:    980331a
+# Version required:    980513a
 # Date created:        16 December 1997
 # Whom:                alex
 #
-# $Id: Makefile,v 1.8 1998/04/03 02:38:44 alex Exp $
+# $Id: Makefile,v 1.9 1998/05/18 23:49:17 alex Exp $
 #
 
 VGABIOS=	VGABIOS-elpin-2.00A
