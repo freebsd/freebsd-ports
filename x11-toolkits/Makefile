@@ -121,6 +121,7 @@
     SUBDIR += panel--
     SUBDIR += pango
     SUBDIR += paragui
+    SUBDIR += php-gtk
     SUBDIR += pike-gtk
     SUBDIR += plib
     SUBDIR += pmw

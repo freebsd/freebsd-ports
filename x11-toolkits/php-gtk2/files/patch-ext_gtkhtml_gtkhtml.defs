@@ -1,0 +1,19 @@
+--- ext/gtkhtml/gtkhtml.defs.orig	Mon Mar  4 09:36:38 2002
++++ ext/gtkhtml/gtkhtml.defs	Sat Dec  7 22:25:24 2002
+@@ -348,6 +348,7 @@
+    (parameter (type-and-name GdkAtom   selection))
+    (parameter (type-and-name  gint      type))
+    (parameter (type-and-name   gint32    time))
++   (parameter (type-and-name   gboolean    as_cite))
+ )
+ 
+ ;; Loading
+@@ -571,7 +572,7 @@
+   (return-type none)
+ )    
+ (method paste
+-  (of-object HTML (Gtk))
++  (of-object HTML (Gtk, 0))
+   (c-name gtk_html_paste)
+   (return-type none)
+ )    

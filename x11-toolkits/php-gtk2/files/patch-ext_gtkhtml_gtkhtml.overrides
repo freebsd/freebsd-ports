@@ -1,0 +1,12 @@
+--- ext/gtkhtml/gtkhtml.overrides.orig	Thu Sep 19 15:57:28 2002
++++ ext/gtkhtml/gtkhtml.overrides	Sun Dec  8 18:10:47 2002
+@@ -1068,7 +1068,8 @@
+ 	widget = php_gtk_shift_to_iframe_parent (widget, &x, &y);
+ 
+ 	engine = GTK_HTML (widget)->engine;
+-	if (GTK_HTML (widget)->button1_pressed && html_engine_get_editable (engine))
++/* FIXME: button1_pressed has been removed? */
++	if (html_engine_get_editable (engine))
+ 		html_engine_jump_at (engine,
+ 				     x + engine->x_offset,
+ 				     y + engine->y_offset);
