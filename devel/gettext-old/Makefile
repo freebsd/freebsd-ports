@@ -15,7 +15,7 @@ MAINTAINER=	reg@FreeBSD.org
 
 USE_LIBTOOL=	yes
 
-PLIST_SUB=	X11BASE=${X11BASE}
+PLIST_SUB=	LOCALBASE=${LOCALBASE} X11BASE=${X11BASE}
 
 pre-configure:
 	${RM} ${WRKSRC}/doc/gettext.info*
