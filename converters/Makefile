@@ -56,6 +56,7 @@
     SUBDIR += ruby-dump.rb
     SUBDIR += ruby-iconv
     SUBDIR += ruby-lv
+    SUBDIR += shftool
     SUBDIR += showkey
     SUBDIR += siconv
     SUBDIR += tnef
