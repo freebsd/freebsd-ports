@@ -1,6 +1,7 @@
 # $FreeBSD$
 #
 
+    SUBDIR += bugseeker
     SUBDIR += collections
     SUBDIR += cos
     SUBDIR += cryptix-jce
