@@ -54,6 +54,7 @@
     SUBDIR += intercal
     SUBDIR += itcl
     SUBDIR += jgnat
+    SUBDIR += jython
     SUBDIR += lcc
     SUBDIR += libobjects
     SUBDIR += librep
