@@ -3,4 +3,4 @@ bin/rioutil
 include/rio.h
 lib/librioutil.a
 lib/librioutil.so
-lib/librioutil.so.0
+lib/librioutil.so.1

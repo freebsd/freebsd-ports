@@ -1,8 +1,0 @@
---- include/rio.h.orig	Wed Aug 29 13:59:41 2001
-+++ include/rio.h	Wed Aug 29 13:59:55 2001
-@@ -318,4 +318,5 @@
- /* startup graphic seems to be changeable. this function will change it whenever it is figured out */
- u_int32_t       set_gid_rio          (rio_instance_t *rio, char *file_name);
- 
-+#define ID3_4ARGS 1
- #endif /* _RIO_H */
