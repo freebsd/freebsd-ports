@@ -12,5 +12,6 @@
 %%SITE_PERL%%/Lingua/parse.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/StopWords/.packlist
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/StopWords 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/Lingua/StopWords 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/Lingua 2>/dev/null || true
