@@ -1,41 +1,37 @@
 #!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: dnetc
+# REQUIRE: LOGIN
+# KEYWORD: FreeBSD shutdown
+
+dnetc_enable=${dnetc_enable:-"NO"}
 
 dir="%%BINDIR%%"
 user="%%CLIENTUSER%%"
 
-case "$1" in
-start)
-	if [ ! -d $dir ]; then
-	 logger -i "dnetc client directory doesn't exist. ($dir)."
-	 exit
-	fi
+. %%RC_SUBR%%
 
-	if [ ! -f $dir/dnetc ]; then
-	 logger -i "dnetc client doesn't exist. ($dir/dnetc)."
-	 exit
-	fi
+name="dnetc"
+rcvar=`set_rcvar`
 
-	if [ ! -f $dir/dnetc.ini ]; then
-	 logger -i "dnetc client config file doesn't exist. ($dir/dnetc.ini)."
-	 exit
-	fi
+required_files=${dir}/dnetc.ini
 
-	email=`grep "^id=" $dir/dnetc.ini|cut -d"=" -f2`
+start_cmd="${name}_start"
+stop_cmd="${name}_stop"
 
-	if [ "$email" = "rc5@distributed.net" ]; then
-	 logger -i "dnetc client running with default email address. ($email)"
-	fi
-
+dnetc_start()
+{
 	echo -n " dnetc"
-	su -m $user -c "$dir/dnetc -quiet" 2>/dev/null >/dev/null &
-	;;
-stop)
-	killall -u $user dnetc && echo -n " dnetc"
-	;;
-*)
-	echo "Usage: `basename $0` {start|stop}" >&2
-	exit 64
-	;;
-esac
+	su -m ${user} -c "${dir}/dnetc -quiet" 2>/dev/null >/dev/null
+}
 
-exit 0
+dnetc_stop()
+{
+	echo -n " dnetc"
+	su -m ${user} -c "${dir}/dnetc -shutdown" 2>/dev/null >/dev/null
+}
+
+load_rc_config $name
+run_rc_command "$1"
