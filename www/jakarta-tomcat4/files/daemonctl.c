@@ -4,7 +4,7 @@
  *
  * Daemon control program.
  *
- * $FreeBSD: /tmp/pcvs/ports/www/jakarta-tomcat4/files/Attic/daemonctl.c,v 1.9 2002-08-28 22:54:21 znerd Exp $
+ * $FreeBSD: /tmp/pcvs/ports/www/jakarta-tomcat4/files/Attic/daemonctl.c,v 1.10 2002-10-09 23:10:32 znerd Exp $
  */
 
 #include <assert.h>
@@ -77,6 +77,10 @@ int main(int argc, char *argv[]) {
 		printUsage();
 		return 0;
 	}
+
+	/* XXX: Fix for setting up the environment for the java wrapper script */
+	setuid(geteuid());
+	setgid(getegid());
 
 	argument = argv[1];
 	if (strcmp("start", argument) == 0) {
