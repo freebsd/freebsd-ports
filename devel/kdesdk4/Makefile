@@ -14,7 +14,7 @@ DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
 
-LIB_DEPENDS=	db2.0:${PORTSDIR}/databases/db
+LIB_DEPENDS=	db2.0:${PORTSDIR}/databases/db2
 
 USE_KDEBASE_VER=3
 GNU_CONFIGURE=	yes

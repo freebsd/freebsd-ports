@@ -16,7 +16,7 @@ MAINTAINER=	kcwu@ck.tp.edu.tw
 .if !defined(USE_DB2)
 LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
 .else
-LIB_DEPENDS=	db2.0:${PORTSDIR}/databases/db
+LIB_DEPENDS=	db2.0:${PORTSDIR}/databases/db2
 .endif
 
 WRKSRC=		${WRKDIR}/libtabe

@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	librdf
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	db2.0:${PORTSDIR}/databases/db \
+LIB_DEPENDS=	db2.0:${PORTSDIR}/databases/db2 \
 		gdbm.2:${PORTSDIR}/databases/gdbm \
 		expat.3:${PORTSDIR}/textproc/expat2 \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \

@@ -15,7 +15,7 @@ MAINTAINER=	patrick@freebsd.org
 
 BROKEN=		"Does not package correctly"
 
-LIB_DEPENDS=	db2.0:${PORTSDIR}/databases/db \
+LIB_DEPENDS=	db2.0:${PORTSDIR}/databases/db2 \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
 ONLY_FOR_ARCHS=	i386
