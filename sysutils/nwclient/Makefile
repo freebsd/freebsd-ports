@@ -8,12 +8,12 @@
 PORTNAME=	nwclient
 PORTVERSION=	5.5.2
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.feral.com/pub/networker/freebsd/freebsd_40/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
 ARCH!=		uname -m
 DISTNAME=	nwclient-${PORTVERSION}-freebsd-${ARCH}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	mjacob@freebsd.org
+MAINTAINER=
 COMMENT=	Network backup client to NetWorker servers
 
 NO_BUILD=	yes
