@@ -106,6 +106,10 @@ PLIST_SUB=	XEMACS_VER=${XEMACS_VER} XEMACS_ARCH=${XEMACS_ARCH}
 CONFIGURE_ARGS+=--with-system-malloc --enable-pdump
 .endif
 
+.if ${ARCH} == "amd64" || ${ARCH} == "sparc64" || ${ARCH} == "ia64"
+BROKEN=		"Does not build on amd64, sparc64 or ia64"
+.endif
+
 pre-fetch:
 .if defined(WITHOUT_X11)
 	@${ECHO_MSG} ""
