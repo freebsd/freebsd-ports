@@ -62,6 +62,7 @@
     SUBDIR += avrprog
     SUBDIR += bcc
     SUBDIR += bcpp
+    SUBDIR += bglibs
     SUBDIR += bin86
     SUBDIR += bison
     SUBDIR += boaconstructor
