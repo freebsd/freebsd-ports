@@ -66,7 +66,7 @@ do-extract:
 	${MKDIR} ${WRKSRC}
 .for i in ${DISTFILES}
 	${UNZIP_CMD} -qo ${DISTDIR}/${DIST_SUBDIR}/${i} -d ${WRKSRC}
-	${CHMOD} -R a-w ${WRKSRC}
+	${CHMOD} -R o-w ${WRKSRC}
 	${CHOWN} -R 0:0 ${WRKSRC}
 .endfor
 
