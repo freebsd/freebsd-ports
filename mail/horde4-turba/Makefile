@@ -6,15 +6,17 @@
 #
 
 PORTNAME=	turba
-PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTVERSION=	1.2.2
 CATEGORIES=	mail www
 MASTER_SITES=	ftp://ftp.horde.org/pub/turba/				\
+		ftp://ftp.planetmirror.com/pub/horde/turba/		\
 		ftp://ftp.au.horde.org/pub/horde/turba/			\
+		ftp://ftp.be.horde.org/turba/				\
 		ftp://ftp.es.horde.org/pub/turba/			\
 		ftp://ftp.it.horde.org/pub/mirror/horde.org/turba/	\
 		ftp://ftp.nl.horde.org/mirror/horde-ftp/pub/turba/	\
-		ftp://ftp.pt.horde.org/pub/horde-ftp/turba/
+		ftp://ftp.uk.horde.org/mirrors/ftp.horde.org/pub/turba/	\
+		http://ftp.horde.org/pub/turba/
 
 MAINTAINER=	thierry@pompo.net
 COMMENT=	The Horde contact management application
@@ -38,10 +40,11 @@ USE_REINPLACE=	yes
 LDD=		/usr/bin/ldd
 
 REINPLACE_ARGS=	-i.beforeTurba
-DOCS=		COPYING README docs/CHANGES docs/CREDITS \
-		docs/INSTALL docs/LDAP docs/UPDATE docs/turba.dia docs/turba.pdf
-CONFFILE=	attributes.php conf.php html.php menu.php \
-		prefs.php sources.php
+DOCS=		COPYING README docs/CHANGES docs/CREDITS docs/INSTALL	\
+		docs/INSTALL docs/LDAP docs/RELEASE_NOTES docs/UPDATE	\
+		docs/turba.dia docs/turba.pdf
+CONFFILE=	attributes.php conf.php html.php menu.php prefs.php	\
+		sources.php
 SUB_DIRS=	config graphics lib locale scripts templates po
 
 LHORDEDIR?=	www/horde
@@ -103,7 +106,7 @@ do-install:
 	@${RM} ${HORDE_INC}/httpd.conf.turba.beforeTurba
 	@${REINPLACE_CMD} -e "s://UNCOMMENTWHENINSTTURBA::"			\
 		${HORDEDIR}/config/registry.php
-	@${CP} -p ${HORDEDIR}/config/registry.php			\
+	@${CP} -p ${HORDEDIR}/config/registry.php				\
 		${HORDEDIR}/config/registry.php.afterTurba
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
@@ -115,8 +118,8 @@ do-install:
 
 post-install:
 	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE} | \
-	${SED} -e "s:%%TURBADIR%%:${TURBADIR}:g;s:%%PORTSDIR%%:${PORTSDIR}:g;s:%%CONFDIR%%:${CONFDIR}:g"
+	@${SED} -e "s:%%TURBADIR%%:${TURBADIR}:g;s:%%PORTSDIR%%:${PORTSDIR}:g"	\
+		-e "s:%%CONFDIR%%:${CONFDIR}:g" ${PKGMESSAGE}
 	@${ECHO_MSG}
 
 .include <bsd.port.mk>
