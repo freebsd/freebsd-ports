@@ -1,16 +1,17 @@
 bin/ksamba
-share/apps/ksamba/pics/pageadd.xpm
-share/apps/ksamba/pics/pageremove.xpm
+share/applnk/Utilities/ksamba.kdelnk
 share/apps/ksamba/pics/folder.xpm
 share/apps/ksamba/pics/folder_inactive.xpm
+share/apps/ksamba/pics/pageadd.xpm
+share/apps/ksamba/pics/pageremove.xpm
 share/apps/ksamba/pics/printer.xpm
 share/apps/ksamba/pics/printer_inactive.xpm
-share/doc/HTML/en/ksamba/index.html
 share/doc/HTML/de/ksamba/index.html
-share/locale/de/LC_MESSAGES/ksamba.mo
+share/doc/HTML/en/ksamba/index.html
 share/icons/ksamba.xpm
-share/applnk/Network/ksamba.kdelnk
-@dirrm share/apps/ksamba/pics
-@dirrm share/apps/ksamba
+share/locale/de/LC_MESSAGES/ksamba.mo
+share/locale/hr/LC_MESSAGES/ksamba.mo
 @dirrm share/doc/HTML/en/ksamba
 @dirrm share/doc/HTML/de/ksamba
+@dirrm share/apps/ksamba/pics
+@dirrm share/apps/ksamba
