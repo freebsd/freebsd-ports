@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ggv2
-PORTVERSION=	2.6.1
+PORTVERSION=	2.6.2
 CATEGORIES=	print gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.6
@@ -19,9 +19,9 @@ COMMENT=	GNOME 2 ghostscript viewer
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack lthack intlhack libgnomeui
+USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui
 USE_GHOSTSCRIPT=yes
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
