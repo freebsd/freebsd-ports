@@ -327,6 +327,7 @@
     SUBDIR += py-pycrypto
     SUBDIR += py-rijndael
     SUBDIR += py-twofish
+    SUBDIR += qca-tls
     SUBDIR += qident
     SUBDIR += qtfw
     SUBDIR += quintuple-agent

@@ -1,0 +1,29 @@
+--- configure.orig	Thu Dec 18 01:54:50 2003
++++ configure	Tue Jan 27 14:58:26 2004
+@@ -43,6 +43,8 @@
+ 	esac
+ done
+ 
++QC_WITH_OPENSSL_INC=/usr/include
++QC_WITH_OPENSSL_LIB=/usr/lib
+ 
+ echo "Configuring qca-tls ..."
+ 
+@@ -84,7 +86,7 @@
+ 		echo Warning: qmake not in \$QTDIR/bin/qmake
+ 		echo trying to find it in \$PATH
+ 	fi
+-	qm=`type -p qmake`
++	qm=`which qmake`
+ 	if [ -x "$qm" ]; then
+ 		if [ "$QC_DEBUG" = "Y" ]; then
+ 			echo qmake found in $qm
+@@ -144,8 +146,6 @@
+ 
+ 		s = conf->getenv("QC_WITH_OPENSSL_LIB");
+ 		if(!s.isEmpty()) {
+-			if(!conf->checkLibrary(s, "ssl"))
+-				return false;
+ 			lib = s;
+ 		}
+ 		else {

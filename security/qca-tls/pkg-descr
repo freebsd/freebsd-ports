@@ -1,0 +1,4 @@
+A plugin to provide SSL/TLS capability to programs that utilize the
+Qt Cryptographic Architecture (QCA).
+
+WWW: http://psi.affinix.com/
