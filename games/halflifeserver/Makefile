@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	hlds
-PORTVERSION=	3.1.0.9
+PORTVERSION=	3.1.0.9.c
 CATEGORIES=	games linux
-DISTNAME=	hlds_l_3109_full
+DISTFILES=	hlds_l_3109_full.tar.gz \
+		${HLDSPATCH}
 
 MAINTAINER=	pat@FreeBSD.org
 
@@ -25,18 +26,19 @@ LDCONFIG_LINUX=	${LINUXBASE}/sbin/ldconfig
 
 HLDSDIR=	/usr/games/hlds_l/
 SORT?=		/usr/bin/sort
+HLDSPATCH=	hlds_l_3109c_beta.tar.gz
 
 # files which should be installed with executables perms
 EXECUTABLES=	hltv hlds hlds_run libSteamValidateUserIDTickets.so \
 		libhlwon.so
 
 .include <bsd.port.pre.mk>
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE=	"Please download and execute ${DISTNAME}.bin to read valve\'s \
+.if !exists(${DISTDIR}/${DISTFILES:S/${HLDSPATCH}//}) || !exists(${DISTDIR}/${HLDSPATCH})
+IGNORE=	"Please download and execute hlds_l_3109_full.bin to read valve\'s \
 	agreement and if you agree to the terms, then it will dump the \
-	tarball ${DISTNAME}${EXTRACT_SUFX} to your current directory. \
-	Finally, move ${DISTNAME}${EXTRACT_SUFX} to ${DISTDIR} and run \
-	make again"
+	tarball hlds_l_3109_full.tar.gz to your current directory. \
+	Finally, move hlds_l_3109_full.tar.gz to ${DISTDIR}, \
+	fetch ${HLDSPATCH} to ${DISTDIR} and run make again"
 .endif
 
 pre-patch:
