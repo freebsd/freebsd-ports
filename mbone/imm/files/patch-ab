@@ -1,0 +1,31 @@
+*** main.c.orig	Fri Mar  4 16:01:13 1994
+--- main.c	Sat Oct 29 15:45:04 1994
+***************
+*** 129,135 ****
+  ClientData clientdata;
+  Tcl_Interp *interp;
+  int argc;
+! int *argv[];
+  {
+      int transmitflag = FALSE;
+      int ofp;
+--- 129,135 ----
+  ClientData clientdata;
+  Tcl_Interp *interp;
+  int argc;
+! char *argv[];
+  {
+      int transmitflag = FALSE;
+      int ofp;
+***************
+*** 161,166 ****
+--- 161,169 ----
+  			   repeatnum,argv[3], argv[1]);
+  	fclose(stdin);
+  	closeall();
++ #ifndef SIGCLD
++ #define SIGCLD SIGCHLD
++ #endif
+  	signal(SIGCLD,SIG_IGN);
+  	Tcl_DeleteInterp(interp);
+  	if (localhost == NULL)
