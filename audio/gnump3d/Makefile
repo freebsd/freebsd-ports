@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	gnump3d
-PORTVERSION=	2.5b
-PORTREVISION=	1
+PORTVERSION=	2.6
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A streaming server for MP3, OGG vorbis, and other streamable audio files
+COMMENT=	A streaming server for MP3, Ogg Vorbis, and other streamable audio files
 
 RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame \
+		sox:${PORTSDIR}/audio/sox \
 		oggenc:${PORTSDIR}/audio/vorbis-tools
 
 USE_BZIP2=	yes
