@@ -6,18 +6,16 @@
 #
 
 PORTNAME=	baudline
-PORTVERSION=	0.98
+PORTVERSION=	0.99
 CATEGORIES=	audio linux
 MASTER_SITES=	http://www.baudline.com/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	baudline_${PORTVERSION:S/.p/pre/}_i686
 
-MAINTAINER=	dyeske@yahoo.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A real-time signal analysis tool and an offline time-frequency browser
 
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
-
-BROKEN=		Unfetchable
 
 USE_X_PREFIX=	yes
 ONLY_FOR_ARCHS=	i386
@@ -30,6 +28,9 @@ STRIP=
 STRIP=
 
 RESTRICTED=	"author requests no distribution except from their site"
+
+PORTDOCS=	README mailcap.txt mime.types.txt
+PLIST_FILES=	bin/baudline
 
 .include <bsd.port.pre.mk>
 
@@ -64,7 +65,7 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/baudline ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for i in README mailcap.txt mime.types.txt
+.for i in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
