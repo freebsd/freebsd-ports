@@ -200,6 +200,7 @@
     SUBDIR += hagelslag
     SUBDIR += hawk
     SUBDIR += hesiod
+    SUBDIR += hinfo
     SUBDIR += hlmaster
     SUBDIR += honeyd
     SUBDIR += host
