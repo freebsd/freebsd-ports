@@ -1,27 +1,23 @@
-# New ports collection makefile for: 	epic4
-# Date created:		11 November 1998
-# Whom:			Ben Hutchinson <benhutch@xfiles.org.uk>
+# New ports collection makefile for:   epic5
+# Date created:                24 February 2005
+# Whom:                        Josh Paetzel <josh@tcbug.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	epic4
-PORTVERSION=	2.2
+PORTNAME=	epic5
+PORTVERSION=	0.0.3
 CATEGORIES=	irc ipv6
-MASTER_SITES=	ftp://ftp.prbh.org/pub/epic/EPIC4-PRODUCTION/ \
-		ftp://ftp.irc.org/irc/clients/unix/epic/EPIC4-PRODUCTION/ \
-		ftp://ftp.parodius.com/pub/epic/EPIC4-PRODUCTION/ \
-		http://ftp.freenet.de/pub/ftp.prbh.org/pub/epic/EPIC4-PRODUCTION/ \
-		ftp://ftp.eu.uu.net/pub/unix/irc/epic/EPIC4-PRODUCTION/ \
-		ftp://totem.fix.no/pub/mirrors/epic/EPIC4-PRODUCTION/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		${PORTNAME}-help-20040801.tar.gz
+MASTER_SITES=	http://www.tcbug.org/ \
+		ftp://ftp.epicsol.org/pub/epic/EPIC5-BETA/
 
 MAINTAINER=	josh@tcbug.org
 COMMENT=	The (E)nhanced (P)rogrammable (I)RC-II (C)lient
 
+CONFLICTS=	epic4-*
+
 GNU_CONFIGURE=	yes
-MAN1=		epic.1
+MAN1=		epic5.1
 USE_OPENSSL=	yes
 
 .include <bsd.port.pre.mk>
@@ -64,11 +60,7 @@ CONFIGURE_ARGS+=	--with-perl=${SITE_PERL}/../../${PERL_VER}/mach/CORE
 post-extract:
 	@${FIND} ${WRKDIR} -type d -name CVS | ${XARGS} ${RM} -rf
 
-post-patch:
-	@${RM} ${WRKDIR}/help/Makefile
-
 post-install:
-	@${CP} -R ${WRKDIR}/help/* ${PREFIX}/share/epic/help
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for i in BUG_FORM COPYRIGHT KNOWNBUGS README UPDATES VOTES

@@ -20,6 +20,7 @@
     SUBDIR += eggcreator
     SUBDIR += eggdrop
     SUBDIR += epic4
+    SUBDIR += epic5
     SUBDIR += erc
     SUBDIR += evangeline
     SUBDIR += ezbounce
