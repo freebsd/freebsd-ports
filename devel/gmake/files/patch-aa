@@ -22,7 +22,7 @@
  
  make.info: make.texinfo
 -	$(MAKEINFO) -I$(srcdir) $(srcdir)/make.texinfo -o make.info
-+	$(MAKEINFO) --no-split -I$(srcdir) $(srcdir)/make.texinfo -o make.info
++	rm -f make.info* && $(MAKEINFO) --no-split -I$(srcdir) $(srcdir)/make.texinfo -o make.info
  
  make.dvi: make.texinfo
  	$(TEXI2DVI) $(srcdir)/make.texinfo
