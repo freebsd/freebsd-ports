@@ -1,0 +1,14 @@
+cfvers is a versioning system for configuration files. It is similar to 
+cvs and subversion, but different in its orientation toward system 
+configuration files (think /etc), dealing with all file types and 
+attributes.
+
+Features:
+- does not pollute the filesystem outside its dirs; 
+- keeps both data and metadata (owner, group, perms, atime, mtime); 
+- deals with all types of files (S_IFSOCK, S_IFLNK, S_IFREG, S_IFBLK, 
+	S_IFDIR, S_IFCHR, S_IFIFO); 
+
+WWW: http://www.nongnu.org/cfvers/
+
+Janos Mohacsi <janos.mohacsi@bsd.hu>
