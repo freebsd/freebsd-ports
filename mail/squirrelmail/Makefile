@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	squirrelmail
-PORTVERSION=	1.4.2
-PORTREVISION=	1
+PORTVERSION=	1.4.3
 CATEGORIES?=	mail www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	squirrelmail
@@ -37,7 +36,7 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION} \
 
 .if !defined(MASTERDIR)
 MASTERDIR=	${.CURDIR}
-.endif 
+.endif
 
 pre-everything::
 	@${ECHO_CMD} "SquirrelMail is installed into ${SQUIRRELDIR}"
