@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	bluefish
-PORTVERSION=	0.9.20030424
+PORTVERSION=	0.9.20030519
 CATEGORIES=	www editors
 MASTER_SITES=	http://pkedu.fbt.eitn.wau.nl/~olivier/${DOWNLOAD}/ \
 		ftp://bluefish.advancecreations.com/pub/bluefish/${DOWNLOAD}/ \
 		http://bluefish.mrball.net/${DOWNLOAD}/ \
 		ftp://ftp.ratisbona.com/pub/bluefish/${DOWNLOAD}/ \
 		http://bluefish.shellhung.org/${DOWNLOAD}/
-DISTNAME=	${PORTNAME}-2003-04-24
+DISTNAME=	${PORTNAME}-2003-05-19
 
 MAINTAINER=	einekoai@chello.nl
 COMMENT=	HTML editor designed for the experienced web designer
@@ -26,7 +26,6 @@ DOWNLOAD=	snapshots
 WRKSRC=		${WRKDIR}/bluefish-gtk2
 NO_LATEST_LINK=	yes
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_GNOME=	gnomehier gtk20
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
