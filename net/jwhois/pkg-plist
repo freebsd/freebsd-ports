@@ -7,8 +7,11 @@ info/jwhois.info
 @exec install-info %D/info/jwhois.info %D/info/dir
 share/locale/es/LC_MESSAGES/jwhois.mo
 share/locale/fr/LC_MESSAGES/jwhois.mo
+share/locale/id/LC_MESSAGES/jwhois.mo
 share/locale/ru/LC_MESSAGES/jwhois.mo
 share/locale/sv/LC_MESSAGES/jwhois.mo
+share/locale/tr/LC_MESSAGES/jwhois.mo
+share/locale/zh_TW/LC_MESSAGES/jwhois.mo
 @unexec rmdir %D/share/locale/*/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/* 2>/dev/null || true
 @unexec rmdir %D/share/locale 2>/dev/null || true
