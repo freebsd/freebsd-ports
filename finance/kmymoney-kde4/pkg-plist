@@ -1,0 +1,107 @@
+bin/kmymoney
+bin/kmymoney2
+share/apps/kmymoney2/pics/account-folder.xpm
+share/apps/kmymoney2/pics/bank-folder.xpm
+share/apps/kmymoney2/pics/startlogo.png
+share/apps/kmymoney2/pics/setting_list.png
+share/apps/kmymoney2/pics/view_info.png
+share/apps/kmymoney2/pics/dlg_backup.png
+share/apps/kmymoney2/pics/dlg_csv_import.png
+share/apps/kmymoney2/pics/dlg_edit_categories.png
+share/apps/kmymoney2/pics/dlg_edit_category.png
+share/apps/kmymoney2/pics/dlg_edit_file.png
+share/apps/kmymoney2/pics/dlg_ending_balance.png
+share/apps/kmymoney2/pics/dlg_export.png
+share/apps/kmymoney2/pics/dlg_find_transaction.png
+share/apps/kmymoney2/pics/dlg_import.png
+share/apps/kmymoney2/pics/dlg_new_account.png
+share/apps/kmymoney2/pics/dlg_new_institution.png
+share/apps/kmymoney2/pics/dlg_qif_export.png
+share/apps/kmymoney2/pics/dlg_qif_import.png
+share/apps/kmymoney2/pics/dlg_reconcile.png
+share/apps/kmymoney2/icons/hicolor/22x22/actions/pay_edit.png
+share/apps/kmymoney2/icons/hicolor/22x22/actions/bank.png
+share/apps/kmymoney2/icons/hicolor/22x22/actions/categories.png
+share/apps/kmymoney2/icons/hicolor/22x22/actions/transaction_find.png
+share/apps/kmymoney2/icons/hicolor/22x22/actions/reconcile.png
+share/apps/kmymoney2/icons/hicolor/22x22/actions/transaction_export.png
+share/apps/kmymoney2/icons/hicolor/22x22/actions/transaction_import.png
+share/apps/kmymoney2/icons/hicolor/22x22/actions/account.png
+share/apps/kmymoney2/icons/hicolor/22x22/actions/account_open.png
+share/apps/kmymoney2/icons/hicolor/22x22/actions/backup.png
+share/apps/kmymoney2/icons/hicolor/22x22/actions/delete.png
+share/apps/kmymoney2/icons/hicolor/22x22/actions/personal_data.png
+share/apps/kmymoney2/icons/hicolor/22x22/actions/view_info.png
+share/apps/kmymoney2/icons/hicolor/22x22/actions/close_window.png
+share/apps/kmymoney2/icons/hicolor/22x22/actions/cleared.png
+share/apps/kmymoney2/icons/hicolor/22x22/actions/set_as.png
+share/apps/kmymoney2/icons/hicolor/22x22/actions/unreconciled.png
+share/apps/kmymoney2/icons/hicolor/22x22/actions/transaction.png
+share/apps/kmymoney2/icons/hicolor/16x16/actions/bank.png
+share/apps/kmymoney2/icons/hicolor/16x16/actions/categories.png
+share/apps/kmymoney2/icons/hicolor/16x16/actions/pay_edit.png
+share/apps/kmymoney2/icons/hicolor/16x16/actions/transaction_export.png
+share/apps/kmymoney2/icons/hicolor/16x16/actions/transaction_find.png
+share/apps/kmymoney2/icons/hicolor/16x16/actions/transaction_import.png
+share/apps/kmymoney2/icons/hicolor/16x16/actions/reconcile.png
+share/apps/kmymoney2/icons/hicolor/16x16/actions/backup.png
+share/apps/kmymoney2/icons/hicolor/16x16/actions/close_window.png
+share/apps/kmymoney2/icons/hicolor/16x16/actions/delete.png
+share/apps/kmymoney2/icons/hicolor/16x16/actions/personal_data.png
+share/apps/kmymoney2/icons/hicolor/16x16/actions/transaction.png
+share/apps/kmymoney2/icons/hicolor/16x16/actions/view_info.png
+share/apps/kmymoney2/icons/hicolor/48x48/apps/payee.png
+share/apps/kmymoney2/icons/hicolor/48x48/apps/ledger.png
+share/apps/kmymoney2/icons/hicolor/48x48/apps/home.png
+share/apps/kmymoney2/icons/hicolor/48x48/apps/categories.png
+share/apps/kmymoney2/icons/hicolor/48x48/apps/schedule.png
+share/apps/kmymoney2/html/home.html
+share/apps/kmymoney2/html/kmymoney2.css
+share/apps/kmymoney2/html/home_fr.fr.html
+share/apps/kmymoney2/html/home_de.de.html
+share/apps/kmymoney2/html/home_ru.ru.html
+share/apps/kmymoney2/tips
+share/apps/kmymoney2/default_accounts_de.dat
+share/apps/kmymoney2/default_accounts_enGB.dat
+share/apps/kmymoney2/comptes_par_defaut_fr.dat
+share/apps/kmymoney2/default_accounts_enC.dat
+share/apps/kmymoney2/default_accounts_enUS.dat
+share/apps/kmymoney2/default_accounts_ruSU.dat
+share/apps/kmymoney2/kmymoney2ui.rc
+share/mimelnk/application/x-kmymoney2.desktop
+share/applnk/Applications/kmymoney2.desktop
+share/icons/locolor/16x16/apps/kmymoney2.png
+share/icons/locolor/32x32/apps/kmymoney2.png
+share/icons/hicolor/16x16/mimetypes/kmy.png
+share/icons/hicolor/32x32/mimetypes/kmy.png
+share/icons/hicolor/48x48/mimetypes/kmy.png
+share/icons/hicolor/16x16/apps/kmymoney2.png
+share/icons/hicolor/32x32/apps/kmymoney2.png
+share/locale/de/LC_MESSAGES/kmymoney2.mo
+share/locale/fr/LC_MESSAGES/kmymoney2.mo
+share/locale/ru/LC_MESSAGES/kmymoney2.mo
+share/locale/en_GB/LC_MESSAGES/kmymoney2.mo
+share/locale/pt_BR/LC_MESSAGES/kmymoney2.mo
+share/doc/HTML/en/kmymoney2/newbank.png
+share/doc/HTML/en/kmymoney2/transwindow.png
+share/doc/HTML/en/kmymoney2/newbank_icon.png
+share/doc/HTML/en/kmymoney2/blank_icon.png
+share/doc/HTML/en/kmymoney2/newaccount_icon.png
+share/doc/HTML/en/kmymoney2/newaccount.png
+share/doc/HTML/en/kmymoney2/index.docbook
+share/doc/HTML/en/kmymoney2/startdialog.png
+share/doc/HTML/en/kmymoney2/mainwindow.png
+share/doc/HTML/en/kmymoney2/index.cache.bz2
+share/doc/HTML/en/kmymoney2/common
+@dirrm share/doc/HTML/en/kmymoney2
+@dirrm share/apps/kmymoney2/html
+@dirrm share/apps/kmymoney2/icons/hicolor/48x48/apps
+@dirrm share/apps/kmymoney2/icons/hicolor/48x48
+@dirrm share/apps/kmymoney2/icons/hicolor/22x22/actions
+@dirrm share/apps/kmymoney2/icons/hicolor/22x22
+@dirrm share/apps/kmymoney2/icons/hicolor/16x16/actions
+@dirrm share/apps/kmymoney2/icons/hicolor/16x16
+@dirrm share/apps/kmymoney2/icons/hicolor
+@dirrm share/apps/kmymoney2/icons
+@dirrm share/apps/kmymoney2/pics
+@dirrm share/apps/kmymoney2

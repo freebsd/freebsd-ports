@@ -13,6 +13,7 @@
     SUBDIR += grisbi
     SUBDIR += kexchange
     SUBDIR += khacc
+    SUBDIR += kmymoney2
     SUBDIR += ktoblzcheck
     SUBDIR += libofx
     SUBDIR += libstocks
