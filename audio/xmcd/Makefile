@@ -9,7 +9,7 @@ PORTNAME=	xmcd
 PORTVERSION=	2.6
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://metalab.unc.edu/tkan/download/xmcd/src/
+MASTER_SITES=	http://www.ibiblio.org/tkan/download/xmcd/src/
 
 MAINTAINER=	eischen@vigrid.com
 
