@@ -23,6 +23,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_ARCHLIBDIR%%/dl.so
 %%RUBY_ARCHLIBDIR%%/dlconfig.h
 %%RUBY_ARCHLIBDIR%%/dln.h
+%%RUBY_ARCHLIBDIR%%/enumerator.so
 %%RUBY_ARCHLIBDIR%%/env.h
 %%RUBY_ARCHLIBDIR%%/etc.so
 %%RUBY_ARCHLIBDIR%%/fcntl.so
@@ -57,6 +58,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 @dirrm %%RUBY_ARCHLIBDIR%%/racc
 %%RUBYLIB%%%%RUBY_LIBDIR%%/English.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/Env.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/abbrev.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/base64.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/benchmark.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/bigdecimal/jacobian.rb
@@ -81,6 +83,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/dl/types.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/dl/win32.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/drb.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/drb/acl.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/drb/drb.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/drb/eq.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/drb/extserv.rb
@@ -88,6 +91,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/drb/gw.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/drb/invokemethod.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/drb/observer.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/drb/ssl.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/drb/timeridconv.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/drb/unix.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/e2mmap.rb
@@ -99,6 +103,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/find.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/forwardable.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/ftools.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/generator.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/getoptlong.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/getopts.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/gserver.rb
@@ -141,6 +146,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/irb/xmp.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/jcode.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/kconv.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/logger.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/mailread.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/mathn.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/matrix.rb
@@ -205,18 +211,14 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/element.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/encoding.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/encodings/EUC-JP.rb
-%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/encodings/EUC-JP_decl.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/encodings/ICONV.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/encodings/ISO-8859-1.rb
-%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/encodings/ISO-8859-1_decl.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/encodings/SHIFT-JIS.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/encodings/SHIFT_JIS.rb
-%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/encodings/Shift-JIS_decl.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/encodings/UNILE.rb
-%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/encodings/UNILE_decl.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/encodings/US-ASCII.rb
-%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/encodings/US-ASCII_decl.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/encodings/UTF-16.rb
-%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/encodings/UTF-16_decl.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/encodings/UTF-8.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/entity.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/functions.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/instruction.rb
@@ -243,6 +245,9 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/xmltokens.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/xpath.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/xpath_parser.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rinda/rinda.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rinda/ring.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rinda/tuplespace.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rubyunit.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/runit/assert.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/runit/cui/testrunner.rb
@@ -264,11 +269,44 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/shell/version.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/shellwords.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/singleton.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/soap/baseData.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/soap/element.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/soap/encodingstyle/aspDotNetHandler.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/soap/encodingstyle/handler.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/soap/encodingstyle/literalHandler.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/soap/encodingstyle/soapHandler.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/soap/generator.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/soap/mapping.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/soap/mapping/factory.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/soap/mapping/mapping.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/soap/mapping/registry.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/soap/mapping/rubytypeFactory.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/soap/mapping/typeMap.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/soap/mapping/wsdlRegistry.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/soap/marshal.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/soap/netHttpClient.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/soap/parser.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/soap/processor.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/soap/rpc/cgistub.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/soap/rpc/driver.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/soap/rpc/element.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/soap/rpc/proxy.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/soap/rpc/router.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/soap/rpc/rpc.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/soap/rpc/soaplet.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/soap/rpc/standaloneServer.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/soap/soap.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/soap/streamHandler.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/soap/wsdlDriver.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/sync.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/tempfile.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/test/unit.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/test/unit/assertionfailederror.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/test/unit/assertions.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/test/unit/autorunner.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/test/unit/collector.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/test/unit/collector/dir.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/test/unit/collector/objectspace.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/test/unit/error.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/test/unit/failure.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/test/unit/testcase.rb
@@ -279,6 +317,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/test/unit/ui/gtk/testrunner.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/test/unit/ui/testrunnermediator.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/test/unit/ui/testrunnerutilities.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/test/unit/util/backtracefilter.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/test/unit/util/observable.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/test/unit/util/procwrapper.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/thread.rb
@@ -332,6 +371,48 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/ssl.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/utils.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/version.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/binding.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/data.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/definitions.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/documentation.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/import.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/importer.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/info.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/message.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/operation.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/operationBinding.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/param.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/parser.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/part.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/port.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/portType.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/service.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/soap/address.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/soap/binding.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/soap/body.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/soap/complexType.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/soap/data.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/soap/definitions.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/soap/fault.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/soap/header.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/soap/headerfault.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/soap/operation.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/types.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/wsdl.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/xmlSchema/all.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/xmlSchema/any.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/xmlSchema/attribute.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/xmlSchema/choice.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/xmlSchema/complexContent.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/xmlSchema/complexType.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/xmlSchema/content.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/xmlSchema/data.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/xmlSchema/element.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/xmlSchema/import.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/xmlSchema/parser.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/xmlSchema/schema.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/xmlSchema/sequence.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/xmlSchema/unique.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/xmlrpc/base64.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/xmlrpc/client.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/xmlrpc/config.rb
@@ -342,6 +423,18 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/xmlrpc/parser.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/xmlrpc/server.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/xmlrpc/utils.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/xsd/charset.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/xsd/datatypes.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/xsd/datatypes1999.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/xsd/iconvcharset.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/xsd/namedelements.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/xsd/ns.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/xsd/qname.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/xsd/xmlparser.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/xsd/xmlparser/parser.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/xsd/xmlparser/rexmlparser.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/xsd/xmlparser/xmlparser.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/xsd/xmlparser/xmlscanner.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/yaml.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/yaml/baseemitter.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/yaml/basenode.rb
@@ -365,7 +458,12 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 @unexec rmdir %D/lib/ruby/site_ruby 2>/dev/null || true
 @dirrm %%RUBY_ARCHLIBDIR%%
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/yaml
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/xsd/xmlparser
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/xsd
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/xmlrpc
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/wsdl/xmlSchema
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/wsdl/soap
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/wsdl
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/webrick/httpservlet
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/webrick/httpauth
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/webrick
@@ -375,11 +473,17 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/test/unit/ui/fox
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/test/unit/ui/console
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/test/unit/ui
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/test/unit/collector
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/test/unit
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/test
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/soap/rpc
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/soap/mapping
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/soap/encodingstyle
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/soap
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/shell
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/runit/cui
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/runit
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rinda
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rexml/parsers
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rexml/light
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rexml/encodings
