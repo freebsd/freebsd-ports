@@ -7800,6 +7800,7 @@ portdowngrade	ports/sysutils/portdowngrade
 porteasy	ports/misc/porteasy
 portell		ports/misc/portell
 portfwd		ports/net/portfwd
+portindex	ports/sysutils/portindex
 portlint	ports/devel/portlint
 portmon		ports/net-mgmt/portmon
 portoseguro	ports/x11/portoseguro
