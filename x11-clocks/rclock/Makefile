@@ -7,8 +7,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=	rxvt-2.6.1
-PKGNAME=	rclock-2.6.1
+DISTNAME=	rxvt-2.7.1
+PKGNAME=	rclock-2.7.1
 CATEGORIES=	x11-clocks
 MASTER_SITES=	ftp://ftp.rxvt.org/pub/rxvt/  \
 		ftp://mason.primenet.com.au/pub/rxvt/ \
