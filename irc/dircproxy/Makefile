@@ -5,16 +5,16 @@
 # $FreeBSD$
 #
 
-PORTNAME=       	dircproxy
-PORTVERSION=		1.0.3
-CATEGORIES=     	irc
-MASTER_SITES=		ftp://ftp.netsplit.com/pub/dircproxy/stable/
+PORTNAME=	dircproxy
+PORTVERSION=	1.0.5
+CATEGORIES=	irc
+MASTER_SITES=	ftp://ftp.netsplit.com/pub/dircproxy/stable/
 
-MAINTAINER=		lester@mazpe.net
+MAINTAINER=	lester@mazpe.net
 
-GNU_CONFIGURE=		yes
+GNU_CONFIGURE=	yes
 
-MAN1=			dircproxy.1 dircproxy-crypt.1
+MAN1=		dircproxy.1 dircproxy-crypt.1
 
 post-install:
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' ${PKGMESSAGE}
