@@ -66,6 +66,9 @@ CONFIGURE_ARGS=					\
 		--with-pthreads
 .if !defined(WITHOUT_CHATZILLA)
 CONFIGURE_ARGS+=	--enable-extensions=default,irc,xmlterm
+PLIST_SUB+=	CHATZILLA=""
+.else
+PLIST_SUB+=	CHATZILLA="@comment "
 .endif
 CONFIGURE_ENV=	MOZ_INTERNAL_LIBART_LGPL=1
 MAKE_ENV=	LD_LIBRARY_PATH=${WRKSRC}/dist/bin \
