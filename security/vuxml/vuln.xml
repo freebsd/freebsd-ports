@@ -69,7 +69,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>courier-imap</name>
-	<range><le>3.0.7,1</le></range>
+	<range><lt>3.0.7,1</lt></range>
       </package>
     </affects>
     <description>
