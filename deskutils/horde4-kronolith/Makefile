@@ -6,15 +6,17 @@
 #
 
 PORTNAME=	kronolith
-PORTVERSION=	1.1
-PORTREVISION=	2
+PORTVERSION=	1.1.1
 CATEGORIES=	deskutils www
-MASTER_SITES=	ftp://ftp.horde.org/pub/kronolith/			\
-		ftp://ftp.au.horde.org/pub/horde/kronolith/		\
-		ftp://ftp.es.horde.org/pub/kronolith/			\
-		ftp://ftp.it.horde.org/pub/mirror/horde.org/kronolith/	\
-		ftp://ftp.nl.horde.org/mirror/horde-ftp/pub/kronolith/	\
-		ftp://ftp.pt.horde.org/pub/horde-ftp/kronolith/
+MASTER_SITES=	ftp://ftp.horde.org/pub/kronolith/				\
+		ftp://ftp.planetmirror.com/pub/horde/kronolith/			\
+		ftp://ftp.au.horde.org/pub/horde/kronolith/			\
+		ftp://ftp.be.horde.org/kronolith/				\
+		ftp://ftp.es.horde.org/pub/kronolith/				\
+		ftp://ftp.it.horde.org/pub/mirror/horde.org/kronolith/		\
+		ftp://ftp.nl.horde.org/mirror/horde-ftp/pub/kronolith/		\
+		ftp://ftp.uk.horde.org/mirrors/ftp.horde.org/pub/kronolith/	\
+		http://ftp.horde.org/pub/kronolith/
 
 MAINTAINER=	thierry@pompo.net
 COMMENT=	Kronolith is the Horde calendar application
@@ -33,7 +35,8 @@ HTPASSWD=	${LOCALBASE}/bin/htpasswd
 .endif
 
 REINPLACE_ARGS=	-i.beforeKronolith
-DOCS=		COPYING README docs/CHANGES docs/CREDITS docs/INSTALL
+DOCS=		COPYING README docs/CHANGES docs/CREDITS docs/INSTALL	\
+		docs/RELEASE_NOTES
 CONFFILE=	conf.php html.php keywords.php menu.php prefs.php
 SUB_DIRS=	config graphics lib locale po scripts templates util
 
@@ -48,6 +51,9 @@ CONFDIR=	${KRONOLITHDIR}/config
 VAR_CAL=	/var/calendar
 
 HORDE_INC=	${LOCALBASE}/etc/horde
+
+post-patch:
+	@${RM} ${WRKSRC}/config/conf.php.dist.orig
 
 pre-install:
 	@if ! ${LDCONFIG} -r | ${GREP} -q -e "mcal.0" ; then \
@@ -112,8 +118,8 @@ post-install:
 	@${RM} ${CONFDIR}/conf.php.beforeKronolith
 .endif
 	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE} | \
-	${SED} -e "s:%%KRONOLITHDIR%%:${KRONOLITHDIR}:g;s:%%PORTSDIR%%:${PORTSDIR}:g;s:%%CONFDIR%%:${CONFDIR}:g;s:%%LOCALBASE%%:${LOCALBASE}:"
+	@${SED} -e "s:%%KRONOLITHDIR%%:${KRONOLITHDIR}:g;s:%%PORTSDIR%%:${PORTSDIR}:g"	\
+		-e "s:%%CONFDIR%%:${CONFDIR}:g;s:%%LOCALBASE%%:${LOCALBASE}:" ${PKGMESSAGE}
 	@${ECHO_MSG}
 
 .include <bsd.port.mk>

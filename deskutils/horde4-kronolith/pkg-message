@@ -1,6 +1,6 @@
 ************************************************************************
-Kronolith has been installed in %%KRONOLITHDIR%% with your blank
-configuration files.
+Kronolith has been installed in %%KRONOLITHDIR%% with your
+blank configuration files.
 
 Horde and IMP must be configured; if not, see:
 - %%PORTSDIR%%/www/horde2/pkg-message
