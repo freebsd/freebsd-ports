@@ -5,14 +5,14 @@
  RANLIB          = ranlib
  
 -DDEBUG          = -DDEBUG
-+DDEBUG          = 
++DDEBUG          = $(DEBUG_FLAGS)
  INCDIR          = ../include
 -CXXOPTS         = $(OS_CXXOPTS) $(DDEBUG) -I$(INCDIR) -fPIC -Wall -O2
-+CXXOPTS         = $(OS_CXXOPTS) $(DDEBUG) -I$(INCDIR) -fPIC -Wall $(CFLAGS)
++CXXOPTS         = $(OS_CXXOPTS) $(DDEBUG) -I$(INCDIR) -fPIC -Wall $(PTYPES_CFLAGS)
  LDLIBS          = $(OS_LDLIBS)
  
 -CXXOPTS_ST      = -DPTYPES_ST $(OS_CXXOPTS_ST) $(DDEBUG) -I$(INCDIR) -Wall -O2
-+CXXOPTS_ST      = -DPTYPES_ST $(OS_CXXOPTS_ST) $(DDEBUG) -I$(INCDIR) -Wall $(CFLAGS)
++CXXOPTS_ST      = -DPTYPES_ST $(OS_CXXOPTS_ST) $(DDEBUG) -I$(INCDIR) -Wall $(PTYPES_CFLAGS)
  LDLIBS_ST       = $(OS_LDLIBS_ST)
  
  LIBNAME         = libptypes.a

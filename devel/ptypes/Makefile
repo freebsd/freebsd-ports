@@ -16,9 +16,25 @@ MAINTAINER=	sem@ciam.ru
 COMMENT=	C++ Portable Types Library
 
 SHLIB_VER=	19
+
 INSTALLS_SHLIB=	yes
-MAKE_ARGS+=	PTHREAD_LIBS=${PTHREAD_LIBS} PTHREAD_CFLAGS=${PTHREAD_CFLAGS}
 PLIST_SUB+=	SHLIB_VER=${SHLIB_VER}
+PTYPES_CFLAGS=	${CFLAGS}
+
+OPTIONS=	DEBUG "Build debug version" off \
+		OPTIMIZED "Enable -O2 optimization" on
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_DEBUG)
+DEBUG_FLAGS=	-DDEBUG
+.endif
+.if defined(WITH_OPTIMIZED)
+PTYPES_CFLAGS+=	-O2
+.endif
+
+MAKE_ARGS+=	PTHREAD_LIBS=${PTHREAD_LIBS} PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
+		DEBUG_FLAGS=${DEBUG_FLAGS} PTYPES_CFLAGS="${PTYPES_CFLAGS}"
 
 do-install:
 	${MKDIR} ${PREFIX}/include/ptypes
@@ -38,4 +54,4 @@ do-install:
 	cd ${WRKSRC}/doc; ${TAR} cf - *| ${TAR} xf - -C ${DOCSDIR}/doc
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
