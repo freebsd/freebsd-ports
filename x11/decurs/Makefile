@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	http://varg.dyndns.org/psi/files/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A GTK+ based program that lets you edit you XFree86 mouse cursors
 
 LIB_DEPENDS=	gtkmm-2.0.6:${PORTSDIR}/x11-toolkits/gtk--2
@@ -22,13 +22,24 @@ GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 501000 || ${ARCH} != "i386"
-BROKEN=		"Does not compile on FreeBSD ${OSVERSION} or on !i386"
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
+.if ${OSVERSION} > 500035
+USE_REINPLACE=	yes
 .endif
 
 post-patch:
 	@${SED} -e 's:%%PREFIX%%:${PREFIX}:g' \
 		${FILESDIR}/decurs.exec > ${WRKSRC}/decurs.exec
+.if ${OSVERSION} > 500035
+# Hack for contemporary GCC
+	@${REINPLACE_CMD} -e 's/, CppString \&str/, const CppString \&str/' \
+		${WRKSRC}/src/cppstring.cc ${WRKSRC}/src/cppstring.hh
+	@${REINPLACE_CMD} -E 's/^\/\/ friend//; s/([^:])ostream/\1std::ostream/g' \
+		${WRKSRC}/src/cppstring.hh
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/decurs ${PREFIX}/bin/decurs.bin
