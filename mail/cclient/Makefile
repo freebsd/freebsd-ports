@@ -7,12 +7,13 @@
 
 PORTNAME=	cclient
 PORTVERSION=	4.8
+PORTREVISION=	1
 CATEGORIES=	mail devel
 MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/%SUBDIR%/ \
 		ftp://ftp.funet.fi/pub/mirrors/ftp.cac.washington.edu/imap/%SUBDIR%/ \
 		http://mirror.nucba.ac.jp/mirror/%SUBDIR%/
-MASTER_SITE_SUBDIR= . old
-DISTNAME=	imap-2000a
+MASTER_SITE_SUBDIR=	. old
+DISTNAME=	imap-2000b
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
