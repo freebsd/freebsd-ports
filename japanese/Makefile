@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.91 1997/10/18 00:15:27 asami Exp $
+# $Id: Makefile,v 1.92 1997/10/23 13:57:09 itojun Exp $
 #
 
     SUBDIR += Canna
@@ -104,7 +104,7 @@
     SUBDIR += vfxdvi
     SUBDIR += w3
     SUBDIR += weblint97
-    SUBDIR += x0212font
+    SUBDIR += x0212fonts
     SUBDIR += xdvi
     SUBDIR += xshodo
 
