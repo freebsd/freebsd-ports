@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	skkinput
-PORTVERSION=	2.06.1
+PORTVERSION=	2.06.3
 CATEGORIES=	japanese x11
-MASTER_SITES=	http://downloads.sourceforge.jp/skkinput2/1445/
+MASTER_SITES=	http://downloads.sourceforge.jp/skkinput2/1815/
 
 MAINTAINER=	koma2@jiro.c.u-tokyo.ac.jp
 
@@ -33,7 +33,7 @@ MANLANG=	"" ja
 MAN1=		skkinput.1
 MANCOMPRESSED=	yes
 
-DOCS=		*.jis ChangeLog skkinput.doc \
+DOCS=		*.jis ChangeLog \
 		myeval/skkinputlisp.doc dot.skkinput
 
 .if !defined(NOPORTDOCS)

@@ -8,6 +8,5 @@ lib/X11/app-defaults/Skkinput
 %%PORTDOCS%%share/doc/skkinput/README.jis
 %%PORTDOCS%%share/doc/skkinput/TODO.jis
 %%PORTDOCS%%share/doc/skkinput/dot.skkinput
-%%PORTDOCS%%share/doc/skkinput/skkinput.doc
 %%PORTDOCS%%share/doc/skkinput/skkinputlisp.doc
 %%PORTDOCS%%@dirrm share/doc/skkinput
