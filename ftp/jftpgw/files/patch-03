@@ -1,0 +1,23 @@
+*** config.c~	Sat Jun 30 16:34:42 2001
+--- config.c	Tue Jul 17 16:17:24 2001
+***************
+*** 468,476 ****
+  	}
+  	while (hl) {
+  		if (hl->next == entry) {
+- 			hl->next = hl->next->next;
+  			delete = hl->next;
+  			delete->next = (struct hostent_list*) 0;
+  			hostent_destroy(delete); 
+  			return;
+  		} else {
+--- 468,476 ----
+  	}
+  	while (hl) {
+  		if (hl->next == entry) {
+  			delete = hl->next;
+  			delete->next = (struct hostent_list*) 0;
++ 			hl->next = hl->next->next;
+  			hostent_destroy(delete); 
+  			return;
+  		} else {
