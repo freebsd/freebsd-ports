@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	robodoc
-PORTVERSION=	3.2.2
+PORTVERSION=	4.0.6
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,19 +17,17 @@ COMMENT=	Code reference program similar to cxref that produces HTML
 GNU_CONFIGURE=	yes
 MAKEFILE=	makefile
 
-MAN1=		robodoc.1
+MAN1=		robodoc.1 robohdrs.1
 
-post-install:
-	@${MKDIR} ${PREFIX}/share/examples/robodoc/C
-	${INSTALL_DATA} ${WRKSRC}/Examples/C/* \
-		${PREFIX}/share/examples/robodoc/C
-	@${MKDIR} ${PREFIX}/share/examples/robodoc/CPP
-	${INSTALL_DATA} ${WRKSRC}/Examples/CPP/* \
-		${PREFIX}/share/examples/robodoc/CPP
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/Source/robodoc ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/Source/robohdrs ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/Docs/robodoc.1 ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/Docs/robohdrs.1 ${MANPREFIX}/man/man1
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/robodoc
-.for file in AUTHORS ChangeLog NEWS README Docs/main.css Docs/robodoc.html
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/robodoc
+	@${MKDIR} ${DOCSDIR}
+.for file in AUTHORS ChangeLog NEWS README Docs/manual.html
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 

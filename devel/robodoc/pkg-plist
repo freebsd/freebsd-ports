@@ -1,22 +1,8 @@
 bin/robodoc
-%%PORTDOCS%%share/doc/robodoc/AUTHORS
-%%PORTDOCS%%share/doc/robodoc/ChangeLog
-%%PORTDOCS%%share/doc/robodoc/NEWS
-%%PORTDOCS%%share/doc/robodoc/README
-%%PORTDOCS%%share/doc/robodoc/main.css
-%%PORTDOCS%%share/doc/robodoc/robodoc.html
-share/examples/robodoc/C/makefile
-share/examples/robodoc/C/prog1.c
-share/examples/robodoc/C/prog1.c.html
-share/examples/robodoc/C/prog2.c
-share/examples/robodoc/C/prog2.c.html
-share/examples/robodoc/CPP/makefile
-share/examples/robodoc/CPP/masterindex.html
-share/examples/robodoc/CPP/muppets.cpp
-share/examples/robodoc/CPP/muppets.cpp.html
-share/examples/robodoc/CPP/muppets.h
-share/examples/robodoc/CPP/muppets.h.html
-@dirrm share/examples/robodoc/CPP
-@dirrm share/examples/robodoc/C
-@dirrm share/examples/robodoc
-%%PORTDOCS%%@dirrm share/doc/robodoc
+bin/robohdrs
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/manual.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
