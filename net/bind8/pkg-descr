@@ -1,5 +1,3 @@
-The Berkeley Internet Name Daemon, an implementation of DNS.
-
 BIND 8 Features
 	-> DNS Dynamic Updates (RFC 2136)
 	-> DNS Change Notification (RFC 1996)
