@@ -22,6 +22,7 @@
     SUBDIR += esound
     SUBDIR += extace
     SUBDIR += gdcd
+    SUBDIR += gkrellmms
     SUBDIR += gkrellmvolume
     SUBDIR += gmixer
     SUBDIR += gnapster
