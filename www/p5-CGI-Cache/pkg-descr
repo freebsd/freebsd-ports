@@ -1,0 +1,5 @@
+CGI::Cache is a perl extension to help cache output of time-intensive
+CGI scripts so that subsequent visists to such scripts will not cost
+as much time.
+
+--will
