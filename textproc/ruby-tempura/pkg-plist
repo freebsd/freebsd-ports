@@ -1,0 +1,59 @@
+%%RUBY_SITELIBDIR%%/tempura/charconv.rb
+%%RUBY_SITELIBDIR%%/tempura/charconv_euc.rb
+%%RUBY_SITELIBDIR%%/tempura/div.rb
+%%RUBY_SITELIBDIR%%/tempura/expander.rb
+%%RUBY_SITELIBDIR%%/tempura/source.rb
+%%RUBY_SITELIBDIR%%/tempura/source_container.rb
+%%RUBY_SITELIBDIR%%/tempura/template.rb
+%%RUBY_SITELIBDIR%%/tempura/version.rb
+@dirrm %%RUBY_SITELIBDIR%%/tempura
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/README
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/README.ja
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/.htaccess
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/app.cgi
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/controller.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/model.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/view.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/view.ja.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/div/controller.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/div/model.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/div/start_app.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/div/view.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/div/view.ja.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/first/base.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/first/sum.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/first/tofu-runner.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/first/yourapp.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/first_variation/base.erb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/first_variation/base.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/first_variation/sum.erb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/first_variation/sum.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/first_variation/tofu-runner.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/first_variation/yourapp.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sample.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/template/main.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/template/model.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/template/view.en.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/template/view.ja.html
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/template
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/first_variation
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/first
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/div
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/README.ja
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/doc/Makefile
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/doc/changes.ja.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/doc/html/changes.ja.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/doc/html/references.ja.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/doc/html/rubyStyle.css
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/doc/html/tempura.ja.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/doc/references.ja.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/doc/rubyStyle.css
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/doc/tempura.ja.rd
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja/doc/html
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja/doc
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

@@ -1,0 +1,17 @@
+Tempura - TEMPlate Utility for Ruby Application
+===============================================
+
+Tempura is a template library for Ruby to create a live XML document
+that combines real data into an XML template.
+
+Features:
+  * Template is in XML format that preview can be viewed as HTML
+  * Only some special XML attributes effect a result to expand a template
+  * Model data is an arbitrary Ruby object
+  * Separate view from model
+  * Support for event-driven web application
+  * Includes library parts for the Div as web application framework
+
+Author:	FUJIMOTO, Hisakuni <hisa@imasy.or.jp>
+
+WWW in Japanese:	http://www.imasy.or.jp/~hisa/ruby/tempura/
