@@ -5,10 +5,12 @@
 # $FreeBSD$
 #
 
+BROKEN=		"out-of-sync with mozilla, next release will fix"
+
 PORTNAME=	skipstone
 PORTVERSION=	0.7.2
 CATEGORIES=	www
-MASTER_SITES=	http://muhri.net/skipstone/
+MASTER_SITES=	http://www.muhri.net/skipstone/
 
 MAINTAINER=	eric@FreeBSD.org
 
