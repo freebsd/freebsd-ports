@@ -28,6 +28,10 @@ WRKSRC=		${WRKDIRPREFIX}${MAINDIR}/work/mozilla
 USE_GMAKE=	yes
 ALL_TARGET=	export
 
+post-build:
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} BUILD_MODULES=psm \
+		${ALL_TARGET}
+
 do-install:
 	${MKDIR} ${PREFIX}/include/mozilla
 	${CHMOD} 755 ${PREFIX}/include/mozilla
