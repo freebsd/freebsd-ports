@@ -1,7 +1,7 @@
 bin/neXtclock
 lib/libneXtaw.a
 lib/libneXtaw.so
-lib/libneXtaw.so.7
+lib/libneXtaw.so.6
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 include/X11/neXtaw/AllWidgets.h
