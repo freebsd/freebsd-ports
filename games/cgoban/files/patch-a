@@ -5,7 +5,7 @@
   
   # Change these values to tell make where to put the binary and the man page
   #   when it's done compiling.
-! PREFIX = /usr/games
+! PREFIX = @PREFIX@
   BINDIR = $(PREFIX)/bin
   MANDIR = $(PREFIX)/man
   
