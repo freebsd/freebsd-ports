@@ -18,13 +18,11 @@ NO_BUILD=	YES
 USE_JAVA=	1.2+
 
 JAVASHAREDIR=	${PREFIX}/share/java
-DOCSDIR=	${PREFIX}/doc/${PORTNAME}
 JARDIR=		${JAVASHAREDIR}/classes
 WRKSRC=		${WRKDIR}/XInclude
 
 do-install:
-
-	@${ECHO} -n ">> Installing JAR as ${JAVASHAREDIR}/classes/${PORTNAME}.jar..."
+	@${ECHO} -n ">> Installing JAR as ${JARDIR}/${PORTNAME}.jar..."
 	@${CP} ${WRKSRC}/${PORTNAME}.jar ${JARDIR}/
 	@${ECHO} " [ DONE ]"
 
