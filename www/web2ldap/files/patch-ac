@@ -1,0 +1,13 @@
+*** sbin/compile.py.orig	Sat Jul 22 02:24:55 2000
+--- sbin/compile.py	Sat Jul 22 02:25:07 2000
+***************
+*** 1,4 ****
+! #!/usr/bin/python
+  
+  import compileall
+  
+--- 1,4 ----
+! #!/usr/local/bin/python
+  
+  import compileall
+  

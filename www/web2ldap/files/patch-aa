@@ -1,0 +1,32 @@
+*** cgi-bin/web2ldap.py.orig	Sat Jul 22 02:23:06 2000
+--- cgi-bin/web2ldap.py	Sat Jul 22 02:23:30 2000
+***************
+*** 1,4 ****
+! #!/usr/bin/python
+  
+  ########################################################################
+  # web2ldap
+--- 1,4 ----
+! #!/usr/local/bin/python
+  
+  ########################################################################
+  # web2ldap
+***************
+*** 12,19 ****
+  if os.environ.has_key('GATEWAY_INTERFACE'):
+  
+    if os.name == 'posix':
+!     # For finding web2ldapcnf.py in /etc/web2ldap on Unix systems
+!     sys.path.append('/etc/web2ldap')
+    else:
+      # For finding web2ldapcnf.py in system dirs on Windows systems
+      for i in ['SystemRoot','windir']:
+--- 12,19 ----
+  if os.environ.has_key('GATEWAY_INTERFACE'):
+  
+    if os.name == 'posix':
+!     # For finding web2ldapcnf.py in /usr/local/web2ldap/etc/web2ldap on FreeBSD systems
+!     sys.path.append('/usr/local/web2ldap/etc/web2ldap')
+    else:
+      # For finding web2ldapcnf.py in system dirs on Windows systems
+      for i in ['SystemRoot','windir']:
