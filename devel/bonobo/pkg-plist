@@ -2,11 +2,13 @@ bin/bonobo-application-x-mines
 bin/bonobo-audio-ulaw
 bin/bonobo-echo
 bin/bonobo-hello
-bin/bonobo-moniker-config
+bin/bonobo-moniker-gunzip
+bin/bonobo-moniker-http
+bin/bonobo-selector
 bin/bonobo-text-plain
-bin/bonobo-ui-extract
 bin/echo-client
 bin/efstool
+bin/gshell
 bin/libefs-config
 bin/paint-component-simple
 bin/sample-canvas-item
@@ -20,18 +22,22 @@ etc/bonobox_printConf.sh
 include/bonobo.h
 include/bonobo/Bonobo.h
 include/bonobo/bonobo-arg.h
+include/bonobo/bonobo-async.h
 include/bonobo/bonobo-canvas-component.h
 include/bonobo/bonobo-canvas-item.h
 include/bonobo/bonobo-client-site.h
 include/bonobo/bonobo-component-io.h
+include/bonobo/bonobo-context.h
 include/bonobo/bonobo-control-frame.h
 include/bonobo/bonobo-control.h
 include/bonobo/bonobo-desktop-window.h
-include/bonobo/bonobo-embeddable-factory.h
 include/bonobo/bonobo-embeddable.h
+include/bonobo/bonobo-event-source.h
 include/bonobo/bonobo-exception.h
 include/bonobo/bonobo-generic-factory.h
 include/bonobo/bonobo-item-container.h
+include/bonobo/bonobo-item-handler.h
+include/bonobo/bonobo-listener.h
 include/bonobo/bonobo-main.h
 include/bonobo/bonobo-moniker-util.h
 include/bonobo/bonobo-moniker.h
@@ -47,32 +53,29 @@ include/bonobo/bonobo-print-client.h
 include/bonobo/bonobo-print.h
 include/bonobo/bonobo-progressive.h
 include/bonobo/bonobo-property-bag-client.h
+include/bonobo/bonobo-property-bag-xml.h
 include/bonobo/bonobo-property-bag.h
+include/bonobo/bonobo-property-control.h
 include/bonobo/bonobo-property-listener.h
 include/bonobo/bonobo-property-types.h
 include/bonobo/bonobo-property.h
+include/bonobo/bonobo-selector-widget.h
 include/bonobo/bonobo-selector.h
 include/bonobo/bonobo-socket.h
+include/bonobo/bonobo-storage-plugin.h
 include/bonobo/bonobo-storage.h
 include/bonobo/bonobo-stream-client.h
-include/bonobo/bonobo-stream-fs.h
 include/bonobo/bonobo-stream-memory.h
 include/bonobo/bonobo-stream.h
 include/bonobo/bonobo-transient.h
-include/bonobo/bonobo-ui-compat.h
 include/bonobo/bonobo-ui-component.h
 include/bonobo/bonobo-ui-container.h
 include/bonobo/bonobo-ui-node.h
 include/bonobo/bonobo-ui-toolbar-button-item.h
-include/bonobo/bonobo-ui-toolbar-control-item.h
 include/bonobo/bonobo-ui-toolbar-icon.h
 include/bonobo/bonobo-ui-toolbar-item.h
-include/bonobo/bonobo-ui-toolbar-popup-item.h
-include/bonobo/bonobo-ui-toolbar-separator-item.h
 include/bonobo/bonobo-ui-toolbar-toggle-button-item.h
-include/bonobo/bonobo-ui-toolbar.h
 include/bonobo/bonobo-ui-util.h
-include/bonobo/bonobo-ui-xml.c
 include/bonobo/bonobo-ui-xml.h
 include/bonobo/bonobo-view-frame.h
 include/bonobo/bonobo-view.h
@@ -83,20 +86,20 @@ include/bonobo/bonobo-zoomable-frame.h
 include/bonobo/bonobo-zoomable.h
 include/efs.h
 include/efs_error.h
+lib/bonobo/plugin/libstorage_efs.so
+lib/bonobo/plugin/libstorage_fs.so
 lib/libbonobo-print.a
 lib/libbonobo-print.so
-lib/libbonobo-print.so.0
+lib/libbonobo-print.so.2
 lib/libbonobo.a
 lib/libbonobo.so
 lib/libbonobo.so.2
 lib/libbonobox.a
 lib/libbonobox.so
-lib/libbonobox.so.0
+lib/libbonobox.so.2
 lib/libefs.a
 lib/libefs.so
 lib/libefs.so.1
-lib/libstorage_efs.so
-lib/libstorage_fs.so
 share/gnome/bonobo/html/bonobo-api.sgml
 share/gnome/bonobo/html/bonobo-decl.txt
 share/gnome/bonobo/html/bonobo-sections.txt
@@ -108,6 +111,7 @@ share/gnome/idl/Echo.idl
 share/gnome/idl/bonobo-advise.idl
 share/gnome/idl/bonobo-canvas.idl
 share/gnome/idl/bonobo-client-site.idl
+share/gnome/idl/bonobo-context.idl
 share/gnome/idl/bonobo-control.idl
 share/gnome/idl/bonobo-desktop.idl
 share/gnome/idl/bonobo-embeddable.idl
@@ -120,19 +124,23 @@ share/gnome/idl/bonobo-progressive.idl
 share/gnome/idl/bonobo-property.idl
 share/gnome/idl/bonobo-storage.idl
 share/gnome/idl/bonobo-ui.idl
-share/gnome/idl/bonobo-zoomable.idl
 share/gnome/idl/bonobo-unknown.idl
-share/gnome/idl/bonobo.idl
+share/gnome/idl/bonobo-zoomable.idl
 share/gnome/mime-info/bonobo.keys
-share/gnome/oaf/application-x-mines.oafinfo
-share/gnome/oaf/audio-ulaw.oafinfo
-share/gnome/oaf/bonobo-calculator-control.oafinfo
-share/gnome/oaf/bonobo-clock-control.oafinfo
-share/gnome/oaf/echo.oafinfo
-share/gnome/oaf/hello.oafinfo
-share/gnome/oaf/paint-component-simple.oafinfo
-share/gnome/oaf/std-moniker.oafinfo
-share/gnome/oaf/text-plain.oafinfo
+share/gnome/oaf/Bonobo_Moniker_gzip.oafinfo
+share/gnome/oaf/Bonobo_Moniker_http.oafinfo
+share/gnome/oaf/Bonobo_Moniker_std.oafinfo
+share/gnome/oaf/Bonobo_Sample_Audio.oafinfo
+share/gnome/oaf/Bonobo_Sample_Calculator.oafinfo
+share/gnome/oaf/Bonobo_Sample_CanvasItem.oafinfo
+share/gnome/oaf/Bonobo_Sample_Clock.oafinfo
+share/gnome/oaf/Bonobo_Sample_Echo.oafinfo
+share/gnome/oaf/Bonobo_Sample_Hello.oafinfo
+share/gnome/oaf/Bonobo_Sample_Mines.oafinfo
+share/gnome/oaf/Bonobo_Sample_Paint.oafinfo
+share/gnome/oaf/Bonobo_Sample_Text.oafinfo
+share/gnome/oaf/Bonobo_Selector.oafinfo
+share/gnome/ui/gshell-ui.xml
 share/locale/ca/LC_MESSAGES/bonobo.mo
 share/locale/da/LC_MESSAGES/bonobo.mo
 share/locale/de/LC_MESSAGES/bonobo.mo
@@ -158,6 +166,8 @@ share/locale/sv/LC_MESSAGES/bonobo.mo
 share/locale/tr/LC_MESSAGES/bonobo.mo
 share/locale/uk/LC_MESSAGES/bonobo.mo
 share/locale/wa/LC_MESSAGES/bonobo.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/bonobo.mo
+@dirrm share/gnome/ui
 @dirrm share/gnome/libefs/html/libefs
 @dirrm share/gnome/libefs/html
 @dirrm share/gnome/libefs
@@ -168,4 +178,6 @@ share/locale/wa/LC_MESSAGES/bonobo.mo
 @dirrm share/gnome/bonobo/docs/audio_ulaw
 @dirrm share/gnome/bonobo/docs
 @dirrm share/gnome/bonobo
+@dirrm lib/bonobo/plugin
+@dirrm lib/bonobo
 @dirrm include/bonobo
