@@ -73,6 +73,7 @@
     SUBDIR += p5-DelimMatch
     SUBDIR += p5-Spreadsheet-ParseExcel
     SUBDIR += p5-Spreadsheet-WriteExcel
+    SUBDIR += p5-String-ShellQuote
     SUBDIR += p5-String-Strip
     SUBDIR += p5-Text-Autoformat
     SUBDIR += p5-Text-Bind
