@@ -61,4 +61,4 @@
   #
   LIBSX  = ../src/libsx.a
   #LIBS   =  $(LIBSX) -lXaw -lXmu -lXt -lX11
-! LIBS   =  $(LIBSX) -lXaw -lXmu -lXt -lX11 -lm -lXext -L$(X11BASE)/lib
+! LIBS   =  $(LIBSX) -lXaw3d -lXmu -lXt -lX11 -lm -lXext -L$(X11BASE)/lib
