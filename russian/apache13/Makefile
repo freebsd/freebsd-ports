@@ -6,8 +6,10 @@
 # $FreeBSD$
 #
 
-DISTNAME=	apache_1.3.6
-PKGNAME=	ru-apache-1.3.6
+VERSION=	1.3.9
+RA_VERSION=	29.0
+DISTNAME=       apache_${VERSION}
+PKGNAME=        rapache-${VERSION}
 CATEGORIES=	www russian
 MASTER_SITES=	http://www.apache.org/dist/ \
 		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/ \
@@ -25,13 +27,13 @@ MASTER_SITES=	http://www.apache.org/dist/ \
 		ftp://ftp.iodynamics.com/pub/mirror/apache/dist/ \
 		ftp://apache.nextpath.com/pub/apache/dist/
 
-PATCH_SITES=	ftp://ftp.lexa.ru/pub/apache-rus/
-PATCHFILES=	patches_1.3.6rusPL${RA_VERSION}.tar.gz
+PATCH_SITES=	ftp://ftp.lexa.ru/pub/apache-rus/ \
+		ftp://ftp.lexa.ru/pub/apache-rus/old-versions
+PATCHFILES=	patches_${VERSION}rusPL${RA_VERSION}.tar.gz
 
 MAINTAINER=	vns@delta.odessa.ua
 
 Y2K=		http://www.apache.org/docs/misc/FAQ.html#year2000
-RA_VERSION=	28.16
 
 #
 # Small hack for alternate processing patchfiles
@@ -45,14 +47,9 @@ GZCAT=sh -c 'tar -zxf $$0 -C ${WRKSRC};${CAT} ${WRKSRC}/RA-1.3rusPL${RA_VERSION}
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	\
 		 --prefix=${PREFIX} \
-		 --with-layout=GNU \
-		 --sysconfdir=${PREFIX}/etc/apache \
-		 --includedir=${PREFIX}/include/apache \
-		 --localstatedir=/var \
-		 --datadir=${PREFIX}/www \
+		 --with-perl=${PERL} \
+		 --with-layout=${FILESDIR}/FreeBSD.layout:FreeBSD \
 		 --suexec-docroot=${PREFIX}/www/data \
-		 --proxycachedir=${PREFIX}/www/proxy \
-		 --libexecdir=${PREFIX}/libexec/apache \
 		 --without-confadjust \
 		 --enable-shared=remain \
 		 --enable-module=most \
