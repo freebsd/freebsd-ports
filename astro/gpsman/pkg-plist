@@ -25,6 +25,9 @@ share/gpsman/gmsrc/gmicons/airport15x15.gif
 share/gpsman/gmsrc/gmicons/amusement_park15x15.gif
 share/gpsman/gmsrc/gmicons/anchor15x15.gif
 share/gpsman/gmsrc/gmicons/avn_danger15x15.gif
+share/gpsman/gmsrc/gmicons/avn_faf15x15.gif
+share/gpsman/gmsrc/gmicons/avn_lom15x15.gif
+share/gpsman/gmsrc/gmicons/avn_map15x15.gif
 share/gpsman/gmsrc/gmicons/avn_ndb15x15.gif
 share/gpsman/gmsrc/gmicons/avn_tacan15x15.gif
 share/gpsman/gmsrc/gmicons/avn_vor15x15.gif
@@ -33,10 +36,14 @@ share/gpsman/gmsrc/gmicons/avn_vortac15x15.gif
 share/gpsman/gmsrc/gmicons/ball15x15.gif
 share/gpsman/gmsrc/gmicons/beach15x15.gif
 share/gpsman/gmsrc/gmicons/bell15x15.gif
+share/gpsman/gmsrc/gmicons/biker15x15.gif
 share/gpsman/gmsrc/gmicons/boat15x15.gif
 share/gpsman/gmsrc/gmicons/boat_ramp15x15.gif
 share/gpsman/gmsrc/gmicons/border15x15.gif
 share/gpsman/gmsrc/gmicons/bowling15x15.gif
+share/gpsman/gmsrc/gmicons/box_blue15x15.gif
+share/gpsman/gmsrc/gmicons/box_green15x15.gif
+share/gpsman/gmsrc/gmicons/box_red15x15.gif
 share/gpsman/gmsrc/gmicons/bridge15x15.gif
 share/gpsman/gmsrc/gmicons/brokenline.bmp
 share/gpsman/gmsrc/gmicons/building15x15.gif
@@ -59,11 +66,13 @@ share/gpsman/gmsrc/gmicons/capitol_city15x15.gif
 share/gpsman/gmsrc/gmicons/car15x15.gif
 share/gpsman/gmsrc/gmicons/car_rental15x15.gif
 share/gpsman/gmsrc/gmicons/car_repair15x15.gif
+share/gpsman/gmsrc/gmicons/casino15x15.gif
 share/gpsman/gmsrc/gmicons/castle15x15.gif
 share/gpsman/gmsrc/gmicons/cemetery15x15.gif
 share/gpsman/gmsrc/gmicons/chapel15x15.gif
 share/gpsman/gmsrc/gmicons/church15x15.gif
 share/gpsman/gmsrc/gmicons/circle_x15x15.gif
+share/gpsman/gmsrc/gmicons/civil15x15.gif
 share/gpsman/gmsrc/gmicons/controlled15x15.gif
 share/gpsman/gmsrc/gmicons/crossing15x15.gif
 share/gpsman/gmsrc/gmicons/dam15x15.gif
@@ -85,6 +94,9 @@ share/gpsman/gmsrc/gmicons/fastfood15x15.gif
 share/gpsman/gmsrc/gmicons/fish15x15.gif
 share/gpsman/gmsrc/gmicons/fitness15x15.gif
 share/gpsman/gmsrc/gmicons/flag15x15.gif
+share/gpsman/gmsrc/gmicons/flag_pin_blue15x15.gif
+share/gpsman/gmsrc/gmicons/flag_pin_green15x15.gif
+share/gpsman/gmsrc/gmicons/flag_pin_red15x15.gif
 share/gpsman/gmsrc/gmicons/freeway15x15.gif
 share/gpsman/gmsrc/gmicons/fuel15x15.gif
 share/gpsman/gmsrc/gmicons/fuel_store15x15.gif
@@ -100,6 +112,8 @@ share/gpsman/gmsrc/gmicons/gpsman-logo.gif
 share/gpsman/gmsrc/gmicons/heliport15x15.gif
 share/gpsman/gmsrc/gmicons/horn15x15.gif
 share/gpsman/gmsrc/gmicons/house15x15.gif
+share/gpsman/gmsrc/gmicons/house_215x15.gif
+share/gpsman/gmsrc/gmicons/ice_skating15x15.gif
 share/gpsman/gmsrc/gmicons/info15x15.gif
 share/gpsman/gmsrc/gmicons/interr15x15.gif
 share/gpsman/gmsrc/gmicons/intersection15x15.gif
@@ -119,6 +133,7 @@ share/gpsman/gmsrc/gmicons/many_tracks15x15.gif
 share/gpsman/gmsrc/gmicons/mark_x15x15.gif
 share/gpsman/gmsrc/gmicons/medium_city15x15.gif
 share/gpsman/gmsrc/gmicons/mile_marker15x15.gif
+share/gpsman/gmsrc/gmicons/military15x15.gif
 share/gpsman/gmsrc/gmicons/mine15x15.gif
 share/gpsman/gmsrc/gmicons/monument15x15.gif
 share/gpsman/gmsrc/gmicons/mountains15x15.gif
@@ -135,10 +150,14 @@ share/gpsman/gmsrc/gmicons/parking15x15.gif
 share/gpsman/gmsrc/gmicons/pharmacy15x15.gif
 share/gpsman/gmsrc/gmicons/phone15x15.gif
 share/gpsman/gmsrc/gmicons/picnic15x15.gif
+share/gpsman/gmsrc/gmicons/pin_blue15x15.gif
+share/gpsman/gmsrc/gmicons/pin_green15x15.gif
+share/gpsman/gmsrc/gmicons/pin_red15x15.gif
 share/gpsman/gmsrc/gmicons/pizza15x15.gif
 share/gpsman/gmsrc/gmicons/police15x15.gif
 share/gpsman/gmsrc/gmicons/post_office15x15.gif
 share/gpsman/gmsrc/gmicons/private15x15.gif
+share/gpsman/gmsrc/gmicons/radio_beacon15x15.gif
 share/gpsman/gmsrc/gmicons/ramp_int15x15.gif
 share/gpsman/gmsrc/gmicons/redframe17x17.gif
 share/gpsman/gmsrc/gmicons/restricted15x15.gif
@@ -152,6 +171,7 @@ share/gpsman/gmsrc/gmicons/showers15x15.gif
 share/gpsman/gmsrc/gmicons/skiing15x15.gif
 share/gpsman/gmsrc/gmicons/skull15x15.gif
 share/gpsman/gmsrc/gmicons/small_city15x15.gif
+share/gpsman/gmsrc/gmicons/snow_skiing15x15.gif
 share/gpsman/gmsrc/gmicons/soft_field15x15.gif
 share/gpsman/gmsrc/gmicons/square_green15x15.gif
 share/gpsman/gmsrc/gmicons/square_red15x15.gif
@@ -165,6 +185,7 @@ share/gpsman/gmsrc/gmicons/take_off15x15.gif
 share/gpsman/gmsrc/gmicons/tall_tower15x15.gif
 share/gpsman/gmsrc/gmicons/theater15x15.gif
 share/gpsman/gmsrc/gmicons/toll15x15.gif
+share/gpsman/gmsrc/gmicons/tow_truck15x15.gif
 share/gpsman/gmsrc/gmicons/traceback15x15.gif
 share/gpsman/gmsrc/gmicons/tracks15x15.gif
 share/gpsman/gmsrc/gmicons/trail_head15x15.gif
@@ -212,13 +233,14 @@ share/gpsman/gmsrc/trtort.tcl
 share/gpsman/gmsrc/util.tcl
 share/gpsman/gmsrc/wrtdials.tcl
 share/gpsman/gpsman.tcl
+share/gpsman/util/dos2gpsman.tcl
 share/gpsman/util/exerciser.tcl
 share/gpsman/util/gpsman.sh
 share/gpsman/util/mb2gmn.tcl
 share/gpsman/util/mou2gmn.tcl
+share/gpsman/util/shape2quadr.tcl
 %%PORTDOCS%%%%DOCSDIR%%/GPSMandoc.pdf
 %%PORTDOCS%%%%DOCSDIR%%/GPSMandoc.ps
-%%PORTDOCS%%%%DOCSDIR%%/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc.html
 %%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_1.html
 %%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_2.html
@@ -279,10 +301,13 @@ share/gpsman/util/mou2gmn.tcl
 %%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_57.html
 %%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_58.html
 %%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_59.html
+%%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_60.html
+%%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_61.html
 %%PORTDOCS%%%%DOCSDIR%%/html/backgr.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/blank.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/gpsman-logo-small.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/gpsman-logo.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/info/WPs.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/info/coords.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/info/l_realtime.doc.txt
@@ -299,7 +324,7 @@ share/gpsman/util/mou2gmn.tcl
 %%PORTDOCS%%%%DOCSDIR%%/html/up.gif
 @dirrm %%PORTDOCS%%%%DOCSDIR%%/html/info
 @dirrm %%PORTDOCS%%%%DOCSDIR%%/html
-@dirrm %%PORTDOCS%%%%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/gpsman/util
 @dirrm share/gpsman/gmsrc/gmicons
 @dirrm share/gpsman/gmsrc
