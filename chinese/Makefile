@@ -34,6 +34,7 @@
     SUBDIR += ted
     SUBDIR += telnet
     SUBDIR += tin
+    SUBDIR += tocps
     SUBDIR += ve
     SUBDIR += xa+cv
     SUBDIR += xcin
