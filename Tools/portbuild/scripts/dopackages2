@@ -5,19 +5,23 @@ pb=/a/asami/portbuild
 mailto=asami@freebsd.org
 
 lock=${pb}/lock
+date=$(date '+%Y%m%d')
 
 if [ -e ${lock} ]; then
-  echo "Skipped since lock file exists" | sendmail asami@freebsd.org
+  echo "Skipped package build since lock file exists" | sendmail $mailto
   exit 1
 fi
 
 touch ${lock}
+mkdir -p ${pb}/buildlogs
 
 ${pb}/scripts/dopackages 4 2>&1 \
-	| tee /a/asami/portbuild/4/build.log \
+	| tee ${pb}/4/build.log \
 	| sendmail $mailto
+cp -p ${pb}/4/build.log ${pb}/buildlogs/4.log.${date}
 ${pb}/scripts/dopackages -nocvsup 3 2>&1 \
-	| tee /a/asami/portbuild/3/build.log \
+	| tee ${pb}/3/build.log \
 	| sendmail $mailto
+cp -p ${pb}/3/build.log ${pb}/buildlogs/3.log.${date}
 
 rm -f ${lock}
