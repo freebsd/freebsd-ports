@@ -48,6 +48,10 @@ SCRIPTS_ENV+=	MACHINE=alpha
 PLIST=		${PKGDIR}/pkg-plist.alpha
 .endif
 
+.if ${OSVERSION} < 410000
+BROKEN=	"can't be compiled on this system (missing headers)"
+.endif
+
 .if defined(XDM_DES) && (${USA_RESIDENT} != YES && ${USA_RESIDENT} != NO)
 pre-fetch:
 	@${ECHO}
