@@ -34,8 +34,6 @@ CONFLICTS=	apache+mod_ssl-1.* apache+mod_ssl+ipv6-1.* apache+mod_ssl+modsnmp-1.*
 # patch files
 PATCH_SITES+=		${MASTER_SITE_LOCAL:S/$/:clement/}
 PATCH_SITE_SUBDIR=	clement/:clement
-PATCHFILES+=		httpd-${PORTVERSION}-buildconf.patch:clement
-PATCH_DIST_STRIP+=	-p1:clement
 .if defined (WITH_WINDOWSUPDATEFIX)
 PATCHFILES+=		httpd-${PORTVERSION}-windowsupdate.patch:clement
 .endif

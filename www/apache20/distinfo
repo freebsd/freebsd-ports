@@ -2,7 +2,5 @@ MD5 (apache2/httpd-2.0.49.tar.gz) = 275d3d37eed1b070f333d3618f7d1954
 SIZE (apache2/httpd-2.0.49.tar.gz) = 5919279
 MD5 (apache2/powerlogo.gif) = 0f106073b3c7844cf22d4df126b27c62
 SIZE (apache2/powerlogo.gif) = 5279
-MD5 (apache2/httpd-2.0.49-buildconf.patch) = cb42cea62242388b648ff66be21f220a
-SIZE (apache2/httpd-2.0.49-buildconf.patch) = 2476
 MD5 (apache2/httpd-2.0.49-windowsupdate.patch) = a96fe94b28094483a112705d0428e6f5
 SIZE (apache2/httpd-2.0.49-windowsupdate.patch) = 464
