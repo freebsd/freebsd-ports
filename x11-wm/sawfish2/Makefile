@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sawfish
-PORTVERSION= 	0.35
+PORTVERSION= 	0.36
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sawmill
@@ -23,7 +23,7 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_IMLIB=	yes
 WANT_GNOME=	yes
-USE_AUTOCONF=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-readline \
 		--localstatedir=${PREFIX}/share \
 		--datadir=${PREFIX}/share
