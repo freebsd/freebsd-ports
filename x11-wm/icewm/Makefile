@@ -6,30 +6,27 @@
 #
 
 PORTNAME=	icewm
-PORTVERSION=	1.0.9
-PORTREVISION=	5
+PORTVERSION=	1.0.9.2
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION}-2
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 
 MAINTAINER=	nakai@FreeBSD.org
 
 BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
 LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 WANT_GNOME=	yes
 WANT_ESOUND=	yes
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-#USE_AUTOCONF_VER=213
-USE_AUTOCONF_VER=252
-AUTOCONF=	autoconf
-AUTOCONF_DIR=	${LOCALBASE}/share/autoconf
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--enable-i18n --enable-nls \
 		--with-cfgdir=${PREFIX}/share/icewm \
 		--with-libdir=${PREFIX}/share/icewm \
@@ -56,10 +53,13 @@ PLIST_SUB+=	ESOUND=""
 PLIST_SUB+=	ESOUND="@comment "
 .endif
 
+post-patch:
+	@cd ${CONFIGURE_WRKSRC} && ${LOCALBASE}/bin/autoconf
+
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/bsd-daemon.xpm ${DATADIR}/taskbar
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/icewm
+	@${MKDIR} ${DOCSDIR}
 .for file in CHANGES FAQ INSTALL README TODO
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
