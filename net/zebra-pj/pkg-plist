@@ -4,12 +4,14 @@ sbin/ripd
 sbin/ripngd
 sbin/zebra
 sbin/zebractl
+bin/vtysh
 etc/zebra/bgpd.conf.sample
 etc/zebra/bgpd.conf.sample2
 etc/zebra/ospfd.conf.sample
 etc/zebra/ripd.conf.sample
 etc/zebra/ripngd.conf.sample
 etc/zebra/zebra.conf.sample
+etc/zebra/vtysh.conf.sample
 @unexec install-info --delete %D/info/zebra.info %D/info/dir
 info/zebra.info
 info/zebra.info-1
