@@ -16,6 +16,8 @@ COMMENT=	Electronic Book Viewer
 
 LIB_DEPENDS=	eb.7:${PORTSDIR}/japanese/eb
 
+CONFLICTS=	ja-ebview-gtk2-*
+
 USE_GETOPT_LONG=	yes
 USE_GNOME=	imlib
 USE_GMAKE=	yes
@@ -28,7 +30,7 @@ MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
-pre-build:
+post-patch:
 .for file in src/dictheading.c
 	cd ${WRKSRC} && ${MV} ${file} ${file}.pre_iconv \
 		&& iconv -c -t ascii ${file}.pre_iconv > ${file} || ${TRUE}
