@@ -3,7 +3,7 @@
 # Date created:         Wed Feb  8 01:49:11  1995
 # Whom:                 hsu
 #
-# $Id: Makefile,v 1.9 1997/10/07 09:20:05 tg Exp $
+# $Id: Makefile,v 1.10 1997/10/13 09:10:28 tg Exp $
 #
 
 DISTNAME=       gcl-2.2.2
@@ -12,6 +12,8 @@ MASTER_SITES=   ftp://ftp.ma.utexas.edu/pub/gcl/ \
 		${MASTER_SITE_GNU}
 
 MAINTAINER=	jseger@freebsd.org
+
+BROKEN_ELF=	yes
 
 MAKEFILE=	makefile
 
