@@ -1,16 +1,20 @@
---- Makefile.orig	Mon Nov 26 19:13:21 2001
-+++ Makefile	Wed Jan 29 00:50:23 2003
-@@ -19,10 +19,11 @@
+--- ./Makefile.orig	Mon Nov 26 19:13:21 2001
++++ ./Makefile	Sun Sep 28 20:51:18 2003
+@@ -19,7 +19,7 @@
    MSGEDCFG=\"$(CFGDIR)/msged.cfg\"
  endif
  
 -CDEFS=-D$(OSTYPE) -DUSE_MSGAPI -DUNAME=\"$(UNAME)\" \
-+CDEFS=-D$(OSTYPE) -DUSE_MSGAPI -DUSE_CURSES -DUNAME=\"$(UNAME)\" \
++CDEFS=-D$(OSTYPE) -DUSE_MSGAPI -DUSE_CURSES -DUSE_FIDOCONFIG -DUNAME=\"$(UNAME)\" \
        $(ADDCDEFS) -DREADMAPSDAT=\"$(CFGDIR)/readmaps.dat\" \
        -DWRITMAPSDAT=\"$(CFGDIR)/writmaps.dat\" \
--      -DDEFAULT_CONFIG_FILE=$(MSGEDCFG)
-+      -DDEFAULT_CONFIG_FILE=$(MSGEDCFG) \
-+      -DFIDOCONFIG_FILE=\"$(CFGDIR)/config\"
- 
+       -DDEFAULT_CONFIG_FILE=$(MSGEDCFG)
+@@ -27,7 +27,7 @@
  ifeq ($(SHORTNAME), 1)
    LIBS= -L$(LIBDIR) -lsmapi
+ else
+-  LIBS= -L$(LIBDIR) -lsmapi
++  LIBS= -L$(LIBDIR) -lsmapi -lfidoconfig
+ endif
+ 
+ TARGET=	msged$(EXE)
