@@ -23,6 +23,12 @@ MAN5=	html2textrc.5
 
 DOCS=	CHANGES COPYING CREDITS KNOWN_BUGS README TODO
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502000
+BROKEN=		"Does not compile"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e '/echo=/s/ -e//' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/^DEBUG/s/^/#/; /^CXXFLAGS/s/=/+=/' \
@@ -37,4 +43,4 @@ do-install:
 	@${INSTALL_DATA} ${DOCS:C#^#${WRKSRC}/#g} ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
