@@ -1,14 +1,32 @@
-# $Id: Makefile,v 1.57 1995/05/15 04:15:35 asami Exp $
-#
-# RESTRICTED: pgp.usa_only (local restrections)
-# RESTRICTED: pgp.non-usa_only (local restrictions)
-# RESTRICTED: mmv (restrictive copyright)
-#
-# BROKEN: wine (doesn't install)
+# $Id: Makefile,v 1.58 1995/05/19 09:50:19 asami Exp $
 #
 
-SUBDIR= amanda bonnie chord colorls cpm hfs iozone ispell kp less lmbench \
-	mshell mtools \
-	pcemu rman screen top tua vmsbackup xbatt xdu xsysstats 
+    SUBDIR += amanda
+    SUBDIR += beav
+    SUBDIR += bonnie
+    SUBDIR += chord
+    SUBDIR += colorls
+    SUBDIR += cpm
+    SUBDIR += hfs
+    SUBDIR += iozone
+    SUBDIR += ispell
+    SUBDIR += kp
+    SUBDIR += less
+    SUBDIR += lmbench
+RESTRICTED += mmv               # restrictive copyright
+    SUBDIR += mshell
+    SUBDIR += mtools
+    SUBDIR += pcemu
+RESTRICTED += pgp.non-usa_only  # local restrictions
+RESTRICTED += pgp.usa_only      # local restrections
+    SUBDIR += rman
+    SUBDIR += screen
+    SUBDIR += top
+    SUBDIR += tua
+    SUBDIR += vmsbackup
+    BROKEN += wine              # doesn't install
+    SUBDIR += xbatt
+    SUBDIR += xdu
+    SUBDIR += xsysstats 
 
 .include <bsd.port.subdir.mk>
