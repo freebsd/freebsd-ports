@@ -11,7 +11,7 @@ CATEGORIES=		astro
 MASTER_SITES=		http://download.sourceforge.net/openuniverse/
 DISTNAME=		${PORTNAME}-1.0beta3
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		trevor@FreeBSD.org
 
 LIB_DEPENDS=		jpeg.9:${PORTSDIR}/graphics/jpeg
 
