@@ -1,0 +1,5 @@
+DBIx::TableHash is a perl module that ties a hash to a DBI/mysql table or
+slice of the table, along with some methods to build SQL for common
+database operations, returning data in convenient structures.
+
+WWW: http://christhorman.com/projects/perl/DBIx-TableHash/
