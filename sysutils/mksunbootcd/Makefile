@@ -7,6 +7,7 @@
 
 PORTNAME=	mksunbootcd
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/misc/mksunbootcd/
 
