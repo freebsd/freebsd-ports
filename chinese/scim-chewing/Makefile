@@ -25,12 +25,6 @@ USE_REINPLACE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,/1.0.0/,/,g' ${WRKSRC}/src/Makefile.in
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500035
-BROKEN=		scim-make-table is not available for 4.x
-.endif
-
 post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO}
@@ -38,4 +32,4 @@ post-install:
 	@${ECHO}
 
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
