@@ -21,6 +21,7 @@ MAINTAINER=	obrien@FreeBSD.org
 RUN_DEPENDS=	lrz:${PORTSDIR}/comms/lrzsz \
 		lsz:${PORTSDIR}/comms/lrzsz
 
+WRKSRC=		${WRKDIR}/${DISTNAME}/src
 #USE_GMAKE=	"for ``po'' dir stuff"
 MAN1=		minicom.1 runscript.1 ascii-xfr.1
 
