@@ -14,6 +14,12 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	lev@serebryakov.spb.ru
 COMMENT=	Hope is lazy interpriter for HOPE applicative language
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not install"
+.endif
+
 .if defined(WITH_DOCS)
 BUILD_DEPENDS+=	latex:${PORTSDIR}/print/teTeX \
 		latex2html:${PORTSDIR}/textproc/latex2html
@@ -38,4 +44,4 @@ pre-fetch:
 	@${ECHO} ""
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
