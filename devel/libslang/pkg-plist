@@ -1,7 +1,6 @@
 lib/libslang.a
-@exec ranlib %D/%F
-lib/libslang.so.0.9938
-@exec rm -f %D/libslang.so.99.3[348]
+lib/libslang.so
+lib/libslang.so.1.2.2
 @exec /sbin/ldconfig -m %B
 @unexec /sbin/ldconfig -R
 include/slcurses.h
