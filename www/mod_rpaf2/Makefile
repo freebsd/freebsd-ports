@@ -8,5 +8,6 @@
 WITH_APACHE2=	yes
 LATEST_LINK=	mod_rpaf2
 MASTERDIR=	${.CURDIR}/../mod_rpaf
+PKGNAMESUFFIX=	-ap2
 
 .include "${MASTERDIR}/Makefile"
