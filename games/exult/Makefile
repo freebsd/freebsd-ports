@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	exult
-PORTVERSION=	1.00
-PORTREVISION=	3
+PORTVERSION=	1.1.10.r2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME}-1.1.10rc2
 
 MAINTAINER=	tiamat@comset.net
 COMMENT=	Ultima VII engine
@@ -18,35 +18,25 @@ COMMENT=	Ultima VII engine
 RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity
 
 USE_XLIB=	yes
-USE_SDL=	sdl
+USE_SDL=	sdl mixer
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS=-I${X11BASE}/include \
-		LDFLAGS="-L${X11BASE}/lib"
-CONFIGURE_ARGS=	--with-x \
-		--disable-tools \
-		--disable-sdltest
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-MAN6=		exult.6
+MAN1=	expack.1 ipack.1 shp2pcx.1 splitshp.1 textpack.1
+MAN6=	exult.6
 
 post-patch:
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|^DEBUG_FLAGS|#DEBUG_FLAGS|g'
+	@${REINPLACE_CMD} -e 's|desktop||' ${WRKSRC}/Makefile.in
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/exult ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/docs/exult.6 ${MANPREFIX}/man/man6
-	@${MKDIR} ${DATADIR}
-.for file in exult.flx exult_bg.flx exult_si.flx midisfx.flx
-	${INSTALL_DATA} ${WRKSRC}/data/${file} ${DATADIR}
-.endfor
-.if !defined(NOPORTDOCS)
+post-install:
+.ifndef	(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in FAQ NEWS README
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.for i in FAQ NEWS README
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
-	@${SED} 's:/usr/local:${PREFIX}:g' ${PKGMESSAGE}
+	@${SED} -e 's|%%DOCSDIR%%|${DOCSDIR}|' <${PKGMESSAGE}
 
 .include <bsd.port.mk>

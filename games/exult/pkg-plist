@@ -1,10 +1,23 @@
+bin/expack
 bin/exult
-%%PORTDOCS%%%%DOCSDIR%%/FAQ
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
+bin/shp2pcx
+bin/splitshp
+bin/textpack
+bin/ucc
+bin/ucxt
 %%DATADIR%%/exult.flx
 %%DATADIR%%/exult_bg.flx
 %%DATADIR%%/exult_si.flx
+%%DATADIR%%/exultmsg.txt
 %%DATADIR%%/midisfx.flx
-@dirrm %%DATADIR%%
+%%DATADIR%%/u7bgintrinsics.data
+%%DATADIR%%/u7misc.data
+%%DATADIR%%/u7opcodes.data
+%%DATADIR%%/u7siintrinsics.data
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/estudio/new
+@dirrm %%DATADIR%%/estudio
+@dirrm %%DATADIR%%

@@ -1,4 +1,4 @@
 ******************************************************************************
-* Original Ultima VII data is required to run Exult
-* Please, read ${PREFIX}/share/doc/exult/README for additional information
+* Run Exult from directory, containing original Ultima VII data.
+* Please, read %%DOCSDIR%%/README for additional information.
 ******************************************************************************
