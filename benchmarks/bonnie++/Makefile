@@ -16,9 +16,17 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Performance Test of Filesystem I/O
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
-MAN1=	bon_csv2html.1 bon_csv2txt.1
-MAN8=	bonnie++.8 zcav.8
+MAN1=	bon_csv2html.1 bon_csv2txt.1 generate_randfile.1
+MAN8=	bonnie++.8 getc_putc.8 zcav.8
+
+pre-patch:
+	@${REINPLACE_CMD} -e \
+		's|/usr/share/|${PREFIX}/share/|g' ${WRKSRC}/bonnie++.8
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/readme.html ${DOCSDIR}
 
 .include <bsd.port.mk>
