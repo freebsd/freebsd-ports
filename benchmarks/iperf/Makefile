@@ -6,26 +6,43 @@
 #
 
 PORTNAME=	iperf
-PORTVERSION= 	1.7.0
+PORTVERSION=	2.0.1
 CATEGORIES=	net ipv6
-MASTER_SITES=	http://dast.nlanr.net/Projects/Iperf/
-DISTNAME=	iperf-1.7.0-source
+MASTER_SITES=	http://dast.nlanr.net/Projects/Iperf2.0/
 
-MAINTAINER=	smace@FreeBSD.org
+MAINTAINER=	marcus@corp.grupos.com.br
 COMMENT=	A tool to measure maximum TCP and UDP bandwidth
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 NO_CDROM=	"can't charge a fee for the software"
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/iperf ${PREFIX}/bin
+HAS_CONFIGURE=	yes
+
+PLIST_FILES=	bin/iperf
+
+OPTIONS=	IPV6	"Enable support to IPv6" 	on \
+		THREADS	"Enable threads support"	on
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_IPV6)
+CONFIGURE_ARGS+=	--disable-ipv6
+.endif
+
+.if defined(WITHOUT_THREADS)
+CONFIGURE_ARGS+=	--disable-threads
+.endif
+
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/iperf
-.for file in README doc/index.html doc/jperf.gif doc/dast.gif \
-		doc/lib.html doc/ui_license.html
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/iperf
+PORTDOCS=	*
+.endif
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.for FILE in ${WRKSRC}/doc/*.html ${WRKSRC}/doc/*.gif
+	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
