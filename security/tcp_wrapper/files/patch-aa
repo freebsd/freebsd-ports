@@ -1,5 +1,5 @@
 *** Makefile.orig	Mon Jan 30 21:51:43 1995
---- Makefile	Tue May 16 13:30:07 1995
+--- Makefile	Tue Oct 10 19:15:46 1995
 ***************
 *** 46,52 ****
   #REAL_DAEMON_DIR=/usr/sbin
@@ -139,23 +139,24 @@
   # Optional: turning off hostname lookups
 ***************
 *** 605,610 ****
---- 606,625 ----
+--- 606,626 ----
   LIB	= libwrap.a
   
   all other: config-check tcpd tcpdmatch try-from safe_finger tcpdchk
 + 
 + install:
-+ 	install -c libwrap.a ${PREFIX}/lib/libwrap.a
-+ 	install -cs tcpd ${PREFIX}/libexec/tcpd
-+ 	install -cs tcpdchk ${PREFIX}/sbin/tcpdchk
-+ 	install -cs tcpdmatch ${PREFIX}/sbin/tcpdmatch
-+ 	install -cs safe_finger ${PREFIX}/bin/safe_finger
-+ 	install -c tcpd.8 ${PREFIX}/man/man8/tcpd.8
-+ 	install -c tcpdchk.8 ${PREFIX}/man/man8/tcpdchk.8
-+ 	install -c tcpdmatch.8 ${PREFIX}/man/man8/tcpdmatch.8
-+ 	install -c hosts_access.3 ${PREFIX}/man/man3/hosts_access.3
-+ 	install -c hosts_access.5 ${PREFIX}/man/man5/hosts_access.5
-+ 	install -c hosts_options.5 ${PREFIX}/man/man5/hosts_options.5
++ 	install -o bin -g bin -c tcpd.h ${PREFIX}/include/tcpd.h
++ 	install -o bin -g bin -c libwrap.a ${PREFIX}/lib/libwrap.a
++ 	install -o bin -g bin -cs tcpd ${PREFIX}/libexec/tcpd
++ 	install -o bin -g bin -cs tcpdchk ${PREFIX}/sbin/tcpdchk
++ 	install -o bin -g bin -cs tcpdmatch ${PREFIX}/sbin/tcpdmatch
++ 	install -o bin -g bin -cs safe_finger ${PREFIX}/bin/safe_finger
++ 	install -o bin -g bin -c tcpd.8 ${PREFIX}/man/man8/tcpd.8
++ 	install -o bin -g bin -c tcpdchk.8 ${PREFIX}/man/man8/tcpdchk.8
++ 	install -o bin -g bin -c tcpdmatch.8 ${PREFIX}/man/man8/tcpdmatch.8
++ 	install -o bin -g bin -c hosts_access.3 ${PREFIX}/man/man3/hosts_access.3
++ 	install -o bin -g bin -c hosts_access.5 ${PREFIX}/man/man5/hosts_access.5
++ 	install -o bin -g bin -c hosts_options.5 ${PREFIX}/man/man5/hosts_options.5
 + 
   
   # Invalidate all object files when the compiler options (CFLAGS) have changed.

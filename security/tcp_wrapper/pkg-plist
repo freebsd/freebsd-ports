@@ -1,3 +1,4 @@
+include/tcpd.h
 libexec/tcpd
 sbin/tcpdchk
 sbin/tcpdmatch
