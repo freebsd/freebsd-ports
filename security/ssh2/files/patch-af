@@ -1,0 +1,14 @@
+--- apps/ssh/Makefile.in.orig	Mon Nov 16 21:24:45 1998
++++ apps/ssh/Makefile.in	Tue Nov 24 19:06:58 1998
+@@ -133,9 +133,9 @@
+ 
+ INCLUDES = -I. -I$(srcdir) -I../.. -I$(srcdir) -I../../include \
+ 	   -I$(top_builddir) -I$(top_srcdir) \
+-	   -I$(srcdir)/../../include 
++	   -I$(srcdir)/../../include -I${PREFIX}/include
+ 
+-LDADD = -L. -L../../lib -lssh2 -lssh
++LDADD = -L. -L../../lib -lssh2 -lssh -lz
+ DEPENDENCIES = ./libssh2.a ../../lib/libssh.a
+ 
+ libssh2_a_SOURCES = agentclient.c sshchagent.c sshserver.c \

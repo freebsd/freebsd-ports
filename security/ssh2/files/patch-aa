@@ -1,10 +1,31 @@
---- apps/ssh/Makefile.in.old	Mon Oct  5 22:18:17 1998
-+++ apps/ssh/Makefile.in	Mon Oct  5 22:25:16 1998
-@@ -167,6 +167,7 @@
- # defines
+--- lib/Makefile.in.old	Tue Nov 24 18:18:33 1998
++++ lib/Makefile.in	Tue Nov 24 18:20:13 1998
+@@ -97,14 +97,14 @@
  
- SSH_DEFS = -DHOST_KEY_FILE=\"$(HOST_KEY_FILE)\" -DHOST_CONFIG_FILE=\"$(HOST_CONFIG_FILE)\" -DSERVER_CONFIG_FILE=\"$(SERVER_CONFIG_FILE)\" -DSSH_PROGRAM=\"$(SSH_PROGRAM)\" -DETCDIR=\"$(etcdir)\" -DSSH_BINDIR=\"$(bindir)\" -DTIS_MAP_FILE=\"$(TIS_MAP_FILE)\"
-+SSH_DEFS+= -DSSH_SERVER_DIR=\"$(SSH_SERVER_DIR)\" -DSSH_CLIENT_GLOBAL_CONFIG_FILE=\"$(SSH_CLIENT_GLOBAL_CONFIG_FILE)\"
+ AUTOMAKE_OPTIONS = 1.0 foreign dist-zip no-dependencies
  
- COMPILE = $(CC) $(KERBEROS_INCS) $(INCLUDES) $(SSH_DEFS) $(DEFS) $(CPPFLAGS) $(CFLAGS) $(X_CFLAGS)
+-SUBDIRS = zlib sshmath sshreadline sshutil sshapputil sshcrypt sshproto sshsession
++SUBDIRS = sshmath sshreadline sshutil sshapputil sshcrypt sshproto sshsession
+ 
+ # sshtest testsuite
+ 
+ lib_LIBRARIES = libssh.a
+ # libsshcrypt.kpure.a 
+ 
+-SUBLIBRARIES = sshmath/libsshmath.a zlib/libz.a sshutil/libsshutil.a sshapputil/libsshapputil.a sshcrypt/libsshcrypt.a sshproto/libsshproto.a sshsession/libsshsession.a sshreadline/libsshreadline.a
++SUBLIBRARIES = sshmath/libsshmath.a sshutil/libsshutil.a sshapputil/libsshapputil.a sshcrypt/libsshcrypt.a sshproto/libsshproto.a sshsession/libsshsession.a sshreadline/libsshreadline.a
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../sshconf.h
+ CONFIG_CLEAN_FILES = 
+@@ -367,11 +367,6 @@
+ all-local: includes
+ includes:
+ 	-if test '!' -d ../include; then mkdir ../include; fi
+-	for i in zlib/zlib.h zlib/zconf.h; do   \
+-	  if test -f $(srcdir)/$$i; then		  \
+-	    $(COPY_INCLUDE) $(srcdir)/$$i ../include;	  \
+-	  fi;						  \
+-	done
+ 	-for dir in $(SUBDIRS); do \
+ 		if test "$$dir" != "zlib" && test "$$dir" != "gmp"; then \
+ 		  ( cd $$dir && $(MAKE) includes) ; \
