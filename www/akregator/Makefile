@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	akregator
-PORTVERSION=	1.0.b7
+PORTVERSION=	1.0.b8
 PORTREVISION=	1
 CATEGORIES=	www kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -17,12 +17,14 @@ COMMENT=	An RSS aggregator for KDE
 
 LIB_DEPENDS=	kdepim.1:${PORTSDIR}/deskutils/kdepim3
 
-EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-configure
-
 USE_BZIP2=		yes
 USE_KDEBASE_VER=	3
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_ENV=		CXXFLAGS="${CFLAGS}"
+
+post-patch:
+	${TOUCH} -t 200411261335.39 ${WRKSRC}/configure.in.in
+	${TOUCH} -t 200411261335.45 ${WRKSRC}/configure.in
 
 .include <bsd.port.mk>
