@@ -48,16 +48,16 @@ MLINKS=		vim.1 rvim.1  vim.1 rview.1  ectags.1 etags.1
 .if !defined(LITE)
 MLINKS+=	vim.1 gvim.1  vim.1 gview.1  vim.1 rgvim.1  vim.1 rgview.1
 
-MAKE_FLAGS:=	CONF_OPT_MAX="--enable-max-features" ${MAKE_FLAGS}
+MAKE_FLAGS:=	X_LIBS=-lxpg4 CONF_OPT_MAX="--enable-max-features" ${MAKE_FLAGS}
 
 .if defined(HAVE_GTK)
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 MAKE_FLAGS:=	CONF_OPT_GUI="--enable-gui=gtk --with-gtk-prefix=${X11BASE} --enable-multibyte --enable-fontset --enable-multibyte --enable-xim" ${MAKE_FLAGS}
 .elif defined(HAVE_MOTIF)
 REQUIRES_MOTIF=	yes
-MAKE_FLAGS:=	CONF_OPT_GUI="--enable-gui=motif --with-motif-lib=\"${MOTIFLIB}\"" MOTIFHOME=${X11BASE} ${MAKE_FLAGS}
+MAKE_FLAGS:=	CONF_OPT_GUI="--enable-gui=motif --with-motif-lib=\"${MOTIFLIB}\" --enable-multibyte --enable-fontset --enable-multibyte --enable-xim" MOTIFHOME=${X11BASE} ${MAKE_FLAGS}
 .else
-MAKE_FLAGS:=	CONF_OPT_GUI="--enable-gui=athena" ${MAKE_FLAGS}
+MAKE_FLAGS:=	CONF_OPT_GUI="--enable-gui=athena --enable-multibyte --enable-fontset --enable-multibyte --enable-xim" ${MAKE_FLAGS}
 .endif
 
 .if defined(PACKAGE_BUILDING)
