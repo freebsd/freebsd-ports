@@ -9,9 +9,7 @@
 PORTNAME=	bitbox
 PORTVERSION=	0.3.0
 CATEGORIES=	archivers
-MASTER_SITES=	http://www.gizmodrome.com/ \
-		ftp://ftp.csua.berkeley.edu/pub/FreeBSD/ports/distfiles/ \
-		ftp://freebsd.csie.nctu.edu.tw/pub/distfiles/
+MASTER_SITES=	http://home.stny.rr.com/gizmodrome/
 
 MAINTAINER=	ijliao@FreeBSD.org
 
