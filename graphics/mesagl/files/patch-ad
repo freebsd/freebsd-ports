@@ -9,8 +9,8 @@ $FreeBSD$
  
 -DIST_SUBDIRS = include src si-glu src-glu @glut_dir@ $(SUB_DEMOS) util
 -SUBDIRS = include src $(sel_sub_glu) $(sel_sub_glut) $(sel_sub_demos) util
-+DIST_SUBDIRS = $(INCLUDE_GL) $(SUB_GL) @glut_dir@ $(SUB_DEMOS) util
-+SUBDIRS = $(INCLUDE_GL) $(SUB_GL) $(sel_sub_glut) $(sel_sub_demos) util
++DIST_SUBDIRS = $(INCLUDE_GL) $(SUB_GL) $(SUB_DEMOS) util
++SUBDIRS = $(INCLUDE_GL) $(SUB_GL) $(sel_sub_demos) util
  
  EXTRA_DIST =  	3Dfx 	BeOS 	OpenStep 	WIN32 	docs 	ggi 	images 	m4 	macos 	mtdemos 	src-glut.beos 	src-glut.dja 	tests 	vms 	widgets-mesa 	widgets-sgi 	bootstrap 	MESADOS.BAT 	MESAFX.BAT 	Make-config 	Makefile.DJ 	Makefile.X11 	Makefile.dja 	Makefile.win 	Mingw32.bat 	Names.win 	STARTUP.MK 	common.dja 	descrip.mms 	fixam 	mesaw32.BAT 	mesawin32.mak 	mms-config 	win32-openstep.sh 	xlib.opt
  
