@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	fvwm
-PORTVERSION=	2.4.16
-PORTREVISION=	1
+PORTVERSION=	2.4.17
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.fvwm.org/pub/fvwm/version-2/ \
 		http://www.fvwm.org/generated/icon_download/
@@ -67,7 +66,7 @@ PLIST_SUB+=	GTK="@comment not installed: "
 
 MAN1=	FvwmAnimate.1 FvwmAuto.1 FvwmBacker.1 FvwmBanner.1 FvwmButtons.1 \
 	FvwmCommand.1 FvwmConsole.1 FvwmConsoleC.pl.1 FvwmCpp.1 FvwmDebug.1 \
-	FvwmDragWell.1 FvwmEvent.1 FvwmForm.1 FvwmGtk.1 FvwmIconBox.1 \
+	FvwmDragWell.1 FvwmEvent.1 FvwmForm.1 FvwmIconBox.1 \
 	FvwmIconMan.1 FvwmIdent.1 FvwmM4.1 FvwmPager.1 FvwmRearrange.1 \
 	FvwmSave.1 FvwmSaveDesk.1 FvwmScript.1 FvwmScroll.1 FvwmTaskBar.1 \
 	FvwmTheme.1 FvwmWharf.1 FvwmWinList.1 fvwm-menu-desktop.1 \
