@@ -192,7 +192,7 @@ JAVA_VENDOR=	FreeBSD
 JAVA_VER=		1.2.2
 JAVA_OS=		FreeBSD
 JAVA_HOME=		${_JAVA_HOME_FREEBSD_1_2}
-JAVA_PORT=		${_JAVA_PORT_BLACKDOWN_LINUX_1_2}
+JAVA_PORT=		${_JAVA_PORT_FREEBSD_1_2}
 .			endif
 
 # If the port needs Java 1.3, then there are 3 choices. They are, in order or
