@@ -8,7 +8,7 @@
 PORTNAME=	ircd-ru
 PORTVERSION=	1.0.7
 PORTREVISION=	1
-CATEGORIES=	russian irc
+CATEGORIES=	irc russian
 MASTER_SITES=	ftp://ftp.ircd.ru/pub/ircd-RU/ ftp://ftp.ircd.ru/pub/ircd-RU/old/
 DISTNAME=	ircd-RU-${PORTVERSION}-02-stable
 
