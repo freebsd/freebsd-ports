@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sat Aug  8 23:10:55 1998
++++ Makefile.in	Sat Aug  8 23:11:08 1998
+@@ -86,7 +86,7 @@
+ VERSION = @VERSION@
+ YACC = @YACC@
+ 
+-SUBDIRS=libIDL src test
++SUBDIRS=libIDL src
+ 
+ bin_SCRIPTS=orbit-config
+ 

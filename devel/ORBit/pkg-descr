@@ -1,0 +1,3 @@
+ORBit is a high-performance CORBA ORB with support for the C language.
+It allows programs to send requests and receive replies from other
+programs, regardless of the locations of the two programs.
