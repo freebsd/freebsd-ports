@@ -1,0 +1,30 @@
+Index: i386/i386/trap.c
+===================================================================
+RCS file: /home/cvs/cvs/src/sys/i386/i386/trap.c,v
+retrieving revision 1.133.2.1
+diff -u -u -r1.133.2.1 trap.c
+--- trap.c	1999/08/29 16:05:56	1.133.2.1
++++ trap.c	1999/09/10 14:42:21
+@@ -1041,6 +1084,7 @@
+ 	int error;
+ 	int args[8];
+ 	u_int code;
++	int tracedsyscall = ((frame.tf_eflags & PSL_T) && !(frame.tf_eflags & PSL_VM));
+ 
+ #ifdef DIAGNOSTIC
+ 	if (ISPL(frame.tf_cs) != SEL_UPL)
+@@ -1135,10 +1179,12 @@
+ 		break;
+ 	}
+ 
+-	if ((frame.tf_eflags & PSL_T) && !(frame.tf_eflags & PSL_VM)) {
++	if (tracedsyscall) {
+ 		/* Traced syscall. */
+ 		frame.tf_eflags &= ~PSL_T;
+-		trapsignal(p, SIGTRAP, 0);
++		/* tell the signal handler this is a trace trap */
++		frame.tf_trapno = T_TRCTRAP;
++		trapsignal(p, SIGTRAP, T_TRCTRAP);
+ 	}
+ 
+ 	userret(p, &frame, sticks);

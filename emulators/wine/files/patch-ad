@@ -1,32 +1,32 @@
-*** wine.ini.orig	Wed Jul 17 22:00:24 1996
---- wine.ini	Mon Aug 12 19:51:38 1996
+*** wine.ini.orig	Sun Oct 31 03:23:49 1999
+--- wine.ini	Sat Nov 13 13:36:18 1999
 ***************
-*** 35,39 ****
+*** 53,57 ****
   Temp=e:\
   Path=c:\windows;c:\windows\system;e:\;e:\test;f:\
 ! SymbolTableFile=./wine.sym
   
-  [options]
---- 35,39 ----
+  # <wineconf>
+--- 53,57 ----
   Temp=e:\
   Path=c:\windows;c:\windows\system;e:\;e:\test;f:\
 ! SymbolTableFile=/usr/local/etc/wine.sym
   
-  [options]
+  # <wineconf>
 ***************
-*** 54,64 ****
+*** 107,117 ****
   
   [serialports]
-! Com1=/dev/cua0
-! Com2=/dev/cua1
+! Com1=/dev/ttyS0
+! Com2=/dev/ttyS1
   Com3=/dev/modem,38400
   Com4=/dev/modem
   
   [parallelports]
 ! Lpt1=/dev/lp0
   
-  [spy]
---- 54,64 ----
+  [spooler]
+--- 107,117 ----
   
   [serialports]
 ! Com1=/dev/ttyd0
@@ -37,4 +37,4 @@
   [parallelports]
 ! Lpt1=/dev/lpt0
   
-  [spy]
+  [spooler]

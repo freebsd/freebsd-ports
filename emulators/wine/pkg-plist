@@ -1,3 +1,10 @@
 bin/wine
-etc/wine.conf
+bin/fnt2bdf
+bin/wineclipsrv
+etc/wine.conf.sample
 etc/wine.sym
+lib/wine/README.patch
+lib/wine/patch-3.3-sys-ldtshare
+lib/wine/patch-3.3-sys-sigtrap
+lib/wine/winedefault.reg
+@dirrm lib/wine
