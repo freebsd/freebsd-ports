@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/12./12-/}.1-static-qt.i386.freebsd
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A blazingly fast, full-featured, standards-compliant browser
 
+RESTRICTED=	"not redistributable; commercial software"
+
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
@@ -25,7 +27,7 @@ NO_BUILD=	yes
 NO_FILTER_SHLIBS=yes
 
 do-install:
-	(cd ${WRKSRC} && ${SH} install.sh --prefix="${PREFIX}")
+	cd ${WRKSRC} && ${SH} install.sh --prefix="${PREFIX}"
 
 .include <bsd.port.pre.mk>
 

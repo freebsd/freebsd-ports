@@ -16,6 +16,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.2/-2/}.1-static-qt.i386
 MAINTAINER=	mezz7@cox.net
 COMMENT=	A blazingly fast, full-featured, standards-compliant browser
 
+RESTRICTED=	"not redistributable; commercial software"
+
 RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXm.so.2:${PORTSDIR}/x11-toolkits/linux-openmotif
 
 USE_BZIP2=	yes
