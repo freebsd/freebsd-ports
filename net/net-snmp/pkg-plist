@@ -32,7 +32,9 @@ include/net-snmp/agent/agent_registry.h
 include/net-snmp/agent/agent_trap.h
 include/net-snmp/agent/all_helpers.h
 include/net-snmp/agent/auto_nlist.h
+include/net-snmp/agent/baby_steps.h
 include/net-snmp/agent/bulk_to_next.h
+include/net-snmp/agent/cache_handler.h
 include/net-snmp/agent/debug_handler.h
 include/net-snmp/agent/ds_agent.h
 include/net-snmp/agent/instance.h
@@ -44,7 +46,9 @@ include/net-snmp/agent/net-snmp-agent-includes.h
 include/net-snmp/agent/null.h
 include/net-snmp/agent/old_api.h
 include/net-snmp/agent/read_only.h
+include/net-snmp/agent/row_merge.h
 include/net-snmp/agent/scalar.h
+include/net-snmp/agent/scalar_group.h
 include/net-snmp/agent/serialize.h
 include/net-snmp/agent/set_helper.h
 include/net-snmp/agent/snmp_agent.h
@@ -54,6 +58,7 @@ include/net-snmp/agent/table_array.h
 include/net-snmp/agent/table_data.h
 include/net-snmp/agent/table_dataset.h
 include/net-snmp/agent/table_iterator.h
+include/net-snmp/agent/table_mfd.h
 include/net-snmp/agent/var_struct.h
 include/net-snmp/agent/watcher.h
 include/net-snmp/config_api.h
@@ -65,6 +70,9 @@ include/net-snmp/library/check_varbind.h
 include/net-snmp/library/cmu_compat.h
 include/net-snmp/library/container.h
 include/net-snmp/library/container_binary_array.h
+include/net-snmp/library/container_iterator.h
+include/net-snmp/library/container_list_ssll.h
+include/net-snmp/library/container_null.h
 include/net-snmp/library/data_list.h
 include/net-snmp/library/default_store.h
 include/net-snmp/library/factory.h
@@ -136,6 +144,7 @@ include/net-snmp/system/linux.h
 include/net-snmp/system/mips.h
 include/net-snmp/system/netbsd.h
 include/net-snmp/system/openbsd.h
+include/net-snmp/system/osf5.h
 include/net-snmp/system/solaris.h
 include/net-snmp/system/solaris2.6.h
 include/net-snmp/system/solaris2.7.h
