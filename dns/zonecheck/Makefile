@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zonecheck
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.2
 PORTEPOCH=	1
 CATEGORIES=	dns ipv6 ruby
 MASTER_SITES=	ftp://ftp.nic.fr/pub/mirror/zonecheck/src/ \

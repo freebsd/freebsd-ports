@@ -79,6 +79,7 @@ libexec/zonecheck/zc/cache.rb
 libexec/zonecheck/zc/cachemanager.rb
 libexec/zonecheck/zc/config.rb
 libexec/zonecheck/zc/console.rb
+libexec/zonecheck/zc/data/catalog.xml
 libexec/zonecheck/zc/data/config.dtd
 libexec/zonecheck/zc/data/logo.rb
 libexec/zonecheck/zc/data/msgcat.dtd
@@ -86,7 +87,9 @@ libexec/zonecheck/zc/data/xpm.rb
 libexec/zonecheck/zc/data/zonecheck.dtd
 libexec/zonecheck/zc/dbg.rb
 libexec/zonecheck/zc/ext/array.rb
+libexec/zonecheck/zc/ext/file.rb
 libexec/zonecheck/zc/ext/gtk.rb
+libexec/zonecheck/zc/ext/myxml.rb
 libexec/zonecheck/zc/framework.rb
 libexec/zonecheck/zc/input/cgi.rb
 libexec/zonecheck/zc/input/cli.rb
