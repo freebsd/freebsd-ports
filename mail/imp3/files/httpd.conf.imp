@@ -7,10 +7,6 @@
     order deny,allow
     deny from all
 </Directory>
-<Directory "/home/httpd/html/horde/imp/download">
-    order deny,allow
-    deny from all
-</Directory>
 <Directory "/home/httpd/html/horde/imp/lib">
     order deny,allow
     deny from all
