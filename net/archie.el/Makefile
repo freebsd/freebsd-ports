@@ -1,0 +1,40 @@
+# New ports collection makefile for:	archie.el
+# Version required:	3.0.2
+# Date created:		99/10/6
+# Whom:			Satoshi Taoka <taoka@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+DISTNAME=	archie.el-v3.0
+PKGNAME=	archie.el-3.0
+CATEGORIES=	net elisp
+# I don't know the master site
+MASTER_SITES=	ftp://ftp.chiba-u.ac.jp/pub/misc/archie/
+EXTRACT_SUFX=	.gz
+
+MAINTAINER=	taoka@FreeBSD.org
+
+RUN_DEPENDS=	archie:${PORTSDIR}/net/archie
+
+NO_WRKSUBDIR=	yes
+NO_BUILD=	yes
+WRKSRC=		${WRKDIR}
+
+ELISPDIR=	${PREFIX}/share/emacs/site-lisp
+XELISPDIR=	${PREFIX}/lib/xemacs/site-lisp
+
+do-extract:
+	${RM} -rf ${WRKDIR}
+	${MKDIR} ${WRKDIR}
+	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${DISTFILES} \
+		> ${WRKDIR}/${PKGNAME}
+
+do-install:
+	${MKDIR} ${ELISPDIR}
+	${INSTALL_DATA} ${WRKDIR}/${PKGNAME} ${ELISPDIR}/archie.el
+# For XEmacs
+	${MKDIR} ${XELISPDIR}
+	${LN} -sf ${ELISPDIR}/archie.el ${XELISPDIR}
+
+.include <bsd.port.mk>
