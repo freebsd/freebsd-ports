@@ -15,6 +15,7 @@ MAINTAINER=	tux@pinguru.net
 COMMENT=	A seen-module for the eggdrop IRC bot
 
 EXTRACT_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/irc/eggdrop:configure
+BUILD_DEPENDS=	eggdrop:${PORTSDIR}/irc/eggdrop
 RUN_DEPENDS=	eggdrop:${PORTSDIR}/irc/eggdrop
 
 WRKSRC=		${WRKDIR}/eggdrop
