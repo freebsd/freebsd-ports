@@ -1,0 +1,3 @@
+sbin/mtxorbd
+share/mtxorbd/devices.conf
+@dirrm share/mtxorbd
