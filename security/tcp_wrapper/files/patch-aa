@@ -39,7 +39,7 @@
   # host name aliases. Compile with -DSOLARIS_24_GETHOSTBYNAME_BUG to work
   # around this. The workaround does no harm on other Solaris versions.
   
-! BUGS = -DGETPEERNAME_BUG -DBROKEN_FGETS
+! BUGS = -DGETPEERNAME_BUG -DBROKEN_FGETS -DLIBC_CALLS_STRTOK
   #BUGS = -DGETPEERNAME_BUG -DBROKEN_FGETS -DINET_ADDR_BUG
   #BUGS = -DGETPEERNAME_BUG -DBROKEN_FGETS -DSOLARIS_24_GETHOSTBYNAME_BUG
   
@@ -47,7 +47,7 @@
   # host name aliases. Compile with -DSOLARIS_24_GETHOSTBYNAME_BUG to work
   # around this. The workaround does no harm on other Solaris versions.
   
-! #BUGS = -DGETPEERNAME_BUG -DBROKEN_FGETS
+! #BUGS = -DGETPEERNAME_BUG -DBROKEN_FGETS -DLIBC_CALLS_STRTOK
   #BUGS = -DGETPEERNAME_BUG -DBROKEN_FGETS -DINET_ADDR_BUG
   #BUGS = -DGETPEERNAME_BUG -DBROKEN_FGETS -DSOLARIS_24_GETHOSTBYNAME_BUG
   
@@ -179,7 +179,7 @@
   	scaffold.h tcpdmatch.8 README.NIS
   
 ! LIB     = libwrap.a
-! SLIB    = libwrap.so.7.2
+! SLIB    = libwrap.so.7.4
 ! 
 ! all other: config-check $(LIB) $(SLIB) tcpd tcpdmatch try-from safe_finger tcpdchk
 ! 
