@@ -3,7 +3,7 @@
 # Date created:				22 February 1999
 # Whom:	      				mharo@area51.fremont.ca.us
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/03 01:42:08 steve Exp $
+# $Id: Makefile,v 1.2 1999/04/13 07:06:29 mharo Exp $
 #
 
 DISTNAME=	tgd1.2c
@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	ftp://dendrome.ucdavis.edu/pub/tgd/ \
 		ftp://probe.nalusda.gov/pub/treegenes/
 
-MAINTAINER=	mharo@area51.fremont.ca.us
+MAINTAINER=	mharo@FreeBSD.org
 
 BUILD_DEPENDS=	${PREFIX}/lib/libgd.a:${PORTSDIR}/graphics/gd
 
