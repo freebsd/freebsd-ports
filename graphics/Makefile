@@ -104,6 +104,7 @@
     SUBDIR += leafpak
     SUBDIR += lfview
     SUBDIR += lib3ds
+    SUBDIR += libdivxdecore
     SUBDIR += libdjvu++
     SUBDIR += libflash
     SUBDIR += libggi
