@@ -13,6 +13,7 @@ MASTER_SITES=	http://xchat.org/files/source/2.0/ \
 DISTNAME=	xchat-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	An X11 IRC client using the GTK+ 2 toolkit
 
 LIB_DEPENDS=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20
 
@@ -48,8 +49,21 @@ CONFIGURE_ARGS+=	--disable-python
 PLIST_SUB=	PYTHON="@comment "
 .endif
 
+.if defined(WITH_TCL)
+LIB_DEPENDS=    tcl83.1:${PORTSDIR}/lang/tcl83
+CONFIGURE_ARGS+=	--enable-tcl=${LOCALBASE}/lib/tcl8.3
+CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS} \
+		-I${LOCALBASE}/include/tcl8.3" \
+		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS} \
+		-L${LOCALBASE}/lib/tcl8.3"
+PLIST_SUB=	TCL=""
+.else
+CONFIGURE_ARGS+=	--enable-tcl=no
+PLIST_SUB=	TCL="@comment "
+.endif
+
 pre-everything::
-.if !defined(WITH_PYTHON) || !defined(WITH_SOCKS)
+.if !defined(WITH_PYTHON) || !defined(WITH_SOCKS) || !defined(WITH_TCL)
 	@${ECHO_MSG} "You may specify the following on the command line:"
 	@${ECHO_MSG} ""
 .endif
@@ -58,6 +72,9 @@ pre-everything::
 .endif
 .if !defined(WITH_SOCKS)
 	@${ECHO_MSG} "WITH_SOCKS=yes for SOCKS5 proxy support"
+.endif
+.if !defined(WITH_TCL)
+	@${ECHO_MSG} "WITH_TCL=yes for tcl support"
 .endif
 
 post-patch:
