@@ -20,6 +20,7 @@ USE_IMLIB=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	SUBDIRS=src
+CONFIGURE_ARGS=	--disable-imlibtest
 
 post-install:
 	${MKDIR} ${PREFIX}/share/locale/ja/LC_MESSAGES
