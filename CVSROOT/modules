@@ -5665,6 +5665,7 @@ ossp-sa		ports/net/ossp-sa
 ossp-uuid	ports/misc/ossp-uuid
 ossp-val	ports/devel/ossp-val
 ossp-var	ports/devel/ossp-var
+ossp-xds	ports/devel/ossp-xds
 otcl		ports/lang/otcl
 outguess	ports/security/outguess
 p-interp	ports/emulators/p-interp
