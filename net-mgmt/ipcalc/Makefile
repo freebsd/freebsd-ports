@@ -7,9 +7,11 @@
 
 PORTNAME=	ipcalc
 PORTVERSION=	0.35
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://jodies.de/
-DISTFILES=	ipcalc.pl
+DISTNAME=	ipcalc.pl
+EXTRACT_SUFX=	# empty
 EXTRACT_ONLY=	# empty
 
 MAINTAINER=	petef@FreeBSD.org
