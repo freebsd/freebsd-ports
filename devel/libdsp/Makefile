@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libdsp
-PORTVERSION=	3.3.7
+PORTVERSION=	3.3.8
 CATEGORIES=	devel audio
 MASTER_SITES=	http://www.pp.clinet.fi/~visitor/dlbins/
 DISTNAME=	libdsp-src
