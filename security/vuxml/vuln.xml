@@ -32,7 +32,33 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
-  <vuln vid="b2e6d1d6-1339-11d9-bc4a-000c41e2cdad">
+  <vuln vid="e8d4800f-1547-11d9-90a3-00010327614a">
+    <topic>distcc -- incorrect parsing of IP access control rules</topic>
+    <affects>
+      <package>
+        <name>distcc</name>
+	<range><lt>2.16</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<blockquote cite="http://distcc.samba.org/ftp/distcc/distcc-2.16.NEWS">
+	  <p>Fix bug that might cause IP-based access control rules not to
+	    be interpreted correctly on 64-bit platforms.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0601</cvename>
+      <url>http://distcc.samba.org/ftp/distcc/distcc-2.16.NEWS</url>
+    </references>
+    <dates>
+      <discovery>2004-06-23</discovery>
+      <entry>2004-10-03</entry>
+    </dates>
+  </vuln>
+
+ <vuln vid="b2e6d1d6-1339-11d9-bc4a-000c41e2cdad">
     <topic>mozilla -- scripting vulnerabilities</topic>
     <affects>
       <package>
