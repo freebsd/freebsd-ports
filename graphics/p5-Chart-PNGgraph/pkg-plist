@@ -11,3 +11,5 @@ lib/perl5/site_perl/%%PERL_VER%%/Chart/PNGgraph/points.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Chart/PNGgraph/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Chart/PNGgraph
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Chart/PNGgraph
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Chart > /dev/null 2>&1 || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Chart > /dev/null 2>&1 || true
