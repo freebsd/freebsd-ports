@@ -1,0 +1,15 @@
+This is a port of am-utils, The Berkeley Automounter Suite of Utilities
+
+The Berkeley Automounter, Amd, may be used as a replacement for Sun's
+automounter.
+
+An automounter maintains a cache of mounted file systems. File systems
+are mounted on demand when they are first referenced, and unmounted
+after a period of inactivity. This helps to centralize all file system
+access, provide a uniform site-wide namespace, and minimize downtimes
+for clients.
+
+WWW: http://www.am-utils.org/
+
+- Jon Wilson
+jon@phuq.co.uk

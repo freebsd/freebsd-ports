@@ -14,6 +14,7 @@
     SUBDIR += afbinit
     SUBDIR += afio
     SUBDIR += ah-tty
+    SUBDIR += am-utils
     SUBDIR += anacron
     SUBDIR += and
     SUBDIR += anteater
