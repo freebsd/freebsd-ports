@@ -1,0 +1,36 @@
+--- ./doc/Makefile.in.orig	Wed Jun 28 02:17:33 2000
++++ ./doc/Makefile.in	Sun Nov 14 16:04:44 2004
+@@ -26,21 +26,21 @@
+ # Directory in which to install man pages
+ mandir = @mandir@
+ man1dir = $(mandir)/man1
+-man4dir = $(mandir)/man4
++man5dir = $(mandir)/man5
+ 
+ SHELL = /bin/sh
+ 
+ #### End of system configuration section. ####
+ 
+-MAN_FILES= module.1 modulefile.4
++MAN_FILES= module.1 modulefile.5
+ 
+-MAKEDIRS=  $(man1dir) $(man4dir)
++MAKEDIRS=  $(man1dir) $(man5dir)
+ 
+ all:
+ 
+ install: all install-dirs
+ 	$(INSTALL_DATA) module.1     $(man1dir)
+-	$(INSTALL_DATA) modulefile.4 $(man4dir)
++	$(INSTALL_DATA) modulefile.5 $(man5dir)
+ 
+ install-dirs:
+ 	@for i in $(MAKEDIRS) ; do \
+@@ -63,6 +63,6 @@
+ mostlyclean: clean
+ 
+ distclean:	clean
+-	rm -f module.1 modulefile.4
++	rm -f module.1 modulefile.5
+ 
+ realclean:	distclean

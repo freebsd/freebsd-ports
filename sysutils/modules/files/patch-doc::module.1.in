@@ -1,0 +1,17 @@
+--- doc/module.1.in.orig	Sat Jun  9 11:48:47 2001
++++ doc/module.1.in	Sun Nov 14 17:17:58 2004
+@@ -114,7 +114,7 @@
+ .LP
+ Upon invocation \fImodulecmd\fP sources rc files which contain global, user
+ and modulefile specific setups. These files are interpreted as modulefiles.
+-See \fBmodulefile(4)\fP for detailed information.
++See \fBmodulefile(5)\fP for detailed information.
+ .LP
+ Upon invocation of modulecmd module RC files are sourced in the following
+ order:
+@@ -466,4 +466,4 @@
+ .B module update
+ sub-command.
+ .SH SEE ALSO
+-.BR modulefile(4)
++.BR modulefile(5)

@@ -274,6 +274,7 @@
     SUBDIR += mkfile
     SUBDIR += mksunbootcd
     SUBDIR += mktool
+    SUBDIR += modules
     SUBDIR += monit
     SUBDIR += monitord
     SUBDIR += mount.app
