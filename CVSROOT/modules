@@ -9699,6 +9699,7 @@ xpostit		ports/deskutils/xpostit
 xpostitPlus	ports/deskutils/xpostitPlus
 xprobe		ports/net/xprobe
 xprompt		ports/x11/xprompt
+xproto		ports/x11/xproto
 xpuyopuyo	ports/games/xpuyopuyo
 xpuzzletama	ports/games/xpuzzletama
 xpx		ports/graphics/xpx
