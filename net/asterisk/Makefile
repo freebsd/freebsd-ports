@@ -7,6 +7,7 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	0.9.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.asterisk.org/pub/telephony/asterisk/ \
 		ftp://ftp.asterisk.org/pub/telephony/asterisk/old-releases/

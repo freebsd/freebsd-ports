@@ -7,7 +7,7 @@
 
 PORTNAME=	pwlib
 PORTVERSION=	1.5.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	http://www.openh323.org/bin/ \
 		http://www.de.openh323.org/bin/ \
@@ -16,8 +16,6 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	roger@FreeBSD.org
 COMMENT=	A cross platform C++ library, used by OpenH323
-
-FORBIDDEN=	http://people.freebsd.org/~eik/portaudit/27c331d5-64c7-11d8-80e3-0020ed76ef5a.html
 
 LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
 
