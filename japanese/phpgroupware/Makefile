@@ -16,8 +16,6 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 MAINTAINER=	tmutoh@mx10.freecom.ne.jp
 
-BROKEN=		"Incorrect pkg-plist"
-
 RUN_DEPENDS=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
 
 NO_BUILD=	yes
@@ -31,12 +29,13 @@ PATCH_STRIP=	-p1
 
 post-extract:
 		${FIND} ${WRKSRC} -name CVS -type d | ${XARGS} ${RM} -rf
+
 post-patch:
 		${FIND} ${WRKSRC} -name *.orig | ${XARGS} ${RM} -rf
 		@${CP} ${PATCH_DIR}/phpgwapi/inc/class.codecv* ${WRKSRC}/phpgwapi/inc/
 		@${CP} ${PATCH_DIR}/calendar/inc/class.holidaycalc* ${WRKSRC}/calendar/inc
 
 do-install:
-		@${CP} -r ${WRKSRC} ${PREFIX}/www/data.default/
+		@${CP} -r ${WRKSRC} ${PREFIX}/www/data/
 
 .include <bsd.port.mk>
