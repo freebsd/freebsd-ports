@@ -29,6 +29,9 @@ MAN3=		Mail::Audit.3 \
 		Mail::Audit::PGP.3 \
 		Mail::Audit::Razor.3
 
+post-patch:
+	@${PERL} -pi -e 's,/var/spool/mail,/var/mail,g' ${WRKSRC}/Audit.pm
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
