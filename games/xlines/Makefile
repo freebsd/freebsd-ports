@@ -8,7 +8,7 @@
 PORTNAME=	xlines
 PORTVERSION=	1.1
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.trolltech.com/contrib/
+#MASTER_SITES=	ftp://ftp.trolltech.com/contrib/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
