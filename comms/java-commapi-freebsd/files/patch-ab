@@ -1,0 +1,71 @@
+*** src.orig/org/freebsd/io/comm/libSerial.c	Mon Jul 19 08:45:04 1999
+--- src/org/freebsd/io/comm/libSerial.c	Mon Jul  2 09:46:38 2001
+***************
+*** 42,47 ****
+--- 42,48 ----
+  #include <termios.h>
+  #include <sys/time.h>
+  #include <sys/ttycom.h>
++ #include <poll.h>
+  
+  #define IOEXCEPTION	"java/io/IOException"
+  #define USCOEXCEPTION	"javax/comm/UnsupportedCommOperationException"
+***************
+*** 579,586 ****
+  {      
+  	int state,old_state;
+  	int fd;
+! 	fd_set rfds;
+! 	struct timeval sleep;
+  	int size;
+  	int ret;
+  	
+--- 580,586 ----
+  {      
+  	int state,old_state;
+  	int fd;
+! 	struct pollfd pollfds;
+  	int size;
+  	int ret;
+  	
+***************
+*** 595,605 ****
+          jthread = (*env)->FindClass( env, "java/lang/Thread" );
+          interrupt = (*env)->GetStaticMethodID( env, jthread, "interrupted", "()Z" );
+                                                                                  
+!         FD_ZERO( &rfds );
+!         FD_SET( fd, &rfds );
+!         sleep.tv_sec = 1; /* Check every 1 second, or on receive data */
+!         sleep.tv_usec = 0;
+!          
+          /* Initialization of the current tty state */
+          ioctl( fd, TIOCMGET, &old_state);                                                                          
+    
+--- 595,604 ----
+          jthread = (*env)->FindClass( env, "java/lang/Thread" );
+          interrupt = (*env)->GetStaticMethodID( env, jthread, "interrupted", "()Z" );
+                                                                                  
+! 	pollfds.fd = fd;
+! 	pollfds.events = POLLIN;
+! 	pollfds.revents = 0;
+! 
+          /* Initialization of the current tty state */
+          ioctl( fd, TIOCMGET, &old_state);                                                                          
+    
+***************
+*** 607,613 ****
+    	{
+    		do 
+    			{
+!   			ret=select( fd + 1, &rfds, NULL, NULL, &sleep );
+    			}  
+    		while ( (ret < 0) && (errno==EINTR));
+   
+--- 606,612 ----
+    	{
+    		do 
+    			{
+! 			ret=poll(&pollfds, 1, 1000);
+    			}  
+    		while ( (ret < 0) && (errno==EINTR));
+   

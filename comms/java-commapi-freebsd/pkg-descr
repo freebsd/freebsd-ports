@@ -1,0 +1,3 @@
+This is the offical port of Sun's Java Communication API for FreeBSD. 
+This API allows communications across RS-232 and
+parallel lines using Java technology under FreeBSD. 
