@@ -6,10 +6,11 @@
 #
 
 PORTNAME=		krb5
-PORTVERSION=		1.3.5
+PORTVERSION=		1.3.6
 CATEGORIES=		security
 MASTER_SITES=		http://web.mit.edu/kerberos/dist/krb5/${PORTVERSION:C/\.[0-9]*$//}/
 EXTRACT_SUFX=		.tar
+DISTNAME=		${PORTNAME}-${PORTVERSION}-signed
 
 MAINTAINER=		cy@FreeBSD.org
 COMMENT=		An authentication system developed at MIT, successor to Kerberos IV
@@ -56,25 +57,23 @@ MAN8=			krb5kdc.8 kadmin.8 kadmin.local.8 kdb5_util.8 \
 			kshd.8 klogind.8 login.krb5.8 ftpd.8 telnetd.8 \
 			k5srvutil.8
 
-WRKSRC=			${WRKDIR}/${DISTNAME}/src
+WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
 WANT_HTML?=		YES
-HTML_DOC_DIR=		${WRKDIR}/${DISTNAME}/doc
+HTML_DOC_DIR=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/doc
 HTML_DOCS=		admin.html user-guide.html install.html
 HTML_OUTDIRS=		krb5-admin krb5-install
 
 .include <bsd.port.pre.mk>
 
-.if defined(USE_KRB5_TARBALL) && ${USE_KRB5_TARBALL} == "MIT"
 post-extract:
-	@${TAR} -C ${WRKDIR} -xzf ${WRKDIR}/${DISTNAME}.tar.gz
-	@${RM} ${WRKDIR}/${DISTNAME}.tar.gz ${WRKDIR}/${DISTNAME}.tar.gz.asc
+	@${TAR} -C ${WRKDIR} -xzf ${WRKDIR}/${PORTNAME}-${PORTVERSION}.tar.gz
+	@${RM} ${WRKDIR}/${PORTNAME}-${PORTVERSION}.tar.gz ${WRKDIR}/${PORTNAME}-${PORTVERSION}.tar.gz.asc
 .if !defined(EXTRACT_PRESERVE_OWNERSHIP)
 	@if [ `id -u` = 0 ]; then \
-		${CHMOD} -R ug-s,go-w ${WRKDIR}/${DISTNAME}; \
-		${CHOWN} -R 0:0 ${WRKDIR}/${DISTNAME}; \
+		${CHMOD} -R ug-s,go-w ${WRKDIR}/${PORTNAME}-${PORTVERSION}; \
+		${CHOWN} -R 0:0 ${WRKDIR}/${PORTNAME}-${PORTVERSION}; \
 	fi
-.endif
 .endif
 
 post-patch:
