@@ -1,0 +1,47 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/Captcha/.packlist
+%%SITE_PERL%%/Authen/Captcha.pm
+%%SITE_PERL%%/Authen/Captcha/images/8.png
+%%SITE_PERL%%/Authen/Captcha/images/s.png
+%%SITE_PERL%%/Authen/Captcha/images/a.png
+%%SITE_PERL%%/Authen/Captcha/images/l.png
+%%SITE_PERL%%/Authen/Captcha/images/z.png
+%%SITE_PERL%%/Authen/Captcha/images/5.png
+%%SITE_PERL%%/Authen/Captcha/images/b.png
+%%SITE_PERL%%/Authen/Captcha/images/9.png
+%%SITE_PERL%%/Authen/Captcha/images/4.png
+%%SITE_PERL%%/Authen/Captcha/images/6.png
+%%SITE_PERL%%/Authen/Captcha/images/background2.png
+%%SITE_PERL%%/Authen/Captcha/images/c.png
+%%SITE_PERL%%/Authen/Captcha/images/g.png
+%%SITE_PERL%%/Authen/Captcha/images/v.png
+%%SITE_PERL%%/Authen/Captcha/images/y.png
+%%SITE_PERL%%/Authen/Captcha/images/u.png
+%%SITE_PERL%%/Authen/Captcha/images/q.png
+%%SITE_PERL%%/Authen/Captcha/images/p.png
+%%SITE_PERL%%/Authen/Captcha/images/3.png
+%%SITE_PERL%%/Authen/Captcha/images/background4.png
+%%SITE_PERL%%/Authen/Captcha/images/d.png
+%%SITE_PERL%%/Authen/Captcha/images/h.png
+%%SITE_PERL%%/Authen/Captcha/images/background3.png
+%%SITE_PERL%%/Authen/Captcha/images/n.png
+%%SITE_PERL%%/Authen/Captcha/images/o.png
+%%SITE_PERL%%/Authen/Captcha/images/f.png
+%%SITE_PERL%%/Authen/Captcha/images/Thumbs.db
+%%SITE_PERL%%/Authen/Captcha/images/2.png
+%%SITE_PERL%%/Authen/Captcha/images/j.png
+%%SITE_PERL%%/Authen/Captcha/images/x.png
+%%SITE_PERL%%/Authen/Captcha/images/background5.png
+%%SITE_PERL%%/Authen/Captcha/images/k.png
+%%SITE_PERL%%/Authen/Captcha/images/7.png
+%%SITE_PERL%%/Authen/Captcha/images/e.png
+%%SITE_PERL%%/Authen/Captcha/images/i.png
+%%SITE_PERL%%/Authen/Captcha/images/w.png
+%%SITE_PERL%%/Authen/Captcha/images/m.png
+%%SITE_PERL%%/Authen/Captcha/images/r.png
+%%SITE_PERL%%/Authen/Captcha/images/t.png
+%%SITE_PERL%%/Authen/Captcha/images/background1.png
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/Captcha
+@dirrm %%SITE_PERL%%/Authen/Captcha/images
+@dirrm %%SITE_PERL%%/Authen/Captcha
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Authen 2>/dev/null || true
