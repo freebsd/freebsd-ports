@@ -1,0 +1,5 @@
+%%PYTHON_SITELIBDIR%%/gtkextra/__init__.py
+%%PYTHON_SITELIBDIR%%/gtkextra/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gtkextra/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gtkextra/_gtkextramodule.so
+@dirrm %%PYTHON_SITELIBDIR%%/gtkextra
