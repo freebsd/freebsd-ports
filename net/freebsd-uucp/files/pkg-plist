@@ -1,0 +1,44 @@
+etc/periodic/daily/340.uucp
+etc/periodic/daily/410.status-uucp
+etc/periodic/weekly/300.uucp
+etc/uucp/call.sample
+etc/uucp/dial.sample
+etc/uucp/dialcode.sample
+etc/uucp/passwd.sample
+etc/uucp/port.sample
+etc/uucp/sys1.sample
+etc/uucp/sys2.sample
+etc/uucp/sys2.sample
+usr/bin/cu
+usr/bin/uucp
+usr/bin/uulog
+usr/bin/uuname
+usr/bin/uupick
+usr/bin/uusched
+usr/bin/uustat
+usr/bin/uuto
+usr/bin/uux
+usr/libexec/uucp/uucico
+usr/libexec/uucp/uuxqt
+usr/libexec/uucpd
+usr/sbin/uuchk
+usr/sbin/uuconv
+usr/share/info/uucp.info.gz
+usr/share/man/man1/cu.1.gz
+usr/share/man/man1/uuconv.1.gz
+usr/share/man/man1/uucp.1.gz
+usr/share/man/man1/uulog.1.gz
+usr/share/man/man1/uuname.1.gz
+usr/share/man/man1/uupick.1.gz
+usr/share/man/man1/uustat.1.gz
+usr/share/man/man1/uuto.1.gz
+usr/share/man/man1/uux.1.gz
+usr/share/man/man8/uuchk.8.gz
+usr/share/man/man8/uucico.8.gz
+usr/share/man/man8/uusched.8.gz
+usr/share/man/man8/uuxqt.8.gz
+usr/share/man/man8/uucpd.8.gz
+@dirrm etc/uucp
+@dirrm usr/libexec/uucp
+@unexec install-info --delete /usr/share/info/uucp.info /usr/share/info/dir
+@unexec if [ -f /usr/share/info/dir ]; then if sed -e '1,/Menu:/d' /usr/share/info/dir | grep -q '^[*] '; then true; else rm /usr/share/info/dir; fi; fi
