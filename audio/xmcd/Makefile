@@ -3,7 +3,7 @@
 # Date created:		16 Februar 1995
 # Whom:			Gennady Sorokopud <gena@NetVision.net.il>
 #
-# $Id: Makefile,v 1.11 1998/08/25 00:43:44 asami Exp $
+# $Id: Makefile,v 1.12 1998/08/28 23:53:03 hoek Exp $
 #
 
 DISTNAME=	xmcd-2.3
@@ -15,7 +15,7 @@ MAINTAINER=	deischen@iworks.InterWorks.org
 REQUIRES_MOTIF=	yes
 USE_IMAKE=	yes
 
-MAN1=		cddbcmd.1 wm2xmcd.1 xmcd.1 cda.1
+MAN1=		cddbcmd.1 wm2xmcd.1
 MANCOMPRESSED=	no
 
 post-install:
