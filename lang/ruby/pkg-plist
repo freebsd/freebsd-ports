@@ -89,6 +89,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/irb/multi-irb.rb
 %%RUBY_LIBDIR%%/irb/main.rb
 %%RUBY_LIBDIR%%/irb/loader.rb
+%%RUBY_LIBDIR%%/irb/irb.rb
 %%RUBY_LIBDIR%%/irb/input-method.rb
 %%RUBY_LIBDIR%%/irb/frame.rb
 %%RUBY_LIBDIR%%/irb/completion.rb
@@ -134,6 +135,8 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/clnt.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dbmtest.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dir.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dualstack-fetch.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dualstack-httpd.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/eval.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/export.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/exyacc.rb
