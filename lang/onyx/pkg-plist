@@ -66,6 +66,14 @@ share/onyx/doc/html/node7.html
 share/onyx/doc/html/img1.png
 share/onyx/doc/html/img2.png
 share/onyx/doc/html/img3.png
+share/onyx/doc/html/prev.png
+share/onyx/doc/html/next.png
+share/onyx/doc/html/up.png
+share/onyx/doc/html/prev_g.png
+share/onyx/doc/html/next_g.png
+share/onyx/doc/html/up_g.png
+share/onyx/doc/html/contents.png
+share/onyx/doc/html/index.png
 share/onyx/doc/html/manual.css
 share/onyx/doc/html/index.html
 bin/onyx
