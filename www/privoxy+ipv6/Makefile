@@ -19,7 +19,7 @@ WRKSRC=		${WRKDIR}/privoxy-3.0.0-stable
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 USE_GMAKE=	yes
-USE_AUTOCONF=	yes
+USE_AUTOCONF_VER=	253
 USE_REINPLACE=	yes
 
 MAKEFILE=	GNUmakefile
@@ -35,7 +35,7 @@ post-patch:
 	${WRKSRC}/config
 
 pre-configure:
-	@(cd ${WRKSRC}; autoheader${USE_AUTOCONF_VER})
+	@(cd ${WRKSRC}; ${AUTOHEADER})
 
 pre-install:
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
