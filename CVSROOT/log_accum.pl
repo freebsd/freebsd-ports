@@ -431,6 +431,7 @@ sub mail_notification {
 # This is turned off since the To: lines go overboard.
 # Also it has bit-rotted since, and can't just be switched on again.
 # - but keep it for the time being in case we do something like cvs-stable
+#	my @mailaddrs = &read_logfile($MAIL_FILE);
 #	print(MAIL 'To: cvs-committers' . $dom . ", cvs-all" . $dom);
 #	foreach $line (@mailaddrs) {
 #		next if ($unique{$line});
@@ -497,7 +498,6 @@ sub mail_notification {
 	}
 
 	# Send the email.
-	my @mailaddrs = &read_logfile($MAIL_FILE);
 	open MAIL, "| $cfg::MAILCMD $cfg::MAILADDRS"
 	    or die "Please check $cfg::MAILCMD.";
 	print MAIL map { "$_\n" } @email;
