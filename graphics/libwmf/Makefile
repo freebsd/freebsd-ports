@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libwmf
-PORTVERSION=	0.2.8
+PORTVERSION=	0.2.8.2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wvware
@@ -18,11 +18,10 @@ BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2     # XXX
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		freetype.9:${PORTSDIR}/print/freetype2 \
-		xml2.5:${PORTSDIR}/textproc/libxml2
 
+USE_GNOME=	gnometarget libxml2
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-sys-gd=no \
 		--with-png=${LOCALBASE} --with-jpeg=${LOCALBASE} \
 		--with-gsfontdir=${LOCALBASE}/share/ghostscript/fonts
@@ -40,8 +39,10 @@ PLIST_SUB+=	X11=''
 post-patch:
 	@${REINPLACE_CMD} -e 's|src include fonts doc|src include fonts|g' \
 		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|\@LT_CURRENT\@|2|g ; \
-		 s|-release [\$$][(]LT_RELEASE[)]||g' ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e 's|@LT_CURRENT@|2|g ; \
+		 s|@LIBWMF_GDK_PIXBUF_TRUE@|#|g ; \
+		 s|@LIBWMF_GDK_PIXBUF_FALSE@||g ; \
+		 s|-release $$(LT_RELEASE)||g' ${WRKSRC}/src/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)
