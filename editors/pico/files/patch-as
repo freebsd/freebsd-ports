@@ -1,0 +1,76 @@
+*** pine/init.c.orig	Tue Jan 26 21:57:56 1999
+--- pine/init.c	Tue Feb  9 22:14:08 1999
+***************
+*** 326,332 ****
+  
+  /*----------------------------------------------------------------------
+  These are the variables that control a number of pine functions.  They
+! come out of the .pinerc and the /usr/local/lib/pine.conf files.  Some can
+  be set by the user while in Pine.  Eventually all the local ones should
+  be so and maybe the global ones too.
+  
+--- 326,332 ----
+  
+  /*----------------------------------------------------------------------
+  These are the variables that control a number of pine functions.  They
+! come out of the .pinerc and the @@PREFIX@@/etc/pine.conf files.  Some can
+  be set by the user while in Pine.  Eventually all the local ones should
+  be so and maybe the global ones too.
+
+*** pico/edef.h.orig	Thu Apr 23 02:53:44 1998
+--- pico/edef.h	Tue Feb  9 22:14:08 1999
+***************
+*** 59,65 ****
+  int	ComposerEditing = FALSE;	/* TRUE if message line is open */
+  int	revexist = FALSE;		/* does reverse video exist?	*/
+  char	modecode[] = "WCSEVO";		/* letters to represent modes	*/
+! long	gmode = MDWRAP;			/* global editor mode		*/
+  int     sgarbf  = TRUE;                 /* TRUE if screen is garbage	*/
+  int     mpresf  = FALSE;                /* TRUE if message in last line */
+  int	clexec	= FALSE;		/* command line execution flag	*/
+--- 59,65 ----
+  int	ComposerEditing = FALSE;	/* TRUE if message line is open */
+  int	revexist = FALSE;		/* does reverse video exist?	*/
+  char	modecode[] = "WCSEVO";		/* letters to represent modes	*/
+! long	gmode = MDWRAP | MDTCAPWINS;	/* global editor mode		*/
+  int     sgarbf  = TRUE;                 /* TRUE if screen is garbage	*/
+  int     mpresf  = FALSE;                /* TRUE if message in last line */
+  int	clexec	= FALSE;		/* command line execution flag	*/
+*** pico/main.c.orig	Tue Feb  9 21:46:54 1999
+--- pico/main.c	Tue Feb  9 22:14:08 1999
+***************
+*** 443,449 ****
+  	    gmode ^= MDSSPD;
+  	    break;
+  	  case 'q':			/* -q for termcap takes precedence */
+! 	    gmode ^= MDTCAPWINS;
+  	    break;
+  	  case 'w':			/* -w turn off word wrap */
+  	    gmode ^= MDWRAP;
+--- 443,449 ----
+  	    gmode ^= MDSSPD;
+  	    break;
+  	  case 'q':			/* -q for termcap takes precedence */
+! 	    gmode |= MDTCAPWINS;
+  	    break;
+  	  case 'w':			/* -w turn off word wrap */
+  	    gmode ^= MDWRAP;
+*** pico/pilot.c.orig	Mon Aug 24 20:37:39 1998
+--- pico/pilot.c	Tue Feb  9 22:14:09 1999
+***************
+*** 222,228 ****
+  	    sup_keyhelp = !sup_keyhelp;
+  	    break;
+  	  case 'q':			/* -q for termcap takes precedence */
+! 	    gmode ^= MDTCAPWINS;
+  	    break;
+  	  case 'z':			/* -z to suspend */
+  	    gmode ^= MDSSPD;
+--- 222,228 ----
+  	    sup_keyhelp = !sup_keyhelp;
+  	    break;
+  	  case 'q':			/* -q for termcap takes precedence */
+! 	    gmode |= MDTCAPWINS;
+  	    break;
+  	  case 'z':			/* -z to suspend */
+  	    gmode ^= MDSSPD;
