@@ -1,0 +1,3 @@
+It is analogous to cdb from D.J.Berstein, but written completely from scratch,
+has some functionality removed and some new added compared to DJB's one, a bit
+faster, and much easier to use (only one library needed at link time).
