@@ -1,0 +1,16 @@
+
+$FreeBSD$
+
+--- examples/mk.li.orig	Sat Jan 15 12:11:20 2000
++++ examples/mk.li	Mon Nov 25 15:12:38 2002
+@@ -97,8 +97,8 @@
+    freebsd)
+      V_VPATH=".."
+      OBJDIR="obj"
+-     CC=gcc
+-     CPP="gcc -E"
++     CC=${CC:-cc}
++     CPP="cpp -traditional"
+      if [ "x$CFLAGS" = "x" ]; then
+        CFLAGS="native"
+      fi

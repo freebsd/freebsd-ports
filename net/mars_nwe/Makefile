@@ -18,13 +18,11 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	bp@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/mars_nwe
+MAKE_ENV=	CC="${CC}"
 
 PLIST=	${WRKDIR}/PLIST.DYN
 
 NDOCDIR=	${PREFIX}/share/doc/mars_nwe
-
-do-build:
-	@(cd ${WRKSRC} && ${MAKE} all)
 
 do-install:
 	@(cd ${WRKSRC} && ./mk.li install)
