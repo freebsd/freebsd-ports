@@ -27,6 +27,7 @@ lib/libmla_input_msiis.so
 lib/libmla_input_msmedia.so
 lib/libmla_input_netscape.so
 lib/libmla_input_null.so
+lib/libmla_input_postfix.so
 lib/libmla_input_pureftpd.so
 lib/libmla_input_qmail.so
 lib/libmla_input_qmailscanner.so
@@ -40,6 +41,7 @@ lib/libmla_input_wuftpd.so
 lib/libmla_mdata_brokenlink.so
 lib/libmla_mdata_count.so
 lib/libmla_mdata_match.so
+lib/libmla_mdata_mailhist.so
 lib/libmla_mdata_netmask.so
 lib/libmla_mdata_query.so
 lib/libmla_mdata_record.so
