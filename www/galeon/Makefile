@@ -20,7 +20,7 @@ RUN_DEPENDS=	${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZIL
 MOZ_CONFIGURE_ARGS=--with-mozilla-snapshot="1.7"
 
 MOZILLA=	mozilla-gtk1
-HEADERS_SUFX=
+HEADERS_SUFX=	-gtk1
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack bonobo libglade gnomevfs gnometarget
