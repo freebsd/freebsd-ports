@@ -7,6 +7,7 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}.${JDK_REVISION}
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	#
 PKGNAMEPREFIX=	linux-sun-
@@ -22,7 +23,8 @@ NO_CDROM=	"License does not allow distribution with fee"
 RESTRICTED=	"Redistribution of repackaged binaries not permitted"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${JDK_VERSION}_${JDK_REVISION}
-PLIST_SUB+=	T=${TARGET_DIR:S/^${PREFIX}\///}
+PLIST_SUB+=	T=${TARGET_DIR:S/^${PREFIX}\///} \
+		JDK_VERSION=${JDK_VERSION}
 
 NO_BUILD=	yes
 USE_LINUX=	yes
