@@ -1,6 +1,6 @@
---- Makefile.orig	Thu Oct 19 04:12:53 2000
-+++ Makefile	Fri Oct 20 20:33:10 2000
-@@ -4,24 +4,24 @@
+--- Makefile.orig	Thu Oct 19 04:42:53 2000
++++ Makefile	Thu Jul 19 16:32:12 2001
+@@ -4,29 +4,29 @@
  OS=$(shell uname -s)
  
  # Compiler
@@ -21,7 +21,7 @@
  
  # Compiler flags
 -CFLAGS=	-Wall `gtk-config --cflags` -DAUXDIR=\"$(AUXDIR)\" \
-+CFLAGS+=	`$(GTK_CONFIG) --cflags gthread` -DAUXDIR=\"$(AUXDIR)\" \
++CFLAGS+= $(PTHREAD_CFLAGS) `$(GTK_CONFIG) --cflags gthread` -DAUXDIR=\"$(AUXDIR)\" \
  	-DINSTALLDIR=\"$(INSTALLDIR)\" -D_REENTRANT
  
  # Link libraries
@@ -30,3 +30,9 @@
  ifeq ($(OS), Linux)
  LIBS+=	-lpthread
  endif
+ ifeq ($(OS), FreeBSD)
+-LIBS+=	-pthread
++LIBS+=	$(PTHREAD_LIBS)
+ endif
+ PARLIBS=	cdparanoia/interface/libcdda_interface.a \
+ 		cdparanoia/paranoia/libcdda_paranoia.a
