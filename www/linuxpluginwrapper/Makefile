@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	linuxpluginwrapper
-PORTVERSION=	20031122
+PORTVERSION=	20031221
 CATEGORIES=	www linux
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://people.FreeBSD.org/~nork/distfiles/
 MASTER_SITE_SUBDIR=	nork
 
 MAINTAINER=	nork@FreeBSD.org
-COMMENT=	A wrapper allowing use of linux-plugins with native browsers
+COMMENT=	A wrapper allowing use of linux-plugins with native applications
 
 .include <bsd.port.pre.mk>
 
