@@ -3,4 +3,4 @@ personal information that you would typically find on a business card.
 Name, numbers, addresses, and even logos. This module can also serve as a
 base class for other vFile readers. 
 
-WWW: http://search.cpan.org/author/JLAWRENC/Net-vCard/
+WWW: http://search.cpan.org/dist/Net-vCard/
