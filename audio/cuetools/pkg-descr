@@ -1,6 +1,7 @@
 Cuetools is a set of utilities for working with cue files and toc files.
 It contains:
-- cueconverter: convert between cue and toc formats
-- cuerename: rename files based on a template
+- cueconvert: convert between the cue and toc formats
+- cuebreakpoints: print the breakpoints from a cue or toc file
+- cueprint: print disc and track infomation for a cue or toc file
 
-WWW: http://cuetools.sourceforge.net/
+WWW: http://developer.berlios.de/projects/cuetools/
