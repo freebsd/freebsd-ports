@@ -1,5 +1,5 @@
 # New ports collection makefile for:	tiff
-# Version required:	3.5.4
+# Version required:	3.5.5
 # Date created:		8 October 1996
 # Whom:			Richard Hwang <rhwang@bigpanda.com>
 #			Mikhail Teterin <mi@aldan.algebra.com>
@@ -8,8 +8,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=	tiff-v3.5.4
-PKGNAME=	tiff-3.5.4
+DISTNAME=	tiff-v3.5.5
+PKGNAME=	tiff-3.5.5
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.onshore.com/pub/libtiff/ \
 		http://www.libtiff.org/
@@ -105,9 +105,9 @@ MLINKS=	TIFFError.3t        TIFFSetErrorHandler.3t \
 	TIFFtile.3t         TIFFNumberOfTiles.3t \
 	TIFFtile.3t         TIFFTileRowSize.3t \
 	TIFFtile.3t         TIFFTileSize.3t \
-	TIFFtile.3t         TIFFVTileSize.3t \
+	TIFFtile.3t         TIFFVTileSize.3t
 
 post-install:
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
+	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

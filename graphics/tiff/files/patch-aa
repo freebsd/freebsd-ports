@@ -1,5 +1,5 @@
---- libtiff/Makefile.in.orig	Wed Sep  8 18:39:00 1999
-+++ libtiff/Makefile.in	Wed Nov 24 07:31:09 1999
+--- libtiff/Makefile.in.orig	Mon Nov 29 05:15:36 1999
++++ libtiff/Makefile.in	Sat Apr  1 00:00:00 2000
 @@ -62,7 +62,7 @@
  #
  CONF_LIBRARY=@CONF_JPEG@ @CONF_ZIP@
@@ -20,19 +20,13 @@
  	@rm -f libtiff_pic.a
  	@${AR} cq libtiff_pic.a `lorder ${OBJS} | tsort -q`
  	${RANLIB} libtiff_pic.a
-@@ -215,7 +215,18 @@
+@@ -215,7 +215,12 @@
  # OSF/1 3.2 shared lib rule
  OSFdso: ${OBJS}
  	${LD} -o libtiff.@DSOSUF@ -shared -error_unresolved ${OBJS} @LIBJPEG@ @LIBGZ@ -lc -lm
 -
-+# FreeBSD a.out shared lib rule
-+FREEBSD_AOUTdso: ${OBJS}
-+	${LD} -Bshareable -x ${LIBDIR}/c++rt0.o -o libtiff.@DSOSUF_VERSION@ \
-+		${OBJS} @LIBJPEG@ @LIBGZ@
-+	@LN@ @LN_S@ libtiff.@DSOSUF_VERSION@ libtiff.@DSOSUF@
-+	touch $@
-+# FreeBSD ELF shared lib rule
-+FREEBSD_ELFdso: ${OBJS}
++# FreeBSD shared lib rule
++FREEBSDdso: ${OBJS}
 +	${CC} -shared -Wl,-soname,libtiff.@DSOSUF_VERSION@ -o libtiff.@DSOSUF_VERSION@ \
 +		${OBJS} @LIBJPEG@ @LIBGZ@
 +	@LN@ @LN_S@ libtiff.@DSOSUF_VERSION@ libtiff.@DSOSUF@
@@ -40,12 +34,30 @@
  
  ${OBJS}: ${SRCDIR}/tiffio.h ${SRCDIR}/tiff.h ${SRCDIR}/tif_dir.h
  ${OBJS}: ${SRCDIR}/tiffcomp.h ${SRCDIR}/tiffiop.h ${SRCDIR}/tiffconf.h
-@@ -327,7 +338,7 @@
- 	    ${INSTALL} -idb tiff.sw.tools -m 555 -F @DIR_LIB@		\
- 		-O libtiff.@DSOSUF_VERSION@;				\
+@@ -319,22 +324,20 @@
+ 	${INSTALL} -idb tiff.sw.dev -m 755 -dir @DIR_INC@
+ 	for i in ${INCS}; do						\
+ 	    f=`basename $$i`;						\
+-	    ${INSTALL} -idb tiff.sw.dev -m 444 -F @DIR_INC@		\
+-		-src $$i -O $$f;					\
++	    ${BSD_INSTALL_DATA} $$i @DIR_INC@/$$f;			\
+ 	done
+ installDSO: @DSO@dso
+ 	if [ @DSOSUF_VERSION@ != @DSOSUF@ ]; then			\
+-	    ${INSTALL} -idb tiff.sw.tools -m 555 -F @DIR_LIB@		\
+-		-O libtiff.@DSOSUF_VERSION@;				\
++	    ${BSD_INSTALL_DATA} libtiff.@DSOSUF_VERSION@ @DIR_LIB@;	\
  	    ${INSTALL} -idb tiff.sw.tools -F @DIR_LIB@			\
 -		-ln libtiff.@DSOSUF_VERSION@ -O libtiff.@DSOSUF@;	\
 +		-lns libtiff.@DSOSUF_VERSION@ -O libtiff.@DSOSUF@;	\
  	else								\
  	    ${INSTALL} -idb tiff.sw.tools -m 555 -F @DIR_LIB@		\
  		-O libtiff.@DSOSUF@;					\
+ 	fi
+ install: all installHdrs
+ 	${INSTALL} -idb tiff.sw.dev -m 755 -dir @DIR_LIB@
+-	${INSTALL} -idb tiff.sw.dev -m 444 -F @DIR_LIB@ -O libtiff.a
++	${BSD_INSTALL_DATA} libtiff.a @DIR_LIB@
+ 	if [ @DSO@dso != nodso ]; then					\
+ 	    ${MAKE} installDSO;						\
+ 	else								\

@@ -1,10 +1,10 @@
---- man/Makefile.in.orig	Wed Sep  3 02:54:41 1997
-+++ man/Makefile.in	Sat Jun 12 20:59:00 1999
+--- man/Makefile.in.orig	Tue Nov 30 01:42:44 1999
++++ man/Makefile.in	Sat Apr  1 00:00:00 2000
 @@ -41,6 +41,7 @@
  SED	= sed
  MV	= mv
  RM	= rm -f
-+LN	= ln -fs
++LN	= ln -sf
  INSTALL	= @INSTALL@
  
  #
@@ -17,7 +17,7 @@
  
  MANTOOLS=\
  	apps/fax2tiff.1 \
-@@ -268,59 +269,59 @@
+@@ -274,59 +275,59 @@
  lib/TIFFswab.3t::	${SRCDIR}/TIFFswab.3t;			${MANCVT}
  lib/TIFFtile.3t::	${SRCDIR}/TIFFtile.3t;			${MANCVT}
  
@@ -130,3 +130,23 @@
  
  apps/Makefile:
  	test -d apps || mkdir apps
+@@ -336,8 +337,7 @@
+ 	 ${ECHO} 'install:';						\
+ 	 for i in *.1; do						\
+ 	    f=${MANAPPNAME};						\
+-	    ${ECHO} '	cd ..; ${INSTALL} -m 444 -F ${MAN}/${MANAPPS}	\
+-		-idb tiff.man.tools -src' apps/"$$i" '-O' "$$f";	\
++	    ${ECHO} '	${BSD_INSTALL_MAN}' $$i ${MAN}/${MANAPPS}/$$f;	\
+ 	 done								\
+ 	)>apps/Makefile
+ lib/Makefile:
+@@ -348,8 +348,7 @@
+ 	 ${ECHO} 'install:';						\
+ 	 for i in *.3t; do						\
+ 	    f=${MANLIBNAME};						\
+-	    ${ECHO} '	cd ..; ${INSTALL} -m 444 -F ${MAN}/${MANLIB}	\
+-		-idb tiff.man.dev -src' lib/"$$i" '-O' "$$f";		\
++	    ${ECHO} '	${BSD_INSTALL_MAN}' $$i ${MAN}/${MANLIB}/$$f;	\
+ 	 done								\
+ 	)>lib/Makefile
+ 
