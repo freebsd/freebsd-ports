@@ -197,6 +197,7 @@
     SUBDIR += kdeutils3
     SUBDIR += kenny
     SUBDIR += kfile-plugins
+    SUBDIR += kicker-applets
     SUBDIR += koffice-i18n
     SUBDIR += koffice-i18n-af
     SUBDIR += koffice-i18n-bs
