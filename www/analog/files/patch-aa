@@ -1,7 +1,7 @@
---- src/Makefile.orig	Sun Mar 23 05:57:02 2003
-+++ src/Makefile	Thu Aug 21 10:26:26 2003
-@@ -2,15 +2,22 @@
- # Please read docs/Readme.html, or <A HREF="http://www.analog.cx/">http://www.analog.cx/</A>
+--- src/Makefile.orig	Sun Dec 19 05:51:30 2004
++++ src/Makefile	Sun Jan  9 12:50:26 2005
+@@ -2,16 +2,23 @@
+ # Please read docs/Readme.html, or http://www.analog.cx/
  # This is a general Unix-like Makefile: Makefiles for other OS's can be found
  #   in the "build" directory.
 -CC = gcc           # which compiler to use: eg cc, acc, gcc. NB Different
@@ -11,22 +11,22 @@
 -CFLAGS = -O2    # options, e.g. for optimisation or ANSI compilation.
 +CFLAGS += -I${LOCALBASE}/include -I${LOCALBASE}/include/gd
 +#CFLAGS = -O2    # options, e.g. for optimisation or ANSI compilation.
+ #                 Some OS's need -D_FILE_OFFSET_BITS=64 to support files > 2MB.
  #                 HP/UX cc needs CFLAGS = -Aa (HP/UX 9) or -Ae (HP/UX 10)
  #                 BeOS needs CFLAGS = -O2 -Wl,-L/boot/home/config/lib
  #                 BS2000/OSD needs CFLAGS = -XLLML -XLLMK
  #                 NeXTSTEP needs CFLAGS = -O2 -pipe -no-precomp 
--DEFS =          # any combination of -DNOPIPES -DNODNS -DNODIRENT -DNOGLOB ...
+ DEFS =          # any combination of -DNOPIPES -DNODNS -DNODIRENT -DNOGLOB ...
 +DEFS = -DLOGFILE=\"/var/log/httpd-access.log\" \
 +       -DIMAGEDIR=\"/images/\" \
 +       -DDEFAULTCONFIGFILE=\"$(PREFIX)/etc/analog.cfg\" \
 +       -DLANGDIR=\"${PREFIX}/share/analog/lang/\" \
 +       -DCONFIGDIR=\"$(PREFIX)/share/analog/\" \
 +       -DHAVE_ZLIB
-+#DEFS =          # any combination of -DNOPIPES -DNODNS -DNODIRENT -DNOGLOB ...
  #                 ... -DNOOPEN -DNOFOLLOW -DNOALARM -DNOGRAPHICS -DNOGMTIME ...
  #                 ... -DEBCDIC -DUSE_PLAIN_SETJMP ...
- #                 ... -DHAVE_GD -DHAVE_ZLIB -DHAVE_PCRE ...
-@@ -30,6 +37,12 @@
+ #                 ... -DHAVE_GD -DHAVE_ZLIB -DHAVE_BZLIB -DHAVE_PCRE ...
+@@ -31,6 +38,12 @@
  OS = UNIX         # Operating system: UNIX, DOS, WIN32, MAC, OS2, OSX, VMS
  #                   RISCOS, BEOS, NEXTSTEP, MPEIX, BS2000, AS400, OS390
  LIBS = -lm  # extra libraries needed; most platforms (but not OS X or BeOS)
