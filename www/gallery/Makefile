@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	gallery
-PORTVERSION=	1.4.4.5
+PORTVERSION=	1.4.4.6
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.5$/-pl5/}
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}-pl${PORTVERSION:E}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${LANGPACKS}
 DIST_SUBDIR=	gallery
 
 MAINTAINER=	freebsd-ports@varju.ca
-COMMENT=	Gallery is a slick web based photo album written using PHP
+COMMENT=	A slick web based photo album written using PHP
 
 RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm \
 		jhead:${PORTSDIR}/graphics/jhead \
@@ -73,8 +73,8 @@ PLIST_SUB=		NLS="@comment "
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
-DOCFILES=	AUTHORS ChangeLog README
-EXCEPTFILES=	${DOCFILES} LICENSE.txt
+PORTDOCS=	AUTHORS ChangeLog README
+EXCEPTFILES=	${PORTDOCS} LICENSE.txt
 CPIOARGS=	--quiet -pdum -R
 PLIST_SUB+=	GALLERYDIR=${GALLERYDIR}
 
@@ -111,7 +111,7 @@ do-install:
 post-install:
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${DOCSDIR}
-	@ cd ${WRKSRC} && ${INSTALL_DATA} ${DOCFILES} ${DOCSDIR}
+	@ cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 .if !defined(BATCH)
 	@ ${CAT} ${PKGMESSAGE}
