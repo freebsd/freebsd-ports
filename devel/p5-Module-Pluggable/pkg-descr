@@ -1,0 +1,11 @@
+Provides a simple but, hopefully, extensible way of having 'plugins'
+for your module. Obviously this isn't going to be the be all and
+end all of solutions but it works for me.
+
+Essentially all it does is export a method into your namespace that
+looks through a search path for .pm files and turn those into class
+names.
+
+Optionally it instantiates those classes for you.
+
+WWW:	http://search.cpan.org/dist/Module-Pluggable/
