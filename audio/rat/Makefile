@@ -7,7 +7,7 @@
 #
 
 DISTNAME=	rat-4.0.4
-CATEGORIES=	mbone audio
+CATEGORIES=	mbone audio ipv6
 MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/rat/4.0.4/ \
 		http://www.freebsd.org/~cpiazza/distfiles/
 

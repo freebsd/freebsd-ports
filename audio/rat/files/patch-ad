@@ -1,0 +1,13 @@
+--- common/net_udp.c.orig	Tue Jun 22 10:54:05 1999
++++ common/net_udp.c	Mon Jan 24 17:14:12 2000
+@@ -335,6 +335,10 @@
+              }
+         }
+ 
++#ifndef IPV6_ADD_MEMBERSHIP
++#define IPV6_ADD_MEMBERSHIP IPV6_JOIN_GROUP
++#endif
++
+ 	if (IN6_IS_ADDR_MULTICAST(&(s->addr6))) {
+ 		unsigned int      loop = 1;
+ 		struct ipv6_mreq  imr;
