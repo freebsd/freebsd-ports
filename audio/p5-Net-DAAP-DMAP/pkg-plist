@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Net/DAAP/DMAP.pm
+@unexec rmdir %D/%%SITE_PERL%%/Net/DAAP 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Net 2>/dev/null || true
