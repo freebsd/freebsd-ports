@@ -1,5 +1,5 @@
---- makefile.orig	Tue Dec 17 02:37:28 2002
-+++ makefile	Sun Dec 22 08:38:00 2002
+--- makefile.orig	Sat Jan 11 18:08:57 2003
++++ makefile	Mon Jan 27 16:08:56 2003
 @@ -3,7 +3,7 @@
  
  PROJ=fxt
@@ -9,16 +9,15 @@
  PPLIBS = -lm -lstdc++
  
  
-@@ -16,7 +16,7 @@
+@@ -15,7 +15,6 @@
  #  -mcpu=   Schedule code for given CPU
  # Note that specifying `-march=CPU-TYPE' implies `-mcpu=CPU-TYPE'
  
--OFLAGS = -O2 -ffast-math
-+OFLAGS += -ffast-math
- OFLAGS += $(ARCHFLAG)
+-OFLAGS = -O2
  OFLAGS += -fomit-frame-pointer
  OFLAGS += -fno-exceptions
-@@ -47,12 +47,12 @@
+ OFLAGS += -ffast-math
+@@ -53,12 +52,12 @@
   -Imod -Iwavelet -Isort -Islow
  
  #### choose the FLAG combo here:
@@ -34,7 +33,7 @@
  
  #-------------------------------------
  
-@@ -348,16 +348,16 @@
+@@ -354,16 +353,16 @@
  #	@echo ' ===== make FXT lib DONE. ====='
  
  
