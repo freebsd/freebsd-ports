@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	teTeX
-PORTVERSION=	1.0.7
-PORTREVISION=	1
+PORTVERSION=	2.0.1
 CATEGORIES=	print
-MASTER_SITES=	ftp://sunsite.informatik.rwth-aachen.de/pub/comp/tex/teTeX/1.0/distrib/sources/ \
+MASTER_SITES=	ftp://sunsite.informatik.rwth-aachen.de/pub/comp/tex/teTeX/2.0/distrib/ \
 		${MASTER_SITE_TEX_CTAN}
-MASTER_SITE_SUBDIR=	systems/unix/teTeX/1.0/distrib/sources/
+MASTER_SITE_SUBDIR=	systems/unix/teTeX/2.0/distrib/
 DISTFILES=	${TETEX_SRC} ${TETEX_TEXMF}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -26,7 +25,7 @@ PLIST_SUB+=	X11BITS=""
 PLIST_SUB+=	X11BITS="@comment "
 .endif
 DIST_SUBDIR=	teTeX
-WRKSRC=		${WRKDIR}/teTeX-1.0
+WRKSRC=		${WRKDIR}/tetex-src-2.0.1
 EXTRACT_ONLY=	${TETEX_SRC}
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -43,26 +42,33 @@ CONFIGURE_ARGS+=	--without-x11 --without-oxdvik --without-xdvik
 .endif
 INSTALL_TARGET=	install strip
 NOMANCOMPRESS=	yes
-NOMAN1=		MakeTeXPK.1 access.1 afm2tfm.1 allcm.1 allec.1 allneeded.1 \
-		amstex.1 bibtex.1 cont-de.1 cont-en.1 cont-nl.1 dmp.1 \
-		dvicopy.1 dvilj.1 dvips.1 dvired.1 dvitype.1 einitex.1 \
-		elatex.1 eplain.1 etex.1 evirtex.1 fontexport.1 fontimport.1 \
-		gftodvi.1 gftopk.1 gftype.1 gsftopk.1 inimf.1 inimpost.1 \
-		iniomega.1 initex.1 kpsestat.1 kpsewhich.1 lambda.1 latex.1 \
-		mag.1 makeindex.1 makempx.1 mf.1 mft.1 mktexlsr.1 mktexmf.1 \
-		mktexpk.1 mktextfm.1 mpost.1 mpto.1 newer.1 omega.1 patgen.1 \
-		pdfinitex.1 pdflatex.1 pdftex.1 pdfvirtex.1 pfb2pfa.1 pk2bm.1 \
-		pktogf.1 pktype.1 pltotf.1 pooltype.1 ps2frag.1 ps2pk.1 \
-		readlink.1 tangle.1 tex.1 texconfig.1 texhash.1 texi2html.1 \
-		tftopl.1 tie.1 vftovp.1 virmf.1 virmpost.1 viromega.1 \
-		virtex.1 vptovf.1 weave.1
+NOMAN1=		MakeTeXPK.1 allec.1 cont-de.1 cont-en.1 cont-nl.1 einitex.1 \
+		elatex.1 evirtex.1 inimf.1 inimpost.1 iniomega.1 initex.1 \
+		lambda.1 pdfinitex.1 pdflatex.1 pdfvirtex.1 texhash.1 virmf.1 \
+		virmpost.1 viromega.1 virtex.1 \
+		access.1 afm2tfm.1 allcm.1 allneeded.1 amstex.1 bibtex.1 \
+		cweb.1 dmp.1 dvi2fax.1 dvicopy.1 dvihp.1 dvilj.1 \
+		dvipdfm.1 dvips.1 dvired.1 dvitomp.1 dvitype.1 e2pall.1 \
+		eplain.1 epstopdf.1 etex.1 fontexport.1 fontimport.1 \
+		fontinst.1 gftodvi.1 gftopk.1 gftype.1 gsftopk.1 kpsestat.1 \
+		kpsetool.1 kpsewhich.1 latex.1 mag.1 makeindex.1 makempx.1 \
+		mf.1 mft.1 mkindex.1 mktexlsr.1 mktexmf.1 mktexpk.1 mktextfm.1 \
+		mpost.1 mpto.1 newer.1 omega.1 patgen.1 pdfetex.1 pdftex.1 \
+		pfb2pfa.1 pk2bm.1 pktogf.1 pktype.1 pltotf.1 pooltype.1 \
+		ps2frag.1 ps2pk.1 pslatex.1 readlink.1 rubibtex.1 \
+		rumakeindex.1 tangle.1 tex.1 texconfig.1 texdoc.1 \
+		texdoctk.1 texexec.1 texi2html.1 texi2pdf.1 texshow.1 \
+		texutil.1 tftopl.1 thumbpdf.1 tie.1 updmap.1 vftovp.1 vptovf.1 \
+		weave.1
+NOMAN5= 	fmtutil.cnf.5
+NOMAN8= 	fmtutil.8 mkfontdesc.8 texlinks.8
 
 .if !defined(WITHOUT_X11)
-NOMAN1+=	xdvi.1
+NOMAN1+=	t1mapper.1 xdvi.1 xdvizilla.1
 .endif
 
-TETEX_SRC=	teTeX-src-1.0.7.tar.gz
-TETEX_TEXMF=	teTeX-texmf-1.0.2.tar.gz
+TETEX_SRC=	tetex-src-2.0.1.tar.gz
+TETEX_TEXMF=	tetex-texmf-2.0.1.tar.gz
 LIBPNG_PREFIX?=	${LOCALBASE}
 LIBWWW_PREFIX?=	${LOCALBASE}
 TEXMF_TREE=	${PREFIX}/share/texmf
@@ -77,7 +83,7 @@ pre-install:
 	@cd ${TEXMF_TREE}; tar xfz ${_DISTDIR}/${TETEX_TEXMF}
 
 post-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/texinfo/util/texi2dvi ${PREFIX}/bin
+	@${INSTALL_SCRIPT} ${WRKSRC}/utils/texinfo/util/texi2dvi ${PREFIX}/bin
 	@${SED} -e "s|^TEXMFMAIN = .*|TEXMFMAIN = ${TEXMF_TREE}|g" \
 		< ${WRKSRC}/texk/kpathsea/texmf.cnf \
 		> ${TEXMF_TREE}/web2c/texmf.cnf
