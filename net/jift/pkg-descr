@@ -1,0 +1,6 @@
+jiFT - The Java interface to FastTrack (TM) or "jiFT isn't FastTrack".
+We port the giFT daemon from C to Java. jiFT will be a platform
+independent 'daemon' to Kazaa/Morpheus and behave identically at
+the protocol level, so replacing giFT is a matter of minutes
+
+WWW: http://sourceforge.net/projects/jift/
