@@ -19,6 +19,7 @@ include/gphoto2/gphoto2-version.h
 include/gphoto2/gphoto2-widget.h
 include/gphoto2/gphoto2.h
 lib/gphoto2/%%VERSION%%/libgphoto2_agfa_cl20.so
+lib/gphoto2/%%VERSION%%/libgphoto2_aox.so
 lib/gphoto2/%%VERSION%%/libgphoto2_barbie.so
 lib/gphoto2/%%VERSION%%/libgphoto2_canon.so
 lib/gphoto2/%%VERSION%%/libgphoto2_casio_qv.so
