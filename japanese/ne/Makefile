@@ -20,6 +20,12 @@ MANLANG=	ja
 DOCS=		BUGS.jp CHANGES.jp HISTORY.jp INSTALL.jp README.jp TODO.jp
 MAKE_ENV=	LANG=${MANLANG}
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not compile on amd64"
+.endif
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/ne
@@ -28,4 +34,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

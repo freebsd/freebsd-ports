@@ -41,6 +41,10 @@ CONFIGURE_ARGS+=--enable-small-nets
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not compile on amd64"
+.endif
+
 .if ${OSVERSION} >= 400014 && !defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=--enable-ipv6
 .endif

@@ -39,6 +39,10 @@ CONFIGURE_ARGS+= --with-db-inc=${LOCALBASE}/include/db2
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not compile on amd64"
+.endif
+
 pre-fetch:
 .if !defined(USE_DB2)
 	@${ECHO} --
