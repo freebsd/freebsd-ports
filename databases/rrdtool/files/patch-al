@@ -1,0 +1,20 @@
+--- src/parsetime.c.orig	Fri Oct 11 14:39:46 2002
++++ src/parsetime.c	Mon Feb 10 20:47:18 2003
+@@ -660,6 +660,7 @@
+ {
+     long mday=0, wday, mon, year = ptv->tm.tm_year;
+     int tlen;
++    time_t montime;
+ 
+     switch (sc_tokid) {
+     case YESTERDAY:
+@@ -713,7 +714,8 @@
+ 	    tlen = strlen(sc_token);
+ 	    mon = atol(sc_token);
+             if (mon > 10*356*24*60*60) {
+-		ptv->tm=*localtime(&mon);
++		montime = mon;
++		ptv->tm=*localtime(&montime);
+ 		token();
+ 		break;
+ 	    }

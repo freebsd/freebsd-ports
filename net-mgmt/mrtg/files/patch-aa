@@ -1,0 +1,18 @@
+--- src/rateup.c.orig	Sat Oct 19 05:06:55 2002
++++ src/rateup.c	Mon Feb 10 22:55:06 2003
+@@ -830,12 +830,14 @@
+     struct HISTORY *hist;
+     unsigned long rd[5];
+     time_t cur;
++    long lasttime;
+ 
+     if ((fi = fopen(file,"r")) != NULL) {
+-	if (fscanf(fi,"%ld %s %s\n",(long int *)&last.time,&last.in[0],&last.out[0]) != 3){
++	if (fscanf(fi,"%ld %s %s\n",&lasttime,&last.in[0],&last.out[0]) != 3){
+            fprintf(stderr,"Read Error: File %s lin 1\n",file);
+ 	   retcode = 1;
+ 	}
++	last.time = lasttime;
+         cur = last.time;
+ 	x = histvalid=0;
+ 	hist = history;
