@@ -1,9 +1,27 @@
---- Makefile.orig	Mon Aug 27 15:03:28 2001
-+++ Makefile	Tue Oct  9 13:18:10 2001
-@@ -24,5 +24,5 @@
- 	if [ -f examples/d5.o ]; then $(MAKE) -C examples clean; fi
+--- Makefile.orig	Sat Oct 27 13:40:45 2001
++++ Makefile	Thu Nov 22 03:34:09 2001
+@@ -1,13 +1,13 @@
+-INSTDIR   = /usr/local
++INSTDIR   = ${PREFIX}
+ OBJS      = lib/expatls.o lib/events.o lib/node.o lib/dom.o lib/stack.o
+ LIBNAME   = domc
+-SONAME    = lib$(LIBNAME).so.0.5.0
+-SOVERSION = lib$(LIBNAME).so.0.5
++SONAME    = lib$(LIBNAME).so.${SHLIB_MAJOR}
++SOVERSION = lib$(LIBNAME).so.${SHLIB_MAJOR}
+ 
+ all: lib$(LIBNAME).so
+ 
+ lib$(LIBNAME).so: $(OBJS)
+-	gcc -Wall -shared $(OBJS) -lc -Wl,-soname -Wl,$(SOVERSION) -o $(SONAME)
++	${CC} ${CFLAGS} -shared $(OBJS) -Wl,-soname -Wl,$(SOVERSION) -o $(SONAME) -L${LOCALBASE}/lib -lexpat -Wl,-rpath ${LOCALBASE}/lib
+ 
+ example:
+ 	$(MAKE) -C examples
+@@ -25,5 +25,5 @@
+ 	@echo "Expat was not removed however"
  
  .c.o:
 -	gcc -Wall -Iinclude -Llib -fPIC -DPIC -c -o $*.o $<
-+	gcc %%CFLAGS%% -Wall -Iinclude -Llib -fPIC -DPIC -c -o $*.o $<
++	${CC} ${CFLAGS} -I${LOCALBASE}/include/xml -Iinclude -Llib -fPIC -DPIC -c -o $*.o $<
  

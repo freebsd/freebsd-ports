@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	domc
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.1
 CATEGORIES=	devel
 MASTER_SITES=	http://auditorymodels.org/domc/src/
 EXTRACT_SUFX=	.tgz
@@ -16,19 +16,20 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	expat.1:${PORTSDIR}/textproc/expat
 
-CFLAGS+=	-I${LOCALBASE}/include/xml
 SHLIB_MAJOR=	0
+
+MAKE_ENV=	SHLIB_MAJOR="${SHLIB_MAJOR}"
 INSTALLS_SHLIB=	yes
 PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
-
-post-patch:
-	@${PERL} -pi -e "s,%%PREFIX%%,${PREFIX},g ; \
-		s,%%CFLAGS%%,${CFLAGS},g" ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/include/dom.h ${PREFIX}/include
 	${CAT} ${WRKSRC}/include/stack.h >> ${PREFIX}/include/dom.h
-	${INSTALL_DATA} ${WRKSRC}/libdomc.so.0.5.0 ${PREFIX}/lib/libdomc.so.${SHLIB_MAJOR}
-	${LN} -sf ${PREFIX}/lib/libdomc.so.${SHLIB_MAJOR} ${PREFIX}/lib/libdomc.so
+	${INSTALL_DATA} ${WRKSRC}/libdomc.so.${SHLIB_MAJOR} ${PREFIX}/lib
+	${LN} -sf libdomc.so.${SHLIB_MAJOR} ${PREFIX}/lib/libdomc.so
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/*.* ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
