@@ -26,6 +26,8 @@
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/MethodField.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/PatternChecker.py
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/PatternChecker.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/Formulator/ProductForm.py
+%%ZOPEBASEDIR%%/lib/python/Products/Formulator/ProductForm.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/README.txt
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/StandardFields.py
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/StandardFields.pyc
@@ -42,6 +44,7 @@
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/XMLToForm.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/__init__.py
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/Formulator/homepage.html
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/dtml/FieldHelpTopic.dtml
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/dtml/fieldAdd.dtml
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/dtml/fieldEdit.dtml
@@ -96,6 +99,7 @@
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/www/FloatField.gif
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/www/Form.gif
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/www/IntegerField.gif
+%%ZOPEBASEDIR%%/lib/python/Products/Formulator/www/LabelField.gif
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/www/LinesField.gif
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/www/LinkField.gif
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/www/ListField.gif

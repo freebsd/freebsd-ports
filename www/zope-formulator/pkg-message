@@ -5,3 +5,6 @@
     - Verify that the Formulator product is loaded properly by 
       examining them in Control_Panel/Products, and try to add
       a "Formulator Form" object via the Zope Management Interface.
+
+    - If upgrading, see change log at: 
+http://zope.org/Members/infrae/Formulator/Formulator-1.6.0/Formulator-1.6.0.tgz
