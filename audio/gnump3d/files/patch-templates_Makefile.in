@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- templates/Makefile.in.orig	Sun Jul 14 01:53:52 2002
++++ templates/Makefile.in	Tue Aug 13 19:19:39 2002
+@@ -192,7 +192,7 @@
+ install:
+ 	mkdir -p $(sysconfdir)/gnump3d
+ 	cp gnump3d.conf $(sysconfdir)/gnump3d/gnump3d.conf-default
+-	if ! test -e $(sysconfdir)/gnump3d/gnump3d.conf; then mv $(sysconfdir)/gnump3d/gnump3d.conf-default $(sysconfdir)/gnump3d/gnump3d.conf; fi
++	if ! test -e $(sysconfdir)/gnump3d/gnump3d.conf; then cp $(sysconfdir)/gnump3d/gnump3d.conf-default $(sysconfdir)/gnump3d/gnump3d.conf; fi
+ 	cp -R default $(sysconfdir)/gnump3d
+ 	cp -R simple $(sysconfdir)/gnump3d
+ 	cp -R split $(sysconfdir)/gnump3d
