@@ -1384,6 +1384,7 @@ dis		ports/lang/dis
 discid		ports/audio/discid
 disco		ports/net-mgmt/disco
 diskcheckd	ports/sysutils/diskcheckd
+diskprep	ports/sysutils/diskprep
 disktool	ports/sysutils/disktool
 disktype	ports/sysutils/disktype
 diskusage	ports/sysutils/diskusage
