@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	GiNaC
-PORTVERSION=	1.1.5
+PORTVERSION=	1.1.6
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftpthep.physik.uni-mainz.de/pub/GiNaC/ \
 		http://www.ginac.de/
@@ -38,6 +38,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
 RUN_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
 CPPFLAGS+=	-I${LOCALBASE}/include/stlport ${PTHREAD_CFLAGS}
 LDFLAGS+=	-lstlport_gcc ${PTHREAD_LIBS}
+CFLAGS+=	-O0
 .endif
 
 post-extract:

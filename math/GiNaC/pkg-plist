@@ -44,6 +44,6 @@ include/ginac/wildcard.h
 lib/libginac.a
 lib/libginac.so
 lib/libginac-1.1.so
-lib/libginac-1.1.so.5
+lib/libginac-1.1.so.6
 share/aclocal/ginac.m4
 @dirrm include/ginac
