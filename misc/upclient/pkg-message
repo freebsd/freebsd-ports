@@ -1,25 +1,23 @@
 Before running the client for the first time, be sure to:
 
- 1. visit the Server Uptimes project web site and register yourself
-	(WWW: http://www.uptimes.net/bottom.html?show=createaccount).
-
- 2. validate your registration
-	(WWW: http://www.uptimes.net/bottom.html?show=validate).
-
- 2. log in (WWW: http://www.uptimes.net/bottom.html?show=login).
-
- 3. Add your host (WWW: http://www.uptimes.net/bottom.html?show=addhost).
+ 1. visit the Uptimes project's web site and register yourself
+	(WWW: http://uptimes.wonko.com/newuser.php).
+ 2. log in (WWW: http://uptimes.wonko.com/).
+ 3. Add your host (WWW: http://uptimes.wonko.com/hosts.php?op=add).
+	It is very important that you do not lose the generated key
+	since, for instance, they are no way to get it back by any way.
 
 Note that in order to send your uptime information to the uptime server,
 you hosts need more-or-less full-time Internet access.
 
-You will also have to edit /usr/local/etc/upclient.conf:
+You will also have to edit %%PREFIX%%/etc/upclient.conf:
 
-  - AuthKey is the ID you've received when you added your host
-	(WWW: http://www.uptimes.net/bottom.html?show=hosts).
-
+  - AuthKey is the ID you've received when you added your host.
   - Interval is the amount of time between each update.
-	(WWW: http://www.uptimes.net/stuff/protocol.html)
-
+	(WWW: http://uptimes.wonko.com/uptimes42.html).
     Don't set this higher than 10 minutes, or else your host
     won't appear in the list.
+  - UptimeServer is the Uptimes Project's data server, currently
+    uptimes.wonko.com (Since the official Uptimes Project's data
+    server has been terminated, data.uptimes.net must not be used
+    anymore.  So, please, take care about that).

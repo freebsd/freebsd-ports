@@ -1,26 +1,15 @@
---- src/options.c.orig	Wed Dec 27 00:41:53 2000
-+++ src/options.c	Sat Dec 30 06:09:57 2000
-@@ -23,11 +23,7 @@
+--- src/options.c.orig	Sat Jun 16 21:15:04 2001
++++ src/options.c	Sun Nov 18 17:40:06 2001
+@@ -16,9 +16,9 @@
+  * These are the configuration options available.
+  */
+ char cfg_authkey[AUTHKEY_REQUIRED_LEN+1]	= "";
+-char cfg_upserver[UPSERVER_MAXLEN+1]		= "data.uptimes.net";
+-int  cfg_interval				= 120;
+-char cfg_pidfile[PIDFILE_MAXLEN+1]		= ".upclient.pid";
++char cfg_upserver[UPSERVER_MAXLEN+1]		= "uptimes.wonko.com";
++int  cfg_interval				= 550;
++char cfg_pidfile[PIDFILE_MAXLEN+1]		= "/var/run/upclient.pid";
+ char cfg_proxyserver[PROXYSERVER_MAXLEN+1]	= "";
  int  cfg_proxyport				= 8080;
  char cfg_proxyuser[PROXYUSER_MAXLEN+1]		= "";
- char cfg_proxypass[PROXYPASS_MAXLEN+1]		= "";
--#if defined(PLATFORM_BSD)
--int  cfg_sendidle	= 0;
--#else
- int  cfg_sendidle	= 1;
--#endif
- #if defined(PLATFORM_UNIXWARE)
- int  cfg_sendload	= 0;
- #else
-@@ -124,11 +120,7 @@
-     strcpy(cfg_pidfile, value);
-   }
-   else if(strcmp(key, "SendIdleTime") == 0) {
--#if defined(PLATFORM_BSD)
--    ;
--#else
-     cfg_sendidle = atol(value);
--#endif
-   }
-   else if(strcmp(key, "SendLoadAvg") == 0) {
- #if defined(PLATFORM_UNIXWARE)
