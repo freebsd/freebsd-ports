@@ -1,3 +1,5 @@
+@unexec if cmp -s %D/etc/postfix/main.cf %D/etc/postfix/sample-main.cf; then rm -f %D/postfix/etc/main.cf; fi
+@unexec if cmp -s %D/etc/postfix/master.cf %D/etc/postfix/sample-master.cf; then rm -f %D/postfix/etc/master.cf; fi
 etc/postfix/LICENSE
 etc/postfix/postfix-script
 etc/postfix/sample-access
