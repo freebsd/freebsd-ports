@@ -68,6 +68,7 @@
     SUBDIR += glife
     SUBDIR += gltron
     SUBDIR += gma
+    SUBDIR += gniffel
     SUBDIR += gno3dtet
     SUBDIR += gnocatan
     SUBDIR += gnomebreakout
