@@ -1,5 +1,5 @@
---- Makefile.common.orig	Sat Jul  8 06:14:26 2000
-+++ Makefile.common	Sat Jul 15 00:00:00 2000
+--- Makefile.common.orig	Fri Aug  4 09:17:52 2000
++++ Makefile.common	Sat Aug  5 00:00:00 2000
 @@ -103,24 +103,20 @@
  
  $(LIBOBJECTS): %.o: %.c
@@ -77,15 +77,14 @@
  	done
  
  # Install a static library 
-@@ -221,16 +217,15 @@
- # library, the dependency here will do that.
+@@ -223,15 +219,14 @@
+ # here causes the static library to be built at that time.
  .PHONY: install.staticlib
  install.staticlib: lib$(LIBROOT).a
 -	$(INSTALL) -c -m $(INSTALL_PERM_LIBS) $< $(INSTALLLIBS)/$<
 +	${BSD_INSTALL_DATA} $< $(INSTALLLIBS)/$<
  
  .PHONY: install.lib.common
- ifeq ($(NETPBMLIBSUFFIX),so)
  # install a shared library
 -install.lib.common: lib$(LIBROOT).so.$(MAJ).$(MIN) 
 -	cd $(INSTALLLIBS) ; rm -f lib$(LIBROOT).so.$(MAJ).*
@@ -95,6 +94,6 @@
 +	${BSD_INSTALL_DATA} $< $(INSTALLLIBS)
  	cd $(INSTALLLIBS) ; rm -f lib$(LIBROOT).so; ln -s $< lib$(LIBROOT).so
 -	cd $(INSTALLLIBS) ; rm -f $(SONAME); ln -s $< $(SONAME)
- endif
  
  .PHONY: clean.common
+ clean.common:

@@ -1,16 +1,11 @@
---- ppm/Makefile.orig	Sat Jul  1 03:26:39 2000
-+++ ppm/Makefile	Sat Jul 15 00:00:00 2000
-@@ -3,8 +3,7 @@
+--- ppm/Makefile.orig	Fri Aug  4 08:45:03 2000
++++ ppm/Makefile	Sat Aug  5 00:00:00 2000
+@@ -21,26 +21,30 @@
+ NETPBMLIBS = $(LIBPPM) $(PBMDIR)/$(LIBPBM) $(PGMDIR)/$(LIBPGM)
+ LIBLIBS = $(PBMDIR)/$(LIBPBM) $(PGMDIR)/$(LIBPGM)
  
- LIBROOT = ppm
- LIBPPM = lib$(LIBROOT).$(NETPBMLIBSUFFIX)
--MAJ = 9
--MIN = 5
 +SOVER = 1
- 
- PGMDIR = $(SRCDIR)/pgm
- LIBPGM = libpgm.$(NETPBMLIBSUFFIX)
-@@ -24,23 +23,25 @@
++
  PORTBINARIES =	bmptoppm eyuvtoppm gouldtoppm hpcdtoppm ilbmtoppm imgtoppm \
  		leaftoppm mtvtoppm pcxtoppm pgmtoppm pi1toppm picttoppm \
  		pjtoppm \
@@ -39,7 +34,7 @@
  ifneq ($(JPEGLIB_DIR), NONE)
    ifneq ($(JPEGHDR_DIR), NONE)
        NOMERGEBINARIES += ppmtojpeg
-@@ -49,7 +50,7 @@
+@@ -49,7 +53,7 @@
  
  MERGEBINARIES = $(PORTBINARIES) $(MATHBINARIES)
  
@@ -48,7 +43,7 @@
  BINARIES = $(MERGEBINARIES) $(NOMERGEBINARIES) 
  SCRIPTS = ppmquantall ppmshadow ppmfade
  
-@@ -58,6 +59,8 @@
+@@ -58,6 +62,8 @@
  MERGE_OBJECTS = $(patsubst %,%.o2, $(MERGEBINARIES))
  
  LIBOBJECTS = libppm1.o libppm2.o libppm3.o libppm4.o libppm5.o bitio.o
@@ -57,7 +52,7 @@
  
  MANUALS1 = $(BINARIES) $(SCRIPTS)
  MANUALS3 = libppm
-@@ -65,18 +68,24 @@
+@@ -65,18 +71,24 @@
  
  MERGENAME= ppmmerge
  
@@ -73,12 +68,12 @@
  
 -ppmtojpeg: %: %.o $(NETPBMLIBS) $(LIBOPT)
 +$(SHHOPTBINARIES): %: %.o $(NETPBMLIBS) $(LIBOPT) $(LIBSHHOPT)
- 	$(LD) $(LDFLAGS) -o $@ $@.o `$(LIBOPT) $(NETPBMLIBS)` \
--	  -L$(JPEGLIB_DIR) -ljpeg $(CDEBUG)
++	$(LD) $(LDFLAGS) -o $@ $@.o `$(LIBOPT) $(NETPBMLIBS)` \
 +	  $(LIBSHHOPT) $(CDEBUG)
 +
 +ppmntsc: %: %.o $(NETPBMLIBS) $(LIBOPT) $(LIBSHHOPT)
-+	$(LD) $(LDFLAGS) -o $@ $@.o `$(LIBOPT) $(NETPBMLIBS)` \
+ 	$(LD) $(LDFLAGS) -o $@ $@.o `$(LIBOPT) $(NETPBMLIBS)` \
+-	  -L$(JPEGLIB_DIR) -ljpeg $(CDEBUG)
 +	  -lm $(LIBSHHOPT) $(CDEBUG)
 +
 +ppmtojpeg: %: %.o $(NETPBMLIBS) $(LIBOPT) $(LIBSHHOPT)
@@ -87,7 +82,7 @@
  
  # And libraries.
  $(PBMDIR)/$(LIBPBM): FORCE
-@@ -89,19 +98,19 @@
+@@ -89,19 +101,19 @@
  
  .PHONY: install.merge
  install.merge: install.merge.common
