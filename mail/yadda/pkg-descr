@@ -1,0 +1,9 @@
+Yadda - Yet Another Damn Delivery Agent is a
+fully featured mail delivery agent, with support for Maildir++
+and softquotas. It also supports filtering, and SQL-usage.
+It's written entirely in Perl and uses Mail::Audit which is
+available from CPAN. It's compatible with RFC2033 (LMTP) 
+and works great with postfix, and other LHLO/LMTP-fluent MTA's.
+
+Author:	Jesper Noehr <jesper@noehr.org>
+WWW:	http://code.printf.dk/~decius/yadda/
