@@ -9,9 +9,9 @@ diff -ur ../../nmh-1.0.2-DIST/Makefile.in ./Makefile.in
  INSTALL_DATA    = @INSTALL_DATA@
  
  .SUFFIXES:
-diff -ur ../../nmh-1.0.2-DIST/etc/Makefile.in ./etc/Makefile.in
---- ../../nmh-1.0.2-DIST/etc/Makefile.in	Thu Jul 15 17:43:04 1999
-+++ ./etc/Makefile.in	Sat Dec 11 12:12:53 1999
+diff -ur ../../../nmh-1.0.3-DIST/etc/Makefile.in ./etc/Makefile.in
+--- ../../../nmh-1.0.3-DIST/etc/Makefile.in	Thu Jan  6 13:30:07 2000
++++ ./etc/Makefile.in	Mon Feb 28 10:20:34 2000
 @@ -20,6 +20,7 @@
  
  INSTALL         = @INSTALL@
@@ -22,25 +22,10 @@ diff -ur ../../nmh-1.0.2-DIST/etc/Makefile.in ./etc/Makefile.in
  # Path to search for programs to handle MIME
 @@ -89,7 +90,7 @@
  install-scripts:
- 	$(top_srcdir)/mkinstalldirs $(libdir)
+ 	$(top_srcdir)/mkinstalldirs $(bindir)
  	for script in $(SCRIPTS); do \
--	  $(INSTALL_PROGRAM) $(srcdir)/$$script $(libdir)/$$script; \
-+	  $(INSTALL_SCRIPT) $(srcdir)/$$script $(libdir)/$$script; \
+-	  $(INSTALL_PROGRAM) $(srcdir)/$$script $(bindir)/$$script; \
++	  $(INSTALL_SCRIPT) $(srcdir)/$$script $(bindir)/$$script; \
  	done
  
  uninstall: uninstall-files uninstall-scripts
-diff -ur ../../nmh-1.0.2-DIST/man/Makefile.in ./man/Makefile.in
---- ../../nmh-1.0.2-DIST/man/Makefile.in	Wed Oct 13 07:56:41 1999
-+++ ./man/Makefile.in	Sat Dec 11 11:52:33 1999
-@@ -146,8 +146,9 @@
- 	  $(INSTALL_DATA) $$file $(mandir)/man$(manext5) ; \
- 	done
- 	if [ ! -f mh_profile.$(manext5) ] ; then \
--	  ( cd $(mandir)/man$(manext5) ; ln mh-profile.$(manext5) \
--            mh_profile.$(manext5) ) \
-+	  ( cd $(mandir)/man$(manext5) ; \
-+	    rm -f mh_profile.$(manext5) ; \
-+	    ln mh-profile.$(manext5) mh_profile.$(manext5) ) \
- 	fi
- 
- # install the man pages in man8

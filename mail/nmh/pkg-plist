@@ -18,7 +18,6 @@ bin/mhparam
 bin/mhpath
 bin/mhshow
 bin/mhstore
-bin/mhtest
 bin/msgchk
 bin/msh
 bin/next
@@ -32,6 +31,7 @@ bin/rmf
 bin/rmm
 bin/scan
 bin/send
+bin/sendfiles
 bin/show
 bin/sortm
 bin/viamail
@@ -68,12 +68,12 @@ libexec/nmh/dp
 libexec/nmh/fmtdump
 libexec/nmh/install-mh
 libexec/nmh/mhl
+libexec/nmh/mhtest
 libexec/nmh/post
 libexec/nmh/rcvdist
 libexec/nmh/rcvpack
 libexec/nmh/rcvstore
 libexec/nmh/rcvtty
-libexec/nmh/sendfiles
 libexec/nmh/slocal
 libexec/nmh/spost
 @dirrm etc/nmh

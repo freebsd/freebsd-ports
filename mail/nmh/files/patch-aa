@@ -1,19 +1,21 @@
---- ../../../nmh-1.0.2-DIST/acconfig.h	Thu Oct 21 11:58:09 1999
-+++ ./acconfig.h	Fri Dec 24 13:50:12 1999
-@@ -22,10 +22,10 @@
+diff -ur ../../../nmh-1.0.3-DIST/acconfig.h ./acconfig.h
+--- ../../../nmh-1.0.3-DIST/acconfig.h	Mon Jan 24 22:13:38 2000
++++ ./acconfig.h	Mon Feb 28 10:20:34 2000
+@@ -22,10 +22,13 @@
   * other programs which may modify your maildrops.
   * Currently you can only use one type.
   */
--#define DOT_LOCKING   1
-+/* #define DOT_LOCKING   1 */
++#if 0
++/* Patched to be specified in CFLAGS by FreeBSD port. */
+ #define DOT_LOCKING   1
  /* #define FCNTL_LOCKING 1 */
  /* #define LOCKF_LOCKING 1 */
--/* #define FLOCK_LOCKING 1 */
-+#define FLOCK_LOCKING 1
+ /* #define FLOCK_LOCKING 1 */
++#endif
  
  /*
   * If you have defined DOT_LOCKING, then the default is to
-@@ -104,7 +104,7 @@
+@@ -104,7 +107,7 @@
   * The prefix which is prepended to the name of messages when they
   * are "removed" by rmm.  This should typically be `,' or `#'
   */
@@ -22,7 +24,7 @@
  
  /*
   * Name of link to file to which you are replying.
-@@ -128,11 +128,11 @@
+@@ -128,11 +131,11 @@
  /* Defined for Solaris 2.x, Irix, OSF/1, HP-UX, AIX */
  #undef SVR4
  /* Defined for SunOS 4, FreeBSD, NetBSD, OpenBSD, BSD/OS, Mac OS X/Rhapsody */
@@ -36,7 +38,7 @@
  
  /* Defined for SCO5 */
  #undef SCO_5_STDIO
-@@ -231,7 +231,7 @@
+@@ -231,7 +234,7 @@
   * not world writable.  There are no guarantees as to the safety of doing this,
   * but this #define will add some extra security checks.
   */
