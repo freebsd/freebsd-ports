@@ -25,6 +25,7 @@ bin/sqlr-scaler
 bin/sqlr-start
 bin/sqlr-stop
 bin/sqlrsh
+etc/rc.d/sqlrelay
 etc/sqlrelay.conf.example
 etc/sqlrelay.dtd
 include/sqlrelay/private/bindvar.h

@@ -21,7 +21,9 @@ USE_ICONV=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		PTHREADINCLUDES="${PTHREAD_CFLAGS}" \
+		PTHREADLIBS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	${SQLRELAY_CONFIGURE_ARGS} \
 		--without-java-prefix \
 		--without-perl-prefix \
@@ -29,6 +31,7 @@ CONFIGURE_ARGS=	${SQLRELAY_CONFIGURE_ARGS} \
 		--without-python-prefix \
 		--without-ruby-prefix \
 		--without-zope-prefix
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 MAKE_ARGS=	VERSION="${PORTVERSION:R}"
 INSTALLS_SHLIB=	yes
 
@@ -69,7 +72,7 @@ IF_SQLITE=	"@comment "
 .endif
 
 .if defined(WITH_MYSQL) && ${WITH_MYSQL:L} != no
-LIB_DEPENDS+=		mysqlclient.10:${PORTSDIR}/databases/mysql323-client
+USE_MYSQL=	yes
 CONFIGURE_ARGS+=	--with-mysql-prefix="${LOCALBASE}"
 IF_MYSQL=	""
 .else
@@ -149,17 +152,6 @@ MAN8=		sqlr-connection.8 sqlr-cachemanager.8 sqlr-ipclean.8 \
 #  --with-interbase-prefix       Location of Interbase
 #  --with-db2-prefix             Location of DB2
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		"Broken pkg-plist"
-.endif
-
-#post-extract:
-#	${MKDIR} ${WRKDIR}/prefixes/libxml
-#	${LN} -s ${LOCALBASE}/include/libxml2 ${WRKDIR}/prefixes/libxml/include
-#	${LN} -s ${LOCALBASE}/lib ${WRKDIR}/prefixes/libxml/lib
-
 post-patch:
 	${REINPLACE_CMD} -E \
 		-e 's,/usr/local[[:>:]],${PREFIX},g;' \
@@ -172,4 +164,4 @@ post-patch:
 	${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${REINPLACE_CMD} -E \
 		-e 's#-release \$$\(SQLR_VERSION\)##g;'
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

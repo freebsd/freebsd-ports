@@ -1,18 +1,11 @@
---- config.mk.in.orig	Tue Dec 16 19:05:34 2003
-+++ config.mk.in	Wed May 26 16:34:41 2004
-@@ -14,13 +14,13 @@
+--- config.mk.in.orig	Tue Dec 30 20:17:23 2003
++++ config.mk.in	Fri May 28 15:59:37 2004
+@@ -14,7 +14,7 @@
  exec_prefix= @exec_prefix@
- incdir = @includedir@
+ includedir = @includedir@
  libdir = @libdir@
 -javadir = ${exec_prefix}/java
 +javadir = ${exec_prefix}/share/java/classes
  libexecdir = @libexecdir@
  bindir = @bindir@
  localstatedir = @localstatedir@
- sysconfdir = @sysconfdir@
- mandir = @mandir@
--docdir = ${prefix}/doc/sqlrelay
-+docdir = ${prefix}/share/doc/sqlrelay
- tmpdir = ${localstatedir}/sqlrelay/tmp
- cachedir = ${localstatedir}/sqlrelay/cache
- debugdir = ${localstatedir}/sqlrelay/debug

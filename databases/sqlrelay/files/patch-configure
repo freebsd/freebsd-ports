@@ -1,5 +1,16 @@
---- configure.orig	Tue Dec 16 19:06:16 2003
-+++ configure	Wed May 26 17:56:40 2004
+--- configure.orig	Mon Dec 22 02:27:22 2003
++++ configure	Fri May 28 16:00:26 2004
+@@ -19395,8 +19395,8 @@
+ 
+ 
+ HAVE_PTHREAD=""
+-PTHREADINCLUDES=""
+-PTHREADLIBS=""
++#PTHREADINCLUDES=""
++#PTHREADLIBS=""
+ 
+ if ( test "$cross_compiling" = "yes" )
+ then
 @@ -37573,13 +37573,7 @@
  
  			if ( test -n "$JAVAINCLUDES" )
