@@ -7256,6 +7256,7 @@ ports_pam_krb5	ports/security/pam_krb5
 ports_patch	ports/devel/patch
 ports_picobsd	ports/picobsd
 ports_pkg_install	ports/sysutils/pkg_install
+ports_pkg_install-devel	ports/sysutils/pkg_install-devel
 ports_polish	ports/polish
 ports_portuguese	ports/portuguese
 ports_pr	ports/comms/pr
