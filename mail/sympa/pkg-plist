@@ -1,6 +1,6 @@
+etc/rc.d/sympa.sh
 etc/sympa.conf
 etc/wwsympa.conf
-etc/rc.d/sympa.sh
 sympa/bin/Archive.pm
 sympa/bin/Auth.pm
 sympa/bin/CAS.pm
@@ -71,39 +71,48 @@ sympa/bin/etc/scenari/access_web_archive.private
 sympa/bin/etc/scenari/access_web_archive.public
 sympa/bin/etc/scenari/add.auth
 sympa/bin/etc/scenari/add.closed
+sympa/bin/etc/scenari/add.default
 sympa/bin/etc/scenari/add.owner
 sympa/bin/etc/scenari/add.owner_notify
 sympa/bin/etc/scenari/create_list.intranet
 sympa/bin/etc/scenari/create_list.listmaster
 sympa/bin/etc/scenari/create_list.public_listmaster
+sympa/bin/etc/scenari/d_edit.default
 sympa/bin/etc/scenari/d_edit.owner
 sympa/bin/etc/scenari/d_edit.private
 sympa/bin/etc/scenari/d_edit.public
+sympa/bin/etc/scenari/d_read.default
 sympa/bin/etc/scenari/d_read.owner
 sympa/bin/etc/scenari/d_read.private
 sympa/bin/etc/scenari/d_read.public
 sympa/bin/etc/scenari/del.auth
 sympa/bin/etc/scenari/del.closed
+sympa/bin/etc/scenari/del.default
 sympa/bin/etc/scenari/del.owner
 sympa/bin/etc/scenari/del.owner_notify
 sympa/bin/etc/scenari/edit_list.closed
 sympa/bin/etc/scenari/edit_list.owner
 sympa/bin/etc/scenari/global_remind.listmaster
+sympa/bin/etc/scenari/info.default
 sympa/bin/etc/scenari/info.open
 sympa/bin/etc/scenari/info.private
 sympa/bin/etc/scenari/invite.closed
+sympa/bin/etc/scenari/invite.default
 sympa/bin/etc/scenari/invite.owner
 sympa/bin/etc/scenari/invite.private
 sympa/bin/etc/scenari/invite.public
+sympa/bin/etc/scenari/remind.default
 sympa/bin/etc/scenari/remind.listmaster
 sympa/bin/etc/scenari/remind.owner
 sympa/bin/etc/scenari/review.closed
+sympa/bin/etc/scenari/review.default
 sympa/bin/etc/scenari/review.intranet
 sympa/bin/etc/scenari/review.listmaster
 sympa/bin/etc/scenari/review.owner
 sympa/bin/etc/scenari/review.private
 sympa/bin/etc/scenari/review.public
 sympa/bin/etc/scenari/send.closed
+sympa/bin/etc/scenari/send.default
 sympa/bin/etc/scenari/send.editor
 sympa/bin/etc/scenari/send.editorkey
 sympa/bin/etc/scenari/send.editorkeyonly
@@ -129,6 +138,7 @@ sympa/bin/etc/scenari/subscribe.auth
 sympa/bin/etc/scenari/subscribe.auth_notify
 sympa/bin/etc/scenari/subscribe.auth_owner
 sympa/bin/etc/scenari/subscribe.closed
+sympa/bin/etc/scenari/subscribe.default
 sympa/bin/etc/scenari/subscribe.intranet
 sympa/bin/etc/scenari/subscribe.intranetorowner
 sympa/bin/etc/scenari/subscribe.open
@@ -138,15 +148,18 @@ sympa/bin/etc/scenari/subscribe.owner
 sympa/bin/etc/scenari/subscribe.smime
 sympa/bin/etc/scenari/subscribe.smimeorowner
 sympa/bin/etc/scenari/topics_visibility.conceal
+sympa/bin/etc/scenari/topics_visibility.default
 sympa/bin/etc/scenari/topics_visibility.identified
 sympa/bin/etc/scenari/topics_visibility.noconceal
 sympa/bin/etc/scenari/unsubscribe.auth
 sympa/bin/etc/scenari/unsubscribe.auth_notify
 sympa/bin/etc/scenari/unsubscribe.closed
+sympa/bin/etc/scenari/unsubscribe.default
 sympa/bin/etc/scenari/unsubscribe.open
 sympa/bin/etc/scenari/unsubscribe.open_notify
 sympa/bin/etc/scenari/unsubscribe.owner
 sympa/bin/etc/scenari/visibility.conceal
+sympa/bin/etc/scenari/visibility.default
 sympa/bin/etc/scenari/visibility.intranet
 sympa/bin/etc/scenari/visibility.noconceal
 sympa/bin/etc/scenari/visibility.secret
@@ -163,12 +176,14 @@ sympa/bin/etc/templates/bye.nl.tpl
 sympa/bin/etc/templates/bye.pl.tpl
 sympa/bin/etc/templates/bye.pt.tpl
 sympa/bin/etc/templates/bye.ro.tpl
+sympa/bin/etc/templates/bye.tpl
 sympa/bin/etc/templates/bye.us.tpl
 sympa/bin/etc/templates/certif_warning.et.tpl
 sympa/bin/etc/templates/certif_warning.fi.tpl
 sympa/bin/etc/templates/certif_warning.fr.tpl
 sympa/bin/etc/templates/certif_warning.nl.tpl
 sympa/bin/etc/templates/certif_warning.ro.tpl
+sympa/bin/etc/templates/certif_warning.tpl
 sympa/bin/etc/templates/certif_warning.us.tpl
 sympa/bin/etc/templates/digest.cn.tpl
 sympa/bin/etc/templates/digest.cz.tpl
@@ -182,6 +197,7 @@ sympa/bin/etc/templates/digest.it.tpl
 sympa/bin/etc/templates/digest.nl.tpl
 sympa/bin/etc/templates/digest.pl.tpl
 sympa/bin/etc/templates/digest.ro.tpl
+sympa/bin/etc/templates/digest.tpl
 sympa/bin/etc/templates/digest.tw.tpl
 sympa/bin/etc/templates/digest.us.tpl
 sympa/bin/etc/templates/expire_deletion.et.tpl
@@ -189,18 +205,21 @@ sympa/bin/etc/templates/expire_deletion.fi.tpl
 sympa/bin/etc/templates/expire_deletion.fr.tpl
 sympa/bin/etc/templates/expire_deletion.nl.tpl
 sympa/bin/etc/templates/expire_deletion.ro.tpl
+sympa/bin/etc/templates/expire_deletion.tpl
 sympa/bin/etc/templates/expire_deletion.us.tpl
 sympa/bin/etc/templates/expire_warning1.et.tpl
 sympa/bin/etc/templates/expire_warning1.fi.tpl
 sympa/bin/etc/templates/expire_warning1.fr.tpl
 sympa/bin/etc/templates/expire_warning1.nl.tpl
 sympa/bin/etc/templates/expire_warning1.ro.tpl
+sympa/bin/etc/templates/expire_warning1.tpl
 sympa/bin/etc/templates/expire_warning1.us.tpl
 sympa/bin/etc/templates/expire_warning2.et.tpl
 sympa/bin/etc/templates/expire_warning2.fi.tpl
 sympa/bin/etc/templates/expire_warning2.fr.tpl
 sympa/bin/etc/templates/expire_warning2.nl.tpl
 sympa/bin/etc/templates/expire_warning2.ro.tpl
+sympa/bin/etc/templates/expire_warning2.tpl
 sympa/bin/etc/templates/expire_warning2.us.tpl
 sympa/bin/etc/templates/global_remind.cz.tpl
 sympa/bin/etc/templates/global_remind.de.tpl
@@ -214,6 +233,7 @@ sympa/bin/etc/templates/global_remind.nl.tpl
 sympa/bin/etc/templates/global_remind.pl.tpl
 sympa/bin/etc/templates/global_remind.pt.tpl
 sympa/bin/etc/templates/global_remind.ro.tpl
+sympa/bin/etc/templates/global_remind.tpl
 sympa/bin/etc/templates/global_remind.us.tpl
 sympa/bin/etc/templates/helpfile.cz.tpl
 sympa/bin/etc/templates/helpfile.de.tpl
@@ -227,6 +247,7 @@ sympa/bin/etc/templates/helpfile.nl.tpl
 sympa/bin/etc/templates/helpfile.pl.tpl
 sympa/bin/etc/templates/helpfile.pt.tpl
 sympa/bin/etc/templates/helpfile.ro.tpl
+sympa/bin/etc/templates/helpfile.tpl
 sympa/bin/etc/templates/helpfile.us.tpl
 sympa/bin/etc/templates/info_report.cz.tpl
 sympa/bin/etc/templates/info_report.de.tpl
@@ -239,6 +260,7 @@ sympa/bin/etc/templates/info_report.it.tpl
 sympa/bin/etc/templates/info_report.nl.tpl
 sympa/bin/etc/templates/info_report.pl.tpl
 sympa/bin/etc/templates/info_report.ro.tpl
+sympa/bin/etc/templates/info_report.tpl
 sympa/bin/etc/templates/info_report.us.tpl
 sympa/bin/etc/templates/invite.cz.tpl
 sympa/bin/etc/templates/invite.de.tpl
@@ -252,28 +274,34 @@ sympa/bin/etc/templates/invite.nl.tpl
 sympa/bin/etc/templates/invite.pl.tpl
 sympa/bin/etc/templates/invite.pt.tpl
 sympa/bin/etc/templates/invite.ro.tpl
+sympa/bin/etc/templates/invite.tpl
 sympa/bin/etc/templates/invite.us.tpl
 sympa/bin/etc/templates/list_created.et.tpl
 sympa/bin/etc/templates/list_created.fi.tpl
 sympa/bin/etc/templates/list_created.fr.tpl
 sympa/bin/etc/templates/list_created.nl.tpl
 sympa/bin/etc/templates/list_created.ro.tpl
+sympa/bin/etc/templates/list_created.tpl
 sympa/bin/etc/templates/list_created.us.tpl
 sympa/bin/etc/templates/list_rejected.fr.tpl
+sympa/bin/etc/templates/list_rejected.tpl
 sympa/bin/etc/templates/list_rejected.us.tpl
 sympa/bin/etc/templates/list_unknown.et.tpl
 sympa/bin/etc/templates/list_unknown.fi.tpl
 sympa/bin/etc/templates/list_unknown.nl.tpl
 sympa/bin/etc/templates/list_unknown.ro.tpl
+sympa/bin/etc/templates/list_unknown.tpl
 sympa/bin/etc/templates/list_unknown.us.tpl
 sympa/bin/etc/templates/listmaster_notification.et.tpl
 sympa/bin/etc/templates/listmaster_notification.fi.tpl
 sympa/bin/etc/templates/listmaster_notification.fr.tpl
 sympa/bin/etc/templates/listmaster_notification.nl.tpl
+sympa/bin/etc/templates/listmaster_notification.tpl
 sympa/bin/etc/templates/listmaster_notification.us.tpl
 sympa/bin/etc/templates/listowner_notification.fi.tpl
 sympa/bin/etc/templates/listowner_notification.fr.tpl
 sympa/bin/etc/templates/listowner_notification.nl.tpl
+sympa/bin/etc/templates/listowner_notification.tpl
 sympa/bin/etc/templates/listowner_notification.us.tpl
 sympa/bin/etc/templates/listowner_notification2.ro.tpl
 sympa/bin/etc/templates/lists.cz.tpl
@@ -287,6 +315,7 @@ sympa/bin/etc/templates/lists.it.tpl
 sympa/bin/etc/templates/lists.nl.tpl
 sympa/bin/etc/templates/lists.pt.tpl
 sympa/bin/etc/templates/lists.ro.tpl
+sympa/bin/etc/templates/lists.tpl
 sympa/bin/etc/templates/lists.us.tpl
 sympa/bin/etc/templates/moderate.cz.tpl
 sympa/bin/etc/templates/moderate.de.tpl
@@ -299,6 +328,7 @@ sympa/bin/etc/templates/moderate.it.tpl
 sympa/bin/etc/templates/moderate.nl.tpl
 sympa/bin/etc/templates/moderate.pl.tpl
 sympa/bin/etc/templates/moderate.ro.tpl
+sympa/bin/etc/templates/moderate.tpl
 sympa/bin/etc/templates/moderate.us.tpl
 sympa/bin/etc/templates/modindex.cz.tpl
 sympa/bin/etc/templates/modindex.de.tpl
@@ -311,6 +341,7 @@ sympa/bin/etc/templates/modindex.it.tpl
 sympa/bin/etc/templates/modindex.nl.tpl
 sympa/bin/etc/templates/modindex.pl.tpl
 sympa/bin/etc/templates/modindex.ro.tpl
+sympa/bin/etc/templates/modindex.tpl
 sympa/bin/etc/templates/modindex.us.tpl
 sympa/bin/etc/templates/reject.cz.tpl
 sympa/bin/etc/templates/reject.de.tpl
@@ -323,6 +354,7 @@ sympa/bin/etc/templates/reject.nl.tpl
 sympa/bin/etc/templates/reject.pl.tpl
 sympa/bin/etc/templates/reject.pt.tpl
 sympa/bin/etc/templates/reject.ro.tpl
+sympa/bin/etc/templates/reject.tpl
 sympa/bin/etc/templates/reject.us.tpl
 sympa/bin/etc/templates/remind.cz.tpl
 sympa/bin/etc/templates/remind.de.tpl
@@ -336,6 +368,7 @@ sympa/bin/etc/templates/remind.nl.tpl
 sympa/bin/etc/templates/remind.pl.tpl
 sympa/bin/etc/templates/remind.pt.tpl
 sympa/bin/etc/templates/remind.ro.tpl
+sympa/bin/etc/templates/remind.tpl
 sympa/bin/etc/templates/remind.us.tpl
 sympa/bin/etc/templates/removed.cz.tpl
 sympa/bin/etc/templates/removed.de.tpl
@@ -349,6 +382,7 @@ sympa/bin/etc/templates/removed.nl.tpl
 sympa/bin/etc/templates/removed.pl.tpl
 sympa/bin/etc/templates/removed.pt.tpl
 sympa/bin/etc/templates/removed.ro.tpl
+sympa/bin/etc/templates/removed.tpl
 sympa/bin/etc/templates/removed.us.tpl
 sympa/bin/etc/templates/review.cz.tpl
 sympa/bin/etc/templates/review.de.tpl
@@ -361,6 +395,7 @@ sympa/bin/etc/templates/review.it.tpl
 sympa/bin/etc/templates/review.nl.tpl
 sympa/bin/etc/templates/review.pl.tpl
 sympa/bin/etc/templates/review.ro.tpl
+sympa/bin/etc/templates/review.tpl
 sympa/bin/etc/templates/review.us.tpl
 sympa/bin/etc/templates/sendpasswd.cn.tpl
 sympa/bin/etc/templates/sendpasswd.cz.tpl
@@ -373,6 +408,7 @@ sympa/bin/etc/templates/sendpasswd.hu.tpl
 sympa/bin/etc/templates/sendpasswd.it.tpl
 sympa/bin/etc/templates/sendpasswd.nl.tpl
 sympa/bin/etc/templates/sendpasswd.ro.tpl
+sympa/bin/etc/templates/sendpasswd.tpl
 sympa/bin/etc/templates/sendpasswd.us.tpl
 sympa/bin/etc/templates/stats_report.cz.tpl
 sympa/bin/etc/templates/stats_report.de.tpl
@@ -385,15 +421,19 @@ sympa/bin/etc/templates/stats_report.it.tpl
 sympa/bin/etc/templates/stats_report.nl.tpl
 sympa/bin/etc/templates/stats_report.pl.tpl
 sympa/bin/etc/templates/stats_report.ro.tpl
+sympa/bin/etc/templates/stats_report.tpl
 sympa/bin/etc/templates/stats_report.us.tpl
 sympa/bin/etc/templates/subscriber_notification.fr.tpl
+sympa/bin/etc/templates/subscriber_notification.tpl
 sympa/bin/etc/templates/subscriber_notification.us.tpl
 sympa/bin/etc/templates/summary.et.tpl
 sympa/bin/etc/templates/summary.fi.tpl
 sympa/bin/etc/templates/summary.nl.tpl
 sympa/bin/etc/templates/summary.ro.tpl
+sympa/bin/etc/templates/summary.tpl
 sympa/bin/etc/templates/summary.us.tpl
 sympa/bin/etc/templates/urlized_part.fr.tpl
+sympa/bin/etc/templates/urlized_part.tpl
 sympa/bin/etc/templates/urlized_part.us.tpl
 sympa/bin/etc/templates/welcome.cz.tpl
 sympa/bin/etc/templates/welcome.de.tpl
@@ -407,6 +447,7 @@ sympa/bin/etc/templates/welcome.nl.tpl
 sympa/bin/etc/templates/welcome.pl.tpl
 sympa/bin/etc/templates/welcome.pt.tpl
 sympa/bin/etc/templates/welcome.ro.tpl
+sympa/bin/etc/templates/welcome.tpl
 sympa/bin/etc/templates/welcome.us.tpl
 sympa/bin/etc/templates/x509-user-cert-missing.cz.tpl
 sympa/bin/etc/templates/x509-user-cert-missing.de.tpl
@@ -416,6 +457,7 @@ sympa/bin/etc/templates/x509-user-cert-missing.fr.tpl
 sympa/bin/etc/templates/x509-user-cert-missing.hu.tpl
 sympa/bin/etc/templates/x509-user-cert-missing.nl.tpl
 sympa/bin/etc/templates/x509-user-cert-missing.ro.tpl
+sympa/bin/etc/templates/x509-user-cert-missing.tpl
 sympa/bin/etc/templates/x509-user-cert-missing.us.tpl
 sympa/bin/etc/templates/your_infected_msg.de.tpl
 sympa/bin/etc/templates/your_infected_msg.et.tpl
@@ -424,6 +466,7 @@ sympa/bin/etc/templates/your_infected_msg.fr.tpl
 sympa/bin/etc/templates/your_infected_msg.it.tpl
 sympa/bin/etc/templates/your_infected_msg.nl.tpl
 sympa/bin/etc/templates/your_infected_msg.ro.tpl
+sympa/bin/etc/templates/your_infected_msg.tpl
 sympa/bin/etc/templates/your_infected_msg.us.tpl
 sympa/bin/etc/topics.conf
 sympa/bin/etc/wws_templates/add_request.cn.tpl
@@ -437,6 +480,7 @@ sympa/bin/etc/wws_templates/add_request.hu.tpl
 sympa/bin/etc/wws_templates/add_request.it.tpl
 sympa/bin/etc/wws_templates/add_request.nl.tpl
 sympa/bin/etc/wws_templates/add_request.ro.tpl
+sympa/bin/etc/wws_templates/add_request.tpl
 sympa/bin/etc/wws_templates/add_request.us.tpl
 sympa/bin/etc/wws_templates/admin.cn.tpl
 sympa/bin/etc/wws_templates/admin.cz.tpl
@@ -448,6 +492,7 @@ sympa/bin/etc/wws_templates/admin.fr.tpl
 sympa/bin/etc/wws_templates/admin.hu.tpl
 sympa/bin/etc/wws_templates/admin.it.tpl
 sympa/bin/etc/wws_templates/admin.ro.tpl
+sympa/bin/etc/wws_templates/admin.tpl
 sympa/bin/etc/wws_templates/admin.us.tpl
 sympa/bin/etc/wws_templates/admin_menu.cn.tpl
 sympa/bin/etc/wws_templates/admin_menu.cz.tpl
@@ -460,6 +505,7 @@ sympa/bin/etc/wws_templates/admin_menu.hu.tpl
 sympa/bin/etc/wws_templates/admin_menu.it.tpl
 sympa/bin/etc/wws_templates/admin_menu.nl.tpl
 sympa/bin/etc/wws_templates/admin_menu.ro.tpl
+sympa/bin/etc/wws_templates/admin_menu.tpl
 sympa/bin/etc/wws_templates/admin_menu.us.tpl
 sympa/bin/etc/wws_templates/arc.cn.tpl
 sympa/bin/etc/wws_templates/arc.cz.tpl
@@ -472,8 +518,10 @@ sympa/bin/etc/wws_templates/arc.hu.tpl
 sympa/bin/etc/wws_templates/arc.it.tpl
 sympa/bin/etc/wws_templates/arc.nl.tpl
 sympa/bin/etc/wws_templates/arc.ro.tpl
+sympa/bin/etc/wws_templates/arc.tpl
 sympa/bin/etc/wws_templates/arc.us.tpl
 sympa/bin/etc/wws_templates/arc_manage.fr.tpl
+sympa/bin/etc/wws_templates/arc_manage.tpl
 sympa/bin/etc/wws_templates/arc_manage.us.tpl
 sympa/bin/etc/wws_templates/arc_protect.cn.tpl
 sympa/bin/etc/wws_templates/arc_protect.cz.tpl
@@ -486,6 +534,7 @@ sympa/bin/etc/wws_templates/arc_protect.hu.tpl
 sympa/bin/etc/wws_templates/arc_protect.it.tpl
 sympa/bin/etc/wws_templates/arc_protect.nl.tpl
 sympa/bin/etc/wws_templates/arc_protect.ro.tpl
+sympa/bin/etc/wws_templates/arc_protect.tpl
 sympa/bin/etc/wws_templates/arc_protect.us.tpl
 sympa/bin/etc/wws_templates/arcsearch.cn.tpl
 sympa/bin/etc/wws_templates/arcsearch.cz.tpl
@@ -498,6 +547,7 @@ sympa/bin/etc/wws_templates/arcsearch.hu.tpl
 sympa/bin/etc/wws_templates/arcsearch.it.tpl
 sympa/bin/etc/wws_templates/arcsearch.nl.tpl
 sympa/bin/etc/wws_templates/arcsearch.ro.tpl
+sympa/bin/etc/wws_templates/arcsearch.tpl
 sympa/bin/etc/wws_templates/arcsearch.us.tpl
 sympa/bin/etc/wws_templates/arcsearch_form.cn.tpl
 sympa/bin/etc/wws_templates/arcsearch_form.cz.tpl
@@ -510,10 +560,13 @@ sympa/bin/etc/wws_templates/arcsearch_form.hu.tpl
 sympa/bin/etc/wws_templates/arcsearch_form.it.tpl
 sympa/bin/etc/wws_templates/arcsearch_form.nl.tpl
 sympa/bin/etc/wws_templates/arcsearch_form.ro.tpl
+sympa/bin/etc/wws_templates/arcsearch_form.tpl
 sympa/bin/etc/wws_templates/arcsearch_form.us.tpl
 sympa/bin/etc/wws_templates/button_footer.fi.tpl
+sympa/bin/etc/wws_templates/button_footer.tpl
 sympa/bin/etc/wws_templates/button_footer.us.tpl
 sympa/bin/etc/wws_templates/button_header.fi.tpl
+sympa/bin/etc/wws_templates/button_header.tpl
 sympa/bin/etc/wws_templates/button_header.us.tpl
 sympa/bin/etc/wws_templates/change_email.cn.tpl
 sympa/bin/etc/wws_templates/change_email.cz.tpl
@@ -526,6 +579,7 @@ sympa/bin/etc/wws_templates/change_email.hu.tpl
 sympa/bin/etc/wws_templates/change_email.it.tpl
 sympa/bin/etc/wws_templates/change_email.nl.tpl
 sympa/bin/etc/wws_templates/change_email.ro.tpl
+sympa/bin/etc/wws_templates/change_email.tpl
 sympa/bin/etc/wws_templates/change_email.us.tpl
 sympa/bin/etc/wws_templates/choosepasswd.cn.tpl
 sympa/bin/etc/wws_templates/choosepasswd.cz.tpl
@@ -538,6 +592,7 @@ sympa/bin/etc/wws_templates/choosepasswd.hu.tpl
 sympa/bin/etc/wws_templates/choosepasswd.it.tpl
 sympa/bin/etc/wws_templates/choosepasswd.nl.tpl
 sympa/bin/etc/wws_templates/choosepasswd.ro.tpl
+sympa/bin/etc/wws_templates/choosepasswd.tpl
 sympa/bin/etc/wws_templates/choosepasswd.us.tpl
 sympa/bin/etc/wws_templates/close_list.cn.tpl
 sympa/bin/etc/wws_templates/close_list.cz.tpl
@@ -550,6 +605,7 @@ sympa/bin/etc/wws_templates/close_list.hu.tpl
 sympa/bin/etc/wws_templates/close_list.it.tpl
 sympa/bin/etc/wws_templates/close_list.nl.tpl
 sympa/bin/etc/wws_templates/close_list.ro.tpl
+sympa/bin/etc/wws_templates/close_list.tpl
 sympa/bin/etc/wws_templates/close_list.us.tpl
 sympa/bin/etc/wws_templates/close_list_request.es.tpl
 sympa/bin/etc/wws_templates/compose_mail.cn.tpl
@@ -562,6 +618,7 @@ sympa/bin/etc/wws_templates/compose_mail.fr.tpl
 sympa/bin/etc/wws_templates/compose_mail.hu.tpl
 sympa/bin/etc/wws_templates/compose_mail.nl.tpl
 sympa/bin/etc/wws_templates/compose_mail.ro.tpl
+sympa/bin/etc/wws_templates/compose_mail.tpl
 sympa/bin/etc/wws_templates/compose_mail.us.tpl
 sympa/bin/etc/wws_templates/create_list.cn.tpl
 sympa/bin/etc/wws_templates/create_list.cz.tpl
@@ -574,6 +631,7 @@ sympa/bin/etc/wws_templates/create_list.hu.tpl
 sympa/bin/etc/wws_templates/create_list.it.tpl
 sympa/bin/etc/wws_templates/create_list.nl.tpl
 sympa/bin/etc/wws_templates/create_list.ro.tpl
+sympa/bin/etc/wws_templates/create_list.tpl
 sympa/bin/etc/wws_templates/create_list.us.tpl
 sympa/bin/etc/wws_templates/create_list_request.cn.tpl
 sympa/bin/etc/wws_templates/create_list_request.cz.tpl
@@ -586,6 +644,7 @@ sympa/bin/etc/wws_templates/create_list_request.hu.tpl
 sympa/bin/etc/wws_templates/create_list_request.it.tpl
 sympa/bin/etc/wws_templates/create_list_request.nl.tpl
 sympa/bin/etc/wws_templates/create_list_request.ro.tpl
+sympa/bin/etc/wws_templates/create_list_request.tpl
 sympa/bin/etc/wws_templates/create_list_request.us.tpl
 sympa/bin/etc/wws_templates/d_control.cn.tpl
 sympa/bin/etc/wws_templates/d_control.cz.tpl
@@ -598,6 +657,7 @@ sympa/bin/etc/wws_templates/d_control.hu.tpl
 sympa/bin/etc/wws_templates/d_control.it.tpl
 sympa/bin/etc/wws_templates/d_control.nl.tpl
 sympa/bin/etc/wws_templates/d_control.ro.tpl
+sympa/bin/etc/wws_templates/d_control.tpl
 sympa/bin/etc/wws_templates/d_control.us.tpl
 sympa/bin/etc/wws_templates/d_editfile.cn.tpl
 sympa/bin/etc/wws_templates/d_editfile.cz.tpl
@@ -610,6 +670,7 @@ sympa/bin/etc/wws_templates/d_editfile.hu.tpl
 sympa/bin/etc/wws_templates/d_editfile.it.tpl
 sympa/bin/etc/wws_templates/d_editfile.nl.tpl
 sympa/bin/etc/wws_templates/d_editfile.ro.tpl
+sympa/bin/etc/wws_templates/d_editfile.tpl
 sympa/bin/etc/wws_templates/d_editfile.us.tpl
 sympa/bin/etc/wws_templates/d_read.cn.tpl
 sympa/bin/etc/wws_templates/d_read.cz.tpl
@@ -622,6 +683,7 @@ sympa/bin/etc/wws_templates/d_read.hu.tpl
 sympa/bin/etc/wws_templates/d_read.it.tpl
 sympa/bin/etc/wws_templates/d_read.nl.tpl
 sympa/bin/etc/wws_templates/d_read.ro.tpl
+sympa/bin/etc/wws_templates/d_read.tpl
 sympa/bin/etc/wws_templates/d_read.us.tpl
 sympa/bin/etc/wws_templates/edit_list_request.cn.tpl
 sympa/bin/etc/wws_templates/edit_list_request.cz.tpl
@@ -634,6 +696,7 @@ sympa/bin/etc/wws_templates/edit_list_request.hu.tpl
 sympa/bin/etc/wws_templates/edit_list_request.it.tpl
 sympa/bin/etc/wws_templates/edit_list_request.nl.tpl
 sympa/bin/etc/wws_templates/edit_list_request.ro.tpl
+sympa/bin/etc/wws_templates/edit_list_request.tpl
 sympa/bin/etc/wws_templates/edit_list_request.us.tpl
 sympa/bin/etc/wws_templates/editfile.cn.tpl
 sympa/bin/etc/wws_templates/editfile.cz.tpl
@@ -646,6 +709,7 @@ sympa/bin/etc/wws_templates/editfile.hu.tpl
 sympa/bin/etc/wws_templates/editfile.it.tpl
 sympa/bin/etc/wws_templates/editfile.nl.tpl
 sympa/bin/etc/wws_templates/editfile.ro.tpl
+sympa/bin/etc/wws_templates/editfile.tpl
 sympa/bin/etc/wws_templates/editfile.us.tpl
 sympa/bin/etc/wws_templates/editsubscriber.cn.tpl
 sympa/bin/etc/wws_templates/editsubscriber.cz.tpl
@@ -658,6 +722,7 @@ sympa/bin/etc/wws_templates/editsubscriber.hu.tpl
 sympa/bin/etc/wws_templates/editsubscriber.it.tpl
 sympa/bin/etc/wws_templates/editsubscriber.nl.tpl
 sympa/bin/etc/wws_templates/editsubscriber.ro.tpl
+sympa/bin/etc/wws_templates/editsubscriber.tpl
 sympa/bin/etc/wws_templates/editsubscriber.us.tpl
 sympa/bin/etc/wws_templates/error.cn.tpl
 sympa/bin/etc/wws_templates/error.cz.tpl
@@ -670,6 +735,7 @@ sympa/bin/etc/wws_templates/error.hu.tpl
 sympa/bin/etc/wws_templates/error.it.tpl
 sympa/bin/etc/wws_templates/error.nl.tpl
 sympa/bin/etc/wws_templates/error.ro.tpl
+sympa/bin/etc/wws_templates/error.tpl
 sympa/bin/etc/wws_templates/error.us.tpl
 sympa/bin/etc/wws_templates/get_closed_lists.es.tpl
 sympa/bin/etc/wws_templates/get_closed_lists.et.tpl
@@ -677,7 +743,9 @@ sympa/bin/etc/wws_templates/get_closed_lists.fi.tpl
 sympa/bin/etc/wws_templates/get_closed_lists.fr.tpl
 sympa/bin/etc/wws_templates/get_closed_lists.nl.tpl
 sympa/bin/etc/wws_templates/get_closed_lists.ro.tpl
+sympa/bin/etc/wws_templates/get_closed_lists.tpl
 sympa/bin/etc/wws_templates/get_closed_lists.us.tpl
+sympa/bin/etc/wws_templates/get_inactive_lists.tpl
 sympa/bin/etc/wws_templates/get_inactive_lists.us.tpl
 sympa/bin/etc/wws_templates/get_latest_lists.es.tpl
 sympa/bin/etc/wws_templates/get_latest_lists.et.tpl
@@ -685,6 +753,7 @@ sympa/bin/etc/wws_templates/get_latest_lists.fi.tpl
 sympa/bin/etc/wws_templates/get_latest_lists.fr.tpl
 sympa/bin/etc/wws_templates/get_latest_lists.nl.tpl
 sympa/bin/etc/wws_templates/get_latest_lists.ro.tpl
+sympa/bin/etc/wws_templates/get_latest_lists.tpl
 sympa/bin/etc/wws_templates/get_latest_lists.us.tpl
 sympa/bin/etc/wws_templates/get_pending_lists.cn.tpl
 sympa/bin/etc/wws_templates/get_pending_lists.cz.tpl
@@ -697,6 +766,7 @@ sympa/bin/etc/wws_templates/get_pending_lists.hu.tpl
 sympa/bin/etc/wws_templates/get_pending_lists.it.tpl
 sympa/bin/etc/wws_templates/get_pending_lists.nl.tpl
 sympa/bin/etc/wws_templates/get_pending_lists.ro.tpl
+sympa/bin/etc/wws_templates/get_pending_lists.tpl
 sympa/bin/etc/wws_templates/get_pending_lists.us.tpl
 sympa/bin/etc/wws_templates/help.cn.tpl
 sympa/bin/etc/wws_templates/help.cz.tpl
@@ -709,6 +779,7 @@ sympa/bin/etc/wws_templates/help.hu.tpl
 sympa/bin/etc/wws_templates/help.it.tpl
 sympa/bin/etc/wws_templates/help.nl.tpl
 sympa/bin/etc/wws_templates/help.ro.tpl
+sympa/bin/etc/wws_templates/help.tpl
 sympa/bin/etc/wws_templates/help.us.tpl
 sympa/bin/etc/wws_templates/help_admin.cn.tpl
 sympa/bin/etc/wws_templates/help_admin.cz.tpl
@@ -721,6 +792,7 @@ sympa/bin/etc/wws_templates/help_admin.hu.tpl
 sympa/bin/etc/wws_templates/help_admin.it.tpl
 sympa/bin/etc/wws_templates/help_admin.nl.tpl
 sympa/bin/etc/wws_templates/help_admin.ro.tpl
+sympa/bin/etc/wws_templates/help_admin.tpl
 sympa/bin/etc/wws_templates/help_admin.us.tpl
 sympa/bin/etc/wws_templates/help_editfile.cn.tpl
 sympa/bin/etc/wws_templates/help_editfile.cz.tpl
@@ -733,6 +805,7 @@ sympa/bin/etc/wws_templates/help_editfile.hu.tpl
 sympa/bin/etc/wws_templates/help_editfile.it.tpl
 sympa/bin/etc/wws_templates/help_editfile.nl.tpl
 sympa/bin/etc/wws_templates/help_editfile.ro.tpl
+sympa/bin/etc/wws_templates/help_editfile.tpl
 sympa/bin/etc/wws_templates/help_editfile.us.tpl
 sympa/bin/etc/wws_templates/help_editlist.cn.tpl
 sympa/bin/etc/wws_templates/help_editlist.cz.tpl
@@ -745,6 +818,7 @@ sympa/bin/etc/wws_templates/help_editlist.hu.tpl
 sympa/bin/etc/wws_templates/help_editlist.it.tpl
 sympa/bin/etc/wws_templates/help_editlist.nl.tpl
 sympa/bin/etc/wws_templates/help_editlist.ro.tpl
+sympa/bin/etc/wws_templates/help_editlist.tpl
 sympa/bin/etc/wws_templates/help_editlist.us.tpl
 sympa/bin/etc/wws_templates/help_user_options.es.tpl
 sympa/bin/etc/wws_templates/help_user_options.et.tpl
@@ -752,6 +826,7 @@ sympa/bin/etc/wws_templates/help_user_options.fi.tpl
 sympa/bin/etc/wws_templates/help_user_options.fr.tpl
 sympa/bin/etc/wws_templates/help_user_options.nl.tpl
 sympa/bin/etc/wws_templates/help_user_options.ro.tpl
+sympa/bin/etc/wws_templates/help_user_options.tpl
 sympa/bin/etc/wws_templates/help_user_options.us.tpl
 sympa/bin/etc/wws_templates/home.cn.tpl
 sympa/bin/etc/wws_templates/home.cz.tpl
@@ -764,9 +839,11 @@ sympa/bin/etc/wws_templates/home.hu.tpl
 sympa/bin/etc/wws_templates/home.it.tpl
 sympa/bin/etc/wws_templates/home.nl.tpl
 sympa/bin/etc/wws_templates/home.ro.tpl
+sympa/bin/etc/wws_templates/home.tpl
 sympa/bin/etc/wws_templates/home.us.tpl
 sympa/bin/etc/wws_templates/info.de.tpl
 sympa/bin/etc/wws_templates/info.fi.tpl
+sympa/bin/etc/wws_templates/info.tpl
 sympa/bin/etc/wws_templates/info.us.tpl
 sympa/bin/etc/wws_templates/install_pending_list.cn.tpl
 sympa/bin/etc/wws_templates/install_pending_list.cz.tpl
@@ -779,10 +856,13 @@ sympa/bin/etc/wws_templates/install_pending_list.hu.tpl
 sympa/bin/etc/wws_templates/install_pending_list.it.tpl
 sympa/bin/etc/wws_templates/install_pending_list.nl.tpl
 sympa/bin/etc/wws_templates/install_pending_list.ro.tpl
+sympa/bin/etc/wws_templates/install_pending_list.tpl
 sympa/bin/etc/wws_templates/install_pending_list.us.tpl
 sympa/bin/etc/wws_templates/list_button_footer.fi.tpl
+sympa/bin/etc/wws_templates/list_button_footer.tpl
 sympa/bin/etc/wws_templates/list_button_footer.us.tpl
 sympa/bin/etc/wws_templates/list_button_header.fi.tpl
+sympa/bin/etc/wws_templates/list_button_header.tpl
 sympa/bin/etc/wws_templates/list_button_header.us.tpl
 sympa/bin/etc/wws_templates/list_menu.cn.tpl
 sympa/bin/etc/wws_templates/list_menu.cz.tpl
@@ -795,6 +875,7 @@ sympa/bin/etc/wws_templates/list_menu.hu.tpl
 sympa/bin/etc/wws_templates/list_menu.it.tpl
 sympa/bin/etc/wws_templates/list_menu.nl.tpl
 sympa/bin/etc/wws_templates/list_menu.ro.tpl
+sympa/bin/etc/wws_templates/list_menu.tpl
 sympa/bin/etc/wws_templates/list_menu.us.tpl
 sympa/bin/etc/wws_templates/lists.cn.tpl
 sympa/bin/etc/wws_templates/lists.cz.tpl
@@ -807,6 +888,7 @@ sympa/bin/etc/wws_templates/lists.hu.tpl
 sympa/bin/etc/wws_templates/lists.it.tpl
 sympa/bin/etc/wws_templates/lists.nl.tpl
 sympa/bin/etc/wws_templates/lists.ro.tpl
+sympa/bin/etc/wws_templates/lists.tpl
 sympa/bin/etc/wws_templates/lists.us.tpl
 sympa/bin/etc/wws_templates/login.cn.tpl
 sympa/bin/etc/wws_templates/login.de.tpl
@@ -817,6 +899,7 @@ sympa/bin/etc/wws_templates/login.fr.tpl
 sympa/bin/etc/wws_templates/login.hu.tpl
 sympa/bin/etc/wws_templates/login.nl.tpl
 sympa/bin/etc/wws_templates/login.ro.tpl
+sympa/bin/etc/wws_templates/login.tpl
 sympa/bin/etc/wws_templates/login.us.tpl
 sympa/bin/etc/wws_templates/loginbanner.cn.tpl
 sympa/bin/etc/wws_templates/loginbanner.cz.tpl
@@ -829,6 +912,7 @@ sympa/bin/etc/wws_templates/loginbanner.hu.tpl
 sympa/bin/etc/wws_templates/loginbanner.it.tpl
 sympa/bin/etc/wws_templates/loginbanner.nl.tpl
 sympa/bin/etc/wws_templates/loginbanner.ro.tpl
+sympa/bin/etc/wws_templates/loginbanner.tpl
 sympa/bin/etc/wws_templates/loginbanner.us.tpl
 sympa/bin/etc/wws_templates/loginrequest.cn.tpl
 sympa/bin/etc/wws_templates/loginrequest.cz.tpl
@@ -840,7 +924,9 @@ sympa/bin/etc/wws_templates/loginrequest.fr.tpl
 sympa/bin/etc/wws_templates/loginrequest.hu.tpl
 sympa/bin/etc/wws_templates/loginrequest.it.tpl
 sympa/bin/etc/wws_templates/loginrequest.ro.tpl
+sympa/bin/etc/wws_templates/loginrequest.tpl
 sympa/bin/etc/wws_templates/loginrequest.us.tpl
+sympa/bin/etc/wws_templates/main.tpl
 sympa/bin/etc/wws_templates/main.us.tpl
 sympa/bin/etc/wws_templates/menu.cn.tpl
 sympa/bin/etc/wws_templates/menu.cz.tpl
@@ -853,6 +939,7 @@ sympa/bin/etc/wws_templates/menu.hu.tpl
 sympa/bin/etc/wws_templates/menu.it.tpl
 sympa/bin/etc/wws_templates/menu.nl.tpl
 sympa/bin/etc/wws_templates/menu.ro.tpl
+sympa/bin/etc/wws_templates/menu.tpl
 sympa/bin/etc/wws_templates/menu.us.tpl
 sympa/bin/etc/wws_templates/modindex.cn.tpl
 sympa/bin/etc/wws_templates/modindex.cz.tpl
@@ -865,6 +952,7 @@ sympa/bin/etc/wws_templates/modindex.hu.tpl
 sympa/bin/etc/wws_templates/modindex.it.tpl
 sympa/bin/etc/wws_templates/modindex.nl.tpl
 sympa/bin/etc/wws_templates/modindex.ro.tpl
+sympa/bin/etc/wws_templates/modindex.tpl
 sympa/bin/etc/wws_templates/modindex.us.tpl
 sympa/bin/etc/wws_templates/notice.cn.tpl
 sympa/bin/etc/wws_templates/notice.cz.tpl
@@ -877,6 +965,7 @@ sympa/bin/etc/wws_templates/notice.hu.tpl
 sympa/bin/etc/wws_templates/notice.it.tpl
 sympa/bin/etc/wws_templates/notice.nl.tpl
 sympa/bin/etc/wws_templates/notice.ro.tpl
+sympa/bin/etc/wws_templates/notice.tpl
 sympa/bin/etc/wws_templates/notice.us.tpl
 sympa/bin/etc/wws_templates/pref.cn.tpl
 sympa/bin/etc/wws_templates/pref.cz.tpl
@@ -889,6 +978,7 @@ sympa/bin/etc/wws_templates/pref.hu.tpl
 sympa/bin/etc/wws_templates/pref.it.tpl
 sympa/bin/etc/wws_templates/pref.nl.tpl
 sympa/bin/etc/wws_templates/pref.ro.tpl
+sympa/bin/etc/wws_templates/pref.tpl
 sympa/bin/etc/wws_templates/pref.us.tpl
 sympa/bin/etc/wws_templates/remindpasswd.cn.tpl
 sympa/bin/etc/wws_templates/remindpasswd.cz.tpl
@@ -901,6 +991,7 @@ sympa/bin/etc/wws_templates/remindpasswd.hu.tpl
 sympa/bin/etc/wws_templates/remindpasswd.it.tpl
 sympa/bin/etc/wws_templates/remindpasswd.nl.tpl
 sympa/bin/etc/wws_templates/remindpasswd.ro.tpl
+sympa/bin/etc/wws_templates/remindpasswd.tpl
 sympa/bin/etc/wws_templates/remindpasswd.us.tpl
 sympa/bin/etc/wws_templates/remove_arc.cn.tpl
 sympa/bin/etc/wws_templates/remove_arc.cz.tpl
@@ -913,8 +1004,10 @@ sympa/bin/etc/wws_templates/remove_arc.hu.tpl
 sympa/bin/etc/wws_templates/remove_arc.it.tpl
 sympa/bin/etc/wws_templates/remove_arc.nl.tpl
 sympa/bin/etc/wws_templates/remove_arc.ro.tpl
+sympa/bin/etc/wws_templates/remove_arc.tpl
 sympa/bin/etc/wws_templates/remove_arc.us.tpl
 sympa/bin/etc/wws_templates/rename_list_request.fr.tpl
+sympa/bin/etc/wws_templates/rename_list_request.tpl
 sympa/bin/etc/wws_templates/rename_list_request.us.tpl
 sympa/bin/etc/wws_templates/review.cn.tpl
 sympa/bin/etc/wws_templates/review.cz.tpl
@@ -927,6 +1020,7 @@ sympa/bin/etc/wws_templates/review.hu.tpl
 sympa/bin/etc/wws_templates/review.it.tpl
 sympa/bin/etc/wws_templates/review.nl.tpl
 sympa/bin/etc/wws_templates/review.ro.tpl
+sympa/bin/etc/wws_templates/review.tpl
 sympa/bin/etc/wws_templates/review.us.tpl
 sympa/bin/etc/wws_templates/reviewbouncing.cn.tpl
 sympa/bin/etc/wws_templates/reviewbouncing.cz.tpl
@@ -939,6 +1033,7 @@ sympa/bin/etc/wws_templates/reviewbouncing.hu.tpl
 sympa/bin/etc/wws_templates/reviewbouncing.it.tpl
 sympa/bin/etc/wws_templates/reviewbouncing.nl.tpl
 sympa/bin/etc/wws_templates/reviewbouncing.ro.tpl
+sympa/bin/etc/wws_templates/reviewbouncing.tpl
 sympa/bin/etc/wws_templates/reviewbouncing.us.tpl
 sympa/bin/etc/wws_templates/scenario_test.cn.tpl
 sympa/bin/etc/wws_templates/scenario_test.cz.tpl
@@ -950,7 +1045,47 @@ sympa/bin/etc/wws_templates/scenario_test.hu.tpl
 sympa/bin/etc/wws_templates/scenario_test.it.tpl
 sympa/bin/etc/wws_templates/scenario_test.nl.tpl
 sympa/bin/etc/wws_templates/scenario_test.ro.tpl
+sympa/bin/etc/wws_templates/scenario_test.tpl
 sympa/bin/etc/wws_templates/scenario_test.us.tpl
+sympa/bin/etc/wws_templates/search.cn.tpl
+sympa/bin/etc/wws_templates/search.cz.tpl
+sympa/bin/etc/wws_templates/search.de.tpl
+sympa/bin/etc/wws_templates/search.es.tpl
+sympa/bin/etc/wws_templates/search.et.tpl
+sympa/bin/etc/wws_templates/search.fi.tpl
+sympa/bin/etc/wws_templates/search.fr.tpl
+sympa/bin/etc/wws_templates/search.hu.tpl
+sympa/bin/etc/wws_templates/search.it.tpl
+sympa/bin/etc/wws_templates/search.nl.tpl
+sympa/bin/etc/wws_templates/search.ro.tpl
+sympa/bin/etc/wws_templates/search.tpl
+sympa/bin/etc/wws_templates/search.us.tpl
+sympa/bin/etc/wws_templates/search_list.cn.tpl
+sympa/bin/etc/wws_templates/search_list.cz.tpl
+sympa/bin/etc/wws_templates/search_list.de.tpl
+sympa/bin/etc/wws_templates/search_list.es.tpl
+sympa/bin/etc/wws_templates/search_list.et.tpl
+sympa/bin/etc/wws_templates/search_list.fi.tpl
+sympa/bin/etc/wws_templates/search_list.fr.tpl
+sympa/bin/etc/wws_templates/search_list.hu.tpl
+sympa/bin/etc/wws_templates/search_list.it.tpl
+sympa/bin/etc/wws_templates/search_list.nl.tpl
+sympa/bin/etc/wws_templates/search_list.ro.tpl
+sympa/bin/etc/wws_templates/search_list.tpl
+sympa/bin/etc/wws_templates/search_list.us.tpl
+sympa/bin/etc/wws_templates/search_user.cn.tpl
+sympa/bin/etc/wws_templates/search_user.cz.tpl
+sympa/bin/etc/wws_templates/search_user.de.tpl
+sympa/bin/etc/wws_templates/search_user.es.tpl
+sympa/bin/etc/wws_templates/search_user.et.tpl
+sympa/bin/etc/wws_templates/search_user.fi.tpl
+sympa/bin/etc/wws_templates/search_user.fr.tpl
+sympa/bin/etc/wws_templates/search_user.hu.tpl
+sympa/bin/etc/wws_templates/search_user.it.tpl
+sympa/bin/etc/wws_templates/search_user.nl.tpl
+sympa/bin/etc/wws_templates/search_user.ro.tpl
+sympa/bin/etc/wws_templates/search_user.tpl
+sympa/bin/etc/wws_templates/search_user.us.tpl
 sympa/bin/etc/wws_templates/serveradmin.cn.tpl
 sympa/bin/etc/wws_templates/serveradmin.cz.tpl
 sympa/bin/etc/wws_templates/serveradmin.de.tpl
@@ -962,6 +1097,7 @@ sympa/bin/etc/wws_templates/serveradmin.hu.tpl
 sympa/bin/etc/wws_templates/serveradmin.it.tpl
 sympa/bin/etc/wws_templates/serveradmin.nl.tpl
 sympa/bin/etc/wws_templates/serveradmin.ro.tpl
+sympa/bin/etc/wws_templates/serveradmin.tpl
 sympa/bin/etc/wws_templates/serveradmin.us.tpl
 sympa/bin/etc/wws_templates/set_pending_list_request.cn.tpl
 sympa/bin/etc/wws_templates/set_pending_list_request.cz.tpl
@@ -974,6 +1110,7 @@ sympa/bin/etc/wws_templates/set_pending_list_request.hu.tpl
 sympa/bin/etc/wws_templates/set_pending_list_request.it.tpl
 sympa/bin/etc/wws_templates/set_pending_list_request.nl.tpl
 sympa/bin/etc/wws_templates/set_pending_list_request.ro.tpl
+sympa/bin/etc/wws_templates/set_pending_list_request.tpl
 sympa/bin/etc/wws_templates/set_pending_list_request.us.tpl
 sympa/bin/etc/wws_templates/show_cert.cn.tpl
 sympa/bin/etc/wws_templates/show_cert.cz.tpl
@@ -985,6 +1122,7 @@ sympa/bin/etc/wws_templates/show_cert.fr.tpl
 sympa/bin/etc/wws_templates/show_cert.hu.tpl
 sympa/bin/etc/wws_templates/show_cert.nl.tpl
 sympa/bin/etc/wws_templates/show_cert.ro.tpl
+sympa/bin/etc/wws_templates/show_cert.tpl
 sympa/bin/etc/wws_templates/show_cert.us.tpl
 sympa/bin/etc/wws_templates/sigrequest.cn.tpl
 sympa/bin/etc/wws_templates/sigrequest.cz.tpl
@@ -997,10 +1135,13 @@ sympa/bin/etc/wws_templates/sigrequest.hu.tpl
 sympa/bin/etc/wws_templates/sigrequest.it.tpl
 sympa/bin/etc/wws_templates/sigrequest.nl.tpl
 sympa/bin/etc/wws_templates/sigrequest.ro.tpl
+sympa/bin/etc/wws_templates/sigrequest.tpl
 sympa/bin/etc/wws_templates/sigrequest.us.tpl
+sympa/bin/etc/wws_templates/sso_login_succeeded.tpl
 sympa/bin/etc/wws_templates/sso_login_succeeded.us.tpl
 sympa/bin/etc/wws_templates/stats.fi.tpl
 sympa/bin/etc/wws_templates/stats.nl.tpl
+sympa/bin/etc/wws_templates/stats.tpl
 sympa/bin/etc/wws_templates/stats.us.tpl
 sympa/bin/etc/wws_templates/subindex.cn.tpl
 sympa/bin/etc/wws_templates/subindex.es.tpl
@@ -1009,6 +1150,7 @@ sympa/bin/etc/wws_templates/subindex.fi.tpl
 sympa/bin/etc/wws_templates/subindex.fr.tpl
 sympa/bin/etc/wws_templates/subindex.nl.tpl
 sympa/bin/etc/wws_templates/subindex.ro.tpl
+sympa/bin/etc/wws_templates/subindex.tpl
 sympa/bin/etc/wws_templates/subindex.us.tpl
 sympa/bin/etc/wws_templates/suboptions.cn.tpl
 sympa/bin/etc/wws_templates/suboptions.cz.tpl
@@ -1021,6 +1163,7 @@ sympa/bin/etc/wws_templates/suboptions.hu.tpl
 sympa/bin/etc/wws_templates/suboptions.it.tpl
 sympa/bin/etc/wws_templates/suboptions.nl.tpl
 sympa/bin/etc/wws_templates/suboptions.ro.tpl
+sympa/bin/etc/wws_templates/suboptions.tpl
 sympa/bin/etc/wws_templates/suboptions.us.tpl
 sympa/bin/etc/wws_templates/subrequest.cn.tpl
 sympa/bin/etc/wws_templates/subrequest.cz.tpl
@@ -1033,6 +1176,7 @@ sympa/bin/etc/wws_templates/subrequest.hu.tpl
 sympa/bin/etc/wws_templates/subrequest.it.tpl
 sympa/bin/etc/wws_templates/subrequest.nl.tpl
 sympa/bin/etc/wws_templates/subrequest.ro.tpl
+sympa/bin/etc/wws_templates/subrequest.tpl
 sympa/bin/etc/wws_templates/subrequest.us.tpl
 sympa/bin/etc/wws_templates/title.cn.tpl
 sympa/bin/etc/wws_templates/title.cz.tpl
@@ -1045,8 +1189,11 @@ sympa/bin/etc/wws_templates/title.hu.tpl
 sympa/bin/etc/wws_templates/title.it.tpl
 sympa/bin/etc/wws_templates/title.nl.tpl
 sympa/bin/etc/wws_templates/title.ro.tpl
+sympa/bin/etc/wws_templates/title.tpl
 sympa/bin/etc/wws_templates/title.us.tpl
+sympa/bin/etc/wws_templates/translate.tpl
 sympa/bin/etc/wws_templates/translate.us.tpl
+sympa/bin/etc/wws_templates/view_template.tpl
 sympa/bin/etc/wws_templates/view_template.us.tpl
 sympa/bin/etc/wws_templates/view_translations.cn.tpl
 sympa/bin/etc/wws_templates/view_translations.cz.tpl
@@ -1059,7 +1206,9 @@ sympa/bin/etc/wws_templates/view_translations.hu.tpl
 sympa/bin/etc/wws_templates/view_translations.it.tpl
 sympa/bin/etc/wws_templates/view_translations.nl.tpl
 sympa/bin/etc/wws_templates/view_translations.ro.tpl
+sympa/bin/etc/wws_templates/view_translations.tpl
 sympa/bin/etc/wws_templates/view_translations.us.tpl
+sympa/bin/etc/wws_templates/viewbounce.tpl
 sympa/bin/etc/wws_templates/viewbounce.us.tpl
 sympa/bin/etc/wws_templates/viewmod.cn.tpl
 sympa/bin/etc/wws_templates/viewmod.cz.tpl
@@ -1072,7 +1221,21 @@ sympa/bin/etc/wws_templates/viewmod.hu.tpl
 sympa/bin/etc/wws_templates/viewmod.it.tpl
 sympa/bin/etc/wws_templates/viewmod.nl.tpl
 sympa/bin/etc/wws_templates/viewmod.ro.tpl
+sympa/bin/etc/wws_templates/viewmod.tpl
 sympa/bin/etc/wws_templates/viewmod.us.tpl
+sympa/bin/etc/wws_templates/which.cn.tpl
+sympa/bin/etc/wws_templates/which.cz.tpl
+sympa/bin/etc/wws_templates/which.de.tpl
+sympa/bin/etc/wws_templates/which.es.tpl
+sympa/bin/etc/wws_templates/which.et.tpl
+sympa/bin/etc/wws_templates/which.fi.tpl
+sympa/bin/etc/wws_templates/which.fr.tpl
+sympa/bin/etc/wws_templates/which.hu.tpl
+sympa/bin/etc/wws_templates/which.it.tpl
+sympa/bin/etc/wws_templates/which.nl.tpl
+sympa/bin/etc/wws_templates/which.ro.tpl
+sympa/bin/etc/wws_templates/which.tpl
+sympa/bin/etc/wws_templates/which.us.tpl
 sympa/bin/init_comment.pl
 sympa/bin/load_subscribers.pl
 sympa/bin/mail.pm
@@ -1094,6 +1257,7 @@ sympa/bin/tools.pl
 sympa/bin/virtualwrapper
 sympa/bin/wwslib.pm
 sympa/bin/wwsympa.fcgi
+sympa/bin/wwsympa-wrapper
 sympa/doc/contents.png
 sympa/doc/crossref.png
 sympa/doc/img1.old
@@ -1178,19 +1342,14 @@ sympa/sample/wwsympa.conf
 @dirrm sympa/sample
 @dirrm sympa/nls
 @dirrm sympa/expl
-@dirrm sympa/etc/wws_templates
-@dirrm sympa/etc/templates
-@dirrm sympa/etc/task_models
-@dirrm sympa/etc/scenari
-@dirrm sympa/etc/general_task_models
-@dirrm sympa/etc/create_list_templates
-@dirrm sympa/etc
 @dirrm sympa/doc
 @dirrm sympa/bin/etc/wws_templates
 @dirrm sympa/bin/etc/templates
+@dirrm sympa/bin/etc/task_models
 @dirrm sympa/bin/etc/scenari
 @dirrm sympa/bin/etc/list_task_models
 @dirrm sympa/bin/etc/global_task_models
+@dirrm sympa/bin/etc/general_task_models
 @dirrm sympa/bin/etc/create_list_templates/public_web_forum
 @dirrm sympa/bin/etc/create_list_templates/private_working_group
 @dirrm sympa/bin/etc/create_list_templates/news-letter

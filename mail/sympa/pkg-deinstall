@@ -3,13 +3,18 @@
 #
 
 if [ "$2" != "POST-DEINSTALL" ]; then
-    exit 0
+	exit 0
 fi
 
-USER=simpa
+USER=sympa
+GROUP=${USER}
+
+if pw groupshow "${USER}" 2>/dev/null 1>&2; then
+	echo "To delete the 'sympa' group permanently, use 'pw groupdel ${USER}'"
+fi
 
 if pw usershow "${USER}" 2>/dev/null 1>&2; then
-	echo "To delete Sympa user permanently, use 'pw userdel ${USER}'"
+	echo "To delete the 'sympa' user permanently, use 'pw userdel ${USER}'"
 fi
 
 exit 0

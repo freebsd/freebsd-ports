@@ -29,26 +29,27 @@
                   if [ "$running" != "" ]; then
                       echo "$1 (pid $pid) is active..."
                       return 0
-@@ -88,8 +94,8 @@
+@@ -88,7 +94,7 @@
  #		startparam=""
  #	fi
   
 -	if [ ${OSTYPE} = "IRIX" -o ${OSTYPE} = "SunOS" ]; then
--		$sympadir/$1.pl $startparam && echo "success" || echo "failure"
-+	if [ ${OSTYPE} = "IRIX" -o ${OSTYPE} = "FreeBSD" ]; then
-+		su -m sympa -c "$sympadir/$1.pl $startparam" && echo "success" || echo "failure"
++	if [ ${OSTYPE} = "IRIX" -o ${OSTYPE} = "SunOS" -o ${OSTYPE} = "FreeBSD" ]; then
+ 		$sympadir/$1.pl $startparam && echo "success" || echo "failure"
  	else
  		$sympadir/$1.pl $startparam && success || failure
- 	fi
-@@ -144,7 +150,7 @@
+@@ -144,9 +150,9 @@
  	if [ -f --PIDDIR--/$1.pid ]; then
  		echo $echo_opt "Stopping module $1.pl: "
  		pid=`head -1 --PIDDIR--/$1.pid`
 -		running=`ps -A | grep "$pid"`
 +		running=`ps -ax | grep perl | grep "$pid"`
  		if [ "$running" != "" ]; then
- 		    if [ ${OSTYPE} = "IRIX" ]; then
+-		    if [ ${OSTYPE} = "IRIX" ]; then
++		    if [ ${OSTYPE} = "IRIX" -o ${OSTYPE} = "FreeBSD" ]; then
  			kill -TERM $pid && echo "success" || echo "failure"
+ 		    elif [ ${OSTYPE} = "SunOS" ]; then
+ 			echo "Stopping module $1.pl: terminated"
 @@ -180,13 +186,13 @@
  # See how we were called.
  case "$1" in
