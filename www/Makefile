@@ -181,6 +181,7 @@
     SUBDIR += mod_fastcgi
     SUBDIR += mod_filter
     SUBDIR += mod_frontpage
+    SUBDIR += mod_geoip
     SUBDIR += mod_gzip
     SUBDIR += mod_hosts_access
     SUBDIR += mod_index_rss

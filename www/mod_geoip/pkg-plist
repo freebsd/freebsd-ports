@@ -1,0 +1,8 @@
+libexec/apache/mod_geoip.so
+@exec %D/sbin/apxs -e -A -n geoip %D/%F
+@unexec %D/sbin/apxs -e -A -n geoip %D/%F
+share/doc/mod_geoip/Changes
+share/doc/mod_geoip/INSTALL
+share/doc/mod_geoip/README
+share/doc/mod_geoip/README.php
+@dirrm share/doc/mod_geoip
