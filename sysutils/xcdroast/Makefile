@@ -27,6 +27,8 @@ MAKE_ENV+=	GTK_CONFIG="${GTK_CONFIG}" \
 		GLIB_CONFIG="${GLIB_CONFIG}" \
 		IMLIB_CONFIG="${IMLIB_CONFIG}"
 
+MAN1=		xcdroast.1
+
 post-patch:
 	for i in xcdroast.h Makefile ; do \
 	  ${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/$$i ; \
