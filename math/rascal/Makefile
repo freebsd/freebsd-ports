@@ -7,12 +7,14 @@
 #
 
 PORTNAME=	rascal
-PORTVERSION=	0.1.7
+PORTVERSION=	0.2.1
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
+
+LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
 
 USE_BISON=	yes
 
@@ -20,15 +22,7 @@ WRKSRC=		${WRKDIR}/Rascal-${PORTVERSION}
 USE_GMAKE=	yes
 ALL_TARGET=	
 
-DOCS=	modules.pdf modules.ps rascal.pdf rascal.ps
-
-do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/rascal ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/rascal
-.for file in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/rascal
-.endfor
-.endif
+post-patch:
+	@${PERL} -pi -e "s,%%LOCALBASE%%,${LOCALBASE},g" ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
