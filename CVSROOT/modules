@@ -2373,6 +2373,7 @@ halflifeserver	ports/games/halflifeserver
 hamlib		ports/comms/hamlib
 hammerhead	ports/sysutils/hammerhead
 happydoc	ports/devel/happydoc
+haproxy		ports/net/haproxy
 harvest		ports/www/harvest
 hashish		ports/security/hashish
 hawk		ports/net/hawk
