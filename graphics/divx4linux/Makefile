@@ -10,7 +10,7 @@ PORTVERSION=	5.0.${RELEASE_DATE}
 CATEGORIES=	graphics linux
 MASTER_SITES=	http://download.divx.com/divx/
 
-DISTNAME=	${PORTNAME}50-${RELEASE_DATE}
+DISTNAME=	${PORTNAME}501-${RELEASE_DATE}
 
 EXTRACT_SUFX=	.tgz
 
@@ -20,21 +20,22 @@ RESTRICTED=	unsure of licensing issues
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX_PREFIX=	yes
-WRKSRC=	${WRKDIR}/${DISTNAME:S/50-/-/}
+WRKSRC=	${WRKDIR}/${DISTNAME:S/501-/-/}
 NO_BUILD=	yes
 PLIST_SUB=	PKGNAME="${PKGNAME}"
 
-RELEASE_DATE=	20020304
+DOC_EXT=	htm linux txt
+RELEASE_DATE=	20020418
 
 post-patch:
-.for ext in linux txt
+.for ext in ${DOC_EXT}
 	@${PERL} -pi -e "s///" ${WRKSRC}/*.${ext}
 .endfor
 
 do-install:
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/usr/doc/${PKGNAME}
-.for ext in linux txt
+.for ext in ${DOC_EXT}
 	@${INSTALL_DATA} ${WRKSRC}/*.${ext} ${PREFIX}/usr/doc/${PKGNAME}
 .endfor
 .endif
