@@ -7,7 +7,7 @@
 
 PORTNAME=	mc-light
 PORTVERSION=	4.1.40.p9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc shells
 MASTER_SITES=	http://mc.linuxinside.com/Releases/
 DISTNAME=	mc-${PORTVERSION:S/.p9/-pre9/}
@@ -16,6 +16,7 @@ MAINTAINER=	sam@brj.pp.ru
 COMMENT=	A lightweight Midnight Commander clone
 
 RUN_DEPENDS+=	gawk:${PORTSDIR}/lang/gawk
+
 CONFLICTS=	mc-4.6*
 
 USE_GMAKE=	yes
@@ -39,5 +40,10 @@ PLIST_SUB+=	NLS=""
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
+
+post-install:
+.for i in a arfs audio cpio deb esp ftplist hp48 iso lha lslR mailfs patchfs rar rpm trpm uarj uha zip zoo
+	${CHMOD} 755 ${PREFIX}/share/mc/extfs/${i}
+.endfor
 
 .include <bsd.port.mk>
