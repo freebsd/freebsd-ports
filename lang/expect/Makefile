@@ -3,11 +3,11 @@
 # Date created:		20 November 1994
 # Whom:			pst
 #
-# $Id: Makefile,v 1.5 1995/04/15 05:44:32 asami Exp $
+# $Id: Makefile,v 1.6 1995/05/09 08:50:45 hsu Exp $
 #
 
 DISTNAME=	expect-5.16
-CATEGORIES+=	languages
+CATEGORIES+=	lang
 MASTER_SITES=	ftp://ftp.cme.nist.gov/pub/expect/
 DISTFILES=	expect.tar.gz
 

@@ -3,12 +3,12 @@
 # Date created:         08 March 1995
 # Whom:                 thomas@ghpc8.ihf.rwth-aachen.de
 #
-# $Id: Makefile,v 1.6 1995/04/24 11:29:00 asami Exp $
+# $Id: Makefile,v 1.7 1995/11/09 07:13:40 asami Exp $
 #
 
 DISTNAME=       elk-3.0
-CATEGORIES+=	languages
-KEYWORDS+=	languages scheme
+CATEGORIES+=	lang
+KEYWORDS+=	lang scheme
 MASTER_SITES=	ftp://crl.dec.com/pub/X11/contrib/devel_tools/ \
 		ftp://ftp.th-darmstadt.de/pub/X11/contrib/devel_tools/
 

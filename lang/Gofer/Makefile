@@ -3,12 +3,12 @@
 # Date created:         Wed Feb  1 01:51:59 PST 1995
 # Whom:                 hsu
 #
-# $Id: Makefile,v 1.4 1995/04/16 21:24:37 asami Exp $
+# $Id: Makefile,v 1.5 1995/04/24 11:25:09 asami Exp $
 #
 
 DISTNAME =	gofer230a
 PKGNAME =	gofer-2.30a
-CATEGORIES+=	languages
+CATEGORIES+=	lang
 MASTER_SITES =	ftp://cs.nott.ac.uk/nott-fp/languages/haskell/gofer/
 
 WRKSRC = ${WRKDIR}/src

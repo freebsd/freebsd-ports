@@ -3,12 +3,12 @@
 # Date created:         4 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.5 1995/04/15 05:44:43 asami Exp $
+# $Id: Makefile,v 1.6 1995/04/16 21:24:49 asami Exp $
 #
 
 DISTNAME=	p2c-1.21alpha-07.Dec.93
 PKGNAME=	p2c-1.21a
-CATEGORIES+=	languages
+CATEGORIES+=	lang
 MASTER_SITES=	ftp://src.doc.ic.ac.uk/gnu/hurd/
 DISTFILES=	p2c-1.21alpha2.tar.gz
 

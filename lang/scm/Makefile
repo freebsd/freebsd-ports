@@ -3,12 +3,12 @@
 # Date created:         Sat Nov  5 17:11:01 PST 1994
 # Whom:                 hsu
 #
-# $Id: Makefile,v 1.7 1995/04/24 11:29:27 asami Exp $
+# $Id: Makefile,v 1.8 1995/04/24 23:07:29 asami Exp $
 #
 
 DISTNAME=       scm
 PKGNAME=	scm-4e1
-CATEGORIES+=	languages
+CATEGORIES+=	lang
 MASTER_SITES=   ftp://swiss-ftp.ai.mit.edu/pub/scm/
 DISTFILES=      scm4e1.tar.gz \
 		slib.info.tar.gz slib2a2.tar.gz slib-psd1-3.tar.gz \

@@ -3,11 +3,11 @@
 # Date created:		9 Aug 1995
 # Whom:			msmith@atrad.adelaide.edu.au
 #
-# $Id: Makefile,v 1.1.1.1 1995/08/09 14:42:48 asami Exp $
+# $Id: Makefile,v 1.2 1995/08/09 14:46:58 asami Exp $
 #
 
 DISTNAME=	bwbasic-2.10
-CATEGORIES+=	languages
+CATEGORIES+=	lang
 MASTER_SITES=	ftp://ftp.eng.umd.edu/pub/basic/
 
 MAINTAINER=	msmith@atrad.adelaide.edu.au
