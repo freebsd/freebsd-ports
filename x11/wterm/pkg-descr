@@ -1,0 +1,13 @@
+wterm is an unofficial development branch of rxvt which adds true NeXT 
+style scrollbars, transparent backgrounds with optional shading, and 
+other additions. Unlike many other efforts, wterm aims to have
+its changed merged back into the parent rxvt rather than forking off 
+yet another seperate terminal emulator.
+
+Homepage:
+http://wm.current.nu/files.html#wterm
+Author:
+Anonymous Coder
+
+-Chris Piazza
+cpiazza@home.net
