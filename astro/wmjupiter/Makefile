@@ -15,11 +15,12 @@ COMMENT=	Dockapp that displays information on jupiter
 
 WRKSRC=		${WRKDIR}/wmJupiter
 USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
 USE_XPM=	yes
 USE_GMAKE=	yes
 
 pre-patch:
-	@${PERL} -pi.orig -e 's|values.h|float.h|; s|MAXDOUBLE|DBL_MAX|g' \
+	@${REINPLACE_CMD} -e 's|values.h|float.h|; s|MAXDOUBLE|DBL_MAX|g' \
 		${WRKSRC}/wmJupiter.c
 
 do-install:
