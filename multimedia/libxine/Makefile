@@ -51,12 +51,6 @@ MAN1=		xine-config.1
 
 .include <bsd.port.pre.mk>
 
-# GCC 3.4 breaks xvid decoder
-.if ${OSVERSION} > 502124
-BUILD_DEPENDS+=	gcc33:${PORTSDIR}/lang/gcc33
-CC=		gcc33
-.endif
-
 # PRId64, INT16_MAX macro are not defined
 .if ${OSVERSION} < 500040
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-config.h.in
