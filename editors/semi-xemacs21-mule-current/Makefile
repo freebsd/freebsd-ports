@@ -16,9 +16,9 @@ MASTERDIR=	${.CURDIR}/../../editors/semi-emacs-current
 # emacs port setup
 EMACS_NAME=	xemacs
 EMACS_PORT=	xemacs-mule
-EMACS_VER=	20.4
+EMACS_VER=	21.1.6
 EMACS_LIBDIR=		lib/${EMACS_NAME}-${EMACS_VER}
-# xemacs-mule-20.4 has no version specific site-lisp directories.
+# xemacs-mule-21.1.6 has no version specific site-lisp directories.
 EMACS_LIBDIR_WITH_VER=	${EMACS_LIBDIR}
 
 # RUN_DEPENDS port name's suffix is '-common'.
