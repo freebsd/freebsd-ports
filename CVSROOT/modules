@@ -6555,6 +6555,7 @@ units		src/usr.bin/units
 unix-connect	ports/german/unix-connect
 unix2dos	ports/converters/unix2dos
 unixODBC	ports/databases/unixODBC
+unixstat	ports/math/unixstat
 unlzx		ports/archivers/unlzx
 unpost		ports/news/unpost
 unquote		ports/sysutils/unquote
