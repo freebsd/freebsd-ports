@@ -15,15 +15,17 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A player for many different Amiga and PC module formats
 
-USE_REINPLACE=	yes
 USE_BZIP2=	yes
 USE_XLIB=	yes
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-alsa
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib" CFLAGS="-I${LOCALBASE}/include -fPIC"
-USE_AUTOCONF_VER=	213
 WANT_GNOME=	yes
+USE_REINPLACE=	yes
+USE_GMAKE=	yes
+USE_AUTOCONF_VER=	213
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib" 
+CONFIGURE_ARGS=	--disable-alsa
+
+CFLAGS+=	-fPIC
 
 .include <bsd.port.pre.mk>
 
