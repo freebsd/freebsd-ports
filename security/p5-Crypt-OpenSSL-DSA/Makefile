@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Crypt
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	nork@FreeBSD.org
+COMMENT=	Perl5 module to DSA signature verification using OpenSSL
 
 PERL_CONFIGURE=	yes
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Crypt
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	nork@FreeBSD.org
+COMMENT=	Perl5 module to RSA encode and decode strings using OpenSSL
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Crypt/OpenSSL/Random.pm:${PORTSDIR}/security/p5-Crypt-OpenSSL-Random
 RUN_DEPENDS=	${BUILD_DEPENDS}

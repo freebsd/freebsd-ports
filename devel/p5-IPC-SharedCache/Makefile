@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	IPC
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	nork@FreeBSD.org
+COMMENT=	Perl module for managing a SysV IPC shared memory cache
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/IPC/ShareLite.pm:${PORTSDIR}/devel/p5-IPC-ShareLite \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
