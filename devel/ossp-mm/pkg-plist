@@ -1,0 +1,6 @@
+bin/mm-config
+include/mm.h
+lib/libmm.a
+lib/libmm.la
+lib/libmm.so
+lib/libmm.so.12
