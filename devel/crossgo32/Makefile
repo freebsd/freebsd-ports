@@ -3,20 +3,20 @@
 # Date created:         6 Mar 97
 # Whom:                 Pedro Giffuni <pgiffuni@fps.biblos.unal.edu.co>
 #
-# $Id: Makefile,v 1.8 1997/01/31 08:23:06 tg Exp $
+# $Id: Makefile,v 1.1.1.1 1997/03/27 20:53:42 erich Exp $
 #
 
-DISTNAME=       crosstree-1.3
+DISTNAME=	crosstree-1.3
 PKGNAME=	crossgo32-1.3
 CATEGORIES=	devel
 MASTER_SITES=	ftp://freefall.FreeBSD.ORG/pub/FreeBSD/LOCAL_PORTS/
 
 MAINTAINER=	pgiffuni@fps.biblos.unal.edu.co
 
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix=${PREFIX} --target=${TARGET}
 USE_GMAKE=	yes
-TARGET=i386-go32
-HAS_CONFIGURE=  yes
-CONFIGURE_ARGS= --prefix=${PREFIX} --target=${TARGET}
+TARGET= 	i386-go32
 
 MAN1=	i386-go32-ar.1 i386-go32-nm.1 i386-go32-objdump.1 	\
 	i386-go32-ranlib.1 i386-go32-size.1 i386-go32-strings.1	\
