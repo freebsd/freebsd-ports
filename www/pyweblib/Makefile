@@ -17,7 +17,6 @@ BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
 RUN_DEPENDS=	python:${PORTSDIR}/lang/python
 
 USE_PYTHON=	yes
-PYTHON_VERSION=	python2.1
 WRKSRC=		${WRKDIR}/${DISTNAME:S=-src==}
 
 do-build:
