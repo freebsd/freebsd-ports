@@ -34,6 +34,10 @@ USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile on 4.x (tries to link to libpthread)"
+.endif
+
 BUILD_NR=		645
 RELEASE_NR=		1.1
 FRELEASE_NR=		1.1.2
