@@ -17,6 +17,7 @@ MAINTAINER?=	pat@databits.net
 
 RUN_DEPENDS=	${LINUXBASE}${HLDSDIR}${HL_PROGRAM}:${HALFLIFESERVER_PORT}
 
+ONLY_FOR_ARCHS=	i386
 USE_LINUX_PREFIX=	yes
 NO_CDROM=	"Size; the data set is much too big"
 NO_BUILD=	yes
