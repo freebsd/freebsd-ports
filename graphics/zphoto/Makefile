@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	zphoto
-PORTVERSION=	0.6
-PORTREVISION=	1
+PORTVERSION=	0.7
 CATEGORIES=	graphics www
 MASTER_SITES=	http://namazu.org/~satoru/zphoto/
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,11 +20,15 @@ LIB_DEPENDS=	ming.3:${PORTSDIR}/graphics/ming \
 		aviplay.0:${PORTSDIR}/multimedia/avifile
 RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
-	       	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/ming \
+	       	CPPFLAGS="-I${LOCALBASE}/include \
 		${PTHREAD_CFLAGS}"
-USE_GMAKE=		yes
+USE_GMAKE=	yes
 USE_XLIB=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|<ming.h>|<ming/ming.h>|g' ${WRKSRC}/*.c ${WRKSRC}/configure
 
 .include <bsd.port.mk>
