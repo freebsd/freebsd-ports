@@ -1,0 +1,12 @@
+*** naming/src/NamingDatabase.cpp.orig	Tue Dec 22 17:50:30 1998
+--- naming/src/NamingDatabase.cpp	Tue Dec 22 17:51:16 1998
+***************
+*** 146,152 ****
+      //
+      int mode = O_WRONLY|O_APPEND;
+  #ifndef WIN32
+-     mode |= O_SYNC;
+  #endif
+      if(create)
+          mode |= O_CREAT;
+--- 146,151 ----
