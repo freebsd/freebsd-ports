@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mahjong
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 CATEGORIES=	games net
 MASTER_SITES=	http://www.stevens-bradfield.com/MahJong/Source/
 DISTNAME=	mj-${PORTVERSION}-src
@@ -16,15 +16,22 @@ MAINTAINER=	ports@FreeBSD.org
 
 USE_GTK=	yes
 USE_GMAKE=	yes
-MAKE_ENV=	PERL="${PERL}"
-
+MAKE_ENV=	CCLINK="${CC}" CDEBUGFLAGS="${CFLAGS}" \
+		DESTDIR="${PREFIX}/" INSTMANFLAGS="${INSTALL_MAN}" \
+		INSTPGMFLAGS="${INSTALL_PROGRAM}" PERL="${PERL}"
 INSTALL_TARGET=	install install.man
 
-MAN1=		xmj.1 mj-player.1 mj-server.1
+MAN1=		xmj.1
+MLINKS=		xmj.1 mj-player.1 \
+		xmj.1 mj-server.1
 
 post-patch:
-	@${PERL} -pi -e "s,^CC ,#CC ,g ; \
-		s,^PERL,#PERL,g ; \
-		s,gtk-config,${GTK_CONFIG},g" ${WRKSRC}/Makefile
+	@${PERL} -pi -e 's|^CC|#CC|g ; \
+		 s|^DESTDIR|#DESTDIR|g ; \
+		 s|^CDEBUGFLAGS|#CDEBUGFLAGS|g ; \
+		 s|^MAKE|#MAKE|g ; \
+		 s|^PERL|#PERL|g ; \
+		 s|^INST|#INST|g ; \
+		 s|gtk-config|\$$\{GTK_CONFIG\}|g' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
