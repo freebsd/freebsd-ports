@@ -7,6 +7,7 @@
 
 PORTNAME=	libmcrypt
 PORTVERSION=	2.4.9
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	ftp://mcrypt.hellug.gr/pub/mcrypt/libmcrypt/
 
@@ -17,9 +18,10 @@ LIB_DEPENDS=	ltdl.1:${PORTSDIR}/devel/libtool
 RESTRICTED=	"yes - cryptography"
 
 USE_LIBTOOL=	yes
-INSTALLS_SHLIB=	yes
+LIBTOOLFLAGS=	# empty
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+INSTALLS_SHLIB=	yes
 
 MAN3=		mcrypt.3
 
