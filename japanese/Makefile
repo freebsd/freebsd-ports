@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.191 1999/03/20 01:15:57 asami Exp $
+# $Id: Makefile,v 1.192 1999/03/20 05:43:00 taoka Exp $
 #
 
     SUBDIR += Canna
@@ -98,12 +98,14 @@
     SUBDIR += lipsf
     SUBDIR += lynx
     SUBDIR += lynx-current
+    SUBDIR += lyx
     SUBDIR += magicpoint
     SUBDIR += man
     SUBDIR += man-doc
     SUBDIR += mendexk-euc
     SUBDIR += mendexk-sjis
     SUBDIR += mh
+    SUBDIR += mhonarc
     SUBDIR += micq
     SUBDIR += mimekit
     SUBDIR += mmm
@@ -121,6 +123,7 @@
     SUBDIR += mule-sj3+wnn6
     SUBDIR += mule-wnn4
     SUBDIR += mule-wnn6
+    SUBDIR += namazu
     SUBDIR += ndtpd
     SUBDIR += nethack
     SUBDIR += netscape-fonts
