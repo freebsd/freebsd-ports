@@ -1,5 +1,0 @@
-share/aspell/no.dat
-share/aspell/no.multi
-share/aspell/no.rws
-share/aspell/norsk.alias
-share/aspell/norwegian.alias
