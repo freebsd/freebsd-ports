@@ -15,8 +15,7 @@ EXTRACT_ONLY=
 
 MAINTAINER=	lioux@FreeBSD.org
 
-RUN_DEPENDS=	python:${PORTSDIR}/lang/python
-
+USE_PYTHON=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
