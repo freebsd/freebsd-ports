@@ -3,7 +3,7 @@
 # Date created:         5 January 1995
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.31 1997/06/10 12:33:48 jmz Exp $
+# $Id: Makefile,v 1.32 1997/07/13 18:49:30 max Exp $
 #
 
 DISTNAME=	xc
@@ -23,10 +23,6 @@ USE_X11=	yes
 ALL_TARGET=	World
 INSTALL_TARGET=	install install.man
 DIST_SUBDIR=	xc
-
-pre-install:
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/INSTALL \
-		${PKGNAME} PRE-INSTALL
 
 post-install:
 	/sbin/ldconfig -m ${PREFIX}/lib
