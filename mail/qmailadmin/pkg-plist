@@ -1,0 +1,66 @@
+share/qmailadmin/html/add_alias.html
+share/qmailadmin/html/add_autorespond.html
+share/qmailadmin/html/add_forward.html
+share/qmailadmin/html/add_listmod.html
+share/qmailadmin/html/add_listuser.html
+share/qmailadmin/html/add_mailinglist.html
+share/qmailadmin/html/add_user.html
+share/qmailadmin/html/del_alias_confirm.html
+share/qmailadmin/html/del_autorespond_confirm.html
+share/qmailadmin/html/del_forward_confirm.html
+share/qmailadmin/html/del_mailinglist_confirm.html
+share/qmailadmin/html/del_user_confirm.html
+share/qmailadmin/html/main_menu.html
+share/qmailadmin/html/main_table.html
+share/qmailadmin/html/mod_autorespond.html
+share/qmailadmin/html/mod_dotqmail.html
+share/qmailadmin/html/mod_user.html
+share/qmailadmin/html/show_alias.html
+share/qmailadmin/html/show_autorespond.html
+share/qmailadmin/html/show_forwards.html
+share/qmailadmin/html/show_login.html
+share/qmailadmin/html/show_mailinglist.html
+share/qmailadmin/html/show_redirect.html
+share/qmailadmin/html/show_users.html
+www/cgi-bin.default/qmailadmin/qmailadmin
+www/data.default/images/qmailadmin/bg.jpg
+www/data.default/images/qmailadmin/but_add.gif
+www/data.default/images/qmailadmin/but_addalias.gif
+www/data.default/images/qmailadmin/but_addforward.gif
+www/data.default/images/qmailadmin/but_changeinfo.gif
+www/data.default/images/qmailadmin/but_changepassword.gif
+www/data.default/images/qmailadmin/but_confirmdelete.gif
+www/data.default/images/qmailadmin/but_createpopuser.gif
+www/data.default/images/qmailadmin/but_login.gif
+www/data.default/images/qmailadmin/but_logout.gif
+www/data.default/images/qmailadmin/but_mainmenu.gif
+www/data.default/images/qmailadmin/but_newmaillist.gif
+www/data.default/images/qmailadmin/but_newresponder.gif
+www/data.default/images/qmailadmin/but_nextpage.gif
+www/data.default/images/qmailadmin/but_prevpage.gif
+www/data.default/images/qmailadmin/but_refreshmenu.gif
+www/data.default/images/qmailadmin/delete.gif
+www/data.default/images/qmailadmin/login.gif
+www/data.default/images/qmailadmin/lowerleft.gif
+www/data.default/images/qmailadmin/lowermiddle.gif
+www/data.default/images/qmailadmin/lowerright.gif
+www/data.default/images/qmailadmin/main1.gif
+www/data.default/images/qmailadmin/main2.gif
+www/data.default/images/qmailadmin/middleleft1.gif
+www/data.default/images/qmailadmin/middleleft2.gif
+www/data.default/images/qmailadmin/middlelogin.gif
+www/data.default/images/qmailadmin/middleright1.gif
+www/data.default/images/qmailadmin/pixel.gif
+www/data.default/images/qmailadmin/template.htm
+www/data.default/images/qmailadmin/upperleft.gif
+www/data.default/images/qmailadmin/uppermiddle1.gif
+www/data.default/images/qmailadmin/uppermiddle2.gif
+www/data.default/images/qmailadmin/upperright.gif
+@dirrm www/data.default/images/qmailadmin
+@dirrm www/data.default/images
+@unexec /bin/rmdir %D/www/data.default 2> /dev/null || true
+@dirrm www/cgi-bin.default/qmailadmin
+@unexec /bin/rmdir %D/www/cgi-bin.default 2> /dev/null || true
+@unexec /bin/rmdir %D/www 2> /dev/null || true
+@dirrm share/qmailadmin/html
+@dirrm share/qmailadmin

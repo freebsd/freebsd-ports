@@ -104,6 +104,7 @@
     SUBDIR += qmail
     SUBDIR += qmail-contrib
     SUBDIR += qmail-ldap
+    SUBDIR += qmailadmin
     SUBDIR += qmailanalog
     SUBDIR += qpopper
     SUBDIR += rblcheck
