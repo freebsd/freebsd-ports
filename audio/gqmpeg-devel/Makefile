@@ -6,16 +6,13 @@
 #
 
 PORTNAME=	gqmpeg
-PORTVERSION=	0.20.0
-CATEGORIES+=	audio
+PORTVERSION=	0.91.1
+CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER?=	lyngbol@wheel.dk
-COMMENT?=	Another gtk-based MP3 frontend
-
-RUN_DEPENDS=	ogg123:${PORTSDIR}/audio/vorbis-tools \
-		xmp:${PORTSDIR}/audio/xmp
+MAINTAINER=	oliver@FreeBSD.org
+COMMENT=	Another gtk-based MP3 frontend
 
 .if defined(WITH_MPG321)
 RUN_DEPENDS+=	mpg321:${PORTSDIR}/audio/mpg321
@@ -23,29 +20,28 @@ RUN_DEPENDS+=	mpg321:${PORTSDIR}/audio/mpg321
 RUN_DEPENDS+=	mpg123:${PORTSDIR}/audio/mpg123
 .endif
 
+.if !defined(WITHOUT_MOD)
+RUN_DEPENDS+=	xmp:${PORTSDIR}/audio/xmp
+.endif
+
+.if !defined(WITHOUT_OGG)
+RUN_DEPENDS+=	ogg123:${PORTSDIR}/audio/vorbis-tools
+.endif
+
 USE_REINPLACE=	yes
+GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gdkpixbuf
-WANT_GNOME=	yes
-USE_LIBTOOL_VER=	13
-USE_AUTOCONF_VER=	213
+USE_GNOME=	gtk20
+USE_LIBTOOL_VER=15
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 
+CONFLICTS=	gqmpeg-0.2*
+
 MAN1=		gqmpeg.1
 
 .include <bsd.port.pre.mk>
-
-.if ${HAVE_GNOME:Mgnomelibs}!=""
-USE_GNOME+=	gnomeprefix gnomelibs
-PKGNAMESUFFIX=	-gnome
-CONFIGURE_ENV+=	USE_GNOME="yes"
-PLIST_SUB+=	DATADIR="share/gnome"
-.else
-CONFIGURE_ENV+=	USE_GNOME=""
-PLIST_SUB+=	DATADIR="share"
-.endif
 
 .if !defined(WITH_MPG321)
 pre-everything::
