@@ -3,7 +3,7 @@
 # Date created:        25 December 1998
 # Whom:                Bill Fumerola <billf@chc-chimes.com>
 #
-# $Id: $
+# $Id: Makefile,v 1.1.1.1 1998/12/27 03:26:57 billf Exp $
 #
 
 DISTNAME=	qiv-1.0
@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	billf@FreeBSD.org
 
-LIB_DEPENDS=	gtk.1:${PORTSDIR}/x11-toolkits/gtk11
+LIB_DEPENDS=	gtk11.1:${PORTSDIR}/x11-toolkits/gtk11
 BUILD_DEPENDS=	imlib-config:${PORTSDIR}/graphics/imlib
 
 USE_X_PREFIX=	yes
