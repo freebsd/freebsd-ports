@@ -10,7 +10,7 @@ PORTVERSION=	2.0
 CATEGORIES=	devel
 DISTFILES=	# empty
 
-MAINTAINER=	Jerry.Hicks@Glenayre.com
+MAINTAINER=	gehicks@cisco.com
 
 # this dependency will cause m68kbinutils and m68kgcc to be built as well
 BUILD_DEPENDS=	${LOCALBASE}/m68k-coff/lib/crt0.o:${PORTSDIR}/devel/newlib-m68k
