@@ -1,0 +1,11 @@
+include/djbfft/complex4.h
+include/djbfft/complex8.h
+include/djbfft/fftc4.h
+include/djbfft/fftc8.h
+include/djbfft/fftfreq.h
+include/djbfft/fftr4.h
+include/djbfft/fftr8.h
+include/djbfft/real4.h
+include/djbfft/real8.h
+lib/libdjbfft.a
+@dirrm include/djbfft
