@@ -27,8 +27,6 @@ MAINTAINER=	kkonstan@daemon.gr
 BUILD_DEPENDS=	ttmkfdir:${PORTSDIR}/x11-fonts/ttmkfdir \
 		cabextract:${PORTSDIR}/archivers/cabextract
 
-.include <bsd.port.pre.mk>
-
 .if ${XFREE86_VERSION} == 3
 RUN_DEPENDS=	xfstt:${PORTSDIR}/x11-servers/Xfstt
 .endif
@@ -200,4 +198,4 @@ display-message:
 	${CAT} ${PKGMESSAGE}
 	${ECHO_MSG}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
