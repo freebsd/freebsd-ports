@@ -1,6 +1,6 @@
---- Makefile.common.orig	Sun Jun 17 09:58:41 2001
-+++ Makefile.common	Tue Jun 26 00:00:00 2001
-@@ -157,24 +157,21 @@
+--- Makefile.common.orig	Thu Jul 12 14:27:12 2001
++++ Makefile.common	Tue Jul 24 00:00:00 2001
+@@ -157,28 +157,23 @@
  
  $(LIBOBJECTS): %.o: $(SRCSUBDIR)/%.c $(HEADERLINKS)
  # Note that the user may have configured -I options into CFLAGS.
@@ -12,28 +12,33 @@
 -SONAME = lib$(LIBROOT).so.$(MAJ)
 +SONAME = lib$(LIBROOT).so.$(SOVER)
  
+ ifeq ($(NETPBMLIBTYPE),unixshared)
  # The libxxx.so link is needed to link the executables.
- lib$(LIBROOT).so: $(SONAME)
+ lib$(LIBROOT).$(NETPBMLIBSUFFIX): $(SONAME)
  	rm -f $@
  	$(SYMLINK) $< $@
 -# The $(SONAME) link is only needed to test the programs without
 -# installing the libraries (in that case, you also need to direct the 
 -# dynamic linker to the source directories, e.g. set LD_LIBRARY_PATH).
--$(SONAME): lib$(LIBROOT).so.$(MAJ).$(MIN)
+-$(SONAME): lib$(LIBROOT).$(NETPBMLIBSUFFIX).$(MAJ).$(MIN)
 -	rm -f $@
 -	$(SYMLINK) $< $@
--lib$(LIBROOT).so.$(MAJ).$(MIN): $(LIBOBJECTS) $(LIBOBJECTS_X) $(LIBLIBS) \
--                                $(LIBOPT)
+-lib$(LIBROOT).$(NETPBMLIBSUFFIX).$(MAJ).$(MIN): \
+-    $(LIBOBJECTS) $(LIBOBJECTS_X) $(LIBLIBS) $(LIBOPT)
 -	$(LD) $(LDSHLIB) -o $@ $(LIBOBJECTS) $(LIBOBJECTS_X) \
 -          `$(LIBOPT) $(LIBLIBS)` -lc $(CDEBUG)
-+$(SONAME): $(SHLIBOBJECTS) $(LIBOBJECTS_X) $(LIBLIBS) \
-+                                $(LIBOPT) lib$(LIBROOT).a
+-endif
+-ifeq ($(NETPBMLIBTYPE),unixstatic)
+-lib$(LIBROOT).$(NETPBMLIBSUFFIX): $(LIBOBJECTS) $(LIBOBJECTS_X)
++$(SONAME): lib$(LIBROOT).$(LIB_SUFFIX) \
++    $(SHLIBOBJECTS) $(LIBOBJECTS_X) $(LIBLIBS) $(LIBOPT)
 +	$(LD) $(LDSHLIB) -o $@ $(SHLIBOBJECTS) $(LIBOBJECTS_X) \
 +          `$(LIBOPT) $(LIBLIBS)` $(LDFLAGS) $(CDEBUG)
- 
- # Static library. 
- lib$(LIBROOT).a: $(LIBOBJECTS) $(LIBOBJECTS_X)
-@@ -215,7 +212,7 @@
++lib$(LIBROOT).$(LIB_SUFFIX): $(LIBOBJECTS) $(LIBOBJECTS_X)
+ 	-rm -f $@
+ 	ar rc $@ $(LIBOBJECTS) $(LIBOBJECTS_X)
+ ifneq ($(RANLIB)x,x)
+@@ -238,7 +233,7 @@
  install.merge.common: $(MERGENAME) $(NOMERGEBINARIES) install.script
  	cd $(INSTALLBINARIES) ; rm -f $(BINARIES) $(MERGE_ALIASES)
  ifneq ($(MERGENAME)x,x)
@@ -42,7 +47,7 @@
              $(MERGENAME) $(INSTALLBINARIES)
  	cd $(INSTALLBINARIES) ; \
  	   for i in $(MERGEBINARIES) $(MERGE_ALIASES) ; \
-@@ -225,7 +222,7 @@
+@@ -248,7 +243,7 @@
  ifneq ($(NOMERGEBINARIES)x,x)
  	for x in $(NOMERGEBINARIES); \
          do \
@@ -51,7 +56,7 @@
                 $$x $(INSTALLBINARIES); \
  	done
  endif
-@@ -236,7 +233,7 @@
+@@ -259,7 +254,7 @@
  # Make and Install know that pbmmake.exe counts as pbmmake.
  	for x in $(BINARIES); \
  	do \
@@ -60,7 +65,7 @@
                 $$x $(INSTALLBINARIES); \
  	done
  
-@@ -245,7 +242,7 @@
+@@ -268,7 +263,7 @@
  ifneq ($(SCRIPTS)x,x)
  	for x in $(SCRIPTS); \
  	do \
@@ -69,7 +74,7 @@
                 $(INSTALLSCRIPTS); \
  	done
  endif
-@@ -282,7 +279,7 @@
+@@ -305,7 +300,7 @@
  # directory when you compile your programs.
  	for x in $(INTERFACE_HEADERS); \
  	do \
@@ -78,25 +83,26 @@
                 $(INSTALLHDRS); \
  	done
  
-@@ -290,17 +287,16 @@
+@@ -313,17 +308,17 @@
  #
  .PHONY: install.staticlib
- install.staticlib: lib$(LIBROOT).a
+ install.staticlib: lib$(LIBROOT).$(LIB_SUFFIX)
 -	$(INSTALL) -c -m $(INSTALL_PERM_LIBS) $< $(INSTALLLIBS)/$<
 +	${BSD_INSTALL_DATA} $< $(INSTALLLIBS)/$<
  
  .PHONY: install.lib.common
- ifeq ($(NETPBMLIBSUFFIX),so)
+ ifeq ($(NETPBMLIBTYPE),unixshared)
  # install a Unix-style shared library
--install.lib.common: lib$(LIBROOT).so.$(MAJ).$(MIN) 
--	cd $(INSTALLLIBS) ; rm -f lib$(LIBROOT).so.$(MAJ).*
+-install.lib.common: lib$(LIBROOT).$(NETPBMLIBSUFFIX).$(MAJ).$(MIN) 
+-	cd $(INSTALLLIBS) ; rm -f lib$(LIBROOT).$(NETPBMLIBSUFFIX).$(MAJ).*
 -	$(INSTALL) -c -m $(INSTALL_PERM_LIBD) $< $(INSTALLLIBS)
 +install.lib.common: $(SONAME)
-+	cd $(INSTALLLIBS) ; rm -f lib$(LIBROOT).so.*
++	cd $(INSTALLLIBS) ; rm -f lib$(LIBROOT).$(NETPBMLIBSUFFIX).*
 +	${BSD_INSTALL_DATA} $< $(INSTALLLIBS)
  	cd $(INSTALLLIBS) ; \
-           rm -f lib$(LIBROOT).so; $(SYMLINK) $< lib$(LIBROOT).so
--	cd $(INSTALLLIBS) ; rm -f $(SONAME); $(SYMLINK) $< $(SONAME)
+           rm -f lib$(LIBROOT).$(NETPBMLIBSUFFIX).$(MAJ); \
+-          $(SYMLINK) $< lib$(LIBROOT).$(NETPBMLIBSUFFIX).$(MAJ)
++          $(SYMLINK) $< lib$(LIBROOT).$(NETPBMLIBSUFFIX)
  endif
- ifeq ($(NETPBMLIBSUFFIX),dll)
+ ifeq ($(NETPBMLIBTYPE),dll)
  #install a Windows DLL shared library
