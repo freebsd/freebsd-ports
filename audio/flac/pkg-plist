@@ -1,0 +1,19 @@
+bin/flac
+bin/metaflac
+lib/libFLAC.a
+lib/libFLAC.so
+lib/libFLAC.so.0
+%%PORTDOCS%%share/doc/flac/comparison.html
+%%PORTDOCS%%share/doc/flac/developers.html
+%%PORTDOCS%%share/doc/flac/documentation.html
+%%PORTDOCS%%share/doc/flac/download.html
+%%PORTDOCS%%share/doc/flac/features.html
+%%PORTDOCS%%share/doc/flac/format.html
+%%PORTDOCS%%share/doc/flac/goals.html
+%%PORTDOCS%%share/doc/flac/id.html
+%%PORTDOCS%%share/doc/flac/index.html
+%%PORTDOCS%%share/doc/flac/news.html
+%%PORTDOCS%%share/doc/flac/images/logo.jpg
+%%PORTDOCS%%share/doc/flac/images/1x1.gif
+%%PORTDOCS%%@dirrm share/doc/flac/images
+%%PORTDOCS%%@dirrm share/doc/flac
