@@ -10,6 +10,7 @@
     SUBDIR += flash
     SUBDIR += ksh93
     SUBDIR += mudsh
+    SUBDIR += nologinmsg
     SUBDIR += osh
     SUBDIR += pash
     SUBDIR += pdksh

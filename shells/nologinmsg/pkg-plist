@@ -1,0 +1,3 @@
+bin/nologinmsg
+@exec mkdir %D/etc/nologinmsgs
+@dirrm etc/nologinmsgs
