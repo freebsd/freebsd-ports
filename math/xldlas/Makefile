@@ -3,7 +3,7 @@
 # Date created:         20 Dec 97
 # Whom:                 Pedro Giffuni <giffunip@asme.org>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/04/27 05:25:00 mph Exp $
 #
 
 DISTNAME=	xldlas-0.85
@@ -11,7 +11,7 @@ CATEGORIES=	math
 MASTER_SITES=	http://a42.com/~thor/xldlas/			\
 		http://sunsite.math.klte.hu/mirrors/xldlas/	\
 		${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	X11/xapps/math/
+MASTER_SITE_SUBDIR=	X11/xapps/math
 EXTRACT_SUFX=	-source.tgz
 
 MAINTAINER=	giffunip@asme.org

@@ -3,13 +3,13 @@
 # Date created:		18 November 1997
 # Whom:			brett@peloton.physics.montana.edu
 #
-# $Id: Makefile,v 1.2 1998/05/03 15:40:01 jseger Exp $
+# $Id: Makefile,v 1.3 1998/05/15 05:13:47 mph Exp $
 #
 
 DISTNAME=	cooledit-3.6.2
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	apps/editors/X/
+MASTER_SITE_SUBDIR=	apps/editors/X
 
 MAINTAINER=	brett@peloton.physics.montana.edu
 
