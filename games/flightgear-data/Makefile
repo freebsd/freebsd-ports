@@ -7,6 +7,7 @@
 
 PORTNAME=	fgfs-base
 PORTVERSION=	0.9.6
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.flightgear.org/pub/fgfs/Shared/ \
 		ftp://ftp.de.flightgear.org/pub/fgfs/Shared/
@@ -16,7 +17,6 @@ COMMENT=	FlightGear scenery, textures and aircraft models
 
 NO_BUILD=	yes
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/data
 DATADIR=	${PREFIX}/share/FlightGear
 
