@@ -1,146 +1,116 @@
-bin/net-rhythmbox
-etc/gconf/gconf.xml.defaults/apps/net-rhythmbox/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/net-rhythmbox/state/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/net-rhythmbox/state/iradio/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/net-rhythmbox/state/library/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/net-rhythmbox/ui/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/net-rhythmbox/ui/iradio/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/net-rhythmbox/ui/library/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/net-rhythmbox/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/net-rhythmbox/state/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/net-rhythmbox/state/iradio/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/net-rhythmbox/state/library/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/net-rhythmbox/ui/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/net-rhythmbox/ui/iradio/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/net-rhythmbox/ui/library/%gconf.xml
-etc/gconf/schemas/net-rhythmbox.schemas
-libdata/bonobo/servers/GNOME_netRhythmbox_Shell.server
-share/gnome/application-registry/net-rhythmbox.applications
-share/gnome/applications/net-rhythmbox.desktop
-share/gnome/gnome-2.0/ui/net-rhythmbox-audiocd-view.xml
-share/gnome/gnome-2.0/ui/net-rhythmbox-group-view.xml
-share/gnome/gnome-2.0/ui/net-rhythmbox-iradio-view.xml
-share/gnome/gnome-2.0/ui/net-rhythmbox-library-view.xml
-share/gnome/gnome-2.0/ui/net-rhythmbox-test-view-2.xml
-share/gnome/gnome-2.0/ui/net-rhythmbox-ui.xml
-share/gnome/help/net-rhythmbox/C/authors.xml
-share/gnome/help/net-rhythmbox/C/fdl-appendix.xml
-share/gnome/help/net-rhythmbox/C/figures/rb-adv.png
-share/gnome/help/net-rhythmbox/C/figures/rb-audio-cd.png
-share/gnome/help/net-rhythmbox/C/figures/rb-basic.png
-share/gnome/help/net-rhythmbox/C/figures/rb-browser.png
-share/gnome/help/net-rhythmbox/C/figures/rb-empty.png
-share/gnome/help/net-rhythmbox/C/figures/rb-full-play.png
-share/gnome/help/net-rhythmbox/C/figures/rb-group-create.png
-share/gnome/help/net-rhythmbox/C/figures/rb-group.png
-share/gnome/help/net-rhythmbox/C/figures/rb-imported.png
-share/gnome/help/net-rhythmbox/C/figures/rb-internet-radio.png
-share/gnome/help/net-rhythmbox/C/figures/rb-iradio-prefs.png
-share/gnome/help/net-rhythmbox/C/figures/rb-library-prefs.png
-share/gnome/help/net-rhythmbox/C/figures/rb-nextprev.png
-share/gnome/help/net-rhythmbox/C/figures/rb-nobrowse-play.png
-share/gnome/help/net-rhythmbox/C/figures/rb-notification-area-menu.png
-share/gnome/help/net-rhythmbox/C/figures/rb-notification-area.png
-share/gnome/help/net-rhythmbox/C/figures/rb-player.png
-share/gnome/help/net-rhythmbox/C/figures/rb-prefs.png
-share/gnome/help/net-rhythmbox/C/figures/rb-repeat.png
-share/gnome/help/net-rhythmbox/C/figures/rb-search.png
-share/gnome/help/net-rhythmbox/C/figures/rb-shuffle.png
-share/gnome/help/net-rhythmbox/C/figures/rb-sidebar.png
-share/gnome/help/net-rhythmbox/C/figures/rb-stats.png
-share/gnome/help/net-rhythmbox/C/figures/rb-toolbar-editor.png
-share/gnome/help/net-rhythmbox/C/figures/rb-toolbar.png
-share/gnome/help/net-rhythmbox/C/figures/rb-volume-mute.png
-share/gnome/help/net-rhythmbox/C/figures/rb-window.png
-share/gnome/help/net-rhythmbox/C/figures/rhythmbox-group.png
-share/gnome/help/net-rhythmbox/C/figures/rhythmbox-tray-icon.png
-share/gnome/help/net-rhythmbox/C/internet-radio.xml
-share/gnome/help/net-rhythmbox/C/legal.xml
-share/gnome/help/net-rhythmbox/C/net-rhythmbox.xml
-share/gnome/help/net-rhythmbox/C/quick-reference.xml
-share/gnome/help/net-rhythmbox/C/user-guide.xml
-share/gnome/net-rhythmbox/art/about-logo.png
-share/gnome/net-rhythmbox/art/rhythmbox-album.png
-share/gnome/net-rhythmbox/art/rhythmbox-audiocd.png
-share/gnome/net-rhythmbox/art/rhythmbox-dnd.png
-share/gnome/net-rhythmbox/art/rhythmbox-group.png
-share/gnome/net-rhythmbox/art/rhythmbox-iradio.png
-share/gnome/net-rhythmbox/art/rhythmbox-library.png
-share/gnome/net-rhythmbox/art/rhythmbox-next.png
-share/gnome/net-rhythmbox/art/rhythmbox-no-star.png
-share/gnome/net-rhythmbox/art/rhythmbox-pause.png
-share/gnome/net-rhythmbox/art/rhythmbox-play.png
-share/gnome/net-rhythmbox/art/rhythmbox-playing.png
-share/gnome/net-rhythmbox/art/rhythmbox-playlist.png
-share/gnome/net-rhythmbox/art/rhythmbox-previous.png
-share/gnome/net-rhythmbox/art/rhythmbox-repeat.png
-share/gnome/net-rhythmbox/art/rhythmbox-rewind.png
-share/gnome/net-rhythmbox/art/rhythmbox-set-star.png
-share/gnome/net-rhythmbox/art/rhythmbox-shuffle.png
-share/gnome/net-rhythmbox/art/rhythmbox-stop.png
-share/gnome/net-rhythmbox/art/rhythmbox-tray-icon.png
-share/gnome/net-rhythmbox/art/rhythmbox-unset-star.png
-share/gnome/net-rhythmbox/art/rhythmbox-visuals.png
-share/gnome/net-rhythmbox/art/rhythmbox-volume-max.png
-share/gnome/net-rhythmbox/art/rhythmbox-volume-medium.png
-share/gnome/net-rhythmbox/art/rhythmbox-volume-min.png
-share/gnome/net-rhythmbox/art/rhythmbox-volume-mute.png
-share/gnome/net-rhythmbox/art/rhythmbox-volume-zero.png
-share/gnome/net-rhythmbox/glade/buffering-dialog.glade
-share/gnome/net-rhythmbox/glade/general-prefs.glade
-share/gnome/net-rhythmbox/glade/iradio-prefs.glade
-share/gnome/net-rhythmbox/glade/library-prefs.glade
-share/gnome/net-rhythmbox/glade/song-info.glade
-share/gnome/net-rhythmbox/glade/station-new.glade
-share/gnome/net-rhythmbox/glade/station-properties.glade
-share/gnome/net-rhythmbox/glade/toolbar-editor.glade
-share/gnome/net-rhythmbox/glade/uri.glade
-share/gnome/net-rhythmbox/iradio-initial.xml
-share/gnome/net-rhythmbox/node-views/rb-node-view-albums.xml
-share/gnome/net-rhythmbox/node-views/rb-node-view-artists.xml
-share/gnome/net-rhythmbox/node-views/rb-node-view-cdaudio.xml
-share/gnome/net-rhythmbox/node-views/rb-node-view-genres.xml
-share/gnome/net-rhythmbox/node-views/rb-node-view-iradio-genres.xml
-share/gnome/net-rhythmbox/node-views/rb-node-view-iradio-stations.xml
-share/gnome/net-rhythmbox/node-views/rb-node-view-songs.xml
-share/gnome/omf/net-rhythmbox/rhythmbox-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/net-rhythmbox/rhythmbox-C.omf 2>/dev/null || /usr/bin/true
-share/gnome/pixmaps/net-rhythmbox.png
-share/locale/cs/LC_MESSAGES/netrhythmbox.mo
-share/locale/da/LC_MESSAGES/netrhythmbox.mo
-share/locale/de/LC_MESSAGES/netrhythmbox.mo
-share/locale/el/LC_MESSAGES/netrhythmbox.mo
-share/locale/es/LC_MESSAGES/netrhythmbox.mo
-share/locale/fr/LC_MESSAGES/netrhythmbox.mo
-share/locale/it/LC_MESSAGES/netrhythmbox.mo
-share/locale/ja/LC_MESSAGES/netrhythmbox.mo
-share/locale/ko/LC_MESSAGES/netrhythmbox.mo
-share/locale/ms/LC_MESSAGES/netrhythmbox.mo
-share/locale/no/LC_MESSAGES/netrhythmbox.mo
-share/locale/ru/LC_MESSAGES/netrhythmbox.mo
-share/locale/sv/LC_MESSAGES/netrhythmbox.mo
-share/locale/tr/LC_MESSAGES/netrhythmbox.mo
-share/locale/vi/LC_MESSAGES/netrhythmbox.mo
-@dirrm share/gnome/omf/net-rhythmbox
-@dirrm share/gnome/net-rhythmbox/node-views
-@dirrm share/gnome/net-rhythmbox/glade
-@dirrm share/gnome/net-rhythmbox/art
-@dirrm share/gnome/net-rhythmbox
-@dirrm share/gnome/help/net-rhythmbox/C/figures
-@dirrm share/gnome/help/net-rhythmbox/C
-@dirrm share/gnome/help/net-rhythmbox
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/net-rhythmbox/ui/library
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/net-rhythmbox/ui/iradio
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/net-rhythmbox/ui
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/net-rhythmbox/state/library
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/net-rhythmbox/state/iradio
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/net-rhythmbox/state
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/net-rhythmbox
-@dirrm etc/gconf/gconf.xml.defaults/apps/net-rhythmbox/ui/library
-@dirrm etc/gconf/gconf.xml.defaults/apps/net-rhythmbox/ui/iradio
-@dirrm etc/gconf/gconf.xml.defaults/apps/net-rhythmbox/ui
-@dirrm etc/gconf/gconf.xml.defaults/apps/net-rhythmbox/state/library
-@dirrm etc/gconf/gconf.xml.defaults/apps/net-rhythmbox/state/iradio
-@dirrm etc/gconf/gconf.xml.defaults/apps/net-rhythmbox/state
-@dirrm etc/gconf/gconf.xml.defaults/apps/net-rhythmbox
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/net-rhythmbox/rhythmbox-C.omf 2>/dev/null || /usr/bin/true
+bin/rhythmbox
+etc/gconf/gconf.xml.defaults/apps/rhythmbox/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/rhythmbox/state/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/rhythmbox/state/iradio/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/rhythmbox/state/library/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/rhythmbox/state/load_failure_dialog/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/rhythmbox/ui/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/rhythmbox/ui/library/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/rhythmbox/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/rhythmbox/state/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/rhythmbox/state/iradio/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/rhythmbox/state/library/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/rhythmbox/state/load_failure_dialog/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/rhythmbox/ui/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/rhythmbox/ui/library/%gconf.xml
+etc/gconf/schemas/rhythmbox.schemas
+lib/bonobo/librb-nautilus-context-menu.so
+libdata/bonobo/servers/GNOME_Rhythmbox.server
+libdata/bonobo/servers/Rhythmbox_Nautilus_Context_Menu.server
+libdata/pkgconfig/rhythmbox.pc
+share/gnome/application-registry/rhythmbox.applications
+share/gnome/applications/rhythmbox.desktop
+share/gnome/gnome-2.0/ui/rhythmbox-ui.xml
+share/gnome/pixmaps/rhythmbox.png
+share/gnome/rhythmbox/art/about-logo.png
+share/gnome/rhythmbox/art/rhythmbox-album.png
+share/gnome/rhythmbox/art/rhythmbox-audiocd.png
+share/gnome/rhythmbox/art/rhythmbox-dnd.png
+share/gnome/rhythmbox/art/rhythmbox-group.png
+share/gnome/rhythmbox/art/rhythmbox-iradio.png
+share/gnome/rhythmbox/art/rhythmbox-library.png
+share/gnome/rhythmbox/art/rhythmbox-next.png
+share/gnome/rhythmbox/art/rhythmbox-no-star.png
+share/gnome/rhythmbox/art/rhythmbox-pause.png
+share/gnome/rhythmbox/art/rhythmbox-paused.png
+share/gnome/rhythmbox/art/rhythmbox-play.png
+share/gnome/rhythmbox/art/rhythmbox-playing.png
+share/gnome/rhythmbox/art/rhythmbox-playlist.png
+share/gnome/rhythmbox/art/rhythmbox-previous.png
+share/gnome/rhythmbox/art/rhythmbox-repeat.png
+share/gnome/rhythmbox/art/rhythmbox-rewind.png
+share/gnome/rhythmbox/art/rhythmbox-set-star.png
+share/gnome/rhythmbox/art/rhythmbox-shuffle.png
+share/gnome/rhythmbox/art/rhythmbox-sound-juicer.png
+share/gnome/rhythmbox/art/rhythmbox-stop.png
+share/gnome/rhythmbox/art/rhythmbox-tray-icon.png
+share/gnome/rhythmbox/art/rhythmbox-unset-star.png
+share/gnome/rhythmbox/art/rhythmbox-visuals.png
+share/gnome/rhythmbox/art/rhythmbox-volume-max.png
+share/gnome/rhythmbox/art/rhythmbox-volume-medium.png
+share/gnome/rhythmbox/art/rhythmbox-volume-min.png
+share/gnome/rhythmbox/art/rhythmbox-volume-mute.png
+share/gnome/rhythmbox/art/rhythmbox-volume-zero.png
+share/gnome/rhythmbox/glade/buffering-dialog.glade
+share/gnome/rhythmbox/glade/druid.glade
+share/gnome/rhythmbox/glade/general-prefs.glade
+share/gnome/rhythmbox/glade/library-prefs.glade
+share/gnome/rhythmbox/glade/load-failure.glade
+share/gnome/rhythmbox/glade/song-info.glade
+share/gnome/rhythmbox/glade/station-new.glade
+share/gnome/rhythmbox/glade/station-properties.glade
+share/gnome/rhythmbox/glade/uri.glade
+share/gnome/rhythmbox/iradio-initial.pls
+share/gnome/rhythmbox/node-views/rb-node-view-albums.xml
+share/gnome/rhythmbox/node-views/rb-node-view-artists.xml
+share/gnome/rhythmbox/node-views/rb-node-view-cdaudio.xml
+share/gnome/rhythmbox/node-views/rb-node-view-genres.xml
+share/gnome/rhythmbox/node-views/rb-node-view-iradio-genres.xml
+share/gnome/rhythmbox/node-views/rb-node-view-iradio-stations.xml
+share/gnome/rhythmbox/node-views/rb-node-view-songs.xml
+share/idl/Rhythmbox.idl
+share/locale/am/LC_MESSAGES/rhythmbox.mo
+share/locale/be/LC_MESSAGES/rhythmbox.mo
+share/locale/cs/LC_MESSAGES/rhythmbox.mo
+share/locale/da/LC_MESSAGES/rhythmbox.mo
+share/locale/de/LC_MESSAGES/rhythmbox.mo
+share/locale/el/LC_MESSAGES/rhythmbox.mo
+share/locale/es/LC_MESSAGES/rhythmbox.mo
+share/locale/fi/LC_MESSAGES/rhythmbox.mo
+share/locale/fr/LC_MESSAGES/rhythmbox.mo
+share/locale/it/LC_MESSAGES/rhythmbox.mo
+share/locale/ja/LC_MESSAGES/rhythmbox.mo
+share/locale/ko/LC_MESSAGES/rhythmbox.mo
+share/locale/lv/LC_MESSAGES/rhythmbox.mo
+share/locale/ms/LC_MESSAGES/rhythmbox.mo
+share/locale/nl/LC_MESSAGES/rhythmbox.mo
+share/locale/no/LC_MESSAGES/rhythmbox.mo
+share/locale/pl/LC_MESSAGES/rhythmbox.mo
+share/locale/pt/LC_MESSAGES/rhythmbox.mo
+share/locale/pt_BR/LC_MESSAGES/rhythmbox.mo
+share/locale/ru/LC_MESSAGES/rhythmbox.mo
+share/locale/sr/LC_MESSAGES/rhythmbox.mo
+share/locale/sr@Latn/LC_MESSAGES/rhythmbox.mo
+share/locale/sv/LC_MESSAGES/rhythmbox.mo
+share/locale/tr/LC_MESSAGES/rhythmbox.mo
+share/locale/vi/LC_MESSAGES/rhythmbox.mo
+share/locale/zh_TW/LC_MESSAGES/rhythmbox.mo
+@dirrm share/idl
+@dirrm share/gnome/rhythmbox/node-views
+@dirrm share/gnome/rhythmbox/glade
+@dirrm share/gnome/rhythmbox/art
+@dirrm share/gnome/rhythmbox
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/rhythmbox/ui/library
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/rhythmbox/ui
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/rhythmbox/state/load_failure_dialog
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/rhythmbox/state/library
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/rhythmbox/state/iradio
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/rhythmbox/state
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/rhythmbox
+@dirrm etc/gconf/gconf.xml.defaults/apps/rhythmbox/ui/library
+@dirrm etc/gconf/gconf.xml.defaults/apps/rhythmbox/ui
+@dirrm etc/gconf/gconf.xml.defaults/apps/rhythmbox/state/load_failure_dialog
+@dirrm etc/gconf/gconf.xml.defaults/apps/rhythmbox/state/library
+@dirrm etc/gconf/gconf.xml.defaults/apps/rhythmbox/state/iradio
+@dirrm etc/gconf/gconf.xml.defaults/apps/rhythmbox/state
+@dirrm etc/gconf/gconf.xml.defaults/apps/rhythmbox

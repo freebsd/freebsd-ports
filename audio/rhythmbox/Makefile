@@ -1,17 +1,18 @@
-# New ports collection makefile for:	net-rhythmbox
-# Date created:		14 February 2003
-# Whom:			Hendrik Scholz <hendrik@scholz.net>
+# New ports collection makefile for:	rhythmbox
+# Date created:		17 August 2003
+# Whom:			Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	net-rhythmbox
-PORTVERSION=	0.4.8
-PORTREVISION=	2
+PORTNAME=	rhythmbox
+PORTVERSION=	0.5.1
 CATEGORIES=	audio gnome
-MASTER_SITES=	http://web.verbum.org/net-rhythmbox/
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.5
+DIST_SUBDIR=	gnome2
 
-MAINTAINER=	hendrik@scholz.net
+MAINTAINER=	marcus@freebsd.org
 COMMENT=	Audio player for the Gnome 2 desktop environment
 
 LIB_DEPENDS=	musicbrainz.2:${PORTSDIR}/audio/libmusicbrainz \
@@ -19,44 +20,31 @@ LIB_DEPENDS=	musicbrainz.2:${PORTSDIR}/audio/libmusicbrainz \
 		FLAC.5:${PORTSDIR}/audio/flac \
 		mad.1:${PORTSDIR}/audio/mad
 
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix libgnomeui
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
-CONFIGURE_ARGS=	--disable-lirc
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/lib/libxosd.so)
-WITH_XOSD=	yes
-.endif
 .if exists(${LOCALBASE}/lib/libvorbis.so)
-WITH_VORBIS=  yes
+WITH_VORBIS=	yes
 .endif
 
-.ifdef (WITH_XOSD)
-LIB_DEPENDS+=   xosd.4:${PORTSDIR}/misc/xosd
-.else
-CONFIGURE_ARGS+=    --disable-xosd
-.endif
 .ifdef (WITH_VORBIS)
-LIB_DEPENDS+=   vorbis.2:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=		vorbis.2:${PORTSDIR}/audio/libvorbis
 .else
-CONFIGURE_ARGS+=    --disable-vorbistest
+CONFIGURE_ARGS+=	--disable-vorbistest
 .endif
 
 pre-everything::
-.if !defined(WITH_XOSD)
-	@${ECHO_CMD}
-	@${ECHO_CMD} "define WITH_XOSD to enable On-Screen-Display support"
-	@${ECHO_CMD}
-.endif
 .if !defined(WITH_VORBIS)
-	@${ECHO_CMD}
-	@${ECHO_CMD} "define WITH_VORBIS to enable Vorbis support"
-	@${ECHO_CMD}
+	@${ECHO_MSG}
+	@${ECHO_MSG} "Define WITH_VORBIS to enable Vorbis support"
+	@${ECHO_MSG}
 .endif
 
 .include <bsd.port.post.mk>
