@@ -30,3 +30,7 @@ if grep -q "^${portloc}|" failure; then
     grep -v "^${portloc}|" failure > failure.new
     mv failure.new failure
 fi
+
+if [ -L ${pb}/${arch}/${branch}/latest/${portloc} ]; then
+    rm -f ${pb}/${arch}/${branch}/latest/${portloc}
+fi
