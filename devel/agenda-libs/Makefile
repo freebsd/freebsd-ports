@@ -6,25 +6,19 @@
 #
 
 PORTNAME=	agenda-libs
-PORTVERSION=	1.0
+PORTVERSION=	1.2.0
 CATEGORIES=	devel
-MASTER_SITES=	http://lev.serebryakov.spb.ru/download/agenda/
+MASTER_SITES=	# empty
+DISTFILES=	# empty
+EXTRACT_ONLY=	# empty
 
 MAINTAINER=	lev@serebryakov.spb.ru
 
-RUN_DEPENDS=	${LOCALBASE}/${TARGET_PLATFORM}/include/stdio.h:${PORTSDIR}/devel/agenda-headers
+RUN_DEPENDS=	${LOCALBASE}/mipsel-linux/lib/libc.a:${PORTSDIR}/devel/agenda-static-libs \
+		${LOCALBASE}/mipsel-linux/lib/snow/libc.1.sso:${PORTSDIR}/devel/agenda-snow-libs
 
-TARGET_PLATFORM=mipsel-linux
-USE_BZIP2=	yes
-NO_FILTER_SHLIBS=	yes
-
-LIBC_SUB=	PREFIX=${PREFIX} TARGET_PLATFORM=${TARGET_PLATFORM}
-
-do-build:
-	@${SED} ${LIBC_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} < ${WRKSRC}/lib/libc.so > ${WRKSRC}/lib/libc.so.new
-	@${MV} ${WRKSRC}/lib/libc.so.new ${WRKSRC}/lib/libc.so
+NO_BUILD=	yes
 
 do-install:
-	(cd ${WRKSRC} && tar --exclude '*.orig' -cf - *) \
-		| (cd ${PREFIX}/${TARGET_PLATFORM} && tar xf -)
+
 .include <bsd.port.mk>
