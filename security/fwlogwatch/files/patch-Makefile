@@ -1,6 +1,7 @@
---- Makefile.orig	Thu Oct  3 23:07:30 2002
-+++ Makefile	Mon Mar 31 10:37:53 2003
-@@ -2,9 +2,9 @@
+--- Makefile.orig	Sun Apr  4 17:42:16 2004
++++ Makefile	Tue May 18 21:46:48 2004
+@@ -2,10 +2,10 @@
+ # $Id: Makefile,v 1.73 2004/04/04 14:42:16 bw Exp $
  
  # Linux
 -CC = gcc
@@ -14,7 +15,7 @@
  
  # Solaris
  #LIBS = -lnsl -lsocket -lcrypt -lz
-@@ -22,9 +22,12 @@
+@@ -23,9 +23,12 @@
  #LIBS = -L/usr/local/lib -lz -lintl
  
  # FreeBSD
@@ -30,7 +31,7 @@
  
  # You might want to add -DSHORT_NAMES to CFLAGS if you only intend to
  # analyze log formats with short list/chain/branch/interface names like
-@@ -37,12 +40,12 @@
+@@ -38,12 +41,12 @@
  LFLAGS = -B #-f #-p -p -d
  
  INSTALL = install
@@ -47,9 +48,9 @@
 +CONF_DIR = ${INSTALL_DIR}/etc
 +LOCALE_DIR = ${INSTALL_DIR}
  
- OBJS = cisco_ios.o cisco_pix.o compare.o ipchains.o ipfilter.o lancom.o \
-        main.o modes.o net.o netfilter.o netscreen.o output.o parser.o \
-@@ -82,18 +85,23 @@
+ OBJS = cisco_ios.o cisco_pix.o compare.o ipchains.o ipfilter.o ipfw.o \
+        lancom.o main.o modes.o net.o netfilter.o netscreen.o output.o \
+@@ -85,19 +88,25 @@
  	$(INSTALL_PROGRAM) fwlogwatch $(INSTALL_DIR)/sbin/fwlogwatch
  	$(INSTALL_SCRIPT) contrib/fwlw_notify $(INSTALL_DIR)/sbin/fwlw_notify
  	$(INSTALL_SCRIPT) contrib/fwlw_respond $(INSTALL_DIR)/sbin/fwlw_respond
@@ -65,6 +66,8 @@
 +	cd po; $(MAKE)
 +	${MKDIR} $(LOCALE_DIR)/share/locale/de/LC_MESSAGES
  	$(INSTALL_DATA) po/de.mo $(LOCALE_DIR)/share/locale/de/LC_MESSAGES/fwlogwatch.mo
++	${MKDIR} $(LOCALE_DIR)/share/locale/ja/LC_MESSAGES
+ 	$(INSTALL_DATA) po/ja.mo $(LOCALE_DIR)/share/locale/ja/LC_MESSAGES/fwlogwatch.mo
 +	${MKDIR} $(LOCALE_DIR)/share/locale/pt_BR/LC_MESSAGES
  	$(INSTALL_DATA) po/pt_BR.mo $(LOCALE_DIR)/share/locale/pt_BR/LC_MESSAGES/fwlogwatch.mo
 +	${MKDIR} $(LOCALE_DIR)/share/locale/sv/LC_MESSAGES
