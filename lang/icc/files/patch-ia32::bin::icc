@@ -1,12 +1,13 @@
---- ia32/bin/icc.orig	Fri Jan 10 16:57:18 2003
-+++ ia32/bin/icc	Fri Jan 10 17:09:38 2003
+--- ia32/bin/icc.orig	Tue Oct 21 18:57:00 2003
++++ ia32/bin/icc	Tue Oct 21 19:12:23 2003
 @@ -1,34 +1,72 @@
  #!/bin/sh
  
+-if [ -z INTEL_LICENSE_FILE ]
 +PREFIX=@@PREFIX@@
 +export PREFIX;
 +
- if [ -z INTEL_LICENSE_FILE ]
++if [ -z "$INTEL_LICENSE_FILE" ]
  then
 -INTEL_LICENSE_FILE=<INSTALLDIR>/licenses;
 +INTEL_LICENSE_FILE=${PREFIX}/intel/licenses;
@@ -16,7 +17,8 @@
  fi
  export INTEL_LICENSE_FILE;
  
- if [ -z LD_LIBRARY_PATH ]
+-if [ -z LD_LIBRARY_PATH ]
++if [ -z "$LD_LIBRARY_PATH" ]
  then 
 - LD_LIBRARY_PATH=<INSTALLDIR>/compiler70/ia32/lib;
 + LD_LIBRARY_PATH=${PREFIX}/intel/compiler70/ia32/lib;
@@ -26,7 +28,8 @@
  fi
  export LD_LIBRARY_PATH;
  
- if [ -z PATH ]
+-if [ -z PATH ]
++if [ -z "$PATH" ]
  then
 - PATH=<INSTALLDIR>/compiler70/ia32/bin;
 + PATH=${PREFIX}/intel/compiler70/ia32/bin;

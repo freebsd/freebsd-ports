@@ -7,7 +7,7 @@
 
 PORTNAME=	icc
 PORTVERSION=	7.1.031
-#PORTREVISION=	1
+PORTREVISION=	1
 CATEGORIES=	lang linux devel
 MASTER_SITES=
 DISTNAME=	l_cc_pc_${PORTVERSION}
@@ -40,6 +40,11 @@ MANPREFIX=	${PREFIX}/intel/${COMPILERDIR}/
 ICC_SITE=	http://www.intel.com/software/products/compilers/
 
 .include <bsd.port.pre.mk>
+
+EXTRACT_AFTER_ARGS=	| tar -xf - \
+			--exclude intel-isubh\*.rpm \
+			--exclude \*ia64.rpm \
+			--exclude flexlm64
 
 ICCCFGVAL!=	${UNAME} -r | ${SED} -e 's/\..*//'
 
@@ -118,6 +123,13 @@ post-patch:
 # Hack while there's no support for icc in the stdarg.h of FreeBSD.
 	@${CP} ${FILESDIR}/stdarg.h ${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/include
 
+.if ( ${OSVERSION} >= 470101 && ${OSVERSION} < 500000 ) || \
+	( ${OSVERSION} >= 500042 )
+OBJCOPY_OPS=	--redefine-sym stdin=__stdinp \
+		--redefine-sym stdout=__stdoutp \
+		--redefine-sym stderr=__stderrp
+.endif
+
 do-build:
 # Fix unresolved references
 	@cd ${WRKSRC} && ${CC} ${CFLAGS} -c ${FILESDIR}/assert_fail.c \
@@ -128,15 +140,12 @@ do-build:
 	@${CC} ${CFLAGS} -c -o ${WRKSRC}/stdin.o ${FILESDIR}/stdin.c
 	@${CC} ${CFLAGS} -c -o ${WRKSRC}/stdout.o ${FILESDIR}/stdout.c
 	@${CC} ${CFLAGS} -c -o ${WRKSRC}/stderr.o ${FILESDIR}/stderr.c
-.else
+.endif
 .for i in libcxa.a libimf.a libirc.a libircmt.a libunwind.a
 	@${OBJCOPY} --redefine-sym __sigsetjmp=sigsetjmp \
-		--redefine-sym stdin=__stdinp \
-		--redefine-sym stdout=__stdoutp \
-		--redefine-sym stderr=__stderrp \
+		${OBJCOPY_OPS} \
 		${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/lib/${i}
 .endfor
-.endif
 	@${AR} q ${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/lib/libcxa.a ${WRKSRC}/*.o
 # Some magic to be able to link
 	@${MKDIR} ${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/ldwrapper
