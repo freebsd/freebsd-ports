@@ -6,9 +6,13 @@
 #
 
 PORTNAME=	leafnode
-PORTVERSION=	1.9.18
+PORTVERSION=	1.9.19
 CATEGORIES=	news
-MASTER_SITES=	${MASTER_SITE_SUNSITE} \
+MASTER_SITES=	ftp://wpxx02.toxi.uni-wuerzburg.de/pub/ \
+                ftp://ftp.karlsruhe.org/pub/news/servers/leafnode/ \
+                ftp://ftp.stikman.com/pub/leafnode/ \
+                ftp://ftp.gigabell.net/pub/leafnode/ \
+		${MASTER_SITE_SUNSITE} \
 		http://www.Awfulhak.org/leafnode/
 MASTER_SITE_SUBDIR=	system/news/transport
 
