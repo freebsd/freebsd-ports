@@ -7,6 +7,7 @@
 
 PORTNAME=	w3m
 PORTVERSION=	${W3M_VERSION}
+PORTREVISION=	1
 CATEGORIES+=	www ipv6
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	nobutaka
@@ -52,21 +53,15 @@ PLIST_SUB+=	M17N="@comment "
 .endif
 
 .if defined(JAPANESE)
+LIB_DEPENDS+=		intl.5:${PORTSDIR}/devel/gettext-old
 CONFIGURE_ARGS+=	--enable-m17n --enable-japanese=E --with-migemo=yes
 DOCS_JP=	${DOCS} README.SSL README.cookie README.keymap README.mailcap \
 		README.menu README.migemo
 
 PLIST_SUB+=	JAPANESE="" M17N=""
 .else
-PLIST_SUB+=	JAPANESE="@comment "
-.endif
-
-.if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.else
-LIB_DEPENDS+=		intl.5:${PORTSDIR}/devel/gettext-old
-PLIST_SUB+=	NLS=""
+PLIST_SUB+=	JAPANESE="@comment "
 .endif
 
 .if defined(INLINE_IMAGE)
@@ -112,11 +107,6 @@ pre-everything::
 	@${ECHO_MSG} "===> WITHOUT_SSL (disabled)"
 .else
 	@${ECHO_MSG} "===> WITHOUT_SSL"
-.endif
-.if defined(WITHOUT_NLS)
-	@${ECHO_MSG} "===> WITHOUT_NLS (disabled)"
-.else
-	@${ECHO_MSG} "===> WITHOUT_NLS"
 .endif
 	@${ECHO_MSG} "===>"
 

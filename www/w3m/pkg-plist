@@ -41,7 +41,7 @@ libexec/w3m/xface2xpm
 %%PORTDOCS%%%%DOCSDIR%%/keymap.lynx
 %%PORTDOCS%%%%DOCSDIR%%/menu.default
 %%PORTDOCS%%%%DOCSDIR%%/menu.submenu
-%%NLS%%share/locale/ja/LC_MESSAGES/w3m.mo
+%%JAPANESE%%share/locale/ja/LC_MESSAGES/w3m.mo
 share/w3m/w3mhelp-funcdesc.en.pl
 share/w3m/w3mhelp-funcdesc.ja.pl
 share/w3m/w3mhelp-funcname.pl
