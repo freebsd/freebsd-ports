@@ -1,0 +1,11 @@
+--- man/mans/Makefile.in.orig	Wed Dec 26 13:40:01 2001
++++ man/mans/Makefile.in	Wed Dec 26 13:42:54 2001
+@@ -153,7 +153,7 @@
+ mkinstalldirs = $(SHELL) $(top_srcdir)/./config/mkinstalldirs
+ CONFIG_HEADER = ../../share/include/lam_config.h
+ CONFIG_CLEAN_FILES = 
+-mansdir = $(mandir)/mans
++mansdir = $(datadir)/lam
+ MANS = $(man_MANS)
+ 
+ NROFF = nroff
