@@ -1,26 +1,21 @@
---- src/osdep/unix/Makefile.orig	Tue Mar  6 07:07:37 2001
-+++ src/osdep/unix/Makefile	Tue Apr  3 21:46:31 2001
-@@ -28,10 +28,17 @@
+--- src/osdep/unix/Makefile.orig	Thu Apr  5 00:45:53 2001
++++ src/osdep/unix/Makefile	Tue Apr 10 00:48:00 2001
+@@ -28,10 +28,10 @@
  
  # Extended flags needed for SSL.  You may need to modify.
  
 -SSLDIR=/usr/local/ssl
-+.if ${OSVERSION} >= 400014
-+SSLDIR=/usr
-+SSLCERTS=$(PREFIX)/certs
-+SSLINCLUDE=$(SSLDIR)/include/openssl
-+SSLLIB=$(SSLDIR)/lib
-+.else
-+SSLDIR=$(PREFIX)
- SSLCERTS=$(SSLDIR)/certs
+-SSLCERTS=$(SSLDIR)/certs
 -SSLINCLUDE=$(SSLDIR)/include
-+SSLINCLUDE=$(SSLDIR)/include/openssl
- SSLLIB=$(SSLDIR)/lib
-+.endif
+-SSLLIB=$(SSLDIR)/lib
++SSLDIR=$(OPENSSLBASE)
++SSLCERTS=$(PREFIX)/certs
++SSLINCLUDE=$(OPENSSLINC)
++SSLLIB=$(OPENSSLLIB)
  
  SSLCRYPTO=-lcrypto
  
-@@ -97,7 +104,7 @@
+@@ -97,7 +97,7 @@
  # Commands possibly overriden by the individual port
  
  ARRC=ar rc
@@ -29,7 +24,7 @@
  LN=ln -s
  RANLIB=ranlib
  
-@@ -115,7 +122,7 @@
+@@ -115,7 +115,7 @@
   dummy.o pseudo.o netmsg.o flstring.o fdstring.o \
   rfc822.o nntp.o smtp.o imap4r1.o pop3.o \
   unix.o mbox.o mbx.o mmdf.o tenex.o mtx.o news.o phile.o mh.o mx.o
@@ -38,7 +33,7 @@
  
  CAT=cat
  MAKE=make
-@@ -132,6 +139,10 @@
+@@ -132,6 +132,10 @@
   PASSWDTYPE=$(PASSWDTYPE) SSLTYPE=$(SSLTYPE)
  
  
@@ -49,7 +44,7 @@
  # Here if no make argument established
  
  missing: osdep.h
-@@ -212,13 +223,14 @@
+@@ -212,13 +216,14 @@
  	 BASECFLAGS="-g -Dconst="
  
  bsf:	# FreeBSD
@@ -67,7 +62,7 @@
  
  bsi:	# BSD/i386
  	$(BUILD) `$(CAT) SPECIALS` OS=$@ \
-@@ -752,15 +764,26 @@
+@@ -762,15 +767,26 @@
  
  # Build it!
  
@@ -96,7 +91,7 @@
  .c.o:
  	`$(CAT) CCTYPE` -c `$(CAT) CFLAGS` $*.c
  
-@@ -769,6 +792,7 @@
+@@ -779,6 +795,7 @@
  
  clean:
  	sh -c '$(RM) auths.c crexcl.c flockbsd.c linkage.[ch] siglocal.c osdep*.[ch] *.o ARCHIVE *FLAGS *TYPE $(ARCHIVE) || true'
@@ -104,7 +99,7 @@
  
  
  # Dependencies
-@@ -802,7 +826,7 @@
+@@ -812,7 +829,7 @@
  
  # OS-dependent
  
@@ -113,7 +108,7 @@
  	osdep.h env_unix.h tcp_unix.h \
  	osdep.c env_unix.c fs_unix.c ftl_unix.c nl_unix.c tcp_unix.c \
  	auths.c crexcl.c flock.c flockbsd.c flcksafe.c fsync.c gethstid.c \
-@@ -814,7 +838,12 @@
+@@ -824,7 +841,12 @@
  	write.c sslstdio.c \
  	strerror.c strpbrk.c strstr.c strtok.c strtoul.c \
  	OSCFLAGS

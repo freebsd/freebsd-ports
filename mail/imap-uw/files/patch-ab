@@ -1,6 +1,6 @@
---- src/osdep/unix/Makefile.orig	Tue Mar  6 07:07:37 2001
-+++ src/osdep/unix/Makefile	Tue Apr  3 23:48:08 2001
-@@ -22,16 +22,23 @@
+--- src/osdep/unix/Makefile.orig	Thu Apr  5 00:45:53 2001
++++ src/osdep/unix/Makefile	Tue Apr 10 01:13:38 2001
+@@ -22,16 +22,16 @@
  
  EXTRAAUTHENTICATORS=
  EXTRADRIVERS=mbox
@@ -12,22 +12,17 @@
  # Extended flags needed for SSL.  You may need to modify.
  
 -SSLDIR=/usr/local/ssl
-+.if ${OSVERSION} >= 400014
-+SSLDIR=/usr
-+SSLCERTS=$(PREFIX)/certs
-+SSLINCLUDE=$(SSLDIR)/include/openssl
-+SSLLIB=$(SSLDIR)/lib
-+.else
-+SSLDIR=$(PREFIX)
- SSLCERTS=$(SSLDIR)/certs
+-SSLCERTS=$(SSLDIR)/certs
 -SSLINCLUDE=$(SSLDIR)/include
-+SSLINCLUDE=$(SSLDIR)/include/openssl
- SSLLIB=$(SSLDIR)/lib
-+.endif
+-SSLLIB=$(SSLDIR)/lib
++SSLDIR=$(OPENSSLBASE)
++SSLCERTS=$(PREFIX)/certs
++SSLINCLUDE=$(OPENSSLINC)
++SSLLIB=$(OPENSSLLIB)
  
  SSLCRYPTO=-lcrypto
  
-@@ -60,7 +67,7 @@
+@@ -60,7 +60,7 @@
  # AFSLDFLAGS may also need -L/usr/ucblib -lucb
  DCECFLAGS= -DDCE_MINIMAL -DPASSWD_OVERRIDE=\"/opt/pop3/passwd/passwd\"
  DCELDFLAGS= -ldce
@@ -36,7 +31,7 @@
  
  
  # Build parameters normally set by the individual port
-@@ -97,7 +104,7 @@
+@@ -97,7 +97,7 @@
  # Commands possibly overriden by the individual port
  
  ARRC=ar rc
@@ -45,7 +40,7 @@
  LN=ln -s
  RANLIB=ranlib
  
-@@ -115,7 +122,7 @@
+@@ -115,7 +115,7 @@
   dummy.o pseudo.o netmsg.o flstring.o fdstring.o \
   rfc822.o nntp.o smtp.o imap4r1.o pop3.o \
   unix.o mbox.o mbx.o mmdf.o tenex.o mtx.o news.o phile.o mh.o mx.o
@@ -54,7 +49,7 @@
  
  CAT=cat
  MAKE=make
-@@ -198,6 +205,15 @@
+@@ -198,6 +198,15 @@
  	 BASECFLAGS="-g -B/usr/lib/big/ -Dvoid=char -Dconst=" \
  	 RANLIB=true ARRC="ar -rc"
  
@@ -70,7 +65,7 @@
  bs3:	# BSD/i386 3.0 or higher
  	$(BUILD) `$(CAT) SPECIALS` OS=bsi \
  	 CHECKPW=bsi LOGINPW=bsi CRXTYPE=nfs \
-@@ -213,12 +229,13 @@
+@@ -213,12 +222,13 @@
  
  bsf:	# FreeBSD
  	$(BUILD) `$(CAT) SPECIALS` OS=$@ \
@@ -87,7 +82,7 @@
  
  bsi:	# BSD/i386
  	$(BUILD) `$(CAT) SPECIALS` OS=$@ \
-@@ -754,7 +771,7 @@
+@@ -764,7 +774,7 @@
  
  build:	clean once $(ARCHIVE)
  

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	imap
-PORTVERSION=	0104031813
+PORTVERSION=	0104051333
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/%SUBDIR%/ \
 		ftp://ftp.funet.fi/pub/mirrors/ftp.cac.washington.edu/mail/%SUBDIR%/ \
@@ -23,15 +23,13 @@ LIB_DEPENDS=	c-client4.8:${PORTSDIR}/mail/cclient
 .if defined(WITH_DRAC)
 BUILD_DEPENDS=	${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
 .endif
-.if defined(WITH_SSL)
-USE_OPENSSL=	yes
-.endif
 
 MAN8=		ipopd.8 imapd.8
-.if defined(WITH_SSL)
-ALL_TARGET=	bsf SSLTYPE=unix
-.else
+
 ALL_TARGET=	bsf
+.if defined(WITH_SSL)
+MAKE_ARGS+=	SSLTYPE=unix
+USE_OPENSSL=	yes
 .endif
 
 .include <bsd.port.pre.mk>
@@ -70,7 +68,7 @@ post-install:
 	@${ECHO} "To create and install a new SSL certificate for imapd and ipop3d, type \"make"
 	@${ECHO} "cert\"."
 	@${ECHO}
-	@${ECHO} "Example inetd config for the SSL services:"
+	@${ECHO} "Example inetd config for SSL only services:"
 	@${ECHO}
 	@${ECHO} "pop3s   stream  tcp     nowait  root    /usr/local/libexec/ipop3d       ipop3d"
 	@${ECHO} "imaps   stream  tcp     nowait  root    /usr/local/libexec/imapd        imapd"
