@@ -11,7 +11,7 @@ PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.caida.org/pub/arts++/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/./-/g}
 
 MAINTAINER=	ler@lerctr.org
 COMMENT=	A network data storage and analysis library from CAIDA
