@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	gnomemeeting
-PORTVERSION=	0.96.0
-PORTREVISION=	1
+PORTVERSION=	0.96.1
 CATEGORIES=	net gnome
-MASTER_SITES=	http://www.gnomemeeting.org/downloads/0.96.0/sources/
+MASTER_SITES=	http://www.gnomemeeting.org/downloads/0.96.1/sources/
 
 MAINTAINER=	roger@FreeBSD.org
 COMMENT=	GNOME H323 Video Conferencing program, similar to NetMeeting
