@@ -2,6 +2,12 @@ bin/pfaedit
 bin/sfddiff
 bin/acorn2sfd
 include/uninameslist.h
+lib/libgdraw.la
+lib/libgdraw.so
+lib/libgdraw.so.1
+lib/libgunicode.la
+lib/libgunicode.so
+lib/libgunicode.so.2
 lib/libuninameslist.la
 lib/libuninameslist.so
 lib/libuninameslist.so.0
@@ -208,6 +214,8 @@ lib/libuninameslist.so.0
 %%PORTDOCS%%share/doc/pfaedit/k6.png
 %%PORTDOCS%%share/doc/pfaedit/kanjichar.png
 %%PORTDOCS%%share/doc/pfaedit/kanjifont.png
+%%PORTDOCS%%share/doc/pfaedit/kernbyclasses.png
+%%PORTDOCS%%share/doc/pfaedit/kerningclass.png
 %%PORTDOCS%%share/doc/pfaedit/kernpairs.html
 %%PORTDOCS%%share/doc/pfaedit/l1.png
 %%PORTDOCS%%share/doc/pfaedit/l10.png
@@ -231,6 +239,7 @@ lib/libuninameslist.so.0
 %%PORTDOCS%%share/doc/pfaedit/mad.html
 %%PORTDOCS%%share/doc/pfaedit/metricsmenu.html
 %%PORTDOCS%%share/doc/pfaedit/metricsview.html
+%%PORTDOCS%%share/doc/pfaedit/newanchor.png
 %%PORTDOCS%%share/doc/pfaedit/newfont.png
 %%PORTDOCS%%share/doc/pfaedit/o-baddir.png
 %%PORTDOCS%%share/doc/pfaedit/o1.png
