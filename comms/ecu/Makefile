@@ -3,11 +3,11 @@
 # Date created:         Feb 18, 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.10 1996/08/17 18:34:35 ache Exp $
+# $Id: Makefile,v 1.11 1996/11/12 00:42:37 ache Exp $
 #
 
 DISTNAME=       ecu-3.55
-CATEGORIES+=	comms
+CATEGORIES=	comms
 MASTER_SITES=   ftp://ftp.relcom.ru/unix/comm/
 #MASTER_SITES=   ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin/Communications/
 

@@ -4,20 +4,16 @@
 # Date created:         29 Sept 1996
 # Whom:                 David O'Brien <obrien@cs.ucdavis.edu>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/11/03 03:20:23 obrien Exp $
 
 DISTNAME=	lrzsz-0.12.11
-CATEGORIES+=	comms
+CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.ihg.uni-duisburg.de/uwe/
 
 MAINTAINER=	obrien@cs.ucdavis.edu
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-
-post-install:
-	${COMPRESS_MAN} \
-		${PREFIX}/man/man1/lrz.1  \
-		${PREFIX}/man/man1/lsz.1
+MAN1=		lrz.1 lsz.1
 
 .include <bsd.port.mk>

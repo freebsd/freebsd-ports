@@ -3,11 +3,11 @@
 # Date created:         Fri Dec 01, 1995
 # Whom:                 obrien@cs.ucdavis.edu
 #
-# $Id: Makefile,v 1.3 1996/11/03 06:54:45 obrien Exp $
+# $Id: Makefile,v 1.4 1996/11/13 12:40:52 asami Exp $
 #
 
 DISTNAME=	minicom-1.75
-CATEGORIES+=	comms
+CATEGORIES=	comms
 MASTER_SITES=	ftp://sunsite.unc.edu/pub/Linux/apps/comm/ \
 		ftp://ftp.yggdrasil.com/mirrors/sunsite/apps/comm/
 

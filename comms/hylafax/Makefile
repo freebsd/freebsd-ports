@@ -5,26 +5,18 @@
 # To Replace:		flexfax v2.3beta038special
 # Name changed from flexfax to hylafax by author of both: Sam Leffler.
 #
-# $Id: Makefile,v 1.6 1995/10/27 22:05:03 pst Exp $
+# $Id: Makefile,v 1.7 1996/03/06 08:19:56 asami Exp $
 
 DISTNAME=	hylafax-v3.0pl0
 PKGNAME=	hylafax-3.0.1
-CATEGORIES+=	comms
+CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.sgi.com/sgi/fax/source/
 EXTRACT_SUFX=	-tar.gz
-HAS_CONFIGURE=	yes
 
 PATCH_SITES=	ftp://ftp.sgi.com/sgi/fax/source/
 PATCHFILES=	hylafax-v3.0pl0-patch01.gz 
-PATCH_DIST_STRIP=-p1
 
 MAINTAINER=	jhs@FreeBSD.org
-
-.if !exists(patches/patch-ab)
-IS_INTERACTIVE= yes
-#	patches/patch-ab makes this BATCH compilable,
-#	( If you need interactive config, rm patch-ab )
-.endif
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash gs:${PORTSDIR}/print/ghostscript
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
@@ -34,6 +26,24 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 # ./libtiff has 2M, & may be duplicates of what is in ${PORTSDIR}/graphics/tiff
 # LIB_DEPENDS=          something:${PORTSDIR}/print/afm
 # ./afm/ has 536K of fonts, that perhaps could be merged.
+
+.if !exists(patches/patch-ab)
+IS_INTERACTIVE= yes
+#	patches/patch-ab makes this BATCH compilable,
+#	( If you need interactive config, rm patch-ab )
+.endif
+PATCH_DIST_STRIP=-p1
+HAS_CONFIGURE=	yes
+MAN1=		fax2ps.1 faxalter.1 faxcover.1 faxmail.1 faxrm.1 faxstat.1  \
+		hylafax.1 sendfax.1 sendpage.1 sgi2fax.1 textfmt.1
+MAN5=		pagesizes.5f typerules.5f cid.5f config.5f destctrls.5f  \
+		dialrules.5f hosts.5f hylafax.5f info.5f log.5f recvq.5f \
+		sendq.5f status.5f tsi.5f xferlog.5f
+MAN8=		dialtest.8c faxabort.8c faxaddmodem.8c faxanswer.8c  \
+		faxcron.8c faxd.recv.8c faxgetty.8c faxq.8c faxquit.8c  \
+		faxrcvd.8c faxsend.8c mkcover.8c notify.8c pagesend.8c  \
+		pollrcvd.8c ps2fax.8c recvstats.8c tagtest.8c transcript.8c  \
+		tsitest.8c xferstats.8c
 
 FAXCOVER?= /etc/faxcover.ps
 #	Default location to check for an optional over-riding host specific
@@ -74,27 +84,6 @@ post-install:
 	cd ${PREFIX}/bin ; strip \
 		fax2ps faxalter faxcover faxmail faxrm faxstat sendfax sendpage
 	cd ${PREFIX}/sbin ; strip faxd.recv faxgetty faxq
-	cd ${PREFIX}/man/man1; \
-	    for man in fax2ps.1 faxalter.1 faxcover.1 faxmail.1 \
-		faxrm.1 faxstat.1 hylafax.1 sendfax.1 sendpage.1 \
-		sgi2fax.1 textfmt.1; do \
-	        gzip -9nf $$man; \
-	    done
-	cd ${PREFIX}/man/man5; \
-	    for man in pagesizes.5f typerules.5f cid.5f config.5f \
-		destctrls.5f dialrules.5f hosts.5f hylafax.5f info.5f \
-		log.5f recvq.5f sendq.5f status.5f tsi.5f xferlog.5f; do \
-		gzip -9nf $$man; \
-	    done
-	cd ${PREFIX}/man/man8; \
-	    for man in dialtest.8c faxabort.8c faxaddmodem.8c \
-		faxanswer.8c faxcron.8c faxd.recv.8c faxgetty.8c \
-		faxq.8c faxquit.8c faxrcvd.8c faxsend.8c mkcover.8c \
-		notify.8c pagesend.8c pollrcvd.8c ps2fax.8c \
-		recvstats.8c tagtest.8c transcript.8c tsitest.8c \
-		xferstats.8c; do \
-		gzip -9nf $$man; \
-	    done
 	@echo "Hylafax by default only does this sete[gu]id 0 stuff:"
 	@echo "	-u uucp -m 4755  faxq faxgetty"
 	@echo "If you, like I, think it needs more, run 'make suid'"
