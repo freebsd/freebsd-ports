@@ -4,5 +4,11 @@ lib/libgringotts.so
 lib/libgringotts.la
 lib/libgringotts.a
 libdata/pkgconfig/libgringotts.pc
+%%PORTDOCS%%share/doc/libgringotts/AUTHORS
+%%PORTDOCS%%share/doc/libgringotts/COPYING
+%%PORTDOCS%%share/doc/libgringotts/ChangeLog
+%%PORTDOCS%%share/doc/libgringotts/NEWS
+%%PORTDOCS%%share/doc/libgringotts/README
+%%PORTDOCS%%share/doc/libgringotts/TODO
 %%PORTDOCS%%share/doc/libgringotts/manual.htm
 %%PORTDOCS%%@dirrm share/doc/libgringotts
