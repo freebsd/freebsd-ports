@@ -4,7 +4,7 @@
 # Date created:                         20 May 1998
 # Whom:                                 ache
 #
-# $Id: Makefile,v 1.8 1998/09/22 23:33:08 asami Exp $
+# $Id: Makefile,v 1.9 1998/10/07 10:15:19 ache Exp $
 #
 
 DISTNAME=       WebMagick-1.44
@@ -23,6 +23,9 @@ CONFIGURE_ENV=  webmagick_cv_rootpath=${PREFIX}/www/data \
 		webmagick_cv_htimage="" \
 		webmagick_cv_maptype=ncsa \
 		PERL=${PERL}
+
+pre-install:
+		@${MKDIR} ${PREFIX}/www/data
 
 post-install:
 		cd ${WRKSRC}; \
