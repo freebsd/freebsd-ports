@@ -1,21 +1,21 @@
 # New ports collection makefile for:	mc
-# Version required:	4.5.10
+# Version required:	4.5.23
 # Date created:		15 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.27 1999/01/31 18:12:49 vanilla Exp $
+# $Id: Makefile,v 1.28 1999/02/22 04:27:44 steve Exp $
 #
 
-DISTNAME=	mc-4.5.10
+DISTNAME=	mc-4.5.23
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	mc
+MASTER_SITE_SUBDIR=	gnome-1.0/sources
 
 MAINTAINER=	reg@shale.csir.co.za
 
 BUILD_DEPENDS=	gettext:${PORTSDIR}/devel/gettext
 RUN_DEPENDS=	gettext:${PORTSDIR}/devel/gettext
-LIB_DEPENDS=	glib11d.2:${PORTSDIR}/devel/glib11-devel
+LIB_DEPENDS=	glib12.1:${PORTSDIR}/devel/glib12
 
 .if defined(USE_NCURSES_PORT)
 LIB_DEPENDS+=	ncurses.4:${PORTSDIR}/devel/ncurses
@@ -26,7 +26,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ncurses --without-gnome --without-edit
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		MAKE="gmake" \
-		GLIB_CONFIG="${LOCALBASE}/bin/glib11d-config" \
+		GLIB_CONFIG="${LOCALBASE}/bin/glib12-config" \
 		LIBS="-L${LOCALBASE}/lib"
 
 MAN1=		midc.1
