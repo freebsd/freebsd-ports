@@ -5,25 +5,25 @@
 # $FreeBSD$
 #
 
-PORTNAME=		IglooFTP
-PORTVERSION=		0.6.1
-CATEGORIES=		ftp
-MASTER_SITES=		${MASTER_SITE_SUNSITE} \
-			ftp://littleigloo.org/pub/iglooftp/
+PORTNAME=	IglooFTP
+PORTVERSION=	0.6.1
+CATEGORIES=	ftp
+MASTER_SITES=	${MASTER_SITE_SUNSITE} \
+		ftp://littleigloo.org/pub/iglooftp/
 MASTER_SITE_SUBDIR=	system/network/file-transfer
-DISTNAME=		${PORTNAME}-${PORTVERSION}.src
+DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
-MAINTAINER=		will@FreeBSD.org
+MAINTAINER=	will@FreeBSD.org
 
-LIB_DEPENDS=		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
+LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
-GTK_CONFIG?=		${X11BASE}/bin/gtk12-config
+GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
-WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
-USE_X_PREFIX=		yes
-MAKE_ENV=		GTK_CONFIG="${GTK_CONFIG}"
-ALL_TARGET=		IglooFTP
+USE_X_PREFIX=	yes
+MAKE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
+ALL_TARGET=	IglooFTP
 
 post-extract:
 	@${RM} ${WRKSRC}/../share/docs/LICENSE~
