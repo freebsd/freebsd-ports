@@ -12,7 +12,7 @@ MASTER_SITES=	http://people.ee.ethz.ch/~oetiker/webtools/mrtg/pub/ \
 		ftp://ftp.chg.ru/pub/networking/monitoring/mrtg/ \
 		${MASTER_SITE_RINGSERVER}
 MASTER_SITE_SUBDIR=	net/mrtg
-DISTNAME=	${PORTNAME}-2.9.18pre7
+DISTNAME=	${PORTNAME}-2.9.18pre9
 
 MAINTAINER=	demon@FreeBSD.org
 
