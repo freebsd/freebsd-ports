@@ -3,11 +3,11 @@
 # Date created:                         June 21th 1997
 # Whom:                                 ache@freebsd.org
 #
-# $Id: Makefile,v 1.7 1998/08/19 13:14:57 vanilla Exp $
+# $Id: Makefile,v 1.8 1998/09/15 21:31:30 asami Exp $
 #
 
-DISTNAME=       MIME-Base64-2.06
-PKGNAME=        p5-MIME-Base64-2.06
+DISTNAME=       MIME-Base64-2.09
+PKGNAME=        p5-MIME-Base64-2.09
 CATEGORIES=	converters perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=     MIME
