@@ -127,6 +127,7 @@
     SUBDIR += mailgraph
     SUBDIR += mailman
 #   SUBDIR += mailman-devel
+    SUBDIR += mailscanner
     SUBDIR += mailsync
     SUBDIR += mailx
     SUBDIR += mairix
