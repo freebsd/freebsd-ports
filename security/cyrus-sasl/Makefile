@@ -17,7 +17,7 @@ MAINTAINER=	hetzels@westbend.net
 BUILD_DEPENDS=	openssl:${PORTSDIR}/security/openssl
 LIB_DEPENDS=	crypto.1:${PORTSDIR}/security/openssl
 
-SASL_VER=	1.5.13
+SASL_VER=	1.5.15
 
 RESTRICTED=     "Contains cryptography"
 
@@ -35,26 +35,13 @@ CONFIGURE_ARGS= \
 		--with-dbpath=${PREFIX}/etc/sasldb \
 		--includedir=${PREFIX}/include/sasl \
 		--enable-static \
+		--enable-login \
+		--with-pwcheck=/var/pwcheck \
 		--with-rc4=openssl
 
 .if defined(KRB5_HOME) && exists(${KRB5_HOME})
 CONFIGURE_ARGS+= --enable-gssapi=${KRB5_HOME}
 .endif
-
-CONFIGURE_ARGS+= \
-		--with-pwcheck=/var/pwcheck
-
-#  --with-dbpath=PATH      set the DB path to use [/etc/sasldb]
-#  --with-pam=DIR          use PAM (rooted in DIR) [yes]
-#  --with-pwcheck=DIR      enable use of the pwcheck daemonusing statedir DIR
-#  --enable-cram           enable CRAM-MD5 authentication [yes]
-#  --enable-scram          enable SCRAM-MD5 authentication [no]
-#  --enable-digest         enable DIGEST-MD5 authentication [yes]
-#  --enable-krb4           enable KERBEROS_V4 authentication [yes]
-#  --enable-gssapi         enable GSSAPI authentication [yes]
-#  --enable-anon           enable ANONYMOUS authentication [yes]
-#  --enable-plain          enable PLAIN authentication [yes]
-#  --with-rc4=DIR          use rc4 (look in DIR) [yes]
 
 DOCS=	README README.Y2K TODO INSTALL ChangeLog NEWS
 
@@ -65,11 +52,18 @@ DOC2=	draft-newman-auth-scram-03.txt \
 
 HTDOCS=	index programming sysadmin
 
+# Create Cyrus user and group
+pre-install:
+	@${SH} ${PKGDIR}/INSTALL ${PKGNAME} PRE-INSTALL
+
 post-install:
 	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
-#       ${INSTALL} -d -m 700 -o cyrus -g cyrus /var/pwcheck
+	@${SED}  -e "/%%PREFIX%%/s##${PREFIX}#g" ${FILESDIR}/pwcheck.sh \
+		> ${PREFIX}/etc/rc.d/pwcheck.sh
+	@${CHMOD} 755 ${PREFIX}/etc/rc.d/pwcheck.sh
+	${INSTALL} -d -m 700 -o cyrus -g cyrus /var/pwcheck
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/SASL/html
+	@${MKDIR} ${PREFIX}/share/doc/SASL/html
 .for file in ${DOCS}
 	@${ECHO} share/doc/SASL/${file} >>${TMPPLIST}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/SASL
@@ -79,19 +73,19 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/doc/${file} ${PREFIX}/share/doc/SASL
 .endfor
 .for file in ${HTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/${file}.html ${PREFIX}/share/doc/SASL/html
+	@${INSTALL_DATA} ${WRKSRC}/doc/${file}.html ${PREFIX}/share/doc/SASL/html
 	@${ECHO} share/doc/SASL/html/${file}.html >>${TMPPLIST}
 .endfor
 	@${ECHO} "@dirrm share/doc/SASL/html" >>${TMPPLIST}
 	@${ECHO} "@dirrm share/doc/SASL" >>${TMPPLIST}
 .endif
 .if !defined(KRB5_HOME) || !exists(${KRB5_HOME})
-	${GREP} -v libgssapiv2 ${TMPPLIST} > ${WRKDIR}/tmp.plist
-	${MV} ${WRKDIR}/tmp.plist ${TMPPLIST}
+	@${GREP} -v libgssapiv2 ${TMPPLIST} > ${WRKDIR}/tmp.plist
+	@${MV} ${WRKDIR}/tmp.plist ${TMPPLIST}
 .endif
 .if !defined(MAKE_EBONES) || exists(/usr/lib/libkrb.a)
-	${GREP} -v libkerberos4 ${TMPPLIST} > ${WRKDIR}/tmp.plist
-	${MV} ${WRKDIR}/tmp.plist ${TMPPLIST}
+	@${GREP} -v libkerberos4 ${TMPPLIST} > ${WRKDIR}/tmp.plist
+	@${MV} ${WRKDIR}/tmp.plist ${TMPPLIST}
 .endif
 
 .include <bsd.port.mk>
