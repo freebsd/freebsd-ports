@@ -1,0 +1,14 @@
+--- cfg/zedrc.xterm	Thu Mar 13 15:13:19 1997
++++ cfg/zedrc.xterm	Tue Jun  4 15:04:48 2002
+@@ -73,9 +73,9 @@
+ ;* ***** Editing *****
+ ;*
+ 
+-key \u7F       e_canc    ;*  Canc   - delete character under the cursor
++key \u08       e_canc    ;*  Canc   - delete character under the cursor
+ key \u1B[3\u7E e_canc    ; canc keypad
+-key \u08       e_bkspc   ;*  BackSpace - delete character at the left of the cursor
++key \u7F       e_bkspc   ;*  BackSpace - delete character at the left of the cursor
+ key \u0d       e_enter   ; Enter
+ key \u19       e_delline ;*  ^Y     - delete row
+ key \u1B[2\u7E l_instog  ;*  Ins    - toggle insert/overwrite mode

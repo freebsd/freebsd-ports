@@ -1,0 +1,110 @@
+--- Makefile	Tue Jun  4 15:01:04 2002
++++ Makefile	Tue Jun  4 16:26:14 2002
+@@ -5,7 +5,7 @@
+ PREFIX=/usr/local
+ 
+ # Pentium Linux
+-CFLAGS=-pipe -Wall -malign-jumps=2 -malign-functions=2 -fomit-frame-pointer -m486 -O2
++#CFLAGS=-pipe -Wall -malign-jumps=2 -malign-functions=2 -fomit-frame-pointer -m486 -O2
+ 
+ # i486 Linux
+ #CFLAGS=-pipe -Wall -fomit-frame-pointer -m486 -O2
+@@ -16,7 +16,7 @@
+ #CFLAGS=-pipe -Wall -mpa-risc-1-1 -O2
+ 
+ # RS6000 AIX
+-#CFLAGS=-pipe -Wall -O2
++CFLAGS=-pipe -Wall -O2
+ 
+ # Sun
+ #ILIBS=-lm
+@@ -45,7 +45,7 @@
+ 
+ ###############################################
+ 
+-OBJS=config.o editor.o lowl.o main.o varie.o edvis.o # hpux.o
++OBJS=config.o editor.o lowl.o main.o varie.o edvis.o
+ LIBS=$(ILIBS)
+ OPTIONS=$(IOPTIONS)
+ 
+@@ -53,7 +53,7 @@
+ XLIBS=-L/usr/X11R6/lib -lX11 $(XPMLIB) $(IXLIBS)
+ XOPTIONS=$(XPMOPT) $(IXOPTIONS)
+ 
+-all: zed zedx
++all: zed
+ 
+ default:
+ 	 @echo
+@@ -65,53 +65,35 @@
+ 	 @echo
+ 
+ zed : $(OBJS)
+-	 $(LINKER) -o zed $(AFLAGS) $(OBJS) $(LIBS)
++	 $(LINKER) -o zed $(OBJS) $(LIBS)
+ 
+ zedx : $(XOBJS)
+-	 $(LINKER) -o zedx $(AFLAGS) $(XOBJS) $(XLIBS)
++	 $(LINKER) -o zedx $(XOBJS) $(XLIBS)
+ 
+ clean:
+ 	 rm -rf core *.o *.xo *~
+ 
+-install: zed zedx
++install: zed
+ 	 install -m 755 -d $(PREFIX)/bin
+ 	 install -m 755 -d $(PREFIX)/etc
+-	 install -m 755 -d $(PREFIX)/lib/zed
++	 install -m 755 -d $(PREFIX)/share/doc/zed
+ 	 install -s -m 755 zed $(PREFIX)/bin/zed
+-	 install -s -m 755 zedx $(PREFIX)/bin/zedx
+-	 install -m 644 cfg/zedxrc $(PREFIX)/etc/zedxrc
+-	 install -m 644 cfg/zedrc $(PREFIX)/etc/zedrc
+-	 install -m 644 cfg/zedrc.xterm $(PREFIX)/etc/zedrc.xterm
+-	 install -m 644 zed.doc $(PREFIX)/lib/zed/zed.doc
+-	 install -m 644 zedico.xpm $(PREFIX)/lib/zed/zedico.xpm
+-	 install -m 644 README $(PREFIX)/lib/zed/README
+-	 install -m 644 zed.png $(PREFIX)/lib/zed/zed.png
+-	 install -m 644 zedlogo.png $(PREFIX)/lib/zed/zedlogo.png
++	 install -c -m 644 cfg/zedrc.xterm $(PREFIX)/etc/zedrc
++	 install -c -m 644 zed.doc $(PREFIX)/share/doc/zed/zed.doc
+ 	 @echo
+ 	 @echo "Zed is now installed in your system."
+ 	 @echo
+-	 @echo "Please READ at least the README file. It contain important information."
+-	 @echo
+-
+-.SUFFIXES:
+-
+-%.xo : %.cc
+-	 $(COMPILER) $(CFLAGS) $(AFLAGS) -DX11 $(XOPTIONS) -o $@ -c $<
+-
+-%.o  : %.cc
+-	 $(COMPILER) $(CFLAGS) $(AFLAGS) $(OPTIONS) -o $@ -c $<
+ 
+-### Dependencies:
+-config.o: config.cc zed.h
+-editor.o: editor.cc zed.h
+-edvis.o: edvis.cc zed.h
+-lowl.o: lowl.cc zed.h
+-main.o: main.cc zed.h
+-varie.o: varie.cc zed.h
+-config.xo: config.cc zed.h
+-editor.xo: editor.cc zed.h
+-lowl.xo: lowl.cc zed.h
+-main.xo: main.cc zed.h
+-varie.xo: varie.cc zed.h
+-x11part.xo: x11part.cc zedico.xpm zed.h
++config.o: config.cc
++	 $(COMPILER) $(CFLAGS) $(OPTIONS) -c config.cc
++editor.o: editor.cc
++	$(COMPILER) $(CFLAGS) $(OPTIONS) -c editor.cc
++lowl.o: lowl.cc
++	$(COMPILER) $(CFLAGS) $(OPTIONS) -c lowl.cc
++main.o: main.cc
++	$(COMPILER) $(CFLAGS) $(OPTIONS) -c main.cc
++varie.o: varie.cc
++	$(COMPILER) $(CFLAGS) $(OPTIONS) -c varie.cc
++edvis.o: edvis.cc
++	$(COMPILER) $(CFLAGS) $(OPTIONS) -c edvis.cc
+ 
