@@ -1,5 +1,5 @@
---- ../ui/sound/TIASound.c.orig	Sun Jan 21 11:26:38 2001
-+++ ../ui/sound/TIASound.c	Mon Jan 22 06:37:37 2001
+--- src/ui/sound/TIASound.c.orig	Sun Jan 21 11:26:38 2001
++++ src/ui/sound/TIASound.c	Mon Jan 22 06:37:37 2001
 @@ -168,10 +168,12 @@
     uint8 chan;
     int16 n;

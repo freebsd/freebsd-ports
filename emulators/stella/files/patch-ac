@@ -1,18 +1,38 @@
---- makefile.orig	Mon Apr 22 01:53:19 2002
-+++ makefile	Mon Dec 30 03:44:36 2002
-@@ -218,6 +218,15 @@
-           LDLIBS+="$(LIBS.X11)" \
-           OBJS="mainX11.o SndUnix.o"
+--- src/build/makefile.orig	Mon Apr 22 09:53:19 2002
++++ src/build/makefile	Tue Jan  7 09:08:53 2003
+@@ -66,8 +66,8 @@
+ ## No configurable options below this line ...
+ ##============================================================================
  
+-CXX	= g++
+-LD	= g++
++CXX	?= g++
++LD	= $(CXX)
+ 
+ LDFLAGS = 
+ LDLIBS	= 
+@@ -90,7 +90,7 @@
+ 
+ INCLUDES = -I. -I$(CORE) -I$(CORE)/m6502/src -I$(CORE)/m6502/src/bspf/src -I$(UI)/common
+ 
+-CXXFLAGS = $(OPTIMIZATIONS) $(INCLUDES) $(SYS_INCLUDES)
++CXXFLAGS += $(OPTIMIZATIONS) $(INCLUDES) $(SYS_INCLUDES)
+ 
+ ## set the user-defined options
+ ifdef BSPF_BOOL
+@@ -216,6 +216,15 @@
+           LDFLAGS+="$(CFLAGS.X11)" \
+           LDLIBS="-lX11 -lXext" \
+           LDLIBS+="$(LIBS.X11)" \
++          OBJS="mainX11.o SndUnix.o"
++
 +freebsd-x:
-+	gmake stella.x11 \
++	$(MAKE) stella.x11 \
 +          INCLUDES="$(INCLUDES) -I$(UI)/x11 -I$(UI)/sound" \
 +          SYS_INCLUDES="-I$(X11BASE)/include" \
 +          OPTIONS="-DBSPF_UNIX -DSHOW_TIMING" \
 +          LDFLAGS="-L$(X11BASE)/lib" \
 +          LDLIBS="-lX11 -lXext" \
-+          OBJS="mainX11.o SndUnix.o"
-+
- ###############################################################################
- ## List of "core" object files
+           OBJS="mainX11.o SndUnix.o"
+ 
  ###############################################################################
