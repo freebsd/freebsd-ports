@@ -16,6 +16,8 @@ COMMENT=	AliceSoft System 3.5/3.6/3.8/3.9 on X Window System
 LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
+BROKEN=		Broken pkg-plist
+
 USE_AUTOCONF_VER=	259
 USE_LIBTOOL_VER=	15
 USE_GETTEXT=	yes
