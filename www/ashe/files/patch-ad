@@ -1,0 +1,14 @@
+*** src/XHTML.ad	Tue Sep 26 21:43:11 1995
+--- src/XHTML.ad	Tue Oct 17 10:50:53 1995
+***************
+*** 27,31 ****
+  
+  ! Very Important : Change this directory to the directory of help.html
+  
+! xhtml*htmldir: /fs5/grads12/puninj/HTML/src
+! 
+--- 27,30 ----
+  
+  ! Very Important : Change this directory to the directory of help.html
+  
+! xhtml*htmldir: /usr/X11R6/lib/X11/xhtml

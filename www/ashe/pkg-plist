@@ -1,0 +1,5 @@
+@cwd /usr/X11R6
+bin/xhtml
+lib/X11/xhtml/help.html
+lib/X11/app-defaults/XHTML.ad
+man/man1/xhtml.1

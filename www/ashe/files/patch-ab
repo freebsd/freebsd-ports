@@ -1,0 +1,27 @@
+*** libcci/Makefile.orig	Tue Oct 17 10:23:25 1995
+--- libcci/Makefile	Tue Oct 17 10:23:57 1995
+***************
+*** 1,12 ****
+! CFLAGS=-DDEBUG
+  
+! RANLIB = /bin/ranlib
+! #RANLIB = /usr/bin/ranlib # the location of ranlib is system dependent.
+  
+  SRC = connect.c cciClient.c list.c support.c
+  OBJ = connect.o cciClient.o list.o support.o
+! CC = gcc
+! CFLAGS = -ggdb 
+  libcci.a: $(OBJ)
+  	rm -f $@
+  	ar q $@ $(OBJ)
+--- 1,10 ----
+! CFLAGS+=-DDEBUG
+  
+! RANLIB = ranlib
+  
+  SRC = connect.c cciClient.c list.c support.c
+  OBJ = connect.o cciClient.o list.o support.o
+! 
+  libcci.a: $(OBJ)
+  	rm -f $@
+  	ar q $@ $(OBJ)
