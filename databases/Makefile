@@ -126,6 +126,7 @@
     SUBDIR += sqsh
     SUBDIR += tcl-Mysql
     SUBDIR += tkgnats
+    SUBDIR += tora
     SUBDIR += typhoon
     SUBDIR += unixODBC
     SUBDIR += xmbase-grok
