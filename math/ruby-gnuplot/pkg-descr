@@ -1,0 +1,24 @@
+Ruby/Gnuplot is a pipe-based interface to the gnuplot package.
+Provides the full capabilities of the gnuplot package to Ruby
+programs.  Inspired by the Python Gnuplot package that works on the
+same principle.  Here's an example usage of Ruby/Gnuplot:
+
+	require 'narray'
+	require 'gplot/Gnuplot'
+
+	x = NArray.sfloat(100).indgen!
+	y = x.collect { |i| i*i }
+
+	plot = Plot.new ()
+
+	plot.setTitle ("Demo 1");
+	plot.setXlabel ("X");
+	plot.setYlabel ("X^2");
+
+	ds = DataSet.new (y, {"with"=> "lines", "title"=>"Data"})
+	ds.setGrid (x)
+
+	plot.draw ( ds )
+
+Author:	Gordon Miller <gmiller@bittwiddlers.com>
+WWW:	http://physci.gmu.edu/~gmiller/gnuplot/
