@@ -10,12 +10,12 @@ PORTVERSION=	1.0
 CATEGORIES=	editors
 MASTER_SITES=	http://people.FreeBSD.org/~fenner/distfiles/
 
-MAINTAINER=	alex@big.endian.de
+MAINTAINER=	alex@FreeBSD.org
 
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
 WRKSRC=		${WRKDIR}/textedit
 USE_IMAKE=	yes
-MAN1=	textedit.1
+MAN1=		textedit.1
 
 .include <bsd.port.mk>
