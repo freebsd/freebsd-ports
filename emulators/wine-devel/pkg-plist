@@ -23,6 +23,7 @@ include/wine/comcat.h
 include/wine/commctrl.h
 include/wine/commdlg.h
 include/wine/compobj.h
+include/wine/cpl.h
 include/wine/d3d.h
 include/wine/d3dcaps.h
 include/wine/d3dtypes.h
@@ -161,8 +162,6 @@ include/wine/wine/obj_shelllink.h
 include/wine/wine/obj_shellview.h
 include/wine/wine/obj_storage.h
 include/wine/wine/unicode.h
-lib/wine/README.patch
-lib/wine/patch-3.3-sys-sigtrap
 lib/wine/winedefault.reg
 lib/wine/bug_report.pl
 lib/wine/reg/regFixer.pl
