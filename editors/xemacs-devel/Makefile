@@ -48,15 +48,15 @@ PLIST_SUB=	XEMACS_VER=${XEMACS_VER} XEMACS_ARCH=${XEMACS_ARCH}
 # Have
 pre-fetch:
 .if !defined(USE_MULE)
-	@echo "To compile in the MULE features, set the environment variable USE_MULE"
+	@${ECHO_MSG} "To compile in the MULE features, set the environment variable USE_MULE"
 .endif
 .if defined(HAVE_MOTIF)
 .if !defined(MOTIF_STATIC)
-	@echo ""
-	@echo "If your MOTIF library is actually lesstif, you might occasionally"
-	@echo "experience locked-up frames."
-	@echo "In this case, set the environment variable MOTIF_STATIC and recompile, "
-	@echo "which will force the use of athena widgets for dialogs."
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "If your MOTIF library is actually lesstif, you might occasionally"
+	@${ECHO_MSG} "experience locked-up frames."
+	@${ECHO_MSG} "In this case, set the environment variable MOTIF_STATIC and recompile, "
+	@${ECHO_MSG} "which will force the use of athena widgets for dialogs."
 .endif
 .endif
 
@@ -79,7 +79,7 @@ WITH_OFFIX?=	--with-offix=no
 .endif
 
 post-install:
-	ln -s xemacs-${XEMACS_VER} ${PREFIX}/bin/xemacs21
+	${LN} -s xemacs-${XEMACS_VER} ${PREFIX}/bin/xemacs21
 .for file in b2m ctags etags gnuclient xemacs-${XEMACS_VER}
 	strip ${PREFIX}/bin/${file}
 .endfor
