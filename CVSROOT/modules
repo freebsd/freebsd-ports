@@ -536,6 +536,7 @@ bdfresize	ports/x11-fonts/bdfresize
 beav		ports/editors/beav
 beaver		ports/editors/beaver
 bebocd		ports/audio/bebocd
+bed		ports/editors/bed
 bedic-data	ports/textproc/bedic-data
 beecrypt	ports/security/beecrypt
 beep		ports/audio/beep
