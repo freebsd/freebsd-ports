@@ -14,8 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME:S/_/-/}
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	A pam module for authenticating with MySQL
 
-LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
-
+USE_MYSQL=	yes
+BROKEN_WITH_MYSQL=	41
 USE_GMAKE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -26,21 +26,23 @@ post-patch:
 	@cd ${WRKSRC} && ${GMAKE} clean
 
 do-build:
-	${CC} -O -pipe -fpic -DPIC -Wall -I${PREFIX}/include -c ${WRKSRC}/pam_mysql.c -o ${WRKSRC}/pam_mysql.o
-	${LD} -x --shared -o ${WRKSRC}/pam_mysql.so ${WRKSRC}/pam_mysql.o -lpam -lcrypt -L${PREFIX}/lib/mysql -lmysqlclient
+	${CC} -O -pipe -fpic -DPIC -Wall -I${LOCALBASE}/include -c ${WRKSRC}/pam_mysql.c -o ${WRKSRC}/pam_mysql.o
+	${LD} -x --shared -o ${WRKSRC}/pam_mysql.so ${WRKSRC}/pam_mysql.o -lpam -lcrypt -L${LOCALBASE}/lib/mysql -lmysqlclient
 
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/pam_mysql.so ${PREFIX}/lib
-	@${INSTALL} -d -o root -g wheel -m 0755 ${PREFIX}/share/doc/pam_mysql
-	@${INSTALL_DATA} ${WRKSRC}/Changelog ${PREFIX}/share/doc/pam_mysql/
-	@${INSTALL_DATA} ${WRKSRC}/CREDITS ${PREFIX}/share/doc/pam_mysql/
-	@${INSTALL_DATA} ${WRKSRC}/Readme ${PREFIX}/share/doc/pam_mysql/
+.if !defined(NOPORTDOCS)
+	@${INSTALL} -d -o root -g wheel -m 0755 ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/Changelog ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/CREDITS ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/Readme ${DOCSDIR}
+.endif
 
 post-install:
-	@${ECHO} "================================================================================"
-	@${ECHO} "Copy/move/symlink ${PREFIX}/lib/pam_mysql.so to /usr/lib/pam_mysql.so"
-	@${ECHO} "to be able to use it. Read files in ${PREFIX}/share/doc/pam_mysql"
-	@${ECHO} "for info on how to set up."
-	@${ECHO} "================================================================================"
+	@${ECHO_MSG} "================================================================================"
+	@${ECHO_MSG} "Copy/move/symlink ${PREFIX}/lib/pam_mysql.so to /usr/lib/pam_mysql.so"
+	@${ECHO_MSG} "to be able to use it. Read files in ${PREFIX}/share/doc/pam_mysql"
+	@${ECHO_MSG} "for info on how to set up."
+	@${ECHO_MSG} "================================================================================"
 
 .include <bsd.port.post.mk>
