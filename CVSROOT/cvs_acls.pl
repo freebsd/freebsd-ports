@@ -90,6 +90,8 @@ my %GROUPS;		# List of committer groups
 my $exit_val = 0;	# Good Exit value
 my $universal_off = 0;
 
+my $BASE_FN       = "$cfg::TMPDIR/$cfg::FILE_PREFIX";
+my $FILES_FILE = "$BASE_FN.files";
 
 #######################################
 # process any variable=value switches
@@ -109,6 +111,28 @@ grep($_ = $repos . '/' . $_, @ARGV);
 
 print "$$ Repos: $repos\n","$$ ==== ",join("\n$$ ==== ",@ARGV),"\n" if $debug;
 
+#######################################
+# Find Tag/Branch.
+#######################################
+my $tag = "HEAD";
+if (-r "CVS/Tag") {
+	open(TAG, "<CVS/Tag") or exit 1;
+	chomp(my $tmp = <TAG>);
+	close(TAG);
+	if ($tmp =~ m/^T(.*)/) {
+		$tag = $1;
+	}
+}
+print "$$ Tag: $tag\n" if $debug;
+print "$$ Avail: $cfg::AVAIL_FILE\n" if $debug;
+if (open(FILES, ">$FILES_FILE")) {
+	foreach (@ARGV) {
+		print FILES "$tag\t$_\n";
+	}
+	close(FILES);
+} else {
+	print "$$ Cannot open $FILES_FILE ($!)\n";
+}
 
 #######################################
 # Check that the user has permission.

@@ -24,4 +24,4 @@
 # repository.
 
 # Sanity check commit messages for obvious problems
-DEFAULT			$CVSROOT/CVSROOT/logcheck
+DEFAULT			$CVSROOT/CVSROOT/verifymsgcheck
