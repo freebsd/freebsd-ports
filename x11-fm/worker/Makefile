@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	worker
-PORTVERSION=	2.3.1
+PORTVERSION=	2.4.0
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.boomerangsworld.de/worker/downloads/ \
 		http://www.informatik.uni-halle.de/~hoffmanr/worker/downloads/
@@ -17,5 +17,11 @@ GNU_CONFIGURE=	yes
 USE_XLIB=	yes
 
 MAN1=		worker.1
+
+CFLAGS+=	${PTHREAD_CFLAGS}
+
+pre-configure:
+	@${PERL} -pi.orig -e 's:-lpthread:${PTHREAD_LIBS}:g' \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>

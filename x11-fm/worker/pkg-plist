@@ -6,9 +6,12 @@ share/worker/catalogs/deutsch.catalog.flags
 share/worker/catalogs/francais.catalog
 share/worker/catalogs/francais.catalog.coms
 share/worker/catalogs/francais.catalog.flags
-share/worker/config-de
-share/worker/config-en
-share/worker/config-fr
+share/worker/catalogs/polski.catalog
+share/worker/catalogs/polski.catalog.coms
+share/worker/catalogs/polski.catalog.flags
+share/worker/config-deutsch
+share/worker/config-english
+share/worker/config-francais
 share/pixmaps/WorkerIcon.xpm
 @unexec rmdir %D/share/pixmaps 2>/dev/null || true
 @dirrm share/worker/catalogs
