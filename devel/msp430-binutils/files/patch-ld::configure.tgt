@@ -1,0 +1,23 @@
+--- ld/configure.tgt	2003-06-12 22:25:52.000000000 +0800
++++ ld/configure.tgt	2003-08-06 01:53:13.000000000 +0800
+@@ -427,12 +427,12 @@
+ mmix-*-*)		targ_emul=mmo
+ 			targ_extra_emuls=elf64mmix
+ 			;;
+ mn10200-*-*)		targ_emul=mn10200 ;;
+ mn10300-*-*)		targ_emul=mn10300 ;;
+-msp430-*-*)             targ_emul=msp430x149
+-                        targ_extra_emuls="msp430x148 msp430x147 msp430x133 msp430x135 msp430x110 msp430x112 msp430x122 msp430x123 msp430x412 msp430x413 msp430x311 msp430x312 msp430x313 msp430x314 msp430x315 msp430x323 msp430x325 msp430x336 msp430x337 msp430x1101 msp430x1111 msp430x1121 msp430x1331 msp430x1351 msp430x435 msp430x436 msp430x437 msp430x447 msp430x448 msp430x449 msp430x1222 msp430x1232 msp430x169 msp430x168 msp430x167 msp430x155  msp430x156 msp430x157 msp430x1122 msp430x1132" ;;
++msp430-*-*)             targ_emul=msp430x110
++                        targ_extra_emuls="msp430x112 msp430x1101 msp430x1111 msp430x1121 msp430x1122 msp430x1132 msp430x122 msp430x123 msp430x1222 msp430x1232 msp430x133 msp430x135 msp430x1331 msp430x1351 msp430x147 msp430x148 msp430x149 msp430x155 msp430x156 msp430x157 msp430x167 msp430x168 msp430x169 msp430x311 msp430x312 msp430x313 msp430x314 msp430x315 msp430x323 msp430x325 msp430x336 msp430x337 msp430x412 msp430x413 msp430xE423 msp430xE425 msp430xE427 msp430xW423 msp430xW425 msp430xW427 msp430x435 msp430x436 msp430x437 msp430x447 msp430x448 msp430x449" ;;
+ alpha*-*-freebsd*)	targ_emul=elf64alpha_fbsd
+ 			targ_extra_emuls="elf64alpha alpha"
+ 			tdir_alpha=`echo ${targ_alias} | sed -e 's/freebsd/freebsdecoff/'`
+ 			;;
+ alpha*-*-linuxecoff*)	targ_emul=alpha targ_extra_emuls=elf64alpha
+Only in ld/emulparams: msp430xE423.sh
+Only in ld/emulparams: msp430xE425.sh
+Only in ld/emulparams: msp430xE427.sh
+Only in ld/emulparams: msp430xW423.sh
+Only in ld/emulparams: msp430xW425.sh
+Only in ld/emulparams: msp430xW427.sh

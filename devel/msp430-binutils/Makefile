@@ -7,7 +7,7 @@
 
 PORTNAME=	binutils
 PORTVERSION=	${BINUTILVERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	binutils/releases
@@ -42,7 +42,7 @@ PLIST_SUB+=	BINUTILS_TARG=${PKGNAMEPREFIX:S/-$//}
 BINARIES=	addr2line ar as c++filt ld nm objcopy objdump ranlib \
 		readelf size strings strip
 
-INFO=		bfd.info binutils.info as.info ld.info \
+INFO_NOAUTO=	bfd.info binutils.info as.info ld.info \
 		standards.info configure.info
 
 post-install:
@@ -51,7 +51,7 @@ post-install:
 	@${LN} -f ${PREFIX}/bin/${PKGNAMEPREFIX}$F \
 		${PREFIX}/${PKGNAMEPREFIX:S/-$//}/bin/$F
 .endfor
-.for F in ${INFO}
+.for F in ${INFO_NOAUTO}
 	install-info ${PREFIX}/${PKGNAMEPREFIX:S/-$//}/info/${F} ${PREFIX}/info/dir
 .endfor
 
