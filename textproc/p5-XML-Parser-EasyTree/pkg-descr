@@ -1,0 +1,5 @@
+XML::Parser::EasyTree adds a new "built-in" style called "EasyTree" to 
+XML::Parser.  Like XML::Parser's "Tree" style, setting this style causes 
+the parser to build a lightweight tree structure representing the XML 
+document.  This structure is, at least in this author's opinion, easier to 
+work with than the one created by the built-in style.

@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Parser/EasyTree/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Parser/EasyTree
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Parser 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML 2>/dev/null || true
+%%SITE_PERL%%/XML/Parser/EasyTree.pm
+@unexec rmdir %D/%%SITE_PERL%%/XML/Parser 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/XML 2>/dev/null || true
