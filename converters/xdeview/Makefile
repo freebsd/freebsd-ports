@@ -3,7 +3,7 @@
 # Date Created:		9 Feb 1997
 # Whom:			Tim Vanderhoek <ac199@freenet.hamilton.on.ca>
 #
-# $Id: Makefile,v 1.5 1997/04/27 00:23:54 asami Exp $
+# $Id: Makefile,v 1.6 1997/10/23 17:59:33 hoek Exp $
 #
 
 DISTNAME=	uudeview-0.5.13
@@ -18,7 +18,6 @@ MAINTAINER=	hoek@FreeBSD.ORG
 LIB_DEPENDS=    tk80\\.1\\.:${PORTSDIR}/x11/tk80
 LIB_DEPENDS=	uu\\.1\\.:${PORTSDIR}/converters/uulib
 
-FILESDIR=	${.CURDIR}/../../converters/uulib/files
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-tcl="${PREFIX}" --enable-tk="${PREFIX}"
 # Season to taste --- anything over tcl7.5
