@@ -11111,6 +11111,7 @@ share/texmf/tex/latex/koma-script/typearea.sty
 share/texmf/tex/latex/labels/labels.sty
 share/texmf/tex/latex/labels/olabels.sty
 share/texmf/tex/latex/listings/listings.cfg
+share/texmf/tex/latex/listings/listings.sty
 share/texmf/tex/latex/listings/lstdoc.sty
 share/texmf/tex/latex/listings/lstlang1.sty
 share/texmf/tex/latex/listings/lstlang2.sty
@@ -11919,6 +11920,7 @@ share/texmf/xdvi/XDvi
 @unexec if [ -f %D/info/dvips.info ]; then install-info --delete %D/info/dvips.info %D/info/dir ; fi
 %%DVIPSK%%bin/afm2tfm
 %%DVIPSK%%bin/dvips
+%%UDVIPS%%bin/udvips
 %%DVIPSK%%info/dvips.info
 %%DVIPSK%%info/dvips.info-1
 %%DVIPSK%%info/dvips.info-2
