@@ -8,6 +8,7 @@
 
 PORTNAME=	pvr250
 PORTVERSION=	20041107
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.mavetju.org/download/adopted/
 DISTFILES=	${CXMSHAR} hcwPVRP2.sys ${PVRTOOLS}.tar.gz
@@ -15,7 +16,7 @@ DISTFILES=	${CXMSHAR} hcwPVRP2.sys ${PVRTOOLS}.tar.gz
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Hauppauge PVR-250/350 TV cards driver for the cxm device
 
-PVRTOOLS=	pvr250-1
+PVRTOOLS=	pvr250-1.1
 CXMSHAR=	cxm-${PORTVERSION}.shar
 
 WRKSRC=		${WRKDIR}
@@ -39,6 +40,10 @@ pre-everything::
 	@${ECHO_CMD} "Some tuners (for example the Philips FQ1216M) supports multiple standards."
 	@${ECHO_CMD} "Use the following configuration screen (or 'make config') to choose your local  TV channel system if you have such a tuner."
 	@${ECHO_CMD} "At this moment only the Philips FQ1216M is known to do this. If you don't have  one, just ignore it. If you have one, select one (1) entry."
+
+	@${ECHO_CMD}
+	@${ECHO_CMD} "Also, if this port complains about an invalid checksum for hcwPVRP2.sys,"
+	@${ECHO_CMD} "please run 'make makesum' and start again."
 	@sleep 5
 
 .include <bsd.port.pre.mk>
