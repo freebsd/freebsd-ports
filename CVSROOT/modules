@@ -4908,6 +4908,7 @@ p5-Agent	ports/devel/p5-Agent
 p5-Algorithm-Diff	ports/devel/p5-Algorithm-Diff
 p5-Algorithm-MDiff	ports/devel/p5-Algorithm-MDiff
 p5-Algorithm-MarkovChain	ports/devel/p5-Algorithm-MarkovChain
+p5-Algorithm-Numerical-Shuffle	ports/devel/p5-Algorithm-Numerical-Shuffle
 p5-Algorithm-Permute	ports/devel/p5-Algorithm-Permute
 p5-Alias	ports/devel/p5-Alias
 p5-Altoids	ports/net/p5-Altoids
