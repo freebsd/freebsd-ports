@@ -6,13 +6,18 @@
 #
 
 PORTNAME=	t3x
-PORTVERSION=	7.0.3
+PORTVERSION=	7.2.2
 CATEGORIES=	lang devel
 MASTER_SITES= 	http://www.not-compatible.org/files/ \
 		http://www.t3x.org/files/
 DISTNAME=	t3x-${PORTVERSION:S/.//g}
 
 MAINTAINER=	nmh@t3x.org
+
+MAN7=		t3x.7
+MANCOMPRESSED=	no
+
+MAKE_ENV=	INSTALL_PREFIX=${PREFIX}
 
 do-configure:
 	@(cd ${WRKSRC}/ports/freebsd-386-elf; ./Config boot)
