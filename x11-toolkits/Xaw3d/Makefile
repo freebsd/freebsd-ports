@@ -17,18 +17,14 @@ WRKSRC=		${WRKDIR}/xc/lib/Xaw3d
 USE_IMAKE=	yes
 INSTALLS_SHLIB=	yes
 .if exists(${X11BASE}/bin/XFree86)
-PLIST=		${WRKDIR}/PLIST
+PLIST_SUB=	XAWLINK=""
+.else
+PLIST_SUB=	XAWLINK="@comment "
 .endif
 
 post-extract:
 	${MKDIR} ${WRKSRC}/X11/Xaw3d
 	cd ${WRKSRC}/X11/Xaw3d; ${LN} -sf ../../*.h .
-
-.if exists(${X11BASE}/bin/XFree86)
-post-build:
-	${CP} ${PKGDIR}/pkg-plist ${PLIST}
-	${ECHO_CMD} "lib/libXaw3d.so.7" >> ${PLIST}
-.endif
 
 # Workaround a bug in egcs on FreeBSD/Alpha.
 .if ${MACHINE_ARCH} == "alpha"
@@ -41,7 +37,7 @@ post-install:
 	${MKDIR} ${PREFIX}/share/doc/Xaw3d
 	${CP} ${WRKSRC}/README.XAW3D ${PREFIX}/share/doc/Xaw3d
 .if exists(${X11BASE}/bin/XFree86)
-	${LN} -sf ${X11BASE}/lib/libXaw3d.so.7 ${X11BASE}/lib/libXaw3d.so.6
+	${LN} -sf libXaw3d.so.${XAWVER} ${X11BASE}/lib/libXaw3d.so.6
 .endif
 	@${CAT} ${PKGMESSAGE}
 
