@@ -3,7 +3,7 @@
 # Date created:		4 December 1996
 # Whom:			desmo@bandwidth.org
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/02/17 09:30:15 tg Exp $
 #
 
 DISTNAME=	xalarm-3.06
@@ -17,7 +17,7 @@ USE_IMAKE=	yes
 IS_INTERACTIVE=	yes
 
 pre-install:	
-	cd ${WRKSRC} ; cp XAlarm.ad XAlarm-color.ad
+	(cd ${WRKSRC} ; ${CP} XAlarm.ad XAlarm-color.ad)
 
 .include <bsd.port.mk>
 
