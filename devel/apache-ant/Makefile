@@ -17,7 +17,7 @@ EXTRACT_ONLY=	${DISTNAME}-bin${EXTRACT_SUFX}
 MAINTAINER=	ernst@jollem.com
 
 RUN_DEPENDS=	${JAVAVM}:${PORTSDIR}/java/javavmwrapper \
-		${LOCALBASE}/share/java/classes/jaxp.jar:${PORTSDIR}/textproc/crimson
+		${LOCALBASE}/share/java/classes/crimson.jar:${PORTSDIR}/textproc/crimson
 
 JAVAVM?=	${LOCALBASE}/bin/javavm
 FIND?=		/usr/bin/find
