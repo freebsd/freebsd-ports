@@ -1,0 +1,68 @@
+*** makefile.old	Thu Aug  8 09:34:44 1991
+--- makefile	Thu Jan  5 05:07:23 1995
+***************
+*** 18,30 ****
+  
+  MAKE = make	      # needed for some systems e.g. older BSD
+  
+! CC = cc
+! CFLAGS =
+  MODEL =
+  EXTRA = -DBIG_MEM -DNDEBUG
+  LINTFLAGS = -DLINT
+! OPTIM = -O
+! DESTDIR = /usr/local/bin
+  
+  #List of all object files created for Zoo
+  ZOOOBJS = addbfcrc.o addfname.o basename.o comment.o crcdefs.o \
+--- 18,30 ----
+  
+  MAKE = make	      # needed for some systems e.g. older BSD
+  
+! #CC = cc
+! #CFLAGS =
+  MODEL =
+  EXTRA = -DBIG_MEM -DNDEBUG
+  LINTFLAGS = -DLINT
+! OPTIM = $(CFLAGS)
+! DESTDIR = $(PREFIX)/bin
+  
+  #List of all object files created for Zoo
+  ZOOOBJS = addbfcrc.o addfname.o basename.o comment.o crcdefs.o \
+***************
+*** 67,73 ****
+  	@echo "lint_turboc:  Run lint under **IX for checking Turbo C/MSDOS code"
+  
+  # install alpha zoo as "tzoo"
+! install:
+  	mv zoo $(DESTDIR)/tzoo
+  
+  # install beta zoo as "bzoo"
+--- 67,73 ----
+  	@echo "lint_turboc:  Run lint under **IX for checking Turbo C/MSDOS code"
+  
+  # install alpha zoo as "tzoo"
+! inst_test:
+  	mv zoo $(DESTDIR)/tzoo
+  
+  # install beta zoo as "bzoo"
+***************
+*** 75,82 ****
+  	mv zoo $(DESTDIR)/bzoo
+  
+  # install production zoo as "zoo"
+! inst_prod:
+! 	mv zoo $(DESTDIR)/zoo
+  
+  # executable targets
+  TARGETS = zoo fiz
+--- 75,83 ----
+  	mv zoo $(DESTDIR)/bzoo
+  
+  # install production zoo as "zoo"
+! install:
+! 	$(INSTALL) $(COPY) $(STRIP) -o $(BINOWN) -g $(BINGRP) -m $(BINMODE) $(TARGETS) $(DESTDIR)
+! 	$(INSTALL) -c -o $(BINOWN) -g $(BINGRP) -m 444 zoo.1 fiz.1 $(PREFIX)/man/man1
+  
+  # executable targets
+  TARGETS = zoo fiz
