@@ -1,0 +1,48 @@
+bin/mirrormagic
+share/doc/mirrormagic/CHANGES
+share/doc/mirrormagic/COPYRIGHT
+share/doc/mirrormagic/DISCLAIMER
+share/doc/mirrormagic/README
+@mode 666
+share/mirrormagic/data/RAY.level
+share/mirrormagic/data/RAY.names
+share/mirrormagic/data/RAY.score
+@mode
+share/mirrormagic/graphics/DoubleRayDoor.xpm
+share/mirrormagic/graphics/DoubleRayDoorMaske.xbm
+share/mirrormagic/graphics/DoubleRayFont.xpm
+share/mirrormagic/graphics/DoubleRayFont2.xpm
+share/mirrormagic/graphics/DoubleRayFont2Maske.xbm
+share/mirrormagic/graphics/DoubleRayFontMaske.xbm
+share/mirrormagic/graphics/DoubleRayMaskeF.xbm
+share/mirrormagic/graphics/DoubleRayScreen.xpm
+share/mirrormagic/graphics/DoubleRayScreenMaske.xbm
+share/mirrormagic/graphics/mirrormagic_icon.xbm
+share/mirrormagic/graphics/mirrormagic_iconmask.xbm
+share/mirrormagic/sounds/amoebe.8svx
+share/mirrormagic/sounds/antigrav.8svx
+share/mirrormagic/sounds/autsch.8svx
+share/mirrormagic/sounds/bong.8svx
+share/mirrormagic/sounds/fuel.8svx
+share/mirrormagic/sounds/halloffame.8svx
+share/mirrormagic/sounds/holz.8svx
+share/mirrormagic/sounds/hui.8svx
+share/mirrormagic/sounds/kabumm.8svx
+share/mirrormagic/sounds/kink.8svx
+share/mirrormagic/sounds/kling.8svx
+share/mirrormagic/sounds/laser.8svx
+share/mirrormagic/sounds/oeffnen.8svx
+share/mirrormagic/sounds/quiek.8svx
+share/mirrormagic/sounds/rhythmloop.8svx
+share/mirrormagic/sounds/roaaar.8svx
+share/mirrormagic/sounds/sirr.8svx
+share/mirrormagic/sounds/slurp.8svx
+share/mirrormagic/sounds/tyger.8svx
+share/mirrormagic/sounds/voyager.8svx
+share/mirrormagic/sounds/warnton.8svx
+share/mirrormagic/sounds/whoosh.8svx
+@dirrm share/doc/mirrormagic
+@dirrm share/mirrormagic/data
+@dirrm share/mirrormagic/graphics
+@dirrm share/mirrormagic/sounds
+@dirrm share/mirrormagic

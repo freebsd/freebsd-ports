@@ -1,0 +1,48 @@
+--- Makefile	Wed Sep  6 11:56:17 1995
++++ /home/andy/tmp/wrk/Makefile	Tue Mar 31 23:07:25 1998
+@@ -8,11 +8,17 @@
+ CC = gcc
+ # CC = cc				# for HP-UX and others
+ 
+-GFX_PATH = -DGFX_PATH=\"./graphics\"	# path where the graphics are
+-SND_PATH = -DSND_PATH=\"./sounds\"	# path where the sounds are
+-LEVEL_PATH = -DLEVEL_PATH=\".\"		# path where the level file is
+-SCORE_PATH = -DSCORE_PATH=\".\"		# path where the score file is
+-NAMES_PATH = -DNAMES_PATH=\".\"		# path where the names file is
++.ifndef PREFIX
++ROOT=	.
++.else
++ROOT=${PREFIX}/share/mirrormagic
++.endif
++
++GFX_PATH = -DGFX_PATH=\"${ROOT}/graphics\"	# path where the graphics are
++SND_PATH = -DSND_PATH=\"${ROOT}/sounds\"	# path where the sounds are
++LEVEL_PATH = -DLEVEL_PATH=\"${ROOT}/data\"	# path where the level file is
++SCORE_PATH = -DSCORE_PATH=\"${ROOT}/data\"	# path where the score file is
++NAMES_PATH = -DNAMES_PATH=\"${ROOT}/data\"	# path where the names file is
+ # SOUNDS = -DNO_SOUNDS			# don't play any sounds
+ # SCORE_ENTRIES = -DONE_PER_NAME	# only one score entry per name
+ SCORE_ENTRIES = -DMANY_PER_NAME		# many score entries per name
+@@ -26,7 +32,7 @@
+ 
+ # DEBUG = -DDEBUG -g -ansi -pedantic -Wall
+ # DEBUG = -DDEBUG -g -Wall
+-DEBUG = -O6
++# DEBUG = -O6
+ 
+ # SYSTEM = -Aa -D_HPUX_SOURCE -Dhpux	# for HP-UX (obsolete)
+ # SYSTEM = -DSYSV -Ae			# for HP-UX
+@@ -34,10 +40,11 @@
+ # INCL = -I/usr/include/X11R5		# for HP-UX and others
+ # LIBS = -lXpm -lX11 -lm
+ # LIBS = -L/usr/lib/X11R5 -lXpm -lX11 -lm # for HP-UX and others
+-LIBS = -lXpm -lXpm -lXpm -lX11 -lm	# triple "-lXpm" because of Xpm error
++INCL = -I/usr/X11R6/include
++LIBS = -L/usr/X11R6/lib -lXpm -lX11 -lm	# triple "-lXpm" because of Xpm error
+ 
+ # CFLAGS = -O2 $(CONFIG) $(SYSTEM)
+-CFLAGS = $(DEBUG) $(CONFIG) $(SYSTEM) $(INCL)
++CFLAGS+= $(DEBUG) $(CONFIG) $(SYSTEM) $(INCL)
+ 
+ OBJS =	main.o \
+ 	init.o \
