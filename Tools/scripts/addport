@@ -85,7 +85,7 @@ $tmp = $tmp2 = $offset = 0;
 
 chomp(my $myhost = lc(hostname()));
 if ($myhost ne lc($h)) {
-	$ssh = "$ENV{CVS_RSH} $u\@$h";
+	$ssh = "$ENV{CVS_RSH} $h -l $u";
 	$repo = "$u\@$h:/home/ncvs" if !$ENV{ADDPCVSROOT};
 } else {
 	$ssh = "";
