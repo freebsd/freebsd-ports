@@ -7,7 +7,7 @@
 
 PORTNAME=	mew
 PORTVERSION=	${MEW_VER}
-CATEGORIES=	editors elisp
+CATEGORIES=	mail elisp
 MASTER_SITES=	ftp://ftp.mew.org/pub/Mew/old/ \
 		ftp://ftp.kyushu-u.ac.jp/pub/Misc/mew/old/ \
 		${MASTER_SITE_PORTS_JP}
