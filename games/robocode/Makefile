@@ -14,12 +14,10 @@ EXTRACT_SUFX=	.jar
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-BUILD_DEPENDS=	${JAVAVM}:${PORTSDIR}/java/linux-sun-jdk13
-RUN_DEPENDS=	${JAVAVM}:${PORTSDIR}/java/linux-sun-jdk13
+USE_JAVA=	1.3+
 
-JDK13DIR?=	${LOCALBASE}/linux-sun-jdk1.3.1
-JAVAVM=		${JDK13DIR}/bin/java
-JAVAJAR=	${JDK13DIR}/bin/jar
+JAVAVM=		${JAVA_HOME}/bin/java
+JAVAJAR=	${JAVA_HOME}/bin/jar
 
 USE_ZIP=	yes
 USE_XLIB=	yes
