@@ -1,0 +1,11 @@
+--- MUTE/layers/fileTransfer/Makefile.all.orig	Sun Dec 21 01:05:38 2003
++++ MUTE/layers/fileTransfer/Makefile.all	Sun Dec 21 01:05:56 2003
+@@ -50,7 +50,7 @@
+ 
+ # targets
+ 
+-all: libmuteFileTransfer.a test/testFileTransfer 
++all: libmuteFileTransfer.a
+ clean:
+ 	rm -f ${DEPENDENCY_FILE} ${LAYER_OBJECTS} ${TEST_OBJECTS} ${NEEDED_MINOR_GEMS_OBJECTS} libmuteFileTransfer.a test/testFileTransfer
+ 
