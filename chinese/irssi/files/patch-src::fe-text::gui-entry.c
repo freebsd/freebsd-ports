@@ -1,5 +1,5 @@
 --- src/fe-text/gui-entry.c.orig	Sun Oct 26 13:45:02 2003
-+++ src/fe-text/gui-entry.c	Tue Apr 13 23:27:34 2004
++++ src/fe-text/gui-entry.c	Thu Apr 29 14:33:53 2004
 @@ -68,28 +68,107 @@
          g_free(entry);
  }
@@ -32,14 +32,14 @@
  	}
 +	*out = '\0';
 +}
- 
--	if (newpos != pos)
--		pos += direct > 0 ? 1 : -1;
++
 +void unichars_to_big5_with_pos(const unichar *str, int spos, char *out, int *opos)
 +{
 +	const unichar *sstart = str;
 +	char *ostart = out;
-+
+ 
+-	if (newpos != pos)
+-		pos += direct > 0 ? 1 : -1;
 +	*opos = 0;
 +	while(*str != '\0')
 +	{
@@ -52,7 +52,8 @@
 +	}
 +	*out = '\0';
 +}
-+
+ 
+-	return pos;
 +int strlen_big5(const unsigned char *str)
 +{
 +	int len=0;
@@ -118,8 +119,7 @@
 +			break;
 +		xpos+=width;
 +	}
- 
--	return pos;
++
 +	if(xpos==pos)
 +		return i;
 +	else
@@ -294,13 +294,17 @@
  	if (update_cutbuffer) {
  		/* put erased text to cutbuffer */
  		if (entry->cutbuffer == NULL || entry->cutbuffer_len < size) {
-@@ -515,24 +635,10 @@
+@@ -513,26 +633,42 @@
+ 	gui_entry_draw(entry);
+ }
  
- void gui_entry_move_pos(GUI_ENTRY_REC *entry, int pos)
+-void gui_entry_move_pos(GUI_ENTRY_REC *entry, int pos)
++int gui_entry_linepos_to_pos(GUI_ENTRY_REC *entry, int linepos)
  {
 -	int newpos;
 -
-         g_return_if_fail(entry != NULL);
+-        g_return_if_fail(entry != NULL);
++	int pos, len;
  
 -	/* move cursor with big5 charset */
 -	newpos = _fix_big5_pos(entry->text, entry->pos, -1);
@@ -313,9 +317,37 @@
 -		while (pos < 0 && newpos > 0) {
 -			newpos = _fix_big5_pos(entry->text, newpos-1, -1);
 -			pos++;
--		}
--	}
++	for(pos = 0, len = 0; len < linepos; pos++)
++	{
++		if(entry->utf8)
++	  		len += utf16_char_to_utf8(entry->text[pos], NULL);
++		else if(term_type == TERM_TYPE_BIG5)
++		{
++			len += (entry->text[pos] > 0xff ? 2 : 1);
+ 		}
++		else
++			len ++;
+ 	}
 -	entry->pos = newpos;
++	return pos;
++}
++
++void gui_entry_set_linepos(GUI_ENTRY_REC *entry, int pos)
++{
++        g_return_if_fail(entry != NULL);
++
++	pos = gui_entry_linepos_to_pos(entry, pos);
++	if (pos >= 0 && pos <= entry->text_len)
++		entry->pos = pos;
++
++	gui_entry_fix_cursor(entry);
++	gui_entry_draw(entry);
++}
++
++void gui_entry_move_pos(GUI_ENTRY_REC *entry, int pos)
++{
++        g_return_if_fail(entry != NULL);
++
 +	if (entry->pos+pos >= 0 && entry->pos+pos <= entry->text_len)
 +		entry->pos += pos;
  
