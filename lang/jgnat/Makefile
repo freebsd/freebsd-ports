@@ -7,7 +7,7 @@
 
 PORTNAME=	jgnat
 PORTVERSION=	1.1.p
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang java
 MASTER_SITES=	ftp://cs.nyu.edu/pub/gnat/jgnat/jgnat-1.1p/split-1.1p/ \
 		ftp://ftp.cdrom.com/pub/languages/ada/compiler/gnat/jgnat/jgnat-1.1p/split-1.1p/ \
@@ -21,12 +21,12 @@ MASTER_SITES=	ftp://cs.nyu.edu/pub/gnat/jgnat/jgnat-1.1p/split-1.1p/ \
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.([^\.]+)$/\1/}-src
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jmcoopr@webmail.bmi.net
+MAINTAINER=	coop9211@uidaho.edu
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/adagcc:${PORTSDIR}/lang/gnat \
-		${LOCALBASE}/jdk1.2.2/bin/javac:${PORTSDIR}/java/jdk12
+BUILD_DEPENDS=	${LOCALBASE}/bin/adagcc:${PORTSDIR}/lang/gnat
 
 USE_GMAKE=	yes
+USE_JAVA=	1.2+
 
 WRKSRC=		${WRKDIR}/${DISTNAME:C@-([^\-]+)$@/\1@}
 
@@ -36,6 +36,7 @@ LIBDIR=		${PREFIX}/lib/jgnat
 ADAINCDIR=	${LIBDIR}/adainclude
 ADALIBDIR=	${LIBDIR}/adalib
 JARDIR=		${PREFIX}/share/java/classes
+MAKE_ENV+=	JAVA_HOME=${JAVA_HOME}
 
 do-install:
 .for dir in ${LIBDIR} ${ADAINCDIR} ${ADALIBDIR} ${JARDIR}
