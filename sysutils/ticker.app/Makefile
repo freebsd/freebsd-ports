@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ticker.app
-PORTVERSION=	0.2.0
+PORTVERSION=	0.5.0
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://www.sh.rim.or.jp/~ssato/src/
 
@@ -17,8 +17,15 @@ USE_X_PREFIX=	yes
 USE_XPM=	yes
 GNU_CONFIGURE=	yes
 
-do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/src/ticker.app ${PREFIX}/bin
+MAN1=		ticker.app.1
+
+pre-patch:
+.for dir in src doc .
+	@${PERL} -pi -e 's|\@program_transform_name\@||' \
+		${WRKSRC}/${dir}/Makefile.in
+.endfor
+
+post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/ChangeLog \
