@@ -1,0 +1,11 @@
+--- doc/man/Makefile.in.orig	Mon Dec 18 17:16:45 2000
++++ doc/man/Makefile.in	Mon Dec 18 17:16:58 2000
+@@ -99,7 +99,7 @@
+ XINE_SKINDIR = @XINE_SKINDIR@
+ XINE_SUB = @XINE_SUB@
+ 
+-SUBDIRS = en fr
++SUBDIRS = en
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../config.h
+ CONFIG_CLEAN_FILES = 
