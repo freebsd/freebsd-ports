@@ -8,16 +8,20 @@ etc/sane.d/artec.conf
 etc/sane.d/avision.conf
 etc/sane.d/bh.conf
 etc/sane.d/canon.conf
+etc/sane.d/canon630u.conf
 etc/sane.d/coolscan.conf
+etc/sane.d/coolscan2.conf
 etc/sane.d/dc210.conf
 etc/sane.d/dc240.conf
 etc/sane.d/dc25.conf
 etc/sane.d/dll.conf
 etc/sane.d/dmc.conf
 etc/sane.d/epson.conf
-%%GPHOTO2%%etc/sane.d/gphoto2.conf
+etc/sane.d/fujitsu.conf
+%%GPHOTO2%%etc/sane.d/gphtoto2.conf
 etc/sane.d/hp.conf
-etc/sane.d/m3096g.conf
+etc/sane.d/leo.conf
+etc/sane.d/matsushita.conf
 etc/sane.d/microtek.conf
 etc/sane.d/microtek2.conf
 etc/sane.d/mustek.conf
@@ -30,11 +34,14 @@ etc/sane.d/plustek.conf
 etc/sane.d/ricoh.conf
 etc/sane.d/s9036.conf
 etc/sane.d/saned.conf
+etc/sane.d/sceptre.conf
 etc/sane.d/sharp.conf
 etc/sane.d/snapscan.conf
 etc/sane.d/sp15c.conf
 etc/sane.d/st400.conf
 etc/sane.d/tamarack.conf
+etc/sane.d/teco1.conf
+etc/sane.d/test.conf
 etc/sane.d/umax.conf
 etc/sane.d/umax1220u.conf
 etc/sane.d/umax_pp.conf
@@ -67,9 +74,15 @@ lib/sane/libsane-bh.so.1
 lib/sane/libsane-canon.a
 lib/sane/libsane-canon.so
 lib/sane/libsane-canon.so.1
+lib/sane/libsane-canon630u.a
+lib/sane/libsane-canon630u.so
+lib/sane/libsane-canon630u.so.1
 lib/sane/libsane-coolscan.a
 lib/sane/libsane-coolscan.so
 lib/sane/libsane-coolscan.so.1
+lib/sane/libsane-coolscan2.a
+lib/sane/libsane-coolscan2.so
+lib/sane/libsane-coolscan2.so.1
 lib/sane/libsane-dc210.a
 lib/sane/libsane-dc210.so
 lib/sane/libsane-dc210.so.1
@@ -88,15 +101,21 @@ lib/sane/libsane-dmc.so.1
 lib/sane/libsane-epson.a
 lib/sane/libsane-epson.so
 lib/sane/libsane-epson.so.1
+lib/sane/libsane-fujitsu.a
+lib/sane/libsane-fujitsu.so
+lib/sane/libsane-fujitsu.so.1
 %%GPHOTO2%%lib/sane/libsane-gphoto2.a
 %%GPHOTO2%%lib/sane/libsane-gphoto2.so
 %%GPHOTO2%%lib/sane/libsane-gphoto2.so.1
 lib/sane/libsane-hp.a
 lib/sane/libsane-hp.so
 lib/sane/libsane-hp.so.1
-lib/sane/libsane-m3096g.a
-lib/sane/libsane-m3096g.so
-lib/sane/libsane-m3096g.so.1
+lib/sane/libsane-leo.a
+lib/sane/libsane-leo.so
+lib/sane/libsane-leo.so.1
+lib/sane/libsane-matsushita.a
+lib/sane/libsane-matsushita.so
+lib/sane/libsane-matsushita.so.1
 lib/sane/libsane-microtek.a
 lib/sane/libsane-microtek.so
 lib/sane/libsane-microtek.so.1
@@ -130,6 +149,9 @@ lib/sane/libsane-ricoh.so.1
 lib/sane/libsane-s9036.a
 lib/sane/libsane-s9036.so
 lib/sane/libsane-s9036.so.1
+lib/sane/libsane-sceptre.a
+lib/sane/libsane-sceptre.so
+lib/sane/libsane-sceptre.so.1
 lib/sane/libsane-sharp.a
 lib/sane/libsane-sharp.so
 lib/sane/libsane-sharp.so.1
@@ -148,6 +170,12 @@ lib/sane/libsane-st400.so.1
 lib/sane/libsane-tamarack.a
 lib/sane/libsane-tamarack.so
 lib/sane/libsane-tamarack.so.1
+lib/sane/libsane-teco1.a
+lib/sane/libsane-teco1.so
+lib/sane/libsane-teco1.so.1
+lib/sane/libsane-test.a
+lib/sane/libsane-test.so
+lib/sane/libsane-test.so.1
 lib/sane/libsane-umax.a
 lib/sane/libsane-umax.so
 lib/sane/libsane-umax.so.1
@@ -177,7 +205,12 @@ sbin/saned
 %%PORTDOCS%%share/doc/sane/backend-writing.txt
 %%PORTDOCS%%share/doc/sane/canon/canon.changes
 %%PORTDOCS%%share/doc/sane/canon/canon.install2700F.txt
+%%PORTDOCS%%share/doc/sane/matsushita/matsushita.txt
 %%PORTDOCS%%share/doc/sane/mustek/mustek.CHANGES
+%%PORTDOCS%%share/doc/sane/mustek_usb/mustek_usb.CHANGES
+%%PORTDOCS%%share/doc/sane/mustek_usb/mustek_usb.TODO
+%%PORTDOCS%%share/doc/sane/sceptre/s1200.txt
+%%PORTDOCS%%share/doc/sane/teco/teco1.txt
 %%PORTDOCS%%share/doc/sane/umax/sane-logo.jpg
 %%PORTDOCS%%share/doc/sane/umax/sane-logo2.jpg
 %%PORTDOCS%%share/doc/sane/umax/sane-umax-advanced-options-doc.html
@@ -212,7 +245,11 @@ sbin/saned
 %%PORTDOCS%%share/doc/sane/umax/umax.FAQ
 %%PORTDOCS%%share/doc/sane/umax/umax.TODO
 %%PORTDOCS%%@dirrm share/doc/sane/umax
+%%PORTDOCS%%@dirrm share/doc/sane/teco
+%%PORTDOCS%%@dirrm share/doc/sane/sceptre
+%%PORTDOCS%%@dirrm share/doc/sane/mustek_usb
 %%PORTDOCS%%@dirrm share/doc/sane/mustek
+%%PORTDOCS%%@dirrm share/doc/sane/matsushita
 %%PORTDOCS%%@dirrm share/doc/sane/canon
 %%PORTDOCS%%@dirrm share/doc/sane
 @dirrm lib/sane
