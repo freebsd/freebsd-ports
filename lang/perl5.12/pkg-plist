@@ -334,6 +334,8 @@ lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/Glob/Glob.so
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/Glob/Glob.bs
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Fcntl/Fcntl.so
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Fcntl/Fcntl.bs
+%%GDBM%%lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/GDBM_File/GDBM_File.so
+%%GDBM%%lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/GDBM_File/GDBM_File.bs
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/Encode.so
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/Encode.bs
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/Unicode/Unicode.so
@@ -390,6 +392,7 @@ lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IPC/SysV.pm
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/I18N/Langinfo.pm
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Filter/Util/Call.pm
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/File/Glob.pm
+%%GDBM%%lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/GDBM_File.pm
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Devel/DProf.pm
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Devel/PPPort.pm
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Devel/Peek.pm
@@ -1285,6 +1288,7 @@ lib/perl5/%%PERL_VER%%/AutoSplit.pm
 @unexec find %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/ -name '*.ph' -delete 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%% 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/site_perl 2>/dev/null || true
+%%GDBM%%@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/GDBM_File
 @unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/threads 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/XS 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Sys 2>/dev/null || true
