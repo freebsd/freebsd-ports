@@ -34,6 +34,7 @@ CPIOOWN=	-R ${INCOWN}:${INCGRP}
 .endif
 
 pre-install:
+	${RM} -f ${PLIST}
 	${TOUCH} -f ${PLIST}
 	cd ${WRKSRC}/dist/include && ${FIND} -s * -type f -o -type l | \
 		${SED} -e 's:^:include/mozilla-devel/:' >> ${PLIST} \
