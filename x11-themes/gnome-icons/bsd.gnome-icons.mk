@@ -28,5 +28,3 @@ do-install:
 	cd ${WRKSRC} && ${FIND} . -type f \
 		-exec ${INSTALL_DATA} ${WRKSRC}/"{}" \
 		${PREFIX}/share/icons/${PORTNAME}/"{}" \;
-
-.include <bsd.port.mk>
