@@ -1,15 +1,21 @@
 
 $FreeBSD$
 
---- Makefile.FreeBSD	2001/08/14 08:27:41	1.1
-+++ Makefile.FreeBSD	2001/08/14 08:28:05
-@@ -1,7 +1,7 @@
- OBJS = get_load.o trackball.o glload.o texture.o
+--- Makefile.FreeBSD.orig	Wed Mar  8 22:02:58 2000
++++ Makefile.FreeBSD	Thu Apr 15 00:22:04 2004
+@@ -1,11 +1,11 @@
+-OBJS = get_load.o trackball.o glload.o texture.oinvalid
 -CFLAGS += -I/usr/X11R6/include -DFreeBSD
-+CFLAGS += -I/usr/X11R6/include -DFreeBSD $(PTHREAD_CFLAGS)
++OBJS = get_load.o trackball.o glload.o texture.o screenShot.o
++CFLAGS += -I${X11BASE}/include -DFreeBSD ${PTHREAD_CFLAGS}
  # i need this
 -LDFLAGS = -L/usr/X11R6/lib
-+LDFLAGS = -L/usr/X11R6/lib $(PTHREAD_LIBS)
++LDFLAGS = -L${X11BASE}/lib ${PTHREAD_LIBS}
  # the libs librpcsvc me only be needed on IRIX
  LLDLIBS = -lglut -lGLU -lGL -lXmu -lXext -lXi -lXt -lICE -lSM -lX11 -lm
  # your C-compiler
+-CC = gcc
++CC ?= gcc
+ 
+ glload:        $(OBJS)
+ 	$(CC) -o glload $(OBJS) $(LDFLAGS) $(LLDLIBS)
