@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qstat
-PORTVERSION=	2.5.a
+PORTVERSION=	2.5.b
 CATEGORIES=	games net
 MASTER_SITES=	http://www.qstat.org/
 DISTNAME=	qstat${PORTVERSION:S/.//g}
