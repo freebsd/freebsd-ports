@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.142 1998/08/26 14:15:05 kuriyama Exp $
+# $Id: Makefile,v 1.143 1998/08/30 21:45:26 max Exp $
 #
 
     SUBDIR += Canna
@@ -124,6 +124,7 @@
     SUBDIR += platex209-euc
     SUBDIR += platex209-jis
     SUBDIR += platex209-sjis
+    SUBDIR += postgresql
     SUBDIR += prn
     SUBDIR += ptex-common
     SUBDIR += ptex-euc
