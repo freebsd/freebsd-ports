@@ -1,26 +1,6 @@
---- Makefile.in.orig	Wed Feb 11 07:37:20 1998
-+++ Makefile.in	Wed Feb  3 23:00:03 1999
-@@ -14,7 +14,8 @@
- DEFINES = -DOS_@OS_TYPE@ -DARCH_@ARCH_TYPE@
- CFLAGS = @CFLAGS@ ${DEFINES} ${DEBUG} ${BACK}
- LDFLAGS = @LDFLAGS@
--INSTALL= @INSTALL@
-+INSTALL= @INSTALL@ -s
-+DESTDIR= ${PREFIX}/bin
- 
- #
- # uncomment both of these if you want profiling support
-@@ -38,6 +39,9 @@
- 	backs/backs.o
- 	
- LIBS = @QT_LDFLAGS@ -lm -lqt
-+ifeq ($(PORTOBJFORMAT),elf)
-+LIBS+= -Wl,-rpath,$(X11BASE)/lib
-+endif
- 
- all: xamp
- 
-@@ -59,7 +63,7 @@
+--- Makefile.in.orig	Fri Jul 31 02:48:02 1998
++++ Makefile.in	Tue May 30 01:29:51 2000
+@@ -58,7 +58,7 @@
  	cd pixmaps ; make
  
  xamp: images $(OBJ) 
@@ -28,4 +8,4 @@
 +	$(CXX) -o xamp $(OBJ) $(LDFLAGS) $(LIBS) 
  	
  install:
- 	$(INSTALL) -m 755 xamp $(DESTDIR)
+ 	$(INSTALL) -m 755 xamp $(DESTDIR)/xamp
