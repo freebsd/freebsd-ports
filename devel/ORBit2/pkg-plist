@@ -64,16 +64,6 @@ libdata/pkgconfig/ORBit-CosNaming-2.0.pc
 libdata/pkgconfig/ORBit-idl-2.0.pc
 libdata/pkgconfig/ORBit-imodule-2.0.pc
 share/aclocal/ORBit2.m4
-%%DOCSDIR%%/ORBit2-orbit2-allocators.html
-%%DOCSDIR%%/ORBit2-orbit2-small.html
-%%DOCSDIR%%/ORBit2.devhelp
-%%DOCSDIR%%/general.html
-%%DOCSDIR%%/home.png
-%%DOCSDIR%%/index.html
-%%DOCSDIR%%/index.sgml
-%%DOCSDIR%%/left.png
-%%DOCSDIR%%/right.png
-%%DOCSDIR%%/up.png
 share/idl/orbit-2.0/CosNaming.idl
 @dirrm share/idl/orbit-2.0
 @dirrm %%DOCSDIR%%

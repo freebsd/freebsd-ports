@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ORBit2
-PORTVERSION=	2.10.3
+PORTVERSION=	2.10.4
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
@@ -21,8 +21,8 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
-USE_INC_LIBTOOL_VER=13
-USE_GNOME=	gnomehack lthack libidl
+USE_LIBTOOL_VER=15
+USE_GNOME=	gnomehack libidl
 CONFIGURE_ARGS=	--disable-indent \
 		--with-html-dir=${PREFIX}/share/doc \
 		--disable-gtk-doc
