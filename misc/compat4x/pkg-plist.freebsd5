@@ -9,12 +9,17 @@ lib/compat/libdevstat.so.2
 lib/compat/libedit.so.3
 lib/compat/libfetch.so.2
 lib/compat/libgmp.so.3
+lib/compat/libhistory.so.4
+lib/compat/libm.so.2
 lib/compat/libmp.so.3
+lib/compat/libopie.so.2
 lib/compat/libpam.so.1
+lib/compat/libpcap.so.2
 @unexec if [ -e %B/libperl.so.3.compat3x ]; then ln -sf libperl.so.3.compat3x %B/libperl.so.3; else rm %B/libperl.so.3; fi
 lib/compat/libperl.so.3.compat4x
 @exec ln -sf %f %B/libperl.so.3
 lib/compat/libposix1e.so.2
+lib/compat/libreadline.so.4
 lib/compat/libskey.so.2
 %%FORBIDDEN:%%lib/compat/libssl.so.1
 %%FORBIDDEN:%%lib/compat/libssl.so.2
