@@ -26,7 +26,7 @@ GLUTVER?=	3
 
 CONFIGURE_SCRIPT=autogen.sh
 CONFIGURE_ARGS=	--enable-extra \
-		--with-mesa=${PORTSDIR}/graphics/Mesa3/work/Mesa-3.2 \
+		--with-mesa=${WRKDIRPREFIX}${.CURDIR}/../../graphics/Mesa3/work/Mesa-3.2 \
 		--sysconfdir=${PREFIX}/etc \
 		--with-moduledir=${PREFIX}/lib/modules
 CONFIGURE_ENV=	TCLSH="tclsh8.2"
