@@ -14,6 +14,7 @@ MASTER_SITES=	http://cm.bell-labs.com/who/bwk/
 
 MAINTAINER=	obrien@FreeBSD.org
 
+USE_BISON=	yes
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
 ALL_TARGET=	a.out
