@@ -8,7 +8,7 @@
 
 PORTNAME=		linux_base-8
 PORTVERSION=		8.0
-PORTREVISION=		5
+PORTREVISION=		6
 CATEGORIES=		emulators linux
 MASTER_SITES=		${MASTER_SITE_REDHAT_LINUX} \
 			${MASTER_SITE_REDHAT_LINUX:S/$/:new/} \
@@ -134,6 +134,10 @@ pre-install:
 	${INSTALL} ${COPY} -m 644 ${FILESDIR}/yp.conf ${WRKSRC}/etc
 	${TOUCH} ${WRKSRC}/etc/mtab
 #
+# Create a good ld.so.conf
+#
+	${ECHO_CMD} -e '/lib\n/usr/lib\n/usr/X11R6/lib' > ${WRKSRC}/etc/ld.so.conf
+#
 # Finish
 #
 	@for D in ${REMOVE_DIRS}; do \
@@ -154,6 +158,7 @@ pre-install:
 do-install:
 	cd ${WRKSRC} && ${FIND} * | ${CPIO} -dmp ${PREFIX}
 	${FIND} ${PREFIX} -type d -exec ${CHMOD} 755 \{\} \;
+	${PREFIX}/sbin/ldconfig
 
 post-install:
 	@${ECHO} ''

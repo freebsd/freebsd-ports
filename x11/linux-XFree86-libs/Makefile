@@ -7,7 +7,7 @@
 
 PORTNAME=		XFree86-libs
 PORTVERSION=		4.3.99.902
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		x11 linux
 MASTER_SITES=	${MASTER_SITE_SUSE} \
 		ftp://ftp.in2p3.fr/pub/linux/suse/update/9.1/rpm/i586/ \
