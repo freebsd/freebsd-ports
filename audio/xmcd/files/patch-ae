@@ -1,0 +1,24 @@
+--- make.inc.orig	Tue Dec 29 15:53:17 1998
++++ make.inc	Tue Dec 29 15:54:53 1998
+@@ -52,7 +52,8 @@
+ RANLIB=		/bin/true
+ AR=		ar cq
+ RM=		rm -f
+-CFLAGS=		-O $(DEFINES) $(INCDIRS) $(ARCH) $(TIMER) $(TERMIO)
++CFLAGS?=	-O
++CFLAGS+=	$(DEFINES) $(INCDIRS) $(ARCH) $(TIMER) $(TERMIO)
+ ARCH=		-DSVR4 -Di386
+ TIMER=		-DUSE_SELECT
+ TERMIO=		-DUSE_TERMIOS
+--- makedgux.inc.orig	Tue Dec 29 15:53:17 1998
++++ makedgux.inc	Tue Dec 29 15:55:11 1998
+@@ -52,7 +52,8 @@
+ RANLIB=		/bin/true
+ AR=		ar cq
+ RM=		rm -f
+-CFLAGS=		-O $(DEFINES) $(INCDIRS) $(ARCH) $(TIMER) $(TERMIO)
++CFLAGS?=	-O
++CFLAGS+=	$(DEFINES) $(INCDIRS) $(ARCH) $(TIMER) $(TERMIO)
+ # ARCH=
+ TIMER=		-DUSE_SELECT
+ TERMIO=		-DUSE_TERMIOS
