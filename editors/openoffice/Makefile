@@ -124,6 +124,8 @@ LD_PATH=	${LD_PATH1}:${WRKSRC}/../solver/641/unxfbsd.pro/lib/
 .if defined(WITH_DEBUG)
 .if ${WITH_DEBUG} == 2
 DMAKE=		dmake debug="true"
+.else
+DMAKE=		dmake
 .endif
 .else
 DMAKE=		dmake strip="true"
