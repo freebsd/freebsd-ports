@@ -1,0 +1,32 @@
+bin/ldapbrowser
+lib/ldapbrowser/CHANGES.TXT
+lib/ldapbrowser/LICENSE.ICONS
+lib/ldapbrowser/LdapBrowser.lnk
+lib/ldapbrowser/applet/applet.html
+lib/ldapbrowser/attributes.config
+lib/ldapbrowser/attributes.config.default
+lib/ldapbrowser/browser.cfg
+lib/ldapbrowser/browser.cfg.default
+lib/ldapbrowser/browser.jar
+lib/ldapbrowser/faq.html
+lib/ldapbrowser/help/usage.html
+lib/ldapbrowser/help/notes.html
+lib/ldapbrowser/help/general.html
+lib/ldapbrowser/lbe.bat
+lib/ldapbrowser/lbe.sh
+lib/ldapbrowser/lib/ldap.jar
+lib/ldapbrowser/lib/providerutil.jar
+lib/ldapbrowser/lib/jndi.jar
+lib/ldapbrowser/lib/ldapbp.jar
+lib/ldapbrowser/readme.html
+lib/ldapbrowser/relnotes.html
+lib/ldapbrowser/templates/templates.config
+lib/ldapbrowser/templates/organization.template
+lib/ldapbrowser/templates/organizationalPerson.template
+lib/ldapbrowser/templates/person.template
+lib/ldapbrowser/templates/organizationalUnit.template
+@dirrm lib/ldapbrowser/templates
+@dirrm lib/ldapbrowser/lib
+@dirrm lib/ldapbrowser/help
+@dirrm lib/ldapbrowser/applet
+@dirrm lib/ldapbrowser
