@@ -1,0 +1,11 @@
+--- configure.dist	Fri Oct 10 15:32:37 2003
++++ configure	Thu Nov 13 02:44:11 2003
+@@ -7810,6 +7810,8 @@
+ 
+   rm -f conf.sdltest
+ 
++  CPPFLAGS="$CPPFLAGS $SDL_CFLAGS"
++  LIBS="$LIBS $SDL_LIBS"
+   if eval "test x$no_sdl = x"; then
+       echo "$as_me:$LINENO: checking for IMG_LoadPNG_RW in -lSDL_image" >&5
+ echo $ECHO_N "checking for IMG_LoadPNG_RW in -lSDL_image... $ECHO_C" >&6
