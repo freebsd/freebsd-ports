@@ -1,0 +1,9 @@
+--- patch-1.3.24.tt.ja.1.orig	Fri Dec  7 03:38:54 2001
++++ patch-1.3.24.tt.ja.1	Fri Dec  7 03:39:09 2001
+@@ -2081,5 +2081,5 @@
+  msgid "Parent message is not available."
+ --- mutt-ja/PATCHES~    Tue Nov  6 19:59:33 2001
+ +++ mutt-ja/PATCHES     Tue Nov  6 19:59:42 2001
+-@@ -1,0 +1 @@
++@@ -0,0 +1 @@
+ +patch-1.3.24.tt.ja.1

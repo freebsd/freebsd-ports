@@ -1,6 +1,6 @@
---- configure.in.orig	Sat Sep  1 23:38:52 2001
-+++ configure.in	Sat Sep  1 23:39:17 2001
-@@ -683,7 +683,7 @@
+--- configure.in.orig	Fri Dec  7 03:41:04 2001
++++ configure.in	Fri Dec  7 03:41:14 2001
+@@ -684,7 +684,7 @@
          mutt_save_LIBS="$LIBS"
          LIBS="$LIBS $LIBICONV"
          AC_TRY_RUN([
@@ -9,7 +9,7 @@
  int main()
  {
    iconv_t cd;
-@@ -714,7 +714,7 @@
+@@ -715,7 +715,7 @@
          mutt_save_LIBS="$LIBS"
          LIBS="$LIBS $LIBICONV"
          AC_TRY_RUN([

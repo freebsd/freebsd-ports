@@ -1,5 +1,5 @@
---- charset.h.orig	Tue Mar  6 00:03:04 2001
-+++ charset.h	Tue Mar  6 00:04:22 2001
+--- charset.h.orig	Fri Dec  7 03:41:04 2001
++++ charset.h	Fri Dec  7 03:42:31 2001
 @@ -19,7 +19,7 @@
  #ifndef _CHARSET_H
  #define _CHARSET_H
