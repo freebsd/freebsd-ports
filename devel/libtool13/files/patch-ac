@@ -1,11 +1,11 @@
---- ltconfig.orig	Fri Mar 20 02:00:29 1998
-+++ ltconfig	Sun Jan 24 21:59:48 1999
+--- ltconfig.orig	Fri Mar 20 16:00:29 1998
++++ ltconfig	Tue Feb  2 05:31:37 1999
 @@ -777,7 +777,7 @@
      ;;
  
    # FreeBSD 3, at last, uses gcc -shared to do shared libraries.
 -  freebsd3*)
-+  freebsd[34]*)
++  freebsd*)
      archive_cmds='$CC -shared -o $lib$libobjs'
      hardcode_libdir_flag_spec='-R$libdir'
      hardcode_direct=yes
@@ -15,7 +15,7 @@
  
 -freebsd2* | freebsd3*)
 -  version_type=sunos
-+freebsd[234]*)
++freebsd*)
 +  objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
 +  version_type=freebsd-$objformat
    library_names_spec='${libname}${release}.so.$versuffix $libname.so'
