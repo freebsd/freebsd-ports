@@ -14,3 +14,12 @@ diff -u -u -r1.17 Make.rules.in
  X_CFLAGS  = @X_CFLAGS@
  X_LIBS    = @X_LIBS@
  XLIB      = @X_PRE_LIBS@ @XLIB@ @X_EXTRA_LIBS@
+@@ -69,7 +69,7 @@
+ prefix          = @prefix@
+ exec_prefix     = @exec_prefix@
+ bindir          = @bindir@
+-libdir          = @libdir@
++libdir          = @libdir@/wine
+ infodir         = @infodir@
+ mandir          = @mandir@
+ prog_manext     = 1
