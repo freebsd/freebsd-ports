@@ -12,7 +12,7 @@ CATEGORIES=	print gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-print
 
-MAINTAINER=	nakai@FreeBSD.org
+MAINTAINER=	ade@FreeBSD.org
 
 BUILD_DEPENDS=	gs:${PORTSDIR}/print/ghostscript5
 LIB_DEPENDS=	gnome.3:${PORTSDIR}/x11/gnomelibs \

@@ -12,7 +12,7 @@ CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-core
 
-MAINTAINER=	nakai@FreeBSD.org
+MAINTAINER=	ade@FreeBSD.org
 
 RUN_DEPENDS=	${X11BASE}/share/gnome/sounds/startup.wav:${PORTSDIR}/audio/gnomeaudio
 LIB_DEPENDS=	gtop.1:${PORTSDIR}/devel/libgtop \

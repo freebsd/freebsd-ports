@@ -11,7 +11,7 @@ CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gtop
 
-MAINTAINER=	nakai@FreeBSD.org
+MAINTAINER=	ade@FreeBSD.org
 
 RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore
 LIB_DEPENDS=	gtop.1:${PORTSDIR}/devel/libgtop

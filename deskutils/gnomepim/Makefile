@@ -12,7 +12,7 @@ CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-pim
 
-MAINTAINER=	nakai@FreeBSD.org
+MAINTAINER=	ade@FreeBSD.org
 
 BUILD_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore
 RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore

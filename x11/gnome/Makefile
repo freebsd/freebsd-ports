@@ -11,7 +11,7 @@ CATEGORIES=	x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
 
-MAINTAINER=	nakai@FreeBSD.org
+MAINTAINER=	ade@FreeBSD.org
 
 LIB_DEPENDS=	glib12.3:${PORTSDIR}/devel/glib12 \
 		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
