@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	milter
-PORTVERSION=	0.5.5
+PORTVERSION=	0.6.0
 CATEGORIES=	mail python
 MASTER_SITES=	http://www.bmsi.com/python/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
