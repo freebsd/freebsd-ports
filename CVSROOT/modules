@@ -624,6 +624,7 @@ british-ispell	ports/textproc/british-ispell
 bro		ports/security/bro
 brs		ports/misc/brs
 bsd-airtools	ports/net/bsd-airtools
+bsdftpd-ssl	ports/ftp/bsdftpd-ssl
 bsdproxy	ports/net/bsdproxy
 bsdsar		ports/sysutils/bsdsar
 bsdtris		ports/games/bsdtris
