@@ -4,8 +4,8 @@
 hostname=`hostname`
 echo -n "Hostname of server machine? [$hostname] "
 read answer; if [ X$answer != X ]; then hostname=$answer; fi
-maintainer="mailto:www-admin@$hostname"
-echo -n "URL to default WWW admin? [$maintainer] "
+maintainer="mailto:webmaster@$hostname"
+echo -n "URL to default webmaster? [$maintainer] "
 read answer; if [ X$answer != X ]; then maintainer=$answer; fi
 sed -e "/GN_HOSTNAME/s/\".*\"/\"$hostname\"/" \
     -e "/MAINTAINER/s/\".*\"/\"$maintainer\"/" \
