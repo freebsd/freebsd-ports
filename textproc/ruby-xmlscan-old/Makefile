@@ -17,12 +17,7 @@ MAINTAINER=	knu@FreeBSD.org
 BUILD_DEPENDS=	racc:${PORTSDIR}/devel/ruby-racc
 
 USE_RUBY=	yes
-
-.include <bsd.port.pre.mk>
-
-.if ${RUBY_VER} < 1.7
-RUN_DEPENDS+=	${RUBY_SITELIBDIR}/racc/parser.rb:${PORTSDIR}/lang/ruby16-shim-ruby18
-.endif
+USE_RUBY_FEATURES=	racc-runtime
 
 do-build:
 	cd ${WRKSRC}; racc -v -g -c -o xmldtd.rb xmldtd.ry
@@ -34,4 +29,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${RUBY_DOCDIR}/${PORTNAME}/ja/
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

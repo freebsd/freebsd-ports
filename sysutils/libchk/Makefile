@@ -16,16 +16,11 @@ MAINTAINER=	knu@FreeBSD.org
 
 USE_BZIP2=	yes
 USE_RUBY=	yes
+USE_RUBY_FEATURES=	optparse
 
 MAKE_ARGS=	PREFIX="${PREFIX}"
 
 MAN1=		libchk.1
 MANCOMPRESSED=	maybe
 
-.include <bsd.port.pre.mk>
-
-.if ${RUBY_VER} < 1.7
-RUN_DEPENDS+=	${RUBY_SITELIBDIR}/optparse.rb:${PORTSDIR}/lang/ruby16-shim-ruby18
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
