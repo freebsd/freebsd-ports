@@ -8,7 +8,8 @@
 PORTNAME=	gpgme
 PORTVERSION=	0.3.14
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/gpgme/
+MASTER_SITES=	${MASTER_SITE_GNUPG}
+MASTER_SITE_SUBDIR=	gpgme
 
 MAINTAINER=	markun@onohara.to
 

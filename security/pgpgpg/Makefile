@@ -8,8 +8,9 @@
 PORTNAME=	pgpgpg
 PORTVERSION=	0.13
 CATEGORIES=	security
-MASTER_SITES=	http://www.nessie.de/mroth/pgpgpg/ \
-		ftp://ftp.gnupg.org/pub/gcrypt/pgpgpg/
+MASTER_SITES=	${MASTER_SITE_GNUPG} \
+		http://www.nessie.de/mroth/%SUBDIR%/
+MASTER_SITE_SUBDIR=	pgpgpg
 
 MAINTAINER=	matt@zigg.com
 
