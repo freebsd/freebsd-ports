@@ -8,3 +8,4 @@ bin/searchmonitor
 bin/splitmail
 etc/rc.d/swish++.sh.sample
 etc/swish++.conf
+%%SITE_PERL%%/WWW.pm
