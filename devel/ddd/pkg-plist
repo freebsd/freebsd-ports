@@ -1,4 +1,7 @@
 bin/ddd
+info/ddd.info
+@exec install-info %D/info/ddd.info %D/info/dir
+@unexec install-info --delete %D/info/ddd.info %D/info/dir
 share/doc/ddd/PROBLEMS
 share/doc/ddd/README
 share/doc/ddd/ddd-paper.ps.gz
