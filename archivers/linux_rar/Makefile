@@ -7,17 +7,17 @@
 #
 
 PORTNAME=	linux_rar
-PORTVERSION=	2.71
+PORTVERSION=	2.80
 CATEGORIES=	archivers linux
-MASTER_SITES=	ftp://ftp.netlab.sk/public/rarsoft/rar/ \
+MASTER_SITES=	ftp://ftp.download.com/pub/linux/ \
+		ftp://ftp.netlab.sk/public/rarsoft/rar/ \
 		ftp://rarsoft.ti.sk/pub/rar/
-DISTNAME=	rarlnx271
+DISTNAME=	rarlnx${PORTVERSION:S/0//S/.//}
 EXTRACT_SUFX=	.sfx
 
 MAINTAINER=	sf@FreeBSD.org
 
-BUILD_DEPENDS=	/compat/linux/lib/ld-linux.so.2:${PORTSDIR}/emulators/linux_base
-RUN_DEPENDS=	/compat/linux/lib/ld-linux.so.2:${PORTSDIR}/emulators/linux_base
+USE_LINUX=	yes
 
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386
@@ -29,11 +29,16 @@ EXTRACT_BEFORE_ARGS=	# empty
 EXTRACT_AFTER_ARGS=	# empty
 STRIP=			# empty: do not strip linux binary during INSTALL_PROGRAM
 WRKSRC=		${WRKDIR}/rar
-PLIST=		${WRKSRC}/PLIST
 
-RARDOCS=	license.txt rar_faq.txt rar_site.txt readme.txt register.frm \
-		register.txt rereg.txt technote.txt whatsnew.txt
+RARDOCS=	license.txt rar.txt rar_faq.txt rar_site.txt readme.txt \
+		register.frm register.txt rereg.txt technote.txt whatsnew.txt
 RARFILES=	rarfiles.lst default.sfx dos.sfx
+
+.if defined(WITH_UNRAR)
+PLIST_SUB=	UNRAR=""
+.else
+PLIST_SUB=	UNRAR="@comment "
+.endif
 
 post-fetch:
 	@${CHMOD} a+x ${DISTDIR}/${DISTFILES}
@@ -49,7 +54,6 @@ do-install:
 .if defined(WITH_UNRAR)
 	@${INSTALL_PROGRAM} ${WRKSRC}/unrar ${PREFIX}/bin
 	brandelf -t Linux ${PREFIX}/bin/unrar
-	@${ECHO} bin/unrar >> ${PLIST}
 .endif
 .for i in ${RARDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/doc/rar
@@ -57,15 +61,6 @@ do-install:
 .for i in ${RARFILES}
 	@${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/rar
 .endfor
-	@${INSTALL_MAN} ${WRKSRC}/rar.txt ${PREFIX}/man/cat1/rar.1
-
-	@${CP} ${PKGDIR}/pkg-plist ${PLIST}
-.if !defined(NOMANCOMPRESS)
-	@${GZIP_CMD} ${PREFIX}/man/cat1/rar.1
-	@${ECHO} man/cat1/rar.1.gz >> ${PLIST}
-.else
-	@${ECHO} man/cat1/rar.1 >> ${PLIST}
-.endif
 
 post-install:
 	@${ECHO_MSG} "This is 40 days trial version of commercial software."
