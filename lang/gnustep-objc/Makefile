@@ -25,6 +25,11 @@ MAKEFILE=	GNUmakefile
 ALL_TARGET=
 NO_MTREE=	yes
 INSTALLS_SHLIB=	yes
+LDCONFIG_DIRS=	${LOCALLIBDIR}
 NOT_FOR_ARCHS=	ia64 amd64
+
+.if !defined(GNUSTEP_WITH_BASE_GCC)
+IGNORE=		conflicts: libobjc is used from lang/gcc-objc
+.endif
 
 .include <bsd.port.mk>
