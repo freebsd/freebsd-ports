@@ -8,9 +8,10 @@
 PORTNAME=	fakebo
 PORTVERSION=	0.4.1
 CATEGORIES=	security
-MASTER_SITES=	http://yi.com/home/KosturjakVlatko/ \
-		ftp://ftp.bitcon.no/.4/console/adm/ \
-		ftp://ftp.iinet.net.au/mirrors1/berg/files/console/adm/ \
+MASTER_SITES=	ftp://ftp.deva.net/pub/sources/networking/ids/ \
+		ftp://the.ausmac.net/wd2a/security/port-loggers/ \
+		ftp://ftp.mayn.de/pub/unix/security/network/ \
+		ftp://ftp.cps.unizar.es/pub/unix/security/ \
 		ftp://ftp.linux.hr/pub/fakebo/
 
 MAINTAINER=	kris@FreeBSD.org
