@@ -1,15 +1,6 @@
---- pcal.html.orig	Wed Feb  9 18:06:23 2000
-+++ pcal.html	Sat May 24 15:42:13 2003
-@@ -12,7 +12,7 @@
- 
- -->
- <HEAD>
--<TITLE>pcal v4.6</TITLE>
-+<TITLE>pcal v4.7.1</TITLE>
- </HEAD>
- 
- <BODY>
-@@ -21,7 +21,7 @@
+--- html/pcal.html.orig	Thu Dec 16 01:18:24 2004
++++ html/pcal.html	Thu Jan 13 17:31:10 2005
+@@ -20,7 +20,7 @@
  
                         <!-- start of form -->
  

@@ -1,0 +1,18 @@
+bin/pcal
+libexec/pcal.cgi
+%%EXAMPLESDIR%%/calendar_au.txt
+%%EXAMPLESDIR%%/calendar_de.txt
+%%EXAMPLESDIR%%/calendar_ee.txt
+%%EXAMPLESDIR%%/calendar_fi.txt
+%%EXAMPLESDIR%%/calendar_fr.txt
+%%EXAMPLESDIR%%/calendar_gr.txt
+%%EXAMPLESDIR%%/calendar_no.txt
+%%EXAMPLESDIR%%/calendar_nz.txt
+%%EXAMPLESDIR%%/calendar_uk.txt
+%%EXAMPLESDIR%%/fonttest_e
+%%EXAMPLESDIR%%/fonttest_koi8u
+%%EXAMPLESDIR%%/fonttest_l
+%%EXAMPLESDIR%%/fonttest_r
+%%EXAMPLESDIR%%/moon98
+%%EXAMPLESDIR%%/pcal-cfg.txt
+@dirrm %%EXAMPLESDIR%%

@@ -6,24 +6,22 @@
 #
 
 PORTNAME=	pcal
-PORTVERSION=	4.7.1
+PORTVERSION=	4.8.0
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mwest@uct.ac.za
 COMMENT=	PostScript calendar program
 
-DEPRECATED=	http://vuxml.FreeBSD.org/58fc2752-5f74-11d9-a9e7-0001020eed82.html
-EXPIRATION_DATE=2005-02-13
-
 USE_REINPLACE=	yes
-MAKE_ENV=	CC="${CC}" HOST_CC="${CC}" PAPERSIZE="${PAPERSIZE}"
-ALL_TARGET=	pcal
+MAKE_ENV=	CC="${CC}" HOST_CC="${CC}"
+ALL_TARGET=
+USE_GMAKE=	yes
 
 MAN1=		pcal.1
-PLIST_FILES=	bin/pcal libexec/pcal.cgi
-PORTDOCS=	ReadMe pcal.html pcalw.html
+PORTDOCS=	ReadMe.txt pcal.html pcalw.html
 
 WWWSERVER!=	hostname
 
@@ -31,21 +29,23 @@ WWWSERVER!=	hostname
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|@@PREFIX@@|${PREFIX}|g' ${WRKSRC}/pcal.cgi
+		's|@@PREFIX@@|${PREFIX}|g' ${WRKSRC}/html/pcal.cgi
 	@${REINPLACE_CMD} -e \
-		's|@@WWWSERVER@@|${WWWSERVER}|g' ${WRKSRC}/pcal.html
+		's|@@WWWSERVER@@|${WWWSERVER}|g' ${WRKSRC}/html/pcal.html
 	@${REINPLACE_CMD} -e \
-		's|@@WWWSERVER@@|${WWWSERVER}|g' ${WRKSRC}/pcalw.html
+		's|@@WWWSERVER@@|${WWWSERVER}|g' ${WRKSRC}/html/pcalw.html
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/pcal ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/pcal.cgi ${PREFIX}/libexec
-	${INSTALL_MAN} ${WRKSRC}/pcal.man ${MANPREFIX}/man/man1/pcal.1
+	${INSTALL_PROGRAM} ${WRKSRC}/exec/pcal ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/html/pcal.cgi ${PREFIX}/libexec
+	${INSTALL_MAN} ${WRKSRC}/doc/pcal.man ${MANPREFIX}/man/man1/pcal.1
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/ReadMe ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/pcal.html ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/pcalw.html ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/ReadMe.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/html/pcal.html ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/html/pcalw.html ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>

@@ -1,14 +1,6 @@
---- pcalw.html.orig	Wed Feb  9 18:06:23 2000
-+++ pcalw.html	Sat May 24 15:42:43 2003
-@@ -12,14 +12,14 @@
- 
- -->
- <HEAD>
--<TITLE>pcal v4.6 (single-year mode)</TITLE>
-+<TITLE>pcal v4.7.1 (single-year mode)</TITLE>
- </HEAD>
- <BODY>
- <H2 ALIGN=CENTER>Generate single-page PostScript calendar for entire year</H2>
+--- html/pcalw.html.orig	Thu Dec 16 01:18:24 2004
++++ html/pcalw.html	Thu Jan 13 17:31:55 2005
+@@ -20,7 +20,7 @@
  
                         <!-- start of form -->
  
