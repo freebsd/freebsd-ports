@@ -6,31 +6,26 @@
 #
 
 PORTNAME=	dirac
-PORTVERSION=	0.1.0
+PORTVERSION=	0.4.3
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	Dirac-${PORTVERSION}
 
 MAINTAINER=	bms@FreeBSD.org
 COMMENT=	Open source video codec from the BBC
 
-LIB_DEPENDS=	xparam.1:${PORTSDIR}/devel/xparam
-
-WRKSRC=		${WRKDIR}/${DISTNAME}
-
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_GNOME=	pkgconfig gnomehack gnometarget
 USE_GCC=	3.4
+PORTDOCS=	README
 
-CONFIGURE_ENV+=	CXXFLAGS=-I${LOCALBASE}/include
+CONFIGURE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include
 
-NOMAN=		defined
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not compile on 4.x"
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
