@@ -1,0 +1,17 @@
+--- configure.orig	Sun Feb 27 14:04:26 2000
++++ configure	Sun Feb 27 14:02:06 2000
+@@ -1061,12 +1061,12 @@
+ #include "confdefs.h"
+ #include <plotter.h>
+ int main() {
+- typdef int Point; 
++ typedef int Point; 
+ ; return 0; }
+ EOF
+ if { (eval echo configure:1068: \"$ac_compile\") 1>&5; (eval $ac_compile) 2>&5; }; then
+   rm -rf conftest*
+-  echo "$ac_t""you seem to have a newer version " 1>&6]
++  echo "$ac_t""you seem to have a newer version " 1>&6
+ else
+   echo "configure: failed program was:" >&5
+   cat conftest.$ac_ext >&5

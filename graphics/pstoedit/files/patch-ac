@@ -1,0 +1,13 @@
+--- configure.in.orig	Sun Feb 27 14:03:37 2000
++++ configure.in	Sun Feb 27 14:02:43 2000
+@@ -30,8 +30,8 @@
+ 
+ dnl See if we have a 2.3 or newer lib Plot version
+ AC_MSG_CHECKING(for version of "lib plot" )
+-AC_TRY_COMPILE( [#include <plotter.h>],[ typdef int Point; ],
+-               AC_MSG_RESULT(you seem to have a newer version )],
++AC_TRY_COMPILE( [#include <plotter.h>],[ typedef int Point; ],
++               AC_MSG_RESULT(you seem to have a newer version ),
+                [PLOTCOMPILEFLAGS="$PLOTCOMPILEFLAGS -DOLD_LIBPLOTTER"; AC_MSG_RESULT(you seem to have a older version )])
+ AC_SUBST(PLOTCOMPILEFLAGS)
+ 
