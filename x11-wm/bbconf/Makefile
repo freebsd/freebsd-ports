@@ -24,7 +24,7 @@ USE_QT_VER=	3
 MAN1=		bbconf.1
 
 post-patch:
-	@find ${WRKSRC} -name 'Makefile.in' -print | \
-	    xargs ${PERL} -pi.orig -e 's#lib/bbconf#libexec/bbconf#g'
+	@${FIND} ${WRKSRC} -name 'Makefile.in' -print | \
+	    ${XARGS} ${PERL} -pi.orig -e 's#lib/bbconf#libexec/bbconf#g'
 
 .include <bsd.port.mk>
