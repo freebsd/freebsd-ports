@@ -8,7 +8,8 @@
 PORTNAME=	quake2forge
 PORTVERSION=	0.3
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.quakeforge.net/quake2forge/
+MASTER_SITES=	ftp://ftp.quakeforge.net/quake2forge/ \
+		http://www.galgenberg.net/~q/
 DISTNAME=	quake2-${PORTVERSION}
 
 MAINTAINER=	q@uni.de
