@@ -1,9 +1,13 @@
 
 *******************************************************************
  To use amavisd-new, you need to install at least one virus scanner.
- For example McAfee VirusScan is available as a FreeBSD port
- in /usr/ports/security/vscan and Clam Antivirus is available
- in /usr/ports/security/clamav.
+ The following virus scanners are available in the FreeBSD ports
+ collection:
+ 
+ /usr/ports/security/vscan	McAfee VirusScan
+ /usr/ports/security/clamav	Clam Antivirus
+ /usr/ports/security/f-prot	F-Prot Antivirus
+ /usr/ports/security/drweb	DrWeb antivirus suite
 
  Enable amavisd-new in /etc/rc.conf with the following line:
 
@@ -14,9 +18,9 @@
 
     amavis_milter_enable="YES"
 
- A configuration template is available in %%PREFIX%%/etc
- as amavisd.conf-dist. Copy it to amavisd.conf and edit it to
- suit your needs. Documentation is available in
- %%DOCSDIR%%.
+ Configuration templates are available in %%PREFIX%%/etc
+ as amavisd.conf-dist, amavisd.conf-sample and amavisd.conf-default.
+ Copy any of them to amavisd.conf and edit the file to suit your
+ needs. Documentation is available in %%DOCSDIR%%.
 *******************************************************************
 

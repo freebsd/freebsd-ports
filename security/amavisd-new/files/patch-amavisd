@@ -1,11 +1,11 @@
---- amavisd.orig	Fri Apr  2 21:33:50 2004
-+++ amavisd	Sat Apr  3 12:29:41 2004
-@@ -6461,7 +6461,7 @@
- my($amavisd_path) = find_program_path($0, [split(/:/, $path, -1)], 0);
- $amavisd_path = $1 if $amavisd_path=~m{^([A-Za-z0-9/._=+-]+)$(?!\n)}; # untaint
+--- amavisd.orig	Sun Jul  4 03:19:35 2004
++++ amavisd	Sun Jul  4 11:28:36 2004
+@@ -7367,7 +7367,7 @@
+ $Amavis::Conf::log_recip_templ = $1
+   if $Amavis::Conf::log_recip_templ=~/^(.*?)[\r\n]+\z/s;
  
 -my($config_file) = '/etc/amavisd.conf';  # default location of config file
 +my($config_file) = '%%PREFIX%%/etc/amavisd.conf';  # default location of config file
- if (@ARGV >= 2 && $ARGV[0] eq '-c') {    # override by command line option -c
-     shift @ARGV; $config_file = shift @ARGV;
-     $config_file = $1 if $config_file=~m{^([A-Za-z0-9/._=+-]+)$(?!\n)};# untaint
+ 
+ # Consider droping privileges early, before reading config file.
+ # This is only possible if running under chroot will not be needed.

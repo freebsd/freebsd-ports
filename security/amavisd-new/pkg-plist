@@ -1,5 +1,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/AAAREADME.first
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/LDAP.schema
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README.chroot
 %%PORTDOCS%%%%DOCSDIR%%/README.contributed
@@ -21,7 +22,9 @@
 %%PORTDOCS%%%%DOCSDIR%%/README.sendmail-dual
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+etc/amavisd.conf-default
 etc/amavisd.conf-dist
+etc/amavisd.conf-sample
 %%AMAVIS_NOMILTER%%etc/rc.d/amavis-milter.sh
 etc/rc.d/amavisd.sh
 %%AMAVIS_NOMILTER%%sbin/amavis
