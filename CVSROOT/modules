@@ -5351,6 +5351,7 @@ p5-Crypt-Blowfish	ports/security/p5-Crypt-Blowfish
 p5-Crypt-Blowfish_PP	ports/security/p5-Crypt-Blowfish_PP
 p5-Crypt-CAST5_PP	ports/security/p5-Crypt-CAST5_PP
 p5-Crypt-CBC	ports/security/p5-Crypt-CBC
+p5-Crypt-CBCeasy	ports/security/p5-Crypt-CBCeasy
 p5-Crypt-CipherSaber	ports/security/p5-Crypt-CipherSaber
 p5-Crypt-Cracklib	ports/security/p5-Crypt-Cracklib
 p5-Crypt-Cryptix	ports/security/p5-Crypt-Cryptix
