@@ -33,14 +33,17 @@ bin/mgrtopbm
 bin/mtvtoppm
 bin/neotoppm
 bin/palmtopnm
+bin/pamarith
 bin/pamchannel
 bin/pamcut
 bin/pamdeinterlace
 bin/pamdice
 bin/pamendian
 bin/pamfile
+bin/pamfunc
 bin/pamoil
 bin/pamseq
+bin/pamslice
 bin/pamstack
 bin/pamstretch
 bin/pamstretch-gen
@@ -90,6 +93,7 @@ bin/pbmtozinc
 bin/pbmupc
 bin/pcdovtoppm
 bin/pcxtoppm
+bin/pgmabel
 bin/pgmbentley
 bin/pgmcrater
 bin/pgmedge
