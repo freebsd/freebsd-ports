@@ -465,6 +465,7 @@
     SUBDIR += xblackjack
     SUBDIR += xblast
     SUBDIR += xblast-beta
+    SUBDIR += xblockout
     SUBDIR += xblood
     SUBDIR += xbloody
     SUBDIR += xboard
