@@ -31,6 +31,7 @@
 %%SITE_PERL%%/WWWdb/DbSession/ODBC.pm
 %%SITE_PERL%%/WWWdb/DbSession/InterBase.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWWdb/.packlist
+@dirrm %%SITE_PERL%%/Apache/
 @dirrm %%SITE_PERL%%/WWWdb/DbSession
 @dirrm %%SITE_PERL%%/WWWdb
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWWdb
