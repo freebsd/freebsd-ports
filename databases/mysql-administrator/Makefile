@@ -32,6 +32,7 @@ CONFIGURE_ENV+=	CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}" \
 
 USE_GNOME=	libglade2
 USE_MYSQL=	yes
+BROKEN_WITH_MYSQL=	323
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 LIB_DEPENDS+=	gtkmm-2.0:${PORTSDIR}/x11-toolkits/gtk--2 \
