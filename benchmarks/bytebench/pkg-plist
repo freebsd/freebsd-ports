@@ -1,10 +1,46 @@
 @mode 755
 bin/bytebench
 lib/bytebench/Run
-lib/bytebench/pgms
+lib/bytebench/pgms/looper
+lib/bytebench/pgms/cleanup.sh
+lib/bytebench/pgms/fs.awk
+lib/bytebench/pgms/index.awk
+lib/bytebench/pgms/index.base
+lib/bytebench/pgms/index.sh
+lib/bytebench/pgms/loopm.awk
+lib/bytebench/pgms/loops.awk
+lib/bytebench/pgms/multi.sh
+lib/bytebench/pgms/report.awk
+lib/bytebench/pgms/report.sh
+lib/bytebench/pgms/tst.sh
+lib/bytebench/pgms/arithoh
+lib/bytebench/pgms/register
+lib/bytebench/pgms/short
+lib/bytebench/pgms/int
+lib/bytebench/pgms/long
+lib/bytebench/pgms/float
+lib/bytebench/pgms/double
+lib/bytebench/pgms/hanoi
+lib/bytebench/pgms/fstime
+lib/bytebench/pgms/syscall
+lib/bytebench/pgms/context1
+lib/bytebench/pgms/pipe
+lib/bytebench/pgms/spawn
+lib/bytebench/pgms/execl
+lib/bytebench/pgms/dhry2
+lib/bytebench/pgms/dhry2reg
+lib/bytebench/pgms/byte.logo
 @mode 644
 lib/bytebench/Makefile
 lib/bytebench/README
-lib/bytebench/doc
-lib/bytebench/results
-lib/bytebench/testdir
+lib/bytebench/doc/bench3.doc
+lib/bytebench/doc/bench.doc
+lib/bytebench/results/reports.shar
+lib/bytebench/testdir/dc.dat
+lib/bytebench/testdir/cctest.c
+lib/bytebench/testdir/sort.src
+@dirrm lib/bytebench/doc
+@dirrm lib/bytebench/results
+@dirrm lib/bytebench/pgms
+@dirrm lib/bytebench/testdir
+@dirrm lib/bytebench
