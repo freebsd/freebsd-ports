@@ -277,6 +277,7 @@
     SUBDIR += perldap
     SUBDIR += pfinger
     SUBDIR += pim6dd
+    SUBDIR += pim6sd
     SUBDIR += pipsecd
     SUBDIR += pmf
     SUBDIR += poptop
