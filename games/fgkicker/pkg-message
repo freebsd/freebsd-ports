@@ -1,0 +1,6 @@
+This port currently requires data files to be placed in the
+users home directory. After the port is installed, the user
+must execute the following command in the games/fgkicker
+directory.
+
+make install-user
