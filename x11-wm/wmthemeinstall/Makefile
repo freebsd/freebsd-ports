@@ -8,10 +8,9 @@
 PORTNAME=	wmthemeinstall
 PORTVERSION=	0.62
 CATEGORIES=	x11-wm
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	will
+MASTER_SITES=	http://hellblazer.linuxprojects.net/projects/wmthemeinstall/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	adam-ports@blacktabby.org
 
 RUN_DEPENDS=	wmaker:${PORTSDIR}/x11-wm/windowmaker
 
