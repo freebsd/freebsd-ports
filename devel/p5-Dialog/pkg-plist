@@ -1,0 +1,14 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Dialog.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Dialog.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Dialog/Const.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Dialog/TButton.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Dialog/TInputLine.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Dialog/TLabel.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Dialog/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Dialog/Const/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Dialog/Dialog.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Dialog/Dialog.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Dialog/autosplit.ix
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Dialog/Const
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Dialog
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Dialog
