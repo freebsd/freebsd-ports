@@ -1,5 +1,5 @@
---- Makefile.in.orig	Mon Dec 22 15:29:33 2003
-+++ Makefile.in	Fri Jan 16 10:59:12 2004
+--- Makefile.in.orig	Sun Feb 29 09:07:56 2004
++++ Makefile.in	Sun Mar 28 15:41:51 2004
 @@ -33,7 +33,7 @@
  prefix = @prefix@
  exec_prefix = @exec_prefix@
@@ -8,23 +8,23 @@
 +LIBTOOL = %%LIBTOOL%%
  RELEASE = @ALLOWRELEASE@
  
- # Compiler options needed for programs that use the TCL library.
-@@ -178,12 +178,12 @@
+ # libtool compile/link/install
+@@ -184,12 +184,12 @@
  
  libsqlite.la:	$(LIBOBJ)
- 	$(LIBTOOL) $(TCC) -o libsqlite.la $(LIBOBJ) ${RELEASE} -rpath $(exec_prefix)/lib \
+ 	$(LTLINK) -o libsqlite.la $(LIBOBJ) ${RELEASE} -rpath @exec_prefix@/lib \
 -		-version-info "8:6:8"
 +		-version-info "2:0:0"
  
  libtclsqlite.la:	tclsqlite.lo libsqlite.la
- 	$(LIBTOOL) $(TCC) -o libtclsqlite.la tclsqlite.lo \
- 		libsqlite.la $(LIBTCL) -rpath $(exec_prefix)/lib \
+ 	$(LTLINK) -o libtclsqlite.la tclsqlite.lo \
+ 		libsqlite.la $(LIBTCL) -rpath @exec_prefix@/lib/sqlite \
 -		-version-info "8:6:8"
 +		-version-info "2:0:0"
  
  sqlite@TARGET_EXEEXT@:	$(TOP)/src/shell.c libsqlite.la sqlite.h
- 	$(LIBTOOL) $(TCC) $(READLINE_FLAGS) -o sqlite $(TOP)/src/shell.c \
-@@ -357,67 +357,67 @@
+ 	$(LTLINK) $(READLINE_FLAGS) -o sqlite $(TOP)/src/shell.c \
+@@ -365,67 +365,67 @@
  	./testfixture $(TOP)/test/quick.test
  
  index.html:	$(TOP)/www/index.tcl last_change
@@ -112,25 +112,25 @@
  
  
  # Files to be published on the website.
-@@ -451,13 +451,19 @@
+@@ -459,13 +459,19 @@
  
- install:	sqlite@TARGET_EXEEXT@ libsqlite.la sqlite.h
- 	$(INSTALL) -d $(exec_prefix)/lib
--	$(LIBTOOL) $(INSTALL) libsqlite.la $(exec_prefix)/lib
+ install:	sqlite libsqlite.la sqlite.h
+ 	$(INSTALL) -d $(DESTDIR)/$(exec_prefix)/lib
+-	$(LTINSTALL) libsqlite.la $(DESTDIR)/$(exec_prefix)/lib
 +	$(INSTALL) .libs/libsqlite.a $(exec_prefix)/lib
 +	$(INSTALL) .libs/libsqlite.so $(exec_prefix)/lib
 +	$(INSTALL) .libs/libsqlite.so.2 $(exec_prefix)/lib
- 	$(INSTALL) -d $(exec_prefix)/bin
--	$(LIBTOOL) $(INSTALL) sqlite@TARGET_EXEEXT@ $(exec_prefix)/bin
+ 	$(INSTALL) -d $(DESTDIR)/$(exec_prefix)/bin
+-	$(LTINSTALL) sqlite $(DESTDIR)/$(exec_prefix)/bin
 +	$(INSTALL) .libs/sqlite $(exec_prefix)/bin
- 	$(INSTALL) -d $(prefix)/include
- 	$(INSTALL) -m 0644 sqlite.h $(prefix)/include
--	$(INSTALL) -d $(exec_prefix)/lib/pkgconfig; 
--	$(INSTALL) -m 0644 sqlite.pc $(exec_prefix)/lib/pkgconfig; 
-+	$(INSTALL) -d $(exec_prefix)/libdata/pkgconfig; 
-+	$(INSTALL) -m 0644 sqlite.pc $(exec_prefix)/libdata/pkgconfig; 
+ 	$(INSTALL) -d $(DESTDIR)/$(prefix)/include
+ 	$(INSTALL) -m 0644 sqlite.h $(DESTDIR)/$(prefix)/include
+-	$(INSTALL) -d $(DESTDIR)/$(exec_prefix)/lib/pkgconfig; 
+-	$(INSTALL) -m 0644 sqlite.pc $(DESTDIR)/$(exec_prefix)/lib/pkgconfig; 
++	$(INSTALL) -d $(DESTDIR)/$(exec_prefix)/libdata/pkgconfig; 
++	$(INSTALL) -m 0644 sqlite.pc $(DESTDIR)/$(exec_prefix)/libdata/pkgconfig; 
 +
-+install-tcl:  libtclsqlite.la
++install-tcl:	libtclsqlite.la
 +	$(INSTALL) -d $(prefix)/lib/sqlite
 +	$(INSTALL) .libs/libtclsqlite.so $(prefix)/lib/sqlite
  
