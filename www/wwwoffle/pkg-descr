@@ -1,5 +1,15 @@
-See the website for more details.
+The wwwoffled program is a simple proxy server with special features
+for use with dial-up internet links. This means that it is possible to
+browse web pages and read them without having to remain connected.
 
-WWW: http://www.gedanken.demon.co.uk/wwwoffle/index.html
+ * Can be configured to use dial-on-demand for pages that are not cached. 
+ * Selection of pages to download next time online 
+   + Using normal browser to follow links. 
+   + Command line interface to select pages for downloading. 
+ * Control which pages can be requested when offline. 
+ * Provides non-cached access to intranet servers. 
 
-After installation, edit wwwoffle.conf. See 'man wwwoffle.conf'
+WWW: http://www.gedanken.demon.co.uk/wwwoffle/
+
+- Ben Smithurst
+  <ben@scientia.demon.co.uk>

@@ -1,5 +1,5 @@
---- Makefile.orig	Thu Dec  3 19:19:46 1998
-+++ Makefile	Sun Mar  7 09:13:34 1999
+--- Makefile.orig	Sun Apr  2 18:27:30 2000
++++ Makefile	Thu Apr 20 15:27:06 2000
 @@ -16,9 +16,9 @@
  
  LOCALHOST=localhost:8080
@@ -11,20 +11,130 @@
 +SPOOLDIR=$(SPOOL)/wwwoffle
 +CONFDIR=$(SPOOL)/wwwoffle
  
- # For Cygwin (win32)
+ # For Cygwin (win32).
  #INSTDIR=/wwwoffle
-@@ -28,13 +28,12 @@
+@@ -45,14 +45,13 @@
+ 
  ########
  
- CC=gcc
+-CC=gcc
 -CFLAGS=-O2 -Wall -g
++CC?=gcc
  
- # This is used in the FreeBSD port (http://www.freebsd.org/ports/)
+ # This is used in the FreeBSD port (http://www.freebsd.org/ports/).
  #CFLAGS=-O2 -Wall
  
- LD=gcc
+-LD=gcc
 -LDFLAGS=-g
++LD=$(CC)
 +LDFLAGS=-s
  
  # For HP/UX this is a good idea.
  #LDFLAGS=
+@@ -72,7 +71,7 @@
+ ########
+ 
+ INCLUDE=
+-LIBRARY=
++LIBRARY= -lmd
+ 
+ # For Solaris you need the following instead.
+ #LIBRARY=-lnsl -lsocket
+@@ -123,7 +122,7 @@
+ WWWOFFLE_OBJ=wwwoffle.o \
+ 	     refresh.o messages.o parse.o spool.o \
+ 	     $(DOC_PARSERS)\
+-	     config-startup.o errors.o io.o misc.o proto-none.o sockets.o md5.o
++	     config-startup.o errors.o io.o misc.o proto-none.o sockets.o
+ 
+ wwwoffle : $(WWWOFFLE_OBJ)
+ 	$(LINK) $(WWWOFFLE_OBJ) -o $@ $(LIBRARY)
+@@ -135,7 +134,7 @@
+ 	      $(DOC_PARSERS) \
+ 	      gifmodify.o htmlmodify.o \
+ 	      connect.o control.o configedit.o htdig.o index.o messages.o monitor.o parse.o purge.o refresh.o spool.o \
+-	      config.o errors.o io.o misc.o proto.o sockets.o md5.o
++	      config.o errors.o io.o misc.o proto.o sockets.o
+ 
+ wwwoffled : $(WWWOFFLED_OBJ)
+ 	$(LINK) $(WWWOFFLED_OBJ) -o $@ $(LIBRARY)
+@@ -144,7 +143,7 @@
+ 
+ WWWOFFLE_TOOLS_OBJ=wwwoffle-tools.o \
+ 	           spool.o \
+-	           config-startup.o errors.o io.o misc.o proto-none.o sockets.o md5.o
++	           config-startup.o errors.o io.o misc.o proto-none.o sockets.o
+ 
+ wwwoffle-tools : $(WWWOFFLE_TOOLS_OBJ)
+ 	$(LINK) $(WWWOFFLE_TOOLS_OBJ) -o $@ $(LIBRARY)
+@@ -152,14 +151,14 @@
+ ####
+ 
+ UPGRADE_OBJ=upgrade-cache.o \
+-	    config-startup.o errors.o io.o misc.o proto-none.o sockets.o md5.o
++	    config-startup.o errors.o io.o misc.o proto-none.o sockets.o
+ 
+ upgrade-cache : $(UPGRADE_OBJ)
+ 	$(LINK) $(UPGRADE_OBJ) -o $@ $(LIBRARY)
+ 
+ ENDIAN_OBJ=endian-cache.o \
+ 	   spool.o \
+-	   config-startup.o errors.o io.o misc.o proto-none.o sockets.o md5.o
++	   config-startup.o errors.o io.o misc.o proto-none.o sockets.o
+ 
+ endian-cache : $(ENDIAN_OBJ)
+ 	$(LINK) $(ENDIAN_OBJ) -o $@ $(LIBRARY)
+@@ -257,15 +256,15 @@
+ 
+ install_binary : programs
+ 	[ -x $(INSTDIR)/bin ] || $(INSTALL) -d -m 755 $(INSTDIR)/bin
+-	$(INSTALL) -c -m 755 wwwoffle $(INSTDIR)/bin
+-	$(INSTALL) -c -m 755 wwwoffle-tools $(INSTDIR)/bin
++	$(INSTALL_PROGRAM) wwwoffle $(INSTDIR)/bin
++	$(INSTALL_PROGRAM) wwwoffle-tools $(INSTDIR)/bin
+ 	ln -sf wwwoffle-tools $(INSTDIR)/bin/wwwoffle-ls
+ 	ln -sf wwwoffle-tools $(INSTDIR)/bin/wwwoffle-mv
+ 	ln -sf wwwoffle-tools $(INSTDIR)/bin/wwwoffle-rm
+ 	ln -sf wwwoffle-tools $(INSTDIR)/bin/wwwoffle-read
+ 	ln -sf wwwoffle-tools $(INSTDIR)/bin/wwwoffle-write
+ 	[ -x $(INSTDIR)/sbin ] || $(INSTALL) -d -m 755 $(INSTDIR)/sbin
+-	$(INSTALL) -c -m 755 wwwoffled $(INSTDIR)/sbin
++	$(INSTALL_PROGRAM) wwwoffled $(INSTDIR)/sbin
+ 
+ install_binary-win32 : programs
+ 	[ -x $(INSTDIR)/bin ] || $(INSTALL) -d -m 755 $(INSTDIR)/bin
+@@ -283,19 +282,19 @@
+ install_doc :
+ 	[ -x $(INSTDIR)/man ] || $(INSTALL) -d -m 755 $(INSTDIR)/man
+ 	[ -x $(INSTDIR)/man/man1 ] || $(INSTALL) -d -m 755 $(INSTDIR)/man/man1
+-	$(INSTALL) -c -m 644 wwwoffle.man $(INSTDIR)/man/man1/wwwoffle.1
++	$(INSTALL_MAN) wwwoffle.man $(INSTDIR)/man/man1/wwwoffle.1
+ 	[ -x $(INSTDIR)/man/man5 ] || $(INSTALL) -d -m 755 $(INSTDIR)/man/man5
+ 	sed -e 's%SPOOLDIR%$(SPOOLDIR)%' -e 's%CONFDIR%$(CONFDIR)%' < wwwoffle.conf.man > wwwoffle.conf.man.install
+-	$(INSTALL) -c -m 644 wwwoffle.conf.man.install $(INSTDIR)/man/man5/wwwoffle.conf.5
++	$(INSTALL_MAN) wwwoffle.conf.man.install $(INSTDIR)/man/man5/wwwoffle.conf.5
+ 	[ -x $(INSTDIR)/man/man8 ] || $(INSTALL) -d -m 755 $(INSTDIR)/man/man8
+-	$(INSTALL) -c -m 644 wwwoffled.man $(INSTDIR)/man/man8/wwwoffled.8
+-	[ -x $(INSTDIR)/doc/wwwoffle ] || $(INSTALL) -d -m 755 $(INSTDIR)/doc/wwwoffle
++	$(INSTALL_MAN) wwwoffled.man $(INSTDIR)/man/man8/wwwoffled.8
++	[ -x $(INSTDIR)/share/doc/wwwoffle ] || $(INSTALL) -d -m 755 $(INSTDIR)/share/doc/wwwoffle
+ 	for file in CHANGES.CONF CONVERT COPYING FAQ INSTALL NEWS README* UPGRADE ; do \
+-	  $(INSTALL) -c -m 644 $$file $(INSTDIR)/doc/wwwoffle/$$file ;\
++	  $(INSTALL_MAN) $$file $(INSTDIR)/share/doc/wwwoffle/$$file ;\
+ 	done
+ 	[ "x$(LANG)" = "x" ] || [ ! -d lang-$(LANG) ] || ( cd lang-$(LANG) && \
+ 	  for file in CHANGES.CONF CONVERT COPYING FAQ INSTALL NEWS README* UPGRADE ; do \
+-	    [ ! -f $$file ] || $(INSTALL) -c -m 644 $$file $(INSTDIR)/doc/wwwoffle/$$file-$(LANG) ;\
++	    [ ! -f $$file ] || $(INSTALL_MAN) $$file $(INSTDIR)/share/doc/wwwoffle/$$file-$(LANG) ;\
+ 	  done )
+ 
+ 
+@@ -365,7 +364,7 @@
+ 	  echo "WWWOFFLE: There is already a configuration file $(CONFDIR)/wwwoffle.conf." ;\
+ 	  echo "WWWOFFLE: Run 'perl upgrade-config.pl $(CONFDIR)/wwwoffle.conf' to upgrade it." ;\
+ 	  echo "WWWOFFLE: " )
+-	[  ! -f $(CONFDIR)/wwwoffle.conf ] || $(INSTALL) -c -m 640 wwwoffle.conf.install $(CONFDIR)/wwwoffle.conf.install
++	$(INSTALL_DATA) wwwoffle.conf.install $(CONFDIR)/wwwoffle.conf.install
+ 	[    -f $(CONFDIR)/wwwoffle.conf ] || $(INSTALL) -c -m 640 wwwoffle.conf.install $(CONFDIR)/wwwoffle.conf
+ 
+ install_fixup-win32:

@@ -1,0 +1,11 @@
+--- misc.c.orig	Thu Apr 20 15:20:56 2000
++++ misc.c	Thu Apr 20 15:21:12 2000
+@@ -28,7 +28,7 @@
+ #include "errors.h"
+ #include "proto.h"
+ #include "config.h"
+-#include "md5.h"
++#include <md5.h>
+ 
+ 
+ /*++++++++++++++++++++++++++++++++++++++
