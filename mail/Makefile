@@ -10,7 +10,7 @@
     SUBDIR += bulk_mailer
     SUBDIR += cmail
     SUBDIR += coolmail
-    SUBDIR += courierimap
+    SUBDIR += courier-imap
     SUBDIR += cucipop
     SUBDIR += cyrus
     SUBDIR += distribute
