@@ -3,7 +3,7 @@
 # Date created:         23 November 1994
 # Whom:                 mr
 #
-# $Id$
+# $Id: Makefile,v 1.4 1995/04/15 05:44:33 asami Exp $
 #
 
 #This is pfe Version 0.9.9
@@ -15,8 +15,6 @@ CATEGORIES+=	languages
 MASTER_SITES=	ftp://sunsite.unc.edu/pub/languages/forth/
 
 pre-install:
-	@mkdir -p ${PREFIX}/bin
-	@mkdir -p ${PREFIX}/lib
 	@mkdir -p ${PREFIX}/man/man1
 	@cp ${WRKSRC}/pfe.1 ${PREFIX}/man/man1/pfe.1
 
