@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	hs-
 MAINTAINER=	obraun@FreeBSD.org
 
 .if defined(WITHOUT_NHC98)
-FORBIDDEN=	does not build with ghc-5.04 for the time being
+BROKEN=	does not build with ghc-5.04 for the time being
 .endif
 
 .if defined(WITH_GHC)
@@ -38,6 +38,13 @@ HAS_CONFIGURE=	yes
 USE_REINPLACE=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	glib12
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500000
+BROKEN=	does not build with gcc3x
+.endif
+
 .if !defined(WITH_GHC) || defined(WITHOUT_NHC98)
 ALL_TARGET=	hat
 .endif
@@ -94,4 +101,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
