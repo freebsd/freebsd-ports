@@ -6147,6 +6147,7 @@ pear-PEAR	ports/devel/pear-PEAR
 pear-XML_Parser	ports/devel/pear-XML_Parser
 pear-XML_Tree	ports/devel/pear-XML_Tree
 pear-XML_Util	ports/devel/pear-XML_Util
+pear-XML_XPath	ports/devel/pear-XML_XPath
 pear-mailparse	ports/mail/pear-mailparse
 pedisassem	ports/devel/pedisassem
 peeper		ports/x11/peeper
