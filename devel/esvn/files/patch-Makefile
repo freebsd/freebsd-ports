@@ -1,0 +1,14 @@
+--- Makefile.orig	Sun Aug 15 22:12:07 2004
++++ Makefile	Mon Aug 23 17:38:55 2004
+@@ -6,11 +6,9 @@
+ 	@echo "** done **"
+ 
+ esvn:
+-	qmake esvn.pro
+ 	make -f esvn.mak
+ 	
+ esvn-diff-wrapper:
+-	qmake esvn-diff-wrapper.pro
+ 	make -f esvn-diff-wrapper.mak
+ 
+ install:

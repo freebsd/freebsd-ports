@@ -1,0 +1,6 @@
+bin/esvn
+bin/esvn-diff-wrapper
+share/applications/eSvn.desktop
+share/pixmaps/esvn.png
+@unexec rmdir %D/share/pixmaps 2>/dev/null || true
+@unexec rmdir %D/share/applications 2>/dev/null || true
