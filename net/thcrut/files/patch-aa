@@ -1,0 +1,14 @@
+--- configure.orig	Thu Aug 23 05:43:58 2001
++++ configure	Thu Aug 23 05:44:08 2001
+@@ -1154,11 +1154,6 @@
+ 
+ fi
+ 
+-if test $ac_cv_prog_gcc = yes; then
+-  CCOPTS='-O3 -Wall'
+-  CFLAGS="$CCOPTS"
+-fi
+-
+ # Extract the first word of "md5sum", so it can be a program name with args.
+ set dummy md5sum; ac_word=$2
+ echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
