@@ -8860,6 +8860,7 @@ webmin		ports/sysutils/webmin
 webredirect	ports/www/webredirect
 webresolve	ports/www/webresolve
 websieve	ports/mail/websieve
+website		ports/textproc/website
 webstats	ports/www/webstats
 webstone	ports/www/webstone
 webstone-ssl	ports/www/webstone-ssl
