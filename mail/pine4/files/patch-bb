@@ -1,11 +1,12 @@
---- pine/init.c.orig	Wed Nov 29 09:57:56 2000
-+++ pine/init.c	Mon Dec 18 02:40:53 2000
-@@ -370,7 +370,7 @@
+--- pine/init.c.orig	Wed Mar  5 05:11:10 2003
++++ pine/init.c	Wed Mar  5 05:21:57 2003
+@@ -1463,6 +1463,9 @@
+     GLO_NORM_FORE_COLOR		= cpystr(colorx(DEFAULT_NORM_FORE));
+     GLO_NORM_BACK_COLOR		= cpystr(colorx(DEFAULT_NORM_BACK));
+ #endif
++#ifdef DF_SPELLER
++    GLO_SPELLER			= cpystr(DF_SPELLER);
++#endif
  
- /*----------------------------------------------------------------------
- These are the variables that control a number of pine functions.  They
--come out of the .pinerc and the /usr/local/lib/pine.conf files.  Some can
-+come out of the .pinerc and the @@PREFIX@@/etc/pine.conf files.  Some can
- be set by the user while in Pine.  Eventually all the local ones should
- be so and maybe the global ones too.
- 
+     /*
+      * Default first value for addrbook list if none set.
