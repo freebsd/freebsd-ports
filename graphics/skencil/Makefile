@@ -1,15 +1,15 @@
-# New ports collection makefile for:	sketch
+# New ports collection makefile for:	skencil
 # Date created:		04 November 1998
 # Whom:			Thomas Gellekum <tg@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	sketch
-PORTVERSION=	0.6.15
+PORTNAME=	skencil
+PORTVERSION=	0.6.16
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITE_SUBDIR=	sketch
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An interactive drawing program
@@ -25,11 +25,8 @@ USE_PYDISTUTILS=	yes
 
 CONFFLAGS=	--tk-autoconf --tk-flags="-I${X11BASE}/include -I${LOCALBASE}/include/tcl8.4 -I${LOCALBASE}/include/tk8.4 -L${LOCALBASE}/lib -ltk84 -ltcl84 -L${X11BASE}/lib -lX11"
 
-SKETCHDIR=	${PREFIX}/share/sketch
-SKETCHDOCDIR=	${PREFIX}/share/doc/sketch
 SKETCHDOCS=	BUGS Doc NEWS PROJECTS README TODO
-SKETCHEXDIR=	${PREFIX}/share/examples/sketch
-SKETCHSCRIPTS=	finishinst.py sk2ppm.py sk2ps.py skconvert.py sketch.py \
+SKETCHSCRIPTS=	finishinst.py sk2ppm.py sk2ps.py skconvert.py skencil.py \
 		skshow.py
 
 do-configure:
@@ -38,33 +35,25 @@ do-configure:
 		${PYTHON_CMD} setup.py configure ${CONFFLAGS})
 
 do-install:
-	@${MKDIR} ${SKETCHDIR}
+	@${MKDIR} ${DATADIR}
 .for dir in Filter Pax Plugins Resources Script Sketch
 	(cd ${WRKSRC}; ${TAR} -cf - -X ${FILESDIR}/excludelist ${dir}) | \
-	    (cd ${SKETCHDIR}; ${TAR} xf -)
+	    (cd ${DATADIR}; ${TAR} xf -)
 .endfor
-	(cd ${WRKSRC}; ${INSTALL_SCRIPT} ${SKETCHSCRIPTS} ${SKETCHDIR})
+	(cd ${WRKSRC}; ${INSTALL_SCRIPT} ${SKETCHSCRIPTS} ${DATADIR})
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${SKETCHDOCDIR}
-	(cd ${WRKSRC}; ${TAR} cf - ${SKETCHDOCS}) | (cd ${SKETCHDOCDIR}; ${TAR} xf -)
+	@${MKDIR} ${DOCSDIR}
+	(cd ${WRKSRC}; ${TAR} cf - ${SKETCHDOCS}) | (cd ${DOCSDIR}; ${TAR} xf -)
+	@${MKDIR} ${EXAMPLESDIR}
+	(cd ${WRKSRC}/Examples; ${TAR} cf - .) | (cd ${EXAMPLESDIR}; ${TAR} xf -)
 .endif
-	@${MKDIR} ${SKETCHEXDIR}
-	(cd ${WRKSRC}/Examples; ${TAR} cf - .) | (cd ${SKETCHEXDIR}; ${TAR} xf -)
-	(cd ${SKETCHDIR}; ${PYTHON_CMD} finishinst.py)
-	${SED} -e "s|@PREFIX@|${PREFIX}|g" -e "s|@PYTHON_CMD@|${PYTHON_CMD}|g" \
-		< ${FILESDIR}/sk2ppm.in > ${PREFIX}/bin/sk2ppm
-	${CHMOD} ${BINMODE} ${PREFIX}/bin/sk2ppm
-	${SED} -e "s|@PREFIX@|${PREFIX}|g" -e "s|@PYTHON_CMD@|${PYTHON_CMD}|g" \
-		< ${FILESDIR}/sk2ps.in > ${PREFIX}/bin/sk2ps
-	${CHMOD} ${BINMODE} ${PREFIX}/bin/sk2ps
-	${SED} -e "s|@PREFIX@|${PREFIX}|g" -e "s|@PYTHON_CMD@|${PYTHON_CMD}|g" \
-		< ${FILESDIR}/skconvert.in > ${PREFIX}/bin/skconvert
-	${CHMOD} ${BINMODE} ${PREFIX}/bin/skconvert
-	${SED} -e "s|@PREFIX@|${PREFIX}|g" -e "s|@PYTHON_CMD@|${PYTHON_CMD}|g" \
-		< ${FILESDIR}/sketch.in > ${PREFIX}/bin/sketch
-	${CHMOD} ${BINMODE} ${PREFIX}/bin/sketch
-	${SED} -e "s|@PREFIX@|${PREFIX}|g" -e "s|@PYTHON_CMD@|${PYTHON_CMD}|g" \
-		< ${FILESDIR}/skshow.in > ${PREFIX}/bin/skshow
-	${CHMOD} ${BINMODE} ${PREFIX}/bin/skshow
+	(cd ${DATADIR}; ${PYTHON_CMD} finishinst.py)
+.for exec in sk2ppm sk2ps skconvert skencil skshow
+	${SED} -e "s|@DATADIR@|${DATADIR}|g ; \
+		 s|@PYTHON_CMD@|${PYTHON_CMD}|g" \
+		< ${FILESDIR}/${exec}.in > ${PREFIX}/bin/${exec}
+	${CHMOD} ${BINMODE} ${PREFIX}/bin/${exec}
+	${CHOWN} ${BINOWN}:${BINGROUP} ${PREFIX}/bin/${exec}
+.endfor
 
 .include <bsd.port.mk>
