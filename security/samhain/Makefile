@@ -5,40 +5,19 @@
 # $FreeBSD$
 #
 #
-# This port recognizes the following tunables:
+# This port recognizes the following non-binary tunables:
 #
-# RUNAS_USER:
-#	The username of the account Yule will run as. Usually just "yule".
+# WITH_RUNAS_USER:
+#	Whe building with "WITH_SERVER" defined, the username of the
+#	account Yule will run as. Defaults to "yule".
 #
-# WITH_GPG:
-#	Instructs the port to sign configuration files using the
-# 	GNU Privacy Guard.
-#
-# WITH_KCHECK:
-#	Enable support for rogue kernel module detection.
-#
-# WITH_MYSQL:
-#	Enable support for logging to a MySQL database.  Due to there
-#	being multiple current versions of MySQL, dependency for this
-#	is NOT checked.
-#
-# WITH_POSTGRESQL:
-#	Enable support for logging to a Postgres database.  Untested.
-#
-# WITH_LIBWRAP:
-#	Enable support for TCP wrappers.
-#
-# SERVER:
-#	Builds as Yule, Samhain's central logging server.  Mutually exclusive
-#	with CLIENT.
-#
-# CLIENT:
-# 	Builds as a client to Yule.  Fetches configuration files
-#	and signature database from LOG_SERVER, and optionally, ALT_LOG_SERVER.
+# WITH_LOG_SERVER, WITH_ALT_LOG_SERVER. When "WITH_CLIENT" is defined,
+# 	these specify what server the client will fetch configuration
+#	and database files from. This can also be defined at runtime.
 #
 
 PORTNAME=	samhain
-PORTVERSION=	1.8.9
+PORTVERSION=	1.8.10b
 CATEGORIES=	security
 MASTER_SITES=	http://la-samhna.de/archive/ \
 		http://cold.darkambient.net/
@@ -47,18 +26,28 @@ DISTFILES=	samhain_signed-${PORTVERSION}.tar.gz
 MAINTAINER=	lx@redundancy.redundancy.org
 COMMENT=	The Samhain Intrusion Detection System
 
+OPTIONS=	KCHECK "Enable rogue KLD detection" on \
+		GPG "Enable GnuPG support" off \
+		MYSQL "Enable MySQL logging" off \
+		POSTGRESQL "Enable PostgreSQL logging" off \
+		LIBWRAP "Enable TCP wrapper support" on \
+		CLIENT "Build as Samhain network client" off \
+		SERVER "Build as Yule network server" off
+
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_GPG)
-BUILD_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
+BUILD_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg
 .endif
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-login-watch --localstatedir=/var \
 		--mandir=${PREFIX}/man --enable-suidcheck
 
-.if defined(RUNAS_USER)
-CONFIGURE_ARGS+=	--enable-identity=${RUNAS_USER}
+.if defined(WITH_RUNAS_USER)
+CONFIGURE_ARGS+=	--enable-identity=${WITH_RUNAS_USER}
 .endif
-.if defined(WITH_KCHECK)
+.if !defined(WITHOUT_KCHECK)
 CONFIGURE_ARGS+=	--with-kcheck
 .endif
 .if defined(WITH_GPG)
@@ -72,10 +61,10 @@ CONFIGURE_ARGS+=	--with-database=mysql \
 .if defined(WITH_POSTGRESQL)
 CONFIGURE_ARGS+=	--with-database=postgresql --enable-xml-log
 .endif
-.if defined(WITH_LIBWRAP)
+.if !defined(WITHOUT_LIBWRAP)
 CONFIGURE_ARGS+=	--with-libwrap
 .endif
-.if defined(CLIENT)
+.if defined(WITH_CLIENT)
 CONFIGURE_ARGS+=	--enable-network=client \
 		--with-data-file=REQ_FROM_SERVER/var/lib/samhain/data.samhain \
 		--with-config-file=REQ_FROM_SERVER
@@ -83,7 +72,7 @@ PLIST_SUB+=	SAMHAIN="" SETPWD="" YULE="@comment "
 EXTRA_PATCHES+=	${FILESDIR}/fixsamhainrc.patch
 MAN5=	samhainrc.5
 MAN8=	samhain.8
-.elif defined(SERVER)
+.elif defined(WITH_SERVER)
 CONFIGURE_ARGS+=	--enable-network=server
 PLIST_SUB+=	YULE="" SAMHAIN="@comment " SETPWD="@comment "
 EXTRA_PATCHES+=	${FILESDIR}/fixyulerc.patch
@@ -95,31 +84,32 @@ EXTRA_PATCHES+=	${FILESDIR}/fixsamhainrc.patch
 MAN5=	samhainrc.5
 MAN8=	samhain.8
 .endif
-.if defined(LOG_SERVER)
-CONFIGURE_ARGS+=	--with-logserver=${LOG_SERVER}
+.if defined(WITH_LOG_SERVER)
+CONFIGURE_ARGS+=	--with-logserver=${WITH_LOG_SERVER}
 .endif
-.if defined(ALT_LOG_SERVER)
-CONFIGURE_ARGS+=	--with-altlogserver=${ALT_LOG_SERVER}
+.if defined(WITH_ALT_LOG_SERVER)
+CONFIGURE_ARGS+=	--with-altlogserver=${WITH_ALT_LOG_SERVER}
 .endif
 
 pre-everything::
 
-.if !defined(CLIENT) && !defined(SERVER)
+.if !defined(WITH_CLIENT) && !defined(WITH_SERVER)
 	@${ECHO_MSG}
 	@${ECHO_MSG} "Building in standalone mode."
 	@${ECHO_MSG} "If you wish to enable networked mode, please hit CTRL-C"
-	@${ECHO_MSG} "now and make with SERVER=yes or CLIENT=yes."
+	@${ECHO_MSG} "now, review the options in the Makefile, and make"
+	@${ECHO_MSG} "with WITH_SERVER=yes or WITH_CLIENT=yes."
 	@${ECHO_MSG}
 .endif
 
-.if defined(CLIENT) && defined(SERVER)
+.if defined(WITH_CLIENT) && defined(WITH_SERVER)
 	@${ECHO_MSG}
 	@${ECHO_MSG} "Can't build client and server at once!"
 	@${ECHO_MSG}
 .error "Can't build client and server at once!"
 .endif
 
-.if defined(WITH_KCHECK)
+.if !defined(WITHOUT_KCHECK)
 	@${ECHO_MSG}
 	@${ECHO_MSG} "Building with kernel checking requires reading /dev/kmem."
 	@${ECHO_MSG} "If you're not building as root, please hit Control-C and"
@@ -132,7 +122,7 @@ post-extract:
 	@${RM} ${WRKSRC}.tar.gz ${WRKSRC}.tar.gz.asc
 
 post-install:
-.if !defined(SERVER)
+.if !defined(WITH_SERVER)
 	@${CP} ${WRKSRC}/init/samhain.startFreeBSD ${PREFIX}/etc/rc.d/samhain.sh.sample
 .else
 	@${CP} ${WRKSRC}/init/samhain.startFreeBSD ${PREFIX}/etc/rc.d/yule.sh.sample
@@ -148,4 +138,4 @@ post-install:
 install-user:
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} install-user)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
