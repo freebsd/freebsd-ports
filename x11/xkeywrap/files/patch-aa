@@ -1,21 +1,40 @@
-*** Makefile~	Sun Jan  2 10:01:41 2000
---- Makefile	Sun Jan  2 10:02:17 2000
-***************
-*** 6,13 ****
-  ###############################################################################
-  
-  #PREFIX  = /usr/local
-! PREFIX  = /usr/X11R6
-! X11BASE = /usr/X11R6
-  BINDIR  = ${PREFIX}/bin
-  MANDIR  = ${PREFIX}/man/man1
-  PKGNAME = xkeywrap-1.0
---- 6,13 ----
-  ###############################################################################
-  
-  #PREFIX  = /usr/local
-! #PREFIX  = /usr/X11R6
-! #X11BASE = /usr/X11R6
-  BINDIR  = ${PREFIX}/bin
-  MANDIR  = ${PREFIX}/man/man1
-  PKGNAME = xkeywrap-1.0
+--- Makefile.orig	Sat Jan  1 17:01:01 2000
++++ Makefile	Sat Feb 19 00:58:13 2000
+@@ -6,22 +6,24 @@
+ ###############################################################################
+ 
+ #PREFIX  = /usr/local
+-PREFIX  = /usr/X11R6
+-X11BASE = /usr/X11R6
++#PREFIX  = /usr/X11R6
++#X11BASE = /usr/X11R6
+ BINDIR  = ${PREFIX}/bin
+ MANDIR  = ${PREFIX}/man/man1
+ PKGNAME = xkeywrap-1.0
+ VERSION = XKeyWrap-1.0
++CC	?= gcc
++CFLAGS	?= -O2
+ 
+ all :		xkeywrap xkeywrap.1.gz
+ 
+ xkeywrap :	xkeywrap.c list.o readme.h copyright.h
+-		gcc xkeywrap.c list.o -o xkeywrap \
++		${CC} ${CFLAGS} xkeywrap.c list.o -o xkeywrap \
+ 			-I${X11BASE}/include -L${X11BASE}/lib -lX11 -lXt \
+ 			-DVERSION=\"${VERSION}\"
+ 
+ list.o :	list.c list.h
+-		gcc -c list.c -I/usr/X11R6/include
++		${CC} ${CFLAGS} -c list.c -I/usr/X11R6/include
+ 
+ readme.h :	README mkstr
+ 		cat README | ./mkstr readme > readme.h
+@@ -30,7 +32,7 @@
+ 		cat COPYRIGHT | ./mkstr copyright > copyright.h
+ 
+ mkstr :		mkstr.c
+-		gcc mkstr.c -o mkstr
++		${CC} ${CFLAGS} mkstr.c -o mkstr
+ 
+ xkeywrap.1.gz :	xkeywrap.man
+ 		cp xkeywrap.man xkeywrap.1
