@@ -1,0 +1,6 @@
+bin/kakasi
+lib/kakasi/rdic-conv
+lib/kakasi/atoc-conv
+lib/kakasi/mkkanwa
+lib/kakasi/itaijidict
+lib/kakasi/kanwadict

@@ -1,0 +1,7 @@
+  KAKASI is language processing filter to convert Kanji characters to
+Hiragana, Katakana or Roman alphabetic Japanese and may be helpful to
+read Japanese documents.  By converting documents written in kanji to
+Roman alphabetic Japanese, those documents can be viewed on systems
+without Japanese language capability.
+
+- Masafumi
