@@ -1,0 +1,16 @@
+This is Memory Allocation Checker package.  Main features:
+* Fault on pointer overrun (read or write).
+* Fault on freed pointer dereference (read or write).
+* Log double free or realloc of already freed pointer.
+* Log memory not freed on exit.
+* Check for pointer underrun on free/realloc.
+* Optionally reverse behaviour of overrun and underrun.
+* Optionally "churn" reallocations. Always return a different pointer.
+* Optionally log pointer overruns instead of faulting.
+* Optionally return freed memory to system. (May hurt checking for freed
+  pointer usage).
+* Very small performance impact.
+* Large memory footprint impact.
+* Includes a validation test suite to test correctness of libmemcheck.
+
+WWW: http://www.sound.net/~hald/projects/memcheck/

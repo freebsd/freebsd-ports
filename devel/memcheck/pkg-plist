@@ -1,0 +1,5 @@
+include/memcheck.h
+lib/libmemcheck.so.1
+lib/libmemcheck.so
+lib/libmemcheck.la
+lib/libmemcheck.a
