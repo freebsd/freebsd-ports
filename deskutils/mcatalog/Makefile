@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mcatalog
-PORTVERSION=	0.0.4
-PORTREVISION=	2
+PORTVERSION=	0.0.6
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mcatalog
@@ -31,7 +30,7 @@ GCONF_SCHEMAS=	mcatalog.schemas
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/pixmaps/mcatalog|/pixmaps|g' \
-			${WRKSRC}/images/Makefile.in
+		${WRKSRC}/images/Makefile.in
 
 .ifndef (NOPORTDOCS)
 post-install:

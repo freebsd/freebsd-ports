@@ -6,6 +6,7 @@ lib/mcatalog/mcatalog.exe
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
+share/gnome/application-registry/mcatalog.applications
 share/gnome/applications/mcatalog.desktop
 share/gnome/pixmaps/mcatalog.png
 share/gnome/pixmaps/mcatalog/default/background.jpg
@@ -19,8 +20,10 @@ share/gnome/pixmaps/mcatalog/metal/shelf.png
 share/gnome/pixmaps/mcatalog/wood/background.jpg
 share/gnome/pixmaps/mcatalog/wood/shelf.png
 share/locale/cs/LC_MESSAGES/mcatalog.mo
+share/locale/de/LC_MESSAGES/mcatalog.mo
 share/locale/es/LC_MESSAGES/mcatalog.mo
 share/locale/hu/LC_MESSAGES/mcatalog.mo
+share/locale/it/LC_MESSAGES/mcatalog.mo
 @dirrm share/gnome/pixmaps/mcatalog/wood
 @dirrm share/gnome/pixmaps/mcatalog/metal
 @dirrm share/gnome/pixmaps/mcatalog/leather
