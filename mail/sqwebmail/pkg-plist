@@ -1,4 +1,6 @@
+@unexec if cmp -s %D/etc/sqwebmail/ldapaddressbook.dist %D/etc/sqwebmail/ldapaddressbook; then rm -f %D/etc/sqwebmail/ldapaddressbook; fi
 etc/sqwebmail/ldapaddressbook.dist
+@unexec if cmp -s %D/etc/sqwebmail/sqwebmaild.dist %D/etc/sqwebmail/sqwebmaild; then rm -f %D/etc/sqwebmail/sqwebmaild; fi
 etc/sqwebmail/sqwebmaild.dist
 etc/sqwebmail/nodsn
 etc/rc.d/sqwebmail-sqwebmaild.sh
