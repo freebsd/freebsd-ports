@@ -1,0 +1,5 @@
+hsftp is an FTP emulator that provides the
+look-and-feel of an FTP session, but uses SSH (1.x)
+to transport commands and data.
+
+- Will <andrews@technologist.com>

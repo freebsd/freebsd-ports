@@ -14,6 +14,7 @@
     SUBDIR += gftp
     SUBDIR += greed
     SUBDIR += gtm
+    SUBDIR += hsftp
     SUBDIR += jmirror
     SUBDIR += junglemonkey
     SUBDIR += lftp
