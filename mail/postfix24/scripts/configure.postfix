@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/mail/postfix24/scripts/Attic/configure.postfix,v 1.31 2003-03-04 07:31:25 leeym Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/postfix24/scripts/Attic/configure.postfix,v 1.32 2003-04-15 07:44:41 leeym Exp $
 
 if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
 	exit
@@ -30,7 +30,9 @@ DB40		"Berkeley DB4.0 (required if SASL also built with DB4.0)" "$status_DB40" \
 DB41		"Berkeley DB4.1 (required if SASL also built with DB4.1)" "$status_DB41" \
 MySQL		"MySQL map lookups" "$status_MySQL" \
 PgSQL		"PostgreSQL map lookups" "$status_PgSQL" \
-OpenLDAP	"OpenLDAP map lookups" "$status_OpenLDAP" \
+OpenLDAP12	"OpenLDAP 1.2 map lookups" "$status_OpenLDAP" \
+OpenLDAP20	"OpenLDAP 2.0 map lookups" "$status_OpenLDAP" \
+OpenLDAP21	"OpenLDAP 2.1 map lookups" "$status_OpenLDAP" \
 Test		"SMTP/LMTP test server and generator" "$status_Test" \
 2> $tempfile
 
@@ -82,7 +84,7 @@ while [ "$1" ]; do
                                 echo "POSTFIX_AUXLIBS+= \${LOCALBASE}/lib/mysql/libmysqlclient.a -lm -lz"
                         fi
                         echo ".if exists(/usr/lib/libkrb.a)"
-                        echo "POSTFIX_AUXLIBS+= -lkrb -lcrypto -lcom_err"
+                        echo "POSTFIX_AUXLIBS+= -lkrb -lcrypto -ldes -lcom_err"
                         echo ".endif"
                         SUB_SASL=""
                         ;;
@@ -101,16 +103,17 @@ while [ "$1" ]; do
 				echo "POSTFIX_AUXLIBS+= \${LOCALBASE}/lib/mysql/libmysqlclient.a -lm -lz"
 			fi
 			echo ".if exists(/usr/lib/libkrb.a)"
-			echo "POSTFIX_AUXLIBS+=	-lkrb -lcrypto -lcom_err"
+			echo "POSTFIX_AUXLIBS+=	-lkrb -lcrypto -ldes -lcom_err"
 			echo ".endif"
 			SUB_SASL=""
 			;;
 		TLS)
 			echo "MAN8+=		tlsmgr.8"
-			echo "POSTFIX_CCARGS+=	-DHAS_SSL -I/usr/include/openssl"
-			echo "POSTFIX_AUXLIBS+=	-lssl -lcrypto"
-			echo "DISTFILES+=	\${DISTNAME}.tar.gz pfixtls-0.8.13-2.0.3-0.9.7.tar.gz"
-			echo "EXTRA_PATCHES+=	\${WRKDIR}/pfixtls-0.8.13-2.0.3-0.9.7/pfixtls.diff"
+			echo "USE_OPENSSL=	yes"
+			echo "POSTFIX_CCARGS+=	-DHAS_SSL -I\${OPENSSLINC}"
+			echo "POSTFIX_AUXLIBS+=	-L\${OPENSSLLIB} -lssl -lcrypto"
+			echo "DISTFILES+=	\${DISTNAME}.tar.gz pfixtls-0.8.13-2.0.6-0.9.7a.tar.gz"
+			echo "EXTRA_PATCHES+=	\${WRKDIR}/pfixtls-0.8.13-2.0.6-0.9.7a/pfixtls.diff"
 			echo "PATCH_STRIP=	-p1"
 			echo "TLS_SUFFIX=	+tls"
 			SUB_TLS=""
@@ -167,11 +170,23 @@ while [ "$1" ]; do
 			echo "PATCHFILES+=	postfix-pg.postfix-2.0.0.2.patch"
 			echo "PATCH_DIST_STRIP= -p1"
 			;;
-		OpenLDAP)
+		OpenLDAP12)
 			echo "BUILD_DEPENDS+=	\${LOCALBASE}/lib/libldap.a:\${PORTSDIR}/net/openldap12"
 			echo "POSTFIX_CCARGS+=	-DHAS_LDAP -I\${LOCALBASE}/include"
 			echo "POSTFIX_AUXLIBS+=	\${LOCALBASE}/lib/libldap.a \${PREFIX}/lib/liblber.a"
-			echo "OPENLDAP_SUFFIX=	+openldap"
+			echo "OPENLDAP_SUFFIX=	+openldap12"
+			;;
+		OpenLDAP20)
+			echo "BUILD_DEPENDS+=	\${LOCALBASE}/lib/libldap.a:\${PORTSDIR}/net/openldap20"
+			echo "POSTFIX_CCARGS+=	-DHAS_LDAP -I\${LOCALBASE}/include"
+ 			echo "POSTFIX_AUXLIBS+=	-lldap -llber"
+			echo "OPENLDAP_SUFFIX=	+openldap20"
+			;;
+		OpenLDAP21)
+			echo "BUILD_DEPENDS+=	\${LOCALBASE}/lib/libldap.a:\${PORTSDIR}/net/openldap21"
+ 			echo "POSTFIX_CCARGS+=	-DHAS_LDAP -I\${LOCALBASE}/include"
+ 			echo "POSTFIX_AUXLIBS+=	-lldap -llber"
+ 			echo "OPENLDAP_SUFFIX=	+openldap21"
 			;;
 		Test)
 			echo "BIN1=		smtp-sink smtp-source"
@@ -202,10 +217,11 @@ while [ "$1" ]; do
 				exit 1
 			fi
 			echo "MAN8+=		tlsmgr.8"
-			echo "POSTFIX_CCARGS+=	-DHAS_SSL -I/usr/include/openssl"
-			echo "POSTFIX_AUXLIBS+=	-lssl -lcrypto"
-			echo "PATCH_SITES+=	ftp://ftp.stack.nl/pub/postfix/tls+ipv6/1.12/"
-			echo "PATCHFILES+=	tls+ipv6-1.12-pf-2.0.3.patch.gz"
+			echo "USE_OPENSSL=	yes"
+			echo "POSTFIX_CCARGS+=	-DHAS_SSL -I\${OPENSSLINC}"
+			echo "POSTFIX_AUXLIBS+=	-L\${OPENSSLLIB} -lssl -lcrypto"
+			echo "PATCH_SITES+=	ftp://ftp.stack.nl/pub/postfix/tls+ipv6/1.13/"
+			echo "PATCHFILES+=	tls+ipv6-1.13-pf-2.0.7.patch.gz"
 			echo "PATCH_DIST_STRIP=	-p1"
 			echo "TLS_SUFFIX=	+tls+ipv6"
 			SUB_TLS=""
