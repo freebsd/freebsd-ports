@@ -88,7 +88,6 @@
     SUBDIR += icmpinfo
     SUBDIR += icmpquery
     SUBDIR += icqlib
-    SUBDIR += icqmail
     SUBDIR += icqnix
     SUBDIR += ip-tun
     SUBDIR += ipfm

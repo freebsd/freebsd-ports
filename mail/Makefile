@@ -31,6 +31,7 @@
     SUBDIR += glbiff
     SUBDIR += grepmail
     SUBDIR += hbiff
+    SUBDIR += icqmail
     SUBDIR += im
     SUBDIR += imap-uw
     SUBDIR += junkfilter
