@@ -408,6 +408,7 @@
     SUBDIR += xbmbrowser
     SUBDIR += xdgagrab
     SUBDIR += xdl
+    SUBDIR += xenomorph
     SUBDIR += xface.el
     SUBDIR += xfig
     SUBDIR += xfpovray
