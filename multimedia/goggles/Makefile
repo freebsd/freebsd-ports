@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Goggles
-PORTVERSION=	0.5.6
-PORTREVISION=	2
+PORTVERSION=	0.7.2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.fifthplanet.net/files/
 
@@ -28,11 +27,11 @@ CONFIGURE_ARGS=	--with-dvdcontrol=${LOCALBASE} \
 		--with-fox=${LOCALBASE} \
 		--x-includes=${X11BASE}/include \
 		--x-libraries=${X11BASE}/lib
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME:S/G/g/}-${PORTVERSION}
 
 pre-everything::
 .ifndef(WITH_DVD_DEVICE)
-	@${ECHO_MSG} '===> The default DVD device is /dev/acd0c'
+	@${ECHO_MSG} '===> The default DVD device is ${DEFAULT_DVD_DEVICE}'
 	@${ECHO_MSG} "===> You can choose any DVD device at Ogle's command line"
 	@${ECHO_MSG} '===> Define WITH_DVD_DEVICE if you want to change the default'
 	@${ECHO_MSG} "===> For example, 'make WITH_DVD_DEVICE=\"/dev/somedevice\"'"
@@ -43,20 +42,17 @@ pre-everything::
 .ifdef(WITH_DVD_DEVICE)
 DEFAULT_DVD_DEVICE=${WITH_DVD_DEVICE}
 .else
+.if ${OSVERSION} < 500000
 DEFAULT_DVD_DEVICE=/dev/acd0c
+.else
+DEFAULT_DVD_DEVICE=/dev/acd0
+.endif
 .endif
 
 post-patch:
 # point to specific device
 	@${REINPLACE_CMD} -E -e \
-		's|\"/dev/dvd\"|\"${DEFAULT_DVD_DEVICE}\"|' \
-		${WRKSRC}/src/dvdwindow.cpp
-# hack to enable correct CPPFLAGS
-	@${REINPLACE_CMD} -E -e \
-		's|@CPPFLAGS@|${CPPFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}|' \
-		${WRKSRC}/src/Makefile.in
-	@${REINPLACE_CMD} -e 's|-lFOX|-lFOX-1.1|g' ${WRKSRC}/configure
-	@${FIND} ${WRKSRC} -name "*.cpp" -or -name "*.h" -or -name "configure" | ${XARGS} \
-		${REINPLACE_CMD} -e 's|include <fox/|include <fox-1.1/|g'
+		's|\"/dev/acd0c\"|\"${DEFAULT_DVD_DEVICE}\"|' \
+		${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
