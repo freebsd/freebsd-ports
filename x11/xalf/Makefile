@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	xalf
-PORTVERSION=	0.11
+PORTVERSION=	0.12
 CATEGORIES=	x11 gnome
-MASTER_SITES=	http://www.lovett.com/~ade/gnome/
-#MASTER_SITES=	http://www.lysator.liu.se/~astrand/projects/xalf/ \
-#		http://www.lysator.liu.se/~astrand/projects/xalf/old/
+MASTER_SITES=	http://www.lysator.liu.se/~astrand/projects/xalf/ \
+		http://www.lysator.liu.se/~astrand/projects/xalf/old/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ade@FreeBSD.org
