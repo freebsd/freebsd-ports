@@ -147,7 +147,7 @@ include/gal-2.0/gal/widgets/widget-pixmap-combo.h
 lib/gtk-2.0/modules/libgal-a11y-2.0.so
 lib/libgal-2.0.a
 lib/libgal-2.0.so
-lib/libgal-2.0.so.2
+lib/libgal-2.0.so.3
 libdata/pkgconfig/gal-2.0.pc
 share/doc/gal2/gal-api.html
 share/doc/gal2/gal-api.sgml
@@ -212,6 +212,8 @@ share/locale/ro/LC_MESSAGES/gal-%%VERSION%%.mo
 share/locale/ru/LC_MESSAGES/gal-%%VERSION%%.mo
 share/locale/sk/LC_MESSAGES/gal-%%VERSION%%.mo
 share/locale/sl/LC_MESSAGES/gal-%%VERSION%%.mo
+share/locale/sr/LC_MESSAGES/gal-%%VERSION%%.mo
+share/locale/sr@Latn/LC_MESSAGES/gal-%%VERSION%%.mo
 share/locale/sv/LC_MESSAGES/gal-%%VERSION%%.mo
 share/locale/ta/LC_MESSAGES/gal-%%VERSION%%.mo
 share/locale/tr/LC_MESSAGES/gal-%%VERSION%%.mo
