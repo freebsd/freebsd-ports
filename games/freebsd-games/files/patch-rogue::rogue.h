@@ -16,14 +16,13 @@ $FreeBSD$
  	char *real;
  	unsigned short id_status;
  };
-@@ -472,3 +475,10 @@
+@@ -472,3 +475,9 @@
  	short second;	/* 0 - 59 */
  };
  
 +/*
 + * external routine declarations.
 + */
-+#define HUNGER_STR_LEN 8
 +extern  char    hunger_str[HUNGER_STR_LEN];
 +extern  char    login_name[MAX_OPT_LEN];
 +extern  const char   *error_file;
