@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dmidecode
-PORTVERSION=	2.4
+PORTVERSION=	2.6
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
