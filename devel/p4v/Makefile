@@ -1,5 +1,5 @@
 # New ports collection makefile for:	p4v
-# Date created:				14 October 2004
+# Date created:				14 February 2004
 # Whom:					bms@FreeBSD.org
 #
 # $FreeBSD$
@@ -7,6 +7,7 @@
 
 PORTNAME=		p4v
 PORTVERSION=		2003.2
+PORTREVISION=		1
 CATEGORIES=		devel
 MASTER_SITES=		ftp://ftp.perforce.com/pub/perforce/r03.2/bin.freebsd4/
 DISTNAME=		${PORTNAME}
