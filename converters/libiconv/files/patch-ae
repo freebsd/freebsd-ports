@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- libcharset/lib/Makefile.in.orig	Thu Jun 28 01:56:56 2001
-+++ libcharset/lib/Makefile.in	Mon Aug 27 12:32:43 2001
+--- libcharset/lib/Makefile.in.orig	Wed Jun 27 18:56:56 2001
++++ libcharset/lib/Makefile.in	Sat Apr 27 15:57:01 2002
 @@ -10,6 +10,7 @@
  local_prefix = /usr/local
  exec_prefix = @exec_prefix@
@@ -20,6 +17,15 @@ $FreeBSD$
  
  # Needed by $(LIBTOOL).
  top_builddir = ..
+@@ -53,7 +54,7 @@
+ 	$(LIBTOOL_LINK) $(CC) $(LDFLAGS) -o libcharset.la -rpath $(libdir) -version-info $(LIBCHARSET_VERSION_INFO) -no-undefined $(OBJECTS)
+ 
+ localcharset.lo : $(srcdir)/localcharset.c
+-	$(LIBTOOL_COMPILE) $(CC) $(INCLUDES) $(CFLAGS) $(CPPFLAGS) -DHAVE_CONFIG_H -DLIBDIR=\"$(libdir)\" -c $(srcdir)/localcharset.c
++	$(LIBTOOL_COMPILE) $(CC) $(INCLUDES) $(CFLAGS) $(CPPFLAGS) -DHAVE_CONFIG_H -DLIBDIR=\"$(sysconfdir)\" -c $(srcdir)/localcharset.c
+ 
+ charset.alias: $(srcdir)/config.charset
+ 	$(SHELL) $(srcdir)/config.charset '@host@' > t-$@
 @@ -72,11 +73,12 @@
  install-lib : all force
  	$(MKINSTALLDIRS) $(libdir)
