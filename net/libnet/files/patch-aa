@@ -1,11 +1,20 @@
---- configure.orig	Thu May  6 18:23:51 1999
-+++ configure	Wed May 12 00:25:30 1999
-@@ -1519,7 +1519,7 @@
+--- configure.orig	Sat Jan 30 13:25:07 1999
++++ configure	Thu Oct  7 19:31:17 1999
+@@ -1216,7 +1216,7 @@
  EOF
  
      MAN_PREFIX="$prefix/man/man3/"
 -    LIB_PREFIX="$prefix/lib/aout"
 +    LIB_PREFIX="$prefix/lib/"
      INC_PREFIX="$prefix/include/"
-     BIN_PREFIX="$prefix/bin/"
      ln -sf FreeBSD support/bpf-lkm/etherspoof
+     ;;
+@@ -1231,7 +1231,7 @@
+ EOF
+ 
+     MAN_PREFIX="$prefix/man/man3/"
+-    LIB_PREFIX="$prefix/lib/aout"
++    LIB_PREFIX="$prefix/lib/"
+     INC_PREFIX="$prefix/include/"
+     ;;
+ 
