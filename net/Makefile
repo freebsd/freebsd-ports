@@ -289,6 +289,7 @@
     SUBDIR += nettest
     SUBDIR += ngrep
     SUBDIR += ngrep-lib
+    SUBDIR += nic
     SUBDIR += nocol
     SUBDIR += ns
     SUBDIR += nsc

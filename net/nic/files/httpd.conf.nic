@@ -1,0 +1,19 @@
+# This is included in Apache's httpd.conf for Nic
+#
+# For security, don't serve pages from the Nic configuration and
+# library directories.
+#
+<Directory "/home/httpd/html/horde/nic/config">
+    order deny,allow
+    deny from all
+</Directory>
+<Directory "/home/httpd/html/horde/nic/lib">
+    order deny,allow
+    deny from all
+</Directory>
+<Directory "/home/httpd/html/horde/nic/templates">
+    order deny,allow
+    deny from all
+</Directory>
+# End of Nic configuration ================
+

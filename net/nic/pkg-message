@@ -1,0 +1,10 @@
+************************************************************************
+Nic has been installed in %%NICDIR%% with your blank
+configuration files. It should be available from
+<URL:http://localhost/horde/>.
+
+You may tune the configuration files located in
+%%CONFDIR%%/, specially the files conf.php.
+
+To protect your configuration files, you have to restart Apache.
+************************************************************************
