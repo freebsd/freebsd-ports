@@ -3,6 +3,7 @@
 
     SUBDIR += babel
     SUBDIR += deft
+    SUBDIR += gperiodic
     SUBDIR += hmmer
     SUBDIR += kinemage
     SUBDIR += molden
@@ -14,5 +15,6 @@
     SUBDIR += rasmol
     SUBDIR += seaview
     SUBDIR += tinker
+    SUBDIR += xmolwt
 
 .include <bsd.port.subdir.mk>
