@@ -1,0 +1,4 @@
+ddclient is a Perl client used to update dynamic DNS entries for
+accounts on many dynamic DNS services.
+
+WWW: http://burry.ca:4141/ddclient/

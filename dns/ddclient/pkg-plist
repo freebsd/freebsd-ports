@@ -1,0 +1,12 @@
+etc/ddclient.conf.sample
+etc/rc.d/ddclient.sh.sample
+sbin/ddclient
+share/ddclient/COPYING
+share/ddclient/COPYRIGHT
+share/ddclient/README
+share/ddclient/README.cisco
+share/ddclient/sample-etc_cron.d_ddclient
+share/ddclient/sample-etc_dhclient-enter-hooks
+share/ddclient/sample-etc_dhcpc_dhcpcd-eth0.exe
+share/ddclient/sample-etc_ppp_ip-up.local
+@dirrm share/ddclient
