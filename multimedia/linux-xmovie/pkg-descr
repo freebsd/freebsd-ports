@@ -1,0 +1,25 @@
+* xmovie
+
+  QuickTime and DVD movie player
+
+WWW: http://heroine.linuxbox.com/xmovie.html
+
+  documentation is in /usr/X11R6/share/doc/xmovie/.
+
+* Tips
+
+  - Pentium II binary are distributed from below URL:
+	http://heroine.linuxbox.com/xmovie-i686.tar.gz
+
+  - If you use with 3.2-RELEASE, 3.3-RELEASE, 3.4-RELEASE,
+    it need to update /module/linux.ko file.
+
+  - Below options for kernel are useful for xmovie.
+
+options		"P1003_1B"
+options		"_KPOSIX_PRIORITY_SCHEDULING"
+options		"_KPOSIX_VERSION=199309L"
+
+---
+Yoshiro MIHIRA
+(sanpei@sanpei.org)
