@@ -19,7 +19,15 @@ GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
-CONFIGURE_ENV+=	LIBS=-lcrypt
+CONFIGURE_ENV+=	LIBS="${LIBS}"
 MAN8=		moftpd.8 moftpadmin.8
+LIBS+=		-lcrypt
+
+.if defined(WITH_MYSQL)
+CFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib/mysql
+.else
+CONFIGURE_ARGS+=	--without-sql
+.endif
 
 .include <bsd.port.mk>
