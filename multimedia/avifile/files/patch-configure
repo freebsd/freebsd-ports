@@ -1,0 +1,11 @@
+--- configure.orig	Tue Oct  5 14:25:48 2004
++++ configure	Tue Oct  5 14:26:14 2004
+@@ -3768,7 +3768,7 @@
+ 
+ case "$target" in
+   i?86*)
+-    test x$ac_cv_c_compiler_gnu = xyes && DEFAULT_FLAGS="-mcpu=$DEFAULT_FLAGS -march=$DEFAULT_FLAGS -ffast-math -fomit-frame-pointer"
++    test x$ac_cv_c_compiler_gnu = xyes && DEFAULT_FLAGS="-ffast-math -fomit-frame-pointer"
+ 
+ cat >>confdefs.h <<\_ACEOF
+ #define ARCH_X86 1
