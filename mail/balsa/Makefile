@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	balsa
-PORTVERSION=	1.4.0
-PORTREVISION=	2
+PORTVERSION=	1.4.1
 CATEGORIES=	mail gnome
-MASTER_SITES=	http://www.theochem.kth.se/~pawsa/balsa/ \
+MASTER_SITES=	http://balsa.gnome.org/ \
+		http://www.theochem.kth.se/~pawsa/balsa/ \
 		ftp://ftp.newton.cx/pub/balsa/
 
 MAINTAINER=	gnome@FreeBSD.org
