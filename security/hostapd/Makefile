@@ -22,4 +22,10 @@ USE_GMAKE=	yes
 post-extract:
 	@${CP} ${FILESDIR}/config.bsd ${WRKSRC}/.config
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600007
+IGNORE="hostapd is not supported on this version"
+.endif
+
+.include <bsd.port.post.mk>
