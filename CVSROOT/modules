@@ -2560,6 +2560,7 @@ idlefork	ports/devel/idlefork
 idnkit		ports/net/idnkit
 ifc		ports/lang/ifc
 ifd-devkit	ports/security/ifd-devkit
+ifd-gempc410	ports/security/ifd-gempc410
 ifd-gpr400	ports/security/ifd-gpr400
 ifd-test	ports/devel/ifd-test
 ifhp		ports/print/ifhp
