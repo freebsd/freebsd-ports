@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnomelibs
-PORTVERSION=	1.4.1.5
+PORTVERSION=	1.4.1.6
 CATEGORIES?=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-libs
@@ -28,7 +28,8 @@ USE_GMAKE=	yes
 USE_IMLIB=	yes
 USE_ESOUND=	yes
 INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
+LIBTOOLFILES=	configure libart_lgpl/configure
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
 		--datadir=${PREFIX}/share/gnome \
 		--disable-test-gnome \

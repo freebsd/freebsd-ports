@@ -1,9 +1,17 @@
 
 $FreeBSD$
 
---- configure.orig	Mon Jan 14 11:58:21 2002
-+++ configure	Mon Jan 14 12:00:15 2002
-@@ -8775,7 +8775,7 @@
+--- configure.orig	Mon Apr 29 12:07:59 2002
++++ configure	Mon Apr 29 12:08:54 2002
+@@ -5339,6 +5339,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -8775,7 +8776,7 @@
  else
    
    save_LDFLAGS="$LDFLAGS"
@@ -12,7 +20,7 @@ $FreeBSD$
    if test "$cross_compiling" = yes; then
    ac_cv_gmodule=yes
  else
-@@ -10394,7 +10394,7 @@
+@@ -10394,7 +10395,7 @@
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
@@ -21,7 +29,7 @@ $FreeBSD$
  cat > conftest.$ac_ext <<EOF
  #line 10400 "configure"
  #include "confdefs.h"
-@@ -13483,13 +13483,13 @@
+@@ -13483,13 +13484,13 @@
  SUPPORTINCS='-DNEED_GNOMESUPPORT_H -I$(top_builddir)/support -I$(top_srcdir)/support'
  
  ART_LIBS="-lart_lgpl"
@@ -37,7 +45,7 @@ $FreeBSD$
  GNOME_IDLDIR='-I${datadir}/idl'
  
  
-@@ -13887,6 +13887,7 @@
+@@ -13887,6 +13888,7 @@
  s%@MAINTAINER_MODE_FALSE@%$MAINTAINER_MODE_FALSE%g
  s%@MAINT@%$MAINT%g
  s%@cflags_set@%$cflags_set%g
@@ -45,7 +53,7 @@ $FreeBSD$
  s%@GTK_CONFIG@%$GTK_CONFIG%g
  s%@GTK_CFLAGS@%$GTK_CFLAGS%g
  s%@GTK_LIBS@%$GTK_LIBS%g
-@@ -14356,10 +14357,6 @@
+@@ -14356,10 +14358,6 @@
        *) # Relative path.
          ac_sub_cache_file="$ac_dots$cache_file" ;;
        esac
