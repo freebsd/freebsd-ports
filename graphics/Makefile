@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.66 1998/02/18 20:57:14 steve Exp $
+# $Id: Makefile,v 1.67 1998/02/20 02:39:06 steve Exp $
 #
 
     SUBDIR += ImageMagick
@@ -29,6 +29,7 @@
     SUBDIR += imlib
     SUBDIR += jbigkit
     SUBDIR += jpeg
+    SUBDIR += kdegraphics
     SUBDIR += mpeg-lib
     SUBDIR += mpeg2codec
     SUBDIR += mpeg2play
