@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	drm-kmod
-PORTVERSION=	0.9.5
-PORTREVISION=	1
+PORTVERSION=	0.9.6
 CATEGORIES=	graphics x11
-MASTER_SITES=	http://people.freebsd.org/~anholt/dri/files/
-
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	anholt
 MAINTAINER=	anholt@FreeBSD.org
 
 USE_REINPLACE=	yes
@@ -35,6 +34,8 @@ pre-extract:
 	@${ECHO_MSG} "If you are using modules on an SMP system, use "make -DWITH_SMP" to get SMP locking"
 	@${ECHO_MSG}
 .endif
+	@${ECHO_MSG} "If you don't want linux compatibility, use make -DDRM_NOLINUX"
+	@${ECHO_MSG}
 
 pre-patch:
 	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/drm.sh
