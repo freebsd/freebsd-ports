@@ -22,12 +22,6 @@ MAN1=		44bsd-more.1
 
 RELDATE=	20000521
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
 post-extract:
 	-cd ${WRKSRC} && co RCS/*,v
 
@@ -36,6 +30,8 @@ post-patch:
 	    's!/usr/share/misc/more.help!${PREFIX}/share/misc/44bsd-more.help!'\
 	    ${WRKSRC}/pathnames.h
 	${CP} ${FILESDIR}/queue.h ${WRKSRC}
+	${REINPLACE_CMD} -e 's/static char \*getvar/static const char \*getvar/' \
+	    ${WRKSRC}/ncommand.c
 
 do-install:
 	${MKDIR} ${EXAMPLESDIR}
@@ -50,4 +46,4 @@ tarup:
 	cd ${WRKSRC} && tar cyf /tmp/${DISTFILES} RCS
 	scp /tmp/${DISTFILES} freefall:public_html/dists
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
