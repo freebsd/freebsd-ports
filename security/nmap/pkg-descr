@@ -1,14 +1,14 @@
-nmap is a utility for port scanning large networks, although it works fine
-for single hosts.  The guiding philosophy for the creation of nmap was TMTOWTDI
-(There's More Than One Way To Do It).  Sometimes you need speed, other times
-you may need stealth.  In some cases, bypassing firewalls may be required. Not
-to mention the fact that you may want to scan different protocols (UDP, TCP,
-ICMP, etc.).  You just can't do all this with one scanning mode.  Thus nmap
-incorporates virtually every scanning technique known of.
+Nmap is a utility for network exploration or security auditing. It
+supports ping scanning (determine which hosts are up), many port
+scanning techniques, version detection (determine service protocols
+and application versions listening behind ports), and TCP/IP
+fingerprinting (remote host OS or device identification). Nmap also
+offers flexible target and port specification, decoy/stealth scanning,
+sunRPC scanning, and more.
 
-WWW: http://www.insecure.org/nmap/index.html
+WWW: http://www.insecure.org/nmap/
 
-See the webpage and the Phrack Magazine article (Volume 7, Issue 51 
+See the web page and the Phrack Magazine article (Volume 7, Issue 51 
 September 01, 1997, article 11 of 17) http://www.insecure.org/nmap/p51-11.txt
 
 -- David
