@@ -16,6 +16,7 @@
     SUBDIR += fmirror
     SUBDIR += frox
     SUBDIR += ftp-tls
+    SUBDIR += ftp4all
     SUBDIR += ftpcopy
     SUBDIR += ftpcube
     SUBDIR += ftpfind

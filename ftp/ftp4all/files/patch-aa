@@ -1,0 +1,94 @@
+diff -u -r ../ftpd-3.012.old/cfg/configure ./cfg/configure
+--- ../ftpd-3.012.old/cfg/configure	Sun Feb  6 18:34:02 2000
++++ ./cfg/configure	Sun Mar 30 10:47:46 2003
+@@ -226,20 +226,27 @@
+ 
+ cd ..
+ 
+-echo $ac_n "| want DES encryption (y/n) ? $ac_c"
+-read DES
+-if [ $DES = y ]; then
++if [ X$WANT_DES = X ]; then
++  echo $ac_n "| want DES encryption (y/n) ? $ac_c"
++  read DES
++  if [ $DES = y ]; then
++    DEF=$DEF" -DDES_ENCRYPTION"
++    DES="-I../../lib"
++    LIB=${LIB}" -L../../lib -ldes "
++  else
++    DES=""
++  fi
++elif [ $WANT_DES = y ]; then
+   DEF=$DEF" -DDES_ENCRYPTION"
+   DES="-I../../lib"
+   LIB=${LIB}" -L../../lib -ldes "
++  echo "| will use DES"
+ else
++  echo "| will NOT use DES"
+   DES=""
+ fi
+ 
+ 
+-
+-
+-
+ echo $ac_n "| creating Makefile ... $ac_c"
+ 
+ cat << "EOF" >Makefile
+@@ -618,7 +625,7 @@
+  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+  */
+ 
+-#define MAXFILENAMELENGTH 32
++#define MAXFILENAMELENGTH FILENAME_MAX
+ 
+ #ifndef SA_RESTART
+ #define SA_RESTART 0
+diff -u -r ../ftpd-3.012.old/src/common/commondef.h ./src/common/commondef.h
+--- ../ftpd-3.012.old/src/common/commondef.h	Sun Mar  5 19:40:15 2000
++++ ./src/common/commondef.h	Sun Mar 30 11:02:03 2003
+@@ -100,30 +100,30 @@
+ #define LG_CHMOD    0x0400
+ #define LG_SITE     0x0800
+ 
+-#define DFL_REGFILE    "etc/ftpd.reg"
+-#define DFL_GROUPFILE  "etc/groups"
+-#define DFL_USERFILE   "etc/users"
+-#define DFL_LIMITFILE  "etc/limits.cfg"
+-#define DFL_LOGFILE    "log/ftpd.log"
+-#define DFL_ERRLOGFILE "log/ftpd.err"
+-#define DFL_FTPSERRLOGFILE "log/ftps.err"
+-#define DFL_MSGDIR     "msg/"
+-#define DFL_MSGGDIR    "msg/grp/"
+-#define DFL_MSGUDIR    "msg/usr/"
++#define DFL_REGFILE    "etc/ftp4all/ftpd.reg"
++#define DFL_GROUPFILE  "etc/ftp4all/groups"
++#define DFL_USERFILE   "etc/ftp4all/users"
++#define DFL_LIMITFILE  "etc/ftp4all/limits.cfg"
++#define DFL_LOGFILE    "/var/log/ftp4all/ftpd.log"
++#define DFL_ERRLOGFILE "/var/log/ftp4all/ftpd.err"
++#define DFL_FTPSERRLOGFILE "/var/log/ftp4all/ftps.err"
++#define DFL_MSGDIR     "etc/ftp4all/msg/"
++#define DFL_MSGGDIR    "etc/ftp4all/msg/grp/"
++#define DFL_MSGUDIR    "etc/ftp4all/msg/usr/"
+ #define DFL_BINDIR     "bin/"
+ #define DFL_BINGDIR    "bin/grp/"
+ #define DFL_BINUDIR    "bin/usr/"
+ #define DFL_SBINDIR    "sbin/"
+ #define DFL_SERVERPRG  "sbin/ftps"
+ #define DFL_ADMINPRG   "sbin/ftpa"
+-#define DFL_STATDIR    "log/"
++#define DFL_STATDIR    "/var/run/"
+ #define DFL_CFGDIR     "etc/"
+-#define DFL_PIDFILE    "log/ftpd.pid"
+-#define DFL_STATFILE   "log/ftpd.stats"
++#define DFL_PIDFILE    "/var/run/ftpd.pid"
++#define DFL_STATFILE   "/var/run/ftpd.stats"
+ 
+ /* recent addition */
+ 
+-#define DFL_GSTATFILE  "etc/ftpd.gstats"
++#define DFL_GSTATFILE  "/var/run/ftpd.gstats"
+ 
+ /******************/
+ 
