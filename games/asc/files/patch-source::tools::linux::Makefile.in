@@ -1,26 +1,28 @@
 
 $FreeBSD$
 
---- source/tools/linux/Makefile.in	2001/03/10 14:10:17	1.1
-+++ source/tools/linux/Makefile.in	2001/03/10 14:19:07
-@@ -81,11 +81,11 @@
- asc_makegfx_SOURCES = makegfx.cpp   basestrm.cpp misc.cpp ascstring.cpp loadpcxc.cpp palette.cpp sgstream.cpp newfont.cpp basegfx.cpp graphicset.cpp gameoptions.cpp CLoadable.cpp Named.cpp Property.cpp PropertyGroup.cpp stack.cpp buildingtype.cpp typen.cpp vehicletype.cpp password.cpp
+--- source/tools/linux/Makefile.in.orig	Tue Apr  3 15:57:52 2001
++++ source/tools/linux/Makefile.in	Wed Apr 11 11:42:46 2001
+@@ -82,12 +82,12 @@
  asc_mntgraph_SOURCES = mntgraph.cpp  basestrm.cpp misc.cpp ascstring.cpp loadpcxc.cpp palette.cpp sgstream.cpp newfont.cpp basegfx.cpp graphicset.cpp gameoptions.cpp CLoadable.cpp Named.cpp Property.cpp PropertyGroup.cpp stack.cpp buildingtype.cpp typen.cpp vehicletype.cpp password.cpp
+ asc_viewid_SOURCES = viewid.cpp    basestrm.cpp misc.cpp ascstring.cpp loadpcxc.cpp palette.cpp sgstream.cpp newfont.cpp basegfx.cpp graphicset.cpp gameoptions.cpp CLoadable.cpp Named.cpp Property.cpp PropertyGroup.cpp stack.cpp buildingtype.cpp typen.cpp vehicletype.cpp password.cpp
  
 -asc_mount_LDADD = -lSDL -lpthread @LDADDLIBBZ2@
 -asc_demount_LDADD = -lSDL -lpthread @LDADDLIBBZ2@
 -asc_gfx2pcx_LDADD = ../../sdl/libsdl.a -lSDL -lpthread @LDADDLIBBZ2@
 -asc_makegfx_LDADD = ../../sdl/libsdl.a -lSDL -lpthread @LDADDLIBBZ2@
 -asc_mntgraph_LDADD = ../../sdl/libsdl.a -lSDL -lpthread @LDADDLIBBZ2@
+-asc_viewid_LDADD = ../../sdl/libsdl.a -lSDL -lpthread @LDADDLIBBZ2@
 +asc_mount_LDADD = @LDADDLIBBZ2@
 +asc_demount_LDADD = @LDADDLIBBZ2@
 +asc_gfx2pcx_LDADD = ../../sdl/libsdl.a @LDADDLIBBZ2@
 +asc_makegfx_LDADD = ../../sdl/libsdl.a @LDADDLIBBZ2@
 +asc_mntgraph_LDADD = ../../sdl/libsdl.a @LDADDLIBBZ2@
++asc_viewid_LDADD = ../../sdl/libsdl.a @LDADDLIBBZ2@
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
  CONFIG_HEADER = ../../../config.h
  CONFIG_CLEAN_FILES = 
-@@ -93,7 +93,7 @@
+@@ -95,7 +95,7 @@
  
  
  DEFS = @DEFS@ -I. -I$(srcdir) -I../../..

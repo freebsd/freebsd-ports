@@ -1,17 +1,17 @@
 
 $FreeBSD$
 
---- source/Makefile.in	2001/02/17 15:51:24	1.1
-+++ source/Makefile.in	2001/02/17 16:16:56
+--- source/Makefile.in.orig	Mon Apr  2 11:30:54 2001
++++ source/Makefile.in	Wed Apr 11 11:36:32 2001
 @@ -73,7 +73,7 @@
- asc_SOURCES = unitctrl.cpp soundList.cpp weather.cpp typen.cpp strtmesg.cpp stack.cpp spfst.cpp sgstream.cpp sg.cpp pd.cpp palette.cpp newfont.cpp network.cpp missions.cpp misc.cpp loadpcxc.cpp loaders.cpp loadbi3.cpp gui.cpp gamedlg.cpp dlg_box.cpp dialog.cpp controls.cpp building.cpp basestrm.cpp basegfx.cpp attack.cpp artint.cpp CLoadable.cpp Property.cpp PropertyGroup.cpp gameoptions.cpp Named.cpp astar2.cpp vehicletype.cpp buildingtype.cpp containerbase.cpp mapalgorithms.cpp viewcalculation.cpp gamemap.cpp password.cpp password_dialog.cpp replay.cpp research.cpp mapdisplay.cpp resourcenet.cpp dashboard.cpp ascstring.cpp graphicset.cpp
+ asc_SOURCES = unitctrl.cpp soundList.cpp weather.cpp typen.cpp strtmesg.cpp stack.cpp spfst.cpp sgstream.cpp sg.cpp pd.cpp palette.cpp newfont.cpp network.cpp missions.cpp misc.cpp loadpcxc.cpp loaders.cpp loadbi3.cpp gui.cpp gamedlg.cpp dlg_box.cpp dialog.cpp controls.cpp building.cpp basestrm.cpp basegfx.cpp attack.cpp CLoadable.cpp Property.cpp PropertyGroup.cpp gameoptions.cpp Named.cpp astar2.cpp vehicletype.cpp buildingtype.cpp containerbase.cpp mapalgorithms.cpp viewcalculation.cpp gamemap.cpp password.cpp password_dialog.cpp replay.cpp research.cpp mapdisplay.cpp resourcenet.cpp dashboard.cpp ascstring.cpp graphicset.cpp vehicle.cpp buildings.cpp networkdata.cpp
  
  
--asc_LDADD = ./sdl/libsdl.a ./libs/triangul/libtriangul.a -lSDL -lpthread -lSDL_image @LDADDLIBBZ2@
-+asc_LDADD = ./sdl/libsdl.a ./libs/triangul/libtriangul.a -lSDL_image @LDADDLIBBZ2@
+-asc_LDADD = ./ai/libai.a ./sdl/libsdl.a ./libs/triangul/libtriangul.a -lSDL -lpthread -lSDL_image @LDADDLIBBZ2@
++asc_LDADD = ./ai/libai.a ./sdl/libsdl.a ./libs/triangul/libtriangul.a -lSDL_image @LDADDLIBBZ2@
  
  
- SUBDIRS = docs sdl libs mapedit tools
+ SUBDIRS = docs sdl libs mapedit tools ai
 @@ -88,7 +88,7 @@
  
  

@@ -4,6 +4,7 @@ bin/asc_gfx2pcx
 bin/asc_makegfx
 bin/asc_mntgraph
 bin/asc_mount
+bin/asc_viewid
 bin/ascmap2pcx
 bin/ascmapedit
 share/asc/main.con
