@@ -1,0 +1,12 @@
+--- Makefile.orig	Sat Jan 13 11:11:55 1996
++++ Makefile	Mon Feb  5 18:06:05 1996
+@@ -11,6 +11,9 @@
+ 	cd ltk; make depend; make
+ 	cd xpdf; make depend; make
+ 
++install:
++	install -c xpdf/xpdf ${PREFIX}/bin
++
+ clean:
+ 	cd goo; make clean
+ 	cd ltk; make clean
