@@ -7,7 +7,7 @@
 
 PORTNAME=	swig
 PORTVERSION=	${VER}p5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel perl5 python tcl83
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.rge.com/pub/languages/swig/${VER}/ \
@@ -24,7 +24,6 @@ VER=		1.1
 
 USE_PERL5=	yes
 USE_PYTHON=	yes
-PYTHON_NO_DEPENDS?=	yes
 INSTALLS_SHLIB=	yes
 
 WRKSRC=		${WRKDIR}/SWIG${PORTVERSION}
