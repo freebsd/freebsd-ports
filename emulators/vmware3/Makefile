@@ -102,6 +102,11 @@ post-patch:
 	${PERL} -i -pe 's,<sys/lock\.h>,<sys/mutex.h>,' \
 		${WRKSRC}/vmmon-only/freebsd/*.c
 .endif
+.if ${OSVERSION} >= 500019
+	${PERL} -i -pe 's,<machine/ioctl_fd\.h>,<sys/fdcio.h>,' \
+		${WRKSRC}/vmmon-only/freebsd/*.c \
+		${WRKSRC}/vmware-distrib/vmmon-only/freebsd/*.c
+.endif
 
 setoptions:
 	${SED} 	-e 's;@@PREFIX@@;${PREFIX};' \
