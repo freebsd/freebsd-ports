@@ -123,7 +123,7 @@ LIB_DEPENDS+=		gds.1:${PORTSDIR}/databases/firebird
 CONFIGURE_ARGS+=	--with-firebird=${LOCALBASE}/firebird
 PLIST_SUB+=		FIREBIRD:=""
 .else
-CONFIGURE_ARGS+=	--without-interbase
+CONFIGURE_ARGS+=	--without-firebird
 PLIST_SUB+=		FIREBIRD:="@comment "
 .endif
 
