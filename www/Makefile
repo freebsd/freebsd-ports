@@ -301,6 +301,7 @@
     SUBDIR += publicfile
     SUBDIR += py-HTMLgen
     SUBDIR += py-websvcs
+    SUBDIR += pyweblib
     SUBDIR += qdecoder
     SUBDIR += quanta
     SUBDIR += quixote
