@@ -1,0 +1,21 @@
+
+$FreeBSD$
+
+--- Makefile.in.orig	Sat Jan 24 21:18:56 2004
++++ Makefile.in	Sat Jan 24 21:19:22 2004
+@@ -505,14 +505,9 @@
+ # Erlang base public files
+ #
+ install.bin:
+-	rm -f $(BINDIR)/erl $(BINDIR)/erlc \
+-	      $(BINDIR)/ecc $(BINDIR)/elink $(BINDIR)/ear $(BINDIR)/escript
++	rm -f $(BINDIR)/erl $(BINDIR)/erlc
+ 	${LN_S} $(ERLANG_BINDIR)/erl      $(BINDIR)/erl
+ 	${LN_S} $(ERLANG_BINDIR)/erlc     $(BINDIR)/erlc
+-	${LN_S} $(ERLANG_BINDIR)/ecc      $(BINDIR)/ecc
+-	${LN_S} $(ERLANG_BINDIR)/elink    $(BINDIR)/elink
+-	${LN_S} $(ERLANG_BINDIR)/ear      $(BINDIR)/ear
+-	${LN_S} $(ERLANG_BINDIR)/escript  $(BINDIR)/escript
+ 
+ #
+ # Directories needed before we can install
