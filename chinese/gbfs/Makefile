@@ -19,6 +19,7 @@ SYSDIR=		/usr/src/sys
 KMODDIR=	${PREFIX}/modules
 PLIST_SUB=	MSDOSFSKO=${MSDOSFSKO}
 USE_REINPLACE=	yes
+NO_WRKSUBDIR=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -45,26 +46,26 @@ IGNORE= "You need to extract kernel source tree before you build this package"
 .endif
 
 do-extract:
-	@${MKDIR} ${WRKDIR}/msdos ${WRKDIR}/cd9660 ${WRKDIR}/ntfs
-	@${CP} ${MSDOSFSDIR}/* ${MSDOSFSKODIR}/Makefile ${WRKDIR}/msdos
-	@${CP} ${SYSDIR}/isofs/cd9660/* ${SYSDIR}/modules/cd9660/Makefile ${WRKDIR}/cd9660
-	@${CP} ${NTFSDIR}/* ${SYSDIR}/modules/ntfs/Makefile ${WRKDIR}/ntfs
-	@(cd ${WRKDIR}; ${TAR} xzf ${DISTDIR}/${DISTFILES} )
-	@${REINPLACE_CMD} -e "/^\.PATH/d" ${WRKDIR}/*/Makefile
+	@${MKDIR} ${WRKSRC}/msdos ${WRKSRC}/cd9660 ${WRKSRC}/ntfs
+	@${CP} ${MSDOSFSDIR}/* ${MSDOSFSKODIR}/Makefile ${WRKSRC}/msdos
+	@${CP} ${SYSDIR}/isofs/cd9660/* ${SYSDIR}/modules/cd9660/Makefile ${WRKSRC}/cd9660
+	@${CP} ${NTFSDIR}/* ${SYSDIR}/modules/ntfs/Makefile ${WRKSRC}/ntfs
+	@(cd ${WRKSRC}; ${TAR} xzf ${DISTDIR}/${DISTFILES} )
+	@${REINPLACE_CMD} -e "/^\.PATH/d" ${WRKSRC}/*/Makefile
 
 do-patch:
-	@(cd ${WRKDIR}/msdos; ${PATCH} --quiet < ${WRKDIR}/${MSDOSFSPATCH} )
-	@(cd ${WRKDIR}/cd9660; ${PATCH} --quiet < ${WRKDIR}/${CD9660PATCH} )
-	@(cd ${WRKDIR}/ntfs; ${PATCH} --quiet < ${WRKDIR}/${NTFSPATCH} )
+	@(cd ${WRKSRC}/msdos; ${PATCH} --quiet < ${WRKSRC}/${MSDOSFSPATCH} )
+	@(cd ${WRKSRC}/cd9660; ${PATCH} --quiet < ${WRKSRC}/${CD9660PATCH} )
+	@(cd ${WRKSRC}/ntfs; ${PATCH} --quiet < ${WRKSRC}/${NTFSPATCH} )
 
 do-build:
-	@(cd ${WRKDIR}/msdos; make all)
-	@(cd ${WRKDIR}/cd9660; make all)
-	@(cd ${WRKDIR}/ntfs; make all)
+	@(cd ${WRKSRC}/msdos; make all)
+	@(cd ${WRKSRC}/cd9660; make all)
+	@(cd ${WRKSRC}/ntfs; make all)
 
 do-install:
 	@${MKDIR} ${KMODDIR}
 	@${INSTALL_SCRIPT} ${FILESDIR}/gbfs.sh ${PREFIX}/etc/rc.d
-	@${INSTALL_SCRIPT} ${WRKDIR}/*/*.ko ${KMODDIR}
+	@${INSTALL_SCRIPT} ${WRKSRC}/*/*.ko ${KMODDIR}
 
 .include <bsd.port.post.mk>
