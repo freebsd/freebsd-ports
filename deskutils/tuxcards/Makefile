@@ -1,6 +1,6 @@
 # New ports collection makefile for:	tuxcards
 # Date created:				08 Jan 2002
-# Whom:			Tilman linneweh <freebsdports@arved.de>
+# Whom:			Tilman Linneweh <arved@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	http://www.arved.de/bsd/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-ohneCactus
 
-MAINTAINER=	freebsdports@arved.de
+MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_GMAKE=	yes
@@ -20,6 +20,12 @@ USE_QT_VER=	2
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 USE_REINPLACE=	yes
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 500038
+BROKEN=		"Does not build with gcc 3.1"
+.endif
 
 pre-patch:
 	@${REINPLACE_CMD} -e 's|[$$](prefix)/doc|\$$\(prefix\)/share/doc|' \
@@ -30,4 +36,4 @@ pre-patch:
 		${WRKSRC}/tuxcards/docs/en/Makefile.in
 .endif #NOPORTDOCS
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
