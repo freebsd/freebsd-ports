@@ -13,7 +13,7 @@ start)
 	;;
 stop)
 	/usr/bin/killall drwebd
-	rm -f /var/run/drwebd
+	/bin/rm -f /var/run/drwebd
 	echo -n ' drwebd'
 	;;
 *)
