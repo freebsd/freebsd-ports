@@ -8,35 +8,42 @@ PORTNAME=	graphviz
 PORTVERSION=	0.1
 PORTREVISION=	1
 CATEGORIES=	graphics python
-MASTER_SITES=	http://www.cs.brown.edu/~er/software/Agraph.py/ \
-		http://www.graphviz.org/pub/graphviz/ARCHIVE/:gv
+MASTER_SITES=	http://www.cs.brown.edu/~er/software/Agraph.py/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTFILES=	${MODFILES} ${PORTNAME}-${GV_VERSION}.tar.gz:gv
+DISTFILES=	gv.i __init__.py
 DIST_SUBDIR=	${PORTNAME}
-EXTRACT_ONLY=	${PORTNAME}-${GV_VERSION}.tar.gz
+EXTRACT_ONLY=
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python interface to GraphViz agraph
 
-BUILD_DEPENDS=	${SWIG_CMD}:${PORTSDIR}/devel/swig13
+BUILD_DEPENDS=	${SWIG_CMD}:${PORTSDIR}/devel/swig13 \
+		${LOCALBASE}/lib/graphviz/libagraph.so:${PORTSDIR}/graphics/graphviz
 
 NO_CDROM=	"Can't be included in a commercial product"
 
-MODFILES=	gv.i __init__.py
-WRKSRC=		${WRKDIR}/graphviz-${GV_VERSION}/agraph
-GV_VERSION?=	1.9
-
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
 SWIG_CMD=	${LOCALBASE}/bin/swig1.3
 PLIST_SUB=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S,^${LOCALBASE}/,,g}
+GV_PORT=	${PORTSDIR}/graphics/graphviz
+MAKE_ENV=	PYTHON_INCLUDEDIR=${PYTHON_INCLUDEDIR} \
+		GRAPHVIZ_INCLUDEDIR=${LOCALBASE}/include/graphviz \
+		SWIG_CMD=${SWIG_CMD}
 
 post-patch:
-	@${CP} ${DISTDIR}/graphviz/gv.i ${FILESDIR}/setup.py ${WRKSRC}
-	@${MKDIR} ${WRKSRC}/graphviz
-	@${CP} ${DISTDIR}/graphviz/__init__.py ${WRKSRC}/graphviz
+	@${MKDIR} ${WRKSRC}
+	@${CP} ${DISTDIR}/graphviz/gv.i ${FILESDIR}/Makefile ${WRKSRC}
 
-pre-build:
-	@cd ${WRKSRC} && ${SWIG_CMD} -python gv.i
+do-install:
+	${MKDIR} ${PYTHON_SITELIBDIR}/${PORTNAME}
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/__init__.py \
+		${WRKSRC}/_graphviz.so ${WRKSRC}/graphviz.py \
+		${PYTHON_SITELIBDIR}/${PORTNAME}
+
+post-install:
+	${PYTHON_CMD} ${PYTHON_LIBDIR}/py_compile.py \
+		${PYTHON_SITELIBDIR}/${PORTNAME}/__init__.py
+	${PYTHON_CMD} ${PYTHON_LIBDIR}/py_compile.py \
+		${PYTHON_SITELIBDIR}/${PORTNAME}/graphviz.py
 
 .include <bsd.port.mk>
