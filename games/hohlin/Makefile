@@ -17,6 +17,8 @@ DISTNAME=	${PORTNAME}-${SHORTPORTVERSION}
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Remake of the classic spectrum game Head over Heels
 
+RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libXrandr.so.2:${PORTSDIR}/x11/linux-XFree86-libs
+
 WRKSRC=		${WRKDIR}/hoh-install-${PORTVERSION}/
 
 USE_BZIP2=	YES
@@ -25,12 +27,7 @@ ONLY_FOR_ARCHS=	i386
 SHORTPORTVERSION=${PORTVERSION:C/([0-9]*)\.([0-9]*)/\1\2/}
 
 .include <bsd.port.pre.mk>
-.if exists(${LINUXBASE}/lib/libc-2.3.2.so) || defined(WITH_LINUX8)
-RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libXrandr.so.2:${PORTSDIR}/x11/linux-XFree86-libs
-WITH_LINUX8=	YES
-.else
 USE_LINUX=	YES
-.endif
 
 do-install:
 	${MKDIR} ${DATADIR}

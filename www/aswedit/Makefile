@@ -7,6 +7,7 @@
 
 PORTNAME=	asWedit
 PORTVERSION=	4.0.1
+PORTREVISION=	1
 CATEGORIES=	www editors linux
 MASTER_SITES=	http://www.advasoft.com/asWedit/ \
 		ftp://sunsite.doc.ic.ac.uk/packages/www/asWedit/ \
@@ -16,6 +17,8 @@ DISTNAME=	asWedit-4.0-i386.linux
 
 MAINTAINER=	brett@peloton.runet.edu
 COMMENT=	An easy to use HTML and text editor
+
+RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
 
 RESTRICTED=	"Commercial software"
 NO_BUILD=	yes

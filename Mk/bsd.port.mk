@@ -341,7 +341,9 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # USE_QT_VER	- Set to 3 to use the QT libraries.
 #				  Implies inclusion of bsd.kde.mk.
 ##
-# USE_LINUX		- Set to yes to say the port needs emulators/linux_base.
+# USE_LINUX		- Set to yes to say the port needs emulators/linux_base-8.
+#				  Set to value <X>, if the port needs emulators/linux_base-<X>.
+#				  If set to "7", a dependency is registered to emulators/linux_base.
 # USE_LINUX_PREFIX
 #				- controls the action of PREFIX (see above).
 ##
@@ -1134,9 +1136,6 @@ USE_X_PREFIX=	yes
 .if defined(USE_X_PREFIX)
 USE_XLIB=		yes
 .endif
-.if defined(USE_LINUX_PREFIX)
-USE_LINUX=		yes
-.endif
 .if defined(USE_X_PREFIX)
 PREFIX?=		${X11BASE}
 .elif defined(USE_LINUX_PREFIX)
@@ -1479,7 +1478,15 @@ LIB_DEPENDS+=	intl.${USE_GETTEXT}:${PORTSDIR}/devel/gettext
 .endif
 
 .if defined(USE_LINUX)
-RUN_DEPENDS+=	${LINUXBASE}/etc/redhat-release:${PORTSDIR}/emulators/linux_base
+.	if exists(${PORTSDIR}/emulators/linux_base-${USE_LINUX})
+RUN_DEPENDS+=	${LINUXBASE}/bin/sh:${PORTSDIR}/emulators/linux_base-${USE_LINUX}
+.	else
+.		if ${USE_LINUX} == "7"
+RUN_DEPENDS+= ${LINUXBASE}/etc/redhat-release:${PORTSDIR}/emulators/linux_base
+.		else
+RUN_DEPENDS+=	${LINUXBASE}/etc/redhat-release:${PORTSDIR}/emulators/linux_base-8
+.		endif
+.	endif
 .endif
 
 .if defined(USE_MOTIF)

@@ -7,6 +7,7 @@
 
 PORTNAME=	understand_ada
 PORTVERSION=	1.4.206
+PORTREVISION=	1
 CATEGORIES=	devel linux
 MASTER_SITES=	http://www.scitools.com/ftp/pub/download/${PORTNAME}/%SUBDIR%/
 MASTER_SITE_SUBDIR=	latest pastbuilds
@@ -15,6 +16,8 @@ DISTNAME=	und_ada-14b${PORTVERSION:E}-linux
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Understand can parse a Ada project helping reverse engineer it
+
+RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes

@@ -7,6 +7,7 @@
 
 PORTNAME=	acroread
 PORTVERSION=	5.10
+PORTREVISION=	1
 CATEGORIES=	print linux
 MASTER_SITES=	http://download.adobe.com/pub/adobe/acrobatreader/unix/5.x/ \
 		ftp://ftp.adobe.com/pub/adobe/acrobatreader/unix/5.x/
@@ -17,23 +18,17 @@ DIST_SUBDIR=	acroread
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	View, distribute and print PDF documents
 
+RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libX11.so.6:${PORTSDIR}/x11/linux-XFree86-libs
+
 ONLY_FOR_ARCHS=	amd64 i386
-
-.if (exists(${LINUXBASE}/lib/libc-2.3.2.so))
-RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libX11.so.6:${PORTSDIR}/x11/linux-XFree86-libs
-.else
 USE_LINUX=	yes
-.endif
-
 USE_REINPLACE=	yes
+NO_BUILD=	yes
 REINPLACE_ARGS=	-i '' -E
 NO_FILTER_SHLIBS=	yes
 
 PLIST_SUB=	"ARCHDIR=intellinux"
 WRKSRC=		${WRKDIR}/installers
-
-do-build:
-	@${ECHO_MSG} "Do a \`make install' as root."
 
 do-install:
 	@${MKDIR} ${PREFIX}/Acrobat5
@@ -46,7 +41,7 @@ do-install:
 post-install:
 	${REINPLACE_CMD} 's:Linux):FreeBSD|Linux):g' ${PREFIX}/Acrobat5/bin/acroread
 	-@${LINUXBASE}/usr/bin/strip ${PREFIX}/Acrobat5/Reader/intellinux/bin/acroread
-	@brandelf -t Linux ${PREFIX}/Acrobat5/Reader/intellinux/bin/acroread
+	@${BRANDELF} -t Linux ${PREFIX}/Acrobat5/Reader/intellinux/bin/acroread
 	${REINPLACE_CMD} 's:OSF1):FreeBSD|OSF1):g' ${PREFIX}/Acrobat5/bin/acroread
 	@cd ${PREFIX}/Acrobat5/bin && \
 	  ${INSTALL_SCRIPT} ${PREFIX}/Acrobat5/bin/acroread \

@@ -7,6 +7,7 @@
 
 PORTNAME=	visualworks
 PORTVERSION=	7.2
+PORTREVISION=	1
 CATEGORIES=	lang linux
 MASTER_SITES=	http://www.cincomsmalltalk.com/bsdports/vwnc7.2/
 DISTFILES=	AdvancedTools.tar.gz \
@@ -33,6 +34,8 @@ DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	chris@chrisburkert.de
 COMMENT=	A high performance Smalltalk environment
+
+RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
 
 USE_LINUX=	yes
 

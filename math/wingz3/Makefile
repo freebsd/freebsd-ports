@@ -7,12 +7,15 @@
 
 PORTNAME=	wingzpro
 PORTVERSION=	311
+PORTREVISION=	1
 CATEGORIES=	math linux
 MASTER_SITES=	netu
 EXTRACT_ONLY=
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	A Commercial Spreadsheet
+
+RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
 
 NO_PACKAGE=	"nothing to build. commercial software"
 

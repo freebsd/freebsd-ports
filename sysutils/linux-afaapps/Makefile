@@ -7,7 +7,7 @@
 
 PORTNAME=		afaapps
 PORTVERSION=		2.7
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		sysutils linux
 MASTER_SITES=		ftp://ftp.us.dell.com/scsi-raid/
 PKGNAMEPREFIX=		linux-
@@ -17,15 +17,15 @@ MAINTAINER=		bms@FreeBSD.org
 COMMENT=		DELL PowerEdge Raid Controller 2 (apps)
 
 BUILD_DEPENDS=		rpm:${PORTSDIR}/archivers/rpm
-RUN_DEPENDS=		${LINUXBASE}/usr/lib/libartsc.so.0:${PORTSDIR}/audio/linux-arts \
-			${LINUXBASE}/usr/lib/libncurses.so.5:${PORTSDIR}/emulators/linux_base-8
+RUN_DEPENDS=		${LINUXBASE}/usr/lib/libartsc.so.0:${PORTSDIR}/audio/linux-arts
 
 RESTRICTED=		"binary redistribution license needs clarification"
 
 NO_BUILD=		yes
 NO_WRKSUBDIR=		yes
 
-PREFIX?=		${LINUXBASE}
+USE_LINUX=		yes
+USE_LINUX_PREFIX=	yes
 NO_MTREE=		yes
 LDCONFIG_LINUX=		${LINUXBASE}/sbin/ldconfig
 

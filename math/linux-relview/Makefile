@@ -7,6 +7,7 @@
 
 PORTNAME=	relview
 PORTVERSION=	7.0.2
+PORTREVISION=	1
 CATEGORIES=	math linux
 MASTER_SITES=	ftp://ftp.informatik.uni-kiel.de/pub/kiel/relview/RELVIEW_7.0/LINUX/
 PKGNAMEPREFIX=	linux-

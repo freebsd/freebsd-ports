@@ -1,0 +1,62 @@
+etc/pango/pango.modules
+etc/pango/pangox.aliases
+usr/bin/pango-querymodules
+usr/lib/libpango-1.0.so.0
+usr/lib/libpango-1.0.so.0.200.1
+usr/lib/libpangoft2-1.0.so.0
+usr/lib/libpangoft2-1.0.so.0.200.1
+usr/lib/libpangox-1.0.so.0
+usr/lib/libpangox-1.0.so.0.200.1
+usr/lib/libpangoxft-1.0.so.0
+usr/lib/libpangoxft-1.0.so.0.200.1
+usr/lib/pango/1.2.0/modules/pango-arabic-ft2.la
+usr/lib/pango/1.2.0/modules/pango-arabic-ft2.so
+usr/lib/pango/1.2.0/modules/pango-arabic-x.la
+usr/lib/pango/1.2.0/modules/pango-arabic-x.so
+usr/lib/pango/1.2.0/modules/pango-arabic-xft.la
+usr/lib/pango/1.2.0/modules/pango-arabic-xft.so
+usr/lib/pango/1.2.0/modules/pango-basic-ft2.la
+usr/lib/pango/1.2.0/modules/pango-basic-ft2.so
+usr/lib/pango/1.2.0/modules/pango-basic-x.la
+usr/lib/pango/1.2.0/modules/pango-basic-x.so
+usr/lib/pango/1.2.0/modules/pango-basic-xft.la
+usr/lib/pango/1.2.0/modules/pango-basic-xft.so
+usr/lib/pango/1.2.0/modules/pango-bengali-x.la
+usr/lib/pango/1.2.0/modules/pango-bengali-x.so
+usr/lib/pango/1.2.0/modules/pango-devanagari-x.la
+usr/lib/pango/1.2.0/modules/pango-devanagari-x.so
+usr/lib/pango/1.2.0/modules/pango-gujarati-x.la
+usr/lib/pango/1.2.0/modules/pango-gujarati-x.so
+usr/lib/pango/1.2.0/modules/pango-gurmukhi-x.la
+usr/lib/pango/1.2.0/modules/pango-gurmukhi-x.so
+usr/lib/pango/1.2.0/modules/pango-hangul-x.la
+usr/lib/pango/1.2.0/modules/pango-hangul-x.so
+usr/lib/pango/1.2.0/modules/pango-hangul-xft.la
+usr/lib/pango/1.2.0/modules/pango-hangul-xft.so
+usr/lib/pango/1.2.0/modules/pango-hebrew-ft2.la
+usr/lib/pango/1.2.0/modules/pango-hebrew-ft2.so
+usr/lib/pango/1.2.0/modules/pango-hebrew-x.la
+usr/lib/pango/1.2.0/modules/pango-hebrew-x.so
+usr/lib/pango/1.2.0/modules/pango-hebrew-xft.la
+usr/lib/pango/1.2.0/modules/pango-hebrew-xft.so
+usr/lib/pango/1.2.0/modules/pango-indic-xft.la
+usr/lib/pango/1.2.0/modules/pango-indic-xft.so
+usr/lib/pango/1.2.0/modules/pango-myanmar-x.la
+usr/lib/pango/1.2.0/modules/pango-myanmar-x.so
+usr/lib/pango/1.2.0/modules/pango-tamil-x.la
+usr/lib/pango/1.2.0/modules/pango-tamil-x.so
+usr/lib/pango/1.2.0/modules/pango-thai-x.la
+usr/lib/pango/1.2.0/modules/pango-thai-x.so
+usr/lib/pango/1.2.0/modules/pango-thai-xft.la
+usr/lib/pango/1.2.0/modules/pango-thai-xft.so
+usr/share/doc/pango-1.2.1/AUTHORS
+usr/share/doc/pango-1.2.1/COPYING
+usr/share/doc/pango-1.2.1/ChangeLog
+usr/share/doc/pango-1.2.1/HELLO.utf8
+usr/share/doc/pango-1.2.1/README
+usr/share/doc/pango-1.2.1/TODO
+@dirrm etc/pango
+@dirrm usr/lib/pango/1.2.0/modules
+@dirrm usr/lib/pango/1.2.0
+@dirrm usr/lib/pango
+@dirrm usr/share/doc/pango-1.2.1

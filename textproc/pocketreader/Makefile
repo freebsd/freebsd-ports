@@ -7,6 +7,7 @@
 
 PORTNAME=	pocketreader
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	textproc linux
 MASTER_SITES=	http://www.pocketreader.com/download/software/
 DISTNAME=	linux-bin

@@ -7,6 +7,7 @@
 
 PORTNAME=	aim
 PORTVERSION=	1.5.286
+PORTREVISION=	1
 CATEGORIES=	net linux
 MASTER_SITES=	ftp://ftp.newaol.com/aimgen/380469/
 DISTNAME=	aim-${PORTVERSION}
@@ -15,13 +16,13 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	AOL's Instant Messenger (AIM) client
 
-RUN_DEPENDS=	/compat/linux/lib/libc.so.6:${PORTSDIR}/emulators/linux_base \
-		/compat/linux/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk
+RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk
 
 ONLY_FOR_ARCHS=	i386
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-USE_XLIB=	yes
+USE_LINUX=	yes
+PREFIX?=	${X11BASE}
 INSTALLS_SHLIB=	yes
 # must not strip
 STRIP=

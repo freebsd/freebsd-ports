@@ -7,6 +7,7 @@
 
 PORTNAME=	mozillafirebird
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES?=	www linux
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR?=	firebird/releases/${PORTVERSION}
@@ -28,8 +29,7 @@ MD5_FILE=	${.CURDIR}/distinfo
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PLIST=		${WRKDIR}/pkg-plist
 USE_LINUX=	yes
-USE_XLIB=	yes
-USE_X_PREFIX=	yes
+PREFIX?=	${X11BASE}
 WRKSRC=		${WRKDIR}/MozillaFirebird
 
 do-patch:
@@ -79,10 +79,10 @@ NEW_LIBSTDCXX=	${LINUXBASE}/usr/lib/libstdc++-libc6.2-2.so.3
 OLD_LIBSTDCXX=	libstdc++-libc6.1-1.so.2
 
 post-install:
-	if [ ! -f ${NEW_LIBSTDCXX} ]; then \
+	if [ ! -e ${NEW_LIBSTDCXX} ]; then \
 		${LN} -s ${OLD_LIBSTDCXX} ${NEW_LIBSTDCXX}; \
 	fi
-	${ECHO_CMD} "@exec if [ ! -f ${NEW_LIBSTDCXX} ]; then ${LN} -s ${OLD_LIBSTDCXX} ${NEW_LIBSTDCXX}; fi" >> ${TMPPLIST}
+	${ECHO_CMD} "@exec if [ ! -e ${NEW_LIBSTDCXX} ]; then ${LN} -s ${OLD_LIBSTDCXX} ${NEW_LIBSTDCXX}; fi" >> ${TMPPLIST}
 	${ECHO_CMD} "@unexec if [ -L ${NEW_LIBSTDCXX} ]; then ${RM} -f ${NEW_LIBSTDCXX}; fi" >> ${TMPPLIST}
 	@${ECHO_CMD} \*\* After adding plugins to \(Linux\) Beonex,
 	@${ECHO_CMD} \*\* Mozilla or Netscape, run\

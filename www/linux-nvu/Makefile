@@ -7,6 +7,7 @@
 
 PORTNAME=	nvu
 PORTVERSION=	0.20
+PORTREVISION=	1
 CATEGORIES=	www linux
 MASTER_SITES=	http://cvs.nvu.com/download/
 PKGNAMEPREFIX=	linux-
@@ -16,7 +17,6 @@ MAINTAINER=	ilya@space.rootshell.ru
 COMMENT=	A complete Web Authoring System
 
 RUN_DEPENDS=	\
-	${LINUXBASE}/usr/X11R6/lib/libX11.so.6:${PORTSDIR}/x11/linux-XFree86-libs \
 	${LINUXBASE}/usr/lib/libgobject-2.0.so.0:${PORTSDIR}/devel/linux-glib2 \
 	${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0:${PORTSDIR}/x11-toolkits/linux-gtk2 \
 	${LINUXBASE}/usr/lib/libatk-1.0.so.0:${PORTSDIR}/accessibility/linux-atk \

@@ -7,6 +7,7 @@
 
 PORTNAME=	vmware-toolbox
 PORTVERSION=	${VMWARE_VER}.${BUILD_VER}
+PORTREVISION=	1
 CATEGORIES=	emulators linux
 MASTER_SITES=	# bundled with VMware itself
 PKGNAMEPREFIX=	linux-
@@ -14,6 +15,8 @@ DISTNAME=	vmware-linux-tools
 
 MAINTAINER=	matusita@FreeBSD.org
 COMMENT=VMware toolbox for guest OS (for VMware 2.x, Linux version)
+
+RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
 
 ONLY_FOR_ARCHS=	i386
 PLIST_FILES=	bin/linux-vmware-toolbox

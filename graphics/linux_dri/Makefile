@@ -7,7 +7,7 @@
 
 PORTNAME=	linux_dri
 PORTVERSION=	4.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics linux
 MASTER_SITES=	ftp://ftp.xfree86.org/pub/XFree86/${PORTVERSION}/binaries/Linux-ix86-glibc21/:x \
 		http://people.freebsd.org/~anholt/dri/files/:anholt
@@ -17,12 +17,15 @@ DISTFILES=	Xbin.tgz:x \
 		linux-dri-tools.tar.gz:anholt
 DIST_SUBDIR=	linux_dri-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	Binary Linux DRI libraries for 3D hardware acceleration of linux apps
+
+RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libX11.so.6:${PORTSDIR}/x11/linux-XFree86-libs
 
 WRKSRC=		${WRKDIR}/lib
 NO_BUILD=	yes
 USE_LINUX_PREFIX=	yes
+USE_LINUX=	yes
 
 ONLY_FOR_ARCHS=	i386
 

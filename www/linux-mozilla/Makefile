@@ -8,6 +8,7 @@
 
 PORTNAME=	mozilla
 PORTVERSION=	1.7.3
+PORTREVISION=	1
 CATEGORIES=	www linux
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	mozilla/releases/mozilla${PORTVERSION}/linux-xpi
@@ -23,7 +24,7 @@ RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux
 NO_BUILD=	yes
 NO_FILTER_SHLIBS=	yes
 ONLY_FOR_ARCHS=	i386
-USE_XLIB=	yes
+PREFIX?=	${X11BASE}
 USE_ZIP=	yes
 USE_LINUX=	yes
 WRKSRC=	${WRKDIR}/xpi

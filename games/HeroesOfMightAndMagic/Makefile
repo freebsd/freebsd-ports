@@ -7,6 +7,7 @@
 
 PORTNAME=	HeroesOfMightAndMagic
 PORTVERSION=	3
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=
 DISTFILES=
@@ -14,12 +15,12 @@ DISTFILES=
 MAINTAINER=	holger@e-gitt.net
 COMMENT=	BSD Installation of the Linux game "Heroes of Might and Magic III"
 
-RUN_DEPENDS=	${LINUXBASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base \
-		${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk
+RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk
 
 PLIST=		${WRKDIR}/PLIST
 IS_INTERACTIVE=	yes
 ONLY_FOR_ARCHS=	i386
+USE_LINUX=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 NO_CDROM=	Software is commercial

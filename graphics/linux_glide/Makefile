@@ -8,6 +8,7 @@
 
 PORTNAME=	glide
 PORTVERSION=	2.4
+PORTREVISION=	1
 CATEGORIES=	graphics linux
 MASTER_SITES=	http://www2.cons.org/freebsd-distfiles/ \
 		${MASTER_SITE_LOCAL}
@@ -21,6 +22,7 @@ COMMENT=	Linux library implementing the GLIDE interface to 3dfx video cards
 ONLY_FOR_ARCHS=	i386
 
 USE_LINUX_PREFIX=yes
+USE_LINUX=	yes
 NO_MTREE=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/Glide2.4

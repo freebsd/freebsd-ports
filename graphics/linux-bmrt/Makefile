@@ -7,6 +7,7 @@
 
 PORTNAME=	linux-bmrt
 PORTVERSION=	2.6beta
+PORTREVISION=	1
 CATEGORIES=	graphics linux
 MASTER_SITES=	#fetch manually
 DISTNAME=	BMRT${PORTVERSION}.linux-glibc2
@@ -14,7 +15,7 @@ DISTNAME=	BMRT${PORTVERSION}.linux-glibc2
 MAINTAINER=	rjoseph@mammalia.org
 COMMENT=	A collection of rendering programs that use the RenderMan interface
 
-RUN_DEPENDS=	/compat/linux/usr/X11R6/lib/libGL.so:${PORTSDIR}/graphics/linux_mesa3
+RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libGL.so:${PORTSDIR}/graphics/linux_mesa3
 
 USE_LINUX=	yes
 WRKSRC=		${WRKDIR}/BMRT2.6

@@ -7,7 +7,7 @@
 
 PORTNAME?=	bjfiltercom
 PORTVERSION?=	1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print linux
 MASTER_SITES=	ftp://download.canon.jp/pub/driver/bj/linux/
 DISTFILES=	${RPMFILE}
@@ -24,14 +24,14 @@ EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 RUN_DEPENDS=	stsmon:${PORTSDIR}/print/bjfiltercom \
 		pstops:${PORTSDIR}/print/psutils-${PAPERSIZE}
 .else
-RUN_DEPENDS=	${LINUXBASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base \
-		${LINUXBASE}/usr/lib/libxml.so.1:${PORTSDIR}/textproc/linux-libxml \
+RUN_DEPENDS=	${LINUXBASE}/usr/lib/libxml.so.1:${PORTSDIR}/textproc/linux-libxml \
 		${LINUXBASE}/usr/lib/libjpeg.so.62:${PORTSDIR}/graphics/linux-jpeg \
 		${LINUXBASE}/usr/lib/libtiff.so.3:${PORTSDIR}/graphics/linux-tiff \
 		${LINUXBASE}/usr/lib/libglade.so.0:${PORTSDIR}/devel/linux-libglade \
 		${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk
 
 BIN_FILES=	bjcmd  bjfilter  bjprn  lgmon  printui  stsmon
+USE_LINUX=	yes
 .endif
 
 EXTRACT_CMD=	rpm2cpio.pl

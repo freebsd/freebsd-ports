@@ -7,7 +7,8 @@
 
 PORTNAME=	dislin
 PORTVERSION=	8.2
-CATEGORIES=	math
+PORTREVISION=	1
+CATEGORIES=	math linux
 MASTER_SITES=	ftp://ftp.gwdg.de/pub/grafik/dislin/linux/${MACHINE_ARCH}/
 PKGNAMEPREFIX=	linux-
 EXTRACT_SUFX=	.linux.tar.gz
@@ -15,6 +16,8 @@ DIST_SUBDIR=	${MACHINE_ARCH}
 
 MAINTAINER=	des@FreeBSD.org
 COMMENT=	A scientific data plotting package
+
+RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
 
 USE_LINUX=	yes
 ONLY_FOR_ARCHS=	i386 alpha

@@ -7,10 +7,10 @@
 
 PORTNAME=		ttfonts-ja
 PORTVERSION=		1.2
-PORTREVISION=	1
+PORTREVISION=		2
 CATEGORIES=		japanese x11-fonts linux
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	Japanese Truetype fonts for use with Linux emulation
 
 BASEVERSION=	9

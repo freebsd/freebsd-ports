@@ -7,6 +7,7 @@
 
 PORTNAME=	skype
 PORTVERSION=	0.92.0.12
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://download.skype.com/linux/
 DISTNAME=	skype_staticQT-${PORTVERSION}
@@ -14,14 +15,13 @@ DISTNAME=	skype_staticQT-${PORTVERSION}
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	P2P VoIP software
 
-RUN_DEPENDS=	${LINUXBASE}/lib/libc-2.3.2.so:${PORTSDIR}/emulators/linux_base-8 \
-		${LINUXBASE}/usr/lib/libfontconfig.so.1:${PORTSDIR}/x11-fonts/linux-fontconfig \
+RUN_DEPENDS=	${LINUXBASE}/usr/lib/libfontconfig.so.1:${PORTSDIR}/x11-fonts/linux-fontconfig \
 		${LINUXBASE}/usr/lib/libexpat.so.0:${PORTSDIR}/textproc/linux-expat \
 		${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
-#USE_LINUX=	yes
+PREFIX?=	${X11BASE}
+USE_LINUX=	yes
 WANT_GNOME=	yes
 ONLY_FOR_ARCHS=	i386
 

@@ -7,11 +7,14 @@
 
 PORTNAME=	ZendStudio
 PORTVERSION=	3.5.2
+PORTREVISION=	1
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
 MASTER_SITES=	http://www.zend.com/store/products/zend-studio.php
 MAINTAINER=	tux@pinguru.net
 COMMENT=	A PHP IDE
+
+RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
 
 USE_LINUX=	yes
 NO_BUILD=	yes

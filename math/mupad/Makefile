@@ -7,7 +7,7 @@
 
 PORTNAME=	mupad
 PORTVERSION=	2.5.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math linux
 MASTER_SITES=	ftp://ftp.mupad.de/MuPAD/distrib/unix/
 DISTNAME=	mupad_linux_scilab_253

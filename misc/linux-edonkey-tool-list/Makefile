@@ -7,6 +7,7 @@
 
 PORTNAME=	edonkey
 PORTVERSION=	0.0.1
+PORTREVISION=	1
 CATEGORIES=	misc linux
 MASTER_SITES=	http://users.aber.ac.uk/tpm01/ed2k_tools/
 PKGNAMEPREFIX=	linux-

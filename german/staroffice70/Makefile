@@ -7,7 +7,7 @@
 
 PORTNAME=	staroffice
 PORTVERSION=	7.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	german editors linux
 MASTER_SITES=	ftp://patches.sun.com/patchroot/all_unsigned/:patch \
 		ftp://ftp.sun.co.uk/pub/patches/:patch \
@@ -29,6 +29,8 @@ EXTRACT_ONLY=	116518-06.tar
 
 MAINTAINER=	mbr@FreeBSD.org
 COMMENT=	Wordprocessor/dbase/spreadheet/drawing/chart
+
+RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
 
 ONLY_FOR_ARCHS=	i386
 NO_CDROM=	'Must be bought and downloaded direct from Sun via www interface'

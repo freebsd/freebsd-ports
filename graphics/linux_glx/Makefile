@@ -7,21 +7,22 @@
 
 PORTNAME=	glx
 PORTVERSION=	991127
+PORTREVISION=	1
 CATEGORIES=	graphics linux
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	3d/glx/linux
 PKGNAMEPREFIX=	linux_
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	Libraries to make use of glx-aware Linux apps
 
-BUILD_DEPENDS=	/compat/linux/sbin/ldconfig:${PORTSDIR}/emulators/linux_base
+BUILD_DEPENDS=	${LINUXBASE}/sbin/ldconfig:${PORTSDIR}/emulators/linux_base-8
 
 USE_BZIP2=	yes
 NO_BUILD=	yes
 
-PREFIX=		/compat/linux
+USE_LINUX_PREFIX=yes
 NO_MTREE=	yes
 
 WRKSRC=		${WRKDIR}/linux_glx

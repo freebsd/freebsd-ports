@@ -7,6 +7,7 @@
 
 PORTNAME=	ssamtse
 PORTVERSION=	b1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	# must fetch manually
 DISTFILES=	${PORTNAME}-${PORTVERSION:S|b|beta|}.sh.bin
@@ -15,10 +16,12 @@ EXTRACT_ONLY=
 MAINTAINER=	asa@gascom.ru
 COMMENT=	Serious Sam - The Second Encounter
 
+RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
+
 NO_BUILD=	yes
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
-USE_XLIB=	yes
+USE_X_PREFIX=	yes
 USE_GL=		yes
 USE_LINUX=	yes
 INSTALLS_SHLIB=	yes

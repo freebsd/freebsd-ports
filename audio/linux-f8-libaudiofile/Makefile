@@ -7,10 +7,10 @@
 
 PORTNAME=	libaudiofile
 PORTVERSION=	0.1.11
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio linux
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	RPM of audiofile
 
 RPM_SET=	audiofile-${PORTVERSION}-1.${MACHINE_ARCH}.rpm

@@ -7,6 +7,7 @@
 
 PORTNAME=	enemyterritory
 PORTVERSION=	2.56.2
+PORTREVISION=	1
 CATEGORIES=	games linux
 MASTER_SITES=	http://ftp.wireplay.co.uk/enemyterritory/server/linux/ \
 		ftp://3dgamers.in-span.net/pub/3dgamers4/games/wolfensteinet/ \
@@ -22,6 +23,7 @@ COMMENT=	Wolfenstein: Enemy Territory (Linux version)
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX_PREFIX=	yes
+USE_LINUX=	yes
 NO_PACKAGE=	Distfile is 258MB, set FORCE_PACKAGE if you really want to build this package
 RESTRICTED=	Redistribution is limited, see license
 NO_BUILD=	yes

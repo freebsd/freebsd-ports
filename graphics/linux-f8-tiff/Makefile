@@ -7,10 +7,10 @@
 
 PORTNAME=	tiff
 PORTVERSION=	3.5.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics linux
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	RPM of tiff lib
 
 RPM_SET=	libtiff-${PORTVERSION}-10.${MACHINE_ARCH}.rpm

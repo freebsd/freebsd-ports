@@ -7,7 +7,7 @@
 
 PORTNAME=	homard
 PORTVERSION=	6.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	french cad linux python
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1.${ARCH}

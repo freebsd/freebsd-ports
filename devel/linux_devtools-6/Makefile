@@ -7,7 +7,7 @@
 
 PORTNAME=		linux_devtools
 PORTVERSION=		6.1
-PORTREVISION=	1
+PORTREVISION=		2
 CATEGORIES=		devel emulators linux
 MASTER_SITES=		${MASTER_SITE_REDHAT_LINUX}
 MASTER_SITE_SUBDIR=	${PORTVERSION}/en/os/${MACHINE_ARCH}/RedHat/RPMS
@@ -25,12 +25,10 @@ PATCH_SITES=		${MASTER_SITE_REDHAT_LINUX}
 PATCH_SITE_SUBDIR=	updates/${PORTVERSION}/en/os/${MACHINE_ARCH}
 PATCHFILES=
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		freebsd-emulation@FreeBSD.org
 COMMENT=	Packages needed for doing development in Linux mode
 
 BUILD_DEPENDS=		rpm:${PORTSDIR}/archivers/rpm
-RUN_DEPENDS=		\
-	${PREFIX}/etc/redhat-release:${PORTSDIR}/emulators/linux_base-6
 
 NO_LATEST_LINK=		yes
 ONLY_FOR_ARCHS=		alpha i386
@@ -40,6 +38,7 @@ EXTRACT_ONLY=
 NO_BUILD=		yes
 NO_FILTER_SHLIBS=	yes
 NO_MTREE=		yes
+USE_LINUX=		6
 PLIST=			${PKGDIR}/pkg-plist.${MACHINE_ARCH}
 
 .include <bsd.port.pre.mk>

@@ -7,10 +7,10 @@
 
 PORTNAME=	libglade
 PORTVERSION=	0.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel linux
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	RPM of libglade
 
 RPM_SET=	libglade-${PORTVERSION}-3.${MACHINE_ARCH}.rpm

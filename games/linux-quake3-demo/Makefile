@@ -10,7 +10,7 @@
 
 PORTNAME=	linux-q3ademo
 PORTVERSION=	1.11.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games graphics linux
 # fetch manually
 MASTER_SITES=
@@ -21,10 +21,9 @@ EXTRACT_SUFX=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Linux 3d shooter from id Software / Loki Software (demo version)
 
-RUN_DEPENDS=	${LINUXBASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
-
-USE_X_PREFIX=	yes
+PREFIX?=	${X11BASE}
 USE_GL=		yes
+USE_LINUX=	yes
 
 .include <bsd.port.pre.mk>
 

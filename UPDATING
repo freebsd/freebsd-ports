@@ -13,6 +13,17 @@ upgrades.
   Location of awstats changed from /usr/local/www to /usr/local/www/awstats.
   Please update configuration according instructions in pkg-message.
 
+20041231:
+  AFFECTS: users of the linux compatibility environment
+  AUTHOR: netchild@FreeBSD.org
+
+  The default linux_base was changed from v7 to v8. You need to update from
+  v7 to v8 and rebuild every linux port. To update run:
+	portupgrade -rf -o emulators/linux_base-8 emulators/linux_base
+
+  In case you already use linux_base-8 you have to run:
+	portupgrade -rf emulators/linux_base-8
+
 20041229:
   AFFECTS: users of x11/kdebase3, x11/xorg-server
   AUTHOR: lofi@freebsd.org

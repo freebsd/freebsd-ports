@@ -7,7 +7,7 @@
 
 PORTNAME=	lesstif
 PORTVERSION=	0.92.26
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www x11-toolkits linux
 MASTER_SITES=	ftp://ftp.lesstif.org/pub/hungry/lesstif/srcdist/ \
 		ftp://ftp.lesstif.org/pub/hungry/lesstif/srcdist/obsolete/ \
@@ -26,6 +26,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clone of the Motif library mostly for linux-netscape4
 
 BUILD_DEPENDS=	${LINUXBASE}/usr/bin/cc:${PORTSDIR}/devel/linux_devtools-7
+RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libX11.so.6:${PORTSDIR}/x11/linux-XFree86-libs
 
 USE_BZIP2=	yes
 USE_LINUX_PREFIX=	yes

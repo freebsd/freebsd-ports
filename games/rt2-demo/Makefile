@@ -7,6 +7,7 @@
 
 PORTNAME=	rt2_demo
 PORTVERSION=	1.54b
+PORTREVISION=	1
 CATEGORIES=	games linux
 MASTER_SITES=	ftp://ftp.linuxgames.com/loki/demos/rt2/
 DISTNAME=	rt2-demo
@@ -18,6 +19,7 @@ COMMENT=	The free demo of Railroad Tycoon II
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
+USE_LINUX=	yes
 
 do-install:
 		@${SH} ${FILESDIR}/do-install ${PREFIX} ${DISTDIR}

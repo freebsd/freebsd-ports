@@ -7,6 +7,7 @@
 
 PORTNAME=	divxplayer
 PORTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	multimedia linux
 MASTER_SITES=	http://download.divx.com/player/
 PKGNAMEPREFIX=	linux-
@@ -14,6 +15,8 @@ DISTNAME=	divx-player-installer
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	DivX(TM) Video Player for Linux from DivX.com
+
+RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
 
 ONLY_FOR_ARCHS=	i386
 

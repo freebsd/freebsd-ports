@@ -7,6 +7,7 @@
 
 PORTNAME=	staroffice
 PORTVERSION=	5.1a
+PORTREVISION=	1
 CATEGORIES=	editors linux
 MASTER_SITES=	http://afug.hypermart.net/files/ \
 		ftp://ftp.stat.duke.edu/pub/Users/sto/StarOffice51a/
@@ -18,6 +19,7 @@ MAINTAINER=	mb@imp.ch
 COMMENT=	Integrated wordprocessor/dbase/spreadheet/drawing/chart/browser
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
+RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
 
 NO_LATEST_LINK=	yes
 ONLY_FOR_ARCHS=	i386

@@ -7,7 +7,7 @@
 
 PORTNAME=		linux_devtools
 PORTVERSION=		8.0
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		devel emulators linux
 MASTER_SITES=		${MASTER_SITE_REDHAT_LINUX}
 MASTER_SITE_SUBDIR=	${PORTVERSION}/${LANG}/os/${MACHINE_ARCH}/RedHat/RPMS
@@ -30,14 +30,12 @@ PATCH_SITES=		${MASTER_SITE_REDHAT_LINUX}
 PATCH_SITE_SUBDIR=	updates/${PORTVERSION}/${LANG}/os/${MACHINE_ARCH}
 PATCHFILES=		${UPDATES}
 
-MAINTAINER=		trevor@FreeBSD.org
+MAINTAINER=		freebsd-emulation@FreeBSD.org
 COMMENT=		Packages needed for doing development in Linux mode
 
 BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
-RUN_DEPENDS=${LINUXBASE}/lib/libc-2.3.2.so:${PORTSDIR}/emulators/linux_base-8
 
-RESTRICTED=		"binaries under GNU GPL without accompanying source"
-
+USE_LINUX=		yes
 NO_LATEST_LINK=		yes
 ONLY_FOR_ARCHS=		i386
 CONFLICTS=		linux_devtools-*

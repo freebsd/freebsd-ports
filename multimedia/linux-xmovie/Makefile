@@ -7,7 +7,7 @@
 
 PORTNAME=	xmovie
 PORTVERSION=	1.9.8.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia linux
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	heroines
@@ -19,6 +19,7 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A movie player for AVI, MPEG-2/4 and MOV movies
 
 EXTRACT_DEPENDS=rpm2cpio:${PORTSDIR}/archivers/rpm
+RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes

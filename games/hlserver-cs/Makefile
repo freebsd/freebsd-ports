@@ -7,6 +7,7 @@
 
 PORTNAME?=	cs
 PORTVERSION?=	1.5
+PORTREVISION?=	1
 CATEGORIES?=	games linux
 MASTER_SITES?=	http://files.redphive.org/ \
 		http://www.jetstreamgames.co.nz/files/pub/halflife/cstrike/ \
@@ -25,6 +26,7 @@ USE_SUBMAKE=	yes
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX_PREFIX=	yes
+USE_LINUX=	yes
 USE_PERL5=	yes
 NO_CDROM=	"Size; the data set is much too big"
 NO_BUILD=	yes
