@@ -6,6 +6,7 @@
     SUBDIR += bugs
     SUBDIR += cfs
     SUBDIR += checkpassword
+    SUBDIR += chrootuid
     SUBDIR += cops
     SUBDIR += crack
     SUBDIR += donkey
