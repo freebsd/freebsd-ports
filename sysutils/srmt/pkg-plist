@@ -1,0 +1,4 @@
+sbin/srmt
+@unexec if cmp -s %D/etc/srmt.conf %D/etc/srmt.conf.dist; then rm -f %D/etc/srmt.conf; fi
+etc/srmt.conf.dist
+@exec [ -f %B/srmt.conf ] || cp %B/%f %B/srmt.conf

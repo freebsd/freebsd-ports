@@ -1,0 +1,52 @@
+
+$FreeBSD$
+
+--- rmt/rmt.1.orig	Sun Nov 10 17:58:57 2002
++++ rmt/rmt.1	Sun Jan 19 15:13:21 2003
+@@ -17,10 +17,7 @@
+ .SH NAME
+ rmt \- remote magnetic tape protocol server
+ .SH SYNOPSIS
+-.B /opt/schily/sbin/rmt
+-.br
+-.B /etc/rmt
+-
++.B !!PREFIX!!/sbin/srmt
+ .SH DESCRIPTION
+ .IX  "rmt command"  ""  "\fLrmt\fP \(em remote magnetic tape protocol server"
+ .IX  "remote magnetic tape protocol server"  ""  "remote magnetic tape protocol server \(em \fLrmt\fP"
+@@ -519,8 +516,8 @@
+ to exit.
+ .SH FILES
+ .TP
+-/etc/default/rmt
+-Default values can be set for the following options in /etc/default/rmt.
++/usr/local/etc/srmt.conf
++Default values can be set for the following options in /usr/local/etc/srmt.conf.
+ For example:
+ .sp
+ .BR DEBUG= /tmp/rmt.debug
+@@ -568,7 +565,7 @@
+ is not a socket from a remote host, 
+ .B rmt
+ will compare the host entry from 
+-.B /etc/default/rmt
++.B /usr/local/etc/srmt.conf
+ with the following strings:
+ .RS
+ .TP 10
+@@ -635,12 +632,12 @@
+ adds some security features to the server that make it behave
+ slightly different from older implementations.
+ Read the above documentation about the file 
+-/etc/default/rmt
++/usr/local/etc/srmt.conf
+ to make sure your local installation is configured for your needs.
+ .LP
+ To grant the same permissions as with old
+ .B rmt
+-servers, create a file /etc/default/rmt and add the following lines
++servers, create a file /usr/local/etc/srmt.conf and add the following lines
+ to this file:
+ .LP
+ .BR USER= *
