@@ -1,0 +1,15 @@
+--- Makefile	Tue Dec 30 10:30:25 1997
++++ /home/andy/tmp/wrk/Makefile	Mon Mar 23 23:20:18 1998
+@@ -1,10 +1,10 @@
+ OBJS = main.o mymath.o mastermind.o guiglobal.o apptogui.o guitoapp.o mainwindowdesign.o
+ 
+ CC = gcc
+-CFLAGS = -O2 -Wall -Wpointer-arith -Wstrict-prototypes -pedantic -ansi              
++CFLAGS+= -Wall -Wpointer-arith -Wstrict-prototypes -pedantic -ansi -I${X11BASE}/include
+ CLIBS = -lm
+ #GRAPHLIBS = -lforms -L/usr/X11R6/lib/ -lX11 -static
+-GRAPHLIBS = -lforms -L/usr/X11R6/lib/ -lX11
++GRAPHLIBS = -lxforms -L${X11BASE}/lib -lX11
+ MF = Makefile
+ 
+ ALLLIBS = $(GRAPHLIBS) $(CLIBS)
