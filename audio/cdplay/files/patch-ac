@@ -1,0 +1,50 @@
+diff -ur ../cdplay-0.92.orig/cdplay.1 ./cdplay.1
+--- ../cdplay-0.92.orig/cdplay.1	Fri Nov  7 20:13:21 1997
++++ ./cdplay.1	Sat Jun 27 00:29:34 1998
+@@ -35,15 +35,15 @@
+ ]
+ .SH DESCRIPTION
+ .B cdplay
+-plays audio cd's with a confortable console user interface. 
++plays audio cd's with a confortable console user interface. 
+ Supports only SCSI CD-ROM drives.
+ .SH OPTIONS
+ .TP
+ .BR \-d " device"
+ Uses 
+ .B device 
+-instead of /dev/rcd0a witch it uses by default. (unless defined otherwise
+-while compiling)
++instead of /dev/rcd0a which it uses by default (unless defined otherwise
++while compiling).
+ .TP
+ .BR -h
+ Display a brief help message.
+@@ -59,6 +59,9 @@
+ Space
+ Pause. If cd is already on pause continues.
+ .TP
++\'P\'
++Pause (or unpause) abruptly.
++.TP
+ \'e\'
+ Eject. Spits the disc out of your drive.
+ .TP
+@@ -80,13 +83,13 @@
+ \'q\'
+ Quit. Exit the program.
+ .SH NOTES
+-If someone gets this to work with IDE drive please let me know. Currently 
+-tested ONLY with FreeBSD and NetBSD. Writen for FreeBSD and some features 
++Currently 
++tested ONLY with FreeBSD and NetBSD. Written for FreeBSD and some features 
+ may not work with NetBSD, OpenBSD or BSDi. Don't think it'll work with linux 
+ or some SYSV Unix's.
+ .SH BUGS
+-Yes. I know it does'nt work with your IDE drive. And I also know that it
+-does'nt work with your old SCSI drive.
++Yes, I know that it
++doesn't work with your old SCSI drive.
+ .SH AUTHOR
+ .br
+ Copyright (C) 1997

@@ -1,0 +1,18 @@
+diff -ur ../cdplay-0.92.orig/Makefile ./Makefile
+--- ../cdplay-0.92.orig/Makefile	Fri Nov  7 19:32:07 1997
++++ ./Makefile	Sat Jun 27 00:36:45 1998
+@@ -26,11 +26,11 @@
+ BIN=cdplay
+ CDDEVICE=\"/dev/rcd0c\"
+ OPTIMISE=-O2
+-CFLAGS=-c -ansi -pedantic -Wall
++CFLAGS+=-c -ansi -pedantic -Wall
+ LFLAGS=-ltermcap
+ OFILES=cd.o term.o main.o sound.o
+-MANPATH=/usr/local/man/man1/
+-BINPATH=/usr/local/bin/
++MANPATH=${PREFIX}/man/man1/
++BINPATH=${PREFIX}/bin/
+ 
+ all: main term cd sound link
+ 

@@ -1,0 +1,16 @@
+diff -ur ../cdplay-0.92.orig/main.c ./main.c
+--- ../cdplay-0.92.orig/main.c	Mon Nov 17 04:26:26 1997
++++ ./main.c	Sat Jun 27 00:29:34 1998
+@@ -77,10 +77,11 @@
+       else if(cmd[0]=='r'){message="rew";rew();}
+       else if(cmd[0]=='s'){message="stop";stop();}
+       else if(cmd[0]=='e'){message="eject";eject();}
+-      else if(cmd[0]==' ') cdpause();
++      else if(cmd[0]==' ') cdsoftpause();
+       else if(cmd[0]=='+'){message="more vol";more_vol();}
+       else if(cmd[0]=='-'){message="less vol";less_vol();}
+       else if(cmd[0]=='q'){message="bye!";do_exit(0);}
++      else if(cmd[0]=='P') cdpause();
+     }
+     update_cdinfo();
+     move_up(5);

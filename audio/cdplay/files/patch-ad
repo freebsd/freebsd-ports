@@ -1,0 +1,11 @@
+diff -ur ../cdplay-0.92.orig/cdplay.h ./cdplay.h
+--- ../cdplay-0.92.orig/cdplay.h	Mon Nov 17 02:21:55 1997
++++ ./cdplay.h	Sat Jun 27 00:29:34 1998
+@@ -71,6 +71,7 @@
+ void prev(void);
+ void stop(void);
+ void cdpause(void);
++void cdsoftpause(void);
+ void ff(void);
+ void rew(void);
+ void eject(void);
