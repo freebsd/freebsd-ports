@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	chemtool
-PORTVERSION=	1.6.3
+PORTVERSION=	1.6.4
 CATEGORIES=	science
 MASTER_SITES=	http://ruby.chemie.uni-freiburg.de/~martin/chemtool/
 
@@ -17,6 +17,7 @@ RUN_DEPENDS=	transfig:${PORTSDIR}/print/transfig
 
 USE_GNOME=	gtk20
 USE_GMAKE=	yes
+USE_AUTOCONF_VER=	259
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libEMF
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
