@@ -661,7 +661,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>perl</name>
-	<range><ge>0</ge></range>
+	<range><ge>0</ge><lt>5.6.2</lt></range>
+	<range><ge>5.8.0</ge><lt>5.8.6</lt></range>
       </package>
     </affects>
     <description>
