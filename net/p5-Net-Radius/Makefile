@@ -22,6 +22,6 @@ PERL_CONFIGURE=	yes
 MAN3=		Net::Radius::Dictionary.3 Net::Radius::Packet.3
 
 post-extract:
-	${FIND} ${WRKDIR} -type f | ${XARGS} perl -pi -e "s:\r::g"
+	${FIND} ${WRKDIR} -type f | ${XARGS} ${PERL5} -pi -e "s:\r::g"
 
 .include <bsd.port.mk>
