@@ -1,5 +1,5 @@
---- lib/util_sock.c.orig	Wed Sep 22 10:52:50 1999
-+++ lib/util_sock.c	Wed Sep 22 11:30:18 1999
+--- lib/util_sock.c.orig	Sat Oct 13 22:09:26 2001
++++ lib/util_sock.c	Tue Oct 16 17:19:38 2001
 @@ -28,6 +28,9 @@
  extern int  sslFd;
  #endif  /* WITH_SSL */
@@ -9,4 +9,4 @@
 +
  extern int DEBUGLEVEL;
  
- BOOL passive = False;
+ /* the last IP received from */

@@ -17,3 +17,5 @@ use chinese/samba port).  See smb.conf.sample for details.  If you want to
 use NT4+SP3 or Win95+updates clients, set "encrypt passwords" parameter to
 yes and use smbpasswd [username] to use /usr/local/private/smbpasswd for
 authentication.
+
+FreeBSD SAMBA ports maintainer: Tatsumi Hosokawa <hosokawa@jp.FreeBSD.org>
