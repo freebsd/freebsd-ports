@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.72 1997/06/24 05:38:57 max Exp $
+# $Id: Makefile,v 1.73 1997/07/10 13:14:49 max Exp $
 #
 
     SUBDIR += Canna
@@ -80,6 +80,7 @@
     SUBDIR += vflib
     SUBDIR += vfxdvi
     SUBDIR += w3
+    SUBDIR += weblint97
     SUBDIR += xshodo
     SUBDIR += xdvi
 
