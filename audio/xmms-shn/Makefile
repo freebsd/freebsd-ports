@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	xmms-shn
-PORTVERSION=	2.2.6
+PORTVERSION=	2.2.7
 CATEGORIES=	audio
 MASTER_SITES=	http://shnutils.freeshell.org/xmms-shn/source/
 
-MAINTAINER=	fenner@FreeBSD.Org
+MAINTAINER=	naddy@FreeBSD.Org
 
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/audio/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/audio/xmms
@@ -19,7 +19,6 @@ USE_X_PREFIX=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_LIBTOOL=	yes
-USE_GMAKE=	yes
 
 post-install:
 .if !defined(NOPORTDOCS)
