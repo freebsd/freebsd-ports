@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.domtools.com/pub/
 DISTNAME=	dlint${PORTVERSION}
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 NO_BUILD=	yes
 MAN8=		dlint.8
