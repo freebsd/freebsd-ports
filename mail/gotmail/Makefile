@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	gotmail
-PORTVERSION=	0.7.4
+PORTVERSION=	0.7.7
 CATEGORIES=	mail perl5
-MASTER_SITES=	http://ssl.usu.edu/paul/gotmail/
+MASTER_SITES=	http://savannah.nongnu.org/download/gotmail/stable.pkg/${PORTVERSION}/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	erwin@lansing.dk
 
 RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/URI.pm:${PORTSDIR}/net/p5-URI \
