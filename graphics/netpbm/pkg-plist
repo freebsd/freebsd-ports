@@ -1,5 +1,9 @@
 @owner bin
 @mode 755
+bin/pbmmerge
+bin/pgmmerge
+bin/ppmmerge
+bin/pnmmerge
 bin/anytopnm
 bin/asciitopgm
 bin/atktopbm
