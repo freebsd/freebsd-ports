@@ -51,6 +51,7 @@ lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/X/Signed.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/XDB.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Jabber/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Jabber
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/X/SXPM
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/X/Roster
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/X/Form/Field
@@ -64,3 +65,4 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Jabber/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Dialback
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Data
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Net 2>/dev/null || true
