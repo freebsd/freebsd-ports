@@ -8,7 +8,7 @@
 PORTNAME=	llnlxftp
 PORTVERSION=	2.1
 CATEGORIES=	ftp
-MASTER_SITES=	ftp://ftp-lc.llnl.gov/pub/ia/llnlxftp/
+MASTER_SITES=	ftp://ftp.llnl.gov/pub/ia/llnlxftp/
 DISTNAME=	latest_xftp
 EXTRACT_SUFX=	.tar.Z
 
