@@ -230,7 +230,6 @@
     SUBDIR += tcl84
     SUBDIR += tclX
     SUBDIR += tclX80
-    SUBDIR += tclX82
     SUBDIR += tcltutor
     SUBDIR += tensile
     SUBDIR += tinycobol
