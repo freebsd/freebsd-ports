@@ -667,7 +667,6 @@ bzflag		ports/games/bzflag
 bzip		ports/archivers/bzip
 bzip2		ports/archivers/bzip2
 c-nocem		ports/news/c-nocem
-c2hs		ports/devel/c2hs
 c2html		ports/textproc/c2html
 c2lib		ports/devel/c2lib
 c2man		ports/devel/c2man
@@ -1313,7 +1312,6 @@ dpt		src/usr.sbin/dpt
 drac		ports/mail/drac
 drbl		ports/mail/drbl
 dri-devel	ports/graphics/dri-devel
-drift		ports/devel/drift
 driftnet	ports/net/driftnet
 drm		ports/games/drm
 drm-kmod	ports/graphics/drm-kmod
@@ -2252,7 +2250,6 @@ grdb		ports/misc/grdb
 grdc		src/games/grdc
 greed		ports/ftp/greed
 greed_game	ports/games/greed
-green-card	ports/devel/green-card
 grep		src/gnu/usr.bin/grep
 grepmail	ports/mail/grepmail
 gretl		ports/misc/gretl
@@ -2378,18 +2375,14 @@ h2n		ports/net/h2n
 ha		ports/archivers/ha
 hack		src/games/hack
 hackedbox	ports/x11-wm/hackedbox
-haddock		ports/devel/haddock
 hafiye		ports/security/hafiye
 hagelslag	ports/net/hagelslag
 halflifeserver	ports/games/halflifeserver
 handbook	doc/en_US.ISO8859-1/books/handbook
 hangman		src/games/hangman
-happy		ports/devel/happy
 happydoc	ports/devel/happydoc
 harvest		ports/www/harvest
 hashish		ports/security/hashish
-hat		ports/devel/hat
-haxml		ports/textproc/haxml
 hb		ports/misc/hb
 hbiff		ports/mail/hbiff
 hdconv		ports/palm/hdconv
@@ -2416,7 +2409,6 @@ hexpert		ports/editors/hexpert
 heyu		ports/misc/heyu
 hfs		ports/emulators/hfs
 hfsutils	ports/emulators/hfsutils
-hgl		ports/graphics/hgl
 histring	ports/misc/histring
 hlfl		ports/security/hlfl
 hlmaster	ports/net/hlmaster
@@ -2459,8 +2451,16 @@ hpijs		ports/print/hpijs
 hping		ports/security/hping
 hppsmtools	ports/graphics/hppsmtools
 hr-ooodict-HR	ports/editors/ooodict-hr_HR
+hs-c2hs		ports/devel/hs-c2hs
+hs-drift	ports/devel/hs-drift
 hs-frantk	ports/x11-toolkits/hs-frantk
+hs-green-card	ports/devel/hs-green-card
 hs-gtk+hs	ports/x11-toolkits/hs-gtk+hs
+hs-haddock	ports/devel/hs-haddock
+hs-happy	ports/devel/hs-happy
+hs-hat		ports/devel/hs-hat
+hs-haxml	ports/textproc/hs-haxml
+hs-hgl		ports/graphics/hs-hgl
 hs-hpl		ports/devel/hs-hpl
 hs-popenhs	ports/devel/hs-popenhs
 hsftp		ports/ftp/hsftp

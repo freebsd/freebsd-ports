@@ -9,6 +9,7 @@ PORTVERSION=	1.13
 CATEGORIES=	devel
 MASTER_SITES=	http://www.haskell.org/happy/dist/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
+PKGNAMEPREFIX=	hs-
 
 MAINTAINER=	simonmar@microsoft.com
 

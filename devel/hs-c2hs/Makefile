@@ -9,6 +9,7 @@ PORTNAME=	c2hs
 PORTVERSION=	0.10.15
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cse.unsw.edu.au/~chak/haskell/c2hs/
+PKGNAMEPREFIX=	hs-
 
 MAINTAINER=	obraun@FreeBSD.org
 

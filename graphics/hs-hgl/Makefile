@@ -10,6 +10,7 @@ PORTVERSION=	2.0.4
 CATEGORIES=	graphics
 MASTER_SITES=	http://haskell.org/graphics/downloads/
 DISTNAME=	graphics-${PORTVERSION}.src
+PKGNAMEPREFIX=	hs-
 
 MAINTAINER=	octaphial@yahoo.com
 
