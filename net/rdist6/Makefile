@@ -15,6 +15,9 @@ MASTER_SITES=	http://www.magnicomp.com/download/rdist/ \
 MAINTAINER=	peter@FreeBSD.org
 
 .include <bsd.port.pre.mk>
+.if ${OSVERSION} < 400000
+BROKEN=		Not supported for pre-4.0 FreeBSD
+.endif
 
 # To avoid confusion with /usr/bin/rdist, you may prefer otherwise.
 RDIST_NAME?=	rdist6
