@@ -15,6 +15,7 @@ share/apps/kdvi/toolbar/largetext.xpm
 share/apps/kdvi/toolbar/smalltext.xpm
 share/apps/kfax/pics/kfax.tif
 share/apps/kfax/pics/kfaxlogo.xpm
+share/apps/kpaint/toolbar/areaselect.xpm
 share/apps/kpaint/toolbar/circle.xpm
 share/apps/kpaint/toolbar/editcopy.xpm
 share/apps/kpaint/toolbar/editcut.xpm
@@ -26,6 +27,7 @@ share/apps/kpaint/toolbar/fileopen.xpm
 share/apps/kpaint/toolbar/line.xpm
 share/apps/kpaint/toolbar/pen.xpm
 share/apps/kpaint/toolbar/rectangle.xpm
+share/apps/kpaint/toolbar/roundangle.xpm
 share/apps/kpaint/toolbar/spraycan.xpm
 share/apps/kpaint/toolbar/viewmag+.xpm
 share/apps/kpaint/toolbar/viewmag-.xpm
@@ -76,12 +78,14 @@ share/locale/cs/LC_MESSAGES/kfax.mo
 share/locale/cs/LC_MESSAGES/kghostview.mo
 share/locale/cs/LC_MESSAGES/kpaint.mo
 share/locale/de/LC_MESSAGES/kdvi.mo
+share/locale/de/LC_MESSAGES/kfax.mo
 share/locale/de/LC_MESSAGES/kghostview.mo
 share/locale/de/LC_MESSAGES/kpaint.mo
 share/locale/el/LC_MESSAGES/kdvi.mo
 share/locale/el/LC_MESSAGES/kghostview.mo
 share/locale/el/LC_MESSAGES/kpaint.mo
 share/locale/es/LC_MESSAGES/kdvi.mo
+share/locale/es/LC_MESSAGES/kfax.mo
 share/locale/es/LC_MESSAGES/kghostview.mo
 share/locale/es/LC_MESSAGES/kpaint.mo
 share/locale/fi/LC_MESSAGES/kdvi.mo
@@ -92,6 +96,7 @@ share/locale/fr/LC_MESSAGES/kdvi.mo
 share/locale/fr/LC_MESSAGES/kghostview.mo
 share/locale/fr/LC_MESSAGES/kpaint.mo
 share/locale/hr/LC_MESSAGES/kdvi.mo
+share/locale/hr/LC_MESSAGES/kfax.mo
 share/locale/hr/LC_MESSAGES/kghostview.mo
 share/locale/hr/LC_MESSAGES/kpaint.mo
 share/locale/hu/LC_MESSAGES/kdvi.mo
@@ -100,60 +105,41 @@ share/locale/hu/LC_MESSAGES/kpaint.mo
 share/locale/it/LC_MESSAGES/kdvi.mo
 share/locale/it/LC_MESSAGES/kghostview.mo
 share/locale/it/LC_MESSAGES/kpaint.mo
+share/locale/mk/LC_MESSAGES/kghostview.mo
+share/locale/nl/LC_MESSAGES/kdvi.mo
 share/locale/nl/LC_MESSAGES/kghostview.mo
 share/locale/nl/LC_MESSAGES/kpaint.mo
 share/locale/no/LC_MESSAGES/kdvi.mo
+share/locale/no/LC_MESSAGES/kfax.mo
 share/locale/no/LC_MESSAGES/kghostview.mo
 share/locale/no/LC_MESSAGES/kpaint.mo
 share/locale/pl/LC_MESSAGES/kdvi.mo
+share/locale/pl/LC_MESSAGES/kfax.mo
 share/locale/pl/LC_MESSAGES/kghostview.mo
 share/locale/pl/LC_MESSAGES/kpaint.mo
 share/locale/pt/LC_MESSAGES/kdvi.mo
+share/locale/pt/LC_MESSAGES/kfax.mo
 share/locale/pt/LC_MESSAGES/kghostview.mo
 share/locale/pt/LC_MESSAGES/kpaint.mo
+share/locale/pt_BR/LC_MESSAGES/kdvi.mo
+share/locale/pt_BR/LC_MESSAGES/kfax.mo
+share/locale/pt_BR/LC_MESSAGES/kghostview.mo
+share/locale/pt_BR/LC_MESSAGES/kpaint.mo
 share/locale/ru/LC_MESSAGES/kghostview.mo
 share/locale/ru/LC_MESSAGES/kpaint.mo
 share/locale/sk/LC_MESSAGES/kdvi.mo
+share/locale/sk/LC_MESSAGES/kfax.mo
 share/locale/sk/LC_MESSAGES/kghostview.mo
 share/locale/sk/LC_MESSAGES/kpaint.mo
 share/locale/sv/LC_MESSAGES/kghostview.mo
 share/locale/sv/LC_MESSAGES/kpaint.mo
-share/locale/zh/LC_MESSAGES/kghostview.mo
-share/locale/zh/LC_MESSAGES/kpaint.mo
-@dirrm share/locale/zh/LC_MESSAGES
-@dirrm share/locale/zh
-@dirrm share/locale/sv/LC_MESSAGES
-@dirrm share/locale/sv
-@dirrm share/locale/sk/LC_MESSAGES
-@dirrm share/locale/sk
-@dirrm share/locale/ru/LC_MESSAGES
-@dirrm share/locale/ru
-@dirrm share/locale/pt/LC_MESSAGES
-@dirrm share/locale/pt
-@dirrm share/locale/pl/LC_MESSAGES
-@dirrm share/locale/pl
-@dirrm share/locale/no/LC_MESSAGES
-@dirrm share/locale/no
-@dirrm share/locale/nl/LC_MESSAGES
-@dirrm share/locale/nl
-@dirrm share/locale/it/LC_MESSAGES
-@dirrm share/locale/it
-@dirrm share/locale/hu/LC_MESSAGES
-@dirrm share/locale/hu
-@dirrm share/locale/hr/LC_MESSAGES
-@dirrm share/locale/hr
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/fr
-@dirrm share/locale/fi/LC_MESSAGES
-@dirrm share/locale/fi
-@dirrm share/locale/es/LC_MESSAGES
-@dirrm share/locale/es
-@dirrm share/locale/el/LC_MESSAGES
-@dirrm share/locale/el
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale/de
-@dirrm share/locale/cs/LC_MESSAGES
-@dirrm share/locale/cs
+share/locale/zh_CN.GB2312/LC_MESSAGES/kdvi.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/kfax.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/kghostview.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/kpaint.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/kfax.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/kghostview.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/kpaint.mo
 @dirrm share/doc/HTML/fi/kdvi
 @dirrm share/doc/HTML/fi
 @dirrm share/doc/HTML/en/kview
@@ -163,7 +149,6 @@ share/locale/zh/LC_MESSAGES/kpaint.mo
 @dirrm share/doc/HTML/en/kfax
 @dirrm share/doc/HTML/en/kdvi
 @dirrm share/doc/HTML/en
-@dirrm share/doc/HTML
 @dirrm share/apps/kview/toolbar
 @dirrm share/apps/kview
 @dirrm share/apps/kpaint/toolbar
