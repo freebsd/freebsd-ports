@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/devel/20020209/ \
 MAINTAINER=	bruno@tinkerbox.org
 
 LIB_DEPENDS=	gdgeda.4:${PORTSDIR}/graphics/libgdgeda \
-		guile.9:${PORTSDIR}/lang/guile
+		guile.10:${PORTSDIR}/lang/guile
 
 USE_LIBTOOL=	yes
 USE_AUTOCONF=	yes
