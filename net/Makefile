@@ -143,6 +143,7 @@
     SUBDIR += ntop
     SUBDIR += ntp
     SUBDIR += nttcp
+    SUBDIR += openam
     SUBDIR += opengatekeeper
     SUBDIR += openh323
     SUBDIR += openldap
