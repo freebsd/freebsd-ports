@@ -187,7 +187,6 @@
     SUBDIR += hagelslag
     SUBDIR += happystats
     SUBDIR += haproxy
-    SUBDIR += hawk
     SUBDIR += hf6to4
     SUBDIR += hidentd
     SUBDIR += hinfo
@@ -392,7 +391,6 @@
     SUBDIR += openldap22-server
     SUBDIR += openmcu
     SUBDIR += openradius
-    SUBDIR += openreg
     SUBDIR += openslp
     SUBDIR += openverse
     SUBDIR += ortp

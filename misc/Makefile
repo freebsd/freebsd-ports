@@ -255,7 +255,6 @@
     SUBDIR += lc
     SUBDIR += less
     SUBDIR += libelysium
-    SUBDIR += libh
     SUBDIR += libhome
     SUBDIR += libmcal
     SUBDIR += libutf

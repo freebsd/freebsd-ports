@@ -49,7 +49,6 @@
     SUBDIR += arm-rtems-gdb
     SUBDIR += arm-rtems-objc
     SUBDIR += as31
-    SUBDIR += as80
     SUBDIR += asis
     SUBDIR += asl
     SUBDIR += asmutils
@@ -1076,7 +1075,6 @@
     SUBDIR += qextmdi
     SUBDIR += qmake
     SUBDIR += qssl
-    SUBDIR += qt-designer
     SUBDIR += qtez
     SUBDIR += qtk
     SUBDIR += ragel
@@ -1236,7 +1234,6 @@
     SUBDIR += tvision
     SUBDIR += uclmmbase
     SUBDIR += ucpp
-    SUBDIR += uisp
     SUBDIR += umbrello
     SUBDIR += upnp
     SUBDIR += ups-debug

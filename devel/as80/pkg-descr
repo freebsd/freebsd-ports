@@ -1,4 +1,0 @@
-As80 is a table-driven assembler for the 8080/8085 line of
-microprocessors from Intel.  It uses cpp for macros and includes.
-
-WWW: http://www.tstrathmann.de/as80.html
