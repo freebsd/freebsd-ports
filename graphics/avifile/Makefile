@@ -38,9 +38,9 @@ PLIST_SUB=	LIB_VERSION="${LIB_VERSION}"
 
 FMT=	/usr/bin/fmt
 
-CODEC_PORT=	${PORTSDIR}/graphics/win32-codecs
-#CODEC_PORT=	../win32-codecs
-CODEC_DETECTION_FILE!=	cd ${CODEC_PORT} && ${MAKE} -V CODEC_DETECTION_FILE
+#CODEC_PORT=	${PORTSDIR}/graphics/win32-codecs
+CODEC_PORT=	${.CURDIR}/../win32-codecs
+CODEC_DETECTION_FILE!=	${MAKE} -f ${CODEC_PORT}/Makefile -V CODEC_DETECTION_FILE
 
 LIB_VERSION=	0
 # Adhoc fix. First part.
