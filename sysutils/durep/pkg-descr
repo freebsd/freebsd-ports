@@ -1,0 +1,22 @@
+Disk Usage Reporter is a perl script designed for monitoring disk 
+usage in a more visual way than du. The du program works fine but
+doesn't allow a lot of control over how the results are displayed.
+This perl script is designed to produce output more useful for
+reports.
+
+Although durep can produce text output similar to du, its real 
+advantage is that it allows you to navigate through the directory 
+structure as web pages.  Each page shows bar graphs for entries so it
+is easy to see immediately which directory is using the most storage
+space. The report generated can be configured in several ways (hiding
+directories, collapsing directory entries, hiding entries below
+certain sizes, etc).
+
+The text report that durep generates is also configurable. You may 
+limit the depth to which it displays entries, allowing a quick
+non-detailed view.
+
+WWW: http://www.hibernaculum.net/durep.html
+
+- Oliver Braun
+obraun@informatik.unibw-muenchen.de

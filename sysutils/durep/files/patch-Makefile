@@ -1,0 +1,12 @@
+--- Makefile.orig	Thu Feb 14 19:37:04 2002
++++ Makefile	Thu Feb 14 19:40:26 2002
+@@ -1,6 +1,8 @@
+-PREFIX		= /usr/local
++#PREFIX		= /usr/local
+ VERSION		= 0.8
+ 
++all:
++
+ # Make documentation
+ doc:
+ 	pod2man --center="Disk Usage Report Generator" --release="durep version $(VERSION)" durep.pod > durep.1
