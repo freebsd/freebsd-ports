@@ -1,0 +1,26 @@
+--- setup.py.orig	Fri Oct 27 04:09:37 2000
++++ setup.py	Mon Oct 30 11:24:59 2000
+@@ -9,10 +9,10 @@
+ # You may need to edit this script to point to the location of your
+ # MySQL installation.  It should be sufficient to change the value of
+ # the MYSQL_DIR variable below.
+-MYSQL_INCLUDE_DIR = '/usr/include/mysql'
+-MYSQL_LIB_DIR = '/usr/lib/mysql'
+-#mysqlclient = "mysqlclient"   # maybe not thread-safe
+-mysqlclient = "mysqlclient_r" # thread-safe
++MYSQL_INCLUDE_DIR = '/usr/local/include/mysql'
++MYSQL_LIB_DIR = '/usr/local/lib/mysql'
++mysqlclient = "mysqlclient"   # maybe not thread-safe
++#mysqlclient = "mysqlclient_r" # thread-safe
+ 
+ 
+ setup (# Distribution meta-data
+@@ -32,7 +32,7 @@
+                 sources=['_mysqlmodule.c'],
+                 include_dirs=[MYSQL_INCLUDE_DIR],
+ 		# maybe comment to force dynamic libraries
+-                #library_dirs=[MYSQL_LIB_DIR],
++                library_dirs=[MYSQL_LIB_DIR],
+ 		# uncomment if linking against dynamic libraries
+ 		#runtime_library_dirs=[MYSQL_LIB_DIR],
+                 libraries=[
