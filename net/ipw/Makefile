@@ -3,7 +3,7 @@
 # Date created:				29 January 1999
 # Whom:					mph
 #
-# $Id: Makefile,v 1.1.1.1 1999/01/29 21:27:11 mph Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ipw

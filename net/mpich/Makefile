@@ -3,7 +3,7 @@
 # Date created:		2 May 1998
 # Whom:                 dbader@eece.unm.edu
 #
-# $Id: Makefile,v 1.7 1999/01/11 05:05:24 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	mpich-1.1.2

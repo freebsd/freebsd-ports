@@ -3,7 +3,7 @@
 # Date created:				May 9th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.7 1999/08/22 18:59:30 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	rwhois-1.0B9.2

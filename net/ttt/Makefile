@@ -3,7 +3,7 @@
 # Date created:         22 September 1998
 # Whom:                 Kenjiro Cho <kjc@csl.sony.co.jp>
 #
-# $Id: Makefile,v 1.13 1998/10/28 12:39:25 kjc Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       ttt-1.4

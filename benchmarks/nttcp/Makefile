@@ -3,7 +3,7 @@
 # Date created:        11 Nov 1998
 # Whom:                Bill Fumerola <billf@chc-chimes.com>
 #
-# $Id: $
+# $FreeBSD$
 #
 
 DISTNAME=	nttcp-1.4

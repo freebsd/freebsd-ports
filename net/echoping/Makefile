@@ -3,7 +3,7 @@
 # Date created:		13 April 1997
 # Whom:			peter
 #
-# $Id: Makefile,v 1.2 1998/06/22 11:56:39 peter Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	echoping-2.2.0

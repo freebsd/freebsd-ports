@@ -3,7 +3,7 @@
 # Date created:		10 November 1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.21 1997/08/10 23:34:44 adam Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	dgd-lpmud

@@ -3,7 +3,7 @@
 # Date created:         01 May 1998
 # Whom:                 tonym
 #
-# $Id: Makefile,v 1.1.1.1 1999/06/28 07:07:25 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       Generic-NQS-3.50.4

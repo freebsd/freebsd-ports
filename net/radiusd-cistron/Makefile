@@ -3,7 +3,7 @@
 # Date created:		15 Jan 1999
 # Whom:			john@nlc.net.au
 #
-# $Id: Makefile,v 1.6 1999/08/01 04:07:50 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	radiusd-cistron-1.5.4.3

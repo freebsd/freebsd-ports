@@ -3,7 +3,7 @@
 # Date created:				20 July 1999
 # Whom:					Dmitry Sivachenko <dima@Chg.RU>
 #
-# $Id:$
+# $FreeBSD$
 #
 
 DISTNAME=	rrdtool-1.0.0

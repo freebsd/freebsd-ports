@@ -3,7 +3,7 @@
 # Date created:		19 June 1999
 # Whom:			John Polstra <jdp@freebsd.org>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	pptp-linux-1.0.2

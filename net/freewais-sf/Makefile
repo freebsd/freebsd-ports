@@ -3,7 +3,7 @@
 # Date created:		19 November 1996
 # Whom:			Pedro Giffuni
 #
-# $Id: Makefile,v 1.10 1999/08/22 23:33:11 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	freeWAIS-sf-2.2.11

@@ -3,7 +3,7 @@
 # Date created:		11 Dec 1994
 # Whom:			ats (original)
 #
-# $Id: Makefile,v 1.9 1999/06/08 23:50:22 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gopher2_3

@@ -3,7 +3,7 @@
 # Date created:        7 November 1998
 # Whom:                Josh Gilliam <josh@quick.net>
 #
-# $Id: Makefile,v 1.4 1999/07/04 21:30:57 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	pathchar-a1-freebsd-3.0

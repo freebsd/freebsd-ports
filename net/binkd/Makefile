@@ -3,7 +3,7 @@
 # Date created:				19 August 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.4 1999/05/07 02:30:21 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		binkd092

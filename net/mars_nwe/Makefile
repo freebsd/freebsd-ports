@@ -3,7 +3,7 @@
 # Date created:		29 Dec 1998
 # Whom:			Boris Popov <bp@butya.kz>
 #
-# $Id: Makefile,v 1.4 1999/03/08 17:27:46 foxfair Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       mars_nwe-0.99.pl17

@@ -3,7 +3,7 @@
 # Date created:                21 Nov 1998
 # Whom:                        bradh
 #
-# $Id: Makefile,v 1.2 1998/11/23 00:43:40 flathill Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	nocol-4.2.2beta1

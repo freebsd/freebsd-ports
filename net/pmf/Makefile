@@ -3,7 +3,7 @@
 # Date created:         24 Sep 1994
 # Whom:                 adam
 #
-# $Id: Makefile,v 1.12 1999/08/22 18:59:29 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       pmf-1.13.1

@@ -3,7 +3,7 @@
 # Date created:        1997/06/09
 # Whom:                wosch
 #
-# $Id: Makefile,v 1.6 1997/08/19 21:17:13 wosch Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	rshell-1.0

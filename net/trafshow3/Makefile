@@ -3,7 +3,7 @@
 # Date created:         25 September 1996
 # Whom:                 igor@zynaps.ru
 #
-# $Id: Makefile,v 1.9 1998/04/26 12:05:31 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	trafshow-2.0

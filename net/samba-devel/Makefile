@@ -3,7 +3,7 @@
 # Date created:				11th Feb 1995
 # Whom:					gpalmer
 #
-# $Id: Makefile,v 1.40 1999/07/24 00:53:52 hosokawa Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	samba-2.0.5a

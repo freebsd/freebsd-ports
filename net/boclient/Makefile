@@ -3,7 +3,7 @@
 # Date created:		12 August 1998
 # Whom:			darius@dons.net.au
 #
-# $Id:$
+# $FreeBSD$
 #
 
 DISTNAME=	bo121unix

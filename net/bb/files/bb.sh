@@ -1,5 +1,5 @@
 #! /bin/sh
 
-# $Id$
+# $FreeBSD$
 
 !!PREFIX!!/bb/runbb.sh &

@@ -3,7 +3,7 @@
 # Date created:         March 24 1997
 # Whom:                 Brian Somers <brian@Awfulhak.org>
 #
-# $Id: Makefile,v 1.10 1998/08/22 02:13:51 brian Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	arpwatch-2.1a4

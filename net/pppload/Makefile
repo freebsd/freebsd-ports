@@ -3,7 +3,7 @@
 # Date created:        30 January 1998
 # Whom:                Sean Cole <scole@aracnet.com>
 #
-# $Id: Makefile,v 1.9 1999/01/26 02:56:27 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	pppload-1.0

@@ -3,7 +3,7 @@
 # Date created:                         16 March 1999
 # Whom:                                 Pavel Andreev
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/30 16:37:20 taoka Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	kicq-0.3.0

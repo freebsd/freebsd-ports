@@ -3,7 +3,7 @@
 # Date created:				19 June 1998
 # Whom:					hmpierce <hmpierce@cs.cmu.edu>
 #
-# $Id: Makefile,v 1.2 1998/10/09 20:47:10 rvb Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	coda-4.6.6

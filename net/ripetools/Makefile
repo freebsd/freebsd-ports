@@ -3,7 +3,7 @@
 # Date created:		5th June 1997
 # Whom:			joe@uk.freebsd.org
 #
-# $Id: Makefile,v 1.4 1999/03/09 03:08:24 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ripe-whois-tools-2.4

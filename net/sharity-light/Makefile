@@ -3,7 +3,7 @@
 # Date created:		14 June 1997
 # Whom:			Dmitrij Tejblum <dima@tejblum.dnttm.rssi.ru>
 #
-# $Id: Makefile,v 1.9 1998/11/23 23:10:10 billf Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	Sharity-Light.1.2

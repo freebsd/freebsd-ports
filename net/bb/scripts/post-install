@@ -1,6 +1,6 @@
 #! /bin/sh
 
-# $Id$
+# $FreeBSD$
 
 sed -e "s=!!PREFIX!!=${PREFIX}=" \
 	< ${FILESDIR}/bb.sh \

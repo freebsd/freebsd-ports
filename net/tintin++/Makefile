@@ -3,7 +3,7 @@
 # Date created:         15 Nov 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.7 1996/11/18 11:36:43 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       tintin++v1.5pl6

@@ -3,7 +3,7 @@
 # Date created:         15 Mar 1998
 # Whom:                 CHOI Junho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.7 1999/06/18 17:31:21 mharo Exp $
+# $FreeBSD$
 #
 # In this ports..
 #   - new compilation diff for FreeBSD(now we can upload!)

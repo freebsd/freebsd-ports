@@ -3,7 +3,7 @@
 # Date Created:				Aug 18 1998
 # Whom:					Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.4 1998/11/11 05:37:28 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	pRPC-modules-0.1005

@@ -3,7 +3,7 @@
 # Date created:		Di   5 Mai 1998 21:31:03 CEST
 # Whom:			andreas
 #
-# $Id: Makefile,v 1.6 1999/06/26 06:54:07 andreas Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ntp-4.0.93a

@@ -3,7 +3,7 @@
 # Date created:			02 March 1999
 # Whom:				mharo@area51.fremont.ca.us
 #
-# $Id: Makefile,v 1.4 1999/04/27 03:56:49 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	naim-0.9.4

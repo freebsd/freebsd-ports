@@ -3,7 +3,7 @@
 # Date created:        24 November 1998
 # Whom:                Rich Neswold <rneswold@mcs.net>
 #
-# $Id: Makefile,v 1.2 1999/01/18 06:43:00 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	wmnet-1.2

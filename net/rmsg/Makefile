@@ -3,7 +3,7 @@
 # Date created:		9 October 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.6 1996/12/01 01:23:11 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	rmsg-1.64

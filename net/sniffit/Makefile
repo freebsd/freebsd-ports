@@ -4,7 +4,7 @@
 # Date created:		28 Mar 1998
 # Whom:			bsdx
 #
-# $Id: Makefile,v 1.2 1998/08/17 07:25:18 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	sniffit.0.3.7.beta

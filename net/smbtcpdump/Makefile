@@ -4,7 +4,7 @@
 # Date created:				2 Jun 1998
 # Whom:					obrien
 #
-# $Id: Makefile,v 1.6 1999/01/06 21:33:42 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	tcpdump-3.4

@@ -4,7 +4,7 @@
 # Date created:			  Tue Feb 03, 1998
 # Whom:				  David O'Brien (obrien@NUXI.ucdavis.edu)
 #
-# $Id: Makefile,v 1.1.1.1 1998/05/25 23:23:30 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	icb-5.0.9

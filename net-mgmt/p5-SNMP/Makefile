@@ -3,7 +3,7 @@
 # Date created:				May 5th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.5 1999/04/07 17:38:31 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	SNMP-1.8.1

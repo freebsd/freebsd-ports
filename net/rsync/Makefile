@@ -4,7 +4,7 @@
 # Date created:         Sat Aug 3, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.22 1999/01/12 18:24:16 scrappy Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	rsync-2.3.1

@@ -4,7 +4,7 @@
 # Date created:			  Sun Jan 31, 1997
 # Whom:               		  shipley@dis.org
 #
-# $Id: Makefile,v 1.3 1999/08/22 18:59:33 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	tdetect-0.2

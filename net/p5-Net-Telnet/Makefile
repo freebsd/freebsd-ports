@@ -3,7 +3,7 @@
 # Date created:			March 3 1998
 # Whom:	      			Jun Kuriyama <kuriyama@opt.phys.waseda.ac.jp>
 #
-# $Id: Makefile,v 1.2 1998/08/23 03:01:19 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       Net-Telnet-3.01

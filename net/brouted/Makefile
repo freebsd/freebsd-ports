@@ -3,7 +3,7 @@
 # Date created:        5 May 1999
 # Whom:                swjeong
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	brouted-1.2b

@@ -3,7 +3,7 @@
 # Date created:			  Nov 05, 1998
 # Whom:				  Karl Dietz (Karl.Dietz@triplan.com)
 #
-# $Id: Makefile,v 1.1.1.1 1998/12/01 11:59:36 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	dnsutl-1.5

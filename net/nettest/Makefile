@@ -3,7 +3,7 @@
 # Date created:         Mon Oct 20 14:30:06 CDT 1997
 # Whom:                 proot@iaces.com
 #
-# $Id: Makefile,v 1.1.1.1 1997/10/30 11:21:20 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       nettest.92.11.09

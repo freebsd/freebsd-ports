@@ -3,7 +3,7 @@
 # Date created:         7 Mar 1996
 # Whom:                 se
 #
-# $Id: Makefile,v 1.29 1999/06/20 15:10:09 jkh Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       dhcp-2.0

@@ -4,7 +4,7 @@
 # Date created:			  Tue Nov 04, 1997
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.2 1997/11/10 11:33:04 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	tcpshow-1.74

@@ -3,7 +3,7 @@
 # Date created:		3 March 1997
 # Whom:			fenner
 #
-# $Id: Makefile,v 1.5 1998/10/26 22:44:21 fenner Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	tcptrace.5.1.0

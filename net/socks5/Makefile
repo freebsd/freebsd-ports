@@ -3,7 +3,7 @@
 # Date created:				24 Apr 1996
 # Whom:					pst
 #
-# $Id: Makefile,v 1.24 1999/04/25 03:49:17 billf Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	socks5-v1.0r9

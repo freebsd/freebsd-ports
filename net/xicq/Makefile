@@ -3,7 +3,7 @@
 # Date created:				29 June 1998
 # Whom:					scrappy
 #
-# $Id: Makefile,v 1.4 1998/08/25 05:03:18 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xicq-071298-snapshot.src

@@ -3,7 +3,7 @@
 # Date created:			26 Jan 1997
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.16 1999/08/02 21:02:25 max Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	delegate5.9.3

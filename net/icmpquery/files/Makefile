@@ -1,7 +1,7 @@
 #
 # Small Makefile for icmpquery.
 #
-# $Id$
+# $FreeBSD$
 #
 
 PROG=icmpquery

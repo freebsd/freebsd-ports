@@ -3,7 +3,7 @@
 # Date created:        16 April 1999
 # Whom:                Doug Ambrisko <ambrisko@whistle.com>
 #
-# $Id: Makefile,v 1.3 1999/05/06 21:49:25 billf Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	etherboot-4.1pre9

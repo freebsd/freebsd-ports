@@ -3,7 +3,7 @@
 # Date created:				17 January 1998
 # Whom:					Matthew Hunt <mph@pobox.com>
 #
-# $Id: Makefile,v 1.3 1998/09/15 21:31:49 asami Exp $
+# $FreeBSD$
 
 DISTNAME=	dnswalk-2.0.2
 CATEGORIES=	net

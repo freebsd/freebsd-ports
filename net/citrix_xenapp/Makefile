@@ -3,7 +3,7 @@
 # Date created:         20 Sep 1998
 # Whom:                 msmith
 #
-# $Id: Makefile,v 1.12 1999/07/22 17:29:22 msmith Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       linux

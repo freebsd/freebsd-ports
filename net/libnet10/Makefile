@@ -3,7 +3,7 @@
 # Date created:			Sun Feb 3, 1999
 # Whom:				shipley@dis.org
 #
-# $Id: Makefile,v 1.1.1.1 1999/05/09 01:16:34 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	libnet-0.99b

@@ -3,7 +3,7 @@
 # Date created:				19 June 1998
 # Whom:					Robert V. Baron <rvb@cs.cmu.edu>
 #
-# $Id: Makefile,v 1.2 1998/10/06 15:51:02 rvb Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	coda-intro-4.6.6

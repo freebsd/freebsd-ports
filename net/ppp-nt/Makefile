@@ -3,7 +3,7 @@
 # Date created:		10 August 1998
 # Whom:			SADA Kenji <sada@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.4 1999/03/28 18:04:44 sada Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ppp-2.2.7

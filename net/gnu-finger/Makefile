@@ -3,7 +3,7 @@
 # Date created:         20 June 1996
 # Whom:                 Yoshiro MIHIRA <sanpei@yy.cs.keio.ac.jp>
 #
-# $Id: Makefile,v 1.8 1999/08/27 22:29:55 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       finger-1.37

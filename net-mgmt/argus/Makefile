@@ -3,7 +3,7 @@
 # Date created:		26 November 1998
 # Whom:			Jonathan Hanna <jhanna@home.com>
 #
-# $Id: Makefile,v 1.3 1999/02/12 02:55:21 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	argus-1.7.beta.1e

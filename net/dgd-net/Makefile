@@ -3,7 +3,7 @@
 # Date created:		17 June 1996
 # Whom:			adam
 #
-# $Id: Makefile,v 1.33 1999/08/28 01:57:43 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	dgd-net-1.1p6

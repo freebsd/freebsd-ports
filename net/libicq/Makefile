@@ -3,7 +3,7 @@
 # Date Created:				31 Oct 1998
 # Whom:					Seiichirou Hiraoka
 #
-# $Id: Makefile,v 1.4 1999/05/08 00:24:25 taoka Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	libicq-0.33

@@ -3,7 +3,7 @@
 # Date created:	17 May 1999
 # Whom:		paul@freebsd.org
 #
-# $Id: Makefile,v 1.3 1999/08/11 04:12:15 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ldapsdk_12311998

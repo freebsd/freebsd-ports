@@ -3,7 +3,7 @@
 # Date created:				11 Oct 1998
 # Whom:					mph
 #
-# $Id: Makefile,v 1.5 1999/04/06 20:46:56 mph Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       micq-0.4.1

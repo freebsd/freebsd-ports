@@ -3,7 +3,7 @@
 # Date created:		29 October 1994
 # Whom:			pst
 #
-# $Id: Makefile,v 1.18 1999/02/03 15:46:28 peter Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       gated-3-5-11

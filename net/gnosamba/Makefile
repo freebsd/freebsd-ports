@@ -3,7 +3,7 @@
 # Date created:				4 November 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.6 1999/04/26 19:35:56 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gtksamba-0.3.2pl1

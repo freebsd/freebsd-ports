@@ -3,7 +3,7 @@
 # Date created:				April 18th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#	$Id: Makefile,v 1.13 1999/07/29 03:26:36 foxfair Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	mrtg-2.8.6

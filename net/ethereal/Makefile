@@ -3,7 +3,7 @@
 # Date created:        10 August 1998
 # Whom:                Bill Fumerola <billf@chc-chimes.com>
 #
-# $Id: Makefile,v 1.13 1999/08/05 20:14:20 billf Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ethereal-0.7.2

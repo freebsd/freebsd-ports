@@ -3,7 +3,7 @@
 # Date created:         30 Oct 1997
 # Whom:                 sec@42.org
 #
-# $Id: Makefile,v 1.10 1999/03/02 21:18:43 billf Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	sendfile-19990215

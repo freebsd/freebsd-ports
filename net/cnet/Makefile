@@ -3,7 +3,7 @@
 # Date created:         Feb 8th, 1988
 # Whom:                 jkh
 #
-# $Id: Makefile,v 1.7 1999/03/15 02:03:30 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	cnet-1.4-4

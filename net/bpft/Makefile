@@ -3,7 +3,7 @@
 # Date created:         17 March 1999
 # Whom:                 oddbjorn@tricknology.org
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	bpft-2.0

@@ -3,7 +3,7 @@
 # Date created:                         2 July 1998
 # Whom:                                 Brian Feldman
 #
-# $Id: Makefile,v 1.7 1999/05/03 01:56:26 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	licq-0.61

@@ -3,7 +3,7 @@
 # Date created:		01 February 1997
 # Whom:			jdp
 #
-# $Id: Makefile,v 1.5 1999/08/22 23:33:09 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	cvsup-mirror-1.0

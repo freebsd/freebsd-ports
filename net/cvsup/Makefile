@@ -3,7 +3,7 @@
 # Date created:		7 August 1996
 # Whom:			asami
 #
-# $Id: Makefile,v 1.32 1999/02/10 02:47:55 jdp Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	cvsup-16.0

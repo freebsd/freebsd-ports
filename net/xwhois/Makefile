@@ -3,7 +3,7 @@
 # Date created:        31 December 1998
 # Whom:                Kris Kennaway <kkennawa@physics.adelaide.edu.au>
 #
-# $Id: Makefile,v 1.6 1999/05/29 03:56:15 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xwhois-0.3.6

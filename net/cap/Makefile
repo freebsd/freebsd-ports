@@ -3,7 +3,7 @@
 # Date created:			09 Nov 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.4 1999/08/22 23:33:08 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	cap60.pl100

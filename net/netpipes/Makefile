@@ -3,7 +3,7 @@
 # Date created:				12th April 1997
 # Whom:					doconnor@gsoft.com.au
 #
-# $Id: Makefile,v 1.6 1998/11/23 01:05:55 flathill Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	netpipes-4.2-export

@@ -3,7 +3,7 @@
 # Date created:				03/16/1999
 # Whom:					nectar@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.11 1999/05/30 04:04:53 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		gnomeicu-0.65
