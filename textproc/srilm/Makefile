@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	srilm
-PORTVERSION=	1.3.3
+PORTVERSION=	1.4
 CATEGORIES=	textproc
 DISTNAME=	srilm
-EXTRACT_SUFX?=	.gz
+EXTRACT_SUFX?=	.tgz
 
 MAINTAINER=	clsung@dragon2.net
 COMMENT=	Toolkit for building and applying statistical language models
@@ -56,7 +56,8 @@ MAN1=		ngram.1 ngram-count.1 ngram-class.1 ngram-merge.1 disambig.1 \
 		nbest-lattice.1 nbest-optimize.1 nbest-mix.1 \
 		nbest-pron-score.1 segment.1 segment-nbest.1 hidden-ngram.1 \
 		anti-ngram.1 multi-ngram.1 lattice-tool.1 training-scripts.1 \
-		lm-scripts.1 ppl-scripts.1 pfsg-scripts.1 nbest-scripts.1
+		lm-scripts.1 ppl-scripts.1 pfsg-scripts.1 nbest-scripts.1 \
+		select-vocab.1
 MAN3=		Prob.3 Vocab.3 LM.3 File.3
 MAN5=		ngram-format.5 nbest-format.5 classes-format.5 \
 		pfsg-format.5 wlat-format.5
@@ -87,7 +88,7 @@ post-patch:
 
 do-install:
 	@${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKSRC}/bin/${MACHINE_ARCH} && \
+	cd ${WRKSRC}/bin/freebsd && \
 		${INSTALL_PROGRAM} ${PROGRAMS} ${PREFIX}/bin && \
 		${INSTALL_SCRIPT} ${GAWK_SCRIPTS} ${EXAMPLESDIR} && \
 	cd ${WRKSRC}/man/man1 && \

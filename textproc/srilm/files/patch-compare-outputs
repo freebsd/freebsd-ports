@@ -1,0 +1,8 @@
+--- test/compare-outputs.orig	Fri Feb 28 10:04:35 2003
++++ test/compare-outputs	Sat Apr  3 16:45:20 2004
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/gawk -f 
++#!/usr/bin/awk -f 
+ #
+ # compare test outputs allowing for small numerical differences
+ #
