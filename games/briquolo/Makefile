@@ -7,6 +7,7 @@
 
 PORTNAME=	briquolo
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://briquolo.free.fr/download/
 
@@ -14,7 +15,8 @@ MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Breakout clone with an OpenGL 3D representation
 
 LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
-		GUI.0:${PORTSDIR}/graphics/guilib
+		GUI.0:${PORTSDIR}/graphics/guilib \
+		png.5:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
