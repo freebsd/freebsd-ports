@@ -8,7 +8,7 @@
 PORTNAME=	libflash
 PORTVERSION=	0.4.10
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.swift-tools.com/Flash/
+MASTER_SITES=	http://www.swift-tools.net/Flash/
 DISTNAME=	flash-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
@@ -16,8 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GPL Flash (TM) Library
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
-
-BROKEN=		Master sites and distfile no longer available
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/Lib
 MAKE_ARGS=	NOPROFILE=true
