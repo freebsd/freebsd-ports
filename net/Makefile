@@ -1,6 +1,7 @@
 # $FreeBSD$
 #
 
+    SUBDIR += 3proxy
     SUBDIR += 44bsd-rdist
     SUBDIR += 6to4
     SUBDIR += 6tunnel

@@ -1,0 +1,23 @@
+3[APA3A] tiny proxy 3Proxy (pronounce it as "Zaraza tiny proxy") is really
+tiny cross-platform (Win32&Unix) proxy servers set. It includes HTTP proxy
+with HTTPS and FTP support, SOCKSv4/SOCKSv4.5/SOCKSv5 proxy, POP3 proxy,
+TCP and UDP portmappers. You can use every proxy as a standalone program
+(socks, proxy, tcppm, udppm, pop3p) or use combined program (3proxy).
+Combined proxy additionally supports features like access control,
+bandwidth limiting, limiting daily/weekly/monthly traffic amount, proxy
+chaining, log rotation, sylog and ODBC logging, etc. It's created to be
+small, simple (I'd like to say secure - but it's just a beta) and yet
+functional. It may be compiled with Visual C or gcc. Native Win32 version
+included in archive and supports installation as NT/2K/XP service.
+Currently 3proxy is tested to work under Windows 98/NT/2000/2003/XP,
+FreeBSD/i386, Linux/i386, Linux/Alpha. See Release Notes and Changes for
+features list.
+3proxy is FreeWare. It can be used under terms of GNU/GPL or under it own
+license (please read License Agreement).
+
+For licensing or commercial support please e-mail to 3proxy@security.nnov.ru
+
+WWW: http://www.security.nnov.ru/soft/3proxy/
+
+-- Timofey
+tim@relay.nnn.tstu.ru

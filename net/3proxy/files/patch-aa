@@ -1,0 +1,17 @@
+--- Makefile.unix.orig	Mon Jul 28 13:06:40 2003
++++ Makefile.unix	Mon Jul 28 13:24:40 2003
+@@ -3,11 +3,11 @@
+ # 3 proxy Makefile for GCC/Unix/Linux/Cygwin
+ #
+ 
+-CC = gcc
+-CFLAGS = -Wall -O2 -s -c -pthread -DNOODBC
++CC ?= gcc
++CFLAGS += -Wall -O2 -s -c ${PTHREAD_CFLAGS} -DNOODBC
+ COUT = -o 
+ LN = gcc
+-LDFLAGS = -Wall -O2 -s -pthread
++LDFLAGS += -Wall -O2 -s ${PTHREAD_LIBS}
+ LIBS =
+ LNOUT = -o 
+ EXESUFFICS =
