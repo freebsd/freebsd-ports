@@ -3,13 +3,13 @@
 # Date created:         12 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.4 1995/04/15 04:33:58 asami Exp $
+# $Id: Makefile,v 1.5 1995/04/17 20:31:29 asami Exp $
 #
 
 DISTNAME=	makeindex
 PKGNAME=	makeindex-3.0.8
 CATEGORIES+=	printing
-MASTER_SITES=	ftp://achilles.doc.ic.ac.uk/tex/contrib/Schrod/
+MASTER_SITES=	ftp://ftp.th-darmstadt.de/pub/tex/src/makeindex/BETA/
 DISTFILES=	makeindex-3.0.8.tar.Z
 
 MAINTAINER=	jmz@FreeBSD.org
