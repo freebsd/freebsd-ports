@@ -1,5 +1,22 @@
-*** documentation/Makefile.orig	Sun Jun 11 22:45:55 1995
---- documentation/Makefile	Wed Jul 19 20:35:38 1995
+*** documentation/Makefile.orig	Mon Jun 12 03:45:55 1995
+--- documentation/Makefile	Mon Jun 16 19:30:13 1997
+***************
+*** 49,55 ****
+  	$(RM) $@
+  	${NROFF} -man $< > $@
+  
+! all: ps info dvi text
+  
+  ps: bash.ps readline.ps article.ps
+  dvi: features.dvi features.ps 
+--- 49,55 ----
+  	$(RM) $@
+  	${NROFF} -man $< > $@
+  
+! all: info # ps dvi text
+  
+  ps: bash.ps readline.ps article.ps
+  dvi: features.dvi features.ps 
 ***************
 *** 90,101 ****
   
