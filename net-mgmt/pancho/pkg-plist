@@ -1,4 +1,4 @@
 bin/pancho
-%%PORTDOCS%%share/doc/pancho/README
+%%PORTDOCS%%share/doc/pancho/HOWTO
 %%PORTDOCS%%share/doc/pancho/LOGGING
 %%PORTDOCS%%@dirrm share/doc/pancho

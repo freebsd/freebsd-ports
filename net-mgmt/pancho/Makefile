@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pancho
-PORTVERSION=	3.2
+PORTVERSION=	3.4
 CATEGORIES=	net
 MASTER_SITES=	http://pancho.lunarmedia.net/
 DISTNAME=	pancho-v${PORTVERSION}
@@ -38,7 +38,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/pancho ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/pancho
-.for i in README LOGGING
+.for i in HOWTO LOGGING
 	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/pancho
 .endfor
 .endif
