@@ -49,8 +49,15 @@ LIBTOOLFLAGS=	# empty
 USE_AUTOCONF=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--enable-shared --with-modules \
+CONFIGURE_ARGS=	--enable-shared \
 		--with-perl=${PERL5}
+
+.ifdef WITH_MODULES
+CONFIGURE_ARGS+=--with-modules
+PLIST_SUB+=	MODULES=''
+.else
+PLIST_SUB+=	MODULES='@comment '
+.endif
 
 .ifdef NO_X
 CONFIGURE_ARGS+=--without-x
