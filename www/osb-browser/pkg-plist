@@ -1,3 +1,4 @@
 bin/osb-browser
 share/gnome/osb-browser/default-location-icon.png
 share/gnome/osb-browser/osb-browser.glade
+@dirrm share/gnome/osb-browse
