@@ -23,10 +23,6 @@ PERL_VER=	5.6.1
 PERL_ARCH=	mach
 PERL_VERSION=	${PERL_VER}
 
-.if ${OSVERSION} >= 502100
-LATEST_LINK=	perl5.6
-.endif
-
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=Configure
 CONFIGURE_ARGS=	-sde -Dprefix=${PREFIX} \
@@ -62,6 +58,10 @@ INCLUDEDIR=	/usr/include
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502100
+LATEST_LINK=	perl5.6
+.endif
 
 .if ${OSVERSION} >= 500043 && ${OSVERSION} < 502100
 PKGMESSAGE=	${PKGDIR}/.not-here
