@@ -12,10 +12,8 @@ PORTVERSION=	1.7.4
 PORTVERSION=	1.8.0
 .endif
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GNUSTEP} \
-		ftp://ftp.gnustep.org/pub/gnustep/%SUBDIR%/ \
-		http://archive.progeny.com/gnustep/%SUBDIR%/ \
-		ftp://ftp.easynet.nl/mirror/GNUstep/%SUBDIR%/
+MASTER_SITES=	${MASTER_SITE_GNUSTEP}
+		ftp://ftp.gnustep.org/pub/gnustep/%SUBDIR%/
 MASTER_SITE_SUBDIR=	core
 
 MAINTAINER=	dinoex@FreeBSD.org
