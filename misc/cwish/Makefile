@@ -9,7 +9,7 @@
 PORTNAME=	cwish
 PORTVERSION=	3.52
 CATEGORIES=	misc
-MASTER_SITES=	http://www.hcs.de/users/hm/packages/
+MASTER_SITES=	# none
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Curses based user friendly windowing shell
