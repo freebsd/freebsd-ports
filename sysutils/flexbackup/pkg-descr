@@ -1,17 +1,14 @@
 Flexible backup script.
 
 Features:
-   o Easy to configure.
-   o Uses dump, afio, tar, or cpio with the flick of a switch.
-   o Backup, extract, compare, list modes.
-   o On-disk database support for TOC on tapes.
-   o Compression and buffering options for all backup types.
-   o Full (0) and 1-9 levels of incremental backup (ala "dump").
-   o Filesystem-oriented (won't traverse devices by default).
-   o Does remote filesystems (over rsh/ssh; no special service).
-   o Works with IDE/SCSI tapes
-     or Linux ftape (allows table of contents support)
-     or archive to normal files rather than device
-   o Nice log files.
+   o Easy to configure
+   o Uses dump, afio, GNU tar, cpio, star, pax, or zip archivers
+   o Full and numbered levels of incremental backup (acts like "dump")
+   o Backup, list, compare, extract, extract list of files modes
+   o Compression and buffering options for all backup types
+   o Keeps a table of contents so you know archives are on each tape
+   o Does remote filesystems (over rsh/ssh; no special service)
+   o Works with tape drives or on-disk files
+   o Nice log files
 
-WWW: http://www.edwinh.org/flexbackup/
+WWW: http://flexbackup.sourceforge.net/

@@ -11,9 +11,9 @@ Please copy this file as
 
 and edit appropriately for your site configuration.
 
- ****************************************************************
- ** Changes have occurred in this file since previous versions **
- ****************************************************************
+ *****************************************************************
+ **   Changes have occurred in this file since version 0.9.8!   **
+ *****************************************************************
 
 Also see %%PREFIX%%/share/doc/flexbackup/flexbackup.README
 for more information on how to use flexbackup (until the man 
