@@ -13,7 +13,7 @@ MASTER_SITES=	http://ircnet.de/home/cru/ed2k_urlslave/dist/
 PKGNAMESUFFIX=	-gui-gtk-urlslave
 DISTNAME=	ed2k_urlslave-v2
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ enabled Perl script for adding ed2k:// links to ed2k GTK+ GUI
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk

@@ -15,7 +15,7 @@ DISTNAME=	ed2k_${PORTVERSION}
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java GUI to eDonkey2000 'core' command line client
 
 RUN_DEPENDS=	donkey:${PORTSDIR}/net/linux-edonkey-core
