@@ -5,12 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	mailscanner
-PORTVERSION=	4.25.14
-PORTREVISION=	1
+PORTNAME=	MailScanner
+PORTVERSION=	4.26.1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sng.ecs.soton.ac.uk/mailscanner/files/4/tar/
-DISTNAME=	MailScanner-4.25-14
+PKGNAMESUFFIX=	-devel
+DISTNAME=	MailScanner-${PORTVERSION:C/\.([0-9]+)$/-\1/}
 
 MAINTAINER=	j.koopmann@seceidos.de
 COMMENT=	Powerful virus/spam scanning framework for Sendmail/Exim
@@ -29,12 +29,10 @@ BUILD_DEPENDS=	\
 RUN_DEPENDS=	${BUILD_DEPENDS} \
 		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash2
 
-CONFLICTS=	MailScanner-devel-*
+CONFLICTS=	MailScanner-[0-9]*
 
 USE_PERL5=	yes
 
-DATADIR=	${PREFIX}/share/MailScanner
-DOCSDIR=	${PREFIX}/share/doc/MailScanner
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 MAN8=		MailScanner.8
