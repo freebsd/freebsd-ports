@@ -4,7 +4,7 @@
 
 XCOMM Imakefile src for Yamsweeper, created by hirofumi
 XCOMM
-XCOMM $Id: Imakefile,v 1.1.1.1 1996/09/21 16:56:46 max Exp $
+XCOMM $Id: Imakefile,v 1.2 1996/09/22 08:56:07 max Exp $
 XCOMM
 
 #include "REVISION"
@@ -32,7 +32,7 @@ INSTALLDIR= $(BINDIR)
 
 #if cppLogUser || cppHighScore
 
-all: yamsweeper
+all:: yamsweeper
 
 #ifdef SetUIDProgramTarget
 	/* X11R[56] */
