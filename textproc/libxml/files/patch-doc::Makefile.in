@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- doc/Makefile.in	2002/04/30 21:49:33	1.1
++++ doc/Makefile.in	2002/04/30 21:51:26
+@@ -106,7 +106,7 @@
+ # The directory containing the source code (if it contains documentation).
+ DOC_SOURCE_DIR = ..
+ 
+-HTML_DIR = $(datadir)/gnome-xml/html
++HTML_DIR = $(prefix)/share/doc
+ 
+ TARGET_DIR = $(HTML_DIR)/$(DOC_MODULE)
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs

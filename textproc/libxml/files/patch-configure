@@ -1,0 +1,13 @@
+
+$FreeBSD$
+
+--- configure	2002/04/30 21:56:31	1.1
++++ configure	2002/04/30 21:56:55
+@@ -5263,6 +5263,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
