@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vcdgear
-PORTVERSION=	1.6b
+PORTVERSION=	1.6d
 CATEGORIES= 	graphics
 MASTER_SITES=	http://www.vcdgear.org/files/
 
@@ -18,9 +18,9 @@ BROKEN=	'Only an ELF binary is distributed'
 .endif
 
 .if ${ARCH} == i386
-DISTNAME=	${PORTNAME}16b_i386_freebsd41
+DISTNAME=	${PORTNAME}16d_i386_freebsd42
 .else if ${ARCH} == alpha
-DISTNAME=	${PORTNAME}16b_alpha_freebsd41
+DISTNAME=	${PORTNAME}16d_alpha_freebsd41
 .endif
 
 NO_BUILD=	true
