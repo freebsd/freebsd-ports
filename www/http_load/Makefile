@@ -12,7 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.acme.com/software/http_load/
 DISTNAME=	${PORTNAME}-04jan2002
 
-#MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiprocessing http performance test client
 
 WRKSRC=		${WRKDIR}/http_load-04jan2002
