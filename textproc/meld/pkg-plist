@@ -10,13 +10,14 @@ share/meld/filediff.py
 share/meld/filediff.pyc
 share/meld/gnomeglade.py
 share/meld/gnomeglade.pyc
-share/meld/meld
 share/meld/meldapp.py
 share/meld/meldapp.pyc
 share/meld/melddoc.py
 share/meld/melddoc.pyc
 share/meld/misc.py
 share/meld/misc.pyc
+share/meld/paths.py
+share/meld/paths.pyc
 share/meld/prefs.py
 share/meld/prefs.pyc
 share/meld/task.py
@@ -25,6 +26,8 @@ share/meld/tree.py
 share/meld/tree.pyc
 share/meld/undo.py
 share/meld/undo.pyc
+share/locale/en_IE/LC_MESSAGES/meld.mo
+share/locale/fr/LC_MESSAGES/meld.mo
 share/meld/glade2/cvsview.glade
 share/meld/glade2/dirdiff.glade
 share/meld/glade2/filediff.glade
@@ -49,9 +52,11 @@ share/meld/glade2/pixmaps/tree-file-normal.png
 share/meld/glade2/pixmaps/tree-folder-changed.png
 share/meld/glade2/pixmaps/tree-folder-new.png
 share/meld/glade2/pixmaps/tree-folder-normal.png
-%%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/stylesheet.css
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%DOCSDIR%%/manual.html
+%%DOCSDIR%%/stylesheet.css
+@dirrm %%DOCSDIR%%
+@unexec (rmdir %D/share/locale/en_IE/LC_MESSAGES && rmdir %D/share/locale/en_IE) 2>/dev/null || true
+@unexec (rmdir %D/share/locale/fr/LC_MESSAGES && rmdir %D/share/locale/fr) 2>/dev/null || true
 @dirrm share/meld/glade2/pixmaps
 @dirrm share/meld/glade2
 @dirrm share/meld
