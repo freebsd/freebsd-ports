@@ -17,7 +17,7 @@ PORTOBJFORMAT=	aout
 
 MAINTAINER=	clive@FreeBSD.org
 
-RUN_DEPENDS=	/usr/lib/compat/aout/libc.so.2.2:${PORTSDIR}/misc/compat22
+RUN_DEPENDS=	/usr/lib/compat/aout/libc.so.3.1:${PORTSDIR}/misc/compat22
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
