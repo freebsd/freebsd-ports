@@ -106,6 +106,7 @@
     SUBDIR += libmalloc
     SUBDIR += libneural
     SUBDIR += libol
+    SUBDIR += libole2
     SUBDIR += libshhmsg
     SUBDIR += libshhopt
     SUBDIR += libsigc++

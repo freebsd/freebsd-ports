@@ -1,0 +1,4 @@
+A support library, containing OLE2 functions, required for MS-Excel
+support in gnumeric, the GNOME spreadsheet.
+
+WWW: http://www.gnome.org/
