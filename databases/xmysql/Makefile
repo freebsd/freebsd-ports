@@ -3,14 +3,14 @@
 # Date created:			Tue Sep  2 15:46:09 CEST 1997
 # Whom:				Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.11 1998/10/20 01:30:49 steve Exp $
+# $Id: Makefile,v 1.12 1998/11/21 09:58:22 andreas Exp $
 #
 
-DISTNAME=	xmysql-1.8
+DISTNAME=	xmysql-1.9
 CATEGORIES=	databases
 MASTER_SITES=	http://www.tcx.se/Contrib/ \
 		http://www.buoy.com/mysql/Contrib/ \
-                http://web.tryc.on.ca/mysql/Contrib/
+		http://web.tryc.on.ca/mysql/Contrib/
 
 MAINTAINER=	andreas@FreeBSD.ORG
 

@@ -1,45 +1,45 @@
---- Makefile.orig	Wed Feb 25 03:19:31 1998
-+++ Makefile	Mon Mar  2 20:09:02 1998
-@@ -31,24 +31,24 @@
+--- Makefile.orig	Fri Oct 23 03:35:51 1998
++++ Makefile	Fri Dec 25 14:53:40 1998
+@@ -31,24 +31,23 @@
  PROGRAM = 	xmysql
  
  # PROGRAM install path
--INSTALLPATH = /usr/local/xmysql-1.8
-+INSTALLPATH = $(PREFIX)/bin
+-INSTALLPATH = /usr/local/xmysql-1.9
++INSTALLPATH = ${PREFIX}/bin
  
  # pixmap location
--XMYSQL_XPMPATH = /usr/local/xmysql-1.8
+-XMYSQL_XPMPATH = /usr/local/xmysql-1.9
 +XMYSQL_XPMPATH = ${X11BASE}/include/X11/pixmaps
  
  # help path
--XMYSQL_HELPPATH = /usr/local/xmysql-1.8
+-XMYSQL_HELPPATH = /usr/local/xmysql-1.9
 +XMYSQL_HELPPATH = ${X11BASE}/lib/X11/xmysql
  
  # Compilation Details
 -CC = gcc
 -STDCFLAGS = -g -c -O2 -Wall -DXMYSQL_XPMPATH=\"$(XMYSQL_XPMPATH)\" -DXMYSQL_HELPPATH=\"$(XMYSQL_HELPPATH)\"
-+#CC = gcc
 +STDCFLAGS = $(CFLAGS) -DXMYSQL_XPMPATH=\"$(XMYSQL_XPMPATH)\" -DXMYSQL_HELPPATH=\"$(XMYSQL_HELPPATH)\"
  STDLFLAGS = 
- MYSQLINC = -I/usr/local/include/mysql
- MYSQLLOAD = -L/usr/local/lib/mysql -lmysqlclient
--XFORMLIBDIR = -L/usr/lib
--XFORMINCDIR = -I/usr/include
+-MYSQLINC = -I/usr/include/mysql
+-MYSQLLOAD = -L/usr/lib/mysql -lmysqlclient
+-XFORMLIBDIR = -L/usr/local/xforms
+-XFORMINCDIR = -I/usr/local/xforms
++MYSQLINC = -I${LOCALBASE}/include/mysql
++MYSQLLOAD = -L${LOCALBASE}/lib/mysql -lmysqlclient
 +XFORMLIBDIR = -L${X11BASE}/lib
 +XFORMINCDIR = -I${X11BASE}/include
  XINC = 
 -XLOAD = -L/usr/X11R6/lib  -lX11
-+XLOAD = -L${X11BASE}/lib -lX11
++XLOAD = -L${X11BASE}/lib  -lX11
  
  # objects needed for the program
  OBJS =  Xmysql.o \
-@@ -56,20 +56,22 @@
- 	Xmysql_cb.o \
+@@ -57,20 +56,23 @@
  	XmysqlDB.o \
  	XmysqlErr.o
-+
-+all: ${PROGRAM}
   
++all: ${PROGRAM}
++
  ${PROGRAM}: $(OBJS)
  	$(CC) -o ${PROGRAM} $(OBJS) $(MYSQLINC) $(XFORMINCDIR) \
  	$(XINC) $(STDLFLAGS) $(MYSQLLOAD) \
@@ -54,11 +54,12 @@
  	rm -f ${PROGRAM} $(OBJS) 
  
  install:
+ 	install -d $(INSTALLPATH) $(XMYSQL_XPMPATH) $(XMYSQL_HELPPATH)
 -	install --mode=711 $(PROGRAM) $(INSTALLPATH)
--	install --mode=744 mysql.xpm $(XPMPATH)
--	install --mode=744 sqlhelp.txt $(HELPPATH) 
--
+-	install --mode=744 mysql.xpm $(XMYSQL_XPMPATH)
+-	install --mode=744 sqlhelp.txt $(XMYSQL_HELPPATH) 
 +	install -s -m 511 $(PROGRAM) $(INSTALLPATH)
 +	install -m 444 mysql.xpm $(XMYSQL_XPMPATH)
 +	install -d -m 755 $(XMYSQL_HELPPATH)
 +	install -m 444 sqlhelp.txt $(XMYSQL_HELPPATH)
+ 
