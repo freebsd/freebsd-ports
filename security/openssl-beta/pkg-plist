@@ -25,6 +25,7 @@ include/cryptall.h
 include/conf.h
 include/buffer.h
 include/bn.h
+include/blowfish.h
 include/asn1_mac.h
 include/x509.h
 lib/libssl.a

@@ -9,15 +9,6 @@
  
  $infile="MINFO";
  
-@@ -156,7 +156,7 @@
- 
- if ($ranlib ne "")
- 	{
--	$ranlib="RANLIB=\$(SRC_D)$o$ranlib";
-+	$ranlib="\$(SRC_D)$o$ranlib";
- 	}
- 
- if ($msdos)
 @@ -244,6 +244,7 @@
  TEST_D=\$(OUT_D)
  LIB_D=\$(OUT_D)
