@@ -1,0 +1,10 @@
+CLOCC Port provides a portable interface to various features absent
+from the ANSI Common Lisp standard, such as sockets, multiprocessing,
+calling external programs, Gray streams etc.
+
+This package contains binaries compiled for CLISP.
+
+WWW: http://clocc.sourceforge.net
+
+-- Henrik Motakef
+   <henrik.motakef@web.de>
