@@ -5,6 +5,7 @@ bin/netscript
 %%PORTDOCS%%share/examples/netscript/gui/gidentd.ruleset
 %%PORTDOCS%%share/examples/netscript/README
 %%PORTDOCS%%share/examples/netscript/dict.ruleset
+%%PORTDOCS%%share/examples/netscript/extern.ruleset
 %%PORTDOCS%%share/examples/netscript/fingerd.ruleset
 %%PORTDOCS%%share/examples/netscript/ftp.ruleset
 %%PORTDOCS%%share/examples/netscript/http.ruleset
