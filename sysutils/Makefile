@@ -213,6 +213,7 @@
     SUBDIR += ipmitool
     SUBDIR += ipsc
     SUBDIR += jailadmin
+    SUBDIR += jailctl
     SUBDIR += jailer
     SUBDIR += jailuser
     SUBDIR += jailutils
