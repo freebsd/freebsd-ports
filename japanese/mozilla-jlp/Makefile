@@ -5,6 +5,8 @@
 # $FreeBSD$
 #
 
+BROKEN=		need to be updated
+
 PORTNAME=	mozilla
 PORTVERSION=	0.7
 PORTEPOCH=	1
