@@ -15,20 +15,20 @@ userid='nobody'
 http_port='3000'
 
 # [IP:]port for serving HTTPS; set to '0' to disable
-# The certificate is %%PREFIX%%/share/ntop/ntop-cert.pem
+# The certificate is %%PREFIX%%/etc/ntop/ntop-cert.pem
 https_port='3001'
 
 # Directory for ntop.access.log
-logdir='%%LOGDIR%%'
+logdir='/var/log'
 
 # Specify any additional arguments here - see ntop(8)
-additional_args='-E'
+additional_args=''
 
 #
 # End of user-configurable variables
 #----------------------------------------------------------------------
 
-args='-d -L'
+args='-d -L -4 --set-pcap-nonblocking'
 
 [ ! -z $interfaces ] && args="$args -i $interfaces"
 [ ! -z $http_port ] && args="$args -w $http_port"
@@ -39,14 +39,17 @@ args='-d -L'
 
 case "$1" in
 start)
-  [ -d $logdir ] && touch ${logdir}/ntop.access.log \
-    && chown $userid ${logdir}/ntop.access.log
-  [ -d %%PREFIX%%/share/ntop ] && cd %%PREFIX%%/share/ntop
-  [ -x %%PREFIX%%/bin/ntop ] && %%PREFIX%%/bin/ntop $args >/dev/null 2>&1 \
-    && echo -n ' ntop'
+  if [ -d $logdir ]; then
+    touch ${logdir}/ntop.access.log
+    chown $userid ${logdir}/ntop.access.log
+  fi
+  if [ -x %%PREFIX%%/bin/ntop ]; then
+    %%PREFIX%%/bin/ntop $args > /dev/null 2>&1 &
+    echo -n ' ntop'
+  fi
   ;;
 stop)
-  killall ntop >/dev/null 2>&1 && echo -n ' ntop'
+  killall ntop > /dev/null 2>&1 && echo -n ' ntop'
   ;;
 *)
   echo "Usage: `basename $0` {start|stop}" >&2

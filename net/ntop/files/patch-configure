@@ -1,79 +1,94 @@
---- configure.orig	Mon Apr 14 18:41:50 2003
-+++ configure	Fri Dec 12 19:11:08 2003
-@@ -8251,9 +8251,9 @@
-             esac
-         fi
-         if test ".gd" != "."; then
--            rc=`(echo $LIBS | grep '\-lgd ' > /dev/null 2> /dev/null; echo $?)`
-+            rc=`(echo $LIBS | grep '\-lgd1 ' > /dev/null 2> /dev/null; echo $?)`
-             if [ $rc -eq 1 ]; then
--                LIBS="$LIBS -lgd"
-+                LIBS="$LIBS -lgd1"
-             fi
-         fi
-     fi
-@@ -8512,9 +8512,9 @@
-             esac
-         fi
-         if test ".glib" != "."; then
--            rc=`(echo $LIBS | grep '\-lglib ' > /dev/null 2> /dev/null; echo $?)`
-+            rc=`(echo $LIBS | grep '\-lglib12 ' > /dev/null 2> /dev/null; echo $?)`
-             if [ $rc -eq 1 ]; then
--                LIBS="$LIBS -lglib"
-+                LIBS="$LIBS -lglib12"
-             fi
-         fi
-     fi
-@@ -14711,7 +14711,7 @@
- 
- 
- 
--for ac_header in sched.h sys/sched.h
-+for ac_header in sched.h
- do
- as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
- if eval "test \"\${$as_ac_Header+set}\" = set"; then
-@@ -17879,7 +17879,7 @@
-   echo $ECHO_N "(cached) $ECHO_C" >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-lgd  $LIBS"
-+LIBS="-lgd1  $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
- /* confdefs.h.  */
-@@ -17932,7 +17932,7 @@
- #define HAVE_LIBGD 1
- _ACEOF
- 
--  LIBS="-lgd $LIBS"
-+  LIBS="-lgd1 $LIBS"
- 
- fi
- 
-@@ -18648,13 +18648,13 @@
+--- configure.orig	Thu Mar  4 02:47:53 2004
++++ configure	Tue Mar  9 18:33:21 2004
+@@ -4897,8 +4897,8 @@
+         echo "*******************************************************************"
+         exit 1
+         ;;
+-    *1\.3\.4\-freebsd\-ports*)
+-        echo "* FreeBSD ports 1.3.4 seems to work, so we will let it slide..."
++    *1\.3\.5\-freebsd\-ports*)
++        echo "* FreeBSD ports 1.3.5 seems to work, so we will let it slide..."
+         echo "*"
+         echo "* Fasten your seat belt and good luck!  If you are injured, the"
+         echo "* development team will disavow any knowledge of your intentions."
+@@ -20276,13 +20276,13 @@
  
  
  
 -echo "$as_me:$LINENO: checking for g_date_julian in -lglib" >&5
 -echo $ECHO_N "checking for g_date_julian in -lglib... $ECHO_C" >&6
-+echo "$as_me:$LINENO: checking for g_date_julian in -lglib12" >&5
-+echo $ECHO_N "checking for g_date_julian in -lglib12... $ECHO_C" >&6
- if test "${ac_cv_lib_glib_g_date_julian+set}" = set; then
+-if test "${ac_cv_lib_glib_g_date_julian+set}" = set; then
++echo "$as_me:$LINENO: checking for g_date_new_julian in -lglib-2.0" >&5
++echo $ECHO_N "checking for g_date_new_julian in -lglib-2.0... $ECHO_C" >&6
++if test "${ac_cv_lib_glib_g_date_new_julian+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lglib  $LIBS"
-+LIBS="-lglib12  $LIBS"
++LIBS="-lglib-2.0  $LIBS"
  cat >conftest.$ac_ext <<_ACEOF
  #line $LINENO "configure"
  /* confdefs.h.  */
-@@ -18707,7 +18707,7 @@
+@@ -20297,11 +20297,11 @@
+ #endif
+ /* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+-char g_date_julian ();
++char g_date_new_julian ();
+ int
+ main ()
+ {
+-g_date_julian ();
++g_date_new_julian ();
+   ;
+   return 0;
+ }
+@@ -20318,24 +20318,24 @@
+   ac_status=$?
+   echo "$as_me:$LINENO: \$? = $ac_status" >&5
+   (exit $ac_status); }; }; then
+-  ac_cv_lib_glib_g_date_julian=yes
++  ac_cv_lib_glib_g_date_new_julian=yes
+ else
+   echo "$as_me: failed program was:" >&5
+ sed 's/^/| /' conftest.$ac_ext >&5
+ 
+-ac_cv_lib_glib_g_date_julian=no
++ac_cv_lib_glib_g_date_new_julian=no
+ fi
+ rm -f conftest.$ac_objext conftest$ac_exeext conftest.$ac_ext
+ LIBS=$ac_check_lib_save_LIBS
+ fi
+-echo "$as_me:$LINENO: result: $ac_cv_lib_glib_g_date_julian" >&5
+-echo "${ECHO_T}$ac_cv_lib_glib_g_date_julian" >&6
+-if test $ac_cv_lib_glib_g_date_julian = yes; then
++echo "$as_me:$LINENO: result: $ac_cv_lib_glib_g_date_new_julian" >&5
++echo "${ECHO_T}$ac_cv_lib_glib_g_date_new_julian" >&6
++if test $ac_cv_lib_glib_g_date_new_julian = yes; then
+   cat >>confdefs.h <<_ACEOF
  #define HAVE_LIBGLIB 1
  _ACEOF
  
 -  LIBS="-lglib $LIBS"
-+  LIBS="-lglib12 $LIBS"
++  LIBS="-lglib-2.0 $LIBS"
  
  fi
  
+@@ -24985,7 +24985,7 @@
+    test ".${ac_cv_header_glibconfig_h}" = ".yes"      &&
+    test ".${ac_cv_header_xmlversion_h}" = ".yes"      &&
+    test ".${ac_cv_header_gdome_h}" = ".yes"           &&
+-   test ".${ac_cv_lib_glib_g_date_julian}" = ".yes"   &&
++   test ".${ac_cv_lib_glib_g_date_new_julian}" = ".yes"   &&
+    test ".${ac_cv_lib_xml2_xmlCheckVersion}" = ".yes" &&
+    test ".${ac_cv_lib_gdome_gdome_di_saveDocToFile}" = ".yes"; then
+     echo "$as_me:$LINENO: result: ok" >&5
+@@ -25004,7 +25004,7 @@
+     echo "*                  gdome.h...${ac_cv_header_gdome_h}"
+     echo "*                  libgdome.so or libgdome.a...${ac_cv_lib_gdome_gdome_di_saveDocToFile}"
+     echo "*                  glib.h...${ac_cv_header_glib_h}"
+-    echo "*                  libglib.so or libglib.a...${ac_cv_lib_glib_g_date_julian}"
++    echo "*                  libglib.so or libglib.a...${ac_cv_lib_glib_g_date_new_julian}"
+     echo "*                  glibconfig.h...${ac_cv_header_glibconfig_h}"
+     echo "*"
+     echo "*           (yes means it was found, no means it was not found)"
