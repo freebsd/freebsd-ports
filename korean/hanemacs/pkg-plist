@@ -8,6 +8,8 @@ bin/etags
 bin/emacsclient
 @exec if [ ! -d %d/share/hanemacs/site-lisp ]; then mkdir -p %D/share/hanemacs/site-lisp; fi
 @exec if [ ! -d %d/share/hanemacs/19.34/site-lisp ]; then mkdir -p %D/share/hanemacs/19.34/site-lisp; fi
+@exec mkdir -p /var/run/emacs/lock ; chmod 1777 /var/run/emacs/lock
+etc/rc.d/emacs.sh
 @comment these two can fail if other ports are installed, no need to
 @comment scare user in that case
 @unexec %D/share/hanemacs/site-lisp 2>/dev/null || true
@@ -133,7 +135,7 @@ share/hanemacs/19.34/etc/COOKIES
 share/hanemacs/19.34/etc/COPYING
 share/hanemacs/19.34/etc/DEBUG
 share/hanemacs/19.34/etc/DISTRIB
-share/hanemacs/19.34/etc/DOC-19.34.1
+share/hanemacs/19.34/etc/DOC-19.34
 share/hanemacs/19.34/etc/FAQ
 share/hanemacs/19.34/etc/FTP
 share/hanemacs/19.34/etc/GNU
