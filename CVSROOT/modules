@@ -1583,6 +1583,7 @@ ecb-emacs20	ports/devel/ecb-emacs20
 ecg2png		ports/graphics/ecg2png
 ecgi		ports/devel/ecgi
 echat		ports/net/echat
+echolinux	ports/comms/echolinux
 echolot		ports/net-mgmt/echolot
 echoping	ports/net/echoping
 eclipse		ports/java/eclipse
