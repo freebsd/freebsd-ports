@@ -6,16 +6,13 @@
 #
 
 PORTNAME=	xpad
-PORTVERSION=	1.13
-PORTREVISION=	2
+PORTVERSION=	1.13.1
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	amyfoub@videotron.ca
 COMMENT=	A virtual note-pad system for your X11 desktop
-
-#WRKSRC=		${WRKDIR}/${DISTNAME}
 
 USE_BZIP2=	yes
 
@@ -27,8 +24,6 @@ CONFIGURE_ARGS=	--prefix=${PREFIX}
 
 MAN1=		xpad.1
 MANCOMPRESSED=	no
-
-BROKEN=	"Does not build with gtk+-2.4"
 
 do-install:
 
