@@ -650,14 +650,12 @@ PKGMESSAGE?=	${PKGDIR}/pkg-message
 
 TMPPLIST?=	${WRKDIR}/.PLIST.mktmp
 
-.if ${OSVERSION} >= 400000
 .for _CATEGORY in ${CATEGORIES}
 PKGCATEGORY?=	${_CATEGORY}
 .endfor
 _PORTDIRNAME=	${.CURDIR:T}
 PORTDIRNAME?=	${_PORTDIRNAME}
 PKGORIGIN?=		${PKGCATEGORY}/${PORTDIRNAME}
-.endif
 
 .if exists(${LOCALBASE}/sbin/pkg_info)
 PKG_CMD?=		${LOCALBASE}/sbin/pkg_create
@@ -802,19 +800,19 @@ EXTRACT_ONLY?=	${_DISTFILES}
 # Documentation
 MAINTAINER?=	ports@FreeBSD.org
 
-.PHONY: maintainer
+.EXEC: maintainer
 .if !target(maintainer)
 maintainer:
 	@${ECHO_CMD} "${MAINTAINER}"
 .endif
 
-.PHONY: check-makefile
+.EXEC: check-makefile
 .if !target(check-makefile)
 check-makefile::
 	@${DO_NADA}
 .endif
 
-.PHONY: check-categories
+.EXEC: check-categories
 .if !defined(CATEGORIES)
 check-categories:
 	@${ECHO_CMD} "${PKGNAME}: Makefile error: CATEGORIES is mandatory."
@@ -847,13 +845,13 @@ check-categories:
 .endfor
 .endif
 
-.PHONY: check-makevars
+.EXEC: check-makevars
 .if !target(check-makevars)
 check-makevars::
 	@${DO_NADA}
 .endif
 
-.PHONY: check-depends
+.EXEC: check-depends
 .if !target(check-depends)
 check-depends:
 	@${DO_NADA}
@@ -1330,7 +1328,7 @@ AUDITURL?=		http://www.FreeBSD.org/ports
 AUDITEXPIRY?=	14
 _EXTRACT_AUDITFILE=	${TAR} -jxOf "${AUDITFILE}" auditfile
 
-.PHONY: update-auditfile
+.EXEC: update-auditfile
 update-auditfile:
 .if !defined(DISABLE_VULNERABILITIES) && !defined(PACKAGE_BUILDING)
 	@audit_expired=${TRUE}; \
@@ -1377,7 +1375,7 @@ update-auditfile:
 	@${DO_NADA}
 .endif
 
-.PHONY: check-vulnerable
+.EXEC: check-vulnerable
 check-vulnerable: update-auditfile
 .if !defined(DISABLE_VULNERABILITIES) && !defined(PACKAGE_BUILDING)
 	@if [ -r "${AUDITFILE}" ]; then \
@@ -1421,10 +1419,10 @@ _OPTIONS_ENV= \
 	OPTIONS_FILE='${OPTIONS_FILE}' \
 	OPTIONS_CMD='${OPTIONS_CMD}'
 
-.PHONY: config
-.PHONY: showconfig
-.PHONY: rmconfig
-.PHONY: menuconfig
+.EXEC: config
+.EXEC: showconfig
+.EXEC: rmconfig
+.EXEC: menuconfig
 
 .if defined(_OPTIONSNG_READ)
 
@@ -1490,7 +1488,7 @@ menuconfig: config
 
 .endif
 
-.PHONY: makeconfig
+.EXEC: makeconfig
 .if !target(makeconfig)
 makeconfig:
 	@${_OPTIONS_ENV}; \
@@ -1498,7 +1496,7 @@ makeconfig:
 	. '${OPTIONS_SH}'
 .endif
 
-.PHONY: config-recursive
+.EXEC: config-recursive
 .if !target(config-recursive)
 config-recursive:
 	@${ECHO_MSG} "===>  ${PKGNAME}: config-recursive is a reserved target."
@@ -1539,7 +1537,7 @@ _FETCHDISTFILES_ENV+=	; DISTINFO_${env}='${DISTINFO${DISTINFO_LABEL:C/^./_&/}_${
 .endfor
 .endif
 
-.PHONY: do-fetch
+.EXEC: do-fetch
 .if !target(do-fetch)
 do-fetch:
 	@${_FETCHDISTFILES_ENV}; \
@@ -1547,13 +1545,13 @@ do-fetch:
 	. '${DISTFILES_SH}'
 .endif
 
-.PHONY: checksum
+.EXEC: checksum
 .if !target(checksum)
 checksum: fetch
 	@${DO_NADA}
 .endif
 
-.PHONY: makesum
+.EXEC: makesum
 .if !target(makesum)
 makesum:
 .if !defined(FETCH_ALL)
@@ -1565,7 +1563,7 @@ makesum:
 .endif
 .endif
 
-.PHONY: master-sites-all
+.EXEC: master-sites-all
 .if !target(master-sites-all)
 master-sites-all:
 	@${_FETCHDISTFILES_ENV}; \
@@ -1573,7 +1571,7 @@ master-sites-all:
 	. '${DISTFILES_SH}'
 .endif
 
-.PHONY: master-sites
+.EXEC: master-sites
 .if !target(master-sites)
 master-sites:
 	@${_FETCHDISTFILES_ENV}; \
@@ -1581,7 +1579,7 @@ master-sites:
 	. '${DISTFILES_SH}'
 .endif
 
-.PHONY: patch-sites-all
+.EXEC: patch-sites-all
 .if !target(patch-sites-all)
 patch-sites-all:
 	@${_FETCHDISTFILES_ENV}; \
@@ -1589,7 +1587,7 @@ patch-sites-all:
 	. '${DISTFILES_SH}'
 .endif
 
-.PHONY: patch-sites
+.EXEC: patch-sites
 .if !target(patch-sites)
 patch-sites:
 	@${_FETCHDISTFILES_ENV}; \
@@ -1597,7 +1595,7 @@ patch-sites:
 	. '${DISTFILES_SH}'
 .endif
 
-.PHONY: migratesum
+.EXEC: migratesum
 .if !target(migratesum)
 migratesum:
 	@${_FETCHDISTFILES_ENV}; \
@@ -1605,7 +1603,7 @@ migratesum:
 	. '${DISTFILES_SH}'
 .endif
 
-.PHONY: migratesum2
+.EXEC: migratesum2
 .if !target(migratesum2)
 migratesum2:
 	@${_FETCHDISTFILES_ENV}; \
@@ -1613,7 +1611,7 @@ migratesum2:
 	. '${DISTFILES_SH}'
 .endif
 
-.PHONY: checkdistsites
+.EXEC: checkdistsites
 .if !target(checkdistsites)
 checkdistsites:
 .if !defined(FETCH_ALL)
@@ -1625,7 +1623,7 @@ checkdistsites:
 .endif
 .endif
 
-.PHONY: checkdistfiles-recursive
+.EXEC: checkdistfiles-recursive
 .if !target(checkdistfiles-recursive)
 checkdistfiles-recursive:
 .if defined(_ONG_REEXEC)
@@ -1659,21 +1657,21 @@ _MISSING_SIZE_SUMMARY=	\
 		} \
 	'
 
-.PHONY: missing-size
+.EXEC: missing-size
 .if !target(missing-size)
 missing-size:
 	@cd ${.CURDIR} && ${MAKE} ${_ONG_MAKEFLAGS} print-missing-files \
 	| ${SETENV} MISSING_MSG="To install ${PKGNAME}, you have to fetch " ${_MISSING_SIZE_SUMMARY}
 .endif
 
-.PHONY: missing-recursive-size
+.EXEC: missing-recursive-size
 .if !target(missing-recursive-size)
 missing-recursive-size:
 	@cd ${.CURDIR} && ${MAKE} ${_ONG_MAKEFLAGS} print-missing-recursive-files \
 	| ${SETENV} MISSING_MSG="To install ${PKGNAME} and its dependencies, you have to fetch " ${_MISSING_SIZE_SUMMARY}
 .endif
 
-.PHONY: print-missing-recursive-files
+.EXEC: print-missing-recursive-files
 .if !target(print-missing-recursive-files)
 print-missing-recursive-files:
 .if defined(_ONG_REEXEC)
@@ -1685,7 +1683,7 @@ print-missing-recursive-files:
 .endif
 .endif
 
-.PHONY: print-missing-files
+.EXEC: print-missing-files
 .if !target(print-missing-files)
 print-missing-files:
 	@${_FETCHDISTFILES_ENV}; \
@@ -1693,7 +1691,7 @@ print-missing-files:
 	. '${DISTFILES_SH}'
 .endif
 
-.PHONY: fetch-list
+.EXEC: fetch-list
 .if !target(fetch-list)
 fetch-list:
 	@${_FETCHDISTFILES_ENV}; \
@@ -1703,7 +1701,7 @@ fetch-list:
 
 # Extract
 
-.PHONY: do-extract
+.EXEC: do-extract
 .if !target(do-extract)
 do-extract:
 	@${RM} -rf ${WRKDIR}
@@ -1830,7 +1828,7 @@ do-configure:
 
 # Build
 
-.PHONY: do-build
+.EXEC: do-build
 .if !target(do-build)
 do-build:
 .if defined(USE_GMAKE)
@@ -1846,7 +1844,7 @@ do-build:
 
 # Check conflicts
 
-.PHONY: check-conflicts
+.EXEC: check-conflicts
 .if !target(check-conflicts)
 check-conflicts:
 .if defined(CONFLICTS) && !defined(DISABLE_CONFLICTS)
@@ -1875,7 +1873,7 @@ check-conflicts:
 
 # Install
 
-.PHONY: do-install
+.EXEC: do-install
 .if !target(do-install)
 do-install:
 .if defined(USE_GMAKE)
@@ -1909,7 +1907,7 @@ check-makefile::
 	@${FALSE}
 .endif
 
-.PHONY: do-package
+.EXEC: do-package
 .if !target(do-package)
 do-package: ${TMPPLIST}
 	@if [ -d ${PACKAGES} ]; then \
@@ -1946,7 +1944,7 @@ do-package: ${TMPPLIST}
 
 # Some support rules for do-package
 
-.PHONY: package-links
+.EXEC: package-links
 .if !target(package-links)
 package-links: delete-package-links
 	@for cat in ${CATEGORIES}; do \
@@ -1969,7 +1967,7 @@ package-links: delete-package-links
 .endif
 .endif
 
-.PHONY: delete-package-links
+.EXEC: delete-package-links
 .if !target(delete-package-links)
 delete-package-links:
 	@for cat in ${CATEGORIES}; do \
@@ -1980,13 +1978,13 @@ delete-package-links:
 .endif
 .endif
 
-.PHONY: delete-package
+.EXEC: delete-package
 .if !target(delete-package)
 delete-package: delete-package-links
 	@${RM} -f ${PKGFILE}
 .endif
 
-.PHONY: delete-package-links-list
+.EXEC: delete-package-links-list
 .if !target(delete-package-links-list)
 delete-package-links-list:
 	@for cat in ${CATEGORIES}; do \
@@ -1997,7 +1995,7 @@ delete-package-links-list:
 .endif
 .endif
 
-.PHONY: delete-package-list
+.EXEC: delete-package-list
 .if !target(delete-package-list)
 delete-package-list: delete-package-links-list
 	@${ECHO_CMD} "[ -f ${PKGFILE} ] && (${ECHO_CMD} deleting ${PKGFILE}; ${RM} -f ${PKGFILE})"
@@ -2005,7 +2003,7 @@ delete-package-list: delete-package-links-list
 
 # Utility targets follow
 
-.PHONY: check-already-installed
+.EXEC: check-already-installed
 .if !target(check-already-installed)
 check-already-installed:
 .if !defined(NO_PKG_REGISTER) && !defined(FORCE_PKG_REGISTER)
@@ -2039,7 +2037,7 @@ check-already-installed:
 .endif
 .endif
 
-.PHONY: check-umask
+.EXEC: check-umask
 .if !target(check-umask)
 check-umask:
 	@if [ `${SH} -c umask` != 0022 ]; then \
@@ -2049,7 +2047,7 @@ check-umask:
 	fi
 .endif
 
-.PHONY: install-mtree
+.EXEC: install-mtree
 .if !target(install-mtree)
 install-mtree:
 	@${MKDIR} ${DESTDIR}${PREFIX}
@@ -2082,7 +2080,7 @@ install-mtree:
 .endif
 .endif
 
-.PHONY: run-ldconfig
+.EXEC: run-ldconfig
 .if !target(run-ldconfig)
 run-ldconfig:
 .if defined(INSTALLS_SHLIB)
@@ -2098,7 +2096,7 @@ run-ldconfig:
 .endif
 .endif
 
-.PHONY: security-check
+.EXEC: security-check
 .if !target(security-check)
 security-check:
 # Scan PLIST for:
@@ -2182,12 +2180,12 @@ _PACKAGE_DEP=	install
 _PACKAGE_SEQ=	package-message pre-package pre-package-script \
 				do-package post-package post-package-script
 
-.PHONY: bootstrap
+.EXEC: bootstrap
 .if !target(bootstrap)
 bootstrap: ${_BOOTSTRAP_SEQ}
 .endif
 
-.PHONY: check-sanity
+.EXEC: check-sanity
 .if !target(check-sanity) && defined(_ONG_REEXEC)
 check-sanity:
 	@cd ${.CURDIR} && ${MAKE} ${_ONG_MAKEFLAGS} ${__softMAKEFLAGS} ${.TARGET}
@@ -2196,7 +2194,7 @@ check-sanity: ${_SANITY_DEP} ${_SANITY_SEQ}
 .endif
 
 # XXX MCL might need to move in loop below?
-.PHONY: fetch
+.EXEC: fetch
 .if !target(fetch) && defined(_ONG_REEXEC)
 fetch:
 	@cd ${.CURDIR} && ${MAKE} ${_ONG_MAKEFLAGS} ${__softMAKEFLAGS} ${.TARGET}
@@ -2209,7 +2207,7 @@ fetch: ${_FETCH_DEP} ${_FETCH_SEQ}
 
 .for target in extract patch configure build install package
 
-.PHONY: ${target}
+.EXEC: ${target}
 .if !target(${target}) && defined(_ONG_REEXEC)
 ${target}:
 	@cd ${.CURDIR} && ${MAKE} ${_ONG_MAKEFLAGS} ${__softMAKEFLAGS} ${.TARGET}
@@ -2267,7 +2265,7 @@ ${${target:U}_COOKIE}::
 .ORDER: ${_INSTALL_DEP} ${_INSTALL_SEQ}
 .ORDER: ${_PACKAGE_DEP} ${_PACKAGE_SEQ}
 
-.PHONY: extract-message patch-message configure-message build-message install-message package-message
+.EXEC: extract-message patch-message configure-message build-message install-message package-message
 extract-message:
 	@${ECHO_MSG} "===>  Extracting for ${PKGNAME}"
 patch-message:
@@ -2286,7 +2284,7 @@ package-message:
 .for stage in pre post
 .for name in fetch extract patch configure build install package
 
-.PHONY: ${stage}-${name} ${stage}-${name}-script
+.EXEC: ${stage}-${name} ${stage}-${name}-script
 
 .if !target(${stage}-${name})
 ${stage}-${name}:
@@ -2305,7 +2303,7 @@ ${stage}-${name}-script:
 .endfor
 
 # Special cases for su
-.PHONY: pre-su-install pre-su-install-script
+.EXEC: pre-su-install pre-su-install-script
 
 .if !target(pre-su-install)
 pre-su-install:
@@ -2318,7 +2316,7 @@ pre-su-install-script:
 .endif
 
 
-.PHONY: pretty-print-www-site
+.EXEC: pretty-print-www-site
 .if !target(pretty-print-www-site)
 pretty-print-www-site:
 	@www_site=$$(cd ${.CURDIR} && ${MAKE} ${_ONG_MAKEFLAGS} ${__softMAKEFLAGS} www-site); \
@@ -2337,7 +2335,7 @@ pretty-print-www-site:
 #
 # Special target to verify patches
 
-.PHONY: checkpatch
+.EXEC: checkpatch
 .if !target(checkpatch)
 checkpatch:
 	@cd ${.CURDIR} && ${MAKE} ${_ONG_MAKEFLAGS} ${__softMAKEFLAGS} PATCH_CHECK_ONLY=yes ${_PATCH_DEP} ${_PATCH_SEQ}
@@ -2347,18 +2345,18 @@ checkpatch:
 #
 # Special target to re-run install
 
-.PHONY: reinstall
+.EXEC: reinstall
 .if !target(reinstall)
 reinstall:
 	@${RM} -f ${INSTALL_COOKIE} ${PACKAGE_COOKIE}
-	@cd ${.CURDIR} && DEPENDS_TARGET="${DEPENDS_TARGET}" DESTDIR=${DESTDIR} ${MAKE} ${_ONG_MAKEFLAGS} install
+	@cd ${.CURDIR} && DEPENDS_TARGET="${DEPENDS_TARGET}" ${MAKE} ${_ONG_MAKEFLAGS} install
 .endif
 
 # Deinstall
 #
 # Special target to remove installation
 
-.PHONY: deinstall
+.EXEC: deinstall
 .if !target(deinstall)
 deinstall:
 	@if [ -n "${DESTDIR}" ]; then \
@@ -2396,7 +2394,7 @@ deinstall:
 #
 # Special target to remove installation of all ports of the same origin
 
-.PHONY: deinstall-all
+.EXEC: deinstall-all
 .if !target(deinstall-all)
 deinstall-all:
 	@if [ -n "${DESTDIR}" ]; then \
@@ -2425,7 +2423,7 @@ deinstall-all:
 
 # Cleaning up
 
-.PHONY: do-clean
+.EXEC: do-clean
 .if !target(do-clean)
 do-clean:
 	@if [ -d ${WRKDIR} ]; then \
@@ -2437,7 +2435,7 @@ do-clean:
 	fi
 .endif
 
-.PHONY: clean
+.EXEC: clean
 .if !target(clean)
 clean:
 .if !defined(NOCLEANDEPENDS)
@@ -2453,19 +2451,19 @@ clean:
 .endif
 .endif
 
-.PHONY: pre-distclean
+.EXEC: pre-distclean
 .if !target(pre-distclean)
 pre-distclean:
 	@${DO_NADA}
 .endif
 
-.PHONY: distclean
+.EXEC: distclean
 .if !target(distclean)
 distclean: pre-distclean clean
 	@cd ${.CURDIR} && ${MAKE} ${_ONG_MAKEFLAGS} delete-distfiles RESTRICTED_FILES='$${_DISTFILES} $${_PATCHFILES}'
 .endif
 
-.PHONY: delete-distfiles
+.EXEC: delete-distfiles
 .if !target(delete-distfiles)
 delete-distfiles:
 	@${ECHO_MSG} "===>  Deleting distfiles for ${PKGNAME}"
@@ -2487,7 +2485,7 @@ delete-distfiles:
 .endif
 .endif
 
-.PHONY: delete-distfiles-list
+.EXEC: delete-distfiles-list
 .if !target(delete-distfiles-list)
 delete-distfiles-list:
 	@${ECHO_CMD} "# ${PKGNAME}"
@@ -2507,7 +2505,7 @@ delete-distfiles-list:
 
 # Generates patches.
 
-.PHONY: update-patches
+.EXEC: update-patches
 .if !target(update-patches)
 update-patches:
 	@toedit=`PATCH_WRKSRC=${PATCH_WRKSRC} \
@@ -2528,7 +2526,7 @@ update-patches:
 
 # Nobody should want to override this unless PKGNAME is simply bogus.
 
-.PHONY: package-name
+.EXEC: package-name
 .if !target(package-name)
 package-name:
 	@${ECHO_CMD} ${PKGNAME}
@@ -2536,9 +2534,9 @@ package-name:
 
 # Build a package but don't check the package cookie
 
-.PHONY: repackage
+.EXEC: repackage
 .if !target(repackage)
-.PHONY: repackage pre-repackage
+.EXEC: repackage pre-repackage
 .ORDER: pre-repackage package
 repackage: pre-repackage package
 
@@ -2549,7 +2547,7 @@ pre-repackage:
 # Build a package but don't check the cookie for installation, also don't
 # install package cookie
 
-.PHONY: package-noinstall
+.EXEC: package-noinstall
 .if !target(package-noinstall)
 package-noinstall:
 	@${MKDIR} ${WRKDIR}
@@ -2563,7 +2561,7 @@ package-noinstall:
 # Dependency checking
 ################################################################
 
-.PHONY: depends
+.EXEC: depends
 .if !target(depends)
 depends: extract-depends patch-depends lib-depends misc-depends fetch-depends build-depends run-depends
 
@@ -2579,7 +2577,7 @@ bootstrap-depends:
 .endif
 
 .for deptype in BOOTSTRAP FETCH EXTRACT PATCH BUILD RUN
-.PHONY: ${deptype:L}-depends
+.EXEC: ${deptype:L}-depends
 .if !target(${deptype:L}-depends)
 ${deptype:L}-depends:
 .if defined(${deptype}_DEPENDS)
@@ -2658,7 +2656,7 @@ ${deptype:L}-depends:
 .endif
 .endfor
 
-.PHONY: lib-depends
+.EXEC: lib-depends
 .if !target(lib-depends)
 lib-depends:
 .if defined(LIB_DEPENDS) && !defined(NO_DEPENDS)
@@ -2717,7 +2715,7 @@ lib-depends:
 .endif
 .endif
 
-.PHONY: misc-depends
+.EXEC: misc-depends
 .if !target(misc-depends)
 misc-depends:
 .if defined(DEPENDS)
@@ -2749,7 +2747,7 @@ misc-depends:
 
 # Dependency lists: both build and runtime, recursive.  Print out directory names.
 
-.PHONY: all-depends-list
+.EXEC: all-depends-list
 all-depends-list:
 .if defined(_ONG_REEXEC)
 	@cd ${.CURDIR} && ${MAKE} ${_ONG_MAKEFLAGS} ${__softMAKEFLAGS} ${.TARGET}
@@ -2779,7 +2777,7 @@ ALL-DEPENDS-LIST= \
 	done | ${SORT} -u
 .endif
 
-.PHONY: clean-depends
+.EXEC: clean-depends
 .if !target(clean-depends)
 clean-depends:
 .if defined(_ONG_REEXEC)
@@ -2791,7 +2789,7 @@ clean-depends:
 .endif
 .endif
 
-.PHONY: deinstall-depends
+.EXEC: deinstall-depends
 .if !target(deinstall-depends)
 deinstall-depends:
 .if defined(_ONG_REEXEC)
@@ -2803,7 +2801,7 @@ deinstall-depends:
 .endif
 .endif
 
-.PHONY: fetch-recursive
+.EXEC: fetch-recursive
 .if !target(fetch-recursive)
 fetch-recursive:
 .if defined(_ONG_REEXEC)
@@ -2816,7 +2814,7 @@ fetch-recursive:
 .endif
 .endif
 
-.PHONY: fetch-recursive-list
+.EXEC: fetch-recursive-list
 .if !target(fetch-recursive-list)
 fetch-recursive-list:
 .if defined(_ONG_REEXEC)
@@ -2828,7 +2826,7 @@ fetch-recursive-list:
 .endif
 .endif
 
-.PHONY: fetch-required
+.EXEC: fetch-required
 .if !target(fetch-required)
 fetch-required: fetch
 	@${ECHO_MSG} "===> Fetching all required distfiles for ${PKGNAME} and dependencies"
@@ -2857,7 +2855,7 @@ fetch-required: fetch
 .endfor
 .endif
 
-.PHONY: fetch-required-list
+.EXEC: fetch-required-list
 .if !target(fetch-required-list)
 fetch-required-list: fetch-list
 .for deptype in EXTRACT PATCH FETCH BUILD RUN
@@ -2885,7 +2883,7 @@ fetch-required-list: fetch-list
 .endfor
 .endif
 
-.PHONY: checksum-recursive
+.EXEC: checksum-recursive
 .if !target(checksum-recursive)
 checksum-recursive:
 .if defined(_ONG_REEXEC)
@@ -2900,7 +2898,7 @@ checksum-recursive:
 
 # Dependency lists: build and runtime.  Print out directory names.
 
-.PHONY: build-depends-list
+.EXEC: build-depends-list
 build-depends-list:
 .if defined(EXTRACT_DEPENDS) || defined(PATCH_DEPENDS) || defined(FETCH_DEPENDS) || defined(BUILD_DEPENDS) || defined(LIB_DEPENDS) || defined(DEPENDS)
 	@${BUILD-DEPENDS-LIST}
@@ -2915,7 +2913,7 @@ BUILD-DEPENDS-LIST= \
 		fi; \
 	done | ${SORT} -u
 
-.PHONY: run-depends-list
+.EXEC: run-depends-list
 run-depends-list:
 .if defined(LIB_DEPENDS) || defined(RUN_DEPENDS) || defined(DEPENDS)
 	@${RUN-DEPENDS-LIST}
@@ -2933,7 +2931,7 @@ RUN-DEPENDS-LIST= \
 # Package (recursive runtime) dependency list.  Print out both directory names
 # and package names.
 
-.PHONY: package-depends-list
+.EXEC: package-depends-list
 package-depends-list:
 .if defined(CHILD_DEPENDS) || defined(LIB_DEPENDS) || defined(RUN_DEPENDS) || defined(DEPENDS)
 	@${PACKAGE-DEPENDS-LIST}
@@ -2975,7 +2973,7 @@ PACKAGE-DEPENDS-LIST?= \
 
 # Print out package names.
 
-.PHONY: package-depends
+.EXEC: package-depends
 package-depends:
 .if ${OSVERSION} >= 460102 || exists(${LOCALBASE}/sbin/pkg_info)
 	@${PACKAGE-DEPENDS-LIST} | ${AWK} '{print $$1":"$$3}'
@@ -2985,7 +2983,7 @@ package-depends:
 
 # Build packages for port and dependencies
 
-.PHONY: package-recursive
+.EXEC: package-recursive
 package-recursive: package
 .if defined(_ONG_REEXEC)
 	@cd ${.CURDIR} && ${MAKE} ${_ONG_MAKEFLAGS} ${__softMAKEFLAGS} ${.TARGET}
@@ -3006,7 +3004,7 @@ package-recursive: package
 # distribution-name|port-path|installation-prefix|comment| \
 #  description-file|maintainer|categories|build deps|run deps|www site
 
-.PHONY: describe
+.EXEC: describe
 .if !target(describe)
 describe:
 .if defined(_ONG_REEXEC)
@@ -3018,7 +3016,7 @@ describe:
 .else
 	@${ECHO_CMD} -n '** No Description'
 .endif
-	@${PERL5} -e ' \
+	@perl -e ' \
 		if ( -f q{${DESCR}} ) { \
 			print q{|${DESCR}}; \
 		} else { \
@@ -3076,7 +3074,7 @@ describe:
 .endif
 .endif
 
-.PHONY: www-site
+.EXEC: www-site
 .if !target(www-site)
 www-site:
 .if exists(${DESCR})
@@ -3086,12 +3084,12 @@ www-site:
 .endif
 .endif
 
-.PHONY: readmes
+.EXEC: readmes
 .if !target(readmes)
 readmes:	readme
 .endif
 
-.PHONY: readme
+.EXEC: readme
 .if !target(readme)
 readme:
 	@${RM} -f ${.CURDIR}/README.html
@@ -3123,7 +3121,7 @@ ${.CURDIR}/README.html:
 
 # The following two targets require an up-to-date INDEX in ${PORTSDIR}
 
-.PHONY: pretty-print-build-depends-list
+.EXEC: pretty-print-build-depends-list
 .if !target(pretty-print-build-depends-list)
 pretty-print-build-depends-list:
 .if defined(EXTRACT_DEPENDS) || defined(PATCH_DEPENDS) || \
@@ -3135,7 +3133,7 @@ pretty-print-build-depends-list:
 .endif
 .endif
 
-.PHONY: pretty-print-run-depends-list
+.EXEC: pretty-print-run-depends-list
 .if !target(pretty-print-run-depends-list)
 pretty-print-run-depends-list:
 .if defined(RUN_DEPENDS) || defined(LIB_DEPENDS) || defined(DEPENDS)
@@ -3148,7 +3146,7 @@ pretty-print-run-depends-list:
 # Generate packing list.  Also tests to make sure all required package
 # files exist.
 
-.PHONY: generate-plist
+.EXEC: generate-plist
 .if !target(generate-plist)
 generate-plist:
 	@${ECHO_MSG} "===>   Generating temporary packing list"
@@ -3219,7 +3217,7 @@ generate-plist:
 ${TMPPLIST}:
 	@cd ${.CURDIR} && ${MAKE} ${_ONG_MAKEFLAGS} ${__softMAKEFLAGS} generate-plist
 
-.PHONY: add-plist-docs
+.EXEC: add-plist-docs
 .if !target(add-plist-docs)
 add-plist-docs:
 .if defined(PORTDOCS)
@@ -3239,7 +3237,7 @@ add-plist-docs:
 .endif
 .endif
 
-.PHONY: add-plist-info
+.EXEC: add-plist-info
 .if !target(add-plist-info)
 add-plist-info:
 # Process GNU INFO files at package install/deinstall time
@@ -3258,7 +3256,7 @@ add-plist-info:
 .endif
 
 # Compress (or uncompress) and symlink manpages.
-.PHONY: compress-man
+.EXEC: compress-man
 .if !target(compress-man)
 compress-man:
 .if defined(_MANPAGES) || defined(_MLINKS)
@@ -3291,7 +3289,7 @@ compress-man:
 # Also, make sure that an installed port is recognized correctly in
 # accordance to the @pkgdep directive in the packing lists
 
-.PHONY: fake-pkg
+.EXEC: fake-pkg
 .if !target(fake-pkg)
 fake-pkg:
 .if !defined(NO_PKG_REGISTER)
@@ -3348,13 +3346,13 @@ fake-pkg:
 # one they can override this.  This is just to catch people who've gotten into
 # the habit of typing `make depend all install' as a matter of course.
 #
-.PHONY: depend
+.EXEC: depend
 .if !target(depend)
 depend:
 .endif
 
 # Same goes for tags
-.PHONY: tags
+.EXEC: tags
 .if !target(tags)
 tags:
 .endif
