@@ -5,10 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	ldapmodule
-PORTVERSION=	1.9
+PORTVERSION=	1.10alpha3
 CATEGORIES=	net
-MASTER_SITES=	http://archive.csee.uq.edu.au/~leonard/dc-prj/ldapmodule/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-alpha
+MASTER_SITES=	ftp://python-ldap.sourceforge.net/pub/python-ldap/
+DISTNAME=	python-ldap-${PORTVERSION}-src
 
 MAINTAINER=	dirk.meyer@dinoex.sub.org
 
@@ -18,6 +18,6 @@ RUN_DEPENDS=	python1.5:${PORTSDIR}/lang/python15
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-ldap=${LOCALBASE}
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${DISTNAME:S=-src==}
 
 .include <bsd.port.mk>
