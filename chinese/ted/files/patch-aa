@@ -1,5 +1,5 @@
 --- Makefile.orig	Wed Jan  7 14:03:22 1998
-+++ Makefile	Mon Jan 19 20:50:24 1998
++++ Makefile	Sat Jan 24 22:58:08 1998
 @@ -1,5 +1,5 @@
 -CHINESE=0
 -TEDDIR=/usr/local/lib/Ted
@@ -38,8 +38,9 @@
  	$(CC) $(CFLAGS) ctags.c -o $@
  	strip $@
  install:
+-	cp ted ref ctags /usr/local/bin
 +	install -c -s -o bin -g bin -m 0755 ted /usr/X11R6/bin
- 	cp ted ref ctags /usr/local/bin
++#	cp ted ref ctags /usr/local/bin
  	if [ ! -d $(TEDDIR) ]; then mkdir $(TEDDIR); fi
 -	cp tedrc tedrc.vi tedrc.grep ted.help ted.filevisit $(TEDDIR)
 -cli_xcin.o:
