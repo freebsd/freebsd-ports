@@ -1,16 +1,5 @@
---- examples/Makefile.in~	Wed Dec 11 15:42:53 1996
-+++ examples/Makefile.in	Wed Dec 11 15:41:41 1996
-@@ -28,7 +28,7 @@
- 		$(CC) $(LDFLAGS) $(OBJS) $(LIBS) -o $(PROGRAM)
- 
- demo.h demo.dbd: demo.ddl
--		../util/ddlp -a4 -f demo
-+		env LD_LIBRARY_PATH=../src ../util/ddlp -a4 -f demo
- 
- lint:
- 		lint -u $(DEFINES) $(SRCS)
---- util/Makefile.in~	Sun May 21 11:47:41 1995
-+++ util/Makefile.in	Thu Oct 15 17:09:03 1998
+--- util/Makefile.in.orig	Mon May 22 01:47:41 1995
++++ util/Makefile.in	Sat Nov 18 03:18:42 2000
 @@ -8,11 +8,10 @@
  CC		= @cc@
  CFLAGS		= @cflags@
@@ -25,7 +14,7 @@
  SHELL		= /bin/sh
  PROGRAMS	= ddlp dbdview tyexport tyimport # tybackup tyrestore
  MADESRCS	= ddl.c exp.c imp.c
-@@ -74,11 +73,11 @@
+@@ -74,7 +73,6 @@
  
  install:	$(PROGRAMS)
  		cp $(PROGRAMS) $(DESTBIN)
@@ -33,8 +22,3 @@
  		cd $(DESTBIN) && strip $(PROGRAMS)
  		cd $(DESTBIN) && chmod 755 $(PROGRAMS)
  		cd $(DESTBIN) && chown $(DESTOWN) $(PROGRAMS)
- 		cd $(DESTBIN) && chgrp $(DESTGRP) $(PROGRAMS)
-+		install -c -m 644 ../man/ddlp.1 ${PREFIX}/man/man1
- 
- uninstall:
- 		cd $(DESTBIN) && rm -f $(PROGRAMS)

@@ -1,0 +1,11 @@
+--- examples/Makefile.in.orig	Mon May 22 01:47:11 1995
++++ examples/Makefile.in	Sat Nov 18 02:11:19 2000
+@@ -28,7 +28,7 @@
+ 		$(CC) $(LDFLAGS) $(OBJS) $(LIBS) -o $(PROGRAM)
+ 
+ demo.h demo.dbd: demo.ddl
+-		../util/ddlp -a4 -f demo
++		env LD_LIBRARY_PATH=../src ../util/ddlp -a4 -f demo
+ 
+ lint:
+ 		lint -u $(DEFINES) $(SRCS)
