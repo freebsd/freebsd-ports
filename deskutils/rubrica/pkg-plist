@@ -1,15 +1,14 @@
 bin/rubrica
 etc/gconf/schemas/rubrica.schemas
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/examples.rub
 share/gnome/applications/rubrica.desktop
-%%PORTDOCS%%share/doc/rubrica/AUTHORS
-%%PORTDOCS%%share/doc/rubrica/COPYING
-%%PORTDOCS%%share/doc/rubrica/CREDITS
-%%PORTDOCS%%share/doc/rubrica/ChangeLog
-%%PORTDOCS%%share/doc/rubrica/INSTALL
-%%PORTDOCS%%share/doc/rubrica/NEWS
-%%PORTDOCS%%share/doc/rubrica/README
-%%PORTDOCS%%share/doc/rubrica/TODO
-%%PORTDOCS%%share/doc/rubrica/examples.rub
 share/gnome/pixmaps/rubrica/about.png
 share/gnome/pixmaps/rubrica/accounts.png
 share/gnome/pixmaps/rubrica/add-menu.png
@@ -37,6 +36,7 @@ share/gnome/pixmaps/rubrica/export-menu.png
 share/gnome/pixmaps/rubrica/export.png
 share/gnome/pixmaps/rubrica/favorites.png
 share/gnome/pixmaps/rubrica/fax.png
+share/gnome/pixmaps/rubrica/few.png
 share/gnome/pixmaps/rubrica/file-info.png
 share/gnome/pixmaps/rubrica/file.png
 share/gnome/pixmaps/rubrica/filesett.png
@@ -49,6 +49,7 @@ share/gnome/pixmaps/rubrica/general.png
 share/gnome/pixmaps/rubrica/genius.png
 share/gnome/pixmaps/rubrica/heart.png
 share/gnome/pixmaps/rubrica/help.png
+share/gnome/pixmaps/rubrica/hi.png
 share/gnome/pixmaps/rubrica/hobby.png
 share/gnome/pixmaps/rubrica/holiday-cards.png
 share/gnome/pixmaps/rubrica/holiday.png
@@ -68,6 +69,8 @@ share/gnome/pixmaps/rubrica/mod-menu.png
 share/gnome/pixmaps/rubrica/mod.png
 share/gnome/pixmaps/rubrica/money.png
 share/gnome/pixmaps/rubrica/multimedia.png
+share/gnome/pixmaps/rubrica/none.png
+share/gnome/pixmaps/rubrica/normal.png
 share/gnome/pixmaps/rubrica/notes.png
 share/gnome/pixmaps/rubrica/other.png
 share/gnome/pixmaps/rubrica/penguin.png
@@ -95,6 +98,7 @@ share/gnome/pixmaps/rubrica/testa.png
 share/gnome/pixmaps/rubrica/time.png
 share/gnome/pixmaps/rubrica/translation-info.png
 share/gnome/pixmaps/rubrica/translation.png
+share/gnome/pixmaps/rubrica/very-hi.png
 share/gnome/pixmaps/rubrica/view-column.png
 share/gnome/pixmaps/rubrica/view-info.png
 share/gnome/pixmaps/rubrica/view.png
@@ -109,18 +113,18 @@ share/gnome/rubrica/stylesheet/rub2html.xsl
 share/gnome/rubrica/stylesheet/rub2rub.xsl
 share/gnome/rubrica/stylesheet/rub2txt.xsl
 share/gnome/rubrica/stylesheet/rub2vcard.xsl
-share/gnome/services/rubrica.desktop
-share/locale/br/LC_MESSAGES/rubrica.mo
+share/locale/bg/LC_MESSAGES/rubrica.mo
 share/locale/de/LC_MESSAGES/rubrica.mo
 share/locale/es/LC_MESSAGES/rubrica.mo
 share/locale/fr/LC_MESSAGES/rubrica.mo
 share/locale/it/LC_MESSAGES/rubrica.mo
 share/locale/ja/LC_MESSAGES/rubrica.mo
+share/locale/pt_BR/LC_MESSAGES/rubrica.mo
 share/locale/ru/LC_MESSAGES/rubrica.mo
-@dirrm share/gnome/services
+share/locale/sk/LC_MESSAGES/rubrica.mo
 @dirrm share/gnome/rubrica/stylesheet
 @dirrm share/gnome/rubrica/script
 @dirrm share/gnome/rubrica/nautilus-script
 @dirrm share/gnome/rubrica
 @dirrm share/gnome/pixmaps/rubrica
-%%PORTDOCS%%@dirrm share/doc/rubrica
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
