@@ -1,0 +1,19 @@
+*** Makefile.orig	Sat Aug 12 18:46:05 2000
+--- Makefile	Sat Aug 12 18:48:26 2000
+***************
+*** 0 ****
+--- 1,14 ----
++ DESTDIR=$(PREFIX)/lib/X11/fonts
++  
++ all:
++ 	@echo nothing to be done for \`$@\'
++ 	@echo this is an install-only port.
++  
++ install:
++ 	[ -d $(DESTDIR) ] || mkdir $(DESTDIR)
++ 	(cd nucleus && tar -cf - nucleus) | (cd ${DESTDIR}; tar -xf -)
++ 	mkdir -p ${DESTDIR}/mozilla
++ 	cd nucleus/mozilla-src && make
++ 	(cd nucleus/mozilla-src && tar -cf - *.pcf) | (cd ${DESTDIR}/mozilla && tar -xf -)
++ 	cd ${DESTDIR}/mozilla && gzip *.pcf
++ 	cd ${DESTDIR}/mozilla && mkfontdir .
