@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	portmanager
-PORTVERSION=	0.2.5
+PORTVERSION=	0.2.6
 PORTREVISION=	0
 #-----------------------------------------
 #for local use, remove before submitting PR
@@ -18,13 +18,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	portmanager
 
 MAINTAINER=		reso3w83@verizon.net
-COMMENT=		FreeBSD port management software
-
-.if defined(WITH_DEBUG)
-BUILD_DEPENDS=	autoheader259:${PORTSDIR}/devel/autoconf259	\
-	aclocal19:${PORTSDIR}/devel/automake19	\
-	libtoolize15:${PORTSDIR}/devel/libtool15
-.endif
+COMMENT=		FreeBSD usr/ports status and safe usr/ports update
 
 MAN1=			portmanager.1
 MAN3=			libMG.3 		\
@@ -38,41 +32,45 @@ MAN3=			libMG.3 		\
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+
+#CONFIGURE_ARGS=
+#
+#  WITH_DEBUG disbled in 0.2.6, intend to reinstate it
+#  in 0.2.7
+#.if defined(WITH_DEBUG)
+#CONFIGURE_ARGS= 	--with-debug=yes
+#.endif
+
+CONFIGURE_ARGS=		--with-prefix=${PREFIX} 		\
+			--with-bindir=/bin			\
+			--with-etcdir=${PREFIX}/etc/portmanager	\
+			--with-pkgdbdir=${PKG_DBDIR}		\
+			--with-portsdir=${PORTSDIR}		\
+			--with-sharedir=${DATADIR}		\
+			--with-tempdir=/tmp
+
 INSTALLS_SHLIB=		yes
-USE_REINPLACE=		yes
-# Need INSTALL_TARGET to install /usr/local/etc/portmanager/pm-020.conf.SAMPLE
-INSTALL_TARGET=         install info
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g ;	\
-	s|%%VERSION%%|${PORTVERSION}_${PORTREVISION}|g ;	\
-	s|%%PORTSDIR%%|${PORTSDIR}|g ;	\
-	s|%%PKG_DBDIR%%|${PKG_DBDIR}|g' ${WRKSRC}/libPMGR/src/libPMGR.h
-
-# Only way to get WITH_DEBUG build dependencies handled prior to reconfiguring
-# is to use post-configure <sigh>
-post-configure:
-.if defined(WITH_DEBUG)
-	@${REINPLACE_CMD} -e 's|# BDECFLAGS=|BDECFLAGS=|g ;	\
-	s|# CFLAGS=|CFLAGS=|g ; 				\
-	s|# AC_SUBST(CFLAGS)|AC_SUBST(CFLAGS)|g' ${WRKSRC}/configure.ac
-	cd ${WRKSRC};sh rePackage.sh;sh configure
-.endif
+# Need INSTALL_TARGET to install ${PREFIX}/etc/portmanager/pm-020.conf.SAMPLE
+INSTALL_TARGET=		install info
 
 post-install:
 	@${ECHO}	"***********************************************************************"
-	@${ECHO}	"* to compile with debug support try:                                  *"
+	@${ECHO}	"* portmanager                                                         *"
+	@${ECHO}	"***********************************************************************"
 	@${ECHO}	"*                                                                     *"
-	@${ECHO}	"*   make WITH_DEBUG=yes install clean                                 *"
-	@${ECHO}	"*                                                                     *"
-	@${ECHO}	"* to upgrade ports example:                                           *"
+	@${ECHO}	"* upgrade ports example:                                              *"
 	@${ECHO}	"*                                                                     *"
 	@${ECHO}	"* portmanager -u -ip editors/nedit editors/openoffice                 *"
 	@${ECHO}	"*                                                                     *"
-	@${ECHO}	"* upgrades evrything except nedit, open office and their dependencies *"
+	@${ECHO}	"* upgrades everything except nedit,open office and their dependencies *"
+	@${ECHO}	"*                                                                     *"
+	@${ECHO}	"* portmanager -sl will show you leaf ports, these are safe to remove  *"
+	@${ECHO}	"*                                                                     *"
+	@${ECHO}	"* portmanager -slid will let you safely remove leaf ports             *"
 	@${ECHO}	"*                                                                     *"
 	@${ECHO}	"* see man portmanager(1) for more information                         *"
 	@${ECHO}	"*                                                                     *"
+	@${ECHO}	"***********************************************************************"
 	@${ECHO}	"* all feedback is welcome, send to:                                   *"
 	@${ECHO}	"* Michael C. Shultz reso3w83@verizon.net                              *"
 	@${ECHO}	"***********************************************************************"
