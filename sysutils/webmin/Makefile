@@ -7,7 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	1.080
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/updates/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -29,7 +29,8 @@ WEBMIN_MODULES=	adsl-client-1.080-1.wbm.gz \
 		net-1.080-7.wbm.gz \
 		proc-1.080-1.wbm.gz \
 		software-1.080-1.wbm.gz \
-		updown-1.080-1.wbm.gz
+		updown-1.080-1.wbm.gz \
+		useradmin-1.080-1.wbm.gz
 
 WEBMIN_THEMES=
 
