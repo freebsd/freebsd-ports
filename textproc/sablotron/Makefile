@@ -16,7 +16,7 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	skv@protey.ru
 
-LIB_DEPENDS=	iconv.1:${PORTSDIR}/converters/iconv \
+LIB_DEPENDS=	iconv.2:${PORTSDIR}/converters/iconv \
 		expat.2:${PORTSDIR}/textproc/expat2
 
 INSTALLS_SHLIB=	yes
