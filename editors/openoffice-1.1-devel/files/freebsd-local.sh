@@ -2,7 +2,10 @@
 #
 # $FreeBSD $
 
-OOHOME="$HOME/OpenOffice.org%%FRELEASE_NR%%"
+if [ -e $HOME/.sversionrc ]; then
+	OOHOME=`grep %%FRELEASE_NR%% $HOME/.sversionrc \
+		| sed -e 's/.*file:\/\///'`
+fi
 
 save_common_xcu() {
 sed 's/^X//' > $OOHOME/tmp/Common.xcu << 'END-of-Common.xcu'
@@ -58,7 +61,7 @@ fi
 #
 # Create soffice.cfg if it does not exist.
 #
-if [ -e $OOHOME/setup ]; then
+if [ ! -z $OOHOME ] && [ -e $OOHOME/setup ]; then
 	if [ ! -e $OOHOME/user/config/soffice.cfg ]; then
 		touch $OOHOME/user/config/soffice.cfg
 	fi
@@ -67,7 +70,7 @@ fi
 #
 # Detect installed mozilla
 #
-if [ ! -e $OOHOME/user/registry/data/org/openoffice/Office/Common.xcu ]; then
+if [ ! -z $OOHOME ] && [ ! -e $OOHOME/user/registry/data/org/openoffice/Office/Common.xcu ]; then
 	mkdir -p $OOHOME/tmp;
 	save_common_xcu;
 fi
