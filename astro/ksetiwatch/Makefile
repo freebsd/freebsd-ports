@@ -5,26 +5,24 @@
 # $FreeBSD$
 
 PORTNAME=	ksetiwatch
-PORTVERSION=	2.5.0
-PORTREVISION=	1
+PORTVERSION=	2.6.1
 CATEGORIES=	astro kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ksetiwatch
-DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 
-MAINTAINER=	sverrir@hem.passagen.se
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A monitoring tool for the seti@home client
-
-BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/-1//}
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
-GNU_CONFIGURE=		yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 
-pre-configure:
-	cd ${WRKSRC}; autoconf
+post-patch:
+	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/x11/kde3/Makefile.kde"
+.include <bsd.port.post.mk>
