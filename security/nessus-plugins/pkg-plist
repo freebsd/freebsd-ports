@@ -1,8 +1,8 @@
 bin/nessus-build
 etc/nessus/accounts.txt
 etc/nessus/queso.conf
-lib/nessus/plugins/3com_switches.nasl
 lib/nessus/plugins/3com_hub.nes
+lib/nessus/plugins/3com_switches.nasl
 lib/nessus/plugins/AnyForm.nasl
 lib/nessus/plugins/BEA_weblogic_Reveal_Script_Code.nasl
 lib/nessus/plugins/BEA_weblogic_Reveal_Script_Code_2.nasl
