@@ -1,17 +1,17 @@
 # New ports collection makefile for:    xscreensaver
-# Version required:     2.07
+# Version required:     2.11
 # Date created:         10 July 1995
 # Whom:                 asami
 #
-# $Id: Makefile,v 1.3 1996/12/25 04:42:51 peter Exp $
+# $Id: Makefile,v 1.4 1997/09/09 05:42:49 asami Exp $
 #
 
-DISTNAME=	xscreensaver-2.07
+DISTNAME=	xscreensaver-2.11
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
 
-MAINTAINER=	asami@FreeBSD.ORG
+MAINTAINER=	jseger@FreeBSD.ORG
 
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 
@@ -20,7 +20,7 @@ CONFIGURE_ARGS=	--without-shadow --without-motif
 USE_X11=	yes
 MAN1=		attraction.1 blitspin.1 bouboule.1 braid.1 bubbles.1 \
 		decayscreen.1 deco.1 drift.1 flag.1 flame.1 forest.1 \
-		fract.1 galaxy.1 goop.1 grav.1 greynetic.1 halo.1 helix.1 \
+		galaxy.1 goop.1 grav.1 greynetic.1 halo.1 helix.1 \
 		hopalong.1 hypercube.1 ifs.1 imsmap.1 julia.1  \
 		kaleidescope.1 laser.1 lightning.1 lisa.1 lmorph.1 maze.1 \
 		moire.1 munch.1 noseguy.1 pedal.1 penrose.1 pyro.1 qix.1 \
