@@ -8,12 +8,7 @@
 PORTNAME=	gnupg
 PORTVERSION=	1.2.1
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/%SUBDIR%/ \
-		http://ftp.planetmirror.com/pub/gnupg/%SUBDIR%/ \
-		http://sunsite.dk/pub/security/gcrypt/%SUBDIR%/ \
-		ftp://pgp.iijlab.net/pub/%SUBDIR%/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/gnupg/&,} \
-		ftp://ftp.demon.nl/pub/mirrors/gnupg/%SUBDIR%/
+MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	gnupg
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.sig
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
