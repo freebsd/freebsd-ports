@@ -4,6 +4,6 @@ sender's email address is in good standing by performing an SMTP callback
 to the MX server responsible for the sender's domain. This milter is not
 intended to be a complete solution to the SPAM plague and so it should be
 used in conjunction with other tools such as DNS blacklists and content
-filters.
+filters. Milter-sender also supports grey-listing.
 
 WWW: http://www.snert.com/Software/milter-sender/
