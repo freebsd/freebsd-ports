@@ -179,6 +179,7 @@ abclock		ports/x11-clocks/abclock
 abook		ports/mail/abook
 abs		ports/math/abs
 ac		src/usr.sbin/ac
+ac-archive	ports/devel/ac-archive
 ac3dec		ports/audio/ac3dec
 accessx		ports/x11/accessx
 accton		src/usr.sbin/accton
