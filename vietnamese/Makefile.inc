@@ -1,4 +1,4 @@
 # $FreeBSD$
 #
 
-PKGNAMEPREFIX=	vi-
+PKGNAMEPREFIX?=	vi-

@@ -1,4 +1,4 @@
 # $FreeBSD$
 #
 
-PKGNAMEPREFIX=	ko-
+PKGNAMEPREFIX?=	ko-
