@@ -6187,6 +6187,7 @@ p5-XML-Schematron	ports/textproc/p5-XML-Schematron
 p5-XML-Simple	ports/textproc/p5-XML-Simple
 p5-XML-SimpleObject	ports/textproc/p5-XML-SimpleObject
 p5-XML-SimpleObject-LibXML	ports/textproc/p5-XML-SimpleObject-LibXML
+p5-XML-Smart	ports/textproc/p5-XML-Smart
 p5-XML-Stream	ports/textproc/p5-XML-Stream
 p5-XML-TreeBuilder	ports/textproc/p5-XML-TreeBuilder
 p5-XML-Twig	ports/textproc/p5-XML-Twig
