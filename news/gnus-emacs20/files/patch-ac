@@ -1,6 +1,6 @@
---- texi/message.texi~	Thu Jan  4 08:16:17 2001
-+++ texi/message.texi	Mon Jan 29 13:32:59 2001
-@@ -1,11 +1,11 @@
+--- texi/message.texi.orig	Thu Jan  4 08:16:17 2001
++++ texi/message.texi	Sat Feb 10 14:10:28 2001
+@@ -1,13 +1,13 @@
  \input texinfo                  @c -*-texinfo-*-
  
 -@setfilename message
@@ -12,5 +12,8 @@
 -@dircategory Editors
 +@dircategory The Emacs editor and associated tools
  @direntry
- * Message: (message).   Mail and news composition mode that goes with Gnus.
+-* Message: (message).   Mail and news composition mode that goes with Gnus.
++* Message: (message).		Mail and news composition mode that goes with Gnus.
  @end direntry
+ @iftex
+ @finalout

@@ -7,6 +7,7 @@
 
 PORTNAME=	gnus
 PORTVERSION=	5.8.8
+PORTREVISION=	1
 CATEGORIES=	news mail elisp
 MASTER_SITES=	ftp://ftp.gnus.org/pub/gnus/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
