@@ -961,6 +961,7 @@ jdk%%JDK_VERSION%%/src.jar
 @dirrm jdk%%JDK_VERSION%%/jre/lib/i386/classic
 @dirrm jdk%%JDK_VERSION%%/jre/lib/i386
 @dirrm jdk%%JDK_VERSION%%/jre/lib/fonts
+@dirrm jdk%%JDK_VERSION%%/jre/lib/ext
 @dirrm jdk%%JDK_VERSION%%/jre/lib/cmm
 @dirrm jdk%%JDK_VERSION%%/jre/lib/audio
 @dirrm jdk%%JDK_VERSION%%/jre/lib
@@ -973,7 +974,6 @@ jdk%%JDK_VERSION%%/src.jar
 @dirrm jdk%%JDK_VERSION%%/include-old/freebsd
 @dirrm jdk%%JDK_VERSION%%/include-old
 @dirrm jdk%%JDK_VERSION%%/include
-@dirrm jdk%%JDK_VERSION%%/ext
 @dirrm jdk%%JDK_VERSION%%/demo/sound/src
 @dirrm jdk%%JDK_VERSION%%/demo/sound/media
 @dirrm jdk%%JDK_VERSION%%/demo/sound
