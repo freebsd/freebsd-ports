@@ -18,8 +18,10 @@ MAINTAINER=	freebsd-ia64@FreeBSD.org
 BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm2cpio
 
 ONLY_FOR_ARCHS=	i386
-NO_PACKAGE=	'Must be downloaded direct from HP via web interface'
-NO_CDROM=	'Must be downloaded direct from HP via web interface'
+
+NOTICE=		 -- please manually download ${DISTNAME}${EXTRACT_SUFX} from the HP site and put it in ${DISTDIR} first.
+NO_PACKAGE=	${NOTICE}
+NO_CDROM=	${NOTICE}
 
 EXTRACT_CMD=		rpm2cpio
 EXTRACT_BEFORE_ARGS=
@@ -49,4 +51,10 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/usr/doc/ski-0.943l/* ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
+IGNORE=	${NOTICE}
+.endif
+
+.include <bsd.port.post.mk>
