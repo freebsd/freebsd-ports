@@ -7,6 +7,7 @@
 
 PORTNAME=	clamav
 PORTVERSION=	${DISTVERSION:S/-rc//g:S/-/./g}
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	clamav
@@ -23,11 +24,12 @@ RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
 		arc:${PORTSDIR}/archivers/arc \
 		unzip:${PORTSDIR}/archivers/unzip
 
-DISTVERSION=	0.70-rc
+DISTVERSION=	0.70
 
 CLAMAVUSER?=	clamav
 CLAMAVGROUP?=	clamav
 
+OPTIONS=	MILTER "Compile the milter interface" off
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -79,7 +81,8 @@ SED_CONF=	-E -e 's|^\#?(Example)$$|\#\1|' \
 		-e 's|^\#?(ScanMail)$$|\1|' \
 		-e 's|^\#?(DatabaseDirectory) .*$$|\1 ${DATADIR}|' \
 		-e 's|^\#?(DatabaseOwner) .*$$|\1 ${CLAMAVUSER}|' \
-		-e 's|^\#?(UpdateLogFile) .*$$|\1 /var/log/clamav/freshclam.log|'
+		-e 's|^\#?(UpdateLogFile) .*$$|\1 /var/log/clamav/freshclam.log|' \
+		-e 's|^\#?(FixStaleSocket)$$|\1|'
 
 PLIST_SUB+=	CLAMAVUSER=${CLAMAVUSER} \
 		CLAMAVGROUP=${CLAMAVGROUP}
