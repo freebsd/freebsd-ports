@@ -7,7 +7,8 @@
 
 PORTNAME=	tktable
 PORTVERSION=	2.8
-CATEGORIES=	x11-toolkits tk83
+PORTREVISION=	1
+CATEGORIES=	x11-toolkits tk84
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME:S/tk/Tk/}${PORTVERSION}
@@ -15,7 +16,7 @@ DISTNAME=	${PORTNAME:S/tk/Tk/}${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A table/matrix widget extension to tk/tcl
 
-LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
+LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
@@ -26,7 +27,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-x=${X11BASE}
 USE_REINPLACE=	yes
 
-TK_VER=		8.3
+TK_VER=		8.4
 PLIST_SUB=	DESTDIR=lib/${DISTNAME}
 
 post-patch:
