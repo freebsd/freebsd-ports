@@ -30,7 +30,7 @@ PLIST_SUB=	EMACS_VER=${EMACS_VER} EMACS_ARCH=${MACHINE_ARCH}--freebsd \
 
 DOCDIR=		share/doc/emacs20-dl-wnn6
 EMACS_VER=	20.5
-EMACSDL_DIR=	${PORTSDIR}/editors/emacs20-dl
+EMACSDL_DIR=	${.CURDIR}/../../editors/emacs20-dl
 EMACSDL_SRCDIR=	${WRKDIRPREFIX}${EMACSDL_DIR}/work/emacs-${EMACS_VER}
 # hack to allow parallel build to work
 .if defined(PARALLEL_PACKAGE_BUILD)

@@ -32,7 +32,7 @@ PLIST_SUB=	EMACS_VER=${EMACS_VER} EMACS_ARCH=${MACHINE_ARCH}--freebsd \
 
 # ports variables
 EMACS_VER=	20.5
-EMACSDL_DIR=	${PORTSDIR}/editors/emacs20-dl
+EMACSDL_DIR=	${.CURDIR}/../../editors/emacs20-dl
 EMACSDL_SRCDIR=	${WRKDIRPREFIX}${EMACSDL_DIR}/work/emacs-${EMACS_VER}/src
 APEL_DEPENDS=	${PREFIX}/share/emacs/${EMACS_VER}/site-lisp/emu/emu.el
 LISPDIR=	share/emacs/site-lisp
