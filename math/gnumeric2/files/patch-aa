@@ -1,0 +1,20 @@
+--- configure.orig	Wed Sep 30 13:51:50 1998
++++ configure	Fri Oct 23 00:46:12 1998
+@@ -930,12 +930,12 @@
+ 
+ 
+ 	if test "$no_gnome_config" = "yes"; then
+-          echo $ac_n "checking for gnomeConf.sh file in $gnome_prefix""... $ac_c" 1>&6
+-echo "configure:935: checking for gnomeConf.sh file in $gnome_prefix" >&5
+-	  if test -f $gnome_prefix/gnomeConf.sh; then
++          echo $ac_n "checking for gnomeConf.sh file in $prefix/share/gnome""... $ac_c" 1>&6
++echo "configure:935: checking for gnomeConf.sh file in $prefix/share/gnome" >&5
++	  if test -f $prefix/share/gnome/gnomeConf.sh; then
+ 	    echo "$ac_t""found" 1>&6
+-	    echo "loading gnome configuration from $gnome_prefix/gnomeConf.sh"
+-	    . $gnome_prefix/gnomeConf.sh
++	    echo "loading gnome configuration from $prefix/share/gnome/gnomeConf.sh"
++	    . $prefix/share/gnome/gnomeConf.sh
+ 	    
+ 	  else
+ 	    echo "$ac_t""not found" 1>&6

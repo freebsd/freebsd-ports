@@ -1,0 +1,15 @@
+bin/gnumeric
+share/gnome/apps/Productivity/gnumeric.desktop
+share/gnome/gnumeric/plugins/libsample.a
+share/gnome/gnumeric/plugins/libsample.la
+share/gnome/gnumeric/plugins/libsample.so
+share/gnome/gnumeric/plugins/libsample.so.0
+share/locale/es/LC_MESSAGES/gnumeric.mo
+share/locale/es@mx/LC_MESSAGES/gnumeric.mo
+share/locale/fr/LC_MESSAGES/gnumeric.mo
+share/locale/hu/LC_MESSAGES/gnumeric.mo
+share/locale/it/LC_MESSAGES/gnumeric.mo
+share/locale/ko/LC_MESSAGES/gnumeric.mo
+share/locale/pt/LC_MESSAGES/gnumeric.mo
+@dirrm share/gnome/gnumeric/plugins
+@dirrm share/gnome/gnumeric
