@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	relaydb
-PORTVERSION=	1.6
-PORTREVISION=	1
+PORTVERSION=	1.7
 CATEGORIES=	mail
 MASTER_SITES=	http://www.benzedrine.cx/
 
@@ -20,6 +19,5 @@ MANCOMPRESSED=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/relaydb ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/relaydb.8.gz ${MAN8PREFIX}/man/man8
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
