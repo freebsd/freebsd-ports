@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	sam@inf.enst.fr
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Project Revision Control System
 
 USE_GMAKE=	yes
