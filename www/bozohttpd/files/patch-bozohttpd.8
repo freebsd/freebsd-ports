@@ -1,0 +1,22 @@
+--- bozohttpd.8.orig	Fri Aug 23 07:43:44 2002
++++ bozohttpd.8	Tue Sep  3 10:23:12 2002
+@@ -197,8 +197,8 @@
+ .Xr inetd.conf 5
+ entry would be:
+ .Bd -literal
+-www stream tcp  nowait:600 httpd /usr/pkg/libexec/bozohttpd bozohttpd /var/www
+-www stream tcp6 nowait:600 httpd /usr/pkg/libexec/bozohttpd bozohttpd /var/www
++www stream tcp  nowait:600 httpd /@@PREFIX@@/libexec/bozohttpd bozohttpd /var/www
++www stream tcp6 nowait:600 httpd /@@PREFIX@@/libexec/bozohttpd bozohttpd /var/www
+ .Ed
+ .Pp
+ This would serve web pages from
+@@ -218,7 +218,7 @@
+ .Pp
+ To configure set of virtual hosts, one would use an entry like:
+ .Bd -literal
+-www stream tcp  nowait:600 httpd /usr/pkg/libexec/bozohttpd bozohttpd -v /var/vroot /var/www
++www stream tcp  nowait:600 httpd /@@PREFIX@@/libexec/bozohttpd bozohttpd -v /var/vroot /var/www
+ .Ed
+ .Pp
+ and inside

@@ -1,0 +1,14 @@
+*** Makefile.orig	Fri Aug 10 07:43:15 2001
+--- Makefile	Thu Mar 21 21:16:46 2002
+***************
+*** 3,8 ****
+--- 3,11 ----
+  PROG=	bozohttpd
+  MAN=	bozohttpd.8
+  
++ BINDIR=$(PREFIX)/libexec
++ MANDIR=$(PREFIX)/man/man
++ 
+  .include <bsd.prog.mk>
+  
+  check:
