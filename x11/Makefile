@@ -81,6 +81,7 @@
     SUBDIR += tkgoodstuff
     SUBDIR += tycoon
     SUBDIR += wdm
+    SUBDIR += wmappl
     SUBDIR += wmbutton
     SUBDIR += wmcliphist
     SUBDIR += wmfstatus
