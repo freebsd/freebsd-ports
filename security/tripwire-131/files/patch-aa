@@ -22,8 +22,8 @@
   #endif
   */
   
-! #define CONFIG_PATH     "/tmp/genek"
-! #define DATABASE_PATH   "/tmp/genek"
+! #define CONFIG_PATH     "/usr/local/bin/tw"
+! #define DATABASE_PATH   "/var/tripwire"
   
   /******* name of Tripwire files **************************************
    *

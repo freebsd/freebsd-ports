@@ -1,0 +1,13 @@
+--- src/Makefile.orig	Tue May  4 01:31:00 1999
++++ src/Makefile	Thu May 11 19:49:21 2000
+@@ -104,8 +104,8 @@
+ 	$(CC) $(CFLAGS) -c $<
+ 
+ install:	tripwire
+-	$(INSTALL) -m 555 tripwire $(DESTDIR)
+-	$(INSTALL) -m 555 siggen $(DESTDIR) 
++	$(INSTALL) -f noschg -s -m 555 tripwire $(DESTDIR)
++	$(INSTALL) -f noschg -s -m 555 siggen $(DESTDIR)
+ 
+ clean:
+ 	-rm -f $(OFILES) config.lex.c config.pre.c y.tab.c lex.yy.c help.c \

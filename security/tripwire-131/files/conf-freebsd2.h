@@ -1,4 +1,4 @@
-/* $FreeBSD$ */
+/* $Id: conf-freebsd2.h,v 1.1.1.1 1997/04/01 04:44:00 jdp Exp $ */
 
 /*
  * conf-freebsd2.h
