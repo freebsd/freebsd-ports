@@ -1549,6 +1549,7 @@ fpr		src/usr.bin/fpr
 fr-ispell	ports/french/ispell
 fr-kde2-i18n	ports/french/kde2-i18n
 fr-koffice-i18n	ports/french/koffice-i18n
+fr-linux-netscape6	ports/french/linux-netscape6
 fr-staroffice52	ports/french/staroffice52
 fr-xtel		ports/french/xtel
 fractorama	ports/graphics/fractorama
