@@ -1,0 +1,13 @@
+*** gd.c.orig	Sun Mar 17 19:28:12 1996
+--- gd.c	Sun Mar 17 19:29:10 1996
+***************
+*** 1,4 ****
+--- 1,8 ----
++ #ifdef __FreeBSD__
++ #include <stdlib.h>
++ #else
+  #include <malloc.h>
++ #endif
+  #include <stdio.h>
+  #include <math.h>
+  #include <string.h>
