@@ -1,0 +1,22 @@
+--- configure.orig	Thu Jul  6 20:06:10 2000
++++ configure	Thu Oct  5 15:33:45 2000
+@@ -65,8 +65,8 @@
+ 			;;
+ 		*"--force-libpcap")
+ 			FORCE_LIBPCAP="-DFORCE_LIBPCAP"
+-			PCAP="PCAP=libpcap/libpcap.a"
+-			PCAP_INCLUDE="-I./libpcap"
++			PCAP="PCAP=-lpcap"
++			PCAP_INCLUDE=""
+ 			;;
+ 		*"--dont-use-proc")
+ 			HAVE_PROC=""
+@@ -92,7 +92,7 @@
+ 			-e s/@FORCE_LIBPCAP@/"$FORCE_LIBPCAP"/g \
+ 			-e s/@HAVE_PROC@/"$HAVE_PROC"/g \
+ 			-e s^@PCAP@^"$PCAP"^g \
+-			-e s^@PCAP_INCLUDE@^"$PCAP_INCLUDE$"^g \
++			-e s^@PCAP_INCLUDE@^"$PCAP_INCLUDE"^g \
+ 			-e s^@MANPATH@^"$INSTALL_MANPATH"^g \
+ 			> Makefile
+ 

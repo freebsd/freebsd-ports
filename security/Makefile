@@ -31,6 +31,7 @@
     SUBDIR += gpasman
     SUBDIR += gtkportscan
     SUBDIR += heimdal
+    SUBDIR += hping
     SUBDIR += ident2
     SUBDIR += identify
     SUBDIR += inflex

@@ -1,0 +1,13 @@
+--- Makefile.in.orig	Thu Oct  5 15:22:25 2000
++++ Makefile.in	Thu Oct  5 15:25:28 2000
+@@ -6,8 +6,8 @@
+ # $date: Sun Jul 25 17:56:15 MET DST 1999$ 
+ # $rev: 3$ 
+ 
+-CC= gcc
+-CCOPT= -O2 -Wall @PCAP_INCLUDE@
++CC?= gcc
++CCOPT= $(CFLAGS) -Wall @PCAP_INCLUDE@
+ DEBUG= -g
+ #uncomment the following if you need libpcap based build under linux
+ #(not raccomanded)
