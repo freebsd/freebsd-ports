@@ -1,12 +1,13 @@
 %%RUBY_SITEARCHLIBDIR%%/gpgme_n.so
 %%RUBY_SITELIBDIR%%/gpgme.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/genkey.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/keylist.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/roundtrip.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sign.rb
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/GPGME.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/GPGME.src/M000001.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/GPGME/GpgmeCtx.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/GPGME/GpgmeCtx.src/M000009.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/GPGME/GpgmeCtx.src/M000010.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/GPGME/GpgmeCtx.src/M000011.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/GPGME/GpgmeCtx.src/M000012.html
@@ -31,8 +32,8 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/GPGME/GpgmeCtx.src/M000031.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/GPGME/GpgmeCtx.src/M000032.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/GPGME/GpgmeCtx.src/M000033.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/GPGME/GpgmeCtx.src/M000034.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/GPGME/GpgmeData.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/GPGME/GpgmeData.src/M000001.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/GPGME/GpgmeData.src/M000002.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/GPGME/GpgmeData.src/M000003.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/GPGME/GpgmeData.src/M000004.html
@@ -40,16 +41,17 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/GPGME/GpgmeData.src/M000006.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/GPGME/GpgmeData.src/M000007.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/GPGME/GpgmeData.src/M000008.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/GPGME/GpgmeData.src/M000009.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/GPGME/GpgmeError.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/GPGME/GpgmeError.src/M000034.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/GPGME/GpgmeError.src/M000035.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/GPGME/GpgmeError.src/M000036.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/GPGME/GpgmeKey.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/GPGME/GpgmeKey.src/M000039.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/GPGME/GpgmeKey.src/M000040.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/GPGME/GpgmeKey.src/M000041.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/GPGME/GpgmeRecipients.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/GPGME/GpgmeRecipients.src/M000036.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/GPGME/GpgmeRecipients.src/M000037.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/GPGME/GpgmeRecipients.src/M000038.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/GPGME/GpgmeRecipients.src/M000039.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/created.rid
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/lib/gpgme_rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/fr_class_index.html
@@ -64,6 +66,7 @@
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/GPGME/GpgmeError.src
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/GPGME/GpgmeData.src
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/GPGME/GpgmeCtx.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/GPGME.src
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/GPGME
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc
