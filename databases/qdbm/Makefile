@@ -7,6 +7,7 @@
 
 PORTNAME=	qdbm
 PORTVERSION=	1.7.32
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://qdbm.sourceforge.net/ \
 #		${MASTER_SITE_SOURCEFORGE}
@@ -15,6 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	fuyuki@nigredo.org
 COMMENT=	Quick Database Manager
 
+USE_SIZE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-zlib
 MAKE_ARGS=	RELCFLAGS="${CFLAGS}" \
