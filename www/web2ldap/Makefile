@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.web2ldap.de/download/ \
 
 MAINTAINER=	oddbjorn@tricknology.org
 
+BROKEN=		"Incorrect plist"
+
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_ldap.so:${PORTSDIR}/net/py-ldap2
 
 NO_BUILD=	yes
