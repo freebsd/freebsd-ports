@@ -1520,6 +1520,7 @@ find_ddos	ports/security/find_ddos
 finder		ports/x11/finder
 findutils	ports/misc/findutils
 finfo		ports/sysutils/finfo
+finger_mysql	ports/security/finger_mysql
 firebird	ports/databases/firebird
 firebird-devel	ports/databases/firebird-devel
 firedns		ports/net/firedns
