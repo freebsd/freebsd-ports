@@ -291,12 +291,12 @@
     SUBDIR += libgnetwork
     SUBDIR += libicq
     SUBDIR += libicq2000
+    SUBDIR += libmms
     SUBDIR += libnet
     SUBDIR += libnet-devel
     SUBDIR += libnetdude
     SUBDIR += libnids
     SUBDIR += libnss-mysql
-    SUBDIR += libmms
     SUBDIR += libosip
     SUBDIR += libosip2
     SUBDIR += libpcap

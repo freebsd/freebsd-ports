@@ -325,8 +325,8 @@
     SUBDIR += mod_throttle
     SUBDIR += mod_ticket
     SUBDIR += mod_tidy
-    SUBDIR += mod_transform
     SUBDIR += mod_traf_thief
+    SUBDIR += mod_transform
     SUBDIR += mod_trigger
     SUBDIR += mod_tsunami
     SUBDIR += mod_uid
