@@ -127,14 +127,6 @@ static void _pthread_initialize(void)
 	/* This turns on thread safe behaviour in libc when we link with it */
 	__isthreaded = 1;
 
-	dllockinit (NULL,
-		    lock_create,
-		    rlock_acquire,
-		    wlock_acquire,
-		    lock_release,
-		    lock_destroy,
-		    NULL);
-
 #if defined(NEWLIBC)
 	/* Set up pointers for lib/libc/stdtime/localtime.c */
 	lcl_mutex       = &_lcl_mutex;
