@@ -12,19 +12,16 @@ MASTER_SITES=	$(MASTER_SITE_KDE)
 MASTER_SITE_SUBDIR= stable/1.1.2/distribution/tar/generic/source/bz2
 DISTNAME=	kdesupport-1.1.2
 
-MAINTAINER=	se@freebsd.org
+MAINTAINER=	will@FreeBSD.org
 
 USE_BZIP2=	yes
 
 USE_QT=		yes
 USE_LIBTOOL=	yes
-CONFIGURE_ARGS=	"--prefix=$(PREFIX)" \
-		"--without-libjpeg" \
-		"--without-libgif" \
-		"--without-libgdbm" \
-		"--without-libuulib"
-CONFIGURE_ENV=	CXXFLAGS="$(CFLAGS)" \
-		INSTALL_SCRIPT="install -c -m 555"
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--without-libjpeg --without-libgif \
+		--without-libgdbm --without-libuulib
+CONFIGURE_ENV=	CXXFLAGS="$(CFLAGS)" INSTALL_SCRIPT="install -c -m 555"
 
 post-install:
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib

@@ -11,7 +11,7 @@ CATEGORIES=	graphics kde
 MASTER_SITES=	$(MASTER_SITE_KDE)
 MASTER_SITE_SUBDIR= stable/1.1.2/distribution/tar/generic/source/bz2
 
-MAINTAINER=	se@freebsd.org
+MAINTAINER=	will@FreeBSD.org
 
 LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
