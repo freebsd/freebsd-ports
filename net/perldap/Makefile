@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	perldap
-PORTVERSION=	1.2.2
+PORTVERSION=	1.4
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.mozilla.org/pub/directory/perldap/
-EXTRACT_SUFX=	.tgz
+EXTRACT_SUFX=	.tar.gz
 
 MAINTAINER=	paul@FreeBSD.org
 
 LIB_DEPENDS=	ldap.1:${PORTSDIR}/net/ldapsdk
 
-WRKSRC=		${WRKDIR}/perldap
+WRKSRC=		${WRKDIR}/perldap-1.4
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Mozilla::LDAP::Conn.3 \
 			Mozilla::LDAP::LDIF.3 \
