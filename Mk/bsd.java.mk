@@ -159,7 +159,7 @@ SUB_LIST+=		JAVASHAREDIR="${JAVASHAREDIR}" \
 				JAVALIBDIR="${JAVALIBDIR}"
 
 # The complete list of Java versions, os and vendors supported.
-__JAVA_VERSION_LIST=	1.1 1.2 1.3 1.4
+__JAVA_VERSION_LIST=	1.1 1.2 1.3 1.4 1.5
 _JAVA_VERSION_LIST=		${__JAVA_VERSION_LIST} ${__JAVA_VERSION_LIST:S/$/+/}
 _JAVA_OS_LIST=			native linux
 _JAVA_VENDOR_LIST=		freebsd bsdjava sun blackdown ibm
@@ -176,6 +176,8 @@ _JAVA_PORT_NATIVE_BSDJAVA_JDK_1_3_INFO=		PORT=java/jdk13					HOME=${LOCALBASE}/j
 											VERSION=1.3.1	OS=native	VENDOR=bsdjava
 _JAVA_PORT_NATIVE_BSDJAVA_JDK_1_4_INFO=		PORT=java/jdk14					HOME=${LOCALBASE}/jdk1.4.2 \
 											VERSION=1.4.2	OS=native	VENDOR=bsdjava
+_JAVA_PORT_NATIVE_BSDJAVA_JDK_1_5_INFO=		PORT=java/jdk15					HOME=${LOCALBASE}/jdk1.5.0 \
+											VERSION=1.5.0	OS=native	VENDOR=bsdjava
 _JAVA_PORT_LINUX_BLACKDOWN_JDK_1_2_INFO=	PORT=java/linux-blackdown-jdk12	HOME=${LOCALBASE}/linux-blackdown-jdk1.2.2 \
 											VERSION=1.2.2	OS=linux	VENDOR=blackdown
 _JAVA_PORT_LINUX_BLACKDOWN_JDK_1_3_INFO=	PORT=java/linux-blackdown-jdk13	HOME=${LOCALBASE}/linux-blackdown-jdk1.3.1 \
@@ -213,7 +215,8 @@ _JAVA_PREFERRED_PORTS+=	JAVA_PORT_NATIVE_BSDJAVA_JDK_1_1
 
 
 # List all JDK ports
-__JAVA_PORTS_ALL=	JAVA_PORT_NATIVE_BSDJAVA_JDK_1_4 \
+__JAVA_PORTS_ALL=	JAVA_PORT_NATIVE_BSDJAVA_JDK_1_5 \
+					JAVA_PORT_NATIVE_BSDJAVA_JDK_1_4 \
 					JAVA_PORT_NATIVE_BSDJAVA_JDK_1_3 \
 					JAVA_PORT_NATIVE_FREEBSD_JDK_1_3 \
 					JAVA_PORT_NATIVE_BSDJAVA_JDK_1_2 \
@@ -345,7 +348,7 @@ JAVA_RUN=	jre
 .		undef _JAVA_PORTS_INSTALLED
 .		undef _JAVA_PORTS_POSSIBLE
 .		if defined(JAVA_VERSION)
-_JAVA_VERSION=	${JAVA_VERSION:S/1.1+/1.1 1.2 1.3 1.4/:S/1.2+/1.2 1.3 1.4/:S/1.3+/1.3 1.4/:S/1.4+/1.4/}
+_JAVA_VERSION=	${JAVA_VERSION:S/1.1+/1.1 1.2 1.3 1.4 1.5/:S/1.2+/1.2 1.3 1.4 1.5/:S/1.3+/1.3 1.4 1.5/:S/1.4+/1.4 1.5/:S/1.5+/1.5/}
 .		else
 _JAVA_VERSION=	${__JAVA_VERSION_LIST}
 .		endif
