@@ -57,7 +57,7 @@ LIBXMDIR=	${X11BASE}
 # Otherwise, default to 3.3
 .if ${OSVERSION} >= 500035 && ${OSVERSION} <= 500038
 USE_GCC=3.1
-.elif ${OSVERSION} < 501103
+.elif ${OSVERSION} > 500038 && ${OSVERSION} < 501103
 USE_GCC=3.2
 .else
 USE_GCC=3.3
