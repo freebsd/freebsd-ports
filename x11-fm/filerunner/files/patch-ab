@@ -1,0 +1,28 @@
+*** fr.orig	Thu Sep 18 22:55:04 1997
+--- fr	Thu Sep 18 22:57:08 1997
+*************** CheckCmdLineArgs
+*** 3125,3135 ****
+  
+  FindLibfr
+  
+  # Load patches for 8.0...
+! if {$tk_patchLevel == "8.0"} {
+!   #puts "Buggy 8.0 menu.tcl file, applying patch"
+!   source $glob(lib_fr)/menu_80_patch.tcl
+! }
+  
+  set auto_path [linsert $auto_path 0 $glob(lib_fr) ]
+  
+--- 3125,3136 ----
+  
+  FindLibfr
+  
++ # FreeBSD fix the bug already..
+  # Load patches for 8.0...
+! #if {$tk_patchLevel == "8.0"} {
+! #  #puts "Buggy 8.0 menu.tcl file, applying patch"
+! #  source $glob(lib_fr)/menu_80_patch.tcl
+! #}
+  
+  set auto_path [linsert $auto_path 0 $glob(lib_fr) ]
+  

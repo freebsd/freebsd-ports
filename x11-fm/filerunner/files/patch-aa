@@ -1,18 +1,15 @@
---- ./Makefiles/Makefile.freebsd.org	Mon May 19 23:59:20 1997
-+++ ./Makefiles/Makefile.freebsd	Tue May 20 00:01:05 1997
-@@ -2,11 +2,11 @@
+--- Makefiles/Makefile.freebsd.orig	Fri Aug  8 21:56:08 1997
++++ Makefiles/Makefile.freebsd	Fri Sep 19 08:59:04 1997
+@@ -2,9 +2,9 @@
  # It has been tested under FreeBSD 2.1.5.
  
  # Change this if you have this stuff somewhere else.
--TCLINC = /usr/local/lib/tcl7.6
--TKINC  = /usr/local/lib/tk4.2
+-TCLINC = /usr/local/lib/tcl8.0
+-TKINC  = /usr/local/lib/tk8.0
 -X11INC = /usr/X11/include
-+TCLINC = /usr/local/include/tcl7.6
-+TKINC  = /usr/local/include/tk4.2
-+X11INC = /usr/X11R6/include
++TCLINC = ${PREFIX}/include/tcl8.0
++TKINC  = ${PREFIX}/include/tk8.0
++X11INC = ${X11BASE}/include
  
--CFLAGS = -Wall -fPIC -O3 -I$(TCLINC) -I$(TKINC) -I$(X11INC)
-+CFLAGS += -Wall -fpic -DPIC -I$(TCLINC) -I$(TKINC) -I$(X11INC)
- 
- CC = gcc
+ CFLAGS = -Wall -fPIC -O3 -I$(TCLINC) -I$(TKINC) -I$(X11INC)
  
