@@ -3,7 +3,7 @@
 # Date created:		29 June 1998
 # Whom:			Dom Mitchell <dom@myrddin.demon.co.uk>
 #
-# $Id: Makefile,v 1.2 1998/07/01 23:59:40 asami Exp $
+# $Id: Makefile,v 1.3 1998/07/03 23:21:56 steve Exp $
 #
 
 DISTNAME=	glade-0.3
@@ -12,7 +12,7 @@ MASTER_SITES=   http://www.comp.lancs.ac.uk/~damon/builder/
 
 MAINTAINER=     dom@myrddin.demon.co.uk
 
-LIB_DEPENDS=	gtk\\.1\\.4:${PORTSDIR}/x11/gtk
+LIB_DEPENDS=	gtk\\.1\\.5:${PORTSDIR}/x11/gtk
 
 GNU_CONFIGURE=	yes
 USE_X11=	yes
