@@ -13,5 +13,6 @@ sbin/udpsvd
 %%PORTDOCS%%%%DOCSDIR%%/ipsvd.7.html
 %%PORTDOCS%%%%DOCSDIR%%/tcpsvd.8.html
 %%PORTDOCS%%%%DOCSDIR%%/udpsvd.8.html
+%%PORTDOCS%%%%DOCSDIR%%/upgrade.html
 %%PORTDOCS%%%%DOCSDIR%%/usedietlibc.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
