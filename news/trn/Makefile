@@ -10,7 +10,7 @@ PORTVERSION=	3.6
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.uu.net/networking/news/readers/trn/
 
-MAINTAINER=	smace@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	munpack:${PORTSDIR}/converters/mpack
 
