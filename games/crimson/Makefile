@@ -5,13 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	crimson
-PORTVERSION=	0.2.3
+PORTVERSION=	0.2.5
 CATEGORIES=	games
 MASTER_SITES=	http://www.lanipage.de/jens/crimson/
 PKGNAMESUFFIX=	-fields
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	jan@jungnickel.com
+MAINTAINER=	Jan.Stocker@t-online.de
 
 LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12 \
 		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
