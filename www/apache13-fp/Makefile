@@ -19,6 +19,8 @@ DISTFILES=	${APACHE} powerlogo.gif:powerlogo createdwFP.gif:fplogo
 MAINTAINER=	freebsd-maintainer@westbend.net
 COMMENT=	The Apache webserver with MS Frontpage Module
 
+BROKEN=		"Checksum mismatch"
+
 #PATCH_SITES=	${MASTER_SITE_APACHE_HTTPD}
 #PATCH_SITE_SUBDIR=	patches/apply_to_${PORTVERSION}/
 #PATCHFILES=
