@@ -1,0 +1,5 @@
+include/spf.h
+lib/libspf.a
+lib/libspf.so
+lib/libspf.so.%%LIBSPF_REV%%
+bin/spfquery-%%PORTNAME%%
