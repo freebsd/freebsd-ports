@@ -8,7 +8,8 @@
 PORTNAME=	bulksms
 PORTVERSION=	0.1
 CATEGORIES=	comms python
-MASTER_SITES=	http://botanicus.net/dw.old/dl/
+MASTER_SITES=	http://botanicus.net/dw.old/dl/ \
+		http://evo6.org/ports/py-bulksms/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
