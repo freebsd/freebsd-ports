@@ -1,15 +1,15 @@
 # New ports collection makefile for:	qtez
-# Version required:			0.77a
 # Date created:				14 May 1998
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=	QtEZ.current-src
-PKGNAME=	qtez-0.77a
+PORTNAME=	qtez
+PORTVERSION=	0.77a
 CATEGORIES=	devel
 MASTER_SITES=	http://qtez.zax.net/qtez-extras/
+DISTNAME=	QtEZ.current-src
 
 MAINTAINER=	will@FreeBSD.org
 

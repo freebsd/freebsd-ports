@@ -1,21 +1,21 @@
 # New ports collection makefile for:	YACL
-# Version required:     1.7-beta
 # Date created:		6 March 1998
 # Whom:			Jeroen Hogeveen <albast@xs4all.nl>
 #
 # $FreeBSD$
 #
 
-DISTNAME=		yacl-0170-beta
-PKGNAME=		yacl-1.7b
+PORTNAME=		yacl
+PORTVERSION=		1.7b
 CATEGORIES=		devel
 MASTER_SITES=		ftp://ftp.cs.sc.edu/pub/yacl/
+DISTNAME=		yacl-0170-beta
 
 MAINTAINER=		albast@xs4all.nl
 
 USE_ZIP=		yes
 WRKSRC=			${WRKDIR}
-MAKE_ENV+=		YACLPATH=${WRKDIR}
+MAKE_ENV=		YACLPATH=${WRKDIR}
 
 MAKEFILE=		gnuc.mak
 ALL_TARGET=		yacl

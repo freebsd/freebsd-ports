@@ -1,18 +1,17 @@
 # ex:ts=8
 # Ports collection makefile for:  sfio
-# Version required: 0.0
 # Date created:			  8 November 1997
 # Whom:				  jraynard
 #
 # $FreeBSD$
 #
 
-DISTNAME=	sfio_1999
-PKGNAME=	sfio-1999
+PORTNAME=	sfio
+PORTVERSION=	1999
 CATEGORIES=	devel
 #Users must register with AT&T before downloading tarball.
 #MASTER_SITES=	http://www.research.att.com/sw/tools/sfio/
-EXTRACT_SUFX=	.src.unix.cpio
+DISTFILES=	${PORTNAME}_${PORTVERSION}.src.unix.cpio
 
 MAINTAINER=	obrien@FreeBSD.org
 
@@ -24,7 +23,7 @@ IS_INTERACTIVE=	yes
 MAN1=		iffe.1
 MAN3=		sfio.3
 
-RESTRICTED=	Requires user to register with AT&T.
+RESTRICTED=	Requires user to register with AT\&T
 
 do-fetch:
 	@if [ ! -f ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ]; then \

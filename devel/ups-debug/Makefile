@@ -1,19 +1,19 @@
 # ex:ts=8
 # Ports collection makefile for:  UPS
-# Version required: 0.0
 # Date created:			  Mon Feb 03, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ups-3.34beta
-PKGNAME=	ups-3.34b
+PORTNAME=	ups
+PORTVERSION=	3.34b
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}  \
 		ftp://unix.hensa.ac.uk/pub/misc/unix/ups/  \
 		http://www.concerto.demon.co.uk/UPS/
 MASTER_SITE_SUBDIR= utilities
+DISTNAME=	ups-3.34beta
 
 MAINTAINER=	obrien@FreeBSD.org
 

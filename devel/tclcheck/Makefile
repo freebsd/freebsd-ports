@@ -1,15 +1,15 @@
 # New ports collection makefile for:	TclCheck
-# Version required:		1.1.11
 # Date created:			28 June 1997
 # Whom:				Sander Vesik <sander@haldjas.folklore.ee>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	tclCheck-1.1.11
-PKGNAME=	tclcheck-1.1.11
+PORTNAME=	tclcheck
+PORTVERSION=	1.1.11
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.neosoft.com/languages/tcl/sorted/devel/
+DISTNAME=	tclCheck-${PORTVERSION}
 
 MAINTAINER=	sander@haldjas.folklore.ee
 

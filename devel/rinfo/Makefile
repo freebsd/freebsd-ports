@@ -1,12 +1,12 @@
 # New ports collection makefile for:    rinfo
-# Version required:     1.2
 # Date created:         23th March 1998
 # Whom:                 Mark Chapman <markc@ctgi.net>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	rinfo-1.2
+PORTNAME=	rinfo
+PORTVERSION=	1.2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://www.ctgi.net/pub/ctgi/
 

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	tkcon
-# Version required:     1.6
 # Date created:         28 Jun 1999
 # Whom:                 wghicks@bellsouth.net
 #
 # $FreeBSD$
 #
 
-DISTNAME=	tkcon-1.6
+PORTNAME=	tkcon
+PORTVERSION=	1.6
 CATEGORIES=	devel tk82
 MASTER_SITES=	ftp://ftp.neosoft.com/languages/tcl/sorted/packages-8.0/devel/
 

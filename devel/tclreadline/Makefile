@@ -1,12 +1,12 @@
 # New ports collection makefile for:	tclreadline
-# Version required:	1.0.3
 # Date created:		21 September 1999
 # Whom:			darius@dons.net.au
 #
 # $FreeBSD$
 #
 
-DISTNAME=	tclreadline-1.0.3
+PORTNAME=	tclreadline
+PORTVERSION=	1.0.3
 CATEGORIES=	tcl80 tcl82
 MASTER_SITES=	http://www.zellner.org/tclreadline/download/
 

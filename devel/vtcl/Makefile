@@ -1,12 +1,12 @@
 # New ports collection makefile for:	vtcl
-# Version required:	1.2.0
 # Date Created:		29 May 1997
 # Whom:			Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	vtcl-1.2.0
+PORTNAME=	vtcl
+PORTVERSION=	1.2.0
 CATEGORIES=	devel tk82
 MASTER_SITES=	ftp://ftp.neuron.com/pub/vtcl/development/1.2/
 
