@@ -3,7 +3,5 @@ any more. Instead, they are distributed separately from the main
 sources.
 
     This port provides a set of the xemacs-packages category packages provided
-by xemacs.org(www.xemacs.org).
-
-To install other categories' packages, use editors/xemacs-*-packages
-ports/packages.
+by xemacs.org(www.xemacs.org). If you need mule packages, install with
+editors/xemacs-mule-packages.
