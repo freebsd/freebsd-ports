@@ -15,13 +15,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module that provides decimal math without floating point errors
 
+PERL_CONFIGURE=	yes
+
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
 BROKEN=		"Needs Perl 5.6.0 for Math::BigFloat"
 .endif
-
-PERL_CONFIGURE=	yes
 
 MAN3=		Math::FixedPrecision.3
 

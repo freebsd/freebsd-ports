@@ -15,13 +15,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A perl5 data debugging tool for the XS programmer
 
+PERL_CONFIGURE=	yes
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
 BROKEN=         "Does not compile"
 .endif
-
-PERL_CONFIGURE=	yes
 
 MAN3=		Devel::Peek.3
 
