@@ -12,4 +12,7 @@ LANG_EXT=	07
 LANG_CONFIGURE_ARG=	RUSS
 MASTERDIR=	${.CURDIR}/../../editors/openoffice
 
+PATCH_SITES=	http://people.freebsd.org/~mbr/ooo/
+PATCHFILES=	patch-translation-ru-1.0.2.bz2
+
 .include "${MASTERDIR}/Makefile"
