@@ -20,7 +20,8 @@ COMMENT=	View, distribute and print PDF documents
 
 BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0:${PORTSDIR}/x11-toolkits/linux-gtk2 \
-		${LINUXBASE}/usr/lib/libpango-1.0.so.0:${PORTSDIR}/x11-toolkits/linux-pango
+		${LINUXBASE}/usr/lib/libpango-1.0.so.0:${PORTSDIR}/x11-toolkits/linux-pango \
+		${LINUXBASE}/usr/X11R6/lib/libXext.so.6:${PORTSDIR}/x11/linux-XFree86-libs
 
 ONLY_FOR_ARCHS=	amd64 i386
 USE_REINPLACE=	yes
@@ -32,7 +33,7 @@ PREFIX=		${LINUXBASE}
 
 pre-install:
 	@kldstat -v | grep -E 'linux(aout|elf)' >/dev/null ||\
-		{ echo "Linux ABI compatibility must be enabled to install ${PORTNAME}-${PORTVERSION}"; \
+		{ ${ECHO_MSG} "Linux ABI compatibility must be enabled to install ${PORTNAME}-${PORTVERSION}"; \
 		  exit 1; }
 	@${RM} -rf ${WRKSRC}/tmp
 	@${MKDIR} ${WRKSRC}/tmp
@@ -45,13 +46,15 @@ pre-install:
 do-install:
 	@rpm -U --ignorearch --ignoreos --root ${PREFIX} --dbpath /var/lib/rpm \
 		 --nodeps --replacepkgs ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME} || ${TRUE}
+	# disable the PPKLite plugin as it requires an LDAP share lib
+	${CHMOD} 0 ${PREFIX}/usr/local/Adobe/Acrobat7.0/Reader/intellinux/plug_ins/PPKLite.api
 
 post-install:
 	@${REINPLACE_CMD} 's:Linux:FreeBSD|Linux:g' \
 		${PREFIX}/usr/local/Adobe/Acrobat7.0/bin/acroread
 	cd ${LOCALBASE}/bin ; ${LN} -sf ${PREFIX}/usr/local/Adobe/Acrobat7.0/bin/acroread acroread7
+	cd ${LOCALBASE}/bin ; ${LN} -sf ${PREFIX}/usr/local/Adobe/Acrobat7.0/bin/acroread acroread
 	@${ECHO_MSG} "Be sure to read the license agreement in"
 	@${ECHO_MSG} "${PREFIX}/usr/local/Adobe/Acrobat7.0/Reader/Legal/ENU/license_ENU_uc.txt"
-	@${ECHO_MSG} "Use the acroread7 command to run this program."
 
 .include <bsd.port.mk>

@@ -1,2 +1,3 @@
 #!/bin/sh
 cd ${PREFIX:-/usr/local}/bin ; ln -sf ${PKG_PREFIX}/usr/local/Adobe/Acrobat7.0/bin/acroread acroread7
+cd ${PREFIX:-/usr/local}/bin ; ln -sf ${PKG_PREFIX}/usr/local/Adobe/Acrobat7.0/bin/acroread acroread
