@@ -19,9 +19,8 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	okazaki@FreeBSD.org
 COMMENT=	Japanese enhancement of GNU xditview
 
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 RUN_DEPENDS=	${LOCALBASE}/bin/groff:${PORTSDIR}/japanese/groff
-
-BROKEN=		"Unidentified in the ability to build"
 
 GNU_CONFIGURE=	yes
 #USE_GMAKE=	yes
