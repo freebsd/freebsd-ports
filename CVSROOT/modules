@@ -7096,6 +7096,7 @@ xemacs-basic-mule-packages	ports/editors/xemacs-basic-mule-packages
 xemacs-comm-packages	ports/editors/xemacs-comm-packages
 xemacs-devel	ports/editors/xemacs-devel
 xemacs-devel-canna	ports/japanese/xemacs-devel-canna
+xemacs-devel-canna+freewnn	ports/japanese/xemacs-devel-canna+freewnn
 xemacs-devel-mule	ports/editors/xemacs-devel-mule
 xemacs-games-packages	ports/editors/xemacs-games-packages
 xemacs-libs-packages	ports/editors/xemacs-libs-packages
