@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Module-ScanDeps
-PORTVERSION=	0.37
+PORTVERSION=	0.46
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/A/AU/AUTRIJUS
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	autrijus@autrijus.org
+MAINTAINER=	rafan@infor.org
 COMMENT=	Recursively scan Perl code for dependencies
 
 PERL_CONFIGURE=	yes
