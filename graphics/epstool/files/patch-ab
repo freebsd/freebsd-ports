@@ -1,5 +1,5 @@
---- epstool.c.orig	Sun Sep 13 09:52:52 1998
-+++ epstool.c	Sat Oct 23 17:59:46 1999
+--- epstool.c.orig	Tue Feb 15 08:52:06 2000
++++ epstool.c	Fri Feb 25 04:09:56 2000
 @@ -25,7 +25,7 @@
  char upname[MAXSTR];
  char gsname[MAXSTR] = GSCOMMAND;
@@ -9,7 +9,7 @@
  char szScratch[] = "ep";
  char szAppName[] = "epstool";
  int resolution = 72;
-@@ -87,9 +87,9 @@
+@@ -90,9 +90,9 @@
  main(int argc, char *argv[])
  {
  #ifdef UNIX
@@ -21,7 +21,7 @@
  #endif
  	if (scan_args(argc, argv))
  	   return 1;
-@@ -252,10 +252,10 @@
+@@ -260,10 +260,10 @@
  	fclose(tempfile);
  #ifdef UNIX
  	sprintf(gscommand, "%s -dNOPAUSE -dQUIET -sDEVICE=%s -sOutputFile=\042%s\042 -r%d -g%dx%d %s",
@@ -34,7 +34,7 @@
  	if (!quiet) {
  	    fputs(gscommand, stderr);
  	    fputs("\n", stderr);
-@@ -409,7 +409,7 @@
+@@ -429,7 +429,7 @@
  		  break;
  		case 'z':
  		  if (argp[2])
@@ -43,3 +43,12 @@
  		  break;
  		case 'c':
  		  if (got_op) {
+@@ -566,7 +566,7 @@
+ 
+ 	strcat(fname, prefix);
+ 	strcat(fname, "XXXXXX");
+-	mktemp(fname);
++	mkstemp(fname);
+ 	return fopen(fname, mode);
+ }
+ 
