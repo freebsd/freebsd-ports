@@ -5,6 +5,7 @@
     SUBDIR += bpl+
     SUBDIR += conserver
     SUBDIR += ecu
+    SUBDIR += gkermit
     SUBDIR += gnokii
     SUBDIR += hylafax
     SUBDIR += kermit
