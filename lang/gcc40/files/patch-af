@@ -1,24 +1,6 @@
---- gcc/config/i386/freebsd.h.orig	Sun May 23 12:42:51 1999
-+++ gcc/config/i386/freebsd.h	Wed May 26 02:08:55 1999
-@@ -21,6 +21,17 @@
- the Free Software Foundation, 59 Temple Place - Suite 330,
- Boston, MA 02111-1307, USA.  */
- 
-+
-+#include "i386/att.h"	/* Use the i386 AT&T assembler syntax */
-+
-+/* Use stabs instead of DWARF debug format.  */
-+#undef PREFERRED_DEBUGGING_TYPE
-+#define PREFERRED_DEBUGGING_TYPE DBX_DEBUG
-+#include "svr4.h"
-+
-+/* Get generic FreeBSD definitions.  */
-+#include <freebsd.h>
-+
- #undef TARGET_VERSION
- #define TARGET_VERSION fprintf (stderr, " (i386 FreeBSD/ELF)");
- 
-@@ -113,22 +124,19 @@
+--- gcc/config/i386/freebsd.h.orig	Thu Jun  3 16:18:41 1999
++++ gcc/config/i386/freebsd.h	Mon Jun 14 19:19:42 1999
+@@ -135,22 +135,19 @@
   : ((n) >= FIRST_STACK_REG && (n) <= LAST_STACK_REG) ? (n)+3 \
   : (-1))
  
@@ -45,7 +27,7 @@
      }									\
  }
  
-@@ -145,27 +153,31 @@
+@@ -170,10 +167,30 @@
  #define WCHAR_TYPE_SIZE BITS_PER_WORD
      
  #undef CPP_PREDEFINES
@@ -54,6 +36,34 @@
  
  #undef CPP_SPEC
 -#define CPP_SPEC "%(cpp_cpu) %{fPIC:-D__PIC__ -D__pic__} %{fpic:-D__PIC__ -D__pic__} %{posix:-D_POSIX_SOURCE}"
++#if TARGET_CPU_DEFAULT == 2
++#define CPP_SPEC "\
++  %{!maout: -D__ELF__} \
++  %{munderscores: -D__UNDERSCORES__} \
++  %{maout: %{!mno-underscores: -D__UNDERSCORES__}} \
++  %{fPIC:-D__PIC__ -D__pic__} %{fpic:-D__PIC__ -D__pic__} %{!m386:-D__i486__}"
++#else
++#define CPP_SPEC "\
++  %{!maout: -D__ELF__} \
++  %{munderscores: -D__UNDERSCORES__} \
++  %{maout: %{!mno-underscores: -D__UNDERSCORES__}} \
++  %{fPIC:-D__PIC__ -D__pic__} %{fpic:-D__PIC__ -D__pic__} %{m486:-D__i486__}"
++#endif
++
++#undef CC1_SPEC
++#define CC1_SPEC "\
++  %{gline:%{!g:%{!g0:%{!g1:%{!g2: -g1}}}}} \
++  %{maout: %{!mno-underscores: %{!munderscores: -munderscores }}}"
++
++#undef  ASM_SPEC
++#define ASM_SPEC	"%{v*: -v} %{maout: %{fpic:-k} %{fPIC:-k}}"
+ 
+ /* This defines which switch letters take arguments.  On FreeBSD, most of
+    the normal cases (defined in gcc.c) apply, and we also have -h* and
+@@ -210,23 +227,6 @@
+ #define ENDFILE_SPEC \
+   "%{!shared:crtend.o%s} %{shared:crtendS.o%s} crtn.o%s"
+ 
 -
 -#undef	LIB_SPEC
 -#if 1
@@ -64,36 +74,17 @@
 -#define LIB_SPEC \
 -  "%{!shared: %{mieee-fp:-lieee} %{p:-lgmon} %{pg:-lgmon} \
 -     %{!ggdb:-lc} %{ggdb:-lg}}"
-+#if TARGET_CPU_DEFAULT == 2
-+#define CPP_SPEC "\
-+%{!maout: -D__ELF__} \
-+%{munderscores: -D__UNDERSCORES__} \
-+%{maout: %{!mno-underscores: -D__UNDERSCORES__}} \
-+%{fPIC:-D__PIC__ -D__pic__} %{fpic:-D__PIC__ -D__pic__} %{!m386:-D__i486__}"
- #else
+-#else
 -#define LIB_SPEC \
 -  "%{!shared: \
 -     %{mieee-fp:-lieee} %{p:-lgmon -lc_p} %{pg:-lgmon -lc_p} \
 -       %{!p:%{!pg:%{!g*:-lc} %{g*:-lg}}}}"
-+#define CPP_SPEC "\
-+%{!maout: -D__ELF__} \
-+%{munderscores: -D__UNDERSCORES__} \
-+%{maout: %{!mno-underscores: -D__UNDERSCORES__}} \
-+%{fPIC:-D__PIC__ -D__pic__} %{fpic:-D__PIC__ -D__pic__} %{m486:-D__i486__}"
- #endif
- 
-+#undef CC1_SPEC
-+#define CC1_SPEC "\
-+%{gline:%{!g:%{!g0:%{!g1:%{!g2: -g1}}}}} \
-+%{maout: %{!mno-underscores: %{!munderscores: -munderscores }}}"
-+
-+#undef  ASM_SPEC
-+#define ASM_SPEC	"%{v*: -v} %{maout: %{fpic:-k} %{fPIC:-k}}"
-+
+-#endif
+-
  /* Provide a LINK_SPEC appropriate for FreeBSD.  Here we provide support
     for the special GCC options -static and -shared, which allow us to
     link things in one of these three modes by applying the appropriate
-@@ -181,13 +193,23 @@
+@@ -242,13 +242,24 @@
     done.  */
  
  #undef	LINK_SPEC
@@ -102,6 +93,7 @@
 -    %{!ibcs: \
 +#define LINK_SPEC "\
 + %{p:%e`-p' not supported; use `-pg' and gprof(1)} \
++ %{v:-V} \
 +  %{maout: %{shared:-Bshareable} \
 +    %{!shared:%{!nostdlib:%{!r:%{!e*:-e start}}} -dc -dp %{static:-Bstatic} \
 +      %{pg:-Bstatic} %{Z}} \
@@ -121,7 +113,7 @@
  
  /* A C statement to output to the stdio stream FILE an assembler
     command to advance the location counter to a multiple of 1<<LOG
-@@ -202,3 +224,15 @@
+@@ -263,3 +274,15 @@
      else fprintf ((FILE), "\t.p2align %d,,%d\n", (LOG), (MAX_SKIP)); \
    }
  #endif

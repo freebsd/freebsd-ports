@@ -1,5 +1,5 @@
---- gcc/configure.in.orig	Wed May 12 10:38:26 1999
-+++ gcc/configure.in	Tue May 18 03:57:11 1999
+--- gcc/configure.in.orig	Mon Jun  7 14:37:24 1999
++++ gcc/configure.in	Mon Jun 14 19:25:53 1999
 @@ -625,6 +625,15 @@
   			thread_file='posix'
   		fi
@@ -16,33 +16,32 @@
  	alpha*-*-netbsd*)
  		tm_file="${tm_file} alpha/elf.h alpha/netbsd.h alpha/netbsd-elf.h"
  		target_cpu_default="MASK_GAS"
-@@ -1135,20 +1144,20 @@
+@@ -1136,20 +1145,20 @@
  #		use_collect2=yes
  		;;
  changequote(,)dnl
 -	i[34567]86-*-freebsdelf*)
-+	i[34567]86-*-freebsd[12].* | i[34567]86-*-freebsd[12] | i[34567]86-*-freebsdaout*)
-+changequote([,])dnl
-+		tm_file=i386/freebsd.h
-+		tmake_file=t-freebsd
-+		;;
-+changequote(,)dnl
-+	i[34567]86-*-freebsd[3-9].* | i[34567]86-*-freebsd[3-9] | i[34567]86-*-freebsd* | i[34567]86-*-freebsdelf*)
+++	i[34567]86-*-freebsd[12].* | i[34567]86-*-freebsd[12] | i[34567]86-*-freebsdaout*)
  changequote([,])dnl
--		tm_file="i386/i386.h i386/att.h linux.h i386/freebsd-elf.h i386/perform.h"
-+		tm_file="i386/i386.h i386/freebsd.h i386/perform.h"
- 		extra_parts="crtbegin.o crtbeginS.o crtend.o crtendS.o"
--		tmake_file=i386/t-freebsd
-+		tmake_file=t-freebsd
- 		gas=yes
- 		gnu_ld=yes
- 		stabs=yes
--		;;
--changequote(,)dnl
+-		tm_file="i386/i386.h i386/att.h svr4.h i386/freebsd-elf.h i386/perform.h"
+-		extra_parts="crtbegin.o crtbeginS.o crtend.o crtendS.o"
++		tm_file=i386/freebsd.h
+ 		tmake_file=t-freebsd
+-		gas=yes
+-		gnu_ld=yes
+-		stabs=yes
+ 		;;
+ changequote(,)dnl
 -	i[34567]86-*-freebsd*)
--changequote([,])dnl
++	i[34567]86-*-freebsd[3-9].* | i[34567]86-*-freebsd[3-9] | i[34567]86-*-freebsd* | i[34567]86-*-freebsdelf* | i[34567]86-*-freebsd*)
+ changequote([,])dnl
 -		tm_file=i386/freebsd.h
--		tmake_file=i386/t-freebsd
++		tm_file="i386/i386.h i386/att.h svr4.h freebsd.h i386/freebsd.h i386/perform.h"
++		extra_parts="crtbegin.o crtbeginS.o crtend.o crtendS.o"
+ 		tmake_file=t-freebsd
++		gas=yes
++		gnu_ld=yes
++		stabs=yes
  		;;
  changequote(,)dnl
  	i[34567]86-*-netbsd*)
