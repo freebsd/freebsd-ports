@@ -1,0 +1,11 @@
+--- configure.orig	Thu Nov  8 02:31:32 2001
++++ configure	Tue Nov  5 08:44:51 2002
+@@ -640,7 +640,7 @@
+ 
+ 
+ 
+-prefix="/usr/local/dbconnect"
++#prefix="/usr/local/dbconnect"
+ 
+ 
+ 
