@@ -8,7 +8,7 @@
 PORTNAME=	dfm
 PORTVERSION=	0.99.9
 CATEGORIES=	x11-fm
-MASTER_SITES=	http://dfm.online.de/
+MASTER_SITES=	http://www.kaisersite.de/dfm/
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -37,9 +37,9 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/dfmext-samples/dfmext_normal ${PREFIX}/share/examples/dfm/dfmext.sample.normal
 	${INSTALL_DATA} ${WRKSRC}/dfmext-samples/dfmext_user ${PREFIX}/share/examples/dfm/dfmext.sample.user
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/dfm
+	@${MKDIR} ${DOCSDIR}
 .for file in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/dfm
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 
