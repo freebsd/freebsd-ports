@@ -6,10 +6,13 @@
 #
 
 PORTNAME=	freenet
-PORTVERSION=	0.5.2.1
+PORTVERSION=	0.5.2.1.5072
 CATEGORIES=	net java security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+#MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+#MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://freenetproject.org/snapshots/
+DISTNAME=	${PORTNAME}-20040228
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Peer-to-peer network aiming at anonymity and freedom of speech
