@@ -1,4 +1,4 @@
-sndstretch_xmms is an xmms plugin to adjust pitch and speed seperately 
+sndstretch_xmms is an xmms plugin to adjust pitch and speed separately 
 with two sliders.
 
 sndstretch can be compiled as an effect-plugin, with one major drawback 
