@@ -3,11 +3,11 @@
 # Date created:		15 April 1997
 # Whom:			Kiriyama Kazuhiko<kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.5 1997/11/10 12:05:12 asami Exp $
+# $Id: Makefile,v 1.6 1998/02/20 17:47:41 steve Exp $
 #
 
 PKGNAME=	ja-gp-2.5
-CATEGORIES=	print japanese
+CATEGORIES=	japanese
 
 LANGUAGE=	Japanese
 
