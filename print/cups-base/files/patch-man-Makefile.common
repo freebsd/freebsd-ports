@@ -1,9 +1,10 @@
---- man/Makefile.common.orig	Thu May 27 11:51:30 2004
-+++ man/Makefile.common	Sun Nov 14 17:14:24 2004
-@@ -29,57 +29,16 @@
+--- man/Makefile.common.orig	Thu May 27 22:51:30 2004
++++ man/Makefile.common	Mon Jan 24 13:28:43 2005
+@@ -28,58 +28,16 @@
+ 
  MAN1	=	backend.man \
  		cups-config.man \
- 		cupstestppd.man \
+-		cupstestppd.man \
 -		filter.man \
 -		lp.man \
 -		lpoptions.man \
@@ -20,7 +21,7 @@
  		printers.conf.man
 -MAN8	=	accept.man \
 -		cupsaddsmb.man \
-+MAN8	=	cupsaddsmb.man \
++MAN8	=	\
  		cups-lpd.man \
  		cups-polld.man \
 -		cupsd.man \

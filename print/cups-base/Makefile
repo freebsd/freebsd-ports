@@ -14,13 +14,13 @@ PORTEPOCH=	${CUPS_PORTEPOCH}
 CATEGORIES=	print
 MASTER_SITES=	${CUPS_MASTER_SITES}
 
-MAINTAINER=	asa@gascom.ru
+MAINTAINER=	asa@agava.com
 COMMENT=	The Common UNIX Printing System: headers, libs, & daemons
 
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
-MANLANG=	""
+MANLANG=	"" es fr
 
 post-patch:
 	@${REINPLACE_CMD} -e '/SILENT/d' \

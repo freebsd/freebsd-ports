@@ -1,6 +1,5 @@
 MAN1+=	backend.1
 MAN1+=	cups-config.1
-MAN1+=	cupstestppd.1
 MAN1+=	filter.1
 MAN5+=	classes.conf.5
 MAN5+=	cupsd.conf.5
@@ -9,5 +8,4 @@ MAN5+=	mime.types.5
 MAN5+=	printers.conf.5
 MAN8+=	cups-lpd.8
 MAN8+=	cups-polld.8
-MAN8+=	cupsaddsmb.8
 MAN8+=	cupsd.8

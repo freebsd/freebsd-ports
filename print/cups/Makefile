@@ -16,7 +16,7 @@ MASTER_SITES=	# empty
 DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	asa@agava.com
 COMMENT=	The Common UNIX Printing System: Metaport to install complete system
 
 LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
