@@ -192,7 +192,7 @@ while [ "$1" ]; do
 			fi
 			;;
 		\"SybaseDB\")
-			echo "LIB_DEPENDS+=	sybdb.1:\${PORTSDIR}/databases/freetds"
+			echo "LIB_DEPENDS+=	sybdb.3:\${PORTSDIR}/databases/freetds"
 			echo "LIB_DEPENDS+=	iconv.3:\${PORTSDIR}/converters/libiconv"
 			echo "CONFIGURE_ARGS+=--with-sybase=\${LOCALBASE}"
 			if [ "$SYBASECT" ]; then
@@ -203,7 +203,7 @@ while [ "$1" ]; do
 			SYBASEDB=1
 			;;
 		\"SybaseCT\")
-			echo "LIB_DEPENDS+=	ct.0:\${PORTSDIR}/databases/freetds"
+			echo "LIB_DEPENDS+=	ct.1:\${PORTSDIR}/databases/freetds"
 			echo "LIB_DEPENDS+=	iconv.3:\${PORTSDIR}/converters/libiconv"
 			echo "CONFIGURE_ARGS+=--with-sybase-ct=\${LOCALBASE}"
 			if [ "$SYBASEDB" ]; then
