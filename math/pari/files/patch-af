@@ -1,6 +1,6 @@
---- config/Makefile.SH.orig	Sun Apr  4 08:01:45 1999
-+++ config/Makefile.SH	Sun Apr  4 08:04:28 1999
-@@ -373,13 +373,13 @@
+--- ../pari-2.0.16.beta.orig/config/Makefile.SH	Mon Jun 28 19:23:29 1999
++++ ./config/Makefile.SH	Fri Aug 13 08:05:46 1999
+@@ -384,13 +384,13 @@
  
  if test -n "$emacs"; then
    cat >> $file << EOT
@@ -17,5 +17,5 @@
 -	-\$(INSTALL_DATA)   $pari_elc           \$(MISCDIR)
 +#	-\$(INSTALL_DATA)   $pari_elc           \$(MISCDIR)
  	\$(INSTALL_DATA)    $emx/pari.el        \$(MISCDIR)
- # otherwise Warning from emacs (file not writeable)
- 	\$(INSTALL) -m 666  $emx/pari.menu      \$(MISCDIR)
+ 	\$(INSTALL_DATA)    $emx/pariemacs.txt  \$(MISCDIR)
+ 	\$(INSTALL_DATA)    $emx/with-syntax.el     \$(MISCDIR)
