@@ -6,12 +6,13 @@
 #
 
 PORTNAME?=	aspell
-PORTVERSION=	0.50.4
+PORTVERSION=	0.50.4.1
 CATEGORIES+=	textproc
-MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITES=	http://aspell.net/	\
+		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	aspell
-DISTFILES=	aspell-0.50.4.tar.gz	# needed for slave ports / options
-EXTRACT_ONLY=	aspell-0.50.4.tar.gz
+DISTFILES=	aspell-0.50.4.1.tar.gz	# needed for slave ports / options
+EXTRACT_ONLY=	aspell-0.50.4.1.tar.gz
 
 MAINTAINER?=	thierry@pompo.net
 COMMENT?=	Spelling checker with better suggestion logic than ispell
