@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Tree/Simple.pm
+%%SITE_PERL%%/Tree/Simple/Visitor.pm
+@dirrm %%SITE_PERL%%/Tree/Simple
+@unexec rmdir %D/%%SITE_PERL%%/Tree 2>/dev/null || true
