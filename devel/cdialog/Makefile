@@ -10,7 +10,7 @@
 
 PORTNAME=	cdialog
 PORTVERSION=	0.9b-20020814
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://dickey.his.com/dialog/
 DISTNAME=	${PORTNAME:S|^c||}-${PORTVERSION}
@@ -22,13 +22,15 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAKEFILE=	makefile
 
-MAN1=		dialog.1
-MANLINKS=	dialog.1 cdialog.1
+MAN1=		cdialog.1
 
-post-install:
-	cd ${PREFIX}/bin; ${RM} -fv cdialog; ${LN} -fv dialog cdialog
-	cd ${MANPREFIX}/man/man1; \
-		${RM} -fv cdialog.1; ${LN} -fv dialog.1 cdialog.1
+BINDIR=		${PREFIX}/bin
+MAN1DIR=	${MANPREFIX}/man/man1
+
+do-install:
+	cd ${WRKSRC};\
+	${INSTALL_PROGRAM} dialog ${BINDIR}/cdialog;\
+	${INSTALL_DATA} dialog.1 ${MAN1DIR}/cdialog.1
 
 .include <bsd.port.mk>
 #EOF
