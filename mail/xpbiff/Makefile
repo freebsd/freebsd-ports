@@ -5,16 +5,16 @@
 # $FreeBSD$
 #
 
-PORTNAME?=	xpbiff
-PORTVERSION?= 	1.27
+PORTNAME=	xpbiff
+PORTVERSION= 	1.27
 PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.ics.es.osaka-u.ac.jp/pub/xpbiff/
 DISTNAME=	xpbiff
 DISTFILES=	xpbiff-1.27-with-YOUBIN.tar.gz.uu
 
-MAINTAINER?=	ports@FreeBSD.org
-COMMENT?=	A replacement for xbiff that handles popup window with mail header
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A replacement for xbiff that handles popup window with mail header
 
 USE_IMAKE=	yes
 USE_XPM=	yes
@@ -55,4 +55,10 @@ post-patch:
 	@${MV} ${WRKSRC}/config.h ${WRKSRC}/config.h.org
 	@${SED} "s=%YOUBINBINDIR%=${YOUBINBINDIR}/bin=" < ${WRKSRC}/config.h.org > ${WRKSRC}/config.h
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
+.endif
+
+.include <bsd.port.post.mk>
