@@ -16,7 +16,7 @@ CFLAGS+=-I${.CURDIR} -I${LOCALBASE}/include/freetype2/ \
 LDADD=	-L${LOCALBASE}/lib -lpng -lz -ljpeg -lfreetype -lm
 
 .ifndef WITHOUT_XPM
-CFLAGS+=-I${X11BASE}/include/X11 -DHAVE_XPM
+CFLAGS+=-I${X11BASE}/include/X11 -I${X11BASE}/include -DHAVE_XPM
 LDADD+=	-L${X11BASE}/lib -lXpm
 .ifdef WITHOUT_X11
 CFLAGS+=-DXPM_NOX
