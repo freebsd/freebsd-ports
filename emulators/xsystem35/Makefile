@@ -7,6 +7,7 @@
 
 PORTNAME=	xsystem35
 PORTVERSION=	1.4.2
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.aist-nara.ac.jp/~masaki-c/private/unitbase/xsys35/down/
 
@@ -37,7 +38,7 @@ PATCHES=	pastel.diff
 
 .include <bsd.port.pre.mk>
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old
+LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 FREETYPE_CONFIG?=    ${LOCALBASE}/bin/freetype-config

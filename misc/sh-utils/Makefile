@@ -7,6 +7,7 @@
 
 PORTNAME=	sh-utils
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= sh-utils
@@ -16,7 +17,7 @@ MAINTAINER=	cyrille.lefevre@laposte.net
 # Global variables
 #
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old
+LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g

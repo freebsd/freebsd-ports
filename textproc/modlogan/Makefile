@@ -7,6 +7,7 @@
 
 PORTNAME=	modlogan
 PORTVERSION=	0.7.12
+PORTREVISION=	1
 CATEGORIES=	textproc www
 MASTER_SITES=	http://jan.kneschke.de/projects/modlogan/download/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -15,7 +16,7 @@ MAINTAINER=	netchild@FreeBSD.org
 
 LIB_DEPENDS=	adns.1:${PORTSDIR}/net/adns \
 		gd.2:${PORTSDIR}/graphics/gd \
-		intl.1:${PORTSDIR}/devel/gettext-old \
+		intl.2:${PORTSDIR}/devel/gettext \
 		pcre.0:${PORTSDIR}/devel/pcre \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
 		ltdl.1:${PORTSDIR}/devel/libtool

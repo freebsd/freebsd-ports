@@ -7,13 +7,14 @@
 
 PORTNAME=	texinfo
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	korean print
 MASTER_SITES=	http://master.debian.or.kr/~cwryu/archive/texinfo-ko/
 DISTNAME=	${PORTNAME}-ko-${PORTVERSION}
 
 MAINTAINER=	cjh@FreeBSD.org
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old
+LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 RUN_DEPENDS=	${LOCALBASE}/share/texmf/doc/latex/hlatex/uhc.ks:${PORTSDIR}/korean/hlatex
 
 GNU_CONFIGURE=	YES

@@ -7,7 +7,7 @@
 
 PORTNAME=	cadaver
 PORTVERSION=	0.18.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://www.webdav.org/cadaver/
 
@@ -16,7 +16,7 @@ MAINTAINER=	tarkhil@over.ru
 BROKEN=		"Dependency out of date"
 
 LIB_DEPENDS=	neon.18:${PORTSDIR}/www/neon \
-		intl.1:${PORTSDIR}/devel/gettext-old
+		intl.2:${PORTSDIR}/devel/gettext
 
 .ifndef NO_OPENSSL
 USE_OPENSSL=	yes

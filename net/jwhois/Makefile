@@ -7,13 +7,14 @@
 
 PORTNAME=	jwhois
 PORTVERSION=	3.1.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	jwhois
 
 MAINTAINER=	matusita@FreeBSD.org
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old
+LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--localstatedir=${PREFIX}/var/jwhois

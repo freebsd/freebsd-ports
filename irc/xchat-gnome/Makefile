@@ -7,14 +7,14 @@
 
 PORTNAME=		xchat
 PORTVERSION=		1.8.8
-PORTREVISION?=		1
+PORTREVISION?=		2
 CATEGORIES+=		irc gnome ipv6
 MASTER_SITES=		http://xchat.org/files/source/1.8/ \
 			http://xchat.linuxpower.org/files/source/1.8/
 
 MAINTAINER?=		jim@FreeBSD.org
 
-BUILD_DEPENDS=		msgfmt-new:${PORTSDIR}/devel/gettext
+BUILD_DEPENDS=		msgfmt:${PORTSDIR}/devel/gettext
 LIB_DEPENDS=		iconv.3:${PORTSDIR}/converters/libiconv
 
 # This port has a slave port japanese/xchat.  Do not carelessly overwrite
@@ -30,8 +30,7 @@ WANT_GNOME=		yes
 GNU_CONFIGURE=		yes
 # Assign with `+=' for slave ports
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LIBS="-L${LOCALBASE}/lib -lintl -liconv" \
-			MSGFMT=${LOCALBASE}/bin/msgfmt-new
+			LIBS="-L${LOCALBASE}/lib -lintl -liconv"
 CONFIGURE_ARGS+=	--disable-python \
 			--without-included-gettext \
 			--enable-nls \

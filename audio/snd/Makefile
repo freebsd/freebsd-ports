@@ -7,6 +7,7 @@
 
 PORTNAME=		snd
 PORTVERSION=		5.5
+PORTREVISION=		1
 CATEGORIES=		audio
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE} \
 			ftp://ccrma-ftp.stanford.edu/pub/Lisp/
@@ -15,7 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=		trevor@FreeBSD.org
 
 LIB_DEPENDS=		gsl.0:${PORTSDIR}/math/gsl \
-			intl.1:${PORTSDIR}/devel/gettext-old
+			intl.2:${PORTSDIR}/devel/gettext
 
 .if defined(WITHOUT_ESD)
 RUN_DEPENDS=		esd:${PORTSDIR}/audio/esound

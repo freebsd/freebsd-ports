@@ -7,6 +7,7 @@
 
 PORTNAME=	mutt
 PORTVERSION=	${VERSION}.j${JP_VERSION}
+PORTREVISION=	1
 CATEGORIES=	japanese mail
 MASTER_SITES=	http://www.emaillab.org/mutt/1.3/ \
 		http://www5.xdsl.ne.jp/~shuna/mutt/distfiles/ \
@@ -22,10 +23,10 @@ MAINTAINER=	shuna@pop16.odn.ne.jp
 LIB_DEPENDS=	slang.2:${PORTSDIR}/japanese/libslang \
 		iconv.3:${PORTSDIR}/converters/libiconv
 .if !defined(WITH_GETTEXT)
-LIB_DEPENDS+=	intl.1:${PORTSDIR}/devel/gettext-old
+LIB_DEPENDS+=	intl.2:${PORTSDIR}/devel/gettext
 .endif
 .if defined(WITH_GETTEXT)
-BUILD_DEPENDS=	${LOCALBASE}/bin/msgfmt:${PORTSDIR}/devel/gettext-old
+BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 .endif
 RUN_DEPENDS=	urlview:${PORTSDIR}/textproc/urlview
 

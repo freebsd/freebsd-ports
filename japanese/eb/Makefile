@@ -7,6 +7,7 @@
 
 PORTNAME=	eb
 PORTVERSION=	3.2.1
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/eb/
 DISTFILES=	${EBFILES} \
@@ -20,8 +21,7 @@ PATCH_SITES=	${MASTER_SITES}
 MAINTAINER=	takamune@avrl.mei.co.jp
 
 BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old \
-		iconv.3:${PORTSDIR}/converters/libiconv
+LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 
 EBFILES=	${DISTNAME}${EXTRACT_SUFX}
 LISTFILES=	appendix/LIST \

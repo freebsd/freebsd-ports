@@ -263,7 +263,7 @@ while [ "$1" ]; do
 			echo "BUILD_DEPENDS+=	\${LOCALBASE}/lib/libcurl.a:\${PORTSDIR}/ftp/curl"
                         ;;
 		\"gettext\")
-			echo "LIB_DEPENDS+=	intl.1:\${PORTSDIR}/devel/gettext"
+			echo "LIB_DEPENDS+=	intl.2:\${PORTSDIR}/devel/gettext"
 			echo "CONFIGURE_ARGS+=--with-gettext=\${LOCALBASE}"
 			;;
 		\"iconv\")

@@ -7,6 +7,7 @@
 
 PORTNAME=	perdition
 PORTVERSION=	0.1.8
+PORTREVISION=	1
 CATEGORIES=	mail net security
 MASTER_SITES=	ftp://perdition.sourceforge.net/pub/perdition/%SUBDIR%/ \
 		ftp://ftp.au.vergenet.net/pub/perdition/%SUBDIR%/ \
@@ -17,7 +18,7 @@ MASTER_SITE_SUBDIR=	${PORTVERSION}
 
 MAINTAINER=	kkonstan@daemon.gr
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old \
+LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext \
 		popt.0:${PORTSDIR}/devel/popt \
 		gdbm.2:${PORTSDIR}/databases/gdbm \
 		vanessa_logger.0:${PORTSDIR}/devel/libvanessa_logger \

@@ -7,12 +7,13 @@
 
 PORTNAME=	ksamba
 PORTVERSION=	0.3.4
+PORTREVISION=	1
 CATEGORIES=	net kde
 MASTER_SITES=	${MASTER_SITE_KDE} \
 		http://www.kneschke.de/projekte/ksamba/download/
 MASTER_SITE_SUBDIR=	unstable/apps/network
 
-BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext-old
+BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 
 USE_KDELIBS_VER=1
 USE_GMAKE=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	afbackup
 PORTVERSION=	3.3.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	misc
 MASTER_SITES=	ftp://ftp.vic.com/af/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -20,7 +20,7 @@ MAINTAINER=	voland@catpipe.net
 
 WRKSRC=		${WRKDIR}/afbackup-3.3.5
 PLIST=		${WRKSRC}/pkg-plist
-BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext-old
+BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 
 .if ! defined(NO_DES)
 USE_OPENSSL=	yes

@@ -7,6 +7,7 @@
 
 PORTNAME=	gnomeapplets
 PORTVERSION=	1.4.0.5
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-applets
@@ -14,7 +15,7 @@ DISTNAME=	gnome-applets-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 
-BUILD_DEPENDS=	msgfmt-new:${PORTSDIR}/devel/gettext
+BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 LIB_DEPENDS=	gtop.1:${PORTSDIR}/devel/libgtop
 
 USE_X_PREFIX=	yes
@@ -22,9 +23,7 @@ USE_GMAKE=	yes
 USE_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib" \
-		MSGFMT=${LOCALBASE}/bin/msgfmt-new \
-		XGETTEXT=${LOCALBASE}/bin/xgettext-new
+		LIBS="-L${LOCALBASE}/lib"
 
 MAN1=		another_clock_applet.1 asclock_applet.1 battery_applet.1 \
 		cdplayer_applet.1 charpick_applet.1 clockmail_applet.1 \

@@ -7,6 +7,7 @@
 
 PORTNAME=	dctc
 PORTVERSION=	0.51
+PORTREVISION=	1
 CATEGORIES=	net gnome
 MASTER_SITES=	http://ac2i.tzo.com/dctc/
 PKGNAMESUFFIX=	-gui
@@ -17,8 +18,7 @@ MAINTAINER=	lioux@FreeBSD.org
 BUILD_DEPENDS=	dctc:${PORTSDIR}/net/dctc
 LIB_DEPENDS=	ORBit.2:${PORTSDIR}/devel/ORBit \
 		db4.0:${PORTSDIR}/databases/db4 \
-		iconv.3:${PORTSDIR}/converters/libiconv \
-		intl.1:${PORTSDIR}/devel/gettext-old
+		intl.2:${PORTSDIR}/devel/gettext
 
 USE_GNOMELIBS=	yes
 USE_GTK=	yes

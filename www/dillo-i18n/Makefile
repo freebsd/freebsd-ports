@@ -7,6 +7,7 @@
 
 PORTNAME=       dillo
 PORTVERSION=	0.6.4
+PORTREVISION=	1
 CATEGORIES=     www
 MASTER_SITES=   http://dillo.cipsga.org.br/download/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
@@ -15,7 +16,7 @@ MAINTAINER=	anders@FreeBSD.org
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
-		intl.1:${PORTSDIR}/devel/gettext-old
+		intl.2:${PORTSDIR}/devel/gettext
 
 USE_GTK=	yes
 GNU_CONFIGURE=	yes

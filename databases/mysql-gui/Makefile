@@ -7,6 +7,7 @@
 
 PORTNAME=	mysql-gui
 PORTVERSION=	1.7.5
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mirrors/mysql/Downloads/mysqlgui
@@ -15,7 +16,7 @@ DISTNAME=	${PORTNAME:S/-//}-${PORTVERSION}
 MAINTAINER=	cyrille.lefevre@laposte.net
 
 LIB_DEPENDS=	sqlplus.1:${PORTSDIR}/databases/mysql++ \
- 		intl.1:${PORTSDIR}/devel/gettext-old \
+ 		intl.2:${PORTSDIR}/devel/gettext \
  		glut.3:${PORTSDIR}/graphics/Mesa3 \
  		jpeg.9:${PORTSDIR}/graphics/jpeg \
  		fleditor.1:${PORTSDIR}/x11-toolkits/fl_editor \

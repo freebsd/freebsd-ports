@@ -8,12 +8,13 @@
 
 PORTNAME=	fwlogwatch
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.kyb.uni-stuttgart.de/boris/sw/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext-old
+LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 
 INSTALL_TARGET=	install install-config install-i18n
 MANCOMPRESSES=	no

@@ -7,13 +7,13 @@
 
 PORTNAME=	amyc
 PORTVERSION=	0.9.159
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://www.crevola.com/about/current/
 
 MAINTAINER=	petef@FreeBSD.org
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old
+LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 
 USE_AUTOCONF=	yes
 GNU_CONFIGURE=	yes

@@ -7,12 +7,13 @@
 
 PORTNAME=	kbubbles
 PORTVERSION=	0.8.6
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://ftp.kde.com/Games/Other/KBubbles/
 
 MAINTAINER=	znerd@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/msgfmt:${PORTSDIR}/devel/gettext-old
+BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 LIB_DEPENDS=	QwSpriteField.7:${PORTSDIR}/converters/kdesupport11
 
 USE_KDELIBS_VER=1

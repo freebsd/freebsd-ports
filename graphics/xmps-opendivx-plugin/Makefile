@@ -7,6 +7,7 @@
 
 PORTNAME=	xmps-opendivx-plugin
 PORTVERSION=	0.0.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.projectmayo.com/dnload/divx4linux/xmps/
 
@@ -14,7 +15,7 @@ MAINTAINER=	lioux@FreeBSD.org
 
 LIB_DEPENDS=	divxdecore.0:${PORTSDIR}/graphics/libdivxdecore \
 		xmps.0:${PORTSDIR}/graphics/xmps \
-		intl.1:${PORTSDIR}/devel/gettext-old
+		intl.2:${PORTSDIR}/devel/gettext
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.0.2
 USE_GMAKE=	yes

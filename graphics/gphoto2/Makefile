@@ -7,14 +7,13 @@
 
 PORTNAME=	gphoto2
 PORTVERSION=	2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.gphoto.net/dist/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
-		intl.1:${PORTSDIR}/devel/gettext-old \
+LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext \
 		usb-0.1.5:${PORTSDIR}/devel/libusb \
 		aa.1:${PORTSDIR}/graphics/aalib \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \

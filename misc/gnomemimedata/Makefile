@@ -7,15 +7,13 @@
 
 PORTNAME=	gnomemimedata
 PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-mime-data
 DISTNAME=	gnome-mime-data-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
-
-BUILD_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes

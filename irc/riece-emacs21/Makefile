@@ -7,6 +7,7 @@
 
 PORTNAME=	liece
 PORTVERSION=	1.4.7
+PORTREVISION=	1
 CATEGORIES=	irc elisp
 MASTER_SITES=	http://www.unixuser.org/~ueno/liece/dist/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
@@ -14,9 +15,9 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 MAINTAINER=	yoichi@FreeBSD.org
 
 BUILD_DEPENDS+=	${LOCALBASE}/${LISPDIR}/apel/install.el:${PORTSDIR}/editors/apel${DEPPORT_SUFFIX} \
-		${LOCALBASE}/bin/msgfmt:${PORTSDIR}/devel/gettext-old
+		msgfmt:${PORTSDIR}/devel/gettext
 RUN_DEPENDS+=	${LOCALBASE}/${LISPDIR}/apel/install.el:${PORTSDIR}/editors/apel${DEPPORT_SUFFIX} \
-		${LOCALBASE}/bin/ldcc:${PORTSDIR}/irc/liece-dcc
+		ldcc:${PORTSDIR}/irc/liece-dcc
 
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes

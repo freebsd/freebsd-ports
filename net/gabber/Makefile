@@ -7,13 +7,14 @@
 
 PORTNAME=	gabber
 PORTVERSION=	0.8.6
+PORTREVISION=	1
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	gnome@FreeBSD.org
 
-BUILD_DEPENDS=	msgfmt-new:${PORTSDIR}/devel/gettext
+BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 .if defined(WITH_XMMS)
 BUILD_DEPENDS+=	xmms-config:${PORTSDIR}/audio/xmms
 .endif
@@ -25,9 +26,7 @@ USE_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	GNOME_LIBCONFIG_PATH="${LOCALBASE}/lib:${X11BASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		MSGFMT=${LOCALBASE}/bin/msgfmt-new \
-		XGETTEXT=${LOCALBASE}/bin/xgettext-new
+		LDFLAGS="-L${LOCALBASE}/lib"
 .if !defined(WITH_XMMS)
 CONFIGURE_ARGS=	--disable-xmms
 .endif

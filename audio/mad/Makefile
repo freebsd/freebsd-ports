@@ -7,7 +7,7 @@
 
 PORTNAME=	mad
 PORTVERSION=	0.14.2b
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.mars.org/pub/mpeg/
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	mad
 
 MAINTAINER=	jason@mastaler.com
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old
+LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 
 WANT_ESOUND=	yes
 

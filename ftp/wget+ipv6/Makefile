@@ -7,7 +7,7 @@
 
 PORTNAME=	wget
 PORTVERSION=	1.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ftp www ipv6
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.dl.ac.uk/ccp14/ftp-mirror/wget/pub/unix/util/wget/ \
@@ -24,8 +24,8 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	sf@FreeBSD.org
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old
-BUILD_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
+BUILD_DEPENDS=	msgfmt-old:${PORTSDIR}/devel/gettext-old
+LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 
 .if !defined(WITHOUT_SSL)
 USE_OPENSSL=	yes
@@ -33,8 +33,10 @@ CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE}
 .endif
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include \
-		LIBS=-L${LOCALBASE}/lib
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib" \
+		MSGFMT="${LOCALBASE}/bin/msgfmt-old" \
+		XGETTEXT="${LOCALBASE}/bin/xgettext-old"
 
 MAN1=		wget.1
 

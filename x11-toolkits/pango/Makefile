@@ -7,6 +7,7 @@
 
 PORTNAME=	pango
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,pre-gnome2/releases/gnome-2.0-desktop-beta3,} \
 		ftp://ftp.gtk.org/pub/gtk/v1.3/ \
@@ -19,7 +20,7 @@ MAINTAINER=	gnome@FreeBSD.org
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2	# XXX
 LIB_DEPENDS=	glib-2.0.0:${PORTSDIR}/devel/glib20 \
 		freetype.9:${PORTSDIR}/print/freetype2 \
-		intl.1:${PORTSDIR}/devel/gettext-old
+		intl.2:${PORTSDIR}/devel/gettext
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

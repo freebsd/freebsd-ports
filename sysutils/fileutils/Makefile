@@ -7,6 +7,7 @@
 
 PORTNAME=	fileutils
 PORTVERSION=	4.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=   ${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	fileutils
@@ -16,7 +17,7 @@ MAINTAINER=	cyrille.lefevre@laposte.net
 # Global variables
 #
 
-LIB_DEPEND=	intl.1:${PORTSDIR}/devel/gettext-old
+LIB_DEPEND=	intl.2:${PORTSDIR}/devel/gettext
 
 USE_PERL5=	yes
 USE_LIBTOOL=	yes

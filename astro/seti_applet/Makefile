@@ -7,6 +7,7 @@
 
 PORTNAME=	seti_applet
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	astro gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:S/_/-/}
@@ -17,7 +18,7 @@ MAINTAINER=	cyrille.lefevre@laposte.net
 #
 
 LIB_DEPENDS=	gtop.1:${PORTSDIR}/devel/libgtop \
-		intl.1:${PORTSDIR}/devel/gettext-old
+		intl.2:${PORTSDIR}/devel/gettext
 RUN_DEPENDS=	${LOCALBASE}/sbin/setiathome:${PORTSDIR}/astro/setiathome
 
 USE_X_PREFIX=	yes

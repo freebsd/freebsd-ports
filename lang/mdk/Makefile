@@ -8,6 +8,7 @@
 
 PORTNAME=	mdk
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	lang gnome
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		${MASTER_SITE_SOURCEFORGE}
@@ -16,8 +17,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ijliao@FreeBSD.org
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
-		intl:${PORTSDIR}/devel/gettext-old \
-		guile:${PORTSDIR}/lang/guile
+		intl.2:${PORTSDIR}/devel/gettext \
+		guile.9:${PORTSDIR}/lang/guile
 
 USE_X_PREFIX=	yes
 USE_GNOME=	yes

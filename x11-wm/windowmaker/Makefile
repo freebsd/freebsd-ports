@@ -7,6 +7,7 @@
 
 PORTNAME=	windowmaker
 PORTVERSION=	0.80.0
+PORTREVISION=	1
 CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	${MASTER_SITE_WINDOWMAKER}
 MASTER_SITE_SUBDIR=	source/release
@@ -14,11 +15,11 @@ DISTNAME=	WindowMaker-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-BUILD_DEPENDS=	msgfmt-new:${PORTSDIR}/devel/gettext
+BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		intl.1:${PORTSDIR}/devel/gettext-old \
+		intl.2:${PORTSDIR}/devel/gettext \
 		Hermes.1:${PORTSDIR}/graphics/Hermes
 RUN_DEPENDS=	${X11BASE}/share/WindowMaker/Themes/Checker.themed/style:${PORTSDIR}/graphics/wmicons
 
@@ -32,9 +33,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	X11BASE=${X11BASE} \
 		LIBS="-L${LOCALBASE}/lib -lintl" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
-		LINGUAS="${LINGUAS}" \
-		MSGFMT=${LOCALBASE}/bin/msgfmt-new \
-		XGETTEXT=${LOCALBASE}/bin/xgettext-new
+		LINGUAS="${LINGUAS}"
 CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/include/X11/pixmaps \
 		--with-nlsdir=${PREFIX}/share/locale \
 		--with-libs-from="-L${LOCALBASE}/lib" \

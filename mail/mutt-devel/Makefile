@@ -51,7 +51,7 @@
 
 PORTNAME=	mutt-devel
 PORTVERSION=	1.3.28
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES+=	mail
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -129,8 +129,7 @@ SGML_USED=	no
 SGML_USED=	no
 .endif
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old \
-		iconv.3:${PORTSDIR}/converters/libiconv
+LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 
 .if defined(NOPORTDOCS)
 SGML_USED=	no

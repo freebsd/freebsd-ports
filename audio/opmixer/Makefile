@@ -7,6 +7,7 @@
 
 PORTNAME=	opmixer
 PORTVERSION=	0.70
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	optronic
@@ -14,7 +15,7 @@ MASTER_SITE_SUBDIR=	optronic
 MAINTAINER=	trevor@FreeBSD.org
 
 LIB_DEPENDS=	gtkmm.2:${PORTSDIR}/x11-toolkits/gtk-- \
-		intl.1:${PORTSDIR}/devel/gettext-old
+		intl.2:${PORTSDIR}/devel/gettext
 
 DOCDIR=		share/doc/${PORTNAME}
 USE_BZIP2=	yes

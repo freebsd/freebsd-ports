@@ -7,13 +7,13 @@
 
 PORTNAME=	kssh
 PORTVERSION=	0.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.geocities.com/bilibao/
 
 MAINTAINER=	kevlo@FreeBSD.org
 
-BUILD_DEPENDS=	gettext:${PORTSDIR}/devel/gettext-old
+BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 
 USE_KDELIBS_VER=2
 GNU_CONFIGURE=	yes

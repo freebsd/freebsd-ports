@@ -7,12 +7,13 @@
 
 PORTNAME=	krubik
 PORTVERSION=	1.06
+PORTREVISION=	1
 CATEGORIES=	games kde
 MASTER_SITES=	http://www.phys.uu.nl/~eendebak/kde/
 
 MAINTAINER=	jedgar@fxp.org
 
-BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext-old
+BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 
 USE_KDELIBS_VER=1
 GNU_CONFIGURE=	yes
