@@ -3,7 +3,7 @@
 # Date created:		98/11/17
 # Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id: Makefile,v 1.5 1998/11/20 18:19:09 itojun Exp $
+# $Id: Makefile,v 1.6 1998/12/01 03:06:39 asami Exp $
 #
 
 DISTNAME=	yatex1.66
@@ -21,6 +21,8 @@ BUILD_DEPENDS=	xemacs:${PORTSDIR}/editors/xemacs-mule \
 		bash:${PORTSDIR}/shells/bash2
 .endif
 
+PKGINSTALL=	${WRKDIR}/INSTALL
+PKGDEINSTALL=	${WRKDIR}/DEINSTALL
 VERSION=	1.66
 TARGETNAME=	YaTeX
 DIRSECTION=	The Emacs editor and associated tools
@@ -96,9 +98,8 @@ do-build:
 		 -e 's,%DIRSECTION%,${DIRSECTION},g' \
 		 -e 's,%SITESTARTDIR%,${SITESTARTDIR},g' \
 		 -e 's,%ADDSITESTART%,${ADDSITESTART},g' \
-		< ${FILESDIR}/$${file}.tmpl > ${FILESDIR}/$${file}; \
+		< ${FILESDIR}/$${file}.tmpl > ${WRKDIR}/$${file}; \
 	done
-	${CP} ${FILESDIR}/INSTALL ${FILESDIR}/DEINSTALL ${PKGDIR}
 # For XEmacs-mule 20.4, yatexj.info (in Japanese) should be remade
 # after Kanji code of yatexj.tex is convert from shift jis (MS-Kanji)
 # to EUC.
@@ -128,7 +129,7 @@ do-install:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${INSTALL_SCRIPT} ${FILESDIR}/user-install ${PORTSDOCDIR}
+	@${INSTALL_SCRIPT} ${WRKDIR}/user-install ${PORTSDOCDIR}
 .endif
 	if [ ! -f ${INFODIR}/dir ]; then \
 		${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${INFODIR}/dir; \
@@ -136,12 +137,7 @@ post-install:
 	@${SETENV} TOUCH=${TOUCH} INFODIR=${INFODIR} \
 		ELISPDIR=${ELISPDIR} DIRSECTION="${DIRSECTION}" \
 		INFOFILES="${INFOFILES}" \
-		${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
+		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGDIR}/MESSAGE
-
-pre-clean:
-	@${RM} -f ${FILESDIR}/user-install \
-		${FILESDIR}/INSTALL ${FILESDIR}/DEINSTALL \
-		${PKGDIR}/INSTALL ${PKGDIR}/DEINSTALL
 
 .include <bsd.port.mk>
