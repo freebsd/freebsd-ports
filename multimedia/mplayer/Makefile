@@ -145,8 +145,7 @@
 # to be installed.
 
 PORTNAME=	mplayer
-PORTVERSION=	0.90.0.103
-PORTREVISION=	1
+PORTVERSION=	0.90.0.104
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		http://www2.mplayerhq.hu/MPlayer/releases/ \
@@ -156,7 +155,7 @@ MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		ftp://ftp2.mplayerhq.hu/MPlayer/releases/ \
 		ftp://ftp.lug.udel.edu/MPlayer/releases/ \
 		http://www.rrr.de/~riggs/mplayer/
-DISTNAME=	MPlayer-0.90rc3
+DISTNAME=	MPlayer-0.90rc4
 
 MAINTAINER=	riggs@rrr.de
 
@@ -175,6 +174,7 @@ CONFIGURE_ARGS=	--with-extralibdir=${LOCALBASE}/lib \
 		--with-x11libdir=${X11BASE}/lib \
 		--with-x11incdir=${X11BASE}/include \
 		--enable-png \
+		--disable-libfame \
 		--disable-tv-v4l
 
 USE_GNOMENG=	yes
@@ -186,7 +186,7 @@ LDCONFIG_DIRS=	%%PREFIX%%/lib %%PREFIX%%/lib/mplayer/vidix
 
 CONFFILES=	codecs.conf example.conf input.conf menu.conf
 DOCFILES=	bugreports.html cd-dvd.html codecs-in.html \
-		codecs.html documentation.html faq.html skin-en.html \
+		codecs.html documentation.html faq.html skin.html \
 		encoding.html formats.html sound.html \
 		users_against_developers.html \
 		video.html
@@ -313,14 +313,6 @@ LIB_DEPENDS+=	dv.3:${PORTSDIR}/multimedia/libdv
 CONFIGURE_ARGS+=	--enable-libdv
 .else
 CONFIGURE_ARGS+=	--disable-libdv
-.endif
-
-.if defined(WITH_LIBFAME)
-LIB_DEPENDS+=	fame-0.9.0:${PORTSDIR}/graphics/libfame
-
-CONFIGURE_ARGS+=	--enable-libfame
-.else
-CONFIGURE_ARGS+=	--disable-libfame
 .endif
 
 .if defined(WITH_MAD)
