@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.[0-9]\.([0-9]+)$/-pl\1/}
 
-MAINTAINER=	jamie@hermans.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gallery is a slick web based photo album written using PHP
 
 RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm \

@@ -10,7 +10,7 @@ PORTVERSION=	2.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.sentex.net/~mwandel/jhead/
 
-MAINTAINER=	jamie@hermans.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Exif Jpeg camera setting parser and thumbnail remover
 
 MAKEFILE=	${WRKSRC}/makefile
