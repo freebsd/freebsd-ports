@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	tr-ircd
-PORTVERSION=	5.0.p6
+PORTVERSION=	5.0.1
 CATEGORIES=	irc ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME:S/-//}-release-${PORTVERSION:S/.p/-pre/}
+DISTNAME=	${PORTNAME:S/-//}-release-${PORTVERSION}-r
 
 MAINTAINER=	sysadmin@alexdupre.com
 
@@ -19,7 +19,12 @@ MAN5=		ircd.conf.5
 MAN8=		ircd.8
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-kqueue
+CONFIGURE_ARGS=	--localstatedir=/var \
+		--libdir=${PREFIX}/lib/tr-ircd \
+		--includedir=${PREFIX}/include/tr-ircd \
+		--enable-kqueue \
+		--enable-root \
+		--with-fakehost-postfix=COM
 
 .if !defined(WITHOUT_SSL)
 USE_OPENSSL=	yes
@@ -35,10 +40,6 @@ CONFIGURE_ARGS+=--enable-small-nets
 .if ${OSVERSION} >= 400014
 CONFIGURE_ARGS+=--enable-ipv6
 .endif
-
-post-patch:
-	@${PERL} -pi -e 's|\[ "(`[^`]+`)" == "" \]|[ test \1 ]|g' \
-		${WRKSRC}/*/Makefile.in
 
 post-install:
 	@${ECHO} "Installing ${PREFIX}/etc/rc.d/tr-ircd.sh.sample startup file."

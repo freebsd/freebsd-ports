@@ -1,12 +1,15 @@
---- doc/Makefile.in.orig	Sun May  5 11:01:56 2002
-+++ doc/Makefile.in	Sun May  5 11:03:18 2002
-@@ -60,7 +60,8 @@
- install: build
- 	@echo "Installing config files"
- 	$(INSTALL) -d ${sysconfdir}
--	${INSTALL} $(CONFS) $(DEFAULTCONFS) ${sysconfdir}
-+	${INSTALL} $(CONFS) ${sysconfdir}/ircd.conf.sample
-+	${INSTALL} $(DEFAULTCONFS) ${sysconfdir}
- 	touch ${sysconfdir}/kline.conf
- 	@echo "Installing manpages"
- 	$(INSTALL) -d ${mandir}        
+--- doc/Makefile.in.orig	Sat Oct 26 10:10:17 2002
++++ doc/Makefile.in	Sat Oct 26 10:11:51 2002
+@@ -77,9 +77,9 @@
+ 	$(INSTALL_DATA) $(CONFMANPAGE) ${confmandir}
+ 	$(INSTALL_DATA) $(MD5MANPAGE) ${md5mandir}
+ 	@echo "Installing documentation"
+-	$(INSTALL) -d ${datadir}
+-	$(INSTALL_DATA) $(DOCUMENTATION) ${datadir}
+-	$(INSTALL_DATA) $(CONFS) ${datadir}	
++	$(INSTALL) -d ${datadir}/doc/tr-ircd
++	$(INSTALL_DATA) $(DOCUMENTATION) ${datadir}/doc/tr-ircd
++	$(INSTALL_DATA) $(CONFS) ${datadir}/doc/tr-ircd	
+ 
+ uninstall:
+ 	@echo "Removing manpages"
