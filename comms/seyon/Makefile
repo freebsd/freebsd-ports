@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://sipb.mit.edu/pub/seyon/
 DISTNAME=	Seyon-${PORTVERSION}
 EXTRACT_SUFX=	-tar.Z
 
-MAINTAINER=	me@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A communications package for the X Window system
 
 WRKSRC=		${WRKDIR}/seyon
