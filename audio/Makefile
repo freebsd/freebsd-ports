@@ -40,6 +40,7 @@
     SUBDIR += festvox-mwm
     SUBDIR += festvox-ogirab
     SUBDIR += festvox-rab16
+    SUBDIR += festvox-rab8
     SUBDIR += festvox-tll
     SUBDIR += gdcd
     SUBDIR += gkrellmms
