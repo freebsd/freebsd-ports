@@ -7,7 +7,7 @@
 
 PORTNAME=	nethack
 PORTVERSION=	3.4.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -45,6 +45,11 @@ MAKE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 GRAPHICS=	GNOME_GRAPHICS
 .elif ${PKGNAMESUFFIX} == "-nox11"
 GRAPHICS=	# none
+.if defined(WITH_MENUCOLORS)
+PATCHFILES+=	nh343-menucolor.diff
+PATCH_SITES+=	http://www.cs.joensuu.fi/~pkalli/code/
+PATCH_DIST_STRIP=	-p1
+.endif
 .elif ${PKGNAMESUFFIX} == "-qt"
 USE_QT_VER=	3
 MAKE_ENV+=	QTCPPFLAGS="${QTCPPFLAGS} ${PTHREAD_CFLAGS}" \
@@ -55,12 +60,14 @@ GRAPHICS=	QT_GRAPHICS
 .endif
 
 pre-everything::
-	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	@${ECHO_MSG} " You cannot install nethack and ${PKGBASE} in parallel   "
-	@${ECHO_MSG} " But ${PKGBASE} read your prior nethack scores           "
-	@${ECHO_MSG} " Don't forget to backup your nethack libdir if it's      "
-	@${ECHO_MSG} " important for you                                       "
-	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+	@if [ "${PKGBASE}" != "nethack" ]; then \
+	${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" ; \
+	${ECHO_MSG} " You cannot install nethack and ${PKGBASE} in parallel   " ; \
+	${ECHO_MSG} " But ${PKGBASE} reads your prior nethack scores           " ; \
+	${ECHO_MSG} " Don't forget to backup your nethack libdir if it's      " ; \
+	${ECHO_MSG} " important for you                                       " ; \
+	${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" ; \
+	fi
 
 post-patch:
 .for f in include/config.h sys/unix/Makefile.src sys/unix/Makefile.top
@@ -70,6 +77,9 @@ post-patch:
 	${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|g' ${WRKSRC}/win/Qt/qt_win.cpp
 .if defined(WITHOUT_SHELL)
 	@${REINPLACE_CMD} -e 's|#define SHELL|/* #define SHELL|' ${WRKSRC}/include/unixconf.h
+.endif
+.if defined(WITH_MENUCOLORS)
+	${REINPLACE_CMD} -e 's|<regex.h>|<gnuregex.h>|g' ${WRKSRC}/include/color.h
 .endif
 
 pre-configure:
