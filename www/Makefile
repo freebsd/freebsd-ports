@@ -396,6 +396,7 @@
     SUBDIR += tidy
     SUBDIR += tinyproxy
     SUBDIR += transproxy
+    SUBDIR += twig
     SUBDIR += udmsearch
     SUBDIR += ump
     SUBDIR += viewml

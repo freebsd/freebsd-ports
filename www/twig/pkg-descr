@@ -1,0 +1,11 @@
+TWIG is a Web-based groupware suite written in PHP, compatible with both
+PHP3 and PHP4. Its features include IMAP and POP3 email, Usenet newsgroups,
+contact management, scheduling, shared notes and bookmarks, a todo list,
+and meeting announcements. Any piece of information can be shared with others
+via group oriented access controls. By using only plain HTML, it is a simple,
+cross-platform, fast and browser-independent way to access or share almost
+any kind of information, without the complexity or costs of other
+intranet/groupware packages. It is fully internationalized, with 22
+translations. 
+
+WWW: http://twig.screwdriver.net/
