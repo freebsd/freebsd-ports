@@ -105,17 +105,19 @@ MASTER_SITES+=	http://www.modssl.org/source/ \\
 DISTFILES+=	mod_ssl-\${VERSION_MODSSL}-\${VERSION_APACHE}\${EXTRACT_SUFX}
 
 BUILD_DEPENDS+=	openssl:\${PORTSDIR}/security/openssl \\
+		mm-config:\${PORTSDIR}/devel/mm \\
 		\${PREFIX}/lib/libssl.a:\${PORTSDIR}/security/openssl \\
-		\${PREFIX}/lib/libcrypto.a:\${PORTSDIR}/security/openssl
+		\${PREFIX}/lib/libcrypto.a:\${PORTSDIR}/security/openssl \\
+		\${PREFIX}/lib/libmm.a:\${PORTSDIR}/devel/mm
 RUN_DEPENDS+=	openssl:\${PORTSDIR}/security/openssl
 
-VERSION_MODSSL=	2.3.1
+VERSION_MODSSL=	2.3.2
 
 RESTRICTED=	"Contains cryptography"
 
 CONFIGURE_ARGS+=--enable-module=ssl \
 		--enable-module=define
-CONFIGURE_ENV+=	SSL_BASE='SYSTEM' PATH="\${PREFIX}/bin:\${PATH}"
+CONFIGURE_ENV+=	SSL_BASE='SYSTEM' EAPI_MM='SYSTEM' PATH="\${PREFIX}/bin:\${PATH}"
 
 PLIST=		\${PKGDIR}/PLIST.modssl
 SSL=		ssl
