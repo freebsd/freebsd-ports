@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.64 1997/06/16 03:05:30 jfitz Exp $
+# $Id: Makefile,v 1.65 1997/06/20 08:14:58 tg Exp $
 #
 
     SUBDIR += SWIG
@@ -44,19 +44,25 @@
     SUBDIR += p5-Devel-DProf
     SUBDIR += p5-Devel-Peek
     SUBDIR += p5-Devel-Symdump
+    SUBDIR += p5-Errno
     SUBDIR += p5-File-BasicFlock
     SUBDIR += p5-File-Lock
     SUBDIR += p5-File-Slurp
     SUBDIR += p5-File-Tools
+    SUBDIR += p5-Filter
     SUBDIR += p5-Include
     SUBDIR += p5-IniConf
     SUBDIR += p5-Ioctl
     SUBDIR += p5-PV
     SUBDIR += p5-Penguin
     SUBDIR += p5-Penguin-Easy
+    SUBDIR += p5-Proc-Simple
     SUBDIR += p5-Religion
     SUBDIR += p5-Resources
+    SUBDIR += p5-Sort-Versions
+    SUBDIR += p5-Term-ReadKey
     SUBDIR += p5-Time
+    SUBDIR += p5-TraceFuncs
     SUBDIR += portlint
     SUBDIR += prcs
     SUBDIR += sawt

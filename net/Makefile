@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.110 1997/06/23 15:46:04 max Exp $
+# $Id: Makefile,v 1.111 1997/06/24 08:10:25 obrien Exp $
 #
 
     SUBDIR += archie
@@ -41,6 +41,7 @@
     SUBDIR += p5-Net
     SUBDIR += p5-Net-DNS
     SUBDIR += p5-Net-Whois
+    SUBDIR += p5-SNMP
     SUBDIR += pcnfsd
     SUBDIR += pmf
     SUBDIR += radius
