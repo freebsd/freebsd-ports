@@ -1,17 +1,21 @@
 #!/bin/sh
-ftp=0
-useworld=1
+date=19990826
+ftpserver=current.freebsd.org
+ftpdists="bin dict des games compat22"
+ftp=1
+useworld=0
 chrootdir=/a/asami/chroot
 here=$(pwd)
 tmpdir=${here}/tmp
 rm -rf ${tmpdir}
 mkdir -p ${tmpdir}
 if [ "${ftp}" != 0 ]; then
+  rm -rf bindist/ftp
+  mkdir -p bindist/ftp
   cd bindist/ftp
-  /usr/bin/ftp -a 'ftp://ftp.freebsd.org/pub/FreeBSD/3.0-RELEASE/bin/bin.??'
-  /usr/bin/ftp -a 'ftp://ftp.freebsd.org/pub/FreeBSD/3.0-RELEASE/dict/dict.??'
-  /usr/bin/ftp -a 'ftp://ftp.freebsd.org/pub/FreeBSD/3.0-RELEASE/des/des.??'
-  #ssh -n ftp.freebsd.org cat 'w/3.0-RELEASE/bin/bin.??' | tar -xzpf -
+  for i in ${ftpdists}; do
+    /usr/bin/ftp -a "ftp://${ftpserver}/pub/FreeBSD/snapshots/i386/4.0-${date}-CURRENT/$i/$i.??"
+  done
   cd ${here}
 fi
 cd ${tmpdir}
@@ -22,15 +26,16 @@ if [ "${useworld}" = 1 ]; then
     grep -v '^./var/db/pkg' | \
     cpio -dump ${tmpdir})
 else
-  cat ${here}/bindist/ftp/bin.?? | tar --unlink -xzpf -
-  cat ${here}/bindist/ftp/dict.?? | tar --unlink -xzpf -
-  cat ${here}/bindist/ftp/des.?? | tar --unlink -xzpf -
+  for i in ${ftpdists}; do
+    cat ${here}/bindist/ftp/$i.?? | tar --unlink -xzpf -
+  done
 fi
 rm -rf $(cat ${here}/bindist/delete)
 mkdir -p $(cat ${here}/bindist/dirlist)
 (cd ${here}/bindist/files; find -dx . | cpio -dump ${tmpdir})
 echo "HAVE_MOTIF=t" >> etc/make.conf
 echo "MOTIF_STATIC=t" >> etc/make.conf
+date '+%Y%m%d' > var/db/port.mkversion
 if [ -f kernel.GENERIC -a ! -f kernel ]; then
   mv kernel.GENERIC kernel
 fi
