@@ -5134,6 +5134,7 @@ linux-nx-client	ports/net/linux-nx-client
 linux-opengroupware	ports/misc/linux-opengroupware
 linux-openmotif	ports/x11-toolkits/linux-openmotif
 linux-opera	ports/www/linux-opera
+linux-overnet-core	ports/net/linux-overnet-core
 linux-pam-docs	ports/security/linux-pam-docs
 linux-pango	ports/x11-toolkits/linux-pango
 linux-panorama-tools	ports/graphics/linux-panorama-tools
