@@ -7,6 +7,7 @@
 
 PORTNAME=	sane-backends
 PORTVERSION=	1.0.9
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.mostang.com/pub/sane/%SUBDIR%/ \
 		ftp://ftp.de.mostang.com/pub/sane/%SUBDIR%/ \
@@ -15,7 +16,7 @@ MASTER_SITE_SUBDIR=	sane-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	usb-0.1.5:${PORTSDIR}/devel/libusb \
+LIB_DEPENDS=	usb-0.1.7:${PORTSDIR}/devel/libusb \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_REINPLACE=	yes
