@@ -3,12 +3,14 @@
 # Date created:         22 November 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.4 1995/04/11 19:46:55 asami Exp $
+# $Id: Makefile,v 1.5 1995/04/11 23:13:41 asami Exp $
 #
 
 DISTNAME=	xcd-1.0
 CATEGORIES+=	audio
 MASTER_SITES=	ftp://ftp.obs-besancon.fr/pub/outgoing/
+
+WRKSRC=		${WRKDIR}/xcd
 
 MAINTAINER=	jmz@FreeBSD.org
 
