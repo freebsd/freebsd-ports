@@ -1,0 +1,7 @@
+bin/hlmaster
+%%PORTDOCS%%share/doc/hlmaster/README
+%%PORTDOCS%%share/examples/hlmaster/filter.list
+%%PORTDOCS%%share/examples/hlmaster/server.list
+%%PORTDOCS%%share/examples/hlmaster/woncomm.lst
+%%PORTDOCS%%@dirrm share/examples/hlmaster
+%%PORTDOCS%%@dirrm share/doc/hlmaster
