@@ -62,6 +62,7 @@
     SUBDIR += ocaml
     SUBDIR += otcl
     SUBDIR += p2c
+    SUBDIR += p5-F77
     SUBDIR += p5-Tcl
     SUBDIR += p5-ePerl
     SUBDIR += pbasic
