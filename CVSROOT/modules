@@ -6437,6 +6437,7 @@ ru-xruskb	ports/russian/xruskb
 ru-xxkb		ports/russian/xxkb
 rubix		ports/games/rubix
 ruboard		ports/www/ruboard
+rubrica		ports/deskutils/rubrica
 ruby		ports/lang/ruby
 ruby-X11	ports/x11/ruby-X11
 ruby-acl	ports/security/ruby-acl
