@@ -289,6 +289,7 @@
     SUBDIR += mldonkey
     SUBDIR += mldonkey-gui
     SUBDIR += mldonkey-src
+    SUBDIR += mldonkey-urlslave
     SUBDIR += mmucl
     SUBDIR += mopd
     SUBDIR += mpd

@@ -1,0 +1,3 @@
+bin/mlurlslave
+%%PORTDOCS%%share/doc/mldonkey-urlslave/README
+%%PORTDOCS%%@dirrm share/doc/mldonkey-urlslave
