@@ -225,6 +225,7 @@
     SUBDIR += tuxkart
     SUBDIR += tuxracer
     SUBDIR += tvp
+    SUBDIR += nettoe
     SUBDIR += nighthawk
     SUBDIR += nil
     SUBDIR += nonsense
