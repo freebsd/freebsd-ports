@@ -1,9 +1,18 @@
---- doc/Makefile.in.orig	Sun Jan 11 17:16:59 2004
-+++ doc/Makefile.in	Tue Jan 27 01:31:55 2004
-@@ -146,10 +146,10 @@
- 
+--- doc/Makefile.in.orig	Mon Feb  9 16:17:57 2004
++++ doc/Makefile.in	Thu Feb 26 17:46:02 2004
+@@ -70,7 +70,7 @@
+ docDATA_INSTALL = $(INSTALL_DATA)
+ htmlDATA_INSTALL = $(INSTALL_DATA)
+ psDATA_INSTALL = $(INSTALL_DATA)
+-DATA = $(doc_DATA) $(html_DATA) $(ps_DATA)
++DATA = $(doc_DATA) $(html_DATA)
+ DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
+ ACLOCAL = @ACLOCAL@
+ AMDEP_FALSE = @AMDEP_FALSE@
+@@ -182,10 +182,10 @@
+ target_vendor = @target_vendor@
+ man_MANS = cfengine.8 cfagent.8  cfenvd.8  cfenvgraph.8  cfexecd.8  cfkey.8  cfrun.8  cfservd.8
  info_TEXINFOS = cfengine-Reference.texinfo cfengine-Tutorial.texinfo cfengine-Anomalies.texinfo
- 
 -docdir = $(prefix)/doc/$(PACKAGE)-$(VERSION)
 +docdir = $(prefix)/share/doc/cfengine2
  doc_DATA = 
@@ -13,12 +22,30 @@
  htmlfiles = cfengine-Reference.html cfengine-Tutorial.html cfengine-Anomalies.html
  html_DATA = $(htmlfiles)
  
-@@ -161,7 +161,7 @@
+@@ -196,7 +196,7 @@
+ # When the Texi2DVI problem with cfengine-Reference is corrected, 
  # then uncomment the reference to ps2
- psfiles = $(ps1)	# $(ps2)
- 
+ psfiles = $(ps2)
 -psdir = $(pkgdatadir)/doc
 +psdir = $(docdir)
  ps_DATA = $(psfiles)
+ MAKEINFOHTML = $(MAKEINFO) --html --no-split
  
- # Make sure these get distributed with everything else.
+@@ -708,7 +708,7 @@
+ info-am: $(INFO_DEPS)
+ 
+ install-data-am: install-docDATA install-htmlDATA install-info-am \
+-	install-man install-psDATA
++	install-man 
+ 
+ install-exec-am:
+ 
+@@ -768,7 +768,7 @@
+ ps-am: $(PSS)
+ 
+ uninstall-am: uninstall-docDATA uninstall-htmlDATA uninstall-info-am \
+-	uninstall-man uninstall-psDATA
++	uninstall-man
+ 
+ uninstall-man: uninstall-man8
+ 

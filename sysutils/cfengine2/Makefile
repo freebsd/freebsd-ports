@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cfengine2
-PORTVERSION=	2.1.1
+PORTVERSION=	2.1.3
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.iu.hio.no/pub/cfengine/ \
 		${MASTER_SITE_GNU}
@@ -16,7 +16,7 @@ DISTNAME=	cfengine-${PORTVERSION}
 MAINTAINER=	paul@aps.org
 COMMENT=	A systems administration tool for networks
 
-LIB_DEPENDS=	db4:${PORTSDIR}/databases/db4
+LIB_DEPENDS=	db41:${PORTSDIR}/databases/db41
 
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
