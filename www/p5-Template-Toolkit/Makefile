@@ -34,6 +34,7 @@ OPTIONS=TEXT_AUTOFORMAT "With Text::Autoformat Plugin"		off \
 	DBI		"With DBI Plugin"			off
 
 PERL_CONFIGURE=	yes
+CONFIGURE_ARGS+=	TT_DBI=n TT_ACCEPT=y
 
 MASTER_SITE_BACKUP+=	http://www.template-toolkit.org/download/
 
