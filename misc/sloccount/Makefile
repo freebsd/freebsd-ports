@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	sloccount
-PORTVERSION=	2.11
+PORTVERSION=	2.12
 CATEGORIES=	misc
 MASTER_SITES=	http://www.dwheeler.com/sloccount/
 
