@@ -191,6 +191,7 @@ share/locale/vi/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/wa/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-utils-2.0.mo
+@dirrm share/gnome/omf/gnome-utils
 @dirrm share/gnome/help/gnome-system-log/zh_TW/figures
 @dirrm share/gnome/help/gnome-system-log/zh_TW
 @dirrm share/gnome/help/gnome-system-log/zh_CN/figures

@@ -86,6 +86,8 @@ share/locale/zh_TW/LC_MESSAGES/gnome-pilot.mo
 @dirrm share/gnome/help/gnome-pilot/C
 @dirrm share/gnome/help/gnome-pilot
 @dirrm share/gnome/gnome-pilot/glade
+@dirrm share/gnome/gnome-pilot
+@dirrm lib/gnome-pilot
 @dirrm include/libgpilotdCM
 @dirrm include/gpilotd
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-pilot/gnome-pilot-C.omf 2>/dev/null || /usr/bin/true

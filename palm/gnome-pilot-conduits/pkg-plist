@@ -39,3 +39,5 @@ share/locale/uk/LC_MESSAGES/gnome-pilot-conduits.mo
 share/locale/vi/LC_MESSAGES/gnome-pilot-conduits.mo
 share/locale/wa/LC_MESSAGES/gnome-pilot-conduits.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-pilot-conduits.mo
+@dirrm share/gnome/gnome-pilot/conduits
+@dirrm lib/gnome-pilot/conduits

@@ -415,6 +415,7 @@ share/locale/wa/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/yi/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-panel-2.0.mo
+@dirrm share/gnome/pixmaps/fish
 @dirrm share/gnome/omf/gnome-panel
 @dirrm share/gnome/idl/gnome-panel-2.0
 @dirrm share/gnome/help/workspace-switcher/zh_TW/figures
