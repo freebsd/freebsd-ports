@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- Makefile.in	2001/04/27 18:30:04	1.1
++++ Makefile.in	2001/04/27 18:31:32
+@@ -20,7 +20,7 @@
+ 
+ CC = @CC@
+ 
+-CFLAGS = -c @CFLAGS@ @INCS@
++CFLAGS = -c @CFLAGS@ @INCS@ -DPREFIX=\"@prefix@\"
+ LIBS = @LIBS@
+ 
+ # fix these later

@@ -1,91 +1,160 @@
---- configure.orig	Thu Mar 30 11:22:00 2000
-+++ configure	Fri Apr 28 14:46:13 2000
-@@ -523,7 +523,7 @@
+
+$FreeBSD$
+
+--- configure.orig	Thu Apr 12 23:27:42 2001
++++ configure	Fri Apr 27 21:44:23 2001
+@@ -536,7 +536,7 @@
  
  
  
 -LIBS='-L/usr/X11R6/lib'
-+LIBS='-L$ac_default_prefix/lib -L/usr/X11R6/lib'
- CC='gcc'
- echo $ac_n "checking for main in -lm""... $ac_c" 1>&6
- echo "configure:530: checking for main in -lm" >&5
-@@ -701,14 +701,14 @@
- { echo "configure: error: GLU should come with OpenGL" 1>&2; exit 1; }
++LIBS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
+ 
+ # Extract the first word of "gcc", so it can be a program name with args.
+ set dummy gcc; ac_word=$2
+@@ -972,7 +972,7 @@
  fi
  
--echo $ac_n "checking for main in -lpthread""... $ac_c" 1>&6
--echo "configure:706: checking for main in -lpthread" >&5
-+echo $ac_n "checking for main in -pthread""... $ac_c" 1>&6
-+echo "configure:706: checking for main in -pthread" >&5
- ac_lib_var=`echo pthread'_'main | sed 'y%./+-%__p_%'`
- if eval "test \"\${ac_cv_lib_$ac_lib_var+set}\" = set"; then
+ 
+-CFLAGS=""
++CFLAGS="$CFLAGS -I${X11BASE}/include -I${LOCALBASE}/include"
+ 
+ # Check whether --enable-warn or --disable-warn was given.
+ if test "${enable_warn+set}" = set; then
+@@ -1023,7 +1023,7 @@
+ fi
+ 
+ if test "x$enable_optimize" ; then
+-	CFLAGS="$CFLAGS -O$enable_optimize"
++#	CFLAGS="$CFLAGS -O$enable_optimize"
+ fi
+ 
+ # Check whether --enable-network or --disable-network was given.
+@@ -1042,7 +1042,7 @@
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
--LIBS="-lpthread  $LIBS"
-+LIBS="-pthread  $LIBS"
+-LIBS="-lSDL_net  $LIBS"
++LIBS="$LIBS -lSDL_net"
  cat > conftest.$ac_ext <<EOF
- #line 714 "configure"
+ #line 1048 "configure"
  #include "confdefs.h"
-@@ -738,21 +738,21 @@
+@@ -1072,7 +1072,7 @@
  #define $ac_tr_lib 1
  EOF
  
--  LIBS="-lpthread $LIBS"
-+  LIBS="-pthread $LIBS"
+-  LIBS="-lSDL_net $LIBS"
++  LIBS="$LIBS -lSDL_net"
  
  else
    echo "$ac_t""no" 1>&6
- { echo "configure: error: SDL needs pthread to run properly" 1>&2; exit 1; }
+@@ -1147,7 +1147,7 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lX11  $LIBS"
++LIBS="$LIBS -lX11"
+ cat > conftest.$ac_ext <<EOF
+ #line 1153 "configure"
+ #include "confdefs.h"
+@@ -1177,7 +1177,7 @@
+ #define $ac_tr_lib 1
+ EOF
+ 
+-  LIBS="-lX11 $LIBS"
++  LIBS="$LIBS -lX11"
+ 
+ else
+   echo "$ac_t""no" 1>&6
+@@ -1191,7 +1191,7 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lGL  $LIBS"
++LIBS="$LIBS -lGL"
+ cat > conftest.$ac_ext <<EOF
+ #line 1197 "configure"
+ #include "confdefs.h"
+@@ -1221,7 +1221,7 @@
+ #define $ac_tr_lib 1
+ EOF
+ 
+-  LIBS="-lGL $LIBS"
++  LIBS="$LIBS -lGL"
+ 
+ else
+   echo "$ac_t""no" 1>&6
+@@ -1229,14 +1229,14 @@
  fi
+ 
  
 -echo $ac_n "checking for main in -lSDL""... $ac_c" 1>&6
--echo "configure:750: checking for main in -lSDL" >&5
+-echo "configure:1234: checking for main in -lSDL" >&5
 +echo $ac_n "checking for main in -lSDL-1.1""... $ac_c" 1>&6
-+echo "configure:750: checking for main in -lSDL-1.1" >&5
++echo "configure:1234: checking for main in -lSDL-1.1" >&5
  ac_lib_var=`echo SDL'_'main | sed 'y%./+-%__p_%'`
- if eval "test \"\${ac_cv_lib_$ac_lib_var+set}\" = set"; then
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
--LIBS="-lSDL -lpthread $LIBS"
-+LIBS="-L$ac_default_prefix/lib -lSDL-1.1 -pthread $LIBS"
+-LIBS="-lSDL  $LIBS"
++LIBS="$LIBS -lSDL-1.1 ${PTHREAD_LIBS}"
  cat > conftest.$ac_ext <<EOF
- #line 758 "configure"
+ #line 1242 "configure"
  #include "confdefs.h"
-@@ -782,7 +782,7 @@
- #define $ac_tr_lib 1
- EOF
- 
--  LIBS="-lSDL $LIBS"
-+  LIBS="-L$ac_default_prefix/lib -lSDL-1.1 $LIBS"
- 
+@@ -1262,8 +1262,8 @@
+   echo "$ac_t""yes" 1>&6
+   ${LN_S} -f system_sdl.c system.c ; \
+ ${LN_S} -f system_sdl.h system.h ; \
+-LIBS="$LIBS `sdl-config --libs`" ; \
+-CFLAGS="$CFLAGS `sdl-config --cflags`" ; \
++LIBS="$LIBS `$SDL_CONFIG --libs`" ; \
++CFLAGS="$CFLAGS `$SDL_CONFIG --cflags`" ; \
+ HAVE_SDL=1
  else
    echo "$ac_t""no" 1>&6
-@@ -796,7 +796,7 @@
+@@ -1274,7 +1274,7 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lglut  $LIBS"
++LIBS="$LIBS -lglut"
+ cat > conftest.$ac_ext <<EOF
+ #line 1280 "configure"
+ #include "confdefs.h"
+@@ -1320,7 +1320,7 @@
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
 -LIBS="-lSDL_mixer  $LIBS"
 +LIBS="-L$ac_default_prefix/lib -lSDL_mixer -lsmpeg $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 802 "configure"
+ #line 1326 "configure"
  #include "confdefs.h"
-@@ -826,7 +826,7 @@
- #define $ac_tr_lib 1
- EOF
- 
--  LIBS="-lSDL_mixer $LIBS"
-+  LIBS="-lSDL_mixer -lsmpeg $LIBS"
- 
+@@ -1357,7 +1357,7 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
  else
-   echo "$ac_t""no" 1>&6
-@@ -840,7 +840,7 @@
+   ac_save_LIBS="$LIBS"
+-LIBS="-lmikmod  $LIBS"
++LIBS="$LIBS -lmikmod"
+ cat > conftest.$ac_ext <<EOF
+ #line 1363 "configure"
+ #include "confdefs.h"
+@@ -1445,7 +1445,7 @@
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
 -LIBS="-lpng  $LIBS"
-+LIBS="-L$ac_default_prefix/lib -lpng  $LIBS"
++LIBS="$LIBS -lpng"
  cat > conftest.$ac_ext <<EOF
- #line 846 "configure"
+ #line 1451 "configure"
  #include "confdefs.h"
+@@ -1475,7 +1475,7 @@
+ #define $ac_tr_lib 1
+ EOF
+ 
+-  LIBS="-lpng $LIBS"
++  LIBS="$LIBS -lpng"
+ 
+ else
+   echo "$ac_t""no" 1>&6
