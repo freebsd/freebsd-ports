@@ -5,6 +5,7 @@
     SUBDIR += blackened
     SUBDIR += bnc
     SUBDIR += bobot++
+    SUBDIR += dancer
     SUBDIR += dancer-ircd
     SUBDIR += dancer-services
     SUBDIR += darkbot
