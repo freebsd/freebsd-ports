@@ -1,55 +1,44 @@
---- Makefile.orig	Sun Jan 21 14:32:48 2001
-+++ Makefile	Tue Jan 22 23:55:05 2002
-@@ -4,6 +4,15 @@
+--- Makefile.orig	Sat Jan 20 21:32:48 2001
++++ Makefile	Sun Apr 14 23:30:36 2002
+@@ -4,6 +4,10 @@
  include platform-settings
  
  SUBDIRS=pthsock xdb_file dnsrv jsm dialback jabberd
-+SUBDIRS+=aim-transport
-+SUBDIRS+=conference
-+SUBDIRS+=icq-transport
-+SUBDIRS+=irc-transport
-+SUBDIRS+=jud
-+SUBDIRS+=msn-transport
-+SUBDIRS+=yahoo-transport
-+
-+
++INSTALL_DATA=`cat .install_data-freebsd`
++INSTALL_DIR=install -d
++INSTALL_PROGRAM=`cat .install_program-freebsd`
++INSTALL_SCRIPT=`cat .install_data-freebsd`
  
  all: all-recursive
  
-@@ -13,8 +22,35 @@
+@@ -13,8 +17,29 @@
  
  single: single-recursive
  
 +LIBDIR=${PREFIX}/lib/jabber
++INCDIR=${PREFIX}/include/jabber
  install:
 -	printf "\n\nNo actual make install, you just run it out of the directory!\n"
-+	@install -c jabberd/jabberd ${PREFIX}/bin
-+	@install -c jabber.xml ${PREFIX}/etc/jabber.xml.sample
-+	@install -d ${LIBDIR}/jsm
-+	@install -c jsm/jsm.so ${LIBDIR}/jsm
-+	@install -d ${LIBDIR}/jud
-+	@install -c jud/jud.so ${LIBDIR}/jud
-+	@install -d ${LIBDIR}/xdb_file
-+	@install -c xdb_file/xdb_file.so ${LIBDIR}/xdb_file
-+	@install -d ${LIBDIR}/pthsock
-+	@install -c pthsock/pthsock_client.so ${LIBDIR}/pthsock
-+	@install -d ${LIBDIR}/dnsrv
-+	@install -c dnsrv/dnsrv.so ${LIBDIR}/dnsrv
-+	@install -d ${LIBDIR}/dialback
-+	@install -c dialback/dialback.so ${LIBDIR}/dialback
-+
-+	@install -d ${LIBDIR}/aim-transport
-+	@install -c aim-transport/src/aimtrans.so ${LIBDIR}/aim-transport
-+	@install -d ${LIBDIR}/conference
-+	@install -c conference/conference.so ${LIBDIR}/conference
-+	@install -d ${LIBDIR}/icq-transport
-+	@install -c icq-transport/icqtrans.so ${LIBDIR}/icq-transport
-+	@install -d ${LIBDIR}/irc-transport
-+	@install -c irc-transport/src/irc_transport.so ${LIBDIR}/irc-transport
-+	@install -d ${LIBDIR}/msn-transport
-+	@install -c msn-transport/msntrans.so ${LIBDIR}/msn-transport
-+	@install -d ${LIBDIR}/yahoo-transport
-+	@install -c yahoo-transport/src/yahootrans.so ${LIBDIR}/yahoo-transport
++	${INSTALL_PROGRAM} jabberd/jabberd ${PREFIX}/sbin
++	${INSTALL_DATA} jabber.xml ${PREFIX}/etc/jabber.xml.sample
++	${INSTALL_DIR} ${LIBDIR}/jsm
++	${INSTALL_DATA} jsm/jsm.so ${LIBDIR}/jsm
++	${INSTALL_DIR} ${LIBDIR}/xdb_file
++	${INSTALL_DATA} xdb_file/xdb_file.so ${LIBDIR}/xdb_file
++	${INSTALL_DIR} ${LIBDIR}/pthsock
++	${INSTALL_DATA} pthsock/pthsock_client.so ${LIBDIR}/pthsock
++	${INSTALL_DIR} ${LIBDIR}/dnsrv
++	${INSTALL_DATA} dnsrv/dnsrv.so ${LIBDIR}/dnsrv
++	${INSTALL_DIR} ${LIBDIR}/dialback
++	${INSTALL_DATA} dialback/dialback.so ${LIBDIR}/dialback
++	${INSTALL_DIR} ${INCDIR}
++	${INSTALL_DATA} platform-settings ${INCDIR}
++	${INSTALL_DATA} jabberd/jabberd.h ${INCDIR}
++	${INSTALL_DIR} ${INCDIR}/lib
++	${INSTALL_DATA} jabberd/lib/lib.h ${INCDIR}/lib
++	${INSTALL_DATA} jabberd/lib/xmlparse.h ${INCDIR}/lib
++	${INSTALL_DATA} jabberd/pth-1.4.0/pth.h ${INCDIR}
++	
  
  all-local:
  

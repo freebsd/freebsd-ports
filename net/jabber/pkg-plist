@@ -1,30 +1,24 @@
-bin/jabberd
+sbin/jabberd
 @unexec if cmp -s %D/etc/jabber.xml.sample %D/etc/jabber.xml; then rm -f %D/etc/jabber.xml; fi
 etc/jabber.xml.sample
 etc/rc.d/jabberd.sh
-lib/jabber/aim-transport/aimtrans.so
-lib/jabber/conference/conference.so
+include/jabber/
+include/jabber/lib/lib.h
+include/jabber/lib/xmlparse.h
+include/jabber/platform-settings
+include/jabber/jabberd.h
+include/jabberd/pth.h
 lib/jabber/dialback/dialback.so
 lib/jabber/dnsrv/dnsrv.so
-lib/jabber/icq-transport/icqtrans.so
-lib/jabber/irc-transport/irc_transport.so
 lib/jabber/jsm/jsm.so
-lib/jabber/jud/jud.so
-lib/jabber/msn-transport/msntrans.so
 lib/jabber/pthsock/pthsock_client.so
 lib/jabber/xdb_file/xdb_file.so
-lib/jabber/yahoo-transport/yahootrans.so
-@dirrm lib/jabber/aim-transport
-@dirrm lib/jabber/conference
+@dirrm include/jabber/lib
+@dirrm include/jabber
 @dirrm lib/jabber/dialback
 @dirrm lib/jabber/dnsrv
-@dirrm lib/jabber/icq-transport
-@dirrm lib/jabber/irc-transport
 @dirrm lib/jabber/jsm
-@dirrm lib/jabber/jud
-@dirrm lib/jabber/msn-transport
 @dirrm lib/jabber/pthsock
 @dirrm lib/jabber/xdb_file
-@dirrm lib/jabber/yahoo-transport
 @dirrm lib/jabber
 @unexec rmdir /var/spool/jabber 2>/dev/null || true

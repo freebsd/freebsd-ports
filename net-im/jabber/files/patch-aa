@@ -1,11 +1,57 @@
---- configure.orig	Sat Feb  3 05:06:24 2001
-+++ configure	Sat Feb 10 23:46:59 2001
-@@ -32,7 +32,7 @@
+--- configure.orig	Mon Feb 11 11:14:06 2002
++++ configure	Sun Apr 14 18:38:40 2002
+@@ -32,7 +32,8 @@
  LDFLAGS="$LDFLAGS"
  LIBS="$LIBS"
  XLDFLAGS="$XLDFLAGS "
 -JHOME=`pwd`
-+JHOME='${PREFIX}/lib/jabber'
++JHOME="`cat .prefix-freebsd`/lib/jabber"
++WRKSRC="`cat .wrksrc-freebsd`"
  
  ##
  # Print a cool header
+@@ -76,31 +77,19 @@
+ ##
+ # Pth check
+ ##
+-printf "Getting pth settings..."
+-PTH_CFLAGS=`pth-config --cflags`
+-PTH_LDFLAGS=`pth-config --ldflags`
+-PTH_LIBS=`pth-config --libs`
+-PTH_LIBDIR=`pth-config --libdir`
+-if [ -n "$PTH_CFLAGS" ]; then
+-    CFLAGS="$CFLAGS $PTH_CFLAGS";
+-    LDFLAGS="$LDFLAGS $PTH_LDFLAGS";
+-    LIBS="$LIBS $PTH_LIBS";
+-    SLIBS="$SLIBS $PTH_LIBDIR/libpth.a";
+-    printf "         Done.\n";
+-else
+-    if [ -d "jabberd/pth-1.4.0" ]; then
+-        opwd=`pwd`
+-        cd jabberd/pth-1.4.0;
+-        ./configure || (printf "Error Configuring pth"; exit 1);
+-        cd $opwd;
+-        PSUBDIR="pth-1.4.0";
+-        PTHP=`pwd`"/jabberd/pth-1.4.0";
+-        PLINK="$PTHP/pth_*.o";
+-        CFLAGS="$CFLAGS -I`pwd`/jabberd/pth-1.4.0";
+-    else
+-        printf "          Error.\n\n No version of PTH is available on this system\nhttp://www.gnu.org/software/pth/";
+-    fi
+-fi
++echo "Using jabber's internal copy of pth 1.4.0 because 1.4.1 is incompatible"
++opwd=`pwd`
++cd jabberd/pth-1.4.0;
++echo "Configuring jabber pth-1.4.0..."
++./configure || (echo "Error Configuring pth"; exit 1);
++echo "Building pth-1.4.0..."
++gmake
++cd $opwd;
++PSUBDIR="pth-1.4.0";
++PTHP="`pwd`/jabberd/pth-1.4.0";
++PLINK="$PTHP/pth_*.o";
++CFLAGS="$CFLAGS -I${PTHP}";
++LDFLAGS="$LDFLAGS -L${PTHP}";
+ 
+ 
+ 
