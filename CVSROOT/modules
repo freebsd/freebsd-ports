@@ -7800,7 +7800,6 @@ uulib		ports/converters/uulib
 uwatch		ports/sysutils/uwatch
 uwm		ports/x11-wm/uwm
 uzap		ports/editors/uzap
-uzoo-console	ports/audio/uzoo-console
 v		ports/x11-toolkits/v
 vMac		ports/emulators/vMac
 vacation	src/usr.bin/vacation
