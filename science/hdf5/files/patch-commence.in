@@ -1,5 +1,5 @@
---- config/commence.in.orig	Sun Jul  7 20:15:36 2002
-+++ config/commence.in	Sun Jul  7 20:15:58 2002
+--- config/commence.in.orig	Tue Jul 22 23:39:43 2003
++++ config/commence.in	Mon Oct 20 23:45:00 2003
 @@ -26,7 +26,7 @@
  RM=rm -f
  CP=cp
@@ -9,3 +9,24 @@
  INSTALL_DATA=@INSTALL_DATA@
  RUNSERIAL=@RUNSERIAL@
  RUNPARALLEL=@RUNPARALLEL@
+@@ -39,7 +39,7 @@
+ bindir=@bindir@
+ libdir=@libdir@
+ includedir=@includedir@
+-docdir=@exec_prefix@/doc
++docdir=@exec_prefix@/share
+ PUB_LIB=$(LIB)
+ 
+ ## Shared libraries
+@@ -57,9 +57,9 @@
+ ## Optional variables. We must declare them here because Irix pmake
+ ## complains if it sees a reference to a variable which has never been
+ ## defined. The main makefile is free to redefine these to something else.
+-DOCDIR=$(docdir)
++DOCDIR=$(docdir)/doc/hdf5
+ SUBDOCDIR=
+-EXAMPLEDIR=$(docdir)/hdf5/examples/c
++EXAMPLEDIR=$(docdir)/examples/hdf5/c
+ LIB=
+ LIB_SRC=
+ LIB_OBJ=
