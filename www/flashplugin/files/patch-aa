@@ -1,0 +1,10 @@
+--- Makefile.orig	Sun Oct  3 02:41:07 1999
++++ Makefile	Sun Oct  3 02:41:43 1999
+@@ -1,6 +1,4 @@
+-CC=cc
+-CXX=/usr/bin/c++
+-CFLAGS=-I/usr/X11R6/include -I./Lib -I./Plugin -fpic -fno-rtti -DXP_UNIX
++CFLAGS+=-I/usr/X11R6/include -I./Lib -I./Plugin -fpic -fno-rtti -DXP_UNIX
+ CFLAGS+=-O2
+ CFLAGS+=-DCHECK_TEXT_PLAIN
+ 
