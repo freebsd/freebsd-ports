@@ -1,4 +1,5 @@
 bin/gtktalog
+lib/gtktalog/aviinfo
 lib/gtktalog/mpeginfo
 lib/gtktalog/htmltitle
 lib/gtktalog/modinfo
