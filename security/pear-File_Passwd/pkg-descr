@@ -1,0 +1,5 @@
+Provides methods to manipulate and authenticate against standard Unix,
+SMB server, AuthUser (.htpasswd), AuthDigest (.htdigest), CVS pserver
+and custom formatted password files.
+
+WWW: http://pear.php.net/package/File_Passwd/
