@@ -132,6 +132,18 @@ share/doc/libgda/libgda-gdadatamodellist.html
 share/doc/libgda/libgda-gdaerror.html
 share/doc/libgda/libgda-gdaexport.html
 share/doc/libgda/libgda-gdareportdocument.html
+share/doc/libgda/libgda-gdareportitem.html
+share/doc/libgda/libgda-gdareportitemdetail.html
+share/doc/libgda/libgda-gdareportitemlabel.html
+share/doc/libgda/libgda-gdareportitempagefooter.html
+share/doc/libgda/libgda-gdareportitempageheader.html
+share/doc/libgda/libgda-gdareportitemrepfield.html
+share/doc/libgda/libgda-gdareportitemreport.html
+share/doc/libgda/libgda-gdareportitemreportfooter.html
+share/doc/libgda/libgda-gdareportitemreportheader.html
+share/doc/libgda/libgda-gdareportitemsqlquery.html
+share/doc/libgda/libgda-gdareportresult.html
+share/doc/libgda/libgda-gdareportvalid.html
 share/doc/libgda/libgda-gdaselect.html
 share/doc/libgda/libgda-gdaserverprovider.html
 share/doc/libgda/libgda-gdatable.html
@@ -198,6 +210,7 @@ share/locale/hu/LC_MESSAGES/libgda-2.mo
 share/locale/it/LC_MESSAGES/libgda-2.mo
 share/locale/ja/LC_MESSAGES/libgda-2.mo
 share/locale/ko/LC_MESSAGES/libgda-2.mo
+share/locale/ml/LC_MESSAGES/libgda-2.mo
 share/locale/ms/LC_MESSAGES/libgda-2.mo
 share/locale/nl/LC_MESSAGES/libgda-2.mo
 share/locale/no/LC_MESSAGES/libgda-2.mo
@@ -214,6 +227,7 @@ share/locale/tr/LC_MESSAGES/libgda-2.mo
 share/locale/uk/LC_MESSAGES/libgda-2.mo
 share/locale/vi/LC_MESSAGES/libgda-2.mo
 share/locale/zh_CN/LC_MESSAGES/libgda-2.mo
+share/locale/zh_TW/LC_MESSAGES/libgda-2.mo
 @dirrm share/gnome/omf/libgda
 @dirrm share/gnome/libgda/xml
 @dirrm share/gnome/libgda
