@@ -1,51 +1,57 @@
-# New ports collection Makefile for: esecanna for VJE-Delta 3.0
-# Version required:	0.2.2
-# Date created:		29 January 2000
+# New ports collection Makefile for: esecanna
+# Version required:	0.13.0
+# Date created:		24 February 2000
 # Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	esecanna-vje30_DR-0.2.2
-PKGNAME=	ja-esecanna-vje30-0.2.2
+DISTNAME=	esecanna_0.13.0
+PKGNAME=	ja-esecanna-0.13.0
 CATEGORIES=	japanese
 MASTER_SITES=	http://www.idaemons.org/ports/distfiles/ \
-		http://plaza.harmonix.ne.jp/~redstar/
+		http://esecanna.netfort.gr.jp/
 
 MAINTAINER=	knu@idaemons.org
 
-#RUN_DEPENDS=	${LOCALBASE}/vje30/bin/vjed:${PORTSDIR}/japanese/vje30-trial
+.include <bsd.port.pre.mk>
 
-DOCDIR=		${PREFIX}/share/doc/esecanna
+.if ${PORTOBJFORMAT} == "elf"
+SHLIB_VER=	1
+.else
+SHLIB_VER=	1.0
+.endif
 
-# Make sure of naming it proper so as to be invoked *after* vje.sh on startup
-STARTER=	vjeesecannaserver.sh
+STARTER=	esecanna.sh
+
+MAKE_ENV=	SHLIB_VER="${SHLIB_VER}"
+
+PLIST_SUB=	SHLIB_VER="${SHLIB_VER}" \
+		STARTER="${STARTER}"
 
 post-extract:
-	@perl -pe "s,!!PREFIX!!,${PREFIX},g" ${FILESDIR}/${STARTER} > ${WRKSRC}/${STARTER}
+	@perl -pe " \
+		s,!!PREFIX!!,${PREFIX},g; \
+		s,!!STARTER!!,${STARTER},g; \
+		" \
+		${FILESDIR}/esecanna.sh > ${WRKSRC}/${STARTER}
 
 do-configure:
 	@cd ${WRKSRC} && perl -i -pe " \
-		s,/etc/esecannarc,${PREFIX}/etc/esecannarc,g; \
-		s,/etc/vje30,${PREFIX}/etc/vje30,g; \
-		s,/usr/lib/vje30,${PREFIX}/vje30,g; \
-		s,/usr/sbin/vjed,${PREFIX}/vje30/bin/vjed,g; \
+		s,!!PREFIX!!,${PREFIX},g; \
 		" \
-		4DEVELOPERS.jp \
-		esecannarc \
-		imewrapper.c \
-		vjewrapper.c
+		README.jp \
+		esecannarc
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/esecannaserver ${PREFIX}/sbin
-	${INSTALL_DATA} ${WRKSRC}/esecannarc ${PREFIX}/etc
-	${INSTALL_SCRIPT} ${WRKSRC}/${STARTER} ${PREFIX}/etc/rc.d
+post-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/${STARTER} ${PREFIX}/etc/rc.d/
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/4DEVELOPERS.jp ${WRKSRC}/README.jp ${DOCDIR}
+	${MKDIR} ${PREFIX}/share/doc/esecanna
+	cd ${WRKSRC} && ${INSTALL_DATA} README.First.jp README.jp ${PREFIX}/share/doc/esecanna/
 .endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

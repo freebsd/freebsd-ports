@@ -1,0 +1,23 @@
+--- esecannarc.orig	Fri Feb 25 16:02:52 2000
++++ esecannarc	Sat Feb 26 00:04:26 2000
+@@ -1,10 +1,10 @@
+ ## これは えせかんな の総合設定ファイルであり、また、
+ ## ユーザー別設定ファイルのサンプルでもあります。
+-## 総合設定ファイルとして、/etc/esecannarc にないと起動しません。
++## 総合設定ファイルとして、!!PREFIX!!/etc/esecannarc にないと起動しません。
+ 
+ # IME.. VJE/ATOK/WNN どれをつかうか。
+ # ~/.esecannarc の場合は、そのユーザーがどの IME を使うかを指定するが、
+-# /etc/esecannarc の場合は、~/.esecannarc がない場合にどの IME を
++# !!PREFIX!!/etc/esecannarc の場合は、~/.esecannarc がない場合にどの IME を
+ # デフォルトで使うか、を指定する。
+ # VJE25:VJE30:ATOK:WNN6 のなかから指定。
+ IME=VJE25
+@@ -48,6 +48,6 @@
+ 
+ # 再起動時に実行するファイル名。総合設定ファイルのみ有効。
+ VJE25.RestartComm=/usr/local/vje/bin/vjed
+-VJE30.RestartComm=/usr/local/vje/bin/vjed
++VJE30.RestartComm=/usr/local/vje30/bin/vjed
+ 
+ 
