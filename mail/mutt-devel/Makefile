@@ -314,7 +314,6 @@ pre-install:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/generate-plist > ${PLIST}
 
 post-install:
-	@strip ${PREFIX}/bin/mutt
 .if !defined(NOPORTDOCS)
 	@${ECHO} "===>   Installing Mutt documentation"
 	@${MKDIR} ${PREFIX}/share/doc/mutt && \
