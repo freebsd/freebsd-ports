@@ -3,7 +3,7 @@
 # Date created:		19 June 1997
 # Whom:			Matthew Hunt <mph@pobox.com>
 #
-# $Id: Makefile,v 1.3 1998/04/17 23:26:28 mph Exp $
+# $Id: Makefile,v 1.4 1998/11/09 21:10:25 mph Exp $
 #
 
 DISTNAME=	ircii2.8.2-EPIC3.004
@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.min.net/~douglas/ircii/
 DISTFILES=	ircii2.8.2-EPIC3.004.tar.gz ircii2.8.2-EPIC3.help.tar.gz
 
 MAINTAINER=	mph@freebsd.org
+
+BROKEN=		Awaiting upgrade to epic4
 
 EXTRACT_ONLY=	ircii2.8.2-EPIC3.004.tar.gz
 GNU_CONFIGURE=	yes
