@@ -16,15 +16,19 @@ COMMENT=	A Spacetaxi clone
 LIB_DEPENDS=	noatun.0:${PORTSDIR}/multimedia/kdemultimedia3
 
 USE_KDELIBS_VER=	3
-USE_AUTOMAKE=		yes
-CONFIGURE_TARGET=
-CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
+USE_AUTOCONF_VER=	253
+MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
+		AUTOHEADER="${TRUE}"
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500113
-BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e 's| -pedantic||g ; \
+		 s|-pthread|${PTHREAD_LIBS}|g' ${WRKSRC}/aclocal.m4
 
+pre-configure:
+	@cd ${WRKSRC} && ${AUTOHEADER}
+
+.include "${PORTSDIR}/x11/kde3/Makefile.kde"
 .include <bsd.port.post.mk>
