@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmms
-PORTVERSION=	1.03
+PORTVERSION=	1.04
 CATEGORIES=	audio python
 MASTER_SITES=	http://www.via.ecp.fr/~flo/2002/PyXMMS/dist/ \
 		http://www3.kr.freebsd.org/~perky/distfiles/
@@ -24,5 +24,8 @@ USE_GLIB=	yes
 PLIST_SUB+=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S,^${LOCALBASE}/,,g}
 XMMS_CONFIG?=	${X11BASE}/bin/xmms-config
 MAKE_ENV=	GLIB_CONFIG="${GLIB_CONFIG}" XMMS_CONFIG="${XMMS_CONFIG}"
+
+post-patch:
+	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} patch
 
 .include <bsd.port.mk>
