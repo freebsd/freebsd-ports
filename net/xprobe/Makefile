@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	xprobe2
-PORTVERSION=	0.2
+PORTVERSION=	0.2.1
 CATEGORIES=	net
-MASTER_SITES=	http://www.sys-security.com/archive/tools/xprobe2/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	xprobe
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ICMP active OS fingerprint scanner
