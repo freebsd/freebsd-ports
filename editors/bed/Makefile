@@ -32,6 +32,7 @@ PLIST_SUB+=		X11="@comment "
 .else
 PLIST_SUB+=		X11=""
 
+.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
 pre-configure:
 	@if "${X11BASE}/bin/rxvt" -h 2>&1 | ${GREP} -qi menubar; then \
 	else \
@@ -40,6 +41,7 @@ pre-configure:
 		${ECHO_MSG} "to enable X11 support."; \
 		exit 1; \
 	fi
+.endif
 .endif
 
 post-configure:
