@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	razor-agents
-PORTVERSION=	2.20
-PORTREVISION=	1
+PORTVERSION=	2.21
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	razor
@@ -25,7 +24,8 @@ PERL_CONFIGURE=	yes
 
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN1=		razor-revoke.1 razor-admin.1 razor-report.1 razor-check.1
-MAN3=		Razor2::Errorhandler.3
+MAN3=		Razor2::Errorhandler.3 Razor2::Preproc::deHTMLxs.3 \
+		Razor2::Syslog.3
 MAN5=		razor-agents.5 razor-whitelist.5 razor-agent.conf.5
 
 post-install:
