@@ -76,8 +76,9 @@ do-configure:
 		-e 's|/usr/share/|${PREFIX}/share/|' \
 		-e 's|^(export[[:space:]]+CC=).+$$|\1"${CC}"|' \
 		-e 's|^(export[[:space:]]+CXX=).+$$|\1"${CXX}"|' \
-		-e 's|^(export[[:space:]]+CFLAGS=).+$$|\1"${CFLAGS}"|' \
+		-e 's|^(export[[:space:]]+CFLAGS=).+$$|\1"${CFLAGS} ${PTHREAD_CFLAGS}"|' \
 		-e 's|^(export[[:space:]]+CXXFLAGS=).+$$|\1"${CXXFLAGS}"|' \
+		-e 's|^(export[[:space:]]+LIBS=).+$$|\1"${PTHREAD_LIBS}"|' \
 		-e 's|^(export[[:space:]]+LIBLINK=)"ar (.+)$$|\1"${AR} \2|' \
 		${WRKSRC}/build/config.linux
 
