@@ -35,6 +35,7 @@
     SUBDIR += freefem
     SUBDIR += fudgit
     SUBDIR += fxt
+    SUBDIR += gambit
     SUBDIR += gap
     SUBDIR += gcalctool
     SUBDIR += gdcalc
