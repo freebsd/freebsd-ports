@@ -1,0 +1,10 @@
+bin/robodoc
+share/robodoc/example.c
+share/robodoc/general.m4
+share/robodoc/main.css
+share/robodoc/robodoc.html
+share/robodoc/robodoc.m4
+share/robodoc/stoc.html
+share/robodoc/stoc.m4
+share/robodoc/tocgen.m4
+@dirrm share/robodoc
