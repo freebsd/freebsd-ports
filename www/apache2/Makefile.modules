@@ -91,10 +91,19 @@ IGNORE=		"Unknown DBM"
 CONFIGURE_ARGS+=	--with-dbm=sdbm
 .endif
 
-# Modules section:
-# How does it works ?
-# << TO BE WRITTEN >>
-# All supported modules
+.if defined(WITH_THREADS)
+CONFIGURE_ARGS+=	--enable-threads
+CFLAGS+=		-DFREEBSD_THREAD_HACK
+.   if ${WITH_PTHREAD_LIBS} != "c_r" && ${OSVERSION} > 500023
+CONFIGURE_ENV+=		apr_cv_pthreads_lib=-l${WITH_PTHREAD_LIBS} \
+			apr_cv_pthreads_cflags=${WITH_PTHREAD_CFLAGS}
+.   endif
+.endif
+
+.if !defined(WITHOUT_SSL)
+WITH_SSL_MODULES=	yes
+CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
+.endif
 
 AUTH_MODULES=		access auth auth_anon auth_dbm auth_digest
 DAV_MODULES=		dav dav_fs
@@ -108,161 +117,15 @@ MISC_MODULES=		actions alias asis autoindex cache cern_meta \
 			mime_magic negotiation rewrite setenvif speling status \
 			unique_id userdir usertrack vhost_alias
 PROXY_MODULES=		proxy proxy_connect proxy_ftp proxy_http
-SSL_MODULE=		ssl
+SSL_MODULES=		ssl
 SUEXEC_MODULES=		suexec
 THREADS_MODULES=	cgid cache file_cache disk_cache mem_cache
 
 # Work in progress
 SLAVE_PORT_MODULES?=	# If you are porting a slave port for apache2 please define SLAVE_PORT_MODULES
 
-DEFAULT_MODULES=	${AUTH_MODULES} ${DAV_MODULES} ${MISC_MODULES} \
-			${PROXY_MODULES} ${SLAVE_PORT_MODULES}
+DEFAULT_MODULES_CATEGORIES= \
+			AUTH DAV MISC SLAVE_PORT
 
-AVAILABLE_MODULES=	${DEFAULT_MODULES} ${EXPERIMENTAL_MODULES} ${LDAP_MODULES} ${THREADS_MODULES} \
-			${SSL_MODULE} ${SUEXEC_MODULES} ${SLAVE_PORT_MODULES}
-
-# Setting "@comment " as default.
-.for module in ${AVAILABLE_MODULES}
-${module}_PLIST_SUB=	"@comment "
-.endfor
-
-# Configure
-
-.if defined(WITH_MODULES) && ( defined(WITHOUT_MODULES) || defined(WITH_EXTRA_MODULES))
-IGNORE=		"WITH_MODULES and WITHOUT_MODULES are mutually exclusive"
-.endif
-
-.if defined(WITHOUT_AUTH) || defined(WITH_CUSTOM_AUTH) || \
-    defined(WITHOUT_PROXY) || defined(WITH_CUSTOM_PROXY) || \
-    defined(WITHOUT_DAV)
-CUSTOM=		YES
-.endif
-
-.if !defined(WITH_STATIC_APACHE)
-# FYI
-#DYNAMIC_MODULES=	so
-CONFIGURE_ARGS+=	--enable-so
-.else
-CONFIGURE_ARGS+=	--disable-so
-WITH_ALL_STATIC_MODULES=	YES
-.endif
-
-### This part is not processed if WITH_MODULES is defined
-.if defined(WITH_MODULES)
-_APACHE_MODULES+=		${WITH_MODULES}
-.elif !defined(CUSTOM)
-_APACHE_MODULES+=	${DEFAULT_MODULES}
-.else
-.    if defined(WITH_CUSTOM_AUTH)
-_APACHE_MODULES+=		${WITH_CUSTOM_AUTH}
-.    elif !defined(WITHOUT_AUTH)
-_APACHE_MODULES+=		${AUTH_MODULES}
-.   endif
-.   if defined(WITH_CUSTOM_PROXY)
-_APACHE_MODULES+=		${WITH_CUSTOM_PROXY}
-.   elif !defined(WITHOUT_PROXY)
-_APACHE_MODULES+=		${PROXY_MODULES}
-.   endif
-.   if !defined(WITHOUT_DAV)
-_APACHE_MODULES+=		dav dav_fs
-.   endif
-_APACHE_MODULES+=	${MISC_MODULES} ${SLAVE_PORT_MODULES}
-.endif # end of module selection
-
-.if defined (WITH_LDAP)
-_APACHE_MODULES+=	${LDAP_MODULES}
-.endif
-
-.if defined(WITH_THREADS)
-CONFIGURE_ARGS+=	--enable-threads
-CFLAGS+=		-DFREEBSD_THREAD_HACK
-.   if ${WITH_PTHREAD_LIBS} != "c_r" && ${OSVERSION} > 500023
-CONFIGURE_ENV+=		apr_cv_pthreads_lib=-l${WITH_PTHREAD_LIBS} \
-			apr_cv_pthreads_cflags=${WITH_PTHREAD_CFLAGS}
-.   endif
-.   if !defined(WITH_CUSTOM_THREADS)
-_APACHE_MODULES+=	${THREADS_MODULES}
-.   else
-_APACHE_MODULES+=	${WITH_CUSTOM_THREADS}
-.   endif
-.endif # endif of module selection
-
-.if !defined(WITHOUT_SSL)
-_APACHE_MODULES+=	${SSL_MODULE}
-CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
-.endif
-
-.if defined(WITH_SUEXEC)
-SUEXEC_DOCROOT?=		${PREFIX_RELDEST}/www/data
-SUEXEC_USERDIR?=		public_html
-SUEXEC_SAFEPATH?=		${PREFIX_RELDEST}/bin:${LOCALBASE}/bin:/usr/bin:/bin
-SUEXEC_LOGFILE?=		/var/log/httpd-suexec.log
-SUEXEC_UIDMIN?=			1000
-SUEXEC_GIDMIN?=			1000
-SUEXEC_CALLER?=			${WWWOWN}
-_APACHE_MODULES+=		${SUEXEC_MODULES}
-CONFIGURE_ARGS+=		--with-suexec-caller=${SUEXEC_CALLER} \
-				--with-suexec-uidmin=${SUEXEC_UIDMIN} \
-				--with-suexec-gidmin=${SUEXEC_GIDMIN} \
-				--with-suexec-userdir="${SUEXEC_USERDIR}" \
-				--with-suexec-docroot="${SUEXEC_DOCROOT}" \
-				--with-suexec-safepath="${SUEXEC_SAFEPATH}" \
-				--with-suexec-logfile="${SUEXEC_LOGFILE}" \
-				--with-suexec-bin="${PREFIX_RELDEST}/sbin/suexec"
-.   if defined(WITH_SUEXEC_UMASK)
-CONFIGURE_ARGS+=			--with-suexec-umask=${WITH_SUEXEC_UMASK}
-.   endif
-.endif
-.if defined(WITH_EXTRA_MODULES)
-_APACHE_MODULES+=	${WITH_EXTRA_MODULES}
-.endif
-
-.if defined(WITH_EXPERIMENTAL)
-_APACHE_MODULES+=	${EXPERIMENTAL_MODULES}
-.endif
-
-.if !defined(WITHOUT_MODULES)
-APACHE_MODULES=		${_APACHE_MODULES}
-.else
-APACHE_MODULES!=	\
-			for module in ${_APACHE_MODULES}; do \
-				${ECHO_CMD} ${WITHOUT_MODULES} | ${GREP} -wq $${module} 2> /dev/null || \
-				${ECHO_CMD} $${module}; \
-			done
-.endif
-
-.if defined(WITH_STATIC_MODULES)
-_CONFIGURE_ARGS!=	\
-			for module in ${APACHE_MODULES} ; do \
-				${ECHO_CMD} ${WITH_STATIC_MODULES} | \
-					${GREP} -wq $${module} 2> /dev/null ; \
-				if [ "$${?}" = "0" ] ; then \
-						${ECHO_CMD} "--enable-$${module}"; \
-					else \
-						${ECHO_CMD} "--enable-$${module}=shared"; \
-					fi; done
-CONFIGURE_ARGS+=	${_CONFIGURE_ARGS}
-.elif defined(WITH_STATIC_APACHE) || defined(WITH_ALL_STATIC_MODULES)
-CONFIGURE_ARGS+=	--enable-modules="${APACHE_MODULES}"
-.else
-CONFIGURE_ARGS+=	--enable-mods-shared="${APACHE_MODULES}"
-.endif
-
-.if defined(WITH_STATIC_MODULES)
-_SHARED_MODULES!=	\
-			for module in ${APACHE_MODULES} ; do \
-				${ECHO_CMD} ${WITH_STATIC_MODULES} | ${GREP} -wq $${module} 2> /dev/null || \
-				${ECHO_CMD} $${module}; \
-			done
-SHARED_MODULES=		${_SHARED_MODULES}
-.elif !defined(WITH_ALL_STATIC_MODULES)
-SHARED_MODULES=		${APACHE_MODULES}
-.endif
-
-.  for module in ${SHARED_MODULES}
-${module}_PLIST_SUB=	""
-.  endfor
-
-.for module in ${AVAILABLE_MODULES}
-PLIST_SUB+=	MOD_${module:U}=${${module}_PLIST_SUB}
-.endfor
+ALL_MODULES_CATEGORIES=	AUTH DAV EXPERIMENTAL LDAP MISC PROXY SSL \
+			SUEXEC THREADS SLAVE_PORT
