@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.253 1999/04/19 00:17:28 mharo Exp $
+# $Id: Makefile,v 1.254 1999/04/25 20:47:37 andreas Exp $
 #
 
     SUBDIR += SSLtelnet
@@ -78,6 +78,7 @@
     SUBDIR += ircII
     SUBDIR += ircd-hybrid
     SUBDIR += ircii-epic
+    SUBDIR += irssi
     SUBDIR += isc-dhcp2
     SUBDIR += ivs
     SUBDIR += jmirror
@@ -104,6 +105,7 @@
     SUBDIR += mtr
     SUBDIR += muh
     SUBDIR += naim
+    SUBDIR += nam
     SUBDIR += ncftp
     SUBDIR += ncftp2
     SUBDIR += ncftp3
@@ -114,6 +116,7 @@
     SUBDIR += nettest
     SUBDIR += ninja
     SUBDIR += nocol
+    SUBDIR += ns
     SUBDIR += nslint
     SUBDIR += ntimelord
     SUBDIR += ntop
