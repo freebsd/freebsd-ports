@@ -214,6 +214,7 @@
     SUBDIR += penv
     SUBDIR += perf
     SUBDIR += personality
+    SUBDIR += pftop
     SUBDIR += pib
     SUBDIR += pkg_install
     SUBDIR += pkg_remove

@@ -1,0 +1,15 @@
+--- ../pftop-0.4.orig/pftop.c	Tue Aug  5 10:20:39 2003
++++ ./pftop.c	Fri Sep 26 13:03:55 2003
+@@ -1983,10 +1983,10 @@
+ #ifdef HAVE_RULE_UGID
+ 	if (pr->uid.op)
+ 		tb_print_ugid(pr->uid.op, pr->uid.uid[0], pr->uid.uid[1],
+-		        "user", UID_MAX);
++		        "user", UINT_MAX);
+ 	if (pr->gid.op)
+ 		tb_print_ugid(pr->gid.op, pr->gid.gid[0], pr->gid.gid[1],
+-		        "group", GID_MAX);
++		        "group", UINT_MAX);
+ #endif
+ 
+ 	if (pr->flags || pr->flagset) {
