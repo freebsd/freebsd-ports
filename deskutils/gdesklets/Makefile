@@ -17,8 +17,7 @@ COMMENT=	A framework for Gnome 2.x for desktop applets
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gnome/__init__.py:${PORTSDIR}/x11-toolkits/py-gnome2
 LIB_DEPENDS=	gtop-2.0.2:${PORTSDIR}/devel/libgtop2
 RUN_DEPENDS=	${PYXML} \
-		${PYTHON_SITELIBDIR}/gtk-2.0/gnome/__init__.py:${PORTSDIR}/x11-toolkits/py-gnome2 \
-		${PYTHON_SITELIBDIR}/gtk-2.0/gtkhtml2.so:${PORTSDIR}/x11-toolkits/py-gnome-extras
+		${PYTHON_SITELIBDIR}/gtk-2.0/gnome/__init__.py:${PORTSDIR}/x11-toolkits/py-gnome2
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
