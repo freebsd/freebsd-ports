@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	apps/sound/mixers
 PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	xmix-2.1.mixers.patch
 
-MAINTAINER=	janek@gaja.ipan.lublin.pl
+MAINTAINER=	ports@FreeBSD.Org
 
 USE_IMAKE=	yes
 WRKSRC=		$(WRKDIR)/xmix
