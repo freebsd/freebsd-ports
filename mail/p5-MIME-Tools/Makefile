@@ -7,7 +7,7 @@
 
 PORTNAME=	p5-MIME-Tools
 PORTVERSION=	5.411a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	MIME
@@ -45,5 +45,9 @@ MAN3=	MIME::Body.3 \
 	MIME::Tools.3 \
 	MIME::WordDecoder.3 \
 	MIME::Words.3
+
+post-patch:
+	@${RM} -f ${WRKSRC}/lib/MIME/Field/ParamVal.pm.orig \
+		${WRKSRC}/lib/MIME/Words.pm.orig
 
 .include <bsd.port.mk>
