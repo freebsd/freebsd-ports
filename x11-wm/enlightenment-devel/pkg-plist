@@ -2,6 +2,7 @@ bin/edox
 bin/eesh
 bin/enlightenment
 bin/epp
+bin/starte16
 etc/X11/dm/Sessions/enlightenment.desktop
 %%DATADIR%%/config/actionclasses.cfg
 %%DATADIR%%/config/actionclasses.cfg.ja
@@ -399,6 +400,8 @@ etc/X11/dm/Sessions/enlightenment.desktop
 %%DATADIR%%/themes/winter/ttfonts/Vera.ttf
 %%DATADIR%%/themes/winter/ttfonts/VeraBd.ttf
 %%DATADIR%%/themes/winter/windowmatches.cfg
+share/locale/bg/LC_MESSAGES/enlightenment.mo
+share/locale/bs/LC_MESSAGES/enlightenment.mo
 share/locale/da/LC_MESSAGES/enlightenment.mo
 share/locale/de/LC_MESSAGES/enlightenment.mo
 share/locale/en_US/LC_MESSAGES/enlightenment.mo
