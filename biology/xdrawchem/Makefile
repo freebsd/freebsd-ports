@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xdrawchem
-PORTVERSION=	0.84
+PORTVERSION=	0.85
 CATEGORIES=	biology
 MASTER_SITES=	http://www.prism.gatech.edu/~gte067k/xdrawchem/
 EXTRACT_SUFX=	.tgz
