@@ -14,7 +14,7 @@
  
 -    if (nl[N_IFNET].n_value != 0) {
 +    if ((ifnetaddr = nl[N_IFNET].n_value) != 0) {
-+#if __FreeBSD_version <= 199701
++#if __FreeBSD_version < 300000
  	struct ifnet ifnet;
  	kread(N_IFNET, &ifnetaddr, sizeof(ifnetaddr));
  	old_packets = packets;
@@ -22,7 +22,7 @@
  	    packets.collisions += ifnet.if_collisions;
  	    ifnetaddr = (u_long) ifnet.if_next;
  	}
-+#else /* 3.0-current, Jan 1997 */
++#else /* 3.0-* */
 +	/* Stolen from netstat/if.c */
 +        struct ifnet ifnet;
 +        struct ifnethead ifnethead;
