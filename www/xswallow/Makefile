@@ -13,6 +13,7 @@ DISTNAME=	XswallowSource-1.0.17
 
 MAINTAINER=	conrads@home.com
 
+USE_XLIB=	yes
 WRKSRC=		${WRKDIR}/PluginSDK30b5/xswallow
 
 PORTOBJFORMAT=	aout
