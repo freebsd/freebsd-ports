@@ -1,5 +1,3 @@
----------------------------------------------------------------------
- Bochs requires a .bochsrc file to be present in either your current
- directory or your home directory before starting.  A sample of the
- .bochsrc file can be found in %%PREFIX%%/share/bochs/dot.bochsrc.
----------------------------------------------------------------------
+****  Bochs requires a .bochsrc file to be present in either your current
+      directory or your home directory before starting.  A sample of the
+      .bochsrc file can be found in %%DATADIR%%/bochsrc.sample.
