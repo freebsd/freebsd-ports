@@ -1,23 +1,33 @@
---- Makefile.orig	Sun Feb 24 04:37:47 2002
-+++ Makefile	Wed Sep  4 19:40:15 2002
-@@ -8,15 +8,16 @@
+--- Makefile.orig	Tue Jan 28 13:03:48 2003
++++ Makefile	Tue Jan 28 13:04:35 2003
+@@ -1,23 +1,23 @@
+ #configureable stuff
+-PREFIX ?= /usr/local
+-BINDIR ?= $(PREFIX)/bin
+-MANDIR ?= $(PREFIX)/share/man/man1
+-LIBDIR ?= $(PREFIX)/lib/sendip
++#PREFIX ?= /usr/local
++BINDIR=${PREFIX}/bin
++MANDIR=${PREFIX}/man/man1
++LIBDIR=${PREFIX}/lib/sendip
+ #For most systems, this works
+-INSTALL ?= install
++INSTALL?=install
  #For Solaris, you may need
  #INSTALL=/usr/ucb/install
  
--CFLAGS=	-fPIC -pipe -Wall -Wpointer-arith -Wwrite-strings \
-+CFLAGS+=	-fPIC -fsigned-char -Wall -Wpointer-arith -Wwrite-strings \
- 			-Wstrict-prototypes -Wnested-externs -Winline -Werror -g \
+ CFLAGS=	-fPIC -fsigned-char -pipe -Wall -Wpointer-arith -Wwrite-strings \
+ 			-Wstrict-prototypes -Wnested-externs -Winline -Werror -g -Wcast-align \
 -			-DSENDIP_LIBS=\"$(LIBDIR)\"
-+			-DSENDIP_LIBS=\"$(LIBDIR)\" -DHAVE_STRING_H=1
++			-DSENDIP_LIBS=\"${LIBDIR}\"
  #-Wcast-align causes problems on solaris, but not serious ones
  LDFLAGS=	-g -rdynamic -lm
--LDFLAGS_SOLARIS= -g -lsocket -lnsl -lm
-+#LDFLAGS_SOLARIS= -g -lsocket -lnsl -lm
-+LDFLAGS_SOLARIS= -g -lsocket -lnsl -lm -ldl
+ #LDFLAGS_SOLARIS= -g -lsocket -lnsl -lm
+ LDFLAGS_SOLARIS= -g -lsocket -lnsl -lm -ldl
  LDFLAGS_LINUX= -g  -rdynamic -ldl -lm
  LIBCFLAGS= -shared
 -CC=	gcc
-+CC?=	cc
++#CC=	gcc
  
  PROGS= sendip
- PROTOS= ipv4.so ipv6.so icmp.so tcp.so udp.so rip.so bgp.so ntp.so #dns.so
+ BASEPROTOS= ipv4.so ipv6.so

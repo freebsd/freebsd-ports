@@ -5,6 +5,7 @@ lib/sendip/icmp.so
 lib/sendip/tcp.so
 lib/sendip/udp.so
 lib/sendip/rip.so
+lib/sendip/ripng.so
 lib/sendip/bgp.so
 lib/sendip/ntp.so
 @dirrm lib/sendip

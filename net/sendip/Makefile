@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sendip
-PORTVERSION=	2.1
+PORTVERSION=	2.3
 CATEGORIES=	net
 MASTER_SITES=	http://www.earth.li/projectpurple/files/
 
@@ -15,11 +15,8 @@ MAINTAINER=	joseph@randomnetworks.com
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_PERL5=	yes
+INSTALLS_SHLIB=	yes
 
 MAN1=		sendip.1
-
-pre-install:
-	${REINPLACE_CMD} -e "s:/usr/local:${PREFIX}:g" ${WRKSRC}/Makefile;
-	${REINPLACE_CMD} -e "s:/share/man/man1:/man/man1:g" ${WRKSRC}/Makefile;
 
 .include <bsd.port.mk>
