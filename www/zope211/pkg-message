@@ -2,16 +2,27 @@
 
 Zope 2.7 Successfull installed.
 
-To create an instance of Zope please run
-
+To create an instance of Zope please run 
 make instance
 
-to create an instance in %%ZOPEBASEDIR%%. To create an instance in a
-diffrent location run
+You can set the following Variables in /etc/make.conf 
 
-make instance ZOPEBASEDIR=<instance_home>
+ZOPEINSTANCEBASE	Directory where Zope instance should go
+			(default: %%ZOPEBASEDIR%%)
+ZOPEINSTANCENAME	Default name for a new Zope instance 
+			(default: none)
 
-Files installed by make instance will NOT be deleted when Zope is
-deinstalled. You have to delete them yourself
+If you want have multiple Zope you should run 
+make instance INSTANCENAME=<somename>
 
 **********************************************************************
+****** ATTENTION ***** ATTENTION ***** ATTENTION ***** ATTENTION *****
+
+The default installation directory for Zope Products has changed from 
+%%ZOPEBASEDIR%%/lib/python/Products 
+to %%ZOPEBASEDIR%%/Products. 
+
+You migth have to add the following lines to your zope.conf 
+products %%ZOPEBASEDIR%%/Products
+products $INSTANCE/Products
+
