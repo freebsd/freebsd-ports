@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.isaac.cs.berkeley.edu/pilot/
 
 MAINTAINER=	noway@nohow.demon.co.uk
 
-LIB_DEPENDS=	pbm.1:${PORTSDIR}/graphics/netpbm
+LIB_DEPENDS=	netpbm.1:${PORTSDIR}/graphics/netpbm
 
 post-patch:
 	${PERL} -pi -e "s|^CFLAGS.+|CFLAGS += -I${LOCALBASE}/include|g; \
