@@ -1,3 +1,4 @@
+bin/umap
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map8.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map8/maps/ANSI_X3.110-1983.bin
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map8/maps/ANSI_X3.4-1968.bin
