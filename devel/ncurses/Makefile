@@ -3,7 +3,7 @@
 # Date created:				23 September 1997
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.6 1998/07/29 01:08:54 asami Exp $
+# $Id: Makefile,v 1.7 1998/08/29 20:24:34 hoek Exp $
 #
 
 DISTNAME=		ncurses-4.2
@@ -12,6 +12,8 @@ MASTER_SITES=		${MASTER_SITE_GNU} \
 			ftp://ftp.clark.net/pub/dickey/ncurses/
 
 MAINTAINER=		andy@icc.surw.chel.su
+
+BROKEN=	runs ldconfig without arguments
 
 MAN1=	captoinfo.1m clear.1 infocmp.1m tic.1m toe.1m tput.1 tset.1
 MAN3=	curs_addch.3x curs_addchstr.3x curs_addstr.3x curs_attr.3x \
