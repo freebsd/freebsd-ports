@@ -19,11 +19,17 @@ share/locale/cs/LC_MESSAGES/gcalctool.mo
 share/locale/de/LC_MESSAGES/gcalctool.mo
 share/locale/es/LC_MESSAGES/gcalctool.mo
 share/locale/fr/LC_MESSAGES/gcalctool.mo
+share/locale/he/LC_MESSAGES/gcalctool.mo
+share/locale/it/LC_MESSAGES/gcalctool.mo
 share/locale/ja/LC_MESSAGES/gcalctool.mo
+share/locale/ml/LC_MESSAGES/gcalctool.mo
+share/locale/ms/LC_MESSAGES/gcalctool.mo
 share/locale/nl/LC_MESSAGES/gcalctool.mo
 share/locale/no/LC_MESSAGES/gcalctool.mo
+share/locale/pl/LC_MESSAGES/gcalctool.mo
 share/locale/pt/LC_MESSAGES/gcalctool.mo
 share/locale/pt_BR/LC_MESSAGES/gcalctool.mo
+share/locale/ru/LC_MESSAGES/gcalctool.mo
 share/locale/sr/LC_MESSAGES/gcalctool.mo
 share/locale/sr@Latn/LC_MESSAGES/gcalctool.mo
 share/locale/sv/LC_MESSAGES/gcalctool.mo
