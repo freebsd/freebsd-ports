@@ -19,13 +19,16 @@ bin/pop3d
 %%RCDIR%%/courier-imap-imapd-ssl.sh.sample
 %%RCDIR%%/courier-imap-pop3d.sh.sample
 %%RCDIR%%/courier-imap-pop3d-ssl.sh.sample
+%%LIBEXECDIR%%/authlib/authcustom
 %%LIBEXECDIR%%/authlib/authdaemon
 %%LIBEXECDIR%%/authlib/authdaemond
 %%LDAPFLAG%%%%LIBEXECDIR%%/authlib/authdaemond.ldap
 %%MYSQLFLAG%%%%LIBEXECDIR%%/authlib/authdaemond.mysql
 %%PGSQLFLAG%%%%LIBEXECDIR%%/authlib/authdaemond.pgsql
 %%LIBEXECDIR%%/authlib/authdaemond.plain
+%%LIBEXECDIR%%/authlib/authpam
 %%LIBEXECDIR%%/authlib/authuserdb
+%%VPOPMAILFLAG%%%%LIBEXECDIR%%/authlib/authvchkpw
 %%LIBEXECDIR%%/courierlogger
 %%LIBEXECDIR%%/couriertcpd
 %%LIBEXECDIR%%/imapd-ssl.rc
