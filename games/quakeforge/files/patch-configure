@@ -23,4 +23,12 @@
  		*bsd*)
  			touch conftest.c
  			CPP_NAME="`(f=\`$CC -v -E -Dfoo conftest.c -o conftest.i 2>&1 | grep -e -Dfoo\`; set $f; echo "$1")` %d %i %o"
-
+@@ -10726,7 +10729,7 @@
+ int
+ main ()
+ {
+-void *(*foo)(size_t) = alloca;
++void *foo = alloca(sizeof(void));
+   ;
+   return 0;
+ }
