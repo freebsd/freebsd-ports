@@ -19,7 +19,15 @@
  /* 
   * This doesn't work the way it does on every other system. On FreeBSD it's
   * only a "hint, not a demand", whatever that means. Note that this is not 
-@@ -356,14 +368,14 @@
+@@ -351,19 +368,22 @@
+ #else
+ #define ServerOSDefines		XFree86ServerOSDefines -DDDXTIME -DXNO_SYSCONF
+ #define XawI18nDefines		-DUSE_XWCHAR_STRING -DUSE_XMBTOWC
++#endif
++#ifndef HasPam
++#define HasPam			YES
+ #endif
+ 
  /* The GCC strength-reduce bug is fixed for FreeBSD 2.1.5 and later */
  #ifndef DefaultGcc2i386Opt
  #if OSMajorVersion > 2 || (OSMajorVersion == 2 && OSMinorVersion > 1) || (OSMajorVersion == 2 && OSMinorVersion == 1 && OSTeenyVersion >= 5)
