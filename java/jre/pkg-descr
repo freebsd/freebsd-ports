@@ -1,0 +1,16 @@
+The Java Runtime Environment is the minimum standard Java Platform for 
+running Java programs. It contains the Java virtual machine, Java core 
+classes and supporting files.
+
+Executables are installed into /usr/local/jdk1.1.8/bin. You may want to
+put this into your PATH or symlink them to /usr/local/bin in case you
+don't have kaffe installed (which shared many of the binarie's
+names). 
+
+You may want to build a kernel with
+options         SYSVSEM
+
+For more information about the Java for FreeBSD see
+http://www.freebsd.org/java/
+
+WWW: http://www.freebsd.org/java/
