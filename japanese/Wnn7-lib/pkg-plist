@@ -1,12 +1,32 @@
 include/wnn/commonhd.h
+include/wnn/config.h
+include/wnn/copyright.h
 include/wnn/cplib.h
+include/wnn/demcom.h
+include/wnn/dslib.h
+include/wnn/fi_jdata.h
+include/wnn/hinsi_file.h
+include/wnn/jd_sock.h
+include/wnn/jdata.h
+include/wnn/jh.h
 include/wnn/jlib.h
 include/wnn/jllib.h
 include/wnn/jslib.h
 include/wnn/msg.h
+include/wnn/mt_jlib.h
+include/wnn/mt_jserver.h
 include/wnn/rk_spclval.h
+include/wnn/serverdefs.h
+include/wnn/wnn_os.h
+include/wnn/wnn_string.h
 include/wnn/wnnerror.h
 @dirrm include/wnn
+lib/libwnn6_fromsrc.a
+lib/libwnn6.a
+lib/libwnn6.so
+lib/libwnn6.so.1
 lib/libwnn.a
-share/doc/Wnn6-lib/copyright.jp
-@dirrm share/doc/Wnn6-lib
+share/doc/ja-Wnn6-lib/README
+@dirrm share/doc/ja-Wnn6-lib
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
