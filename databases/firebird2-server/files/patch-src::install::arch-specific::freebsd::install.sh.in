@@ -84,8 +84,8 @@
 -chmod ug=rw,o= security.fdb
 +
 +# install the samples if they don't exist
-+[ -f aliases.conf ] || install -o $fbUID -g $fbGID -m 440 aliases.conf.sample aliases.conf
-+[ -f firebird.conf ] || install -o $fbUID -g $fbGID -m 440 firebird.conf.sample firebird.conf
++[ -f aliases.conf ] || install -o $fbUID -g $fbGID -m 444 aliases.conf.sample aliases.conf
++[ -f firebird.conf ] || install -o $fbUID -g $fbGID -m 444 firebird.conf.sample firebird.conf
 +[ -f security.fdb ] || install -o $fbUID -g $fbGID -m 660 security.fdb.sample security.fdb
  
  # remove any existing gds service
