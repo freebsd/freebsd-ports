@@ -1,5 +1,5 @@
---- Makefile.orig	Sat Mar 24 23:02:31 2001
-+++ Makefile	Mon Apr  9 11:01:34 2001
+--- Makefile.orig	Wed May 30 03:29:03 2001
++++ Makefile	Thu Oct 25 14:42:19 2001
 @@ -18,11 +18,11 @@
  LOCALHOST=localhost:8080
  
@@ -9,14 +9,14 @@
 -CONFDIR=/var/spool/wwwoffle
 +INSTDIR=$(PREFIX)
 +SPOOLDIR=$(SPOOL)/wwwoffle
-+CONFDIR=$(SPOOL)/wwwoffle
++CONFDIR=$(PREFIX)/etc
  MANDIR=$(INSTDIR)/man
 -DOCDIR=$(INSTDIR)/doc/wwwoffle
 +DOCDIR=$(INSTDIR)/share/doc/wwwoffle
  
  # For Cygwin (win32).
  #INSTDIR=/wwwoffle
-@@ -50,14 +50,13 @@
+@@ -53,14 +53,13 @@
  
  ########
  
@@ -34,8 +34,18 @@
  
  # For HP/UX this is a good idea.
  #LDFLAGS=
-@@ -83,7 +82,7 @@
+@@ -86,15 +85,15 @@
  #USE_ZLIB=0
+ 
+ # The option to use IPv6 sockets if required.
+-#USE_IPV6=1
++USE_IPV6=1
+ 
+ # The option to use IPv6 sockets if required.
+-USE_IPV6=0
++#USE_IPV6=0
+ 
+ ########
  
  INCLUDE=
 -LIBRARY=-lz
@@ -43,7 +53,7 @@
  
  # To compile without zlib
  #LIBRARY=
-@@ -150,7 +149,7 @@
+@@ -164,7 +163,7 @@
  	     http.o ftp.o finger.o ssl.o \
  	     refresh.o messages.o parse.o spool.o \
  	     $(DOC_PARSERS)\
@@ -52,7 +62,7 @@
  
  wwwoffle : $(WWWOFFLE_OBJ)
  	$(LINK) $(WWWOFFLE_OBJ) -o $@ $(LIBRARY)
-@@ -162,7 +161,7 @@
+@@ -176,7 +175,7 @@
  	      $(DOC_PARSERS) \
  	      gifmodify.o htmlmodify.o \
  	      connect.o control.o configedit.o search.o index.o messages.o monitor.o parse.o purge.o refresh.o spool.o \
@@ -61,7 +71,7 @@
  
  wwwoffled : $(WWWOFFLED_OBJ)
  	$(LINK) $(WWWOFFLED_OBJ) -o $@ $(LIBRARY)
-@@ -173,7 +172,7 @@
+@@ -187,7 +186,7 @@
  	           http.o ftp.o finger.o ssl.o \
  	           spool.o \
  		   messages.o parse.o \
@@ -70,16 +80,25 @@
  
  wwwoffle-tools : $(WWWOFFLE_TOOLS_OBJ)
  	$(LINK) $(WWWOFFLE_TOOLS_OBJ) -o $@ $(LIBRARY)
-@@ -181,7 +180,7 @@
- ####
- 
+@@ -197,7 +196,7 @@
  CONVERT_OBJ=convert-cache.o \
--	    configfile.o config.o errors.o io.o misc.o proto-none.o sockets.o spool.o md5.o
-+	    configfile.o config.o errors.o io.o misc.o proto-none.o sockets.o spool.o
+ 	    http.o ftp.o finger.o ssl.o \
+ 	    messages.o parse.o \
+-	    configfile.o config.o errors.o io.o misc.o proto.o sockets.o spool.o md5.o
++	    configfile.o config.o errors.o io.o misc.o proto.o sockets.o spool.o
  
  convert-cache : $(CONVERT_OBJ)
  	$(LINK) $(CONVERT_OBJ) -o $@ $(LIBRARY)
-@@ -293,15 +292,15 @@
+@@ -207,7 +206,7 @@
+ UNCOMPRESS_OBJ=uncompress-cache.o \
+ 	       http.o ftp.o finger.o ssl.o \
+ 	       messages.o parse.o \
+-	       configfile.o config.o errors.o io.o misc.o proto.o sockets.o spool.o md5.o
++	       configfile.o config.o errors.o io.o misc.o proto.o sockets.o spool.o
+ 
+ uncompress-cache : $(UNCOMPRESS_OBJ)
+ 	$(LINK) $(UNCOMPRESS_OBJ) -o $@ $(LIBRARY)
+@@ -308,15 +307,15 @@
  
  install_binary : programs
  	[ -x $(INSTDIR)/bin ] || $(INSTALL) -d -m 755 $(INSTDIR)/bin
@@ -98,7 +117,7 @@
  
  install_binary-win32 : programs
  	[ -x $(INSTDIR)/bin ] || $(INSTALL) -d -m 755 $(INSTDIR)/bin
-@@ -323,17 +322,17 @@
+@@ -338,17 +337,17 @@
  install_man :
  	[ -x $(MANDIR) ] || $(INSTALL) -d -m 755 $(MANDIR)
  	[ -x $(MANDIR)/man1 ] || $(INSTALL) -d -m 755 $(MANDIR)/man1
@@ -120,7 +139,7 @@
  	done
  	[ "x$(LANG)" = "x" ] || [ ! -d lang-$(LANG) ] || ( cd lang-$(LANG) && \
  	  for file in CHANGES.CONF CONVERT COPYING FAQ INSTALL NEWS README README.* ; do \
-@@ -372,8 +371,8 @@
+@@ -387,8 +386,8 @@
  	cd $(SPOOLDIR)/html && ./fixup-install.sh $(SPOOLDIR) $(LOCALHOST) && rm ./fixup-install.sh
  # Now fix the permissions that tar preserved, we needed to use 'tar xpf' to get round root's umask.
  # These two will fail unless you are root, that is OK because the owner is already you.
@@ -131,7 +150,7 @@
  
  install_config :
  	sed -e 's%SPOOLDIR%$(SPOOLDIR)%' -e 's%CONFDIR%$(CONFDIR)%' < wwwoffle.conf > wwwoffle.conf.install
-@@ -383,7 +382,7 @@
+@@ -398,7 +397,7 @@
  	  echo "WWWOFFLE: There is already a config file $(CONFDIR)/wwwoffle.conf." ;\
  	  echo "WWWOFFLE: Run 'upgrade-config.pl $(CONFDIR)/wwwoffle.conf' to upgrade it." ;\
  	  echo "WWWOFFLE: " )

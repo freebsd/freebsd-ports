@@ -6,6 +6,7 @@ bin/wwwoffle-rm
 bin/wwwoffle-tools
 bin/wwwoffle-write
 etc/rc.d/wwwoffled.sh
+etc/wwwoffle.conf.default
 sbin/wwwoffled
 share/doc/wwwoffle/CHANGES.CONF
 share/doc/wwwoffle/CONVERT
@@ -157,7 +158,6 @@ wwwoffle/outgoing/U98hgItueyIbW8udnZuMjpg
 wwwoffle/outgoing/Uh-W1UuCia4-wLoZYEnRrXw
 wwwoffle/outgoing/Ux3oAN7UMcBN5bQi-qYGkoA
 wwwoffle/upgrade-config.pl
-wwwoffle/wwwoffle.conf.default
 @dirrm wwwoffle/html/local/dontget
 @dirrm wwwoffle/html/local
 @dirrm wwwoffle/html/messages
