@@ -16,6 +16,7 @@ COMMENT=	An X11 front-end for Gnuplot
 
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 
+USE_GCC=	2.95
 USE_QT_VER=	1
 USE_X_PREFIX=	yes
 

@@ -21,6 +21,7 @@ MAINTAINER=	kris@FreeBSD.org
 COMMENT=	A C++ X GUI toolkit
 
 LATEST_LINK=	qt1
+USE_GCC=	2.95
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 .if defined(MAKE_JOBS)
@@ -39,10 +40,6 @@ MAKE_ENV+=	VERSION="${VERSION}" VER_MIN=${VER_MIN} VER_MAJ=${VER_MAJ}
 PLIST_SUB+=	VERSION="${VER_MAJ}"
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
 
 MAN1=	moc.1
 .include "${FILESDIR}/man3"

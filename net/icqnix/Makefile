@@ -22,8 +22,14 @@ USE_QT_VER=	1
 CONFIGURE_ARGS=	--with-qt-libraries=${X11BASE}/lib --with-qt-includes=${X11BASE}/include/X11/qt1
 CONFIGURE_ENV=	QT_MOC="${MOC}"
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501013
+BROKEN=		"Configure fails"
+.endif
+
 post-install:
 	@strip ${PREFIX}/bin/icqnix
 	@strip ${PREFIX}/bin/icqnix.install
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
