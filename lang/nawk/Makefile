@@ -1,9 +1,9 @@
 # New ports collection makefile for:  nawk
-# Version required:    98.02.11
+# Version required:    98.10.20
 # Date created:        29 April 1998
 # Whom:                Josh Gilliam <josh@quick.net>
 #
-# $Id: Makefile,v 1.1.1.1 1998/07/04 19:21:55 steve Exp $
+# $Id: Makefile,v 1.2 1998/11/10 02:05:09 steve Exp $
 #
 
 DISTNAME=	awk

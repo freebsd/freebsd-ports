@@ -1,5 +1,5 @@
-*** b.c.orig	Sun Nov  1 17:14:22 1998
---- b.c	Sun Nov  1 17:23:00 1998
+*** b.c.orig	Mon Oct 19 18:42:53 1998
+--- b.c	Wed Jan 13 17:46:54 1999
 ***************
 *** 27,32 ****
 --- 27,35 ----
@@ -87,11 +87,11 @@
   				continue;
   			}
   		}
-*** main.c.orig	Sun Nov  1 17:24:32 1998
---- main.c	Sun Nov  1 17:28:40 1998
+*** main.c.orig	Mon Oct 19 18:49:03 1998
+--- main.c	Wed Jan 13 17:51:59 1999
 ***************
-*** 27,38 ****
---- 27,43 ----
+*** 27,32 ****
+--- 27,33 ----
   #define DEBUG
   #include <stdio.h>
   #include <ctype.h>
@@ -99,18 +99,8 @@
   #include <stdlib.h>
   #include <string.h>
   #include <signal.h>
-  #include "awk.h"
-  #include "ytab.h"
-  
-+ #ifdef __FreeBSD__
-+ #	include <floatingpoint.h>
-+ #endif
-+ 
-  extern	char	**environ;
-  extern	int	nfields;
-  
 ***************
-*** 55,66 ****
+*** 55,61 ****
   	char *fs = NULL, *marg;
   	int temp;
   
@@ -118,12 +108,7 @@
   	if (argc == 1) {
   		fprintf(stderr, "Usage: %s [-f programfile | 'program'] [-Ffieldsep] [-v var=value] [files]\n", cmdname);
   		exit(1);
-  	}
-  	signal(SIGFPE, fpecatch);
-  	yyin = NULL;
-  	symtab = makesymtab(NSYMTAB);
-  	while (argc > 1 && argv[1][0] == '-' && argv[1][1] != '\0') {
---- 60,80 ----
+--- 56,67 ----
   	char *fs = NULL, *marg;
   	int temp;
   
@@ -136,12 +121,3 @@
   	if (argc == 1) {
   		fprintf(stderr, "Usage: %s [-f programfile | 'program'] [-Ffieldsep] [-v var=value] [files]\n", cmdname);
   		exit(1);
-  	}
-  	signal(SIGFPE, fpecatch);
-+ #ifdef	__FreeBSD__
-+ 	fpsetround(FP_RN);
-+ 	fpsetmask(0L);
-+ #endif
-  	yyin = NULL;
-  	symtab = makesymtab(NSYMTAB);
-  	while (argc > 1 && argv[1][0] == '-' && argv[1][1] != '\0') {
