@@ -1,43 +1,49 @@
-bin/ici
-include/ici/pcre/internal.h
-include/ici/pcre/pcre.h
-include/ici/alloc.h
-include/ici/array.h
-include/ici/buf.h
-include/ici/catch.h
-include/ici/conf-bsd.h
-include/ici/exec.h
-include/ici/file.h
-include/ici/float.h
-include/ici/forall.h
-include/ici/func.h
-include/ici/fwd.h
-include/ici/int.h
-include/ici/mark.h
-include/ici/mem.h
-include/ici/null.h
-include/ici/object.h
-include/ici/op.h
-include/ici/parse.h
-include/ici/pc.h
-include/ici/primes.h
-include/ici/ptr.h
-include/ici/re.h
-include/ici/set.h
-include/ici/skt.h
-include/ici/src.h
-include/ici/str.h
-include/ici/struct.h
-include/ici/trace.h
-include/ici/win.h
-include/ici/wrap.h
-lib/ici/ici_init.ici
-lib/libici.a
-share/doc/ici/ici-a4.ps
-share/doc/ici/ici-ltr.ps
-share/doc/ici/ici.txt
-share/doc/ici/ici.pdf
-@dirrm include/ici/pcre
-@dirrm include/ici
-@unexec rmdir %D/share/doc/ici 2>/dev/null || true
-@unexec rmdir %D/lib/ici 2>/dev/null || true
+bin/ici3
+include/ici3/pcre/internal.h
+include/ici3/pcre/pcre.h
+include/ici3/alloc.h
+include/ici3/array.h
+include/ici3/buf.h
+include/ici3/catch.h
+include/ici3/cfunc.h
+include/ici3/conf-bsd.h
+include/ici3/exec.h
+include/ici3/file.h
+include/ici3/float.h
+include/ici3/forall.h
+include/ici3/func.h
+include/ici3/fwd.h
+include/ici3/ici.h
+include/ici3/int.h
+include/ici3/mark.h
+include/ici3/mem.h
+include/ici3/method.h
+include/ici3/null.h
+include/ici3/object.h
+include/ici3/op.h
+include/ici3/parse.h
+include/ici3/pc.h
+include/ici3/primes.h
+include/ici3/ptr.h
+include/ici3/re.h
+include/ici3/set.h
+include/ici3/skt.h
+include/ici3/src.h
+include/ici3/str.h
+include/ici3/struct.h
+include/ici3/trace.h
+include/ici3/win.h
+include/ici3/wrap.h
+lib/ici3/ici3core.ici
+lib/ici3/ici3core1.ici
+lib/ici3/ici3core2.ici
+lib/ici3/ici3core3.ici
+lib/libici3.a
+share/doc/ici3/ici-a4.ps
+share/doc/ici3/ici-ltr.ps
+share/doc/ici3/ici.txt
+share/doc/ici3/ici.pdf
+@dirrm include/ici3/pcre
+@dirrm include/ici3
+@unexec rmdir %D/share/doc/ici3 2>/dev/null || true
+@unexec rmdir %D/lib/ici3 2>/dev/null || true
