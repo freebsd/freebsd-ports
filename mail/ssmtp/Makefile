@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	ssmtp
-PORTVERSION=	2.60.3
-CATEGORIES=	mail
+PORTVERSION=	2.60.4
+CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sheepkiller@cultdeadsheep.org
 COMMENT=	Extremely simple MTA to get mail off the system to a mail hub
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\.[0-9]+$//}
@@ -23,6 +23,8 @@ USE_GMAKE=	yes
 USE_REINPLACE=	yes
 
 CONFIGURE_ARGS=	--enable-ssl --enable-inet6
+CFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB}
 MAILERCONF=	/etc/mail/mailer.conf
 TRUE=		/usr/bin/true
 
