@@ -3,7 +3,7 @@
 # Date created:		November 13, 1998
 # Whom:			Marc G. Fournier <scrappy@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.40 1999/06/18 21:27:38 billf Exp $
+# $Id: Makefile,v 1.41 1999/06/22 17:16:42 steve Exp $
 #
 
 DISTNAME=	postgresql-6.4.2
@@ -16,6 +16,8 @@ MASTER_SITES=	ftp://ftp.postgresql.org/pub/ \
 		ftp://ftp.sunet.se/pub/unix/databases/relational/postgresql/
 
 MAINTAINER=	andreas@FreeBSD.ORG
+
+BROKEN='unfetchable, version 6.5 is the latest'
 
 .if ${MACHINE_ARCH} == "alpha"
 BROKEN=		doesn\'t build on the alpha yet
