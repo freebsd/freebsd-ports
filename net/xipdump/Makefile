@@ -8,7 +8,7 @@
 PORTNAME=	xipdump
 PORTVERSION=	1.5.4
 CATEGORIES=	net
-MASTER_SITES=	http://www.epita.fr/~lse/projects/xipdump/
+MASTER_SITES=	http://www.epita.fr/~lse/recherche/xipdump/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	umeno@rr.iij4u.or.jp
