@@ -121,6 +121,7 @@
     SUBDIR += gsfv
     SUBDIR += gss
     SUBDIR += gtk-knocker
+    SUBDIR += gtkpasman
     SUBDIR += gtkportscan
     SUBDIR += hackbot
     SUBDIR += hafiye

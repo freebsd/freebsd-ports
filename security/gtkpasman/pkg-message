@@ -1,0 +1,11 @@
+
+#####################################################################
+This port installs a sample password file in the following location:
+
+%%PREFIX%%/share/doc/gtkpasman/
+
+You may find this file useful while making your own password file.
+Also note that the File->Open function is not implemented yet.
+#####################################################################
+
+
