@@ -108,6 +108,7 @@
     SUBDIR += heretic
     SUBDIR += heroes
     SUBDIR += hex
+    SUBDIR += hlserver-action
     SUBDIR += hlserver-cs
     SUBDIR += hlserver-dod
     SUBDIR += hlserver-fa
