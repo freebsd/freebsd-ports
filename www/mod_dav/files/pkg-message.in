@@ -1,0 +1,10 @@
+*******************************************************
+* Please review the mod_dav configuration in the main
+* Apache configuration file:
+* %%PREFIX%%/etc/apache/httpd.conf
+*
+* Look at the file %%PREFIX%%/etc/apache/apache.conf.mod_dav
+* for indications on what to do. The default lock database
+* has already been created in /var/db/DAVLock.{dir,pag}.
+*
+*******************************************************
