@@ -1,5 +1,8 @@
 lib/perl5/site_perl/%%PERL_VER%%/Test/Harness.pm
+lib/perl5/site_perl/%%PERL_VER%%/Test/Harness/Assert.pm
+lib/perl5/site_perl/%%PERL_VER%%/Test/Harness/Straps.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Test/Harness/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Test/Harness
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Test/Harness
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Test 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Test 2>/dev/null || true
