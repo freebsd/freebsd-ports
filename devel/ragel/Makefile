@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	ragel
-PORTVERSION=	2.2
-PORTREVISION=	1
+PORTVERSION=	3.6
 CATEGORIES=	devel
-MASTER_SITES=	http://www.essemage.com/ragel/
+MASTER_SITES=	http://www.elude.ca/ragel/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compile regular languages into executable C/C++ code
@@ -19,6 +18,7 @@ USE_REINPLACE=	yes
 USE_BISON=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	AWK="${AWK}"
 
 MAN1=		ragel.1
@@ -26,7 +26,7 @@ PLIST_FILES=	bin/ragel
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|-g -Wall|@CFLAGS@|g'
+		's|$$(CFLAGS)|$$(CXXFLAGS)|g'
 
 post-build:
 	@cd ${WRKSRC}/doc && ${SETENV} ${MAKE_ENV} \
