@@ -1,0 +1,16 @@
+The libgrass package consists of the majority of the libgis, and
+libdatetime library functions from the GRASS GIS program.  They are
+built as a standalone shared library suitable for use by non-GRASS
+applications wishing to read and write GRASS databases. Some
+additional functions have been added to simplify library
+initialization and data access by non-GRASS applications.  
+
+While libgrass is currently only suitable for accessing GRASS raster
+cells, and associated support files, it is hoped that future
+revisions will include support for vector files, and other data
+elements stored within the GRASS database.
+
+WWW: http://gdal.velocet.ca/projects/grass
+
+- Jonathan Pennington
+  <john@coastalgeology.org>
