@@ -1,13 +1,10 @@
 # inspired from pam-pgsql port :-)
 
 SRCS=	pam_pwdfile.c
-LIB=	pam_pwdfile
-SHLIB_NAME=${LIB}.so
+SHLIB_NAME=	pam_pwdfile.so
 
 LDADD=		-lpam -lcrypt
 CFLAGS+=	-Wall -D_BSD_SOURCE
-
-INTERNALLIB=
 
 LIBDIR=		${LOCALBASE}/lib
 
