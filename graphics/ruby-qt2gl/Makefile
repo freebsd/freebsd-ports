@@ -37,8 +37,8 @@ post-extract:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/README ${RUBY_DOCDIR}/${PORTNAME}/
+	${MKDIR} ${RUBY_MODDOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${RUBY_MODDOCDIR}/
 .endif
 
 .include "${.CURDIR}/../../x11-toolkits/ruby-qt2/Makefile.common"

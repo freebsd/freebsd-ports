@@ -30,10 +30,10 @@ RUBY_SETUP=	install.rb
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
-	${CP} -R ${WRKSRC}/samples/* ${RUBY_EXAMPLESDIR}/${PORTNAME}/
-	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}
-	${CP} -R ${WRKSRC}/docs/* ${RUBY_DOCDIR}/${PORTNAME}/
+	${MKDIR} ${RUBY_MODEXAMPLESDIR}
+	${CP} -R ${WRKSRC}/samples/* ${RUBY_MODEXAMPLESDIR}/
+	${MKDIR} ${RUBY_MODDOCDIR}
+	${CP} -R ${WRKSRC}/docs/* ${RUBY_MODDOCDIR}/
 .endif
 
 .include <bsd.port.mk>

@@ -36,11 +36,11 @@ do-install:
 	fi
 .endfor
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
-	${CP} -R ${WRKSRC}/sample/ ${RUBY_EXAMPLESDIR}/${PORTNAME}/
-	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}/ja
-	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${WRKSRC}/README ${RUBY_DOCDIR}/${PORTNAME}/
-	${INSTALL_DATA} ${WRKSRC}/doc/*.ja ${RUBY_DOCDIR}/${PORTNAME}/ja/
+	${MKDIR} ${RUBY_MODEXAMPLESDIR}
+	${CP} -R ${WRKSRC}/sample/ ${RUBY_MODEXAMPLESDIR}/
+	${MKDIR} ${RUBY_MODDOCDIR}/ja
+	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${WRKSRC}/README ${RUBY_MODDOCDIR}/
+	${INSTALL_DATA} ${WRKSRC}/doc/*.ja ${RUBY_MODDOCDIR}/ja/
 .endif
 
 .include <bsd.port.mk>

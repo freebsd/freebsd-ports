@@ -1,15 +1,15 @@
 %%RUBY_SITEARCHLIBDIR%%/postgres.so
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/postgres/losample.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/postgres/psql.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/postgres/psqlHelp.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/postgres/test1.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/postgres/test2.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/postgres/test4.rb
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/postgres
-%%PORTDOCS%%%%RUBY_DOCDIR%%/postgres/ChangeLog
-%%PORTDOCS%%%%RUBY_DOCDIR%%/postgres/README
-%%PORTDOCS%%%%RUBY_DOCDIR%%/postgres/postgres.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/postgres/ja/README.jp
-%%PORTDOCS%%%%RUBY_DOCDIR%%/postgres/ja/postgres.jp.html
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/postgres/ja
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/postgres
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/losample.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/psql.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/psqlHelp.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test1.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test2.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test4.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/postgres.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/README.jp
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/postgres.jp.html
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

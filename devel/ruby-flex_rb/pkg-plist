@@ -1,13 +1,11 @@
 %%RUBY_SITEARCHLIBDIR%%/flex.so
 %%RUBY_SITELIBDIR%%/flex2.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/flex_rb/ex_fr.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/flex_rb/ex_rr.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/flex_rb/test01.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/flex_rb/test02.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/flex_rb/test03.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/flex_rb/test04.rb
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/flex_rb
-%%PORTDOCS%%@unexec rmdir %D/%%RUBY_EXAMPLESDIR%% 2>/dev/null || true
-%%PORTDOCS%%%%RUBY_DOCDIR%%/flex_rb/README
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/flex_rb
-%%PORTDOCS%%@unexec rmdir %D/%%RUBY_DOCDIR%% 2>/dev/null || true
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/ex_fr.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/ex_rr.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test01.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test02.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test03.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test04.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

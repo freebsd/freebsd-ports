@@ -11,26 +11,26 @@ bin/sqlsh.rb
 @dirrm %%RUBY_SITELIBDIR%%/DBD
 @dirrm %%RUBY_SITEARCHLIBDIR%%/dbi
 @dirrm %%RUBY_SITEARCHLIBDIR%%/DBD
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dbi/persistence.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dbi/sqlsh.rb.new
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dbi/test1.pl
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dbi/test1.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dbi/test_blob.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dbi/trace_test.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dbi/xmlgen.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dbi/xmltest.rb
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/dbi
-%%PORTDOCS%%%%RUBY_DOCDIR%%/dbi/DBD_SPEC
-%%PORTDOCS%%%%RUBY_DOCDIR%%/dbi/DBI_SPEC
-%%PORTDOCS%%%%RUBY_DOCDIR%%/dbi/README.1st
-%%PORTDOCS%%%%RUBY_DOCDIR%%/dbi/ToDo
-%%PORTDOCS%%%%RUBY_DOCDIR%%/dbi/index.rd
-%%PORTDOCS%%%%RUBY_DOCDIR%%/dbi/sf_logo.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/dbi/html/ChangeLog.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/dbi/html/DBD_SPEC.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/dbi/html/DBI_SPEC.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/dbi/html/ToDo.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/dbi/html/index.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/dbi/html/rubyStyle.css
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/dbi/html
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/dbi
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/persistence.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sqlsh.rb.new
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test1.pl
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test1.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test_blob.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/trace_test.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/xmlgen.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/xmltest.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/DBD_SPEC
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/DBI_SPEC
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README.1st
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ToDo
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/index.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/sf_logo.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/ChangeLog.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/DBD_SPEC.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/DBI_SPEC.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/ToDo.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/rubyStyle.css
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/html
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

@@ -23,9 +23,9 @@ INSTALL_TARGET=	site-install
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_DOCDIR}/iconv
+	${MKDIR} ${RUBY_MODDOCDIR}
 .for f in *.html iconv.rlog rd.css
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/iconv/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
 .endfor
 .endif
 

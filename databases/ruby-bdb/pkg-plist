@@ -1,49 +1,49 @@
 %%RUBY_SITEARCHLIBDIR%%/bdb.so
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/basic.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/cats.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/cursor.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/func.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/join.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/lock.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/log.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/queue.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/recno.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/record.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/txn.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/wordlist
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/wordtest
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/zeroc.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/replication/b.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/replication/cl.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/replication/example
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/replication/ma.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/replication/mc.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/replication/op.rb
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/bdb/replication/test1
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/bdb/replication/test2
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/bdb/replication/test3
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/bdb/replication
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/bdb/tmp
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/bdb/zippy
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/bdb
-%%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/Changes
-%%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/README.en
-%%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/arraylike.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/arraylike.rd
-%%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/bdb.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/bdb.rd
-%%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/b.rb
-%%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/bdb.rb
-%%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/cursor.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/cursor.rd
-%%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/env.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/env.rd
-%%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/hashlike.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/hashlike.rd
-%%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/log.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/log.rd
-%%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/lock.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/lock.rd
-%%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/transaction.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/transaction.rd
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/bdb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/basic.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cats.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cursor.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/func.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/join.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/lock.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/log.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/queue.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/recno.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/record.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/txn.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/wordlist
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/wordtest
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/zeroc.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/replication/b.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/replication/cl.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/replication/example
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/replication/ma.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/replication/mc.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/replication/op.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/replication/test1
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/replication/test2
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/replication/test3
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/replication
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/tmp
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/zippy
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/Changes
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README.en
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/arraylike.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/arraylike.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/bdb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/bdb.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/b.rb
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/bdb.rb
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/cursor.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/cursor.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/env.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/env.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/hashlike.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/hashlike.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/log.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/log.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/lock.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/lock.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/transaction.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/transaction.rd
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

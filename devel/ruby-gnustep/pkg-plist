@@ -70,27 +70,27 @@ GNUstep/Local/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/librigs.so
 @unexec /bin/rmdir %D/GNUstep/Local/Libraries/%%GNU_ARCH%% 2> /dev/null || true
 @unexec /bin/rmdir %D/GNUstep/Local/Libraries 2> /dev/null || true
 @unexec /bin/rmdir %D/GNUstep/Local/Headers 2> /dev/null || true
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnustep/Base/Simple.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnustep/Gui/CurrencyConverter/CurrencyConverter.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnustep/Gui/CurrencyConverter/CurrencyConverterIcon.tiff
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnustep/Gui/CurrencyConverter/CurrencyConverterInfo.plist
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnustep/Gui/CurrencyConverter/GNUmakefile
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnustep/Gui/CurrencyConverter/GNUmakefile.postamble
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnustep/Gui/CurrencyConverter/fake.m
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnustep/Gui/FirstApp/FirstApp.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnustep/Gui/FirstApp/FirstAppIcon.tiff
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnustep/Gui/FirstApp/FirstAppInfo.plist
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnustep/Gui/FirstApp/GNUmakefile
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnustep/Gui/FirstApp/GNUmakefile.postamble
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnustep/Gui/FirstApp/fake.m
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnustep/Gui/README
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/gnustep/Base
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/gnustep/Gui/CurrencyConverter
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/gnustep/Gui/FirstApp
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/gnustep/Gui
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/gnustep
-%%PORTDOCS%%%%RUBY_DOCDIR%%/gnustep/ChangeLog
-%%PORTDOCS%%%%RUBY_DOCDIR%%/gnustep/NEWS
-%%PORTDOCS%%%%RUBY_DOCDIR%%/gnustep/README
-%%PORTDOCS%%%%RUBY_DOCDIR%%/gnustep/TODO
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/gnustep
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/Base/Simple.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/Gui/CurrencyConverter/CurrencyConverter.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/Gui/CurrencyConverter/CurrencyConverterIcon.tiff
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/Gui/CurrencyConverter/CurrencyConverterInfo.plist
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/Gui/CurrencyConverter/GNUmakefile
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/Gui/CurrencyConverter/GNUmakefile.postamble
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/Gui/CurrencyConverter/fake.m
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/Gui/FirstApp/FirstApp.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/Gui/FirstApp/FirstAppIcon.tiff
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/Gui/FirstApp/FirstAppInfo.plist
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/Gui/FirstApp/GNUmakefile
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/Gui/FirstApp/GNUmakefile.postamble
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/Gui/FirstApp/fake.m
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/Gui/README
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/Base
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/Gui/CurrencyConverter
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/Gui/FirstApp
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/Gui
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/NEWS
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/TODO
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

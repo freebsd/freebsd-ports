@@ -11,32 +11,32 @@ bin/y2racc
 %%RUBY_SITELIBDIR%%/racc/rubyloader.rb
 %%RUBY_SITELIBDIR%%/racc/state.rb
 %%RUBY_SITELIBDIR%%/racc/ucodep.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/racc/array.y
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/racc/array2.y
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/racc/calc-ja.y
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/racc/calc.y
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/racc/conflict.y
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/racc/hash.y
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/racc/lalr.y
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/racc/lists.y
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/racc/syntax.y
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/racc/yyerr.y
-%%PORTDOCS%%%%RUBY_DOCDIR%%/racc/ja/changes.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/racc/ja/command.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/racc/ja/debug.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/racc/ja/grammar.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/racc/ja/index.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/racc/ja/notes.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/racc/ja/parser.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/racc/ja/usage.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/racc/changes.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/racc/command.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/racc/debug.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/racc/grammar.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/racc/index.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/racc/notes.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/racc/parser.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/racc/usage.html
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/racc
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/racc/ja
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/racc
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/array.y
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/array2.y
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/calc-ja.y
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/calc.y
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conflict.y
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/hash.y
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/lalr.y
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/lists.y
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/syntax.y
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/yyerr.y
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/changes.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/command.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/debug.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/grammar.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/notes.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/parser.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/usage.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/changes.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/command.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/debug.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/grammar.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/notes.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/parser.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/usage.html
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

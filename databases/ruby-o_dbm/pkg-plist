@@ -1,6 +1,6 @@
 %%RUBY_SITELIBDIR%%/o_dbm.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/o_dbm/test-o_dbm.rb
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/o_dbm
-%%PORTDOCS%%%%RUBY_DOCDIR%%/o_dbm/ja/README.jp
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/o_dbm/ja
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/o_dbm
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test-o_dbm.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/README.jp
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

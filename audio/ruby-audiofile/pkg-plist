@@ -1,10 +1,10 @@
 %%RUBY_SITEARCHLIBDIR%%/audiofile.so
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/audiofile/test.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/audiofile/cddb/batch-oggenc
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/audiofile/cddb/cddb.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/audiofile/cddb/wavcddb
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/audiofile/cddb
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/audiofile
-%%PORTDOCS%%%%RUBY_DOCDIR%%/audiofile/audiofile.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/audiofile/audiofile.rd
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/audiofile
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cddb/batch-oggenc
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cddb/cddb.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cddb/wavcddb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cddb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/audiofile.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/audiofile.rd
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

@@ -1,32 +1,32 @@
 %%RUBY_SITEARCHLIBDIR%%/plruby.so
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/plruby/createlang.sql
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/plruby/plp/b.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/plruby/plp/runtest
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/plruby/plp/test.expected.65
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/plruby/plp/test.expected.70
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/plruby/plp/test.expected.71
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/plruby/plp/test.expected.72
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/plruby/plp/test.out
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/plruby/plp/test_mklang.sql
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/plruby/plp/test_queries.sql
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/plruby/plp/test_setup.sql
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/plruby/plt/b.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/plruby/plt/runtest
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/plruby/plt/test.expected.65
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/plruby/plt/test.expected.70
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/plruby/plt/test.expected.71
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/plruby/plt/test.expected.72
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/plruby/plt/test.out
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/plruby/plt/test_mklang.sql
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/plruby/plt/test_queries.sql
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/plruby/plt/test_setup.sql
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/plruby/plt/test_setup_new.sql
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/plruby/plt/test_setup_old.sql
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/plruby/plp
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/plruby/plt
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/plruby
-%%PORTDOCS%%%%RUBY_DOCDIR%%/plruby/Changes
-%%PORTDOCS%%%%RUBY_DOCDIR%%/plruby/README.en
-%%PORTDOCS%%%%RUBY_DOCDIR%%/plruby/plruby.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/plruby/plruby.rd
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/plruby
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/createlang.sql
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plp/b.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plp/runtest
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plp/test.expected.65
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plp/test.expected.70
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plp/test.expected.71
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plp/test.expected.72
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plp/test.out
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plp/test_mklang.sql
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plp/test_queries.sql
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plp/test_setup.sql
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plt/b.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plt/runtest
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plt/test.expected.65
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plt/test.expected.70
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plt/test.expected.71
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plt/test.expected.72
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plt/test.out
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plt/test_mklang.sql
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plt/test_queries.sql
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plt/test_setup.sql
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plt/test_setup_new.sql
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plt/test_setup_old.sql
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/plp
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/plt
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/Changes
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README.en
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/plruby.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/plruby.rd
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

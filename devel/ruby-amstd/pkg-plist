@@ -11,8 +11,8 @@
 %%RUBY_SITELIBDIR%%/amstd/timer.rb
 %%RUBY_SITELIBDIR%%/amstd/version.rb
 @dirrm %%RUBY_SITELIBDIR%%/amstd
-%%PORTDOCS%%%%RUBY_DOCDIR%%/amstd/README.en
-%%PORTDOCS%%%%RUBY_DOCDIR%%/amstd/ja/README.ja
-%%PORTDOCS%%%%RUBY_DOCDIR%%/amstd/ja/manual.rd.ja
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/amstd/ja
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/amstd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README.en
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/README.ja
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/manual.rd.ja
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
