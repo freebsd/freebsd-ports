@@ -5,6 +5,9 @@ lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/__init__.pyo
 lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/_rl_accel.so
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/abag.py
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/abag.pyc
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/abag.pyo
 lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/colors.py
 lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/colors.pyc
 lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/colors.pyo
@@ -23,6 +26,7 @@ lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/logger.pyo
 lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/pagesizes.py
 lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/pagesizes.pyc
 lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/pagesizes.pyo
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/pyHnjmodule.so
 lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/sequencer.py
 lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/sequencer.pyc
 lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/sequencer.pyo
@@ -30,7 +34,9 @@ lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/sgmlop.so
 lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/styles.py
 lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/styles.pyc
 lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/styles.pyo
-lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/pyHnjmodule.so
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/tocindex.py
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/tocindex.pyc
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/tocindex.pyo
 lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/units.py
 lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/units.pyc
 lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/units.pyo
@@ -64,6 +70,9 @@ lib/%%PYTHON_VERSION%%/site-packages/reportlab/pdfgen/pathobject.pyo
 lib/%%PYTHON_VERSION%%/site-packages/reportlab/pdfgen/pdfgeom.py
 lib/%%PYTHON_VERSION%%/site-packages/reportlab/pdfgen/pdfgeom.pyc
 lib/%%PYTHON_VERSION%%/site-packages/reportlab/pdfgen/pdfgeom.pyo
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/pdfgen/pdfimages.py
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/pdfgen/pdfimages.pyc
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/pdfgen/pdfimages.pyo
 lib/%%PYTHON_VERSION%%/site-packages/reportlab/pdfgen/textobject.py
 lib/%%PYTHON_VERSION%%/site-packages/reportlab/pdfgen/textobject.pyc
 lib/%%PYTHON_VERSION%%/site-packages/reportlab/pdfgen/textobject.pyo
