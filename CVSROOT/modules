@@ -1500,6 +1500,7 @@ dtse		ports/www/dtse
 dtv		ports/multimedia/dtv
 du2ps		ports/sysutils/du2ps
 duhdraw		ports/graphics/duhdraw
+duke3d		ports/games/duke3d
 dump9660	ports/sysutils/dump9660
 dumpasn1	ports/converters/dumpasn1
 dumpmpeg	ports/multimedia/dumpmpeg
