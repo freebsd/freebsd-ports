@@ -3,7 +3,7 @@
 # Date created:        17 June 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.16 1998/11/25 05:06:22 jseger Exp $
+# $Id: Makefile,v 1.17 1998/11/25 09:01:24 asami Exp $
 #
 
 DISTNAME=	gnome-libs-0.30.1
@@ -25,6 +25,7 @@ LIB_DEPENDS+=	Xpm.4:${PORTSDIR}/graphics/xpm
 LIB_DEPENDS+=	ORBit.0:${PORTSDIR}/devel/ORBit
 
 USE_X_PREFIX=	yes
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
 		--datadir=${PREFIX}/share/gnome
