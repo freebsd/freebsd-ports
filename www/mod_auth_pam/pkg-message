@@ -1,0 +1,15 @@
+************************************************************
+You've installed mod_auth_pam, a PAM authentication module
+for Apache.
+
+Edit your apache.conf or httpd.conf to enable and setup this
+module. Have a look at the files in
+${PREFIX}/share/doc/mod_auth_pam for information on how to
+to configure it etc.
+
+Then do this to make it work effective:
+
+# apachectl configtest (see if there are any config errors)
+# apachectl restart
+
+************************************************************

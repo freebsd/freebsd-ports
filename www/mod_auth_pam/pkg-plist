@@ -1,0 +1,9 @@
+libexec/apache/mod_auth_pam.so
+@exec %D/sbin/apxs -e -A -n auth_pam %D/%F
+@unexec %D/sbin/apxs -e -A -n auth_pam %D/%F
+%%PORTDOCS%%share/doc/mod_auth_pam/configure.html
+%%PORTDOCS%%share/doc/mod_auth_pam/faq.html
+%%PORTDOCS%%share/doc/mod_auth_pam/samples/dot-htaccess
+%%PORTDOCS%%share/doc/mod_auth_pam/samples/httpd
+%%PORTDOCS%%@dirrm share/doc/mod_auth_pam/samples
+%%PORTDOCS%%@dirrm share/doc/mod_auth_pam
