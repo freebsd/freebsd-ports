@@ -97,6 +97,7 @@
     SUBDIR += heimdal
     SUBDIR += hlfl
     SUBDIR += hping
+    SUBDIR += hydra
     SUBDIR += ident2
     SUBDIR += identify
     SUBDIR += ifd-devkit
