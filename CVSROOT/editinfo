@@ -29,3 +29,4 @@
 # repository.
 #
 #DEFAULT			$CVSROOT/CVSROOT/edit "%s"
+pst-test			$CVSROOT/CVSROOT/new_edithook "%s"
