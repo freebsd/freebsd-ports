@@ -1,7 +1,6 @@
 bin/file
 lib/libmagic.so.1
 lib/libmagic.so
-lib/libmagic.la
 lib/libmagic.a
 include/magic.h
 share/file/magic

@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	file
-PORTVERSION=	4.06
+PORTVERSION=	4.07
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.astron.com/pub/file/ \
 		ftp://ftp.gw.com/mirrors/pub/unix/file/ \
 		ftp://ftp.fu-berlin.de/unix/tools/file/
-#		ftp://ftp.netsw.org/system/tools/fileutils/find/
 
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	File - determine file type
 
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--enable-fsect-man5
 MAN1=		file.1
 MAN3=		libmagic.3
