@@ -459,7 +459,6 @@ beroftpd	ports/ftp/beroftpd
 bfbtester	ports/security/bfbtester
 bfe		ports/emulators/bfe
 bftpd		ports/ftp/bftpd
-bg5pdf		ports/chinese/bg5pdf
 bgrab		ports/news/bgrab
 bgrot		ports/x11/bgrot
 biabam		ports/mail/biabam
@@ -702,7 +701,6 @@ chimera2	ports/www/chimera2
 ching		src/games/ching
 chio		src/bin/chio
 chipmunk	ports/cad/chipmunk
-chitex		ports/chinese/chitex
 chkey		src/usr.bin/chkey
 chkgrp		src/usr.sbin/chkgrp
 chkrootkit	ports/security/chkrootkit
@@ -1485,7 +1483,6 @@ fortran-utils	ports/devel/fortran-utils
 fortune		src/games/fortune
 fortuneit	ports/misc/fortuneit
 fortunelock	ports/sysutils/fortunelock
-fortunetw	ports/chinese/fortunetw
 fox		ports/x11-toolkits/fox
 fox-xunicode	ports/x11-toolkits/fox-xunicode
 fpc		ports/lang/fpc
@@ -5308,7 +5305,6 @@ pybench		ports/benchmarks/pybench
 pybliographer	ports/misc/pybliographer
 pychecker	ports/devel/pychecker
 pyching		ports/games/pyching
-pycodec		ports/chinese/pycodec
 pyfind		ports/sysutils/pyfind
 pygist		ports/math/pygist
 pygmy		ports/mail/pygmy
@@ -7438,6 +7434,7 @@ zh-acroread-chtfont	ports/chinese/acroread-chtfont
 zh-arphicttf	ports/chinese/arphicttf
 zh-auto-tw-l10n	ports/chinese/auto-tw-l10n
 zh-autoconvert	ports/chinese/autoconvert
+zh-bg5pdf	ports/chinese/bg5pdf
 zh-bg5ps	ports/chinese/bg5ps
 zh-big5con	ports/chinese/big5con
 zh-big5fs	ports/chinese/big5fs
@@ -7447,6 +7444,7 @@ zh-c2t		ports/chinese/c2t
 zh-celvis	ports/chinese/celvis
 zh-chinput	ports/chinese/chinput
 zh-chinput2	ports/chinese/chinput2
+zh-chitex	ports/chinese/chitex
 zh-cle_base	ports/chinese/cle_base
 zh-cless	ports/chinese/cless
 zh-cmexfonts	ports/chinese/cmexfonts
@@ -7457,6 +7455,7 @@ zh-emacs20	ports/chinese/emacs20
 zh-enscript	ports/chinese/enscript
 zh-eterm	ports/chinese/eterm
 zh-firebird	ports/chinese/firebird
+zh-fortunetw	ports/chinese/fortunetw
 zh-gb2jis	ports/chinese/gb2jis
 zh-gb2ps	ports/chinese/gb2ps
 zh-gbscript	ports/chinese/gbscript
@@ -7492,6 +7491,7 @@ zh-nvi-euc-tw	ports/chinese/nvi-euc-tw
 zh-p5-Date-Chinese	ports/chinese/p5-Date-Chinese
 zh-pine4	ports/chinese/pine4
 zh-pyDict	ports/chinese/pyDict
+zh-pycodec	ports/chinese/pycodec
 zh-qe		ports/chinese/qe
 zh-qterm	ports/chinese/qterm
 zh-rxvt		ports/chinese/rxvt
