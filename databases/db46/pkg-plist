@@ -1,3 +1,4 @@
+bin/db42/berkeley_db_svc
 bin/db42/db_archive
 bin/db42/db_checkpoint
 bin/db42/db_deadlock
@@ -9,6 +10,7 @@ bin/db42/db_recover
 bin/db42/db_stat
 bin/db42/db_upgrade
 bin/db42/db_verify
+bin/berkeley_db_svc-4.2
 bin/db_archive-4.2
 bin/db_checkpoint-4.2
 bin/db_deadlock-4.2
