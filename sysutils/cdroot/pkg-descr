@@ -4,4 +4,4 @@ FreeBSD release, as built by 'make release'.  If desired, a floppy
 disk with a /etc directory may be provided to supply system /etc
 overrides allowing one to use the same CD image to boot multiple
 systems, where each system's hostname, IP address, etc is contained on
-a seperate floppy disk.  See the README file for more information.
+a separate floppy disk.  See the README file for more information.
