@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	wine
-PORTVERSION=	20030813
-PORTREVISION=	1
+PORTVERSION=	20031016
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	ALPHA/wine/development
@@ -28,6 +27,7 @@ ONLY_FOR_ARCHS=	i386
 USE_XPM=	yes
 USE_BISON=	yes
 USE_GMAKE=	yes
+USE_GCC=	3.3
 USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
@@ -60,8 +60,8 @@ post-configure:
 	cd ${WRKSRC} && make depend
 
 post-build:
-	#cd ${WRKSRC}/programs/regapi && ${GMAKE}
-	${SED} '1s/bash/sh/;s-\./\(reg.*\.pl\)-'${PREFIX}/lib/wine/reg/'\1-' <${WRKSRC}/programs/regapi/regSet.sh >${WRKDIR}/regSet.sh
+	${SED} 's-\./\(reg.*\.pl\)-'${PREFIX}/lib/wine/reg/'\1-' \
+		${WRKSRC}/programs/regapi/regSet.sh > ${WRKDIR}/regSet.sh
 
 do-install:
 	cd ${WRKSRC} && ${GMAKE} install
