@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://artax.karlin.mff.cuni.cz/~brain/0verkill/release/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mich@freebsdcluster.org
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
@@ -33,7 +33,7 @@ pre-everything::
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|data/|${DATADIR}/data|g' ${WRKSRC}/cfg.h
+	@${REINPLACE_CMD} -e 's|data/|${DATADIR}/data/|g' ${WRKSRC}/cfg.h
 	@${REINPLACE_CMD} -e 's|grx/|${DATADIR}/grx/|g' ${WRKSRC}/data/sprites.dat
 	@${REINPLACE_CMD} -e 's|-O3 ||g ; \
 		 s|gcc |\$$\(CC\) |g' ${WRKSRC}/Makefile.in
@@ -57,7 +57,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/grx/* ${DATADIR}/grx
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in AUTHORS README.html avi.txt bot.txt doc.html 
+.for file in AUTHORS README.html avi.txt bot.txt doc.html
 	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
 .endfor
 .endif
