@@ -17,7 +17,6 @@ COMMENT=	GNOME applet that displays the current phase of the Moon
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-GNOME_DESKTOP_VERSION=2
 USE_GNOME=	gnomepanel gail gnomehack gnomeprefix
 USE_LIBTOOL=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
