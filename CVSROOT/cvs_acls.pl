@@ -63,13 +63,20 @@
 #	group|grpname1|joe,fred,bob
 #	group|grpname2|pete,:grpname1,simon
 #	group|grpname2|sid,:grpname2,mike
+#	group|anothergroup|!filename/containing/listofusers
 #
 # The group name can be used in any place a user name could be used in
 # an avail or unavail line.  Just precede the group name with a ':'
 # character.  In the example above you'll note that you can define a
 # group more than once.  Each definition overrides the previous one,
 # but can include itself to add to it.
-
+#
+# In place of a username in any of the above rules, you can specify
+# a group name preceeded with a ':' character, or a filename preceeded
+# with a '!' character.  In the case of a file it is assumed relative to
+# $CVSROOT/CVSROOT/ unless it started witha leading '/'.  All blank lines
+# and comments are ignored, and the remaining lines are treated as one
+# username per line.
 
 use strict;
 
@@ -207,8 +214,23 @@ sub expand_users {
 				next;
 			}
 			# Add the specified group to the membership.
-			foreach my $u (split /,/, $GROUPS{$m}) {
-				$members{$u} = 1;
+			foreach (split /,/, $GROUPS{$m}) {
+				$members{$_} = 1;
+			}
+		} elsif ($m =~ s/\!//) {
+			$m = "$CVSROOT/CVSROOT/$m" if $m !~ /^\//;
+			if (open USERLIST, $m) {
+				while (<USERLIST>) {
+					chomp;
+					s/\s*(#.*)?$//;
+					next if /^$/;
+
+					$members{$_} = 1;
+				}
+				close USERLIST;
+			} else {
+				warn "Can't open user file $m " .
+				    "defined in $cfg::AVAIL_FILE.\n";
 			}
 		} else {
 			$members{$m} = 1;
