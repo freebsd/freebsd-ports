@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pixieplus
-PORTVERSION=	0.5.4
-PORTREVISION=	4
+PORTVERSION=	0.5.4.1
 CATEGORIES=	graphics kde
 MASTER_SITES=	http://people.fruitsalad.org/avleeuwen/distfiles/${PORTNAME}/
 
@@ -18,12 +17,10 @@ LIB_DEPENDS=	Magick.6:${PORTSDIR}/graphics/ImageMagick \
 		ungif.5:${PORTSDIR}/graphics/libungif
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--program-prefix=''
 USE_GMAKE=	yes
 USE_KDELIBS_VER=3
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL_VER=13
+USE_BZIP2=	yes
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/x11/kde3/Makefile.kde"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
