@@ -58,13 +58,6 @@ SUID_EXES=	${PREFIX}/sbin/faxgetty ${PREFIX}/sbin/faxq \
 post-extract:
 	${RM} -rf ${WRKSRC}/zlib ${WRKSRC}/regex
 
-.if ${LOCALBASE} != "/usr/local"
-post-patch:
-	${PERL} -pi -e 's^/usr/local^${LOCALBASE}^g' \
-		`find work/hylafax-4.1 -type f -print0 | \
-			xargs -0 fgrep -l --mmap /usr/local`
-.endif
-
 post-install:
 	${CHOWN} uucp ${SUID_EXES}
 	${CHMOD} 4555 ${SUID_EXES}
@@ -75,4 +68,13 @@ post-install:
 	fi
 	@${SED} 's^/usr/local^${PREFIX}^g' < ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${LOCALBASE} != /usr/local
+post-patch:
+	${PERL} -pi -e 's^/usr/local^${LOCALBASE}^g' \
+		`find work/hylafax-4.1 -type f -print0 | \
+			xargs -0 fgrep -l --mmap /usr/local`
+.endif
+
+.include <bsd.port.post.mk>
