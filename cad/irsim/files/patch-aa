@@ -1,0 +1,56 @@
+*** src/irsim/fio.c.orig	Fri Jan 15 11:45:14 1993
+--- src/irsim/fio.c	Sun Dec 18 13:58:41 1994
+***************
+*** 15,21 ****
+--- 15,23 ----
+  #include <stdio.h>
+  #include <defs.h>
+  
++ #ifndef __FreeBSD__  /* clearerr defined as macro in stdio.h */
+  extern	void	clearerr();
++ #endif
+  
+  
+  /*
+*** src/utils/Export/export.c.orig	Sun Dec 23 01:15:04 1990
+--- src/utils/Export/export.c	Sun Dec 18 13:52:22 1994
+***************
+*** 36,41 ****
+--- 36,42 ----
+      extern  String mktemp();
+      String  outfname;
+      char    syscmd[ 512 ];
++     char    name[18];
+      FILE    *tmp;
+      int r;
+      int i;
+***************
+*** 46,53 ****
+      signal( SIGINT, abnorm );
+      signal( SIGQUIT, abnorm );
+  
+!     tmpname = mktemp( "/tmp/exportXXXXXX" );
+!     fout = fopen( tmpname, "w", stdout );
+      if( fout == NULL )
+  	Crash( "can't write %s", tmpname );
+      
+--- 47,55 ----
+      signal( SIGINT, abnorm );
+      signal( SIGQUIT, abnorm );
+  
+!     strcpy( name, "/tmp/exportXXXXXX" );
+!     tmpname = mktemp( name );
+!     fout = fopen( tmpname, "w" );
+      if( fout == NULL )
+  	Crash( "can't write %s", tmpname );
+      
+*** src/irsim/gentbl.c.orig	Fri Jan 15 11:45:14 1993
+--- src/irsim/gentbl.c	Sun Dec 18 18:56:39 1994
+***************
+*** 188,191 ****
+--- 188,192 ----
+  		  }
+  	  }
+      fprintf( out, "\n};\n" );
++     return 0;
+    }
