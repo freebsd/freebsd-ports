@@ -14,9 +14,10 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	olgeni@FreeBSD.org
 
+LIB_DEPENDS=    gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
 RUN_DEPENDS=	${LOCALBASE}/share/Choices:${PORTSDIR}/x11-fm/rox-base
 
-USE_GNOMECTRL=	yes
+USE_GTK=	yes
 MAN1=		rox.1
 
 do-build:
