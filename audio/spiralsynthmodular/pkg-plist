@@ -20,7 +20,6 @@ lib/SpiralPlugins/LogicPlugin.so
 lib/SpiralPlugins/MasherPlugin.so
 lib/SpiralPlugins/MatrixPlugin.so
 lib/SpiralPlugins/MeterPlugin.so
-lib/SpiralPlugins/MidiPlugin.so
 lib/SpiralPlugins/MixerPlugin.so
 lib/SpiralPlugins/MixSwitchPlugin.so
 lib/SpiralPlugins/MoogFilterPlugin.so
@@ -42,6 +41,7 @@ lib/SpiralPlugins/SplitterPlugin.so
 lib/SpiralPlugins/StereoMixerPlugin.so
 lib/SpiralPlugins/StreamPlugin.so
 lib/SpiralPlugins/SwitchPlugin.so
+lib/SpiralPlugins/TransposePlugin.so
 lib/SpiralPlugins/TrigPlugin.so
 lib/SpiralPlugins/WaveShaperPlugin.so
 lib/SpiralPlugins/WaveTablePlugin.so
