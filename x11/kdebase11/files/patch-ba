@@ -1,0 +1,37 @@
+--- kcontrol/locale/pics/Makefile.in.orig	Wed Sep  8 00:20:25 1999
++++ kcontrol/locale/pics/Makefile.in	Wed Sep 15 23:46:12 1999
+@@ -170,7 +170,7 @@
+ x_libraries = @x_libraries@
+ xdmconfigsubdir = @xdmconfigsubdir@
+ 
+-data_DATA = flag_de.gif flag_en.gif flag_fr.gif flag_C.gif flag_cs.gif             flag_sv.gif flag_es.gif flag_ru.gif flag_nl.gif flag_hu.gif             flag_da.gif flag_fi.gif flag_is.gif flag_it.gif flag_pt.gif flag_pl.gif             flag_no.gif flag_el.gif flag_hr.gif flag_ro.gif flag_sk.gif 	    flag_zh_TW.Big5.gif flag_zh_CN.GB2312.gif flag_en_UK.gif 	    flag_ca.gif flag_pt_BR.gif flag_eo.gif flag_mk.gif flag_br.gif 	    flag_he.gif flag_tr.gif flag_et.gif flag_se.gif 	    flag_sl.gif  flag_ja.gif flag_ko.gif 	    flag_fr_CA.gif flag_us_eu.gif flag_fr_CH.gif flag_de_CH.gif 
++data_DATA = flag_de.xpm flag_en.xpm flag_fr.xpm flag_C.xpm flag_cs.xpm             flag_sv.xpm flag_es.xpm flag_ru.xpm flag_nl.xpm flag_hu.xpm             flag_da.xpm flag_fi.xpm flag_is.xpm flag_it.xpm flag_pt.xpm flag_pl.xpm             flag_no.xpm flag_el.xpm flag_hr.xpm flag_ro.xpm flag_sk.xpm 	    flag_zh_TW.Big5.xpm flag_zh_CN.GB2312.xpm flag_en_UK.xpm 	    flag_ca.xpm flag_pt_BR.xpm flag_eo.xpm flag_mk.xpm flag_br.xpm 	    flag_he.xpm flag_tr.xpm flag_et.xpm flag_se.xpm 	    flag_sl.xpm  flag_ja.xpm flag_ko.xpm 	    flag_fr_CA.xpm flag_us_eu.xpm flag_fr_CH.xpm flag_de_CH.xpm 
+ 
+ 
+ datadir = $(kde_datadir)/kcmlocale/pics
+@@ -190,6 +190,7 @@
+ GZIP_ENV = --best
+ all: all-redirect
+ .SUFFIXES:
++.SUFFIXES: .gif .xpm
+ $(srcdir)/Makefile.in: Makefile.am $(top_srcdir)/configure.in $(ACLOCAL_M4) 
+ 	cd $(top_srcdir) && $(AUTOMAKE) --foreign --include-deps kcontrol/locale/pics/Makefile
+ 
+@@ -301,3 +302,6 @@
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
++
++.gif.xpm:
++	$(LOCALBASE)/bin/convert $< $@
+--- kcontrol/locale/klangcombo.cpp.orig	Sat Sep 11 03:37:58 1999
++++ kcontrol/locale/klangcombo.cpp	Sat Sep 11 03:38:08 1999
+@@ -55,7 +55,7 @@
+   QPixmap pm(w, 16);
+ 
+   KIconLoader iconLoader;
+-  QPixmap flag(iconLoader.loadIcon(QString("flag_")+tag(lang)+".gif"));
++  QPixmap flag(iconLoader.loadIcon(QString("flag_")+tag(lang)+".xpm"));
+   
+   pm.fill(colorGroup().background());
+   p.begin(&pm);

@@ -1,0 +1,13 @@
+*** kvt/xsetup.c.orig	Tue Mar 30 17:23:20 1999
+--- kvt/xsetup.c	Tue Jun 22 21:50:56 1999
+***************
+*** 228,233 ****
+--- 228,235 ----
+    char *terminal = NULL;
+    display_name = getenv("DISPLAY");
+  
++   reg_font_handles[DEFAULT_FONT] = 0;
++ 
+    screen = DefaultScreen(display);
+    colormap = DefaultColormap(display, screen);
+  

@@ -1,0 +1,15 @@
+*** kfm/kfmsu2.in~	Wed Feb 17 09:39:57 1999
+--- kfm/kfmsu2.in	Mon May  3 18:16:31 1999
+***************
+*** 7,11 ****
+  echo ""
+  echo "Logging in as super user"
+! 
+  # Test KDEDIR first, otherwise use hardcoded path (allows to move the KDE dir)
+  if test -f $KDEDIR/bin/kfm ; then
+--- 7,11 ----
+  echo ""
+  echo "Logging in as super user"
+! su root -c "echo DISPLAY=$DISPLAY @kde_bindir@/kfm -sw | /bin/sh > /dev/null"
+  # Test KDEDIR first, otherwise use hardcoded path (allows to move the KDE dir)
+  if test -f $KDEDIR/bin/kfm ; then

@@ -1,0 +1,31 @@
+*** kdm/kdmconfig.cpp~	Sat Dec 19 22:05:02 1998
+--- kdm/kdmconfig.cpp	Tue Dec 29 00:38:07 1998
+***************
+*** 65,68 ****
+--- 65,79 ----
+            QString  nu = kc->readEntry( "NoUsers");
+            QStrList no_users;
++ #ifdef HAVE_GETUSERSHELL
++           QStrList valid_shells;
++           QString shell;
++           setusershell();
++           for( shell = getusershell(); shell.isEmpty() == 0; ) {
++                if( valid_shells.contains( shell) == 0)
++                    valid_shells.append( shell);
++                shell = getusershell();
++           }
++           endusershell();
++ #endif
+            semsplit( nu, no_users);
+            struct passwd *ps;
+***************
+*** 72,75 ****
+--- 83,90 ----
+                 if( CHECK_STRING(ps->pw_dir) &&
+                     CHECK_STRING(ps->pw_shell) &&
++ #ifdef HAVE_GETUSERSHELL
++                    ( valid_shells.isEmpty() || 
++                      ( valid_shells.contains( ps->pw_shell) != 0)) &&
++ #endif
+                     //CHECK_STRING(ps->pw_gecos) && // many users didn't want this check (tanghus)
+                     ( no_users.contains( ps->pw_name) == 0)){

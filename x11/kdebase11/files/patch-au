@@ -1,0 +1,10 @@
+--- kdm/session.c.orig	Sat Jul 10 12:18:04 1999
++++ kdm/session.c	Sat Jul 10 12:18:24 1999
+@@ -703,6 +703,7 @@
+          * We need to do this before setusercontext() because that may
+          * set or reset some environment variables.
+          */
++	envinit[0] = NULL;
+         environ = envinit;
+ 
+ 	/*

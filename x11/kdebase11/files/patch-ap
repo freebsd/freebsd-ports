@@ -1,0 +1,10 @@
+*** konsole/include/TEShell.h~	Wed Apr 21 19:42:11 1999
+--- konsole/include/TEShell.h	Wed Apr 21 19:41:35 1999
+***************
+*** 17,20 ****
+--- 17,21 ----
+  #define SHELL_H
+  
++ #include <sys/types.h>
+  #include <qobject.h>
+  #include <termios.h>

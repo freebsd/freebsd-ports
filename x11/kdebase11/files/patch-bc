@@ -1,0 +1,11 @@
+--- po/ja/Makefile.in.orig	Thu Sep 16 16:53:44 1999
++++ po/ja/Makefile.in	Thu Sep 16 16:54:09 1999
+@@ -173,7 +173,7 @@
+ x_libraries = @x_libraries@
+ xdmconfigsubdir = @xdmconfigsubdir@
+ 
+-GMOFILES = kfind.gmo kdehelp.gmo kcmdisplay.gmo kvt.gmo 	kfm.gmo kwm.gmo kfontmanager.gmo 	kdm.gmo kpanel.gmo klock.gmo krootwm.gmo 	kcmbell.gmo kcminfo.gmo kcminput.gmo kcmkwm.gmo 	kcmsamba.gmo kcmsample.gmo kcontrol.gmo kmenuedit.gmo 	kdmconfig.gmo kcmkpanel.gmo kcmlocale.gmo kcmsyssound.gmo 	kstart.gmo kikbd.gmo konsole.gmo kcmkfm.gmo kcmkeys.gmo 	kbgndwm.gmo kpager.gmo
++GMOFILES = kfind.gmo kdehelp.gmo kcmdisplay.gmo kvt.gmo 	kfm.gmo kwm.gmo kfontmanager.gmo 	kdm.gmo kpanel.gmo klock.gmo krootwm.gmo 	kcmbell.gmo kcminfo.gmo kcminput.gmo kcmkwm.gmo 	kcmsamba.gmo kcmsample.gmo kcontrol.gmo kmenuedit.gmo 	kdmconfig.gmo kcmkpanel.gmo kcmlocale.gmo kcmsyssound.gmo 	kstart.gmo kikbd.gmo konsole.gmo kcmkfm.gmo kcmkeys.gmo 	kbgndwm.gmo kpager.gmo kthememgr.gmo
+ 
+ 
+ POFILES = $(GMOFILES:.gmo=.po)
