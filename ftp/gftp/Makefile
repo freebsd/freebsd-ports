@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gftp
-PORTVERSION=	2.0.5a
+PORTVERSION=	2.0.6a
 CATEGORIES=	ftp
 MASTER_SITES=	http://gftp.seul.org/ \
 		ftp://gftp.seul.org/pub/gftp/
@@ -15,7 +15,6 @@ MAINTAINER=	dmarion@open.hr
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
-#USE_AUTOCONF=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	GTK_CONFIG=${X11BASE}/bin/gtk12-config
 USE_X_PREFIX=	yes
