@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	application.rb
-PORTVERSION=	1.13
+PORTVERSION=	1.14
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	http://www.jin.gr.jp/~nahi/Ruby/Application/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
