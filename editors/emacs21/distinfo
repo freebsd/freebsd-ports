@@ -1,2 +1,3 @@
 MD5 (emacs-21.3.tar.gz) = a0bab457cbf5b4f8eb99d1d0a3ada420
 MD5 (emacs-21.1-fontset.patch) = 4d2cdde317b96207f95a7be8cd4f20fc
+MD5 (emacs-21.2-menu-encode.patch) = f888cbac4a98c78ad1cf621957b9b247
