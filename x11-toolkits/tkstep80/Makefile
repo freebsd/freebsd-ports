@@ -3,7 +3,7 @@
 # Date created:		06 November 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/11/11 07:53:24 tg Exp $
 #
 
 DISTNAME=	tk8.0
@@ -19,7 +19,7 @@ MAINTAINER=	tg@FreeBSD.ORG
 LIB_DEPENDS=	tcl80\\.1\\.:${PORTSDIR}/lang/tcl80 \
 		Xpm\\.4\\.:${PORTSDIR}/graphics/xpm \
 		jpeg\\.7\\.:${PORTSDIR}/graphics/jpeg \
-		tiff\\.4\\.:${PORTSDIR}/graphics/tiff34
+		tiff34\\.1\\.:${PORTSDIR}/graphics/tiff34
 
 FETCH_BEFORE_ARGS=	-b
 PATCH_DIST_ARGS=	-p -d ${WRKDIR} -E --quiet
