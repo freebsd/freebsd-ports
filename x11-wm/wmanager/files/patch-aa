@@ -1,0 +1,84 @@
+--- Makefile.orig	Sun Nov 14 07:29:24 1999
++++ Makefile	Sun Dec  5 16:37:05 1999
+@@ -23,49 +23,38 @@
+ # along with this program; if not, write to the Free Software
+ # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+ 
+-
+-
+ # make settings
+ SHELL     = /bin/sh
+ MAKEFLAGS = --print-directory
+ 
++# base settings
++bindir	= $(prefix)/bin
++incdir	= ./inc
++srcdir	= ./src
++fltkinc	= $(prefix)/include
++x11lib	= $(prefix)/lib
+ 
+ # compiler settings
+-CXX       = g++ 
+-CXXFLAGS  = -I$(incdir) -O2 -Wall -pedantic #-DDEBUG=1 -g3
+-
++CXX	= g++ 
++CXXFLAGS= -I$(fltkinc) -I$(incdir) -O2 -Wall -pedantic #-DDEBUG=1 -g3
+ 
+ # linker settings
+ LD        = g++
+-LDFLAGS   = -lfltk -lXext -lX11 -lm
+-LDDIRS    = -L/usr/X11R6/lib -L/usr/lib -L/usr/local/lib
+-
++LDFLAGS   = -lMesaGL -lfltk -lXext -lX11 -lm
++LDDIRS    = -L$(x11lib) -L/usr/lib -L/usr/local/lib
+ 
+ # install settings
+ INSTALL       = /usr/bin/install
+ INSTALL_FLAGS = --strip
+ 
+-
+ # documentation tool
+ DOCTOOL      = perceps
+ DOCTOOL_FLAGS = -a -b -f -h -m -r
+ 
+-# base locations
+-prefix      = /usr/local
+-exec_prefix = $(prefix)
+-bindir      = $(exec_prefix)/bin
+-
+-
+-# include files and sources
+-incdir      = ./inc
+-srcdir      = ./src
+-
+-
+ # documentational files for developer
+ docdir    = ./doc
+ templates = $(docdir)/templates
+ 
+-
+ # search paths
+ vpath %.H    $(incdir)
+ vpath %.cc   $(srcdir)
+@@ -78,12 +67,10 @@
+ 	.wmanagerrc .xinitrc
+ OBJ  = $(patsubst %.cc,%.o,$(SRC)) 
+ 
+-
+ # project version
+ VERSION = 0.1.1
+ 
+-
+-all: wmanager TAGS
++all: wmanager
+ 
+ wmanager: $(OBJ)
+ 	$(LD) -o $@ $^ $(LDDIRS) $(LDFLAGS) 
+@@ -110,7 +97,6 @@
+ 	@-echo -e '\nwmanager - X11 window manager selector'
+ 	@-echo 'v$(VERSION) 1999/09/26 by M. Tessmer'
+ 	@-echo 'Look at README for more information\n'
+-
+ 
+ # phony targets
+ .PHONY: all clean distclean TAGS version doc
