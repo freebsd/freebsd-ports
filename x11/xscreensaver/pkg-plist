@@ -11,6 +11,7 @@ bin/bubbles
 bin/bumps
 bin/cage
 bin/ccurve
+bin/circuit
 bin/compass
 bin/coral
 bin/critical
@@ -106,6 +107,7 @@ bin/swirl
 bin/t3d
 bin/triangle
 bin/truchet
+bin/vermiculate
 bin/vidwhacker
 bin/vines
 bin/wander
