@@ -114,7 +114,6 @@
  37.329278,	-121.962306,	"nsayer"			# Santa Clara, CA, USA
  37.4,		-122.0,		"asami"				# Santa Clara, CA, USA
  37.68,		-122.03,	"bmah"				# Castro Valley, CA, USA
- 37.38,		-122.04,	"billf"				# Sunnyvale, CA, USA
  37.39,		-122.06,	"marcel"			# Mountain View, CA, USA
  37.422,	-122.133,	"seanc"				# Palo Alto, CA, USA
  37.55,		-122.26,	"terry"				# Foster City, CA, USA
@@ -123,6 +122,7 @@
  37.887398,	-122.264896,	"gsutter"			# Berkeley, CA, USA
  37.51,		-122.30,	"kbyanc"			# Belmont, CA, USA
  47.70,		-122.34,	"brooks"			# Seattle, WA, USA
+ 37.781,	-122.398,	"billf"				# SOMA, San Francisco, CA, USA
  47.5,		-122.4,		"jdp"				# Seattle, WA, USA
 #37.80,		-122.43,	"julian"			# Downtown San Francisco, CA, USA
  37.80,		-122.43,	"njl"				# Downtown San Francisco, CA, USA
