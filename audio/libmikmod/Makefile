@@ -8,7 +8,7 @@
 PORTNAME=	libmikmod
 PORTVERSION=	3.1.9
 CATEGORIES=	audio
-MASTER_SITES=	http://mikmod.online.fr/libmikmod/ \
+MASTER_SITES=	http://www.mikmod.org/files/libmikmod/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	sada
 
