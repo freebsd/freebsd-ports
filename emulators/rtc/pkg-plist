@@ -1,0 +1,8 @@
+etc/rc.d/rtc.sh
+include/rtc.h
+modules/rtc.ko
+share/examples/rtc/test.c
+@dirrm share/examples/rtc
+@exec rm -f %%DEVFILE%%
+@exec mknod %%DEVFILE%% c %%CDEV_MAJOR%% 0
+@unexec rm -f %%DEVFILE%%
