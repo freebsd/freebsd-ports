@@ -1,0 +1,27 @@
+** CAUTION **
+ 
+THE RELEASE OF AMANDA 2.4 BREAKS BACKWARDS COMPATIBILITY WITH
+EARLIER AMANDA CLIENTS (PER CHANGES FILE IN THE DISTRIBUTION.) 
+
+WHAT IS AMANDA?
+---------------
+
+This is a release of Amanda, the Advanced Maryland Automatic
+Network Disk Archiver.  Amanda is a backup system designed to archive many
+computers on a network to a single large-capacity tape drive.  
+
+Here are some features of Amanda:
+
+  * written in C, freely distributable.
+  * built on top of standard backup software: Unix dump/restore, and
+    later GNU Tar and others.
+  * will back up multiple machines in parallel to a holding disk, blasting
+    finished dumps one by one to tape as fast as we can write files to
+    tape.  For example, a ~2 Gb 8mm tape on a ~240K/s interface to a host
+    with a large holding disk can be filled by Amanda in under 4 hours. 
+  * does simple tape management: will not overwrite the wrong tape.
+
+WWW: http://sourceforge.net/projects/amanda/
+
+- Jim
+jeh@FreeBSD.org
