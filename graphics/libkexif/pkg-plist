@@ -26,4 +26,6 @@ share/locale/sr/LC_MESSAGES/libkexif.mo
 share/locale/sv/LC_MESSAGES/libkexif.mo
 share/locale/ta/LC_MESSAGES/libkexif.mo
 share/locale/tr/LC_MESSAGES/libkexif.mo
+@unexec rmdir %D/share/locale/mt/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/mt 2>/dev/null || true
 @dirrm include/libkexif
