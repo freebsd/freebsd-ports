@@ -10,4 +10,18 @@ share/apps/ksocrat/Arsenal_Commware_License_ENG.txt
 share/apps/ksocrat/Arsenal_Commware_License_RUS.txt
 share/apps/ksocrat/enru.dic
 share/apps/ksocrat/ruen.dic
+@unexec rmdir %D/share/icons/hicolor/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor 2>/dev/null || true
+@unexec rmdir %D/share/icons 2>/dev/null || true
 @dirrm share/apps/ksocrat
+@unexec rmdir %D/share/apps 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Applications 2>/dev/null || true
+@unexec rmdir %D/share/applnk 2>/dev/null || true
