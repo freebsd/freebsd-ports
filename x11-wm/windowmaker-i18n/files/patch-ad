@@ -1,13 +1,13 @@
---- configure.orig	Wed Feb  3 13:05:41 1999
-+++ configure	Wed Feb  3 13:05:58 1999
-@@ -2860,8 +2860,8 @@
+--- configure.orig	Sun Mar  7 17:10:46 1999
++++ configure	Thu Mar 11 09:05:53 1999
+@@ -2876,8 +2876,8 @@
  
  
  
--supported_locales="cs de es fr gl it ja ko nl no pt ru se tr fi hr el pl ro dk"
--supported_wprefs_locales="pt hr fr ko ja cs"
-+supported_locales="cs de es fr gl it ja_JP.EUC ko nl no pt ru se tr fi hr el pl ro dk"
-+supported_wprefs_locales="pt hr fr ko ja_JP.EUC cs"
+-supported_locales="cs de es fr gl it ja ko nl no pt ru se tr fi hr el pl ro dk zh_TW.Big5"
+-supported_wprefs_locales="pt hr fr ko ja cs zh_TW.Big5"
++supported_locales="cs de es fr gl it ja_JP.EUC ko nl no pt ru se tr fi hr el pl ro dk zh_TW.Big5"
++supported_wprefs_locales="pt hr fr ko ja_JP.EUC cs zh_TW.Big5"
  
  for lang in $LINGUAS; do
  	ok=0
