@@ -11,6 +11,7 @@ MASTER_SITES=	http://www.daspace.de/files/
 DISTNAME=	TS-${PORTVERSION}-linux
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	Half-Life mod The Specialists full server package for Linux
 
 _DONT_INCLUDE_MK_=yes
 

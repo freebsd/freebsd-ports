@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	ocaml-
 DISTNAME=	jabbr
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	XML Messaging and Presence Protocol a.k.a. Jabber for Objective Caml
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 RUN_DEPENDS=	${LOCALBASE}/lib/ocaml/cryptokit.cma:${PORTSDIR}/security/ocaml-cryptokit \

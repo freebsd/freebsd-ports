@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	freetantrum
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	Library for acoustic fingerprinting of music from Freetantrum (TM)
 
 LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw
 

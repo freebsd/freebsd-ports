@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	An opensource C++ library to support icq2000/2001 protocol
 
 LIB_DEPENDS=	sigc.1:${PORTSDIR}/devel/libsigc++
 

@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	Multi-threaded branch of the well known mplayer media player
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \

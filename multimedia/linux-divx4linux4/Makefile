@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}-${RELEASE_DATE}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	Linux binary release of DivX 4 (TM) Codec
 
 RESTRICTED=	unsure of licensing issues
 

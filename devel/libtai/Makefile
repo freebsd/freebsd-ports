@@ -14,6 +14,7 @@ MASTER_SITES=	http://cr.yp.to/libtai/ \
 		ftp://ftp.task.gda.pl/mirror/mirror.qmail.org/koobera/pub/software/
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	A library for storing and manipulating dates and times in second/attosecond
 
 USE_REINPLACE=	yes
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	xmltv
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	Set of programs to process TV (tvguide) listings in XML format
 
 BUILD_DEPENDS= \
 	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \

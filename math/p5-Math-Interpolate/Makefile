@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Math
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	Perl routines for data sets interpolation and interval search
 
 PERL_CONFIGURE=	yes
 

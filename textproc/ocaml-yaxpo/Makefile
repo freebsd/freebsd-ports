@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	ocaml-
 DISTNAME=	yaxpo
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	Non-validating XML 1.0 + XMLNS processing suite for Objective Caml
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 

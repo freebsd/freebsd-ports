@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.fifthplanet.net/files/
 DISTNAME=	${PORTNAME:L}-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	A FOX frontend to the Ogle DVD player
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/ogle/libdvdcontrol.so.8:${PORTSDIR}/multimedia/ogle
 LIB_DEPENDS=	FOX-1.1.22:${PORTSDIR}/x11-toolkits/fox

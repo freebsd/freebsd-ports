@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:L}
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	A Java interface to FastTrack (TM) virtually replacing giFT
 
 BROKEN=		'Does not currently work'
 

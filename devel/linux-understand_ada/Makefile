@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	latest pastbuilds
 DISTNAME=	und_ada-14b${PORTVERSION:E}-linux
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	Understand can parse a Ada project helping reverse engineer it
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	lioux
 DISTNAME=	Code_Medic_source-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	Provides an elegant graphical interface to gdb
 
 BROKEN=		Needs further patching
 

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	A library required by kicq (not libicq)
 
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes

@@ -18,6 +18,7 @@ MASTER_SITES=	ftp://ftp.rxvt.org/pub/rxvt/%SUBDIR%/ \
 MASTER_SITE_SUBDIR=	. old devel
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	A low memory usage xterm replacement that supports color
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes

@@ -11,6 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://jsautret.free.fr/BINS/
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	Tool to generate HTML photo albums with XML support
 
 RUN_DEPENDS= \
 	${PBASE}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \

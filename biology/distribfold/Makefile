@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	lioux
 DISTNAME=	distribfold-current-FreeBSD-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	distributedfolding.org distributed protein folding project
 
 ONLY_FOR_ARCHS=	i386
 USE_REINPLACE=	yes

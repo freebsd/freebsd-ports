@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.videolan.org/pub/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	Portable abstraction library for DVD navigation
 
 LIB_DEPENDS=	dvdread.2:${PORTSDIR}/multimedia/libdvdread
 

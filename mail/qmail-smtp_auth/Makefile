@@ -15,6 +15,7 @@ PATCHFILES+=	tls.patch:tls
 PATCH_DIST_STRIP+=	-p1
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	A SECURE, reliable, and FAST MTA for UNIX systems WITH TLS support
 
 USE_OPENSSL=	YES
 
@@ -93,7 +94,6 @@ certificate-req:
 # Local overrides
 MASTERDIR=	${QMAIL_PORT}
 PKGDIR_LOCAL=	${.CURDIR}
-COMMENTFILE=	${PKGDIR_LOCAL}/pkg-comment
 DESCR=		${PKGDIR_LOCAL}/pkg-descr
 PKGMESSAGE=	${PKGDIR_LOCAL}/pkg-message
 PLIST=		${PKGDIR_LOCAL}/pkg-plist

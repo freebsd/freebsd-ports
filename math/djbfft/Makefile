@@ -11,6 +11,7 @@ CATEGORIES=	math
 MASTER_SITES=	http://cr.yp.to/djbfft/
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	An extremely fast library for floating-point convolution
 
 NO_PACKAGE=	Forbidden - we have patches to the distribution.
 

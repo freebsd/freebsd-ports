@@ -11,6 +11,7 @@ MASTER_SITES=	http://downloads.planetmirror.com/pub/bluesnews/half-life/opfor/
 DISTNAME=	opfor${PORTVERSION:S/.//g}
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	Half-Life mod Opposing Forces full server package for Linux
 
 WRKSRC=		${WRKDIR}/gearbox
 

@@ -11,6 +11,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://www.dtek.chalmers.se/groups/dvd/dist/
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	Open DVD player that supports DVD menus
 
 LIB_DEPENDS=	a52.0:${PORTSDIR}/audio/liba52 \
 		dvdread.2:${PORTSDIR}/multimedia/libdvdread \

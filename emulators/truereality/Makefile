@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.mayn.de/pub/unix/emulators/console/n64/
 DISTNAME=	TrueReality-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	Nintendo N64(tm) emulator
 
 USE_GMAKE=	yes
 USE_XLIB=	yes

@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	Portable library for handling Apple's QuickTime(TM) files
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 

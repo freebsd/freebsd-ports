@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mjpeg
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	Supports reading/writing of MJPEG video in YUV 4:2:2 JPEG
 
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
 		jpeg.9:${PORTSDIR}/graphics/jpeg

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME:L}
 DISTNAME=	${PORTNAME:L}-${PORTVERSION:S/.p/pre/}
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	GNOME Subtitle Editor is a tool for editing/converting video subtitles
 
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes

@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.krasnodar.ru/pub/unix/IDE/CodeCrusader/
 DISTNAME=	${PORTNAME}_source-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	A UNIX IDE for X inspired by MetroWerks CodeWarrior
 
 BUILD_DEPENDS=	${NONEXISTENT}:${JXPORT}:configure \
 		makemake:${JXPORT}

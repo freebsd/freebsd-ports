@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	XML
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	Perl module for querying XML tree structures with XQL
 
 RUN_DEPENDS=	${PBASE}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
 		${PBASE}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \

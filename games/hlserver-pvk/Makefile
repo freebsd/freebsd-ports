@@ -14,6 +14,7 @@ DISTFILES=	pvk_2.1_full.tar.gz pvkb22so.gz
 EXTRACT_ONLY=	pvk_2.1_full.tar.gz
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	Half-Life mod Pirates, Vikings & Knights full server package for Linux
 
 post-extract:
 	@${GZCAT} ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES:S/${EXTRACT_ONLY}//} \

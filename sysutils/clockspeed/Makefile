@@ -13,6 +13,7 @@ MASTER_SITES=	http://cr.yp.to/clockspeed/ \
 		ftp://ftp.task.gda.pl/mirror/mirror.qmail.org/koobera/pub/software/
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	Uses a hardware tick counter to compensate for deviant system clock
 
 LIB_DEPENDS=	tai.1:${PORTSDIR}/devel/libtai
 

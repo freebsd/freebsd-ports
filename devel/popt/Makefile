@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.rpm.org/pub/rpm/dist/rpm-4.0.x/ \
 		ftp://ftp.mirror.ac.uk/sites/ftp.rpm.org/pub/rpm/dist/rpm-4.0.x/
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	A getopt(3) like library with a number of enhancements, from Redhat
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 

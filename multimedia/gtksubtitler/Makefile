@@ -12,6 +12,7 @@ MASTER_SITES=	http://dark.pkn.com.pl/~pawel/gtksubtitler/download/
 DISTNAME=	${PORTNAME}-v${PORTVERSION:C/.p(.)$/pre\1/}
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	A small GNOME program for editing and converting subtitles
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 

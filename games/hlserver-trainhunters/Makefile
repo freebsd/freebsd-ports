@@ -13,6 +13,7 @@ DISTFILES=	thb20.tar.gz \
 EXTRACT_ONLY=	thb20.tar.gz
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	Half-Life mod Train Hunters full server package for Linux
 
 IGNORE=		Current version is no longer available anywhere
 

@@ -14,6 +14,7 @@ PKGNAMESUFFIX=	-gui-gtk
 DISTNAME=	ed2k_linux_gui_0.2-${SNAPSHOT_DATE}
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	Linux GTK GUI to eDonkey2000 'core' command line client
 
 RUN_DEPENDS=	donkey:${PORTSDIR}/net/edonkey-core \
 		${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk

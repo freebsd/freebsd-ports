@@ -18,6 +18,7 @@ PKGNAMESUFFIX=	-toolkit
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	Secure Internet Live Conferencing (SILC) development toolkit
 
 RUN_DEPENDS=	silc:${PORTSDIR}/net/silc-client
 

@@ -14,6 +14,7 @@ PKGNAMESUFFIX=	-plugins
 DISTNAME=	gst-plugins-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	GStreamer written collection of plugins handling several media types
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 LIB_DEPENDS=	glib-2.0.200:${PORTSDIR}/devel/glib20 \

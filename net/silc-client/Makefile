@@ -25,6 +25,7 @@ PKGNAMESUFFIX=	-client
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	Secure Internet Live Conferencing (SILC) network client
 
 .ifndef(NOPORTDOCS)
 RUN_DEPENDS=	${LOCALBASE}/share/doc/silc/CREDITS:${.CURDIR}/../silc-doc

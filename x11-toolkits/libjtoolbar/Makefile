@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.krasnodar.ru/pub/unix/IDE/CodeCrusader/ \
 DISTNAME=	JToolBar_source-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	An additional library for the JX widget library
 
 BUILD_DEPENDS=	${NONEXISTENT}:${JXPORT}:configure \
 		makemake:${JXPORT}

@@ -12,6 +12,7 @@ MASTER_SITES=	http://caml.inria.fr/distrib/bazar-ocaml/
 PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	A variety of cryptographic primitives for Objective Caml
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 

@@ -15,6 +15,7 @@ EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	Java GUI to eDonkey2000 'core' command line client
 
 RUN_DEPENDS=	donkey:${PORTSDIR}/net/edonkey-core
 

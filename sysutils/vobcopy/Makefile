@@ -11,6 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://lpn.rnbhq.org/download/
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	Decrypts and copies DVD .vob files
 
 LIB_DEPENDS=	dvdread.2:${PORTSDIR}/multimedia/libdvdread \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt

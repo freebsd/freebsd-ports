@@ -11,6 +11,7 @@ MASTER_SITES=	http://www.svencoop.com/files/
 DISTFILES=	svencoop19.tar.gz svencoop19_patch.tar.gz
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	Half-Life mod Sven Co-Op full server package for Linux
 
 HALFLIFE_COUNTERSTRIKE_MASTER=	${.CURDIR}/../hlserver-cs
 

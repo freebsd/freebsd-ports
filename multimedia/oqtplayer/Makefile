@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME:L}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	A very very small, not functionnal, video OpenQuicktime (TM) player
 
 LIB_DEPENDS=    SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
 		openquicktime.0:${PORTSDIR}/multimedia/openquicktime

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	freetantrum
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	Mike's Playlist Thingie is a fingerprinting based playlist generator
 
 LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw \
 		songprint.1:${PORTSDIR}/audio/songprint

@@ -13,6 +13,7 @@ PKGNAMESUFFIX=	-gui
 DISTNAME=	${PORTNAME}_gui-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	An add-on graphical user interface for Ogle
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/ogle/libdvdcontrol.so.8:${PORTSDIR}/multimedia/ogle
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \

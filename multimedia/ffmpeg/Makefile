@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ffmpeg
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	Hyper fast realtime audio/video encoder/converter, streaming server
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 

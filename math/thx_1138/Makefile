@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	lioux
 DISTNAME=	${PORTNAME:S,_,-,}_source-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	Electronic Paper for Calculations and Graphs
 
 BUILD_DEPENDS=	${NONEXISTENT}:${JXPORT}:configure \
 		makemake:${JXPORT}

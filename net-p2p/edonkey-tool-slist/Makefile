@@ -13,6 +13,7 @@ PKGNAMESUFFIX=	-tool-slist
 DISTNAME=	ed2k_slist-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	Checks which servers are either dead or alive in server.met
 
 WRKSRC=	${WRKDIR}/ed2k_slist
 USE_REINPLACE=	yes

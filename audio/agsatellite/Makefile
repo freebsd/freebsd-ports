@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.audiogalaxy.com/downloads/
 DISTNAME=	AGSatellite${PORTVERSION:S/.//}-glibc21
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	Client that allows you to share your music on Audiogalaxy(TM)
 
 WRKSRC=	${WRKDIR}/${DISTNAME:C/-.*//}
 
