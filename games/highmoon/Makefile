@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	highmoon
-PORTVERSION=	1.2
+PORTVERSION=	1.2.1
 CATEGORIES=	games
 MASTER_SITES=	http://highmoon.gerdsmeier.net/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Duel in the universe
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/HighMoon
 
 USE_SDL=	image sdl
 USE_GCC=	3.4
