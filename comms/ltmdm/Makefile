@@ -7,7 +7,7 @@
 
 PORTNAME=	ltmdm
 PORTVERSION=	1.4
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	comms
 MASTER_SITES=	http://www.dons.net.au/~darius/ \
 		http://soupnazi.org/FreeBSD/ports/distfiles/
@@ -20,6 +20,7 @@ ONLY_FOR_ARCHS=	i386
 BUILD_WRKSRC=	${WRKSRC}/sys/modules/ltmdm
 NO_WRKSUBDIR=	yes
 
+USE_RC_SUBR=	yes
 LTMDM_DEV_MAJOR		?= 228
 LTMDM_OBJ_VERSION	?= 600
 
@@ -31,6 +32,8 @@ MAKE_ARGS+=	LTMDM_DEV_MAJOR=${LTMDM_DEV_MAJOR}
 MAKE_ARGS+=	LTMDM_OBJ_VERSION=${LTMDM_OBJ_VERSION}
 
 PORTDOCS=	README.TXT README-en.TXT INSTALL.TXT INSTALL-en.TXT
+
+RC_SCRIPTS_SUB=PREFIX=${PREFIX} RC_SUBR=${RC_SUBR} MAJOR=${LTMDM_DEV_MAJOR}
 
 pre-fetch:
 .if !exists(${SRC_BASE}/sys/Makefile)
@@ -47,9 +50,12 @@ pre-fetch:
 	@${ECHO} "*************************************************";
 .endif
 
-do-install:
-	@${SED} "s:%%PREFIX%%:${PREFIX}:;s:%%MAJOR%%:${LTMDM_DEV_MAJOR}:" \
+post-extract:
+	@ [ -f ${WRKSRC}/ltmdm.sh ] && ${RM} -f ${WRKSRC}/ltmdm.sh
+	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		< ${FILESDIR}/ltmdm.sh > ${WRKSRC}/ltmdm.sh
+
+do-install:
 	@${MKDIR} ${DATADIR}
 	@${INSTALL_DATA} ${WRKSRC}/sys/modules/ltmdm/ltmdm.ko ${DATADIR}
 	@${INSTALL_SCRIPT} ${WRKSRC}/ltmdm.sh ${PREFIX}/etc/rc.d/
