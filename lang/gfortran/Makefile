@@ -8,7 +8,6 @@
 
 PORTNAME=	gfortran
 PORTVERSION=	3.5.${SNAPDATE}
-PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	maho/tree-ssa
@@ -28,7 +27,7 @@ PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure
 NOMANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4
 
-SNAPDATE=	20040130
+SNAPDATE=	20040317
 
 .include <bsd.port.pre.mk>
 
