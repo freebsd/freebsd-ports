@@ -372,16 +372,15 @@ MASTER_SITE_GNU+=	\
 	ftp://ftp.gnu.org/gnu/%SUBDIR%/ \
 	http://mirrors.usc.edu/pub/gnu/%SUBDIR%/ \
 	ftp://gatekeeper.dec.com/pub/GNU/%SUBDIR%/ \
-	ftp://ftp.uu.net/archive/systems/gnu/%SUBDIR%/ \
 	ftp://ftp.de.uu.net/pub/gnu/%SUBDIR%/ \
 	ftp://ftp.funet.fi/pub/gnu/prep/%SUBDIR%/ \
 	ftp://ftp.leo.org/pub/comp/os/unix/gnu/%SUBDIR%/ \
 	ftp://ftp.wustl.edu/mirrors/gnu/%SUBDIR%/ \
-	ftp://ftp.kddlabs.co.jp/pub/gnu/%SUBDIR%/ \
+	ftp://ftp.kddlabs.co.jp/GNU/%SUBDIR%/ \
 	ftp://ftp.dti.ad.jp/pub/GNU/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,GNU/&,} \
 	ftp://ftp.mirror.ac.uk/sites/ftp.gnu.org/gnu/%SUBDIR%/ \
-	ftp://sunsite.org.uk/Mirrors/ftp.gnu.org/pub/gnu/%SUBDIR%/ \
+	ftp://ftp.sunsite.org.uk/package/gnu/%SUBDIR%/ \
 	ftp://ftp.informatik.hu-berlin.de/pub/gnu/%SUBDIR%/ \
 	ftp://ftp.informatik.rwth-aachen.de/pub/mirror/ftp.gnu.org/pub/gnu/%SUBDIR%/ \
 	ftp://ftp.rediris.es/sites/ftp.gnu.org/pub/%SUBDIR%/ \
