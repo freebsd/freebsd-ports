@@ -1,0 +1,21 @@
+===
+To use docbook-mode, add the following lines to your ~/.emacs:
+
+;; DocBook IDE mode
+(autoload 'docbook-mode "docbookide" "Major mode for DocBook documents." t)
+
+;; Turn on font lock when in DocBook mode
+(add-hook 'docbook-mode-hook
+	  'turn-on-font-lock)
+
+;; You might want to make this the default for .sgml or .xml documents,
+;; or you might want to rely on -*- DocBook -*- on the first line,
+;; or perhaps buffer variables. It's up to you...
+(setq auto-mode-alist
+      (append
+       (list
+	'("\\.sgm" . docbook-mode))
+	'("\\.sgml" . docbook-mode))
+	'("\\.xml" . docbook-mode))
+       auto-mode-alist))
+===

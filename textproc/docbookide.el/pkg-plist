@@ -1,0 +1,14 @@
+share/emacs/site-lisp/docbookide/dbide-abbrev.el
+share/emacs/site-lisp/docbookide/dbide-data.el
+share/emacs/site-lisp/docbookide/dbide-font.el
+share/emacs/site-lisp/docbookide/dbide-process.el
+share/emacs/site-lisp/docbookide/docbookide.el
+share/emacs/site-lisp/docbookide/make-regexp.el
+lib/xemacs/site-lisp/docbookide/dbide-abbrev.el
+lib/xemacs/site-lisp/docbookide/dbide-data.el
+lib/xemacs/site-lisp/docbookide/dbide-font.el
+lib/xemacs/site-lisp/docbookide/dbide-process.el
+lib/xemacs/site-lisp/docbookide/docbookide.el
+lib/xemacs/site-lisp/docbookide/make-regexp.el
+@dirrm share/emacs/site-lisp/docbookide
+@dirrm lib/xemacs/site-lisp/docbookide

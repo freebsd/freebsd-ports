@@ -40,6 +40,7 @@
     SUBDIR += docbook-to-man
     SUBDIR += docbook-xml
     SUBDIR += docbook-xsl
+    SUBDIR += docbookide.el
     SUBDIR += docproj
     SUBDIR += dsssl-docbook-cygnus
     SUBDIR += dsssl-docbook-modular
