@@ -16,7 +16,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	joe@zircon.seattle.wa.us
 COMMENT=	Official AT&T release of KornShell 93
 
-VERSION=	2004-12-25
+VERSION=	2005-02-02
 RESTRICTED=    "Source recipient must acknowledge license"
 
 FETCH_CMD=	/usr/bin/fetch -Rr		# see bin/76134
