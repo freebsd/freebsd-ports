@@ -1,6 +1,6 @@
---- ../sal/osl/unx/system.h.orig	Tue Aug 20 08:54:55 2002
-+++ ../sal/osl/unx/system.h	Sat Apr 19 22:09:15 2003
-@@ -203,25 +203,25 @@
+--- ../sal/osl/unx/system.h.orig	Tue Aug 20 15:54:55 2002
++++ ../sal/osl/unx/system.h	Thu May  8 20:31:08 2003
+@@ -203,12 +203,19 @@
  #   include <dlfcn.h>
  #   include <sys/filio.h>
  #   include <sys/ioctl.h>
@@ -16,15 +16,17 @@
  #   include <netinet/tcp.h>
  #	define 	IORESOURCE_TRANSFER_BSD 
  #   include <machine/endian.h>
--#   if BYTE_ORDER == LITTLE_ENDIAN
--#   	define _LITTLE_ENDIAN
--#   elif BYTE_ORDER == BIG_ENDIAN
--#   	define _BIG_ENDIAN
--#   elif BYTE_ORDER == PDP_ENDIAN
--#   	define _PDP_ENDIAN
--#   endif
++#ifdef __FreeBSD_version < 500000
+ #   if BYTE_ORDER == LITTLE_ENDIAN
+ #   	define _LITTLE_ENDIAN
+ #   elif BYTE_ORDER == BIG_ENDIAN
+@@ -216,12 +223,14 @@
+ #   elif BYTE_ORDER == PDP_ENDIAN
+ #   	define _PDP_ENDIAN
+ #   endif
 -#   define  sched_yield() 				pthread_yield()
 -#   define  pthread_testcancel()
++#endif
  #	define  NO_PTHREAD_RTL
 -#	define  NO_PTHREAD_PRIORITY
 -#	define  CMD_ARG_PRG					__progname		
@@ -38,7 +40,7 @@
  #endif
  
  #ifdef SCO
-@@ -547,12 +547,14 @@
+@@ -569,12 +578,14 @@
  #endif
  
  #ifdef NO_PTHREAD_RTL
