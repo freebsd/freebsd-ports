@@ -1,0 +1,13 @@
+
+$FreeBSD$
+
+--- libcharset/configure	2002/04/30 07:59:47	1.1
++++ libcharset/configure	2002/04/30 08:00:27
+@@ -5067,6 +5067,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
