@@ -150,6 +150,7 @@
     SUBDIR += libao
     SUBDIR += libaudiofile
     SUBDIR += libcdaudio
+    SUBDIR += libcddb
     SUBDIR += libid3tag
     SUBDIR += libmad
     SUBDIR += libmikmod
