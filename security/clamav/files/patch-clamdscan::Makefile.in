@@ -1,0 +1,20 @@
+--- clamdscan/Makefile.in.orig	Fri Nov 21 17:14:13 2003
++++ clamdscan/Makefile.in	Fri Nov 21 17:14:45 2003
+@@ -156,7 +156,7 @@
+ 	$(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ CCLD = $(CC)
+ LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+-	$(AM_LDFLAGS) $(LDFLAGS) -o $@
++	$(LIBS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
+ CFLAGS = @CFLAGS@
+ DIST_SOURCES = $(clamdscan_SOURCES)
+ DIST_COMMON = Makefile.am Makefile.in
+@@ -200,7 +200,7 @@
+ 	-test -z "$(bin_PROGRAMS)" || rm -f $(bin_PROGRAMS)
+ clamdscan$(EXEEXT): $(clamdscan_OBJECTS) $(clamdscan_DEPENDENCIES) 
+ 	@rm -f clamdscan$(EXEEXT)
+-	$(LINK) $(clamdscan_LDFLAGS) $(clamdscan_OBJECTS) $(clamdscan_LDADD) $(LIBS)
++	$(LINK) $(clamdscan_LDFLAGS) $(clamdscan_OBJECTS) $(clamdscan_LDADD)
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT) core *.core

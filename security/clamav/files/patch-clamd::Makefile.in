@@ -1,0 +1,20 @@
+--- clamd/Makefile.in.orig	Fri Nov 21 17:07:49 2003
++++ clamd/Makefile.in	Fri Nov 21 17:10:33 2003
+@@ -181,7 +181,7 @@
+ 	$(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ CCLD = $(CC)
+ LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+-	$(AM_LDFLAGS) $(LDFLAGS) -o $@
++	$(LIBS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
+ CFLAGS = @CFLAGS@
+ DIST_SOURCES = $(clamd_SOURCES)
+ DIST_COMMON = Makefile.am Makefile.in
+@@ -225,7 +225,7 @@
+ 	-test -z "$(sbin_PROGRAMS)" || rm -f $(sbin_PROGRAMS)
+ clamd$(EXEEXT): $(clamd_OBJECTS) $(clamd_DEPENDENCIES) 
+ 	@rm -f clamd$(EXEEXT)
+-	$(LINK) $(clamd_LDFLAGS) $(clamd_OBJECTS) $(clamd_LDADD) $(LIBS)
++	$(LINK) $(clamd_LDFLAGS) $(clamd_OBJECTS) $(clamd_LDADD)
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT) core *.core
