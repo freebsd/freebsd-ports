@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		samba
-PORTVERSION=		3.0.10
+PORTVERSION?=		3.0.11
 PORTREVISION?=		0
 PORTEPOCH?=		1
 CATEGORIES?=		net
@@ -43,7 +43,7 @@ SAMBA_CONFIG=		${SAMBA_CONFDIR}/smb.conf
 CONFIGURE_ENV+=		CPPFLAGS=-I${LOCALBASE}/include \
 			LDFLAGS=-L${LOCALBASE}/lib
 
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 CONFIGURE_ARGS+=	--exec-prefix=${PREFIX} \
 			--localstatedir=${VARDIR} \
@@ -205,13 +205,6 @@ LIB_DEPENDS+=		popt.0:${PORTSDIR}/devel/popt
 CONFIGURE_ARGS+=	--with-included-popt
 .endif
 
-.if defined(WITH_MULTIBYTE)
-# Based on patch from miraclelinux.com.
-# http://www.miraclelinux.com/english/technet/samba30/index.html
-PLIST_SUB+=		MULTIBYTE=""
-.else
-PLIST_SUB+=		MULTIBYTE="@comment "
-.endif
 # !SAMBA_SUBPORT
 .endif
 
@@ -281,7 +274,7 @@ RC_SCRIPTS_SUB=		PREFIX=${PREFIX} \
 			SAMBA_LOCKDIR=${SAMBA_LOCKDIR} \
 			SAMBA_SPOOL=${SAMBA_SPOOL}
 
-pre-everything::
+pre-configure::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "!!! Due to a bug in the deinstall procedure in port versions prior to 3.0.9,"
 	@${ECHO_MSG} "!!! you should BACK UP YOUR VALUABLE ${SAMBA_LOCKDIR}/windbindd_* FILES"
@@ -296,12 +289,15 @@ pre-fetch:
 	@${ECHO_MSG} "===>  -------------------------------------------"
 
 post-patch:
-	@${FIND} ${WRKSRC} -name CVS -o -name .cvsignore | ${XARGS} ${RM}
+	@${RM} -rf ${WRKDIR}/${DISTNAME}/examples/LDAP/smbldap-tools-*
 	@${RM} -rf ${WRKDIR}/${DISTNAME}/examples/libsmbclient
 	@${RM} -rf ${WRKDIR}/${DISTNAME}/swat/lang
+	@${FIND} ${WRKSRC} -name CVS -o -name .cvsignore | ${XARGS} ${RM}
+	@${FIND} ${WRKDIR}/${DISTNAME} -type d | ${XARGS} ${CHMOD} 0755
+	@${FIND} ${WRKDIR}/${DISTNAME}/examples -type f | ${XARGS} ${CHMOD} 0644
 
 pre-install:
-	@${FIND} ${SAMBA_LIBDIR} -type f | ${SORT} | ${SED} -e 's|^${PREFIX}||; s|^/||' >> ${WRKDIR}/.PLIST.exclude
+	-@${FIND} ${SAMBA_LIBDIR} -type f 2>/dev/null | ${SORT} | ${SED} -e 's|^${PREFIX}||; s|^/||' >> ${WRKDIR}/.PLIST.exclude
 
 post-install:
 .for sect in 1 5 7 8

@@ -37,7 +37,6 @@ sbin/swat
 %%EXAMPLESDIR%%/LDAP/README
 %%EXAMPLESDIR%%/LDAP/convertSambaAccount
 %%EXAMPLESDIR%%/LDAP/get_next_oid
-%%EXAMPLESDIR%%/LDAP/ldapsync.pl
 %%EXAMPLESDIR%%/LDAP/samba-nds.schema
 %%EXAMPLESDIR%%/LDAP/samba-schema-netscapeds4.x
 %%EXAMPLESDIR%%/LDAP/samba-schema-netscapeds5.x
@@ -45,39 +44,6 @@ sbin/swat
 %%EXAMPLESDIR%%/LDAP/samba.schema
 %%EXAMPLESDIR%%/LDAP/samba.schema.at.IBM-DS
 %%EXAMPLESDIR%%/LDAP/samba.schema.oc.IBM-DS
-%%EXAMPLESDIR%%/LDAP/smbldap-tools/CONTRIBUTORS
-%%EXAMPLESDIR%%/LDAP/smbldap-tools/COPYING
-%%EXAMPLESDIR%%/LDAP/smbldap-tools/ChangeLog
-%%EXAMPLESDIR%%/LDAP/smbldap-tools/FILES
-%%EXAMPLESDIR%%/LDAP/smbldap-tools/INFRASTRUCTURE
-%%EXAMPLESDIR%%/LDAP/smbldap-tools/INSTALL
-%%EXAMPLESDIR%%/LDAP/smbldap-tools/Makefile
-%%EXAMPLESDIR%%/LDAP/smbldap-tools/README
-%%EXAMPLESDIR%%/LDAP/smbldap-tools/TODO
-%%EXAMPLESDIR%%/LDAP/smbldap-tools/cgi/README
-%%EXAMPLESDIR%%/LDAP/smbldap-tools/cgi/ldappass.cgi
-%%EXAMPLESDIR%%/LDAP/smbldap-tools/mkntpwd/Makefile
-%%EXAMPLESDIR%%/LDAP/smbldap-tools/mkntpwd/getopt.c
-%%EXAMPLESDIR%%/LDAP/smbldap-tools/mkntpwd/getopt.h
-%%EXAMPLESDIR%%/LDAP/smbldap-tools/mkntpwd/md4.c
-%%EXAMPLESDIR%%/LDAP/smbldap-tools/mkntpwd/mkntpwd.c
-%%EXAMPLESDIR%%/LDAP/smbldap-tools/mkntpwd/mkntpwd.h
-%%EXAMPLESDIR%%/LDAP/smbldap-tools/mkntpwd/smbdes.c
-%%EXAMPLESDIR%%/LDAP/smbldap-tools/smbldap-groupadd.pl
-%%EXAMPLESDIR%%/LDAP/smbldap-tools/smbldap-groupdel.pl
-%%EXAMPLESDIR%%/LDAP/smbldap-tools/smbldap-groupmod.pl
-%%EXAMPLESDIR%%/LDAP/smbldap-tools/smbldap-groupshow.pl
-%%EXAMPLESDIR%%/LDAP/smbldap-tools/smbldap-migrate-accounts.pl
-%%EXAMPLESDIR%%/LDAP/smbldap-tools/smbldap-migrate-groups.pl
-%%EXAMPLESDIR%%/LDAP/smbldap-tools/smbldap-passwd.pl
-%%EXAMPLESDIR%%/LDAP/smbldap-tools/smbldap-populate.pl
-%%EXAMPLESDIR%%/LDAP/smbldap-tools/smbldap-tools.spec
-%%EXAMPLESDIR%%/LDAP/smbldap-tools/smbldap-useradd.pl
-%%EXAMPLESDIR%%/LDAP/smbldap-tools/smbldap-userdel.pl
-%%EXAMPLESDIR%%/LDAP/smbldap-tools/smbldap-usermod.pl
-%%EXAMPLESDIR%%/LDAP/smbldap-tools/smbldap-usershow.pl
-%%EXAMPLESDIR%%/LDAP/smbldap-tools/smbldap_conf.pm
-%%EXAMPLESDIR%%/LDAP/smbldap-tools/smbldap_tools.pm
 %%EXAMPLESDIR%%/README
 %%EXAMPLESDIR%%/VFS/Makefile.in
 %%EXAMPLESDIR%%/VFS/README
@@ -96,7 +62,6 @@ sbin/swat
 %%EXAMPLESDIR%%/dce-dfs/smb.conf
 %%EXAMPLESDIR%%/genlogon/genlogon.pl
 %%EXAMPLESDIR%%/misc/extra_smbstatus
-%%EXAMPLESDIR%%/misc/modify_samba_config.pl
 %%EXAMPLESDIR%%/misc/swat.pl
 %%EXAMPLESDIR%%/misc/wall.perl
 %%EXAMPLESDIR%%/nss/nss_winbind.c
@@ -109,8 +74,8 @@ sbin/swat
 %%EXAMPLESDIR%%/pdb/README
 %%EXAMPLESDIR%%/pdb/mysql/mysql.dump
 %%EXAMPLESDIR%%/pdb/mysql/smb.conf
-%%EXAMPLESDIR%%/pdb/pdb_test.c
 %%EXAMPLESDIR%%/pdb/sambapdb.dtd
+%%EXAMPLESDIR%%/pdb/test.c
 %%EXAMPLESDIR%%/printer-accounting/README
 %%EXAMPLESDIR%%/printer-accounting/acct-all
 %%EXAMPLESDIR%%/printer-accounting/acct-sum
@@ -123,6 +88,13 @@ sbin/swat
 %%EXAMPLESDIR%%/printing/smbprint
 %%EXAMPLESDIR%%/printing/smbprint.sysv
 %%EXAMPLESDIR%%/scripts/backtrace
+%%EXAMPLESDIR%%/scripts/perl/modify_samba_config.pl
+%%EXAMPLESDIR%%/scripts/perl/smbaddprinter.pl
+%%EXAMPLESDIR%%/scripts/perl/smbdelprinter
+%%EXAMPLESDIR%%/scripts/python/SambaConfig.py
+%%EXAMPLESDIR%%/scripts/python/generate_parm_table.py
+%%EXAMPLESDIR%%/scripts/python/modify_samba_config.py
+%%EXAMPLESDIR%%/scripts/python/smbparm.py
 %%EXAMPLESDIR%%/smb.conf.default
 %%EXAMPLESDIR%%/svr4-startup/README
 %%EXAMPLESDIR%%/svr4-startup/samba.server
@@ -144,6 +116,8 @@ sbin/swat
 @dirrm %%EXAMPLESDIR%%/validchars
 @dirrm %%EXAMPLESDIR%%/tridge
 @dirrm %%EXAMPLESDIR%%/svr4-startup
+@dirrm %%EXAMPLESDIR%%/scripts/perl
+@dirrm %%EXAMPLESDIR%%/scripts/python
 @dirrm %%EXAMPLESDIR%%/scripts
 @dirrm %%EXAMPLESDIR%%/printing
 @dirrm %%EXAMPLESDIR%%/printer-accounting
@@ -158,9 +132,6 @@ sbin/swat
 @dirrm %%EXAMPLESDIR%%/auth/crackcheck
 @dirrm %%EXAMPLESDIR%%/auth
 @dirrm %%EXAMPLESDIR%%/VFS
-@dirrm %%EXAMPLESDIR%%/LDAP/smbldap-tools/mkntpwd
-@dirrm %%EXAMPLESDIR%%/LDAP/smbldap-tools/cgi
-@dirrm %%EXAMPLESDIR%%/LDAP/smbldap-tools
 @dirrm %%EXAMPLESDIR%%/LDAP
 @dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
@@ -375,6 +346,7 @@ share/swat/help/Samba-HOWTO-Collection/pr02.html
 share/swat/help/Samba-HOWTO-Collection/pr03.html
 share/swat/help/Samba-HOWTO-Collection/printing.html
 share/swat/help/Samba-HOWTO-Collection/problems.html
+share/swat/help/Samba-HOWTO-Collection/rights.html
 share/swat/help/Samba-HOWTO-Collection/samba-bdc.html
 share/swat/help/Samba-HOWTO-Collection/samba-pdc.html
 share/swat/help/Samba-HOWTO-Collection/securing-samba.html
