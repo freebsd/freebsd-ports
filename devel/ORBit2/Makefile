@@ -30,8 +30,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-patch:
-	@${FIND} ${WRKSRC} -type f | ${XARGS} ${GREP} -l LINC_THREADSAFE | \
-		${XARGS} ${REINPLACE_CMD} -e 's|LINC_THREADSAFE|G_THREADS_ENABLED|g'
 	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g ; \
 		s|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/src/idl-compiler/orbit-idl-backend.c \
