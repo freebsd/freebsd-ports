@@ -14,10 +14,11 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.3
 MAINTAINER=	jylefort@brutele.be
 COMMENT=	A simple GNOME music player
 
-LIB_DEPENDS+=	gstplay-0.6:${PORTSDIR}/multimedia/gstreamer-plugins \
-		id3tag:${PORTSDIR}/audio/mad \
+LIB_DEPENDS+=	id3tag:${PORTSDIR}/audio/mad \
 		ogg:${PORTSDIR}/audio/libogg \
-		vorbis:${PORTSDIR}/audio/libvorbis
+		vorbis:${PORTSDIR}/audio/libvorbis \
+		gstplay-0.6:${PORTSDIR}/multimedia/gstreamer-plugins \
+		gdbm.3:${PORTSDIR}/databases/gdbm
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
