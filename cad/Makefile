@@ -21,6 +21,7 @@
     SUBDIR += pdnmesh
     SUBDIR += pisces
     SUBDIR += qcad
+    SUBDIR += qmls
     SUBDIR += sceptre
     SUBDIR += sis
     SUBDIR += spice
