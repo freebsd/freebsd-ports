@@ -3,11 +3,11 @@
 # Date Created:				27 Oct 1998
 # Whom:					Vanilla Pooh Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.12 1999/05/29 04:10:28 steve Exp $
+# $Id: Makefile,v 1.13 1999/05/29 04:20:45 steve Exp $
 #
 
-DISTNAME=	gqview-0.6.1.src
-PKGNAME=	gqview-0.6.1
+DISTNAME=	gqview-0.7.0.src
+PKGNAME=	gqview-0.7.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://gqview.netpedia.net/ \
 		http://www.geocities.com/SiliconValley/Haven/5235/
