@@ -38,7 +38,7 @@ if [ x"$2" = xPRE-INSTALL ]; then
     else
         echo "You need a user \"${user}\"."
 	doadduser=1
-	if [ "$BATCH" = "yes" ]; then
+	if [ "X${BATCH}" != "X" ]; then
 		doadduser=0
 	else
 		yesno "Would you like me to create it" y && doadduser=0

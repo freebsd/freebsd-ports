@@ -1,41 +1,37 @@
---- configure.in.orig	Tue Oct 14 03:49:36 2003
-+++ configure.in	Mon Sep 27 14:52:41 2004
-@@ -315,8 +315,7 @@
- 
- 	  ;;
- freebsd*) CFLAGS="$CFLAGS -D_REENTRANT -DFREEBSD -D_THREAD_SAFE -DFD_SETSIZE=2048 -I."
--	  CXX=g++
--	  CXXSOFLAGS="-shared -Xlinker -Bstatic"
-+	  CXXSOFLAGS="-shared"
- 	  LIBS="$LEXLIB $LIBS"
- 	  if test "$large_files" = "yes" ; then
- 		## FreeBSD need no any special flags for 64bit files
-@@ -328,14 +327,20 @@
+
+$FreeBSD$
+
+--- configure.in.orig
++++ configure.in
+@@ -328,14 +328,20 @@
            rel=`uname -r`
            case "$rel" in
              4*)
 -              CFLAGS="$CFLAGS -pthread"
+-              ;;
+-            5*)
+-              LIBS="-lc_r $LEXLIB $LIBS"
 +              CFLAGS="$CFLAGS $PTHREAD_CFLAGS $PTHREAD_LIBS"
                ;;
-+	    5.[012]*)
-+	      LIBS="$PTHREAD_LIBS $LEXLIB $LIBS"
-+	      ;;
-             5*)
--              LIBS="-lc_r $LEXLIB $LIBS"
-+	      CFLAGS="$CFLAGS $PTHREAD_CFLAGS $PTHREAD_LIBS"
-               ;;
-+	    6*)
-+	      CFLAGS="$CFLAGS $PTHREAD_CFLAGS $PTHREAD_LIBS"
-+	      ;;
-             *)
+-            *)
 -              CFLAGS="$CFLAGS -pthread"
 -              LIBS="-lc_r $LEXLIB $LIBS"
-+              CFLAGS="$CFLAGS $PTHREAD_CFLAGS"
-+              LIBS="$PTHREAD_LIBS $LEXLIB $LIBS"
++ 	    5.[012]*)
++ 	      LIBS="$PTHREAD_LIBS $LEXLIB $LIBS"
++ 	      ;;
++              5*)
++ 	      CFLAGS="$CFLAGS $PTHREAD_CFLAGS $PTHREAD_LIBS"
++                ;;
++ 	    6*)
++ 	      CFLAGS="$CFLAGS $PTHREAD_CFLAGS $PTHREAD_LIBS"
++ 	      ;;
++              *)
++               CFLAGS="$CFLAGS $PTHREAD_CFLAGS"
++               LIBS="$PTHREAD_LIBS $LEXLIB $LIBS"
                ;;
            esac
  	  RPATH_OPTION="-rpath"
-@@ -430,10 +435,10 @@
+@@ -430,10 +436,10 @@
  esac
  
  if test "X$MYSQL_PATH" != "X" ; then
