@@ -2,7 +2,7 @@
 # Date created:         3 Jan 1995
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.1.1.1 1995/01/04 08:56:17 swallace Exp $
+# $Id: Makefile,v 1.2 1995/01/29 22:00:24 ats Exp $
 #
 
 DISTNAME=       xasteroids
@@ -11,7 +11,6 @@ EXTRACT_SUFX=	.sh.Z
 EXTRACT_CMD=	( cd ${WRKDIR}; zcat | sh -s )
 EXTRACT_ARGS= <
 USE_IMAKE=	yes
-INSTALL_MANPAGES= yes
 NO_WRKSUBDIR=	yes
 
 .include <bsd.port.mk>

@@ -3,12 +3,11 @@
 # Date created:		12 December 1994
 # Whom:			asami
 #
-# $Id:$
+# $Id: Makefile,v 1.1.1.1 1994/12/13 09:07:02 asami Exp $
 #
 
 DISTNAME=	xsysstats1.32
 USE_IMAKE=	yes
-INSTALL_MANPAGES=	yes
 MASTER_SITES=	ftp://crl.dec.com/pub/X11/contrib/utilities/
 
 .include <bsd.port.mk>
