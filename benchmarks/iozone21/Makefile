@@ -23,7 +23,7 @@ ALL_TARGET=
 MAN1=		iozone.1
 
 do-install:
-	${STRIP} ${WRKSRC}/iozone
+	strip ${WRKSRC}/iozone
 	${INSTALL_PROGRAM} ${WRKSRC}/iozone ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/iozone.1 ${PREFIX}/man/man1
 
