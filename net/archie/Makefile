@@ -3,7 +3,7 @@
 # Date created:		20 Oct 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.2 1995/04/01 12:47:44 jkh Exp $
+# $Id: Makefile,v 1.3 1995/04/15 05:41:18 asami Exp $
 #
 
 DISTNAME=	c-archie-1.4.1-FIXED
@@ -14,8 +14,9 @@ EXTRACT_SUFX=	.tar.Z
 
 WRKSRC=		${WRKDIR}/archie-1.4.1-FIX
 
-pre-install:
-	mkdir -p ${PREFIX}/bin
-	mkdir -p ${PREFIX}/man/man1
+MAINTAINER=	torstenb@FreeBSD.ORG
+
+post-install:
+	gzip -9nf ${PREFIX}/man/man1/archie.1
 
 .include <bsd.port.mk>
