@@ -316,6 +316,7 @@ sbin/rotatelogs
 %%DOCSDIR%%/index.html.se
 %%DOCSDIR%%/index.html.zh-tw.big5
 %%DOCSDIR%%/manual/LICENSE
+%%DOCSDIR%%/manual/FAQ.html
 %%DOCSDIR%%/manual/bind.html.en
 %%DOCSDIR%%/manual/bind.html.fr
 %%DOCSDIR%%/manual/bind.html.html
@@ -498,7 +499,9 @@ sbin/rotatelogs
 %%DOCSDIR%%/manual/mod/mod_negotiation.html.html
 %%DOCSDIR%%/manual/mod/mod_negotiation.html.ja.jis
 %%DOCSDIR%%/manual/mod/mod_proxy.html
-%%DOCSDIR%%/manual/mod/mod_rewrite.html
+%%DOCSDIR%%/manual/mod/mod_rewrite.html.en
+%%DOCSDIR%%/manual/mod/mod_rewrite.html.html
+%%DOCSDIR%%/manual/mod/mod_rewrite.html.ja.jis
 %%DOCSDIR%%/manual/mod/mod_setenvif.html.en
 %%DOCSDIR%%/manual/mod/mod_setenvif.html.html
 %%DOCSDIR%%/manual/mod/mod_setenvif.html.ja.jis
