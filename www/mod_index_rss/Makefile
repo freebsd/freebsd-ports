@@ -9,7 +9,8 @@
 PORTNAME=	mod_index_rss
 PORTVERSION=	0.10
 CATEGORIES=	www
-MASTER_SITES=	http://software.tangent.org/download/
+MASTER_SITES=	http://software.tangent.org/download/ \
+		ftp://ftp.tangent.org/pub/apache/
 
 MAINTAINER=	ports@FreeBSD.org
 
