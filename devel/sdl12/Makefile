@@ -21,6 +21,8 @@ BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
+USE_GNOMENG=	yes
+WANT_GNOME=	yes
 CONFIGURE_ENV=	NASM="${LOCALBASE}/bin/nasm" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
@@ -41,12 +43,6 @@ DISPLAY_MSG=	${DO_NADA}
 .if !defined(WITHOUT_X11)
 USE_XLIB=	yes
 .endif
-.if !defined(WITHOUT_ESOUND)
-USE_GNOMENG=	yes
-USE_GNOME=	esound
-.else
-CONFIGURE_ARGS+=--disable-esd --disable-esdtest
-.endif
 .if defined(WITHOUT_GL)
 CONFIGURE_ARGS+=--disable-video-opengl
 .else
@@ -66,6 +62,12 @@ MAN3!=		${CAT} ${FILESDIR}/man3
 
 .if (${ARCH} != "i386")
 WITHOUT_SVGALIB=	yes
+.endif
+
+.if ${HAVE_GNOME:Mesound}!=""
+USE_GNOME+=	esound
+.else
+CONFIGURE_ARGS+=--disable-esd --disable-esdtest
 .endif
 
 .if !defined(WITHOUT_SVGALIB)
