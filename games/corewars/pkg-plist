@@ -37,6 +37,9 @@ share/corewars/impkiller2.cw
 share/corewars/impkiller3.cw
 share/corewars/impkiller4.cw
 share/corewars/impkiller5.cw
+share/corewars/incubator.cw
+share/corewars/incubator2.cw
+share/corewars/inverter.cw
 share/corewars/jumpback.cw
 share/corewars/jumpback2.cw
 share/corewars/jumpup.cw
@@ -52,6 +55,9 @@ share/corewars/parasito1.cw
 share/corewars/parasito2.cw
 share/corewars/parasito3.cw
 share/corewars/parasito4.cw
+share/corewars/pongmissile.cw
+share/corewars/pongmissile2.cw
+share/corewars/pongmissile3.cw
 share/corewars/quadwalker.cw
 share/corewars/random.cw
 share/corewars/runaway.cw
