@@ -1,11 +1,11 @@
---- configure.orig	Thu Sep 25 08:25:16 2003
-+++ configure	Thu Sep 25 08:32:49 2003
+--- configure.orig	Mon Sep 29 12:41:50 2003
++++ configure	Mon Sep 29 12:43:14 2003
 @@ -15962,7 +15962,7 @@
  
  	if test "x$prefix" != "xNONE"; then
  		prefix=`eval echo $prefix`
--		PERL_MM_PARAMS="INSTALLDIRS=perl PREFIX=$prefix"
-+		PERL_MM_PARAMS="INSTALLDIRS=perl PREFIX=%%LOCALBASE%%"
+-		PERL_MM_PARAMS="INSTALLDIRS=vendor PREFIX=$prefix"
++		PERL_MM_PARAMS="INSTALLDIRS=vendor PREFIX=%%LOCALBASE%%"
  	fi
  
  
