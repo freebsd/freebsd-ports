@@ -1,0 +1,19 @@
+*** gcc/ada/gnatcmd.adb.orig	Wed Jun  4 17:47:51 1997
+--- gcc-2.7.2.1/ada/gnatcmd.adb	Wed Jun  4 17:48:17 1997
+***************
+*** 899,905 ****
+  
+        (Cname    => new S'("COMPILE"),
+         Usage    => new S'("GNAT COMPILE file file .. file /qualifiers"),
+!        Unixcmd  => new S'("gcc -c"),
+         Switches => GCC_Switches'Access,
+         Minfile  => 1,
+         Maxfile  => 0,
+--- 899,905 ----
+  
+        (Cname    => new S'("COMPILE"),
+         Usage    => new S'("GNAT COMPILE file file .. file /qualifiers"),
+!        Unixcmd  => new S'("adagcc -c"),
+         Switches => GCC_Switches'Access,
+         Minfile  => 1,
+         Maxfile  => 0,

@@ -1,0 +1,46 @@
+diff -c orig/ada/Makefile.in gcc/ada/Makefile.in
+*** orig/ada/Makefile.in	Tue Jan 21 00:01:54 1997
+--- gcc-2.7.2.1/ada/Makefile.in	Sat May 10 22:42:27 1997
+***************
+*** 189,193 ****
+  	$(CC) -c $(ALL_ADAFLAGS) $<
+  .ads.o:
+! 	$(CC) -c $(ALL_ADAFLAGS) $<
+  
+  # This tells GNU make version 3 not to export all the variables
+--- 189,199 ----
+  	$(CC) -c $(ALL_ADAFLAGS) $<
+  .ads.o:
+! 	@if [ -f $*.adb ]; then \
+! 		echo "$(CC) -c $(ALL_ADAFLAGS) $*.adb"; \
+! 		$(CC) -c $(ALL_ADAFLAGS) $*.adb; \
+! 	else \
+! 		echo "$(CC) -c $(ALL_ADAFLAGS) $*.ads"; \
+! 		$(CC) -c $(ALL_ADAFLAGS) $*.ads; \
+! 	fi
+  
+  # This tells GNU make version 3 not to export all the variables
+***************
+*** 738,741 ****
+--- 744,748 ----
+  		sparc-sun-sunos5*)	letter=s ;;\
+  	        *86*-linux*)		letter=l ;;\
++ 		*86*-freebsd*)		letter=f ;;\
+  	        mips-sgi-irix*)		letter=g ;;\
+  		hppa*-hp-hpux*)		letter=h ;;\
+***************
+*** 779,782 ****
+--- 786,790 ----
+  		*-go32-msdos | *-go32  |\
+  		*86*-linux*            |\
++ 		*86*-freebsd*          |\
+  		*) \
+  		\
+***************
+*** 845,848 ****
+--- 853,857 ----
+  		*-go32-msdos | *-go32  |\
+                  *86*-linux*            |\
++                 *86*-freebsd*          |\
+                  *)		       \
+                  \

@@ -1,0 +1,141 @@
+diff -c orig/Makefile.in gcc/Makefile.in
+*** orig/Makefile.in	Thu Mar 27 17:32:15 1997
+--- gcc-2.7.2.1/Makefile.in	Fri Apr  4 19:55:09 1997
+***************
+*** 189,200 ****
+  local_prefix = /usr/local
+  # Directory in which to put host dependent programs and libraries
+  exec_prefix = $(prefix)
+  # Directory in which to put the executable for the command `gcc'
+  bindir = $(exec_prefix)/bin
+  # Directory in which to put the directories used by the compiler.
+  libdir = $(exec_prefix)/lib
+  # Directory in which the compiler finds executables, libraries, etc.
+! libsubdir = $(libdir)/gcc-lib/$(target)/$(version)
+  # Directory in which the compiler finds g++ includes.
+  gxx_include_dir= $(libdir)/g++-include
+  # Directory to search for site-specific includes.
+--- 189,202 ----
+  local_prefix = /usr/local
+  # Directory in which to put host dependent programs and libraries
+  exec_prefix = $(prefix)
++ # directory to hold compilers
++ compdir = $(prefix)/libexec/ada
+  # Directory in which to put the executable for the command `gcc'
+  bindir = $(exec_prefix)/bin
+  # Directory in which to put the directories used by the compiler.
+  libdir = $(exec_prefix)/lib
+  # Directory in which the compiler finds executables, libraries, etc.
+! libsubdir = $(libdir)
+  # Directory in which the compiler finds g++ includes.
+  gxx_include_dir= $(libdir)/g++-include
+  # Directory to search for site-specific includes.
+***************
+*** 213,219 ****
+  mandir = $(prefix)/man/man1
+  # Directory in which to find other cross-compilation tools and headers.
+  # Used in install-cross.
+! tooldir = $(exec_prefix)/$(target)
+  # Dir for temp files.
+  tmpdir = /tmp
+  
+--- 215,221 ----
+  mandir = $(prefix)/man/man1
+  # Directory in which to find other cross-compilation tools and headers.
+  # Used in install-cross.
+! tooldir = $(exec_prefix)
+  # Dir for temp files.
+  tmpdir = /tmp
+  
+***************
+*** 1141,1148 ****
+  
+  gcc.o: gcc.c $(CONFIG_H) multilib.h config.status $(lang_specs_files)
+  	$(CC) $(ALL_CFLAGS) $(ALL_CPPFLAGS) $(INCLUDES) \
+    -DSTANDARD_STARTFILE_PREFIX=\"$(libdir)/\" \
+!   -DSTANDARD_EXEC_PREFIX=\"$(libdir)/gcc-lib/\" \
+    -DDEFAULT_TARGET_VERSION=\"$(version)\" \
+    -DDEFAULT_TARGET_MACHINE=\"$(target)\" \
+    -DTOOLDIR_BASE_PREFIX=\"$(exec_prefix)/\" \
+--- 1143,1152 ----
+  
+  gcc.o: gcc.c $(CONFIG_H) multilib.h config.status $(lang_specs_files)
+  	$(CC) $(ALL_CFLAGS) $(ALL_CPPFLAGS) $(INCLUDES) \
++   -DFREEBSD_NATIVE \
++   -DFREEBSD_PREFIX=\"$(prefix)\" \
+    -DSTANDARD_STARTFILE_PREFIX=\"$(libdir)/\" \
+!   -DSTANDARD_EXEC_PREFIX=\"$(libdir)/\" \
+    -DDEFAULT_TARGET_VERSION=\"$(version)\" \
+    -DDEFAULT_TARGET_MACHINE=\"$(target)\" \
+    -DTOOLDIR_BASE_PREFIX=\"$(exec_prefix)/\" \
+***************
+*** 2055,2069 ****
+  # Create the installation directory.
+  install-dir:
+  	-if [ -d $(libdir) ] ; then true ; else mkdir $(libdir) ; chmod a+rx $(libdir) ; fi
+- 	-if [ -d $(libdir)/gcc-lib ] ; then true ; else mkdir $(libdir)/gcc-lib ; chmod a+rx $(libdir)/gcc-lib ; fi
+  # This dir isn't currently searched by cpp.
+  #	-if [ -d $(libdir)/gcc-lib/include ] ; then true ; else mkdir $(libdir)/gcc-lib/include ; chmod a+rx $(libdir)/gcc-lib/include ; fi
+! 	-if [ -d $(libdir)/gcc-lib/$(target) ] ; then true ; else mkdir $(libdir)/gcc-lib/$(target) ; chmod a+rx $(libdir)/gcc-lib/$(target) ; fi
+! 	-if [ -d $(libdir)/gcc-lib/$(target)/$(version) ] ; then true ; else mkdir $(libdir)/gcc-lib/$(target)/$(version) ; chmod a+rx $(libdir)/gcc-lib/$(target)/$(version) ; fi
+! 	-if [ -d $(libdir)/gcc-lib/$(target)/$(version)/include ] ; then true ; else mkdir $(libdir)/gcc-lib/$(target)/$(version)/include ; chmod a+rx $(libdir)/gcc-lib/$(target)/$(version)/include ; fi
+  	-if [ -d $(bindir) ] ; then true ; else mkdir $(bindir) ; chmod a+rx $(bindir) ; fi
+  	-if [ -d $(includedir) ] ; then true ; else mkdir $(includedir) ; chmod a+rx $(includedir) ; fi
+  	-if [ -d $(tooldir) ] ; then true ; else mkdir $(tooldir) ; chmod a+rx $(tooldir) ; fi
+  	-if [ -d $(assertdir) ] ; then true ; else mkdir $(assertdir) ; chmod a+rx $(assertdir) ; fi
+  	-if [ -d $(infodir) ] ; then true ; else mkdir $(infodir) ; chmod a+rx $(infodir) ; fi
+  # We don't use mkdir -p to create the parents of mandir,
+--- 2059,2073 ----
+  # Create the installation directory.
+  install-dir:
+  	-if [ -d $(libdir) ] ; then true ; else mkdir $(libdir) ; chmod a+rx $(libdir) ; fi
+  # This dir isn't currently searched by cpp.
+  #	-if [ -d $(libdir)/gcc-lib/include ] ; then true ; else mkdir $(libdir)/gcc-lib/include ; chmod a+rx $(libdir)/gcc-lib/include ; fi
+! #	-if [ -d $(libdir)/gcc-lib/$(target) ] ; then true ; else mkdir $(libdir)/gcc-lib/$(target) ; chmod a+rx $(libdir)/gcc-lib/$(target) ; fi
+! #	-if [ -d $(libdir)/gcc-lib/$(target)/$(version) ] ; then true ; else mkdir $(libdir)/gcc-lib/$(target)/$(version) ; chmod a+rx $(libdir)/gcc-lib/$(target)/$(version) ; fi
+! #	-if [ -d $(libdir)/gcc-lib/$(target)/$(version)/include ] ; then true ; else mkdir $(libdir)/gcc-lib/$(target)/$(version)/include ; chmod a+rx $(libdir)/gcc-lib/$(target)/$(version)/include ; fi
+  	-if [ -d $(bindir) ] ; then true ; else mkdir $(bindir) ; chmod a+rx $(bindir) ; fi
+  	-if [ -d $(includedir) ] ; then true ; else mkdir $(includedir) ; chmod a+rx $(includedir) ; fi
+  	-if [ -d $(tooldir) ] ; then true ; else mkdir $(tooldir) ; chmod a+rx $(tooldir) ; fi
++ 	-if [ -d $(compdir) ] ; then true ; else mkdir $(compdir) ; chmod a+rx $(compdir) ; fi
+  	-if [ -d $(assertdir) ] ; then true ; else mkdir $(assertdir) ; chmod a+rx $(assertdir) ; fi
+  	-if [ -d $(infodir) ] ; then true ; else mkdir $(infodir) ; chmod a+rx $(infodir) ; fi
+  # We don't use mkdir -p to create the parents of mandir,
+***************
+*** 2077,2084 ****
+  install-common: native install-dir $(EXTRA_PARTS) lang.install-common
+  	for file in $(COMPILERS); do \
+  	  if [ -f $$file ] ; then \
+! 	    rm -f $(libsubdir)/$$file; \
+! 	    $(INSTALL_PROGRAM) $$file $(libsubdir)/$$file; \
+  	  else true; \
+  	  fi; \
+  	done
+--- 2081,2088 ----
+  install-common: native install-dir $(EXTRA_PARTS) lang.install-common
+  	for file in $(COMPILERS); do \
+  	  if [ -f $$file ] ; then \
+! 	    rm -f $(compdir)/$$file; \
+! 	    $(INSTALL_PROGRAM) $$file $(compdir)/$$file; \
+  	  else true; \
+  	  fi; \
+  	done
+***************
+*** 2110,2117 ****
+  	    $(INSTALL_DATA) SYSCALLS.c.X $(libsubdir)/SYSCALLS.c.X; \
+  	    chmod a-x $(libsubdir)/SYSCALLS.c.X; \
+  	fi
+! 	-rm -f $(libsubdir)/cpp$(exeext)
+! 	$(INSTALL_PROGRAM) cpp$(exeext) $(libsubdir)/cpp$(exeext)
+  
+  # Install the driver program as $(target)-gcc
+  # and also as either gcc (if native) or $(tooldir)/bin/gcc.
+--- 2114,2121 ----
+  	    $(INSTALL_DATA) SYSCALLS.c.X $(libsubdir)/SYSCALLS.c.X; \
+  	    chmod a-x $(libsubdir)/SYSCALLS.c.X; \
+  	fi
+! 	-rm -f $(compdir)/cpp$(exeext)
+! 	$(INSTALL_PROGRAM) cpp$(exeext) $(compdir)/cpp$(exeext)
+  
+  # Install the driver program as $(target)-gcc
+  # and also as either gcc (if native) or $(tooldir)/bin/gcc.

@@ -1,0 +1,20 @@
+diff -c orig/ada/Makefile.in gcc/ada/Makefile.in
+*** orig/ada/Makefile.in	Thu Apr  3 12:40:23 1997
+--- gcc-2.7.2.1/ada/Makefile.in	Thu Apr  3 12:41:49 1997
+***************
+*** 956,962 ****
+  	$(srcdir)/../move-if-change tmp-ttypef.ads ttypef.ads
+  	touch stamp-ttypef
+  
+! ADA_INCLUDE_DIR = $(prefix)/adainclude
+  ADA_RTL_OBJ_DIR = $(libsubdir)/adalib
+  
+  # Note: the strings below do not make sense for Ada strings in the OS/2
+--- 956,962 ----
+  	$(srcdir)/../move-if-change tmp-ttypef.ads ttypef.ads
+  	touch stamp-ttypef
+  
+! ADA_INCLUDE_DIR = $(prefix)/include/adainclude
+  ADA_RTL_OBJ_DIR = $(libsubdir)/adalib
+  
+  # Note: the strings below do not make sense for Ada strings in the OS/2
