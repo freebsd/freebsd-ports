@@ -25,9 +25,14 @@ Local/Apps/GNUMail.app/Resources/MailIcon_prefs_quote.tiff
 Local/Apps/GNUMail.app/Resources/MailIcon_reply.tiff
 Local/Apps/GNUMail.app/Resources/MailIcon_retrieve.tiff
 Local/Apps/GNUMail.app/Resources/MailIcon_send.tiff
+Local/Apps/GNUMail.app/Resources/common_Unknown.tiff
 Local/Apps/GNUMail.app/Resources/down.tiff
+Local/Apps/GNUMail.app/Resources/mime.tiff
+Local/Apps/GNUMail.app/Resources/personal.tiff
 Local/Apps/GNUMail.app/Resources/pgp-mail.tiff
+Local/Apps/GNUMail.app/Resources/stop.tiff
 Local/Apps/GNUMail.app/Resources/up.tiff
+Local/Apps/GNUMail.app/Resources/viewing.tiff
 Local/Apps/GNUMail.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/GNUMail
 Local/Apps/GNUMail.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/library_paths.openapp
 @dirrm Local/Apps/GNUMail.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
