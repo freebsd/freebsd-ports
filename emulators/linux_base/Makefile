@@ -133,9 +133,6 @@ FALLBACK_ELF_MIB=	kern.fallback_elf_brand
 LINUX_ELF=		3
 PREVIOUS_ELF!=		/sbin/sysctl -n ${FALLBACK_ELF_MIB}
 
-do-patch:
-	@${DO_NADA}
-
 pre-install:
 #
 # Handle the loading of the linux loadable kernel module if required.
