@@ -55,7 +55,7 @@ GNOME_ENABLED=		yes
 .endif
 
 .if defined(WITH_GUCHARMAP) || exists(${X11BASE}/libdata/pkgconfig/gucharmap.pc)
-LIB_DEPENDS+=		gucharmap.1:${PORTSDIR}/misc/gucharmap
+LIB_DEPENDS+=		gucharmap.2:${PORTSDIR}/misc/gucharmap
 .else
 CONFIGURE_ARGS+=	--disable-gucharmap
 .endif
