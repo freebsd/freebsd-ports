@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	asp
-PORTVERSION=	0.2.7
+PORTVERSION=	0.2.9
 CATEGORIES=	www ruby
 MASTER_SITES=	http://webtime-project.net/ruby-asp/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -18,31 +18,14 @@ COMMENT=	An Active Server Pages port to Apache with Ruby scripting
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
-RUBY_SETUP=	install.rb
 
 WRKSRC=		${WRKDIR}/ruby-${PORTNAME}
 
-RUBY_RD_FILES=	doc/classes.en.rd \
-		doc/install.en.rd \
-		doc/subsmatch.en.rd \
-		doc/index.en.rd
-
 DOCS=		AUTHORS \
-		README \
-		${RUBY_RD_FILES} \
-		${RUBY_RD_HTML_FILES}
-EXAMPLES=	tests/*
+		README
+EXAMPLES=	tests tests-cgi
 
-post-build:
-.if !defined(NOPORTDOCS) && defined(RUBY_RD_HTML)
-	cd ${BUILD_WRKSRC}/doc; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS}
-.endif
-
-post-install: doc-install
-
-.include <bsd.port.mk>
-
-doc-install:
+post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
 .for f in ${EXAMPLES}
@@ -53,3 +36,5 @@ doc-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
 .endfor
 .endif
+
+.include <bsd.port.mk>

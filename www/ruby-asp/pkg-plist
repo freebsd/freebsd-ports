@@ -1,4 +1,6 @@
+bin/ruby-asp.rb
 %%RUBY_SITELIBDIR%%/apache/aspruby-run.rb
+%%RUBY_SITELIBDIR%%/asp.rb
 %%RUBY_SITELIBDIR%%/asp/application.rb
 %%RUBY_SITELIBDIR%%/asp/asperror.rb
 %%RUBY_SITELIBDIR%%/asp/common.rb
@@ -13,32 +15,54 @@
 %%RUBY_SITELIBDIR%%/asp/subsmatch.rb
 @dirrm %%RUBY_SITELIBDIR%%/asp
 @dirrm %%RUBY_SITELIBDIR%%/apache
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cookie.asp
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/default.css
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/error.asp
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/error.html
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/examples.asp
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/global-asa/global.asa
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/global-asa/test.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/index.asp
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/index.html
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/load.asp
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/mod_ruby.png
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rubyasp-power.png
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/server_variables.asp
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/session.asp
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/simple.asp
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/source.asp
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/subsmatch.asp
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/transfer.asp
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/upload.asp
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/xslt.asp
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/global-asa
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests-cgi/.htaccess
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests-cgi/asp.conf
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests-cgi/cookie.casp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests-cgi/default.css
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests-cgi/error.casp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests-cgi/error.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests-cgi/examples.casp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests-cgi/global-asa/global.asa
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests-cgi/global-asa/test.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests-cgi/index.casp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests-cgi/index.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests-cgi/load.casp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests-cgi/mod_ruby.png
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests-cgi/rubyasp-cgi-power.png
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests-cgi/server_variables.casp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests-cgi/session.casp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests-cgi/simple.casp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests-cgi/source.casp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests-cgi/subsmatch.casp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests-cgi/transfer.casp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests-cgi/upload.casp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests-cgi/xslt.casp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests/.htaccess
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests/cookie.asp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests/default.css
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests/error.asp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests/error.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests/examples.asp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests/global-asa/global.asa
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests/global-asa/test.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests/index.asp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests/index.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests/load.asp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests/mod_ruby.png
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests/rubyasp-power.png
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests/server_variables.asp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests/session.asp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests/simple.asp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests/source.asp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests/subsmatch.asp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests/transfer.asp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests/upload.asp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tests/xslt.asp
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/tests/global-asa
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/tests-cgi/global-asa
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/tests-cgi
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/tests
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/AUTHORS
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes.en.rd
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/index.en.rd
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/install.en.rd
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/subsmatch.en.rd
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
