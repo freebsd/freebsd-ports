@@ -10,6 +10,7 @@
 %%WEBFRONTDIR%%/graph.php
 %%WEBFRONTDIR%%/grid_tree.php
 %%WEBFRONTDIR%%/header.php
+%%WEBFRONTDIR%%/host_gmetrics.php
 %%WEBFRONTDIR%%/host_view.php
 %%WEBFRONTDIR%%/index.php
 %%WEBFRONTDIR%%/meta_view.php
@@ -19,10 +20,13 @@
 %%WEBFRONTDIR%%/private_clusters
 %%WEBFRONTDIR%%/show_node.php
 %%WEBFRONTDIR%%/styles.css
+%%WEBFRONTDIR%%/version.php
 %%WEBFRONTDIR%%/templates/Rocks/images/ganglia.jpg
 %%WEBFRONTDIR%%/templates/Rocks/images/rocks.jpg
 %%WEBFRONTDIR%%/templates/Rocks/images/hardhat.png
+%%WEBFRONTDIR%%/templates/Rocks/cluster_extra.tpl
 %%WEBFRONTDIR%%/templates/Rocks/header.tpl
+%%WEBFRONTDIR%%/templates/Rocks/host_extra.tpl
 %%WEBFRONTDIR%%/templates/default/images/cluster_0-24.jpg
 %%WEBFRONTDIR%%/templates/default/images/cluster_25-49.jpg
 %%WEBFRONTDIR%%/templates/default/images/cluster_50-74.jpg
@@ -48,6 +52,7 @@
 %%WEBFRONTDIR%%/templates/default/header-nobanner.tpl
 %%WEBFRONTDIR%%/templates/default/header.tpl
 %%WEBFRONTDIR%%/templates/default/host_extra.tpl
+%%WEBFRONTDIR%%/templates/default/host_gmetrics.tpl
 %%WEBFRONTDIR%%/templates/default/host_view.tpl
 %%WEBFRONTDIR%%/templates/default/meta_view.tpl
 %%WEBFRONTDIR%%/templates/default/node_extra.tpl
