@@ -1,32 +1,21 @@
-diff -u --recursive src/conf.h.orig src/conf.h
---- src/conf.h.orig	Wed Sep 17 06:48:11 1997
-+++ src/conf.h	Fri Apr 10 23:02:03 1998
-@@ -1,6 +1,6 @@
- /* Default Database File Names */
+--- src/Make.inc.orig	Sun Dec 20 05:52:48 1998
++++ src/Make.inc	Mon Dec 21 16:48:37 1998
+@@ -102,10 +102,12 @@
+ 	rm -f ../build ../debian/substvars ../debian/files
  
--#define RADIUS_DIR		"/etc/raddb"
-+#define RADIUS_DIR		PREFIX "/etc/raddb"
- #define RADACCT_DIR		"/var/log/radacct"
- #define RADLOG_DIR		"/var/log"
+ install:
+-	install -m 755 -s radiusd $(SBINDIR)/radiusd
+-	install -m 755 -s radwho  $(BINDIR)
+-	install -m 755 -s raduse  $(BINDIR)
+-	install -m 755 -s radzap  $(BINDIR)
+-	install -m 755    checkrad.pl $(SBINDIR)/checkrad
+-	install -m 755    radlast $(BINDIR)
++	${BSD_INSTALL_PROGRAM} radiusd $(SBINDIR)/radiusd
++	${BSD_INSTALL_SCRIPT}  checkrad.pl $(SBINDIR)/checkrad
++	${BSD_INSTALL_SCRIPT}  ../scripts/radwatch $(SBINDIR)/radwatch
++	${BSD_INSTALL_SCRIPT}  radlast $(BINDIR)
++	${BSD_INSTALL_PROGRAM} radtest  $(BINDIR)
++	${BSD_INSTALL_PROGRAM} radwho  $(BINDIR)
++	${BSD_INSTALL_PROGRAM} raduse  $(BINDIR)
++	${BSD_INSTALL_PROGRAM} radzap  $(BINDIR)
  
-@@ -13,7 +13,7 @@
- #define RADIUS_HINTS		"hints"
- #define RADIUS_HUNTGROUPS	"huntgroups"
- 
--#define RADUTMP			"/var/log/radutmp"
-+#define RADUTMP			"/var/run/radutmp"
- #define RADWTMP			"/var/log/radwtmp"
- 
- #define RADIUS_PID		"/var/run/radiusd.pid"
-diff -u --recursive src/radutmp.h.orig src/radutmp.h
---- src/radutmp.h.orig	Tue Dec 23 08:30:31 1997
-+++ src/radutmp.h	Fri Apr 10 23:02:47 1998
-@@ -7,7 +7,7 @@
- #ifndef _RADUTMP_H
- #define _RADUTMP_H
- 
--#define RADUTMP "/var/log/radutmp"
-+#define RADUTMP "/var/run/radutmp"
- #define RADWTMP "/var/log/radwtmp"
- 
- /*

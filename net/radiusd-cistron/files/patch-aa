@@ -1,13 +1,13 @@
---- src/Makefile.BSD.orig	Sat Nov 22 09:40:03 1997
-+++ src/Makefile.BSD	Fri Apr 24 09:21:12 1998
+--- src/Makefile.BSD.orig	Fri Jun 26 06:00:17 1998
++++ src/Makefile.BSD	Fri Oct 23 13:32:18 1998
 @@ -3,9 +3,9 @@
  #
  #
  
 -CC	= gcc
--CFLAGS	= -g -DNOSHADOW
+-CFLAGS	= -Wall -g -DNOSHADOW
 -LDFLAGS	= # -s #tatic
-+#CC	= cc
++#CC	= gcc
 +CFLAGS	+= -DNOSHADOW -DPREFIX=\"$(PREFIX)\"
 +LDFLAGS	= -s #tatic
  LIBS	=
@@ -22,4 +22,4 @@
 +BINDIR  = $(PREFIX)/bin
 +SBINDIR = $(PREFIX)/sbin
  
- include Make.inc
+ .include "Make.inc"

@@ -1,0 +1,5 @@
+#!/bin/sh
+case "$1" in
+stop) killall radiusd;;
+*) [ -x !!PREFIX!!/sbin/radiusd ] && !!PREFIX!!/sbin/radiusd -y && echo -n ' radiusd';;
+esac
