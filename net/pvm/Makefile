@@ -68,6 +68,11 @@ MAN3=		libfpvm.3 libpvm.3 pvm_addhosts.3 pvm_addmhf.3 pvm_advise.3 \
 		pvmfsetsbuf.3 pvmfsiblings.3 pvmfspawn.3 pvmfstartpvmd.3 \
 		pvmftasks.3 pvmftidtoh.3 pvmftrecv.3 pvmfunpack.3 pvmfupkmesg.3
 
+pre-patch:
+	@${PERL} -pi -e 's,<malloc.h>,<stdlib.h>,' \
+		${WRKSRC}/tracer/tracer.h ${WRKSRC}/tracer/trclib.h \
+		${WRKSRC}/tracer/trcsort.c
+
 do-install:
 	@ ${MKDIR} ${PVM_ROOT}/lib/FREEBSD ${PVM_ROOT}/bin/FREEBSD ${PVM_ROOT}/conf
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/bin/FREEBSD/* ${PVM_ROOT}/bin/FREEBSD
