@@ -38,7 +38,7 @@ PASTE?=	/usr/bin/paste
 
 .include <bsd.port.pre.mk>
 
-#BROKEN=			"Does not work yet, installation problems"
+BROKEN=			"Does not work yet, installation problems"
 BUILD_NR=		${PORTVERSION}
 RELEASE_NR=		1.1
 INSTALLATION_BASEDIR=	OpenOffice.org-${BUILD_NR}
