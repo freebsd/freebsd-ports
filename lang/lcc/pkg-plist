@@ -1,0 +1,9 @@
+lib/lcc-3.6/i386-FreeBSD/lcc
+lib/lcc-3.6/i386-FreeBSD/rcc
+lib/lcc-3.6/i386-FreeBSD/cpp
+lib/lcc-3.6/i386-FreeBSD/bprint
+lib/lcc-3.6/i386-FreeBSD/bbexit.o
+bin/lcc
+bin/bprint
+man/man1/bprint.1.gz
+man/man1/lcc.1.gz

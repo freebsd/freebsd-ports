@@ -4,7 +4,7 @@
 # Date created:		Sat Dec 7, 1996
 # Whom:			David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.1.1.1 1996/08/09 04:17:16 asami Exp $
+# $Id: Makefile,v 1.1.1.1 1996/12/27 11:09:48 obrien Exp $
 #
 
 DISTNAME=	lcc-3.6
@@ -29,8 +29,9 @@ pre-configure:
 	     -e "s:%%LCCDESTDIR%%:${LCCDESTDIR}:g"  \
 	     -e "s:%%VERSION%%:${DISTNAME}:g"  \
 		${FILESDIR}/${OPSYS}.c.in > ${WRKSRC}/etc/${OPSYS}.c
-	@sed -e "s:%%LCCDESTDIR%%:${LCCDESTDIR}:g"  \
-		${PKGDIR}/PLIST.in > ${PKGDIR}/PLIST
+	@#	below can be used to patchup PLIST file for diff os/arch
+	@#sed -e "s:%%LCCDESTDIR%%:${LCCDESTDIR}:g"  \
+		#${PKGDIR}/PLIST.in > ${PKGDIR}/PLIST
 	@sed -e "s:%%OPSYS%%:${OPSYS}:g"  \
 		${WRKSRC}/makefile > ${WRKSRC}/makefile.configured
 	@/bin/mv -f ${WRKSRC}/makefile.configured ${WRKSRC}/makefile
