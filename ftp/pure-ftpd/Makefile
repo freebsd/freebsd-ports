@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	pure-ftpd
-PORTVERSION=	1.0.8
+PORTVERSION=	1.0.9
 CATEGORIES=	ftp ipv6
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/ \
+		ftp://ftp.fr.pureftpd.org/pub/pure-ftpd/releases/ \
+		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pureftpd
 
 MAINTAINER=	j@pureftpd.org
@@ -86,7 +88,8 @@ PAM_TARGET?=	pure-ftpd
 DOCS=		AUTHORS CONTACT COPYING HISTORY NEWS \
 		README README.Configuration-File README.Contrib README.LDAP \
 		README.Netfilter README.MySQL README.PGSQL README.Virtual-Users \
-		README.Authentication-Modules THANKS poweredby.jpg
+		README.Authentication-Modules THANKS poweredby.jpg \
+		pureftpd.schema
 
 CONTRIB=	xml_python_processors.txt sfv-crc-check.pl
 
