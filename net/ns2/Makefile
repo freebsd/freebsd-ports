@@ -30,12 +30,8 @@ ALL_TARGET=
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "alpha" && ${OSVERSION} < 500000
-BROKEN=		"Does not compile on alpha 4.x"
-.endif
-
-.if ${ARCH} == "sparc64"
-BROKEN=		"Does not compile on sparc64"
+.if ${OSVERSION} >= 500000 || ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386 or on FreeBSD >= 5.x"
 .endif
 
 do-install:
