@@ -10,10 +10,10 @@ PORTVERSION=	1.0.rc1
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
-		http://people.freebsd.org/~sobomax/
+		http://people.freebsd.org/~sobomax/:people
 MASTER_SITE_SUBDIR=	mozilla/releases/${PORTNAME}${PORTVERSION:S/.rc/rc/}/src
 DISTFILES=	${PORTNAME}-source-${PORTVERSION}${EXTRACT_SUFX} \
-		libart_lgpl-${PORTVERSION}${EXTRACT_SUFX}
+		libart_lgpl-${PORTVERSION}${EXTRACT_SUFX}:people
 
 MAINTAINER=	gnome@FreeBSD.org
 
