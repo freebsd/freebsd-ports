@@ -15,7 +15,6 @@ include/gconf/1/gconf/gconf-listeners.h
 include/gconf/1/gconf/gconf-schema.h
 include/gconf/1/gconf/gconf-value.h
 include/gconf/1/gconf/gconf.h
-lib/GConf/1/libgconfbackend-bdb.so
 lib/GConf/1/libgconfbackend-xml.so
 lib/libgconf-1.a
 lib/libgconf-1.so
