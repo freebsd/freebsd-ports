@@ -1,8 +1,8 @@
-sbin/checkgroups
-sbin/fetch-news
 sbin/leafnode
-sbin/leaftool
+sbin/fetchnews
 sbin/texpire
+sbin/checkgroups
+sbin/leaftool
 share/doc/leafnode+/Changes
 share/doc/leafnode+/FAQ
 share/doc/leafnode+/INSTALL

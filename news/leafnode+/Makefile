@@ -1,18 +1,18 @@
 # New ports collection makefile for:	leafnode+
-# Version required:	0.9.8a
+# Version required:	2.3
 # Date created:		19 November 1998
 # Whom:			Tom Hukins <tom@eborcom.com>
 #
 # $Id$
 #
 
-DISTNAME=	leafnode+-1.2
+DISTNAME=	leafnode+-2.3
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.big.or.jp/pub/usr2/jam/leafnode/
 
 MAINTAINER=	tom@eborcom.com
 
-MAN8=		checkgroups.8 fetch-news.8 leafnode.8 texpire.8
+MAN8=		checkgroups.8 fetchnews.8 leafnode.8 texpire.8
 
 .if defined(NOPORTDOCS)
 PLIST=	${PKGDIR}/PLIST.nodocs
@@ -25,11 +25,10 @@ post-patch:
 .endfor
 
 do-install:
-	@${CP} ${WRKSRC}/fetch.8 ${WRKSRC}/fetch-news.8
-.for file in leafnode fetch-news texpire checkgroups leaftool
+.for file in leafnode fetchnews texpire checkgroups leaftool
 	@${INSTALL_PROGRAM} ${WRKSRC}/${file} ${PREFIX}/sbin
 .endfor
-.for file in checkgroups.8 fetch-news.8 leafnode.8 texpire.8
+.for file in checkgroups.8 fetchnews.8 leafnode.8 texpire.8
 	@${INSTALL_MAN} ${WRKSRC}/${file} ${PREFIX}/man/man8
 .endfor
 .if !defined{NOPORTDOCS}
@@ -39,5 +38,8 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/leafnode+
 .endfor
 .endif
+
+post-install:
+	@test -d /var/spool/news || @${CAT} ${FILESDIR}/INSTALL.mesg
 
 .include <bsd.port.mk>
