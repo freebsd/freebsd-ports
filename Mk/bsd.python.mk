@@ -113,7 +113,7 @@ Python_Include_MAINTAINER=	perky@FreeBSD.org
 #				default: setup.py
 
 _PYTHON_PORTBRANCH=		2.3
-_PYTHON_ALLBRANCHES=	2.3 2.2 2.1 2.0 1.5 2.4 # preferred first
+_PYTHON_ALLBRANCHES=	2.3 2.2 2.1 2.4 # preferred first
 
 .if defined(PYTHON_VERSION)
 _PYTHON_VERSION!=	${ECHO_CMD} "${PYTHON_VERSION}" | ${SED} 's/^python//'
@@ -211,31 +211,6 @@ PYTHON_PORTSDIR=	${PORTSDIR}/lang/python21
 PYTHON_REL=			213
 PYTHON_SUFFIX=		21
 
-# Python-2.0
-.elif ${PYTHON_VERSION} == "python2.0"
-PYTHON_PORTVERSION?=2.0.1
-PYTHON_PORTSDIR=	${PORTSDIR}/lang/python20
-PYTHON_REL=			201
-PYTHON_SUFFIX=		20
-
-# Python-1.6
-# ${PYTHON_PORTSDIR} is not set because we don't support building 
-# Python-1.6 from the ports anymore. People should use the
-# latest version in ${PORTSDIR}/lang/python. The definitions here
-# are for those who still have 1.6 as their default version.
-.elif ${PYTHON_VERSION} == "python1.6"
-PYTHON_PORTVERSION?=1.6
-PYTHON_PORTSDIR=	# empty
-PYTHON_REL=			160
-PYTHON_SUFFIX=		16
-
-# Python-1.5
-.elif ${PYTHON_VERSION} == "python1.5"
-PYTHON_PORTVERSION?=1.5.2
-PYTHON_PORTSDIR=	${PORTSDIR}/lang/python15
-PYTHON_REL=			152
-PYTHON_SUFFIX=		15
-
 # Python versions in development
 .elif defined(FORCE_PYTHON_VERSION)
 PYTHON_PORTSDIR=	# empty
@@ -249,9 +224,6 @@ PYTHON_SUFFIX!=		${PYTHON_CMD} -c 'import sys; h = "%x" % sys.hexversion; \
 check-makevars::
 	@${ECHO} "Makefile error: bad value for PYTHON_VERSION: ${PYTHON_VERSION}."
 	@${ECHO} "Legal values are:"
-	@${ECHO} "  python1.5"
-	@${ECHO} "  python1.6"
-	@${ECHO} "  python2.0"
 	@${ECHO} "  python2.1"
 	@${ECHO} "  python2.2"
 	@${ECHO} "  python2.3 (default)"
@@ -259,11 +231,7 @@ check-makevars::
 	@${FALSE}
 .endif
 
-.if defined(PYTHON_REL) && ${PYTHON_REL} < 160
-PYTHON_MASTER_SITES=		${MASTER_SITE_PYTHON}
-PYTHON_MASTER_SITE_SUBDIR=	ftp/python/src
-PYTHON_DISTFILE=			py152.tgz
-.elif defined(PYTHON_REL) && ${PYTHON_REL} >= 240
+.if defined(PYTHON_REL) && ${PYTHON_REL} >= 240
 PYTHON_MASTER_SITES=		${MASTER_SITE_LOCAL}
 PYTHON_MASTER_SITE_SUBDIR=	perky
 PYTHON_DISTFILE=			Python-${PYTHON_PORTVERSION}.tgz
@@ -296,15 +264,9 @@ ZOPEBASEDIR?=			${PREFIX}/${SZOPEBASEDIR}
 ZOPEPRODUCTDIR?=		Products
 .endif
 
-.if defined(PYTHON_REL) && ${PYTHON_REL} < 200
-PYDISTUTILS=	${PYTHON_LIBDIR}/site-packages/distutils/core.py:${PORTSDIR}/misc/py-distutils
-PYNUMERIC=		${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/py-numeric17
-PYXML=			${PYTHON_SITELIBDIR}/xml/__init__.py:${PORTSDIR}/textproc/py-xml
-.else
 PYDISTUTILS=	${PYTHON_LIBDIR}/distutils/core.py:${PYTHON_PORTSDIR}
 PYNUMERIC=		${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/py-numeric
 PYXML=			${PYTHON_SITELIBDIR}/_xmlplus/__init__.py:${PORTSDIR}/textproc/py-xml
-.endif
 
 .if defined(PYTHON_REL) && ${PYTHON_REL} < 232
 PYEXPAT=		${PYTHON_SITELIBDIR}/pyexpat.so:${PORTSDIR}/textproc/py-expat
@@ -318,10 +280,6 @@ PYTHON_NO_DEPENDS?=		NO
 .if ${PYTHON_NO_DEPENDS} == "NO"
 BUILD_DEPENDS+=	${PYTHON_CMD}:${PYTHON_PORTSDIR}
 RUN_DEPENDS+=	${PYTHON_CMD}:${PYTHON_PORTSDIR}
-
-.if defined(USE_PYDISTUTILS) && defined(PYTHON_REL) && ${PYTHON_REL} < 200
-BUILD_DEPENDS+=	${PYDISTUTILS}
-.endif
 .endif		# ${PYTHON_NO_DEPENDS} == "NO"
 
 .if defined(USE_ZOPE)

@@ -199,8 +199,6 @@
     SUBDIR += python-doc-pdf-letter
     SUBDIR += python-doc-postscript-a4
     SUBDIR += python-doc-postscript-letter
-    SUBDIR += python15
-    SUBDIR += python20
     SUBDIR += python21
     SUBDIR += python22
     SUBDIR += q
