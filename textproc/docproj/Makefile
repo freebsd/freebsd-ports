@@ -26,7 +26,7 @@ RUN_DEPENDS=	instant:${PORTSDIR}/textproc/sgmlformat \
 		${PREFIX}/share/xml/dtd/xhtml/xhtml.soc:${PORTSDIR}/textproc/xhtml \
 		${PREFIX}/bin/peps:${PORTSDIR}/graphics/peps \
 		${PREFIX}/bin/pngtopnm:${PORTSDIR}/graphics/netpbm \
-		${PREFIX}/bin/links:${PORTSDIR}/www/links \
+		${PREFIX}/bin/links:${PORTSDIR}/www/links1 \
 		${PREFIX}/bin/xsltproc:${PORTSDIR}/textproc/libxslt \
 		${PREFIX}/bin/scr2png:${PORTSDIR}/graphics/scr2png
 
