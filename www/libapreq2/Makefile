@@ -32,4 +32,10 @@ WRKSRC=		${WRKDIR}/${DISTNAME:S/_04//}
 
 MAN3=		Apache::Cookie.3 Apache::Request.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Broken pkg-plist"
+.endif
+
+.include <bsd.port.post.mk>
