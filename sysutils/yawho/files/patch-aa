@@ -5,7 +5,7 @@
  	$(LINK) $(yawho_LDFLAGS) $(yawho_OBJECTS) $(yawho_LDADD) $(LIBS)
  install:
 -	$(INSTALL) -o root -m 0755 yawho $(bindir)/yawho
-+	$(BSD_INSTALL_PROGRAM) yawho $(bindir)/yawho
++	$(INSTALL_PROGRAM) yawho $(bindir)/yawho
  clean: 
  	rm -f ./*.o
  	rm -f yawho
