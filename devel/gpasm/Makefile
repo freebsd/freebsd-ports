@@ -6,17 +6,19 @@
 #
 
 PORTNAME=	gpasm
-PORTVERSION=	0.8.9
+PORTVERSION=	0.8.10
 CATEGORIES=	devel
-MASTER_SITES=	http://download.sourceforge.net/gpasm/
+MASTER_SITES=	http://gpasm.sourceforge.net/
 
 MAINTAINER=	sam@inf.enst.fr
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-0.0.8
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	DATADIR=${PREFIX}/share/gpasm
 
+.if !defined(NOPORTDOCS)
 post-install:
-	strip ${PREFIX}/bin/gpasm
+	${MKDIR} ${PREFIX}/share/doc/gpasm
+	${INSTALL_DATA} ${WRKSRC}/doc/gpasm.ps ${PREFIX}/share/doc/gpasm
+.endif
 
 .include <bsd.port.mk>
