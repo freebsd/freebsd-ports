@@ -5,7 +5,7 @@
  #define DEBUG_DO(x)
  
 -#define JCONV_DEFAULT_CONFFILE "/etc/libjconv/default.conf"
-+#define JCONV_DEFAULT_CONFFILE "!!LOCALBASE!!/etc/libjconv/default.conf"
++#define JCONV_DEFAULT_CONFFILE "!!PREFIX!!/etc/libjconv/default.conf"
  
  typedef struct {
  	char *name;
