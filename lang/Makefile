@@ -129,6 +129,7 @@
     SUBDIR += sr
     SUBDIR += starlogo
     SUBDIR += swi-pl
+    SUBDIR += sxm
     SUBDIR += t3x
     SUBDIR += tcl80
     SUBDIR += tcl81-thread
