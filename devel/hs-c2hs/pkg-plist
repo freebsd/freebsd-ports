@@ -1,0 +1,15 @@
+bin/c2hs
+bin/c2hs-config
+lib/c2hs-0.10.15/ghc5/c2hs.conf
+lib/c2hs-0.10.15/ghc5/import/C2HS.hi
+lib/c2hs-0.10.15/ghc5/import/C2HSBase.hi
+lib/c2hs-0.10.15/ghc5/import/C2HSDeprecated.hi
+lib/c2hs-0.10.15/ghc5/import/C2HSMarsh.hi
+lib/c2hs-0.10.15/ghc5/import/NewStablePtr.hi
+lib/c2hs-0.10.15/ghc5/import/NewStorable.hi
+lib/c2hs-0.10.15/ghc5/libc2hs.a
+@dirrm lib/c2hs-0.10.15/ghc5/import
+@dirrm lib/c2hs-0.10.15/ghc5
+@dirrm lib/c2hs-0.10.15
+@exec %D/bin/c2hs-config --package-conf | %D/bin/ghc-pkg -a
+@unexec %D/bin/ghc-pkg -r c2hs

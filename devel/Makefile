@@ -68,6 +68,7 @@
     SUBDIR += bugbuddy2
     SUBDIR += bugzilla
     SUBDIR += byaccj
+    SUBDIR += c2hs
     SUBDIR += c2lib
     SUBDIR += c2man
     SUBDIR += c4
