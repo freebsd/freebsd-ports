@@ -1,5 +1,5 @@
-*** src/ftpd.c.orig	Wed Apr 13 23:17:18 1994
---- src/ftpd.c	Tue May 30 00:17:25 1995
+*** src/ftpd.c.orig	Thu Apr 14 01:17:18 1994
+--- src/ftpd.c	Thu Oct 17 21:27:32 1996
 ***************
 *** 139,146 ****
    *freopen(const char *, const char *, FILE *);
@@ -21,13 +21,14 @@
   
 ***************
 *** 237,242 ****
---- 237,247 ----
+--- 237,248 ----
   
   #endif /* SETPROCTITLE */
   
 + #ifdef SKEY
 + #include <skey.h>
 + int	pwok = 0;
++ int     sflag;
 + #endif
 + 
   #ifdef KERBEROS
@@ -35,7 +36,7 @@
   void end_krb();
 ***************
 *** 252,257 ****
---- 257,269 ----
+--- 258,269 ----
   char  ls_short[50];
   struct aclmember *entry = NULL;
   
@@ -45,7 +46,6 @@
 + void dologout(int);
 + void perror_reply(int, char *);
 + 
-+ void
   main(int argc, char **argv, char **envp)
   {
       int addrlen,
@@ -62,13 +62,23 @@
       register char *cp;
 ***************
 *** 878,884 ****
---- 892,903 ----
+--- 892,913 ----
       } else
           acl_setfunctions();
   
 + #ifdef SKEY
 +     pwok = skeyaccess(name, NULL, remotehost, remoteaddr);
-+     reply(331, "%s", skey_challenge(name, pw, pwok));
++     cp = skey_challenge(name, pw, pwok, &sflag);
++     if (!pwok && sflag) {
++ 	    reply(530, cp);
++ 	    if (logging)
++ 		    syslog(LOG_NOTICE,
++ 			"FTP LOGIN REFUSED (s/key password not exist) FROM %s [%s], %s",
++ 			remotehost, remoteaddr, name);
++ 	    pw = (struct passwd *) NULL;
++ 	    return;
++     }
++     reply(331, cp);
 + #else
       reply(331, "Password required for %s.", name);
 + #endif
@@ -77,7 +87,7 @@
        * passwd-guessing programs. */
 ***************
 *** 887,892 ****
---- 906,912 ----
+--- 916,922 ----
   }
   
   /* Check if a user is in the file _PATH_FTPUSERS */
@@ -87,7 +97,7 @@
       register FILE *fd;
 ***************
 *** 911,916 ****
---- 931,937 ----
+--- 941,947 ----
   
   /* Terminate login as previous user, if any, resetting state; used when USER
    * command is given or login fails. */
@@ -97,7 +107,7 @@
   
 ***************
 *** 965,970 ****
---- 986,992 ----
+--- 996,1002 ----
           return 0;
   }
   
@@ -107,7 +117,7 @@
       char *xpasswd,
 ***************
 *** 1007,1014 ****
---- 1029,1041 ----
+--- 1039,1051 ----
   #ifdef KERBEROS
           xpasswd = crypt16(passwd, salt);
   #else
@@ -130,7 +140,7 @@
       logwtmp(ttyline, pw->pw_name, remotehost);
       logged_in = 1;
   
---- 1122,1132 ----
+--- 1132,1142 ----
       (void) initgroups(pw->pw_name, pw->pw_gid);
   
       /* open wtmp before chroot */
@@ -152,7 +162,7 @@
           setproctitle("%s", proctitle);
   #endif /* SETPROCTITLE */
           if (logging)
---- 1221,1228 ----
+--- 1231,1238 ----
           reply(230, "Guest login ok, access restrictions apply.");
   #ifdef SETPROCTITLE
           sprintf(proctitle, "%s: anonymous/%.*s", remotehost,
@@ -163,7 +173,7 @@
           if (logging)
 ***************
 *** 1235,1240 ****
---- 1266,1272 ----
+--- 1276,1282 ----
       return (buf);
   }
   
@@ -173,7 +183,7 @@
       FILE *fin,
 ***************
 *** 1422,1428 ****
---- 1454,1464 ----
+--- 1464,1474 ----
           for (loop = 0; namebuf[loop]; loop++)
               if (isspace(namebuf[loop]) || iscntrl(namebuf[loop]))
                   namebuf[loop] = '_';
@@ -187,7 +197,7 @@
                   remotehost,
 ***************
 *** 1445,1450 ****
---- 1481,1487 ----
+--- 1491,1497 ----
           (*closefunc) (fin);
   }
   
@@ -204,7 +214,7 @@
                   ctime(&curtime),
                   xfertime,
                   remotehost,
---- 1647,1657 ----
+--- 1657,1667 ----
           for (loop = 0; namebuf[loop]; loop++)
               if (isspace(namebuf[loop]) || iscntrl(namebuf[loop]))
                   namebuf[loop] = '_';
@@ -225,7 +235,7 @@
       else
           (void) strcpy(sizebuf, "");
       if (pdata >= 0) {
---- 1740,1750 ----
+--- 1750,1760 ----
       file_size = size;
       byte_count = 0;
       if (size != (off_t) - 1)
@@ -248,7 +258,7 @@
               (void) close(pdata);
               pdata = -1;
               return (NULL);
---- 1752,1774 ----
+--- 1762,1784 ----
           int s,
             fromlen = sizeof(from);
   
@@ -274,7 +284,7 @@
               return (NULL);
 ***************
 *** 1764,1769 ****
---- 1823,1829 ----
+--- 1833,1839 ----
    * encapsulation of the data subject to Mode, Structure, and Type.
    *
    * NB: Form isn't handled. */
@@ -284,7 +294,7 @@
       register int c,
 ***************
 *** 1839,1844 ****
---- 1899,1905 ----
+--- 1909,1915 ----
    * the data subject to Mode, Structure, and Type.
    *
    * N.B.: Form isn't handled. */
@@ -294,7 +304,7 @@
       register int c;
 ***************
 *** 1915,1920 ****
---- 1976,1982 ----
+--- 1986,1992 ----
       return (-1);
   }
   
@@ -304,7 +314,7 @@
       char line[BUFSIZ];
 ***************
 *** 1948,1953 ****
---- 2010,2016 ----
+--- 2020,2026 ----
       reply(211, "End of Status");
   }
   
@@ -314,7 +324,7 @@
       struct sockaddr_in *sin;
 ***************
 *** 2001,2006 ****
---- 2064,2070 ----
+--- 2074,2080 ----
       reply(211, "End of status");
   }
   
@@ -324,7 +334,7 @@
       reply(451, "Error in server: %s\n", s);
 ***************
 *** 2095,2100 ****
---- 2159,2165 ----
+--- 2169,2175 ----
   
   #else
   /* VARARGS2 */
@@ -334,7 +344,7 @@
       if (autospout != NULL) {
 ***************
 *** 2129,2134 ****
---- 2194,2200 ----
+--- 2204,2210 ----
   }
   
   /* VARARGS2 */
@@ -344,7 +354,7 @@
       if (!dolreplies)
 ***************
 *** 2144,2160 ****
---- 2210,2229 ----
+--- 2220,2239 ----
   }
   #endif
   
@@ -367,7 +377,7 @@
       char *cp;
 ***************
 *** 2164,2169 ****
---- 2233,2239 ----
+--- 2243,2249 ----
       reply(500, "'%s': command not understood.", cbuf);
   }
   
@@ -377,7 +387,7 @@
       struct stat st;
 ***************
 *** 2208,2213 ****
---- 2278,2284 ----
+--- 2288,2294 ----
       ack("DELE");
   }
   
@@ -387,7 +397,7 @@
       struct aclmember *entry = NULL;
 ***************
 *** 2248,2253 ****
---- 2319,2325 ----
+--- 2329,2335 ----
       }
   }
   
@@ -406,7 +416,7 @@
           int valid = 0;
   
       /*
---- 2346,2355 ----
+--- 2356,2365 ----
       reply(257, "MKD command successful.");
   }
   
@@ -419,7 +429,7 @@
       /*
 ***************
 *** 2298,2303 ****
---- 2371,2377 ----
+--- 2381,2387 ----
           ack("RMD");
   }
   
@@ -436,7 +446,7 @@
       else
           reply(257, "\"%s\" is current directory.", path);
   }
---- 2386,2393 ----
+--- 2396,2403 ----
   #else
       if (getwd(path) == (char *) NULL)
   #endif
@@ -447,7 +457,7 @@
   }
 ***************
 *** 2342,2347 ****
---- 2417,2423 ----
+--- 2427,2433 ----
       return (name);
   }
   
@@ -457,7 +467,7 @@
   
 ***************
 *** 2357,2362 ****
---- 2433,2439 ----
+--- 2443,2449 ----
           ack("RNTO");
   }
   
@@ -467,7 +477,7 @@
       struct hostent *hp;
 ***************
 *** 2412,2417 ****
---- 2489,2495 ----
+--- 2499,2505 ----
   }
   
   /* Record logout in wtmp file and exit with supplied status. */
@@ -477,7 +487,7 @@
       if (logged_in) {
 ***************
 *** 2459,2464 ****
---- 2537,2543 ----
+--- 2547,2553 ----
    * PASV command in RFC959. However, it has been blessed as a legitimate
    * response by Jon Postel in a telephone conversation with Rick Adams on 25
    * Jan 89. */
@@ -487,7 +497,7 @@
       int len;
 ***************
 *** 2530,2535 ****
---- 2609,2615 ----
+--- 2619,2625 ----
   }
   
   /* Format and send reply containing system error number. */
@@ -497,7 +507,7 @@
       reply(code, "%s: %s.", string, strerror(errno));
 ***************
 *** 2538,2543 ****
---- 2618,2624 ----
+--- 2628,2634 ----
   static char *onefile[] =
   {"", 0};
   
