@@ -1,0 +1,15 @@
+The JavaTM Communications API can be used to write
+platform-independent communications applications for applications
+like voice mail, fax and smartcards.
+
+This version of the Java Communications API contains support for
+RS232 serial ports and IEEE 1284 parallel ports.
+With updated functionality, one can:
+
+Enumerate ports available on the system.
+Open and claim ownership of ports.
+Resolve port ownership contention between multiple applications.
+Perform asynchronous and synchronous I/O on ports.
+Receive Beans-style events describing communication port state changes.
+
+WWW: http://java.sun.com/products/javacomm/
