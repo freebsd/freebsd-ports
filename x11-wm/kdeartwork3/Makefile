@@ -39,7 +39,7 @@ pre-configure:
 .for AM in automake aclocal
 	${LN} -sf ${LOCALBASE}/bin/${AM}14 ${WRKSRC}/auto-bin/${AM}
 .endfor
-	cd ${WRKSRC} && env PATH=$$PATH:${WRKSRC}/auto-bin \
+	cd ${WRKSRC} && env PATH=${WRKSRC}/auto-bin:$$PATH \
 		${GMAKE} -f Makefile.cvs
 
 .include <bsd.port.mk>

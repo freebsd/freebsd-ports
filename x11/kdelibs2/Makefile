@@ -85,7 +85,7 @@ pre-configure:
 .for AM in automake aclocal
 	${LN} -sf ${LOCALBASE}/bin/${AM}14 ${WRKSRC}/auto-bin/${AM}
 .endfor
-	cd ${WRKSRC} && env PATH=$$PATH:${WRKSRC}/auto-bin \
+	cd ${WRKSRC} && env PATH=${WRKSRC}/auto-bin:$$PATH \
 		${GMAKE} -f Makefile.cvs
 	${PERL} -pi -e "s@-O2@-O0@g; s@\"-lfam@\"-L${LOCALBASE}/lib -lfam@g" ${WRKSRC}/configure
 	${PERL} -pi -e "s@kspell api@@g" ${WRKSRC}/doc/Makefile.in

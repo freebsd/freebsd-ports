@@ -39,7 +39,7 @@ pre-configure:
 .for AM in automake aclocal
 	${LN} -sf ${LOCALBASE}/bin/${AM}14 ${WRKSRC}/auto-bin/${AM}
 .endfor
-	cd ${WRKSRC} && env PATH=$$PATH:${WRKSRC}/auto-bin \
+	cd ${WRKSRC} && env PATH=${WRKSRC}/auto-bin:$$PATH \
 		${GMAKE} -f Makefile.cvs
 	${PERL} -pi -e "s@DO_NOT_COMPILE qt@DO_NOT_COMPILE kuser qt@g" ${WRKSRC}/configure
 	find ${WRKSRC}/kpackage -name "*.cpp" -or -name "*.c" -or -name "*.h" \
