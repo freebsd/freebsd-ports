@@ -7,7 +7,6 @@
 
 PORTNAME=	binutils
 PORTVERSION=	${BINUTILVERSION}
-PORTREVISION=	6
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	binutils/releases
@@ -16,9 +15,7 @@ PKGNAMEPREFIX=	msp430-
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	GNU binutils for TI's msp430 MCUs cross-development
 
-BINUTILVERSION=	2.14
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${BINUTILVERSION}
+BINUTILVERSION=	2.15
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -37,13 +34,16 @@ MAN1=		${PKGNAMEPREFIX}ar.1 ${PKGNAMEPREFIX}nm.1 \
 		${PKGNAMEPREFIX}ld.1 ${PKGNAMEPREFIX}dlltool.1 \
 		${PKGNAMEPREFIX}readelf.1 ${PKGNAMEPREFIX}windres.1
 
-INFO=		bfd binutils as ld standards configure
+INFO=		bfd binutils standards configure as ld
 INFO_PATH=	${PKGNAMEPREFIX:S/-$//}/info
 
 PLIST_SUB+=	BINUTILS_TARG=${PKGNAMEPREFIX:S/-$//}
 
 BINARIES=	addr2line ar as c++filt ld nm objcopy objdump ranlib \
 		readelf size strings strip
+
+pre-configure:
+	${CHMOD} 755 ${WRKSRC}/configure
 
 post-install:
 # Register these too
@@ -54,7 +54,6 @@ post-install:
 	${ECHO} "@unexec rmdir %D/${PKGNAMEPREFIX:S/-$//}/info 2> /dev/null || true" >> ${TMPPLIST}
 	${ECHO} "@unexec rmdir %D/${PKGNAMEPREFIX:S/-$//} 2> /dev/null || true" >> ${TMPPLIST}
 .for F in ${BINARIES}
-	@${STRIP_CMD} ${PREFIX}/bin/${PKGNAMEPREFIX}$F
 	@${LN} -f ${PREFIX}/bin/${PKGNAMEPREFIX}$F \
 		${PREFIX}/${PKGNAMEPREFIX:S/-$//}/bin/$F
 .endfor
