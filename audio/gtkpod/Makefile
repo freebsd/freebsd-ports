@@ -7,7 +7,7 @@
 
 PORTNAME=	gtkpod
 PORTVERSION=	0.80
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -39,7 +39,7 @@ LIB_DEPENDS+=	mp4v2.0:${PORTSDIR}/multimedia/mpeg4ip
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include"
 CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
 
-.if !defined(WITH_AAC) && !defined(WITH_FAAD)
+.if !defined(WITH_AAC)
 pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "To enable AAC support with mpeg4ip define the WITH_AAC knob."
@@ -52,6 +52,9 @@ pre-configure:
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|(libdir)/locale|(datadir)/locale|' \
 		${WRKSRC}/po/Makefile.in.in
+	@${REINPLACE_CMD} -e 's|/bin/bash|${SH}|' \
+		${WRKSRC}/scripts/sync-kaddressbook.sh \
+		${WRKSRC}/scripts/sync-korganizer.sh
 
 post-install:
 .if !defined(NOPORTDOCS)
