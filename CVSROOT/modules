@@ -7215,6 +7215,7 @@ xwpe		ports/devel/xwpe
 xwpick		ports/graphics/xwpick
 xwpl		ports/math/xwpl
 xwrits		ports/deskutils/xwrits
+xxdiff		ports/textproc/xxdiff
 xxgdb		ports/devel/xxgdb
 xxkb		ports/russian/xxkb
 xzgv		ports/graphics/xzgv
