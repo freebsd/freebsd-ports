@@ -1,0 +1,17 @@
+--- configure.in-	Tue Jan 11 10:30:49 2000
++++ configure.in	Tue Jan 11 14:38:08 2000
+@@ -549,10 +549,12 @@
+ #ifdef __KAME__
+ yes
+ #endif
+-], [  	    LIBS="$LIBS -L/usr/local/v6/lib -linet6"
++], [	AC_FILE_EXIST(/usr/local/v6/lib/libinet6.a, [
++            LIBS="$LIBS -L/usr/local/v6/lib -linet6"]);
++        AC_FILE_EXIST(/usr/include/netinet6/ip6_mroute.h, [
++            AC_DEFINE(HAVE_MROUTING6)]);
+             AC_DEFINE(WIDE_IPV6)
+             AC_DEFINE(RFC2292)
+-  	    AC_DEFINE(HAVE_MROUTING6)
+             AC_MSG_RESULT(yes... KAME IPv6)], 
+         AC_MSG_RESULT(*unknown*))))
+     ;;

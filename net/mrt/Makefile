@@ -15,8 +15,9 @@ MAINTAINER=	itojun@itojun.org
 
 WRKSRC=		${WRKDIR}/mrt-${VERBASE}/src
 GNU_CONFIGURE=	yes
+USE_AUTOCONF=	yes
 
-VERBASE=	1.5.1a
+VERBASE=	2.1.2a
 
 MAN8=	mrtd.8
 EXAMPLES=	programs/bgpsim/bgpsim.conf programs/bgpsim/bgpsim6.conf \

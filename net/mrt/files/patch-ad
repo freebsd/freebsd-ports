@@ -1,0 +1,12 @@
+--- include/igmp.h-	Tue Jan 11 14:30:14 2000
++++ include/igmp.h	Tue Jan 11 14:31:24 2000
+@@ -46,7 +46,9 @@
+ 
+ #ifdef HAVE_IPV6
+ #ifdef WIDE_IPV6
++#ifdef HAVE_MROUTING6
+ #include <netinet6/ip6_mroute.h>
++#endif /* HAVE_MROUTING6 */
+ #endif /* WIDE_IPV6 */
+ #ifndef sun
+ #include <netinet/ip6.h>
