@@ -5,39 +5,50 @@
 # $FreeBSD$
 #
 
-PORTNAME=	netrexx
-PORTVERSION=	1.160
-PORTREVISION=	1
+PORTNAME=	NetRexx
+PORTVERSION=	2.02
 CATEGORIES=	java lang
-MASTER_SITES=	http://www.ibm.com/technology/NetRexx/
+MASTER_SITES=	http://www2.hursley.ibm.com/netrexx/
 DISTNAME=	NetRexx
-EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	jmcoopr@webmail.bmi.net
 
-RUN_DEPENDS=	${PREFIX}/jdk${JDK_VERSION}/bin/java:${PORTSDIR}/java/jdk \
-		rexx:${PORTSDIR}/lang/rexx-imc
+RUN_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/java:${PORTSDIR}/java/jdk \
+		${LOCALBASE}/bin/rexx:${PORTSDIR}/lang/rexx-imc
 
 NO_BUILD=	yes
-# pkg/PLIST depends on the JDK_VERSION
-JDK_VERSION?=	1.1.8
-PLIST_SUB+=	JDK_VERSION=${JDK_VERSION}
+USE_ZIP=	yes
 
-ERASE_FILES=	NetRexxC.bat nrc.bat nrc.cmd hello.nrx
+pre-patch:
+	@${PERL} -pi -e 's///' ${WRKSRC}/bin/NetRexxC.sh
 
 do-install:
-	-${MV} ${WRKSRC}/nrtools.tar.Z ${WRKSRC}/.foo.Z
-	uncompress -c ${WRKSRC}/.foo.Z | \
-	    tar -xvf - -C ${PREFIX}/jdk${JDK_VERSION}
-.for file in ${ERASE_FILES}
-	@${RM} -f ${PREFIX}/jdk${JDK_VERSION}/bin/${file}
-.endfor
-	@${CP} ${FILESDIR}/NetRexxC.cmd.new ${PREFIX}/jdk${JDK_VERSION}/bin/NetRexxC.cmd
-	@${LN} -sf ${PREFIX}/jdk${JDK_VERSION}/bin/NetRexxC.cmd \
-		  ${PREFIX}/jdk${JDK_VERSION}/bin/nrc
+	@${INSTALL_SCRIPT} ${WRKSRC}/bin/NetRexxC.sh ${PREFIX}/bin
+	@${LN} -sf ${PREFIX}/bin/NetRexxC.sh ${PREFIX}/bin/nrc
+	@${INSTALL_SCRIPT} ${WRKSRC}/bin/NetRexxC.cmd \
+		${PREFIX}/bin/NetRexxC.rexx
+	@${LN} -sf ${PREFIX}/bin/NetRexxC.rexx ${PREFIX}/bin/nrc.rexx
+
+	@${MKDIR} ${PREFIX}/NetRexx/lib
+	@${INSTALL_DATA} ${WRKSRC}/lib/NetRexxC.jar ${PREFIX}/NetRexx/lib/
+	@${INSTALL_DATA} ${WRKSRC}/runlib/NetRexxR.jar ${PREFIX}/NetRexx/lib/
+
+	@${MKDIR} ${PREFIX}/share/examples/NetRexx
+	@${INSTALL_DATA} ${WRKSRC}/bin/hello.nrx \
+		${PREFIX}/share/examples/NetRexx/
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/NetRexx
-	@${CP} -R ${WRKSRC}/* ${PREFIX}/share/doc/NetRexx/
+	@${MKDIR} ${DOCSDIR}/netrexx/lang
+.for dir in netrexx/lang .
+	@${INSTALL_DATA} ${WRKSRC}/browse/${dir}/* ${DOCSDIR}/${dir}
+	@${RM} -Rf ${WRKSRC}/browse/netrexx
+.endfor
 .endif
+
+post-install:
+	@${ECHO} "====================  IBM LICENSE  ===================="
+	@${CAT} ${WRKSRC}/browse/license.txt
+	@${ECHO} "-------------------------------------------------------"
+	@${ECHO} "====================  IMPORTANT!!  ===================="
+	@${CAT} ${WRKSRC}/read.me.first
 
 .include <bsd.port.mk>
