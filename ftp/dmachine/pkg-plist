@@ -1,0 +1,20 @@
+%%DATADIR%%/FSPInputStream.class
+%%DATADIR%%/FSPStreamHandler.class
+%%DATADIR%%/FSPURLConnection.class
+%%DATADIR%%/FSPpacket.class
+%%DATADIR%%/FSPsession.class
+%%DATADIR%%/FSPstat.class
+%%DATADIR%%/FSPutil.class
+%%DATADIR%%/HTUU.class
+%%DATADIR%%/dmachine.class
+%%DATADIR%%/downloadfactory.class
+%%DATADIR%%/fspfactory.class
+%%DATADIR%%/ftpfactory.class
+%%DATADIR%%/qfile.class
+%%DATADIR%%/queuefile.class
+%%DATADIR%%/regexp.class
+%%DATADIR%%/util.class
+@dirrm %%DATADIR%%
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/dmachine.cnf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
