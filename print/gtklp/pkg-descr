@@ -1,7 +1,6 @@
-This is a gtk interface to cups.
+GtkLP for CUPS is a frontend for the lpr that comes with CUPS. It
+is written to make it easy to use nearly all the options from CUPS
+without knowing them by name. For print-admins, there is also an
+pretty simple queue tool implemented.
 
-Visit the Webpage for further details.
-
-WWW: http://www.stud.uni-hannover.de/~sirtobi/gtklp/
-
-- Martin Klaffenboeck <martin.klaffenboeck@gmx.at>
+WWW: http://gtklp.sourceforge.net/
