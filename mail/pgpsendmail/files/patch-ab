@@ -1,0 +1,315 @@
+*** conn_to_pgpd.c.orig	Sat Dec  3 06:51:16 1994
+--- conn_to_pgpd.c	Sat Jan 21 03:12:05 1995
+***************
+*** 96,102 ****
+--- 96,104 ----
+      char topipe_filename[STRING_LENGTH];
+      char frompipe_filename[STRING_LENGTH];
+      ERRNO_TYPE errno;
++ #ifndef __FreeBSD__
+      extern char *sys_errlist[];
++ #endif
+  
+      if (gethostname (hostname, STRING_LENGTH - 1) != 0)
+      {
+*** keylist.c.orig	Sat Oct 15 20:31:05 1994
+--- keylist.c	Sat Jan 21 03:12:05 1995
+***************
+*** 74,80 ****
+--- 74,82 ----
+      char txt[STRING_LENGTH];
+      struct stat statbuf_list, statbuf_keyring;
+      ERRNO_TYPE errno;
++ #ifndef __FreeBSD__
+      extern char *sys_errlist[];
++ #endif
+      static char *argv[] = {"pgp", "-kv", NULL};
+  
+      (void) sprintf (listfile, "%s/.keylist", pgppath);
+***************
+*** 268,274 ****
+--- 270,278 ----
+      FILE *in_fp;
+      char keyfile[STRING_LENGTH];
+      ERRNO_TYPE errno;
++ #ifndef __FreeBSD__
+      extern char *sys_errlist[];
++ #endif
+  
+      (void) sprintf (keyfile, "%s/mypubkey.asc", pgppath);
+      if ( ( in_fp = fopen (keyfile, "r") ) == NULL )
+*** misc.c.orig	Sat Dec  3 11:26:58 1994
+--- misc.c	Sat Jan 21 03:12:05 1995
+***************
+*** 64,70 ****
+--- 64,72 ----
+      int count = -1;
+      char buffer[BUF_SIZE];
+      ERRNO_TYPE errno;
++ #ifndef __FreeBSD__
+      extern char *sys_errlist[];
++ #endif
+  
+      while ( ( len = read (in_fd, buffer, BUF_SIZE) ) > 0 )
+      {
+***************
+*** 195,201 ****
+--- 197,205 ----
+      struct stat statbuf;
+      char buf[BUF_SIZE];
+      ERRNO_TYPE errno;
++ #ifndef __FreeBSD__
+      extern char *sys_errlist[];
++ #endif
+  
+      m_clear (buf, BUF_SIZE);
+      if ( ( fd = open (filename, O_RDWR, 0) ) < 0 )
+*** options.c.orig	Sat Oct 29 11:09:46 1994
+--- options.c	Sat Jan 21 03:12:05 1995
+***************
+*** 158,164 ****
+--- 158,166 ----
+      char config_filename[STRING_LENGTH];
+      char txt[STRING_LENGTH];
+      ERRNO_TYPE errno;
++ #ifndef __FreeBSD__
+      extern char *sys_errlist[];
++ #endif
+  
+      (void) sprintf (config_filename, "%s/PGPsendmail.config", pgppath);
+      if ( ( fp = fopen (config_filename, "r") ) == NULL )
+*** pgpdaemon.c.orig	Wed Jan  4 08:15:01 1995
+--- pgpdaemon.c	Sat Jan 21 03:19:13 1995
+***************
+*** 156,162 ****
+  #  if defined(sparc) || defined(linux)
+  #    define MAIL_SPOOL_DIR "/var/spool/mail"
+  #  else
+! #    if defined(__bsdi__) || ( defined(sparc) && defined(__sysvr4__) )
+  #      define MAIL_SPOOL_DIR "/var/mail"
+  #    else
+  #      define MAIL_SPOOL_DIR "/usr/spool/mail"
+--- 156,162 ----
+  #  if defined(sparc) || defined(linux)
+  #    define MAIL_SPOOL_DIR "/var/spool/mail"
+  #  else
+! #    if defined(__bsdi__) || defined(__FreeBSD__) || ( defined(sparc) && defined(__sysvr4__) )
+  #      define MAIL_SPOOL_DIR "/var/mail"
+  #    else
+  #      define MAIL_SPOOL_DIR "/usr/spool/mail"
+***************
+*** 268,274 ****
+--- 268,276 ----
+      ERRNO_TYPE errno;
+      static char usage_string[] =
+      "Usage:\tpgpdaemon [-mailwait] [-detach] [-pgppath <path>]";
++ #ifndef __FreeBSD__
+      extern char *sys_errlist[];
++ #endif
+  
+      /*  Read arguments  */
+      for (count = 1; count < argc; ++count)
+***************
+*** 545,551 ****
+--- 547,555 ----
+      extern char passphrase[STRING_LENGTH];
+      extern char *secring_buf;
+      ERRNO_TYPE errno;
++ #ifndef __FreeBSD__
+      extern char *sys_errlist[];
++ #endif
+  
+      /*  Connect to output pipe  */
+      for (count = 0; (count < 2) && (out_fd < 0); ++count)
+***************
+*** 782,788 ****
+--- 786,794 ----
+      extern char my_userid[STRING_LENGTH];
+      extern char passphrase[STRING_LENGTH];
+      ERRNO_TYPE errno;
++ #ifndef __FreeBSD__
+      extern char *sys_errlist[];
++ #endif
+  
+      /*  Setup arguments to PGP  */
+      if (sign)
+***************
+*** 879,885 ****
+--- 885,893 ----
+      char lock_name[STRING_LENGTH];
+      char mlk_name[STRING_LENGTH];
+      ERRNO_TYPE errno;
++ #ifndef __FreeBSD__
+      extern char *sys_errlist[];
++ #endif
+  
+      (void) strcpy (lock_name, filename);
+      (void) strcat (lock_name, ".lock");
+***************
+*** 956,962 ****
+--- 964,972 ----
+      struct flock fl;
+  #endif
+      ERRNO_TYPE errno;
++ #ifndef __FreeBSD__
+      extern char *sys_errlist[];
++ #endif
+  
+      if (no_filelocking) return (TRUE);
+  #undef LOCKING_WORKS
+***************
+*** 1032,1038 ****
+--- 1042,1050 ----
+      extern char outgoing_spool[STRING_LENGTH];
+      extern char passphrase[STRING_LENGTH];
+      ERRNO_TYPE errno;
++ #ifndef __FreeBSD__
+      extern char *sys_errlist[];
++ #endif
+  
+      if (stat (incoming_spool, &statbuf) != 0)
+      {
+***************
+*** 1436,1442 ****
+--- 1448,1456 ----
+      extern char incoming_spool[STRING_LENGTH];
+      extern char outgoing_spool[STRING_LENGTH];
+      ERRNO_TYPE errno;
++ #ifndef __FreeBSD__
+      extern char *sys_errlist[];
++ #endif
+  
+      (void) sprintf (config_filename, "%s/PGPdaemon.config", pgppath);
+      if ( ( fp = fopen (config_filename, "r") ) == NULL )
+***************
+*** 1587,1593 ****
+--- 1601,1609 ----
+      extern char *secring_buf;
+      extern char *pgppath;
+      ERRNO_TYPE errno;
++ #ifndef __FreeBSD__
+      extern char *sys_errlist[];
++ #endif
+  
+      (void) sprintf (filename, "%s/secring.pgp", pgppath);
+      if ( ( fd = open (filename, O_WRONLY | O_CREAT | O_EXCL,
+*** pgppipe.c.orig	Wed Dec  7 14:03:39 1994
+--- pgppipe.c	Sat Jan 21 03:12:06 1995
+***************
+*** 67,73 ****
+--- 67,75 ----
+      char *pgp_start_line = "-----BEGIN PGP MESSAGE-----\n";
+      char *pgp_end_line = "-----END PGP MESSAGE-----\n";
+      ERRNO_TYPE errno;
++ #ifndef __FreeBSD__
+      extern char *sys_errlist[];
++ #endif
+  
+      if ( ( pgppath = getenv ("PGPPATH") ) == NULL )
+      {
+*** pgpsendmail.c.orig	Tue Jan 17 03:55:45 1995
+--- pgpsendmail.c	Sat Jan 21 03:12:06 1995
+***************
+*** 184,190 ****
+--- 184,192 ----
+      extern char *username;
+      extern char **recipients;
+      ERRNO_TYPE errno;
++ #ifndef __FreeBSD__
+      extern char *sys_errlist[];
++ #endif
+  
+      if (argv[0] == NULL)
+      {
+***************
+*** 940,946 ****
+--- 942,950 ----
+      char *argv[6];
+      extern char *username;
+      ERRNO_TYPE errno;
++ #ifndef __FreeBSD__
+      extern char *sys_errlist[];
++ #endif
+  
+      /*  Make stdout go to  stderr  */
+      (void) fflush (stdout);
+***************
+*** 1250,1256 ****
+--- 1254,1262 ----
+      extern char *buffer;
+      extern char *pgppath;
+      ERRNO_TYPE errno;
++ #ifndef __FreeBSD__
+      extern char *sys_errlist[];
++ #endif
+  
+      if (!sign)
+      {
+*** pgpsendmail.h.orig	Sat Dec  3 06:23:34 1994
+--- pgpsendmail.h	Sat Jan 21 03:12:06 1995
+***************
+*** 34,40 ****
+--- 34,44 ----
+  #define LINE_LENGTH 1024
+  #define BUF_LEN 4096
+  #ifndef SENDMAIL
++ #ifdef __FreeBSD__
++ #  define SENDMAIL "/usr/sbin/sendmail"
++ #else
+  #  define SENDMAIL "/usr/lib/sendmail.real"
++ #endif
+  #endif
+  #define SECRING_SIZE_TYPE int
+  
+*** sendpgppass.c.orig	Sat Dec  3 07:10:21 1994
+--- sendpgppass.c	Sat Jan 21 03:12:06 1995
+***************
+*** 118,124 ****
+--- 118,126 ----
+      char txt[STRING_LENGTH];
+      char *pgp_argv[7];
+      ERRNO_TYPE errno;
++ #ifndef __FreeBSD__
+      extern char *sys_errlist[];
++ #endif
+  
+      if ( ( pgppath = getenv ("PGPPATH") ) == NULL )
+      {
+***************
+*** 323,329 ****
+--- 325,333 ----
+      int count;
+      int fd;
+      ERRNO_TYPE errno;
++ #ifndef __FreeBSD__
+      extern char *sys_errlist[];
++ #endif
+      static char buffer[STRING_LENGTH];
+  
+      if ( ( fd = open (TTY, O_RDWR, 0) ) < 0 )
+***************
+*** 395,401 ****
+--- 399,407 ----
+      char config_filename[STRING_LENGTH];
+      char txt[STRING_LENGTH];
+      ERRNO_TYPE errno;
++ #ifndef __FreeBSD__
+      extern char *sys_errlist[];
++ #endif
+  
+      (void) sprintf (config_filename, "%s/PGPdaemon.config", pgppath);
+      if ( ( fp = fopen (config_filename, "r") ) == NULL )
+*** spawn.c.orig	Sat Dec  3 09:02:30 1994
+--- spawn.c	Sat Jan 21 03:12:06 1995
+***************
+*** 79,85 ****
+--- 79,87 ----
+      int child_pid;
+      int in_fds[2], out_fds[2], err_fds[2];
+      ERRNO_TYPE errno;
++ #ifndef __FreeBSD__
+      extern char *sys_errlist[];
++ #endif
+  
+      if (*in_fd < 0)
+      {
