@@ -52,13 +52,16 @@ LIBXMDIR=	${X11BASE}
 
 .include <bsd.port.pre.mk>
 
-# DDD builds with either GCC 3.1 or GCC 3.2
-# Use 3.1 if it is available with base system
-# Otherwise, default to 3.2
+# DDD builds with either GCC 3.1, GCC 3.2 or GCC 3.3
+# Use 3.1 or 3.2 if it is available with base system
+# Otherwise, default to 3.3
 .if ${OSVERSION} >= 500035 && ${OSVERSION} <= 500038
 USE_GCC=3.1
-.else
+.elif ${OSVERSION} < 501103
 USE_GCC=3.2
+.else
+USE_GCC=3.3
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-configure-gcc33
 .endif
 
 pre-patch:
