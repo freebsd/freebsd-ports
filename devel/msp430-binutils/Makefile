@@ -18,23 +18,25 @@ DISTFILES=	${PORTNAME}-${BINUTILVERSION}${EXTRACT_SUFX} \
 MAINTAINER=	lev@serebryakov.spb.ru
 
 BINUTILVERSION=	2.11
-PATCHVERSION=	20021016
+PATCHVERSION=	20021028
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${BINUTILVERSION}
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//}
+CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//} \
+		--with-gcc --with-gnu-ld --with-gnu-as \
+		--disable-nls
 USE_LIBTOOL=	yes
 LIBTOOLFILES=	configure bfd/configure binutils/configure etc/configure \
 		gas/configure gprof/configure ld/configure opcodes/configure
 MAN1=		${PKGNAMEPREFIX}ar.1 ${PKGNAMEPREFIX}nm.1 \
-		${PKGNAMEPREFIX}objdump.1 \
-		${PKGNAMEPREFIX}ranlib.1 ${PKGNAMEPREFIX}size.1 \
-		${PKGNAMEPREFIX}strings.1 ${PKGNAMEPREFIX}strip.1 \
-		${PKGNAMEPREFIX}objcopy.1 ${PKGNAMEPREFIX}addr2line.1 \
-		${PKGNAMEPREFIX}nlmconv.1 ${PKGNAMEPREFIX}c++filt.1 \
-		${PKGNAMEPREFIX}as.1 ${PKGNAMEPREFIX}ld.1
+		${PKGNAMEPREFIX}objdump.1 ${PKGNAMEPREFIX}ranlib.1 \
+		${PKGNAMEPREFIX}size.1 ${PKGNAMEPREFIX}strings.1 \
+		${PKGNAMEPREFIX}strip.1 ${PKGNAMEPREFIX}objcopy.1 \
+		${PKGNAMEPREFIX}addr2line.1 ${PKGNAMEPREFIX}nlmconv.1 \
+		${PKGNAMEPREFIX}c++filt.1 ${PKGNAMEPREFIX}as.1 \
+		${PKGNAMEPREFIX}ld.1
 
 PLIST_SUB+=	BINUTILS_TARG=${PKGNAMEPREFIX:S/-$//}
 
