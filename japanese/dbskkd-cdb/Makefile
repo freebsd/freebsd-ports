@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.ne.jp/asahi/bdx/info/software/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${CDB_DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	matusita@jp.FreeBSD.org
+MAINTAINER=	matusita@FreeBSD.org
 
 CDB_DISTNAME=	cdb-0.55
 

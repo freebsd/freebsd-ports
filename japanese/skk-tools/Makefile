@@ -14,7 +14,7 @@ MASTER_SITES=	http://openlab.ring.gr.jp/skk/tools/ \
 MASTER_SITE_SUBDIR=	text/elisp/skk/tools
 DISTNAME=	skktools-${PORTVERSION}
 
-MAINTAINER=	matusita@jp.FreeBSD.org
+MAINTAINER=	matusita@FreeBSD.org
 
 USE_BZIP2=	yes
 

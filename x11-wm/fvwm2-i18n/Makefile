@@ -14,7 +14,7 @@ DISTNAME=	fvwm-${PORTVERSION}
 PATCH_SITES=	ftp://ftp.ics.es.osaka-u.ac.jp/pub/CFAN/fvwm-users-jp/I18N_MB/
 PATCHFILES=	fvwm-${PORTVERSION}-I18N_MB-${FVWM_PATCHVER}.patch
 
-MAINTAINER=	matusita@jp.FreeBSD.org
+MAINTAINER=	matusita@FreeBSD.org
 
 .if !defined(WITHOUT_XPM)
 USE_XPM=	yes

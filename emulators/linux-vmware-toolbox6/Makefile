@@ -12,7 +12,7 @@ MASTER_SITES=	# none
 PKGNAMEPREFIX=	linux-
 DISTNAME=	vmware-linux-tools
 
-MAINTAINER=	matusita@jp.FreeBSD.org
+MAINTAINER=	matusita@FreeBSD.org
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
