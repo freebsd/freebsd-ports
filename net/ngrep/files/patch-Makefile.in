@@ -1,0 +1,5 @@
+--- Makefile.in.orig	Wed Jun 21 12:13:46 2000
++++ Makefile.in	Sun Aug 13 09:31:51 2000
+@@ -56 +56 @@
+--include .depends
++### -include .depends
