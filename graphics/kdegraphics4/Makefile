@@ -75,7 +75,7 @@ CONFIGURE_ARGS+=--without-imlib-config
 .endif
 
 .if defined(WITH_GPHOTO2)
-LIB_DEPENDS+=	gphoto2.2:${PORTSDIR}/graphics/gphoto2
+LIB_DEPENDS+=	gphoto2.2:${PORTSDIR}/graphics/libgphoto2
 PLIST_APPEND+=	plist.gphoto2
 .endif
 
