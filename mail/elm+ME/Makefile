@@ -1,13 +1,13 @@
 # New ports collection makefile for:    elm
 # See also: http://www.ozone.fmi.fi/KEH/
-# Version required:     2.4.25.ME+31H
+# Version required:     2.4.25.ME+32
 # Date created:         26 June 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.38 1997/01/31 11:33:06 ache Exp $
+# $Id: Makefile,v 1.39 1997/04/19 03:08:29 ache Exp $
 #
 
-DISTNAME=       elm-2.4ME+31H
+DISTNAME=       elm-2.4ME+32
 CATEGORIES=	mail
 MASTER_SITES=   ftp://dionysos.fmi.fi/KEH/ \
 		ftp://ftp.funet.fi/pub/unix/mail/elm/elm-2.4ME+/ \
@@ -15,7 +15,7 @@ MASTER_SITES=   ftp://dionysos.fmi.fi/KEH/ \
 
 MAINTAINER=	ache@FreeBSD.ORG
 
-WRKSRC=         ${WRKDIR}/elm2.4.ME+.31H
+WRKSRC=         ${WRKDIR}/elm2.4.ME+.32
 MAN1=           answer.1 checkalias.1 elm.1 elmalias.1 fastmail.1 \
 		listalias.1 messages.1 newalias.1 printmail.1 readmsg.1
 
