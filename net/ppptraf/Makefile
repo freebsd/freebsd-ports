@@ -8,7 +8,8 @@
 PORTNAME=	ppptraf
 PORTVERSION=	1.0
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.borg-cube.com/users/diskiller/distfiles/
+MASTER_SITES=	ftp://ftp.borg-cube.com/users/diskiller/distfiles/ \
+		http://people.FreeBSD.org/~dburr/distfiles/
 
 MAINTAINER=	diskiller@cnbinc.com
 
