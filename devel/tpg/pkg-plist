@@ -1,7 +1,5 @@
 bin/tpg
 lib/%%PYTHON_VERSION%%/site-packages/tpg.py
-lib/%%PYTHON_VERSION%%/site-packages/TPG/tpg_grammar.g
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/TPG
 %%PORTDOCS%%share/examples/tpg/calc/calc.g
 %%PORTDOCS%%share/examples/tpg/calc/calc.py
 %%PORTDOCS%%share/examples/tpg/calc/calc2.py
@@ -9,6 +7,7 @@ lib/%%PYTHON_VERSION%%/site-packages/TPG/tpg_grammar.g
 %%PORTDOCS%%share/examples/tpg/calc/calc3.py
 %%PORTDOCS%%share/examples/tpg/notation/notation.py
 %%PORTDOCS%%share/examples/tpg/readme.txt
+%%PORTDOCS%%share/examples/tpg/tpg_grammar.g
 %%PORTDOCS%%@dirrm share/examples/tpg/calc
 %%PORTDOCS%%@dirrm share/examples/tpg/notation
 %%PORTDOCS%%@dirrm share/examples/tpg
