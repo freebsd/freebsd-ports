@@ -1,6 +1,14 @@
---- tcpshow.c.orig	Fri Mar 23 12:10:23 2001
-+++ tcpshow.c	Fri Mar 23 16:53:26 2001
-@@ -362,12 +362,14 @@
+--- tcpshow.c.orig	Sun Jul 19 09:00:00 1998
++++ tcpshow.c	Fri Feb 22 00:13:57 2002
+@@ -189,6 +189,7 @@
+ /****==========------------------------------------------------==========****/
+ #endif
+ 
++/* tm020221: modification of Tomo.M on 2002/02/21 */ 
+ 
+ #include <sys/types.h>                 // mr971021 Next four includes
+ #include <sys/socket.h>
+@@ -362,18 +363,20 @@
  #if !defined(NOETHERNAMES)
  // mr980118 ether_ntohost() and related functions aren't prototyped in the
  // standard include directory.
@@ -16,7 +24,78 @@
  
  
  static boolean noBflag = FALSE;
-@@ -1125,7 +1127,9 @@
+ static char *cookArgs[MAXCOOKARGS+1];
+ static boolean cookedFlag = FALSE;
+-static uint2 dataLen = 0;
++static int2 dataLen = 0;               // tm020221 must be 'signed'.
+ static char *dfltCookArgs[] = {
+    COOKER, "-enx", "-s10240", "-r-", (char *)NULL
+ };
+@@ -512,7 +515,9 @@
+       return "";
+    }
+ 
+-   delta = currTime - *prevTime;
++   // tm020221 delta should be positive value, but ...
++   delta = currTime >= *prevTime ? currTime - *prevTime
++              : multiplier * 86400 + currTime - *prevTime;
+    *prevTime = currTime;
+ 
+    // Convert the delta time to daytime representation.
+@@ -790,25 +795,39 @@
+    static boolean beenHereAlready = FALSE;
+    static char pktBuf[MAXPKT+1];
+ 
+-
++ nextline:
+    if (fgets(pktBuf, MAXPKT+1, stdin) == (char *)NULL) {
+       if (nPktsShown > 0) prSep();
+       exit(0);
+    }
+ 
+-   /* Line without leading <tab> means start of new packet.                 */
+-   if (*pktBuf == '\t')
+-      return pkt = rmWSpace(pktBuf);
+-   elif (!beenHereAlready) {           /* setjmp() won't have been called   */
+-      beenHereAlready = TRUE;          /*  before reading 1st packet        */
+-      return pkt = pktBuf;
+-   }
+-   else {
+-      if (dataLen > 0)
+-         printf("\n\t<*** Rest of data missing from packet dump ***>\n");
+-      pkt = pktBuf;
+-      longjmp(jmpBuf, 1);
++   // tm020221
++   // In these days, tcpdump produces much of irregular outputs.
++   // I had a work around by making logical change to original.
++   //  + check lines in its pattern.
++   //  + HEADER pattern triggers next showPkt();
++
++#define PTN_HEAD(buf)  (buf[2] == ':' && buf[5] == ':' && buf[8] == '.')
++#define PTN_DATA(buf)  (buf[0] == '\t' && buf[1] == '\t' \
++                                && buf[2] == '\t' && buf[3] == ' ')
++
++   if (PTN_HEAD(pktBuf)) {
++     if (beenHereAlready == FALSE) {
++       beenHereAlready = TRUE;
++       return pkt = pktBuf;
++     } else {
++       putchar('\n');
++       if (dataLen > 0)
++	 printf("\n\t<*** Rest of data missing from packet dump ***>\n");
++       pkt = pktBuf;
++       longjmp(jmpBuf, 1);
++     }
++   }
++   elif (PTN_DATA(pktBuf)) {
++     if (nPktsShown > 0)
++       return pkt = rmWSpace(pktBuf);
+    }
++   goto nextline;
+ 
+ }
+ 
+@@ -1125,7 +1144,9 @@
  static char *icmpType (uint1 type) {
  
     char *descr;
@@ -26,7 +105,7 @@
  
     switch (type) {
      case ECHO_REPLY:  descr = "echo-reply";              break;
-@@ -1143,7 +1147,7 @@
+@@ -1143,7 +1164,7 @@
      case INFO_REPLY:  descr = "information-reply";       break;
      case MASK_REQ:    descr = "address-mask-request";    break;
      case MASK_REPLY:  descr = "address-mask-reply";      break;
@@ -35,7 +114,7 @@
     }
  
     return descr;
-@@ -1248,7 +1252,7 @@
+@@ -1248,7 +1269,7 @@
  /*                                                                          */
  /****==========------------------------------------------------==========****/
  
@@ -44,15 +123,26 @@
  
     /* Command line options.                                                 */
     while (--argc > 0 && **++argv == '-')
-@@ -1290,6 +1294,7 @@
-    for ( ; ; ) if (!setjmp(jmpBuf)) showPkt(pkt);
+@@ -1286,10 +1307,16 @@
+    elif (argc != 0)
+       fprintf(stderr, "input is cooked -- ignoring tcpdump expressions\n");
+ 
+-   pkt = getPkt();
+-   for ( ; ; ) if (!setjmp(jmpBuf)) showPkt(pkt);
++   // tm020221
++   // changed setjmp/longjmp logic to trigger the showPkt()
++   for ( ; ; ) {
++     pkt = getPkt();
++     if (setjmp(jmpBuf) || nPktsShown <= 0)
++       showPkt(pkt);
++   }
  
     exit(0);
 +   return 0;
  
  }
  
-@@ -1336,7 +1341,7 @@
+@@ -1336,7 +1363,7 @@
  	 name = number;
        }
     /* The crappy manpage doesn't say the port must be in net byte order.    */
@@ -61,7 +151,7 @@
        name = service->s_name;
     elif (!wantNumber)
        name = unknown;
-@@ -1580,13 +1585,14 @@
+@@ -1580,13 +1607,14 @@
     if (ppFlag) {
        (void)sscanf(p, "%s", time);
        etherType = ETHER_PROTO_IP;      /* tcpdump doesn't supply link type  */
@@ -77,7 +167,7 @@
        return getPkt();
     }
  
-@@ -1598,7 +1604,7 @@
+@@ -1598,7 +1626,7 @@
     (void)strcpy(eTo, etherAddr(eTo, 0));
     (void)strcpy(eToName, etherName(eTo, TRUE));
  
@@ -86,7 +176,7 @@
        if (terseFlag) {
           printf("TIME:\t%s%s\n", time, deltaTime(&prevTime, time));
           printf(
-@@ -1614,6 +1620,7 @@
+@@ -1614,6 +1642,7 @@
           if (!noEtherNames) printf(" (%s)", etherName(eTo, FALSE));
           printf("\n\tEncapsulated Protocol:\t\t%s\n", etherProto(eType, 0));
        }
@@ -94,7 +184,7 @@
  
     return getPkt();
  
-@@ -1778,7 +1785,7 @@
+@@ -1778,7 +1807,7 @@
  static void showPkt (reg char *p) {
  
     char *warnMsg = "<*** No decode support for encapsulated protocol ***>";
@@ -103,7 +193,7 @@
  
     prSep();
     printf("Packet %d\n", ++nPktsShown);
-@@ -1807,6 +1814,31 @@
+@@ -1807,6 +1836,31 @@
  	 p = showIcmp(p);
  	 p = showData(p);
  	 break;
@@ -135,7 +225,7 @@
         default:
  	 printf("\t%s\n", warnMsg);
  	 nextPkt();                    /* Doesn't return                    */
-@@ -1826,7 +1858,7 @@
+@@ -1826,7 +1880,7 @@
     }
     /* Note that if getPkt() returns here, then the line read isn't the      */
     /* start of a new packet, i.e. there's spurious data.                    */
@@ -144,7 +234,7 @@
        if (sFlag) printf("\t<*** Spurious data at end: \"%s\" ***>\n", p);
        nextPkt();
     }
-@@ -1996,10 +2028,10 @@
+@@ -1996,10 +2050,10 @@
  
     if (terseFlag) {
        printf(
@@ -158,7 +248,7 @@
        printf(
           "\thlen=%d (data=%u) UAPRSF=%s%s%s%s%s%s",
           hLen, dataLen,
-@@ -2016,9 +2048,9 @@
+@@ -2016,9 +2070,9 @@
        if (!noPortNames) printf(" (%s)", portName(sPort, "tcp", FALSE));
        printf("\n\tDestination Port:\t\t%d", dPort);
        if (!noPortNames) printf(" (%s)", portName(dPort, "tcp", FALSE));
