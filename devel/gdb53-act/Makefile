@@ -31,6 +31,8 @@ STAMPFILE=	${DISTDIR}/${DIST_SUBDIR}/.timestamp
 
 .include <bsd.port.pre.mk>
 
+BROKEN=		"Unfetchable"
+
 .if ${ARCH} != "i386" && ${ARCH} != "alpha"
 BROKEN=		"Does not compile on !i386 and !alpha"
 .endif
