@@ -12,6 +12,7 @@ info/vice.info-2
 info/vice.info-3
 info/vice.info-4
 info/vice.info-5
+info/vice.info-6
 @exec install-info %D/info/vice.info %D/info/dir
 lib/vice/C64/basic
 lib/vice/C64/c64s.vpl
@@ -36,7 +37,9 @@ lib/vice/C128/frodo.vpl
 lib/vice/C128/godot.vpl
 lib/vice/C128/kernal
 lib/vice/C128/pc64.vpl
+lib/vice/C128/vdc_deft.vpl
 lib/vice/C128/position.vkm
+lib/vice/C128/z80bios
 lib/vice/VIC20/basic
 lib/vice/VIC20/chargen
 lib/vice/VIC20/default.vkm
@@ -85,43 +88,44 @@ lib/vice/CBM-II/rom128h.vrs
 lib/vice/CBM-II/rom256l.vrs
 lib/vice/CBM-II/rom256h.vrs
 lib/vice/DRIVES/dos1541
-lib/vice/DRIVES/dos1541II
+lib/vice/DRIVES/d1541II
 lib/vice/DRIVES/dos1571
 lib/vice/DRIVES/dos1581
 lib/vice/DRIVES/dos2031
-lib/vice/doc/vice_1.html
-lib/vice/doc/vice_2.html
-lib/vice/doc/vice_3.html
-lib/vice/doc/vice_4.html
-lib/vice/doc/vice_5.html
-lib/vice/doc/vice_6.html
-lib/vice/doc/vice_7.html
-lib/vice/doc/vice_8.html
-lib/vice/doc/vice_9.html
-lib/vice/doc/vice_10.html
-lib/vice/doc/vice_11.html
-lib/vice/doc/vice_12.html
-lib/vice/doc/vice_13.html
-lib/vice/doc/vice_14.html
-lib/vice/doc/vice_15.html
-lib/vice/doc/vice_16.html
-lib/vice/doc/vice_toc.html
-@exec ln -sf %f %B/index.html
-@unexec rm -f %B/index.html
-lib/vice/doc/64doc.txt
-lib/vice/doc/Evaluation
-lib/vice/doc/PETdoc.txt
-lib/vice/doc/Readme.dos
-lib/vice/doc/cbm_basic_tokens.txt
-lib/vice/doc/drive_info.txt
-lib/vice/doc/mnemonics.txt
-lib/vice/doc/mon.txt
-lib/vice/doc/serial.txt
+lib/vice/DRIVES/dos1001
+share/doc/vice/vice_1.html
+share/doc/vice/vice_2.html
+share/doc/vice/vice_3.html
+share/doc/vice/vice_4.html
+share/doc/vice/vice_5.html
+share/doc/vice/vice_6.html
+share/doc/vice/vice_7.html
+share/doc/vice/vice_8.html
+share/doc/vice/vice_9.html
+share/doc/vice/vice_10.html
+share/doc/vice/vice_11.html
+share/doc/vice/vice_12.html
+share/doc/vice/vice_13.html
+share/doc/vice/vice_14.html
+share/doc/vice/vice_15.html
+share/doc/vice/vice_16.html
+share/doc/vice/vice_toc.html
+share/doc/vice/64doc.txt
+share/doc/vice/Evaluation
+share/doc/vice/PETdoc.txt
+share/doc/vice/Readme.dos
+share/doc/vice/Win32-Howto.txt
+share/doc/vice/cbm_basic_tokens.txt
+share/doc/vice/drive_info.txt
+share/doc/vice/mnemonics.txt
+share/doc/vice/mon.txt
+share/doc/vice/serial.txt
+share/doc/vice/index.html
 @dirrm lib/vice/C64
 @dirrm lib/vice/C128
-@dirrm lib/vice/VIC20
-@dirrm lib/vice/PET
 @dirrm lib/vice/CBM-II
 @dirrm lib/vice/DRIVES
-@dirrm lib/vice/doc
+@dirrm lib/vice/VIC20
+@dirrm lib/vice/PET
 @dirrm lib/vice
+@dirrm share/doc/vice
