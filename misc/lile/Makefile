@@ -9,7 +9,7 @@ PORTNAME=	ile
 PORTVERSION=	2.0
 PORTREVISION=	1
 CATEGORIES=	misc
-MASTER_SITES=	ftp://ftp.inria.fr/system/user/
+MASTER_SITES=	ftp://ftp.inria.fr/archives/system/user/
 DISTNAME=	lile-2.0
 EXTRACT_SUFX=	.tar.z
 
