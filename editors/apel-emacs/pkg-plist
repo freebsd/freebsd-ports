@@ -6,10 +6,10 @@
 %%EMACS_LIBDIR%%/site-lisp/apel/filename.elc
 %%EMACS_LIBDIR%%/site-lisp/apel/install.el
 %%EMACS_LIBDIR%%/site-lisp/apel/install.elc
-%%EMACS_LIBDIR%%/site-lisp/apel/mule-caesar.el
-%%EMACS_LIBDIR%%/site-lisp/apel/mule-caesar.elc
 %%EMACS_LIBDIR%%/site-lisp/apel/path-util.el
 %%EMACS_LIBDIR%%/site-lisp/apel/path-util.elc
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/apel-ver.el
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/apel-ver.elc
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/broken.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/broken.elc
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/emu.el
@@ -22,6 +22,8 @@
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/mcharset.elc
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/mcs-ltn1.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/mcs-ltn1.elc
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/mule-caesar.el
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/mule-caesar.elc
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/pccl.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/pccl.elc
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/pces.el
@@ -36,6 +38,10 @@
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/poem.elc
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/poem-ltn1.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/poem-ltn1.elc
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/product.el
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/product.elc
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/pym.el
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/pym.elc
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/richtext.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/richtext.elc
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/static.el

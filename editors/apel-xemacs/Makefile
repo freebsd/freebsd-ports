@@ -13,12 +13,7 @@ PORTCLASS=	slave
 MASTERDIR=	${.CURDIR}/../../editors/apel-emacs
 
 # emacs port setup
-EMACS_NAME=	xemacs
-EMACS_PORT=	xemacs
-EMACS_VER=	19.16
-EMACS_LIBDIR=		lib/${EMACS_NAME}
-# xemacs-19.16 has no version specific site-lisp directories.
-EMACS_LIBDIR_WITH_VER=	${EMACS_LIBDIR}
+EMACS_PORT_NAME=	xemacs
 
 # use pkg/* files in ${.CURDIR}
 PKGDIR=		${.CURDIR}/pkg
