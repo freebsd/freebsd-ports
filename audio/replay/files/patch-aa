@@ -5,7 +5,7 @@
  
  # Make sure the path is correct!
 -GTK-CONFIG = "gtk-config"
-+GTK-CONFIG = "gtk11-config"
++GTK-CONFIG = "gtk11d-config"
  
  # ---- @OS_TYPE@/@ARCH_TYPE@ ----
  
