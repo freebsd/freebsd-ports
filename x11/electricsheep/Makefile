@@ -20,6 +20,8 @@ RUN_DEPENDS=	xloadimage:${PORTSDIR}/x11/xloadimage \
 		xsetbg:${PORTSDIR}/graphics/xli \
 		curl:${PORTSDIR}/ftp/curl
 
+BROKEN=		Missing LIB_DEPENDS
+
 USE_X_PREFIX=	yes
 USE_SDL=	sdl
 USE_GMAKE=	yes
