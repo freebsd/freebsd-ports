@@ -26,7 +26,8 @@ ZAPFILES=	ad-clear.gif ad-clear.mp3 ad-clear.swf ad-grey.gif \
 		counter.gif no-op-clear.html no-op-clear.js \
 		no-op-counter-clear.html no-op-counter-clear.js \
 		no-op-counter.html no-op-counter.js no-op.html no-op.js \
-		webbug-clear.gif webbug-clear.js webbug.gif webbug.js
+		webbug-clear.gif webbug-clear.js webbug.gif webbug.js \
+		adzap.conf
 
 RCFILES=	proxy-home.pac proxy-zip.pac
 
