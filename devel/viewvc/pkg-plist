@@ -1,0 +1,33 @@
+share/viewcvs/cgi/viewcvs.cgi
+share/viewcvs/cgi/queryform.cgi
+share/viewcvs/cgi/query.cgi
+share/viewcvs/viewcvs.conf
+share/viewcvs/lib/PyFontify.py
+share/viewcvs/lib/PyFontify.pyc
+share/viewcvs/lib/blame.py
+share/viewcvs/lib/blame.pyc
+share/viewcvs/lib/commit.py
+share/viewcvs/lib/commit.pyc
+share/viewcvs/lib/compat.py
+share/viewcvs/lib/compat.pyc
+share/viewcvs/lib/config.py
+share/viewcvs/lib/config.pyc
+share/viewcvs/lib/cvsdbapi.py
+share/viewcvs/lib/cvsdbapi.pyc
+share/viewcvs/lib/database.py
+share/viewcvs/lib/database.pyc
+share/viewcvs/lib/popen.py
+share/viewcvs/lib/popen.pyc
+share/viewcvs/lib/py2html.py
+share/viewcvs/lib/py2html.pyc
+share/viewcvs/lib/rlog.py
+share/viewcvs/lib/rlog.pyc
+share/viewcvs/loginfo-handler
+share/viewcvs/cvsdbadmin
+share/viewcvs/make-database
+share/viewcvs/html-templates/queryformtemplate.html
+share/viewcvs/html-templates/querytemplate.html
+@dirrm share/viewcvs/html-templates
+@dirrm share/viewcvs/lib
+@dirrm share/viewcvs/cgi
+@dirrm share/viewcvs
