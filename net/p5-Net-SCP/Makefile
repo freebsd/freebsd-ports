@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	erich@tacni.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 module to access and use scp protocol
 
 BUILD_DEPENDS=	${SITE_PERL}/Net/SSH.pm:${PORTSDIR}/net/p5-Net-SSH \
