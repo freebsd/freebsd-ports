@@ -1,0 +1,8 @@
+It is intended that rkive be run by cron on a daily basis. In this manner,
+software is archived and available for retrieval from the archives on the
+day it reaches the machine.  It allows for the archives to be managed by
+the same or different people (or accounts).  It supports the building
+of indexes for later review or to interface to the netlib type of mail
+retrieval software. It also supports mailing notifications of the archiving
+to a specified list of users or aliases. The indexes and log file formats
+are specifiable by the person configuring the rkive configuration file.

@@ -1,0 +1,8 @@
+bin/article
+bin/rkive
+bin/ckconfig
+man/man1/rkive.1.gz
+man/man1/article.1.gz
+man/man1/ckconfig.1.gz
+lib/rkive/rkive.cf.sample
+lib/rkive/update_netdocs
