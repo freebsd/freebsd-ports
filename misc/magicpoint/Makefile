@@ -3,7 +3,7 @@
 # Date created:		24 December 1997
 # Whom:			itojun@itojun.org
 #
-# $Id: Makefile,v 1.9 1999/06/17 08:16:11 itojun Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	magicpoint-1.05a

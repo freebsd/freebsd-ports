@@ -3,7 +3,7 @@
 # Date created:         8 Nov 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.18 1999/04/05 23:59:43 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       less-337

@@ -3,7 +3,7 @@
 # Date created:        5 June 1997
 # Whom:                Ruslan Shevchenko <rssh@cki.ipri.kiev.ua>
 #
-# $Id: Makefile,v 1.5 1998/11/28 05:39:00 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	simpack-3.0

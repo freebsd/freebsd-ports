@@ -3,7 +3,7 @@
 # Date created:         8 May 1998
 # Whom:                 Donald Burr <dburr@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.3 1998/07/06 14:13:54 dburr Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	SMA

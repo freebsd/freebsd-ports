@@ -3,7 +3,7 @@
 # Date created:		24 April 1995
 # Whom:			Satoshi Asami
 #
-# $Id: Makefile,v 1.5 1997/12/25 22:29:44 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	chord

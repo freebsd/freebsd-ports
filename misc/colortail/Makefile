@@ -3,7 +3,7 @@
 # Date created:                25 February 1999
 # Whom:                        Chris Piazza <cpiazza@FreeBSD.org>
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/27 12:32:21 taoka Exp $
+# $FreeBSD$
 #
 
 DISTNAME=      colortail-0.2.0

@@ -3,7 +3,7 @@
 # Date created:         6 Apr 97
 # Whom:                 Pedro Giffuni
 #
-# $Id: Makefile,v 1.4 1998/08/05 09:31:35 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	pns_source

@@ -4,7 +4,7 @@
 # Date created:			  Fri Oct 02, 1998
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.2 1997/01/25 18:08:40 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	Howto-1.0

@@ -3,7 +3,7 @@
 # Date created:         Fri Nov  6 09:06:33 PST 1998
 # Whom:                 sumikawa@kame.net
 #
-# $Id: Makefile,v 1.5 1999/07/27 14:59:54 sumikawa Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	lv4491

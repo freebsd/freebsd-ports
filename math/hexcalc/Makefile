@@ -3,7 +3,7 @@
 # Date created:		5 December 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.8 1997/12/25 22:29:42 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	hexcalc

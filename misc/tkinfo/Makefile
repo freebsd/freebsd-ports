@@ -3,7 +3,7 @@
 # Date created:         16 Jan 1995
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.18 1998/03/20 14:35:17 tg Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	tkinfo-2.4

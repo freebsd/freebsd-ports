@@ -3,7 +3,7 @@
 # Date created:        15 July 1999
 # Whom:                Mike Smith <msmith@freebsd.org>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	bottlerocket-0.04b

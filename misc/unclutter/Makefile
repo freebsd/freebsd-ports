@@ -3,7 +3,7 @@
 # Date created:		03 Aug 1996
 # Whom:			shanee@augusta.de
 #
-# $Id: Makefile,v 1.6 1997/10/26 23:57:06 fenner Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	unclutter-8

@@ -3,7 +3,7 @@
 # Date created:         Wed Nov 27 09:15:10 CST 1996
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.6 1999/01/07 02:31:45 simokawa Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	Wingz-142

@@ -3,7 +3,7 @@
 # Date created:		23 September 1998
 # Whom:			itojun@itojun.org
 #
-# $Id: Makefile,v 1.1.1.1 1998/10/21 00:41:49 itojun Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	crosspad-981112

@@ -3,7 +3,7 @@
 # Date created:		13 October 1994
 # Whom:			wollman
 #
-# $Id: Makefile,v 1.19 1998/08/07 23:56:35 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	imm-3.5a1

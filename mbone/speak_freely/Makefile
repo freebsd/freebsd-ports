@@ -4,7 +4,7 @@
 # Date created:         18 Apr 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.5 1998/09/22 19:10:14 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       speak_freely-6.1c

@@ -3,7 +3,7 @@
 # Date created:		08 September 1998
 # Whom:			Anton Berezin <tobez@plab.ku.dk>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	dcdflib.c-1.1

@@ -3,7 +3,7 @@
 # Date created:		20 April 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.14 1998/12/29 14:32:06 tg Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	LLNLDistribution11

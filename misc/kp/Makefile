@@ -3,7 +3,7 @@
 # Date created:         8 May 1995
 # Whom:                 asami
 #
-# $Id: Makefile,v 1.11 1998/10/09 01:14:42 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       kp-1.00

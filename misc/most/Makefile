@@ -3,7 +3,7 @@
 # Date created:		31 May 1997
 # Whom:			rhwang@bigpanda.com
 #
-# $Id: Makefile,v 1.4 1998/09/25 10:18:41 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	most-4.9.0

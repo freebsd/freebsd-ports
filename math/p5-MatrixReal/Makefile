@@ -3,7 +3,7 @@
 # Date Created:				Aug 14 1997
 # Whom:					Sander Vesik <sander@haldjas.folklore.ee>
 #
-# $Id: Makefile,v 1.3 1998/08/23 04:00:47 jseger Exp $
+# $FreeBSD$
 
 DISTNAME=		Math-MatrixReal-1.2
 PKGNAME=		p5-MatrixReal-1.2

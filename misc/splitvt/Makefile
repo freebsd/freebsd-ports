@@ -3,7 +3,7 @@
 # Date created:         Fri Oct 4, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.4 1996/11/18 10:36:37 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	splitvt-1.6.3

@@ -3,7 +3,7 @@
 # Date created:			6 February, 1999
 # Whom:				Stephen Farrell <steve@farrell.org>
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/27 03:24:44 taoka Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	tkRunIt-0941

@@ -3,7 +3,7 @@
 # Date created:				5 January 1997
 # Whom:					Pedro Giffuni
 #
-# $Id: Makefile,v 1.4 1998/12/09 19:24:06 billf Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ss_1.3.3

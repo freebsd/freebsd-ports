@@ -3,7 +3,7 @@
 # Date created:		02 Oct 1998
 # Whom:			jkoshy
 #
-# $Id: Makefile,v 1.7 1999/08/22 18:59:15 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		tet3.2e-unsup

@@ -3,7 +3,7 @@
 # Date created:		06 April 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.4 1998/11/14 09:43:24 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ranlib.c

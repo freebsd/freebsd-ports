@@ -3,7 +3,7 @@
 # Date created:		19 June 1997
 # Whom:			Pedro Giffuni
 #
-# $Id: Makefile,v 1.3 1998/08/05 09:31:28 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	femlab-2d-v1.1

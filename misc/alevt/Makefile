@@ -3,7 +3,7 @@
 # Date created:		Wed Aug 18 13:23:00 BST 1999
 # Whom:			Roger Hardiman <roger@freebsd.org>
 #
-# $Id: Makefile,v 1.0 1999/06/10 03:11:15 roger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	alevt-1.4.9

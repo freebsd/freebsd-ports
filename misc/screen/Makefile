@@ -3,7 +3,7 @@
 # Date created:         25 Nov 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.20 1999/01/27 07:41:23 fenner Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       screen-3.7.6

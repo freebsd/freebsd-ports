@@ -3,7 +3,7 @@
 # Date created:		25 Jun 1997
 # Whom:			jmz
 #
-# $Id: Makefile,v 1.3 1997/08/15 16:47:08 jmz Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	lile-2.0

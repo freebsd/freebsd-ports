@@ -3,7 +3,7 @@
 # Date created:		Dec 28 1998
 # Whom:			Lars Koeller <lkoeller@cc.fh-lippe.de>
 #
-# $Id: Makefile,v 1.3 1999/05/29 04:23:04 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	grace-5.0.2beta

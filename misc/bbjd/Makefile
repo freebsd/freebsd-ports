@@ -3,7 +3,7 @@
 # Date created:		3 February 1999
 # Whom:			Dima Sivachenko
 #
-# $Id: Makefile,v 1.1.1.1 1999/03/06 16:41:53 billf Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	bbjd-1.01

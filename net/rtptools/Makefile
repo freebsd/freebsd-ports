@@ -3,7 +3,7 @@
 # Date created:		5 January 1998
 # Whom:			fenner
 #
-# $Id:$
+# $FreeBSD$
 #
 
 DISTNAME=	rtptools-1.9

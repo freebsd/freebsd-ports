@@ -3,7 +3,7 @@
 # Date created:				22 June 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1998/07/12 23:43:22 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		bb-1.2

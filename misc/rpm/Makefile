@@ -3,7 +3,7 @@
 # Date created:		30 April 1999
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.18 1999/05/02 12:02:45 foxfair Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	rpm-2.5.5

@@ -3,7 +3,7 @@
 # Date created:				28 Sept 1998
 # Whom:					Bill Fumerola <billf@chc-chimes.com>
 #
-# $Id: Makefile,v 1.5 1999/04/22 08:04:20 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gtkfind-0.10

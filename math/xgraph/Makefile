@@ -3,7 +3,7 @@
 # Date created:		24 November 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.10 1998/09/27 20:16:43 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xgraph-11.3.2

@@ -3,7 +3,7 @@
 # Date created:		May 1 1997
 # Whom:			Eric A. Griff <eagriff@global2000.net>
 #
-# $Id: Makefile,v 1.9 1999/01/07 08:19:43 simokawa Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	apc-1.0

@@ -3,7 +3,7 @@
 # Date created:		8 March 1995
 # Whom:			Satoshi Asami
 #
-# $Id: Makefile,v 1.16 1998/09/14 10:56:16 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	colorls-2.2.7

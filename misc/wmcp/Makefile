@@ -3,7 +3,7 @@
 # Date created:			10 February 1999
 # Whom:				Jim Mock <jim@FreeBSD.org>
 #
-# $Id: Makefile,v 1.3 1999/06/29 17:09:14 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	wmcp-1.2.8

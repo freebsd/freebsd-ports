@@ -3,7 +3,7 @@
 # Date created:         17 November 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.7 1996/11/18 14:05:04 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	Fudgit_2.41

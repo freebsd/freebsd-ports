@@ -3,7 +3,7 @@
 # Date created:		2 Novermber 1996
 # Whom:			fenner
 #
-# $Id: Makefile,v 1.5 1998/09/27 01:43:59 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       wb-1.59

@@ -3,7 +3,7 @@
 # Date created:		12 October 1996
 # Whom:			markm
 #
-# $Id: Makefile,v 1.8 1999/01/27 07:41:22 fenner Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	dejagnu-1.3

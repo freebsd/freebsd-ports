@@ -3,7 +3,7 @@
 # Date created:		2 Feb 1995
 # Whom:			Michael Elbel (me)
 #
-# $Id: Makefile,v 1.15 1996/12/08 12:02:01 max Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	mmv

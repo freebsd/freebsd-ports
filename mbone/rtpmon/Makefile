@@ -3,7 +3,7 @@
 # Date created:				1 November 1996
 # Whom:	      Bill Fenner <fenner@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.10 1998/09/27 01:42:04 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	rtpmon-1.0a7

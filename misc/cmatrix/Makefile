@@ -3,7 +3,7 @@
 # Date created:				1 May 1999
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1999/05/03 04:36:13 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	cmatrix-0.98c

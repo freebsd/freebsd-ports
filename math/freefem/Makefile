@@ -3,7 +3,7 @@
 # Date created:        20 December 1996
 # Whom:                Pedro Giffuni
 #
-# $Id: Makefile,v 1.7 1999/03/15 01:53:46 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	freefem-3.4

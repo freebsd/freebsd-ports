@@ -3,7 +3,7 @@
 # Date created:		4 Jan 1998
 # Whom:			Ian Struble <ian@broken.net>
 #
-# $Id: Makefile,v 1.2 1998/09/15 11:13:29 asami Exp $
+# $FreeBSD$
 
 DISTNAME=	xquote-1.1
 CATEGORIES=	misc

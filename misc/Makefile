@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.226 1999/08/19 01:47:29 asami Exp $
+# $FreeBSD$
 #
 
     SUBDIR += 221upgrade

@@ -3,7 +3,7 @@
 # Date created:        23 May 1998
 # Whom:                Hans Petter Bieker <zerium@webindex.no>
 #
-# $Id: Makefile,v 1.10 1999/03/15 01:58:39 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	kwatch-0.3

@@ -3,7 +3,7 @@
 # Date created:         5 Nov 97
 # Whom:                 Pedro Giffuni <giffunip@asme.org>
 #
-# $Id: Makefile,v 1.2 1998/08/20 07:01:07 tg Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	umfpack2.2

@@ -3,7 +3,7 @@
 # Date created:      11/12/96
 # Whom:              oly@world.std.com
 #
-# $Id: Makefile,v 1.12 1998/09/25 10:05:12 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	dotfile-2.2

@@ -3,7 +3,7 @@
 # Date created:		8 September 1998
 # Whom:			chuckr@freebsd.org
 #
-# $Id: Makefile,v 1.18 1998/09/27 20:10:45 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	octave-2.0.13

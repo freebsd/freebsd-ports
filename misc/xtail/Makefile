@@ -3,7 +3,7 @@
 # Date created:        20 January 1999
 # Whom:                gmarco@scotty.masternet.it
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	xtail

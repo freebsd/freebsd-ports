@@ -3,7 +3,7 @@
 # Date created:				1 December 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1998/12/24 13:49:52 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		tcb-1.4a

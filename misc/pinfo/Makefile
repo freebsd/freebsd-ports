@@ -3,7 +3,7 @@
 # Date created:         19 May 1999
 # Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1999/05/20 09:14:17 tg Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       pinfo-0.5.5

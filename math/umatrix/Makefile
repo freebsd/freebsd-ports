@@ -3,7 +3,7 @@
 # Date created:				1 May 1997
 # Whom:					Sandro Sigala <ssigala@globalnet.it>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	umatrix-1.1

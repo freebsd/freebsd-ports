@@ -3,7 +3,7 @@
 # Date created:         1997-12-30
 # Whom:                 wosch
 #
-# $Id: Makefile,v 1.2 1998/01/02 17:11:19 wosch Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	zipcodes

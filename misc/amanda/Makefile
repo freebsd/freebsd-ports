@@ -3,7 +3,7 @@
 # Date created:				28th Feb 1995
 # Whom:					gpalmer
 #
-# $Id: Makefile,v 1.9 1997/03/08 05:00:11 gpalmer Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	amanda-2.3.0

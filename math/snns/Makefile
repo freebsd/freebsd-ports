@@ -3,7 +3,7 @@
 # Date created:		2 Febuary 1997
 # Whom:			reg@shale.csir.co.za
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/03 01:04:47 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	SNNSv4.1

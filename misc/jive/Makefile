@@ -4,7 +4,7 @@
 # Date created:			  Mon Feb 17, 1997
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.3 1997/10/22 06:02:52 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	jive-1.1

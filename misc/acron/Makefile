@@ -3,7 +3,7 @@
 # Date created:         13 Dec 1997
 # Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1998/06/27 05:19:16 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       acron

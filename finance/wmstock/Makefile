@@ -3,7 +3,7 @@
 # Date created:		19 Jun 1999
 # Whom:			Will Andrews <andrews@technologist.com>
 #
-# $Id: Makefile,v 1.1.1.1 1999/08/01 02:56:36 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	wmstock-0.06

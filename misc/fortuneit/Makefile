@@ -3,7 +3,7 @@
 # Date created:        25-01-1999
 # Whom:                gmarco@scotty.masternet.it
 #
-# $Id: Makefile,v 1.2 1999/04/18 22:52:36 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	fortune.it-1.51

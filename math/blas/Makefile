@@ -3,7 +3,7 @@
 # Date created:         27 October 1994
 # Whom:                 ljo
 #
-# $Id: Makefile,v 1.20 1998/09/28 09:44:23 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	blas

@@ -3,7 +3,7 @@
 # Date created:				06 January 1996
 # Whom:					bmc@WillsCreek.COM
 #
-# $Id: Makefile,v 1.8 1999/01/27 07:41:23 fenner Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	fileutils-4.0

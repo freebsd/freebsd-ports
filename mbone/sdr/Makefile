@@ -3,7 +3,7 @@
 # Date created:				5 September 1996
 # Whom:	      Bill Fenner <fenner@FreeBSD.ORG>
 #
-#   $Id: Makefile,v 1.11 1999/03/30 00:20:39 fenner Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	sdr-2.4a7n

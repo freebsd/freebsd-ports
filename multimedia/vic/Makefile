@@ -3,7 +3,7 @@
 # Date created:		14 December 1994
 # Whom:			wollman
 #
-# $Id: Makefile,v 1.19 1998/10/13 03:05:40 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	vic-2.8
