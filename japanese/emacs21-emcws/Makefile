@@ -7,7 +7,7 @@
 
 PORTNAME=	emcws
 PORTVERSION=	21.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese editors ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	emacs
@@ -31,7 +31,8 @@ USE_GMAKE=	YES
 EMACS_VER=	21.2
 
 # Change these as you like.
-WITH_WNN6?=	YES
+WITH_WNN6?=	NO
+WITH_WNN7?=	YES
 WITH_FREEWNN?=	NO
 WITH_CANNA?=	YES
 WITH_SJ3?=	NO
@@ -49,6 +50,12 @@ CONFIGURE_ARGS=	--with-x=no --with-pop
 CONFIGURE_ARGS+=--with-wnn --with-wnn-includes=${LOCALBASE}/include/wnn6/wnn \
 		--with-wnn-libraries=${LOCALBASE}/lib/libwnn6.so
 LIB_DEPENDS+=	wnn6.2:${PORTSDIR}/japanese/Wnn6-lib
+.endif
+
+.if (${WITH_WNN7} == "yes" || ${WITH_WNN7} == "YES")
+CONFIGURE_ARGS+=--with-wnn --with-wnn-includes=${LOCALBASE}/include/wnn7/wnn \
+		--with-wnn-libraries=${LOCALBASE}/lib/libwnn7.so
+LIB_DEPENDS+=	wnn7.1:${PORTSDIR}/japanese/Wnn7-lib
 .endif
 
 .if (${WITH_FREEWNN} == "yes" || ${WITH_FREEWNN} == "YES")
@@ -93,7 +100,7 @@ EMCWS_ELCS=	busyu.el \
 		wnn-client.el \
 		wnn-egg.el
 
-.if (${WITH_WNN6} == "yes" || ${WITH_WNN6} == "YES") || (${WITH_FREEWNN} == "yes" || ${WITH_FREEWNN} == "YES")
+.if (${WITH_WNN6} == "yes" || ${WITH_WNN6} == "YES") || (${WITH_WNN7} == "yes" || ${WITH_WNN7} == "YES") || (${WITH_FREEWNN} == "yes" || ${WITH_FREEWNN} == "YES")
 EMCWS_ELCS+=	egg.elc \
 		wnn-egg.elc
 PLIST_SUB+=	WITH_WNN=""

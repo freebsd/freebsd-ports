@@ -4,11 +4,12 @@
  You can define which input method you use with following variables.
 
 	WITH_WNN6	to use Wnn6
+	WITH_WNN7	to use Wnn7
 	WITH_FREEWNN	to use FreeWnn
 	WITH_CANNA	to use Canna
 	WITH_SJ3	to use sj3
 
- In default, WITH_WNN6 and WITH_CANNA are set.
+ In default, WITH_WNN7 and WITH_CANNA are set.
 
  If you want to use Emcws with Canna and FreeWnn, run
 
