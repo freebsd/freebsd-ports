@@ -16,10 +16,6 @@ COMMENT=	An X based alarm clock
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 501102
-BROKEN=		"Does not compile"
-.endif
-
 USE_IMAKE=	yes
 IS_INTERACTIVE=	yes
 
