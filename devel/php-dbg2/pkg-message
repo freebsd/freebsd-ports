@@ -5,9 +5,9 @@ This product includes DBG PHP Debugger, Copyright(C) 1999, 2000, 2001,
 The php debugger has been installed successful.
 Add a line containing
 
-	extension=%%PREFIX%%/lib/php/%%PHP_EXT_DIR%%/dbg.so
+	extension=dbg.so
 
-to your php.ini to load it.
+to your %%LOCALBASE%%/etc/php/extensions.ini to load it.
 If you have the Zend Optimizer installed, add the line
 
 	zend_extension=%%PREFIX%%/lib/php/%%PHP_EXT_DIR%%/dbg.so
