@@ -1,10 +1,8 @@
-This is version 3.0 of the Midnight Commander, a free Norton Commander
-Clone with many useful features. The Midnight Commander comes with
-mouse support on xterms.
+GNU Midnight Commander is a user-friendly yet powerful file manager
+and visual shell, useful to novice and guru alike. It provides a
+clear, user-friendly, and somewhat protected interface to a Unix
+system while making many frequent file operations more efficient and
+preserving the full power of the command prompt. You will wonder how
+you could ever live without it.
 
-The Midnight Commander is a directory browsing tool which bears a
-certain remote resemblance to John Socha's Norton Commander for DOS.
-The Midnight Commander doesn't have all the bells and whistles of its
-DOS counterpart, but was written in much less time.
-
-WWW: http://www.gnome.org/projects/mc/
+WWW: http://www.ibiblio.org/mc/
