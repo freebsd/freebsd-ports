@@ -2212,6 +2212,7 @@ gnofract4d	ports/graphics/gnofract4d
 gnokii		ports/comms/gnokii
 gnomba		ports/net/gnomba
 gnome--		ports/x11-toolkits/gnome--
+gnome-btdownload	ports/net/gnome-btdownload
 gnome-commander	ports/x11-fm/gnome-commander
 gnome-cups-manager	ports/print/gnome-cups-manager
 gnome-industrial-theme	ports/x11-toolkits/gnome-industrial-theme
