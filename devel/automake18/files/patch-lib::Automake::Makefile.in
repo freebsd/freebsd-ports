@@ -1,0 +1,10 @@
+--- lib/Automake/Makefile.in.orig	Sun Mar  7 09:04:33 2004
++++ lib/Automake/Makefile.in	Mon Mar 29 20:22:26 2004
+@@ -70,2 +70,3 @@
+ APIVERSION = @APIVERSION@
++APIPVERSION = @APIPVERSION@
+ AUTOCONF = @AUTOCONF@
+@@ -161,2 +162,3 @@
+   -e 's,[@]APIVERSION[@],$(APIVERSION),g' \
++  -e 's,[@]APIPVERSION[@],$(APIPVERSION),g' \
+   -e 's,[@]PACKAGE[@],$(PACKAGE),g' \
