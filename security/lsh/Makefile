@@ -7,12 +7,11 @@
 PORTNAME=	lsh
 PORTVERSION=	1.0
 CATEGORIES=	security ipv6
-MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/security/lsh/
+MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/security/lsh/%SUBDIR%/
+MASTER_SITE_SUBDIR=	. old
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	eric@cybernut.com
-
-BROKEN=		"Does not fetch"
 
 RESTRICTED=	"Crypto; export-controlled"
 GNU_CONFIGURE=	yes
