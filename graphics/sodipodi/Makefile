@@ -15,7 +15,9 @@ MAINTAINER=	nakai@FreeBSD.org
 LIB_DEPENDS=	gnome.3:${PORTSDIR}/x11/gnomelibs \
 		glade.3:${PORTSDIR}/devel/libglade \
 		gnomeprint.7:${PORTSDIR}/print/gnomeprint \
-		gdk_pixbuf.1:${PORTSDIR}/graphics/gdk-pixbuf
+		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
+
+BROKEN=		"Uses gdk-pixbuf internals that have disappeared"
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
