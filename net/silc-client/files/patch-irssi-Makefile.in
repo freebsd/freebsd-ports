@@ -1,0 +1,11 @@
+--- irssi/Makefile.in.orig	Mon Oct 13 17:46:09 2003
++++ irssi/Makefile.in	Mon Oct 13 17:46:13 2003
+@@ -205,7 +205,7 @@
+ @BUILD_PLUGINS_TRUE@PLUGINS = plugins
+ @BUILD_SERVERTEST_TRUE@SERVERTEST = servertest
+ 
+-SUBDIRS = src docs scripts
++SUBDIRS = src docs
+ 
+ #
+ # INCLUDE defines
