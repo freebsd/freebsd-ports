@@ -3,17 +3,15 @@
 # Date created:		October 29th 1996
 # Whom:			jfitz@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.26 1999/01/17 03:03:38 billf Exp $
+# $Id: Makefile,v 1.27 1999/01/18 03:38:24 billf Exp $
 #
 
 DISTNAME=	AfterStep-1.0
 PKGNAME=	afterstep-1.0
 CATEGORIES=	x11-wm afterstep
-MASTER_SITES=	ftp://ftp.afterstep.org/stable/archives/ \
-		ftp://ftp.digex.net/pub/os/wm/AfterStep/stable/archives/ \
-		ftp://ftp.alpha1.net/pub/mirrors/ftp.afterstep.org/stable/archives/ \
-		ftp://ftp.starshadow.com/pub/afterstep/stable/archives/ \
+MASTER_SITES=	${MASTER_SITE_AFTERSTEP} \
 		ftp://ftp.cs.tu-berlin.de/pub/X/afterstep/
+MASTER_SITE_SUBDIR=	stable/archives
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
