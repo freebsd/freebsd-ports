@@ -7,9 +7,10 @@
 
 PORTNAME=	nag
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	deskutils www
 MASTER_SITES=	ftp://ftp.horde.org/pub/nag/tarballs/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-RC2
+DISTNAME=	${PORTNAME}-${PORTVERSION}-RC3
 
 MAINTAINER=	thierry@pompo.net
 
