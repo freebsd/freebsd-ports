@@ -2199,6 +2199,7 @@ gtkyahoo	ports/net/gtkyahoo
 gtl		ports/misc/gtl
 gtm		ports/ftp/gtm
 gtoaster	ports/sysutils/gtoaster
+gtoolkit	ports/x11-toolkits/gtoolkit
 gtop		ports/sysutils/gtop
 gtranslator	ports/devel/gtranslator
 gtypist		ports/games/gtypist
