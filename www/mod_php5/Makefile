@@ -7,7 +7,7 @@
 
 PORTNAME?=	mod_php4
 PORTVERSION=	4.0.6
-PORTREVISION?=	4
+PORTREVISION?=	5
 CATEGORIES?=	www
 MASTER_SITES=	http://us.php.net/${PHP_DISTDIR}/ \
 		http://php.he.net/${PHP_DISTDIR}/ \
@@ -20,7 +20,8 @@ MASTER_SITES=	http://us.php.net/${PHP_DISTDIR}/ \
 		http://php3.globe.de/${PHP_DISTDIR}/
 DISTNAME=	php-${PORTVERSION}
 
-PATCHFILES=	patch-ext_gd_config.m4 patch-ext_gd_gd.c patch-ext_sybase_ct_config.m4
+PATCHFILES=	patch-ext_gd_config.m4 patch-ext_gd_gd.c patch-ext_sybase_ct_config.m4 \
+		patch-ext_gd_gd_2.c
 PATCH_SITES=	http://www.physik.tu-berlin.de/~ibex/ports/distfiles/ \
 		${MASTER_SITE_LOCAL}/dirk/
 
