@@ -14,6 +14,7 @@
     SUBDIR += ample
     SUBDIR += arts
     SUBDIR += ascd
+    SUBDIR += aube
     SUBDIR += audacity
     SUBDIR += aumix
     SUBDIR += aureal-kmod

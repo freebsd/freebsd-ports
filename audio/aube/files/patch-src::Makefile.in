@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Tue Jun 10 00:01:16 2003
++++ src/Makefile.in	Tue Jun 10 00:01:40 2003
+@@ -88,7 +88,7 @@
+ INCLUDES = -DDATADIR=\"$(pkgdatadir)\"  @GTK_CFLAGS@ @AUDIOFILE_CFLAGS@
+ 
+ 
+-aube_LDADD =   modules/libmodules.a @AUDIOFILE_LIBS@ @GTK_LIBS@ -lgdk_imlib
++aube_LDADD =   modules/libmodules.a @AUDIOFILE_LIBS@ @GTK_LIBS@ @GDK_IMLIB_LIBS@ 
+ 
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h

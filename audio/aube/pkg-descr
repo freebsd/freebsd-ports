@@ -1,0 +1,6 @@
+AUBE is a system for sound generation and processing. You can
+process audio on the fly by setting up arbitrary configurations
+of sound generators, sequencers and effects modules, through
+which sound is played, filtered, and recorded.
+
+WWW: http://www.metadecks.org/software/aube

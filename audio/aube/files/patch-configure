@@ -1,0 +1,72 @@
+--- configure.orig	Tue Jun 10 00:01:58 2003
++++ configure	Tue Jun 10 00:04:25 2003
+@@ -2250,27 +2250,29 @@
+ 
+ #AM_PATH_GENERIC(xml, 0.99.0)
+ 
+-echo $ac_n "checking for  in -l""... $ac_c" 1>&6
+-echo "configure:2255: checking for  in -l" >&5
+-ac_lib_var=`echo '_' | sed 'y%./+-%__p_%'`
++LIBS=""
++echo $ac_n "checking for gdk_imlib_render in -lgdk_imlib""... $ac_c" 1>&6
++echo "configure:6942: checking for gdk_imlib_render in -lgdk_imlib" >&5
++ac_lib_var=`echo gdk_imlib'_'gdk_imlib_render | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-l  $LIBS"
+-cat > conftest.$ac_ext <<EOF
+-#line 2263 "configure"
++GDK_IMLIB_LIBS=`imlib-config --libs-gdk`
++LIBS="${GTK_LIBS} ${GDK_IMLIB_LIBS}  $LIBS"
++cat > conftest.$ac_ext <<EOF   
++#line 6950 "configure"
+ #include "confdefs.h"
+ /* Override any gcc2 internal prototype to avoid an error.  */
+ /* We use char because int might match the return type of a gcc2
+     builtin and then its argument prototype would still apply.  */
+-char ();
++char gdk_imlib_render();
+ 
+ int main() {
+-()
++gdk_imlib_render()
+ ; return 0; }
+ EOF
+-if { (eval echo configure:2274: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
++if { (eval echo configure:6961: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+   rm -rf conftest*
+   eval "ac_cv_lib_$ac_lib_var=yes"
+ else
+@@ -2285,18 +2287,19 @@
+ fi
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+-    ac_tr_lib=HAVE_LIB`echo  | sed -e 's/[^a-zA-Z0-9_]/_/g' \
++    ac_tr_lib=HAVE_LIB`echo gdk_imlib | sed -e 's/[^a-zA-Z0-9_]/_/g' \
+     -e 'y/abcdefghijklmnopqrstuvwxyz/ABCDEFGHIJKLMNOPQRSTUVWXYZ/'`
+   cat >> confdefs.h <<EOF
+ #define $ac_tr_lib 1
+ EOF
+ 
+-  LIBS="-l $LIBS"
++  LIBS="-lgdk_imlib $LIBS"
+ 
+ else
+   echo "$ac_t""no" 1>&6
++echo "Imlib not found!"; exit 0
+ fi
+- (gdk_imlib, gdk_imlib_init)
++
+ 
+ echo $ac_n "checking for XpmReadFileToXpmImage in -lXpm""... $ac_c" 1>&6
+ echo "configure:2303: checking for XpmReadFileToXpmImage in -lXpm" >&5
+@@ -2743,6 +2746,7 @@
+ s%@GTK_CONFIG@%$GTK_CONFIG%g
+ s%@GTK_CFLAGS@%$GTK_CFLAGS%g
+ s%@GTK_LIBS@%$GTK_LIBS%g
++s%@GDK_IMLIB_LIBS@%$GDK_IMLIB_LIBS%g
+ 
+ CEOF
+ EOF
