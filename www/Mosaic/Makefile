@@ -1,13 +1,13 @@
 # New ports collection makefile for:    Mosaic browser
-# Version required:     2.7b4
+# Version required:     2.7b5
 # Date created:         7 August 1995
 # Whom:                 torstenb
 #
-# $Id: Makefile,v 1.7 1996/02/19 21:39:24 ache Exp $
+# $Id: Makefile,v 1.8 1996/04/11 09:07:07 asami Exp $
 #
 
-DISTNAME=       Mosaic-src-2.7b4
-PKGNAME=        mosaic-2.7b4
+DISTNAME=       Mosaic-src-2.7b5
+PKGNAME=        mosaic-2.7b5
 CATEGORIES+=	www
 MASTER_SITES=	ftp://ftp.ncsa.uiuc.edu/Web/Mosaic/Unix/source/
 
@@ -19,10 +19,6 @@ REQUIRES_MOTIF=	yes
 WRKSRC=		${WRKDIR}/Mosaic-src
 ALL_TARGET=	bsdi
 USE_X11=	yes
-
-# don't waste diskspace
-post-extract:
-	@rm -rf ${WRKSRC}/libjpeg ${WRKSRC}/libpng
 
 do-install:
 	${INSTALL} -c -s -g ${BINGRP} -m ${BINMODE} -o ${BINOWN} ${WRKSRC}/src/Mosaic ${PREFIX}/bin/Mosaic
