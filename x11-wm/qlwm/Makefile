@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	qlwm
-PORTVERSION=	2.1
+PORTVERSION=	2.3
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.netcologne.de/~nc-lindenal/qlwm/
 
