@@ -1,0 +1,54 @@
+# New ports collection makefile for:   uim
+# Date created:        31 August 2003
+# Whom:                MANTANI Nobutaka <nobutaka@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	uim
+PORTVERSION=	0.0.2.1
+CATEGORIES=	japanese x11
+MASTER_SITES=	http://downloads.sourceforge.jp/anthy/5771/
+
+MAINTAINER=	nobutaka@FreeBSD.org
+COMMENT=	Input method library
+
+LIB_DEPENDS=	anthy.0:${PORTSDIR}/japanese/anthy
+
+USE_X_PREFIX=	yes
+INSTALLS_SHLIB=	yes
+WANT_GNOME=	yes
+USE_GNOME=	gnometarget glib20
+USE_GMAKE=	yes
+USE_LIBTOOL=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
+		LDFLAGS="-L${X11BASE}/lib  -L${LOCALBASE}/lib"
+
+DOCSDIR_JA=	${PREFIX}/share/doc/ja/uim
+PLIST_SUB+=	DOCSDIR_JA="${DOCSDIR_JA:S,^${PREFIX}/,,}"
+
+.include <bsd.port.pre.mk>
+
+.if ${HAVE_GNOME:Mgtk20}
+USE_GNOME+=	gtk20
+PLIST_SUB+=	GTK=""
+.else
+PLIST_SUB+=	GTK="@comment "
+.endif
+
+.if ${HAVE_GNOME:Mlibgnome}
+USE_GNOME+=	libgnome
+PLIST_SUB+=	GNOME=""
+.else
+PLIST_SUB+=	GNOME="@comment "
+.endif
+
+.if !defined(NOPORTDOCS)
+post-install:
+	${MKDIR} ${DOCSDIR_JA}
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.ja ${DOCSDIR_JA}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.endif
+
+.include <bsd.port.post.mk>

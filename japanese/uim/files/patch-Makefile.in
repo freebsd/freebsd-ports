@@ -1,0 +1,13 @@
+--- Makefile.in.orig	Sat Aug 30 09:37:54 2003
++++ Makefile.in	Sun Aug 31 15:38:52 2003
+@@ -131,7 +131,9 @@
+ am__quote = @am__quote@
+ install_sh = @install_sh@
+ AUTOMAKE_OPTIONS = foreign
+-SUBDIRS = m4 doc scm uim xim helper po gtk
++SUBDIRS = m4 doc scm uim xim po
++@GTK2_TRUE@SUBDIRS := $(SUBDIRS) gtk
++@GNOME2_TRUE@SUBDIRS := $(SUBDIRS) helper
+ EXTRA_DIST = README.ja INSTALL.ja test.sh.in uim.spec.in \
+ 	intltool-extract.in intltool-merge.in intltool-update.in
+ 
