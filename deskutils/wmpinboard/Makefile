@@ -11,7 +11,7 @@ CATEGORIES=	deskutils afterstep windowmaker
 MASTER_SITES=	http://www.tu-ilmenau.de/~gomar/stuff/wmpinboard/ \
 		http://soupnazi.org/FreeBSD/ports/distfiles/
 
-MAINTAINER=	jim@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Post-it notes for the WindowMaker dock or AfterStep Wharf
 
 USE_BZIP2=	yes

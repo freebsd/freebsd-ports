@@ -13,7 +13,7 @@ MASTER_SITES=	http://atlas.ucpel.tche.br/~acamargo/ \
 MASTER_SITE_SUBDIR=	jim
 DISTNAME=	wmtictactoe-1.1-1
 
-MAINTAINER=	jim@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A dockable TicTacToe game for WindowMaker and AfterStep
 
 USE_GMAKE=	yes

@@ -11,7 +11,7 @@ CATEGORIES=	x11-clocks windowmaker afterstep
 MASTER_SITES=	http://solfertje.student.utwente.nl/~dalroi/wmdate/files/ \
 		http://soupnazi.org/FreeBSD/ports/distfiles/
 
-MAINTAINER=	jim@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Date app for the WindowMaker dock
 
 BUILD_DEPENDS=	${X11BASE}/include/dockapp.h:${PORTSDIR}/x11-wm/libdockapp

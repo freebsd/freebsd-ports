@@ -10,7 +10,7 @@ PORTVERSION=	1.1.4
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.cse.unl.edu/~cluening/gaddr/
 
-MAINTAINER=	jim@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GTK (and optionally, GNOME) address book
 
 USE_X_PREFIX=	yes
