@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	SimGear
-PORTVERSION=	0.3.4
+PORTVERSION=	0.3.5
 CATEGORIES=	devel games
 MASTER_SITES=	ftp://ftp.simgear.org/pub/simgear/Source/ \
 		ftp://ftp.de.flightgear.org/pub/simgear/Source/
@@ -22,12 +22,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libmk4.so:${PORTSDIR}/databases/metakit \
 		${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
 
 USE_X_PREFIX=	yes
-USE_MESA=	yes
+USE_GL=		yes
 GNU_CONFIGURE=	yes
-# Force configure to look in /usr/local/{include,lib}
-CONFIGURE_ENV+=	CC="${CC}" CFLAGS="${CFLAGS}" \
-		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
-		CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

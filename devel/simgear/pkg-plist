@@ -3,6 +3,7 @@ include/simgear/compiler.h
 include/simgear/constants.h
 include/simgear/debug/debug_types.h
 include/simgear/debug/logstream.hxx
+include/simgear/environment/metar.hxx
 include/simgear/ephemeris/celestialBody.hxx
 include/simgear/ephemeris/ephemeris.hxx
 include/simgear/ephemeris/jupiter.hxx
@@ -34,8 +35,7 @@ include/simgear/math/sg_memory.h
 include/simgear/math/sg_random.h
 include/simgear/math/sg_types.hxx
 include/simgear/math/vector.hxx
-include/simgear/metar/MetarReport.h
-include/simgear/metar/MetarStation.h
+include/simgear/misc/interpolator.hxx
 include/simgear/misc/sg_path.hxx
 include/simgear/misc/sgstream.hxx
 include/simgear/misc/stopwatch.hxx
@@ -43,6 +43,7 @@ include/simgear/misc/strutils.hxx
 include/simgear/misc/tabbed_values.hxx
 include/simgear/misc/texcoord.hxx
 include/simgear/misc/zfstream.hxx
+include/simgear/nasal/nasal.h
 include/simgear/props/condition.hxx
 include/simgear/props/props.hxx
 include/simgear/props/props_io.hxx
@@ -70,6 +71,7 @@ include/simgear/scene/tgdb/leaf.hxx
 include/simgear/scene/tgdb/obj.hxx
 include/simgear/scene/tgdb/pt_lights.hxx
 include/simgear/scene/tgdb/userdata.hxx
+include/simgear/scene/tgdb/vasi.hxx
 include/simgear/screen/colors.hxx
 include/simgear/screen/extensions.hxx
 include/simgear/screen/screen-dump.hxx
@@ -99,14 +101,15 @@ include/simgear/xml/easyxml.hxx
 lib/libsgbucket.a
 lib/libsgclouds3d.a
 lib/libsgdebug.a
+lib/libsgenvironment.a
 lib/libsgephem.a
 lib/libsgio.a
 lib/libsgmagvar.a
 lib/libsgmaterial.a
 lib/libsgmath.a
-lib/libsgmetar.a
 lib/libsgmisc.a
 lib/libsgmodel.a
+lib/libsgnasal.a
 lib/libsgprops.a
 lib/libsgroute.a
 lib/libsgscreen.a
@@ -135,12 +138,13 @@ lib/libsgxml.a
 @dirrm include/simgear/scene
 @dirrm include/simgear/route
 @dirrm include/simgear/props
+@dirrm include/simgear/nasal
 @dirrm include/simgear/misc
-@dirrm include/simgear/metar
 @dirrm include/simgear/math
 @dirrm include/simgear/magvar
 @dirrm include/simgear/io
 @dirrm include/simgear/ephemeris
+@dirrm include/simgear/environment
 @dirrm include/simgear/debug
 @dirrm include/simgear/bucket
 @dirrm include/simgear
