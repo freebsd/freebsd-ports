@@ -1,0 +1,7 @@
+eCos is an open source, configurable, portable, and royalty-free
+embedded real-time operating system.
+
+This port installs the configuration tools to manage the eCos build
+environment, ecosconfig and configtool.
+
+WWW: http://ecos.sourceware.org/
