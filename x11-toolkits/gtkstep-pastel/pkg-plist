@@ -1,0 +1,6 @@
+lib/gtk/themes/engines/libsteppastel.so
+share/themes/StepPastel/ICON.png
+share/themes/StepPastel/README.html
+share/themes/StepPastel/gtk/gtkrc
+@dirrm share/themes/StepPastel/gtk
+@dirrm share/themes/StepPastel
