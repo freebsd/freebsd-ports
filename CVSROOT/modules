@@ -1251,6 +1251,7 @@ darkice		ports/audio/darkice
 darkstat	ports/net-mgmt/darkstat
 darts		ports/devel/darts
 dasher		ports/accessibility/dasher
+datadesigner	ports/devel/datadesigner
 datapipe	ports/net/datapipe
 dataplot	ports/graphics/dataplot
 datedif		ports/misc/datedif
