@@ -1,0 +1,22 @@
+*** configure.orig	Mon Jun 23 13:49:07 1997
+--- configure	Mon Jun 23 13:51:27 1997
+*************** case "$OS_TYPE" in
+*** 1281,1288 ****
+      fi
+      if test "$OS_TYPE" = "FreeBSD" ; then
+        OS_TYPE="BSD"
+      fi
+!     CFLAGS="-DOS_${OS_TYPE} -DARCH_${ARCH_TYPE} -Wall -O6 -ffast-math -DNO_BYTE_SWAPPING ${CFLAGS_ARCH}"
+      ;;
+  
+    SunOS)
+--- 1281,1289 ----
+      fi
+      if test "$OS_TYPE" = "FreeBSD" ; then
+        OS_TYPE="BSD"
++       SOUNDCARD="HAVE_MACHINE_SOUNDCARD_H"
+      fi
+!     CFLAGS="-DOS_${OS_TYPE} -DARCH_${ARCH_TYPE} -Wall -O2 -m486 -pipe -ffast-math -DNO_BYTE_SWAPPING -D${SOUNDCARD} ${CFLAGS_ARCH}"
+      ;;
+  
+    SunOS)
