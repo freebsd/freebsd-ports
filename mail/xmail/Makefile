@@ -3,12 +3,12 @@
 # Date created:		15 July 1997
 # Whom:			Stephen Roznowski <sjr1@flash.net>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/01/09 04:57:37 andreas Exp $
 #
 
 DISTNAME=	xmail_1.6
 PKGNAME=	xmail-1.6
-CATEGORIES=	x11 mail
+CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
 
