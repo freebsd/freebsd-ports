@@ -32,6 +32,32 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="616cf823-f48b-11d8-9837-000c41e2cdad">
+    <topic>courier-imap -- format string vulnerability in debug mode</topic>
+    <affects>
+      <package>
+	<name>courier-imap</name>
+	<range><le>3.0.7,1</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>An iDEFENSE security advisory describes a format string
+	  vulnerability that could be exploited when Courier-IMAP is run
+	  in debug mode (DEBUG_LOGIN set).</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0777</cvename>
+      <url>http://lists.netsys.com/pipermail/full-disclosure/2004-August/025478.html</url>
+      <url>http://www.idefense.com/application/poi/display?id=131&amp;type=vulnerabilities&amp;flashstatus=false</url>
+    </references>
+    <dates>
+      <discovery>2004-08-18</discovery>
+      <entry>2004-08-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3243e839-f489-11d8-9837-000c41e2cdad">
     <topic>fidogate -- write files as `news' user</topic>
     <affects>
