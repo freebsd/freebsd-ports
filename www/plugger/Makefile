@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	plugger
-PORTVERSION=	3.3
-PORTREVISION=	2
+PORTVERSION=	4.0
 CATEGORIES=	www audio graphics
 MASTER_SITES=	http://fredrik.hubbe.net/plugger/ \
 		ftp://ftp.netscape.com/pub/sdk/plugin/unix/
@@ -16,21 +15,51 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} unix-sdk-3.0b5.tar.Z
 MAINTAINER=	jmcoopr@webmail.bmi.net
 
 RUN_DEPENDS=	${X11BASE}/bin/mozilla:${PORTSDIR}/www/mozilla \
-		${LOCALBASE}/bin/mpg123:${PORTSDIR}/audio/mpg123 \
-		${LOCALBASE}/bin/nspmod:${PORTSDIR}/audio/nspmod \
-		${LOCALBASE}/bin/sidplay:${PORTSDIR}/audio/sidplay \
-		${LOCALBASE}/bin/splay:${PORTSDIR}/audio/splay \
-		${LOCALBASE}/bin/timidity:${PORTSDIR}/audio/timidity++ \
-		${LOCALBASE}/bin/wavplay:${PORTSDIR}/audio/wavplay \
-		${LOCALBASE}/bin/mtvp:${PORTSDIR}/graphics/mtv \
 		${X11BASE}/bin/xanim:${PORTSDIR}/graphics/xanim \
-		${LOCALBASE}/bin/xloadimage:${PORTSDIR}/x11/xloadimage
+		${LOCALBASE}/bin/timidity:${PORTSDIR}/audio/timidity++ \
+		${LOCALBASE}/bin/mpg123:${PORTSDIR}/audio/mpg123 \
+		${LOCALBASE}/bin/wavplay:${PORTSDIR}/audio/wavplay \
+		${LOCALBASE}/bin/xmp:${PORTSDIR}/audio/xmp \
+		${LOCALBASE}/bin/sidplay:${PORTSDIR}/audio/sidplay \
+		${LOCALBASE}/bin/display:${PORTSDIR}/graphics/ImageMagick \
+		${X11BASE}/bin/gqview:${PORTSDIR}/graphics/gqview \
+		${X11BASE}/bin/gv:${PORTSDIR}/print/gv \
+		${X11BASE}/bin/abiword:${PORTSDIR}/editors/AbiWord \
+		${X11BASE}/bin/gnumeric:${PORTSDIR}/math/gnumeric \
+		${LOCALBASE}/bin/acroread4:${PORTSDIR}/print/acroread4
 
 USE_X_PREFIX=	yes
 
 MAN7=		plugger.7
 MANCOMPRESSED=	no
 ALL_TARGET=	freebsd-elf
+
+.include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/bin/mplayer)
+WITH_MPLAYER =	yes
+.endif
+
+.if exists(${LOCALBASE}/bin/mtvp)
+WITH_MTV =	yes
+.endif
+
+.if defined(WITH_MPLAYER)
+RUN_DEPENDS+=	${LOCALBASE}/bin/mplayer:${PORTSDIR}/graphics/mplayer
+.endif
+
+.if defined(WITH_MTV)
+RUN_DEPENDS+=	${LOCALBASE}/bin/mtvp:${PORTSDIR}/graphics/mtv
+.endif
+
+pre-extract:
+.if !defined(WITH_MPLAYER)
+	@${ECHO_MSG} "Enable mplayer for AVI video by defining WITH_MPLAYER."
+.endif
+
+.if !defined(WITH_MTV)
+	@${ECHO_MSG} "Enable mtvp for MPEG video by defining WITH_MTV."
+.endif
 
 post-patch:
 	@${MV} ${WRKSRC}/plugger.c ${WRKSRC}/plugger.c.orig
@@ -39,6 +68,8 @@ post-patch:
 	  ${WRKSRC}/plugger.c.orig > ${WRKSRC}/plugger.c
 
 do-install:
+	@${INSTALL_PROGRAM} ${WRKSRC}/plugger-${PORTVERSION} \
+		${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/plugger.so \
 		${PREFIX}/lib/mozilla/plugins/npplugger.so
 	@${INSTALL_MAN} ${WRKSRC}/plugger.7 ${MANPREFIX}/man/man7
@@ -46,6 +77,6 @@ do-install:
 	@${INSTALL_DATA} -b ${WRKSRC}/pluggerrc ${PREFIX}/etc
 
 post-install:
-	@${CAT} ${PKGMESSAGE} | ${SED} -e 's:/usr/X11R6:${PREFIX}:'
+	@${CAT} ${PKGMESSAGE} | sed -e 's|%%PREFIX%%|${PREFIX}|g'
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -2,9 +2,9 @@
 *****************************************************************
 NOTE:
 
-Edit the /usr/X11R6/etc/pluggerrc file as needed. It should work
-fine as is. If you had a previous /usr/X11R6/etc/pluggerrc file,
-it will be renamed /usr/X11R6/etc/pluggerrc.old.
+Edit the %%PREFIX%%/etc/pluggerrc file as needed. It should work
+fine as is. If you had a previous %%PREFIX%%/etc/pluggerrc file,
+it will be renamed %%PREFIX%%/etc/pluggerrc.old.
 
 This Plugger port will install a default set of multimedia utilities
 that I have found to work well. Other combinations may work also.
@@ -15,10 +15,9 @@ Plugger searches for pluggerrc files in the following order:
 ~/.netscape/pluggerrc
 ~/.mozilla/pluggerrc
 $MOZILLA_HOME/pluggerrc  (MOZILLA_HOME is usually equal to HOME)
-/usr/local/netscape/pluggerrc
 /etc/pluggerrc
 /usr/etc/pluggerrc
-/usr/local/etc/pluggerrc
+%%PREFIX%%/etc/pluggerrc
 ./pluggerrc
 
 Whichever pluggerrc is found first in the above order will be
