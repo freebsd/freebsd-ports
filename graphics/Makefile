@@ -50,7 +50,6 @@
     SUBDIR += electriceyes
     SUBDIR += enfle
     SUBDIR += entice
-    SUBDIR += eog
     SUBDIR += eog2
     SUBDIR += epix
     SUBDIR += eps2png
