@@ -1,0 +1,40 @@
+%%EMACS_LIBDIR%%/site-lisp/semi/mime-setup.el
+%%EMACS_LIBDIR%%/site-lisp/semi/mime-setup.elc
+%%EMACS_LIBDIR%%/site-lisp/semi/signature.el
+%%EMACS_LIBDIR%%/site-lisp/semi/signature.elc
+%%EMACS_LIBDIR%%/site-lisp/semi/semi-def.el
+%%EMACS_LIBDIR%%/site-lisp/semi/semi-def.elc
+%%EMACS_LIBDIR%%/site-lisp/semi/mime-image.el
+%%EMACS_LIBDIR%%/site-lisp/semi/mime-image.elc
+%%EMACS_LIBDIR%%/site-lisp/semi/mime-view.el
+%%EMACS_LIBDIR%%/site-lisp/semi/mime-view.elc
+%%EMACS_LIBDIR%%/site-lisp/semi/mime-text.el
+%%EMACS_LIBDIR%%/site-lisp/semi/mime-text.elc
+%%EMACS_LIBDIR%%/site-lisp/semi/mime-play.el
+%%EMACS_LIBDIR%%/site-lisp/semi/mime-play.elc
+%%EMACS_LIBDIR%%/site-lisp/semi/mime-partial.el
+%%EMACS_LIBDIR%%/site-lisp/semi/mime-partial.elc
+%%EMACS_LIBDIR%%/site-lisp/semi/mime-edit.el
+%%EMACS_LIBDIR%%/site-lisp/semi/mime-edit.elc
+%%EMACS_LIBDIR%%/site-lisp/semi/semi-setup.el
+%%EMACS_LIBDIR%%/site-lisp/semi/semi-setup.elc
+%%EMACS_LIBDIR%%/site-lisp/semi/mail-mime-setup.el
+%%EMACS_LIBDIR%%/site-lisp/semi/mail-mime-setup.elc
+%%EMACS_LIBDIR%%/site-lisp/semi/mime-pgp.el
+%%EMACS_LIBDIR%%/site-lisp/semi/mime-mc.el
+%%EMACS_LIBDIR%%/site-lisp/semi/mime-bbdb.el
+%%EMACS_LIBDIR%%/site-lisp/semi/mime-w3.el
+@dirrm %%EMACS_LIBDIR%%/site-lisp/semi
+%%SEMIDOCDIR%%/ChangeLog
+%%SEMIDOCDIR%%/NEWS
+%%SEMIDOCDIR%%/README.en
+%%SEMIDOCDIR%%/TODO
+%%SEMIDOCDIR%%/VERSION
+@dirrm %%SEMIDOCDIR%%
+@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
+@unexec install-info --delete %D/info/mime-ui-en.info %D/info/dir
+info/mime-ui-en.info
+@exec install-info %D/info/mime-ui-en.info %D/info/dir
+@unexec install-info --delete %D/info/mime-ui-ja.info %D/info/dir
+info/mime-ui-ja.info
+@exec install-info %D/info/mime-ui-ja.info %D/info/dir
