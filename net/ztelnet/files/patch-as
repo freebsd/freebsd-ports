@@ -1,64 +1,61 @@
-diff -uNr ../ztelnet/zmodem/rz.c ./zmodem/rz.c
---- ../ztelnet/zmodem/rz.c	Mon Apr 24 14:28:22 1995
-+++ ./zmodem/rz.c	Wed Dec  3 04:07:46 1997
-@@ -1,5 +1,8 @@
--#define STATIC  static 
+diff -uNr --exclude=*.orig work.old/ztelnet/zmodem/rbsb.c work/ztelnet/zmodem/rbsb.c
+--- work.old/ztelnet/zmodem/rbsb.c	Mon Apr 24 23:09:14 1995
++++ work/ztelnet/zmodem/rbsb.c	Tue Jun 20 22:58:32 2000
+@@ -6,7 +6,7 @@
+  */
+ 
+ STATIC char *Copyr = "Copyright 1993 Omen Technology Inc All Rights Reserved";
 -
-+/*------Appended by yongari------*/
 +#define V7
-+#define NFGVMIN
-+/*-------------------------------*/
-+#define STATIC  static
- #define VERSION "3.25 2-11-95"
- #define PUBDIR "/usr/spool/uucppublic"
+ #ifdef V7
+ #include <sys/types.h>
+ #include <sys/stat.h>
+@@ -28,8 +28,6 @@
+ #define OS "SYS III/V"
+ #define MODE2OK
+ #include <string.h>
+-#include <stdlib.h>
+-#include <unistd.h>
+ #endif
  
-@@ -82,6 +85,27 @@
- #include <errno.h>
- extern int errno;
+ #ifdef POSIX
+@@ -41,8 +39,6 @@
+ #include <termios.h>
+ #define OS "POSIX"
+ #include <string.h>
+-#include <stdlib.h>
+-#include <unistd.h>
+ #ifndef READCHECK
+ #ifndef FIONREAD
+ #define SV
+@@ -70,6 +66,10 @@
+ #define sendline(c) net_putchar(c & 0377)
+ #define xsendline(c) net_putchar(c)
  
-+/*-----Appended by yongari to shut up compiler------*/
-+STATIC usage();
-+STATIC wcreceive();
-+STATIC wcrxpn();
-+STATIC wcrx();
-+STATIC wcgetsec();
-+STATIC procheader();
-+STATIC openit();
-+STATIC make_dirs();
-+STATIC putsec();
-+STATIC chkinvok();
-+STATIC checkpath();
-+STATIC tryz();
-+STATIC rzfiles();
-+STATIC rzfile();
-+STATIC closeit();
-+STATIC sys2();
-+STATIC exec2();
-+STATIC init_rz();
-+/*--------------------------------------------------*/
++/*----Appended by yongari to shut up compiler---*/
++STATIC zmputs();
++/*----------------------------------------------*/
 +
- #define OK 0
- #define FALSE 0
- #define TRUE 1
-@@ -195,10 +219,8 @@
+ STATIC char linbuf[HOWMANY];
+ STATIC int Lleft=0;		/* number of characters in linbuf */
+ STATIC jmp_buf tohere;		/* For the interrupt on RX timeout */
+@@ -84,8 +84,6 @@
  
- #include "zm.c"
- #include "zmr.c"
--STATIC int tryzhdrtype=ZRINIT;	/* Header type to send corresponding to Last rx close */
+ STATIC int Twostop;		/* Use two stop bits */
  
--/* PMS */
--#include "rz.h"
-+STATIC int tryzhdrtype=ZRINIT;	/* Header type to send corresponding to Last rx close */
+-/*PMS*/
+-STATIC zmputs(char *s);
  
- /* called by signal interrupt or terminate to clean things up */
- STATIC void
-@@ -339,8 +361,7 @@
- 	fprintf(stderr,"Copyright 1993 Omen Technology INC All Rights Reserved\n");
- 	fprintf(stderr,
- 	"See rz.doc for option descriptions and licensing information.\n\n");
--	fprintf(stderr,"Ported into telnet by Heo, Junhyeok, 1994.3.28\n");
--	fprintf(stderr,"Linux porting by Park Myeong Seok,   1995.4.23\n");
-+	fprintf(stderr,"Ported into telnet by Heo, Junhyeok 1994.3.28\n");
- 	Exit(2);
- }
- 
+ /*
+  *  The following uses an external rdchk() routine if available,
+@@ -292,10 +290,8 @@
+ STATIC init_rbsb()
+ {
+    int i;
+-#ifdef LLITOUT
+    Locmode = 0;
+    Locbit = LLITOUT;
+-#endif
+    Lleft = 0;
+ #ifdef ONEREAD
+    Readnum = 1;	

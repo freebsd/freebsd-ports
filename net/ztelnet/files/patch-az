@@ -1,17 +1,16 @@
-diff -uNr ../ztelnet/zmodem/zmr.c ./zmodem/zmr.c
---- ../ztelnet/zmodem/zmr.c	Mon Apr 24 14:07:17 1995
-+++ ./zmodem/zmr.c	Wed Dec  3 03:22:35 1997
-@@ -38,9 +38,10 @@
-  *
-  *	ZMODEM RLE compression and decompression functions
-  */
--/*PMS*/
--static zsdar32(char*, int, int);
--static zrdatr32(register char *buf, int length);
-+/*--- Appended by yongari yo shut up compiler -----*/
-+STATIC zsdar32();
-+STATIC zrdatr32();
-+/*-------------------------------------------------*/
+diff -uNr --exclude=*.orig work.old/ztelnet/zmodem/zmodem.h work/ztelnet/zmodem/zmodem.h
+--- work.old/ztelnet/zmodem/zmodem.h	Mon Apr 24 23:34:19 1995
++++ work/ztelnet/zmodem/zmodem.h	Tue Jun 20 22:58:33 2000
+@@ -117,9 +117,9 @@
+ /* Parameters for ZCOMMAND frame ZF0 (otherwise 0) */
+ #define ZCACK1	1	/* Acknowledge, then do command */
  
- /* Send data subpacket RLE encoded with 32 bit FCS */
- STATIC zsdar32(buf, length, frameend)
+-/* PMS
+-unsigned long rclhdr();
+-*/
++/*-----Modified by yongari to shut up compiler------*/
++/* unsigned long rclhdr(); */
++STATIC unsigned long rclhdr();
+ 
+ /* Globals used by ZMODEM functions */
+ extern Rxframeind;	/* ZBIN ZBIN32, or ZHEX type of frame */

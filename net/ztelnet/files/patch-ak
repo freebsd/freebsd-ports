@@ -1,133 +1,48 @@
-diff -uNr ../ztelnet/telnet/commands.c ./telnet/commands.c
---- ../ztelnet/telnet/commands.c	Wed Sep 20 00:03:45 1995
-+++ ./telnet/commands.c	Wed Dec  3 02:17:45 1997
-@@ -93,6 +93,10 @@
- static int margc;
- static char *margv[20];
+diff -uNr --exclude=*.orig work.old/ztelnet/telnet/Makefile.generic work/ztelnet/telnet/Makefile.generic
+--- work.old/ztelnet/telnet/Makefile.generic	Thu Sep 21 04:42:39 1995
++++ work/ztelnet/telnet/Makefile.generic	Tue Jun 20 22:58:31 2000
+@@ -19,28 +19,22 @@
+ #	@(#)Makefile.generic	5.5 (Berkeley) 3/1/91
+ #
  
-+    void send_wont();
-+    void send_dont();
-+    void send_will();
-+    void send_do();
-     static void
- makeargv()
- {
-@@ -230,10 +234,8 @@
-     int		nbyte;		/* Number of bytes to send this command */
-     int		what;		/* Character to be sent (<0 ==> special) */
- };
-+
- 
--/* PMS
--extern int
--*/
- static int
- 	send_esc P((void)),
- 	send_help P((void)),
-@@ -370,7 +372,6 @@
- send_docmd(name)
-     char *name;
- {
--    void send_do();
-     return(send_tncmd(send_do, "do", name));
- }
- 
-@@ -378,21 +379,18 @@
- send_dontcmd(name)
-     char *name;
- {
--    void send_dont();
-     return(send_tncmd(send_dont, "dont", name));
- }
-     static int
- send_willcmd(name)
-     char *name;
- {
--    void send_will();
-     return(send_tncmd(send_will, "will", name));
- }
-     static int
- send_wontcmd(name)
-     char *name;
- {
--    void send_wont();
-     return(send_tncmd(send_wont, "wont", name));
- }
- 
-@@ -590,11 +588,8 @@
-     return 1;
- }
- 
--/* PMS
--extern int togglehelp P((void));
--*/
--static int togglehelp P((void));
- 
-+static int togglehelp P((void));
- #if	defined(AUTHENTICATE)
- extern int auth_togdebug P((int));
- #endif
-@@ -828,12 +823,8 @@
-  */
- 
- #ifdef	USE_TERMIO
--#ifdef BYPMS
--struct termios new_tc = { 0 };
--#else
- struct termio new_tc = { 0 };
- #endif
--#endif
- 
- struct setlist {
-     char *name;				/* name */
-@@ -1559,9 +1550,6 @@
- 	int	arg;
- };
- 
--/* PMS
--extern void slc_help();
--*/
- static void slc_help();
- 
- struct slclist SlcList[] = {
-@@ -1640,15 +1628,13 @@
- 
- extern struct env_lst *
- 	env_define P((unsigned char *, unsigned char *));
--extern void
-+static void
- 	env_undefine P((unsigned char *)),
- 	env_export P((unsigned char *)),
- 	env_unexport P((unsigned char *)),
- 	env_send P((unsigned char *)),
--	env_list P((void));
+-INCLUDES=	-I..
 -
--/* PMS: extern is replaced by static */
--static	void env_help P((void));
-+	env_list P((void)),
-+	env_help P((void));
+-ifeq (linux,${LINUX})
+-ARPA_TELNET=	../arpa/tel-lnx.h
+-CFLAGS=	${LCCFLAGS} ${INCLUDES} ${DEFINES}
+-else
+-ARPA_TELNET=	../arpa/telnet.h
+-CFLAGS=	-O ${INCLUDES} ${DEFINES}
+-endif
++INCLUDES= -I..
++ARPA_TELNET= ../arpa/telnet.h
  
- struct envlist EnvList[] = {
-     { "define",	"Define an environment variable",
-@@ -2232,7 +2218,7 @@
-     register struct hostent *host = 0;
-     struct sockaddr_in sin;
-     struct servent *sp = 0;
--    unsigned long temp, inet_addr();
-+    unsigned long temp;/*, inet_addr();*/
-     extern char *inet_ntoa();
- #if	defined(IP_OPTIONS) && defined(IPPROTO_IP)
-     char *srp = 0, *strrchr();
-@@ -2489,11 +2475,7 @@
- 	envhelp[] =	"change environment variables ('environ ?' for more)",
- 	modestring[] = "try to enter line or character mode ('mode ?' for more)";
+ SRCS=	commands.c main.c network.c ring.c \
+ 	sys_bsd.c telnet.c terminal.c \
+ 	utilities.c ${GETOPT_SRC}
  
--/* PMS
--extern int	help();
--*/
--
--static int help();
-+static int	help();
++CFLAGS=	-O2 ${INCLUDES} ${DEFINES}
  
- static Command cmdtab[] = {
- 	{ "close",	closehelp,	bye,		1 },
+ ALLHC=	${SRCS} \
+ 	defines.h externs.h fdset.h general.h \
+ 	ring.h types.h
+ 
+ OBJS=	authenc.o commands.o main.o network.o ring.o sys_bsd.o \
+-	telnet.o terminal.o utilities.o ${GETOPT_OBJ} \
+-	../zmodem/rz.o ../zmodem/sz.o
++	telnet.o terminal.o utilities.o ${GETOPT_OBJ}
++
+ MAN=	telnet.0
+ 
+ #
+@@ -73,8 +67,8 @@
+ 	mkdep ${CFLAGS} `make clist`
+ 
+ install: ${MAN} FRC
+-	install -s -o bin -g bin -m 755 telnet ${LIBEXEC}
+-	install -c -o bin -g bin -m 444 telnet.0 ${DEST}/man/cat1
++	install -s -o bin -g bin -m 755 telnet ${DEST}
++	install -c -o bin -g bin -m 444 telnet.0 ${DESTDIR}/usr/man/cat1
+ 
+ lint: FRC ${SRCS}
+ 	lint ${CFLAGS} `make clist`

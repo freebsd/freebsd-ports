@@ -1,30 +1,49 @@
-diff -uNr ../ztelnet/zmodem/zm.h ./zmodem/zm.h
---- ../ztelnet/zmodem/zm.h	Mon Apr 24 14:27:16 1995
-+++ ./zmodem/zm.h	Thu Jan  1 00:00:00 1970
-@@ -1,26 +0,0 @@
--#ifndef STATIC
--#define STATIC static
--#endif
+diff -uNr --exclude=*.orig work.old/ztelnet/zmodem/zm.c work/ztelnet/zmodem/zm.c
+--- work.old/ztelnet/zmodem/zm.c	Mon Apr 24 23:31:24 1995
++++ work/ztelnet/zmodem/zm.c	Tue Jun 20 22:58:33 2000
+@@ -72,10 +72,7 @@
+ STATIC char Attn[ZATTNLEN+1];	/* Attention string rx sends to tx on err */
+ STATIC char *Altcan;		/* Alternate canit string */
+ 
+-STATIC int lastsent;	/* Last char we sent */
 -
--STATIC zsbhdr(int len, int type, register char *hdr);
--STATIC zsbh32(int len, register char *hdr, int type, int flavour);
--STATIC zshhdr(int len, int type, register char *hdr);
--STATIC zsdata(register char *buf, int length, int frameend);
--STATIC zsda32(register char *buf, int length, int frameend);
--STATIC zrdata(register char *buf, int length);
--STATIC zrdat32(register char *buf, int length);
--STATIC garbitch(void);
--STATIC zgethdr(char* hdr, int eflag);
--STATIC zrbhdr(register char *hdr);
--STATIC zrbhd32(register char *hdr);
--STATIC zrhhdr(char *hdr);
--STATIC zputhex(register int c);
--STATIC zsendline(int c);
--STATIC zgethex(void);
--STATIC zgeth1(void);
--STATIC zdlread(void);
--STATIC noxrd7(void);
--STATIC stohdr(unsigned long pos);
--STATIC unsigned long rclhdr(register char *hdr);
--STATIC init_zm(void);
--
+-/* PMS */
+-#include "zm.h"
++STATIC lastsent;	/* Last char we sent */
+ 
+ STATIC char *frametypes[] = {
+ 	"No Response to Error Correction Request",	/* -4 */
+@@ -110,6 +107,23 @@
+ 
+ STATIC char badcrc[] = "Bad CRC";
+ 
++/*---- Appended by yongari to shutu up compiler -----*/
++STATIC zsbh32();
++STATIC zsda32();
++STATIC zrdat32();
++STATIC garbitch();
++STATIC zrbhdr();
++STATIC zrbhd32();
++STATIC zrhhdr();
++STATIC zputhex();
++STATIC zsendline();
++STATIC zgethex();
++STATIC zgeth1();
++STATIC zdlread();
++STATIC noxrd7();
++/* STATIC unsigned long rclhdr();*/
++/*----------------------------------------------------*/
++
+ /* Send ZMODEM binary header hdr of type type */
+ STATIC zsbhdr(len, type, hdr)
+ register char *hdr;
+@@ -885,8 +899,7 @@
+ }
+ 
+ /* Recover a unsigned long integer from a header */
+-STATIC unsigned long
+-rclhdr(hdr)
++STATIC unsigned long rclhdr(hdr)
+ register char *hdr;
+ {
+ 	register unsigned long l;
