@@ -1,0 +1,10 @@
+--- ext/pgsql/php_pgsql.h~	Wed Sep 13 06:13:36 2000
++++ ext/pgsql/php_pgsql.h	Sat Apr 21 20:26:21 2001
+@@ -29,7 +29,6 @@
+ 
+ #ifdef PHP_PGSQL_PRIVATE
+ #undef SOCKET_SIZE_TYPE
+-#include <postgres.h>
+ #include <libpq-fe.h>
+ 
+ #ifdef PHP_WIN32

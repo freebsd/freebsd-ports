@@ -113,8 +113,15 @@ while [ "$1" ]; do
 			;;
 		\"PostgreSQL\")
 			echo "LIB_DEPENDS+=	pq.2:\${PORTSDIR}/databases/postgresql7"
-			echo "CONFIGURE_ARGS+=--with-pgsql=\${PREFIX}"
-			if /usr/bin/ldd ${PREFIX}/bin/postgres 2> /dev/null | /usr/bin/grep -q "libssl"; then
+			if [ -x ${PREFIX}/pgsql/bin/postgres -a ! -x ${PREFIX}/bin/postgres ]; then
+				PGPREFIX=${PREFIX}/pgsql
+			else
+				PGPREFIX=${PREFIX}
+				echo "CFLAGS+=-I\${PREFIX}/include/pgsql"
+			fi
+			echo "PGPREFIX=${PGPREFIX}"
+			echo "CONFIGURE_ARGS+=--with-pgsql=\${PGPREFIX}"
+			if /usr/bin/ldd ${PGPREFIX}/bin/postgres 2> /dev/null | /usr/bin/grep -q "libssl"; then
 				echo "USE_OPENSSL=	yes"
 				LIBS="${LIBS} -L\${OPENSSLBASE}/lib -lcrypto -lssl"
 			fi
