@@ -71,9 +71,10 @@ CATEGORIES+=	mail
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
 .endif
-MASTER_SITES=	ftp://ftp.demon.co.uk/pub/mirrors/mutt/devel/ \
-		ftp://ftp.parodius.com/pub/mutt/devel/ \
-		ftp://ftp.mutt.org/mutt/devel/
+MASTER_SITES=	ftp://ftp.mutt.org/mutt/devel/ \
+		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/devel/ \
+		ftp://ftp.demon.co.uk/pub/mirrors/mutt/devel/ \
+		ftp://ftp.parodius.com/pub/mutt/devel/
 DISTNAME=	mutt-${PORTVERSION}i
 
 PATCH_SITES=	http://www.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv \
