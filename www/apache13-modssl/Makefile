@@ -56,7 +56,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--server-uid=www \
 		--server-gid=www \
 		--with-perl=${PERL} \
-		--with-layout=${FILESDIR}/FreeBSD.layout:FreeBSD \
+		--with-layout=FreeBSD \
 		--suexec-docroot=${PREFIX}/www/data \
 		--without-confadjust \
 		--enable-module=most \
