@@ -12,7 +12,7 @@ lib/libexif.a
 lib/libexif.so
 lib/libexif.so.10
 libdata/pkgconfig/libexif.pc
-share/locale/de/LC_MESSAGES/libexif.mo
-share/locale/es/LC_MESSAGES/libexif.mo
-share/locale/fr/LC_MESSAGES/libexif.mo
+%%NLS%%share/locale/de/LC_MESSAGES/libexif.mo
+%%NLS%%share/locale/es/LC_MESSAGES/libexif.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/libexif.mo
 @dirrm include/libexif

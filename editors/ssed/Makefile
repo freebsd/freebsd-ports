@@ -17,10 +17,17 @@ COMMENT=	Super-sed is a heavily enhanced version of sed
 
 LIB_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
 
-USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} --program-prefix=s
 
 MAN1=	ssed.1
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 .include <bsd.port.mk>
