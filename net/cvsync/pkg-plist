@@ -2,6 +2,7 @@
 bin/cvscan
 bin/cvsup2cvsync
 bin/cvsync
+bin/cvsync2cvsup
 bin/cvsyncd
 bin/rcscan
 bin/rcscmp
@@ -11,7 +12,7 @@ bin/rcscmp
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%EXAMPLESDIR%%/cvsync.conf
-%%EXAMPLESDIR%%/cvsyncd.conf
+%%EXAMPLESDIR%%/cvsyncd-FreeBSD.conf
 %%EXAMPLESDIR%%/cvsyncd-NetBSD.conf
 %%EXAMPLESDIR%%/cvsyncd-OpenBSD.conf
 @dirrm %%EXAMPLESDIR%%
