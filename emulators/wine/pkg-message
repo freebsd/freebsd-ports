@@ -1,7 +1,5 @@
 In order to use wine you need to build and install a new kernel with
-options USER_LDT, SYSVSHM, SYSVSEM, and SYSVMSG.  Before you do that,
-you may want to apply the patches in %%PREFIX%%/lib/wine to your
-kernel sources, see the README.patch there.
+options USER_LDT, SYSVSHM, SYSVSEM, and SYSVMSG.
 
 And the port now also installs some of wine's doc files which
 describe additional things that are not in the manual pages, see
