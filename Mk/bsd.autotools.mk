@@ -54,7 +54,7 @@ Autotools_Include_MAINTAINER=	ade@FreeBSD.org
 #---------------------------------------------------------------------------
 #
 # USE_LIBLTDL=yes
-#	- Convenience knob to depend on the library from devel/libltdl
+#	- Convenience knob to depend on the library from devel/libltdl15
 #
 # USE_LIBTOOL_VER=<value>
 #	- Port wishes to use libtool, including the configuration step
@@ -96,7 +96,7 @@ Autotools_Include_MAINTAINER=	ade@FreeBSD.org
 #	autotools knobs
 #
 # - USE_LIBLTDL has been added as a convenience function to provide
-#	a lib dependency on devel/libltdl, so that if the major version
+#	a lib dependency on devel/libltdl15, so that if the major version
 #	number changes in future, only one item has to be updated
 #
 # - {WANT,USE}_AUTOMAKE_VER no longer automatically brings in
@@ -256,10 +256,10 @@ RUN_DEPENDS+=		${AUTOCONF_DEPENDS}
 #---------------------------------------------------------------------------
 
 # Convenience function to save people having to depend directly on
-# devel/libltdl
+# devel/libltdl15
 #
 .if defined(USE_LIBLTDL)
-LIB_DEPENDS+=	ltdl.4:${PORTSDIR}/devel/libltdl
+LIB_DEPENDS+=	ltdl.4:${PORTSDIR}/devel/libltdl15
 .endif
 
 .if defined(USE_LIBTOOL_VER)
