@@ -1,16 +1,31 @@
 
 $FreeBSD$
 
---- configure.orig	Mon Jul 23 14:48:10 2001
-+++ configure	Mon Jul 23 15:12:50 2001
-@@ -7452,14 +7452,14 @@
+--- configure.orig	Mon May 28 20:11:23 2001
++++ configure	Mon May 28 20:14:20 2001
+@@ -7606,10 +7606,10 @@
+   else
+      echo "$ac_t""no" 1>&6
+      if test "$GTK_CONFIG_2_0" = "no" ; then
+-       echo "*** The gtk-config-2.0 script installed by GTK could not be found"
+-       echo "*** If GTK was installed in PREFIX, make sure PREFIX/bin is in"
+-       echo "*** your path, or set the GTK_CONFIG_2_0 environment variable to the"
+-       echo "*** full path to gtk-config-2.0."
++#       echo "*** The gtk-config-2.0 script installed by GTK could not be found"
++#       echo "*** If GTK was installed in PREFIX, make sure PREFIX/bin is in"
++#       echo "*** your path, or set the GTK_CONFIG_2_0 environment variable to the"
++#       echo "*** full path to gtk-config-2.0."
+      else
+        if test -f conf.gtktest ; then
+         :
+@@ -7941,14 +7941,14 @@
      TOOLKIT=GTK
      GUIDIST=GTK_DIST
  
 -        echo $ac_n "checking for gdk_im_open in -lgdk""... $ac_c" 1>&6
--echo "configure:7457: checking for gdk_im_open in -lgdk" >&5
+-echo "configure:7946: checking for gdk_im_open in -lgdk" >&5
 +        echo $ac_n "checking for gdk_im_open in -lgdk12""... $ac_c" 1>&6
-+echo "configure:7457: checking for gdk_im_open in -lgdk12" >&5
++echo "configure:7946: checking for gdk_im_open in -lgdk12" >&5
  ac_lib_var=`echo gdk'_'gdk_im_open | sed 'y%./+-%__p_%'`
  if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
@@ -19,9 +34,9 @@ $FreeBSD$
 -LIBS="-lgdk  $LIBS"
 +LIBS="-lgdk12  $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 7465 "configure"
+ #line 7954 "configure"
  #include "confdefs.h"
-@@ -8707,16 +8707,12 @@
+@@ -9207,16 +9207,12 @@
  WX_LIBRARY_NAME_STATIC="lib${WX_LIBRARY}.a"
  WX_LIBRARY_NAME_STATIC_GL="lib${WX_LIBRARY}_gl.a"
  
@@ -43,23 +58,15 @@ $FreeBSD$
  SHARED_LD=
  PIC_FLAG=
  WX_ALL=
-@@ -8805,8 +8801,13 @@
-       *-*-freebsd* | *-*-openbsd* | *-*-netbsd*)
-         SHARED_LD="${CC} -shared -o"
-         PIC_FLAG="-fPIC"
--        WX_ALL_INSTALLED="CREATE_INSTALLED_LINKS"
--        WX_ALL="CREATE_LINKS"
-+        if test "$wxUSE_OPENGL" = "yes"; then
-+            WX_ALL_INSTALLED="CREATE_INSTALLED_LINKS CREATE_INSTALLED_LINKS_GL"
-+            WX_ALL="CREATE_LINKS CREATE_LINKS_GL"
-+        else
-+            WX_ALL_INSTALLED="CREATE_INSTALLED_LINKS"
-+            WX_ALL="CREATE_LINKS"
-+        fi
-       ;;
-       *-*-osf* )
-         SHARED_LD="${CXX} -shared -o"
-@@ -12054,24 +12055,6 @@
+@@ -12945,6 +12941,7 @@
+   fi
+ fi
+ 
++WXGTK20=
+ if test "$WXGTK20" = 1 ; then
+   cat >> confdefs.h <<EOF
+ #define __WXGTK20__ $WXGTK20
+@@ -13115,24 +13112,6 @@
  fi
  
  
@@ -84,7 +91,7 @@ $FreeBSD$
  ZLIB_INCLUDE=
  if test "$wxUSE_ZLIB" = "yes" -o "$wxUSE_ZLIB" = "sys" ; then
    cat >> confdefs.h <<\EOF
-@@ -14754,8 +14737,6 @@
+@@ -15947,8 +15926,6 @@
  s%@WX_LIBRARY@%$WX_LIBRARY%g
  s%@WX_TARGET_LIBRARY@%$WX_TARGET_LIBRARY%g
  s%@WX_LIBRARY_LINK1@%$WX_LIBRARY_LINK1%g
@@ -93,7 +100,7 @@ $FreeBSD$
  s%@PROGRAM_EXT@%$PROGRAM_EXT%g
  s%@WX_LIBRARY_NAME_GL@%$WX_LIBRARY_NAME_GL%g
  s%@WX_LIBRARY_NAME_STATIC_GL@%$WX_LIBRARY_NAME_STATIC_GL%g
-@@ -14763,8 +14744,6 @@
+@@ -15956,8 +15933,6 @@
  s%@WX_LIBRARY_GL@%$WX_LIBRARY_GL%g
  s%@WX_TARGET_LIBRARY_GL@%$WX_TARGET_LIBRARY_GL%g
  s%@WX_LIBRARY_LINK1_GL@%$WX_LIBRARY_LINK1_GL%g
