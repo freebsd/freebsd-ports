@@ -1,4 +1,4 @@
---- foxTypedOpts.tcl.orig	Sat Feb 19 19:46:50 1994
+--- foxTypedOpts.tcl	Sat Feb 19 19:46:50 1994
 +++ foxTypedOpts.tcl	Thu Mar 18 16:15:13 1999
 @@ -80,9 +80,8 @@
  # typedopts several times with different <arg-list>s without losing the
@@ -32,7 +32,7 @@
          return 0
        }
      }
-@@ -315,54 +312,52 @@
+@@ -320,32 +317,28 @@
        "floats" -
        "strings" {
          if { [ llength $optlist ] } then {
@@ -55,14 +55,13 @@
          if { ! [ llength $optlist ] } then {
 -          puts stderr "typedopts:  No arguments given to type $type"
 -          return ""
--        }
--        if { ! [ string length [ set subtype [ parseOption $optlist ]]] } then {
--          return ""
 +          return -code error "typedopts:  No arguments given to type $type"
          }
-+	if [catch {parseOption $optlist} subtype] {
+-        if { ! [ string length [ set subtype [ parseOption $optlist ]]] } then {
+-          return ""
++        if {[catch {parseOption $optlist} subtype]} then {
 +	  return -code error $subtype
-+	}
+         }
          return [ concat [ string index $type 0 ] $subtype ]
        }
        default {
@@ -72,11 +71,7 @@
        }
      }
    }
-+}
-+
-+proc typedopts { args } {
- 
-   set doinit 1
+@@ -354,6 +347,5 @@
  
    if { [ llength $args ] < 5 } then {
 -    puts stderr "typedopts: bad number of arguments."
@@ -84,25 +79,14 @@
 +    return -code error "typedopts: bad number of arguments."
    }
  
--  set args [ extract $args arglist optlist optret argret restret ]
-+  set args [ foxOpts::extract $args arglist optlist optret argret restret ]
- 
-   while { [ llength $args ] } {
--    set opt [ shift args ]
--    switch -exact [ findabbr { -noinitialize } $opt ] {
-+    set opt [ foxOpts::shift args ]
-+    switch -exact [ foxOpts::findabbr { -noinitialize } $opt ] {
-       -noinitialize {
-         set doinit 0
+@@ -367,6 +359,5 @@
        }
        default {
 -        puts stderr "typedopts: bad option \"$opt\": should be -noinitialize or --"
 -        return -1
-+        return -code error \
-+		"typedopts: bad option \"$opt\": should be -noinitialize or --"
++        return -code error "typedopts: bad option \"$opt\": should be -noinitialize or --"
        }
      }
-   }
 @@ -380,16 +375,15 @@
      if { [ string length $type ] } then {
        foreach arg $word {

@@ -7,10 +7,10 @@
 
 PORTNAME=	tclGetOpts
 PORTVERSION=	1.0
-CATEGORIES=	devel tcl80 tcl82
-MASTER_SITES=	ftp://ftp.neosoft.com/languages/tcl/alcatel/code/ \
-		http://www.neosoft.com/tcl/ftparchive/alcatel/code/
+CATEGORIES=	devel tcl80 tcl82 tcl83 tcl84
+MASTER_SITES=	http://www.waxandwane.com/toolbox/tclGetOpts/
 DISTNAME=	${PORTNAME}
+EXTRACT_SUFX=	${PORTVERSION}.tar.gz
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Pure TCL code for command line options parsing
