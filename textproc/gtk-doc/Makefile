@@ -6,18 +6,21 @@
 #
 
 PORTNAME=	gtk-doc
-PORTVERSION=	0.9
+PORTVERSION=	1.1
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.gtk.org/pub/gtk/v1.1/docs/rdp/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	martin.klaffenboeck@gmx.at
 COMMENT=	Code documentation system, originally for GTK+
 
-BUILD_DEPENDS=	${LOCALBASE}/share/sgml/docbook/dsssl/modular/html/docbook.dsl:${PORTSDIR}/textproc/dsssl-docbook-modular
+BUILD_DEPENDS=	${LOCALBASE}/share/sk/docbook/${DOCBOOK_VERSION}/docbook.cat:${PORTSDIR}/textproc/docbook-sk
 RUN_DEPENDS=	jade:${PORTSDIR}/textproc/jade
+
+DOCBOOK_VERSION=	4.1.2
 
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-dsssl-dir=${LOCALBASE}/share/sgml/docbook/dsssl/modular
+USE_GNOME=	gnomehack gnometarget libxslt
+CONFIGURE_ARGS=	--with-xml-catalog=${LOCALBASE}/share/sk/docbook/catalog
 
 .include <bsd.port.mk>
