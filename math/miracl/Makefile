@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Multiprecision Integer and Rational Arithmetic C/C++ Library
 
+BROKEN=		Size mismatch
+
 USE_ZIP=	yes
 USE_REINPLACE=	yes
 NO_WRKSUBDIR=	ys

@@ -19,6 +19,8 @@ COMMENT=	A framework for experimental discrete mathematics
 
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 
+BROKEN=		Size mismatch
+
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
