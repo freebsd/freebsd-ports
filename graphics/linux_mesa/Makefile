@@ -20,6 +20,8 @@ BUILD_DEPENDS=	/compat/linux/usr/lib/libglide2x.so:${PORTSDIR}/graphics/linux_gl
 BROKEN=		linux crosscompilation needs to be fixed first
 ONLY_FOR_ARCHS=	i386
 
+NO_LATEST_LINK=	yes
+
 ALL_TARGET=	linux-glide
 MAKE_ENV=	PATH=${PREFIX}/usr/bin:$$PATH
 NO_FILTER_SHLIBS=yes
