@@ -1,17 +1,17 @@
 # New ports collection makefile for:   rexima
 # Date created:        15 Jul 2002
-# Whom:                Jerry Eriksson <jerry.e@gmx.net>
+# Whom:                Jerry Eriksson <jerry@freebsd.se>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	rexima
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/sound/mixers
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jerry@freebsd.se
 COMMENT=	A ncurses-based console mixer
 
 .include <bsd.port.pre.mk>
