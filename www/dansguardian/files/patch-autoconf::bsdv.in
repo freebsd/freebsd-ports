@@ -1,0 +1,37 @@
+--- autoconf/bsdv.in.orig	Mon Jul  7 12:04:33 2003
++++ autoconf/bsdv.in	Mon Jul  7 12:07:11 2003
+@@ -1,16 +1,26 @@
+ #!/bin/sh
+ #
+-# BSD startup script for dansguardian
+-# partly based on httpd startup script
++# BSD startup script for dansguardian.
+ #
+-# description: A web content filtering plugin for web \
+-#              proxies, developed to filter using lists of \
+-#              banned phrases, MIME types, filename \
++# description: A web content filtering plugin for web
++#              proxies, developed to filter using lists of
++#              banned phrases, MIME types, filename
+ #              extensions and PICS labling.
+ # processname: dansguardian
+
+-
+-# See how we were called.
+-
+ case "$1" in
+ start)
++	[ -x /usr/local/sbin/dansguardian ] && /usr/local/sbin/dansguardian
++	echo -n " dansguardian"
++	;;
++stop)
++	/usr/local/sbin/dansguardian -q
++	rm -f /tmp/.dguardianipc
++	echo -n " dansguardian"
++	;;
++*)
++	echo "Usage: $0 {start|stop|restart}"
++	;;
++esac
++exit 0
++
