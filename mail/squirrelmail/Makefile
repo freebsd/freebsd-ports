@@ -6,11 +6,14 @@
 #
 
 PORTNAME=	squirrelmail
-PORTVERSION?=	1.4.3a
-PORTREVISION?=	5
+PORTVERSION?=	1.4.4
+PORTREVISION?=	0
 CATEGORIES?=	mail www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	squirrelmail
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		all_locales-${PORTVERSION}-20050122${EXTRACT_SUFX}
+DIST_SUBDIR=	squirrelmail
 
 MAINTAINER?=	simond@irrelevant.org
 COMMENT?=	A webmail system which accesses mail over IMAP
@@ -56,6 +59,7 @@ pre-everything::
 	@${ECHO_CMD}
 	@${ECHO_CMD} "Use WITH_LDAP to ensure PHP LDAP support is installed"
 	@${ECHO_CMD} "Use WITH_DATABASE to ensure PEAR framework for database support is installed"
+	@${ECHO_CMD} "   (note that this does not install the database specific PEAR support, e.g. MySQL)"
 	@${ECHO_CMD}
 
 .if !target(slaveport-post-patch)
@@ -74,6 +78,7 @@ post-patch: slaveport-post-patch
 		${MASTERDIR}/pkg-message > ${PKGMESSAGE}
 	@${REINPLACE_CMD} -e 's|ispell|${LOCALBASE}/bin/ispell|g' \
 		${WRKSRC}/plugins/squirrelspell/sqspell_config.php
+	@${RM} ${WRKSRC}/plugins/squirrelspell/sqspell_config.php.bak
 
 # Rearrange the documentation
 do-build:
@@ -94,6 +99,9 @@ do-build:
 	${RM} -f doc/plugins/squirrelspell/index.php ; \
 	${RM} -rf plugins/squirrelspell/doc
 	@${ECHO} "left_refresh=300" >> ${WRKSRC}/data/default_pref
+	@${CP} -r ${WRKSRC}/../locale ${WRKSRC}
+	@${CP} -r ${WRKSRC}/../images ${WRKSRC}
+	@${CP} -r ${WRKSRC}/../help ${WRKSRC}
 
 pre-install:
 	@${ECHO} "Your umask should be lax while installing this. Like, 022 or something."
