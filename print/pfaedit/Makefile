@@ -8,11 +8,15 @@
 PORTNAME=	pfaedit
 PORTVERSION=	20${DIST_VER}
 CATEGORIES=	print
-MASTER_SITES=	http://pfaedit.sourceforge.net/
+MASTER_SITES=	http://pfaedit.sourceforge.net/ \
+		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	./ libuninameslist
 DISTFILES=	${EXTRACT_ONLY}
 .if !defined(NOPORTDOCS)
 DISTFILES+=	${DOCFILE}
 .endif
+EXTRACT_ONLY=	${PORTNAME}_full-${DIST_VER}.tgz cidmaps.tgz \
+		libuninameslist_src-${LIBUNINAMESLIST_VER}.tgz
 
 MAINTAINER=	kanou@mil.allnet.ne.jp
 
@@ -27,17 +31,18 @@ USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	configure.static
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
-	CFLAGS="$(CFLAGS) -I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2"
+	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2"
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	pfaedit
+INSTALLS_SHLIB=	yes
 
 MAN1=		pfaedit.1 sfddiff.1
 
-DIST_VER=	030109
-EXTRACT_ONLY=	${PORTNAME}_full-${DIST_VER}.tgz cidmaps.tgz
+DIST_VER=	030125
+LIBUNINAMESLIST_VER=	030116
 
 .if !defined(NOPORTDOCS)
-DOC_VER=	030109
+DOC_VER=	${DIST_VER}
 DOCFILE=	${PORTNAME}_htdocs-${DOC_VER}.tgz
 .endif
 
@@ -49,11 +54,18 @@ post-extract:
 	${MV} ${WRKDIR}/*.cidmap ${WRKSRC}/cidmap
 .endif
 
+post-configure:
+	(cd ${WRKDIR}/libuninameslist ; ./configure ${CONFIGURE_ARGS} )
+
+post-build:
+	(cd ${WRKDIR}/libuninameslist ; ${GMAKE} )
+
 post-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${DOCSDIR}
 .if !defined(NOPORTDOCS)
 	${INSTALL_DATA} ${WRKDIR}/html/* ${DOCSDIR}
+	(cd ${WRKDIR}/libuninameslist ; ${GMAKE} install )
 .endif
 
 .include <bsd.port.mk>
