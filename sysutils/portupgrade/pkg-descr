@@ -10,7 +10,8 @@ portversion:
 	than pkg_version and is cooperative with portupgrade.
 
 pkgdepfix:
-	This is an interactive tool to fix /var/db/pkg's @pkgdep /
-	+REQUIRED_BY discrepancies.
+	This is an interactive tool to fix /var/db/pkg's @pkgdep vs.
+	+REQUIRED_BY discrepancies, and stale or missing origins,
+	optionally.
 
 Author: Akinori MUSHA <knu@FreeBSD.org>
