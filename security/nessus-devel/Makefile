@@ -44,9 +44,9 @@ MAN8=		nessusd.8 nessus-adduser.8 nessus-mkcert.8 nessus-rmuser.8
 post-install:
 .if ! exists(${PREFIX}/etc/nessus/var/CA/serverkey.pem)
 .if ! defined(BATCH)
-    ${PREFIX}/sbin/nessus-mkcert
+	${PREFIX}/sbin/nessus-mkcert
 .else
-    ${PREFIX}/sbin/nessus-mkcert -q
+	${PREFIX}/sbin/nessus-mkcert -q
 .endif
 .endif 
 
