@@ -3,7 +3,7 @@
 # Date created:		Tue Jun 10 21:58:54 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.9 1997/09/02 16:48:55 andreas Exp $
+# $Id: Makefile,v 1.10 1997/09/03 06:57:04 andreas Exp $
 #
 
 DISTNAME=	ghostscript-5.03
@@ -17,7 +17,7 @@ MAINTAINER=	andreas@FreeBSD.org
 
 BUILD_DEPENDS=	/nonexistent:${PORTSDIR}/graphics/jpeg \
 		/nonexistent:${PORTSDIR}/graphics/png \
-		unzip:${PORTSDIR}/archiver/unzip
+		unzip:${PORTSDIR}/archivers/unzip
 DEPENDS_TARGET=	extract
 
 MAKE_ENV=	PORTSDIR=${PORTSDIR}
