@@ -7,8 +7,10 @@
 
 PORTNAME=	pgp4pine
 PORTVERSION=	1.76
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://pgp4pine.flatline.de/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 
 MAINTAINER=	holger@flatline.de
 
