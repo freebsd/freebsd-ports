@@ -208,15 +208,14 @@
 %%PYTHON_SITELIBDIR%%/dns/zone.py
 %%PYTHON_SITELIBDIR%%/dns/zone.pyc
 %%PYTHON_SITELIBDIR%%/dns/zone.pyo
-%%EXAMPLESDIR%%/dnspython/mx.py
-%%EXAMPLESDIR%%/dnspython/name.py
-%%EXAMPLESDIR%%/dnspython/reverse.py
-%%EXAMPLESDIR%%/dnspython/xfr.py
+%%EXAMPLESDIR%%/mx.py
+%%EXAMPLESDIR%%/name.py
+%%EXAMPLESDIR%%/reverse.py
+%%EXAMPLESDIR%%/xfr.py
 @dirrm %%PYTHON_SITELIBDIR%%/dns/rdtypes/IN
 @dirrm %%PYTHON_SITELIBDIR%%/dns/rdtypes/ANY
 @dirrm %%PYTHON_SITELIBDIR%%/dns/rdtypes
 @dirrm %%PYTHON_SITELIBDIR%%/dns
-@dirrm %%PYTHON_SITELIBDIR%%
-@dirrm %%EXAMPLESDI%%R/dnspython
+@dirrm %%EXAMPLESDIR%%
 @unexec rmdir %%PYTHON_SITELIBDIR%% 2>/dev/null || true
 @unexec rmdir %%PYTHON_LIBDIR%% 2>/dev/null || true
