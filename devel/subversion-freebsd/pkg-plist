@@ -37,10 +37,12 @@ include/subversion-1/svn_version.h
 include/subversion-1/svn_wc.h
 include/subversion-1/svn_xml.h
 @dirrm include/subversion-1
+@unexec install-info --delete %D/info/svn-design.info %D/info/dir
 info/svn-design.info
 info/svn-design.info-1
 info/svn-design.info-2
 info/svn-design.info-3
+@exec install-info %D/info/svn-design.info %D/info/dir
 lib/libsvn_auth-1.a
 lib/libsvn_auth-1.la
 lib/libsvn_auth-1.so

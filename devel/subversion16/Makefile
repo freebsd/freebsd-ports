@@ -6,6 +6,7 @@
 
 PORTNAME=	subversion
 PORTVERSION=	0.20.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://subversion.tigris.org/files/documents/15/3440/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -21,17 +22,20 @@ LIB_DEPENDS=	db4:${PORTSDIR}/databases/db4 \
 RUN_DEPENDS=	gdiff3:${PORTSDIR}/textproc/diffutils
 BUILD_DEPENDS=	gdiff3:${PORTSDIR}/textproc/diffutils
 
+INSTALLS_SHLIB=	yes
+USE_LIBTOOL=	yes
+
 WRKSRC=	${WRKDIR}/subversion-${PORTVERSION}
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
-CONFIGURE_ARGS= --with-ssl \
+CONFIGURE_ARGS=	--with-ssl \
 		--with-neon=${LOCALBASE} \
 		--with-berkeley-db=${LOCALBASE}/include/db4:${LOCALBASE}/lib \
 		--with-apr=${LOCALBASE} \
 		--with-apr-util=${LOCALBASE}
 
-MAN1= svn.1 svnadmin.1
-MANCOMPRESSED= no
+MAN1=	svn.1 svnadmin.1
+MANCOMPRESSED=	no
 
 post-extract:
 	@${REINPLACE_CMD} 's/ldb/ldb4/g' ${WRKSRC}/configure
@@ -45,6 +49,7 @@ post-configure:
 	@${REINPLACE_CMD} 's/swig-py-lib//g' ${WRKSRC}/Makefile
 
 post-install:
+	install-info ${PREFIX}/info/svn-design.info ${PREFIX}/info/dir
 .if !defined(NOPORTDOCS)
 	cd ${WRKSRC}/doc/book; \
 	${MAKE} INSTALL_DIR=${DOCSDIR} \
