@@ -725,4 +725,4 @@ share/doc/tei/p4/jaco001d.gif
 share/doc/tei/p4/logo.jpg
 @dirrm share/doc/tei/p4/Status
 @dirrm share/doc/tei/p4/
-@unexec rmdir share/doc/tei/ 2>/dev/null || true
+@unexec rmdir %D/share/doc/tei/ 2>/dev/null || true
