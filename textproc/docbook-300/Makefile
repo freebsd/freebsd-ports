@@ -40,7 +40,8 @@ pre-install:
 	@[ -d ${INSTDIR}/${PORTVERSION} ] || ${MKDIR} ${INSTDIR}/${PORTVERSION}
 
 do-install:
-	@zcat ${DISTDIR}/docbk30.tar.Z |(cd ${INSTDIR}/${PORTVERSION}; pax -r)
+	@zcat ${DISTDIR}/docbk30.tar.Z | \
+		(cd ${INSTDIR}/${PORTVERSION}; ${PAX} -r)
 	@${INSTALL_DATA} ${FILESDIR}/catalog ${INSTDIR}/${PORTVERSION}/catalog
 	@${ECHO_CMD} "CATALOG \"${ISOCAT}\"" >> ${INSTDIR}/${PORTVERSION}/catalog
 	@${CHMOD} ${SHAREMODE} ${INSTDIR}/${PORTVERSION}/*

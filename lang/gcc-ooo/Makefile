@@ -107,7 +107,7 @@ do-fetch:
 
 do-extract:
 	${MKDIR} ${SRCDIR}
-	cd ${DISTDIR}/${DIST_SUBDIR}/${DIST_SUBDIR ; pax -pe -rwt . ${SRCDIR}
+	cd ${DISTDIR}/${DIST_SUBDIR}/${DIST_SUBDIR ; ${PAX} -pe -rwt . ${SRCDIR}
 .endif	# CVS_DATE
 
 post-patch:

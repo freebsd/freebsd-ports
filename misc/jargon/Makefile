@@ -24,7 +24,7 @@ post-extract:
 
 do-install:
 	${MKDIR} ${DATADIR}
-	(cd ${WRKSRC}; pax -rw . ${DATADIR})
+	(cd ${WRKSRC}; ${PAX} -rw . ${DATADIR})
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
 
 .include <bsd.port.mk>

@@ -60,7 +60,7 @@ do-fetch:
 
 do-extract:
 	${MKDIR} ${WRKSRC}
-	cd ${DISTDIR}/${DIST_SUBDIR}/gdb-5.3 ; pax -pe -rwt . ${WRKSRC}
+	cd ${DISTDIR}/${DIST_SUBDIR}/gdb-5.3 ; ${PAX} -pe -rwt . ${WRKSRC}
 .endif	# CVS_DATE
 
 pre-configure:

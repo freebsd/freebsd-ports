@@ -71,10 +71,10 @@ do-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/${DOCDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC}/../ && ${CHMOD} -R 755 doc examples
-	cd ${WRKSRC}/../doc && pax -r -w * ${DOCSDIR}
-	cd ${WRKSRC}/../examples && pax -r -w * .swm ${EXAMPLESDIR}
+	cd ${WRKSRC}/../doc && ${PAX} -r -w * ${DOCSDIR}
+	cd ${WRKSRC}/../examples && ${PAX} -r -w * .swm ${EXAMPLESDIR}
 .endif
 	${MKDIR} ${DATADIR}/pixmaps
-	cd ${WRKSRC}/../share/swm/pixmaps && pax -r -w * ${DATADIR}/pixmaps
+	cd ${WRKSRC}/../share/swm/pixmaps && ${PAX} -r -w * ${DATADIR}/pixmaps
 
 .include <bsd.port.mk>

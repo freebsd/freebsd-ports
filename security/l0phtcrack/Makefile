@@ -43,7 +43,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lc_CLI ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/${DOCDIR}
-	cd ${WRKSRC} && pax -r -w *txt ${PREFIX}/${DOCDIR}
+	cd ${WRKSRC} && ${PAX} -r -w *txt ${PREFIX}/${DOCDIR}
 .endif
 
 .include <bsd.port.mk>

@@ -52,8 +52,8 @@ do-install:
 .endfor
 	${INSTALL_PROGRAM} ${WRKSRC}/dock/mbdock ${PREFIX}/bin
 	${MKDIR} ${DATADIR}
-	cd ${WRKSRC}/data/ && pax -r -w themes ${DATADIR} \
-		&& pax -r -w mbdock ${DATADIR}
+	cd ${WRKSRC}/data/ && ${PAX} -r -w themes ${DATADIR} \
+		&& ${PAX} -r -w mbdock ${DATADIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for ii in ${DOCS}

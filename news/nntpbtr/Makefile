@@ -21,7 +21,7 @@ post-extract:
 	@${RM} -rf ${WRKSRC}/RCS
 
 pre-build:
-	cd ${FILESDIR} ; pax -rw -l -u dbz ${WRKDIR} || ${TRUE}
+	cd ${FILESDIR} ; ${PAX} -rw -l -u dbz ${WRKDIR} || ${TRUE}
 	cd ${WRKDIR}/dbz ; ${CC} ${CFLAGS} -c -I. dbz.c
 
 .include <bsd.port.mk>

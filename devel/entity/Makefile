@@ -29,6 +29,6 @@ post-install:
 	${LDCONFIG} -m ${PREFIX}/lib/entity/clib ${PREFIX}/lib
 	${MKDIR} ${PREFIX}/share/entity
 	cd ${WRKSRC}/apps && \
-		pax -r -w `ls | ${GREP} -v Makefile` ${PREFIX}/share/entity
+		${PAX} -r -w `ls | ${GREP} -v Makefile` ${PREFIX}/share/entity
 
 .include <bsd.port.mk>

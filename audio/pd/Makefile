@@ -78,12 +78,12 @@ do-install:
 .for ii in LICENSE README
 	${INSTALL_DATA} ${WRKSRC}/../${ii}.txt ${DOCSDIR}
 .endfor
-	cd ${WRKSRC}/../doc && pax -r -w * ${DOCSDIR}
+	cd ${WRKSRC}/../doc && ${PAX} -r -w * ${DOCSDIR}
 .endif
 .for ii in pd pdreceive pdsend
 	${INSTALL_MAN} ${WRKSRC}/../man/${ii}.1 ${PREFIX}/man/man1/
 .endfor
 	${MKDIR} ${DATADIR}
-	cd ${WRKSRC}/../extra && pax -r -w * ${DATADIR}
+	cd ${WRKSRC}/../extra && ${PAX} -r -w * ${DATADIR}
 
 .include <bsd.port.mk>
