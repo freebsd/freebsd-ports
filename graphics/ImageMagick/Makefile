@@ -20,6 +20,7 @@ MASTER_SITE_SUBDIR=	graphics/ImageMagick
 
 MAINTAINER=	ports@FreeBSD.org
 
+BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2	# XXX
 LIB_DEPENDS=	bz2.1:${PORTSDIR}/archivers/bzip2 \
 		fpx.1:${PORTSDIR}/graphics/libfpx \
 		df.1:${PORTSDIR}/graphics/hdf \
