@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	twiki
-PORTVERSION=	20030201
-PORTREVISION=	0
+PORTVERSION=	20040901
 CATEGORIES=	www
 MASTER_SITES=	http://twiki.org/swd/ http://www.thoeny.com/peter/twiki/
-DISTNAME=      	TWiki${PORTVERSION}
+DISTNAME=	TWiki${PORTVERSION}
 
 MAINTAINER=	justin@hawkins.id.au
-COMMENT=        A flexible, powerful, and easy to use Web-based collaboration platform
+COMMENT=	A flexible, powerful, and easy to use Web-based collaboration platform
 
-NO_WRKSUBDIR=   yes
+NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
 USE_ZIP=	yes
@@ -23,6 +22,16 @@ USE_ZIP=	yes
 LTWIKIDIR=	www/twiki
 
 TWIKIDIR=	${PREFIX}/${LTWIKIDIR}
+
+WWW_ROOT?=	www
+PLIST_SUB+=	WWW_ROOT=${WWW_ROOT}
+
+pre-everything::
+	@${ECHO} "****************************************************************"
+	@${ECHO} "*  If you're upgrading, Ctrl-C now and do the upgrade by hand. *"
+	@${ECHO} "*  This software can't be upgraded automatically without       *"
+	@${ECHO} "*  damaging data in your wiki!                                 *"
+	@${ECHO} "****************************************************************"
 
 pre-configure:
 # move config file to sample
