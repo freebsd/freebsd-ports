@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Mon Jan 17 18:22:56 2000
++++ Makefile.in	Mon Jan 17 18:24:17 2000
+@@ -82,7 +82,7 @@
+ 	    ($(mkdir) $(mandir)/cat1 && $(chmod) $(dmode) $(mandir)/cat1)
+ 	@echo "Installing man pages: $(mandir) ..."
+ 	cd $(mandir)/cat1 && $(rm) -f `echo vi.0 | sed '$(transform)'`
+-	$(cp) $(srcdir)/docs/USD.doc/vi.man/vi.0 \
++	$(cp) `echo $(srcdir)/docs/USD.doc/vi.man/vi.0 |sed '$(transform)'` \
+ 	    $(mandir)/cat1/`echo vi.0 | sed '$(transform)'`
+ 	cd $(mandir)/cat1 && $(chmod) $(fmode) `echo vi.0 | sed '$(transform)'`
+ 	cd $(mandir)/cat1 && $(rm) -f `echo ex.0 | sed '$(transform)'`

@@ -1,0 +1,33 @@
+# New ports collection makefile for:   vigor
+# Version required:    0.007
+# Date created:        17 Jan 2000
+# Whom:                Bill Fumerola <billf@chc-chimes.com>
+#
+# $FreeBSD$
+#
+
+DISTNAME=	vigor-0.007
+CATEGORIES=	editors tk82 tcl82
+MASTER_SITES=	http://www.red-bean.com:8080/
+
+MAINTAINER=	billf@FreeBSD.org
+
+LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82 \
+		tcl82.1:${PORTSDIR}/lang/tcl82
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--program-transform-name="s,0,1,"
+
+WRKSRC= 	${WRKDIR}/${DISTNAME}/build
+CFLAGS+= 	-I${LOCALBASE}/include/tcl8.2 -I${LOCALBASE}/include/tk8.2
+
+MAN1=		ex.1 vi.1 view.1
+
+# Uglyness. So is "-ltcl -ltk -ltcl", so I don't feel bad.
+post-patch:
+	@${CP} ${WRKSRC}/configure ${WRKSRC}/configure.orig
+	@${SED}	-e 's#-ltcl#-ltcl82 -L${LOCALBASE}/lib#g' \
+		-e 's#-ltk#-ltk82#g' \
+	< ${WRKSRC}/configure.orig > ${WRKSRC}/configure
+
+.include <bsd.port.mk>
