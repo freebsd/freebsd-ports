@@ -1,8 +1,9 @@
-# $Id: Makefile,v 1.4 1997/06/03 09:14:50 asami Exp $
+# $Id: Makefile,v 1.5 1997/11/28 20:45:09 fenner Exp $
 #
 
     SUBDIR += ephem
     SUBDIR += luna
+    SUBDIR += saoimage
     SUBDIR += sattrack
     SUBDIR += stars
     SUBDIR += sunclock
