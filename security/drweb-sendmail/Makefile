@@ -6,20 +6,20 @@
 #
 
 PORTNAME=	drweb_sendmail
-PORTVERSION=    4.29.12f
+PORTVERSION=	4.31
 CATEGORIES=	security mail
 MASTER_SITES=	ftp://ftp.drweb.ru/pub/unix/ \
 		ftp://ftp.drweb.ru/pub/unix/archive/ \
-		ftp://ftp.drweb.ru/pub/unix/archive/drweb-clients-4.29.12/
-DISTNAME=       drweb-clients-4.29.12-F-sources
+		ftp://ftp.drweb.ru/pub/unix/archive/drweb-clients-${PORTVERSION}/
+DISTNAME=	drweb-clients-${PORTVERSION}-sources
 
-MAINTAINER=	anton@chelcom.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sendmail message filter for virus processing through DrWeb daemon
 
-BUILD_DEPENDS=  ${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash2
-RUN_DEPENDS=    ${LOCALBASE}/etc/rc.d/drweb-0.sh:${PORTSDIR}/security/drwebd
+BUILD_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash2
+RUN_DEPENDS=	${LOCALBASE}/etc/rc.d/00drwebd.sh:${PORTSDIR}/security/drweb
 
-WRKSRC=         ${WRKDIR}/${DISTNAME}
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
 INST_PREFIX=	${PREFIX}/${PORTNAME}
 DOC_DIR=	${PREFIX}/share/doc/drweb-sendmail
@@ -30,7 +30,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/include/libmilter/mfapi.h:${PORTSDIR}/mail/sendmail
 
 .if !defined(WITH_DRWEBSMF_HOSTNAME)
 .if defined(BATCH)
-WITH_DRWEBSMF_HOSTNAME= your.domain.name
+WITH_DRWEBSMF_HOSTNAME=	your.domain.name
 .else
 WITH_DRWEBSMF_HOSTNAME!=hostname
 .endif
@@ -42,7 +42,7 @@ RANDOM_NUMBER=!!!___EDIT_THIS___!!!
 RANDOM_NUMBER!=dd if=/dev/random count=1 2> /dev/null | /sbin/md5
 .endif
 
-LANGS=en-ru en-pl
+LANGS=en en-ru en-pl
 CONFS=drweb_smf users viruses addresses
 TMPLS=error-admin error-sender archive-admin archive-sender skip-sender \
       virus-admin virus-rcpts virus-sender rule-admin
