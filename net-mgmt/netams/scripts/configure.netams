@@ -23,9 +23,6 @@ if [ "${BATCH}" ]; then
 	if [ "${WITH_OPT}" ]; then
 		OPTIONS="${OPTIONS} \"OPTIMIZED\""
 	fi
-	if [ "${LOG_DROP}" ]; then
-		OPTIONS="$OPTIONS} \"LOG_DROP\""
-	fi
 
 else
 	SET_MYSQL41="OFF"
@@ -54,14 +51,10 @@ else
 	if [ "${WITH_OPT}" ] ; then
 		SET_OPT="ON"
 	fi
-	SET_LOG_DROP="OFF"
-	if [ "${LOG_DROP}" ] ; then
-		SET_LOG_DROP="ON"
-	fi
 
 	/usr/bin/dialog --title "NetAMS options" --clear \
 		--checklist "\n\
-Please select desired options:" -1 -1 8 \
+Please select desired options:" -1 -1 7 \
 MySQL		"MySQL 3.23 support" ${SET_MYSQL} \
 MySQL40		"MySQL 4.0 support" ${SET_MYSQL40} \
 MySQL41		"MySQL 4.1 support" ${SET_MYSQL41} \
@@ -69,7 +62,6 @@ PgSQL		"PostgreSQL support" ${SET_POSTGRES} \
 HASH		"Unix HASH support" ${SET_HASH} \
 DEBUG		"Debugging support" ${SET_DEBUG} \
 OPTIMIZED       "Enable optimization" ${SET_OPT} \
-LOG_DROP	"Log dropped packets" ${SET_LOG_DROP} \
 2> $tempfile
 
 	retval=$?
@@ -146,9 +138,6 @@ while [ "$1" ]; do
 			fi
 			echo "FLAGS += -O"
 			DEFOPT=1
-			;;
-		\"LOG_DROP\")
-			echo "DEFINE += -DLOG_DROP"
 			;;
 	esac
 	shift

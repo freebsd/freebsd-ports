@@ -1,23 +1,22 @@
 # New ports collection makefile for: NetAMS
-# Date created:        9 December 2002
-# Whom: 	       jura@happychance.com
+# Date created:        24 December 2003
+# Whom: 	       jura@netams.com
 #
 # $FreeBSD$
 #
 
 PORTNAME=	netams
 PORTVERSION=	3.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.netams.com/files/
-DISTNAME=	${PORTNAME}-${PORTVERSION}.1563
+DISTNAME=	${PORTNAME}-${PORTVERSION}.1770
 
-MAINTAINER=	jura@happychance.com
+MAINTAINER=	jura@netams.com
 COMMENT=	Network Traffic Accounting and Monitoring Software
 
 USE_SUBMAKE=	yes
-
-MAN8=		netams.8
+MAN8=		netams.8 flowprobe.8
 MANCOMPRESSED=	no
 
 SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
@@ -34,10 +33,6 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500113
-BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
-.endif
-
 pre-fetch:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.netams
 
@@ -45,20 +40,30 @@ pre-fetch:
 .include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
 .endif
 
+FLAGS += ${PTHREAD_CFLAGS}
+LIB += ${PTHREAD_LIBS}
+
 MAKE_ENV+=	DEFINE="${DEFINE}" FLAGS="${FLAGS}" LIB="${LIB}"
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/src/netams ${PREFIX}/libexec/netams
+	@ ${INSTALL_PROGRAM} ${WRKSRC}/src/netams ${PREFIX}/sbin/flowprobe
+	@ ${INSTALL_PROGRAM} ${WRKSRC}/src/netams ${PREFIX}/sbin/ipfw2netflow
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/src/netamsctl ${PREFIX}/bin/netamsctl
 	@ ${INSTALL_DATA} ${WRKSRC}/addon/netams.cfg ${PREFIX}/etc/netams.conf.sample
 	@ ${INSTALL_SCRIPT} ${FILESDIR}/netams.sh ${PREFIX}/etc/rc.d/netams.sh.sample
 	@ ${INSTALL_MAN} ${WRKSRC}/doc/netams.8 ${PREFIX}/man/man8
+	@ ${INSTALL_MAN} ${WRKSRC}/doc/flowprobe.8 ${PREFIX}/man/man8
 	@ ${MKDIR} ${EXAMPLESDIR}/cgi-bin
+	@ ${MKDIR} ${EXAMPLESDIR}/cgi-bin/images
 	@ ${INSTALL_DATA} ${WRKSRC}/addon/.netamsctl.rc ${EXAMPLESDIR}/
-.for example in netams-nat-network.cfg netams-netflow.cfg netams.cfg netams-simple.cfg
+.for example in netams-nat-network.cfg netams-netflow.cfg netams.cfg netams-simple.cfg netams-quotactl.cfg
 	@ ${INSTALL_DATA} ${WRKSRC}/doc/${example} ${EXAMPLESDIR}/
 .endfor
-.for cgi in logo.gif netams_api.pl netams_graph.cgi weblogin.tem netams_example.cgi weblogin.cgi
+.for image in logo.gif logo-small.gif admintool-logo.gif
+	@ ${INSTALL_DATA} ${WRKSRC}/cgi-bin/images/${image} ${EXAMPLESDIR}/cgi-bin/images/
+.endfor
+.for cgi in netams_api.pl netams_graph.cgi weblogin.tem netams_example.cgi weblogin.cgi admintool.cgi login.cgi
 	 @ ${INSTALL_DATA} ${WRKSRC}/cgi-bin/${cgi} ${EXAMPLESDIR}/cgi-bin/
 .endfor
 .if !defined(NOPORTDOCS)

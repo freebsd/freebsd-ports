@@ -2,24 +2,32 @@
 etc/netams.conf.sample
 etc/rc.d/netams.sh.sample
 libexec/netams
+sbin/flowprobe
+sbin/ipfw2netflow
 bin/netamsctl
-%%PORTDOCS%%share/doc/netams/documentation-en.html
-%%PORTDOCS%%share/doc/netams/diagram-1.gif
-%%PORTDOCS%%share/doc/netams/logo.gif
-%%PORTDOCS%%share/doc/netams/net-1-1a.gif
-%%PORTDOCS%%share/doc/netams/net-1-2a.gif
-%%PORTDOCS%%share/doc/netams/net-1-3a.gif
-share/examples/netams/netams-nat-network.cfg
-share/examples/netams/netams-netflow.cfg
-share/examples/netams/netams-simple.cfg
-share/examples/netams/netams.cfg
-share/examples/netams/.netamsctl.rc
-share/examples/netams/cgi-bin/logo.gif
-share/examples/netams/cgi-bin/netams_api.pl
-share/examples/netams/cgi-bin/netams_example.cgi
-share/examples/netams/cgi-bin/netams_graph.cgi
-share/examples/netams/cgi-bin/weblogin.cgi
-share/examples/netams/cgi-bin/weblogin.tem
-%%PORTDOCS%%@dirrm share/doc/netams
-@dirrm share/examples/netams/cgi-bin
-@dirrm share/examples/netams
+%%PORTDOCS%%%%DOCSDIR%%/documentation-en.html
+%%PORTDOCS%%%%DOCSDIR%%/diagram-1.gif
+%%PORTDOCS%%%%DOCSDIR%%/logo.gif
+%%PORTDOCS%%%%DOCSDIR%%/net-1-1a.gif
+%%PORTDOCS%%%%DOCSDIR%%/net-1-2a.gif
+%%PORTDOCS%%%%DOCSDIR%%/net-1-3a.gif
+%%EXAMPLESDIR%%/netams-nat-network.cfg
+%%EXAMPLESDIR%%/netams-netflow.cfg
+%%EXAMPLESDIR%%/netams-simple.cfg
+%%EXAMPLESDIR%%/netams.cfg
+%%EXAMPLESDIR%%/netams-quotactl.cfg
+%%EXAMPLESDIR%%/.netamsctl.rc
+%%EXAMPLESDIR%%/cgi-bin/images/admintool-logo.gif
+%%EXAMPLESDIR%%/cgi-bin/images/logo-small.gif
+%%EXAMPLESDIR%%/cgi-bin/images/logo.gif
+%%EXAMPLESDIR%%/cgi-bin/netams_api.pl
+%%EXAMPLESDIR%%/cgi-bin/netams_example.cgi
+%%EXAMPLESDIR%%/cgi-bin/netams_graph.cgi
+%%EXAMPLESDIR%%/cgi-bin/weblogin.cgi
+%%EXAMPLESDIR%%/cgi-bin/weblogin.tem
+%%EXAMPLESDIR%%/cgi-bin/admintool.cgi
+%%EXAMPLESDIR%%/cgi-bin/login.cgi
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%EXAMPLESDIR%%/cgi-bin/images
+@dirrm %%EXAMPLESDIR%%/cgi-bin
+@dirrm %%EXAMPLESDIR%%
