@@ -1,0 +1,3 @@
+A small program that implements just enough of the NNTP protocol 
+to authenticate client requests. After authentication nnap bounces
+the client TCP connection to an open NNTP server.
