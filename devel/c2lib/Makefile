@@ -21,6 +21,8 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 	REALCURDIR="${.CURDIR}" \
 	DISTNAME="${DISTNAME}"
 
+.include <bsd.port.pre.mk>
+
 MAN3!=		${CAT} ${FILESDIR}/man3
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
