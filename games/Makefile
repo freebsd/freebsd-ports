@@ -110,6 +110,7 @@
     SUBDIR += hlserver-dod
     SUBDIR += hlserver-fa
     SUBDIR += hlserver-flf
+    SUBDIR += hlserver-opfor
     SUBDIR += icbm3d
     SUBDIR += icebreaker
     SUBDIR += ifm
