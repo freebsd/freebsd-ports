@@ -1,17 +1,17 @@
 etc/php.gtk/php.ini-dist
-%%PHPEXTDIR%%/php_gtk.so
-share/examples/php-gtk/combobutton.php
-share/examples/php-gtk/fileselection.php
-share/examples/php-gtk/gtk.php
-share/examples/php-gtk/hello.php
-share/examples/php-gtk/list.php
-share/examples/php-gtk/piemenu.php
-share/examples/php-gtk/scribble.php
-share/examples/php-gtk/scrollpane.php
-share/examples/php-gtk/spaned.php
-share/examples/php-gtk/sqpane.php
-share/examples/php-gtk/testgtkrc
-share/examples/php-gtk/testgtkrc2
-share/examples/php-gtk/window.xpm
-@dirrm share/examples/php-gtk
+lib/php/%%PHPEXTDIR%%/php_gtk.so
+%%EXAMPLESDIR%%/combobutton.php
+%%EXAMPLESDIR%%/fileselection.php
+%%EXAMPLESDIR%%/gtk.php
+%%EXAMPLESDIR%%/hello.php
+%%EXAMPLESDIR%%/list.php
+%%EXAMPLESDIR%%/piemenu.php
+%%EXAMPLESDIR%%/scribble.php
+%%EXAMPLESDIR%%/scrollpane.php
+%%EXAMPLESDIR%%/spaned.php
+%%EXAMPLESDIR%%/sqpane.php
+%%EXAMPLESDIR%%/testgtkrc
+%%EXAMPLESDIR%%/testgtkrc2
+%%EXAMPLESDIR%%/window.xpm
+@dirrm %%EXAMPLESDIR%%
 @dirrm etc/php.gtk
