@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Spoon
-PORTVERSION=	0.17
+PORTVERSION=	0.18
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/I/IN/INGY/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Spiffy Application Building Framework
 
 BUILD_DEPENDS=	${SITE_PERL}/Spiffy.pm:${PORTSDIR}/devel/p5-Spiffy \
