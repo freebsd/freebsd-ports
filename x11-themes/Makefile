@@ -49,6 +49,7 @@
     SUBDIR += gtkstep
     SUBDIR += gtkstep-pastel
     SUBDIR += icegradient
+    SUBDIR += indubstrial
     SUBDIR += kde-icons-amaranth
     SUBDIR += kde-icons-amaranth-althaea
     SUBDIR += kde-icons-crystalosx
