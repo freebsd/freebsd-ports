@@ -47,7 +47,7 @@ MAKE_ARGS+=	$v="${$v}"
 .endfor
 
 post-extract:
-	bzip2 -d < ${_DISTDIR}/gd_gif_in.c.bz2 > ${WRKSRC}/gd_gif_in.c
+	${BZIP2_CMD} -d < ${_DISTDIR}/gd_gif_in.c.bz2 > ${WRKSRC}/gd_gif_in.c
 
 .ifdef GD_FONTS
 SCRIPTS_ENV+=	GD_FONTS="${GD_FONTS}"
