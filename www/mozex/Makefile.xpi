@@ -1,0 +1,74 @@
+# Date created:			  Sun Oct 26, 2003
+# Whom:				  Thierry Thomas (<thierry@pompo.net>)
+#
+# $FreeBSD$
+#
+
+EXTRACT_SUFX=   .xpi
+
+BUILD_DEPENDS+=	${MOZDIR}/regchrome:${PORTSDIR}/www/${MOZPORT}
+RUN_DEPENDS+=	${MOZDIR}:${PORTSDIR}/www/${MOZPORT}
+
+NO_BUILD=	yes
+USE_ZIP=	yes
+
+PKGINSTALL=	${PORTSDIR}/www/mozex/pkg-install.xpi
+PKGDEINSTALL=	${PKGINSTALL}
+
+.if !defined(WITH_FIREFOX)
+# "Regular" mozillas
+. if exists(${X11BASE}/lib)
+MOZDIR!=	${FIND} ${X11BASE}/lib -name mozilla-bin -exec dirname {} \; | ${HEAD} -n 1
+. else
+MOZDIR=
+. endif
+. if empty(MOZDIR)
+MOZPORT=	mozilla
+MOZDIR=		${X11BASE}/lib/${MOZPORT}
+. else
+MOZPORT!=	${BASENAME} ${MOZDIR}
+. endif
+MOZLDIR=	lib/${MOZPORT}
+.else
+# Firefox
+PKGNAMESUFFIX=	-firefox
+. if exists(${X11BASE}/lib)
+MOZDIR!=	${FIND} ${X11BASE}/lib -name firefox-bin -exec dirname {} \; | ${HEAD} -n 1
+. else
+MOZDIR=
+. endif
+. if empty(MOZDIR)
+MOZVER=		firefox-0.9	# Warning! chase this when upgrading firefox.
+. else
+MOZVER!=	${BASENAME} ${MOZDIR}
+. endif
+MOZPORT=	firefox
+MOZLDIR=	lib/firefox/lib/${MOZVER}
+.endif
+.if empty(MOZDIR)
+MOZDIR=		${X11BASE}/${MOZLDIR}
+.endif
+
+PLIST_SUB=	MOZDIR=${MOZLDIR}
+
+pre-install:
+.if ${PREFIX} != ${X11BASE}
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "${PREFIX} invalid - must be installed under ${X11BASE}."
+	@${ECHO_MSG} ""
+	@${FALSE}
+.else
+	@${CP} ${FILESDIR}/installed-chrome.txt ${MOZDIR}/${PORTNAME}-installed-chrome.txt
+.endif
+
+post-install:
+	@${ECHO_CMD} ${MOZLDIR}/${PORTNAME}-installed-chrome.txt >> ${TMPPLIST}
+	@${CAT} ${MOZDIR}/${PORTNAME}-installed-chrome.txt	\
+		>> ${MOZDIR}/chrome/installed-chrome.txt
+	@${ECHO_CMD} "@exec ${CAT} ${MOZDIR}/${PORTNAME}-installed-chrome.txt \
+		>> ${MOZDIR}/chrome/installed-chrome.txt" >> ${TMPPLIST}
+	@${SETENV} PKG_PREFIX=${PREFIX}	\
+	${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+.if exists(${PKGMESSAGE})
+	@${CAT} ${PKGMESSAGE}
+.endif

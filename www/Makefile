@@ -316,6 +316,8 @@
     SUBDIR += moinmoin
     SUBDIR += momspider
     SUBDIR += monkey
+    SUBDIR += mozex
+    SUBDIR += mozex-firefox
     SUBDIR += mozilla
     SUBDIR += mozilla-bonobo
     SUBDIR += mozilla-devel

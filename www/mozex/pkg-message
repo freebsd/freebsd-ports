@@ -1,0 +1,8 @@
+**************************************************************************
+Mozex has been installed. If Mozilla is running, restart it.
+A new "mozex" entry is present in page context menu (right click somewhere
+on the page), and you have to edit preferences (for every profile).
+
+To set up your external programs, please follow the instructions on
+<http://mozex.mozdev.org/arguments.html>.
+**************************************************************************
