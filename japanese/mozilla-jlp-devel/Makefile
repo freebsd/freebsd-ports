@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	mozilla
-PORTVERSION=	0.9.8
-PORTREVISION=	1
+PORTVERSION=	0.9.9
+#PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	japanese www
 MASTER_SITES=	http://www.ash.ne.jp/~mal/mozilla/ \
@@ -21,7 +21,7 @@ MAINTAINER=	yatt@msc.biglobe.ne.jp
 
 BUILD_DEPENDS=	${X11BASE}/lib/mozilla/regxpcom:${PORTSDIR}/www/mozilla
 RUN_DEPENDS=	mozilla:${PORTSDIR}/www/mozilla \
-		${PKG_DBDIR}/ja-bdf-fonts-1.0:${PORTSDIR}/japanese/bdf-fonts
+		${PKG_DBDIR}/ja-bdf-fonts-1.0_1:${PORTSDIR}/japanese/bdf-fonts
 
 WRKSRC=		${WRKDIR}/bin
 
@@ -51,9 +51,6 @@ do-install:
 	${MV} -f installed-chrome.txt installed-chrome.txt.orig)
 	(cd ${PREFIX}/lib/mozilla/defaults/pref; \
 	${MV} -f unix.js unix.js.orig)
-	(cd ${PREFIX}/lib/mozilla/searchplugins; \
-	${MV} -f google.gif google.gif.orig; \
-	${MV} -f google.src google.src.orig)
 	${MV} -f ${PREFIX}/bin/mozilla ${PREFIX}/bin/mozilla.orig
 	${INSTALL_SCRIPT} ${WRKDIR}/mozilla ${PREFIX}/bin
 	(cd ${WRKDIR}/sp; ${TAR} -cf - *) | \

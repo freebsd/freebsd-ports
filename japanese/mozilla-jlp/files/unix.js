@@ -108,10 +108,13 @@ pref("print.print_color", true);
 pref("print.print_landscape", false);
 pref("print.print_paper_size", 0);
 
-// print_headerfooter_gap enables platforms to specify an extra "gap" in twips
-// between the H/F and the edge of the paper,  
+// Enables you to specify the gap from the edge of the paper to the margin
 // this is used by both Printing and Print Preview
-pref("print.print_headerfooter_gap", 60); // twips
+pref("print.print_edge_top", 4); // 1/100 of an inch
+pref("print.print_edge_left", 4); // 1/100 of an inch
+pref("print.print_edge_right", 4); // 1/100 of an inch
+pref("print.print_edge_bottom", 4); // 1/100 of an inch
+
 
 // print_extra_margin enables platforms to specify an extra gap or margin
 // around the content of the page for Print Preview only
@@ -222,6 +225,23 @@ pref("font.size.fixed.zh-TW", 16);
 // below a certian pixel size outline scaled fonts produce poor results
 pref("font.scale.outline.min",      6);
 
+// TrueType
+pref("font.FreeType2.enable", false);
+pref("font.freetype2.shared-library", "libfreetype.so.9");
+// if libfreetype was built without hinting compiled in
+// it is best to leave hinting off
+pref("font.FreeType2.autohinted", false);
+pref("font.FreeType2.unhinted", true);
+// below a certian pixel size anti-aliased fonts produce poor results
+pref("font.antialias.min",        10);
+pref("font.embedded_bitmaps.max", 1000000);
+pref("font.scale.tt_bitmap.dark_text.min", 64);
+pref("font.scale.tt_bitmap.dark_text.gain", "0.8");
+// sample prefs for TrueType font dirs
+//pref("font.directory.truetype.1", "/u/sam/tt_font");
+//pref("font.directory.truetype.2", "/u/sam/tt_font2");
+//pref("font.directory.truetype.3", "/u/sam/tt_font3");
+
 // below a certian pixel size anti-aliased bitmat scaled fonts 
 // produce poor results
 pref("font.scale.aa_bitmap.enable", true);
@@ -306,30 +326,37 @@ pref("font.min-size.fixed.zh-TW", 10);
 //     "fname=-urw.*;scalable=false;outline_scaled=false;xdisplay=.*;xdpy=.*;ydpy=.*;xdevice=.*");
 
 /* reject font if accept pattern does not match it... */
-//pref("printer.font.xprint.acceptfontpattern", ".*");
+//pref("print.xprint.font.acceptfontpattern", ".*");
 /* reject font if reject pattern matches it... */
-//pref("printer.font.xprint.rejectfontpattern", 
+//pref("print.xprint.font.rejectfontpattern", 
 //     "fname=-urw.*;scalable=false;outline_scaled=false;xdisplay=.*;xdpy=.*;ydpy=.*;xdevice=.*");
 
-// ps font
-// this list is used by the postscript font
-// to enumerate the list of langGroups
-// there should be a call to get the
-// langGroups; see bug 75054
-pref("print.psnativefont.ar", "");
-pref("print.psnativefont.el", "");
-pref("print.psnativefont.he", "");
-pref("print.psnativefont.ja", "");
-pref("print.psnativefont.ko", "");
-pref("print.psnativefont.th", "");
-pref("print.psnativefont.tr", "");
-pref("print.psnativefont.x-baltic", "");
-pref("print.psnativefont.x-central-euro", "");
-pref("print.psnativefont.x-cyrillic", "");
-pref("print.psnativefont.x-unicode", "");
-pref("print.psnativefont.x-user-def", "");
-pref("print.psnativefont.x-western", "");
-pref("print.psnativefont.zh-CN", "");
-pref("print.psnativefont.zh-TW", "");
+/* PostScript print module prefs */
+pref("print.postscript.paper_size",    "letter");
+pref("print.postscript.orientation",   "portrait");
+pref("print.postscript.print_command", "lpr ${MOZ_PRINTER_NAME:+'-P'}${MOZ_PRINTER_NAME}");
+''
+/* PostScript print module font config
+ * this list is used by the postscript font
+ * to enumerate the list of langGroups
+ * there should be a call to get the
+ * langGroups; see bug 75054
+ */
+pref("print.postscript.nativefont.ar",             "");
+pref("print.postscript.nativefont.el",             "");
+pref("print.postscript.nativefont.he",             "");
+pref("print.postscript.nativefont.ja",             "");
+pref("print.postscript.nativefont.ko",             "");
+pref("print.postscript.nativefont.th",             "");
+pref("print.postscript.nativefont.tr",             "");
+pref("print.postscript.nativefont.x-baltic",       "");
+pref("print.postscript.nativefont.x-central-euro", "");
+pref("print.postscript.nativefont.x-cyrillic",     "");
+pref("print.postscript.nativefont.x-unicode",      "");
+pref("print.postscript.nativefont.x-user-def",     "");
+pref("print.postscript.nativefont.x-western",      "");
+pref("print.postscript.nativefont.zh-CN",          "");
+pref("print.postscript.nativefont.zh-TW",          "");
 
 pref("mail.signature_date", 0);
+// EOF.
