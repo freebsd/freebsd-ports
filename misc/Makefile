@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.95 1996/11/25 10:11:57 tg Exp $
+# $Id: Makefile,v 1.96 1996/11/29 07:32:35 tg Exp $
 #
 
     SUBDIR += amanda
@@ -43,6 +43,7 @@
     SUBDIR += unclutter
     SUBDIR += xcalendar
     SUBDIR += xgas
+    SUBDIR += xless
     SUBDIR += xmaddressbook
     SUBDIR += xtar
     SUBDIR += zorro
