@@ -3,7 +3,7 @@
 # Date created:         5 January 1995
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.9 1995/05/13 05:42:15 asami Exp $
+# $Id: Makefile,v 1.10 1995/05/17 13:07:13 jmz Exp $
 #
 
 #######################################################################
@@ -36,6 +36,7 @@ MAINTAINER=		jmz@FreeBSD.ORG
 
 .if defined(X11_ON_CDROM) || defined(X11_VIA_FTP)
 
+DISTFILES=		# to prevent checksum
 do-build:
 .if defined(REMOVE_NOT_ESSENTIAL)
 	@rm -rf ${WRKSRC}/test ${WRKSRC}/doc/hardcopy ${WRKSRC}/doc/specs
