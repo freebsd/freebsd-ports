@@ -1,19 +1,24 @@
---- Makefile.orig	Mon Oct  9 07:38:51 2000
-+++ Makefile	Sun Oct 15 01:21:27 2000
-@@ -1,8 +1,8 @@
+--- Makefile.orig	Sun Oct  8 15:38:51 2000
++++ Makefile	Sat Mar 13 18:23:29 2004
+@@ -1,8 +1,9 @@
 -CC = gcc
 +#CC = gcc
  
 -CFLAGS = -fPIC -Wall -O2 -fomit-frame-pointer -I.
 +FLAGS = ${CFLAGS} -I.
++LIBFLAGS = $(FLAGS) -fPIC
  
 -PREFIX=/usr/local
 +#PREFIX=/usr/local
  
  SRCS = ksc5601_utf16.c \
  	ksc5601_utf16_table.c \
-@@ -15,24 +15,24 @@
- 	$(CC) -c $(FLAGS) -o $*.o $<
+@@ -12,27 +13,27 @@
+ OBJS = $(SRCS:.c=.o) 
+ 
+ .c.o:
+-	$(CC) -c $(FLAGS) -o $*.o $<
++	$(CC) -c $(LIBFLAGS) -o $*.o $<
  
  all: $(OBJS)
 -	$(CC) -shared -Wl,-soname -Wl,libuniksc.so.0 -o libuniksc.so.0.9 $(OBJS)
