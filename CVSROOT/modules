@@ -1989,6 +1989,7 @@ glove		ports/math/glove
 glpk		ports/math/glpk
 gltk		ports/graphics/gltk
 gltron		ports/games/gltron
+gltt		ports/graphics/gltt
 glui		ports/devel/glui
 glunarclock	ports/astro/glunarclock
 gm4		ports/devel/m4
