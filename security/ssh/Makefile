@@ -11,19 +11,16 @@
 PORTNAME=	ssh
 PORTVERSION=	1.2.27
 CATEGORIES=	security net ipv6
-MASTER_SITES=	ftp://ftp.cs.hut.fi/pub/ssh/
+MASTER_SITES=	ftp://ftp.cs.hut.fi/pub/ssh/ \
+		ftp://ftp.bitcon.no/.4/console/system/ \
+		ftp://ftp.kddlabs.co.jp/.0/security/Crypto/SSH/ \
+		ftp://ftp.vision.net.au/ftp7/linuxberg/files/console/system/ \
+		ftp://ftp.comp.hkbu.edu.hk/.6/unix/ \
+		ftp://ftp.du.se/disk1/mirrors/ssh/
 
 MAINTAINER=	kris@FreeBSD.org
 
 .if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
-MASTER_SITES+=	\
-	ftp://ftp.replay.com/pub/replay/crypto/SSH/ \
-	ftp://nic.funet.fi/pub/crypt/mirrors/ftp.dsi.unimi.it/applied-crypto/ \
-	ftp://rzsun2.informatik.uni-hamburg.de/pub/virus/crypt/ripem/ \
-	ftp://idea.sec.dsi.unimi.it/pub/security/crypt/math/ \
-	ftp://ftp.univie.ac.at/security/crypt/cryptography/asymmetric/rsa/ \
-	ftp://isdec.vc.cvut.cz/pub/security/unimi/crypt/applied-crypto/
-
 CONFIGURE_ARGS+= --with-rsaref
 LIB_DEPENDS+=	rsaref.2:${PORTSDIR}/security/rsaref
 BUILD_DEPENDS+=	/nonexistent:${PORTSDIR}/security/rsaref:extract
