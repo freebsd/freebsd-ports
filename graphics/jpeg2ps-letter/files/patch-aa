@@ -1,0 +1,23 @@
+*** Makefile.org	Sat Dec 30 14:30:00 2000
+--- Makefile	Sat Dec 30 14:38:10 2000
+***************
+*** 15,23 ****
+  # The following was reported to work for emx/gcc 0.9c fix04 under OS/2:
+  # make -f Makefile "CCFLAGS=-c -DA4 -DDOS -O2" "LDFLAGS=-Zexe -s"
+  
+! CC=gcc
+! CCFLAGS= -c -DA4
+! LD=gcc
+  LDFLAGS=
+  OBJ=o
+  EXE=
+--- 15,23 ----
+  # The following was reported to work for emx/gcc 0.9c fix04 under OS/2:
+  # make -f Makefile "CCFLAGS=-c -DA4 -DDOS -O2" "LDFLAGS=-Zexe -s"
+  
+! CC=cc
+! CCFLAGS= -O -c
+! LD=cc
+  LDFLAGS=
+  OBJ=o
+  EXE=
