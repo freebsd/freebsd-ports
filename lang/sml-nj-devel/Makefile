@@ -6,17 +6,18 @@
 #
 
 PORTNAME=	smlnj
-PORTVERSION=	110.9.1
+PORTVERSION=	110.33
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.research.bell-labs.com/dist/smlnj/working/110.9.1/ \
-		ftp://ftp.diku.dk/pub/smlnj/working/110.9.1/ \
-		ftp://sunsite.doc.ic.ac.uk/computing/programming/languages/ml/smlnj/working/110.9.1/ \
-		ftp://compiler.kaist.ac.kr/pub/sml/working/110.9.1/
-DISTFILES=	110.9.1-bin.x86-unix.tar.Z 110.9.1-cm.tar.Z 110.9.1-cml.tar.Z \
-		110.9.1-config.tar.Z 110.9.1-eXene.tar.Z \
-		110.9.1-ml-burg.tar.Z 110.9.1-ml-lex.tar.Z \
-		110.9.1-ml-yacc.tar.Z 110.9.1-runtime.tar.Z \
-		110.9.1-smlnj-c.tar.Z 110.9.1-smlnj-lib.tar.Z
+MASTER_SITES=	ftp://ftp.research.bell-labs.com/dist/smlnj/working/110.33/ \
+		ftp://ftp.diku.dk/pub/smlnj/working/110.33/ \
+		ftp://sunsite.doc.ic.ac.uk/computing/programming/languages/ml/smlnj/working/110.33/ \
+		ftp://compiler.kaist.ac.kr/pub/sml/working/110.33/
+DISTFILES=	boot.x86-unix.tgz compiler.tgz cm.tgz ckit.tgz config.tgz  \
+		ml-burg.tgz ml-lex.tgz \
+		ml-nlffi-lib.tgz ml-nlffigen.tgz \
+		ml-yacc.tgz runtime.tgz \
+		smlnj-lib.tgz system.tgz
+EXTRACT_ONLY=	config.tgz
 
 MAINTAINER=	jkoshy@freebsd.org
 
@@ -27,54 +28,30 @@ MAINTAINER=	jkoshy@freebsd.org
 # Mirror sites that keep files around in gzipped format
 # 	ftp://flint.cs.yale.edu/pub/smlnj/working/110.9.1/
 
-DIST_SUBDIR=	sml-nj
+DIST_SUBDIR=	sml-nj/${PORTVERSION}
 NO_WRKSUBDIR=	yes
-EXTRACT_ONLY=	110.9.1-config.tar.Z
 USE_GMAKE=	yes
+NO_BUILD=	yes
 
 NO_LATEST_LINK=	yes
 
-SML_BASE=	${PREFIX}/lib/sml-nj
-SML_LIBDIR=	${SML_BASE}/lib
-SML_BINDIR=	${SML_BASE}/bin
-SML_SRCDIR=	${SML_BASE}/src
-SML_EXES=	ml-burg ml-lex ml-yacc sml
+MLEXE=	ml-build ml-makedepend sml ml-yacc ml-lex ml-burg ml-nlffigen
 
 # make symlinks to the dist files
 post-extract:
 	cd ${WRKDIR} && ${LN} -sf ${_DISTDIR}/*  .
+	${CP} ${FILESDIR}/targets.customized ${WRKDIR}/config/targets.customized
 
-# The build target needs to run $WRKDIR/config/install.sh
-do-build:
+# The install target attempts to build and install the system
+do-install:
+	${MKDIR} ${PREFIX}/smlnj
 	cd ${WRKDIR} && unset PWD && \
 	FILESDIR="$(FILESDIR)" PATCH="$(PATCH)" PATCH_ARGS="$(PATCH_ARGS)" \
-		./config/install.sh
+	INSTALLDIR="$(PREFIX)/smlnj"	./config/install.sh
 
-# install target
-# 1. create installation directories
-# 2. copy the ./bin directory across
-# 3. edit bin/.run_sml to override BIN_DIR
-# 4. copy all .stable files in CM/ directories
-# 5. find all .cm files reachable from $WRKDIR/lib and copy them across
-# 6. copy the aliases in ./lib changing WRKDIR to SML_LIBDIR
-# 7. install links to executables in $PREFIX/bin
-do-install:
-	${MKDIR} ${SML_BASE} ${SML_BINDIR} ${SML_LIBDIR}
-	tar -C ${WRKDIR} -cf - bin | tar -C ${SML_BASE} -xf -
-	${RM} -f ${SML_BINDIR}/.run-sml
-	${SED} -e "s,^BIN_DIR=.*\$$,BIN_DIR=${SML_BINDIR}," \
-		< ${WRKDIR}/bin/.run-sml > ${SML_BINDIR}/.run-sml
-	${CHMOD} 755 ${SML_BINDIR}/.run-sml
-	cd ${WRKDIR} && tar -cf - `find . -name '*.stable' | ${GREP} CM` | \
-		tar -C ${SML_BASE} -xf -
-	cd ${WRKDIR} && tar -cf - `${SCRIPTDIR}/get-cm ${WRKDIR}` | \
-		tar -C ${SML_BASE} -xf -
-	for file in ${WRKDIR}/lib/*; do\
-		${SED} -e "s,${WRKDIR},${SML_BASE}," < $$file > \
-			${SML_LIBDIR}/`${BASENAME} $$file`; \
-	done
-.for file in ${SML_EXES}
-	-${LN} -s ${SML_BINDIR}/${file} ${PREFIX}/bin/${file}
+post-install:
+.for f in $(MLEXE)
+	${LN} -s $(PREFIX)/smlnj/bin/$f $(PREFIX)/bin/$f
 .endfor
 
 .include <bsd.port.mk>

@@ -1,21 +1,39 @@
---- config/install.sh.orig	Wed Aug  5 13:43:43 1998
-+++ config/install.sh	Sat Jan 29 20:46:09 2000
-@@ -181,6 +181,18 @@
- if [ "$?" != "0" ]; then
-   exit $?
- fi
-+# we need to patch just before build
-+echo "applying source patches"
-+patch_file="${FILESDIR}/extra-patch-global-names"
-+if [ -f $patch_file ]; then
-+	$PATCH $PATCH_ARGS < $patch_file
-+fi
-+if grep -w FPE_INTDIV /usr/include/machine/trap.h > /dev/null 2>&1; then
-+	patch_file="${FILESDIR}/extra-patch-signals"
-+	if [ -f $patch_file ]; then
-+		$PATCH $PATCH_ARGS < $patch_file
+--- config/install.sh.orig	Wed May 23 03:36:12 2001
++++ config/install.sh	Mon Jun 18 14:40:02 2001
+@@ -408,6 +408,28 @@
+ }
+ 
+ #
++# do_patch patch-file
++# apply a patch file
++do_patch() {
++	patchfile=$FILESDIR/$1
++
++	if [ ! -r $patchfile ]; then
++		echo "$this: !!! patch file $patchfile not found."
++		exit 1;
 +	fi
-+fi
- if [ ! -x $RUNDIR/run.$ARCH-$OPSYS ]; then
-   cd $SRCDIR/runtime/objs
-   echo "compiling the run-time system"
++
++	if [ ! -f $CONFIGDIR/.patch_$1 ]; then 
++		$PATCH $PATCH_ARGS < $patchfile || {\
++			echo "$this: !!! patch file $patchfile failed to patch."
++			exit 1;
++		}
++		echo > $CONFIGDIR/.patch_$1
++	else
++		echo "$this: patch $patchfile already installed."
++	fi
++}
++
++#
+ # create the various sub directories
+ #
+ for dir in $BINDIR $HEAPDIR $RUNDIR $LIBDIR $SRCDIR ; do
+@@ -519,6 +541,7 @@
+ # build the run-time system
+ #
+ unpack "run-time" $SRCDIR runtime runtime
++do_patch extra-patch-global-names
+ if [ -x $RUNDIR/run.$ARCH-$OPSYS ]; then
+     echo $this: Run-time system already exists.
+ else
