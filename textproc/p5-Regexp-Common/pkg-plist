@@ -1,5 +1,14 @@
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Regexp/Common/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/Regexp/Common.pm
+lib/perl5/site_perl/%%PERL_VER%%/Regexp/Common/balanced.pm
+lib/perl5/site_perl/%%PERL_VER%%/Regexp/Common/comment.pm
+lib/perl5/site_perl/%%PERL_VER%%/Regexp/Common/delimited.pm
+lib/perl5/site_perl/%%PERL_VER%%/Regexp/Common/list.pm
+lib/perl5/site_perl/%%PERL_VER%%/Regexp/Common/net.pm
+lib/perl5/site_perl/%%PERL_VER%%/Regexp/Common/number.pm
+lib/perl5/site_perl/%%PERL_VER%%/Regexp/Common/profanity.pm
+lib/perl5/site_perl/%%PERL_VER%%/Regexp/Common/whitespace.pm
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Regexp/Common
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Regexp 2>/dev/null || true
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Regexp/Common
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Regexp 2>/dev/null || true
