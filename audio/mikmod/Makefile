@@ -8,7 +8,8 @@
 PORTNAME=	mikmod
 PORTVERSION=	3.1.6
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITES=	http://mikmod.online.fr/mikmod/ \
+		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	sada
 
 MAINTAINER=	yoshiaki@kt.rim.or.jp
