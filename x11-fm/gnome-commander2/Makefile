@@ -17,7 +17,6 @@ WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 .if defined(WITH_FAM)
 LIB_DEPENDS=	fam.0:${PORTSDIR}/devel/fam
 .endif
-BUILD_DEPENDS=	automake14:${PORTSDIR}/devel/automake14
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
@@ -25,6 +24,7 @@ USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomevfs gnomelibs gdkpixbuf
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
+WANT_AUTOMAKE_VER=	14
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lintl"
 
