@@ -4505,6 +4505,7 @@ ocaml-lablgtk	ports/x11-toolkits/ocaml-lablgtk
 ocaml-mode.el	ports/lang/ocaml-mode.el
 ocaml-net	ports/www/ocaml-net
 ocaml-pcre	ports/devel/ocaml-pcre
+ocaml-pxp	ports/textproc/ocaml-pxp
 ocaml-yaxpo	ports/textproc/ocaml-yaxpo
 ocamlweb	ports/devel/ocamlweb
 octave		ports/math/octave
