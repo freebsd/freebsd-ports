@@ -32,7 +32,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|!!PREFIX!!|${PREFIX}|g' \
 		${WRKSRC}/man/yaws_api.5 ${WRKSRC}/man/yaws.conf.5 \
 		${WRKSRC}/src/yaws_config.erl ${WRKSRC}/scripts/yaws.ss
-	@${FIND} ${WRKSRC} -name \*.orig | ${XARGS} ${RM}
+	@${FIND} ${WRKSRC} -name \*.orig -or -name \*.bak | ${XARGS} ${RM}
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/bin/yaws ${PREFIX}/bin
