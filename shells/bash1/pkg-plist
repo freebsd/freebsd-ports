@@ -4,4 +4,7 @@ bin/bash
 bin/bashbug
 man/man1/bash.1
 man/man1/bash_builtins.1
+@unexec install-info --delete %D/info/bash.info %D/info/dir
 info/bash.info
+@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
+@exec install-info %D/info/bash.info %D/info/dir
