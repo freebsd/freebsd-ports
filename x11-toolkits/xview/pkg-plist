@@ -1,6 +1,6 @@
-@cwd /usr/X11R6
 lib/X11/config/XView.cf
 lib/X11/config/XView.lib
 lib/X11/config/XView.obj
 lib/X11/config/XView.rules
 lib/X11/config/XView.tmpl
+lib/X11/config/XView.prog
