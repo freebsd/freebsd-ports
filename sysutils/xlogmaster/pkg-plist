@@ -1,0 +1,9 @@
+bin/xlogmaster
+man/man1/xlogmaster.1.gz
+etc/steelblue.gtkrc
+etc/simpsons.gtkrc
+etc/hell.gtkrc
+etc/green.gtkrc
+etc/xlogmaster.gtkrc
+share/doc/xlogmaster/tutorial.txt
+@dirrm share/doc/xlogmaster
