@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	Tcl
 
 MAINTAINER=	jfitz@FreeBSD.org
 
-BUILD_DEPENDS= 	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/i386-freebsd/Tcl.pm:${PORTSDIR}/lang/p5-Tcl
+BUILD_DEPENDS= 	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/i386-freebsd/Tcl.pm:${PORTSDIR}/lang/p5-Tcl
 LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 
 USE_PERL5=	YES
