@@ -1,10 +1,10 @@
-lib/%%PYTHON_VERSION%%/site-packages/OpenSSL/SSL.so
-lib/%%PYTHON_VERSION%%/site-packages/OpenSSL/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/OpenSSL/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/OpenSSL/__init__.pyo
-lib/%%PYTHON_VERSION%%/site-packages/OpenSSL/crypto.so
-lib/%%PYTHON_VERSION%%/site-packages/OpenSSL/rand.so
-lib/%%PYTHON_VERSION%%/site-packages/OpenSSL/tsafe.py
-lib/%%PYTHON_VERSION%%/site-packages/OpenSSL/tsafe.pyc
-lib/%%PYTHON_VERSION%%/site-packages/OpenSSL/tsafe.pyo
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/OpenSSL
+%%PYTHON_SITELIBDIR%%/OpenSSL/SSL.so
+%%PYTHON_SITELIBDIR%%/OpenSSL/__init__.py
+%%PYTHON_SITELIBDIR%%/OpenSSL/__init__.pyc
+%%PYTHON_SITELIBDIR%%/OpenSSL/__init__.pyo
+%%PYTHON_SITELIBDIR%%/OpenSSL/crypto.so
+%%PYTHON_SITELIBDIR%%/OpenSSL/rand.so
+%%PYTHON_SITELIBDIR%%/OpenSSL/tsafe.py
+%%PYTHON_SITELIBDIR%%/OpenSSL/tsafe.pyc
+%%PYTHON_SITELIBDIR%%/OpenSSL/tsafe.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/OpenSSL
