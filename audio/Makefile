@@ -93,6 +93,7 @@
     SUBDIR += mpg123
     SUBDIR += mpg123.el
     SUBDIR += mpmf20
+    SUBDIR += musicbrainz
     SUBDIR += mutemix
     SUBDIR += mxv
     SUBDIR += napster
