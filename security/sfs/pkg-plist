@@ -131,12 +131,6 @@ include/sfs-%%SFS_VERSION%%/xdr_suio.h
 include/sfs-%%SFS_VERSION%%/xdrmisc.h
 include/sfs-%%SFS_VERSION%%/xhinfo.h
 @dirrm include/sfs-%%SFS_VERSION%%
-@unexec install-info --delete %D/info/sfs.info %D/info/dir
-info/sfs.info
-info/sfs.info-1
-info/sfs.info-2
-info/sfs.info-3
-@exec install-info %D/info/sfs.info %D/info/dir
 lib/libsfs.a
 lib/sfs
 lib/sfs-%%SFS_VERSION%%/aiod
