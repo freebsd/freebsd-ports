@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	criteria
-PORTVERSION=	1.0
+PORTVERSION=	1.1a
 CATEGORIES=	databases ruby
 MASTER_SITES=	http://mephle.org/Criteria/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -19,6 +19,8 @@ USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 RUBY_SETUP=	install.rb
 
+DOCS=		ChangeLog README.en
+
 .include <bsd.port.pre.mk>
 
 .if ${RUBY_VER} < 1.8
@@ -28,7 +30,9 @@ IGNORE=		only works with ruby 1.8 or later
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.en ${RUBY_MODDOCDIR}/
+.for f in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
+.endfor
 .endif
 
 .include <bsd.port.post.mk>
