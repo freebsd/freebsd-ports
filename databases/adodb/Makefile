@@ -7,6 +7,7 @@
 
 PORTNAME=	adodb
 PORTVERSION=	1.12
+PORTREVISION=	1
 CATEGORIES=	databases www
 MASTER_SITES=	http://phplens.com/lens/dl/
 DISTNAME=	${PORTNAME}112
