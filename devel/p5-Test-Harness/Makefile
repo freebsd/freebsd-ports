@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Test-Harness
-PORTVERSION=	2.00
+PORTVERSION=	2.01
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Test
@@ -17,7 +17,7 @@ MAINTAINER=	shell@shellhung.org
 PERL_CONFIGURE=	yes
 
 MAN3=		Test::Harness.3 Test::Harness::Assert.3 \
-		Test::Harness::Straps.3
+		Test::Harness::Iterator.3 Test::Harness::Straps.3
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 post-patch:
