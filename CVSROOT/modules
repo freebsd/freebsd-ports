@@ -11733,6 +11733,7 @@ xfce4-fm	ports/x11-fm/xfce4-fm
 xfce4-fm-icons	ports/x11-fm/xfce4-fm-icons
 xfce4-fsguard-plugin	ports/sysutils/xfce4-fsguard-plugin
 xfce4-genmon-plugin	ports/sysutils/xfce4-genmon-plugin
+xfce4-icon-theme	ports/x11-themes/xfce4-icon-theme
 xfce4-iconbox	ports/misc/xfce4-iconbox
 xfce4-mcs-manager	ports/sysutils/xfce4-mcs-manager
 xfce4-mcs-plugins	ports/sysutils/xfce4-mcs-plugins
