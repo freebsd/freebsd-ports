@@ -3975,7 +3975,6 @@ libxml++	ports/textproc/libxml++
 libxml2		ports/textproc/libxml2
 libxode		ports/textproc/libxode
 libxpg4		src/lib/libxpg4
-libxpg4-ns	ports/www/libxpg4-ns
 libxslt		ports/textproc/libxslt
 liby		src/lib/liby
 libz		src/lib/libz
