@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=   ftp://ftp.isc.org/isc/dhcp/
 DISTNAME=	${PORTNAME:S/isc-//:S/3/-/}${PORTVERSION:S/.b/b/:R}pl${PORTVERSION:E}
 
-MAINTAINER=	clefevre@citeweb.net
+MAINTAINER=	clefevre@poboxes.com
 
 #
 # Global variables
