@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libglade2
-PORTVERSION=	2.4.0
-PORTREVISION=	1
+PORTVERSION=	2.4.1
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.4
@@ -26,13 +25,14 @@ USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	yes
-USE_INC_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 USE_GNOME=	gnomehack libxml2 gtk20
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
 		--disable-gtk-doc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		XMLCATALOG="$(LOCALBASE)/share/xml/catalog.ports"
 
 PLIST_SUB=	XMLCATALOG="${LOCALBASE}/bin/xmlcatalog" \
 		CATALOG_PORTS_XML="${LOCALBASE}/share/xml/catalog.ports"
