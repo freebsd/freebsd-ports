@@ -6,14 +6,18 @@
 #
 
 PORTNAME=	websieve
-PORTVERSION=	0.61
-PORTREVISION=	1
+PORTVERSION=	0.63.a
 CATEGORIES=	mail
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME?=	${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	eik@FreeBSD.org
 COMMENT=	Web based Cyrus IMAP user admin client
+
+DISTVERSION=	063a
+
+.include "options"
 
 .if defined(WITH_CYRUS_IMAPD_VER)
 .if ${WITH_CYRUS_IMAPD_VER} == 22
@@ -31,7 +35,6 @@ RUN_DEPENDS=	${SITE_PERL}/IMAP/Admin.pm:${PORTSDIR}/mail/p5-IMAP-Admin \
 .endif
 RUN_DEPENDS+=	${LOCALBASE}/www/cgi-bin:${PORTSDIR}/${APACHE_PORT}
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 USE_REINPLACE=	yes
@@ -45,18 +48,6 @@ CYRUS_IMAP_PM=	${SITE_PERL}/${PERL_ARCH}/Cyrus/IMAP/Admin.pm
 FUNCLIB_PL=	funclib.cyrus
 .else
 FUNCLIB_PL=	funclib.pl
-.endif
-
-# We can not test .if exists(${CYRUS_IMAP_PM}) here
-# because SITE_PERL is defined in <bsd.port.post.mk>
-.if !defined(WITH_CYRUS_IMAPD_VER)
-pre-everything::
-	@${ECHO_CMD} "If you want to use the Cyrus IMAP and Sieve perl modules"
-	@${ECHO_CMD} "hit Ctrl-C right now and use WITH_CYRUS_IMAPD_VER=22, 21 or 20"
-	@${ECHO_CMD}
-	@${ECHO_CMD} "The Cyrus perl modules do not support SSL, but better"
-	@${ECHO_CMD} "authentication mechanisms than cleartext PLAIN."
-	@${ECHO_CMD}
 .endif
 
 post-configure:
