@@ -24,6 +24,12 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAN1=		qiv.1
 PLIST_FILES=	bin/qiv
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha"
+BROKEN=		"Does not compile on alpha"
+.endif
+
 do-configure:
 	@ ${MV} ${WRKSRC}/qiv.1 ${WRKSRC}/qiv.1.pre_sed
 	@ ${SED} -e 's#\/usr\/bin#${PREFIX}/bin#g' \
@@ -39,4 +45,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/qiv ${PREFIX}/bin/
 	${INSTALL_MAN} ${WRKSRC}/qiv.1 ${PREFIX}/man/man1/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
