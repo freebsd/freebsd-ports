@@ -32,6 +32,34 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6e740881-0cae-11d9-8a8a-000c41e2cdad">
+    <topic>mozilla --- automated file upload</topic>
+    <affects>
+      <package>
+	<name>mozilla</name>
+	<range><ge>1.7.a,2</ge><lt>1.7</lt></range>
+	<range><ge>1.8.a,2</ge><lt>1.8.a2,2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>A malicious web page can cause an automated file upload
+          from the victim's machine when viewed with Mozilla with
+          Javascript enabled.  This is due to a bug permitting
+          default values for type="file" &lt;input&gt; elements in
+          certain situations.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0759</cvename>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=241924</url>
+    </references>
+    <dates>
+      <discovery>2004-04-28</discovery>
+      <entry>2004-09-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8d823883-0ca9-11d9-8a8a-000c41e2cdad">
     <topic>mozilla --- built-in CA certificates may be overridden</topic>
     <affects>
@@ -41,9 +69,6 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </package>
       <package>
         <name>linux-mozilla</name>
-        <range><lt>1.7.2</lt></range>
-      </package>
-      <package>
         <name>linux-mozilla-devel</name>
         <range><lt>1.7.2</lt></range>
       </package>
