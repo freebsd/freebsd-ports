@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnomepim
-PORTVERSION=	1.4.8
+PORTVERSION=	1.4.9
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://me.in-berlin.de/~jroger/gnome-pim/ \
 		${MASTER_SITE_GNOME}
