@@ -1,0 +1,61 @@
+--- html/Makefile.in.orig	Thu Apr 10 05:46:02 2003
++++ html/Makefile.in	Sat Feb 12 13:53:16 2005
+@@ -33,37 +33,37 @@
+ devclean: distclean
+ 
+ install:
+-	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)
+-	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/media
+-	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/stylesheets
+-	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/contexthelp
+-	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/docs
+-	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/docs/images
+-	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/images
+-	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/images/logos
+-	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/ssi
+-	$(INSTALL) -m 664 $(INSTALL_OPTS) robots.txt $(DESTDIR)$(HTMLDIR)
+-	$(INSTALL) -m 664 $(INSTALL_OPTS) docs/robots.txt $(DESTDIR)$(HTMLDIR)/docs
++	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)
++	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/media
++	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/stylesheets
++	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/contexthelp
++	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/docs
++	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/docs/images
++	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/images
++	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/images/logos
++	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/ssi
++	$(INSTALL) -m 644 $(INSTALL_OPTS) robots.txt $(DESTDIR)$(HTMLDIR)
++	$(INSTALL) -m 644 $(INSTALL_OPTS) docs/robots.txt $(DESTDIR)$(HTMLDIR)/docs
+ 	for file in *.html; \
+-	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR); done
++	do $(INSTALL) -m 644 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR); done
+ 	for file in media/*.wav; \
+-	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/media; done
++	do $(INSTALL) -m 644 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/media; done
+ 	for file in stylesheets/*.css; \
+-	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/stylesheets; done
++	do $(INSTALL) -m 644 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/stylesheets; done
+ 	for file in contexthelp/*.html; \
+-	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/contexthelp; done
++	do $(INSTALL) -m 644 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/contexthelp; done
+ 	for file in docs/*.html; \
+-	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/docs; done
++	do $(INSTALL) -m 644 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/docs; done
+ 	for file in docs/images/*.*; \
+-	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/docs/images; done
++	do $(INSTALL) -m 644 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/docs/images; done
+ 	for file in images/*.gif; \
+-	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/images; done
++	do $(INSTALL) -m 644 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/images; done
+ 	for file in images/*.jpg; \
+-	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/images; done
++	do $(INSTALL) -m 644 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/images; done
+ 	for file in images/*.png; \
+-	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/images; done
++	do $(INSTALL) -m 644 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/images; done
+ 	for file in images/logos/*.*; \
+-	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/images/logos; done
++	do $(INSTALL) -m 644 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/images/logos; done
+ 
+ 
+ 
