@@ -6,6 +6,9 @@ quakeserver/readme.port
 quakeserver/qserver.sh
 quakeserver/stopserver.sh
 quakeserver/quakeserver.log
-quakeserver/quakeserver.in
+@exec mkfifo %D/quakeserver/quakeserver.in
+@exec chown nobody:nobody %D/quakeserver/quakeserver.in
+@exec chmod 700 %D/quakeserver/quakeserver.in
+@unexec rm -f %D/quakeserver/quakeserver.in
 @dirrm quakeserver/id1
 @dirrm quakeserver
