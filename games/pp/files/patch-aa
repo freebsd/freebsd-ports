@@ -1,0 +1,15 @@
+--- Makefile	Sat Apr  5 17:08:26 1997
++++ /home/andy/tmp/wrk/Makefile	Mon Jun  8 22:35:44 1998
+@@ -1,10 +1,10 @@
+ ####### This section was automatically generated from
+ 
+-INCDIR = $(QTDIR)/include
++INCDIR = ${X11BASE}/include/X11/qt
+ CFLAGS =  -O2 -fno-strength-reduce -Wall -W
+ LIBCFLAGS = -fPIC
+ YACCCFLAGS = -Wno-unused -Wno-parentheses
+-LFLAGS = -L$(QTDIR)/lib -lqt
++LFLAGS = -L${X11BASE}/lib -lqt
+ CC = gcc
+ MOC = moc
+ SHELL =	/bin/sh
