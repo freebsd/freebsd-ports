@@ -5710,6 +5710,7 @@ mupen64-dummyaudio	ports/emulators/mupen64-dummyaudio
 mupen64-glide	ports/emulators/mupen64-glide
 mupen64-gln64	ports/emulators/mupen64-gln64
 mupen64-input	ports/emulators/mupen64-input
+mupen64-rice	ports/emulators/mupen64-rice
 muse		ports/sysutils/muse
 musepack	ports/audio/musepack
 musicbox	ports/audio/musicbox
