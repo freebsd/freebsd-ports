@@ -19,6 +19,7 @@ COMMENT=	A GNOME/Bonobo component for spell checking
 LIB_DEPENDS=	aspell.15:${PORTSDIR}/textproc/aspell
 
 USE_BZIP2=	yes
+NO_LATEST_LINK=	yes
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes

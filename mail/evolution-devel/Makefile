@@ -32,6 +32,7 @@ LIB_DEPENDS+=	gpilotdconduit.2:${PORTSDIR}/palm/gnomepilot2
 .endif
 
 USE_BZIP2=	yes
+NO_LATEST_LINK=	yes
 USE_GMAKE=	yes
 USE_BISON=	yes
 USE_X_PREFIX=	yes
