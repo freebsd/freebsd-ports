@@ -1,6 +1,6 @@
---- config/Makefile.in.orig	Fri Aug  9 17:14:27 2002
-+++ config/Makefile.in	Fri Aug  9 17:34:18 2002
-@@ -282,71 +282,73 @@
+--- config/Makefile.in.orig	Tue Aug 20 16:46:29 2002
++++ config/Makefile.in	Tue Aug 20 17:03:19 2002
+@@ -286,71 +286,73 @@
  	fi
  	$(INSTALL_DATA) gdm.conf $(DESTDIR)$(confdir)/factory-gdm.conf
  
@@ -11,9 +11,9 @@
 +	$(INSTALL_SCRIPT) $(srcdir)/XKeepsCrashing $(DESTDIR)$(confdir)/factory-XKeepsCrashing
  
 -	-if test -f $(DESTDIR)$(localedir)/locale.alias; then \
--		cp $(DESTDIR)$(localedir)/locale.alias $(DESTDIR)$(localedir)/locale.alias.orig; \
+-		cp -f $(DESTDIR)$(localedir)/locale.alias $(DESTDIR)$(localedir)/locale.alias.orig; \
 +	if test '!' -f $(DESTDIR)$(localedir)/locale.alias; then \
-+		$(INSTALL_DATA) $(srcdir)/locale.alias $(DESTDIR)$(localedir)/locale.alias; \
++	    	$(INSTALL_DATA) $(srcdir)/locale.alias $(DESTDIR)$(localedir)/locale.alias; \
  	fi
 -	$(INSTALL_DATA) $(srcdir)/locale.alias $(DESTDIR)$(localedir)/locale.alias
 +	$(INSTALL_DATA) $(srcdir)/locale.alias $(DESTDIR)$(localedir)/factory-locale.alias
@@ -24,26 +24,26 @@
  	fi
  
 -	-if test -f $(DESTDIR)$(sessdir)/Xsession; then \
--		cp $(DESTDIR)$(sessdir)/Xsession $(DESTDIR)$(sessdir)/Xsession.orig; \
+-		cp -f $(DESTDIR)$(sessdir)/Xsession $(DESTDIR)$(sessdir)/Xsession.orig; \
 +	if test '!' -f $(DESTDIR)$(sessdir)/Xsession; then \
-+		$(INSTALL_SCRIPT) Xsession $(DESTDIR)$(sessdir)/Xsession; \
++	    	$(INSTALL_SCRIPT) Xsession $(DESTDIR)$(sessdir)/Xsession; \
  	fi
 -	$(INSTALL_SCRIPT) Xsession $(DESTDIR)$(sessdir)/Xsession
 +	$(INSTALL_SCRIPT) Xsession $(DESTDIR)$(sessdir)/factory-Xsession
  
 -	-if test -f $(DESTDIR)$(sessdir)/Gnome; then \
--		cp $(DESTDIR)$(sessdir)/Gnome $(DESTDIR)$(sessdir)/Gnome.orig; \
+-		cp -f $(DESTDIR)$(sessdir)/Gnome $(DESTDIR)$(sessdir)/Gnome.orig; \
 +	if test '!' -f $(DESTDIR)$(sessdir)/Gnome; then \
-+		$(INSTALL_SCRIPT) Gnome $(DESTDIR)$(sessdir)/Gnome; \
++	    	$(INSTALL_SCRIPT) Gnome $(DESTDIR)$(sessdir)/Gnome; \
  	fi
 -	$(INSTALL_SCRIPT) Gnome $(DESTDIR)$(sessdir)/Gnome
 +	$(INSTALL_SCRIPT) Gnome $(DESTDIR)$(sessdir)/factory-Gnome
  
  	-if test -f /usr/bin/switchdesk; then \
 -		if test -f $(DESTDIR)$(sessdir)/Default; then \
--			cp $(DESTDIR)$(sessdir)/Default $(DESTDIR)$(sessdir)/Default.orig; \
+-			cp -f $(DESTDIR)$(sessdir)/Default $(DESTDIR)$(sessdir)/Default.orig; \
 +		if test '!' -f $(DESTDIR)$(sessdir)/Default; then \
-+			$(LN_S) -f $(sessdir)/Xsession $(DESTDIR)$(sessdir)/Default; \
++		    	$(LN_S) -f $(sessdir)/Xsession $(DESTDIR)$(sessdir)/Default; \
  		fi; \
 -		$(LN_S) -f $(sessdir)/Xsession $(DESTDIR)$(sessdir)/Default; \
  	fi
@@ -53,9 +53,9 @@
  		chmod 755 $(DESTDIR)$(initdir); \
  	fi
 -	-if test -f $(DESTDIR)$(initdir)/Default; then \
--		cp $(DESTDIR)$(initdir)/Default $(DESTDIR)$(initdir)/Default.orig; \
+-		cp -f $(DESTDIR)$(initdir)/Default $(DESTDIR)$(initdir)/Default.orig; \
 +	if test '!' -f $(DESTDIR)$(initdir)/Default; then \
-+		$(INSTALL_SCRIPT) $(srcdir)/Default $(DESTDIR)$(initdir)/Default; \
++	    	$(INSTALL_SCRIPT) $(srcdir)/Default $(DESTDIR)$(initdir)/Default; \
  	fi
 -	$(INSTALL_SCRIPT) $(srcdir)/Default $(DESTDIR)$(initdir)/Default
 +	$(INSTALL_SCRIPT) $(srcdir)/Default $(DESTDIR)$(initdir)/factory-Default
@@ -65,9 +65,9 @@
  		chmod 755 $(DESTDIR)$(predir); \
  	fi
 -	-if test -f $(DESTDIR)$(predir)/Default; then \
--		cp $(DESTDIR)$(predir)/Default $(DESTDIR)$(predir)/Default.orig; \
+-		cp -f $(DESTDIR)$(predir)/Default $(DESTDIR)$(predir)/Default.orig; \
 +	if test '!' -f $(DESTDIR)$(predir)/Default; then \
-+		$(INSTALL_SCRIPT) $(srcdir)/PreSession $(DESTDIR)$(predir)/Default; \
++	    	$(INSTALL_SCRIPT) $(srcdir)/PreSession $(DESTDIR)$(predir)/Default; \
  	fi
 -	$(INSTALL_SCRIPT) $(srcdir)/PreSession $(DESTDIR)$(predir)/Default
 +	$(INSTALL_SCRIPT) $(srcdir)/PreSession $(DESTDIR)$(predir)/factory-Default
@@ -77,9 +77,9 @@
  		chmod 755 $(DESTDIR)$(postdir); \
  	fi
 -	-if test -f $(DESTDIR)$(postdir)/Default; then \
--		cp $(DESTDIR)$(postdir)/Default $(DESTDIR)$(postdir)/Default.orig; \
+-		cp -f $(DESTDIR)$(postdir)/Default $(DESTDIR)$(postdir)/Default.orig; \
 +	if test '!' -f $(DESTDIR)$(postdir)/Default; then \
-+		$(INSTALL_SCRIPT) $(srcdir)/PostSession $(DESTDIR)$(postdir)/Default; \
++	    	$(INSTALL_SCRIPT) $(srcdir)/PostSession $(DESTDIR)$(postdir)/Default; \
  	fi
 -	$(INSTALL_SCRIPT) $(srcdir)/PostSession $(DESTDIR)$(postdir)/Default
 +	$(INSTALL_SCRIPT) $(srcdir)/PostSession $(DESTDIR)$(postdir)/factory-Default
@@ -90,9 +90,9 @@
  	fi
  
 -	-if test -f $(DESTDIR)$(gnomercdir)/gnomerc; then \
--		cp $(DESTDIR)$(gnomercdir)/gnomerc $(DESTDIR)$(gnomercdir)/gnomerc.orig; \
+-		cp -f $(DESTDIR)$(gnomercdir)/gnomerc $(DESTDIR)$(gnomercdir)/gnomerc.orig; \
 +	if test '!' -f $(DESTDIR)$(gnomercdir)/gnomerc; then \
-+		$(INSTALL_SCRIPT) gnomerc $(DESTDIR)$(gnomercdir)/gnomerc; \
++	    	$(INSTALL_SCRIPT) gnomerc $(DESTDIR)$(gnomercdir)/gnomerc; \
  	fi
 -	$(INSTALL_SCRIPT) gnomerc $(DESTDIR)$(gnomercdir)/gnomerc
 +	$(INSTALL_SCRIPT) gnomerc $(DESTDIR)$(gnomercdir)/factory-gnomerc

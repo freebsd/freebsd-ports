@@ -9,6 +9,7 @@ bin/gdmlogin
 bin/gdmmktemp
 bin/gdmphotosetup
 bin/gdmsetup
+bin/gdmthemetester
 @unexec if cmp -s %D/etc/gdm/Init/Default %D/etc/gdm/Init/factory-Default; then rm -f %D/etc/gdm/Init/Default; fi
 etc/gdm/Init/factory-Default
 @unexec if cmp -s %D/etc/gdm/PostSession/Default %D/etc/gdm/PostSession/factory-Default; then rm -f %D/etc/gdm/PostSession/Default; fi
@@ -30,6 +31,7 @@ etc/gdm/factory-locale.alias
 etc/rc.d/gdm.sh.sample
 sbin/gdm-restart
 sbin/gdm-safe-restart
+sbin/gdm-stop
 sbin/gdmaskpass
 sbin/gdmconfig
 share/gnome/applications/gdmflexiserver-xnest.desktop
@@ -54,7 +56,8 @@ share/gnome/gdm/themes/circles/flower.png
 share/gnome/gdm/themes/circles/help.png
 share/gnome/gdm/themes/circles/options.png
 share/gnome/gdm/themes/circles/screenshot.png
-share/gnome/pixmaps/gdm.xpm
+share/gnome/pixmaps/gdm-foot-logo.png
+share/gnome/pixmaps/gdm.png
 share/gnome/pixmaps/login-photo.png
 share/gnome/pixmaps/nobody.png
 share/gnome/pixmaps/nohost.png
