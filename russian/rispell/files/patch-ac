@@ -4,7 +4,7 @@
 -ELISP_DIR   = /usr/share/emacs/site-lisp
 -ISPELL_DIR  = /usr/lib/ispell
 +ELISP_DIR   = NOTYET/usr/share/emacs/site-lisp
-+ISPELL_DIR  = ${PREFIX}/lib
++ISPELL_DIR  = ${PREFIX}/share/ispell
  
  KITDIR      = ../save-kostya-dict
  
