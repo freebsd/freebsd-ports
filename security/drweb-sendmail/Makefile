@@ -7,7 +7,7 @@
 
 PORTNAME=	drweb_sendmail
 PORTVERSION=    4.28.2
-PORTREVISION=   2
+PORTREVISION=   3
 CATEGORIES=	security mail
 MASTER_SITES=   http://drweb.spb.ru/download/unix/
 DISTNAME=       drweb-clients-${PORTVERSION}-sources
@@ -56,7 +56,6 @@ post-patch:
 		s#!!!___EDIT_THIS___!!!#${RANDOM_NUMBER}#" \
 	    < drweb_smf.conf > ndrwsmf.conf && \
 	    mv ndrwsmf.conf drweb_smf.conf
-	${RM} -f ${WRKSRC}/lib/* ${WRKSRC}/src/*.o
 
 post-configure:
 	cd ${WRKSRC} && { \
