@@ -4,7 +4,7 @@
 # Date created:         26 June 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.45 1998/07/23 22:58:27 ache Exp $
+# $Id: Makefile,v 1.46 1998/08/17 18:28:27 hoek Exp $
 #
 
 DISTNAME=       elm-2.4ME+43
@@ -34,6 +34,10 @@ post-install:
 		${INSTALL_DATA} \
 			${FILESDIR}/elm.mimetypes ${PREFIX}/lib; \
 	fi
+.if defined(NOMANCOMPRESS)
 	${LN} -f ${PREFIX}/man/man1/frm.1 ${PREFIX}/man/man1/nfrm.1
+.else
+	${LN} -f ${PREFIX}/man/man1/frm.1.gz ${PREFIX}/man/man1/nfrm.1.gz
+.endif
 
 .include <bsd.port.mk>
