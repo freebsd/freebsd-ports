@@ -1,45 +1,59 @@
-bin/gtop
-share/gnome/apps/System/gtop.desktop
-share/gnome/gtoprc
-share/gnome/help/gtop/C/figs/gtop-fs-1.png
-share/gnome/help/gtop/C/figs/gtop-fs-2.png
-share/gnome/help/gtop/C/figs/gtop-mem.png
-share/gnome/help/gtop/C/figs/gtop-pic-bottom.png
-share/gnome/help/gtop/C/figs/gtop-pic-main.png
-share/gnome/help/gtop/C/figs/gtop-pic-middle.png
-share/gnome/help/gtop/C/figs/gtop-pic-top.png
-share/gnome/help/gtop/C/figs/gtop-prefs.png
-share/gnome/help/gtop/C/figs/gtop-proc.png
-share/gnome/help/gtop/C/topic.dat
-share/gnome/pixmaps/gnome-gtop.png
-share/locale/az/LC_MESSAGES/gtop.mo
-share/locale/ca/LC_MESSAGES/gtop.mo
-share/locale/cs/LC_MESSAGES/gtop.mo
-share/locale/da/LC_MESSAGES/gtop.mo
-share/locale/de/LC_MESSAGES/gtop.mo
-share/locale/el/LC_MESSAGES/gtop.mo
-share/locale/es/LC_MESSAGES/gtop.mo
-share/locale/fr/LC_MESSAGES/gtop.mo
-share/locale/ga/LC_MESSAGES/gtop.mo
-share/locale/gl/LC_MESSAGES/gtop.mo
-share/locale/hu/LC_MESSAGES/gtop.mo
-share/locale/it/LC_MESSAGES/gtop.mo
-share/locale/ja/LC_MESSAGES/gtop.mo
-share/locale/ko/LC_MESSAGES/gtop.mo
-share/locale/lt/LC_MESSAGES/gtop.mo
-share/locale/no/LC_MESSAGES/gtop.mo
-share/locale/pl/LC_MESSAGES/gtop.mo
-share/locale/pt/LC_MESSAGES/gtop.mo
-share/locale/pt_BR/LC_MESSAGES/gtop.mo
-share/locale/ro/LC_MESSAGES/gtop.mo
-share/locale/ru/LC_MESSAGES/gtop.mo
-share/locale/sk/LC_MESSAGES/gtop.mo
-share/locale/sl/LC_MESSAGES/gtop.mo
-share/locale/sv/LC_MESSAGES/gtop.mo
-share/locale/tr/LC_MESSAGES/gtop.mo
-share/locale/uk/LC_MESSAGES/gtop.mo
-share/locale/zh_CN.GB2312/LC_MESSAGES/gtop.mo
-share/locale/zh_TW.Big5/LC_MESSAGES/gtop.mo
-@dirrm share/gnome/help/gtop/C/figs
-@dirrm share/gnome/help/gtop/C
-@dirrm share/gnome/help/gtop
+bin/gnome-system-monitor
+etc/gconf/gconf.xml.defaults/apps/procman/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/procman/disktree/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/procman/memmapstree/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/procman/proctree/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/procman/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/procman/disktree/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/procman/memmapstree/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/procman/proctree/%gconf.xml
+etc/gconf/schemas/gnome-system-monitor.schemas
+share/gnome/applications/gnome-system-monitor.desktop
+share/gnome/help/procman/C/figures/addColumn.png
+share/gnome/help/procman/C/figures/changePriority.png
+share/gnome/help/procman/C/figures/colorPanel.png
+share/gnome/help/procman/C/figures/columnContextMenu.png
+share/gnome/help/procman/C/figures/memoryMaps.png
+share/gnome/help/procman/C/figures/moreInfo.png
+share/gnome/help/procman/C/figures/processListing.png
+share/gnome/help/procman/C/figures/sortButton.png
+share/gnome/help/procman/C/figures/sortMenu.png
+share/gnome/help/procman/C/figures/sortMenu2.png
+share/gnome/help/procman/C/figures/systemMonitor.png
+share/gnome/help/procman/C/figures/viewMenu.png
+share/gnome/help/procman/C/legal.xml
+share/gnome/help/procman/C/procman.xml
+share/gnome/omf/gnome-core/procman-C.omf
+share/gnome/pixmaps/procman.png
+share/locale/da/LC_MESSAGES/gnome-system-monitor.mo
+share/locale/de/LC_MESSAGES/gnome-system-monitor.mo
+share/locale/es/LC_MESSAGES/gnome-system-monitor.mo
+share/locale/fr/LC_MESSAGES/gnome-system-monitor.mo
+share/locale/gl/LC_MESSAGES/gnome-system-monitor.mo
+share/locale/it/LC_MESSAGES/gnome-system-monitor.mo
+share/locale/ja/LC_MESSAGES/gnome-system-monitor.mo
+share/locale/ko/LC_MESSAGES/gnome-system-monitor.mo
+share/locale/lv/LC_MESSAGES/gnome-system-monitor.mo
+share/locale/ms/LC_MESSAGES/gnome-system-monitor.mo
+share/locale/no/LC_MESSAGES/gnome-system-monitor.mo
+share/locale/pl/LC_MESSAGES/gnome-system-monitor.mo
+share/locale/pt/LC_MESSAGES/gnome-system-monitor.mo
+share/locale/ru/LC_MESSAGES/gnome-system-monitor.mo
+share/locale/sk/LC_MESSAGES/gnome-system-monitor.mo
+share/locale/sl/LC_MESSAGES/gnome-system-monitor.mo
+share/locale/sv/LC_MESSAGES/gnome-system-monitor.mo
+share/locale/tr/LC_MESSAGES/gnome-system-monitor.mo
+share/locale/uk/LC_MESSAGES/gnome-system-monitor.mo
+share/locale/zh_CN/LC_MESSAGES/gnome-system-monitor.mo
+share/locale/zh_TW/LC_MESSAGES/gnome-system-monitor.mo
+@dirrm share/gnome/help/procman/C/figures
+@dirrm share/gnome/help/procman/C
+@dirrm share/gnome/help/procman
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/procman/proctree
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/procman/memmapstree
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/procman/disktree
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/procman
+@dirrm etc/gconf/gconf.xml.defaults/apps/procman/proctree
+@dirrm etc/gconf/gconf.xml.defaults/apps/procman/memmapstree
+@dirrm etc/gconf/gconf.xml.defaults/apps/procman/disktree
+@dirrm etc/gconf/gconf.xml.defaults/apps/procman
