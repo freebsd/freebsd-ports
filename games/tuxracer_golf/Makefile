@@ -9,12 +9,11 @@ PORTNAME=	tuxracer_golf
 PORTVERSION=	1.00
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://www.joeysmith.com/~milo/tuxracer/
-DISTNAME=	golf
-EXTRACT_SUFX=	.gz
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	adamw
 
 MAINTAINER=	adamw@FreeBSD.org
-COMMENT=	A golf theme for Tux Racer
+COMMENT=	A golf course theme for Tux Racer
 
 RUN_DEPENDS=	tuxracer:${PORTSDIR}/games/tuxracer
 
