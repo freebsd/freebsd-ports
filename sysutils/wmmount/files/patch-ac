@@ -5,9 +5,9 @@
  XPMLIB = -lXpm
  
 -LOCAL_LIBRARIES = $(XPMLIB) $(XLIB)
-+LOCAL_LIBRARIES = $(XPMLIB) $(XLIB) -lgnugetopt -L${LOCALBASE}/lib
++LOCAL_LIBRARIES = $(XPMLIB) $(XLIB) $(LDFLAGS)
 +
-+EXTRA_INCLUDES = -I${LOCALBASE}/include
++EXTRA_INCLUDES = $(CPPFLAGS)
  
  SRCS = dockapp.c wmmount.c
  OBJS = dockapp.o wmmount.o
