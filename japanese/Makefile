@@ -368,6 +368,7 @@
     SUBDIR += tcl76
     SUBDIR += tcl80
     SUBDIR += tdiary
+    SUBDIR += teTeX
     SUBDIR += texfamily
     SUBDIR += texinfo
     SUBDIR += tgif
