@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.26 1996/03/29 05:05:56 asami Exp $
+# $Id: Makefile,v 1.27 1996/04/26 08:30:12 asami Exp $
 #
 
     SUBDIR += Canna
@@ -19,6 +19,7 @@
     SUBDIR += kterm
     SUBDIR += less
     SUBDIR += mh
+    SUBDIR += mimekit
     SUBDIR += mule-canna
     SUBDIR += mule-wnn
     SUBDIR += nethack
