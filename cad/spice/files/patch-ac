@@ -25,19 +25,19 @@
 
           case 1: printf("Input file: ");
               (void) fflush(stdout);
-!             (void) fgets(buf,256,stdin);
+!             (void) fgets(buf,BSIZE_SP,stdin);
               sf = copy(buf);
               printf("Input type: ");
               (void) fflush(stdout);
-!             (void) fgets(buf,256,stdin);
+!             (void) fgets(buf,BSIZE_SP,stdin);
               f = buf[0];
               printf("Output file: ");
               (void) fflush(stdout);
-!             (void) fgets(buf,256,stdin);
+!             (void) fgets(buf,BSIZE_SP,stdin);
               af = copy(buf);
               printf("Output type: ");
               (void) fflush(stdout);
-!             (void) fgets(buf,256,stdin);
+!             (void) fgets(buf,BSIZE_SP,stdin);
               t = buf[0];
               break;
           default:
@@ -56,7 +56,7 @@
 
       fprintf(cp_out, "run circuit? ");
       fflush(cp_out);
-!     (void) fgets(buf,256,stdin);
+!     (void) fgets(buf,BSIZE_SP,stdin);
       if (buf[0] != 'n') {
         fprintf(cp_out, "running circuit\n");
         com_run(NULL);

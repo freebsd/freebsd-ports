@@ -1,5 +1,5 @@
-*** conf/defaults.orig	Thu Jul 29 23:33:56 1993
---- conf/defaults	Sat Dec 21 14:15:35 1996
+*** conf/defaults.orig	Thu Jul 29 16:33:56 1993
+--- conf/defaults	Sat Jun  6 23:40:14 1998
 ***************
 *** 65,71 ****
   #	the following definition:
@@ -36,16 +36,16 @@
   #	file listed on the "build" command line.
   
 ! SPICE_DIR	= ${PREFIX}
-! SPICE_LIB_DIR	= $(SPICE_DIR)/share/spice
+! SPICE_LIB_DIR	= $(SPICE_DIR)/share/spice3
   SPICE_EXEC_DIR	= $(SPICE_DIR)/bin
   
   S_SPICE_DIR	= $(SPICE_DIR)
-! S_SPICE_LIB_DIR	= $(S_SPICE_DIR)/share/spice
+! S_SPICE_LIB_DIR	= $(S_SPICE_DIR)/share/spice3
   S_SPICE_EXEC_DIR= $(S_SPICE_DIR)/bin
   
   #	INSTALL_DIRS lists the directories that need to be created before
 ***************
-*** 129,135 ****
+*** 129,139 ****
   #	an extra definition to work around the same strange bug.  See either
   #	file "conf/vax" or "conf/gcc".
   
@@ -53,7 +53,11 @@
   
   #	CC_OPT: Default compile options (optimization/debug level, other)
   
---- 129,135 ----
+! CC_OPT		= -O
+  
+  #	CC_OPT_SAFE: Special compile options to override CC_OPT for code
+  #	which typically causes problems for most compilers (bsim1 and bsim2).
+--- 129,139 ----
   #	an extra definition to work around the same strange bug.  See either
   #	file "conf/vax" or "conf/gcc".
   
@@ -61,6 +65,10 @@
   
   #	CC_OPT: Default compile options (optimization/debug level, other)
   
+! CC_OPT		= -O2 -pipe
+  
+  #	CC_OPT_SAFE: Special compile options to override CC_OPT for code
+  #	which typically causes problems for most compilers (bsim1 and bsim2).
 ***************
 *** 203,209 ****
   #	X_DIR indicates the top of the X11 lib/include hierarchy; it is only
@@ -78,40 +86,6 @@
   
   #	INCX lists the X include directories.  This may be different between
   #	MIT X11r5, X11r4, and your vendor's version of X11, though listing
-***************
-*** 282,288 ****
-  #	code for either or both MFB (a terminal independent graphics
-  #	interface) or X11.
-  
-! INTERFACE_OPTS	= -DWANT_MFB -DWANT_X11
-  
-  #	BUGADDR is the e-mail address to send bug reports.  If left blank
-  #	the "bug" command in spice will not operate.
---- 282,288 ----
-  #	code for either or both MFB (a terminal independent graphics
-  #	interface) or X11.
-  
-! INTERFACE_OPTS	= -DWANT_X11
-  
-  #	BUGADDR is the e-mail address to send bug reports.  If left blank
-  #	the "bug" command in spice will not operate.
-***************
-*** 292,298 ****
-  #	DEFAULT_EDITOR lists where the default editor used by the "edit"
-  #	command is located.
-  
-! DEFAULT_EDITOR	= vi
-  
-  #	ASCII_RAWFILE indicates that the default format of the spice3 raw data
-  #	file should be in human-readable format ( = 1 ) or in the smaller,
---- 292,298 ----
-  #	DEFAULT_EDITOR lists where the default editor used by the "edit"
-  #	command is located.
-  
-! DEFAULT_EDITOR	= /usr/bin/vi
-  
-  #	ASCII_RAWFILE indicates that the default format of the spice3 raw data
-  #	file should be in human-readable format ( = 1 ) or in the smaller,
 *** util/build.orig	Sun Mar 31 10:56:09 1996
 --- util/build	Sun Mar 31 10:57:21 1996
 ***************
@@ -176,3 +150,53 @@
   
   #  ifndef index
   #    ifdef HAS_INDEX
+*** src/include/os_bsd.h.orig	Sat Apr 24 18:09:46 1993
+--- src/include/os_bsd.h	Tue Jun  2 22:28:04 1998
+***************
+*** 8,19 ****
+  
+  #include "os_unix.h"
+  
+  #define HAS_NO_ATRIGH_DECL	/* if asinh( ) is not in math.h		*/
+- #define HAS_ATRIGH		/* acosh( ), asinh( ), atanh( )         */
+  #define HAS_FTIME		/* ftime( ), <times.h>			*/
+  #define HAS_TERMCAP		/* tgetxxx( )				*/
+  #define HAS_VFORK		/* BSD-ism, should not be necessary	*/
+- #define HAS_INDEX		/* index( ) instead of strchr( )	*/
+  #define HAS_BCOPY		/* bcopy( ), bzero( )			*/
+  #define HAS_BSDRANDOM		/* srandom( ) and random( )		*/
+  #define HAS_BSDTTY		/* <sgtty.h>				*/
+--- 8,23 ----
+  
+  #include "os_unix.h"
+  
++ #ifndef __FreeBSD__
+  #define HAS_NO_ATRIGH_DECL	/* if asinh( ) is not in math.h		*/
+  #define HAS_FTIME		/* ftime( ), <times.h>			*/
++ #define HAS_INDEX		/* index( ) instead of strchr( )	*/
++ #define HAS_STRINGS		/* use <strings.h> instead of <string.h> */
++ #endif
++ 
++ #define HAS_ATRIGH		/* acosh( ), asinh( ), atanh( )         */
+  #define HAS_TERMCAP		/* tgetxxx( )				*/
+  #define HAS_VFORK		/* BSD-ism, should not be necessary	*/
+  #define HAS_BCOPY		/* bcopy( ), bzero( )			*/
+  #define HAS_BSDRANDOM		/* srandom( ) and random( )		*/
+  #define HAS_BSDTTY		/* <sgtty.h>				*/
+***************
+*** 22,25 ****
+  #define HAS_BSDRLIMIT		/* getrlimit( )				*/
+  #define HAS_DUP2
+  #define HAS_GETWD		/* getwd(buf)				*/
+! #define HAS_STRINGS		/* use <strings.h> instead of <string.h> */
+--- 26,35 ----
+  #define HAS_BSDRLIMIT		/* getrlimit( )				*/
+  #define HAS_DUP2
+  #define HAS_GETWD		/* getwd(buf)				*/
+! 
+! #ifdef __FreeBSD__
+! #define HAS_BSDSOCKETS		/* <net/inet.h>, socket( ), etc.	*/
+! #define HAS_BSDTIME		/* gettimeofday( ) return time		*/
+! #define HAS_FLOAT_H		/* float.h				*/
+! #define HAS_STRCHR		/* strchr( ) instead of index( )	*/
+! #endif

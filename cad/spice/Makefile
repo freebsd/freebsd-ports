@@ -3,7 +3,7 @@
 # Date created:         26 Mar 96
 # Whom:                 Julian Jenkins <kaveman@magna.com.au>
 #
-# $Id: Makefile,v 1.8 1997/01/31 08:23:06 tg Exp $
+# $Id: Makefile,v 1.9 1997/10/22 07:04:48 tg Exp $
 #
 
 DISTNAME=	sp3f4.kit
@@ -25,10 +25,10 @@ MAN1=		sconvert.1 nutmeg.1 spice.1
 MAN3=		mfb.3
 MAN5=		mfbcap.5
 
-.if !defined(NOPORTDOCS)
 post-install:
-	${MKDIR} ${PREFIX}/share/examples/spice
-	${INSTALL_DATA} ${WRKSRC}/examples/*.cir ${PREFIX}/share/examples/spice
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/examples/spice3
+	${INSTALL_DATA} ${WRKSRC}/examples/*.cir ${PREFIX}/share/examples/spice3
 .endif
 
 .include <bsd.port.mk>
