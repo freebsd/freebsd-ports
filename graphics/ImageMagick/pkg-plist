@@ -29,8 +29,8 @@ lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Image/Magick/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Image/Magick/Magick.bs
 lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Image/Magick/Magick.so
 lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Image/Magick/autosplit.ix
-@exec /sbin/ldconfig -m %D/lib
-@unexec /sbin/ldconfig -R
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Image/Magick
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Image
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto
