@@ -4,17 +4,18 @@ lib/%%PYTHON_VERSION%%/site-packages/optik/__init__.pyo
 lib/%%PYTHON_VERSION%%/site-packages/optik/errors.py
 lib/%%PYTHON_VERSION%%/site-packages/optik/errors.pyc
 lib/%%PYTHON_VERSION%%/site-packages/optik/errors.pyo
+lib/%%PYTHON_VERSION%%/site-packages/optik/help.py
+lib/%%PYTHON_VERSION%%/site-packages/optik/help.pyc
+lib/%%PYTHON_VERSION%%/site-packages/optik/help.pyo
 lib/%%PYTHON_VERSION%%/site-packages/optik/option.py
 lib/%%PYTHON_VERSION%%/site-packages/optik/option.pyc
 lib/%%PYTHON_VERSION%%/site-packages/optik/option.pyo
 lib/%%PYTHON_VERSION%%/site-packages/optik/option_parser.py
 lib/%%PYTHON_VERSION%%/site-packages/optik/option_parser.pyc
 lib/%%PYTHON_VERSION%%/site-packages/optik/option_parser.pyo
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/optik
 %%EXAMPLES%%/caseless.py
 %%EXAMPLES%%/required_1.py
 %%EXAMPLES%%/required_2.py
-@dirrm %%EXAMPLES%%
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/advanced.txt
@@ -26,6 +27,7 @@ lib/%%PYTHON_VERSION%%/site-packages/optik/option_parser.pyo
 %%PORTDOCS%%%%DOCSDIR%%/test/test_basics.py
 %%PORTDOCS%%%%DOCSDIR%%/test/test_bool.py
 %%PORTDOCS%%%%DOCSDIR%%/test/test_callback.py
+%%PORTDOCS%%%%DOCSDIR%%/test/test_choice.py
 %%PORTDOCS%%%%DOCSDIR%%/test/test_conflict.py
 %%PORTDOCS%%%%DOCSDIR%%/test/test_count.py
 %%PORTDOCS%%%%DOCSDIR%%/test/test_extend.py
@@ -33,5 +35,7 @@ lib/%%PYTHON_VERSION%%/site-packages/optik/option_parser.pyo
 %%PORTDOCS%%%%DOCSDIR%%/test/test_manipulate.py
 %%PORTDOCS%%%%DOCSDIR%%/test/test_misc.py
 %%PORTDOCS%%%%DOCSDIR%%/test/test_nargs.py
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/optik
+@dirrm %%EXAMPLES%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/test
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
