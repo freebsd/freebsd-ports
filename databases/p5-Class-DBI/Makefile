@@ -7,6 +7,7 @@
 
 PORTNAME=	Class-DBI
 PORTVERSION=	0.96
+PORTREVISION=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Class
@@ -28,7 +29,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN3=		Class::DBI.3 Class::DBI::Column.3 Class::DBI::ColumnGrouper.3 \
-		Class::DBI::Iterator.3 Class::DBI::Query.3
+		Class::DBI::Iterator.3 Class::DBI::Query.3 Class::DBI::Relationship.3
 
 post-configure:
 # dirty hack to deceive irritable pod2man
