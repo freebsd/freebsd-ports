@@ -1,28 +1,23 @@
---- configure.orig	Fri Jun 20 11:55:40 2003
-+++ configure	Fri Jun 20 11:57:22 2003
-@@ -3094,6 +3094,9 @@
- echo "${ECHO_T}$am_cv_CC_dependencies_compiler_type" >&6
- CCDEPMODE=depmode=$am_cv_CC_dependencies_compiler_type
+--- configure.orig	Sun Feb 15 23:02:51 2004
++++ configure	Sun Feb 15 23:07:26 2004
+@@ -16588,17 +16588,12 @@
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
  
-+_CPPFLAGS="$CPPFLAGS"
-+CPPFLAGS="$CPPFLAGS `gnome-config --cflags print`"
+-/* Override any gcc2 internal prototype to avoid an error.  */
+-#ifdef __cplusplus
+-extern "C"
+-#endif
+-/* We use char because int might match the return type of a gcc2
+-   builtin and then its argument prototype would still apply.  */
+-char dgettext ();
++#include <libintl.h>
 +
- 
- 
- if
-@@ -3168,6 +3171,7 @@
- fi
- 
- 
-+CPPFLAGS="$_CPPFLAGS"
- 
- ac_ext=c
- ac_cpp='$CPP $CPPFLAGS'
-@@ -15765,6 +15769,7 @@
- 
- # This can be used to rebuild libtool when needed
- LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
-+$ac_aux_dir/ltconfig $LIBTOOL_DEPS
- 
- # Always use our own libtool.
- LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+ int
+ main ()
+ {
+-dgettext ();
++dgettext ("","");
+   ;
+   return 0;
+ }

@@ -1,4 +1,5 @@
 bin/inkscape
+bin/inkview
 lib/inkscape/extensions/SpSVG.pm
 lib/inkscape/extensions/dia2svg.sh
 lib/inkscape/extensions/ill2svg.pl
@@ -99,12 +100,19 @@ share/gnome/inkscape/join.xpm
 share/gnome/inkscape/join_bevel.xpm
 share/gnome/inkscape/join_miter.xpm
 share/gnome/inkscape/join_round.xpm
+share/gnome/inkscape/keys.svg
 share/gnome/inkscape/line.xpm
 share/gnome/inkscape/line_dashed.xpm
 share/gnome/inkscape/line_doubled.xpm
 share/gnome/inkscape/line_full.xpm
 share/gnome/inkscape/lock_aspect_no.xpm
 share/gnome/inkscape/lock_aspect_yes.xpm
+share/gnome/inkscape/marker_arrow_end.xpm
+share/gnome/inkscape/marker_arrow_start.xpm
+share/gnome/inkscape/marker_none_end.xpm
+share/gnome/inkscape/marker_none_start.xpm
+share/gnome/inkscape/marker_triangle_end.xpm
+share/gnome/inkscape/marker_triangle_start.xpm
 share/gnome/inkscape/modules/ai_input.inkmod
 share/gnome/inkscape/modules/dia.inkmod
 share/gnome/inkscape/modules/dropshadow.inkmod
@@ -174,6 +182,7 @@ share/gnome/inkscape/toolbox_node.xpm
 share/gnome/inkscape/toolbox_object.xpm
 share/gnome/inkscape/toolbox_select.xpm
 share/gnome/inkscape/toolbox_zoom.xpm
+share/gnome/inkscape/tutorial.svg
 share/gnome/inkscape/unknown.xpm
 share/gnome/inkscape/writing_mode_lr.xpm
 share/gnome/inkscape/writing_mode_tb.xpm
