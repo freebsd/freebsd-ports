@@ -20,7 +20,6 @@ share/vim/doc/change.txt
 share/vim/doc/cmdline.txt
 share/vim/doc/digraph.txt
 share/vim/doc/editing.txt
-share/vim/doc/errors.txt
 share/vim/doc/eval.txt
 share/vim/doc/gui.txt
 share/vim/doc/gui_x11.txt
@@ -32,6 +31,7 @@ share/vim/doc/index.txt
 share/vim/doc/insert.txt
 share/vim/doc/intro.txt
 share/vim/doc/map.txt
+share/vim/doc/message.txt
 share/vim/doc/motion.txt
 share/vim/doc/options.txt
 share/vim/doc/os_unix.txt
@@ -76,6 +76,7 @@ share/vim/syntax/elmfilt.vim
 share/vim/syntax/expect.vim
 share/vim/syntax/esqlc.vim
 share/vim/syntax/fortran.vim
+share/vim/syntax/gp.vim
 share/vim/syntax/help.vim
 share/vim/syntax/html.vim
 share/vim/syntax/idl.vim
