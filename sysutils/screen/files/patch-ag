@@ -1,0 +1,11 @@
+--- display.c.orig	Fri Nov 24 02:22:01 2000
++++ display.c	Fri Nov 24 02:19:13 2000
+@@ -896,7 +896,7 @@
+ char *s;
+ int c;
+ {
+-  if (display && s)
++  if (display && s && *s)
+     {
+       ospeed = D_dospeed;
+       tputs(tgoto(s, 0, c), 1, DoAddChar);
