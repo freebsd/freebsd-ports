@@ -3,11 +3,11 @@
 # Date created:			22 Sep 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: porting.sgml,v 1.16 1996/03/21 14:15:01 asami Exp $
+# $Id: Makefile,v 1.1.1.1 1996/09/25 20:28:43 max Exp $
 #
 
 DISTNAME=	bpl+
-PKGNAME=	bpl+
+PKGNAME=	bpl+-1.0
 CATEGORIES+=	comms
 MASTER_SITES=	ftp://ftp.tohoku.ac.jp/pub/net/telnet/telnetx/
 
