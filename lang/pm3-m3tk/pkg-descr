@@ -1,0 +1,7 @@
+This is a comprehensive library for processing and transforming
+Modula-3 source code.  This version comes from the Polytechnique
+Montreal Modula-3 (PM3) distribution.  It contains the package "m3tk".
+
+WWW: http://m3.polymtl.ca/m3/
+
+John Polstra <jdp@FreeBSD.ORG>
