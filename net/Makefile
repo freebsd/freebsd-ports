@@ -134,6 +134,7 @@
     SUBDIR += libunp
     SUBDIR += libunpipc
     SUBDIR += licq
+    SUBDIR += linpopup
     SUBDIR += macipgw
     SUBDIR += mars_nwe
     SUBDIR += merlinmon

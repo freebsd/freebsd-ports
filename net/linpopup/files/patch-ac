@@ -1,0 +1,21 @@
+--- recept.c.orig	Mon Nov 20 16:20:24 2000
++++ recept.c	Mon Nov 20 16:22:04 2000
+@@ -359,7 +359,7 @@
+ delete_showed_message (void)
+ {
+   struct linpopup_message this_message;
+-  char *temp_filename;
++  static char temp_filename[]="/tmp/LinPopUpXXXXXX";
+   int file_handle_temp, file_handle_data;
+   int f;
+ 
+@@ -370,8 +370,7 @@
+       return;
+     }
+ 
+-  temp_filename = tmpnam (NULL);
+-  file_handle_temp = open (temp_filename, O_RDWR | O_CREAT, DATA_PERM);
++  if ( (file_handle_temp = mkstemp(temp_filename)) == -1 ) return;
+   file_handle_data = open (DATA_FILE, O_RDONLY, DATA_PERM);
+   /* lock it for reading .. */
+   (void) lock_reg (file_handle_data, F_SETLKW, F_RDLCK, 0, SEEK_SET, 0);

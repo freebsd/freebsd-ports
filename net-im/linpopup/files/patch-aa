@@ -1,0 +1,69 @@
+--- Makefile.orig	Tue Mar 14 04:45:05 2000
++++ Makefile	Mon Nov 20 15:22:53 2000
+@@ -1,20 +1,21 @@
+ SHELL=/bin/sh
+-CC = gcc
+-CFLAGS = -Wall -O2 -fno-strength-reduce #-g -pedantic
+-GTK_CFLAGS = `gtk-config --cflags`
+-GTK_LIBS = `gtk-config --libs`
++CC ?= gcc
++CFLAGS ?= -Wall -O2 -fno-strength-reduce #-g -pedantic
++GTK_CONFIG ?= gtk-config
++GTK_CFLAGS = `${GTK_CONFIG} --cflags`
++GTK_LIBS = `${GTK_CONFIG} --libs`
+ LFLAGS = $(GTK_LIBS) -lXmu -lXt -lSM -lICE
+ PROGNAME-STATIC = LinPopUp-static
+ PROGNAME = LinPopUp
+ PROGNAME_LNK = linpopup
+ VERSION = 1.2.0
+ VERSION_DATE = 2000
+-DESTDIR = /usr/local
+-INSTALL_BINPATH = $(DESTDIR)/bin
+-INSTALL_MANPATH = $(DESTDIR)/man
+-DOC_DIR = $(DESTDIR)/doc/$(PROGNAME)-$(VERSION)
+-SHARE_DIR = $(DESTDIR)/share/$(PROGNAME)
+-DATA_DIR = /var/lib/linpopup
++PREFIX ?= /usr/local
++INSTALL_BINPATH = $(PREFIX)/bin
++INSTALL_MANPATH = $(PREFIX)/man
++DOC_DIR = $(PREFIX)/doc/$(PROGNAME)
++SHARE_DIR = $(PREFIX)/share/$(PROGNAME)
++DATA_DIR ?= /var/db/linpopup
+ DATA_FILE = $(DATA_DIR)/messages.dat
+ 
+ RPM_RELEASE = 1
+@@ -22,9 +23,9 @@
+ RPM_ICONNAME = linpopup.gif
+ 
+ 
+-$(PROGNAME): version.o dialog.o main.o text.o menu.o toolbar.o io.o send.o recept.o\
+-	custom.o string.o GTKmisc.o docs.o netscape_remote.o execute.o	     
+-	$(CC) $(CFLAGS) -v $^ -o $(PROGNAME) $(GTK_CFLAGS) $(LFLAGS)
++$(PROGNAME): version.o dialog.o main.o text.o menu.o toolbar.o io.o send.o \
++	recept.o custom.o string.o GTKmisc.o docs.o netscape_remote.o execute.o	     
++	$(CC) $(CFLAGS) $? -o $(PROGNAME) $(GTK_CFLAGS) $(LFLAGS)
+ 
+ 
+ install : 
+@@ -97,10 +98,10 @@
+ 		> ../extra/$(PROGNAME).1.in; \
+ 		fi;
+ 	@sed -e s,THIS_DATA_FILE,$(DATA_FILE), \
+-	     -e s,THIS_DESTDIR,$(DESTDIR), \
++	     -e s,THIS_DESTDIR,$(PREFIX), \
+ 	     -e s,THIS_VERSION,$(VERSION), \
+ 	      ../extra/$(PROGNAME).1.in >  ../$(PROGNAME).1
+-	@sed -e s,THIS_DESTDIR,$(DESTDIR), ../extra/install.in > ../INSTALL
++	@sed -e s,THIS_DESTDIR,$(PREFIX), ../extra/install.in > ../INSTALL
+ 	@nroff -mandoc -Tlatin1 ../$(PROGNAME).1 | col -bx > ../MANUAL 
+ 
+ 
+@@ -115,7 +116,7 @@
+ 	@echo "#define COMPILE_TIME \"`date +%T`\"" >> version.h
+ 	@echo "#define COMPILE_BY \"`whoami`\"" >> version.h
+ 	@echo "#define COMPILE_HOST \"`hostname`\"" >> version.h
+-	@echo "#define GTK_VERSION \"GTK+ `gtk-config --version`\"" >> version.h
++	@echo "#define GTK_VERSION \"GTK+ `$GTK_CONFIG --version`\"" >> version.h
+ 	@echo "#define CC_VERSION \"`$(CC) -v 2>&1 | tail -1`\"">>version.h
+ 	@echo "#define CODE_LINES `cat *.c protos.h | grep -ch -e \"[[:alpha:]|[:punct:]]\"`">>version.h
+ 

@@ -1,0 +1,21 @@
+--- send.c.orig	Mon Nov 20 16:07:54 2000
++++ send.c	Mon Nov 20 16:18:43 2000
+@@ -161,7 +161,7 @@
+   gchar message_text[2048];
+   guint message_length;
+   char IS_TRUNCATED = FALSE;
+-  char *temp_filename;
++  static char temp_filename[]="/tmp/LinPopUpXXXXXX";
+   int file_handle_temp;
+   gchar new_header[256];
+ 
+@@ -201,8 +201,7 @@
+ 
+ 
+   /* -- write message text to a tempory file -- */
+-  temp_filename = tmpnam (NULL);
+-  file_handle_temp = open (temp_filename, O_RDWR | O_CREAT | O_TRUNC, DATA_PERM);
++  if ( (file_handle_temp = mkstemp(temp_filename)) == -1 ) return;  
+   write (file_handle_temp, message_text, strlen (message_text));
+   close (file_handle_temp);
+ 

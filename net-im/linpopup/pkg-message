@@ -1,0 +1,4 @@
+
+Please add the following line to your smb.conf file:
+message command = /usr/X11R6/bin/LinPopUp "%f" "%m" %s; rm %s
+
