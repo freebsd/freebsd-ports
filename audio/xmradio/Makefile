@@ -20,17 +20,14 @@ COMMENT=	Motif based FM tuner (for use with bt848 driver)
 USE_IMAKE=	yes
 USE_XPM=	yes
 USE_MOTIF=	yes
-USE_REINPLACE=YES
+USE_REINPLACE=	yes
+ONLY_FOR_ARCHS=	i386 ia64
 
 PLIST_FILES=	bin/xmradio lib/X11/app-defaults/XMradio
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-ONLY_FOR_ARCHS=	i386
-.endif
-
-.if ${OSVERSION} > 503000
+.if ${OSVERSION} > 502100
 post-patch:
 	${REINPLACE_CMD} -e "s,machine/ioctl_bt848.h,dev/bktr/ioctl_bt848.h," \
 		${WRKSRC}/radio.c
