@@ -1,0 +1,9 @@
+bin/mysqlcc
+%%DATADIR%%/error.wav
+%%DATADIR%%/warning.wav
+%%DATADIR%%/syntax.txt
+%%PORTDOCS%%%%DOCSDIR%%/Changelog.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/TODO.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%
