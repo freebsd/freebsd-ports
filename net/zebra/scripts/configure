@@ -37,8 +37,8 @@ case $retval in
 		;;
 esac
 
-/bin/mkdir -p ${WRKDIRPREFIX}${CURDIR}
-exec > ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+/bin/mkdir -p ${WRKDIR}
+exec > ${WRKDIR}/Makefile.inc
 
 while [ "$1" ]; do
     case $1 in
