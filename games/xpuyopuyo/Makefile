@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xpuyopuyo
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.2
 CATEGORIES=	games
 MASTER_SITES=	http://chaos2.org/xpuyopuyo/ \
 		http://lenin.dabney.caltech.edu/~justins/xpuyopuyo/

@@ -95,8 +95,26 @@ share/xpuyopuyo/themes/3dRokz/img_tile_top.xpm
 share/xpuyopuyo/themes/3dRokz/img_title.xpm
 share/xpuyopuyo/themes/3dRokz/img_top.xpm
 share/xpuyopuyo/themes/3dRokz/img_trans.xpm
+share/xpuyopuyo/themes/smileys/img_0.xpm
+share/xpuyopuyo/themes/smileys/img_0j.xpm
+share/xpuyopuyo/themes/smileys/img_1.xpm
+share/xpuyopuyo/themes/smileys/img_1j.xpm
+share/xpuyopuyo/themes/smileys/img_2.xpm
+share/xpuyopuyo/themes/smileys/img_2j.xpm
+share/xpuyopuyo/themes/smileys/img_3.xpm
+share/xpuyopuyo/themes/smileys/img_3j.xpm
+share/xpuyopuyo/themes/smileys/img_4.xpm
+share/xpuyopuyo/themes/smileys/img_4j.xpm
+share/xpuyopuyo/themes/smileys/img_5.xpm
+share/xpuyopuyo/themes/smileys/img_5j.xpm
+share/xpuyopuyo/themes/smileys/img_expl.xpm
+share/xpuyopuyo/themes/smileys/img_ind.xpm
+share/xpuyopuyo/themes/smileys/img_rock.xpm
+share/xpuyopuyo/themes/smileys/img_rockbig.xpm
+share/xpuyopuyo/themes/smileys/img_rockdemon.xpm
 share/xpuyopuyo/xpuyopuyo.txt
 share/xpuyopuyo/copying.txt
+@dirrm share/xpuyopuyo/themes/smileys
 @dirrm share/xpuyopuyo/themes/3dRokz
 @dirrm share/xpuyopuyo/themes/default
 @dirrm share/xpuyopuyo/themes
