@@ -48,7 +48,7 @@ lib/libmorph.so.1
 %%PORTDOCS%%%%EXAMPLESDIR%%/AD_freeborder/image2.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/AD_freeborder/image2.png.mesh
 %%PORTDOCS%%%%EXAMPLESDIR%%/AD_freeborder/image2.png.meshtmp
-share/locale/it/LC_MESSAGES/xmorph.mo
+%%NLS%%share/locale/it/LC_MESSAGES/xmorph.mo
 %%GNOME:%%%%DATADIR%%/mpeg.param
 %%DATADIR%%/pixmaps/cursor_left.xpm
 %%DATADIR%%/pixmaps/eraser.xpm
