@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scite
-PORTVERSION=	1.50
+PORTVERSION=	1.55
 CATEGORIES=	editors gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.scintilla.org/
@@ -23,11 +23,26 @@ WRKSRC=		${WRKDIR}/${PORTNAME}/gtk
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehier gtk12
 MAKEFILE=	makefile
-MAKE_ENV=	MKDIR="${MKDIR}"
 
-post-extract:
-	@${PERL} -pi -e  's|\x0d||' ${WRKSRC}/makefile
+.if defined(WITH_GTK2)
+USE_GNOME=	gtk20
+PKGNAMESUFFIX=	-gtk2
+.else
+USE_GNOME=	gtk12
+MAKE_ARGS=	GTK1=yes
+.endif
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/../bin/SciTE ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/../doc/scite.1 ${MANPREFIX}/man/man1
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/../src/*.properties ${DATADIR}
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/../doc/*.html ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/../doc/*.jpg ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/../doc/*.png ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
