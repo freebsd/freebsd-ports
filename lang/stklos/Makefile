@@ -11,11 +11,13 @@ CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	fuyuki@hadaly.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The successor of the STk Scheme interpreter
 
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4 \
 		gc.1:${PORTSDIR}/devel/boehm-gc
+
+ONLY_FOR_ARCHS=	i386
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
