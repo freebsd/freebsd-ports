@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	portlint
-PORTVERSION=	2.6.9
+PORTVERSION=	2.6.10
 CATEGORIES=	devel
 MASTER_SITES=	# none
 DISTFILES=	# none

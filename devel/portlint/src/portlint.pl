@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $Id: portlint.pl,v 1.69 2004/11/22 18:21:08 marcus Exp $
+# $Id: portlint.pl,v 1.70 2004/12/17 03:45:23 marcus Exp $
 #
 
 use vars qw/ $opt_a $opt_A $opt_b $opt_C $opt_c $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
@@ -40,7 +40,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 6;
-my $micro = 9;
+my $micro = 10;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -170,12 +170,13 @@ chdir "$portdir" || die "$portdir: $!";
 # get make vars
 my @varlist =  qw(
 	PORTNAME PORTVERSION PORTREVISION PORTEPOCH PKGNAME PKGNAMEPREFIX
-	PKGNAMESUFFIX DISTNAME DISTFILES CATEGORIES MASTERDIR MAINTAINER
-	MASTER_SITES WRKDIR WRKSRC NO_WRKSUBDIR PATCHDIR SCRIPTDIR FILESDIR
+	PKGNAMESUFFIX DISTVERSIONPREFIX DISTVERSION DISTVERSIONSUFFIX
+	DISTNAME DISTFILES CATEGORIES MASTERDIR MAINTAINER MASTER_SITES
+	WRKDIR WRKSRC NO_WRKSUBDIR PATCHDIR SCRIPTDIR FILESDIR
 	PKGDIR COMMENT DESCR PLIST PKGCATEGORY PKGINSTALL PKGDEINSTALL
 	PKGREQ PKGMESSAGE MD5_FILE .CURDIR INSTALLS_SHLIB USE_LIBTOOL_VER
-	INDEXFILE PKGORIGIN CONFLICTS PKG_VERSION PKGINSTALLVER PLIST_FILES
-	OPTIONS INSTALLS_OMF
+	INDEXFILE PKGORIGIN CONFLICTS PKG_VERSION PKGINSTALLVER
+	PLIST_FILES OPTIONS INSTALLS_OMF
 );
 
 my $cmd = join(' -V ', "make $makeenv MASTER_SITE_BACKUP=''", @varlist);
@@ -898,7 +899,7 @@ sub checkmakefile {
 	my $tmp;
 	my $bogusdistfiles = 0;
 	my @varnames = ();
-	my($portname, $portversion, $distfiles, $distname, $extractsufx) = ('', '', '', '', '');
+	my($portname, $portversion, $distfiles, $distversionprefix, $distversion, $distversionsuffix, $distname, $extractsufx) = ('', '', '', '', '');
 	my $masterport = 0;
 	my $slaveport = 0;
 	my $use_gnome_hack = 0;
@@ -1457,9 +1458,10 @@ EOF
 
 	# check the order of items.
 	&checkorder('PORTNAME', $tmp, $file, qw(
-PORTNAME PORTVERSION PORTREVISION PORTEPOCH CATEGORIES MASTER_SITES
-MASTER_SITE_SUBDIR PKGNAMEPREFIX PKGNAMESUFFIX DISTNAME EXTRACT_SUFX
-DISTFILES DIST_SUBDIR EXTRACT_ONLY
+PORTNAME PORTVERSION DISTVERSIONPREFIX DISTVERSION DISTVERSIONSUFFIX
+PORTREVISION PORTEPOCH CATEGORIES MASTER_SITES MASTER_SITE_SUBDIR
+PKGNAMEPREFIX PKGNAMESUFFIX DISTNAME EXTRACT_SUFX DISTFILES
+DIST_SUBDIR EXTRACT_ONLY
 	));
 
 	# check the items that has to be there.
@@ -1471,11 +1473,11 @@ DISTFILES DIST_SUBDIR EXTRACT_ONLY
 		&perror("WARN: $file: unless this is a master port, PORTNAME has to be set by \"=\", ".
 			"not by \"$1=\".") unless ($masterport);
 	}
-	if ($tmp !~ /\nPORTVERSION(.)?=/) {
-		&perror("FATAL: $file: PORTVERSION has to be there.") unless ($slaveport && $makevar{PORTVERSION} ne '');
-	} elsif ($1 ne '') {
+	if ($tmp !~ /\n(PORTVERSION|DISTVERSION)(.)?=/) {
+		&perror("FATAL: $file: PORTVERSION or DISTVERSION has to be there.") unless ($slaveport && ($makevar{PORTVERSION} ne '' || $makevar{DISTVERSION} ne ''));
+	} elsif ($2 ne '') {
 		&perror("WARN: $file: unless this is a master port, PORTVERSION has to be set by \"=\", ".
-			"not by \"$1=\".") unless ($masterport);
+			"not by \"$2=\".") unless ($masterport);
 	}
 	if ($newport) {
 		print "OK: checking for existence of PORTREVISION in new port.\n"
@@ -1588,6 +1590,9 @@ DISTFILES DIST_SUBDIR EXTRACT_ONLY
 	#$portversion = $1 if ($tmp =~ /\nPORTVERSION[+?]?=[ \t]*([^\n]+)\n/);
 	$portname = $makevar{PORTNAME};
 	$portversion = $makevar{PORTVERSION};
+	$distversionprefix = $makevar{DISTVERSIONPREFIX};
+	$distversion = $makevar{DISTVERSION};
+	$distversionsuffix = $makevar{DISTVERSIONSUFFIX};
 	$distname = $1 if ($tmp =~ /\nDISTNAME[+?]?=[ \t]*([^\n]+)\n/);
 	$extractsufx = $1 if ($tmp =~ /\nEXTRACT_SUFX[+?]?=[ \t]*([^\n]+)\n/);
 
@@ -1608,11 +1613,16 @@ DISTFILES DIST_SUBDIR EXTRACT_ONLY
 		$extractsufx = '.tar.gz';
 	}
 
-	print "OK: sanity checking PORTNAME/PORTVERSION.\n" if ($verbose);
+	print "OK: sanity checking PORTNAME/PORTVERSION/DISTVERSIONPREFIX/DISTVERSION/DISTVERSIONSUFFIX.\n" if ($verbose);
 	if ($distname ne '') {
 		if ($distname eq "$portname-$portversion") {
 			&perror("WARN: $file: DISTNAME is \${PORTNAME}-\${PORTVERSION} by ".
 				"default, you don't need to define DISTNAME.");
+		} else {
+			if ($distname eq "$portname-$distversionprefix$distversion$distversionsuffix") {
+				&perror("WARN: $file: DISTNAME is \${PORTNAME}-\${DISTVERSIONPREFIX}\${DISTVERSION}\${DISTVERSIONSUFFIX} by ".
+					"default, you don't need to define DISTNAME.");
+			}
 		}
 		if ($distname =~ /PORTREVISION/) {
 			&perror("FATAL: $file: DISTNAME contains a reference to ".
@@ -1641,8 +1651,12 @@ DISTFILES DIST_SUBDIR EXTRACT_ONLY
 		&perror("WARN: $file: using hyphen in PORTNAME.".
 			" consider using PKGNAMEPREFIX and/or PKGNAMESUFFIX.");
 	}
-	if ($portversion eq '') {
-		&perror("FATAL: $file: PORTVERSION must be specified");
+	if ($portversion eq '' && $distversion eq '') {
+		&perror("FATAL: $file: either PORTVERSION or DISTVERSION must be specified");
+	}
+	if ($portversion ne '' && $distversion ne '') {
+		&perror("FATAL: $file: either PORTVERSION or DISTVERSION must be ".
+			"specified, not both");
 	}
 	if ($portversion =~ /^pl[0-9]*$/
 	|| $portversion =~ /^[0-9]*[A-Za-z]?[0-9]*(\.[0-9]*[A-Za-z]?[0-9+]*)*$/) {
