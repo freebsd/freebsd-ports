@@ -41,14 +41,17 @@ lib/X11/afterstep/sounds/train.au
 include/X11/pixmaps/monitor_bsd.xpm
 include/X11/pixmaps/3dpaint.xpm
 include/X11/pixmaps/AFstep.xpm
+include/X11/pixmaps/AfterStep.xpm
 include/X11/pixmaps/FileFolders.xpm
 include/X11/pixmaps/KeysOnChain.xpm
+include/X11/pixmaps/OldFashionedRadio.xpm
 include/X11/pixmaps/YellowBlueRedGeometry.xpm
 include/X11/pixmaps/interface.xpm
 include/X11/pixmaps/monalisa.xpm
 include/X11/pixmaps/monitor.xpm
 include/X11/pixmaps/netscape3.xpm
 include/X11/pixmaps/penguin.xpm
+include/X11/pixmaps/recycler.xpm
 include/X11/pixmaps/shutdown.xpm
 include/X11/pixmaps/text.xpm
 include/X11/pixmaps/writeletter.xpm
