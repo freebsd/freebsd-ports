@@ -1,0 +1,14 @@
+To start icecast at system boot add:
+
+icecast_enable="YES"
+
+to /etc/rc.conf. See the icecast -h command for optional additional
+flags. To specify a config file for example add:
+
+icecast_flags="-c /usr/local/etc/icecast.xml"
+
+Customize /usr/local/etc/icecast.xml for your environment.  In
+particular if you use chroot in the config file ensure the pid
+directive in icecast.xml matches the setting in
+/usr/local/etc/rc.d/icecast.sh.
+
