@@ -9,8 +9,8 @@
 PORTNAME=	staroffice
 PORTVERSION=	5.2
 CATEGORIES=	french editors linux
-MASTER_SITES=	ftp://sunsite.cnlab-switch.ch/mirror/staroffice/francais/ \
-		ftp://ftp.math.u-bordeaux.fr/pub/StarOffice/Linux-Intel/ \
+MASTER_SITES=	ftp://ftp.cem2.univ-montp2.fr/pub/linux/soft/StarOffice/ \
+		ftp://sunsite.cnlab-switch.ch/mirror/staroffice/francais/ \
 		ftp://ftp.be.embnet.org/pub/tools/StarOffice/Linux/ \
 		ftp://ftp.medasys-digital-systems.fr/pub1/linux/staroffice/ \
 		ftp://ftp.hu-berlin.de/pub/mirrors/sunsolve.sun.com/pub/patches/ \
@@ -29,7 +29,7 @@ MAINTAINER=	mb@imp.ch
 FETCH_DEPENDS=	${LINUXBASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
 
 ONLY_FOR_ARCHS=	i386
-NO_CDROM=	'Doit etre telecharge depuis le site web de Sun'
+NO_CDROM=	'Doit être téléchargé depuis le site web de Sun'
 IS_INTERACTIVE=	yes
 NO_BUILD=	yes
 DIST_SUBDIR=	staroffice52
@@ -46,9 +46,9 @@ pre-fetch:
 	@${ECHO}
 	@${ECHO} OS-VERSION ${OSVERSION}
 	@${ECHO}
-	@${ECHO} Staroffice depend d\'une modification du script
+	@${ECHO} Staroffice dépend d\'une modification du script
 	@${ECHO} /usr/src/sys/i386/linux/linux_sysvec.c Celui-ci
-	@${ECHO} Doit etre au moins en revision 1.55.2.1.
+	@${ECHO} Doit être au moins en révision 1.55.2.1.
 	@${ECHO}
 	@${ECHO} Veuillez mettre à jour vers FreeBSD 4.1 SVP
 	@${ECHO}
@@ -57,7 +57,7 @@ pre-fetch:
 .if defined(WITH_CDROM)
 .if !exists(${CD_MOUNTPT}/linux/office52/setup)
 	@${ECHO}
-	@${ECHO} Montez le CDrom de Staroffice 5.2 dans le repertoire
+	@${ECHO} Montez le CDrom de Staroffice 5.2 dans le répertoire
 	@${ECHO} ${CD_MOUNTPT} et relancez l\'installation
 	@${ECHO}
 	@${FALSE}
@@ -75,7 +75,7 @@ do-extract:
 .if !defined(DISPLAY) || ${DISPLAY} == ""
 	@ ${ECHO}
 	@ ${ECHO} Impossible d\'ouvrir le display X:
-	@ ${ECHO} Verifiez la variable DISPLAY
+	@ ${ECHO} Vérifiez la variable DISPLAY
 	@ ${ECHO}
 	@ ${FALSE}
 .else
@@ -107,7 +107,7 @@ do-install:
 .if !defined(DISPLAY) || ${DISPLAY} == ""
 	@ ${ECHO}
 	@ ${ECHO} Impossible d\'ouvrir le display X:
-	@ ${ECHO} Verifiez la variable DISPLAY
+	@ ${ECHO} Vérifiez la variable DISPLAY
 	@ ${ECHO}
 	@ ${FALSE}
 .else
@@ -119,7 +119,7 @@ do-install:
 	@if [ -f ${PREFIX}/office52/program/setup ]; then \
 		${ECHO} ; \
 		${ECHO} Ignorez le message d\'erreur. StarOffice5.2 a correctement ; \
-		${ECHO} ete installe sur votre système. ; \
+		${ECHO} été installé sur votre système. ; \
 		${ECHO} ; \
 	else \
 		${ECHO} ; \
@@ -129,7 +129,7 @@ do-install:
 		${FALSE} ; \
 	fi
 .if ! defined(WITH_CDROM)
-	@${ECHO_MSG} "===>   Applying sunsolve patches for ${PKGNAME}"
+	@${ECHO_MSG} "===>   Application des correctifs sunsolve pour ${PKGNAME}"
 	@for file in ${SUNSOLVE}/* ; do \
 		${CP} -Rv $$file ${PREFIX}/office52/ ; \
 	done
