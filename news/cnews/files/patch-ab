@@ -1,15 +1,31 @@
-*** ../work.old/util/dostatfs.c	Thu Sep  8 13:06:30 1994
---- ./util/dostatfs.c	Sat Oct  1 11:27:59 1994
+*** util/dostatfs.c	Mon Jan  2 13:48:49 1995
+--- util/dostatfs.c	Mon Jan 23 19:04:37 1995
 ***************
-*** 6,11 ****
---- 6,12 ----
-  #include <string.h>
-  #include <sys/types.h>
+*** 13,18 ****
+--- 13,23 ----
+   * a few attempts...
+   */
   
++ #ifdef __FreeBSD__
++ #define	BSD4_4	1	/* and FreeBSD is sort of 4.4 */
 + #include <sys/param.h>
++ #endif
++ 
+  /* First, pick up one popular header on general principles. */
   #include <sys/mount.h>
   
-  #ifndef MNAMELEN
+***************
+*** 26,34 ****
+  #endif
+  #ifdef hpux
+  #define	sun	1	/* likewise HP */
+- #endif
+- #ifdef __FreeBSD__
+- #define	BSD4_4	1	/* and FreeBSD is sort of 4.4 */
+  #endif
+  
+  #ifdef sun
+--- 31,36 ----
 *** batch/usenntpxmit.old	Thu Sep 22 17:28:37 1994
 --- batch/usenntpxmit	Fri Sep 30 12:30:17 1994
 ***************
