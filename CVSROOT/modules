@@ -9866,7 +9866,6 @@ xmsg		ports/x11/xmsg
 xmule		ports/net/xmule
 xmulti		ports/games/xmulti
 xmx		ports/x11/xmx
-xmysql		ports/databases/xmysql
 xmysqladmin	ports/databases/xmysqladmin
 xnap		ports/net/xnap
 xnc		ports/x11-fm/xnc
