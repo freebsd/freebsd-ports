@@ -1,13 +1,13 @@
-lib/python1.5/site-packages/python-ldap/ldap.py
-lib/python1.5/site-packages/python-ldap/ldap.pyc
-lib/python1.5/site-packages/python-ldap/ldap.pyo
-lib/python1.5/site-packages/python-ldap/ldif.py
-lib/python1.5/site-packages/python-ldap/ldif.pyc
-lib/python1.5/site-packages/python-ldap/ldif.pyo
-lib/python1.5/site-packages/python-ldap/perldap.py
-lib/python1.5/site-packages/python-ldap/perldap.pyc
-lib/python1.5/site-packages/python-ldap/perldap.pyo
-lib/python1.5/site-packages/_ldapmodule.so
-lib/python1.5/site-packages/ldap.pth
-@dirrm lib/python1.5/site-packages/python-ldap
-@dirrm lib/python1.5/site-packages
+lib/%%PYTHON_VERSION%%/site-packages/python-ldap/ldap.py
+lib/%%PYTHON_VERSION%%/site-packages/python-ldap/ldap.pyc
+lib/%%PYTHON_VERSION%%/site-packages/python-ldap/ldap.pyo
+lib/%%PYTHON_VERSION%%/site-packages/python-ldap/ldif.py
+lib/%%PYTHON_VERSION%%/site-packages/python-ldap/ldif.pyc
+lib/%%PYTHON_VERSION%%/site-packages/python-ldap/ldif.pyo
+lib/%%PYTHON_VERSION%%/site-packages/python-ldap/perldap.py
+lib/%%PYTHON_VERSION%%/site-packages/python-ldap/perldap.pyc
+lib/%%PYTHON_VERSION%%/site-packages/python-ldap/perldap.pyo
+lib/%%PYTHON_VERSION%%/site-packages/_ldapmodule.so
+lib/%%PYTHON_VERSION%%/site-packages/ldap.pth
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/python-ldap
+@dirrm lib/%%PYTHON_VERSION%%/site-packages
