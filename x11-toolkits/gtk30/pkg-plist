@@ -152,6 +152,7 @@ share/locale/sv/LC_MESSAGES/gtk+.mo
 share/themes/Default/gtk/gtkrc
 @dirrm share/themes/Default/gtk
 @dirrm share/themes/Default
+@dirrm share/themes/engines
 @dirrm share/themes
 @dirrm include/gtk11d/gdk
 @dirrm include/gtk11d/gtk

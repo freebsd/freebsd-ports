@@ -200,3 +200,14 @@
  localedir = $(datadir)/locale
  gnulocaledir = $(prefix)/share/locale
  gettextsrcdir = $(prefix)/share/gettext/po
+--- docs/Makefile.in.orig	Tue Feb  2 03:29:59 1999
++++ docs/Makefile.in	Tue Feb  2 03:30:15 1999
+@@ -99,7 +99,7 @@
+ LT_RELEASE = @LT_RELEASE@
+ LT_REVISION = @LT_REVISION@
+ MAINT = @MAINT@
+-MAKEINFO = @MAKEINFO@
++MAKEINFO = @MAKEINFO@ --no-split
+ MKINSTALLDIRS = @MKINSTALLDIRS@
+ NM = @NM@
+ PACKAGE = @PACKAGE@
