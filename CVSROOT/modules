@@ -9690,6 +9690,7 @@ spacearyarya	ports/games/spacearyarya
 spacechart	ports/astro/spacechart
 spacehulk	ports/games/spacehulk
 spamass-milter	ports/mail/spamass-milter
+spamass-rules	ports/mail/spamass-rules
 spambnc		ports/mail/spambnc
 spamcalc	ports/misc/spamcalc
 spamd		ports/mail/spamd
