@@ -7,6 +7,7 @@
 
 PORTNAME=	srvx
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	irc net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	srvx
@@ -24,6 +25,19 @@ CONFIGURE_ARGS+=	--enable-debug
 .if defined(WITH_PROTOCOL_BAHAMUT)
 CONFIGURE_ARGS+=	--with-protocol=bahamut
 .endif
+
+PLIST_FILES=	bin/srvx etc/srvx.conf.example 		\
+		etc/sockcheck.conf.example 		\
+		share/doc/${PORTNAME}/chanserv.help 	\
+		share/doc/${PORTNAME}/global.help 	\
+		share/doc/${PORTNAME}/helpserv.help 	\
+		share/doc/${PORTNAME}/modcmd.help 	\
+		share/doc/${PORTNAME}/nickserv.help 	\
+		share/doc/${PORTNAME}/opserv.help 	\
+		share/doc/${PORTNAME}/saxdb.help 	\
+		share/doc/${PORTNAME}/sendmail.help 	\
+		share/doc/${PORTNAME}/sockcheck.help
+PLIST_DIRS=	share/doc/${PORTNAME}
 
 pre-fetch:
 	@ ${ECHO} ""
