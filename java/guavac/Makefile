@@ -3,7 +3,7 @@
 # Date created:        10 October 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.8 1998/08/07 22:49:31 asami Exp $
+# $Id: Makefile,v 1.9 1998/10/14 01:20:21 jseger Exp $
 #
 
 DISTNAME=	guavac-1.2
@@ -15,8 +15,6 @@ MAINTAINER=	Nakai@technologist.com
 CC=		gcc28
 CXX=		g++28
 BUILD_DEPENDS=	${LOCALBASE}/i386-unknown-freebsd${OSREL}/lib/libiberty.a:${PORTSDIR}/lang/glibstdc++28
-
-BROKEN_ELF=	depends on glibstdc++28
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
