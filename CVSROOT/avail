@@ -1,20 +1,7 @@
 #
-# $Id: avail,v 1.101 1999/08/04 19:28:06 markm Exp $
+# $Id: avail,v 1.102 1999/08/06 23:05:52 eivind Exp $
 #
-# cvs-committers mail is sent to all members of the /etc/group group 'ncvs'
-# When adding a new committer, please add them to /etc/group first, before
-# modifying this file.  That way, they get the "welcome aboard" message.
+# This can be used to implement finer grain access controls beyond
+# being in access.  For now, everybody who has access can commit anywhere.
 #
-# Make sure that anyone you add here is already in the ncvs group. - admins
-#
-# Please take careful note of the ordering of the line here.  The mail
-# envelope is built with the same order as the ncvs group.  Since the mail
-# is delivered sequentially, people that need it most should be closer to the
-# front, however it is far from complete.  Do not sort it into alphabetical
-# order!
-#
-# Please try to keep the handbook (contrib/chapter.sgml, authors.ent) in
-# in sync with this.
-#
-unavail
-avail|dg,peter,jkh,phk,gpalmer,paul,wollman,bde,gibbs,asami,joerg,ache,pst,sos,nate,karl,csgr,ats,guido,martin,hsu,sef,se,torstenb,rich,dfr,gclarkii,swallace,ljo,dima,lars,jmz,ugen,dufault,wpaul,amurai,jmacd,jfieber,roberto,markm,gj,mpp,rgrimes,smace,erich,graichen,adam,tg,uhclem,jdp,fenner,wosch,scrappy,smpatel,jhay,jraynard,andreas,chuckr,jfitz,max,steve,fsmp,imp,msmith,obrien,mckay,kato,davidn,mbarkah,nsj,brian,darrenr,tegge,yokota,cracauer,eivind,jgreco,danny,jmg,hanai,jmb,jb,stb,pds,tedm,kjc,stark,charnier,itojun,cwt,rse,mjacob,jlemon,helbig,brandon,hoek,jseger,vanilla,hosokawa,nik,semenu,pb,des,rnordier,dt,thepish,kuriyama,mph,dburr,jkoshy,ghelmer,nectar,ejc,dwhite,nsouch,abial,luoqi,motoyuki,rvb,grog,luigi,ken,mckusick,truckman,archie,billf,n_hibma,sada,flathill,wes,jesusr,foxfair,newton,mks,dirk,hm,simokawa,gallatin,roger,dcs,kris,julian,alc,shige,taoka,jasone,nsayer,mharo,dick,tom,mtaylor,ru,kevlo,sheldonh,green,iwasaki,cpiazza,deischen,dbaker,lile,gehenna,nyan,marcel,cg,tanimura,mdodd,sumikawa,shin,pho,chris
+avail
