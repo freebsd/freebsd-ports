@@ -21,8 +21,9 @@ CONFIGURE_TARGET=
 USE_REINPLACE=	yes
 
 post-patch:
-	${REINPLACE_CMD} -e 's,malloc.h,stdlib.h,' ${WRKSRC}/kpopup/misc.cpp \
+	@${REINPLACE_CMD} -e 's,malloc.h,stdlib.h,' ${WRKSRC}/kpopup/misc.cpp \
 		${WRKSRC}/kpopup/make_popup.cpp ${WRKSRC}/kpopup/main.cpp
+	@${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},' ${WRKSRC}/kpopup/misc.h
 
 post-install:
 	@${CAT} ${PKGMESSAGE} | ${SED} -e 's,%%PREFIX%%,${PREFIX},g'
