@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	xmolwt
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	biology
 MASTER_SITES=	http://www.st.hirosaki-u.ac.jp/~rmiya/xmolwt/
 
