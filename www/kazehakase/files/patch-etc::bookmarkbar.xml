@@ -1,27 +1,23 @@
---- etc/bookmarkbar.xml.orig	Thu Jun 10 03:35:09 2004
-+++ etc/bookmarkbar.xml	Fri Aug 27 11:34:25 2004
-@@ -10,6 +10,24 @@
+--- etc/bookmarkbar.xml.orig	Wed Sep 15 06:08:15 2004
++++ etc/bookmarkbar.xml	Tue Sep 28 11:51:13 2004
+@@ -10,6 +10,20 @@
    </bookmark>
    <separator/>
    <folder>
 +    <title>FreeBSD News</title>
 +    <info>
-+      <metadata owner="http://kazehakase.sourceforge.jp/">
-+        <location>http://www.freebsd.org/news/news.rdf</location>
-+        <update_interval>60</update_interval>
++      <metadata owner="http://kazehakase.sourceforge.jp/" kz:location="http://www.freebsd.org/news/news.rdf">
 +      </metadata>
 +    </info>
 +  </folder>
 +  <folder>
 +    <title>FreshPorts</title>
 +    <info>
-+      <metadata owner="http://kazehakase.sourceforge.jp/">
-+        <location>http://www.freshports.org/news.php</location>
-+        <update_interval>60</update_interval>
++      <metadata owner="http://kazehakase.sourceforge.jp/" kz:location="http://www.freshports.org/news.php">
 +      </metadata>
 +    </info>
 +  </folder>
 +  <folder>
      <title>Yahoo!News</title>
      <info>
-       <metadata owner="http://kazehakase.sourceforge.jp/">
+       <metadata owner="http://kazehakase.sourceforge.jp/" kz:location="http://rss.news.yahoo.com/rss/topstories">
