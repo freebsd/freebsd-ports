@@ -9680,6 +9680,7 @@ xpipeman	ports/games/xpipeman
 xpired		ports/games/xpired
 xpk		ports/archivers/xpk
 xplanet		ports/astro/xplanet
+xplore		ports/x11-fm/xplore
 xplot		ports/math/xplot
 xpm		ports/graphics/xpm
 xpns		ports/misc/xpns
