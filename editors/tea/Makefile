@@ -6,33 +6,36 @@
 #
 
 PORTNAME=		tea
-PORTVERSION=		2.0
-PORTREVISION=	1
+PORTVERSION=		7.0
 CATEGORIES=		editors
 MASTER_SITES=		http://tea.linux.kiev.ua/
 DISTNAME=		${PORTNAME}
 
 MAINTAINER=		jylefort@brutele.be
-COMMENT=		A simple GTK+ text editor
+COMMENT=		A simple and powerful GTK+ text editor
+
+.if defined(WITH_ASPELL)
+LIB_DEPENDS+=		aspell:${PORTSDIR}/textproc/aspell
+.endif
 
 WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-BROKEN=			Size mismatch
-EXPIRATION_DATE=	2005-02-18
-DEPRECATED=		${BROKEN}
 
 USE_X_PREFIX=		yes
 USE_BZIP2=		yes
 USE_REINPLACE=		yes
 GNU_CONFIGURE=		yes
-USE_GCC=		3.3
+USE_GCC=		3.4
 USE_GNOME=		gtk20
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
+pre-everything::
+.if !defined(WITH_ASPELL)
+	@${ECHO_MSG} "Define WITH_ASPELL to build with aspell support"
+.endif
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/share/doc/tea|${DOCSDIR}|g' \
-		${WRKSRC}/Makefile.in \
-		${WRKSRC}/src/tea_funx.c
+	@${REINPLACE_CMD} -e 's|/tea/doc/|/doc/tea/|' \
+		${WRKSRC}/src/tea_defs.h
 
 .include <bsd.port.mk>
