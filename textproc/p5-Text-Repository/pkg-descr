@@ -1,0 +1,9 @@
+Text::Repository attempts to simplify storing shared text between
+multple Perl modules, scripts, templating systems, etc. It does this by
+allowing chunks of text to be stored with symbolic names.
+Text::Repository was originally designed to store SQL queries, but can
+of course be used with any kind of text that needs to be shared.
+
+WWW: http://search.cpan.org/search?dist=Text-Repository
+
+Seamus Venasse <svenasse@polaris.ca>
