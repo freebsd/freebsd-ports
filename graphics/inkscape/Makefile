@@ -14,7 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A program seeks to become a full featured open source SVG editor
 
-LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
+LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
+		sigc-1.2.5:${PORTSDIR}/devel/libsigc++12
 RUN_DEPENDS=	${SITE_PERL}/XML/XQL.pm:${PORTSDIR}/textproc/p5-XML-XQL
 
 USE_GMAKE=	yes
