@@ -7,7 +7,7 @@
 
 PORTNAME=	sox
 PORTVERSION=	12.17.4
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sox
@@ -54,7 +54,7 @@ CONFIGURE_ARGS+=	--disable-lame
 
 .if defined(WITH_MAD)
 CONFIGURE_ARGS+=	--enable-mad
-LIB_DEPENDS+=		mad.2:${PORTSDIR}/audio/mad
+LIB_DEPENDS+=		mad.2:${PORTSDIR}/audio/libmad
 .else
 CONFIGURE_ARGS+=	--disable-mad
 .endif
