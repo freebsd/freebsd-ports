@@ -17,8 +17,6 @@ MAINTAINER=	nbm@FreeBSD.org
 RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/z2.py:${PORTSDIR}/www/zope
 
 NO_BUILD=	YES
-USE_PERL5=	yes
-USE_REINPLACE=	yes
 
 # You can change this in the environment if you like.
 SZOPEBASEDIR?=		www/Zope
@@ -40,7 +38,7 @@ do-install:
 		${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/${ZOPEPRODUCTNAME}/
 	@${CP} ${ZOPEPRODUCTSRC}/demo/navigator_demo.zexp \
 		${ZOPEBASEDIR}/import
-	@${REINPLACE_CMD} -e \
+	@${SED} -e \
 		's#%%PREFIX%%#${PREFIX}#' ${FILESDIR}/MESSAGE > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
