@@ -22,4 +22,5 @@ ONLY_FOR_ARCHS=	alpha i386 ppc sparc64
 USE_LINUX=	y
 USE_ZIP=	y
 
-.include "../mbrola/Makefile"
+MASTERDIR=	${.CURDIR}/../mbrola
+.include "${MASTERDIR}/Makefile"
