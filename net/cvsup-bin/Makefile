@@ -3,12 +3,12 @@
 # Date created:		12 November 1997
 # Whom:			Sheldon Hearn <axl@iafrica.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/11/17 00:45:13 jdp Exp $
 #
 
 DISTNAME=	cvsup-bin-15.2
 CATEGORIES=	devel net
-MASTER_SITES=	ftp://hub.freebsd.org/pub/CVSup/ \
+MASTER_SITES=	ftp://ftp.freebsd.org/pub/FreeBSD/CVSup/ \
 		ftp://ftp.cs.tu-berlin.de/pub/FreeBSD/CVSup/ \
 		ftp://ftp.polstra.com/pub/FreeBSD/CVSup/
 DISTFILES=	cvsup-bin-15.2.tar.gz
