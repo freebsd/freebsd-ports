@@ -8,10 +8,11 @@ include/tn/keyhndl.h
 include/tn/list.h
 include/tn/register.h
 include/tn/tn.h
-include/tn/tn_nc.h
-include/tn/tn_w32.h
+include/tn/tn_c_nc.h
+include/tn/tn_c_w32.h
+include/tn/tn_h_nc.h
+include/tn/tn_h_w32.h
 include/tn/xmem.h
-@dirrm include/tn
 %%PORTDOCS%%share/doc/terminality/curs1.c
 %%PORTDOCS%%share/doc/terminality/extra1.c
 %%PORTDOCS%%share/doc/terminality/extra2.c
@@ -30,3 +31,4 @@ include/tn/xmem.h
 %%PORTDOCS%%share/doc/terminality/tutor-tn.html
 %%PORTDOCS%%@dirrm share/doc/terminality/screenshot
 %%PORTDOCS%%@dirrm share/doc/terminality
+@dirrm include/tn

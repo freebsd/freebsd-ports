@@ -7,27 +7,20 @@
 #
 
 PORTNAME=	terminality
-PORTVERSION=	2.0
+PORTVERSION=	2.1
 CATEGORIES=	devel
-MASTER_SITES= 	http://members.optushome.com.au/darkmoon7/code/tn/
+MASTER_SITES= 	http://members.optushome.com.au/emikulic/code/tn/
 DISTNAME=	tn-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-USE_REINPLACE=	yes
-USE_GMAKE=	yes
-MAKE_ENV=	CPP=${CXX} INSTALL="${INSTALL}" INSTALL_DATA="${INSTALL_DATA}"
-
-post-patch:
-	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} \
-		${REINPLACE_CMD} -e "s, -lstdc\\+\\+,,g"
-	@${REINPLACE_CMD} -e "s,make,gmake,g ; \
-		s,/usr/local,${PREFIX},g" ${WRKSRC}/Makefile
-
+do-install:
+	@${MKDIR} ${PREFIX}/include/tn
+	${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include/tn
+	${INSTALL_DATA} ${WRKSRC}/libtn.a ${PREFIX}/lib
 .if !defined(NOPORTDOCS)
-post-install:
-	${MKDIR} ${DOCSDIR}
-	${CP} -R ${WRKSRC}/doc/ ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}/screenshot
+	${CP} -R ${WRKSRC}/doc/* ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

@@ -1,29 +1,34 @@
---- Makefile.orig	Sun Feb 18 13:48:12 2001
-+++ Makefile	Sun Apr 29 01:41:18 2001
-@@ -19,9 +19,7 @@
+--- Makefile.orig	Sat Jul 27 16:36:19 2002
++++ Makefile	Thu Aug  8 02:14:43 2002
+@@ -6,9 +6,8 @@
  #
  # Makefile for the ncurses frontend of the library
  
 -CC = gcc
 -CPP = g++
--CFLAGS = -DUSE_NCURSES -g -I. -Wall
-+CFLAGS += -DUSE_NCURSES -I.
- LIBS = -lncurses
+-CFLAGS = -g -I. -Wall
++CFLAGS += -I.
++CXXFLAGS += -I.
  
  .SUFFIXES: .c .cpp .h
-@@ -83,13 +81,9 @@
  
- # for G.Gabriele ;)
- install:
--	install libtn.a -m 0644 /usr/local/lib
-+	${INSTALL} libtn.a /usr/local/lib
- 	install -m 0755 -d /usr/local/include/tn
--	install *.h -m 0644 /usr/local/include/tn
--	install -m 0755 -d /usr/local/doc/tn
--	install doc/tn/*.html -m 0644 /usr/local/doc/tn
--	install doc/tn/*.jpeg -m 0644 /usr/local/doc/tn
--	install doc/tn/*.css -m 0644 /usr/local/doc/tn
-+	${INSTALL_DATA} *.h /usr/local/include/tn
+@@ -23,16 +22,16 @@
+ 	ar cru libtn.a $(OBJS)
  
- # $Log: Makefile,v $
- # Revision 1.24  2001/02/18 05:48:12  darkmoon
+ demo/demo: libtn.a demo/demo.cpp demo/myscheme.h
+-	(cd demo && make)
++	(cd demo && ${MAKE})
+ 
+ dlgc/dlgc: libtn.a dlgc/dlgc.cpp
+-	(cd dlgc && make)
++	(cd dlgc && ${MAKE})
+ 
+ .c.o:
+ 	$(CC) $(CFLAGS) -c $<
+ 
+ .cpp.o:
+-	$(CPP) $(CFLAGS) -c $<
++	$(CXX) $(CXXFLAGS) -c $<
+ 
+ clean:
+ 	rm -f *~ *.o libtn.a core

@@ -1,22 +1,41 @@
---- demo/Makefile.orig	Sun Sep  9 21:00:39 2001
-+++ demo/Makefile	Sun Sep  9 21:01:09 2001
-@@ -21,9 +21,7 @@
+--- demo/Makefile.orig	Fri Jul 26 20:54:10 2002
++++ demo/Makefile	Thu Aug  8 02:35:57 2002
+@@ -8,23 +8,22 @@
  # Description: Terminality demos Makefile (Unix/ncurses)
  # Author: Emil Mikulic, Michal Safranek
  
 -CC = gcc
 -CPP = g++
--CFLAGS = -g -I.. -Wall -DUSE_NCURSES
-+CFLAGS += -I.. -Wall -DUSE_NCURSES
- LIBS = -lncurses ../libtn.a -lstdc++
+-CFLAGS = -g -I.. -Wall
+-LIBS = -lncurses ../libtn.a
++CFLAGS += -I..
++CXXFLAGS += -I..
++LIBS = -lm -lncurses ../libtn.a
  
  .SUFFIXES: .c .cpp .h
-@@ -34,7 +32,7 @@
- 	$(CC) -o demo $< $(CFLAGS) $(LIBS) -lstdc++
+ 
+ all: demo demo3d demoansi
+ 
+ ../libtn.a:
+-	(cd .. && make libtn.a)
++	(cd .. && ${MAKE} libtn.a)
+ 
+ demo: demo.o ../libtn.a Makefile
+-	$(CC) -o demo demo.o $(CFLAGS) $(LIBS) -lstdc++
++	$(CXX) -o demo demo.o $(CXXFLAGS) $(LIBS)
  
  demo3d:	demo3d.o ../libtn.a precalc.o Makefile
--	$(CC) -o demo3d $< precalc.o $(CFLAGS) $(LIBS) -lstdc++
-+	$(CPP) -o demo3d $< precalc.o $(CFLAGS) $(LIBS) -lstdc++
+-	$(CC) -o demo3d demo3d.o precalc.o $(CFLAGS) $(LIBS) -lstdc++
++	$(CC) -o demo3d demo3d.o precalc.o $(CFLAGS) $(LIBS)
  
  demoansi: demoansi.o ../libtn.a precalc.o Makefile
- 	$(CC) -o demoansi $< precalc.o $(CFLAGS) $(LIBS)
+ 	$(CC) -o demoansi demoansi.o precalc.o $(CFLAGS) $(LIBS)
+@@ -34,7 +33,7 @@
+ 	$(CC) $(CFLAGS) -c $<
+ 
+ .cpp.o:
+-	$(CPP) $(CFLAGS) -c $<
++	$(CXX) $(CXXFLAGS) -c $<
+ 
+ clean:
+ 	rm -f core *~ *.o demo demo3d demoansi precalc.dat
