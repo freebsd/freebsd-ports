@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	File-Scan
-PORTVERSION=	0.91
+PORTVERSION=	0.93
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	File/HDIAS
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	martin@tradex.sk
+MAINTAINER=	jims@bluenotch.com
 COMMENT=	Perl5 anti-virus file scanning package
 
 PERL_CONFIGURE=	yes
