@@ -121,21 +121,5 @@ lib/libsane.so.0
 lib/libsane.so.0.73
 @exec /sbin/ldconfig -m %D/lib
 @unexec /sbin/ldconfig -R
-man/man1/saned.1.gz
-man/man1/scanimage.1.gz
-man/man1/xscanimage.1.gz
-man/man5/sane-hp.5.gz
-man/man5/sane-microtek.5.gz
-man/man5/sane-net.5.gz
-man/man5/sane-microtek2.5.gz
-man/man5/sane-pnm.5.gz
-man/man5/sane-qcam.5.gz
-man/man5/sane-scsi.5.gz
-man/man5/sane-dmc.5.gz
-man/man5/sane-epson.5.gz
-man/man5/sane-dll.5.gz
-man/man5/sane-mustek.5.gz
-man/man5/sane-pint.5.gz
-man/man5/sane-umax.5.gz
 sbin/saned
 share/sane-style.rc

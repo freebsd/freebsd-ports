@@ -3,7 +3,6 @@ bin/ctr2mtv
 bin/drawplot2mtv
 bin/pdraw2mtv
 bin/mtv2mtv
-man/man1/plotmtv.1.gz
 share/doc/plotmtv/DataFormat.ps.Z
 share/doc/plotmtv/Tests/run.csh
 share/doc/plotmtv/Tests/run.sh

@@ -1,5 +1,4 @@
 bin/gfont
-man/man1/gfont.1.gz
 lib/gfont/etc/Fontmap
 lib/gfont/exec/gfont_pktopx
 lib/gfont/exec/gfont_pxtogdf

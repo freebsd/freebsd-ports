@@ -2,5 +2,4 @@ bin/camediaplay
 share/doc/camediaplay/README.english
 share/doc/camediaplay/README.japanese
 share/doc/camediaplay/PROTOCOL
-man/man1/camediaplay.1.gz
 @dirrm share/doc/camediaplay

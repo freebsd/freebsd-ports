@@ -152,9 +152,6 @@ libexec/gimp/1.0/plug-ins/whirlpinch
 libexec/gimp/1.0/plug-ins/xpm
 libexec/gimp/1.0/plug-ins/xwd
 libexec/gimp/1.0/plug-ins/zealouscrop
-man/man1/gimp.1.gz
-man/man1/gimptool.1.gz
-man/man3/gpc.3.gz
 share/gimp/brushes/10x10square.gbr
 share/gimp/brushes/10x10squareBlur.gbr
 share/gimp/brushes/11circle.gbr
