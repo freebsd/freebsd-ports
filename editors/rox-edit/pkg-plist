@@ -7,19 +7,39 @@ apps/Edit/EditWindow.pyo
 apps/Edit/Help/COPYING
 apps/Edit/Help/Changes
 apps/Edit/Help/README
+apps/Edit/Messages/de.gmo
+apps/Edit/Messages/de.po
+apps/Edit/Messages/dist
+apps/Edit/Messages/es.gmo
+apps/Edit/Messages/es.po
+apps/Edit/Messages/fr.gmo
+apps/Edit/Messages/fr.po
+apps/Edit/Messages/it.gmo
+apps/Edit/Messages/it.po
+apps/Edit/Messages/tips.py
+apps/Edit/Messages/tips.pyc
+apps/Edit/Messages/tips.pyo
+apps/Edit/Messages/update-po
 apps/Edit/Options.xml
 apps/Edit/buffer.py
 apps/Edit/buffer.pyc
 apps/Edit/buffer.pyo
+apps/Edit/diff.py
+apps/Edit/diff.pyc
+apps/Edit/diff.pyo
 apps/Edit/findrox.py
 apps/Edit/findrox.pyc
 apps/Edit/findrox.pyo
 apps/Edit/goto.py
 apps/Edit/goto.pyc
 apps/Edit/goto.pyo
+apps/Edit/images/rox-diff.png
+apps/Edit/images/rox-word-wrap.png
 apps/Edit/search.py
 apps/Edit/search.pyc
 apps/Edit/search.pyo
+@dirrm apps/Edit/images
+@dirrm apps/Edit/Messages
 @dirrm apps/Edit/Help
 @dirrm apps/Edit
 @unexec rmdir %D/apps 2>/dev/null || true
