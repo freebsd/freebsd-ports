@@ -748,7 +748,14 @@ share/swat/using_samba/ja/this_edition.html
 @dirrm share/swat/using_samba/ja
 @dirrm share/swat/using_samba
 @dirrm share/swat
-@exec mkdir %D/private ; if [ ! -f %D/private/smbpasswd ] ; then chown -R root.wheel %D/private ;  cat /etc/passwd | %D/bin/make_smbpasswd > %D/private/smbpasswd ; chmod 500 %D/private ; chmod 600 %D/private/smbpasswd ; fi
-@exec mkdir -p /var/spool/samba ; chmod 1777 /var/spool/samba
-@exec cat %D/share/doc/samba/README.FreeBSD
-@unexec rm -rf /var/spool/samba
+@exec /bin/mkdir -p -m 500 %D/private
+@exec /usr/sbin/chown -R root:wheel %D/private
+@exec /bin/cat /etc/passwd | %D/bin/make_smbpasswd > %D/private/smbpasswd.default
+@unexec if cmp %D/private/smbpasswd.default %D/private/smbpasswd >/dev/null 2>&1; then /bin/rm -f %D/private/smbpasswd ; fi
+private/smbpasswd.default
+@exec if [ ! -e %D/private/smbpasswd ]; then /bin/cp -p %D/private/smbpasswd.default %D/private/smbpasswd; fi
+@exec /bin/chmod 600 %D/private/smbpasswd*
+@unexec /bin/rmdir %D/private 2>/dev/null || true
+@exec /bin/mkdir -p -m 1777 /var/spool/samba
+@exec /bin/cat %D/share/doc/samba/README.FreeBSD
+@unexec /bin/rm -rf /var/spool/samba
