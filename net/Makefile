@@ -10,6 +10,7 @@
     SUBDIR += AquaGatekeeper
     SUBDIR += DarwinStreamingServer
     SUBDIR += GeoIP
+    SUBDIR += Sockets
     SUBDIR += acx100
     SUBDIR += adasockets
     SUBDIR += aget

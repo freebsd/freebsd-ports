@@ -1,0 +1,12 @@
+[ excerpt from developer's web site ]
+
+This is a GPL licensed C++ class library wrapping the berkeley
+sockets C API, and therefore works on most unixes and also win32.
+Features include, but are not limited to, SSL support, IPv6 support,
+tcp and udp sockets, encrypted tcp, http protocol, highly customizable
+error handling. Testing has been done on Linux and Windows 2000,
+and to some part on Solaris and Mac OS X.
+
+WWW: http://www.alhem.net/Sockets/index.html
+
+-- lioux@FreeBSD.org
