@@ -4,7 +4,7 @@
 # Date created:				9 Jan 1998
 # Whom:					John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.31 1998/09/26 18:17:13 obrien Exp $
+# $Id: Makefile,v 1.33 1998/09/27 01:56:14 obrien Exp $
 #
 
 DISTNAME=	egcs-19980914
@@ -15,6 +15,8 @@ MASTER_SITES=	ftp://egcs.cygnus.com/pub/egcs/snapshots/1998-09-14/ \
 		ftp://ftp.fu-berlin.de/unix/languages/egcs/snapshots/1998-09-14/
 
 MAINTAINER=	obrien@FreeBSD.org
+
+BROKEN=		package
 
 EGCS_REV=	egcs-2.92.07
 LIBSTDCPP_REV=	2.9.0
