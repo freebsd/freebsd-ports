@@ -1,57 +1,56 @@
-# ex:ts=8 -*-mode: makefile-*-
-#
-# New ports collection makefile for:	phoenix
-# Date created:			2002/10/21
-# Whom:				Alan Eldridge <alane@FreeBSD.org>
+# New ports collection makefile for:	mozilla-firebird
+# Date created:			May 31, 2003
+# Whom:				Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=		phoenix
-PORTVERSION=		0.5
-PORTREVISION=		4
-CATEGORIES=		www
-MASTER_SITES=		${MASTER_SITE_LOCAL} ${BSD_WEBDIR}
-MASTER_SITE_SUBDIR=	alane
+PORTNAME=	firebird
+PORTVERSION=	0.6
+CATEGORIES=	www
+MASTER_SITES=	http://komodo.mozilla.org/pub/firebird/releases/${PORTVERSION}/
+PKGNAMEPREFIX=	mozilla-
+DISTNAME=	MozillaFirebird-${PORTVERSION}-source
 
-MAINTAINER=		gnome@freebsd.org
-COMMENT=	Phoenix is a fast, low-overhead browser from the Mozilla project
+MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Mozilla Firebird is the next generation browser from the mozilla.org project
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		mng.1:${PORTSDIR}/graphics/libmng \
 		freetype.9:${PORTSDIR}/print/freetype2 \
-		IDL.2:${PORTSDIR}/devel/ORBit \
 		iconv.3:${PORTSDIR}/converters/libiconv \
 		nspr4.1:${PORTSDIR}/devel/nspr
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		freetype-config:${PORTSDIR}/print/freetype2
 
-BSD_WEBDIR=http://people.freebsd.org/~${MASTER_SITE_SUBDIR}/
+USE_X_PREFIX=	yes
 
-USE_X_PREFIX=		yes
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+USE_PERL5=	yes
+USE_REINPLACE=	yes
+HAS_CONFIGURE=	yes
 
-USE_BZIP2=		yes
-USE_GMAKE=		yes
-USE_PERL5=		yes
-USE_REINPLACE=		yes
-HAS_CONFIGURE=		yes
-
-USE_GNOME=		gtk12 orbit
+.if defined(WITH_GTK2)
+USE_GNOME=	gtk20 libidl
+PKGNAMESUFFIX=	-gtk2
+.else
+USE_GNOME=	gtk12 orbit
+.endif
 
 NO_MTREE=		yes
 WRKSRC=			${WRKDIR}/mozilla
 LOCAL_SUBDIR=		lib/${PORTNAME}
 LOCAL_PREFIX=		${PREFIX}/${LOCAL_SUBDIR}
 JREDIR=			${LOCALBASE}/jdk1.3.1/jre
-MOZVER=			1.3a
-PLUGINSDIR=		${LOCAL_PREFIX}/lib/mozilla-${MOZVER}/plugins/
+PLUGINSDIR=		${PREFIX}/lib/browser_plugins
 
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500601
 .undef NO_IGNORE
-BROKEN=	Phoenix only supports the ports versions of Perl.
+BROKEN=	Mozilla Firebird only supports the ports versions of Perl.
 BROKEN+=If you have installed a Perl port, and are getting this message,
 BROKEN+=please make sure you have given the command \'use.perl port\'.
 .endif # ${PERL_LEVEL} < 500601
@@ -61,13 +60,12 @@ PLIST=${WRKDIR}/plist
 
 .if defined(WITH_DEBUG)
 WITH_LOGGING=		yes
-WITHOUT_OPTIMIZE=	yes
 CONFIGURE_ENV+=		WITH_DEBUG=yes
 .endif # defined(WITH_DEBUG)
 
-.if !defined(WITHOUT_OPTIMIZE)
+.if defined(WITH_OPTIMIZED_CFLAGS)
 CFLAGS+=		-O2
-.endif # defined(WITH_OPTIMIZE)
+.endif # defined(WITH_OPTIMIZED_CFLAGS)
 
 .if defined(WITH_LOGGING)
 CONFIGURE_ENV+=	WITH_LOGGING=yes
@@ -79,12 +77,16 @@ CONFIGURE_ENV+=	WITHOUT_XFT=yes
 LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/Xft
 .endif # !defined(WITHOUT_XFT)
 
+.if defined(WITH_GTK2)
+CONFIGURE_ENV+=	WITH_GTK2=yes
+.endif # defined(WITH_GTK2)
+
 CPPFLAGS+=		-I${X11BASE}/include
 CFLAGS+=		${PTHREAD_CFLAGS}
 LDFLAGS+=		-L${X11BASE}/lib
 LIBS+=			${PTHREAD_LIBS}
 
-EXTRA_SCRIPTS=		phoenix.rb
+EXTRA_SCRIPTS=		firebird.rb
 
 pre-extract::
 	@${ECHO_MSG}
@@ -101,12 +103,17 @@ post-extract::
 		-e 's|@PREFIX@|${LOCAL_PREFIX}|'	\
 		<${FILESDIR}/mozconfig.in >${WRKSRC}/.mozconfig
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
+		${WRKSRC}/build/unix/run-mozilla.sh
+
 post-build:
 	${RM} -f ${PLIST}
 	${TOUCH} ${PLIST}
 
 pre-install:
 	${RM} -fr ${LOCAL_PREFIX}
+	-${MKDIR} ${PLUGINSDIR}
 
 install-extra:
 .for i in ${EXTRA_SCRIPTS}
@@ -114,18 +121,20 @@ install-extra:
 .endfor # i in ${EXTRA_SCRIPTS}
 
 link-bins:
-	${RM} -f ${PREFIX}/bin/phoenix
-	${LN} -s ${LOCAL_PREFIX}/bin/phoenix \
-		${PREFIX}/bin/phoenix
-	${RM} -f ${PREFIX}/bin/phoenix-config
+	${RM} -f ${PREFIX}/bin/firebird
+	${LN} -s ${LOCAL_PREFIX}/bin/MozillaFirebird \
+		${PREFIX}/bin/firebird
+	${RM} -f ${PREFIX}/bin/MozillaFirebird
+	${LN} -s ${LOCAL_PREFIX}/bin/MozillaFirebird \
+		${PREFIX}/bin/MozillaFirebird
+	${RM} -f ${PREFIX}/bin/firebird-config
 	${LN} -s ${LOCAL_PREFIX}/bin/mozilla-config \
-		${PREFIX}/bin/phoenix-config
+		${PREFIX}/bin/firebird-config
 
-# not used because of undefined symbol errors
 link-java:
 	-${RM} -f ${PLUGINSDIR}/libjavaplugin_oji.so
 	-${LN} -sf \
-	  ${JREDIR}/plugin/i386/ns600/libjavaplugin_oji.so \
+	  ${JREDIR}/plugin/${ARCH}/ns600/libjavaplugin_oji.so \
 	  ${PLUGINSDIR}/libjavaplugin_oji.so
 
 cleanup-install:
@@ -134,8 +143,9 @@ cleanup-install:
 
 cons-plist:
 	-${RM} -f ${PLIST}
-	${ECHO_CMD} bin/phoenix >>${PLIST}
-	${ECHO_CMD} bin/phoenix-config >>${PLIST}
+	${ECHO_CMD} bin/firebird >>${PLIST}
+	${ECHO_CMD} bin/MozillaFirebird >>${PLIST}
+	${ECHO_CMD} bin/firebird-config >>${PLIST}
 .for i in ${EXTRA_SCRIPTS}
 	${ECHO_CMD} bin/${i} >>${PLIST}
 .endfor # i in ${EXTRA_SCRIPTS}
@@ -158,8 +168,8 @@ cons-plist:
 # Under normal circumstances, you should not put anything after
 # the above line. However, this is the only way I can state the
 # dependency without trashing the actual code of the generate-plist
-# target. This is a limitation of the make(1) program itself. 
+# target. This is a limitation of the make(1) program itself.
 # </alane>
-generate-plist: install-extra link-bins cleanup-install cons-plist
+generate-plist: install-extra link-bins link-java cleanup-install cons-plist
 
 #EOF

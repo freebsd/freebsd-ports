@@ -1,31 +1,35 @@
 ======================================================================
-As of version 0.4_7, this port appears to be stable *again*. It will work
-with either of the port versions of perl, provided you do "use.perl port".
-It will NOT work with the -STABLE base-system versions of Perl.
+Mozilla Firebird will work with either of the port versions of perl, 
+provided you do "use.perl port". It will NOT work with the -STABLE 
+base-system versions of Perl.
 
 If you use the lang/perl5.8 port, please remove the File::Spec package with
 the command "pkg_deinstall -f p5-File-Spec". If you are updating to the 5.8
 version of perl, please do this *first*.
 
 Any bug reports should be addressed to the maintainers at:
-	phoenix@freebsd.org
+	gnome@FreeBSD.org
 You may also Cc: freebsd-ports@freebsd.org. Please do not send
 bug reports to any other addresses. 
 
 Please include the following information with any bug report:
 * Output from 'uname -a'.
-* Date/time stamp from www/phoenix/Makefile.
+* Date/time stamp from www/mozilla-firebird/Makefile.
 * Perl version used (/usr/bin/perl --version or 
 	/usr/local/bin/perl --version for -current).
 * Where/when did the problem occur: configuring, building, or
-	running phoenix?
+	running mozilla-firebird?
 * How can you reproduce the problem?
 
 Thank you for your help in testing and reporting bugs, and we hope you
-enjoy using Phoenix.
-The Maintainers (alane@ & trevor@)
+enjoy using Firebird.
+The Maintainers (gnome@)
 
 Additional notes:
+
+0.6:
+Update to 0.6 version, rename from phoenix to Mozilla Firebird, all
+internal names updated accordingly.
 
 0.4_8:
 Add patch to fix network ops on -CURRENT.
@@ -61,12 +65,9 @@ Patch to hopefully fix crash when formatting time string at end of download.
 Thanks to Greg Rumple and Joe Marcus Clarke for the fantastic work debugging
 this one.
 
-Added /usr/X11R6/bin/phoenix.rb. If you have ruby installed, you can run
-this instead of 'phoenix' and it takes care of the 'profile in use' errors
+Added /usr/X11R6/bin/firebird.rb. If you have ruby installed, you can run
+this instead of 'firebird' and it takes care of the 'profile in use' errors
 by automatically using an existing phoenix if one is running. I didn't put
 a dependency because I don't want to require ruby + ruby-shim to run the
 browser.
-
--- AlanE <phoenix@freebsd.org>
-
 ======================================================================
