@@ -3,14 +3,14 @@
 # Date created:		5 Oct 1998
 # Whom:			Issei Suzuki <issei@jp.FreeBSD.ORG>
 #
-# $Id$
+# $Id: Makefile,v 1.73 1998/11/23 05:15:16 kuriyama Exp $
 #
 # Maximal ssh2 package requires YES values for
 # USE_SSH1, USE_TCPWRAP
 
 DISTNAME=       ssh-2.0.9
 CATEGORIES=	security net
-MASTER_SITES=   ftp://tp.cs.hut.fi/pub/ssh/ \
+MASTER_SITES=   ftp://ftp.cs.hut.fi/pub/ssh/ \
 		ftp://sunsite.unc.edu/pub/packages/security/ssh/ \
 		ftp://ftp.kyoto.wide.ad.jp/pub/security/ssh/
 
