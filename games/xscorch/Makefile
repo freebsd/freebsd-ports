@@ -30,4 +30,6 @@ CONFIGURE_ARGS+=--without-gnome
 CONFIGURE_ENV+=GTK_CONFIG="${GTK_CONFIG}"
 USE_GMAKE=	yes
 
+MAN6=		xscorch.6
+
 .include <bsd.port.mk>
