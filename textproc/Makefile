@@ -104,6 +104,7 @@
     SUBDIR += p5-HTML-Format
     SUBDIR += p5-LJ-SpellCheck
     SUBDIR += p5-Lingua-Ispell
+    SUBDIR += p5-Number-Format
     SUBDIR += p5-PDF-Create
     SUBDIR += p5-Parse-Syslog
     SUBDIR += p5-Sort-ArbBiLex
