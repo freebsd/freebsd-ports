@@ -6,15 +6,9 @@
 #
 
 PORTNAME=	passepartout
-PORTVERSION=	0.2
-PORTREVISION=	3
+PORTVERSION=	0.3
 CATEGORIES=	graphics gnome
 MASTER_SITES=	http://www.stacken.kth.se/project/pptout/files/
-
-PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	passepartout-0.2-assert.patch \
-		passepartout-0.2-thread.patch
-PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	DTP application for X
@@ -27,8 +21,10 @@ USE_BZIP2=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnometarget gnomehack
+USE_GNOME=	gnomehack gnometarget
 USE_LIBTOOL=	yes
+
+MAN=	xml2ps.1 passepartout.1x
 
 .include <bsd.port.pre.mk>
 
@@ -39,7 +35,7 @@ EXTRA_PATCHES=  ${PATCHDIR}/extra-patch-old_cxx
 # Fix for recent libxml++ API change
 post-patch:
 	@${FIND} ${WRKSRC}/src/pptout -name *.cc \
-		| grep -v -E 'pagesel|undodialog' \
+		| ${GREP} -v -E 'pagesel|undodialog' \
 		| ${XARGS} ${REINPLACE_CMD} \
 			-e 's|add_attribute|set_attribute|' \
 			-e 's|add_content|add_child_text|'
