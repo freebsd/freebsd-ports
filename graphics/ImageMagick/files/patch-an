@@ -1,6 +1,6 @@
---- ltmain.sh.orig	Mon Sep 24 07:11:39 2001
-+++ ltmain.sh	Sat Sep 29 19:58:41 2001
-@@ -1138,6 +1138,7 @@
+--- ltmain.sh.orig	Tue Jan 29 22:40:33 2002
++++ ltmain.sh	Wed Feb 20 23:52:30 2002
+@@ -1140,6 +1140,7 @@
  	;;
  
        -avoid-version)
@@ -8,21 +8,3 @@
  	avoid_version=yes
  	continue
  	;;
-@@ -1225,7 +1226,7 @@
- 	    # These systems don't actually have a C library (as such)
- 	    test "X$arg" = "X-lc" && continue
- 	    ;;
--	  *-*-openbsd*)
-+	  *-*-openbsd* | *-*-freebsd*)
- 	    # Do not include libc due to us having libc/libc_r.
- 	    test "X$arg" = "X-lc" && continue
- 	    ;;
-@@ -2829,7 +2835,7 @@
- 	  *-*-netbsd*)
- 	    # Don't link with libc until the a.out ld.so is fixed.
- 	    ;;
--	  *-*-openbsd*)
-+	  *-*-openbsd* | *-*-freebsd*)
- 	    # Do not include libc due to us having libc/libc_r.
- 	    test "X$arg" = "X-lc" && continue
- 	    ;;
