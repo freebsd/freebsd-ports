@@ -760,6 +760,7 @@ chef		ports/misc/chef
 chemeq		ports/biology/chemeq
 chemtool	ports/science/chemtool
 chexedit	ports/editors/chexedit
+chicken		ports/lang/chicken
 chimera		ports/www/chimera
 chimera2	ports/www/chimera2
 chipmunk	ports/cad/chipmunk
