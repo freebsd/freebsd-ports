@@ -1,5 +1,5 @@
 bin/naim
-share/examples/naim/faimrc_sample
+share/examples/naim/naimrc_sample
 share/doc/naim/naim.hlp
 @dirrm share/examples/naim
 @dirrm share/doc/naim
