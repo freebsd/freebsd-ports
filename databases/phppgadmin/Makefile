@@ -22,20 +22,20 @@ WRKSRC=		${WRKDIR}/phpPgAdmin
 NO_BUILD=	YES
 
 PHP_PORT?=	${PORTSDIR}/www/mod_php4-twig
-PGADMDIR?=      www/data/phpPgAdmin
-PLIST_SUB+=     PGADMDIR=${PGADMDIR}
+PGADMDIR?=	www/data/phpPgAdmin
+PLIST_SUB+=	PGADMDIR=${PGADMDIR}
 
 do-configure:
 	${REINPLACE_CMD} -e "s|/usr/bin/pg|${LOCALBASE}/bin/pg|" \
-		${WRKSRC}/conf/config.inc.php-dist 
-	rm -f ${WRKSRC}/conf/config.inc.php \
+		${WRKSRC}/conf/config.inc.php-dist
+	${RM} -f ${WRKSRC}/conf/config.inc.php \
 		${WRKSRC}/conf/config.inc.php-dist.bak
 
 do-install:
 	${MKDIR} ${PREFIX}/${PGADMDIR}
 	${CP} -R ${WRKSRC}/* ${PREFIX}/${PGADMDIR}
 	@[ -f ${PREFIX}/${PGADMDIR}/conf/config.inc.php ] || \
-		cp ${PREFIX}/${PGADMDIR}/conf/config.inc.php-dist \
+		${CP} -p ${PREFIX}/${PGADMDIR}/conf/config.inc.php-dist \
 		${PREFIX}/${PGADMDIR}/conf/config.inc.php
 
 .include <bsd.port.mk>
