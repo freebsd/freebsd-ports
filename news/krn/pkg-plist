@@ -9,6 +9,7 @@ share/doc/HTML/en/krn/offline.html
 share/doc/HTML/en/krn/overview.html
 share/doc/HTML/en/krn/gigabase.html
 @dirrm share/doc/HTML/en/krn
+share/applnk/Applications/Internet/Krn.kdelnk
 share/apps/krn/toolbar/black-bullet.xpm
 share/apps/krn/toolbar/filemail.xpm
 share/apps/krn/toolbar/previous.xpm
