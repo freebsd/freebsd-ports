@@ -6,13 +6,13 @@
 # ATTENTION: It not work in > 256 colors modes, please fix it
 # if you can.
 #
-# $Id: Makefile,v 1.2 1996/09/11 04:54:11 asami Exp $
+# $Id: Makefile,v 1.3 1996/11/18 11:44:17 asami Exp $
 #
 
 DISTNAME=       xfedor
 PKGNAME=        xfedor-1.0
 CATEGORIES=	x11
-MASTER_SITES=   ftp://ftp.uni-trier.de/pub/unix/X11/R6/contrib/programs/
+MASTER_SITES=   ftp://ftp.kiarchive.ru/pub/x11/util/
 
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 
@@ -32,9 +32,6 @@ do-install:
 	cd ${WRKSRC}/help; \
 	${INSTALL_DATA} * ${XFHELP}
 	${INSTALL_DATA} ${FILESDIR}/default.sos ${XFHELP}
-	-mkdir -p ${XCAT1}
-	chown ${MANOWN}.${MANGRP} ${XCAT1}
-	chmod 755 ${XCAT1}
 	cd ${WRKSRC}; \
 	${INSTALL_MAN} xfedor.txt ${XCAT1}/xfedor.1
 
