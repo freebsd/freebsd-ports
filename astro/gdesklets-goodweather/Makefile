@@ -11,14 +11,13 @@ PORTREVISION=	3
 CATEGORIES=	astro gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
 PKGNAMEPREFIX=	gdesklets-
-DISTNAME=	GoodWeather-${PORTVERSION}
+DISTNAME=	GoodWeather
 
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	A desklet that displays current weather condition and forecast
 
 RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets
 
-USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
