@@ -19,7 +19,7 @@ MAINTAINER=	ahze@ahze.net
 COMMENT=	Fast C routines to compute the Discrete Fourier Transform
 
 USE_GMAKE=	yes
-USE_INC_LIBTOOL_VER=13
+USE_INC_LIBTOOL_VER=15
 USE_GNOME=	gnomehack gnomeprefix gnometarget lthack pkgconfig
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
@@ -36,11 +36,15 @@ FFTW3F_WRKSRC=	${WRKDIR}/${DISTNAME}-3F
 FFTW3F_INSTALL_TARGET=install-pkgconfigDATA install-libLTLIBRARIES install-exec
 
 OPTIONS=	OPTIMIZED_CFLAGS "Enable optimized CFLAGS" off \
-		OPTIMIZED_ATHLON "Enable AMD K7(Athlon) optimizations" off \
-		SSE "Enable SSE optimized routines" off \
 		SMP_THREADS "Enable FFTW SMP threads library" off
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386"
+OPTIONS+=	OPTIMIZED_ATHLON "Enable AMD K7(Athlon) optimizations" off \
+		SSE "Enable SSE optimized routines" off
+
+.endif
 
 .if defined(WITH_OPTIMIZED_CFLAGS) && !defined(WITH_OPTIMIZED_ATHLON)
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS:N-O:N-O*} -O2 -ffast-math -fomit-frame-pointer"
