@@ -1,0 +1,45 @@
+MPD MULTI-LINK PPP DAEMON FOR FREEBSD
+
+Release 1.0b3
+Written by Archie Cobbs <archie@whistle.com>
+Based on IIJ-PPP by Toshiharu OHNO <tony-o@iij.ad.jp>
+
+* WHAT IS IT?
+
+  A user-mode PPP daemon based on iij-ppp which supports multi-link PPP.
+  It is a complete re-write of the original iij-ppp code.
+
+* HOW STABLE IS IT?
+
+  Most of this code has been thoroughly tested. Some parts, such
+  as compression, have not been tested very much at all. However,
+  the core of the daemon is very solid.
+
+* HOW DO I SET IT UP?
+
+  Check the "etc/mpd" directory for configuration file examples.
+  There are four configuration files:
+
+	mpd.conf.sample		- General configuration
+	mpd.links.sample	- Description of available links
+	mpd.script.sample	- Modem scripts
+	mpd.secret.sample	- Login/password pairs
+
+  If you're familiar with iij-ppp, the configuration method is
+  similar: commands are read from a file.
+
+* WHAT'S THE COPYRIGHT STATUS?
+
+  Berkeley style: see ``COPYRIGHT.iij'' and ``COPYRIGHT.whistle''.
+
+* WHERE CAN I READ MORE ABOUT IT?
+
+  In the "doc/mpd" directory is a preliminary man page and some other
+  assorted stuff. In the "etc/mpd" directory are example configuration
+  files with descriptive comments.
+
+* WHERE CAN I GO FOR HELP?
+
+  Email me any questions <archie@whistle.com> and I'll do my best
+  to answer them.
+

@@ -1,0 +1,48 @@
+*** Makefile	Tue Apr 15 18:30:00 1997
+--- /home/andy/tmp/wrk/Makefile	Fri May 16 21:41:11 1997
+***************
+*** 7,19 ****
+  #
+  
+  PROG=		mpd
+! BINDIR?=	/usr/local/bin
+  VERSION=	1.0b3
+  STRIP=		-s
+  
+  # Default configuration directory
+  
+! MPD_CONF_DIR?=	/etc/ppp
+  
+  # Define supported physical layer types
+  
+--- 7,19 ----
+  #
+  
+  PROG=		mpd
+! BINDIR?=	${PREFIX}/sbin
+  VERSION=	1.0b3
+  STRIP=		-s
+  
+  # Default configuration directory
+  
+! MPD_CONF_DIR?=	${PREFIX}/etc/mpd
+  
+  # Define supported physical layer types
+  
+***************
+*** 41,47 ****
+  DPADD+=		${LIBMD}
+  
+  COPTS+=		-O2
+! COPTS+=		-g -Wall -Wmissing-prototypes -Wnested-externs
+  COPTS+=		-DPATH_CONF_DIR=\"${MPD_CONF_DIR}\"
+  
+  # Change LOG_DAEMON to LOG_LOCAL3, or whatever, if you like
+--- 41,47 ----
+  DPADD+=		${LIBMD}
+  
+  COPTS+=		-O2
+! COPTS+=		-Wall -Wmissing-prototypes -Wnested-externs
+  COPTS+=		-DPATH_CONF_DIR=\"${MPD_CONF_DIR}\"
+  
+  # Change LOG_DAEMON to LOG_LOCAL3, or whatever, if you like
