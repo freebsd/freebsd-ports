@@ -12,7 +12,7 @@ CATEGORIES=	x11-wm kde
 MASTER_SITES=	http://www.kde-look.org/content/files/
 DISTNAME=	2865-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	flynn@energyhq.homeip.net
+MAINTAINER=	flynn@energyhq.es.eu.org
 COMMENT=	A lightweight native KWin style for KDE3
 
 BROKEN=		'Does not build since KDE 3.2'
