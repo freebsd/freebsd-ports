@@ -5,7 +5,7 @@
  
  PROG=	popd
 -CFLAGS+=	-Wall -Werror -pedantic -I../lib -L../lib -L/usr/local/lib \
-+CFLAGS+=	-Wall -Werror -pedantic -I../lib -L../lib \
++CFLAGS+=	-Wall -pedantic -I../lib -L../lib \
      -DUSE_SSL -DUSE_IPV6
  LDADD=	-lcrypt -lmd -lradius -lpoputil -lssl -lcrypto
 -DPSDD=	${LIBCRYPT} ${LIBMD}
