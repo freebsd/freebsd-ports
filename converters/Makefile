@@ -25,6 +25,7 @@
     SUBDIR += p5-Convert-Recode
     SUBDIR += p5-Convert-TNEF
     SUBDIR += p5-Convert-UU
+    SUBDIR += p5-Convert-UUlib
     SUBDIR += p5-MIME-Base64
     SUBDIR += p5-Unicode-Map8
     SUBDIR += p5-Unicode-String

@@ -1,0 +1,8 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Convert/UUlib/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Convert/UUlib.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Convert/UUlib/UUlib.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Convert/UUlib/UUlib.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Convert/UUlib/autosplit.ix
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Convert
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Convert/UUlib
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Convert
