@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	plplot
-PORTVERSION=	5.0.4
-PORTREVISION=	1
+PORTVERSION=	5.1.0
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,11 +25,11 @@ CONFIGURE_ENV=	F77="${FC}" FFLAGS="${FFLAGS}" \
 		GDLIBDIR="${LOCALBASE}/lib" \
 		XINCDIR="${X11BASE}/include" \
 		XLIBDIR="${X11BASE}/lib" \
-		PLPLOT_PREFIX="${PREFIX}/share/plplot" \
-		DEMOS_DIR="${PREFIX}/share/examples/plplot" \
+		PLPLOT_PREFIX="${DATADIR}" \
+		DEMOS_DIR="${EXAMPLESDIR}" \
 		INFO_DIR="${PREFIX}/info" \
 		M4="${LOCALBASE}/bin/gm4"
-CONFIGURE_ARGS=	--disable-python --with-double
+CONFIGURE_ARGS=	--disable-python --disable-octave --with-double
 INSTALLS_SHLIB=	yes
 
 .if defined(WITH_TCLTK)

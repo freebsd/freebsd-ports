@@ -1,5 +1,5 @@
---- cf/inst_lib.in.orig	Sat Apr 21 10:49:12 2001
-+++ cf/inst_lib.in	Fri Aug  3 07:26:36 2001
+--- cf/inst_lib.in.orig	Thu Aug 23 08:03:43 2001
++++ cf/inst_lib.in	Tue Feb 26 04:13:31 2002
 @@ -16,30 +16,33 @@
  	  if test ! -d $(INFO_DIR); then mkdir -p $(INFO_DIR); fi
  
@@ -38,6 +38,6 @@
  	  cd $(top_srcdir)/include; \
 -	  $(CP) plplotP.h plplot.h plxwd.h plevent.h plstrm.h pdf.h \
 +	  ${BSD_INSTALL_DATA} plplotP.h plplot.h plxwd.h plevent.h plstrm.h pdf.h \
- 	     pldebug.h drivers.h $(INCLUDE_DIR)
+ 	     pldebug.h drivers.h disptab.h $(INCLUDE_DIR)
  
  install_lib: install_dirs install_fonts install_libbase \

@@ -6,6 +6,7 @@ bin/plrender
 %%TCLTK%%bin/pltcl
 bin/pltek
 bin/pstex2eps
+include/plplot/disptab.h
 include/plplot/drivers.h
 include/plplot/pdf.h
 include/plplot/plConfig.h
@@ -57,6 +58,7 @@ share/examples/plplot/c/x16c.c
 share/examples/plplot/c/x17c.c
 share/examples/plplot/c/x18c.c
 share/examples/plplot/c/x19c.c
+share/examples/plplot/c/x20c.c
 share/examples/plplot/c++/Makefile
 share/examples/plplot/c++/x01cc.cc
 share/examples/plplot/f77/Makefile
@@ -147,6 +149,7 @@ share/plplot/data/usaglobe.map
 %%TCLTK%%share/plplot/tcl/about.tcl
 %%TCLTK%%share/plplot/tcl/cmap0a.pal
 %%TCLTK%%share/plplot/tcl/cmap1a.pal
+%%TCLTK%%share/plplot/tcl/cmap1a1.pal
 %%TCLTK%%share/plplot/tcl/cmap1b.pal
 %%TCLTK%%share/plplot/tcl/cmap1c.pal
 %%TCLTK%%share/plplot/tcl/cmap1d.pal
