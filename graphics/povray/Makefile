@@ -23,6 +23,7 @@ DIST_SUBDIR=	povray30
 
 USE_XLIB=	yes
 MAN1=		povray.1
+NO_LATEST_LINK=	yes
 
 POVLIB=		${PREFIX}/lib/povray3
 
