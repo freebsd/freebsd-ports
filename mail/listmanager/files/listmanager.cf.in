@@ -1,0 +1,9 @@
+executable	@@INSPREFIX@@/sbin/listmanager
+gzip		/usr/bin/gzip
+helpdir		@@INSPREFIX@@/share/listmanager/help
+homedir		@@VARPREFIX@@
+newaliases	/usr/sbin/newaliases
+queueflush	/usr/sbin/sendmail -qS%s -v
+sendmail	/usr/sbin/sendmail -oiTrue
+syslog		mail
+tempdir		@@VARPREFIX@@/tmp
