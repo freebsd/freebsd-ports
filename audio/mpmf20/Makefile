@@ -9,7 +9,8 @@
 DISTNAME=	mpmf20
 PKGNAME=	mpmf20-1.01
 CATEGORIES=	audio
-MASTER_SITES=	http://www.world.co.uk/sba/
+MASTER_SITES=	http://www.world.co.uk/sba/ \
+		http://www.acc.umu.se/~saska/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
@@ -18,8 +19,5 @@ MAKEFILE=	makefile
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/mpmf20 ${PREFIX}/bin
-
-post-install:
-	@${CAT} ${PKGDIR}/MESSAGE
 
 .include <bsd.port.mk>
