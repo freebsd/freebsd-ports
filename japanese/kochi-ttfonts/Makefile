@@ -14,12 +14,6 @@ DISTFILES=	kochi-mincho-0.1.${PORTVERSION}.tar.bz2 \
 
 MAINTAINER=	kanou@mil.allnet.ne.jp
 
-.include <bsd.port.pre.mk>
-
-.if ${XFREE86_VERSION} == 4
-RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
-.endif
-
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 NO_BUILD=	yes
@@ -55,4 +49,4 @@ do-install:
 .endif
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
