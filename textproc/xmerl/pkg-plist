@@ -1,0 +1,64 @@
+lib/erlang/lib/xmerl/ebin/test.beam
+lib/erlang/lib/xmerl/ebin/test_html.beam
+lib/erlang/lib/xmerl/ebin/xmerl.app
+lib/erlang/lib/xmerl/ebin/xmerl.beam
+lib/erlang/lib/xmerl/ebin/xmerl_eventp.beam
+lib/erlang/lib/xmerl/ebin/xmerl_html.beam
+lib/erlang/lib/xmerl/ebin/xmerl_lib.beam
+lib/erlang/lib/xmerl/ebin/xmerl_scan.beam
+lib/erlang/lib/xmerl/ebin/xmerl_simple.beam
+lib/erlang/lib/xmerl/ebin/xmerl_text.beam
+lib/erlang/lib/xmerl/ebin/xmerl_xlate.beam
+lib/erlang/lib/xmerl/ebin/xmerl_xml.beam
+lib/erlang/lib/xmerl/ebin/xmerl_xpath.beam
+lib/erlang/lib/xmerl/ebin/xmerl_xpath_parse.beam
+lib/erlang/lib/xmerl/ebin/xmerl_xpath_pred.beam
+lib/erlang/lib/xmerl/ebin/xmerl_xpath_scan.beam
+lib/erlang/lib/xmerl/inc/xmerl.hrl
+lib/erlang/lib/xmerl/inc/xmerl_xlink.hrl
+lib/erlang/lib/xmerl/priv/testdata/a_and_c.xml
+lib/erlang/lib/xmerl/priv/testdata/all_well.xml
+lib/erlang/lib/xmerl/priv/testdata/femdygnsprognos.xml
+lib/erlang/lib/xmerl/priv/testdata/m1.erl
+lib/erlang/lib/xmerl/priv/testdata/m2.erl
+lib/erlang/lib/xmerl/priv/testdata/m3.erl
+lib/erlang/lib/xmerl/priv/testdata/m4.erl
+lib/erlang/lib/xmerl/priv/testdata/play.dtd
+lib/erlang/lib/xmerl/priv/testdata/simple.xml
+lib/erlang/lib/xmerl/priv/testdata/test.xml
+lib/erlang/lib/xmerl/priv/testdata/test2.xml
+lib/erlang/lib/xmerl/priv/testdata/test3.xml
+lib/erlang/lib/xmerl/priv/testdata/test4.xml
+lib/erlang/lib/xmerl/priv/testdata/test5.xml
+lib/erlang/lib/xmerl/priv/testdata/testdtd.dtd
+lib/erlang/lib/xmerl/priv/testdata/topic_maps.dtd
+lib/erlang/lib/xmerl/src/Makefile
+lib/erlang/lib/xmerl/src/test.erl
+lib/erlang/lib/xmerl/src/test_html.erl
+lib/erlang/lib/xmerl/src/xmerl.app.src
+lib/erlang/lib/xmerl/src/xmerl.erl
+lib/erlang/lib/xmerl/src/xmerl_eventp.erl
+lib/erlang/lib/xmerl/src/xmerl_html.erl
+lib/erlang/lib/xmerl/src/xmerl_lib.erl
+lib/erlang/lib/xmerl/src/xmerl_scan.erl
+lib/erlang/lib/xmerl/src/xmerl_simple.erl
+lib/erlang/lib/xmerl/src/xmerl_text.erl
+lib/erlang/lib/xmerl/src/xmerl_xlate.erl
+lib/erlang/lib/xmerl/src/xmerl_xml.erl
+lib/erlang/lib/xmerl/src/xmerl_xpath.erl
+lib/erlang/lib/xmerl/src/xmerl_xpath_parse.erl
+lib/erlang/lib/xmerl/src/xmerl_xpath_parse.yrl
+lib/erlang/lib/xmerl/src/xmerl_xpath_pred.erl
+lib/erlang/lib/xmerl/src/xmerl_xpath_scan.erl
+%%DOCSDIR%%/README.html
+%%DOCSDIR%%/changes.txt
+%%DOCSDIR%%/xpath-grammar.txt
+%%DOCSDIR%%/xslt-example.dtd
+%%DOCSDIR%%/xslt-example.xls
+@dirrm %%DOCSDIR%%
+@dirrm lib/erlang/lib/xmerl/src
+@dirrm lib/erlang/lib/xmerl/priv/testdata
+@dirrm lib/erlang/lib/xmerl/priv
+@dirrm lib/erlang/lib/xmerl/inc
+@dirrm lib/erlang/lib/xmerl/ebin
+@dirrm lib/erlang/lib/xmerl
