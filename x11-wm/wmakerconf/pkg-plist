@@ -1,5 +1,6 @@
 bin/mkpreview
 bin/wmakerconf
+%%GNOME:%%share/gnome/apps/Settings/wmakerconf.desktop
 share/locale/ca/LC_MESSAGES/wmakerconf.mo
 share/locale/da/LC_MESSAGES/wmakerconf.mo
 share/locale/de/LC_MESSAGES/wmakerconf-data.mo
@@ -11,11 +12,14 @@ share/locale/it/LC_MESSAGES/wmakerconf.mo
 share/locale/ja/LC_MESSAGES/wmakerconf.mo
 share/locale/ja/LC_MESSAGES/wmakerconf-data.mo
 share/locale/ko/LC_MESSAGES/wmakerconf.mo
+share/locale/ko/LC_MESSAGES/wmakerconf-data.mo
 share/locale/no/LC_MESSAGES/wmakerconf.mo
 share/locale/pl/LC_MESSAGES/wmakerconf.mo
+share/locale/pl/LC_MESSAGES/wmakerconf-data.mo
 share/locale/pt_BR/LC_MESSAGES/wmakerconf.mo
 share/locale/ru/LC_MESSAGES/wmakerconf.mo
 share/locale/sv/LC_MESSAGES/wmakerconf.mo
+share/locale/tr/LC_MESSAGES/wmakerconf.mo
 share/wmakerconf/ABOUT-NLS
 share/wmakerconf/AUTHORS
 share/wmakerconf/COPYING
