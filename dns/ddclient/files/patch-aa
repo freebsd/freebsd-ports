@@ -13,8 +13,8 @@
  my $hostname  = hostname();
 -my $etc       = ($program =~ /test/i) ? './'   : '/etc/';
 -my $savedir   = ($program =~ /test/i) ? 'URL/' : '/tmp/';
-+my $etc       = '%%PREFIX%%/etc';
-+my $savedir   = (exists($ENV{TMPDIR}) ? "$ENV{TMPDIR}" : "/var/tmp");
++my $etc       = '%%PREFIX%%/etc/';
++my $savedir   = (exists($ENV{TMPDIR}) ? "$ENV{TMPDIR}/" : "/var/tmp/");
  my $msgs      = '';
  my $last_msgs = '';
  
