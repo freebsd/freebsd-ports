@@ -32,6 +32,7 @@ www/yaws/HEAD
 www/yaws/TOPTAB
 www/yaws/api.yaws
 www/yaws/arg.yaws
+www/yaws/bindings.yaws
 www/yaws/code.yaws
 www/yaws/configuration.yaws
 www/yaws/contact.yaws
@@ -163,6 +164,7 @@ www/yaws/icons/yaws.gif
 www/yaws/icons/yawsY.gif
 www/yaws/icons/yaws_head.gif
 www/yaws/icons/yaws_pb.gif
+www/yaws/icons/yaws_y.gif
 www/yaws/index.yaws
 www/yaws/man.yaws
 www/yaws/motivation.yaws
