@@ -1,0 +1,8 @@
+Xdémineur is a minesweeper game for the X Window System.
+
+The object of this game is to find the location of the mines
+hidden in the minefield and to mark their location by placing a
+warning flag.  You have exactly as many flags as there are mines.
+The number of flags that remain to be placed is displayed in the
+top left corner of the window and a timer is displayed in the top
+right corner.
