@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.6 1997/07/10 14:39:03 jfieber Exp $
+# $Id: Makefile,v 1.7 1997/07/18 15:48:36 jfieber Exp $
 #
 
     SUBDIR += agrep
@@ -11,6 +11,7 @@
     SUBDIR += jade
     SUBDIR += linuxdoc
     SUBDIR += mgdiff
+    SUBDIR += par
     SUBDIR += pilot_makedoc
     SUBDIR += rman
     SUBDIR += sgmlformat
