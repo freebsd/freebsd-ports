@@ -4,7 +4,7 @@ share/doc/pyFind/COPYING
 share/doc/pyFind/INSTALL
 share/doc/pyFind/README
 share/doc/pyFind/TODO
-share/gnome/apps/Development/pyfind.desktop
+share/gnome/apps/pyfind.desktop
 share/gnome/pixmaps/pyfind_icon.png
 share/gnome/pyFind/glade/pyfind.glade
 share/gnome/pyFind/pixmaps/pyFind3.png
@@ -24,6 +24,9 @@ share/gnome/pyFind/pyFind/config.pyo
 share/gnome/pyFind/pyFind/dlgPreferences.py
 share/gnome/pyFind/pyFind/dlgPreferences.pyc
 share/gnome/pyFind/pyFind/dlgPreferences.pyo
+share/gnome/pyFind/pyFind/file_srch_rep.py
+share/gnome/pyFind/pyFind/file_srch_rep.pyc
+share/gnome/pyFind/pyFind/file_srch_rep.pyo
 share/gnome/pyFind/pyFind/match_files.py
 share/gnome/pyFind/pyFind/match_files.pyc
 share/gnome/pyFind/pyFind/match_files.pyo

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pyfind
-PORTVERSION=	0.7.1
+PORTVERSION=	0.8.0
 CATEGORIES=	sysutils python gnome
 MASTER_SITES=	http://homepage.ntlworld.com/kinematics/downloads/
 DISTNAME=	${PORTNAME:S/f/F/}-${PORTVERSION}
@@ -44,7 +44,7 @@ do-install:
 .for suf in py pyc pyo
 	${INSTALL_DATA} ${WRKSRC}/pyFind/*.${suf} ${MYDATADIR}/pyFind
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/pyfind.desktop ${GNOMEBASE}/apps/Development
+	${INSTALL_DATA} ${WRKSRC}/pyfind.desktop ${GNOMEBASE}/apps
 	${INSTALL_MAN} ${WRKSRC}/doc/* ${MYDOCDIR}
 	@printf "#!/bin/sh\n${PYTHON_CMD} ${MYDATADIR}/pyfind" > \
 		${WRKDIR}/pyfind.sh
