@@ -1,0 +1,9 @@
+GNU libmatheval is a library which contains several procedures that make
+it possible to create an in-memory tree from the string representation
+of a mathematical function over single or multiple variables.  This tree
+can be used later to evaluate a function for specified variable values,
+to create a corresponding tree for the function derivative over a
+specified variable or to write a textual tree representation to a
+specified string.  The library exposes C and Fortran 77 interfaces.
+
+WWW: http://www.gnu.org/software/libmatheval/

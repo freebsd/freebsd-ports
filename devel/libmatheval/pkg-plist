@@ -1,0 +1,5 @@
+include/matheval.h
+lib/libmatheval.a
+lib/libmatheval.la
+lib/libmatheval.so
+lib/libmatheval.so.1

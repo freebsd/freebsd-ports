@@ -1,0 +1,14 @@
+--- doc/libmatheval.texi.orig	Sat Jul  3 13:51:10 2004
++++ doc/libmatheval.texi	Sun Jul  4 21:45:25 2004
+@@ -9,6 +9,11 @@
+ @include version.texi
+ @syncodeindex fn cp
+ 
++@dircategory Programming & development tools
++@direntry
++* libmatheval: (libmatheval).      A library for evaluating mathematical functions.
++@end direntry
++
+ @ifnottex
+ This file documents GNU @code{libmatheval} library.
+ 
