@@ -26,7 +26,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libsuperlu.a:${PORTSDIR}/math/superlu
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
-USE_GCC=	2.95
+USE_GCC=	2.95	# 3.2 should also work !!
 .endif
 
 USE_REINPLACE=	yes
@@ -63,7 +63,7 @@ post-patch:
 .endif
 
 post-build:
-	@(cd ${WRKDIR}/tochnog/tools; ${CXX} ${CFLAGS} -o aba2tn aba2tn.cc)
+	@(cd ${WRKDIR}/tochnog/tools; ${CXX} ${CXXFLAGS} -o aba2tn aba2tn.cc)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tochnog ${PREFIX}/bin
