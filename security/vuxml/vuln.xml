@@ -32,6 +32,30 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="64c8cc2a-59b1-11d9-8a99-000c6e8f12ef">
+    <topic>libxine -- buffer-overflow vulnerability in aiff support</topic>
+    <affects>
+      <package>
+	<name>libxine</name>
+	<range><le>1.0.r5_3</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Due to a buffer overflow in the open_aiff_file function in
+	  demux_aiff.c, a remote attacker is able to execute arbitrary
+	  code via a modified AIFF file.</p></body>
+    </description>
+    <references>
+      <cvename>CAN-2004-1300</cvename>
+      <url>http://tigger.uic.edu/~jlongs2/holes/xine-lib.txt</url>
+    </references>
+    <dates>
+      <discovery>2004-12-15</discovery>
+      <entry>2004-12-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2e25d38b-54d1-11d9-b612-000c6e8f12ef">
     <topic>jabberd -- denial-of-service vulnerability</topic>
     <affects>
