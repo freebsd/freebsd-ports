@@ -1,4 +1,3 @@
-@cwd /usr/local
 bin/kpsewhich
 bin/dvicopy
 bin/dvitype
@@ -29,6 +28,7 @@ bin/tex
 bin/ptex
 bin/mf
 bin/cmmf
+bin/MakeTeXPK
 info/kpathsea.info
 lib/texmf/web2c/texmf.cnf
 lib/texmf/ini/tex.fmt

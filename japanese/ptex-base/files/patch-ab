@@ -1,0 +1,49 @@
+*** kpathsea/Makefile.in.orig	Mon Jan  9 02:18:20 1995
+--- kpathsea/Makefile.in	Fri Sep  6 15:11:38 1996
+***************
+*** 121,140 ****
+  
+  install-exec: kpsewhich MakeTeXPK
+  	$(SHELL) $(top_srcdir)/../mkdirchain $(bindir) $(scriptdir)
+! 	if grep 'original MakeTeXPK --' $(scriptdir)/MakeTeXPK >/dev/null 2>&1\
+! 	   || test ! -r $(scriptdir)/MakeTeXPK; then \
+! 	  $(INSTALL_PROGRAM) MakeTeXPK $(scriptdir)/MakeTeXPK; \
+  	else true; fi
+  	$(INSTALL_PROGRAM) kpsewhich $(bindir)/kpsewhich
+  uninstall-exec:
+  	rm -f $(bindir)/kpsewhich
+  
+  install-data: texmf.cnf kpathsea.info
+  	$(SHELL) $(top_srcdir)/../mkdirchain $(texmf) $(infodir) $(web2cdir)
+! 	if grep 'original texmf.cnf --' $(web2cdir)/texmf.cnf >/dev/null 2>&1 \
+! 	   || test ! -r $(web2cdir)/texmf.cnf; then \
+! 	  $(INSTALL_DATA) texmf.cnf $(web2cdir)/texmf.cnf; \
+! 	else true; fi
+  	$(INSTALL_DATA) $(srcdir)/kpathsea.info $(infodir)/kpathsea.info
+  uninstall-data:
+  	rm -f $(infodir)/kpathsea.info*
+--- 121,144 ----
+  
+  install-exec: kpsewhich MakeTeXPK
+  	$(SHELL) $(top_srcdir)/../mkdirchain $(bindir) $(scriptdir)
+! 	if grep 'original MakeTeXPK --' $(scriptdir)/MakeTeXPK >/dev/null 2>&1;\
+! 	  then true; \
+! 	  elif test -r $(scriptdir)/MakeTeXPK; then \
+! 	    mv -f $(scriptdir)/MakeTeXPK $(scriptdir)/MakeTeXPK.OLD; \
+  	else true; fi
++ 	$(INSTALL_PROGRAM) MakeTeXPK $(scriptdir)/MakeTeXPK; \
+  	$(INSTALL_PROGRAM) kpsewhich $(bindir)/kpsewhich
+  uninstall-exec:
+  	rm -f $(bindir)/kpsewhich
+  
+  install-data: texmf.cnf kpathsea.info
+  	$(SHELL) $(top_srcdir)/../mkdirchain $(texmf) $(infodir) $(web2cdir)
+! 	if grep 'original texmf.cnf --' $(web2cdir)/texmf.cnf >/dev/null 2>&1;\
+! 	  then true; \
+! 	  elif test -r $(web2cdir)/texmf.conf; then \
+! 	    mv -f $(web2cdir)/texmf.conf $(web2cdir)/texmf.conf.OLD; \
+! 	  else true; fi
+! 	$(INSTALL_DATA) texmf.cnf $(web2cdir)/texmf.cnf; \
+  	$(INSTALL_DATA) $(srcdir)/kpathsea.info $(infodir)/kpathsea.info
+  uninstall-data:
+  	rm -f $(infodir)/kpathsea.info*
