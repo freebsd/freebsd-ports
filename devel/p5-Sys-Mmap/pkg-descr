@@ -8,6 +8,3 @@ alternative to SysV shared memory that places no arbitrary size limits
 on the shared memory area, and efficiently handles sparse memory usage.
 
 WWW: http://search.cpan.org/dist/Sys-Mmap/
-
--- Sergey Skvortsov
-skv@FreeBSD.org

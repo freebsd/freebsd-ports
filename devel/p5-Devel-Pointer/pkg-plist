@@ -3,5 +3,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Pointer/Pointer.so
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Pointer.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Pointer
-@unexec rmdir %D/%%SITE_PERL%%/Devel 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Devel 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel 2>/dev/null || true

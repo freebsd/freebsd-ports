@@ -6,6 +6,3 @@ Be careful, though, to avoid dereferencing things that don't want to be
 dereferenced.
 
 WWW: http://search.cpan.org/dist/Devel-Pointer/
-
--- Sergey Skvortsov
-skv@FreeBSD.org
