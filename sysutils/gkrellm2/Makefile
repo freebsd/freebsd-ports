@@ -16,6 +16,10 @@ MASTER_SITE_SUBDIR=	ume
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	A GTK based system monitor
 
+.if !defined(GKRELLM_SERVER_ONLY)
+CONFLICTS=	gkrellm-1.*
+.endif
+
 USE_RC_SUBR=	YES
 
 WRKSRC=		${WRKDIR}/${DISTNAME:C/[a-z]$//}
