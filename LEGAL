@@ -531,7 +531,7 @@ tkman-2.*		ports/misc/tkman	Don't sell for profit.
 tools-for-freebsd-*	ports/emulators/vmware-tools2 Not sure if we can
 						redistribute this.
 tracker-*.tgz		ports/audio/tracker	Non-redistributable beta
-triangle.zip		ports/cad/triangle	No commercial use without prior
+triangle.zip		ports/math/triangle	No commercial use without prior
 						arrangement with the author.
 Tripwire-*-1.tar.gz	ports/security/tripwire-131 cannot be redistributed
 						for more than the cost of
