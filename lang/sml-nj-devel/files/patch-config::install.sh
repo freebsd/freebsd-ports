@@ -1,5 +1,5 @@
---- config/install.sh.orig	Sat Jul 31 00:55:23 2004
-+++ config/install.sh	Thu Aug 12 16:14:55 2004
+--- config/install.sh.orig	Thu Oct 28 17:44:01 2004
++++ config/install.sh	Wed Nov  3 13:36:09 2004
 @@ -12,6 +12,8 @@
  # Author: Matthias Blume (blume@tti-c.org)
  #
@@ -52,7 +52,17 @@
  
  #
  # build the run-time system
-@@ -313,7 +342,7 @@
+@@ -308,12 +337,17 @@
+     vsay $this: Run-time system already exists.
+ else
+     $CONFIGDIR/unpack $ROOT runtime
++    [ -n "$MLRUNTIMEPATCHES" ] && \
++    for p in $MLRUNTIMEPATCHES
++    do
++	do_patch $p
++    done
+     cd $SRCDIR/runtime/objs
+     echo $this: Compiling the run-time system.
      $MAKE -f mk.$ARCH-$OPSYS $EXTRA_DEFS
      if [ -x run.$ARCH-$OPSYS ]; then
  	mv run.$ARCH-$OPSYS $RUNDIR
@@ -61,7 +71,7 @@
      else
  	complain "$this: !!! Run-time system build failed for some reason."
      fi
-@@ -330,7 +359,7 @@
+@@ -330,7 +364,7 @@
      export CM_DIR_ARC
      CM_DIR_ARC=$ORIG_CM_DIR_ARC
  else
@@ -70,26 +80,22 @@
  
      fish $ROOT/$BOOT_FILES/basis.cm
  
-@@ -399,5 +428,22 @@
+@@ -399,5 +433,18 @@
  else
      complain "$this: !!! Installation of libraries and programs failed."
  fi
 +
 +# extract required sources
-+while [ -n "$MLSOURCEUNPACKTARGETS" ]
++[ -n "$MLSOURCEUNPACKTARGETS" ] && \
++for t in $MLSOURCEUNPACKTARGETS
 +do
-+	t=`echo "$MLSOURCEUNPACKTARGETS" | cut -f 1 -d " "`
 +	$CONFIGDIR/unpack $ROOT $t
-+	[ "$MLSOURCEUNPACKTARGETS" = "$t" ] && break
-+	MLSOURCEUNPACKTARGETS=`echo "$MLSOURCEUNPACKTARGETS" | cut -f 2- -d " "`
 +done
 +# apply source patches
-+while [ -n "$MLSOURCEPATCHES" ]
++[ -n "$MLSOURCEPATCHES" ] && \
++for p in "$MLSOURCEPATCHES"
 +do
-+	p=`echo "$MLSOURCEPATCHES" | cut -f 1 -d " "`
 +	do_patch $p
-+	[ "$MLSOURCEPATCHES" = "$p" ] && break
-+	MLSOURCEPATCHES=`echo "$MLSOURCEPATCHES" | cut -f 2- -d " "`
 +done
  
  exit 0

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smlnj
-PORTVERSION=	110.48
+PORTVERSION=	110.50
 CATEGORIES=	lang
 MASTER_SITES=	http://smlnj.cs.uchicago.edu/dist/working/${PORTVERSION}/
 DISTFILES=	config.tgz runtime.tgz
@@ -16,12 +16,12 @@ DISTFILES+=	boot.x86-unix.tgz
 #.elif (${ARCH} == "alpha")
 #DISTFILES+=	boot.alpha32-unix.tgz
 .endif
-DISTFILES+=	ml-yacc.tgz ml-lex.tgz smlnj-lib.tgz cml.tgz
-.if defined(WITH_EVERYTHING) || defined(WITH_RECOMPILE) || defined(WITH_FLINT)
+DISTFILES+=	ml-yacc.tgz ml-lex.tgz smlnj-lib.tgz cml.tgz MLRISC.tgz
+.if defined(WITH_EVERYTHING) || defined(WITH_RECOMPILE)
 DISTFILES+=	ml-burg.tgz \
 		ckit.tgz ml-nlffi-lib.tgz ml-nlffigen.tgz smlnj-c.tgz \
 		eXene.tgz \
-		MLRISC.tgz cm.tgz compiler.tgz system.tgz
+		cm.tgz compiler.tgz system.tgz
 .endif
 EXTRACT_ONLY=	config.tgz
 
@@ -45,9 +45,6 @@ MLARCH=		x86
 
 PLIST_SUB=	MLARCH=${MLARCH}
 
-.if defined(WITH_FLINT)
-WITH_RECOMPILE?=	${WITH_FLINT}
-.endif
 .if defined(WITH_RECOMPILE)
 WITH_EVERYTHING?=	${WITH_RECOMPILE}
 .endif
@@ -70,50 +67,8 @@ MLSRCPLIST=	${WRKDIR}/.PLIST-src
 MLPLISTFILES=	${.CURDIR}/pkg-plist ${FILESDIR}/plist-everything \
 		${MLRUNTIMEPLIST} ${MLSRCPLIST}
 .endif
-.if defined(WITH_FLINT)
-MLFLINTPATCH=	optional-patch-src::compiler::core.cm
-.endif
-
-# This is an ugly hack to find out if we need to patch and
-# recompile the core system, because src/system/smlnj/installer
-# currently fails on cross device installs, i.e. if ${WRKDIR}
-# and ${MLROOT} are not on the same partition.
-
-.if !make(describe) && !defined(WITH_RECOMPILE)
-.if defined(WRKDIR)
-MLWRKDIR=	${WRKDIR}
-.else
-MLWRKDIR!=	cd ${.CURDIR} && ${MAKE} describe -V WRKDIR
-.endif
-.if !defined(DF)
-DF!=		${WHICH} df
-.endif
-MLCHROOT!=	${DF} / | ${TAIL} -1 | \
-		${AWK} '{ if ($$NF == "/") pri''ntf "" ; \
-			else pri''ntf "%s", $$NF }'
-MLFINDMOUNT=	'{ if (P == $$NF) MAXMOUNT = P ; else \
-		   if (index(P "/", $$NF) == 1) \
-		   if (length($$NF) > length(MAXMOUNT)) MAXMOUNT = $$NF } \
-		END { print MAXMOUNT }'
-MLWRKDIRMOUNT!=	${DF} | ${AWK} -v P="${MLCHROOT}${MLWRKDIR}" ${MLFINDMOUNT}
-MLROOTMOUNT!=	${DF} | ${AWK} -v P="${MLCHROOT}${MLROOT}" ${MLFINDMOUNT}
-.if ${MLWRKDIRMOUNT} != ${MLROOTMOUNT}
-FORCE_RECOMPILE=	yes
-.if !defined(WITH_EVERYTHING)
-DISTFILES+=	MLRISC.tgz cm.tgz compiler.tgz system.tgz
-.endif
-.endif
-.endif
 
 pre-fetch:
-.if defined(FORCE_RECOMPILE)
-	@${ECHO}
-	@${ECHO} '***** Recompilation enforced because of an installer bug'
-	@${ECHO} '***** for cross device installs. This increases time'
-	@${ECHO} '***** and space required to build the port.'
-	@${ECHO} '***** To avoid this, let WRKDIR (or WRKDIRPREFIX)'
-	@${ECHO} '***** point to the same partition as ${MLROOT}.'
-.endif
 	@${ECHO}
 .if !defined(WITH_EVERYTHING)
 	@${ECHO} 'Use make WITH_EVERYTHING=yes to also build ml-burg'
@@ -126,15 +81,6 @@ pre-fetch:
 	@${ECHO} 'Use make WITH_RECOMPILE=yes to recompile the compiler.'
 	@${ECHO} ' This implies WITH_EVERYTHING.'
 .endif
-.if !defined(WITH_FLINT)
-	@${ECHO} 'Use make WITH_FLINT=yes to apply a p''atch w''hich makes'
-	@${ECHO} ' the compiler'"'"'s FLINT structures visible (see'
-	@${ECHO} ' http://flint.cs.yale.edu/flint/publications/tcif.html),'
-	@${ECHO} ' use it with CM.autoload "$$smlnj/viscomp/core.cm";'
-	@${ECHO} ' or see http://offshore.free.de/~5/FLINTerpreter/sml2flint/'
-	@${ECHO} ' for code that should help you to get started.'
-	@${ECHO} ' This implies WITH_RECOMPILE.'
-.endif
 	@${ECHO}
 
 # make symlinks to the dist files
@@ -146,19 +92,17 @@ post-extract:
 # lines of config/targets. Dependency details are handled by
 # src/system/smlnj/installer using config/dependencies.
 
-.if defined(WITH_EVERYTHING) || defined(FORCE_RECOMPILE)
-do-configure:
 .if defined(WITH_EVERYTHING)
+do-configure:
 	${ECHO_CMD} -n > ${WRKDIR}/.tmp.sed
 .for t in ${MLTARGETS}
 	${ECHO_CMD} '/^#request[ 	]+${t}$$/s/^#//' >> ${WRKDIR}/.tmp.sed
 .endfor
 	${SED} -i .default -E -f ${WRKDIR}/.tmp.sed "${WRKDIR}/config/targets"
-.endif
 # Recompilation requires ml-lex and ml-yacc. All requested targets
 # will be built later using the recompiled core system after
 # removing targets.customized. See "do-build" below.
-.if defined(WITH_RECOMPILE) || defined(FORCE_RECOMPILE)
+.if defined(WITH_RECOMPILE)
 	( ${ECHO_CMD} "request	ml-yacc" && \
 	  ${ECHO_CMD} "request	ml-lex" ) \
 	> "${WRKDIR}/config/targets.customized"
@@ -170,18 +114,16 @@ do-configure:
 # a subsequent make install.
 # See src/system/README for information on recompiling the compiler.
 
-.if defined(WITH_RECOMPILE) || defined(FORCE_RECOMPILE)
+.if defined(WITH_RECOMPILE)
 RECOMPILEDIR=	src/system
 .else
 RECOMPILEDIR=
 .endif
 
-.if defined(WITH_EVERYTHING) || defined(FORCE_RECOMPILE)
+MLRUNTIMEPATCHES!=	cd ${FILESDIR} && ${LS} do-patch-src::runtime::*
+.if defined(WITH_EVERYTHING)
 MLSOURCEUNPACKTARGETS=	cm compiler mlrisc smlnj-lib system
 MLSOURCEPATCHES!=	cd ${FILESDIR} && ${LS} do-patch-src::*
-.if defined(WITH_FLINT)
-MLSOURCEPATCHES+=	${MLFLINTPATCH}
-.endif
 .else
 MLSOURCEUNPACKTARGETS=
 MLSOURCEPATCHES=
@@ -192,8 +134,9 @@ do-build:
 	FILESDIR="${FILESDIR}" PATCH="${PATCH}" PATCH_ARGS="${PATCH_ARGS}" \
 	MLNORUNTIMECLEAN=yes \
 	MLSOURCEUNPACKTARGETS="${MLSOURCEUNPACKTARGETS}" \
+	MLRUNTIMEPATCHES="${MLRUNTIMEPATCHES}" \
 	MLSOURCEPATCHES="${MLSOURCEPATCHES}"	./config/install.sh
-.if defined(WITH_RECOMPILE) || defined(FORCE_RECOMPILE)
+.if defined(WITH_RECOMPILE)
 	${RM} ${WRKDIR}/config/targets.customized
 	@${ECHO} '(* Recompiling the core system: *)'
 	cd ${WRKDIR}/${RECOMPILEDIR} && ( \
@@ -223,7 +166,7 @@ do-build:
 
 .if defined(WITH_EVERYTHING)
 MLNOINSTALL=	.cm
-.if defined(WITH_RECOMPILE) || defined(FORCE_RECOMPILE)
+.if defined(WITH_RECOMPILE)
 MLNOINSTALL+=	sml.bin.${MLARCH}-unix sml.boot.${MLARCH}-unix \
 		sml.lib sml.${MLARCH}-bsd
 .endif
@@ -238,6 +181,10 @@ pre-install:
 	${SED} -E -e 's%^(.*[^/])$$%${MLROOTRELATIVE}/src/\1%' \
 		-e 's%^(.*)/$$%@dirrm\ ${MLROOTRELATIVE}/src/\1%' \
 		> ${MLRUNTIMEPLIST}
+	-@cd ${FILESDIR} && ${LS} do-patch-src::runtime::* | \
+	${SED} -e 's%::%/%g' | \
+	${SED} -E -e 's%^do-patch-(.*)%${MLROOTRELATIVE}/\1.orig%' \
+	>> ${MLRUNTIMEPLIST}
 	@cd "${WRKDIR}" && ( \
 	( ${FIND} -s -d ${MLSRCSBASE} \! -type d | \
 	${AWK} '{ print "${MLROOTRELATIVE}/" $$0 }' ) ; \
@@ -263,7 +210,7 @@ MLSRCEXCLUDES+=	--exclude "${excl}"
 
 do-install:
 	${MKDIR} "${MLROOT}"
-.if !defined(WITH_RECOMPILE) && !defined(FORCE_RECOMPILE)
+.if !defined(WITH_RECOMPILE)
 	cd ${WRKDIR} && unset PWD && \
 	FILESDIR="${FILESDIR}" PATCH="${PATCH}" PATCH_ARGS="${PATCH_ARGS}" \
 	INSTALLDIR="${MLROOT}" ./config/install.sh
