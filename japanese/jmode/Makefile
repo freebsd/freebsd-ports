@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.kmc.gr.jp/proj/heke/
 MAINTAINER=	nakai@FreeBSD.org
 COMMENT=	XIM server for Anthy input method
 
+BROKEN=		"Bad dependency"
+
 BUILD_DEPENDS=	${LOCALBASE}/include/anthy.h:${PORTSDIR}/japanese/anthy
 
 GNU_CONFIGURE=	yes
