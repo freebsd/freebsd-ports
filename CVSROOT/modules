@@ -1332,7 +1332,7 @@ doxygen		ports/devel/doxygen
 dpkg		ports/archivers/dpkg
 drac		ports/mail/drac
 drbl		ports/mail/drbl
-drgenius	ports/math/drgenius
+drgeo		ports/math/drgeo
 dri-devel	ports/graphics/dri-devel
 driftnet	ports/net/driftnet
 driglide	ports/x11-servers/driglide
