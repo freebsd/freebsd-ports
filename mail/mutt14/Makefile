@@ -4,10 +4,10 @@
 # Date created:         Thur July 25, 1996
 # Whom:                 David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.40 1998/01/28 00:11:59 obrien Exp $
+# $Id: Makefile,v 1.41 1998/02/01 19:03:38 obrien Exp $
 
-DISTNAME=	${PKGNAME}i
-PKGNAME=	mutt-0.89.1
+DISTNAME=	mutt-0.89.1i
+PKGNAME=	mutt-0.89.1.1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://riemann.iam.uni-bonn.de/pub/mutt/  \
 		ftp://ftp.gbnet.net/pub/mutt-international/  \
@@ -19,8 +19,9 @@ PATCH_SITES=	http://www.frmug.org/mutt/mutt/${PKGNAME:S/^mutt-//}/  \
 		http://www.math.fu-berlin.de/~leitner/mutt/${PKGNAME:S/^mutt-//}/  \
 		http://www.efrei.fr/~parmelan/mutt/${PKGNAME:S/^mutt-//}/  \
 		ftp://www.frmug.org/pub/mutt/mutt/${PKGNAME:S/^mutt-//}/  \
-		ftp://ftp.nuxi.com/pub/mutt/${PKGNAME:S/^mutt-//}/
-PATCHFILES=
+		ftp://ftp.nuxi.com/pub/mutt/${PKGNAME:S/^mutt-//}/  \
+		ftp://riemann.iam.uni-bonn.de/pub/mutt/
+PATCHFILES=	mutt-0.89.1i.pl1.diff
 
 MAINTAINER=     obrien@FreeBSD.org
 
