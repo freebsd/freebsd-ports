@@ -1,5 +1,13 @@
---- Makefile.orig	Sun Nov 24 04:00:54 2002
-+++ Makefile	Sun Nov 24 04:07:15 2002
+--- Makefile.orig	Tue Nov 26 19:24:39 2002
++++ Makefile	Fri Dec 13 02:59:14 2002
+@@ -1,6 +1,6 @@
+ PKGNAME = gkrellweather
+ VERSION = 2.0.5
+-CFLAGS = -O2 -Wall -fPIC `pkg-config gtk+-2.0 --cflags`
++CFLAGS += -Wall -fPIC `pkg-config gtk+-2.0 --cflags`
+ LIBS = `pkg-config gtk+-2.0 --libs`
+ LFLAGS = -shared
+ 
 @@ -8,24 +8,20 @@
  
  OBJS = gkrellweather.o
