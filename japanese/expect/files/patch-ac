@@ -1,0 +1,8 @@
+--- fixcat.ORIG	Mon Mar 10 18:13:20 1997
++++ fixcat	Mon Mar 10 18:15:06 1997
+@@ -1,4 +1,4 @@
+-#!expect --
++#!expectjp --
+ # Synopsis: fixcat
+ # Author: Don Libes
+ 

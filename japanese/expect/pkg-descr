@@ -1,0 +1,10 @@
+Expect is a program that performs programmed dialogue with other
+interactive programs.  It is briefly described by its man page, expect(1).
+
+This version is based on Japanized Tcl/Tk, so it has 'kanji' command.
+
+It uses pseudo-tty's to control the child processes, so it is not affected
+by programs that refuse to read from stdin or pipes. (eg: passwd(1) etc).
+
+The Expect home page is: http://expect.nist.gov
+The Expect FAQ is:       http://expect.nist.gov/FAQ.html
