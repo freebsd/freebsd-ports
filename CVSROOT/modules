@@ -2281,6 +2281,7 @@ ipsc		ports/sysutils/ipsc
 ipsend		src/usr.sbin/ipsend
 ipsorc		ports/net/ipsorc
 iptest		src/usr.sbin/iptest
+ipv6calc	ports/net/ipv6calc
 ipw		ports/net/ipw
 irc		ports/irc/irc
 ircII		ports/irc/ircII
