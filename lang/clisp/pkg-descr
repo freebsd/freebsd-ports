@@ -1,0 +1,20 @@
+Common Lisp is a high-level, all-purpose, object-oriented, dynamic,
+functional programming language.
+
+CLISP is a Common Lisp implementation by Bruno Haible of Karlsruhe
+University and Michael Stoll of Munich University, both in Germany. It   
+mostly supports the Lisp described in the ANSI Common Lisp standard. 
+
+CLISP includes an interpreter, a compiler, a large subset of CLOS, a 
+foreign language interface and a socket interface. An X11 interface is   
+available through CLX and Garnet. Command line editing is provided by
+readline.
+
+CLISP is free software and may be distributed under the terms of GNU 
+GPL. You may distribute commercial applications compiled with CLISP, 
+see file COPYRIGHT in the CLISP distribution.
+
+The user interface comes in German, English, French and Spanish, and 
+can be change at run time.   
+
+WWW: http://clisp.cons.org/

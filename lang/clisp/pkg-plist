@@ -1,0 +1,71 @@
+bin/clisp
+lib/clisp/clisp-link
+lib/clisp/base/libavcall.a
+lib/clisp/base/libcallback.a
+lib/clisp/base/libintl.a
+lib/clisp/base/libnoreadline.a
+lib/clisp/base/libreadline.a
+lib/clisp/base/libsigsegv.a
+lib/clisp/base/lisp.a
+lib/clisp/base/lisp.run
+lib/clisp/base/lispinit.mem
+lib/clisp/base/makevars
+lib/clisp/base/modules.h
+lib/clisp/base/modules.o
+lib/clisp/data/UnicodeData.txt
+lib/clisp/full/libavcall.a
+lib/clisp/full/libcallback.a
+lib/clisp/full/libintl.a
+lib/clisp/full/libnoreadline.a
+lib/clisp/full/libreadline.a
+lib/clisp/full/libsigsegv.a
+lib/clisp/full/lisp.a
+lib/clisp/full/lisp.run
+lib/clisp/full/lispinit.mem
+lib/clisp/full/makevars
+lib/clisp/full/modules.h
+lib/clisp/full/modules.o
+lib/clisp/linkkit/clisp.h
+lib/clisp/linkkit/modules.c
+lib/clisp/linkkit/modules.d
+share/doc/clisp/ANNOUNCE
+share/doc/clisp/COPYRIGHT
+share/doc/clisp/GNU-GPL
+share/doc/clisp/MAGIC.add
+share/doc/clisp/NEWS
+share/doc/clisp/README
+share/doc/clisp/README.de
+share/doc/clisp/README.es
+share/doc/clisp/SUMMARY
+share/doc/clisp/doc/CLOS-guide.txt
+share/doc/clisp/doc/LISP-tutorial.txt
+share/doc/clisp/doc/clisp.1
+share/doc/clisp/doc/clisp.dvi
+share/doc/clisp/doc/clisp.gif
+share/doc/clisp/doc/clisp.html
+share/doc/clisp/doc/clreadline.3
+share/doc/clisp/doc/clreadline.dvi
+share/doc/clisp/doc/clreadline.html
+share/doc/clisp/doc/editors.txt
+share/doc/clisp/doc/impnotes.html
+share/doc/clisp/doc/readline.dvi
+share/locale/de/LC_MESSAGES/clisp.mo
+share/locale/en/LC_MESSAGES/clisp.mo
+share/locale/es/LC_MESSAGES/clisp.mo
+share/locale/fr/LC_MESSAGES/clisp.mo
+@dirrm share/doc/clisp/doc
+@dirrm share/doc/clisp
+@dirrm lib/clisp/base
+@dirrm lib/clisp/data
+@dirrm lib/clisp/full
+@dirrm lib/clisp/linkkit
+@dirrm lib/clisp
+@unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/de 2>/dev/null || true
+@unexec rmdir %D/share/locale/en/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/en 2>/dev/null || true
+@unexec rmdir %D/share/locale/es/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/es 2>/dev/null || true
+@unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/fr 2>/dev/null || true
+@unexec rmdir %D/share/locale 2>/dev/null || true
