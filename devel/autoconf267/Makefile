@@ -3,7 +3,7 @@
 # Date created:		7 October 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.15 1998/09/23 16:10:37 vanilla Exp $
+# $Id: Makefile,v 1.16 1999/01/26 01:54:49 steve Exp $
 #
 
 DISTNAME=       autoconf-2.13
@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	autoconf
 
 MAINTAINER=	torstenb@FreeBSD.ORG
 
+BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 GNU_CONFIGURE=	yes
