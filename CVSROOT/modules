@@ -2028,6 +2028,7 @@ gfe		ports/x11-fonts/gfe
 gff2ps		ports/biology/gff2ps
 gfont		ports/graphics/gfont
 gfontview	ports/print/gfontview
+gforge		ports/www/gforge
 gforth		ports/lang/gforth
 gfslicer	ports/sysutils/gfslicer
 gftp		ports/ftp/gftp
