@@ -3,7 +3,7 @@
 # Date created: 	Tue Nov 14 18:29:48 MET 1995
 # Whom: 		Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.11 1996/12/08 01:45:13 max Exp $
+# $Id: Makefile,v 1.12 1997/04/30 03:18:08 asami Exp $
 #
 
 DISTNAME=	apsfilter-4.9.3
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 
 MAINTAINER=	andreas@klemm.gtn.com
 
-RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript4 \
+RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript5 \
 		transfig:${PORTSDIR}/print/transfig \
 		cjpeg:${PORTSDIR}/graphics/jpeg \
 		anytopnm:${PORTSDIR}/graphics/netpbm
