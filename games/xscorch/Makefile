@@ -27,6 +27,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gtk
 
 MAN6=		xscorch.6
+NOMANCOMPRESS=	yes
 
 .include <bsd.port.pre.mk>
 
