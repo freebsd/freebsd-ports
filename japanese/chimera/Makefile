@@ -3,7 +3,7 @@
 # Date created:		26 December 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.1.1.1 1995/09/22 11:07:19 asami Exp $
+# $Id: Makefile,v 1.2 1995/11/26 11:32:35 asami Exp $
 #
 
 DISTNAME=	chimera-1.65
@@ -18,24 +18,5 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	asami@FreeBSD.ORG
 
 USE_IMAKE=	yes
-IS_INTERACTIVE=	yes
-
-pre-install:
-	@echo "**************************************************************"
-	@echo "*                      W a r n i n g                         *"
-	@echo "* This port will overwrite an existing chimera installation. *"
-	@echo "**************************************************************"
-	@echo -n "Is this ok? (y/n) ==> "
-	@(read ans; \
-	  case x"$$ans" in \
-	    xy*|xY*) \
-		return 0; \
-		;; \
-	    *) \
-		echo "Okay, I won't install it then...."; \
-		echo "(Don't worry about the following \"*** Error code 1\"s)"; \
-		return 1; \
-		;; \
-	  esac)
 
 .include <bsd.port.mk>
