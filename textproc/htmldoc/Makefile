@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	htmldoc
-PORTVERSION=	1.8.13
+PORTVERSION=	1.8.18
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.easysw.com/pub/htmldoc/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
