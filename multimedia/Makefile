@@ -73,6 +73,7 @@
     SUBDIR += nautilus-media
     SUBDIR += netshow
     SUBDIR += nuppelvideo
+    SUBDIR += nxtvepg
     SUBDIR += ogle
     SUBDIR += ogle-gui
     SUBDIR += ogmtools

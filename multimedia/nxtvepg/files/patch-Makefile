@@ -1,0 +1,105 @@
+--- Makefile.orig	Sun Dec  8 21:18:25 2002
++++ Makefile	Wed Jan  8 00:31:16 2003
+@@ -32,12 +32,24 @@
+ include Makefile.win32
+ else
+ 
++ifndef X11BASE
++  X11BASE=/usr/X11R6
++endif
++
++ifndef LOCALBASE
++  LOCALBASE=/usr/local
++endif
++
++ifndef PREFIX
++  PREFIX=$(X11BASE)
++endif
++
+ ROOT    =
+-prefix  = /usr/local
++prefix  = $(PREFIX)
+ exec_prefix = ${prefix}
+ bindir  = $(ROOT)${exec_prefix}/bin
+ mandir  = $(ROOT)${prefix}/man/man1
+-resdir  = $(ROOT)/usr/X11R6/lib/X11
++resdir  = $(ROOT)$(X11BASE)/lib/X11
+ 
+ # if you have perl set the path here, else just leave it alone
+ PERL    = /usr/bin/perl
+@@ -45,22 +57,25 @@
+ # select Tcl/Tk version
+ TCL_VER = 8.3
+ 
+-LDLIBS  = -ltk$(TCL_VER) -ltcl$(TCL_VER) -L/usr/X11R6/lib -lX11 -lXmu -lm -ldl
++LDLIBS  = -L$(LOCALBASE)/lib -L$(LOCALBASE)/lib/tcl83 -L$(LOCALBASE)/lib/tk83\
++          -ltk83 -ltcl83 -L$(X11BASE)/lib -lX11 -lXmu -lm
+ 
+ # use static libraries for debugging only
+ #LDLIBS += -Ldbglib -static
+ 
+-INCS   += -I. -I/usr/X11R6/include
++INCS   += -I. -I$(X11BASE)/include -I$(LOCALBASE)/include/tcl8.3\
++              -I$(LOCALBASE)/include/tk8.3 -I $(LOCALBASE)//include
++	      
+ # path to Tcl/Tk headers, if not properly installed
+ #INCS   += -I/usr/local/tcl/tcl8.0/generic -I/usr/local/tcl/tk8.0/generic
+ 
+ # path to Tcl/Tk script library (Tk is usually in X11/lib/tk#.#)
+-DEFS   += -DTK_LIBRARY_PATH=\"/usr/lib/tk$(TCL_VER)\"
+-DEFS   += -DTCL_LIBRARY_PATH=\"/usr/lib/tcl$(TCL_VER)\"
++DEFS   += -DTK_LIBRARY_PATH=\"$(LOCALBASE)/lib/tk$(TCL_VER)\"
++DEFS   += -DTCL_LIBRARY_PATH=\"$(LOCALBASE)/lib/tcl$(TCL_VER)\"
+ 
+ # enable use of multi-threading
+ DEFS   += -DUSE_THREADS
+-LDLIBS += -lpthread
++LDLIBS += -pthread
+ 
+ # enable use of daemon and client/server connection
+ DEFS   += -DUSE_DAEMON
+@@ -68,10 +83,10 @@
+ # The database directory can be either in the user's $HOME (or relative to any
+ # other env variable) or at a global place like /var/spool (world-writable)
+ # -> uncomment 2 lines below to put the databases in the user's home
+-#USER_DBDIR  = .nxtvdb
+-#DEFS       += -DEPG_DB_ENV=\"HOME\" -DEPG_DB_DIR=\"$(USER_DBDIR)\"
++USER_DBDIR  = .nxtvdb
++DEFS       += -DEPG_DB_ENV=\"HOME\" -DEPG_DB_DIR=\"$(USER_DBDIR)\"
+ ifndef USER_DBDIR
+-SYS_DBDIR    = /usr/tmp/nxtvdb
++SYS_DBDIR    = /var/tmp/nxtvdb
+ DEFS        += -DEPG_DB_DIR=\"$(SYS_DBDIR)\"
+ INST_DB_DIR  = $(ROOT)$(SYS_DBDIR)
+ INST_DB_PERM = 0777
+@@ -79,8 +94,8 @@
+ 
+ WARN    = -Wall -Wnested-externs -Wstrict-prototypes -Wmissing-prototypes
+ #WARN  += -Wpointer-arith -Werror
+-CC      = gcc
+-CFLAGS  = -pipe $(WARN) $(INCS) $(DEFS) -O6
++CC      ?= gcc
++CFLAGS  += -pipe $(WARN) $(INCS) $(DEFS)
+ #LDLIBS += -pg
+ 
+ # ----- don't change anything below ------------------------------------------
+@@ -109,18 +124,7 @@
+ nxtvepg: $(OBJS)
+ 	$(CC) $(LDFLAGS) -o nxtvepg $(OBJS) $(LDLIBS)
+ 
+-install: nxtvepg nxtvepg.1 Nxtvepg.ad
+-	test -d $(bindir) || mkdirhier $(bindir)
+-	test -d $(mandir) || mkdirhier $(mandir)
+-	test -d $(resdir) || mkdirhier $(resdir)
+-ifndef USER_DBDIR
+-	test -d $(INST_DB_DIR) || mkdirhier $(INST_DB_DIR)
+-	chmod $(INST_DB_PERM) $(INST_DB_DIR)
+-endif
+-	install -c -m 0755 nxtvepg     $(bindir)
+-	install -c -m 0644 nxtvepg.1   $(mandir)
+-	install -c -m 0644 Nxtvepg.ad  $(resdir)/app-defaults/Nxtvepg
+-	rm -f $(mandir)/nxtvepg.1x
++install:
+ 
+ .SUFFIXES: .c .o .tcl
+ 
