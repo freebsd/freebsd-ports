@@ -1,18 +1,12 @@
-*** Makefile.orig	Sat Aug 12 18:46:05 2000
---- Makefile	Sat Aug 12 18:48:26 2000
-***************
-*** 0 ****
---- 1,14 ----
-+ DESTDIR=$(PREFIX)/lib/X11/fonts
-+  
-+ all:
-+ 	@echo nothing to be done for \`$@\'
-+ 	@echo this is an install-only port.
-+  
-+ install:
-+ 	[ -d $(DESTDIR) ] || mkdir $(DESTDIR)
-+ 	(cd nucleus && tar -cf - nucleus) | (cd ${DESTDIR}; tar -xf -)
-+ 	mkdir -p ${DESTDIR}/mozilla
-+ 	cd nucleus/mozilla-src && make && gzip -f *.pcf
-+ 	(cd nucleus/mozilla-src && tar -cf - *.pcf.gz) | (cd ${DESTDIR}/mozilla && tar -xf -)
-+ 	cd ${DESTDIR}/mozilla && mkfontdir .
+--- Makefile.orig	Sun Apr 13 00:21:23 2003
++++ Makefile	Sun Apr 13 00:22:17 2003
+@@ -0,0 +1,9 @@
++DESTDIR=$(PREFIX)/lib/X11/fonts
++ 
++all:
++	@echo nothing to be done for \`$@\'
++	@echo this is an install-only port.
++ 
++install:
++	[ -d $(DESTDIR) ] || mkdir $(DESTDIR)
++	(cd nucleus && tar -cf - nucleus) | (cd ${DESTDIR}; tar -xf -)
