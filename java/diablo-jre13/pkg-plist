@@ -1,3 +1,4 @@
+@unexec %%LOCALBASE%%/bin/unregistervm "%D/diablo-jre%%JRE_VERSION%%/bin/java"
 diablo-jre%%JRE_VERSION%%/CHANGES
 diablo-jre%%JRE_VERSION%%/COPYRIGHT
 %%PLUGIN:%%diablo-jre%%JRE_VERSION%%/ControlPanel.html
@@ -133,7 +134,6 @@ diablo-jre%%JRE_VERSION%%/man/man1/tnameserv.1
 @exec   mkdir -p %D/share/doc/java
 @unexec rmdir %D/share/doc/java 2>/dev/null || true
 @exec   %%LOCALBASE%%/bin/registervm "%D/diablo-jre%%JRE_VERSION%%/bin/java # DiabloLatte%%JRE_VERSION%%"
-@unexec %%LOCALBASE%%/bin/unregistervm "%D/diablo-jre%%JRE_VERSION%%/bin/java"
 %%PLUGIN:%%@dirrm diablo-jre%%JRE_VERSION%%/plugin/i386/ns600
 %%PLUGIN:%%@dirrm diablo-jre%%JRE_VERSION%%/plugin/i386/ns4
 %%PLUGIN:%%@dirrm diablo-jre%%JRE_VERSION%%/plugin/i386

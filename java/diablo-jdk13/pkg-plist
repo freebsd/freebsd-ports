@@ -1,3 +1,4 @@
+@unexec %%LOCALBASE%%/bin/unregistervm "%D/diablo-jdk%%JDK_VERSION%%/bin/java"
 diablo-jdk%%JDK_VERSION%%/COPYRIGHT
 diablo-jdk%%JDK_VERSION%%/LICENSE
 diablo-jdk%%JDK_VERSION%%/LICENSE.fr
@@ -752,7 +753,6 @@ diablo-jdk%%JDK_VERSION%%/src.jar
 @exec   mkdir -p %D/share/doc/java
 @unexec rmdir %D/share/doc/java 2>/dev/null || true
 @exec   %%LOCALBASE%%/bin/registervm "%D/diablo-jdk%%JDK_VERSION%%/bin/java # DiabloCaffe%%JDK_VERSION%%"
-@unexec %%LOCALBASE%%/bin/unregistervm "%D/diablo-jdk%%JDK_VERSION%%/bin/java"
 @dirrm diablo-jdk%%JDK_VERSION%%/man/man1
 @dirrm diablo-jdk%%JDK_VERSION%%/man
 @dirrm diablo-jdk%%JDK_VERSION%%/lib/i386
