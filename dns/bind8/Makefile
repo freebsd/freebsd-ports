@@ -11,7 +11,7 @@
 # you can generally build it cleanly from the source. - Doug
 
 PORTNAME=	bind
-PORTVERSION=	8.2.5
+PORTVERSION=	8.3.0
 CATEGORIES?=	net
 MASTER_SITES=	ftp://ftp.isc.org/isc/bind/src/${PORTVERSION}/ \
 		ftp://ftp.epix.net/pub/isc/bind/src/${PORTVERSION}/ \
@@ -36,8 +36,15 @@ PATCH_ARGS=	-d ${WRKDIR}
 PATCH_DIST_ARGS=	-d ${WRKDIR}
 
 post-install:
-	@(cd ${WRKDIR}/doc/man && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} clean all ${INSTALL_TARGET})
-	${MKDIR} ${PREFIX}/share/doc/bind8
-	${INSTALL_DATA} ${WRKDIR}/doc/html/*.html ${PREFIX}/share/doc/bind8
+.if !defined(NOPORTDOCS)
+	@(cd ${WRKDIR}/doc/man && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} \
+		${MAKEFILE} clean all ${INSTALL_TARGET})
+	@${MKDIR} ${PREFIX}/share/doc/bind8/html
+	${INSTALL_DATA} ${WRKDIR}/doc/html/*.html ${PREFIX}/share/doc/bind8/html
+	${CP} -Rp ${WRKDIR}/src/conf ${PREFIX}/share/doc/bind8/
+.for file in CHANGES DNSSEC LICENSE LICENSE_RSA README SUPPORT TODO
+	${INSTALL_DATA} ${WRKDIR}/src/${file} ${PREFIX}/share/doc/bind8
+.endfor
+.endif
 
 .include <bsd.port.mk>
