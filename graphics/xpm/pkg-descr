@@ -17,4 +17,4 @@ respectively including, storing, reading and writing this format, plus four
 other: XpmCreateImageFromData, XpmCreateDataFromImage, XpmReadFileToImage and
 XpmWriteFileFromImage for working with images instead of pixmaps.
 
-WWW: http://www-sop.inria.fr/koala/lehors/xpm.html
+WWW: http://koala.ilog.fr/lehors/xpm.html
