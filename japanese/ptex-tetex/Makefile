@@ -134,9 +134,9 @@ post-extract:
 	cd ${WRKDIR} && \
 		${MV} ${INSTDIRS} texmf-tmp && \
 		${RM} -f ptex/platex/base/.cvsignore
-	${SETENV} ${MAKE_ENV} ${MKTEXLSR} ${WRKDIR}/texmf-tmp
 
 pre-configure:
+	${SETENV} ${MAKE_ENV} ${MKTEXLSR} ${WRKDIR}/texmf-tmp
 	cd ${WRKSRC_TETEX} && \
 		${SETENV} ${CONFIGURE_ENV} ${SH} ${CONFIGURE_SCRIPT} \
 			--prefix=${PREFIX} \
