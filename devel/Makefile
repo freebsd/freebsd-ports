@@ -65,6 +65,7 @@
     SUBDIR += c2man
     SUBDIR += c4
     SUBDIR += c_c++_reference
+    SUBDIR += c_parser
     SUBDIR += camlp4
     SUBDIR += cbrowser
     SUBDIR += cc65
