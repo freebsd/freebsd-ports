@@ -3,11 +3,11 @@
 # Date created:		30 October 1994
 # Whom:			smace
 #
-# $Id: Makefile,v 1.26 1998/10/05 03:13:41 steve Exp $
+# $Id: Makefile,v 1.27 1998/10/07 21:17:42 mph Exp $
 #
 
 DISTNAME=	xv-3.10a
-CATEGORIES=     graphics x11
+CATEGORIES?=	graphics x11
 MASTER_SITES=	ftp://ftp.cis.upenn.edu/pub/xv/ \
 		ftp://ftp.airlab.cs.ritsumei.ac.jp/pub/X/xv-jp-extension/working/ \
 		http://www.yuasa.kuis.kyoto-u.ac.jp/~shige/FreeBSD/ports/xv/
@@ -22,7 +22,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
 PATCH_SITES=    ftp://ftp.cis.upenn.edu/pub/xv/
 PATCHFILES=     xv-3.10a.JPEG-patch xv-3.10a.TIFF-patch
 
-MAINTAINER=	shige@kuis.kyoto-u.ac.jp
+MAINTAINER?=	shige@kuis.kyoto-u.ac.jp
 
 LIB_DEPENDS=    jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff34.1:${PORTSDIR}/graphics/tiff34 \
