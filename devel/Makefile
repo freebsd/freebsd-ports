@@ -770,6 +770,7 @@
     SUBDIR += p5-Want
     SUBDIR += p5-enum
     SUBDIR += p5-mixin
+    SUBDIR += p5-version
     SUBDIR += p65
     SUBDIR += parrot
     SUBDIR += patch

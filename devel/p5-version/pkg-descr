@@ -1,0 +1,3 @@
+This module implements overloaded version objects for all versions
+of Perl, including all of the features of version objects which will
+be part of Perl 5.10.0 except automatic v-string handling.

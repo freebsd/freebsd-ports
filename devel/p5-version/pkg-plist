@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/version.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/version/AlphaBeta.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/version/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/version/version.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/version/version.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/version
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/version
