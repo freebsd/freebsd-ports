@@ -7,7 +7,7 @@
 
 PORTNAME=	rtc
 PORTVERSION=	2004.02.24.1
-PORTREVISION=	1	
+PORTREVISION=	2
 CATEGORIES=	emulators linux
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -55,7 +55,9 @@ pre-install:
 
 post-install:
 	${RM} -f ${DEVDIR}/rtc
+.if ${OSVERSION} < 502104
 	mknod ${DEVDIR}/rtc c ${CDEV_MAJOR} 0
+.endif
 	${INSTALL_DATA} ${WRKSRC}/rtc.h ${PREFIX}/include/
 	${MKDIR} ${PREFIX}/share/examples/rtc
 	${INSTALL_DATA} ${WRKSRC}/test.c ${PREFIX}/share/examples/rtc/
