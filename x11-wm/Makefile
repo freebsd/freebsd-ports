@@ -22,7 +22,6 @@
     SUBDIR += gnome2wmaker
     SUBDIR += gwm
     SUBDIR += icewm
-    SUBDIR += iconmaker
     SUBDIR += libdockapp
     SUBDIR += libwmfun
     SUBDIR += lwm
