@@ -69,6 +69,7 @@
     SUBDIR += gkrellmouse
     SUBDIR += glload
     SUBDIR += gnomecontrolcenter
+    SUBDIR += gnomecontrolcenter2
     SUBDIR += gnomefind
     SUBDIR += gpart
     SUBDIR += grub

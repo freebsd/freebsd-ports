@@ -1932,6 +1932,7 @@ gnomecanvas	ports/graphics/gnomecanvas
 gnomechess	ports/games/gnomechess
 gnomecommon	ports/devel/gnomecommon
 gnomecontrolcenter	ports/sysutils/gnomecontrolcenter
+gnomecontrolcenter2	ports/sysutils/gnomecontrolcenter2
 gnomecore	ports/x11/gnomecore
 gnomecrash	ports/devel/gnomecrash
 gnomedb		ports/databases/gnomedb
