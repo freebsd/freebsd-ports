@@ -8,8 +8,8 @@
 PORTNAME=	wmhm
 PORTVERSION=	1.43
 CATEGORIES=	sysutils windowmaker
-MASTER_SITES=	http://www.es.co.nz/~mmuir/ \
-		http://muir.yi.org/wmhm/
+MASTER_SITES=	http://muir.yi.org/wmhm/ \
+		http://www.es.co.nz/~mmuir/
 
 MAINTAINER=	mmuir@es.co.nz
 
