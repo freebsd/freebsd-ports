@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/japanese/linux-netscape6/scripts/Attic/configure,v 1.1 2002-03-04 11:27:29 trevor Exp $
+# $FreeBSD: /tmp/pcvs/ports/japanese/linux-netscape6/scripts/Attic/configure,v 1.2 2002-05-23 13:00:10 trevor Exp $
 
 echo ${WRKSRC}/components.conf
 if [ -f ${WRKSRC}/components.conf ]; then
@@ -9,13 +9,7 @@ fi
 
 tempfile=`/usr/bin/mktemp -t checklist`
 
-if [ "${BATCH}" ]; then
-	if [ "${NETSCAPE6_OPTIONS}" ]; then
-		set ${NETSCAPE6_OPTIONS}
-	else
-		set \"zlib\" \"MySQL\"
-	fi
-else
+if [ -z "${BATCH}" ]; then
 
 /usr/bin/dialog --title "Netscape 6 component selection" --clear \
 	--checklist "\n\
