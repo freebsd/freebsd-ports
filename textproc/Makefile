@@ -71,6 +71,7 @@
     SUBDIR += fo-aspell
     SUBDIR += fop
     SUBDIR += freegrep
+    SUBDIR += galax
     SUBDIR += gdict
     SUBDIR += gdome2
     SUBDIR += glark
