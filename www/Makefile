@@ -167,7 +167,7 @@
     SUBDIR += p5-FastCGI
     SUBDIR += p5-GtkHTML
     SUBDIR += p5-HTML
-    SUBDIR += p5-HTML-Embperl
+#   SUBDIR += p5-HTML-Embperl
     SUBDIR += p5-HTML-Mason
     SUBDIR += p5-HTML-Navigation
     SUBDIR += p5-HTML-Pager
