@@ -2324,6 +2324,7 @@ imake		ports/devel/imake
 imake-4		ports/devel/imake-4
 imap-uw		ports/mail/imap-uw
 imaze		ports/games/imaze
+imc		ports/graphics/imc
 imgvtopgm	ports/palm/imgvtopgm
 imlib		ports/graphics/imlib
 imlib2		ports/graphics/imlib2
