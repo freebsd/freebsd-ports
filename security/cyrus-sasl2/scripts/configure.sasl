@@ -5,6 +5,8 @@ if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
 	exit
 fi
 
+tempfile=`mktemp -t checklist`
+
 if [ "${BATCH}" ]; then
 	if [ "x${ENABLE_DB3}" = "xYES" ]; then
 		OPTIONS=\"DB3\"
@@ -43,14 +45,14 @@ Please select desired options:" -1 -1 16 \
 DB3		"Berkeley DB package, revision 3" ${SET_DB3} \
 MySQL		"MySQL password Authentication" ${SET_MYSQL} \
 OpenLDAP	"OpenLDAP password Authentication" ${SET_LDAP} \
-2> /tmp/checklist.tmp.$$
+2> $tempfile
 
 	retval=$?
 
-	if [ -s /tmp/checklist.tmp.$$ ]; then
-		set `cat /tmp/checklist.tmp.$$`
+	if [ -s $tempfile ]; then
+		set `cat $tempfile`
 	fi
-	rm -f /tmp/checklist.tmp.$$
+	rm -f $tempfile
 
 	case $retval in
 		0)	if [ -z "$*" ]; then
