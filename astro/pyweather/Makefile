@@ -8,7 +8,7 @@
 PORTNAME=	pyWeather
 PORTVERSION=	0.1b
 CATEGORIES=	astro python
-MASTER_SITES=	http://people.FreeBSD.org/~will/distfiles/
+MASTER_SITES=	ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/will/
 DISTNAME=	pyWeather
 
 MAINTAINER=	will@FreeBSD.org
