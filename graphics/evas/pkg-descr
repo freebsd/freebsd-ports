@@ -1,4 +1,6 @@
-This is the ``E Canvas'' - a rip off of some of the other canvas's floating
-about - Tk and gnome too. It's at the Xlib level. It's intended to be
-accelerated by hardware or highly optimised software where possible. It is
-intended to be simple and allow for the building of interfaces ontop of it.
+A hardware-accelerated canvas API for X-Windows that can draw anti-aliased
+text, smooth super and sub-sampled images, alpha-blend, as well as drop down to
+using normal X11 primitives such as pixmaps, lines and rectangles for speed if
+your CPU or graphics hardware is too slow.
+
+WWW: http://www.enlightenment.org/pages/evas.html
