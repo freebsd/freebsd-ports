@@ -18,7 +18,7 @@ The interface for creating UIs and programming in Entity is quite intuitive and
 allows for rapid application development.  Entity currently supports Perl,
 Python, TCL, Javascript, and C for doing runtime XML creation and modification.
 
-WWW:  http://www.entity.cx
+WWW:  http://entity.sourceforge.net/
 
 - filbert
 jesse_mcconnell@hotmail.com

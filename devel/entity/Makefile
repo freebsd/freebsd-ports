@@ -9,7 +9,8 @@ PORTNAME=	entity
 PORTVERSION=	0.7.2
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://www.entity.cx/Download/files/all-versions/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A really rapid XML-based application development system
