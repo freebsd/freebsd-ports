@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ipcheck
-PORTVERSION=	1.01
+PORTVERSION=	1.16
 CATEGORIES=	net
 MASTER_SITES=	http://ipcheck.sourceforge.net/releases/
 DISTNAME=	${PORTNAME}.v${PORTVERSION:S/.//}
