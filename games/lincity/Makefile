@@ -6,18 +6,32 @@
 #
 
 PORTNAME=	lincity
-PORTVERSION=	1.11
-PORTREVISION=	1
+PORTVERSION=	1.12.0
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.demon.co.uk/pub/unix/linux/games/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rich city simulation game for X
 
-BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake-4
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 
-USE_XLIB=	yes
-ALL_TARGET=	freebsd
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+
 MAN6=		lincity.6
+
+.if defined(WITH_SVGALIB)
+LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
+CONFIGURE_ARGS+=	--without-x
+PLIST_SUB=	PROG="bin/lincity"
+.else
+USE_XLIB=	yes
+CONFIGURE_ARGS+=	--without-svga
+PLIST_SUB=	PROG="bin/xlincity"
+.endif
 
 .include <bsd.port.mk>
