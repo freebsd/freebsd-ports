@@ -1,3 +1,4 @@
+bin/ftbench
 bin/ftdump
 bin/ftlint
 bin/ftmemchk
