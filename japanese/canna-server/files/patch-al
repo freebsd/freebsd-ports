@@ -1,26 +1,38 @@
---- canna/widedef.h.OLD	Sat Oct 26 11:59:11 2002
-+++ canna/widedef.h	Sat Oct 26 12:04:56 2002
-@@ -35,7 +35,7 @@
+--- canna/widedef.h.orig	Sat Oct 19 17:27:28 2002
++++ canna/widedef.h	Tue Nov 19 08:20:30 2002
+@@ -35,7 +35,11 @@
  #define WCHAR16
  #endif
       
 -#if defined(__FreeBSD__) || defined(__NetBSD__)
-+#if defined(__NetBSD__)
++#ifdef __FreeBSD__
++# include <osreldate.h>
++#endif
++
++#if (defined(__FreeBSD__) && __FreeBSD_version < 500000) || defined(__NetBSD__)
  # include <machine/ansi.h>
  #endif
  
-@@ -61,7 +61,13 @@
+@@ -61,7 +65,7 @@
  #endif /* !nec_ews_svr2 */
  #endif /* HAVE_WCHAR_OPERATION */
  
 -#if defined(__FreeBSD__) || defined(__NetBSD__)
-+#if defined(__FreeBSD__)
-+# ifdef WCHAR16
-+#  warning FreeBSD does not use 16-bit wide character types
-+# endif
-+# include <stddef.h>
-+# define _WCHAR_T
-+#elif defined(__NetBSD__)
++#if (defined(__FreeBSD__) && __FreeBSD_version < 500000) || defined(__NetBSD__)
  # ifdef _BSD_WCHAR_T_
  #  undef _BSD_WCHAR_T_
  #  ifdef WCHAR16
+@@ -72,6 +76,13 @@
+ # include <stddef.h>
+ # define _WCHAR_T
+ # endif
++#elif defined(__FreeBSD__) && __FreeBSD_version >= 500000
++# ifdef WCHAR16
++typedef unsigned short wchar_t;
++#  define _WCHAR_T_DECLARED
++# endif
++# include <stddef.h>
++# define _WCHAR_T
+ #else
+ #if !defined(WCHAR_T) && !defined(_WCHAR_T) && !defined(_WCHAR_T_) \
+  && !defined(__WCHAR_T) && !defined(_GCC_WCHAR_T) && !defined(_WCHAR_T_DEFINED)
