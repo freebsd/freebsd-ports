@@ -1,0 +1,11 @@
+--- configure.orig	Sun Mar 31 16:31:53 2002
++++ configure	Sun Mar 31 16:32:13 2002
+@@ -1458,7 +1458,7 @@
+ CPPFLAGS="$CPPFLAGS -DLDAP_REFERRALS"
+ 
+ case "$target_os" in
+-freebsd*) CPPFLAGS="$CPPFLAGS -DPIC -D_REENTRANT" ;;
++freebsd*) CPPFLAGS="$CPPFLAGS -DPIC -D_REENTRANT $PTHREAD_CFLAGS" ;;
+ aix*) CPPFLAGS="$CPPFLAGS -D_THREAD_SAFE" ;;
+ *) CPPFLAGS="$CPPFLAGS -D_REENTRANT" ;;
+ esac

@@ -16,10 +16,6 @@ MAINTAINER=	marcus@marcuscom.com
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 500030
-BROKEN=	"Does not work correctly with OpenPAM"
-.endif
-
 .if defined(WITH_LDAP_V3)
 LIB_DEPENDS=	ldap.2:${PORTSDIR}/net/openldap2 \
 		lber.2:${PORTSDIR}/net/openldap2
