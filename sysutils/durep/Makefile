@@ -5,13 +5,15 @@
 # $FreeBSD$
 #
 
-PORTNAME=      durep
-PORTVERSION=   0.8
-CATEGORIES=    sysutils
-MASTER_SITES=  http://www.hibernaculum.net/download/
+PORTNAME=	durep
+PORTVERSION=	0.8
+CATEGORIES=	sysutils
+MASTER_SITES=	http://www.hibernaculum.net/download/
 
-MAINTAINER=    ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
-MAN1=          durep.1
+USE_PERL5=	yes
+
+MAN1=		durep.1
 
 .include <bsd.port.mk>
