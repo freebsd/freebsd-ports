@@ -1,6 +1,6 @@
 libexec/apache/mod_accounting.so
 @exec %D/sbin/apxs -e -a -n accounting %D/%f
-@unexec echo "===>  If you do not plan on reinstalling mod_accounting, you must manually remove"; echo "===> references to it in httpd.conf."
+@unexec echo "===>  If you do not plan on reinstalling mod_accounting, you must manually remove"; echo "===>  references to it in httpd.conf."
 share/mod_accounting/schema.sql
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.txt
