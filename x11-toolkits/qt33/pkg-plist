@@ -2398,4 +2398,4 @@ templates/Tab_Dialog.ui
 @dirrm mkspecs
 @dirrm include/private
 @dirrm doc/html
-@unexec /bin/rmdir doc 2>/dev/null || true
+@unexec /bin/rmdir %D/doc 2>/dev/null || true
