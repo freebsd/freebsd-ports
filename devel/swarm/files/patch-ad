@@ -1,0 +1,11 @@
+--- configure.orig	Sun May 30 22:01:25 1999
++++ configure	Sun May 30 22:01:47 1999
+@@ -1105,7 +1105,7 @@
+ test -n "$OBJC" || OBJC="$CC"
+ 
+ test -n "$OBJCFLAGS" || OBJCFLAGS="$CFLAGS"
+-OBJCFLAGS="$OBJCFLAGS -Wall -Wno-import -Wno-protocol -Werror"
++OBJCFLAGS="$OBJCFLAGS -Wall -Wno-import -Wno-protocol"
+ 
+ 
+ # Check whether --enable-shared or --disable-shared was given.
