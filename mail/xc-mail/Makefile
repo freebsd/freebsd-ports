@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	xc-mail
-PORTVERSION=	20001018
+PORTVERSION=	20001216
 CATEGORIES=	mail
-MASTER_SITES=	ftp://trilug.fh-trier.de/pub/XCmail/cvs-snapshot/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+# ftp://trilug.fh-trier.de/pub/XCmail/cvs-snapshot/
+MASTER_SITE_SUBDIR=	trevor/${PORTNAME}/${PORTVERSION}
 DISTNAME=	${PORTNAME}-1.3devel
 
 MAINTAINER=	trevor@FreeBSD.org
