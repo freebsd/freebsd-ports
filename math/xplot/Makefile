@@ -3,7 +3,7 @@
 # Date created:		3 March 1997
 # Whom:			fenner
 #
-# $Id: Makefile,v 1.2 1998/03/20 19:25:35 fenner Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xplot-0.90

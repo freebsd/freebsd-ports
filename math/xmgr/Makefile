@@ -3,7 +3,7 @@
 # Date created:		So   2 Mär 1997 12:11:43 MET
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.16 1999/08/28 02:17:21 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xmgr-4.1.1

@@ -3,7 +3,7 @@
 # Date created:         20 Dec 97
 # Whom:                 Pedro Giffuni <giffunip@asme.org>
 #
-# $Id: Makefile,v 1.7 1999/01/07 08:19:45 simokawa Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xldlas-0.85
