@@ -88,6 +88,7 @@
     SUBDIR += wmlmmon
     SUBDIR += wmmon
     SUBDIR += wmmount
+    SUBDIR += wmpccard
     SUBDIR += xbatt
     SUBDIR += xcpustate
     SUBDIR += xdu
