@@ -205,6 +205,7 @@ caudium/server/modules/misc/robot_trap.pike
 caudium/server/modules/misc/robots.txt.pike
 caudium/server/modules/misc/sqldb.pike
 caudium/server/modules/misc/switch.pike
+caudium/server/modules/misc/switchfile.pike
 caudium/server/modules/misc/tracer.pike
 caudium/server/modules/misc/userdb.pike
 caudium/server/modules/misc/whiteboard.pike
