@@ -69,6 +69,7 @@
     SUBDIR += gnumail
     SUBDIR += gotmail
     SUBDIR += grepmail
+    SUBDIR += gtkgrepmail
     SUBDIR += hbiff
     SUBDIR += icqmail
     SUBDIR += ifile

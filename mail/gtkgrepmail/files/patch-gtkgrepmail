@@ -1,0 +1,49 @@
+--- gtkgrepmail.orig	Sat May 18 11:27:24 2002
++++ gtkgrepmail	Thu Aug 22 22:42:33 2002
+@@ -31,8 +31,8 @@
+ # Define variables
+ $defaultMailpath="$ENV{HOME}/Mail";
+ $defaultMailbox="search-results";
+-$defaultGrepmail="/usr/bin/grepmail";
+-$defaultIMAP="/usr/bin/X11/xterm -e /usr/bin/elm -f";
++$defaultGrepmail="/usr/local/bin/grepmail";
++$defaultIMAP="/usr/X11R6/bin/xterm -e /usr/bin/elm -f";
+ $defaultSSH="/usr/bin/ssh";
+ $defaultHost="localhost";
+ $defaultUser="$ENV{USER}";
+@@ -1043,7 +1043,7 @@
+     $chkRecurse->set_active(0);
+     $row = 0;
+     while ( $row <= $#filelist ) {
+-      $lstFiles->unselect_item($row,0);
++      $lstFiles->unselect_row($row,0);
+       $row++;
+     }
+     @valfiles = "";
+@@ -1084,7 +1084,7 @@
+ }
+ 
+ sub select_item {
+-    ( $widget, $path ) = @_;
++#    ( $widget, $path ) = @_;
+     # FIXME - does not work
+ #    $entry->set_text( $path );
+ #    show_files( $path );
+@@ -1249,7 +1249,7 @@
+     if ( $valrdbAnd && $valAnd ) { $andspec = "| grepmail $scopeflag2 $valInverse $valCase -e \\\"$valAnd\\\"" }
+     elsif ( $valAnd ) { $orspec = "\\|\\\"$valAnd\\\"" };
+     if ( $valNot ) { $notspec = "| grepmail $scopeflag3 $valCase -v -e \\\"$valNot\\\"" };
+-    $grepmailcmd = "$valGrepmail -e \\(\\\"$valSearch\\\"$orspec\\) $scopeflag $valInverse $valCase $valRecurse $valSkipattach $datespec @valfiles $andspec $notspec 2>&1 1>$valMailpath/$valMailbox";
++    $grepmailcmd = "$valGrepmail -e \\(\"$valSearch\"$orspec\\) $scopeflag $valInverse $valCase $valRecurse $valSkipattach $datespec @valfiles $andspec $notspec 2>&1 1>$valMailpath/$valMailbox";
+     if ( $usrHost eq "localhost" ) {
+       $grepmailcmd = "$grepmailcmd 2>/tmp/gtkgrepmail.$$"
+     } else {
+@@ -1262,7 +1262,7 @@
+       $dlgMain_form->window->set_cursor( new Gtk::Gdk::Cursor( 150 ) );
+       # Cursor does not redraw itself unless we do this
+       $dlgMain_form->draw(undef);
+-      unless ($child = fork) {
++      unless (fork) {
+         exec "$grepmailcmd";
+       };
+       $signalid = $dlgMain_form->signal_connect( 'key_press_event', "on_dlgMain_keypress" );
