@@ -1,0 +1,16 @@
+Message from daveh on ttyp1 at 06:10:31 ... 
+ daveh> This is how nwrite appears 
+ daveh> to the recipient of the message, it is preferable
+ daveh> to /usr/bin/write, especially on a multi user system.
+ daveh> special options specified by a .nwriterc of the 
+ daveh> intended nwrite recipient control behaviors such as
+ daveh> beeps, delay, and bold.
+ daveh> Example dot nwriterc
+ daveh> 
+ daveh>      headers    1
+ daveh>      nodelay    0
+ daveh>      beep       0
+ daveh>      bold       header
+ daveh>      showtarg   multi
+ daveh> 
+EOF

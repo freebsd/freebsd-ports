@@ -1,0 +1,11 @@
+--- Makefile.orig	Tue Jul 29 15:36:52 1997
++++ Makefile	Thu Jul 31 16:17:26 1997
+@@ -35,7 +35,7 @@
+ #INSTALL= /usr/ucb/install
+ #INSTALL= /usr/local/gnu/bin/install
+ 
+-DEST   = /usr/local
++DEST   = $(PREFIX)
+ BIN    = $(DEST)/bin
+ MAN    = $(DEST)/man
+ 
