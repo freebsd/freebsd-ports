@@ -7,7 +7,7 @@
 
 PORTNAME=	openoffice
 PORTVERSION=	645
-SNAPDATE=	20030712
+SNAPDATE=	20030815
 CATEGORIES+=	editors
 MASTER_SITES+=	http://projects.imp.ch/openoffice/%SUBDIR%/ \
 		http://people.freebsd.org/~maho/files/ \
@@ -38,7 +38,7 @@ PASTE?=	/usr/bin/paste
 
 .include <bsd.port.pre.mk>
 
-BROKEN=			"Does not work yet, installation problems"
+#BROKEN=			"Does not work yet, installation problems"
 BUILD_NR=		${PORTVERSION}
 RELEASE_NR=		1.1
 INSTALLATION_BASEDIR=	OpenOffice.org-${BUILD_NR}
@@ -88,26 +88,10 @@ USE_LANG=	${LANG}
 
 LANG_SORTED=`${ECHO} ${LANG_LIST} | ${TR} " " "\n" | ${PASTE} -d " " - -`
 
-.if ${OSVERSION} < 500000
-#
-# OO build is broken with the system gcc on STABLE.
-#
-BUILD_DEPENDS+= gcc32:${PORTSDIR}/lang/gcc32
-CC=		gcc32
-CXX=		g++32
-USE_GCC=3.2
-.endif
-
-.if ${OSVERSION} > 500000
-#
-# OO is still broken with the system gcc on CURRENT.
-#
-.if defined(USE_GCC) && ${USE_GCC} == 3.2
-BUILD_DEPENDS+= gcc32:${PORTSDIR}/lang/gcc32
-CC=		gcc32
-CXX=		g++32
-.endif
-.endif
+# OOo requires gcc 3.3 (not systems's gcc)
+USE_GCC=3.3 # make no sense yet
+CC=  gcc33
+CXX= g++33
 
 EXTRACT_ONLY=	oo_${PORTVERSION}_src_${SNAPDATE}.tar.bz2
 
@@ -121,15 +105,12 @@ COMMENT=	Integrated wordprocessor/dbase/spreadheet/drawing/chart/browser
 # following dependencies use the same JDK.
 #
 BUILD_DEPENDS+= ${JAVAVM}:${PORTSDIR}/java/jdk14
-
-#.if !defined(USE_GCC)
-#BUILD_DEPENDS=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
-#.endif
 BUILD_DEPENDS+= zip:${PORTSDIR}/archivers/zip
 BUILD_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
 BUILD_DEPENDS+=	${ANT}:${PORTSDIR}/devel/apache-ant
 BUILD_DEPENDS+=	${X11BASE}/lib/libgdk-x11-2.0.so:${PORTSDIR}/x11-toolkits/gtk20
 BUILD_DEPENDS+= ${X11BASE}/lib/libX11.so:${PORTSDIR}/x11/XFree86-4-libraries
+BUILD_DEPENDS+= ${X11BASE}/lib/libXft.so:${PORTSDIR}/x11-fonts/Xft
 .if !defined(DISPLAY)
 BUILD_DEPENDS+= Xvfb:${PORTSDIR}/x11-servers/XFree86-4-VirtualFramebufferServer
 .endif
@@ -154,6 +135,8 @@ JDKDIR?=	${LOCALBASE}/jdk1.4.1
 JAVAVM=		${JDKDIR}/bin/java
 
 GNU_CONFIGURE=	yes
+USE_AUTOCONF=	yes
+WANT_AUTOCONF_VER= 253
 WRKDIR=		${WRKDIRPREFIX}${.CURDIR}/work
 WRKSRC=		${WRKDIR}/oo_${PORTVERSION}_src/config_office
 LD_PATH1=	${WRKSRC}/../vos/unxfbsd.pro/lib/:${WRKSRC}/../ucbhelper/unxfbsd.pro/lib/
@@ -175,27 +158,12 @@ DISPLAYHACK=localhost:1001
 
 CONFIGURE_ENV=		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
 			PTHREAD_LIBS=${PTHREAD_LIBS}
-
-CONFIGURE_ARGS+=	--with-jdk-home=${JDKDIR} \
-			--with-os-version=${OSVERSION} \
-			--with-ant-home=${LOCALBASE}
-
-#.if !defined(USE_GCC)
-#CONFIGURE_ARGS+=	--with-stlport4-home=${PREFIX}
-#.endif
+CONFIGURE_ARGS+=	--with-jdk-home=${JDKDIR}
 
 .if defined(WITH_DEBUG)
 .if ${WITH_DEBUG} == 2
 CONFIGURE_ARGS+=	--enable-debug
 .endif
-.endif
-
-.if defined(USE_GCC) && (${USE_GCC} == 3.1 || ${USE_GCC} == 3.2)
-CONFIGURE_ARGS+=	--enable-gcc3
-.endif
-
-.if ${OSVERSION} > 500000 && !defined(USE_GCC)
-CONFIGURE_ARGS+=	--enable-gcc3
 .endif
 
 pre-fetch:
