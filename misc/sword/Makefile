@@ -5,13 +5,13 @@
 # $FreeBSD$
 #
 
-PORTNAME=	sword
-PORTVERSION=	1.5.5
+PORTNAME=	${SWORD_PORTNAME}
+PORTVERSION=	${SWORD_PORTVERSION}
 PORTREVISION=	1
 CATEGORIES=	misc
-MASTER_SITES=	ftp://ftp.crosswire.org/pub/sword/source/v1.5/ \
-		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	${SWORD_MASTER_SITES}
+MASTER_SITE_SUBDIR=	${SWORD_MASTER_SITE_SUBDIR}
+DISTNAME=	${SWORD_DISTNAME}
 
 MAINTAINER=	wvengen@stack.nl
 COMMENT=	A project framework for manipulating Bible texts
@@ -28,6 +28,8 @@ PLIST_SUB+=	INSTALLMGR=""
 .else
 CONFIGURE_ARGS+=	--disable-installmgr
 PLIST_SUB+=	INSTALLMGR="@comment "
+
+.include "${.CURDIR}/Makefile.common"
 
 pre-everything::
 	@${ECHO_CMD} "Define WITH_INSTALLMGR to include the installmanager (curl)"
