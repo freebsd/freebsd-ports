@@ -1,4 +1,4 @@
 ===> Zope MySQL Database Adapter post-port installation instructions:
 
-  To complete the installation of this port, you need to estart Zope.  This
+  To complete the installation of this port, you need to restart Zope.  This
   may be done from the Zope Control Panel in the Zope management interface.

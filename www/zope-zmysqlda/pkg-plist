@@ -3,6 +3,7 @@
 %%ZOPEBASEDIR%%/lib/python/Products/ZMySQLDA/DA.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/ZMySQLDA/DABase.py
 %%ZOPEBASEDIR%%/lib/python/Products/ZMySQLDA/DABase.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ZMySQLDA/DEPENDENCIES.txt
 %%ZOPEBASEDIR%%/lib/python/Products/ZMySQLDA/README.txt
 %%ZOPEBASEDIR%%/lib/python/Products/ZMySQLDA/VERSION.txt
 %%ZOPEBASEDIR%%/lib/python/Products/ZMySQLDA/__init__.py
@@ -12,8 +13,12 @@
 %%ZOPEBASEDIR%%/lib/python/Products/ZMySQLDA/connectionEdit.dtml
 %%ZOPEBASEDIR%%/lib/python/Products/ZMySQLDA/db.py
 %%ZOPEBASEDIR%%/lib/python/Products/ZMySQLDA/db.pyc
-%%ZOPEBASEDIR%%/lib/python/Products/ZMySQLDA/help/DB.py
-%%ZOPEBASEDIR%%/lib/python/Products/ZMySQLDA/help/DB.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ZMySQLDA/help/DA.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZMySQLDA/help/DA.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ZMySQLDA/help/DABase.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZMySQLDA/help/DABase.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ZMySQLDA/help/db.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZMySQLDA/help/db.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/ZMySQLDA/icons/bin.gif
 %%ZOPEBASEDIR%%/lib/python/Products/ZMySQLDA/icons/date.gif
 %%ZOPEBASEDIR%%/lib/python/Products/ZMySQLDA/icons/datetime.gif
