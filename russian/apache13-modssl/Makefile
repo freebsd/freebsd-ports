@@ -26,16 +26,15 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 MAINTAINER=	demon@FreeBSD.org
 
-BUILD_DEPENDS=	mm-config:${PORTSDIR}/devel/mm \
-		${LOCALBASE}/lib/libmm.a:${PORTSDIR}/devel/mm
-
 USE_OPENSSL=	YES
 
 .include <bsd.port.pre.mk>
 
-VERSION_APACHE=	1.3.12
-VERSION_MODSSL=	2.6.6
-RA_VERSION=	29.7
+LIB_DEPENDS=	mm.11:${PORTSDIR}/devel/mm
+
+VERSION_APACHE=	1.3.14
+VERSION_MODSSL=	2.7.1
+RA_VERSION=	30.0
 
 USE_PERL5=	yes
 HAS_CONFIGURE=	yes
@@ -44,15 +43,18 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-perl=${PERL} \
 		--with-layout=${FILESDIR}/FreeBSD.layout:FreeBSD \
 		--without-confadjust \
-		--enable-module=ssl \
 		--enable-module=most \
 		--enable-module=auth_db \
+		--enable-module=mmap_static \
 		--disable-module=auth_dbm \
-		--enable-shared=max
+		--enable-shared=max \
+		--enable-module=ssl \
+		--enable-module=define
 
 OPTIM=		-DHARD_SERVER_LIMIT=512 \
 		-DDOCUMENT_LOCATION=\\"${PREFIX}/www/data/\\" \
-		-DDEFAULT_PATH=\\"/bin:/usr/bin:${PREFIX}/bin\\"
+		-DDEFAULT_PATH=\\"/bin:/usr/bin:${PREFIX}/bin\\" \
+		-DACCEPT_FILTER_NAME=\\"httpready\\"
 
 pre-extract:
 .if defined(WITH_SUEXEC)
