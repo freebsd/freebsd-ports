@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Term/ANSIScreen.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/ANSIScreen/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/ANSIScreen
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Term 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Term 2>/dev/null || true
