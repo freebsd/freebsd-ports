@@ -1,0 +1,8 @@
+"TreeView X is program to display phylogenetic trees on Unix-like platforms.
+It can read and display NEXUS and Newick format tree files (such as those
+output by PAUP*, ClustalX, TREE-PUZZLE, and other programs)." 
+
+WWW: http://darwin.zoology.gla.ac.uk/~rpage/treeviewx/
+
+--
+Tony Maher <tonym@biolateral.com.au>

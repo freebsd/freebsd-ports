@@ -39,6 +39,7 @@
     SUBDIR += seaview
     SUBDIR += sim4
     SUBDIR += tinker
+    SUBDIR += treeviewx
     SUBDIR += xdrawchem
     SUBDIR += xmolwt
 

@@ -1,0 +1,11 @@
+--- Makefile.am.orig	Sat Aug  4 13:17:56 2001
++++ Makefile.am	Sat Aug  4 13:18:17 2001
+@@ -125,7 +125,7 @@
+ 
+ 
+ all:
+-	cd ncl-2.0/src; make libncl.a;   # Paul Lewis Nexus Class Library
++	cd ncl-2.0/src; $(MAKE) libncl.a;   # Paul Lewis Nexus Class Library
+ 	
+ 	${MAKE} $(PROGRAM);
+ 
