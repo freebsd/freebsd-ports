@@ -1,0 +1,26 @@
+bin/mview
+%%PORTDOCS%%%%DOCSDIR%%/calc_text_map.html
+%%PORTDOCS%%%%DOCSDIR%%/castle.html
+%%PORTDOCS%%%%DOCSDIR%%/changelog.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/momie.html
+%%PORTDOCS%%%%DOCSDIR%%/pics/bunny_normals.png
+%%PORTDOCS%%%%DOCSDIR%%/pics/bunny_solid.png
+%%PORTDOCS%%%%DOCSDIR%%/pics/bunny_tm.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pics/bunny_wire.png
+%%PORTDOCS%%%%DOCSDIR%%/pics/castle_small.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pics/castle_solid.png
+%%PORTDOCS%%%%DOCSDIR%%/pics/castle_text1.png
+%%PORTDOCS%%%%DOCSDIR%%/pics/castle_text2.png
+%%PORTDOCS%%%%DOCSDIR%%/pics/castle_tm.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pics/mapping1.png
+%%PORTDOCS%%%%DOCSDIR%%/pics/mapping2.png
+%%PORTDOCS%%%%DOCSDIR%%/pics/mesh_title.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pics/momie_text.png
+%%PORTDOCS%%%%DOCSDIR%%/pics/momie_tm.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pics/momie_wire1.png
+%%PORTDOCS%%%%DOCSDIR%%/pics/momie_wire2.png
+%%PORTDOCS%%%%DOCSDIR%%/rabbit.html
+%%PORTDOCS%%%%DOCSDIR%%/test.wrl
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/pics
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -5,7 +5,7 @@
  
  // for MAXFLOAT
 -#include <values.h>
-+#include <limits.h>
++#include <climits>
  
  #include "mesh.h"
  
