@@ -1,0 +1,3 @@
+This port installs two kernel modules, cd9660.ko and
+msdos.ko, which will let users read Big5 filenames on
+Joliet and VFAT filesystems.
