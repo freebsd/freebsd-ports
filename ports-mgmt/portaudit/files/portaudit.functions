@@ -116,7 +116,7 @@ portaudit_prerequisites()
 	fi
 
 	PKG_INSTALL_VER=`${PKG_INFO} -qP 2>/dev/null`
-	if [ -z "${PKG_INSTALL_VER}" -o "${PKG_INSTALL_VER}" -lt 20040125 ]; then
+	if [ -z "${PKG_INSTALL_VER}" -o "${PKG_INSTALL_VER}" -lt %%REQPKGVER%% ]; then
 		echo "${PKG_INFO} is too old, please update port sysutils/pkg_install-devel"
 		return 1
 	fi
@@ -139,28 +139,59 @@ portaudit_prerequisites()
 
 audit_installed()
 {
-	extract_auditfile | /usr/bin/awk -F\| "
+	extract_auditfile | /usr/bin/awk -F\| '
 		BEGIN { vul=0 }
 		/^(#|\$)/ { next }
 		{
-			cmd=\"${PKG_INFO} -E \\\"\" \$1 \"\\\"\"
+			cmd="'"${PKG_INFO}"' -E \"" $1 "\""
 			while((cmd | getline pkg) > 0) {
 				vul++
-				print \"Affected package: \" pkg \"\\n\" \
-					\"Type of problem: \" \$3 \".\\n\" \
-					\"Reference: <\" \$2 \">\\n\"
+				split($2, ref, / /)
+				print "Affected package: " pkg
+				print "Type of problem: " $3 "."
+				for (r in ref)
+					print "Reference: <" ref[r] ">"
+				print ""
 			}
 			close(cmd)
 		}
 		END {
-			print vul \" problem(s) in your installed packages found.\"
+			print vul " problem(s) in your installed packages found."
 			if (vul > 0) {
-				print \"\nYou are advised to update or deinstall\" \
-					\" the affected package(s) immediately.\"
+				print "\nYou are advised to update or deinstall" \
+					" the affected package(s) immediately."
 				exit(1)
 			}
 		}
-	"
+	'
+}
+
+audit_file()
+{
+	extract_auditfile | /usr/bin/awk -F\| '
+		BEGIN { vul=0 }
+		/^(#|\$)/ { next }
+		{
+			cmd="'"${PKG_VERSION}"' -T - \"" $1 "\" <\"'"${1}"'\""
+			while((cmd | getline pkg) > 0) {
+				vul++
+				split($2, ref, / /)
+				split(pkg, p)
+				print "Affected package: " p[1]
+				print "Type of problem: " $3 "."
+				for (r in ref)
+					print "Reference: <" ref[r] ">"
+				print ""
+			}
+			close(cmd)
+		}
+		END {
+			print vul " problem(s) in found."
+			if (vul > 0) {
+				exit(1)
+			}
+		}
+	'
 }
 
 audit_cwd()
@@ -174,22 +205,22 @@ audit_cwd()
 	FORBIDDEN=`echo "${PKGSTATE}" | /usr/bin/sed -ne '2p'`
 	PKGORIGIN=`echo "${PKGSTATE}" | /usr/bin/sed -ne '3p'`
 
-	VLIST=`extract_auditfile | /usr/bin/awk -F\| " \
-		/^[^#]/ { \
-		if (!system(\"${PKG_VERSION} -T '${PKGNAME}' '\" \\$1 \"'\")) \
-			print \"- <\" \\$2 \">\" \
-		} \
-	"`
-
-	if [ -n "${VLIST}" -a -z "${FORBIDDEN}" ]; then
-		echo
-		echo "Port ${PKGNAME} (${PKGORIGIN}) should be marked FORBIDDEN:"
-		echo "${VLIST}"
-		VULCNT=$((${VULCNT}+1))
-	elif $opt_verbose && [ -n "${VLIST}" ]; then
-		echo
-		echo "Good: port ${PKGNAME} (${PKGORIGIN}) is marked FORBIDDEN: ${FORBIDDEN}"
-		echo "${VLIST}"
+	if VLIST=`extract_auditfile | /usr/bin/grep -v '^#' | ${PKG_VERSION} -T "${PKGNAME}" -`; then
+		if [ -z "${FORBIDDEN}" ]; then
+			echo
+			echo "Port ${PKGNAME} (${PKGORIGIN}) should be marked FORBIDDEN:"
+			VULCNT=$((${VULCNT}+1))
+		elif $opt_verbose; then
+			echo
+			echo "Good: port ${PKGNAME} (${PKGORIGIN}) is marked FORBIDDEN: ${FORBIDDEN}"
+		fi
+		if [ -z "${FORBIDDEN}" ] || $opt_verbose; then
+			echo "${VLIST}" | /usr/bin/awk -F\| '{
+				split($2, ref, / /)
+				for (r in ref)
+					print "- <" ref[r] ">"
+			}'
+		fi
 	fi
 }
 
