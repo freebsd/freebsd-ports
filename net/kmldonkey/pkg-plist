@@ -1,5 +1,18 @@
 bin/kmldonkey
 bin/kmldonkey_submit
+include/kmldonkey/clientinfo.h
+include/kmldonkey/fileinfo.h
+include/kmldonkey/network.h
+include/kmldonkey/searchinfo.h
+include/kmldonkey/searchquery.h
+include/kmldonkey/serverinfo.h
+include/kmldonkey/shareinfo.h
+include/kmldonkey/donkeymessage.h
+include/kmldonkey/donkeyprotocol.h
+include/kmldonkey/donkeysocket.h
+include/kmldonkey/hostmanager.h
+include/kmldonkeyiface.h
+include/mldonkeyappletiface.h
 lib/kde3/kcm_kcmdonkey.la
 lib/kde3/kcm_kcmdonkey.so
 lib/kde3/mldonkeyapplet.la
@@ -7,7 +20,7 @@ lib/kde3/mldonkeyapplet.so
 lib/kde3/mldonkeyapplet.so.1
 lib/libkmldonkey.la
 lib/libkmldonkey.so
-lib/libkmldonkey.so.1
+lib/libkmldonkey.so.3
 share/applnk/Internet/kmldonkey.desktop
 share/applnk/Settings/Network/kcmdonkey.desktop
 share/apps/kicker/applets/mldonkeyapplet.desktop
@@ -19,16 +32,23 @@ share/apps/mldonkeyapplet/pics/mld-unmutedonkey.png
 share/doc/HTML/en/kmldonkey/common
 share/doc/HTML/en/kmldonkey/index.cache.bz2
 share/doc/HTML/en/kmldonkey/index.docbook
+share/icons/hicolor/128x128/apps/kmldonkey.png
 share/icons/hicolor/128x128/apps/mldonkey.png
+share/icons/hicolor/16x16/apps/kmldonkey.png
 share/icons/hicolor/16x16/apps/mldonkey.png
+share/icons/hicolor/22x22/apps/kmldonkey.png
 share/icons/hicolor/22x22/apps/mldonkey.png
+share/icons/hicolor/32x32/apps/kmldonkey.png
 share/icons/hicolor/32x32/apps/mldonkey.png
+share/icons/hicolor/48x48/apps/kmldonkey.png
 share/icons/hicolor/48x48/apps/mldonkey.png
+share/icons/hicolor/64x64/apps/kmldonkey.png
 share/icons/hicolor/64x64/apps/mldonkey.png
 share/locale/de/LC_MESSAGES/kmldonkey.mo
 share/locale/es/LC_MESSAGES/kmldonkey.mo
 share/locale/no/LC_MESSAGES/kmldonkey.mo
 share/locale/se/LC_MESSAGES/kmldonkey.mo
+share/locale/fr/LC_MESSAGES/kmldonkey.mo
 share/services/ed2k.protocol
 @unexec rmdir %D/share/services 2>/dev/null || true
 @unexec rmdir %D/share/locale/se/LC_MESSAGES 2>/dev/null || true
