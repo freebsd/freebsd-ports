@@ -6,8 +6,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=	postfix-19991231-pl04
-PKGNAME=	postfix-19991231.04
+DISTNAME=	postfix-19991231-pl06
+PKGNAME=	postfix-19991231.06
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.merit.edu/postfix/official/ \
 		ftp://ftp.snoopy.net/pub/mirrors/postfix/official/ \
@@ -47,7 +47,8 @@ MAN5=	access.5 aliases.5 canonical.5 relocated.5 transport.5 virtual.5
 MAN8=	bounce.8 cleanup.8 defer.8 local.8 master.8 pickup.8 pipe.8 qmgr.8 \
 	showq.8 smtp.8 smtpd.8 trivial-rewrite.8 error.8
 
-SHAREMODE=	0644
+SHAREMODE=	0444
+PDOC=		${PREFIX}/share/doc/postfix
 
 do-install:
 	@${MKDIR} -m 755 ${PREFIX}/etc/postfix
@@ -93,6 +94,10 @@ do-install:
 		${INSTALL} -C -o root -g wheel -m 0755 ${WRKSRC}/man/man8/$$f \
 			${PREFIX}/man/man8/$$f ;\
 	done
+	@${INSTALL} -d -m 555 -o ${DOCOWN} -g ${DOCGRP} ${PDOC}
+	@cd ${WRKSRC} && ${INSTALL_DATA} \
+		html/*.html html/*.gif ${PDOC} && \
+		${ECHO_MSG} "Installed HTML documentation in ${PDOC}"
 	@${MKDIR} -m 0755 /var/spool/postfix
 	@${ECHO_MSG} "--------------------------------------------------"
 	@${ECHO_MSG} "- To replace your existing sendmail with postfix -"
