@@ -1,5 +1,7 @@
-etc/rc.d/rplayd.sh
-etc/rplay.hosts
+etc/rc.d/rplayd.sh.sample
+@unexec if cmp %D/etc/rplay.hosts.sample %D/etc/rplay.hosts 2>/dev/null; then rm -f %D/etc/rplay.hosts; fi
+etc/rplay.hosts.sample
+@exec if test ! -f %D/etc/rplay.hosts; then cp -p %D/etc/rplay.hosts.sample %D/etc/rplay.hosts; fi
 bin/rplay
 bin/rptp
 sbin/rplayd
