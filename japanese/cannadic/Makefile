@@ -7,40 +7,31 @@
 
 PORTNAME=	cannadic
 PORTVERSION=	0.93a
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://cannadic.oucrc.org/
 
 MAINTAINER=	toga@puyo.org
 
-RUN_DEPENDS=	${LOCALBASE}/lib/canna/dic/canna/dics.dir:${PORTSDIR}/japanese/Canna
+RUN_DEPENDS=	${LOCALBASE}/sbin/cannaserver:${PORTSDIR}/japanese/Canna
 BUILD_DEPENDS=	crxdic:${PORTSDIR}/japanese/Canna
 
 ALL_TARGET=	maindic subdic
 
 DICS=		gcanna.cbd gcanna.cld gcannaf.cbd gcannaf.cld
-DICSFILE=	dics.dir
-ORIGDICSFILE=	dics.dir.orig
-CANNADICSFILE=	dics.dir.gpl_canna
-CANNASH=	${PREFIX}/etc/rc.d/canna.sh
+DICSFILE=	dics.dir.gpl_canna
 DICDIR=		${PREFIX}/lib/canna/dic/canna
 
 do-install:
 	cd ${WRKSRC};\
-	${CP} ${DICDIR}/${DICSFILE} ./${ORIGDICSFILE}; \
-	${CAT} ./${ORIGDICSFILE} ./${CANNADICSFILE} > ./${DICSFILE}; \
-	${INSTALL} -c -g bin -m 664 -o bin ${DICS} ${DICDIR} ; \
-	${INSTALL} -c -g bin -m 664 -o bin ${DICSFILE} ${CANNADICSFILE} ${ORIGDICSFILE} ${DICDIR}
+	${INSTALL} -c -g bin -m 664 -o bin ${DICS} ${DICSFILE} ${DICDIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${FILESDIR}/README.FreeBSD ${DOCSDIR}
 .endif
 
 post-install:
-	@if [ -e /tmp/.iroha_unix/IROHA ]; then \
-	   ${ECHO} "Restarting Canna server..."; \
-	   ${CANNASH} stop > /dev/null 2>&1 ; \
-	   ${CANNASH} start > /dev/null 2>&1 ; \
-	 fi
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
