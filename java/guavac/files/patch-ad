@@ -5,7 +5,7 @@
  
  
 -CFLAGS="-g -I. -I.. -I../common"
-+CFLAGS="-O -I. -I.. -I../common"
++CFLAGS="-I. -I.. -I../common"
  cat >> confdefs.h <<EOF
  #define CFLAGS "$CFLAGS"
  EOF
