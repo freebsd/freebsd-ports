@@ -1,8 +1,0 @@
-# Build extensions shared:
-*shared*
-#
-
-#
-# mxDateTime module
-#
-mxDateTime -DHAVE_STRFTIME -DHAVE_STRPTIME -DHAVE_TIMEGM mxDateTime.c
