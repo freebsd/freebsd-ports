@@ -1,1 +1,3 @@
 bin/mbx2mbox
+share/doc/mbx2mbox/README
+@dirrm share/doc/mbx2mbox
