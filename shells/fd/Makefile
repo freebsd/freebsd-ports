@@ -38,10 +38,10 @@ post-patch:
 
 post-install:
 	@${ECHO} "Updating /etc/shells"
-	@${CP} /etc/shells /etc/shells.bak
-	@(${GREP} -v ${PREFIX}/bin/fdsh /etc/shells.bak; \
-		${ECHO_CMD} ${PREFIX}/bin/fdsh) > /etc/shells
-	@${RM} /etc/shells.bak
+	@-${CP} /etc/shells /etc/shells.bak; \
+		(${GREP} -v ${PREFIX}/bin/fdsh /etc/shells.bak; \
+		${ECHO_CMD} ${PREFIX}/bin/fdsh) > /etc/shells; \
+		${RM} -f /etc/shells.bak
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
 	@${MKDIR} ${PREFIX}/share/doc/ja/${PORTNAME}
