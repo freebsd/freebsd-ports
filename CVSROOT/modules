@@ -5602,6 +5602,7 @@ ossp-cfg	ports/devel/ossp-cfg
 ossp-ex		ports/devel/ossp-ex
 ossp-l2		ports/devel/ossp-l2
 ossp-sa		ports/net/ossp-sa
+ossp-uuid	ports/misc/ossp-uuid
 ossp-val	ports/devel/ossp-val
 ossp-var	ports/devel/ossp-var
 otcl		ports/lang/otcl
