@@ -1,0 +1,3 @@
+%%SITE_PERL%%/CGI/Builder/TT2.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Builder/TT2/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Builder/TT2
