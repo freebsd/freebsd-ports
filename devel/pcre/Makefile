@@ -6,16 +6,18 @@
 #
 
 PORTNAME=	pcre
-PORTVERSION=	3.4
+PORTVERSION=	3.7
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	dom@happygiraffe.net
 
-USE_LIBTOOL=	yes
+USE_BZIP2=	yes
+GNU_CONFIGURE=	yes
+INSTALLS_SHLIB=	yes
 
+MAN1=		pcregrep.1 pcretest.1
 MAN3=		pcre.3 pcreposix.3
-MAN1=		pcregrep.1
 
 .include <bsd.port.mk>
