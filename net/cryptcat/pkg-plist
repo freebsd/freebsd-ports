@@ -1,0 +1,3 @@
+bin/cryptcat
+share/doc/cryptcat/README.cryptcat
+@dirrm share/doc/cryptcat

@@ -1,0 +1,20 @@
+Cryptcat is the standard netcat enhanced with twofish encryption. 
+
+Twofish is courtesy of counterpane, and cryptix. We started with the 
+Java version of twofish from cryptix, converted it to C++ (don't ask why), 
+and enhanced it by adding CBC mode and the ciphertext stealing technique 
+from Applied Cryptography (pg. 196) 
+
+How do you use it?
+
+  Machine A: cryptcat -l -p 1234 < testfile 
+  Machine B: cryptcat <machine A IP> 1234 
+
+This is identical to the normal netcat options for doing exactly the 
+same thing.  However, in this case the data transferred is encrypted.
+
+For more information about netcat see net/netcat port.
+
+WWW: http://farm9.com/content/Free_Tools/Cryptcat/
+
+Roman Shterenzon <roman@xpert.com>
