@@ -6,17 +6,20 @@
 #
 
 PORTNAME=	zebra-server
-PORTVERSION=	1.1
+PORTVERSION=	1.3.0
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.indexdata.dk/pub/zebra/
-DISTNAME=	zebra-${PORTVERSION:S/0./0pl/}
+DISTNAME=	zebra-${PORTVERSION}
 
 MAINTAINER=	demon@FreeBSD.org
 
+BUILD_DEPENDS=	${LOCALBASE}/bin/tclsh8.3:${PORTSDIR}/lang/tcl83
 LIB_DEPENDS=	yaz.1:${PORTSDIR}/net/yaz
+RUN_DEPENDS=	${LOCALBASE}/bin/tclsh8.3:${PORTSDIR}/lang/tcl83
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-yazconfig=${LOCALBASE}/bin
+CONFIGURE_ARGS=	--with-yazconfig=${LOCALBASE}/bin \
+		--with-tclconfig=${LOCALBASE}/lib/tcl8.3
 CONFIGURE_ENV+=	PTHREAD_LIBS=${PTHREAD_LIBS}
 
 post-install:
