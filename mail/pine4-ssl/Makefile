@@ -7,7 +7,7 @@
 #
 # I spent a <strong>very frustrating</strong> half hour with portlint
 # on this one and could never get it to fewer than 8 frigging warnings.
-# A bit more work got it down to 2 frigging warnings and added a new one.
+# A bit more work got it down to 2 frigging warnings.
 # The warnings are getting harder to fix.
 # Good luck to you. :-P
 
@@ -31,8 +31,7 @@ MASTERDIR=	${.CURDIR}/../pine4
 
 FILESDIR=	${.CURDIR}/files
 
-# I cannot use ${PATCHDIR} as it points to the master port, not this one
-EXTRA_PATCHES=	patches/extrapatch-*
+EXTRA_PATCHES=	${FILESDIR}/extrapatch-*
 
 USE_OPENSSL=	RSA
 
