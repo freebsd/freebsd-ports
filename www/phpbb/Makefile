@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	phpbb
-PORTVERSION=	2.0.8
-PORTREVISION=	3
+PORTVERSION=	2.0.9
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	phpBB-${PORTVERSION}a
+DISTNAME=	phpBB-${PORTVERSION}
 
-MAINTAINER=	liukang@bjpu.edu.cn
+MAINTAINER=	liukang@bjut.edu.cn
 COMMENT=	A PHP-based bulletin board / discussion forum system
 
 RUN_DEPENDS=	${LOCALBASE}/share/pear/System.php:${PORTSDIR}/devel/pear-PEAR
@@ -37,6 +36,7 @@ NO_BUILD=	yes
 USE_REINPLACE=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PLIST_SUB+=	PHPBBDIR=${PHPBBDIR} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
+PLIST_SUB+=	PHPBB_VER=${PORTVERSION:S/.//g}
 
 # Set custom variables:
 #
@@ -61,6 +61,7 @@ pre-everything::
 post-patch:
 	@ ${REINPLACE_CMD} -e "s#\.\./templates#/${PHPBBURL}/templates#" \
 	  ${WRKSRC}/docs/*.html
+	@${RM} -f `${FIND} ${WRKSRC} -name '*.orig'`
 
 post-configure:
 	@ ${SED} \
