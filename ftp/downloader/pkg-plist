@@ -1,4 +1,5 @@
 bin/nt
+share/d4x/ftpsearch.xml
 share/d4x/sounds/add.wav
 share/d4x/sounds/complete.wav
 share/d4x/sounds/dnd.wav
@@ -8,6 +9,9 @@ share/d4x/sounds/startup.wav
 share/d4x/themes/glass.xml
 share/d4x/themes/glass/dnd1.png
 share/d4x/themes/glass/dnd2.png
+share/d4x/themes/glass2/dnd1.png
+share/d4x/themes/glass2/dnd2.png
+share/d4x/themes/glass2.xml
 share/d4x/themes/old_theme.xml
 share/d4x/themes/old_theme/buttons/add.png
 share/d4x/themes/old_theme/buttons/clearlist.png
@@ -60,6 +64,7 @@ share/locale/bg/LC_MESSAGES/d4x.mo
 share/locale/de/LC_MESSAGES/d4x.mo
 share/locale/es/LC_MESSAGES/d4x.mo
 share/locale/fr/LC_MESSAGES/d4x.mo
+share/locale/hu/LC_MESSAGES/d4x.mo
 share/locale/it/LC_MESSAGES/d4x.mo
 share/locale/ru/LC_MESSAGES/d4x.mo
 share/locale/uk/LC_MESSAGES/d4x.mo
@@ -67,6 +72,7 @@ share/locale/uk/LC_MESSAGES/d4x.mo
 @dirrm share/d4x/themes/old_theme/buttons
 @dirrm share/d4x/themes/old_theme/queue
 @dirrm share/d4x/themes/old_theme
+@dirrm share/d4x/themes/glass2
 @dirrm share/d4x/themes/glass
 @dirrm share/d4x/themes
 @dirrm share/d4x/sounds
