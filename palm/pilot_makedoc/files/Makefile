@@ -2,11 +2,11 @@
 # $FreeBSD$
 #
 
-CC=	g++
-CFLAGS=	-O2
+CXX?=	g++
+CFLAGS?=-O2
 
 pilot_makedoc:	makedoc7.cpp
-		${CC} -o pilot_makedoc makedoc7.cpp
+		${CXX} ${CFLAGS} -o pilot_makedoc makedoc7.cpp
 
 #
 # EOF
