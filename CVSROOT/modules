@@ -3540,6 +3540,7 @@ kgpg		ports/security/kgpg
 kgpgapplet	ports/security/kgpgapplet
 kgzip		src/usr.sbin/kgzip
 kgzldr		src/sys/boot/i386/kgzldr
+khacc		ports/finance/khacc
 kile		ports/editors/kile
 kill		src/bin/kill
 killall		src/usr.bin/killall
