@@ -1,0 +1,5 @@
+bin/dircproxy
+bin/dircproxy-crypt
+share/dircproxy/dircproxyrc
+share/dircproxy/log.pl
+@dirrm share/dircproxy
