@@ -8,6 +8,7 @@
     SUBDIR += abcache
     SUBDIR += admuser
     SUBDIR += adzap
+    SUBDIR += adzap2squirm
     SUBDIR += amaya
     SUBDIR += amyc
     SUBDIR += analog

@@ -1,0 +1,20 @@
+********************************************************
+ In order to block ads, you must first setup squirm.conf
+ An example is in:
+
+	%%PREFIX%%/etc/squirm/squirm.conf.zap
+
+ You must also setup squid to use squirm if you have not
+ done so. Add this to %%PREFIX%%/etc/squid/squid.conf:
+
+	redirect_program: %%PREFIX%%/bin/squirm
+
+ Then run from the command line:
+
+	%%PREFIX%%/bin/update-zapper
+
+This port installs a script (%%PREFIX%%/update-zapper)
+which will update the ad definitions, and restart squid
+if there are new ones available.  Add this to root's
+crontab to easily keep your ad definitions up to date.
+********************************************************
