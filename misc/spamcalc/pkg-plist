@@ -1,0 +1,28 @@
+bin/spamcalc
+etc/spamcalc.conf
+share/spamcalc/data/domains.blacklist
+share/spamcalc/data/domains.whitelist
+share/spamcalc/data/regexps.general
+share/spamcalc/data/regexps.nonspam
+share/spamcalc/data/spam.txt
+share/spamcalc/data/words.de
+share/spamcalc/data/words.it
+share/spamcalc/data/words.negative
+share/spamcalc/data/words.nl
+share/spamcalc/data/words.pl
+share/spamcalc/data/words.swear
+share/spamcalc/data/words.template
+share/spamcalc/data/words.uk
+@dirrm share/spamcalc/data
+%%PORTDOCS%%share/doc/spamcalc/LICENSE
+%%PORTDOCS%%share/doc/spamcalc/algorithms
+%%PORTDOCS%%share/doc/spamcalc/arguments
+%%PORTDOCS%%share/doc/spamcalc/feedback
+%%PORTDOCS%%share/doc/spamcalc/files
+%%PORTDOCS%%share/doc/spamcalc/introduction
+%%PORTDOCS%%share/doc/spamcalc/todo
+%%PORTDOCS%%@dirrm share/doc/spamcalc
+share/spamcalc/words
+share/spamcalc/regexps
+share/spamcalc/domains
+@dirrm share/spamcalc

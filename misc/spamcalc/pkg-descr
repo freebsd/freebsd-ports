@@ -1,0 +1,14 @@
+Spamcalc takes a hostname or a list of hostnames and determines a dns spam
+score for each hostname.  This value is an indication for the spam-ness of the
+hostname.  The higher the score, the higher the chance that the hostname is
+actually a dns spam hostname.
+
+Hostnames that are considered dns spam are hostnames with (a part of) a
+sentence in them (master.of.the.world.net), swearwords
+(shittywhore.armaster.roadkill.net) and other forms of unwanted textual data
+(666666666666666666666666666666666.sixtysix.org, 0-1-2-3-4-5.blah.com).
+
+WWW: http://www.garion.org/spamcalc.php
+
+- Harold Gutch
+  logix@foobar.franken.de
