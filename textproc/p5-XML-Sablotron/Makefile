@@ -7,6 +7,7 @@
 
 PORTNAME=	XML-Sablotron
 PORTVERSION=	0.61
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
@@ -14,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@protey.ru
 
-LIB_DEPENDS=	sablot.60:${PORTSDIR}/textproc/sablotron \
+LIB_DEPENDS=	sablot.65:${PORTSDIR}/textproc/sablotron \
 		iconv.2:${PORTSDIR}/converters/iconv
 
 PERL_CONFIGURE=	yes
