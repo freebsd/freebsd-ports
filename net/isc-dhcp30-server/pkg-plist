@@ -3,11 +3,5 @@ bin/omshell
 etc/dhcpd.conf.sample
 etc/rc.d/isc-dhcpd.sh
 sbin/dhcpd
-%%PORTDOCS%%%%DOCSDIR%%/ANONCVS
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES
-%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/RELNOTES
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @exec [ -f /var/db/dhcpd.leases ] || touch /var/db/dhcpd.leases
 @unexec [ -s /var/db/dhcpd.leases ] || rm -f /var/db/dhcpd.leases

@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	dhcp
-PORTVERSION=	3.0.1.r12
-PORTREVISION=	3
+PORTVERSION=	3.0.1.r14
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	dhcp dhcp/dhcp-3.0-history
@@ -113,7 +112,9 @@ DATA_FILES=	dhcpd.leases
 BIN_FILES=	dhcrelay
 RC_FILES=	isc-dhcrelay
 .endif
-DOC_FILES=	ANONCVS CHANGES COPYRIGHT README RELNOTES
+.if !defined(NOPORTDOCS)
+PORTDOCS=	LICENSE README RELNOTES
+.endif
 
 SAMP_SUFX=	.sample
 
@@ -129,13 +130,16 @@ PKGMESSAGE_SUB=	PREFIX=${PREFIX} MAN1PREFIX=${MAN1PREFIX}
 # Post-extract
 #
 
-post-extract: extract-omshell
+post-extract: extract-omshell extract-script
 
 extract-omshell:
 	@${MKDIR} ${WRKSRC}/omshell
 	@${MV} ${WRKSRC}/dhcpctl/omshell.? ${WRKSRC}/omshell
 	@${CP} ${FILESDIR}/omshell::Makefile.dist \
 		${WRKSRC}/omshell/Makefile.dist
+
+extract-script:
+	@${CP} ${FILESDIR}/client::scripts::freebsd ${WRKSRC}/client/scripts/freebsd
 
 # Post-patch
 #
@@ -215,7 +219,7 @@ install-startup-files:
 install-doc-files:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for f in ${DOC_FILES}
+.for f in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
