@@ -22,6 +22,7 @@ LIB_DEPENDS=	ncurses.5:${PORTSDIR}/devel/ncurses
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 
 MAN1=		flash.1
 
@@ -39,7 +40,7 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -DHAVE_NCURSES_NCURSES_H" \
 
 post-patch:
 .for file in ${SCRIPT}
-	@${PERL} -pi -e "s:/usr/slocal:${PREFIX}:g" ${WRKSRC}/orcasetup/${file}
+	@${REINPLACE_CMD} -e "s:/usr/slocal:${PREFIX}:g" ${WRKSRC}/orcasetup/${file}
 .endfor
 
 do-install:

@@ -15,6 +15,7 @@ DISTNAME=	psh-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 
 PERL_CONFIGURE=	yes
+USE_REINPLACE=	yes
 
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=	Psh::Builtins.3 \
@@ -38,9 +39,9 @@ MAN3=	Psh::Builtins.3 \
 	Psh::Util.3
 
 pre-install:
-	${PERL} -pi -e "s:/usr/local:${PREFIX}:g" ${WRKSRC}/Makefile;
-	${PERL} -pi -e "s:/usr/local/man/man1:${MAN3PREFIX}/man/man1:g" ${WRKSRC}/Makefile;
-	${PERL} -pi -e "s:/usr/local/lib/perl5/5.00503/man/man3:${MAN3PREFIX}/man/man3:g" ${WRKSRC}/Makefile;
+	${REINPLACE_CMD} -e "s:/usr/local:${PREFIX}:g" ${WRKSRC}/Makefile;
+	${REINPLACE_CMD} -e "s:/usr/local/man/man1:${MAN3PREFIX}/man/man1:g" ${WRKSRC}/Makefile;
+	${REINPLACE_CMD} -e "s:/usr/local/lib/perl5/5.00503/man/man3:${MAN3PREFIX}/man/man3:g" ${WRKSRC}/Makefile;
 
 post-install:
 	@${ECHO} "Updating /etc/shells"

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
@@ -26,7 +27,7 @@ MAN8=	badblocks.8 debugfs.8 dumpe2fs.8 e2fsck.8 e2image.8 e2label.8 fsck.8 \
 	mke2fs.8 mklost+found.8 resize2fs.8 tune2fs.8
 
 post-patch:
-	@find ${WRKSRC} -name "*.[ch]" | xargs ${PERL} -pi -e \
+	@${FIND} ${WRKSRC} -name "*.[ch]" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|LIST_HEAD|LIN_LST_HEAD|g ; \
 		 s|et/com_err.h|com_err.h|g ; s|<malloc.h>|<stdlib.h>|'
 

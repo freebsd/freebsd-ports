@@ -15,6 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --sysconfdir=${PREFIX}/etc/logtool
 
@@ -23,7 +24,7 @@ ALL_TARGET=	build
 MAN1=		logtool.1
 
 post-patch:
-	@${PERL} -pi -e "s,%%CFLAGS%%,${CFLAGS},g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s,%%CFLAGS%%,${CFLAGS},g" ${WRKSRC}/configure
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/logtool.1 ${PREFIX}/man/man1
