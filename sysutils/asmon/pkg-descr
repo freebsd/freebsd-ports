@@ -1,0 +1,3 @@
+The asmon tool is an AfterStep look-n-feel memory, swap, cpu, and load
+average monitor for X Windows.  "Lights" indicate swap and vm paging.
+Also displays system uptime or X memory usage.

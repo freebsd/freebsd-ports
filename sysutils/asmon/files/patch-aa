@@ -1,0 +1,25 @@
+*** Makefile.orig	Tue Jun  8 15:54:04 1999
+--- Makefile	Tue Jun  8 15:54:36 1999
+***************
+*** 0 ****
+--- 1,20 ----
++ LIBDIR = -L/usr/X11R6/lib
++ LIBS   = -lXpm -lXext -lX11 -lkvm
++ OBJS =  asmon/asmon.o \
++ 		wmgeneral/wmgeneral.o \
++ 		wmgeneral/misc.o \
++ 		wmgeneral/list.o
++ 
++ all: asmon
++ 
++ .c.o:
++ 	cc -c -Wall -I/usr/X11R6/include $< -o $*.o
++ 
++ asmon: $(OBJS)
++ 	cc -o asmon/asmon $^ $(LIBDIR) $(LIBS)
++ 
++ clean::
++ 	for i in $(OBJS) ; do \
++ 		rm $$i;\
++ 	done
++ 	rm asmon/asmon
