@@ -19,6 +19,10 @@
     SUBDIR += bacon
     SUBDIR += bkmrkconv
     SUBDIR += bluefish
+    SUBDIR += bsdi-netscape47-communicator
+    SUBDIR += bsdi-netscape47-communicator.us
+    SUBDIR += bsdi-netscape47-navigator
+    SUBDIR += bsdi-netscape47-navigator.us
     SUBDIR += boa
     SUBDIR += cadaver
     SUBDIR += calamaris
