@@ -187,6 +187,7 @@
     SUBDIR += qhull
     SUBDIR += qscanplot
     SUBDIR += qalculate
+    SUBDIR += qwtplot3d
     SUBDIR += rascal
     SUBDIR += rpc
     SUBDIR += rpy
