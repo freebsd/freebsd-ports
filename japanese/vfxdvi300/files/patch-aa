@@ -1,0 +1,470 @@
+*** xdvi.c.orig	Sat Jan 13 22:04:23 1996
+--- xdvi.c	Sat Jan 13 22:04:37 1996
+***************
+*** 3476,3482 ****
+  	use_ps_special = resource.use_ps_special;
+  #endif	/* PS */
+  #ifdef	USE_ZEIT
+! 	VF_init(resource.fontconf);
+  #endif	/* USE_ZEIT */
+  
+  #else	/* !TOOLKIT */
+--- 3476,3482 ----
+  	use_ps_special = resource.use_ps_special;
+  #endif	/* PS */
+  #ifdef	USE_ZEIT
+! 	VF_Init(resource.fontconf);
+  #endif	/* USE_ZEIT */
+  
+  #else	/* !TOOLKIT */
+*** dnpzeit.c.orig	Sat Nov  9 10:43:17 1996
+--- dnpzeit.c	Sat Nov  9 10:42:43 1996
+***************
+*** 3,13 ****
+   * Written by Y. Hayashi (hayashi@me.aoyama.ac.jp)
+   **************************************************/
+  
+! #include "xdvi.h"
+  
+  #ifndef       X_NOT_STDC_ENV
+  #include <stdlib.h>
+! #endif
+  
+  static struct _dnplist {
+  	char *name;
+--- 3,13 ----
+   * Written by Y. Hayashi (hayashi@me.aoyama.ac.jp)
+   **************************************************/
+  
+! /*#include "xdvi.h"
+  
+  #ifndef       X_NOT_STDC_ENV
+  #include <stdlib.h>
+! #endif*/
+  
+  static struct _dnplist {
+  	char *name;
+***************
+*** 53,59 ****
+  static	void
+  get_NTT_font(fontp, code)
+  	struct font *fontp;
+! 	int code;
+  {
+  	struct bitmap *bm;
+  	int bwidth, jiscode;
+--- 53,63 ----
+  static	void
+  get_NTT_font(fontp, code)
+  	struct font *fontp;
+! #ifdef NeedWidePrototypes
+!        long code;
+! #else
+!        int code;
+! #endif
+  {
+  	struct bitmap *bm;
+  	int bwidth, jiscode;
+***************
+*** 70,77 ****
+  static	void
+  read_NTT_char(fontp, ch)
+  	struct font *fontp;
+! 	int ch;
+  {
+  	struct glyph *g;
+  
+  	g = &fontp->glyph[ch];
+--- 74,88 ----
+  static	void
+  read_NTT_char(fontp, ch)
+  	struct font *fontp;
+! #ifdef NeedWidePrototypes
+!        long ch;
+! #else
+!        int ch;
+! #endif
+! 
+! 
+  {
++ 
+  	struct glyph *g;
+  
+  	g = &fontp->glyph[ch];
+***************
+*** 100,106 ****
+  	double dimconv, pow();
+  	char *p;
+  
+! 	fontp->read_char = read_NTT_char;
+  	fontp->glyph = (struct glyph *)
+  		xmalloc(256 * sizeof(struct glyph), "glyph array");
+  	bzero((char *) fontp->glyph, 256 * sizeof(struct glyph));
+--- 111,117 ----
+  	double dimconv, pow();
+  	char *p;
+  
+! 	fontp->read_char = (read_char_proc) read_NTT_char;
+  	fontp->glyph = (struct glyph *)
+  		xmalloc(256 * sizeof(struct glyph), "glyph array");
+  	bzero((char *) fontp->glyph, 256 * sizeof(struct glyph));
+*** dvi_draw.c.orig	Sat Nov  9 10:43:58 1996
+--- dvi_draw.c	Sat Nov  9 10:42:43 1996
+***************
+*** 124,130 ****
+   *	Byte reading routines for dvi file.
+   */
+  
+! #define	xtell(pos)	(lseek(fileno(dvi_file), 0L, SEEK_CUR) - \
+  			    (currinf.end - (pos)))
+  
+  static	ubyte
+--- 124,130 ----
+   *	Byte reading routines for dvi file.
+   */
+  
+! #define	xtell(pos)	(lseek(fileno(dvi_file), (off_t)0, SEEK_CUR) - \
+  			    (currinf.end - (pos)))
+  
+  static	ubyte
+***************
+*** 176,182 ****
+  {
+  	currinf.pos += offset;
+  	if (!currinf.virtual && currinf.pos > currinf.end)
+! 	    (void) lseek(fileno(dvi_file), (long) (currinf.pos - currinf.end),
+  		SEEK_CUR);
+  }
+  
+--- 176,182 ----
+  {
+  	currinf.pos += offset;
+  	if (!currinf.virtual && currinf.pos > currinf.end)
+! 	    (void) lseek(fileno(dvi_file), (off_t) (currinf.pos - currinf.end),
+  		SEEK_CUR);
+  }
+  
+***************
+*** 824,830 ****
+  set_char(WIDEARG(ubyte, int) ch)
+  #else	/* NeXT */
+  set_char(ch)
+! 	WIDEARG(ubyte, int)	ch;
+  #endif	/* NeXT */
+  #else
+  void
+--- 824,830 ----
+  set_char(WIDEARG(ubyte, int) ch)
+  #else	/* NeXT */
+  set_char(ch)
+! 	WIDEARG(long, int)	ch;
+  #endif	/* NeXT */
+  #else
+  void
+***************
+*** 959,967 ****
+  }
+  
+  #if	defined(KANJI) && !defined(ASCIIDNP)
+  long
+  set_char2(ch)
+! 	int ch;
+  {
+  	register struct glyph *g;
+  #ifdef PTEX
+--- 959,973 ----
+  }
+  
+  #if	defined(KANJI) && !defined(ASCIIDNP)
++ #if NeedFunctionPrototypes
+  long
+  set_char2(ch)
+!        long  ch;
+! #else
+!  long
+!  set_char2(ch)
+!         int ch;
+! #endif
+  {
+  	register struct glyph *g;
+  #ifdef PTEX
+***************
+*** 1062,1070 ****
+  #else
+  void
+  load_n_set_char(cmd, ch)
+! 	WIDEARG(ubyte, int)	cmd;
+  #endif
+! 	WIDEARG(ubyte, int)	ch;
+  {
+  	if (load_font(currinf.fontp)) {	/* if not found */
+  	    Fputs("Character(s) will be left blank.\n", stderr);
+--- 1068,1076 ----
+  #else
+  void
+  load_n_set_char(cmd, ch)
+! 	WIDEARG(ubyte, long)	cmd;
+  #endif
+! 	long	ch;
+  {
+  	if (load_font(currinf.fontp)) {	/* if not found */
+  	    Fputs("Character(s) will be left blank.\n", stderr);
+***************
+*** 1092,1098 ****
+  set_vf_char(WIDEARG(ubyte, int) ch)
+  #else	/* NeXT */
+  set_vf_char(ch)
+! 	WIDEARG(ubyte, int)	ch;
+  #endif	/* NeXT */
+  #else
+  void
+--- 1098,1104 ----
+  set_vf_char(WIDEARG(ubyte, int) ch)
+  #else	/* NeXT */
+  set_vf_char(ch)
+! 	long	ch;
+  #endif	/* NeXT */
+  #else
+  void
+***************
+*** 1158,1164 ****
+  set_no_char(cmd, ch)
+  	ubyte	cmd;
+  #endif
+! 	ubyte	ch;
+  {
+  	if (currinf.virtual) {
+  	    currinf.fontp = currinf.virtual->first_font;
+--- 1164,1170 ----
+  set_no_char(cmd, ch)
+  	ubyte	cmd;
+  #endif
+! 	long	ch;
+  {
+  	if (currinf.virtual) {
+  	    currinf.fontp = currinf.virtual->first_font;
+***************
+*** 1495,1501 ****
+  					oldinfo.end = currinf.end;
+  				    }
+  				    else {
+! 					(void) lseek(fileno(dvi_file), file_pos,
+  					    SEEK_SET);
+  					oldinfo.pos = oldinfo.end;
+  				    }
+--- 1501,1507 ----
+  					oldinfo.end = currinf.end;
+  				    }
+  				    else {
+! 					(void) lseek(fileno(dvi_file), (off_t)file_pos,
+  					    SEEK_SET);
+  					oldinfo.pos = oldinfo.end;
+  				    }
+***************
+*** 1675,1684 ****
+  	    ROUNDUP(unshrunk_paper_h, shrink_factor) + 1);
+  
+  #ifdef	PAGENUM
+! 	(void) lseek(fileno(dvi_file), page_index[current_page].offset,
+  		     SEEK_SET);
+  #else
+! 	(void) lseek(fileno(dvi_file), page_offset[current_page], SEEK_SET);
+  #endif	/* PAGENUM */
+  
+  	bzero((char *) &currinf.data, sizeof(currinf.data));
+--- 1681,1690 ----
+  	    ROUNDUP(unshrunk_paper_h, shrink_factor) + 1);
+  
+  #ifdef	PAGENUM
+! 	(void) lseek(fileno(dvi_file), (off_t) page_index[current_page].offset,
+  		     SEEK_SET);
+  #else
+! 	(void) lseek(fileno(dvi_file), (off_t) page_offset[current_page], SEEK_SET);
+  #endif	/* PAGENUM */
+  
+  	bzero((char *) &currinf.data, sizeof(currinf.data));
+*** zeit.c.orig	Sat Nov  9 10:43:09 1996
+--- zeit.c	Sat Nov  9 10:42:44 1996
+***************
+*** 3,14 ****
+   *  Written by Y. Hayashi   (hayashi@me.aoyama.ac.jp)
+   ******************************************************/
+  
+! #include "xdvi.h"
+  
+  #ifndef       X_NOT_STDC_ENV
+  #include <stdlib.h>
+  #endif
+! 
+  #include "jtfm.h"
+  
+  #ifndef	SEEK_SET
+--- 3,14 ----
+   *  Written by Y. Hayashi   (hayashi@me.aoyama.ac.jp)
+   ******************************************************/
+  
+! /*#include "xdvi.h"
+  
+  #ifndef       X_NOT_STDC_ENV
+  #include <stdlib.h>
+  #endif
+! */
+  #include "jtfm.h"
+  
+  #ifndef	SEEK_SET
+***************
+*** 258,264 ****
+  static	void
+  get_ZEIT_font(fontp, code)
+  	struct font *fontp;
+! 	int code;
+  {
+  	struct bitmap *bm;
+  	int bwidth;
+--- 258,264 ----
+  static	void
+  get_ZEIT_font(fontp, code)
+  	struct font *fontp;
+! 	long code;
+  {
+  	struct bitmap *bm;
+  	int bwidth;
+***************
+*** 297,303 ****
+  static	void
+  read_ZEIT_char(fontp, ch)
+  	struct font *fontp;
+! 	int ch;
+  {
+  	struct bitmap *bm;
+  	struct glyph  *g;
+--- 297,303 ----
+  static	void
+  read_ZEIT_char(fontp, ch)
+  	struct font *fontp;
+! 	long ch;
+  {
+  	struct bitmap *bm;
+  	struct glyph  *g;
+***************
+*** 354,360 ****
+  	double dimconv;
+  	int n, index, code, width, height, depth;
+  
+! 	fontp->read_char = read_ZEIT_char;
+  	fontp->kglyph = (struct glyph **)
+  	    xmalloc(sizeof(struct glyph *) * KTABLESIZE, "read_ZEIT_index");
+  	dimconv = fontp->dimconv;
+--- 354,360 ----
+  	double dimconv;
+  	int n, index, code, width, height, depth;
+  
+! 	fontp->read_char = (read_char_proc) read_ZEIT_char;
+  	fontp->kglyph = (struct glyph **)
+  	    xmalloc(sizeof(struct glyph *) * KTABLESIZE, "read_ZEIT_index");
+  	dimconv = fontp->dimconv;
+*** Imakefile.orig	Wed Nov 13 14:14:38 1996
+--- Imakefile	Wed Nov 13 14:25:27 1996
+***************
+*** 22,28 ****
+  TEXFONTS=$(TEXLIB)/fonts
+  
+  #ifdef	Use_ZEIT
+! DEFAULT_FONT_PATH=.:$(TEXFONTS)/pk:$(TEXFONTS)/jfms
+  #else
+  DEFAULT_FONT_PATH=.:$(TEXFONTS)/pk
+  #endif	/* Use_ZEIT */
+--- 22,28 ----
+  TEXFONTS=$(TEXLIB)/fonts
+  
+  #ifdef	Use_ZEIT
+! DEFAULT_FONT_PATH=CHANGE
+  #else
+  DEFAULT_FONT_PATH=.:$(TEXFONTS)/pk
+  #endif	/* Use_ZEIT */
+***************
+*** 72,79 ****
+  #endif
+  
+  #ifdef	Use_ZEIT
+! DEFAULT_FONTCONFDIR=$(TEXFONTS)/zeit
+! DEFAULT_FONTCONF=$(DEFAULT_FONTCONFDIR)/FontConf
+  #ifdef	Use_NTTZEIT
+  ZEIT_DEFS=-DUSE_ZEIT -DNTTZEIT -DDEFAULT_FONTCONF=\"$(DEFAULT_FONTCONF)\"
+  #else
+--- 72,79 ----
+  #endif
+  
+  #ifdef	Use_ZEIT
+! DEFAULT_FONTCONFDIR=/usr/local/share/VFlib/2.24.1
+! DEFAULT_FONTCONF=$(DEFAULT_FONTCONFDIR)/vfontcap
+  #ifdef	Use_NTTZEIT
+  ZEIT_DEFS=-DUSE_ZEIT -DNTTZEIT -DDEFAULT_FONTCONF=\"$(DEFAULT_FONTCONF)\"
+  #else
+***************
+*** 128,134 ****
+  /* all marked pages */
+  DVIPRINTER="lp"
+  /* the default printer to print-out DVI file */
+! FILTOPTTBLDIR=/usr/local/lib/tex
+  FILTOPTTBLFILE=$(FILTOPTTBLDIR)/xdvipaper.dvi2ps-j
+  /* FILTOPTTBLDIR=/usr/local/lib/tex */
+  /* FILTOPTTBLFILE=$(FILTOPTBLDIR)/xdvipaper.jdvi2kps */
+--- 128,134 ----
+  /* all marked pages */
+  DVIPRINTER="lp"
+  /* the default printer to print-out DVI file */
+! FILTOPTTBLDIR=/usr/local/share/tex
+  FILTOPTTBLFILE=$(FILTOPTTBLDIR)/xdvipaper.dvi2ps-j
+  /* FILTOPTTBLDIR=/usr/local/lib/tex */
+  /* FILTOPTTBLFILE=$(FILTOPTBLDIR)/xdvipaper.jdvi2kps */
+***************
+*** 175,183 ****
+  
+  CDEBUGFLAGS=-g
+  
+! VFLIB=VFlib-1.32/VFlib.a
+  #ifdef	Use_ZEIT
+! DEPLIBS=$(VFLIB) XawClientDepLibs
+  LOCAL_LIBRARIES=$(VFLIB) XawClientLibs
+  #else
+  DEPLIBS=XawClientDepLibs
+--- 175,183 ----
+  
+  CDEBUGFLAGS=-g
+  
+! VFLIB=-L/usr/local/lib -lVFlib2 -lttf
+  #ifdef	Use_ZEIT
+! DEPLIBS=XawClientDepLibs
+  LOCAL_LIBRARIES=$(VFLIB) XawClientLibs
+  #else
+  DEPLIBS=XawClientDepLibs
+***************
+*** 244,252 ****
+  
+  ComplexProgramTarget(xdvi)
+  
+- $(VFLIB):
+- 	cd VFlib-1.32; make
+- 
+  xdvi.man: xdvi_man.sed mksedscript
+  	chmod u+x mksedscript
+  	./mksedscript $(DEFAULT_FONT_PATH) $(DEFAULT_FONT_SIZES) \
+--- 244,249 ----
+***************
+*** 267,273 ****
+  #endif	/* Use_MAKEPK */
+  
+  #ifdef	Use_ZEIT
+! InstallNonExecFile(VFlib-1.32/FontConf, $(DEFAULT_FONTCONFDIR))
+  #endif	/* Use_ZEIT */
+  
+  #ifdef	Use_PRINTDVI
+--- 264,270 ----
+  #endif	/* Use_MAKEPK */
+  
+  #ifdef	Use_ZEIT
+! 
+  #endif	/* Use_ZEIT */
+  
+  #ifdef	Use_PRINTDVI
