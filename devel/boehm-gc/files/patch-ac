@@ -1,25 +1,21 @@
---- gc_priv.h.orig	Fri Feb  9 14:36:32 1996
-+++ gc_priv.h	Thu Apr  2 17:37:22 1998
-@@ -49,13 +49,18 @@
+--- gc_priv.h.orig	Wed Aug 20 16:22:54 1997
++++ gc_priv.h	Mon Apr  6 03:25:55 1998
+@@ -49,6 +49,10 @@
  #   include "gc_hdrs.h"
  # endif
  
--# if !defined(bool)
--    typedef int bool;
 +# ifdef __cplusplus
-+#   define TRUE true
-+#   define FALSE false
++#	define TRUE true
++#	define FALSE false
 +# else
-+#   if !defined(bool)
-+	typedef int bool;
-     /* This is problematic with C++ implementations that define bool. */
-     /* But those usually treat it correctly as an empty declaration.  */
-+#   endif
-+#   define TRUE 1
-+#   define FALSE 0
+ # if !defined(bool) && !defined(__cplusplus)
+     typedef int bool;
+     /* This is problematic with C++ implementations that do not define bool. */
+@@ -67,6 +71,7 @@
  # endif
--# define TRUE 1
--# define FALSE 0
+ # define TRUE 1
+ # define FALSE 0
++# endif
  
  typedef char * ptr_t;	/* A generic pointer to which we can add	*/
  			/* byte displacements.				*/

@@ -3,13 +3,14 @@
 # Date created:		15 November 1996
 # Whom:			Mike McGaughey <mmcg@cs.monash.edu.au>
 #
-# $Id$
+# $Id: Makefile,v 1.1 1996/11/16 01:51:25 jdp Exp $
 #
 
-DISTNAME=	gc4.10
-PKGNAME=	boehm-gc-4.10
+DISTNAME=	gc4.12
+PKGNAME=	boehm-gc-4.12
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.parc.xerox.com/pub/gc/
+MASTER_SITES=	ftp://ftp.parc.xerox.com/pub/gc/ \
+		http://reality.sgi.com/employees/boehm_mti/gc_source/
 
 MAINTAINER=	mmcg@cs.monash.edu.au
 
