@@ -2,6 +2,7 @@ bin/mkpreview
 bin/wmakerconf
 share/gnome/applications/wmakerconf.desktop
 share/locale/ca/LC_MESSAGES/wmakerconf.mo
+share/locale/da/LC_MESSAGES/wmakerconf-data.mo
 share/locale/da/LC_MESSAGES/wmakerconf.mo
 share/locale/de/LC_MESSAGES/wmakerconf-data.mo
 share/locale/de/LC_MESSAGES/wmakerconf.mo
