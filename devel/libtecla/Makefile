@@ -24,6 +24,13 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 	PORTNAME="${PORTNAME}"
 INSTALLS_SHLIB=	yes
 
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} < 500000
+PLIST_SUB+=	THREADS="@comment "
+.else
+PLIST_SUB+=	THREADS=""
+.endif
+
 post-extract:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/genman3list.sh
 
@@ -34,4 +41,4 @@ post-clean:
 .include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
