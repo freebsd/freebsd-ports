@@ -1,3 +1,18 @@
+@unexec if cmp -s %D/%%ADODB_DIR%%/adodb-cryptsession.php %D/%%ADODB_DIR%%/adodb-cryptsession.php.sample; then rm -f %D/%%ADODB_DIR%%/adodb-cryptsession.php; fi
+@unexec if cmp -s %D/%%ADODB_DIR%%/adodb-session.php %D/%%ADODB_DIR%%/adodb-session.php.sample; then rm -f %D/%%ADODB_DIR%%/adodb-session.php; fi
+@unexec if cmp -s %D/%%ADODB_DIR%%/server.php %D/%%ADODB_DIR%%/server.php.sample; then rm -f %D/%%ADODB_DIR%%/server.php; fi
+@unexec if cmp -s %D/%%ADODB_TESTS%%/benchmark.php %D/%%ADODB_TESTS%%/benchmark.php.sample; then rm -f %D/%%ADODB_TESTS%%/benchmark.php; fi
+@unexec if cmp -s %D/%%ADODB_TESTS%%/test.php %D/%%ADODB_TESTS%%/test.php.sample; then rm -f %D/%%ADODB_TESTS%%/test.php; fi
+@unexec if cmp -s %D/%%ADODB_TESTS%%/test2.php %D/%%ADODB_TESTS%%/test2.php.sample; then rm -f %D/%%ADODB_TESTS%%/test2.php; fi
+@unexec if cmp -s %D/%%ADODB_TESTS%%/test3.php %D/%%ADODB_TESTS%%/test3.php.sample; then rm -f %D/%%ADODB_TESTS%%/test3.php; fi
+@unexec if cmp -s %D/%%ADODB_TESTS%%/test4.php %D/%%ADODB_TESTS%%/test4.php.sample; then rm -f %D/%%ADODB_TESTS%%/test4.php; fi
+@unexec if cmp -s %D/%%ADODB_TESTS%%/test5.php %D/%%ADODB_TESTS%%/test5.php.sample; then rm -f %D/%%ADODB_TESTS%%/test5.php; fi
+@unexec if cmp -s %D/%%ADODB_TESTS%%/testcache.php %D/%%ADODB_TESTS%%/testcache.php.sample; then rm -f %D/%%ADODB_TESTS%%/testcache.php; fi
+@unexec if cmp -s %D/%%ADODB_TESTS%%/testdatabases.inc.php %D/%%ADODB_TESTS%%/testdatabases.inc.php.sample; then rm -f %D/%%ADODB_TESTS%%/testdatabases.inc.php; fi
+@unexec if cmp -s %D/%%ADODB_TESTS%%/testoci8.php %D/%%ADODB_TESTS%%/testoci8.php.sample; then rm -f %D/%%ADODB_TESTS%%/testoci8.php; fi
+@unexec if cmp -s %D/%%ADODB_TESTS%%/testpaging.php %D/%%ADODB_TESTS%%/testpaging.php.sample; then rm -f %D/%%ADODB_TESTS%%/testpaging.php; fi
+@unexec if cmp -s %D/%%ADODB_TESTS%%/testpear.php %D/%%ADODB_TESTS%%/testpear.php.sample; then rm -f %D/%%ADODB_TESTS%%/testpear.php; fi
+@unexec if cmp -s %D/%%ADODB_TESTS%%/testsessions.php %D/%%ADODB_TESTS%%/testsessions.php.sample; then rm -f %D/%%ADODB_TESTS%%/testsessions.php; fi
 %%ADODB_DIR%%/adodb-cryptsession.php.sample
 %%ADODB_DIR%%/adodb-csvlib.inc.php
 %%ADODB_DIR%%/adodb-errorhandler.inc.php
