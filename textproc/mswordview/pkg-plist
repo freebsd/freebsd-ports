@@ -1,4 +1,9 @@
 bin/mswordview
+bin/wv-incconfig
+bin/wv-libconfig
+include/wv.h
+lib/libwv.a
+lib/mswordview/config-mswordview
 lib/mswordview/symbolfont/100.gif
 lib/mswordview/symbolfont/101.gif
 lib/mswordview/symbolfont/102.gif
@@ -633,24 +638,33 @@ lib/mswordview/patterns/96.gif
 lib/mswordview/patterns/97.gif
 lib/mswordview/patterns/98.gif
 lib/mswordview/patterns/99.gif
+lib/mswordview/patterns/battributes.jpg
+lib/mswordview/patterns/bdeleted.jpg
+lib/mswordview/patterns/bnewlytyped.jpg
 lib/mswordview/patterns/clear.gif
-lib/mswordview/patterns/convert.sh
+lib/mswordview/patterns/columnbreak.gif
 lib/mswordview/patterns/commentbegin.gif
 lib/mswordview/patterns/commentend.gif
+lib/mswordview/patterns/deleted.jpg
+lib/mswordview/patterns/doccommentb.jpg
+lib/mswordview/patterns/doccommente.jpg
 lib/mswordview/patterns/documentend.gif
+lib/mswordview/patterns/eattributes.jpg
+lib/mswordview/patterns/edeleted.jpg
 lib/mswordview/patterns/endnotebegin.gif
 lib/mswordview/patterns/endnoteend.gif
+lib/mswordview/patterns/enewlytyped.jpg
 lib/mswordview/patterns/footnotebegin.gif
 lib/mswordview/patterns/footnoteend.gif
 lib/mswordview/patterns/pagebreak.gif
-lib/mswordview/patterns/wmf.jpg
-lib/mswordview/patterns/columnbreak.gif
 lib/mswordview/patterns/sectionendcolumn.gif
 lib/mswordview/patterns/sectionendcontinous.gif
 lib/mswordview/patterns/sectionendeven.gif
 lib/mswordview/patterns/sectionendnewpage.gif
 lib/mswordview/patterns/sectionendodd.gif
+lib/mswordview/patterns/wmf.jpg
 @dirrm lib/mswordview/symbolfont
 @dirrm lib/mswordview/wingdingfont
 @dirrm lib/mswordview/patterns
+@dirrm lib/mswordview/ttf
 @dirrm lib/mswordview
