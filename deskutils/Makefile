@@ -17,7 +17,6 @@
     SUBDIR += gmcal
     SUBDIR += gnofin
     SUBDIR += gnomepim
-    SUBDIR += gnucash
     SUBDIR += gtimer
     SUBDIR += ical
     SUBDIR += ithought

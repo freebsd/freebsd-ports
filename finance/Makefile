@@ -1,5 +1,6 @@
 # $FreeBSD$
 #
+    SUBDIR += gnucash
     SUBDIR += khacc
     SUBDIR += openhbci
     SUBDIR += p5-Math-Financial
