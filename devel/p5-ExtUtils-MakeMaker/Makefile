@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ExtUtils-MakeMaker
-PORTVERSION=	6.21
+PORTVERSION=	6.24
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	ExtUtils
@@ -33,10 +33,8 @@ MAN3=	ExtUtils::Installed.3 ExtUtils::MM_OS2.3 ExtUtils::MakeMaker.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600
-BUILD_DEPENDS+=	${SITE_PERL}/Pod/Man.pm:${PORTSDIR}/textproc/p5-podlators
-RUN_DEPENDS+=	${BUILD_DEPENDS}
-BROKEN=		"Broken pkg-plist"
+.if ${PERL_LEVEL} < 500601
+IGNORE=		This port requires perl 5.6.x or later. Install lang/perl5 then try again
 .endif
 
 .include <bsd.port.post.mk>
