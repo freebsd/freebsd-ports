@@ -3,7 +3,7 @@
 # Date created:		Sa   1 Feb 1997 14:46:05 MET
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.9 1997/02/06 07:58:40 asami Exp $
+# $Id: Makefile,v 1.10 1997/06/09 19:16:35 andreas Exp $
 #
 
 DISTNAME=	fvwm95-2.0.43a-Autoconf
@@ -27,5 +27,6 @@ MAN1=		fvwm95.1
 post-install:
 		@${INSTALL_MAN}	$(WRKSRC)/fvwm/fvwm95.man \
 				$(PREFIX)/man/man1/fvwm95.1
+		(cd ${PREFIX}/icons; tar xzf ${FILESDIR}/fbsd-icons.tar.gz)
 
 .include <bsd.port.mk>

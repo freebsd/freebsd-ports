@@ -1,5 +1,5 @@
---- sample.fvwmrc/system.fvwm95rc.orig	Mon Jun  9 20:49:46 1997
-+++ sample.fvwmrc/system.fvwm95rc	Mon Jun  9 20:50:01 1997
+--- sample.fvwmrc/system.fvwm95rc.orig	Wed Dec 11 21:24:54 1996
++++ sample.fvwmrc/system.fvwm95rc	Mon Jun  9 21:34:45 1997
 @@ -90,8 +90,8 @@
  # Paths are a colon-separated list, just like regular unix PATH
  #
@@ -20,6 +20,15 @@
  #+ "I"	Module FvwmButtons MiniButtons
  #+ "I"	Module FvwmBanner
  #+ "I"	Module FvwmPager 0 3
+@@ -269,7 +269,7 @@
+ #--------- Taskbar's start menu
+ 
+ DestroyMenu "StartMenu"
+-AddToMenu "StartMenu@linux-menu.xpm@^#808080^" \
++AddToMenu "StartMenu@freebsd3-menu.xpm@^#808080^" \
+   "&Programs%programs.xpm%"	Popup Programs
+ + "&Documents%documents.xpm%"	Popup Documents
+ + "&Settings%settings.xpm%"	Popup Settings
 @@ -303,12 +303,12 @@
  DestroyMenu "Accessories"
  AddToMenu "Accessories" \
