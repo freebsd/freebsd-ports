@@ -41,6 +41,9 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 MAINTAINER=	ports@FreeBSD.org
 
+FORBIDDEN=	"Vulnerable to denial-of-service.  See" \
+		"http://httpd.apache.org/info/security_bulletin_20020617.txt"
+
 USE_OPENSSL=	YES
 
 .include <bsd.port.pre.mk>

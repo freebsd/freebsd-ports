@@ -31,6 +31,9 @@ PATCHFILES=	patches_${APACHE_VERSION}rusPL${RA_VERSION}.tar.gz
 
 MAINTAINER=	lev@serebryakov.spb.ru
 
+FORBIDDEN=	"Vulnerable to denial-of-service.  See" \
+		"http://httpd.apache.org/info/security_bulletin_20020617.txt"
+
 RA_VERSION=	30.12
 APACHE_VERSION=	1.3.24
 Y2K=		http://www.apache.org/docs/misc/FAQ.html#year2000
