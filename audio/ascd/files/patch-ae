@@ -1,5 +1,5 @@
---- ascd/Imakefile.orig	Thu Apr 22 20:53:46 1999
-+++ ascd/Imakefile	Thu Apr 22 20:54:09 1999
+--- ascd/Imakefile.orig	Tue May  4 20:24:25 1999
++++ ascd/Imakefile	Tue May  4 20:26:00 1999
 @@ -5,7 +5,7 @@
  BINDIR		= CBINDIR
  MANDIR		= CMANDIR
@@ -8,7 +8,7 @@
 +MOREFLAGS	= -I/usr/X11R6/include -I.
  CCOPTIONS	= $(MOREFLAGS)
  SYS_LIBRARIES	= $(XLIB) -lXpm
- 	
+ 
 @@ -15,7 +15,7 @@
  WM_LIB = 
  #endif
@@ -18,3 +18,12 @@
  
  SRCS = cdcontrol.c ascd.c
  OBJS = cdcontrol.o ascd.o
+@@ -43,7 +43,5 @@
+ 	@cd $(THEMESDIR) ; rm clean.tar
+ 	@cd $(THEMESDIR) ; rm vintage.tar
+ 	@cd $(THEMESDIR) ; rm night.tar
+-	@cd $(THEMESDIR) ; rm .dir
+-	@cd $(THEMESDIR) ; /bin/ls -1 > /tmp/.dir
+-	@cd $(THEMESDIR) ; cp /tmp/.dir .
++	@cd $(THEMESDIR) ; rmdir sands/.xvpics
+ 	@echo "Done."

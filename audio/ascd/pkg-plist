@@ -58,6 +58,27 @@ share/ascd/default/quit.xpm
 share/ascd/default/rdigits.xpm
 share/ascd/default/rew.xpm
 share/ascd/default/stop.xpm
+share/ascd/night/Theme
+share/ascd/night/background.xpm
+share/ascd/night/bar.xpm
+share/ascd/night/digits.xpm
+share/ascd/night/eject.xpm
+share/ascd/night/fade.xpm
+share/ascd/night/fwd.xpm
+share/ascd/night/intro.xpm
+share/ascd/night/intro_on.xpm
+share/ascd/night/lend.xpm
+share/ascd/night/lgo.xpm
+share/ascd/night/lgo_on.xpm
+share/ascd/night/lstart.xpm
+share/ascd/night/pause.xpm
+share/ascd/night/pause_on.xpm
+share/ascd/night/play.xpm
+share/ascd/night/play_on.xpm
+share/ascd/night/quit.xpm
+share/ascd/night/rdigits.xpm
+share/ascd/night/rew.xpm
+share/ascd/night/stop.xpm
 share/ascd/sands/Theme
 share/ascd/sands/background.xpm
 share/ascd/sands/bar.xpm
@@ -104,6 +125,7 @@ share/ascd/.dir
 @dirrm include/workman
 @dirrm share/ascd/clean
 @dirrm share/ascd/default
+@dirrm share/ascd/night
 @dirrm share/ascd/sands
 @dirrm share/ascd/vintage
 @dirrm share/ascd
