@@ -1,0 +1,7 @@
+bin/gtksopwith
+bin/sopwith
+%%PORTDOCS%%share/doc/sopwith/FAQ
+%%PORTDOCS%%share/doc/sopwith/keys.txt
+%%PORTDOCS%%share/doc/sopwith/license.txt
+%%PORTDOCS%%share/doc/sopwith/origdoc.txt
+%%PORTDOCS%%@dirrm share/doc/sopwith
