@@ -95,6 +95,7 @@
     SUBDIR += nenscript
     SUBDIR += offix-printer
     SUBDIR += p5-GnomePrint
+    SUBDIR += p5-PDFLib
     SUBDIR += p5-Text-PDF
     SUBDIR += panda
     SUBDIR += pcal
