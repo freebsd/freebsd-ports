@@ -23,6 +23,18 @@ pre-configure:
 	${FIND} ${WRKSRC} \( -name '*.in' -or -name configure \) -exec \
 		${PERL} -pi -e 's:bash:sh:g ; \
 		s:gtk-config:${GTK_CONFIG}:g' {} \;
+	${RM} -f ${WRKSRC}/*/Makefile
+	${CHMOD} +x ${WRKSRC}/configure
+
+do-build:
+	cd ${WRKSRC}/goodies && gmake
+.for ii in client events main misc new screen widgets
+	cd ${WRKSRC}/src && ${CC} -c ${CFLAGS} -I${X11BASE}/include \
+		${ii}.c
+.endfor
+	cd ${WRKSRC}/src && ${CC} ${CFLAGS} -DSHAPE -o alloywm \
+		-L${X11BASE}/lib -lXext -lX11 \
+		client.o events.o main.o misc.o new.o screen.o widgets.o
 
 pre-install:
 	cd ${WRKSRC} && ${FIND} * -type f -perm 755 | cut -f 2 -d / | \
