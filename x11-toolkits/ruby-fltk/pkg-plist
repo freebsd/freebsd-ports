@@ -1,7 +1,15 @@
 %%RUBY_SITEARCHLIBDIR%%/rubyfltk.so
 %%RUBY_SITELIBDIR%%/fltk.rb
+%%RUBY_SITELIBDIR%%/fltk/canvas.rb
 %%RUBY_SITELIBDIR%%/fltk/drawable.rb
 %%RUBY_SITELIBDIR%%/fltk/listbox.rb
+%%RUBY_SITELIBDIR%%/fltk/canvas/circle.rb
+%%RUBY_SITELIBDIR%%/fltk/canvas/ellipse.rb
+%%RUBY_SITELIBDIR%%/fltk/canvas/label.rb
+%%RUBY_SITELIBDIR%%/fltk/canvas/line.rb
+%%RUBY_SITELIBDIR%%/fltk/canvas/polygon.rb
+%%RUBY_SITELIBDIR%%/fltk/canvas/rect.rb
+@dirrm %%RUBY_SITELIBDIR%%/fltk/canvas
 @dirrm %%RUBY_SITELIBDIR%%/fltk
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fltk/othello.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fltk/sample1.rb
