@@ -308,6 +308,7 @@
     SUBDIR += maradns
     SUBDIR += mars_nwe
     SUBDIR += mbrowse
+    SUBDIR += mdnsd
     SUBDIR += merlinmon
     SUBDIR += micq
     SUBDIR += mldonkey

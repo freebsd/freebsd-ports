@@ -1,0 +1,10 @@
+mdnsd is a very lightweight, simple, portable, and easy to integrate open
+source implementation of Multicast DNS (part of Zeroconf, also called
+Rendezvous by Apple) for developers. It supports both acting as a Query and
+a Responder, allowing any software to participate fully on the
+.localnetwork.
+
+WWW: http://dotlocal.org/mdnsd/
+
+ -- Dan Pelleg
+daniel+mdnsd@pelleg.org
