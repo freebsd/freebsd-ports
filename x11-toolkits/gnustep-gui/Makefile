@@ -18,6 +18,7 @@ COMMENT=	GNUstep GUI library
 LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
 LIB_DEPENDS+=	audiofile.0:${PORTSDIR}/audio/libaudiofile
 
+NOT_FOR_ARCHS=	ia64
 PREFIX=		${LOCALBASE}/GNUstep
 NO_MTREE=	yes
 GNU_CONFIGURE=	yes
