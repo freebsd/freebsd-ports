@@ -1,0 +1,10 @@
+Class::NamedParms
+
+Provides standard get/set/clear accessors for a class via named
+parameter with forced lexical checking of named parameters 
+for validity and initialization validation. Lightweight and simple
+to use. Designed as a base class for inheritance by other modules.
+
+WWW:	http://search.cpan.org/~snowhare/Class-NamedParms-1.04/
+
+Author: Benjamin Franz
