@@ -1,0 +1,12 @@
+@comment $FreeBSD$
+bin/count_client
+bin/count_gate
+bin/count_ipa
+bin/count_ipfw
+bin/count_pppd
+bin/count_samba
+bin/count_user
+etc/rc.d/utcount.sh.default
+@unexec if [ -f %D/etc/utcount.conf ] && cmp -s %D/etc/utcount.conf %D/etc/utcount.conf.default; then rm -f %D/etc/utcount.conf; fi
+etc/utcount.conf.default
+@exec if [ ! -f %D/etc/utcount.conf ] ; then cp -p %D/%F %B/utcount.conf; fi
