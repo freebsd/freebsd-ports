@@ -1,9 +1,9 @@
+@comment $FreeBSD$
+bin/drweb
 drweb/CHANGES
 drweb/README
 drweb/README.RUS
-drweb/clients/cgp/README
-drweb/clients/cgp/readme.cgp
-drweb/clients/cgp/readme.cgp.rus
+drweb/bases/drwebase.vdb
 drweb/clients/demo/drwebdc-demo.c
 drweb/clients/demo/drwebdc-demo.h
 drweb/clients/demo/drwebdc-ex1.c
@@ -11,119 +11,37 @@ drweb/clients/demo/drwebdc-ex2.c
 drweb/clients/demo/drwebdc-ex3.c
 drweb/clients/demo/drwebdc-tools.c
 drweb/clients/demo/make-all.sh
-drweb/clients/drwebdc/ChangeLog
-drweb/clients/drwebdc/Makefile.aix
-drweb/clients/drwebdc/Makefile.bsd
-drweb/clients/drwebdc/Makefile.gnu
-drweb/clients/drwebdc/Makefile.os2
-drweb/clients/drwebdc/Makefile.win
-drweb/clients/drwebdc/README
-drweb/clients/drwebdc/configure
-drweb/clients/drwebdc/drweb_cgp.c
-drweb/clients/drwebdc/drwebdc.c
-drweb/clients/drwebdc/dw_filter.c
-drweb/clients/drwebdc/dw_filter.h
-drweb/clients/drwebdc/dwf_main.c
-drweb/clients/drwebdc/src/Makefile.aix
-drweb/clients/drwebdc/src/Makefile.bsd
-drweb/clients/drwebdc/src/Makefile.gnu
-drweb/clients/drwebdc/src/Makefile.os2
-drweb/clients/drwebdc/src/Makefile.win
-drweb/clients/drwebdc/src/bsd_queue.h
-drweb/clients/drwebdc/src/dwc_err.c
-drweb/clients/drwebdc/src/dwc_err.h
-drweb/clients/drwebdc/src/dwc_event.c
-drweb/clients/drwebdc/src/dwc_event.h
-drweb/clients/drwebdc/src/dwc_ipc.c
-drweb/clients/drwebdc/src/dwc_ipc.h
-drweb/clients/drwebdc/src/dwc_lib.c
-drweb/clients/drwebdc/src/dwc_lib.h
-drweb/clients/drwebdc/src/dwc_log.c
-drweb/clients/drwebdc/src/dwc_log.h
-drweb/clients/drwebdc/src/dwc_macro.h
-drweb/clients/drwebdc/src/dwc_mutex.c
-drweb/clients/drwebdc/src/dwc_mutex.h
-drweb/clients/drwebdc/src/dwc_scan.h
-drweb/clients/drwebdc/src/dwc_tcp.c
-drweb/clients/drwebdc/src/dwc_tcp.h
-drweb/clients/drwebdc/src/dwc_thread.c
-drweb/clients/drwebdc/src/dwc_thread.h
-drweb/clients/drwebdc/src/dwc_timo.c
-drweb/clients/drwebdc/src/dwc_timo.h
-drweb/clients/drwebdc/src/dwc_type.h
-drweb/clients/drwebdc/src/dwc_unix.c
-drweb/clients/drwebdc/src/dwc_unix.h
-drweb/clients/drwebdc/syslog/include/sys/syslog.h
-drweb/clients/drwebdc/syslog/include/syslog.h
-drweb/clients/drwebdc/syslog/lib/syslog.a
-drweb/clients/drwebdc/win_build.bat
-drweb/clients/drwebdc/win_clean.bat
-drweb/clients/exim/drweb_exim.pl
-drweb/clients/exim/drweb_exim.sh
-drweb/clients/exim/readme.exim
-drweb/clients/exim/readme.exim.rus
-drweb/clients/postfix/drweb_postfix.pl
-drweb/clients/postfix/drweb_postfix.sh
-drweb/clients/postfix/readme.postfix
-drweb/clients/postfix/readme.postfix.rus
-drweb/clients/qmail/drweb_qmail.pl
-drweb/clients/qmail/qmail-scanner-0.9x.patch
-drweb/clients/qmail/qmail-scanner-1.0x.patch
-drweb/clients/qmail/readme.qmail
-drweb/clients/qmail/readme.qmail.rus
-drweb/clients/qmail/sub-drweb.0.9x.pl
-drweb/clients/qmail/sub-drweb.1.0x.pl
-drweb/clients/sendmail/README
-drweb/clients/sendmail/configure
-drweb/clients/sendmail/example-rus.sh
-drweb/clients/sendmail/example.sh
-drweb/clients/sendmail/listener-8.11.1.patch
-drweb/clients/sendmail/listener-8.12.0.patch
-drweb/clients/sendmail/readme.sendmail
-drweb/clients/sendmail/readme.sendmail.rus
-drweb/clients/sendmail/template.cf.addon
-drweb/clients/sendmail/template.initscript
-drweb/clients/sendmail/template.mc.addon
-drweb/doc/drweb-ini
-drweb/doc/drweb-ini.rus
-drweb/doc/drwebd-api
-drweb/doc/drwebd-api.rus
-drweb/doc/history.txt
+drweb/clients/drwebd-api
+drweb/doc/readme.daemon
+drweb/doc/readme.daemon.rus
 drweb/doc/readme.eicar
+drweb/doc/readme.scanner
+drweb/doc/readme.scanner.rus
 drweb/drweb
 @unexec if [ -f %D/drweb/drweb.key ] && cmp -s %D/drweb/drweb.key %D/drweb/drweb.key-dist; then rm -f %D/drweb/drweb.key; fi
 drweb/drweb.key-dist
 @exec if [ ! -f %D/drweb/drweb.key ] ; then cp -p %D/%F %B/drweb.key; fi
-drweb/drweb32.dll
 @unexec if [ -f %D/drweb/drweb32.ini ] && cmp -s %D/drweb/drweb32.ini %D/drweb/drweb32.ini-dist; then rm -f %D/drweb/drweb32.ini; fi
 drweb/drweb32.ini-dist
 @exec if [ ! -f %D/drweb/drweb32.ini ] ; then cp -p %D/%F %B/drweb32.ini; fi
-drweb/drwebase.vdb
 drweb/drwebd
 @unexec if [ -f %D/drweb/drwebd.key ] && cmp -s %D/drweb/drwebd.key %D/drweb/drwebd.key-dist; then rm -f %D/drweb/drwebd.key; fi
 drweb/drwebd.key-dist
 @exec if [ ! -f %D/drweb/drwebd.key ] ; then cp -p %D/%F %B/drwebd.key; fi
-drweb/russian.dwl
+drweb/lib/drweb32.dll
+drweb/lib/german.dwl
+drweb/lib/russian.dwl
+drweb/lib/spanish.dwl
 drweb/update/readme.update
 drweb/update/readme.update.rus
 drweb/update/update.pl
-@dirrm drweb/clients/cgp
+@dirrm drweb/bases
 @dirrm drweb/clients/demo
-@dirrm drweb/clients/drwebdc/include
-@dirrm drweb/clients/drwebdc/lib
-@dirrm drweb/clients/drwebdc/src
-@dirrm drweb/clients/drwebdc/syslog/include/sys
-@dirrm drweb/clients/drwebdc/syslog/include
-@dirrm drweb/clients/drwebdc/syslog/lib
-@dirrm drweb/clients/drwebdc/syslog
-@dirrm drweb/clients/drwebdc
-@dirrm drweb/clients/exim
-@dirrm drweb/clients/postfix
-@dirrm drweb/clients/qmail
-@dirrm drweb/clients/sendmail
 @dirrm drweb/clients
 @dirrm drweb/doc
 @dirrm drweb/infected
+@dirrm drweb/lib
 @dirrm drweb/run
 @dirrm drweb/update
+@dirrm drweb/updates
 @dirrm drweb
