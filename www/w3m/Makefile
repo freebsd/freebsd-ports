@@ -42,8 +42,8 @@ DOCS_JP=	${DOCS} HISTORY HISTORY.kokb README.keymap README.kokb \
 .endif
 
 .if defined(USE_SSL)
-BUILD_DEPENDS+=  ${LOCALBASE}/lib/libcrypto.a:${PORTSDIR}/security/openssl \
-		${LOCALBASE}/lib/libssl.a:${PORTSDIR}/security/openssl
+LIB_DEPENDS+=	crypto.1:${PORTSDIR}/security/openssl \
+		ssl.1:${PORTSDIR}/security/openssl
 
 SSL_CFLAGS=	-I${LOCALBASE}/include/openssl
 SSL_LIBS=	-lssl -lcrypto
