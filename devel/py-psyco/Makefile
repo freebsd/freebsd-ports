@@ -16,6 +16,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	simuran@shaw.ca
 COMMENT=	Python Specializing Compiler
 
+ONLY_FOR_ARCHS=	i386
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
