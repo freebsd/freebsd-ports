@@ -12,7 +12,7 @@ MASTER_SITES=	http://perso.linuxfr.org/jdumont/wmg/
 
 MAINTAINER=	will@FreeBSD.org
 
-LIB_DEPENDS=	wraster.3:${PORTSDIR}/x11-wm/windowmaker
+LIB_DEPENDS=	wraster.4:${PORTSDIR}/x11-wm/windowmaker
 
 USE_X_PREFIX=	yes
 
