@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	catdvi
-PORTVERSION=	0.12
+PORTVERSION=	0.13
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -27,7 +27,10 @@ ALL_TARGET=	# empty
 MAN1=	catdvi.1
 
 post-patch:
-	${GREP} -lR "malloc.h" ${WRKSRC} | xargs \
+	@${GREP} -lR "malloc.h" ${WRKSRC} | xargs \
 	  ${PERL} -pi -e "s/malloc.h/stdlib.h/g"
+
+post-install:
+	@${STRIP_CMD} ${PREFIX}/bin/catdvi
 
 .include <bsd.port.mk>
