@@ -1,7 +1,7 @@
 bin/portsentry
 @unexec if cmp -s %D/etc/portsentry.conf %D/etc/portsentry.conf.default; then rm -f %D/etc/portsentry.conf; fi
 etc/portsentry.conf.default
-@exec if [ ! -f %D/etc/portsentry.conf ] ; then cp -p %D/%F %B/portsentry.conf; fi
+@exec if [ ! -f %D/etc/portsentry.conf ] ; then cp -p %B/portsentry.conf %D/etc/portsentry.conf ; fi
 etc/portsentry.ignore
 share/doc/portsentry/README.install
 share/doc/portsentry/README.methods

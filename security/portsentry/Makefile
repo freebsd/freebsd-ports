@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	portsentry
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	security
 MASTER_SITES=	http://www.psionic.com/tools/
 
@@ -19,9 +19,6 @@ post-patch:
 		${WRKSRC}/portsentry.conf ${WRKSRC}/portsentry_config.h
 
 do-install:
-.if !exists($(PREFIX)/etc/portsentry.conf)
-	${INSTALL_DATA} ${WRKSRC}/portsentry.conf ${PREFIX}/etc
-.endif
 	${INSTALL_DATA} ${WRKSRC}/portsentry.conf ${PREFIX}/etc/portsentry.conf.default
 	${INSTALL_DATA} ${WRKSRC}/portsentry.ignore ${PREFIX}/etc
 	${INSTALL_PROGRAM} ${WRKSRC}/portsentry ${PREFIX}/bin
