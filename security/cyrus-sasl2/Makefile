@@ -68,7 +68,6 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		WITH_LDAP1="${WITH_LDAP1}" \
 		WITH_LDAP2="${WITH_LDAP2}"
 
-# JavaSASL needs someone to look at to get it to build
 JAVADIR=	jdk1.3.1
 JAVALIBDIR=	${PREFIX}/${JAVADIR}/lib/i386/green_threads/
 
@@ -105,6 +104,14 @@ PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 450000
+FMT=	/usr/bin/fmt
+.else
+FMT=	/usr/bin/fmt -w 67
+.endif
+
 pre-fetch:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.sasl
 
@@ -129,7 +136,7 @@ post-patch:
 		-e "s;%%PREFIX%%;${PREFIX};g" \
 		${.CURDIR}/pkg-message > ${PKGMESSAGE}
 .ifdef LDAP_MYSQL_MSG
-	@${ECHO_CMD} ${LDAP_MYSQL_MSG} | /usr/bin/fmt -w 67 >> ${PKGMESSAGE}
+	@${ECHO_CMD} ${LDAP_MYSQL_MSG} | ${FMT} >> ${PKGMESSAGE}
 	@${ECHO_CMD} >> ${PKGMESSAGE}
 .endif
 
@@ -167,4 +174,4 @@ post-clean:
 #include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
 #endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
