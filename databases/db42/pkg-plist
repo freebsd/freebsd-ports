@@ -37,7 +37,9 @@ lib/db42/libdb_cxx-4.2.so.2
 lib/db42/libdb_cxx-4.so
 lib/db42/libdb_cxx.a
 lib/db42/libdb_cxx.so
+lib/libdb-4.2.so
 lib/libdb-4.2.so.2
+lib/libdb_cxx-4.2.so
 lib/libdb_cxx-4.2.so.2
 @dirrm lib/db42
 @dirrm include/db42
