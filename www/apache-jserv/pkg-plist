@@ -7,6 +7,97 @@ share/java/servlets/Hello.class
 share/java/servlets/Hello.java
 share/java/servlets/IsItWorking.class
 share/java/servlets/IsItWorking.java
+share/doc/mod_jserv/api/org/apache/java/io/SimpleFileFilter.html
+share/doc/mod_jserv/api/org/apache/java/io/package-tree.html
+share/doc/mod_jserv/api/org/apache/java/io/package-frame.html
+share/doc/mod_jserv/api/org/apache/java/io/Logger.html
+share/doc/mod_jserv/api/org/apache/java/io/LogRecord.html
+share/doc/mod_jserv/api/org/apache/java/io/LogWriter.html
+share/doc/mod_jserv/api/org/apache/java/io/LogWriter.Agent.html
+share/doc/mod_jserv/api/org/apache/java/io/ReadFullyInputStream.html
+share/doc/mod_jserv/api/org/apache/java/io/package-summary.html
+share/doc/mod_jserv/api/org/apache/java/lang/TimeoutException.html
+share/doc/mod_jserv/api/org/apache/java/lang/package-tree.html
+share/doc/mod_jserv/api/org/apache/java/lang/package-frame.html
+share/doc/mod_jserv/api/org/apache/java/lang/Stoppable.html
+share/doc/mod_jserv/api/org/apache/java/lang/AdaptiveClassLoader.html
+share/doc/mod_jserv/api/org/apache/java/lang/AdaptiveClassLoader.ClassCacheEntry.html
+share/doc/mod_jserv/api/org/apache/java/lang/Bytes.html
+share/doc/mod_jserv/api/org/apache/java/lang/Lock.html
+share/doc/mod_jserv/api/org/apache/java/lang/Semaphore.html
+share/doc/mod_jserv/api/org/apache/java/lang/package-summary.html
+share/doc/mod_jserv/api/org/apache/java/net/package-summary.html
+share/doc/mod_jserv/api/org/apache/java/net/package-tree.html
+share/doc/mod_jserv/api/org/apache/java/net/package-frame.html
+share/doc/mod_jserv/api/org/apache/java/net/AuthenticatedServerSocket.html
+share/doc/mod_jserv/api/org/apache/java/net/AuthenticatedSocket.html
+share/doc/mod_jserv/api/org/apache/java/net/AuthenticationException.html
+share/doc/mod_jserv/api/org/apache/java/recycle/pool/package-summary.html
+share/doc/mod_jserv/api/org/apache/java/recycle/pool/package-tree.html
+share/doc/mod_jserv/api/org/apache/java/recycle/pool/package-frame.html
+share/doc/mod_jserv/api/org/apache/java/recycle/pool/Worker.html
+share/doc/mod_jserv/api/org/apache/java/recycle/pool/WorkerContainer.html
+share/doc/mod_jserv/api/org/apache/java/recycle/pool/WorkerPool.html
+share/doc/mod_jserv/api/org/apache/java/recycle/package-tree.html
+share/doc/mod_jserv/api/org/apache/java/recycle/package-frame.html
+share/doc/mod_jserv/api/org/apache/java/recycle/Controller.html
+share/doc/mod_jserv/api/org/apache/java/recycle/Recyclable.html
+share/doc/mod_jserv/api/org/apache/java/recycle/RecycleBin.html
+share/doc/mod_jserv/api/org/apache/java/recycle/AdaptiveController.html
+share/doc/mod_jserv/api/org/apache/java/recycle/Container.html
+share/doc/mod_jserv/api/org/apache/java/recycle/ControlledContainer.html
+share/doc/mod_jserv/api/org/apache/java/recycle/ControllerFactory.html
+share/doc/mod_jserv/api/org/apache/java/recycle/DefaultController.html
+share/doc/mod_jserv/api/org/apache/java/recycle/GaussianController.html
+share/doc/mod_jserv/api/org/apache/java/recycle/LimitedContainer.html
+share/doc/mod_jserv/api/org/apache/java/recycle/MinMaxController.html
+share/doc/mod_jserv/api/org/apache/java/recycle/RecycleBinIsEmpty.html
+share/doc/mod_jserv/api/org/apache/java/recycle/package-summary.html
+share/doc/mod_jserv/api/org/apache/java/recycle/RecycleBinIsFull.html
+share/doc/mod_jserv/api/org/apache/java/security/package-summary.html
+share/doc/mod_jserv/api/org/apache/java/security/package-tree.html
+share/doc/mod_jserv/api/org/apache/java/security/package-frame.html
+share/doc/mod_jserv/api/org/apache/java/security/MD5.html
+share/doc/mod_jserv/api/org/apache/java/security/MessageDigest.html
+share/doc/mod_jserv/api/org/apache/java/util/SimpleQueue.html
+share/doc/mod_jserv/api/org/apache/java/util/package-tree.html
+share/doc/mod_jserv/api/org/apache/java/util/package-frame.html
+share/doc/mod_jserv/api/org/apache/java/util/Configurations.html
+share/doc/mod_jserv/api/org/apache/java/util/ConfigurationsRepository.html
+share/doc/mod_jserv/api/org/apache/java/util/ExtendedProperties.html
+share/doc/mod_jserv/api/org/apache/java/util/ExtendedProperties.PropertiesReader.html
+share/doc/mod_jserv/api/org/apache/java/util/ExtendedProperties.PropertiesTokenizer.html
+share/doc/mod_jserv/api/org/apache/java/util/package-summary.html
+share/doc/mod_jserv/api/org/apache/jserv/JServUtils.html
+share/doc/mod_jserv/api/org/apache/jserv/package-tree.html
+share/doc/mod_jserv/api/org/apache/jserv/package-frame.html
+share/doc/mod_jserv/api/org/apache/jserv/JServDefs.html
+share/doc/mod_jserv/api/org/apache/jserv/JServLogChannels.html
+share/doc/mod_jserv/api/org/apache/jserv/JServSendError.html
+share/doc/mod_jserv/api/org/apache/jserv/Ajpv12InputStream.html
+share/doc/mod_jserv/api/org/apache/jserv/JServ.html
+share/doc/mod_jserv/api/org/apache/jserv/JServConnection.html
+share/doc/mod_jserv/api/org/apache/jserv/JServConnection.JServInputStream.html
+share/doc/mod_jserv/api/org/apache/jserv/JServConnection.JServOutputStream.html
+share/doc/mod_jserv/api/org/apache/jserv/JServContext.html
+share/doc/mod_jserv/api/org/apache/jserv/JServLog.html
+share/doc/mod_jserv/api/org/apache/jserv/JServServletManager.html
+share/doc/mod_jserv/api/org/apache/jserv/JServSession.html
+share/doc/mod_jserv/api/org/apache/jserv/JServSTMStore.html
+share/doc/mod_jserv/api/org/apache/jserv/JServServletManager.ACLObjectInputStream.html
+share/doc/mod_jserv/api/org/apache/jserv/package-summary.html
+share/doc/mod_jserv/api/stylesheet.css
+share/doc/mod_jserv/api/serialized-form.html
+share/doc/mod_jserv/api/packages.html
+share/doc/mod_jserv/api/overview-tree.html
+share/doc/mod_jserv/api/overview-summary.html
+share/doc/mod_jserv/api/package-list
+share/doc/mod_jserv/api/index.html
+share/doc/mod_jserv/api/index-all.html
+share/doc/mod_jserv/api/help-doc.html
+share/doc/mod_jserv/api/deprecated-list.html
+share/doc/mod_jserv/api/allclasses-frame.html
+share/doc/mod_jserv/api/overview-frame.html
 share/doc/mod_jserv/FAQ.html
 share/doc/mod_jserv/STATUS.txt
 share/doc/mod_jserv/bugs.html
@@ -46,112 +137,19 @@ share/doc/mod_jserv/support.html
 share/doc/mod_jserv/upgrade.html
 share/doc/mod_jserv/y2k.html
 share/doc/mod_jserv/zones.html
-docs/api/org/apache/java/io/SimpleFileFilter.html
-docs/api/org/apache/java/io/package-tree.html
-docs/api/org/apache/java/io/package-frame.html
-docs/api/org/apache/java/io/Logger.html
-docs/api/org/apache/java/io/LogRecord.html
-docs/api/org/apache/java/io/LogWriter.html
-docs/api/org/apache/java/io/LogWriter.Agent.html
-docs/api/org/apache/java/io/ReadFullyInputStream.html
-docs/api/org/apache/java/io/package-summary.html
-docs/api/org/apache/java/lang/TimeoutException.html
-docs/api/org/apache/java/lang/package-tree.html
-docs/api/org/apache/java/lang/package-frame.html
-docs/api/org/apache/java/lang/Stoppable.html
-docs/api/org/apache/java/lang/AdaptiveClassLoader.html
-docs/api/org/apache/java/lang/AdaptiveClassLoader.ClassCacheEntry.html
-docs/api/org/apache/java/lang/Bytes.html
-docs/api/org/apache/java/lang/Lock.html
-docs/api/org/apache/java/lang/Semaphore.html
-docs/api/org/apache/java/lang/package-summary.html
-docs/api/org/apache/java/net/package-summary.html
-docs/api/org/apache/java/net/package-tree.html
-docs/api/org/apache/java/net/package-frame.html
-docs/api/org/apache/java/net/AuthenticatedServerSocket.html
-docs/api/org/apache/java/net/AuthenticatedSocket.html
-docs/api/org/apache/java/net/AuthenticationException.html
-docs/api/org/apache/java/recycle/pool/package-summary.html
-docs/api/org/apache/java/recycle/pool/package-tree.html
-docs/api/org/apache/java/recycle/pool/package-frame.html
-docs/api/org/apache/java/recycle/pool/Worker.html
-docs/api/org/apache/java/recycle/pool/WorkerContainer.html
-docs/api/org/apache/java/recycle/pool/WorkerPool.html
-docs/api/org/apache/java/recycle/package-tree.html
-docs/api/org/apache/java/recycle/package-frame.html
-docs/api/org/apache/java/recycle/Controller.html
-docs/api/org/apache/java/recycle/Recyclable.html
-docs/api/org/apache/java/recycle/RecycleBin.html
-docs/api/org/apache/java/recycle/AdaptiveController.html
-docs/api/org/apache/java/recycle/Container.html
-docs/api/org/apache/java/recycle/ControlledContainer.html
-docs/api/org/apache/java/recycle/ControllerFactory.html
-docs/api/org/apache/java/recycle/DefaultController.html
-docs/api/org/apache/java/recycle/GaussianController.html
-docs/api/org/apache/java/recycle/LimitedContainer.html
-docs/api/org/apache/java/recycle/MinMaxController.html
-docs/api/org/apache/java/recycle/RecycleBinIsEmpty.html
-docs/api/org/apache/java/recycle/package-summary.html
-docs/api/org/apache/java/recycle/RecycleBinIsFull.html
-docs/api/org/apache/java/security/package-summary.html
-docs/api/org/apache/java/security/package-tree.html
-docs/api/org/apache/java/security/package-frame.html
-docs/api/org/apache/java/security/MD5.html
-docs/api/org/apache/java/security/MessageDigest.html
-docs/api/org/apache/java/util/SimpleQueue.html
-docs/api/org/apache/java/util/package-tree.html
-docs/api/org/apache/java/util/package-frame.html
-docs/api/org/apache/java/util/Configurations.html
-docs/api/org/apache/java/util/ConfigurationsRepository.html
-docs/api/org/apache/java/util/ExtendedProperties.html
-docs/api/org/apache/java/util/ExtendedProperties.PropertiesReader.html
-docs/api/org/apache/java/util/ExtendedProperties.PropertiesTokenizer.html
-docs/api/org/apache/java/util/package-summary.html
-docs/api/org/apache/jserv/JServUtils.html
-docs/api/org/apache/jserv/package-tree.html
-docs/api/org/apache/jserv/package-frame.html
-docs/api/org/apache/jserv/JServDefs.html
-docs/api/org/apache/jserv/JServLogChannels.html
-docs/api/org/apache/jserv/JServSendError.html
-docs/api/org/apache/jserv/Ajpv12InputStream.html
-docs/api/org/apache/jserv/JServ.html
-docs/api/org/apache/jserv/JServConnection.html
-docs/api/org/apache/jserv/JServConnection.JServInputStream.html
-docs/api/org/apache/jserv/JServConnection.JServOutputStream.html
-docs/api/org/apache/jserv/JServContext.html
-docs/api/org/apache/jserv/JServLog.html
-docs/api/org/apache/jserv/JServServletManager.html
-docs/api/org/apache/jserv/JServSession.html
-docs/api/org/apache/jserv/JServSTMStore.html
-docs/api/org/apache/jserv/JServServletManager.ACLObjectInputStream.html
-docs/api/org/apache/jserv/package-summary.html
-docs/api/stylesheet.css
-docs/api/serialized-form.html
-docs/api/packages.html
-docs/api/overview-tree.html
-docs/api/overview-summary.html
-docs/api/package-list
-docs/api/index.html
-docs/api/index-all.html
-docs/api/help-doc.html
-docs/api/deprecated-list.html
-docs/api/allclasses-frame.html
-docs/api/overview-frame.html
-@dirrm docs/api/org/apache/java/io
-@dirrm docs/api/org/apache/java/lang
-@dirrm docs/api/org/apache/java/net
-@dirrm docs/api/org/apache/java/recycle/pool
-@dirrm docs/api/org/apache/java/recycle
-@dirrm docs/api/org/apache/java/security
-@dirrm docs/api/org/apache/java/util
-@dirrm docs/api/org/apache/java
-@dirrm docs/api/org/apache/jserv
-@dirrm docs/api/org/apache
-@dirrm docs/api/org
-@dirrm docs/api
-@dirrm docs
 @dirrm etc/apache/jserv
 @dirrm share/java/servlets
+@dirrm share/doc/mod_jserv/api/org/apache/java/io
+@dirrm share/doc/mod_jserv/api/org/apache/java/lang
+@dirrm share/doc/mod_jserv/api/org/apache/java/net
+@dirrm share/doc/mod_jserv/api/org/apache/java/recycle/pool
+@dirrm share/doc/mod_jserv/api/org/apache/java/recycle
+@dirrm share/doc/mod_jserv/api/org/apache/java/security
+@dirrm share/doc/mod_jserv/api/org/apache/java/util
+@dirrm share/doc/mod_jserv/api/org/apache/java
+@dirrm share/doc/mod_jserv/api/org/apache/jserv
+@dirrm share/doc/mod_jserv/api/org/apache
+@dirrm share/doc/mod_jserv/api/org
 @dirrm share/doc/mod_jserv/api
 @dirrm share/doc/mod_jserv/future
 @dirrm share/doc/mod_jserv/images
