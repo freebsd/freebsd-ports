@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	plex
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.3
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.cosc.canterbury.ac.nz/~greg/python/Plex/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	Plex${PORTVERSION}
+DISTNAME=	Plex-${PORTVERSION}
 
 MAINTAINER=	perky@FreeBSD.org
 
