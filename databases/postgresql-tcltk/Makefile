@@ -8,16 +8,18 @@
 PORTNAME=	postgresql-tcltk
 CATEGORIES=	databases tcl83 tk83
 
-MAINTAINER=	girgen@partitur.se
+MAINTAINER=	girgen@pingpong.net
 
+POSTGRESQL_PORT?=	databases/postgresql7
 POSTGRESQL_SUBPORT=YES
-.include <${.CURDIR}/../postgresql7/Makefile>
+.include <${.CURDIR}/../../${POSTGRESQL_PORT}/Makefile>
 
 LIB_DEPENDS=	tcl${TCLVERSION:S/.//}:${PORTSDIR}/lang/tcl${TCLVERSION:S/.//} \
-		pq:${PORTSDIR}/databases/postgresql7
+		pq:${PORTSDIR}/${POSTGRESQL_PORT}
+RUN_DEPENDS=	postgres:${PORTSDIR}/${POSTGRESQL_PORT}
 
-# you can use "make TCLVERSION=8.4" or similar for your favourite tcl version
-TCLVERSION?=	8.3
+# you can use "make TCLVERSION=8.3" or similar for your favourite tcl version
+TCLVERSION?=	8.4
 PLIST_SUB+=	TCLVERSION=${TCLVERSION}
 CONFIGURE_ARGS=	--with-tcl \
 		--with-tclconfig=${TCLCONFIG} \
@@ -26,6 +28,13 @@ CONFIGURE_ARGS=	--with-tcl \
 TCL_INCDIR=	${LOCALBASE}/include/tcl${TCLVERSION}
 TCLCONFIG=	${LOCALBASE}/lib/tcl${TCLVERSION}
 MAKE_ENV+=	TCL_INCDIR=${TCL_INCDIR}
+CONFIGURE_ENV+=	LIBS="-lm -L${LOCALBASE}/lib -ltcl${TCLVERSION:S/.//}" \
+		CFLAGS=-DPGTCL_USE_TCLOBJ
+
+.if defined(WITHOUT_X11)
+WITHOUT_TK=	yes
+.endif
+
 CONFIGURE_ENV+=	LIBS="-lm -L${LOCALBASE}/lib -ltcl${TCLVERSION:S/.//}" \
 		CFLAGS=-DPGTCL_USE_TCLOBJ
 
@@ -50,16 +59,10 @@ PLIST_SUB+=	TK=""
 do-build:
 	@ cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${GMAKE} -C src/bin/pgtclsh
 	@ cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${GMAKE} -C src/interfaces/libpgtcl
-.if !defined(WITHOUT_TK)
-	@ cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${GMAKE} -C src/bin/pgaccess
-.endif
 
 do-install:
 	@ cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${GMAKE} -C src/bin/pgtclsh install
 	@ cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${GMAKE} -C src/interfaces/libpgtcl install
-.if !defined(WITHOUT_TK)
-	@ cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${GMAKE} -C src/bin/pgaccess install
-.endif
 # Preparing a loadable TCL-package (pkgIndex.tcl)
 	@${MKDIR} ${PREFIX}/lib/tcl${TCLVERSION}/Pgtcl1.3
 	@${SED} "s|%%PREFIX%%|${PREFIX}|g" < ${FILESDIR}/pkgIndex.tcl.in \
