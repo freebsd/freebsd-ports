@@ -14,7 +14,7 @@ CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=modauthkerb
 
-MAINTAINER=	wollman@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Apache module for authenticating users with Kerberos v5
 
 #
