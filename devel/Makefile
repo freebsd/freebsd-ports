@@ -210,6 +210,7 @@
     SUBDIR += libusb
     SUBDIR += libuta
     SUBDIR += libvanessa_logger
+    SUBDIR += libvanessa_socket
     SUBDIR += libxalloc
     SUBDIR += lincvs
     SUBDIR += linguist
