@@ -17,7 +17,6 @@ COMMENT=	A OCAML/GTK GUI for the mldonkey peer-to-peer network client
 
 ONLY_FOR_ARCHS= i386 alpha
 USE_BZIP2=	yes
-USE_GNOMENG=    yes
 USE_GNOME=      gtk12
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-distrib-${PORTVERSION:S/.r/rc/}-0

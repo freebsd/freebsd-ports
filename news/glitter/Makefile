@@ -17,7 +17,6 @@ MAINTAINER=	greg@gregnet.net
 COMMENT=	A free GTK based binary downloader
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomelibs gtk12
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes

@@ -14,7 +14,6 @@ MAINTAINER=	nakai@FreeBSD.org
 COMMENT=	A simple network library built upon Glib
 
 USE_REINPLACE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomehack glib12
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes

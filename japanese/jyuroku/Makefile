@@ -17,7 +17,6 @@ COMMENT=	Japanese address book
 
 ALL_TARGET=
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_REINPLACE=	yes
 

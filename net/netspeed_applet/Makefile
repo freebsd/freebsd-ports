@@ -19,7 +19,6 @@ LIB_DEPENDS=	panel-applet-2.0:${PORTSDIR}/x11/gnomepanel \
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomehier gnomeprefix gnomehack
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

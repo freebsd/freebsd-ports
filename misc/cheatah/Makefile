@@ -21,7 +21,6 @@ RUN_DEPENDS=	${LOCALBASE}/share/sword/mods.d:${PORTSDIR}/misc/sword-modules
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 
 MAINDIR=	${.CURDIR}/../sword

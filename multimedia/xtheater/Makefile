@@ -23,7 +23,6 @@ LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 
 USE_BZIP2=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_MESA=	yes
 USE_REINPLACE=	yes

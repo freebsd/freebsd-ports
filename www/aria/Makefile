@@ -17,7 +17,6 @@ MAINTAINER=	nakai@FreeBSD.org
 COMMENT=	Yet another download tool
 
 USE_BZIP2=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_OPENSSL=	yes
 USE_GMAKE=	yes

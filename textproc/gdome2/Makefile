@@ -16,7 +16,6 @@ COMMENT=	Gnome DOM Engine
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 
-USE_GNOMENG=	yes
 USE_GNOME=	glib12 gnomehack
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes

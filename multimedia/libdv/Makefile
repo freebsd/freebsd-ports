@@ -18,7 +18,6 @@ COMMENT=	Quasar DV codec (libdv): software codec for DV video encoding format
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		popt.0:${PORTSDIR}/devel/popt
 
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes

@@ -20,7 +20,6 @@ LIB_DEPENDS=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_MESA=	yes
 USE_REINPLACE=	yes

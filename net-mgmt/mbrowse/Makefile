@@ -20,7 +20,6 @@ LIB_DEPENDS=	netsnmp.5:${PORTSDIR}/net/net-snmp
 .endif
 
 GNU_CONFIGURE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 CONFIGURE_ARGS+=	--with-snmp-prefix=${LOCALBASE}
 

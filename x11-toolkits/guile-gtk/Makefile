@@ -21,7 +21,6 @@ LIB_DEPENDS=	guile.10:${PORTSDIR}/lang/guile
 WRKSRC=		${WRKDIR}/${DISTNAME}/guile-gtk
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes

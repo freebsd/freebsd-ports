@@ -18,7 +18,6 @@ COMMENT?=	X Multimedia System --- An audio player with a Winamp GUI
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12 gnomehack libxml
 USE_REINPLACE=	yes
 WANT_GNOME=	yes

@@ -21,7 +21,6 @@ PATCH_DIST_STRIP= -p1
 MAINTAINER=	flathill@FreeBSD.org
 COMMENT=	Library to add ICQ communication support to your software
 
-USE_GNOMENG=	yes
 USE_GNOME=	glib12
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes

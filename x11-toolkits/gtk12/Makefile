@@ -20,7 +20,6 @@ LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	glib12
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes

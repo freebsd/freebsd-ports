@@ -21,7 +21,6 @@ LIB_DEPENDS=	gpilotd.1:${PORTSDIR}/palm/gnomepilot
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomelibs libglade gnomevfs
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--with-pisock=${LOCALBASE}

@@ -15,7 +15,6 @@ COMMENT=	Quintuple Agent is a program that stores secrets for you
 
 LIB_DEPENDS+=	intl.4:${PORTSDIR}/devel/gettext
 
-USE_GNOMENG=	yes
 USE_GNOME=	glib12
 .ifndef(WITHOUT_X11)
 USE_GNOME+=	gtk12

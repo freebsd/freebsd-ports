@@ -24,7 +24,6 @@ NOCLEANDEPENDS= yes
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gdkpixbuf gnomelibs gnomehack gnomeprefix gconf bonobo esound
 USE_BISON=	yes
 # Clear configure target so we stop getting binaries prefixed with i386-portbld-freebsd46

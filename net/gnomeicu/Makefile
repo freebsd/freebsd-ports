@@ -18,7 +18,6 @@ LIB_DEPENDS+=	gnet.1:${PORTSDIR}/net/gnet
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack libglade libpanel gdkpixbuf
 GNU_CONFIGURE=	yes
 USE_GMAKE=		yes

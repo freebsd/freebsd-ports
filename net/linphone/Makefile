@@ -21,7 +21,6 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 LIBTOOLFILES=	configure oRTP/configure speex/configure osipua/configure
-USE_GNOMENG=	yes
 USE_GNOME=	gnomehack gnomeprefix
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

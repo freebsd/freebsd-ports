@@ -18,7 +18,6 @@ LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomelibs gdkpixbuf
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes

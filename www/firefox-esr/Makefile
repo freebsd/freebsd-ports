@@ -37,7 +37,6 @@ USE_PERL5=		yes
 USE_REINPLACE=		yes
 HAS_CONFIGURE=		yes
 
-USE_GNOMENG=		yes
 USE_GNOME=		gtk12 orbit
 
 NO_MTREE=		yes

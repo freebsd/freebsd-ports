@@ -18,7 +18,6 @@ COMMENT=	GTK+ engine theme based on the look of MacOS
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes

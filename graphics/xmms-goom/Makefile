@@ -23,7 +23,6 @@ RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gdkpixbuf
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

@@ -22,7 +22,6 @@ RUN_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
 RUN_DEPENDS+=	ports-config:${PORTSDIR}/devel/hs-hpl
 .endif
 
-USE_GNOMENG=	yes
 USE_GNOME=	glib12 gtk12
 
 USE_REINPLACE=	yes

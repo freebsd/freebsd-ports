@@ -17,7 +17,6 @@ LIB_DEPENDS=	glib-2.0.200:${PORTSDIR}/devel/glib20
 
 LATEST_LINK=	gnet-glib2
 USE_REINPLACE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomehack
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes

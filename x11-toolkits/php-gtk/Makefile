@@ -28,7 +28,6 @@ GNU_CONFIGURE=	yes
 USE_AUTOCONF=	no
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 # Fix environment for self contained extensions
 ENVSCE=		-DHAVE_PHP_GTK=1 -DCOMPILE_DL_PHP_GTK=1	\

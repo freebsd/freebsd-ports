@@ -18,7 +18,6 @@ COMMENT=	A font view for Nautilus
 LIB_DEPENDS=	nautilus.2:${PORTSDIR}/x11-fm/nautilus2
 
 USE_BZIP2=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomehack gnomeprefix
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

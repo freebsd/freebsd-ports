@@ -16,7 +16,6 @@ COMMENT=	A 3D file viewer for GTK+
 
 LIB_DEPENDS=	gtkgl:${PORTSDIR}/x11-toolkits/gtkglarea
 
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_MESA=	yes
 GNU_CONFIGURE=	yes

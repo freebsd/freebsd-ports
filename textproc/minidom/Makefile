@@ -19,7 +19,6 @@ LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2 \
 		iconv.3:${PORTSDIR}/converters/libiconv
 
 USE_REINPLACE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	glib12
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

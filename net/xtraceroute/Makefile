@@ -20,7 +20,6 @@ RUN_DEPENDS=	${LOCALBASE}/bin/host:${PORTSDIR}/net/host
 
 USE_X_PREFIX=	yes
 USE_MESA=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gdkpixbuf
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-GL-prefix=${X11BASE}/lib \

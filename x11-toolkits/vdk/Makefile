@@ -15,7 +15,6 @@ MAINTAINER=	nakai@FreeBSD.org
 COMMENT=	C++ wrapper for GTK+ toolkit
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 WANT_GNOME=	yes
 USE_GNOME=	gtk12
 USE_LIBTOOL=	yes

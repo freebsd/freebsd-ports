@@ -19,7 +19,6 @@ LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
 
 USE_BISON=	yes
 USE_BZIP2=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

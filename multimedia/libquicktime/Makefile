@@ -22,7 +22,6 @@ LIB_DEPENDS=	vorbis.2:${PORTSDIR}/audio/libvorbis \
 		png.5:${PORTSDIR}/graphics/png
 
 USE_MESA=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes

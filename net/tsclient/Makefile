@@ -18,7 +18,6 @@ LIB_DEPENDS=	panel-applet-2.0:${PORTSDIR}/x11/gnomepanel
 RUN_DEPENDS=	rdesktop:${PORTSDIR}/net/rdesktop
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_REINPLACE=	yes
 USE_GNOME=	gnomeprefix gnomehack
 USE_GMAKE=	yes

@@ -24,7 +24,6 @@ LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 
 USE_MESA=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_LIBTOOL=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}

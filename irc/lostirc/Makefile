@@ -19,7 +19,6 @@ LIB_DEPENDS=	gtkmm-2.0.6:${PORTSDIR}/x11-toolkits/gtk--2 \
 		intl.4:${PORTSDIR}/devel/gettext
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomehack
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes

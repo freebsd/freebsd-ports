@@ -29,7 +29,6 @@ WRKSRC=		${WRKDIR}/bluefish-gtk2
 NO_LATEST_LINK=	yes
 #USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomehier
 USE_PERL5_BUILD=	yes
 USE_X_PREFIX=	yes

@@ -18,7 +18,6 @@ ALL_TARGET=	#empty
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12 gnomehier
-USE_GNOMENG=	yes
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 

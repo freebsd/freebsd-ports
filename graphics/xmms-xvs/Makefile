@@ -23,7 +23,6 @@ XML2_CONFIG?=	${LOCALBASE}/bin/xml2-config
 XMMS_CONFIG?=	${X11BASE}/bin/xmms-config
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 WANT_GNOME=	yes
 USE_REINPLACE=	yes

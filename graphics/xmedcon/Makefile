@@ -36,7 +36,6 @@ post-clean:
 
 .if defined(WITH_X11)
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12 gdkpixbuf
 PLIST_SUB=	X11=""
 .else
@@ -47,7 +46,6 @@ PLIST_SUB=	X11="@comment "
 .if !defined(WITH_GLIB)
 CONFIGURE_ARGS+=	--disable-glib
 .else
-USE_GNOMENG=	yes
 USE_GNOME+=	glib12
 .endif
 

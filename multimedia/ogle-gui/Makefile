@@ -22,7 +22,6 @@ LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
 RUN_DEPENDS=	ogle:${PORTSDIR}/multimedia/ogle
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomehack \
 		gnomehier \
 		gnomeprefix \

@@ -19,7 +19,6 @@ COMMENT=	A GTK+ theme engine based on the Xenophilia and Interface engines
 WRKSRC=		${WRKDIR}/XenoStep
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 ALL_TARGET=	# empty
 MAKE_ENV=	MKDIR="${MKDIR}"

@@ -22,7 +22,6 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Gtk.pm:
 LIB_DEPENDS=	gimp.2:${PORTSDIR}/graphics/gimp1
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes

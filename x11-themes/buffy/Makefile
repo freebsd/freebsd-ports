@@ -18,7 +18,6 @@ COMMENT=	A GTK theme engine looking like SGI enhanced Motif (aka Roxy)
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_LIBTOOL=	yes
 

@@ -23,7 +23,6 @@ DIST_SUBDIR=	nessus
 WRKSRC=		${WRKDIR}/nessus-core
 
 USE_LIBTOOL=	yes
-USE_GNOMENG=	yes
 WANT_GNOME=	yes
 
 .include <bsd.port.pre.mk>

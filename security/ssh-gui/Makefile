@@ -16,7 +16,6 @@ COMMENT=	A front-end for ssh which can open multiple xterms
 
 RUN_DEPENDS=	ssh:${PORTSDIR}/security/openssh
 
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 ALL_TARGET=	ssh-gui
 

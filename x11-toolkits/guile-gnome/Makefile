@@ -20,7 +20,6 @@ LIB_DEPENDS=	guilegtk-1.2.0:${PORTSDIR}/x11-toolkits/guile-gtk
 
 USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix bonobo gtkhtml libglade
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-bonobo --with-gtkhtml --without-gal \

@@ -16,7 +16,6 @@ MAINTAINER=	markp@FreeBSD.org
 COMMENT=	A flexible X utility for managing many image files
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	imlib
 
 do-install:

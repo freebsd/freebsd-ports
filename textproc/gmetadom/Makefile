@@ -23,7 +23,6 @@ LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2 \
 		gdome:${PORTSDIR}/textproc/gdome2 \
 		iconv:${PORTSDIR}/converters/libiconv
 
-USE_GNOMENG=	yes
 USE_GNOME=	glib12
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \

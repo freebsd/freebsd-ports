@@ -20,7 +20,6 @@ COMMENT=	Ruby binding for GTK+
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 USE_XLIB=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 
 .include "${.CURDIR}/../../x11/ruby-gnome/Makefile.common"

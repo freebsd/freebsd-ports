@@ -20,7 +20,6 @@ LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext \
 		ltdl:${PORTSDIR}/devel/libtool
 
 USE_REINPLACE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	glib12 gtk12
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

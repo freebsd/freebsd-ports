@@ -28,7 +28,6 @@ LIB_DEPENDS=	Fnlib.0:${PORTSDIR}/graphics/fnlib \
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	esound imlib
 USE_REINPLACE=	yes
 USE_FREETYPE=	yes

@@ -20,7 +20,6 @@ LIB_DEPENDS=    gnomevfs-2.0:${PORTSDIR}/devel/gnomevfs2 \
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=    yes
 USE_GNOME=      gnomeprefix gnomehack gnomehier
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

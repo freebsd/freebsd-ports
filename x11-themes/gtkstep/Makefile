@@ -15,7 +15,6 @@ COMMENT=	A theme module to make GTK+ look like the NeXTSTEP(tm) interface
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_LIBTOOL=	yes
 

@@ -31,7 +31,6 @@ BUILD_DEPENDS+=	automake14:${PORTSDIR}/devel/automake14
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-USE_GNOMENG=	yes
 WANT_GNOME=	yes
 .if defined(WITH_REMEMBER)
 USE_GMAKE=	yes

@@ -16,7 +16,6 @@ COMMENT=	A GTK+ window manager
 LIB_DEPENDS=	xml.5:${PORTSDIR}/textproc/libxml
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

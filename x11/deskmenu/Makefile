@@ -15,7 +15,6 @@ MAINTAINER=	matt@peterson.org
 COMMENT=	X11 application launcher
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
 

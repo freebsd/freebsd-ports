@@ -15,7 +15,6 @@ MASTER_SITES=	http://peeper.sourceforge.net/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	View an area of the screen at a certain magnification
 
-USE_GNOMENG=	yes
 USE_GNOME=	imlib
 USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} `${IMLIB_CONFIG} --cflags-gdk`" \

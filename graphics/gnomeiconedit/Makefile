@@ -16,7 +16,6 @@ MAINTAINER=	j.el-rayes@muthaland.at
 COMMENT=	A small GNOME Icon Editor
 
 USE_REINPLACE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack bonobo gnomeprint
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes

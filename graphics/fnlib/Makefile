@@ -16,7 +16,6 @@ COMMENT=	Fonts and font libraries necessary for Enlightenment
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	imlib
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes

@@ -26,7 +26,6 @@ LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms \
 USE_AUTOMAKE_VER=	15
 USE_AUTOCONF=	yes
 USE_BZIP2=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	glib12
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes

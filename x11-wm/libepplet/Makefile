@@ -18,7 +18,6 @@ COMMENT=	Library for building enlightenment dock applications
 WRKSRC=		${WRKDIR}/Epplets-${PORTVERSION}
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	imlib
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	EROOT=${X11BASE}/share/enlightenment \

@@ -17,7 +17,6 @@ MAINTAINER=	ijliao@FreeBSD.org
 COMMENT=	Graphical traceroute utility
 
 USE_REINPLACE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gdkpixbuf libcapplet
 
 post-patch:

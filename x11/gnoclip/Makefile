@@ -14,7 +14,6 @@ MAINTAINER=	edybsd@yahoo.com.ar
 COMMENT=	A simple workspace switcher for gnome environment
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix libpanel
 
 ALL_TARGET=	gnoclip_applet

@@ -14,7 +14,6 @@ MASTER_SITES=	ftp://ftp.wu-ftpd.org/pub/support/	\
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Compiles information about file transfers from logfiles
 
-USE_GNOMENG=	yes
 USE_GNOME=	glib12
 GNU_CONFIGURE=	yes
 

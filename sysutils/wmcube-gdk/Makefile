@@ -18,7 +18,6 @@ COMMENT=	wmcube-gdk is a modified version of the dockapp wmCube
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 MAKEFILE=	Makefile.FREEBSD
 

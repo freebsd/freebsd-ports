@@ -19,7 +19,6 @@ COMMENT=	A lightweight web browser for the Gnome Desktop Environment
 
 LIB_DEPENDS=	neon.23:${PORTSDIR}/www/neon
 
-USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomelibs gtkhtml
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes

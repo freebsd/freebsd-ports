@@ -17,7 +17,6 @@ COMMENT=	A GTK+ based program that lets you edit you XFree86 mouse cursors
 LIB_DEPENDS=	gtkmm.2:${PORTSDIR}/x11-toolkits/gtk--
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 

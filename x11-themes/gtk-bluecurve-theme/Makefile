@@ -21,7 +21,6 @@ BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm2cpio \
 WRKSRC= 	${WRKDIR}/redhat-artwork-${PORTVERSION}
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gdkpixbuf
 USE_REINPLACE=	yes
 

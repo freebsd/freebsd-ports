@@ -20,7 +20,6 @@ LIB_DEPENDS=	gtkmm:${PORTSDIR}/x11-toolkits/gtk-- \
 		icq2000.5:${PORTSDIR}/net/libicq2000
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 WANT_GNOME=	yes
 USE_REINPLACE=	yes

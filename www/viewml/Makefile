@@ -22,7 +22,6 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	imlib
 USE_BISON=	yes
 CFLAGS+=	-fpermissive -include /usr/include/sys/types.h \

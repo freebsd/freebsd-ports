@@ -23,7 +23,6 @@ SHLIB_VERSION=	${PORTVERSION:S/1.2.//}
 
 USE_MESA=	yes
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	libcapplet libglade
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes

@@ -17,7 +17,6 @@ COMMENT=	Supports reading/writing of MJPEG video in YUV 4:2:2 JPEG
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
 USE_REINPLACE=	yes

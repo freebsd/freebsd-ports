@@ -19,7 +19,6 @@ LIB_DEPENDS=	epplet.1:${PORTSDIR}/x11-wm/libepplet
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	imlib
 
 .include <bsd.port.mk>

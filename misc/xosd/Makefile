@@ -22,7 +22,6 @@ LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
 XMMS_CONFIG?=	${X11BASE}/bin/xmms-config
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes

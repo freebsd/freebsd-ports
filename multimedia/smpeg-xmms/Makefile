@@ -19,7 +19,6 @@ LIB_DEPENDS=	smpeg.1:${PORTSDIR}/multimedia/smpeg \
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \

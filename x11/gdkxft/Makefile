@@ -19,7 +19,6 @@ LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
 		Xft.2:${PORTSDIR}/x11-fonts/Xft
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 WANT_GNOME=	yes
 USE_REINPLACE=	yes

@@ -16,7 +16,6 @@ COMMENT=	A components intended to be shared between GNOME development tools
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack bonobo gnomevfs
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes

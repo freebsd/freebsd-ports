@@ -15,7 +15,6 @@ RUN_DEPENDS=	nmap:${PORTSDIR}/security/nmap
 MASTERDIR=	${.CURDIR}/../nmap
 PLIST=		${.CURDIR}/pkg-plist
 
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 
 MAN1=		nmapfe.1 xnmap.1

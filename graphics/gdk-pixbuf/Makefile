@@ -23,7 +23,6 @@ LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png \
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME+=	gnomehack gtk12
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes

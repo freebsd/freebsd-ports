@@ -29,7 +29,6 @@ PLIST_SUB=	DOCDIR=share/doc/${PORTNAME}
 MODIFY=		Makefile.in data/Makefile.in
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomelibs
 
 pre-patch:

@@ -15,7 +15,6 @@ MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Multilingual X11 terminal emulator
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	imlib
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes

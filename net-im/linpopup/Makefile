@@ -20,7 +20,6 @@ WRKSRC=		${WRKDIR}/LinPopUp-${PORTVERSION}/src
 ALL_TARGET=
 MAN1=		linpopup.1 LinPopUp.1
 
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_X_PREFIX=	yes
 

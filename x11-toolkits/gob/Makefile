@@ -15,7 +15,6 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A preprocessor for making GTK+ objects with inline C
 
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

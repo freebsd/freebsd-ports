@@ -18,7 +18,6 @@ COMMENT=	A theme engine based on GtkStep and Step-pastel
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.6
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_LIBTOOL=	yes
 

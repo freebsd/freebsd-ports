@@ -18,7 +18,6 @@ COMMENT=	BeOS look-alike GTK+ theme engine
 WRKSRC=		${WRKDIR}/GTKBeEngine
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes

@@ -14,7 +14,6 @@ MAINTAINER=	edwin@mavetju.org
 COMMENT=	Graphical overview of traffic going through your IPFW rules
 
 USE_REINPLACE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 MAKE_ENV+=	MANPREFIX="${MANPREFIX}"
 

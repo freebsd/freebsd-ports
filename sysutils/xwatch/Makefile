@@ -14,7 +14,6 @@ MAINTAINER=	mph@freebsd.org
 COMMENT=	A Gtk-based program for watching files (e.g. logs) in a window
 
 USE_XLIB=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 

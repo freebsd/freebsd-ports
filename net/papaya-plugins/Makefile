@@ -21,7 +21,6 @@ RUN_DEPENDS=	papaya:${PORTSDIR}/net/papaya
 USE_SUBMAKE=	yes
 IS_INTERACTIVE=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomehack gnomeprefix gnomelibs
 GNU_CONFIGURE=	yes
 MAKE_ARGS+=	CXX="${CXX}"

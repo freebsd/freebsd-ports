@@ -18,7 +18,6 @@ COMMENT=	A GTK+ version of Hx, a UNIX Hotline Client
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 USE_XLIB=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gdkpixbuf
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

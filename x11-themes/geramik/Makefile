@@ -20,7 +20,6 @@ WRKSRC=		${WRKDIR}/Geramik-${PORTVERSION}
 
 USE_LIBTOOL=	yes
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12 imlib
 USE_GMAKE=	yes
 

@@ -22,7 +22,6 @@ LIB_DEPENDS=	gnomemm-1.2.10:${PORTSDIR}/x11-toolkits/gnome--
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack libglade gal
 USE_LIBTOOL=	yes
 LIBTOOLFILES=	configure jabberoo/configure

@@ -24,7 +24,6 @@ BROKEN=		'does not support licq >= 1.2.0'
 # It breaks the build for some reason
 #USE_LIBTOOL=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes

@@ -18,7 +18,6 @@ COMMENT=	Gnome applet to change video resolution
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.orig
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	libpanel
 GNU_CONFIGURE=	yes
 ALL_TARGET=	${PORTNAME}

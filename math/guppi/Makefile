@@ -20,7 +20,6 @@ LIB_DEPENDS=	guile.10:${PORTSDIR}/lang/guile
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomelibs bonobo libglade gal
 USE_PYTHON=	yes
 INSTALLS_SHLIB=	yes

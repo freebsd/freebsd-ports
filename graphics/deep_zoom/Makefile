@@ -20,7 +20,6 @@ LIB_DEPENDS=	Imlib2:${PORTSDIR}/graphics/imlib2 \
 
 IMLIB2_CONFIG=	${X11BASE}/bin/imlib2-config
 USE_REINPLACE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	glib12
 USE_GMAKE=	yes
 CFLAGS+=	-I${LOCALBASE}/include `${IMLIB2_CONFIG} --cflags`

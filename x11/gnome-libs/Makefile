@@ -25,7 +25,6 @@ USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomehack gnomeprefix esound gtk12 imlib libxml orbit
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes

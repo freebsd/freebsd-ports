@@ -15,7 +15,6 @@ COMMENT=	Xsu runs commands as root after prompting for the root password
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomelibs
 CONFIGURE_ARGS=	--su-pwd-out="Password:"
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

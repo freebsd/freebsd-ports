@@ -14,7 +14,6 @@ MAINTAINER=	sergei@kolobov.com
 COMMENT=	"GRaphics Over Miscellaneous Objects (Gromit)"
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 
 DOCS=		AUTHORS ChangeLog README

@@ -18,7 +18,6 @@ COMMENT=	GNOME filesystem indexer
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomehack gnomeprefix gnomehier gnomevfs
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-static

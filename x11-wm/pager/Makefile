@@ -20,7 +20,6 @@ RUN_DEPENDS=	${X11BASE}/bin/sawfish:${PORTSDIR}/x11-wm/sawfish
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
 USE_GNOME=	gtk12
-USE_GNOMENG=	yes
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 

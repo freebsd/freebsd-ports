@@ -19,7 +19,6 @@ COMMENT=	Record CD-R[W]s in disk-at-once mode
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_GNOMENG=	yes
 WANT_GNOME=	yes
 
 MAN1=		cdrdao.1

@@ -14,7 +14,6 @@ COMMENT=	Draw organic molecules easily and store them
 
 RUN_DEPENDS=	transfig:${PORTSDIR}/print/transfig
 
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

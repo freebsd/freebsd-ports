@@ -17,7 +17,6 @@ COMMENT=	X eye candy for displaying CPU and memory load in a dock
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 MAKE_ARGS+=	PREFIX="${PREFIX}"
 EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}

@@ -16,7 +16,6 @@ MAINTAINER=	nosuzuki@postcard.st
 COMMENT=	An image viewer with thumbnail-based file selector for X
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	imlib
 USE_GMAKE=	yes
 

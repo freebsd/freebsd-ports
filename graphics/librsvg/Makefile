@@ -21,7 +21,6 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomelibs gdkpixbuf
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes

@@ -17,7 +17,6 @@ LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/Xft
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	imlib
 
 CXXFLAGS+=	`imlib-config --cflags` `freetype-config --cflags`

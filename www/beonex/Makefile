@@ -35,7 +35,6 @@ EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude */CVS/* --exclude */macbuild/*\
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	orbit gtk12
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=					\

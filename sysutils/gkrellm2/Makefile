@@ -19,7 +19,6 @@ COMMENT=	A GTK based system monitor
 .if defined(GKRELLM_SERVER_ONLY)
 BUILD_WRKSRC=	${WRKSRC}/server
 INSTALL_WRKSRC=	${WRKSRC}/server
-USE_GNOMENG=	yes
 USE_GNOME=	glib12
 .else
 LIB_DEPENDS=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20
