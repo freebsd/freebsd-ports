@@ -6,24 +6,28 @@
 #
 
 PORTNAME=	wv
-PORTVERSION=	0.6.2
+PORTVERSION=	0.6.7
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wvware
 
 MAINTAINER=	mzaki@e-mail.ne.jp
 
-LIB_DEPENDS=	wmf.1:${PORTSDIR}/graphics/libwmf
+LIB_DEPENDS=	wmf.2:${PORTSDIR}/graphics/libwmf
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-ttf=${LOCALBASE} --with-wmf=${LOCALBASE} \
-		--with-png=${LOCALBASE} --with-xpm=${X11BASE}
 USE_GMAKE=	yes
-USE_XLIB=	yes
+USE_LIBTOOL=	yes
+CONFIGURE_ARGS=	--with-libwmf=${LOCALBASE} --with-libiconv=${LOCALBASE} \
+		--with-png=${LOCALBASE} --with-exporter
 
-MAN1=	wvAbw.1 wvCleanLatex.1 wvDVI.1 wvHtml.1 wvLatex.1 wvMime.1 \
-	wvPDF.1 wvPS.1 wvSummary.1 wvText.1 wvVersion.1 wvWare.1 wvWml.1
+MAN1=	wvAbw.1 wvCleanLatex.1 wvDVI.1 wvHtml.1 wvLatex.1 wvMime.1 wvPDF.1 \
+	wvPS.1 wvRTF.1 wvSummary.1 wvText.1 wvVersion.1 wvWare.1 wvWml.1
 MLINKS=	wvWare.1 wvConvert.1
+
+pre-patch:
+	@${PERL} -pi -e 's|<iconv.h>|<giconv.h>|g ; \
+		 s|-liconv|-lgiconv|g' ${WRKSRC}/configure
+	@find ${WRKSRC} -name '*.[ch]' | xargs ${PERL} -pi -e \
+		's|"iconv.h"|"giconv.h"|g'
 
 .include <bsd.port.mk>
