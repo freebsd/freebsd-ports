@@ -9,6 +9,7 @@
     SUBDIR += diablo
     SUBDIR += dnews
     SUBDIR += fidogate
+    SUBDIR += grn
     SUBDIR += gup
     SUBDIR += ifmail
     SUBDIR += inn
