@@ -2,7 +2,7 @@ Date::Set is a module for date/time sets. It allows you to generate
 groups of dates, like "every wednesday", and then find all the dates
 matching that pattern.
 
-WWW:	http://reefknot.sf.net
+WWW:	http://search.cpan.org/dist/Date-Set/
 
 - Michael Haro
 mharo@FreeBSD.org
