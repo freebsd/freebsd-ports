@@ -8,7 +8,8 @@
 PORTNAME=	wmicons
 PORTVERSION=	1.0
 CATEGORIES=	graphics windowmaker
-MASTER_SITES=	${MASTER_SITE_WINDOWMAKER} \
+MASTER_SITES=	${MASTER_SITE_LOCAL:S|%SUBDIR%|sobomax/wmicons|} \
+		${MASTER_SITE_WINDOWMAKER} \
 		${MASTER_SITE_PORTS_JP} \
 		http://nether.tky.hut.fi/iconstore/ \
 		http://www.itlb.te.noda.sut.ac.jp/~manome/wmaker/archive/ \
