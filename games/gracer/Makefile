@@ -26,7 +26,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 USE_GMAKE=	yes
 # for plib (sound):
-NEW_GCC=	yes
+USE_NEWGCC=	yes
 CONFIGURE_ARGS+= --with-plib=${X11BASE}
 
 .include <bsd.port.mk>
