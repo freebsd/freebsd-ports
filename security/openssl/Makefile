@@ -43,12 +43,15 @@ PKGNAMESUFFIX=	-overwrite-base
 PREFIX=		/usr
 SHLIBVER=	2
 OPENSSLDIR=	/etc/ssl
-MANPREFIX=	${PREFIX}/share
+MANPREFIX=	${PREFIX}/openssl
+PLIST_SUB+=	MANDIR=""
 .else
 OPENSSLDIR=	${PREFIX}/openssl
 MANPREFIX=	${PREFIX}
+PLIST_SUB+=	MANDIR="@comment "
 .endif
 
+MANPREFIX=	${PREFIX}
 MAKE_ENV+=	MANPREFIX=${MANPREFIX}
 
 MAN1=		CA.pl.1 asn1parse.1 ca.1 ciphers.1 crl.1 crl2pkcs7.1 dgst.1 \

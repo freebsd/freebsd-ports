@@ -83,6 +83,11 @@ openssl/openssl.cnf.sample
 @dirrm include/openssl
 @dirrm openssl/certs
 @dirrm openssl/lib
+%%MANDIR%%@dirrm openssl/man/man1
+%%MANDIR%%@dirrm openssl/man/man3
+%%MANDIR%%@dirrm openssl/man/man5
+%%MANDIR%%@dirrm openssl/man/man7 
+%%MANDIR%%@dirrm openssl/man   
 @dirrm openssl/misc
 @dirrm openssl/private
 @dirrm openssl
