@@ -1,9 +1,10 @@
-# $Id: Makefile,v 1.24 1995/11/26 12:47:37 asami Exp $
+# $Id: Makefile,v 1.25 1996/04/12 08:20:51 asami Exp $
 #
 
     SUBDIR += gmod
     SUBDIR += gsm
     SUBDIR += maplay
+    SUBDIR += mpegaudio
     SUBDIR += nas
     SUBDIR += playmidi
     SUBDIR += radio
