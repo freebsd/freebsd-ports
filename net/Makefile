@@ -271,6 +271,7 @@
     SUBDIR += p5-URI
     SUBDIR += p5-XPC
     SUBDIR += p5-perl-ldap
+    SUBDIR += passlogd
     SUBDIR += pathchar
     SUBDIR += pchar
     SUBDIR += pcnfsd
