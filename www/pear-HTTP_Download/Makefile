@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTTP_Download
-DISTVERSION=	1.0.0RC4
+DISTVERSION=	1.0.0RC5
 CATEGORIES=	www devel pear
 
 MAINTAINER=	antonio@php.net
@@ -35,9 +35,6 @@ IGNORE=		"You need PHP 4.2.0 or later to install PEAR::HTTP_Download"
 .if defined(WITH_PEAR_ARCHIVE_TAR)
 BUILD_DEPENDS+=	${PEARDIR}/Archive/Tar.php:${PORTSDIR}/archivers/pear-Archive_Tar
 .endif
-
-do-build:
-	${NADA}
 
 .include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
 .include <bsd.port.post.mk>
