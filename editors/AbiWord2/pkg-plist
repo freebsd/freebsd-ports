@@ -216,6 +216,7 @@ share/AbiSuite/AbiWord/strings/fi-FI.strings
 share/AbiSuite/AbiWord/strings/fr-FR.strings
 share/AbiSuite/AbiWord/strings/ga-IE.strings
 share/AbiSuite/AbiWord/strings/gl-ES.strings
+share/AbiSuite/AbiWord/strings/he-IL.strings
 share/AbiSuite/AbiWord/strings/hu-HU.strings
 share/AbiSuite/AbiWord/strings/id-ID.strings
 share/AbiSuite/AbiWord/strings/it-IT.strings
@@ -231,9 +232,11 @@ share/AbiSuite/AbiWord/strings/ro-RO.strings
 share/AbiSuite/AbiWord/strings/ru-RU.strings
 share/AbiSuite/AbiWord/strings/sk-SK.strings
 share/AbiSuite/AbiWord/strings/sl-SI.strings
+share/AbiSuite/AbiWord/strings/sr-SR.strings
 share/AbiSuite/AbiWord/strings/sv-SE.strings
 share/AbiSuite/AbiWord/strings/tr-TR.strings
 share/AbiSuite/AbiWord/strings/uk-UA.strings
+share/AbiSuite/AbiWord/strings/vi-VN.strings
 share/AbiSuite/AbiWord/strings/zh-CN.strings
 share/AbiSuite/AbiWord/strings/zh-HK.strings
 share/AbiSuite/AbiWord/strings/zh-TW.strings
