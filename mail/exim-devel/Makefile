@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	exim
-PORTVERSION=	4.00
+PORTVERSION=	${EXIM_VERSION}
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/email/exim/exim4/ \
 		http://www.exim.org/ftp/exim4/ \
 		ftp://ftp.is.co.za/networking/mail/transport/exim/exim4/
-DISTFILES=	exim-4.00.tar.bz2 exim-texinfo-4.00.tar.bz2
+DISTFILES=	exim-${EXIM_VERSION}.tar.bz2 \
+		exim-texinfo-${EXIM_DOCVERSION}.tar.bz2
 
 MAINTAINER=	sheldonh@FreeBSD.org
 
@@ -20,6 +21,11 @@ NO_LATEST_LINK=	yes
 USE_BZIP2=	yes
 
 MAN8=		exim.8
+
+EXIM_VERSION=	4.01
+EXIM_DOCVERSION=	4.00
+
+PLIST_SUB+=     EXIM_VERSION="${EXIM_VERSION}"
 
 .if defined(NOPORTDOCS)
 PKGMESSAGE=	${FILESDIR}/POST-INSTALL-NOTES
@@ -198,7 +204,7 @@ do-configure:
 	${MKDIR} ${WRKSRC}/Local
 	${SED} ${SEDLIST} < ${WRKSRC}/src/EDITME > ${WRKSRC}/Local/Makefile
 	cd ${WRKSRC}/doc && \
-	for i in ../../exim-texinfo-4.00/doc/* ; do \
+	for i in ../../exim-texinfo-${EXIM_DOCVERSION}/doc/* ; do \
 		${LN} -sf $$i ; \
 	done
 
