@@ -78,6 +78,7 @@
     SUBDIR += gnut
     SUBDIR += gopher
     SUBDIR += gtic
+    SUBDIR += gtk-gnutella
     SUBDIR += gtkyahoo
     SUBDIR += h2n
     SUBDIR += hesiod
