@@ -5,6 +5,7 @@
 # $FreeBSD$
 #
 
+PKGNAMESUFFIX=	-gtk
 MASTERDIR=	${.CURDIR}/../freeciv
 
 WITH_GTK=	yes
