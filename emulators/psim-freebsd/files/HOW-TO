@@ -6,10 +6,8 @@ Instructions for building and running the FreeBSD kernel under PSIM:
 	# cd src/sys/powerpc/conf
 	# config -g GENERIC
 
-2. On a NetBSD PPC system with the source NFS mounted, apply the Makefile.patch
-   to add the proper CWARN flags and remove the "-elf" flag.
-
-   Compile the kernel (your mount point may vary):
+2. On a NetBSD PPC system with the source NFS mounted, compile the kernel
+   (your mount point may vary):
 	# make -m /mnt/share/mk MACHINE_ARCH=powerpc
 
 3. On the FreeBSD system, grap /usr/src/release/write_mfs_in_kernel.c and
