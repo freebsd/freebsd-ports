@@ -1,0 +1,87 @@
+CC?=gcc
+LOCALBASE?=/usr/local
+CFLAGS+=-Wall -I${LOCALBASE}/include
+LIBS=-L${LOCALBASE}/lib -lm -lSDL -lttf
+OBJECTS=powerpak.o img.o img_gif.o img_ppm.o img_tif.o img_pcx.o img_bmp.o img_png.o img_jpg.o img_xxx.o \
+PowerDraw/powerdraw.o PowerDraw/gfx.o PowerDraw/primitives.o PowerDraw/sprites.o PowerDraw/truetype.o \
+PowerInput/keyboard.o PowerInput/mouse.o PowerInput/powerinput.o
+
+
+all: splash libPP.a libPP.so
+
+PowerDraw/powerdraw.o: PowerDraw/powerdraw.c
+	${CC} -o ${.TARGET} ${CFLAGS} -c ${.ALLSRC}
+
+PowerDraw/gfx.o: PowerDraw/gfx.c
+	${CC} -o ${.TARGET} ${CFLAGS} -c ${.ALLSRC}
+
+PowerDraw/primitives.o: PowerDraw/primitives.c
+	${CC} -o ${.TARGET} ${CFLAGS} -c ${.ALLSRC}
+
+PowerDraw/sprites.o: PowerDraw/sprites.c
+	${CC} -o ${.TARGET} ${CFLAGS} -c ${.ALLSRC}
+
+PowerDraw/truetype.o: PowerDraw/truetype.c
+	${CC} -o ${.TARGET} ${CFLAGS} -c ${.ALLSRC}
+
+PowerInput/keyboard.o: PowerInput/keyboard.c
+	${CC} -o ${.TARGET} ${CFLAGS} -c ${.ALLSRC}
+
+PowerInput/mouse.o: PowerInput/mouse.c
+	${CC} -o ${.TARGET} ${CFLAGS} -c ${.ALLSRC}
+
+PowerInput/powerinput.o: PowerInput/powerinput.c
+	${CC} -o ${.TARGET} ${CFLAGS} -c ${.ALLSRC}
+
+upgrade:splash installdirs
+	@echo "Deleting old libs from /usr/lib"
+	@rm -rf /usr/lib/libPP*
+	@rm -rf /usr/lib/libPD*
+	@rm -rf /usr/lib/libPI*
+	@echo "Deleting old headers from /usr/include/PowerPak"
+	@rm -rf /usr/include/PowerPak/*
+	@echo "Copying libraries to /usr/lib"
+	@cp  *.a *.so /usr/lib/
+	@echo "Copying headers to /usr/include/PowerPak"
+	@cp *.h /usr/include/PowerPak/
+	@cp ./PowerDraw/*.h /usr/include/PowerPak/
+	@cp ./PowerInput/*.h /usr/include/PowerPak/
+
+install: all installdirs
+	@echo "Copying libraries to /usr/lib"
+	@cp *.so *.a /usr/lib/
+	@echo "Copying headers to /usr/include/PowerPak"
+	@cp *.h /usr/include/PowerPak/
+	@cp ./PowerDraw/*.h /usr/include/PowerPak/
+	@cp ./PowerInput/*.h /usr/include/PowerPak/
+
+uninstall: splash
+	@echo "Deleting libPP libs from /usr/lib"
+	@rm -rf /usr/lib/libPP*
+	@echo "Deleting headers from /usr/include/PowerPak"
+	@rm /usr/include/PowerPak/*
+	@echo "Removing directory /usr/include/PowerPak"
+	@rmdir /usr/include/PowerPak
+
+clean:
+	@rm -rf *.o *.a *.so
+	@rm -rf ./PowerDraw/*.o
+	@rm -rf ./PowerInput/*.o
+
+libPP.a: $(OBJECTS)
+	@echo "Building static library (libPP.a)"
+	@ar rvs libPP.a $(OBJECTS)
+
+libPP.so: $(OBJECTS)
+	@echo "Building dynamic library (libPP.so)"
+	@$(CC) -D_REENTRANT -pthread -fpic -fPIC -shared -o libPP.so $(OBJECTS) $(LIBS)
+
+splash:
+	@echo ""
+	@echo "Building PowerPak"
+	@echo ""
+	@cat ASCII-Logo
+	@echo ""
+
+installdirs: mkinstalldirs
+	@./mkinstalldirs /usr/include/PowerPak
