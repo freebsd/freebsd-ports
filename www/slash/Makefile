@@ -15,7 +15,7 @@ DISTNAME=	slash-${PORTVERSION}
 MAINTAINER=	autrijus@autrijus.org
 COMMENT=	Slash-Like Automatic Storytelling Homepage system
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/mysqld_safe:${PORTSDIR}/databases/mysql40-server \
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql \
 		${SITE_PERL}/Bundle/Slash.pm:${PORTSDIR}/www/p5-Bundle-Slash
 RUN_DEPENDS=	${BUILD_DEPENDS} \
 		${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl
@@ -25,6 +25,9 @@ DEPRECATED=	${BROKEN}
 EXPIRATION_DATE=2004-04-16
 
 DOCS=		README INSTALL
+
+CONFLICTS=	metalist
+
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		FZ.3 Slash.3 Slash::Apache.3 Slash::Apache::Banlist.3 \
 		Slash::Apache::Log.3 Slash::Apache::User.3 \
