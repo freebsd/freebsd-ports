@@ -16,12 +16,9 @@ DISTNAME=	ANSIColor-${PORTVERSION}
 MAINTAINER=	dsh@vlink.ru
 
 USE_PERL5=	YES
-CONFIGURE_ARGS=	PREFIX=${PREFIX}
+PERL_CONFIGURE=	YES
 
 MAN3=		Term::ANSIColor.3
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-
-do-configure:
-		@ cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${PERL5} Makefile.PL ${CONFIGURE_ARGS}
 
 .include <bsd.port.mk>
