@@ -1,0 +1,9 @@
+This modules provides an interface to layout and generate images of
+directed graphs in a variety of formats (PostScript, PNG, etc.) using
+the "dot" and "neato" programs from the GraphViz project
+(http://www.graphviz.org/).
+
+WWW: http://search.cpan.org/search?dist=GraphViz
+
+-Anton
+<tobez@FreeBSD.org>
