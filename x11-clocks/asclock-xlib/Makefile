@@ -1,12 +1,12 @@
 # New ports collection makefile for:	asclock-xlib
-# Version required:	2.0.10
+# Version required:	2.0.11
 # Date created:		24 April 1999
 # Whom:			Jun Kuriyama <kuriyama@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/25 00:37:57 kuriyama Exp $
+# $Id: Makefile,v 1.2 1999/04/30 09:08:10 kuriyama Exp $
 #
 
-DISTNAME=	asclock-xlib-2.0.10
+DISTNAME=	asclock-xlib-2.0.11
 CATEGORIES=	x11-clocks afterstep windowmaker
 MASTER_SITES=	http://www.asclock.org/tar/
 
@@ -32,7 +32,7 @@ do-configure:
 .endif
 
 post-install:
-.for i in Freeamp Newstone Orb Stone analog beats classic penguin shaped
+.for i in Freeamp Newstone Orb Stone beats classic penguin shaped
 	(cd ${WRKSRC}/themes/${i}; \
 	  ${MKDIR} ${PREFIX}/share/asclock/${i}; \
 	  ${INSTALL_DATA} *.xpm config ${PREFIX}/share/asclock/${i}/ )

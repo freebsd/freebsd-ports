@@ -40,16 +40,6 @@ share/asclock/Stone/minute.xpm
 share/asclock/Stone/month.xpm
 share/asclock/Stone/second.xpm
 share/asclock/Stone/weekday.xpm
-share/asclock/analog/beats.xpm
-share/asclock/analog/clock.xpm
-share/asclock/analog/config
-share/asclock/analog/date.xpm
-share/asclock/analog/hour.xpm
-share/asclock/analog/led.xpm
-share/asclock/analog/minute.xpm
-share/asclock/analog/month.xpm
-share/asclock/analog/second.xpm
-share/asclock/analog/weekday.xpm
 share/asclock/beats/beats.xpm
 share/asclock/beats/clock.xpm
 share/asclock/beats/config
@@ -89,7 +79,6 @@ share/asclock/shaped/weekday.xpm
 @dirrm share/asclock/Newstone
 @dirrm share/asclock/Orb
 @dirrm share/asclock/Stone
-@dirrm share/asclock/analog
 @dirrm share/asclock/beats
 @dirrm share/asclock/classic
 @dirrm share/asclock/penguin
