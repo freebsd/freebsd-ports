@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xfce4-cpugraph-plugin
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.2
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	http://download.berlios.de/xfce-goodies/ \
 		http://matt.nerim.net/xfce-goodies/ \
