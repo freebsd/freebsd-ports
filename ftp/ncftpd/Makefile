@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	ncftpd
-PORTVERSION=	2.7.0
+PORTVERSION=	2.7.1
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.ncftp.com/ncftpd/${PORTVERSION}/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-freebsd4.2-${ARCH}-export
+DISTNAME=	${PORTNAME}-${PORTVERSION}-freebsd4.4-${ARCH}-export
 
 MAINTAINER=	jus@security.za.net
 
