@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	ratpoison
-PORTVERSION=	0.1.1
+PORTVERSION=	1.0.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	8@free.bsd.hu
+MAINTAINER=	mwm@mired.org
 
 MAN1=		ratpoison.1
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 
-.if		defined(NOPORTDOCS)
+.if defined(NOPORTDOCS)
 INSTALL_TARGET=	SUBDIRS=src install-exec
 .endif
 
