@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sitecopy
-PORTVERSION=	0.11.4
-PORTREVISION=	2
+PORTVERSION=	0.13.0
 CATEGORIES=	www
 MASTER_SITES=	http://www.lyra.org/sitecopy/
 
@@ -17,16 +16,23 @@ COMMENT=	Maintains remote websites, uses FTP or WebDAV to sync up with local cop
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib -lintl"
-CONFIGURE_ARGS=	--with-included-neon --with-libxml1
+CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib -lintl"
+CONFIGURE_ARGS=	--with-included-neon --with-libxml2
+USE_REINPLACE=	yes
+USE_GNOME=	libxml2
+USE_GETOPT_LONG=	yes
+USE_GMAKE=	yes
 
 .ifndef WITHOUT_SSL
 USE_OPENSSL=	yes
-CONFIGURE_ARGS+=--with-ssl=${OPENSSLBASE}
+CONFIGURE_ARGS+=	--with-ssl
 .endif
 
-USE_GMAKE=	yes
-
 MAN1=		sitecopy.1
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|;;|;|g' \
+		${WRKSRC}/src/sitestore.c
 
 .include <bsd.port.mk>
