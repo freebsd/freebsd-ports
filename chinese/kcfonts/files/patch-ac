@@ -1,5 +1,5 @@
---- kc12x24.c.orig	Wed Jan 19 02:14:33 2000
-+++ kc12x24.c	Wed Jan 19 03:03:44 2000
+--- kc12x24.c.orig	Sun Dec 17 01:20:19 1995
++++ kc12x24.c	Sun Apr 30 10:43:54 2000
 @@ -10,12 +10,12 @@
  char bdfhead[]=
  "STARTFONT 2.1\n"
@@ -15,6 +15,21 @@
  "FAMILY_NAME \"Fixed\"\n"
  "WEIGHT_NAME \"Medium\"\n"
  "SLANT \"R\"\n"
+@@ -36,7 +36,7 @@
+ "ENDPROPERTIES\n"
+ "CHARS 256\n";
+ 
+-void main( void )
++int main( void )
+ {
+ 	FILE *fr,*fw;
+ 	int i,j;
+@@ -68,4 +68,5 @@
+ 	}
+ 	
+ 	fprintf(fw, "ENDFONT\n");
++    return 0;
+ }
 --- kc15f.c.orig	Wed Jan 19 02:14:40 2000
 +++ kc15f.c	Wed Jan 19 03:05:11 2000
 @@ -12,22 +12,29 @@
@@ -97,9 +112,9 @@
 +"CHARSET_ENCODING \"0\"\n"
  "ENDPROPERTIES\n"
  "CHARS 13867\n";
- 
---- kc8x15.c.orig	Wed Jan 19 02:14:49 2000
-+++ kc8x15.c	Wed Jan 19 03:03:25 2000
+
+--- kc8x15.c.orig	Sun Dec 17 01:19:08 1995
++++ kc8x15.c	Sun Apr 30 10:45:07 2000
 @@ -10,12 +10,12 @@
  char bdfhead[]=
  "STARTFONT 2.1\n"
@@ -115,3 +130,18 @@
  "FAMILY_NAME \"Fixed\"\n"
  "WEIGHT_NAME \"Medium\"\n"
  "SLANT \"R\"\n"
+@@ -37,7 +37,7 @@
+ "CHARS 256\n";
+ 
+ 
+-void main( void )
++int main( void )
+ {
+ 	FILE *fr,*fw;
+ 	int i,j;
+@@ -69,4 +69,5 @@
+ 	}
+ 
+ 	fprintf(fw, "ENDFONT\n");
++	return 0;
+ }
