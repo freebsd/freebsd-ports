@@ -51,6 +51,8 @@ MAKE_ARGS+=	WITHOUT_MYSQL=YES
 LIB_DEPENDS+=	mysqlclient.${MYSQL${MYSQL_VER}_LIBVER}:${PORTSDIR}/databases/mysql${MYSQL_VER}-client
 .endif
 
+DOCS=		README FAQ.txt LICENSE
+
 pre-everything::
 	@${ECHO} ""
 	@${ECHO} "You may use the following build options:"
@@ -68,9 +70,9 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/schema.sql ${PREFIX}/share/${PORTNAME}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/README
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/FAQ.txt
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/LICENSE
+.for doc in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+.endfor
 .endif
 	@${CAT} ${PKGMESSAGE}
 
