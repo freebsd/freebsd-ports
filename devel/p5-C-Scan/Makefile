@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	C
 
 MAINTAINER=	jfitz@FreeBSD.org
 
-BUILD_DEPENDS= 	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/Data/Flow.pm:${PORTSDIR}/devel/p5-Data-Flow
+BUILD_DEPENDS= 	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Data/Flow.pm:${PORTSDIR}/devel/p5-Data-Flow
 
 USE_PERL5=	YES
 
