@@ -15,12 +15,13 @@ MASTER_SITES=	ftp://ftp.cs.ruu.nl/pub/MIDI/PROGRAMS/
 MAINTAINER=	ports@freebsd.org
 COMMENT=	A language designed for creating and editing standard MIDI files
 
+LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82
+
 .if ${MACHINE_ARCH} == "ia64" || ${MACHINE_ARCH} == "sparc64"
 IGNORE=		"ignored due to cast from pointer to integer of different size"
 .endif
 
-LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82
-
+INSTALLS_SHLIB=	yes
 MAKE_ENV=	TCL_GENERIC_DIR=${LOCALBASE}/include/tcl8.2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tclsh=${LOCALBASE}/bin/tclsh8.2
