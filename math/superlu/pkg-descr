@@ -1,6 +1,6 @@
 
-			SuperLU Version 1.0
-			===================
+			SuperLU (Version 2.0)
+			=====================
 
 SuperLU contains a set of subroutines to solve a sparse linear system
 A*X=B. It uses Gaussian elimination with partial pivoting (GEPP).
@@ -19,7 +19,7 @@ for the double-precision complex version start with letter "z"
 
 			===================
 			
-WWW: http://www.cs.berkeley.edu/~xiaoye/superlu.html
+WWW: http://www.nersc.gov/~xiaoye/SuperLU/
 Authors:
         Jim Demmel      demmel@cs.berkeley.edu
         John Gilbert    gilbert@parc.xerox.com
