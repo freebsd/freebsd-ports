@@ -14,17 +14,15 @@ MASTER_SITES=	http://floatator.cichon.com/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An interactive fluid dynamics simulation
 
-USE_REINPLACE=	yes
-USE_XLIB=	yes
-USE_MOTIF=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-post-patch:
-	@${REINPLACE_CMD} -e "s,^CC,#CC,g ; s,^CFLAGS,#CFLAGS,g" ${WRKSRC}/Makefile
+USE_MOTIF=	yes
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DNDEBUG" \
+		X11INCLUDE="-I${X11BASE}/include" X11LIB="-L${X11BASE}/lib"
 
 do-install:
 .for f in floatator floatator_X_interface
-	${INSTALL_PROGRAM} ${WRKSRC}/$f ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin
 .endfor
 
 .include <bsd.port.mk>
