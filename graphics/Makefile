@@ -21,6 +21,7 @@
     SUBDIR += camediaplay
     SUBDIR += camserv
     SUBDIR += chbg
+    SUBDIR += claraocr
     SUBDIR += cqcam
     SUBDIR += cthumb
     SUBDIR += dc20ctrl

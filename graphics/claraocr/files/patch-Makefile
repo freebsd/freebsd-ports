@@ -1,0 +1,50 @@
+$FreeBSD$
+
+--- Makefile.orig	Mon Nov  5 09:46:33 2001
++++ Makefile	Mon Nov  5 09:48:41 2001
+@@ -28,13 +28,13 @@
+ #
+ # Configure the destination directories:
+ #
+-BINDIR=/usr/local/bin
++BINDIR=%%PREFIX%%/bin
+ #BINDIR=/usr/bin
+ 
+-MANDIR=/usr/local/man/man1
++MANDIR=%%PREFIX%%/man/man1
+ #MANDIR=/usr/man/man1
+ 
+-DOCDIR=/usr/local/doc/clara
++DOCDIR=%%PREFIX%%/share/doc/clara
+ #DOCDIR=/usr/doc/clara
+ #DOCDIR=/usr/doc/clara-$(VERSION)
+ #DOCDIR=/usr/share/doc/clara
+@@ -44,7 +44,7 @@
+ #
+ INCLUDE = -I/usr/X11R6/include
+ LIBPATH = -L/usr/X11R6/lib
+-CC = gcc
++CC ?= gcc
+ 
+ #
+ # Now choose the Clara OCR compilation options:
+@@ -83,7 +83,7 @@
+ #
+ # Add or remove flags if necessary:
+ #
+-CFLAGS = $(INCLUDE) -g -O2 -Wall $(COPTS)
++CFLAGS += $(INCLUDE) -g -Wall $(COPTS)
+ #CFLAGS = $(INCLUDE) -g -O2 -pedantic $(COPTS)
+ #CFLAGS = $(INCLUDE) -g -O2 $(COPTS)
+ 
+@@ -158,8 +158,10 @@
+ 	install selthresh.pl $(BINDIR)
+ 	install -d $(MANDIR)
+ 	install doc/clara.1 doc/clara-dev.1 doc/clara-adv.1 $(MANDIR)
++.ifndef NOPORTDOCS
+ 	install -d $(DOCDIR)
+ 	install ANNOUNCE CHANGELOG doc/FAQ doc/*.html $(DOCDIR)
++.endif
+ 
+ clean:
+ 	rm -f clara sclara $(OBJS) doc/clara-*.1 doc/clara-*.html doc/FAQ
