@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	xml2rfc
-PORTVERSION=	1.26
+PORTVERSION=	1.28
 CATEGORIES=	textproc tcl83
 MASTER_SITES=	http://xml.resource.org/authoring/
 EXTRACT_SUFX=	.tgz
@@ -29,15 +29,25 @@ do-install:
 	${LN} ${PREFIX}/bin/xml2rfc ${PREFIX}/bin/xml2nroff
 .if !defined (NOPORTDOCS)
 	${MKDIR} ${DOCSDIR} ${DOCSDIR}/contrib
-.for doc in README.html README.txt README.xml \
+.for doc in LICENSE README.html README.txt README.xml \
 	    draft-mrose-writing-rfcs.html draft-mrose-writing-rfcs.txt \
 	    rfc2629.dtd rfc2629.html rfc2629.rnc rfc2629.txt rfc2629.xml \
-	    rfc2629.xsd
+	    rfc2629.xsd sample.txt sample.xml
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
 .endfor
-.for doc in concat.pl fast-sync.sh new-draft.xml template.xml xml2rfcpp.pl
+.for doc in \
+	alex.rousskov/xml2rfcpp.pl \
+	pekka.savola/template.xml \
+	pekka.savola/template0.xml \
+	pekka.savola/template1b.xml \
+	rob.austein/concat.pl \
+	rob.austein/fast-sync.sh
 	${INSTALL_DATA} ${WRKSRC}/contrib/${doc} ${DOCSDIR}/contrib
 .endfor
+	${INSTALL_DATA} ${WRKSRC}/contrib/fred.baker/new-draft.xml \
+		${DOCSDIR}/contrib/new-draft-1.xml
+	${INSTALL_DATA} ${WRKSRC}/contrib/pekka.savola/new-draft.xml \
+		${DOCSDIR}/contrib/new-draft-2.xml
 	${INSTALL_DATA} ${WRKSRC}/.xml2rfc.rc ${DOCSDIR}/dot.xml2rfc.rc
 .endif
 
