@@ -1,0 +1,21 @@
+vpopmail provides an easy way to manage virtual domains and virtual
+accounts on a qmail mail server.
+
+Features:
+
+. Automates all qmail file modifications into documented command line
+  programs
+
+. Support for named and IP-based virtual domains
+
+. NFS safe
+
+. dynamic directory creation for scalability using fill-in balanced 3
+  level tree
+
+. understands standard qmail .qmail directives
+
+. interacts well with qmailadmin for web-based administration, courier-imap
+  for IMAP support, and sqwebmail for web-based mail.
+
+WWW:	http://inter7.com/vpopmail/

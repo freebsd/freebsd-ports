@@ -126,6 +126,7 @@
     SUBDIR += teapop
     SUBDIR += tkrat
     SUBDIR += tkrat2
+    SUBDIR += vpopmail
     SUBDIR += vrfy
     SUBDIR += wanderlust-emacs
     SUBDIR += wanderlust-emacs20
