@@ -7,7 +7,7 @@
 
 PORTNAME=	orion
 PORTVERSION=	1.5.2
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	www java
 MASTER_SITES=	http://www.orionserver.com/distributions/ \
 		http://www.atlassian.com/software/orion/downloads/ \
@@ -91,24 +91,24 @@ do-install:
 .for f in ${REPLACE_FILES}
 	@${ECHO_CMD} -n ">> Customizing `basename $f`..."
 	@${SED} \
-	-e "/%%APP_HOME%%/s//${APP_HOME:S/\//\\\//g}/" \
-	-e "/%%APP_SHORTNAME%%/s//${APP_SHORTNAME}/" \
-	-e "/%%APP_TITLE%%/s//${APP_TITLE}/" \
-	-e "/%%CONTROL_SCRIPT%%/s//${CONTROL_SCRIPT:S/\//\\\//g}/" \
-	-e "/%%CONTROL_SCRIPT_NAME%%/s//${CONTROL_SCRIPT_NAME}/" \
-	-e "/%%GROUP%%/s//${GROUP}/" \
-	-e "/%%JAVA_CMD%%/s//bin\/java/" \
-	-e "/%%JAVA_HOME%%/s//${JAVA_HOME:S/\//\\\//g}/" \
-	-e "/%%JAR_FILE%%/s//${APP_SHORTNAME}.jar/" \
-	-e "/%%LOG_DIR%%/s//${LOG_DIR:S/\//\\\//g}/" \
-	-e "/%%PORTNAME%%/s//${PORTNAME}/" \
-	-e "/%%PORTVERSION%%/s//${PORTVERSION}/" \
-	-e "/%%STARTUP_SCRIPT_NAME%%/s//${STARTUP_SCRIPT_NAME}/" \
-	-e "/%%STDERR_LOG%%/s//${STDERR_LOG:S/\//\\\//g}/" \
-	-e "/%%STDOUT_LOG%%/s//${STDOUT_LOG:S/\//\\\//g}/" \
-	-e "/%%PREFIX%%/s//${PREFIX:S/\//\\\//g}/" \
-	-e "/%%PID_FILE%%/s//${PID_FILE:S/\//\\\//g}/" \
-	-e "/%%USER%%/s//${USER}/" \
+	-e "/%%APP_HOME%%/s//${APP_HOME:S/\//\\\//g}/g" \
+	-e "/%%APP_SHORTNAME%%/s//${APP_SHORTNAME}/g" \
+	-e "/%%APP_TITLE%%/s//${APP_TITLE}/g" \
+	-e "/%%CONTROL_SCRIPT%%/s//${CONTROL_SCRIPT:S/\//\\\//g}/g" \
+	-e "/%%CONTROL_SCRIPT_NAME%%/s//${CONTROL_SCRIPT_NAME}/g" \
+	-e "/%%GROUP%%/s//${GROUP}/g" \
+	-e "/%%JAVA_CMD%%/s//bin\/java/g" \
+	-e "/%%JAVA_HOME%%/s//${JAVA_HOME:S/\//\\\//g}/g" \
+	-e "/%%JAR_FILE%%/s//${APP_SHORTNAME}.jar/g" \
+	-e "/%%LOG_DIR%%/s//${LOG_DIR:S/\//\\\//g}/g" \
+	-e "/%%PORTNAME%%/s//${PORTNAME}/g" \
+	-e "/%%PORTVERSION%%/s//${PORTVERSION}/g" \
+	-e "/%%STARTUP_SCRIPT_NAME%%/s//${STARTUP_SCRIPT_NAME}/g" \
+	-e "/%%STDERR_LOG%%/s//${STDERR_LOG:S/\//\\\//g}/g" \
+	-e "/%%STDOUT_LOG%%/s//${STDOUT_LOG:S/\//\\\//g}/g" \
+	-e "/%%PREFIX%%/s//${PREFIX:S/\//\\\//g}/g" \
+	-e "/%%PID_FILE%%/s//${PID_FILE:S/\//\\\//g}/g" \
+	-e "/%%USER%%/s//${USER}/g" \
 	$f > ${WRKDIR}/`basename $f`
 	@${ECHO_CMD} " [ DONE ]"
 .endfor
