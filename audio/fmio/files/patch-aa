@@ -1,0 +1,13 @@
+--- mixer.c.orig	Wed Oct 23 20:23:43 2002
++++ mixer.c	Wed Oct 23 20:23:55 2002
+@@ -34,9 +34,7 @@
+ #include <sys/ioctl.h>
+ #if defined (__OpenBSD__) || defined (__NetBSD__)
+ #include <sys/audioio.h>
+-#elif defined (__FreeBSD__)
+-#include <machine/soundcard.h>
+-#elif defined (linux)
++#elif defined (linux) || defined(__FreeBSD__)
+ #include <sys/soundcard.h>
+ #endif /* __OpenBSD__ || __NetBSD__ */
+ 

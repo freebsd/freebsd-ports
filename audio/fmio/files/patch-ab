@@ -1,0 +1,12 @@
+--- fmio.1.orig	Wed Oct 23 20:23:18 2002
++++ fmio.1	Wed Oct 23 20:23:32 2002
+@@ -108,8 +108,7 @@
+ .Dl <line name>=[+-]<left channel>,[+-]<right channel>.
+ For line names see:
+ .Dl /usr/include/sys/audioio.h under OpenBSD and NetBSD
+-.Dl /usr/include/machine/soundcard.h under FreeBSD
+-.Dl /usr/include/sys/soundcard.h under Linux
++.Dl /usr/include/sys/soundcard.h under FreeBSD Linux
+ .It Fl X Ar volume
+ Set volume of the sound card master output thru /dev/mixer.
+ Format of this option is similar to option
