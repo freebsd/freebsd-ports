@@ -12,7 +12,6 @@
     SUBDIR += actx
     SUBDIR += adom
     SUBDIR += affenspiel
-    SUBDIR += agm
     SUBDIR += alephone
     SUBDIR += alephone-data
     SUBDIR += amphetamine

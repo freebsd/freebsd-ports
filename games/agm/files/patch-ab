@@ -1,5 +1,0 @@
---- xagm.orig	Wed Mar 18 01:02:29 1998
-+++ xagm	Wed May  3 12:00:00 2000
-@@ -1,1 +1,1 @@
--#!/usr/bin/wish
-+#!%%LOCALBASE%%/bin/wish8.0
