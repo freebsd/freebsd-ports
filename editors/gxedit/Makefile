@@ -3,14 +3,13 @@
 # Date created:		01 Jul 1998
 # Whom:			Dom Mitchell <dom@myrddin.demon.co.uk>
 #
-# $Id: Makefile,v 1.6 1998/07/20 15:24:31 asami Exp $
+# $Id: Makefile,v 1.7 1998/07/20 18:51:39 steve Exp $
 #
 
 DISTNAME=	GXedit1.07
 PKGNAME=	gxedit-1.07
 CATEGORIES=	editors
-MASTER_SITES=	http://devplanet.fastethernet.net/mirrors/GXedit/ \
-		http://devplanet.fastethernet.net/
+MASTER_SITES=	http://devplanet.fastethernet.net/
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=     dom@myrddin.demon.co.uk
