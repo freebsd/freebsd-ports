@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	spamstats
-PORTVERSION=	0.5b
-PORTREVISION=	1
+PORTVERSION=	0.6a
 CATEGORIES=	mail
-MASTER_SITES=	http://www.gryzor.com/tools/
+MASTER_SITES=	http://www.inl.fr/download/
 
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	A tool to generate statistics for spamd of Mail::SpamAssassin
