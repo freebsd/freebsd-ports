@@ -7,7 +7,7 @@
 
 PORTNAME=	amavisd
 PORTVERSION=	0.1
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -24,15 +24,13 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/arc:${PORTSDIR}/archivers/arc \
 		${LOCALBASE}/bin/zoo:${PORTSDIR}/archivers/zoo \
 		${SITE_PERL}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
 		${SITE_PERL}/${PERL_ARCH}/Convert/UUlib.pm:${PORTSDIR}/converters/p5-Convert-UUlib \
-		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
 		${SITE_PERL}/${PERL_ARCH}/Unix/Syslog.pm:${PORTSDIR}/sysutils/p5-Unix-Syslog \
 		${SITE_PERL}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar \
 		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
 		${SITE_PERL}/Convert/TNEF.pm:${PORTSDIR}/converters/p5-Convert-TNEF \
 		${SITE_PERL}/IO/AtomicFile.pm:${PORTSDIR}/devel/p5-IO-stringy \
 		${SITE_PERL}/MIME/Body.pm:${PORTSDIR}/mail/p5-MIME-Tools \
-		${SITE_PERL}/Mail/Address.pm:${PORTSDIR}/mail/p5-Mail-Tools \
-		${SITE_PERL}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net
+		${SITE_PERL}/Mail/Address.pm:${PORTSDIR}/mail/p5-Mail-Tools
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes
@@ -62,7 +60,7 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib" \
 
 RC_SCRIPTS_SUB=	AMAVISUSER=${AMAVISUSER} \
 		PREFIX=${PREFIX} \
- 		PERL=${PERL} \
+		PERL=${PERL} \
 	 	RC_SUBR=${RC_SUBR}
 PLIST_SUB=	SBIN_AMAVIS=${SBIN_AMAVIS} \
 	 	MILTER=${MILTER}
@@ -124,4 +122,11 @@ post-install:
 	@${ECHO_MSG} "==============================================================================="
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+BUILD_DEPENDS+=	${SITE_PERL}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net \
+	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
+.endif
+
+.include <bsd.port.post.mk>
