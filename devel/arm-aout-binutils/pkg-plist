@@ -26,7 +26,5 @@ include/ansidecl.h
 include/bfd.h
 include/bfdlink.h
 lib/libbfd.a
-lib/libbfd.la
 lib/libiberty.a
 lib/libopcodes.a
-lib/libopcodes.la
