@@ -1,0 +1,11 @@
+--- ./autoconf/makeinfo.in.orig	Sun Oct 20 13:39:21 2002
++++ ./autoconf/makeinfo.in	Sun Oct 20 13:39:28 2002
+@@ -16,7 +16,7 @@
+ VER		= @VER@
+ DEFINES		= -DETCDIR=\"${SYSCONFDIR}/\" -DVER=\"${VER}\" @DEFS@ \
+ 		  $(PROFILE) -D__USE_FIXED_PROTOTYPES__ -D_GNU_SOURCE
+-CFLAGS_FOR_GCC	= -Wall -fstrict-prototypes
++CFLAGS_FOR_GCC	= -Wall
+ CFLAGS		= $(DEFINES) @gcc_cflags@ @CFLAGS@
+ LIBS		= @LIBS@ $(EFENCE)
+ SRCDIR		= src
