@@ -1,0 +1,51 @@
+%%RUBY_SITELIBDIR%%/numru/ggraph.rb
+%%RUBY_SITELIBDIR%%/numru/ggraph_old.rb
+%%RUBY_SITELIBDIR%%/numru/gphys.rb
+%%RUBY_SITELIBDIR%%/numru/gphys/attribute.rb
+%%RUBY_SITELIBDIR%%/numru/gphys/attributenetcdf.rb
+%%RUBY_SITELIBDIR%%/numru/gphys/axis.rb
+%%RUBY_SITELIBDIR%%/numru/gphys/coordmapping.rb
+%%RUBY_SITELIBDIR%%/numru/gphys/coordtransform.rb
+%%RUBY_SITELIBDIR%%/numru/gphys/gphys.rb
+%%RUBY_SITELIBDIR%%/numru/gphys/gphys_fft.rb
+%%RUBY_SITELIBDIR%%/numru/gphys/gphys_grads_io.rb
+%%RUBY_SITELIBDIR%%/numru/gphys/gphys_netcdf_io.rb
+%%RUBY_SITELIBDIR%%/numru/gphys/grads_gridded.rb
+%%RUBY_SITELIBDIR%%/numru/gphys/grid.rb
+%%RUBY_SITELIBDIR%%/numru/gphys/netcdf_convention.rb
+%%RUBY_SITELIBDIR%%/numru/gphys/subsetmapping.rb
+%%RUBY_SITELIBDIR%%/numru/gphys/unumeric.rb
+%%RUBY_SITELIBDIR%%/numru/gphys/varray.rb
+%%RUBY_SITELIBDIR%%/numru/gphys/varraycomposite.rb
+%%RUBY_SITELIBDIR%%/numru/gphys/varraygrads.rb
+%%RUBY_SITELIBDIR%%/numru/gphys/varraynetcdf.rb
+@dirrm %%RUBY_SITELIBDIR%%/numru/gphys
+@unexec rmdir %D/%%RUBY_SITELIBDIR%%/numru 2>/dev/null || true
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sample/cira86_to_nc.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sample/druby_cli1.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sample/druby_cli2.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sample/druby_serv1.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sample/druby_serv2.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testdata/T.jan.ctl
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testdata/T.jan.dat
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testdata/T.jan.nc
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testdata/cira86.dat
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/sample
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/testdata
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/coordtransform.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ggraph.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/gphys.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/gphys_fft.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/gphys_grads_io.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/gphys_netcdf_io.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/grads_gridded.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/index.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/netcdf_convention.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/unumeric.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/varray.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/varraycomposite.html
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
