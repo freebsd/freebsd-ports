@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.funet.fi/pub/unix/mail/zmailer/src/
 
-MAINTAINER=	veers@disturbed.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fully functional fast, robust SMTP server and transport agent
 
 CONFLICTS=	courier-0.* postfix-1.* postfix-2.* sendmail-8.* sendmail-*-8.* smail-3.*
