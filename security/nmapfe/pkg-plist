@@ -1,1 +1,3 @@
+@comment $Id$
 bin/nmap
+share/misc/nmap-os-fingerprints
