@@ -132,6 +132,7 @@
     SUBDIR += lgrind
     SUBDIR += libgnomecups
     SUBDIR += libgnomeprint
+    SUBDIR += libgnomeprintmm
     SUBDIR += libijs
     SUBDIR += libotf
     SUBDIR += libpaper
