@@ -94,7 +94,7 @@ share/doc/HTML/en/xmms-kde/common
 share/locale/de/LC_MESSAGES/xmms-kde.mo
 share/locale/es/LC_MESSAGES/xmms-kde.mo
 share/locale/fr/LC_MESSAGES/xmms-kde.mo
-/share/locale/nl/LC_MESSAGES/xmms-kde.mo
+share/locale/nl/LC_MESSAGES/xmms-kde.mo
 @dirrm share/apps/xmms-kde
 @unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
 @unexec rmdir %D/share/doc/HTML 2>/dev/null || true
