@@ -54,7 +54,11 @@ do-install:
 
 	${MKDIR} ${PREFIX}/etc/wapsh
 .for C in htsh_profile htshd.conf loginhosts
-	${INSTALL_DATA} ${WRKSRC}/sample/$C ${PREFIX}/etc/wapsh
+	${INSTALL_DATA} ${WRKSRC}/sample/$C ${PREFIX}/etc/wapsh/$C.dist
+	if [ ! -e ${PREFIX}/etc/wapsh/$C ]; then \
+		${CP} ${PREFIX}/etc/wapsh/$C.dist \
+			${PREFIX}/etc/wapsh/$C; \
+	fi
 .endfor
 
 	${MKDIR} ${PREFIX}/share/wapsh/htdocs
