@@ -1,19 +1,31 @@
 bin/ami
 %%GNOME:%%bin/ami_applet
-bin/hanja-hwp2ami
+bin/hanja_hwp2ami
 bin/wmami
 %%GNOME:%%etc/CORBA/servers/ami.gnorba
+lib/charset.alias
 share/doc/ami/AUTHORS
 share/doc/ami/ChangeLog
 share/doc/ami/NEWS
 share/doc/ami/README
 share/doc/ami/README.en
+share/hangul_keyboard/2bul.kbd
+share/hangul_keyboard/3bul_390.kbd
+share/hangul_keyboard/3bul_final.kbd
+share/hangul_keyboard/dvorak_2bul.kbd
+share/hangul_keyboard/dvorak_3bul_390.kbd
+share/hangul_keyboard/dvorak_3bul_final.kbd
+share/hangul_keyboard/dvorak.map
 %%DATADIR%%/ami/gtkrc
 %%DATADIR%%/ami/hanja.dic
 %%DATADIR%%/ami/pix/Aqua/AUTHORS
 %%DATADIR%%/ami/pix/Aqua/ami-d.xpm
 %%DATADIR%%/ami/pix/Aqua/ami-e.xpm
 %%DATADIR%%/ami/pix/Aqua/ami-h.xpm
+%%DATADIR%%/ami/pix/AquaG/AUTHORS
+%%DATADIR%%/ami/pix/AquaG/ami-d.xpm
+%%DATADIR%%/ami/pix/AquaG/ami-e.xpm
+%%DATADIR%%/ami/pix/AquaG/ami-h.xpm
 %%DATADIR%%/ami/pix/Mac/AUTHORS
 %%DATADIR%%/ami/pix/Mac/ami-d.xpm
 %%DATADIR%%/ami/pix/Mac/ami-e.xpm
@@ -26,29 +38,31 @@ share/doc/ami/README.en
 %%DATADIR%%/ami/pix/arctic/ami-d.xpm
 %%DATADIR%%/ami/pix/arctic/ami-e.xpm
 %%DATADIR%%/ami/pix/arctic/ami-h.xpm
-%%DATADIR%%/ami/pix/bluemarble/ami-e.xpm
-%%DATADIR%%/ami/pix/bluemarble/ami-h.xpm
 %%DATADIR%%/ami/pix/bluemarble/AUTHORS
 %%DATADIR%%/ami/pix/bluemarble/ami-d.xpm
+%%DATADIR%%/ami/pix/bluemarble/ami-e.xpm
+%%DATADIR%%/ami/pix/bluemarble/ami-h.xpm
 %%DATADIR%%/ami/pix/deepblue/AUTHORS
 %%DATADIR%%/ami/pix/deepblue/ami-d.xpm
 %%DATADIR%%/ami/pix/deepblue/ami-e.xpm
 %%DATADIR%%/ami/pix/deepblue/ami-h.xpm
-%%DATADIR%%/ami/pix/love/ami-e.xpm
-%%DATADIR%%/ami/pix/love/ami-h.xpm
 %%DATADIR%%/ami/pix/love/AUTHORS
 %%DATADIR%%/ami/pix/love/ami-d.xpm
+%%DATADIR%%/ami/pix/love/ami-e.xpm
+%%DATADIR%%/ami/pix/love/ami-h.xpm
 %%DATADIR%%/ami/pix/steelblue/AUTHORS
 %%DATADIR%%/ami/pix/steelblue/ami-d.xpm
 %%DATADIR%%/ami/pix/steelblue/ami-e.xpm
 %%DATADIR%%/ami/pix/steelblue/ami-h.xpm
-%%DATADIR%%/ami/pix/woody/ami-e.xpm
-%%DATADIR%%/ami/pix/woody/ami-h.xpm
 %%DATADIR%%/ami/pix/woody/AUTHORS
 %%DATADIR%%/ami/pix/woody/ami-d.xpm
+%%DATADIR%%/ami/pix/woody/ami-e.xpm
+%%DATADIR%%/ami/pix/woody/ami-h.xpm
 %%GNOME:%%share/gnome/applets/Utility/ami.desktop
 @dirrm share/doc/ami
+@dirrm share/hangul_keyboard
 @dirrm %%DATADIR%%/ami/pix/Aqua
+@dirrm %%DATADIR%%/ami/pix/AquaG
 @dirrm %%DATADIR%%/ami/pix/Mac
 @dirrm %%DATADIR%%/ami/pix/OSX
 @dirrm %%DATADIR%%/ami/pix/arctic

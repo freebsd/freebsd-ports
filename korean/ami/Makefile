@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	ami
-PORTVERSION=	1.0.11
-PORTREVISION=	1
+PORTVERSION=	1.2.1
 CATEGORIES=	korean x11
-MASTER_SITES=	http://www.kr.freebsd.org/~hwang/ami/ \
-		http://master.debian.or.kr/~cwryu/archive/misc/
-DISTFILES=	${DISTNAME}.tar.gz hanja.dic.gz ami.dic
+MASTER_SITES=	http://download.kldp.net/ami/ \
+		http://www.kr.freebsd.org/~hwang/ami/:hjdic \
+		http://master.debian.or.kr/~cwryu/archive/misc/:amidic
+DISTFILES=	${DISTNAME}.tar.gz hanja.dic.gz:hjdic ami.dic:amidic
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
 MAINTAINER=	cjh@FreeBSD.org
@@ -23,7 +23,10 @@ USE_GTK=	yes
 USE_GMAKE=	yes
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-hangul-keyboard=2 --datadir=${PREFIX}/${DATADIR}
+CONFIGURE_ARGS=	--with-hangul-keyboard=2 --datadir=${PREFIX}/${DATADIR} \
+		--with-libiconv-prefix=${LOCALBASE} \
+		--with-gdk-pixbuf-prefix=${LOCALBASE} \
+		--without-included-gettext
 DATADIR=	share
 
 .include <bsd.port.pre.mk>
@@ -50,7 +53,6 @@ post-build:
 	${MAKE_ENV} ${MAKE} ${MAKE_ARGS}
 
 post-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/hanjadic/hanja-hwp2ami ${PREFIX}/bin
 	${MKDIR} ${PREFIX}/share/doc/ami
 .for NAME in AUTHORS README README.en NEWS ChangeLog
 	${INSTALL_DATA} ${WRKSRC}/${NAME} \
