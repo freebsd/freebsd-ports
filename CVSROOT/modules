@@ -686,6 +686,7 @@ cgoban		ports/games/cgoban
 chat		src/usr.bin/chat
 chbg		ports/graphics/chbg
 cheapcall	ports/german/cheapcall
+cheatah		ports/misc/cheatah
 checkbot	ports/www/checkbot
 checknr		src/usr.bin/checknr
 checkpassword	ports/security/checkpassword
