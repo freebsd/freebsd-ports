@@ -16,9 +16,9 @@ diff -u -r1.1.1.1 -r1.12
  
  use Carp;
  use Socket;
-+BEGIN {
-+    eval 'use Socket6' unless (eval '&AF_INET6');       # IPv6 patched Perl
-+}
++
++use Socket6;
++
  use AutoLoader 'AUTOLOAD';
  
  $VERSION = '0.03';

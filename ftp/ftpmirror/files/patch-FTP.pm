@@ -10,9 +10,9 @@ diff -u -r1.1.1.2 -r1.6
  
  use Carp;
  use Socket;
-+BEGIN {
-+    eval 'use Socket6' unless (eval '&AF_INET6');       # IPv6 patched Perl
-+}
++
++use Socket6;
++
  use Fan::TCP;
  use AutoLoader 'AUTOLOAD';
  
