@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.arrishq.org/downloads/
 
-MAINTAINER=	net@arrishq.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Menu generation tool for X window managers
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
