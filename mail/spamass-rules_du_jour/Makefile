@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rules_du_jour
-PORTVERSION=	1.17a
+PORTVERSION=	1.18
 CATEGORIES=	mail
 MASTER_SITES=	http://www.ranner.jawa.at/stuff/
 PKGNAMEPREFIX=	spamass-
@@ -17,7 +17,7 @@ COMMENT=	Automatic updates of custom rulesets for SpamAssassin
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2 \
 				spamc:${PORTSDIR}/mail/p5-Mail-SpamAssassin
 
-OPTIONS=	ANTIDRUG "Catch those pesky 'pill spams'" on \
+OPTIONS=	ANTIDRUG "Already included in SA 3.0" off \
 		BOGUS_VIRUS "Catch 'collateral spam' caused by viruses" on \
 		EVILNUMBERS "Phone numbers, PO boxes, ... from spam " on \
 		RANDOM "Detects spamware mistakes like: %RANDOM_WORD" on \
@@ -62,16 +62,16 @@ do-build:
 	@${DO_NADA}
 
 pre-install:
-	@${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+	@${SED} -e 's|%%LOCALBASE%%|${PREFIX}|g' \
 		-e 's|%%DOCSDIR%%|${DOCSDIR}|g' <${.CURDIR}/pkg-message >${PKGMESSAGE}
 	@${SED} -e 's|TRIPWIRE EVILNUMBERS SARE_RANDOM|${SPAMASS_FILES}|' \
-		-e 's|PREFIX="/usr/local"|PREFIX="${LOCALBASE}"|' \
+		-e 's|PREFIX="/usr/local"|PREFIX="${PREFIX}"|' \
 		<${WRKSRC}/config >${WRKSRC}/config.sample
 
 do-install:
 	@${INSTALL} -d -o root -g wheel -m 0755 ${SPAMASS_DIR}/RulesDuJour
-	@${INSTALL} ${WRKSRC}/rules_du_jour ${LOCALBASE}/bin
-	@${INSTALL_DATA} ${WRKSRC}/config.sample ${LOCALBASE}/etc/mail/rulesdujour.sample
+	@${INSTALL} ${WRKSRC}/rules_du_jour ${PREFIX}/bin
+	@${INSTALL_DATA} ${WRKSRC}/config.sample ${PREFIX}/etc/mail/rulesdujour.sample
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
