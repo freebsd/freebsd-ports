@@ -9,11 +9,11 @@ PORTNAME=	gnutls
 PORTVERSION=	0.6.0
 PORTREVISION=	1
 CATEGORIES=	security net
-MASTER_SITES=	http://gd.tuwien.ac.at/privacy/gnupg/alpha/gnutls/ \
+MASTER_SITES=	${MASTER_SITE_GNUPG} \
 	http://www.mirrors.wiretapped.net/security/network-security/gnutls/ \
-	ftp://ftp.gnupg.org/pub/gcrypt/alpha/gnutls/ \
 	ftp://ftp.mirrors.wiretapped.net/security/network-security/gnutls/ \
 	ftp://ftp.gnutls.org/pub/gnutls/
+MASTER_SITE_SUBDIR=	alpha/gnutls
 
 MAINTAINER=	sergei@kolobov.com
 

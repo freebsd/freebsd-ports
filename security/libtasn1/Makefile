@@ -8,11 +8,11 @@
 PORTNAME=	libtasn1
 PORTVERSION=	0.1.2
 CATEGORIES=	security
-MASTER_SITES=	http://gd.tuwien.ac.at/privacy/gnupg/alpha/gnutls/libtasn1/ \
+MASTER_SITES=	${MASTER_SITE_GNUPG} \
 	http://www.mirrors.wiretapped.net/security/network-security/gnutls/libtasn1/ \
-	ftp://ftp.gnupg.org/pub/gcrypt/alpha/gnutls/libtasn1/ \
 	ftp://ftp.mirrors.wiretapped.net/security/network-security/gnutls/libtasn1/ \
 	ftp://ftp.gnutls.org/pub/gnutls/libtasn1/
+MASTER_SITE_SUBDIR=	alpha/gnutls/libtasn1
 
 MAINTAINER=	sergei@kolobov.com
 
