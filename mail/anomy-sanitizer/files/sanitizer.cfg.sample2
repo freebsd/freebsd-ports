@@ -1,0 +1,111 @@
+# Example configuration file for Anomy Sanitizer 
+#
+# From http://advosys.ca/papers/postfix-filtering.html
+# Advosys Consulting Inc., Ottawa
+#
+# Works with Anomy Sanitizer revision 1.49
+
+# Do not log to STDERR:
+feat_log_stderr = 0
+
+# Don't insert log in the message itself:
+feat_log_inline = 0
+
+# Advertisement to insert in each mail header:
+header_info = X-Sanitizer: Anomy Sanitizer mail filter
+header_url = 0
+header_rev = 0
+
+# Enable filename based policy decisions:
+feat_files = 1
+
+# Protect against buffer overflows and null values:
+feat_lengths = 1
+
+# Replace MIME boundaries with our own:
+feat_boundaries = 1
+
+# Fix invalid and ambiguous MIME boundaries, if possible:
+feat_fixmime = 1
+
+# Trust signed and/or encrypted messages:
+feat_trust_pgp = 1
+msg_pgp_warning = WARNING: Unsanitized content follows.\n
+
+# Defang shell scripts:
+feat_scripts = 0
+
+# Defang active HTML:
+feat_html = 1
+
+# Defang UUEncoded files:
+feat_uuencoded = 0
+
+# Sanitize forwarded content too:
+feat_forwards = 1
+
+# Testing? Set to 1 for testing, 0 for production:
+feat_testing = 0
+
+# # Warn user about unscanned parts, etc.
+feat_verbose = 1
+
+# Force all parts (except text/html parts) to
+# have file names.
+feat_force_name = 1
+
+# Disable web bugs:
+feat_webbugs = 1
+
+# Disable "score" based mail discarding:
+score_panic = 0
+score_bad = 0
+
+msg_file_drop  = \n*****\n
+msg_file_drop += NOTE: An attachment named %FILENAME was deleted from 
+msg_file_drop += this message because it contained a windows executable
+msg_file_drop += or other potentially dangerous file type.
+msg_file_drop += Contact the system administrator for more information.
+
+##
+## File attachment name mangling rules:
+##
+
+# Specify the Anomy temp file and quarantine directory
+file_name_tpl       = /var/spool/filter/att-$F-$T.$$
+
+# Number of rulesets we are defining:
+file_list_rules = 2
+file_default_policy = defang
+
+# Delete probably nasty attachments:
+file_list_1 = (?i)(winmail.dat)|
+file_list_1 += (\.(exe|com|vb[se]|dll|ocx|cmd|bat|pif|lnk|hlp|ms[ip]|reg|sct|inf
+file_list_1 += |asd|cab|sh[sb]|scr|cpl|chm|ws[fhc]|hta|vcd|vcf|eml|nws))$
+file_list_1_policy = drop
+file_list_1_scanner = 0
+
+# Allow known "safe" file types and those that will be 
+# scanned by the user's desktop virus scanner:
+file_list_2 = (?i)\.
+#  Word processor and document formats:
+file_list_2 += (doc|dot|txt|rtf|pdf|ps|htm|[sp]?html?
+#  Spreadsheets:
+file_list_2 += |xls|xlw|xlt|csv|wk[1-4]
+#  Presentation applications:
+file_list_2 += |ppt|pps|pot
+#  Bitmap graphic files:
+file_list_2 += |jpe?g|gif|png|tiff?|bmp|psd|pcx
+#  Vector graphics and diagramming:
+file_list_2 += |vsd|drw|cdr|swf
+#  Multimedia:
+file_list_2 += |mp3|avi|mpe?g|mov|ram?|mid|ogg
+#  Archives:
+file_list_2 += |zip|g?z|rar|tgz|bz2|tar
+#  Source code:
+file_list_2 += |[ch](pp|\+\+)?|s|inc|asm|patch|java|php\d?|jsp|bas)
+file_list_2_policy = accept
+file_list_2_scanner = 0
+
+# Any file type not listed above gets renamed to prevent
+# ms outlook from auto-executing it.
