@@ -1,16 +1,16 @@
---- Makefile.in.orig	Mon Mar 12 19:28:26 2001
-+++ Makefile.in	Thu Mar 15 20:25:50 2001
+--- Makefile.in.orig	Mon May  7 18:12:50 2001
++++ Makefile.in	Thu May 10 13:25:48 2001
 @@ -174,3 +174,3 @@
  
--SUBDIRS =  	libgnomevfs					libgnomevfs-pthread				$(SUBDIRS_OAF)					idl						modules						data						man						devel-docs					$(SUBDIRS_GNOME)				po						macros
-+SUBDIRS =  	libgnomevfs					libgnomevfs-pthread				$(SUBDIRS_OAF)					idl						modules						data						man						$(SUBDIRS_GNOME)				po						macros
+-SUBDIRS =  	libgnomevfs					libgnomevfs-pthread				idl						modules						data						man						devel-docs					$(SUBDIRS_GNOME)				po
++SUBDIRS =  	libgnomevfs					libgnomevfs-pthread				idl						modules						data						man						$(SUBDIRS_GNOME)				po
  
 @@ -182,3 +182,3 @@
  
 -confexecdir = $(libdir)
 +confexecdir = $(sysconfdir)
- confexec_DATA =  	vfsConf.sh					vfscorbaConf.sh					vfspthreadConf.sh
-@@ -542,2 +542,3 @@
+ confexec_DATA =  	vfsConf.sh					vfspthreadConf.sh
+@@ -534,2 +534,3 @@
  	sed -e 's?\@LIBDIR\@?$(libdir)?g' \
 +	    -e 's?\@SYSCONFDIR\@?$(sysconfdir)?g' \
  	    -e 's?\@VFS_LIBDIR\@?$(VFS_LIBDIR)?g' \

@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gnomevfs
-PORTVERSION=	1.0
+PORTVERSION=	1.0.1
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	unstable/sources/gnome-vfs
+MASTER_SITE_SUBDIR=	stable/sources/gnome-vfs
 DISTNAME=	gnome-vfs-${PORTVERSION}
 
 MAINTAINER=	ade@FreeBSD.org
