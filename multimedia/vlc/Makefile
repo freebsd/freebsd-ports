@@ -77,10 +77,10 @@ post-patch:
 CONFIGURE_ENV+=		LIBS="-L/usr/lib -lcipher"
 .endif
 
-.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
-PLIST_SUB+=		MMX="@comment "
-.else
+.if ${ARCH} == "i386"
 PLIST_SUB+=		MMX=""
+.else
+PLIST_SUB+=		MMX="@comment "
 .endif
 
 .include <bsd.port.post.mk>
