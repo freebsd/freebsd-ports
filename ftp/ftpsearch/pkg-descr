@@ -1,28 +1,13 @@
-                     * FTP search 1.0 alpha *
+                     FTP search 1.0
 
-This is an alpha version of FTP search. FTP search is a program
-for indexing/searching in the contents on ftp servers. Now you 
-can have your own small scale server indexing your ftp server
-only. 
+FTP search is a program for indexing/searching in the contents on ftp servers.
+Now you can have your own small scale server indexing your ftp server only. 
 
 After performing make/make install of this port, you must go to
-/usr/local/ftpsearch and perform `make setup' to configure the
-software for the first time. If it fails, you may have to edit
-/usr/local/ftpsearch/etc/sites a little (specifying the ftp server
-you want to index), and check the file in with rcs again. Then you
-can try `make setup' one more. If it fails this time too, read the
-INSTALL file and examine the logs.
-
-If you have lots of network bandwidth, CPU, RAM and disk space, you
-can configure it to index almost every ftp server. It is recommended
-that you cooperate with others running an FTP search server, to avoid
-loading the same long-distance links with multiple transfers of the
-same ls listings. 
-
-This is the software that runs on ftpsearch.ntnu.no. That machine is a
-PC running FreeBSD 3.0-current. It has 15 GB disk, a 100 MHz Pentium
-processor, 128 MB memory and 2 MS160SE cards with 96 MB RAM on each
-card. It currently indexes 4700 ftp servers, with over 66 million
-files, and handles around 550000 requests/day with this software.
+/usr/local/ftpsearch and perform `make setup' to configure the software for the
+first time. If it fails, you may have to edit /usr/local/ftpsearch/etc/sites 
+a little (specifying the ftp server you want to index), and check the file in 
+with rcs again. Then you can try `make setup' one more. If it fails this time
+too, read the INSTALL file and examine the logs.
 
 - Tor Egge
