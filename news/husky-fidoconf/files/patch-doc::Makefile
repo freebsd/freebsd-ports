@@ -1,5 +1,14 @@
---- doc/Makefile.orig	Tue Sep 17 16:35:51 2002
-+++ doc/Makefile	Thu Jan  9 03:45:08 2003
+--- doc/Makefile.orig	Tue Sep 17 14:55:33 2002
++++ doc/Makefile	Thu Jun  5 19:13:53 2003
+@@ -6,7 +6,7 @@
+ include ../../huskymak.cfg
+ endif
+ 
+-all: html info dvi
++all: html info
+ 
+ ifdef HTMLDIR
+ html: fidoconfig_toc.html
 @@ -71,16 +71,16 @@
  	@echo .
  ifdef INFODIR
