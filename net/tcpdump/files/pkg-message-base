@@ -1,0 +1,7 @@
+***************************************
+* You can always reinstall the older  *
+* tcpdump via the source directory    *
+* of the base system:                 *
+* $ cd /usr/src/usr.sbin/tcpdump      *
+* $ make && make install              *
+***************************************
