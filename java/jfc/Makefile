@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.zip
 
 MAINTAINER=	kuriyama@FreeBSD.org
 
-RUN_DEPENDS=	${PREFIX}/jdk${JDK_VERSION}/bin/java:${PORTSDIR}/java/jdk
+RUN_DEPENDS=	${PREFIX}/jdk${JDK_VERSION}/bin/java:${PORTSDIR}/java/jdk11
 
 USE_ZIP=	YES
 RESTRICTED=	"Can only be distributed with value added application"
