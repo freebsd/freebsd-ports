@@ -1,0 +1,36 @@
+--- Makefile.orig	Wed Jan 23 06:44:46 2002
++++ Makefile	Thu Jun  5 19:54:58 2003
+@@ -2,16 +2,16 @@
+ 
+ VERSION = "1.1a"
+ 
+-DESTPATH = /usr/local
++DESTPATH = ${PREFIX}
+ BINPATH = $(DESTPATH)/bin
+-GAMEPATH = $(DESTPATH)/games/glMaze
++GAMEPATH = $(DESTPATH)/share/glmaze
+ MANPATH = $(DESTPATH)/man/man1
+ 
+ OBJECTS = load_maze.o main.o controls.o shot.o player.o net.o \
+ 	  username.o radar.o prefs.o sound.o
+ 
+-SDL_FLAGS=`sdl-config --cflags`
+-SDL_LIBS=`sdl-config --libs`
++SDL_FLAGS=`sdl11-config --cflags`
++SDL_LIBS=`sdl11-config --libs`
+ 
+ # comment the follwing if you don't want sound
+ CC += -DSOUND
+@@ -31,10 +31,10 @@
+ prefs.o: prefs.c maze.h
+ 
+ .c.o:
+-	$(CC) -DVERSION=\"$(VERSION)\" $(SDL_FLAGS) -c -o $@ $<
++	$(CC) -I${X11BASE}/include -DVERSION=\"$(VERSION)\" $(SDL_FLAGS) -c -o $@ $<
+ 
+ glmaze: $(OBJECTS)
+-	$(CC) $(OBJECTS) -o $@ $(SDL_LIBS) -lGL -lGLU -lm 
++	$(CC) $(OBJECTS) -o $@ -L${X11BASE}/lib $(SDL_LIBS) -lGL -lGLU -lm 
+ 
+ clean:
+ 	@echo Cleaning up...

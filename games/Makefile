@@ -119,6 +119,7 @@
     SUBDIR += glchess
     SUBDIR += gleyes
     SUBDIR += glife
+    SUBDIR += glmaze
     SUBDIR += gltron
     SUBDIR += gma
     SUBDIR += gnarr
