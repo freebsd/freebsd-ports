@@ -4,20 +4,25 @@
 #
 # $FreeBSD$
 #
+POSTGRESQL_PORT?=	databases/postgresql7
 
-PORTNAME=	postgresql-tcltk
+PORTNAME=	postgresql
+PORTVERSION!=	${MAKE} -C ${.CURDIR}/../../${POSTGRESQL_PORT} -V PORTVERSION
+PORTREVISION?=	0
 CATEGORIES=	databases tcl83 tk83
-PORTREVISION=	0
+MASTER_SITES=	${MASTER_SITE_PGSQL}
+MASTER_SITE_SUBDIR!=	${MAKE} -C ${.CURDIR}/../../${POSTGRESQL_PORT} -V MASTER_SITE_SUBDIR
+PKGNAMESUFFIX=	-tcltk
+DISTFILES!=	${MAKE} -C ${.CURDIR}/../../${POSTGRESQL_PORT} -V DISTFILES
+DIST_SUBDIR=	postgresql
 
 MAINTAINER=	girgen@pingpong.net
 COMMENT=	An TCL interface to the database PostgreSQL, including a tk GUI
 
-POSTGRESQL_PORT?=	databases/postgresql7
-POSTGRESQL_SUBPORT=YES
-.include <${.CURDIR}/../../${POSTGRESQL_PORT}/Makefile>
-
 LIB_DEPENDS=	tcl${TCLVERSION:S/.//}:${PORTSDIR}/lang/tcl${TCLVERSION:S/.//} \
 		pq:${PORTSDIR}/${POSTGRESQL_PORT}
+
+MD5_FILE=	${.CURDIR}/../../${POSTGRESQL_PORT}/distinfo
 
 # you can use "make TCLVERSION=8.4" or similar for your favourite tcl version
 TCLVERSION?=	8.3
