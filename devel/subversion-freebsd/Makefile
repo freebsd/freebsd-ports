@@ -21,7 +21,7 @@ BUILD_DEPENDS=	gdiff3:${PORTSDIR}/textproc/diffutils \
 
 MAN1=		svn.1
 
-WRKSRC=	${WRKDIR}/subversion-r1587
+WRKSRC=	${WRKDIR}/subversion-${PORTVERSION}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --with-ssl \
 		--with-neon=${LOCALBASE} \
