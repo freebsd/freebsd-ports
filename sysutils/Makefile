@@ -24,6 +24,7 @@
     SUBDIR += autopsy
     SUBDIR += bacula
     SUBDIR += barry
+    SUBDIR += battfink
     SUBDIR += bbapm
     SUBDIR += bchunk
     SUBDIR += bkpupsd

@@ -1,0 +1,11 @@
+--- configure.orig	Sat Apr 12 01:31:11 2003
++++ configure	Sat Apr 12 01:31:27 2003
+@@ -7481,7 +7481,7 @@
+ 
+ 
+ cat >>confdefs.h <<_ACEOF
+-#define GNOME_ICONDIR "${prefix}/share/pixmaps"
++#define GNOME_ICONDIR "${datadir}/pixmaps"
+ _ACEOF
+ 
+ 
