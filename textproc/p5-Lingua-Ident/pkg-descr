@@ -1,0 +1,9 @@
+This module implements a statistical language identifier. 
+
+The filename attributes to the constructor must refer to files
+containing tables of n-gram probabilites for languages. These tables
+can be generated using the trainlid(1) utility program.
+
+WWW: http://search.cpan.org/search?dist=Lingua-Ident
+
+Seamus Venasse <svenasse@polaris.ca>
