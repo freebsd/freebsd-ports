@@ -4154,6 +4154,7 @@ linux-lesstif-ns	ports/www/linux-lesstif-ns
 linux-libaudiofile	ports/audio/linux-libaudiofile
 linux-libglade	ports/devel/linux-libglade
 linux-libxml	ports/textproc/linux-libxml
+linux-mbrola	ports/audio/linux-mbrola
 linux-mozilla	ports/www/linux-mozilla
 linux-mozilla-devel	ports/www/linux-mozilla-devel
 linux-mozillafirebird	ports/www/linux-mozillafirebird
