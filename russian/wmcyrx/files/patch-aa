@@ -1,6 +1,6 @@
---- Makefile.orig	Wed Apr 28 18:17:54 1999
-+++ Makefile	Thu May 25 18:58:23 2000
-@@ -1,11 +1,11 @@
+--- Makefile.orig	Wed Apr 28 08:17:54 1999
++++ Makefile	Sun Sep  8 17:58:29 2002
+@@ -1,31 +1,34 @@
  
 -I  = -I/usr/openwin/include -I/usr/local/include
 +I  = -I${X11BASE}/include -I${LOCALBASE}/include
@@ -9,10 +9,41 @@
 +L  = -L${LOCALBASE}/lib -L${X11BASE}/lib -L/usr/lib -lXpm -lX11 -lXext
  #CC = gcc -O $I -DXLIB_ILLEGAL_ACCESS
 -CC=CC -O $I -DXLIB_ILLEGAL_ACCESS 
-+CC+= ${CFLAGS} ${COPT} $I -DXLIB_ILLEGAL_ACCESS 
++CXX ?= c++
++CXXFLAGS= ${COPT} $I -DXLIB_ILLEGAL_ACCESS 
++CC ?= cc
++CFLAGS+= $I -DXLIB_ILLEGAL_ACCESS 
  
 -cyrx2:	cyrx2.o cyrmapper.o
+-	$(CC) cyrx2.o  cyrmapper.o -o cyrx2 $L
 +all:	cyrx2.o cyrmapper.o
- 	$(CC) cyrx2.o  cyrmapper.o -o cyrx2 $L
++	$(CXX) $(CXXFLAGS) cyrx2.o  cyrmapper.o -o cyrx2 $L
  
  cyrx: cyrx.o  cyrmapper.o
+-	$(CC) -xildoff cyrx.o cyrmapper.o -o cyrx $L
++	$(CXX) $(CXXFLAGS) -xildoff cyrx.o cyrmapper.o -o cyrx $L
+ 
+ cyrx2.o:	cyrx2.cc
+-	$(CC) cyrx2.cc -c -o cyrx2.o
++	$(CXX) $(CXXFLAGS) cyrx2.cc -c -o cyrx2.o
+ 
+ cyrx.o: cyrx.cc cyrmapper.h cyrl.h cyrx.icon cright.icon
+-	$(CC) cyrx.cc -c -o cyrx.o
++	$(CXX) $(CXXFLAGS) cyrx.cc -c -o cyrx.o
+ 
+ 
+ cyrmapper.o: cyrmapper.cc cyrmapper.h
+-	$(CC) cyrmapper.cc -c -o cyrmapper.o
++	$(CXX) $(CXXFLAGS) cyrmapper.cc -c -o cyrmapper.o
+ 
+ test: test.cc
+-	$(CC) test.cc -o test -lg++
++	$(CXX) $(CXXFLAGS) test.cc -o test -lg++
+ 
+-test: gen.c
+-	$(CC) gen.c -o gen
++gen: gen.c
++	$(CC) $(CFLAGS) gen.c -o gen
+ 
+ 
+ tabs: 
