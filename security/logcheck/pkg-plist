@@ -1,13 +1,13 @@
 bin/logtail
 etc/logcheck.sh
-etc/logcheck.hacking
-etc/logcheck.ignore
-etc/logcheck.violations
-etc/logcheck.violations.ignore
 %%EXAMPLESDIR%%/logcheck.hacking
+@exec test -f %D/etc/%f || cp %D/%f %D/etc
 %%EXAMPLESDIR%%/logcheck.ignore
+@exec test -f %D/etc/%f || cp %D/%f %D/etc
 %%EXAMPLESDIR%%/logcheck.violations.ignore
+@exec test -f %D/etc/%f || cp %D/%f %D/etc
 %%EXAMPLESDIR%%/logcheck.violations
+@exec test -f %D/etc/%f || cp %D/%f %D/etc
 @dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
