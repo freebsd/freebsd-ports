@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.ecs.soton.ac.uk/pub/worldforge/acorn/0.3/src/ \
 MAINTAINER=	lehmann@ans-netz.de
 
 LIB_DEPENDS=	sigc.1:${PORTSDIR}/devel/libsigc++ \
-		SDL-1.1:${PORTSDIR}/devel/sdl-devel
+		SDL-1.1.3:${PORTSDIR}/devel/sdl12
 
 USE_NEWGCC=	YES
 USE_LIBTOOL=	YES
