@@ -4828,6 +4828,7 @@ natd		src/sbin/natd
 naturalmath	ports/math/naturalmath
 nautilus	ports/x11-fm/nautilus
 nautilus-gtkhtml	ports/www/nautilus-gtkhtml
+nautilus-media	ports/multimedia/nautilus-media
 nauty		ports/math/nauty
 nawk		ports/lang/nawk
 nbaudit		ports/security/nbaudit
