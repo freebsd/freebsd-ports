@@ -8,9 +8,11 @@
 PORTNAME=	moftpd
 PORTVERSION=	1.1.6
 CATEGORIES=	ftp ipv6
-MASTER_SITES=	ftp://ftp.morth.org/moftpd/
+MASTER_SITES=	ftp://ftp.morth.org/moftpd/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	clement
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	clement@FreeBSD.org
 COMMENT=	A powerful FTP server supporting IPv6, TLS, and much more
 
 GNU_CONFIGURE=	yes
