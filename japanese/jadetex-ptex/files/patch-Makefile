@@ -2,13 +2,13 @@ Index: Makefile
 ===================================================================
 RCS file: /home/cvs/private/hrs/jadetex-ptex/Makefile,v
 retrieving revision 1.1.1.1
-retrieving revision 1.6
-diff -d -u -I\$FreeBSD: /tmp/pcvs/ports/japanese/jadetex-ptex/files/patch-Makefile,v 1.1 2003-07-03 14:17:20 kuriyama Exp $ -I\$Id:.*\$ -I\$hrs:.*\$ -r1.1.1.1 -r1.6
+retrieving revision 1.7
+diff -d -u -I\$FreeBSD: /tmp/pcvs/ports/japanese/jadetex-ptex/files/patch-Makefile,v 1.2 2004-10-30 10:47:46 hrs Exp $ -I\$NetBSD:.*\$ -I\$OpenBSD:.*\$ -I\$DragonFly:.*\$ -I\$Id:.*\$ -I\$hrs:.*\$ -r1.1.1.1 -r1.7
 --- Makefile	10 Jun 2003 15:24:06 -0000	1.1.1.1
-+++ Makefile	3 Jul 2003 13:48:35 -0000	1.6
-@@ -1,27 +1,67 @@
++++ Makefile	30 Oct 2004 10:26:07 -0000	1.7
+@@ -1,27 +1,71 @@
 -default: basic
-+# $hrs: jadetex-ptex/Makefile,v 1.6 2003/07/03 13:48:35 hrs Exp $
++# $hrs: jadetex-ptex/Makefile,v 1.7 2004/10/30 10:26:07 hrs Exp $
  
 -basic: jadetex.ltx
 -	tex jadetex.ins
@@ -59,22 +59,26 @@ diff -d -u -I\$FreeBSD: /tmp/pcvs/ports/japanese/jadetex-ptex/files/patch-Makefi
 +#${PROGNAME_PDFJADETEX}.fmt: ${PROGNAME_PDFJADETEX}.ini ${PROGNAME_PDFJADETEX}.ltx
 +#	${PDFTEX_BIN} -ini -progname=${PROGNAME_PDFJADETEX} "&${PDFLATEX}" ${PROGNAME_PDFJADETEX}.ini
 +
-+TTDEST?= ${TTDIR}
-+TTDIR!=	 kpsewhich -expand-var '$$TEXMFMAIN'
++TEXMFLOCAL_X!=	kpsewhich -expand-var '$$TEXMFLOCAL'
++TEXMFMAIN_X!=	kpsewhich -expand-var '$$TEXMFMAIN'
++TEXMFLOCAL?=	${TEXMFLOCAL_X}
++TEXMFMAIN?=	${TEXMFMAIN_X}
++WEB2CDIR?=	${TEXMFMAIN}/web2c-ptex
++JADETEXDIR?=	${TEXMFLOCAL}/ptex/jadetex
 +
 +install: ${PROGNAME_JADETEX}.ltx dsssl-ptex.def
 +	${MAKE} ${.MAKEFLAGS} jadetex-install
-+	mkdir -p ${TTDEST}/tex/jadetex
-+	cp ${PROGNAME_JADETEX}.ltx dsssl-ptex.def ${TTDEST}/tex/jadetex
++	mkdir -p ${JADETEXDIR}
++	cp ${PROGNAME_JADETEX}.ltx dsssl-ptex.def ${JADETEXDIR}
 +
 +jadetex-install: ${PROGNAME_JADETEX}.fmt
-+	mkdir -p ${TTDEST}/web2c
-+	cp ${PROGNAME_JADETEX}.fmt ${TTDEST}/web2c
++	mkdir -p ${WEB2CDIR}
++	cp ${PROGNAME_JADETEX}.fmt ${WEB2CDIR}
 +	ln -s -f ${TEX_BIN} ${PROGNAME_JADETEX_BIN}
 +
 +#pdfjadetex-install: ${PROGNAME_PDFJADETEX}.fmt
-+#	mkdir -p ${TTDEST}/web2c
-+#	cp ${PROGNAME_PDFJADETEX}.fmt ${TT}/web2c
++#	mkdir -p ${WEB2CDIR}
++#	cp ${PROGNAME_PDFJADETEX}.fmt ${WEB2CDIR}
 +#	ln -s -f ${PDFTEX_BIN} ${PROGNAME_PDFJADETEX_BIN}
  
  realclean: clean
@@ -90,7 +94,7 @@ diff -d -u -I\$FreeBSD: /tmp/pcvs/ports/japanese/jadetex-ptex/files/patch-Makefi
  
  test:
  	openjade -t tex -d ../docbook/print/docbook.dsl test-tables.sgm
-@@ -31,5 +71,4 @@
+@@ -31,5 +75,4 @@
  	jadetex/index.* jadetex/doc/install.pdf \
  	jadetex/Makefile jadetex/ChangeLog jadetex/*ini)
  
