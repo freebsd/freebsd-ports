@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.154 1998/04/26 20:45:36 jseger Exp $
+# $Id: Makefile,v 1.155 1998/05/03 01:45:03 chuckr Exp $
 #
 
     SUBDIR += SSLtelnet
@@ -63,6 +63,7 @@
     SUBDIR += netpipes
     SUBDIR += nettest
     SUBDIR += nslint
+    SUBDIR += ntp
     SUBDIR += omi
     SUBDIR += p5-Archie
     SUBDIR += p5-Net
