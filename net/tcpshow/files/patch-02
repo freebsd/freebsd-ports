@@ -1,0 +1,106 @@
+--- tcpshow.c.orig	Thu Jul 22 13:04:59 1999
++++ tcpshow.c	Thu Jul 22 13:07:25 1999
+@@ -367,7 +367,7 @@
+ #endif
+ 
+ 
+-void main(int, char **);
++int main(int, char **);
+ 
+ 
+ static boolean noBflag = FALSE;
+@@ -1248,7 +1248,7 @@
+ /*                                                                          */
+ /****==========------------------------------------------------==========****/
+ 
+-void main (int argc, char **argv) {
++int main (int argc, char **argv) {
+ 
+    /* Command line options.                                                 */
+    while (--argc > 0 && **++argv == '-')
+@@ -1290,6 +1290,7 @@
+    for ( ; ; ) if (!setjmp(jmpBuf)) showPkt(pkt);
+ 
+    exit(0);
++   return 0;
+ 
+ }
+ 
+@@ -1336,7 +1337,7 @@
+ 	 name = number;
+       }
+    /* The crappy manpage doesn't say the port must be in net byte order.    */
+-   elif (service = getservbyport((int)htons(port), proto))
++   elif ( (service = getservbyport((int)htons(port), proto)) )
+       name = service->s_name;
+    elif (!wantNumber)
+       name = unknown;
+@@ -1580,13 +1581,14 @@
+    if (ppFlag) {
+       (void)sscanf(p, "%s", time);
+       etherType = ETHER_PROTO_IP;      /* tcpdump doesn't supply link type  */
+-      if (!noLinkFlag)
++      if (!noLinkFlag) {
+          if (terseFlag)
+ 	    printf("TIME:\t%s%s\n", time, deltaTime(&prevTime, time));
+          else
+ 	    printf(
+ 	       "\tTimestamp:\t\t\t%s%s\n", time, deltaTime(&prevTime, time)
+ 	    );
++	}
+       return getPkt();
+    }
+ 
+@@ -1598,7 +1600,7 @@
+    (void)strcpy(eTo, etherAddr(eTo, 0));
+    (void)strcpy(eToName, etherName(eTo, TRUE));
+ 
+-   if (!noLinkFlag)
++   if (!noLinkFlag) {
+       if (terseFlag) {
+          printf("TIME:\t%s%s\n", time, deltaTime(&prevTime, time));
+          printf(
+@@ -1614,6 +1616,7 @@
+          if (!noEtherNames) printf(" (%s)", etherName(eTo, FALSE));
+          printf("\n\tEncapsulated Protocol:\t\t%s\n", etherProto(eType, 0));
+       }
++   }
+ 
+    return getPkt();
+ 
+@@ -1826,7 +1829,7 @@
+    }
+    /* Note that if getPkt() returns here, then the line read isn't the      */
+    /* start of a new packet, i.e. there's spurious data.                    */
+-   if (p = getPkt()) {
++   if ( (p = getPkt()) ) {
+       if (sFlag) printf("\t<*** Spurious data at end: \"%s\" ***>\n", p);
+       nextPkt();
+    }
+@@ -1996,10 +1999,10 @@
+ 
+    if (terseFlag) {
+       printf(
+-	 " TCP:\tport %s -> %s seq=%010lu", sPortName, dPortName, seq
++	 " TCP:\tport %s -> %s seq=%010lu", sPortName, dPortName, (u_long)seq
+       );
+-      if (trackFlag) printf(" (expect=%010lu)", expect);
+-      printf(" ack=%010lu\n", ack);
++      if (trackFlag) printf(" (expect=%010lu)", (u_long)expect);
++      printf(" ack=%010lu\n", (u_long)ack);
+       printf(
+          "\thlen=%d (data=%u) UAPRSF=%s%s%s%s%s%s",
+          hLen, dataLen,
+@@ -2016,9 +2019,9 @@
+       if (!noPortNames) printf(" (%s)", portName(sPort, "tcp", FALSE));
+       printf("\n\tDestination Port:\t\t%d", dPort);
+       if (!noPortNames) printf(" (%s)", portName(dPort, "tcp", FALSE));
+-      printf("\n\tSequence Number:\t\t%010lu\n", seq);
+-      if (trackFlag) printf("\tExpect peer ACK:\t\t%010lu\n", expect);
+-      printf("\tAcknowledgement Number:\t\t%010lu\n", ack);
++      printf("\n\tSequence Number:\t\t%010lu\n", (u_long)seq);
++      if (trackFlag) printf("\tExpect peer ACK:\t\t%010lu\n", (u_long)expect);
++      printf("\tAcknowledgement Number:\t\t%010lu\n", (u_long)ack);
+       printf("\tHeader Length:\t\t\t%d bytes (data=%u)\n", hLen, dataLen);
+       printf(
+          "\tFlags:%s%s%s%s%s%s\n%s%s%s%s%s%s\n",
