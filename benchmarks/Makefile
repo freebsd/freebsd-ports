@@ -18,6 +18,7 @@
     SUBDIR += postmark
     SUBDIR += pybench
     SUBDIR += rawio
+    SUBDIR += scimark2c
     SUBDIR += siege
     SUBDIR += stream
     SUBDIR += tcpblast
