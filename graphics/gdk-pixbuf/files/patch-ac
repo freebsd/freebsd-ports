@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- gdk-pixbuf/Makefile.in.orig	Mon Jan 21 10:57:36 2002
-+++ gdk-pixbuf/Makefile.in	Mon Jan 21 11:04:53 2002
+--- gdk-pixbuf/Makefile.in.orig	Thu Jun 20 19:26:31 2002
++++ gdk-pixbuf/Makefile.in	Thu Jun 20 19:34:19 2002
 @@ -129,71 +129,71 @@
  # The PNG plugin.
  #
@@ -110,3 +110,12 @@ $FreeBSD$
  
  GDK_PIXBUF_LIBS = $(GLIB_LIBS) $(GTK_LIBS)
  
+@@ -343,7 +343,7 @@
+ libpixbufloader_bmp_la_OBJECTS =  io-bmp.lo
+ libpixbufloader_xbm_la_DEPENDENCIES =  libgdk_pixbuf.la
+ libpixbufloader_xbm_la_OBJECTS =  io-xbm.lo
+-noinst_PROGRAMS =  test-gdk-pixbuf$(EXEEXT) testpixbuf$(EXEEXT) \
++noinst_PROGRAMS =  # test-gdk-pixbuf$(EXEEXT) testpixbuf$(EXEEXT) \
+ testpixbuf-drawable$(EXEEXT) testanimation$(EXEEXT) \
+ testpixbuf-scale$(EXEEXT)
+ PROGRAMS =  $(noinst_PROGRAMS)
