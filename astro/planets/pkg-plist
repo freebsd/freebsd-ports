@@ -1,0 +1,4 @@
+bin/planets
+%%PORTDOCS%%share/doc/planets/KEYBINDINGS.txt
+%%PORTDOCS%%share/doc/planets/getting_started.html
+%%PORTDOCS%%@dirrm share/doc/planets
