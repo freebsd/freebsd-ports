@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nautilus
-PORTVERSION=	0.5
+PORTVERSION=	0.8
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/nautilus
@@ -21,7 +21,7 @@ LIB_DEPENDS=	medusa.0:${PORTSDIR}/sysutils/medusa \
 		freetype.6:${PORTSDIR}/print/freetype2
 
 .if defined(WITH_MOZILLA)
-MOZILLA=	mozilla-embedded
+MOZILLA=	mozilla
 BUILD_DEPENDS=	${X11BASE}/include/mozilla/gtkmozembed.h:${PORTSDIR}/www/mozilla-headers \
 		${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZILLA}
 RUN_DEPENDS=	${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZILLA}
@@ -32,7 +32,7 @@ USE_X_PREFIX=	yes
 USE_GNOME=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -fno-rtti -fno-exceptions" \
 		LIBS="-pthread -L${LOCALBASE}/lib" \
 		LIBPNG="-L${LOCALBASE}/lib -lpng -lz ${MOZILLA_LIBS}"
 CONFIGURE_ARGS=	--with-freetype2-lib-place=${LOCALBASE}/lib \

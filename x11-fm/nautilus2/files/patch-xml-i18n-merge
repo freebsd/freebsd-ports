@@ -1,0 +1,11 @@
+
+$FreeBSD$
+
+--- xml-i18n-merge	2001/01/31 17:44:52	1.1
++++ xml-i18n-merge	2001/01/31 17:45:16
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl -w
++#!/usr/bin/perl -w
+ 
+ #
+ #  The XML Translation Merge Tool
