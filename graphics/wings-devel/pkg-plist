@@ -43,6 +43,7 @@ lib/erlang/lib/wings-%%VERSION%%/ebin/wings_hotkey.beam
 lib/erlang/lib/wings-%%VERSION%%/ebin/wings_icon.bundle
 lib/erlang/lib/wings-%%VERSION%%/ebin/wings_image.beam
 lib/erlang/lib/wings-%%VERSION%%/ebin/wings_import.beam
+lib/erlang/lib/wings-%%VERSION%%/ebin/wings_init.beam
 lib/erlang/lib/wings-%%VERSION%%/ebin/wings_io.beam
 lib/erlang/lib/wings-%%VERSION%%/ebin/wings_light.beam
 lib/erlang/lib/wings-%%VERSION%%/ebin/wings_magnet.beam
@@ -90,6 +91,7 @@ lib/erlang/lib/wings-%%VERSION%%/plugins/commands/wpc_turnedge.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/commands/wpc_tweak.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/default/README
 lib/erlang/lib/wings-%%VERSION%%/plugins/default/wp9_dialogs.beam
+lib/erlang/lib/wings-%%VERSION%%/plugins/default/wpc_test_ask.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/fonts/README
 lib/erlang/lib/wings-%%VERSION%%/plugins/fonts/wpf_6x11.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/fonts/wpf_7x14.beam
@@ -139,6 +141,7 @@ lib/erlang/lib/wings-%%VERSION%%/src/wings_help.erl
 lib/erlang/lib/wings-%%VERSION%%/src/wings_hotkey.erl
 lib/erlang/lib/wings-%%VERSION%%/src/wings_image.erl
 lib/erlang/lib/wings-%%VERSION%%/src/wings_import.erl
+lib/erlang/lib/wings-%%VERSION%%/src/wings_init.erl
 lib/erlang/lib/wings-%%VERSION%%/src/wings_io.erl
 lib/erlang/lib/wings-%%VERSION%%/src/wings_light.erl
 lib/erlang/lib/wings-%%VERSION%%/src/wings_magnet.erl
@@ -179,6 +182,5 @@ lib/erlang/lib/wings-%%VERSION%%/src/wpa.erl
 @dirrm lib/erlang/lib/wings-%%VERSION%%/plugins/autouv
 @dirrm lib/erlang/lib/wings-%%VERSION%%/plugins
 @dirrm lib/erlang/lib/wings-%%VERSION%%/ebin
+@dirrm lib/erlang/lib/wings
 @dirrm lib/erlang/lib/wings-%%VERSION%%
-@exec ln -sf wings-%%VERSION%% %D/lib/erlang/lib/wings
-@unexec rm -f %D/lib/erlang/lib/wings
