@@ -1,5 +1,5 @@
---- sunclock.c.orig	Wed Aug  8 07:53:14 2001
-+++ sunclock.c	Sat Dec  8 21:24:46 2001
+--- sunclock.c.orig	Fri Oct  8 17:11:44 2004
++++ sunclock.c	Sun Nov 21 13:51:14 2004
 @@ -125,7 +125,6 @@
   *  external routines
   */
@@ -8,7 +8,7 @@
  #ifdef NEW_CTIME
  extern char *   timezone();
  #endif
-@@ -2062,8 +2061,8 @@
+@@ -2164,8 +2163,8 @@
  
          if (!Context->mark1.city) return;
  
@@ -19,7 +19,7 @@
  
          /* Get local time at given location */
          setTZ(Context->mark1.city);
-@@ -2212,8 +2211,8 @@
+@@ -2314,8 +2313,8 @@
  
  	if (!Context->flags.mapped) return;
  
@@ -30,7 +30,7 @@
  
          if (!Context->wintype) {
                  char num[80];
-@@ -2542,7 +2541,7 @@
+@@ -2661,7 +2660,7 @@
  
          Context->bits = 0;
          Context->flags.update = 4;
@@ -39,7 +39,7 @@
          Context->projtime = -1L;
          Context->roottime = -1L;
          Context->animtime = -1L;
-@@ -3708,7 +3707,7 @@
+@@ -3827,7 +3826,7 @@
  
          if (button_pressed) return;
  
@@ -48,7 +48,7 @@
  
  	erase_obj = 1;
  	if (Context->flags.colorlevel == MONOCHROME ||
-@@ -3716,10 +3715,10 @@
+@@ -3835,10 +3834,10 @@
              drawSunAndMoon(Context);
          erase_obj = 0;
  
@@ -61,7 +61,7 @@
                &Context->moondec, &Context->moonlon, 
                &junk,  &junk, &junk, &junk, &junk, &junk );
  	Context->moonlon = fixangle(Context->moonlon+180.0) - 180.0;
-@@ -3736,10 +3735,10 @@
+@@ -3855,10 +3854,10 @@
             update the illuminated area on the screen.   */
  
          if (Context->projtime < 0 || 
@@ -74,7 +74,7 @@
                  Context->noon = noon;
                  Context->fnoon = fnoon;
                  moveNightArea(Context);
-@@ -4341,8 +4340,8 @@
+@@ -4466,8 +4465,8 @@
       hw = Context->geom.height;
       if (do_root == 2) hw += Context->hstrip;
  
@@ -85,7 +85,7 @@
       else
          if (do_root == 2 && mode==0 && rootpix) update = 0;
  
-@@ -4353,7 +4352,7 @@
+@@ -4478,7 +4477,7 @@
          XSetForeground(dpy, Context->gdata->wingc, 
                           Context->gdata->pixel[ROOTCOLOR]);
          XFillRectangle(dpy, rootpix, Context->gdata->wingc, 0, 0, wr, hr);
@@ -94,7 +94,7 @@
          if (random_rootpos) {
             rootdx = (double)(random() % 10001)/10000.0;
             rootdy = (double)(random() % 10001)/10000.0;
-@@ -5299,13 +5298,13 @@
+@@ -5434,7 +5433,7 @@
               Context->flags.update = 2;
               break;
             case XK_w: 
@@ -103,14 +103,7 @@
               if (do_menu) do_menu = -1;
               if (do_filesel) do_filesel = -1;
               if (do_zoom) do_zoom = -1;
-              if (do_option) do_option = -1;
-              buildMap(Context, 1, 1);
--             last_time = Context->time;
-+             last_time = Context->footime;
- 	     keysym = ' ';
-              break;
-            case XK_r:
-@@ -5616,9 +5615,9 @@
+@@ -5825,9 +5824,9 @@
                drawImageToRootWindow(Context, 0);
  	   XFlush(dpy);
  	   if (Context->flags.animate) {
