@@ -71,6 +71,12 @@ CONFIGURE_ARGS=	--enable-nls \
 
 APPENDIXDIR=	${DATADIR}/appendix
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64"
+BROKEN=		"Configure fails on ia64"
+.endif
+
 post-extract:
 	${RM} -fr ${WRKSRC}/zlib
 	${MKDIR} ${WRKDIR}/appendix
@@ -85,4 +91,4 @@ post-install:
 .endfor
 	${CP} -R ${WRKDIR}/appendix/ ${APPENDIXDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
