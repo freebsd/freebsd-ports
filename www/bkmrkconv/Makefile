@@ -8,7 +8,7 @@
 
 DISTNAME=	bkmrkconv
 PKGNAME=	bkmrkconv-1.08
-CATEGORIES=	converters www
+CATEGORIES=	www
 MASTER_SITES=	http://www.dcs.warwick.ac.uk/~csube/bkmrkconv/
 
 MAINTAINER=	will@FreeBSD.org
