@@ -1,34 +1,49 @@
-bin/add_throw
-bin/collect.pl
 bin/crossedit
 bin/crossfire
 bin/crossloop
 bin/crossloop.pl
 bin/crossloop.web
-bin/flushlocks
-bin/mktable
-bin/random_map
-bin/util.pl
+etc/crossfire/ban_file
+etc/crossfire/dm_file
+etc/crossfire/exp_table
+etc/crossfire/forbid
+etc/crossfire/motd
+etc/crossfire/settings
+etc/crossfire/skill_params
+etc/crossfire/spell_params
+lib/crossfire/add_throw.perl
+lib/crossfire/metaserver.pl
+lib/crossfire/mktable.script
+lib/crossfire/random_map
+share/crossfire/adm/README
+share/crossfire/adm/archsearch.pl
+share/crossfire/adm/collect_images.pl
+share/crossfire/adm/map_check
+share/crossfire/adm/map_expand.pl
+share/crossfire/adm/map_info
+share/crossfire/adm/mapslitter.pl
 share/crossfire/animations
 share/crossfire/archetypes
 share/crossfire/artifacts
 share/crossfire/attackmess
-share/crossfire/ban_file
 share/crossfire/bmaps
 share/crossfire/bmaps.paths
 share/crossfire/crossfire.0
 share/crossfire/crossfire.1
 share/crossfire/def_help
-share/crossfire/dm_file
 share/crossfire/faces
-share/crossfire/forbid
 share/crossfire/formulae
 share/crossfire/help/apply
+share/crossfire/help/applymode
 share/crossfire/help/bind
+share/crossfire/help/brace
 share/crossfire/help/cast
+share/crossfire/help/drop
+share/crossfire/help/dropall
 share/crossfire/help/golem
 share/crossfire/help/invoke
 share/crossfire/help/keys
+share/crossfire/help/killpets
 share/crossfire/help/mark
 share/crossfire/help/melee
 share/crossfire/help/mouse
@@ -765,7 +780,6 @@ share/crossfire/maps/navar_city/warehouse6
 share/crossfire/maps/navar_city/warehouse7
 share/crossfire/maps/navar_city/warehouse8
 share/crossfire/maps/peterm/CTower/Barracks
-share/crossfire/maps/peterm/CTower/Barracks.rej
 share/crossfire/maps/peterm/CTower/CTower
 share/crossfire/maps/peterm/CTower/Chamber
 share/crossfire/maps/peterm/CTower/Dungeon
@@ -1245,8 +1259,9 @@ share/crossfire/maps/santo_dominion/magara/south_lighthouse/floor_1
 share/crossfire/maps/santo_dominion/magara/south_lighthouse/floor_2
 share/crossfire/maps/santo_dominion/magara/south_lighthouse/floor_3
 share/crossfire/maps/santo_dominion/magara/south_lighthouse/floor_4
-share/crossfire/maps/santo_dominion/magara/well/bottom
+share/crossfire/maps/santo_dominion/magara/well/cave
 share/crossfire/maps/santo_dominion/magara/well/top
+share/crossfire/maps/santo_dominion/magara/well/treasure
 share/crossfire/maps/santo_dominion/map.and.sale
 share/crossfire/maps/santo_dominion/map.stigkr.1
 share/crossfire/maps/santo_dominion/map.stigkr.2
@@ -1585,6 +1600,30 @@ share/crossfire/maps/terrain/plains_1
 share/crossfire/maps/terrain/plains_2
 share/crossfire/maps/terrain/swamp_1
 share/crossfire/maps/terrain/swamp_2
+share/crossfire/maps/test/anthony/README
+share/crossfire/maps/test/anthony/cascades
+share/crossfire/maps/test/anthony/connected_objects
+share/crossfire/maps/test/anthony/conveyor
+share/crossfire/maps/test/anthony/raffles_cascade
+share/crossfire/maps/test/anthony/roller_cades
+share/crossfire/maps/test/anthony/special_objects
+share/crossfire/maps/test/bigmonpit
+share/crossfire/maps/test/connected_bug
+share/crossfire/maps/test/cyclops
+share/crossfire/maps/test/diagonal
+share/crossfire/maps/test/faceofdeath
+share/crossfire/maps/test/insert_bug
+share/crossfire/maps/test/lighting
+share/crossfire/maps/test/multisquare
+share/crossfire/maps/test/paralyze
+share/crossfire/maps/test/pit
+share/crossfire/maps/test/playermover
+share/crossfire/maps/test/randomtreasure
+share/crossfire/maps/test/remote_altar
+share/crossfire/maps/test/tile1
+share/crossfire/maps/test/tile2
+share/crossfire/maps/test/tile3
+share/crossfire/maps/test/trigger
 share/crossfire/maps/thomas/sisters/compound1
 share/crossfire/maps/thomas/sisters/compound2
 share/crossfire/maps/thomas/sisters/compound3
@@ -1608,6 +1647,136 @@ share/crossfire/maps/thomas/sisters/tower1
 share/crossfire/maps/thomas/sisters/tower2
 share/crossfire/maps/thomas/sisters/tower3
 share/crossfire/maps/thomas/sisters/valley
+share/crossfire/maps/todd/aljwaf/crypt
+share/crossfire/maps/todd/aljwaf/crypt2
+share/crossfire/maps/todd/aljwaf/crypt3
+share/crossfire/maps/todd/aljwaf/crypt4
+share/crossfire/maps/todd/aljwaf/crypt5
+share/crossfire/maps/todd/aljwaf/hall1
+share/crossfire/maps/todd/aljwaf/hall2
+share/crossfire/maps/todd/aljwaf/ruins
+share/crossfire/maps/todd/aljwaf/tomb
+share/crossfire/maps/unlinked/Greyshield/Archery
+share/crossfire/maps/unlinked/Greyshield/Arena
+share/crossfire/maps/unlinked/Greyshield/Castle
+share/crossfire/maps/unlinked/Greyshield/Cave
+share/crossfire/maps/unlinked/Greyshield/Cavern
+share/crossfire/maps/unlinked/Greyshield/Cavern2
+share/crossfire/maps/unlinked/Greyshield/Chamber
+share/crossfire/maps/unlinked/Greyshield/Doors
+share/crossfire/maps/unlinked/Greyshield/Dungeon
+share/crossfire/maps/unlinked/Greyshield/Elements
+share/crossfire/maps/unlinked/Greyshield/Factory
+share/crossfire/maps/unlinked/Greyshield/Finish
+share/crossfire/maps/unlinked/Greyshield/Fortress
+share/crossfire/maps/unlinked/Greyshield/GreyMaster
+share/crossfire/maps/unlinked/Greyshield/Greysword
+share/crossfire/maps/unlinked/Greyshield/Island
+share/crossfire/maps/unlinked/Greyshield/Island1
+share/crossfire/maps/unlinked/Greyshield/Ruins
+share/crossfire/maps/unlinked/Greyshield/Sphinx
+share/crossfire/maps/unlinked/ImperialPost/README
+share/crossfire/maps/unlinked/ImperialPost/local/ImperialPost/IPO
+share/crossfire/maps/unlinked/ImperialPost/local/ImperialPost/board.py
+share/crossfire/maps/unlinked/ImperialPost/local/ImperialPost/receive.py
+share/crossfire/maps/unlinked/ImperialPost/local/ImperialPost/say.py
+share/crossfire/maps/unlinked/ImperialPost/local/ImperialPost/send.py
+share/crossfire/maps/unlinked/ImperialPost/python/CFBank.py
+share/crossfire/maps/unlinked/ImperialPost/python/CFBoard.py
+share/crossfire/maps/unlinked/ImperialPost/python/CFLog.py
+share/crossfire/maps/unlinked/ImperialPost/python/CFMail.py
+share/crossfire/maps/unlinked/ImperialPost/python/python_born.py
+share/crossfire/maps/unlinked/ImperialPost/python/python_login.py
+share/crossfire/maps/unlinked/ImperialPost/python/python_remove.py
+share/crossfire/maps/unlinked/tomble/CHANGELOG
+share/crossfire/maps/unlinked/tomble/COPYRIGHT
+share/crossfire/maps/unlinked/tomble/README
+share/crossfire/maps/unlinked/tomble/candy-apple/inn1
+share/crossfire/maps/unlinked/tomble/candy-apple/island-pr
+share/crossfire/maps/unlinked/tomble/candy-apple/lament-keepGD
+share/crossfire/maps/unlinked/tomble/candy-apple/smallshop1
+share/crossfire/maps/unlinked/tomble/candy-apple/tower1
+share/crossfire/maps/unlinked/tomble/candy-apple/town1
+share/crossfire/maps/unlinked/tomble/ex-navar/evilshop
+share/crossfire/maps/unlinked/tomble/ex-navar/market1
+share/crossfire/maps/unlinked/tomble/ex-navar/market1-purge
+share/crossfire/maps/unlinked/tomble/ex-navar/quiet_shop
+share/crossfire/maps/unlinked/tomble/ex-navar/silly1
+share/crossfire/maps/unlinked/tomble/ex-navar/slum-proto1
+share/crossfire/maps/unlinked/tomble/ex-navar/slum-proto2
+share/crossfire/maps/unlinked/tomble/ex-navar/slumgate-proto1
+share/crossfire/maps/unlinked/tomble/ex-navar/slumgate-proto2
+share/crossfire/maps/unlinked/tomble/ex-navar/slumgate-proto3
+share/crossfire/maps/unlinked/tomble/ex-scorn/eng_guild
+share/crossfire/maps/unlinked/tomble/ex-scorn/spring_works
+share/crossfire/maps/unlinked/tomble/ex-scorn/t_v_lab_gifts
+share/crossfire/maps/unlinked/tomble/ex-scorn/t_v_lab_shed
+share/crossfire/maps/unlinked/tomble/ex-scorn/temp-s
+share/crossfire/maps/unlinked/tomble/ex-scorn/tombles_experiment1
+share/crossfire/maps/unlinked/tomble/ex-scorn/tombles_experiment2
+share/crossfire/maps/unlinked/tomble/ex-scorn/tombles_experiment3
+share/crossfire/maps/unlinked/tomble/ex-scorn/tombles_vampyre_lab
+share/crossfire/maps/unlinked/tomble/p.tui/p.tui
+share/crossfire/maps/unlinked/tomble/picks/tbls-exits
+share/crossfire/maps/unlinked/tomble/prototypes/cursemap
+share/crossfire/maps/unlinked/tomble/prototypes/dun-east0.orig
+share/crossfire/maps/unlinked/tomble/prototypes/dun-east0b
+share/crossfire/maps/unlinked/tomble/prototypes/guardhouse
+share/crossfire/maps/unlinked/tomble/prototypes/inn1
+share/crossfire/maps/unlinked/tomble/prototypes/keep-prot
+share/crossfire/maps/unlinked/tomble/prototypes/keep-prot-pt2
+share/crossfire/maps/unlinked/tomble/prototypes/keep-prot-pt3
+share/crossfire/maps/unlinked/tomble/prototypes/keep-prot-pt4
+share/crossfire/maps/unlinked/tomble/prototypes/keep-prot-pt5
+share/crossfire/maps/unlinked/tomble/prototypes/my-elevation1
+share/crossfire/maps/unlinked/tomble/prototypes/p.tui-proto
+share/crossfire/maps/unlinked/tomble/prototypes/squishi-orig
+share/crossfire/maps/unlinked/tomble/prototypes/squishi1
+share/crossfire/maps/unlinked/tomble/prototypes/squishi2
+share/crossfire/maps/unlinked/tomble/prototypes/squishi3
+share/crossfire/maps/unlinked/tomble/squishi/alch-cellar
+share/crossfire/maps/unlinked/tomble/squishi/alch-top
+share/crossfire/maps/unlinked/tomble/squishi/alchemist
+share/crossfire/maps/unlinked/tomble/squishi/auction1
+share/crossfire/maps/unlinked/tomble/squishi/cin-sc1
+share/crossfire/maps/unlinked/tomble/squishi/cinema
+share/crossfire/maps/unlinked/tomble/squishi/colosseum
+share/crossfire/maps/unlinked/tomble/squishi/guardhouse
+share/crossfire/maps/unlinked/tomble/squishi/inns/inn1
+share/crossfire/maps/unlinked/tomble/squishi/inns/soelim1
+share/crossfire/maps/unlinked/tomble/squishi/kebabery
+share/crossfire/maps/unlinked/tomble/squishi/magic-shop1
+share/crossfire/maps/unlinked/tomble/squishi/main-structures/courthouse
+share/crossfire/maps/unlinked/tomble/squishi/main-structures/keep-prelim
+share/crossfire/maps/unlinked/tomble/squishi/main-structures/temple1
+share/crossfire/maps/unlinked/tomble/squishi/main-structures/univ1
+share/crossfire/maps/unlinked/tomble/squishi/main-structures/univ11proto
+share/crossfire/maps/unlinked/tomble/squishi/market/market-w
+share/crossfire/maps/unlinked/tomble/squishi/market/stall_1
+share/crossfire/maps/unlinked/tomble/squishi/market/stall_2
+share/crossfire/maps/unlinked/tomble/squishi/newall-twr-gnd
+share/crossfire/maps/unlinked/tomble/squishi/nw-twr-gnd
+share/crossfire/maps/unlinked/tomble/squishi/nwwall-twr-gnd
+share/crossfire/maps/unlinked/tomble/squishi/squishi
+share/crossfire/maps/unlinked/tomble/squishi/stringy/stringy-mos.ASC
+share/crossfire/maps/unlinked/tomble/squishi/stringy/stringy-mos.TXT
+share/crossfire/maps/unlinked/tomble/squishi/stringy/stringys-atrium
+share/crossfire/maps/unlinked/tomble/squishi/stringy/stringys-diningroom
+share/crossfire/maps/unlinked/tomble/squishi/stringy/stringys-hallway
+share/crossfire/maps/unlinked/tomble/squishi/stringy/stringys-kitchen
+share/crossfire/maps/unlinked/tomble/squishi/ug/alch-dun
+share/crossfire/maps/unlinked/tomble/squishi/ug/dun-east0
+share/crossfire/maps/unlinked/tomble/squishi/ug/dun-west0
+share/crossfire/maps/unlinked/tomble/squishi/ug/stav-hall
+share/crossfire/maps/unlinked/tomble/squishi/ug/subtemp-ent
+share/crossfire/maps/unlinked/tomble/styles/specialmaps/house_of_fun
+share/crossfire/maps/unlinked/tomble/styles/specialmaps/house_of_fun2
+share/crossfire/maps/unlinked/tomble/styles/specialmaps/mushroom_shop
+share/crossfire/maps/unlinked/tomble/wall-picks/moat
+share/crossfire/maps/unlinked/tomble/wall-picks/tbls-walls
+share/crossfire/maps/unlinked/tomble/world/world_c4-tbl
+share/crossfire/maps/unlinked/tomble/world/world_c5
+share/crossfire/maps/unlinked/tomble/world/world_c6
 share/crossfire/maps/wolfsburg/dept_store
 share/crossfire/maps/wolfsburg/etern_rew
 share/crossfire/maps/wolfsburg/inns
@@ -1654,11 +1823,7 @@ share/crossfire/maps/world/world_c4
 share/crossfire/maps/world/world_e1
 share/crossfire/maps/world/world_e2
 share/crossfire/messages
-share/crossfire/motd
 share/crossfire/races
-share/crossfire/settings
-share/crossfire/skill_params
-share/crossfire/spell_params
 share/crossfire/treasures
 share/crossfire/wizhelp/abil
 share/crossfire/wizhelp/addexp
@@ -1700,6 +1865,7 @@ share/crossfire/wizhelp/who
 share/crossfire/wizhelp/wizhelp
 share/crossfire/wizhelp/wizpass
 var/crossfire/bookarch
+var/crossfire/clockdata
 var/crossfire/highscore
 var/crossfire/temp.maps
 @dirrm share/crossfire/wizhelp
@@ -1711,8 +1877,35 @@ var/crossfire/temp.maps
 @dirrm share/crossfire/maps/wolfsburg/magara/castle
 @dirrm share/crossfire/maps/wolfsburg/magara
 @dirrm share/crossfire/maps/wolfsburg
+@dirrm share/crossfire/maps/unlinked/tomble/world
+@dirrm share/crossfire/maps/unlinked/tomble/wall-picks
+@dirrm share/crossfire/maps/unlinked/tomble/styles/specialmaps
+@dirrm share/crossfire/maps/unlinked/tomble/styles
+@dirrm share/crossfire/maps/unlinked/tomble/squishi/ug
+@dirrm share/crossfire/maps/unlinked/tomble/squishi/stringy
+@dirrm share/crossfire/maps/unlinked/tomble/squishi/market
+@dirrm share/crossfire/maps/unlinked/tomble/squishi/main-structures
+@dirrm share/crossfire/maps/unlinked/tomble/squishi/inns
+@dirrm share/crossfire/maps/unlinked/tomble/squishi
+@dirrm share/crossfire/maps/unlinked/tomble/prototypes
+@dirrm share/crossfire/maps/unlinked/tomble/picks
+@dirrm share/crossfire/maps/unlinked/tomble/p.tui
+@dirrm share/crossfire/maps/unlinked/tomble/ex-scorn
+@dirrm share/crossfire/maps/unlinked/tomble/ex-navar
+@dirrm share/crossfire/maps/unlinked/tomble/candy-apple
+@dirrm share/crossfire/maps/unlinked/tomble
+@dirrm share/crossfire/maps/unlinked/ImperialPost/python
+@dirrm share/crossfire/maps/unlinked/ImperialPost/local/ImperialPost
+@dirrm share/crossfire/maps/unlinked/ImperialPost/local
+@dirrm share/crossfire/maps/unlinked/ImperialPost
+@dirrm share/crossfire/maps/unlinked/Greyshield
+@dirrm share/crossfire/maps/unlinked
+@dirrm share/crossfire/maps/todd/aljwaf
+@dirrm share/crossfire/maps/todd
 @dirrm share/crossfire/maps/thomas/sisters
 @dirrm share/crossfire/maps/thomas
+@dirrm share/crossfire/maps/test/anthony
+@dirrm share/crossfire/maps/test
 @dirrm share/crossfire/maps/terrain
 @dirrm share/crossfire/maps/styles/wallstyles
 @dirrm share/crossfire/maps/styles/treasurestyles
@@ -1896,16 +2089,19 @@ var/crossfire/temp.maps
 @dirrm share/crossfire/maps/Lake_Country/Butakis/houses
 @dirrm share/crossfire/maps/Lake_Country/Butakis
 @dirrm share/crossfire/maps/Lake_Country
+@dirrm share/crossfire/maps
 @dirrm share/crossfire/help
-@exec mkdir -p %D/share/crossfire/maps/tmp
-@exec mkdir -p %D/share/crossfire/plugins
+@dirrm share/crossfire/adm
+@dirrm share/crossfire
+@dirrm etc/crossfire
+@exec mkdir -p %D/lib/crossfire/plugins
+@exec mkdir -p %D/var/crossfire/maps
 @exec mkdir -p %D/var/crossfire/players
 @exec mkdir -p %D/var/crossfire/unique-items
 @unexec rmdir %D/var/crossfire/unique-items 2>/dev/null || true
 @unexec rmdir %D/var/crossfire/players 2>/dev/null || true
+@unexec rmdir %D/var/crossfire/maps 2>/dev/null || true
 @unexec rmdir %D/var/crossfire 2>/dev/null || true
 @unexec rmdir %D/var 2>/dev/null || true
-@unexec rmdir %D/share/crossfire/plugins 2>/dev/null || true
-@unexec rmdir %D/share/crossfire/maps/tmp 2>/dev/null || true
-@unexec rmdir %D/share/crossfire/maps 2>/dev/null || true
-@unexec rmdir %D/share/crossfire 2>/dev/null || true
+@unexec rmdir %D/lib/crossfire/plugins 2>/dev/null || true
+@unexec rmdir %D/lib/crossfire 2>/dev/null || true
