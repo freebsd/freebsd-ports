@@ -9,7 +9,6 @@ bin/arm-aout-protoize
 bin/arm-aout-unprotoize
 bin/arm-aout-cpp
 bin/arm-aout-gcov
-include/ansidecl.h
 lib/gcc-lib/arm-aout/%%GCC_REV%%/SYSCALLS.c.X
 lib/gcc-lib/arm-aout/%%GCC_REV%%/be/fpu/libgcc.a
 lib/gcc-lib/arm-aout/%%GCC_REV%%/be/libgcc.a
