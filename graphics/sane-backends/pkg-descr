@@ -11,4 +11,4 @@ sane-backends contains documentation, several backends, scanimage
 command line frontend, and networking support. For other/graphical
 frontends take a look at sane-frontends and/or xsane.
 
-WWW: http://www.mostang.com/sane/
+WWW: http://www.sane-project.org/
