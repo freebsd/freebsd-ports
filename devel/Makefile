@@ -710,6 +710,7 @@
     SUBDIR += p5-Test-Exception
     SUBDIR += p5-Test-Harness
     SUBDIR += p5-Test-Inline
+    SUBDIR += p5-Test-Pod
     SUBDIR += p5-Test-Simple
     SUBDIR += p5-Test-Unit
     SUBDIR += p5-Tie-Cache

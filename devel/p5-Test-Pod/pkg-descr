@@ -1,0 +1,4 @@
+Check POD files for errors or warnings in a test file, using Pod::Simple to do
+the heavy lifting.
+
+WWW: http://search.cpan.org/dist/Test-Pod/
