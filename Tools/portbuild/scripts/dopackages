@@ -321,9 +321,9 @@ if [ "$nobuild" = 0 ]; then
   echo "================================================"
   echo "archiving /usr/ports"
   echo "================================================"
+  echo "started at $(date)"
   cd ${pb}/usr
   tar --exclude CVS -czf ${pb}/${branch}/tarballs/ports.tar.gz ports
-  echo
 fi
 echo "================================================"
 echo "all done at $(date)"
