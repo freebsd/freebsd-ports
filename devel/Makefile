@@ -565,6 +565,7 @@
     SUBDIR += ocaml-ulex
     SUBDIR += ocamlweb
     SUBDIR += ode
+    SUBDIR += omniNotify
     SUBDIR += omniORB
     SUBDIR += oniguruma
     SUBDIR += openthreads

@@ -1,0 +1,19 @@
+omniNotify is a multi-threaded implementation of the CORBA
+Notification Service (CosNotification), a feature-enriched
+version of the CORBA Event Service (CosEvents).
+omniNotify offers asynchronous, decoupled, event-based communication
+between distributed and heterogeneous applications.
+
+The main features of omniNotify are:
+
+* Implemented in C++.
+* Scalable filter evaluation and event dispatching architecture.
+* Support for push-based and pull-based event suppliers and consumers.
+* Support variants of suppliers/consumers that transmit (per push/pull):
+	o a CORBA::Any (a single arbitrary value);
+	o a CosNotification::StructuredEvent (a single structured event);
+	o a CosNotification::EventBatch (a sequence of structured events).
+* Administrative and Notification QoS properties.
+* Backward compatible with CosEvents.
+
+WWW: http://omninotify.sourceforge.net/

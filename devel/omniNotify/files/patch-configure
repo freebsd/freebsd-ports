@@ -1,0 +1,10 @@
+--- configure.orig	Sun Oct 12 22:51:19 2003
++++ configure	Tue Nov 23 00:49:16 2004
+@@ -2955,6 +2955,7 @@
+   *-*-freebsd3*) platform_name="FreeBSD";  os_version="3";;
+   *-*-freebsd4*) platform_name="FreeBSD";  os_version="4";;
+   *-*-freebsd5*) platform_name="FreeBSD";  os_version="5";;
++  *-*-freebsd6*) platform_name="FreeBSD";  os_version="6";;
+   *-*-sco*)      platform_name="OSR5";     os_version="5";;
+ esac
+ 
