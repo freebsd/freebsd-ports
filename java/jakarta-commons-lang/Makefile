@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	znerd@FreeBSD.org
 COMMENT=	Jakarta library with helper utilities for the java.lang API
 
-BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/jakarta-ant
+BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/apache-ant
 
 USE_JAVA=	1.2+
 

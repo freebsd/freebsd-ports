@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.jar
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An extensible Java-based Scheme interpreter
 
-BUILD_DEPENDS=	ant:${PORTSDIR}/devel/jakarta-ant
+BUILD_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant
 
 USE_JAVA=	1.3+
 

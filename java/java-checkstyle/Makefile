@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	dglo@ssec.wisc.edu
 COMMENT=	Java style checker
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/ant:${PORTSDIR}/devel/jakarta-ant
+BUILD_DEPENDS=	${LOCALBASE}/bin/ant:${PORTSDIR}/devel/apache-ant
 
 USE_JAVA=	1.3+
 NEED_JAVAC=	YES

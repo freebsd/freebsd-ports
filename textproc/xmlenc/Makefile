@@ -13,7 +13,7 @@ MASTER_SITES=	http://${PORTNAME}.sourceforge.net/
 MAINTAINER=	znerd@FreeBSD.org
 COMMENT=	Light-weight XML encoding library for Java
 
-BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/jakarta-ant
+BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/apache-ant
 
 USE_JAVA=	1.1+
 

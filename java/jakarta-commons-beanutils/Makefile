@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	znerd@FreeBSD.org
 COMMENT=	JavaBeans utility library
 
-BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/jakarta-ant \
+BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/apache-ant \
 		${LOCALBASE}/share/java/classes/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-logging \
 		${LOCALBASE}/share/java/classes/commons-collections.jar:${PORTSDIR}/java/jakarta-commons-collections
 

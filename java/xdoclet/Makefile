@@ -16,7 +16,7 @@ DISTFILES=	${DISTNAME}.zip xjavadoc-${XJAVADOC_VER}.zip
 MAINTAINER=	sheldonh@FreeBSD.org
 COMMENT=	Java attribute-oriented code generation engine
 
-RUN_DEPENDS	${LOCALBASE}/bin/ant:${PORTSDIR}/devel/jakarta-ant
+RUN_DEPENDS=	${LOCALBASE}/bin/ant:${PORTSDIR}/devel/apache-ant
 
 USE_JAVA=	1.2+
 USE_ZIP=	yes

@@ -12,7 +12,7 @@ PORTREVISION=	0
 MAINTAINER=	girgen@pingpong.net
 COMMENT=	The Java JDBC implementation for PostgreSQL
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/ant:${PORTSDIR}/devel/jakarta-ant
+BUILD_DEPENDS=	${LOCALBASE}/bin/ant:${PORTSDIR}/devel/apache-ant
 
 POSTGRESQL_PORT?=	databases/postgresql7
 POSTGRESQL_SUBPORT=YES

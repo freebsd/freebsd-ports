@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g}-src
 MAINTAINER=	znerd@FreeBSD.org
 COMMENT=	Apache XSLT processor for transforming XML documents
 
-BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/jakarta-ant
+BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/apache-ant
 
 USE_JAVA=	1.2+
 

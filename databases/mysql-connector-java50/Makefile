@@ -16,7 +16,7 @@ EXTRACT_SUFX=	-you-must-unjar-me.jar
 MAINTAINER=	dglo@ssec.wisc.edu
 COMMENT=	The mm JDBC interface for MySQL
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/ant:${PORTSDIR}/devel/jakarta-ant
+BUILD_DEPENDS=	${LOCALBASE}/bin/ant:${PORTSDIR}/devel/apache-ant
 
 USE_REINPLACE=	YES
 

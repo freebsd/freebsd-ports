@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	znerd@FreeBSD.org
 COMMENT=	Java library for command line arguments and options
 
-BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/jakarta-ant \
+BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/apache-ant \
 		${LOCALBASE}/share/java/classes/commons-lang.jar:${PORTSDIR}/java/jakarta-commons-lang
 
 USE_JAVA=	1.2+

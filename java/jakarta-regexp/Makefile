@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.apache.org/dist/jakarta/regexp/
 MAINTAINER=	dglo@ssec.wisc.edu
 COMMENT=	Regular expressions for Java
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/ant:${PORTSDIR}/devel/jakarta-ant
+BUILD_DEPENDS=	${LOCALBASE}/bin/ant:${PORTSDIR}/devel/apache-ant
 
 USE_JAVA=	1.2+
 NEED_JAVAC=	YES

@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-1.0d11
 MAINTAINER=	znerd@FreeBSD.org
 COMMENT=	Java-based XInclude processors
 
-BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/jakarta-ant
+BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/apache-ant
 
 USE_JAVA=	1.2+
 
