@@ -1,0 +1,34 @@
+*** imap/ANSI/c-client/Makefile.orig	Tue Oct 11 00:13:08 1994
+--- imap/ANSI/c-client/Makefile	Mon Nov 28 12:50:03 1994
+***************
+*** 36,42 ****
+  BINARIES=mail.o bezerk.o mtx.o tenex2.o mbox.o mh.o mmdf.o imap2.o pop3.o \
+  	news.o nntpcunx.o phile.o dummy.o smtp.o nntp.o rfc822.o misc.o \
+  	osdep.o sm_unix.o newsrc.o
+! CFLAGS=$(EXTRACFLAGS)
+  DEFAULTDRIVERS=imap nntp pop3 mh mtx tenex mmdf bezerk news phile dummy
+  LN=ln -s
+  MAKE=make
+--- 36,42 ----
+  BINARIES=mail.o bezerk.o mtx.o tenex2.o mbox.o mh.o mmdf.o imap2.o pop3.o \
+  	news.o nntpcunx.o phile.o dummy.o smtp.o nntp.o rfc822.o misc.o \
+  	osdep.o sm_unix.o newsrc.o
+! CFLAGS+=$(EXTRACFLAGS)
+  DEFAULTDRIVERS=imap nntp pop3 mh mtx tenex mmdf bezerk news phile dummy
+  LN=ln -s
+  MAKE=make
+***************
+*** 84,89 ****
+--- 84,95 ----
+  	$(MAKE) mtest OS=$@ EXTRADRIVERS="$(EXTRADRIVERS)" \
+  		STDPROTO=bezerkproto \
+  		RSHPATH=/usr/bin/rsh CFLAGS="-g -O -pipe $(EXTRACFLAGS)"
++ 
++ bsf:	# FreeBSD
++ 	$(MAKE) mtest OS=$@ EXTRADRIVERS="$(EXTRADRIVERS)" \
++ 		STDPROTO=bezerkproto \
++ 		LDFLAGS="-lcrypt" \
++ 		RSHPATH=/usr/bin/rsh CFLAGS="$(CFLAGS)"
+  
+  cvx:	# Convex
+  	$(MAKE) mtest OS=$@ EXTRADRIVERS="$(EXTRADRIVERS)" \

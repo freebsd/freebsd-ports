@@ -1,0 +1,15 @@
+*** pico/os_unix.h	Mon Jun 27 18:33:43 1994
+--- pico/os_unix.h	Fri Sep  2 02:35:45 1994
+***************
+*** 104,108 ****
+   * type qsort() expects
+   */
+! #if	defined(nxt) || defined(neb)
+  #define	QSType	  void
+  #define QcompType const void
+--- 104,108 ----
+   * type qsort() expects
+   */
+! #if	defined(nxt) || defined(neb) || defined(__FreeBSD__)
+  #define	QSType	  void
+  #define QcompType const void

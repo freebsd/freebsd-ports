@@ -1,0 +1,45 @@
+*** imap/ANSI/c-client/mtest.c.bak	Mon Sep  5 05:41:28 1994
+--- imap/ANSI/c-client/mtest.c	Mon Nov 20 03:00:21 1995
+***************
+*** 454,461 ****
+  
+  void prompt (char *msg,char *txt)
+  {
+    printf ("%s",msg);
+!   gets (txt);
+  }
+  
+  /* Interfaces to C-client */
+--- 454,465 ----
+  
+  void prompt (char *msg,char *txt)
+  {
++   char *s;
+    printf ("%s",msg);
+!   *txt = '\0';
+!   fgets (txt, MAILTMPLEN, stdin);
+!   if (s = strchr(txt, '\n'))
+! 	*s = '\0';
+  }
+  
+  /* Interfaces to C-client */
+***************
+*** 600,606 ****
+    puts (" Msg (end with a line with only a '.'):");
+    body->type = TYPETEXT;
+    *text = '\0';
+!   while (gets (line)) {
+      if (line[0] == '.') {
+        if (line[1] == '\0') break;
+        else strcat ((char *) text,".");
+--- 604,613 ----
+    puts (" Msg (end with a line with only a '.'):");
+    body->type = TYPETEXT;
+    *text = '\0';
+!   while (fgets (line, sizeof(line), stdin)) {
+!     char *s = strchr(line, '\n');
+!     if (s)
+! 	*s = '\0';
+      if (line[0] == '.') {
+        if (line[1] == '\0') break;
+        else strcat ((char *) text,".");

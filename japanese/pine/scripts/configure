@@ -1,0 +1,23 @@
+#!/bin/sh
+
+if [ ! -f ${WRKSRC}/pine/pine-e.hlp ] ; then
+	mv ${WRKSRC}/pine/pine.hlp ${WRKSRC}/pine/pine-e.hlp
+fi
+
+echo -n "Do you want pine to display its menu and help message in Japanese? (y/n)> "
+read ans
+case X$ans in
+y*|Y*)
+ln -fs ${WRKSRC}/pine-j.hlp ${WRKSRC}/pine.hlp
+;;
+*)
+ln -fs ${WRKSRC}/pine/pine-e.hlp ${WRKSRC}/pine/pine.hlp
+ed -s ${WRKSRC}/pico/kanji.h << EOP
+46c
+#undef KANJI_MSG
+.
+w
+EOP
+;;
+esac
+

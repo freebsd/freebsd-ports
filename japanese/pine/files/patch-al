@@ -1,0 +1,29 @@
+*** pine/osdep/makefile.orig	Tue Apr  9 04:03:23 1996
+--- pine/osdep/makefile	Tue Apr  9 04:33:59 1996
+***************
+*** 7,13 ****
+  		os-dyn.c os-gen.c os-hpp.c os-isc.c os-lnx.c os-nxt.c \
+  		os-osf.c os-ptx.c os-s40.c os-sgi.c \
+  		os-sun.c os-sv4.c os-ult.c os-aux.c \
+! 		os-ews.c
+  
+  .SUFFIXES: .ic
+  
+--- 7,13 ----
+  		os-dyn.c os-gen.c os-hpp.c os-isc.c os-lnx.c os-nxt.c \
+  		os-osf.c os-ptx.c os-s40.c os-sgi.c \
+  		os-sun.c os-sv4.c os-ult.c os-aux.c \
+! 		os-bsf.c os-ews.c
+  
+  .SUFFIXES: .ic
+  
+***************
+*** 43,48 ****
+--- 43,49 ----
+  os-aux.c: bld_path canacces canonicl chnge_pw coredump creatdir diskquot.non domnames err_desc execview expnfldr fgetpos.non filesize fltrname fnexpand header hostname jobcntrl lstcmpnt mimedisp pipe pw_stuff readfile rename.hom sendmail tempfile tempnam writ_dir os-aux.ic
+  os-bsd.c: bld_path canacces canonicl chnge_pw coredump creatdir diskquot domnames err_desc execview expnfldr fgetpos.non filesize fltrname fnexpand header hostname jobcntrl lstcmpnt mimedisp pipe pw_stuff readfile rename sendmail tempfile tempnam writ_dir os-bsd.ic
+  os-bsi.c: bld_path canacces canonicl chnge_pw coredump creatdir diskquot.non domnames err_desc execview expnfldr fgetpos filesize fltrname fnexpand header hostname jobcntrl lstcmpnt mimedisp pipe pw_stuff readfile rename sendmail tempfile tempnam writ_dir os-bsi.ic
++ os-bsf.c: bld_path canacces canonicl chnge_pw coredump creatdir diskquot.non domnames err_desc execview expnfldr fgetpos filesize fltrname fnexpand header hostname jobcntrl lstcmpnt mimedisp pipe pw_stuff readfile rename sendmail tempfile tempnam writ_dir os-bsf.ic
+  os-cvx.c: bld_path canacces canonicl chnge_pw coredump creatdir diskquot.non domnames err_desc execview expnfldr fgetpos.non filesize fltrname fnexpand header hostname jobcntrl lstcmpnt mimedisp pipe pw_stuff readfile rename sendmail tempfile tempnam writ_dir os-cvx.ic
+  os-dos.c: bld_path.dos canacces canonicl.dos chnge_pw.dos coredump creatdir.dos diskquot.non domnames.dos dosextra err_desc.dos execview.dos expnfldr.dos fgetpos filesize fltrname.dos fnexpand.dos header hostname jobcntrl.dos lstcmpnt.dos mimedisp pipe.dos pw_stuff.dos readfile.dos rename.dos sendmail.dos tempfile tempnam.dos writ_dir os-dos.ic
+  os-dyn.c: bld_path canacces canonicl chnge_pw coredump.fpe creatdir diskquot.sun domnames err_desc execview expnfldr fgetpos.non filesize fltrname fnexpand header hostname jobcntrl lstcmpnt mimedisp pipe pw_stuff readfile rename sendmail tempfile.non tempnam writ_dir os-dyn.ic

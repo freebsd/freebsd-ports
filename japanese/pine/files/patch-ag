@@ -1,0 +1,12 @@
+*** pico/os_unix.c	Thu Aug 11 21:13:34 1994
+--- pico/os_unix.c	Fri Sep  2 02:35:45 1994
+***************
+*** 952,956 ****
+--- 952,958 ----
+  int err;
+  {
++ #ifndef __FreeBSD__
+      extern char *sys_errlist[];
++ #endif
+      extern int  sys_nerr;
+  
