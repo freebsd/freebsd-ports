@@ -16,7 +16,7 @@ COMMENT=	Bayesian spam filter - development version
 
 WRKSRC=		${WRKDIR}/dspam-cvs-devel${SNAP_DATE}
 
-SNAP_DATE=	.20041125.0945
+SNAP_DATE=	.20041201.1330
 PORTVER_MAJ=	3.3.0.a
 
 ## debug / log / admin options
@@ -27,6 +27,7 @@ OPTIONS+=	VERBOSE_DEBUG "Enable debug in LOGDIR/dspam.debug" off
 #OPTIONS+=	SAT "Log spam source addresses to syslog" on
 #OPTIONS+=	PARSE_TO_HEADERS "Get user from To header on fp spam" off
 OPTIONS+=	PREF_EXT "Preferences in database not in files" off
+OPTIONS+=	DAEMON "Daemonize dspam; speak LMTP; EXPERIMENTAL" off
 ## algorithm options
 OPTIONS+=	GRAHAM_BAYES "Enable Graham (traditional) bayesian" on
 OPTIONS+=	BURTON_BAYES "Enable Burton (alternative) bayesian" on
@@ -162,8 +163,12 @@ CONFIGURE_ARGS+=	--enable-verbose-debug
 #CONFIGURE_ARGS+=	--enable-parse-to-headers
 #.endif
 
-.if defined(PREF_EXT)
+.if defined(WITH_PREF_EXT)
 CONFIGURE_ARGS+=	--enable-preferences-extension
+.endif
+
+.ifdef(WITH_DAEMON)
+CONFIGURE_ARGS+=	--enable-daemon
 .endif
 
 .if !defined(WITH_GRAHAM_BAYES)
@@ -315,7 +320,7 @@ CONFIGURE_ARGS+=	--with-storage-driver=ora_drv \
 DBDRV_COUNT:=	${DBDRV_COUNT:S/o//}
 .endif
 
-.if defined(WITH_BDB)
+.if defined(WITH_BDB4)
 LIB_DEPENDS+=	db41.1:${PORTSDIR}/databases/db41
 CONFIGURE_ARGS+=	--with-storage-driver=libdb4_drv \
 	--with-db4-includes=${LOCALBASE}/include/db41
