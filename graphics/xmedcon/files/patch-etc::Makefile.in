@@ -1,13 +1,13 @@
---- etc/Makefile.in.orig	Fri Jan 17 20:39:56 2003
-+++ etc/Makefile.in	Fri Jan 17 20:40:57 2003
-@@ -190,15 +190,14 @@
+--- etc/Makefile.in.orig	Sun Jun 15 01:14:47 2003
++++ etc/Makefile.in	Tue Jun 17 01:07:50 2003
+@@ -218,15 +218,13 @@
  
  RC_FILES = \
   xmedconrc \
 - xmedconrc.linux \
 - xmedconrc.win32
+-
 + xmedconrc.linux
- 
  
 -ICONS = xmedcon.ico xmedcon.png
 +ICONS = xmedcon.png
