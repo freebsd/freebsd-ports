@@ -27,6 +27,7 @@ etc/rc.d/00elm.sh
 @exec [ ! -f %B/elm.mimetypes ] && cp %B/%f %B/elm.mimetypes
 %%LIB_SUBDIR%%/elmcharset
 %%LIB_SUBDIR%%/elmrc-info
+%%LIB_SUBDIR%%/elmrc-write
 %%LIB_SUBDIR%%/elmterminal
 %%LIB_SUBDIR%%/elmunidata
 %%LIB_SUBDIR%%/prlong
@@ -43,7 +44,11 @@ etc/rc.d/00elm.sh
 %%PORTDOCS%%%%DOC_SUBDIR%%/Ref.fmtd.gz
 %%PORTDOCS%%%%DOC_SUBDIR%%/Users.fmtd.gz
 share/nls/C/elm2.4me+.cat
+@exec if [ -f %D/%%LIB_SUBDIR%%/elm.rc ]; then mv %D/%%LIB_SUBDIR%%/elm.rc %D/%%LIB_SUBDIR%%/elm.rc.orig; fi
+@exec %D/%%LIB_SUBDIR%%/elmrc-write -G -I; mv %D/%%LIB_SUBDIR%%/elm.rc %D/%%LIB_SUBDIR%%/elm.rc-dist
+@exec if [ -f %D/%%LIB_SUBDIR%%/elm.rc.orig ]; then mv %D/%%LIB_SUBDIR%%/elm.rc.orig %D/%%LIB_SUBDIR%%/elm.rc; else cp -p %D/%%LIB_SUBDIR%%/elm.rc-dist %D/%%LIB_SUBDIR%%/elm.rc; fi
+@unexec if cmp -s %D/%%LIB_SUBDIR%%/elm.rc %D/%%LIB_SUBDIR%%/elm.rc-dist; then rm -f %D/%%LIB_SUBDIR%%/elm.rc; fi; rm -f %D/%%LIB_SUBDIR%%/elm.rc-dist
 @dirrm %%LIB_SUBDIR%%/elm.map.bin
-@dirrm %%LIB_SUBDIR%%
+@unexec rmdir %D/%%LIB_SUBDIR%% 2> /dev/null || :
 @dirrm %%SHLIB_SUBDIR%%
 %%PORTDOCS%%@dirrm %%DOC_SUBDIR%%

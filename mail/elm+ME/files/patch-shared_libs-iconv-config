@@ -1,0 +1,113 @@
+--- shared_libs/iconv/config.orig	Sun Oct  7 17:13:24 2001
++++ shared_libs/iconv/config	Thu Nov  1 00:23:10 2001
+@@ -22,23 +22,23 @@
+ 			iconv_dir=system
+ 			;;
+ 			systemlib)
+-			if $test -r /usr/include/iconv.h
++			if $test -r /usr/include/giconv.h
+ 			then
+-				echo "Found <iconv.h> from system headers"
++				echo "Found <giconv.h> from system headers"
+ 				iconv_dir=systemlib
+ 			fi
+ 			;;
+ 			*)
+-			if $test -r $a/include/iconv.h -a \
+-			  "`$ls $a/$libdirname/libiconv.* 2>/dev/null`" != "" 
++			if $test -r $a/include/giconv.h -a \
++			  "`$ls $a/$libdirname/libgiconv.* 2>/dev/null`" != "" 
+ 			then
+ 				iconv_dir="$a"
+-				echo "Found GNU libiconv from $iconv_dir"
+-			elif $test -r $a/include/iconv.h -a \
+-			   "`$ls $a/lib/libiconv.* 2>/dev/null`" != "" 
++				echo "Found GNU libgiconv from $iconv_dir"
++			elif $test -r $a/include/giconv.h -a \
++			   "`$ls $a/lib/libgiconv.* 2>/dev/null`" != "" 
+ 			then
+ 				iconv_dir="$a"
+-				echo "Found GNU libiconv from $iconv_dir"
++				echo "Found GNU libgiconv from $iconv_dir"
+ 			fi
+ 			;;
+ 		esac
+@@ -48,23 +48,23 @@
+ 
+     cat <<EOM
+ 
+-Elm ME+ can use GNU libiconv for character set conversions.
++Elm ME+ can use GNU libgiconv for character set conversions.
+ Support is implemented as shared library libelmme-iconv.so. 
+ 
+ Give directory under which there are library and include files of OpenSSL. 
+ 
+ Give "none" to disabled generation of shared library. 
+-Give "system" to indicate that GNU libiconv include and library files 
++Give "system" to indicate that GNU libgiconv include and library files 
+ are search path of compiler.
+ 
+-Give "systemlib" to indicate that <iconv.h> and iconv routines are
++Give "systemlib" to indicate that <giconv.h> and iconv routines are
+ on system native library instead. That works on IRIX 6.5. It works also
+ Linux with (some) glibc 2.x.
+ 
+ EOM
+     dflt="$iconv_dir"
+ 
+-    rp="GNU libiconv directory prefix? [$dflt]"
++    rp="GNU libgiconv directory prefix? [$dflt]"
+     echo $n "$rp $c"
+     . myread
+ 
+@@ -79,8 +79,8 @@
+ 	    iconv_lib_dir=''
+ 	    iconv_dir=system
+ 	    iconv_ok="$define"
+-            iconv_link=iconv
+-	    echo "GNU libiconv is assumed to found from system locations"
++            iconv_link=giconv
++	    echo "GNU libgiconv is assumed to found from system locations"
+ 	;;
+ 	systemlib)
+ 	    iconv_include_dir=''
+@@ -93,23 +93,23 @@
+ 	*)
+ 	    iconv_dir="$ans"
+ 	    iconv_include_dir="$iconv_dir/include"
+-	    X="`$ls $iconv_dir/$libdirname/libiconv.* 2>/dev/null`"
++	    X="`$ls $iconv_dir/$libdirname/libgiconv.* 2>/dev/null`"
+ 	    if $test "$X" != ""
+ 	    then
+ 		iconv_lib_dir="$iconv_dir/$libdirname"
+ 	    else
+ 	    	iconv_lib_dir="$iconv_dir/lib"
+ 	    fi
+-            iconv_link=iconv
++            iconv_link=giconv
+ 	    iconv_ok="$define"
+-	    echo "GNU libiconv is assumed to found from $iconv_dir directory"
++	    echo "GNU libgiconv is assumed to found from $iconv_dir directory"
+ 	;;
+    esac
+ 
+    if $test "$iconv_ok" = "$define"; then
+ 	$cat >try.c <<'EOF'
+ #include "stdio.h"
+-#include <iconv.h>
++#include <giconv.h>
+ 
+ int main(argc,argv)
+     int argc;
+@@ -164,9 +164,9 @@
+ 	'')
+ 	    cat <<EOF
+ 
+-GNU libiconv location $iconv_dir seems not work. Select one of following
++GNU libgiconv location $iconv_dir seems not work. Select one of following
+     d) Disable iconv support
+-    c) Change GNU libiconv directory prefix
++    c) Change GNU libgiconv directory prefix
+ 
+ EOF
+ 	    dflt=d
