@@ -222,6 +222,7 @@
     SUBDIR += lclint
     SUBDIR += lemon
     SUBDIR += leoarg
+    SUBDIR += libIDL
     SUBDIR += libPropList
     SUBDIR += libU77
     SUBDIR += libafterbase
