@@ -1,14 +1,14 @@
 # New ports collection makefile for:    xephem
-# Version required:     3.1
+# Version required:     3.2.3
 # Date created:         Thu Aug  1 09:10:22 CDT 1996
 # Whom:                 erich@FreeBSD.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xephem-3.2.2
+DISTNAME=	xephem-3.2.3
 CATEGORIES=	astro
-MASTER_SITES=	ftp://iraf.noao.edu/contrib/xephem/xephem-3.2/ \
+MASTER_SITES=	ftp://iraf.noao.edu/contrib/xephem/ \
 		ftp://gastro23.physics.uiowa.edu/pub/xephem/ \
 		ftp://iphcip1.physik.uni-mainz.de/pub/xephem/ \
 		ftp://wolf.ifj.edu.pl/mirror/xephem/
@@ -30,10 +30,11 @@ AUXIL=		README jupiter.9910 logo.gif mars.9910 mars_db marsmap.fts \
 		moon.fts moon_db saturne.9910 uranus.9910 xephem.hlp \
 		xephem_sites
 
-CATALOGS=	ISS.edb Messier.edb NGC.edb README SAC.edb YBS.edb comets.edb \
-		minorpl.edb
+CATALOGS=	Abell.edb IC.edb ISS.edb Messier.edb NGC.edb README SAC.edb \
+		UGC.edb YBS.edb asteroids.edb comets.edb hickson.edb tycho.xe
 
-TOOLS=		README extract.awk jost2edb.awk mpcorb2edb.pl tle2edb.pl
+TOOLS=		README extract.awk astorb2edb.pl jost2edb.awk mpcorb2edb.pl \
+		tle2edb.pl
 
 GSC=		Makefile README gscload.c support.c
 
