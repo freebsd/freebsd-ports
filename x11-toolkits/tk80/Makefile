@@ -3,7 +3,7 @@
 # Date created:		19 August 1997
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.8 1998/03/18 00:56:23 jmz Exp $
+# $Id: Makefile,v 1.9 1998/07/03 23:07:13 steve Exp $
 #
 
 DISTNAME=	tk8.0p2
@@ -34,8 +34,13 @@ pre-build:
 
 post-install:
 	${LDCONFIG} -m ${PREFIX}/lib
+.if exists(${PKGDIR}/INSTALL.wish)
+	${SH} ${PKGDIR}/INSTALL.wish
+.endif
 
 test:
 	cd ${WRKSRC}; make test
 
 .include <bsd.port.mk>
+
+PKG_ARGS+=	-i ${PKGDIR}/INSTALL.wish

@@ -3,7 +3,7 @@
 # Date created:		6 February 1996
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.20 1997/12/24 01:21:39 alex Exp $
+# $Id: Makefile,v 1.21 1998/05/21 01:36:22 jseger Exp $
 #
 
 DISTNAME=	tclX8.0.2
@@ -29,5 +29,10 @@ post-install:
 	$(INSTALL_MAN) $(WRKSRC)/../doc/Memory.n $(PREFIX)/man/mann
 	$(INSTALL_MAN) $(WRKSRC)/../doc/TclX.n $(PREFIX)/man/mann
 	${LDCONFIG} -m ${PREFIX}/lib
+.if exists(${PORTSDIR}/x11/tk80/pkg/INSTALL.wish)
+	${SH} ${PORTSDIR}/x11/tk80/pkg/INSTALL.wish
+.endif
 
 .include <bsd.port.mk>
+
+PKG_ARGS+=      -i ${PORTSDIR}/x11/tk80/pkg/INSTALL.wish
