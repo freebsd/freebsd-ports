@@ -22,7 +22,12 @@ RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 LIB_DEPENDS+=	stroke.0:${PORTSDIR}/devel/libstroke
 .endif
 
-LATEST_LINK=	${PORTNAME}
+# Other ports reference this port's Makefile
+.if defined(PKGNAMESUFFIX)
+LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
+.else
+LATEST_LINK=	${PORTNAME}2
+.endif
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_XPM=	yes
