@@ -1,0 +1,68 @@
+--- changer-src/scsi-chio.c	Tue Jul  7 21:04:04 1998
++++ changer-src/scsi-chio.c	Sat Sep 12 16:11:21 1998
+@@ -114,6 +114,38 @@
+ }
+ 
+ 
++#if defined(__FreeBSD__) && defined(HAVE_CAMLIB_H)
++#warning "CHIO TAPE CHANGER FUNCTIONS UNIMPLEMENTED FOR FREEBSD CAM"
++#warning "Code will work fine if you aren't running a changer."
++int isempty(int fd, int slot)
++{
++struct changer_element_status  ces;
++int                            i,rc;
++int type=CHET_ST;
++
++return 0;
++}
++
++int find_empty(int fd)
++{
++struct changer_element_status  ces;
++int                            i,rc;
++int type=CHET_ST;
++
++return 0;
++}
++
++int drive_loaded(int fd, int drivenum)
++{
++struct changer_element_status  ces;
++int                            i,rc;
++int type=CHET_DT;
++
++return 0;
++}
++
++#else
++
+ /* 
+  * this routine checks a specified slot to see if it is empty 
+  */
+@@ -141,6 +173,8 @@
+     return !i;
+ }
+ 
++
++
+ /*
+  * find the first empty slot 
+  */
+@@ -169,6 +203,8 @@
+     return i;
+ }
+ 
++
++
+ /*
+  * returns one if there is a tape loaded in the drive 
+  */
+@@ -195,7 +231,7 @@
+     free(ces.ces_data);
+     return i;
+ }
+-
++#endif
+ 
+ /*
+  * unloads the drive, putting the tape in the specified slot 
