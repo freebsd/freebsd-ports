@@ -1,0 +1,12 @@
+--- extconf.rb.orig	Mon Oct  2 08:17:23 2000
++++ extconf.rb	Mon Oct  2 23:32:21 2000
+@@ -18,8 +18,7 @@
+ dir_config("gd")
+ 
+ if with_config("xpm")
+-  $CFLAGS += " -I/usr/X11R6/include"
+-  $LDFLAGS += " -L/usr/X11R6/lib"
++  dir_config('x')
+ end
+ 
+ if with_config('jpeg')

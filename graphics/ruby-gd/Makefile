@@ -1,0 +1,93 @@
+# New ports collection makefile for:	Ruby/gd
+# Date created:		27 Sep 2000
+# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	GD
+PORTVERSION=	0.7.0
+CATEGORIES=	graphics ruby
+MASTER_SITES=	http://kirara.prec.kyoto-u.ac.jp/~tam/GD/
+PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
+DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
+DIST_SUBDIR=	ruby
+
+MAINTAINER=	knu@FreeBSD.org
+
+LIB_DEPENDS=	gd.1:${PORTSDIR}/graphics/gd
+
+USE_RUBY=	yes
+USE_RUBY_EXTCONF=	yes
+.if !defined(NOPORTDOCS)
+USE_RUBY_RD=	yes
+.endif
+
+CONFIGURE_ARGS=	--with-gd-include="${LOCALBASE}/include/gd" --with-jpeg
+INSTALL_TARGET=	site-install
+
+.include <bsd.port.pre.mk>
+
+# Hmm, GREP and TRUE seem to be defined in the bsd.port.post.mk stage.
+WITH_X11_CHECK!=	ldd ${LOCALBASE}/bin/gd2topng | grep -w 'libX11\.so' || true
+
+.if !empty(WITH_X11_CHECK)
+USE_XLIB=	yes
+USE_XPM=	yes
+USE_FREETYPE=	yes
+
+CONFIGURE_ARGS+=	--with-x-dir="${X11BASE}" --with-xpm --with-ttf
+.endif
+
+EXAMPLES_EN=	example.rb	\
+		gdtestttf.png	\
+		gdtestttf.rb	\
+		webpng.rb
+DOCS_EN=	readme.en	\
+		doc/INSTALL.en	\
+		doc/manual.html	\
+		doc/manual.rd
+DOCS_JA=	readme.ja	\
+		doc/INSTALL.ja
+TUTORIAL_JA=	gd_intro-ja.html	\
+		imgs/0.png		\
+		imgs/1.png		\
+		imgs/arc.png		\
+		imgs/brush1.png		\
+		imgs/brush2.png		\
+		imgs/copy.png		\
+		imgs/copy_merge.png	\
+		imgs/demoin.png		\
+		imgs/demoout.png	\
+		imgs/line.png		\
+		imgs/poly.png		\
+		imgs/poly_setPt.png	\
+		imgs/rectangle.png	\
+		imgs/string.png		\
+		imgs/string2.png	\
+		imgs/stringttf1.png	\
+		imgs/stringttf2.png	\
+		imgs/styled_line.png	\
+		imgs/styled_line_transparent.png	\
+		imgs/top.png		\
+		imgs/xpy.png
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${RUBY_EXAMPLESDIR}/gd
+.for f in ${EXAMPLES_EN}
+	${INSTALL_DATA} ${WRKSRC}/sample/${f} ${RUBY_EXAMPLESDIR}/gd/
+.endfor
+	${MKDIR} ${RUBY_DOCDIR}/gd/ja/imgs
+.for f in ${DOCS_EN}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/gd/
+.endfor
+.for f in ${DOCS_JA}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/gd/ja/
+.endfor
+.for f in ${TUTORIAL_JA}
+	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${RUBY_DOCDIR}/gd/ja/${f}
+.endfor
+.endif
+
+.include <bsd.port.post.mk>

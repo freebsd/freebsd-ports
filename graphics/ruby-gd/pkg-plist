@@ -1,0 +1,37 @@
+%%RUBY_SITEARCHLIBDIR%%/GD.so
+%%RUBY_EXAMPLESDIR%%/gd/example.rb
+%%RUBY_EXAMPLESDIR%%/gd/gdtestttf.png
+%%RUBY_EXAMPLESDIR%%/gd/gdtestttf.rb
+%%RUBY_EXAMPLESDIR%%/gd/webpng.rb
+@dirrm %%RUBY_EXAMPLESDIR%%/gd
+%%RUBY_DOCDIR%%/gd/INSTALL.en
+%%RUBY_DOCDIR%%/gd/manual.html
+%%RUBY_DOCDIR%%/gd/manual.rd
+%%RUBY_DOCDIR%%/gd/readme.en
+%%RUBY_DOCDIR%%/gd/ja/INSTALL.ja
+%%RUBY_DOCDIR%%/gd/ja/gd_intro-ja.html
+%%RUBY_DOCDIR%%/gd/ja/readme.ja
+%%RUBY_DOCDIR%%/gd/ja/imgs/0.png
+%%RUBY_DOCDIR%%/gd/ja/imgs/1.png
+%%RUBY_DOCDIR%%/gd/ja/imgs/arc.png
+%%RUBY_DOCDIR%%/gd/ja/imgs/brush1.png
+%%RUBY_DOCDIR%%/gd/ja/imgs/brush2.png
+%%RUBY_DOCDIR%%/gd/ja/imgs/copy.png
+%%RUBY_DOCDIR%%/gd/ja/imgs/copy_merge.png
+%%RUBY_DOCDIR%%/gd/ja/imgs/demoin.png
+%%RUBY_DOCDIR%%/gd/ja/imgs/demoout.png
+%%RUBY_DOCDIR%%/gd/ja/imgs/line.png
+%%RUBY_DOCDIR%%/gd/ja/imgs/poly.png
+%%RUBY_DOCDIR%%/gd/ja/imgs/poly_setPt.png
+%%RUBY_DOCDIR%%/gd/ja/imgs/rectangle.png
+%%RUBY_DOCDIR%%/gd/ja/imgs/string.png
+%%RUBY_DOCDIR%%/gd/ja/imgs/string2.png
+%%RUBY_DOCDIR%%/gd/ja/imgs/stringttf1.png
+%%RUBY_DOCDIR%%/gd/ja/imgs/stringttf2.png
+%%RUBY_DOCDIR%%/gd/ja/imgs/styled_line.png
+%%RUBY_DOCDIR%%/gd/ja/imgs/styled_line_transparent.png
+%%RUBY_DOCDIR%%/gd/ja/imgs/top.png
+%%RUBY_DOCDIR%%/gd/ja/imgs/xpy.png
+@dirrm %%RUBY_DOCDIR%%/gd/ja/imgs
+@dirrm %%RUBY_DOCDIR%%/gd/ja
+@dirrm %%RUBY_DOCDIR%%/gd
