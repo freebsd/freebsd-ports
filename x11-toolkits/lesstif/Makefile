@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lesstif
-PORTVERSION=	0.94.0
+PORTVERSION=	0.94.2
 PORTEPOCH=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	lesstif
 
 MAINTAINER=	ports@freebsd.org
 COMMENT=	API compatible clone of the Motif toolkit
+
+LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 
 CONFLICTS?=	open-motif-*
 MANUAL_PACKAGE_BUILD=	do not want to install during interactive build
@@ -25,6 +27,7 @@ USE_INC_LIBTOOL_VER=	15
 LIBTOOLFILES=	aclocal.m4 test/aclocal.m4
 CONFIGURE_ARGS+=	--enable-static --enable-shared --enable-production
 CONFIGURE_ARGS+=	--disable-maintainer-mode
+CFLAGS+=	-I${X11BASE}/include
 
 MAN1 =	lesstif.1 ltversion.1 mwm.1 uil.1 xmbind.1
 
