@@ -1,0 +1,20 @@
+--- mozart-orig/platform/emulator/unix.cc	Wed Jun 21 15:24:22 2000
++++ platform/emulator/unix.cc	Wed Jun 21 15:25:14 2000
+@@ -1046,6 +1046,8 @@
+ 
+ #if __GLIBC__ == 2
+   unsigned int length = sizeof(addr);
++#elif __FreeBSD__ > 2
++  socklen_t length = sizeof(addr);
+ #else
+   int length = sizeof(addr);
+ #endif
+@@ -1308,6 +1310,8 @@
+ 
+ #if __GLIBC__ == 2
+   unsigned int fromlen = sizeof from;
++#elif __FreeBSD__ > 2
++  socklen_t fromlen = sizeof from;
+ #else
+   int fromlen = sizeof from;
+ #endif

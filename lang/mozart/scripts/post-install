@@ -1,0 +1,6 @@
+#!/bin/sh
+
+${PERL} -p -i -e"s:# OZHOME=.*:OZHOME=${PREFIX}/lib/oz:" ${PREFIX}/lib/oz/bin/oz
+
+${LN} -sf ${PREFIX}/lib/oz/bin/* ${PREFIX}/bin
+

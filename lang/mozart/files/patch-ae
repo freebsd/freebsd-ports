@@ -1,0 +1,24 @@
+--- ../mozart-orig/platform/emulator/mem.cc	Fri Jun 23 12:59:01 2000
++++ platform/emulator/mem.cc	Fri Jun 23 12:59:36 2000
+@@ -90,18 +90,19 @@
+ // This is optional - that's kind'f not clear which evil is the
+ // smallest one: rely on "choose a nearest next free address" linux
+ // behaviour, or to use the discouraged 'MAP_FIXED' option;
+-#if defined(LINUX_I486)
++#if defined(LINUX_I486) || defined (__FreeBSD__)
+ #define USE_AUTO_PLACEMENT
+ #endif
+ 
+ //
+ #if defined(HAVE_MMAP)
+ 
++#include <sys/mman.h>
++
+ #if ( !defined(MAP_ANONYMOUS) && defined(MAP_ANON) )
+ #define	MAP_ANONYMOUS	MAP_ANON
+ #endif
+ 
+-#include <sys/mman.h>
+ #include <fcntl.h>
+ 
+ #if !defined(USE_AUTO_PLACEMENT)

@@ -1,0 +1,347 @@
+bin/convertTextPickle
+bin/oldpickle2text
+bin/oz
+bin/ozc
+bin/ozd
+bin/ozengine
+bin/ozl
+bin/ozplatform
+bin/oztool
+bin/pickle2text
+bin/text2pickle
+lib/oz/LICENSE
+lib/oz/LICENSE.html
+lib/oz/LICENSE.rtf
+lib/oz/README
+lib/oz/bin/convertTextPickle
+lib/oz/bin/oldpickle2text
+lib/oz/bin/oz
+lib/oz/bin/ozc
+lib/oz/bin/ozd
+lib/oz/bin/ozengine
+lib/oz/bin/ozl
+lib/oz/bin/ozplatform
+lib/oz/bin/oztool
+lib/oz/bin/pickle2text
+lib/oz/bin/text2pickle
+lib/oz/contrib/ap/OptionSheet.ozf
+lib/oz/contrib/compat/TextPickle.ozf
+lib/oz/contrib/compat/TextPickleScanner.so-freebsdelf-i486
+lib/oz/contrib/directory/ExampleDirectory.oz
+lib/oz/contrib/directory/ExampleDirectory.ozf
+lib/oz/contrib/doc/code/Fontifier.ozf
+lib/oz/contrib/doc/sgml/Parser.ozf
+lib/oz/contrib/gdbm.ozf
+lib/oz/contrib/gdbm.so-freebsdelf-i486
+lib/oz/contrib/micq/client.oza
+lib/oz/contrib/micq/server.oza
+lib/oz/contrib/os/io.ozf
+lib/oz/contrib/os/io.so-freebsdelf-i486
+lib/oz/contrib/os/mode.ozf
+lib/oz/contrib/os/open.ozf
+lib/oz/contrib/os/process.ozf
+lib/oz/contrib/os/process.so-freebsdelf-i486
+lib/oz/contrib/regex.ozf
+lib/oz/contrib/regex.so-freebsdelf-i486
+lib/oz/contrib/tk/CheckBox.ozf
+lib/oz/contrib/tk/ScrollFrame.ozf
+lib/oz/contrib/tools/DistPanel.ozf
+lib/oz/doc/demo/applets/AnimatedQueens.oza
+lib/oz/doc/demo/applets/Board.oza
+lib/oz/doc/demo/applets/Bounce.oza
+lib/oz/doc/demo/applets/ChatClient.oza
+lib/oz/doc/demo/applets/ChatServer.oza
+lib/oz/doc/demo/applets/College.oza
+lib/oz/doc/demo/applets/Cutting.oza
+lib/oz/doc/demo/applets/DictClient.oza
+lib/oz/doc/demo/applets/Flowers.oza
+lib/oz/doc/demo/applets/Flowers3d.oza
+lib/oz/doc/demo/applets/JobShop.oza
+lib/oz/doc/demo/applets/Lift.oza
+lib/oz/doc/demo/applets/MIM.oza
+lib/oz/doc/demo/applets/Transport.oza
+lib/oz/doc/demo/applets/Trucks.oza
+lib/oz/doc/demo/applets/images/animated-queens/large-cross.xbm
+lib/oz/doc/demo/applets/images/animated-queens/large-gray.xbm
+lib/oz/doc/demo/applets/images/animated-queens/large-queen.xbm
+lib/oz/doc/demo/applets/images/animated-queens/large-solid.xbm
+lib/oz/doc/demo/applets/images/animated-queens/micro-gray.xbm
+lib/oz/doc/demo/applets/images/animated-queens/micro-queen.xbm
+lib/oz/doc/demo/applets/images/animated-queens/micro-solid.xbm
+lib/oz/doc/demo/applets/images/animated-queens/middle-cross.xbm
+lib/oz/doc/demo/applets/images/animated-queens/middle-gray.xbm
+lib/oz/doc/demo/applets/images/animated-queens/middle-queen.xbm
+lib/oz/doc/demo/applets/images/animated-queens/middle-solid.xbm
+lib/oz/doc/demo/applets/images/animated-queens/small-gray.xbm
+lib/oz/doc/demo/applets/images/animated-queens/small-queen.xbm
+lib/oz/doc/demo/applets/images/animated-queens/small-solid.xbm
+lib/oz/doc/demo/applets/images/animated-queens/tiny-gray.xbm
+lib/oz/doc/demo/applets/images/animated-queens/tiny-queen.xbm
+lib/oz/doc/demo/applets/images/animated-queens/tiny-solid.xbm
+lib/oz/doc/demo/applets/images/college/title.xbm
+lib/oz/doc/demo/applets/images/dict-client/dict.gif
+lib/oz/doc/demo/applets/images/lift/downE.xbm
+lib/oz/doc/demo/applets/images/lift/downF.xbm
+lib/oz/doc/demo/applets/images/lift/lift.xbm
+lib/oz/doc/demo/applets/images/lift/liftDown.xbm
+lib/oz/doc/demo/applets/images/lift/liftUp.xbm
+lib/oz/doc/demo/applets/images/lift/upE.xbm
+lib/oz/doc/demo/applets/images/lift/upF.xbm
+lib/oz/doc/demo/applets/images/transport/down.xbm
+lib/oz/doc/demo/applets/images/transport/truck_fill_left.xbm
+lib/oz/doc/demo/applets/images/transport/truck_fill_right.xbm
+lib/oz/doc/demo/applets/images/transport/truck_frame_left.xbm
+lib/oz/doc/demo/applets/images/transport/truck_frame_right.xbm
+lib/oz/doc/demo/applets/images/transport/truck_win_left.xbm
+lib/oz/doc/demo/applets/images/transport/truck_win_right.xbm
+lib/oz/doc/demo/applets/images/trucks/truck-left.ppm
+lib/oz/doc/demo/applets/images/trucks/truck-right.ppm
+lib/oz/doc/system/MT10.oz
+lib/oz/doc/system/MT10.ozf
+lib/oz/examples/fd/bin-packing.oz
+lib/oz/examples/fd/bridge.oz
+lib/oz/examples/fd/cars.oz
+lib/oz/examples/fd/change.oz
+lib/oz/examples/fd/conference.oz
+lib/oz/examples/fd/configuration.oz
+lib/oz/examples/fd/donald.oz
+lib/oz/examples/fd/family.oz
+lib/oz/examples/fd/fraction.oz
+lib/oz/examples/fd/graphics/Knights.oz
+lib/oz/examples/fd/graphics/Knights.ozf
+lib/oz/examples/fd/graphics/Queens.oz
+lib/oz/examples/fd/graphics/Queens.ozf
+lib/oz/examples/fd/grocery.oz
+lib/oz/examples/fd/kalotan.oz
+lib/oz/examples/fd/knights.oz
+lib/oz/examples/fd/magic-sequence.oz
+lib/oz/examples/fd/magic-square.oz
+lib/oz/examples/fd/map-coloring.oz
+lib/oz/examples/fd/money.oz
+lib/oz/examples/fd/multiply.oz
+lib/oz/examples/fd/photo.oz
+lib/oz/examples/fd/pythagoras.oz
+lib/oz/examples/fd/queens.oz
+lib/oz/examples/fd/safe.oz
+lib/oz/examples/fd/srat.oz
+lib/oz/examples/fd/warehouses.oz
+lib/oz/examples/fd/zebra.oz
+lib/oz/examples/grammar/hpsg.oz
+lib/oz/examples/grammar/shieber.oz
+lib/oz/examples/grammar/shieber/formalism.oz
+lib/oz/examples/grammar/shieber/grammar.oz
+lib/oz/examples/sampler/constraints/abz6.oz
+lib/oz/examples/sampler/constraints/animate-bridge.oz
+lib/oz/examples/sampler/constraints/bridge.oz
+lib/oz/examples/sampler/constraints/draw-photo.oz
+lib/oz/examples/sampler/constraints/scheduling-compiler.oz
+lib/oz/examples/sampler/oz.oz
+lib/oz/include/FlexLexer.h
+lib/oz/include/extension.hh
+lib/oz/include/lexer.h
+lib/oz/include/mozart.h
+lib/oz/include/mozart_cpi.hh
+lib/oz/platform/freebsdelf-i486/Bison.so
+lib/oz/platform/freebsdelf-i486/Browser.so
+lib/oz/platform/freebsdelf-i486/CTB.so
+lib/oz/platform/freebsdelf-i486/Compat.so
+lib/oz/platform/freebsdelf-i486/CompilerSupport.so
+lib/oz/platform/freebsdelf-i486/DPB.so
+lib/oz/platform/freebsdelf-i486/DPMisc.so
+lib/oz/platform/freebsdelf-i486/DPPane.so
+lib/oz/platform/freebsdelf-i486/Debug.so
+lib/oz/platform/freebsdelf-i486/FDB.so
+lib/oz/platform/freebsdelf-i486/FDP.so
+lib/oz/platform/freebsdelf-i486/FSB.so
+lib/oz/platform/freebsdelf-i486/FSP.so
+lib/oz/platform/freebsdelf-i486/Fault.so
+lib/oz/platform/freebsdelf-i486/GumpScanner.so
+lib/oz/platform/freebsdelf-i486/OsTime.so
+lib/oz/platform/freebsdelf-i486/PID.so
+lib/oz/platform/freebsdelf-i486/Parser.so
+lib/oz/platform/freebsdelf-i486/Profile.so
+lib/oz/platform/freebsdelf-i486/RecordC.so
+lib/oz/platform/freebsdelf-i486/Schedule.so
+lib/oz/platform/freebsdelf-i486/Space.so
+lib/oz/platform/freebsdelf-i486/System.so
+lib/oz/platform/freebsdelf-i486/Tk.so
+lib/oz/platform/freebsdelf-i486/VirtualSite.so
+lib/oz/platform/freebsdelf-i486/Win32.so
+lib/oz/platform/freebsdelf-i486/emulator.exe
+lib/oz/platform/freebsdelf-i486/flex.exe
+lib/oz/platform/freebsdelf-i486/oztool.sh
+lib/oz/platform/freebsdelf-i486/text2pickle.exe
+lib/oz/platform/freebsdelf-i486/tk.exe
+lib/oz/platform/freebsdelf-i486/wish/tcl/history.tcl
+lib/oz/platform/freebsdelf-i486/wish/tcl/init.tcl
+lib/oz/platform/freebsdelf-i486/wish/tcl/ldAix
+lib/oz/platform/freebsdelf-i486/wish/tcl/ldAout.tcl
+lib/oz/platform/freebsdelf-i486/wish/tcl/parray.tcl
+lib/oz/platform/freebsdelf-i486/wish/tcl/safe.tcl
+lib/oz/platform/freebsdelf-i486/wish/tcl/tclAppInit.c
+lib/oz/platform/freebsdelf-i486/wish/tcl/tclConfig.sh
+lib/oz/platform/freebsdelf-i486/wish/tcl/tclIndex
+lib/oz/platform/freebsdelf-i486/wish/tcl/word.tcl
+lib/oz/platform/freebsdelf-i486/wish/tk/bgerror.tcl
+lib/oz/platform/freebsdelf-i486/wish/tk/button.tcl
+lib/oz/platform/freebsdelf-i486/wish/tk/clrpick.tcl
+lib/oz/platform/freebsdelf-i486/wish/tk/comdlg.tcl
+lib/oz/platform/freebsdelf-i486/wish/tk/console.tcl
+lib/oz/platform/freebsdelf-i486/wish/tk/dialog.tcl
+lib/oz/platform/freebsdelf-i486/wish/tk/entry.tcl
+lib/oz/platform/freebsdelf-i486/wish/tk/focus.tcl
+lib/oz/platform/freebsdelf-i486/wish/tk/listbox.tcl
+lib/oz/platform/freebsdelf-i486/wish/tk/menu.tcl
+lib/oz/platform/freebsdelf-i486/wish/tk/msgbox.tcl
+lib/oz/platform/freebsdelf-i486/wish/tk/obsolete.tcl
+lib/oz/platform/freebsdelf-i486/wish/tk/optMenu.tcl
+lib/oz/platform/freebsdelf-i486/wish/tk/palette.tcl
+lib/oz/platform/freebsdelf-i486/wish/tk/prolog.ps
+lib/oz/platform/freebsdelf-i486/wish/tk/safetk.tcl
+lib/oz/platform/freebsdelf-i486/wish/tk/scale.tcl
+lib/oz/platform/freebsdelf-i486/wish/tk/scrlbar.tcl
+lib/oz/platform/freebsdelf-i486/wish/tk/tclIndex
+lib/oz/platform/freebsdelf-i486/wish/tk/tearoff.tcl
+lib/oz/platform/freebsdelf-i486/wish/tk/text.tcl
+lib/oz/platform/freebsdelf-i486/wish/tk/tk.tcl
+lib/oz/platform/freebsdelf-i486/wish/tk/tkAppInit.c
+lib/oz/platform/freebsdelf-i486/wish/tk/tkConfig.sh
+lib/oz/platform/freebsdelf-i486/wish/tk/tkfbox.tcl
+lib/oz/platform/freebsdelf-i486/wish/tk/xmfbox.tcl
+lib/oz/share/Application.ozf
+lib/oz/share/BackquoteMacro.ozf
+lib/oz/share/Bison.so-freebsdelf-i486
+lib/oz/share/Browser.ozf
+lib/oz/share/Combinator.ozf
+lib/oz/share/Compiler.ozf
+lib/oz/share/CompilerPanel.ozf
+lib/oz/share/Connection.ozf
+lib/oz/share/DPMisc.ozf
+lib/oz/share/DefaultURL.ozf
+lib/oz/share/Discovery.ozf
+lib/oz/share/Emacs.ozf
+lib/oz/share/Error.ozf
+lib/oz/share/ErrorFormatters.ozf
+lib/oz/share/ErrorListener.ozf
+lib/oz/share/EvalDialog.ozf
+lib/oz/share/Explorer.ozf
+lib/oz/share/FD.ozf
+lib/oz/share/FS.ozf
+lib/oz/share/Fault.ozf
+lib/oz/share/Finalize.ozf
+lib/oz/share/Gump.ozf
+lib/oz/share/GumpParser.ozf
+lib/oz/share/GumpScanner.ozf
+lib/oz/share/GumpScanner.so-freebsdelf-i486
+lib/oz/share/Init.ozf
+lib/oz/share/Inspector.ozf
+lib/oz/share/Listener.ozf
+lib/oz/share/LoopMacro.ozf
+lib/oz/share/Macro.ozf
+lib/oz/share/Narrator.ozf
+lib/oz/share/OPI.ozf
+lib/oz/share/OPIEnv.ozf
+lib/oz/share/ObjectSupport.ozf
+lib/oz/share/Open.ozf
+lib/oz/share/Ozcar.ozf
+lib/oz/share/Panel.ozf
+lib/oz/share/ParLogging.ozf
+lib/oz/share/ParSearch.ozf
+lib/oz/share/ParWorker.ozf
+lib/oz/share/ProductionTemplates.ozf
+lib/oz/share/Profiler.ozf
+lib/oz/share/RecordC.ozf
+lib/oz/share/Remote.ozf
+lib/oz/share/RemoteServer.ozf
+lib/oz/share/Schedule.ozf
+lib/oz/share/Search.ozf
+lib/oz/share/Service.ozf
+lib/oz/share/Tk.ozf
+lib/oz/share/TkTools.ozf
+lib/oz/share/Type.ozf
+lib/oz/share/URL.ozf
+lib/oz/share/elisp/Fontifier.elc
+lib/oz/share/elisp/mozart.el
+lib/oz/share/elisp/mozart.elc
+lib/oz/share/elisp/oz-extra.el
+lib/oz/share/elisp/oz-extra.elc
+lib/oz/share/elisp/oz.el
+lib/oz/share/elisp/oz.elc
+lib/oz/share/gump/examples/Examples.oz
+lib/oz/share/gump/examples/Lambda.in
+lib/oz/share/gump/examples/LambdaParser.ozg
+lib/oz/share/gump/examples/LambdaScanner.ozg
+lib/oz/share/gump/examples/OzFrontend.oz
+lib/oz/share/gump/examples/OzParser.ozg
+lib/oz/share/gump/examples/OzScanner.ozg
+lib/oz/share/images/browserIcon.xbm
+lib/oz/share/images/browserMIcon.xbm
+lib/oz/share/images/compiler.xbm
+lib/oz/share/images/compilermask.xbm
+lib/oz/share/images/grid-25.xbm
+lib/oz/share/images/grid-50.xbm
+lib/oz/share/images/inspector/depth.xbm
+lib/oz/share/images/inspector/sep.xbm
+lib/oz/share/images/inspector/stop.xbm
+lib/oz/share/images/inspector/width.xbm
+lib/oz/share/images/lines-lr.xbm
+lib/oz/share/images/lines-rl.xbm
+lib/oz/share/images/mini-dec.xbm
+lib/oz/share/images/mini-inc.xbm
+lib/oz/share/images/ozcar/detach.xbm
+lib/oz/share/images/ozcar/next.xbm
+lib/oz/share/images/ozcar/step.xbm
+lib/oz/share/images/ozcar/stop.xbm
+lib/oz/share/images/ozcar/term.xbm
+lib/oz/share/images/ozcar/unleash.xbm
+lib/oz/share/images/stop.xbm
+@exec mkdir -p %D/lib/oz/cache/http/www.mozart-oz.org
+@exec ln -s ../../.. %D/lib/oz/cache/http/www.mozart-oz.org/home-1.1.0
+@unexec rm %D/lib/oz/cache/http/www.mozart-oz.org/home-1.1.0
+@dirrm lib/oz/bin
+@dirrm lib/oz/cache/http/www.mozart-oz.org
+@dirrm lib/oz/cache/http
+@dirrm lib/oz/cache
+@dirrm lib/oz/contrib/ap
+@dirrm lib/oz/contrib/compat
+@dirrm lib/oz/contrib/directory
+@dirrm lib/oz/contrib/doc/code
+@dirrm lib/oz/contrib/doc/sgml
+@dirrm lib/oz/contrib/doc
+@dirrm lib/oz/contrib/micq
+@dirrm lib/oz/contrib/os
+@dirrm lib/oz/contrib/tk
+@dirrm lib/oz/contrib/tools
+@dirrm lib/oz/contrib
+@dirrm lib/oz/doc/demo/applets/images/animated-queens
+@dirrm lib/oz/doc/demo/applets/images/college
+@dirrm lib/oz/doc/demo/applets/images/dict-client
+@dirrm lib/oz/doc/demo/applets/images/lift
+@dirrm lib/oz/doc/demo/applets/images/transport
+@dirrm lib/oz/doc/demo/applets/images/trucks
+@dirrm lib/oz/doc/demo/applets/images
+@dirrm lib/oz/doc/demo/applets
+@dirrm lib/oz/doc/demo
+@dirrm lib/oz/doc/system
+@dirrm lib/oz/doc
+@dirrm lib/oz/examples/fd/graphics
+@dirrm lib/oz/examples/fd
+@dirrm lib/oz/examples/grammar/shieber
+@dirrm lib/oz/examples/grammar
+@dirrm lib/oz/examples/sampler/constraints
+@dirrm lib/oz/examples/sampler
+@dirrm lib/oz/examples
+@dirrm lib/oz/include
+@dirrm lib/oz/platform/freebsdelf-i486/wish/tcl
+@dirrm lib/oz/platform/freebsdelf-i486/wish/tk
+@dirrm lib/oz/platform/freebsdelf-i486/wish
+@dirrm lib/oz/platform/freebsdelf-i486
+@dirrm lib/oz/platform
+@dirrm lib/oz/share/elisp
+@dirrm lib/oz/share/gump/examples
+@dirrm lib/oz/share/gump
+@dirrm lib/oz/share/images/inspector
+@dirrm lib/oz/share/images/ozcar
+@dirrm lib/oz/share/images
+@dirrm lib/oz/share
+@dirrm lib/oz

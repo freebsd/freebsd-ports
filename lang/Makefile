@@ -59,6 +59,7 @@
     SUBDIR += modula-3-lib
     SUBDIR += modula-3-socks
     SUBDIR += moscow_ml
+    SUBDIR += mozart
     SUBDIR += nawk
     SUBDIR += nqc
     SUBDIR += o2c
