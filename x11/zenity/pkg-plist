@@ -45,6 +45,7 @@ share/locale/am/LC_MESSAGES/zenity-0.1.mo
 share/locale/ar/LC_MESSAGES/zenity-0.1.mo
 share/locale/az/LC_MESSAGES/zenity-0.1.mo
 share/locale/be/LC_MESSAGES/zenity-0.1.mo
+share/locale/bg/LC_MESSAGES/zenity-0.1.mo
 share/locale/bn/LC_MESSAGES/zenity-0.1.mo
 share/locale/ca/LC_MESSAGES/zenity-0.1.mo
 share/locale/cs/LC_MESSAGES/zenity-0.1.mo
@@ -66,11 +67,13 @@ share/locale/gu/LC_MESSAGES/zenity-0.1.mo
 share/locale/hi/LC_MESSAGES/zenity-0.1.mo
 share/locale/hr/LC_MESSAGES/zenity-0.1.mo
 share/locale/hu/LC_MESSAGES/zenity-0.1.mo
+share/locale/id/LC_MESSAGES/zenity-0.1.mo
 share/locale/is/LC_MESSAGES/zenity-0.1.mo
 share/locale/it/LC_MESSAGES/zenity-0.1.mo
 share/locale/ja/LC_MESSAGES/zenity-0.1.mo
 share/locale/ko/LC_MESSAGES/zenity-0.1.mo
 share/locale/lt/LC_MESSAGES/zenity-0.1.mo
+share/locale/mi/LC_MESSAGES/zenity-0.1.mo
 share/locale/ml/LC_MESSAGES/zenity-0.1.mo
 share/locale/mn/LC_MESSAGES/zenity-0.1.mo
 share/locale/ms/LC_MESSAGES/zenity-0.1.mo
