@@ -23,6 +23,7 @@ USE_GNOME=	gnomeprefix intlhack gnomehack gnomedesktop desktopfileutils \
 WANT_GSTREAMER=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=15
+INSTALLS_SHLIB=	yes
 INSTALLS_OMF=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 	       	LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lXrandr"
