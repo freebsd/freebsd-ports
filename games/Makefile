@@ -257,6 +257,7 @@
     SUBDIR += maelstrom
     SUBDIR += magiccube4d
     SUBDIR += mahjong
+    SUBDIR += maitretarot
     SUBDIR += mangband
     SUBDIR += marathon-evil
     SUBDIR += marbles
