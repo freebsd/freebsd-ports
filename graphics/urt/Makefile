@@ -3,7 +3,7 @@
 # Date created:		Jan 5 1997
 # Whom:			cfs@ing.puc.cl (original)
 #
-# $Id: Makefile,v 1.6 1998/02/11 08:48:26 tg Exp $
+# $Id: Makefile,v 1.7 1998/09/19 05:46:06 steve Exp $
 #
 
 DISTNAME=	urt
@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://ftp.cs.utah.edu/pub/
 DISTFILES=	urt-3.1b.tar.Z urt-doc.tar urt-img.tar
 
 MAINTAINER=	giffunip@asme.org
+
+BROKEN=		not reinstall friendly
 
 LIB_DEPENDS=	tiff34.1:${PORTSDIR}/graphics/tiff34
 BUILD_DEPENDS=	${X11BASE}/lib/libpbm.a:${PORTSDIR}/graphics/netpbm
