@@ -1,0 +1,13 @@
+--- /home/makoto/ports/japanese/zangband/work/ZAngband/src/makefile.std	Sat Jul 22 21:37:07 2000
++++ src/makefile.std	Sat Jul 22 21:30:29 2000
+@@ -127,8 +127,8 @@
+ #CFLAGS = -Wall -O1 -pipe -g -D"USE_X11" -D"USE_GCU"
+ #LIBS = -lX11 -lcurses -ltermcap
+ 
+-CFLAGS = -Wall -O2 -m486 -pipe -g -D"USE_X11" -D"JP" -D"EUC" -D"JP_ARTDESC" -D"USE_GCU"
+-LIBS = -L/usr/X11R6/lib -lXaw -lXext -lSM -lICE -lXmu -lXt -lX11 -lcurses 
++CFLAGS = -Wall -O2 -m486 -pipe -g -D"USE_XAW" -D"USE_GCU"
++LIBS = -L/usr/X11R6/lib -lXaw -lXext -lSM -lICE -lXmu -lXt -lX11 -lcurses
+ 
+ 
+ ##

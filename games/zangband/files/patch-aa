@@ -1,0 +1,37 @@
+--- src/Makefile.orig	Wed Aug  9 11:32:26 2000
++++ src/Makefile	Wed Aug  9 11:32:43 2000
+@@ -103,7 +103,7 @@
+ #
+ # This is my compiler of choice, it seems to work most everywhere
+ #
+-CC = gcc
++CC ?= gcc
+ 
+ 
+ #
+@@ -127,8 +127,8 @@
+ #CFLAGS = -Wall -O1 -pipe -g -D"USE_X11" -D"USE_GCU"
+ #LIBS = -lX11 -lcurses -ltermcap
+ 
+-CFLAGS = -Wall -O2 -m486 -pipe -g -D"USE_XAW" -D"USE_GCU"
+-LIBS = -L/usr/X11R6/lib -lXaw -lXext -lSM -lICE -lXmu -lXt -lX11 -lcurses
++#CFLAGS = -Wall -O2 -m486 -pipe -g -D"USE_XAW" -D"USE_GCU"
++#LIBS = -L/usr/X11R6/lib -lXaw -lXext -lSM -lICE -lXmu -lXt -lX11 -lcurses
+ 
+ 
+ ##
+@@ -228,6 +228,14 @@
+ ##
+ #CFLAGS = -Wall -O1 -pipe -g -D"USE_GCU" -arch m68k -arch i386
+ #LIBS = -lcurses -ltermcap
++
++
++
++##
++## Variation -- Compile for FreeBSD
++##
++CFLAGS += -D"USE_X11" -D"USE_GCU" ${EXTRA_CFLAGS}
++LIBS = -L${X11BASE}/lib -lXaw -lXext -lSM -lICE -lXmu -lXt -lX11 -lcurses
+ 
+ 
+ 
