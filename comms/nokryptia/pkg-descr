@@ -1,0 +1,6 @@
+Nokryptia is a program to convert music files like MP3 to work on a Nokia 5510
+cell phone. The utility also does not do any encryption, it uses in fact a bug
+in the encryption algorithm. Therefore, no actual encryption is done, which
+makes the program very fast in comparision to the official software from Nokia.
+
+WWW: http://tuxmobil.org/nokryptia.html
