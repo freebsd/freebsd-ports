@@ -7,6 +7,7 @@
 
 PORTNAME=	abiword
 PORTVERSION=	2.2.4
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.abisource.com/downloads/%SUBDIR%/${PORTVERSION}/source/
@@ -46,6 +47,11 @@ ABIVERSION=	2.2
 PLIST_SUB+=	"ABIVERSION=${ABIVERSION}"
 WRKSRC=		${WRKDIR}/abiword-${PORTVERSION}/abi
 
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=	--enable-debug \
+			--enable-symbols
+.endif
+
 .ifndef(WITHOUT_GTKSPELL)
 LIB_DEPENDS+=		enchant.2:${PORTSDIR}/textproc/enchant
 PLIST_SUB+=		DICT:="@comment "
@@ -56,8 +62,8 @@ PLIST_SUB+=		DICT:=""
 
 .include <bsd.port.pre.mk>
 
-.if ${HAVE_GNOME:Mnautilus2}!="" && ${HAVE_GNOME:Mlibgnomeprintui}!=""
-USE_GNOME+=		nautilus2 libgnomeprintui desktopfileutils
+.if ${HAVE_GNOME:Mlibgnomeprintui}!=""
+USE_GNOME+=		libgnomeprintui desktopfileutils
 CONFIGURE_ARGS+=	--enable-gnome
 PKGNAMESUFFIX=		-gnome
 GNOME_ENABLED=		yes
@@ -72,6 +78,7 @@ CONFIGURE_ARGS+=	--enable-cmap=no
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "AbiWord2 has the following tunable option(s):"
+	@${ECHO_MSG} "	WITH_DEBUG=yes		Enable debug."
 	@${ECHO_MSG} "	WITH_GUCHARMAP=yes	Enable use of Gucharmap as the symbol insertion tool (default: auto)"
 	@${ECHO_MSG} "	WITHOUT_GTKSPELL=yes	Don't use Enchant, but still enable spellchecking and install the dictionary."
 	@${ECHO_MSG} ""
