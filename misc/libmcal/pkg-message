@@ -1,0 +1,16 @@
+*****************************************************************************
+ libmcal has been installed. In order to end its configuration,
+ please enter the following commands:
+
+      mkdir /var/calendar
+      chmod 1777 /var/calendar
+
+ To work with the mstore driver, using the Apache's htpasswd utility,
+ you may create the mpasswd file with the command below:
+
+      htpasswd -c %%LOCALBASE%%/etc/mpasswd username
+
+ To add or update this file you would execute as follows:
+
+      htpasswd %%LOCALBASE%%/etc/mpasswd username
+*****************************************************************************

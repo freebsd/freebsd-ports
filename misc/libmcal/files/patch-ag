@@ -1,0 +1,120 @@
+--- icalroutines.c.orig	Tue Jan 25 04:08:10 2000
++++ icalroutines.c	Thu May 11 21:43:23 2000
+@@ -1,5 +1,5 @@
+ /*
+- *	#$Id: icalroutines.c,v 1.1 2000/01/25 03:08:10 markie Exp $
++ *	#$Id: icalroutines.c,v 1.2 2000/05/11 19:43:23 inan Exp $
+  *
+  * Libmcal - Modular Calendar Access Library 
+  * Copyright (C) 1999 Mark Musone and Andrew Skalski
+@@ -594,3 +594,110 @@
+                 putc(pad, out);
+         }
+ }
++
++#define MAX(a,b) (a)>(b) ? (a) :(b) 
++void
++ical_set_byday ( char *output, const byday_t *input ) {
++	int	i;
++	char	temp_string[50];
++	
++	strcpy (output, "");
++	
++	for (i=0; i<=6; i++) {
++		/* wdays is a bit field corresponding to days of the week */
++		if ((input->weekdays) & (0x1 <<i) ) {
++			if (input->ordwk[i] != 0) {
++				sprintf( temp_string, "%d", input->ordwk[i] );
++				strcat ( output, temp_string );
++			}
++			switch (i) {
++				case 0:
++					strcat ( output, "SU, ");
++					break;
++				case 1:
++					strcat ( output, "MO, ");
++					break;	
++				case 2:
++					strcat ( output, "TU, ");
++					break;
++				case 3:
++					strcat ( output, "WE, ");
++					break;
++				case 4:
++					strcat ( output, "TH, ");
++					break;
++				case 5:
++					strcat ( output, "FR, ");
++					break;
++				case 6:
++					strcat ( output, "SA, ");
++					break;
++			}
++		}
++	}
++        output[MAX(strlen(output)-2,0)] = '\0';
++
++}
++#undef MAX
++
++void
++ical_get_byday ( byday_t *output, const char *input ) {
++    char *temp_string;  
++    char *token;
++    char *day_start;
++    int  interval;
++    int  day_index;
++    temp_string = strdup(input);
++
++    token = strtok (temp_string, ",");
++    while ( token != NULL ) {
++        day_start = token + strlen(token) - 2;
++	if (strcasecmp (day_start, "SU")==0) {
++	    output->weekdays |= M_SUNDAY;
++	    day_index = 0;
++	} else if (strcasecmp (day_start, "MO")==0) {
++	    output->weekdays |= M_MONDAY;
++	    day_index = 1;
++	} else if (strcasecmp (day_start, "TU")==0) {
++	    output->weekdays |= M_TUESDAY;
++	    day_index = 2;
++	} else if (strcasecmp (day_start, "WE")==0) {
++	    output->weekdays |= M_WEDNESDAY;
++	    day_index = 3;
++	} else if (strcasecmp (day_start, "TH")==0) {
++	    output->weekdays |= M_THURSDAY;
++	    day_index = 4;
++	} else if (strcasecmp (day_start, "FR")==0) {
++	    output->weekdays |= M_FRIDAY;
++	    day_index = 5;
++	} else if (strcasecmp (day_start, "SA")==0) {
++	    output->weekdays |= M_SATURDAY;
++	    day_index = 6;
++        }
++        *day_start = '\0';
++	interval = atoi (token);
++	output->ordwk[day_index] = interval;
++    }
++    
++    free( token );
++    free( temp_string );
++}
++
++void
++ical_get_recur_freq( recur_t *output, const char *input, const char *byday) {
++    if (strncmp (input, "D",1)==0) {
++        *output = RECUR_DAILY;
++    } else if (strncmp (input, "W",1)==0) {
++        *output = RECUR_WEEKLY;
++    } else if (strncmp (input, "M",1)==0) {
++        if (strlen(byday) == 0) {
++	    *output = RECUR_MONTHLY_MDAY;
++	} else {
++            *output = RECUR_MONTHLY_WDAY;
++	}
++    } else if (strncmp (input, "Y",1)==0) {
++        *output = RECUR_YEARLY;
++    } else {
++        *output = RECUR_NONE;
++    }
++}

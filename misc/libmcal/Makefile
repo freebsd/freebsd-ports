@@ -7,6 +7,7 @@
 
 PORTNAME=	libmcal
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -34,13 +35,15 @@ post-extract:
 	${CP} -pR ${WRKSRCDRV}/icap ${WRKSRC}
 	${MV} ${WRKSRC}/mstore/Makefile ${WRKSRC}/mstore/Makefile.dist
 	${MV} ${WRKSRC}/mstore/Makefile.FreeBSD ${WRKSRC}/mstore/Makefile
-	${PERL} -pi -e "s:/etc/mpasswd:${PREFIX}/etc/mpasswd:" ${WRKSRC}/mstore/mstore.c
 	${MV} ${WRKSRC}/icap/Makefile ${WRKSRC}/icap/Makefile.dist
 	${MV} ${WRKSRC}/icap/Makefile.FreeBSD ${WRKSRC}/icap/Makefile
 	${MV} ${WRKSRC}/configure ${WRKSRC}/configure.dist
 	${MV} ${WRKSRC}/configure.FreeBSD ${WRKSRC}/configure
 	${CHMOD} u+x ${WRKSRC}/configure
 	${MV} ${WRKSRC}/mstore/README ${WRKSRC}/mstore/README.mstore
+
+post-patch:
+	${PERL} -pi -e "s:/etc/mpasswd:${PREFIX}/etc/mpasswd:" ${WRKSRC}/mstore/mstore.c
 
 pre-configure:
 	@${ECHO_MSG} "===>  Building the driver mstore"
@@ -60,21 +63,8 @@ post-install:
 .endfor
 	@${ECHO_MSG} "===>  Documentation installed in ${DOCSDIR}."
 .endif
-	@${ECHO} "*****************************************************************************"
-	@${ECHO} " libmcap has been installed. In order to end its configuration,"
-	@${ECHO} " please enter the following commands:"
-	@${ECHO} ""
-	@${ECHO} "	mkdir /var/calendar"
-	@${ECHO} "	chmod 1777 /var/calendar"
-	@${ECHO} ""
-	@${ECHO} " To work with the mstore driver, using the Apache's htpasswd utility,"
-	@${ECHO} " you may create the mpasswd file with the command below:"
-	@${ECHO} ""
-	@${ECHO} "	htpasswd -c ${LOCALBASE}/etc/mpasswd username"
-	@${ECHO} ""
-	@${ECHO} " To add or update this file you would execute as follows:"
-	@${ECHO} ""
-	@${ECHO} "	htpasswd ${LOCALBASE}/etc/mpasswd username"
-	@${ECHO} "*****************************************************************************"
+	@${ECHO}
+	@${CAT} ${PKGMESSAGE} | ${SED} -e "s:%%LOCALBASE%%:${LOCALBASE}:g"
+	@${ECHO}
 
 .include <bsd.port.mk>

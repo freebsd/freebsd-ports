@@ -1,0 +1,106 @@
+--- mcal.h.orig	Mon Mar 27 06:00:33 2000
++++ mcal.h	Tue Jan  9 04:26:48 2001
+@@ -1,5 +1,6 @@
++
+ /*
+- *	$Id: mcal.h,v 1.6 2000/03/27 04:00:33 zircote Exp $
++ *	$Id: mcal.h,v 1.10 2001/01/09 03:26:48 markie Exp $
+  * Libmcal - Modular Calendar Access Library
+  * Copyright (C) 1999 Mark Musone and Andrew Skalski
+  *
+@@ -142,6 +143,15 @@
+ 	size_t			bufsize;	/* buffer size */
+ };
+ 
++/* calendar stream struct */
++CALSTREAM {
++	const CALDRIVER		*driver;	/* stream driver */
++	CALADDR			*addr;		/* folder address */
++	bool			dead;		/* dead stream? */
++	weekday_t		startofweek;	/* first day of week */
++	void			*data;		/* driver-specific data */
++};
++
+ 
+ /* calendar driver structure */
+ CALDRIVER {
+@@ -169,7 +179,11 @@
+ 
+ 	/* return true if the stream is still alive */
+ 	bool		(*ping)(	CALSTREAM *stream);
+-
++	
++	/* return true if calendar created ok */
++	bool		(*create)(	CALSTREAM *stream,
++					const char *calendar);
++					
+ 	/* search the current folder for events between <start> and
+ 	 * <end> (inclusive.)  if either lacks a date or is NULL, that
+ 	 * bound will not be checked.  if both lack a date or are NULL,
+@@ -222,20 +236,17 @@
+ 	bool            (*store)(       CALSTREAM *stream, 
+ 					const CALEVENT *event);
+ 
++	/* Delete an entire calendar */
++	bool            (*delete)(     CALSTREAM *stream,  char *calendar);
+ 
+-};
++	bool            (*rename)(      CALSTREAM *stream,char *src,char *dest);
+ 
+ 
+-/* calendar stream struct */
+-CALSTREAM {
+-	const CALDRIVER		*driver;	/* stream driver */
+-	CALADDR			*addr;		/* folder address */
+-	bool			dead;		/* dead stream? */
+-	weekday_t		startofweek;	/* first day of week */
+-	void			*data;		/* driver-specific data */
+ };
+ 
+ 
++
++
+ /** calendar client callbacks **/
+ 
+ /* Called when a stream driver requires a username/password.  It is
+@@ -287,8 +298,11 @@
+ /* Disposes of a CALEVENT, returns NULL for convenience. */
+ CALEVENT*	calevent_free(CALEVENT *event);
+ 
++/* Check the validity of an event's fields. */
++bool		calevent_valid(const CALEVENT *event);
++
+ /* Routines to set and fetch event attributes. */
+-const char*	calevent_getattr(CALEVENT *event, const char *name);
++const char*	calevent_getattr(const CALEVENT *event, const char *name);
+ bool		calevent_setattr(CALEVENT *event, const char *name,
+ 					const char *value);
+ 
+@@ -322,7 +336,10 @@
+  */
+ bool		first_day_not_before(	int mask, weekday_t *clamp,
+ 					weekday_t weekstart);
+-
++/* Creates a new calendar 
++ */
++bool		cal_create(CALSTREAM *stream,const char *calendar); 
++ 
+ /* Returns true if the address is valid for any of the calendar drivers */
+ bool		cal_valid(const char *address);
+ 
+@@ -400,6 +417,15 @@
+ /* Cancels the alarm for event with id of <id>.  Returns false on error. */
+ bool		cal_snooze(	CALSTREAM *stream,
+ 				unsigned long id);
++
++/* delete an entire calendar */
++
++bool		cal_delete(	CALSTREAM *stream,
++				char *calendar);
++
++/* rename a calendar */
++bool		cal_rename(	CALSTREAM *stream,
++				char *src,char *dest);
+ 
+ 
+ /* private functions */

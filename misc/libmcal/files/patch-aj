@@ -1,0 +1,184 @@
+--- mcal.c.orig	Sun Feb 27 06:01:54 2000
++++ mcal.c	Tue Jan  9 04:26:48 2001
+@@ -1,5 +1,5 @@
+ /*
+- *	$Id: mcal.c,v 1.6 2000/02/27 05:01:54 inan Exp $
++ *	$Id: mcal.c,v 1.9 2001/01/09 03:26:48 markie Exp $
+  * Libmcal - Modular Calendar Access Library
+  * Copyright (C) 1999 Mark Musone and Andrew Skalski
+  *
+@@ -174,7 +174,7 @@
+ 	/* size-count and sanity-check all fields */
+ 	if (addr->host) {
+ 		/* sanity: host contains neither '/' nor '}' */
+-		if (strchr(addr->host, '}') || strchr(addr->host, '/'))
++		if (strpbrk(addr->host, "}/"))
+ 			return NULL;
+ 		size += strlen(addr->host) + 2;
+ 
+@@ -318,10 +318,33 @@
+ }
+ 
+ 
++bool
++calevent_valid(const CALEVENT *event)
++{
++	int n = 0;
++
++	/* both must have date field set */
++	if (!dt_hasdate(&event->start) || !dt_hasdate(&event->end))
++		return false;
++
++	/* either none or both may have time field set */
++	if (dt_hastime(&event->start)) n++;
++	if (dt_hastime(&event->end)) n++;
++	if (n == 1)
++		return false;
++
++	/* start must precede end */
++	if (dt_compare(&event->start, &event->end) > 0)
++		return false;
++
++	return true;
++}
++
++
+ const char*
+-calevent_getattr(CALEVENT *event, const char *name)
++calevent_getattr(const CALEVENT *event, const char *name)
+ {
+-	CALATTR		*attr;
++	const CALATTR	*attr;
+ 
+ 	for (attr = event->attrlist; attr; attr = attr->next)
+ 		if (!strcasecmp(attr->name, name))
+@@ -694,7 +717,7 @@
+ 		int		wday;
+ 
+ 
+-		nth = estart.mday / 7 + 1;
++		nth = (estart.mday - 1) / 7 + 1;
+ 		wday = dt_dayofweek(&estart);
+ 
+ 		/* adjust estart to be the first candidate */
+@@ -750,6 +773,18 @@
+ 	return false;
+ }
+ 
++bool
++cal_create(CALSTREAM *stream,const char *calendar) {
++	bool output;
++	
++	if (stream == NULL) {
++		output = false;
++	} else {
++		output = stream->driver->create(stream, calendar);
++	}
++	
++	return output;
++}
+ 
+ bool
+ cal_valid(const char *address)
+@@ -880,6 +915,8 @@
+ {
+ 	if (stream == NULL || stream->dead)
+ 		return false;
++	if (!calevent_valid(event))
++		return false;
+ 	return stream->driver->append(stream, addr, id, event);
+ }
+ 
+@@ -944,12 +981,31 @@
+         return good;
+ }
+ 
++
++bool
++cal_delete(CALSTREAM *stream, char *calendar)
++{
++	if (stream == NULL || stream->dead)
++		return false;
++	return stream->driver->delete(stream, calendar);
++}
++
++bool
++cal_rename(CALSTREAM *stream, char *src,char *dest)
++{
++	if (stream == NULL || stream->dead)
++		return false;
++	return stream->driver->rename(stream, src,dest);
++}
++
++
+ /** Dummy Driver **/
+ static bool		dummy_valid(const CALADDR *addr);
+ static CALSTREAM*	dummy_open(	CALSTREAM *stream,
+ 					const CALADDR *addr, long options);
+ static CALSTREAM*	dummy_close(CALSTREAM *stream, long options);
+ static bool		dummy_ping(CALSTREAM *stream);
++static bool		dummy_create(CALSTREAM *stream, const char *calendar);
+ static bool		dummy_search_range(	CALSTREAM *stream,
+ 						const datetime_t *start,
+ 						const datetime_t *end);
+@@ -967,18 +1023,28 @@
+ static bool		dummy_snooze(	CALSTREAM *stream,
+ 					unsigned long id);
+ 
++static bool		dummy_delete(	CALSTREAM *stream,
++					char *calendar);
++
++static bool		dummy_rename(	CALSTREAM *stream,
++					char *src,char *dest);
++
+ const CALDRIVER dummy_driver =
+ {
+ 	dummy_valid,
+ 	dummy_open,
+ 	dummy_close,
+ 	dummy_ping,
++	dummy_create,
+ 	dummy_search_range,
+ 	dummy_search_alarm,
+ 	dummy_fetch,
+ 	dummy_append,
+ 	dummy_remove,
+ 	dummy_snooze,
++	dummy_delete,
++	dummy_rename,
++	
+ };
+ 
+ 
+@@ -1011,6 +1077,12 @@
+ 	return false;
+ }
+ 
++bool
++dummy_create(CALSTREAM *stream, const char *calendar)
++{
++	return false;
++}
++
+ 
+ bool
+ dummy_search_range(	CALSTREAM *stream,
+@@ -1052,6 +1124,18 @@
+ 
+ bool
+ dummy_snooze(CALSTREAM *stream, unsigned long id)
++{
++	return false;
++}
++
++bool
++dummy_delete(CALSTREAM *stream, char *calendar)
++{
++	return false;
++}
++
++bool
++dummy_rename(CALSTREAM *stream, char *src,char *dest)
+ {
+ 	return false;
+ }

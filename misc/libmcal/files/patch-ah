@@ -1,0 +1,25 @@
+--- icalroutines.h.orig	Tue Jan 25 04:08:10 2000
++++ icalroutines.h	Thu May 11 21:43:23 2000
+@@ -1,5 +1,5 @@
+ /*
+- *	#$Id: icalroutines.h,v 1.1 2000/01/25 03:08:10 markie Exp $
++ *	#$Id: icalroutines.h,v 1.2 2000/05/11 19:43:23 inan Exp $
+  *
+  * Libmcal - Modular Calendar Access Library 
+  * Copyright (C) 1999 Mark Musone and Andrew Skalski
+@@ -70,5 +70,15 @@
+ 					const unsigned char *buf,
+ 					size_t size);
+ 
++/* ICAL formatting. */
++#define BYDAY_INIT {0, {0,0,0,0,0,0,0}}
++typedef struct {
++	unsigned int 	weekdays;
++	int			ordwk[7];
++} byday_t;
++
++void		ical_set_byday(char *output, const byday_t *input);
++void		ical_get_byday(byday_t *output, const char *input);
++void		ical_get_recur_freq( recur_t *output, const char *input, const char *byday);
+ 
+ #endif

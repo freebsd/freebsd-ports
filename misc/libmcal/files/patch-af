@@ -1,0 +1,65 @@
+--- datetime.h.orig	Sat Mar 11 03:14:43 2000
++++ datetime.h	Fri Mar 16 20:27:14 2001
+@@ -1,5 +1,5 @@
+ /*
+- *	$Id: datetime.h,v 1.2 2000/03/11 02:14:43 chuck Exp $
++ * $Id: datetime.h,v 1.4 2001/03/16 19:27:14 chuck Exp $
+  * Libmcal - Modular Calendar Access Library
+  * Copyright (C) 1999 Mark Musone and Andrew Skalski
+  *
+@@ -26,7 +26,7 @@
+  * Andrew Skalski
+  * askalski@chek.com
+  *
+- * mcal@lists.chek.com
++ * libmcal-users@lists.sourceforge.net
+  */
+ 
+ #ifndef	_DATETIME_H
+@@ -66,6 +66,11 @@
+ 	DECEMBER
+ } month_t;
+ 
++typedef enum {
++	DT_FORWARD,
++	DT_BACKWARD
++} direction_t;
++
+ /**
+  * struct datetime
+  *
+@@ -178,11 +183,34 @@
+ /* Returns the week number for d=day, m=month, y=year */
+ int 	dt_weekofyear(int d, int m, int y);
+ 
++/* Returns the week number in the given month counting in the given direction */
++int 	dt_orderofmonth( const datetime_t *dt, const direction_t direction);
++
+ /* convenience macros to get the first/last days of a week */
+ #define	dt_startofweek(dt, ref, weekstart) \
+ 		dt_setweekof((dt), (ref), (weekstart), (weekstart))
+ #define	dt_endofweek(dt, ref, weekstart) \
+ 		dt_setweekof((dt), (ref), (weekstart), (7+(weekstart)-1)%7)
++#define	dt_dayofweekstr(dayno)        \
++		(dayno) >= 4 ?        \
++			(dayno) = 6 ?     \
++				"SA" :        \
++				(dayno) = 5 ? \
++					"FR" :    \
++					"TH"      \
++				;             \
++			;:                \
++			(dayno) >= 2 ?    \
++				(dayno) = 3 ? \
++					"WE" :    \
++					"TU"      \
++				;:             \
++				(dayno) = 1 ? \
++					"MO" :    \
++					"SU"      \
++				;             \
++			;                 \
++				
+ 
+ /**********************************/
+ 
