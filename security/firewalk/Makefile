@@ -7,6 +7,7 @@
 
 PORTNAME=	firewalk
 PORTVERSION=	5.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.packetfactory.net/firewalk/dist/
 EXTRACT_SUFX=	.tgz
