@@ -6,7 +6,7 @@
 #
 
 PKGNAMESUFFIX=	-wnn4
-CATEGORIES=	korean editors
+CATEGORIES=	korean
 KWNN4=		yes
 
 MASTERDIR=	${.CURDIR}/../../editors/mule

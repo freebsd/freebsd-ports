@@ -6,7 +6,7 @@
 #
 
 PKGNAMESUFFIX=	-sj3
-CATEGORIES=	japanese editors
+CATEGORIES=	japanese
 
 SJ3=		yes
 
