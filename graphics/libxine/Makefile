@@ -7,6 +7,7 @@
 
 PORTNAME=	xine
 PORTVERSION=	0.9.7
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://xine.sourceforge.net/files/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -56,7 +57,7 @@ PLIST_SUB+=	HAVE_ARTS="@comment "
 .endif
 
 .if exists(${LOCALBASE}/include/vorbis/codec.h)
-LIB_DEPENDS+=	vorbis.0:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbis.1:${PORTSDIR}/audio/libvorbis
 
 PLIST_SUB+=	HAVE_VORBIS=""
 .else
@@ -64,7 +65,7 @@ PLIST_SUB+=	HAVE_VORBIS="@comment "
 .endif
 
 .if exists(${LOCALBASE}/include/ogg/ogg.h)
-LIB_DEPENDS+=	ogg.2:${PORTSDIR}/audio/libogg
+LIB_DEPENDS+=	ogg.3:${PORTSDIR}/audio/libogg
 
 PLIST_SUB+=	HAVE_OGG=""
 .else
