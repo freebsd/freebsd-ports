@@ -11,3 +11,36 @@
  			data,
  			&data_conv,
  			YSM_ICONV_MAXLEN) < 0 )
+@@ -2638,6 +2638,7 @@
+ 	/* offline message variables */
+ 	int uin,mlen;
+ 	char *message,MsgType,MsgFlags,Msglen[2];
++	char *data_conv = 0;
+ 
+ 		/* its a TLV(1) at the very beggining, always. */
+ 		tsize += 4;
+@@ -2745,13 +2746,22 @@
+ 			"\nMessage received when you were %soffline%s:\n",
+ 								BRIGHT_BLUE,
+ 								NORMAL);
+-
++#ifdef YSM_USE_ICONV
++					if( YSM_Iconv(  YSM_SETTING_CHARSET_TRANS,
++					    YSM_SETTING_CHARSET_LOCAL,
++						message,
++						&data_conv,
++						YSM_ICONV_MAXLEN) < 0 )
++#endif
++					{ data_conv = strdup (message); }
++					
+ 					YSM_DisplayMsg (YSM_MESSAGE_NORMAL,
+ 							uin,
+ 							0x0,
+-							mlen, message,
++							mlen, data_conv,
+ 							YSM_Query->NickName,
+ 							!YSM_Query ? 0x0 : YSM_Query->LogFlag );
++					free(data_conv);
+ 
+ 							break;
+ 	
