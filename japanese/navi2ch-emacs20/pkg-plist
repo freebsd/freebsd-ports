@@ -1,3 +1,6 @@
+@unexec install-info --delete %D/info/navi2ch.info %D/info/dir
+info/navi2ch.info
+@exec install-info %D/info/navi2ch.info %D/info/dir
 %%PORTDOCS%%share/doc/ja/navi2ch/ChangeLog
 %%PORTDOCS%%share/doc/ja/navi2ch/README
 %%PORTDOCS%%share/doc/ja/navi2ch/TODO
@@ -34,6 +37,8 @@
 %%LISPDIR%%/navi2ch/navi2ch-util.elc
 %%LISPDIR%%/navi2ch/navi2ch-vars.el
 %%LISPDIR%%/navi2ch/navi2ch-vars.elc
+%%LISPDIR%%/navi2ch/navi2ch-version.el
+%%LISPDIR%%/navi2ch/navi2ch-version.elc
 %%LISPDIR%%/navi2ch/navi2ch.el
 %%LISPDIR%%/navi2ch/navi2ch.elc
 @dirrm %%LISPDIR%%/navi2ch
