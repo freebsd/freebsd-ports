@@ -264,7 +264,7 @@ MASTER_SITE_GCC+=	\
 	ftp://ftp.sun.ac.za/mirrorsites/sourceware.cygnus.com/pub/gcc/%SUBDIR%/
 
 MASTER_SITE_GENTOO+=	\
-	http://www.ibiblio.org/pub/Linux/distributions/gentoo/%SUBDIR%/ \
+	http://distro.ibiblio.org/pub/linux/distributions/gentoo/%SUBDIR%/ \
 	http://csociety-ftp.ecn.purdue.edu/pub/gentoo/%SUBDIR%/ \
 	http://gentoo.mirrors.pair.com/%SUBDIR%/ \
 	http://gentoo.seren.com/gentoo/%SUBDIR%/ \
@@ -295,7 +295,7 @@ MASTER_SITE_GENTOO+=	\
 	http://gentoo.inode.at/%SUBDIR%/ \
 	http://ftp.rhnet.is/pub/gentoo/%SUBDIR%/ \
 	http://gentoo.mirror.sdv.fr/%SUBDIR%/ \
-	http://planetmirror.com/pub/gentoo/%SUBDIR%/ \
+	http://public.planetmirror.com/pub/gentoo/%SUBDIR%/ \
 	http://www.zentek-international.com/mirrors/gentoo/%SUBDIR%/ \
 	http://ftp.gentoo.or.kr/%SUBDIR%/ \
 	http://mirror.gentoo.gr.jp/%SUBDIR%/ \
@@ -340,7 +340,7 @@ MASTER_SITE_GENTOO+=	\
 	ftp://planetmirror.com/pub/gentoo/%SUBDIR%/ \
 	ftp://gg3.net/pub/linux/gentoo/%SUBDIR%/ \
 	ftp://ftp.ecc.u-tokyo.ac.jp/GENTOO/%SUBDIR%/ \
-	ftp://gentoo.kems.net/%SUBDIR%/
+	ftp://gentoo.kems.net/pub/mirrors/gentoo/%SUBDIR%/
 
 MASTER_SITE_GNOME+=	\
 	http://www.gtlib.cc.gatech.edu/pub/gnome/%SUBDIR%/ \
