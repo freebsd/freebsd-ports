@@ -7,8 +7,9 @@ Gracula is the compiler/interpreter for Graphic Counter Language, developed
 under FreeBSD, though usable on any Unix system.
 
 For details about the language, visit GCL home page (www.whizkidtech.net/gcl/)
-as well as Count Gracula's Gallery (www.whizkidtech.net/gcl/gallery) which
-contains a number of sample GCL scripts and showcases various counter designs.
+as well as Count Gracula's Gallery (www.whizkidtech.redprince.net/gcl/gallery)
+which contains a number of sample GCL scripts and showcases various counter
+designs.
 
 GCL requires no configuration files. All you provide is graphic images and
 simple scripts. Optionally, you may link the images directly into the gracula
@@ -19,4 +20,4 @@ number of seconds (or minutes, hours, days) left till the Year 2000.
 Gracula is written in C and highly optimized for speed which makes it work
 reliably even on the busiest web sites.
 
-G. Adam Stanislav <adam@whizkidtech.net>
+WWW: http://www.whizkidtech.redprince.net/gcl/
