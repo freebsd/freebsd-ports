@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	scmail
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	mail
 MASTER_SITES=	http://namazu.org/~satoru/scmail/
 
-MAINTAINER=	fuyuki@nigredo.org
+MAINTAINER=	fuyuki@hadaly.org
 COMMENT=	A mail filter written in Scheme
 
 BUILD_DEPENDS=	gosh:${PORTSDIR}/lang/gauche
