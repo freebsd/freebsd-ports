@@ -22,8 +22,8 @@ USE_REINPLACE=	yes
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - 2>/dev/null || true
 
 .include <bsd.port.pre.mk>
-CURL_VERSION!=	${LOCALBASE}/bin/curl-config --version|grep '${PORTVERSION}$$' \
-		2>&1 || ${TRUE}
+CURL_VERSION!=	${LOCALBASE}/bin/curl-config --version 2>&1 | \
+		grep '${PORTVERSION}$$' 2>&1 || ${TRUE}
 .if empty(CURL_VERSION)
 IGNORE=		requires curl-${PORTVERSION}
 .endif
