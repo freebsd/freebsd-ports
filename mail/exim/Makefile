@@ -8,7 +8,7 @@
 PORTNAME=	exim
 PORTVERSION=	3.22
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.cus.cam.ac.uk/pub/software/programs/exim/ \
+MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/email/exim/ \
 		http://www.exim.org/ftp/ \
 		ftp://ftp.is.co.za/networking/mail/transport/exim/
 DISTFILES=	exim-3.22.tar.gz exim-texinfo-3.20.tar.gz
