@@ -11,6 +11,7 @@ CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.guardian.no/pub/free/ftp/fmirror/
 
 MAINTAINER=	kiwi@oav.net
+COMMENT=	Program for mirroring files and directories from a remote FTP server
 
 #WRKSRC=		${WRKDIR}/${DISTNAME}
 

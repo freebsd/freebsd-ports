@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.kpage.de/download/
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	erich@tacni.net
+COMMENT=	A KDE frontend to wget
 
 RUN_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
 

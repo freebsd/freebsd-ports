@@ -12,6 +12,7 @@ MASTER_SITES=	http://achurch.org/tetrinet/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	fredrik@wasadata.com
+COMMENT=	A console tetrinet client
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tetrinet ${PREFIX}/bin

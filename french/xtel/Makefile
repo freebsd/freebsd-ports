@@ -12,6 +12,7 @@ CATEGORIES=	french comms emulators
 MASTER_SITES=	http://pficheux.free.fr/xtel/download/
 
 MAINTAINER=	thierry@pompo.net
+COMMENT=	An emulator for the french Minitel
 
 LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
 

@@ -11,6 +11,7 @@ CATEGORIES=	french misc
 MASTER_SITES=	http://perso.club-internet.fr/lchretie/
 
 MAINTAINER=	sheepkiller@cultdeadsheep.org
+COMMENT=	Gfaim est un logiciel de recherche de recettes de cuisine
 
 USE_X_PREFIX= 	yes
 USE_GNOMENG=	yes

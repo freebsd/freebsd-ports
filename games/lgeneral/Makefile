@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	lgeneral
 
 MAINTAINER=	filippo@widestore.net
+COMMENT=	A turn-based strategy engine inspired by Panzer General
 
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
 

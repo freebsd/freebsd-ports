@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.cis.uab.edu/pub/hyatt/common/large/
 DISTFILES=	large1.zip large2.zip large3.zip large4.zip
 
 MAINTAINER=	seggers@semyam.dinoco.de
+COMMENT=	The large opening book for crafty
 
 BUILD_DEPENDS=	crafty:${PORTSDIR}/games/crafty
 RUN_DEPENDS=	crafty:${PORTSDIR}/games/crafty

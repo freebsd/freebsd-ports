@@ -13,6 +13,7 @@ MASTER_SITES=	http://gftp.seul.org/ \
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
 
 MAINTAINER=	lehmann@ans-netz.de
+COMMENT=	A free multithreaded GTK based ftp client
 
 GNU_CONFIGURE=	yes
 

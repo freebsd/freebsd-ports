@@ -11,6 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://pysol2.sourceforge.net/download/
 
 MAINTAINER=	serg@tmn.ru
+COMMENT=	Collection of background music for use with PySol
 
 RUN_DEPENDS=	pysol:${PORTSDIR}/games/pysol
 

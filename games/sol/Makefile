@@ -11,6 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://shh.thathost.com/pub-unix/files/
 
 MAINTAINER=	edwin@mavetju.org
+COMMENT=	Solitaire card game for X Window System
 
 LIB_DEPENDS=	shhopt.1:${PORTSDIR}/devel/libshhopt \
 		shhmsg.1:${PORTSDIR}/devel/libshhmsg \

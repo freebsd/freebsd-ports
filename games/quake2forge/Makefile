@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	quake
 DISTNAME=	quake2-${PORTVERSION}
 
 MAINTAINER=	q@uni.de
+COMMENT=	Quakeforge version of Quake 2 (First Person Shooter)
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

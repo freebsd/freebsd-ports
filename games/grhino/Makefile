@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	rhino
 
 MAINTAINER=	umeno@rr.iij4u.or.jp
+COMMENT=	GRhino Othello/Reversi Program
 
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes

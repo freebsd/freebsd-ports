@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.giovannelli.it/~gmarco/files/ \
 DISTFILES=	${PORTNAME}.${PORTVERSION}.tgz
 
 MAINTAINER=	gmarco@giovannelli.it
+COMMENT=	An addictive 6 player tetr*s game
 
 WRKSRC=		${WRKDIR}/tetrinetx-${PORTVERSION}
 

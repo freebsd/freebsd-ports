@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	sdl-sopwith
 DISTNAME=	sdl_${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	edwin@mavetju.org
+COMMENT=	A classic WW1 biplane game
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/sdl11-config:${PORTSDIR}/devel/sdl12
 

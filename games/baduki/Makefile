@@ -11,6 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	ftp://autoinst.acs.uci.edu/pub/go/baduki/
 
 MAINTAINER=	spcoltri@omcl.org
+COMMENT=	The game of Go
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

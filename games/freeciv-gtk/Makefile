@@ -8,6 +8,9 @@
 PKGNAMESUFFIX=	-gtk
 MASTERDIR=	${.CURDIR}/../freeciv
 
+MAINTAINER=	adam-ports@blacktabby.org
+COMMENT=	A civilisation clone for X11 using GNOME; multiplayer
+
 USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 

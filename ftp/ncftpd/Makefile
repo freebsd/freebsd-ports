@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.ncftp.com/ncftpd/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-freebsd4.4-${ARCH}-export
 
 MAINTAINER=	jus@security.za.net
+COMMENT=	A well known commercial FTP daemon with a 30-day evaluation license
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/misc/ \
 		ftp://ftp.nuxi.com/pub/misc/
 
 MAINTAINER=	samorodi@NUXI.com
+COMMENT=	Tile placement game
 
 USE_XLIB=	yes
 MAN6=		ishido.6

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=jdictionary
 DISTFILES=	Smart_French_Hungarian-1_0.jar
 
 MAINTAINER=	janos.mohacsi@bsd.hu
+COMMENT=	JDictionary plugin: French-Hungarian dictionary
 
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
 		${LOCALBASE}/etc/javavms:${PORTSDIR}/java/jdk13 \

@@ -11,6 +11,7 @@ CATEGORIES=	ftp ipv6
 MASTER_SITES=	http://www.ohse.de/uwe/ftpcopy/
 
 MAINTAINER=	matthias.andree@web.de
+COMMENT=	Command line ftp tools for listing and mirroring
 
 WRKSRC=		${WRKDIR}/web/${DISTNAME}
 

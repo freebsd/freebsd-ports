@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.117.ne.jp/~show/pc8801/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nishika@manbow.com
+COMMENT=	PC-8801 emulator for X
 
 USE_X_PREFIX=	yes
 USE_XLIB=	yes

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.bigorno.net/xrick/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	drs@rucus.ru.ac.za
+COMMENT=	A clone of Rick Dangerous
 
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
 

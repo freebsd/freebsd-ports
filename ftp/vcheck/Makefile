@@ -12,6 +12,7 @@ CATEGORIES=	ftp
 MASTER_SITES= 	http://www.stud.tu-ilmenau.de/~gomar/stuff/vcheck/
 
 MAINTAINER=	svenasse@polaris.ca
+COMMENT=	Automatically check for and download most recent versions of software
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS=	${BUILD_DEPENDS}

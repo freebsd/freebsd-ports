@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.srv.net/~kth/ \
 DISTFILES=	ladder.tar
 
 MAINTAINER=	sec@42.org
+COMMENT=	The old "ladder" game
 
 RESTRICTED=	"possible copyright problems ?"
 

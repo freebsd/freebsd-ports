@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.adom.de/adom/download/linux/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}-elf
 
 MAINTAINER=	rover@lglobus.ru
+COMMENT=	An rogue-like advanced rpg with color support (binary port)
 
 NO_CDROM=	Copy of CD must be sent to author
 

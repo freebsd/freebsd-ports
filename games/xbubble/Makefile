@@ -10,6 +10,7 @@ CATEGORIES=		games
 MASTER_SITES=		http://savannah.nongnu.org/download/xbubble/
 
 MAINTAINER=		klaus.goger@reflex.at
+COMMENT=	Bust-A-Move/Puzzle Bubble clone
 
 LIB_DEPENDS=		png.5:${PORTSDIR}/graphics/png
 

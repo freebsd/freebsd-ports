@@ -12,6 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://uhaweb.hartford.edu/hyland/derr/
 
 MAINTAINER=	mich@freebsdcluster.org
+COMMENT=	A clone of the Mastermind game
 
 LDFLAGS+=	-lncurses
 WRKSRC=		${WRKDIR}/${PORTNAME}

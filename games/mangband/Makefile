@@ -13,6 +13,7 @@ MASTER_SITES=	http://mangband.org/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 
 MAINTAINER=	adam-ports@blacktabby.org
+COMMENT=	Multiplayer rogue-like game with color, X11 support
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 

@@ -11,6 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	ftp://thrush.omix.com/pub/misc/
 
 MAINTAINER=	zenin@archive.rhps.org
+COMMENT=	The world's most useless WindowMaker dock app
 
 USE_IMAKE=	yes
 USE_XPM=	yes

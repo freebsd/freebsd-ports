@@ -14,6 +14,7 @@ EXTRACT_SUFX=	.bz2
 EXTRACT_ONLY=	# none
 
 MAINTAINER=	kstailey@yahoo.com
+COMMENT=	Bootable ITS filesystem for KLH-10 PDP-10 emulator
 
 BUILD_DEPENDS=	kn10-ks:${PORTSDIR}/emulators/klh10
 RUN_DEPENDS=	kn10-ks:${PORTSDIR}/emulators/klh10

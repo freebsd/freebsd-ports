@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	games/arcade
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	searle@longacre.demon.co.uk
+COMMENT=	Pool/snooker/billiards/carrom/etc game
 
 USE_IMAKE=	yes
 MAN1=		flying.1

@@ -32,6 +32,7 @@ MASTER_SITES=	ftp://ftp.phear.org/pub/linux/networking/ftp/client/lftp/ \
 		ftp://ftp.yars.free.net/pub/software/unix/net/ftp/client/lftp/old/
 
 MAINTAINER=	fm@astral.ntu-kpi.kiev.ua
+COMMENT=	Shell-like command line ftp client
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 

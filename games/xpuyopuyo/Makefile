@@ -12,6 +12,7 @@ MASTER_SITES=	http://chaos2.org/xpuyopuyo/ \
 		http://lenin.dabney.caltech.edu/~justins/xpuyopuyo/
 
 MAINTAINER=	yinjieh@csie.nctu.edu.tw
+COMMENT=	A puzzle game, somewhat like Tetris
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes

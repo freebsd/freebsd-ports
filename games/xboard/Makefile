@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.tim-mann.org/xboard/ \
 MASTER_SITE_SUBDIR=	xboard
 
 MAINTAINER=	xaa+ports@timewasters.nl
+COMMENT=	X frontend for Crafty, GNUChess, Internet Chess Servers, or e-mail chess
 
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes

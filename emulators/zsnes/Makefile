@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	zsnes${PORTVERSION:S/.//}src
 
 MAINTAINER=	stijn@win.tue.nl
+COMMENT=	Intel x86 only Super Nintendo Entertainment System (SNES) Emulator
 
 # This must be >= 0.98!
 BUILD_DEPENDS=	nasm-0.98.33:${PORTSDIR}/devel/nasm

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	games/multiplayer
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	bsdport@ddm.wox.org
+COMMENT=	Multi-player memory game
 
 USE_IMAKE=	yes
 MAN1=		xmemory.1

@@ -18,6 +18,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 .endif
 
 MAINTAINER=	lehmann@ans-netz.de
+COMMENT=	Unix source-port of the famous Heretic game by id Software
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

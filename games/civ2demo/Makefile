@@ -13,6 +13,7 @@ DISTNAME=	civctp-demo-10251999
 EXTRACT_ONLY=
 
 MAINTAINER=	jameso@elwood.net
+COMMENT=	The free demo of Civilization: Call to Power
 
 ONLY_FOR_ARCHS=	i386
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	xpired
 DISTNAME=	${PORTNAME}-${PORTVERSION}-linux_source
 
 MAINTAINER=	edwin@mavetju.org
+COMMENT=	An action-puzzle maze escape game (SDL)
 
 LIB_DEPENDS=	SDL_gfx.0:${PORTSDIR}/graphics/sdl_gfx \
 		SDL_image.10:${PORTSDIR}/graphics/sdl_image \

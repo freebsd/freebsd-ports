@@ -11,6 +11,7 @@ CATEGORIES=	ftp
 MASTER_SITES=	http://home.in.tum.de/~atterer/jigdo/
 
 MAINTAINER=	bra@fsn.hu
+COMMENT=	An utility used to retrieve very large files over the Internet
 
 #BUILD_DEPENDS=	libwww-config:${PORTSDIR}/www/libwww
 RUN_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget

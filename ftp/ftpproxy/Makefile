@@ -15,6 +15,7 @@ MASTER_SITES=	http://www.ftpproxy.org/download/ \
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	philippe@le-berre.com
+COMMENT=	A ftp proxy
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 USE_REINPLACE=	yes

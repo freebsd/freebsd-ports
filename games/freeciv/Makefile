@@ -12,7 +12,8 @@ MASTER_SITES=	ftp://ftp.freeciv.org/pub/freeciv/stable/ \
 		ftp://ftp.netc.pt/pub/freeciv/stable/ \
 		ftp://ftp.pvv.ntnu.no/pub/freeciv/stable/
 
-MAINTAINER=	adam-ports@blacktabby.org
+MAINTAINER?=	adam-ports@blacktabby.org
+COMMENT?=	A civilisation clone for X11; multiplayer
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 

@@ -11,6 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.teaser.fr/~amajorel/yadex/
 
 MAINTAINER=	fracture@allusion.net
+COMMENT=	A WAD-file editor, for games like Doom and Hexen
 
 USE_XLIB=	yes
 USE_GMAKE=	yes

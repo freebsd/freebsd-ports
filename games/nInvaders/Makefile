@@ -12,6 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://dettus.dyndns.org/ninvaders/
 
 MAINTAINER=	mich@freebsdcluster.org
+COMMENT=	The nIvaders game is a Space Invaders clone for ncurses
 
 USE_REINPLACE=	yes
 

@@ -11,6 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.lionking.org/~kiza/linux/tornado/
 
 MAINTAINER=	minter@lunenburg.org
+COMMENT=	A curses-based game of weather destruction
 
 MAN6=		tornado.6
 

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.inetarena.com/~wms/comp/cgoban/ \
 		http://www.igoweb.org/~wms/comp/cgoban/
 
 MAINTAINER=	simonm@dcs.gla.ac.uk
+COMMENT=	Internet Go Server client and game editor
 
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes

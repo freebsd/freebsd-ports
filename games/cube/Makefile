@@ -14,6 +14,7 @@ MASTER_SITES=	http://ludo.uib.no/cube/ \
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/:S/./_/}
 
 MAINTAINER=	avleeuwen@piwebs.com
+COMMENT=	An OpenGL 3D First Person Shooter game
 
 LIB_DEPENDS=	SDL_image.10:${PORTSDIR}/graphics/sdl_image \
 		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer

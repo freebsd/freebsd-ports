@@ -11,5 +11,6 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.spatula.net/software/speak/
 
 MAINTAINER=	freebsd@spatula.net
+COMMENT=	Generates random middle-management synergy speak
 
 .include <bsd.port.mk>

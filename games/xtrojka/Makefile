@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.funet.fi/pub/unix/games/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	e@ik.nu
+COMMENT=	Game of skill similar to T*tris
 
 WRKSRC=		${WRKDIR}
 MAN6=		xtrojka.6

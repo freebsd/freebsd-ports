@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.funet.fi/pub/unix/games/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	e@ik.nu
+COMMENT=	A game of skill
 
 MAN6=		trojka.6
 

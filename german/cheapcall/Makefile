@@ -13,6 +13,7 @@ DISTNAME=	cheap-call-${LONGVER}.tcl
 EXTRACT_SUFX=	.bz2
 
 MAINTAINER=	pcc@gmx.net
+COMMENT=	Shows cheapest German call-by-call telephone provider (German only)
 
 RUN_DEPENDS=	wishx:${PORTSDIR}/lang/tclX80
 

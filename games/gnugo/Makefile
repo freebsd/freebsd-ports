@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gnugo
 
 MAINTAINER=	spcoltri@omcl.org
+COMMENT=	The game of Go
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

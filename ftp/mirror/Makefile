@@ -18,6 +18,7 @@ PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	ftp.pl_wupatch
 
 MAINTAINER=	ryan@sasknow.com
+COMMENT=	Mirror packages on remote sites
 
 USE_PERL5=	yes
 NO_WRKSUBDIR=	yes

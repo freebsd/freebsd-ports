@@ -15,6 +15,7 @@ DISTNAME=	frozen-bubble-${PORTVERSION}
 EXTRACT_SUFX=	.tar.bz2
 
 MAINTAINER=	klaus.goger@reflex.at
+COMMENT=	Throw colourful bubbles to build groups and destroy the groups
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/SDL_perl.pm:${PORTSDIR}/devel/p5-SDL
 RUN_DEPENDS=	${BUILD_DEPENDS}

@@ -21,6 +21,7 @@ PATCHFILES=	ftpsearch-1.0.patch1 \
 		ftpsearch-1.0.patch8
 
 MAINTAINER=	Tor.Egge@idi.ntnu.no
+COMMENT=	A system for indexing contents on ftp servers
 
 NO_PACKAGE=	"Hostname compiled in"
 

@@ -12,6 +12,7 @@ MASTER_SITES=	http://my.pages.de/pub/comp/games/xrisk/ \
 		http://www.mikro.biologie.tu-muenchen.de/pub/rec/games/xrisk/
 
 MAINTAINER=	adam-ports@blacktabby.org
+COMMENT=	A game for X11, much like the popular board game
 
 USE_IMAKE=	yes
 MAN6=		xrisk.6

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	marathon
 DISTNAME=	AlephOne-${PORTVERSION}
 
 MAINTAINER=	malyn@strangeGizmo.com
+COMMENT=	The open source version of Bungie's Marathon game
 
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12:install \
 		SDL_image.10:${PORTSDIR}/graphics/sdl_image:install

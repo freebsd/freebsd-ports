@@ -14,6 +14,7 @@ MASTER_SITES= 	http://www.hollo.org/frox/download/ \
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sem@ciam.ru
+COMMENT=	Transparent FTP proxy with caching support
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

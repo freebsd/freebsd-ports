@@ -17,6 +17,7 @@ PATCHFILES=	oneko-1.2.sakura.5.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	hotaru@tail.net
+COMMENT=	A cat, Sakura or Tomoyo chasing a mouse all over the screen
 
 USE_IMAKE=	yes
 MAN6=		oneko.6

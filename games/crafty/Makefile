@@ -15,6 +15,7 @@ DISTFILES=	crafty-${PORTVERSION}.tar.gz:src \
 		start.pgn.gz:data
 
 MAINTAINER=	seggers@semyam.dinoco.de
+COMMENT=	A chess programm for playing and analyzing games
 
 .if !defined(NOPORTDOCS)
 DOCFILES=	crafty.doc.ascii crafty.doc.ps

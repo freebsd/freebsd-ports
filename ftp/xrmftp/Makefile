@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.mat.uni.torun.pl/~rafmet/xrmftp/
 EXTRACT_SUFX=	.src.tgz
 
 MAINTAINER=	matt@LUCIDA.CA
+COMMENT=	Graphical FTP client based on the xforms library
 
 LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
 

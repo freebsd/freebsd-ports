@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	hym@cocoa.freemail.ne.jp
+COMMENT=	An old man watching your mouse cursor
 
 USE_IMAKE=	yes
 USE_XPM=	yes

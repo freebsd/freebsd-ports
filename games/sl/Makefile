@@ -13,6 +13,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	hym@cocoa.freemail.ne.jp
+COMMENT=	A steam locomotive runs across the screen if you type "sl" instead of "ls"
 
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 

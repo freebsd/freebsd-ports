@@ -11,6 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.sympad.net/~andy/pentix/
 
 MAINTAINER=	andy@sympad.net
+COMMENT=	This is a game of pentix for terminals
 
 ALL_TARGET=	pentix
 

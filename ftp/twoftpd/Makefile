@@ -11,6 +11,7 @@ CATEGORIES=	ftp
 MASTER_SITES=	http://untroubled.org/twoftpd/
 
 MAINTAINER=	gslin@ccca.nctu.edu.tw
+COMMENT=	A simple, secure, efficient FTP server
 
 MAN1=		twoftpd-auth.1 twoftpd-xfer.1
 

@@ -11,6 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://xpenguins.seul.org/
 
 MAINTAINER=	lyngbol@wheel.dk
+COMMENT=	Cute little penguins that walk along the tops of your windows
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes

@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.koth.org/pmars/ \
 DISTFILES=	pmars08s.tar.Z
 
 MAINTAINER=	gmarco@giovannelli.it
+COMMENT=	A portable corewar system with ICWS'94 extensions
 
 USE_XLIB=	yes
 NO_WRKSUBDIR=	yes

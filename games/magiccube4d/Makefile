@@ -13,6 +13,7 @@ DISTNAME=	mc4d-src-${PORTVERSION:S/./_/}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	karlj000@unbc.ca
+COMMENT=	MagicCube4D is a fully functional four-dimensional analog of Rubik's cube
 
 USE_X_PREFIX=	yes
 

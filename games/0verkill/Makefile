@@ -12,6 +12,7 @@ MASTER_SITES=	http://artax.karlin.mff.cuni.cz/~brain/0verkill/release/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mich@freebsdcluster.org
+COMMENT=	0verkill is a bloody 2D action deathmatch-like game in ASCII-ART
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

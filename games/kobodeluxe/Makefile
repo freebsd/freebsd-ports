@@ -13,6 +13,7 @@ MASTER_SITES=	http://olofson.net/skobo/download/ \
 DISTNAME=	KoboDeluxe-${PORTVERSION:S/.p/pre/}
 
 MAINTAINER=	verm@drunkmonk.net
+COMMENT=	Kobo Deluxe (formerly SKobo) is an SDL port of Akira Higuchi's XKobo
 
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
 		SDL_image.10:${PORTSDIR}/graphics/sdl_image

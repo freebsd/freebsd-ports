@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	rbg@gayteenresource.org
+COMMENT=	A tic-tac-toe game playable over the network
 
 MAN6=		nettoe.6
 
