@@ -1,0 +1,10 @@
+This is the port of the small opening book for crafty.  It consumes
+about 600 KByte.
+
+It was created with "book create small.txt 60 3" (see the crafty
+documentation and online help for a more thorough explanation of what
+this does) which discards all openings not played in at least three
+games which I expect to be a reasonable constant, but I am open to
+suggestions on this.
+
+- Stefan Eggers <seggers@semyam.dinoco.de>
