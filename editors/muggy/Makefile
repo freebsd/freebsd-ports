@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	muggy
-PORTVERSION=	1.2b
+PORTVERSION=	1.3.1
 CATEGORIES+=	editors windowmaker tkstep80
 
-MASTER_SITES=	http://www.aaa-int.or.jp/~jfactory/JDE/dist/
+MASTER_SITES=	http://www.aaa-int.or.jp/~jfactory/Factory/JDE/dist/
 DISTNAME=	Muggy-${PORTVERSION}
 
 MAINTAINER=	kiri@pis.toba-cmt.ac.jp
