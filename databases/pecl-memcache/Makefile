@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	memcache
-PORTVERSION=	1.2
-CATEGORIES=	databases pear
+PORTVERSION=	1.3
+CATEGORIES=	databases
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
 EXTRACT_SUFX=	.tgz
