@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	opencdk
-PORTVERSION=	0.5.1
+PORTVERSION=	0.4.5
+PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG} \
 		http://www.mirrors.wiretapped.net/security/network-security/gnutls/opencdk/ \
@@ -19,15 +20,13 @@ COMMENT=	Open Crypto Development Kit
 
 LIB_DEPENDS=	gcrypt.6:${PORTSDIR}/security/libgcrypt
 
-USE_BZIP2=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-libgcrypt-prefix=${LOCALBASE}
 USE_REINPLACE=	yes
 
-DOCS=		AUTHORS NEWS README THANKS doc/opencdk-api.html
-EXAMPLES=	tests/*.c tests/*.gpg
+DOCS=		AUTHORS NEWS README THANKS
 
 post-patch:
 .for file in encrypt.c main.c misc.c
@@ -36,10 +35,14 @@ post-patch:
 
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${EXAMPLES} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/tests/*.c ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/tests/*.gpg ${EXAMPLESDIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+.for file in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+	${INSTALL_DATA} ${WRKSRC}/doc/opencdk-api.html ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
