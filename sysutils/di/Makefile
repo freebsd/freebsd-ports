@@ -13,6 +13,12 @@ MASTER_SITES=	http://www.gentoo.com/di/
 MAINTAINER=	bll@gentoo.com
 COMMENT=	A disk information utility
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile"
+.endif
+
 HAS_CONFIGURE=	yes
 MAN1=		di.1
 
@@ -21,4 +27,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mi ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/di.1 ${PREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
