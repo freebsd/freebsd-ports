@@ -3481,6 +3481,7 @@ lsh		ports/security/lsh
 lsmlib		ports/sysutils/lsmlib
 lsof		ports/sysutils/lsof
 lsvfs		src/usr.bin/lsvfs
+ltmdm		ports/comms/ltmdm
 ltrace		ports/sysutils/ltrace
 ltris		ports/games/ltris
 ltxml		ports/textproc/ltxml
