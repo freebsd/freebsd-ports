@@ -7986,6 +7986,7 @@ sablotron	ports/textproc/sablotron
 safecat		ports/sysutils/safecat
 saferpay	ports/security/saferpay
 safesh		ports/security/safesh
+safestr		ports/devel/safestr
 sagasu		ports/textproc/sagasu
 saint		ports/security/saint
 salias		ports/misc/salias
