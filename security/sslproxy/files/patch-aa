@@ -1,19 +1,21 @@
---- Makefile.orig	Sun Jun 14 15:52:50 1998
-+++ Makefile	Sat Jul 31 11:12:56 1999
-@@ -12,13 +12,13 @@
+--- Makefile.orig	Sun Jun 14 13:52:50 1998
++++ Makefile	Sat Jan 29 16:48:49 2000
+@@ -10,15 +10,13 @@
+ 
+ 
  # if you use cc, remove the -Wall and -g options
- CC= gcc
+-CC= gcc
++CC?= gcc
  
 -SSLROOT= /usr/local/ssl
-+SSLROOT= /usr/local
- 
+-
 -CFLAGS= -Wall -I$(SSLROOT)/include -O
-+CFLAGS+= -I$(SSLROOT)/include
++CFLAGS+= -I$(OPENSSLINC)
  # for Solaris 2.x add -DSOLARIS2, for SunOS add -DSUNOS and for HP-UX add
  # -DHP to the CFLAGS variable
  
 -LIBS = -L$(SSLROOT)/lib -lssl -lcrypto
-+LIBS = -L$(SSLROOT)/lib -lssl -lcrypto $(EXTRA_SSL_LIBS)
++LIBS = -L$(OPENSSLLIB) -lssl -lcrypto $(EXTRA_SSL_LIBS)
  
  OBJ =	sslproxy.o
  
