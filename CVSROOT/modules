@@ -3262,6 +3262,7 @@ keylogout	src/usr.bin/keylogout
 keynote		ports/security/keynote
 keyprint	ports/security/keyprint
 keyserv		src/usr.sbin/keyserv
+kgamma		ports/x11/kgamma
 kgdb		src/gnu/usr.bin/kgdb
 kget		src/sbin/kget
 kgmon		src/usr.sbin/kgmon
