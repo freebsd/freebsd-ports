@@ -20,8 +20,7 @@
 #
 
 PORTNAME=	php4
-PORTVERSION=	4.3.6
-PORTREVISION=	1
+PORTVERSION=	4.3.7
 CATEGORIES?=	lang devel www
 MASTER_SITES=	${MASTER_SITE_PHP:S,$,:release,} \
 		http://downloads.php.net/ilia/:rc \
@@ -304,7 +303,6 @@ LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
 LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
 CONFIGURE_ARGS+=--with-gd \
 		--enable-gd-native-ttf \
-		--enable-gd-jis-conv \
 		--with-freetype-dir=${LOCALBASE} \
 		--with-t1lib=${LOCALBASE} \
 		--with-jpeg-dir=${LOCALBASE} \
