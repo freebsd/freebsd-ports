@@ -30,7 +30,7 @@ CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
-		
+
 MAN1=	gnome-panel-2.1 gnome-panel-properties.1
 
 pre-patch:
