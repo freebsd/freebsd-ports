@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	bash
 DISTFILES=      bash-${PORTVERSION}.tar.gz bash-doc-${PORTVERSION}.tar.gz
 .endif
 
-MAINTAINER=	ache@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	Yes
 CONFIGURE_ARGS=	--with-installed-readline
