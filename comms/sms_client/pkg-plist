@@ -1,0 +1,167 @@
+bin/sms_address
+bin/sms_client
+etc/sms/scripts/email
+etc/sms/services/a1
+etc/sms/services/ampi
+etc/sms/services/answer
+etc/sms/services/att_web
+etc/sms/services/azcom
+etc/sms/services/bteasyreach
+etc/sms/services/btmessagemaster
+etc/sms/services/callmax
+etc/sms/services/cellnet
+etc/sms/services/cellnet_web
+etc/sms/services/d2
+etc/sms/services/detemobil
+etc/sms/services/digifone
+etc/sms/services/eirpage
+etc/sms/services/eplus
+etc/sms/services/europolitan
+etc/sms/services/generic
+etc/sms/services/hello
+etc/sms/services/kpn
+etc/sms/services/libertel
+etc/sms/services/lycos_web
+etc/sms/services/minicall
+etc/sms/services/minicall_new
+etc/sms/services/mobistar
+etc/sms/services/mtn
+etc/sms/services/netcom
+etc/sms/services/nextel_web
+etc/sms/services/nz
+etc/sms/services/one2one
+etc/sms/services/orange
+etc/sms/services/orange_web
+etc/sms/services/pagenet_web
+etc/sms/services/pageone
+etc/sms/services/proximus
+etc/sms/services/proximus_web
+etc/sms/services/skytel1
+etc/sms/services/skytel2
+etc/sms/services/snpp
+etc/sms/services/swisscom
+etc/sms/services/telenor
+etc/sms/services/telia
+etc/sms/services/telstra
+etc/sms/services/tim
+etc/sms/services/ucp_tcp
+etc/sms/services/vodacom
+etc/sms/services/vodafone
+etc/sms/services/vodafone_autralia
+etc/sms/services/vodafone_tap
+etc/sms/services/vodapage_block
+etc/sms/services/vstream
+etc/sms/sms_addressbook
+etc/sms/sms_config
+etc/sms/sms_daemons
+etc/sms/sms_modem
+etc/sms/sms_services
+@dirrm var/spool/sms/services/vstream
+@dirrm var/spool/sms/services/vodapage_block
+@dirrm var/spool/sms/services/vodafone_tap
+@dirrm var/spool/sms/services/vodafone_autralia
+@dirrm var/spool/sms/services/vodafone
+@dirrm var/spool/sms/services/vodacom
+@dirrm var/spool/sms/services/ucp_tcp
+@dirrm var/spool/sms/services/tim
+@dirrm var/spool/sms/services/telstra
+@dirrm var/spool/sms/services/telia
+@dirrm var/spool/sms/services/telenor
+@dirrm var/spool/sms/services/swisscom
+@dirrm var/spool/sms/services/snpp
+@dirrm var/spool/sms/services/skytel2
+@dirrm var/spool/sms/services/skytel1
+@dirrm var/spool/sms/services/proximus_web
+@dirrm var/spool/sms/services/proximus
+@dirrm var/spool/sms/services/pageone
+@dirrm var/spool/sms/services/pagenet_web
+@dirrm var/spool/sms/services/orange_web
+@dirrm var/spool/sms/services/orange
+@dirrm var/spool/sms/services/one2one
+@dirrm var/spool/sms/services/nz
+@dirrm var/spool/sms/services/nextel_web
+@dirrm var/spool/sms/services/netcom
+@dirrm var/spool/sms/services/mtn
+@dirrm var/spool/sms/services/mobistar
+@dirrm var/spool/sms/services/minicall_new
+@dirrm var/spool/sms/services/minicall
+@dirrm var/spool/sms/services/lycos_web
+@dirrm var/spool/sms/services/libertel
+@dirrm var/spool/sms/services/kpn
+@dirrm var/spool/sms/services/hello
+@dirrm var/spool/sms/services/generic
+@dirrm var/spool/sms/services/europolitan
+@dirrm var/spool/sms/services/eplus
+@dirrm var/spool/sms/services/eirpage
+@dirrm var/spool/sms/services/digifone
+@dirrm var/spool/sms/services/detemobil
+@dirrm var/spool/sms/services/d2
+@dirrm var/spool/sms/services/cellnet_web
+@dirrm var/spool/sms/services/cellnet
+@dirrm var/spool/sms/services/callmax
+@dirrm var/spool/sms/services/btmessagemaster
+@dirrm var/spool/sms/services/bteasyreach
+@dirrm var/spool/sms/services/azcom
+@dirrm var/spool/sms/services/att_web
+@dirrm var/spool/sms/services/answer
+@dirrm var/spool/sms/services/ampi
+@dirrm var/spool/sms/services/a1
+@dirrm var/spool/sms/services
+@dirrm var/spool/sms/named_pipes
+@dirrm var/spool/sms/locks
+@dirrm var/spool/sms/incoming
+@dirrm var/spool/sms/errors/vstream
+@dirrm var/spool/sms/errors/vodapage_block
+@dirrm var/spool/sms/errors/vodafone_tap
+@dirrm var/spool/sms/errors/vodafone_autralia
+@dirrm var/spool/sms/errors/vodafone
+@dirrm var/spool/sms/errors/vodacom
+@dirrm var/spool/sms/errors/ucp_tcp
+@dirrm var/spool/sms/errors/tim
+@dirrm var/spool/sms/errors/telstra
+@dirrm var/spool/sms/errors/telia
+@dirrm var/spool/sms/errors/telenor
+@dirrm var/spool/sms/errors/swisscom
+@dirrm var/spool/sms/errors/snpp
+@dirrm var/spool/sms/errors/skytel2
+@dirrm var/spool/sms/errors/skytel1
+@dirrm var/spool/sms/errors/proximus_web
+@dirrm var/spool/sms/errors/proximus
+@dirrm var/spool/sms/errors/pageone
+@dirrm var/spool/sms/errors/pagenet_web
+@dirrm var/spool/sms/errors/orange_web
+@dirrm var/spool/sms/errors/orange
+@dirrm var/spool/sms/errors/one2one
+@dirrm var/spool/sms/errors/nz
+@dirrm var/spool/sms/errors/nextel_web
+@dirrm var/spool/sms/errors/netcom
+@dirrm var/spool/sms/errors/mtn
+@dirrm var/spool/sms/errors/mobistar
+@dirrm var/spool/sms/errors/minicall_new
+@dirrm var/spool/sms/errors/minicall
+@dirrm var/spool/sms/errors/lycos_web
+@dirrm var/spool/sms/errors/libertel
+@dirrm var/spool/sms/errors/kpn
+@dirrm var/spool/sms/errors/hello
+@dirrm var/spool/sms/errors/generic
+@dirrm var/spool/sms/errors/europolitan
+@dirrm var/spool/sms/errors/eplus
+@dirrm var/spool/sms/errors/eirpage
+@dirrm var/spool/sms/errors/digifone
+@dirrm var/spool/sms/errors/detemobil
+@dirrm var/spool/sms/errors/d2
+@dirrm var/spool/sms/errors/cellnet_web
+@dirrm var/spool/sms/errors/cellnet
+@dirrm var/spool/sms/errors/callmax
+@dirrm var/spool/sms/errors/btmessagemaster
+@dirrm var/spool/sms/errors/bteasyreach
+@dirrm var/spool/sms/errors/azcom
+@dirrm var/spool/sms/errors/att_web
+@dirrm var/spool/sms/errors/answer
+@dirrm var/spool/sms/errors/ampi
+@dirrm var/spool/sms/errors/a1
+@dirrm var/spool/sms/errors
+@dirrm var/spool/sms
+@dirrm etc/sms/services
+@dirrm etc/sms/scripts
+@dirrm etc/sms
