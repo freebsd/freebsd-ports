@@ -16,6 +16,8 @@ MASTER_SITE_SUBDIR=	ume
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	A GTK based system monitor
 
+CONFLICTS=	gkrellm-2.*
+
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	imlib
