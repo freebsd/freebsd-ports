@@ -15,6 +15,7 @@ DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX} ${DISTNAME}-elc${EXTRACT_SUFX} ${DISTN
 DIST_SUBDIR=	xemacs
 
 MAINTAINER=	gj@FreeBSD.org
+COMMENT=	This port tracks the development (GAMMA) version of the XEmacs text editor
 
 RUN_DEPENDS+=	${LOCALBASE}/lib/xemacs/xemacs-packages/etc/enriched.doc:${PORTSDIR}/editors/xemacs-packages
 .if !defined(WITHOUT_X11)

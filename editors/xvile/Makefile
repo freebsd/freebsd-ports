@@ -28,6 +28,7 @@ PATCHFILES=	vile-9.3a.patch.gz \
 		vile-9.3l.patch.gz
 
 MAINTAINER=	gj@FreeBSD.org
+COMMENT=	VI Like Emacs, X11 version -- a fully "X aware" vi work-alike
 
 USE_XLIB=	yes
 MAKEFILE=	makefile
