@@ -57,6 +57,7 @@
     SUBDIR += mysqltcl
     SUBDIR += mytop
     SUBDIR += namazu2
+    SUBDIR += oracle7-client
     SUBDIR += p5-ApacheDBILogConfig
     SUBDIR += p5-ApacheDBILogger
     SUBDIR += p5-AsciiDB-TagFile
