@@ -3,7 +3,7 @@
 # Date created:		26 Apr 1995
 # Whom:			thomas@ghpc8.ihf.rwth-aachen.de
 #
-# $Id: Makefile,v 1.4 1996/11/18 11:32:40 asami Exp $
+# $Id: Makefile,v 1.5 1996/11/18 14:05:34 asami Exp $
 #
 
 DISTNAME=	octave-1.1.1
@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://ftp.che.utexas.edu/pub/octave/
 MAINTAINER=	ports@FreeBSD.ORG
 
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
+
+BROKEN=		"Sorry, doesn't link with gcc-2.7.2.1 in our tree"
 
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
