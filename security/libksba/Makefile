@@ -8,11 +8,8 @@ PORTNAME=	libksba
 PORTVERSION=	0.4.6
 PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	http://gd.tuwien.ac.at/privacy/gnupg/alpha/aegypten/ \
-		ftp://ftp.gnupg.org/gcrypt/alpha/aegypten/ \
-		http://ftp.hi.is/pub/mirrors/gnupg/alpha/aegypten/ \
-		http://www.mirrors.wiretapped.net/security/cryptography/apps/pgp/GnuPG/alpha/aegypten/  \
-		${MASTER_SITE_RINGSERVER}/net/gnupg/alpha/aegypten/ \
+MASTER_SITES= 	${MASTER_SITE_GNUPG}
+MASTER_SITE_SUBDIR=	alpha/aegypten
 
 MAINTAINER=	arved@FreeBSD.org
 
