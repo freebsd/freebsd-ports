@@ -30,7 +30,7 @@ bin/mplayer
 %%PORTDOCS%%share/doc/mplayer/gui.html
 %%PORTDOCS%%share/doc/mplayer/history.html
 %%PORTDOCS%%share/doc/mplayer/howtoread.html
-%%PORTDOCS%%share/doc/mplayer/hpux.html
+%%PORTDOCS%%share/doc/mplayer/hp-ux.html
 %%PORTDOCS%%share/doc/mplayer/index.html
 %%PORTDOCS%%share/doc/mplayer/install.html
 %%PORTDOCS%%share/doc/mplayer/intro.html
@@ -39,12 +39,12 @@ bin/mplayer
 %%PORTDOCS%%share/doc/mplayer/linux.html
 %%PORTDOCS%%share/doc/mplayer/macos.html
 %%PORTDOCS%%share/doc/mplayer/mailinglists.html
-%%PORTDOCS%%share/doc/mplayer/menc-feat-divx4.html
 %%PORTDOCS%%share/doc/mplayer/menc-feat-dvd-mpeg4.html
 %%PORTDOCS%%share/doc/mplayer/menc-feat-enc-images.html
 %%PORTDOCS%%share/doc/mplayer/menc-feat-enc-libavcodec.html
 %%PORTDOCS%%share/doc/mplayer/menc-feat-telecine.html
 %%PORTDOCS%%share/doc/mplayer/menc-feat-mpeg.html
+%%PORTDOCS%%share/doc/mplayer/menc-feat-mpeg4.html
 %%PORTDOCS%%share/doc/mplayer/menc-feat-extractsub.html
 %%PORTDOCS%%share/doc/mplayer/menc-feat-fix-avi.html
 %%PORTDOCS%%share/doc/mplayer/menc-feat-rescale.html
@@ -70,8 +70,8 @@ bin/mplayer
 %%PORTDOCS%%share/doc/mplayer/users-vs-dev.html
 %%PORTDOCS%%share/doc/mplayer/vcd.html
 %%PORTDOCS%%share/doc/mplayer/windows.html
-%%VIDIX%%lib/libdha.so.0
-%%VIDIX%%lib/libdha-0.so.1
+%%VIDIX%%lib/libdha.so.1
+%%VIDIX%%lib/libdha-1.so.0
 %%VIDIX%%lib/mplayer/vidix/cyberblade_vid.so
 %%VIDIX%%lib/mplayer/vidix/mach64_vid.so
 %%VIDIX%%lib/mplayer/vidix/mga_crtc2_vid.so
