@@ -1,4 +1,5 @@
 bin/fc
+include/fastcrc.h
 lib/libfcrc.so
 lib/libfcrc.so.1
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
