@@ -32,6 +32,7 @@ lib/swish-e/search.cgi
 lib/swish-e/spider.pl
 lib/swish-e/swish.cgi
 lib/swish-e/swishspider
+libdata/pkgconfig/swish-e.pc
 @dirrm lib/swish-e
 share/swish-e/swish.tmpl
 share/swish-e/swish.tt
