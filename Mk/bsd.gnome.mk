@@ -453,12 +453,6 @@ HAVE_GNOME+=	${component}
 .if defined(USE_GTK)
 USE_GNOME+=	gtk12
 .endif
-.if defined(USE_ESOUND)
-USE_GNOME+=	esound
-.endif
-.if defined(USE_IMLIB)
-USE_GNOME+=	imlib
-.endif
 # End of obsolete macros
 
 .if defined(USE_GNOME)
