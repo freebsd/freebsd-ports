@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cvsync
-PORTVERSION=	0.24.10
+PORTVERSION=	0.24.11
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.cvsync.org/pub/cvsync/ \
 		ftp://ftp.allbsd.org/pub/cvsync/
@@ -20,6 +20,13 @@ MAN1=		cvscan.1 cvsup2cvsync.1 cvsync.1 cvsyncd.1 rcscan.1 rcscmp.1
 DOCS=		doc/COPYRIGHT doc/ChangeLog doc/FAQ doc/TODO
 EXAMPLES=	samples/cvsync.conf samples/cvsyncd.conf \
 		samples/cvsyncd-NetBSD.conf samples/cvsyncd-OpenBSD.conf
+
+MAKE_FLAGS=	OSVER="${OSVERSION}"
+
+.if defined(WITH_OPENSSL)
+USE_OPENSSL=	yes
+MAKE_FLAGS+=	HASH_TYPE=openssl
+.endif
 
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
