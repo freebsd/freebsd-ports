@@ -3,7 +3,7 @@
 # Date created:        30 August 1997
 # Whom:                Brion Moss <brion@queeg.com>
 #
-# $Id: Makefile,v 1.6 1998/08/21 02:22:36 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xtide-1.6.2

@@ -3,7 +3,7 @@
 # Date created:		15 April 1999
 # Whom:			Chris Piazza <cpiazza@FreeBSD.org>
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/16 07:18:32 flathill Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	x3arth-1.1

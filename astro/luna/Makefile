@@ -3,7 +3,7 @@
 # Date created:		03 July 1996
 # Whom:			ABURAYER Rewsirow <rewsirow@ff.iij4u.or.jp>
 #
-# $Id: Makefile,v 1.4 1998/09/26 23:24:34 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	luna19

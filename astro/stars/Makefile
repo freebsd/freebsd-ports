@@ -3,7 +3,7 @@
 # Date created:		10 Jul 1996
 # Whom:			searle
 #
-# $Id: Makefile,v 1.7 1998/08/05 09:30:43 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	stars-1.0-ss-10.20

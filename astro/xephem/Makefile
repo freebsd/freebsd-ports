@@ -3,7 +3,7 @@
 # Date created:         Thu Aug  1 09:10:22 CDT 1996
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.11 1998/09/26 23:40:12 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xephem-3.2.2

@@ -3,7 +3,7 @@
 # Date created:        20 January 1998
 # Whom:                Kris Kennaway <kris@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1999/01/26 03:51:39 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xglobe-0.2

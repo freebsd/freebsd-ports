@@ -3,7 +3,7 @@
 # Date created:		30 Jun 1999
 # Whom:			Brett Taylor <brett@peloton.physics.montana.edu>
 #
-# $Id: Makefile,v 1.1.1.1 1999/07/01 14:13:00 sheldonh Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	tkseti-1.42

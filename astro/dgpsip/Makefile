@@ -3,7 +3,7 @@
 # Date created:         		05 Jun 1999
 # Whom:                 		Daniel Baker <dbaker@freebsd.org>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	dgpsip-1.25

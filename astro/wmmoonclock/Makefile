@@ -3,7 +3,7 @@
 # Date created:        14 March 1999
 # Whom:                Kris Kennaway <kkennawa@physics.adelaide.edu.au>
 #
-# $Id: Makefile,v 1.3 1999/04/21 16:08:34 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	wmMoonClock-1.26

@@ -3,7 +3,7 @@
 # Date created:         22 Apr 1999
 # Whom:                 stb@freebsd.org
 #
-# $Id: Makefile,v 1.10 1999/05/18 22:40:32 stb Exp $
+# $FreeBSD$
 #
 
 PKGNAME=	setiathome-1.2

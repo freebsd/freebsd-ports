@@ -3,7 +3,7 @@
 # Date created:		21 Feb 1998
 # Whom:			giffunip@asme.org
 #
-# $Id: Makefile,v 1.4 1998/09/24 18:54:22 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       saoimage-1.22

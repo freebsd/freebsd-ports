@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.15 1999/06/30 04:05:52 dbaker Exp $
+# $FreeBSD$
 #
 
     SUBDIR += dgpsip

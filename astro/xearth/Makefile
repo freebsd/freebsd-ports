@@ -3,7 +3,7 @@
 # Date created:         29 October 1995
 # Whom:                 piero
 #
-# $Id: Makefile,v 1.12 1999/06/22 22:56:55 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xearth-1.0

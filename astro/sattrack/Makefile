@@ -3,7 +3,7 @@
 # Date created:                      6 Apr 1996
 # Whom:                              Brent J. Nordquist <bjn@visi.com>
 #
-# $Id: Makefile,v 1.8 1997/08/18 22:19:20 fenner Exp $
+# $FreeBSD$
 #
 
 DISTNAME=          sattrack-3.1.6

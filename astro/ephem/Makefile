@@ -3,7 +3,7 @@
 # Date created:		3 April 1997
 # Whom:			eserte
 #
-# $Id: Makefile,v 1.1.1.1 1997/06/03 09:14:13 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ephem_4.28_unix
