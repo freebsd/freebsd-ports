@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	gnome-pkgview
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://www.greatnorthern.demon.co.uk/packages/gnome-pkgview/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Displays the version of GNOME components installed
 
-USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
