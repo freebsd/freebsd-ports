@@ -1,0 +1,13 @@
+$FreeBSD$
+
+--- gram.y.orig	Thu Aug  8 15:45:21 2002
++++ gram.y	Thu Aug  8 15:45:31 2002
+@@ -683,7 +683,7 @@
+ 		| wingeom_entries wingeom_entry
+ 		;
+ 
+-wingeom_entry	: string string	{ AddToList (&Scr->WindowGeometries, $1, $2) }
++wingeom_entry	: string string	{ AddToList (&Scr->WindowGeometries, $1, $2); }
+ 
+ 
+ 
