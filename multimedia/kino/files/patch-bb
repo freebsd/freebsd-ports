@@ -1,0 +1,10 @@
+--- src/image_create.h	Mon Dec 15 05:08:34 2003
++++ src/image_create.h	Sat Apr 10 12:16:27 2004
+@@ -27,7 +27,6 @@
+ 
+ // C Includes
+ 
+-#include <stdint.h>
+ #include <gnome.h>
+ 
+ /** Public interface for all image create classes.

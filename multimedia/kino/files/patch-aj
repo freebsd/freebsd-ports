@@ -1,0 +1,50 @@
+--- src/ieee1394io.h	Tue Nov 25 20:51:15 2003
++++ src/ieee1394io.h	Sat Apr 10 12:19:14 2004
+@@ -20,8 +20,9 @@
+ #ifndef _IEEE1394IO_H
+ #define _IEEE1394IO_H 1
+ 
+-#include <libraw1394/raw1394.h>
+-#include <libraw1394/csr.h>
++#include <pthread.h>
++//#include <libraw1394/raw1394.h>
++//#include <libraw1394/csr.h>
+ #include <libdv/dv1394.h>
+ 
+ #include <string>
+@@ -104,7 +105,7 @@
+ 	int	port;
+ 
+ 	/// the handle to the ieee1394 subsystem
+-	static raw1394handle_t handle;
++	//static raw1394handle_t handle;
+ 
+ public:
+ 
+@@ -119,7 +120,7 @@
+ 	void StopThread( void );
+ 
+ private:
+-	static int Handler( raw1394handle_t handle, int channel, size_t length, quadlet_t *data );
++	//static int Handler( raw1394handle_t handle, int channel, size_t length, quadlet_t *data );
+ 	static void* Thread( void *arg );
+ };
+ 
+@@ -160,7 +161,7 @@
+ 	static pthread_mutex_t avc_mutex;
+ 
+ 	/// the handle to the ieee1394 subsystem
+-	static raw1394handle_t avc_handle;
++	//static raw1394handle_t avc_handle;
+ 
+ public:
+ 	AVC( int crd = 0 );
+@@ -184,7 +185,7 @@
+ 	int getNodeId( const char *guid );
+ 
+ private:
+-	static int ResetHandler( raw1394handle_t handle, unsigned int generation );
++	//static int ResetHandler( raw1394handle_t handle, unsigned int generation );
+ 
+ };
+ 

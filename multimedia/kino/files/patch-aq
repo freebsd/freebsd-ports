@@ -1,0 +1,11 @@
+--- src/page_magick.cc	Mon Dec 15 20:37:21 2003
++++ src/page_magick.cc	Sat Apr 10 03:14:16 2004
+@@ -214,7 +214,7 @@
+ 	return dlsym( ptr, symbol );
+ }
+ 
+-char *Plugin::GetError( )
++const char *Plugin::GetError( )
+ {
+ 	return dlerror();
+ }

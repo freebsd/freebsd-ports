@@ -1,0 +1,55 @@
+--- src/v4l.h	Mon Dec 15 05:08:35 2003
++++ src/v4l.h	Sat Apr 10 12:19:48 2004
+@@ -28,6 +28,7 @@
+ #include <string>
+ 
+ #include <fcntl.h>
++#include <pthread.h>
+ #include <unistd.h>
+ #include <sys/mman.h>
+ #include <sys/types.h>
+@@ -37,7 +38,7 @@
+ #include <time.h>
+ #include <sys/time.h>
+ 
+-#include <linux/videodev.h>
++//#include <linux/videodev.h>
+ 
+ #include "displayer.h"
+ 
+@@ -67,7 +68,7 @@
+ class V4LCapability : public V4LStruct
+ {
+ private:
+-	struct video_capability capability;
++	//struct video_capability capability;
+ 
+ public:
+ 	V4LCapability( V4LDevice *device );
+@@ -95,7 +96,7 @@
+ {
+ private:
+ 	V4LDevice *device;
+-	struct video_tuner tuner;
++	//struct video_tuner tuner;
+ 
+ public:
+ 	V4LTuner( V4LDevice *device, int index );
+@@ -116,7 +117,7 @@
+ {
+ private:
+ 	V4LDevice *device;
+-	struct video_channel channel;
++	//struct video_channel channel;
+ 	vector <V4LTuner *> tuners;
+ 	V4LTuner *current;
+ 
+@@ -145,7 +146,7 @@
+ 	int width;
+ 	int height;
+ 	void *map;
+-	struct video_mmap frame[ 32 ];
++	//struct video_mmap frame[ 32 ];
+ 	int frame_maps;
+ 	int frame_next;
+ 	int size;

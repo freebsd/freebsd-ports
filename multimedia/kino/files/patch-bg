@@ -1,0 +1,11 @@
+--- src/kino_extra.h	Tue Jan  7 07:52:29 2003
++++ src/kino_extra.h	Sat Apr 10 12:20:44 2004
+@@ -20,7 +20,7 @@
+ #ifndef _KINO_EXTRA_H_
+ #define _KINO_EXTRA_H_
+ 
+-#include <stdint.h>
++#include <sys/types.h>
+ 
+ // This is mandatory for plug-ins to be able to access the functionality here
+ // and is mandatory throughout (in fact, the define should be dropped)

@@ -1,0 +1,59 @@
+--- src/preferences_dialog.cc	Sun Dec 14 02:12:48 2003
++++ src/preferences_dialog.cc	Fri Apr  9 16:21:25 2004
+@@ -32,8 +32,10 @@
+ #include "support.h"
+ #include "commands.h"
+ #include "message.h"
++#if 0
+ #include <libavc1394/avc1394.h>
+ #include <libavc1394/rom1394.h>
++#endif
+ 
+ 	/* Declare callbacks for the jogshuttle handling */
+ 	static void
+@@ -62,9 +64,13 @@
+ 		GtkWidget* glade_menuitem;
+ 		GtkWidget* widget;
+ 		int currentNode, itemCount = 0, currentItem = 0;
++#if 0
+ 		rom1394_directory rom1394_dir;
++#endif
+ 		glade_menu = gtk_menu_new ();
++#if 0
+ 		static raw1394handle_t handle;
++#endif
+ 
+ 		/* initialize temp variables, only use temp if Okay clicked and not cancel */
+ 		gPrefsSelectedFileFormat = prefs.fileFormat;
+@@ -271,6 +277,7 @@
+ 
+ 		widget = lookup_widget( dialog, "optionmenu_avc_phyid" );
+ 
++#if 0
+ #ifdef LIBRAW1394_OLD
+ 
+ 		if ( ( handle = raw1394_get_handle() ) )
+@@ -339,6 +346,7 @@
+ 			}
+ 		}
+ 		else
++#endif
+ 		{
+ 			gtk_widget_set_sensitive( lookup_widget( dialog, "vbox_ieee1394_options" ), FALSE );
+ 			modal_message( _( "The IEEE 1394 subsystem is not loaded; all IEEE 1394 options are disabled." ) );
+@@ -383,6 +391,7 @@
+ 	on_avc_phyid_activate( GtkMenuItem * menu_item, gpointer user_data )
+ 	{
+ 		int currentNode = ( int ) user_data;
++#if 0
+ 		static raw1394handle_t handle;
+ #ifdef LIBRAW1394_OLD
+ 
+@@ -401,6 +410,7 @@
+ 		}
+ 		raw1394_destroy_handle( handle );
+ 		handle = NULL;
++#endif
+ 	}
+ 
+ 	void

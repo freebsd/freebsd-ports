@@ -1,0 +1,10 @@
+--- src/displayer.cc	Wed Dec 10 04:32:40 2003
++++ src/displayer.cc	Sat Apr 10 03:12:22 2004
+@@ -561,6 +561,7 @@
+ 			{
+ 				gotPort = false;
+ 			}
++			XSync(display, false);
+ 			shmctl( shmInfo.shmid, IPC_RMID, 0 );
+ #if 0
+ 

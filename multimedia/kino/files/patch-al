@@ -1,0 +1,10 @@
+--- src/image_transitions.cc	Tue Nov 25 21:51:18 2003
++++ src/image_transitions.cc	Sat Apr 10 00:51:24 2004
+@@ -439,6 +439,7 @@
+ GDKImageTransitionRepository::GDKImageTransitionRepository()
+ {
+ 	printf( ">> image transition repository created\n" );
++	selected_transition = NULL;
+ 	// Register an instance of each object (adapting raw transitions to GDK transitions where necessary)
+ 	Register( new ImageTransitionSwitch() );
+ 	Register( new ImageTransitionFade() );

@@ -1,0 +1,14 @@
+--- src/frame.cc	Tue Nov 25 21:51:15 2003
++++ src/frame.cc	Fri Apr  9 16:24:36 2004
+@@ -1400,9 +1400,9 @@
+ 		if ( sample < -1.0 )
+ 			sample = -1.0;
+ 		if ( sample >= 0 )
+-			output[ i ] = lrint( 32767.0 * sample );
++			output[ i ] = (long int)( 32767.0 * sample );
+ 		else
+-			output[ i ] = lrint( 32768.0 * sample );
++			output[ i ] = (long int)( 32768.0 * sample );
+ 	}
+ }
+ 

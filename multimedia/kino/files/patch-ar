@@ -1,0 +1,11 @@
+--- src/page_magick.h	Mon Dec 15 20:24:16 2003
++++ src/page_magick.h	Fri Apr  9 17:07:58 2004
+@@ -41,7 +41,7 @@
+ 	bool Open( char *file );
+ 	void Close( );
+ 	void *Find( char *symbol );
+-	char *GetError( );
++	const char *GetError( );
+ };
+ 
+ /** Holds the complete collection of shared objects.

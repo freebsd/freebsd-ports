@@ -1,0 +1,11 @@
+--- src/gtkenhancedscale.c	Tue Nov 25 21:51:18 2003
++++ src/gtkenhancedscale.c	Fri Apr  9 17:44:14 2004
+@@ -33,7 +33,7 @@
+ #include "gtkenhancedscale.h"
+ #include <string.h>
+ #include <stdio.h>
+-#include <malloc.h>
++#include <stdlib.h>
+ #include <math.h>
+ 
+ #define ENHANCED_SCALE_CLASS(w)  GTK_ENHANCED_SCALE_CLASS ( G_OBJECT_GET_CLASS( G_OBJECT( w )  ) ) 

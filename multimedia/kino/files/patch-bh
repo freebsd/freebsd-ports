@@ -1,0 +1,10 @@
+--- src/page_timeline.h	Tue Nov 25 20:51:16 2003
++++ src/page_timeline.h	Sat Apr 10 12:18:36 2004
+@@ -20,6 +20,7 @@
+ #ifndef _PAGE_TIMELINE_H
+ #define _PAGE_TIMELINE_H
+ 
++#include <pthread.h>
+ #include "kino_common.h"
+ #include "page.h"
+ 

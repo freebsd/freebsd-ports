@@ -1,0 +1,19 @@
+--- src/page_export_1394.cc	Tue Nov 25 21:51:16 2003
++++ src/page_export_1394.cc	Fri Apr  9 16:53:22 2004
+@@ -68,6 +68,7 @@
+ 
+ void Export1394::start()
+ {
++#if 0
+ 	static raw1394handle_t handle;
+ 	GtkLabel * load_label
+ 	= GTK_LABEL( lookup_widget ( exportPage->getWidget(),
+@@ -128,7 +129,7 @@
+ 	{
+ 		gtk_widget_set_sensitive ( GTK_WIDGET ( tmp ), FALSE );
+ 	}
+-
++#endif
+ }
+ 
+ /** Define active widgets.

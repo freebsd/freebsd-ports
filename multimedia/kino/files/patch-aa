@@ -1,0 +1,74 @@
+--- configure.orig	Mon Dec 15 22:42:05 2003
++++ configure	Sat Apr 10 12:13:08 2004
+@@ -4300,7 +4300,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ldv  $LIBS"
++LIBS="-ldv -lc_r $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -4630,7 +4630,7 @@
+ else
+   { { echo "$as_me:$LINENO: error: Unable to link with libraw1394. Check that you have libraw1394 installed" >&5
+ echo "$as_me: error: Unable to link with libraw1394. Check that you have libraw1394 installed" >&2;}
+-   { (exit 1); exit 1; }; }
++    }
+ 
+ fi
+ 
+@@ -4640,7 +4640,7 @@
+ else
+   { { echo "$as_me:$LINENO: error: raw1394.h not found install libraw1394-devel" >&5
+ echo "$as_me: error: raw1394.h not found install libraw1394-devel" >&2;}
+-   { (exit 1); exit 1; }; }
++   }
+ 
+ fi
+ 
+@@ -4782,7 +4782,7 @@
+ else
+   { { echo "$as_me:$LINENO: error: avc1394.h not found, install libavc1394-devel" >&5
+ echo "$as_me: error: avc1394.h not found, install libavc1394-devel" >&2;}
+-   { (exit 1); exit 1; }; }
++   }
+ 
+ fi
+ 
+@@ -4852,7 +4852,7 @@
+ else
+   { { echo "$as_me:$LINENO: error: Unable to link with libavc1394. Check that you have libavc1394 installed and that the version is 0.4.1 or newer" >&5
+ echo "$as_me: error: Unable to link with libavc1394. Check that you have libavc1394 installed and that the version is 0.4.1 or newer" >&2;}
+-   { (exit 1); exit 1; }; }
++   }
+ fi
+ 
+ 
+@@ -4991,7 +4991,7 @@
+ else
+   { { echo "$as_me:$LINENO: error: rom1394.h not found, install libavc1394-devel" >&5
+ echo "$as_me: error: rom1394.h not found, install libavc1394-devel" >&2;}
+-   { (exit 1); exit 1; }; }
++   }
+ 
+ fi
+ 
+@@ -5061,7 +5061,7 @@
+ else
+   { { echo "$as_me:$LINENO: error: Unable to link with librom1394. Check that your have librom1394 installed (usually part of libavc1394) and that the version is 0.4.1 or newer" >&5
+ echo "$as_me: error: Unable to link with librom1394. Check that your have librom1394 installed (usually part of libavc1394) and that the version is 0.4.1 or newer" >&2;}
+-   { (exit 1); exit 1; }; }
++   }
+ fi
+ 
+ 
+@@ -5131,7 +5131,7 @@
+ 
+ 	{ { echo "$as_me:$LINENO: error: You need the pthread library to compile kino" >&5
+ echo "$as_me: error: You need the pthread library to compile kino" >&2;}
+-   { (exit 1); exit 1; }; }
++   }
+ 
+ fi
+ 

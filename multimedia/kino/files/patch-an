@@ -1,0 +1,18 @@
+--- src/page_capture.cc	Mon Dec 15 06:31:21 2003
++++ src/page_capture.cc	Fri Apr  9 16:51:50 2004
+@@ -288,6 +288,7 @@
+ 		}
+ 		gui_state_was = 0;
+ 	}
++#if 0
+ 	else if ( check_phyid == true )
+ 	{
+ 		if ( gui_state_was != 1 )
+@@ -432,6 +433,7 @@
+ 			gui_state_was = 3;
+ 		}
+ 	}
++#endif
+ }
+ 
+ /** Define active widgets.

@@ -1,0 +1,26 @@
+--- src/jogshuttle.cc	Wed Nov 26 00:01:01 2003
++++ src/jogshuttle.cc	Fri Apr  9 16:49:31 2004
+@@ -26,7 +26,7 @@
+ #include <fcntl.h>
+ #include <unistd.h>
+ #include <errno.h>
+-#include <linux/input.h>
++//#include <linux/input.h>
+ 
+ #include "jogshuttle.h"
+ #include "preferences.h"
+@@ -316,6 +316,7 @@
+ */
+ void JogShuttle::inputCallback( gint source, GdkInputCondition condition )
+ {
++#if 0
+ 	g_return_if_fail( this != NULL );
+ 	g_return_if_fail( input_ >= 0 );
+ 	g_return_if_fail( input_ == source );
+@@ -625,5 +626,6 @@
+ 	}
+ 	return ;
+ 
++#endif
+ #endif
+ }
