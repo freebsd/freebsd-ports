@@ -1,20 +1,20 @@
---- configure.orig	Wed Jul 17 18:17:54 2002
-+++ configure	Wed Jul 17 18:19:32 2002
-@@ -2623,7 +2623,7 @@
- # Distribution definition. ./prepare will automatically add here a correct
+--- configure.orig	Thu Sep 19 18:57:28 2002
++++ configure	Thu Sep 19 18:58:28 2002
+@@ -2626,7 +2626,7 @@
  # value. Do not edit!
+ #
  silc_dist=silc-server
 -SILC_DIST_SUBDIRS="lib silcd doc includes"
 +SILC_DIST_SUBDIRS="lib silcd includes"
  cat >>confdefs.h <<\EOF
  #define SILC_DIST_SERVER 1
  EOF
-@@ -11313,7 +11313,7 @@
+@@ -11978,7 +11978,7 @@
        fi
        ;;
-     *-freebsd2.2*)
+     *-*-freebsd*)
 -      CFLAGS="$CFLAGS -D_THREAD_SAFE"
 +      CFLAGS="$CFLAGS"
        ;;
-     *-sysv5uw7*)  # UnixWare 7
+     *-*-sysv5uw7*)  # UnixWare 7
        if test "$GCC" != "yes"; then
