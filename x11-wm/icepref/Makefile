@@ -12,12 +12,12 @@ MASTER_SITES=	http://209.132.18.205/downloads/portfiles/
 
 MAINTAINER=	murban@tznet.com
 
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/GTK.py:${PORTSDIR}/x11-toolkits/py-gtk
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_X_PREFIX=	yes
 USE_PYTHON=	yes
+USE_GTK=	yes
 NO_BUILD=	yes
 MAN1=		icepref.1
 FETCH_BEFORE_ARGS=	-b
