@@ -1,0 +1,23 @@
+bin/ccx
+bin/cgx
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/basic/cylinder.fbd
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/basic/disc.fbd
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/basic/sphere.fbd
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/basic/sphere_seg.fbd
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/basic/sphere_vol.fbd
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/result.frd
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/geometry.fbd
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/compressor/cgx/lavfm.fbd
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/compressor/ccx/lavfm_cyc.nam
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/compressor/ccx/lavfm_cyl.bou
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/compressor/ccx/lavfm.msh
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/compressor/ccx/cyc/lavfmcyc.inp
+%%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%/compressor/cgx
+%%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%/compressor/ccx/cyc
+%%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%/compressor/ccx
+%%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%/compressor
+%%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%/basic
+%%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/ccx_1.0.ps
+%%PORTDOCS%%%%DOCSDIR%%/cgx.ps
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
