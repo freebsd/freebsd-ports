@@ -1,0 +1,12 @@
+Ganglia provides a complete real-time monitoring and execution
+environment that is in use by hundreds of universities, private and
+government laboratories and commercial cluster implementors around the
+world. Whether you want to monitor hundreds of computers in real-time
+across a university campus or around the world, ganglia is for you.
+
+The ganglia web frontend provides access to the data collected by the
+monitoring core.
+
+WWW: http://ganglia.sourceforge.net/
+
+-- Brooks Davis <brooks@FreeBSD.org>

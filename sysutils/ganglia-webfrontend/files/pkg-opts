@@ -1,0 +1,21 @@
+* WWWDOCROOT [www/data]
+  The DocumentRoot of your webserver under ${PREFIX}
+
+* WEBFRONTURL [ganglia]
+  The base URL of the Ganglia Web Frontend on your webserver.
+
+    The Ganglia Web Frontend will be installed under
+    ${PREFIX}/${WWWDOCROOT}/${WEBFRONTURL} and will be visible as
+    http://<;hostname>/${WEBFRONTURL}
+
+* WWWOWN [www]
+  The user ID under which your webserver executes
+
+    It is recommended that you do not change this option unless you're
+    REALLY sure what you're doing.
+
+* WWWGRP [www]
+  The group ID under which your webserver executes
+
+    It is recommended that you do not change this option unless you're
+    REALLY sure what you're doing.
