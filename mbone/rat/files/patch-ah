@@ -1,0 +1,286 @@
+Index: auddev_newpcm.c
+===================================================================
+RCS file: /cs/research/mice/starship/src/local/CVS_repository/rat/auddev_newpcm.c,v
+retrieving revision 1.17
+retrieving revision 1.18
+diff -u -r1.17 -r1.18
+--- rat/auddev_newpcm.c	2001/02/28 20:15:02	1.17
++++ rat/auddev_newpcm.c	2002/02/24 21:13:47	1.18
+@@ -9,7 +9,7 @@
+  
+ #ifndef HIDE_SOURCE_STRINGS
+ static const char cvsid[] = 
+-"$Id: auddev_newpcm.c,v 1.17 2001/02/28 20:15:02 ucacoxh Exp $";
++"$Id: auddev_newpcm.c,v 1.18 2002/02/24 21:13:47 ucacoxh Exp $";
+ #endif /* HIDE_SOURCE_STRINGS */
+ 
+ #include "config_unix.h"
+@@ -26,15 +26,32 @@
+ #include <dirent.h>
+ #include <errno.h>
+ 
++/* #define DEBUG_JUST_NEWPCM if not using debug-enable and want err msgs */
++#ifdef DEBUG_JUST_NEWPCM
++#undef debug_msg
++#define debug_msg(x...) fprintf(stderr, x)
++#endif /* DEBUG_JUST_NEWPCM */
++
+ static char *port_names[] = SOUND_DEVICE_LABELS;
+ static int  iport, oport, loop;
+ static snd_chan_param pa;
+ static struct snd_size sz;
+ static int audio_fd = -1;
++static int mixer_fd = -1;
+ 
+ #define RAT_TO_DEVICE(x) ((x) * 100 / MAX_AMP)
+ #define DEVICE_TO_RAT(x) ((x) * MAX_AMP / 100)
+ 
++#define MIXER_CHECK0(fd)	if ((fd) < 0) {	\
++		debug_msg("Failed mixer checked\n"); \
++		return; \
++	}
++
++#define MIXER_CHECK1(fd, err)	if ((fd) < 0) {	\
++		debug_msg("Failed mixer checked\n"); \
++		return (err); \
++	}
++
+ #define NEWPCM_AUDIO_IOCTL(fd, cmd, val) \
+ 	newpcm_error = 0; \
+ 	if (ioctl((fd), (cmd), (val)) < 0) { \
+@@ -53,6 +70,7 @@
+ static audio_format *input_format, *output_format, *tmp_format;
+ static snd_capabilities soundcaps[NEWPCM_MAX_AUDIO_DEVICES];
+ 
++static int  newpcm_mixer_open(const char* audiodev);
+ static void newpcm_mixer_save(int fd);
+ static void newpcm_mixer_restore(int fd);
+ static void newpcm_mixer_init(int fd);
+@@ -76,17 +94,15 @@
+ 		/* Ignore any earlier errors */
+ 		newpcm_error = 0;
+ 
+-		newpcm_mixer_save(audio_fd);
+-
+ 		NEWPCM_AUDIO_IOCTL(audio_fd, AIOGCAP, &soundcaps[ad]);
+-		debug_msg("soundcaps[%d].rate_min = %d\n", ad, soundcaps[ad].rate_min);
+-		debug_msg("soundcaps[%d].rate_max = %d\n", ad, soundcaps[ad].rate_max);
++		debug_msg("soundcaps[%d].rate_min = %ld\n", ad, soundcaps[ad].rate_min);
++		debug_msg("soundcaps[%d].rate_max = %ld\n", ad, soundcaps[ad].rate_max);
+ 		debug_msg("soundcaps[%d].formats  = 0x%08lx\n", ad, soundcaps[ad].formats);
+-		debug_msg("soundcaps[%d].bufsize  = %d\n", ad, soundcaps[ad].bufsize);
++		debug_msg("soundcaps[%d].bufsize  = %ld\n", ad, soundcaps[ad].bufsize);
+ 		debug_msg("soundcaps[%d].mixers   = 0x%08lx\n", ad, soundcaps[ad].mixers);
+ 		debug_msg("soundcaps[%d].inputs   = 0x%08lx\n", ad, soundcaps[ad].inputs);
+-		debug_msg("soundcaps[%d].left     = 0x%04lx\n", ad, soundcaps[ad].left);
+-		debug_msg("soundcaps[%d].right    = 0x%04lx\n", ad, soundcaps[ad].right);
++		debug_msg("soundcaps[%d].left     = 0x%04x\n", ad, soundcaps[ad].left);
++		debug_msg("soundcaps[%d].right    = 0x%04x\n", ad, soundcaps[ad].right);
+ 
+ 		/* Setup input and output format settings */
+ 		assert(ofmt->channels == ifmt->channels);
+@@ -125,7 +141,7 @@
+ 		    (IN_RANGE((uint32_t)ifmt->sample_rate, 
+ 			      soundcaps[ad].rate_min, 
+ 			      soundcaps[ad].rate_max) == 0)) {
+-			debug_msg("(%d or %d) out of range %d -- %d Hz\n",
++			debug_msg("(%d or %d) out of range %ld -- %ld Hz\n",
+ 				  ofmt->sample_rate,
+ 				  ifmt->sample_rate,
+ 				  soundcaps[ad].rate_min,
+@@ -190,7 +206,9 @@
+ 		}
+ 		output_format = tmp_format;
+ 
+-		newpcm_mixer_init(audio_fd);
++		mixer_fd = newpcm_mixer_open(thedev);
++		newpcm_mixer_save(mixer_fd);
++		newpcm_mixer_init(mixer_fd);
+ 		/* Turn off loopback from input to output... not fatal so
+ 		 * after error check.
+ 		 */
+@@ -224,10 +242,14 @@
+ 	if (output_format != NULL) {
+ 		audio_format_free(&output_format);
+ 	}
+-	newpcm_mixer_restore(audio_fd);
++
+ 	newpcm_audio_drain(audio_fd);
+ 	close(audio_fd);
+ 	audio_fd = -1;
++
++	newpcm_mixer_restore(mixer_fd);
++	close(mixer_fd);
++	mixer_fd = -1;
+ }
+ 
+ /* Flush input buffer */
+@@ -380,8 +402,9 @@
+ {
+ 	int volume, lgport, op;
+ 
+-	UNUSED(ad); assert(audio_fd > 0);
+-
++	MIXER_CHECK0(mixer_fd);
++		
++	UNUSED(ad);
+ 	vol = RAT_TO_DEVICE(vol);
+ 	volume = vol << 8 | vol;
+ 	lgport = -1;
+@@ -391,7 +414,7 @@
+ 		lgport ++;
+ 	}
+ 
+-	NEWPCM_AUDIO_IOCTL(audio_fd, MIXER_WRITE(lgport), &volume);
++	NEWPCM_AUDIO_IOCTL(mixer_fd, MIXER_WRITE(lgport), &volume);
+ }
+ 
+ int
+@@ -399,7 +422,8 @@
+ {
+ 	int volume, lgport, op;
+ 
+-	UNUSED(ad); assert(audio_fd > 0);
++	UNUSED(ad); 
++	MIXER_CHECK1(mixer_fd, 0);
+ 
+ 	lgport = -1;
+ 	op     = oport;
+@@ -408,7 +432,7 @@
+ 		lgport ++;
+ 	}
+ 
+-	NEWPCM_AUDIO_IOCTL(audio_fd, MIXER_READ(lgport), &volume);
++	NEWPCM_AUDIO_IOCTL(mixer_fd, MIXER_READ(lgport), &volume);
+ 	volume = DEVICE_TO_RAT(volume & 0xff);
+ 	if (volume > 100 || volume < 0) {
+ 		debug_msg("gain out of bounds (%08x %d--%d)" \
+@@ -468,17 +492,19 @@
+ 	int volume = RAT_TO_DEVICE(gain);
+ 	volume |= (volume << 8);
+ 
+-	UNUSED(ad); assert(audio_fd > 0);
++	UNUSED(ad); 
++	MIXER_CHECK0(mixer_fd);
++
+ 	newpcm_audio_loopback_config(gain);
+ 	/* Try AC97 */
+-	NEWPCM_AUDIO_IOCTL(audio_fd, SOUND_MIXER_WRITE_RECLEV, &volume);
++	NEWPCM_AUDIO_IOCTL(mixer_fd, SOUND_MIXER_WRITE_RECLEV, &volume);
+ 
+ 	if (newpcm_error != 0 && iport != 0) { 
+ 		/* Fallback to non-ac97 */
+ 		int idx = 1;
+ 		while ((1 << idx) != iport)
+ 			idx++;
+-		NEWPCM_AUDIO_IOCTL(audio_fd, MIXER_WRITE(idx), &volume);
++		NEWPCM_AUDIO_IOCTL(mixer_fd, MIXER_WRITE(idx), &volume);
+ 	}
+ }
+ 
+@@ -487,15 +513,17 @@
+ {
+ 	int volume = 0;
+ 
+-	UNUSED(ad); assert(audio_fd > 0);
++	UNUSED(ad);
++	MIXER_CHECK1(mixer_fd, 0);
++
+ 	/* Try AC97 */
+-	NEWPCM_AUDIO_IOCTL(audio_fd, SOUND_MIXER_READ_RECLEV, &volume);
++	NEWPCM_AUDIO_IOCTL(mixer_fd, SOUND_MIXER_READ_RECLEV, &volume);
+ 	if (newpcm_error != 0 && iport != 0) {
+ 		/* Fallback to non-ac97 */
+ 		int idx = 1;
+ 		while ((1 << idx) != iport)
+ 			idx++;
+-		NEWPCM_AUDIO_IOCTL(audio_fd, MIXER_READ(idx), &volume);
++		NEWPCM_AUDIO_IOCTL(mixer_fd, MIXER_READ(idx), &volume);
+ 	}
+ 	volume = DEVICE_TO_RAT(volume & 0xff); 
+ 	if (volume > 100 || volume < 0) {
+@@ -512,6 +540,8 @@
+ 	/* Check port is in record mask */
+ 	int gain;
+ 
++	MIXER_CHECK0(mixer_fd);
++
+ 	debug_msg("port 0x%08x recmask 0x%08x\n", port, recmask);
+ 
+ 	if ((port & recmask) == 0) {
+@@ -520,7 +550,7 @@
+ 		return;
+ 	}
+ 
+-	if (ioctl(audio_fd, SOUND_MIXER_WRITE_RECSRC, &port) < 0) {
++	if (ioctl(mixer_fd, SOUND_MIXER_WRITE_RECSRC, &port) < 0) {
+ 		perror("Unable to write record mask\n");
+ 		return;
+ 	}
+@@ -571,6 +601,8 @@
+ {
+ 	int lgport, vol;
+ 
++	MIXER_CHECK0(mixer_fd);
++
+ 	/* Find current input port id */
+ 	lgport = newpcm_get_nth_port_mask(iport, 0);
+ 
+@@ -580,7 +612,7 @@
+ 		vol = 0;
+ 	}
+ 
+-	NEWPCM_AUDIO_IOCTL(audio_fd, MIXER_WRITE(lgport), &vol);
++	NEWPCM_AUDIO_IOCTL(mixer_fd, MIXER_WRITE(lgport), &vol);
+ }
+ 
+ void
+@@ -706,6 +738,48 @@
+ 		return dummy;
+ 	}	
+ 	return NULL;
++}
++
++/* Mixer open / close related */
++
++static int
++newpcm_mixer_device(const char* audiodev)
++{
++	const char* p = audiodev;
++	int devno = 0;
++
++	/* 
++	 * Audio device looks like "/dev/fooN" or "dev/foo/N.n"
++	 * and we want "N"
++	 */
++	while (p && !isnumber(*p))
++		p++;
++	while (p && isnumber(*p)) {
++		devno = devno * 10 + (*p - '0');
++		p++;
++	}
++	assert(devno < 20);
++	return devno;
++}
++
++static int
++newpcm_mixer_open(const char* audiodev)
++{
++	char mixer_name[32] = "/dev/mixerXXX";
++	int m;
++
++#define END_OF_DEV_MIXER 10
++	sprintf(mixer_name + END_OF_DEV_MIXER, 
++		"%d", newpcm_mixer_device(audiodev));
++
++	m = open(mixer_name, O_RDWR);
++	if (m < 0) {
++		fprintf(stderr, "Could not open %s (%s): "
++			"mixer operations will not work.\n",
++			mixer_name, strerror(errno));
++		return 0;
++	}
++	return m;
+ }
+ 
+ /* Functions to save and restore recording source and mixer levels */
