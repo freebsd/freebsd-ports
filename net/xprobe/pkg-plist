@@ -1,0 +1,3 @@
+bin/xprobe2
+etc/xprobe2/xprobe2.conf
+@dirrm etc/xprobe2
