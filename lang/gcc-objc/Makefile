@@ -9,19 +9,17 @@ CATEGORIES=		lang
 PKGNAMESUFFIX=		-objc
 
 MAINTAINER=	dinoex@FreeBSD.org
-COMMENT=	GNU Compiler Collection 3.2.3 with threads and shared libs
+COMMENT=	GNU Compiler Collection 3.3 with threads and shared libs
 
 WANT_SHAREDLIBS=	yes
 WANT_THREADS_SUPPORT=	yes
-MASTERDIR?=		${.CURDIR}/../gcc32
+WITHOUT_LIBJAVA=	yes
+MASTERDIR?=		${.CURDIR}/../gcc33
 INSTALLS_SHLIB=		yes
 LDCONFIG_DIRS=		%%PREFIX%%/lib ${TARGLIB}
 LDFLAGS+=		-L${LOCALBASE}/lib
 
-# does not build on:
-NOT_FOR_ARCHS=		amd64
-
-CONFLICTS?=		gcc-3.2*
+CONFLICTS?=		gcc-3.3*
 
 .if exists(${.CURDIR}/Makefile.local)
 .include "${.CURDIR}/Makefile.local"
