@@ -11,12 +11,15 @@ etc/rc.d/snort.sh.sample
 %%PORTDOCS%%%%DOCSDIR%%/README.database
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
 %%PORTDOCS%%%%DOCSDIR%%/README.FLEXRESP
-%%PORTDOCS%%%%DOCSDIR%%/RULES.todo
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
-%%PORTDOCS%%%%DOCSDIR%%/SnortUsersManual.pdf
 %%PORTDOCS%%%%DOCSDIR%%/README.PLUGINS
 %%PORTDOCS%%%%DOCSDIR%%/USAGE
 %%PORTDOCS%%%%DOCSDIR%%/README.thresholding
+%%PORTDOCS%%%%DOCSDIR%%/snort_manual.pdf
+%%PORTDOCS%%%%DOCSDIR%%/README.flow
+%%PORTDOCS%%%%DOCSDIR%%/README.flow-portscan
+%%PORTDOCS%%%%DOCSDIR%%/README.http_inspect
+%%PORTDOCS%%%%DOCSDIR%%/README.wireless
 %%DATADIR%%/attack-responses.rules
 %%DATADIR%%/backdoor.rules
 %%DATADIR%%/bad-traffic.rules
