@@ -46,3 +46,4 @@ include/antlr/TokenStreamSelector.hpp
 include/antlr/TreeParserSharedInputState.hpp
 include/antlr/config.hpp
 lib/libantlr.a
+@dirrm include/antlr
