@@ -1,0 +1,155 @@
+*** icon.orig/Makefile	Fri Jul 29 21:41:19 1994
+--- icon/Makefile	Wed Mar  1 19:34:18 1995
+***************
+*** 4,10 ****
+  
+  help:
+  		@echo "See the Icon installation documents."
+! 		@echo "Copies are in the doc directory here.
+  
+  ##################################################################
+  #
+--- 4,10 ----
+  
+  help:
+  		@echo "See the Icon installation documents."
+! 		@echo "Copies are in the doc directory here."
+  
+  ##################################################################
+  #
+***************
+*** 241,243 ****
+--- 241,259 ----
+  		-cd tests;		$(MAKE) Clean
+  
+  ##################################################################
++ 
++ install:
++ 	@bin/patchstr bin/iconc ${PREFIX}/lib/icon/
++ 	@bin/patchstr bin/icont ${PREFIX}/bin/iconx
++ 	install -c -s -g bin -o bin -m 755 bin/iconc ${PREFIX}/bin/iconc
++ 	install -c -s -g bin -o bin -m 755 bin/icont ${PREFIX}/bin/icont
++ 	install -c -s -g bin -o bin -m 755 bin/iconx ${PREFIX}/bin/iconx
++ 	install -c -s -g bin -o bin -m 755 bin/rtt ${PREFIX}/bin/rtt
++ 	@mkdir -p ${PREFIX}/lib/icon
++ 	install -c -g bin -o bin -m 644 bin/dlrgint.o ${PREFIX}/lib/icon/dlrgint.o
++ 	install -c -g bin -o bin -m 644 bin/rt.a ${PREFIX}/lib/icon/rt.a
++ 	install -c -g bin -o bin -m 644 bin/rt.db ${PREFIX}/lib/icon/rt.db
++ 	install -c -g bin -o bin -m 644 bin/rt.h ${PREFIX}/lib/icon/rt.h
++ 	@mkdir -p ${PREFIX}/man/man1
++ 	install -c -g bin -o bin -m 444 docs/icon.1 ${PREFIX}/man/man1/icon.1
++ 	@gzip -9fn ${PREFIX}/man/man1/icon.1
+diff -crP -x bin -x docs -x tests icon.orig/config/unix/Config/Makefile icon/config/unix/Config/Makefile
+*** icon.orig/config/unix/Config/Makefile	Fri Jul 29 21:40:55 1994
+--- icon/config/unix/Config/Makefile	Wed Mar  1 14:27:05 1995
+***************
+*** 1,7 ****
+- CC=gcc
+- CFLAGS= -DVarTran
+- LDFLAGS=
+  SHELL=/bin/sh
+  MAKE=make
+  
+  all:
+--- 1,5 ----
+  SHELL=/bin/sh
++ CFLAGS+= -DVarTran
+  MAKE=make
+  
+  all:
+diff -crP -x bin -x docs -x tests icon.orig/src/h/path.h icon/src/h/path.h
+*** icon.orig/src/h/path.h	Fri Jul 29 21:24:51 1994
+--- icon/src/h/path.h	Wed Mar  1 14:27:05 1995
+***************
+*** 1 ****
+! #define BinPath "/usr5/icon/v9/bin/"
+--- 1 ----
+! #define BinPath "/usr/local/src/icon/bin/"
+diff -crP -x bin -x docs -x tests icon.orig/src/vtran/Vtmake2 icon/src/vtran/Vtmake2
+*** icon.orig/src/vtran/Vtmake2	Fri Jul 29 21:25:28 1994
+--- icon/src/vtran/Vtmake2	Wed Mar  1 14:27:14 1995
+***************
+*** 1,7 ****
+- CC=gcc
+- CFLAGS= -DVarTran
+- LDFLAGS=
+  SHELL=/bin/sh
+  MAKE=make
+  
+  OBJS=		cat.o tparse.o tlex.o tmem.o trans.o \
+--- 1,5 ----
+  SHELL=/bin/sh
++ CFLAGS+= -DVarTran
+  MAKE=make
+  
+  OBJS=		cat.o tparse.o tlex.o tmem.o trans.o \
+diff -crP -x bin -x docs -x tests icon.orig/config/unix/Config/common.make icon/config/unix/Config/common.make
+*** icon.orig/config/unix/Config/common.make	Fri Jul 29 21:27:01 1994
+--- icon/config/unix/Config/common.make	Thu Apr  6 16:48:45 1995
+***************
+*** 9,15 ****
+  		$(CC) $(LDFLAGS) -o patchstr patchstr.o
+  		-./doincl -o ../../bin/rt.h ../h/rt.h
+  		cp patchstr ../../bin
+! 			
+  xpm:
+  		cd ../xpm; $(MAKE) libXpm.a
+  		cp ../xpm/libXpm.a ../../bin
+--- 9,15 ----
+  		$(CC) $(LDFLAGS) -o patchstr patchstr.o
+  		-./doincl -o ../../bin/rt.h ../h/rt.h
+  		cp patchstr ../../bin
+! 
+  xpm:
+  		cd ../xpm; $(MAKE) libXpm.a
+  		cp ../xpm/libXpm.a ../../bin
+***************
+*** 39,61 ****
+  #  needed, it is run by changing ../icont/Makefile and/or ../iconc/Makefile;
+  #  see the comments there for details.  icont must be in the search path
+  #  for this section to work.
+!  
+  gfiles:			lextab.h yacctok.h fixgram pscript
+!  
+  lextab.h yacctok.h:	tokens.txt op.txt mktoktab
+  			./mktoktab 
+!  
+  mktoktab:		mktoktab.icn
+  			icont -s mktoktab.icn
+!  
+  fixgram:		fixgram.icn
+  			icont -s fixgram.icn
+!  
+  pscript:		pscript.icn
+  			icont -s pscript.icn
+!  
+!  
+!  
+  #  The following section is commented out because it does not need to be
+  #  performed unless changes are made to typespec.txt. Such changes 
+  #  and are not part of the installation process.  However, if the
+--- 39,61 ----
+  #  needed, it is run by changing ../icont/Makefile and/or ../iconc/Makefile;
+  #  see the comments there for details.  icont must be in the search path
+  #  for this section to work.
+! 
+  gfiles:			lextab.h yacctok.h fixgram pscript
+! 
+  lextab.h yacctok.h:	tokens.txt op.txt mktoktab
+  			./mktoktab 
+! 
+  mktoktab:		mktoktab.icn
+  			icont -s mktoktab.icn
+! 
+  fixgram:		fixgram.icn
+  			icont -s fixgram.icn
+! 
+  pscript:		pscript.icn
+  			icont -s pscript.icn
+! 
+! 
+! 
+  #  The following section is commented out because it does not need to be
+  #  performed unless changes are made to typespec.txt. Such changes 
+  #  and are not part of the installation process.  However, if the
+
