@@ -8,7 +8,7 @@
 PORTNAME=	o_dbm
 PORTVERSION=	0.5.1
 CATEGORIES=	databases ruby
-MASTER_SITES=	http://www.ruby-lang.org/~keiju/src/
+MASTER_SITES=	http://www.rubyist.net/~keiju/src/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby

@@ -8,7 +8,7 @@
 PORTNAME=	js
 PORTVERSION=	0.0.4
 CATEGORIES=	lang ruby
-MASTER_SITES=	http://www.ruby-lang.org/~tamura/ruby/ruby-js/
+MASTER_SITES=	http://www.rubyist.net/~tamura/ruby/ruby-js/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby

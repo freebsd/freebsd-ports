@@ -9,7 +9,7 @@ PORTNAME=	refe
 PORTVERSION=	0.5.0
 CATEGORIES=	japanese lang ruby
 MASTER_SITES=	http://www.loveruby.net/archive/refe/ \
-		http://www.ruby-lang.org/~rubikitch/refm/:refm \
+		http://www.rubyist.net/~rubikitch/refm/:refm \
 		http://www.loveruby.net/archive/:extrefm
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		ruby-refm.rd.gz:refm \
