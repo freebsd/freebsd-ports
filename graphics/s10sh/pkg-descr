@@ -1,0 +1,16 @@
+S10sh is a USB/serial userspace driver for the Canon PowerShot digital cameras.
+Using S10sh you can download, upload and explore the images captured with your
+PowerShot camera. The interface is quite similar to DOS's command.com.
+
+S10sh supports the following PowerShot models: 
+
+      S10 (serial and USB) 
+      S20 (serial and USB) 
+      S100 aka Digital Ixus (USB only, since it lacks the serial interface) 
+      A50 (serial only, supported with problems) 
+      Pro70 (serial only, supported with problems) 
+
+With the release of libusb 0.1.3b (http://sourceforge.net/projects/libusb/),
+S10sh gained USB support under FreeBSD.
+
+WWW: http://www.kyuzz.org/antirez/s10sh.html

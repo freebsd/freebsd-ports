@@ -1,0 +1,3 @@
+bin/s10sh
+%%PORTDOCS%%%%DOCDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCDIR%%

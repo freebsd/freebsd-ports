@@ -1,0 +1,19 @@
+PROG	=	s10sh
+NOMAN	=	oh...
+
+SRCS	=	main.c crc.c serial.c common.c bar.c
+
+LDADD	+=	-lreadline -ltermcap
+CFLAGS	+=	-DHAVE_READLINE
+
+.if !defined(WITHOUT_USB)
+USBLIB	!=	${LOCALBASE}/bin/libusb-config --libs
+LDADD	+=	${USBLIB}
+USBCF   !=      ${LOCALBASE}/bin/libusb-config --cflags
+CFLAGS	+=	${USBCF} -DHAVE_USB_SUPPORT
+SRCS	+=	usb.c
+.endif
+
+BINDIR	=	${LOCALBASE}/bin
+
+.include <bsd.prog.mk>
