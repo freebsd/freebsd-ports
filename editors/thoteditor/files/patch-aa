@@ -1,0 +1,19 @@
+*** tools/javastub/javastub.c.orig	Sun Aug 24 00:04:06 1997
+--- tools/javastub/javastub.c	Sun Aug 24 00:04:49 1997
+***************
+*** 11,17 ****
+  #include <stdio.h>
+  #include <stdlib.h>
+  
+! #include "config.h"
+  
+  #include <ctype.h>
+  #include <string.h>
+--- 11,17 ----
+  #include <stdio.h>
+  #include <stdlib.h>
+  
+! #include "../../config.h"
+  
+  #include <ctype.h>
+  #include <string.h>
