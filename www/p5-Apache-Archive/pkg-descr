@@ -1,0 +1,9 @@
+Apache::Archive is a module deisnged to be used with the Apache web server
+and the mod_perl environment.  It allows Apache to present tar and tar.gz
+files as a menu of their component parts, from which a user may pick and
+choose the elements to view or download.  The appearance of the menu is
+fully configurable through templates.
+
+Author: Jon Peterson <jon@snowdrift.org>
+
+--will
