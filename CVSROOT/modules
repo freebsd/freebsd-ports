@@ -3826,6 +3826,7 @@ ja-emacs20-dl-canna	ports/japanese/emacs20-dl-canna
 ja-emacs20-dl-wnn6	ports/japanese/emacs20-dl-wnn6
 ja-emacs20-emcws	ports/japanese/emacs20-emcws
 ja-epic4	ports/japanese/epic4
+ja-epson-ttfonts	ports/japanese/epson-ttfonts
 ja-epwutil	ports/japanese/epwutil
 ja-escpf	ports/japanese/escpf
 ja-esecanna	ports/japanese/esecanna
