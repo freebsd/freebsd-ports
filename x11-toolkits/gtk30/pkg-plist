@@ -3,7 +3,6 @@ lib/libglib.so.1.0
 lib/libglib.so
 lib/libglib.a
 include/glib.h
-include/glibconfig.h
 lib/libgdk.la
 lib/libgdk.so.1.0
 lib/libgdk.so

@@ -1,5 +1,5 @@
---- ./glib/configure.orig	Sun Oct 12 16:03:23 1997
-+++ ./glib/configure	Sun Oct 12 15:45:58 1997
+--- glib/configure.orig	Sun Dec  7 05:45:40 1997
++++ glib/configure	Tue Dec  9 16:00:29 1997
 @@ -561,6 +561,7 @@
  # AFS /usr/afsws/bin/install, which mishandles nonexistent args
  # SVR4 /usr/ucb/install, which tries to use the nonexistent group "staff"
@@ -8,9 +8,9 @@
  echo $ac_n "checking for a BSD compatible install""... $ac_c" 1>&6
  echo "configure:566: checking for a BSD compatible install" >&5
  if test -z "$INSTALL"; then
---- ./docs/Makefile.in.orig	Sun Oct 12 15:50:23 1997
-+++ ./docs/Makefile.in	Sun Oct 12 15:50:50 1997
-@@ -116,7 +116,7 @@
+--- docs/Makefile.in.orig	Sun Dec  7 06:12:07 1997
++++ docs/Makefile.in	Tue Dec  9 16:00:29 1997
+@@ -117,7 +117,7 @@
  .texi.info:
  	@cd $(srcdir) && rm -f $@ $@-[0-9] $@-[0-9][0-9]
  	cd $(srcdir) \
@@ -19,13 +19,22 @@
  
  .texi.dvi:
  	TEXINPUTS=$(srcdir):$$TEXINPUTS \
---- ./configure.orig	Sun Oct 12 15:17:26 1997
-+++ ./configure	Sun Oct 12 15:45:28 1997
-@@ -571,6 +571,7 @@
+--- configure.orig	Sun Dec 14 15:40:40 1997
++++ configure	Mon Dec 15 11:19:00 1997
+@@ -584,6 +584,7 @@
  # AFS /usr/afsws/bin/install, which mishandles nonexistent args
  # SVR4 /usr/ucb/install, which tries to use the nonexistent group "staff"
  # ./install, which can be erroneously created by make from ./install.sh.
 +INSTALL="/usr/bin/install -c"
  echo $ac_n "checking for a BSD compatible install""... $ac_c" 1>&6
- echo "configure:576: checking for a BSD compatible install" >&5
+ echo "configure:589: checking for a BSD compatible install" >&5
  if test -z "$INSTALL"; then
+@@ -2989,7 +2990,7 @@
+   echo "$ac_t""$need_x_locale" 1>&6
+ fi
+ if test $need_x_locale = yes; then
+-  CFLAGS="$CFLAGS -DX_LOCALE"
++  CFLAGS="$CFLAGS"
+ fi
+ 
+ # Checks for header files.
