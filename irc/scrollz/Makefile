@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	scrollz
-PORTVERSION=	1.8j
+PORTVERSION=	1.8k
 CATEGORIES=	irc
-MASTER_SITES=	http://www.scrollz.com/Bins/
-DISTNAME=	ScrollZ-${PORTVERSION}-FreeBSD-3.4
+MASTER_SITES=	http://www.scrollz.com/Bins/${PORTVERSION}/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-freebsd-4.2
 EXTRACT_SUFX=	.gz
 
 MAINTAINER=	ports@FreeBSD.org
