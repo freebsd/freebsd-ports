@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.162 1998/08/17 00:29:23 steve Exp $
+# $Id: Makefile,v 1.163 1998/08/17 03:14:46 jkoshy Exp $
 #
 
     SUBDIR += 3dc
@@ -50,6 +50,7 @@
     SUBDIR += libshhcards
     SUBDIR += lincity
     SUBDIR += maelstrom
+    SUBDIR += merlin
     SUBDIR += nethack
     SUBDIR += nethack-qt
     SUBDIR += netris
