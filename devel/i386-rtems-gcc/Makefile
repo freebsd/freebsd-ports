@@ -61,14 +61,9 @@ CONFIGURE_SCRIPT?=	../${GCCNAME}/configure
 PATCH_WRKSRC=		${WRKDIR}
 PATCH_STRIP=		-p
 
-NO_CPU_FLAGS=	true
-MAKE_FLAGS=	LANGUAGES="c c++ java"
-MAKE_ENV=	MACHINE_ARCH=${RTEMS_ARCH} NO_CPU_CFLAGS=true
-# Since once mk/bsd.cpu.mk adds the _CPUCFLAGS they can't be removed
-# by NO_CPU_FLAGS, and since they are added long before here we are
-# stuck with this hack.
-CFLAGS:=	${CFLAGS:C/-mcpu=[^ ]*//:C/-march=[^ ]*//:C/-mtune=[^ ]*//}
-CXXFLAGS:=	${CXXFLAGS:C/-mcpu=[^ ]*//:C/-march=[^ ]*//:C/-mtune=[^ ]*//}
+WITHOUT_CPU_CFLAGS=	true
+MAKE_FLAGS=		LANGUAGES="c c++ java"
+MAKE_ENV=		MACHINE_ARCH=${RTEMS_ARCH}
 
 MAN1=		${LCLTARGET}-gcc.1 ${LCLTARGET}-g++.1 ${LCLTARGET}-gcj.1 \
 		cpp.1 gcov.1 gcjh.1 jv-scan.1 jcf-dump.1 gij.1 \
