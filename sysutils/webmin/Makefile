@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	webmin
-PORTVERSION=	1.150
-PORTREVISION=	5
+PORTVERSION=	1.160
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/updates/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -26,9 +25,12 @@ USE_PERL5=	yes
 USE_RC_SUBR=    yes
 USE_REINPLACE=	yes
 
-WEBMIN_MODULES=	fsdump-1.150-1.wbm.gz \
-		quota-1.150-4.wbm.gz \
-		squid-1.150-2.wbm.gz
+WEBMIN_MODULES= bind8-1.160-4.wbm.gz \
+		cluster-webmin-1.160-1.wbm.gz \
+		cron-1.160-1.wbm.gz \
+		file-1.160-2.wbm.gz \
+		postgresql-1.160-1.wbm.gz \
+		usermin-1.160-2.wbm.gz
 
 WEBMIN_THEMES=
 

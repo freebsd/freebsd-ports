@@ -2,4 +2,4 @@ etc/rc.d/webmin.sh
 @comment Insert PLIST.lib-webmin here
 @comment -=[ begin PLIST.lib-webmin ]=-
 @comment -=[ end PLIST.lib-webmin ]=-
-@dirrm lib/webmin
+@unexec rmdir %D/lib/webmin 2>/dev/null || true
