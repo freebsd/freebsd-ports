@@ -25,7 +25,7 @@ CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
+.if ${OSVERSION} < 500000 || ${ARCH}=="sparc64"
 BROKEN=	Does not compile
 .endif
 
