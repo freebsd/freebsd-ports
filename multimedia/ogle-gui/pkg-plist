@@ -6,6 +6,7 @@ share/gnome/ogle_gui/go_up.xpm
 share/gnome/ogle_gui/menus.xpm
 share/gnome/ogle_gui/ogle.xpm
 share/gnome/ogle_gui/ogle_gui.glade
+share/gnome/ogle_gui/ogle_gui.glade2
 share/gnome/ogle_gui/rewind.xpm
 share/gnome/ogle_gui/skip_backwards.xpm
 share/gnome/ogle_gui/skip_forwards.xpm
