@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cairo
-PORTVERSION=	0.3.0
+PORTVERSION=	0.4.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://cairographics.org/snapshots/
 
@@ -21,6 +21,8 @@ USE_GNOME=	gnometarget gnomehack
 USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 
+CONFIGURE_ARGS=	--with-html-dir=${DOCSDIR}
+
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" \
 		LDFLAGS="${PTHREAD_LIBS}"
 
@@ -28,8 +30,11 @@ OPTIONS+=	GLITZ "Enable Glitz OpenGL Support" Off
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_GLITZ)
+.if defined(WITH_GLITZ) || exists(${LOCALBASE}/lib/libglitz.a)
 LIB_DEPENDS+=	glitz-glx.1:${PORTSDIR}/graphics/glitz
+PLIST_SUB+=	GLITZ=""
+.else
+PLIST_SUB+=	GLITZ="@comment "
 .endif
 
 .if !defined(WITHOUT_X11)
