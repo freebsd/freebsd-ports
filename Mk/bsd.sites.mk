@@ -430,7 +430,6 @@ MASTER_SITE_ISC+=	\
 	ftp://ftp.task.gda.pl/mirror/ftp.isc.org/isc/%SUBDIR%/ \
 	ftp://ftp.si.uniovi.es/mirror/isc/%SUBDIR%/ \
 	ftp://ftp.sunet.se/pub/network/isc/%SUBDIR%/ \
-	ftp://ftp.chl.chalmers.se/pub/unix/network/isc/%SUBDIR%/ \
 	ftp://ftp.mirror.ac.uk/sites/ftp.isc.org/isc/%SUBDIR%/ \
 	ftp://ftp.epix.net/pub/isc/%SUBDIR%/ \
 	ftp://ftp.nominum.com/pub/isc/%SUBDIR%/ \
