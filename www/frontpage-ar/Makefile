@@ -14,13 +14,17 @@ PKGNAMEPREFIX?=	ar-
 DISTFILES=
 EXTRACT_ONLY=
 
+MAINTAINER=	hetzels@westbend.net
+
+RUN_DEPENDS=	${FPSETPERM}:${PORTSDIR}/www/frontpage
+
+FP_LANG?=       ara
+FP_LANGUAGE?=   Arabic
+FP_LCID?=       1025
+
 .for _FP_LANG in ${FP_LANG}
 DISTFILES+=	fp${PORTVERSION:S/.//:C/\..*//}_${_FP_LANG}.tar.Z
 .endfor
-
-MAINTAINER=	hetzels@westbend.net
-
-RUN_DEPENDS=	${FPSETPERM}:${PORTSDIR}/www/frontpage5
 
 .include <bsd.port.pre.mk>
 
@@ -28,10 +32,6 @@ ONLY_FOR_ARCHS=	i386 alpha
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-
-FP_LANG?=	ara
-FP_LANGUAGE?=	Arabic
-FP_LCID?=	1025
 
 FP_VER=		5.0
 
