@@ -1,0 +1,11 @@
+--- config.h.in.orig	Tue Oct 19 04:00:43 2004
++++ config.h.in	Tue Oct 19 04:01:00 2004
+@@ -322,7 +322,7 @@
+ #undef HAVE_GETWD
+ 
+ /* Define if you have the grantpt function.  */
+-#undef HAVE_GRANTPT
++/* #undef HAVE_GRANTPT */
+ 
+ /* Define if you have the initgroups function.  */
+ #undef HAVE_INITGROUPS

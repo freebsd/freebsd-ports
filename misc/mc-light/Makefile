@@ -26,12 +26,15 @@ CONFIGURE_ARGS+=--with-included-slang \
 		--with-gettext \
 		--with-vfs \
 		--with-netrc \
-		--without-subshell \
 		--without-gpm-mouse \
 		--with-edit
 
 MAN1=		mc.1 mcedit.1
 MAN8=		mcserv.8
+
+.if !defined(WITH_SUBSHELL)
+CONFIGURE_ARGS+=--without-subshell
+.endif
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
