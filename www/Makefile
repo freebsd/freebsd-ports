@@ -111,6 +111,7 @@
     SUBDIR += galeon
     SUBDIR += galeon2
     SUBDIR += gallery
+    SUBDIR += gatling
     SUBDIR += geeklog
     SUBDIR += gforge
     SUBDIR += glibwww

@@ -1,0 +1,22 @@
+--- Makefile.orig	Thu Feb 19 17:22:17 2004
++++ Makefile	Mon Feb 23 01:12:25 2004
+@@ -6,9 +6,7 @@
+ 
+ all: $(TARGET)
+ 
+-CC=gcc
+-CFLAGS=-pipe -Wall -Os -I../libowfat/
+-LDFLAGS=-s -L../libowfat/ -lowfat
++CFLAGS+=-I${LOCALBASE}/include/libowfat
+ 
+ gatling: gatling.o libsocket libiconv
+ 	$(CC) -o $@ gatling.o $(LDFLAGS) `cat libsocket libiconv`
+@@ -32,7 +30,7 @@
+ 	$(CC) -static -o $@ forkbench.o $(LDFLAGS)
+ 
+ pthreadbench: pthreadbench.o
+-	$(CC) -o $@ pthreadbench.o $(LDFLAGS) -lpthread
++	$(CC) -o $@ pthreadbench.o $(LDFLAGS) $(PTHREAD_LIBS)
+ 
+ mktestdata: mktestdata.o
+ 	$(CC) -o $@ mktestdata.o $(LDFLAGS)
