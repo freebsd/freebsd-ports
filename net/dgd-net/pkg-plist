@@ -53,7 +53,6 @@ dgd/doc/kfun/rename_file
 dgd/doc/kfun/restore_object
 dgd/doc/kfun/save_object
 dgd/doc/kfun/send_datagram
-dgd/doc/kfun/send_message
 dgd/doc/kfun/send_message.NET
 dgd/doc/kfun/shutdown
 dgd/doc/kfun/sizeof
