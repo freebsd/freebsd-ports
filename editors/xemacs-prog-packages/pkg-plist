@@ -481,6 +481,10 @@ lib/xemacs/xemacs-packages/lisp/semantic/auto-autoloads.el
 lib/xemacs/xemacs-packages/lisp/semantic/auto-autoloads.elc
 lib/xemacs/xemacs-packages/lisp/semantic/custom-load.el
 lib/xemacs/xemacs-packages/lisp/semantic/custom-load.elc
+lib/xemacs/xemacs-packages/lisp/semantic/document-vars.el
+lib/xemacs/xemacs-packages/lisp/semantic/document-vars.elc
+lib/xemacs/xemacs-packages/lisp/semantic/document.el
+lib/xemacs/xemacs-packages/lisp/semantic/document.elc
 lib/xemacs/xemacs-packages/lisp/semantic/semantic-bnf.el
 lib/xemacs/xemacs-packages/lisp/semantic/semantic-bnf.elc
 lib/xemacs/xemacs-packages/lisp/semantic/semantic-c.el
@@ -491,9 +495,12 @@ lib/xemacs/xemacs-packages/lisp/semantic/semantic-imenu.el
 lib/xemacs/xemacs-packages/lisp/semantic/semantic-imenu.elc
 lib/xemacs/xemacs-packages/lisp/semantic/semantic-make.el
 lib/xemacs/xemacs-packages/lisp/semantic/semantic-make.elc
+lib/xemacs/xemacs-packages/lisp/semantic/semantic-mode.el
+lib/xemacs/xemacs-packages/lisp/semantic/semantic-mode.elc
 lib/xemacs/xemacs-packages/lisp/semantic/semantic-sb.el
 lib/xemacs/xemacs-packages/lisp/semantic/semantic-sb.elc
 lib/xemacs/xemacs-packages/lisp/semantic/semantic-util.el
+lib/xemacs/xemacs-packages/lisp/semantic/semantic-util.elc
 lib/xemacs/xemacs-packages/lisp/semantic/semantic.el
 lib/xemacs/xemacs-packages/lisp/semantic/semantic.elc
 lib/xemacs/xemacs-packages/lisp/semantic/sformat.el
