@@ -3,12 +3,9 @@
 Install models, skins, maps and mods in
 ${PREFIX}/share/quakeforge
 
-ATTENTION: All qw-clients core dump on exit,
-this may render your keyboard/mouse unusable
-if you're running in OpenGL Mode
-They will also core dump when switching servers
-
-Don't run the -svga clients, they will kill
-keyboard/video/mouse too
+ATTENTION: Don't run the -svga clients, they
+will probably render your keyboard/video/mouse,
+unusable, forcing you to kill the client via
+telnet/ssh/serial console.
 
 ===============================================
