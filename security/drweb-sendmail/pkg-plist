@@ -1,5 +1,7 @@
 drweb/drwebdc
-etc/rc.d/drwebsmf.sh
+@unexec if [ -f %D/etc/rc.d/drweb-sendmail.sh ] && cmp -s %D/etc/rc.d/drweb-sendmail.sh %D/etc/rc.d/drweb-sendmail.sh-dist; then rm -f %D/etc/rc.d/drweb-sendmail.sh; fi
+etc/rc.d/drweb-sendmail.sh-dist
+@exec if [ ! -f %D/etc/rc.d/drweb-sendmail.sh ] ; then cp -p %D/%F %B/drweb-sendmail.sh; chmod 555 %B/drweb-sendmail.sh; fi
 sbin/drweb-smf
 share/doc/drweb-sendmail/readme.sendmail
 share/doc/drweb-sendmail/readme.sendmail.rus

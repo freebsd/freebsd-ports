@@ -7,7 +7,7 @@
 
 PORTNAME=	drweb_sendmail
 PORTVERSION=    4.26
-PORTREVISION=   2
+PORTREVISION=   3
 CATEGORIES=	security mail
 MASTER_SITES=	http://www.drweb.ru/ftp/web_pub/
 DISTNAME=	drwebd-${PORTVERSION}-freebsd4
@@ -79,7 +79,6 @@ post-configure:
 		${ECHO} y; \
 	} | ./configure
 
-# Not fully used yet
 pre-install:
 	cd ${WRKSRC}/../sendmail && { \
 		${ECHO} y; \
@@ -115,10 +114,14 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/drwebdc ${PREFIX}/drweb/
 	cd ${WRKSRC}/../sendmail; \
 		${INSTALL_DATA} readme.* sendmail.*.addon ${DOC_DIR}
-	${SED} 's#!!PREFIX!!#${PREFIX}#g;s#!!HOSTNAME!!#${WITH_DRWEBSMF_HOSTNAME}#g' \
-		< ${FILESDIR}/drweb-smf.sh >${WRKSRC}/drweb-smf.sh
-# drwebsmf.sh instead drweb-smf.sh to start after drwebd.sh
-	${INSTALL_SCRIPT} ${WRKSRC}/drweb-smf.sh ${PREFIX}/etc/rc.d/drwebsmf.sh
+	cd ${WRKSRC}/../sendmail; \
+		${INSTALL_DATA} drweb-sendmail.sh \
+		${PREFIX}/etc/rc.d/drweb-sendmail.sh-dist
+	if [ ! -f ${PREFIX}/etc/rc.d/drweb-sendmail.sh ] ; then \
+		cd ${WRKSRC}/../sendmail; \
+			${INSTALL_SCRIPT} drweb-sendmail.sh \
+			${PREFIX}/etc/rc.d/; \
+	fi
 
 post-install:
 	@echo
