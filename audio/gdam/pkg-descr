@@ -1,0 +1,17 @@
+GDAM - Geoff & Dave's Audio Mixer
+
+Digital DJ mixing software suitable for live performances.
+
+- Client/server architecture
+- Mixing of multiple mp3 files
+- Dynamic filter insertion and removal
+- Multiple sound device support (speakers and monitor)
+- Loops, queues, sampler, beat matching, sequencer
+- Record your performance to a disk
+- And it's blue!
+
+Usage:
+gdam-server --config=/usr/X11R6/etc/gdam/server.config
+gdam-launcher
+
+WWW: http://gdam.sourceforge.net/
