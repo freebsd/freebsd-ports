@@ -41,26 +41,16 @@ GNU_CONFIGURE=		yes
 INSTALLS_SHLIB=		yes
 LDCONFIG_DIRS+=		%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 
+OPTIONS=		WV2 "Build with Microsoft Word import filter" off
+
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
-
-WV2_CONFIG=	${LOCALBASE}/bin/wv2-config
-
-.if exists(${WV2_CONFIG})
-WITH_WV2?=	yes
-.endif # exists(${WV2_CONFIG})
 
 .if defined(WITH_WV2)
 LIB_DEPENDS+=	wv2:${PORTSDIR}/textproc/wv2
 PLIST_APPEND+=	plist.wv2
-.else
-pre-everything::
-	@${ECHO_MSG}
-	@${ECHO_MSG} "============================================================"
-	@${ECHO_MSG} "If you want to compile with support for MS Word/Excel,"
-	@${ECHO_MSG} "documents, hit Ctrl-C right now and use \"make WITH_WV2=yes\""
-	@${ECHO_MSG} "============================================================"
-	@${ECHO_MSG}
-.endif # defined(WITH_WV2)
+.elseif defined(WITHOUT_WV2)
+CONFIGURE_ARGS+=--without-libwv2
+.endif
 
 .include <bsd.port.post.mk>
