@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	jftpgw
-PORTVERSION=	0.13.beta.j
+PORTVERSION=	0.0.13j
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.mcknight.de/jftpgw/
+DISTNAME=	jftpgw-0.13.beta.j
 
 MAINTAINER=	se@FreeBSD.org
 
