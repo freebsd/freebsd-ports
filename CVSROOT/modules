@@ -3917,6 +3917,7 @@ mudix		ports/net/mudix
 mudsh		ports/shells/mudsh
 muggy		ports/editors/muggy
 muh		ports/irc/muh
+mulberry	ports/mail/mulberry
 mule		ports/editors/mule
 mule-common	ports/editors/mule-common
 mule-ucs-emacs20	ports/converters/mule-ucs-emacs20
