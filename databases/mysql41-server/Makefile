@@ -61,6 +61,9 @@ CONFIGURE_ARGS+=--without-innodb
 .if defined(WITH_NDB)
 CONFIGURE_ARGS+=--with-ndbcluster
 .endif
+.if defined(WITH_COLLATION) && ${WITH_COLLATION} != ""
+CONFIGURE_ARGS+=--with-collation=${WITH_COLLATION}
+.endif
 
 .include <bsd.port.pre.mk>
 
