@@ -1,26 +1,27 @@
---- Makefile.tmpl.orig	Mon Jan 15 10:26:17 2001
-+++ Makefile.tmpl	Thu Feb  8 22:41:43 2001
-@@ -126,6 +126,7 @@
+--- Makefile.tmpl.orig	Sat Oct  6 17:01:09 2001
++++ Makefile.tmpl	Thu Oct 18 12:39:52 2001
+@@ -127,6 +127,7 @@
  runtimedir      = @runtimedir@
  logfiledir      = @logfiledir@
  proxycachedir   = @proxycachedir@
-+doc_prefix	= $(prefix)/share/doc/apache
++docsdir         = $(prefix)/share/doc/apache
  
  libexecdir_relative   = @libexecdir_relative@
  
-@@ -269,9 +270,9 @@
+@@ -270,10 +271,10 @@
  	$(MKDIR) $(root)$(mandir)/man1
  	$(MKDIR) $(root)$(mandir)/man8
  	$(MKDIR) $(root)$(sysconfdir)
 -	$(MKDIR) $(root)$(htdocsdir)
-+	$(MKDIR) $(root)$(doc_prefix)
++	$(MKDIR) $(root)$(docsdir)
+ 	$(MKDIR) $(root)$(manualdir)
  	$(MKDIR) $(root)$(iconsdir)
 -	$(MKDIR) $(root)$(cgidir)
 +	$(MKDIR) $(root)$(cgidir).default
  	$(MKDIR) $(root)$(includedir)
  	$(MKDIR) $(root)$(includedir)/xml
  	$(MKDIR) $(root)$(runtimedir)
-@@ -327,19 +328,34 @@
+@@ -329,19 +330,34 @@
  			echo "$(INSTALL_DSO) $(TOP)/$(SRC)/$${mod} $(root)$(libexecdir)/$${file}"; \
  			$(INSTALL_DSO) $(TOP)/$(SRC)/$${mod} $(root)$(libexecdir)/$${file}; \
  			name=`$(TOP)/$(AUX)/fmn.sh $(TOP)/$(SRC)/$${mod}`; \
@@ -60,7 +61,7 @@
  	fi
  	@echo "<=== [programs]"
  
-@@ -408,6 +424,7 @@
+@@ -410,6 +426,7 @@
  	echo "$(INSTALL_SCRIPT) $(TOP)/$(SRC)/support/apachectl[*] $(root)$(sbindir)/$${apachectl}"; \
  	sed -e 's;PIDFILE=.*;PIDFILE=$(runtimedir)/$(TARGET).pid;' \
  		-e 's;HTTPD=.*;HTTPD=$(sbindir)/$(TARGET);' \
@@ -68,7 +69,7 @@
  		< $(TOP)/$(SRC)/support/apachectl > $(TOP)/$(SRC)/.apaci.install.tmp && \
  		$(INSTALL_SCRIPT) $(TOP)/$(SRC)/.apaci.install.tmp $(root)$(sbindir)/$${apachectl}; \
  	echo "$(INSTALL_DATA) $(TOP)/$(SRC)/support/apachectl.8 $(root)$(mandir)/man8/$${apachectl}.8"; \
-@@ -455,26 +472,28 @@
+@@ -457,15 +474,15 @@
  #   icons and distributed CGI scripts.
  install-data:
  	@echo "===> [data: Installing initial data files]"
@@ -79,23 +80,28 @@
 +#	-@if [ -f $(root)$(htdocsdir)/index.html ] || [ -f $(root)$(htdocsdir)/index.html.en ]; then \
 +#		echo "[PRESERVING EXISTING DATA SUBDIR: $(root)$(htdocsdir)/]"; \
 +#	else \
-+		echo "Copying tree $(TOP)/htdocs/ -> $(root)$(doc_prefix)/"; \
- 		(cd $(TOP)/htdocs/ && $(TAR) $(TAROPT) - *) |\
++		echo "Copying tree $(TOP)/htdocs/ -> $(root)$(docsdir)/"; \
+ 		(cd $(TOP)/htdocs/ && $(TAR) $(TAROPT) - index* apache_pb.* ) |\
 -		(cd $(root)$(htdocsdir)/ && $(TAR) -xf -); \
 -		find $(root)$(htdocsdir)/ -type d -exec chmod a+rx {} \; ; \
--		find $(root)$(htdocsdir)/ -type f -exec chmod a+r {} \; ; \
+-		find $(root)$(htdocsdir)/ -type f -print | xargs chmod a+r ; \
 -	fi
--	-@if [ -f $(root)$(cgidir)/printenv ]; then \
--		echo "[PRESERVING EXISTING DATA SUBDIR: $(root)$(cgidir)/]"; \
--	else \
-+		(cd $(root)$(doc_prefix)/ && $(TAR) -xf -); \
-+		mv $(root)$(doc_prefix)/index.html.en \
-+			   $(root)$(doc_prefix)/index.html.en-dist ; \
-+		find $(root)$(doc_prefix)/ -type d -exec chmod a+rx {} \; ; \
-+		find $(root)$(doc_prefix)/ -type f -exec chmod a+r {} \; ; \
++		(cd $(root)$(docsdir)/ && $(TAR) -xf -); \
++		find $(root)$(docsdir)/ -type d -exec chmod a+rx {} \; ; \
++		find $(root)$(docsdir)/ -type f -print | xargs chmod a+r ; \
 +#	fi
+ 	-@if [ -d $(TOP)/htdocs/manual ]; then \
+ 		echo "Copying tree $(TOP)/htdocs/manual -> $(root)/$(manualdir)/"; \
+ 		(cd $(TOP)/htdocs/manual/ && $(TAR) $(TAROPT) - *) |\
+@@ -473,17 +490,17 @@
+ 		find $(root)$(manualdir)/ -type d -exec chmod a+rx {} \; ; \
+ 		find $(root)$(manualdir)/ -type f -print | xargs chmod a+r ; \
+ 	fi
+-	-@if [ -f $(root)$(cgidir)/printenv ]; then \
+-		echo "[PRESERVING EXISTING CGI SUBDIR: $(root)$(cgidir)/]"; \
+-	else \
 +#	-@if [ -f $(root)$(cgidir)/printenv ]; then \
-+#		echo "[PRESERVING EXISTING DATA SUBDIR: $(root)$(cgidir)/]"; \
++#		echo "[PRESERVING EXISTING CGI SUBDIR: $(root)$(cgidir)/]"; \
 +#	else \
  		for script in printenv test-cgi; do \
  			cat $(TOP)/cgi-bin/$${script} |\
@@ -111,7 +117,7 @@
  	@echo "Copying tree $(TOP)/icons/ -> $(root)$(iconsdir)/"; \
  	(cd $(TOP)/icons/ && $(TAR) $(TAROPT) - *) |\
  	(cd $(root)$(iconsdir)/ && $(TAR) -xf -); \
-@@ -507,42 +526,47 @@
+@@ -517,42 +534,46 @@
  			-e 's;@@ServerRoot@@/icons;$(iconsdir);' \
  			-e 's;@@ServerRoot@@/cgi-bin;$(cgidir);' \
  			-e 's;@@ServerRoot@@/proxy;$(proxycachedir);' \
@@ -133,9 +139,9 @@
  			-e 's;conf/magic;$(sysconfdir)/magic;' \
  			-e 's;conf/mime\.types;$(sysconfdir)/mime.types;' \
  			-e 's;User nobody;User $(conf_user);' \
- 			-e 's;Group #-1;Group $(conf_group);' \
+-			-e 's;Group #-1;Group $(conf_group);' \
++			-e 's;Group \"#-1\";Group $(conf_group);' \
  			-e 's;Port 80;Port $(conf_port);' \
-+			-e 's;@@MANUAL@@;$(doc_prefix);' \
  			-e 's;ServerAdmin you@your.address;ServerAdmin $(conf_serveradmin);' \
  			-e 's;ServerName new.host.name;ServerName $(conf_servername);' \
  			> $(TOP)/$(SRC)/.apaci.install.tmp && \

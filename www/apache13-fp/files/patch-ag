@@ -1,5 +1,5 @@
---- conf/httpd.conf-dist.orig	Wed Feb 21 21:48:15 2001
-+++ conf/httpd.conf-dist	Wed Mar  7 23:43:56 2001
+--- conf/httpd.conf-dist.orig	Fri Oct  5 22:40:04 2001
++++ conf/httpd.conf-dist	Wed Oct 17 18:16:27 2001
 @@ -95,6 +95,9 @@
  #ResourceConfig conf/srm.conf
  #AccessConfig conf/access.conf
@@ -10,18 +10,7 @@
  #
  # Timeout: The number of seconds before receives and sends time out.
  #
-@@ -174,6 +177,10 @@
- #Listen 3000
- #Listen 12.34.56.78:80
- 
-+Listen 80
-+# We need to Listen to port 8080, as that is were the Apache Docs can be accessed from.
-+Listen 8080
-+
- #
- # BindAddress: You can support virtual hosts with this option. This directive
- # is used to tell the server which IP address to listen to. It can either
-@@ -276,7 +283,7 @@
+@@ -276,7 +279,7 @@
  # documents. By default, all requests are taken from this directory, but
  # symbolic links and aliases may be used to point to other locations.
  #
@@ -30,7 +19,7 @@
  
  #
  # Each directory to which Apache has access, can be configured with respect
-@@ -317,7 +324,16 @@
+@@ -317,7 +320,16 @@
  # override. Can also be "All", or any combination of "Options", "FileInfo", 
  # "AuthConfig", and "Limit"
  #
@@ -48,7 +37,7 @@
  
  #
  # Controls who can get stuff from this server.
-@@ -351,12 +367,36 @@
+@@ -351,12 +363,36 @@
  #    </LimitExcept>
  #</Directory>
  
@@ -86,7 +75,7 @@
  </IfModule>
  
  #
-@@ -475,7 +515,7 @@
+@@ -476,7 +512,7 @@
  # define per-<VirtualHost> access logfiles, transactions will be
  # logged therein and *not* in this file.
  #
@@ -95,7 +84,7 @@
  
  #
  # If you would like to have agent and referer logfiles, uncomment the
-@@ -488,7 +528,7 @@
+@@ -489,7 +525,7 @@
  # If you prefer a single logfile with access, agent, and referer information
  # (Combined Logfile Format) you can use the following directive.
  #
@@ -104,7 +93,7 @@
  
  #
  # Optionally add a line containing the server version and virtual host
-@@ -728,13 +768,17 @@
+@@ -768,13 +804,17 @@
      # For example, the PHP 3.x module (not part of the Apache distribution - see
      # http://www.php.net) will typically use:
      #
@@ -126,51 +115,18 @@
  
      AddType application/x-tar .tgz
  
-@@ -944,3 +988,47 @@
+@@ -984,3 +1024,14 @@
  #    ErrorLog logs/dummy-host.example.com-error_log
  #    CustomLog logs/dummy-host.example.com-access_log common
  #</VirtualHost>
 +
-+# This virtual Host allows access to the Apache & Frontpage Docs on port 8080
-+<VirtualHost _default_:8080>
-+    ServerAdmin webmaster@@@HOSTNAME@@
-+    DocumentRoot @@MANUAL@@
-+    ServerName @@HOSTNAME@@
-+
-+    <Directory "@@MANUAL@@">
-+
-+	#
-+	# This may also be "None", "All", or any combination of "Indexes",
-+	# "Includes", "FollowSymLinks", "ExecCGI", or "MultiViews".  
-+	#
-+	# Note that "MultiViews" must be named *explicitly* --- "Options All"
-+	# doesn't give it to you.  
-+	#
-+	Options Indexes FollowSymLinks
-+ 
-+	#
-+	# This controls which options the .htaccess files in directories can
-+	# override. Can also be "All", or any combination of "Options", "FileInfo",
-+	# "AuthConfig", and "Limit"
-+	#
-+	AllowOverride None
-+
-+	#
-+	# Controls who can get stuff from this server.
-+	#
-+	Order allow,deny
-+	Allow from all
-+    </Directory>
-+
-+</VirtualHost>
-+
 +# This Virtual Host makes it so FrontPage will display pages from the
-+# root web.  Without this virtual host, Frontpage accesses the pages
-+# on the default virtual host (port 8080) instead.
++# root web.  When multiple Listen directives are specified, Frontpage
++# will try to access the pages from the wrong virutal host. This fixes it.
 +#
 +#NOTE: This Virtual Host Entry must be kept as the last _default_
 +#      virtual host entry.
-+<VirtualHost _default_:80>
-+    ServerAdmin webmaster@@@HOSTNAME@@
-+    ServerName @@HOSTNAME@@
-+</VirtualHost>
++#<VirtualHost _default_:80>
++#    ServerAdmin webmaster@@@HOSTNAME@@
++#    ServerName @@HOSTNAME@@
++#</VirtualHost>
