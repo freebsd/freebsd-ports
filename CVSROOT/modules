@@ -7630,6 +7630,7 @@ wmtz		ports/x11-clocks/wmtz
 wmusic		ports/audio/wmusic
 wmwave		ports/net/wmwave
 wmweather	ports/misc/wmweather
+wmwork		ports/misc/wmwork
 wmx		ports/x11-wm/wmx
 wmx10		ports/misc/wmx10
 wmzazof		ports/sysutils/wmzazof
