@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hidentd
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	net
 MASTER_SITES=	http://core.segfault.pl/~hobbit/hidentd/dist/
 
