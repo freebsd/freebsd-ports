@@ -1,0 +1,25 @@
+--- man/Makefile.orig	Sat Aug 12 01:32:07 2000
++++ man/Makefile	Sat Aug 12 01:32:18 2000
+@@ -31,19 +31,19 @@
+ sourceform:
+ 	$(PRINTSRC) |						\
+ 	sed -e 's/\.\([1-8]\)s$$/.\1/' |			\
+-	xargs -l10 $(MAKE) $(MFLAGS)
++	xargs -n10 $(MAKE) $(MFLAGS)
+ 
+ # generate packed compiled nroff 
+ packed: sourceform
+ 	$(PRINTSRC) |						\
+ 	sed -e 's/\.[1-8]s$$/\.z/' |				\
+-	xargs -l10 $(MAKE) $(MFLAGS)
++	xargs -n10 $(MAKE) $(MFLAGS)
+ 
+ # generate gzipped compiled nroff 
+ gzipped: sourceform
+ 	$(PRINTSRC) |						\
+ 	sed -e 's/\.[1-8]s$$/\.gz/' |				\
+-	xargs -l10 $(MAKE) $(MFLAGS)
++	xargs -n10 $(MAKE) $(MFLAGS)
+ 
+ # replace tokens in source to make nroff source
+ .1s.1 .2s.2 .3s.3 .4s.4 .5s.5 .6s.6 .7s.7 .8s.8:
