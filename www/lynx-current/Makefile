@@ -5,14 +5,13 @@
 # Date created:         15 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.37 1997/02/24 04:35:09 ache Exp $
+# $Id: Makefile,v 1.38 1997/04/04 01:55:39 ache Exp $
 #
 
 DISTNAME=       lynx2-7-1
 PKGNAME=        lynx-2.7.1
 CATEGORIES=	www
-MASTER_SITES=   http://www.slcc.edu/lynx/fote/ \
-		http://www.wfbr.edu/lynx/
+MASTER_SITES=   http://www.slcc.edu/lynx/fote/
 EXTRACT_SUFX=   .zip
 
 MAINTAINER=	ache@FreeBSD.ORG
