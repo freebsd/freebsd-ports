@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Start or stop zope
-# $FreeBSD: /tmp/pcvs/ports/www/zope/files/Attic/zope.sh,v 1.1 2004-04-20 14:18:32 perky Exp $
+# $FreeBSD: /tmp/pcvs/ports/www/zope/files/Attic/zope.sh,v 1.2 2004-04-20 14:29:26 perky Exp $
 
 # PROVIDE: zope
 # REQUIRE: DAEMON
@@ -39,7 +39,7 @@ if checkyesno zope_enable; then
 			echo "Restarting Zope"
 		;;
 		*)
-			echo "Unknown aktion \"$1\""
+			echo "Unknown action \"$1\""
 		;;
 	esac
 

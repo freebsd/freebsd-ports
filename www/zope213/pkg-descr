@@ -6,8 +6,7 @@ Zope is distinguished by its integrated object database which, when
 combined with a revolutionary object model, provides a completely unique
 facility for servicing content managers and web application developers."
 
-Here are some of the "headlines" mentioned in the features list at 
-http://www.zope.org:8080/Information/Features :
+Here are some of the "headlines" mentioned in the features list.
 
 Database Integration 			Content Management
 	SQL and HTML in Harmony 		Builtin Objects
@@ -16,9 +15,5 @@ Database Integration 			Content Management
 Application Development 			Integrated Object Database
 	DTML Scripting 				Managed Through the Web
 	External Methods 			Direct URL Access to Objects
-
-This is a "beta" release. It seems to work quite stable, but no guarantee
-given.
-					Peter Cornelius <pcc@gmx.net>
 
 WWW: http://www.zope.org/
