@@ -18,12 +18,11 @@ lib/ctrlproxy/librepl_simple.so
 lib/ctrlproxy/libsocket.so
 lib/ctrlproxy/libstats.so
 lib/ctrlproxy/libstrip.so
-share/ctrlproxy/motd
+%%DATADIR%%/motd
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/ctrlproxy.html
 %%PORTDOCS%%%%DOCSDIR%%/ctrlproxy.pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm share/ctrlproxy
+@dirrm %%DATADIR%%
 @dirrm lib/ctrlproxy

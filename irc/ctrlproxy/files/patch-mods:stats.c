@@ -1,8 +1,11 @@
---- mods/stats.c.orig	Wed Jan  7 09:20:11 2004
-+++ mods/stats.c	Wed Jan  7 09:20:19 2004
-@@ -28,9 +28,9 @@
- #include <malloc.h>
+--- mods/stats.c.orig	Wed Dec 10 05:46:40 2003
++++ mods/stats.c	Thu Mar  4 19:08:20 2004
+@@ -25,12 +25,10 @@
  #include <stdio.h>
+ #include <stdarg.h>
+ #include <string.h>
+-#include <malloc.h>
+-#include <stdio.h>
  #include <time.h>
 -#include <tdb.h>
  #include <sys/types.h>

@@ -1,11 +1,29 @@
---- Makefile.in.orig	Tue Oct 14 02:15:45 2003
-+++ Makefile.in	Wed Oct 22 22:47:20 2003
-@@ -23,7 +23,7 @@
+--- Makefile.in.orig	Mon Jan 12 09:26:24 2004
++++ Makefile.in	Thu Mar  4 19:02:20 2004
+@@ -24,7 +24,7 @@
  	$(CC) $(LIBS) -rdynamic -o $@ $(OBJS)
  
  printstats: printstats.o
 -	$(CC) -ltdb -o $@ $<
-+	$(CC) ${LIBS} -ltdb -o $@ $<
++	$(CC) -ltdb -o $@ $< @LDFLAGS@
  
  %.o: %.c
  	$(CC) $(CFLAGS) -c $<
+@@ -36,7 +36,6 @@
+ 	$(INSTALL) -d $(DESTDIR)$(man5dir)
+ 	$(INSTALL) -d $(DESTDIR)$(includedir)
+ 	$(INSTALL) -d $(DESTDIR)$(modulesdir)
+-	$(INSTALL) -d $(DESTDIR)$(docdir)
+ 	$(INSTALL) -d $(DESTDIR)$(datadir)
+ 	$(MAKE) -C doc install 
+ 	
+@@ -45,9 +44,6 @@
+ 
+ install-doc:
+ 	$(INSTALL) ctrlproxy.h $(DESTDIR)$(includedir)
+-	$(INSTALL) AUTHORS $(DESTDIR)$(docdir)
+-	$(INSTALL) COPYING $(DESTDIR)$(docdir)
+-	$(INSTALL) TODO $(DESTDIR)$(docdir)
+ 
+ install-data:
+ 	$(INSTALL) motd $(DESTDIR)$(datadir)

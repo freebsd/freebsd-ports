@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	ctrlproxy
-PORTVERSION=	2.6
-PORTREVISION=	2
+PORTVERSION=	2.6.1
 CATEGORIES=	irc
 MASTER_SITES=	http://jelmer.vernstok.nl/ctrlproxy/
 
@@ -19,14 +18,11 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		pcre.0:${PORTSDIR}/devel/pcre \
 		tdb.1:${PORTSDIR}/databases/tdb
 
-USE_REINPLACE=	yes
 USE_OPENSSL=	yes
-USE_GNOME=	libxml2 glib20
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+USE_GNOME=	glib20 libxml2
 USE_GMAKE=	yes
-MAKE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN1=	ctrlproxy.1
 MAN5=	ctrlproxyrc.5
@@ -37,8 +33,15 @@ MAN7=	admin.7ctrlproxy antiflood.7ctrlproxy auto-away.7ctrlproxy \
 	repl_highlight.7ctrlproxy repl_none.7ctrlproxy repl_simple.7ctrlproxy \
 	socket.7ctrlproxy stats.7ctrlproxy strip.7ctrlproxy
 
-post-patch:
-	@${FIND} ${WRKSRC} -name "*.c" | ${XARGS} ${GREP} -lR "malloc\.h" | \
-		${XARGS} ${REINPLACE_CMD} -e "s@malloc.h@stdlib.h@g"
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
+
+post-install:
+.if !defined(NOPORTDOC)
+	@${MKDIR} ${DOCSDIR}
+.for file in AUTHORS TODO doc/ctrlproxy.html doc/ctrlproxy.pdf
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
