@@ -141,6 +141,7 @@
     SUBDIR += ipcad
     SUBDIR += ipcalc
     SUBDIR += ipcheck
+    SUBDIR += iperf
     SUBDIR += ipfm
     SUBDIR += iplog
     SUBDIR += ipw
