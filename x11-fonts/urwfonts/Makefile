@@ -18,6 +18,6 @@ NO_WRKSUBDIR=	yes
 USE_X_PREFIX=	yes
 
 post-install:
-	@${CAT} ${DESCR}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
