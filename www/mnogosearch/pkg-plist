@@ -22,7 +22,6 @@ include/udm_indexer.h
 include/udm_log.h
 include/udm_mimetype.h
 include/udm_mutex.h
-include/udm_os.h
 include/udm_parsehtml.h
 include/udm_parser.h
 include/udm_parseurl.h
@@ -69,6 +68,7 @@ share/doc/mnogosearch/mp3.txt
 share/doc/mnogosearch/negotiation.txt
 share/doc/mnogosearch/parsers.txt
 share/doc/mnogosearch/performance.txt
+share/doc/mnogosearch/relevancy.txt
 share/doc/mnogosearch/search.txt
 share/doc/mnogosearch/srv_table.txt
 share/doc/mnogosearch/storage.txt
@@ -81,7 +81,9 @@ share/mnogosearch/create/ibase/create.sql
 share/mnogosearch/create/msql/crc-multi.txt
 share/mnogosearch/create/msql/crc.txt
 share/mnogosearch/create/msql/create.txt
+share/mnogosearch/create/msql/ispell.txt
 share/mnogosearch/create/msql/multi.txt
+share/mnogosearch/create/msql/track.txt
 share/mnogosearch/create/mssql/create.sql
 share/mnogosearch/create/mysql/categories.txt
 share/mnogosearch/create/mysql/crc-multi.txt
@@ -104,6 +106,7 @@ share/mnogosearch/create/pgsql/crc-multi.txt
 share/mnogosearch/create/pgsql/crc.txt
 share/mnogosearch/create/pgsql/create.txt
 share/mnogosearch/create/pgsql/grant.txt
+share/mnogosearch/create/pgsql/ispell.txt
 share/mnogosearch/create/pgsql/multi.txt
 share/mnogosearch/create/pgsql/news-extension.txt
 share/mnogosearch/create/pgsql/server.txt
