@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	hypersrc
-PORTVERSION=	5.3.12
-PORTREVISION=	1
+PORTVERSION=	5.4.4
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.jimbrooks.org/hypersrc/%SUBDIR%/ \
 		http://www.home.earthlink.net/~jebrooks1/ftp/hypersrc/%SUBDIR%/
@@ -28,6 +27,7 @@ USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
 
 MAN1=		hypersrc.1
+PLIST_FILES=	bin/hypersrc bin/Hypersrc.pl bin/ctags.pl
 
 post-patch:
 	@${PERL} -pi -e 's|"ctags"|"exctags"|g' ${WRKSRC}/Hypersrc.pl
