@@ -1722,6 +1722,7 @@ fget		ports/ftp/fget
 fhist		ports/devel/fhist
 fhttpd		ports/www/fhttpd
 fib		ports/devel/fib
+ficl-devel	ports/lang/ficl-devel
 fidelio		ports/net/fidelio
 fidogate	ports/news/fidogate
 figlet		ports/misc/figlet
