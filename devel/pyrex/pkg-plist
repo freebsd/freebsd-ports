@@ -15,6 +15,9 @@ bin/pyrexc
 %%PYTHON_SITELIBDIR%%/Pyrex/Compiler/ExprNodes.pyc
 %%PYTHON_SITELIBDIR%%/Pyrex/Compiler/ExprNodes.pyo
 %%PYTHON_SITELIBDIR%%/Pyrex/Compiler/Lexicon.pickle
+%%PYTHON_SITELIBDIR%%/Pyrex/Compiler/Lexicon.py
+%%PYTHON_SITELIBDIR%%/Pyrex/Compiler/Lexicon.pyc
+%%PYTHON_SITELIBDIR%%/Pyrex/Compiler/Lexicon.pyo
 %%PYTHON_SITELIBDIR%%/Pyrex/Compiler/Main.py
 %%PYTHON_SITELIBDIR%%/Pyrex/Compiler/Main.pyc
 %%PYTHON_SITELIBDIR%%/Pyrex/Compiler/Main.pyo
@@ -54,6 +57,9 @@ bin/pyrexc
 %%PYTHON_SITELIBDIR%%/Pyrex/Distutils/build_ext.py
 %%PYTHON_SITELIBDIR%%/Pyrex/Distutils/build_ext.pyc
 %%PYTHON_SITELIBDIR%%/Pyrex/Distutils/build_ext.pyo
+%%PYTHON_SITELIBDIR%%/Pyrex/Mac/FileMarking.py
+%%PYTHON_SITELIBDIR%%/Pyrex/Mac/FileMarking.pyc
+%%PYTHON_SITELIBDIR%%/Pyrex/Mac/FileMarking.pyo
 %%PYTHON_SITELIBDIR%%/Pyrex/Mac/Finder_Std_Suite.py
 %%PYTHON_SITELIBDIR%%/Pyrex/Mac/Finder_Std_Suite.pyc
 %%PYTHON_SITELIBDIR%%/Pyrex/Mac/Finder_Std_Suite.pyo
@@ -101,11 +107,22 @@ bin/pyrexc
 %%PORTDOCS%%share/doc/pyrex/old_news.html
 %%PORTDOCS%%share/doc/pyrex/overview.html
 %%PORTDOCS%%share/doc/pyrex/primes.c
+%%PORTDOCS%%share/doc/pyrex/sharing.html
 %%PORTDOCS%%share/doc/pyrex/special_methods.html
 %%PORTDOCS%%share/examples/pyrex/Makefile
 %%PORTDOCS%%share/examples/pyrex/Makefile.nodistutils
 %%PORTDOCS%%share/examples/pyrex/Setup.py
+%%PORTDOCS%%share/examples/pyrex/callback/Makefile
+%%PORTDOCS%%share/examples/pyrex/callback/Makefile.nodistutils
+%%PORTDOCS%%share/examples/pyrex/callback/README.txt
+%%PORTDOCS%%share/examples/pyrex/callback/Setup.py
+%%PORTDOCS%%share/examples/pyrex/callback/cheese.pyx
+%%PORTDOCS%%share/examples/pyrex/callback/cheesefinder.h
+%%PORTDOCS%%share/examples/pyrex/callback/run_cheese.py
 %%PORTDOCS%%share/examples/pyrex/embed/Makefile
+%%PORTDOCS%%share/examples/pyrex/embed/Makefile.msc
+%%PORTDOCS%%share/examples/pyrex/embed/Makefile.msc.static
+%%PORTDOCS%%share/examples/pyrex/embed/Makefile.unix
 %%PORTDOCS%%share/examples/pyrex/embed/README
 %%PORTDOCS%%share/examples/pyrex/embed/embedded.pxi
 %%PORTDOCS%%share/examples/pyrex/embed/embedded.pyx
@@ -118,17 +135,6 @@ bin/pyrexc
 %%PORTDOCS%%share/examples/pyrex/run_primes.py
 %%PORTDOCS%%share/examples/pyrex/run_spam.py
 %%PORTDOCS%%share/examples/pyrex/spam.pyx
-%%PORTDOCS%%share/examples/pyrex/callback/cheese.pyx
-%%PORTDOCS%%share/examples/pyrex/callback/cheesefinder.h
-%%PORTDOCS%%share/examples/pyrex/callback/Makefile
-%%PORTDOCS%%share/examples/pyrex/callback/Makefile.nodistutils
-%%PORTDOCS%%share/examples/pyrex/callback/README.txt
-%%PORTDOCS%%share/examples/pyrex/callback/run_cheese.py
-%%PORTDOCS%%share/examples/pyrex/callback/Setup.py
-%%PORTDOCS%%share/examples/pyrex/callback/cheesefinder.c
-%%PORTDOCS%%share/examples/pyrex/embed/Makefile.msc
-%%PORTDOCS%%share/examples/pyrex/embed/Makefile.msc.static
-%%PORTDOCS%%share/examples/pyrex/embed/Makefile.unix
 %%PORTDOCS%%@dirrm share/examples/pyrex/callback
 %%PORTDOCS%%@dirrm share/examples/pyrex/embed
 %%PORTDOCS%%@dirrm share/examples/pyrex
