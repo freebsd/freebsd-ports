@@ -23,8 +23,6 @@ share/gnome/Moleskine/Moleskine/__init__.py
 share/gnome/Moleskine/Moleskine/__init__.pyc
 share/gnome/Moleskine/Moleskine/about.py
 share/gnome/Moleskine/Moleskine/about.pyc
-share/gnome/Moleskine/Moleskine/actions.py
-share/gnome/Moleskine/Moleskine/actions.pyc
 share/gnome/Moleskine/Moleskine/findtools.py
 share/gnome/Moleskine/Moleskine/findtools.pyc
 share/gnome/Moleskine/Moleskine/menu.py
