@@ -1,0 +1,40 @@
+--- fop.sh.orig	Sat Jul  6 03:06:22 2002
++++ fop.sh	Sat Aug  3 14:45:50 2002
+@@ -1,5 +1,28 @@
+ #! /bin/sh
+ #
++# Common variables
++PREFIX=/usr/local
++
++# Default JAVACMD, JAVA_HOME, FOP_HOME
++JAVACMD=${JAVACMD:-`which javavm`}
++if [ -f ${PREFIX}/etc/javavms ]; then
++    JAVA_HOME=`head -1 /usr/local/etc/javavms | sed -e 's,/bin/java *#.*$,,'`
++elif [ -n "`echo ${PREFIX}/jdk*/bin/java 2> /dev/null`" ]; then
++    JAVA_HOME=`ls -d /usr/local/jdk*/bin/java | sort -r | head -1 | sed -e 's,/bin/java *$,,'`
++fi
++SHAREDIR=${PREFIX}/share
++FOP_HOME=${SHAREDIR}/fop
++DIRLIBS="\
++    ${FOP_HOME}/lib/xalan-2.3.1.jar
++    ${FOP_HOME}/lib/ant-1.4.1.jar
++    ${FOP_HOME}/lib/avalon-framework-cvs-20020315.jar
++    ${FOP_HOME}/lib/batik.jar
++    ${FOP_HOME}/lib/bsf.jar
++    ${FOP_HOME}/lib/buildtools.jar
++    ${FOP_HOME}/lib/stylebook.jar
++    ${FOP_HOME}/lib/xercesImpl-2.0.1.jar
++    ${FOP_HOME}/lib/xml-apis.jar"
++
+ # Shell script to run FOP, adapted from the Jakarta-Ant project.
+ 
+ if [ -f $HOME/.foprc ] ; then 
+@@ -79,7 +102,7 @@
+ LOCALCLASSPATH=${FOP_HOME}/build/fop.jar:$LOCALCLASSPATH
+ 
+ # add in the dependency .jar files, which reside in $FOP_HOME/lib
+-DIRLIBS=${FOP_HOME}/lib/*.jar
++
+ for i in ${DIRLIBS}
+ do
+     # if the directory is empty, then it will return the input string

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fop
-PORTVERSION=	0.20.3
+PORTVERSION=	0.20.4
 CATEGORIES=	textproc java
 MASTER_SITES=	http://xml.apache.org/dist/fop/ \
 		http://xml.apache.org/dist/fop/recent/
@@ -14,28 +14,30 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	kiri@FreeBSD.org
 
-RUN_DEPENDS=	${LOCALBASE}/jdk${JDKVERSION}/bin/java:${PORTSDIR}/java/jdk11 \
-		${LOCALBASE}/share/java/classes/xerces.jar:${PORTSDIR}/textproc/xerces-j
-
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
 NO_BUILD=	yes
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
-JDKVERSION=	1.1.8
-JAVACLASSDIR=	${PREFIX}/share/java/classes
-JAVADATADIR=	${PREFIX}/share/java/${PKGNAME}
+USE_JAVA=	1.2+
+NO_BUILD_DEPENDS_JAVA=	YES
+
+JAVA_LIBDIR=	${PREFIX}/share/java/classes
 
 pre-install:
-	${MKDIR} ${JAVACLASSDIR} ${JAVADATADIR}
+	${MKDIR} ${JAVA_LIBDIR} ${DATADIR} ${DOCSDIR}
 	find ${WRKSRC} \( -name \*.orig -o -name \*~ -o -name CVS \) -exec ${RM} -rf \{} \;
 
 do-install:
 	cd ${WRKSRC}; \
-		${INSTALL_DATA} build/fop.jar lib/batik.jar lib/stylebook.jar \
-			${JAVACLASSDIR}; \
+		${INSTALL_DATA} build/fop.jar ${JAVA_LIBDIR}; \
 		${INSTALL_DATA} CHANGES LICENSE README ReleaseNotes.html \
-			STATUS build.xml buildtools.xml ${JAVADATADIR}; \
-		${INSTALL_SCRIPT} build.sh fop.sh ${JAVADATADIR}; \
-		${CP} -R conf docs hyph javadocs lib src ${JAVADATADIR}
+			STATUS build.xml buildtools.xml ${DATADIR}; \
+		${INSTALL_SCRIPT} build.sh fop.sh ${DATADIR}; \
+		${LN} -sf ${DATADIR}/fop.sh ${PREFIX}/bin/fop; \
+		${CP} -R build conf hyph lib ${DATADIR}
+.if !defined(NOPORTDOCS)
+	(cd ${WRKSRC}/docs && \
+		${TAR} -cf - . | ${TAR} -xf - -C ${DOCSDIR})
+.endif
 
 .include <bsd.port.mk>
