@@ -9,7 +9,8 @@ PORTNAME=	cplay
 PORTVERSION=	1.45
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://www.tf.hut.fi/~flu/cplay/
+MASTER_SITES=	http://www.tf.hut.fi/~flu/cplay/ \
+		http://www.tf.hut.fi/~flu/cplay/old/
 
 MAINTAINER=	j.kossen@home.nl
 
