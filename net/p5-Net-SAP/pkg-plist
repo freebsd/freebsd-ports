@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Net/SAP.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SAP/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SAP
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Net 2>/dev/null || true
