@@ -15,6 +15,7 @@
     SUBDIR += ample
     SUBDIR += arts
     SUBDIR += ascd
+    SUBDIR += asmix
     SUBDIR += aube
     SUBDIR += audacity
     SUBDIR += aumix
