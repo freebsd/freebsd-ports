@@ -400,6 +400,7 @@
     SUBDIR += xpm
     SUBDIR += xpx
     SUBDIR += xsane
+    SUBDIR += xtheater
     SUBDIR += xv
     SUBDIR += xv-m17n
     SUBDIR += xvid
