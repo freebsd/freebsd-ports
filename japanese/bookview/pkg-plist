@@ -12,7 +12,9 @@ share/bookview/finder.tcl
 share/bookview/help-ja.txt
 share/bookview/help.tcl
 share/bookview/help.txt
+share/bookview/ja.mo
 share/bookview/menu.gif
+share/bookview/message.tcl
 share/bookview/ndtp.tcl
 share/bookview/next.gif
 share/bookview/prev.gif
