@@ -1,6 +1,6 @@
---- control-center/Makefile.in.orig	Mon Mar  1 00:10:13 1999
-+++ control-center/Makefile.in	Tue Mar  2 22:17:32 1999
-@@ -130,7 +130,7 @@
+--- control-center/Makefile.in.orig	Tue Oct  5 16:45:56 1999
++++ control-center/Makefile.in	Wed Feb 23 13:42:28 2000
+@@ -131,7 +131,7 @@
  cxxflags_set = @cxxflags_set@
  l = @l@
  
@@ -9,7 +9,7 @@
  
  
  bin_PROGRAMS = gnomecc
-@@ -150,16 +150,16 @@
+@@ -154,16 +154,16 @@
  
  EXTRA_DIST = gnomecc.desktop cappletConf.sh.in $(appicon_DATA)
  
@@ -29,3 +29,11 @@
  libcapplet_la_LIBADD = $(ORB_LIBS) -lm $(DL_LIB) $(GNORBA_LIBS)
  
  include_HEADERS = capplet-widget.h
+@@ -561,6 +561,7 @@
+ 	    -e 's?\@GNOMEUI_LIBS\@?$(GNOMEUI_LIBS)?g' \
+ 	    -e 's?\@GNOME_INCLUDEDIR\@?$(GNOME_INCLUDEDIR)?g' \
+ 	    -e 's?\@ORB_LIBS\@?$(ORB_LIBS)?g' \
++	    -e 's?\@VERSION\@?$(VERSION)?g' \
+ 	    < $(srcdir)/cappletConf.sh.in > cappletConf.tmp \
+ 	  && mv cappletConf.tmp cappletConf.sh
+ 
