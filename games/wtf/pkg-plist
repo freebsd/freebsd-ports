@@ -1,3 +1,4 @@
 bin/wtf
 share/wtf/acronyms
+share/wtf/acronyms.comp
 @dirrm share/wtf
