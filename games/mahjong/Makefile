@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mahjong
-PORTVERSION=	1.5.6
+PORTVERSION=	1.6
 CATEGORIES=	games net
 MASTER_SITES=	http://www.stevens-bradfield.com/MahJong/Source/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. OLD
@@ -16,7 +16,7 @@ DISTNAME=	mj-${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A networked Mah Jong program, together with a computer player
 
-USE_PERL5=	yes
+USE_PERL5_BUILD=	yes
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
 MAKE_ENV=	CCLINK="${CC}" CDEBUGFLAGS="${CFLAGS}" \
@@ -36,5 +36,11 @@ post-patch:
 		 s|^PERL|#PERL|g ; \
 		 s|^INST|#INST|g ; \
 		 s|gtk-config|\$$\{GTK_CONFIG\}|g' ${WRKSRC}/Makefile
+
+do-install:
+.for file in mj-server mj-player xmj
+	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${PREFIX}/bin/${file}
+.endfor
+	${INSTALL_MAN} ${WRKSRC}/xmj.man ${MANPREFIX}/man/man1/xmj.1
 
 .include <bsd.port.mk>
