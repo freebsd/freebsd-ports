@@ -6,20 +6,19 @@
 #
 
 PORTNAME=	ut
-PORTVERSION=	2.6a
-MASTER_SITES=	http://houston.jeffs-place.org/urbanterror/ \
-		ftp://ut.petrovits.net/pub/UrbanTerror/ \
-		http://digitalrhapsody.com/ \
-		http://www.thedatasource.net/~gleam/ \
-		http://www.midwestmayhem.com/ \
-		http://64.246.40.38/
-DISTFILES=	beta26_full.zip \
-		beta26a_upgrade.zip
+PORTVERSION=	3.0
+MASTER_SITES=	http://64.159.80.11/ \
+		ftp://mirror.candidhosting.com/pub/ut/ \
+		http://box3.fsk405.org/q3ut3/ \
+		http://fsk405.org/q3ut3/ \
+		ftp://www.playdedicated.com/pub/sid/quake3/ \
+		ftp://ftp.edome.net/online/clientit/ \
+		http://atrivo.wofut.com/~zac/
+DISTNAME=	urbanterror3
 
 COMMENT=	Quake III Arena Mod: Urban Terror for Linux
 
-NO_WRKSUBDIR=	yes
-EXTRACT_BEFORE_ARGS=	-o -qq
+WRKSRC=		${WRKDIR}/q3ut3
 
 Q3_MOD_MASTER=	${.CURDIR}/../q3server-ra3
 

@@ -1,18 +1,7 @@
-%%Q3DIR%%inet_server.cfg
-%%Q3DIR%%lan_server.cfg
-%%PORTDOCS%%%%Q3DIR%%manual.pdf
-%%Q3DIR%%mapcycle.txt
-%%Q3DIR%%mappacks_mapcycle.txt
-%%Q3DIR%%pak0.pk3
-%%Q3DIR%%pak1.pk3
-%%Q3DIR%%pak2.pk3
-%%Q3DIR%%pak3.pk3
-%%Q3DIR%%pak4.pk3
-%%Q3DIR%%pak5.pk3
-%%Q3DIR%%pak6.pk3
-%%Q3DIR%%pak7.pk3
-%%Q3DIR%%punkbuster.cfg
-%%PORTDOCS%%%%Q3DIR%%q3ut2.ico
+%%PORTDOCS%%%%Q3DIR%%Urban Terror 3.0.lnk
+%%PORTDOCS%%%%Q3DIR%%overview.txt
+%%PORTDOCS%%%%Q3DIR%%q3ut.ico
+%%PORTDOCS%%%%Q3DIR%%radio commands.txt
 %%PORTDOCS%%%%Q3DIR%%readme.txt
-%%Q3DIR%%sampleConfig.cfg
+%%Q3DIR%%zQ3UT3.pk3
 @dirrm %%Q3DIR%%
