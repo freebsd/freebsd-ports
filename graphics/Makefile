@@ -128,6 +128,7 @@
     SUBDIR += plotutils
     SUBDIR += png
     SUBDIR += png2html
+    SUBDIR += pngcheck
     SUBDIR += pngcrush
     SUBDIR += pnmtopng
     SUBDIR += povray
