@@ -9,7 +9,7 @@ bin/%%GNU_HOST%%-gcc34
 bin/%%GNU_HOST%%-g++34
 bin/%%GNU_HOST%%-gcj
 bin/%%GNU_HOST%%-gcjh
-bin/gccbug-%%GCC_VER%%
+bin/gccbug34
 bin/gcj34
 bin/gcjh34
 bin/gij34
