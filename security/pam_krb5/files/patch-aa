@@ -1,0 +1,89 @@
+--- Makefile.orig	Tue Jan  4 19:08:51 2000
++++ Makefile	Mon Nov  6 10:59:16 2000
+@@ -1,48 +1,51 @@
+ #
+ # Makefile for pam_krb5
+ #
++CC = cc
++CFLAGS = -O -fPIC -Wall
++LDFLAGS = -shared
+ 
+-CC = gcc
+-CFLAGS = -O2 -fPIC
+-#LDFLAGS = -shared
+-LDFLAGS = -G
++OSLIBS = -lpam
+ 
+-DESTDIR = /usr/lib/security
+-MANDIR = /opt/local/man/man5
++# HEIMDAL
++LIBS_heimdal = ${KRB5BASE}/lib/libkrb5.a ${KRB5BASE}/lib/libasn1.a   \
++	${KRB5BASE}/lib/libcom_err.a ${KRB5BASE}/lib/libroken.a  \
++	${KRB5BASE}/lib/libgssapi.a ${KRB5BASE}/lib/libdes.a 
+ 
+-OSLIBS = -lpam -lnsl -lsocket
+-KRB5LIBS = -L/opt/local/lib -lkrb5 -lk5crypto -lcom_err
++# MIT
++LIBS_mit = ${KRB5BASE}/lib/libkrb5.a ${KRB5BASE}/lib/libcom_err.a \
++	${KRB5BASE}/lib/libk5crypto.a
+ 
+-LIBS = $(OSLIBS) $(KRB5LIBS)
++LIBS = $(OSLIBS) ${LIBS_${KRB5_IMPL}}
++COMPAT = compat_${KRB5_IMPL}.c
+ 
+-INC = -I/opt/local/include
++INC = -I${KRB5BASE}/include
+ 
+ 
+ ####################################################################
+ # No changes below this line
+ 
+ SRCS = pam_krb5_auth.c pam_krb5_pass.c pam_krb5_acct.c pam_krb5_sess.c \
+-	support.c
++	support.c ${COMPAT}
+ 
+ OBJS = pam_krb5_auth.o pam_krb5_pass.o pam_krb5_acct.o pam_krb5_sess.o \
+-	support.o
++	support.o ${COMPAT:.c=.o}
+ 
+-all: pam_krb5.so.1
++all: pam_krb5.so
+ 
+-pam_krb5.so.1: $(OBJS)
++pam_krb5.so: $(OBJS)
+ 	$(CC) -o $@ $(LDFLAGS) $(OBJS) $(LIBS)
+ 
+ install:
+-	cp pam_krb5.so.1 $(DESTDIR)
+-	chown root:sys $(DESTDIR)/pam_krb5.so.1
+-	ln -s ./pam_krb5.so.1 $(DESTDIR)/pam_krb5.so
+-	cp pam_krb5.5 $(MANDIR)
+-	chown root:sys $(MANDIR)/pam_krb5.5
++	${INSTALL} -c -o ${BINOWN} -g ${BINGRP} -m 0555 pam_krb5.so \
++	    ${PREFIX}/lib/pam_krb5.so
++	${INSTALL} -c -o ${MANOWN} -g ${MANGRP} -m 0444 pam_krb5.5 \
++	    ${MANPREFIX}/man/man8/pam_krb5.8
+ 
+ clean:
+-	rm -f *.so.1 *.o
++	rm -f *.so *.o
+ 
+-pam_krb5_auth.o: pam_krb5_auth.c pam_krb5.h
++pam_krb5_auth.o: pam_krb5_auth.c pam_krb5.h krb5compat.h
+ 	$(CC) -c $(CFLAGS) $(INC) $<
+ 
+ pam_krb5_pass.o: pam_krb5_pass.c pam_krb5.h
+@@ -54,6 +57,12 @@
+ pam_krb5_sess.o: pam_krb5_sess.c pam_krb5.h
+ 	$(CC) -c $(CFLAGS) $(INC) $<
+ 
+-support.o: support.c pam_krb5.h
++support.o: support.c pam_krb5.h krb5compat.h
++	$(CC) -c $(CFLAGS) $(INC) $<
++
++compat_heimdal.o: compat_heimdal.c krb5compat.h
++	$(CC) -c $(CFLAGS) $(INC) $<
++
++compat_mit.o: compat_mit.c krb5compat.h
+ 	$(CC) -c $(CFLAGS) $(INC) $<
+ 
