@@ -8,7 +8,7 @@
 PORTNAME=	jdk
 PORTVERSION=	1.2.2
 CATEGORIES=	java devel
-MASTER_SITES=	ftp://ftp.uk.linux.org/pub/linux/java/JDK-1.2.2/i386/rc4/ \
+MASTER_SITES=	ftp://iodynamics.com/pub/mirror/linux-jdk/JDK-1.2.2/i386/rc4/ \
 		ftp://ftp.tux.org/pub/java/JDK-1.2.2/i386/rc4/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	jdk-1.2.2-RC4-linux-i386-glibc-2.1.2
