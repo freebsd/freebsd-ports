@@ -7,6 +7,7 @@
 
 PORTNAME=	gauche
 PORTVERSION=	0.7	# Keep databases/gauche-gdbm in sync with this
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
