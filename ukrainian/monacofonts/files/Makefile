@@ -19,9 +19,9 @@ fonts.dir: ${PCFS}
 # that hardcode koi8-r in them, but omit koi8-u -- there will be another
 # alias:
 fonts.alias: fonts.dir
-	awk '/monaco/ {
-		name = $$2; gsub("isoir-111", "koi8-u", $$2);
-		print $$2 " " name; gsub("koi8-u", "koi8-r", $$2);
+	awk '/monaco/ { \
+		name = $$2; gsub("isoir-111", "koi8-u", $$2); \
+		print $$2 " " name; gsub("koi8-u", "koi8-r", $$2); \
 		print $$2 " " name}' < fonts.dir > fonts.alias
 
 DIR=	${X11BASE}/lib/X11/fonts/koi8u-monaco
