@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	icewm
-PORTVERSION=	1.2.18
-PORTREVISION=	1
+PORTVERSION=	1.2.19
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -92,8 +91,6 @@ post-extract:
 	@${CP} -f ${FILESDIR}/bsd-daemon.xpm ${WRKSRC}/lib/taskbar
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|CXX_LINK=$${CC}|CXX_LINK=$${CXX}|g' ${WRKSRC}/configure
 .for file in src/gnome2.cc
 	@${REINPLACE_CMD} -e \
 		's|/usr/share/control|${X11BASE}/share/gnome/control|g ; \
