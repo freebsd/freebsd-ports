@@ -1,12 +1,12 @@
-smlnj/lib/cml/CM/x86-unix/basis.cm
-smlnj/lib/cml/CM/x86-unix/cml-internal.cm
-smlnj/lib/cml/CM/x86-unix/cml.cm
-smlnj/lib/cml/CM/x86-unix/core-cml.cm
-smlnj/lib/cml-lib/CM/x86-unix/smlnj-lib.cm
-smlnj/lib/cml-lib/CM/x86-unix/trace-cml.cm
-@dirrm smlnj/lib/cml/CM/x86-unix
+smlnj/lib/cml/CM/%%MLARCH%%-unix/basis.cm
+smlnj/lib/cml/CM/%%MLARCH%%-unix/cml-internal.cm
+smlnj/lib/cml/CM/%%MLARCH%%-unix/cml.cm
+smlnj/lib/cml/CM/%%MLARCH%%-unix/core-cml.cm
+smlnj/lib/cml-lib/CM/%%MLARCH%%-unix/smlnj-lib.cm
+smlnj/lib/cml-lib/CM/%%MLARCH%%-unix/trace-cml.cm
+@dirrm smlnj/lib/cml/CM/%%MLARCH%%-unix
 @dirrm smlnj/lib/cml/CM
 @dirrm smlnj/lib/cml
-@dirrm smlnj/lib/cml-lib/CM/x86-unix
+@dirrm smlnj/lib/cml-lib/CM/%%MLARCH%%-unix
 @dirrm smlnj/lib/cml-lib/CM
 @dirrm smlnj/lib/cml-lib

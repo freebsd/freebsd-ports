@@ -1,11 +1,11 @@
---- src/compiler/viscomp-core.cm.orig	Tue May  8 23:25:14 2001
-+++ src/compiler/viscomp-core.cm	Thu Aug  9 00:06:53 2001
-@@ -69,6 +69,26 @@
- 
- 	functor DummyCCallsFn
- 	structure ClusterAnnotation
+--- src/compiler/core.cm.orig	Fri Aug 24 19:48:52 2001
++++ src/compiler/core.cm	Thu Aug 30 11:51:20 2001
+@@ -81,6 +81,26 @@
+ 	signature PICKMOD
+ 	signature UNPICKMOD
+ 	signature FLINT
 +
-+      	(* export of structures required to use FLINT directly -5- *)
++	(* export of structures required to use FLINT directly -5- *)
 +	structure Types
 +	structure Translate
 +	(* in 110.27 already exported above: structure FLINT *)
@@ -26,4 +26,4 @@
 +
  is
  
- TopLevel/batch/batchconfig.sml
+ TopLevel/environ/environ.sig
