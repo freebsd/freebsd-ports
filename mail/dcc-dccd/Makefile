@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dcc-dccd
-PORTVERSION=	1.2.58
+PORTVERSION=	1.2.66
 CATEGORIES=	mail
 MASTER_SITES=	http://www.rhyolite.com/anti-spam/dcc/source/old/ \
 		http://www.wa.apana.org.au/~dean/sources/ \
@@ -39,6 +39,8 @@ DCCGID?=	112
 # WITH_SENDMAIL_BASE=yes
 #  or
 # WITH_SENDMAIL_PORT=yes
+#  or
+# WITHOUT_SENDMAIL=yes
 #
 
 # if no preference was set, check for an up to date base version
@@ -58,7 +60,9 @@ WITH_SENDMAIL_BASE=yes
 MILTERBASE=	/usr
 WITH_SENDMAIL=	yes
 .else
+.if !defined(WITHOUT_SENDMAIL)
 BROKEN=		"Base system sendmail not found or too old, rebuild with WITH_SENDMAIL_PORT=yes"
+.endif
 .endif
 .else
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/sendmail
