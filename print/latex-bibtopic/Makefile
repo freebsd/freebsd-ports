@@ -5,7 +5,8 @@
 # $FreeBSD$
 
 PORTNAME=	latex-bibtopic
-PORTVERSION=	1.0.20020822
+PORTVERSION=	1.2.20030228
+PORTREVISION=	0
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	macros/latex/contrib/bibtopic
@@ -31,7 +32,7 @@ TEX_BIN=	${LOCALBASE}/bin/latex
 CLASSDIR=	${TEXMFLOCAL}/tex/latex/${PORTNAME:S/^latex-//}
 CLASS_FILES=	bibtopic.sty bibtopic.ins bibtopic.dtx
 
-DOC_FILES=	README
+DOC_FILES=	README bibtopic.pdf
 
 do-extract:
 	${MKDIR} ${WRKSRC}
