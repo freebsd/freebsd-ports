@@ -38,7 +38,7 @@ BUGZILLADIR=	${PREFIX}/www/data.default/bugzilla
 BUGZILLADOCS=	html images txt rel_notes.txt
 BONSAIPERLWC=	*.cgi *.pl *.pm processmail syncshadowdb
 
-pre-everything:
+pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "You may use the following options:"
 	@${ECHO_MSG} ""
