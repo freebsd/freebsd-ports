@@ -1,5 +1,0 @@
-@comment $FreeBSD$
-bin/ia64sim
-%%PORTDOCS%%share/doc/ia64sim/ia64user.txt
-%%PORTDOCS%%share/doc/ia64sim/readme
-@dirrm share/doc/ia64sim

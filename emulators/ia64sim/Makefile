@@ -17,9 +17,6 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IA64 simulator (Intel(R) Architecture 64)
 
-BROKEN=		checksum mismatch
-EXPIRATION_DATE=2004-08-20
-DEPRECATED=	${BROKEN}
 USE_ZIP=	yes
 
 .include <bsd.port.pre.mk>
@@ -36,6 +33,9 @@ EXTRACT_BEFORE_ARGS=	-qLa
 WRKSRC=		${WRKDIR}/home/chuck/ia64simcc
 USE_GMAKE=	yes
 MAKEFILE=	makefile.unx
+
+PLIST_FILES=	bin/ia64sim
+PORTDOCS=	ia64user.txt readme
 
 pre-build:
 	${RM} -f ${WRKSRC}/obj/*.o
