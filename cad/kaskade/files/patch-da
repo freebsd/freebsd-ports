@@ -1,0 +1,936 @@
+diff -u /tmp/kaskade/work/3.1/adapt.cc ./adapt.cc
+--- /tmp/kaskade/work/3.1/adapt.cc	Tue May 21 09:09:02 1996
++++ ./adapt.cc	Sat Jan 29 11:56:44 2000
+@@ -546,7 +546,7 @@
+ 
+     const Vector<Num>&  u = problem.u;
+ 
+-    const edNodeM1 = u.high();
++    const int edNodeM1 = u.high();
+     int   edNode = edNodeM1;
+ 
+     interfaceDLY->setHighOrderNodes(&edNode);
+@@ -577,8 +577,8 @@
+ 	}
+     }
+ 
+-    const low  = problem.element->NoOfNodes()+1;
+-    const high = elementDLY->NoOfNodes();
++    const int low  = problem.element->NoOfNodes()+1;
++    const int high = elementDLY->NoOfNodes();
+  
+     Matrix<Num> AElem(high, high);
+     Vector<Num> bElem(high);
+@@ -648,7 +648,7 @@
+     MESH* mesh = problem.Mesh();
+     mesh->resetElemIter();
+ 
+-    const nComp = problem.NComp();
++    const int nComp = problem.NComp();
+ 
+ 
+     if (problem.SpaceDim() == 1)
+@@ -662,7 +662,7 @@
+     }
+     else
+     {
+-	const noOfEdges = problem.element->NoOfEdges();
++	const int noOfEdges = problem.element->NoOfEdges();
+ 	Vector<PATCH*> edges(noOfEdges);
+ 	
+ 	while (patch = mesh->elemIterAll() )
+diff -u /tmp/kaskade/work/3.1/adaptnl.cc ./adaptnl.cc
+--- /tmp/kaskade/work/3.1/adaptnl.cc	Tue Apr 23 09:45:00 1996
++++ ./adaptnl.cc	Sat Jan 29 11:59:05 2000
+@@ -76,7 +76,7 @@
+     MESH* mesh = problem.Mesh();
+     Vector<Num>&  u = problem.u;
+ 
+-    const edNodeM1 = u.high();
++    const int edNodeM1 = u.high();
+     int   edNode   = edNodeM1;
+ 
+     interfaceDLY->setHighOrderNodes(&edNode);
+@@ -97,8 +97,8 @@
+ 	trP->solutionToNewMesh(uPrevOnNewMesh, interfaceDLY);
+     }
+ 
+-    const low  = problem.element->NoOfNodes()+1;
+-    const high = elementDLY->NoOfNodes();
++    const int low  = problem.element->NoOfNodes()+1;
++    const int high = elementDLY->NoOfNodes();
+ 
+     Matrix<Num> AElem(high, high);
+     Vector<Num> bElem(high);
+@@ -196,7 +196,7 @@
+     Num  res, a;
+     Real uppDefO, lowDefO;		// dummies
+     Bool critical;
+-    const dim = error.high();
++    const int dim = error.high();
+     
+     Vector<Real> extUppO(dim), extLowO(dim);
+ 
+@@ -369,7 +369,7 @@
+     MESH* mesh = problem.Mesh();
+     const Vector<Num>&  u = problem.u;
+ 
+-    const edNodeM1 = u.high();
++    const int edNodeM1 = u.high();
+     int   edNode   = edNodeM1;
+ 
+     interfaceDLY->setHighOrderNodes(&edNode);
+@@ -399,7 +399,7 @@
+     AbQ.reset();
+ 
+ 
+-    const high = lagrangeElementDLY->NoOfNodes();
++    const int high = lagrangeElementDLY->NoOfNodes();
+ 
+     Matrix<Num> AElem(high,high);
+     Vector<Num> bElem(high);
+@@ -472,7 +472,7 @@
+     Num  eNew, res, a;
+     Real uppDefO, lowDefO;	
+     Bool critical;
+-    const quadDim = error.high();
++    const int quadDim = error.high();
+     
+     Vector<Real> extLowO(quadDim), extUppO(quadDim);
+ 
+@@ -564,7 +564,7 @@
+     Num  eNew, res, a;
+     Real uppDefO, lowDefO;	
+     Bool critical;
+-    const quadDim = error.high();
++    const int quadDim = error.high();
+     
+     Vector<Real> extLowO(quadDim), extUppO(quadDim);
+ 
+@@ -572,7 +572,7 @@
+     nonLin->updateObstacles(extUppO, extLowO, *interfaceDLY);
+ 
+ 
+-    const linDim = nonLin->lowObstacle.high();
++    const int linDim = nonLin->lowObstacle.high();
+ 
+     Vector<Num> r(quadDim), Diag0(quadDim), aux(quadDim);
+ 
+@@ -673,7 +673,7 @@
+     FORALL(r,i) aux[i] = r[i] - aux[i];		// the new residual
+     interfaceDLY->rhsToHB(aux);
+ 
+-    const maxLevel = precond->maxLevel; 
++    const int maxLevel = precond->maxLevel; 
+     Vector<Num> rLin(linDim);
+     FORALL(rLin,i) 
+     {
+@@ -686,8 +686,8 @@
+     // initialize the multi-level preconditioner and call one V-Cycle:
+ 
+ 
+-    const nPreSmooth0  = precond->nPreSmooth;
+-    const nPostSmooth0 = precond->nPostSmooth;
++    const int nPreSmooth0  = precond->nPreSmooth;
++    const int nPostSmooth0 = precond->nPostSmooth;
+     precond->nPreSmooth  = 1;
+     precond->nPostSmooth = 1;
+ 
+diff -u /tmp/kaskade/work/3.1/block.cc ./block.cc
+--- /tmp/kaskade/work/3.1/block.cc	Tue Apr 23 09:45:00 1996
++++ ./block.cc	Sat Jan 29 16:02:17 2000
+@@ -28,7 +28,7 @@
+ void BlockNode:: reset(int nComp)
+ {
+     int i;
+-    const n = nComp*nComp;
++    const int n = nComp*nComp;
+     for (i=1; i<=n; ++i)  D[i] = 0.0;
+ }
+ //-------------------------------------------------------------------------
+@@ -36,7 +36,7 @@
+ void NeighbourBlock:: reset(int nComp)
+ {
+     int i;
+-    const n = nComp*nComp;
++    const int n = nComp*nComp;
+     for (i=1; i<=n; ++i)  L[i] = 0.0;
+ }
+ //-------------------------------------------------------------------------
+@@ -44,7 +44,7 @@
+ void AsymNeighbourBlock:: reset(int nComp)
+ {
+     int i;
+-    const n = nComp*nComp;
++    const int n = nComp*nComp;
+     for (i=1; i<=n; ++i)  L[i] = U[i] = 0.0;
+ }
+ //-------------------------------------------------------------------------
+@@ -67,7 +67,7 @@
+ void BlockNode:: Invert(Matrix<Num>& AM, Matrix<Num>& AMInv)
+ {
+     int i, j, n;
+-    const nComp = AM.cHigh();
++    const int nComp = AM.cHigh();
+ 
+     n = 1;
+     FORNCOMP(i) FORNCOMP(j) AM(i,j) = D[n++];
+@@ -82,7 +82,7 @@
+ void BlockNode:: Add(Vector<Num*>& Ap)
+ {
+     int i,k,n=1;
+-    const nComp = Ap.high();
++    const int nComp = Ap.high();
+     FORNCOMP(i) FORNCOMP(k) D[n++] += Ap[i][k];
+ }
+ //-------------------------------------------------------------------------
+@@ -90,7 +90,7 @@
+ void BlockNode:: getD(Vector<Num>& data, int nComp) const
+ {
+     int i;
+-    const n = nComp*nComp;
++    const int n = nComp*nComp;
+     for (i=1; i<=n; ++i) data[i] = D[i];
+ }
+ //-------------------------------------------------------------------------
+@@ -121,7 +121,7 @@
+ void NeighbourBlock:: LAdd(Vector<Num*>& Ap)
+ {
+     int i,k,n=1;
+-    const nComp = Ap.high();
++    const int nComp = Ap.high();
+     FORNCOMP(i) FORNCOMP(k) L[n++] += Ap[i][k];
+ }
+ //-------------------------------------------------------------------------
+@@ -129,7 +129,7 @@
+ void AsymNeighbourBlock:: UAdd(Vector<Num*>& Ap)
+ {
+     int i,k,n=1;
+-    const nComp = Ap.high();
++    const int nComp = Ap.high();
+     FORNCOMP(i) FORNCOMP(k) U[n++] += Ap[i][k];
+ }
+ //-------------------------------------------------------------------------
+@@ -138,7 +138,7 @@
+ void NeighbourBlock:: getL(Vector<Num>& data, int nComp) const
+ {
+     int i;
+-    const n = nComp*nComp;
++    const int n = nComp*nComp;
+     for (i=1; i<=n; ++i) data[i] = L[i];
+ }
+ //-------------------------------------------------------------------------
+@@ -146,7 +146,7 @@
+ void NeighbourBlock:: getU(Vector<Num>& data, int nComp) const
+ {
+     int i;
+-    const n = nComp*nComp;
++    const int n = nComp*nComp;
+     for (i=1; i<=n; ++i) data[i] = L[i];
+ }
+ //-------------------------------------------------------------------------
+@@ -154,7 +154,7 @@
+ void AsymNeighbourBlock:: getU(Vector<Num>& data, int nComp) const
+ {
+     int i;
+-    const n = nComp*nComp;
++    const int n = nComp*nComp;
+     for (i=1; i<=n; ++i) data[i] = U[i];
+ }
+ //-------------------------------------------------------------------------
+@@ -235,7 +235,7 @@
+     --DInv;
+ 
+     int i;
+-    const size = nComp*nComp;
++    const int size = nComp*nComp;
+     for (i=1; i<=size; ++i) D[i] = DInv[i] = 0.0; 
+ }
+ //-------------------------------------------------------------------------
+@@ -256,7 +256,7 @@
+     --L;
+ 
+     int i;
+-    const size = nComp*nComp;
++    const int size = nComp*nComp;
+     for (i=1; i<=size; ++i) L[i] = 0.0; 
+ }
+ //-------------------------------------------------------------------------
+@@ -279,7 +279,7 @@
+     --U;
+ 
+     int i;
+-    const size = nComp*nComp;
++    const int size = nComp*nComp;
+     for (i=1; i<=size; ++i) L[i] = U[i] = 0.0; 
+ }
+ //-------------------------------------------------------------------------
+diff -u /tmp/kaskade/work/3.1/cmdpars.h ./cmdpars.h
+--- /tmp/kaskade/work/3.1/cmdpars.h	Tue Apr 23 09:45:02 1996
++++ ./cmdpars.h	Sat Jan 29 11:49:24 2000
+@@ -15,17 +15,17 @@
+ 
+     void read(int argc, char** argv);
+ 
+-    ReadCmdFile (const char *file);
++    int ReadCmdFile (const char *file);
+     void putToDict(char* obj);
+ 
+-    isSet(char* key, char* name);
+-    isPresent(char* name);		// 
+-    isTrue (char* name);		      // boolean
++    int isSet(char* key, char* name);
++    int isPresent(char* name);
++    int isTrue (char* name);		      // boolean
+ 
+-    get(char* name, char*   val);
+-    get(char* name, int*    val);
+-    get(char* name, float*  val);
+-    get(char* name, double* val);
++    int get(char* name, char*   val);
++    int get(char* name, int*    val);
++    int get(char* name, float*  val);
++    int get(char* name, double* val);
+ 
+     friend ostream& operator<< (ostream& os, CmdPars& c);
+ };
+diff -u /tmp/kaskade/work/3.1/dict.h ./dict.h
+--- /tmp/kaskade/work/3.1/dict.h	Tue Apr 23 09:45:02 1996
++++ ./dict.h	Sat Jan 29 11:49:43 2000
+@@ -7,7 +7,7 @@
+ 
+ #include "stack.h"
+ 
+-const DefaultDictSize = 25;
++const int DefaultDictSize = 25;
+ 
+ 
+ class Dict
+diff -u /tmp/kaskade/work/3.1/drivers.h ./drivers.h
+--- /tmp/kaskade/work/3.1/drivers.h	Tue Apr 23 09:45:02 1996
++++ ./drivers.h	Sat Jan 29 16:09:17 2000
+@@ -53,7 +53,7 @@
+ 	{ notImplementedError(); return 0;}
+     virtual void geometric(GRAPHIC *graph, int geo, coor org, coor vec)
+ 	{ notImplementedError(); return;  }
+-    virtual SelFont(GRAPHIC *graph)	
++    virtual int SelFont(GRAPHIC *graph)	
+ 	{ notImplementedError(); return 0;}
+     virtual void FlushDisplay() 
+ 	{ notImplementedError(); return;  }
+@@ -85,7 +85,7 @@
+     PSDriver();
+     virtual ~PSDriver();
+ 
+-    Init (GRAPHIC* graph, float size=0.5);
++    int Init (GRAPHIC* graph, float size=0.5);
+     int OpenPort(GRAPHIC *graph);
+     int Color(int col_no, int rVal, int gVal, int bVal);
+ 
+@@ -152,7 +152,7 @@
+     void geometric(GRAPHIC *graph, int geo, coor org, coor vec);
+ 
+     void FlushDisplay();  	
+-    SelFont(GRAPHIC *graph);	
++    int SelFont(GRAPHIC *graph);	
+ };
+ 
+ #endif
+diff -u /tmp/kaskade/work/3.1/driversimp.h ./driversimp.h
+--- /tmp/kaskade/work/3.1/driversimp.h	Tue Apr 23 09:45:02 1996
++++ ./driversimp.h	Sat Jan 29 16:14:59 2000
+@@ -1,7 +1,7 @@
+ #ifndef DRIVERSIMP_H
+ #define DRIVERSIMP_H
+ 
+-const MAX_WINDOWS = 1;
++const int MAX_WINDOWS = 1;
+ 
+ 
+ #include "drivers.h"
+@@ -155,7 +155,7 @@
+     void geometric(GRAPHIC *graph, int geo, coor org, coor vec);
+ 
+     void FlushDisplay();
+-    SelFont(GRAPHIC *graph);
++    int SelFont(GRAPHIC *graph);
+ 
+ 
+   private:
+diff -u /tmp/kaskade/work/3.1/elements.cc ./elements.cc
+--- /tmp/kaskade/work/3.1/elements.cc	Mon Jun 24 11:50:30 1996
++++ ./elements.cc	Sat Jan 29 16:10:02 2000
+@@ -46,7 +46,7 @@
+ void Element:: initAb(Matrix<Real>& A, Vector<Real>& b) const
+ {
+     int i, j;
+-    const dim = NoOfNodes();
++    const int dim = NoOfNodes();
+ 
+     for (i=1; i<=dim; ++i) 
+     {
+@@ -59,7 +59,7 @@
+ void Element:: initAb(Matrix<Real>& A) const
+ {
+     int i, j;
+-    const dim = NoOfNodes();
++    const int dim = NoOfNodes();
+ 
+     for (i=1; i<=dim; ++i) 
+    	for (j=1; j<=dim; ++j) A(i,j) = 0.0;
+@@ -69,7 +69,7 @@
+ void Element:: initAb(Matrix<Complex>& A, Vector<Complex>& b) const
+ {
+     int i, j;
+-    const dim = NoOfNodes();
++    const int dim = NoOfNodes();
+ 
+     for (i=1; i<=dim; ++i) 
+     {
+@@ -82,7 +82,7 @@
+ void Element:: initAb(Matrix<Complex>& A) const
+ {
+     int i, j;
+-    const dim = NoOfNodes();
++    const int dim = NoOfNodes();
+ 
+     for (i=1; i<=dim; ++i) 
+    	for (j=1; j<=dim; ++j) A(i,j) = 0.0;
+diff -u /tmp/kaskade/work/3.1/elements1mc.h ./elements1mc.h
+--- /tmp/kaskade/work/3.1/elements1mc.h	Tue Apr 23 09:45:02 1996
++++ ./elements1mc.h	Sat Jan 29 16:15:44 2000
+@@ -87,7 +87,7 @@
+ 		   
+   protected:
+ 
+-    const 	nComp, noOfNodes;
++    const int nComp, noOfNodes;
+     Matrix<int> Node;
+ 
+     MCLine(int nComp0) : Line(), nComp(0), noOfNodes(0), Node(1,1) { }		
+diff -u /tmp/kaskade/work/3.1/elements2mc.h ./elements2mc.h
+--- /tmp/kaskade/work/3.1/elements2mc.h	Tue Apr 23 09:45:02 1996
++++ ./elements2mc.h	Sat Jan 29 16:16:24 2000
+@@ -76,7 +76,7 @@
+ 		   
+   protected:
+ 
+-    const 	nComp, noOfNodes;
++    const int nComp, noOfNodes;
+     Matrix<int> Node;
+ 
+     MCTriangle(int nComp0) : Triangle(), nComp(0), noOfNodes(0), Node(1,1) { }		
+diff -u /tmp/kaskade/work/3.1/elements3mc.h ./elements3mc.h
+--- /tmp/kaskade/work/3.1/elements3mc.h	Tue Apr 23 09:45:02 1996
++++ ./elements3mc.h	Sat Jan 29 16:17:26 2000
+@@ -75,7 +75,7 @@
+ 		   
+   protected:
+ 
+-    const 	nComp, noOfNodes;
++    const int nComp, noOfNodes;
+     Matrix<int> Node;
+ 
+     MCTetra(int nComp0) : Tetra(), nComp(0), noOfNodes(0), Node(1,1) { }  
+diff -u /tmp/kaskade/work/3.1/familyA.cc ./familyA.cc
+--- /tmp/kaskade/work/3.1/familyA.cc	Tue Apr 23 09:45:01 1996
++++ ./familyA.cc	Sat Jan 29 16:08:03 2000
+@@ -100,7 +100,7 @@
+ void LinEdgeGeneration:: prolong(const Vector<Num>& el, Vector<Num>& eh) const
+ {
+     int i, n, fatherNode;
+-    const low = fathers->cl;
++    const int low = fathers->cl;
+ 
+     for (i=1; i<low; ++i)  eh[i] += el[i];	// point nodes 
+ 
+@@ -120,7 +120,7 @@
+ void LinEdgeGeneration:: restrict(Vector<Num>& rh, Vector<Num>& rl) const
+ {
+     int i, n, fatherNode;
+-    const low = fathers->cl;
++    const int low = fathers->cl;
+ 
+     for (i=1; i<low; ++i)  rl[i] = rh[i];
+ 
+diff -u /tmp/kaskade/work/3.1/familyA.h ./familyA.h
+--- /tmp/kaskade/work/3.1/familyA.h	Tue Apr 23 09:45:02 1996
++++ ./familyA.h	Sat Jan 29 11:51:31 2000
+@@ -12,7 +12,7 @@
+ {
+   protected:
+ 
+-    const nComp;
++    const int nComp;
+ 
+   public:
+ 
+diff -u /tmp/kaskade/work/3.1/minigraph.h ./minigraph.h
+--- /tmp/kaskade/work/3.1/minigraph.h	Tue Apr 23 09:45:03 1996
++++ ./minigraph.h	Sat Jan 29 16:08:48 2000
+@@ -134,8 +134,8 @@
+     GRAPHIC::GRAPHIC(int type, float size=0.5);
+     ~GRAPHIC();
+ 
+-    PrintGraph();
+-    ComputeScaling(Driver& driver);
++    int PrintGraph();
++    int ComputeScaling(Driver& driver);
+ 
+ 
+     xreal   minX, minY, maxX, maxY,
+diff -u /tmp/kaskade/work/3.1/nodeco.h ./nodeco.h
+--- /tmp/kaskade/work/3.1/nodeco.h	Tue Apr 23 09:45:03 1996
++++ ./nodeco.h	Sat Jan 29 12:00:40 2000
+@@ -13,7 +13,7 @@
+ {
+   protected:
+     int 	 spaceDim;
+-    const  	 lowNode, highNode;
++    const int  	 lowNode, highNode;
+     Matrix<Real> coord;
+ 
+   public:
+diff -u /tmp/kaskade/work/3.1/nonlin.cc ./nonlin.cc
+--- /tmp/kaskade/work/3.1/nonlin.cc	Tue Apr 23 09:45:01 1996
++++ ./nonlin.cc	Sat Jan 29 16:11:25 2000
+@@ -68,8 +68,8 @@
+ 				      const Interface& interface) const
+ {
+     int i;
+-    const dim 	   = interface.Dim();
+-    const spaceDim = interface.SpaceDim();
++    const int dim 	   = interface.Dim();
++    const int spaceDim = interface.SpaceDim();
+ 
+     uppO.resize(dim);
+     lowO.resize(dim);
+diff -u /tmp/kaskade/work/3.1/precondmg.cc ./precondmg.cc
+--- /tmp/kaskade/work/3.1/precondmg.cc	Tue Apr 23 09:45:01 1996
++++ ./precondmg.cc	Sat Jan 29 16:06:29 2000
+@@ -534,7 +534,7 @@
+ void MGCG:: preSmooth(int level, Vector<Num>& x, SystemMatrix& A, Vector<Num>& b)
+ {
+     int i;
+-    const h0 = aux.h;
++    const int h0 = aux.h;
+     aux.h = p.h = r.h = A.Dim();
+     
+     FORALL(r,i) r[i] = b[i];
+@@ -550,7 +550,7 @@
+ void MGCG:: postSmooth(int level, Vector<Num>& x, SystemMatrix& A,Vector<Num>& b)
+ {
+     int i;
+-    const h0 = aux.h;
++    const int h0 = aux.h;
+     aux.h = p.h = r.h = A.Dim();
+     
+     A.Mult(aux,x);
+diff -u /tmp/kaskade/work/3.1/problem.cc ./problem.cc
+--- /tmp/kaskade/work/3.1/problem.cc	Mon Sep 23 16:10:13 1996
++++ ./problem.cc	Sat Jan 29 12:01:05 2000
+@@ -482,7 +482,7 @@
+     Num sum;
+     Num E = 0.0;
+     
+-    const dim = globalNodes.high();
++    const int dim = globalNodes.high();
+ 
+     if (symmetry == sym)				// upper triangle
+     {
+@@ -523,8 +523,8 @@
+ 	Real maxError=0.0, error=0.0;
+ 	Num trueSol=0.0;
+ 	int i;
+-	const dim      = interface->Dim();
+-	const spaceDim = interface->SpaceDim();
++	const int dim      = interface->Dim();
++	const int spaceDim = interface->SpaceDim();
+ 
+ 	Vector<Real> x(spaceDim);
+ 	NodeCoordinates nc(spaceDim, 1, dim);
+@@ -645,7 +645,7 @@
+     Timer timer, accTimer;
+ 
+     PATCH* patch;
+-    const dim = element->NoOfNodes();
++    const int dim = element->NoOfNodes();
+     Matrix<Num> AElem(dim,dim);
+     Vector<Num> bElem(dim);
+     Vector<int> nodes(dim);
+diff -u /tmp/kaskade/work/3.1/problemnl.cc ./problemnl.cc
+--- /tmp/kaskade/work/3.1/problemnl.cc	Tue May 21 14:19:54 1996
++++ ./problemnl.cc	Sat Jan 29 15:49:58 2000
+@@ -124,7 +124,7 @@
+ 
+     if (!errorEstimatorCall)		    // if not called by error estimator
+     {
+-	const dim = elem.NoOfNodes();
++	const int dim = elem.NoOfNodes();
+ 	Vector<Real> LNorm(dim);
+ 	Vector<int> nodes(dim);
+ 	
+@@ -159,7 +159,7 @@
+ {
+     int i, k, node;
+ 
+-    const dim = elem.NoOfNodes();
++    const int dim = elem.NoOfNodes();
+ 
+     Vector<Num> s(dim);
+ 
+diff -u /tmp/kaskade/work/3.1/problemtr.cc ./problemtr.cc
+--- /tmp/kaskade/work/3.1/problemtr.cc	Tue May 21 14:42:27 1996
++++ ./problemtr.cc	Sat Jan 29 15:49:16 2000
+@@ -427,7 +427,7 @@
+ void TransientProblem:: TransientSolutionInfo(int timeStep, Real time0, 
+ 					      Real tau0)
+ {
+-    const step = Error.high();
++    const int step = Error.high();
+ 
+     Real error = sqrt(quot(Error.Top(),Energy.Top()));
+     
+@@ -472,8 +472,8 @@
+     const Interface*  interf = interface;
+     if (interfaceDLY) interf = interfaceDLY;
+ 
+-    const lowNode  = uPrevOnNewMesh0.low();
+-    const highNode = uPrevOnNewMesh0.high();
++    const int lowNode  = uPrevOnNewMesh0.low();
++    const int highNode = uPrevOnNewMesh0.high();
+ 
+     NodeCoordinates  nc(spaceDim, lowNode, highNode);
+ 
+@@ -643,7 +643,7 @@
+     int i, k;
+     Real factor;
+ 
+-    const dim = elem.NoOfNodes();
++    const int dim = elem.NoOfNodes();
+     Matrix<Real> E(dim,dim);		 // 'elliptic' sub-matrix
+     Matrix<Real> P(dim,dim);		 // 'parabolic' sub-matrix (mass-matrix)
+     Vector<Real> s(dim), s0(dim);
+@@ -826,7 +826,7 @@
+ {
+     int    i, node;
+     PATCH* patch;
+-    const dim = element->NoOfNodes();
++    const int dim = element->NoOfNodes();
+     Matrix<Num> AElem(dim,dim);
+     Vector<Num> bElem(dim), MElem(dim);
+     Vector<int> nodes(dim);
+@@ -865,7 +865,7 @@
+ 					      Vector<Num>& bD)
+ {
+     int   i, k;
+-    const dim = elem.NoOfNodes();
++    const int dim = elem.NoOfNodes();
+     Matrix<Real> P(dim,dim);		 // 'parabolic' sub-matrix (mass-matrix)
+     Vector<Real> s0(dim);
+ 
+@@ -958,7 +958,7 @@
+     Timer timer, accTimer;
+ 
+     int  i;
+-    const dim = u.high();
++    const int dim = u.high();
+ 
+     MLMatrix* AD;
+     if (nComp == 1) AD = new MLSparseMatrix(sym, SpaceDim(), dim);
+diff -u /tmp/kaskade/work/3.1/slist.h ./slist.h
+--- /tmp/kaskade/work/3.1/slist.h	Tue Apr 23 09:45:03 1996
++++ ./slist.h	Sat Jan 29 11:50:58 2000
+@@ -18,8 +18,8 @@
+ 
+     void add    (T* elem);		// insert at end
+     void insert (T* elem);		// insert at beginning
+-    insertAfter (T* elem, T* target);
+-    insertBefore(T* elem, T* target);
++    int insertAfter (T* elem, T* target);
++    int insertBefore(T* elem, T* target);
+ 
+     T* search (T* target);		// search address of target
+     T* inList (T* elem);		// search by equal fct
+diff -u /tmp/kaskade/work/3.1/sysmat.cc ./sysmat.cc
+--- /tmp/kaskade/work/3.1/sysmat.cc	Tue Apr 23 09:45:01 1996
++++ ./sysmat.cc	Sat Jan 29 15:52:42 2000
+@@ -109,7 +109,7 @@
+ 			  const Vector<int>& globalNodes)
+ {
+     int i, j, row, col, jMax;
+-    const dim = globalNodes.high();
++    const int dim = globalNodes.high();
+ 
+     for (i=1; i<=dim; ++i)
+     {
+diff -u /tmp/kaskade/work/3.1/sysmatbl.cc ./sysmatbl.cc
+--- /tmp/kaskade/work/3.1/sysmatbl.cc	Tue Apr 23 09:45:01 1996
++++ ./sysmatbl.cc	Sat Jan 29 15:53:37 2000
+@@ -70,7 +70,7 @@
+ 	dimension  = noOfNodes;
+ 	noOfBlocks = noOfNodes/nComp;
+ 	
+-	const prevDim = D.high();
++	const int prevDim = D.high();
+ 	D.extendAndCopy(noOfBlocks);
+ 
+ 	for (i=prevDim+1; i<=noOfBlocks; ++i) 
+@@ -156,7 +156,7 @@
+ 			   const Vector<int>& globalNodes)
+ {
+     int i, n, k, kMax, row, col;
+-    const dim = globalNodes.high();
++    const int dim = globalNodes.high();
+ 
+     Vector<Num*> Ap(nComp);
+ 
+@@ -249,7 +249,7 @@
+ {
+     int bRow, bCol, bC, bR, comp1, comp2;
+     NeighbourBlock* bp;
+-    const transpose = 1;
++    const int transpose = 1;
+ 
+     bRow = Block[row];
+     bCol = Block[col];
+@@ -284,8 +284,8 @@
+ 
+ Num& MLBlockMatrix:: Diag(int node) 
+ {
+-    const block = Block[node];
+-    const comp  = MCNode.comp(node, nComp);
++    const int block = Block[node];
++    const int comp  = MCNode.comp(node, nComp);
+ 
+     return (*D[block])(comp,comp,nComp);
+ }
+@@ -293,8 +293,8 @@
+ 
+ Num MLBlockMatrix:: Diag(int node) const
+ {
+-    const block = Block[node];
+-    const comp  = MCNode.comp(node, nComp);
++    const int block = Block[node];
++    const int comp  = MCNode.comp(node, nComp);
+ 
+     return (*D[block])(comp,comp,nComp);
+ }
+@@ -865,7 +865,7 @@
+     int i;
+     NeighbourBlock* np;
+ 
+-    const inBlock = nComp*nComp;
++    const int inBlock = nComp*nComp;
+     int n = noOfBlocks*inBlock;		// diagonal contribution
+ 
+     FORALL(L,i) { for (np=L[i]; np; np=np->next)  n += 2*inBlock; }
+@@ -945,7 +945,7 @@
+ {
+     int i, n, row, col, comp1, comp2;
+     NeighbourBlock* np;
+-    const transpose = 1;
++    const int transpose = 1;
+ 
+     n = -1;			// start with 0 in ma28-arrays
+     row = 0;
+diff -u /tmp/kaskade/work/3.1/sysmatbl.h ./sysmatbl.h
+--- /tmp/kaskade/work/3.1/sysmatbl.h	Tue Apr 23 09:45:03 1996
++++ ./sysmatbl.h	Sat Jan 29 15:48:15 2000
+@@ -15,7 +15,7 @@
+ {
+   protected:
+ 
+-    const nComp;
++    const int nComp;
+     int   dimension, noOfBlocks;
+     Bool  decomposed, ILUDecomposed, inverseDiag;
+ 
+diff -u /tmp/kaskade/work/3.1/sysmatma28.h ./sysmatma28.h
+--- /tmp/kaskade/work/3.1/sysmatma28.h	Tue Apr 23 09:45:03 1996
++++ ./sysmatma28.h	Sat Jan 29 11:59:40 2000
+@@ -13,7 +13,7 @@
+ {
+   protected:
+ 
+-    const 	spaceDim;
++    const 	int spaceDim;
+     int		N, NZ, LIRN, LICN;
+     Vector<Num> A, W;
+     Vector<int> IRN, ICN, IKEEP, IW;
+diff -u /tmp/kaskade/work/3.1/sysmatsp.cc ./sysmatsp.cc
+--- /tmp/kaskade/work/3.1/sysmatsp.cc	Sat Jan 29 16:19:44 2000
++++ ./sysmatsp.cc	Sat Jan 29 16:05:32 2000
+@@ -46,8 +46,8 @@
+     if (B0) B = B0->castToSparseMatrix();
+     else    B = 0;
+ 
+-    const nlow  = (A->D).l;
+-    const nhigh = (A->D).h;
++    const int nlow  = (A->D).l;
++    const int nhigh = (A->D).h;
+ 
+     D.resize(nlow, nhigh);
+ 
+@@ -114,8 +114,8 @@
+ {
+     int i, n;
+ 
+-    const nlow  = cPattern.l();
+-    const nhigh = cPattern.h();
++    const int nlow  = cPattern.l();
++    const int nhigh = cPattern.h();
+ 
+     D.resize(nlow, nhigh);
+ 
+diff -u /tmp/kaskade/work/3.1/templates.cc ./templates.cc
+--- /tmp/kaskade/work/3.1/templates.cc	Tue Apr 23 09:45:01 1996
++++ ./templates.cc	Sat Jan 29 11:53:57 2000
+@@ -50,7 +50,7 @@
+ template class Vector<int>;
+ template class Vector<float>;
+ template class Vector<Real>;
+-template class Vector<Num>;
++// template class Vector<Num>;
+ template class Vector<Num*>;
+ template class Vector<Complex>;
+ template class Vector<Vector<char>*>;
+@@ -61,13 +61,13 @@
+ template class Stack<char*>;
+ template class Stack<int>;
+ template class Stack<Real>;
+-template class Stack<Num>;
++// template class Stack<Num>;
+ template class Stack<Complex>;
+ 
+ template class Matrix<int>;
+ template class Matrix<float>;
+ template class Matrix<Real>;
+-template class Matrix<Num>;
++// template class Matrix<Num>;
+ template class Matrix<Complex>;
+ template class Matrix<Vector<Num>*>;
+ 
+@@ -134,7 +134,7 @@
+ 
+ 
+ template class Stack<Vector<Num>*>;
+-template class Stack<Vector<Real>*>;
++// template class Stack<Vector<Real>*>;
+ template class Stack<Vector<SBool>*>;
+ 
+     // block, sysmatbl
+diff -u /tmp/kaskade/work/3.1/triang.cc ./triang.cc
+--- /tmp/kaskade/work/3.1/triang.cc	Fri Aug 30 14:30:42 1996
++++ ./triang.cc	Sat Jan 29 16:12:32 2000
+@@ -409,7 +409,7 @@
+     int    k, noOfSons;
+     PATCH* fPartner, *p, *son, *father, *fPartnerSon;
+ 
+-    const lastStep = True;
++    const int lastStep = True;
+     resetElemIter(lastStep);
+ 
+ 
+@@ -453,7 +453,7 @@
+ 
+ void MESH:: newNodeStack(PT* p, int depth, int targetDepth)
+ {
+-    static const nodeStackSize = sizeof(NodeStack);
++    static const int nodeStackSize = sizeof(NodeStack);
+ 
+     if (depth >= targetDepth) 
+     {
+@@ -470,7 +470,7 @@
+ 
+ void NodeStack:: init(VarSizeAllocator* varAlloc0, int depth, int targetDepth)
+ {
+-    static const intSize = sizeof(int);
++    static const int intSize = sizeof(int);
+ 
+     varAlloc = varAlloc0; 
+ 
+@@ -492,7 +492,7 @@
+ 
+ void NodeStack:: extend()
+ {
+-    static const intSize = sizeof(int);
++    static const int intSize = sizeof(int);
+ 
+     top += top;
+     int* vnew = (int*) varAlloc->Get(intSize*(top-l+1));
+diff -u /tmp/kaskade/work/3.1/utils.cc ./utils.cc
+--- /tmp/kaskade/work/3.1/utils.cc	Tue Apr 23 09:45:02 1996
++++ ./utils.cc	Sat Jan 29 16:13:41 2000
+@@ -90,7 +90,7 @@
+ 	: commentFlag(commentFlag0), fp(0)
+ 
+ {
+-    const maxTries = 0;
++    const int maxTries = 0;
+ 
+     for (int count=1; fp==0; ++count)  
+     {
+@@ -487,7 +487,7 @@
+ void invert(Matrix<Real>& A, Matrix<Real>& AInv)
+ {
+     int i,j;
+-    const dim = A.cHigh();
++    const int dim = A.cHigh();
+ 
+     if (dim == 1) 
+     {
+@@ -533,7 +533,7 @@
+     Real  d = 1.0;
+     const Real tiny = machMin(Real(0.0));
+ 
+-    const dim = index.high();
++    const int dim = index.high();
+     Vector<Real> vv(dim);
+     
+     for (i=1; i<=dim; i++) 
+@@ -607,7 +607,7 @@
+     int i, ii = 0, ip, j;
+     Real sum;
+ 
+-    const dim = index.high();
++    const int dim = index.high();
+ 
+     for (i=1; i<=dim; i++) 
+     {
+@@ -634,7 +634,7 @@
+ void invert(Matrix<Complex>& A, Matrix<Complex>& AInv)
+ {
+     int i,j;
+-    const dim = A.cHigh();
++    const int dim = A.cHigh();
+ 
+     if (dim == 1) 
+     {
+@@ -680,7 +680,7 @@
+     Complex d = 1.0;
+     const Real tiny = machMin(Real(0.0));
+ 
+-    const dim = index.high();
++    const int dim = index.high();
+     Vector<Complex> vv(dim);
+     
+     for (i=1; i<=dim; i++) 
+@@ -754,7 +754,7 @@
+     int i, ii = 0, ip, j;
+     Complex sum;
+ 
+-    const dim = index.high();
++    const int dim = index.high();
+ 
+     for (i=1; i<=dim; i++) 
+     {
+@@ -775,7 +775,7 @@
+ //-------------------------------------------------------------------------
+ //-------------------------------------------------------------------------
+ 
+-static const stringSize = 2000;
++static const int stringSize = 2000;
+ static char string[stringSize];
+ 
+ char *Form(char *format ...) 
