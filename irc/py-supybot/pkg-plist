@@ -296,6 +296,9 @@
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Karma.pyo
 %%PYTHON_SITELIBDIR%%/supybot/plugins/OSU.pyo
 %%PYTHON_SITELIBDIR%%/supybot/plugins/KillBold.pyo
+%%PYTHON_SITELIBDIR%%/supybot/plugins/LogToIrc.py
+%%PYTHON_SITELIBDIR%%/supybot/plugins/LogToIrc.pyc
+%%PYTHON_SITELIBDIR%%/supybot/plugins/LogToIrc.pyo
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Lookup.pyo
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Markov.pyo
 %%PYTHON_SITELIBDIR%%/supybot/plugins/Math.pyo
@@ -337,21 +340,35 @@ bin/supybot
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/plugins
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/src
 @dirrm %%PYTHON_SITELIBDIR%%/supybot/
+%%PORTDOCS%%%%DOCSDIR%%/DocBook/Makefile
+%%PORTDOCS%%%%DOCSDIR%%/DocBook/README.DocBook
+%%PORTDOCS%%%%DOCSDIR%%/DocBook/capabilities.sgml
+%%PORTDOCS%%%%DOCSDIR%%/DocBook/configuration.sgml
+%%PORTDOCS%%%%DOCSDIR%%/DocBook/example.sgml
+%%PORTDOCS%%%%DOCSDIR%%/DocBook/faq.sgml
+%%PORTDOCS%%%%DOCSDIR%%/DocBook/getting_started.sgml
+%%PORTDOCS%%%%DOCSDIR%%/DocBook/interfaces.sgml
+%%PORTDOCS%%%%DOCSDIR%%/DocBook/supybot-html.dsl
+%%PORTDOCS%%%%DOCSDIR%%/DocBook/supybot-print.dsl
+%%PORTDOCS%%%%DOCSDIR%%/DocBook/supybot.css
+%%PORTDOCS%%%%DOCSDIR%%/DocBook/supybot.dsl
+%%PORTDOCS%%%%DOCSDIR%%/DocBook/supybot.dtd
 %%PORTDOCS%%%%DOCSDIR%%/ACKS
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/CAPABILITIES
+%%PORTDOCS%%%%DOCSDIR%%/CONFIGURATION
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/DEVS
+%%PORTDOCS%%%%DOCSDIR%%/EXAMPLE
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/GETTING_STARTED
+%%PORTDOCS%%%%DOCSDIR%%/INTERFACES
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/OVERVIEW
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/RELNOTES
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/CAPABILITIES
-%%PORTDOCS%%%%DOCSDIR%%/FAQ
-%%PORTDOCS%%%%DOCSDIR%%/OVERVIEW
-%%PORTDOCS%%%%DOCSDIR%%/CONFIGURATION
-%%PORTDOCS%%%%DOCSDIR%%/GETTING_STARTED
-%%PORTDOCS%%%%DOCSDIR%%/RELEASE-CHECKLIST
-%%PORTDOCS%%%%DOCSDIR%%/EXAMPLE
-%%PORTDOCS%%%%DOCSDIR%%/INTERFACES
 %%PORTDOCS%%%%DOCSDIR%%/STYLE
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/DocBook
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

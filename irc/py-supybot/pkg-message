@@ -9,3 +9,6 @@ possibly a few other) plugins, you need to install the
 databases/py-PySQLite port.
 
 For more information see the GETTING_STARTED document.
+
+**WARNING** Some config names changed between some versions.
+Review the ChangeLog document in the documentation directory.
