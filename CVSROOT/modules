@@ -1741,6 +1741,7 @@ fnlib		ports/graphics/fnlib
 fnorb		ports/devel/fnorb
 fo-aspell	ports/textproc/fo-aspell
 fold		src/usr.bin/fold
+fontconfig	ports/x11-fonts/fontconfig
 fontedit	ports/sysutils/fontedit
 fooseti		ports/astro/fooseti
 fop		ports/textproc/fop
