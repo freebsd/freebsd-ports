@@ -79,6 +79,7 @@
     SUBDIR += ruby-fltk
     SUBDIR += ruby-gtk
     SUBDIR += ruby-qt
+    SUBDIR += ruby-qt2
     SUBDIR += ruby-tk
     SUBDIR += ruby14-tk
     SUBDIR += scintilla
