@@ -7,7 +7,7 @@
 #
 # "?=" and "+=" are for including this Makefile from japanese/jpilot
 
-DISTNAME=	jpilot-0.98
+DISTNAME=	jpilot-0.98.1
 CATEGORIES=	palm comms
 MASTER_SITES=	http://jpilot.linuxave.net/
 
