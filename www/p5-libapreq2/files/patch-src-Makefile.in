@@ -9,12 +9,3 @@
  BUILT_SOURCES = @APR_LA@ @APU_LA@
  lib_LTLIBRARIES = lib@APREQ_LIBNAME@.la
  lib@APREQ_LIBNAME@_la_SOURCES = apreq.c apreq_version.c apreq_cookie.c \
-@@ -158,7 +158,7 @@
- 	apreq_config.h.in
- SOURCES = $(lib@APREQ_LIBNAME@_la_SOURCES)
- 
--all: $(BUILT_SOURCES) apreq_config.h
-+all: $(lib_LTLIBRARIES) apreq_config.h
- 	$(MAKE) $(AM_MAKEFLAGS) all-am
- 
- .SUFFIXES:
