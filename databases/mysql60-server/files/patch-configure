@@ -1,6 +1,6 @@
---- configure.orig	Thu Dec  5 10:37:31 2002
-+++ configure	Mon Dec 16 19:49:41 2002
-@@ -8059,6 +8059,7 @@
+--- configure.orig	Mon Dec 16 10:12:16 2002
++++ configure	Fri Dec 20 18:11:14 2002
+@@ -8071,6 +8071,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -8,7 +8,7 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -8988,7 +8989,7 @@
+@@ -9000,7 +9001,7 @@
    ;;
  esac
  fi
@@ -17,142 +17,3 @@
  
  if test -n "$HOSTNAME"; then
    echo "$as_me:$LINENO: result: $HOSTNAME" >&5
-@@ -9177,43 +9178,7 @@
- echo "${ECHO_T}no" >&6
- fi
- 
--echo "$as_me:$LINENO: checking \"how to check if pid exists\"" >&5
--echo $ECHO_N "checking \"how to check if pid exists\"... $ECHO_C" >&6
--PS=$ac_cv_path_PS
--# Linux style
--if $PS p $$ 2> /dev/null | grep $0 > /dev/null
--then
--  FIND_PROC="$PS p \$\$PID | grep mysqld > /dev/null"
--# Solaris
--elif $PS -p $$ 2> /dev/null | grep $0 > /dev/null
--then
--  FIND_PROC="$PS -p \$\$PID | grep mysqld > /dev/null"
--# BSD style
--elif $PS -uaxww 2> /dev/null | grep $0 > /dev/null
--then
--  FIND_PROC="$PS -uaxww | grep mysqld | grep \" \$\$PID \" > /dev/null"
--# SysV style
--elif $PS -ef 2> /dev/null | grep $0 > /dev/null
--then
--  FIND_PROC="$PS -ef | grep mysqld | grep \" \$\$PID \" > /dev/null"
--# Do anybody use this?
--elif $PS $$ 2> /dev/null | grep $0 > /dev/null
--then
--  FIND_PROC="$PS \$\$PID | grep mysqld > /dev/null"
--else
--  case $SYSTEM_TYPE in
--    *darwin*)
--      FIND_PROC="$PS -uaxww | grep mysqld | grep \" \$\$PID \" > /dev/null"
--      ;;
--    *cygwin*)
--      FIND_PROC="$PS -e | grep mysqld | grep \" \$\$PID \" > /dev/null"
--      ;;
--    *)
--      { { echo "$as_me:$LINENO: error: Could not find the right ps switches. Which OS is this ?. See the Installation chapter in the Reference Manual." >&5
--echo "$as_me: error: Could not find the right ps switches. Which OS is this ?. See the Installation chapter in the Reference Manual." >&2;}
--   { (exit 1); exit 1; }; }
--  esac
--fi
-+FIND_PROC="$PS -uaxww | grep mysqld | grep \" \$\$PID \" > /dev/null"
- 
- echo "$as_me:$LINENO: result: \"$FIND_PROC\"" >&5
- echo "${ECHO_T}\"$FIND_PROC\"" >&6
-@@ -13208,7 +13173,6 @@
-   echo $ECHO_N "(cached) $ECHO_C" >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-lc_r  $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
- #include "confdefs.h"
-@@ -13262,7 +13226,6 @@
- #define HAVE_LIBC_R 1
- _ACEOF
- 
--  LIBS="-lc_r $LIBS"
- 
- fi
- 
-@@ -13706,29 +13669,6 @@
- fi
- 
- 
--# Build optimized or debug version ?
--# First check for gcc and g++
--if test "$ac_cv_c_compiler_gnu" = "yes"
--then
--  DEBUG_CFLAGS="-g"
--  DEBUG_OPTIMIZE_CC="-O"
--  OPTIMIZE_CFLAGS="$MAX_C_OPTIMIZE"
--else
--  DEBUG_CFLAGS="-g"
--  DEBUG_OPTIMIZE_CC=""
--  OPTIMIZE_CFLAGS="-O"
--fi
--if test "$ac_cv_prog_cxx_g" = "yes"
--then
--  DEBUG_CXXFLAGS="-g"
--  DEBUG_OPTIMIZE_CXX="-O"
--  OPTIMIZE_CXXFLAGS="-O3"
--else
--  DEBUG_CXXFLAGS="-g"
--  DEBUG_OPTIMIZE_CXX=""
--  OPTIMIZE_CXXFLAGS="-O"
--fi
--
- 
- # Check whether --with-debug or --without-debug was given.
- if test "${with_debug+set}" = set; then
-@@ -16081,10 +16021,6 @@
- ac_link='$CXX -o conftest$ac_exeext $CXXFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
- ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
- 
--if test "$ac_cv_cxx_compiler_gnu" = "yes"
--then
--  CXXFLAGS="$CXXFLAGS -Werror"
--fi
- mysql_cv_btype_last_arg_accept=none
- cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
-@@ -19222,14 +19158,6 @@
- ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
- 
- 
--# Do not treat warnings as errors if we are linking against other libc
--# this is to work around gcc not being permissive on non-system includes
--# with respect to ANSI C++
--if test "$ac_cv_cxx_compiler_gnu" = "yes" -a "$with_other_libc" = "no"
--then
--  CXXFLAGS="$CXXFLAGS -Werror"
--fi
--
- cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
- #include "confdefs.h"
-@@ -19313,10 +19241,6 @@
- ac_link='$CXX -o conftest$ac_exeext $CXXFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
- ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
- 
--if test "$ac_cv_cxx_compiler_gnu" = "yes" -a "$with_other_libc" = "no"
--then
--  CXXFLAGS="$CXXFLAGS -Werror"
--fi
- cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
- #include "confdefs.h"
-@@ -19399,10 +19323,6 @@
- ac_link='$CXX -o conftest$ac_exeext $CXXFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
- ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
- 
--if test "$ac_cv_cxx_compiler_gnu" = "yes" -a "$with_other_libc" = "no"
--then
--  CXXFLAGS="$CXXFLAGS -Werror"
--fi
- cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
- #include "confdefs.h"
