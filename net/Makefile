@@ -251,6 +251,7 @@
     SUBDIR += jumpgate
     SUBDIR += jwhois
     SUBDIR += kdenetwork3
+    SUBDIR += kf
     SUBDIR += kmerlin
     SUBDIR += kmess
     SUBDIR += kmldonkey
