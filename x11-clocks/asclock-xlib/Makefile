@@ -27,7 +27,7 @@ HAS_CONFIGURE=	YES
 post-patch:
 	@(cd ${WRKSRC}; \
 	  ${MV} config.c config.c.tmp; \
-	  ${SED} -e s@/usr/local/@${X11BASE}/@ -e s@/usr/share/asclock@${LOCALBASE}/share/asclock@ < config.c.tmp > config.c )
+	  ${SED} -e s@/usr/local/@${PREFIX}/@ -e s@/usr/share/asclock@${PREFIX}/share/asclock@ < config.c.tmp > config.c )
 
 .if defined(BATCH)
 pre-configure:
