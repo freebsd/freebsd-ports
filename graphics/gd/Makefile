@@ -1,4 +1,4 @@
-# New ports collection makefile for: gd
+# New ports collection makefile for:	gd
 # Date created:         27 Mar 1998
 # Whom:                 jeff@cetlink.net
 #
@@ -6,17 +6,19 @@
 #
 
 PORTNAME=	gd
-PORTVERSION=	1.8.3
+PORTVERSION=	1.8.4
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.boutell.com/gd/http/ \
-		ftp://ftp.boutell.com/pub/boutell/gd/
+		ftp://ftp.boutell.com/pub/boutell/gd/ \
+		${MASTER_SITE_RINGSERVER}
+MASTER_SITE_SUBDIR=	graphics/gd
 
 MAINTAINER=	billf@FreeBSD.org
 
 LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png \
-		jpeg.9:${PORTSDIR}/graphics/jpeg
+		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		freetype.6:${PORTSDIR}/print/freetype2
 
-USE_FREETYPE=	yes
 .if defined(WITH_X11)
 USE_XLIB=	yes
 USE_XPM=	yes
@@ -24,13 +26,13 @@ USE_XPM=	yes
 
 INSTALLS_SHLIB=	yes
 
-pre-fetch:
+pre-everything:
 .if !defined(WITH_X11)
-	@${ECHO} -n "If you want to compile in X support use "
-	@${ECHO} "'make -DWITH_X11' instead"
+	@${ECHO_MSG} "If you want to compile in X support use "
+	@${ECHO_MSG} "'make -DWITH_X11' instead"
 .endif
 
-pre-install:
-	${MKDIR} ${PREFIX}/include/gd
+post-extract:
+	@${RM} -f ${WRKSRC}/*.o
 
 .include <bsd.port.mk>
