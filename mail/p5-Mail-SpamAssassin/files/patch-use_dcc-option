@@ -1,0 +1,93 @@
+diff -ur ../Mail-SpamAssassin-2.43/lib/Mail/SpamAssassin/Conf.pm ./lib/Mail/SpamAssassin/Conf.pm
+--- ../Mail-SpamAssassin-2.43/lib/Mail/SpamAssassin/Conf.pm	Fri Oct  4 05:54:15 2002
++++ ./lib/Mail/SpamAssassin/Conf.pm	Thu Oct 17 22:12:05 2002
+@@ -144,6 +144,9 @@
+   $self->{user_rules_to_compile} = 0;
+   $self->{fold_headers} = 1;
+ 
++  # Added by FreeBSD ports
++  $self->{use_dcc} = 1;
++
+   $self->{dcc_path} = undef; # Browse PATH
+   $self->{dcc_body_max} = 999999;
+   $self->{dcc_fuz1_max} = 999999;
+@@ -763,6 +766,16 @@
+ 
+     if (/^rbl[-_]timeout\s+(\d+)$/) {
+       $self->{rbl_timeout} = $1+0; next;
++    }
++
++=item use_dcc { 0 | 1 }   (default: 1)
++
++Should we use dccproc, or not.
++
++=cut
++
++    if (/^use[-_]dcc\s+(\d+)$/) {
++      $self->{use_dcc} = $1+0; next;
+     }
+ 
+ =item ok_locales xx [ yy zz ... ]		(default: all)
+diff -ur ../Mail-SpamAssassin-2.43/lib/Mail/SpamAssassin/Dns.pm ./lib/Mail/SpamAssassin/Dns.pm
+--- ../Mail-SpamAssassin-2.43/lib/Mail/SpamAssassin/Dns.pm	Fri Oct  4 05:54:16 2002
++++ ./lib/Mail/SpamAssassin/Dns.pm	Thu Oct 17 22:12:51 2002
+@@ -449,6 +449,9 @@
+ sub is_dcc_available {
+   my ($self) = @_;
+ 
++  # Added by FreeBSD ports
++  return 0 unless $self->{conf}->{use_dcc};
++
+   if ($self->{main}->{local_tests_only}) {
+     dbg ("local tests only, ignoring DCC");
+     return 0;
+@@ -476,6 +479,10 @@
+ 
+ sub dcc_lookup {
+   my ($self, $fulltext) = @_;
++
++  # Added by FreeBSD ports
++  return 0 unless $self->{conf}->{use_dcc};
++
+   my $response = undef;
+   my %count;
+   my $left;
+diff -ur ../Mail-SpamAssassin-2.43/lib/Mail/SpamAssassin/EvalTests.pm ./lib/Mail/SpamAssassin/EvalTests.pm
+--- ../Mail-SpamAssassin-2.43/lib/Mail/SpamAssassin/EvalTests.pm	Fri Oct  4 05:54:16 2002
++++ ./lib/Mail/SpamAssassin/EvalTests.pm	Thu Oct 17 22:10:46 2002
+@@ -2026,6 +2026,9 @@
+ sub check_dcc {
+   my ($self, $fulltext) = @_;
+ 
++  # Added by FreeBSD ports
++  return 0 unless $self->{conf}->{use_dcc};
++
+   return 0 unless ($self->is_dcc_available());
+   return 0 if ($self->{already_checked_dcc});
+ 
+diff -ur ../Mail-SpamAssassin-2.43/lib/Mail/SpamAssassin/Reporter.pm ./lib/Mail/SpamAssassin/Reporter.pm
+--- ../Mail-SpamAssassin-2.43/lib/Mail/SpamAssassin/Reporter.pm	Mon Oct 14 09:44:35 2002
++++ ./lib/Mail/SpamAssassin/Reporter.pm	Thu Oct 17 22:13:19 2002
+@@ -238,6 +238,9 @@
+ sub is_dcc_available {
+   my ($self) = @_;
+ 
++  # Added by FreeBSD ports
++  return 0 unless $self->{conf}->{use_dcc};
++
+   if ($self->{main}->{local_tests_only}) {
+     dbg ("local tests only, ignoring DCC");
+     return 0;
+diff -ur ../Mail-SpamAssassin-2.43/rules/10_misc.cf ./rules/10_misc.cf
+--- ../Mail-SpamAssassin-2.43/rules/10_misc.cf	Thu Sep 26 03:50:25 2002
++++ ./rules/10_misc.cf	Thu Oct 17 22:10:46 2002
+@@ -107,6 +107,9 @@
+ # test, so it is set to "all" so the test will not be used by default.
+ ok_languages            all
+ 
++# Added by FreeBSD ports
++use_dcc			0
++
+ # Some common prefs settings can be set here, to take effect site-wide
+ # unless the user override them. See the .prefs file for explanations.
+ 
