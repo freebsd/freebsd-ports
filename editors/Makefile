@@ -95,6 +95,7 @@
     SUBDIR += openoffice-ar
     SUBDIR += openoffice-devel
     SUBDIR += openoffice-dk
+    SUBDIR += openoffice-es
     SUBDIR += openoffice-gr
     SUBDIR += openoffice-nl
     SUBDIR += openoffice-pt

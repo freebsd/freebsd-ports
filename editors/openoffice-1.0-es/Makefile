@@ -1,0 +1,15 @@
+# New ports collection makefile for:	OpenOffice for Spanish language
+# Date created:		Tue Jun 11 16:47:21 UTC 2002
+# Whom:		Martin Blapp <mbr@FreeBSD.org> and Mario Ferreira <lioux@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+CATEGORIES=	editors
+
+LANG_PKGNAME=	es
+LANG_EXT=	34
+LANG_CONFIGURE_ARG=	SPAN
+MASTERDIR=	${.CURDIR}/../openoffice
+
+.include "${MASTERDIR}/Makefile"
