@@ -106,6 +106,7 @@
     SUBDIR += staroffice52
     SUBDIR += sted
     SUBDIR += tamago
+    SUBDIR += tamago-emacs20
     SUBDIR += ted
     SUBDIR += textedit
     SUBDIR += the
