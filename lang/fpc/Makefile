@@ -1,23 +1,22 @@
 # New ports collection makefile for:	Free Pascal Compiler
-# Date created:				28 November 2001
-# Whom:					John Merryweather Cooper et al
+# Date created: 			28 November 2001
+# Whom: 				John Merryweather Cooper et al
 #
 # $FreeBSD$
 #
 
 PORTNAME=	fpc
-PORTVERSION=	1.0.6
+PORTVERSION=	1.0.10
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.freepascal.org/pub/fpc/dist/freebsd-${PORTVERSION}/ \
-		ftp://ftp.epix.net/pub/languages/pascal/dist/freebsd-${PORTVERSION}/ \
-		http://gd.tuwien.ac.at/languages/pascal/dist/freebsd-${PORTVERSION}/ \
-		http://www.zeus.rug.ac.be/freepascal/files/dist/freebsd-${PORTVERSION}/ \
-		ftp://ftp.darklands.cx/pub/fpc/dist/freebsd-${PORTVERSION}/ \
-		ftp://ftp.jp.freepascal.org/mirror/fpc/dist/freebsd-${PORTVERSION}/ \
-		ftp://deadlock.et.tudelft.nl/pub/fpc/dist/freebsd-${PORTVERSION}/ \
-		ftp://ftp.no.freepascal.org/pub/fpc/dist/freebsd-${PORTVERSION}/
-DISTNAME=	${PORTNAME}-${PORTVERSION}.ELF.FreeBSD
-
+MASTER_SITES=	ftp://ftp.freepascal.org/pub/fpc/dist/FreeBSD/ \
+		http://planetmirror.com/pub/fpc/dist/FreeBSD/ \
+		ftp://ftp.jp.freepascal.org/mirror/fpc/dist/FreeBSD/ \
+		ftp://freepascal.stack.nl/pub/fpc/dist/FreeBSD/ \
+		ftp://ftp.no.freepascal.org/pub/fpc/dist/FreeBSD/ \
+		ftp://ftp.us.freepascal.org/pub/fpc/dist/FreeBSD/ \
+		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	freepascal
+DISTNAME=	${PORTNAME}-${PORTVERSION}.ELF
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	coop9211@uidaho.edu
@@ -25,164 +24,144 @@ COMMENT=	Free Pascal compiler with Turbo, Delphi and other extensions
 
 .include <bsd.port.pre.mk>
 
+LIB_DEPENDS=	gds.1:${PORTSDIR}/databases/firebird
 .if ${OSVERSION} >= 500000
-LIB_DEPENDS+=	c_r.4:${PORTSDIR}/misc/compat4x
+LIB_DEPENDS+=   c.4:${PORTSDIR}/misc/compat4x
 .endif
-
 .if ${OSVERSION} < 470000
-EXTRACT_DEPENDS=	${LOCALBASE}/bin/gtar:${PORTSDIR}/archivers/gtar
-TAR=		${LOCALBASE}/bin/gtar
+EXTRACT_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar
+TAR=			${LOCALBASE}/bin/gtar
 .endif
-
-RUN_DEPENDS=	${LOCALBASE}/bin/nasm:${PORTSDIR}/devel/nasm
-
+USE_MYSQL=	yes
+USE_GMAKE=	yes
+USE_REINPLACE=	yes
 ONLY_FOR_ARCHS=	i386
-NO_WRKSUBDIR=	yes
-NO_BUILD=	yes
-USE_PERL5=	yes
 PKGDEINSTALL=	${PKGINSTALL}
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
-MAN1=		delp.1 fpc.1 fpcmake.1 h2pas.1 plex.1 ppc386.1 ppdep.1 \
-		ppudump.1 ppufiles.1 ppumove.1 ptop.1 pyacc.1 rstconv.1
-MAN5=		fpc.cfg.5 fpcmake.5 ptop.cfg.5
+MAN1=	delp.1 fpc.1 fpcmake.1 fpdoc.1 h2pas.1 plex.1 ppc386.1 ppdep.1 \
+	ppudump.1 ppufiles.1 ppumove.1 ptop.1 pyacc.1 rstconv.1
+MAN5=	fpc.cfg.5 fpcmake.5 ptop.cfg.5
 
-# programs
-SORT?=		/usr/bin/sort
-# macro for creating directory with DATA perms
-INSTALL_DATA_DIR=	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 0755
-
-
-LIBDIR=		${PREFIX}/lib/fpc/${PORTVERSION}
-TEMP_PREFIX=	${WRKSRC}/temp
-
-# install staging area
-post-extract:
-	@${TAR} xf ${WRKSRC}/binary.tar --directory ${WRKSRC}
-	@${TAR} xf ${WRKSRC}/sources.tar --directory ${WRKSRC}
-	@${MKDIR} ${TEMP_PREFIX}
-#unpack base system
-	@${TAR} zxf ${WRKSRC}/basefreebsd.tar.gz \
-		--directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/utilfreebsd.tar.gz \
-		--directory ${TEMP_PREFIX}
-#unpack units
-	@${TAR} zxf ${WRKSRC}/unitsfclfreebsd.tar.gz --directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/unitsbfdfreebsd.tar.gz --directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/unitscmemfreebsd.tar.gz --directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/unitsformsfreebsd.tar.gz --directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/unitsfpasyncfreebsd.tar.gz --directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/unitsgdbintfreebsd.tar.gz --directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/unitsgdbmfreebsd.tar.gz --directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/unitsggifreebsd.tar.gz --directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/unitsgtkfreebsd.tar.gz --directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/unitsibasefreebsd.tar.gz --directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/unitsinetfreebsd.tar.gz --directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/unitslibasyncfreebsd.tar.gz --directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/unitslibgdfreebsd.tar.gz --directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/unitslibpngfreebsd.tar.gz --directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/unitsmysqlfreebsd.tar.gz --directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/unitsncursesfreebsd.tar.gz --directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/unitsopenglfreebsd.tar.gz --directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/unitsoraclefreebsd.tar.gz --directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/unitspaszlibfreebsd.tar.gz --directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/unitspostgresfreebsd.tar.gz --directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/unitsregexprfreebsd.tar.gz --directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/unitssvgalibfreebsd.tar.gz --directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/unitssyslogfreebsd.tar.gz --directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/unitsuncgifreebsd.tar.gz --directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/unitsunzipfreebsd.tar.gz --directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/unitsutmpfreebsd.tar.gz --directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/unitsx11freebsd.tar.gz --directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/unitszlibfreebsd.tar.gz --directory ${TEMP_PREFIX}
-#unpack ide
-	@${TAR} zxf ${WRKSRC}/idefreebsd.tar.gz --directory ${TEMP_PREFIX}
-.ifndef(NOPORTDOCS)
-#unpack documentation, examples, and sources
-	@${TAR} zxf ${WRKSRC}/basesrc.tar.gz --directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/compilersrc.tar.gz \
-		--directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/rtlsrc.tar.gz \
-		--directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/fclsrc.tar.gz \
-		--directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/idesrc.tar.gz \
-		--directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/installersrc.tar.gz \
-		--directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/unitsbfdsrc.tar.gz --directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/unitscmemsrc.tar.gz --directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/unitsformssrc.tar.gz --directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/unitsfpasyncsrc.tar.gz --directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/unitsgdbintsrc.tar.gz --directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/unitsgdbmsrc.tar.gz --directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/unitsggisrc.tar.gz --directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/unitsgtksrc.tar.gz --directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/unitsibasesrc.tar.gz --directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/unitsinetsrc.tar.gz --directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/unitslibasyncsrc.tar.gz --directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/unitslibgdsrc.tar.gz --directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/unitslibpngsrc.tar.gz --directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/unitsmysqlsrc.tar.gz --directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/unitsncursessrc.tar.gz --directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/unitsopenglsrc.tar.gz --directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/unitsoraclesrc.tar.gz --directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/unitspaszlibsrc.tar.gz --directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/unitspostgressrc.tar.gz --directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/unitsregexprsrc.tar.gz --directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/unitssvgalibsrc.tar.gz --directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/unitssyslogsrc.tar.gz --directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/unitsuncgisrc.tar.gz --directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/unitsunzipsrc.tar.gz --directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/unitsutmpsrc.tar.gz --directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/unitsx11src.tar.gz --directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/unitszlibsrc.tar.gz --directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/docs.tar.gz --directory ${TEMP_PREFIX}
-	@${TAR} zxf ${WRKSRC}/demo.tar.gz --directory ${TEMP_PREFIX}
+# FreePascal is not self-bootstrapping.  Hence, the need for a working
+# pppc386.  Check for ppc386 in a manner similar to lang/gnat.
+#
+# Look in PREFIX
+.ifdef PREFIX
+have_boot!=	if [ -x ${PREFIX}/bin/ppc386 ]; then \
+			${ECHO_CMD} "${PREFIX}/bin"; \
+		else \
+			${ECHO_CMD} ""; \
+		fi
+.else
+have_boot=
 .endif
 
-do-install: install-parse-plist install-run-scripts run-pkg-install-script
+# Then look in LOCALBASE
+.if empty(have_boot)
+have_boot!=	if [ -x ${LOCALBASE}/bin/ppc386 ]; then \
+			${ECHO_CMD} "${LOCALBASE}/bin"; \
+		else \
+			${ECHO_CMD} ""; \
+		fi
+.endif
 
-# Contributed by <lioux@FreeBSD.org>
-install-parse-plist: generate-plist
-	@${PERL} -e 'open(FHANDLER,"${TMPPLIST}");' \
-		-e 'open(FDIR,">${WRKDIR}/dirs.sh.tmp");' \
-		-e 'open(FFILES,">${WRKDIR}/files.sh");' \
-		-e 'while (!eof(FHANDLER)) {' \
-			-e 'chop($$file = <FHANDLER>);' \
-			-e '$$dir = $$file_partial = $$file;' \
-			-e '$$file_partial =~ s!^${HLDSDIR:S!^/!!}!!;' \
-			-e 'if ($$dir =~ s!(^\@dirrm\s+)!!) {' \
-				-e 'print FDIR "${INSTALL_DATA_DIR}", \
-					" ", "\"${PREFIX}/$$dir\"", \
-					"\n";' \
-			-e '} elsif ($$file !~ m!^\@!) {' \
-				-e 'if ($$dir =~ m!^bin!) {' \
-					-e 'print FFILES "${INSTALL_PROGRAM}";' \
-				-e '} elsif ($$dir =~ m!^(lib|share)!) {' \
-					-e 'print FFILES "${INSTALL_DATA}";' \
-				-e '} elsif ($$dir =~ m!^man!) {' \
-					-e 'print FFILES "${INSTALL_MAN}";' \
-					-e '($$file_partial =~ s!${MANEXT}$$!!);' \
-					-e '($$file =~ s!${MANEXT}$$!!);' \
-				-e '}' \
-				-e 'print FFILES " ", "\"${TEMP_PREFIX}/$$file_partial\"", \
-					" ", "\"${PREFIX}/$$file\"", \
-					"\n";' \
-			-e '}' \
-		-e '}' \
-		-e 'close(FFILES);' \
-		-e 'close(FDIR);' \
-		-e 'close(FHANDLER);'
-	@${SORT} ${WRKDIR}/dirs.sh.tmp > ${WRKDIR}/dirs.sh
+.if empty(have_boot)
+have_boot=	${WRKSRC}/boot
+.endif
 
-install-run-scripts:
-.for script in dirs files
-	@${SH} ${WRKDIR}/${script}.sh
-.endfor
+MAKE_ENV+=	PATH=${have_boot}/bin:$$PATH \
+		FPC=${have_boot}/bin/ppc386 \
+		INSTALL_BASEDIR=${PREFIX}/lib/fpc/${PORTVERSION} \
+		INSTALL_BINDIR=${PREFIX}/bin \
+		GCCLIBDIR=/usr/lib \
+		RELEASE=1
 
-run-pkg-install-script:
+do-extract:
+# unpack distribution
+	@${MKDIR} ${WRKSRC}
+	@${TAR} xf ${DISTDIR}/${DISTNAME}.tar --directory ${WRKSRC}
+# unpack pre-compiled binaries distribution
+	@${MKDIR} ${WRKSRC}/binary
+	@${TAR} xf ${WRKSRC}/binary.tar --directory ${WRKSRC}/binary
+# unpack sources distribution
+	@${MKDIR} ${WRKSRC}/sources
+	@${TAR} xf ${WRKSRC}/sources.tar --directory ${WRKSRC}/sources
+# create a local binary ppc386
+	@${MKDIR} ${WRKSRC}/boot
+	@${TAR} zxf ${WRKSRC}/binary/basefreebsd.tar.gz \
+		--directory ${WRKSRC}/boot
+	@${TAR} zxf ${WRKSRC}/binary/utilfreebsd.tar.gz \
+		--directory ${WRKSRC}/boot
+	@${LN} -sf ${WRKSRC}/boot/lib/fpc/${PORTVERSION}/ppc386 \
+		${WRKSRC}/boot/bin/ppc386
+# further extract base sources
+#
+# mandatory sources
+	@${TAR} zxf ${WRKSRC}/sources/basesrc.tar.gz \
+		--directory ${WRKSRC}
+	@${TAR} zxf ${WRKSRC}/sources/compilersrc.tar.gz \
+		--directory ${WRKSRC}
+	@${TAR} zxf ${WRKSRC}/sources/rtlsrc.tar.gz \
+		--directory ${WRKSRC}
+# dependencies of FCL
+	@${TAR} zxf ${WRKSRC}/sources/unitspaszlibsrc.tar.gz \
+		--directory ${WRKSRC}
+	@${TAR} zxf ${WRKSRC}/sources/unitsnetdbsrc.tar.gz \
+		--directory ${WRKSRC}
+	@${TAR} zxf ${WRKSRC}/sources/unitslibasyncsrc.tar.gz \
+		--directory ${WRKSRC}
+	@${TAR} zxf ${WRKSRC}/sources/unitsmysqlsrc.tar.gz \
+		--directory ${WRKSRC}
+	@${TAR} zxf ${WRKSRC}/sources/unitsibasesrc.tar.gz \
+		--directory ${WRKSRC}
+# FCL is required for some of the compiler utilities
+	@${TAR} zxf ${WRKSRC}/sources/fclsrc.tar.gz \
+		--directory ${WRKSRC}
+# compiler utilities
+	@${TAR} zxf ${WRKSRC}/sources/utilssrc.tar.gz \
+		--directory ${WRKSRC}
+
+post-patch:
+# change to alter amount of optimization
+	@${FIND} ${WRKSRC}/share/src/fpc-${PORTVERSION} -name \
+		"Makefile*" | ${XARGS} ${REINPLACE_CMD} 's|-OG2p3|-OG2p1|g'
+
+do-build:
+	cd ${WRKSRC}/share/src/fpc-${PORTVERSION}/rtl && \
+		${GMAKE} ${MAKE_ENV} all
+	cd ${WRKSRC}/share/src/fpc-${PORTVERSION}/compiler && \
+		${GMAKE} ${MAKE_ENV} all
+	cd ${WRKSRC}/share/src/fpc-${PORTVERSION}/packages/base/libasync && \
+		${GMAKE} ${MAKE_ENV} all
+	cd ${WRKSRC}/share/src/fpc-${PORTVERSION}/fcl && \
+		${GMAKE} ${MAKE_ENV} all
+# kludge so that bin2obj finds ZSTREAM and builds
+	cd ${WRKSRC}/share/src/fpc-${PORTVERSION} && \
+		${CP} fcl/inc/zstream.pp utils
+	cd ${WRKSRC}/share/src/fpc-${PORTVERSION}/utils && \
+		${GMAKE} ${MAKE_ENV} all
+
+do-install:
+	cd ${WRKSRC}/share/src/fpc-${PORTVERSION}/rtl && \
+		${GMAKE} ${MAKE_ENV} install
+	cd ${WRKSRC}/share/src/fpc-${PORTVERSION}/compiler && \
+		${GMAKE} ${MAKE_ENV} install
+	cd ${WRKSRC}/share/src/fpc-${PORTVERSION}/packages/base/libasync && \
+		${GMAKE} ${MAKE_ENV} install
+	cd ${WRKSRC}/share/src/fpc-${PORTVERSION}/fcl && \
+		${GMAKE} ${MAKE_ENV} install
+	cd ${WRKSRC}/share/src/fpc-${PORTVERSION}/utils && \
+		${GMAKE} ${MAKE_ENV} install
+	@${MKDIR} ${PREFIX}/man/man1
+	cd ${WRKSRC}/boot/man/man1 && ${INSTALL_MAN} ${MAN1} \
+		${PREFIX}/man/man1
+	@${MKDIR} ${PREFIX}/man/man5
+	cd ${WRKSRC}/boot/man/man5 && ${INSTALL_MAN} ${MAN5} \
+		${PREFIX}/man/man5
+
+post-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} \
 		${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
