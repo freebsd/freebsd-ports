@@ -1,0 +1,43 @@
+--- programs/glove/Make.header.orig	Fri Sep 24 15:41:45 1999
++++ programs/glove/Make.header	Wed Jun 14 22:55:54 2000
+@@ -17,14 +17,15 @@
+ 
+ # Directories to search for header files
+ 
+-SEARCHDIRS := -I- \
++SEARCHDIRS = -I- \
+               -I${CODEDIR} \
+ 	 	      -I${PLOTDIR} \
+               -I${JCOREDIR} \
+               -I${JXDIR} \
+               -I${JPARSEDIR} \
+               -I${J2DPLOTDIR} \
+-              -I${ACE_ROOT}
++              -I${ACE_ROOT} \
++		${J_X11_INCLUDE_DIR}
+ 
+ # other constants
+ 
+@@ -41,13 +42,6 @@
+ 
+ # library dependencies
+ 
+-ifdef J_BUILD_SHARED_LIB
+-  LIB_DEPS := ${JLIBDIR}/libjparser-${JPARSER_LIB_VERSION}.so \
+-              ${JLIBDIR}/libj2dplot-${J2DPLOT_LIB_VERSION}.so
+-else
+-  LIB_DEPS := ${JLIBDIR}/libjparser-${JPARSER_LIB_VERSION}.a \
+-              ${JLIBDIR}/libj2dplot-${J2DPLOT_LIB_VERSION}.a
+-endif
+ 
+ # make variables
+ 
+@@ -64,7 +58,7 @@
+ #####
+ 
+ .PHONY : default
+-default: libs glove
++default: glove
+ 
+ .PHONY : Makefiles
+ Makefiles:
