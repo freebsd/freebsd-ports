@@ -1,16 +1,16 @@
---- diffstat.c.orig	Sun May 17 05:07:38 1998
-+++ diffstat.c	Wed Feb 16 11:20:00 2000
-@@ -83,13 +83,11 @@
- #if HAVE_MALLOC_H
+--- diffstat.c.orig	Wed Mar 29 16:01:19 2000
++++ diffstat.c	Mon May  8 23:28:20 2000
+@@ -92,13 +92,11 @@
+ #ifdef HAVE_MALLOC_H
  #include <malloc.h>
  #else
--extern	char	*malloc();
+-extern char *malloc();
  #endif
  
- #if HAVE_GETOPT_H
+ #ifdef HAVE_GETOPT_H
  #include <getopt.h>
  #else
--extern	int	getopt();
- extern	char	*optarg;
- extern	int	optind;
+-extern int getopt();
+ extern char *optarg;
+ extern int optind;
  #endif
