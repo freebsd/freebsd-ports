@@ -9,18 +9,18 @@ share/bison/lalr1.cc
 share/bison/m4sugar/m4sugar.m4
 share/bison/m4sugar/version.m4
 share/bison/yacc.c
-share/locale/de/LC_MESSAGES/bison.mo
-share/locale/es/LC_MESSAGES/bison.mo
-share/locale/et/LC_MESSAGES/bison.mo
-share/locale/fr/LC_MESSAGES/bison.mo
-share/locale/hr/LC_MESSAGES/bison.mo
-share/locale/id/LC_MESSAGES/bison.mo
-share/locale/it/LC_MESSAGES/bison.mo
-share/locale/ja/LC_MESSAGES/bison.mo
-share/locale/nl/LC_MESSAGES/bison.mo
-share/locale/pt_BR/LC_MESSAGES/bison.mo
-share/locale/ru/LC_MESSAGES/bison.mo
-share/locale/sv/LC_MESSAGES/bison.mo
-share/locale/tr/LC_MESSAGES/bison.mo
+%%NLS%%share/locale/de/LC_MESSAGES/bison.mo
+%%NLS%%share/locale/es/LC_MESSAGES/bison.mo
+%%NLS%%share/locale/et/LC_MESSAGES/bison.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/bison.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/bison.mo
+%%NLS%%share/locale/id/LC_MESSAGES/bison.mo
+%%NLS%%share/locale/it/LC_MESSAGES/bison.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/bison.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/bison.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/bison.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/bison.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/bison.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/bison.mo
 @dirrm share/bison/m4sugar
 @dirrm share/bison
