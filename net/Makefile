@@ -325,7 +325,6 @@
     SUBDIR += tcpstat
     SUBDIR += tcptrace
     SUBDIR += tcpview
-    SUBDIR += tcserver
     SUBDIR += tdetect
     SUBDIR += telnetx
     SUBDIR += telserv
