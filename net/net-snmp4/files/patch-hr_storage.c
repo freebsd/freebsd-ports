@@ -1,5 +1,14 @@
 --- agent/mibgroup/host/hr_storage.c.orig	Mon Mar 18 22:39:56 2002
-+++ agent/mibgroup/host/hr_storage.c	Thu Aug 29 11:54:11 2002
++++ agent/mibgroup/host/hr_storage.c	Sun Nov 17 00:43:32 2002
+@@ -32,7 +32,7 @@
+ #else
+ #if HAVE_VM_VM_H
+ #include <vm/vm.h>
+-#if HAVE_MACHINE_TYPES_H
++#if HAVE_MACHINE_TYPES_H && (!defined(__FreeBSD__) || __FreeBSD_version < 500000)
+ #include <machine/types.h>
+ #endif
+ #if HAVE_SYS_VMMETER_H
 @@ -145,7 +145,7 @@
  #define HRFS_mount	mnt_mountp
  #define HRFS_statfs	statvfs
