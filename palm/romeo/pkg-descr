@@ -1,0 +1,9 @@
+With Romeo, you can construct custom PalmOS ROM images with extra
+applications of your choice and without any of the default applications
+that you never use. This can be extremely useful if your Palm doesn't
+have much RAM, or if you are deploying an application to, say, a sales
+team and want to make it as user-proof as possible. There's almost 600K
+of unused space on a typical Palm ROM, and you can be taking advantage
+of it.
+
+WWW: http://romeo.sourceforge.net/
