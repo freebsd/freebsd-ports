@@ -4406,7 +4406,6 @@ morpheus	ports/graphics/morpheus
 morse		src/games/morse
 mosaic		ports/www/Mosaic
 moscow_ml	ports/lang/moscow_ml
-mosfet-liquid	ports/x11-wm/mosfet-liquid
 most		ports/misc/most
 motor		ports/devel/motor
 mount		src/sbin/mount
