@@ -1,0 +1,14 @@
+--- Make/makedirdefs.orig	Tue Jul 22 21:12:55 2003
++++ Make/makedirdefs	Tue Jul 22 21:13:50 2003
+@@ -58,9 +58,11 @@
+ ifneq ($(OS),Darwin)
+ ifneq ($(OS),SunOS)
+ ifneq ($(OS),IRIX)
++ifneq ($(OS),FreeBSD)
+ 
+   PLUGIN_DIRS += geo
+ 
++endif
+ endif
+ endif
+ endif

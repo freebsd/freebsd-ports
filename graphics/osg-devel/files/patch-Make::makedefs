@@ -1,0 +1,52 @@
+--- Make/makedefs.orig	Tue Apr 15 04:39:12 2003
++++ Make/makedefs	Sat Jul 26 10:15:38 2003
+@@ -70,7 +70,7 @@
+ ##                            doesn't make a distinction, we will.
+ ############################################################################
+ 
+-CXXFLAGS   = $(ARCHARGS) $(DOF) $(DEF) $(INC)
++CXXFLAGS   = $(ARCHARGS) $(DOF) $(DEF) $(INC) %%CXXFLAGS%%
+ LDFLAGS    = $(ARCHARGS) $(DOF) $(LINKARGS) -L$(TOPDIR)/lib/$(OS)$(ARCH) 
+ OBJS       = $(C++FILES:.cpp=.o) \
+              $(CXXFILES:.cpp=.o) \
+@@ -303,26 +303,33 @@
+ 
+ #### FreeBSD specific definitions
+ ifeq ($(OS),FreeBSD)
+-  C++               = g++
++  C++               = ${CXX}
+   DEPARG            = -MM
+-  INC               +=  -I/usr/local/include -I/usr/X11R6/include
++  INC               += -I${LOCALBASE}/include -I${X11BASE}/include
+   DEF               += -W -Wall
+-  OPTF              = -O2 
++  OPTF              =
+   DBGF              = -g -DOSG_COMPILE_UNIT_TESTS
+   SHARED            = -shared
+   ARCH              = 
+   ARCHINST          = 
+   ARCHARGS          = 
+-  LINKARGS          = -L/usr/X11R6/lib -L/usr/local/lib -rpath /usr/local/lib
++  LINKARGS          = -L${X11BASE}/lib -L${LOCALBASE}/lib -rpath ${LOCALBASE}/lib -rpath ${X11BASE}/lib
+   DYNAMICLIBRARYLIB = 
+   OSG_LIBS          = -losgGA -losgDB -losgUtil -losg 
+   FREETYPE_LIB      = -lfreetype
+   GL_LIBS           = -lGLU -lGL 
+   X_LIBS            = -lXmu -lX11
+   SOCKET_LIBS       = 
+-  OTHER_LIBS        = 
+-  INST_LOCATION     = /opt/X11R6
+-  INST_SHARE        = /usr/share/OpenSceneGraph
++  OTHER_LIBS        = ${PTHREAD_LIBS}
++  INST_LOCATION     = ${PREFIX}
++  INST_SHARE        = ${PREFIX}/share
++  INST_EXAMPLES     = ${INST_SHARE}/examples/osg/bin
++  INST_EXAMPLE_SRC  = ${INST_SHARE}/examples/osg/src
++  INST_DOC          = ${INST_SHARE}/doc/osg
++  INST_SRC          = ${INST_EXAMPLE_SRC}
++  INST_DATA         = ${INST_SHARE}/osg
++  INSTBINCMD        = ${BSD_INSTALL_PROGRAM}
++  INSTDEVCMD        = ${BSD_INSTALL_DATA}
+ endif
+ 
+ #### MacOS X specific definitions
