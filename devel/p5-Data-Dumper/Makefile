@@ -19,9 +19,6 @@ PERL_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} >= 500801
-IGNORE="Alread included in perl ${PERL_VER}"
-.endif
 .if ${PERL_LEVEL} < 500601
 IGNORE="Need at least perl 5.6.1 to build"
 .endif
