@@ -5028,6 +5028,7 @@ p5-Lingua-EN-Sentence	ports/textproc/p5-Lingua-EN-Sentence
 p5-Lingua-EN-Squeeze	ports/textproc/p5-Lingua-EN-Squeeze
 p5-Lingua-EN-Summarize	ports/textproc/p5-Lingua-EN-Summarize
 p5-Lingua-EN-Syllable	ports/textproc/p5-Lingua-EN-Syllable
+p5-Lingua-Ident	ports/textproc/p5-Lingua-Ident
 p5-Lingua-Ispell	ports/textproc/p5-Lingua-Ispell
 p5-Lingua-Preferred	ports/textproc/p5-Lingua-Preferred
 p5-Lingua-RU-Charset	ports/russian/p5-Lingua-RU-Charset
