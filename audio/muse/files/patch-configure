@@ -1,0 +1,38 @@
+--- configure.orig	Sun Apr 18 00:33:26 2004
++++ configure	Mon Apr 19 22:34:18 2004
+@@ -3427,7 +3427,7 @@
+ #AM_DEFINE_UNQUOTED(HOST_CPU, "${host_cpu}")
+ 
+ #CFLAGS="-O4 -D_REENTRANT -fomit-frame-pointer -march=${host_cpu} -ffast-math -malign-double -funroll-loops -pipe"
+-CFLAGS="-pipe -D_REENTRANT"
++CFLAGS="$CFLAGS -D_REENTRANT"
+ 
+ ac_ext=c
+ ac_cpp='$CPP $CPPFLAGS'
+@@ -11182,7 +11182,7 @@
+ else
+ 
+ lrint_save_CFLAGS=$CFLAGS
+-CFLAGS="-O2 -lm"
++CFLAGS="$CFLAGS -lm"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -11249,7 +11249,7 @@
+ else
+ 
+ lrintf_save_CFLAGS=$CFLAGS
+-CFLAGS="-O2 -lm"
++CFLAGS="$CFLAGS -lm"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -11836,8 +11836,6 @@
+    else
+      CFLAGS="$CFLAGS -O3 -fomit-frame-pointer -march=${host_cpu} -ffast-math"
+    fi
+-else
+-   CFLAGS="$CFLAGS -O2 -ffast-math"
+ fi
+ 
+ 
