@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtk
-PORTVERSION=	2.0.6
+PORTVERSION=	2.0.7
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/gtk+/2.0,} \
 		ftp://ftp.gtk.org/pub/gtk/v2.0/ \
@@ -33,9 +33,12 @@ USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_REINPLACE=	yes
 USE_PERL5=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomehack
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ARGS=	--enable-static
+CONFIGURE_ARGS=	--enable-static \
+		--with-xinput=xfree
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/freetype2 \
 			  -I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -47,8 +50,6 @@ MAN1=		gdk-pixbuf-csource.1
 post-extract:
 	@find ${WRKSRC} -name "Makefile.in" | xargs ${GREP} -l lgmodule | \
 		xargs ${REINPLACE_CMD} -e 's|-lgmodule|@GMODULE_LIBS@|g'
-	@find ${WRKSRC} -name Makefile.in | xargs ${REINPLACE_CMD} -e \
-		's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g'
 
 pre-build:
 	${RM} -rf ${WRKSRC}/docs/gtk.info*
