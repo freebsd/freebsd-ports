@@ -1,7 +1,7 @@
-Index: Makefile.top
-diff -u Makefile.top.orig Makefile.top
---- Makefile.top.orig	Thu Dec  6 01:25:04 2001
-+++ Makefile.top	Thu Dec  6 03:33:13 2001
+Index: Makefile.top_enable_nls
+diff -u Makefile.top_enable_nls.orig Makefile.top_enable_nls
+--- Makefile.top_enable_nls.orig	Wed Dec  5 16:41:15 2001
++++ Makefile.top_enable_nls	Thu Dec  6 03:35:21 2001
 @@ -30,7 +30,7 @@
  #
  # Default
