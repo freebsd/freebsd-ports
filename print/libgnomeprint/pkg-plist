@@ -1,5 +1,8 @@
 bin/gnome-font-install
 etc/printConf.sh
+include/libgnomeprint/gnome-canvas-bpath-util.h
+include/libgnomeprint/gnome-canvas-bpath.h
+include/libgnomeprint/gnome-canvas-hacktext.h
 include/libgnomeprint/gnome-font-dialog.h
 include/libgnomeprint/gnome-font.h
 include/libgnomeprint/gnome-print-copies.h
@@ -9,6 +12,7 @@ include/libgnomeprint/gnome-print-master-preview.h
 include/libgnomeprint/gnome-print-master.h
 include/libgnomeprint/gnome-print-meta.h
 include/libgnomeprint/gnome-print-multipage.h
+include/libgnomeprint/gnome-print-pclr.h
 include/libgnomeprint/gnome-print-pixbuf.h
 include/libgnomeprint/gnome-print-preview.h
 include/libgnomeprint/gnome-print-rgbp.h
@@ -19,7 +23,7 @@ include/libgnomeprint/gnome-printer.h
 include/libgnomeprint/gnome-text.h
 lib/libgnomeprint.a
 lib/libgnomeprint.so
-lib/libgnomeprint.so.7
+lib/libgnomeprint.so.9
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 share/gnome/fonts/afms/adobe/pagd8a.afm
@@ -65,6 +69,7 @@ share/gnome/fonts/afms/adobe/pzcmi8a.afm
 share/gnome/fonts/afms/adobe/pzdr.afm
 share/gnome/fonts/fontmap
 share/gnome/gnome-print/profiles/Postscript.profile
+share/locale/ca/LC_MESSAGES/gnome-print.mo
 share/locale/da/LC_MESSAGES/gnome-print.mo
 share/locale/de/LC_MESSAGES/gnome-print.mo
 share/locale/el/LC_MESSAGES/gnome-print.mo
@@ -84,6 +89,7 @@ share/locale/pl/LC_MESSAGES/gnome-print.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-print.mo
 share/locale/ru/LC_MESSAGES/gnome-print.mo
 share/locale/sv/LC_MESSAGES/gnome-print.mo
+share/locale/tr/LC_MESSAGES/gnome-print.mo
 share/locale/uk/LC_MESSAGES/gnome-print.mo
 @dirrm share/gnome/fonts/afms/adobe
 @dirrm share/gnome/fonts/afms
