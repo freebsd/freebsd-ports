@@ -1,5 +1,5 @@
---- Makefile.orig	Mon Oct 23 14:21:41 2000
-+++ Makefile	Thu Nov 16 11:12:35 2000
+--- Makefile.orig	Mon Oct 23 04:21:41 2000
++++ Makefile	Fri Mar 19 03:37:41 2004
 @@ -4,11 +4,13 @@
  # Edit the entries below for your system:
  # In most cases you don't have to
@@ -13,7 +13,7 @@
 +CC		?= gcc
 +_CFLAGS		!= $(GTK_CONFIG) --cflags
 +_LIBS		!= $(GTK_CONFIG) --libs
-+CFLAGS		+= $(_CFLAGS)
++CFLAGS		+= $(_CFLAGS) -fPIC
 +LIBS		+= $(_LIBS)
  
  #Use these for FreeBSD:
