@@ -789,7 +789,7 @@ MASTER_SITE_TEX_CTAN+=  \
 
 MASTER_SITE_THEMES+= \
 	http://download.freshmeat.net/themes/%SUBDIR%/ \
-	fttp://gd.tuwien.ac.at/opsys/linux/freshmeat/themes/%SUBDIR%/
+	ftp://gd.tuwien.ac.at/opsys/linux/freshmeat/themes/%SUBDIR%/
 
 MASTER_SITE_VIM+= \
 	ftp://ftp.vim.org/pub/vim/unix/  \
