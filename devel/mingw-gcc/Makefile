@@ -40,6 +40,8 @@ MAN1=	cccp.1                 \
 
 post-patch:
 	${REINPLACE_CMD} -e 's/install-libiberty//' ${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -E -e 's/([^x])str(error|signal).[co]/\1/g' \
+		${WRKSRC}/libiberty/Makefile.in ${WRKSRC}/libstdc++/Makefile.in
 
 pre-install:
 	${MV} ${PREFIX}/bin/i386-mingw32msvc-c++filt \
