@@ -32,7 +32,7 @@ RUN_DEPENDS=	gnumeric:${PORTSDIR}/math/gnumeric2 \
 		gob2:${PORTSDIR}/devel/gob2 \
 		gtetrinet:${PORTSDIR}/games/gtetrinet \
 		${X11BASE}/lib/gaim/docklet.so:${PORTSDIR}/net/gaim \
-		gnomemeeting:${PORTSDIR}/net/gnomemeeting2 \
+		gnomemeeting:${PORTSDIR}/net/gnomemeeting \
 		gnome-font-viewer:${PORTSDIR}/x11-fonts/fontilus \
 		seahorse:${PORTSDIR}/security/seahorse \
 		totem:${PORTSDIR}/multimedia/totem \
