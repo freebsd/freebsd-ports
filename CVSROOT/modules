@@ -7799,6 +7799,7 @@ toppler		ports/games/toppler
 tora		ports/databases/tora
 tornado		ports/games/tornado
 tosha		ports/audio/tosha
+tosvcd		ports/graphics/tosvcd
 totd		ports/net/totd
 totem		ports/graphics/totem
 touch		src/usr.bin/touch
