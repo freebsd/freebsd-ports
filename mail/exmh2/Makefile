@@ -8,6 +8,7 @@
 # "+=" and "?=" lines are for sharing this Makefile with japanese/exmh2.
 PORTNAME=	exmh
 PORTVERSION=	2.2
+PORTREVISION=	1
 CATEGORIES+=	mail tk82
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
