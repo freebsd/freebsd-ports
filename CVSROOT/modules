@@ -6264,6 +6264,7 @@ sxm		ports/lang/sxm
 sxpc		ports/x11/sxpc
 sxsame		ports/games/sxsame
 sylpheed	ports/mail/sylpheed
+sylpheed-claws	ports/mail/sylpheed-claws
 symlinks	ports/sysutils/symlinks
 symorder	src/usr.bin/symorder
 synaesthesia	ports/graphics/synaesthesia
