@@ -1,14 +1,6 @@
 # $FreeBSD$
 #
 
-    SUBDIR += 221upgrade
-    SUBDIR += 222upgrade
-    SUBDIR += 225upgrade
-    SUBDIR += 227upgrade
-    SUBDIR += 30upgrade
-    SUBDIR += 31upgrade
-    SUBDIR += 32upgrade
-    SUBDIR += 34upgrade
     SUBDIR += 40upgrade
     SUBDIR += 41upgrade
     SUBDIR += 42upgrade
