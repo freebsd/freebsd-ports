@@ -1,0 +1,17 @@
+--- Makefile.in.orig	Thu Apr 20 09:34:21 2000
++++ Makefile.in	Mon Jun  5 20:54:52 2000
+@@ -10,11 +10,13 @@
+ MANDIR = /usr/local/man/man8
+ MANPAGE = tmetric.8
+ 
++all: $(OUTPUT)
++
+ $(OUTPUT): $(OBJ)
+ 	$(CC) $(LIBS) $(LDFLAGS) $(OBJ) -o $(OUTPUT)
+ 
+ install: $(OUTPUT)
+-	$(INSTALL) $(OUTPUT) $(BINDIR)
++	$(INSTALL) -m 4755 $(OUTPUT) $(BINDIR)
+ 	$(INSTALL) $(MANPAGE) $(MANDIR)
+ 
+ clean:
