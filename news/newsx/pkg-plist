@@ -1,3 +1,6 @@
 bin/newsx
 bin/newsq
 bin/testfilter
+@dirrm news/spool/inhosts
+@dirrm news/spool
+@dirrm news
