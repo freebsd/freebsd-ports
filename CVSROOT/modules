@@ -6013,6 +6013,7 @@ ruby-htmlsplit	ports/textproc/ruby-htmlsplit
 ruby-http-access	ports/www/ruby-http-access
 ruby-icmp	ports/net/ruby-icmp
 ruby-iconv	ports/converters/ruby-iconv
+ruby-imlib2	ports/graphics/ruby-imlib2
 ruby-interbase	ports/databases/ruby-interbase
 ruby-intl	ports/devel/ruby-intl
 ruby-irc	ports/irc/ruby-irc
