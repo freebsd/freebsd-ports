@@ -26,7 +26,13 @@ USE_GCC=		3.4
 
 PLIST_FILES=		bin/glob2
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha"
+BROKEN=			"Does not build on alpha"
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/glob2 ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
