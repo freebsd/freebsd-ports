@@ -26,8 +26,6 @@ DISTFILES=	${GNATNAME}.tgz:gnat \
 MAINTAINER=	eischen@vigrid.com
 COMMENT=	The GNU Ada Compiler system
 
-BUILD_DEPENDS=  gcc28:${PORTSDIR}/lang/gcc28
-
 .include <bsd.port.pre.mk>
 
 WRKSRC=		${WRKDIR}/gcc-2.8.1
