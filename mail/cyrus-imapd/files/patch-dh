@@ -1,0 +1,85 @@
+Index: imap/imapd.c
+diff -u imap/imapd.c.orig imap/imapd.c
+--- imap/imapd.c.orig	Mon May  7 02:45:36 2001
++++ imap/imapd.c	Mon May  7 03:31:46 2001
+@@ -394,6 +394,9 @@
+     imapd_exists = -1;
+ }
+ 
++static int imaps = 0;
++static sasl_ssf_t extprops_ssf = 0;
++
+ /*
+  * run once when process is forked;
+  * MUST NOT exit directly; must return with non-zero error code
+@@ -401,6 +404,7 @@
+ int service_init(int argc, char **argv, char **envp)
+ {
+     int r;
++    int opt;
+ 
+     config_changeident("imapd");
+     
+@@ -447,6 +451,26 @@
+     snmp_connect(); /* ignore return code */
+     snmp_set_str(SERVER_NAME_VERSION,CYRUS_VERSION);
+ 
++    while ((opt = getopt(argc, argv, "C:sp:")) != EOF) {
++	switch (opt) {
++	case 'C': /* alt config file - handled by service::main() */
++	    break;
++	case 's': /* imaps (do starttls right away) */
++	    imaps = 1;
++	    if (!starttls_enabled()) {
++		syslog(LOG_ERR, "imaps: required OpenSSL options not present");
++		fatal("imaps: required OpenSSL options not present",
++		      EC_CONFIG);
++	    }
++	    break;
++	case 'p': /* external protection */
++	    extprops_ssf = atoi(optarg);
++	    break;
++	default:
++	    break;
++	}
++    }
++
+     return 0;
+ }
+ 
+@@ -455,8 +479,6 @@
+  */
+ int service_main(int argc, char **argv, char **envp)
+ {
+-    int imaps = 0;
+-    int opt;
+     socklen_t salen;
+     struct hostent *hp;
+     int timeout;
+@@ -478,25 +500,7 @@
+ #endif
+ 
+     memset(&extprops, 0, sizeof(sasl_external_properties_t));
+-    while ((opt = getopt(argc, argv, "C:sp:")) != EOF) {
+-	switch (opt) {
+-	case 'C': /* alt config file - handled by service::main() */
+-	    break;
+-	case 's': /* imaps (do starttls right away) */
+-	    imaps = 1;
+-	    if (!starttls_enabled()) {
+-		syslog(LOG_ERR, "imaps: required OpenSSL options not present");
+-		fatal("imaps: required OpenSSL options not present",
+-		      EC_CONFIG);
+-	    }
+-	    break;
+-	case 'p': /* external protection */
+-	    extprops.ssf = atoi(optarg);
+-	    break;
+-	default:
+-	    break;
+-	}
+-    }
++    extprops.ssf = extprops_ssf;
+ 
+     imapd_in = prot_new(0, 0);
+     imapd_out = prot_new(1, 1);
