@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mudix
-PORTVERSION=	4.0
+PORTVERSION=	4.1
 CATEGORIES=	net
 MASTER_SITES=	http://dwizardry.dhs.org/mudix/
 
