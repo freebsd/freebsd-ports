@@ -3,10 +3,10 @@
 # Date created:         17 Sep 96 
 # Whom:                 jmacd@cs.berkeley.edu
 #
-# $Id: Makefile,v 1.12 1996/11/12 02:18:01 obrien Exp $
+# $Id: Makefile,v 1.13 1997/03/06 10:58:52 asami Exp $
 #
 
-DISTNAME=       STk-3.1
+DISTNAME=       STk-3.1.1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://kaolin.unice.fr/pub/
 

@@ -35,65 +35,6 @@ diff -cr STk-3.1/Makefile.in STk-3.1.new/Makefile.in
   	(cd Tcl;     	$(MAKE) install)
   	(cd Tk;      	$(MAKE) install)
   	(cd Mp;		$(MAKE) install)
-diff -cr STk-3.1/Snow/io.c STk-3.1.new/Snow/io.c
-*** STk-3.1/Snow/io.c	Sun Jul 21 03:54:35 1996
---- STk-3.1.new/Snow/io.c	Tue Sep 17 15:25:42 1996
-***************
-*** 90,96 ****
-        if (Tk_initialized) {
-  	filled = 0;
-  	while (!filled) {
-! 	  Tcl_DoOneEvent(TK_DONT_WAIT);
-  	  if (Tk_GetNumMainWindows() <= 0) return EOF;
-  	}
-        }
---- 90,96 ----
-        if (Tk_initialized) {
-  	filled = 0;
-  	while (!filled) {
-! 	  Tcl_DoOneEvent(0);
-  	  if (Tk_GetNumMainWindows() <= 0) return EOF;
-  	}
-        }
-diff -cr STk-3.1/Src/io.c STk-3.1.new/Src/io.c
-*** STk-3.1/Src/io.c	Sun Jul 21 03:54:35 1996
---- STk-3.1.new/Src/io.c	Tue Sep 17 15:25:42 1996
-***************
-*** 90,96 ****
-        if (Tk_initialized) {
-  	filled = 0;
-  	while (!filled) {
-! 	  Tcl_DoOneEvent(TK_DONT_WAIT);
-  	  if (Tk_GetNumMainWindows() <= 0) return EOF;
-  	}
-        }
---- 90,96 ----
-        if (Tk_initialized) {
-  	filled = 0;
-  	while (!filled) {
-! 	  Tcl_DoOneEvent(0);
-  	  if (Tk_GetNumMainWindows() <= 0) return EOF;
-  	}
-        }
-*** STk-3.1/Lib/Makefile	Mon Jul 22 06:50:06 1996
---- STk-3.1.new/Lib/Makefile	Tue Sep 17 15:36:07 1996
-***************
-*** 18,24 ****
-  	-if [ ! -d $(SITE_SCHEME) ] ; then mkdir -p $(SITE_SCHEME); fi
-  	-if [ ! -d $(STK_IMAGES) ] ; then mkdir -p $(STK_IMAGES); fi
-  	-if [ ! -d $(STK_STK) ] ; then mkdir -p $(STK_STK); fi
-! 	for i in *.stk *.stklos prolog.ps STk.init; \
-  	do \
-  	  sed -e 's=/usr/local/lib/stk=$(libdir)=' \
-  	      -e 's=/usr/local/bin=$(bindir)=' $$i > $(STK_STK)/$$i ;\
---- 18,24 ----
-  	-if [ ! -d $(SITE_SCHEME) ] ; then mkdir -p $(SITE_SCHEME); fi
-  	-if [ ! -d $(STK_IMAGES) ] ; then mkdir -p $(STK_IMAGES); fi
-  	-if [ ! -d $(STK_STK) ] ; then mkdir -p $(STK_STK); fi
-! 	for i in *.stk prolog.ps STk.init; \
-  	do \
-  	  sed -e 's=/usr/local/lib/stk=$(libdir)=' \
-  	      -e 's=/usr/local/bin=$(bindir)=' $$i > $(STK_STK)/$$i ;\
 *** STk-3.1/Tk/unix/Makefile.in	Tue Sep 17 15:47:29 1996
 --- STk-3.1.new/Tk/unix/Makefile.in	Tue Sep 17 15:57:13 1996
 ***************
@@ -123,41 +64,41 @@ diff -cr STk-3.1/Src/io.c STk-3.1.new/Src/io.c
   
   # Libraries to use when linking:  must include at least Tk, Tcl, Xlib,
   # and the math library (in that order).  The "LIBS" part will be
+*** STk-3.1.1/configure.in.orig	Sat Mar  7 17:05:37 1998
+--- STk-3.1.1/configure.in	Sat Mar  7 17:05:48 1998
 ***************
-*** 188,196 ****
-  CC =		@CC@
-  CC_SWITCHES =	$(STKCFLAGS) $(DFLGS) $(ALLOC) ${CFLAGS} -I${UNIX_DIR} \
-  		-I${GENERIC_DIR} \
-! 		-I../../Tcl -I../../Src -I${BMAP_DIR} -I${TCL_DIR} \
-  		${AC_FLAGS} ${PROTO_FLAGS} ${SECURITY_FLAGS} ${MEM_DEBUG_FLAGS} \
-! 		${KEYSYM_FLAGS} 
-  
-  WISH_OBJS = tkAppInit.o
-  
---- 188,196 ----
-  CC =		@CC@
-  CC_SWITCHES =	$(STKCFLAGS) $(DFLGS) $(ALLOC) ${CFLAGS} -I${UNIX_DIR} \
-  		-I${GENERIC_DIR} \
-! 		-I../../Tcl -I../../Src -I${BMAP_DIR} -I${TCLDIR} \
-  		${AC_FLAGS} ${PROTO_FLAGS} ${SECURITY_FLAGS} ${MEM_DEBUG_FLAGS} \
-! 		${KEYSYM_FLAGS} ${X11_INCLUDES}
-  
-  WISH_OBJS = tkAppInit.o
-  
+*** 387,393 ****
+       STKLDFLAGS="$STKLDFLAGS -Wl,-E"
+       LIB_DLD=-ldld;;
+     FREEBSD)
+!      SH_CCFLAGS="-pic"
+       SH_LDFLAGS="-Bshareable -o"
+       SH_LOADER="ld"
+       LIB_MALLOC="-lgnumalloc"
+--- 387,393 ----
+       STKLDFLAGS="$STKLDFLAGS -Wl,-E"
+       LIB_DLD=-ldld;;
+     FREEBSD)
+!      SH_CCFLAGS="-fpic"
+       SH_LDFLAGS="-Bshareable -o"
+       SH_LOADER="ld"
+       LIB_MALLOC="-lgnumalloc"
+*** STk-3.1.1/configure.orig	Sat Mar  7 17:17:50 1998
+--- STk-3.1.1/configure	Sat Mar  7 17:17:59 1998
 ***************
-*** 285,291 ****
-  
-  test: tktest
-  	@cwd=`pwd`; \
-! 	cd $(TCL_DIR); TCL_LIBRARY=`pwd`/../library; export TCL_LIBRARY; \
-  	cd $$cwd; cd $(TOP_DIR); TK_LIBRARY=`pwd`/library; export TK_LIBRARY; \
-  	cd $$cwd; ( echo cd $(TOP_DIR)/tests\; source all\; exit ) | ./tktest
-  
---- 285,291 ----
-  
-  test: tktest
-  	@cwd=`pwd`; \
-! 	cd $(TCLDIR); TCL_LIBRARY=`pwd`/../library; export TCL_LIBRARY; \
-  	cd $$cwd; cd $(TOP_DIR); TK_LIBRARY=`pwd`/library; export TK_LIBRARY; \
-  	cd $$cwd; ( echo cd $(TOP_DIR)/tests\; source all\; exit ) | ./tktest
-  
+*** 1536,1542 ****
+       STKLDFLAGS="$STKLDFLAGS -Wl,-E"
+       LIB_DLD=-ldld;;
+     FREEBSD)
+!      SH_CCFLAGS="-pic"
+       SH_LDFLAGS="-Bshareable -o"
+       SH_LOADER="ld"
+       LIB_MALLOC="-lgnumalloc"
+--- 1536,1542 ----
+       STKLDFLAGS="$STKLDFLAGS -Wl,-E"
+       LIB_DLD=-ldld;;
+     FREEBSD)
+!      SH_CCFLAGS="-fpic"
+       SH_LDFLAGS="-Bshareable -o"
+       SH_LOADER="ld"
+       LIB_MALLOC="-lgnumalloc"
