@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmmenu
-PORTVERSION=	0.9
+PORTVERSION=	1.2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://www.fcoutant.freesurf.fr/download/
 
@@ -23,18 +23,17 @@ USE_GMAKE=	yes
 MAN1=		wmmenu.1
 
 post-patch:
-	@ ${MV} ${WRKSRC}/example/defaults ${WRKSRC}/example/defaults.presed
-	@ ${SED} -e 's#%%PREFIX%%#${PREFIX}#' ${WRKSRC}/example/defaults.presed \
+	@${MV} ${WRKSRC}/example/defaults ${WRKSRC}/example/defaults.presed
+	@${SED} -e 's#%%PREFIX%%#${PREFIX}#' ${WRKSRC}/example/defaults.presed \
 	> ${WRKSRC}/example/defaults
 
 post-install:
 .ifndef(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/wmmenu
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/wmmenu
-	${MKDIR} ${PREFIX}/share/doc/wmmenu/example
-	${INSTALL_DATA} ${WRKSRC}/example/apps ${PREFIX}/share/doc/wmmenu/example
-	${INSTALL_DATA} ${WRKSRC}/example/defaults ${PREFIX}/share/doc/wmmenu/example
+	${INSTALL_DATA} ${WRKSRC}/example/apps ${PREFIX}/share/doc/wmmenu/apps.sample
+	${INSTALL_DATA} ${WRKSRC}/example/defaults ${PREFIX}/share/doc/wmmenu/defaults.sample
 .endif
-	@${SED} -e 's#%%PREFIX%%#${PREFIX}#g' ${PKGMESSAGE}
+	@${SED} -e 's#%%PREFIX%%#${PREFIX}#g' ${PKGMESSAGE} | ${SED} -e 's#%%PORTNAME%%#${PORTNAME}#g'
 
 .include <bsd.port.mk>
