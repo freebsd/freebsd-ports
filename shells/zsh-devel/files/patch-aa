@@ -1,20 +1,11 @@
---- Doc/Makefile.in.orig	Tue Aug  3 12:00:20 1999
-+++ Doc/Makefile.in	Tue Aug  3 12:00:50 1999
-@@ -74,7 +74,7 @@
- 	$(TEXI2DVI) $(sdir)/zsh.texi
+--- Doc/Makefile.in.orig	Thu Apr 20 04:03:42 2000
++++ Doc/Makefile.in	Sat Apr 29 00:04:52 2000
+@@ -37,7 +37,7 @@
  
- zsh.info: zsh.texi
--	$(MAKEINFO) $(sdir)/zsh.texi; exit 0
-+	$(MAKEINFO) --no-split $(sdir)/zsh.texi; exit 0
+ @DEFS_MK@
  
- zsh.texi: zsh.yo
- 	$(YODL) -o $(sdir)/zsh.texi -I$(sdir) -w ztexi.yo version.yo zsh.yo
-@@ -177,7 +177,7 @@
- # install info pages, creating install directory if necessary
- install.info: zsh.info
- 	$(sdir_top)/mkinstalldirs $(infodir)
--	for file in zsh.info zsh.info-[1-9]*; do \
-+	for file in zsh.info ; do \
- 	  if test -f $$file; then \
- 	    $(INSTALL_DATA) $$file $(infodir); \
- 	  elif test -f $(sdir)/$$file; then \
+-MAKEINFO = makeinfo
++MAKEINFO = makeinfo --no-split
+ TEXI2DVI = texi2dvi
+ DVIPS = dvips
+ TEXI2HTML = texi2html -expandinfo -split_chapter
