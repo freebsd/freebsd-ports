@@ -7,7 +7,6 @@ fi
 
 USER="jabber"
 RUNDIR="/var/tmp"
-LOG="/var/log/jabber.log"
 HOSTNAME=`/bin/hostname`
 
 test -x ${PREFIX}/sbin/jabberd || exit 1
@@ -20,9 +19,9 @@ cd ${RUNDIR} || exit
 
 case ${1:-start} in
 start)
-    su -f -m ${USER} -c "jabberd -h ${HOSTNAME} -c ${PREFIX}/etc/jabber.xml" >${LOG} 2>&1 &;;
+    su -f -m ${USER} -c "jabberd -B -h ${HOSTNAME} -c ${PREFIX}/etc/jabber.xml" ;;
 
 stop)
-    killall jabberd;
+    killall -SIGKILL -u ${USER} jabberd;
     rm -f ${RUNDIR}/jabber.pid;
 esac
