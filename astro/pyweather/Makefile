@@ -14,13 +14,11 @@ DISTNAME=	pyWeather
 
 MAINTAINER=	ports@FreeBSD.org
 
-RUN_DEPENDS=	${PYTHON}:${PORTSDIR}/lang/python
-
+USE_PYTHON=	yes
 NO_BUILD=	yes
-PYTHON?=	${LOCALBASE}/bin/python
 
-pre-install:
-	@${PERL} -pi -e "s:/usr/bin/python:${PYTHON}:g ; \
+post-patch:
+	@${PERL} -pi -e "s:/usr/bin/python:${PYTHON_CMD}:g ; \
 		s:pyWeather.py:pyWeather:g" ${WRKSRC}/pyWeather.py
 
 do-install:
