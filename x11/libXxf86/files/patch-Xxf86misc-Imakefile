@@ -1,0 +1,28 @@
+--- Xxf86misc/Imakefile.orig	Sat May  8 16:31:00 2004
++++ Xxf86misc/Imakefile	Sat May  8 16:34:55 2004
+@@ -1,18 +1,17 @@
+ XCOMM $XFree86: xc/lib/Xxf86misc/Imakefile,v 3.3 2002/10/16 00:37:34 dawes Exp $
+-#define DoNormalLib NormalLibXxf86misc
+-#define DoSharedLib SharedLibXxf86misc
+-#define DoExtraLib SharedLibXxf86misc
+-#define DoDebugLib DebugLibXxf86misc
+-#define DoProfileLib ProfileLibXxf86misc
++#define DoNormalLib YES
++#define DoSharedLib YES
++#define DoExtraLib YES
++#define DoDebugLib NO
++#define DoProfileLib NO
+ #define LibName Xxf86misc
+ #define SoRev SOXXF86MISCREV
++SOXXF86MISCREV = 1.0
+ #define LibHeaders NO
+ 
+ #include <Threads.tmpl>
+ 
+-#ifdef SharedXxf86miscReqs
+-REQUIREDLIBS = SharedXxf86miscReqs
+-#endif
++REQUIREDLIBS = $(LDPRELIB) $(XLIB)
+ 
+ XF86MISCSRCS = XF86Misc.c
+ XF86MISCOBJS = XF86Misc.o

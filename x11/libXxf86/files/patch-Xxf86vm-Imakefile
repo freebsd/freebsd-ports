@@ -1,0 +1,28 @@
+--- Xxf86vm/Imakefile.orig	Sat May  8 16:30:56 2004
++++ Xxf86vm/Imakefile	Sat May  8 16:34:35 2004
+@@ -1,18 +1,17 @@
+ XCOMM $XFree86: xc/lib/Xxf86vm/Imakefile,v 3.3 2002/10/16 00:37:34 dawes Exp $
+-#define DoNormalLib NormalLibXxf86vm
+-#define DoSharedLib SharedLibXxf86vm
+-#define DoExtraLib SharedLibXxf86vm
+-#define DoDebugLib DebugLibXxf86vm
+-#define DoProfileLib ProfileLibXxf86vm
++#define DoNormalLib YES
++#define DoSharedLib YES
++#define DoExtraLib YES
++#define DoDebugLib NO
++#define DoProfileLib NO
+ #define LibName Xxf86vm
+ #define SoRev SOXXF86VMREV
++SOXXF86VMREV = 1.0
+ #define LibHeaders NO
+ 
+ #include <Threads.tmpl>
+ 
+-#ifdef SharedXxf86vmReqs
+-REQUIREDLIBS = SharedXxf86vmReqs
+-#endif
++REQUIREDLIBS = $(LDPRELIB) $(XLIB)
+ 
+ VIDMODESRCS = XF86VMode.c
+ VIDMODEOBJS = XF86VMode.o

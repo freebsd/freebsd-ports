@@ -1,0 +1,9 @@
+#define IHaveSubdirs
+#define PassCDebugFlags
+
+SUBDIRS = Xxf86misc Xxf86vm Xxf86dga
+
+MakeSubdirs($(SUBDIRS))
+DependSubdirs($(SUBDIRS))
+MakeLintLibSubdirs($(LINTSUBDIRS))
+MakeLintSubdirs($(LINTSUBDIRS),install.ln,install.ln)
