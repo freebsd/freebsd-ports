@@ -1,0 +1,19 @@
+*** examples/program_7.nab	Wed Mar 10 18:57:51 1999
+--- examples/program_7.nab	Sun Jun  2 13:40:36 2002
+***************
+*** 9,15 ****
+  cseq = wc_complement( "acgtacgt", "dna.amber94.rlb", "dna" );
+  
+  m = wc_helix( seq, "dna.amber94.rlb", "dna", cseq, "dna.amber94.rlb",
+!          "dna", 2.25, -4.96, 36.0, 4.38, "" );
+  
+  b = newbounds(m, "");
+  allocate xyz[ 4*m.natoms ];
+--- 9,15 ----
+  cseq = wc_complement( "acgtacgt", "dna.amber94.rlb", "dna" );
+  
+  m = wc_helix( seq, "dna.amber94.rlb", "dna", cseq, "dna.amber94.rlb",
+!          "dna", 2.25, -4.96, 36.0, 3.38, "" );
+  
+  b = newbounds(m, "");
+  allocate xyz[ 4*m.natoms ];

@@ -97,8 +97,8 @@ CPP=    ucpp -l
 #
 #  Use these CFLAGS if AVS = 0
 #
-CFLAGS= 
-OCFLAGS= -O
+CFLAGS= -O -pipe
+OCFLAGS= -O -pipe
 NABFLAGS=
 #
 #  Use these CFLAGS if AVS = 1

@@ -4,7 +4,7 @@
 # $FreeBSD$
 
 PORTNAME=	nab
-PORTVERSION=	4.3.2
+PORTVERSION=	4.4
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.scripps.edu/pub/case/
 
@@ -30,6 +30,9 @@ post-extract:
 pre-patch:
 	@${PERL} -pi -e 's,<malloc.h>,<stdlib.h>,' \
 		${WRKSRC}/cifparse/cifparse.c
+
+post-patch:
+	@rm -f ${WRKSRC}/examples/program_7.nab.orig
 
 pre-install:
 	@cd ${WRKSRC}/src && \
