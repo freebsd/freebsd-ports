@@ -29,7 +29,7 @@ MySQL		"MySQL map lookups" "$status_MySQL" \
 PgSQL		"PostgreSQL map lookups" "$status_PgSQL" \
 OpenLDAP	"OpenLDAP map lookups" "$status_OpenLDAP" \
 Test		"SMTP/LMTP test server and generator" "$status_Test" \
-TLS		"SSL and TLS (currently broken)" "$status_TLS" \
+TLS		"SSL and TLS" "$status_TLS" \
 IPv6		"IPv6 support (currently broken)" "$status_IPv6" \
 2> $tempfile
 
@@ -110,8 +110,8 @@ while [ "$1" ]; do
 			echo "MAN8+=		tlsmgr.8"
 			echo "POSTFIX_CCARGS+=	-DHAS_SSL -I/usr/include/openssl"
 			echo "POSTFIX_AUXLIBS+=	-lssl -lcrypto"
-			echo "DISTFILES+=	\${DISTNAME}.tar.gz pfixtls-0.8.11a-1.1.11-20020822-0.9.6g.tar.gz"
-			echo "EXTRA_PATCHES+=	\${WRKDIR}/pfixtls-0.8.11a-1.1.11-20020822-0.9.6g/pfixtls.diff"
+			echo "DISTFILES+=	\${DISTNAME}.tar.gz pfixtls-0.8.11a-1.1.11-20020917-0.9.6g.tar.gz"
+			echo "EXTRA_PATCHES+=	\${WRKDIR}/pfixtls-0.8.11a-1.1.11-20020917-0.9.6g/pfixtls.diff"
 			echo "PATCH_STRIP=	-p1"
 			echo "TLS_SUFFIX=	+tls"
 			SUB_TLS=""
