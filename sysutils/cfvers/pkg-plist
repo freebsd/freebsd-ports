@@ -30,3 +30,5 @@ bin/cfvadmin
 %%PORTDOCS%%%%DOCSDIR%%/cfvadmin.html
 %%PORTDOCS%%%%DOCSDIR%%/manual.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/cfvers/repository/
+@dirrm %%PYTHON_SITELIBDIR%%/cfvers/
