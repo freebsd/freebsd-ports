@@ -1,0 +1,19 @@
+An alternative to nss_ldap using an ldap based NIS/YP server.
+
+This is a UNIX daemon providing NIS services with a modular 
+backend interface. The current focus is the development of 
+an LDAP module for the backend data source.
+
+This daemon was (and is being written) in order to migrate a 
+large install base of UNIX systems utilizing NIS to an LDAP 
+based solution, eventually facilititing a migration of all 
+corporate services that rely on similar data to LDAP.
+
+This (and future) LDAP related tools are being released under 
+the BSD License (with advertising clause).
+
+Please understand that the project is, at best, a beta.
+
+There is no documentation yet.
+
+WWW: http://yptransitd.sourceforge.net/

@@ -1,0 +1,21 @@
+************************************************************
+NOTE!
+
+a) Make sure the following is in your slapd.conf file.
+
+#needed for yptransitd
+include         ${LOCALBASE}/openldap/schema/cosine.schema
+include         ${LOCALBASE}/openldap/schema/nis.schema
+
+b) Make sure the following files have been localised.
+
+	${LOCALBASE}/openldap/ldap.conf
+	${LOCALBASE}/openldap/slapd.conf
+	${LOCALBASE}/yptransitd/ldap.conf
+	${LOCALBASE}/yptransitd/yptransitd.conf
+
+c) The following URL should help in getting this beast running.
+
+http://www.openldap.org/lists/openldap-software/200010/msg00097.html
+
+************************************************************

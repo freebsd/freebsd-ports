@@ -751,6 +751,7 @@
     SUBDIR += yaz
     SUBDIR += yaz++
     SUBDIR += ymessenger
+    SUBDIR += yptransitd
     SUBDIR += ysm
     SUBDIR += ytalk
     SUBDIR += zebra
