@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	cmfphoto
-PORTVERSION=	0.4.r1
+PORTVERSION=	0.4.r2
 CATEGORIES=	www zope
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	collective
 PKGNAMEPREFIX=	zope-
-DISTNAME=	CMFPhoto-0.4rc1
+DISTNAME=	CMFPhoto-0.4rc2
 
 MAINTAINER=	kaeru@inigo-tech.com
 COMMENT=	CMFPhoto product for Zope/CMF
@@ -27,7 +27,6 @@ WRKSRC=		${WRKDIR}/CMFPhoto
 
 do-build:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/Extensions/
-	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/i18n/
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -l ${WRKSRC}
 
 do-install:
