@@ -1,0 +1,12 @@
+--- configure.bak	Fri Jun 29 09:06:30 2001
++++ configure	Fri Aug 24 23:19:25 2001
+@@ -21,6 +21,9 @@
+ 	"Linux"*)
+ 		OS="Linux"
+ 		;;
++	"FreeBSD 5"*)
++		OS="FreeBSD"
++        ;;
+ 	"FreeBSD 4"*)
+ 		OS="FreeBSD"
+         ;;
