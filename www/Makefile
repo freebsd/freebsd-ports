@@ -345,6 +345,7 @@
     SUBDIR += phpnuke
     SUBDIR += plugger
     SUBDIR += pound
+    SUBDIR += privoxy
     SUBDIR += publicfile
     SUBDIR += py-HTMLgen
     SUBDIR += py-albatross
