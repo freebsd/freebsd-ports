@@ -3,6 +3,3 @@ improvements over the existing programs that do the same thing.  Only
 tested on OpenBSD, but should run without problems on any Unix-like
 system.  If you furtherly improve it, please send me the diffs.  As always,
 published under a BSD style license, see the included LICENSE file.
-
---
-Yen-Ming Lee <leeym@cae.ce.ntu.edu.tw>
