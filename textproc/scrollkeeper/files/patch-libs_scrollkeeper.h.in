@@ -1,0 +1,11 @@
+--- libs/scrollkeeper.h.in.orig	Mon Jun  3 14:00:51 2002
++++ libs/scrollkeeper.h.in	Mon Jun  3 14:01:11 2002
+@@ -32,7 +32,7 @@
+ #define SCROLLKEEPERLOCALEDIR "/usr/X11R6/share/locale"
+ #define SCROLLKEEPERLOGFILE "@localstatedir@/log/scrollkeeper.log"
+ #define SCROLLKEEPERLOGFILE_ROT "@localstatedir@/log/scrollkeeper.log.1"
+-#define SCROLLKEEPER_OMF_DTD "@prefix@/share/xml/scrollkeeper/dtds/scrollkeeper-omf.dtd"
++#define SCROLLKEEPER_OMF_DTD "@datadir@/xml/scrollkeeper/dtds/scrollkeeper-omf.dtd"
+ #define PATHLEN		256
+ 
+ /*

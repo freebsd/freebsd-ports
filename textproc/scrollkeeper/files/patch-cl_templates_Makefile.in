@@ -1,0 +1,11 @@
+--- cl/templates/Makefile.in.orig	Tue Jun 18 15:13:52 2002
++++ cl/templates/Makefile.in	Tue Jun 18 15:13:37 2002
+@@ -130,7 +130,7 @@
+ EXTRA_DIST = scrollkeeper_cl.xml.in
+ LIB_PATH = $(top_builddir)/libs/.libs
+ 
+-TRANSLATED_LOCALES = C ca da de el es fr hu it ja ko nb nl no pl pt_BR ru sk sl sv tr uk, zh_TW
++TRANSLATED_LOCALES = C ca da de el es fr hu it ja ko nb nl no pl pt_BR ru sk sl sv tr uk zh_TW
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../config.h
+ CONFIG_CLEAN_FILES = 
