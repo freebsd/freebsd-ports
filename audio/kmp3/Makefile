@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.kmp3.org/tarballs/
 
 MAINTAINER=	mb@imp.ch
 
+LIB_DEPENDS=	QwSpriteField.7:${PORTSDIR}/converters/kdesupport11
+
 USE_KDELIBS_VER=1
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
