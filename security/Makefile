@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.8 1996/10/24 08:38:44 jfitz Exp $
+# $Id: Makefile,v 1.9 1996/10/27 10:11:19 max Exp $
 #
 
     SUBDIR += SSLeay
@@ -12,6 +12,7 @@
     SUBDIR += pgp
     SUBDIR += pidentd
     SUBDIR += ssh
+    SUBDIR += sudo
     SUBDIR += tcp_wrapper
     SUBDIR += vscan
     SUBDIR += xinetd
