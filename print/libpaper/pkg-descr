@@ -1,4 +1,19 @@
-wv2 is a library which allows access to Microsoft Word files. It is a
-rewrite of the wv library.
+The paper library and accompanying files are intended to provide a simple
+way for applications to take actions based on a system- or user-specified
+paper size.
 
-WWW: http://wvware.sourceforge.net/
+This release is quite minimal, its purpose being to provide really basic
+functions (obtaining the system paper name and getting the height and
+width of a given kond of paper) that applications can immediately
+integrate.
+A more complete library, using a capabilities file for papers (giving,
+in addition to the size, informations like paper weigth, color, etc)
+will be released later.
+
+See the sources for paperconf(1) in src/paper.c for how to use the library.
+
+
+Copyright (C) Yves Arrouye <yves@debian.org>, 1996
+              Adrian Bunk  <bunk@fs.tum.de> , 2000
+
+WWW: http://packages.qa.debian.org/libp/libpaper.html
