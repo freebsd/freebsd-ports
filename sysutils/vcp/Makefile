@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	vcp
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 CATEGORIES=	sysutils
 MASTER_SITES=	http://members.optusnet.com.au/~dbbryan/vcp/
 EXTRACT_SUFX=	.tar.Z
