@@ -426,6 +426,8 @@ pre-build:
 .endfor
 .if defined(WITH_FT_BRIDGE)
 	${MKDIR} ${WRKSRC}/freetype/include
+	${LN} -sf ${LOCALBASE}/include/ft2build.h \
+		${WRKSRC}/freetype/include/ft2build.h
 	${LN} -sf ${LOCALBASE}/include/freetype2/freetype \
 		${WRKSRC}/freetype/include/freetype
 	${MKDIR} ${WRKSRC}/freetype/objs
