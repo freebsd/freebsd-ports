@@ -39,6 +39,7 @@ pre-patch:
 		 s|\$\(libdir\)/pkgconfig|\$\(prefix\)/libdata/pkgconfig|g'
 
 post-install:
+	@${MKDIR} ${PREFIX}/etc/gnome/libgnomeprint-2.0/fonts
 	@${TOUCH} ${PREFIX}/etc/gnome/libgnomeprint-2.0/fonts/gnome-print.fontmap
 
 .include <bsd.port.mk>
