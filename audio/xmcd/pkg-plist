@@ -1,11 +1,7 @@
 bin/xmcd
 bin/cda
 bin/wm2xmcd
-man/man1/xmcd.1.gz
-man/man1/cda.1.gz
-man/man1/wm2xmcd.1.gz
 lib/X11/app-defaults/XMcd
-lib/X11/xmcd/README
 lib/X11/xmcd/help/Ab.btn
 lib/X11/xmcd/help/DbProg.btn
 lib/X11/xmcd/help/DdCancel.btn
@@ -90,12 +86,14 @@ lib/X11/xmcd/pixmaps/xmcd_b.px
 lib/X11/xmcd/pixmaps/xmcd.xpm
 lib/X11/xmcd/config/common.cfg
 lib/X11/xmcd/config/device.cfg
+lib/X11/xmcd/config/.tbl/Acer
 lib/X11/xmcd/config/.tbl/Apple
 lib/X11/xmcd/config/.tbl/Aztech
 lib/X11/xmcd/config/.tbl/Chinon
 lib/X11/xmcd/config/.tbl/Compaq
 lib/X11/xmcd/config/.tbl/Creative
 lib/X11/xmcd/config/.tbl/DEC
+lib/X11/xmcd/config/.tbl/Goldstar
 lib/X11/xmcd/config/.tbl/HP
 lib/X11/xmcd/config/.tbl/Hitachi
 lib/X11/xmcd/config/.tbl/IBM
@@ -104,6 +102,7 @@ lib/X11/xmcd/config/.tbl/MDI
 lib/X11/xmcd/config/.tbl/MediaVis
 lib/X11/xmcd/config/.tbl/Mitsumi
 lib/X11/xmcd/config/.tbl/NEC
+lib/X11/xmcd/config/.tbl/Nakamich
 lib/X11/xmcd/config/.tbl/Okano
 lib/X11/xmcd/config/.tbl/Opticsto
 lib/X11/xmcd/config/.tbl/Orchid
@@ -119,4 +118,8 @@ lib/X11/xmcd/config/.tbl/Stratus
 lib/X11/xmcd/config/.tbl/Sun
 lib/X11/xmcd/config/.tbl/Teac
 lib/X11/xmcd/config/.tbl/Toshiba
+lib/X11/xmcd/config/.tbl/Yamaha
 lib/X11/xmcd/config/config.sh
+man/man1/xmcd.1.gz
+man/man1/cda.1.gz
+man/man1/wm2xmcd.1.gz
