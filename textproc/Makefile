@@ -451,6 +451,7 @@
     SUBDIR += xmlindent
     SUBDIR += xmlpp
     SUBDIR += xmlppm
+    SUBDIR += xmlto
     SUBDIR += xmlwrapp
     SUBDIR += xp
     SUBDIR += xslide.el

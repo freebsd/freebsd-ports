@@ -1,0 +1,12 @@
+xmlto is a front-end to an XSL toolchain. It chooses an appropriate
+stylesheet for the conversion you want and applies it using an external
+XSL-T processor.  It also performs any necessary post-processing.
+
+Supported conversions from DocBook XML: dvi, fo, html, html-nochunks,
+htmlhelp, javahelp, man, pdf, ps, txt, xhtml, xhtml-nochunks.
+
+Currently the only XSL-T processor supported is xsltproc (textproc/libxslt).
+For DVI, PDF and PostScript output, PassiveTeX (print/passivetex) is required.
+
+Author:	Tim Waugh <tim@cyberelk.net>
+WWW:	http://cyberelk.net/tim/xmlto/
