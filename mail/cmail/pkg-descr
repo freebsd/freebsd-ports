@@ -9,7 +9,8 @@ messages. Example of output -
 This may be useful if you split your mail into multiple files using something
 like procmail. I'm not sure if the new/old mail determination works with
 anything other than mutt.
-Latest versions can also be found at http://www.eboai.org/~chip/scripts.html
+
+WWW: http://www.eboai.org/~chip/scripts.html
 
 --
 Chip Marshall <chip@eboai.org>

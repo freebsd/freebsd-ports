@@ -17,4 +17,4 @@ Access control rules based on the connecting host, and the smtp envelope are
 supported.  It contains some powerful features for stopping inbound or
 outbound SPAM. 
 
-Source: http://www.obtuse.com/smtpd.html
+WWW: http://www.obtuse.com/smtpd.html

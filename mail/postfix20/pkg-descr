@@ -3,4 +3,4 @@ program.  Sendmail is responsible for 70% of all e-mail delivered
 on the Internet.  With an estimated 100 million users, that's an
 estimated 10 billion (10^10) messages daily. A stunning number.
 
-See http://www.postfix.org/ for details
+WWW: http://www.postfix.org/

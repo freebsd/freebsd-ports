@@ -12,7 +12,7 @@ ezmlm-idx can now be compiled with MySQL support for centrally administrated
 distributed lists with binaries that autosense use of SQL or standard ezmlm
 databases.
 
-http://www.ezmlm.org/
+WWW: http://www.ezmlm.org/
 
 - Tom
 tom@eborcom.com
