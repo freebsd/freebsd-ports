@@ -1,15 +1,15 @@
 # New ports collection makefile for:	fujiplay
-# Version required:	1.33
 # Date created:		20 Sep 1999
 # Whom:			KIRIYAMA Kazuhiko<kiri@pis.toba-cmt.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	fujiplay
-PKGNAME=	fujiplay-1.33
+PORTNAME=	fujiplay
+PORTVERSION=	1.33
 CATEGORIES=	graphics
 MASTER_SITES=	http://topo.math.u-psud.fr/~bousch/
+DISTNAME=	${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	kiri@pis.toba-cmt.ac.jp

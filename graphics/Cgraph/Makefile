@@ -1,15 +1,15 @@
 # New ports collection makefile for:	cgraph
-# Version required:	2.04
 # Date created:		25 September 1998
 # Whom:			Anton Berezin <tobez@plab.ku.dk>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	Cgraph2.04
-PKGNAME=	Cgraph-2.04
+PORTNAME=	Cgraph
+PORTVERSION=	2.04
 CATEGORIES=	graphics
 MASTER_SITES=	http://totoro.berkeley.edu/software/
+DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	tobez@plab.ku.dk
 

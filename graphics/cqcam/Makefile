@@ -1,12 +1,12 @@
 # New ports collection makefile for:	cqcam
-# Version required:	0.45a
 # Date created:		29 Oct 1997
 # Whom:			Kensaku Masuda <greg@greg.rim.or.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	cqcam-0.45a
+PORTNAME=	cqcam
+PORTVERSION=	0.45a
 CATEGORIES=	graphics tk82
 MASTER_SITES=	ftp://ftp.cdrom.com/pub/unixfreeware/graphics/
 EXTRACT_SUFX=	.tgz

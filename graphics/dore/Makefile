@@ -1,12 +1,12 @@
 # New ports collection makefile for:	dore
-# Version required:	6.0
 # Date created:		10 February 1995
 # Whom:			jkh
 #
 # $FreeBSD$
 #
 
-DISTNAME=	pdore-6.0
+PORTNAME=	pdore
+PORTVERSION=	6.0
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 EXTRACT_SUFX=	.tar.Z
