@@ -5,3 +5,10 @@ http://www.enteract.com/~rneswold/avr/avr-lib-neswold.pdf
 It has been renamed to avr-lib.pdf to remain consistent
 with previous versions of the port.
 Rich's older avr-lib.pdf is fairly out of date now.
+
+The file avr-libc-reference.html has been obtained from
+
+http://www.bang-gang.org/elektronik/avr/avr-libc-reference.html
+
+(A couple of HTML tag bugs have been fixed manually, so to enable
+displaying the email addresses of the authors.)

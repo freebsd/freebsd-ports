@@ -39,5 +39,6 @@ post-install:
 				${PREFIX}/share/doc/avr-libc/examples; \
 		done
 		${INSTALL_DATA} ${FILESDIR}/avr-lib.pdf ${PREFIX}/share/doc/avr-libc
+		${INSTALL_DATA} ${FILESDIR}/avr-libc-reference.html ${PREFIX}/share/doc/avr-libc
 
 .include <bsd.port.mk>
