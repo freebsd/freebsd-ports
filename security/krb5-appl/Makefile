@@ -7,6 +7,7 @@
 
 PORTNAME=		krb5
 PORTVERSION=		1.2.8
+PORTREVISION=		1
 CATEGORIES=		security
 # USE_MIT_TARBALL tells the port that the user has fetched the source
 # directly from MIT rather than the default crypto-publish.org.
