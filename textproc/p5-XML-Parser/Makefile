@@ -18,15 +18,13 @@ MAINTAINER=	kuriyama@FreeBSD.org
 
 LIB_DEPENDS=	expat.2:${PORTSDIR}/textproc/expat2
 
-USE_PERL5=	yes
+PERL_CONFIGURE=	yes
+CONFIGURE_ARGS=	EXPATLIBPATH=${LOCALBASE}/lib EXPATINCPATH=${LOCALBASE}/include
 
 MAN3=		XML::Parser.3 XML::Parser::Expat.3
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
-do-configure:
-	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL \
-		CC="${CC}" CCFLAGS="${CFLAGS}" \
-		EXPATLIBPATH=${LOCALBASE}/lib EXPATINCPATH=${LOCALBASE}/include
+post-configure:
 	@${PERL} -i -pe 's/^(CC = ).*/$$1 ${CC}/;' \
 		-e 's/^(CCFLAGS = ).*/$$1 ${CFLAGS}/' ${WRKSRC}/Expat/Makefile
 
