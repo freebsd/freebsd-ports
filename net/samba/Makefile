@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	samba
-PORTVERSION=	2.2.8a
-PORTREVISION=	2
+PORTVERSION=	2.2.9
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SAMBA}
 MASTER_SITE_SUBDIR=	. old-versions
@@ -26,7 +25,6 @@ COMMENT=	A free SMB and CIFS client and server for UNIX
 
 CONFLICTS=	ja-samba-2.* samba-3.* sharity-light-1.*
 
-USE_BZIP2=	YES
 USE_SUBMAKE=	YES
 USE_GMAKE=	YES
 USE_LIBTOOL_VER=13
