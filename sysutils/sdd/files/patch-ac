@@ -1,0 +1,20 @@
+--- include/standard.h.orig	Sun Sep 19 19:12:55 1999
++++ include/standard.h	Sun Sep 19 19:14:12 1999
+@@ -23,6 +23,8 @@
+ #ifndef _STANDARD_H
+ #define _STANDARD_H
+ 
++#include <sys/types.h>
++
+ #ifdef	M68000
+ #	ifndef	tos
+ #		define	JOS	1
+@@ -182,7 +184,7 @@
+ extern	int	wait_chld __PR((int));
+ extern	int	geterrno __PR((void));
+ extern	void	raisecond __PR((const char *, long));
+-extern	int	snprintf __PR((char *, unsigned, const char *, ...));
++extern	int	snprintf __PR((char *, size_t, const char *, ...));
+ /*extern	int	sprintf __PR((char *, const char *, ...)); ist woanders falsch deklariert !!!*/
+ extern	char	*strcatl __PR((char *, ...));
+ extern	int	streql __PR((const char *, const char *));
