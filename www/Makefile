@@ -93,6 +93,7 @@
     SUBDIR += fxhtml
     SUBDIR += g-gcl
     SUBDIR += galeon
+    SUBDIR += galeon2
     SUBDIR += gallery
     SUBDIR += glibwww
     SUBDIR += gn
