@@ -3,9 +3,7 @@ bin/gconf-config-1
 bin/gconfd-1
 bin/gconftool
 bin/gconftool-1
-@unexec if cmp -s %D/etc/gconf/1/path.example %D/etc/gconf/1/path; then rm -f %D/etc/gconf/1/path; fi
-etc/gconf/1/path.example
-@exec if [ ! -f %D/etc/gconf/1/path ] ; then cp -p %D/%F %B/path; fi
+etc/gconf/1/path
 etc/gconf/schemas/desktop.schemas
 include/gconf/1/gconf/gconf-changeset.h
 include/gconf/1/gconf/gconf-client.h
@@ -63,5 +61,7 @@ share/locale/zh_CN.GB2312/LC_MESSAGES/GConf.mo
 @dirrm include/gconf/1
 @dirrm include/gconf
 @dirrm etc/gconf/schemas
+@dirrm etc/gconf/gconf.xml.mandatory
+@dirrm etc/gconf/gconf.xml.defaults
 @dirrm etc/gconf/1
 @dirrm etc/gconf
