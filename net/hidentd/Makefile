@@ -19,6 +19,9 @@ CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN8=		hidentd.8
 
+PORTDOCS=	README
+PLIST_FILES=	sbin/hidentd
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
