@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	dd
 
 MAINTAINER=	dd@FreeBSD.org
 
+MANSECTS=	1
 MAN1=		readlink.1
 MANCOMPRESSED=	maybe
 
