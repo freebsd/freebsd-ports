@@ -1,5 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/PostScript/Simple/.packlist
 %%SITE_PERL%%/PostScript/Simple.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PostScript/Simple
-@unexec rmdir %D/%%SITE_PERL%%/i386-freebsd/auto/PostScript 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/PostScript 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/PostScript 2>/dev/null || true
