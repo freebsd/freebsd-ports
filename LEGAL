@@ -120,7 +120,7 @@ rsaref*			ports/security/{rsaref,ssh} Crypto; export-controlled
 rv50_linux20.tar.gz	ports/audio/linux-realplayer	Redistribution not allowed.
 rzsz3_36.zip		ports/comms/rzsz	Restrictive copyright
 Scilab-*		ports/math/Scilab	Don't sell for profit.
-sdr-2.5*		ports/mbone/sdr25	Crypto; export-controlled
+sdr-2.7*		ports/mbone/sdr{,-current}	Crypto; export-controlled
 sharefonts-*		ports/x11-fonts/sharefonts	Shareware.  Cannot be
 						distributed w/o prior
 						authorization.
