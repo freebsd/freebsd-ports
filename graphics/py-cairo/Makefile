@@ -15,7 +15,7 @@ DISTNAME=	py${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Python bindings for Cairo
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/Numeric/MA/__init__.py:${PORTSDIR}/math/py-numeric
+BUILD_DEPENDS=	${PYNUMERIC}
 LIB_DEPENDS=	cairo.1:${PORTSDIR}/graphics/cairo
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
