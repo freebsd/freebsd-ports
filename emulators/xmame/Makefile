@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	xmame
-PORTVERSION?=	0.80.1
+PORTVERSION?=	0.82.1
 CATEGORIES=	emulators
 MASTER_SITES=	http://x.mame.net/download/:xmame \
 		http://www.sys2064.com/files/util/:history \
@@ -56,7 +56,6 @@ GENERALDOCS=	changes.unix \
 		img/xmame.jpg \
 		liesmich.unix \
 		multiplayer-readme.txt \
-		xmame-doc-1.html \
 		xmame-doc-2.html \
 		xmame-doc-3.html \
 		xmame-doc-4.html \
