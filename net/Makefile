@@ -438,6 +438,7 @@
     SUBDIR += py-smb
     SUBDIR += py-snmp
     SUBDIR += py-soap
+    SUBDIR += py-soapy
     SUBDIR += py-spreadmodule
     SUBDIR += py-xmlrpc
     SUBDIR += py-xmlrpclib

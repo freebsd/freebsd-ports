@@ -1,0 +1,14 @@
+%%PORTDOCS%%share/doc/soapy/README
+%%PORTDOCS%%share/examples/soapy/README.txt
+%%PORTDOCS%%share/examples/soapy/get_temperature.py
+%%PORTDOCS%%share/examples/soapy/terraserver_image.py
+%%PORTDOCS%%share/examples/soapy/test/testsoap.py
+lib/%%PYTHON_VERSION%%/site-packages/schema.py
+lib/%%PYTHON_VERSION%%/site-packages/schema.pyc
+lib/%%PYTHON_VERSION%%/site-packages/schema.pyo
+lib/%%PYTHON_VERSION%%/site-packages/soap.py
+lib/%%PYTHON_VERSION%%/site-packages/soap.pyc
+lib/%%PYTHON_VERSION%%/site-packages/soap.pyo
+%%PORTDOCS%%@dirrm share/examples/soapy/test
+%%PORTDOCS%%@dirrm share/examples/soapy
+%%PORTDOCS%%@dirrm share/doc/soapy
