@@ -1,14 +1,6 @@
 diff -ur cf/m4/cfhead.m4 src/contrib/sendmail/cf/m4/cfhead.m4
 --- cf/m4/cfhead.m4	Thu Aug 24 19:09:50 2000
 +++ src/contrib/sendmail/cf/m4/cfhead.m4	Mon Nov  6 11:23:40 2000
-@@ -9,6 +9,7 @@
- # forth in the LICENSE file which can be found at the top level of
- # the sendmail distribution.
- #
-+# $FreeBSD: /tmp/pcvs/ports/mail/sendmail-old/files/Attic/patch-aa,v 1.4 2001-06-26 05:13:51 dinoex Exp $
- #
- 
- ######################################################################
 @@ -214,7 +215,8 @@
  define(`_REC_FULL_AUTH_', `$.$?{auth_type}(authenticated as ${auth_authen} $?{auth_author}for ${auth_author} $.with ${auth_type}')
  define(`_REC_HDR_', `$?sfrom $s $.$?_($?s$|from $.$_)')
@@ -22,14 +14,7 @@ diff -ur cf/m4/cfhead.m4 src/contrib/sendmail/cf/m4/cfhead.m4
 diff -ur cf/ostype/bsd4.4.m4 src/contrib/sendmail/cf/ostype/bsd4.4.m4
 --- cf/ostype/bsd4.4.m4	Sun Apr 25 22:00:56 1999
 +++ src/contrib/sendmail/cf/ostype/bsd4.4.m4	Wed Oct  4 23:19:29 2000
-@@ -10,11 +10,12 @@
- # forth in the LICENSE file which can be found at the top level of
- # the sendmail distribution.
- #
--#
-+# $FreeBSD: /tmp/pcvs/ports/mail/sendmail-old/files/Attic/patch-aa,v 1.4 2001-06-26 05:13:51 dinoex Exp $
- #
- 
+@@ -16,5 +16,6 @@
  divert(0)
  VERSIONID(`$Id: bsd4.4.m4,v 8.14 1999/04/24 05:37:40 gshapiro Exp $')
  ifdef(`STATUS_FILE',, `define(`STATUS_FILE', `/var/log/sendmail.st')')dnl
@@ -39,15 +24,6 @@ diff -ur cf/ostype/bsd4.4.m4 src/contrib/sendmail/cf/ostype/bsd4.4.m4
 diff -ur cf/sh/makeinfo.sh src/contrib/sendmail/cf/sh/makeinfo.sh
 --- cf/sh/makeinfo.sh	Sun Feb  7 08:26:25 1999
 +++ src/contrib/sendmail/cf/sh/makeinfo.sh	Wed Oct  4 23:19:29 2000
-@@ -13,6 +13,8 @@
- #
- #	$Id: makeinfo.sh,v 8.14 1999/02/07 07:26:25 gshapiro Exp $
- #
-+# $FreeBSD: /tmp/pcvs/ports/mail/sendmail-old/files/Attic/patch-aa,v 1.4 2001-06-26 05:13:51 dinoex Exp $
-+#
- 
- usewhoami=0
- usehostname=0
 @@ -52,7 +54,7 @@
  else
  	host=`uname -n`
@@ -64,7 +40,7 @@ diff -ur mail.local/mail.local.8 src/contrib/sendmail/mail.local/mail.local.8
  .\"
  .\"	$Id: mail.local.8,v 8.14.14.5 2000/12/29 18:12:16 gshapiro Exp $
  .\"
-+.\" $FreeBSD: /tmp/pcvs/ports/mail/sendmail-old/files/Attic/patch-aa,v 1.4 2001-06-26 05:13:51 dinoex Exp $
++.\" $FreeBSD: /tmp/pcvs/ports/mail/sendmail-old/files/Attic/patch-aa,v 1.5 2001-08-01 15:47:49 dinoex Exp $
 +.\"
  .TH MAIL.LOCAL 8 "$Date: 2000/12/29 18:12:16 $"
  .SH NAME
@@ -114,15 +90,6 @@ diff -ur mail.local/mail.local.8 src/contrib/sendmail/mail.local/mail.local.8
 diff -ur mail.local/mail.local.c src/contrib/sendmail/mail.local/mail.local.c
 --- mail.local/mail.local.c	Sun Feb 11 21:08:20 2001
 +++ src/contrib/sendmail/mail.local/mail.local.c	Mon Mar  5 21:48:22 2001
-@@ -22,6 +22,8 @@
- static char id[] = "@(#)$Id: mail.local.c,v 8.143.4.57 2001/02/11 20:08:20 gshapiro Exp $";
- #endif /* ! lint */
- 
-+/* $FreeBSD: /tmp/pcvs/ports/mail/sendmail-old/files/Attic/patch-aa,v 1.4 2001-06-26 05:13:51 dinoex Exp $ */
-+
- /*
- **  This is not intended to work on System V derived systems
- **  such as Solaris or HP-UX, since they use a totally different
 @@ -154,7 +156,7 @@
  
  # if defined(BSD4_4) || defined(__GLIBC__)
@@ -247,15 +214,6 @@ diff -ur mail.local/mail.local.c src/contrib/sendmail/mail.local/mail.local.c
 diff -ur rmail/rmail.c src/contrib/sendmail/rmail/rmail.c
 --- rmail/rmail.c	Sun Sep 17 00:20:25 2000
 +++ src/contrib/sendmail/rmail/rmail.c	Mon Nov  6 11:23:42 2000
-@@ -22,6 +22,8 @@
- static char id[] = "@(#)$Id: rmail.c,v 8.39.4.8 2000/09/16 22:20:25 gshapiro Exp $";
- #endif /* ! lint */
- 
-+/* $FreeBSD: /tmp/pcvs/ports/mail/sendmail-old/files/Attic/patch-aa,v 1.4 2001-06-26 05:13:51 dinoex Exp $ */
-+
- /*
-  * RMAIL -- UUCP mail server.
-  *
 @@ -318,7 +320,11 @@
  	args[i++] = _PATH_SENDMAIL;	/* Build sendmail's argument list. */
  	args[i++] = "-G";		/* relay submission */
@@ -271,15 +229,6 @@ diff -ur rmail/rmail.c src/contrib/sendmail/rmail/rmail.c
 diff -ur smrsh/smrsh.8 src/contrib/sendmail/smrsh/smrsh.8
 --- smrsh/smrsh.8.orig	Sat Dec 16 00:18:40 2000
 +++ smrsh/smrsh.8	Sun Dec 31 10:37:02 2000
-@@ -11,6 +11,8 @@
- .\"
- .\"     $Id: smrsh.8,v 8.11.16.2 2000/12/15 19:50:46 gshapiro Exp $
- .\"
-+.\" $FreeBSD: /tmp/pcvs/ports/mail/sendmail-old/files/Attic/patch-aa,v 1.4 2001-06-26 05:13:51 dinoex Exp $
-+.\"
- .TH SMRSH 8 "$Date: 2000/12/15 19:50:46 $"
- .SH NAME
- smrsh \- restricted shell for sendmail
 @@ -39,7 +41,7 @@
  .I smrsh
  limits programs to be in a single directory,
