@@ -1,5 +1,14 @@
 --- Makefile.in.orig	Mon Oct 22 21:46:29 2001
-+++ Makefile.in	Sat Nov 17 01:36:38 2001
++++ Makefile.in	Tue Jan 22 19:02:30 2002
+@@ -32,7 +32,7 @@
+ 	@test -d $(sysconfdir) || $(MKINSTALLDIRS) $(sysconfdir)
+ 	@cd $(top_srcdir)/docs/conf; \
+ 	for i in mime.types magic; do \
+-		$(INSTALL_DATA) $$i $(sysconfdir); \
++		test -f $(sysconfdir)/$$i || $(INSTALL_DATA) $$i $(sysconfdir); \
+ 	done; \
+ 	for i in *-std* ssl.conf; do \
+ 		[ -f $$i ] || continue; \
 @@ -51,7 +51,7 @@
  					< $$i; \
  				for j in $(DSO_MODULES) "^EOL^"; do \
