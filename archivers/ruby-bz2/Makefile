@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bz2
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.6
 CATEGORIES=	archivers ruby
 MASTER_SITES=	ftp://moulon.inra.fr/pub/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -30,7 +30,7 @@ DOCS=		Changes \
 
 post-build:
 .if !defined(NOPORTDOCS)
-	cd ${WRKSRC}/docs; ${RUBY} b.rb bz2; ${RUBY_RDOC} bz2.rb
+	cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} rdoc
 .endif
 
 post-install: doc-install
