@@ -1,5 +1,5 @@
-*** doc/Makefile.in.orig	Mon Sep  2 06:54:27 1996
---- doc/Makefile.in	Mon Jun 16 15:24:12 1997
+*** doc/Makefile.in.orig	Tue Jun 24 01:05:43 1997
+--- doc/Makefile.in	Mon Sep 15 23:56:34 1997
 ***************
 *** 20,26 ****
   	$(TEXI2DVI) $(srcdir)/screen.texinfo
@@ -24,7 +24,7 @@
   	if test -f $$d/screen.info; then \
   	for f in $$d/screen.info*; do $(INSTALL_DATA) $$f $(infodir);done; \
 - 	if $(SHELL) -c 'install-info --version' >/dev/null 2>&1; then \
-- 	  install-info --infodir=$(infodir) $$d/screen.info; \
+- 	  install-info --info-dir=$(infodir) $$d/screen.info; \
 - 	else true; fi; \
   	fi
   

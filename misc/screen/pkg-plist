@@ -1,5 +1,5 @@
 bin/screen
-bin/screen-3.7.2
+bin/screen-3.7.4
 man/man1/screen.1.gz
 @unexec install-info --delete %D/info/screen.info %D/info/dir
 info/screen.info
