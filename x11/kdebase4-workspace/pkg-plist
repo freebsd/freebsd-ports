@@ -649,6 +649,7 @@ share/apps/kicker/applets/krunapplet.desktop
 share/apps/kicker/applets/ksystemtrayapplet.desktop
 share/apps/kicker/applets/ktaskbarapplet.desktop
 share/apps/kicker/applets/quicklauncher.desktop
+share/apps/kicker/icons/locolor/16x16/actions/modified.png
 share/apps/kicker/pics/disk1.png
 share/apps/kicker/pics/disk2.png
 share/apps/kicker/pics/disk3.png
@@ -970,9 +971,9 @@ share/doc/HTML/en/kcontrol/action.html
 share/doc/HTML/en/kcontrol/background.html
 share/doc/HTML/en/kcontrol/batmon.html
 share/doc/HTML/en/kcontrol/bell.html
-share/doc/HTML/en/kcontrol/blockdev.html
 share/doc/HTML/en/kcontrol/borders.html
 share/doc/HTML/en/kcontrol/color.html
+share/doc/HTML/en/kcontrol/common
 share/doc/HTML/en/kcontrol/control-center-exiting.html
 share/doc/HTML/en/kcontrol/control-center-menus.html
 share/doc/HTML/en/kcontrol/control-center-run-indiv.html
@@ -990,6 +991,8 @@ share/doc/HTML/en/kcontrol/email.html
 share/doc/HTML/en/kcontrol/energy.html
 share/doc/HTML/en/kcontrol/file-assoc.html
 share/doc/HTML/en/kcontrol/file-manager.html
+share/doc/HTML/en/kcontrol/kfileman1.png
+share/doc/HTML/en/kcontrol/kfileman2.png
 share/doc/HTML/en/kcontrol/fonts.html
 share/doc/HTML/en/kcontrol/help-index.html
 share/doc/HTML/en/kcontrol/icons.html
@@ -1099,11 +1102,13 @@ share/doc/HTML/en/kcontrol/user-agent.html
 share/doc/HTML/en/kcontrol/windows-shares.html
 share/doc/HTML/en/kcontrol/xserver.html
 share/doc/HTML/en/kdebugdialog/.anchors
+share/doc/HTML/en/kdebugdialog/common
 share/doc/HTML/en/kdebugdialog/index.docbook
 share/doc/HTML/en/kdebugdialog/index.html
 share/doc/HTML/en/kdebugdialog/introduction.html
 share/doc/HTML/en/kdesu/.anchors
 share/doc/HTML/en/kdesu/author.html
+share/doc/HTML/en/kdesu/common
 share/doc/HTML/en/kdesu/compiling.html
 share/doc/HTML/en/kdesu/configuration.html
 share/doc/HTML/en/kdesu/index.docbook
@@ -1117,6 +1122,7 @@ share/doc/HTML/en/kdesu/sec-password-keeping.html
 share/doc/HTML/en/kdesu/using-kdesu.html
 share/doc/HTML/en/kdm/.anchors
 share/doc/HTML/en/kdm/building-and-installing-kdm.html
+share/doc/HTML/en/kdm/common
 share/doc/HTML/en/kdm/configuring-kdm.html
 share/doc/HTML/en/kdm/configuring-your-system-for-kdm.html
 share/doc/HTML/en/kdm/credits.html
@@ -1129,6 +1135,7 @@ share/doc/HTML/en/kdm/lilo.html
 share/doc/HTML/en/kdm/locale.html
 share/doc/HTML/en/kdm/other-information.html
 share/doc/HTML/en/khelpcenter/.anchors
+share/doc/HTML/en/khelpcenter/common
 share/doc/HTML/en/khelpcenter/contact-developers.html
 share/doc/HTML/en/khelpcenter/contact-more-information.html
 share/doc/HTML/en/khelpcenter/contact-official.html
@@ -1147,10 +1154,29 @@ share/doc/HTML/en/khelpcenter/interface-basics.html
 share/doc/HTML/en/khelpcenter/invoking-help.html
 share/doc/HTML/en/khelpcenter/links.docbook
 share/doc/HTML/en/khelpcenter/no-html.html
+share/doc/HTML/en/khelpcenter/faq/about.html
+share/doc/HTML/en/khelpcenter/faq/applications.html
+share/doc/HTML/en/khelpcenter/faq/common
+share/doc/HTML/en/khelpcenter/faq/configure.html
+share/doc/HTML/en/khelpcenter/faq/contribute.html
+share/doc/HTML/en/khelpcenter/faq/credits.html
+share/doc/HTML/en/khelpcenter/faq/desktop.html
+share/doc/HTML/en/khelpcenter/faq/filemanager.html
+share/doc/HTML/en/khelpcenter/faq/getting-kde.html
+share/doc/HTML/en/khelpcenter/faq/install.html
+share/doc/HTML/en/khelpcenter/faq/introduction.html
+share/doc/HTML/en/khelpcenter/faq/misc.html
+share/doc/HTML/en/khelpcenter/faq/more-info.html
+share/doc/HTML/en/khelpcenter/faq/non-kde-apps.html
+share/doc/HTML/en/khelpcenter/faq/not-kde.html
+share/doc/HTML/en/khelpcenter/faq/panel.html
+share/doc/HTML/en/khelpcenter/faq/tips.html
+share/doc/HTML/en/khelpcenter/faq/windowmanager.html
 share/doc/HTML/en/khelpcenter/quickstart/.anchors
 share/doc/HTML/en/khelpcenter/quickstart/advanced-topics.html
 share/doc/HTML/en/khelpcenter/quickstart/an-overview-of-kde.html
 share/doc/HTML/en/khelpcenter/quickstart/archives-and-networks.html
+share/doc/HTML/en/khelpcenter/quickstart/common
 share/doc/HTML/en/khelpcenter/quickstart/configuration-modules.html
 share/doc/HTML/en/khelpcenter/quickstart/configure.html
 share/doc/HTML/en/khelpcenter/quickstart/credits.html
@@ -1176,16 +1202,17 @@ share/doc/HTML/en/khelpcenter/userguide/about-this-preview.html
 share/doc/HTML/en/khelpcenter/userguide/adding-programs.html
 share/doc/HTML/en/khelpcenter/userguide/all-about-your-desktop.html
 share/doc/HTML/en/khelpcenter/userguide/background-of-kde.html
+share/doc/HTML/en/khelpcenter/userguide/common
 share/doc/HTML/en/khelpcenter/userguide/creating-new-files-on-your-desktop.html
 share/doc/HTML/en/khelpcenter/userguide/desktop-components.html
 share/doc/HTML/en/khelpcenter/userguide/docu-staff.html
-share/doc/HTML/en/khelpcenter/userguide/entertainmentapplications.html
+share/doc/HTML/en/khelpcenter/userguide/entertainment-applications.html
 share/doc/HTML/en/khelpcenter/userguide/finding-your-lost-files.html
 share/doc/HTML/en/khelpcenter/userguide/first-impressions.html
 share/doc/HTML/en/khelpcenter/userguide/frequently-asked-questions.html
 share/doc/HTML/en/khelpcenter/userguide/getting-kde.html
 share/doc/HTML/en/khelpcenter/userguide/getting-started.html
-share/doc/HTML/en/khelpcenter/userguide/graphicalapplications.html
+share/doc/HTML/en/khelpcenter/userguide/graphical-applications.html
 share/doc/HTML/en/khelpcenter/userguide/index.docbook
 share/doc/HTML/en/khelpcenter/userguide/index.html
 share/doc/HTML/en/khelpcenter/userguide/installation.html
@@ -1201,8 +1228,8 @@ share/doc/HTML/en/khelpcenter/userguide/linux-installing-rpms.html
 share/doc/HTML/en/khelpcenter/userguide/more-help.html
 share/doc/HTML/en/khelpcenter/userguide/mouse-techniques.html
 share/doc/HTML/en/khelpcenter/userguide/moving-files-with-drag-and-drop.html
-share/doc/HTML/en/khelpcenter/userguide/multimediaapplications.html
-share/doc/HTML/en/khelpcenter/userguide/networkapplications.html
+share/doc/HTML/en/khelpcenter/userguide/multimedia-applications.html
+share/doc/HTML/en/khelpcenter/userguide/network-applications.html
 share/doc/HTML/en/khelpcenter/userguide/quitting-kde.html
 share/doc/HTML/en/khelpcenter/userguide/shortcuts.html
 share/doc/HTML/en/khelpcenter/userguide/source-distribution.html
@@ -1215,6 +1242,7 @@ share/doc/HTML/en/khelpcenter/userguide/using-the-trashcan.html
 share/doc/HTML/en/khelpcenter/userguide/utility-applications.html
 share/doc/HTML/en/khelpcenter/userguide/we-still-need-people.html
 share/doc/HTML/en/khelpcenter/visualdict/.anchors
+share/doc/HTML/en/khelpcenter/visualdict/common
 share/doc/HTML/en/khelpcenter/visualdict/credits.html
 share/doc/HTML/en/khelpcenter/visualdict/index.docbook
 share/doc/HTML/en/khelpcenter/visualdict/index.html
@@ -1251,6 +1279,7 @@ share/doc/HTML/en/kicker/.anchors
 share/doc/HTML/en/kicker/access_config.png
 share/doc/HTML/en/kicker/basic_icons.png
 share/doc/HTML/en/kicker/button-preferences.html
+share/doc/HTML/en/kicker/common
 share/doc/HTML/en/kicker/config_window.png
 share/doc/HTML/en/kicker/configuration-adding-icons.html
 share/doc/HTML/en/kicker/configuration-config-window.html
@@ -1287,6 +1316,7 @@ share/doc/HTML/en/kicker/qb_root.png
 share/doc/HTML/en/kicker/using-kicker.html
 share/doc/HTML/en/klipper/.anchors
 share/doc/HTML/en/klipper/actions.html
+share/doc/HTML/en/klipper/common
 share/doc/HTML/en/klipper/compilation.html
 share/doc/HTML/en/klipper/configuration.html
 share/doc/HTML/en/klipper/credits.html
@@ -1298,6 +1328,7 @@ share/doc/HTML/en/klipper/requirements.html
 share/doc/HTML/en/klipper/screenshot.png
 share/doc/HTML/en/klipper/using-klipper.html
 share/doc/HTML/en/kmenuedit/.anchors
+share/doc/HTML/en/kmenuedit/common
 share/doc/HTML/en/kmenuedit/credits.html
 share/doc/HTML/en/kmenuedit/details-advanced.html
 share/doc/HTML/en/kmenuedit/glossary.html
@@ -1316,20 +1347,25 @@ share/doc/HTML/en/kmenuedit/introduction.html
 share/doc/HTML/en/kmenuedit/menu-reference.html
 share/doc/HTML/en/kmenuedit/using-kmenuedit.html
 share/doc/HTML/en/konqueror/.anchors
+share/doc/HTML/en/konqueror/autocomplete.html
 share/doc/HTML/en/konqueror/basics.html
 share/doc/HTML/en/konqueror/bookmarks.html
 share/doc/HTML/en/konqueror/browser.html
 share/doc/HTML/en/konqueror/bubble.html
+share/doc/HTML/en/konqueror/common
 share/doc/HTML/en/konqueror/cmndline.png
 share/doc/HTML/en/konqueror/commandline.html
 share/doc/HTML/en/konqueror/commands.html
 share/doc/HTML/en/konqueror/config-prox.html
 share/doc/HTML/en/konqueror/config.html
 share/doc/HTML/en/konqueror/configure-bars.html
+share/doc/HTML/en/konqueror/cook.html
 share/doc/HTML/en/konqueror/credits.html
+share/doc/HTML/en/konqueror/crypto.html
 share/doc/HTML/en/konqueror/deleting.html
 share/doc/HTML/en/konqueror/dirtree.png
 share/doc/HTML/en/konqueror/dragdrop.png
+share/doc/HTML/en/konqueror/faq.html
 share/doc/HTML/en/konqueror/fileassoc.html
 share/doc/HTML/en/konqueror/filemanager.html
 share/doc/HTML/en/konqueror/filetype1.png
@@ -1340,9 +1376,6 @@ share/doc/HTML/en/konqueror/index.docbook
 share/doc/HTML/en/konqueror/index.html
 share/doc/HTML/en/konqueror/installation.html
 share/doc/HTML/en/konqueror/introduction.html
-share/doc/HTML/en/konqueror/kfind.png
-share/doc/HTML/en/konqueror/konqdoc5.png
-share/doc/HTML/en/konqueror/konqdoc9.png
 share/doc/HTML/en/konqueror/konqorg.png
 share/doc/HTML/en/konqueror/lmbmmb.html
 share/doc/HTML/en/konqueror/making.html
@@ -1358,15 +1391,18 @@ share/doc/HTML/en/konqueror/rmb-menus.html
 share/doc/HTML/en/konqueror/samba.html
 share/doc/HTML/en/konqueror/samba.png
 share/doc/HTML/en/konqueror/save-print-web.html
+share/doc/HTML/en/konqueror/saveset.html
 share/doc/HTML/en/konqueror/surf.html
 share/doc/HTML/en/konsole/.anchors
 share/doc/HTML/en/konsole/command-line-options.html
+share/doc/HTML/en/konsole/common
 share/doc/HTML/en/konsole/credits.html
 share/doc/HTML/en/konsole/history-option.html
 share/doc/HTML/en/konsole/index.docbook
 share/doc/HTML/en/konsole/index.html
 share/doc/HTML/en/konsole/installation.html
 share/doc/HTML/en/konsole/introduction.html
+share/doc/HTML/en/konsole/konsole.png
 share/doc/HTML/en/konsole/konsole1.gif
 share/doc/HTML/en/konsole/konsole2.gif
 share/doc/HTML/en/konsole/menubar.html
@@ -1377,6 +1413,7 @@ share/doc/HTML/en/konsole/use-of-konsole.html
 share/doc/HTML/en/konsole/vt100.gif
 share/doc/HTML/en/kpager/.anchors
 share/doc/HTML/en/kpager/commands.html
+share/doc/HTML/en/kpager/common
 share/doc/HTML/en/kpager/compilation.html
 share/doc/HTML/en/kpager/credits.html
 share/doc/HTML/en/kpager/faq.html
@@ -1390,6 +1427,7 @@ share/doc/HTML/en/kpager/screenshot.png
 share/doc/HTML/en/kpager/settings.png
 share/doc/HTML/en/kpager/using-kapp.html
 share/doc/HTML/en/ksysguard/.anchors
+share/doc/HTML/en/ksysguard/common
 share/doc/HTML/en/ksysguard/compilationandinstallation.html
 share/doc/HTML/en/ksysguard/credits-and-licenses.html
 share/doc/HTML/en/ksysguard/index.docbook
@@ -1402,6 +1440,7 @@ share/doc/HTML/en/ksysguard/the-workspace.html
 share/doc/HTML/en/ksysguard/usingtheksysguard.html
 share/doc/HTML/en/kwrite/.anchors
 share/doc/HTML/en/kwrite/command-line-options.html
+share/doc/HTML/en/kwrite/common
 share/doc/HTML/en/kwrite/credits.html
 share/doc/HTML/en/kwrite/edit.html
 share/doc/HTML/en/kwrite/go.html
@@ -1411,9 +1450,9 @@ share/doc/HTML/en/kwrite/index.html
 share/doc/HTML/en/kwrite/introduction.html
 share/doc/HTML/en/kwrite/keybindings.html
 share/doc/HTML/en/kwrite/on-screen-fundamentals.html
-share/doc/HTML/en/kwrite/other-preferences.html
 share/doc/HTML/en/kwrite/pref-dialog.html
 share/doc/HTML/en/kwrite/pref-edit.html
+share/doc/HTML/en/kwrite/pref-highlighting.html
 share/doc/HTML/en/kwrite/pref-indent.html
 share/doc/HTML/en/kwrite/pref-select.html
 share/doc/HTML/en/kwrite/prefspellchecker.html
@@ -2170,6 +2209,7 @@ share/wallpapers/vegetative_fog.jpg
 @dirrm share/apps/ksysguard/icons/locolor/16x16/apps
 @dirrm share/apps/ksysguard/icons/locolor/16x16
 @dirrm share/apps/ksysguard/icons/locolor
+@dirrm share/apps/ksysguard/icons
 @dirrm share/apps/ksysguard
 @dirrm share/apps/ksplash/pics
 @dirrm share/apps/ksplash
@@ -2180,8 +2220,14 @@ share/wallpapers/vegetative_fog.jpg
 @dirrm share/apps/konqueror/profiles
 @dirrm share/apps/konqueror/pics
 @dirrm share/apps/konqueror/icons/locolor/16x16/actions
+@dirrm share/apps/konqueror/icons/locolor/16x16
+@dirrm share/apps/konqueror/icons/locolor
 @dirrm share/apps/konqueror/icons/hicolor/32x32/actions
+@dirrm share/apps/konqueror/icons/hicolor/32x32
 @dirrm share/apps/konqueror/icons/hicolor/22x22/actions
+@dirrm share/apps/konqueror/icons/hicolor/22x22
+@dirrm share/apps/konqueror/icons/hicolor
+@dirrm share/apps/konqueror/icons
 @dirrm share/apps/konqueror/dirtree/remote/web
 @dirrm share/apps/konqueror/dirtree/remote/ftp
 @dirrm share/apps/konqueror/dirtree/remote
@@ -2197,17 +2243,25 @@ share/wallpapers/vegetative_fog.jpg
 @dirrm share/apps/kmenuedit/icons/hicolor/22x22/actions
 @dirrm share/apps/kmenuedit/icons/hicolor/22x22
 @dirrm share/apps/kmenuedit/icons/hicolor
+@dirrm share/apps/kmenuedit/icons
 @dirrm share/apps/kmenuedit
-@dirrm share/apps/klaptopdaemon/icons/locolor/16x16/actions
 @dirrm share/apps/kio_info
 @dirrm share/apps/kicker/wallpapers
 @dirrm share/apps/kicker/tiles
 @dirrm share/apps/kicker/pics
+@dirrm share/apps/kicker/icons/locolor/16x16/actions
+@dirrm share/apps/kicker/icons/locolor/16x16
+@dirrm share/apps/kicker/icons/locolor
+@dirrm share/apps/kicker/icons
 @dirrm share/apps/kicker/applets
 @dirrm share/apps/kicker
 @dirrm share/apps/khelpcenter/plugins/Tutorials
+@dirrm share/apps/khelpcenter/plugins
 @dirrm share/apps/khelpcenter/pics
 @dirrm share/apps/khelpcenter/icons/locolor/16x16/apps
+@dirrm share/apps/khelpcenter/icons/locolor/16x16
+@dirrm share/apps/khelpcenter/icons/locolor
+@dirrm share/apps/khelpcenter/icons
 @dirrm share/apps/khelpcenter/en
 @dirrm share/apps/khelpcenter
 @dirrm share/apps/kdm/pics/users

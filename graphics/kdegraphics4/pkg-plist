@@ -28,14 +28,17 @@ include/mini-magick/version.h
 lib/kview.la
 lib/kview.so
 lib/libbaglayout.la
+lib/libbaglayout.so
 lib/libbaglayout.so.0
 lib/libkdvi.la
 lib/libkdvi.so
 lib/libkfax.la
 lib/libkfax.so
 lib/libkghostview.la
+lib/libkghostview.so
 lib/libkghostview.so.1
 lib/libkmultipage.la
+lib/libkmultipage.so
 lib/libkmultipage.so.0
 lib/libkpagetest.la
 lib/libkpagetest.so
@@ -44,6 +47,7 @@ lib/libkviewerpart.so
 lib/libkviewpart.la
 lib/libkviewpart.so
 lib/libminimagick.la
+lib/libminimagick.so
 lib/libminimagick.so.5
 share/applnk/Graphics/kdvi.desktop
 share/applnk/Graphics/kfax.desktop
@@ -71,6 +75,7 @@ share/doc/HTML/en/kdvi/.anchors
 share/doc/HTML/en/kdvi/KDVI-features.dvi
 share/doc/HTML/en/kdvi/KDVI-features.tex
 share/doc/HTML/en/kdvi/aboutkde.ps
+share/doc/HTML/en/kdvi/common
 share/doc/HTML/en/kdvi/index.cvlog
 share/doc/HTML/en/kdvi/index.docbook
 share/doc/HTML/en/kdvi/index.html
@@ -83,6 +88,7 @@ share/doc/HTML/en/kdvi/qampa.html
 share/doc/HTML/en/kdvi/usage.html
 share/doc/HTML/en/kfax/.anchors
 share/doc/HTML/en/kfax/command-line-options.html
+share/doc/HTML/en/kfax/common
 share/doc/HTML/en/kfax/compilation-and-installation.html
 share/doc/HTML/en/kfax/copyright.html
 share/doc/HTML/en/kfax/dealing-with-files-on-the-internet.html
@@ -103,6 +109,7 @@ share/doc/HTML/en/kfax/requirements.html
 share/doc/HTML/en/kfax/themenuentries.html
 share/doc/HTML/en/kfax/view.html
 share/doc/HTML/en/kfract/.anchors
+share/doc/HTML/en/kfract/common
 share/doc/HTML/en/kfract/index.cvlog
 share/doc/HTML/en/kfract/index.docbook
 share/doc/HTML/en/kfract/index.html
@@ -116,6 +123,7 @@ share/doc/HTML/en/kfract/the-toolbar.html
 share/doc/HTML/en/kfract/the-types-menu.html
 share/doc/HTML/en/kghostview/.anchors
 share/doc/HTML/en/kghostview/authors.html
+share/doc/HTML/en/kghostview/common
 share/doc/HTML/en/kghostview/configure-interpreter.html
 share/doc/HTML/en/kghostview/configure-key-bindings.html
 share/doc/HTML/en/kghostview/copyright.html
@@ -140,6 +148,7 @@ share/doc/HTML/en/kghostview/view-control.html
 share/doc/HTML/en/kghostview/view.html
 share/doc/HTML/en/ksnapshot/.anchors
 share/doc/HTML/en/ksnapshot/additional-features.html
+share/doc/HTML/en/ksnapshot/common
 share/doc/HTML/en/ksnapshot/credits.html
 share/doc/HTML/en/ksnapshot/index.docbook
 share/doc/HTML/en/ksnapshot/index.html
@@ -150,6 +159,7 @@ share/doc/HTML/en/ksnapshot/taking-snapshot.html
 share/doc/HTML/en/ksnapshot/using-ksapshot.html
 share/doc/HTML/en/kview/.anchors
 share/doc/HTML/en/kview/cmdline.html
+share/doc/HTML/en/kview/common
 share/doc/HTML/en/kview/how.html
 share/doc/HTML/en/kview/index.cvlog
 share/doc/HTML/en/kview/index.docbook
@@ -158,6 +168,7 @@ share/doc/HTML/en/kview/introduction.html
 share/doc/HTML/en/kview/notes.html
 share/doc/HTML/en/kview/what.html
 share/doc/HTML/en/pixie/.anchors
+share/doc/HTML/en/pixie/common
 share/doc/HTML/en/pixie/index.docbook
 share/doc/HTML/en/pixie/index.html
 share/doc/HTML/en/pixie/introduction.html

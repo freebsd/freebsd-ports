@@ -6,16 +6,14 @@
 #
 
 PORTNAME=	kdelibs
-PORTVERSION=	2.0
+PORTVERSION=	2.0.1
 CATEGORIES=	x11 x11-toolkits
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/distribution/tar/generic/src
 
 MAINTAINER=	kevlo@FreeBSD.org
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.4:${PORTSDIR}/graphics/png \
-		tiff.4:${PORTSDIR}/graphics/tiff \
+LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		audiofile.0:${PORTSDIR}/audio/libaudiofile \
 		mimelib.3:${PORTSDIR}/converters/kdesupport2
 
@@ -28,8 +26,7 @@ USE_BZIP2=	yes
 USE_NEWGCC=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-qt-dir=${X11BASE} --enable-shared \
-		--with-qt-includes=${X11BASE}/include/qt2 \
+CONFIGURE_ARGS+=--with-qt-includes=${X11BASE}/include/qt2 \
 		--with-qt-libraries=${X11BASE}/lib \
 		--with-extra-libs=${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${PREFIX}/include" \

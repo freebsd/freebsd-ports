@@ -11,30 +11,38 @@ bin/midisend
 bin/sf2cfg
 bin/timidity
 bin/workman2cddb.pl
-lib/Arts/StructureBuilder.mcopclass
-lib/Arts/StructureDesc.mcopclass
-lib/Arts/Synth_ENVELOPE_ADSR.mcopclass
-lib/Arts/Synth_MIDI_TEST.mcopclass
-lib/Arts/Synth_NOISE.mcopclass
-lib/Arts/Synth_SHELVE_CUTOFF.mcopclass
-lib/Arts/Synth_WAVE_TRI.mcopclass
-lib/Arts/Synth_XFADE.mcopclass
-lib/artsmodules.mcopclass
-lib/artsmodules.mcoptype
 lib/kmixctrl.la
 lib/kmixctrl.so
 lib/libaktion.la
+lib/libaktion.so
 lib/libaktion.so.1
 lib/libartsbuilder.la
+lib/libartsbuilder.so
 lib/libartsbuilder.so.0
 lib/libartsmodules.la
+lib/libartsmodules.so
 lib/libartsmodules.so.0
 lib/libkcm_kmix.la
 lib/libkcm_kmix.so
 lib/libkmidpart.la
+lib/libkmidpart.so
 lib/libkmidpart.so.1
 lib/libkmixapplet.la
+lib/libkmixapplet.so
 lib/libkmixapplet.so.1
+lib/libworkman.la
+lib/libworkman.so
+lib/libworkman.so.5
+lib/mcop/Arts/StructureBuilder.mcopclass
+lib/mcop/Arts/StructureDesc.mcopclass
+lib/mcop/Arts/Synth_ENVELOPE_ADSR.mcopclass
+lib/mcop/Arts/Synth_MIDI_TEST.mcopclass
+lib/mcop/Arts/Synth_NOISE.mcopclass
+lib/mcop/Arts/Synth_SHELVE_CUTOFF.mcopclass
+lib/mcop/Arts/Synth_WAVE_TRI.mcopclass
+lib/mcop/Arts/Synth_XFADE.mcopclass
+lib/mcop/artsmodules.mcopclass
+lib/mcop/artsmodules.mcoptype
 share/applnk/Multimedia/aktion.desktop
 share/applnk/Multimedia/artsbuilder.desktop
 share/applnk/Multimedia/artscontrol.desktop
@@ -269,6 +277,7 @@ share/apps/kscd/pics/cdsmall.xpm
 share/apps/kscd/pics/kscdlogo.xpm
 share/config/aktionrc
 share/doc/HTML/en/artsbuilder/.anchors
+share/doc/HTML/en/artsbuilder/common
 share/doc/HTML/en/artsbuilder/index.docbook
 share/doc/HTML/en/artsbuilder/index.html
 share/doc/HTML/en/artsbuilder/insidearts.html
@@ -279,6 +288,7 @@ share/doc/HTML/en/kmid/abouttheauthor.html
 share/doc/HTML/en/kmid/addingsongstoacollectionhowtouseautoadd.html
 share/doc/HTML/en/kmid/advancedfeatures.html
 share/doc/HTML/en/kmid/collections.html
+share/doc/HTML/en/kmid/common
 share/doc/HTML/en/kmid/compilationandinstallation.html
 share/doc/HTML/en/kmid/creatingamidimap.html
 share/doc/HTML/en/kmid/deletingacollection.html
@@ -306,6 +316,7 @@ share/doc/HTML/en/kmid/usingmidimaps.html
 share/doc/HTML/en/kmidi/.anchors
 share/doc/HTML/en/kmidi/FAQ
 share/doc/HTML/en/kmidi/commandlineoptions.html
+share/doc/HTML/en/kmidi/common
 share/doc/HTML/en/kmidi/compilationandinstallation.html
 share/doc/HTML/en/kmidi/computationissues.html
 share/doc/HTML/en/kmidi/configuring.html
@@ -331,6 +342,7 @@ share/doc/HTML/en/kmidi/synthesismodel.html
 share/doc/HTML/en/kmidi/usage.html
 share/doc/HTML/en/kmidi/volume.html
 share/doc/HTML/en/kmix/.anchors
+share/doc/HTML/en/kmix/common
 share/doc/HTML/en/kmix/compilation.html
 share/doc/HTML/en/kmix/configuration-options.html
 share/doc/HTML/en/kmix/control-panel.html
@@ -348,6 +360,7 @@ share/doc/HTML/en/kscd/cddb-editor.html
 share/doc/HTML/en/kscd/cddb-support.html
 share/doc/HTML/en/kscd/cddb-tab.html
 share/doc/HTML/en/kscd/cddb.howto
+share/doc/HTML/en/kscd/common
 share/doc/HTML/en/kscd/configuring-kscd.html
 share/doc/HTML/en/kscd/credits-and-license.html
 share/doc/HTML/en/kscd/index.docbook
@@ -444,7 +457,6 @@ share/services/kmixctrl_restore.desktop
 @dirrm share/apps/kmid/icons
 @dirrm share/apps/kmid/fm
 @dirrm share/apps/kmid
-@dirrm share/apps/kicker/applets
 @dirrm share/apps/kaiman/Skins/k9
 @dirrm share/apps/kaiman/Skins/circle
 @dirrm share/apps/kaiman/Skins/car-preset
@@ -452,6 +464,6 @@ share/services/kmixctrl_restore.desktop
 @dirrm share/apps/kaiman
 @dirrm share/apps/artscontrol
 @dirrm share/apps/artsbuilder/pics
+@dirrm share/apps/artsbuilder
 @dirrm share/apps/aktion/toolbar
 @dirrm share/apps/aktion
-@dirrm lib/Arts

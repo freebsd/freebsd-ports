@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kdebase
-PORTVERSION= 	2.0
+PORTVERSION= 	2.0.1
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/distribution/tar/generic/src
