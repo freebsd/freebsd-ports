@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	tdondich@majiknetworks.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program for executing commands on many hosts in parallel
 
 USE_PYTHON=	yes
