@@ -8,7 +8,6 @@ sent and received, retransmissions, round trip times, window
 advertisements, throughput, etc.  Its output format ranges from
 Simple to Long to Very Detailed.
 
-
 It can also produce three different types of graphs, as follows: 
 
    Time Sequence Graph 
@@ -23,4 +22,4 @@ It can also produce three different types of graphs, as follows:
      function of time.
 
 The graphs produced are viewable only by Tim Shepard's wonderful
-xplot program.
+xplot program (in math/xplot).

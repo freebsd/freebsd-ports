@@ -1,23 +1,24 @@
 # New ports collection makefile for:	tcptrace
-# Version required:	4.0.2
+# Version required:	5.0.10
 # Date created:		3 March 1997
 # Whom:			fenner
 #
-# $Id: Makefile,v 1.3 1997/07/19 19:43:36 fenner Exp $
+# $Id: Makefile,v 1.4 1997/12/15 22:37:31 fenner Exp $
 #
 
-DISTNAME=	tcptrace-4.1.3
+DISTNAME=	tcptrace.5.0.10
+PKGNAME=	tcptrace-5.0.10
 CATEGORIES=	net
-MASTER_SITES=	http://jarok.cs.ohiou.edu/software/tcptrace/files/4.1.3/
-DISTFILES=	tcptrace.tar.gz
+MASTER_SITES=	http://jarok.cs.ohiou.edu/software/tcptrace/files/5.0.10/
 
 MAINTAINER=	fenner@FreeBSD.ORG
 
 GNU_CONFIGURE=	yes
-WRKSRC=		${WRKDIR}/tcptrace
+WRKSRC=		${WRKDIR}/tcptrace_5.0.10
 ALL_TARGET=	tcptrace
 
-DOCFILES=	COPYRIGHT README README.modules README.tput_graphs WWW
+DOCFILES=	ARGS BUGS CHANGES COPYRIGHT FAQ README README.mailing_list \
+		README.modules README.tput_graphs WWW
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tcptrace ${PREFIX}/bin
