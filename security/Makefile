@@ -268,6 +268,7 @@
     SUBDIR += proxytunnel
     SUBDIR += pscan
     SUBDIR += pwman
+    SUBDIR += pxytest
     SUBDIR += py-amkCrypto
     SUBDIR += py-cryptkit
     SUBDIR += py-fchksum

@@ -1,0 +1,16 @@
+pxytest is a command line utility to test a host for open proxies
+that are vulnerable to spammer abuse.  It is written in perl.
+
+Unsecured proxies currently are the most significant conduit of
+junk email. This is a particularly vexing problem, because open
+proxies, unlike open mail relays, hide the origin of the spam,
+making it impossible to trace. This utility tests a host to
+see if it is vulnerable to such abuse.
+
+See http://www.unicom.com/sw/pxytest for more information.
+
+pxytest was written by Chip Rosenthal.
+
+- Paul Chvostek <paul+ports@it.ca>
+
+WWW: http://www.unicom.com/sw/pxytest
