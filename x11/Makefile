@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.129 1997/03/11 23:46:03 asami Exp $
+# $Id: Makefile,v 1.130 1997/03/12 09:21:00 asami Exp $
 #
 
     SUBDIR += FWF
@@ -69,6 +69,7 @@
     SUBDIR += xmascot
     SUBDIR += xmold
     SUBDIR += xpostit
+    SUBDIR += xprompt
     SUBDIR += xscreensaver
     SUBDIR += xsnow
     SUBDIR += xtacy
