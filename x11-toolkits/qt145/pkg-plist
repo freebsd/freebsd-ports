@@ -314,3 +314,6 @@ include/X11/qt/qwindefs.h
 include/X11/qt/qwindow.h
 include/X11/qt/qwmatrix.h
 bin/moc
+share/doc/qt/README
+share/doc/qt/README.QT
+
