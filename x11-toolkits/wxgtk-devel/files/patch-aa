@@ -1,46 +1,39 @@
 
 $FreeBSD$
 
---- configure.in.orig	Tue May 22 17:27:55 2001
-+++ configure.in	Mon May 28 17:26:14 2001
-@@ -1968,16 +1968,12 @@
- WX_LIBRARY_NAME_STATIC_GL="lib${WX_LIBRARY}_gl.a"
+--- configure.in.orig	Mon Dec 10 20:07:00 2001
++++ configure.in	Sat Jan 19 14:34:28 2002
+@@ -2393,8 +2393,8 @@
+     lib_debug_suffix=d
+ fi
+ 
+-TOOLCHAIN_NAME="${TOOLKIT_DIR}${WIDGET_SET}${lib_unicode_suffix}${lib_debug_suffix}-${WX_RELEASE}"
+-TOOLCHAIN_NAME_GL="${TOOLKIT_DIR}${WIDGET_SET}${lib_unicode_suffix}${lib_debug_suffix}_gl-${WX_RELEASE}"
++TOOLCHAIN_NAME="${TOOLKIT_DIR}${WIDGET_SET}${lib_unicode_suffix}${lib_debug_suffix}"
++TOOLCHAIN_NAME_GL="${TOOLKIT_DIR}${WIDGET_SET}${lib_unicode_suffix}${lib_debug_suffix}_gl"
+ 
+ if test "$cross_compiling" = "yes"; then
+     TOOLCHAIN_NAME="${TOOLCHAIN_NAME}-${host_alias}"
+@@ -2406,14 +2406,12 @@
+ WX_LIBRARY_GL="wx_${TOOLCHAIN_NAME_GL}"
  
  dnl the name of the shared library
--WX_LIBRARY_NAME_SHARED="lib${WX_LIBRARY}-${WX_RELEASE}.so.${WX_CURRENT}.${WX_REVISION}.${WX_AGE}"
--WX_LIBRARY_NAME_SHARED_GL="lib${WX_LIBRARY}_gl-${WX_RELEASE}.so.${WX_CURRENT}.${WX_REVISION}.${WX_AGE}"
-+WX_LIBRARY_NAME_SHARED="lib${WX_LIBRARY}.so.2"
-+WX_LIBRARY_NAME_SHARED_GL="lib${WX_LIBRARY}_gl.so.2"
+-WX_LIBRARY_NAME_SHARED="lib${WX_LIBRARY}.${SO_SUFFIX}.${WX_CURRENT}.${WX_REVISION}.${WX_AGE}"
+-WX_LIBRARY_NAME_SHARED_GL="lib${WX_LIBRARY_GL}.${SO_SUFFIX}.${WX_CURRENT}.${WX_REVISION}.${WX_AGE}"
++WX_LIBRARY_NAME_SHARED="lib${WX_LIBRARY}.${SO_SUFFIX}.2"
++WX_LIBRARY_NAME_SHARED_GL="lib${WX_LIBRARY_GL}.${SO_SUFFIX}.2"
  
  dnl the name of the links to the shared library
--WX_LIBRARY_LINK1="lib${WX_LIBRARY}-${WX_RELEASE}.so.${WX_CURRENT}"
--WX_LIBRARY_LINK2="lib${WX_LIBRARY}-${WX_RELEASE}.so"
--WX_LIBRARY_LINK3="lib${WX_LIBRARY}.so"
--WX_LIBRARY_LINK1_GL="lib${WX_LIBRARY}_gl-${WX_RELEASE}.so.${WX_CURRENT}"
--WX_LIBRARY_LINK2_GL="lib${WX_LIBRARY}_gl-${WX_RELEASE}.so"
--WX_LIBRARY_LINK3_GL="lib${WX_LIBRARY}_gl.so"
-+WX_LIBRARY_LINK1="lib${WX_LIBRARY}.so"
-+WX_LIBRARY_LINK1_GL="lib${WX_LIBRARY}_gl.so"
+-WX_LIBRARY_LINK1="lib${WX_LIBRARY}.${SO_SUFFIX}.${WX_CURRENT}"
+-WX_LIBRARY_LINK2="lib${WX_LIBRARY}.${SO_SUFFIX}"
+-WX_LIBRARY_LINK1_GL="lib${WX_LIBRARY_GL}.${SO_SUFFIX}.${WX_CURRENT}"
+-WX_LIBRARY_LINK2_GL="lib${WX_LIBRARY_GL}.${SO_SUFFIX}"
++WX_LIBRARY_LINK1="lib${WX_LIBRARY}.${SO_SUFFIX}"
++WX_LIBRARY_LINK1_GL="lib${WX_LIBRARY_GL}.${SO_SUFFIX}"
  
- dnl shared library settings
- SHARED_LD=
-@@ -2074,8 +2070,13 @@
-       *-*-freebsd* | *-*-openbsd* | *-*-netbsd*)
-         SHARED_LD="${CC} -shared -o"
-         PIC_FLAG="-fPIC"
--        WX_ALL_INSTALLED="CREATE_INSTALLED_LINKS"
--        WX_ALL="CREATE_LINKS"
-+	if test "$wxUSE_OPENGL" = "yes"; then
-+	    WX_ALL_INSTALLED="CREATE_INSTALLED_LINKS CREATE_INSTALLED_LINKS_GL"
-+	    WX_ALL="CREATE_LINKS CREATE_LINKS_GL"
-+	else
-+	    WX_ALL_INSTALLED="CREATE_INSTALLED_LINKS"
-+	    WX_ALL="CREATE_LINKS"
-+	fi
-       ;;
-       *-*-osf* )
-         SHARED_LD="${CXX} -shared -o"
-@@ -2749,24 +2750,6 @@
+ dnl the name of the resources file for wxMac
+ WX_RESOURCES_MACOSX="lib${WX_LIBRARY}.rsrc"
+@@ -3522,24 +3520,6 @@
      fi
  fi
  
@@ -62,24 +55,22 @@ $FreeBSD$
 -    fi
 -fi
 -
- dnl ---------------------------------------------------------------------------
- dnl Optional libraries
- dnl ---------------------------------------------------------------------------
-@@ -3808,8 +3791,6 @@
- AC_SUBST(WX_LIBRARY)
+ if test "$WXWIN_COMPATIBILITY_2" = "yes"; then
+     AC_DEFINE(WXWIN_COMPATIBILITY_2)
+ 
+@@ -4792,7 +4772,6 @@
+ AC_SUBST(WX_LIBRARY_IMPORTLIB)
  AC_SUBST(WX_TARGET_LIBRARY)
  AC_SUBST(WX_LIBRARY_LINK1)
 -AC_SUBST(WX_LIBRARY_LINK2)
--AC_SUBST(WX_LIBRARY_LINK3)
  AC_SUBST(PROGRAM_EXT)
  
  dnl global gl options
-@@ -3819,8 +3800,6 @@
- AC_SUBST(WX_LIBRARY_GL)
+@@ -4800,7 +4779,6 @@
+ AC_SUBST(WX_LIBRARY_NAME_SHARED_GL)
  AC_SUBST(WX_TARGET_LIBRARY_GL)
  AC_SUBST(WX_LIBRARY_LINK1_GL)
 -AC_SUBST(WX_LIBRARY_LINK2_GL)
--AC_SUBST(WX_LIBRARY_LINK3_GL)
  
  dnl are we supposed to create the links?
  AC_SUBST(WX_ALL)

@@ -1,80 +1,89 @@
 
 $FreeBSD$
 
---- Makefile.in.orig	Fri May 25 05:55:33 2001
-+++ Makefile.in	Mon May 28 19:47:06 2001
-@@ -379,39 +379,23 @@
+--- Makefile.in.orig	Mon Dec 10 20:07:01 2001
++++ Makefile.in	Sat Jan 19 16:58:06 2002
+@@ -340,17 +340,13 @@
  
- CREATE_LINKS: @WX_LIBRARY_NAME_SHARED@
- 	@$(RM) ./lib/@WX_LIBRARY_LINK1@
--	@$(RM) ./lib/@WX_LIBRARY_LINK2@
--	@$(RM) ./lib/@WX_LIBRARY_LINK3@
- 	cd lib \
+ $(build_libdir)/@WX_LIBRARY_LINK1@: $(build_libdir)/@WX_LIBRARY_NAME_SHARED@
+ 	@$(RM) $(build_libdir)/@WX_LIBRARY_LINK1@
+-	@$(RM) $(build_libdir)/@WX_LIBRARY_LINK2@
+ 	cd $(build_libdir) \
 -		&& $(LN_S) @WX_TARGET_LIBRARY@ @WX_LIBRARY_LINK1@ \
--		&& $(LN_S) @WX_TARGET_LIBRARY@ @WX_LIBRARY_LINK2@ \
--		&& $(LN_S) @WX_TARGET_LIBRARY@ @WX_LIBRARY_LINK3@
+-		&& $(LN_S) @WX_TARGET_LIBRARY@ @WX_LIBRARY_LINK2@
 +		&& $(LN_S) @WX_TARGET_LIBRARY@ @WX_LIBRARY_LINK1@
  
- CREATE_LINKS_GL: @WX_LIBRARY_NAME_SHARED_GL@
- 	@$(RM) ./lib/@WX_LIBRARY_LINK1_GL@
--	@$(RM) ./lib/@WX_LIBRARY_LINK2_GL@
--	@$(RM) ./lib/@WX_LIBRARY_LINK3_GL@
- 	cd lib \
+ $(build_libdir)/@WX_LIBRARY_LINK1_GL@: $(build_libdir)/@WX_LIBRARY_NAME_SHARED_GL@
+ 	@$(RM) $(build_libdir)/@WX_LIBRARY_LINK1_GL@
+-	@$(RM) $(build_libdir)/@WX_LIBRARY_LINK2_GL@
+ 	cd $(build_libdir) \
 -		&& $(LN_S) @WX_TARGET_LIBRARY_GL@ @WX_LIBRARY_LINK1_GL@ \
--		&& $(LN_S) @WX_TARGET_LIBRARY_GL@ @WX_LIBRARY_LINK2_GL@ \
--		&& $(LN_S) @WX_TARGET_LIBRARY_GL@ @WX_LIBRARY_LINK3_GL@
+-		&& $(LN_S) @WX_TARGET_LIBRARY_GL@ @WX_LIBRARY_LINK2_GL@
 +		&& $(LN_S) @WX_TARGET_LIBRARY_GL@ @WX_LIBRARY_LINK1_GL@
+ 
+ $(OBJECTS):	$(WXDIR)/include/wx/defs.h $(WXDIR)/include/wx/object.h
+ 
+@@ -380,26 +376,21 @@
  
  CREATE_INSTALLED_LINKS: preinstall
  	$(RM) $(libdir)/@WX_LIBRARY_LINK1@
 -	$(RM) $(libdir)/@WX_LIBRARY_LINK2@
--	$(RM) $(libdir)/@WX_LIBRARY_LINK3@
  	cd $(libdir) \
 -		&& $(LN_S) @WX_LIBRARY_NAME_SHARED@ @WX_LIBRARY_LINK1@ \
--		&& $(LN_S) @WX_LIBRARY_NAME_SHARED@ @WX_LIBRARY_LINK2@ \
--		&& $(LN_S) @WX_LIBRARY_NAME_SHARED@ @WX_LIBRARY_LINK3@
+-		&& $(LN_S) @WX_LIBRARY_NAME_SHARED@ @WX_LIBRARY_LINK2@
 +		&& $(LN_S) @WX_LIBRARY_NAME_SHARED@ @WX_LIBRARY_LINK1@
  
  CREATE_INSTALLED_LINKS_GL: preinstall_gl
  	$(RM) $(libdir)/@WX_LIBRARY_LINK1_GL@
 -	$(RM) $(libdir)/@WX_LIBRARY_LINK2_GL@
--	$(RM) $(libdir)/@WX_LIBRARY_LINK3_GL@
  	cd $(libdir) \
 -		&& $(LN_S) @WX_LIBRARY_NAME_SHARED_GL@ @WX_LIBRARY_LINK1_GL@ \
--		&& $(LN_S) @WX_LIBRARY_NAME_SHARED_GL@ @WX_LIBRARY_LINK2_GL@ \
--		&& $(LN_S) @WX_LIBRARY_NAME_SHARED_GL@ @WX_LIBRARY_LINK3_GL@
+-		&& $(LN_S) @WX_LIBRARY_NAME_SHARED_GL@ @WX_LIBRARY_LINK2_GL@
 +		&& $(LN_S) @WX_LIBRARY_NAME_SHARED_GL@ @WX_LIBRARY_LINK1_GL@
  
- $(OBJECTS):	$(WXDIR)/include/wx/defs.h $(WXDIR)/include/wx/object.h
- 
-@@ -461,11 +445,11 @@
- 	cd $(bindir) && rm -f wx-config && $(LN_S) wx@TOOLKIT_NAME@-config wx-config
- 	$(INSTALL_PROGRAM) $(top_builddir)/lib/@WX_TARGET_LIBRARY@ $(libdir)/@WX_TARGET_LIBRARY@
+ afminstall: preinstall
+ 	@if test ! -d $(datadir); then $(INSTALL) -d $(datadir); fi
+ 	$(INSTALL) -d $(datadir)/wx
+-	$(INSTALL) -d $(datadir)/wx/$(VER_MAJMIN)
+-	$(INSTALL) -d $(datadir)/wx/$(VER_MAJMIN)/afm
+-	$(INSTALL) -d $(datadir)/wx/$(VER_MAJMIN)/gs_afm
+-	$(INSTALL_DATA) $(top_srcdir)/misc/afm/*.afm $(datadir)/wx/$(VER_MAJMIN)/afm
+-	$(INSTALL_DATA) $(top_srcdir)/misc/gs_afm/*.afm $(datadir)/wx/$(VER_MAJMIN)/gs_afm
++	$(INSTALL) -d $(datadir)/wx/afm
++	$(INSTALL) -d $(datadir)/wx/gs_afm
++	$(INSTALL_DATA) $(top_srcdir)/misc/afm/*.afm $(datadir)/wx/afm
++	$(INSTALL_DATA) $(top_srcdir)/misc/gs_afm/*.afm $(datadir)/wx/gs_afm
+         
+ m4datainstall: preinstall
+ 	$(INSTALL) -d $(datadir)/aclocal
+@@ -422,12 +413,10 @@
+ 	@if test "x@WX_LIBRARY_IMPORTLIB@" != "x"; then	\
+ 		$(INSTALL_PROGRAM) $(top_builddir)/lib/@WX_LIBRARY_IMPORTLIB@ $(libdir)/@WX_LIBRARY_IMPORTLIB@; fi
  
 -	$(INSTALL) -d $(libdir)/wx
 -	$(INSTALL) -d $(libdir)/wx/include
--	$(INSTALL) -d $(libdir)/wx/include/wx
--	$(INSTALL) -d $(libdir)/wx/include/wx/@TOOLKIT_NAME@
--	$(INSTALL_DATA) $(top_builddir)/include/wx/@TOOLKIT_DIR@/setup.h $(libdir)/wx/include/wx/@TOOLKIT_NAME@/setup.h
-+#	$(INSTALL) -d $(libdir)/wx
-+#	$(INSTALL) -d $(libdir)/wx/include
+-	$(INSTALL) -d $(libdir)/wx/include/@TOOLCHAIN_NAME@
+-	$(INSTALL) -d $(libdir)/wx/include/@TOOLCHAIN_NAME@/wx
 +	$(INSTALL) -d $(prefix)/include/wx
-+	$(INSTALL) -d $(prefix)/include/wx/@TOOLKIT_NAME@
-+	$(INSTALL_DATA) $(top_builddir)/include/wx/@TOOLKIT_DIR@/setup.h $(prefix)/include/wx/@TOOLKIT_NAME@/setup.h
++	$(INSTALL) -d $(prefix)/include/wx/@TOOLCHAIN_NAME@
+ 	$(INSTALL_DATA) $(build_libdir)/wx/include/@TOOLCHAIN_NAME@/wx/setup.h \
+-                    $(libdir)/wx/include/@TOOLCHAIN_NAME@/wx/setup.h
++                    $(prefix)/include/wx/setup.h
  
  	$(INSTALL) -d $(includedir)/wx
- 	@if test "$(USE_GUI)" = 1; then $(INSTALL) -d $(includedir)/wx/@TOOLKIT_DIR@; fi
-@@ -513,13 +497,9 @@
+ 	@# FIXME: This will erroneously install a wx/base dir for wxBase..
+@@ -485,13 +474,11 @@
  	@echo " Removing library..."
  	@$(RM) $(libdir)/@WX_TARGET_LIBRARY@
  	@$(RM) $(libdir)/@WX_LIBRARY_LINK1@
 -	@$(RM) $(libdir)/@WX_LIBRARY_LINK2@
--	@$(RM) $(libdir)/@WX_LIBRARY_LINK3@
  	@echo " Removing GL library..."
  	@$(RM) $(libdir)/@WX_TARGET_LIBRARY_GL@
  	@$(RM) $(libdir)/@WX_LIBRARY_LINK1_GL@
 -	@$(RM) $(libdir)/@WX_LIBRARY_LINK2_GL@
--	@$(RM) $(libdir)/@WX_LIBRARY_LINK3_GL@
  	@echo " Removing helper files..."
- 	@$(RM) $(libdir)/wx/include/wx/@TOOLKIT_NAME@/setup.h
+-	@$(RM) $(libdir)/wx/include/@TOOLCHAIN_NAME@/wx/setup.h
++	@$(RM) $(prefix)/include/wx/@TOOLCHAIN_NAME@/setup.h
  	@$(RM) $(bindir)/wx-config
+ 	@$(RM) $(bindir)/wx@TOOLCHAIN_NAME@-config
+ 	@$(RM) $(datadir)/wx/afm/*

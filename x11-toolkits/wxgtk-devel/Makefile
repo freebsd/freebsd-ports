@@ -6,17 +6,18 @@
 #
 
 PORTNAME=	wxgtk
-PORTVERSION=	2.3.1
+PORTVERSION=	2.3.2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://wesley.informatik.uni-freiburg.de/pub/linux/wxxt/source/
-MASTER_SITE_SUBDIR=	wxpython
+MASTER_SITE_SUBDIR=	wxwindows
 DISTNAME=	wxGTK-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-		tiff.4:${PORTSDIR}/graphics/tiff
+		tiff.4:${PORTSDIR}/graphics/tiff \
+		giconv.2:${PORTSDIR}/converters/libiconv
 
 NO_LATEST_LINK=	"Unstable, development version."
 
@@ -34,7 +35,7 @@ CONFIGURE_ARGS=	--with-libpng=sys \
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} \
 			  -I${LOCALBASE}/include \
 			  -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib \
+		LDFLAGS="-L${LOCALBASE}/lib -lgiconv \
 			 -L${X11BASE}/lib" \
 		GTK_CONFIG_2_0="no"
 
