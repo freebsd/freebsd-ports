@@ -153,6 +153,7 @@
     SUBDIR += linkchecker
     SUBDIR += links
     SUBDIR += links1
+    SUBDIR += linuxpluginwrapper
     SUBDIR += linux-beonex
     SUBDIR += linux-flashplugin
     SUBDIR += linux-flashplugin6
