@@ -384,6 +384,7 @@
     SUBDIR += starlanes
     SUBDIR += stvef-paks
     SUBDIR += stvef-server
+    SUBDIR += super_methane_brothers
     SUBDIR += sxsame
     SUBDIR += tads
     SUBDIR += taipan
