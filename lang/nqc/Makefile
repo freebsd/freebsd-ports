@@ -14,6 +14,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	kbyanc@FreeBSD.org
 
 USE_GMAKE=	yes
+CC=		${CXX}
 
 MAN1=		nqc.1
 
