@@ -6,6 +6,7 @@
 #
 
 CATEGORIES=	german lang
+PKGNAMEPREFIX=
 PHP_LANG=	de
 MASTERDIR=	${.CURDIR}/../../lang/php_doc
 
