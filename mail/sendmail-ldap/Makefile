@@ -5,12 +5,18 @@
 # $FreeBSD$
 
 SENDMAIL_WITH_LDAP=	yes
-SENDMAIL_WITH_SASL=	yes
 SENDMAIL_WITH_TLS=	yes
+.if defined(SENDMAIL_WITH_SUID)
+# only for compatibility with sendmail 8.11.x
+SENDMAIL_WITH_SASL=	yes
 SENDMAIL_WITH_SFIO=	yes
 SENDMAIL_WITH_MILTER=	yes
-PKGNAMESUFFIX?=	-ldap
+MASTERDIR?=	${.CURDIR}/../sendmail-old
+.else
+SENDMAIL_WITH_SASL2=	yes
 MASTERDIR?=	${.CURDIR}/../sendmail
+.endif
+PKGNAMESUFFIX?=	-ldap
 
 .if exists(${.CURDIR}/Makefile.local)
 .include "${.CURDIR}/Makefile.local"
