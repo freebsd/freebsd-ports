@@ -1503,6 +1503,7 @@ donkey		ports/security/donkey
 dontspace	ports/games/dontspace
 doom		ports/games/doom
 doomlegacy	ports/games/doomlegacy
+doorman		ports/security/doorman
 dopewars	ports/games/dopewars
 dore		ports/graphics/dore
 dosbox		ports/emulators/dosbox
