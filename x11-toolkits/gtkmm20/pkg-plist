@@ -2100,242 +2100,242 @@ share/doc/gtkmm-2.0/docs/tutorial/html/ch21.html
 share/doc/gtkmm-2.0/docs/tutorial/html/ch21s02.html
 share/doc/gtkmm-2.0/docs/tutorial/html/ch22.html
 share/doc/gtkmm-2.0/docs/tutorial/html/index.html
-share/doc/gtkmm-2.0/examples/arrow/arrow.cc
-share/doc/gtkmm-2.0/examples/arrow/direction.cc
-share/doc/gtkmm-2.0/examples/book/alignment/examplewindow.cc
-share/doc/gtkmm-2.0/examples/book/alignment/examplewindow.h
-share/doc/gtkmm-2.0/examples/book/alignment/main.cc
-share/doc/gtkmm-2.0/examples/book/aspectframe/examplewindow.cc
-share/doc/gtkmm-2.0/examples/book/aspectframe/examplewindow.h
-share/doc/gtkmm-2.0/examples/book/aspectframe/main.cc
-share/doc/gtkmm-2.0/examples/book/box/examplewindow.cc
-share/doc/gtkmm-2.0/examples/book/box/examplewindow.h
-share/doc/gtkmm-2.0/examples/book/box/main.cc
-share/doc/gtkmm-2.0/examples/book/box/packbox.cc
-share/doc/gtkmm-2.0/examples/book/box/packbox.h
-share/doc/gtkmm-2.0/examples/book/buttonbox/examplebuttonbox.cc
-share/doc/gtkmm-2.0/examples/book/buttonbox/examplebuttonbox.h
-share/doc/gtkmm-2.0/examples/book/buttonbox/examplewindow.cc
-share/doc/gtkmm-2.0/examples/book/buttonbox/examplewindow.h
-share/doc/gtkmm-2.0/examples/book/buttonbox/main.cc
-share/doc/gtkmm-2.0/examples/book/buttons/button/buttons.cc
-share/doc/gtkmm-2.0/examples/book/buttons/button/buttons.h
-share/doc/gtkmm-2.0/examples/book/buttons/button/main.cc
-share/doc/gtkmm-2.0/examples/book/buttons/checkbutton/examplewindow.cc
-share/doc/gtkmm-2.0/examples/book/buttons/checkbutton/examplewindow.h
-share/doc/gtkmm-2.0/examples/book/buttons/checkbutton/main.cc
-share/doc/gtkmm-2.0/examples/book/buttons/radiobutton/main.cc
-share/doc/gtkmm-2.0/examples/book/buttons/radiobutton/radiobuttons.cc
-share/doc/gtkmm-2.0/examples/book/buttons/radiobutton/radiobuttons.h
-share/doc/gtkmm-2.0/examples/book/buttons/togglebutton/examplewindow.cc
-share/doc/gtkmm-2.0/examples/book/buttons/togglebutton/examplewindow.h
-share/doc/gtkmm-2.0/examples/book/buttons/togglebutton/main.cc
-share/doc/gtkmm-2.0/examples/book/clipboard/ideal/examplewindow.cc
-share/doc/gtkmm-2.0/examples/book/clipboard/ideal/examplewindow.h
-share/doc/gtkmm-2.0/examples/book/clipboard/ideal/main.cc
-share/doc/gtkmm-2.0/examples/book/clipboard/simple/examplewindow.cc
-share/doc/gtkmm-2.0/examples/book/clipboard/simple/examplewindow.h
-share/doc/gtkmm-2.0/examples/book/clipboard/simple/main.cc
-share/doc/gtkmm-2.0/examples/book/combo/examplewindow.cc
-share/doc/gtkmm-2.0/examples/book/combo/examplewindow.h
-share/doc/gtkmm-2.0/examples/book/combo/main.cc
-share/doc/gtkmm-2.0/examples/book/dialogs/colorselectiondialog/examplewindow.cc
-share/doc/gtkmm-2.0/examples/book/dialogs/colorselectiondialog/examplewindow.h
-share/doc/gtkmm-2.0/examples/book/dialogs/colorselectiondialog/main.cc
-share/doc/gtkmm-2.0/examples/book/dialogs/fileselection/examplewindow.cc
-share/doc/gtkmm-2.0/examples/book/dialogs/fileselection/examplewindow.h
-share/doc/gtkmm-2.0/examples/book/dialogs/fileselection/main.cc
-share/doc/gtkmm-2.0/examples/book/dialogs/fontselectiondialog/examplewindow.cc
-share/doc/gtkmm-2.0/examples/book/dialogs/fontselectiondialog/examplewindow.h
-share/doc/gtkmm-2.0/examples/book/dialogs/fontselectiondialog/main.cc
-share/doc/gtkmm-2.0/examples/book/dialogs/messagedialog/examplewindow.cc
-share/doc/gtkmm-2.0/examples/book/dialogs/messagedialog/examplewindow.h
-share/doc/gtkmm-2.0/examples/book/dialogs/messagedialog/main.cc
-share/doc/gtkmm-2.0/examples/book/dialogs/simple/examplewindow.cc
-share/doc/gtkmm-2.0/examples/book/dialogs/simple/examplewindow.h
-share/doc/gtkmm-2.0/examples/book/dialogs/simple/main.cc
-share/doc/gtkmm-2.0/examples/book/drag_and_drop/dndwindow.cc
-share/doc/gtkmm-2.0/examples/book/drag_and_drop/dndwindow.h
-share/doc/gtkmm-2.0/examples/book/drag_and_drop/main.cc
-share/doc/gtkmm-2.0/examples/book/drawingarea/main.cc
-share/doc/gtkmm-2.0/examples/book/drawingarea/myarea.cc
-share/doc/gtkmm-2.0/examples/book/drawingarea/myarea.h
-share/doc/gtkmm-2.0/examples/book/entry/examplewindow.cc
-share/doc/gtkmm-2.0/examples/book/entry/examplewindow.h
-share/doc/gtkmm-2.0/examples/book/entry/main.cc
-share/doc/gtkmm-2.0/examples/book/eventbox/examplewindow.cc
-share/doc/gtkmm-2.0/examples/book/eventbox/examplewindow.h
-share/doc/gtkmm-2.0/examples/book/eventbox/main.cc
-share/doc/gtkmm-2.0/examples/book/frame/examplewindow.cc
-share/doc/gtkmm-2.0/examples/book/frame/examplewindow.h
-share/doc/gtkmm-2.0/examples/book/frame/main.cc
-share/doc/gtkmm-2.0/examples/book/helloworld/helloworld.cc
-share/doc/gtkmm-2.0/examples/book/helloworld/helloworld.h
-share/doc/gtkmm-2.0/examples/book/helloworld/main.cc
-share/doc/gtkmm-2.0/examples/book/helloworld2/helloworld.cc
-share/doc/gtkmm-2.0/examples/book/helloworld2/helloworld.h
-share/doc/gtkmm-2.0/examples/book/helloworld2/main.cc
-share/doc/gtkmm-2.0/examples/book/idle/idleexample.cc
-share/doc/gtkmm-2.0/examples/book/idle/idleexample.h
-share/doc/gtkmm-2.0/examples/book/idle/main.cc
-share/doc/gtkmm-2.0/examples/book/label/examplewindow.cc
-share/doc/gtkmm-2.0/examples/book/label/examplewindow.h
-share/doc/gtkmm-2.0/examples/book/label/main.cc
-share/doc/gtkmm-2.0/examples/book/menus/main_menu/examplewindow.cc
-share/doc/gtkmm-2.0/examples/book/menus/main_menu/examplewindow.h
-share/doc/gtkmm-2.0/examples/book/menus/main_menu/main.cc
-share/doc/gtkmm-2.0/examples/book/menus/popup/examplewindow.cc
-share/doc/gtkmm-2.0/examples/book/menus/popup/examplewindow.h
-share/doc/gtkmm-2.0/examples/book/menus/popup/main.cc
-share/doc/gtkmm-2.0/examples/book/notebook/examplewindow.cc
-share/doc/gtkmm-2.0/examples/book/notebook/examplewindow.h
-share/doc/gtkmm-2.0/examples/book/notebook/main.cc
-share/doc/gtkmm-2.0/examples/book/paned/examplewindow.cc
-share/doc/gtkmm-2.0/examples/book/paned/examplewindow.h
-share/doc/gtkmm-2.0/examples/book/paned/main.cc
-share/doc/gtkmm-2.0/examples/book/paned/messageslist.cc
-share/doc/gtkmm-2.0/examples/book/paned/messageslist.h
-share/doc/gtkmm-2.0/examples/book/paned/messagetext.cc
-share/doc/gtkmm-2.0/examples/book/paned/messagetext.h
-share/doc/gtkmm-2.0/examples/book/progressbar/examplewindow.cc
-share/doc/gtkmm-2.0/examples/book/progressbar/examplewindow.h
-share/doc/gtkmm-2.0/examples/book/progressbar/main.cc
-share/doc/gtkmm-2.0/examples/book/range_widgets/examplewindow.cc
-share/doc/gtkmm-2.0/examples/book/range_widgets/examplewindow.h
-share/doc/gtkmm-2.0/examples/book/range_widgets/labeledoptionmenu.cc
-share/doc/gtkmm-2.0/examples/book/range_widgets/labeledoptionmenu.h
-share/doc/gtkmm-2.0/examples/book/range_widgets/main.cc
-share/doc/gtkmm-2.0/examples/book/scrolledwindow/examplewindow.cc
-share/doc/gtkmm-2.0/examples/book/scrolledwindow/examplewindow.h
-share/doc/gtkmm-2.0/examples/book/scrolledwindow/main.cc
-share/doc/gtkmm-2.0/examples/book/signals/custom/client.cc
-share/doc/gtkmm-2.0/examples/book/signals/custom/client.h
-share/doc/gtkmm-2.0/examples/book/signals/custom/main.cc
-share/doc/gtkmm-2.0/examples/book/signals/custom/server.cc
-share/doc/gtkmm-2.0/examples/book/signals/custom/server.h
-share/doc/gtkmm-2.0/examples/book/spinbutton/examplewindow.cc
-share/doc/gtkmm-2.0/examples/book/spinbutton/examplewindow.h
-share/doc/gtkmm-2.0/examples/book/spinbutton/main.cc
-share/doc/gtkmm-2.0/examples/book/table/examplewindow.cc
-share/doc/gtkmm-2.0/examples/book/table/examplewindow.h
-share/doc/gtkmm-2.0/examples/book/table/main.cc
-share/doc/gtkmm-2.0/examples/book/textview/examplewindow.cc
-share/doc/gtkmm-2.0/examples/book/textview/examplewindow.h
-share/doc/gtkmm-2.0/examples/book/textview/main.cc
-share/doc/gtkmm-2.0/examples/book/timeout/main.cc
-share/doc/gtkmm-2.0/examples/book/timeout/timerexample.cc
-share/doc/gtkmm-2.0/examples/book/timeout/timerexample.h
-share/doc/gtkmm-2.0/examples/book/toolbar/examplewindow.cc
-share/doc/gtkmm-2.0/examples/book/toolbar/examplewindow.h
-share/doc/gtkmm-2.0/examples/book/toolbar/main.cc
-share/doc/gtkmm-2.0/examples/book/treeview/drag_and_drop/examplewindow.cc
-share/doc/gtkmm-2.0/examples/book/treeview/drag_and_drop/examplewindow.h
-share/doc/gtkmm-2.0/examples/book/treeview/drag_and_drop/main.cc
-share/doc/gtkmm-2.0/examples/book/treeview/drag_and_drop/treemodel_dnd.cc
-share/doc/gtkmm-2.0/examples/book/treeview/drag_and_drop/treemodel_dnd.h
-share/doc/gtkmm-2.0/examples/book/treeview/editable_cells/examplewindow.cc
-share/doc/gtkmm-2.0/examples/book/treeview/editable_cells/examplewindow.h
-share/doc/gtkmm-2.0/examples/book/treeview/editable_cells/main.cc
-share/doc/gtkmm-2.0/examples/book/treeview/list/examplewindow.cc
-share/doc/gtkmm-2.0/examples/book/treeview/list/examplewindow.h
-share/doc/gtkmm-2.0/examples/book/treeview/list/main.cc
-share/doc/gtkmm-2.0/examples/book/treeview/tree/examplewindow.cc
-share/doc/gtkmm-2.0/examples/book/treeview/tree/examplewindow.h
-share/doc/gtkmm-2.0/examples/book/treeview/tree/main.cc
-share/doc/gtkmm-2.0/examples/calendar/calendar.cc
-share/doc/gtkmm-2.0/examples/cellrenderercustom/cellrendererlist.cc
-share/doc/gtkmm-2.0/examples/cellrenderercustom/cellrendererlist.h
-share/doc/gtkmm-2.0/examples/cellrenderercustom/cellrendererpopup.cc
-share/doc/gtkmm-2.0/examples/cellrenderercustom/cellrendererpopup.h
-share/doc/gtkmm-2.0/examples/cellrenderercustom/cellrenderertoggle.cc
-share/doc/gtkmm-2.0/examples/cellrenderercustom/popupentry.cc
-share/doc/gtkmm-2.0/examples/cellrenderercustom/popupentry.h
-share/doc/gtkmm-2.0/examples/cellrenderercustom/testpopup.cc
-share/doc/gtkmm-2.0/examples/dnd/dnd_images.h
-share/doc/gtkmm-2.0/examples/dnd/dndwindow.cc
-share/doc/gtkmm-2.0/examples/dnd/dndwindow.h
-share/doc/gtkmm-2.0/examples/dnd/main.cc
-share/doc/gtkmm-2.0/examples/exception/exceptiontest.cc
-share/doc/gtkmm-2.0/examples/filesel/filesel.cc
-share/doc/gtkmm-2.0/examples/fixed/fixed.cc
-share/doc/gtkmm-2.0/examples/gdk/radar.cc
-share/doc/gtkmm-2.0/examples/markup/parser.cc
-share/doc/gtkmm-2.0/examples/rulers/rulers.cc
-share/doc/gtkmm-2.0/examples/statusbar/statusbar.cc
-share/doc/gtkmm-2.0/examples/stock/stock.cc
-share/doc/gtkmm-2.0/examples/thread/dispatcher.cc
-share/doc/gtkmm-2.0/examples/thread/dispatcher2.cc
-share/doc/gtkmm-2.0/examples/thread/thread.cc
-share/doc/gtkmm-2.0/examples/thread/threadpool.cc
-share/doc/gtkmm-2.0/examples/tictactoe/tictactoe.cc
-share/doc/gtkmm-2.0/examples/tictactoe/tictactoe.h
-share/doc/gtkmm-2.0/examples/tictactoe/ttt_test.cc
-share/doc/gtkmm-2.0/examples/window/wheelbarrow.cc
-@dirrm share/doc/gtkmm-2.0/examples/window
-@dirrm share/doc/gtkmm-2.0/examples/tictactoe
-@dirrm share/doc/gtkmm-2.0/examples/thread
-@dirrm share/doc/gtkmm-2.0/examples/stock
-@dirrm share/doc/gtkmm-2.0/examples/statusbar
-@dirrm share/doc/gtkmm-2.0/examples/rulers
-@dirrm share/doc/gtkmm-2.0/examples/markup
-@dirrm share/doc/gtkmm-2.0/examples/gdk
-@dirrm share/doc/gtkmm-2.0/examples/fixed
-@dirrm share/doc/gtkmm-2.0/examples/filesel
-@dirrm share/doc/gtkmm-2.0/examples/exception
-@dirrm share/doc/gtkmm-2.0/examples/dnd
-@dirrm share/doc/gtkmm-2.0/examples/cellrenderercustom
-@dirrm share/doc/gtkmm-2.0/examples/calendar
-@dirrm share/doc/gtkmm-2.0/examples/book/treeview/tree
-@dirrm share/doc/gtkmm-2.0/examples/book/treeview/list
-@dirrm share/doc/gtkmm-2.0/examples/book/treeview/editable_cells
-@dirrm share/doc/gtkmm-2.0/examples/book/treeview/drag_and_drop
-@dirrm share/doc/gtkmm-2.0/examples/book/treeview
-@dirrm share/doc/gtkmm-2.0/examples/book/toolbar
-@dirrm share/doc/gtkmm-2.0/examples/book/timeout
-@dirrm share/doc/gtkmm-2.0/examples/book/textview
-@dirrm share/doc/gtkmm-2.0/examples/book/table
-@dirrm share/doc/gtkmm-2.0/examples/book/spinbutton
-@dirrm share/doc/gtkmm-2.0/examples/book/signals/custom
-@dirrm share/doc/gtkmm-2.0/examples/book/signals
-@dirrm share/doc/gtkmm-2.0/examples/book/scrolledwindow
-@dirrm share/doc/gtkmm-2.0/examples/book/range_widgets
-@dirrm share/doc/gtkmm-2.0/examples/book/progressbar
-@dirrm share/doc/gtkmm-2.0/examples/book/paned
-@dirrm share/doc/gtkmm-2.0/examples/book/notebook
-@dirrm share/doc/gtkmm-2.0/examples/book/menus/popup
-@dirrm share/doc/gtkmm-2.0/examples/book/menus/main_menu
-@dirrm share/doc/gtkmm-2.0/examples/book/menus
-@dirrm share/doc/gtkmm-2.0/examples/book/label
-@dirrm share/doc/gtkmm-2.0/examples/book/idle
-@dirrm share/doc/gtkmm-2.0/examples/book/helloworld2
-@dirrm share/doc/gtkmm-2.0/examples/book/helloworld
-@dirrm share/doc/gtkmm-2.0/examples/book/frame
-@dirrm share/doc/gtkmm-2.0/examples/book/eventbox
-@dirrm share/doc/gtkmm-2.0/examples/book/entry
-@dirrm share/doc/gtkmm-2.0/examples/book/drawingarea
-@dirrm share/doc/gtkmm-2.0/examples/book/drag_and_drop
-@dirrm share/doc/gtkmm-2.0/examples/book/dialogs/simple
-@dirrm share/doc/gtkmm-2.0/examples/book/dialogs/messagedialog
-@dirrm share/doc/gtkmm-2.0/examples/book/dialogs/fontselectiondialog
-@dirrm share/doc/gtkmm-2.0/examples/book/dialogs/fileselection
-@dirrm share/doc/gtkmm-2.0/examples/book/dialogs/colorselectiondialog
-@dirrm share/doc/gtkmm-2.0/examples/book/dialogs
-@dirrm share/doc/gtkmm-2.0/examples/book/combo
-@dirrm share/doc/gtkmm-2.0/examples/book/clipboard/simple
-@dirrm share/doc/gtkmm-2.0/examples/book/clipboard/ideal
-@dirrm share/doc/gtkmm-2.0/examples/book/clipboard
-@dirrm share/doc/gtkmm-2.0/examples/book/buttons/togglebutton
-@dirrm share/doc/gtkmm-2.0/examples/book/buttons/radiobutton
-@dirrm share/doc/gtkmm-2.0/examples/book/buttons/checkbutton
-@dirrm share/doc/gtkmm-2.0/examples/book/buttons/button
-@dirrm share/doc/gtkmm-2.0/examples/book/buttons
-@dirrm share/doc/gtkmm-2.0/examples/book/buttonbox
-@dirrm share/doc/gtkmm-2.0/examples/book/box
-@dirrm share/doc/gtkmm-2.0/examples/book/aspectframe
-@dirrm share/doc/gtkmm-2.0/examples/book/alignment
-@dirrm share/doc/gtkmm-2.0/examples/book
-@dirrm share/doc/gtkmm-2.0/examples/arrow
-@dirrm share/doc/gtkmm-2.0/examples
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/arrow/arrow.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/arrow/direction.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/alignment/examplewindow.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/alignment/examplewindow.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/alignment/main.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/aspectframe/examplewindow.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/aspectframe/examplewindow.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/aspectframe/main.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/box/examplewindow.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/box/examplewindow.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/box/main.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/box/packbox.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/box/packbox.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/buttonbox/examplebuttonbox.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/buttonbox/examplebuttonbox.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/buttonbox/examplewindow.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/buttonbox/examplewindow.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/buttonbox/main.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/buttons/button/buttons.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/buttons/button/buttons.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/buttons/button/main.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/buttons/checkbutton/examplewindow.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/buttons/checkbutton/examplewindow.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/buttons/checkbutton/main.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/buttons/radiobutton/main.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/buttons/radiobutton/radiobuttons.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/buttons/radiobutton/radiobuttons.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/buttons/togglebutton/examplewindow.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/buttons/togglebutton/examplewindow.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/buttons/togglebutton/main.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/clipboard/ideal/examplewindow.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/clipboard/ideal/examplewindow.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/clipboard/ideal/main.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/clipboard/simple/examplewindow.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/clipboard/simple/examplewindow.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/clipboard/simple/main.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/combo/examplewindow.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/combo/examplewindow.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/combo/main.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/dialogs/colorselectiondialog/examplewindow.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/dialogs/colorselectiondialog/examplewindow.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/dialogs/colorselectiondialog/main.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/dialogs/fileselection/examplewindow.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/dialogs/fileselection/examplewindow.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/dialogs/fileselection/main.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/dialogs/fontselectiondialog/examplewindow.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/dialogs/fontselectiondialog/examplewindow.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/dialogs/fontselectiondialog/main.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/dialogs/messagedialog/examplewindow.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/dialogs/messagedialog/examplewindow.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/dialogs/messagedialog/main.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/dialogs/simple/examplewindow.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/dialogs/simple/examplewindow.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/dialogs/simple/main.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/drag_and_drop/dndwindow.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/drag_and_drop/dndwindow.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/drag_and_drop/main.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/drawingarea/main.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/drawingarea/myarea.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/drawingarea/myarea.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/entry/examplewindow.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/entry/examplewindow.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/entry/main.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/eventbox/examplewindow.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/eventbox/examplewindow.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/eventbox/main.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/frame/examplewindow.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/frame/examplewindow.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/frame/main.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/helloworld/helloworld.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/helloworld/helloworld.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/helloworld/main.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/helloworld2/helloworld.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/helloworld2/helloworld.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/helloworld2/main.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/idle/idleexample.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/idle/idleexample.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/idle/main.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/label/examplewindow.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/label/examplewindow.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/label/main.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/menus/main_menu/examplewindow.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/menus/main_menu/examplewindow.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/menus/main_menu/main.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/menus/popup/examplewindow.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/menus/popup/examplewindow.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/menus/popup/main.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/notebook/examplewindow.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/notebook/examplewindow.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/notebook/main.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/paned/examplewindow.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/paned/examplewindow.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/paned/main.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/paned/messageslist.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/paned/messageslist.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/paned/messagetext.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/paned/messagetext.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/progressbar/examplewindow.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/progressbar/examplewindow.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/progressbar/main.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/range_widgets/examplewindow.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/range_widgets/examplewindow.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/range_widgets/labeledoptionmenu.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/range_widgets/labeledoptionmenu.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/range_widgets/main.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/scrolledwindow/examplewindow.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/scrolledwindow/examplewindow.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/scrolledwindow/main.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/signals/custom/client.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/signals/custom/client.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/signals/custom/main.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/signals/custom/server.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/signals/custom/server.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/spinbutton/examplewindow.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/spinbutton/examplewindow.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/spinbutton/main.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/table/examplewindow.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/table/examplewindow.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/table/main.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/textview/examplewindow.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/textview/examplewindow.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/textview/main.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/timeout/main.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/timeout/timerexample.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/timeout/timerexample.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/toolbar/examplewindow.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/toolbar/examplewindow.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/toolbar/main.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/treeview/drag_and_drop/examplewindow.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/treeview/drag_and_drop/examplewindow.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/treeview/drag_and_drop/main.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/treeview/drag_and_drop/treemodel_dnd.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/treeview/drag_and_drop/treemodel_dnd.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/treeview/editable_cells/examplewindow.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/treeview/editable_cells/examplewindow.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/treeview/editable_cells/main.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/treeview/list/examplewindow.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/treeview/list/examplewindow.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/treeview/list/main.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/treeview/tree/examplewindow.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/treeview/tree/examplewindow.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/treeview/tree/main.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/calendar/calendar.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/cellrenderercustom/cellrendererlist.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/cellrenderercustom/cellrendererlist.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/cellrenderercustom/cellrendererpopup.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/cellrenderercustom/cellrendererpopup.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/cellrenderercustom/cellrenderertoggle.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/cellrenderercustom/popupentry.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/cellrenderercustom/popupentry.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/cellrenderercustom/testpopup.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/dnd/dnd_images.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/dnd/dndwindow.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/dnd/dndwindow.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/dnd/main.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/exception/exceptiontest.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/filesel/filesel.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/fixed/fixed.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/gdk/radar.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/markup/parser.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/rulers/rulers.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/statusbar/statusbar.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/stock/stock.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/thread/dispatcher.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/thread/dispatcher2.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/thread/thread.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/thread/threadpool.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/tictactoe/tictactoe.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/tictactoe/tictactoe.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/tictactoe/ttt_test.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/window/wheelbarrow.cc
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/window
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/tictactoe
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/thread
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/stock
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/statusbar
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/rulers
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/markup
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/gdk
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/fixed
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/filesel
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/exception
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/dnd
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/cellrenderercustom
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/calendar
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/treeview/tree
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/treeview/list
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/treeview/editable_cells
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/treeview/drag_and_drop
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/treeview
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/toolbar
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/timeout
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/textview
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/table
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/spinbutton
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/signals/custom
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/signals
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/scrolledwindow
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/range_widgets
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/progressbar
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/paned
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/notebook
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/menus/popup
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/menus/main_menu
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/menus
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/label
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/idle
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/helloworld2
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/helloworld
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/frame
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/eventbox
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/entry
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/drawingarea
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/drag_and_drop
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/dialogs/simple
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/dialogs/messagedialog
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/dialogs/fontselectiondialog
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/dialogs/fileselection
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/dialogs/colorselectiondialog
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/dialogs
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/combo
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/clipboard/simple
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/clipboard/ideal
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/clipboard
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/buttons/togglebutton
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/buttons/radiobutton
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/buttons/checkbutton
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/buttons/button
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/buttons
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/buttonbox
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/box
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/aspectframe
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/alignment
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/arrow
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples
 @dirrm share/doc/gtkmm-2.0/docs/tutorial/html
 @dirrm share/doc/gtkmm-2.0/docs/tutorial/figures
 @dirrm share/doc/gtkmm-2.0/docs/tutorial
