@@ -37,6 +37,12 @@ CPPFLAGS=	-I${LOCALBASE}/include/libpng -I${X11BASE}/include \
 LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib -lusbhid -lGL -lGLU -lglut \
 		${PTHREAD_LIBS}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile on 4.x (port and dependencies need recent C++ compiler)"
+.endif
+
 post-extract:
 	@${RM} -f ${WRKSRC}/doc/*.info*
 
@@ -45,4 +51,4 @@ post-patch:
 		's|-lsgxml -lsgmisc|-lsgxml -lsgstructure -lsgmisc|g ; \
 		 s|-pedantic||g'
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
