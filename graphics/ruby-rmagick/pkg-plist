@@ -338,8 +338,12 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/swirl.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/text.gif
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/text.rb
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/text_align.gif
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/text_align.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/text_antialias.jpg
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/text_antialias.rb
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/text_undercolor.gif
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/text_undercolor.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/texture_fill_to_border.gif
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/texture_fill_to_border.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/texture_floodfill.gif
@@ -437,7 +441,9 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/struct.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/swirl.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/text.rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/text_align.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/text_antialias.rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/text_undercolor.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/texture_fill_to_border.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/texture_floodfill.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/texturefill.rb.html
