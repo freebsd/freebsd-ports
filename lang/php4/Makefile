@@ -250,7 +250,7 @@ CONFIGURE_ARGS+=--with-curl=${LOCALBASE}
 .if defined(WITH_DB4)
 WITH_DB4_VER?=	41
 .if ${WITH_DB4_VER} == 42
-LIB_DEPENDS+=	db4.2.2:${PORTSDIR}/databases/db42
+LIB_DEPENDS+=	db-4.2.2:${PORTSDIR}/databases/db42
 .else
 .if ${WITH_DB4_VER} == 4
 LIB_DEPENDS+=	db4.0:${PORTSDIR}/databases/db4
