@@ -40,13 +40,12 @@ USE_PERL5=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 ONLY_FOR_ARCHS=	i386
+REINPLACE_ARGS=	-i
 
 CONFIGURE_TARGET=	# Empty
 CONFIGURE_ARGS+=	--enable-threads
 
 .include <bsd.port.pre.mk>
-
-IGNORE=		crashes at runtime
 
 .if !exists(${JAVABINDIR}/java)
 WITHOUT_JAVA=	yes
@@ -67,7 +66,6 @@ BUILD_DEPENDS+=  ${JAVAPORT}
 CONFIGURE_ENV+= PATH=${PATH}:${JAVABINDIR}
 MAKE_ENV+=      PATH=${PATH}:${JAVABINDIR}
 SCRIPT_ENV+=    PATH=${PATH}:${JAVABINDIR}
-
 .endif
 
 # The man-pages are put (in spite of FreeBSD's port convention) in a private
