@@ -391,6 +391,7 @@
     SUBDIR += p5-File-Rsync
     SUBDIR += p5-Frontier-RPC
     SUBDIR += p5-Geo-IP
+    SUBDIR += p5-Geo-IPfree
     SUBDIR += p5-IO-Interface
     SUBDIR += p5-IO-Socket-Multicast
     SUBDIR += p5-JUNOScript
