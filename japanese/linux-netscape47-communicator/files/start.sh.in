@@ -16,7 +16,7 @@ export TIMID_DIR=/usr/local/lib/timidity
 export XCMSDB=/dev/null
 ulimit -c 0
 if [ -x /compat/linux/usr/X11R6/lib/libXm-ns.so.1.0.2 ]; then
-	export LD_PRELOAD=/compat/linux/usr/lib/libg++.so.2.7.2
+	LD_PRELOAD=/compat/linux/usr/lib/libg++.so.2.7.2
 	exec ${MOZILLA_HOME}/netscape-dynMotif "$@"
 else
 	exec ${MOZILLA_HOME}/@BROWSER_BIN@ "$@"
