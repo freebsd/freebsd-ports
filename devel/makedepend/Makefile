@@ -26,4 +26,3 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/mkdepend.man ${PREFIX}/man/man1/makedepend.1
 
 .include <bsd.port.mk>
-# DO NOT DELETE
