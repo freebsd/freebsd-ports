@@ -9438,6 +9438,7 @@ vscan		ports/security/vscan
 vsftpd		ports/ftp/vsftpd
 vshnu		ports/shells/vshnu
 vsound		ports/audio/vsound
+vstr		ports/devel/vstr
 vtcl		ports/devel/vtcl
 vte		ports/x11-toolkits/vte
 vtk		ports/math/vtk
