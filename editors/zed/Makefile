@@ -7,13 +7,21 @@
 
 PORTNAME=	zed
 PORTVERSION=	1.0.5
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://zed.c3po.it/
 
 MAINTAINER=	exile@chamber.ee
-COMMENT=	Simple, fast, powerful, small, highly configurable TEXT EDITOR
+COMMENT=	Simple, small, fast, highly configurable text editor
 
-post-install:
-	@${STRIP_CMD} ${PREFIX}/bin/zed
+DOCS=		CHANGES zed.doc
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/zed ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/cfg/zedrc ${PREFIX}/etc/zedrc.sample
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
