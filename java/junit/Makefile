@@ -10,8 +10,9 @@ PORTVERSION=	3.7
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}${PORTVERSION}
-
+DISTNAME=	${PORTNAME}${PORTVERSION} \
+		http://metaverse.euronet.nl/~ernst/ \
+		http://znerd.org/
 MAINTAINER=	okazaki@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper
