@@ -64,6 +64,8 @@ sub get_excl_pattern {
 			chomp($exclude);
 			# Ignore comments and empty lines, add others as regular expressions
 			unless (($exclude =~ m/(^ *#)|(^ *$)/)) {
+				# Escape any '+' that isn't already escaped
+				$exclude =~ s/(?<!\\)(\+|\.)/\\$1/g;
 				$exclude = "^" . $exclude . ".*";
 				push @excludes, $exclude;
 			}
@@ -156,28 +158,26 @@ if ($opt_listonly) {
 		}
 	}
 } else {
+	my %leaves;
 	my %leavestokeep;
 	my %leavestocut;
 	my @cutleaves;
-	my ($nleaves, $i);
+	my ($nleaves, $i, $again);
+
+	# Get list of leaf packages and put them into a hash
+	%leaves = get_leaves($dbdir, $exclpattern);
+	# Any leaves to work with?
+	$nleaves = keys %leaves;
+	if ($nleaves > 0) {
+		$again = "y";
+	} else {
+		# If not, don't go on, there's nothing to do.
+		print "** Didn't find any leaves to work with, exiting.\n";
+		print "** If this is unexpected, check your exclude file, please.\n";
+		$again = "n";
+	}
 	# Loop while the user wants to
-	my $again = "y";
 	ROUND: while($again eq "y") {
-		# Get list of leaf packages and put them into a hash
-		my %leaves = get_leaves($dbdir, $exclpattern);
-		# Ignore all leaves the user already told us to keep
-		foreach my $leaf (keys %leavestokeep) {
-			if ($leaves{$leaf}) {
-				delete $leaves{$leaf};
-			}
-		}
-		# Any leaves left?
-		$nleaves = keys %leaves;
-		if ($nleaves == 0) {
-			# If not, don't go on, there's nothing left to do.
-			print "Didn't find any new leaves, exiting.\n";
-			last ROUND;
-		}
 		# Always start with an empty list of leaves to cut
 		%leavestocut = ();
 		# Initialize counter for progress status
@@ -235,6 +235,22 @@ if ($opt_listonly) {
 				print STDERR "\n\n$0: pkgdb returned $status - exiting, fix this first.\n\n";
 				last ROUND;
 			}
+		}
+
+		# Get new list of leaf packages and put them into a hash
+		%leaves = get_leaves($dbdir, $exclpattern);
+		# Ignore all leaves the user already told us to keep
+		foreach my $leaf (keys %leavestokeep) {
+			if ($leaves{$leaf}) {
+				delete $leaves{$leaf};
+			}
+		}
+		# Any leaves left?
+		$nleaves = keys %leaves;
+		if ($nleaves == 0) {
+			# If not, don't go on, there's nothing left to do.
+			print "** Didn't find any new leaves to work with, exiting.\n";
+			last ROUND;
 		}
 
 		print "Go on with new leaf packages ((y)es/[no])? ";
