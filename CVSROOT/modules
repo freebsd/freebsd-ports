@@ -5913,7 +5913,6 @@ nte		ports/mbone/nte
 ntfsprogs	ports/sysutils/ntfsprogs
 ntl		ports/math/ntl
 ntop		ports/net/ntop
-ntp-devel	ports/net/ntp-devel
 ntraceroute	ports/net/ntraceroute
 nttcp		ports/benchmarks/nttcp
 nucleus		ports/x11-fonts/nucleus
@@ -8185,7 +8184,6 @@ ports_net_mgmt	ports/net-mgmt
 ports_netboot	ports/net/netboot
 ports_news	ports/news
 ports_ntp	ports/net/ntp
-ports_ntp-devel	ports/net/ntp-devel
 ports_nut	ports/sysutils/nut
 ports_openssh	ports/security/openssh
 ports_openssl	ports/security/openssl
