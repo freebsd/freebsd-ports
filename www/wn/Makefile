@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.acns.nwu.edu/pub/wn/
 
 MAINTAINER=	adam@veda.is
 
-BROKEN='single MASTER_SITE and /pub/wn/ doesnt exist on ftp.acns.nwu.edu anymore'
+BROKEN='single MASTER_SITE and /pub/wn/ doesn\'t exist on ftp.acns.nwu.edu anymore'
 
 IS_INTERACTIVE=
 NO_PACKAGE=	"Hostname compiled in"
