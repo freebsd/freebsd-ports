@@ -4,6 +4,7 @@ etc/CORBA/servers/graph.gnorba
 etc/gnumericConf.sh
 lib/gnumeric/%%VERSION%%/plugins/gnum_csv.so
 lib/gnumeric/%%VERSION%%/plugins/gnum_dif.so
+lib/gnumeric/%%VERSION%%/plugins/gnum_gb.so
 lib/gnumeric/%%VERSION%%/plugins/gnum_guile.so
 lib/gnumeric/%%VERSION%%/plugins/gnum_html.so
 lib/gnumeric/%%VERSION%%/plugins/gnum_lotus.so
