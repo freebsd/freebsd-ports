@@ -7,6 +7,7 @@
 
 PORTNAME=	drweb
 PORTVERSION=    4.29.5
+PORTREVISION=   1
 CATEGORIES=	security
 MASTER_SITES=   ftp://ftp.drweb.ru/pub/unix/${PORTVERSION}/
 DISTFILES=      ${MAIN_NAME}.tar.gz
@@ -20,8 +21,6 @@ NO_BUILD=       yes
 WRKSRC=         ${WRKDIR}/${MAIN_NAME}/install
 
 LIB_DEPENDS+=   c.4:${PORTSDIR}/misc/compat4x
-# Needed for update.pl
-RUN_DEPENDS=    ${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/String/CRC32.pm:${PORTSDIR}/devel/p5-String-CRC32
 
 MAIN_NAME=      ${PORTNAME}-${PORTVERSION}-freebsd4
 DRWEB_PREFIX=	${PREFIX}/${PORTNAME}
