@@ -7,13 +7,14 @@
 
 PORTNAME=	perl
 PORTVERSION=	${PERL_VER}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang devel perl5
-# If you don't use MASTER_SITE_OVERRIDE set to one of the
-# ftp.FreeBSD.org mirrors, fetching will be *very* slow.
-MASTER_SITES=	${MASTER_SITE_LOCAL} ${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../../src tobez
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} BSDPAN-${PORTVERSION}${EXTRACT_SUFX}
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
+		${MASTER_SITE_LOCAL:S/$/:local/}
+MASTER_SITE_SUBDIR=	../../src \
+			tobez/:local
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		BSDPAN-${PORTVERSION}${EXTRACT_SUFX}:local
 
 MAINTAINER=	tobez@FreeBSD.org
 
@@ -119,12 +120,12 @@ BSDPAN_FILES=	BSDPAN.pm BSDPAN/Override.pm Config.pm \
 BSDPAN_WRKSRC=	${WRKDIR}/BSDPAN-${PORTVERSION}
 
 post-patch:
-	${CP} ${FILESDIR}/use.perl ${WRKDIR}
-	${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g;' \
+	${SED} -e 's|%%PREFIX%%|${PREFIX}|g;' \
 		-e 's|%%PERL_VER%%|${PERL_VER}|g;' \
 		-e 's|%%PERL_VERSION%%|${PERL_VERSION}|g;' \
 		-e 's|%%PERL_ARCH%%|${PERL_ARCH}|g;' \
-		${WRKDIR}/use.perl
+		${FILESDIR}/use.perl \
+		> ${WRKDIR}/use.perl
 
 post-install:
 	@strip ${PREFIX}/bin/perl ${PREFIX}/bin/suidperl

@@ -1,4 +1,4 @@
-#! /usr/bin/perl5 -w
+#! %%PREFIX%%/bin/perl -w
 # $FreeBSD$
 use strict;
 
