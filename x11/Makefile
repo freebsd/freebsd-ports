@@ -8,7 +8,6 @@
     SUBDIR += bgrot
     SUBDIR += blast
     SUBDIR += bricons
-    SUBDIR += camltk41
     SUBDIR += dgs
     SUBDIR += dxpc
     SUBDIR += emu
