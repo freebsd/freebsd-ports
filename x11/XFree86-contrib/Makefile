@@ -3,7 +3,7 @@
 # Date created:         7 November 1996
 # Whom:                 asami
 #
-# $Id: Makefile,v 1.11 1998/10/05 05:17:48 steve Exp $
+# $Id: Makefile,v 1.12 1998/11/23 21:52:11 jmz Exp $
 #
 
 DISTNAME=	X333contrib
@@ -11,7 +11,7 @@ PKGNAME=	XFree86-contrib-3.3.3
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.xfree86.org/pub/XFree86/3.3.3/source/ \
 		ftp://xfree86.cdrom.com/pub/XFree86/3.3.3/source/ \
-		ftp://ftp.ibp.fr/pub/X11/XFree86/XFree86-3.3.3/source/ \
+		ftp://ftp.lip6.fr/pub/X11/XFree86/XFree86-3.3.3/source/ \
 		ftp://sunsite.doc.ic.ac.uk/packages/XFree86/3.3.3/source/
 EXTRACT_SUFX=	.tgz
 
