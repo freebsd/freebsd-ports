@@ -5,7 +5,6 @@ bin/gnuattach
 bin/gnuclient
 bin/gnudoit
 bin/ootags
-bin/pstogif
 bin/rcs-checkin
 bin/xemacs
 bin/xemacs-%%XEMACS_VER%%

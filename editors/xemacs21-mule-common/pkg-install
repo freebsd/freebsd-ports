@@ -3,5 +3,5 @@ if [ "$2" != "POST-INSTALL" ]; then exit 0; fi
 echo "################################################################"
 echo "You must install one of packages, xemacs-mule and "
 echo " ja-xemacs-*-21.1 (ja-xemacs-21.1, ja-xemacs-canna-21.1, etc.)"
-echo ", each of which contains only the executables for XEmacs(version 21.1.8)"
+echo ", each of which contains only the executables for XEmacs(version 21.1.9)"
 echo "################################################################"

@@ -84,11 +84,11 @@ post-install::
 	fi
 	@${TOUCH} ${TOUCH_FLAGS} ${INSTALL_COOKIE}
 
-# for make DESCR and COMMENT (only maintainer use)
-pre-arrange::
-	${SED}  -e "s/%%XEMACS_VER%%/${XEMACS_VER}/g" \
-		-e "s/%%XEMACS_REL%%/${XEMACS_REL}/g" \
-		${INSTALL_TMPL} > ${PKGINSTALL}
-	${CHOWN} kiri:staff ${PKGINSTALL}
+## for make DESCR and COMMENT (only maintainer use)
+#pre-arrange::
+#	${SED}  -e "s/%%XEMACS_VER%%/${XEMACS_VER}/g" \
+#		-e "s/%%XEMACS_REL%%/${XEMACS_REL}/g" \
+#		${INSTALL_TMPL} > ${PKGINSTALL}
+#	${CHOWN} kiri:staff ${PKGINSTALL}
 
 .include "${.CURDIR}/../xemacs${XEMACS_MAJOR_VER}-mule/Makefile"

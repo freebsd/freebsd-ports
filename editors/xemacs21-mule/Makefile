@@ -27,14 +27,14 @@ MULE_SLAVE=	yes
 
 MAINTAINER=	kiri@kiri.toba-cmt.ac.jp
 
-BUILD_DEPENDS=	${PREFIX}/lib/xemacs/xemacs-packages/pkginfo/MANIFEST.xemacs-devel:${PORTSDIR}/editors/xemacs-packages \
-		${PREFIX}/lib/xemacs/mule-packages/pkginfo/MANIFEST.skk:${PORTSDIR}/editors/xemacs-mule-packages \
+BUILD_DEPENDS=	${LOCALBASE}/lib/xemacs/xemacs-packages/pkginfo/MANIFEST.xemacs-devel:${PORTSDIR}/editors/xemacs-packages \
+		${LOCALBASE}/lib/xemacs/mule-packages/pkginfo/MANIFEST.skk:${PORTSDIR}/editors/xemacs-mule-packages \
 		${BUILD_INPUT_METHOD}
 .if defined(MULE_SLAVE)
-RUN_DEPENDS=	${PREFIX}/lib/xemacs-${XEMACS_VER}/lisp/x-win-xfree86.elc:${PORTSDIR}/editors/xemacs${XEMACS_MAJOR_VER}-mule-common \
-		${PREFIX}/lib/xemacs/mule-packages/pkginfo/MANIFEST.skk:${PORTSDIR}/editors/xemacs-mule-packages
+RUN_DEPENDS=	${LOCALBASE}/lib/xemacs-${XEMACS_VER}/lisp/x-win-xfree86.elc:${PORTSDIR}/editors/xemacs${XEMACS_MAJOR_VER}-mule-common \
+		${LOCALBASE}/lib/xemacs/mule-packages/pkginfo/MANIFEST.skk:${PORTSDIR}/editors/xemacs-mule-packages
 .else
-RUN_DEPENDS=	${PREFIX}/lib/xemacs/mule-packages/pkginfo/MANIFEST.skk:${PORTSDIR}/editors/xemacs-mule-packages
+RUN_DEPENDS=	${LOCALBASE}/lib/xemacs/mule-packages/pkginfo/MANIFEST.skk:${PORTSDIR}/editors/xemacs-mule-packages
 .endif
 LIB_DEPENDS=	compface.1:${PORTSDIR}/mail/faces \
 		${LIB_INPUT_METHOD}
@@ -70,6 +70,7 @@ PACKAGE_COOKIE=	${WRKDIR}/.package_done-${PKGNAME}
 STRIP=
 INSTALL_TARGET?=install-arch-dep
 FILESDIR=	${.CURDIR}/../../editors/xemacs${XEMACS_MAJOR_VER}/files
+PATCHDIR=	${.CURDIR}/../../editors/xemacs${XEMACS_MAJOR_VER}/patches
 PLIST?=		${PKGLDIR}/PLIST
 
 XEMACS_MAJOR_VER?=	21
@@ -104,45 +105,45 @@ post-install::
 post-package:
 	@${TOUCH} ${TOUCH_FLAGS} ${PACKAGE_COOKIE}
 
-# for make DESCR and COMMENT (only maintainer use)
-pre-arrange::
-	@${MKDIR} ${PKGDIR}
-	@${ECHO} "${COMMENT_TEXT}" > ${COMMENT}
-.if (${PKGNAMEEXT} == "-canna") || (${PKGNAMEEXT} == "-mule") || (${PKGNAMEEXT} == "-mule-common")
-	@${SED} -e "s/%%XEMACS_VER%%/${XEMACS_VER}/g" \
-		-e "s/%%XEMACS_REL%%/${XEMACS_REL}/g" \
-		-e "s/%%XEMACS_MAJOR_VER%%/${XEMACS_MAJOR_VER}/g" \
-		${DESCR_TMPL} > ${DESCR}
-.endif
-	${CHOWN} kiri:staff ${COMMENT} ${DESCR}
-
-# for make PLIST (only maintainer use)
-arrange::
-.if (${PKGNAMEEXT} == "-mule")||(${PKGNAMEEXT} == "-mule-common")
-	${RM} -f ${PLIST}
-.if (${PKGNAMEEXT} == "-mule")
-	${MAKE} DIRRM2RMDIRS="lib/xemacs/mule-packages/etc lib/xemacs/mule-packages lib/xemacs/mule-packages/etc/app-defaults" \
-		DIRRMDEPTH=2 plist
-.endif
-.if (${PKGNAMEEXT} == "-mule-common")
-	${MAKE} DIRRM2RMDIRS="lib/xemacs-${XEMACS_VER} etc/rc.d" DIRRMDEPTH=1 plist
-.for dirp in site mule xemacs
-.for dir in etc info man pkginfo
-	${ECHO} "@exec mkdir -p %D/lib/xemacs/${dirp}-packages/${dir}" >> ${PLIST}
-	${ECHO} "@unexec rmdir %D/lib/xemacs/${dirp}-packages/${dir} 2>/dev/null || true" >> ${PLIST}
-.endfor
-	${ECHO} "@unexec rmdir %D/lib/xemacs/${dirp}-packages 2>/dev/null || true" >> ${PLIST}
-.endfor
-	${ECHO} "@exec mkdir -p /var/run/emacs/lock ; chmod 1777 /var/run/emacs/lock" >> ${PLIST}
-.endif
-	${CAT} ${WRKPLIST} >> ${PLIST}
-	${CHOWN} kiri:staff ${PLIST}
-.endif
-
-.if (${PKGNAMEEXT} != "-mule-common")
-pre-plist:
-	${MKDIR} ${PREFIX}/lib/xemacs/mule-packages/etc/app-defaults
-.endif
-
+## for make DESCR and COMMENT (only maintainer use)
+#pre-arrange::
+#	@${MKDIR} ${PKGDIR}
+#	@${ECHO} "${COMMENT_TEXT}" > ${COMMENT}
+#.if (${PKGNAMEEXT} == "-canna") || (${PKGNAMEEXT} == "-mule") || (${PKGNAMEEXT} == "-mule-common")
+#	@${SED} -e "s/%%XEMACS_VER%%/${XEMACS_VER}/g" \
+#		-e "s/%%XEMACS_REL%%/${XEMACS_REL}/g" \
+#		-e "s/%%XEMACS_MAJOR_VER%%/${XEMACS_MAJOR_VER}/g" \
+#		${DESCR_TMPL} > ${DESCR}
+#.endif
+#	${CHOWN} kiri:staff ${COMMENT} ${DESCR}
+#
+## for make PLIST (only maintainer use)
+#arrange::
+#.if (${PKGNAMEEXT} == "-mule")||(${PKGNAMEEXT} == "-mule-common")
+#	${RM} -f ${PLIST}
+#.if (${PKGNAMEEXT} == "-mule")
+#	${MAKE} DIRRM2RMDIRS="lib/xemacs/mule-packages/etc lib/xemacs/mule-packages lib/xemacs/mule-packages/etc/app-defaults" \
+#		DIRRMDEPTH=2 plist
+#.endif
+#.if (${PKGNAMEEXT} == "-mule-common")
+#	${MAKE} DIRRM2RMDIRS="lib/xemacs-${XEMACS_VER} etc/rc.d" DIRRMDEPTH=1 plist
+#.for dirp in site mule xemacs
+#.for dir in etc info man pkginfo
+#	${ECHO} "@exec mkdir -p %D/lib/xemacs/${dirp}-packages/${dir}" >> ${PLIST}
+#	${ECHO} "@unexec rmdir %D/lib/xemacs/${dirp}-packages/${dir} 2>/dev/null || true" >> ${PLIST}
+#.endfor
+#	${ECHO} "@unexec rmdir %D/lib/xemacs/${dirp}-packages 2>/dev/null || true" >> ${PLIST}
+#.endfor
+#	${ECHO} "@exec mkdir -p /var/run/emacs/lock ; chmod 1777 /var/run/emacs/lock" >> ${PLIST}
+#	${CAT} ${WRKPLIST} >> ${PLIST}
+#	${CHOWN} kiri:staff ${PLIST}
+#.endif
+#.endif
+#
+#.if (${PKGNAMEEXT} != "-mule-common")
+#pre-plist:
+#	@${ECHO} "===> pre-plist of ${PKGNAME}"
+#	${MKDIR} ${PREFIX}/lib/xemacs/mule-packages/etc/app-defaults
+#.endif
 
 .include "${.CURDIR}/../../editors/xemacs${XEMACS_MAJOR_VER}/Makefile"
