@@ -1,6 +1,6 @@
---- configure.orig	Tue May 28 00:57:18 2002
-+++ configure	Tue May 28 01:00:25 2002
-@@ -7495,6 +7495,7 @@
+--- configure.orig	Tue Jun 11 17:44:27 2002
++++ configure	Tue Jun 11 17:46:59 2002
+@@ -7480,6 +7480,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -8,7 +8,7 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -12398,14 +12399,14 @@
+@@ -11770,14 +11771,14 @@
  
  LIBNAUTILUS_LIBS="`$PKG_CONFIG --libs $LIBNAUTILUS_MODULES`"
  
@@ -18,14 +18,14 @@
  CORE_MODULES="eel-2.0 librsvg-2.0 bonobo-activation-2.0 libbonobo-2.0 libbonoboui-2.0 esound gnome-desktop-2.0 $EXTRA_CORE_MODULES"
  CORE_CFLAGS="`$PKG_CONFIG --cflags $CORE_MODULES` $x_cflags"
  
- CORE_LIBS="`$PKG_CONFIG --libs $CORE_MODULES` $CDDA_LIBS $FAM_LIBS $LIBJPEG $x_libs"
+ CORE_LIBS="`$PKG_CONFIG --libs $CORE_MODULES` $CDDA_LIBS $LIBJPEG $x_libs"
  
 -CORE_IDL_INCLUDES="`$PKG_CONFIG --variable=idldir $CORE_MODULES | $srcdir/add-include-prefix`"
 +CORE_IDL_INCLUDES="`$PKG_CONFIG --variable=idldir $CORE_MODULES | xargs -n1 echo -n ' -I '`"
  
  COMPONENT_MODULES="eel-2.0 libbonoboui-2.0 gnome-vfs-module-2.0"
  COMPONENT_CFLAGS="`$PKG_CONFIG --cflags $COMPONENT_MODULES`"
-@@ -13114,9 +13115,9 @@
+@@ -12469,9 +12470,9 @@
  s,@ORBIT_CONFIG@,$ORBIT_CONFIG,;t t
  s,@ORBIT_IDL@,$ORBIT_IDL,;t t
  s,@ORBIT_CFLAGS@,$ORBIT_CFLAGS,;t t
@@ -37,7 +37,7 @@
  s,@GETTEXT_PACKAGE@,$GETTEXT_PACKAGE,;t t
  s,@ALLOCA@,$ALLOCA,;t t
  s,@USE_NLS@,$USE_NLS,;t t
-@@ -13171,22 +13172,22 @@
+@@ -12522,22 +12523,22 @@
  s,@HAVE_JW_FALSE@,$HAVE_JW_FALSE,;t t
  s,@HAVE_JW@,$HAVE_JW,;t t
  s,@MEDUSA_CFLAGS@,$MEDUSA_CFLAGS,;t t

@@ -25,6 +25,7 @@ etc/gconf/gconf.xml.defaults/apps/gnomine/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnomine/geometry/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gtali/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/iagno/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/mahjongg/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/same-gnome/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/freecell/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/freecell/option/%gconf.xml
@@ -36,6 +37,7 @@ etc/gconf/gconf.xml.defaults/schemas/apps/gnomine/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnomine/geometry/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gtali/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/iagno/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/mahjongg/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/same-gnome/%gconf.xml
 etc/gconf/schemas/freecell.schemas
 etc/gconf/schemas/gataxx.schemas
@@ -44,6 +46,7 @@ etc/gconf/schemas/gnometris.schemas
 etc/gconf/schemas/gnomine.schemas
 etc/gconf/schemas/gtali.schemas
 etc/gconf/schemas/iagno.schemas
+etc/gconf/schemas/mahjongg.schemas
 etc/gconf/schemas/same-gnome.schemas
 etc/sound/events/gataxx.soundlist
 etc/sound/events/gnect.soundlist
@@ -297,44 +300,25 @@ share/gnome/help/gnobots2/es/index.html
 share/gnome/help/gnobots2/es/topic.dat
 share/gnome/help/gnobots2/it/index.html
 share/gnome/help/gnobots2/it/topic.dat
-share/gnome/help/gnome-mines/C/figures/advanced_121_a.png
-share/gnome/help/gnome-mines/C/figures/advanced_121_b.png
-share/gnome/help/gnome-mines/C/figures/advanced_121_c.png
-share/gnome/help/gnome-mines/C/figures/basic-corner.png
-share/gnome/help/gnome-mines/C/figures/basic-flat3.png
-share/gnome/help/gnome-mines/C/figures/basic-wall.png
-share/gnome/help/gnome-mines/C/figures/gnomine-begin-play.png
-share/gnome/help/gnome-mines/C/figures/gnomine-fail.png
-share/gnome/help/gnome-mines/C/figures/gnomine-fresh.png
-share/gnome/help/gnome-mines/C/figures/gnomine-preferences.png
-share/gnome/help/gnome-mines/C/figures/gnomine-won.png
-share/gnome/help/gnome-mines/C/gnome-mines.xml
-share/gnome/help/gnome-mines/C/legal.xml
 share/gnome/help/gnome-stones/C/figures/main-game.png
 share/gnome/help/gnome-stones/C/figures/main-start.png
 share/gnome/help/gnome-stones/C/figures/preferences-joystick.png
 share/gnome/help/gnome-stones/C/figures/preferences-main.png
 share/gnome/help/gnome-stones/C/gnome-stones.xml
 share/gnome/help/gnome-stones/C/legal.xml
-share/gnome/help/gnome-xbill/C/figures/bucket.png
-share/gnome/help/gnome-xbill/C/figures/cable.png
-share/gnome/help/gnome-xbill/C/figures/computer.png
-share/gnome/help/gnome-xbill/C/figures/fakeseg.png
-share/gnome/help/gnome-xbill/C/figures/fallenos.png
-share/gnome/help/gnome-xbill/C/figures/infected.png
-share/gnome/help/gnome-xbill/C/figures/mainwin.png
-share/gnome/help/gnome-xbill/C/figures/microbill.png
-share/gnome/help/gnome-xbill/C/figures/network.png
-share/gnome/help/gnome-xbill/C/figures/remove.png
-share/gnome/help/gnome-xbill/C/figures/removeos.png
-share/gnome/help/gnome-xbill/C/figures/score.png
-share/gnome/help/gnome-xbill/C/figures/scores.png
-share/gnome/help/gnome-xbill/C/figures/spark.png
-share/gnome/help/gnome-xbill/C/figures/splat.png
-share/gnome/help/gnome-xbill/C/figures/startgame.png
-share/gnome/help/gnome-xbill/C/figures/toasters.png
-share/gnome/help/gnome-xbill/C/gnome-xbill.xml
-share/gnome/help/gnome-xbill/C/legal.xml
+share/gnome/help/gnomine/C/figures/advanced_121_a.png
+share/gnome/help/gnomine/C/figures/advanced_121_b.png
+share/gnome/help/gnomine/C/figures/advanced_121_c.png
+share/gnome/help/gnomine/C/figures/basic-corner.png
+share/gnome/help/gnomine/C/figures/basic-flat3.png
+share/gnome/help/gnomine/C/figures/basic-wall.png
+share/gnome/help/gnomine/C/figures/gnomine-begin-play.png
+share/gnome/help/gnomine/C/figures/gnomine-fail.png
+share/gnome/help/gnomine/C/figures/gnomine-fresh.png
+share/gnome/help/gnomine/C/figures/gnomine-preferences.png
+share/gnome/help/gnomine/C/figures/gnomine-won.png
+share/gnome/help/gnomine/C/gnomine.xml
+share/gnome/help/gnomine/C/legal.xml
 share/gnome/help/gnotravex/C/figures/gnotravex_game.png
 share/gnome/help/gnotravex/C/figures/gnotravex_mainwindow.png
 share/gnome/help/gnotravex/C/gnotravex.xml
@@ -370,6 +354,25 @@ share/gnome/help/same-gnome/C/figures/same-planets-fig.png
 share/gnome/help/same-gnome/C/figures/score-dialog.png
 share/gnome/help/same-gnome/C/legal.xml
 share/gnome/help/same-gnome/C/same-gnome.xml
+share/gnome/help/xbill/C/figures/bucket.png
+share/gnome/help/xbill/C/figures/cable.png
+share/gnome/help/xbill/C/figures/computer.png
+share/gnome/help/xbill/C/figures/fakeseg.png
+share/gnome/help/xbill/C/figures/fallenos.png
+share/gnome/help/xbill/C/figures/infected.png
+share/gnome/help/xbill/C/figures/mainwin.png
+share/gnome/help/xbill/C/figures/microbill.png
+share/gnome/help/xbill/C/figures/network.png
+share/gnome/help/xbill/C/figures/remove.png
+share/gnome/help/xbill/C/figures/removeos.png
+share/gnome/help/xbill/C/figures/score.png
+share/gnome/help/xbill/C/figures/scores.png
+share/gnome/help/xbill/C/figures/spark.png
+share/gnome/help/xbill/C/figures/splat.png
+share/gnome/help/xbill/C/figures/startgame.png
+share/gnome/help/xbill/C/figures/toasters.png
+share/gnome/help/xbill/C/legal.xml
+share/gnome/help/xbill/C/xbill.xml
 share/gnome/mime-info/gnome-stones.keys
 share/gnome/mime-info/gnome-stones.mime
 share/gnome/omf/gnome-games/aisleriot-C.omf
@@ -378,14 +381,14 @@ share/gnome/omf/gnome-games/glines-C.omf
 share/gnome/omf/gnome-games/gnect-C.omf
 share/gnome/omf/gnome-games/gnibbles-C.omf
 share/gnome/omf/gnome-games/gnobots2-C.omf
-share/gnome/omf/gnome-games/gnome-mines-C.omf
 share/gnome/omf/gnome-games/gnome-stones-C.omf
-share/gnome/omf/gnome-games/gnome-xbill-C.omf
+share/gnome/omf/gnome-games/gnomine-C.omf
 share/gnome/omf/gnome-games/gnotravex-C.omf
 share/gnome/omf/gnome-games/gtali-C.omf
 share/gnome/omf/gnome-games/iagno-C.omf
 share/gnome/omf/gnome-games/mahjongg-C.omf
 share/gnome/omf/gnome-games/same-gnome-C.omf
+share/gnome/omf/gnome-games/xbill-C.omf
 share/gnome/pixmaps/cards/backs/beige.png
 share/gnome/pixmaps/cards/backs/face.png
 share/gnome/pixmaps/cards/backs/grey.png
@@ -737,6 +740,7 @@ share/locale/sl/LC_MESSAGES/gnome-games.mo
 share/locale/sv/LC_MESSAGES/gnome-games.mo
 share/locale/tr/LC_MESSAGES/gnome-games.mo
 share/locale/uk/LC_MESSAGES/gnome-games.mo
+share/locale/vi/LC_MESSAGES/gnome-games.mo
 share/locale/wa/LC_MESSAGES/gnome-games.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-games.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-games.mo
@@ -773,6 +777,9 @@ share/locale/zh_TW/LC_MESSAGES/gnome-games.mo
 @dirrm share/gnome/pixmaps/cards/backs
 @dirrm share/gnome/pixmaps/cards
 @dirrm share/gnome/omf/gnome-games
+@dirrm share/gnome/help/xbill/C/figures
+@dirrm share/gnome/help/xbill/C
+@dirrm share/gnome/help/xbill
 @dirrm share/gnome/help/same-gnome/C/figures
 @dirrm share/gnome/help/same-gnome/C
 @dirrm share/gnome/help/same-gnome
@@ -789,15 +796,12 @@ share/locale/zh_TW/LC_MESSAGES/gnome-games.mo
 @dirrm share/gnome/help/gnotravex/C/figures
 @dirrm share/gnome/help/gnotravex/C
 @dirrm share/gnome/help/gnotravex
-@dirrm share/gnome/help/gnome-xbill/C/figures
-@dirrm share/gnome/help/gnome-xbill/C
-@dirrm share/gnome/help/gnome-xbill
+@dirrm share/gnome/help/gnomine/C/figures
+@dirrm share/gnome/help/gnomine/C
+@dirrm share/gnome/help/gnomine
 @dirrm share/gnome/help/gnome-stones/C/figures
 @dirrm share/gnome/help/gnome-stones/C
 @dirrm share/gnome/help/gnome-stones
-@dirrm share/gnome/help/gnome-mines/C/figures
-@dirrm share/gnome/help/gnome-mines/C
-@dirrm share/gnome/help/gnome-mines
 @dirrm share/gnome/help/gnobots2/it
 @dirrm share/gnome/help/gnobots2/es
 @dirrm share/gnome/help/gnobots2/da
@@ -828,6 +832,7 @@ share/locale/zh_TW/LC_MESSAGES/gnome-games.mo
 @dirrm share/gnome/apps/Games
 @dirrm include/gdkcardimage
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/same-gnome
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/mahjongg
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/iagno
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gtali
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnomine/geometry
@@ -837,6 +842,7 @@ share/locale/zh_TW/LC_MESSAGES/gnome-games.mo
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/freecell/option
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/freecell
 @dirrm etc/gconf/gconf.xml.defaults/apps/same-gnome
+@dirrm etc/gconf/gconf.xml.defaults/apps/mahjongg
 @dirrm etc/gconf/gconf.xml.defaults/apps/iagno
 @dirrm etc/gconf/gconf.xml.defaults/apps/gtali
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnomine/geometry

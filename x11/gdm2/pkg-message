@@ -14,7 +14,7 @@ gdm     session         required        pam_permit.so
 - To enable GDM after booting, edit your /etc/ttys(5), and change the line
   for ttyv8 to
 
-ttyv8   "/usr/X11R6/bin/gdm -nodaemon"  xterm   on
+ttyv8   "/usr/X11R6/bin/gdm --nodaemon"  xterm   on
 
 These notes were written by:  Yukihiro Nakai <nakai@FreeBSD.org>
 and updated by: Joe Marcus Clarke <marcus@marcuscom.com>

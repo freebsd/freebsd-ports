@@ -28,25 +28,40 @@ share/gnome/applications/gnome-volume-control.desktop
 share/gnome/applications/reclevel.desktop
 share/gnome/applications/vumeter.desktop
 share/gnome/control-center-2.0/capplets/cddb-slave.desktop
-share/gnome/help/gmix/C/figures/gmix-prefs.png
-share/gnome/help/gmix/C/figures/gmix.png
-share/gnome/help/gmix/C/gmix.xml
-share/gnome/help/gmix/C/legal.xml
-share/gnome/help/gmix/C/topic.dat
+share/gnome/help/gnome-cd/C/figures/cdplayer_trackeditor_button.png
+share/gnome/help/gnome-cd/C/figures/cdplayer_trackeditor_window.png
+share/gnome/help/gnome-cd/C/figures/cdplayer_window.png
+share/gnome/help/gnome-cd/C/figures/eject_button.png
+share/gnome/help/gnome-cd/C/figures/forward_button.png
 share/gnome/help/gnome-cd/C/figures/gnome-cd-prefs.png
 share/gnome/help/gnome-cd/C/figures/gnome-cd-track.png
 share/gnome/help/gnome-cd/C/figures/gnome-cd.png
+share/gnome/help/gnome-cd/C/figures/next_button.png
+share/gnome/help/gnome-cd/C/figures/pause_button.png
+share/gnome/help/gnome-cd/C/figures/play_button.png
+share/gnome/help/gnome-cd/C/figures/preferences_button.png
+share/gnome/help/gnome-cd/C/figures/previous_button.png
+share/gnome/help/gnome-cd/C/figures/rewind_button.png
+share/gnome/help/gnome-cd/C/figures/stop_button.png
 share/gnome/help/gnome-cd/C/gnome-cd.xml
 share/gnome/help/gnome-cd/C/legal.xml
+share/gnome/help/gnome-volume-control/C/figures/gmix-prefs.png
+share/gnome/help/gnome-volume-control/C/figures/gmix.png
+share/gnome/help/gnome-volume-control/C/gnome-volume-control.xml
+share/gnome/help/gnome-volume-control/C/legal.xml
 share/gnome/help/grecord/C/figures/grecord-prefs-path.png
 share/gnome/help/grecord/C/figures/grecord-prefs-play.png
 share/gnome/help/grecord/C/figures/grecord-prefs-rec.png
 share/gnome/help/grecord/C/figures/grecord-prefs-sound.png
 share/gnome/help/grecord/C/figures/grecord-prefs-ui.png
 share/gnome/help/grecord/C/figures/grecord.png
+share/gnome/help/grecord/C/figures/grecord_window.png
 share/gnome/help/grecord/C/grecord.xml
 share/gnome/help/grecord/C/legal.xml
 share/gnome/idl/GNOME_Media_CDDBSlave2.idl
+share/gnome/omf/gnome-media/gnome-cd-C.omf
+share/gnome/omf/gnome-media/gnome-volume-control-C.omf
+share/gnome/omf/gnome-media/grecord-C.omf
 share/gnome/pixmaps/gnome-cd.png
 share/gnome/pixmaps/gnome-cd/a-eject-menu.png
 share/gnome/pixmaps/gnome-cd/a-eject-pressed.png
@@ -171,6 +186,7 @@ share/gnome/pixmaps/gnome-media/gnome-sound-recorder/media-stop.png
 share/gnome/pixmaps/gnome-mixer.png
 share/gnome/pixmaps/gnome-reclevel.png
 share/gnome/pixmaps/gnome-vumeter.png
+share/locale/ar/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/az/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/ca/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/cs/LC_MESSAGES/gnome-media-2.0.mo
@@ -205,6 +221,7 @@ share/locale/sl/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/sv/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/tr/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/uk/LC_MESSAGES/gnome-media-2.0.mo
+share/locale/vi/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/wa/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-media-2.0.mo
@@ -215,15 +232,16 @@ share/locale/zh_TW/LC_MESSAGES/gnome-media-2.0.mo
 @dirrm share/gnome/pixmaps/gnome-cd/themes/lcd
 @dirrm share/gnome/pixmaps/gnome-cd/themes
 @dirrm share/gnome/pixmaps/gnome-cd
+@dirrm share/gnome/omf/gnome-media
 @dirrm share/gnome/help/grecord/C/figures
 @dirrm share/gnome/help/grecord/C
 @dirrm share/gnome/help/grecord
+@dirrm share/gnome/help/gnome-volume-control/C/figures
+@dirrm share/gnome/help/gnome-volume-control/C
+@dirrm share/gnome/help/gnome-volume-control
 @dirrm share/gnome/help/gnome-cd/C/figures
 @dirrm share/gnome/help/gnome-cd/C
 @dirrm share/gnome/help/gnome-cd
-@dirrm share/gnome/help/gmix/C/figures
-@dirrm share/gnome/help/gmix/C
-@dirrm share/gnome/help/gmix
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-volume-control
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-sound-recorder
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-cd

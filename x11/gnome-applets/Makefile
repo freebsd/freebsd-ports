@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	gnomeapplets2
-PORTVERSION=	1.103.0
+PORTVERSION=	1.105.0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-20020525
+MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-20020607
 DISTNAME=	gnome-applets-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	panel-applet-2.0:${PORTSDIR}/x11/gnomepanel \
-		gailutil.13:${PORTSDIR}/x11-toolkits/gail \
+		gailutil.15:${PORTSDIR}/x11-toolkits/gail \
 		gtop-2.0:${PORTSDIR}/devel/libgtop2
 
 USE_BZIP2=	yes

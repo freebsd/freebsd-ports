@@ -14,6 +14,8 @@ lib/libwnck-1.so
 lib/libwnck-1.so.4
 libdata/pkgconfig/libwnck-1.0.pc
 share/locale/az/LC_MESSAGES/libwnck.mo
+share/locale/bg/LC_MESSAGES/libwnck.mo
+share/locale/ca/LC_MESSAGES/libwnck.mo
 share/locale/da/LC_MESSAGES/libwnck.mo
 share/locale/de/LC_MESSAGES/libwnck.mo
 share/locale/es/LC_MESSAGES/libwnck.mo
