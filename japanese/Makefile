@@ -265,11 +265,6 @@
     SUBDIR += weblint97
     SUBDIR += wine
     SUBDIR += word
-    SUBDIR += xemacs-sumo-canna
-    SUBDIR += xemacs-sumo-canna+wnn4
-    SUBDIR += xemacs-sumo-canna+wnn6
-    SUBDIR += xemacs-sumo-wnn4
-    SUBDIR += xemacs-sumo-wnn6
     SUBDIR += xemacs21-canna
     SUBDIR += xemacs21-canna+wnn4
     SUBDIR += xemacs21-canna+wnn6
