@@ -27,6 +27,7 @@
     SUBDIR += hfsutils
     SUBDIR += ia64sim
     SUBDIR += ines
+    SUBDIR += libvm68k
     SUBDIR += linux-vmware-toolbox
     SUBDIR += linux_base
     SUBDIR += linux_base-6
