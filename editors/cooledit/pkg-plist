@@ -7,8 +7,8 @@ bin/coolmessage
 bin/coollistbox
 bin/coolquery
 bin/coolinput
-lib/libCw.a
 lib/libCw.la
+lib/libCw.so.1
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 lib/cooledit/global.py
