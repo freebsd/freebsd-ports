@@ -1,15 +1,14 @@
 # New ports collection makefile for:	ssh
-# Version required:	1.2.10
+# Version required:     1.2.12a
 # Date created:		30 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.5 1995/11/22 13:20:15 asami Exp $
+# $Id: Makefile,v 1.6 1995/11/23 17:19:00 peter Exp $
 #
 
-DISTNAME=	ssh-1.2.12
+DISTNAME=       ssh-1.2.12a
 CATEGORIES=	security net
-MASTER_SITES=	ftp://ftp.funet.fi/pub/unix/security/ \
-		ftp://ftp.cs.hut.fi/pub/ssh/snapshots/
+MASTER_SITES=   ftp://ftp.cs.hut.fi/pub/ssh/snapshots/
 
 MAINTAINER=	torstenb@FreeBSD.ORG
 
@@ -70,7 +69,7 @@ fetch-depends:
 .if !defined(USA_RESIDENT) || ${USA_RESIDENT} != YES && ${USA_RESIDENT} != NO
 	@echo
 	@echo You must set variable USA_RESIDENT to YES if you are a USA
-	@echo resident.
+	@echo resident or NO otherwise.
 	@echo If you are a USA resident you have to get the RSAREF2
 	@echo library \(RSA Inc. holds a patent on RSA and public key
 	@echo cypto in general - using RSA implementations other thann
