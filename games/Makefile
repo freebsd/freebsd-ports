@@ -91,6 +91,7 @@
     SUBDIR += egoboo
     SUBDIR += eif
     SUBDIR += eights
+    SUBDIR += emacs-chess
     SUBDIR += empire
     SUBDIR += enigma
     SUBDIR += euchre
