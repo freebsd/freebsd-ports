@@ -85,7 +85,7 @@ certificate:
 		${CP} ${WRKSRC}/SSLconf/conf/httpsd.pem \
 		${PREFIX}/etc/apache/certs/cert.pem; \
 	else \
-		${ECHO} "You must create the file ${OPENSSLDIR}/openssl.cnf first."; \
+		${ECHO_CMD} "You must create the file ${OPENSSLDIR}/openssl.cnf first."; \
 	fi
 
 .include <bsd.port.post.mk>
