@@ -8,18 +8,18 @@
 # $FreeBSD$
 #
 
-DISTNAME=      zh-cdict-1.0
-CATEGORIES=    chinese
-MASTER_SITES=  ftp://ftp.cn.FreeBSD.org/pub/ported/
+DISTNAME	zh-cdict-1.0
+CATEGORIES=	chinese
+MASTER_SITES=	ftp://ftp.cn.FreeBSD.org/pub/ported/
 
-MAINTAINER=     phj@cn.FreeBSD.org
+MAINTAINER=	phj@cn.FreeBSD.org
 
-REQUIRES_MOTIF=        yes
+REQUIRES_MOTIF=	yes
 
 GNU_CONFIGURE=	yes
 USE_XLIB=	yes
 
-MANCOMPRESSED= yes
-MAN1=          cdict.1
+MANCOMPRESSED=	yes
+MAN1=		cdict.1
 
 .include <bsd.port.mk>
