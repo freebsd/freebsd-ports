@@ -29,8 +29,8 @@ do-install:
 	${PERL5} ${WRKSRC}/install.me -batch -binpath ${PREFIX}/bin \
 	-manpath ${PREFIX}/man -libpath ${PREFIX}/lib \
 	-perlpath ${PERL5}
-	if [ -f ${CGIDIR} ] ; then \
-		${INSTALL_PROGRAM} ${WRKSRC}/man.cgi ${CGIDIR} ; \
+	if [ -d ${CGIDIR} ] ; then \
+		${INSTALL_SCRIPT} ${WRKSRC}/man.cgi ${CGIDIR} ; \
 	fi
 
 .include <bsd.port.mk>
