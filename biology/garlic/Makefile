@@ -19,8 +19,6 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Molecular viewer, editor and visualization program
 
-BROKEN=		"Checksum mismatch"
-
 USE_XLIB=  yes
 USE_REINPLACE=  yes
 USE_GMAKE=	yes
@@ -32,7 +30,6 @@ CFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops 
 CFLAGS+=	-mfancy-math-387 -mpreferred-stack-boundary=3
 .endif # i386
 .endif
-
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g ; \
