@@ -49,8 +49,6 @@ my $MAIL_FILE     = "$BASE_FN.mail";
 my $SUBJ_FILE     = "$BASE_FN.subj";
 my $TAGS_FILE     = "$BASE_FN.tags";
 
-my $X_BRANCH_HDR  = "X-FreeBSD-CVS-Branch:";
-
 my $CVSROOT       = $ENV{'CVSROOT'} || "/home/ncvs";
 
 ############################################################
@@ -477,9 +475,10 @@ sub mail_notification {
 
 	# If required add a header to the mail msg showing
 	# which branches were modified during the commit.
-	if ($X_BRANCH_HDR) {
+	if ($cfg::MAIL_BRANCH_HDR) {
 		my %tags = map { $_ => 1 } &read_logfile($TAGS_FILE);
-		print MAIL "$X_BRANCH_HDR ", join(",", sort keys %tags), "\n";
+		print MAIL $cfg::MAIL_BRANCH_HDR, ": ";
+		print MAIL join(",", sort keys %tags), "\n";
 	}
 
 	print MAIL "\n";

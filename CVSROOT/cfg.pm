@@ -11,7 +11,8 @@
 package cfg;
 use strict;
 use vars qw($DEBUG $FILE_PREFIX $MAILADDRS $MAILBANNER $MAILCMD
-	    $MAIL_ON_DIR_CREATION $TMPDIR %TEMPLATE_HEADERS
+	    $MAIL_BRANCH_HDR $MAIL_ON_DIR_CREATION
+	    $TMPDIR %TEMPLATE_HEADERS
 	    $CHECK_HEADERS $LAST_FILE $PID $IDHEADER $UNEXPAND_RCSID);
 
 
@@ -103,6 +104,10 @@ $MAILBANNER = "";
 # 0 = off, 1 = on.
 $MAIL_ON_DIR_CREATION = 0;
 
+# Include the names of the branches committed to in the commit email,
+# using this header.  (leave off the trailing ':').  Use "" if you don't
+# want one.
+$MAIL_BRANCH_HDR  = "X-CVS-Branch";
 
 
 ##############################################################
@@ -125,6 +130,9 @@ if ($hostname =~ /^(freefall|internat)\.freebsd\.org$/i) {
 		$MAILBANNER = "FreeBSD International Crypto Repository";
 	}
 	$MAILADDRS = $meister if $DEBUG;
+
+
+	$MAIL_BRANCH_HDR  = "X-FreeBSD-CVS-Branch:";
 }
 
 
