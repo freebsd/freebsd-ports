@@ -8,14 +8,15 @@
 PORTNAME=	esh
 PORTVERSION=	0.8.5
 CATEGORIES=	shells
-MASTER_SITES=	http://slon.ttk.ru/esh/ \
-		http://www.ukc.mirror.ac.uk/sites/ftp.freebsd.org/pub/FreeBSD/ports/distfiles/ \
+MASTER_SITES=	http://www.ukc.mirror.ac.uk/sites/ftp.freebsd.org/pub/FreeBSD/ports/distfiles/ \
 		http://gd.tuwien.ac.at/opsys/linux/gentoo/distfiles/ \
 		http://people.FreeBSD.org/~foxfair/distfiles/
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The "easy shell", a small shell with Lisp-like syntax
 
 WRKSRC=		${WRKDIR}/esh
+INFO=		esh
 
 pre-build:
 	@(cd ${WRKSRC} && ${MAKE} clean)
