@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	frink
-PORTVERSION=	2.1.5
+PORTVERSION=	2.2.2p4
 CATEGORIES=	devel
 MASTER_SITES=	ftp://catless.ncl.ac.uk/pub/
 
@@ -15,15 +15,14 @@ COMMENT=	A tcl formatter and static tester
 
 #MAN1=		${PORTNAME}.1
 MANCOMPRESSED=	maybe
+WRKSRC=		${WRKDIR}/${PORTNAME}-2.2.2
 
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 
 .ifndef NOPORTDOCS
-PLIST_SUB+=	DOCSDIR=${DOCSDIR:S,${PREFIX:S,/$,,}/,,}
 post-install:
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/CHANGES ${WRKSRC}/README \
-		${WRKSRC}/README.html ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

@@ -12,19 +12,6 @@ style(9) guidelines.
 -          set indent for each level to n. default = 4
 +          set indent for each level to n. default = 8
  
---- README.html	Thu Jun 21 10:49:12 2001
-+++ README.html	Fri May 31 15:04:48 2002
-@@ -49,3 +49,3 @@
- 
--<dd>set further indent for continuations to n. default = 2</dd>
-+<dd>set further indent for continuations to n. default = 4</dd>
- 
-@@ -150,3 +150,3 @@
- 
--<dd>set indent for each level to n. default = 4</dd>
-+<dd>set indent for each level to n. default = 8</dd>
- 
-Common subdirectories: work/frink-2.1.5/Windows and frink-2.1.5/Windows
 --- frink.c	Thu Jun 21 10:49:12 2001
 +++ frink.c	Fri May 31 15:05:31 2002
 @@ -37,4 +37,4 @@
