@@ -3,7 +3,7 @@
 # Date created:		16 April 1995
 # Whom:			markm
 #
-# $Id: Makefile,v 1.21 1997/10/06 05:17:47 obrien Exp $
+# $Id: Makefile,v 1.22 1997/11/12 10:24:10 markm Exp $
 #
 
 DISTNAME=	perl5.004_04
@@ -65,5 +65,6 @@ test:
 post-install:
 	@strip ${PREFIX}/bin/perl ${PREFIX}/bin/suidperl
 	@ln -sf ${PREFIX}/bin/perl ${PREFIX}/bin/perl5
+	@(cd /usr/include && ${PREFIX}/bin/h2ph *.h machine/*.h sys/*.h)
 
 .include <bsd.port.mk>
