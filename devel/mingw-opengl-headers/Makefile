@@ -7,11 +7,11 @@
 PORTNAME=	opengl
 PORTVERSION=	20011229
 CATEGORIES=	devel graphics
-MASTER_SITES=	ftp://ftp.microsoft.com/Softlib/MSLFILES/
+MASTER_SITES=	http://download.microsoft.com/download/win95upg/info/1/W95/EN-US/
 PKGNAMEPREFIX=	mingw-
 PKGNAMESUFFIX=	-headers
-DISTNAME=	OPENGL95
-EXTRACT_SUFX=	.EXE
+DISTNAME=	Opengl95
+EXTRACT_SUFX=	.exe
 DIST_SUBDIR=	mingw
 
 MAINTAINER=	ports@FreeBSD.org
@@ -24,7 +24,6 @@ RESTRICTED=	"Not sure if we can redistribute it"
 USE_ZIP=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-FETCH_ENV=	FTP_PASSIVE_MODE=no
 
 do-install:
 	${MKDIR} ${PREFIX}/i386-mingw32msvc/include/GL
