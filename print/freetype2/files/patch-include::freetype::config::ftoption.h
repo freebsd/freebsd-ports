@@ -1,5 +1,8 @@
---- include/freetype/config/ftoption.h.orig	Mon Apr 15 13:49:45 2002
-+++ include/freetype/config/ftoption.h	Fri May 31 15:12:09 2002
+
+$FreeBSD$
+
+--- include/freetype/config/ftoption.h.orig	Sat Jun  8 04:05:56 2002
++++ include/freetype/config/ftoption.h	Fri Jun 21 15:49:27 2002
 @@ -82,7 +82,7 @@
    /*                                                                       */
    /*   Define this if you want generic cmap support.                       */
@@ -13,8 +16,8 @@
    /* By undefining this, you will only compile the code necessary to load  */
    /* TrueType glyphs without hinting.                                      */
    /*                                                                       */
--#undef TT_CONFIG_OPTION_BYTECODE_INTERPRETER
-+#define TT_CONFIG_OPTION_BYTECODE_INTERPRETER
+-#undef  TT_CONFIG_OPTION_BYTECODE_INTERPRETER
++#define  TT_CONFIG_OPTION_BYTECODE_INTERPRETER
  
  
    /*************************************************************************/
