@@ -43,9 +43,9 @@ Index: m3/m3core/src/runtime/FreeBSD2/m3makefile
  %% s_source (RTStackASM)
  
 Index: m3/m3core/src/runtime/FreeBSD2/malloc.c
---- malloc.c.orig	Fri Jul 11 07:48:55 1997
-+++ malloc.c	Fri Jul 25 18:03:33 1997
-@@ -0,0 +1,1139 @@
+--- malloc.c.orig	Mon Jul 28 14:36:20 1997
++++ malloc.c	Thu Sep  4 22:15:00 1997
+@@ -0,0 +1,1153 @@
 +/*
 + * ----------------------------------------------------------------------------
 + * "THE BEER-WARE LICENSE" (Revision 42):
@@ -54,7 +54,7 @@ Index: m3/m3core/src/runtime/FreeBSD2/malloc.c
 + * this stuff is worth it, you can buy me a beer in return.   Poul-Henning Kamp
 + * ----------------------------------------------------------------------------
 + *
-+ * From FreeBSD: malloc.c,v 1.28 1997/07/02 19:33:23 phk Exp
++ * From FreeBSD: malloc.c,v 1.32 1997/08/31 05:59:39 phk Exp
 + * Modified for Modula-3 thread safety by jdp@polstra.com (John Polstra).
 + *
 + */
@@ -93,15 +93,15 @@ Index: m3/m3core/src/runtime/FreeBSD2/malloc.c
 + *
 + */
 +
-+#if defined(__FreeBSD__) || defined(__linux__)
++#if defined(__FreeBSD__)
 +#   if defined(__i386__)
 +#       define malloc_pageshift		12U
 +#       define malloc_minsize		16U
 +#   endif
-+#endif /* __FreeBSD__ || __linux__ */
++#endif /* __FreeBSD__ */
 +
 +#if defined(__sparc__) && defined(sun)
-+#   define malloc_pageshirt		12U
++#   define malloc_pageshift		12U
 +#   define malloc_minsize		16U
 +#   define MAP_ANON			(0)
 +    static int fdzero;
@@ -111,6 +111,18 @@ Index: m3/m3core/src/runtime/FreeBSD2/malloc.c
 +	    wrterror("open of /dev/zero"); }
 +#   define MADV_FREE			MADV_DONTNEED
 +#endif /* __sparc__ */
++
++#if defined(__linux__)
++#   if defined(__i386__)
++#       define malloc_pageshift		12U
++#       define malloc_minsize		16U
++#   endif
++#endif /* __linux__ */
++
++#if defined(__alpha)
++#   define malloc_pageshift		13U
++#   define malloc_minsize		16U
++#endif /* __alpha */
 +
 +/* Insert your combination here... */
 +#if defined(__FOOCPU__) && defined(__BAROS__)
@@ -126,6 +138,7 @@ Index: m3/m3core/src/runtime/FreeBSD2/malloc.c
 +#include <sys/mman.h>
 +#include <errno.h>
 +#include <fcntl.h>
++#include <stddef.h>
 +#include <stdio.h>
 +#include <stdlib.h>
 +#include <string.h>
@@ -181,7 +194,7 @@ Index: m3/m3core/src/runtime/FreeBSD2/malloc.c
 +#endif
 +
 +#if !defined(malloc_pagesize)
-+#define malloc_pagesize			(1U<<malloc_pageshift)
++#define malloc_pagesize			(1UL<<malloc_pageshift)
 +#endif
 +
 +#if ((1<<malloc_pageshift) != malloc_pagesize)
@@ -220,6 +233,11 @@ Index: m3/m3core/src/runtime/FreeBSD2/malloc.c
 +#define INIT_MMAP()
 +#endif
 +
++/* This is needed at least by HP-UX 10.20 */
++#if !defined(MAP_ANON) && defined(MAP_ANONYMOUS)
++#define MAP_ANON MAP_ANONYMOUS
++#endif
++
 +/* Set when initialization has been done */
 +static unsigned malloc_started;	
 +
@@ -254,7 +272,7 @@ Index: m3/m3core/src/runtime/FreeBSD2/malloc.c
 +static int malloc_realloc;
 +
 +/* pass the kernel a hint on free pages ?  */
-+static int malloc_hint;
++static int malloc_hint = 1;
 +
 +/* xmalloc behaviour ?  */
 +static int malloc_xmalloc;
@@ -309,13 +327,10 @@ Index: m3/m3core/src/runtime/FreeBSD2/malloc.c
 +static void ifree(void *ptr);
 +static void *irealloc(void *ptr, size_t size);
 +
-+extern char *__progname;
-+
 +static void
 +wrterror(char *p)
 +{
 +    char *q = " error: ";
-+    write(STDERR_FILENO, __progname, strlen(__progname));
 +    write(STDERR_FILENO, malloc_func, strlen(malloc_func));
 +    write(STDERR_FILENO, q, strlen(q));
 +    write(STDERR_FILENO, p, strlen(p));
@@ -329,7 +344,6 @@ Index: m3/m3core/src/runtime/FreeBSD2/malloc.c
 +    char *q = " warning: ";
 +    if (malloc_abort)
 +	wrterror(p);
-+    write(STDERR_FILENO, __progname, strlen(__progname));
 +    write(STDERR_FILENO, malloc_func, strlen(malloc_func));
 +    write(STDERR_FILENO, q, strlen(q));
 +    write(STDERR_FILENO, p, strlen(p));
@@ -625,8 +639,8 @@ Index: m3/m3core/src/runtime/FreeBSD2/malloc.c
 +	return 0;
 +
 +    /* Find length of admin structure */
-+    l = sizeof *bp - sizeof(u_long);
-+    l += sizeof(u_long) *
++    l = offsetof(struct pginfo, bits[0]);
++    l += sizeof bp->bits[0] *
 +	(((malloc_pagesize >> bits)+MALLOC_BITS-1) / MALLOC_BITS);
 +
 +    /* Don't waste more than two chunks on this */
