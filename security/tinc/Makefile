@@ -24,7 +24,7 @@ USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
-LDFLAGS+=	-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN5=	tinc.conf.5
 MAN8=	tincd.8
