@@ -42,7 +42,7 @@ MAN3=		sasl.3 sasl_authorize_t.3 sasl_callbacks.3 sasl_checkpass.3 \
 		sasl_listmech.3 sasl_log_t.3 sasl_server_init.3 \
 		sasl_server_new.3 sasl_server_start.3 sasl_server_step.3 \
 		sasl_setprop.3 sasl_usererr.3
-MAN8=		sasldblistusers.8 saslpasswd.8 saslauthd.8
+MAN8=		sasldblistusers.8 saslpasswd.8 saslauthd1.8
 
 USE_AUTOMAKE_VER=14
 USE_LIBTOOL=	YES
@@ -99,6 +99,7 @@ PLIST_SUB=	PREFIX=${PREFIX} \
 		GSSAPI=${GSSAPI} \
 		EBONES=${EBONES} \
 		DOCSDIR=${DOCSDIR:S/^${PREFIX}\///} \
+		EXAMPLESDIR=${EXAMPLESDIR:S/^${PREFIX}\///}
 
 LDAP_MYSQL_PATCH=	ldap-mysql_sasl-${PORTVERSION}/sasl-ldap+mysql.patch
 
@@ -150,11 +151,21 @@ pre-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 	@if [ -f ${PREFIX}/sbin/saslauthd ]; then \
 		mv ${PREFIX}/sbin/saslauthd ${PREFIX}/sbin/saslauthd2; \
+		if [ -f ${PREFIX}/man/man8/saslauthd.8 ]; then \
+			mv ${PREFIX}/man/man8/saslauthd.8 \
+			   ${PREFIX}/man/man8/saslauthd2.8; \
+		elif [ -f ${PREFIX}/man/man8/saslauthd.8.gz ]; then \
+			mv ${PREFIX}/man/man8/saslauthd.8.gz \
+			   ${PREFIX}/man/man8/saslauthd2.8.gz; \
+		fi; \
 	fi
 
 post-install:
 	@${SED} -e "s;%%PREFIX%%;${PREFIX};g" ${PWCHECK_SUB} \
 		${FILESDIR}/pwcheck.sh > ${PREFIX}/etc/rc.d/pwcheck.sh
+	@${MKDIR} ${EXAMPLESDIR}
+	@${SED} -e 's;%%PREFIX%%;${PREFIX};g' \
+		${FILESDIR}/cyrus.pam > ${EXAMPLESDIR}/cyrus.pam
 	@${CHMOD} 755 ${PREFIX}/etc/rc.d/pwcheck.sh
 	${INSTALL} -d -m 770 -o cyrus -g cyrus /var/pwcheck
 	@${SED} -e "s;%%PREFIX%%;${PREFIX};g" ${SASLAUTHD_SUB} \
@@ -174,8 +185,16 @@ post-install:
 	@${INSTALL_DATA} ${FILESDIR}/Sendmail.README ${DOCSDIR}
 .endif
 	@mv ${PREFIX}/sbin/saslauthd ${PREFIX}/sbin/saslauthd1
+	@mv ${PREFIX}/man/man8/saslauthd.8 ${PREFIX}/man/man8/saslauthd1.8
 	@if [ -f ${PREFIX}/sbin/saslauthd2 ]; then \
 		mv ${PREFIX}/sbin/saslauthd2 ${PREFIX}/sbin/saslauthd; \
+		if [ -f ${PREFIX}/man/man8/saslauthd2.8 ]; then \
+			mv ${PREFIX}/man/man8/saslauthd2.8 \
+			   ${PREFIX}/man/man8/saslauthd.8; \
+		elif [ -f ${PREFIX}/man/man8/saslauthd2.8.gz ]; then \
+			mv ${PREFIX}/man/man8/saslauthd2.8.gz \
+			   ${PREFIX}/man/man8/saslauthd.8.gz; \
+		fi; \
 	fi
 	@PKG_PREFIX=${PREFIX} BATCH=${BATCH} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
