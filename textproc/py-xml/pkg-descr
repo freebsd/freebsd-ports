@@ -1,23 +1,23 @@
-From the website:
+PyXML is a collection of libraries to process XML with Python.
+It effectively extends and updates Python's built-in XML libraries
+(the xml.* modules). It contains, among other things:
 
-  The PyXML package is a collection of libraries to process XML with Python.
-  It contains, among other things 
+  xmlproc: a validating XML 1.0 parser written in Python
+  Expat:   a nonvalidating XML 1.0 parser written in C, plus Python bindings
+  PySAX:   SAX 1 and SAX2 libraries with drivers for most of the parsers
+  4DOM:    a compliant DOM Level 2 implementation written in Python
+  javadom: a Java-DOM-implementation-to-standard-Python-DOM adapter
+  pulldom: a DOM implementation that supports lazy instantiation of nodes
+  marshal: a module for serializing Python objects to XML formats including
+             WDDX and XML-RPC
+  sgmlop:  a C helper module that can speed up xmllib (deprecated) & sgmllib
 
-  - xmlproc: a validating XML parser
-  - sgmlop:  a C helper module that can speed-up xmllib.py and sgmllib.py by
-             a factor of 5
-  - PySAX:   SAX 1 and SAX2 libraries with drivers for most of the parsers
-  - 4DOM:    A fully compliant DOM Level 2 implementation 
-  - javadom: An adapter from Java DOM implementations to the standard Python
-             DOM binding
-  - pulldom: a DOM implementation that supports lazy instantiation of nodes
-  - marshal: a module with several options for serializing Python objects to
-             XML, including WDDX and XML-RPC
-  - unicode: a helper module for Python 1.5 users who need conversions
-             between UTF-8 and ISO-8859-?
+It also provides the latest updates/fixes for minidom (the default
+xml.dom.implementation), and includes an XPath 1.0 processor for minidom
+(xml.xpath). Experimental XSLT 1.0 support for minidom can be added if the
+port is installed with WITH_XSLT defined (e.g. "make install WITH_XSLT=yes").
 
-WWW:      http://www.pyxml.sourceforge.net/
-See also: http://www.python.org/sigs/xml-sig/
+  WWW:      http://www.pyxml.sourceforge.net/
+  See also: http://www.python.org/sigs/xml-sig/
 
--- Jacques Vidrine <nectar@FreeBSD.ORG> (original port)
--- Johann Visagie  <wjv@FreeBSD.org>    (current maintainer)
+-- Mike J. Brown <mike@skew.org> (current port maintainer)
