@@ -34,6 +34,7 @@
     SUBDIR += delay
     SUBDIR += diction
     SUBDIR += display
+    SUBDIR += dnetc
     SUBDIR += dotfile
     SUBDIR += estic
     SUBDIR += ewipe
@@ -84,7 +85,6 @@
     SUBDIR += proxyper
     SUBDIR += qclock
     SUBDIR += quotes
-    SUBDIR += rc5des
     SUBDIR += rfc
     SUBDIR += rpm
     SUBDIR += rpm2cpio
