@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	converters
 MASTER_SITES=	http://archive.dante.net/staff/konstantin/FreeBSD/iconv/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bland@FreeBSD.org
 COMMENT=	Charset conversion library and utilities
 
 USE_PERL5=	yes
