@@ -17,6 +17,8 @@ COMMENT=		Digit@lway MPIO MP3 player device driver KMOD
 
 NO_PACKAGE=		should be recompiled for a particular FreeBSD kernel
 
+BROKEN=			Does not patch
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 500000
