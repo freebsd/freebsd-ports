@@ -1,4 +1,5 @@
 bin/cdrdao
+bin/xcdrdao
 share/doc/cdrdao/COPYING 
 share/doc/cdrdao/INSTALL 
 share/doc/cdrdao/README 

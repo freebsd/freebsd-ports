@@ -1,16 +1,17 @@
 # New ports collection makefile for:    cdrdao
-# Version required:     1.1.1
+# Version required:     1.1.2
 # Date created:         7 April 1999
 # Whom:                 futatuki
 #
-# $Id: Makefile,v 1.2 1999/05/12 10:38:07 asami Exp $
+# $Id: Makefile,v 1.3 1999/07/10 19:36:38 sada Exp $
 #
 # If You don't want to use Joerg Schilling's SCSI library,
 # set DONT_USE_SCGLIB = yes
-# If You don't want to use pthead, set DONT_USE_PTHREAD = yes
+# If You don't want to use pthreads, set DONT_USE_PTHREADS = yes
+# If You want the graphical X toc file editor, set XCDRDAO = yes
 
-DISTNAME=		cdrdao-1.1.1.src
-PKGNAME=		cdrdao-1.1.1
+DISTNAME=		cdrdao-1.1.2.src
+PKGNAME=		cdrdao-1.1.2
 CATEGORIES=		audio
 MASTER_SITES=		http://www.ping.de/sites/daneb/
 
@@ -19,25 +20,56 @@ MAINTAINER=		futatuki@fureai.or.jp
 BUILD_DEPENDS=		antlr:${PORTSDIR}/devel/pccts\
 			dlg:${PORTSDIR}/devel/pccts
 
-WRKSRC=         	${WRKDIR}/cdrdao-1.1.1
+WRKSRC=         	${WRKDIR}/cdrdao-1.1.2
 
 GNU_CONFIGURE=		yes
-CONFIGURE_ARGS= 	--disable-gtkmmtest
 USE_GMAKE=	yes
 MAN1=		cdrdao.1
 
 .include <bsd.port.pre.mk>
 
+.if exists(${PREFIX}/include/gtk--.h)
+XCDRDAO=		yes
+.endif
+
+.if defined(PACKAGE_BUILDING)
+XCDRDAO=		yes
+.endif
+
+.if defined(XCDRDAO)
+LIB_DEPENDS+=		gtkmm-1.0.5:${PORTSDIR}/x11-toolkits/gtk--
+PLIST=          	${PKGDIR}/PLIST.xcdrdao
+.else
+CONFIGURE_ARGS= 	--disable-gtkmmtest
+.endif
+
+.if defined(XCDRDAO) && ${OSVERSION} < 400004
+BUILD_DEPENDS+=		eg++:${PORTSDIR}/lang/egcs
+CC=			egcc
+CXX=			eg++
+.endif
+
 .if defined(DONT_USE_SCGLIB) && ${OSVERSION} > 300000
 CONFIGURE_ARGS+= 	--without-scglib
 .endif
 
-.if defined(DONT_USE_PTHREAD) && ${OSVERSION} > 320000
+.if defined(DONT_USE_PTHREADS) && ${OSVERSION} > 320000
 CONFIGURE_ARGS+=	--without-posix-threads
+.endif
+
+pre-fetch:
+.if !defined(XCDRDAO)
+	@${ECHO_MSG} "To build the graphical X toc file editor, xcdrdao, type:"
+	@${ECHO_MSG} "    make XCDRDAO=yes"
+.else
+	@${ECHO_MSG} "Building with xcdrdao"
 .endif
 
 post-install:
 	strip $(PREFIX)/bin/cdrdao
+.if defined(XCDRDAO)
+	strip $(PREFIX)/bin/xcdrdao
+.endif
 	@${MKDIR} ${PREFIX}/share/doc/cdrdao
 .for i in COPYING INSTALL README README.FreeBSD README.PlexDAE
 	@${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/doc/cdrdao/
