@@ -8,7 +8,8 @@
 PORTNAME=	xpm
 PORTVERSION=	3.4k
 CATEGORIES=	graphics x11
-MASTER_SITES=	ftp://avahi.inria.fr/pub/xpm/
+MASTER_SITES=	${MASTER_SITE_XCONTRIB}
+MASTER_SITE_SUBDIR=	libraries
 
 MAINTAINER=	jseger@FreeBSD.org
 
