@@ -7808,6 +7808,7 @@ xunicode	ports/converters/xunicode
 xv		ports/graphics/xv
 xv-m17n		ports/graphics/xv-m17n
 xvattr		ports/x11/xvattr
+xvid		ports/graphics/xvid
 xvier		ports/games/xvier
 xview		ports/x11-toolkits/xview
 xview-clients	ports/x11-toolkits/xview-clients
