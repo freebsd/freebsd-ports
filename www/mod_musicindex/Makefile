@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_musicindex
-PORTVERSION=	0.8.9
+PORTVERSION=	0.9.0
 CATEGORIES=	www audio
 MASTER_SITES=	http://www.esiee.fr/~puffin/musicindex/
 DISTNAME=	libapache-mod-musicindex_${PORTVERSION}
@@ -22,18 +22,34 @@ LIB_DEPENDS=	ogg.4:${PORTSDIR}/audio/libogg \
 		mad.1:${PORTSDIR}/audio/mad
 
 APXS?=		${LOCALBASE}/sbin/apxs
-APACHE_PORT?=	${PORTSDIR}/www/apache13
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/libapache-mod-musicindex-${PORTVERSION}
+MAKE_ENV+=	APXS=${APXS} BUILDDIR=${WRKSRC}
 
-DOCS_HTMLIMAGES=	directory.png musicindex.css fetch.png \
+PORTDOCS=	directory.png musicindex.css fetch.png \
 			right_arrow.gif general.png sound.png
 
+.if defined (WITH_APACHE2)
+MODULE_EXT=	la
+MAKEFILE=	Makefile.apache2
+PLIST_SUB+=	MOD_DIR=libexec/apache2
+APACHE_PORT?=	${PORTSDIR}/www/apache2
+MAKE_TARGET=	all
+.else
+MODULE_EXT=	so
+PLIST_SUB+=	MOD_DIR=libexec/apache
+APACHE_PORT?=	${PORTSDIR}/www/apache13
+.endif
+
+post-patch:
+	@${CP} ${WRKSRC}/modules.mk.apache2 ${WRKSRC}/modules.mk
+	@${TOUCH} ${WRKSRC}/.deps
+
 do-install:
-	${APXS} -i -A -n musicindex ${WRKSRC}/mod_musicindex.so
+	${APXS} -i -n musicindex -A ${WRKSRC}/mod_musicindex.${MODULE_EXT}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for f in ${DOCS_HTMLIMAGES}
+.for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/musicindex/${f} ${DOCSDIR}
 .endfor
 .endif
