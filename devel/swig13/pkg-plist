@@ -4,6 +4,7 @@ bin/swig%%VER%%
 %%WANT_SWIG_GUILE%%lib/libswigguile.so
 %%WANT_SWIG_GUILE%%lib/libswigguile.so.0
 %%WANT_SWIG_GUILE%%lib/libswigguilescm.la
+%%WANT_SWIG_GUILE%%lib/libswigguilescm.so
 %%WANT_SWIG_GUILE%%lib/libswigguilescm.so.0
 %%WANT_SWIG_PHP4%%lib/libswigphp4.la
 %%WANT_SWIG_PHP4%%lib/libswigphp4.so
@@ -194,6 +195,7 @@ lib/swig%%VER%%/tcl/tcl8kw.swg
 lib/swig%%VER%%/tcl/tclsh.i
 lib/swig%%VER%%/tcl/typemaps.i
 lib/swig%%VER%%/tcl/wish.i
+share/aclocal/swig.m4
 @dirrm lib/swig%%VER%%/tcl
 @dirrm lib/swig%%VER%%/ruby
 @dirrm lib/swig%%VER%%/python
