@@ -1,0 +1,113 @@
+--- src/osdep/unix/Makefile.orig	Mon Jul  3 22:32:37 2000
++++ src/osdep/unix/Makefile	Mon Jul  3 22:33:30 2000
+@@ -86,7 +86,7 @@
+ # Commands possibly overriden by the individual port
+ 
+ ARRC=ar rc
+-CC=cc
++#CC=cc
+ LN=ln -s
+ RANLIB=ranlib
+ 
+@@ -104,7 +104,7 @@
+  dummy.o pseudo.o netmsg.o flstring.o fdstring.o \
+  rfc822.o nntp.o smtp.o imap4r1.o pop3.o \
+  unix.o mbox.o mbx.o mmdf.o tenex.o mtx.o news.o phile.o mh.o mx.o
+-CFLAGS=$(BASECFLAGS) $(EXTRACFLAGS)
++CFLAGS+=$(BASECFLAGS) $(EXTRACFLAGS)
+ MAKE=make
+ MV=mv
+ RM=rm -rf
+@@ -119,6 +119,10 @@
+  PASSWDTYPE=$(PASSWDTYPE) SPECIALAUTHENTICATORS="$(SPECIALAUTHENTICATORS)"
+ BUILD=$(MAKE) build $(BUILDOPTIONS)
+ 
++# Need this for the shared library rule to work correctly
++.SUFFIXES: .o .so
++SOFILES=${BINARIES:.o=.so}
++
+ # Here if no make argument established
+ 
+ missing: osdep.h
+@@ -178,6 +182,15 @@
+ 	 BASECFLAGS="-g -B/usr/lib/big/ -Dvoid=char -Dconst= -DNFSKLUDGE" \
+ 	 RANLIB=true ARRC="ar -rc"
+ 
++bfp:	# FreeBSD Pluggable Authentication Modules
++	$(BUILD) `cat EXTRASPECIALS` OS=bsi SIGTYPE=psx CHECKPW=pam \
++	 SPOOLDIR=/var \
++	 ACTIVEFILE=/usr/local/news/lib/active \
++	 RSHPATH=/usr/bin/rsh \
++	 LOCKPGM=$(PREFIX)/libexec/mlock \
++	 BASECFLAGS="-DNFSKLUDGE" \
++	 BASELDFLAGS="-lpam -lcrypt"
++
+ bs3:	# BSD/i386 3.0 or higher
+ 	$(BUILD) `cat EXTRASPECIALS` OS=bsi CHECKPW=bsi LOGINPW=bsi \
+ 	 SPOOLDIR=/var NEWSSPOOL=/var/news/spool \
+@@ -194,7 +207,8 @@
+ 	 SPOOLDIR=/var \
+ 	 ACTIVEFILE=/usr/local/news/lib/active \
+ 	 RSHPATH=/usr/bin/rsh \
+-	 BASECFLAGS="-g -O -pipe -DNFSKLUDGE" \
++	 LOCKPGM=$(PREFIX)/libexec/mlock \
++	 BASECFLAGS="-DNFSKLUDGE" \
+ 	 BASELDFLAGS="-lcrypt"
+ 
+ bsi:	# BSD/i386
+@@ -627,19 +641,31 @@
+ 
+ # Build it!
+ 
+-build:	clean once $(ARCHIVE)
++build:	clean once $(ARCHIVE) $(SHLIBNAME)
+ 
+-all:	$(ARCHIVE)
++all:	$(ARCHIVE) $(SHLIBNAME)
+ 
+ $(ARCHIVE): $(BINARIES)
+ 	sh -c '$(RM) $(ARCHIVE) || true'
+ 	@cat ARCHIVE
+ 	@$(SH) ARCHIVE
+ 
++$(SHLIBNAME): $(SOFILES)
++.if $(PORTOBJFORMAT) == "elf"
++	ld -shared -x -soname $(SHLIBNAME) -o $(SHLIBNAME) $(SOFILES)
++.else
++	ld -Bshareable -x -o $(SHLIBNAME) $(SOFILES)
++.endif
++	ln -s $(SHLIBNAME) lib$(SHLIBBASE).so
++
++.c.so:	osdep.h
++	$(CC) -fpic -DPIC -c $(CFLAGS) ${@:.so=.c} -o $@
++
+ # Cleanup
+ 
+ clean:
+ 	sh -c '$(RM) auths.c flockbsd.c linkage.[ch] siglocal.c osdep*.[ch] *.o ARCHIVE *FLAGS *TYPE $(ARCHIVE) || true'
++	$(RM) *.so $(SHLIBNAME)
+ 
+ 
+ # Dependencies
+@@ -673,7 +699,7 @@
+ 
+ # OS-dependent
+ 
+-osdep.o:mail.h misc.h env.h fs.h ftl.h nl.h tcp.h \
++OSDEPS= mail.h misc.h env.h fs.h ftl.h nl.h tcp.h \
+ 	osdep.h env_unix.h tcp_unix.h \
+ 	osdep.c env_unix.c fs_unix.c ftl_unix.c nl_unix.c tcp_unix.c \
+ 	auths.c flock.c flockbsd.c flcksafe.c fsync.c gethstid.c \
+@@ -685,7 +711,12 @@
+ 	write.c \
+ 	strerror.c strpbrk.c strstr.c strtok.c strtoul.c \
+ 	OSCFLAGS
++
++osdep.o: $(OSDEPS)
+ 	$(CC) $(CFLAGS) `cat OSCFLAGS` -c osdep.c
++
++osdep.so: $(OSDEPS)
++	$(CC) -fpic -DPIC -c $(CFLAGS) `cat OSCFLAGS` osdep.c -o $@
+ 
+ osdep.c: osdepbas.c osdepckp.c osdeplog.c
+ 	cat osdepbas.c osdepckp.c osdeplog.c > osdep.c
