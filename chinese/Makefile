@@ -1,16 +1,16 @@
-# $Id: Makefile,v 1.13 1997/10/07 07:04:28 obrien Exp $
+# $Id: Makefile,v 1.14 1997/10/23 13:32:39 itojun Exp $
 #
 
     SUBDIR += Wnn
     SUBDIR += big5con
-    SUBDIR += big5font
+    SUBDIR += big5fonts
     SUBDIR += c2t
     SUBDIR += celvis
     SUBDIR += cless
-    SUBDIR += cnsfont
+    SUBDIR += cnsfonts
     SUBDIR += cxterm
     SUBDIR += gb2ps
-    SUBDIR += gbfont
+    SUBDIR += gbfonts
     SUBDIR += gbscript
     SUBDIR += hc
     SUBDIR += hztty
