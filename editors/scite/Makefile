@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scite
-PORTVERSION=	1.56
+PORTVERSION=	1.57
 CATEGORIES=	editors gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.scintilla.org/
@@ -54,12 +54,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/SciTE.desktop ${PREFIX}/share/gnome/applications
 	${INSTALL_DATA} ${WRKSRC}/Sci48M.png ${PREFIX}/share/gnome/pixmaps
 	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/../doc/*.html ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/../doc/*.jpg ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/../doc/*.png ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/../src/*.properties ${DATADIR}
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/../doc/*.html ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/../doc/*.jpg ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/../doc/*.png ${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
