@@ -35,10 +35,10 @@ PATCHDIR=	${MASTERDIR}/patches.5
 NO_PACKAGE=	"to avoid crashing a machine when try to install incorrect version"
 .elif ${OSVERSION} >= 501109
 LAST_UPDATED=	20010209
-IGNORE=		is obsolete. See mount_msdosfs(8)
+IGNORE=		is included in the base system. See mount_msdosfs(8)
 .else
 LAST_UPDATED=	20001022
-BROKEN=		"Supports up-to-date -CURRENT only"
+IGNORE=		is not supported on this version of FreeBSD
 .endif
 
 post-extract:
