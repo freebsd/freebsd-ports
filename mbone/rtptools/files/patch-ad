@@ -1,0 +1,24 @@
+--- rtpsend.c.orig	Fri Apr  6 18:18:26 2001
++++ rtpsend.c	Sat Apr 21 21:59:35 2001
+@@ -351,9 +351,9 @@
+       if (strcmp(n->type, "ssrc") == 0)
+         rr->ssrc = htonl(n->num);
+       else if (strcmp(n->type, "fraction") == 0)
+-        rr->fraction = (n->num)*256;
+-      else if (strcmp(n->type, "lost") == 0)   /* PP: alignment OK? */
+-        rr->lost = htonl(n->num);
++        rr->fraclost = htonl((ntohl(rr->fraclost) & 0x00ffffff) | ((n->num)*256 << 24));
++      else if (strcmp(n->type, "lost") == 0)
++	rr->fraclost = htonl((ntohl(rr->fraclost) & 0xff000000) | n->num);
+       else if (strcmp(n->type, "last_seq") == 0)
+         rr->last_seq = htonl(n->num);
+       else if (strcmp(n->type, "jit") == 0)
+@@ -899,6 +899,8 @@
+ 
+   if (optind < argc) {
+     if (hpt(argv[optind], (struct sockaddr *)&sin, &ttl) < 0) usage(argv[0]);
++  } else {
++    usage(argv[0]);
+   }
+ 
+   /* create/connect sockets */
