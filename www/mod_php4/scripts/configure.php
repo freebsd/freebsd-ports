@@ -212,7 +212,7 @@ while [ "$1" ]; do
 			;;
 		\"XSLT\")
 			echo "LIB_DEPENDS+=	sablot.66:\${PORTSDIR}/textproc/sablotron"
-			echo "CONFIGURE_ARGS+=--with-sablot=\${LOCALBASE}"
+			echo "CONFIGURE_ARGS+=--enable-xslt --with-xslt-sablot"
 			echo "CONFIGURE_ARGS+=--with-expat-dir=\${LOCALBASE}"
 			if [ -z "$XML" ]; then
 				set $* \"XML\"
