@@ -3,7 +3,7 @@
 # Date created:		1 March 1999
 # Whom:			J.T. Jang (jtjang@gcn.net.tw)
 #
-# $Id: Makefile,v 1.5 1999/03/08 22:03:29 steve Exp $
+# $Id: Makefile,v 1.6 1999/03/09 08:53:23 foxfair Exp $
 #
 
 DISTNAME=	zh-CJK-4.2.0
@@ -20,9 +20,9 @@ DISTFILES=	CJK.tar.gz
 
 MAINTAINER=	jtjang@gcn.net.tw
 
-BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX-beta
+BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 LIB_DEPENDS=	ttf.3:${PORTSDIR}/print/freetype
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-beta
+RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 
 IGNOREFILES=	CJK.tar.gz
 NO_PACKAGE=	Interactive
