@@ -13,7 +13,22 @@ MASTER_SITES=	http://www3.bc.sympatico.ca/brian_winters/mutt/
 
 MAINTAINER=	obrien@FreeBSD.org
 
-RUN_DEPENDS=	mutt:${PORTSDIR}/mail/mutt
+pre-configure:
+	@${PERL} -pi.orig \
+		-e "s:/etc/muttzilla.conf:${PREFIX}/etc/muttzilla.conf:"  \
+		${WRKSRC}/muttzilla.h
+	@${PERL} -pi.orig \
+		-e "s:/etc/muttzilla.conf:${PREFIX}/etc/muttzilla.conf:"  \
+		${WRKSRC}/mzmail.sh
+	@${PERL} -pi.orig \
+		-e "s:/etc/muttzilla.conf:${PREFIX}/etc/muttzilla.conf:"  \
+		${WRKSRC}/mzmail.py
+	@${PERL} -pi.orig \
+		-e "s:/etc/muttzilla.conf:${PREFIX}/etc/muttzilla.conf:"  \
+		${WRKSRC}/mznews.sh
+	@${PERL} -pi.orig \
+		-e "s:/etc/muttzilla.conf:${PREFIX}/etc/muttzilla.conf:"  \
+		${WRKSRC}/mznews.py
 
 post-install:
 .if !defined(NOPORTDOCS)
