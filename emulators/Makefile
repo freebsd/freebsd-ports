@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.10 1997/03/05 08:31:45 tg Exp $
+# $Id: Makefile,v 1.11 1997/05/17 17:00:07 max Exp $
 #
 
     SUBDIR += aftp
@@ -9,6 +9,7 @@
     SUBDIR += hfs
     SUBDIR += ines
     SUBDIR += linux_lib
+    SUBDIR += macutils
     SUBDIR += mastergear
     SUBDIR += mtools
     SUBDIR += pcemu
