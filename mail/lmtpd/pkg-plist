@@ -31,3 +31,18 @@ share/nls/fr_FR.ISO_8859-1/filtercheck.cat
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%EXAMPLESDIR%%/log.sql
+%%EXAMPLESDIR%%/mysqllog.mysql
+%%EXAMPLESDIR%%/overquota.sql
+%%EXAMPLESDIR%%/msg/README
+%%EXAMPLESDIR%%/msg/bounce.en.txt
+%%EXAMPLESDIR%%/msg/bounce.fr.txt
+%%EXAMPLESDIR%%/msg/debug.en.txt
+%%EXAMPLESDIR%%/msg/debug.fr.txt
+%%EXAMPLESDIR%%/msg/logmsg.fr.txt
+%%EXAMPLESDIR%%/msg/quotamsg.en.txt
+%%EXAMPLESDIR%%/msg/quotamsg.es.txt
+%%EXAMPLESDIR%%/msg/quotamsg.fr.txt
+%%EXAMPLESDIR%%/msg/quotamsg.it.txt
+%%EXAMPLESDIR%%/msg/virus.fr.txt
+@dirrm %%EXAMPLESDIR%%/msg
