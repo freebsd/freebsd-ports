@@ -1,0 +1,6 @@
+Geo::METAR is a perl module that processes METAR information from NOAA sources.
+
+WWW: http://www.wcnet.org/jzawodn/perl/Geo-METAR/
+Author: Jeremy D. Zawodny <Jeremy@Zawodny.com>
+
+--will
