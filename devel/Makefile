@@ -1194,7 +1194,6 @@
     SUBDIR += uclmmbase
     SUBDIR += ucpp
     SUBDIR += uisp
-    SUBDIR += ulex
     SUBDIR += umbrello
     SUBDIR += upnp
     SUBDIR += ups-debug
