@@ -84,6 +84,7 @@
 %%Q3DIR%%pb/pbsv.so
 %%Q3DIR%%q3ded
 %%Q3DIR%%quake3.x86
+%%Q3DIR%%quake3-smp.x86
 %%PORTDOCS%%%%Q3DIR%%quake3.xpm
 %%PORTDOCS%%@dirrm %%Q3DIR%%pb/htm
 @dirrm %%Q3DIR%%pb
