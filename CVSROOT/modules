@@ -5405,7 +5405,6 @@ mod_cgi_debug	ports/www/mod_cgi_debug
 mod_chroot	ports/www/mod_chroot
 mod_clamav	ports/www/mod_clamav
 mod_color	ports/www/mod_color
-mod_csacek	ports/www/mod_csacek
 mod_cvs		ports/www/mod_cvs
 mod_cvs2	ports/www/mod_cvs2
 mod_dav		ports/www/mod_dav
