@@ -32,6 +32,104 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b0911985-6e2a-11d9-9557-000a95bc6fae">
+    <topic>web browsers -- window injection vulnerabilities</topic>
+    <affects>
+      <package>
+        <name>de-linux-mozillafirebird</name>
+	<name>el-linux-mozillafirebird</name>
+        <name>firefox</name>
+        <name>ja-linux-mozillafirebird-gtk1</name>
+        <name>ja-mozillafirebird-gtk2</name>
+        <name>linux-mozillafirebird</name>
+        <name>ru-linux-mozillafirebird</name>
+        <name>zhCN-linux-mozillafirebird</name>
+        <name>zhTW-linux-mozillafirebird</name>
+        <name>de-netscape7</name>
+        <name>fr-netscape7</name>
+        <name>ja-netscape7</name>
+        <name>netscape7</name>
+        <name>pt_BR-netscape7</name>
+        <name>mozilla-gtk1</name>
+        <name>linux-mozilla</name>
+        <name>linux-mozilla-devel</name>
+	<name>mozilla</name>
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<!-- These package names are obsolete. -->
+        <name>de-linux-netscape</name>
+        <name>fr-linux-netscape</name>
+        <name>ja-linux-netscape</name>
+        <name>linux-netscape</name>
+        <name>linux-phoenix</name>
+        <name>mozilla+ipv6</name>
+        <name>mozilla-embedded</name>
+        <name>mozilla-firebird</name>
+        <name>mozilla-gtk2</name>
+        <name>mozilla-gtk</name>
+        <name>mozilla-thunderbird</name>
+        <name>phoenix</name>
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>kdebase</name>
+	<name>kdelibs</name>
+	<range><lt>3.3.2</lt></range>
+      </package>
+      <package>
+	<name>opera</name>
+	<name>opera-devel</name>
+	<name>linux-opera</name>
+	<range><lt>7.54.20041210</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Secunia Research advisory reports:</p>
+	<blockquote cite="http://secunia.com/secunia_research/2004-13/advisory/">
+	  <p>Secunia Research has reported a vulnerability in multiple
+	    browsers, which can be exploited by malicious people to
+	    spoof the content of websites.</p>
+	  <p>The problem is that a website can inject content into
+	    another site's window if the target name of the window is
+	    known. This can e.g. be exploited by a malicious website
+	    to spoof the content of a pop-up window opened on a
+	    trusted website.</p>
+	  <p>Secunia has constructed a test, which can be used to
+	    check if your browser is affected by this issue:
+	    <a href="http://secunia.com/multiple_browsers_window_injection_vulnerability_test/">http://secunia.com/multiple_browsers_window_injection_vulnerability_test/</a></p>
+	</blockquote>
+	<p>A <a href="http://mozillanews.org/?article_date=2004-12-08+06-48-46">workaround
+	    for Mozilla-based browsers</a> is available.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://secunia.com/secunia_research/2004-13/advisory/</url>
+      <url>http://secunia.com/multiple_browsers_window_injection_vulnerability_test/</url>
+      <!-- mozilla -->
+      <cvename>CAN-2004-1156</cvename>
+      <url>http://secunia.com/advisories/13129/</url>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=273699</url>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=103638</url>
+      <url>http://mozillanews.org/?article_date=2004-12-08+06-48-46</url>
+      <!-- opera -->
+      <cvename>CAN-2004-1157</cvename>
+      <url>http://secunia.com/advisories/13253/</url>
+      <!-- konqueror -->
+      <cvename>CAN-2004-1158</cvename>
+      <url>http://secunia.com/advisories/13254/</url>
+      <url>http://www.kde.org/info/security/advisory-20041213-1.txt</url>
+      <!-- netscape -->
+      <cvename>CAN-2004-1160</cvename>
+      <url>http://secunia.com/advisories/13402/</url>
+    </references>
+    <dates>
+      <discovery>2005-01-FIXME</discovery>
+      <entry>2005-01-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d4a7054a-6d96-11d9-a9e7-0001020eed82">
     <topic>yamt -- arbitrary command execution vulnerability</topic>
     <affects>
@@ -202,7 +300,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<name>opera</name>
 	<name>opera-devel</name>
 	<name>linux-opera</name>
-	<range><lt>7.60.20041203</lt></range>
+	<range><lt>7.54.20041210</lt></range>
       </package>
     </affects>
     <description>
@@ -247,7 +345,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </references>
     <dates>
       <discovery>2004-11-19</discovery>
-      <entry>2005-01-21</entry>
+      <entry>2005-01-24</entry>
     </dates>
   </vuln>
 
