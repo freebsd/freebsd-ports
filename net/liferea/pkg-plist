@@ -1,8 +1,6 @@
 bin/liferea
 bin/liferea-bin
-lib/liferea/liblihtmlg.la
 lib/liferea/liblihtmlg.so
-%%MOZ%%lib/liferea/liblihtmlm.la
 %%MOZ%%lib/liferea/liblihtmlm.so
 share/gnome/applications/liferea.desktop
 share/gnome/liferea/css/liferea.css
