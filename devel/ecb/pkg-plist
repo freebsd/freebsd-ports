@@ -8,6 +8,7 @@ info/ecb.info-5
 info/ecb.info-6
 info/ecb.info-7
 info/ecb.info-8
+info/ecb.info-9
 @exec install-info --section="%%INFOSECTION%%" %D/info/ecb.info %D/info/dir
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-autogen.el
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-autogen.elc
@@ -24,6 +25,8 @@ info/ecb.info-8
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-examples.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-face.el
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-face.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-file-browser.el
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-file-browser.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-help.el
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-help.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-jde.el
@@ -32,10 +35,14 @@ info/ecb.info-8
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-layout-defs.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-layout.el
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-layout.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-method-browser.el
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-method-browser.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-mode-line.el
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-mode-line.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-navigate.el
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-navigate.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-semantic-wrapper.el
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-semantic-wrapper.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-speedbar.el
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-speedbar.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-tod.el
@@ -44,6 +51,8 @@ info/ecb.info-8
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-upgrade.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-util.el
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-util.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-winman-support.el
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-winman-support.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb.el
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/silentcomp.el
