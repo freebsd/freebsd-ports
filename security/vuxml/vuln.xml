@@ -32,6 +32,37 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a4bd3039-9a48-11d9-a256-0001020eed82">
+    <topic>xv -- filename handling format string vulnerability</topic>
+    <affects>
+      <package>
+	<name>xv</name>
+	<name>ja-xv</name>
+	<range><lt>3.10a_5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Gentoo Linux Security Advisory reports:</p>
+	<blockquote cite="http://www.gentoo.org/security/en/glsa/glsa-200503-09.xml">
+	  <p>Tavis Ormandy of the Gentoo Linux Security Audit Team
+	    identified a flaw in the handling of image filenames by xv.</p>
+	  <p>Successful exploitation would require a victim to process
+	    a specially crafted image with a malformed filename,
+	    potentially resulting in the execution of arbitrary code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-0665</cvename>
+      <url>http://www.gentoo.org/security/en/glsa/glsa-200503-09.xml</url>
+    </references>
+    <dates>
+      <discovery>2005-03-01</discovery>
+      <entry>2005-03-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="972697a7-9a42-11d9-a256-0001020eed82">
     <topic>kdelibs -- local DCOP denial of service vulnerability</topic>
     <affects>
