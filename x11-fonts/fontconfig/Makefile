@@ -20,7 +20,7 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
+PREFIX?=	${X11BASE}
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
@@ -30,6 +30,13 @@ CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc/fonts \
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 WRKSRC=	${WRKDIR}/${DISTNAME}/fontconfig
 
+.include <bsd.port.pre.mk>
+.if ${XFREE86_VERSION} == 3
+MTREE_FILE=     /etc/mtree/BSD.x11.dist
+.else
+MTREE_FILE=     /etc/mtree/BSD.x11-4.dist
+.endif
+
 pre-patch:
 	@${REINPLACE_CMD} -e 's|[(]LIBDIR[)]/pkgconfig|(prefix)/libdata/pkgconfig|g' ${WRKSRC}/Makefile.in
 
@@ -38,4 +45,4 @@ post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
