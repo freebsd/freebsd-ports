@@ -7,7 +7,7 @@
 
 PORTNAME=	daemontools
 PORTVERSION=	0.76
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cr.yp.to/daemontools/ \
 		ftp://cr.yp.to/daemontools/
@@ -40,6 +40,14 @@ INSTALL_TARGET=	setup check
 SAMPLERC=	svscan.sh.sample
 SERVICEDIR?=	/var/service
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500023 || ${OSVERSION} < 500000 && ${OSVERSION} >= 460102
+RC_SCRIPTS_SUB+=	DAEMON="/usr/sbin/daemon -f"
+.else
+RC_SCRIPTS_SUB+=	DAEMON=""
+.endif
+
 post-patch:
 	@${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
 	@${ECHO_CMD} "${CC} ${STRIP}" > ${WRKSRC}/conf-ld
@@ -63,4 +71,4 @@ post-install:
 	@${INSTALL_MAN} ${WRKDIR}/daemontools-man/*.8 ${PREFIX}/man/man8/
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
