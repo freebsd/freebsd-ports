@@ -3615,6 +3615,7 @@ kimwitu++	ports/devel/kimwitu++
 kinemage	ports/biology/kinemage
 kisomandel	ports/graphics/kisomandel
 kix-kmod	ports/graphics/kix-kmod
+kkbswitch	ports/sysutils/kkbswitch
 klh10		ports/emulators/klh10
 klogoturtle	ports/lang/klogoturtle
 klondike	ports/games/klondike
