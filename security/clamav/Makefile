@@ -7,7 +7,7 @@
 
 PORTNAME=	clamav
 PORTVERSION=	0.65
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	clamav
@@ -41,7 +41,7 @@ MAN1=		clamscan.1 freshclam.1 sigtool.1 clamdscan.1
 MAN5=		clamav.conf.5
 MAN8=		clamd.8 clamav-milter.8
 
-CLAMAV_CLAMD_SOCKE?=	/var/run/clamav/clamd
+CLAMAV_CLAMD_SOCKET?=	/var/run/clamav/clamd
 CLAMAV_MILTER_SOCKET?=	/var/run/clmilter.sock
 
 CONFLICTS=	clamav-devel-*
@@ -110,7 +110,8 @@ pre-install:
 		${SH} ${PKGINSTALL} ${PREFIX} PRE-INSTALL
 
 post-install:
-	@${INSTALL_SCRIPT} ${WRKDIR}/clamav-clamd.sh ${RC_DIR}/clamd${RC_SUFX}
+	@${INSTALL_SCRIPT} ${WRKDIR}/clamav-clamd.sh \
+		${RC_DIR}/clamav-clamd${RC_SUFX}
 	@${CHOWN} -R clamav:clamav ${DATADIR}
 	@[ -f ${PREFIX}/etc/clamav.conf ] || \
 		${CP} ${PREFIX}/etc/clamav.conf.default ${PREFIX}/etc/clamav.conf
