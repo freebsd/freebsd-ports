@@ -1,0 +1,5 @@
+ElScreen is an Emacs utility with which you can have multiple
+screens (window-configuration) on your GNU Emacs as well as
+GNU screen on shell.
+
+WWW: http://www.morishima.net/~naoto/j/software/elscreen/
