@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	bacula
-PORTVERSION=	1.32b
-PORTREVISION=	1
+PORTVERSION=	1.32c
+#PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bacula
@@ -100,6 +100,24 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/bacula.pdf ${DOCSDIR}
 	cd ${WRKSRC}/doc && ${FIND} html-manual | \
 		cpio -pdm -L -R root:wheel ${DOCSDIR}
+.endif
+
+# Inform user when full build takes place about
+.if !defined(WITH_CLIENT_ONLY)
+	@${ECHO_MSG} "*******************************************************"
+	@${ECHO_MSG} "NOTE:"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "An auto-changer manipulation script based on FreeBSDs"
+	@${ECHO_MSG} "chio command is included and installed at"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "  ${PREFIX}/sbin/chio-bacula"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Please have a look at it if you want to use an"
+	@${ECHO_MSG} "auto-changer. You have to configure the usage in"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "  ${PREFIX}/etc/bacula-dir.conf"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "*******************************************************"
 .endif
 
 .include <bsd.port.post.mk>
