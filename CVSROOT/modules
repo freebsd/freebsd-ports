@@ -2303,6 +2303,7 @@ freeglut	ports/x11-toolkits/freeglut
 freegrep	ports/textproc/freegrep
 freeipmi	ports/sysutils/freeipmi
 freelibiberty	ports/devel/freelibiberty
+freemat		ports/math/freemat
 freemind	ports/deskutils/freemind
 freenet		ports/net/freenet
 freenet6	ports/net/freenet6
