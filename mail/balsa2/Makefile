@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	balsa
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.4
 #PORTREVISION=	1
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://www.theochem.kth.se/~pawsa/balsa/ \
@@ -17,13 +17,15 @@ MAINTAINER=	sobomax@FreeBSD.org
 LIB_DEPENDS=	PropList.2:${PORTSDIR}/devel/libPropList \
 		pspell.4:${PORTSDIR}/textproc/pspell \
 		gnomeprint.13:${PORTSDIR}/print/gnomeprint \
-		giconv.2:${PORTSDIR}/converters/libiconv
+		giconv.2:${PORTSDIR}/converters/libiconv \
+		gtkhtml.8:${PORTSDIR}/www/gtkhtml
 
 USE_X_PREFIX=	yes
 USE_GNOME=	yes
 USE_LIBTOOL=	yes
 LIBTOOLFILES=	configure libmutt/configure
 CONFIGURE_ARGS=	--enable-threads \
+		--enable-gtkhtml \
 		--disable-more-warnings
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lgiconv"
