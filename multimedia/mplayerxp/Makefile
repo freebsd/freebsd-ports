@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mplayer
-PORTVERSION=	0.90.0.8
-PORTREVISION=	2
+PORTVERSION=	0.90.0.9
 CATEGORIES=	graphics
 MASTER_SITES=	http://ftp.mplayerhq.hu/MPlayer/releases/ \
 		http://www.mplayerhq.hu/MPlayer/releases/ \
@@ -17,7 +16,7 @@ MASTER_SITES=	http://ftp.mplayerhq.hu/MPlayer/releases/ \
 		ftp://ftp2.mplayerhq.hu/MPlayer/releases/ \
 		ftp://ftp.lug.udel.edu/MPlayer/releases/ \
 		http://www.rrr.de/~riggs/mplayer/
-DISTNAME=	MPlayer-0.90pre8
+DISTNAME=	MPlayer-0.90pre9
 
 MAINTAINER=	riggs@rrr.de
 
@@ -134,6 +133,12 @@ RUN_DEPENDS+=		${LOCALBASE}/live/liveMedia/libliveMedia.a:${PORTSDIR}/net/liveMe
 BUILD_DEPENDS+=		${LOCALBASE}/live/liveMedia/libliveMedia.a:${PORTSDIR}/net/liveMedia
 .endif
 
+.if defined(WITH_FREETYPE)
+CONFIGURE_ARGS+=	--with-extraincdir=${LOCALBASE}/include/freetype2 \
+			--enable-freetype
+LIB_DEPENDS+=		freetype.9:${PORTSDIR}/print/freetype2
+.endif
+
 .if defined(WITH_XANIM)
 BUILD_DEPENDS+=	xanim:${PORTSDIR}/graphics/xanim
 
@@ -210,6 +215,13 @@ pre-everything::
 .endif
 .if !defined(WITH_XANIM)
 	@${ECHO_MSG} "You can enable XAnim DLL support by defining WITH_XANIM."
+.endif
+.if !defined(WITH_LIVEMEDIA)
+	@${ECHO_MSG} "You can enable liveMedia support by defining WITH_LIVEMEDIA."
+.endif
+.if !defined(WITH_FREETYPE)
+	@${ECHO_MSG} "You can enable truetype font support by defining WITH_FREETYPE."
+	@${ECHO_MSG} "    But use with caution. mplayer won't use the standard fonts anymore."
 .endif
 .if ${ARCH} == "i386"
 .if !defined(WITHOUT_WIN32_CODECS)
