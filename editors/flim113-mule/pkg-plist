@@ -36,6 +36,7 @@
 %%EMACS_LIBDIR%%/site-lisp/flim/smtp.elc
 %%EMACS_LIBDIR%%/site-lisp/flim/smtpmail.el
 %%EMACS_LIBDIR%%/site-lisp/flim/smtpmail.elc
+%%EMACS_LIBDIR%%/site-lisp/flim-setup.el
 @dirrm %%EMACS_LIBDIR%%/site-lisp/flim
 %%FLIMDOCDIR%%/ChangeLog
 %%FLIMDOCDIR%%/NEWS
