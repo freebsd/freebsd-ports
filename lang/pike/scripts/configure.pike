@@ -17,8 +17,8 @@ readline	"support for command line editing" ON \
 MySQL		"MySQL database support" OFF \
 PostgreSQL	"PostgreSQL database support" OFF \
 mSQL		"mSQL database support" OFF \
+ssl	        "SSL support" OFF \
 2> /tmp/checklist.tmp.$$
-#ssl	        "SSL support" OFF \
 retval=$?
 
 if [ -s /tmp/checklist.tmp.$$ ]; then
@@ -86,6 +86,10 @@ while [ "$1" ]; do
 			echo "CONFIGURE_ARGS+=	--with-msql=\${PREFIX}" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 			mSQL=1
 			;;
+		\"ssl\")
+			echo "CONFIGURE_ARGE+= --with-ssleay" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+			ssl=1
+			;;
 	esac
 	shift
 done
@@ -111,7 +115,7 @@ if [ -z "$mSQL" ]; then
 	echo "CONFIGURE_ARGS+=  --without-msql" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc  
 fi
 if [ -z "$gmp" ]; then
-	echo "CONFIGURE_ARGS+=  --without-gmp" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc  
+	echo "CONFIGURE_ARGS+=  --without-gmp --without-bignums" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc  
 fi
 if [ -z "$JPEG" ]; then
 	echo "CONFIGURE_ARGS+=  --without-jpeg" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc  
