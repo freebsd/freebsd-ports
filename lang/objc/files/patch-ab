@@ -1,0 +1,36 @@
+--- configure.orig	Sat Mar 20 22:27:54 1999
++++ configure	Sat Mar 20 22:35:53 1999
+@@ -730,7 +730,7 @@
+ 	*mwc*)
+ 		DOTSHLIBSUFFIX=".o";;
+ 	*freebsd*)
+-		DOTSHLIBSUFFIX=".so.2.1";;
++		DOTSHLIBSUFFIX=".So.2";;
+ 	*hpux*)
+ 		DOTSHLIBSUFFIX=".sl";;
+ 	*)
+@@ -837,11 +837,11 @@
+ OBJC_BOOTLIBS="$OBJC_BOOTLIBS ${UP}objpak${PATHSEP}objpak.${LIBSUFFIX}"
+ OBJC_BOOTLIBS="$OBJC_BOOTLIBS ${UP}objcrt${PATHSEP}objcrt.${LIBSUFFIX}"
+ 
+-Note OBJCRT_IFLAGS = $OBJCRT_IFLAGS
+-Note OBJPAK_IFLAGS = $OBJPAK_IFLAGS
+-Note OCLIB_IFLAGS  = $OCLIB_IFLAGS
+-Note OBJC_IFLAGS   = $OBJC_IFLAGS
+-Note CAKIT_IFLAGS  = $CAKIT_IFLAGS
++Note OBJCRT_IFLAGS = -I/usr/local/include $OBJCRT_IFLAGS
++Note OBJPAK_IFLAGS = -I/usr/local/include $OBJPAK_IFLAGS
++Note OCLIB_IFLAGS  = -I/usr/local/include $OCLIB_IFLAGS
++Note OBJC_IFLAGS   = -I/usr/local/include $OBJC_IFLAGS
++Note CAKIT_IFLAGS  = -I/usr/local/include $CAKIT_IFLAGS
+ Note OBJC_BOOTLIBS = $OBJC_BOOTLIBS
+ 
+ #
+@@ -975,6 +975,7 @@
+ 	*msvc*) RM="del";;
+ 	*djgpp*) RM="del";;
+ 	*cygwin*) RM="rm -f";;
++	*freebsd*) RM="rm -f";;
+ 	*mwc*) RM="Delete";;
+ 	*ibmvac*) RM="del";;
+ 	*) RM="rm -f";;

@@ -1,0 +1,11 @@
+--- makeLibs.in.orig	Sat Mar 20 22:24:17 1999
++++ makeLibs.in	Sat Mar 20 22:26:18 1999
+@@ -23,7 +23,7 @@
+ # runtime library for -gc option
+ if [ -f $GCPREF/include/gc.h ]; then
+ cat >$T <<EOF
+-OTHER_MFLAGS="-q -gc -DOBJCRT_BOEHM"
++OTHER_MFLAGS="-q -gc -DOBJCRT_BOEHM -I/usr/local/include"
+ EOF
+ 
+ $CF -f $T
