@@ -35,8 +35,8 @@ post-install:
 	@(cd ${PREFIX}/${FONTSDIR} ; mkfontdir)
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/ja/${PORTNAME}
-	@${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
 	@${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/README ${PREFIX}/share/doc/ja/${PORTNAME}/README.euc-jp
+#	@${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
 #	@${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/pcf/fonts.alias.kappa ${PREFIX}/share/doc/${PORTNAME}/
 .endif
 
