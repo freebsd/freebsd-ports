@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.24 1997/03/06 01:23:46 asami Exp $
+# $Id: Makefile,v 1.25 1997/04/07 09:32:58 asami Exp $
 #
 
     SUBDIR += blas
@@ -14,6 +14,7 @@
     SUBDIR += libranlib
     SUBDIR += linpack
     SUBDIR += maxima
+    SUBDIR += numpy
     SUBDIR += octave
     SUBDIR += oleo
     SUBDIR += ss
