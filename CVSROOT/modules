@@ -5384,6 +5384,7 @@ py-jabber	ports/net/py-jabber
 py-kde		ports/x11-toolkits/py-kde
 py-kjbuckets	ports/devel/py-kjbuckets
 py-kqueue	ports/devel/py-kqueue
+py-libnet	ports/net/py-libnet
 py-m2crypto	ports/security/py-m2crypto
 py-martel	ports/textproc/py-martel
 py-ming		ports/graphics/py-ming
