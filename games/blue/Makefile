@@ -1,18 +1,17 @@
 # New ports collection makefile for:	blue
-# Version required:			2.3
+# Version required:			2.4
 # Date created:				6 June 1997
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=		blue-2.3
+DISTNAME=		blue-2.4
 CATEGORIES=		games
 MASTER_SITES=		ftp://locke.ccil.org/pub/esr/
 
 MAINTAINER=		andy@icc.surw.chel.su
 
-NO_WRKSUBDIR=	yes
 ALL_TARGET=
 MAN6=			blue.6
 
