@@ -1,0 +1,12 @@
+--- src/Makefile.am.orig        Tue Nov  4 15:49:35 2003
++++ src/Makefile.am     Tue Nov  4 15:51:07 2003
+@@ -93,7 +93,7 @@
+
+ #sysconfdir = ${prefix}/etc/wzdftpd
+
+-dist_sysconf_DATA = wzd.cfg wzd.pem
++dist_sysconf_DATA = wzd.cfg
+
+ install-data-hook:
+        ${INSTALL_PROGRAM} -m 775 -d @datadir@/wzdftpd/logs || true
+

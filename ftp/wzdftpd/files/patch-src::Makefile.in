@@ -1,0 +1,35 @@
+--- src/Makefile.in.orig	Fri Oct 24 13:24:15 2003
++++ src/Makefile.in	Thu Dec 18 18:44:27 2003
+@@ -253,13 +253,12 @@
+ dist_pkgdata_DATA = file_ginfo.txt  file_help.txt   file_swho.txt \
+ 	file_user.txt file_group.txt  file_rules.txt  \
+ 	file_users.txt  file_who.txt  file_groups.txt  \
+-	file_vfs.txt \
+-	users
++	file_vfs.txt
+ 
+ 
+ 
+ #sysconfdir = ${prefix}/etc/wzdftpd
+-dist_sysconf_DATA = wzd.cfg wzd.pem
++dist_sysconf_DATA = wzd.cfg
+ 
+ # them while "make clean", use CLEANFILES
+ CLEANFILES = wzd_init_lex.c wzd_cookie_lex.c
+@@ -504,6 +503,7 @@
+ 	  echo " $(dist_pkgdataDATA_INSTALL) $$d$$p $(DESTDIR)$(pkgdatadir)/$$f"; \
+ 	  $(dist_pkgdataDATA_INSTALL) $$d$$p $(DESTDIR)$(pkgdatadir)/$$f; \
+ 	done
++	$(dist_pkgdataDATA_INSTALL) $(srcdir)/users $(DESTDIR)$(pkgdatadir)/users.sample
+ 
+ uninstall-dist_pkgdataDATA:
+ 	@$(NORMAL_UNINSTALL)
+@@ -520,7 +520,7 @@
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+ 	  f="`echo $$p | sed -e 's|^.*/||'`"; \
+ 	  echo " $(dist_sysconfDATA_INSTALL) $$d$$p $(DESTDIR)$(sysconfdir)/$$f"; \
+-	  $(dist_sysconfDATA_INSTALL) $$d$$p $(DESTDIR)$(sysconfdir)/$$f; \
++	  $(dist_sysconfDATA_INSTALL) $$d$$p $(DESTDIR)$(sysconfdir)/$$f.sample; \
+ 	done
+ 
+ uninstall-dist_sysconfDATA:
