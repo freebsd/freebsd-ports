@@ -7284,6 +7284,7 @@ p5-Kwiki-Search	ports/www/p5-Kwiki-Search
 p5-Kwiki-Theme-ColumnLayout	ports/www/p5-Kwiki-Theme-ColumnLayout
 p5-Kwiki-UserName	ports/www/p5-Kwiki-UserName
 p5-Kwiki-UserPreferences	ports/www/p5-Kwiki-UserPreferences
+p5-Kwiki-VimMode	ports/www/p5-Kwiki-VimMode
 p5-Kwiki-plugins	ports/www/p5-Kwiki-plugins
 p5-LEGO-RCX	ports/misc/p5-LEGO-RCX
 p5-LJ-Cache	ports/sysutils/p5-LJ-Cache
