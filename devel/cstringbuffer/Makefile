@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cstringbuffer
-PORTVERSION=	0.1.3
+PORTVERSION=	0.1.5
 CATEGORIES=	devel
 MASTER_SITES=	http://www.translator.cx/dist/libs/
 
