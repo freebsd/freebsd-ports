@@ -6386,7 +6386,6 @@ tkinfo		ports/misc/tkinfo
 tkirc		ports/irc/tkirc
 tkman		ports/misc/tkman
 tkmoo		ports/games/tkmoo
-tkrat		ports/mail/tkrat
 tkrat2		ports/mail/tkrat2
 tkref		ports/devel/tkref
 tkregexp	ports/misc/tkregexp
