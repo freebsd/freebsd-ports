@@ -1,0 +1,64 @@
+This is a HP SCSI scanner driver which uses the FreeBSD 'pt' (Processor
+Type) driver.  It has been tested on the HP ScanJet 3C, and was written
+for the HP ScanJet IIcx, so I suspect it will work with all newer HP
+scanners without modifications.
+
+To install the driver you must add a line to your kernel config file
+like the following:
+# HP Scanner
+device pt0 at scbus?
+
+Re-configure, build, and install the new kernel.  On bootup you should
+seem something similar to this which shows your scanner is attached:
+(ncr0:5:0): "HP C2520A 3503" type 3 fixed SCSI 2
+pt0(ncr0:5:0): Processor 
+
+Next, you'll want to make a link from /dev/pt0 to /dev/scanner for the
+driver software.
+
+# cd /dev
+# ln -s pto0 scanner
+
+At this point, you should be able to run the scanner program and see
+results.
+
+- Nate
+
+
+Original README follows:
+---------------------------
+This software is copyright Richard Tobin 1994.  It may be freely
+redistributed provided the copyright notices are not removed.
+
+You can ftp this code from macbeth.cogsci.ed.ac.uk.
+
+This is (a very early version of) a SCSI driver for the HP ScanJet range
+of scanners and a corresponding graphical user interface.
+
+The HP scanners (or at least some of them) are SCSI devices, but do
+not implement the SCSI scanner interface.  Instead they act as SCSI
+processor devices.  They use the SCSI send and receive commands to
+transfer (hard as it is to believe) escape sequences.
+
+The file scsi.c implements the SCSI send and receive commands in user
+mode, using the *BSD "uk" (unknown device) driver.  The uk driver is
+somewhat flaky, rarely returning errors even if the device is switched
+off.  Error detection is therefore likely to be minimal.
+
+The file scanner.c provides a thin layer on top of scsi.c, and might
+decode error returns if there were any.
+
+The file scl.c implements many of the HP SCL (Scanner Control
+Language) commands.  This involves generating and parsing lots of
+escape sequences.
+
+The file gui.c provides a simple X interface to the scanner.  It
+allows you to preview the whole scan area, zoom in on the bit you're
+interested in, and scan it to a file.  So far it can only scan 24-bit
+colour, preview on a colour display, and produce ppm files.
+
+All of this has been hacked up in a hurry, so it's pretty minimal.  It
+has been tried only under FreeBSD 1.1 with a ScanJet IIcx connected to
+an Adaptec 1542CF.  I don't have much time to spend on it, so don't
+expect rapid improvements.  Please send bug-reports and improvements
+to R.Tobin@ed.ac.uk.
