@@ -15,22 +15,20 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gnome print support library
 
-LIB_DEPENDS=	gnomeprint-2.0:${PORTSDIR}/print/libgnomeprint20 \
-		gnomecanvas-2.200:${PORTSDIR}/graphics/libgnomecanvas
+LIB_DEPENDS=	gnomeprint-2.0:${PORTSDIR}/print/libgnomeprint20
 
 LATEST_LINK=	libgnomeprintui20
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack
+USE_GNOME=	gnomeprefix gnomehack libgnomecanvas
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 USE_BISON=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \

@@ -17,8 +17,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	C++ wrapper for gtk, a x11 graphics library
 
-LIB_DEPENDS=	sigc-1.2.5:${PORTSDIR}/devel/libsigc++12 \
-		gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20
+LIB_DEPENDS=	sigc-1.2.5:${PORTSDIR}/devel/libsigc++12
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 USE_X_PREFIX=	yes
@@ -26,7 +25,7 @@ LATEST_LINK=	gtk--2
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
-USE_GNOME=	gnomehack
+USE_GNOME=	gnomehack gtk20
 CONFIGURE_ARGS=	--enable-static=yes \
 		--without-gnome \
 		--with-sigc-prefix=${LOCALBASE}

@@ -16,13 +16,10 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Theme engine for the gtk+-2.0 toolkit
 
-LIB_DEPENDS=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20
-
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
-USE_GNOME=	gnomehack
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
+USE_GNOME=	gnomehack gtk20
 PLIST_SUB=	VERSION=2.2.0
 
 THEMES=		metal redmond95

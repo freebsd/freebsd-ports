@@ -18,14 +18,14 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GTK+ binding for rep Lisp interpreter
 
-LIB_DEPENDS=	rep.12:${PORTSDIR}/lang/librep \
-		gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui
+LIB_DEPENDS=	rep.12:${PORTSDIR}/lang/librep
 
 PLIST_SUB=	GNUHOST=${ARCH}-pc-freebsd${OSREL:C/\..*//}
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
+USE_GNOME=	libgnomeui
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libglade \
 		--with-gnome
