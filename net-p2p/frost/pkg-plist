@@ -1,0 +1,10 @@
+bin/frost
+%%PORTDOCS%%%%DOCSDIR%%/Frost.tex
+%%PORTDOCS%%%%DOCSDIR%%/authors.txt
+%%PORTDOCS%%%%DOCSDIR%%/faq.txt
+%%PORTDOCS%%%%DOCSDIR%%/gpl.txt
+%%PORTDOCS%%%%DOCSDIR%%/history.txt
+%%PORTDOCS%%%%DOCSDIR%%/notes.txt
+@dirrm share/java/jar/frost
+@unexec rmdir %D/share/java/jar 2>/dev/null || true
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
