@@ -74,7 +74,7 @@ include/pi-version.h
 lib/libpicc.a
 lib/libpisock.a
 lib/libpisock.so
-lib/libpisock.so.3.1
+lib/libpisock.so.4.0
 lib/pix/b1.gif
 lib/pix/b2.gif
 lib/pix/b3.gif
