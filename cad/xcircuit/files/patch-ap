@@ -1,0 +1,14 @@
+*** selection.c.orig	Tue Jan 11 04:27:36 2000
+--- selection.c	Fri Jan 21 12:00:00 2000
+***************
+*** 9,15 ****
+--- 9,17 ----
+  
+  #include <stdio.h>
+  #include <string.h>
++ #ifndef __STDC__
+  #include <malloc.h>
++ #endif
+  #include <math.h>
+  
+  #include <X11/Intrinsic.h>

@@ -1,0 +1,14 @@
+*** netlist.c.orig	Thu Jan  6 05:09:34 2000
+--- netlist.c	Fri Jan 21 12:00:00 2000
+***************
+*** 10,16 ****
+--- 10,18 ----
+  
+  #include <stdio.h>
+  #include <string.h>
++ #ifndef __STDC__
+  #include <malloc.h>
++ #endif
+  
+  #include <X11/Intrinsic.h>
+  #include <X11/StringDefs.h>

@@ -1,0 +1,14 @@
+*** filelist.c.orig	Thu Jan  6 03:16:39 2000
+--- filelist.c	Fri Jan 21 12:00:00 2000
+***************
+*** 5,11 ****
+--- 5,13 ----
+  
+  #include <stdio.h>
+  #include <string.h>
++ #ifndef __STDC__
+  #include <malloc.h>
++ #endif
+  #include <sys/types.h>
+  #ifdef linux
+  #include <dirent.h>

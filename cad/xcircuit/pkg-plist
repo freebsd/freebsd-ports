@@ -4,6 +4,7 @@ lib/X11/xcircuit/analog.lps
 lib/X11/xcircuit/avlsi.lps
 lib/X11/xcircuit/builtins.lps
 lib/X11/xcircuit/digital.lps
+lib/X11/xcircuit/generic.lps
 lib/X11/xcircuit/fonts/courier.lps
 lib/X11/xcircuit/fonts/courier.xfe
 lib/X11/xcircuit/fonts/courieriso.xfe
@@ -38,6 +39,7 @@ share/examples/xcircuit/analog1.ps
 share/examples/xcircuit/analog2.ps
 share/examples/xcircuit/analoglib.lps
 share/examples/xcircuit/border.ps
+share/examples/xcircuit/diffamp_test.ps
 share/examples/xcircuit/logic8.ps
 share/examples/xcircuit/prelude.ps
 share/examples/xcircuit/systemd1.lgf

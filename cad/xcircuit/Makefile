@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xcircuit
-# Version required:	2.0b1
+# Version required:	2.0b3
 # Date created:		3 Apr 1998
 # Whom:			giffunip@asme.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xcircuit-2.0b1
+DISTNAME=	xcircuit-2.0b3
 CATEGORIES=	cad
 MASTER_SITES=	ftp://bach.ece.jhu.edu/pub/tim/xcircuit/ \
 		http://bach.ece.jhu.edu/~tim/programs/xcircuit/archive/
@@ -22,9 +22,7 @@ XMKMF=		xmkmf
 MAN1=		xcircuit.1
 
 post-install:
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/examples/xcircuit
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${PREFIX}/share/examples/xcircuit
-.endif
 
 .include <bsd.port.mk>
