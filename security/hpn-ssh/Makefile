@@ -48,6 +48,30 @@ CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man \
 EXTRA_PATCHES+=		${FILESDIR}/batch.patch
 .endif
 
+.if defined(KRB5_HOME)
+MASTER_SITES+=	${PATCH_SITES}
+DISTFILES=	${EXTRACT_ONLY} ${PORTNAME}-${PORTVERSION}-gssapi.patch
+EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
+PATCH_SITES=	http://www.sxw.org.uk/computing/patches/
+PATCHFILES=	${PORTNAME}-${PORTVERSION}-krb5.patch
+BUILD_DEPENDS=		autoconf:${PORTSDIR}/devel/autoconf
+# USE_AUTOCONF_VER=	252 # broken
+CONFIGURE_ARGS+=	--with-kerberos5=${KRB5_HOME}
+AUTOCONF=	autoconf
+AUTOHEADER=	autoheader
+
+post-patch:
+	@${ECHO_MSG} Applying extra patch for GSS-API key-exchange...
+	@${PATCH} ${PATCH_DIST_ARGS:S/-p0/-p1/} \
+		< ${DISTDIR}/${PORTNAME}-${PORTVERSION}-gssapi.patch
+
+pre-configure:
+	@${ECHO_MSG} !!!! Warning this option uses autoconf/autoheader !!!
+	(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF} \
+                ${AUTOCONF_ARGS})
+	(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOCONF_ENV} ${AUTOHEADER})
+.endif
+
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
