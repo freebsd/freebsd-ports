@@ -1,0 +1,9 @@
+Top level aggregator that will select a default lineup of
+site instances from which to retrieve quotes. Other
+than the default lineup, this module behaves identically
+to whichever site-specific module is first in the lineup.
+See below for site-specific modules.
+
+WWW: http://search.cpan.org/search?dist=Finance-QuoteHist
+
+Seamus Venasse <svenasse@polaris.ca>
