@@ -1,6 +1,6 @@
---- sshd/Makefile.orig	Sun Aug 20 14:42:41 2000
-+++ sshd/Makefile	Sat Nov  4 17:08:36 2000
-@@ -3,8 +3,8 @@
+--- sshd/Makefile.orig	Fri Nov 16 06:02:09 2001
++++ sshd/Makefile	Fri Nov 16 06:03:51 2001
+@@ -5,8 +5,8 @@
  PROG=	sshd
  BINOWN=	root
  BINMODE=555
@@ -9,17 +9,17 @@
 +BINDIR=	/sbin
 +MAN8=	sshd.8
  CFLAGS+=-DHAVE_LOGIN_CAP
+ #CFLAGS+=-DBSD_AUTH
  
- SRCS=	sshd.c auth-rhosts.c auth-passwd.c auth-rsa.c auth-rh-rsa.c \
-@@ -12,6 +12,7 @@
- 	auth.c auth1.c auth2.c auth-options.c session.c
+@@ -17,6 +17,7 @@
+ 	auth-skey.c auth-bsdauth.c
  
  .include <bsd.own.mk> # for KERBEROS and AFS
 +.include "../Makefile.inc"
  
- .if (${KERBEROS} == "yes")
- .if (${AFS} == "yes")
-@@ -19,9 +20,9 @@
+ .if (${KERBEROS5:L} == "yes")
+ CFLAGS+=-DKRB5 -I${DESTDIR}/usr/include/kerberosV
+@@ -31,15 +32,15 @@
  LDADD+=  -lkafs
  DPADD+=  ${LIBKRBAFS}
  .endif # AFS
@@ -31,12 +31,10 @@
  DPADD+=	 ${LIBKRB}
  .endif # KERBEROS
  
-@@ -31,7 +32,7 @@
- 
  .include <bsd.prog.mk>
  
 -LDADD+=	-lcrypto -lutil -lz
 +LDADD+=	${CRYPTOLIBS} -lcrypt -lutil -lz
  DPADD+=	${LIBCRYPTO} ${LIBUTIL} ${LIBZ}
  
- .if (${TCP_WRAPPERS} == "yes")
+ .if (${TCP_WRAPPERS:L} == "yes")
