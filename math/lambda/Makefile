@@ -14,6 +14,7 @@ MASTER_SITES=	http://66.47.116.75/~demo/lambda/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A lambda calculus interpreter
 
+USE_PERL5_BUILD=	yes
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/lambda \
