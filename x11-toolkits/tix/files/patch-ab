@@ -1,14 +1,5 @@
 --- ../Makefile.in.orig	Wed Jul  9 22:33:48 1997
 +++ ../Makefile.in	Wed Oct  1 12:03:37 1997
-@@ -28,7 +28,7 @@
- # Directory in which to install the library of Tix scripts and demos
- # (note: you can set the TIX_LIBRARY environment variable at run-time to
- # override the compiled-in location):
--TIX_LIBRARY =	$(prefix)/lib/tix$(TIX_VERSION)
-+TIX_LIBRARY =	$(prefix)/share/tix$(TIX_VERSION)
- 
- # Directory in which to install the archive libtix.a:
- LIB_DIR =	$(exec_prefix)/lib
 @@ -115,7 +115,7 @@
  		fi; \
  	    done;
