@@ -1,0 +1,77 @@
+--- /dev/null	Wed Oct 10 15:39:32 2001
++++ id3v2.1	Mon Dec 11 00:53:03 2000
+@@ -0,0 +1,74 @@
++.TH ID3V2 1 "May 2000" "" "User Command"
++.SH NAME
++id3v2 \-  Adds/Modifies/Removes/Views id3v2 tags, converts/lists id3v1 tags
++.SH SYNOPSIS
++.B id3v2
++.RB [
++.I OPTION
++.RB ]
++...
++.RB [
++.I FILE
++.RB ]
++...
++.br
++.SH OPTIONS
++.TP
++.B \-h, \-\-help
++Display help and exit
++.TP
++.B \-f, \-\-list\-frames
++Display all possible frames for id3v2
++.TP
++.B \-L, \-\-list\-genres
++Lists all id3v1 genres
++.TP
++.B \-v, \-\-version
++Display version information and exit
++.TP
++.B \-l, \-\-list
++Lists the tag(s) on the file(s)
++.TP
++.B \-R, \-\-list-rfc822
++Lists using an rfc822\-style format for output
++.TP
++.B \-d, \-\-delete\-v2
++Deletes id3v2 tags
++.TP
++.B \-s, \-\-delete\-v1
++Deletes id3v1 tags
++.TP
++.B \-D, \-\-delete\-all
++ Deletes both id3v1 and id3v2 tags
++.TP
++.B \-C, \-\-convert
++ Converts id3v1 tag to id3v2
++.TP
++.B \-a, \-\-artist ARTIST
++Set the artist information
++.TP
++.B \-A, \-\-album ALBUM
++Set the album title information
++.TP
++.B \-t, \-\-song SONG
++Set the song title information
++.TP
++.B \-c, \-\-comment DESCRIPTION:COMMENT
++Set the comment information
++.TP
++.B \-g, \-\-genre num
++Set the genre number
++.TP
++.B \-y, \-\-year num
++Set the year
++.TP
++.B \-T, \-\-track num/num
++Set the track number/(optional) total tracks
++
++.SH SEE ALSO
++id3tag(1), id3info(1), id3convert(1)
++.SH AUTHOR
++.B id3v2
++is by myers <icepick@users.sourceforge.net> with major portions used from id3lib
++examples. Manual page written for Debian GNU/Linux by Robert Woodcock
++<rcw@debian.org>.
