@@ -9,7 +9,7 @@
 # png version number) when updating this port.  Thank you.
 
 PORTNAME=	png
-PORTVERSION=    1.0.7
+PORTVERSION=    1.0.8
 CATEGORIES=     graphics
 MASTER_SITES=   ftp://ftp.libpng.org/pub/png/src/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -30,7 +30,21 @@ PLIST_SUB=	SHLIB_VER="${SHLIB_VER}"
 MAN3=           libpng.3 libpngpf.3
 MAN5=           png.5
 
-do-configure:
-	cd ${WRKSRC} && ${CP} scripts/makefile.std Makefile
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if defined(WITH_MMX) && (${ARCH} == "i386")
+MAKE_ENV+=	USE_MMX=yes
+.endif
+
+.if !defined(WITH_MMX) && (${ARCH} == "i386")
+post-extract:
+	@${ECHO_MSG}
+	@${ECHO_MSG} " If you have a CPU with MMX instruction set (Pentium/P55C and higher) you can"
+	@${ECHO_MSG} " try to add \"-DWITH_MMX\" to build libpng with MMX-optimized assembler routines."
+	@${ECHO_MSG}
+.endif
+
+do-configure:
+	${LN} -sf ${WRKSRC}/scripts/makefile.std ${WRKSRC}/Makefile
+
+.include <bsd.port.post.mk>
