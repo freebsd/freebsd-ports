@@ -1,13 +1,13 @@
 # New ports collection makefile for:	vtcl
-# Version required:	1.10
+# Version required:	1.11
 # Date Created:		29 May 1997
 # Whom:			Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
-# $Id: Makefile,v 1.4 1997/08/24 23:05:29 asami Exp $
+# $Id: Makefile,v 1.5 1997/11/30 19:38:51 vanilla Exp $
 #
 
-DISTNAME=	vt-1.10
-PKGNAME=	vtcl-1.10
+DISTNAME=	vt-1.11
+PKGNAME=	vtcl-1.11
 CATEGORIES=	devel x11 tk80
 MASTER_SITES=	http://www.neuron.com/stewart/vtcl/dload/ \
 		ftp://ftp.neuron.com/pub/
@@ -34,7 +34,7 @@ do-install:
 	@ ${INSTALL_DATA} ${WRKSRC}/images/${image} ${PREFIX}/lib/vtcl/images
 .endfor
 
-.for lib in about.tcl attrbar.tcl balloon.tcl bind.tcl color.tcl command.tcl compound.tcl compounds.tcl console.tcl do.tcl dragsize.tcl dump.tcl edit.tcl file.tcl globals.tcl handle.tcl help.tcl input.tcl lib_core.tcl lib_tix.tcl misc.tcl name.tcl prefs.tcl proc.tcl propmgr.tcl remove.sh replace.sh tabpanel.tcl tclet.tcl toolbar.tcl tops.tcl tree.tcl var.tcl vtclib.tcl widget.tcl
+.for lib in about.tcl attrbar.tcl balloon.tcl bind.tcl color.tcl command.tcl compound.tcl compounds.tcl console.tcl do.tcl dragsize.tcl dump.tcl edit.tcl editor.tcl file.tcl globals.tcl handle.tcl help.tcl input.tcl lib_blt.tcl lib_core.tcl lib_itcl.tcl lib_tix.tcl menu.tcl misc.tcl name.tcl prefs.tcl proc.tcl propmgr.tcl remove.sh replace.sh tabpanel.tcl tclet.tcl toolbar.tcl tops.tcl tree.tcl var.tcl vtclib.tcl widget.tcl
 	@ ${INSTALL_DATA} ${WRKSRC}/lib/${lib} ${PREFIX}/lib/vtcl/lib
 .endfor
 

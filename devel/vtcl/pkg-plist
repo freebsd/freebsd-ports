@@ -80,13 +80,17 @@ lib/vtcl/lib/do.tcl
 lib/vtcl/lib/dragsize.tcl
 lib/vtcl/lib/dump.tcl
 lib/vtcl/lib/edit.tcl
+lib/vtcl/lib/editor.tcl
 lib/vtcl/lib/file.tcl
 lib/vtcl/lib/globals.tcl
 lib/vtcl/lib/handle.tcl
 lib/vtcl/lib/help.tcl
 lib/vtcl/lib/input.tcl
+lib/vtcl/lib/lib_blt.tcl
 lib/vtcl/lib/lib_core.tcl
+lib/vtcl/lib/lib_itcl.tcl
 lib/vtcl/lib/lib_tix.tcl
+lib/vtcl/lib/menu.tcl
 lib/vtcl/lib/misc.tcl
 lib/vtcl/lib/name.tcl
 lib/vtcl/lib/prefs.tcl
