@@ -50,6 +50,7 @@
     SUBDIR += ecawave
     SUBDIR += ermixer
     SUBDIR += esound
+    SUBDIR += evilbar
     SUBDIR += extace
     SUBDIR += faad
     SUBDIR += fcplay
