@@ -56,6 +56,7 @@
     SUBDIR += hevea
     SUBDIR += htdig
     SUBDIR += html
+    SUBDIR += html2fo
     SUBDIR += htmldoc
     SUBDIR += info2html
     SUBDIR += info_to_html
