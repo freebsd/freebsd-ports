@@ -1,0 +1,93 @@
+#!/bin/sh
+
+user=nullmail
+group=nullmail
+
+ask() {
+    local question default answer
+
+    question=$1
+    default=$2
+    if [ -z "${PACKAGE_BUILDING}" ]; then
+        read -p "${question} [${default}]? " answer
+    fi
+    if [ x${answer} = x ]; then
+        answer=${default}
+    fi
+    echo ${answer}
+}
+
+yesno() {
+    local dflt question answer
+
+    question=$1
+    dflt=$2
+    while :; do
+        answer=$(ask "${question}" "${dflt}")
+        case "${answer}" in
+        [Yy]*)          return 0;;
+        [Nn]*)          return 1;;
+        esac
+        echo "Please answer yes or no."
+    done
+}
+
+delete_account() {
+    local u g home
+
+    u=$1
+    g=$2
+    if yesno "Do you want me to remove group \"${g}\"" y; then
+	pw groupdel -n ${g}
+	echo "Done."
+    fi
+    if yesno "Do you want me to remove user \"${u}\"" y; then
+	eval home=~${u}
+	pw userdel -n ${u}
+	echo "Done."
+	if [ -d "${home}" ]; then
+	    echo "Please remember to check if there's any unsent mail left"
+	    echo "in the home directory \"${home}\""
+	fi
+
+    fi
+}
+
+if [ x"$2" = xDEINSTALL ]; then
+    if [ ! -n "$BATCH" ]; then
+	if /bin/ps -axc | /usr/bin/grep -q nullmailer-send; then
+	    if yesno "There are some nullmailer processes running.  Shall I kill them" y; then
+		${PKG_PREFIX}/etc/rc.d/nullmail.sh stop
+		sleep 2
+	    else
+		echo "OK ... I hope you know what you are doing."
+	    fi
+	fi
+
+    fi
+fi
+
+if [ x"$2" = xPOST-DEINSTALL ]; then
+    tmp="/etc/#nullmailer$$"
+    if [ ! -n "$BATCH" ]; then
+	if yesno "Do you want me to remove the nullmail logging from \"/etc/syslog.conf\"" y; then
+	    sed "/nullmail\.log\$/d" /etc/syslog.conf >${tmp} || exit
+	    chmod 644 ${tmp}
+	    mv ${tmp} /etc/syslog.conf || exit
+
+	    if [ -f /var/run/syslog.pid ]; then
+		echo "Giving syslogd a kick in the pants."
+		kill -HUP `cat /var/run/syslog.pid`
+	    fi
+	fi
+
+	if yesno "Do you want me to remove the nullmail log entry from \"/etc/newsyslog.conf\"" y; then
+	    sed "/nullmail\.log/d" /etc/newsyslog.conf >${tmp} || exit
+	    chmod 644 ${tmp}
+	    mv ${tmp} /etc/newsyslog.conf || exit
+	    echo "Done."
+	fi
+	delete_account ${user} ${group}
+
+    fi
+fi
