@@ -1,0 +1,8 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/SHA.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/SHA.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/sha_driver.pl
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/SHA/SHA.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/SHA/SHA.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/SHA/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/SHA/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/SHA
