@@ -8,7 +8,7 @@
 PORTNAME=	ucl
 PORTVERSION=	0.92
 CATEGORIES=	archivers devel
-MASTER_SITES=	http://wildsau.idv.uni-linz.ac.at/mfx/download/${PORTNAME}/ \
+MASTER_SITES=	http://www.oberhumer.com/opensource/ucl/download/ \
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	libs/compression
 
