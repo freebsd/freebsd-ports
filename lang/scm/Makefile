@@ -35,6 +35,12 @@ SCM_DATA=	COPYING Iedline.scm Init${PORTVERSION}.scm Link.scm \
 SCM_MODULES=	crs.so edline.so gsubr.so ioext.so posix.so ramap.so \
 		record.so rgx.so sc2.so socket.so unix.so
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 post-extract:
 	@${TAR} -C ${WRKDIR} -zxf ${DISTDIR}/slib-psd1-3.tar.gz
 	@${CP} ${FILESDIR}/require.scm.in ${WRKDIR}/require.scm
@@ -83,4 +89,4 @@ do-install:
 	@install-info ${PREFIX}/info/scm.info ${PREFIX}/info/dir
 	cd ${PREFIX}/lib/scm && ${PREFIX}/bin/scm -lmkimpcat.scm
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
