@@ -1,0 +1,20 @@
+--- kdeprint/configure.in.in	2001/10/15 08:28:25	1.10
++++ kdeprint/configure.in.in.new	2002/04/11 16:14:37
+@@ -5,7 +5,8 @@ kde_save_libs="$LIBS"
+ LIBS="$all_libraries $USER_LDFLAGS -lcups $LIBDL $LIBSOCKET"
+ CFLAGS="$CFLAGS $all_includes $USER_INCLUDES"
+ AC_MSG_CHECKING(CUPS version >= $1)
+-ac_link='${CC} $CFLAGS -o conftest conftest.c $LIBS 1>&5'
++AC_LANG_SAVE
++AC_LANG_C
+ cat > conftest.c <<EOF
+ #include <cups/cups.h>
+ #include <stdio.h>
+@@ -30,6 +31,7 @@ else
+   ac_have_new_cups="no"
+ fi
+ rm -f conftest*
++AC_LANG_RESTORE
+ CFLAGS="$kde_save_cflags"
+ LIBS="$kde_save_libs"
+ AC_MSG_RESULT("$ac_have_new_cups")

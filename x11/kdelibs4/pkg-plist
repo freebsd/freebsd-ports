@@ -1,19 +1,20 @@
-bin/artsc-config
-bin/artscat
-bin/artsd
-bin/artsdsp
 bin/artsmessage
-bin/artsplay
-bin/artsshell
-bin/artswrapper
 bin/checkXML
 bin/cupsdconf
 bin/cupsdoprint
 bin/dcop
+bin/dcopclient
+bin/dcopfind
 bin/dcopidl
 bin/dcopidl2cpp
+bin/dcopobject
+bin/dcopref
 bin/dcopserver
+bin/dcopserver_shutdown
+bin/dcopstart
 bin/imagetops
+bin/kab2kabc
+bin/kaddprinterwizard
 bin/kbuildsycoca
 bin/kconf_update
 bin/kcookiejar
@@ -25,94 +26,37 @@ bin/kdeinit_shutdown
 bin/kdeinit_wrapper
 bin/kdesu_stub
 bin/kdontchangethehostname
+bin/kimage_concat
+bin/kinstalltheme
 bin/kio_http_cache_cleaner
 bin/kio_uiserver
+bin/kioslave
 bin/klauncher
 bin/kmailservice
 bin/knotify
 bin/kpac_dhcp_helper
 bin/ksendbugmail
 bin/kshell
+bin/ktelnetservice
 bin/kwrapper
 bin/lnusertemp
 bin/make_driver_db_cups
-bin/make_driver_db_lpd
-bin/mcopidl
+bin/make_driver_db_lpr
 bin/meinproc
 bin/preparetips
-bin/settheme
 bin/xml2man
 bin/xmlizer
 etc/rc.d/kdelibs.sh
-include/addressbook.h
-include/arts/anyref.h
-include/arts/artsflow.h
-include/arts/artsflow.idl
 include/arts/artskde.h
-include/arts/artsversion.h
-include/arts/asyncstream.h
-include/arts/audioio.h
-include/arts/audiosubsys.h
-include/arts/buffer.h
-include/arts/cache.h
-include/arts/cachedwav.h
-include/arts/common.h
-include/arts/connect.h
-include/arts/connection.h
-include/arts/convert.h
-include/arts/core.h
-include/arts/core.idl
-include/arts/cpuinfo.h
-include/arts/datapacket.h
-include/arts/debug.h
-include/arts/delayedreturn.h
-include/arts/dispatcher.h
-include/arts/dynamicrequest.h
-include/arts/dynamicskeleton.h
-include/arts/extensionloader.h
-include/arts/factory.h
-include/arts/fft.h
-include/arts/flowsystem.h
-include/arts/idlfilereg.h
-include/arts/ifacerepo_impl.h
-include/arts/iomanager.h
 include/arts/kartsdispatcher.h
 include/arts/kartsfloatwatch.h
-include/arts/kmedia2.h
-include/arts/kmedia2.idl
+include/arts/kartsserver.h
 include/arts/kplayobject.h
 include/arts/kplayobjectfactory.h
-include/arts/mcopconfig.h
-include/arts/mcoputils.h
-include/arts/notification.h
-include/arts/object.h
-include/arts/objectmanager.h
-include/arts/pipebuffer.h
-include/arts/pool.h
-include/arts/qiomanager.h
-include/arts/reference.h
-include/arts/referenceclean.h
-include/arts/resample.h
-include/arts/socketconnection.h
-include/arts/soundserver.h
-include/arts/soundserver.idl
-include/arts/startupmanager.h
-include/arts/stdsynthmodule.h
-include/arts/synthschedule.h
-include/arts/tcpconnection.h
-include/arts/tcpserver.h
-include/arts/thread.h
-include/arts/type.h
-include/arts/unixconnection.h
-include/arts/unixserver.h
-include/arts/weakreference.h
-include/artsc/artsc.h
-include/booktoken.h
 include/dcopclient.h
 include/dcopobject.h
 include/dcopref.h
 include/dcopstub.h
-include/defaultprogress.h
 include/dom/css_rule.h
 include/dom/css_stylesheet.h
 include/dom/css_value.h
@@ -142,28 +86,54 @@ include/dom/html_list.h
 include/dom/html_misc.h
 include/dom/html_object.h
 include/dom/html_table.h
-include/kabapi.h
+include/kabc/address.h
+include/kabc/addressbook.h
+include/kabc/addressee.h
+include/kabc/addresseedialog.h
+include/kabc/distributionlist.h
+include/kabc/distributionlisteditor.h
+include/kabc/format.h
+include/kabc/geo.h
+include/kabc/phonenumber.h
+include/kabc/resource.h
+include/kabc/resourcefile.h
+include/kabc/simpleformat.h
+include/kabc/stdaddressbook.h
+include/kabc/timezone.h
+include/kabc/vcardformat.h
 include/kaboutapplication.h
 include/kaboutdata.h
 include/kaboutdialog.h
 include/kaboutkde.h
 include/kaccel.h
 include/kaccelgen.h
-include/kaccelmenu.h
 include/kaction.h
+include/kactionshortcutlist.h
+include/kactivelabel.h
 include/kallocator.h
-include/kalphapainter.h
 include/kanimwidget.h
 include/kapp.h
 include/kapplication.h
+include/karchive.h
 include/karrowbutton.h
 include/kasyncio.h
+include/kate/document.h
+include/kate/view.h
 include/kaudioplayer.h
 include/kauthicon.h
 include/kautomount.h
+include/kbookmark.h
+include/kbookmarkbar.h
+include/kbookmarkdrag.h
+include/kbookmarkexporter.h
+include/kbookmarkimporter.h
+include/kbookmarkmanager.h
+include/kbookmarkmenu.h
+include/kbookmarknotifier.h
 include/kbufferedio.h
 include/kbugreport.h
 include/kbuttonbox.h
+include/kcatalogue.h
 include/kcharselect.h
 include/kcharsets.h
 include/kcmdlineargs.h
@@ -184,28 +154,33 @@ include/kconfig.h
 include/kconfigbackend.h
 include/kconfigbase.h
 include/kconfigdata.h
-include/kcontainer.h
 include/kcrash.h
 include/kcursor.h
 include/kdatastream.h
+include/kdatatool.h
+include/kdatepicker.h
 include/kdatepik.h
 include/kdatetbl.h
 include/kdatewidget.h
-include/kdbtn.h
 include/kdcopactionproxy.h
 include/kdcoppropertyproxy.h
 include/kde.pot
 include/kde_dmalloc.h
 include/kdebug.h
+include/kdebugclasses.h
 include/kdedmodule.h
+include/kdeprint/kiconselectaction.h
 include/kdeprint/kmjobviewer.h
 include/kdeprint/kmmainview.h
+include/kdeprint/kmmanager.h
+include/kdeprint/kmobject.h
+include/kdeprint/kmprinter.h
 include/kdeprint/kmprinterpage.h
+include/kdeprint/kmtimer.h
 include/kdeprint/kpreloadobject.h
+include/kdeprint/kprintdialog.h
 include/kdeprint/kprintdialogpage.h
 include/kdesktopfile.h
-include/kdesktopwidget.h
-include/kdestyle.h
 include/kdesu/client.h
 include/kdesu/defaults.h
 include/kdesu/kcookie.h
@@ -215,42 +190,50 @@ include/kdesu/pty.h
 include/kdesu/ssh.h
 include/kdesu/stub.h
 include/kdesu/su.h
+include/kdeversion.h
 include/kdialog.h
 include/kdialogbase.h
 include/kdirlister.h
 include/kdirnotify.h
 include/kdirnotify_stub.h
 include/kdiroperator.h
+include/kdirselectdialog.h
 include/kdirsize.h
 include/kdirwatch.h
-include/kdocktabctl.h
 include/kdockwidget.h
 include/kdockwindow.h
 include/kdrawutil.h
 include/kdualcolorbtn.h
+include/kdualcolorbutton.h
 include/keditcl.h
 include/keditlistbox.h
 include/kedittoolbar.h
 include/kemailsettings.h
+include/kextendedsocket.h
 include/kextsock.h
 include/kfile.h
-include/kfilebookmark.h
 include/kfiledetailview.h
 include/kfiledialog.h
 include/kfilefilter.h
+include/kfilefiltercombo.h
 include/kfileiconview.h
 include/kfileitem.h
+include/kfilemetainfo.h
 include/kfilepreview.h
-include/kfilereader.h
+include/kfiletreebranch.h
+include/kfiletreeview.h
+include/kfiletreeviewitem.h
 include/kfileview.h
-include/kfileviewitem.h
 include/kfilterbase.h
 include/kfilterdev.h
 include/kfontcombo.h
 include/kfontdialog.h
+include/kgenericfactory.h
+include/kgenericfactory.tcc
 include/kglobal.h
 include/kglobalaccel.h
 include/kglobalsettings.h
+include/kguiitem.h
 include/khelpmenu.h
 include/khtml_events.h
 include/khtml_part.h
@@ -276,6 +259,7 @@ include/kio/http_slave_defaults.h
 include/kio/ioslave_defaults.h
 include/kio/job.h
 include/kio/jobclasses.h
+include/kio/kdesasl.h
 include/kio/kmdbase.h
 include/kio/kmdcodec.h
 include/kio/kpac.h
@@ -295,6 +279,7 @@ include/kio/slaveconfig.h
 include/kio/slaveinterface.h
 include/kio/statusbarprogress.h
 include/kio/tcpslavebase.h
+include/kio/thumbcreator.h
 include/kio/uiserver.h
 include/kio/uiserver_stub.h
 include/kipc.h
@@ -302,16 +287,17 @@ include/kjanuswidget.h
 include/kjavaapplet.h
 include/kjavaappletcontext.h
 include/kjavaappletserver.h
-include/kjavaappletwidget.h
 include/kjavaprocess.h
-include/kjs/function.h
-include/kjs/kjs.h
-include/kjs/lookup.h
+include/kjs/interpreter.h
 include/kjs/object.h
 include/kjs/operations.h
 include/kjs/types.h
 include/kjs/ustring.h
+include/kjs/value.h
+include/kkeybutton.h
 include/kkeydialog.h
+include/kkeynative.h
+include/klargefile.h
 include/kled.h
 include/klibloader.h
 include/klineedit.h
@@ -320,12 +306,15 @@ include/klistbox.h
 include/klistview.h
 include/klocale.h
 include/kmainwindow.h
+include/kmainwindowiface.h
 include/kmdcodec.h
 include/kmenubar.h
 include/kmessagebox.h
 include/kmimemagic.h
 include/kmimesourcefactory.h
 include/kmimetype.h
+include/kmimetyperesolver.h
+include/kmultipledrag.h
 include/knotifyclient.h
 include/knuminput.h
 include/knumvalidator.h
@@ -333,13 +322,17 @@ include/kopenssl.h
 include/kopenwith.h
 include/kpalette.h
 include/kpanelapplet.h
+include/kpanelappmenu.h
 include/kpanelextension.h
 include/kpanelmenu.h
 include/kparts/browserextension.h
 include/kparts/browserinterface.h
+include/kparts/browserrun.h
+include/kparts/componentfactory.h
 include/kparts/dockmainwindow.h
 include/kparts/event.h
 include/kparts/factory.h
+include/kparts/genericfactory.h
 include/kparts/historyprovider.h
 include/kparts/mainwindow.h
 include/kparts/part.h
@@ -353,11 +346,13 @@ include/kpixmapprovider.h
 include/kpixmapsplitter.h
 include/kpopupmenu.h
 include/kpreviewwidgetbase.h
+include/kprintaction.h
 include/kprinter.h
 include/kprocctrl.h
 include/kprocess.h
 include/kprocio.h
 include/kprogress.h
+include/kpropertiesdialog.h
 include/kpropsdlg.h
 include/kprotocolinfo.h
 include/kprotocolmanager.h
@@ -365,6 +360,7 @@ include/kpushbutton.h
 include/krandomsequence.h
 include/krecentdocument.h
 include/kregexp.h
+include/kregexpeditorinterface.h
 include/krestrictedline.h
 include/krfcdate.h
 include/krootpixmap.h
@@ -384,11 +380,14 @@ include/kservicetype.h
 include/ksharedpixmap.h
 include/ksharedptr.h
 include/kshellcompletion.h
+include/kshortcut.h
+include/kshortcutlist.h
 include/kshred.h
 include/ksimpleconfig.h
 include/ksock.h
 include/ksockaddr.h
 include/ksocks.h
+include/ksortablevaluelist.h
 include/kspell.h
 include/kspelldlg.h
 include/ksqueezedtextlabel.h
@@ -402,11 +401,16 @@ include/ksslcertificatefactory.h
 include/ksslcertificatehome.h
 include/ksslconnectioninfo.h
 include/ksslinfodlg.h
+include/ksslkeygen.h
 include/ksslpeerinfo.h
+include/ksslpemcallback.h
 include/ksslpkcs12.h
+include/ksslpkcs7.h
 include/ksslsettings.h
+include/ksslsigners.h
 include/ksslutils.h
 include/ksslx509map.h
+include/ksslx509v3.h
 include/kstandarddirs.h
 include/kstartupinfo.h
 include/kstaticdeleter.h
@@ -414,7 +418,9 @@ include/kstatusbar.h
 include/kstdaccel.h
 include/kstdaction.h
 include/kstddirs.h
+include/kstdguiitem.h
 include/kstringhandler.h
+include/kstringvalidator.h
 include/kstyle.h
 include/ksycoca.h
 include/ksycocaentry.h
@@ -424,20 +430,37 @@ include/ktabctl.h
 include/ktar.h
 include/ktempfile.h
 include/ktextbrowser.h
-include/ktexteditor.h
-include/kthemebase.h
-include/kthemestyle.h
+include/ktexteditor/blockselectioninterface.h
+include/ktexteditor/clipboardinterface.h
+include/ktexteditor/codecompletioninterface.h
+include/ktexteditor/configinterface.h
+include/ktexteditor/cursorinterface.h
+include/ktexteditor/document.h
+include/ktexteditor/dynwordwrapinterface.h
+include/ktexteditor/editinterface.h
+include/ktexteditor/editor.h
+include/ktexteditor/highlightinginterface.h
+include/ktexteditor/markinterface.h
+include/ktexteditor/popupmenuinterface.h
+include/ktexteditor/printinterface.h
+include/ktexteditor/searchinterface.h
+include/ktexteditor/selectioninterface.h
+include/ktexteditor/undointerface.h
+include/ktexteditor/view.h
+include/ktexteditor/viewcursorinterface.h
+include/ktexteditor/wordwrapinterface.h
 include/ktip.h
-include/ktmainwindow.h
 include/ktoolbar.h
 include/ktoolbarbutton.h
 include/ktoolbarradiogroup.h
 include/ktrader.h
+include/ktypelist.h
 include/kuniqueapp.h
 include/kuniqueapplication.h
 include/kunload.h
 include/kurifilter.h
 include/kurl.h
+include/kurlbar.h
 include/kurlcombobox.h
 include/kurlcompletion.h
 include/kurldrag.h
@@ -446,15 +469,17 @@ include/kurlpixmapprovider.h
 include/kurlrequester.h
 include/kurlrequesterdlg.h
 include/kuserprofile.h
-include/kwidgetid.h
+include/kvmallocator.h
 include/kwin.h
 include/kwindowlistmenu.h
 include/kwinmodule.h
 include/kwizard.h
+include/kwordwrap.h
 include/kxmessages.h
 include/kxmlgui.h
 include/kxmlguibuilder.h
 include/kxmlguiclient.h
+include/kxmlguifactory.h
 include/libkmid/alsaout.h
 include/libkmid/dattypes.h
 include/libkmid/deviceman.h
@@ -472,66 +497,74 @@ include/libkmid/player.h
 include/libkmid/synthout.h
 include/libkmid/track.h
 include/libkmid/voiceman.h
-include/ltdl.h
 include/netwm.h
 include/netwm_def.h
 include/netwm_p.h
-include/progressbase.h
-include/qconfigDB.h
 include/qxembed.h
-include/statusbarprogress.h
-lib/basicstyle.la
-lib/basicstyle.so
+include/renamedlgplugin.h
+include/scriptclientinterface.h
+include/scriptinterface.h
+include/scriptmanager.h
 lib/dcopserver.la
 lib/dcopserver.so
-lib/hcstyle.la
-lib/hcstyle.so
+lib/kaddprinterwizard.la
+lib/kaddprinterwizard.so
 lib/kbuildsycoca.la
 lib/kbuildsycoca.so
 lib/kconf_update.la
 lib/kconf_update.so
 lib/kcookiejar.la
 lib/kcookiejar.so
-lib/kde2/kbzip2filter.la
-lib/kde2/kbzip2filter.so
-lib/kde2/kgzipfilter.la
-lib/kde2/kgzipfilter.so
-lib/kde2/kimg_eps.la
-lib/kde2/kimg_eps.so
-lib/kde2/kimg_g3.la
-lib/kde2/kimg_g3.so
-lib/kde2/kimg_ico.la
-lib/kde2/kimg_ico.so
-lib/kde2/kimg_krl.la
-lib/kde2/kimg_krl.so
-lib/kde2/kimg_tiff.la
-lib/kde2/kimg_tiff.so
-lib/kde2/kimg_xview.la
-lib/kde2/kimg_xview.so
-lib/kde2/kio_file.la
-lib/kde2/kio_file.so
-lib/kde2/kio_ftp.la
-lib/kde2/kio_ftp.so
-lib/kde2/kio_help.la
-lib/kde2/kio_help.so
-lib/kde2/kio_http.la
-lib/kde2/kio_http.so
-lib/kde2/kjs_html.la
-lib/kde2/kjs_html.so
-lib/kde2/libkded_kdeprintd.la
-lib/kde2/libkded_kdeprintd.so
-lib/kde2/libkdeprint_cups.la
-lib/kde2/libkdeprint_cups.so
-lib/kde2/libkdeprint_ext.la
-lib/kde2/libkdeprint_ext.so
-lib/kde2/libkdeprint_lpd.la
-lib/kde2/libkdeprint_lpd.so
-lib/kde2/libkdeprint_lpdunix.la
-lib/kde2/libkdeprint_lpdunix.so
-lib/kde2/libkdeprint_rlpr.la
-lib/kde2/libkdeprint_rlpr.so
-lib/kde2/libkpac.la
-lib/kde2/libkpac.so
+lib/kde3/kbzip2filter.la
+lib/kde3/kbzip2filter.so
+lib/kde3/kded_kdeprintd.la
+lib/kde3/kded_kdeprintd.so
+lib/kde3/kded_kssld.la
+lib/kde3/kded_kssld.so
+lib/kde3/kdeprint_cups.la
+lib/kde3/kdeprint_cups.so
+lib/kde3/kdeprint_ext.la
+lib/kde3/kdeprint_ext.so
+lib/kde3/kdeprint_lpdunix.la
+lib/kde3/kdeprint_lpdunix.so
+lib/kde3/kdeprint_lpr.la
+lib/kde3/kdeprint_lpr.so
+lib/kde3/kdeprint_rlpr.la
+lib/kde3/kdeprint_rlpr.so
+lib/kde3/kgzipfilter.la
+lib/kde3/kgzipfilter.so
+lib/kde3/kimg_eps.la
+lib/kde3/kimg_eps.so
+lib/kde3/kimg_g3.la
+lib/kde3/kimg_g3.so
+lib/kde3/kimg_ico.la
+lib/kde3/kimg_ico.so
+lib/kde3/kimg_krl.la
+lib/kde3/kimg_krl.so
+lib/kde3/kimg_tiff.la
+lib/kde3/kimg_tiff.so
+lib/kde3/kimg_xview.la
+lib/kde3/kimg_xview.so
+lib/kde3/kio_file.la
+lib/kde3/kio_file.so
+lib/kde3/kio_ftp.la
+lib/kde3/kio_ftp.so
+lib/kde3/kio_help.la
+lib/kde3/kio_help.so
+lib/kde3/kio_http.la
+lib/kde3/kio_http.so
+lib/kde3/kjs_html.la
+lib/kde3/kjs_html.so
+lib/kde3/libkpac.la
+lib/kde3/libkpac.so
+lib/kde3/plugins/designer/kdewidgets.la
+lib/kde3/plugins/designer/kdewidgets.so
+lib/kde3/plugins/styles/highcolor.la
+lib/kde3/plugins/styles/highcolor.so
+lib/kde3/plugins/styles/kthemestyle.la
+lib/kde3/plugins/styles/kthemestyle.so
+lib/kde3/plugins/styles/light.la
+lib/kde3/plugins/styles/light.so
 lib/kded.la
 lib/kded.so
 lib/kio_http_cache_cleaner.la
@@ -540,66 +573,50 @@ lib/kio_uiserver.la
 lib/kio_uiserver.so
 lib/klauncher.la
 lib/klauncher.so
-lib/klegacystyle.la
-lib/klegacystyle.so
 lib/knotify.la
 lib/knotify.so
-lib/kstepstyle.la
-lib/kstepstyle.so
 lib/libDCOP.la
 lib/libDCOP.so
 lib/libDCOP.so.4
-lib/libartsc.la
-lib/libartsc.so
-lib/libartsc.so.0
-lib/libartscbackend.la
-lib/libartscbackend.so
-lib/libartscbackend.so.0
-lib/libartsdsp.la
-lib/libartsdsp.so
-lib/libartsdsp.so.0
-lib/libartsdsp_st.la
-lib/libartsdsp_st.so
-lib/libartsdsp_st.so.0
-lib/libartsflow.la
-lib/libartsflow.so
-lib/libartsflow.so.0
-lib/libartsflow_idl.la
-lib/libartsflow_idl.so
-lib/libartsflow_idl.so.0
 lib/libartskde.la
 lib/libartskde.so
-lib/libartswavplayobject.la
-lib/libartswavplayobject.so
-lib/libartswavplayobject.so.0
+lib/libartskde.so.1
 lib/libcupsdconf.la
 lib/libcupsdconf.so
-lib/libkab.la
-lib/libkab.so
-lib/libkab.so.4
+lib/libkabc.la
+lib/libkabc.so
+lib/libkabc.so.1
+lib/libkatepart.la
+lib/libkatepart.so
+lib/libkatepartinterfaces.la
+lib/libkatepartinterfaces.so
+lib/libkatepartinterfaces.so.0
+lib/libkcertpart.la
+lib/libkcertpart.so
 lib/libkdecore.la
 lib/libkdecore.so
 lib/libkdecore.so.4
-lib/libkded_kssld.la
-lib/libkded_kssld.so
 lib/libkdefakes.la
 lib/libkdefakes.so
 lib/libkdefakes.so.4
+lib/libkdefx.la
+lib/libkdefx.so
+lib/libkdefx.so.4
 lib/libkdeprint.la
 lib/libkdeprint.so
-lib/libkdeprint.so.0
+lib/libkdeprint.so.4
 lib/libkdeprint_management.la
 lib/libkdeprint_management.so
-lib/libkdeprint_management.so.0
+lib/libkdeprint_management.so.4
+lib/libkdesasl.la
+lib/libkdesasl.so
+lib/libkdesasl.so.1
 lib/libkdesu.la
 lib/libkdesu.so
 lib/libkdesu.so.4
 lib/libkdeui.la
 lib/libkdeui.so
 lib/libkdeui.so.4
-lib/libkfile.la
-lib/libkfile.so
-lib/libkfile.so.4
 lib/libkhtml.la
 lib/libkhtml.so
 lib/libkhtml.so.4
@@ -610,90 +627,90 @@ lib/libkio.so
 lib/libkio.so.4
 lib/libkjava.la
 lib/libkjava.so
-lib/libkjava.so.4
+lib/libkjava.so.1
 lib/libkjs.la
 lib/libkjs.so
-lib/libkjs.so.4
-lib/libkmedia2.la
-lib/libkmedia2.so
-lib/libkmedia2.so.0
-lib/libkmedia2_idl.la
-lib/libkmedia2_idl.so
-lib/libkmedia2_idl.so.0
+lib/libkjs.so.1
 lib/libkmid.la
 lib/libkmid.so
 lib/libkmid.so.0
 lib/libkparts.la
 lib/libkparts.so
-lib/libkparts.so.4
+lib/libkparts.so.2
 lib/libkscreensaver.la
 lib/libkscreensaver.so
 lib/libkscreensaver.so.4
+lib/libkscript.la
+lib/libkscript.so
+lib/libkscript.so.0
 lib/libkspell.la
 lib/libkspell.so
 lib/libkspell.so.4
-lib/libkssl.la
-lib/libkssl.so
-lib/libkssl.so.2
-lib/libksycoca.la
-lib/libksycoca.so
-lib/libksycoca.so.4
 lib/libktexteditor.la
 lib/libktexteditor.so
 lib/libktexteditor.so.0
-lib/libmcop.la
-lib/libmcop.so
-lib/libmcop.so.0
-lib/libmcop_mt.la
-lib/libmcop_mt.so
-lib/libmcop_mt.so.0
-lib/libqtmcop.la
-lib/libqtmcop.so
-lib/libqtmcop.so.0
-lib/libsoundserver_idl.la
-lib/libsoundserver_idl.so
-lib/libsoundserver_idl.so.0
-lib/libx11globalcomm.la
-lib/libx11globalcomm.so
-lib/libx11globalcomm.so.0
-lib/mcop/Arts/FileInputStream.mcopclass
-lib/mcop/Arts/Synth_ADD.mcopclass
-lib/mcop/Arts/Synth_AMAN_PLAY.mcopclass
-lib/mcop/Arts/Synth_AMAN_RECORD.mcopclass
-lib/mcop/Arts/Synth_BUS_DOWNLINK.mcopclass
-lib/mcop/Arts/Synth_BUS_UPLINK.mcopclass
-lib/mcop/Arts/Synth_FREQUENCY.mcopclass
-lib/mcop/Arts/Synth_MUL.mcopclass
-lib/mcop/Arts/Synth_MULTI_ADD.mcopclass
-lib/mcop/Arts/Synth_PLAY.mcopclass
-lib/mcop/Arts/Synth_PLAY_WAV.mcopclass
-lib/mcop/Arts/Synth_RECORD.mcopclass
-lib/mcop/Arts/Synth_WAVE_SIN.mcopclass
-lib/mcop/Arts/WavPlayObject.mcopclass
-lib/mcop/Arts/X11GlobalComm.mcopclass
-lib/mcop/artsflow.mcopclass
-lib/mcop/artsflow.mcoptype
-lib/mcop/kmedia2.mcopclass
-lib/mcop/kmedia2.mcoptype
-lib/mcop/soundserver.mcopclass
-lib/mcop/soundserver.mcoptype
-lib/mcop/x11globalcomm.mcopclass
-lib/mcop/x11globalcomm.mcoptype
-lib/mega.la
-lib/mega.so
-lib/webstyle.la
-lib/webstyle.so
+lib/libshellscript.la
+lib/libshellscript.so
+lib/libshellscript.so.0
+lib/libvcard.la
+lib/libvcard.so
+lib/libvcard.so.0
 share/apps/LICENSES/ARTISTIC
 share/apps/LICENSES/BSD
 share/apps/LICENSES/GPL_V2
 share/apps/LICENSES/LGPL_V2
 share/apps/LICENSES/QPL_V1.0
-share/apps/kab/template.config
-share/apps/kab/template.kab
+share/apps/kate/katepartreadonlyui.rc
+share/apps/kate/katepartui.rc
+share/apps/kate/syntax/ada.xml
+share/apps/kate/syntax/bash.xml
+share/apps/kate/syntax/c.xml
+share/apps/kate/syntax/changelog.xml
+share/apps/kate/syntax/cpp.xml
+share/apps/kate/syntax/cs.xml
+share/apps/kate/syntax/css.xml
+share/apps/kate/syntax/desktop.xml
+share/apps/kate/syntax/diff.xml
+share/apps/kate/syntax/eiffel.xml
+share/apps/kate/syntax/ferite.xml
+share/apps/kate/syntax/html.xml
+share/apps/kate/syntax/idconsole.xml
+share/apps/kate/syntax/ilerpg.xml
+share/apps/kate/syntax/java.xml
+share/apps/kate/syntax/javascript.xml
+share/apps/kate/syntax/kbasic.xml
+share/apps/kate/syntax/language.dtd
+share/apps/kate/syntax/latex.xml
+share/apps/kate/syntax/makefile.xml
+share/apps/kate/syntax/matlab.xml
+share/apps/kate/syntax/objectivec.xml
+share/apps/kate/syntax/pascal.xml
+share/apps/kate/syntax/perl.xml
+share/apps/kate/syntax/php.xml
+share/apps/kate/syntax/postscript.xml
+share/apps/kate/syntax/python.xml
+share/apps/kate/syntax/rpmspec.xml
+share/apps/kate/syntax/ruby.xml
+share/apps/kate/syntax/sather.xml
+share/apps/kate/syntax/scheme.xml
+share/apps/kate/syntax/sgml.xml
+share/apps/kate/syntax/sml.xml
+share/apps/kate/syntax/sql.xml
+share/apps/kate/syntax/syntax.template
+share/apps/kate/syntax/tcl.xml
+share/apps/kate/syntax/verilog.xml
+share/apps/kate/syntax/vhdl.xml
+share/apps/kate/syntax/winehq.xml
+share/apps/kate/syntax/xml.xml
+share/apps/kate/syntax/xmldebug.xml
+share/apps/kcertpart/kcertpart.rc
 share/apps/kconf_update/kcookiescfg.upd
+share/apps/kconf_update/kded.upd
 share/apps/kconf_update/kioslave.upd
 share/apps/kconf_update/proxytype.pl
 share/apps/kconf_update/useragent.pl
+share/apps/kdeprint/apsdriver1
+share/apps/kdeprint/apsdriver2
 share/apps/kdeprint/cups_logo.png
 share/apps/kdeprint/cupsd.conf.template
 share/apps/kdeprint/filters/enscript.desktop
@@ -702,6 +719,8 @@ share/apps/kdeprint/filters/imagetops.desktop
 share/apps/kdeprint/filters/imagetops.xml
 share/apps/kdeprint/filters/pdfwrite.desktop
 share/apps/kdeprint/filters/pdfwrite.xml
+share/apps/kdeprint/filters/ps2pdf.desktop
+share/apps/kdeprint/filters/ps2pdf.xml
 share/apps/kdeprint/filters/psbook.desktop
 share/apps/kdeprint/filters/psbook.xml
 share/apps/kdeprint/filters/psbook1.desktop
@@ -710,8 +729,15 @@ share/apps/kdeprint/filters/psbook2.desktop
 share/apps/kdeprint/filters/psbook2.xml
 share/apps/kdeprint/filters/psnup.desktop
 share/apps/kdeprint/filters/psnup.xml
+share/apps/kdeprint/filters/psselect.desktop
+share/apps/kdeprint/filters/psselect.xml
+share/apps/kdeprint/icons/hicolor/16x16/actions/filterstop.png
+share/apps/kdeprint/icons/hicolor/16x16/actions/kdeprint_restartsrv.png
+share/apps/kdeprint/icons/hicolor/16x16/actions/kdeprint_uploadsmb.png
 share/apps/kdeprint/icons/hicolor/16x16/apps/kdeprint_computer.png
 share/apps/kdeprint/icons/hicolor/16x16/apps/kdeprint_job.png
+share/apps/kdeprint/icons/hicolor/16x16/apps/kdeprint_job_cancelled.png
+share/apps/kdeprint/icons/hicolor/16x16/apps/kdeprint_job_completed.png
 share/apps/kdeprint/icons/hicolor/16x16/apps/kdeprint_job_error.png
 share/apps/kdeprint/icons/hicolor/16x16/apps/kdeprint_job_process.png
 share/apps/kdeprint/icons/hicolor/16x16/apps/kdeprint_job_stopped.png
@@ -725,8 +751,25 @@ share/apps/kdeprint/icons/hicolor/16x16/apps/kdeprint_printer_remote.png
 share/apps/kdeprint/icons/hicolor/16x16/apps/kdeprint_printer_remote_process.png
 share/apps/kdeprint/icons/hicolor/16x16/apps/kdeprint_printer_remote_stopped.png
 share/apps/kdeprint/icons/hicolor/16x16/apps/kdeprint_printer_stopped.png
+share/apps/kdeprint/icons/hicolor/22x22/actions/history.png
+share/apps/kdeprint/icons/hicolor/22x22/actions/kdeprint_addprinter.png
+share/apps/kdeprint/icons/hicolor/22x22/actions/kdeprint_addpseudo.png
+share/apps/kdeprint/icons/hicolor/22x22/actions/kdeprint_configmgr.png
+share/apps/kdeprint/icons/hicolor/22x22/actions/kdeprint_configsrv.png
+share/apps/kdeprint/icons/hicolor/22x22/actions/kdeprint_defaulthard.png
+share/apps/kdeprint/icons/hicolor/22x22/actions/kdeprint_defaultsoft.png
+share/apps/kdeprint/icons/hicolor/22x22/actions/kdeprint_enableprinter.png
 share/apps/kdeprint/icons/hicolor/22x22/actions/kdeprint_printer.png
 share/apps/kdeprint/icons/hicolor/22x22/actions/kdeprint_printer_infos.png
+share/apps/kdeprint/icons/hicolor/22x22/actions/kdeprint_printstate.png
+share/apps/kdeprint/icons/hicolor/22x22/actions/kdeprint_queuestate.png
+share/apps/kdeprint/icons/hicolor/22x22/actions/kdeprint_report.png
+share/apps/kdeprint/icons/hicolor/22x22/actions/kdeprint_restartsrv.png
+share/apps/kdeprint/icons/hicolor/22x22/actions/kdeprint_stopprinter.png
+share/apps/kdeprint/icons/hicolor/22x22/actions/kdeprint_testprinter.png
+share/apps/kdeprint/icons/hicolor/22x22/actions/kdeprint_uploadsmb.png
+share/apps/kdeprint/icons/hicolor/22x22/actions/package_utilities.png
+share/apps/kdeprint/icons/hicolor/32x32/actions/kdeprint_inklevel.png
 share/apps/kdeprint/icons/hicolor/32x32/apps/kdeprint_printer.png
 share/apps/kdeprint/icons/hicolor/32x32/apps/kdeprint_printer_class.png
 share/apps/kdeprint/icons/hicolor/32x32/apps/kdeprint_printer_class_process.png
@@ -736,7 +779,9 @@ share/apps/kdeprint/icons/hicolor/32x32/apps/kdeprint_printer_remote.png
 share/apps/kdeprint/icons/hicolor/32x32/apps/kdeprint_printer_remote_process.png
 share/apps/kdeprint/icons/hicolor/32x32/apps/kdeprint_printer_remote_stopped.png
 share/apps/kdeprint/icons/hicolor/32x32/apps/kdeprint_printer_stopped.png
+share/apps/kdeprint/icons/hicolor/32x32/apps/kdeprint_printer_users.png
 share/apps/kdeprint/kde_logo.png
+share/apps/kdeprint/lprngtooldriver1
 share/apps/kdeprint/pics/kdeprint_collate.png
 share/apps/kdeprint/pics/kdeprint_collate_reverse.png
 share/apps/kdeprint/pics/kdeprint_color.png
@@ -748,22 +793,50 @@ share/apps/kdeprint/pics/kdeprint_landscape.png
 share/apps/kdeprint/pics/kdeprint_nup1.png
 share/apps/kdeprint/pics/kdeprint_nup2.png
 share/apps/kdeprint/pics/kdeprint_nup4.png
+share/apps/kdeprint/pics/kdeprint_nupother.png
 share/apps/kdeprint/pics/kdeprint_portrait.png
+share/apps/kdeprint/pics/kdeprint_prettyprint.png
 share/apps/kdeprint/pics/kdeprint_revlandscape.png
 share/apps/kdeprint/pics/kdeprint_revportrait.png
 share/apps/kdeprint/pics/kdeprint_uncollate.png
 share/apps/kdeprint/pics/kdeprint_uncollate_reverse.png
 share/apps/kdeprint/plugins/cups.print
 share/apps/kdeprint/plugins/ext.print
-share/apps/kdeprint/plugins/lpd.print
 share/apps/kdeprint/plugins/lpdunix.print
+share/apps/kdeprint/plugins/lpr.print
 share/apps/kdeprint/plugins/rlpr.print
+share/apps/kdeprint/preview-mini.png
+share/apps/kdeprint/preview.png
+share/apps/kdeprint/side.png
 share/apps/kdeprint/specials.desktop
 share/apps/kdeprint/testprint.ps
+share/apps/kdeprint/tiledown.png
+share/apps/kdeprint/tileup.png
 share/apps/kdeui/pics/aboutkde.png
 share/apps/kdeui/pics/keys.png
 share/apps/kdeui/pics/ktip-background.png
 share/apps/kdeui/pics/ktip-bulb.png
+share/apps/kdewidgets/pics/kcmodule.png
+share/apps/kdewidgets/pics/kcolorbutton.png
+share/apps/kdewidgets/pics/kcolorcombo.png
+share/apps/kdewidgets/pics/kcombobox.png
+share/apps/kdewidgets/pics/kdatewidget.png
+share/apps/kdewidgets/pics/kdualcolorbutton.png
+share/apps/kdewidgets/pics/kgradientselector.png
+share/apps/kdewidgets/pics/khsselector.png
+share/apps/kdewidgets/pics/kintspinbox.png
+share/apps/kdewidgets/pics/kled.png
+share/apps/kdewidgets/pics/klineedit.png
+share/apps/kdewidgets/pics/klistbox.png
+share/apps/kdewidgets/pics/klistview.png
+share/apps/kdewidgets/pics/kpasswordedit.png
+share/apps/kdewidgets/pics/kprogress.png
+share/apps/kdewidgets/pics/kpushbutton.png
+share/apps/kdewidgets/pics/kruler.png
+share/apps/kdewidgets/pics/ksqueezedtextlabel.png
+share/apps/kdewidgets/pics/ktextbrowser.png
+share/apps/kdewidgets/pics/kurllabel.png
+share/apps/kdewidgets/pics/kurlrequester.png
 share/apps/khtml/css/html4.css
 share/apps/khtml/icons/hicolor/16x16/actions/images_display.png
 share/apps/khtml/icons/hicolor/22x22/actions/images_display.png
@@ -775,11 +848,12 @@ share/apps/kio_uiserver/icons/hicolor/16x16/apps/kio_uiserver.png
 share/apps/kjava/kjava.jar
 share/apps/kjava/kjava.policy
 share/apps/knotify/eventsrc
-share/apps/ksgmltools2/README
-share/apps/ksgmltools2/TODO
 share/apps/ksgmltools2/customization/af/catalog
 share/apps/ksgmltools2/customization/af/entities/fdl-notice.docbook
 share/apps/ksgmltools2/customization/af/entities/gpl-notice.docbook
+share/apps/ksgmltools2/customization/af/entities/help-menu.docbook
+share/apps/ksgmltools2/customization/af/entities/install-compile.docbook
+share/apps/ksgmltools2/customization/af/entities/install-intro.docbook
 share/apps/ksgmltools2/customization/af/entities/lgpl-notice.docbook
 share/apps/ksgmltools2/customization/af/entities/report-bugs.docbook
 share/apps/ksgmltools2/customization/af/entities/underArtisticLicense.docbook
@@ -794,6 +868,9 @@ share/apps/ksgmltools2/customization/af/user.entities
 share/apps/ksgmltools2/customization/ca/catalog
 share/apps/ksgmltools2/customization/ca/entities/fdl-notice.docbook
 share/apps/ksgmltools2/customization/ca/entities/gpl-notice.docbook
+share/apps/ksgmltools2/customization/ca/entities/help-menu.docbook
+share/apps/ksgmltools2/customization/ca/entities/install-compile.docbook
+share/apps/ksgmltools2/customization/ca/entities/install-intro.docbook
 share/apps/ksgmltools2/customization/ca/entities/lgpl-notice.docbook
 share/apps/ksgmltools2/customization/ca/entities/report-bugs.docbook
 share/apps/ksgmltools2/customization/ca/entities/underArtisticLicense.docbook
@@ -809,6 +886,9 @@ share/apps/ksgmltools2/customization/catalog
 share/apps/ksgmltools2/customization/cs/catalog
 share/apps/ksgmltools2/customization/cs/entities/fdl-notice.docbook
 share/apps/ksgmltools2/customization/cs/entities/gpl-notice.docbook
+share/apps/ksgmltools2/customization/cs/entities/help-menu.docbook
+share/apps/ksgmltools2/customization/cs/entities/install-compile.docbook
+share/apps/ksgmltools2/customization/cs/entities/install-intro.docbook
 share/apps/ksgmltools2/customization/cs/entities/lgpl-notice.docbook
 share/apps/ksgmltools2/customization/cs/entities/report-bugs.docbook
 share/apps/ksgmltools2/customization/cs/entities/underArtisticLicense.docbook
@@ -823,6 +903,9 @@ share/apps/ksgmltools2/customization/cs/user.entities
 share/apps/ksgmltools2/customization/da/catalog
 share/apps/ksgmltools2/customization/da/entities/fdl-notice.docbook
 share/apps/ksgmltools2/customization/da/entities/gpl-notice.docbook
+share/apps/ksgmltools2/customization/da/entities/help-menu.docbook
+share/apps/ksgmltools2/customization/da/entities/install-compile.docbook
+share/apps/ksgmltools2/customization/da/entities/install-intro.docbook
 share/apps/ksgmltools2/customization/da/entities/lgpl-notice.docbook
 share/apps/ksgmltools2/customization/da/entities/report-bugs.docbook
 share/apps/ksgmltools2/customization/da/entities/underArtisticLicense.docbook
@@ -837,6 +920,9 @@ share/apps/ksgmltools2/customization/da/user.entities
 share/apps/ksgmltools2/customization/de/catalog
 share/apps/ksgmltools2/customization/de/entities/fdl-notice.docbook
 share/apps/ksgmltools2/customization/de/entities/gpl-notice.docbook
+share/apps/ksgmltools2/customization/de/entities/help-menu.docbook
+share/apps/ksgmltools2/customization/de/entities/install-compile.docbook
+share/apps/ksgmltools2/customization/de/entities/install-intro.docbook
 share/apps/ksgmltools2/customization/de/entities/lgpl-notice.docbook
 share/apps/ksgmltools2/customization/de/entities/report-bugs.docbook
 share/apps/ksgmltools2/customization/de/entities/underArtisticLicense.docbook
@@ -855,6 +941,9 @@ share/apps/ksgmltools2/customization/dtd/rdbpool.elements
 share/apps/ksgmltools2/customization/el/catalog
 share/apps/ksgmltools2/customization/el/entities/fdl-notice.docbook
 share/apps/ksgmltools2/customization/el/entities/gpl-notice.docbook
+share/apps/ksgmltools2/customization/el/entities/help-menu.docbook
+share/apps/ksgmltools2/customization/el/entities/install-compile.docbook
+share/apps/ksgmltools2/customization/el/entities/install-intro.docbook
 share/apps/ksgmltools2/customization/el/entities/lgpl-notice.docbook
 share/apps/ksgmltools2/customization/el/entities/report-bugs.docbook
 share/apps/ksgmltools2/customization/el/entities/underArtisticLicense.docbook
@@ -866,9 +955,29 @@ share/apps/ksgmltools2/customization/el/entities/update-doc.docbook
 share/apps/ksgmltools2/customization/el/lang.entities
 share/apps/ksgmltools2/customization/el/strings.entities
 share/apps/ksgmltools2/customization/el/user.entities
+share/apps/ksgmltools2/customization/en-GB/catalog
+share/apps/ksgmltools2/customization/en-GB/entities/fdl-notice.docbook
+share/apps/ksgmltools2/customization/en-GB/entities/gpl-notice.docbook
+share/apps/ksgmltools2/customization/en-GB/entities/help-menu.docbook
+share/apps/ksgmltools2/customization/en-GB/entities/install-compile.docbook
+share/apps/ksgmltools2/customization/en-GB/entities/install-intro.docbook
+share/apps/ksgmltools2/customization/en-GB/entities/lgpl-notice.docbook
+share/apps/ksgmltools2/customization/en-GB/entities/report-bugs.docbook
+share/apps/ksgmltools2/customization/en-GB/entities/underArtisticLicense.docbook
+share/apps/ksgmltools2/customization/en-GB/entities/underBSDLicense.docbook
+share/apps/ksgmltools2/customization/en-GB/entities/underFDL.docbook
+share/apps/ksgmltools2/customization/en-GB/entities/underGPL.docbook
+share/apps/ksgmltools2/customization/en-GB/entities/underX11License.docbook
+share/apps/ksgmltools2/customization/en-GB/entities/update-doc.docbook
+share/apps/ksgmltools2/customization/en-GB/lang.entities
+share/apps/ksgmltools2/customization/en-GB/strings.entities
+share/apps/ksgmltools2/customization/en-GB/user.entities
 share/apps/ksgmltools2/customization/en/catalog
 share/apps/ksgmltools2/customization/en/entities/fdl-notice.docbook
 share/apps/ksgmltools2/customization/en/entities/gpl-notice.docbook
+share/apps/ksgmltools2/customization/en/entities/help-menu.docbook
+share/apps/ksgmltools2/customization/en/entities/install-compile.docbook
+share/apps/ksgmltools2/customization/en/entities/install-intro.docbook
 share/apps/ksgmltools2/customization/en/entities/lgpl-notice.docbook
 share/apps/ksgmltools2/customization/en/entities/report-bugs.docbook
 share/apps/ksgmltools2/customization/en/entities/underArtisticLicense.docbook
@@ -885,6 +994,9 @@ share/apps/ksgmltools2/customization/entities/l10n.entities
 share/apps/ksgmltools2/customization/es/catalog
 share/apps/ksgmltools2/customization/es/entities/fdl-notice.docbook
 share/apps/ksgmltools2/customization/es/entities/gpl-notice.docbook
+share/apps/ksgmltools2/customization/es/entities/help-menu.docbook
+share/apps/ksgmltools2/customization/es/entities/install-compile.docbook
+share/apps/ksgmltools2/customization/es/entities/install-intro.docbook
 share/apps/ksgmltools2/customization/es/entities/lgpl-notice.docbook
 share/apps/ksgmltools2/customization/es/entities/report-bugs.docbook
 share/apps/ksgmltools2/customization/es/entities/underArtisticLicense.docbook
@@ -899,6 +1011,9 @@ share/apps/ksgmltools2/customization/es/user.entities
 share/apps/ksgmltools2/customization/et/catalog
 share/apps/ksgmltools2/customization/et/entities/fdl-notice.docbook
 share/apps/ksgmltools2/customization/et/entities/gpl-notice.docbook
+share/apps/ksgmltools2/customization/et/entities/help-menu.docbook
+share/apps/ksgmltools2/customization/et/entities/install-compile.docbook
+share/apps/ksgmltools2/customization/et/entities/install-intro.docbook
 share/apps/ksgmltools2/customization/et/entities/lgpl-notice.docbook
 share/apps/ksgmltools2/customization/et/entities/report-bugs.docbook
 share/apps/ksgmltools2/customization/et/entities/underArtisticLicense.docbook
@@ -913,6 +1028,9 @@ share/apps/ksgmltools2/customization/et/user.entities
 share/apps/ksgmltools2/customization/fi/catalog
 share/apps/ksgmltools2/customization/fi/entities/fdl-notice.docbook
 share/apps/ksgmltools2/customization/fi/entities/gpl-notice.docbook
+share/apps/ksgmltools2/customization/fi/entities/help-menu.docbook
+share/apps/ksgmltools2/customization/fi/entities/install-compile.docbook
+share/apps/ksgmltools2/customization/fi/entities/install-intro.docbook
 share/apps/ksgmltools2/customization/fi/entities/lgpl-notice.docbook
 share/apps/ksgmltools2/customization/fi/entities/report-bugs.docbook
 share/apps/ksgmltools2/customization/fi/entities/underArtisticLicense.docbook
@@ -927,6 +1045,9 @@ share/apps/ksgmltools2/customization/fi/user.entities
 share/apps/ksgmltools2/customization/fr/catalog
 share/apps/ksgmltools2/customization/fr/entities/fdl-notice.docbook
 share/apps/ksgmltools2/customization/fr/entities/gpl-notice.docbook
+share/apps/ksgmltools2/customization/fr/entities/help-menu.docbook
+share/apps/ksgmltools2/customization/fr/entities/install-compile.docbook
+share/apps/ksgmltools2/customization/fr/entities/install-intro.docbook
 share/apps/ksgmltools2/customization/fr/entities/lgpl-notice.docbook
 share/apps/ksgmltools2/customization/fr/entities/report-bugs.docbook
 share/apps/ksgmltools2/customization/fr/entities/underArtisticLicense.docbook
@@ -942,6 +1063,9 @@ share/apps/ksgmltools2/customization/htdig_index.xsl
 share/apps/ksgmltools2/customization/hu/catalog
 share/apps/ksgmltools2/customization/hu/entities/fdl-notice.docbook
 share/apps/ksgmltools2/customization/hu/entities/gpl-notice.docbook
+share/apps/ksgmltools2/customization/hu/entities/help-menu.docbook
+share/apps/ksgmltools2/customization/hu/entities/install-compile.docbook
+share/apps/ksgmltools2/customization/hu/entities/install-intro.docbook
 share/apps/ksgmltools2/customization/hu/entities/lgpl-notice.docbook
 share/apps/ksgmltools2/customization/hu/entities/report-bugs.docbook
 share/apps/ksgmltools2/customization/hu/entities/underArtisticLicense.docbook
@@ -953,9 +1077,29 @@ share/apps/ksgmltools2/customization/hu/entities/update-doc.docbook
 share/apps/ksgmltools2/customization/hu/lang.entities
 share/apps/ksgmltools2/customization/hu/strings.entities
 share/apps/ksgmltools2/customization/hu/user.entities
+share/apps/ksgmltools2/customization/id/catalog
+share/apps/ksgmltools2/customization/id/entities/fdl-notice.docbook
+share/apps/ksgmltools2/customization/id/entities/gpl-notice.docbook
+share/apps/ksgmltools2/customization/id/entities/help-menu.docbook
+share/apps/ksgmltools2/customization/id/entities/install-compile.docbook
+share/apps/ksgmltools2/customization/id/entities/install-intro.docbook
+share/apps/ksgmltools2/customization/id/entities/lgpl-notice.docbook
+share/apps/ksgmltools2/customization/id/entities/report-bugs.docbook
+share/apps/ksgmltools2/customization/id/entities/underArtisticLicense.docbook
+share/apps/ksgmltools2/customization/id/entities/underBSDLicense.docbook
+share/apps/ksgmltools2/customization/id/entities/underFDL.docbook
+share/apps/ksgmltools2/customization/id/entities/underGPL.docbook
+share/apps/ksgmltools2/customization/id/entities/underX11License.docbook
+share/apps/ksgmltools2/customization/id/entities/update-doc.docbook
+share/apps/ksgmltools2/customization/id/lang.entities
+share/apps/ksgmltools2/customization/id/strings.entities
+share/apps/ksgmltools2/customization/id/user.entities
 share/apps/ksgmltools2/customization/it/catalog
 share/apps/ksgmltools2/customization/it/entities/fdl-notice.docbook
 share/apps/ksgmltools2/customization/it/entities/gpl-notice.docbook
+share/apps/ksgmltools2/customization/it/entities/help-menu.docbook
+share/apps/ksgmltools2/customization/it/entities/install-compile.docbook
+share/apps/ksgmltools2/customization/it/entities/install-intro.docbook
 share/apps/ksgmltools2/customization/it/entities/lgpl-notice.docbook
 share/apps/ksgmltools2/customization/it/entities/report-bugs.docbook
 share/apps/ksgmltools2/customization/it/entities/underArtisticLicense.docbook
@@ -970,6 +1114,9 @@ share/apps/ksgmltools2/customization/it/user.entities
 share/apps/ksgmltools2/customization/ja/catalog
 share/apps/ksgmltools2/customization/ja/entities/fdl-notice.docbook
 share/apps/ksgmltools2/customization/ja/entities/gpl-notice.docbook
+share/apps/ksgmltools2/customization/ja/entities/help-menu.docbook
+share/apps/ksgmltools2/customization/ja/entities/install-compile.docbook
+share/apps/ksgmltools2/customization/ja/entities/install-intro.docbook
 share/apps/ksgmltools2/customization/ja/entities/lgpl-notice.docbook
 share/apps/ksgmltools2/customization/ja/entities/report-bugs.docbook
 share/apps/ksgmltools2/customization/ja/entities/underArtisticLicense.docbook
@@ -985,9 +1132,14 @@ share/apps/ksgmltools2/customization/kde-chunk.xsl
 share/apps/ksgmltools2/customization/kde-navig.xsl
 share/apps/ksgmltools2/customization/kde-style.xsl
 share/apps/ksgmltools2/customization/kde-ttlpg.xsl
+share/apps/ksgmltools2/customization/kde-web-navig.xsl
+share/apps/ksgmltools2/customization/kde-web.xsl
 share/apps/ksgmltools2/customization/ko/catalog
 share/apps/ksgmltools2/customization/ko/entities/fdl-notice.docbook
 share/apps/ksgmltools2/customization/ko/entities/gpl-notice.docbook
+share/apps/ksgmltools2/customization/ko/entities/help-menu.docbook
+share/apps/ksgmltools2/customization/ko/entities/install-compile.docbook
+share/apps/ksgmltools2/customization/ko/entities/install-intro.docbook
 share/apps/ksgmltools2/customization/ko/entities/lgpl-notice.docbook
 share/apps/ksgmltools2/customization/ko/entities/underArtisticLicense.docbook
 share/apps/ksgmltools2/customization/ko/entities/underBSDLicense.docbook
@@ -1001,6 +1153,9 @@ share/apps/ksgmltools2/customization/ko/user.entities
 share/apps/ksgmltools2/customization/nl/catalog
 share/apps/ksgmltools2/customization/nl/entities/fdl-notice.docbook
 share/apps/ksgmltools2/customization/nl/entities/gpl-notice.docbook
+share/apps/ksgmltools2/customization/nl/entities/help-menu.docbook
+share/apps/ksgmltools2/customization/nl/entities/install-compile.docbook
+share/apps/ksgmltools2/customization/nl/entities/install-intro.docbook
 share/apps/ksgmltools2/customization/nl/entities/lgpl-notice.docbook
 share/apps/ksgmltools2/customization/nl/entities/report-bugs.docbook
 share/apps/ksgmltools2/customization/nl/entities/underArtisticLicense.docbook
@@ -1012,23 +1167,29 @@ share/apps/ksgmltools2/customization/nl/entities/update-doc.docbook
 share/apps/ksgmltools2/customization/nl/lang.entities
 share/apps/ksgmltools2/customization/nl/strings.entities
 share/apps/ksgmltools2/customization/nl/user.entities
-share/apps/ksgmltools2/customization/no-NY/catalog
-share/apps/ksgmltools2/customization/no-NY/entities/fdl-notice.docbook
-share/apps/ksgmltools2/customization/no-NY/entities/gpl-notice.docbook
-share/apps/ksgmltools2/customization/no-NY/entities/lgpl-notice.docbook
-share/apps/ksgmltools2/customization/no-NY/entities/report-bugs.docbook
-share/apps/ksgmltools2/customization/no-NY/entities/underArtisticLicense.docbook
-share/apps/ksgmltools2/customization/no-NY/entities/underBSDLicense.docbook
-share/apps/ksgmltools2/customization/no-NY/entities/underFDL.docbook
-share/apps/ksgmltools2/customization/no-NY/entities/underGPL.docbook
-share/apps/ksgmltools2/customization/no-NY/entities/underX11License.docbook
-share/apps/ksgmltools2/customization/no-NY/entities/update-doc.docbook
-share/apps/ksgmltools2/customization/no-NY/lang.entities
-share/apps/ksgmltools2/customization/no-NY/strings.entities
-share/apps/ksgmltools2/customization/no-NY/user.entities
+share/apps/ksgmltools2/customization/nn/catalog
+share/apps/ksgmltools2/customization/nn/entities/fdl-notice.docbook
+share/apps/ksgmltools2/customization/nn/entities/gpl-notice.docbook
+share/apps/ksgmltools2/customization/nn/entities/help-menu.docbook
+share/apps/ksgmltools2/customization/nn/entities/install-compile.docbook
+share/apps/ksgmltools2/customization/nn/entities/install-intro.docbook
+share/apps/ksgmltools2/customization/nn/entities/lgpl-notice.docbook
+share/apps/ksgmltools2/customization/nn/entities/report-bugs.docbook
+share/apps/ksgmltools2/customization/nn/entities/underArtisticLicense.docbook
+share/apps/ksgmltools2/customization/nn/entities/underBSDLicense.docbook
+share/apps/ksgmltools2/customization/nn/entities/underFDL.docbook
+share/apps/ksgmltools2/customization/nn/entities/underGPL.docbook
+share/apps/ksgmltools2/customization/nn/entities/underX11License.docbook
+share/apps/ksgmltools2/customization/nn/entities/update-doc.docbook
+share/apps/ksgmltools2/customization/nn/lang.entities
+share/apps/ksgmltools2/customization/nn/strings.entities
+share/apps/ksgmltools2/customization/nn/user.entities
 share/apps/ksgmltools2/customization/no/catalog
 share/apps/ksgmltools2/customization/no/entities/fdl-notice.docbook
 share/apps/ksgmltools2/customization/no/entities/gpl-notice.docbook
+share/apps/ksgmltools2/customization/no/entities/help-menu.docbook
+share/apps/ksgmltools2/customization/no/entities/install-compile.docbook
+share/apps/ksgmltools2/customization/no/entities/install-intro.docbook
 share/apps/ksgmltools2/customization/no/entities/lgpl-notice.docbook
 share/apps/ksgmltools2/customization/no/entities/report-bugs.docbook
 share/apps/ksgmltools2/customization/no/entities/underArtisticLicense.docbook
@@ -1043,6 +1204,9 @@ share/apps/ksgmltools2/customization/no/user.entities
 share/apps/ksgmltools2/customization/pl/catalog
 share/apps/ksgmltools2/customization/pl/entities/fdl-notice.docbook
 share/apps/ksgmltools2/customization/pl/entities/gpl-notice.docbook
+share/apps/ksgmltools2/customization/pl/entities/help-menu.docbook
+share/apps/ksgmltools2/customization/pl/entities/install-compile.docbook
+share/apps/ksgmltools2/customization/pl/entities/install-intro.docbook
 share/apps/ksgmltools2/customization/pl/entities/lgpl-notice.docbook
 share/apps/ksgmltools2/customization/pl/entities/report-bugs.docbook
 share/apps/ksgmltools2/customization/pl/entities/underArtisticLicense.docbook
@@ -1057,6 +1221,9 @@ share/apps/ksgmltools2/customization/pl/user.entities
 share/apps/ksgmltools2/customization/pt-BR/catalog
 share/apps/ksgmltools2/customization/pt-BR/entities/fdl-notice.docbook
 share/apps/ksgmltools2/customization/pt-BR/entities/gpl-notice.docbook
+share/apps/ksgmltools2/customization/pt-BR/entities/help-menu.docbook
+share/apps/ksgmltools2/customization/pt-BR/entities/install-compile.docbook
+share/apps/ksgmltools2/customization/pt-BR/entities/install-intro.docbook
 share/apps/ksgmltools2/customization/pt-BR/entities/lgpl-notice.docbook
 share/apps/ksgmltools2/customization/pt-BR/entities/report-bugs.docbook
 share/apps/ksgmltools2/customization/pt-BR/entities/underArtisticLicense.docbook
@@ -1071,6 +1238,9 @@ share/apps/ksgmltools2/customization/pt-BR/user.entities
 share/apps/ksgmltools2/customization/pt/catalog
 share/apps/ksgmltools2/customization/pt/entities/fdl-notice.docbook
 share/apps/ksgmltools2/customization/pt/entities/gpl-notice.docbook
+share/apps/ksgmltools2/customization/pt/entities/help-menu.docbook
+share/apps/ksgmltools2/customization/pt/entities/install-compile.docbook
+share/apps/ksgmltools2/customization/pt/entities/install-intro.docbook
 share/apps/ksgmltools2/customization/pt/entities/lgpl-notice.docbook
 share/apps/ksgmltools2/customization/pt/entities/report-bugs.docbook
 share/apps/ksgmltools2/customization/pt/entities/underArtisticLicense.docbook
@@ -1085,6 +1255,9 @@ share/apps/ksgmltools2/customization/pt/user.entities
 share/apps/ksgmltools2/customization/ro/catalog
 share/apps/ksgmltools2/customization/ro/entities/fdl-notice.docbook
 share/apps/ksgmltools2/customization/ro/entities/gpl-notice.docbook
+share/apps/ksgmltools2/customization/ro/entities/help-menu.docbook
+share/apps/ksgmltools2/customization/ro/entities/install-compile.docbook
+share/apps/ksgmltools2/customization/ro/entities/install-intro.docbook
 share/apps/ksgmltools2/customization/ro/entities/lgpl-notice.docbook
 share/apps/ksgmltools2/customization/ro/entities/report-bugs.docbook
 share/apps/ksgmltools2/customization/ro/entities/underArtisticLicense.docbook
@@ -1099,6 +1272,9 @@ share/apps/ksgmltools2/customization/ro/user.entities
 share/apps/ksgmltools2/customization/ru/catalog
 share/apps/ksgmltools2/customization/ru/entities/fdl-notice.docbook
 share/apps/ksgmltools2/customization/ru/entities/gpl-notice.docbook
+share/apps/ksgmltools2/customization/ru/entities/help-menu.docbook
+share/apps/ksgmltools2/customization/ru/entities/install-compile.docbook
+share/apps/ksgmltools2/customization/ru/entities/install-intro.docbook
 share/apps/ksgmltools2/customization/ru/entities/lgpl-notice.docbook
 share/apps/ksgmltools2/customization/ru/entities/report-bugs.docbook
 share/apps/ksgmltools2/customization/ru/entities/underArtisticLicense.docbook
@@ -1113,6 +1289,9 @@ share/apps/ksgmltools2/customization/ru/user.entities
 share/apps/ksgmltools2/customization/sk/catalog
 share/apps/ksgmltools2/customization/sk/entities/fdl-notice.docbook
 share/apps/ksgmltools2/customization/sk/entities/gpl-notice.docbook
+share/apps/ksgmltools2/customization/sk/entities/help-menu.docbook
+share/apps/ksgmltools2/customization/sk/entities/install-compile.docbook
+share/apps/ksgmltools2/customization/sk/entities/install-intro.docbook
 share/apps/ksgmltools2/customization/sk/entities/lgpl-notice.docbook
 share/apps/ksgmltools2/customization/sk/entities/report-bugs.docbook
 share/apps/ksgmltools2/customization/sk/entities/underArtisticLicense.docbook
@@ -1127,6 +1306,9 @@ share/apps/ksgmltools2/customization/sk/user.entities
 share/apps/ksgmltools2/customization/sl/catalog
 share/apps/ksgmltools2/customization/sl/entities/fdl-notice.docbook
 share/apps/ksgmltools2/customization/sl/entities/gpl-notice.docbook
+share/apps/ksgmltools2/customization/sl/entities/help-menu.docbook
+share/apps/ksgmltools2/customization/sl/entities/install-compile.docbook
+share/apps/ksgmltools2/customization/sl/entities/install-intro.docbook
 share/apps/ksgmltools2/customization/sl/entities/lgpl-notice.docbook
 share/apps/ksgmltools2/customization/sl/entities/report-bugs.docbook
 share/apps/ksgmltools2/customization/sl/entities/underArtisticLicense.docbook
@@ -1141,6 +1323,9 @@ share/apps/ksgmltools2/customization/sl/user.entities
 share/apps/ksgmltools2/customization/sr/catalog
 share/apps/ksgmltools2/customization/sr/entities/fdl-notice.docbook
 share/apps/ksgmltools2/customization/sr/entities/gpl-notice.docbook
+share/apps/ksgmltools2/customization/sr/entities/help-menu.docbook
+share/apps/ksgmltools2/customization/sr/entities/install-compile.docbook
+share/apps/ksgmltools2/customization/sr/entities/install-intro.docbook
 share/apps/ksgmltools2/customization/sr/entities/lgpl-notice.docbook
 share/apps/ksgmltools2/customization/sr/entities/report-bugs.docbook
 share/apps/ksgmltools2/customization/sr/entities/underArtisticLicense.docbook
@@ -1155,6 +1340,9 @@ share/apps/ksgmltools2/customization/sr/user.entities
 share/apps/ksgmltools2/customization/sv/catalog
 share/apps/ksgmltools2/customization/sv/entities/fdl-notice.docbook
 share/apps/ksgmltools2/customization/sv/entities/gpl-notice.docbook
+share/apps/ksgmltools2/customization/sv/entities/help-menu.docbook
+share/apps/ksgmltools2/customization/sv/entities/install-compile.docbook
+share/apps/ksgmltools2/customization/sv/entities/install-intro.docbook
 share/apps/ksgmltools2/customization/sv/entities/lgpl-notice.docbook
 share/apps/ksgmltools2/customization/sv/entities/report-bugs.docbook
 share/apps/ksgmltools2/customization/sv/entities/underArtisticLicense.docbook
@@ -1169,6 +1357,9 @@ share/apps/ksgmltools2/customization/sv/user.entities
 share/apps/ksgmltools2/customization/tr/catalog
 share/apps/ksgmltools2/customization/tr/entities/fdl-notice.docbook
 share/apps/ksgmltools2/customization/tr/entities/gpl-notice.docbook
+share/apps/ksgmltools2/customization/tr/entities/help-menu.docbook
+share/apps/ksgmltools2/customization/tr/entities/install-compile.docbook
+share/apps/ksgmltools2/customization/tr/entities/install-intro.docbook
 share/apps/ksgmltools2/customization/tr/entities/lgpl-notice.docbook
 share/apps/ksgmltools2/customization/tr/entities/report-bugs.docbook
 share/apps/ksgmltools2/customization/tr/entities/underArtisticLicense.docbook
@@ -1180,6 +1371,23 @@ share/apps/ksgmltools2/customization/tr/entities/update-doc.docbook
 share/apps/ksgmltools2/customization/tr/lang.entities
 share/apps/ksgmltools2/customization/tr/strings.entities
 share/apps/ksgmltools2/customization/tr/user.entities
+share/apps/ksgmltools2/customization/uk/catalog
+share/apps/ksgmltools2/customization/uk/entities/fdl-notice.docbook
+share/apps/ksgmltools2/customization/uk/entities/gpl-notice.docbook
+share/apps/ksgmltools2/customization/uk/entities/help-menu.docbook
+share/apps/ksgmltools2/customization/uk/entities/install-compile.docbook
+share/apps/ksgmltools2/customization/uk/entities/install-intro.docbook
+share/apps/ksgmltools2/customization/uk/entities/lgpl-notice.docbook
+share/apps/ksgmltools2/customization/uk/entities/report-bugs.docbook
+share/apps/ksgmltools2/customization/uk/entities/underArtisticLicense.docbook
+share/apps/ksgmltools2/customization/uk/entities/underBSDLicense.docbook
+share/apps/ksgmltools2/customization/uk/entities/underFDL.docbook
+share/apps/ksgmltools2/customization/uk/entities/underGPL.docbook
+share/apps/ksgmltools2/customization/uk/entities/underX11License.docbook
+share/apps/ksgmltools2/customization/uk/entities/update-doc.docbook
+share/apps/ksgmltools2/customization/uk/lang.entities
+share/apps/ksgmltools2/customization/uk/strings.entities
+share/apps/ksgmltools2/customization/uk/user.entities
 share/apps/ksgmltools2/customization/xsl/README
 share/apps/ksgmltools2/customization/xsl/ca.xml
 share/apps/ksgmltools2/customization/xsl/cs.xml
@@ -1196,6 +1404,7 @@ share/apps/ksgmltools2/customization/xsl/it.xml
 share/apps/ksgmltools2/customization/xsl/ja.xml
 share/apps/ksgmltools2/customization/xsl/ko.xml
 share/apps/ksgmltools2/customization/xsl/nl.xml
+share/apps/ksgmltools2/customization/xsl/nn.xml
 share/apps/ksgmltools2/customization/xsl/no.xml
 share/apps/ksgmltools2/customization/xsl/pl.xml
 share/apps/ksgmltools2/customization/xsl/pt.xml
@@ -1210,6 +1419,9 @@ share/apps/ksgmltools2/customization/xsl/zh_tw.xml
 share/apps/ksgmltools2/customization/zh-TW/catalog
 share/apps/ksgmltools2/customization/zh-TW/entities/fdl-notice.docbook
 share/apps/ksgmltools2/customization/zh-TW/entities/gpl-notice.docbook
+share/apps/ksgmltools2/customization/zh-TW/entities/help-menu.docbook
+share/apps/ksgmltools2/customization/zh-TW/entities/install-compile.docbook
+share/apps/ksgmltools2/customization/zh-TW/entities/install-intro.docbook
 share/apps/ksgmltools2/customization/zh-TW/entities/lgpl-notice.docbook
 share/apps/ksgmltools2/customization/zh-TW/entities/report-bugs.docbook
 share/apps/ksgmltools2/customization/zh-TW/entities/underArtisticLicense.docbook
@@ -1271,6 +1483,7 @@ share/apps/ksgmltools2/docbook/xsl/common/el.xml
 share/apps/ksgmltools2/docbook/xsl/common/en.xml
 share/apps/ksgmltools2/docbook/xsl/common/es.xml
 share/apps/ksgmltools2/docbook/xsl/common/et.xml
+share/apps/ksgmltools2/docbook/xsl/common/eu.xml
 share/apps/ksgmltools2/docbook/xsl/common/fi.xml
 share/apps/ksgmltools2/docbook/xsl/common/fr.xml
 share/apps/ksgmltools2/docbook/xsl/common/gentext.xsl
@@ -1284,8 +1497,8 @@ share/apps/ksgmltools2/docbook/xsl/common/l10n.xml
 share/apps/ksgmltools2/docbook/xsl/common/l10n.xsl
 share/apps/ksgmltools2/docbook/xsl/common/labels.xsl
 share/apps/ksgmltools2/docbook/xsl/common/nl.xml
+share/apps/ksgmltools2/docbook/xsl/common/nn.xml
 share/apps/ksgmltools2/docbook/xsl/common/no.xml
-share/apps/ksgmltools2/docbook/xsl/common/no_ny.xml
 share/apps/ksgmltools2/docbook/xsl/common/pl.xml
 share/apps/ksgmltools2/docbook/xsl/common/pt.xml
 share/apps/ksgmltools2/docbook/xsl/common/pt_br.xml
@@ -1296,8 +1509,11 @@ share/apps/ksgmltools2/docbook/xsl/common/sl.xml
 share/apps/ksgmltools2/docbook/xsl/common/sr.xml
 share/apps/ksgmltools2/docbook/xsl/common/subtitles.xsl
 share/apps/ksgmltools2/docbook/xsl/common/sv.xml
+share/apps/ksgmltools2/docbook/xsl/common/table.xsl
+share/apps/ksgmltools2/docbook/xsl/common/th.xml
 share/apps/ksgmltools2/docbook/xsl/common/titles.xsl
 share/apps/ksgmltools2/docbook/xsl/common/tr.xml
+share/apps/ksgmltools2/docbook/xsl/common/uk.xml
 share/apps/ksgmltools2/docbook/xsl/common/xh.xml
 share/apps/ksgmltools2/docbook/xsl/common/zh_cn.xml
 share/apps/ksgmltools2/docbook/xsl/common/zh_tw.xml
@@ -1310,7 +1526,6 @@ share/apps/ksgmltools2/docbook/xsl/html/block.xsl
 share/apps/ksgmltools2/docbook/xsl/html/calc-chunks.xsl
 share/apps/ksgmltools2/docbook/xsl/html/callout.xsl
 share/apps/ksgmltools2/docbook/xsl/html/changebars.xsl
-share/apps/ksgmltools2/docbook/xsl/html/chunk-common.xsl
 share/apps/ksgmltools2/docbook/xsl/html/chunk-experimental.xsl
 share/apps/ksgmltools2/docbook/xsl/html/chunk.xsl
 share/apps/ksgmltools2/docbook/xsl/html/chunker.xsl
@@ -1331,7 +1546,12 @@ share/apps/ksgmltools2/docbook/xsl/html/keywords.xsl
 share/apps/ksgmltools2/docbook/xsl/html/lists.xsl
 share/apps/ksgmltools2/docbook/xsl/html/math.xsl
 share/apps/ksgmltools2/docbook/xsl/html/oldchunker.xsl
+share/apps/ksgmltools2/docbook/xsl/html/onechunk.xsl
+share/apps/ksgmltools2/docbook/xsl/html/param.ent
+share/apps/ksgmltools2/docbook/xsl/html/param.html
+share/apps/ksgmltools2/docbook/xsl/html/param.xml
 share/apps/ksgmltools2/docbook/xsl/html/param.xsl
+share/apps/ksgmltools2/docbook/xsl/html/param.xweb
 share/apps/ksgmltools2/docbook/xsl/html/pi.xsl
 share/apps/ksgmltools2/docbook/xsl/html/qandaset.xsl
 share/apps/ksgmltools2/docbook/xsl/html/refentry.xsl
@@ -1344,8 +1564,6 @@ share/apps/ksgmltools2/docbook/xsl/html/titlepage.xsl
 share/apps/ksgmltools2/docbook/xsl/html/toc.xsl
 share/apps/ksgmltools2/docbook/xsl/html/verbatim.xsl
 share/apps/ksgmltools2/docbook/xsl/html/xref.xsl
-share/apps/ksgmltools2/docbook/xsl/html/xtchunk.xsl
-share/apps/ksgmltools2/docbook/xsl/html/xtchunker.xsl
 share/apps/ksgmltools2/docbook/xsl/images/ChangeLog
 share/apps/ksgmltools2/docbook/xsl/images/callouts/1.png
 share/apps/ksgmltools2/docbook/xsl/images/callouts/10.png
@@ -1375,12 +1593,222 @@ share/apps/ksgmltools2/docbook/xsl/images/toc-plus.png
 share/apps/ksgmltools2/docbook/xsl/images/up.png
 share/apps/ksgmltools2/docbook/xsl/images/warning.png
 share/apps/ksgmltools2/docbook/xsl/images/warning.tif
-share/apps/ksgmltools2/docbook/xsl/indexing/ChangeLog
-share/apps/ksgmltools2/docbook/xsl/indexing/chunk.xsl
-share/apps/ksgmltools2/docbook/xsl/indexing/docbook.xsl
 share/apps/ksgmltools2/docbook/xsl/lib/ChangeLog
 share/apps/ksgmltools2/docbook/xsl/lib/lib.xsl
-share/apps/kssl/caroot/ca-bundle.crt
+share/apps/ksgmltools2/docbook/xsl/params/ChangeLog
+share/apps/ksgmltools2/docbook/xsl/params/admon.graphics.extension.xml
+share/apps/ksgmltools2/docbook/xsl/params/admon.graphics.path.xml
+share/apps/ksgmltools2/docbook/xsl/params/admon.graphics.xml
+share/apps/ksgmltools2/docbook/xsl/params/admon.style.xml
+share/apps/ksgmltools2/docbook/xsl/params/admonition.properties.xml
+share/apps/ksgmltools2/docbook/xsl/params/admonition.title.properties.xml
+share/apps/ksgmltools2/docbook/xsl/params/alignment.xml
+share/apps/ksgmltools2/docbook/xsl/params/annotate.toc.xml
+share/apps/ksgmltools2/docbook/xsl/params/appendix.autolabel.xml
+share/apps/ksgmltools2/docbook/xsl/params/arbortext.extensions.xml
+share/apps/ksgmltools2/docbook/xsl/params/author.othername.in.middle.xml
+share/apps/ksgmltools2/docbook/xsl/params/autotoc.label.separator.xml
+share/apps/ksgmltools2/docbook/xsl/params/base.dir.xml
+share/apps/ksgmltools2/docbook/xsl/params/biblioentry.item.separator.xml
+share/apps/ksgmltools2/docbook/xsl/params/bibliography.collection.xml
+share/apps/ksgmltools2/docbook/xsl/params/blockquote.properties.xml
+share/apps/ksgmltools2/docbook/xsl/params/body.font.family.xml
+share/apps/ksgmltools2/docbook/xsl/params/body.font.master.xml
+share/apps/ksgmltools2/docbook/xsl/params/body.font.size.xml
+share/apps/ksgmltools2/docbook/xsl/params/body.margin.bottom.xml
+share/apps/ksgmltools2/docbook/xsl/params/body.margin.top.xml
+share/apps/ksgmltools2/docbook/xsl/params/bridgehead.in.toc.xml
+share/apps/ksgmltools2/docbook/xsl/params/callout.defaultcolumn.xml
+share/apps/ksgmltools2/docbook/xsl/params/callout.graphics.extension.xml
+share/apps/ksgmltools2/docbook/xsl/params/callout.graphics.number.limit.xml
+share/apps/ksgmltools2/docbook/xsl/params/callout.graphics.path.xml
+share/apps/ksgmltools2/docbook/xsl/params/callout.graphics.xml
+share/apps/ksgmltools2/docbook/xsl/params/callout.list.table.xml
+share/apps/ksgmltools2/docbook/xsl/params/callout.unicode.font.xml
+share/apps/ksgmltools2/docbook/xsl/params/callout.unicode.number.limit.xml
+share/apps/ksgmltools2/docbook/xsl/params/callout.unicode.start.character.xml
+share/apps/ksgmltools2/docbook/xsl/params/callout.unicode.xml
+share/apps/ksgmltools2/docbook/xsl/params/callouts.extension.xml
+share/apps/ksgmltools2/docbook/xsl/params/chapter.autolabel.xml
+share/apps/ksgmltools2/docbook/xsl/params/chunk.datafile.xml
+share/apps/ksgmltools2/docbook/xsl/params/chunk.first.sections.xml
+share/apps/ksgmltools2/docbook/xsl/params/chunk.section.depth.xml
+share/apps/ksgmltools2/docbook/xsl/params/chunk.sections.xml
+share/apps/ksgmltools2/docbook/xsl/params/citerefentry.link.xml
+share/apps/ksgmltools2/docbook/xsl/params/column.count.xml
+share/apps/ksgmltools2/docbook/xsl/params/component.title.properties.xml
+share/apps/ksgmltools2/docbook/xsl/params/css.decoration.xml
+share/apps/ksgmltools2/docbook/xsl/params/default.encoding.xml
+share/apps/ksgmltools2/docbook/xsl/params/default.table.width.xml
+share/apps/ksgmltools2/docbook/xsl/params/default.units.xml
+share/apps/ksgmltools2/docbook/xsl/params/dingbat.font.family.xml
+share/apps/ksgmltools2/docbook/xsl/params/double.sided.xml
+share/apps/ksgmltools2/docbook/xsl/params/ebnf.table.bgcolor.xml
+share/apps/ksgmltools2/docbook/xsl/params/ebnf.table.border.xml
+share/apps/ksgmltools2/docbook/xsl/params/emphasis.propagates.style.xml
+share/apps/ksgmltools2/docbook/xsl/params/firstterm.only.link.xml
+share/apps/ksgmltools2/docbook/xsl/params/footnote.font.size.xml
+share/apps/ksgmltools2/docbook/xsl/params/fop.extensions.xml
+share/apps/ksgmltools2/docbook/xsl/params/formal.object.properties.xml
+share/apps/ksgmltools2/docbook/xsl/params/formal.procedures.xml
+share/apps/ksgmltools2/docbook/xsl/params/formal.title.properties.xml
+share/apps/ksgmltools2/docbook/xsl/params/funcsynopsis.decoration.xml
+share/apps/ksgmltools2/docbook/xsl/params/funcsynopsis.style.xml
+share/apps/ksgmltools2/docbook/xsl/params/function.parens.xml
+share/apps/ksgmltools2/docbook/xsl/params/generate.appendix.toc.xml
+share/apps/ksgmltools2/docbook/xsl/params/generate.article.toc.xml
+share/apps/ksgmltools2/docbook/xsl/params/generate.book.equation.lot.xml
+share/apps/ksgmltools2/docbook/xsl/params/generate.book.example.lot.xml
+share/apps/ksgmltools2/docbook/xsl/params/generate.book.figure.lot.xml
+share/apps/ksgmltools2/docbook/xsl/params/generate.book.table.lot.xml
+share/apps/ksgmltools2/docbook/xsl/params/generate.book.toc.xml
+share/apps/ksgmltools2/docbook/xsl/params/generate.chapter.toc.xml
+share/apps/ksgmltools2/docbook/xsl/params/generate.component.toc.xml
+share/apps/ksgmltools2/docbook/xsl/params/generate.division.equation.lot.xml
+share/apps/ksgmltools2/docbook/xsl/params/generate.division.example.lot.xml
+share/apps/ksgmltools2/docbook/xsl/params/generate.division.figure.lot.xml
+share/apps/ksgmltools2/docbook/xsl/params/generate.division.table.lot.xml
+share/apps/ksgmltools2/docbook/xsl/params/generate.division.toc.xml
+share/apps/ksgmltools2/docbook/xsl/params/generate.index.xml
+share/apps/ksgmltools2/docbook/xsl/params/generate.legalnotice.link.xml
+share/apps/ksgmltools2/docbook/xsl/params/generate.part.toc.xml
+share/apps/ksgmltools2/docbook/xsl/params/generate.preface.toc.xml
+share/apps/ksgmltools2/docbook/xsl/params/generate.qandadiv.toc.xml
+share/apps/ksgmltools2/docbook/xsl/params/generate.qandaset.toc.xml
+share/apps/ksgmltools2/docbook/xsl/params/generate.reference.toc.xml
+share/apps/ksgmltools2/docbook/xsl/params/generate.section.toc.level.xml
+share/apps/ksgmltools2/docbook/xsl/params/generate.section.toc.xml
+share/apps/ksgmltools2/docbook/xsl/params/generate.set.toc.xml
+share/apps/ksgmltools2/docbook/xsl/params/glossary.collection.xml
+share/apps/ksgmltools2/docbook/xsl/params/glossterm.auto.link.xml
+share/apps/ksgmltools2/docbook/xsl/params/graphic.default.extension.xml
+share/apps/ksgmltools2/docbook/xsl/params/html.base.xml
+share/apps/ksgmltools2/docbook/xsl/params/html.ext.xml
+share/apps/ksgmltools2/docbook/xsl/params/html.longdesc.link.xml
+share/apps/ksgmltools2/docbook/xsl/params/html.longdesc.xml
+share/apps/ksgmltools2/docbook/xsl/params/html.stylesheet.type.xml
+share/apps/ksgmltools2/docbook/xsl/params/html.stylesheet.xml
+share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.alias.file.xml
+share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.autolabel.xml
+share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.chm.xml
+share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.encoding.xml
+share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.enumerate.images.xml
+share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.force.map.and.alias.xml
+share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.hhc.section.depth.xml
+share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.hhc.xml
+share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.hhp.tail.xml
+share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.hhp.xml
+share/apps/ksgmltools2/docbook/xsl/params/htmlhelp.map.file.xml
+share/apps/ksgmltools2/docbook/xsl/params/hyphenate.xml
+share/apps/ksgmltools2/docbook/xsl/params/inherit.keywords.xml
+share/apps/ksgmltools2/docbook/xsl/params/insert.xref.page.number.xml
+share/apps/ksgmltools2/docbook/xsl/params/label.from.part.xml
+share/apps/ksgmltools2/docbook/xsl/params/line-height.xml
+share/apps/ksgmltools2/docbook/xsl/params/linenumbering.everyNth.xml
+share/apps/ksgmltools2/docbook/xsl/params/linenumbering.extension.xml
+share/apps/ksgmltools2/docbook/xsl/params/linenumbering.separator.xml
+share/apps/ksgmltools2/docbook/xsl/params/linenumbering.width.xml
+share/apps/ksgmltools2/docbook/xsl/params/link.mailto.url.xml
+share/apps/ksgmltools2/docbook/xsl/params/list.block.spacing.xml
+share/apps/ksgmltools2/docbook/xsl/params/list.item.spacing.xml
+share/apps/ksgmltools2/docbook/xsl/params/make.single.year.ranges.xml
+share/apps/ksgmltools2/docbook/xsl/params/make.valid.html.xml
+share/apps/ksgmltools2/docbook/xsl/params/make.year.ranges.xml
+share/apps/ksgmltools2/docbook/xsl/params/monospace.font.family.xml
+share/apps/ksgmltools2/docbook/xsl/params/monospace.verbatim.properties.xml
+share/apps/ksgmltools2/docbook/xsl/params/navig.graphics.extension.xml
+share/apps/ksgmltools2/docbook/xsl/params/navig.graphics.path.xml
+share/apps/ksgmltools2/docbook/xsl/params/navig.graphics.xml
+share/apps/ksgmltools2/docbook/xsl/params/navig.showtitles.xml
+share/apps/ksgmltools2/docbook/xsl/params/nominal.table.width.xml
+share/apps/ksgmltools2/docbook/xsl/params/normal.para.spacing.xml
+share/apps/ksgmltools2/docbook/xsl/params/olink.fragid.xml
+share/apps/ksgmltools2/docbook/xsl/params/olink.outline.ext.xml
+share/apps/ksgmltools2/docbook/xsl/params/olink.pubid.xml
+share/apps/ksgmltools2/docbook/xsl/params/olink.resolver.xml
+share/apps/ksgmltools2/docbook/xsl/params/olink.sysid.xml
+share/apps/ksgmltools2/docbook/xsl/params/output.method.xml
+share/apps/ksgmltools2/docbook/xsl/params/page.height.portrait.xml
+share/apps/ksgmltools2/docbook/xsl/params/page.height.xml
+share/apps/ksgmltools2/docbook/xsl/params/page.margin.bottom.xml
+share/apps/ksgmltools2/docbook/xsl/params/page.margin.inner.xml
+share/apps/ksgmltools2/docbook/xsl/params/page.margin.outer.xml
+share/apps/ksgmltools2/docbook/xsl/params/page.margin.top.xml
+share/apps/ksgmltools2/docbook/xsl/params/page.orientation.xml
+share/apps/ksgmltools2/docbook/xsl/params/page.width.portrait.xml
+share/apps/ksgmltools2/docbook/xsl/params/page.width.xml
+share/apps/ksgmltools2/docbook/xsl/params/paper.type.xml
+share/apps/ksgmltools2/docbook/xsl/params/part.autolabel.xml
+share/apps/ksgmltools2/docbook/xsl/params/passivetex.extensions.xml
+share/apps/ksgmltools2/docbook/xsl/params/phrase.propagates.style.xml
+share/apps/ksgmltools2/docbook/xsl/params/preface.autolabel.xml
+share/apps/ksgmltools2/docbook/xsl/params/process.empty.source.toc.xml
+share/apps/ksgmltools2/docbook/xsl/params/process.source.toc.xml
+share/apps/ksgmltools2/docbook/xsl/params/punct.honorific.xml
+share/apps/ksgmltools2/docbook/xsl/params/qanda.defaultlabel.xml
+share/apps/ksgmltools2/docbook/xsl/params/qanda.inherit.numeration.xml
+share/apps/ksgmltools2/docbook/xsl/params/qandadiv.autolabel.xml
+share/apps/ksgmltools2/docbook/xsl/params/refentry.generate.name.xml
+share/apps/ksgmltools2/docbook/xsl/params/refentry.generate.title.xml
+share/apps/ksgmltools2/docbook/xsl/params/refentry.separator.xml
+share/apps/ksgmltools2/docbook/xsl/params/refentry.xref.manvolnum.xml
+share/apps/ksgmltools2/docbook/xsl/params/region.after.extent.xml
+share/apps/ksgmltools2/docbook/xsl/params/region.before.extent.xml
+share/apps/ksgmltools2/docbook/xsl/params/root.filename.xml
+share/apps/ksgmltools2/docbook/xsl/params/rootid.xml
+share/apps/ksgmltools2/docbook/xsl/params/runinhead.default.title.end.punct.xml
+share/apps/ksgmltools2/docbook/xsl/params/runinhead.title.end.punct.xml
+share/apps/ksgmltools2/docbook/xsl/params/sans.font.family.xml
+share/apps/ksgmltools2/docbook/xsl/params/saxon.callouts.xml
+share/apps/ksgmltools2/docbook/xsl/params/saxon.character.representation.xml
+share/apps/ksgmltools2/docbook/xsl/params/saxon.linenumbering.xml
+share/apps/ksgmltools2/docbook/xsl/params/saxon.tablecolumns.xml
+share/apps/ksgmltools2/docbook/xsl/params/section.autolabel.xml
+share/apps/ksgmltools2/docbook/xsl/params/section.label.includes.component.label.xml
+share/apps/ksgmltools2/docbook/xsl/params/segmentedlist.as.table.xml
+share/apps/ksgmltools2/docbook/xsl/params/shade.verbatim.style.xml
+share/apps/ksgmltools2/docbook/xsl/params/shade.verbatim.xml
+share/apps/ksgmltools2/docbook/xsl/params/show.comments.xml
+share/apps/ksgmltools2/docbook/xsl/params/show.revisionflag.xml
+share/apps/ksgmltools2/docbook/xsl/params/spacing.paras.xml
+share/apps/ksgmltools2/docbook/xsl/params/stylesheet.result.type.xml
+share/apps/ksgmltools2/docbook/xsl/params/suppress.navigation.xml
+share/apps/ksgmltools2/docbook/xsl/params/table.border.color.xml
+share/apps/ksgmltools2/docbook/xsl/params/table.border.padding.xml
+share/apps/ksgmltools2/docbook/xsl/params/table.border.style.xml
+share/apps/ksgmltools2/docbook/xsl/params/table.border.thickness.xml
+share/apps/ksgmltools2/docbook/xsl/params/table.borders.with.css.xml
+share/apps/ksgmltools2/docbook/xsl/params/table.entry.padding.xml
+share/apps/ksgmltools2/docbook/xsl/params/tablecolumns.extension.xml
+share/apps/ksgmltools2/docbook/xsl/params/template.xml
+share/apps/ksgmltools2/docbook/xsl/params/tex.math.file.xml
+share/apps/ksgmltools2/docbook/xsl/params/tex.math.in.alt.xml
+share/apps/ksgmltools2/docbook/xsl/params/textinsert.extension.xml
+share/apps/ksgmltools2/docbook/xsl/params/title.font.family.xml
+share/apps/ksgmltools2/docbook/xsl/params/title.margin.left.xml
+share/apps/ksgmltools2/docbook/xsl/params/toc.indent.width.xml
+share/apps/ksgmltools2/docbook/xsl/params/toc.list.type.xml
+share/apps/ksgmltools2/docbook/xsl/params/toc.margin.properties.xml
+share/apps/ksgmltools2/docbook/xsl/params/toc.section.depth.xml
+share/apps/ksgmltools2/docbook/xsl/params/ulink.target.xml
+share/apps/ksgmltools2/docbook/xsl/params/use.extensions.xml
+share/apps/ksgmltools2/docbook/xsl/params/use.id.as.filename.xml
+share/apps/ksgmltools2/docbook/xsl/params/use.id.function.xml
+share/apps/ksgmltools2/docbook/xsl/params/using.chunker.xml
+share/apps/ksgmltools2/docbook/xsl/params/variablelist.as.blocks.xml
+share/apps/ksgmltools2/docbook/xsl/params/variablelist.as.table.xml
+share/apps/ksgmltools2/docbook/xsl/params/verbatim.properties.xml
+share/apps/ksgmltools2/docbook/xsl/params/xep.extensions.xml
+share/apps/ksgmltools2/docbook/xsl/params/xref.properties.xml
+share/apps/ksgmltools2/docbook/xsl/tools/ChangeLog
+share/apps/ksgmltools2/docbook/xsl/tools/olink/ChangeLog
+share/apps/ksgmltools2/docbook/xsl/tools/olink/olink-common.xsl
+share/apps/ksgmltools2/docbook/xsl/tools/olink/olink.xsl
+share/apps/ksgmltools2/docbook/xsl/tools/olink/olinkchunk.xsl
+share/apps/ksgmltools2/docbook/xsl/tools/olink/olinksum.dtd
+share/apps/ksgmltools2/docbook/xsl/tools/profile/ChangeLog
+share/apps/ksgmltools2/docbook/xsl/tools/profile/profile.xsl
+share/apps/kssl/ca-bundle.crt
 share/apps/kstyle/pixmaps/aquaice.png
 share/apps/kstyle/pixmaps/black_combo.png
 share/apps/kstyle/pixmaps/blkmarble.png
@@ -1471,11 +1899,13 @@ share/apps/kstyle/pixmaps/whitemarble.png
 share/apps/kstyle/pixmaps/woodmenu.png
 share/apps/kstyle/pixmaps/yellow_off.png
 share/apps/kstyle/pixmaps/yellow_on.png
+share/apps/kstyle/themes/b3.themerc
 share/apps/kstyle/themes/default.themerc
 share/apps/kstyle/themes/highcolor.themerc
-share/apps/kstyle/themes/kstep.themerc
+share/apps/kstyle/themes/keramik.themerc
+share/apps/kstyle/themes/light-v2.themerc
+share/apps/kstyle/themes/light-v3.themerc
 share/apps/kstyle/themes/marble.themerc
-share/apps/kstyle/themes/mega.themerc
 share/apps/kstyle/themes/qtcde.themerc
 share/apps/kstyle/themes/qtmotif.themerc
 share/apps/kstyle/themes/qtmotifplus.themerc
@@ -1485,14 +1915,16 @@ share/apps/kstyle/themes/qtwindows.themerc
 share/apps/kstyle/themes/riscos.themerc
 share/apps/kstyle/themes/system.themerc
 share/apps/kstyle/themes/systemalt.themerc
-share/apps/kstyle/themes/web.themerc
-share/config/charsets
+share/autostart/kab2kabc.desktop
 share/config/colors/40 Colors
 share/config/colors/Royal
 share/config/colors/Web
 share/config/kdebug.areas
 share/config/kdebugrc
 share/config/kdeprintrc
+share/config/ksslcalist
+share/config/kthemestylerc
+share/config/language.codes
 share/config/ui/kprintpreviewui.rc
 share/config/ui/ui_standards.rc
 share/doc/HTML/en/common/1.png
@@ -1509,7 +1941,6 @@ share/doc/HTML/en/common/artistic-license.html
 share/doc/HTML/en/common/bottom1.png
 share/doc/HTML/en/common/bottom2.png
 share/doc/HTML/en/common/bsd-license.html
-share/doc/HTML/en/common/caution.png
 share/doc/HTML/en/common/doctop1.png
 share/doc/HTML/en/common/doctop1a.png
 share/doc/HTML/en/common/doctop1b.png
@@ -1518,26 +1949,21 @@ share/doc/HTML/en/common/fdl-license
 share/doc/HTML/en/common/fdl-license.html
 share/doc/HTML/en/common/gpl-license
 share/doc/HTML/en/common/gpl-license.html
-share/doc/HTML/en/common/important.png
 share/doc/HTML/en/common/kde-common.css
 share/doc/HTML/en/common/kde-default.css
 share/doc/HTML/en/common/kde-localised.css.template
+share/doc/HTML/en/common/kde-web.css
 share/doc/HTML/en/common/lgpl-license
 share/doc/HTML/en/common/lgpl-license.html
-share/doc/HTML/en/common/logotp3-small.png
-share/doc/HTML/en/common/logotp3.png
-share/doc/HTML/en/common/note.png
-share/doc/HTML/en/common/prev.png
 share/doc/HTML/en/common/qpl-license.html
 share/doc/HTML/en/common/shadow.png
-share/doc/HTML/en/common/tip.png
-share/doc/HTML/en/common/toc-blank.png
-share/doc/HTML/en/common/toc-minus.png
-share/doc/HTML/en/common/toc-plus.png
-share/doc/HTML/en/common/up.png
-share/doc/HTML/en/common/warning.png
+share/doc/HTML/en/common/web-docbottom.png
+share/doc/HTML/en/common/web-doctop.png
 share/doc/HTML/en/common/x11-license.html
 share/doc/HTML/en/common/xml.dcl
+share/doc/HTML/en/kspell/common
+share/doc/HTML/en/kspell/index.cache.bz2
+share/doc/HTML/en/kspell/index.docbook
 share/icons/hicolor/16x16/actions/1downarrow.png
 share/icons/hicolor/16x16/actions/1leftarrow.png
 share/icons/hicolor/16x16/actions/1rightarrow.png
@@ -1546,7 +1972,9 @@ share/icons/hicolor/16x16/actions/2downarrow.png
 share/icons/hicolor/16x16/actions/2leftarrow.png
 share/icons/hicolor/16x16/actions/2rightarrow.png
 share/icons/hicolor/16x16/actions/2uparrow.png
+share/icons/hicolor/16x16/actions/about_kde.png
 share/icons/hicolor/16x16/actions/airbrush.png
+share/icons/hicolor/16x16/actions/apply.png
 share/icons/hicolor/16x16/actions/attach.png
 share/icons/hicolor/16x16/actions/back.png
 share/icons/hicolor/16x16/actions/blend.png
@@ -1555,13 +1983,17 @@ share/icons/hicolor/16x16/actions/bookmark_add.png
 share/icons/hicolor/16x16/actions/bookmark_folder.png
 share/icons/hicolor/16x16/actions/bookmark_toolbar.png
 share/icons/hicolor/16x16/actions/bottom.png
+share/icons/hicolor/16x16/actions/cancel.png
 share/icons/hicolor/16x16/actions/charset.png
+share/icons/hicolor/16x16/actions/clear_left.png
 share/icons/hicolor/16x16/actions/color_fill.png
 share/icons/hicolor/16x16/actions/color_line.png
 share/icons/hicolor/16x16/actions/colorize.png
 share/icons/hicolor/16x16/actions/colorpicker.png
 share/icons/hicolor/16x16/actions/completion.png
 share/icons/hicolor/16x16/actions/configure.png
+share/icons/hicolor/16x16/actions/configure_shortcuts.png
+share/icons/hicolor/16x16/actions/configure_toolbars.png
 share/icons/hicolor/16x16/actions/connect_creating.png
 share/icons/hicolor/16x16/actions/connect_established.png
 share/icons/hicolor/16x16/actions/connect_no.png
@@ -1584,7 +2016,9 @@ share/icons/hicolor/16x16/actions/eraser.png
 share/icons/hicolor/16x16/actions/exec.png
 share/icons/hicolor/16x16/actions/exit.png
 share/icons/hicolor/16x16/actions/fileclose.png
+share/icons/hicolor/16x16/actions/fileexport.png
 share/icons/hicolor/16x16/actions/filefind.png
+share/icons/hicolor/16x16/actions/fileimport.png
 share/icons/hicolor/16x16/actions/filenew.png
 share/icons/hicolor/16x16/actions/fileopen.png
 share/icons/hicolor/16x16/actions/fileprint.png
@@ -1596,16 +2030,30 @@ share/icons/hicolor/16x16/actions/find.png
 share/icons/hicolor/16x16/actions/finish.png
 share/icons/hicolor/16x16/actions/flag.png
 share/icons/hicolor/16x16/actions/folder_new.png
+share/icons/hicolor/16x16/actions/fontsizedown.png
+share/icons/hicolor/16x16/actions/fontsizeup.png
 share/icons/hicolor/16x16/actions/forward.png
+share/icons/hicolor/16x16/actions/frame_edit.png
+share/icons/hicolor/16x16/actions/frame_formula.png
+share/icons/hicolor/16x16/actions/frame_image.png
+share/icons/hicolor/16x16/actions/frame_query.png
+share/icons/hicolor/16x16/actions/frame_spreadsheet.png
+share/icons/hicolor/16x16/actions/frame_text.png
 share/icons/hicolor/16x16/actions/frameprint.png
 share/icons/hicolor/16x16/actions/gear.png
 share/icons/hicolor/16x16/actions/gohome.png
 share/icons/hicolor/16x16/actions/goto.png
+share/icons/hicolor/16x16/actions/halfencrypted.png
 share/icons/hicolor/16x16/actions/help.png
 share/icons/hicolor/16x16/actions/history.png
+share/icons/hicolor/16x16/actions/history_clear.png
 share/icons/hicolor/16x16/actions/idea.png
 share/icons/hicolor/16x16/actions/identity.png
+share/icons/hicolor/16x16/actions/info.png
+share/icons/hicolor/16x16/actions/inline_image.png
+share/icons/hicolor/16x16/actions/inline_table.png
 share/icons/hicolor/16x16/actions/key_enter.png
+share/icons/hicolor/16x16/actions/launch.png
 share/icons/hicolor/16x16/actions/locationbar_erase.png
 share/icons/hicolor/16x16/actions/lock.png
 share/icons/hicolor/16x16/actions/mail_forward.png
@@ -1613,9 +2061,37 @@ share/icons/hicolor/16x16/actions/mail_generic.png
 share/icons/hicolor/16x16/actions/mail_get.png
 share/icons/hicolor/16x16/actions/mail_reply.png
 share/icons/hicolor/16x16/actions/mail_replyall.png
+share/icons/hicolor/16x16/actions/mail_replylist.png
 share/icons/hicolor/16x16/actions/mail_send.png
+share/icons/hicolor/16x16/actions/math_abs.png
+share/icons/hicolor/16x16/actions/math_brace.png
+share/icons/hicolor/16x16/actions/math_brackets.png
+share/icons/hicolor/16x16/actions/math_frac.png
+share/icons/hicolor/16x16/actions/math_int.png
+share/icons/hicolor/16x16/actions/math_lsub.png
+share/icons/hicolor/16x16/actions/math_lsup.png
+share/icons/hicolor/16x16/actions/math_matrix.png
+share/icons/hicolor/16x16/actions/math_onetwomatrix.png
+share/icons/hicolor/16x16/actions/math_paren.png
+share/icons/hicolor/16x16/actions/math_prod.png
+share/icons/hicolor/16x16/actions/math_rsub.png
+share/icons/hicolor/16x16/actions/math_rsup.png
+share/icons/hicolor/16x16/actions/math_sqrt.png
+share/icons/hicolor/16x16/actions/math_sum.png
 share/icons/hicolor/16x16/actions/misc.png
 share/icons/hicolor/16x16/actions/move.png
+share/icons/hicolor/16x16/actions/music_32ndnote.png
+share/icons/hicolor/16x16/actions/music_cleficon.png
+share/icons/hicolor/16x16/actions/music_cross.png
+share/icons/hicolor/16x16/actions/music_dottednote.png
+share/icons/hicolor/16x16/actions/music_eightnote.png
+share/icons/hicolor/16x16/actions/music_fermatenote.png
+share/icons/hicolor/16x16/actions/music_flat.png
+share/icons/hicolor/16x16/actions/music_fullnote.png
+share/icons/hicolor/16x16/actions/music_halfnote.png
+share/icons/hicolor/16x16/actions/music_natur.png
+share/icons/hicolor/16x16/actions/music_quarternote.png
+share/icons/hicolor/16x16/actions/music_sixteenthnote.png
 share/icons/hicolor/16x16/actions/news_subscribe.png
 share/icons/hicolor/16x16/actions/news_unsubscribe.png
 share/icons/hicolor/16x16/actions/next.png
@@ -1624,7 +2100,10 @@ share/icons/hicolor/16x16/actions/openterm.png
 share/icons/hicolor/16x16/actions/paintbrush.png
 share/icons/hicolor/16x16/actions/pencil.png
 share/icons/hicolor/16x16/actions/player_end.png
+share/icons/hicolor/16x16/actions/player_fwd.png
 share/icons/hicolor/16x16/actions/player_pause.png
+share/icons/hicolor/16x16/actions/player_play.png
+share/icons/hicolor/16x16/actions/player_rew.png
 share/icons/hicolor/16x16/actions/player_start.png
 share/icons/hicolor/16x16/actions/player_stop.png
 share/icons/hicolor/16x16/actions/previous.png
@@ -1649,10 +2128,14 @@ share/icons/hicolor/16x16/actions/text_center.png
 share/icons/hicolor/16x16/actions/text_italic.png
 share/icons/hicolor/16x16/actions/text_left.png
 share/icons/hicolor/16x16/actions/text_right.png
+share/icons/hicolor/16x16/actions/text_strike.png
+share/icons/hicolor/16x16/actions/text_sub.png
+share/icons/hicolor/16x16/actions/text_super.png
 share/icons/hicolor/16x16/actions/text_under.png
 share/icons/hicolor/16x16/actions/thumbnail.png
 share/icons/hicolor/16x16/actions/top.png
 share/icons/hicolor/16x16/actions/transform.png
+share/icons/hicolor/16x16/actions/translate.png
 share/icons/hicolor/16x16/actions/undo.png
 share/icons/hicolor/16x16/actions/unlock.png
 share/icons/hicolor/16x16/actions/up.png
@@ -1665,6 +2148,8 @@ share/icons/hicolor/16x16/actions/view_top_bottom.png
 share/icons/hicolor/16x16/actions/viewmag+.png
 share/icons/hicolor/16x16/actions/viewmag-.png
 share/icons/hicolor/16x16/actions/viewmag.png
+share/icons/hicolor/16x16/actions/viewmag1.png
+share/icons/hicolor/16x16/actions/viewmagfit.png
 share/icons/hicolor/16x16/actions/window_fullscreen.png
 share/icons/hicolor/16x16/actions/window_new.png
 share/icons/hicolor/16x16/actions/window_nofullscreen.png
@@ -1701,6 +2186,7 @@ share/icons/hicolor/16x16/filesystems/desktop.png
 share/icons/hicolor/16x16/filesystems/exec.png
 share/icons/hicolor/16x16/filesystems/file_broken.png
 share/icons/hicolor/16x16/filesystems/file_locked.png
+share/icons/hicolor/16x16/filesystems/folder.mng
 share/icons/hicolor/16x16/filesystems/folder.png
 share/icons/hicolor/16x16/filesystems/folder_blue.png
 share/icons/hicolor/16x16/filesystems/folder_blue_open.png
@@ -1733,7 +2219,9 @@ share/icons/hicolor/16x16/filesystems/ftp.png
 share/icons/hicolor/16x16/filesystems/link.png
 share/icons/hicolor/16x16/filesystems/lockoverlay.png
 share/icons/hicolor/16x16/filesystems/network.png
+share/icons/hicolor/16x16/filesystems/network_local.png
 share/icons/hicolor/16x16/filesystems/pipe.png
+share/icons/hicolor/16x16/filesystems/services.png
 share/icons/hicolor/16x16/filesystems/shredder.png
 share/icons/hicolor/16x16/filesystems/socket.png
 share/icons/hicolor/16x16/filesystems/trashcan_empty.png
@@ -1754,13 +2242,16 @@ share/icons/hicolor/16x16/mimetypes/font_bitmap.png
 share/icons/hicolor/16x16/mimetypes/font_truetype.png
 share/icons/hicolor/16x16/mimetypes/font_type1.png
 share/icons/hicolor/16x16/mimetypes/gf.png
+share/icons/hicolor/16x16/mimetypes/html.mng
 share/icons/hicolor/16x16/mimetypes/html.png
+share/icons/hicolor/16x16/mimetypes/image.mng
 share/icons/hicolor/16x16/mimetypes/image.png
 share/icons/hicolor/16x16/mimetypes/info.png
 share/icons/hicolor/16x16/mimetypes/kmultiple.png
 share/icons/hicolor/16x16/mimetypes/log.png
 share/icons/hicolor/16x16/mimetypes/make.png
 share/icons/hicolor/16x16/mimetypes/man.png
+share/icons/hicolor/16x16/mimetypes/message.png
 share/icons/hicolor/16x16/mimetypes/metafont.png
 share/icons/hicolor/16x16/mimetypes/midi.png
 share/icons/hicolor/16x16/mimetypes/mime_empty.png
@@ -1790,9 +2281,13 @@ share/icons/hicolor/16x16/mimetypes/source_pl.png
 share/icons/hicolor/16x16/mimetypes/source_py.png
 share/icons/hicolor/16x16/mimetypes/source_s.png
 share/icons/hicolor/16x16/mimetypes/source_y.png
+share/icons/hicolor/16x16/mimetypes/tar.mng
 share/icons/hicolor/16x16/mimetypes/tar.png
+share/icons/hicolor/16x16/mimetypes/tgz.mng
 share/icons/hicolor/16x16/mimetypes/tgz.png
+share/icons/hicolor/16x16/mimetypes/txt.mng
 share/icons/hicolor/16x16/mimetypes/txt.png
+share/icons/hicolor/16x16/mimetypes/unknown.mng
 share/icons/hicolor/16x16/mimetypes/unknown.png
 share/icons/hicolor/16x16/mimetypes/vcalendar.png
 share/icons/hicolor/16x16/mimetypes/vcard.png
@@ -1808,6 +2303,7 @@ share/icons/hicolor/22x22/actions/2downarrow.png
 share/icons/hicolor/22x22/actions/2leftarrow.png
 share/icons/hicolor/22x22/actions/2rightarrow.png
 share/icons/hicolor/22x22/actions/2uparrow.png
+share/icons/hicolor/22x22/actions/about_kde.png
 share/icons/hicolor/22x22/actions/airbrush.png
 share/icons/hicolor/22x22/actions/appearance.png
 share/icons/hicolor/22x22/actions/attach.png
@@ -1816,8 +2312,11 @@ share/icons/hicolor/22x22/actions/blend.png
 share/icons/hicolor/22x22/actions/bookmark.png
 share/icons/hicolor/22x22/actions/bookmark_add.png
 share/icons/hicolor/22x22/actions/bottom.png
+share/icons/hicolor/22x22/actions/button_cancel.png
+share/icons/hicolor/22x22/actions/button_ok.png
 share/icons/hicolor/22x22/actions/centrejust.png
 share/icons/hicolor/22x22/actions/charset.png
+share/icons/hicolor/22x22/actions/clear_left.png
 share/icons/hicolor/22x22/actions/color_fill.png
 share/icons/hicolor/22x22/actions/color_line.png
 share/icons/hicolor/22x22/actions/colorize.png
@@ -1845,7 +2344,9 @@ share/icons/hicolor/22x22/actions/eraser.png
 share/icons/hicolor/22x22/actions/exec.png
 share/icons/hicolor/22x22/actions/exit.png
 share/icons/hicolor/22x22/actions/fileclose.png
+share/icons/hicolor/22x22/actions/fileexport.png
 share/icons/hicolor/22x22/actions/filefind.png
+share/icons/hicolor/22x22/actions/fileimport.png
 share/icons/hicolor/22x22/actions/filenew.png
 share/icons/hicolor/22x22/actions/fileopen.png
 share/icons/hicolor/22x22/actions/fileprint.png
@@ -1856,65 +2357,30 @@ share/icons/hicolor/22x22/actions/fill.png
 share/icons/hicolor/22x22/actions/filter.png
 share/icons/hicolor/22x22/actions/find.png
 share/icons/hicolor/22x22/actions/finish.png
+share/icons/hicolor/22x22/actions/folder.png
 share/icons/hicolor/22x22/actions/folder_new.png
+share/icons/hicolor/22x22/actions/fontsizedown.png
+share/icons/hicolor/22x22/actions/fontsizeup.png
 share/icons/hicolor/22x22/actions/forward.png
+share/icons/hicolor/22x22/actions/frame_chart.png
+share/icons/hicolor/22x22/actions/frame_edit.png
+share/icons/hicolor/22x22/actions/frame_formula.png
+share/icons/hicolor/22x22/actions/frame_image.png
+share/icons/hicolor/22x22/actions/frame_query.png
+share/icons/hicolor/22x22/actions/frame_spreadsheet.png
+share/icons/hicolor/22x22/actions/frame_text.png
 share/icons/hicolor/22x22/actions/frameprint.png
 share/icons/hicolor/22x22/actions/gear.png
 share/icons/hicolor/22x22/actions/gohome.png
 share/icons/hicolor/22x22/actions/goto.png
+share/icons/hicolor/22x22/actions/halfencrypted.png
 share/icons/hicolor/22x22/actions/help.png
 share/icons/hicolor/22x22/actions/history.png
-share/icons/hicolor/22x22/actions/kde/0001.png
-share/icons/hicolor/22x22/actions/kde/0002.png
-share/icons/hicolor/22x22/actions/kde/0003.png
-share/icons/hicolor/22x22/actions/kde/0004.png
-share/icons/hicolor/22x22/actions/kde/0005.png
-share/icons/hicolor/22x22/actions/kde/0006.png
-share/icons/hicolor/22x22/actions/kde/0007.png
-share/icons/hicolor/22x22/actions/kde/0008.png
-share/icons/hicolor/22x22/actions/kde/0009.png
-share/icons/hicolor/22x22/actions/kde/0010.png
-share/icons/hicolor/22x22/actions/kde/0011.png
-share/icons/hicolor/22x22/actions/kde/0012.png
-share/icons/hicolor/22x22/actions/kde/0013.png
-share/icons/hicolor/22x22/actions/kde/0014.png
-share/icons/hicolor/22x22/actions/kde/0015.png
-share/icons/hicolor/22x22/actions/kde/0016.png
-share/icons/hicolor/22x22/actions/kde/0017.png
-share/icons/hicolor/22x22/actions/kde/0018.png
-share/icons/hicolor/22x22/actions/kde/0019.png
-share/icons/hicolor/22x22/actions/kde/0020.png
-share/icons/hicolor/22x22/actions/kde/0021.png
-share/icons/hicolor/22x22/actions/kde/0022.png
-share/icons/hicolor/22x22/actions/kde/0023.png
-share/icons/hicolor/22x22/actions/kde/0024.png
-share/icons/hicolor/22x22/actions/kde/0025.png
-share/icons/hicolor/22x22/actions/kde/0026.png
-share/icons/hicolor/22x22/actions/kde/0027.png
-share/icons/hicolor/22x22/actions/kde/0028.png
-share/icons/hicolor/22x22/actions/kde/0029.png
-share/icons/hicolor/22x22/actions/kde/0030.png
-share/icons/hicolor/22x22/actions/kde/0031.png
-share/icons/hicolor/22x22/actions/kde/0032.png
-share/icons/hicolor/22x22/actions/kde/0033.png
-share/icons/hicolor/22x22/actions/kde/0034.png
-share/icons/hicolor/22x22/actions/kde/0035.png
-share/icons/hicolor/22x22/actions/kde/0036.png
-share/icons/hicolor/22x22/actions/kde/0037.png
-share/icons/hicolor/22x22/actions/kde/0038.png
-share/icons/hicolor/22x22/actions/kde/0039.png
-share/icons/hicolor/22x22/actions/kde/0040.png
-share/icons/hicolor/22x22/actions/kde/0041.png
-share/icons/hicolor/22x22/actions/kde/0042.png
-share/icons/hicolor/22x22/actions/kde/0043.png
-share/icons/hicolor/22x22/actions/kde/0044.png
-share/icons/hicolor/22x22/actions/kde/0045.png
-share/icons/hicolor/22x22/actions/kde/0046.png
-share/icons/hicolor/22x22/actions/kde/0047.png
-share/icons/hicolor/22x22/actions/kde/0048.png
-share/icons/hicolor/22x22/actions/kde/0049.png
-share/icons/hicolor/22x22/actions/kde/0050.png
+share/icons/hicolor/22x22/actions/inline_image.png
+share/icons/hicolor/22x22/actions/inline_table.png
+share/icons/hicolor/22x22/actions/kde.png
 share/icons/hicolor/22x22/actions/key_enter.png
+share/icons/hicolor/22x22/actions/launch.png
 share/icons/hicolor/22x22/actions/leftjust.png
 share/icons/hicolor/22x22/actions/locationbar_erase.png
 share/icons/hicolor/22x22/actions/lock.png
@@ -1923,9 +2389,37 @@ share/icons/hicolor/22x22/actions/mail_generic.png
 share/icons/hicolor/22x22/actions/mail_get.png
 share/icons/hicolor/22x22/actions/mail_reply.png
 share/icons/hicolor/22x22/actions/mail_replyall.png
+share/icons/hicolor/22x22/actions/mail_replylist.png
 share/icons/hicolor/22x22/actions/mail_send.png
+share/icons/hicolor/22x22/actions/math_abs.png
+share/icons/hicolor/22x22/actions/math_brace.png
+share/icons/hicolor/22x22/actions/math_brackets.png
+share/icons/hicolor/22x22/actions/math_frac.png
+share/icons/hicolor/22x22/actions/math_int.png
+share/icons/hicolor/22x22/actions/math_lsub.png
+share/icons/hicolor/22x22/actions/math_lsup.png
+share/icons/hicolor/22x22/actions/math_matrix.png
+share/icons/hicolor/22x22/actions/math_onetwomatrix.png
+share/icons/hicolor/22x22/actions/math_paren.png
+share/icons/hicolor/22x22/actions/math_prod.png
+share/icons/hicolor/22x22/actions/math_rsub.png
+share/icons/hicolor/22x22/actions/math_rsup.png
+share/icons/hicolor/22x22/actions/math_sqrt.png
+share/icons/hicolor/22x22/actions/math_sum.png
 share/icons/hicolor/22x22/actions/misc.png
 share/icons/hicolor/22x22/actions/move.png
+share/icons/hicolor/22x22/actions/music_32ndnote.png
+share/icons/hicolor/22x22/actions/music_cleficon.png
+share/icons/hicolor/22x22/actions/music_cross.png
+share/icons/hicolor/22x22/actions/music_dottednote.png
+share/icons/hicolor/22x22/actions/music_eightnote.png
+share/icons/hicolor/22x22/actions/music_fermatenote.png
+share/icons/hicolor/22x22/actions/music_flat.png
+share/icons/hicolor/22x22/actions/music_fullnote.png
+share/icons/hicolor/22x22/actions/music_halfnote.png
+share/icons/hicolor/22x22/actions/music_natur.png
+share/icons/hicolor/22x22/actions/music_quarternote.png
+share/icons/hicolor/22x22/actions/music_sixteenthnote.png
 share/icons/hicolor/22x22/actions/news_subscribe.png
 share/icons/hicolor/22x22/actions/next.png
 share/icons/hicolor/22x22/actions/openterm.png
@@ -1933,7 +2427,10 @@ share/icons/hicolor/22x22/actions/paintbrush.png
 share/icons/hicolor/22x22/actions/pencil.png
 share/icons/hicolor/22x22/actions/player_eject.png
 share/icons/hicolor/22x22/actions/player_end.png
+share/icons/hicolor/22x22/actions/player_fwd.png
 share/icons/hicolor/22x22/actions/player_pause.png
+share/icons/hicolor/22x22/actions/player_play.png
+share/icons/hicolor/22x22/actions/player_rew.png
 share/icons/hicolor/22x22/actions/player_start.png
 share/icons/hicolor/22x22/actions/player_stop.png
 share/icons/hicolor/22x22/actions/previous.png
@@ -1951,6 +2448,8 @@ share/icons/hicolor/22x22/actions/signature.png
 share/icons/hicolor/22x22/actions/spellcheck.png
 share/icons/hicolor/22x22/actions/start.png
 share/icons/hicolor/22x22/actions/stop.png
+share/icons/hicolor/22x22/actions/sub.png
+share/icons/hicolor/22x22/actions/super.png
 share/icons/hicolor/22x22/actions/text.png
 share/icons/hicolor/22x22/actions/text_block.png
 share/icons/hicolor/22x22/actions/text_bold.png
@@ -1958,9 +2457,11 @@ share/icons/hicolor/22x22/actions/text_center.png
 share/icons/hicolor/22x22/actions/text_italic.png
 share/icons/hicolor/22x22/actions/text_left.png
 share/icons/hicolor/22x22/actions/text_right.png
+share/icons/hicolor/22x22/actions/text_strike.png
 share/icons/hicolor/22x22/actions/text_under.png
 share/icons/hicolor/22x22/actions/thumbnail.png
 share/icons/hicolor/22x22/actions/top.png
+share/icons/hicolor/22x22/actions/translate.png
 share/icons/hicolor/22x22/actions/undo.png
 share/icons/hicolor/22x22/actions/unlock.png
 share/icons/hicolor/22x22/actions/up.png
@@ -1973,6 +2474,8 @@ share/icons/hicolor/22x22/actions/view_top_bottom.png
 share/icons/hicolor/22x22/actions/viewmag+.png
 share/icons/hicolor/22x22/actions/viewmag-.png
 share/icons/hicolor/22x22/actions/viewmag.png
+share/icons/hicolor/22x22/actions/viewmag1.png
+share/icons/hicolor/22x22/actions/viewmagfit.png
 share/icons/hicolor/22x22/actions/window_fullscreen.png
 share/icons/hicolor/22x22/actions/window_nofullscreen.png
 share/icons/hicolor/22x22/actions/wizard.png
@@ -1984,6 +2487,7 @@ share/icons/hicolor/32x32/actions/2downarrow.png
 share/icons/hicolor/32x32/actions/2leftarrow.png
 share/icons/hicolor/32x32/actions/2rightarrow.png
 share/icons/hicolor/32x32/actions/2uparrow.png
+share/icons/hicolor/32x32/actions/about_kde.png
 share/icons/hicolor/32x32/actions/appearance.png
 share/icons/hicolor/32x32/actions/attach.png
 share/icons/hicolor/32x32/actions/back.png
@@ -1995,6 +2499,7 @@ share/icons/hicolor/32x32/actions/bookmark_toolbar.png
 share/icons/hicolor/32x32/actions/bottom.png
 share/icons/hicolor/32x32/actions/centrejust.png
 share/icons/hicolor/32x32/actions/charset.png
+share/icons/hicolor/32x32/actions/clear_left.png
 share/icons/hicolor/32x32/actions/colorize.png
 share/icons/hicolor/32x32/actions/configure.png
 share/icons/hicolor/32x32/actions/connect_creating.png
@@ -2018,6 +2523,7 @@ share/icons/hicolor/32x32/actions/exec.png
 share/icons/hicolor/32x32/actions/exit.png
 share/icons/hicolor/32x32/actions/fileclose.png
 share/icons/hicolor/32x32/actions/filefind.png
+share/icons/hicolor/32x32/actions/fileimport.png
 share/icons/hicolor/32x32/actions/filenew.png
 share/icons/hicolor/32x32/actions/fileopen.png
 share/icons/hicolor/32x32/actions/fileprint.png
@@ -2032,58 +2538,10 @@ share/icons/hicolor/32x32/actions/frameprint.png
 share/icons/hicolor/32x32/actions/gear.png
 share/icons/hicolor/32x32/actions/gohome.png
 share/icons/hicolor/32x32/actions/goto.png
+share/icons/hicolor/32x32/actions/halfencrypted.png
 share/icons/hicolor/32x32/actions/help.png
 share/icons/hicolor/32x32/actions/identity.png
-share/icons/hicolor/32x32/actions/kde/0001.png
-share/icons/hicolor/32x32/actions/kde/0002.png
-share/icons/hicolor/32x32/actions/kde/0003.png
-share/icons/hicolor/32x32/actions/kde/0004.png
-share/icons/hicolor/32x32/actions/kde/0005.png
-share/icons/hicolor/32x32/actions/kde/0006.png
-share/icons/hicolor/32x32/actions/kde/0007.png
-share/icons/hicolor/32x32/actions/kde/0008.png
-share/icons/hicolor/32x32/actions/kde/0009.png
-share/icons/hicolor/32x32/actions/kde/0010.png
-share/icons/hicolor/32x32/actions/kde/0011.png
-share/icons/hicolor/32x32/actions/kde/0012.png
-share/icons/hicolor/32x32/actions/kde/0013.png
-share/icons/hicolor/32x32/actions/kde/0014.png
-share/icons/hicolor/32x32/actions/kde/0015.png
-share/icons/hicolor/32x32/actions/kde/0016.png
-share/icons/hicolor/32x32/actions/kde/0017.png
-share/icons/hicolor/32x32/actions/kde/0018.png
-share/icons/hicolor/32x32/actions/kde/0019.png
-share/icons/hicolor/32x32/actions/kde/0020.png
-share/icons/hicolor/32x32/actions/kde/0021.png
-share/icons/hicolor/32x32/actions/kde/0022.png
-share/icons/hicolor/32x32/actions/kde/0023.png
-share/icons/hicolor/32x32/actions/kde/0024.png
-share/icons/hicolor/32x32/actions/kde/0025.png
-share/icons/hicolor/32x32/actions/kde/0026.png
-share/icons/hicolor/32x32/actions/kde/0027.png
-share/icons/hicolor/32x32/actions/kde/0028.png
-share/icons/hicolor/32x32/actions/kde/0029.png
-share/icons/hicolor/32x32/actions/kde/0030.png
-share/icons/hicolor/32x32/actions/kde/0031.png
-share/icons/hicolor/32x32/actions/kde/0032.png
-share/icons/hicolor/32x32/actions/kde/0033.png
-share/icons/hicolor/32x32/actions/kde/0034.png
-share/icons/hicolor/32x32/actions/kde/0035.png
-share/icons/hicolor/32x32/actions/kde/0036.png
-share/icons/hicolor/32x32/actions/kde/0037.png
-share/icons/hicolor/32x32/actions/kde/0038.png
-share/icons/hicolor/32x32/actions/kde/0039.png
-share/icons/hicolor/32x32/actions/kde/0040.png
-share/icons/hicolor/32x32/actions/kde/0041.png
-share/icons/hicolor/32x32/actions/kde/0042.png
-share/icons/hicolor/32x32/actions/kde/0043.png
-share/icons/hicolor/32x32/actions/kde/0044.png
-share/icons/hicolor/32x32/actions/kde/0045.png
-share/icons/hicolor/32x32/actions/kde/0046.png
-share/icons/hicolor/32x32/actions/kde/0047.png
-share/icons/hicolor/32x32/actions/kde/0048.png
-share/icons/hicolor/32x32/actions/kde/0049.png
-share/icons/hicolor/32x32/actions/kde/0050.png
+share/icons/hicolor/32x32/actions/kde.png
 share/icons/hicolor/32x32/actions/leftjust.png
 share/icons/hicolor/32x32/actions/locationbar_erase.png
 share/icons/hicolor/32x32/actions/lock.png
@@ -2092,15 +2550,46 @@ share/icons/hicolor/32x32/actions/mail_generic.png
 share/icons/hicolor/32x32/actions/mail_get.png
 share/icons/hicolor/32x32/actions/mail_reply.png
 share/icons/hicolor/32x32/actions/mail_replyall.png
+share/icons/hicolor/32x32/actions/mail_replylist.png
 share/icons/hicolor/32x32/actions/mail_send.png
+share/icons/hicolor/32x32/actions/math_abs.png
+share/icons/hicolor/32x32/actions/math_brace.png
+share/icons/hicolor/32x32/actions/math_brackets.png
+share/icons/hicolor/32x32/actions/math_frac.png
+share/icons/hicolor/32x32/actions/math_int.png
+share/icons/hicolor/32x32/actions/math_lsub.png
+share/icons/hicolor/32x32/actions/math_lsup.png
+share/icons/hicolor/32x32/actions/math_matrix.png
+share/icons/hicolor/32x32/actions/math_onetwomatrix.png
+share/icons/hicolor/32x32/actions/math_paren.png
+share/icons/hicolor/32x32/actions/math_prod.png
+share/icons/hicolor/32x32/actions/math_rsub.png
+share/icons/hicolor/32x32/actions/math_rsup.png
+share/icons/hicolor/32x32/actions/math_sqrt.png
+share/icons/hicolor/32x32/actions/math_sum.png
 share/icons/hicolor/32x32/actions/misc.png
 share/icons/hicolor/32x32/actions/mouse.png
+share/icons/hicolor/32x32/actions/music_32ndnote.png
+share/icons/hicolor/32x32/actions/music_cleficon.png
+share/icons/hicolor/32x32/actions/music_cross.png
+share/icons/hicolor/32x32/actions/music_dottednote.png
+share/icons/hicolor/32x32/actions/music_eightnote.png
+share/icons/hicolor/32x32/actions/music_fermatenote.png
+share/icons/hicolor/32x32/actions/music_flat.png
+share/icons/hicolor/32x32/actions/music_fullnote.png
+share/icons/hicolor/32x32/actions/music_halfnote.png
+share/icons/hicolor/32x32/actions/music_natur.png
+share/icons/hicolor/32x32/actions/music_quarternote.png
+share/icons/hicolor/32x32/actions/music_sixteenthnote.png
 share/icons/hicolor/32x32/actions/news_subscribe.png
 share/icons/hicolor/32x32/actions/next.png
 share/icons/hicolor/32x32/actions/openterm.png
 share/icons/hicolor/32x32/actions/player_eject.png
 share/icons/hicolor/32x32/actions/player_end.png
+share/icons/hicolor/32x32/actions/player_fwd.png
 share/icons/hicolor/32x32/actions/player_pause.png
+share/icons/hicolor/32x32/actions/player_play.png
+share/icons/hicolor/32x32/actions/player_rew.png
 share/icons/hicolor/32x32/actions/player_start.png
 share/icons/hicolor/32x32/actions/player_stop.png
 share/icons/hicolor/32x32/actions/previous.png
@@ -2172,6 +2661,8 @@ share/icons/hicolor/32x32/filesystems/desktop.png
 share/icons/hicolor/32x32/filesystems/exec.png
 share/icons/hicolor/32x32/filesystems/file_broken.png
 share/icons/hicolor/32x32/filesystems/file_locked.png
+share/icons/hicolor/32x32/filesystems/file_temporary.png
+share/icons/hicolor/32x32/filesystems/folder.mng
 share/icons/hicolor/32x32/filesystems/folder.png
 share/icons/hicolor/32x32/filesystems/folder_blue.png
 share/icons/hicolor/32x32/filesystems/folder_blue_open.png
@@ -2204,7 +2695,9 @@ share/icons/hicolor/32x32/filesystems/ftp.png
 share/icons/hicolor/32x32/filesystems/link.png
 share/icons/hicolor/32x32/filesystems/lockoverlay.png
 share/icons/hicolor/32x32/filesystems/network.png
+share/icons/hicolor/32x32/filesystems/network_local.png
 share/icons/hicolor/32x32/filesystems/pipe.png
+share/icons/hicolor/32x32/filesystems/services.png
 share/icons/hicolor/32x32/filesystems/shredder.png
 share/icons/hicolor/32x32/filesystems/socket.png
 share/icons/hicolor/32x32/filesystems/trashcan_empty.png
@@ -2226,14 +2719,17 @@ share/icons/hicolor/32x32/mimetypes/font_truetype.png
 share/icons/hicolor/32x32/mimetypes/font_type1.png
 share/icons/hicolor/32x32/mimetypes/gf.png
 share/icons/hicolor/32x32/mimetypes/html.png
+share/icons/hicolor/32x32/mimetypes/image.mng
 share/icons/hicolor/32x32/mimetypes/image.png
 share/icons/hicolor/32x32/mimetypes/info.png
 share/icons/hicolor/32x32/mimetypes/kmultiple.png
 share/icons/hicolor/32x32/mimetypes/log.png
 share/icons/hicolor/32x32/mimetypes/make.png
 share/icons/hicolor/32x32/mimetypes/man.png
+share/icons/hicolor/32x32/mimetypes/message.png
 share/icons/hicolor/32x32/mimetypes/metafont.png
 share/icons/hicolor/32x32/mimetypes/midi.png
+share/icons/hicolor/32x32/mimetypes/mime_ascii.png
 share/icons/hicolor/32x32/mimetypes/mime_empty.png
 share/icons/hicolor/32x32/mimetypes/misc_doc.png
 share/icons/hicolor/32x32/mimetypes/netscape_doc.png
@@ -2263,9 +2759,12 @@ share/icons/hicolor/32x32/mimetypes/source_py.png
 share/icons/hicolor/32x32/mimetypes/source_s.png
 share/icons/hicolor/32x32/mimetypes/source_y.png
 share/icons/hicolor/32x32/mimetypes/spreadsheet.png
+share/icons/hicolor/32x32/mimetypes/tar.mng
 share/icons/hicolor/32x32/mimetypes/tar.png
 share/icons/hicolor/32x32/mimetypes/tex.png
+share/icons/hicolor/32x32/mimetypes/tgz.mng
 share/icons/hicolor/32x32/mimetypes/tgz.png
+share/icons/hicolor/32x32/mimetypes/txt.mng
 share/icons/hicolor/32x32/mimetypes/txt.png
 share/icons/hicolor/32x32/mimetypes/unknown.png
 share/icons/hicolor/32x32/mimetypes/vcalendar.png
@@ -2274,7 +2773,10 @@ share/icons/hicolor/32x32/mimetypes/vectorgfx.png
 share/icons/hicolor/32x32/mimetypes/video.png
 share/icons/hicolor/32x32/mimetypes/widget_doc.png
 share/icons/hicolor/32x32/mimetypes/wordprocessing.png
+share/icons/hicolor/48x48/actions/exit.png
+share/icons/hicolor/48x48/actions/fileclose.png
 share/icons/hicolor/48x48/actions/gear.png
+share/icons/hicolor/48x48/actions/lock.png
 share/icons/hicolor/48x48/actions/misc.png
 share/icons/hicolor/48x48/devices/3floppy_mount.png
 share/icons/hicolor/48x48/devices/3floppy_unmount.png
@@ -2307,6 +2809,7 @@ share/icons/hicolor/48x48/filesystems/desktop.png
 share/icons/hicolor/48x48/filesystems/exec.png
 share/icons/hicolor/48x48/filesystems/file_broken.png
 share/icons/hicolor/48x48/filesystems/file_locked.png
+share/icons/hicolor/48x48/filesystems/folder.mng
 share/icons/hicolor/48x48/filesystems/folder.png
 share/icons/hicolor/48x48/filesystems/folder_blue.png
 share/icons/hicolor/48x48/filesystems/folder_blue_open.png
@@ -2339,8 +2842,11 @@ share/icons/hicolor/48x48/filesystems/ftp.png
 share/icons/hicolor/48x48/filesystems/link.png
 share/icons/hicolor/48x48/filesystems/lockoverlay.png
 share/icons/hicolor/48x48/filesystems/network.png
+share/icons/hicolor/48x48/filesystems/network_local.png
+share/icons/hicolor/48x48/filesystems/services.png
 share/icons/hicolor/48x48/filesystems/shredder.png
 share/icons/hicolor/48x48/filesystems/socket.png
+share/icons/hicolor/48x48/filesystems/trashcan_empty.mng
 share/icons/hicolor/48x48/filesystems/trashcan_empty.png
 share/icons/hicolor/48x48/filesystems/trashcan_full.png
 share/icons/hicolor/48x48/filesystems/www.png
@@ -2355,27 +2861,34 @@ share/icons/hicolor/48x48/mimetypes/deb.png
 share/icons/hicolor/48x48/mimetypes/document.png
 share/icons/hicolor/48x48/mimetypes/document2.png
 share/icons/hicolor/48x48/mimetypes/dvi.png
+share/icons/hicolor/48x48/mimetypes/encrypted.png
 share/icons/hicolor/48x48/mimetypes/font_bitmap.png
 share/icons/hicolor/48x48/mimetypes/font_truetype.png
 share/icons/hicolor/48x48/mimetypes/font_type1.png
 share/icons/hicolor/48x48/mimetypes/gf.png
 share/icons/hicolor/48x48/mimetypes/html.png
+share/icons/hicolor/48x48/mimetypes/image.mng
 share/icons/hicolor/48x48/mimetypes/image.png
 share/icons/hicolor/48x48/mimetypes/info.png
 share/icons/hicolor/48x48/mimetypes/kmultiple.png
 share/icons/hicolor/48x48/mimetypes/log.png
 share/icons/hicolor/48x48/mimetypes/make.png
 share/icons/hicolor/48x48/mimetypes/man.png
+share/icons/hicolor/48x48/mimetypes/message.png
 share/icons/hicolor/48x48/mimetypes/metafont.png
 share/icons/hicolor/48x48/mimetypes/midi.png
+share/icons/hicolor/48x48/mimetypes/mime_ascii.png
 share/icons/hicolor/48x48/mimetypes/mime_empty.png
 share/icons/hicolor/48x48/mimetypes/misc_doc.png
 share/icons/hicolor/48x48/mimetypes/netscape_doc.png
+share/icons/hicolor/48x48/mimetypes/pdf.mng
 share/icons/hicolor/48x48/mimetypes/pdf.png
 share/icons/hicolor/48x48/mimetypes/pk.png
+share/icons/hicolor/48x48/mimetypes/postscript.mng
 share/icons/hicolor/48x48/mimetypes/postscript.png
 share/icons/hicolor/48x48/mimetypes/readme.png
 share/icons/hicolor/48x48/mimetypes/real_doc.png
+share/icons/hicolor/48x48/mimetypes/recycled.mng
 share/icons/hicolor/48x48/mimetypes/recycled.png
 share/icons/hicolor/48x48/mimetypes/resource.png
 share/icons/hicolor/48x48/mimetypes/rpm.png
@@ -2397,10 +2910,14 @@ share/icons/hicolor/48x48/mimetypes/source_py.png
 share/icons/hicolor/48x48/mimetypes/source_s.png
 share/icons/hicolor/48x48/mimetypes/source_y.png
 share/icons/hicolor/48x48/mimetypes/spreadsheet.png
+share/icons/hicolor/48x48/mimetypes/tar.mng
 share/icons/hicolor/48x48/mimetypes/tar.png
 share/icons/hicolor/48x48/mimetypes/tex.png
+share/icons/hicolor/48x48/mimetypes/tgz.mng
 share/icons/hicolor/48x48/mimetypes/tgz.png
+share/icons/hicolor/48x48/mimetypes/txt.mng
 share/icons/hicolor/48x48/mimetypes/txt.png
+share/icons/hicolor/48x48/mimetypes/unknown.mng
 share/icons/hicolor/48x48/mimetypes/unknown.png
 share/icons/hicolor/48x48/mimetypes/vcalendar.png
 share/icons/hicolor/48x48/mimetypes/vcard.png
@@ -2409,6 +2926,7 @@ share/icons/hicolor/48x48/mimetypes/video.png
 share/icons/hicolor/48x48/mimetypes/widget_doc.png
 share/icons/hicolor/48x48/mimetypes/wordprocessing.png
 share/icons/hicolor/64x64/filesystems/folder.png
+share/icons/hicolor/64x64/filesystems/folder_html.png
 share/icons/hicolor/64x64/filesystems/link.png
 share/icons/hicolor/64x64/mimetypes/binary2.png
 share/icons/hicolor/64x64/mimetypes/cdtrack.png
@@ -2450,6 +2968,7 @@ share/icons/hicolor/64x64/mimetypes/widget_doc.png
 share/icons/hicolor/index.desktop
 share/mimelnk/all/all.desktop
 share/mimelnk/all/allfiles.desktop
+share/mimelnk/application/illustrator.desktop
 share/mimelnk/application/msexcel.desktop
 share/mimelnk/application/msexcel2.desktop
 share/mimelnk/application/mspowerpoint.desktop
@@ -2457,9 +2976,13 @@ share/mimelnk/application/msword.desktop
 share/mimelnk/application/msword2.desktop
 share/mimelnk/application/octet-stream.desktop
 share/mimelnk/application/pdf.desktop
+share/mimelnk/application/pgp-encrypted.desktop
+share/mimelnk/application/pgp-signature.desktop
 share/mimelnk/application/postscript.desktop
 share/mimelnk/application/smil.desktop
 share/mimelnk/application/wordperfect.desktop
+share/mimelnk/application/x-abiword.desktop
+share/mimelnk/application/x-amipro.desktop
 share/mimelnk/application/x-applix.desktop
 share/mimelnk/application/x-applixgraphics.desktop
 share/mimelnk/application/x-applixspread.desktop
@@ -2477,17 +3000,36 @@ share/mimelnk/application/x-desktop.desktop
 share/mimelnk/application/x-dvi.desktop
 share/mimelnk/application/x-executable.desktop
 share/mimelnk/application/x-font.desktop
+share/mimelnk/application/x-gnumeric.desktop
+share/mimelnk/application/x-graphite.desktop
 share/mimelnk/application/x-gzip.desktop
 share/mimelnk/application/x-jar.desktop
 share/mimelnk/application/x-java.desktop
+share/mimelnk/application/x-karbon.desktop
+share/mimelnk/application/x-kchart.desktop
+share/mimelnk/application/x-kformula.desktop
+share/mimelnk/application/x-kivio.desktop
+share/mimelnk/application/x-kontour.desktop
+share/mimelnk/application/x-kpresenter.desktop
+share/mimelnk/application/x-krita.desktop
+share/mimelnk/application/x-kspread-crypt.desktop
+share/mimelnk/application/x-kspread.desktop
+share/mimelnk/application/x-kugar.desktop
+share/mimelnk/application/x-kword-crypt.desktop
+share/mimelnk/application/x-kword.desktop
 share/mimelnk/application/x-lha.desktop
 share/mimelnk/application/x-linguist.desktop
+share/mimelnk/application/x-lyx.desktop
 share/mimelnk/application/x-lzop.desktop
+share/mimelnk/application/x-mswrite.desktop
 share/mimelnk/application/x-object.desktop
 share/mimelnk/application/x-ogg.desktop
 share/mimelnk/application/x-perl.desktop
+share/mimelnk/application/x-pkcs12.desktop
+share/mimelnk/application/x-pkcs7-signature.desktop
 share/mimelnk/application/x-python-bytecode.desktop
 share/mimelnk/application/x-python.desktop
+share/mimelnk/application/x-quattropro.desktop
 share/mimelnk/application/x-rar.desktop
 share/mimelnk/application/x-rpm.desktop
 share/mimelnk/application/x-sharedlib.desktop
@@ -2498,12 +3040,16 @@ share/mimelnk/application/x-tarz.desktop
 share/mimelnk/application/x-tbz.desktop
 share/mimelnk/application/x-tex-gf.desktop
 share/mimelnk/application/x-tex-pk.desktop
+share/mimelnk/application/x-tgif.desktop
 share/mimelnk/application/x-tgz.desktop
 share/mimelnk/application/x-trash.desktop
 share/mimelnk/application/x-troff-man.desktop
 share/mimelnk/application/x-troff.desktop
 share/mimelnk/application/x-truetype-font.desktop
 share/mimelnk/application/x-tzo.desktop
+share/mimelnk/application/x-x509-ca-cert.desktop
+share/mimelnk/application/x-xfig.desktop
+share/mimelnk/application/x-zerosize.desktop
 share/mimelnk/application/x-zip.desktop
 share/mimelnk/application/x-zoo.desktop
 share/mimelnk/audio/basic.desktop
@@ -2522,14 +3068,22 @@ share/mimelnk/image/fax-g3.desktop
 share/mimelnk/image/gif.desktop
 share/mimelnk/image/jpeg.desktop
 share/mimelnk/image/png.desktop
+share/mimelnk/image/svg+xml.desktop
 share/mimelnk/image/tiff.desktop
+share/mimelnk/image/wmf.desktop
 share/mimelnk/image/x-bmp.desktop
 share/mimelnk/image/x-eps.desktop
 share/mimelnk/image/x-ico.desktop
 share/mimelnk/image/x-jng.desktop
+share/mimelnk/image/x-msod.desktop
 share/mimelnk/image/x-photo-cd.desktop
+share/mimelnk/image/x-portable-bitmap.desktop
+share/mimelnk/image/x-portable-greymap.desktop
+share/mimelnk/image/x-portable-pixmap.desktop
+share/mimelnk/image/x-wmf.desktop
 share/mimelnk/image/x-xbm.desktop
 share/mimelnk/image/x-xcf-gimp.desktop
+share/mimelnk/image/x-xfig.desktop
 share/mimelnk/image/x-xpm.desktop
 share/mimelnk/inode/block.desktop
 share/mimelnk/inode/chardevice.desktop
@@ -2540,6 +3094,8 @@ share/mimelnk/inode/socket.desktop
 share/mimelnk/magic
 share/mimelnk/message/news.desktop
 share/mimelnk/message/rfc822.desktop
+share/mimelnk/multipart/mixed.desktop
+share/mimelnk/multipart/x-mixed-replace.desktop
 share/mimelnk/text/calendar.desktop
 share/mimelnk/text/css.desktop
 share/mimelnk/text/english.desktop
@@ -2549,13 +3105,16 @@ share/mimelnk/text/rdf.desktop
 share/mimelnk/text/rss.desktop
 share/mimelnk/text/rtf.desktop
 share/mimelnk/text/sgml.desktop
+share/mimelnk/text/x-adasrc.desktop
 share/mimelnk/text/x-bibtex.desktop
 share/mimelnk/text/x-c++hdr.desktop
 share/mimelnk/text/x-c++src.desktop
 share/mimelnk/text/x-chdr.desktop
 share/mimelnk/text/x-csrc.desktop
+share/mimelnk/text/x-csv.desktop
 share/mimelnk/text/x-diff.desktop
 share/mimelnk/text/x-java.desktop
+share/mimelnk/text/x-latex.desktop
 share/mimelnk/text/x-log.desktop
 share/mimelnk/text/x-lyx.desktop
 share/mimelnk/text/x-makefile.desktop
@@ -2567,6 +3126,8 @@ share/mimelnk/text/x-tcl.desktop
 share/mimelnk/text/x-tex.desktop
 share/mimelnk/text/x-vcalendar.desktop
 share/mimelnk/text/x-vcard.desktop
+share/mimelnk/text/x-xslfo.desktop
+share/mimelnk/text/x-xslt.desktop
 share/mimelnk/text/xml.desktop
 share/mimelnk/video/mpeg.desktop
 share/mimelnk/video/quicktime.desktop
@@ -2585,8 +3146,9 @@ share/services/http_cache_cleaner.desktop
 share/services/https.protocol
 share/services/ico.kimgio
 share/services/jpeg.kimgio
-share/services/kaclplugin.desktop
+share/services/katepart.desktop
 share/services/kbzip2filter.desktop
+share/services/kcertpart.desktop
 share/services/kcookiejar.desktop
 share/services/kded/kdeprintd.desktop
 share/services/kded/kssld.desktop
@@ -2600,189 +3162,38 @@ share/services/krl.kimgio
 share/services/png.kimgio
 share/services/pnm.kimgio
 share/services/rlogin.protocol
+share/services/shellscript.desktop
 share/services/telnet.protocol
 share/services/tiff.kimgio
+share/services/webdav.protocol
+share/services/webdavs.protocol
 share/services/xbm.kimgio
 share/services/xpm.kimgio
 share/services/xv.kimgio
 share/servicetypes/application.desktop
 share/servicetypes/browserview.desktop
 share/servicetypes/kcomprfilter.desktop
+share/servicetypes/kdatatool.desktop
 share/servicetypes/kdedmodule.desktop
+share/servicetypes/kfileplugin.desktop
 share/servicetypes/kpart.desktop
 share/servicetypes/kpropsdlgplugin.desktop
+share/servicetypes/kregexpeditor.desktop
 share/servicetypes/krop.desktop
 share/servicetypes/krwp.desktop
 share/servicetypes/kscan.desktop
 share/servicetypes/ktexteditor.desktop
+share/servicetypes/ktexteditoreditor.desktop
 share/servicetypes/kurifilterplugin.desktop
-@dirrm share/servicetypes
-@dirrm share/services/kded
-@dirrm share/services
-@dirrm share/mimelnk/video
-@dirrm share/mimelnk/text
-@dirrm share/mimelnk/message
-@dirrm share/mimelnk/inode
-@dirrm share/mimelnk/image
-@dirrm share/mimelnk/audio
-@dirrm share/mimelnk/application
-@dirrm share/mimelnk/all
-@dirrm share/mimelnk
-@dirrm share/icons/hicolor/64x64/mimetypes
-@dirrm share/icons/hicolor/64x64/filesystems
-@dirrm share/icons/hicolor/64x64
-@dirrm share/icons/hicolor/48x48/mimetypes
-@dirrm share/icons/hicolor/48x48/filesystems
-@dirrm share/icons/hicolor/48x48/devices
-@dirrm share/icons/hicolor/48x48/actions
-@dirrm share/icons/hicolor/48x48
-@dirrm share/icons/hicolor/32x32/mimetypes
-@dirrm share/icons/hicolor/32x32/filesystems
-@dirrm share/icons/hicolor/32x32/devices
-@dirrm share/icons/hicolor/32x32/actions/kde
-@dirrm share/icons/hicolor/32x32/actions
-@dirrm share/icons/hicolor/32x32
-@dirrm share/icons/hicolor/22x22/actions/kde
-@dirrm share/icons/hicolor/22x22/actions
-@dirrm share/icons/hicolor/22x22
-@dirrm share/icons/hicolor/16x16/mimetypes
-@dirrm share/icons/hicolor/16x16/filesystems
-@dirrm share/icons/hicolor/16x16/devices
-@dirrm share/icons/hicolor/16x16/apps
-@dirrm share/icons/hicolor/16x16/actions
-@dirrm share/icons/hicolor/16x16
-@dirrm share/icons/hicolor
-@dirrm share/icons
-@dirrm share/doc/HTML/en/common
-@dirrm share/doc/HTML/en
-@dirrm share/doc/HTML
-@dirrm share/config/ui
-@dirrm share/config/colors
-@dirrm share/config
-@dirrm share/apps/kstyle/themes
-@dirrm share/apps/kstyle/pixmaps/riscos
-@dirrm share/apps/kstyle/pixmaps
-@dirrm share/apps/kstyle
-@dirrm share/apps/kssl/caroot
-@dirrm share/apps/kssl
-@dirrm share/apps/ksgmltools2/docbook/xsl/lib
-@dirrm share/apps/ksgmltools2/docbook/xsl/indexing
-@dirrm share/apps/ksgmltools2/docbook/xsl/images/callouts
-@dirrm share/apps/ksgmltools2/docbook/xsl/images
-@dirrm share/apps/ksgmltools2/docbook/xsl/html
-@dirrm share/apps/ksgmltools2/docbook/xsl/common
-@dirrm share/apps/ksgmltools2/docbook/xsl
-@dirrm share/apps/ksgmltools2/docbook/xml-dtd-4.1.2/ent
-@dirrm share/apps/ksgmltools2/docbook/xml-dtd-4.1.2
-@dirrm share/apps/ksgmltools2/docbook
-@dirrm share/apps/ksgmltools2/customization/zh-TW/entities
-@dirrm share/apps/ksgmltools2/customization/zh-TW
-@dirrm share/apps/ksgmltools2/customization/xsl
-@dirrm share/apps/ksgmltools2/customization/tr/entities
-@dirrm share/apps/ksgmltools2/customization/tr
-@dirrm share/apps/ksgmltools2/customization/sv/entities
-@dirrm share/apps/ksgmltools2/customization/sv
-@dirrm share/apps/ksgmltools2/customization/sr/entities
-@dirrm share/apps/ksgmltools2/customization/sr
-@dirrm share/apps/ksgmltools2/customization/sl/entities
-@dirrm share/apps/ksgmltools2/customization/sl
-@dirrm share/apps/ksgmltools2/customization/sk/entities
-@dirrm share/apps/ksgmltools2/customization/sk
-@dirrm share/apps/ksgmltools2/customization/ru/entities
-@dirrm share/apps/ksgmltools2/customization/ru
-@dirrm share/apps/ksgmltools2/customization/ro/entities
-@dirrm share/apps/ksgmltools2/customization/ro
-@dirrm share/apps/ksgmltools2/customization/pt/entities
-@dirrm share/apps/ksgmltools2/customization/pt-BR/entities
-@dirrm share/apps/ksgmltools2/customization/pt-BR
-@dirrm share/apps/ksgmltools2/customization/pt
-@dirrm share/apps/ksgmltools2/customization/pl/entities
-@dirrm share/apps/ksgmltools2/customization/pl
-@dirrm share/apps/ksgmltools2/customization/no/entities
-@dirrm share/apps/ksgmltools2/customization/no-NY/entities
-@dirrm share/apps/ksgmltools2/customization/no-NY
-@dirrm share/apps/ksgmltools2/customization/no
-@dirrm share/apps/ksgmltools2/customization/nl/entities
-@dirrm share/apps/ksgmltools2/customization/nl
-@dirrm share/apps/ksgmltools2/customization/ko/entities
-@dirrm share/apps/ksgmltools2/customization/ko
-@dirrm share/apps/ksgmltools2/customization/ja/entities
-@dirrm share/apps/ksgmltools2/customization/ja
-@dirrm share/apps/ksgmltools2/customization/it/entities
-@dirrm share/apps/ksgmltools2/customization/it
-@dirrm share/apps/ksgmltools2/customization/hu/entities
-@dirrm share/apps/ksgmltools2/customization/hu
-@dirrm share/apps/ksgmltools2/customization/fr/entities
-@dirrm share/apps/ksgmltools2/customization/fr
-@dirrm share/apps/ksgmltools2/customization/fi/entities
-@dirrm share/apps/ksgmltools2/customization/fi
-@dirrm share/apps/ksgmltools2/customization/et/entities
-@dirrm share/apps/ksgmltools2/customization/et
-@dirrm share/apps/ksgmltools2/customization/es/entities
-@dirrm share/apps/ksgmltools2/customization/es
-@dirrm share/apps/ksgmltools2/customization/entities
-@dirrm share/apps/ksgmltools2/customization/en/entities
-@dirrm share/apps/ksgmltools2/customization/en
-@dirrm share/apps/ksgmltools2/customization/el/entities
-@dirrm share/apps/ksgmltools2/customization/el
-@dirrm share/apps/ksgmltools2/customization/dtd
-@dirrm share/apps/ksgmltools2/customization/de/entities
-@dirrm share/apps/ksgmltools2/customization/de
-@dirrm share/apps/ksgmltools2/customization/da/entities
-@dirrm share/apps/ksgmltools2/customization/da
-@dirrm share/apps/ksgmltools2/customization/cs/entities
-@dirrm share/apps/ksgmltools2/customization/cs
-@dirrm share/apps/ksgmltools2/customization/ca/entities
-@dirrm share/apps/ksgmltools2/customization/ca
-@dirrm share/apps/ksgmltools2/customization/af/entities
-@dirrm share/apps/ksgmltools2/customization/af
-@dirrm share/apps/ksgmltools2/customization
-@dirrm share/apps/ksgmltools2
-@dirrm share/apps/knotify
-@dirrm share/apps/kjava
-@dirrm share/apps/kio_uiserver/icons/hicolor/16x16/apps
-@dirrm share/apps/kio_uiserver/icons/hicolor/16x16
-@dirrm share/apps/kio_uiserver/icons/hicolor
-@dirrm share/apps/kio_uiserver/icons
-@dirrm share/apps/kio_uiserver
-@dirrm share/apps/khtml/icons/hicolor/32x32/actions
-@dirrm share/apps/khtml/icons/hicolor/32x32
-@dirrm share/apps/khtml/icons/hicolor/22x22/actions
-@dirrm share/apps/khtml/icons/hicolor/22x22
-@dirrm share/apps/khtml/icons/hicolor/16x16/actions
-@dirrm share/apps/khtml/icons/hicolor/16x16
-@dirrm share/apps/khtml/icons/hicolor
-@dirrm share/apps/khtml/icons
-@dirrm share/apps/khtml/css
-@dirrm share/apps/khtml
-@dirrm share/apps/kdeui/pics
-@dirrm share/apps/kdeui
-@dirrm share/apps/kdeprint/plugins
-@dirrm share/apps/kdeprint/pics
-@dirrm share/apps/kdeprint/icons/hicolor/32x32/apps
-@dirrm share/apps/kdeprint/icons/hicolor/32x32
-@dirrm share/apps/kdeprint/icons/hicolor/22x22/actions
-@dirrm share/apps/kdeprint/icons/hicolor/22x22
-@dirrm share/apps/kdeprint/icons/hicolor/16x16/apps
-@dirrm share/apps/kdeprint/icons/hicolor/16x16
-@dirrm share/apps/kdeprint/icons/hicolor
-@dirrm share/apps/kdeprint/icons
-@dirrm share/apps/kdeprint/filters
-@dirrm share/apps/kdeprint
-@dirrm share/apps/kconf_update
-@dirrm share/apps/kab/pics
-@dirrm share/apps/kab
-@dirrm share/apps/LICENSES
-@dirrm share/apps
-@dirrm lib/mcop/Arts
-@dirrm lib/mcop
-@dirrm lib/kde2
-@dirrm include/libkmid
-@dirrm include/kparts
-@dirrm include/kjs
-@dirrm include/kio
-@dirrm include/kdesu
-@dirrm include/kdeprint
-@dirrm include/dom
-@dirrm include/artsc
-@dirrm include/arts
+share/servicetypes/renamedlgplugin.desktop
+share/servicetypes/scriptinterface.desktop
+@exec /bin/mkdir -p %D/share/icons/hicolor/32x32/actions/kde
+@exec /bin/mkdir -p %D/share/icons/hicolor/32x32/actions/kde
+@exec /bin/mkdir -p %D/share/icons/hicolor/32x32/actions/kde
+@exec /bin/mkdir -p %D/share/icons/hicolor/22x22/actions/kde
+@exec /bin/mkdir -p %D/share/icons/hicolor/22x22/actions/kde
+@exec /bin/mkdir -p %D/share/icons/hicolor/22x22/actions/kde
+@exec /bin/mkdir -p %D/share/icons/hicolor/32x32/actions/kde
+@exec /bin/mkdir -p %D/share/icons/hicolor/22x22/actions/kde
+@exec /bin/mkdir -p %D/share/icons/hicolor/32x32/actions/kde
+@exec /bin/mkdir -p %D/share/icons/hicolor/22x22/actions/kde

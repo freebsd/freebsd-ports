@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	kdelibs
-PORTVERSION=	2.2.2
-PORTREVISION=	3
+PORTVERSION=	3.0
+PORTREVISION=	1
 CATEGORIES?=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
@@ -15,9 +15,10 @@ DIST_SUBDIR=	KDE
 
 MAINTAINER?=	kde@FreeBSD.org
 
-BUILD_DEPENDS=	automake14:${PORTSDIR}/devel/automake14 \
-		autoconf213:${PORTSDIR}/devel/autoconf213
+BUILD_DEPENDS+=	autoconf:${PORTSDIR}/devel/autoconf \
+		automake:${PORTSDIR}/devel/automake
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
+		qtmcop.1:${PORTSDIR}/audio/arts \
 		audiofile.0:${PORTSDIR}/audio/libaudiofile \
 		fam.0:${PORTSDIR}/devel/fam \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
@@ -29,25 +30,31 @@ LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 .endif
 
 USE_OPENSSL=	yes
-USE_QT_VER=	2
+USE_QT_VER=	3
 SOMAJOR=	4
 SOMINOR=	0
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=
+CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=--enable-cups --disable-ltdl-install
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500029
-_NO_KDE_OBJPRELINK=yes
+.if defined(PARALLEL_PACKAGE_BUILD) || defined(WANT_KDE_FINAL)
+CONFIGURE_ARGS+=--enable-final
+.endif
+.if defined(PARALLEL_PACKAGE_BUILD) || defined(WANT_KDE_NDEBUG)
+CONFIGURE_ARGS+=--disable-debug
 .endif
 
-.include "${.CURDIR}/../../x11/kde2/Makefile.kde"
+.if ${MACHINE_ARCH} == "alpha"
+CFLAGS=		-O0 ${KDE_CFLAGS}
+.endif
 
 USE_GMAKE=	yes
 MAKE_ENV=	SOMAJOR="${SOMAJOR}" SOMINOR="${SOMINOR}"
 PLIST_SUB+=	LIBVER="${SOMAJOR}" LDCONFIG="${LDCONFIG}"
+
+.include <bsd.port.pre.mk>
 
 pre-fetch:
 .if ${OSVERSION} <= 410002
@@ -61,6 +68,9 @@ pre-fetch:
 	@${ECHO}
 .endif
 
+pre-configure:
+	cd ${WRKSRC} && ${GMAKE} -f Makefile.cvs
+
 pre-extract:
 .if exists(${LOCALBASE}/include/kfm.h)
 	@${ECHO}
@@ -72,34 +82,8 @@ pre-extract:
 	@${FALSE}
 .endif
 
-pre-configure:
-	${MKDIR} ${WRKSRC}/auto-bin
-.for AC in autoconf autoheader
-	${LN} -sf ${LOCALBASE}/bin/${AC}213 ${WRKSRC}/auto-bin/${AC}
-.endfor
-.for AM in automake aclocal
-	${LN} -sf ${LOCALBASE}/bin/${AM}14 ${WRKSRC}/auto-bin/${AM}
-.endfor
-	cd ${WRKSRC} && env PATH=${WRKSRC}/auto-bin:$$PATH \
-		${GMAKE} -f Makefile.cvs
-	${PERL} -pi -e "s@-O2@-O0@g; s@\"-lfam@\"-L${LOCALBASE}/lib -lfam@g" ${WRKSRC}/configure
-	${PERL} -pi -e "s@kspell api@@g" ${WRKSRC}/doc/Makefile.in
-	(find ${WRKSRC} -name Makefile.in | xargs ${PERL} -pi.orig -e \
-		"s@version-info 1:0@version-info ${SOMAJOR}:${SOMINOR}@g; \
-		 s@version-info 3:0@version-info ${SOMAJOR}:${SOMINOR}@g")
-
-post-configure:
-	${PERL} -pi -e "s@-D_PTH_H_ -D_PTH_PTHREAD_H_@@g" ${WRKSRC}/arts/mcop_mt/Makefile
-
 post-install:
 	${SED} -e 's,%%PREFIX%%,${PREFIX},g' ${FILESDIR}/kdelibs.sh > ${PREFIX}/etc/rc.d/kdelibs.sh
 	${CHMOD} 755 ${PREFIX}/etc/rc.d/kdelibs.sh
-.for LIB in DCOP kab kdecore kdesu kdeui kfile kio kjs kparts kspell \
-	    ksycoca kjava
-	@${LN} -sf ${PREFIX}/lib/lib${LIB}.so.${SOMAJOR} ${PREFIX}/lib/lib${LIB}.so
-.endfor
-.for LIB in artsc artsflow artsflow_idl kmid kmedia2_idl qtmcop soundserver_idl
-	@${LN} -sf ${PREFIX}/lib/lib${LIB}.so.0 ${PREFIX}/lib/lib${LIB}.so
-.endfor
 
 .include <bsd.port.post.mk>

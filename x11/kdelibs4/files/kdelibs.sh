@@ -1,3 +1,3 @@
 #!/bin/sh
 PREFIX=%%PREFIX%%
-ldconfig -m $PREFIX/lib/kde2
+ldconfig -m $PREFIX/lib/kde3
