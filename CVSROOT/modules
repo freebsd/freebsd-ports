@@ -8914,6 +8914,7 @@ qnxstyle	ports/x11-themes/qnxstyle
 qpage		ports/comms/qpage
 qpopper		ports/mail/qpopper
 qrash		ports/x11/qrash
+qsa		ports/devel/qsa
 qscan		ports/mail/qscan
 qscanplot	ports/math/qscanplot
 qscheme		ports/lang/qscheme
