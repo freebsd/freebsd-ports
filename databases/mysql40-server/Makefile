@@ -129,10 +129,6 @@ pre-fetch:
 	@${ECHO} "				(default is /var/db/mysql)."
 	@${ECHO} "	WITH_LINUXTHREADS=yes	Use the linuxthreads pthread library."
 	@${ECHO} "	OVERWRITE_DB=yes	Re-initialize default databases."
-	@${ECHO} "	SKIP_DNS_CHECK=yes	Don't run resolveip to do an additional DNS"
-	@${ECHO} "				reverse lookup  before inserting local"
-	@${ECHO} "				hostname into mysql database"
-	@${ECHO} "				(use it if your machine has no official DNS entry)."
 	@${ECHO} "	BUILD_OPTIMIZED=yes	Enable compiler optimizations"
 	@${ECHO} "				(use it if you need speed)."
 	@${ECHO} "	BUILD_STATIC=yes	Build a static version of mysqld."
@@ -160,11 +156,7 @@ post-install:
 	@${RM} -r ${DB_DIR}/mysql ${DB_DIR}/test 2>/dev/null || true
 .endif
 .if !exists(${DB_DIR}) || (defined(OVERWRITE_DB) && ${OVERWRITE_DB:L} != "no")
-.if defined(SKIP_DNS_CHECK)
-	${PREFIX}/bin/mysql_install_db --force --ldata=${DB_DIR}
-.else
 	${PREFIX}/bin/mysql_install_db --ldata=${DB_DIR}
-.endif
 .endif
 	@${SETENV} DB_DIR=${DB_DIR} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
