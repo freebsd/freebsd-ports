@@ -8,7 +8,9 @@
 PORTNAME=	printext
 PORTVERSION=	1.0
 CATEGORIES=	x11
-MASTER_SITES=	http://freedesktop.org/~xorg/X11R6.7.0/src/
+MASTER_SITES=	http://xorg.freedesktop.org/X11R6.7.0/src/ \
+		${MASTER_SITE_XORG}
+MASTER_SITE_SUBDIR=	X11R6.7/tars
 DISTNAME=	X11R6.7.0-src1
 
 MAINTAINER=	x11@FreeBSD.org
