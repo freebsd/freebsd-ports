@@ -7,7 +7,7 @@
 
 PORTNAME=	tcl
 PORTVERSION=	8.2.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang tcl82
 MASTER_SITES=	${MASTER_SITE_TCLTK}
 MASTER_SITE_SUBDIR=	tcl8_2
@@ -26,6 +26,7 @@ MAKE_ENV=	SHORT_TCL_VER=82
 PKGINSTALL=	${PKGDIR}/pkg-install.tclsh
 PKGDEINSTALL=	${PKGDIR}/pkg-deinstall.tclsh
 NOPRECIOUSMAKEVARS=	yes # Otherwise 'make readmes' is broken
+USE_REINPLACE=	YES
 
 PLIST_SUB=	TCL_VER=8.2 SHORT_TCL_VER=82
 
@@ -368,6 +369,10 @@ MLINKS=	Access.3 Tcl_Access.3 \
 	http.n Http.n \
 	pkgMkIndex.n pkg_mkIndex.n \
 	safe.n Safe\Base.n
+
+post-configure:
+	${REINPLACE_CMD} -e 's=${WRKDIRPREFIX}=$${WRKDIRPREFIX}=' \
+		${WRKSRC}/tclConfig.sh
 
 .include <bsd.port.pre.mk>
 
