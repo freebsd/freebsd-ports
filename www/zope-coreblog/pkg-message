@@ -1,9 +1,3 @@
 To complete the installation of COREBlog
 
 - Restart Zope.  This may be done from the Zope Control Panel.
-
-To enable reStructuredText in your blog, `How to use reStructuredText
-in COREBlog's entry`_ will help you.
-
-.. _`How to use reStructuredText in COREBlog's entry`: 
-       http://www.coreblog.org/howtos/restructuredtext_howto_html
