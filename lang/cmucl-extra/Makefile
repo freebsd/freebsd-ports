@@ -12,9 +12,10 @@ MASTER_SITES=   ftp://cvs2.cons.org/pub/lisp/cmucl/release/18d/ \
 MASTER_SITE_SUBDIR=     cracauer
 DISTNAME=       cmucl-18d-x86-FreeBSD.extra
 
-MAINTAINER=	f@slappy.org
+MAINTAINER=	sf@slappy.org
 COMMENT=	Optional extras for the CMU implementation of Common Lisp
 
+ONLY_FOR_ARCHS=	i386
 USE_BZIP2=	yes
 NO_WRKSUBDIR=   yes
 NO_BUILD=       yes
