@@ -1,6 +1,6 @@
 # New ports collection makefile for:	tree
 # Date created:		2001/12/24
-# Whom:			Alan Eldridge <ports@geeksrus.net>
+# Whom:			Alan Eldridge <AlanE@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	ftp://mama.indstate.edu/linux/tree/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@geeksrus.net
+MAINTAINER=	AlanE@FreeBSD.org
 
 MAN1=		tree.1
 

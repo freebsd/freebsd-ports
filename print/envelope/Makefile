@@ -2,7 +2,7 @@
 #
 # New ports collection makefile for:	envelope
 # Date created:		2002/03/24
-# Whom:			Alan Eldridge ports@geeksrus.net
+# Whom:			Alan Eldridge AlanE@FreeBSD.org
 #
 # $FreeBSD$
 #
@@ -14,7 +14,7 @@ MASTER_SITES=	http://freefall.homeip.net/code/envelope/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@geeksrus.net
+MAINTAINER=	AlanE@FreeBSD.org
 
 USE_REINPLACE=	yes
 NO_BUILD=	yes

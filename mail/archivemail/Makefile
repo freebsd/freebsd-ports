@@ -1,6 +1,6 @@
 # New ports collection makefile for:	archivemail
 # Date created:		2002/04/02
-# Whom:			Alan Eldridge <ports@geeksrus.net>
+# Whom:			Alan Eldridge <AlanE@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@geeksrus.net
+MAINTAINER=	AlanE@FreeBSD.org
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
