@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	openldap
-PORTVERSION=	2.0.6
-PORTREVISION=	2
+PORTVERSION=	2.0.7
 CATEGORIES=	net databases
 MASTER_SITES=	ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
 		ftp://ftp.net.lut.ac.uk/openldap/%SUBDIR%/ \
