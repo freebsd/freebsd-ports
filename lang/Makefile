@@ -113,6 +113,7 @@
     SUBDIR += tcl82
     SUBDIR += tcl83
     SUBDIR += tclX80
+    SUBDIR += tclX82
     SUBDIR += tclplugin
     SUBDIR += wamcc
     SUBDIR += yabasic
