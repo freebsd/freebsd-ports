@@ -1,0 +1,46 @@
+#! /bin/csh 
+
+if ( $#argv == 0 )    goto usage
+if ( $1 == "--make" ) goto make
+if ( $1 == "-m" )     goto make
+
+compile:
+#
+# compile files, check extension
+#
+if ( $1 == "-c" ) then 
+  set file = $2 
+else 
+  set file = $1 
+endif
+echo Extension $file:e
+if ( $file:e != "Mod" ) then
+  set file = $file".Mod"
+endif
+echo compiling $file "..."
+oo2c $file | ooef | more
+goto end
+
+make:
+#
+# make Oberon program, remove Extension
+#
+echo making $2:r $3:r $4:r $5:r $6:r "..."
+oo2c --make $2:r $3:r $4:r $5:r $6:r 
+goto end
+
+usage:
+#
+# show a litle help
+#
+echo ""
+echo " oo2 [option] File "
+echo ""
+echo "     option: "
+echo "       --make         make Project "
+echo "       -m             make Project "
+echo "       -c  (default)  compile Module "
+echo ""
+
+end:
+

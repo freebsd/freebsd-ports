@@ -1,0 +1,29 @@
+# New ports collection makefile for:	OO2C
+# Date created:				December 17, 1999
+# Whom:					Oliver Breuninger <ob@seicom.NET>
+#
+# $FreeBSD$
+
+PORTNAME=	oo2c
+PORTVERSION=	1.5.2
+CATEGORIES=	lang
+MASTER_SITES=	http://www.uni-kl.de/OOC/files/oo2c/ \
+		ftp://ftp.de.uu.net/pub/programming/languages/oberon/www.uni-kl.de/OOC/files/oo2c/ \
+		http://reality.sgi.com/boehm_mti/gc_source/
+DISTNAME=	${PORTNAME}_32-${PORTVERSION}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} gc4.14.tar.gz
+
+MAINTAINER=	ob@seicom.NET
+
+USE_LIBTOOL=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV+=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
+MAN1=		oo2c.1 oob.1 ooef.1 oocn.1 oowhereis.1
+
+post-extract:
+	@${MV} ${WRKDIR}/gc    ${WRKSRC}/gc
+
+post-install:
+	@${INSTALL_SCRIPT} ${FILESDIR}/oo2 ${PREFIX}/bin
+
+.include <bsd.port.mk>

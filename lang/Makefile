@@ -64,6 +64,7 @@
     SUBDIR += o2c
     SUBDIR += objc
     SUBDIR += ocaml
+    SUBDIR += oo2c
     SUBDIR += otcl
     SUBDIR += p2c
     SUBDIR += p5-Error
