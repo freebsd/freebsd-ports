@@ -1,3 +1,4 @@
+bin/fract4d
 bin/gnofract4d
 lib/libfract4d.a
 lib/libfract4d.so

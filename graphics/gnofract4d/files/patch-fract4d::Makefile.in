@@ -1,0 +1,11 @@
+--- fract4d/Makefile.in.orig	Sun Nov 23 03:06:58 2003
++++ fract4d/Makefile.in	Sun Nov 23 03:07:44 2003
+@@ -138,7 +138,7 @@
+ 	$(GNOMEUI_LIBS) $(INTLLIBS)
+ 
+ 
+-CXXFLAGS = -g -O3 -ffast-math -Wall -D_REENTRANT -DCXX="\"$(CXX)\"" 
++CXXFLAGS = @CXXFLAGS@ -D_REENTRANT -DCXX="\"$(CXX)\"" 
+ subdir = fract4d
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = $(top_builddir)/config.h

@@ -7,14 +7,13 @@
 
 PORTNAME=	gnofract4d
 PORTVERSION=	1.8
+PORTREVISION=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Weird GNOME fractal generator
-
-BROKEN=		"fails to checksum"
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget libgnomeui
