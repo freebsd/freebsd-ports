@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	paml
-PORTVERSION=	3.04
+PORTVERSION=	3.1
 CATEGORIES=	biology
 MASTER_SITES=	ftp://abacus.gene.ucl.ac.uk/pub/paml/
-DISTNAME=	paml3.0d
+DISTNAME=	paml3.1
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	dbader@eece.unm.edu
@@ -24,9 +24,9 @@ do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin
 .endfor
 .if !defined(NOPORTDOCS)
-		${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
+		${MKDIR} ${DOCSDIR}
 		${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/doc/pamlDOC.pdf \
-			${PREFIX}/share/doc/${PORTNAME}
+			${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
 bin/baseml
 bin/basemlg
-bin/chi2 
+bin/chi2
 bin/codeml
 bin/codemlsites
 bin/evolver
