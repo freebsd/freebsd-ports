@@ -3,6 +3,7 @@
 %%SITE_PERL%%/MIME/Decoder.pm
 %%SITE_PERL%%/MIME/Decoder/QuotedPrint.pm
 %%SITE_PERL%%/MIME/Decoder/Base64.pm
+%%SITE_PERL%%/MIME/Decoder/BinHex.pm
 %%SITE_PERL%%/MIME/Decoder/Binary.pm
 %%SITE_PERL%%/MIME/Decoder/Gzip64.pm
 %%SITE_PERL%%/MIME/Decoder/NBit.pm
