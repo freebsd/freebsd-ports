@@ -1,6 +1,6 @@
 bin/update-mime-database
 libdata/pkgconfig/shared-mime-info.pc
-share/mime/XMLnamespaces
+@unexec [ -f %D/share/mime/XMLnamespaces ] && rm -f %D/share/mime/XMLnamespaces
 share/mime/application/andrew-inset.xml
 share/mime/application/illustrator.xml
 share/mime/application/mac-binhex40.xml
@@ -224,7 +224,7 @@ share/mime/audio/x-voc.xml
 share/mime/audio/x-wav.xml
 share/mime/audio/x-xi.xml
 share/mime/audio/x-xm.xml
-share/mime/globs
+@unexec [ -f %D/share/mime/globs ] && rm -f %D/share/mime/globs
 share/mime/image/bmp.xml
 share/mime/image/cgm.xml
 share/mime/image/dpx.xml
@@ -285,7 +285,7 @@ share/mime/inode/fifo.xml
 share/mime/inode/mount-point.xml
 share/mime/inode/socket.xml
 share/mime/inode/symlink.xml
-share/mime/magic
+@unexec [ -f %D/share/mime/magic ] && rm -f %D/share/mime/magic
 share/mime/message/delivery-status.xml
 share/mime/message/disposition-notification.xml
 share/mime/message/external-body.xml
@@ -399,9 +399,9 @@ share/mime/video/x-sgi-movie.xml
 @unexec rmdir %D/share/mime/application 2>/dev/null || true
 @unexec rmdir %D/share/mime 2>/dev/null || true
 @cwd %%X11BASE%%
-share/mime/XMLnamespaces
-share/mime/globs
-share/mime/magic
+@unexec [ -f %D/share/mime/XMLnamespaces ] && rm -f %D/share/mime/XMLnamespaces
+@unexec [ -f %D/share/mime/globs ] && rm -f %D/share/mime/globs
+@unexec [ -f %D/share/mime/magic ] && rm -f %D/share/mime/magic
 @unexec rmdir %D/share/mime/video 2>/dev/null || true
 @unexec rmdir %D/share/mime/text 2>/dev/null || true
 @unexec rmdir %D/share/mime/packages 2>/dev/null || true
