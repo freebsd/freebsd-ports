@@ -1,0 +1,11 @@
+--- sysdep/freebsd/Makefile.sysdep.orig	Fri Feb 21 10:14:47 2003
++++ sysdep/freebsd/Makefile.sysdep	Thu Aug 29 01:39:36 2002
+@@ -42,7 +42,7 @@
+ LIBSYSDEPDIR=	${.CURDIR}/sysdep/common/libsysdep
+ .endif
+ 
+-LDADD+=		-lgmp ${LIBSYSDEPDIR}/libsysdep.a -lipsec -L/usr/local/lib
++LDADD+=		${LIBSYSDEPDIR}/libsysdep.a -lipsec -L/usr/local/lib
+ DPADD+=		${LIBGMP} ${LIBSYSDEPDIR}/libsysdep.a
+ 
+ CFLAGS+=	-DHAVE_GETNAMEINFO -DHAVE_GETIFADDRS \

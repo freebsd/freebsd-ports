@@ -17,8 +17,6 @@ MASTER_SITE_SUBDIR=	LOCAL_PORTS
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenBSD IKE daemon
 
-LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
-
 # this is not compatible with cross build - there's no other way
 .if !exists(/usr/include/netinet6/ipsec.h)
 BROKEN=		"requires IPsec support"
