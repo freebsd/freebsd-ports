@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libmpeg2
-PORTVERSION=	0.2.1
-PORTREVISION=	1
+PORTVERSION=	0.3.1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://libmpeg2.sourceforge.net/files/
 DISTNAME=	mpeg2dec-${PORTVERSION}
@@ -18,7 +17,10 @@ USE_XLIB=	yes
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
 
-CONFIGURE_ARGS= --enable-shared
+CONFIGURE_ARGS= --enable-shared \
+		--with-x
+
+MAN1=	extract_mpeg2.1 mpeg2dec.1
 
 .ifdef(WITH_MGA)
 CONFIGURE_ARGS+=	--enable-mga
@@ -49,15 +51,8 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -e 's|<SDL/|<SDL11/|' ${WRKSRC}/libvo/*
 	@${REINPLACE_CMD} -e 's|-O3||;s|<termio.h>|<termios.h>|' ${WRKSRC}/configure
-
-post-configure:
-	@${CP} -f ${LOCALBASE}/bin/libtool ${WRKSRC}
-	@${CHMOD} u+w ${WRKSRC}/libtool
-# Libtool fix code kindly provided by Mr. Maxim Sobolev <sobomax@FreeBSD.org>
-	@${REINPLACE_CMD} -E \
-		-e 's|^deplibs_check_method=.*|deplibs_check_method=pass_all|; \
-		s|(install_ltlibs=)yes|\1no|' \
-		${WRKSRC}/libtool
+	@${REINPLACE_CMD} -e 's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g' \
+		${WRKSRC}/libmpeg2/Makefile.in
 
 post-install:
 .ifndef(NOPORTDOCS)
@@ -65,5 +60,7 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/doc/libvo.txt ${DOCSDIR}
 .endif
 	@${INSTALL_DATA} ${WRKSRC}/libvo/libvo.a ${PREFIX}/lib
+	@${INSTALL_DATA} ${WRKSRC}/include/video_out.h \
+		${PREFIX}/include/mpeg2dec
 
 .include <bsd.port.mk>
