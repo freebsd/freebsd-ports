@@ -3545,6 +3545,7 @@ mastergear	ports/emulators/mastergear
 mathopd		ports/www/mathopd
 matrix		ports/math/matrix
 matrix-kmod	ports/misc/matrix-kmod
+maverik		ports/graphics/maverik
 mawk		ports/lang/mawk
 maxima		ports/math/maxima
 mboxgrep	ports/mail/mboxgrep
