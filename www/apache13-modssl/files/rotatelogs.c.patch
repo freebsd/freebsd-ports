@@ -1,0 +1,19 @@
+--- src/support/rotatelogs.c~	Mon Aug  3 11:15:33 1998
++++ src/support/rotatelogs.c	Sun Mar 26 22:42:40 2000
+@@ -11,6 +11,7 @@
+ #include <time.h>
+ #include <errno.h>
+ #include <fcntl.h>
++#include <unistd.h>
+ 
+ #define BUFSIZE        65536
+ #define ERRMSGSZ       82
+@@ -95,6 +96,8 @@
+             }
+             else {
+                 close(nLogFDprev);
++                unlink(szLogRoot);
++                link(buf2, szLogRoot);
+             }
+             nMessCount = 0;
+         }
