@@ -19,7 +19,6 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 PCRE_CONFIG?=	${LOCALBASE}/bin/pcre-config
 
-USE_SIZE=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=	13
