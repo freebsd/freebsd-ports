@@ -39,7 +39,7 @@ USE_GMAKE=	yes
 USE_BISON=	yes
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomelibs
+USE_GNOME=	gnomeprefix gnomehack gnomelibs gal gtkhtml
 USE_REINPLACE=	yes
 USE_OPENSSL=	yes
 USE_LIBTOOL=	yes
@@ -59,7 +59,6 @@ CONFIGURE_ARGS+= --with-openldap=${LOCALBASE}
 CONFIGURE_ARGS+=	--with-pisock=${LOCALBASE} \
 			--enable-pilot-conduits=yes
 PLIST_SUB=	PILOT:=""
-USE_GNOME+=	gnomecc
 .else
 PLIST_SUB=	PILOT:="@comment "
 .endif
