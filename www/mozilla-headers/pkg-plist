@@ -106,9 +106,6 @@ include/mozilla/jvmmgr.h
 include/mozilla/lber.h
 include/mozilla/ldap.h
 include/mozilla/libimg.h
-include/mozilla/libmng.h
-include/mozilla/libmng_conf.h
-include/mozilla/libmng_types.h
 include/mozilla/mcom_db.h
 include/mozilla/mdb.h
 include/mozilla/mimecont.h
