@@ -46,11 +46,9 @@ HL_PROGRAM=	hlds_run
 
 pre-patch:
 # remove trailing ^M
-.for file in *.cfg */*.cfg *.gam */*.gam *.htm */*.htm \
-	*.inf */*.inf *.lst */*.lst *.sc */*.sc \
-	*.scr */*.scr *.txt */*.txt
-	@${PERL} -pi -ne 's!\r\n!\n!' ${WRKSRC}/${file} >/dev/null 2>/dev/null
-.endfor
+        @find -E ${WRKSRC} -type f \
+                -iregex ".*\.(bat|cfg|gam|htm|html|inf|ini|lst|sc|scr|txt)" \
+                -exec ${PERL} -pi -ne 's!\r\n!\n!' {} 1>/dev/null 2>&1 \;
 
 do-install: install-files scan-libs
 
