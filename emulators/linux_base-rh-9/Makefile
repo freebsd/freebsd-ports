@@ -3,7 +3,7 @@
 # Date created:         Jul 7, 1999
 # Whom:                 marcel@FreeBSD.org
 #
-# $Id$
+# $Id: Makefile,v 1.26 1999/07/21 10:41:35 marcel Exp $
 #
 
 DISTNAME=		linux_base
@@ -21,6 +21,8 @@ MASTER_SITES=		\
 DISTFILES=		${RPMSET1} ${RPMSET2} ${RPMSET3}
 
 MAINTAINER=		marcel@FreeBSD.org
+
+BROKEN=		'ldconfig does not install properly'
 
 RUN_DEPENDS=		rpm:${PORTSDIR}/misc/rpm
 
