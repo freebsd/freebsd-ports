@@ -7,6 +7,7 @@
 
 PORTNAME=	tcpview
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pub/noc-tools/tcpview/
 EXTRACT_SUFX=	.tar.Z
@@ -20,12 +21,6 @@ USE_REINPLACE=	yes
 
 MAN1=		tcpview.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
-.endif
-
 post-patch:
 .for f in nametoaddr.c addrtoname.c print-nfs.c detail-tcp.c tv_addrtoname.c
 	@${REINPLACE_CMD} -e 's/NTOHL/ntohl/ ; s/NTOHS/ntohs/' ${WRKSRC}/${f}
@@ -34,4 +29,4 @@ post-patch:
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/DOC/Tcpview ${X11BASE}/lib/X11/app-defaults/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
