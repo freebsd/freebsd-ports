@@ -88,13 +88,17 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </body>
     </description>
     <references>
+      <bid>12601</bid>
+      <cvename>CAN-2005-0467</cvename>
       <mlist msgid="E1D2taM-0005R1-00@ixion.tartarus.org">http://lists.tartarus.org/pipermail/putty-announce/2005/000012.html</mlist>
+      <mlist msgid="FB24803D1DF2A34FA59FC157B77C970503E2462F@idserv04.idef.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110902510713763</mlist>
       <url>http://www.chiark.greenend.org.uk/~sgtatham/putty/wishlist/vuln-sftp-readdir.html</url>
       <url>http://www.chiark.greenend.org.uk/~sgtatham/putty/wishlist/vuln-sftp-string.html</url>
     </references>
     <dates>
       <discovery>2005-02-20</discovery>
       <entry>2005-02-20</entry>
+      <modified>2005-02-23</modified>
     </dates>
   </vuln>
 
