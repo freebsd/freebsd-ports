@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.141 1999/08/05 11:47:37 max Exp $
+# $Id: Makefile,v 1.142 1999/08/13 21:40:10 mph Exp $
 #
 
     SUBDIR += Mosaic         # requires Motif
@@ -25,6 +25,7 @@
     SUBDIR += chimera2
     SUBDIR += comline
     SUBDIR += demoroniser
+    SUBDIR += erwin
     SUBDIR += evg
     SUBDIR += fcgi
     SUBDIR += fxhtml
@@ -32,6 +33,7 @@
     SUBDIR += gn
     SUBDIR += grail
     SUBDIR += gwstat
+    SUBDIR += gyroscope
     SUBDIR += harvest
     SUBDIR += hotjava
     SUBDIR += htmlpp
