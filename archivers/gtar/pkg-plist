@@ -4,6 +4,7 @@ info/tar.info
 @unexec install-info --delete %D/info/tar.info %D/info/dir
 libexec/grmt
 share/locale/cs/LC_MESSAGES/tar.mo
+share/locale/da/LC_MESSAGES/tar.mo
 share/locale/de/LC_MESSAGES/tar.mo
 share/locale/es/LC_MESSAGES/tar.mo
 share/locale/et/LC_MESSAGES/tar.mo
