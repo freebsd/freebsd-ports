@@ -46,6 +46,11 @@ install:
 	@(cd ${WRKSRC}/packages/tools; for f in *.sty *.tex; do \
 	    if [ -f $$f ]; then install -c -m 644  $$f ${PREFIX}/lib/texmf/tex; fi; done)
 	@(cd ${PREFIX}/bin; rm -f latex; ln -s virtex latex)
+	@(mkdir -p ${PREFIX}/lib/texmf/documentation)
+	@(cd ${WRKSRC}/base; for f in *.dtx source2e.tex *.fdd ltnews*.tex *guide.tex; do \
+	    if [ -f $$f ]; then install -c -m 644  $$f ${PREFIX}/lib/texmf/documentation; fi; done)
+	@(cd ${WRKSRC}/packages/tools; for f in *.dtx; do \
+	    if [ -f $$f ]; then install -c -m 644  $$f ${PREFIX}/lib/texmf/documentation; fi; done)
 
 .include "Makefile.inc"
 
