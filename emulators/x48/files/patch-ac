@@ -1,0 +1,44 @@
+--- src/Imakefile.orig	Thu Jun 17 00:32:19 1999
++++ src/Imakefile	Tue Aug 15 22:07:30 2000
+@@ -60,7 +60,7 @@
+       LDOPTIONS = LDOPTIONS_DEF
+ #endif
+ 
+-        DEFINES = -I/usr/openwin/include UNIX_DEF XSHM_DEF READLINE_DEF
++        DEFINES = UNIX_DEF XSHM_DEF READLINE_DEF
+            HDRS = annunc.h append.h buttons.h constants.h debugger.h \
+                   device.h disasm.h errors.h global.h hp.h hp48.h \
+                   hp48_emu.h hp48char.h icon.h mmu.h options.h resources.h \
+@@ -87,9 +87,9 @@
+              CO = co -l
+        TARFILES = Imakefile X48.ad $(TARS1) $(SRCS2) $(SRCS3) $(SRCS4) $(HDRS)
+ 
+-all:: $(BIN)/x48 $(BIN)/dump2rom $(BIN)/checkrom $(BIN)/mkcard
++all:: x48 dump2rom checkrom mkcard
+ 
+-       PROGRAMS = $(BIN)/x48 $(BIN)/dump2rom $(BIN)/checkrom $(BIN)/mkcard
++       PROGRAMS = x48 dump2rom checkrom mkcard
+ 
+ depend:: version.c X48.ad.h
+ 
+@@ -102,16 +102,15 @@
+ 	RemoveTargetProgram($@)                                         @@\
+ 	$(CC) -o $@ $(LDOPTIONS) $(OBJS4) locallib $(LDLIBS) syslib $(EXTRA_LOAD_FLAGS) @@\
+                                                                         @@\
+-SaberProgramTarget(program,$(SRCS4),$(OBJS4),locallib,syslib)           @@\
+                                                                         @@\
+ InstallProgram(program,$(BINDIR))                                       @@\
+ InstallManPage(program,$(MANDIR))
+ #endif /* ComplexProgramTarget_4 */
+ 
+-ComplexProgramTarget_1($(BIN)/x48, $(X48LIBS),)
+-ComplexProgramTarget_2($(BIN)/dump2rom,,)
+-ComplexProgramTarget_3($(BIN)/checkrom,,)
+-ComplexProgramTarget_4($(BIN)/mkcard,,)
++ComplexProgramTarget_1(x48, $(X48LIBS),)
++ComplexProgramTarget_2(dump2rom,,)
++ComplexProgramTarget_3(checkrom,,)
++ComplexProgramTarget_4(mkcard,,)
+ 
+ InstallAppDefaults(X48)
+ 

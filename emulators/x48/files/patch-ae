@@ -1,0 +1,11 @@
+--- src/x48_x11.c.orig	Tue Jun 29 07:12:29 1999
++++ src/x48_x11.c	Tue Aug 15 22:30:17 2000
+@@ -3605,6 +3605,8 @@
+       break;
+     case XK_Alt_L:
+     case XK_Alt_R:
++    case XK_Meta_L:
++    case XK_Meta_R:
+       key_event(BUTTON_ALPHA, xev);
+       wake = 1;
+       break;
