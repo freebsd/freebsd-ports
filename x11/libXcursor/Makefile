@@ -15,7 +15,7 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X client-side cursor loading library
 
 LIB_PC_DEPENDS=	${X11BASE}/libdata/pkgconfig/x11.pc:${PORTSDIR}/x11/libX11 \
-		${X11BASE}/libdata/pkgconfig/xrender.pc
+		${X11BASE}/libdata/pkgconfig/xrender.pc:${PORTSDIR}/x11/libXrender
 BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/xproto.pc:${PORTSDIR}/x11/xproto \
 		${LIB_PC_DEPENDS}
 RUN_DEPENDS=	${LIB_PC_DEPENDS}
