@@ -22,10 +22,9 @@ LIB_DEPENDS=	panda.0:${PORTSDIR}/print/panda \
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
+RUBY_WITH_PTHREAD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-CONFIGURE_ARGS=	--with-cflags="${PTHREAD_CFLAGS}" \
-		--with-ldflags="${PTHREAD_LIBS}"
 INSTALL_TARGET=	site-install
 
 DOCS_EN=	README
