@@ -1,30 +1,35 @@
 bin/rsvg
+bin/rsvg-view
 include/librsvg-2/librsvg/librsvg-features.h
 include/librsvg-2/librsvg/rsvg-gz.h
 include/librsvg-2/librsvg/rsvg.h
+%%PLUGIN%%lib/browser_plugins/libmozsvgdec.so
 lib/gtk-2.0/%%GTK_VERSION%%/engines/libsvg.so
 lib/gtk-2.0/%%GTK_VERSION%%/loaders/svg_loader.so
 lib/librsvg-2.a
 lib/librsvg-2.so
-lib/librsvg-2.so.8
+lib/librsvg-2.so.10
 libdata/pkgconfig/librsvg-2.0.pc
 share/doc/librsvg/html/home.png
-share/doc/librsvg/html/i1073.html
 share/doc/librsvg/html/index.html
 share/doc/librsvg/html/index.sgml
+share/doc/librsvg/html/ix01.html
 share/doc/librsvg/html/left.png
-share/doc/librsvg/html/r22.html
-share/doc/librsvg/html/r436.html
-share/doc/librsvg/html/r473.html
 share/doc/librsvg/html/right.png
-share/doc/librsvg/html/rsvg-convenience-functions.html
-share/doc/librsvg/html/rsvg-core-api.html
-share/doc/librsvg/html/rsvg-creating-a-svgz-reader.html
+share/doc/librsvg/html/rn01.html
+share/doc/librsvg/html/rn02.html
+share/doc/librsvg/html/rn03.html
+share/doc/librsvg/html/rsvg-Convenience-Functions.html
+share/doc/librsvg/html/rsvg-Core-API.html
+share/doc/librsvg/html/rsvg-Creating-a-SVGZ-reader.html
+share/doc/librsvg/html/rsvg.devhelp
 share/doc/librsvg/html/rsvg.html
 share/doc/librsvg/html/up.png
+share/gnome/pixmaps/svg-viewer.svg
 @dirrm share/doc/librsvg/html
 @dirrm share/doc/librsvg
 @dirrm include/librsvg-2/librsvg
 @dirrm include/librsvg-2
 @exec %D/bin/gdk-pixbuf-query-loaders > /dev/null 2>&1 && %D/bin/gdk-pixbuf-query-loaders > %D/etc/gtk-2.0/gdk-pixbuf.loaders 2>/dev/null || /usr/bin/true
 @unexec %D/bin/gdk-pixbuf-query-loaders > /dev/null 2>&1 && %D/bin/gdk-pixbuf-query-loaders > %D/etc/gtk-2.0/gdk-pixbuf.loaders 2>/dev/null || /usr/bin/true
+%%PLUGIN%%@unexec rmdir %D/lib/browser_plugins 2>/dev/null || /usr/bin/true

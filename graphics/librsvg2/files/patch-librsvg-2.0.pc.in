@@ -1,0 +1,9 @@
+--- librsvg-2.0.pc.in.orig	Fri Jun  4 20:23:35 2004
++++ librsvg-2.0.pc.in	Wed Jun  9 01:58:50 2004
+@@ -7,5 +7,5 @@
+ Description: library that renders svg files
+ Version: @VERSION@
+ Requires: glib-2.0 gdk-pixbuf-2.0
+-Libs: -L${libdir} -lrsvg-2
++Libs: -L${libdir} -lrsvg-2 %%PTHREAD_LIBS%%
+ Cflags: -I${includedir}/librsvg-2

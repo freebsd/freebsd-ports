@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	gnomesystemtools
-PORTVERSION=	0.92.0
-PORTREVISION=	1
+PORTVERSION=	1.0.0
+PORTREVISION=	2
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-system-tools/0.92
+MASTER_SITE_SUBDIR=	sources/gnome-system-tools/1.0
 DISTNAME=	gnome-system-tools-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -33,6 +33,12 @@ CONFIGURE_ARGS+=	--enable-services
 PLIST_SUB+=		SERVICES=""
 .else
 PLIST_SUB+=		SERVICES="@comment "
+.endif
+
+.if ${PERL_LEVEL} < 500600
+post-configure:
+	@${FIND} ${WRKSRC}/backends \( -name "*.pl" -or -name "*-conf" \) | \
+		${XARGS} ${REINPLACE_CMD} -e 's|@scriptsdir|[@]scriptsdir|g'
 .endif
 
 .include <bsd.port.post.mk>

@@ -1,49 +1,4 @@
 bin/gnome-open
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/desktop_gnome_accessibility_keyboard.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/desktop_gnome_accessibility_keyboard.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/desktop_gnome_accessibility_keyboard.schemas > /dev/null || /usr/bin/true
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/desktop_gnome_accessibility_startup.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/desktop_gnome_accessibility_startup.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/desktop_gnome_accessibility_startup.schemas > /dev/null || /usr/bin/true
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/desktop_gnome_applications_browser.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/desktop_gnome_applications_browser.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/desktop_gnome_applications_browser.schemas > /dev/null || /usr/bin/true
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/desktop_gnome_applications_help_viewer.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/desktop_gnome_applications_help_viewer.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/desktop_gnome_applications_help_viewer.schemas > /dev/null || /usr/bin/true
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/desktop_gnome_applications_terminal.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/desktop_gnome_applications_terminal.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/desktop_gnome_applications_terminal.schemas > /dev/null || /usr/bin/true
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/desktop_gnome_applications_window_manager.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/desktop_gnome_applications_window_manager.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/desktop_gnome_applications_window_manager.schemas > /dev/null || /usr/bin/true
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/desktop_gnome_background.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/desktop_gnome_background.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/desktop_gnome_background.schemas > /dev/null || /usr/bin/true
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/desktop_gnome_file_views.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/desktop_gnome_file_views.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/desktop_gnome_file_views.schemas > /dev/null || /usr/bin/true
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/desktop_gnome_interface.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/desktop_gnome_interface.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/desktop_gnome_interface.schemas > /dev/null || /usr/bin/true
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/desktop_gnome_lockdown.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/desktop_gnome_lockdown.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/desktop_gnome_lockdown.schemas > /dev/null || /usr/bin/true
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/desktop_gnome_peripherals_keyboard.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/desktop_gnome_peripherals_keyboard.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/desktop_gnome_peripherals_keyboard.schemas > /dev/null || /usr/bin/true
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/desktop_gnome_peripherals_mouse.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/desktop_gnome_peripherals_mouse.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/desktop_gnome_peripherals_mouse.schemas > /dev/null || /usr/bin/true
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/desktop_gnome_sound.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/desktop_gnome_sound.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/desktop_gnome_sound.schemas > /dev/null || /usr/bin/true
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/desktop_gnome_thumbnailers.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/desktop_gnome_thumbnailers.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/desktop_gnome_thumbnailers.schemas > /dev/null || /usr/bin/true
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/desktop_gnome_typing_break.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/desktop_gnome_typing_break.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/desktop_gnome_typing_break.schemas > /dev/null || /usr/bin/true
 etc/sound/events/gnome-2.soundlist
 etc/sound/events/gtk-events-2.soundlist
 include/libgnome-2.0/libgnome/gnome-config.h
@@ -64,9 +19,35 @@ include/libgnome-2.0/libgnome/libgnometypebuiltins.h
 lib/bonobo/monikers/libmoniker_extra_2.so
 lib/libgnome-2.a
 lib/libgnome-2.so
-lib/libgnome-2.so.600
+lib/libgnome-2.so.800
 libdata/bonobo/servers/GNOME_Moniker_std.server
 libdata/pkgconfig/libgnome-2.0.pc
+share/doc/libgnome/ch01s02.html
+share/doc/libgnome/ch01s03.html
+share/doc/libgnome/ch01s04.html
+share/doc/libgnome/ch01s05.html
+share/doc/libgnome/home.png
+share/doc/libgnome/index.html
+share/doc/libgnome/index.sgml
+share/doc/libgnome/left.png
+share/doc/libgnome/libgnome-gnome-config.html
+share/doc/libgnome/libgnome-gnome-exec.html
+share/doc/libgnome/libgnome-gnome-gconf.html
+share/doc/libgnome/libgnome-gnome-help.html
+share/doc/libgnome/libgnome-gnome-i18n.html
+share/doc/libgnome/libgnome-gnome-init.html
+share/doc/libgnome/libgnome-gnome-program.html
+share/doc/libgnome/libgnome-gnome-score.html
+share/doc/libgnome/libgnome-gnome-sound.html
+share/doc/libgnome/libgnome-gnome-triggers.html
+share/doc/libgnome/libgnome-gnome-url.html
+share/doc/libgnome/libgnome-gnome-util.html
+share/doc/libgnome/libgnome-libgnometypebuiltins.html
+share/doc/libgnome/libgnome.devhelp
+share/doc/libgnome/libgnome.html
+share/doc/libgnome/right.png
+share/doc/libgnome/style.css
+share/doc/libgnome/up.png
 share/locale/am/LC_MESSAGES/libgnome-2.0.mo
 share/locale/ar/LC_MESSAGES/libgnome-2.0.mo
 share/locale/az/LC_MESSAGES/libgnome-2.0.mo
@@ -106,6 +87,8 @@ share/locale/mk/LC_MESSAGES/libgnome-2.0.mo
 share/locale/ml/LC_MESSAGES/libgnome-2.0.mo
 share/locale/mn/LC_MESSAGES/libgnome-2.0.mo
 share/locale/ms/LC_MESSAGES/libgnome-2.0.mo
+share/locale/nb/LC_MESSAGES/libgnome-2.0.mo
+share/locale/ne/LC_MESSAGES/libgnome-2.0.mo
 share/locale/nl/LC_MESSAGES/libgnome-2.0.mo
 share/locale/nn/LC_MESSAGES/libgnome-2.0.mo
 share/locale/no/LC_MESSAGES/libgnome-2.0.mo
@@ -119,8 +102,8 @@ share/locale/sk/LC_MESSAGES/libgnome-2.0.mo
 share/locale/sl/LC_MESSAGES/libgnome-2.0.mo
 share/locale/sq/LC_MESSAGES/libgnome-2.0.mo
 share/locale/sr/LC_MESSAGES/libgnome-2.0.mo
-share/locale/sr@ije/LC_MESSAGES/libgnome-2.0.mo
 share/locale/sr@Latn/LC_MESSAGES/libgnome-2.0.mo
+share/locale/sr@ije/LC_MESSAGES/libgnome-2.0.mo
 share/locale/sv/LC_MESSAGES/libgnome-2.0.mo
 share/locale/ta/LC_MESSAGES/libgnome-2.0.mo
 share/locale/th/LC_MESSAGES/libgnome-2.0.mo
@@ -131,6 +114,6 @@ share/locale/wa/LC_MESSAGES/libgnome-2.0.mo
 share/locale/yi/LC_MESSAGES/libgnome-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/libgnome-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/libgnome-2.0.mo
-@dirrm %%DOCSDIR%%
+@dirrm share/doc/libgnome
 @dirrm include/libgnome-2.0/libgnome
 @dirrm include/libgnome-2.0

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnome2-power-tools
-PORTVERSION=	2.6.2
-PORTREVISION=	2
+PORTVERSION=	2.8.1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -22,11 +21,10 @@ RUN_DEPENDS=	${X11BASE}/lib/epiphany/extensions/libgesturesextension.so:${PORTSD
 		${X11BASE}/libexec/netspeed_applet2:${PORTSDIR}/net/netspeed_applet \
 		${LOCALBASE}/sbin/gkrellmd:${PORTSDIR}/sysutils/gkrellm2 \
 		splashsetter:${PORTSDIR}/deskutils/splashsetter \
-		gnome-nettool:${PORTSDIR}/net/gnomenettool \
 		gdesklets:${PORTSDIR}/deskutils/gdesklets \
-		vino-session:${PORTSDIR}/net/vino \
 		cog:${PORTSDIR}/sysutils/cog \
 		gnome-blog-poster:${PORTSDIR}/deskutils/gnomeblog \
+		gnome-keyring-manager:${PORTSDIR}/security/gnomekeyringmanager \
 		gnomesu:${PORTSDIR}/sysutils/gnomesu
 
 NO_BUILD=	yes

@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gpdf
-PORTVERSION=	0.132
+PORTVERSION=	2.8.0
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION}
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.8
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -17,10 +17,13 @@ COMMENT=	GNOME version of xpdf
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack lthack libgnomeui libgnomeprintui
+USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui libgnomeprintui \
+		desktopfileutils
 USE_X_PREFIX=	yes
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+GCONF_SCHEMAS=	gpdf.schemas
 
 .include <bsd.port.mk>

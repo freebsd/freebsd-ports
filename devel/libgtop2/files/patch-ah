@@ -1,5 +1,5 @@
---- sysdeps/freebsd/procmap.c.orig	Wed Mar 10 06:18:59 2004
-+++ sysdeps/freebsd/procmap.c	Thu Oct 28 21:08:55 2004
+--- sysdeps/freebsd/procmap.c.orig	Fri Sep 24 18:49:06 2004
++++ sysdeps/freebsd/procmap.c	Thu Oct 28 15:42:58 2004
 @@ -47,7 +47,13 @@
  #endif
  #endif
@@ -35,7 +35,7 @@
  
  	/* Now we get the memory maps. */
  
-@@ -280,13 +288,9 @@
+@@ -278,13 +286,9 @@
  			      &inode, sizeof (inode)) != sizeof (inode))
  			glibtop_error_io_r (server, "kvm_read (inode)");
  

@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	gnomesystemmonitor
-PORTVERSION=	2.6.0
-PORTREVISION=	2
+PORTVERSION=	2.8.0
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-system-monitor/2.6
+MASTER_SITE_SUBDIR=	sources/gnome-system-monitor/2.8
 DISTNAME=	gnome-system-monitor-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -23,9 +22,11 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-USE_GNOME=	gnomeprefix intlhack lthack gnomehack libgnomeui libwnck
-USE_LIBTOOL_VER=13
+USE_GNOME=	gnomeprefix intlhack gnomehack libgnomeui libwnck
+USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lutil"
+
+GCONF_SCHEMAS=	gnome-system-monitor.schemas
 
 .include <bsd.port.mk>

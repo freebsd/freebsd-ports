@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	gal2
-PORTVERSION=	1.99.11
-PORTREVISION=	1
+PORTVERSION=	2.2.3
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/1.99
+MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.2
 DISTNAME=	${PORTNAME:S/2$//}-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -21,14 +20,14 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gnomeprefix gnomehier libgnomeui libgnomeprintui
-GNOME_HTML_DIR=	${PREFIX}/share/doc/gal2
+USE_GNOME=	gnomehack gnomeprefix gnomehier intlhack  \
+		libgnomeui libgnomeprintui
 INSTALLS_SHLIB=	yes
-USE_INC_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 CONFIGURE_ARGS=	--enable-static --with-libiconv
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-PLIST_SUB=	VERSION=${PORTVERSION}
+PLIST_SUB=	VERSION="2.2" PORTVERSION=${PORTVERSION}
 
 .include <bsd.port.mk>

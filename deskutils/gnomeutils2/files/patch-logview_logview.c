@@ -1,6 +1,6 @@
---- logview/logview.c.orig	Sun Feb 16 15:36:07 2003
-+++ logview/logview.c	Thu Apr 24 12:53:35 2003
-@@ -774,7 +774,7 @@
+--- logview/logview.c.orig	Fri May  7 21:47:59 2004
++++ logview/logview.c	Wed Aug  4 18:40:24 2004
+@@ -781,7 +781,7 @@
  
  	if ( ! found) {
  		g_snprintf (full_name, sizeof (full_name),
@@ -9,7 +9,7 @@
  		if (access (full_name, R_OK) == 0) {
  			found = TRUE;
  			g_free (cfg->regexp_db_path);
-@@ -797,7 +797,7 @@
+@@ -804,7 +804,7 @@
  
  	if ( ! found) {
  		g_snprintf (full_name, sizeof (full_name),
@@ -18,7 +18,7 @@
  		if (access (full_name, R_OK) == 0) {
  			found = TRUE;
  			g_free (cfg->descript_db_path);
-@@ -831,7 +831,7 @@
+@@ -838,7 +838,7 @@
  
  	if ( ! found) {
  		g_snprintf (full_name, sizeof (full_name),
@@ -27,3 +27,11 @@
  		if (access (full_name, R_OK) == 0) {
  			found = TRUE;
  			g_free (cfg->action_db_path);
+@@ -922,6 +922,7 @@
+             /* remove trailing newline */
+             if (logfile[strlen(logfile)-1] == '\n')
+                 logfile[strlen(logfile)-1] = '\0';
++	    if (strcmp (logfile, "/dev/console") == 0) continue;
+             fprintf(stderr, "Found a logfile: (%s)\n", logfile);
+             return logfile;
+         }

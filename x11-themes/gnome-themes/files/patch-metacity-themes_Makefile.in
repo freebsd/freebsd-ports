@@ -1,6 +1,6 @@
---- metacity-themes/Makefile.in.orig	Tue Dec  9 22:11:42 2003
-+++ metacity-themes/Makefile.in	Tue Dec  9 22:12:00 2003
-@@ -122,7 +122,7 @@
+--- metacity-themes/Makefile.in.orig	Mon May 31 20:29:45 2004
++++ metacity-themes/Makefile.in	Mon May 31 20:29:56 2004
+@@ -133,7 +133,7 @@
  THEMES =  	Mist			Sandwish		Smokey
  
  

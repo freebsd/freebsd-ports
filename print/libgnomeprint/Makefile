@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	libgnomeprint
-PORTVERSION=	2.6.2
+PORTVERSION=	2.8.0.1
 CATEGORIES=	print gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.6
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.8
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -20,13 +20,14 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack gnomehier libbonobo libartlgpl2 \
-		gtk20 lthack
+		gtk20
 INSTALLS_SHLIB=	yes
-USE_INC_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-PLIST_SUB=	VERSION=${PORTVERSION}
+PLIST_SUB=	VERSION=${PORTVERSION} \
+		LIBVERSION=2.2
 
 .include <bsd.port.pre.mk>
 
@@ -36,7 +37,7 @@ WITH_CUPS=	yes
 
 .if defined(WITH_CUPS) && !defined(WITHOUT_CUPS)
 CONFIGURE_ARGS+=	--with-cups
-LIB_DEPENDS+=		cups.2:${PORTSDIR}/print/cups-base
+LIB_DEPENDS+=		gnomecups-1.0:${PORTSDIR}/print/libgnomecups
 PLIST_SUB+=		CUPS:=""
 .else
 CONFIGURE_ARGS+=	--without-cups

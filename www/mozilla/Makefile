@@ -6,15 +6,16 @@
 #
 
 PORTNAME?=	mozilla
-PORTVERSION=	1.7.2
-PORTREVISION?=	5
+PORTVERSION=	1.7.3
+PORTREVISION?=	2
 PORTEPOCH?=	2
 CATEGORIES?=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
 		${MASTER_SITE_LOCAL:S/$/:local/}
 MASTER_SITE_SUBDIR=	mozilla/releases/${PORTNAME}${PORTVERSION}/src \
-			marcus/:local
-DISTFILES=	${PORTNAME}-source-${PORTVERSION}${EXTRACT_SUFX}
+			adamw/:local
+DISTFILES=	${PORTNAME}-source-${PORTVERSION}${EXTRACT_SUFX} \
+		libart_lgpl${EXTRACT_SUFX}:local
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The open source, standards compliant web browser
@@ -250,8 +251,8 @@ post-patch:
 	@${REINPLACE_CMD} -E -e 's|libfreetype\.so\.[0-9]+|${FREETYPE_LIB}|g' \
 		${WRKSRC}/modules/libpref/src/init/all.js
 	@for pcfile in ${PKGCONFIG_FILES}; do \
-		${REINPLACE_CMD} -e 's|mozilla-xpcom|mozilla-xpcom${MOZ_SUFX}|g ; \
-			s|mozilla-nspr|mozilla-nspr${MOZ_SUFX}|g' \
+		${REINPLACE_CMD} -e 's|mozilla-xpcom|mozilla-xpcom${MOZ_SUFX}${PKGNAMESUFFIX}|g ; \
+			s|mozilla-nspr|mozilla-nspr${MOZ_SUFX}${PKGNAMESUFFIX}|g' \
 			${WRKSRC}/build/unix/$${pcfile}.pc.in; \
 	done
 	@${SED} -e 's|%%MOZDIR%%|${PREFIX}/lib/${MOZILLA}|g' \
@@ -270,7 +271,7 @@ post-build:
 		${FILESDIR}/mozilla.sh >${WRKSRC}/${MOZILLA}
 
 pre-install:
-	${RM} -rf ${PLIST} ${FAKEDIR}
+	${RM} -rf ${FAKEDIR} ${PLIST}
 	${TOUCH} -f ${PLIST}
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
 		Makefile ${MAKE_ARGS} install
@@ -300,9 +301,9 @@ pre-install:
 			${SED} -e 's:^:@dirrm lib/${MOZILLA}/:' >> ${PLIST}
 	${ECHO_CMD} @dirrm lib/${MOZILLA} >> ${PLIST}
 	for pcfile in ${PKGCONFIG_FILES}; do \
-		${ECHO_CMD} libdata/pkgconfig/$${pcfile}${MOZ_SUFX}.pc >> ${PLIST} ; \
+		${ECHO_CMD} libdata/pkgconfig/$${pcfile}${MOZ_SUFX}${PKGNAMESUFFIX}.pc >> ${PLIST} ; \
 	done
-	cd ${FAKEDIR}/include/${MOZILLA} && ${FIND} -s * -type f -o -type l | \
+	cd ${FAKEDIR}/include/mozilla && ${FIND} -s * -type f -o -type l | \
 		${SED} -e 's:^:include/${MOZILLA}/:' >> ${PLIST} \
 		&& ${FIND} -d * -type d | \
 		${SED} -e 's:^:@dirrm include/${MOZILLA}/:' >> ${PLIST}
@@ -335,12 +336,12 @@ do-install:
 		${REINPLACE_CMD} -e 's|${FAKEDIR}|${PREFIX}|g' \
 			${WRKSRC}/build/unix/$${pcfile}.pc; \
 		${INSTALL_DATA} ${WRKSRC}/build/unix/$${pcfile}.pc \
-			${PREFIX}/libdata/pkgconfig/$${pcfile}${MOZ_SUFX}.pc ; \
+			${PREFIX}/libdata/pkgconfig/$${pcfile}${MOZ_SUFX}${PKGNAMESUFFIX}.pc ; \
 	done
 	-${RM} -fr ${PREFIX}/include/${MOZILLA}
 	${MKDIR} ${PREFIX}/include/${MOZILLA}
 	${CHMOD} 755 ${PREFIX}/include/${MOZILLA}
-	cd ${FAKEDIR}/include/${MOZILLA} && ${FIND} . | \
+	cd ${FAKEDIR}/include/mozilla && ${FIND} . | \
 		${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/include/${MOZILLA}
 
 post-install:

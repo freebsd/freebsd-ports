@@ -1,5 +1,3 @@
-This is GtkHTML, a lightweight HTML rendering/printing/editing engine.
-It was originally based on KHTMLW, but is now being developed
-independently.
+GtkHTML is a lightweight HTML rendering, printing, and editing engine.
 
 WWW: http://www.ximian.com/

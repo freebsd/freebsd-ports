@@ -1,51 +1,6 @@
 bin/gkb_xmmap
 bin/gnome-keyboard-layout
 bin/gswitchit-plugins-capplet
-%%BATTERY%%@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/battstat.schemas > /dev/null || /usr/bin/true
-%%BATTERY%%etc/gconf/schemas/battstat.schemas
-%%BATTERY%%@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/battstat.schemas > /dev/null || /usr/bin/true
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/cdplayer.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/cdplayer.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/cdplayer.schemas > /dev/null || /usr/bin/true
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/charpick.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/charpick.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/charpick.schemas > /dev/null || /usr/bin/true
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/drivemount.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/drivemount.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/drivemount.schemas > /dev/null || /usr/bin/true
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/geyes.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/geyes.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/geyes.schemas > /dev/null || /usr/bin/true
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gkb.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/gkb.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gkb.schemas > /dev/null || /usr/bin/true
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gswitchit.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/gswitchit.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gswitchit.schemas > /dev/null || /usr/bin/true
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gtik.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/gtik.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gtik.schemas > /dev/null || /usr/bin/true
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gweather.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/gweather.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gweather.schemas > /dev/null || /usr/bin/true
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/mailcheck.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/mailcheck.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/mailcheck.schemas > /dev/null || /usr/bin/true
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/mini-commander.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/mini-commander.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/mini-commander.schemas > /dev/null || /usr/bin/true
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/mixer.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/mixer.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/mixer.schemas > /dev/null || /usr/bin/true
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/modemlights.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/modemlights.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/modemlights.schemas > /dev/null || /usr/bin/true
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/multiload.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/multiload.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/multiload.schemas > /dev/null || /usr/bin/true
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/stickynotes.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/stickynotes.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/stickynotes.schemas > /dev/null || /usr/bin/true
 %%BATTERY%%etc/sound/events/battstat_applet.soundlist
 etc/sound/events/mailcheck.soundlist
 include/libgswitchit/gswitchit_plugin.h
@@ -194,6 +149,7 @@ share/gnome/gkb/SE_Swedish.keyprop
 share/gnome/gkb/SE_Swedish_x.keyprop
 share/gnome/gkb/SI_Slovenian.keyprop
 share/gnome/gkb/SI_Slovenian_x.keyprop
+share/gnome/gkb/SK__x.keyprop
 share/gnome/gkb/SR_Dutch.keyprop
 share/gnome/gkb/Slovak.keyprop
 share/gnome/gkb/Slovene.keyprop
@@ -252,7 +208,7 @@ share/gnome/gnome-2.0/ui/GNOME_StickyNotesApplet.xml
 share/gnome/gnome-2.0/ui/GNOME_WirelessApplet.xml
 share/gnome/gswitchit/gswitchit-plugins.glade
 share/gnome/gswitchit/gswitchit-properties.glade
-share/gnome/gweather/Locations
+share/gnome/gweather/Locations.xml
 share/gnome/help/accessx-status/C/accessx-status.xml
 share/gnome/help/accessx-status/C/figures/accessx-status-applet.png
 share/gnome/help/accessx-status/C/legal.xml
@@ -580,11 +536,6 @@ share/gnome/help/char-palette/it/figures/charpick_chargroup.png
 share/gnome/help/char-palette/it/legal.xml
 share/gnome/help/char-palette/ja/char-palette.xml
 share/gnome/help/char-palette/ja/figures/charpalette_applet.png
-share/gnome/help/char-palette/ja/figures/charpalette_chargroup.png
-share/gnome/help/char-palette/ja/figures/charpick_applet.png
-share/gnome/help/char-palette/ja/figures/charpick_characters.png
-share/gnome/help/char-palette/ja/figures/charpick_chargroup.png
-share/gnome/help/char-palette/ja/figures/mailcheck_applet.png
 share/gnome/help/char-palette/ja/legal.xml
 share/gnome/help/char-palette/ko/char-palette.xml
 share/gnome/help/char-palette/ko/figures/charpalette_applet.png
@@ -818,6 +769,8 @@ share/gnome/help/gkb/zh_HK/legal.xml
 share/gnome/help/gkb/zh_TW/figures/gkb_applet.png
 share/gnome/help/gkb/zh_TW/gkb.xml
 share/gnome/help/gkb/zh_TW/legal.xml
+share/gnome/help/gswitchit/C/gswitchit.xml
+share/gnome/help/gswitchit/C/legal.xml
 share/gnome/help/gtik2_applet2/C/figures/gtik_applet.png
 share/gnome/help/gtik2_applet2/C/gtik2_applet2.xml
 share/gnome/help/gtik2_applet2/C/legal.xml
@@ -1349,6 +1302,8 @@ share/gnome/omf/gnome-applets/gkb-zh_HK.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gkb-zh_HK.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/gkb-zh_TW.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gkb-zh_TW.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/gswitchit-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gswitchit-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/gtik2_applet2-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gtik2_applet2-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/gtik2_applet2-de.omf
@@ -1641,6 +1596,7 @@ share/gnome/pixmaps/gkb/yu.png
 share/gnome/pixmaps/gnome-cpu.png
 share/gnome/pixmaps/gnome-eyes.png
 share/gnome/pixmaps/gnome-mini-commander.png
+share/gnome/pixmaps/gnome-mixer-applet.png
 share/gnome/pixmaps/gswitchit-applet.png
 share/gnome/pixmaps/gswitchit-properties-capplet.png
 share/gnome/pixmaps/mailcheck/eclouds.png
@@ -1651,7 +1607,6 @@ share/gnome/pixmaps/mailcheck/email.png
 share/gnome/pixmaps/mailcheck/tux-anim.png
 share/gnome/pixmaps/mini-commander/browser-mini.xpm
 share/gnome/pixmaps/mini-commander/history-mini.xpm
-share/gnome/pixmaps/mixer/gnome-mixer-applet.png
 share/gnome/pixmaps/mixer/volume-max.png
 share/gnome/pixmaps/mixer/volume-medium.png
 share/gnome/pixmaps/mixer/volume-min.png
@@ -1764,6 +1719,7 @@ share/locale/az/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/be/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/bg/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/bn/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/bs/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/ca/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/cs/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/cy/LC_MESSAGES/gnome-applets-2.0.mo
@@ -1785,17 +1741,18 @@ share/locale/he/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/hi/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/hr/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/hu/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/id/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/is/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/it/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/ja/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/ko/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/lt/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/lv/LC_MESSAGES/gnome-applets-2.0.mo
-share/locale/mi/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/mk/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/ml/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/mn/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/ms/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/nb/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/nl/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/nn/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/no/LC_MESSAGES/gnome-applets-2.0.mo
@@ -2006,6 +1963,8 @@ share/locale/zh_TW/LC_MESSAGES/gnome-applets-2.0.mo
 @dirrm share/gnome/help/gtik2_applet2/C/figures
 @dirrm share/gnome/help/gtik2_applet2/C
 @dirrm share/gnome/help/gtik2_applet2
+@dirrm share/gnome/help/gswitchit/C
+@dirrm share/gnome/help/gswitchit
 @dirrm share/gnome/help/gkb/zh_TW/figures
 @dirrm share/gnome/help/gkb/zh_TW
 @dirrm share/gnome/help/gkb/zh_HK/figures
@@ -2285,6 +2244,7 @@ share/locale/zh_TW/LC_MESSAGES/gnome-applets-2.0.mo
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gkb-zh_CN.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gkb-zh_HK.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gkb-zh_TW.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gswitchit-C.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gtik2_applet2-C.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gtik2_applet2-de.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gtik2_applet2-es.omf 2>/dev/null || /usr/bin/true

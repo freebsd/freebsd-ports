@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gtksourceview
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1.1
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.0
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.1
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -18,9 +18,9 @@ COMMENT=	A text widget that adds syntax highlighting to the GtkTextView widget
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_INC_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
-USE_GNOME=	gnomeprefix gnomehack lthack libgnome libgnomeprintui
+USE_GNOME=	gnomeprefix gnomehack libgnome libgnomeprintui
 CONFIGURE_ARGS=	--enable-compile-warnings=no
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lgnuregex"

@@ -1,10 +1,8 @@
 bin/ggv
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/ggv.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/ggv.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/ggv.schemas > /dev/null || /usr/bin/true
 libdata/bonobo/servers/GNOME_GGV.server
 libexec/ggv-postscript-viewer
 share/gnome/applications/ggv.desktop
+@exec update-desktop-database > /dev/null || /usr/bin/true
 share/gnome/gnome-2.0/ui/ggv-control-ui.xml
 share/gnome/gnome-2.0/ui/ggv-postscript-view-ui.xml
 share/gnome/gnome-2.0/ui/ggv-ui.xml
@@ -78,6 +76,7 @@ share/locale/az/LC_MESSAGES/ggv.mo
 share/locale/be/LC_MESSAGES/ggv.mo
 share/locale/bg/LC_MESSAGES/ggv.mo
 share/locale/bn/LC_MESSAGES/ggv.mo
+share/locale/bs/LC_MESSAGES/ggv.mo
 share/locale/ca/LC_MESSAGES/ggv.mo
 share/locale/cs/LC_MESSAGES/ggv.mo
 share/locale/cy/LC_MESSAGES/ggv.mo
@@ -107,11 +106,11 @@ share/locale/kn/LC_MESSAGES/ggv.mo
 share/locale/ko/LC_MESSAGES/ggv.mo
 share/locale/lt/LC_MESSAGES/ggv.mo
 share/locale/lv/LC_MESSAGES/ggv.mo
-share/locale/mi/LC_MESSAGES/ggv.mo
 share/locale/mk/LC_MESSAGES/ggv.mo
 share/locale/ml/LC_MESSAGES/ggv.mo
 share/locale/mn/LC_MESSAGES/ggv.mo
 share/locale/ms/LC_MESSAGES/ggv.mo
+share/locale/nb/LC_MESSAGES/ggv.mo
 share/locale/nl/LC_MESSAGES/ggv.mo
 share/locale/nn/LC_MESSAGES/ggv.mo
 share/locale/no/LC_MESSAGES/ggv.mo
@@ -167,3 +166,4 @@ share/locale/zh_TW/LC_MESSAGES/ggv.mo
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/ggv/ggv-sv.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/ggv/ggv-zh_CN.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/ggv/ggv-zh_TW.omf 2>/dev/null || /usr/bin/true
+@unexec update-desktop-database > /dev/null || /usr/bin/true

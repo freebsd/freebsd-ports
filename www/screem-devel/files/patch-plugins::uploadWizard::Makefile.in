@@ -1,22 +1,22 @@
---- plugins/uploadWizard/Makefile.in.orig	Tue Mar 30 22:42:31 2004
-+++ plugins/uploadWizard/Makefile.in	Tue Mar 30 22:43:33 2004
-@@ -267,8 +267,8 @@
- 			localdriver.c
+--- plugins/uploadWizard/Makefile.in.orig	Wed Nov  3 03:18:43 2004
++++ plugins/uploadWizard/Makefile.in	Wed Nov  3 03:20:17 2004
+@@ -277,8 +277,8 @@
+ 			vfsdriver.c
  
  
 -uploadWizard_la_LDFLAGS = -avoid-version -module $(NEON_CFLAGS)
 -uploadWizard_la_LIBADD = $(NEONOBJS) $(NEON_LIBS) 
 +uploadWizard_la_LDFLAGS = -avoid-version -module
-+uploadWizard_la_LIBADD =  
++uploadWizard_la_LIBADD =
  
  config_h = $(top_builddir)/config.h
  obj_ext = o
-@@ -279,7 +279,7 @@
+@@ -289,7 +289,7 @@
  CONFIG_CLEAN_FILES =
  LTLIBRARIES = $(plugins_exec_LTLIBRARIES)
  
 -uploadWizard_la_DEPENDENCIES = $(neon_dir)/*.lo
-+uploadWizard_la_DEPENDENCIES = 
- am__uploadWizard_la_SOURCES_DIST = basename.h netrc.c netrc.h rpmatch.c \
- 	fnmatch.c fnmatch.h common.c common.h davdriver.c fileset.c \
- 	fileset.h frontend.h ftp.c ftp.h ftpdriver.c i18n.h protocol.h \
++uploadWizard_la_DEPENDENCIES =
+ am__uploadWizard_la_SOURCES_DIST = basename.h netrc.c netrc.h fnmatch.c \
+ 	fnmatch.h common.c common.h fileset.c fileset.h frontend.h \
+ 	ftp.c ftp.h ftpdriver.c i18n.h protocol.h rcfile.c rcfile.h \

@@ -1,5 +1,5 @@
---- configure.orig	Mon Feb  2 01:47:03 2004
-+++ configure	Mon Feb  2 01:47:33 2004
+--- configure.orig	Wed Jul  7 14:09:38 2004
++++ configure	Wed Jul  7 14:10:16 2004
 @@ -22050,6 +22050,10 @@
  ac_compile='$CC -c $CFLAGS $CPPFLAGS conftest.$ac_ext >&5'
  ac_link='$CC -o conftest$ac_exeext $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
@@ -10,4 +10,4 @@
 +  HAVE_OPENSP_FALSE=
  
  fi
- 
+

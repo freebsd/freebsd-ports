@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	gnometerminal
-PORTVERSION=	2.6.1
-PORTREVISION=	2
+PORTVERSION=	2.8.0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-terminal/2.6
+MASTER_SITE_SUBDIR=	sources/gnome-terminal/2.8
 DISTNAME=	gnome-terminal-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -21,9 +20,11 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack lthack gnomehier libgnomeui vte
-USE_LIBTOOL_VER=13
+USE_GNOME=	gnomeprefix gnomehack intlhack gnomehier libgnomeui vte
+USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+GCONF_SCHEMAS=	gnome-terminal.schemas
 
 .include <bsd.port.mk>

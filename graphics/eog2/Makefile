@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	eog2
-PORTVERSION=	2.6.1
-PORTREVISION=	4
+PORTVERSION=	2.8.1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.6
+MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.8
 DISTNAME=	eog-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -21,16 +20,21 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomehier intlhack eel2 libgnomeprintui \
-		librsvg2
+		librsvg2 desktopfileutils
 USE_X_PREFIX=	yes
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+
+GCONF_SCHEMAS=	eog.schemas
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_EXIF) || exists(${LOCALBASE}/lib/libexif.so.10)
 LIB_DEPENDS+=	exif.10:${PORTSDIR}/graphics/libexif
 .endif
+
+post-install:
+	@-update-desktop-database > /dev/null
 
 .include <bsd.port.post.mk>

@@ -27,16 +27,23 @@ include/at-spi-1.0/libspi/streamablecontent.h
 include/at-spi-1.0/libspi/table.h
 include/at-spi-1.0/libspi/text.h
 include/at-spi-1.0/libspi/value.h
+include/at-spi-1.0/login-helper/Accessibility_LoginHelper.h
+include/at-spi-1.0/login-helper/login-helper.h
 lib/libcspi.a
 lib/libcspi.so
-lib/libcspi.so.9
+lib/libcspi.so.10
+lib/libloginhelper.a
+lib/libloginhelper.so
+lib/libloginhelper.so.0
 lib/libspi.a
 lib/libspi.so
-lib/libspi.so.9
+lib/libspi.so.10
 lib/gtk-2.0/modules/libatk-bridge.so
+lib/orbit-2.0/Accessibility_LoginHelper_module.so
 lib/orbit-2.0/Accessibility_module.so
 libdata/bonobo/servers/Accessibility_Registry.server
 libdata/pkgconfig/cspi-1.0.pc
+libdata/pkgconfig/libloginhelper-1.0.pc
 libdata/pkgconfig/libspi-1.0.pc
 libexec/at-spi-registryd
 share/doc/at-spi-cspi/at-spi-cspi-Accessible-Objects.html
@@ -79,6 +86,7 @@ share/gnome/idl/at-spi-1.0/Accessibility_Event.idl
 share/gnome/idl/at-spi-1.0/Accessibility_Hyperlink.idl
 share/gnome/idl/at-spi-1.0/Accessibility_Hypertext.idl
 share/gnome/idl/at-spi-1.0/Accessibility_Image.idl
+share/gnome/idl/at-spi-1.0/Accessibility_LoginHelper.idl
 share/gnome/idl/at-spi-1.0/Accessibility_Registry.idl
 share/gnome/idl/at-spi-1.0/Accessibility_Relation.idl
 share/gnome/idl/at-spi-1.0/Accessibility_Role.idl
@@ -91,6 +99,7 @@ share/gnome/idl/at-spi-1.0/Accessibility_Value.idl
 @dirrm share/gnome/idl/at-spi-1.0
 @dirrm share/doc/at-spi-cspi
 @dirrm lib/orbit-2.0
+@dirrm include/at-spi-1.0/login-helper
 @dirrm include/at-spi-1.0/libspi
 @dirrm include/at-spi-1.0/cspi
 @dirrm include/at-spi-1.0

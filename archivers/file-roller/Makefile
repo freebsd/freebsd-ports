@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	fileroller
-PORTVERSION=	2.6.2
+PORTVERSION=	2.8.3
 PORTEPOCH=	1
 CATEGORIES=	archivers gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/file-roller/2.6
+MASTER_SITE_SUBDIR=	sources/file-roller/2.8
 DISTNAME=	file-roller-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -20,19 +20,19 @@ COMMENT=	An archive manager for zip files, tar, etc
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix intlhack gnomehack libgnomeui lthack
-USE_INC_LIBTOOL_VER=13
+USE_GNOME=	gnomeprefix intlhack gnomehack libgnomeui desktopfileutils
+USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-.include <bsd.port.pre.mk>
+GCONF_SCHEMAS=	file-roller.schemas
 
-post-install:
 .if !defined(NOPORTDOCS)
+post-install:
 	${MKDIR} ${DOCSDIR}
 .for f in AUTHORS NEWS README TODO
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

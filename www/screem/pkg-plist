@@ -1,7 +1,4 @@
 bin/screem
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/screem.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/screem.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/screem.schemas > /dev/null || /usr/bin/true
 lib/screem/plugins/colourWizard.so
 lib/screem/plugins/cssWizard.so
 lib/screem/plugins/css_wizard.so
@@ -9,16 +6,73 @@ lib/screem/plugins/entityWizard.so
 lib/screem/plugins/formWizard.so
 lib/screem/plugins/imageWizard.so
 lib/screem/plugins/linkWizard.so
+lib/screem/plugins/object_wizard.so
 lib/screem/plugins/ssiWizard.so
 lib/screem/plugins/tableWizard.so
 lib/screem/plugins/uploadWizard.so
 share/gnome/application-registry/screem.applications
+share/gnome/applications/mimeinfo.cache
 share/gnome/applications/screem.desktop
-share/gnome/help/screem/C/figures/dummy.png
+share/gnome/help/screem/C/figures/color-wizard.png
+share/gnome/help/screem/C/figures/css-wizard1.png
+share/gnome/help/screem/C/figures/css-wizard2.png
+share/gnome/help/screem/C/figures/editor-autocomplete1.png
+share/gnome/help/screem/C/figures/editor-context-menu.png
+share/gnome/help/screem/C/figures/editor-error.png
+share/gnome/help/screem/C/figures/editor-inline-tagging.png
+share/gnome/help/screem/C/figures/editor-pasting.png
+share/gnome/help/screem/C/figures/editor-tooltips.png
+share/gnome/help/screem/C/figures/editor.png
+share/gnome/help/screem/C/figures/entity-wizard.png
+share/gnome/help/screem/C/figures/form-wizard.png
+share/gnome/help/screem/C/figures/image-wizard.png
+share/gnome/help/screem/C/figures/link-wizard1.png
+share/gnome/help/screem/C/figures/link-wizard2.png
+share/gnome/help/screem/C/figures/newblankdoc.png
+share/gnome/help/screem/C/figures/newdoc.png
+share/gnome/help/screem/C/figures/newsite1.png
+share/gnome/help/screem/C/figures/newsite2.png
+share/gnome/help/screem/C/figures/object-wizard.png
+share/gnome/help/screem/C/figures/opensite1.png
+share/gnome/help/screem/C/figures/opensite2.png
+share/gnome/help/screem/C/figures/opensitelocation.png
+share/gnome/help/screem/C/figures/prefs-browsers.png
+share/gnome/help/screem/C/figures/prefs-doctypes.png
+share/gnome/help/screem/C/figures/prefs-editor.png
+share/gnome/help/screem/C/figures/prefs-fonts-colors.png
+share/gnome/help/screem/C/figures/prefs-misc.png
+share/gnome/help/screem/C/figures/prefs-tag-trees.png
+share/gnome/help/screem/C/figures/preview.png
+share/gnome/help/screem/C/figures/sidebar-attributes1.png
+share/gnome/help/screem/C/figures/sidebar-attributes2.png
+share/gnome/help/screem/C/figures/sidebar-attributes3.png
+share/gnome/help/screem/C/figures/sidebar-errors.png
+share/gnome/help/screem/C/figures/sidebar-files1.png
+share/gnome/help/screem/C/figures/sidebar-files2.png
+share/gnome/help/screem/C/figures/sidebar-messages.png
+share/gnome/help/screem/C/figures/sidebar-resources1.png
+share/gnome/help/screem/C/figures/sidebar-resources2.png
+share/gnome/help/screem/C/figures/sidebar-resources3.png
+share/gnome/help/screem/C/figures/sidebar-symbols.png
+share/gnome/help/screem/C/figures/sidebar-tree.png
+share/gnome/help/screem/C/figures/ssi-wizard.png
+share/gnome/help/screem/C/figures/table-wizard.png
+share/gnome/help/screem/C/figures/tree.png
 share/gnome/help/screem/C/legal.xml
 share/gnome/help/screem/C/screem.xml
 share/gnome/mime-info/screem.keys
-share/gnome/mime-info/screem.mime
+share/mime/application/vnd.wap.wmlc.xml
+share/mime/application/vnd.wap.wmlscriptc.xml
+share/mime/application/x-screem-tag-tree.xml
+share/mime/application/x-screem.xml
+share/mime/application/xhtml+xml.xml
+share/mime/image/vnd.wap.wbmp.xml
+share/mime/packages/screem.xml
+share/mime/text/html.xml
+share/mime/text/vnd.wap.wml.xml
+share/mime/text/vnd.wap.wmlscript.xml
+share/mime/text/x-component.xml
+share/mime/text/x-javascript.xml
 share/gnome/omf/screem/screem-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/screem/screem-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/screem.png
@@ -40,10 +94,10 @@ share/gnome/screem/dtd/xhtml-special.ent
 share/gnome/screem/dtd/xhtml-symbol.ent
 share/gnome/screem/features.xml
 share/gnome/screem/glade/css-wizard.glade
-share/gnome/screem/glade/css.glade
 share/gnome/screem/glade/entityWizard.glade
 share/gnome/screem/glade/imageWizard.glade
 share/gnome/screem/glade/linkwizard.glade
+share/gnome/screem/glade/object-wizard.glade
 share/gnome/screem/glade/screem.glade
 share/gnome/screem/glade/ssiwizard.glade
 share/gnome/screem/glade/tablewizard.glade
@@ -82,6 +136,7 @@ share/gnome/screem/pixmaps/entry.xpm
 share/gnome/screem/pixmaps/fixed.xpm
 share/gnome/screem/pixmaps/gallery.xpm
 share/gnome/screem/pixmaps/gnome-fileentry.xpm
+share/gnome/screem/pixmaps/hand-open.png
 share/gnome/screem/pixmaps/insert-symbol-16.png
 share/gnome/screem/pixmaps/insert-symbol-24.png
 share/gnome/screem/pixmaps/optionmenu.xpm
@@ -92,10 +147,15 @@ share/gnome/screem/pixmaps/resources.png
 share/gnome/screem/pixmaps/screem_site.png
 share/gnome/screem/pixmaps/site_preview.png
 share/gnome/screem/pixmaps/site_structure-48.png
+share/gnome/screem/pixmaps/stock-close-12.png
+share/gnome/screem/pixmaps/stock-menu-left-12.png
+share/gnome/screem/pixmaps/stock-menu-right-12.png
 share/gnome/screem/pixmaps/stock_connect.png
 share/gnome/screem/pixmaps/stock_disconnect.png
 share/gnome/screem/pixmaps/stock_insert_image-16.png
 share/gnome/screem/pixmaps/stock_insert_image.png
+share/gnome/screem/pixmaps/stock_insert_object-16.png
+share/gnome/screem/pixmaps/stock_insert_object.png
 share/gnome/screem/pixmaps/stock_insert_table-16.png
 share/gnome/screem/pixmaps/sub.xpm
 share/gnome/screem/pixmaps/sup.xpm
@@ -112,10 +172,12 @@ share/gnome/screem/resources/Templates/template.html
 share/gnome/screem/tagtrees/apache.tagtree
 share/gnome/screem/tagtrees/css.tagtree
 share/gnome/screem/tagtrees/funcref_php.tagtree
+share/gnome/screem/tagtrees/funcref_python.tagtree
 share/gnome/screem/tagtrees/html.tagtree
 share/gnome/screem/tagtrees/javascript.tagtree
+share/gnome/screem/tagtrees/teixlite.tagtree
 share/gnome/screem/ui/layout
-share/gnome/screem/ui/screem-css-window-ui.xml
+share/gnome/screem/ui/screem-editable-toolbars.xml
 share/gnome/screem/ui/screem-tag-tree-bar.xml
 share/gnome/screem/ui/screem-window-menu.xml
 share/gnome/screem/ui/screem-window-popups.xml
@@ -141,26 +203,28 @@ share/locale/tr/LC_MESSAGES/screem.mo
 share/locale/uk/LC_MESSAGES/screem.mo
 share/locale/vi/LC_MESSAGES/screem.mo
 share/locale/zh_CN/LC_MESSAGES/screem.mo
-@dirrm share/gnome/screem/ui
-@dirrm share/gnome/screem/tagtrees
-@dirrm share/gnome/screem/resources/Templates
-@dirrm share/gnome/screem/resources/PHP3
-@dirrm share/gnome/screem/resources/Javascript
-@dirrm share/gnome/screem/resources/Images
-@dirrm share/gnome/screem/resources/HTML
-@dirrm share/gnome/screem/resources/Applets
-@dirrm share/gnome/screem/resources
-@dirrm share/gnome/screem/pixmaps
-@dirrm share/gnome/screem/hints
-@dirrm share/gnome/screem/glade
-@dirrm share/gnome/screem/dtd
-@dirrm share/gnome/screem
-@dirrm share/gnome/pixmaps/screem/splash
-@dirrm share/gnome/pixmaps/screem
-@dirrm share/gnome/omf/screem
+@dirrm lib/screem/plugins
+@dirrm lib/screem
 @dirrm share/gnome/help/screem/C/figures
 @dirrm share/gnome/help/screem/C
 @dirrm share/gnome/help/screem
-@dirrm lib/screem/plugins
-@dirrm lib/screem
+@dirrm share/gnome/omf/screem
+@dirrm share/gnome/pixmaps/screem/splash
+@dirrm share/gnome/pixmaps/screem
+@dirrm share/gnome/screem/dtd
+@dirrm share/gnome/screem/glade
+@dirrm share/gnome/screem/hints
+@dirrm share/gnome/screem/pixmaps
+@dirrm share/gnome/screem/resources/Applets
+@dirrm share/gnome/screem/resources/HTML
+@dirrm share/gnome/screem/resources/Images
+@dirrm share/gnome/screem/resources/Javascript
+@dirrm share/gnome/screem/resources/PHP3
+@dirrm share/gnome/screem/resources/Templates
+@dirrm share/gnome/screem/resources
+@dirrm share/gnome/screem/tagtrees
+@dirrm share/gnome/screem/ui
+@dirrm share/gnome/screem
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/screem/screem-C.omf 2>/dev/null || /usr/bin/true
+@exec update-mime-database %D/share/mime
+@unexec update-mime-database %D/share/mime

@@ -4,7 +4,6 @@ bin/gnome-background-properties
 bin/gnome-control-center
 bin/gnome-default-applications-properties
 bin/gnome-display-properties
-bin/gnome-file-types-properties
 bin/gnome-font-properties
 bin/gnome-font-viewer
 bin/gnome-keybinding-properties
@@ -12,34 +11,13 @@ bin/gnome-keyboard-properties
 bin/gnome-mouse-properties
 bin/gnome-network-preferences
 bin/gnome-sound-properties
-bin/themus-theme-applier
 bin/gnome-theme-manager
 bin/gnome-theme-thumbnailer
 bin/gnome-thumbnail-font
 bin/gnome-typing-monitor
 bin/gnome-ui-properties
 bin/gnome-window-properties
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/apps_gnome_settings_daemon_default_editor.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/apps_gnome_settings_daemon_default_editor.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/apps_gnome_settings_daemon_default_editor.schemas > /dev/null || /usr/bin/true
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/apps_gnome_settings_daemon_keybindings.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/apps_gnome_settings_daemon_keybindings.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/apps_gnome_settings_daemon_keybindings.schemas > /dev/null || /usr/bin/true
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/apps_gnome_settings_daemon_screensaver.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/apps_gnome_settings_daemon_screensaver.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/apps_gnome_settings_daemon_screensaver.schemas > /dev/null || /usr/bin/true
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/desktop_gnome_font_rendering.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/desktop_gnome_font_rendering.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/desktop_gnome_font_rendering.schemas > /dev/null || /usr/bin/true
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/desktop_gnome_peripherals_keyboard_xkb.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/desktop_gnome_peripherals_keyboard_xkb.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/desktop_gnome_peripherals_keyboard_xkb.schemas > /dev/null || /usr/bin/true
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/fontilus.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/fontilus.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/fontilus.schemas > /dev/null || /usr/bin/true
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/themus.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/themus.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/themus.schemas > /dev/null || /usr/bin/true
+bin/themus-theme-applier
 etc/gnome-vfs-2.0/modules/font-method.conf
 etc/gnome-vfs-2.0/modules/theme-method.conf
 include/gnome-window-settings-2.0/gnome-window-manager.h
@@ -66,7 +44,6 @@ share/gnome/control-center-2.0/capplets/at-properties.desktop
 share/gnome/control-center-2.0/capplets/background.desktop
 share/gnome/control-center-2.0/capplets/default-applications.desktop
 share/gnome/control-center-2.0/capplets/display-properties.desktop
-share/gnome/control-center-2.0/capplets/file-types.desktop
 share/gnome/control-center-2.0/capplets/font-properties.desktop
 share/gnome/control-center-2.0/capplets/gnome-network-preferences.desktop
 share/gnome/control-center-2.0/capplets/gnome-settings-mouse.desktop
@@ -80,7 +57,6 @@ share/gnome/control-center-2.0/icons/display-capplet.png
 share/gnome/control-center-2.0/interfaces/acme.glade
 share/gnome/control-center-2.0/interfaces/apply-font.glade
 share/gnome/control-center-2.0/interfaces/at-enable-dialog.glade
-share/gnome/control-center-2.0/interfaces/file-types-properties.glade
 share/gnome/control-center-2.0/interfaces/font-properties.glade
 share/gnome/control-center-2.0/interfaces/gnome-accessibility-keyboard-properties.glade
 share/gnome/control-center-2.0/interfaces/gnome-background-properties.glade
@@ -163,6 +139,7 @@ share/locale/az/LC_MESSAGES/control-center-2.0.mo
 share/locale/be/LC_MESSAGES/control-center-2.0.mo
 share/locale/bg/LC_MESSAGES/control-center-2.0.mo
 share/locale/bn/LC_MESSAGES/control-center-2.0.mo
+share/locale/bs/LC_MESSAGES/control-center-2.0.mo
 share/locale/ca/LC_MESSAGES/control-center-2.0.mo
 share/locale/cs/LC_MESSAGES/control-center-2.0.mo
 share/locale/cy/LC_MESSAGES/control-center-2.0.mo
@@ -195,6 +172,7 @@ share/locale/mk/LC_MESSAGES/control-center-2.0.mo
 share/locale/ml/LC_MESSAGES/control-center-2.0.mo
 share/locale/mn/LC_MESSAGES/control-center-2.0.mo
 share/locale/ms/LC_MESSAGES/control-center-2.0.mo
+share/locale/nb/LC_MESSAGES/control-center-2.0.mo
 share/locale/nl/LC_MESSAGES/control-center-2.0.mo
 share/locale/nn/LC_MESSAGES/control-center-2.0.mo
 share/locale/no/LC_MESSAGES/control-center-2.0.mo
@@ -225,6 +203,5 @@ share/locale/zh_TW/LC_MESSAGES/control-center-2.0.mo
 @dirrm share/gnome/control-center-2.0/pixmaps
 @dirrm share/gnome/control-center-2.0/interfaces
 @dirrm share/gnome/control-center-2.0/icons
-@dirrm share/gnome/applications
 @dirrm lib/window-manager-settings
 @dirrm include/gnome-window-settings-2.0
