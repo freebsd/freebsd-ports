@@ -7,37 +7,63 @@
 
 PORTNAME=	dgd-lpmud
 PORTVERSION=	2.4.5
-CATEGORIES=	net devel games
+PORTREVISION=	1
+CATEGORIES=	net games
 MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/lpmud/drivers/dgd/lpc/ \
 		${MASTER_SITE_LOCAL:S|%SUBDIR%|glewis/dgd|}
-DISTFILES=	2.4.5-for-1.1.tgz
+DISTNAME=	2.4.5-for-1.1
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	LPmud mudlib, for use with DGD
 
+RUN_DEPENDS=	${LOCALBASE}/sbin/dgd:${PORTSDIR}/net/dgd
+
 NO_PACKAGE=	"depends on DGD, which is NO_CDROM"
 RESTRICTED=	"no monetary gain, tarball OK for CDROM"
 
-RUN_DEPENDS=	${PREFIX}/dgd/bin/driver:${PORTSDIR}/net/dgd
-
 DIST_SUBDIR=	dgd
 WRKSRC=		${WRKDIR}/mud
-PLIST_SUB+=	EXTRA:=""
+USE_REINPLACE=	yes
 
-do-build:
-	@cd ${WRKDIR}/mud/bin; make
+CPIO?=		/usr/bin/cpio
+
+post-extract:
+	@${CP} ${FILESDIR}/oconv.c ${WRKSRC}/
+	@${CP} ${FILESDIR}/Makefile.bin ${WRKSRC}/Makefile
+
+do-configure:
+	${REINPLACE_CMD} -e "s:%%DATADIR%%:${DATADIR}:" ${WRKSRC}/lpmud.dgd
 
 do-install:
-	@${TAR} -C ${WRKSRC} -cf - `${GREP} '^[a-z]' ${PLIST} | ${CUT} -f2- -d'/'` \
-		| ${TAR} -C ${PREFIX}/dgd -xpf -
-	@${INSTALL_DATA} ${WRKSRC}/lpmud-2.4.5/ACCESS.ALLOW \
-		${PREFIX}/dgd/lpmud-2.4.5/ACCESS.ALLOW.example
-	@${INSTALL_DATA} ${WRKSRC}/lpmud-2.4.5/ACCESS.DENY \
-		${PREFIX}/dgd/lpmud-2.4.5/ACCESS.DENY.example
-	@${MKDIR} ${PREFIX}/dgd/lpmud-2.4.5/log
-	@${MKDIR} ${PREFIX}/dgd/lpmud-2.4.5/open
-	@${MKDIR} ${PREFIX}/dgd/lpmud-2.4.5/players/lars/lars
-	@${MKDIR} ${PREFIX}/dgd/lpmud-2.4.5/room/post_dir
-	@${MKDIR} ${PREFIX}/dgd/tmp
+	${INSTALL_PROGRAM} ${WRKSRC}/hname ${PREFIX}/bin/lpmud-hname
+	${INSTALL_PROGRAM} ${WRKSRC}/oconv ${PREFIX}/bin/lpmud-oconv
+	${MKDIR} ${PREFIX}/etc/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/lpmud.dgd ${PREFIX}/etc/${PORTNAME}/
+	${MKDIR} ${DATADIR}/lpmud
+	cd ${WRKSRC}/2.4.5 && ${FIND} . \
+		| ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}/lpmud
+	# Install an RC script for dgd-lpmud
+	${CAT} ${FILESDIR}/dgd-lpmud.sh | ${SED} -e "s:%%PREFIX%%:${PREFIX}:" \
+		-e "s:%%DATADIR%%:${DATADIR}:" > \
+		${PREFIX}/etc/rc.d/dgd-lpmud.sh.sample
+	${CHMOD} a+x ${PREFIX}/etc/rc.d/dgd-lpmud.sh.sample
+	${MV} ${DATADIR}/lpmud/ACCESS.ALLOW \
+		${DATADIR}/lpmud/ACCESS.ALLOW.example
+	${MV} ${DATADIR}/lpmud/ACCESS.DENY \
+		${DATADIR}/lpmud/ACCESS.DENY.example
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.endif
+
+post-install:
+	# Need a temporary directory for certain files
+	${MKDIR} ${DATADIR}/tmp
+	# Link in the dgd docs
+	${LN} -sf ${PREFIX}/share/doc/dgd/kfun ${DATADIR}/lpmud/doc
+	# Run package install script
+	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/pkg-install ${PKGNAME} \
+		POST-INSTALL
 
 .include <bsd.port.mk>
