@@ -17,7 +17,6 @@ COMMENT=	Implements a flat filesystem
 
 BUILD_DEPENDS=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp \
 		${SITE_PERL}/Class/Autouse.pm:${PORTSDIR}/devel/p5-Class-Autouse \
-		${SITE_PERL}/File/Copy.pm:${PORTSDIR}/devel/p5-File-Tools \
 		${SITE_PERL}/Class/Inspector.pm:${PORTSDIR}/devel/p5-Class-Inspector \
 		${SITE_PERL}/File/Remove.pm:${PORTSDIR}/devel/p5-File-Remove \
 		${SITE_PERL}/File/NCopy.pm:${PORTSDIR}/devel/p5-File-NCopy
