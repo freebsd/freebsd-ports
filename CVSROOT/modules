@@ -331,6 +331,7 @@ ari-yahoo	ports/net/ari-yahoo
 aria		ports/www/aria
 arirang		ports/security/arirang
 arithmetic	src/games/arithmetic
+arj		ports/archivers/arj
 arla		ports/net/arla
 arm-aout-binutils	ports/devel/arm-aout-binutils
 arm-aout-gcc295	ports/devel/arm-aout-gcc295
