@@ -113,6 +113,7 @@
     SUBDIR += p5-DBD-Oracle
     SUBDIR += p5-DBD-Pg
     SUBDIR += p5-DBD-PgSPI
+    SUBDIR += p5-DBD-RAM
     SUBDIR += p5-DBD-SQLite
     SUBDIR += p5-DBD-Sybase
     SUBDIR += p5-DBD-XBase
