@@ -1,0 +1,38 @@
+--- SETUP.in.orig	Sun Dec 30 00:22:18 2001
++++ SETUP.in	Sun Dec 30 00:23:48 2001
+@@ -1299,7 +1299,7 @@
+     if [ "$SMB_PASSWD" ]; then
+ 	echo "read protect SETUP.cfg, since it contains password..."
+ 	chmod 600 SETUP.cfg
+-	chown root.$LP_GROUP SETUP.cfg
++	chown root:$LP_GROUP SETUP.cfg
+     fi
+ }
+ 
+@@ -1434,7 +1434,7 @@
+ 	# after having set sane defaults, fix permissions
+ 	echo $n "changing permissions of $APS_BASEDIR... $c"
+ 	chmod 555 .
+-	chown -R $DIR_OWNER.$DIR_GROUP .
++	chown -R $DIR_OWNER:$DIR_GROUP .
+ 	find . -type d -print | xargs chmod 555
+ 	find . -type f -print | xargs chmod a+r,a-w
+ 	echo "done."
+@@ -1672,7 +1672,7 @@
+     chmod 664 "$SPOOLDIR/lock"
+ 
+     # set sane permissions for spooldir
+-    chown -R $LP_OWNER.$LP_GROUP "$SPOOLDIR"
++    chown -R $LP_OWNER:$LP_GROUP "$SPOOLDIR"
+ 
+     # samba printer
+     if [ "$INTERFACE" = samba ]; then
+@@ -1699,7 +1699,7 @@
+ 	if [ "$SMB_PASSWD" ]; then
+ 	    echo "   read protect password information..."
+ 	    chmod 600 smbclient.conf
+-	    chown $LP_OWNER.$LP_GROUP smbclient.conf
++	    chown $LP_OWNER:$LP_GROUP smbclient.conf
+ 	fi
+     fi
+ 
