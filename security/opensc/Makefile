@@ -51,13 +51,7 @@ CONFIGURE_ARGS+=	--with-pcsclite=${LOCALBASE}
 .endif
 
 .if !defined(WITHOUT_LDAP)
-WITH_OPENLDAP_VER?=	21
-.if ${WITH_OPENLDAP_VER} == "21"
-LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap21-client
-.elif ${WITH_OPENLDAP_VER} == "20"
-LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap20-client
-.endif
-
+USE_OPENLDAP=		yes
 CONFIGURE_ARGS+=	--enable-ldap			\
 			--with-ldap-lib=openldap	\
 			--with-ldap-dir=${LOCALBASE}
