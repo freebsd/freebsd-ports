@@ -21,4 +21,10 @@ ALL_TARGET=	${PORTNAME} utils
 
 MAN1=	i-ls.1 i-viewdb.1 integrit.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		"Does not compile on sparc64"
+.endif
+
+.include <bsd.port.post.mk>
