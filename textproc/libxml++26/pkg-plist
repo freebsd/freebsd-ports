@@ -1,3 +1,4 @@
+include/libxml++-1.0/libxml++/api_export.h
 include/libxml++-1.0/libxml++/attribute.h
 include/libxml++-1.0/libxml++/document.h
 include/libxml++-1.0/libxml++/dtd.h
