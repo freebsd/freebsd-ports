@@ -1,0 +1,19 @@
+--- main.c.orig	Sat Mar 23 15:01:57 2002
++++ main.c	Sat Mar 23 15:02:28 2002
+@@ -33,7 +33,7 @@
+ bool_t			exit_flag;	/* Flag indicating end of application */
+ appdata_t		app_data;	/* Options data */
+ widgets_t		widgets;	/* Holder of all widgets */
+-FILE			*errfp = stderr;/* Error message stream */
++FILE			*errfp;		/* Error message stream */
+ 
+ 
+ /***********************
+@@ -103,6 +103,7 @@
+ 
+ 	/* Initialize variables */
+ 	exit_flag = FALSE;
++	errfp = stderr;
+ 
+ 	/* Handle some signals */
+ 	signal(SIGINT, onsig);
