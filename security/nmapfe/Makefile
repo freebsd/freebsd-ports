@@ -4,7 +4,7 @@
 # Date created:			  Tue Aug 04, 1998
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.5 1998/12/15 11:18:30 obrien Exp $
+# $Id: Makefile,v 1.6 1998/12/17 13:26:17 obrien Exp $
 #
 
 DISTNAME=	nmap-2.01
@@ -14,6 +14,8 @@ MASTER_SITES=	http://www.insecure.org/nmap/  \
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=     obrien@FreeBSD.org
+
+.include <bsd.port.pre.mk>
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --libdir=${PREFIX}/share/misc
@@ -29,4 +31,4 @@ post-extract:
 post-install:
 	@strip ${PREFIX}/bin/nmap
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
