@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.84 1998/06/28 12:44:56 andreas Exp $
+# $Id: Makefile,v 1.85 1998/07/04 19:39:08 steve Exp $
 #
 
     SUBDIR += Mosaic         # requires Motif
@@ -24,6 +24,7 @@
     SUBDIR += grail
     SUBDIR += gwstat
     SUBDIR += harvest
+    SUBDIR += htmlpp
     SUBDIR += http-analyze
     SUBDIR += hypermail
     SUBDIR += ijb
