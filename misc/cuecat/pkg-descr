@@ -1,0 +1,7 @@
+The cuecat script repeatedly reads scan codes from a :Cue:Cat scanner
+via standard input, decodes and processes the scanned value, then
+prompts with Scan! for another scan code. It exists when it reads an
+EOF on standard input.
+
+It can be used print a decoded version of the scan code, or launch
+commands the barcodes, ISBNs or UPCs scanned in.

@@ -1,0 +1,3 @@
+bin/cuecat
+lib/%%PYTHON_VERSION%%/site-packages/cuecat.py
+lib/%%PYTHON_VERSION%%/site-packages/barcode.py
