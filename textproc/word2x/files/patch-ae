@@ -1,11 +1,12 @@
---- html-table.cc.orig	Sat Jun 19 17:35:05 1999
-+++ html-table.cc	Sat Jun 19 17:35:25 1999
-@@ -264,7 +264,7 @@
- }
- 
- /* Destructor */
--html_table::~html_table(int c, int r)
-+html_table::~html_table()
- {
-     int i;
-     struct col_info *col, *nxt;
+--- html-table.cc.orig	Fri Mar 10 20:26:06 2000
++++ html-table.cc	Fri Mar 10 20:27:21 2000
+@@ -17,7 +17,8 @@
+ #define __EXCLUDE_READER_CLASSES
+ #include "lib.h"
+ #ifndef HAVE_ALLOCA_H
+-extern "C" char *alloca(int);
++/* extern "C" char *alloca(int); */
++#include <stdlib.h> /* stupid linux specific weenie code. */
+ #else
+ #include <alloca.h>
+ #endif /* HAVE_ALLOCA_H */
