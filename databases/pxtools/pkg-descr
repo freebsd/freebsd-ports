@@ -1,0 +1,13 @@
+pxtools is a collection of tools to work with a Paradox-databases.
+
+pxtools consists of the following:
+* pxinfo scans the header of a specified database-file and dumps
+  the important information.
+* pxsqldump/pxcsvdump are utilities to extract the data from a
+  Paradox-database.  The output is an SQL-/CSV-dump that can be
+  used to recreate the database in an SQL-enviroment.
+
+WWW: http://www.kneschke.de/projekte/pxtools/
+
+- Chris D. Faulhaber
+jedgar@FreeBSD.org
