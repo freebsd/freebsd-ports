@@ -7,6 +7,7 @@
 
 PORTNAME=	freebsd-uucp
 PORTVERSION=	1.06.1.10
+PORTREVISION=	1
 CATEGORIES=	net comms
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=dinoex
@@ -59,6 +60,14 @@ pre-install:
 .endif
 
 post-install:
+	@${CHOWN} uucp:uucp ${PREFIX}/etc/uucp
+	@${CHMOD} 750 ${PREFIX}/etc/uucp
+	@${ECHO_CMD} "updating ${DESTDIR}/etc/services"
+	@${CP} ${DESTDIR}/etc/services ${DESTDIR}/etc/services.bak
+	@(grep -v ^suucp ${DESTDIR}/etc/services.bak; \
+	${ECHO_CMD} "suucp           4031/tcp   #UUCP over SSL"; \
+	${ECHO_CMD} "suucp           4031/udp   #UUCP over SSL" ) \
+		> ${DESTDIR}/etc/services
 	@${ECHO} "Use the 'make upgrade' command to copy your old configuration"
 	@${ECHO} "files from /etc/uucp to the new location in ${PREFIX}/etc/uucp"
 	@${ECHO}
