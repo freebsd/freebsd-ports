@@ -247,6 +247,7 @@ gogo239b.tgz		ports/audio/gogo	Condition is not clear
 grande-KXL-*.tar.gz	ports/games/grande	Possible copyright infringement
 graphviz/*		ports/graphics/graphviz	Needs license before fetching
 grass*ipafull*		ports/japanese/ipa-ttfonts Cannot distribute fonts without i18n'ed grass
+himeno/*		ports/benchmarks/himeno	Uncertain to distribute sources and binaries
 hjb3_0-linux.sfx	ports/www/hotjava	Licensed for individual
 						non-commercial use only.
 HyperSpec-*		ports/devel/clisp-hyperspec	Commercial redistribution prohibited
