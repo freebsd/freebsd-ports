@@ -103,6 +103,7 @@
     SUBDIR += p5-PDFLib
     SUBDIR += p5-Text-PDF
     SUBDIR += panda
+    SUBDIR += passivetex
     SUBDIR += pcal
     SUBDIR += pclprint
     SUBDIR += pdflib
