@@ -14,13 +14,12 @@ MASTER_SITES=	http://www.go-mono.com/archive/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An open source implementation of .NET Development Framework
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 LIB_DEPENDS=	gc.1:${PORTSDIR}/devel/boehm-gc
 
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
 USE_BISON=	yes
-USE_GNOME=	gnomehack glib20
+USE_GNOME=	gnomehack glib20 pkgconfig
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--program-transform-name=\'\'
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
