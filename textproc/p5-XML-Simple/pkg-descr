@@ -1,0 +1,11 @@
+XML::Simple is a Perl module that makes it really easy to read and write XML
+files.
+
+XML::Simple was originally developed for the purpose of reading and writing
+config files in XML format (which offers various advantages over say .INI
+format). Having said that, many people find it useful for other purposes.
+
+WWW: http://web.co.nz/~grantm/cpan/
+
+Andrew
+andrew@ugh.net.au
