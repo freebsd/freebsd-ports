@@ -12,13 +12,13 @@ PKGNAME=	mars-2.1
 CATEGORIES=	cad
 MASTER_SITES=	ftp://ftp.cs.umd.edu/pub/sdag/MaRS/
 .if !defined(NOPORTDOCS)
-DISTFILES=	MaRS-2.1.tar.gz MaRS-2-doc.tar.gz
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} MaRS-2-doc${EXTRACT_SUFX}
 .endif
 
 MAINTAINER=     obrien@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
-EXTRACT_ONLY=	${DISTNAME}.tar.gz
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 .if defined(HAVE_MOTIF) && !defined(PACKAGE_BUILDING)
 MAKEFILE=       Makefile.XMotif
 .elif defined(WITH_X) && (${WITH_X} == NO || ${WITH_X} == no)
@@ -37,7 +37,7 @@ do-install:
 	@${MKDIR} ${PREFIX}/share/doc/mars
 	@${CHMOD} a+rx ${PREFIX}/share/doc/mars
 	@(cd ${PREFIX}/share/doc ; \
-		${TAR} xfpz /${DISTDIR}/MaRS-2-doc.tar.gz ; \
+		${TAR} xfpz /${DISTDIR}/MaRS-2-doc${EXTRACT_SUFX} ; \
 		[ -d mars ] && ${RM} -rf mars; \
 		${MV} doc mars )
 .endif
