@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- src/conf/Makefile.in.orig	Fri Oct  1 01:13:52 2004
-+++ src/conf/Makefile.in	Fri Oct  1 01:18:56 2004
-@@ -184,7 +184,7 @@
+--- src/conf/Makefile.in.orig
++++ src/conf/Makefile.in
+@@ -253,7 +253,7 @@
  
  
  gnunet_setup_LDFLAGS = \
@@ -12,3 +12,12 @@ $FreeBSD$
  
  
  gnunet_setup_LDADD = \
+@@ -319,7 +319,7 @@
+ 	$(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ CCLD = $(CC)
+ LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+-	$(AM_LDFLAGS) $(LDFLAGS) -o $@
++	$(AM_LDFLAGS) $(LDFLAGS) $(LTLIBINTL) -o $@
+ DIST_SOURCES = $(am__gnunet_setup_SOURCES_DIST) gnunet-win-tool.c
+ DIST_COMMON = $(srcdir)/Makefile.in Makefile.am
+ SOURCES = $(gnunet_setup_SOURCES) gnunet-win-tool.c

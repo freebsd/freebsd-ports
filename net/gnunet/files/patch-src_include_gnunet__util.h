@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- src/include/gnunet_util.h.orig	Tue Aug 24 17:58:14 2004
-+++ src/include/gnunet_util.h	Sat Oct  2 23:25:56 2004
-@@ -628,7 +628,7 @@
+--- src/include/gnunet_util.h.orig
++++ src/include/gnunet_util.h
+@@ -637,7 +637,7 @@
   * Default names of the configuration files.
   */
  #define DEFAULT_CLIENT_CONFIG_FILE "~/.gnunet/gnunet.conf"
@@ -12,7 +12,7 @@ $FreeBSD$
  
  /* *******************API *********************** */
  
-@@ -1027,8 +1027,8 @@
+@@ -1053,8 +1053,8 @@
   * @param ip the IP to check (in network byte order)
   * @return NO if the IP is not in the list, YES if it it is
   */
@@ -23,12 +23,3 @@ $FreeBSD$
  
  /**
   * Parse a network specification. The argument specifies
-@@ -1041,7 +1041,7 @@
-  * @param routeList a string specifying the forbidden networks
-  * @return the converted list, NULL if the synatx is flawed
-  */
--CIDR6Network * parseRoutes6(const char * routeList);
-+CIDR6Network * parseRoutes6(char * routeList);
- 
- 
- 
