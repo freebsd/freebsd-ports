@@ -33,6 +33,8 @@ EXTRACT_ONLY=	${GS_SOURCES} ${PCL3_DRV}
 MAINTAINER=	cjh@FreeBSD.org
 COMMENT=	Aladdin Postscript interpreter with Korean Truetype fonts support
 
+BROKEN=		"Does not compile"
+
 RUN_DEPENDS=	$(LOCALBASE)/share/ghostscript/fonts:${PORTSDIR}/print/gsfonts \
 		$(LOCALBASE)/share/ghostscript/fonts/CMap:${PORTSDIR}/korean/munhwafonts-cid \
 		$(X11BASE)/lib/X11/fonts/TrueType/gulim.ttf:${PORTSDIR}/korean/baekmukfonts-ttf

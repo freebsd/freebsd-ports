@@ -24,6 +24,8 @@ PATCH_DIST_STRIP= -p1
 MAINTAINER=	cjh@FreeBSD.org
 COMMENT=	Aladdin Postscript interpreter with Korean truetype support
 
+BROKEN=		"Does not compile"
+
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/graphics/jpeg:extract \
 		${NONEXISTENT}:${PORTSDIR}/graphics/png:extract \
 		unzip:${PORTSDIR}/archivers/unzip
