@@ -36,8 +36,10 @@ if [ "$2" = "POST-INSTALL" ]; then
 			exit 1
 		fi
 	fi
-	${CHOWN} -R ${USER}:${GROUP} ${PKG_PREFIX}/share/gnome/gdm ${PKG_PREFIX}/etc/gdm
-	${CHMOD} 0750 ${PKG_PREFIX}/share/gnome/gdm
+	if [ -n "${PKG_PREFIX}" ]; then
+	    ${CHOWN} -R ${USER}:${GROUP} ${PKG_PREFIX}/share/gnome/gdm ${PKG_PREFIX}/etc/gdm
+	    ${CHMOD} 0750 ${PKG_PREFIX}/share/gnome/gdm
+	fi
 	exit 0
 fi
 
