@@ -11,7 +11,7 @@ PORTVERSION=	0.1.2
 CATEGORIES=	x11
 MASTER_SITES=	http://www.netchampagne.com/xbindkeys_config/
 
-MAINTAINER=	obraun@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_GNOMENG=	yes
 USE_GNOME=	gtk12
