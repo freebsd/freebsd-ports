@@ -3,13 +3,13 @@
 # Date created:		23 June 1996
 # Whom:			axl@iafrica.com
 #
-# $Id$
+# $Id: Makefile,v 1.14 1998/10/07 10:49:31 markm Exp $
 #
 
-DISTNAME=	exim-2.02
+DISTNAME=	exim-2.05
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cus.cam.ac.uk/pub/software/programs/exim/
-DISTFILES=	exim-2.02.tar.gz exim-texinfo-2.00.tar.gz
+DISTFILES=	exim-2.05.tar.gz exim-texinfo-2.00.tar.gz
 
 MAINTAINER=	axl@iafrica.com
 
