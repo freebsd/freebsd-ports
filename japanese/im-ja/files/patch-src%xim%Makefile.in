@@ -1,0 +1,11 @@
+--- src/xim/Makefile.in.ORIG	Mon Apr 12 07:58:51 2004
++++ src/xim/Makefile.in	Mon Apr 12 07:59:06 2004
+@@ -1663,7 +1663,7 @@
+ 
+ 
+ IMdkit/libXimd.a :
+-	cd IMdkit; make
++	cd IMdkit; $(MAKE)
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

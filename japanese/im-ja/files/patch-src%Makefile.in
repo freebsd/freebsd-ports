@@ -1,41 +1,15 @@
-*** src/Makefile.in.orig	Sat Feb 21 10:22:53 2004
---- src/Makefile.in	Sat Feb 21 10:39:38 2004
-***************
-*** 2429,2450 ****
-  
-  
-  ../IMdkit/libXimd.a :
-! 	cd ../IMdkit; make
-  
-  gtk.immodules: Makefile.am $(module_LTLIBRARIES)
-! 	/usr/bin/gtk-query-immodules-2.0 im-ja.la > gtk.immodules
-  
-  all-local: gtk.immodules
-  
-  romakana.c: hiragana-convtable.h zenkaku-convtable.h halfkata-convtable.h
-- hiragana-convtable.h: hiragana-convtable.txt
-- 	perl convtable.pl hiragana
-- zenkaku-convtable.h: zenkaku-convtable.txt
-- 	perl convtable.pl zenkaku
-- halfkata-convtable.h: halfkata-convtable.txt
-- 	perl convtable.pl halfkata
-- jdata.dat: strokedata.h conv_jdata.pl
-- 	perl conv_jdata.pl < strokedata.h > jdata.dat
-  # Tell versions [3.59,3.63) of GNU make to not export all variables.
-  # Otherwise a system limit (for SysV at least) may be exceeded.
-  .NOEXPORT:
---- 2429,2442 ----
-  
-  
-  ../IMdkit/libXimd.a :
-! 	cd ../IMdkit; $(MAKE)
-  
-  gtk.immodules: Makefile.am $(module_LTLIBRARIES)
-! 	gtk-query-immodules-2.0 im-ja.la > gtk.immodules
-  
-  all-local: gtk.immodules
-  
-  romakana.c: hiragana-convtable.h zenkaku-convtable.h halfkata-convtable.h
-  # Tell versions [3.59,3.63) of GNU make to not export all variables.
-  # Otherwise a system limit (for SysV at least) may be exceeded.
-  .NOEXPORT:
+--- src/Makefile.in.ORIG	Mon Apr 12 08:00:59 2004
++++ src/Makefile.in	Mon Apr 12 08:01:22 2004
+@@ -512,12 +512,6 @@
+ 	uninstall-recursive
+ 
+ 
+-hiragana-convtable.h: hiragana-convtable.txt
+-	perl convtable.pl hiragana
+-zenkaku-convtable.h: zenkaku-convtable.txt
+-	perl convtable.pl zenkaku
+-halfkata-convtable.h: halfkata-convtable.txt
+-	perl convtable.pl halfkata
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
