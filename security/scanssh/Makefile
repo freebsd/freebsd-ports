@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scanssh
-PORTVERSION=	1.5
+PORTVERSION=	1.55
 CATEGORIES=	security net
 MASTER_SITES=	http://www.monkey.org/~provos/
 
