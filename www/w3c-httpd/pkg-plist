@@ -7,11 +7,6 @@ etc/proxy.conf
 libexec/httpd
 www/cgi-bin/cgiparse
 www/cgi-bin/cgiutils
-www/config/all.conf
-www/config/caching.conf
-www/config/httpd.conf
-www/config/prot.conf
-www/config/proxy.conf
 www/htbin/htimage
 www/icons/back.xbm
 www/icons/binary.xbm
