@@ -7,6 +7,7 @@
 
 PORTNAME=	postfix
 PORTVERSION= 	19991231.13
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.merit.edu/postfix/official/ \
 		ftp://ftp.tux.org/pub/net/postfix/official/ \
