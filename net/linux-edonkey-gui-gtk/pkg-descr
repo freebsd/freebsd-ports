@@ -1,0 +1,15 @@
+[ excerpt from Developer's site]
+
+This is a user interface to tell eDonkey2000 'core' what to do (ie.
+connect to servers, do searches, download stuff). The core comes
+with a very simple text interface (=command line client), where you
+can tell it what to do by typing in commands. Most people do not
+find this very convenient and rather have a window with lists and
+buttons to click. The 'GUI' is a separate program which connect to
+the core via a TCP connection and tells it what to do. Likewise,
+the core sends messages to the GUI when something happens (eg. a
+download has finished), so the GUI can present this to the user.
+
+Check http://www.edonkey2000.com/ and the WWW site below.
+
+WWW: http://users.aber.ac.uk/tpm01/guihome.html

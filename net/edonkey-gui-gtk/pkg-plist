@@ -1,0 +1,7 @@
+bin/ed2k_gui
+bin/ed2k_gui-real
+%%PORTDOCS%%share/doc/edonkey/todo.txt
+share/edonkey/gui_lookuplist
+share/edonkey/gui_options
+@dirrm share/edonkey
+%%PORTDOCS%%@dirrm share/doc/edonkey
