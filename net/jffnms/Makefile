@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	jffnms
-PORTVERSION=	0.7.8
-PORTREVISION=	1
+PORTVERSION=	0.7.9
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=${PORTNAME}
@@ -27,7 +26,7 @@ USE_REINPLACE=	yes
 JFFNMSDIR?=	share/jffnms
 CRONTAB?=	/usr/bin/crontab
 
-PLIST_SUB=	JFFNMSDIR=${JFFNMSDIR} VERSION=${PORTVERSION} LASTVER=0.7.7
+PLIST_SUB=	JFFNMSDIR=${JFFNMSDIR}
 
 do-build:
 	@${REINPLACE_CMD} -e 's|/opt/jffnms|${PREFIX}/${JFFNMSDIR}|g' \
@@ -51,5 +50,20 @@ do-install:
 		> ${PREFIX}/${JFFNMSDIR}/jffnms_db.sh
 	@${CRONTAB} -u www ${PREFIX}/${JFFNMSDIR}/jffnms.cron
 	@${SED} -e 's|%JFFNMSDIR%|${PREFIX}/${JFFNMSDIR}|g' ${PKGMESSAGE}
+
+#
+#	!!! Maintainer only !!!
+#
+packinglist: pkg-plist.new
+pkg-plist.new:
+	@${ECHO_MSG} '---> Making ${@}'
+	@${FIND} '${PREFIX}/${JFFNMSDIR}' -type f | \
+		${SED} -e 's|^${PREFIX}/${JFFNMSDIR}|%%JFFNMSDIR%%|' | \
+		${SORT} -t / > ${@}
+	@${FIND} '${PREFIX}/${JFFNMSDIR}' -type d | \
+		${SORT} -rt / | \
+		${SED} -e 's|^${PREFIX}/${JFFNMSDIR}|@dirrm %%JFFNMSDIR%%|' >> ${@}
+	@${ECHO} "@exec crontab -u www %%JFFNMSDIR%%/jffnms.cron" >> ${@}
+	@${ECHO} "@unexec crontab -u www -l | sed 's|.*JFFNMS.*||' | crontab -u www -" >> ${@}
 
 .include <bsd.port.mk>
