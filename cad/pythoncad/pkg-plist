@@ -36,6 +36,9 @@ bin/gtkpycad.py
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/dimension.py
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/dimension.pyc
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/dimension.pyo
+%%PYTHON_SITELIBDIR%%/PythonCAD/Generic/dimtrees.py
+%%PYTHON_SITELIBDIR%%/PythonCAD/Generic/dimtrees.pyc
+%%PYTHON_SITELIBDIR%%/PythonCAD/Generic/dimtrees.pyo
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/dwg12.py
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/dwg12.pyc
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/dwg12.pyo
@@ -54,6 +57,12 @@ bin/gtkpycad.py
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/dxf.py
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/dxf.pyc
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/dxf.pyo
+%%PYTHON_SITELIBDIR%%/PythonCAD/Generic/ellipse.py
+%%PYTHON_SITELIBDIR%%/PythonCAD/Generic/ellipse.pyc
+%%PYTHON_SITELIBDIR%%/PythonCAD/Generic/ellipse.pyo
+%%PYTHON_SITELIBDIR%%/PythonCAD/Generic/entity.py
+%%PYTHON_SITELIBDIR%%/PythonCAD/Generic/entity.pyc
+%%PYTHON_SITELIBDIR%%/PythonCAD/Generic/entity.pyo
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/fileio.py
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/fileio.pyc
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/fileio.pyo
@@ -90,18 +99,27 @@ bin/gtkpycad.py
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/linetype.py
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/linetype.pyc
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/linetype.pyo
+%%PYTHON_SITELIBDIR%%/PythonCAD/Generic/logger.py
+%%PYTHON_SITELIBDIR%%/PythonCAD/Generic/logger.pyc
+%%PYTHON_SITELIBDIR%%/PythonCAD/Generic/logger.pyo
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/maptree.py
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/maptree.pyc
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/maptree.pyo
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/menus.py
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/menus.pyc
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/menus.pyo
+%%PYTHON_SITELIBDIR%%/PythonCAD/Generic/message.py
+%%PYTHON_SITELIBDIR%%/PythonCAD/Generic/message.pyc
+%%PYTHON_SITELIBDIR%%/PythonCAD/Generic/message.pyo
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/mirror.py
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/mirror.pyc
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/mirror.pyo
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/move.py
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/move.pyc
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/move.pyo
+%%PYTHON_SITELIBDIR%%/PythonCAD/Generic/nurbs.py
+%%PYTHON_SITELIBDIR%%/PythonCAD/Generic/nurbs.pyc
+%%PYTHON_SITELIBDIR%%/PythonCAD/Generic/nurbs.pyo
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/options.py
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/options.pyc
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/options.pyo
@@ -135,9 +153,6 @@ bin/gtkpycad.py
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/style.py
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/style.pyc
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/style.pyo
-%%PYTHON_SITELIBDIR%%/PythonCAD/Generic/tancircs.py
-%%PYTHON_SITELIBDIR%%/PythonCAD/Generic/tancircs.pyc
-%%PYTHON_SITELIBDIR%%/PythonCAD/Generic/tancircs.pyo
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/tangent.py
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/tangent.pyc
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/tangent.pyo
@@ -150,6 +165,9 @@ bin/gtkpycad.py
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/tools.py
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/tools.pyc
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/tools.pyo
+%%PYTHON_SITELIBDIR%%/PythonCAD/Generic/transfer.py
+%%PYTHON_SITELIBDIR%%/PythonCAD/Generic/transfer.pyc
+%%PYTHON_SITELIBDIR%%/PythonCAD/Generic/transfer.pyo
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/tree.py
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/tree.pyc
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/tree.pyo
@@ -162,6 +180,45 @@ bin/gtkpycad.py
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/vcline.py
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/vcline.pyc
 %%PYTHON_SITELIBDIR%%/PythonCAD/Generic/vcline.pyo
+%%PYTHON_SITELIBDIR%%/PythonCAD/Interface/Cocoa/AppController.py
+%%PYTHON_SITELIBDIR%%/PythonCAD/Interface/Cocoa/AppController.pyc
+%%PYTHON_SITELIBDIR%%/PythonCAD/Interface/Cocoa/AppController.pyo
+%%PYTHON_SITELIBDIR%%/PythonCAD/Interface/Cocoa/CADView.py
+%%PYTHON_SITELIBDIR%%/PythonCAD/Interface/Cocoa/CADView.pyc
+%%PYTHON_SITELIBDIR%%/PythonCAD/Interface/Cocoa/CADView.pyo
+%%PYTHON_SITELIBDIR%%/PythonCAD/Interface/Cocoa/CocoaConobjs.py
+%%PYTHON_SITELIBDIR%%/PythonCAD/Interface/Cocoa/CocoaConobjs.pyc
+%%PYTHON_SITELIBDIR%%/PythonCAD/Interface/Cocoa/CocoaConobjs.pyo
+%%PYTHON_SITELIBDIR%%/PythonCAD/Interface/Cocoa/CocoaDimensions.py
+%%PYTHON_SITELIBDIR%%/PythonCAD/Interface/Cocoa/CocoaDimensions.pyc
+%%PYTHON_SITELIBDIR%%/PythonCAD/Interface/Cocoa/CocoaDimensions.pyo
+%%PYTHON_SITELIBDIR%%/PythonCAD/Interface/Cocoa/CocoaEntities.py
+%%PYTHON_SITELIBDIR%%/PythonCAD/Interface/Cocoa/CocoaEntities.pyc
+%%PYTHON_SITELIBDIR%%/PythonCAD/Interface/Cocoa/CocoaEntities.pyo
+%%PYTHON_SITELIBDIR%%/PythonCAD/Interface/Cocoa/CocoaModify.py
+%%PYTHON_SITELIBDIR%%/PythonCAD/Interface/Cocoa/CocoaModify.pyc
+%%PYTHON_SITELIBDIR%%/PythonCAD/Interface/Cocoa/CocoaModify.pyo
+%%PYTHON_SITELIBDIR%%/PythonCAD/Interface/Cocoa/CocoaPrompt.py
+%%PYTHON_SITELIBDIR%%/PythonCAD/Interface/Cocoa/CocoaPrompt.pyc
+%%PYTHON_SITELIBDIR%%/PythonCAD/Interface/Cocoa/CocoaPrompt.pyo
+%%PYTHON_SITELIBDIR%%/PythonCAD/Interface/Cocoa/CocoaText.py
+%%PYTHON_SITELIBDIR%%/PythonCAD/Interface/Cocoa/CocoaText.pyc
+%%PYTHON_SITELIBDIR%%/PythonCAD/Interface/Cocoa/CocoaText.pyo
+%%PYTHON_SITELIBDIR%%/PythonCAD/Interface/Cocoa/Globals.py
+%%PYTHON_SITELIBDIR%%/PythonCAD/Interface/Cocoa/Globals.pyc
+%%PYTHON_SITELIBDIR%%/PythonCAD/Interface/Cocoa/Globals.pyo
+%%PYTHON_SITELIBDIR%%/PythonCAD/Interface/Cocoa/ImageDocument.py
+%%PYTHON_SITELIBDIR%%/PythonCAD/Interface/Cocoa/ImageDocument.pyc
+%%PYTHON_SITELIBDIR%%/PythonCAD/Interface/Cocoa/ImageDocument.pyo
+%%PYTHON_SITELIBDIR%%/PythonCAD/Interface/Cocoa/ImageWindowController.py
+%%PYTHON_SITELIBDIR%%/PythonCAD/Interface/Cocoa/ImageWindowController.pyc
+%%PYTHON_SITELIBDIR%%/PythonCAD/Interface/Cocoa/ImageWindowController.pyo
+%%PYTHON_SITELIBDIR%%/PythonCAD/Interface/Cocoa/LayerView.py
+%%PYTHON_SITELIBDIR%%/PythonCAD/Interface/Cocoa/LayerView.pyc
+%%PYTHON_SITELIBDIR%%/PythonCAD/Interface/Cocoa/LayerView.pyo
+%%PYTHON_SITELIBDIR%%/PythonCAD/Interface/Cocoa/__init__.py
+%%PYTHON_SITELIBDIR%%/PythonCAD/Interface/Cocoa/__init__.pyc
+%%PYTHON_SITELIBDIR%%/PythonCAD/Interface/Cocoa/__init__.pyo
 %%PYTHON_SITELIBDIR%%/PythonCAD/Interface/Gtk/__init__.py
 %%PYTHON_SITELIBDIR%%/PythonCAD/Interface/Gtk/__init__.pyc
 %%PYTHON_SITELIBDIR%%/PythonCAD/Interface/Gtk/__init__.pyo
@@ -205,6 +262,7 @@ bin/gtkpycad.py
 %%PYTHON_SITELIBDIR%%/PythonCAD/Interface/__init__.pyc
 %%PYTHON_SITELIBDIR%%/PythonCAD/Interface/__init__.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/PythonCAD/Generic
+@dirrm %%PYTHON_SITELIBDIR%%/PythonCAD/Interface/Cocoa
 @dirrm %%PYTHON_SITELIBDIR%%/PythonCAD/Interface/Gtk
 @dirrm %%PYTHON_SITELIBDIR%%/PythonCAD/Interface
 @dirrm %%PYTHON_SITELIBDIR%%/PythonCAD
