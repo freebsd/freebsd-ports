@@ -4,7 +4,7 @@
 # Date created:			  Sun Oct 12, 1997
 # Whom:				  David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.2 1997/10/14 11:18:45 asami Exp $
+# $Id: Makefile,v 1.3 1997/10/18 06:11:16 obrien Exp $
 #
 
 DISTNAME=	aub
@@ -25,21 +25,22 @@ MAN1=		aub.1
 do-extract:
 	@${MKDIR} ${WRKDIR}
 
-pre-configure:
+pre-patch:
 	@${SED} -e '1,1s:/usr/local/bin/perl:!/usr/bin/perl:' \
 		-e 's:$SUM = "/bin/sum":$SUM = "/usr/bin/sum":' \
 		-e 's:/usr/tmp:/var/tmp:' \
 		${DISTDIR}/${DIST_SUBDIR}/aub > ${WRKDIR}/aub
+
+.if !exists(/usr/bin/perl5)
+post-patch:
+	@cd ${WRKSRC} ; ${PATCH} -d ${WRKSRC} --reverse --quiet -E \
+		${PATCH_STRIP} < ${PATCHDIR}/patch-01
+.endif
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/aub ${PREFIX}/bin
 	${INSTALL_MAN} ${DISTDIR}/${DIST_SUBDIR}/aub.1 ${PREFIX}/man/man1
 	${MKDIR} ${PREFIX}/share/doc/aub
 	${INSTALL_MAN} ${DISTDIR}/${DIST_SUBDIR}/BUG_FIXES ${PREFIX}/share/doc/aub
-
-#
-# There is a patch to aub to run with perl5.
-# You may find it in the files/ dir.
-#
 
 .include <bsd.port.mk>
