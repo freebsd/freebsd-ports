@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	lfhex
-PORTVERSION=	0.3.6
-PORTREVISION=	1
+PORTVERSION=	0.3.7
 CATEGORIES=	editors
 MASTER_SITES=	http://home.earthlink.net/~eyekode/data/
 
@@ -25,7 +24,8 @@ CONFIGURE_ARGS=	--with-qt-moc=${MOC}
 MAKE_ARGS=	CXXFLAGS="${CXXFLAGS}" \
 		EXEC_PREFIX="${PREFIX}/bin" \
 		IFLAGS="${QTCPPFLAGS} ${PTHREAD_CFLAGS}" \
-		LFLAGS="${QTCFGLIBS} -lqt-mt ${PTHREAD_LIBS}"
+		LFLAGS="${QTCFGLIBS} -lqt-mt ${PTHREAD_LIBS}" \
+		VERBOSE=1
 
 PLIST_FILES=	bin/lfhex
 
