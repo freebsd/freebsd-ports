@@ -7,6 +7,7 @@
 
 PORTNAME=	libtunepimp
 PORTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.musicbrainz.org/pub/musicbrainz/
 
@@ -32,5 +33,7 @@ USE_LIBTOOL_VER=15
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CFLAGS=|#CFLAGS=|g ; \
 		 s|^CXXFLAGS=|#CXXFLAGS=|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-lthr|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/lib/threads/posix/Makefile.in
 
 .include <bsd.port.mk>
