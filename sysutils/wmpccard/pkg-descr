@@ -1,0 +1,9 @@
+wmpccard is PCcard slot monitor for FreeBSD + PAO, running as Dock
+application for WindowMaker.  It displays a name of a PCcard inserted
+in a card slot of your PC, and it can also activate and inactivate
+the PCcard.
+
+To use the program, pccardd must be running on your PC. wmpccard
+communicates with pccardd to get slot status and control PCcards.
+
+WWW: http://www.sra.co.jp/people/m-kasahr/wmpccard/
