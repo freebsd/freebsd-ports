@@ -12,8 +12,6 @@ MASTER_SITES=	http://www.icecast.org/releases/
 
 MAINTAINER=	zach@pabst.bendnet.com
 
-FORBIDDEN=	"Contains numerous vulnerabilities"
-
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libwrap
 
