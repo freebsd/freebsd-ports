@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	gchemutils
-PORTVERSION=	0.1.4
-PORTREVISION=	2
+PORTVERSION=	0.1.7
 CATEGORIES=	science
 MASTER_SITES=	http://savannah.nongnu.org/download/gchemutils/unstable.pkg/${PORTVERSION}/
 DISTNAME=	gnome-chemistry-utils-${PORTVERSION}
