@@ -1,0 +1,11 @@
+Merlin is a puzzle game. The window contains nine buttons each of
+which can either be in the "pushed in" or "popped out" state.
+Initially the buttons are pushed in or popped out randomly. The
+player must clear the board by toggling the buttons until they are
+all pushed in. Buttons are toggled with the mouse or via the appropriate
+number key. The user starts the game with a number of points. Toggling a
+button costs a point.  If you clear the board, you get some more points
+and a new level to solve.  If you run out of points, the game is over.
+Merlin records the high-score and the high-level between games.
+
+http://outofnet.doc.ac.ic.uk/~np2/software/merlin.html

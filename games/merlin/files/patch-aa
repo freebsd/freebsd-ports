@@ -1,0 +1,17 @@
+--- merlin.orig	Mon Jul  7 11:28:19 1997
++++ merlin	Sun Aug 23 18:09:17 1998
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/wish4.1
++#!/usr/local/bin/wish8.0
+ # 
+ # Merlin - a pointless puzzle game
+ #
+@@ -22,7 +22,7 @@
+ # UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
+ 
+ 
+-set score_file {c:\\Users\\np2\\Dev\\Tcl\\Merlin\\merlin.sc}
++set score_file {~/merlin.score}
+ #[file join Users np2 Dev Tcl Merlin merlin.sc]
+ 
+ font create Merlin -family Helvetica -size 24
