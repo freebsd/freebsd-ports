@@ -7,26 +7,29 @@
 
 PORTNAME=	genius
 PORTVERSION=	0.5.5
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://ftp.5z.com/pub/genius/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Arbitrary precision calculator for Gnome Desktop Environment
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
-LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4 \
-		intl.4:${PORTSDIR}/devel/gettext \
-		popt.0:${PORTSDIR}/devel/popt
+LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 
 USE_PERL5_BUILD=	yes
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomeprefix gnomehack gtk20 gconf2 libgnome libgnomeui vte
-USE_LIBTOOL=	yes
+USE_GNOME=	gnomeprefix gnomehack libgnomeui vte
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
+INSTALLS_SHLIB=	yes
+LDCONFIG_DIRS+=	%%PREFIX%%/lib/genius
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if ${OSVERSION} < 500018
+BROKEN=		"Requires readline 4.2 or newer"
+.endif
+
+.include <bsd.port.post.mk>
