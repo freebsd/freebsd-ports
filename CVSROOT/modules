@@ -2553,7 +2553,7 @@ ghc-doc		ports/lang/ghc-doc
 ghc5		ports/lang/ghc5
 ghc6-doc	ports/lang/ghc6-doc
 ghemical	ports/science/ghemical
-ghex2		ports/editors/ghex2
+ghex		ports/editors/ghex
 ghfaxviewer	ports/comms/ghfaxviewer
 ghostscript-afpl	ports/print/ghostscript-afpl
 ghostscript-afpl-nox11	ports/print/ghostscript-afpl-nox11
