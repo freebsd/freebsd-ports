@@ -1,7 +1,9 @@
 bin/hypermail
-share/hypermail/hr.yellow.gif
-share/hypermail/hypermail.gif
-share/hypermail/hypermail.html
-share/hypermail/customizing.html
-share/hypermail/hmrc.html
-@dirrm share/hypermail
+bin/msg2archive
+bin/rdmsg
+%%PORTDOCS%%share/doc/hypermail/customizing.html
+%%PORTDOCS%%share/doc/hypermail/hmrc.html
+%%PORTDOCS%%share/doc/hypermail/hr.yellow.gif
+%%PORTDOCS%%share/doc/hypermail/hypermail-faq.html
+%%PORTDOCS%%share/doc/hypermail/hypermail.gif
+%%PORTDOCS%%@dirrm share/doc/hypermail

@@ -6,15 +6,19 @@
 #
 
 PORTNAME=	hypermail
-PORTVERSION=	2b30
-CATEGORIES=	www
-MASTER_SITES=	ftp://ftp.landfield.com/hypermail/ \
-		ftp://ftp.faqs.org/hypermail/
+PORTVERSION=	2.1.1
+CATEGORIES=	www mail
+MASTER_SITES=	http://www.landfield.com/hypermail/dist/
 
-MAINTAINER=	veers@disturbed.net
+MAINTAINER=	petef@databit.net
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-htmldir=${PREFIX}/share/hypermail
+CONFIGURE_ARGS=	--with-htmldir=${PREFIX}/share/doc/hypermail
+
+.if defined(WITH_GDBM)
+CONFIGURE_ARGS+=	--with-gdbm
+LIB_DEPENDS+=	gdbm.2:${PORTSDIR}/databases/gdbm
+.endif
 
 MAN1=		hypermail.1
 MAN4=		hmrc.4
