@@ -7,6 +7,7 @@
 
 PORTNAME=	mldonkey
 PORTVERSION=	2.02.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://ernie.eit.uni-kl.de/mldonkey/ \
 		http://savannah.nongnu.org/download/mldonkey/stable/contributed/
@@ -32,7 +33,7 @@ post-patch:
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/mldonkey		${PREFIX}/bin/mldonkey-real
-	@${INSTALL_SCRIPT} ${WRKDIR}/kill_mldonkey	${PREFIX}/bin
+	@${INSTALL_SCRIPT} ${FILESDIR}/kill_mldonkey	${PREFIX}/bin
 	@${INSTALL_SCRIPT} ${WRKSRC}/mldonkey_previewer	${PREFIX}/bin
 	@${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh		${PREFIX}/bin/mldonkey
 .ifndef(NOPORTDOCS)
