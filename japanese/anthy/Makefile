@@ -8,7 +8,9 @@
 PORTNAME=	anthy
 PORTVERSION=	4300b
 CATEGORIES=	japanese
-MASTER_SITES=	http://downloads.sourceforge.jp/anthy/5332/
+MASTER_SITES=	http://downloads.sourceforge.jp/anthy/5332/:anthy
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:anthy
+DIST_SUBDIR=	anthy
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Another kana-kanji conversion system
@@ -20,6 +22,18 @@ INSTALLS_SHLIB=	yes
 
 ELISPDIR=	share/emacs/site-lisp
 PLIST_SUB=	ELISPDIR=${ELISPDIR}
+
+.if defined(WITH_2CHDIC)
+MASTER_SITES+=	http://omaemona.sourceforge.net/packages/Zisyo/:2chdic
+DISTFILES+=	2ch.t:2chdic
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-mkanthydic:Makefile.in
+.endif
+
+.if defined(WITH_2CHDIC)
+post-extract:
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/2ch.t ${WRKSRC}/mkanthydic
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \
