@@ -7927,6 +7927,7 @@ transpec	src/share/sgml/transpec
 transproxy	ports/www/transproxy
 tree		ports/sysutils/tree
 treecc		ports/lang/treecc
+treepuzzle	ports/biology/treepuzzle
 treeviewx	ports/biology/treeviewx
 trek		src/games/trek
 trickyirc	ports/irc/trickyirc
