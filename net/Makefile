@@ -273,6 +273,7 @@
     SUBDIR += linpopup
     SUBDIR += linux-edonkey-gui-gtk
     SUBDIR += linux-edonkey-server
+    SUBDIR += linux-jigdo
     SUBDIR += linuxigd
     SUBDIR += liveMedia
     SUBDIR += lla
