@@ -3,11 +3,11 @@
 # Date created:		19 December 1994
 # Whom:			janek
 #
-# $Id: Makefile,v 1.22 1999/03/24 17:38:00 steve Exp $
+# $Id: Makefile,v 1.23 1999/05/02 22:26:03 mharo Exp $
 #
 
 DISTNAME=	moxftp-2.2
-CATEGORIES=	net
+CATEGORIES=	ftp
 MASTER_SITES=	ftp://metalab.unc.edu/pub/X11/contrib/applications/ \
 	  	ftp://ftp.inria.fr/X/contrib-R5/applications/ \
 		ftp://ftp.tk.mesh.ad.jp/pub/X/contrib/applications/

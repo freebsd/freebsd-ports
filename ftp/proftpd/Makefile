@@ -3,12 +3,12 @@
 # Date created:		26 January 1998
 # Whom:			Stephane Legrand
 #
-# $Id: Makefile,v 1.11 1999/04/09 17:25:44 obrien Exp $
+# $Id: Makefile,v 1.12 1999/04/22 16:01:10 mharo Exp $
 #
 
 DISTNAME=	proftpd-1.2.0pre3
 PKGNAME=	proftpd-1.2.0
-CATEGORIES=	net
+CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/ \
 		ftp://ftp3.proftpd.org/distrib/
 

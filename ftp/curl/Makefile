@@ -3,10 +3,10 @@
 # Date created:		12 December 1998
 # Whom:			Neil Blakey-Milner <nbm@rucus.ru.ac.za>
 #
-# $Id: Makefile,v 1.6 1999/05/27 12:33:09 kris Exp $
+# $Id: Makefile,v 1.7 1999/06/02 07:22:49 dirk Exp $
 
 DISTNAME=	curl-5.9
-CATEGORIES=	net www
+CATEGORIES=	ftp www
 MASTER_SITES=	http://www.fts.frontec.se/~dast/stuff/ \
 		ftp://ftp.rhrz.uni-bonn.de/pub-koeln/net/inet/ \
 		ftp://ftp.win.or.jp/pub/network/www/misc/ \

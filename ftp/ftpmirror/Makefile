@@ -3,11 +3,11 @@
 # Date created:		10 January 1999
 # Whom:			Yasuhiro Fukuma <yasuf@big.or.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/03/19 07:08:30 taoka Exp $
 #
 
 DISTNAME=	ftpmirror-1.95
-CATEGORIES=	net
+CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.intec.co.jp/pub/utils/ftpmirror/alpha/
 
 MAINTAINER=	yasuf@big.or.jp

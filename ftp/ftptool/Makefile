@@ -3,11 +3,11 @@
 # Date created:		19 March 1996
 # Whom:			janek@gaja.ipan.lublin.pl
 #
-# $Id: Makefile,v 1.5 1998/09/21 22:15:57 steve Exp $
+# $Id: Makefile,v 1.6 1999/05/04 23:18:27 steve Exp $
 #
 
 DISTNAME=	ftptool-4.6
-CATEGORIES=	net
+CATEGORIES=	ftp
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	utilities
 DISTFILES=	Ftptool4.6.tar.gz

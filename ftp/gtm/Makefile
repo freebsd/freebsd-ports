@@ -3,11 +3,11 @@
 # Date created:				05/28/1999
 # Whom:					nectar@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.2 1999/05/28 22:30:02 nectar Exp $
+# $Id: Makefile,v 1.3 1999/05/30 03:36:10 steve Exp $
 #
 
 DISTNAME=		gtm-0.3.1
-CATEGORIES=		net gnome
+CATEGORIES=		ftp gnome
 MASTER_SITES=		http://www.rnl.ist.utl.pt/~bapm/gtm/files/     \
 			http://www.nectar.cc/distfiles/
 

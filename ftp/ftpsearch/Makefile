@@ -3,11 +3,11 @@
 # Date created:		07 Dec 1996
 # Whom:			Tor.Egge@idi.ntnu.no
 #
-# $Id: Makefile,v 1.4 1997/10/30 02:42:19 tegge Exp $
+# $Id: Makefile,v 1.5 1998/09/07 16:49:16 tegge Exp $
 #
 
 DISTNAME=	ftpsearch-1.0
-CATEGORIES=	net
+CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftpsearch.ntnu.no/pub/ftpsearch/
 
 MAINTAINER=	Tor.Egge@idi.ntnu.no

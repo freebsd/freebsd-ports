@@ -3,11 +3,11 @@
 # Date created:		10 June 1999
 # Whom:			Chris Piazza <cpiazza@FreeBSD.org>
 #
-# $Id: Makefile,v 1.5 1999/07/21 05:13:03 cpiazza Exp $
+# $Id: Makefile,v 1.6 1999/08/01 02:33:45 cpiazza Exp $
 #
 
 DISTNAME=	yafc-0.4.5
-CATEGORIES=	net
+CATEGORIES=	ftp
 MASTER_SITES=	ftp://mayer.physto.se/pub/yafc/
 
 MAINTAINER=	cpiazza@FreeBSD.org

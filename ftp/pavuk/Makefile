@@ -3,12 +3,12 @@
 # Date created:				19 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.8 1999/06/25 16:45:32 cpiazza Exp $
+# $Id: Makefile,v 1.9 1999/07/24 03:44:30 cpiazza Exp $
 #
 
 DISTNAME=		pavuk-0.9pl15
 PKGNAME=		pavuk-0.9.15
-CATEGORIES=		net www
+CATEGORIES=		ftp www
 MASTER_SITES=		${MASTER_SITE_SUNSITE} \
 			ftp://ftp.idata.sk/pub/unix/www/ \
 			ftp://ftp.phacka.sk/pub/pavuk/ \

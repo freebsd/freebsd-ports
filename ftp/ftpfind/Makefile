@@ -3,11 +3,11 @@
 # Date created:		Feb 21 1998
 # Whom:			Tomokazu ISHII <t-ishii@tryplanet.com>
 #
-# $Id: Makefile,v 1.2 1998/06/04 20:28:04 steve Exp $
+# $Id: Makefile,v 1.3 1999/01/10 18:13:18 steve Exp $
 #
 
 DISTNAME=	ftpfind-0.996
-CATEGORIES=	net
+CATEGORIES=	ftp
 MASTER_SITES=	http://hp.vector.co.jp/authors/VA013366/ \
 		http://www.tryplanet.com/t-ishii/programs/ftpfind/
 

@@ -3,13 +3,13 @@
 # Date created:		18 Oct 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.25 1999/06/07 20:51:18 ache Exp $
+# $Id: Makefile,v 1.26 1999/06/29 18:30:00 mharo Exp $
 #
 # REMINDER: to use ftpaccess(5) you need to specify -a in command line,
 # it is changed from previous versions
 
 DISTNAME=       wu-ftpd-2.5.0
-CATEGORIES=	net
+CATEGORIES=	ftp
 MASTER_SITES=   ftp://ftp.vr.net/pub/wu-ftpd/wu-ftpd/
 
 MAINTAINER=     ache@FreeBSD.org

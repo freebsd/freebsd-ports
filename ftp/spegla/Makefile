@@ -4,11 +4,11 @@
 # Date created:         Sun Apr 19 16:17:25 PDT 1998
 # Whom:                 Jordan Hubbard <jkh@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.3 1998/12/19 14:19:43 jkh Exp $
+# $Id: Makefile,v 1.4 1999/04/29 10:08:10 jkh Exp $
 #
 
 DISTNAME=	spegla-1.04
-CATEGORIES=	net
+CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.luth.se/pub/unix/mirror/ \
 		ftp://subzero.campus.luth.se/pub/spegla/
 

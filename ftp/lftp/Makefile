@@ -3,11 +3,11 @@
 # Date created:				11 September 1997
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.14 1999/03/15 01:55:09 steve Exp $
+# $Id: Makefile,v 1.15 1999/07/01 15:25:12 sheldonh Exp $
 #
 
 DISTNAME=	lftp-2.0.1
-CATEGORIES=	net
+CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.yars.free.net/pub/software/unix/net/ftp/client/lftp/ \
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/network/file-transfer
