@@ -7,6 +7,7 @@
 
 PORTNAME=	fontScalable
 PORTVERSION=	4.4.0
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	${MASTER_SITE_XFREE}
 MASTER_SITE_SUBDIR=	${PORTVERSION}
@@ -18,7 +19,8 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	XFree86-4 scalable fonts
 
 BUILD_DEPENDS=	ucs2any:${PORTSDIR}/x11/XFree86-4-clients
-RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/encodings/encodings.dir:${PORTSDIR}/x11-fonts/XFree86-4-fontEncodings
+RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/encodings/encodings.dir:${PORTSDIR}/x11-fonts/XFree86-4-fontEncodings \
+		${X11BASE}/lib/X11/fonts/bitstream-vera/VeraIt.ttf:${PORTSDIR}/x11-fonts/bitstream-vera
 
 CONFLICTS=	xorg-fonts-type1-* xorg-fonts-truetype-*
 
