@@ -146,7 +146,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	0.90.0.104
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		http://www2.mplayerhq.hu/MPlayer/releases/ \
