@@ -16,7 +16,9 @@ bin/gen_at_graph
 %%SITE_PERL%%/algotutor/utilalgo
 share/algotutor/data/countries.gr
 share/algotutor/data/lv.gr
+share/algotutor/data/pts1.gr
 share/algotutor/data/randgrid.gr
+share/algotutor/data/simple.gr
 share/algotutor/data/trc.gr
 share/algotutor/data/tt.gr
 share/algotutor/graph/dfs

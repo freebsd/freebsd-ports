@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	algotutor
-PORTVERSION=	0.6.2
+PORTVERSION=	0.7
 CATEGORIES=	math
-MASTER_SITES=	http://www.cyut.edu.tw/~ckhung/dl/
+MASTER_SITES=	http://www.ofset.org/~ckhung/dl/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	kevlo@FreeBSD.org
