@@ -4581,6 +4581,7 @@ nocc		ports/mail/nocc
 nocol		ports/net/nocol
 nofgpg		ports/security/nofgpg
 nogger		ports/audio/nogger
+nohtml		ports/mail/nohtml
 noip		ports/net/noip
 nologinmsg	ports/shells/nologinmsg
 nomarch		ports/archivers/nomarch
