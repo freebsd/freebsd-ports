@@ -1,0 +1,11 @@
+--- fireload_cpu.c.orig	Thu Sep 30 10:45:48 1999
++++ fireload_cpu.c	Thu Oct 21 23:25:10 1999
+@@ -30,7 +30,7 @@
+ #  define DELTA(i, x) (cpuinfo[i].cs_new.x - cpuinfo[i].cs_old.x)
+ #endif
+ 
+-#ifdef __NetBSD__
++#ifdef __FreeBSD__
+ /********************************
+  * NetBSD code by Hubert Feyrer *
+  ********************************/

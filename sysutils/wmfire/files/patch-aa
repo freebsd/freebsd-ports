@@ -1,0 +1,13 @@
+--- configure.orig	Thu Oct 21 21:23:53 1999
++++ configure	Thu Oct 21 23:37:39 1999
+@@ -1755,8 +1755,8 @@
+ 	linux*)
+ 		echo "$ac_t""Linux" 1>&6
+ 		;;
+-	netbsd*)
+-		echo "$ac_t""NetBSD" 1>&6
++	freebsd*)
++		echo "$ac_t""FreeBSD" 1>&6
+ 		;;
+ 	*)
+ 		echo "$ac_t""*Unknown*" 1>&6
