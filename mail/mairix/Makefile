@@ -6,21 +6,19 @@
 #
 
 PORTNAME=	mairix
-PORTVERSION=	0.11
-PORTREVISION=	1
+PORTVERSION=	0.14.1
 CATEGORIES=	mail
-MASTER_SITES=	http://www.rrbcurnow.freeuk.com/mairix/
+MASTER_SITES=	http://www.rpcurnow.force9.co.uk/mairix/
 
 MAINTAINER=	obraun@FreeBSD.org
 COMMENT=	Indexing and searching in Maildir or MH folders
 
 USE_SIZE=	yes
+HAS_CONFIGURE=	yes
 USE_BISON=	yes
 USE_REINPLACE=	yes
 
-post-patch:
-	@${REINPLACE_CMD} -e '/^CC/d ; /^CFLAGS/d ; /dfasyn/d' \
-		 ${WRKSRC}/Makefile
+CONFIGURE_ENV=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/mairix ${PREFIX}/bin
