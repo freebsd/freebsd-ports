@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	gtk-sharp
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gtk+ and GNOME interfaces for the .NET runtime
 
+BROKEN=		"Does not compile"
+
 BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono
 
 # XXX Should conditionalise all the different parts of gtk# maybe.
