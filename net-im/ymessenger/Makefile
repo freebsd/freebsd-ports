@@ -7,25 +7,37 @@
 #
 
 PORTNAME=	ymessenger
-PORTVERSION=	0.93.0
-PORTREVISION=	1
+PORTVERSION=	0.99.19-1
 CATEGORIES=	net
-MASTER_SITES=	http://download.yahoo.com/dl/unix/fbsd4/
+MASTER_SITES=	http://download.yahoo.com/dl/unix/fbsd45/
 EXTRACT_SUFX=	.tgz
+NO_WRKSUBDIR=	yes
 
-MAINTAINER=	calle.madestrand@norrgarden.se
+MAINTAINER=	sethk@meowfishies.com
 
 ONLY_FOR_ARCHS=	i386
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 USE_GTK=	yes
+USE_REINPLACE=	yes
 NO_BUILD=	yes
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKDIR}/bin/ymessenger ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/bin/ymessenger ${PREFIX}/bin
+	${MKDIR} ${PREFIX}/libexec/ymessenger
+	${INSTALL_PROGRAM} ${WRKDIR}/bin/ymessenger.bin \
+		${PREFIX}/libexec/ymessenger
+	@(set -x; for i in yahoo_gnome.png yahoo_kde.xpm \
+		ymessenger.desktop ymessenger.kdelnk; do \
+	    ${INSTALL_DATA} ${WRKDIR}/bin/$$i \
+		    ${PREFIX}/libexec/ymessenger; \
+	    done)
+	${MKDIR} ${PREFIX}/lib/ymessenger
+	${INSTALL_DATA} ${WRKDIR}/lib/libgtkhtml.so.21 \
+		${PREFIX}/lib/ymessenger/
 
-post-extract:
-	echo 2 | dd bs=1 count=1 conv=notrunc seek=21653 \
-		of=${WRKDIR}/bin/ymessenger
+post-patch:
+	${REINPLACE_CMD} -e 's:%%PREFIX%%:${PREFIX}:g' ${WRKDIR}/bin/ymessenger
+
 .include <bsd.port.mk>

@@ -1,0 +1,9 @@
+--- bin/ymessenger.orig	Sat Jul 13 18:54:27 2002
++++ bin/ymessenger	Sat Jul 13 18:54:05 2002
+@@ -1,4 +1,4 @@
+ #!/bin/sh
+-LD_LIBRARY_PATH=/opt/ymessenger/lib:$LD_LIBRARY_PATH
++LD_LIBRARY_PATH=%%PREFIX%%/lib/ymessenger:$LD_LIBRARY_PATH
+ export LD_LIBRARY_PATH
+-exec /opt/ymessenger/bin/ymessenger.bin $@
++exec %%PREFIX%%/libexec/ymessenger/ymessenger.bin $@
