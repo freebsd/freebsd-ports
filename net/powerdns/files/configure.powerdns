@@ -1,0 +1,57 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
+	exit
+fi
+
+if [ "${POWERDNS_OPTIONS}" ]; then
+	set ${POWERDNS_OPTIONS}
+else
+	dialog --title "configuration options" --clear \
+				--checklist "\n\
+Please select desired options:" -1 -1 2 \
+PostgreSQL	"PostgreSQL driver" ON \
+MySQL		"MySQL driver" OFF \
+2> /tmp/checklist.tmp.$$
+
+        retval=$?
+	if [ -s /tmp/checklist.tmp.$$ ]; then
+			set `cat /tmp/checklist.tmp.$$`
+	fi
+	rm -f /tmp/checklist.tmp.$$
+
+	case $retval in
+		0)      if [ -z "$*" ]; then
+				echo "Nothing selected"
+			fi
+			;;
+		1)      echo "Cancel pressed."
+			exit 1
+			;;
+	esac
+fi
+
+${MKDIR} ${WRKDIRPREFIX}${CURDIR}
+exec > ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+
+while [ "$1" ]; do
+	case $1 in
+		\"PostgreSQL\")
+			echo WITH_POSTGRESQL_DRIVER=YES
+			;;
+		\"MySQL\")
+			echo WITH_MYSQL_DRIVER=YES
+			;;
+		\"nothing\"|true)
+			;;
+		*)
+			echo "Invalid option(s): $*" > /dev/stderr
+			rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+			exit 1
+			;;
+	esac
+    shift
+done
+exec > /dev/stderr

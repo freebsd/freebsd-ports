@@ -1,0 +1,6 @@
+PowerDNS is an advanced DNS server, which allows for several different
+backends. Current backends include MySQL, PostgreSQL, bind, etc.
+
+License: GPL V2
+
+WWW: http://www.powerdns.com/

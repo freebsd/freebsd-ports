@@ -1,0 +1,23 @@
+--- modules/gmysqlbackend/gmysqlbackend.cc.orig	Tue Dec 17 10:56:43 2002
++++ modules/gmysqlbackend/gmysqlbackend.cc	Tue Dec 17 11:01:33 2002
+@@ -20,13 +20,14 @@
+ 
+ gMySQLBackend::gMySQLBackend(const string &mode, const string &suffix)  : GSQLBackend(mode,suffix)
+ {
++  const string dbname = getArg ("dbname");
++  const string host   = getArg ("host");
++  const string socket = getArg ("socket");
++  const string user   = getArg ("user");
++  const string passwd = getArg ("password");
++
+   try {
+-    setDB(new SMySQL(getArg("dbname"),
+-		  getArg("host"),
+-		  getArg("socket"),
+-		  getArg("user"),
+-		  getArg("password")));
+-    
++    setDB(new SMySQL(dbname, host, socket, user, passwd));
+   }
+   
+   catch(SSqlException &e) {

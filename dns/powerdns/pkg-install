@@ -1,0 +1,91 @@
+#!/bin/sh
+# $OpenBSD$
+#
+# Pre/post-installation setup of powerdns
+
+# exit on errors, use a sane path and install prefix
+#
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+CONFIG_DIR=${SYSCONFDIR}
+CONFIG_FILE=$CONFIG_DIR/pdns.conf
+SAMPLE_CONFIG_DIR=$PREFIX/share/examples/powerdns
+
+# Function: warn the user about possible problems with this port.
+#
+do_warning()
+{
+    echo "+---------------"
+    echo "| Be aware that PowerDNS still has some stability problems"
+    echo "| on OpenBSD. These problems might be the result of an too"
+    echo "| old or too buggy compiler."
+    echo "|"
+    echo "| In any case, don't expect PowerDNS to work flawlessly"
+    echo "| without dumping some core once in a while."
+    echo "+---------------"
+    echo
+}
+
+# Function: tell the user what s/he needs to do to use the port just installed
+#
+do_notice()
+{
+    echo
+    echo "+---------------"
+    echo "| The existing $1 configuration files in $CONFIG_DIR,"
+    echo "| have NOT been changed.  You may want to compare them to the"
+    echo "| current sample files, $SAMPLE_CONFIG_DIR,"
+    echo "| and update your configuration as needed."
+    echo "+---------------"
+    echo
+
+    do_warning
+}
+
+# Function: install the powerdns configuration file from the sample
+#
+do_install()
+{
+    install -d -o root -g wheel -m 755 $CONFIG_DIR
+    install -o root -g wheel -m 600 $SAMPLE_CONFIG_DIR/pdns.conf $CONFIG_FILE
+    echo
+    echo "+---------------"
+    echo "| The $1 configuration files in $CONFIG_DIR,"
+    echo "| have been installed.  Please view these files and change"
+    echo "| the configuration to meet your needs."
+    echo "+---------------"
+    echo
+
+    do_warning
+}
+
+# verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    PRE-INSTALL)
+        : nothing to pre-install for this port
+        ;;
+    POST-INSTALL)
+        if [ ! -d $CONFIG_DIR ]; then
+            do_install $1
+        elif [ ! -f $CONFIG_FILE ]; then
+            do_install $1
+        else
+            do_notice $1
+        fi
+        ;;
+    *)
+        echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+        exit 1
+        ;;
+esac
+
+exit 0

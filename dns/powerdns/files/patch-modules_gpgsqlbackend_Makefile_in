@@ -1,0 +1,29 @@
+--- modules/gpgsqlbackend/Makefile.in.orig	Mon Dec 16 22:32:29 2002
++++ modules/gpgsqlbackend/Makefile.in	Fri Dec 20 14:24:06 2002
+@@ -95,7 +95,7 @@
+ lib_LTLIBRARIES = libgpgsqlbackend.la
+ 
+ EXTRA_DIST = OBJECTFILES OBJECTLIBS
+-INCLUDES = -I@PGSQL_incdir@
++INCLUDES = -I@includedir@ -I@PGSQL_incdir@
+ 
+ libgpgsqlbackend_la_SOURCES = gpgsqlbackend.cc gpgsqlbackend.hh \
+ 		spgsql.hh spgsql.cc
+@@ -105,7 +105,7 @@
+ 	-Wl,-Bdynamic 
+ 
+ 
+-libgpgsqlbackend_la_LIBADD = -lssl -lcrypt -lcrypto
++libgpgsqlbackend_la_LIBADD = -lssl -lcrypto
+ subdir = modules/gpgsqlbackend
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = $(top_builddir)/config.h
+@@ -184,7 +184,7 @@
+ clean-libLTLIBRARIES:
+ 	-test -z "$(lib_LTLIBRARIES)" || rm -f $(lib_LTLIBRARIES)
+ libgpgsqlbackend.la: $(libgpgsqlbackend_la_OBJECTS) $(libgpgsqlbackend_la_DEPENDENCIES) 
+-	$(CXXLINK) -rpath $(libdir) $(libgpgsqlbackend_la_LDFLAGS) $(libgpgsqlbackend_la_OBJECTS) $(libgpgsqlbackend_la_LIBADD) $(LIBS)
++#	$(CXXLINK) -rpath $(libdir) $(libgpgsqlbackend_la_LDFLAGS) $(libgpgsqlbackend_la_OBJECTS) $(libgpgsqlbackend_la_LIBADD) $(LIBS)
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT) core *.core

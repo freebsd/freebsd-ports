@@ -1,0 +1,11 @@
+--- modules/gmysqlbackend/Makefile.in.orig	Tue Dec 17 10:38:38 2002
++++ modules/gmysqlbackend/Makefile.in	Tue Dec 17 10:38:39 2002
+@@ -181,7 +181,7 @@
+ clean-libLTLIBRARIES:
+ 	-test -z "$(lib_LTLIBRARIES)" || rm -f $(lib_LTLIBRARIES)
+ libgmysqlbackend.la: $(libgmysqlbackend_la_OBJECTS) $(libgmysqlbackend_la_DEPENDENCIES) 
+-	$(CXXLINK) -rpath $(libdir) $(libgmysqlbackend_la_LDFLAGS) $(libgmysqlbackend_la_OBJECTS) $(libgmysqlbackend_la_LIBADD) $(LIBS)
++#	$(CXXLINK) -rpath $(libdir) $(libgmysqlbackend_la_LDFLAGS) $(libgmysqlbackend_la_OBJECTS) $(libgmysqlbackend_la_LIBADD) $(LIBS)
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT) core *.core
