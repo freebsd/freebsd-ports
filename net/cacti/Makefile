@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	cacti
-PORTVERSION=	0.8.4
+PORTVERSION=	0.8.5
 CATEGORIES=	net
-MASTER_SITES=	http://www.raxnet.net/downloads/
+MASTER_SITES=	http://www.raxnet.net/downloads/cacti/
 
-MAINTAINER=	vinc@freebsd-fr.org
+MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Web-driven graphing interface for RRDTool
 
 RUN_DEPENDS=	php:${PORTSDIR}/lang/php4 \
