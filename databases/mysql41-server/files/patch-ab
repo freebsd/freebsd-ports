@@ -1,5 +1,5 @@
---- scripts/mysql_install_db.sh.orig	Mon Jun 29 17:30:30 1998
-+++ scripts/mysql_install_db.sh	Fri Aug 14 17:30:19 1998
+--- scripts/mysql_install_db.sh.orig	Mon Aug 17 23:09:45 1998
++++ scripts/mysql_install_db.sh	Tue Sep  1 15:38:03 1998
 @@ -3,7 +3,6 @@
  # For a more info consult the file COPYRIGHT distributed with this file
  
@@ -8,47 +8,100 @@
  #
  # All arguments to this script is passed to safe_mysqld
  
-@@ -27,18 +26,9 @@
+@@ -16,40 +15,12 @@
+     bn=`basename $file .frm-new`
+     mv $file $dir/$bn.frm
+   done
+-else
+-  if test ! -d "./data"
+-  then
+-    echo "Didn't find the 'data' directory in the current directory"
+-    echo "You should be in the distribution directory when executing this script"
+-    if test -d "../data"
+-    then
+-      echo "We will now try to execute this in the parent directory;  If this doesn't"
+-      echo "work please go to the directory where unpacked this distribution"
+-      echo "and try again with 'scripts/mysql_install_db'"
+-      echo
+-      cd ..
+-    else
+-      echo "Please go to the directory where you unpacked this distribution"
+-      echo "and start this script with 'scripts/mysql_install_db'"
+-      exit 1
+-    fi
+-  fi
+ fi
  
  if test ! -x @bindir@/mysqladmin
  then
 -  if test "@localstatedir@" = "./data"
 -  then
--    echo "Can't execute @bindir@/mysqladmin"
+     echo "Can't execute @bindir@/mysqladmin"
 -    echo "You should be in the distribution directory when executing this script"
 -    echo "Please go to the directory where you unpacked this distribution"
 -    echo "and start this script with 'scripts/mysql_install_db'"
--    exit 1
--  else
-     echo "Didn't find @bindir@/mysqladmin"
-     echo "You should do a 'make install' before executing this script"
      exit 1
+-  else
+-    echo "Didn't find @bindir@/mysqladmin"
+-    echo "You should do a 'make install' before executing this script"
+-    exit 1
 -  fi
  fi
  
  if test -f @localstatedir@/mysql/db.ISM
-@@ -105,10 +95,7 @@
+@@ -65,9 +36,6 @@
+   exit 1
+ fi
  
- # copy the definition files
+-# On IRIX hostname is in /usr/bsd so add this to the path
+-PATH=$PATH:/usr/bsd
+-
+ hostname=`hostname`		# Install this too in the user table
+ 
+ # create database mysql & test
+@@ -118,10 +86,7 @@
  #
--if test "@localstatedir@" != "./data"
--then
--  cp -p ./data/mysql/*.frm @localstatedir@/mysql
--fi
-+cp @pkgdatadir@/mysql/*.frm @localstatedir@/mysql
+ if test ! -f @localstatedir@/mysql/user.frm
+ then
+-  if test "@localstatedir@" != "./data"
+-  then
+-    cp -p ./data/mysql/*.frm @localstatedir@/mysql
+-  fi
++  cp -p @pkgdatadir@/mysql/*.frm @localstatedir@/mysql
+ fi
  
  @bindir@/mysql mysql <<END_OF_DATA
- # Create tables from the .frm files
-@@ -149,11 +136,7 @@
+@@ -150,9 +115,6 @@
+ # Dumping data for table 'user'
+ #
+ 
+-INSERT INTO user VALUES ('localhost','@MYSQLD_USER@','','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y');
+-INSERT INTO user VALUES ('$hostname','@MYSQLD_USER@','','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y');
+-
+ INSERT INTO user VALUES ('localhost','root','','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y');
+ INSERT INTO user VALUES ('$hostname','root','','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y');
+ 
+@@ -160,16 +122,19 @@
+ INSERT INTO user VALUES ('$hostname','','','N','N','N','N','N','N','N','N','N','N');
+ END_OF_DATA
+ 
++if [ @MYSQLD_USER@ != root ]; then
++  @bindir@/mysql mysql <<END_OF_DATA
++INSERT INTO user VALUES ('localhost','@MYSQLD_USER@','','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y');
++INSERT INTO user VALUES ('$hostname','@MYSQLD_USER@','','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y');
++END_OF_DATA
++fi
++
+ if test $? -eq 0
+ then 
+   @bindir@/mysqladmin reload
+   echo "mysqld demon is running and mysql grant tables are installed."
    echo
    echo "PLEASE REMEMBER TO SET A PASSWORD FOR THE MySQL root USER !"
-   echo
+-  echo
 -  echo "You can test the MySQL demon with the benchmarks in the 'bench'"
 -  echo "directory:"
 -  echo "cd bench ; run-all-tests"
--  echo
--  echo "You can also try the mysql command line tool with:"
-+  echo "You can test the MySQL daemon with the mysql command line tool:"
-   echo "@bindir@/mysql test"
    echo
-   echo "Plese report any problems with the @scriptdir@/mysqlbug script!"
+   echo "You can also try the mysql command line tool with:"
+   echo "@bindir@/mysql test"
