@@ -1,4 +1,4 @@
-# New ports collection makefile for: apr-snapshot
+# New ports collection makefile for: apr-devel
 # Date created:		19 February 2002
 # Whom:			Garrett Rooney <rooneg@electricjellyfish.net>
 #
