@@ -3855,6 +3855,7 @@ libgtop2	ports/devel/libgtop2
 libh		ports/misc/libh
 libhash		ports/devel/libhash
 libhoard	ports/devel/libhoard
+libhome		ports/misc/libhome
 libical		ports/devel/libical
 libiconv	ports/converters/libiconv
 libicq		ports/net/libicq
