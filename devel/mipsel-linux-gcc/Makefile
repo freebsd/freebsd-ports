@@ -10,9 +10,8 @@ PORTVERSION=	2.97
 PORTREVISION=	1
 CATEGORIES=	devel
 #MASTER_SITES=   ftp://ftp.agendacomputing.com/pub/dev/snow/snap-02212000/src/
-MASTER_SITES=   ${MASTER_SITE_LOCAL}
+MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=dinoex
-
 PKGNAMEPREFIX=	mipsel-linux-
 
 MAINTAINER=	lev@serebryakov.spb.ru
@@ -37,6 +36,7 @@ ONLY_FOR_ARCHS=	i386 alpha
 MAKE_ENV=	PATH=${PREFIX}/bin:${PATH}
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
+USE_PERL5=	yes
 LIBTOOLFILES=	configure gcc/configure
 MAN1=		${PKGNAMEPREFIX}g++.1 ${PKGNAMEPREFIX}gcc.1 cpp.1 gcov.1
 
@@ -45,7 +45,7 @@ GCC_REV=	2.97
 PLIST_SUB+=	PORTVERSION=${PORTVERSION} GCC_TARG=${PKGNAMEPREFIX:S/-$//} \
 		GCC_REV=${GCC_REV}
 
-BINARIES	= gcc g++ c++ cpp
+BINARIES=	gcc g++ c++ cpp
 
 post-configure:
 	@${PERL} -pi.bak -e 's,^(TARGET_CONFIGDIRS\s*=).+$$,\1,' ${WRKSRC}/Makefile
