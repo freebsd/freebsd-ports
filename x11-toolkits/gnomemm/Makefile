@@ -24,6 +24,7 @@ LIB_DEPENDS=	bonobomm_servers-1.3:${PORTSDIR}/devel/libbonobomm \
 		gnomeuimm-1.3:${PORTSDIR}/x11-toolkits/libgnomeuimm
 
 NO_BUILD=	yes
+LATEST_LINK=	gnomemm2
 
 do-install:     # empty
 
