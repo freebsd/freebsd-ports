@@ -40,6 +40,7 @@ lib/perl5/man/man3/LWP::Simple.3.gz
 lib/perl5/man/man3/LWP::Socket.3.gz
 lib/perl5/man/man3/LWP::TkIO.3.gz
 lib/perl5/man/man3/LWP::UserAgent.3.gz
+lib/perl5/man/man3/LWP::SecureSocket.3.gz
 lib/perl5/man/man3/URI::Escape.3.gz
 lib/perl5/man/man3/URI::URL.3.gz
 lib/perl5/man/man3/WWW::RobotRules.3.gz
@@ -92,11 +93,13 @@ lib/perl5/site_perl/LWP/Protocol/file.pm
 lib/perl5/site_perl/LWP/Protocol/ftp.pm
 lib/perl5/site_perl/LWP/Protocol/gopher.pm
 lib/perl5/site_perl/LWP/Protocol/http.pm
+lib/perl5/site_perl/LWP/Protocol/https.pm
 lib/perl5/site_perl/LWP/Protocol/mailto.pm
 lib/perl5/site_perl/LWP/Protocol/nntp.pm
 lib/perl5/site_perl/LWP/RobotUA.pm
 lib/perl5/site_perl/LWP/Simple.pm
 lib/perl5/site_perl/LWP/Socket.pm
+lib/perl5/site_perl/LWP/SecureSocket.pm
 lib/perl5/site_perl/LWP/TkIO.pm
 lib/perl5/site_perl/LWP/UserAgent.pm
 lib/perl5/site_perl/LWP/media.types
@@ -185,6 +188,7 @@ lib/perl5/site_perl/i386-freebsd/auto/libwww-perl/.packlist
 @dirrm lib/perl5/site_perl/File
 @dirrm lib/perl5/site_perl/Font/Metrics
 @dirrm lib/perl5/site_perl/Font
+@dirrm lib/perl5/site_perl/HTTP/Request
 @dirrm lib/perl5/site_perl/HTTP
 @dirrm lib/perl5/site_perl/LWP/Protocol
 @dirrm lib/perl5/site_perl/LWP

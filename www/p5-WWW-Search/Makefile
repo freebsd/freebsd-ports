@@ -1,13 +1,13 @@
 # New ports collection makefile for:    p5-WWW-Search
-# Version required:			1.009
+# Version required:			1.010
 # Date created:				June 26th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.ORG>
 #
-#   $Id$
+#   $Id: Makefile,v 1.1.1.1 1997/06/27 01:58:30 jfitz Exp $
 #
 
-DISTNAME=	WWW-Search-1.009
-PKGNAME=	p5-WWW-Search-1.009
+DISTNAME=	WWW-Search-1.010
+PKGNAME=	p5-WWW-Search-1.010
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	WWW

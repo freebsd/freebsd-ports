@@ -1,13 +1,13 @@
 # New ports collection makefile for:	p5-Tk
-# Version required:			400-2.02
+# Version required:			402.002
 # Date created:				October 21st 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.12 1997/05/29 02:53:15 jfitz Exp $
+#   $Id: Makefile,v 1.13 1997/06/24 18:43:34 jfitz Exp $
 #
 
-DISTNAME=	Tk400.202
-PKGNAME=	p5-Tk-2.02
+DISTNAME=	Tk402.002
+PKGNAME=	p5-Tk-402.002
 CATEGORIES=	x11 tk41 perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Tk
@@ -28,7 +28,8 @@ MAN3=		Tk::Adjuster.3 Tk::After.3 Tk::Axis.3 Tk::Balloon.3 \
 		Tk::ROText.3 Tk::Submethods.3 Tk::Table.3 Tk::Tcl-perl.3 \
 		Tk::TextUndo.3 Tk::UserGuide.3 Tk::WaitBox.3 Tk::X.3 \
 		Tk::Xrm.3 Tk::demos::widget_lib::WidgetDemo.3 Tk::pTk.3 \
-		Tk::widgets.3 blib.3
+		Tk::widgets.3 blib.3 Bundle::Tk.3 Tk::CmdLine.3 Tk::Derived.3 \
+		Tk::LabFrame.3 Tk::OlWm.3 Tk::Scrolled.3 Tk::TiedListbox.3
 MAN3PREFIX=	${PREFIX}/lib/perl5
 
 do-configure:
