@@ -18,6 +18,12 @@ CONFIGURE_ARGS=	--libdir=${PREFIX}/share
 
 EXAMPLES_DIR=	${PREFIX}/share/examples/chpp
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile"
+.endif
+
 post-install:
 	@${MKDIR} ${EXAMPLES_DIR}
 	${TAR} -C ${WRKSRC}/test -cf - . | \
@@ -31,4 +37,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
