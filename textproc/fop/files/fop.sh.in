@@ -1,0 +1,18 @@
+#! /bin/sh
+#
+# $FreeBSD$
+
+if [ -f $HOME/.foprc ] ; then 
+	. $HOME/.foprc
+fi
+
+# add fop.jar, which resides in $FOP_HOME/build
+CLASSPATH="%%DATADIR%%/build/fop.jar:${CLASSPATH}"
+
+# add in the dependency .jar files, which reside in $FOP_HOME/lib
+for jarfile in %%DATADIR%%/lib/*.jar
+do
+	CLASSPATH="${jarfile}:${CLASSPATH}"
+done
+
+JAVA_VERSION="1.2+" "%%LOCALBASE%%/bin/java" ${JAVA_OPTS} -classpath "${CLASSPATH}" ${FOP_OPTS} org.apache.fop.apps.Fop "$@"
