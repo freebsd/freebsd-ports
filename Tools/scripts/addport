@@ -44,8 +44,9 @@ use strict;
 
 my %opts;
 
-getopts('ad:fgh:imns:tu:', \%opts);
+getopts('ac:d:fgh:imns:tu:', \%opts);
 
+my $c = $opts{'c'} if ($opts{'c'} ne "");
 my $nomodules = $opts{'g'};
 my $distdir = $opts{'s'} if ($opts{'s'} ne "");
 my $dir = $opts{'d'};
@@ -85,6 +86,24 @@ if ($myhost ne lc($h)) {
 }
 $repo = "$ENV{CVSROOT}" if $ENV{CVSROOT};
 my $cvs = "cvs -d $repo";
+
+# Do commitfile checking.
+my $commitfile = "";
+# first check for relative paths then skip absolute, then add it to filenames.
+if ($c =~ m,.*/,) {
+	$c = "$currentdir/$c";
+} elsif ($c =~ m,/,) {
+	# do nothing
+} else {
+	# assume user passed something like "file"
+	$c = "$currentdir/$c";
+}
+if (-f $c) {
+	$commitfile = "EDITOR=\"cp $c\"";
+	print "\nRemember, you asked to use a commit file to read for the commit log.\n";
+	print "This means you'll get a message saying the log message was unchanged or\n";
+	print "not specified.  Just tell it to continue and it will be committed.\n\n";
+}
 
 # stuff that always happens when we start
 BEGIN {
@@ -235,7 +254,7 @@ foreach my $thisdir (@dirs) {
 
 	# commit the actual port.
 	chdir "$tmpdir/$category" or err(1, "$tmpdir/$category");
-	system("$cvs $n ci Makefile $portname") && errx(1, "cvs commit failed, aborting.");
+	system("$commitfile $cvs $n ci Makefile $portname") && errx(1, "cvs commit failed, aborting.");
 	if (!$nomodules) {
 		system("$ssh $perl /usr/local/bin/modulesupdate $module ports/$category/$portname") && errx(1, "adding port to modules failed, aborting.");
 	}
@@ -290,7 +309,7 @@ print <<EOF;
 authors: <will\@FreeBSD.org>, <mharo\@FreeBSD.org>
 
 SYNOPSIS
-	$0 [-h host] [-u user] [-s distdir] [-afimnt] -d directory
+	$0 [-h host] [-u user] [-s distdir] [-acfimnt] -d directory
 
 	Where "directory" contains the comma-delimited list
 	of root directories of new ports that you wish to
@@ -300,6 +319,7 @@ SYNOPSIS
 OPTIONS
 	-a		Perform checks on the port to make sure
 			there are no problems.  Recommended.
+	-c file		Use file in place of normal log message.
 	-f		Do not fetch the distfile.
 	-h host		Use a cvshost besides freefall.FreeBSD.org.
 	-i		Interactive mode; allow more control over
