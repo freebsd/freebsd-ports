@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.17 1997/06/18 19:41:11 jfitz Exp $
+# $Id: Makefile,v 1.18 1997/07/14 13:23:33 jfitz Exp $
 #
     SUBDIR += db
     SUBDIR += exodus
@@ -14,6 +14,5 @@
     SUBDIR += p5-Pg
     SUBDIR += postgresql
     SUBDIR += typhoon
-    SUBDIR += xfsql
 
 .include <bsd.port.subdir.mk>
