@@ -1,46 +1,12 @@
 bin/oooqs
-share/applnk/Office/oooqs.desktop
-share/icons/hicolor/32x32/apps/oooqs.png
-share/icons/hicolor/32x32/apps/ooo_web.xpm
-share/icons/hicolor/32x32/apps/ooo_calc.xpm
-share/icons/hicolor/32x32/apps/ooo_draw.xpm
-share/icons/hicolor/32x32/apps/ooo_global.xpm
-share/icons/hicolor/32x32/apps/ooo_gulls.xpm
-share/icons/hicolor/32x32/apps/ooo_impress.xpm
-share/icons/hicolor/32x32/apps/ooo_math.xpm
-share/icons/hicolor/32x32/apps/ooo_printeradmin.xpm
-share/icons/hicolor/32x32/apps/ooo_writer.xpm
-share/icons/hicolor/16x16/apps/oooqs.png
-share/icons/hicolor/48x48/apps/oooqs.png
-share/icons/hicolor/48x48/apps/ooo_calc.xpm
-share/icons/hicolor/48x48/apps/ooo_draw.xpm
-share/icons/hicolor/48x48/apps/ooo_global.xpm
-share/icons/hicolor/48x48/apps/ooo_gulls.xpm
-share/icons/hicolor/48x48/apps/ooo_impress.xpm
-share/icons/hicolor/48x48/apps/ooo_math.xpm
-share/icons/hicolor/48x48/apps/ooo_printeradmin.xpm
-share/icons/hicolor/48x48/apps/ooo_web.xpm
-share/icons/hicolor/48x48/apps/ooo_writer.xpm
 share/icons/hicolor/64x64/apps/oooqs.png
-share/icons/locolor/16x16/apps/ooo_calc.xpm
-share/icons/locolor/16x16/apps/ooo_draw.xpm
-share/icons/locolor/16x16/apps/ooo_global.xpm
-share/icons/locolor/16x16/apps/ooo_gulls.xpm
-share/icons/locolor/16x16/apps/ooo_impress.xpm
-share/icons/locolor/16x16/apps/ooo_math.xpm
-share/icons/locolor/16x16/apps/ooo_printeradmin.xpm
-share/icons/locolor/16x16/apps/ooo_web.xpm
-share/icons/locolor/16x16/apps/ooo_writer.xpm
+share/icons/hicolor/16x16/apps/oooqs.png
+share/icons/hicolor/32x32/apps/oooqs.png
+share/icons/hicolor/48x48/apps/oooqs.png
+share/applnk/Utilities/oooqs.desktop
 share/locale/de/LC_MESSAGES/oooqs.mo
-share/locale/fr/LC_MESSAGES/oooqs.mo
-share/doc/HTML/en/oooqs/index.docbook
-share/doc/HTML/en/oooqs/index.cache.bz2
-share/doc/HTML/en/oooqs/common
-@dirrm share/doc/HTML/en/oooqs
-@unexec rmdir %D/share/doc/HTML/de 2>/dev/null || true
-@unexec rmdir %D/share/applnk/Office 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/48x48 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/64x64 2>/dev/null || true
-@unexec rmdir %D/share/icons/locolor 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Utilities 2>/dev/null || true
