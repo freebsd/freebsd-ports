@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	jflemer@alum.rpi.edu
 COMMENT=	DOCSIS(tm) binary configuration file encoder/decoder
 
+BROKEN=		"Does not build"
+
 LIB_DEPENDS=	netsnmp:${PORTSDIR}/net/net-snmp
 
 USE_OPENSSL=	yes
