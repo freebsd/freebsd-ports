@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	freetype2
-PORTVERSION=	2.0
+PORTVERSION=	2.0.1
 CATEGORIES=	print
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S,%SUBDIR%,freetype,} \
+MASTER_SITES=	ftp://freetype.sourceforge.net/pub/freetype/%SUBDIR%/ \
+		${MASTER_SITE_SOURCEFORGE:S,%SUBDIR%,freetype,} \
 		http://sunsite.cnlab-switch.ch/ftp/mirror/freetype/%SUBDIR%/ \
 		http://www.funet.fi/pub/mirrors/ftp.freetype.org/%SUBDIR%/ \
 		http://ftp.sunet.se/pub/text-processing/freetype/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/freetype/&,} \
 		ftp://ftp.freetype.org/pub/%SUBDIR%/
-MASTER_SITE_SUBDIR=	freetype2
+MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME:S/2//}-${PORTVERSION}
 
 MAINTAINER=	jseger@FreeBSD.org
