@@ -1,6 +1,5 @@
-diff -urN ../dap-2.1.1.orig/main/Makefile.linux ./main/Makefile.linux
---- ../dap-2.1.1.orig/main/Makefile.linux	Thu May 25 17:52:37 2000
-+++ ./main/Makefile.linux	Sun Jun 11 13:51:02 2000
+--- main/Makefile.linux.orig	Sun Jul  1 13:42:55 2001
++++ main/Makefile.linux	Sun Jul  1 13:42:31 2001
 @@ -1,5 +1,5 @@
 -CC      = gcc
 -CXX     = g++
@@ -9,11 +8,15 @@ diff -urN ../dap-2.1.1.orig/main/Makefile.linux ./main/Makefile.linux
  FORMS   = ../../xforms/FORMS
  SOUND   = ../sound
  SPKIT   = ../spkit
-@@ -11,10 +11,10 @@
- X11DIR  = /usr/X11R6
+@@ -8,13 +8,13 @@
+ AUDIOF  = ../libaudiofile
+ BACKDIR = ../bak/main
+ HOMEDIR = $(HOME)
+-X11DIR  = /usr/X11R6
++X11DIR  = ${X11BASE}
  INCDIR  = -I. -I.. -I$(SOUND) -I$(SPKIT) -I$(FORMS) -I$(TOOLTIP) -I$(X11DIR)/include
  LIBDIR  = -L$(SPKIT)/spkit -L$(FORMS) -L$(AUDIO) -L$(AUDIOF) -L$(TOOLTIP) -L$(X11DIR)/lib
--CCFLAGS = $(INCDIR) $(DEBUG) $(OPTIM) -DLINUX -DBIGENDIAN -DUSINGGCC -DSIGNALWORKAROUND -Wall -Wno-unused
+-CCFLAGS = $(INCDIR) $(DEBUG) $(OPTIM) -DLINUX -DBIGENDIAN -DUSINGGCC -Wall -Wno-unused
 +CCFLAGS = $(INCDIR) $(OPTIM) -DLINUX -DBIGENDIAN -DUSINGGCC -Wall -Wno-unused
  DEBUG   = -g3
 -OPTIM   = -O1

@@ -1,6 +1,13 @@
-diff -urN ../dap-2.1.1.orig/sound/Makefile.linux ./sound/Makefile.linux
---- ../dap-2.1.1.orig/sound/Makefile.linux	Tue Feb 22 09:27:33 2000
-+++ ./sound/Makefile.linux	Sun Jun 11 13:54:11 2000
+--- sound/Makefile.linux.orig	Sun Jul  1 13:44:27 2001
++++ sound/Makefile.linux	Sun Jul  1 13:45:00 2001
+@@ -1,5 +1,5 @@
+-CC      = gcc
+-CXX     = g++
++CC      ?= gcc
++CXX     ?= g++
+ FORMS   = ../../xforms/FORMS
+ SPKIT   = ../spkit
+ AUDIO   = ../libaudio
 @@ -9,9 +9,9 @@
  HOMEDIR = $(HOME)
  INCDIR  = -I. -I.. -I$(SPKIT) -I$(MAINDIR)
