@@ -2197,7 +2197,6 @@ frost		ports/net/frost
 frotz		ports/games/frotz
 frox		ports/ftp/frox
 frozenbubble	ports/games/frozenbubble
-fsgs		ports/games/fsgs
 fsh		ports/security/fsh
 fsmgenerator	ports/devel/fsmgenerator
 fspanel		ports/x11/fspanel
