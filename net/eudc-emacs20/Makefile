@@ -11,7 +11,7 @@ CATEGORIES=	net mail elisp
 MASTER_SITES=	http://lspwww.epfl.ch/~figueire/Software/eudc/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
-MAINTAINER=	ilya@martynov.org
+MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	ldapsearch:${PORTSDIR}/net/openldap
 

@@ -11,7 +11,7 @@ CATEGORIES=	editors
 MASTER_SITES=	http://meltin.net/hacks/emacs/src/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
-MAINTAINER=	ilya@martynov.org
+MAINTAINER=	ports@FreeBSD.org
 
 HAS_CONFIGURE=	yes
 
