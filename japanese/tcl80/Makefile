@@ -3,16 +3,16 @@
 # Date created:		23 Jan 1998
 # Whom:			taguchi@tohoku.iij.ad.jp
 #
-# $Id: Makefile,v 1.7 1998/11/14 09:43:16 asami Exp $
+# $Id: Makefile,v 1.8 1999/01/20 10:52:01 flathill Exp $
 #
 
-DISTNAME=	tcl8.0.4
-PKGNAME=	ja-tcl-8.0.4
+DISTNAME=	tcl8.0.5
+PKGNAME=	ja-tcl-8.0.5
 CATEGORIES=	japanese lang tcl80
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_0/
 
 PATCH_SITES=	ftp://ftp.sra.co.jp/pub/lang/tcl/jp/
-PATCHFILES=	tcl8.0.4jp1.3.patch.gz
+PATCHFILES=	tcl8.0.5jp1.5.patch.gz
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
@@ -50,7 +50,7 @@ post-install:
 .endif
 	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 .if ${PORTOBJFORMAT} == "aout" 
-	${LN} -sf libtcl80jp.so.1.4 ${PREFIX}/lib/libtcl80jp.so
+	${LN} -sf libtcl80jp.so.1.5 ${PREFIX}/lib/libtcl80jp.so
 .endif
 	@${CAT}	${PKGDIR}/MESSAGE
 

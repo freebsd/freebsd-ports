@@ -1,6 +1,6 @@
---- configure.in.ORIG	Wed Jan 20 15:06:29 1999
-+++ configure.in	Wed Jan 20 15:06:43 1999
-@@ -825,15 +825,21 @@
+--- configure.in.ORIG	Wed Mar 24 11:07:36 1999
++++ configure.in	Wed Mar 24 11:08:21 1999
+@@ -851,15 +851,21 @@
      NetBSD-*|FreeBSD-*|OpenBSD-*)
  	# Not available on all versions:  check for include file.
  	AC_CHECK_HEADER(dlfcn.h, [
@@ -10,7 +10,7 @@
 +	       TCL_SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.1'
 +	    else
 +	       SHLIB_LD="ld -Bshareable -x"
-+	       TCL_SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.1.4'
++	       TCL_SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.1.5'
 +	    fi
  	    SHLIB_CFLAGS="-fpic"
 -	    SHLIB_LD="ld -Bshareable -x"
@@ -24,7 +24,7 @@
  	], [
  	    SHLIB_CFLAGS=""
  	    SHLIB_LD="echo tclLdAout $CC \{$SHLIB_CFLAGS\} | `pwd`/tclsh -r"
-@@ -1196,6 +1202,7 @@
+@@ -1222,6 +1228,7 @@
  if test "$TCL_UNSHARED_LIB_SUFFIX" = "" ; then
      TCL_UNSHARED_LIB_SUFFIX='${VERSION}\$\{DBGX\}.a'
  fi
@@ -32,7 +32,7 @@
  AC_ARG_ENABLE(shared,
      [  --enable-shared         build libtcl as a shared library],
      [tcl_ok=$enableval], [tcl_ok=no])
-@@ -1204,10 +1211,15 @@
+@@ -1230,10 +1237,15 @@
      TCL_SHLIB_CFLAGS="${SHLIB_CFLAGS}"
      TCL_LD_SEARCH_FLAGS="${LD_SEARCH_FLAGS}"
      eval "TCL_LIB_FILE=libtcl${TCL_SHARED_LIB_SUFFIX}"
@@ -49,7 +49,7 @@
  	RANLIB=":"
      fi
  else
-@@ -1248,6 +1260,7 @@
+@@ -1274,6 +1286,7 @@
  # Trick to replace DBGX with TCL_DBGX
  DBGX='${TCL_DBGX}'
  eval "TCL_LIB_FILE=${TCL_LIB_FILE}"
@@ -57,7 +57,7 @@
  
  VERSION='${VERSION}'
  eval "CFG_TCL_SHARED_LIB_SUFFIX=${TCL_SHARED_LIB_SUFFIX}"
-@@ -1287,6 +1300,7 @@
+@@ -1313,6 +1326,7 @@
  AC_SUBST(TCL_BUILD_LIB_SPEC)
  AC_SUBST(TCL_LD_SEARCH_FLAGS)
  AC_SUBST(TCL_LIB_FILE)
@@ -65,8 +65,8 @@
  AC_SUBST(TCL_LIB_FLAG)
  AC_SUBST(TCL_LIB_SPEC)
  AC_SUBST(TCL_LIB_VERSIONS_OK)
---- Makefile.in.ORIG	Wed Jan 20 15:06:34 1999
-+++ Makefile.in	Wed Jan 20 15:06:43 1999
+--- Makefile.in.ORIG	Wed Mar 24 11:07:50 1999
++++ Makefile.in	Wed Mar 24 11:12:47 1999
 @@ -55,11 +55,16 @@
  BIN_INSTALL_DIR =	$(INSTALL_ROOT)$(exec_prefix)/bin
  
@@ -146,7 +146,7 @@
  	@for i in $(LIB_INSTALL_DIR) $(BIN_INSTALL_DIR) ; \
  	    do \
  	    if [ ! -d $$i ] ; then \
-@@ -451,19 +469,27 @@
+@@ -451,15 +469,23 @@
  	@echo "Installing $(TCL_LIB_FILE)"
  	@$(INSTALL_DATA) $(TCL_LIB_FILE) $(LIB_INSTALL_DIR)/$(TCL_LIB_FILE)
  	@(cd $(LIB_INSTALL_DIR); $(RANLIB) $(TCL_LIB_FILE))
@@ -173,11 +173,6 @@
  	    do \
  	    if [ ! -d $$i ] ; then \
  		echo "Making directory $$i"; \
--		mkdir $$i; \
-+		mkdir -p $$i; \
- 		chmod 755 $$i; \
- 		else true; \
- 		fi; \
 @@ -477,8 +503,15 @@
  		else true; \
  		fi; \
