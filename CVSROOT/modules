@@ -3105,6 +3105,7 @@ ja-ruby-eb	ports/japanese/ruby-eb
 ja-ruby-gyokuro	ports/japanese/ruby-gyokuro
 ja-ruby-kakasi	ports/japanese/ruby-kakasi
 ja-ruby-man	ports/japanese/ruby-man
+ja-ruby-refe	ports/japanese/ruby-refe
 ja-ruby-romkan	ports/japanese/ruby-romkan
 ja-ruby-slang	ports/japanese/ruby-slang
 ja-ruby-tcltklib	ports/japanese/ruby-tcltklib
