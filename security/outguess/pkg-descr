@@ -7,6 +7,9 @@ program relies on data specific handlers that will extract redundant
 bits and write them back after modification.  In this version the PNM
 and JPEG image formats are supported.
 
+The histogram utility is not installed by this port/package because
+it crashes.
+
 WWW:  http://www.outguess.org/
 
 Trevor Johnson
