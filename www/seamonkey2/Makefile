@@ -159,14 +159,12 @@ ALL_TARGET=	default
 CONFIGURE_ARGS+=	--enable-reorder
 .endif
 
-.if defined(WITH_OPTIMIZED_CFLAGS) && ${ARCH} != "alpha"
+.if defined(WITH_OPTIMIZED_CFLAGS)
 CFLAGS+=		-O2
 CONFIGURE_ARGS+=	--enable-optimize=-O2
 .endif
 
-.if ${ARCH} == "alpha"
-CFLAGS+=		-O0
-CONFIGURE_ARGS+=	--disable-optimize
+.if ${ARCH} == "alpha" && ${OSVERSION} < 500035
 BROKEN=	"core dumps on alpha during post-build"
 .endif
 
@@ -253,7 +251,7 @@ do-install:
 	    ${MKDIR} ${PREFIX}/lib/browser_plugins ; \
 	fi
 	if [ ! -L ${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ]; then \
-	    ${LN} -sf ${LOCALBASE}/jdk1.3.1/jre/plugin/i386/ns600/libjavaplugin_oji.so \
+	    ${LN} -sf ${LOCALBASE}/jdk1.3.1/jre/plugin/${ARCH}/ns600/libjavaplugin_oji.so \
 	    	${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ; \
 	fi
 .if defined(WITH_GTK2)
