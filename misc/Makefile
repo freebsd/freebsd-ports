@@ -65,6 +65,7 @@
     SUBDIR += magicpoint
     SUBDIR += man.el
     SUBDIR += mc
+    SUBDIR += mgp-mode.el
     SUBDIR += mmv
     SUBDIR += most
     SUBDIR += mshell
