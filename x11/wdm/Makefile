@@ -51,7 +51,19 @@ pre-everything:
 post-patch:
 	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/doc/*.man
 
+pre-install:
+	@if [ -e ${PREFIX}/lib/X11/wdm/wdm-config ]; then \
+		${MV} ${PREFIX}/lib/X11/wdm/wdm-config \
+			${PREFIX}/lib/X11/wdm/wdm-config.preserve; \
+	fi
+
 post-install:
-	${INSTALL_DATA} ${_DISTDIR}/${DAEMONPIC} ${PREFIX}/lib/X11/wdm/pixmaps
+	@${CP} ${PREFIX}/lib/X11/wdm/wdm-config \
+		${PREFIX}/lib/X11/wdm/wdm-config.dist;
+	@if [ -e ${PREFIX}/lib/X11/wdm/wdm-config.preserve ]; then \
+		${MV} ${PREFIX}/lib/X11/wdm/wdm-config.preserve \
+			${PREFIX}/lib/X11/wdm/wdm-config; \
+	fi
+	@${INSTALL_DATA} ${_DISTDIR}/${DAEMONPIC} ${PREFIX}/lib/X11/wdm/pixmaps
 
 .include <bsd.port.mk>
