@@ -1,97 +1,89 @@
 bin/atlas-config
-include/Atlas/Bridge.h
-include/Atlas/Codec.h
-include/Atlas/Codec_impl.h
-include/Atlas/Codecs/Packed.h
-include/Atlas/Codecs/Utility.h
-include/Atlas/Codecs/XML.h
-include/Atlas/EncoderBase.h
-include/Atlas/Funky/Encoder.h
-include/Atlas/Message/DecoderBase.h
-include/Atlas/Message/Encoder.h
-include/Atlas/Message/Layer.h
-include/Atlas/Message/Object.h
-include/Atlas/Message/QueuedDecoder.h
-include/Atlas/Negotiate.h
-include/Atlas/Net/Loopback.h
-include/Atlas/Net/Stream.h
-include/Atlas/Objects/Decoder.h
-include/Atlas/Objects/Encoder.h
-include/Atlas/Objects/Entity/Account.h
-include/Atlas/Objects/Entity/Admin.h
-include/Atlas/Objects/Entity/AdminEntity.h
-include/Atlas/Objects/Entity/Game.h
-include/Atlas/Objects/Entity/GameEntity.h
-include/Atlas/Objects/Entity/Player.h
-include/Atlas/Objects/Entity/RootEntity.h
-include/Atlas/Objects/Operation/Action.h
-include/Atlas/Objects/Operation/Appearance.h
-include/Atlas/Objects/Operation/Combine.h
-include/Atlas/Objects/Operation/Communicate.h
-include/Atlas/Objects/Operation/Create.h
-include/Atlas/Objects/Operation/Delete.h
-include/Atlas/Objects/Operation/Disappearance.h
-include/Atlas/Objects/Operation/Divide.h
-include/Atlas/Objects/Operation/Error.h
-include/Atlas/Objects/Operation/Feel.h
-include/Atlas/Objects/Operation/Get.h
-include/Atlas/Objects/Operation/Imaginary.h
-include/Atlas/Objects/Operation/Info.h
-include/Atlas/Objects/Operation/Listen.h
-include/Atlas/Objects/Operation/Login.h
-include/Atlas/Objects/Operation/Logout.h
-include/Atlas/Objects/Operation/Look.h
-include/Atlas/Objects/Operation/Move.h
-include/Atlas/Objects/Operation/Perceive.h
-include/Atlas/Objects/Operation/Perception.h
-include/Atlas/Objects/Operation/RootOperation.h
-include/Atlas/Objects/Operation/Set.h
-include/Atlas/Objects/Operation/Sight.h
-include/Atlas/Objects/Operation/Smell.h
-include/Atlas/Objects/Operation/Sniff.h
-include/Atlas/Objects/Operation/Sound.h
-include/Atlas/Objects/Operation/Talk.h
-include/Atlas/Objects/Operation/Touch.h
-include/Atlas/Objects/Root.h
-include/Atlas/Task.h
-lib/libAtlas.a
+include/Atlas-C++-0.4/Atlas/Bridge.h
+include/Atlas-C++-0.4/Atlas/Codec.h
+include/Atlas-C++-0.4/Atlas/Codec_impl.h
+include/Atlas-C++-0.4/Atlas/Codecs/Packed.h
+include/Atlas-C++-0.4/Atlas/Codecs/Utility.h
+include/Atlas-C++-0.4/Atlas/Codecs/XML.h
+include/Atlas-C++-0.4/Atlas/EncoderBase.h
+include/Atlas-C++-0.4/Atlas/Funky/Encoder.h
+include/Atlas-C++-0.4/Atlas/Message/DecoderBase.h
+include/Atlas-C++-0.4/Atlas/Message/Encoder.h
+include/Atlas-C++-0.4/Atlas/Message/Layer.h
+include/Atlas-C++-0.4/Atlas/Message/Object.h
+include/Atlas-C++-0.4/Atlas/Message/QueuedDecoder.h
+include/Atlas-C++-0.4/Atlas/Negotiate.h
+include/Atlas-C++-0.4/Atlas/Net/Loopback.h
+include/Atlas-C++-0.4/Atlas/Net/Stream.h
+include/Atlas-C++-0.4/Atlas/Objects/Decoder.h
+include/Atlas-C++-0.4/Atlas/Objects/Encoder.h
+include/Atlas-C++-0.4/Atlas/Objects/Entity/Account.h
+include/Atlas-C++-0.4/Atlas/Objects/Entity/Admin.h
+include/Atlas-C++-0.4/Atlas/Objects/Entity/AdminEntity.h
+include/Atlas-C++-0.4/Atlas/Objects/Entity/Game.h
+include/Atlas-C++-0.4/Atlas/Objects/Entity/GameEntity.h
+include/Atlas-C++-0.4/Atlas/Objects/Entity/Player.h
+include/Atlas-C++-0.4/Atlas/Objects/Entity/RootEntity.h
+include/Atlas-C++-0.4/Atlas/Objects/Operation/Action.h
+include/Atlas-C++-0.4/Atlas/Objects/Operation/Appearance.h
+include/Atlas-C++-0.4/Atlas/Objects/Operation/Combine.h
+include/Atlas-C++-0.4/Atlas/Objects/Operation/Communicate.h
+include/Atlas-C++-0.4/Atlas/Objects/Operation/Create.h
+include/Atlas-C++-0.4/Atlas/Objects/Operation/Delete.h
+include/Atlas-C++-0.4/Atlas/Objects/Operation/Disappearance.h
+include/Atlas-C++-0.4/Atlas/Objects/Operation/Divide.h
+include/Atlas-C++-0.4/Atlas/Objects/Operation/Error.h
+include/Atlas-C++-0.4/Atlas/Objects/Operation/Feel.h
+include/Atlas-C++-0.4/Atlas/Objects/Operation/Get.h
+include/Atlas-C++-0.4/Atlas/Objects/Operation/Imaginary.h
+include/Atlas-C++-0.4/Atlas/Objects/Operation/Info.h
+include/Atlas-C++-0.4/Atlas/Objects/Operation/Listen.h
+include/Atlas-C++-0.4/Atlas/Objects/Operation/Login.h
+include/Atlas-C++-0.4/Atlas/Objects/Operation/Logout.h
+include/Atlas-C++-0.4/Atlas/Objects/Operation/Look.h
+include/Atlas-C++-0.4/Atlas/Objects/Operation/Move.h
+include/Atlas-C++-0.4/Atlas/Objects/Operation/Perceive.h
+include/Atlas-C++-0.4/Atlas/Objects/Operation/Perception.h
+include/Atlas-C++-0.4/Atlas/Objects/Operation/RootOperation.h
+include/Atlas-C++-0.4/Atlas/Objects/Operation/Set.h
+include/Atlas-C++-0.4/Atlas/Objects/Operation/Sight.h
+include/Atlas-C++-0.4/Atlas/Objects/Operation/Smell.h
+include/Atlas-C++-0.4/Atlas/Objects/Operation/Sniff.h
+include/Atlas-C++-0.4/Atlas/Objects/Operation/Sound.h
+include/Atlas-C++-0.4/Atlas/Objects/Operation/Talk.h
+include/Atlas-C++-0.4/Atlas/Objects/Operation/Touch.h
+include/Atlas-C++-0.4/Atlas/Objects/Root.h
+include/Atlas-C++-0.4/Atlas/Task.h
 lib/libAtlas.la
-lib/libAtlas.so
 lib/libAtlas.so.1
-lib/libAtlasCodecs.a
 lib/libAtlasCodecs.la
-lib/libAtlasCodecs.so
 lib/libAtlasCodecs.so.1
-lib/libAtlasFunky.a
 lib/libAtlasFunky.la
-lib/libAtlasFunky.so
 lib/libAtlasFunky.so.1
-lib/libAtlasMessage.a
 lib/libAtlasMessage.la
-lib/libAtlasMessage.so
 lib/libAtlasMessage.so.1
-lib/libAtlasNet.a
 lib/libAtlasNet.la
-lib/libAtlasNet.so
 lib/libAtlasNet.so.1
-lib/libAtlasObjects.a
 lib/libAtlasObjects.la
-lib/libAtlasObjects.so
 lib/libAtlasObjects.so.1
-lib/libAtlasObjectsEntity.a
 lib/libAtlasObjectsEntity.la
-lib/libAtlasObjectsEntity.so
 lib/libAtlasObjectsEntity.so.1
-lib/libAtlasObjectsOperation.a
 lib/libAtlasObjectsOperation.la
-lib/libAtlasObjectsOperation.so
 lib/libAtlasObjectsOperation.so.1
+libdata/pkgconfig/atlascpp-0.4.pc
 share/aclocal/atlas.m4
-@dirrm include/Atlas/Objects/Entity
-@dirrm include/Atlas/Objects/Operation
-@dirrm include/Atlas/Message
-@dirrm include/Atlas/Objects
-@dirrm include/Atlas/Net
-@dirrm include/Atlas/Funky
-@dirrm include/Atlas/Codecs
-@dirrm include/Atlas
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+@dirrm include/Atlas-C++-0.4/Atlas/Codecs
+@dirrm include/Atlas-C++-0.4/Atlas/Objects/Entity
+@dirrm include/Atlas-C++-0.4/Atlas/Objects/Operation
+@dirrm include/Atlas-C++-0.4/Atlas/Objects
+@dirrm include/Atlas-C++-0.4/Atlas/Message
+@dirrm include/Atlas-C++-0.4/Atlas/Net
+@dirrm include/Atlas-C++-0.4/Atlas/Funky
+@dirrm include/Atlas-C++-0.4/Atlas
+@dirrm include/Atlas-C++-0.4
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
