@@ -27,9 +27,8 @@ CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		Eterm.1
 
-pre-patch:
 .if ( defined(KANJI) )
-	${CP} ${FILESDIR}/patch-kanji ${PATCHDIR}
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-kanji
 .endif
 
 # this is needed to remove leftover files from applied patches.
