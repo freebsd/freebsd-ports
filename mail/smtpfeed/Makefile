@@ -1,22 +1,21 @@
 # New ports collection makefile for:	smtpfeed
-# Version required:	0.89
+# Version required:	0.90
 # Date created:		17 January 1998
 # Whom:			itojun@itojun.org
 #
-# $Id: Makefile,v 1.20 1998/10/01 17:18:40 itojun Exp $
+# $Id: Makefile,v 1.21 1998/11/26 07:40:55 asami Exp $
 #
 
-DISTNAME=	smtpfeed-0.89
+DISTNAME=	smtpfeed-0.90
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.kyoto.wide.ad.jp/pub/mail/smtpfeed/ \
 		ftp://ftp.kyoto.wide.ad.jp/pub/mail/sendmail/ \
-		ftp://ftp.sendmail.org/ucb/src/sendmail/
+		ftp://ftp.sendmail.org/ucb/src/sendmail/ \
+		http://freefall.freebsd.org/~itojun/distfiles/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${SENDMAIL}${EXTRACT_SUFX} \
 		${SENDMAILPATCH}.patch.gz
 
 MAINTAINER=	itojun@itojun.org
-
-BROKEN=		fetch
 
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} ${SENDMAIL}${EXTRACT_SUFX}
 PATCH_SENDMAIL_ARGS=	-d ${WRKSRC_SENDMAIL} -E ${PATCH_DIST_STRIP}
