@@ -6997,6 +6997,7 @@ p5-Net-IPv6Addr	ports/net-mgmt/p5-Net-IPv6Addr
 p5-Net-Ident	ports/net/p5-Net-Ident
 p5-Net-Jabber	ports/net/p5-Net-Jabber
 p5-Net-LibIDN	ports/devel/p5-Net-LibIDN
+p5-Net-MSN	ports/net/p5-Net-MSN
 p5-Net-MovableType	ports/net/p5-Net-MovableType
 p5-Net-Netmask	ports/net-mgmt/p5-Net-Netmask
 p5-Net-Nslookup	ports/dns/p5-Net-Nslookup
