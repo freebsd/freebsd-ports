@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.116 1999/03/20 14:54:00 dburr Exp $
+# $Id: Makefile,v 1.117 1999/04/03 01:09:02 steve Exp $
 #
 
     SUBDIR += 4va
@@ -93,6 +93,7 @@
     SUBDIR += spigot
     SUBDIR += splitmpg
     SUBDIR += stamp
+    SUBDIR += tgd
     SUBDIR += tgif
     SUBDIR += tiff34
     SUBDIR += txtmerge
