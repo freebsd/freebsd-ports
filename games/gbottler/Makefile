@@ -8,7 +8,8 @@
 PORTNAME=	gbottler
 PORTVERSION=	0.0.3
 CATEGORIES=	games
-MASTER_SITES=	http://callisto.comlab.soft.iwate-pu.ac.jp/~g031y177/etc/files/gbottler/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
+MASTER_SITE_SUBDIR=	gbottler/9132
 
 MAINTAINER=	umeno@rr.iij4u.or.jp
 COMMENT=	SSTP Bottle client
