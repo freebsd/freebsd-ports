@@ -9,13 +9,14 @@ PORTNAME=	prc-tools-binutils
 PORTVERSION=	2.0
 CATEGORIES=	palm
 MASTER_SITES=	http://www.palmos.com/dev/tech/tools/gcc/ \
-		${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	binutils
+		${MASTER_SITE_SOURCEWARE}
+MASTER_SITE_SUBDIR=	binutils/old-releases
 DISTNAME=	prc-tools-${PORTVERSION}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} binutils-2.9.1.tar.gz
+DISTFILES=	${DISTNAME}.tar.gz binutils-2.9.1.tar.bz2
 
 MAINTAINER=	kuriyama@FreeBSD.org
 
+USE_BZIP2=	YES
 USE_BISON=	YES
 USE_GMAKE=	YES
 PREFIX=		${LOCALBASE}/pilot
@@ -33,6 +34,9 @@ MAN1=		m68k-palmos-addr2line.1 m68k-palmos-ar.1 \
 		m68k-palmos-objdump.1 m68k-palmos-ranlib.1 \
 		m68k-palmos-size.1 m68k-palmos-strings.1 \
 		m68k-palmos-strip.1
+
+post-extract:
+	@(cd ${WRKDIR} && ${GZIP_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${DISTNAME}.tar.gz ${EXTRACT_AFTER_ARGS})
 
 pre-patch:
 	${MKDIR} ${WRKSRC}/empty
