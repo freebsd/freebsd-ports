@@ -156,26 +156,3 @@
  @iftex
  @finalout
  @end iftex
---- ./Makefile.in.org	Mon Dec 19 18:01:54 1994
-+++ ./Makefile.in	Tue May 20 22:28:03 1997
-@@ -186,7 +186,7 @@
- # Subdirectories to make recursively.  `lisp' is not included
- # because the compiled lisp files are part of the distribution
- # and you cannot remake them without installing Emacs first.
--SUBDIR = lib-src src
-+SUBDIR = lib-src src man
- 
- # The makefiles of the directories in $SUBDIR.
- SUBDIR_MAKEFILES = lib-src/Makefile src/Makefile oldXMenu/Makefile lwlib/Makefile
-@@ -338,10 +338,7 @@
- 	if [ `(cd ${srcdir}/info && /bin/pwd)` != `(cd ${infodir} && /bin/pwd)` ]; \
- 	then \
- 	  (cd ${srcdir}/info ; \
--	   if [ ! -f ${infodir}/dir ] && [ -f dir ]; then \
--	     (cd $${thisdir}; ${INSTALL_DATA} ${srcdir}/info/dir ${infodir}/dir); \
--	   fi ; \
--	   for f in cl* dired-x* emacs* forms* gnus* info* sc* vip* \
-+	   for f in cl* dired-x* emacs* forms* gnus* sc* vip* \
- 		antenews* canna* egg* languages* m2ps* mule* kbd-trans* \
- 		quail* terminology* CCL* ISO2022* R2L* XFONT*; do \
- 	     (cd $${thisdir}; ${INSTALL_DATA} ${srcdir}/info/$$f ${infodir}/$$f); \
