@@ -1,3 +1,4 @@
 bin/spegla
+man/man1/spegla.1
 share/examples/spegla/freebsd.org
 @dirrm share/examples/spegla
