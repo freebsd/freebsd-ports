@@ -1,0 +1,22 @@
+diff -u leafnode-1/CREDITS:1.7 leafnode-1/CREDITS:1.8
+--- CREDITS:1.7	Tue Sep 24 18:24:13 2002
++++ CREDITS	Wed Nov  6 02:44:42 2002
+@@ -81,6 +81,7 @@
+ Heiko Nock <zifnab@wtal.de>
+ Holger Graf <Holger.Graf@gmx.net>
+ Holger Repp <retaliator@sbsd.de>
++Jan Knutar <jknutar@nic.fi>
+ Jarle Rongved <rongved@online.no>
+ Jeff East <an972@freenet.carleton.ca>
+ Jeff Grossman <jeff@stikman.com>
+diff -u leafnode-1/nntpd.c:1.81 leafnode-1/nntpd.c:1.83
+--- nntpd.c:1.81	Tue Sep 24 18:04:01 2002
++++ nntpd.c	Fri Nov  8 18:14:41 2002
+@@ -521,6 +521,7 @@
+ 			markgroup = group->name;
+ 			break;
+ 		    }
++		    p = q;
+ 		}
+ 	    }
+ 	    /* if we don't have a localartno, then we need to mark this

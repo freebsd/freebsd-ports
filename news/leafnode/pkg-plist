@@ -1,3 +1,5 @@
+@comment $FreeBSD$
+bin/leafnode-version
 bin/newsq
 etc/leafnode/config.example
 etc/leafnode/nntp.rules.dist
