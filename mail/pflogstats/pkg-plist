@@ -10,12 +10,12 @@ bin/pflogstats
 %%SITE_PERL%%/Pflogstats/pflogstats-statistics-reject.pm
 %%SITE_PERL%%/Pflogstats/pflogstats-statistics-uce.pm
 %%SITE_PERL%%/Pflogstats/pflogstats-template.pm
-%%PORTDOCS%%share/doc/pflogstats/BUGS
-%%PORTDOCS%%share/doc/pflogstats/CREDITS
-%%PORTDOCS%%share/doc/pflogstats/ChangeLog
-%%PORTDOCS%%share/doc/pflogstats/INSTALL
-%%PORTDOCS%%share/doc/pflogstats/LICENSE
-%%PORTDOCS%%share/doc/pflogstats/README
-%%PORTDOCS%%share/doc/pflogstats/TODO
-%%PORTDOCS%%@dirrm share/doc/pflogstats
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%SITE_PERL%%/Pflogstats

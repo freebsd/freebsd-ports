@@ -22,26 +22,25 @@ NO_BUILD=	yes
 USE_PERL5=	yes
 USE_REINPLACE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-IGNORE=         Port requires perl 5.6.1 or later. Install lang/perl5 then try again
-.endif
-
 post-patch:
 # fix location of PERL
-	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL}|' ${WRKSRC}/*.pl
+	@${REINPLACE_CMD} -e 's|/usr/bin/perl \-W|${PERL}|' ${WRKSRC}/*.pl ${WRKSRC}/*.pm
 	@${REINPLACE_CMD} -e 's|/usr/local/lib/pflogstats|${SITE_PERL}/Pflogstats|' ${WRKSRC}/*.pl
+# patch for perl < 5.6.0
+	${PERL} -pi -e 's/^our\s+([\$$\@\%]\w+)/use vars qw($$1);$$1/;' \
+		-e '$$_="" if /require 5/;' \
+		-e '$$_="" if /use warnings/;' \
+		${WRKSRC}/*.pm
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl  ${PREFIX}/bin/${PORTNAME}
 	@${MKDIR} ${PREFIX}/lib/perl5/site_perl/${PERL_VER}/Pflogstats
-	${INSTALL_DATA} ${WRKSRC}/pflogstats-*.pm ${SITE_PERL}/Pflogstats
+	${INSTALL_DATA} ${WRKSRC}/pflogstats-*.pm ${PREFIX}/lib/perl5/site_perl/${PERL_VER}/Pflogstats
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/pflogstats
+	@${MKDIR} ${DOCSDIR}
 .for i in README INSTALL ChangeLog BUGS TODO LICENSE CREDITS
-	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/doc/pflogstats
+	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
