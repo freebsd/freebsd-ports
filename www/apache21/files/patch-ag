@@ -1,16 +1,16 @@
-*** conf/httpd.conf-dist.orig	Wed Apr  1 17:16:39 1998
---- conf/httpd.conf-dist	Tue Apr 21 23:43:19 1998
+*** conf/httpd.conf-dist.orig	Thu May  7 01:12:39 1998
+--- conf/httpd.conf-dist	Fri Jun  5 19:34:17 1998
 ***************
-*** 42,48 ****
-  #  suggested workaround is to create a user www and use that user.
+*** 50,56 ****
+  #  don't use Group #-1 on these systems!
   
   User nobody
 ! Group #-1
   
   # ServerAdmin: Your address, where problems with the server should be
   # e-mailed.
---- 42,48 ----
-  #  suggested workaround is to create a user www and use that user.
+--- 50,56 ----
+  #  don't use Group #-1 on these systems!
   
   User nobody
 ! Group nogroup
@@ -18,7 +18,7 @@
   # ServerAdmin: Your address, where problems with the server should be
   # e-mailed.
 ***************
-*** 86,92 ****
+*** 94,100 ****
   # The location of the access logfile (Common Logfile Format).
   # If this does not start with /, ServerRoot is prepended to it.
   
@@ -26,7 +26,7 @@
   
   # If you would like to have an agent and referer logfile uncomment the
   # following directives.
---- 86,92 ----
+--- 94,100 ----
   # The location of the access logfile (Common Logfile Format).
   # If this does not start with /, ServerRoot is prepended to it.
   
@@ -35,7 +35,7 @@
   # If you would like to have an agent and referer logfile uncomment the
   # following directives.
 ***************
-*** 97,103 ****
+*** 105,111 ****
   # If you prefer a single logfile with access, agent and referer information
   # (Combined Logfile Format) you can use the following directive.
   
@@ -43,7 +43,7 @@
   
   # PidFile: The file the server should log its pid to
   PidFile logs/httpd.pid
---- 97,103 ----
+--- 105,111 ----
   # If you prefer a single logfile with access, agent and referer information
   # (Combined Logfile Format) you can use the following directive.
   
@@ -51,20 +51,3 @@
   
   # PidFile: The file the server should log its pid to
   PidFile logs/httpd.pid
-***************
-*** 106,112 ****
-  # Not all architectures require this.  But if yours does (you'll know because
-  # this file is created when you run Apache) then you *must* ensure that
-  # no two invocations of Apache share the same scoreboard file.
-! ScoreBoardFile logs/apache_runtime_status
-  
-  # The LockFile directive sets the path to the lockfile used when Apache
-  # is compiled with either USE_FCNTL_SERIALIZED_ACCEPT or
---- 106,112 ----
-  # Not all architectures require this.  But if yours does (you'll know because
-  # this file is created when you run Apache) then you *must* ensure that
-  # no two invocations of Apache share the same scoreboard file.
-! #ScoreBoardFile logs/apache_runtime_status
-  
-  # The LockFile directive sets the path to the lockfile used when Apache
-  # is compiled with either USE_FCNTL_SERIALIZED_ACCEPT or
