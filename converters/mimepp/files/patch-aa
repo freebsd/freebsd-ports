@@ -1,19 +1,26 @@
-*** makefile.unx	Tue Sep  2 19:28:33 1997
---- /home/andy/tmp/wrk/makefile.unx	Tue Sep 23 07:48:55 1997
-***************
-*** 26,32 ****
-  # C++ compiler flags (except -c, -I, -L, -l)
-  #
-  # Add -g here if you want debugger symbols included
-! CXXFLAGS =
-  
-  # The search path for include files. Change only if necessary.
-  INC_PATH = -I.
---- 26,32 ----
-  # C++ compiler flags (except -c, -I, -L, -l)
-  #
-  # Add -g here if you want debugger symbols included
-! CXXFLAGS = ${CFLAGS}
-  
-  # The search path for include files. Change only if necessary.
-  INC_PATH = -I.
+--- makefile-unix.orig	Wed Sep  1 17:14:36 1999
++++ makefile-unix	Thu Mar 30 21:23:08 2000
+@@ -19,19 +19,19 @@
+ 
+ ###### Tools
+ 
+-CXX = g++
++CXX ?= g++
+ AR = ar
+ RANLIB = ranlib
+ 
+ ###### Compiler/linker flags
+ 
+-DBG_CXX_FLAGS = -DDW_DEBUG_VERSION -g -fexceptions -I./src
++DBG_CXX_FLAGS = -DDW_DEBUG_VERSION ${CXXFLAGS} -I./src
+ DBG_LINK_FLAGS = 
+ 
+-DEV_CXX_FLAGS = -DDW_DEVELOPMENT_VERSION -g -fexceptions -I./src
++DEV_CXX_FLAGS = -DDW_DEVELOPMENT_VERSION ${CXXFLAGS} -I./src
+ DEV_LINK_FLAGS = 
+ 
+-REL_CXX_FLAGS = -DDW_PRODUCTION_VERSION -fexceptions -I./src
++REL_CXX_FLAGS = -DDW_PRODUCTION_VERSION ${CXXFLAGS} -I./src
+ REL_LINK_FLAGS = 
+ 
+ ###### Default target
