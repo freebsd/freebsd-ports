@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libchk
-PORTVERSION=	1.6
+PORTVERSION=	1.8
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.iDaemons.org/pub/distfiles/ \
 		${MASTER_SITE_LOCAL}
