@@ -1,5 +1,5 @@
---- b.c.orig	Fri Jan 20 00:38:25 1995
-+++ b.c	Sun Dec  3 09:58:21 2000
+--- b.c.orig	Fri Jan 20 02:38:25 1995
++++ b.c	Sun Feb 10 14:39:03 2002
 @@ -21,6 +21,9 @@
  #include <pwd.h>
  #endif
@@ -76,9 +76,12 @@
   return b;
   }
  
-@@ -1990,7 +2022,18 @@
+@@ -1988,9 +2020,20 @@
+ 
+ void ttsig(sig)
   {
-  long tim=time(0);
+- long tim=time(0);
++ time_t tim=time(0);
   B *b;
 - FILE *f=fopen("DEADJOE","a");
 + FILE *f;

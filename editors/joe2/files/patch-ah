@@ -1,0 +1,11 @@
+--- w.c.orig	Sun Feb 10 14:28:10 2002
++++ w.c	Sun Feb 10 14:29:15 2002
+@@ -594,7 +594,7 @@
+   else seth(original,original->h-height);
+ 
+  /* Create new keyboard handler for window */
+- if(watom->context) new->kbd=mkkbd(getcontext(watom->context));
++ if(watom->context) new->kbd=mkkbd(joegetcontext(watom->context));
+  else new->kbd=0;
+ 
+  /* Put window on the screen */
