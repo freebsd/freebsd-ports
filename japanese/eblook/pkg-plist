@@ -1,10 +1,7 @@
 bin/eblook
-@unexec install-info --delete %D/info/eblook.info %D/info/dir
-info/eblook.info
-@exec install-info %D/info/eblook.info %D/info/dir
-%%DOCDIR%%/AUTHORS
-%%DOCDIR%%/COPYING
-%%DOCDIR%%/ChangeLog
-%%DOCDIR%%/NEWS
-%%DOCDIR%%/README
-@dirrm %%DOCDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+@dirrm %%DOCSDIR%%
