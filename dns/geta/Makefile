@@ -8,7 +8,7 @@
 PORTNAME=	geta
 PORTVERSION=	19990419
 PORTREVISION=	1
-CATEGORIES=	net
+CATEGORIES=	dns
 MASTER_SITES=	ftp://ftp.kame.net/pub/kame/misc/
 DISTNAME=	pping-${PORTVERSION}
 

@@ -155,7 +155,6 @@
     SUBDIR += gatekeeper
     SUBDIR += generic-nqs
     SUBDIR += geotrace
-    SUBDIR += geta
     SUBDIR += ggsd
     SUBDIR += gicq
     SUBDIR += gift-fasttrack
