@@ -7,22 +7,23 @@
 #
 
 PORTNAME=	codeworker
-PORTVERSION=	3.3
-PORTREVISION=	1
+PORTVERSION=	3.8.2
 CATEGORIES=	devel
 MASTER_SITES=	http://codeworker.free.fr/downloads/
-DISTNAME=	CodeWorker_SRC${PORTVERSION:S/./_/}
+DISTNAME=	CodeWorker_SRC${PORTVERSION:S/./_/g}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A parsing tool and a source code generator
 
-PLIST_FILES=	bin/codeworker
+EXTRACT_BEFORE_ARGS=	-qo -aa
+
+WRKSRC=		${WRKDIR}/CodeWorker${PORTVERSION:S/./_/g}
+
 USE_ZIP=	yes
-USE_REINPLACE=	yes
-NO_WRKSUBDIR=	yes
-LDFLAGS+=	-lcompat
 USE_GMAKE=	yes
-MAKE_ENV=	LDFLAGS="${LDFLAGS}"
+MAKE_ARGS=	CC="${CXX}" CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" LFLAGS="-lm"
+
+PLIST_FILES=	bin/codeworker
 
 .include <bsd.port.pre.mk>
 
@@ -30,11 +31,9 @@ MAKE_ENV=	LDFLAGS="${LDFLAGS}"
 BROKEN=		"Does not compile on !i386"
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e "s|^CXXFLAGS|#CXXFLAGS|g" \
-		-e s"|LFLAGS|LDFLAGS|" -e "s|^LDFLAGS|#LDFLAGS|" \
-		-e "s|CC|CXX|g" -e "s|^CXX|#CXX|g" ${WRKSRC}/Makefile
-	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e "s|||"
+.if ${OSVERSION} < 500035
+CFLAGS+=	-fpermissive
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/codeworker ${PREFIX}/bin
