@@ -1,9 +1,9 @@
 -------------------------------------------------------------------------------
 You should now log into your normal user account and issue a
 
-	linux-epsxe_install
+	epsxe-install
 
-in order to create and populate ~/.ePSXe, needed to run the program.
+in order to create and populate ~/.epsxe, needed to run the program.
 
 To do anything useful with the emulator, you'll need a GPU and a SPU
 plugin (the Ports Collection contains a number of those), and a
@@ -19,7 +19,7 @@ you're legally entitled to do so.
 When you install a PSEmu Pro plugin from a FreeBSD port or package,
 you should re-run
 
-	linux-epsxe_install
+	epsxe-install
 
 in order to make the plugin available to ePSXe.
 -------------------------------------------------------------------------------

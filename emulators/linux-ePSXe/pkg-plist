@@ -1,14 +1,14 @@
-bin/linux-epsxe
-bin/linux-epsxe_install
-libexec/linux-epsxe
-share/linux-ePSXe/keycodes.lst
-share/linux-ePSXe/cheats/breath_of_fire_4_usa.cht
-share/linux-ePSXe/cheats/chrono_cross_ntsc.cht
-share/linux-ePSXe/cheats/tarzan_pal.cht
-%%PORTDOCS%%share/doc/linux-ePSXe/epsxe_en.txt
-%%PORTDOCS%%share/doc/linux-ePSXe/epsxe_linux_en.txt
-%%PORTDOCS%%share/doc/linux-ePSXe/epsxe_linux_sp.txt
-%%PORTDOCS%%share/doc/linux-ePSXe/epsxe_sp.txt
-@dirrm share/linux-ePSXe/cheats
-@dirrm share/linux-ePSXe
-%%PORTDOCS%%@dirrm share/doc/linux-ePSXe
+bin/epsxe
+bin/epsxe-install
+libexec/epsxe
+share/epsxe/keycodes.lst
+share/epsxe/cheats/breath_of_fire_4_usa.cht
+share/epsxe/cheats/chrono_cross_ntsc.cht
+share/epsxe/cheats/tarzan_pal.cht
+%%PORTDOCS%%%%DOCSDIR%%/epsxe_en.txt
+%%PORTDOCS%%%%DOCSDIR%%/epsxe_linux_en.txt
+%%PORTDOCS%%%%DOCSDIR%%/epsxe_linux_sp.txt
+%%PORTDOCS%%%%DOCSDIR%%/epsxe_sp.txt
+@dirrm share/epsxe/cheats
+@dirrm share/epsxe
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

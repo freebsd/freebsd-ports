@@ -1,16 +1,16 @@
 #!/bin/sh
-# linux-epsxe_install - linux-ePSXe user installation
+# epsxe-install - ePSXe user installation
 #
-# (c) 2002 Jean-Yves Lefort.
+# (c) 2002-2003 Jean-Yves Lefort.
 # All rights reserved.
 
 EPSXE=@EPSXE@
-SHAREDIR=@SHAREDIR@
+DATADIR=@DATADIR@
 PSEMUPRO_PLUGINS_DIR=@PSEMUPRO_PLUGINS_DIR@
 PSEMUPRO_CFGBINS_DIR=@PSEMUPRO_CFGBINS_DIR@
 PSEMUPRO_CFGFILES_DIR=@PSEMUPRO_CFGFILES_DIR@
 
-USERDIR=$HOME/.linux-ePSXe
+USERDIR=$HOME/.epsxe
 
 _mkdir () {
     if [ ! -e $1 ]; then
@@ -53,7 +53,7 @@ for f in				\
     cheats/breath_of_fire_4_usa.cht	\
     cheats/chrono_cross_ntsc.cht	\
     cheats/tarzan_pal.cht; do
-    _ln $SHAREDIR/$f $USERDIR/$f || exit $?
+    _ln $DATADIR/$f $USERDIR/$f || exit $?
 done
 
 for p in $PSEMUPRO_PLUGINS_DIR/*; do

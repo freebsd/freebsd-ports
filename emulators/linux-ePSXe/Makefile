@@ -5,18 +5,22 @@
 # $FreeBSD$
 #
 
-PORTNAME=	ePSXe
-PORTVERSION=	1.5.2
+PORTNAME=	epsxe
+PORTVERSION=	1.6.0
 CATEGORIES=	emulators linux
-MASTER_SITES=	http://download.epsxe.com/files/
+MASTER_SITES=	http://www.epsxe.com/files/
 PKGNAMEPREFIX=	linux-
-DISTNAME=	epsxe152lin
+DISTNAME=	epsxe160lin
 
 MAINTAINER=	jylefort@brutele.be
 COMMENT=	A Sony Playstation emulator (Linux version)
 
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk
+# The binary is built against glibc 2.3, so we need linux_base-8.
+RUN_DEPENDS=	${LINUXBASE}/lib/libc-2.3.2.so:${PORTSDIR}/emulators/linux_base-8 \
+		${LINUXBASE}/usr/X11R6/lib/libX11.so.6:${PORTSDIR}/x11/linux-XFree86-libs \
+		${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk
 
+USE_X_PREFIX=	yes
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 
@@ -28,45 +32,42 @@ STRIP=
 
 .include <bsd.port.pre.mk>
 
-EPSXE=		${PREFIX}/libexec/linux-epsxe
+EPSXE=		${PREFIX}/libexec/epsxe
 
-DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
-SHAREDIR=	${PREFIX}/share/${PKGNAMEPREFIX}${PORTNAME}
-
-PSEMUPRO_PLUGINS_DIR=	${LOCALBASE}/lib/linux-psemupro/plugins
-PSEMUPRO_CFGBINS_DIR=	${LOCALBASE}/libexec/linux-psemupro/cfg
-PSEMUPRO_CFGFILES_DIR=	${LOCALBASE}/share/linux-psemupro/cfg
+PSEMUPRO_PLUGINS_DIR=	${LOCALBASE}/lib/psemupro/plugins
+PSEMUPRO_CFGBINS_DIR=	${LOCALBASE}/libexec/psemupro/cfg
+PSEMUPRO_CFGFILES_DIR=	${LOCALBASE}/share/psemupro/cfg
 
 do-build:
 	${MKDIR} ${WRKSRC}/FreeBSD
 	${SED} \
 		-e "s,@EPSXE@,${EPSXE},g" \
-		-e "s,@SHAREDIR@,${SHAREDIR},g" \
+		-e "s,@DATADIR@,${DATADIR},g" \
 		-e "s,@PSEMUPRO_PLUGINS_DIR@,${PSEMUPRO_PLUGINS_DIR},g" \
 		-e "s,@PSEMUPRO_CFGBINS_DIR@,${PSEMUPRO_CFGBINS_DIR},g" \
 		-e "s,@PSEMUPRO_CFGFILES_DIR@,${PSEMUPRO_CFGFILES_DIR},g" \
-		${FILESDIR}/linux-epsxe_install.in \
-		>${WRKSRC}/FreeBSD/linux-epsxe_install
+		${FILESDIR}/epsxe-install.in \
+		>${WRKSRC}/FreeBSD/epsxe-install
 
 do-install:
 	${MKDIR} ${PREFIX}/bin
 	${INSTALL_SCRIPT} \
-		${FILESDIR}/linux-epsxe \
-		${WRKSRC}/FreeBSD/linux-epsxe_install \
+		${FILESDIR}/epsxe \
+		${WRKSRC}/FreeBSD/epsxe-install \
 		${PREFIX}/bin
 
 	${MKDIR} ${PREFIX}/libexec
 	${INSTALL_PROGRAM} ${WRKSRC}/epsxe ${EPSXE}
 
-	${MKDIR} ${SHAREDIR}
-	${INSTALL_DATA} ${WRKSRC}/keycodes.lst ${SHAREDIR}
+	${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/keycodes.lst ${DATADIR}
 
-	${MKDIR} ${SHAREDIR}/cheats
+	${MKDIR} ${DATADIR}/cheats
 	${INSTALL_DATA} \
 		${WRKSRC}/cheats/breath_of_fire_4_usa.cht \
 		${WRKSRC}/cheats/chrono_cross_ntsc.cht \
 		${WRKSRC}/cheats/tarzan_pal.cht \
-		${SHAREDIR}/cheats
+		${DATADIR}/cheats
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
