@@ -2,12 +2,14 @@
 teTeX
 @exec echo
 @exec echo "Final touch:"
-@exec echo "1. add /usr/local/teTeX/bin to PATH;"
-@exec echo "2. add /usr/local/teTeX/man to MANPATH;"
-@exec echo "3. add /usr/local/teTeX/info to INFOPATH;"
-@exec echo "4. run texconfig to adjust for your local environment;"
-@exec echo "5. chmod 1777 /usr/local/teTeX/texmf/fonts/{pk,tfm}"
+@exec echo "1. Add /usr/local/teTeX/bin to PATH."
+@exec echo "2. Add /usr/local/teTeX/man to MANPATH."
+@exec echo "3. Add /usr/local/teTeX/info to INFOPATH."
+@exec echo "4. Run texconfig to adjust for your local environment."
+@exec echo "5. Chmod 1777 /usr/local/teTeX/texmf/fonts/{pk,tfm}"
 @exec echo "   and all subdirectories if you didn't configure"
 @exec echo "   font generation to use a temporary directory."
+@exec echo "6. For further information have a look at"
+@exec echo "   /usr/local/teTeX/{FAQ-teTeX,TETEXDOC.dvi}."
 @exec echo
 @unexec rm -rf teTeX
