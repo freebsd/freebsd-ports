@@ -52,9 +52,9 @@
     SUBDIR += http-analyze
     SUBDIR += httperf
     SUBDIR += hypermail
-    SUBDIR += ijb
     SUBDIR += indexme
     SUBDIR += jesred
+    SUBDIR += junkbuster
     SUBDIR += kdreamsite
     SUBDIR += libghttp
     SUBDIR += libwww
