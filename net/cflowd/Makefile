@@ -7,7 +7,7 @@
 
 PORTNAME=	cflowd
 PORTVERSION=	2-1-b1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.caida.org/pub/cflowd/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -31,12 +31,6 @@ CONFIGURE_ARGS+=--enable-shared --with-artspp=${PREFIX}
 MANL=		cfdases.l cfdifmatrix.l cfdnets.l cfdnexthops.l \
 		cfdportmatrix.l cfdprotos.l cfdtos.l flowdump.l flowwatch.l
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
-
 .if !defined(CFLOWD_FLOWSCAN_PATCH)
 pre-everything::
 	@${ECHO} "you can compile cflowd with patches for FlowScan by typing:"
@@ -47,4 +41,4 @@ post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/cflowd.sh \
 		${PREFIX}/etc/rc.d/cflowd-base.sh.sample
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
