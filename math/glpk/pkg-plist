@@ -1,5 +1,4 @@
 bin/glpsol
-include/glpapi.h
 include/glpavl.h
 include/glpbbm.h
 include/glpchol.h
@@ -17,6 +16,7 @@ include/glpmat.h
 include/glpmps.h
 include/glpqmd.h
 include/glprsm.h
+include/glpspm.h
 include/glpspx.h
 include/glpstr.h
 include/glptext.h
