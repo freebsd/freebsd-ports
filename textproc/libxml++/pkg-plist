@@ -1,0 +1,6 @@
+bin/xml++-config
+include/xml++.h
+lib/libxml++.a
+lib/libxml++.so
+lib/libxml++.so.0
+share/aclocal/libxml++.m4
