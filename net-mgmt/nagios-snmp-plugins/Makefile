@@ -14,6 +14,7 @@ MAINTAINER=	bms@spc.org
 COMMENT=	Additional SNMP plugins for Nagios
 
 LIB_DEPENDS=    netsnmp.6:${PORTSDIR}/net-mgmt/net-snmp
+RUN_DEPENDS=	${LOCALBASE}/libexec/nagios:${PORTSDIR}/net-mgmt/nagios-plugins
 
 GNU_CONFIGURE=		yes
 USE_AUTOMAKE_VER=	14
