@@ -1,0 +1,37 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# Configure plgrenouille.
+#
+
+[ $# != 2 ] && exit 1
+[ -z "${PKG_PREFIX}" ] && exit 1
+
+PORTNAME=plgrenouille
+SPOOL_DIR=/var/spool/${PORTNAME}
+SPOOL_MODES=u+rw,go-rw
+SPOOL_USER=daemon
+
+case "$2" in
+POST-INSTALL)
+	if [ ! -d ${SPOOL_DIR} ]; then
+		mkdir -p ${SPOOL_DIR} &&
+		chmod ${SPOOL_MODES} ${SPOOL_DIR} &&
+		chown ${SPOOL_USER} ${SPOOL_DIR}
+	fi
+	[ -n "${BATCH}" ] && exit 0
+	[ -f ${PKG_PREFIX}/etc/rc.d/plgrenouille.sh ] &&
+	sh ${PKG_PREFIX}/etc/rc.d/plgrenouille.sh configure
+	;;
+DEINSTALL)
+	if [ -f ${PKG_PREFIX}/etc/rc.d/plgrenouille.sh ]; then
+		sh ${PKG_PREFIX}/etc/rc.d/plgrenouille.sh stop
+	fi
+	;;
+POST-DEINSTALL)
+	if [ -d ${SPOOL_DIR} ]; then
+		rm -rf ${SPOOL_DIR}
+	fi
+	;;
+esac

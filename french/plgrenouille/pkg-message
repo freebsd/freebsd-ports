@@ -1,0 +1,11 @@
+****  Avant d'executer ce client pour la premiere fois, assurez-vous de visiter
+      le site web du projet Grenouille et de vous y enregistrer.
+	(WWW: http://www.grenouille.com/ma_grenouille/).
+
+****  Ensuite, vous devez executer %%PREFIX%%/etc/rc.d/plgrenouille.sh configure
+      ou recopier le fichier de configuration %%PREFIX%%/etc/grenouillerc.sample
+      en %%PREFIX%%/etc/grenouillerc afin de l'editer manuellement.
+
+****  Notez qu'afin de pouvoir envoyer vos informations Grenouille au serveur
+      Grenouille, votre machine doit avoir un acces plus ou moins continu a
+      Internet au moyen d'une connection de type cable ou ADSL.
