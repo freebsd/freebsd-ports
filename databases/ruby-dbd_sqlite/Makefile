@@ -24,10 +24,20 @@ USE_RUBY_SETUP=	yes
 WRKSRC=		${RUBY_DBI_WRKSRC}
 CONFIGURE_ARGS=	--with=ext/${PORTNAME}
 
-post-patch:
-	${RUBY} -i- -pe 'gsub "/usr/local", "${LOCALBASE}"' \
-		${WRKSRC}/ext/dbd_sqlite/extconf.rb
+DOCS_EN=	ext/${PORTNAME}/README
 
 .include "${.CURDIR}/../ruby-dbi/Makefile.common"
+
+post-patch:
+	${RUBY} -i- -pe 'gsub "/usr/local", "${LOCALBASE}"' \
+		${WRKSRC}/ext/${PORTNAME}/extconf.rb
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${RUBY_DOCDIR}/${RUBY_DBI_PORTNAME}/${PORTNAME}
+.for f in ${DOCS_EN}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/${RUBY_DBI_PORTNAME}/${PORTNAME}/
+.endfor
+.endif
 
 .include <bsd.port.mk>

@@ -2,7 +2,7 @@
 
 RUBY_DBI_PORTNAME=	dbi
 # Don't forget to clear PORTREVISION's on update
-RUBY_DBI_VERSION=	0.0.11
+RUBY_DBI_VERSION=	0.0.12
 RUBY_DBI_PORTVERSION=	${RUBY_DBI_VERSION}
 RUBY_DBI_MASTER_SITES=	http://www.ruby-projects.org/downloads/dbi/
 RUBY_DBI_DISTNAME=	ruby-${RUBY_DBI_PORTNAME}-all-${PORTVERSION}
