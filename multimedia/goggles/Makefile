@@ -7,7 +7,7 @@
 
 PORTNAME=	goggles
 PORTVERSION=	0.7.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.fifthplanet.net/files/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.1//}
