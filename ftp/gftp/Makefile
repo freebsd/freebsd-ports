@@ -53,7 +53,7 @@ PLIST_SUB+=	NOX11:="@comment "
 PLIST_SUB+=	NOX11:=""
 .endif
 
-.if ${HAVE_GNOME:Mgnomelibs}!=""
+.if ${HAVE_GNOME:Mgnomelibs}!="" && !defined(WITH_GTK2)
 USE_GNOME+=	gnomeprefix gnomelibs
 PKGNAMESUFFIX+=	-gnome
 PLIST_SUB+=	DATADIR="share/gnome"
