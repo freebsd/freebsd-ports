@@ -406,7 +406,6 @@
     SUBDIR += ruby-rd-mode.el
     SUBDIR += ruby-rdoc
     SUBDIR += ruby-rdtool
-    SUBDIR += ruby-rexml
     SUBDIR += ruby-rss
     SUBDIR += ruby-rss.alt
     SUBDIR += ruby-rwv2

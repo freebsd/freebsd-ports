@@ -479,7 +479,6 @@
     SUBDIR += ruby-mnogosearch
     SUBDIR += ruby-nora
     SUBDIR += ruby-tmpl
-    SUBDIR += ruby-webrick
     SUBDIR += ruby-webunit
     SUBDIR += sarg
     SUBDIR += scoop

@@ -1,5 +1,0 @@
-druby (DRb) - distributed ruby. 
-DRb can be used to exchange messages among Ruby scripts.
-
-Author:	Masatoshi SEKI <m_seki@mva.biglobe.ne.jp>
-WWW:	http://www.ruby-lang.org/raa/list.rhtml?name=druby
