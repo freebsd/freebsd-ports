@@ -5,12 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	qt
-PORTVERSION=	3.13
-PORTREVISION=	1
+PORTVERSION=	3.14
+PORTREVISION=
 CATEGORIES=	x11-toolkits python
-MASTER_SITES=	http://www.river-bank.demon.co.uk/download/PyQt/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=lofi
+MASTER_SITES=	http://www.river-bank.demon.co.uk/download/PyQt/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	PyQt-x11-gpl-${PORTVERSION}
 
@@ -34,10 +32,10 @@ PLIST_SUB+=	GL=""
 .endif
 
 do-configure:
-	@(cd ${WRKSRC} && ${ECHO} "yes" | ${PYTHON_CMD} configure.py \
+	@( cd ${WRKSRC} && ${ECHO} "yes" | ${PYTHON_CMD} configure.py \
 		-b ${PREFIX}/bin -d ${PYTHONPREFIX_SITELIBDIR} \
 		-n ${X11BASE}/include -o ${X11BASE}/lib \
-		-v ${PREFIX}/share/sip)
+		-v ${PREFIX}/share/sip )
 
 .if ${OSVERSION} < 500000
 post-configure:

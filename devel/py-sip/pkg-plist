@@ -1,6 +1,10 @@
 bin/sip
+%%PORTDOCS%%%%DOCSDIR%%/default.css
+%%PORTDOCS%%%%DOCSDIR%%/sipref.html
+%%PORTDOCS%%%%DOCSDIR%%/sipref.txt
 %%PYTHON_INCLUDEDIR%%/sip.h
 %%PYTHON_SITELIBDIR%%/sip.so
 %%PYTHON_SITELIBDIR%%/sipconfig.py
 %%PYTHON_SITELIBDIR%%/sipconfig.pyc
 %%PYTHON_SITELIBDIR%%/sipconfig.pyo
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
