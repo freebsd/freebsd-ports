@@ -8,7 +8,7 @@ fi
 case "$1" in
 start)
 	if [ -x ${PREFIX}/sbin/msql2d ]; then
-		su -f -l msql -c "exec ${PREFIX}/sbin/msql2d" > /dev/null 2>&1 &
+		su -f msql -c "exec ${PREFIX}/sbin/msql2d" > /dev/null 2>&1 &
 		echo -n ' msql2'
 	fi
 	;;
