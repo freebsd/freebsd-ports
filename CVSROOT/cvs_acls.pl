@@ -118,7 +118,7 @@ print "$$ Repos: $repos\n","$$ ==== ",join("\n$$ ==== ",@ARGV),"\n" if $debug;
 exit 0 unless -e $cfg::AVAIL_FILE;
 
 # Suck in a list of committer groups from the avail file.
-open (AVAIL, $cfg::AVAIL_FILE) || die "Can't open $cfg::AVAIL_FILE!\n";
+open (AVAIL, $cfg::AVAIL_FILE) || die "open $cfg::AVAIL_FILE: $!\n";
 while (<AVAIL>) {
 	next unless /^group\|/;
 	chomp;
@@ -129,7 +129,7 @@ while (<AVAIL>) {
 close(AVAIL);
 
 
-open (AVAIL, $cfg::AVAIL_FILE) || die "Can't open $cfg::AVAIL_FILE!\n";
+open (AVAIL, $cfg::AVAIL_FILE) || die "open $cfg::AVAIL_FILE: $!\n";
 while (<AVAIL>) {
 	chomp;
 	next if /^\s*\#/;
