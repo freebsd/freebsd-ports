@@ -1,0 +1,58 @@
+diff -ur cutestuff.ori/openpgp/gpgop.cpp cutestuff/openpgp/gpgop.cpp
+--- cutestuff.ori/openpgp/gpgop.cpp	Tue Nov 18 18:07:55 2003
++++ cutestuff/openpgp/gpgop.cpp	Tue Nov 18 18:13:37 2003
+@@ -543,18 +543,33 @@
+ 		return false;
+ 
+ 	QStringList::ConstIterator it = lines.begin();
++	QString keyring;
++	int ver = 0;
+ 
+-	// first line is keyring file
+-	QString keyring = *(it++);
+-
+-	// skip past the divider
++	// check if gnupg version is 1.2.3 or below
+ 	for(; it != lines.end(); ++it) {
+-		if((*it).at(0) == '-')
+-			break;
++	   if((*it).at(0) == '-') {
++	      ver = 1;
++	      break;
++	   }
++	}
++	
++	it = lines.begin();
++
++	// if gnupg version is 1.2.2 and below first line is keyring
++	if(ver) {
++	   // first line is keyring file
++	   keyring = *(it++);
++
++	   // skip past the divider
++	   for(; it != lines.end(); ++it) {
++	      if((*it).at(0) == '-')
++		 break;
++	   }
++	   if(it == lines.end())
++	      return false;
++	   ++it;
+ 	}
+-	if(it == lines.end())
+-		return false;
+-	++it;
+ 
+ 	OpenPGP::Key *k = 0;
+ 	for(; it != lines.end(); ++it) {
+@@ -620,8 +635,9 @@
+ 
+ 	if(_keylist)
+ 		*_keylist = keyList;
+-	if(_keyring)
+-		*_keyring = keyring;
++	if(ver)
++	   if(_keyring)
++	      *_keyring = keyring;
+ 
+ 	return true;
+ }
