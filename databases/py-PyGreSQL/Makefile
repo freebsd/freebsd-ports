@@ -3,7 +3,7 @@
 # Date created:				6/25/1998
 # Whom:					n@nectar.com
 #
-# $Id: Makefile,v 1.2 1998/07/06 17:47:33 nectar Exp $
+# $Id: Makefile,v 1.3 1998/07/20 11:19:08 asami Exp $
 #
 
 DISTNAME=		PyGreSQL-2.1
@@ -17,6 +17,8 @@ MAINTAINER=		n@nectar.com
 BUILD_DEPENDS=		python:${PORTSDIR}/lang/python
 RUN_DEPENDS=		python:${PORTSDIR}/lang/python
 LIB_DEPENDS=		pq\\.1\\.:${PORTSDIR}/databases/postgresql
+
+BROKEN=			build
 
 WRKSRC=			${WRKDIR}
 HAS_CONFIGURE=		YES
