@@ -463,6 +463,7 @@
     SUBDIR += py-ansistyle
     SUBDIR += py-coro
     SUBDIR += py-cxx
+    SUBDIR += py-fileutils
     SUBDIR += py-game
     SUBDIR += py-grouch
     SUBDIR += py-htmlkit
