@@ -7,6 +7,7 @@
 
 PORTNAME=	kdesdk
 PORTVERSION=	${KDE_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
@@ -30,12 +31,6 @@ LDCONFIG_DIRS=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
-
-# Doesn't compile due to C++-unsafe header sys/wait.h.
-# XXX: Need to figure out when this actually happens.
-.if ${OSVERSION} > 500000
-WITHOUT_CERVISIA=	yes
-.endif # ${OSVERSION} > 500000
 
 .if defined(WITHOUT_CERVISIA)
 DO_NOT_COMPILE+=cervisia
