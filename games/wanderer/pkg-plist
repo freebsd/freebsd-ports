@@ -1,0 +1,67 @@
+@group games
+@mode 2555
+bin/wanderer
+@group
+@mode
+share/wanderer/screens/credits
+share/wanderer/screens/screen.1
+share/wanderer/screens/screen.10
+share/wanderer/screens/screen.11
+share/wanderer/screens/screen.12
+share/wanderer/screens/screen.13
+share/wanderer/screens/screen.14
+share/wanderer/screens/screen.15
+share/wanderer/screens/screen.16
+share/wanderer/screens/screen.17
+share/wanderer/screens/screen.18
+share/wanderer/screens/screen.19
+share/wanderer/screens/screen.2
+share/wanderer/screens/screen.20
+share/wanderer/screens/screen.21
+share/wanderer/screens/screen.22
+share/wanderer/screens/screen.23
+share/wanderer/screens/screen.24
+share/wanderer/screens/screen.25
+share/wanderer/screens/screen.26
+share/wanderer/screens/screen.27
+share/wanderer/screens/screen.28
+share/wanderer/screens/screen.29
+share/wanderer/screens/screen.3
+share/wanderer/screens/screen.30
+share/wanderer/screens/screen.31
+share/wanderer/screens/screen.32
+share/wanderer/screens/screen.33
+share/wanderer/screens/screen.34
+share/wanderer/screens/screen.35
+share/wanderer/screens/screen.36
+share/wanderer/screens/screen.37
+share/wanderer/screens/screen.38
+share/wanderer/screens/screen.39
+share/wanderer/screens/screen.4
+share/wanderer/screens/screen.40
+share/wanderer/screens/screen.41
+share/wanderer/screens/screen.42
+share/wanderer/screens/screen.43
+share/wanderer/screens/screen.44
+share/wanderer/screens/screen.45
+share/wanderer/screens/screen.46
+share/wanderer/screens/screen.47
+share/wanderer/screens/screen.48
+share/wanderer/screens/screen.49
+share/wanderer/screens/screen.5
+share/wanderer/screens/screen.50
+share/wanderer/screens/screen.51
+share/wanderer/screens/screen.52
+share/wanderer/screens/screen.53
+share/wanderer/screens/screen.54
+share/wanderer/screens/screen.55
+share/wanderer/screens/screen.56
+share/wanderer/screens/screen.57
+share/wanderer/screens/screen.58
+share/wanderer/screens/screen.59
+share/wanderer/screens/screen.6
+share/wanderer/screens/screen.60
+share/wanderer/screens/screen.61
+@dirrm share/wanderer/screens
+@dirrm share/wanderer
+@cwd /var/games
