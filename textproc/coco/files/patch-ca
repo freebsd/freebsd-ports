@@ -1,0 +1,26 @@
+Cannot view a gzpipped info file in mule Info-mode
+when the next line is in ~/.emacs:
+  (set-default-process-coding-system *autoconv*unix *junet*)
+
+--- lisp/info.el.save	Thu Jan  6 17:26:03 2000
++++ lisp/info.el	Wed Feb 19 15:17:14 2000
+@@ -204,12 +204,13 @@
+ 	     (jka-compr-installed-p)
+ 	     (jka-compr-get-compression-info fullname))
+ 	(setq decoder nil))
+-    (insert-file-contents fullname visit)
+-    (if decoder
+-	(let ((buffer-read-only nil)
+-	      (default-directory (or (file-name-directory fullname)
+-				     default-directory)))
+-	  (call-process-region (point-min) (point-max) decoder t t)))))
++    (cond (decoder
++	   (let ((buffer-read-only nil)
++		 (default-directory (or (file-name-directory fullname)
++					default-directory)))
++	     (call-process decoder fullname t) ))
++	  (t
++	   (insert-file-contents fullname visit) ))))
+ 
+ ;;;###autoload (add-hook 'same-window-buffer-names "*info*")
+ 
