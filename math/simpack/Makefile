@@ -14,6 +14,8 @@ DISTFILES=	SimPack3.tar.Z
 MAINTAINER=	rssh@cki.ipri.kiev.ua
 COMMENT=	SimPack & Sim++ libraries and tools for simulatiom modelling
 
+BROKEN=		"Does not install/compile"
+
 BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake-4
 
 USE_XLIB=	yes
