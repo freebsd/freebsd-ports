@@ -1,11 +1,13 @@
---- src/observator.cpp.orig	Sat Jun 12 17:53:26 2004
-+++ src/observator.cpp	Sat Jun 12 17:53:50 2004
-@@ -166,25 +166,21 @@
- // Fixed 31-05-2004 Now use the extern variables set by tzset()
- float Observator::get_GMT_shift_from_system(double JD) const
- {
--	return -(float)timezone/3600 + (daylight!=0);
+--- src/observator.cpp.orig	Sat Jan 15 03:19:14 2005
++++ src/observator.cpp	Sat Jan 15 03:20:57 2005
+@@ -174,27 +174,23 @@
+ 	// + (timeinfo->tm_isdst!=0);
+ 	// only tells if dst is in effect for actual time, not drawn time
+ #else
+-	return -(float)timezone/3600;
+ 	// no portable dst method implemented yet, so just standard time for all platforms
  
+ #endif
  	
 -/*	time_t rawtime = get_time_t_from_julian(JD);
 +	time_t rawtime = get_time_t_from_julian(JD);
