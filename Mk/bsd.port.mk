@@ -950,6 +950,9 @@ PKG_IGNORE_DEPENDS?=	'^XFree86-3\.'
 .else
 .if defined(USE_IMAKE)
 BUILD_DEPENDS+=			imake:${PORTSDIR}/devel/imake-4
+.if ${XFREE86_VERSION} == 4
+RUN_DEPENDS+=			mkhtmlindex:${PORTSDIR}/devel/imake-4
+.endif
 .endif
 .if defined(USE_XPM) || defined(USE_DGS)
 USE_XLIB=				yes
@@ -1019,6 +1022,10 @@ LIB_DEPENDS+=	X11.6:${PORTSDIR}/x11/XFree86
 .else
 LIB_DEPENDS+=	X11.6:${PORTSDIR}/x11/XFree86-4-libraries
 .endif
+# Add explicit X options to avoid problems with false positives in configure
+.if defined(GNU_CONFIGURE)
+CONFIGURE_ARGS+=--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
+.endif
 .endif
 
 .include "${PORTSDIR}/Mk/bsd.gnome.mk"
@@ -1058,6 +1065,7 @@ AUTOIFNAMES?=		ifnames213
 AUTOCONF_DIR?=		${LOCALBASE}/share/autoconf213/autoconf
 LIBTOOL?=		libtool
 XMKMF?=			xmkmf -a
+MKHTMLINDEX?=		mkhtmlindex
 .if exists(/sbin/md5)
 MD5?=			/sbin/md5
 .elif exists(/bin/md5)
@@ -1810,6 +1818,12 @@ __ARCH_OK?=     1
 .undef __ARCH_OK
 .endif
 .endfor
+.if defined(MLINKS)
+	@${ECHO} ${MLINKS} | ${AWK} \
+	'{ for (i=1; i<=NF; i++) { \
+		if (i % 2 == 0) { printf "lib/X11/doc/html/%s.html\n", $$i } \
+	} }' >> ${TMPPLIST}
+.endif
 .endif
 
 .if !defined(__ARCH_OK)
@@ -2245,11 +2259,17 @@ do-install:
 	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
 .if defined(USE_IMAKE) && !defined(NO_INSTALL_MANPAGES)
 	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install.man)
+.if ${XFREE86_HTML_MAN:L} == yes
+	@${MKHTMLINDEX} ${PREFIX}/lib/X11/doc/html
+.endif
 .endif
 .else defined(USE_GMAKE)
 	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
 .if defined(USE_IMAKE) && !defined(NO_INSTALL_MANPAGES)
 	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install.man)
+.if ${XFREE86_HTML_MAN:L} == yes
+	@${MKHTMLINDEX} ${PREFIX}/lib/X11/doc/html
+.endif
 .endif
 .endif
 .endif
@@ -3297,6 +3317,8 @@ generate-plist:
 	@echo lib/X11/doc/html/${man}.html >> ${TMPPLIST}
 .endfor
 .endfor
+	@${ECHO} "@unexec %D/bin/mkhtmlindex %D/lib/X11/doc/html" >> ${TMPPLIST}
+	@${ECHO} "@exec %D/bin/mkhtmlindex %D/lib/X11/doc/html" >> ${TMPPLIST}
 .endif
 .endfor
 	@${SED} ${PLIST_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} ${PLIST} >> ${TMPPLIST}
