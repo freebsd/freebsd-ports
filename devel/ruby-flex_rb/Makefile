@@ -24,6 +24,12 @@ INSTALL_TARGET=	site-install
 DOCS=		README
 EXAMPLES=	examples/*.rb test*.rb
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 post-patch:
 	${RUBY} -i -pe 'gsub /-ansi\b/, ""' ${WRKSRC}/${RUBY_EXTCONF}
 
@@ -39,4 +45,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
