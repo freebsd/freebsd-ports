@@ -1,8 +1,8 @@
 msmtp -- An SMTP client 
 
-Is an SMTP client that can be used as an "SMTP plugin" for Mutt and probably 
-other MUAs (mail user agents). It forwards mails to an SMTP server (for 
-example at a free mail provider) which does the delivery.
+msmtp is an SMTP client that can be used as an "SMTP plugin" for Mutt and
+probably other MUAs (mail user agents). It forwards mails to an SMTP server
+(for example at a free mail provider) which does the delivery.
 To use this program, create a configuration file with your mail account(s) and 
 tell your MUA to call msmtp instead of /usr/sbin/sendmail.
 
