@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	spambnc
-PORTVERSION=	20040204
+PORTVERSION=	20040211
 CATEGORIES=	mail
 MASTER_SITES=	http://www.spambouncer.org/	\
 		ftp://ftp.spambouncer.org/
-DISTFILES=	sb.tar.Z index.shtml
+DISTFILES=	sb.tar.gz index.shtml
 DIST_SUBDIR=	spambnc-${PORTVERSION}
-EXTRACT_ONLY=	sb.tar.Z
+EXTRACT_ONLY=	sb.tar.gz
 
 MAINTAINER=	thierry@pompo.net
 COMMENT=	Set of procmail recipies which handle known/suspected spam
