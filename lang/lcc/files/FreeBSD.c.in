@@ -16,8 +16,8 @@ char *cpp[] = {
 	"/usr/libexec/cpp",
 	"-nostdinc", "-lang-c", "-U__GNUC__",
 	"-D_POSIX_SOURCE", "-D__STDC__", "-D__STRICT_ANSI__",
-	"-Dunix", "-Di386", "-DFreeBSD",
-	"-D__unix__", "-D__i386__", "-D__FreeBSD__",
+	"-Dunix", "-Di!!ARCH!!", "-DFreeBSD",
+	"-D__unix__", "-D__!!ARCH!!__", "-D__FreeBSD__",
 	"$1", "$2", "$3", 0};
 
 char *lcc_ritchey_cpp[] = {
@@ -27,7 +27,7 @@ char *lcc_ritchey_cpp[] = {
 	"-U__GNUC__",
 	"-Dunix", "-D__unix__",
 	"-DFreeBSD", "-D__FreeBSD__",
-	"-Di386", "-D__i386__",
+	"-D!!ARCH!!", "-D__!!ARCH!!__",
 	"-Dx86", "-D__x86__",
 	"$1", "$2", "$3", 0
 };
