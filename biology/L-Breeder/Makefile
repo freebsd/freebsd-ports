@@ -16,6 +16,8 @@ MAINTAINER=	dyeske@yahoo.com
 
 LIB_DEPENDS=	wx_gtk-2.2_gl.2:${PORTSDIR}/x11-toolkits/wxgtk
 
+BROKEN=		Unknown problem
+
 WRKSRC=		${WRKDIR}/LBreeder/LBreeder
 PATCH_WRKSRC=	${WRKDIR}/LBreeder
 
