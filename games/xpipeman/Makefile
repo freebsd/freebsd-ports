@@ -3,16 +3,17 @@
 # Date created:         2 Jan 1995
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.8 1997/01/03 09:37:38 obrien Exp $
+# $Id: Makefile,v 1.9 1997/07/21 19:36:27 max Exp $
 #
 
 DISTNAME=       xpipeman
 PKGNAME=        xpipeman-1.0
 CATEGORIES=	games
-MASTER_SITES=	ftp://iraun1.ira.uka.de/pub/x11/
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	games/strategy
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	swallace@FreeBSD.org
+MAINTAINER=	jseger@FreeBSD.org
 
 USE_IMAKE=	yes
 

@@ -1,15 +1,15 @@
-*** Imakefile.orig	Fri Sep 13 13:32:10 1991
---- Imakefile	Mon Jan  2 23:49:42 1995
+*** Imakefile.orig	Tue Jul 28 19:56:27 1992
+--- Imakefile	Sun Apr 12 12:09:36 1998
 ***************
 *** 1,5 ****
   
-!      SCORE_FILE = -DSCORE_FILE=\"./xpipescores\"
+!      SCORE_FILE = -DSCORE_FILE=\"/usr/games/lib/xpipescores\"
         MAXSCORES = -DMAXSCORES=20
-          DEFINES = $(SCORE_FILE) $(MAXSCORES)
+          DEFINES = $(SCORE_FILE) $(MAXSCORES) -DSYSV
   
 --- 1,5 ----
   
 !      SCORE_FILE = -DSCORE_FILE=\"/usr/X11R6/lib/X11/xpipescores\"
         MAXSCORES = -DMAXSCORES=20
-          DEFINES = $(SCORE_FILE) $(MAXSCORES)
+          DEFINES = $(SCORE_FILE) $(MAXSCORES) -DSYSV
   
