@@ -8964,6 +8964,7 @@ sting		ports/net-mgmt/sting
 stk		ports/lang/STk
 stklos		ports/lang/stklos
 stldoc		ports/lang/stldoc
+stlfilt		ports/devel/stlfilt
 stlport		ports/devel/stlport
 stlport-icc	ports/devel/stlport-icc
 stmpclean	ports/sysutils/stmpclean
