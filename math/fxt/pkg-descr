@@ -1,0 +1,13 @@
+fxt is a library package (coming as C++ source code) containing code various
+algorithms for:
+   - Fast Fourier Transform (FFT) incl. real-vlued,
+   - multidimensional and weighted variants.
+   - Fast Hartley Transform (FHT)
+   - Number Theoretic Transform (NTT), Fast Walsh Transform.
+   - Convolution (cyclic, linear and weighted),
+   - correlation and power spectrum.
+   - Fast Haar Transform, Fast Wavelet Transform
+   - Mass storage convolution and fast multiplication routines.
+   - Sine- and cosine transform (DCT, DST), Fast Z-Transform (FZT)
+
+WWW: http://www.jjj.de/fxt/

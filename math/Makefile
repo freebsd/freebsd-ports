@@ -25,6 +25,7 @@
     SUBDIR += fftw
     SUBDIR += freefem
     SUBDIR += fudgit
+    SUBDIR += fxt
     SUBDIR += geg
     SUBDIR += gexpr
     SUBDIR += glove

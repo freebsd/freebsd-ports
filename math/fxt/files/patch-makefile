@@ -1,0 +1,14 @@
+--- makefile.orig	Wed Nov 28 11:53:26 2001
++++ makefile	Wed Nov 28 11:54:18 2001
+@@ -441,9 +441,9 @@
+ install: lib
+ 	@echo 'PREFIX=$(PREFIX)  LIBDIR=$(LIBDIR)  INCDIR=$(INCDIR)'
+ 	@test -d $(LIBDIR)  ||  mkdir $(LIBDIR)
+-	cp -auv $(FXTLIB) $(LIBDIR)/
++	${INSTALL_PROGRAM} $(FXTLIB) $(LIBDIR)/
+ 	@test -d $(INCDIR)  ||  mkdir $(INCDIR)
+-	@cp -auv $(FXTHDRS) $(INCDIR)/
++	@${INSTALL_DATA} $(FXTHDRS) $(INCDIR)/
+ 
+ .PHONY: uninstall  ## opposite of install ;-)
+ uninstall:
