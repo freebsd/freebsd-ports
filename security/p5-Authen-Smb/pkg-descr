@@ -1,0 +1,4 @@
+Authen::Smb allows you to authenticate users against an NT server.  See
+Smb.pm POD documentation for details.
+
+WWW: http://search.cpan.org/author/PMKANE/Authen-Smb-0.91/

@@ -1,0 +1,8 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Authen/Smb.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Authen/Smb/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Authen/Smb/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Authen/Smb/Smb.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Authen/Smb/Smb.so
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Authen/Smb
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Authen 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Authen 2>/dev/null || true
