@@ -34,6 +34,12 @@ CONFIGURE_ARGS=	--enable-all-plugins \
 
 MAN1=		enfle.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501113
+BROKEN=		"Does not compile on ${OSVERSION}"
+.endif
+
 post-patch:
 	${PERL} -pi -e 's/^(.*_la_LDFLAGS = -module)$$/\1 -avoid-version/' \
 		${WRKSRC}/plugins/*/*/Makefile.in
@@ -41,4 +47,4 @@ post-patch:
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/enfle.1 ${PREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
