@@ -7,17 +7,58 @@
 
 PORTNAME=	samba
 PORTVERSION=	3.0.2.a
-PORTREVISION=	1
-PORTEPOCH=	1
-CATEGORIES=	net
+PORTREVISION?=	1
+PORTEPOCH?=	1
+CATEGORIES?=	net
 MASTER_SITES=	${MASTER_SITE_SAMBA}
 MASTER_SITE_SUBDIR=	. rc
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/:S/.a/a/}
 
-MAINTAINER=	timur@gnu.org
-COMMENT=	A free SMB and CIFS client and server for UNIX
+MAINTAINER?=	timur@gnu.org
+COMMENT?=	A free SMB and CIFS client and server for UNIX
 
-CONFLICTS=	ja-samba-2.* samba-2.* sharity-light-1.* samba-libsmbclient-3.*
+CONFLICTS?=	ja-samba-2.* samba-2.* sharity-light-1.* samba-libsmbclient-3.*
+
+USE_BZIP2=	yes
+# directories
+VARDIR=		${DESTDIR}/var
+SAMBA_SPOOL?=	${VARDIR}/spool/samba
+SAMBA_LOGDIR=	${VARDIR}/log/samba
+SAMBA_RUNDIR=	${VARDIR}/run
+SAMBA_PRIVATE?=	${PREFIX}/private
+SAMBA_CONFDIR?=	${PREFIX}/etc
+SAMBA_SWATDIR=	${PREFIX}/share/swat
+SAMBA_LIBDIR=	${PREFIX}/lib
+DOCSDIR?=	${PREFIX}/share/doc/samba
+EXAMPLESDIR?=	${PREFIX}/share/examples/samba
+RC_DIR?=	${SAMBA_CONFDIR}/rc.d
+SAMBA_CONFIG=	${SAMBA_CONFDIR}/smb.conf
+
+CONFIGURE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include \
+		LDFLAGS=-L${LOCALBASE}/lib
+
+CONFIGURE_ARGS+=--exec-prefix=${PREFIX} \
+		--libdir=${SAMBA_LIBDIR}/samba \
+		--localstatedir=${VARDIR} \
+		--with-configdir=${SAMBA_CONFDIR} \
+		--with-swatdir=${SAMBA_SWATDIR} \
+		--with-sambabook=${SAMBA_SWATDIR}/using_samba \
+		--with-lockdir=${SAMBA_SPOOL} --with-piddir=${SAMBA_RUNDIR} \
+		--with-privatedir=${SAMBA_PRIVATE} \
+		--with-logfilebase=${SAMBA_LOGDIR} \
+		--with-manpages-langs=en
+
+WRKSRC=		${WRKDIR}/${DISTNAME}/source
+
+# SUBPORTS end here
+.if defined(SAMBA_SUBPORT)
+.include <bsd.port.mk>
+.else
+
+NO_LATEST_LINK=	yes
+INSTALLS_SHLIB=	yes
+USE_RC_SUBR=	yes
+USE_AUTOCONF_VER=	253
 
 OPTIONS=	CUPS		"With CUPS printing support" on \
 		LDAP		"With LDAP support" on \
@@ -37,41 +78,10 @@ OPTIONS=	CUPS		"With CUPS printing support" on \
 		LIBICONV	"With installed ICONV library" off \
 		POPT		"With installed POPT library" on
 
-USE_BZIP2=	yes
-USE_RC_SUBR=	yes
-NO_LATEST_LINK=	yes
-INSTALLS_SHLIB=	yes
-USE_AUTOCONF_VER=	253
-
-# directories
-VARDIR=		${DESTDIR}/var
-SAMBA_SPOOL?=	${VARDIR}/spool/samba
-SAMBA_LOGDIR=	${VARDIR}/log/samba
-SAMBA_RUNDIR=	${VARDIR}/run
-SAMBA_PRIVATE?=	${PREFIX}/private
-SAMBA_CONFDIR?=	${PREFIX}/etc
-SAMBA_SWATDIR=	${PREFIX}/share/swat
-SAMBA_LIBDIR=	${PREFIX}/lib
-DOCSDIR?=	${PREFIX}/share/doc/samba
-EXAMPLESDIR?=	${PREFIX}/share/examples/samba
-RC_DIR?=	${SAMBA_CONFDIR}/rc.d
-SAMBA_CONFIG=	${SAMBA_CONFDIR}/smb.conf
-
-CONFIGURE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include \
-		LDFLAGS=-L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--exec-prefix=${PREFIX} \
-		--libdir=${SAMBA_LIBDIR}/samba \
-		--localstatedir=${VARDIR} \
-		--with-configdir=${SAMBA_CONFDIR} \
-		--with-swatdir=${SAMBA_SWATDIR} \
-		--with-sambabook=${SAMBA_SWATDIR}/using_samba \
-		--with-lockdir=${SAMBA_SPOOL} --with-piddir=${SAMBA_RUNDIR} \
-		--with-privatedir=${SAMBA_PRIVATE} \
-		--with-logfilebase=${SAMBA_LOGDIR} \
-		--with-pam --with-readline --with-libsmbclient \
-		--with-manpages-langs=en
-
 .include <bsd.port.pre.mk>
+
+CONFIGURE_ARGS+=	--with-pam --with-readline \
+			--with-libsmbclient
 
 .if defined(WITH_PYTHON)
 USE_PYTHON=		2.1+
@@ -233,8 +243,6 @@ LIB_DEPENDS+=		popt.0:${PORTSDIR}/devel/popt
 CONFIGURE_ARGS+=	--with-included-popt
 .endif
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/source
-
 MLINKS=		samba.7 Samba.7
 MAN1=		findsmb.1 nmblookup.1 log2pcap.1 rpcclient.1 \
 		smbget.1 smbcacls.1 smbclient.1 smbcontrol.1 smbsh.1 \
@@ -356,3 +364,5 @@ post-install:
 .endif
 
 .include <bsd.port.post.mk>
+
+.endif

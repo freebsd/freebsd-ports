@@ -1,3 +1,4 @@
 include/libsmbclient.h
+lib/libsmbclient.a
 lib/libsmbclient.so
 lib/libsmbclient.so.0
