@@ -10,13 +10,18 @@ PORTVERSION=	1.1.0.20000207
 CATEGORIES=	lang tk80
 MASTER_SITES=	ftp://ftp.mozart-oz.org/pub/mozart/${PORTVERSION}/tar/ \
 		ftp://ftp.sics.se/pub/mozart/${PORTVERSION}/tar/
-EXTRACT_SUFX=	-src.tar.gz
+DISTFILES=	${DISTNAME}-src.tar.gz ${MOZART_DOCS}
+.if !defined(NOPORTDOCS)
+DISTFILES+=	${MOZART_DOCS}
+.endif
 
 MAINTAINER=	mathiasp@virtual-earth.de
 
 BUILD_DEPENDS=	xemacs:${PORTSDIR}/editors/xemacs21
 LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm \
 		tk80.1:${PORTSDIR}/x11-toolkits/tk80
+
+MOZART_DOCS=	mozart-1.1.0.20000207-doc.tar.gz
 
 SCRIPTS_ENV=	LN=${LN} PERL=${PERL}
 ALL_TARGET=
@@ -46,6 +51,13 @@ pre-extract:
 	@${ECHO}
 
 post-install:
-	@cat ${PKGMESSAGE}
+.if !defined(NOPORTDOCS)
+	${TAR} --unlink -xzpf ${DISTDIR}/${MOZART_DOCS} \
+		-C ${PREFIX}/lib/oz
+	${RM} -rf ${PREFIX}/lib/oz/doc
+	${MV} ${PREFIX}/lib/oz/mozart/doc ${PREFIX}/lib/oz
+	${RM} -rf ${PREFIX}/lib/oz/mozart
+.endif
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

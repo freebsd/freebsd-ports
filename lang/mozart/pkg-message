@@ -1,4 +1,3 @@
-
 --------------------------------------------------
 
 If you have both emacs and xemacs installed,
@@ -6,4 +5,3 @@ set OZEMACS=xemacs in your .profile or .login
 to choose xemacs over emacs.
 
 --------------------------------------------------
-
