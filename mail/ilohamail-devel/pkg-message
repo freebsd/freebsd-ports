@@ -1,0 +1,41 @@
+==========================================================================
+IlohaMail has now been installed.
+
+Create a redirect one of the following methods:
+ - add an alias to apache's httpd.conf pointing to %%ILOHADIR%%/source
+ - create a VirtualHost with DocumentRoot set to %%ILOHADIR%%/source
+ - make a symbolic link to %%ILOHADIR%%/source
+
+Check your PHP.ini file.  You need:
+ - short_open_tag = On
+ - file_uploads = On
+
+Edit %%ILOHADIR%%/conf/conf.inc and
+%%ILOHADIR%%/conf/login.inc files as necessary.
+
+Using the MySQL back-end is also recommended.
+
+  1. Create database user who has rights on webmail database manipulation
+     by following "sample" mysql commands:
+
+     $ mysql -u root -p
+     mysql> use mysql;
+     mysql> grant select,insert,update,delete,index,
+         -> alter,create,drop,references, lock tables,
+         -> create temporary tables on webmail.* to webmail@localhost
+         -> identified by 'password';
+     mysql> flush privileges;
+
+  2. Create a MySQL database.
+     $ mysqladmin create webmail
+
+  3. Create tables.
+     $ mysql webmail < %%DATADIR%%/MySQL/sql
+
+  4. Configure %%ILOHADIR%%/conf/db_conf.php.
+
+  5. Set value of $backend in %%ILOHADIR%%/conf/conf.inc from "FS" to "DB".
+
+For more complete database setup, post-installation instructions
+please read IlohaMail Guide in %%DOCSDIR%%/Manual.
+==========================================================================
