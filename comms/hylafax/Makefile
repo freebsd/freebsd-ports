@@ -71,6 +71,12 @@ MAN8=	cqtest.8c choptest.8c dialtest.8c faxabort.8c faxaddmodem.8c \
 SUID_EXES=	${PREFIX}/sbin/faxgetty ${PREFIX}/sbin/faxq \
 		${PREFIX}/bin/faxrm ${PREFIX}/bin/faxalter
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Configure fails on FreeBSD >= 5.x"
+.endif
+
 pre-extract:
 	@if [ -d /var/db/pkg/tiff-3.6.1 ]; then \
 		${ECHO_MSG} ""; \
@@ -100,4 +106,4 @@ post-install:
 	fi
 	@${SED} 's^/usr/local^${PREFIX}^g' < ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
