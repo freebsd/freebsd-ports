@@ -1,0 +1,10 @@
+--- src/kvirc/kvi_systray.h	Mon Dec 20 10:28:58 1999
++++ src/kvirc/kvi_systray.h	Sat Apr 15 03:16:04 2000
+@@ -27,6 +27,7 @@
+
+ #include <qwidget.h>
+ #include <qpixmap.h>
++#include <qlist.h>
+
+ //#warning "Check <time.h> localtime() gmtime() time() in configure"
+ #include <time.h>
