@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Hash/Merge.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash/Merge/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash/Merge
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash 2>/dev/null || true
+@dirrm %%SITE_PERL%%/Hash
+@unexec rmdir %D/%%SITE_PERL%%/Hash 2>/dev/null || true
