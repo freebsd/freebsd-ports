@@ -6,10 +6,9 @@
 #
 
 PORTNAME=       dillo
-PORTVERSION=	0.6.6
+PORTVERSION=	0.7.0
 CATEGORIES=     www
-MASTER_SITES=	http://dillo.auriga.wearlab.de/download/ \
-		ftp://ftp.nuug.no/pub/anders/distfiles/
+MASTER_SITES=	http://dillo.auriga.wearlab.de/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fast, small graphical Web browser built upon GTK+
