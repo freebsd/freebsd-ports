@@ -31,6 +31,61 @@ lib/tkstep8.0jp/button.tcl
 lib/tkstep8.0jp/clrpick.tcl
 lib/tkstep8.0jp/comdlg.tcl
 lib/tkstep8.0jp/console.tcl
+lib/tkstep8.0jp/demos.jp/README
+lib/tkstep8.0jp/demos.jp/README.JP
+lib/tkstep8.0jp/demos.jp/arrow.tcl
+lib/tkstep8.0jp/demos.jp/bind.tcl
+lib/tkstep8.0jp/demos.jp/bitmap.tcl
+lib/tkstep8.0jp/demos.jp/browse
+lib/tkstep8.0jp/demos.jp/button.tcl
+lib/tkstep8.0jp/demos.jp/cfont.tcl
+lib/tkstep8.0jp/demos.jp/check.tcl
+lib/tkstep8.0jp/demos.jp/clrpick.tcl
+lib/tkstep8.0jp/demos.jp/colors.tcl
+lib/tkstep8.0jp/demos.jp/cscroll.tcl
+lib/tkstep8.0jp/demos.jp/ctext.tcl
+lib/tkstep8.0jp/demos.jp/dialog1.tcl
+lib/tkstep8.0jp/demos.jp/dialog2.tcl
+lib/tkstep8.0jp/demos.jp/dragtest
+lib/tkstep8.0jp/demos.jp/droptest
+lib/tkstep8.0jp/demos.jp/entry1.tcl
+lib/tkstep8.0jp/demos.jp/entry2.tcl
+lib/tkstep8.0jp/demos.jp/filebox.tcl
+lib/tkstep8.0jp/demos.jp/floor.tcl
+lib/tkstep8.0jp/demos.jp/form.tcl
+lib/tkstep8.0jp/demos.jp/hello
+lib/tkstep8.0jp/demos.jp/hscale.tcl
+lib/tkstep8.0jp/demos.jp/icon.tcl
+lib/tkstep8.0jp/demos.jp/image1.tcl
+lib/tkstep8.0jp/demos.jp/image2.tcl
+lib/tkstep8.0jp/demos.jp/imagedrop
+lib/tkstep8.0jp/demos.jp/items.tcl
+lib/tkstep8.0jp/demos.jp/ixset
+lib/tkstep8.0jp/demos.jp/label.tcl
+lib/tkstep8.0jp/demos.jp/license.terms
+lib/tkstep8.0jp/demos.jp/menu.tcl
+lib/tkstep8.0jp/demos.jp/menubu.tcl
+lib/tkstep8.0jp/demos.jp/msgbox.tcl
+lib/tkstep8.0jp/demos.jp/plot.tcl
+lib/tkstep8.0jp/demos.jp/puzzle.tcl
+lib/tkstep8.0jp/demos.jp/radio.tcl
+lib/tkstep8.0jp/demos.jp/rmt
+lib/tkstep8.0jp/demos.jp/rolodex
+lib/tkstep8.0jp/demos.jp/ruler.tcl
+lib/tkstep8.0jp/demos.jp/sayings.tcl
+lib/tkstep8.0jp/demos.jp/search.tcl
+lib/tkstep8.0jp/demos.jp/square
+lib/tkstep8.0jp/demos.jp/states.tcl
+lib/tkstep8.0jp/demos.jp/style.tcl
+lib/tkstep8.0jp/demos.jp/tclIndex
+lib/tkstep8.0jp/demos.jp/tcolor
+lib/tkstep8.0jp/demos.jp/tcolor2
+lib/tkstep8.0jp/demos.jp/text.tcl
+lib/tkstep8.0jp/demos.jp/tfontsel
+lib/tkstep8.0jp/demos.jp/timer
+lib/tkstep8.0jp/demos.jp/twind.tcl
+lib/tkstep8.0jp/demos.jp/vscale.tcl
+lib/tkstep8.0jp/demos.jp/widget
 lib/tkstep8.0jp/demos/README
 lib/tkstep8.0jp/demos/arrow.tcl
 lib/tkstep8.0jp/demos/bind.tcl
@@ -109,6 +164,7 @@ lib/tkstep8.0jp/images/pwrdLogo175.gif
 lib/tkstep8.0jp/images/pwrdLogo200.gif
 lib/tkstep8.0jp/images/pwrdLogo75.gif
 lib/tkstep8.0jp/kinput.tcl
+lib/tkstep8.0jp/kinsoku.tcl
 lib/tkstep8.0jp/listbox.tcl
 lib/tkstep8.0jp/menu.tcl
 lib/tkstep8.0jp/msgbox.tcl
@@ -124,15 +180,13 @@ lib/tkstep8.0jp/tearoff.tcl
 lib/tkstep8.0jp/text.tcl
 lib/tkstep8.0jp/tk.tcl
 lib/tkstep8.0jp/tkAppInit.c
-lib/tkstep8.0jp/tkStepConfig.sh
 lib/tkstep8.0jp/tkfbox.tcl
 lib/tkstep8.0jp/tkstep.tcl
+lib/tkstep8.0jp/tkstepConfig.sh
 lib/tkstep8.0jp/xim.tcl
 lib/tkstep8.0jp/xmfbox.tcl
-share/doc/tkstep8.0jp/INSTALL.TkSTEPjp
 share/doc/tkstep8.0jp/NOTES
 share/doc/tkstep8.0jp/README.TkDND
-share/doc/tkstep8.0jp/README.TkSTEPjp
 share/doc/tkstep8.0jp/README.TkStep
 share/doc/tkstep8.0jp/README.step
 share/doc/tkstep8.0jp/changes.TkSTEPjp
@@ -141,6 +195,8 @@ share/doc/tkstep8.0jp/changes.TkSTEPjp
 @dirrm include/tkstep8.0jp
 @dirrm lib/tkstep8.0jp/demos/images
 @dirrm lib/tkstep8.0jp/demos
+lib/tkstep8.0jp/demos.jp/images
+@dirrm lib/tkstep8.0jp/demos.jp
 @dirrm lib/tkstep8.0jp/images
 @dirrm lib/tkstep8.0jp
 @dirrm share/doc/tkstep8.0jp
