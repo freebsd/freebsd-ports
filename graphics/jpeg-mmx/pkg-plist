@@ -3,16 +3,17 @@ bin/djpeg
 bin/jpegtran
 bin/rdjpgcom
 bin/wrjpgcom
+include/jconfig.h
+include/jerror.h
+include/jmorecfg.h
+include/jpeglib.h
+lib/libjpeg.a
+lib/libjpeg.la
+lib/libjpeg.so
+lib/libjpeg.so.8.0
+@exec /sbin/ldconfig -m %B
 man/man1/cjpeg.1.gz
 man/man1/djpeg.1.gz
 man/man1/jpegtran.1.gz
 man/man1/rdjpgcom.1.gz
 man/man1/wrjpgcom.1.gz
-include/jconfig.h
-include/jpeglib.h
-include/jmorecfg.h
-include/jerror.h
-lib/libjpeg.so.7.0
-@exec /sbin/ldconfig -m %B
-lib/libjpeg.a
-@exec ranlib %D/%F
