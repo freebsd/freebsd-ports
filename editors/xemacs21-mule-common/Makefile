@@ -1,5 +1,4 @@
 # New ports collection makefile for:	files except executables for xemacs with mule
-# Version required:	21.1
 # Date created:		8 Dec 1999
 # Whom:			KIRIYAMA Kazuhiko<kiri@pis.toba-cmt.ac.jp>
 #
@@ -58,7 +57,7 @@ PLIST_SUB=	XEMACS_VER=${XEMACS_VER}
 TMPPLIST=	${WRKDIR}/.PLIST.mktmp-${PKGNAME}
 
 MULE_COMMON=		yes
-PKGNAMEEXT=		-mule-common
+PKGNAMESUFFIX=		-mule-common
 DESCR_TMPL=		${.CURDIR}/../xemacs${XEMACS_MAJOR_VER}-mule-common/files/DESCR.tmpl
 INSTALL_TMPL=		${.CURDIR}/../xemacs${XEMACS_MAJOR_VER}-mule-common/files/INSTALL.tmpl
 COMMENT_TEXT=		XEmacs(version ${XEMACS_MAJOR_VER}) with mule, lisp files, info pages, etc (except executables)

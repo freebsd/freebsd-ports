@@ -1,13 +1,12 @@
 # New ports collection makefile for:	X-Emacs Packages
-# Version required:	1.1
 # Date created:		24 Apr 1999
 # Whom:			Michael Elbel (me@FreeBSD.org)
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xemacs-packages
-PKGNAME=	xemacs-packages-1.1
+PORTNAME=	xemacs-packages
+PORTVERSION=	1.1
 CATEGORIES=	editors
 MASTER_SITES=	\
 		ftp://ftp.xemacs.org/pub/xemacs/packages/ \
