@@ -1,0 +1,11 @@
+share/locale/es/LC_MESSAGES/etherape.mo
+share/locale/nl/LC_MESSAGES/etherape.mo
+share/locale/fr/LC_MESSAGES/etherape.mo
+share/gnome/apps/Applications/etherape.desktop
+share/etherape/glade/etherape.glade
+@dirrm share/etherape/glade
+@dirrm share/etherape
+share/pixmaps/etherape.png
+etc/etherape/services
+@dirrm etc/etherape
+sbin/etherape

@@ -81,6 +81,7 @@
     SUBDIR += doc
     SUBDIR += domtools
     SUBDIR += echoping
+    SUBDIR += etherape
     SUBDIR += etherboot
     SUBDIR += ethereal
     SUBDIR += ettercap
