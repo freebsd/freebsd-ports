@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	fmio
-PORTVERSION=	1.1.4
-PORTREVISION=	1
+PORTVERSION=	1.2.18
 CATEGORIES=	audio
 MASTER_SITES=	http://www.jumbo.narod.ru/src/fmio/
 
-MAINTAINER=	d.s.div@bigfoot.com
+MAINTAINER=	kunia@istc.kiev.ua
 
 MAN1=		fmio.1
 MANCOMPRESSED=	no
