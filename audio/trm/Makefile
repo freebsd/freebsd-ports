@@ -21,6 +21,9 @@ LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
 		musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
 		vorbisfile.4:${PORTSDIR}/audio/libvorbis
 
+CONFLICTS=			libtunepimp-*
+DEPRECATED=			"Use libtunepimp instead"
+EXPIRATION_DATE=	2004-12-31
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

@@ -21,6 +21,7 @@ LIB_DEPENDS=	vorbis:${PORTSDIR}/audio/libvorbis \
 		expat:${PORTSDIR}/textproc/expat2 \
 		musicbrainz:${PORTSDIR}/audio/libmusicbrainz
 
+CONFLICTS=	trm-0*
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_REINPLACE=	yes
