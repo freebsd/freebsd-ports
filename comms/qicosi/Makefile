@@ -6,12 +6,9 @@
 #
 
 PORTNAME=	qico
-PORTVERSION=	0.48
-DISTNAME=	${PORTNAME}-${PORTVERSION}.0
+PORTVERSION=	0.48.1
 CATEGORIES=	comms
-MASTER_SITES=	http://lev.serebryakov.spb.ru/download/
-PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	${PORTNAME}-${PORTVERSION}.0-stable.patch.gz
+MASTER_SITES=	http://lev.serebryakov.spb.ru/download/0.48/
 
 MAINTAINER=	dsh@vlink.ru
 
@@ -23,9 +20,9 @@ DEFS+=		-DAMIGA4D
 .endif
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/qico.conf ${PREFIX}/etc/qico.conf.sample
-	${INSTALL_PROGRAM} ${WRKSRC}/src/qico ${PREFIX}/libexec
-	${INSTALL_PROGRAM} ${WRKSRC}/src/qcc ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/qico.conf.sample ${PREFIX}/etc/
+	${INSTALL_PROGRAM} ${WRKSRC}/src/qico ${PREFIX}/libexec/
+	${INSTALL_PROGRAM} ${WRKSRC}/src/qcc ${PREFIX}/bin/
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/qico
