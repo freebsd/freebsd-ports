@@ -6307,7 +6307,7 @@ pear-Crypt_CBC	ports/security/pear-Crypt_CBC
 pear-Date	ports/devel/pear-Date
 pear-File	ports/sysutils/pear-File
 pear-HTML_Common	ports/devel/pear-HTML_Common
-pear-HTML_Select	ports/devel/pear-HTML_Select
+pear-HTML_Select_Common	ports/devel/pear-HTML_Select_Common
 pear-I18N	ports/devel/pear-I18N
 pear-Log	ports/sysutils/pear-Log
 pear-Mail_Mime	ports/mail/pear-Mail_Mime
