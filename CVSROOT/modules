@@ -2279,6 +2279,7 @@ gthumb		ports/graphics/gthumb
 gthumb2		ports/graphics/gthumb2
 gtic		ports/net/gtic
 gtimer		ports/deskutils/gtimer
+gtk+hs		ports/x11-toolkits/gtk+hs
 gtk+licq	ports/net/gtk+licq
 gtk--		ports/x11-toolkits/gtk--
 gtk-Mac2-theme	ports/x11-toolkits/gtk-Mac2-theme
