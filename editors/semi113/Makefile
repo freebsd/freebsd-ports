@@ -31,15 +31,17 @@ SEMIDOCDIR?=	share/doc/semi
 FLIM_COOKIE=	flim-${EMACS_PORT_NAME}-${FLIM_TRUNK}.FreeBSD-packages
 SEMI_COOKIE=	semi-${EMACS_PORT_NAME}-${SEMI_TRUNK}.FreeBSD-packages
 # semi lispdir
-SEMI_LISPDIR?=			${LOCALBASE}/${EMACS_SITE_LISPDIR}
+SEMI_LISPDIR?=			${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}
 SEMI_VERSION_SPECIFIC_LISPDIR?=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}
 
 .if (${PORTCLASS} == "master")
-# emacs port setup
-EMACS_PORT_NAME=	emacs
-# whether emacs requires *-setupel.el
-REQUIRE_SETUPEL=	YES
+EMACS_PORT_NAME=	emacs21
+DEPPORT_SUFFIX=		
+.else
+DEPPORT_SUFFIX=		-${EMACS_PORT_NAME}
 .endif
+
+EMACS_MASTERDIR_PKGFILES=YES
 
 # target name for make build
 ALL_TARGET?=	elc
@@ -55,8 +57,8 @@ MAKE_ARGS+=	PREFIX="${LOCALBASE}" \
 
 .if defined(EMACS_PORT_NAME)
 # depends on flim
-BUILD_DEPENDS+=	${LOCALBASE}/share/flim/${FLIM_COOKIE}:${PORTSDIR}/editors/flim${FLIM_TRUNK:S/.//}-${EMACS_PORT_NAME}
-RUN_DEPENDS+=	${LOCALBASE}/share/flim/${FLIM_COOKIE}:${PORTSDIR}/editors/flim${FLIM_TRUNK:S/.//}-${EMACS_PORT_NAME}
+BUILD_DEPENDS+=	${LOCALBASE}/share/flim/${FLIM_COOKIE}:${PORTSDIR}/editors/flim${FLIM_TRUNK:S/.//}${DEPPORT_SUFFIX}
+RUN_DEPENDS+=	${LOCALBASE}/share/flim/${FLIM_COOKIE}:${PORTSDIR}/editors/flim${FLIM_TRUNK:S/.//}${DEPPORT_SUFFIX}
 .else
 .BEGIN:
 	@${ECHO} "Error: Bad port."
@@ -70,7 +72,7 @@ BUILD_DEPENDS+=	nkf:${PORTSDIR}/japanese/nkf
 .endif
 
 pre-configure:
-.if defined(REQUIRE_SETUPEL) && (${REQUIRE_SETUPEL} == "YES")
+.if defined(EMACS_NO_SUBDIRSEL) && (${EMACS_NO_SUBDIRSEL} == "YES")
 	@${CP} ${FILESDIR}/${SEMI_SETUPEL}.in ${WRKDIR}
 .endif
 
@@ -101,7 +103,7 @@ pre-install:
 post-install:
 	@${MKDIR} -p ${LOCALBASE}/share/semi
 	@${TOUCH} ${LOCALBASE}/share/semi/${SEMI_COOKIE}
-.if defined(REQUIRE_SETUPEL) && (${REQUIRE_SETUPEL} == "YES")
+.if defined(EMACS_NO_SUBDIRSEL) && (${EMACS_NO_SUBDIRSEL} == "YES")
 	@${MAKE} setupel-install
 .endif
 .if defined(EMACS_PACKAGESDIR) && defined(MANIFEST)

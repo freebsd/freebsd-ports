@@ -20,7 +20,7 @@ SEMI, Library of MIME feature for GNU Emacs for mule.
   MUAs.  They are released as separated packages.
 
   SEMI is installed the following directory tree:
-	${LOCALBASE}/share/emacs/site-lisp/semi/
+	${LOCALBASE}/share/mule/19.34/site-lisp/semi/
 
 To use flim, put the following setup into your ~/.emacs:
 

@@ -1,4 +1,4 @@
-# New ports collection makefile for:	semi-1.13.x for mule
+# New ports collection makefile for:	semi-1.13.x for emacs19
 # Date created:		9 May 1999
 # Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
 #
@@ -13,6 +13,6 @@ PORTCLASS=	slave
 MASTERDIR=	${.CURDIR}/../../editors/semi113
 
 # emacs port setup
-EMACS_PORT_NAME=	mule
+EMACS_PORT_NAME=	emacs19
 
 .include <${MASTERDIR}/Makefile>
