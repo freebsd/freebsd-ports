@@ -193,3 +193,4 @@ share/doc/sqlrelay/windows.html
 @dirrm share/doc/sqlrelay/api/c
 @dirrm share/doc/sqlrelay/api
 @dirrm share/doc/sqlrelay
+@dirrm etc/sqlrelay
