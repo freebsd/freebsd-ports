@@ -1,0 +1,42 @@
+--- Makefile.orig	Sun Apr 16 15:40:03 2000
++++ Makefile	Tue Oct 17 18:06:00 2000
+@@ -10,23 +10,23 @@
+ BUILD    = \
+ 
+ LIB_DIRS = \
+-    -L/usr/local/lib -L/usr/X11R6/lib -L/usr/X11/lib -L/usr/dt/lib
++    -L${LOCALBASE}/lib -L${X11BASE}/lib
+ LIBS     = \
+-    `gtk-config --libs` -lgdbm -lgdk_imlib
+-CFLAGS   = \
+-    -O -g -D_GNU_SOURCE $(DEVFLAGS)
++    `${GTK_CONFIG} --libs` -lgdbm -lgdk_imlib
++CFLAGS   += \
++    -D_GNU_SOURCE $(DEVFLAGS)
+ #CFLAGS   = \
+ #    -O -g -W -Wall -Wno-unused  -pedantic -pedantic-errors -ansi -D_GNU_SOURCE
+ OPTFLAGS   = \
+     -O6 -mpentium -mcpu=pentium -march=pentium -ffast-math -D_GNU_SOURCE
+ INCLUDES = \
+-    `gtk-config --cflags` -I..
++    `${GTK_CONFIG} --cflags` -I..
+ 
+ BIN      = e16menuedit
+ 
+ # configurable stuff
+-BINARY_DESTINATION = /usr/local/enlightenment/bin
+-DATA_DESTINATION   = /usr/local/enlightenment/share
++BINARY_DESTINATION = ${PREFIX}/bin
++DATA_DESTINATION   = ${PREFIX}/share
+ 
+ # commands to do things
+ INSTALL  = install
+@@ -39,7 +39,7 @@
+ MAKE     = make
+ STRIP    = strip
+ SED      = sed
+-MAKEDEP  = gcc -MM $(CFLAGS) $(EXTRA_CFLAGS) $(INCLUDES) $(EXTRA_INCLUDES)
++MAKEDEP  = ${CC} -MM $(CFLAGS) $(EXTRA_CFLAGS) $(INCLUDES) $(EXTRA_INCLUDES)
+ #MAKEDEP = makedepend -f- -s'\# CUT' -- -Y $(CFLAGS) $(EXTRA_CFLAGS) $(INCLUDES) $(EXTRA_INCLUDES) --
+ 
+ # piece together variables
