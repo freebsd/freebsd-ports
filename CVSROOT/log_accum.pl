@@ -359,7 +359,7 @@ sub build_header {
 	my @text;
 	push @text, $header;
 	push @text, "";
-	push @text, "$cfg::MAILBANNER\n" if $cfg::MAILBANNER;
+	push @text, "  $cfg::MAILBANNER", "" if $cfg::MAILBANNER;
 
 	return @text;
 }
