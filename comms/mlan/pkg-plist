@@ -1,0 +1,8 @@
+bin/mweather
+bin/thermodl
+bin/thermoms
+bin/tstfind
+bin/tstmlan
+bin/tstmlane
+include/mlan.h
+lib/libmlan.a
