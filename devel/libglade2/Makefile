@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libglade
-PORTVERSION=	0.15
+PORTVERSION=	0.16
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/libglade
