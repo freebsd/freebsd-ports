@@ -785,6 +785,7 @@ bricons		ports/x11/bricons
 brightside	ports/x11/brightside
 briquolo	ports/games/briquolo
 british-ispell	ports/textproc/british-ispell
+brlcad		ports/cad/brlcad
 bro		ports/security/bro
 brs		ports/misc/brs
 brutecopy	ports/net/brutecopy
