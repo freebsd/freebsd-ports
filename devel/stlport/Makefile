@@ -19,10 +19,6 @@ COMMENT?=	Adaptation of SGI's Standard Template Library
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
 .if ${ARCH} == "alpha" || ${ARCH} == "amd64"
 BROKEN=		"Segfault during build on alpha and amd64"
 .endif
@@ -43,6 +39,10 @@ PLIST_SUB+=	COMPILER=${COMPILER}
 
 INSTALL_TARGET=	install_unix
 INSTALLS_SHLIB=	yes
+
+.if ${OSVERSION} >= 502126 && ${COMPILER}!="icc"
+BROKEN=	"Does not compile on FreeBSD >= 5.x"
+.endif
 
 .if ${OSVERSION} < 440000
 BROKEN=		"Not supported on systems prior to FreeBSD 4.4"
