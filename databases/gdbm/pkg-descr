@@ -1,0 +1,6 @@
+GNU `dbm' is a library of functions implementing a hashed database
+on a disk file.  The software was written by Philip A. Nelson.
+
+Port to FreeBSD 2.1 by
+Brent J. Nordquist (nordquist@platinum.com)
+Mon Apr  8 06:27:31  1996
