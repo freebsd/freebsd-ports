@@ -3810,6 +3810,7 @@ libpanel	src/lib/libpanel
 libparanoia	ports/security/libparanoia
 libpcap		src/lib/libpcap
 libpdel		ports/devel/libpdel
+libpthread	src/lib/libpthread
 libquicktime	ports/graphics/libquicktime
 libradius	src/lib/libradius
 libranlib	ports/math/libranlib
