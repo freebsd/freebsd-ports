@@ -1,13 +1,12 @@
---- /home/makoto/ports/japanese/zangband/work/ZAngband/src/makefile.std	Sat Jul 22 21:37:07 2000
-+++ src/makefile.std	Sat Jul 22 21:30:29 2000
-@@ -127,8 +127,8 @@
- #CFLAGS = -Wall -O1 -pipe -g -D"USE_X11" -D"USE_GCU"
- #LIBS = -lX11 -lcurses -ltermcap
- 
--CFLAGS = -Wall -O2 -m486 -pipe -g -D"USE_X11" -D"JP" -D"EUC" -D"JP_ARTDESC" -D"USE_GCU"
--LIBS = -L/usr/X11R6/lib -lXaw -lXext -lSM -lICE -lXmu -lXt -lX11 -lcurses 
-+CFLAGS = -Wall -O2 -m486 -pipe -g -D"USE_XAW" -D"USE_GCU"
-+LIBS = -L/usr/X11R6/lib -lXaw -lXext -lSM -lICE -lXmu -lXt -lX11 -lcurses
- 
- 
+--- src/makefile.std	Tue Aug 22 17:08:56 2000
++++ src/makefile.std	Thu Jul 20 13:19:50 2000
+@@ -133,8 +131,7 @@
+ ##       to get 256 colours.
  ##
+ CFLAGS = -Wall -O2 -fno-strength-reduce -m486 -pipe -g \
+-         -D"USE_X11" -D"USE_GCU" -D"USE_TRANSPARENCY" \
+-         -D"JP" -D"EUC"
++         -D"USE_X11" -D"USE_GCU" -D"USE_TRANSPARENCY"
+ LIBS = -lX11 -lcurses -ltermcap -L/usr/X11R6/lib
+ 
+ #CFLAGS = -Wall -O2 -fno-strength-reduce -m486 -pipe -g \
