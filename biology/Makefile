@@ -37,6 +37,7 @@
     SUBDIR += rasmol
     SUBDIR += recombine
     SUBDIR += seaview
+    SUBDIR += seqio
     SUBDIR += sim4
     SUBDIR += tinker
     SUBDIR += treeviewx

@@ -1,0 +1,155 @@
+--- grepseq.c.orig	Sat Aug 18 16:19:15 2001
++++ grepseq.c	Sat Aug 18 16:37:58 2001
+@@ -18,7 +18,6 @@
+ #include <string.h>
+ #include "seqio.h"
+ 
+-extern char *sys_errlist[];
+ 
+ #define ASCII 4
+ 
+@@ -475,7 +474,7 @@
+         ascii_alpha_mask[num] |= mask;
+       }
+       else
+-        ascii_alpha_mask[*s] |= mask;
++        ascii_alpha_mask[(int) *s] |= mask;
+       break;
+       
+     case '.':
+@@ -518,7 +517,7 @@
+             ascii_alpha_mask[num] |= mask;
+           }
+           else
+-            ascii_alpha_mask[*s] |= mask;
++            ascii_alpha_mask[(int) *s] |= mask;
+         }
+         else {
+           if (dna_flag) {
+@@ -526,17 +525,17 @@
+               dna_flag = 0;
+             else
+               for ( ; *t; t++)
+-                dna_alpha_mask[*t] |= mask;
++                dna_alpha_mask[(int) *t] |= mask;
+           }
+           if (prt_flag) {
+             if ((t = prt_expand(*s)) == NULL)
+               prt_flag = 0;
+             else
+               for ( ; *t; t++)
+-                prt_alpha_mask[*t] |= mask;
++                prt_alpha_mask[(int) *t] |= mask;
+           }
+               
+-          ascii_alpha_mask[*s] |= mask;
++          ascii_alpha_mask[(int) *s] |= mask;
+         }
+       }
+         
+@@ -557,17 +556,17 @@
+           dna_flag = 0;
+         else
+           for ( ; *t; t++)
+-            dna_alpha_mask[*t] |= mask;
++            dna_alpha_mask[(int) *t] |= mask;
+       }
+       if (prt_flag) {
+         if ((t = prt_expand(*s)) == NULL)
+           prt_flag = 0;
+         else
+           for ( ; *t; t++)
+-            prt_alpha_mask[*t] |= mask;
++            prt_alpha_mask[(int) *t] |= mask;
+       }
+               
+-      ascii_alpha_mask[*s] |= mask;
++      ascii_alpha_mask[(int) *s] |= mask;
+     }
+ 
+     /*
+@@ -677,16 +676,16 @@
+      */
+     if (num_errors == 0) {
+       score = 0;
+-      while ((ch = *s) && table[ch] &&
+-             !((masklist0 = ((masklist0 << 1) & alpha_mask[*s]) + 1) &
++      while ((ch = *s) && table[(int) ch] &&
++             !((masklist0 = ((masklist0 << 1) & alpha_mask[(int) *s]) + 1) &
+                accept_mask))
+         s++;
+     }
+     else if (num_errors == 1) {
+       score = -1;
+       if (misonly_flag) {
+-        while ((ch = *s) && table[ch]) {
+-          chmask = alpha_mask[ch];
++        while ((ch = *s) && table[(int) ch]) {
++          chmask = alpha_mask[(int) ch];
+           last_mask = masklist0;
+           masklist0 = ((masklist0 << 1) & chmask) + 1;
+           masklist1 = ((masklist1 << 1) & chmask) | (last_mask << 1);
+@@ -703,8 +702,8 @@
+         }
+       }
+       else {
+-        while ((ch = *s) && table[ch]) {
+-          chmask = alpha_mask[ch];
++        while ((ch = *s) && table[(int) ch]) {
++          chmask = alpha_mask[(int) ch];
+           last_mask = masklist0;
+           masklist0 = ((masklist0 << 1) & chmask) + 1;
+           masklist1 = ((masklist1 << 1) & chmask) |  /* match */
+@@ -727,8 +726,8 @@
+     else if (num_errors == 2) {
+       score = -1;
+       if (misonly_flag) {
+-        while ((ch = *s) && table[ch]) {
+-          chmask = alpha_mask[ch];
++        while ((ch = *s) && table[(int) ch]) {
++          chmask = alpha_mask[(int) ch];
+           last_mask = masklist0;
+           masklist0 = ((masklist0 << 1) & chmask) + 1;
+           newmask = ((masklist1 << 1) & chmask) | (last_mask << 1);
+@@ -752,8 +751,8 @@
+         }
+       }
+       else {
+-        while ((ch = *s) && table[ch]) {
+-          chmask = alpha_mask[ch];
++        while ((ch = *s) && table[(int) ch]) {
++          chmask = alpha_mask[(int) ch];
+           last_mask = masklist0;
+           masklist0 = ((masklist0 << 1) & chmask) + 1;
+           newmask = ((masklist1 << 1) & chmask) |  /* match */
+@@ -785,8 +784,8 @@
+     }
+     else if (misonly_flag) {
+       score = -1;
+-      while ((ch = *s) && table[ch]) {
+-        chmask = alpha_mask[ch];
++      while ((ch = *s) && table[(int) ch]) {
++        chmask = alpha_mask[(int) ch];
+ 
+         last_mask = masklist[0];
+         masklist[0] = ((masklist[0] << 1) & chmask) + 1;
+@@ -808,8 +807,8 @@
+     }
+     else {
+       score = -1;
+-      while ((ch = *s) && table[ch]) {
+-        chmask = alpha_mask[ch];
++      while ((ch = *s) && table[(int) ch]) {
++        chmask = alpha_mask[(int) ch];
+ 
+         last_mask = masklist[0];
+         masklist[0] = ((masklist[0] << 1) & chmask) + 1;
+@@ -835,7 +834,7 @@
+       
+     if (!ch)
+       break;
+-    else if (!table[ch]) {
++    else if (!table[(int) ch]) {
+       fprintf(stderr, "%s, entry %d:  Sequence contains invalid characters.\n",
+               seqffilename(sfp, 0), seqfentryno(sfp));
+       return NULL;

@@ -1,0 +1,117 @@
+--- fmtseq.c.orig	Wed Jul 10 12:58:39 1996
++++ fmtseq.c	Tue Aug 21 13:17:23 2001
+@@ -37,7 +37,6 @@
+ #include <sys/stat.h>
+ #include "seqio.h"
+ 
+-extern char *sys_errlist[];
+ 
+ 
+ #ifdef WIN32
+@@ -70,6 +69,7 @@
+ #define ASK 2
+ #define ITEMLIST 3
+ 
++#define	MAXLINE	128
+ 
+ int pretty_flag, pretty_count;
+ FILE *fpout;
+@@ -81,7 +81,7 @@
+ } pretty;
+ 
+ 
+-char dna_complement[128], rna_complement[128];
++char dna_complement[MAXLINE], rna_complement[MAXLINE];
+ 
+ 
+ /*
+@@ -222,7 +222,7 @@
+ void print_options(int flag)
+ {
+   int i, j;
+-  char line[128];
++  char line[MAXLINE];
+ 
+   printf("Program Options (text in [...] is optional):\n");
+   printf("  -al[l]            select all sequences\n");
+@@ -249,7 +249,7 @@
+ 
+   if (flag) {
+     printf("More? ");
+-    gets(line);
++    fgets(line,MAXLINE-1,stdin);
+     if (line[0] == 'q' || line[0] == 'Q')
+       return;
+   }
+@@ -264,7 +264,7 @@
+ 
+   if (flag) {
+     printf("More? ");
+-    gets(line);
++    fgets(line,MAXLINE-1,stdin);
+     if (line[0] == 'q' || line[0] == 'Q')
+       return;
+   }
+@@ -1646,7 +1646,7 @@
+     s = line;
+     while (*s == '\0') {
+       printf("Enter: ");
+-      gets(line);
++      fgets(line,MAXLINE-1,stdin);
+       for (s=line; *s && isspace(*s); s++) ;
+     }
+     printf("----------------------\n\n");
+@@ -1701,7 +1701,7 @@
+ {
+   static char defch = 'y';
+   int init_print, count;
+-  char *s, *entry, *eptr, line[128];
++  char *s, *entry, *eptr, line[MAXLINE];
+ 
+   putchar('\n');
+   if (seqcount == 1) {
+@@ -1717,7 +1717,7 @@
+   eptr = entry = NULL;
+   while (1) {
+     printf("Select? [%c] ", defch);
+-    gets(line);
++    fgets(line,MAXLINE-1,stdin);
+ 
+     if (line[0] == '\0')
+       line[0] = defch;
+@@ -1771,7 +1771,7 @@
+                    SEQINFO *info, int mode)
+ {
+   int len;
+-  char *temp, tempbuffer[128];
++  char *temp, tempbuffer[MAXLINE];
+ 
+   if (buf != NULL)
+     temp = buf;
+@@ -1803,7 +1803,7 @@
+ 
+ int pretty_store(char *seq, int seqlen, SEQINFO *info)
+ {
+-  char buffer[128];
++  char buffer[MAXLINE];
+ 
+   if (pretty_count == psize) {
+     if (psize == 0) {
+@@ -2582,7 +2582,7 @@
+ 
+ void blastout_store(SEQFILE *sfp, char *seq, int seqlen, SEQINFO *info)
+ {
+-  static otherstrand = 0;
++  static int otherstrand = 0;
+   int pos, al_start, ingap, len;
+   char *s, *t1, *entry, *end, *line1, *line2;
+   ALIGN newalign;
+@@ -3017,7 +3017,7 @@
+ {
+   int i;
+ 
+-  for (i=0; i < 128; i++)
++  for (i=0; i < MAXLINE; i++)
+     dna_complement[i] = dna_complement[i] = i;
+ 
+   dna_complement['a'] = 't';  dna_complement['A'] = 'T';

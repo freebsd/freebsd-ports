@@ -1,0 +1,9 @@
+"The SEQIO package is a set of C functions which can read and write
+biological sequence files formatted using various file formats and which
+can be used to perform database searches on biological databases."
+- from the README file
+
+WWW: http://www.cs.ucdavis.edu/~gusfield/seqio.html
+
+--
+Tony Maher <tonym@biolateral.com.au>
