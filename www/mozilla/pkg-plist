@@ -53,7 +53,7 @@ lib/mozilla/components/composer.xpt
 lib/mozilla/components/content.xpt
 lib/mozilla/components/content_base.xpt
 lib/mozilla/components/content_html.xpt
-lib/mozilla/components/content_xsl.xpt
+lib/mozilla/components/content_xslt.xpt
 lib/mozilla/components/cookie.xpt
 lib/mozilla/components/directory.xpt
 lib/mozilla/components/docshell.xpt
@@ -125,6 +125,7 @@ lib/mozilla/components/libimglib2.so
 lib/mozilla/components/libimgmng.so
 lib/mozilla/components/libimgpng.so
 lib/mozilla/components/libimgppm.so
+lib/mozilla/components/libimgxbm.so
 %%MOZILLAMAILNEWS%%lib/mozilla/components/libimpComm4xMail.so
 %%MOZILLAMAILNEWS%%lib/mozilla/components/libimpText.so
 %%MOZILLAMAILNEWS%%lib/mozilla/components/libimport.so

@@ -195,6 +195,7 @@ include/mozilla/content/nsIDocument.h
 include/mozilla/content/nsIDocumentContainer.h
 include/mozilla/content/nsIDocumentEncoder.h
 include/mozilla/content/nsIDocumentObserver.h
+include/mozilla/content/nsIDocumentTransformer.h
 include/mozilla/content/nsIDocumentViewer.h
 include/mozilla/content/nsIDragDropHandler.h
 include/mozilla/content/nsIDragDropOverride.h
@@ -249,6 +250,8 @@ include/mozilla/content/nsIStyledContent.h
 include/mozilla/content/nsITextAreaElement.h
 include/mozilla/content/nsITextContent.h
 include/mozilla/content/nsITextControlElement.h
+include/mozilla/content/nsITransformMediator.h
+include/mozilla/content/nsITransformObserver.h
 include/mozilla/content/nsIWyciwygChannel.h
 include/mozilla/content/nsIXBLBinding.h
 include/mozilla/content/nsIXBLBindingAttachedHandler.h
@@ -276,8 +279,6 @@ include/mozilla/content/nsXBLAtomList.h
 include/mozilla/content/nsXBLAtoms.h
 include/mozilla/content/nsXULAtomList.h
 include/mozilla/content/nsXULAtoms.h
-include/mozilla/content_xsl/nsIDocumentTransformer.h
-include/mozilla/content_xsl/nsITransformMediator.h
 include/mozilla/cookie/nsCCookie.h
 include/mozilla/cookie/nsCCookieManager.h
 include/mozilla/cookie/nsCookieHTTPNotify.h
@@ -589,6 +590,7 @@ include/mozilla/editor/nsIURIRefObject.h
 include/mozilla/editor/nsPIEditorTransaction.h
 include/mozilla/embed_base/nsEmbedAPI.h
 include/mozilla/embed_base/nsIWindowCreator.h
+include/mozilla/embed_base/nsIWindowCreator2.h
 include/mozilla/embedcomponents/nsIAppStartupNotifier.h
 include/mozilla/expat/xmlparse.h
 include/mozilla/exthandler/nsCExternalHandlerService.h
@@ -628,7 +630,9 @@ include/mozilla/gfx/nsIFontMetrics.h
 include/mozilla/gfx/nsIGraphics.h
 include/mozilla/gfx/nsIImage.h
 include/mozilla/gfx/nsIPrintOptions.h
+include/mozilla/gfx/nsIPrintSession.h
 include/mozilla/gfx/nsIPrintSettings.h
+include/mozilla/gfx/nsIPrintSettingsService.h
 include/mozilla/gfx/nsIRegion.h
 include/mozilla/gfx/nsIRenderingContext.h
 include/mozilla/gfx/nsIScreen.h
@@ -788,6 +792,7 @@ include/mozilla/jsurl/nsJSProtocolHandler.h
 include/mozilla/layout/nsBidi.h
 include/mozilla/layout/nsBidiFrames.h
 include/mozilla/layout/nsBidiPresUtils.h
+include/mozilla/layout/nsCompatibility.h
 include/mozilla/layout/nsFrameList.h
 include/mozilla/layout/nsFrameTraversal.h
 include/mozilla/layout/nsGrid.h
@@ -999,6 +1004,7 @@ include/mozilla/mng/libmng_types.h
 include/mozilla/mork/mdb.h
 include/mozilla/mork/nsIMdbFactoryFactory.h
 include/mozilla/mork/nsMorkCID.h
+include/mozilla/mozldap/nsILDAPBERValue.h
 include/mozilla/mozldap/nsILDAPConnection.h
 include/mozilla/mozldap/nsILDAPErrors.h
 include/mozilla/mozldap/nsILDAPMessage.h
@@ -1273,6 +1279,8 @@ include/mozilla/msgnews/nsNewsUtils.h
 include/mozilla/msgnews/nsNntpIncomingServer.h
 include/mozilla/msgnews/nsNntpService.h
 include/mozilla/msgnews/nsNntpUrl.h
+include/mozilla/msgsmime/nsEncryptedSMIMEURIsService.h
+include/mozilla/msgsmime/nsIEncryptedSMIMEURIsSrvc.h
 include/mozilla/msgsmime/nsIMsgSMIMECompFields.h
 include/mozilla/msgsmime/nsIMsgSMIMEHeaderSink.h
 include/mozilla/msgsmime/nsISMimeJSHelper.h
@@ -1754,6 +1762,8 @@ include/mozilla/webbrwsr/nsICommandHandler.h
 include/mozilla/webbrwsr/nsIContextMenuListener.h
 include/mozilla/webbrwsr/nsIEmbeddingSiteWindow.h
 include/mozilla/webbrwsr/nsIEmbeddingSiteWindow2.h
+include/mozilla/webbrwsr/nsIPrintingPrompt.h
+include/mozilla/webbrwsr/nsIPrintingPromptService.h
 include/mozilla/webbrwsr/nsITooltipListener.h
 include/mozilla/webbrwsr/nsITooltipTextProvider.h
 include/mozilla/webbrwsr/nsIWebBrowser.h
@@ -1954,6 +1964,7 @@ include/mozilla/xpcom/nsIProperties.h
 include/mozilla/xpcom/nsIPropertyBag.h
 include/mozilla/xpcom/nsIProxyCreateInstance.h
 include/mozilla/xpcom/nsIProxyObjectManager.h
+include/mozilla/xpcom/nsProxyRelease.h
 include/mozilla/xpcom/nsIRegistry.h
 include/mozilla/xpcom/nsIRegistryUtils.h
 include/mozilla/xpcom/nsIRunnable.h
@@ -2182,7 +2193,6 @@ include/mozilla/zlib/zlib.h
 @dirrm include/mozilla/docshell
 @dirrm include/mozilla/dbm
 @dirrm include/mozilla/cookie
-@dirrm include/mozilla/content_xsl
 @dirrm include/mozilla/content
 @dirrm include/mozilla/composer
 @dirrm include/mozilla/commandhandler

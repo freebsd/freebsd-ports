@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	mozilla
-PORTVERSION=	1.0
+PORTVERSION=	1.0.1
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
-		http://people.FreeBSD.org/~sobomax/:local
+		http://people.FreeBSD.org/~marcus/:local
 MASTER_SITE_SUBDIR=	mozilla/releases/${PORTNAME}${PORTVERSION:S/.rc/rc/}/src \
-		sobomax/:local
+		marcus/:local
 DISTFILES=	${PORTNAME}-source-${PORTVERSION:S/.rc/rc/}${EXTRACT_SUFX} \
 		libart_lgpl-${PORTVERSION}${EXTRACT_SUFX}:local
 
@@ -27,7 +27,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-WITHOUT_CHATZILLA=	"Contains a buffer overflow reported at http://online.securityfocus.com/archive/1/270249"
+#WITHOUT_CHATZILLA=	"Contains a buffer overflow reported at http://online.securityfocus.com/archive/1/270249"
 
 USE_BZIP2=	yes
 EXTRACT_AFTER_ARGS=	| tar -xf - -X ${FILESDIR}/tar-exclude
