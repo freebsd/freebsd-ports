@@ -7,7 +7,7 @@
 
 PORTNAME=	bacula
 PORTVERSION=	1.34.5
-PORTREVISION=   1
+PORTREVISION=   2
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bacula
@@ -52,6 +52,8 @@ USE_GNOME=	libgnome
 .endif
 
 .include <bsd.port.pre.mk>
+
+PLIST_SUB+=      BACULA_DIR=${BACULA_DIR}
 
 # Build gnome-console
 .if defined(WITH_GNOMECONSOLE)
