@@ -41,8 +41,7 @@ case "${sasl_pwcheck_enable}" in
 
 	    start)
 		if [ -x ${sasl_pwcheck_program} ] ; then
-		    ${sasl_pwcheck_program} &
-		    echo -n " pwcheck"
+		    ${sasl_pwcheck_program} && echo -n " pwcheck"
 		fi
 		;;
 

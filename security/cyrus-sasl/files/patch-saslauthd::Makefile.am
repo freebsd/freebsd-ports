@@ -1,0 +1,11 @@
+--- saslauthd/Makefile.am.orig	Fri Mar 23 19:41:35 2001
++++ saslauthd/Makefile.am	Tue Aug 13 13:57:10 2002
+@@ -2,7 +2,7 @@
+ man_MANS	= saslauthd.8
+ 
+ saslauthd_SOURCES = saslauthd.c mechanisms.c globals.h mechanisms.h auth_dce.c auth_dce.h auth_getpwent.c auth_getpwent.h auth_krb4.c auth_krb4.h auth_pam.c auth_pam.h auth_rimap.c auth_rimap.h auth_shadow.c auth_shadow.h auth_sia.c auth_sia.h
+-saslauthd_LDADD	= @SASL_KRB_LIB@
++saslauthd_LDADD	= @SASL_KRB_LIB@ @LIB_PAM@ @LIB_CRYPT@
+ 
+ INCLUDES	= -I$(top_srcdir)/include
+ EXTRA_DIST	= saslauthd.8
