@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	gthumb2
-PORTVERSION=	2.1.0
-PORTREVISION=	1
+PORTVERSION=	2.1.3
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.1
 DISTNAME=	${PORTNAME:S/2$//}-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	verbophobe@hotmail.com
+MAINTAINER=	verbophobe@jewcrew.org
 COMMENT=	An image viewer and browser for the GNOME 2 environment
 
 USE_BZIP2=	yes
@@ -34,9 +33,5 @@ MAN1=		gthumb.1
 .if defined(WITH_EXIF) || exists(${LOCALBASE}/lib/libexif.so.8)
 LIB_DEPENDS+=	exif.8:${PORTSDIR}/graphics/libexif
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
