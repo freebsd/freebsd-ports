@@ -1,12 +1,12 @@
 # New ports collection makefile for:	suck
-# Version required:	3.10.4
+# Version required:	4.1.0
 # Date created:		30 Mar 1996
 # Whom:			graphite@taurus.bekkoame.or.jp
 #
-# $Id: Makefile,v 1.14 1998/07/26 17:27:24 jseger Exp $
+# $Id: Makefile,v 1.15 1999/02/12 12:06:19 flathill Exp $
 #
 
-DISTNAME=	suck-3.10.4
+DISTNAME=	suck-4.1.0
 CATEGORIES=	news
 MASTER_SITES=	http://home.att.net/~bobyetman/
 
@@ -18,8 +18,8 @@ MAN1=		suck.1 rpost.1 testhost.1 lmove.1
 
 post-install:
 	${MKDIR} ${PREFIX}/share/examples/suck
-	${INSTALL_SCRIPT} ${WRKSRC}/sample/get.news.innxmit ${PREFIX}/share/examples/suck
-	${INSTALL_SCRIPT} ${WRKSRC}/sample/get.news.rnews ${PREFIX}/share/examples/suck
+	${INSTALL_SCRIPT} ${WRKSRC}/sample/get.news.inn ${PREFIX}/share/examples/suck
+	${INSTALL_SCRIPT} ${WRKSRC}/sample/get.news.generic ${PREFIX}/share/examples/suck
 	${INSTALL_SCRIPT} ${WRKSRC}/sample/put.news ${PREFIX}/share/examples/suck
 	${INSTALL_DATA} ${WRKSRC}/sample/*.sample ${PREFIX}/share/examples/suck
 

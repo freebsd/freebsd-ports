@@ -1,0 +1,12 @@
+--- suck_config.h.orig	Wed Mar 24 14:18:08 1999
++++ suck_config.h	Wed Mar 24 14:18:53 1999
+@@ -92,7 +92,8 @@
+ #define N_XOVER         "suckxover"             /* parameter file for which articles NOT to download via xover */
+ 
+ #define N_PHRASES "/usr/local/lib/suck.phrases"	/* default location for phrase file */
+-#define HISTORY_FILE "/usr/news/db/history"     /* default location for history file */
++#define HISTORY_FILE "/usr/local/news/lib/history" /* default location for 
++						    * history file */
+ 
+ /* TEMP FILES created */
+ #define N_NEWRC "suck.newrc"
