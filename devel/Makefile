@@ -1045,6 +1045,7 @@
     SUBDIR += php4-tokenizer
     SUBDIR += php5-dio
     SUBDIR += php5-gettext
+    SUBDIR += php5-mcve
     SUBDIR += php5-pcre
     SUBDIR += php5-pear
     SUBDIR += phptags
