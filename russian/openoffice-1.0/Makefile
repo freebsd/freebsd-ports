@@ -7,6 +7,10 @@
 
 CATEGORIES=     russian editors
 
+.if !defined (LANG) && !defined(USE_LANG)
+USE_LANG=	ru_RU.KOI8-R
+.endif
+LANG_LIST=	ru_RU.KOI8-R uk_UA.KOI8-U
 LANG_PKGNAME=	ru
 LANG_EXT=	07
 LANG_CONFIGURE_ARG=	RUSS
