@@ -34,12 +34,11 @@ ICONSDIR?=	share/${PORTNAME}
 .endif
 
 MAN1=		bk2site.1
-USE_GMAKE=	yes
 USE_REINPLACE=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix="${PREFIX}" --enable-standard-datadir
-CONFIGURE_ENV=	CPPFLAGS=-Wno-deprecated
+MAKE_ARGS=	CXXFLAGS="${CXXFLAGS} -Wno-deprecated"
 
 PLIST_SUB=	CGIDIR="${CGIDIR}" ICONSDIR="${ICONSDIR}"
 
