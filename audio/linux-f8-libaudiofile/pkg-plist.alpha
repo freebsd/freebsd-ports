@@ -1,0 +1,22 @@
+/usr/bin/sfconvert
+/usr/bin/sfinfo
+/usr/doc/audiofile-0.1.9/COPYING
+/usr/doc/audiofile-0.1.9/ChangeLog
+/usr/doc/audiofile-0.1.9/README
+/usr/doc/audiofile-0.1.9/TODO
+/usr/doc/audiofile-0.1.9/docs/Makefile
+/usr/doc/audiofile-0.1.9/docs/Makefile.am
+/usr/doc/audiofile-0.1.9/docs/Makefile.in
+/usr/doc/audiofile-0.1.9/docs/afCloseFile
+/usr/doc/audiofile-0.1.9/docs/afGetFrameSize
+/usr/doc/audiofile-0.1.9/docs/afIntro
+/usr/doc/audiofile-0.1.9/docs/afNewFileSetup
+/usr/doc/audiofile-0.1.9/docs/afOpenFile
+/usr/doc/audiofile-0.1.9/docs/afReadFrames
+/usr/doc/audiofile-0.1.9/docs/afWriteFrames
+/usr/doc/audiofile-0.1.9/docs/sfconvert
+/usr/doc/audiofile-0.1.9/docs/sfinfo
+/usr/lib/libaudiofile.so.0
+/usr/lib/libaudiofile.so.0.0.0
+@dirrm /usr/doc/audiofile-0.1.9/docs
+@dirrm /usr/doc/audiofile-0.1.9
