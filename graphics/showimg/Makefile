@@ -7,10 +7,10 @@
 #
 
 PORTNAME=	showimg
-PORTVERSION=	0.7
-PORTREVISION=	1
+PORTVERSION=	0.8.20021228
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.jalix.org/projects/showimg/download/${PORTVERSION}/
+MASTER_SITES=	http://www.jalix.org/projects/showimg/download/0.8-Beta1/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.20/-20/}
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -21,8 +21,7 @@ USE_KDEBASE_VER=3
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-
-BROKEN=	"Author is working on new kde3 version. Coming soon."
+USE_BZIP2=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,-lpthread,${PTHREAD_LIBS},g" ${WRKSRC}/showimg/Makefile.in
