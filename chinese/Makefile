@@ -36,6 +36,7 @@
     SUBDIR += fortunetw
     SUBDIR += gb2jis
     SUBDIR += gb2ps
+    SUBDIR += gbfs
     SUBDIR += gbscript
     SUBDIR += ghostscript6
     SUBDIR += gnumeric
