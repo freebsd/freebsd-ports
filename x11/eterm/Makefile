@@ -3,7 +3,7 @@
 # Date created:        24 November 1997
 # Whom:                Murray Stokely <murray@cdrom.com>
 #
-# $Id: Makefile,v 1.6 1998/02/23 15:38:44 steve Exp $
+# $Id: Makefile,v 1.7 1998/08/05 09:31:41 asami Exp $
 #
 
 DISTNAME=	Eterm-DR-0.7+PL5
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.mandrake.net/pub/Eterm/ \
 
 MAINTAINER=	murray@cdrom.com
 
-LIB_DEPENDS=	Imlib\\.1\\.:${PORTSDIR}/graphics/imlib
+LIB_DEPENDS=	Imlib.1:${PORTSDIR}/graphics/imlib
 
 WRKSRC=		$(WRKDIR)/Eterm-DR-0.7
 USE_GMAKE=	yes

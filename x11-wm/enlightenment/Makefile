@@ -3,7 +3,7 @@
 # Date created:        10 June 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.25 1998/09/19 01:33:48 steve Exp $
+# $Id: Makefile,v 1.26 1998/09/23 22:05:42 asami Exp $
 #
 
 DISTNAME=	enlightenment-0.14
@@ -18,7 +18,7 @@ BUILD_DEPENDS=  ${LOCALBASE}/lib/perl5/site_perl/5.005/i386-freebsd/Gtk.pm:${POR
 LIB_DEPENDS=	esd\\.0\\.0:${PORTSDIR}/audio/esound \
 		Fnlib.0:${PORTSDIR}/graphics/fnlib \
 		gif.3:${PORTSDIR}/graphics/giflib \
-		Imlib\\.1\\.7:${PORTSDIR}/graphics/imlib
+		Imlib.1:${PORTSDIR}/graphics/imlib
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
