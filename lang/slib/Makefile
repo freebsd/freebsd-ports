@@ -6,28 +6,38 @@
 #
 
 PORTNAME=	slib
-PORTVERSION=	2d1
-PORTREVISION=	2
+PORTVERSION=	2d5
 CATEGORIES=	lang
 MASTER_SITES=	http://swissnet.ai.mit.edu/ftpdir/scm/
-DISTNAME=	slib2d1
+DISTNAME=	slib${PORTVERSION}
 
 MAINTAINER=	nakai@FreeBSD.org
-COMMENT=	A portable scheme library for all standard scheme implementation
+COMMENT=	A portable scheme library
 
 RUN_DEPENDS=	guile:${PORTSDIR}/lang/guile
 
 WRKSRC=		${WRKDIR}/slib
 
-USE_ZIP=	yes
 NO_BUILD=	yes
 
 do-install:
+	${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.scm ${DATADIR}
 	${MKDIR} ${PREFIX}/share/slib
 	${INSTALL_DATA} ${WRKSRC}/*.scm ${PREFIX}/share/slib
 	${RM} -f ${LOCALBASE}/share/guile/slib
 	${LN} -sf ${PREFIX}/share/slib ${LOCALBASE}/share/guile/slib
 	${LOCALBASE}/bin/guile -c \
 		"(use-modules (ice-9 slib)) (require 'new-catalog)"
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for file in ANNOUNCE COPYING ChangeLog FAQ README
+	${INSTALL_MAN} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+	${INSTALL_MAN} ${WRKSRC}/slib.info ${PREFIX}/info
+	install-info ${PREFIX}/info/slib.info ${PREFIX}/info/dir
+.endif
 
 .include <bsd.port.mk>
