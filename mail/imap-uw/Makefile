@@ -3,7 +3,7 @@
 # Date created:		9 Jan 1997
 # Whom:			pst
 #
-# $Id: Makefile,v 1.16 1998/09/19 21:29:29 steve Exp $
+# $Id: Makefile,v 1.17 1998/09/22 15:14:57 steve Exp $
 #
 
 DISTNAME=	imap-4.2
@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/old/ \
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	imap-uw@freebsd.ady.ro
+
+BROKEN_ELF=	cannot open -lc-client
 
 ALL_TARGET=	bsf
 MAN8=		ipopd.8 imapd.8
