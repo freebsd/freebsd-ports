@@ -8,7 +8,9 @@
 PORTNAME=	rus-ispell
 PORTVERSION=    0.99e8
 CATEGORIES=	russian textproc
-MASTER_SITES=   ftp://mch5.chem.msu.su/pub/russian/ispell/
+MASTER_SITES=   ftp://mch5.chem.msu.su/pub/russian/ispell/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	ache
 
 MAINTAINER=	ache@FreeBSD.org
 
