@@ -1,14 +1,14 @@
 # New ports collection makefile for:    Infobus 1.2
-# Version required:	1.2
 # Date created:		1999/08/08
 # Whom:			Jose Marques
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ib12
-PKGNAME=	infobus-1.2
+PORTNAME=	infobus
+PORTVERSION=	1.2
 CATEGORIES=	java
+DISTNAME=	ib12
 EXTRACT_SUFX=	.zip
 
 MAINTAINER=	noway@nohow.demon.co.uk

@@ -1,15 +1,15 @@
 # New ports collection makefile for:	hugs
-# Version required:	Hugs98 (September 1999)
 # Date created:		22 September 1997
 # Whom:			Torsten Teg Grust (Torsten.Grust@uni-konstanz.de)
 #
 # $FreeBSD$
 #
 
-DISTNAME=	Hugs98-Sep1999
-PKGNAME=	hugs-98
+PORTNAME=	hugs
+PORTVERSION=	98
 CATEGORIES=	lang
 MASTER_SITES=	ftp://www.cse.ogi.edu/pub/pacsoft/hugs/
+DISTNAME=	Hugs98-Sep1999
 
 MAINTAINER=	Torsten.Grust@uni-konstanz.de
 

@@ -1,12 +1,12 @@
 # New ports collection makefile for:    JDBC connection pool
-# Version required:	0.94
 # Date created:		1999/07/04
 # Whom:			Jose Marques
 #
 # $FreeBSD$
 #
 
-DISTNAME=	jdbcpool-0.94
+PORTNAME=	jdbcpool
+PORTVERSION=	0.94
 CATEGORIES=	java
 MASTER_SITES=	http://www.bitmechanic.com/projects/jdbcpool/dist/
 

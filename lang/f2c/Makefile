@@ -1,15 +1,15 @@
 # Ports collection makefile for:	f2c-freebsd
-# Version required: 			2.0.1
 # Date created:				28 DEC 1998
 # Whom:					Steven G. Kargl
 #
 # $FreeBSD$
 #
 
-DISTNAME=	f2c-freebsd.2.0.1
-PKGNAME=	f2c-2.0.1
+PORTNAME=	f2c
+PORTVERSION=	2.0.1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://troutmask.apl.washington.edu/pub/
+DISTNAME=	f2c-freebsd.2.0.1
 
 MAINTAINER=	kargl@troutmask.apl.washington.edu
 

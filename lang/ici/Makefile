@@ -1,12 +1,12 @@
 # New ports collection makefile for:   ici
-# Version required:    2.1.4
 # Date created:        18 December 1997
 # Whom:                andy
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ici-2.1.4
+PORTNAME=	ici
+PORTVERSION=	2.1.4
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.research.canon.com.au/pub/misc/ici/ \
 		ftp://ftp.ntua.gr/pub/lang/ici/ \

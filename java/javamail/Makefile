@@ -1,14 +1,14 @@
 # New ports collection makefile for:    JavaMail API Implementation Version 1.1.2
-# Version required:	1.1.2
 # Date created:		1999/08/08
 # Whom:			Jose Marques
 #
 # $FreeBSD$
 #
 
-DISTNAME=	javamail1_1_2
-PKGNAME=	javamail-1.1.2
+PORTNAME=	javamail
+PORTVERSION=	1.1.2
 CATEGORIES=	java
+DISTNAME=	javamail1_1_2
 EXTRACT_SUFX=	.zip
 
 MAINTAINER=	noway@nohow.demon.co.uk
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PREFIX}/jdk${JDK_VERSION}/bin/java:${PORTSDIR}/java/jdk \
 
 USE_ZIP=	YES
 
-WRKSRC=		${WRKDIR}/javamail-1.1.2
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 JDK_VERSION=	1.1.8
 NO_BUILD=	yes
 NO_CDROM=	"See the license"

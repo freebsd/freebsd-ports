@@ -1,16 +1,16 @@
 # ex:ts=8
 # Ports collection makefile for:  nawk
-# Version required: 0.0
 # Date created:			  29 April 1998
 # Whom:				  Josh Gilliam <josh@quick.net>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	awk
-PKGNAME=	nawk-99.06.20
+PORTNAME=	nawk
+PORTVERSION=	99.06.20
 CATEGORIES=	lang
 MASTER_SITES=	http://cm.bell-labs.com/who/bwk/
+DISTNAME=	awk
 
 MAINTAINER=	obrien@FreeBSD.org
 

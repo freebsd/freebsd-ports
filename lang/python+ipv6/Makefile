@@ -1,16 +1,16 @@
 # New ports collection makefile for:    python
-# Version required:     1.5.2
 # Date created:         08 August 1995
 # Whom:                 jkh
 #
 # $FreeBSD$
 #
 
-DISTNAME=       py152
-PKGNAME=        python+ipv6-1.5.2
+PORTNAME=	python+ipv6
+PORTVERSION=	1.5.2
 CATEGORIES=	lang python tk82 ipv6
 MASTER_SITES=	ftp://www.python.org/pub/python/src/ \
 		ftp://ftp.cwi.nl/pub/python/src/
+DISTNAME=	py152
 EXTRACT_SUFX=	.tgz
 
 PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/
@@ -21,7 +21,7 @@ MAINTAINER=	sumikawa@FreeBSD.org
 
 LIB_DEPENDS=	${TK_DEPENDS}
 
-DIST_SUBDIR=    python
+DIST_SUBDIR=	python
 WRKSRC=		${WRKDIR}/Python-1.5.2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-fpectl --with-libs='-lxpg4'

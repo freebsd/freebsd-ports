@@ -1,5 +1,4 @@
 # New ports collection makefile for:	GNU Ada gnat
-# Version required:     3.09
 # Date created:         Sat Mar 18 02:16:45 1995
 # Whom:			hsu
 # Porter (original):	nils@guru.ims.uni-stuttgart.de
@@ -14,12 +13,13 @@
 #   conflict with other gcc based products. Standard names can be provided
 #   using symbolic links.
 
-DISTNAME=       gcc-2.8.1
-PKGNAME=        gnat-3.12p
+PORTNAME=	gnat
+PORTVERSION=	3.12p
 CATEGORIES=	lang
-MASTER_SITES=   ftp://cs.nyu.edu/pub/gnat/ \
+MASTER_SITES=	ftp://cs.nyu.edu/pub/gnat/ \
 		${MASTER_SITE_GNU}
-DISTFILES=      gnat-3.12p-src.tar.gz gcc-2.8.1.tar.gz
+DISTNAME=	gcc-2.8.1
+DISTFILES=	gnat-3.12p-src.tar.gz gcc-2.8.1.tar.gz
 
 MAINTAINER=	eischen@vigrid.com
 

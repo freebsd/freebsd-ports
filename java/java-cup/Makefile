@@ -1,15 +1,15 @@
 # New ports collection makefile for:	cup
-# Version required:	0.10g
 # Date created:		10 May 1998
 # Whom:			nordwick@xcf.berkeley.edu
 #
 # $FreeBSD$
 #
 
-DISTNAME=	java_cup_v10g
-PKGNAME=	java_cup-10.g
+PORTNAME=	java_cup
+PORTVERSION=	10.g
 CATEGORIES=	java
 MASTER_SITES=	http://www.cs.princeton.edu/~appel/modern/java/CUP/
+DISTNAME=	java_cup_v10g
 
 MAINTAINER=	nordwick@xcf.berkeley.edu
 

@@ -1,14 +1,14 @@
 # New ports collection makefile for:	expect
 # Date created:		20 November 1994
 # Whom:			pst
-# Version required:	5.31
 #
 # $FreeBSD$
 
-DISTNAME=	expect
-PKGNAME=	expect-5.31
+PORTNAME=	expect
+PORTVERSION=	5.31
 CATEGORIES=	lang tcl82 tk82
 MASTER_SITES=	http://expect.nist.gov/
+DISTNAME=	expect
 
 MAINTAINER=	ports@FreeBSD.org
 

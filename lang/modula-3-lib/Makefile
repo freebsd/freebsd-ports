@@ -1,12 +1,12 @@
 # New ports collection makefile for:	modula-3-lib
-# Version required:	3.6
 # Date created:		28 Oct 1996
 # Whom:			John Polstra <jdp@polstra.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	modula-3-lib-3.6
+PORTNAME=	modula-3-lib
+PORTVERSION=	3.6
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 DISTFILES=	m3-fbsd-src-3.6.tar.gz \

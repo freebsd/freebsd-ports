@@ -1,12 +1,12 @@
 # New ports collection makefile for:	ptoc
-# Version required:			3.41
 # Date created:				10 December 1997
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=		ptoc-3.41
+PORTNAME=		ptoc
+PORTVERSION=		3.41
 CATEGORIES=		lang
 MASTER_SITES=		ftp://ftp.netsw.org/netsw/SoftEng/Lang/Pascal/ \
 			ftp://ftp.u-aizu.ac.jp/pub/lang/netsw/Pascal/ \

@@ -1,15 +1,15 @@
 # New ports collection makefile for:    StarLogo
-# Version required:	1.0
 # Date created:		14th November 1999
 # Whom:			Jose Marques
 #
 # $FreeBSD$
 #
 
-DISTNAME=	java-starlogo-beta-2
-PKGNAME=	starlogo-1.0
+PORTNAME=	starlogo
+PORTVERSION=	1.0
 CATEGORIES=	lang java
 MASTER_SITES=	http://el.www.media.mit.edu/starlogo/download/
+DISTNAME=	java-starlogo-beta-2
 
 MAINTAINER=	noway@nohow.demon.co.uk
 

@@ -1,15 +1,15 @@
 # New ports collection makefile for:	ETHOberonV4
-# Version required:	ETH Oberon V4-0.9 (for Linux)
 # Date created:		12 July 1998
 # Whom:			Jerry Hicks <jhicks@glenatl.glenayre.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ETHLinuxOberon
-PKGNAME=	ETHOberonV4-0.9
+PORTNAME=	ETHOberonV4
+PORTVERSION=	0.9
 CATEGORIES=	lang linux
 MASTER_SITES=	ftp://ftp.inf.ethz.ch/pub/Oberon/OberonV4/Linux/latest/
+DISTNAME=	ETHLinuxOberon
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jhicks@glenatl.glenayre.com

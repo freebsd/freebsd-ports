@@ -1,15 +1,15 @@
 # New ports collection makefile for:	yabasic
-# Version required:	2.62
 # Date created:		11 Nov 1999
 # Whom:			Frank Gruender
 #
 # $FreeBSD$
 #
 
-DISTNAME=	yab
-PKGNAME=	yabasic-2.62
+PORTNAME=	yabasic
+PORTVERSION=	2.62
 CATEGORIES=	lang
 MASTER_SITES=	http://www.yabasic.de/download/
+DISTNAME=	yab
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	elwood@mc5sys.in-berlin.de

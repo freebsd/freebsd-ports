@@ -1,14 +1,14 @@
 # New ports collection makefile for:    gcl
-# Version required:     2.3
 # Date created:         Feb  8 1995
 # Whom:                 hsu
 #
 # $FreeBSD$
 #
 
-DISTNAME=       gcl-2.3
+PORTNAME=	gcl
+PORTVERSION=	2.3
 CATEGORIES=	lang tk82
-MASTER_SITES=   ftp://ftp.ma.utexas.edu/pub/gcl/
+MASTER_SITES=	ftp://ftp.ma.utexas.edu/pub/gcl/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jseger@FreeBSD.org

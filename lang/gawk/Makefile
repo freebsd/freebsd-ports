@@ -1,11 +1,11 @@
 # New ports collection makefile for:	gawk
-# Version required:	3.0.4
 # Date created:		Mi  21 Okt 1998 13:53:18 CEST
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
 # $FreeBSD$
 
-DISTNAME=	gawk-3.0.4
+PORTNAME=	gawk
+PORTVERSION=	3.0.4
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gawk

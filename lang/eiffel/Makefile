@@ -1,15 +1,15 @@
 # New ports collection makefile for:    eiffel
-# Version required:     1.3
 # Date created:         Thu Sep 14 11:10:01 CDT 1995
 # Whom:                 erich@rrnet.com
 #
 # $FreeBSD$
 #
 
-DISTNAME=	eiffels13a
-PKGNAME=	eiffel-13a
+PORTNAME=	eiffel
+PORTVERSION=	13a
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.cm.cf.ac.uk/pub/Eiffel/SIG/Eiffel-S-1.3/BSD/
+DISTNAME=	eiffels13a
 EXTRACT_SUFX=	.freebsd.tar.gz
 
 MAINTAINER=	erich@FreeBSD.org

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	pm3-gui
-# Version required:	1.1.13
 # Date created:		6 Feb 2000
 # Whom:			John Polstra <jdp@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	pm3-gui-${VERSION}
+PORTNAME=	pm3-gui
+PORTVERSION=	1.1.13
 CATEGORIES=	lang
 DISTFILES=
 
@@ -21,7 +21,7 @@ INSTALL_TARGET=	all
 PLIST_SUB+=	SOVERSION=${SOVERSION} TARGET=${TARGET} \
 		TARGETDIR=${TARGETDIR} WORDSIZE=${WORDSIZE}
 USE_XLIB=	yes
-WRKSRC=		${WRKDIRPREFIX}${.CURDIR}/../pm3-base/work/pm3-${VERSION}
+WRKSRC=		${WRKDIRPREFIX}${.CURDIR}/../pm3-base/work/pm3-${PORTVERSION}
 
 BUILDDIRS=	graphics/gr-libs/X11 \
 		graphics/gr-libs/ui \
@@ -29,7 +29,6 @@ BUILDDIRS=	graphics/gr-libs/X11 \
 		graphics/gr-libs/vbtkit
 L1=		${PREFIX}/lib/m3/${TARGET}/
 SOVERSION=	7
-VERSION=	1.1.13
 # hack to work around bsd.port.mk problem
 USE_BZIP2=	yes
 

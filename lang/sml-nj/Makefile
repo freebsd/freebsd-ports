@@ -1,25 +1,24 @@
 # New ports collection makefile for: sml/nj
-# Version required:    110
 # Date created:        7 July 1998
 # Whom:                jkoshy
 #
 # $FreeBSD$
 #
 
-DISTNAME=     110.9.1-bin.x86-unix
-PKGNAME=      smlnj-110.9.1
-CATEGORIES=   lang
-MASTER_SITES= ftp://ftp.research.bell-labs.com/dist/smlnj/working/110.9.1/ \
-	      ftp://ftp.diku.dk/pub/smlnj/working/110.9.1/ \
-	      ftp://sunsite.doc.ic.ac.uk/computing/programming/languages/ml/smlnj/working/110.9.1/ \
-	      ftp://compiler.kaist.ac.kr/pub/sml/working/110.9.1/
-DISTFILES=    110.9.1-bin.x86-unix.tar.Z 110.9.1-cm.tar.Z 110.9.1-cml.tar.Z \
-	      110.9.1-config.tar.Z 110.9.1-eXene.tar.Z \
-	      110.9.1-ml-burg.tar.Z 110.9.1-ml-lex.tar.Z 110.9.1-ml-yacc.tar.Z \
-	      110.9.1-runtime.tar.Z 110.9.1-smlnj-c.tar.Z \
-	      110.9.1-smlnj-lib.tar.Z
+PORTNAME=	smlnj
+PORTVERSION=	110.9.1
+CATEGORIES=	lang
+MASTER_SITES=	ftp://ftp.research.bell-labs.com/dist/smlnj/working/110.9.1/ \
+		ftp://ftp.diku.dk/pub/smlnj/working/110.9.1/ \
+		ftp://sunsite.doc.ic.ac.uk/computing/programming/languages/ml/smlnj/working/110.9.1/ \
+		ftp://compiler.kaist.ac.kr/pub/sml/working/110.9.1/
+DISTFILES=	110.9.1-bin.x86-unix.tar.Z 110.9.1-cm.tar.Z 110.9.1-cml.tar.Z \
+		110.9.1-config.tar.Z 110.9.1-eXene.tar.Z \
+		110.9.1-ml-burg.tar.Z 110.9.1-ml-lex.tar.Z \
+		110.9.1-ml-yacc.tar.Z 110.9.1-runtime.tar.Z \
+		110.9.1-smlnj-c.tar.Z 110.9.1-smlnj-lib.tar.Z
 
-MAINTAINER=   jkoshy@freebsd.org
+MAINTAINER=	jkoshy@freebsd.org
 
 # Other mirror sites that generally carry only released versions of SML
 # 	ftp://rodin.stanford.edu/pub/smlnj/release/
@@ -28,16 +27,16 @@ MAINTAINER=   jkoshy@freebsd.org
 # Mirror sites that keep files around in gzipped format
 # 	ftp://flint.cs.yale.edu/pub/smlnj/working/110.9.1/
 
-DIST_SUBDIR=  sml-nj
-NO_WRKSUBDIR= yes
-EXTRACT_ONLY= 110.9.1-config.tar.Z
-USE_GMAKE=    yes
+DIST_SUBDIR=	sml-nj
+NO_WRKSUBDIR=	yes
+EXTRACT_ONLY=	110.9.1-config.tar.Z
+USE_GMAKE=	yes
 
-SML_BASE=     ${PREFIX}/lib/sml-nj
-SML_LIBDIR=   ${SML_BASE}/lib
-SML_BINDIR=   ${SML_BASE}/bin
-SML_SRCDIR=   ${SML_BASE}/src
-SML_EXES=     ml-burg ml-lex ml-yacc sml
+SML_BASE=	${PREFIX}/lib/sml-nj
+SML_LIBDIR=	${SML_BASE}/lib
+SML_BINDIR=	${SML_BASE}/bin
+SML_SRCDIR=	${SML_BASE}/src
+SML_EXES=	ml-burg ml-lex ml-yacc sml
 
 # make symlinks to the dist files
 post-extract:

@@ -1,12 +1,12 @@
 # New ports collection makefile for:   guileobjc
-# Version required:    0.3.8
 # Date created:        21 April 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	guileobjc-0.3.8
+PORTNAME=	guileobjc
+PORTVERSION=	0.3.8
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.aist-nara.ac.jp/pub/personal/masata-y/gyve/fullkit/gyve-0.1.2.4/
 

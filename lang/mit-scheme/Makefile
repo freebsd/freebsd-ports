@@ -1,15 +1,15 @@
 # New ports collection makefile for:	MIT-Scheme
-# Version required:	7.5.5
 # Date created:		Mar 26 1995
 # Whom:			jmacd@FreeBSD.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	scheme-7.5.5-ix86-freebsd
-PKGNAME=	mit-scheme-7.5.5
+PORTNAME=	mit-scheme
+PORTVERSION=	7.5.5
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.swiss.ai.mit.edu/pub/scheme-7.5/
+DISTNAME=	scheme-7.5.5-ix86-freebsd
 
 MAINTAINER= 	jmacd@FreeBSD.org
 

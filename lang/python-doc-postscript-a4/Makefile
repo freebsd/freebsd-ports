@@ -1,5 +1,4 @@
 # New ports collection makefile for:	python-doc-postscript-a4
-# Version required:	1.5.2
 # Date created:		02 June 1999
 # Whom:			Thomas Gellekum <tg@FreeBSD.org>
 #

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	Java Cryptograph Extension by Cryptix
-# Version required:	2000-02-11
 # Date created:		2000/02/19
 # Whom:			Kensaku Masuda <greg@greg.rim.or.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	cryptix-jce-20000211
+PORTNAME=	cryptix-jce
+PORTVESION=	20000211
 CATEGORIES=	java security
 MASTER_SITES=	http://cvs.cryptix.org/~gelderen/
 

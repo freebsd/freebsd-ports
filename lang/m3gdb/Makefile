@@ -1,12 +1,12 @@
 # New ports collection makefile for:   m3gdb
-# Version required:    4.17
 # Date created:        17 February 1999
 # Whom:                wagner@luthien.in-berlin.de
 #
 # $FreeBSD$
 #
 
-DISTNAME=	m3gdb-4.17
+PORTNAME=	m3gdb
+PORTVERSION=	4.17
 CATEGORIES=	lang devel
 MASTER_SITES=	http://people.FreeBSD.org/~jdp/distfiles/
 DISTFILES=	m3gdb-4.17.tar.gz \

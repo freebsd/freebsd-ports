@@ -1,13 +1,12 @@
 # New ports collection makefile for: 	lua
-# Version required: 			3.2.2
 # Date created:				27 June 1999
 # Whom:					Richard Kiss <richard@homemail.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	lua-3.2
-PKGNAME=	lua-3.2.2
+PORTNAME=	lua
+PORTVERSION=	3.2.2
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.tecgraf.puc-rio.br/pub/lua/ \
 		ftp://csg.uwaterloo.ca/pub/lhf/lua/ \
@@ -15,6 +14,7 @@ MASTER_SITES=	ftp://ftp.tecgraf.puc-rio.br/pub/lua/ \
 		ftp://ftp.ntua.gr/pub/lang/lua/ \
 		ftp://ftp.uni-trier.de/pub/languages/lua/ \
 		ftp://ftp.gwdg.de/pub/languages/lua/
+DISTNAME=	lua-3.2
 
 MAINTAINER=	richard@homemail.com
 

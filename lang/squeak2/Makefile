@@ -1,18 +1,17 @@
 # New ports collection makefile for:   	squeak
-# Version required:    			2.3
 # Date created:        			4 March 1999
 # Whom:                			jesse@cs.uni-magdeburg.de
 #
 # $FreeBSD$
 #
 
-DISTNAME=	Squeak2.7-src
-PKGNAME=	squeak-2.7
+PORTNAME=	squeak
+PORTVERSION=	2.7
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Projects/SOR/users/piumarta/squeak/ \
 		ftp://ftp.cs.uni-magdeburg.de/pub/Smalltalk/free/squeak/unix/ \
 		http://www.nectar.com/distfiles/squeak/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${SQUEAK_SRC}
+DISTFILES=	Squeak2.7-src${EXTRACT_SUFX} ${SQUEAK_SRC}
 
 MAINTAINER=	jesse@cs.uni-magdeburg.de
 
