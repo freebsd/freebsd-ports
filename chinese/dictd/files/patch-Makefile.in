@@ -1,0 +1,10 @@
+--- Makefile.in.orig	Sun Nov 24 02:01:29 2002
++++ Makefile.in	Sun Nov 24 02:01:44 2002
+@@ -154,7 +154,6 @@
+ 	if test ! -d $(bindir); then $(INSTALL) -d 755 $(bindir); fi
+ 	if test ! -d $(man1_prefix); then $(INSTALL) -d 755 $(man1_prefix); fi
+ 	$(INSTALL_PROGRAM) dictfmt $(bindir)
+-	$(INSTALL_PROGRAM) dictfmt_index2suffix $(bindir)
+ 	$(INSTALL_DATA) dictfmt.1 $(man1_prefix)/dictfmt.1
+ 
+ install.dictd: dictd
