@@ -15,7 +15,7 @@ MAINTAINER=	d.marks@student.umist.ac.uk
 
 MAN1=		hackedbox.1
 DOCS=		AUTHORS ChangeLog INSTALL README TODO
-I10L=		C da_DK de_DE es_ES et_EE fr_FR it_IT nl_NL pt_BR ru_RU sl_SI \
+I10L=		C da_DK de_DE es_ES fr_FR it_IT nl_NL pt_BR ru_RU sl_SI \
 			sv_SE tr_TR
 STYLES=		artwiz bluebox cthulhain deep flux frobozz frobust nyz \
 			nyzclone operation outcomes shade steelblue \
