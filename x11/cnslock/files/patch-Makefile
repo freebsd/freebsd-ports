@@ -1,16 +1,16 @@
---- Makefile.orig	Thu Apr 10 19:48:41 2003
-+++ Makefile	Thu Apr 10 20:03:05 2003
-@@ -2,11 +2,11 @@
+--- Makefile.orig	Sun Oct 27 09:34:22 2002
++++ Makefile	Sun Jul  6 20:33:58 2003
+@@ -2,11 +2,10 @@
  PREFIX = /usr/local
  
  VERSION = 1.02
 -CFLAGS = -O3 -Wall `gtk-config --cflags` -DVERSION=$(VERSION) ${EXTRA}
-+CFLAGS += `gtk12-config --cflags` -DVERSION=$(VERSION) ${EXTRA}
- CC = gcc
+-CC = gcc
++CFLAGS += ${CPPFLAGS} `${GTK_CONFIG} --cflags` -DVERSION=$(VERSION) ${EXTRA}
  OBJS = cnslock.o kleds.o applet.o
  
 -LIBS = `gtk-config --libs | sed "s/-lgtk//g"`
-+LIBS = `gtk12-config --libs | sed "s/-lgtk12//g"` -lgnugetopt
++LIBS = `${GTK_CONFIG} --libs | sed "s/-lgtk12//g"` ${LDFLAGS}
  
  all: cnslock
  
