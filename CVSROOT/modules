@@ -1661,7 +1661,7 @@ fuzz		ports/security/fuzz
 fvwm		ports/x11-wm/fvwm
 fvwm-themes	ports/x11-wm/fvwm-themes
 fvwm2		ports/x11-wm/fvwm2
-fvwm2-beta	ports/x11-wm/fvwm2-beta
+fvwm2-devel	ports/x11-wm/fvwm2-devel
 fvwm2-i18n	ports/x11-wm/fvwm2-i18n
 fvwm95		ports/x11-wm/fvwm95
 fvwm95-i18n	ports/x11-wm/fvwm95-i18n
