@@ -7,6 +7,7 @@
 
 PORTNAME=	balsa2
 PORTVERSION=	2.0.11
+PORTREVISION=	1
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://www.theochem.kth.se/~pawsa/balsa/ \
 		ftp://ftp.newton.cx/pub/balsa/
@@ -25,12 +26,11 @@ RUN_DEPENDS=	${LOCALBASE}/bin/ispell:${PORTSDIR}/textproc/ispell
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_LIBTOOL=	yes
 USE_PERL5=	yes
 USE_REINPLACE=	yes
 USE_OPENSSL=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomeui libgnomeprintui libgtkhtml
-LIBTOOLFILES=	libmutt/configure
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-threads \
 		--enable-gtkhtml \
 		--enable-ldap \
