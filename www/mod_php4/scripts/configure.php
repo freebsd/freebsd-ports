@@ -143,9 +143,8 @@ while [ "$1" ]; do
 			;;
 		\"SybaseDB\")
 			echo "LIB_DEPENDS+=	sybdb.1:\${PORTSDIR}/databases/freetds"
-			echo "LIB_DEPENDS+=	giconv.2:\${PORTSDIR}/converters/libiconv"
+			echo "LIB_DEPENDS+=	iconv.3:\${PORTSDIR}/converters/libiconv"
 			echo "CONFIGURE_ARGS+=--with-sybase=\${LOCALBASE}"
-			LIBS="${LIBS} -L\${LOCALBASE}/lib -lgiconv"
 			if [ "$SYBASECT" ]; then
 				echo "SybaseDB and SybaseCT are mutually exclusive." > /dev/stderr
 				rm -f ${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
@@ -155,9 +154,8 @@ while [ "$1" ]; do
 			;;
 		\"SybaseCT\")
 			echo "LIB_DEPENDS+=	ct.0:\${PORTSDIR}/databases/freetds"
-			echo "LIB_DEPENDS+=	giconv.2:\${PORTSDIR}/converters/libiconv"
+			echo "LIB_DEPENDS+=	iconv.3:\${PORTSDIR}/converters/libiconv"
 			echo "CONFIGURE_ARGS+=--with-sybase-ct=\${LOCALBASE}"
-			LIBS="${LIBS} -L\${LOCALBASE}/lib -lgiconv"
 			if [ "$SYBASEDB" ]; then
 				echo "SybaseDB and SybaseCT are mutually exclusive." > /dev/stderr
 				rm -f ${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
@@ -212,13 +210,12 @@ while [ "$1" ]; do
 			;;
 		\"XML\")
 			echo "LIB_DEPENDS+=	expat.2:\${PORTSDIR}/textproc/expat2"
-			echo "CONFIGURE_ARGS+=--with-xml --with-expat-dir=\${LOCALBASE}"
+			echo "CONFIGURE_ARGS+=--with-expat-dir=\${LOCALBASE}"
 			XML=1
 			;;
 		\"XSLT\")
 			echo "LIB_DEPENDS+=	sablot.67:\${PORTSDIR}/textproc/sablotron"
 			echo "CONFIGURE_ARGS+=--enable-xslt --with-xslt-sablot"
-			echo "CONFIGURE_ARGS+=--with-expat-dir=\${LOCALBASE}"
 			if [ -z "$XML" ]; then
 				set $* \"XML\"
 			fi
@@ -242,7 +239,7 @@ while [ "$1" ]; do
 			echo "CONFIGURE_ARGS+=--with-gettext=\${LOCALBASE}"
 			;;
 		\"iconv\")
-			echo "LIB_DEPENDS+=	iconv.2:\${PORTSDIR}/converters/iconv"
+			echo "LIB_DEPENDS+=	iconv.3:\${PORTSDIR}/converters/libiconv"
 			echo "CONFIGURE_ARGS+=--with-iconv=\${LOCALBASE}"
 			ICONV=1
 			;;
