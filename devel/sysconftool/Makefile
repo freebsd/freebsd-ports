@@ -24,6 +24,7 @@ MAN7=		sysconftool.7
 pre-patch:
 	@${PERL} -pi.orig -e 's|autoconf|${AUTOCONF}|; \
 		s|autoheader|${AUTOHEADER}|; s|aclocal|${ACLOCAL}|; \
-		s|automake|${AUTOMAKE}|' ${WRKSRC}/configure
+		s|automake|${AUTOMAKE}|' ${WRKSRC}/configure; \
+	cp ${TEMPLATES}/config.guess ${TEMPLATES}/config.sub ${WRKSRC}
 
 .include <bsd.port.mk>
