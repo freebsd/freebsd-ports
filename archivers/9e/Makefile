@@ -11,7 +11,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	http://www.eecs.harvard.edu/~wkj/Software/9e/
 DISTNAME=	9e
 
-MAINTAINER=	jhix@mindspring.com
+MAINTAINER=	gehicks@cisco.co
 
 WWW=		http://www.eecs.harvard.edu/~wkj/Software/9e/
 

@@ -12,7 +12,7 @@ MASTER_SITES=   ${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gcc
 PKGNAMEPREFIX=	m68k
 
-MAINTAINER=	Jerry.Hicks@Glenayre.com
+MAINTAINER=	gehicks@cisco.com
 
 BUILD_DEPENDS=	m68k-coff-as:${PORTSDIR}/devel/binutils-m68k \
 		m68k-coff-ld:${PORTSDIR}/devel/binutils-m68k

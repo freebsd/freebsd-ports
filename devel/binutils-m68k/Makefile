@@ -12,7 +12,7 @@ MASTER_SITES=   ${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	binutils
 PKGNAMEPREFIX=	m68k
 
-MAINTAINER=	Jerry.Hicks@Glenayre.com
+MAINTAINER=	gehicks@cisco.com
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

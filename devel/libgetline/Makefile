@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.sco.com/skunkware/src/lib/
 DISTNAME=	${PORTNAME}-39-src
 
-MAINTAINER=	jhix@mindspring.com
+MAINTAINER=	gehicks@cisco.com
 
 MAN3=		getline.3
 

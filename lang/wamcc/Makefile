@@ -11,7 +11,7 @@ CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Projects/loco/wamcc/
 DISTFILES=	wamcc2.22.tar.Z prg.tar.Z
 
-MAINTAINER=	jhix@mindspring.com
+MAINTAINER=	gehicks@cisco.com
 
 DIST_SUBDIR=	wamcc
 NO_WRKSUBDIR=	yes
