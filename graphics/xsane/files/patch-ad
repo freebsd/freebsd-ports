@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Thu Oct 12 02:30:03 2000
++++ src/Makefile.in	Thu Oct 12 02:30:16 2000
+@@ -59,7 +59,7 @@
+ all: $(PROGRAMS)
+ 
+ install: $(PROGRAMS)
+-	$(MKINSTALLDIRS) $(bindir) $(sbindir) $(datadir) $(sanedatadir) $(sanedatadir)/xsane
++	$(MKINSTALLDIRS) $(bindir) $(datadir) $(sanedatadir) $(sanedatadir)/xsane
+ 	@for program in $(BINPROGS); do \
+ 	  $(INSTALL_PROGRAM) $${program} $(bindir)/$${program}; \
+ 	done
