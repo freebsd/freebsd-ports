@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libidn
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU_ALPHA} \
 		http://josefsson.org/libidn/releases/
@@ -15,14 +15,14 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Internationalized Domain Names command line tool
 
-LIB_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
 BUILD_DEPENDS=	gengetopt:${PORTSDIR}/devel/gengetopt
 
-USE_GETTEXT=	yes
-USE_PERL5_BUILD=	yes
-USE_LIBTOOL_VER=	13
 USE_GETOPT_LONG=	yes
+USE_GETTEXT=	yes
 USE_GNOME=		gnomehack
+USE_ICONV=	yes
+USE_LIBTOOL_VER=	13
+USE_PERL5_BUILD=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
