@@ -1,0 +1,11 @@
+--- rat/sdr2.plugin.in.orig	Wed May 12 07:36:14 1999
++++ rat/sdr2.plugin.in	Sun Aug 22 10:47:05 1999
+@@ -12,7 +12,7 @@
+ 
+ media:		audio
+ proto:		RTP/AVP
+-tool:		rat-__VERSION__
++tool:		rat
+ protoname: 	RTP
+ cryptflag: 	-K
+ 
