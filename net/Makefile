@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.132 1997/12/27 04:10:19 asami Exp $
+# $Id: Makefile,v 1.133 1998/01/15 07:58:40 jkh Exp $
 #
 
     SUBDIR += archie
@@ -83,6 +83,7 @@
     SUBDIR += telnetx
     SUBDIR += tintin++
     SUBDIR += tinyfugue
+    SUBDIR += tkirc
     SUBDIR += traceroute
     SUBDIR += trafshow
     SUBDIR += ttt
