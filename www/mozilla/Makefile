@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	mozilla
-PORTVERSION=	1.7.1
+PORTVERSION=	1.7.2
 PORTREVISION?=	0
 PORTEPOCH?=	2
 CATEGORIES?=	www
@@ -87,6 +87,7 @@ MOZ_EXTENSIONS=	default
 CONFIGURE_ENV=	MOZ_INTERNAL_LIBART_LGPL=1 \
 		LOCALBASE=${LOCALBASE}
 PKGINSTALL=	${WRKDIR}/pkg-install
+PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
 .if defined(WITH_GTK1)
 CONFIGURE_ARGS+=	--enable-default-toolkit=gtk
@@ -253,6 +254,8 @@ post-patch:
 	done
 	@${SED} -e 's|%%MOZDIR%%|${PREFIX}/lib/${MOZILLA}|g' \
 		< ${MASTERDIR}/pkg-install.in > ${PKGINSTALL}
+	@${SED} -e 's|%%MOZDIR%%|${PREFIX}/lib/${MOZILLA}|g' \
+		< ${MASTERDIR}/pkg-deinstall.in > ${PKGDEINSTALL}
 
 pre-configure:
 	@if [ -n "`${PKG_INFO} -xI '^bind[0-9]*-base-[0-9]'`" ]; then \
