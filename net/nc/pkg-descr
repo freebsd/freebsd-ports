@@ -1,0 +1,5 @@
+Ncat concatenates data streams similar to "cat" except the streams can
+be files or TCP connections. Ncat makes it easy to pipe data between
+hosts.
+
+WWW: http://www.kyne.com.au/~mark/software/ncat.php
