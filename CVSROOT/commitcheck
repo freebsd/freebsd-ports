@@ -26,6 +26,7 @@ if (@cfg::COMMIT_HOSTS && !grep(/^\Q$hostname\E$/i, @cfg::COMMIT_HOSTS)) {
 	exit 1;
 }
 
+
 # Sanity check to make sure we've been run through the wrapper and are
 # now primary group 'ncvs'.
 #
@@ -35,6 +36,16 @@ unless ( $GRP =~ /^ncvs$/ ) {
 	print "You do not have group ncvs (commitcheck)!\n";
 	exit 1;
 }
+
+
+# Run locally defined extra commitchecks.
+if (defined($cfg::COMMITCHECK_EXTRA) && $cfg::COMMITCHECK_EXTRA) {
+	die 'commitcheck: $cfg::COMMITCHECK_EXTRA isn\'t a sub!'
+	    unless ref($cfg::COMMITCHECK_EXTRA) eq "CODE";
+
+	die "Failed commitcheck_extra\n" unless &$cfg::COMMITCHECK_EXTRA();
+}
+
 
 #
 # Ensure the minimum version of cvs is installed.
