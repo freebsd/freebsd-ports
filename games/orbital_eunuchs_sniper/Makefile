@@ -15,7 +15,6 @@ COMMENT=	An overhead shooting game
 
 USE_SDL=	sdl image mixer
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="`${SDL_CONFIG} --cflags`" \
