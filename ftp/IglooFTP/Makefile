@@ -18,7 +18,8 @@ MAINTAINER=	ports@FreeBSD.org
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
 USE_X_PREFIX=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 
 post-extract:
 	@${RM} ${WRKSRC}/../share/docs/LICENSE~
