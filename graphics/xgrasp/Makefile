@@ -10,7 +10,7 @@ DISTNAME=	xgrasp.1.7d
 PKGNAME=	xgrasp-1.7d
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/ \
-		ftp://ftp.cdrom.com/pub/X11/R5contrib/
+		ftp://ftp.freesoftware.com/pub/X11/R5contrib/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
