@@ -19,14 +19,11 @@ RUN_DEPENDS=	aumix:${PORTSDIR}/audio/aumix \
 
 USE_PYTHON=	yes
 NO_BUILD=	yes
-PLIST=		${WRKDIR}/pkg-plist
+PLIST_FILES=	bin/mutemix
 WRKSRC=		${WRKDIR}
 
 do-extract:
 	${MKDIR} ${WRKDIR}
-
-pre-install:
-	${ECHO_CMD} "bin/mutemix" > ${PLIST}
 
 do-install:
 	${INSTALL_SCRIPT} ${_DISTDIR}/${DISTFILES} ${PREFIX}/bin/mutemix
