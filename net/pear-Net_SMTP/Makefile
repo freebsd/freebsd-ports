@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net_SMTP
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	net mail www
 MASTER_SITES=	http://pear.php.net/get/
 PKGNAMEPREFIX=	pear-
@@ -16,7 +16,8 @@ DIST_SUBDIR=	PEAR
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR class that provides an implementation of the SMTP protocol
 
-BUILD_DEPENDS=	${PEARDIR}/SASL.php:${PORTSDIR}/security/pear-Auth_SASL
+BUILD_DEPENDS=	${PEARDIR}/Auth/SASL.php:${PORTSDIR}/security/pear-Auth_SASL
+#		${PEARDIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 NO_BUILD=	yes
