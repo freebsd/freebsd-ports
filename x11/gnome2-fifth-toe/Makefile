@@ -7,6 +7,7 @@
 
 PORTNAME=	gnome2-fifth-toe
 PORTVERSION=	2.2.0
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -19,6 +20,7 @@ RUN_DEPENDS=	gnumeric:${PORTSDIR}/math/gnumeric2 \
 		xchat:${PORTSDIR}/irc/xchat2 \
 		balsa:${PORTSDIR}/mail/balsa2 \
 		gimp-1.3:${PORTSDIR}/graphics/gimp-devel \
+		sodipodi:${PORTSDIR}/graphics/sodipodi \
 		gnomeicu:${PORTSDIR}/net/gnomeicu2 \
 		gcalctool:${PORTSDIR}/math/gcalctool \
 		gthumb:${PORTSDIR}/graphics/gthumb2 \
