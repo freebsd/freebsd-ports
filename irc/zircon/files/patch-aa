@@ -5,7 +5,7 @@
      global CC GCC SCflag CFlags Type SLDflag share scflags
      switch {} $CC {} default return
 -    set CFlags -O
-+    set CFlags {-O -I/usr/local/include/tcl8.0}
++    set CFlags {-O -I/usr/local/include/tcl8.1}
      catch {set CFlags $cflags($Type)}
      switch BSDI $Type {
  	set CC gcc2
