@@ -1,4 +1,3 @@
 APPENDDEF(`conf_mail_local_ENVDEF', `-DQUEUE_ONLY')
-APPENDDEF(`conf_sendmail_ENVDEF', `-DPICKY_HELO_CHECK')
 APPENDDEF(`conf_smrsh_ENVDEF', `-DCMDDIR="\"%%PREFIX%%/libexec/sm.bin\""')
 APPENDDEF(`conf_smrsh_ENVDEF', `-DPATH="\"/bin:/usr/bin\""')
