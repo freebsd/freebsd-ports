@@ -94,6 +94,7 @@ gprolog-%%GPROLOG_VER%%/ChangeLog
 @dirrm %%EXAMPLESDIR%%/ExamplesFD
 @dirrm %%EXAMPLESDIR%%/ExamplesC
 @dirrm %%EXAMPLESDIR%%/ExamplesPl
+@dirrm %%EXAMPLESDIR%%
 @dirrm gprolog-%%GPROLOG_VER%%/lib
 @dirrm gprolog-%%GPROLOG_VER%%/include
 @dirrm gprolog-%%GPROLOG_VER%%/bin
