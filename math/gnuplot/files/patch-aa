@@ -1,11 +1,11 @@
---- configure.orig	Wed Jul 23 19:16:20 1997
-+++ configure	Sun Apr 19 17:41:14 1998
-@@ -925,6 +925,8 @@
- 
- fi
- 
-+LASERGNU=lasergnu_install
-+
- # Check whether --with-linux-vga or --without-linux-vga was given.
- if test "${with_linux_vga+set}" = set; then
-   withval="$with_linux_vga"
+--- configure.orig	Fri Jan 15 06:13:23 1999
++++ configure	Tue Feb  9 23:20:50 1999
+@@ -3930,7 +3930,7 @@
+ echo "configure:3931: checking for gd.h" >&5
+ ac_safe=`echo "gd.h" | sed 'y%./+-%__p_%'`
+ gp_save_CPPFLAGS="$CPPFLAGS"
+-for ac_dir in '' /usr/local/include $gp_lib_prefix $gp_lib_prefix/include ; do
++for ac_dir in '' /usr/local/include/gd $gp_lib_prefix $gp_lib_prefix/include ; do
+   CPPFLAGS="$gp_save_CPPFLAGS `test x${ac_dir} != x && echo -I${ac_dir}`"
+   cat > conftest.$ac_ext <<EOF
+ #line 3937 "configure"
