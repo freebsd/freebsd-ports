@@ -280,6 +280,7 @@
     SUBDIR += wminet
     SUBDIR += wmlmmon
     SUBDIR += wmlongrun
+    SUBDIR += wmmemfree
     SUBDIR += wmmemload
     SUBDIR += wmmemmon
     SUBDIR += wmmon
