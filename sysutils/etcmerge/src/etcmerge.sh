@@ -126,7 +126,7 @@ case "$1" in
 	# XXX Check for need?
 	/usr/sbin/pwd_mkdb -d etc-merged -p etc-merged/master.passwd
 	/usr/bin/cap_mkdb etc-merged/login.conf
-	if diff -q /etc/mail/aliases etc-merged/mail/aliases > /dev/null
+	if diff -q /etc/mail/aliases etc-merged/mail/aliases > /dev/null; then
 	    NEED_NEWALIASES=yes
 	else
 	    NEED_NEWALIASES=no
@@ -155,7 +155,7 @@ case "$1" in
 	mv ${tmpetc} /etc
 	fsync /
 	if [ "${NEED_NEWALIASES}" = "yes" ]; then
-	    /usr/sbin/newaliases
+	    /usr/bin/newaliases
 	fi
 	mv ${REFETC} ${REFETC}.etcmergeold
 	mv ${REFETC}.etcmerge ${REFETC}
