@@ -9,7 +9,7 @@ PORTNAME=	johabfonts
 PORTVERSION=	3.1
 CATEGORIES=	korean x11-fonts
 MASTER_SITES=	http://hanterm.org/download/font/
-DISTNAME=	hanterm-font
+DISTNAME=	hanterm-font-${PORTVERSION}
 
 MAINTAINER=	cjh@FreeBSD.org
 
@@ -23,6 +23,7 @@ RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
 .endif
 
 NO_INSTALL_MANPAGES= yes
+WRKSRC=		${WRKDIR}/hanterm-font/10-6-6
 
 pre-install:
 	-${MKDIR} ${PREFIX}/lib/X11/fonts/local
