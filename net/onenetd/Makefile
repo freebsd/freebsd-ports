@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	onenetd
-PORTVERSION=	1.10
+PORTVERSION=	1.11
 CATEGORIES=	net
 MASTER_SITES=	http://offog.org/files/ \
 		ftp://ftp.i-scream.org/pub/offog.org/files/ \
