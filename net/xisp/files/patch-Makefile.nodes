@@ -1,0 +1,86 @@
+--- Makefile.nodes.orig	Sun Aug  8 06:43:28 1999
++++ Makefile.nodes	Wed Nov 27 04:43:56 2002
+@@ -201,10 +201,9 @@
+ GROUP      = dialer
+ CHAT_PATH  = /usr/bin
+ PPPD_PATH  = /usr/sbin
+-GCCFLAGS   = -Wall -O
+ EXTRALIBS  = 
+ LINKX11    = -Wl,-R$(LIBX11)
+-LINKFORMS  = -L$(LIBFORMS) -lxforms
++LINKFORMS  = -L$(LIBFORMS) -lforms
+ INSTALL    = /usr/bin/install
+ MODEM_DEV  = cuaa0
+ MODEM_DEVS = cuaa0 cuaa1 cuaa2 cuaa3
+@@ -238,7 +237,7 @@
+ #
+ # gcc option flags
+ #------------------
+-GCCOPTS   = $(GCCFLAGS) $(DEFINES) $(EXTRADEFS)
++GCCOPTS   = $(CFLAGS) $(DEFINES) $(EXTRADEFS)
+ #
+ #=====================================================================
+ #       You shouldn't need to edit anything below this line          |
+@@ -247,49 +246,49 @@
+ all: xisp xispdial xisprccv xispterm xispid
+ 
+ xisp: xisp.o nodes.o warn.o network.o rcio.o logs.o
+-	gcc $(LINKX11) -o xisp xisp.o nodes.o warn.o network.o rcio.o logs.o $(EXTRALIBS) -L$(LIBX11) $(LINKFORMS) -lXpm -lX11 -lm -lmd
++	$(CC) $(LINKX11) -o xisp xisp.o nodes.o warn.o network.o rcio.o logs.o $(EXTRALIBS) -L$(LIBX11) $(LINKFORMS) -lXpm -lX11 -lm -lmd
+ 
+ xisp.o: xisp.h xisp.c xisp.xpm version.h common.h pcode.h network.h rcio.h logs.h help.c peHelp.c excl.xpm
+-	gcc $(GCCOPTS) -I$(INCX11) -I$(INCFORMS) -c xisp.c
++	$(CC) $(GCCOPTS) -I$(INCX11) -I$(INCFORMS) -c xisp.c
+ 
+ xisp.xpm:
+ 	cp $(XPMIMAGE) xisp.xpm
+ 
+ pcode.o: pcode.h pcode.c
+-	gcc $(GCCOPTS) -c pcode.c
++	$(CC) $(GCCOPTS) -c pcode.c
+ 
+ nodes.o: pcode.h
+-	gcc $(GCCOPTS) -c nodes.c
++	$(CC) $(GCCOPTS) -c nodes.c
+ 
+ warn.o:
+-	gcc $(GCCOPTS) -I$(INCX11) -I$(INCFORMS) -c warn.c
++	$(CC) $(GCCOPTS) -I$(INCX11) -I$(INCFORMS) -c warn.c
+ 
+ nowarn.o:
+-	gcc $(GCCOPTS) -c nowarn.c
++	$(CC) $(GCCOPTS) -c nowarn.c
+ 
+ network.o: network.h network.c
+-	gcc $(GCCOPTS) -c network.c
++	$(CC) $(GCCOPTS) -c network.c
+ 
+ xispdial: xispdial.c common.h version.h
+-	gcc $(GCCOPTS) -o xispdial xispdial.c
++	$(CC) $(GCCOPTS) -o xispdial xispdial.c
+ 
+ xisprccv: xisprccv.o nodes.o nowarn.o
+ 	gcc -o xisprccv xisprccv.o nodes.o nowarn.o $(EXTRALIBS) -lm -lmd
+ 
+ xisprccv.o: xisprccv.c common.h version.h pcode.h logs.h
+-	gcc $(GCCOPTS) -c xisprccv.c
++	$(CC) $(GCCOPTS) -c xisprccv.c
+ 
+ xispterm: xispterm.h xispterm.c
+-	gcc $(GCCOPTS) -I$(INCX11) -I$(INCFORMS) -o xispterm xispterm.c $(EXTRALIBS) -L$(LIBX11) $(LINKFORMS) -lX11 -lm
++	$(CC) $(GCCOPTS) -I$(INCX11) -I$(INCFORMS) -o xispterm xispterm.c $(EXTRALIBS) -L$(LIBX11) $(LINKFORMS) -lX11 -lm
+ 
+ rcio.o: rcio.h rcio.c common.h version.h
+-	gcc $(GCCOPTS) -c rcio.c
++	$(CC) $(GCCOPTS) -c rcio.c
+ 
+ logs.o: logs.h logs.c version.h
+-	gcc $(GCCOPTS) -c logs.c
++	$(CC) $(GCCOPTS) -c logs.c
+ 
+ xispid: xispid.c
+-	gcc $(GCCOPTS) -o xispid xispid.c
++	$(CC) $(GCCOPTS) -o xispid xispid.c
+ 
+ install: xisp xispdial xisprccv xispterm xispid
+ 	if [ ! -d $(DESTDIR)$(BINX11) ]; then $(INSTALL) -d $(DESTDIR)$(BINX11); fi
