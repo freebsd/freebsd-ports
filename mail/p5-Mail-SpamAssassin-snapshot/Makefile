@@ -5,6 +5,8 @@
 # $FreeBSD$
 #
 
+# This port will eventually be converted to a cvs snapshot port
+
 PORTNAME=	Mail-SpamAssassin
 PORTVERSION=	2.60-rc3
 CATEGORIES=	mail perl5
@@ -15,6 +17,8 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	DougB@FreeBSD.org
 COMMENT=	A highly efficient mail filter for identifying spam
+
+IGNORE=		Please use the 2.60 release version instead
 
 BUILD_DEPENDS=	${SITE_PERL}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS \
 		${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
@@ -50,9 +54,6 @@ MAN1PREFIX=	${PREFIX}
 MAN1=		spamd.1 spamassassin.1 spamc.1 sa-learn.1
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
-
-# XXX
-WRKSRC=		${WRKDIR}/Mail-SpamAssassin-2.60
 
 post-patch:
 	@${FIND} ${WRKSRC} -name \*.orig -delete
