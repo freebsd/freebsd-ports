@@ -17,6 +17,7 @@
     SUBDIR += bpft
     SUBDIR += brouted
     SUBDIR += cap
+    SUBDIR += centericq
     SUBDIR += choparp
     SUBDIR += ciscoconf
     SUBDIR += citrix_ica

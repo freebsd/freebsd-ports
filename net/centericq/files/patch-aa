@@ -1,0 +1,35 @@
+--- ../ktools/src/Makefile.orig	Wed Nov 24 12:22:50 1999
++++ ../ktools/src/Makefile	Sat Dec 25 13:32:33 1999
+@@ -1,15 +1,15 @@
+ # macros and variables
+ 
+-CC = gcc
+-CPP = g++
++CC ?= gcc
++CPP = ${CXX} 
+ RANLIB = ranlib
+ 
+ INSTDIR = .
+ INSTDIR_LIB = $(INSTDIR)
+ 
+-CFLAGS = #-g -Wall -DUNIX 
++CFLAGS += #-g -Wall -DUNIX 
+ 
+-INCLUDE = -I/usr/include -I../include
++INCLUDE = -I../include
+ OBJS = konst.fs.o konst.process.o konst.interface.o konst.string.o konst.socket.o konst.parser.o konst.logic.o
+ 
+ #
+@@ -31,10 +31,10 @@
+ all: $(LIB)
+ 
+ %.o : %.cc
+-	$(CPP) $*.cc -c $(INCLUDE) $(SSLINCL) -o $*.o
++	$(CPP) ${CXXFLAGS} $*.cc -c $(INCLUDE) $(SSLINCL) -o $*.o
+ 
+ %.o : %.c
+-	$(CC) $*.c -c $(INCLUDE) $(SSLINCL) -o $*.o
++	$(CC) ${CFLAGS} $*.c -c $(INCLUDE) $(SSLINCL) -o $*.o
+ 
+ clean:
+ 	rm -f *.o $(LIB); \
