@@ -30,6 +30,11 @@ include/tvmet/config/config-pgi.h
 include/tvmet/tvmet.h
 share/aclocal/tvmet.m4
 %%PORTDOCS%%share/doc/tvmet/Util.h
+%%PORTDOCS%%share/doc/tvmet/bench_matrix_matrix_product.png
+%%PORTDOCS%%share/doc/tvmet/bench_matrix_vector_product.png
+%%PORTDOCS%%share/doc/tvmet/bench_vector_add.png
+%%PORTDOCS%%share/doc/tvmet/bench_vector_inner_product.png
+%%PORTDOCS%%share/doc/tvmet/benchmark.doc
 %%PORTDOCS%%share/doc/tvmet/build.doc
 %%PORTDOCS%%share/doc/tvmet/changelog.doc
 %%PORTDOCS%%share/doc/tvmet/compiler.doc
@@ -50,23 +55,5 @@ share/aclocal/tvmet.m4
 %%PORTDOCS%%share/doc/tvmet/tvmet.css
 %%PORTDOCS%%share/doc/tvmet/usage.doc
 %%PORTDOCS%%share/doc/tvmet/works.doc
-%%PORTDOCS%%share/examples/tvmet/cmm.cc
-%%PORTDOCS%%share/examples/tvmet/cmv.cc
-%%PORTDOCS%%share/examples/tvmet/matrix_col.cc
-%%PORTDOCS%%share/examples/tvmet/mm.cc
-%%PORTDOCS%%share/examples/tvmet/mv.cc
-%%PORTDOCS%%share/examples/tvmet/ray.cc
-%%PORTDOCS%%share/examples/tvmet/xpr_print_m1.cc
-%%PORTDOCS%%share/examples/tvmet/xpr_print_m2.cc
-%%PORTDOCS%%share/examples/tvmet/xpr_print_m3.cc
-%%PORTDOCS%%share/examples/tvmet/xpr_print_m4.cc
-%%PORTDOCS%%share/examples/tvmet/xpr_print_mv1.cc
-%%PORTDOCS%%share/examples/tvmet/xpr_print_mv2.cc
-%%PORTDOCS%%share/examples/tvmet/xpr_print_v1.cc
-%%PORTDOCS%%share/examples/tvmet/xpr_print_v2.cc
-%%PORTDOCS%%share/examples/tvmet/xpr_print_v3.cc
-%%PORTDOCS%%share/examples/tvmet/xpr_print_v4.cc
-%%PORTDOCS%%@dirrm share/examples/tvmet
-%%PORTDOCS%%@dirrm share/doc/tvmet
 @dirrm include/tvmet/config
 @dirrm include/tvmet
