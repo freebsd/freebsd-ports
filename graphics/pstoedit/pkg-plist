@@ -4,6 +4,7 @@ bin/pstoedit
 %%PORTDOCS%%share/doc/pstoedit/pstoedit.htm
 share/pstoedit/latex2e.fmp
 share/pstoedit/mpost.fmp
+share/pstoedit/svg.fmp
 share/pstoedit/swffonts/default.fdb
 @dirrm share/pstoedit/swffonts
 @dirrm share/pstoedit
