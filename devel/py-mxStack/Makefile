@@ -32,9 +32,13 @@ post-extract:
 do-configure:
 	@(cd ${WRKSRC} && ${CONFIGURE_ENV} ${MAKE} -f Makefile.pre.in boot)
 
-post-install:
+do-install:
 	@${MKDIR} ${STACKDIR}
 	${INSTALL_DATA} ${WRKDIR}/Stack/*.py ${STACKDIR}
+	@${MKDIR} ${STACKDIR}/mxStack
+.for file in __init__.py mxStack.so
+	${INSTALL_DATA} ${WRKDIR}/Stack/mxStack/${file} ${STACKDIR}/mxStack
+.endfor
 	@${PREFIX}/bin/python ${PYTHONSCRIPTDIR}/compileall.py ${STACKDIR}
 	@${PREFIX}/bin/python -O ${PYTHONSCRIPTDIR}/compileall.py ${STACKDIR}
 .if !defined(NOPORTDOCS)
