@@ -166,6 +166,7 @@
     SUBDIR += lopster
     SUBDIR += lplayer
     SUBDIR += mad
+    SUBDIR += madplay
     SUBDIR += maplay
     SUBDIR += mbrola
     SUBDIR += mbrolavox
