@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/b/}
 MAINTAINER=	ponomarew@oberon.net
 COMMENT=	Funny billiards simulator game for KDE
 
-USE_KDELIBS=	3
+USE_KDELIBS_VER=	3
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=

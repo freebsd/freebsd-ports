@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ponomarew@oberon.net
 COMMENT=	Easysok is a sokoban game for KDE3
 
-USE_KDELIBS=	3
+USE_KDELIBS_VER=	3
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
