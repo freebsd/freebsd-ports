@@ -42,6 +42,7 @@
     SUBDIR += vMac
     SUBDIR += vmsbackup
     SUBDIR += vmware
+    SUBDIR += vmware-tools
     SUBDIR += vmware2
     SUBDIR += vpce
     SUBDIR += vxtools

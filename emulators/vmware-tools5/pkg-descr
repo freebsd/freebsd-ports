@@ -1,0 +1,14 @@
+VMware tools support FreeBSD _Guest_ OS running on VMware.  Beware,
+this port is _not_ for FreeBSD _Host_ OS.
+
+VMware tools for FreeBSD consist of vmware-toolbox which supports
+seamless operation between the Host and the Guest OS, dual-boot
+configulation files, and special X server for Guest OS.  However,
+vmware-toolbox for FreeBSD lacks some features that vmware-toolbox for
+Linux has, and dual-boot configulation is broken because checkvm
+doesn't work.
+
+So this port installs X server ONLY.  If you want vmware-toolbox,
+install emulators/linux-vmware-toolbox on your FreeBSD _Guest_ OS.
+
+WWW:	http://www.vmware.com/download/downloadtools.html
