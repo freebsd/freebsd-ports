@@ -1,5 +1,5 @@
 --- includes.h.orig	Sat Jan 26 17:44:22 2002
-+++ includes.h	Sat Jun 22 12:17:34 2002
++++ includes.h	Fri Jun 28 06:23:07 2002
 @@ -24,12 +24,12 @@
  #include <sys/select.h>
  #include <sys/param.h>
@@ -22,10 +22,12 @@
  #include <stdio.h>
  #include <ctype.h>
  #include <errno.h>
-@@ -62,5 +61,68 @@
+@@ -61,6 +60,69 @@
+  * Define this to use pipes instead of socketpairs for communicating with the
   * client program.  Socketpairs do not seem to work on all systems.
   */
- #define USE_PIPES 1
+-#define USE_PIPES 1
++#undef USE_PIPES
 +
 +#if defined(__FreeBSD__) && __FreeBSD__ <= 3
 +/*

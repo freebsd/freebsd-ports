@@ -1,6 +1,14 @@
 --- auth2.c.orig	Fri May 31 13:35:15 2002
-+++ auth2.c	Mon Jun 24 07:02:04 2002
-@@ -133,6 +133,15 @@
++++ auth2.c	Fri Jun 28 06:45:47 2002
+@@ -35,6 +35,7 @@
+ #include "dispatch.h"
+ #include "pathnames.h"
+ #include "monitor_wrap.h"
++#include "canohost.h"
+ 
+ /* import */
+ extern ServerOptions options;
+@@ -133,6 +134,15 @@
  	Authmethod *m = NULL;
  	char *user, *service, *method, *style = NULL;
  	int authenticated = 0;
@@ -16,7 +24,7 @@
  
  	if (authctxt == NULL)
  		fatal("input_userauth_request: no authctxt");
-@@ -152,8 +161,14 @@
+@@ -152,8 +162,14 @@
  		if (authctxt->pw && strcmp(service, "ssh-connection")==0) {
  			authctxt->valid = 1;
  			debug2("input_userauth_request: setting up authctxt for %s", user);
@@ -31,7 +39,7 @@
  		}
  		setproctitle("%s%s", authctxt->pw ? user : "unknown",
  		    use_privsep ? " [net]" : "");
-@@ -168,6 +183,41 @@
+@@ -168,6 +184,41 @@
  		    "(%s,%s) -> (%s,%s)",
  		    authctxt->user, authctxt->service, user, service);
  	}
@@ -73,7 +81,7 @@
  	/* reset state */
  	auth2_challenge_stop(authctxt);
  	authctxt->postponed = 0;
-@@ -178,6 +228,12 @@
+@@ -178,6 +229,12 @@
  		debug2("input_userauth_request: try method %s", method);
  		authenticated =	m->userauth(authctxt);
  	}
