@@ -40,3 +40,4 @@ share/zsh/site-functions/_portversion
 %%PORTDOCS%%share/doc/portupgrade/ChangeLog
 %%PORTDOCS%%share/doc/portupgrade/README
 %%PORTDOCS%%@dirrm share/doc/portupgrade
+@exec rm -f /var/db/pkg/pkgdb.byfile.db
