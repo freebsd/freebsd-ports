@@ -322,6 +322,12 @@ bin/icewmtray
 %%DATADIR%%/themes/win95/maximize.xpm
 %%DATADIR%%/themes/win95/minimize.xpm
 %%DATADIR%%/themes/win95/restore.xpm
+%%DATADIR%%/themes/yellowmotif/close.xpm
+%%DATADIR%%/themes/yellowmotif/default.theme
+%%DATADIR%%/themes/yellowmotif/maximize.xpm
+%%DATADIR%%/themes/yellowmotif/menu.xpm
+%%DATADIR%%/themes/yellowmotif/minimize.xpm
+%%DATADIR%%/themes/yellowmotif/restore.xpm
 %%DATADIR%%/toolbar
 %%DATADIR%%/winoptions
 %%NLS%%share/locale/be/LC_MESSAGES/icewm.mo
@@ -352,6 +358,7 @@ bin/icewmtray
 %%NLS%%share/locale/uk/LC_MESSAGES/icewm.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/icewm.mo
 %%NLS%%share/locale/zh_TW.Big5/LC_MESSAGES/icewm.mo
+@dirrm %%DATADIR%%/themes/yellowmotif
 @dirrm %%DATADIR%%/themes/win95
 @dirrm %%DATADIR%%/themes/warp4
 @dirrm %%DATADIR%%/themes/warp3
