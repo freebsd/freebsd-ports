@@ -1,5 +1,5 @@
-# $Id: Makefile,v 1.1 1994/10/04 15:20:32 jkh Exp $
+# $Id: Makefile,v 1.2 1994/11/20 22:01:23 ats Exp $
 #
-SUBDIR=	golddig jetpack xmris
+SUBDIR=	golddig jetpack xjewel xmris
 
 .include <bsd.port.subdir.mk>
