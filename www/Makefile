@@ -443,6 +443,7 @@
     SUBDIR += peacock
     SUBDIR += pear-APC
     SUBDIR += pear-HTTP
+    SUBDIR += pear-HTTP_Header
     SUBDIR += pgdriver
     SUBDIR += pglogd
     SUBDIR += photo_gallery
