@@ -49,6 +49,7 @@ etc/nmh/scan.mailx
 etc/nmh/scan.size
 etc/nmh/scan.time
 etc/nmh/scan.timely
+etc/nmh/scan.unseen
 etc/nmh/tmac.h
 libexec/nmh/ap
 libexec/nmh/conflict
