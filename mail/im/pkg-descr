@@ -1,0 +1,22 @@
+This package provides a series of user interface commands (im*
+commands) and backend Perl5 libraries to integrate Email and NetNews
+user interface. They are designed to be used both from Mew and on
+command line.
+
+The folder style for Mew is exactly the same as that of MH. So, you
+can replace MH with this package without any migration
+works. Moreover, you are able to operate your messages both by IM and
+MH with consistent manner.
+
+All programs/libraries conforms GPL2. This means, in short words, free
+but no warranty. You have to provide whole source code if you
+distribute. 
+
+Although you installed IM successfully, yet you must be initialized on
+your home directory at once. Execute imsetup command with your account
+after im installed.
+        
+        % imsetup
+
+- KIRIYAMA Kazuhiko
+<kiri@kiri.toba-cmt.ac.jp>
