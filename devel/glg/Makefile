@@ -1,0 +1,32 @@
+# New ports collection makefile for:	glg
+# Date created:				23 May 2001
+# Whom:					Olivier Singla <lo_gafet@users.sourceforge.net>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	glg
+PORTVERSION=	0.2.a
+CATEGORIES=	devel gnome
+MASTER_SITES=	http://glg.sourceforge.net/ \
+		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	glg
+
+MAINTAINER=	lo_gafet@users.sourceforge.net
+
+USE_GMAKE=	yes
+USE_GLIB=	yes
+USE_GTK=	yes
+WANT_GNOME=	yes
+
+.include <bsd.port.pre.mk>
+
+.if defined(HAVE_GNOME)
+USE_GNOME=	yes
+.endif
+
+pre-build:
+	find ${WRKSRC} -name Makefile | xargs ${PERL} \
+		-pi -e "s@gtk-config@${GTK_CONFIG}@g"
+
+.include <bsd.port.post.mk>
