@@ -811,7 +811,7 @@ BZIP2_CMD?=	/usr/bin/bzip2
 .else
 BZCAT?=		${LOCALBASE}/bin/bzcat
 BZIP2_CMD?=	${LOCALBASE}/bin/bzip2
-BZIP2DEPENDS=	yes
+BUNZIP2_CMD?=	${BZIP2_CMD} -d
 .endif
 CAT?=		/bin/cat
 CHGRP?=		/usr/bin/chgrp
@@ -827,10 +827,10 @@ FALSE?=		false				# Shell builtin
 FILE?=		/usr/bin/file
 FIND?=		/usr/bin/find
 GREP?=		/usr/bin/grep
-GUNZIP_CMD?=	/usr/bin/gunzip -f
 GZCAT?=		/usr/bin/gzcat
 GZIP?=		-9
 GZIP_CMD?=	/usr/bin/gzip -nf ${GZIP}
+GUNZIP_CMD?=${GZIP_CMD} -d
 HEAD?=		/usr/bin/head
 ID?=		/usr/bin/id
 IDENT?=		/usr/bin/ident
@@ -839,7 +839,6 @@ LN?=		/bin/ln
 LS?=		/bin/ls
 MKDIR?=		/bin/mkdir -p
 MV?=		/bin/mv
-REALPATH?=	/bin/realpath
 RM?=		/bin/rm
 RMDIR?=		/bin/rmdir
 SED?=		/usr/bin/sed
@@ -975,6 +974,7 @@ EXTRACT_SUFX?=			.tar.gz
 .endif
 PACKAGES?=		${PORTSDIR}/packages
 TEMPLATES?=		${PORTSDIR}/Templates
+CONFIGURE_TARGET?=	${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .if (!defined(PATCHDIR) && exists(${MASTERDIR}/patches)) || \
 	(!defined(PKGDIR) && exists(${MASTERDIR}/pkg)) || \
@@ -1140,7 +1140,7 @@ MANCOMPRESSED?=	no
 .endif
 
 .if defined(PATCHFILES)
-.if ${PATCHFILES:M*.bz2}x != x && defined(BZIP2DEPENDS)
+.if ${PATCHFILES:M*.bz2}x != x
 PATCH_DEPENDS+=		bzip2:${PORTSDIR}/archivers/bzip2
 .endif
 .if ${PATCHFILES:M*.zip}x != x
@@ -1148,7 +1148,7 @@ PATCH_DEPENDS+=		unzip:${PORTSDIR}/archivers/unzip
 .endif
 .endif
 
-.if defined(USE_BZIP2) && defined(BZIP2DEPENDS)
+.if defined(USE_BZIP2) && !exists(/usr/bin/bzip2)
 EXTRACT_DEPENDS+=	bzip2:${PORTSDIR}/archivers/bzip2
 .endif
 .if defined(USE_ZIP)
@@ -1344,6 +1344,10 @@ LIBTOOLFILES?=		configure
 
 LIBTOOLFLAGS?=		--disable-ltlibs
 .endif
+
+#.if defined(USE_GCC) && ${USE_GCC} == 2.95
+#.if ${OSVERSION} < 400012 || ${OSVERSION} > 500034
+# our make is dumbass brain-dead
 
 ########## prefix to path, add to env vars
 .if defined(LIBTOOL_LIBEXECDIR)
@@ -1586,15 +1590,14 @@ USE_SUBMAKE=	yes
 .endif
 
 # Special macro for doing in-place file editing using regexps
-.if defined(USE_REINPLACE)
 REINPLACE_ARGS?=	-i.bak
+.if defined(USE_REINPLACE)
 .if ${OSVERSION} < 460101 || ( ${OSVERSION} >= 500000 && ${OSVERSION} < 500036 )
 PATCH_DEPENDS+=	${LOCALBASE}/bin/sed_inplace:${PORTSDIR}/textproc/sed_inplace
 REINPLACE_CMD?=	${LOCALBASE}/bin/sed_inplace ${REINPLACE_ARGS}
-.else
+.endif
+.endif
 REINPLACE_CMD?=	${SED} ${REINPLACE_ARGS}
-.endif
-.endif
 
 # Names of cookies used to skip already completed stages
 EXTRACT_COOKIE?=	${WRKDIR}/.extract_done.${PKGNAME}.${PREFIX:S/\//_/g}
@@ -1659,14 +1662,17 @@ DISTORIG?=	.bak.orig
 PATCH?=			/usr/bin/patch
 PATCH_STRIP?=	-p0
 PATCH_DIST_STRIP?=	-p0
+PATCH_EXTRA_STRIP?=	-p0
 .if defined(PATCH_DEBUG)
 PATCH_DEBUG_TMP=	yes
 PATCH_ARGS?=	-d ${PATCH_WRKSRC} -E ${PATCH_STRIP}
 PATCH_DIST_ARGS?=	-b ${DISTORIG} -d ${PATCH_WRKSRC} -E ${PATCH_DIST_STRIP}
+PATCH_EXTRA_ARGS?=	-d ${PATCH_WRKSRC} -E ${PATCH_EXTRA_STRIP}
 .else
 PATCH_DEBUG_TMP=	no
 PATCH_ARGS?=	-d ${PATCH_WRKSRC} --forward --quiet -E ${PATCH_STRIP}
 PATCH_DIST_ARGS?=	-b ${DISTORIG} -d ${PATCH_WRKSRC} --forward --quiet -E ${PATCH_DIST_STRIP}
+PATCH_EXTRA_ARGS?=	-d ${PATCH_WRKSRC} --forward --quiet -E ${PATCH_EXTRA_STRIP}
 .endif
 .if defined(BATCH)
 PATCH_ARGS+=		--batch
@@ -1828,6 +1834,8 @@ PKG_ARGS+=      -C "${CONFLICTS}"
 .endif
 .if defined(PKG_NOCOMPRESS)
 PKG_SUFX?=		.tar
+.elif defined(WANT_GZPKG)
+PKG_SUFX?=		.tgz
 .else
 .if ${OSVERSION} >= 500039
 PKG_SUFX?=		.tbz
@@ -2319,7 +2327,6 @@ MAN3PREFIX?=		${PREFIX}/lib/perl5/${PERL_VERSION}
 .endif
 
 CONFIGURE_SCRIPT?=	configure
-CONFIGURE_TARGET?=	${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_LOG?=		config.log
 
 .if defined(GNU_CONFIGURE)
@@ -2353,7 +2360,13 @@ MANNPREFIX?=	${MANPREFIX}
 MANLANG?=	""	# english only by default
 
 .if !defined(NOMANCOMPRESS)
-MANEXT=	.gz
+.if defined(WANT_GZPKG)
+MCOMPRESS_CMD=	${GZIP_CMD}
+MCOMPRESS_EXT=	.gz
+.else
+MCOMPRESS_CMD=	${BZIP2_CMD}
+MCOMPRESS_EXT=	.bz2
+.endif
 .endif
 
 .if (defined(MLINKS) || defined(_MLINKS_PREPEND)) && !defined(_MLINKS)
@@ -2367,7 +2380,7 @@ __pmlinks!=	${ECHO_CMD} '${MLINKS:S/	/ /}' | ${AWK} \
 		else \
 			{ print "broken"; exit; } \
 	} \
-  }' | ${SED} -e 's \([^/ ][^ ]*\.\(.\)[^. ]*\) $${MAN\2PREFIX}/man/$$$$$$$${__lang}/man\2/\1${MANEXT}g' -e 's/ //g' -e 's/MANlPREFIX/MANLPREFIX/g' -e 's/MANnPREFIX/MANNPREFIX/g'
+  }' | ${SED} -e 's \([^/ ][^ ]*\.\(.\)[^. ]*\) $${MAN\2PREFIX}/man/$$$$$$$${__lang}/man\2/\1${MCOMPRESS_EXT}g' -e 's/ //g' -e 's/MANlPREFIX/MANLPREFIX/g' -e 's/MANnPREFIX/MANNPREFIX/g'
 .if ${__pmlinks:Mbroken} == "broken"
 .BEGIN:
 	@${ECHO_CMD} "${PKGNAME}: Unable to parse MLINKS."
@@ -2417,11 +2430,11 @@ _TMLINKS=
 .if defined(_MANPAGES) && defined(NOMANCOMPRESS)
 __MANPAGES:=	${_MANPAGES:S^${PREFIX}/^^:S/""//:S^//^/^g}
 .elif defined(_MANPAGES)
-__MANPAGES:=	${_MANPAGES:S^${PREFIX}/^^:S/""//:S^//^/^g:S/$/.gz/}
+__MANPAGES:=	${_MANPAGES:S^${PREFIX}/^^:S/""//:S^//^/^g:S/$/${MCOMPRESS_EXT}/}
 .endif
 
 .if defined(_MANPAGES) && ${MANCOMPRESSED} == "yes"
-_MANPAGES:=	${_MANPAGES:S/$/.gz/}
+_MANPAGES:=	${_MANPAGES:S/$/${MCOMPRESS_EXT}/}
 .endif
 
 .if ${XFREE86_VERSION} == 3
@@ -2540,7 +2553,7 @@ TRYBROKEN=	yes
 .else
 IGNORE=	"is marked as broken: ${BROKEN}"
 .endif
-.elif defined(FORBIDDEN)
+.elif defined(FORBIDDEN) && !defined (FORBIDDEN_OVERRIDE)
 IGNORE=	"is forbidden: ${FORBIDDEN}"
 .endif
 
@@ -2850,6 +2863,11 @@ do-extract:
 
 .if !target(do-patch)
 do-patch:
+	@if [ -d ${PATCHDIR} ]; then \
+		if [ "`echo ${PATCHDIR}/pre-patch-*`" != "${PATCHDIR}/pre-patch-*" ]; then \
+			${ECHO_MSG} "===>  Should apply pre-patches" ; \
+		fi; \
+	fi
 .if defined(PATCHFILES)
 	@${ECHO_MSG} "===>  Applying distribution patches for ${PKGNAME}"
 	@(cd ${_DISTDIR}; \
@@ -3226,7 +3244,7 @@ security-check:
 					fi; \
 				fi; \
 			fi; \
-			if [ -n "`/usr/bin/find ${PREFIX}/$$i -prune \( -perm -4000 -o -perm -2000 \) \( -perm -0010 -o -perm -0001 \) 2>/dev/null`" ]; then \
+			if [ -n "`${FIND} ${PREFIX}/$$i -prune \( -perm -4000 -o -perm -2000 \) \( -perm -0010 -o -perm -0001 \) 2>/dev/null`" ]; then \
 				if [ -s ${WRKDIR}/.PLIST.stupid ]; then \
 					echo -n "${PREFIX}/$$i (USES POSSIBLY INSECURE FUNCTIONS:" >> ${WRKDIR}/.PLIST.setuid; \
 					cat ${WRKDIR}/.PLIST.stupid >> ${WRKDIR}/.PLIST.setuid; \
@@ -3237,7 +3255,7 @@ security-check:
 			fi; \
 		fi; \
 		if [ ! -L "${PREFIX}/$$i" ]; then \
-			if [ -n "`/usr/bin/find ${PREFIX}/$$i -prune -perm -0002 2>/dev/null`" ]; then \
+			if [ -n "`${FIND} ${PREFIX}/$$i -prune -perm -0002 2>/dev/null`" ]; then \
 				 echo ${PREFIX}/$$i >> ${WRKDIR}/.PLIST.writable; \
 			fi; \
 		fi; \
@@ -3868,13 +3886,12 @@ ${deptype:L}-depends:
 			if [ ! -d "$$dir" ]; then \
 				${ECHO_MSG} "     >> No directory for $$prog.  Skipping.."; \
 			else \
+				(cd $$dir; ${MAKE} -DINSTALLS_DEPENDS $$target $$depends_args) ; \
 				if [ X${USE_PACKAGE_DEPENDS} != "X" ]; then \
 					subpkgfile=`(cd $$dir; ${MAKE} $$depends_args -V PKGFILE)`; \
 					if [ -r "$${subpkgfile}" -a "$$target" = "${DEPENDS_TARGET}" ]; then \
 						${ECHO_MSG} "===>   Installing existing package $${subpkgfile}"; \
 						${PKG_ADD} $${subpkgfile}; \
-					else \
-					  (cd $$dir; ${MAKE} -DINSTALLS_DEPENDS $$target $$depends_args) ; \
 					fi; \
 				else \
 					(cd $$dir; ${MAKE} -DINSTALLS_DEPENDS $$target $$depends_args) ; \
@@ -4134,7 +4151,6 @@ PACKAGE-DEPENDS-LIST?= \
 	fi; \
 	checked="${PARENT_CHECKED}"; \
 	for dir in $$(${ECHO_CMD} "${LIB_DEPENDS} ${RUN_DEPENDS}" | ${TR} '\040' '\012' | ${SED} -e 's/^[^:]*://' -e 's/:.*//') $$(${ECHO_CMD} ${DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/:.*//'); do \
-		dir=$$(${REALPATH} $$dir); \
 		if [ -d $$dir ]; then \
 			if (${ECHO_CMD} $$checked | ${GREP} -qwv "$$dir"); then \
 				childout=$$(cd $$dir; ${MAKE} CHILD_DEPENDS=yes PARENT_CHECKED="$$checked" package-depends-list); \
@@ -4239,16 +4255,10 @@ www-site:
 .endif
 
 .if !target(readmes)
-readmes:	readme
+readmes: ${.CURDIR}/README.html
 .endif
 
-.if !target(readme)
-readme:
-	@rm -f ${.CURDIR}/README.html
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} ${.CURDIR}/README.html
-.endif
-
-${.CURDIR}/README.html:
+${.CURDIR}/README.html:	${COMMENTFILE}
 	@${ECHO_MSG} "===>   Creating README.html for ${PKGNAME}"
 	@__softMAKEFLAGS='${__softMAKEFLAGS:S/'/'\''/g}'; \
 	${SED} -e 's|%%PORT%%|'$$(${ECHO_CMD} ${.CURDIR} | \
@@ -4269,7 +4279,7 @@ ${.CURDIR}/README.html:
 					$${__softMAKEFLAGS} pretty-print-run-depends-list)"'|' \
 			-e 's|%%TOP%%|'"$$(${ECHO_CMD} ${CATEGORIES} | \
 							   ${SED} -e 's| .*||' -e 's|[^/]*|..|g')"'/..|' \
-		${TEMPLATES}/README.port >> $@
+		${TEMPLATES}/README.port >> ${.TARGET}
 
 # The following two targets require an up-to-date INDEX in ${PORTSDIR}
 
@@ -4319,7 +4329,7 @@ generate-plist:
 	@${ECHO_CMD} '@cwd ${PREFIX}' >> ${TMPPLIST}
 .endif
 	@for i in $$(${ECHO} ${__MANPAGES} ${_TMLINKS:M${_PREFIX}*:S,^${_PREFIX}/,,:S,//,/,g} ' ' | ${SED} -E -e 's,man([1-9ln])/([^/ ]+) ,cat\1/\2 ,g'); do \
-		${ECHO} "@unexec rm -f %D/$${i%.gz} %D/$${i%.gz}.gz" >> ${TMPPLIST}; \
+		${ECHO} "@unexec rm -f %D/$${i%${MCOMPRESS_EXT}} %D/$${i%${MCOMPRESS_EXT}}${MCOMPRESS_EXT}" >> ${TMPPLIST}; \
 	done
 .if ${XFREE86_HTML_MAN:L} == "yes"
 .for mansect in 1 2 3 4 5 6 7 8 9 L N
@@ -4374,16 +4384,16 @@ compress-man:
 .if defined(_MANPAGES) || defined(_MLINKS)
 .if ${MANCOMPRESSED} == yes && defined(NOMANCOMPRESS)
 	@${ECHO_MSG} "===>   Uncompressing manual pages for ${PKGNAME}"
-	@_manpages='${_MANPAGES:S/'/'\''/g}' && [ "$${_manpages}" != "" ] && ( eval ${GUNZIP_CMD} $${_manpages} ) || ${TRUE}
+	@_manpages='${_MANPAGES:S/'/'\''/g}' && [ "$${_manpages}" != "" ] && ( eval ${MCOMPRESS_CMD} -d $${_manpages} ) || ${TRUE}
 .elif ${MANCOMPRESSED} == no && !defined(NOMANCOMPRESS)
 	@${ECHO_MSG} "===>   Compressing manual pages for ${PKGNAME}"
-	@_manpages='${_MANPAGES:S/'/'\''/g}' && [ "$${_manpages}" != "" ] && ( eval ${GZIP_CMD} $${_manpages} ) || ${TRUE}
+	_manpages='${_MANPAGES:S/'/'\''/g}' && [ "$${_manpages}" != "" ] && ( eval ${MCOMPRESS_CMD} -f $${_manpages} ) || ${TRUE}
 .endif
 .if defined(_MLINKS)
 	@set ${_MLINKS:S,"",,g:S,//,/,g}; \
 	while :; do \
 		[ $$# -eq 0 ] && break || ${TRUE}; \
-		${RM} -f $${2%.gz}; ${RM} -f $$2.gz; \
+		${RM} -f $${2%${MCOMPRESS_EXT}}; ${RM} -f $$2${MCOMPRESS_EXT}; \
 		${LN} -fs `${ECHO_CMD} $$1 $$2 | ${AWK} '{ \
 					z=split($$1, a, /\//); x=split($$2, b, /\//); \
 					while (a[i] == b[i]) i++; \

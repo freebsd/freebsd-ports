@@ -673,9 +673,7 @@ MASTER_SITE_VIM+= \
 	ftp://ftp.vim.org/pub/vim/unix/  \
 	ftp://ftp.is.co.za/applications/editors/vim/unix/  \
 	ftp://ftp.prz.tu-berlin.de/pub/unix/editors/vim/unix/  \
-	ftp://ftp.mirror.ac.uk/sites/ftp.vim.org/pub/vim/unix/  \
-	ftp://relay.nuxi.org/pub/vim/unix/  \
-	ftp://nuxi.ucdavis.edu/pub/vim/unix/
+	ftp://ftp.mirror.ac.uk/sites/ftp.vim.org/pub/vim/unix/
 
 MASTER_SITE_WINDOWMAKER+= \
 	ftp://ftp.windowmaker.org/pub/%SUBDIR%/ \
