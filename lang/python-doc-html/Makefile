@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	python-doc-${DOCFORMAT}
-PORTVERSION=	1.5.2p2
+PORTVERSION=	2.0
 CATEGORIES=	lang python
-MASTER_SITES=	http://www.python.org/ftp/python/doc/ \
-		http://SunSITE.Informatik.RWTH-Aachen.DE/python/ftp/python/doc/1.5.2p2/
+MASTER_SITES=	http://www.python.org/ftp/python/doc/${PORTVERSION}/ \
+		http://SunSITE.Informatik.RWTH-Aachen.DE/python/ftp/python/doc/${PORTVERSION}/
 DISTNAME=	${DOCFORMAT}-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	tg@FreeBSD.org
 
 DIST_SUBDIR=	python
+USE_BZIP2=	yes
 NO_BUILD=	yes
 PLIST=		${PKGDIR}/pkg-plist_${DOCFORMAT}
 
