@@ -1,0 +1,416 @@
+bin/vmd
+lib/vmd/doc/ug.pdf
+lib/vmd/Announcement
+lib/vmd/README
+lib/vmd/LICENSE
+lib/vmd/vmd_FREEBSD
+lib/vmd/scripts/CVS/Root
+lib/vmd/scripts/CVS/Repository
+lib/vmd/scripts/CVS/Entries
+lib/vmd/scripts/vmd/CVS/Root
+lib/vmd/scripts/vmd/CVS/Repository
+lib/vmd/scripts/vmd/CVS/Entries
+lib/vmd/scripts/vmd/README.chemical2vmd
+lib/vmd/scripts/vmd/save_state.tcl
+lib/vmd/scripts/vmd/atomselect.tcl
+lib/vmd/scripts/vmd/tclIndex
+lib/vmd/scripts/vmd/chemical2vmd
+lib/vmd/scripts/vmd/draw.tcl
+lib/vmd/scripts/vmd/vmdinit.tcl
+lib/vmd/scripts/vmd/vectors.tcl
+lib/vmd/scripts/vmd/graphlabels.tcl
+lib/vmd/scripts/vmd/hotkeys.tcl
+lib/vmd/scripts/vmd/openURL.tcl
+lib/vmd/scripts/vmd/atomselmacros.tcl
+lib/vmd/scripts/vmd/biocore.tcl
+lib/vmd/scripts/vmd/logfile.tcl
+lib/vmd/scripts/vmd/www.tcl
+lib/vmd/scripts/README
+lib/vmd/scripts/tcl8.4/http2.4/http.tcl
+lib/vmd/scripts/tcl8.4/http2.4/pkgIndex.tcl
+lib/vmd/scripts/tcl8.4/http1.0/http.tcl
+lib/vmd/scripts/tcl8.4/http1.0/pkgIndex.tcl
+lib/vmd/scripts/tcl8.4/opt0.4/optparse.tcl
+lib/vmd/scripts/tcl8.4/opt0.4/pkgIndex.tcl
+lib/vmd/scripts/tcl8.4/encoding/ascii.enc
+lib/vmd/scripts/tcl8.4/encoding/big5.enc
+lib/vmd/scripts/tcl8.4/encoding/cp1250.enc
+lib/vmd/scripts/tcl8.4/encoding/cp1251.enc
+lib/vmd/scripts/tcl8.4/encoding/cp1252.enc
+lib/vmd/scripts/tcl8.4/encoding/cp1253.enc
+lib/vmd/scripts/tcl8.4/encoding/cp1254.enc
+lib/vmd/scripts/tcl8.4/encoding/cp1255.enc
+lib/vmd/scripts/tcl8.4/encoding/cp1256.enc
+lib/vmd/scripts/tcl8.4/encoding/cp1257.enc
+lib/vmd/scripts/tcl8.4/encoding/cp1258.enc
+lib/vmd/scripts/tcl8.4/encoding/cp437.enc
+lib/vmd/scripts/tcl8.4/encoding/cp737.enc
+lib/vmd/scripts/tcl8.4/encoding/cp775.enc
+lib/vmd/scripts/tcl8.4/encoding/cp850.enc
+lib/vmd/scripts/tcl8.4/encoding/cp852.enc
+lib/vmd/scripts/tcl8.4/encoding/cp855.enc
+lib/vmd/scripts/tcl8.4/encoding/cp857.enc
+lib/vmd/scripts/tcl8.4/encoding/cp860.enc
+lib/vmd/scripts/tcl8.4/encoding/cp861.enc
+lib/vmd/scripts/tcl8.4/encoding/cp862.enc
+lib/vmd/scripts/tcl8.4/encoding/cp863.enc
+lib/vmd/scripts/tcl8.4/encoding/cp864.enc
+lib/vmd/scripts/tcl8.4/encoding/cp865.enc
+lib/vmd/scripts/tcl8.4/encoding/cp866.enc
+lib/vmd/scripts/tcl8.4/encoding/cp869.enc
+lib/vmd/scripts/tcl8.4/encoding/cp874.enc
+lib/vmd/scripts/tcl8.4/encoding/cp932.enc
+lib/vmd/scripts/tcl8.4/encoding/cp936.enc
+lib/vmd/scripts/tcl8.4/encoding/cp949.enc
+lib/vmd/scripts/tcl8.4/encoding/cp950.enc
+lib/vmd/scripts/tcl8.4/encoding/dingbats.enc
+lib/vmd/scripts/tcl8.4/encoding/ebcdic.enc
+lib/vmd/scripts/tcl8.4/encoding/euc-cn.enc
+lib/vmd/scripts/tcl8.4/encoding/euc-jp.enc
+lib/vmd/scripts/tcl8.4/encoding/euc-kr.enc
+lib/vmd/scripts/tcl8.4/encoding/gb12345.enc
+lib/vmd/scripts/tcl8.4/encoding/gb1988.enc
+lib/vmd/scripts/tcl8.4/encoding/gb2312.enc
+lib/vmd/scripts/tcl8.4/encoding/iso2022-jp.enc
+lib/vmd/scripts/tcl8.4/encoding/iso2022-kr.enc
+lib/vmd/scripts/tcl8.4/encoding/iso2022.enc
+lib/vmd/scripts/tcl8.4/encoding/iso8859-1.enc
+lib/vmd/scripts/tcl8.4/encoding/iso8859-10.enc
+lib/vmd/scripts/tcl8.4/encoding/iso8859-13.enc
+lib/vmd/scripts/tcl8.4/encoding/iso8859-14.enc
+lib/vmd/scripts/tcl8.4/encoding/iso8859-15.enc
+lib/vmd/scripts/tcl8.4/encoding/jis0201.enc
+lib/vmd/scripts/tcl8.4/encoding/iso8859-16.enc
+lib/vmd/scripts/tcl8.4/encoding/iso8859-2.enc
+lib/vmd/scripts/tcl8.4/encoding/iso8859-3.enc
+lib/vmd/scripts/tcl8.4/encoding/iso8859-4.enc
+lib/vmd/scripts/tcl8.4/encoding/iso8859-5.enc
+lib/vmd/scripts/tcl8.4/encoding/iso8859-6.enc
+lib/vmd/scripts/tcl8.4/encoding/iso8859-7.enc
+lib/vmd/scripts/tcl8.4/encoding/iso8859-8.enc
+lib/vmd/scripts/tcl8.4/encoding/iso8859-9.enc
+lib/vmd/scripts/tcl8.4/encoding/jis0208.enc
+lib/vmd/scripts/tcl8.4/encoding/jis0212.enc
+lib/vmd/scripts/tcl8.4/encoding/koi8-r.enc
+lib/vmd/scripts/tcl8.4/encoding/koi8-u.enc
+lib/vmd/scripts/tcl8.4/encoding/ksc5601.enc
+lib/vmd/scripts/tcl8.4/encoding/macCentEuro.enc
+lib/vmd/scripts/tcl8.4/encoding/macCroatian.enc
+lib/vmd/scripts/tcl8.4/encoding/macCyrillic.enc
+lib/vmd/scripts/tcl8.4/encoding/macDingbats.enc
+lib/vmd/scripts/tcl8.4/encoding/macGreek.enc
+lib/vmd/scripts/tcl8.4/encoding/macIceland.enc
+lib/vmd/scripts/tcl8.4/encoding/macJapan.enc
+lib/vmd/scripts/tcl8.4/encoding/macRoman.enc
+lib/vmd/scripts/tcl8.4/encoding/macRomania.enc
+lib/vmd/scripts/tcl8.4/encoding/macThai.enc
+lib/vmd/scripts/tcl8.4/encoding/macTurkish.enc
+lib/vmd/scripts/tcl8.4/encoding/macUkraine.enc
+lib/vmd/scripts/tcl8.4/encoding/shiftjis.enc
+lib/vmd/scripts/tcl8.4/encoding/symbol.enc
+lib/vmd/scripts/tcl8.4/encoding/tis-620.enc
+lib/vmd/scripts/tcl8.4/msgcat1.3/msgcat.tcl
+lib/vmd/scripts/tcl8.4/msgcat1.3/pkgIndex.tcl
+lib/vmd/scripts/tcl8.4/tcltest2.2/pkgIndex.tcl
+lib/vmd/scripts/tcl8.4/tcltest2.2/tcltest.tcl
+lib/vmd/scripts/tcl8.4/auto.tcl
+lib/vmd/scripts/tcl8.4/history.tcl
+lib/vmd/scripts/tcl8.4/init.tcl
+lib/vmd/scripts/tcl8.4/ldAout.tcl
+lib/vmd/scripts/tcl8.4/package.tcl
+lib/vmd/scripts/tcl8.4/parray.tcl
+lib/vmd/scripts/tcl8.4/safe.tcl
+lib/vmd/scripts/tcl8.4/word.tcl
+lib/vmd/scripts/tcl8.4/tclIndex
+lib/vmd/scripts/tcl8.4/tclAppInit.c
+lib/vmd/scripts/tcl8.4/ldAix
+lib/vmd/scripts/tk8.4/images/README
+lib/vmd/scripts/tk8.4/images/logo.eps
+lib/vmd/scripts/tk8.4/images/logo100.gif
+lib/vmd/scripts/tk8.4/images/logo64.gif
+lib/vmd/scripts/tk8.4/images/logoLarge.gif
+lib/vmd/scripts/tk8.4/images/logoMed.gif
+lib/vmd/scripts/tk8.4/images/pwrdLogo.eps
+lib/vmd/scripts/tk8.4/images/pwrdLogo100.gif
+lib/vmd/scripts/tk8.4/images/pwrdLogo150.gif
+lib/vmd/scripts/tk8.4/images/pwrdLogo175.gif
+lib/vmd/scripts/tk8.4/images/pwrdLogo200.gif
+lib/vmd/scripts/tk8.4/images/pwrdLogo75.gif
+lib/vmd/scripts/tk8.4/images/tai-ku.gif
+lib/vmd/scripts/tk8.4/msgs/cs.msg
+lib/vmd/scripts/tk8.4/msgs/de.msg
+lib/vmd/scripts/tk8.4/msgs/el.msg
+lib/vmd/scripts/tk8.4/msgs/en.msg
+lib/vmd/scripts/tk8.4/msgs/en_gb.msg
+lib/vmd/scripts/tk8.4/msgs/es.msg
+lib/vmd/scripts/tk8.4/msgs/fr.msg
+lib/vmd/scripts/tk8.4/msgs/it.msg
+lib/vmd/scripts/tk8.4/msgs/nl.msg
+lib/vmd/scripts/tk8.4/msgs/ru.msg
+lib/vmd/scripts/tk8.4/bgerror.tcl
+lib/vmd/scripts/tk8.4/button.tcl
+lib/vmd/scripts/tk8.4/choosedir.tcl
+lib/vmd/scripts/tk8.4/clrpick.tcl
+lib/vmd/scripts/tk8.4/comdlg.tcl
+lib/vmd/scripts/tk8.4/console.tcl
+lib/vmd/scripts/tk8.4/dialog.tcl
+lib/vmd/scripts/tk8.4/entry.tcl
+lib/vmd/scripts/tk8.4/focus.tcl
+lib/vmd/scripts/tk8.4/listbox.tcl
+lib/vmd/scripts/tk8.4/menu.tcl
+lib/vmd/scripts/tk8.4/mkpsenc.tcl
+lib/vmd/scripts/tk8.4/msgbox.tcl
+lib/vmd/scripts/tk8.4/obsolete.tcl
+lib/vmd/scripts/tk8.4/optMenu.tcl
+lib/vmd/scripts/tk8.4/palette.tcl
+lib/vmd/scripts/tk8.4/panedwindow.tcl
+lib/vmd/scripts/tk8.4/safetk.tcl
+lib/vmd/scripts/tk8.4/scale.tcl
+lib/vmd/scripts/tk8.4/scrlbar.tcl
+lib/vmd/scripts/tk8.4/spinbox.tcl
+lib/vmd/scripts/tk8.4/tearoff.tcl
+lib/vmd/scripts/tk8.4/text.tcl
+lib/vmd/scripts/tk8.4/tk.tcl
+lib/vmd/scripts/tk8.4/tkfbox.tcl
+lib/vmd/scripts/tk8.4/unsupported.tcl
+lib/vmd/scripts/tk8.4/xmfbox.tcl
+lib/vmd/scripts/tk8.4/prolog.ps
+lib/vmd/scripts/tk8.4/tclIndex
+lib/vmd/scripts/tk8.4/tkAppInit.c
+lib/vmd/scripts/tk8.4/demos/images/earth.gif
+lib/vmd/scripts/tk8.4/demos/images/earthris.gif
+lib/vmd/scripts/tk8.4/demos/images/face.bmp
+lib/vmd/scripts/tk8.4/demos/images/flagdown.bmp
+lib/vmd/scripts/tk8.4/demos/images/flagup.bmp
+lib/vmd/scripts/tk8.4/demos/images/gray25.bmp
+lib/vmd/scripts/tk8.4/demos/images/letters.bmp
+lib/vmd/scripts/tk8.4/demos/images/noletter.bmp
+lib/vmd/scripts/tk8.4/demos/images/pattern.bmp
+lib/vmd/scripts/tk8.4/demos/images/tcllogo.gif
+lib/vmd/scripts/tk8.4/demos/images/teapot.ppm
+lib/vmd/scripts/tk8.4/demos/README
+lib/vmd/scripts/tk8.4/demos/arrow.tcl
+lib/vmd/scripts/tk8.4/demos/bind.tcl
+lib/vmd/scripts/tk8.4/demos/bitmap.tcl
+lib/vmd/scripts/tk8.4/demos/browse
+lib/vmd/scripts/tk8.4/demos/button.tcl
+lib/vmd/scripts/tk8.4/demos/check.tcl
+lib/vmd/scripts/tk8.4/demos/clrpick.tcl
+lib/vmd/scripts/tk8.4/demos/colors.tcl
+lib/vmd/scripts/tk8.4/demos/cscroll.tcl
+lib/vmd/scripts/tk8.4/demos/ctext.tcl
+lib/vmd/scripts/tk8.4/demos/dialog1.tcl
+lib/vmd/scripts/tk8.4/demos/dialog2.tcl
+lib/vmd/scripts/tk8.4/demos/entry1.tcl
+lib/vmd/scripts/tk8.4/demos/entry2.tcl
+lib/vmd/scripts/tk8.4/demos/entry3.tcl
+lib/vmd/scripts/tk8.4/demos/filebox.tcl
+lib/vmd/scripts/tk8.4/demos/floor.tcl
+lib/vmd/scripts/tk8.4/demos/form.tcl
+lib/vmd/scripts/tk8.4/demos/hello
+lib/vmd/scripts/tk8.4/demos/hscale.tcl
+lib/vmd/scripts/tk8.4/demos/icon.tcl
+lib/vmd/scripts/tk8.4/demos/image1.tcl
+lib/vmd/scripts/tk8.4/demos/image2.tcl
+lib/vmd/scripts/tk8.4/demos/items.tcl
+lib/vmd/scripts/tk8.4/demos/ixset
+lib/vmd/scripts/tk8.4/demos/label.tcl
+lib/vmd/scripts/tk8.4/demos/labelframe.tcl
+lib/vmd/scripts/tk8.4/demos/license.terms
+lib/vmd/scripts/tk8.4/demos/menu.tcl
+lib/vmd/scripts/tk8.4/demos/menubu.tcl
+lib/vmd/scripts/tk8.4/demos/msgbox.tcl
+lib/vmd/scripts/tk8.4/demos/paned1.tcl
+lib/vmd/scripts/tk8.4/demos/paned2.tcl
+lib/vmd/scripts/tk8.4/demos/plot.tcl
+lib/vmd/scripts/tk8.4/demos/puzzle.tcl
+lib/vmd/scripts/tk8.4/demos/radio.tcl
+lib/vmd/scripts/tk8.4/demos/rmt
+lib/vmd/scripts/tk8.4/demos/rolodex
+lib/vmd/scripts/tk8.4/demos/ruler.tcl
+lib/vmd/scripts/tk8.4/demos/sayings.tcl
+lib/vmd/scripts/tk8.4/demos/search.tcl
+lib/vmd/scripts/tk8.4/demos/spin.tcl
+lib/vmd/scripts/tk8.4/demos/square
+lib/vmd/scripts/tk8.4/demos/states.tcl
+lib/vmd/scripts/tk8.4/demos/style.tcl
+lib/vmd/scripts/tk8.4/demos/tclIndex
+lib/vmd/scripts/tk8.4/demos/tcolor
+lib/vmd/scripts/tk8.4/demos/text.tcl
+lib/vmd/scripts/tk8.4/demos/timer
+lib/vmd/scripts/tk8.4/demos/twind.tcl
+lib/vmd/scripts/tk8.4/demos/vscale.tcl
+lib/vmd/scripts/tk8.4/demos/widget
+lib/vmd/scripts/python/AtomSel.py
+lib/vmd/scripts/python/Label.py
+lib/vmd/scripts/python/Material.py
+lib/vmd/scripts/python/Molecule.py
+lib/vmd/scripts/python/VMD.py
+lib/vmd/scripts/python/startvmd.py
+lib/vmd/scripts/python/testMolecule.py
+lib/vmd/scripts/python/testdisplay.py
+lib/vmd/plugins/include/vmdplugin.h
+lib/vmd/plugins/include/molfile_plugin.h
+lib/vmd/plugins/FREEBSD/molfile/cpmdplugin.so
+lib/vmd/plugins/FREEBSD/molfile/psfplugin.so
+lib/vmd/plugins/FREEBSD/molfile/pdbplugin.so
+lib/vmd/plugins/FREEBSD/molfile/dcdplugin.so
+lib/vmd/plugins/FREEBSD/molfile/babelplugin.so
+lib/vmd/plugins/FREEBSD/molfile/gromacsplugin.so
+lib/vmd/plugins/FREEBSD/molfile/parmplugin.so
+lib/vmd/plugins/FREEBSD/molfile/crdplugin.so
+lib/vmd/plugins/FREEBSD/molfile/namdbinplugin.so
+lib/vmd/plugins/FREEBSD/molfile/binposplugin.so
+lib/vmd/plugins/FREEBSD/molfile/webpdbplugin.so
+lib/vmd/plugins/FREEBSD/molfile/graspplugin.so
+lib/vmd/plugins/FREEBSD/molfile/stlplugin.so
+lib/vmd/plugins/FREEBSD/molfile/cubeplugin.so
+lib/vmd/plugins/FREEBSD/molfile/edmplugin.so
+lib/vmd/plugins/FREEBSD/molfile/ccp4plugin.so
+lib/vmd/plugins/FREEBSD/molfile/dsn6plugin.so
+lib/vmd/plugins/FREEBSD/molfile/brixplugin.so
+lib/vmd/plugins/FREEBSD/molfile/pltplugin.so
+lib/vmd/plugins/FREEBSD/molfile/parm7plugin.so
+lib/vmd/plugins/FREEBSD/molfile/raster3dplugin.so
+lib/vmd/plugins/FREEBSD/molfile/rst7plugin.so
+lib/vmd/plugins/FREEBSD/molfile/xyzplugin.so
+lib/vmd/plugins/FREEBSD/molfile/corplugin.so
+lib/vmd/plugins/FREEBSD/molfile/moldenplugin.so
+lib/vmd/plugins/FREEBSD/molfile/phiplugin.so
+lib/vmd/plugins/FREEBSD/molfile/grdplugin.so
+lib/vmd/plugins/FREEBSD/molfile/dxplugin.so
+lib/vmd/plugins/FREEBSD/molfile/mapplugin.so
+lib/vmd/plugins/FREEBSD/molfile/avsplugin.so
+lib/vmd/plugins/FREEBSD/molfile/fs4plugin.so
+lib/vmd/plugins/FREEBSD/molfile/libmolfile_plugin.a
+lib/vmd/plugins/FREEBSD/molfile/libmolfile_plugin.h
+lib/vmd/plugins/FREEBSD/tcl/psfgen1.3/libpsfgen.so
+lib/vmd/plugins/FREEBSD/tcl/psfgen1.3/ug.pdf
+lib/vmd/plugins/FREEBSD/tcl/psfgen1.3/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/autoionize1.0/ions.top
+lib/vmd/plugins/noarch/tcl/autoionize1.0/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/autoionize1.0/autoionize.tcl
+lib/vmd/plugins/noarch/tcl/solvate1.2/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/solvate1.2/solvate.tcl
+lib/vmd/plugins/noarch/tcl/solvate1.2/wat.psf
+lib/vmd/plugins/noarch/tcl/solvate1.2/wat.pdb
+lib/vmd/plugins/noarch/tcl/solvate1.2/wat.top
+lib/vmd/plugins/noarch/tcl/autoimd1.3/ug.pdf
+lib/vmd/plugins/noarch/tcl/autoimd1.3/template.namd
+lib/vmd/plugins/noarch/tcl/autoimd1.3/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/autoimd1.3/autoimd-local.tcl
+lib/vmd/plugins/noarch/tcl/autoimd1.3/autoimd.tcl
+lib/vmd/plugins/noarch/tcl/namdrun0.1/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/namdrun0.1/namdrun.tcl
+lib/vmd/plugins/noarch/tcl/jmvexport1.0/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/jmvexport1.0/jmvexport.tcl
+lib/vmd/plugins/noarch/tcl/vmdmovie1.1/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/vmdmovie1.1/vmdmovie.tcl
+lib/vmd/plugins/noarch/tcl/aligntool1.0/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/aligntool1.0/cealign.tcl
+lib/vmd/plugins/noarch/tcl/aligntool1.0/aligntool.tcl
+lib/vmd/plugins/noarch/tcl/contactmap1.0/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/contactmap1.0/contactmap.tcl
+lib/vmd/plugins/noarch/tcl/timeline1.0/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/timeline1.0/timeline.tcl
+lib/vmd/plugins/noarch/tcl/ramaplot1.0/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/ramaplot1.0/ramaplot.tcl
+lib/vmd/plugins/noarch/tcl/rmsd1.0/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/rmsd1.0/rmsd.tcl
+lib/vmd/plugins/noarch/tcl/membrane1.0/popc_box.psf
+lib/vmd/plugins/noarch/tcl/membrane1.0/pope_box.psf
+lib/vmd/plugins/noarch/tcl/membrane1.0/pope_box.pdb
+lib/vmd/plugins/noarch/tcl/membrane1.0/top_all27_prot_lipid.inp
+lib/vmd/plugins/noarch/tcl/membrane1.0/popc_box.pdb
+lib/vmd/plugins/noarch/tcl/membrane1.0/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/membrane1.0/membrane.tcl
+lib/vmd/plugins/noarch/tcl/zoomseq1.0/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/zoomseq1.0/zoomseq.tcl
+lib/vmd/plugins/noarch/tcl/vmdtkcon1.0/tkcon-2.3/docs/CVS/Root
+lib/vmd/plugins/noarch/tcl/vmdtkcon1.0/tkcon-2.3/docs/CVS/Repository
+lib/vmd/plugins/noarch/tcl/vmdtkcon1.0/tkcon-2.3/docs/CVS/Entries
+lib/vmd/plugins/noarch/tcl/vmdtkcon1.0/tkcon-2.3/docs/bindings.html
+lib/vmd/plugins/noarch/tcl/vmdtkcon1.0/tkcon-2.3/docs/changes.txt
+lib/vmd/plugins/noarch/tcl/vmdtkcon1.0/tkcon-2.3/docs/demopic.gif
+lib/vmd/plugins/noarch/tcl/vmdtkcon1.0/tkcon-2.3/docs/dump.html
+lib/vmd/plugins/noarch/tcl/vmdtkcon1.0/tkcon-2.3/docs/idebug.html
+lib/vmd/plugins/noarch/tcl/vmdtkcon1.0/tkcon-2.3/docs/index.html
+lib/vmd/plugins/noarch/tcl/vmdtkcon1.0/tkcon-2.3/docs/license.terms
+lib/vmd/plugins/noarch/tcl/vmdtkcon1.0/tkcon-2.3/docs/limits.html
+lib/vmd/plugins/noarch/tcl/vmdtkcon1.0/tkcon-2.3/docs/style.css
+lib/vmd/plugins/noarch/tcl/vmdtkcon1.0/tkcon-2.3/docs/observe.html
+lib/vmd/plugins/noarch/tcl/vmdtkcon1.0/tkcon-2.3/docs/perl.txt
+lib/vmd/plugins/noarch/tcl/vmdtkcon1.0/tkcon-2.3/docs/plugin.html
+lib/vmd/plugins/noarch/tcl/vmdtkcon1.0/tkcon-2.3/docs/procs.html
+lib/vmd/plugins/noarch/tcl/vmdtkcon1.0/tkcon-2.3/docs/purpose.html
+lib/vmd/plugins/noarch/tcl/vmdtkcon1.0/tkcon-2.3/docs/start.html
+lib/vmd/plugins/noarch/tcl/vmdtkcon1.0/tkcon-2.3/docs/tkcon.html
+lib/vmd/plugins/noarch/tcl/vmdtkcon1.0/tkcon-2.3/docs/todo.html
+lib/vmd/plugins/noarch/tcl/vmdtkcon1.0/tkcon-2.3/docs/nontcl.html
+lib/vmd/plugins/noarch/tcl/vmdtkcon1.0/tkcon-2.3/CVS/Root
+lib/vmd/plugins/noarch/tcl/vmdtkcon1.0/tkcon-2.3/CVS/Repository
+lib/vmd/plugins/noarch/tcl/vmdtkcon1.0/tkcon-2.3/CVS/Entries
+lib/vmd/plugins/noarch/tcl/vmdtkcon1.0/tkcon-2.3/ChangeLog
+lib/vmd/plugins/noarch/tcl/vmdtkcon1.0/tkcon-2.3/README.txt
+lib/vmd/plugins/noarch/tcl/vmdtkcon1.0/tkcon-2.3/index.html
+lib/vmd/plugins/noarch/tcl/vmdtkcon1.0/tkcon-2.3/tkcon.tcl
+lib/vmd/plugins/noarch/tcl/vmdtkcon1.0/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/vmdtkcon1.0/tkcon-modified.tcl
+lib/vmd/plugins/noarch/tcl/vmdtkcon1.0/vmdtkcon.tcl
+lib/vmd/plugins/noarch/tcl/imdmenu1.0/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/imdmenu1.0/imdmenu.tcl
+lib/vmd/plugins/noarch/tcl/pdbtool1.0/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/pdbtool1.0/pdbtool.tcl
+lib/vmd/.vmdsensors
+lib/vmd/.vmdrc
+lib/vmd/scripts/tcl
+lib/vmd/scripts/tcl8.0
+lib/vmd/scripts/tk
+lib/vmd/scripts/tk8.0
+@dirrm lib/vmd/scripts/vmd/CVS
+@dirrm lib/vmd/scripts/vmd
+@dirrm lib/vmd/scripts/tk8.4/msgs
+@dirrm lib/vmd/scripts/tk8.4/images
+@dirrm lib/vmd/scripts/tk8.4/demos/images
+@dirrm lib/vmd/scripts/tk8.4/demos
+@dirrm lib/vmd/scripts/tk8.4
+@dirrm lib/vmd/scripts/tcl8.4/tcltest2.2
+@dirrm lib/vmd/scripts/tcl8.4/opt0.4
+@dirrm lib/vmd/scripts/tcl8.4/msgcat1.3
+@dirrm lib/vmd/scripts/tcl8.4/http2.4
+@dirrm lib/vmd/scripts/tcl8.4/http1.0
+@dirrm lib/vmd/scripts/tcl8.4/encoding
+@dirrm lib/vmd/scripts/tcl8.4
+@dirrm lib/vmd/scripts/python
+@dirrm lib/vmd/scripts/CVS
+@dirrm lib/vmd/scripts
+@dirrm lib/vmd/plugins/noarch/tcl/zoomseq1.0
+@dirrm lib/vmd/plugins/noarch/tcl/vmdtkcon1.0/tkcon-2.3/docs/CVS
+@dirrm lib/vmd/plugins/noarch/tcl/vmdtkcon1.0/tkcon-2.3/docs
+@dirrm lib/vmd/plugins/noarch/tcl/vmdtkcon1.0/tkcon-2.3/CVS
+@dirrm lib/vmd/plugins/noarch/tcl/vmdtkcon1.0/tkcon-2.3
+@dirrm lib/vmd/plugins/noarch/tcl/vmdtkcon1.0
+@dirrm lib/vmd/plugins/noarch/tcl/vmdmovie1.1
+@dirrm lib/vmd/plugins/noarch/tcl/timeline1.0
+@dirrm lib/vmd/plugins/noarch/tcl/solvate1.2
+@dirrm lib/vmd/plugins/noarch/tcl/rmsd1.0
+@dirrm lib/vmd/plugins/noarch/tcl/ramaplot1.0
+@dirrm lib/vmd/plugins/noarch/tcl/pdbtool1.0
+@dirrm lib/vmd/plugins/noarch/tcl/namdrun0.1
+@dirrm lib/vmd/plugins/noarch/tcl/membrane1.0
+@dirrm lib/vmd/plugins/noarch/tcl/jmvexport1.0
+@dirrm lib/vmd/plugins/noarch/tcl/imdmenu1.0
+@dirrm lib/vmd/plugins/noarch/tcl/contactmap1.0
+@dirrm lib/vmd/plugins/noarch/tcl/autoionize1.0
+@dirrm lib/vmd/plugins/noarch/tcl/autoimd1.3
+@dirrm lib/vmd/plugins/noarch/tcl/aligntool1.0
+@dirrm lib/vmd/plugins/noarch/tcl
+@dirrm lib/vmd/plugins/noarch
+@dirrm lib/vmd/plugins/include
+@dirrm lib/vmd/plugins/FREEBSD/tcl/psfgen1.3
+@dirrm lib/vmd/plugins/FREEBSD/tcl
+@dirrm lib/vmd/plugins/FREEBSD/molfile
+@dirrm lib/vmd/plugins/FREEBSD
+@dirrm lib/vmd/plugins
+@dirrm lib/vmd/doc
+@dirrm lib/vmd

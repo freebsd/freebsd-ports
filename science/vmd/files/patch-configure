@@ -1,0 +1,20 @@
+--- configure-xxx	Fri Dec  5 13:20:58 2003
++++ configure	Thu Aug 12 00:22:30 2004
+@@ -1175,7 +1175,7 @@
+     # XFree 4.0 Direct Rendering Interface and GLX 
+     $opengl_dir         = "/usr/X11R6";
+     $opengl_include     = "-I$opengl_dir/include";
+-    $opengl_library     = "-L$opengl_dir/lib";
++    $opengl_library     = "-L$opengl_dir/lib -L/usr/local/lib";
+     $opengl_libs        = "-lGL -lGLU"; 
+ 
+     $arch_lex      = "flex";
+@@ -1209,7 +1209,7 @@
+ 
+     # this is to make tcl happy,
+     # also needed for plugins
+-    $system_libs .= " -ldl";
++    # $system_libs .= " -ldl";
+  
+     if ($config_python) {
+       # this is to make python happy
