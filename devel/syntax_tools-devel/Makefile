@@ -20,6 +20,8 @@ COMMENT=	Erlang modules for code manipulation, unstable devel version
 BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
 RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
 
+BROKEN=		Checksum mismatch
+
 CONFLICTS=	syntax_tools-1.2*
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
