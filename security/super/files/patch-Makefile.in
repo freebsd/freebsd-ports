@@ -1,0 +1,9 @@
+--- Makefile.in.orig	Fri Aug  2 04:28:10 2002
++++ Makefile.in	Sun Aug  4 00:45:14 2002
+@@ -182,3 +182,3 @@
+-	./mkdir_p -p755 $(DESTDIR)/$(BINDIR)
+-	./mkdir_p -p755 $(DESTDIR)/$(localstatedir)
+-	./mkdir_p -p755 $(DESTDIR)/$(sysconfdir)
++	mkdir -p -m 755 $(DESTDIR)/$(BINDIR)
++	mkdir -p -m 755 $(DESTDIR)/$(localstatedir)
++	mkdir -p -m 755 $(DESTDIR)/$(sysconfdir)
