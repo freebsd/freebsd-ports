@@ -12,6 +12,8 @@ MASTER_SITES=	http://frerich.ath.cx/barry/
 
 MAINTAINER=	so14k@so14k.com
 
+BROKEN=		"Does not install"
+
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
 MAKE_ENV=	QTDIR="${X11BASE}" KDEDIR="${LOCALBASE}" PREFIX="${PREFIX}"
