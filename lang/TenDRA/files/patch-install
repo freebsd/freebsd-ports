@@ -1,12 +1,142 @@
---- mk/base/tendra.install.mk.orig	Mon Mar 31 10:00:01 2003
-+++ mk/base/tendra.install.mk	Mon May 12 21:20:53 2003
-@@ -60,6 +60,9 @@
- 	for i in ${.OBJDIR}.api/*.h; do \
- 		${INSTALL} $$i ${INSTALL_PREFIX}/lib/include/${API}.api; \
- 	done
-+	for i in `${FIND} ${.OBJDIR}.api/ -type d -mindepth 1` ; do \
-+		${CP} -pR $$i ${INSTALL_PREFIX}/lib/include/${API}.api; \
-+	done
- 	for i in ${.OBJDIR:C/apis/apis\/shared/}.api/*.h; do \
- 		${INSTALL} $$i ${INSTALL_PREFIX}/lib/include/shared/${API}.api; \
- 	done
+Index: mk/base/tendra.install.mk
+===================================================================
+RCS file: /usr/home/stefan/tendra/cvsup/tendra/mk/base/tendra.install.mk,v
+retrieving revision 1.19
+diff -u -r1.19 tendra.install.mk
+--- mk/base/tendra.install.mk	18 Aug 2003 04:35:26 -0000	1.19
++++ mk/base/tendra.install.mk	19 Aug 2003 14:23:00 -0000
+@@ -21,7 +21,6 @@
+ 
+ .if defined(API)
+ INSTALL_TARGETS+=	install-api
+-INSTALL_SUB+=		lib/include/${API}.api lib/include/shared/${API}.api
+ .endif
+ 
+ .if defined(INSTALL_ENV)
+@@ -70,14 +69,9 @@
+ 
+ # lib/apis: our api files.
+ install-api:
+-	for i in ${.OBJDIR}.api/*.h; do \
+-		${BIN_INSTALL} $$i ${INSTALL_PREFIX}/lib/include/${API}.api; \
+-	done
+-	for i in ${.OBJDIR:C/apis/apis\/shared/}.api/*.h; do \
+-		${BIN_INSTALL} $$i ${INSTALL_PREFIX}/lib/include/shared/${API}.api; \
+-	done
+-	${BIN_INSTALL} ${.OBJDIR:C/apis/apis\/lib/}/${API}.tl \
+-		${INSTALL_PREFIX}/lib
++	env MAKEOBJDIR=${OBJ_DIR}.api INSTALL=${BIN_INSTALL} \
++		MKDIR=${BIN_MKDIR} ARGS_MKDIR=${ARGS_MKDIR} \
++		INSTALL_PREFIX=${INSTALL_PREFIX} make install
+ 
+ # lib/env: our environment files.
+ install-env:
+Index: src/tools/tspec/makefile.c
+===================================================================
+RCS file: /usr/home/stefan/tendra/cvsup/tendra/src/tools/tspec/makefile.c,v
+retrieving revision 1.3
+diff -u -r1.3 makefile.c
+--- src/tools/tspec/makefile.c	12 Dec 2002 05:54:55 -0000	1.3
++++ src/tools/tspec/makefile.c	10 Jun 2003 12:36:12 -0000
+@@ -71,10 +71,10 @@
+  */
+ 
+ static boolean
+-need_info(info *i, char *api)
++need_info(info *i, char *api, boolean lax)
+ {
+     if (restrict_depth && !streq (api, i->api)) return (0);
+-    return (i->implemented && i->tokens && i->src);
++    return (i->implemented && (lax || (i->tokens && i->src)));
+ }
+ 
+ 
+@@ -95,6 +95,8 @@
+     char *api2 = hack_name (api, "_Aa0");
+     int li = output_incl_len;
+     int ls = output_src_len;
++    hash_table *subdirs = make_hash_table("Subdirs");
++    int i;
+ 	
+     /* Open output file */
+     nm = (whole ? MAKEFILE_API : MAKEFILE);
+@@ -135,11 +137,47 @@
+     }
+     IGNORE fputs ("SHELL=/bin/sh\n\n", output);
+ 	
++	/* Print all headers we want to install */
++	IGNORE fprintf (output, "HEADERS=");
++	for (e = f ; e != null ; e = e->next) {
++		info *i = e->obj->u.u_info;
++		char *p;
++		object *o;
++
++		if (!need_info(i, api, 1))
++			continue;
++
++		if (i->file == NULL || strstr(i->file, "dummy") != NULL ||
++			i->api == NULL  || strstr(i->api, "dummy") != NULL)
++			continue;
++
++		IGNORE fprintf (output, "\\\n %s", i->incl + ls);
++
++		buffer[0] = '\0';
++		IGNORE strncat(buffer, i->incl + ls, buffsize);
++		if ((p = strrchr(buffer, '/')) != NULL) {
++			*p = '\0';
++			/* Add the directory if it isn't in the subdirs hash table yet */
++			if (search_hash(subdirs, buffer, 0) == NULL) {
++				p = xalloc(strlen(buffer) + 1);
++				IGNORE strcpy(p, buffer);
++				o = make_object(p, TYPE_VOID);
++				IGNORE add_hash(subdirs, o, 0);
++			}
++		}
++	}
++
++	/* Print the list of subdirectories we have to create */
++	IGNORE fputs ("\n\nDIRS=", output);
++	for (i = 0; i < sizeof (subdirs->array) / sizeof (*subdirs->array); i++)
++		for (e = subdirs->array[i]; e != null; e = e->next)
++			IGNORE fprintf (output, "\\\n %s", e->obj->name);
++
+     /* Print the list of files */
+-    IGNORE fputs ("JFILES=", output);
++    IGNORE fputs ("\n\nJFILES=", output);
+     for (e = f ; e != null ; e = e->next) {
+ 		info *i = e->obj->u.u_info;
+-		if (need_info (i, api)) {
++		if (need_info (i, api, 0)) {
+ 			int m;
+ 			char *a = i->api;
+ 			if (strneq (a, "shared/", 7)) a += 7;
+@@ -159,7 +197,7 @@
+     /* Print the construction for each file */
+     for (e = f ; e != null ; e = e->next) {
+ 		info *i = e->obj->u.u_info;
+-		if (need_info (i, api)) {
++		if (need_info (i, api, 0)) {
+ 			int m;
+ 			char *a = i->api;
+ 			if (strneq (a, "shared/", 7)) a += 7;
+@@ -192,7 +230,19 @@
+ 	
+     /* End of makefile */
+     IGNORE fputs ("clean :\n\trm -f ${JFILES}\n\n", output);
+-    IGNORE fputs ("clobber : clean\n\trm -f ${LIB}\n", output);
++    IGNORE fputs ("clobber : clean\n\trm -f ${LIB}\n\n", output);
++
++    IGNORE fprintf (output, "install : \n"
++					".for i in ${DIRS}\n"
++					"\t${MKDIR} ${ARGS_MKDIR} ${INSTALL_PREFIX}/lib/include/${i}\n"
++					".endfor\n"
++					".for i in ${HEADERS}\n"
++					"\t${INSTALL} ../${i} ${INSTALL_PREFIX}/lib/include/"
++					"${i:H}\n"
++					".endfor\n"
++					"\t${INSTALL} ../lib/%s/%s.tl ${INSTALL_PREFIX}/lib\n",
++					api, api);
++
+     IGNORE fclose (output);
+     return;
+ }
