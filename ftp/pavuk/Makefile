@@ -48,6 +48,18 @@ CONFIGURE_ARGS+=	--with-gtk-config="${GTK_CONFIG}"
 CONFIGURE_ARGS+=	--disable-gtk
 .endif
 
+.if defined(WITH_DANTE)
+LIB_DEPENDS+=	socks.1:${PORTSDIR}/net/dante
+CONFIGURE_ARGS+=	--with-socks-includes=${LOCALBASE}/include \
+			--with-socks-libraries=${LOCALBASE}/lib
+.elif defined(WITH_SOCKS5)
+BUILD_DEPENDS+=${LOCALBASE}/lib/libsocks5.a:${PORTSDIR}/net/socks5
+CONFIGURE_ARGS+=	--with-socks-includes=${LOCALBASE}/include \
+			--with-socks-libraries=${LOCALBASE}/lib
+.else
+CONFIGURE_ARGS+=	--disable-socks
+.endif
+
 pre-patch:
 	@${REINPLACE_CMD} -e \
 		's|-pthread -DHAVE_MT|${PTHREAD_CFLAGS} -DHAVE_MT|g ; \
