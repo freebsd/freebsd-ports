@@ -131,8 +131,6 @@ post-install:
 		${PREFIX}/include/libmilter/
 	${INSTALL_DATA} \
 	 ${WRKSRC}/obj.`${WRKSRC}/devtools/bin/Build -A`/libmilter/libmilter.a \
-	 ${PREFIX}/lib/
-	${INSTALL_DATA} \
 	 ${WRKSRC}/obj.`${WRKSRC}/devtools/bin/Build -A`/libsmutil/libsmutil.a \
 	 ${PREFIX}/lib/
 .endif

@@ -176,6 +176,7 @@
     SUBDIR += ruby-tmail
     SUBDIR += sendmail
     SUBDIR += sendmail-ldap
+    SUBDIR += sendmail-old
     SUBDIR += sendmail-sasl
     SUBDIR += serialmail
     SUBDIR += sigit
