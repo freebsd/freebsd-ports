@@ -1,5 +1,5 @@
---- extras/Makefile.in.orig	Sat Feb  1 18:49:42 2003
-+++ extras/Makefile.in	Sat Feb  1 18:51:36 2003
+--- extras/Makefile.in.orig	Mon Jul 14 03:19:38 2003
++++ extras/Makefile.in	Mon Jul 14 03:20:05 2003
 @@ -29,6 +29,7 @@
  sharedstatedir = @sharedstatedir@
  localstatedir = @localstatedir@
@@ -8,12 +8,12 @@
  infodir = @infodir@
  mandir = @mandir@
  includedir = @includedir@
-@@ -95,7 +96,7 @@
+@@ -98,7 +99,7 @@
  am__quote = @am__quote@
  install_sh = @install_sh@
  
 -pkgconfigdir = $(libdir)/pkgconfig
 +pkgconfigdir = $(libdatadir)/pkgconfig
+ applicationsdir = $(datadir)/applications
  
  pkgconfig_DATA = streamtuner.pc
- 
