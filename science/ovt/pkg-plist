@@ -1,0 +1,59 @@
+bin/checktle
+bin/ovt
+lib/libovt-%%PORTVERSION%%.so
+share/ovt-%%PORTVERSION%%/conf/ovt.conf
+share/ovt-%%PORTVERSION%%/docs/about.html
+share/ovt-%%PORTVERSION%%/docs/license.txt
+share/ovt-%%PORTVERSION%%/docs/vtk-license.txt
+share/ovt-%%PORTVERSION%%/lib/jaxp.jar
+share/ovt-%%PORTVERSION%%/lib/ovt-%%PORTVERSION%%.jar
+share/ovt-%%PORTVERSION%%/lib/parser.jar
+share/ovt-%%PORTVERSION%%/mdata/coastline.dat
+share/ovt-%%PORTVERSION%%/mdata/igrf.d
+share/ovt-%%PORTVERSION%%/mdata/igrf_c.d
+share/ovt-%%PORTVERSION%%/odata/Astrid2.tle
+share/ovt-%%PORTVERSION%%/odata/Cluster1.ltof
+share/ovt-%%PORTVERSION%%/odata/Cluster1.spin
+share/ovt-%%PORTVERSION%%/odata/Cluster2.ltof
+share/ovt-%%PORTVERSION%%/odata/Cluster2.spin
+share/ovt-%%PORTVERSION%%/odata/Cluster3.ltof
+share/ovt-%%PORTVERSION%%/odata/Cluster4.ltof
+share/ovt-%%PORTVERSION%%/odata/Double_Star_1.ltof
+share/ovt-%%PORTVERSION%%/odata/Double_Star_2.ltof
+share/ovt-%%PORTVERSION%%/odata/Fast.spin
+share/ovt-%%PORTVERSION%%/odata/Fast.tle
+share/ovt-%%PORTVERSION%%/odata/Freja.spin
+share/ovt-%%PORTVERSION%%/odata/Freja.tle
+share/ovt-%%PORTVERSION%%/odata/Interball_Auroral.tle
+share/ovt-%%PORTVERSION%%/odata/Interball_Tail.tle
+share/ovt-%%PORTVERSION%%/odata/Polar.tle
+share/ovt-%%PORTVERSION%%/odata/akebono.tle
+share/ovt-%%PORTVERSION%%/odata/de1.tle
+share/ovt-%%PORTVERSION%%/odata/dmspf10.tle
+share/ovt-%%PORTVERSION%%/odata/dmspf11.tle
+share/ovt-%%PORTVERSION%%/odata/dmspf12.tle
+share/ovt-%%PORTVERSION%%/odata/dmspf13.tle
+share/ovt-%%PORTVERSION%%/odata/dmspf14.tle
+share/ovt-%%PORTVERSION%%/odata/dmspf15.tle
+share/ovt-%%PORTVERSION%%/odata/dmspf8.tle
+share/ovt-%%PORTVERSION%%/odata/dmspf9.tle
+share/ovt-%%PORTVERSION%%/odata/exosd.tle
+share/ovt-%%PORTVERSION%%/odata/uars.tle
+share/ovt-%%PORTVERSION%%/textures/earth8km2000x1000.pnm
+share/ovt-%%PORTVERSION%%/textures/earth_BnW.pnm
+share/ovt-%%PORTVERSION%%/textures/earth_normal.pnm
+share/ovt-%%PORTVERSION%%/userdata/DSTIndex.dat
+share/ovt-%%PORTVERSION%%/userdata/IMF.dat
+share/ovt-%%PORTVERSION%%/userdata/KPIndex.dat
+share/ovt-%%PORTVERSION%%/userdata/MachNumber.dat
+share/ovt-%%PORTVERSION%%/userdata/SWP.dat
+share/ovt-%%PORTVERSION%%/userdata/gb_stations.xml
+share/ovt-%%PORTVERSION%%/userdata/w96.dat
+@dirrm share/ovt-%%PORTVERSION%%/userdata
+@dirrm share/ovt-%%PORTVERSION%%/textures
+@dirrm share/ovt-%%PORTVERSION%%/odata
+@dirrm share/ovt-%%PORTVERSION%%/mdata
+@dirrm share/ovt-%%PORTVERSION%%/lib
+@dirrm share/ovt-%%PORTVERSION%%/docs
+@dirrm share/ovt-%%PORTVERSION%%/conf
+@dirrm share/ovt-%%PORTVERSION%%

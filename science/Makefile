@@ -32,6 +32,7 @@
     SUBDIR += mpqc-mpich
     SUBDIR += oases
     SUBDIR += openbabel
+    SUBDIR += ovt
     SUBDIR += p5-Chemistry-Elements
     SUBDIR += psi3
     SUBDIR += ruby-dcl
