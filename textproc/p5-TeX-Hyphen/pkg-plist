@@ -1,0 +1,8 @@
+lib/perl5/site_perl/%%PERL_VER%%/TeX/Hyphen.pm
+lib/perl5/site_perl/%%PERL_VER%%/TeX/Hyphen/czech.pm
+lib/perl5/site_perl/%%PERL_VER%%/TeX/Hyphen/german.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/TeX/Hyphen/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/TeX/Hyphen
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/TeX/Hyphen
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/TeX 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/TeX 2>/dev/null || true

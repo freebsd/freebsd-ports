@@ -191,6 +191,7 @@
     SUBDIR += p5-String-Scanf
     SUBDIR += p5-String-ShellQuote
     SUBDIR += p5-String-Strip
+    SUBDIR += p5-TeX-Hyphen
     SUBDIR += p5-Text-Autoformat
     SUBDIR += p5-Text-Balanced
     SUBDIR += p5-Text-Bind
