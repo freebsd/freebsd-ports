@@ -1,0 +1,17 @@
+etc/gconf/gconf.xml.defaults/schemas/apps/quick_lounge_applet/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/quick_lounge_applet/prefs/%gconf.xml
+etc/gconf/schemas/quick-lounge.schemas
+lib/libquicklounge-applet.a
+lib/libquicklounge-applet.so
+lib/libquicklounge-applet.so.0
+libdata/bonobo/servers/GNOME_QuickLoungeApplet_Factory.server
+share/gnome/gnome-2.0/ui/GNOME_QuickLoungeApplet.xml
+share/gnome/pixmaps/quick-lounge-applet.png
+share/gnome/quick-lounge/glade/quick-lounge.glade
+share/locale/de/LC_MESSAGES/quick-lounge-applet.mo
+share/locale/it/LC_MESSAGES/quick-lounge-applet.mo
+share/locale/ko/LC_MESSAGES/quick-lounge-applet.mo
+@dirrm share/gnome/quick-lounge/glade
+@dirrm share/gnome/quick-lounge
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/quick_lounge_applet/prefs
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/quick_lounge_applet

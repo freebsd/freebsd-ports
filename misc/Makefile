@@ -273,6 +273,7 @@
     SUBDIR += qlas
     SUBDIR += qmc
     SUBDIR += quantlib
+    SUBDIR += quick-lounge-applet
     SUBDIR += quotes
     SUBDIR += quranref
     SUBDIR += reed
