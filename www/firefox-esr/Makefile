@@ -7,6 +7,7 @@
 
 PORTNAME=	firefox
 PORTVERSION=	1.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
@@ -25,11 +26,9 @@ RUN_DEPENDS=	Xvfb:${X_VFBSERVER_PORT}
 ALL_TARGET=	default
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
 FAKEDIR=	${WRKDIR}/fake
-REALVERSION=	1.0
+USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 ESD_LIB=	libesd.so.2
-LOCAL_PREFIX=	${PREFIX}/lib/${PORTNAME}
-NO_MTREE=	yes
 PLIST=		${WRKDIR}/plist
 PLUGINSDIR=	${PREFIX}/lib/browser_plugins
 USE_BZIP2=	yes
@@ -42,11 +41,14 @@ WRKSRC=		${WRKDIR}/mozilla
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
+FIREFOX=	${PORTNAME}
+FF_VER=		${PORTVERSION}
+
 FIREFOX_ICON=	firefox.png
 FIREFOX_ICON_SRC=${WRKSRC}/other-licenses/branding/firefox/content/alert-exclam.png
 
-PKGCONFIG_FILES=mozilla-gtkmozembed mozilla-js mozilla-xpcom \
-		mozilla-nspr mozilla-nss mozilla-plugin
+PKGCONFIG_FILES=firefox-gtkmozembed firefox-js firefox-xpcom \
+		firefox-nspr firefox-nss firefox-plugin
 
 JPI_LIST?=\
 	${LOCALBASE}/jdk1.4.2/jre/plugin/${ARCH}/ns610/libjavaplugin_oji.so \
@@ -55,7 +57,6 @@ JPI_LIST?=\
 	${LOCALBASE}/jdk1.3.1/jre/plugin/${ARCH}/ns600/libjavaplugin_oji.so
 
 OPTIONS=	DEBUG "Build a debugging image" off \
-		HEADERS "Install headers and IDL files" on \
 		LOGGING "Enable additional log messages" off \
 		OPTIMIZED_CFLAGS "Enable some additional optimizations" off \
 		XFT "Enable support for anti-aliased fonts" on \
@@ -112,44 +113,42 @@ pre-extract::
 	@${ECHO_MSG}
 
 post-extract::
-# FAKEDIR is here so that nsinstall will install under FAKEDIR, not
-# under PREFIX.  See pre-install and do-install for details.
 	@${SED} -e 's|@CPPFLAGS@|${CPPFLAGS}|'		\
 		-e 's|@CFLAGS@|${CFLAGS}|'		\
 		-e 's|@LDFLAGS@|${LDFLAGS}|'		\
 		-e 's|@LIBS@|${LIBS}|'			\
 		-e 's|@X11BASE@|${X11BASE}|'		\
 		-e 's|@LOCALBASE@|${LOCALBASE}|'	\
-		-e 's|@PREFIX@|${FAKEDIR}/lib/firefox|'	\
+		-e 's|@FAKEDIR@|${FAKEDIR}|'		\
 		-e 's|@PERL@|${PERL5}|'			\
 		<${FILESDIR}/mozconfig.in >${WRKSRC}/.mozconfig
 	@${SED} -e 's|@FIREFOX_ICON@|${FIREFOX_ICON}|' \
 		<${FILESDIR}/firefox.desktop.in >${WRKDIR}/firefox.desktop
 
 post-patch:
-	@${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g' \
+	@${SED} -e 's|%%MOZDIR%%|${PREFIX}/lib/${FIREFOX}|g ; \
+		s|%%X11BASE%%|${X11BASE}|g' \
+		< ${MASTERDIR}/pkg-install.in > ${PKGINSTALL}
+	@${SED} -e 's|%%MOZDIR%%|${PREFIX}/lib/${FIREFOX}|g' \
+		< ${MASTERDIR}/pkg-deinstall.in > ${PKGDEINSTALL}
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
 		${WRKSRC}/build/unix/run-mozilla.sh
-	@${PERL} -pi -e 's|-lc_r|${PTHREAD_LIBS}|g ; \
+	@${REINPLACE_CMD} -e 's|-lc_r|${PTHREAD_LIBS}|g ; \
 		s|-lpthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/configure \
 		${WRKSRC}/nsprpub/configure
-	@${PERL} -pi -e 's|-pthread|${PTHREAD_LIBS}|g' \
+	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/nsprpub/config/config.mk \
 		${WRKSRC}/security/coreconf/FreeBSD.mk \
 		${WRKSRC}/directory/c-sdk/config/FreeBSD.mk \
 		${WRKSRC}/js/src/Makefile.in
-	@${PERL} -pi -e 's|libesd\.so\.\d+|${ESD_LIB}|g' \
+	@${REINPLACE_CMD} -e 's|libesd\.so\.\d+|${ESD_LIB}|g' \
 		${WRKSRC}/widget/src/gtk2/nsSound.cpp
 .for ii in modules/libpref/src/init extensions/sroaming/resources/content/prefs \
 	embedding/minimo
-	${MV} ${WRKSRC}/${ii}/all.js ${WRKSRC}/${ii}/all.js.bak
-	${SED} -e '/accessibility.typeaheadfind.enablesound/s/true/false/ ; \
+	@${REINPLACE_CMD} -e '/accessibility.typeaheadfind.enablesound/s/true/false/ ; \
 		/dom.disable_window_open_feature.toolbar/s/false/true/' \
-	< ${WRKSRC}/${ii}/all.js.bak > ${WRKSRC}/${ii}/all.js
-.endfor
-.for ii in ${PKGCONFIG_FILES}
-	@${PERL} -pi -e 's|mozilla-|firefox-|g' \
-		${WRKSRC}/build/unix/${ii}.pc.in
+		${WRKSRC}/${ii}/all.js
 .endfor
 
 pre-configure:
@@ -158,50 +157,65 @@ pre-configure:
 		${FALSE}; \
 	fi
 
-post-build:
-# XXX This works around an install problem that is triggered when
-# toolkit/profile/src is built after profile/src.
-	@${TOUCH} -f ${WRKSRC}/profile/build/libprofile.so
-
 pre-install:
-# Overview:  the program installs itself in FAKEDIR, then a list is made of the
-# files and directories in there.  This is the PLIST (packing list) for the
-# package, replacing the traditional pkg-plist file.
 	@${RM} -rf ${FAKEDIR} ${PLIST}
-	@${MKDIR} ${FAKEDIR}/lib/browser_plugins
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
 		Makefile ${MAKE_ARGS} install
-.for ii in mac win
-.for jj in / .jar
-	@${RM} -rf ${FAKEDIR}/lib/${PORTNAME}/lib/${PORTNAME}-${REALVERSION}/chrome/en-${ii}${jj}
-.endfor
-.endfor
-	@${SED} -e 's|%%MOZDIR%%|${LOCAL_PREFIX}/lib/${PORTNAME}-${REALVERSION}|g ; \
-		s|%%X11BASE%%|${X11BASE}|g' \
-		< ${MASTERDIR}/pkg-install.in > ${PKGINSTALL}
-	@${SED} -e 's|%%MOZDIR%%|${LOCAL_PREFIX}/lib/${PORTNAME}-${REALVERSION}|g' \
-		< ${MASTERDIR}/pkg-deinstall.in > ${PKGDEINSTALL}
-
-.if !defined (WITH_HEADERS)
-	@${RM} -fr ${FAKEDIR}/share/idl ${FAKEDIR}/include
-.endif
-.for ii in firefox Firefox firefox-config ${EXTRA_SCRIPTS}
-	@${ECHO_CMD} bin/${ii} >> ${PLIST}
-.endfor
-	@cd ${FAKEDIR} && ${FIND} * ! -type d | ${SORT} >> ${PLIST}; \
-	${FIND} * -type d -empty | ${SORT} | ${SED} -e \
-		"s:^:@exec ${MKDIR} %D/:" -e "s:$$: || true:" >> ${PLIST}; \
-	${FIND} * -type d -empty | ${SORT} -r | ${SED} -e \
-		"s:^:@unexec ${RMDIR} %D/:" -e "s:$$: || true:" >> ${PLIST}; \
-	${FIND} * -type d ! -empty | ${SORT} -r | ${SED} -e "s:^:@dirrm :" | \
-		${GREP} / >> ${PLIST}
 	${ECHO_CMD} 'share/gnome/pixmaps/${FIREFOX_ICON}' >> ${PLIST}
 	${ECHO_CMD} 'share/gnome/applications/firefox.desktop' >> ${PLIST}
+	${REINPLACE_CMD} -e 's|${FAKEDIR}|${PREFIX}|g; \
+		s|${FIREFOX}-${FF_VER}|${FIREFOX}|' \
+		${FAKEDIR}/bin/firefox \
+		${FAKEDIR}/bin/firefox-config
+	for i in ${EXTRA_SCRIPTS}; do \
+		${ECHO_CMD} bin/${i} ; \
+	done
+	${ECHO_CMD} bin/firefox >> ${PLIST}
+	${ECHO_CMD} bin/firefox-config >> ${PLIST}
+	cd ${FAKEDIR}/lib/${FIREFOX}-${FF_VER} && ${FIND} -s * -type f -o -type l | \
+		${SED} -e 's|^|lib/${FIREFOX}/|' >> ${PLIST} \
+		&& ${FIND} -d * -type d | \
+		${SED} -e 's|^|@dirrm lib/${FIREFOX}/|' >> ${PLIST}
+	${ECHO_CMD} @dirrm lib/firefox >> ${PLIST}
+	for pcfile in ${PKGCONFIG_FILES}; do \
+		${REINPLACE_CMD} -e 's|${FIREFOX}-${FF_VER}|${FIREFOX}|g' \
+			${FAKEDIR}/lib/pkgconfig/$${pcfile}.pc ; \
+		${ECHO_CMD} libdata/pkgconfig/$${pcfile}.pc >> ${PLIST} ; \
+	done
+	cd ${FAKEDIR}/include/${FIREFOX}-${FF_VER} && ${FIND} -s * -type f -o -type l | \
+		${SED} -e 's|^|include/${FIREFOX}/|' >> ${PLIST} \
+		&& ${FIND} -d * -type d | \
+		${SED} -e 's|^|@dirrm include/${FIREFOX}/|' >> ${PLIST}
+	${ECHO_CMD} @dirrm include/${FIREFOX} >> ${PLIST}
 
 do-install:
-# This is the actual installation.  First, the contents of FAKEDIR are
-# just copied to PREFIX.
-	cd ${FAKEDIR} && ${FIND} * | ${CPIO} -dmp --quiet ${PREFIX}
+	${MKDIR} ${PREFIX}/lib/${FIREFOX}
+	${CHMOD} 755 ${PREFIX}/lib/${FIREFOX}
+	${INSTALL_SCRIPT} ${FAKEDIR}/bin/firefox ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${FAKEDIR}/bin/firefox-config ${PREFIX}/bin
+	if [ ! -d ${PREFIX}/lib/browser_plugins ]; then \
+		${MKDIR} ${PREFIX}/lib/browser_plugins ; \
+	fi
+	if [ ! -L ${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ]; then \
+		for jpi in ${JPI_LIST}; do \
+			if [ -f $${jpi} ]; then \
+				${LN} -sf $${jpi} \
+					${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ; \
+				break; \
+			fi; \
+		done; \
+	fi
+	for pcfile in ${PKGCONFIG_FILES}; do \
+		${INSTALL_DATA} ${FAKEDIR}/lib/pkgconfig/$${pcfile}.pc \
+			${PREFIX}/libdata/pkgconfig/$${pcfile}.pc ; \
+	done
+	-${RM} -fr ${PREFIX}/include/${FIREFOX}
+	${MKDIR} ${PREFIX}/include/${FIREFOX}
+	${CHMOD} 755 ${PREFIX}/include/${FIREFOX}
+	cd ${FAKEDIR}/include/${FIREFOX}-${FF_VER} && ${FIND} . | \
+		${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/include/${FIREFOX}
+	cd ${FAKEDIR}/lib/${FIREFOX}-${FF_VER} && ${FIND} . | \
+		${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/lib/${FIREFOX}
 
 post-install:
 .if !defined(PACKAGE_BUILDING)
@@ -210,29 +224,9 @@ post-install:
 .for i in ${EXTRA_SCRIPTS}
 	${INSTALL_SCRIPT} ${FILESDIR}/${i} ${PREFIX}/bin
 .endfor
-.for ii in f F
-	${RM} -f ${PREFIX}/bin/${ii}irefox
-	${LN} -sf ${LOCAL_PREFIX}/bin/firefox ${PREFIX}/bin/${ii}irefox
-.endfor
-	${PERL} -pi -e 's|${FAKEDIR}|${PREFIX}|g' ${LOCAL_PREFIX}/bin/firefox
-	${RM} -f ${PREFIX}/bin/firefox-config
-	${LN} -sf ${LOCAL_PREFIX}/bin/firefox-config \
-		${PREFIX}/bin/firefox-config
-	${PERL} -pi -e 's|${FAKEDIR}|${PREFIX}|g' ${LOCAL_PREFIX}/bin/firefox-config
-	${FIND} ${LOCAL_PREFIX}/lib/pkgconfig -type f | ${XARGS} ${PERL} -pi -e \
-		's|${FAKEDIR}|${PREFIX}|g'
-	-if [ ! -L ${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ]; then \
-		for jpi in ${JPI_LIST}; do \
-			if [ -f $${jpi} ]; then \
-				${LN} -sf $${jpi} \
-					${PLUGINSDIR}/libjavaplugin_oji.so ; \
-				break; \
-			fi; \
-		done; \
-	fi
 .if defined(WITH_NEW_ICON)
 	${INSTALL_DATA} ${WRKSRC}/other-licenses/branding/firefox/default.xpm \
-		${LOCAL_PREFIX}/lib/${PORTNAME}-${REALVERSION}/chrome/icons/default/default.xpm
+		${PREFIX}/lib/${FIREFOX}/chrome/icons/default/default.xpm
 .endif # defined(WITH_NEW_ICON)
 	${INSTALL_DATA} ${FIREFOX_ICON_SRC} ${PREFIX}/share/gnome/pixmaps/${FIREFOX_ICON}
 	${INSTALL_DATA} ${WRKDIR}/firefox.desktop ${PREFIX}/share/gnome/applications
