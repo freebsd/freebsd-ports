@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- Makefile.in	2001/05/30 20:07:13	1.1
++++ Makefile.in	2001/05/30 20:07:31
+@@ -120,7 +120,7 @@
+ 
+ uf_view_SOURCES =  	uf-gui.c uf-gui.h 	uf-view.c uf-view.h
+ 
+-uf_view_LDADD = -lgnomevfs $(GNOME_LIBDIR) $(GNOMEUI_LIBS) $(INTLLIBS)
++uf_view_LDADD = -lgnomevfs $(GNOME_LIBDIR) $(GNOMEUI_LIBS) $(INTLLIBS) $(PTHREAD_LIB)
+ 
+ EXTRA_DIST = uf-view.desktop $(foo_DATA) uf-view.spec.in
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4

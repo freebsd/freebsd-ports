@@ -1,0 +1,6 @@
+bin/uf-view
+share/gnome/apps/Utilities/uf-view.desktop
+share/gnome/pixmaps/uf-view/gnome-uf-view.png
+share/gnome/pixmaps/uf-view/uf-logo.png
+share/locale/sv/LC_MESSAGES/uf-view.mo
+@dirrm share/gnome/pixmaps/uf-view
