@@ -8,7 +8,8 @@
 PORTNAME=	xclasses
 PORTVERSION=	1.3.1
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	ftp://trier.linux.de/pub/Xclasses/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	xcmail
 DISTNAME=	Xclasses-public-${PORTVERSION}.src
 
 MAINTAINER=	trevor@FreeBSD.org
