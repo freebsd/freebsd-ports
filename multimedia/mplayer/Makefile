@@ -31,7 +31,7 @@
 # default: disabled
 # Enable nvidia XVMC support for nvidia video cards
 # Note: This is highly experimental at the moment and works only for
-#       MPEG1/2 using -vo xvmc -vc ffmpeg12mc
+#       MPEG1/2 using -vo xvmc -vc ffmpeg12mc on FreeBSD-5
 #
 # WITHOUT_MENCODER
 # default: undefined
@@ -302,6 +302,11 @@ TOOLFILES=	calcbpp.pl countquant.pl \
 		x2mpsub.sh
 
 .include <bsd.port.pre.mk>
+
+# Can't run mplayer/nvidia-driver WITH_NVIDIA on FreeBSD 4.X now
+.if ${OSVERSION} < 500000 && defined(WITH_NVIDIA)
+IGNORE=	does not run on 4.x when WITH_NVIDIA is defined
+.endif
 
 #Building of vidix dependent shared libs is only possible
 #on i386 at the moment.
