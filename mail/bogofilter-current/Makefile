@@ -7,6 +7,7 @@
 
 PORTNAME=	bogofilter
 PORTVERSION=	0.8.0
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,6 +19,7 @@ LIB_DEPENDS=	db4.0:${PORTSDIR}/databases/db4
 # This port needs PERL5 at run time, but not for the build.
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
+PATCH_STRIP=	-p1
 CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include/db4" \
 		LDFLAGS="-L${PREFIX}/lib"
 

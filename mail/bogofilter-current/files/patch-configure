@@ -1,0 +1,20 @@
+--- bogofilter-0.8.0/configure	Sat Nov  9 19:21:44 2002
++++ bogofilter-0.8.0.1/configure	Mon Nov 11 02:07:43 2002
+@@ -1500,7 +1500,7 @@
+ 
+ # Define the identity of the package.
+  PACKAGE=bogofilter
+- VERSION=0.8.0
++ VERSION=0.8.0.1
+ 
+ 
+ cat >>confdefs.h <<_ACEOF
+@@ -2563,7 +2563,7 @@
+     if depmode=$depmode \
+        source=conftest.c object=conftest.o \
+        depfile=conftest.Po tmpdepfile=conftest.TPo \
+-       $SHELL ./depcomp $depcc -c conftest.c -o conftest.o >/dev/null 2>&1 &&
++       $SHELL ./depcomp $depcc -c -o conftest.o conftest.c >/dev/null 2>&1 &&
+        grep conftest.h conftest.Po > /dev/null 2>&1 &&
+        ${MAKE-make} -s -f confmf > /dev/null 2>&1; then
+       am_cv_CC_dependencies_compiler_type=$depmode
