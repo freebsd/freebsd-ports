@@ -3,7 +3,7 @@
 # Date created:		4 June 1999
 # Whom:				jack
 #
-# $Id: Makefile,v 1.1.1.1 1999/06/14 20:00:35 taoka Exp $
+# $Id: Makefile,v 1.2 1999/08/21 18:45:56 fenner Exp $
 
 DISTNAME=	asmem-1.3
 CATEGORIES=	sysutils afterstep
@@ -13,6 +13,11 @@ MASTER_SITES=	ftp://ftp.afterstep.org/apps/asmem/ \
 MAINTAINER=	jack@germanium.xtalwind.net
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
+
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} >= 400000
+BROKEN=		'Sorry, asmem doesn't compile on 4.0+'
+.endif
 
 USE_X_PREFIX=	yes
 
@@ -25,4 +30,4 @@ do-install:
 		${INSTALL} ${COPY} ${STRIP} -o ${BINOWN} \
 			-g kmem -m 2755 ${WRKSRC}/asmem ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
