@@ -1,0 +1,34 @@
+--- Makefile.orig	Sun Aug 29 11:02:52 1999
++++ Makefile	Mon Aug 30 00:42:38 1999
+@@ -1,6 +1,6 @@
+-CFLAGS=-O3 -Wall -s
++CFLAGS?=-O3 -Wall -s
+ TARGET=geekcode
+-CC=gcc
++CC?=gcc
+ 
+ SRCFILES = gc_appearance.c    \
+            gc_computers.c     \
+@@ -24,14 +24,14 @@
+ 	rm -f $(TARGET) $(LIBFILES)
+ 
+ geekcode:
+-	gcc $(CFLAGS) -c gc_appearance.c
+-	gcc $(CFLAGS) -c gc_computers.c
+-	gcc $(CFLAGS) -c gc_entertainment.c
+-	gcc $(CFLAGS) -c gc_lifestyle.c
+-	gcc $(CFLAGS) -c gc_politics.c
+-	gcc $(CFLAGS) -c gc_type.c
+-	gcc $(CFLAGS) -c geekcode.c
+-	gcc $(CFLAGS) -o $(TARGET) $(LIBFILES)
++	${CC} $(CFLAGS) -c gc_appearance.c
++	${CC} $(CFLAGS) -c gc_computers.c
++	${CC} $(CFLAGS) -c gc_entertainment.c
++	${CC} $(CFLAGS) -c gc_lifestyle.c
++	${CC} $(CFLAGS) -c gc_politics.c
++	${CC} $(CFLAGS) -c gc_type.c
++	${CC} $(CFLAGS) -c geekcode.c
++	${CC} $(CFLAGS) -o $(TARGET) $(LIBFILES)
+ 
+ install:
+ 	install -m 755 geekcode /usr/local/bin
