@@ -20,10 +20,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Parse::ePerl.3 Apache::ePerl.3
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502000
-BROKEN=		"Configure fails"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

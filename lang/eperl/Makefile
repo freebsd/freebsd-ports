@@ -33,10 +33,6 @@ MAN1=	eperl.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 502000
-BROKEN=		"Configure fails"
-.endif
-
 test:
 	@(cd ${WRKSRC}; ${MAKE} test)
 
