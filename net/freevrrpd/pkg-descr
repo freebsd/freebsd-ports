@@ -1,7 +1,7 @@
-freevrrpd is a VRRP (Virtual Router Redundancy Protocol) implemetation
-daemon under FreeBSD freevrrpd is a part of High UpTime project This
-daemon has been rewrited from scratch and is not based on existing
-projects. For this second public release, you can found:
+freevrrpd is a VRRP (Virtual Router Redundancy Protocol) implementation
+daemon under FreeBSD.  freevrrpd is part of the High UpTime project.
+This daemon has been rewritten from scratch and is not based on
+existing projects.  In this second public release, you can find:
 
        * A daemon RFC 2338 Compliant adapted on FreeBSD systems
        * Implementation of Virtual Adresses
