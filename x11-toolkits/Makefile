@@ -70,6 +70,7 @@
     SUBDIR += gtkglextmm
     SUBDIR += gtkmathview
     SUBDIR += gtkscintilla
+    SUBDIR += gtksourceview
     SUBDIR += gtkstep
     SUBDIR += gtkstep-pastel
     SUBDIR += gtoolkit
