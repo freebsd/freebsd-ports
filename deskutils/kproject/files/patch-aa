@@ -1,0 +1,56 @@
+--- Makefile.orig	Thu Dec 18 13:52:15 1997
++++ Makefile	Sat May 23 21:08:52 1998
+@@ -1,28 +1,28 @@
+ 
+-kde_libraries = /opt/kde/lib
+-qt_libraries = /usr/lib
++kde_libraries = ${LOCALBASE}/lib
++qt_libraries =  ${X11BASE}/lib
+ top_builddir = ..
+-LIBTOOL = $(SHELL) $(top_builddir)/libtool
++LIBTOOL = libtool
+ KDE_RPATH = -rpath $(kde_libraries) -rpath $(qt_libraries)
+ 
+ ############ Autoconf-generated variables  ###################
+-CXXFLAGS= -O2 -Wall -I/opt/kde/include -I/usr/lib/qt/include  -I.. 
+-LDFLAGS	= -s -L/opt/kde/lib -L/usr/lib -L/usr/X11/lib -lkdecore -lkdeui -lqt -lXext -lX11 
++CXXFLAGS= -O2 -Wall -I$(LOCALBASE)/include -I$(X11BASE)/include -I$(X11BASE)/include/X11/qt  -I.. 
++LDFLAGS	= -s -L$(kde_libraries) -L$(qt_libraries) -lkdecore -lkdeui -lqt -lXext -lX11 
+ CXX     = c++
+-MOC   	= /usr/bin/moc
++MOC   	= $(X11BASE)/bin/moc
+ 
+ install = /usr/bin/install -c
+-INSTALL = $(install) -m 0755
++INSTALL = $(install) -m 0555
+ INSTALL_DATA = $(install) -m 0644
+ INSTALL_DIR = $(install) -d -m 0755
+ INSTALL_DIR_PRIVATE = $(install) -d -m 0700
+ 
+-prefix = /opt/kde
++prefix = /usr/local
+ KDEINC = $(prefix)/include
+ BINDIR = $(prefix)/bin
+ LIBDIR = $(prefix)/lib
+-PICSDIR = $(LIBDIR)/pics
+-APPSDIR = $(prefix)/apps
++PICSDIR = $(prefix)/share/pics
++APPSDIR = $(prefix)/share/apps
+ 
+ ########### Implicit Rules ###########
+ 
+@@ -73,10 +73,10 @@
+ install: all
+ 	$(INSTALL_DIR) $(BINDIR)
+ 	$(INSTALL) $(TARGET) $(BINDIR)
+-	$(INSTALL_DIR) $(prefix)/share/doc/HTML/en/karm
+-	$(INSTALL_DATA) $(DOCFILES) $(prefix)/share/doc/HTML/en/karm
+-	$(INSTALL_DIR) $(prefix)/share/applnk/Utilities
+-	$(INSTALL_DATA) support/KArm.kdelnk $(prefix)/share/applnk/Utilities
++#	$(INSTALL_DIR) $(prefix)/share/doc/HTML/en/karm
++#	$(INSTALL_DATA) $(DOCFILES) $(prefix)/share/doc/HTML/en/karm
++#	$(INSTALL_DIR) $(prefix)/share/applnk/Utilities
++#	$(INSTALL_DATA) support/KArm.kdelnk $(prefix)/share/applnk/Utilities
+ 
+ dist: $(SRCFILES) $(HDRFILES) Makefile 
+ 	cd ..
