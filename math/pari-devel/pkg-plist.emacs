@@ -18,57 +18,57 @@ include/pari/genpari.h
 lib/libpari-%%MAJOR_VERSION%%.%%MINOR_VERSION%%.so.%%REV_VERSION%%.0.0
 lib/libpari-%%MAJOR_VERSION%%.%%MINOR_VERSION%%.so.%%REV_VERSION%%
 lib/libpari-%%MAJOR_VERSION%%.%%MINOR_VERSION%%.so
-share/doc/pari/AUTHORS
-share/doc/pari/Announce.2.1
-share/doc/pari/CHANGES
-share/doc/pari/COMPAT
-share/doc/pari/COPYING
-share/doc/pari/CVS.txt
-share/doc/pari/MACHINES
-share/doc/pari/NEW
-share/doc/pari/README
-share/doc/pari/TODO
-share/doc/pari/pari.desc
-share/doc/pari/PARI/822.pm
-share/doc/pari/misc/README
-share/doc/pari/misc/color.dft
-share/doc/pari/misc/gpalias
-share/doc/pari/misc/gpflog
-share/doc/pari/misc/gprc.dft
-share/doc/pari/misc/new.dic
-share/doc/pari/misc/pari.xpm
-share/doc/pari/misc/xgp
-share/doc/pari/doc/Makefile
-share/doc/pari/doc/translations
-share/doc/pari/doc/appa.tex
-share/doc/pari/doc/appb.tex
-share/doc/pari/doc/appc.tex
-share/doc/pari/doc/paricfg.tex
-share/doc/pari/doc/parimacro.tex
-share/doc/pari/doc/pdfmacs.tex
-share/doc/pari/doc/refcard.tex
-share/doc/pari/doc/tutorial.tex
-share/doc/pari/doc/users.tex
-share/doc/pari/doc/usersch1.tex
-share/doc/pari/doc/usersch2.tex
-share/doc/pari/doc/usersch3.tex
-share/doc/pari/doc/usersch4.tex
-share/doc/pari/doc/usersch5.tex
-share/doc/pari/examples/EXPLAIN
-share/doc/pari/examples/Inputrc
-share/doc/pari/examples/Makefile
-share/doc/pari/examples/bench.gp
-share/doc/pari/examples/cl.gp
-share/doc/pari/examples/classno.gp
-share/doc/pari/examples/contfrac.gp
-share/doc/pari/examples/lucas.gp
-share/doc/pari/examples/matexp.c
-share/doc/pari/examples/rho.gp
-share/doc/pari/examples/squfof.gp
-share/doc/pari/examples/taylor.gp
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/Announce.2.1
+%%DOCSDIR%%/CHANGES
+%%DOCSDIR%%/COMPAT
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/CVS.txt
+%%DOCSDIR%%/MACHINES
+%%DOCSDIR%%/NEW
+%%DOCSDIR%%/README
+%%DOCSDIR%%/TODO
+%%DOCSDIR%%/pari.desc
+%%DOCSDIR%%/PARI/822.pm
+%%DOCSDIR%%/misc/README
+%%DOCSDIR%%/misc/color.dft
+%%DOCSDIR%%/misc/gpalias
+%%DOCSDIR%%/misc/gpflog
+%%DOCSDIR%%/misc/gprc.dft
+%%DOCSDIR%%/misc/new.dic
+%%DOCSDIR%%/misc/pari.xpm
+%%DOCSDIR%%/misc/xgp
+%%DOCSDIR%%/doc/Makefile
+%%DOCSDIR%%/doc/translations
+%%DOCSDIR%%/doc/appa.tex
+%%DOCSDIR%%/doc/appb.tex
+%%DOCSDIR%%/doc/appc.tex
+%%DOCSDIR%%/doc/paricfg.tex
+%%DOCSDIR%%/doc/parimacro.tex
+%%DOCSDIR%%/doc/pdfmacs.tex
+%%DOCSDIR%%/doc/refcard.tex
+%%DOCSDIR%%/doc/tutorial.tex
+%%DOCSDIR%%/doc/users.tex
+%%DOCSDIR%%/doc/usersch1.tex
+%%DOCSDIR%%/doc/usersch2.tex
+%%DOCSDIR%%/doc/usersch3.tex
+%%DOCSDIR%%/doc/usersch4.tex
+%%DOCSDIR%%/doc/usersch5.tex
+%%DOCSDIR%%/examples/EXPLAIN
+%%DOCSDIR%%/examples/Inputrc
+%%DOCSDIR%%/examples/Makefile
+%%DOCSDIR%%/examples/bench.gp
+%%DOCSDIR%%/examples/cl.gp
+%%DOCSDIR%%/examples/classno.gp
+%%DOCSDIR%%/examples/contfrac.gp
+%%DOCSDIR%%/examples/lucas.gp
+%%DOCSDIR%%/examples/matexp.c
+%%DOCSDIR%%/examples/rho.gp
+%%DOCSDIR%%/examples/squfof.gp
+%%DOCSDIR%%/examples/taylor.gp
 @dirrm include/pari
-@dirrm share/doc/pari/PARI
-@dirrm share/doc/pari/misc
-@dirrm share/doc/pari/doc
-@dirrm share/doc/pari/examples
-@dirrm share/doc/pari
+@dirrm %%DOCSDIR%%/PARI
+@dirrm %%DOCSDIR%%/misc
+@dirrm %%DOCSDIR%%/doc
+@dirrm %%DOCSDIR%%/examples
+@dirrm %%DOCSDIR%%
