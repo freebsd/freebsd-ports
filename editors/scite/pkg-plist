@@ -30,13 +30,16 @@ share/gnome/pixmaps/Sci48M.png
 %%DATADIR%%/css.properties
 %%DATADIR%%/eiffel.properties
 %%DATADIR%%/escript.properties
+%%DATADIR%%/forth.properties
 %%DATADIR%%/fortran.properties
 %%DATADIR%%/html.properties
 %%DATADIR%%/latex.properties
 %%DATADIR%%/lisp.properties
+%%DATADIR%%/lot.properties
 %%DATADIR%%/lout.properties
 %%DATADIR%%/lua.properties
 %%DATADIR%%/matlab.properties
+%%DATADIR%%/metapost.properties
 %%DATADIR%%/mmixal.properties
 %%DATADIR%%/nncrontab.properties
 %%DATADIR%%/nsis.properties
@@ -50,6 +53,7 @@ share/gnome/pixmaps/Sci48M.png
 %%DATADIR%%/scriptol.properties
 %%DATADIR%%/sql.properties
 %%DATADIR%%/tcl.properties
+%%DATADIR%%/tex.properties
 %%DATADIR%%/vb.properties
 %%DATADIR%%/yaml.properties
 @dirrm %%DATADIR%%
