@@ -7,6 +7,8 @@ PKGNAMEPREFIX=	pear-
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PEAR
 
+USE_REINPLACE=	yes
+
 .if !defined(USE_PHPIZE)
 NO_BUILD=	yes
 .endif
@@ -210,6 +212,8 @@ do-install-scriptfiles: do-install-scriptfiles-msg
 .  for file in ${SCRIPTFILES}
 	@${CP} ${WRKSRC}/pear-${file} ${WRKSRC}/${file}
 	@${REINPLACE_CMD} -e "s|@php_bin@|${SCRIPTFILESDIR}/php|g" ${WRKSRC}/${file}
+	@${REINPLACE_CMD} -e "s|@php_dir@|${PREFIX}/lib/php|g" ${WRKSRC}/${file}
+	@${REINPLACE_CMD} -e "s|@include_path@|${PREFIX}/${LPEARDIR}|g" ${WRKSRC}/${file}
 	@${INSTALL_SCRIPT} ${WRKSRC}/${file} ${SCRIPTFILESDIR}/${file}
 .  endfor
 . endif

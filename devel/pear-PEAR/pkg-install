@@ -6,9 +6,16 @@
 
 PREFIX=${PKG_PREFIX:-/usr/local}
 PEAR=${PREFIX}/bin/pear
+PEAR2=${PREFIX}/bin/pear2
 PKGREGDIR=${PREFIX}/share/pear/packages/$1
+
+if [ -f "${PEAR2}" ]; then
+	PEAR_INSTALLER=${PEAR2}
+else
+	PEAR_INSTALLER=${PEAR}
+fi
 
 [ "x$1" = "x" ] && exit 1
 if [ "x$2" = "xPOST-INSTALL" ]; then
-	${PEAR} install -r -f ${PKGREGDIR}/package.xml
+	${PEAR_INSTALLER} install -r -f ${PKGREGDIR}/package.xml
 fi
