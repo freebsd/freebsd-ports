@@ -171,6 +171,7 @@
     SUBDIR += viewklass
     SUBDIR += vte
     SUBDIR += whistlerk
+    SUBDIR += wmapp
     SUBDIR += wxgtk
     SUBDIR += wxgtk-devel
     SUBDIR += xbae
