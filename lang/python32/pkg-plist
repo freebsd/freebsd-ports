@@ -120,9 +120,6 @@ lib/%%PYTHON_VERSION%%/SocketServer.pyo
 lib/%%PYTHON_VERSION%%/StringIO.py
 lib/%%PYTHON_VERSION%%/StringIO.pyc
 lib/%%PYTHON_VERSION%%/StringIO.pyo
-lib/%%PYTHON_VERSION%%/TERMIOS.py
-lib/%%PYTHON_VERSION%%/TERMIOS.pyc
-lib/%%PYTHON_VERSION%%/TERMIOS.pyo
 lib/%%PYTHON_VERSION%%/UserDict.py
 lib/%%PYTHON_VERSION%%/UserDict.pyc
 lib/%%PYTHON_VERSION%%/UserDict.pyo
@@ -835,6 +832,9 @@ lib/%%PYTHON_VERSION%%/encodings/iso8859_1.pyo
 lib/%%PYTHON_VERSION%%/encodings/iso8859_10.py
 lib/%%PYTHON_VERSION%%/encodings/iso8859_10.pyc
 lib/%%PYTHON_VERSION%%/encodings/iso8859_10.pyo
+lib/%%PYTHON_VERSION%%/encodings/iso8859_11.py
+lib/%%PYTHON_VERSION%%/encodings/iso8859_11.pyc
+lib/%%PYTHON_VERSION%%/encodings/iso8859_11.pyo
 lib/%%PYTHON_VERSION%%/encodings/iso8859_13.py
 lib/%%PYTHON_VERSION%%/encodings/iso8859_13.pyc
 lib/%%PYTHON_VERSION%%/encodings/iso8859_13.pyo
@@ -844,6 +844,9 @@ lib/%%PYTHON_VERSION%%/encodings/iso8859_14.pyo
 lib/%%PYTHON_VERSION%%/encodings/iso8859_15.py
 lib/%%PYTHON_VERSION%%/encodings/iso8859_15.pyc
 lib/%%PYTHON_VERSION%%/encodings/iso8859_15.pyo
+lib/%%PYTHON_VERSION%%/encodings/iso8859_16.py
+lib/%%PYTHON_VERSION%%/encodings/iso8859_16.pyc
+lib/%%PYTHON_VERSION%%/encodings/iso8859_16.pyo
 lib/%%PYTHON_VERSION%%/encodings/iso8859_2.py
 lib/%%PYTHON_VERSION%%/encodings/iso8859_2.pyc
 lib/%%PYTHON_VERSION%%/encodings/iso8859_2.pyo
@@ -931,6 +934,9 @@ lib/%%PYTHON_VERSION%%/encodings/shift_jisx0213.pyo
 lib/%%PYTHON_VERSION%%/encodings/string_escape.py
 lib/%%PYTHON_VERSION%%/encodings/string_escape.pyc
 lib/%%PYTHON_VERSION%%/encodings/string_escape.pyo
+lib/%%PYTHON_VERSION%%/encodings/tis_620.py
+lib/%%PYTHON_VERSION%%/encodings/tis_620.pyc
+lib/%%PYTHON_VERSION%%/encodings/tis_620.pyo
 lib/%%PYTHON_VERSION%%/encodings/undefined.py
 lib/%%PYTHON_VERSION%%/encodings/undefined.pyc
 lib/%%PYTHON_VERSION%%/encodings/undefined.pyo
@@ -1274,7 +1280,6 @@ lib/%%PYTHON_VERSION%%/lib-dynload/readline.so
 lib/%%PYTHON_VERSION%%/lib-dynload/regex.so
 lib/%%PYTHON_VERSION%%/lib-dynload/resource.so
 %%X86_ONLY%%lib/%%PYTHON_VERSION%%/lib-dynload/rgbimg.so
-lib/%%PYTHON_VERSION%%/lib-dynload/rotor.so
 lib/%%PYTHON_VERSION%%/lib-dynload/select.so
 lib/%%PYTHON_VERSION%%/lib-dynload/sha.so
 lib/%%PYTHON_VERSION%%/lib-dynload/strop.so
@@ -1284,7 +1289,6 @@ lib/%%PYTHON_VERSION%%/lib-dynload/termios.so
 lib/%%PYTHON_VERSION%%/lib-dynload/time.so
 lib/%%PYTHON_VERSION%%/lib-dynload/timing.so
 lib/%%PYTHON_VERSION%%/lib-dynload/unicodedata.so
-lib/%%PYTHON_VERSION%%/lib-dynload/xreadlines.so
 lib/%%PYTHON_VERSION%%/lib-dynload/zlib.so
 lib/%%PYTHON_VERSION%%/lib-old/Para.py
 lib/%%PYTHON_VERSION%%/lib-old/Para.pyc
@@ -1691,11 +1695,12 @@ lib/%%PYTHON_VERSION%%/test/decimaltestdata/add.decTest
 lib/%%PYTHON_VERSION%%/test/decimaltestdata/base.decTest
 lib/%%PYTHON_VERSION%%/test/decimaltestdata/clamp.decTest
 lib/%%PYTHON_VERSION%%/test/decimaltestdata/compare.decTest
+lib/%%PYTHON_VERSION%%/test/decimaltestdata/decimal128.decTest
+lib/%%PYTHON_VERSION%%/test/decimaltestdata/decimal32.decTest
 lib/%%PYTHON_VERSION%%/test/decimaltestdata/decimal64.decTest
 lib/%%PYTHON_VERSION%%/test/decimaltestdata/divide.decTest
 lib/%%PYTHON_VERSION%%/test/decimaltestdata/divideint.decTest
 lib/%%PYTHON_VERSION%%/test/decimaltestdata/inexact.decTest
-lib/%%PYTHON_VERSION%%/test/decimaltestdata/integer.decTest
 lib/%%PYTHON_VERSION%%/test/decimaltestdata/max.decTest
 lib/%%PYTHON_VERSION%%/test/decimaltestdata/min.decTest
 lib/%%PYTHON_VERSION%%/test/decimaltestdata/minus.decTest
@@ -1715,7 +1720,9 @@ lib/%%PYTHON_VERSION%%/test/decimaltestdata/squareroot.decTest
 lib/%%PYTHON_VERSION%%/test/decimaltestdata/subtract.decTest
 lib/%%PYTHON_VERSION%%/test/decimaltestdata/testall.decTest
 lib/%%PYTHON_VERSION%%/test/decimaltestdata/tointegral.decTest
-lib/%%PYTHON_VERSION%%/test/decimaltestdata/trim.decTest
+lib/%%PYTHON_VERSION%%/test/doctest_aliases.py
+lib/%%PYTHON_VERSION%%/test/doctest_aliases.pyc
+lib/%%PYTHON_VERSION%%/test/doctest_aliases.pyo
 lib/%%PYTHON_VERSION%%/test/double_const.py
 lib/%%PYTHON_VERSION%%/test/double_const.pyc
 lib/%%PYTHON_VERSION%%/test/double_const.pyo
@@ -1761,7 +1768,6 @@ lib/%%PYTHON_VERSION%%/test/output/test_pyexpat
 lib/%%PYTHON_VERSION%%/test/output/test_regex
 lib/%%PYTHON_VERSION%%/test/output/test_resource
 lib/%%PYTHON_VERSION%%/test/output/test_rgbimg
-lib/%%PYTHON_VERSION%%/test/output/test_rotor
 lib/%%PYTHON_VERSION%%/test/output/test_scope
 lib/%%PYTHON_VERSION%%/test/output/test_signal
 lib/%%PYTHON_VERSION%%/test/output/test_thread
@@ -1769,7 +1775,6 @@ lib/%%PYTHON_VERSION%%/test/output/test_threadedtempfile
 lib/%%PYTHON_VERSION%%/test/output/test_tokenize
 lib/%%PYTHON_VERSION%%/test/output/test_types
 lib/%%PYTHON_VERSION%%/test/output/test_winreg
-lib/%%PYTHON_VERSION%%/test/output/test_xreadline
 lib/%%PYTHON_VERSION%%/test/output/xmltests
 lib/%%PYTHON_VERSION%%/test/pickletester.py
 lib/%%PYTHON_VERSION%%/test/pickletester.pyc
@@ -1795,6 +1800,9 @@ lib/%%PYTHON_VERSION%%/test/regrtest.pyo
 lib/%%PYTHON_VERSION%%/test/reperf.py
 lib/%%PYTHON_VERSION%%/test/reperf.pyc
 lib/%%PYTHON_VERSION%%/test/reperf.pyo
+lib/%%PYTHON_VERSION%%/test/sample_doctest.py
+lib/%%PYTHON_VERSION%%/test/sample_doctest.pyc
+lib/%%PYTHON_VERSION%%/test/sample_doctest.pyo
 lib/%%PYTHON_VERSION%%/test/seq_tests.py
 lib/%%PYTHON_VERSION%%/test/seq_tests.pyc
 lib/%%PYTHON_VERSION%%/test/seq_tests.pyo
@@ -1971,6 +1979,9 @@ lib/%%PYTHON_VERSION%%/test/test_compare.pyo
 lib/%%PYTHON_VERSION%%/test/test_compile.py
 lib/%%PYTHON_VERSION%%/test/test_compile.pyc
 lib/%%PYTHON_VERSION%%/test/test_compile.pyo
+lib/%%PYTHON_VERSION%%/test/test_compiler.py
+lib/%%PYTHON_VERSION%%/test/test_compiler.pyc
+lib/%%PYTHON_VERSION%%/test/test_compiler.pyo
 lib/%%PYTHON_VERSION%%/test/test_complex.py
 lib/%%PYTHON_VERSION%%/test/test_complex.pyc
 lib/%%PYTHON_VERSION%%/test/test_complex.pyo
@@ -2025,6 +2036,7 @@ lib/%%PYTHON_VERSION%%/test/test_descrtut.pyo
 lib/%%PYTHON_VERSION%%/test/test_difflib.py
 lib/%%PYTHON_VERSION%%/test/test_difflib.pyc
 lib/%%PYTHON_VERSION%%/test/test_difflib.pyo
+lib/%%PYTHON_VERSION%%/test/test_difflib_expect.html
 lib/%%PYTHON_VERSION%%/test/test_dircache.py
 lib/%%PYTHON_VERSION%%/test/test_dircache.pyc
 lib/%%PYTHON_VERSION%%/test/test_dircache.pyo
@@ -2040,9 +2052,11 @@ lib/%%PYTHON_VERSION%%/test/test_dl.pyo
 lib/%%PYTHON_VERSION%%/test/test_doctest.py
 lib/%%PYTHON_VERSION%%/test/test_doctest.pyc
 lib/%%PYTHON_VERSION%%/test/test_doctest.pyo
+lib/%%PYTHON_VERSION%%/test/test_doctest.txt
 lib/%%PYTHON_VERSION%%/test/test_doctest2.py
 lib/%%PYTHON_VERSION%%/test/test_doctest2.pyc
 lib/%%PYTHON_VERSION%%/test/test_doctest2.pyo
+lib/%%PYTHON_VERSION%%/test/test_doctest2.txt
 lib/%%PYTHON_VERSION%%/test/test_dumbdbm.py
 lib/%%PYTHON_VERSION%%/test/test_dumbdbm.pyc
 lib/%%PYTHON_VERSION%%/test/test_dumbdbm.pyo
@@ -2280,9 +2294,6 @@ lib/%%PYTHON_VERSION%%/test/test_mmap.pyo
 lib/%%PYTHON_VERSION%%/test/test_module.py
 lib/%%PYTHON_VERSION%%/test/test_module.pyc
 lib/%%PYTHON_VERSION%%/test/test_module.pyo
-lib/%%PYTHON_VERSION%%/test/test_mpz.py
-lib/%%PYTHON_VERSION%%/test/test_mpz.pyc
-lib/%%PYTHON_VERSION%%/test/test_mpz.pyo
 lib/%%PYTHON_VERSION%%/test/test_multibytecodec.py
 lib/%%PYTHON_VERSION%%/test/test_multibytecodec.pyc
 lib/%%PYTHON_VERSION%%/test/test_multibytecodec.pyo
@@ -2334,6 +2345,9 @@ lib/%%PYTHON_VERSION%%/test/test_ossaudiodev.pyo
 lib/%%PYTHON_VERSION%%/test/test_parser.py
 lib/%%PYTHON_VERSION%%/test/test_parser.pyc
 lib/%%PYTHON_VERSION%%/test/test_parser.pyo
+lib/%%PYTHON_VERSION%%/test/test_peepholer.py
+lib/%%PYTHON_VERSION%%/test/test_peepholer.pyc
+lib/%%PYTHON_VERSION%%/test/test_peepholer.pyo
 lib/%%PYTHON_VERSION%%/test/test_pep247.py
 lib/%%PYTHON_VERSION%%/test/test_pep247.pyc
 lib/%%PYTHON_VERSION%%/test/test_pep247.pyo
@@ -2343,6 +2357,9 @@ lib/%%PYTHON_VERSION%%/test/test_pep263.pyo
 lib/%%PYTHON_VERSION%%/test/test_pep277.py
 lib/%%PYTHON_VERSION%%/test/test_pep277.pyc
 lib/%%PYTHON_VERSION%%/test/test_pep277.pyo
+lib/%%PYTHON_VERSION%%/test/test_pep292.py
+lib/%%PYTHON_VERSION%%/test/test_pep292.pyc
+lib/%%PYTHON_VERSION%%/test/test_pep292.pyo
 lib/%%PYTHON_VERSION%%/test/test_pickle.py
 lib/%%PYTHON_VERSION%%/test/test_pickle.pyc
 lib/%%PYTHON_VERSION%%/test/test_pickle.pyo
@@ -2430,9 +2447,6 @@ lib/%%PYTHON_VERSION%%/test/test_richcmp.pyo
 lib/%%PYTHON_VERSION%%/test/test_robotparser.py
 lib/%%PYTHON_VERSION%%/test/test_robotparser.pyc
 lib/%%PYTHON_VERSION%%/test/test_robotparser.pyo
-lib/%%PYTHON_VERSION%%/test/test_rotor.py
-lib/%%PYTHON_VERSION%%/test/test_rotor.pyc
-lib/%%PYTHON_VERSION%%/test/test_rotor.pyo
 lib/%%PYTHON_VERSION%%/test/test_sax.py
 lib/%%PYTHON_VERSION%%/test/test_sax.pyc
 lib/%%PYTHON_VERSION%%/test/test_sax.pyo
@@ -2604,6 +2618,9 @@ lib/%%PYTHON_VERSION%%/test/test_unicode_file.pyo
 lib/%%PYTHON_VERSION%%/test/test_unicodedata.py
 lib/%%PYTHON_VERSION%%/test/test_unicodedata.pyc
 lib/%%PYTHON_VERSION%%/test/test_unicodedata.pyo
+lib/%%PYTHON_VERSION%%/test/test_unittest.py
+lib/%%PYTHON_VERSION%%/test/test_unittest.pyc
+lib/%%PYTHON_VERSION%%/test/test_unittest.pyo
 lib/%%PYTHON_VERSION%%/test/test_univnewlines.py
 lib/%%PYTHON_VERSION%%/test/test_univnewlines.pyc
 lib/%%PYTHON_VERSION%%/test/test_univnewlines.pyo
@@ -2616,6 +2633,9 @@ lib/%%PYTHON_VERSION%%/test/test_urllib.pyo
 lib/%%PYTHON_VERSION%%/test/test_urllib2.py
 lib/%%PYTHON_VERSION%%/test/test_urllib2.pyc
 lib/%%PYTHON_VERSION%%/test/test_urllib2.pyo
+lib/%%PYTHON_VERSION%%/test/test_urllib2net.py
+lib/%%PYTHON_VERSION%%/test/test_urllib2net.pyc
+lib/%%PYTHON_VERSION%%/test/test_urllib2net.pyo
 lib/%%PYTHON_VERSION%%/test/test_urllibnet.py
 lib/%%PYTHON_VERSION%%/test/test_urllibnet.pyc
 lib/%%PYTHON_VERSION%%/test/test_urllibnet.pyo
@@ -2664,9 +2684,6 @@ lib/%%PYTHON_VERSION%%/test/test_xpickle.pyo
 lib/%%PYTHON_VERSION%%/test/test_xrange.py
 lib/%%PYTHON_VERSION%%/test/test_xrange.pyc
 lib/%%PYTHON_VERSION%%/test/test_xrange.pyo
-lib/%%PYTHON_VERSION%%/test/test_xreadline.py
-lib/%%PYTHON_VERSION%%/test/test_xreadline.pyc
-lib/%%PYTHON_VERSION%%/test/test_xreadline.pyo
 lib/%%PYTHON_VERSION%%/test/test_zipfile.py
 lib/%%PYTHON_VERSION%%/test/test_zipfile.pyc
 lib/%%PYTHON_VERSION%%/test/test_zipfile.pyo
@@ -2931,7 +2948,6 @@ lib/%%PYTHON_VERSION%%/zipfile.pyo
 %%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/scripts/mboxconvert.py
 %%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/scripts/mkrcs.py
 %%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/scripts/morse.py
-%%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/scripts/mpzpi.py
 %%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/scripts/newslist.doc
 %%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/scripts/newslist.py
 %%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/scripts/pi.py
