@@ -185,7 +185,7 @@ shift 2
 echo $pkgname
 echo $dirname
 
-export WRKDIRPREFIX=/tmp
+export WRKDIRPREFIX=/work
 export DISTDIR=/tmp/distfiles
 export PACKAGES=/tmp/packages
 
@@ -272,6 +272,11 @@ echo "in directory ${chroot}" | tee -a ${chroot}/tmp/${pkgname}.log
 mkdir -p ${chroot}/a/ports
 rm -rf ${chroot}/usr/ports
 
+# Don't build in a world-writable directory because some ports hardcode
+# this path and try to load things from it at runtime, which is bad for
+# user security
+mkdir ${chroot}/work
+
 if [ ! -z "${ccache_dir}" ]; then
   mkdir -p ${chroot}/root/.ccache/
   mount -o rw -t nullfs ${ccache_dir} ${chroot}/root/.ccache/
@@ -311,6 +316,9 @@ mtree -deU -f ${chroot}/usr/src/etc/mtree/BSD.local.dist -p ${chroot}/usr/local 
 mkdir ${chroot}/usr/X11R6
 if [ $X_WINDOW_SYSTEM = "xfree86-3" ]; then
   mtree -deU -f ${chroot}/usr/src/etc/mtree/BSD.x11.dist -p ${chroot}/usr/X11R6 \
+    >/dev/null 2>&1
+elif [ $X_WINDOW_SYSTEM = "xorg" ]; then
+  mtree -deU -f ${chroot}/a/ports/x11-servers/xorg-server/files/BSD.x11-xorg.dist -p ${chroot}/usr/X11R6 \
     >/dev/null 2>&1
 else
   mtree -deU -f ${chroot}/usr/src/etc/mtree/BSD.x11-4.dist -p ${chroot}/usr/X11R6 \
