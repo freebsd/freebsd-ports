@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gorua
-PORTVERSION=	0.11d
+PORTVERSION=	0.12b
 CATEGORIES=	japanese
 MASTER_SITES=	http://www.unixuser.org/~haruyama/software/goRua/
 DISTNAME=	goRua-${PORTVERSION}
@@ -21,6 +21,8 @@ USE_BZIP2=	yes
 USE_RUBY=	yes
 
 NO_BUILD=	yes
+
+CONFIG_FILES=	board_info bookmarks config gtkrc
 
 do-configure:
 	${SED} -e "s,%%RUBY_WITHOUT_SUFFIX%%,${RUBY_WITHOUT_SUFFIX}," < ${WRKSRC}/new_2ch_bbsmenu.rb > ${WRKSRC}/new_2ch_bbsmenu.rb.tmp
@@ -40,7 +42,9 @@ do-install:
 	${MKDIR} ${PREFIX}/share/examples/goRua/dot.goRua_2ch
 	${MKDIR} ${PREFIX}/share/examples/goRua/dot.goRua_2ch/subject
 	${MKDIR} ${PREFIX}/share/examples/goRua/dot.goRua_2ch/thread
-	${INSTALL_DATA} ${WRKSRC}/.goRua_2ch/board_info ${PREFIX}/share/examples/goRua/dot.goRua_2ch
+.for f in ${CONFIG_FILES}
+	${INSTALL_DATA} ${WRKSRC}/.goRua_2ch/${f} ${PREFIX}/share/examples/goRua/dot.goRua_2ch
+.endfor
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
