@@ -8663,6 +8663,7 @@ smtpscan	ports/security/smtpscan
 smunge		ports/mail/smunge
 smurflog	ports/security/smurflog
 smv		ports/devel/smv
+sn		ports/news/sn
 snack		ports/audio/snack
 snarf		ports/www/snarf
 snd-port	ports/audio/snd
