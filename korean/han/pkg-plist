@@ -5,3 +5,4 @@ etc/han.cfg
 share/fonts/han/8x16pc.bdf.gz
 share/fonts/han/h16m.bdf.gz
 @dirrm share/fonts/han
+@dirrm share/fonts
