@@ -1,0 +1,6 @@
+************************************************************
+Note that WXG (wxgserver) cannot be run simultaneously with
+Canna (cannaserver) nor Esecanna (esecannaserver).  Please
+check the startup scripts in ${PREFIX}/etc/rc.d/ and disable
+them before enabling WXG.
+************************************************************

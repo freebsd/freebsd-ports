@@ -334,6 +334,7 @@
     SUBDIR += word
     SUBDIR += wordnet-fpw
     SUBDIR += wwasw-fpw
+    SUBDIR += wxg
     SUBDIR += xchat
     SUBDIR += xdvik-vflib
     SUBDIR += xdvik-vflib-pk118
