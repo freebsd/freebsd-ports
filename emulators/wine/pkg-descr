@@ -1,13 +1,18 @@
 Wine is a Windows emulator running under Unix on i386 (and higher) CPUs.
-It is still Alpha quality, i.e. don't expect it to run your typical large 
+It is still Alpha quality; i.e. don't expect it to run your typical large 
 MS-Windows application package, but it is definitely on its way ...
 
-To use Wine, your kernel must be rebuilt with the following line added
+To use Wine, your kernel must be rebuilt with the following lines added
 to your kernel config file (/sys/i386/conf/<YourMachine>):
 
 options		USER_LDT
+options		SYSVSHM
+options		SYSVSEM
+options		SYSVMSG
 
 Wine relies on the configuration file /usr/local/etc/wine.conf to
 contain valid assignments of Unix directories to DOS drive letters,
 and for certain other options (see "man wine" for details).
 You will most probably have to to edit it, after the install ...
+
+http://www.winehq.com/
