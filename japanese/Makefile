@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.189 1999/02/28 15:40:07 itojun Exp $
+# $Id: Makefile,v 1.190 1999/03/19 22:21:42 asami Exp $
 #
 
     SUBDIR += Canna
@@ -229,8 +229,6 @@
     SUBDIR += xshodo
     SUBDIR += xshodou
     SUBDIR += xv
-    SUBDIR += yatex
-    SUBDIR += yatex-xemacs
     SUBDIR += zipcodes
 
 .include <bsd.port.subdir.mk>
