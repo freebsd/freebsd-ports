@@ -7,6 +7,7 @@
 
 PORTNAME=	portupgrade
 PORTVERSION=	20021106
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.iDaemons.org/pub/distfiles/ \
 		${MASTER_SITE_LOCAL}
@@ -62,8 +63,11 @@ INSTALL_TARGET+=	install-doc
 # XXX: PKG_CMD is not defined yet..
 PKG_CREATE_OK!=	/usr/sbin/pkg_create 2>&1 | ${GREP} ' -b ' || ${TRUE}
 .if empty(PKG_CREATE_OK)
-IGNORE=	pkg_create does not support -b.  Please update pkg_* tools or stick with portupgrade-20020920 + pkg_tarup-1.2_3, which work just fine
+IGNORE=	pkg_create does not support -b.  Please update /usr/sbin/pkg_* to those of the latest RELENG_4
 .endif
+
+post-patch:
+	${RUBY} -i -pe "gsub(/('\/bin\/)cp(', '-f', tmpfile, file)/, '\1mv\2')" ${WRKSRC}/lib/pkgtools.rb
 
 post-install:
 	if [ ! -f ${PREFIX}/etc/pkgtools.conf ]; then \
