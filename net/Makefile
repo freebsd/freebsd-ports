@@ -469,6 +469,7 @@
     SUBDIR += pim6dd
     SUBDIR += pim6sd
     SUBDIR += pipsecd
+    SUBDIR += plb
     SUBDIR += pmf
     SUBDIR += poink
     SUBDIR += poptop

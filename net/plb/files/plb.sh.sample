@@ -1,0 +1,19 @@
+#!/bin/sh
+
+case "$1" in
+
+start)
+	if [ -x %%PREFIX%%/bin/plb ]; then
+		%%PREFIX%%/bin/plb -B -c %%PREFIX%%/etc/plb.conf && echo -n ' plb'
+	fi
+	;;
+
+stop)
+	kill $(cat /var/run/plb.pid)
+        rm -f /var/run/plb.pid
+	;;
+*)
+	echo "$0 start | stop"
+	;;
+
+esac
