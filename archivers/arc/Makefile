@@ -7,7 +7,7 @@
 
 PORTNAME=	arc
 PORTVERSION=	5.21e.8
-PORTREVISION=   1
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/unix/arcers/
 DISTNAME=	arc521e.pl8
