@@ -11806,6 +11806,7 @@ zh-kde3-i18n-zh_TW	ports/chinese/kde3-i18n-zh_TW
 zh-koffice-i18n-zh_CN	ports/chinese/koffice-i18n-zh_CN
 zh-koffice-i18n-zh_TW	ports/chinese/koffice-i18n-zh_TW
 zh-kon2		ports/chinese/kon2
+zh-libchewing	ports/chinese/libchewing
 zh-libtabe	ports/chinese/libtabe
 zh-links	ports/chinese/links
 zh-linux-gtk	ports/chinese/linux-gtk
