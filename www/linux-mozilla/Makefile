@@ -54,7 +54,6 @@ DISTFILES=	browser.xpi \
 		psm.xpi \
 		regus.xpi \
 		spellcheck.xpi \
-		talkback.xpi \
 		venkman.xpi \
 		xpcom.xpi
 .if exists(${WRKDIRPREFIX}${.CURDIR}/work/xpi/components.conf)
