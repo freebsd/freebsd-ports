@@ -1,5 +1,5 @@
 --- config.c.orig	Fri Apr 25 03:10:17 2003
-+++ config.c	Mon May  5 07:40:36 2003
++++ config.c	Sat May 10 07:43:36 2003
 @@ -697,7 +697,7 @@
           else if (mach == IA64Itan || MachIsUS(mach) ||
                    mach == Dec21164 || mach == Dec21264)
@@ -9,7 +9,18 @@
              {
                 strcpy(goodgcc, files[i]);
                 return(0);
-@@ -2104,7 +2104,10 @@
+@@ -1102,7 +1102,9 @@
+    switch(OS)
+    {
+    case OSOSX:  /* don't know answer */
+-   case OSFreeBSD:  /* don't know answer */
++   case OSFreeBSD:
++     if (THREADS) strcpy(LIBS, "-pthread -lm");
++     break;
+    case OSLinux:
+       break;
+    case OSSunOS:
+@@ -2104,7 +2106,10 @@
           if (!CmndOneLine(targ, "sysctl hw.model", ln))
           {
              if (strstr(ln, "433au")) mach = Dec21164;
@@ -20,7 +31,7 @@
           }
           break;
        case LAIA64: /* don't know */
-@@ -2113,14 +2116,17 @@
+@@ -2113,14 +2118,17 @@
           if (!CmndOneLine(targ, "sysctl hw.model", ln))
           {
              if (strstr(ln, "Pentium Pro")) mach = IntPPRO;
@@ -38,7 +49,7 @@
           }
           break;
        default:;
-@@ -3124,6 +3130,9 @@
+@@ -3124,6 +3132,9 @@
     }
     if (USEWINF77) strcpy(F77, "$(BINdir)/winf77.exe");
  
