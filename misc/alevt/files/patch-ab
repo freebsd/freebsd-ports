@@ -1,0 +1,21 @@
+--- exp-html.c.old	Tue Oct 17 21:28:40 2000
++++ exp-html.c	Tue Oct 17 21:28:30 2000
+@@ -214,7 +214,7 @@
+ 	      {
+ 		if (last_space)
+ 		  {
+-		    fprintf(fp,"&nbsp;");
++		    fprintf(fp,"&nbsp");
+ 		    last_space=0;
+ 		    nbsp=1;
+ 		  }
+@@ -251,7 +251,7 @@
+ 		      {
+ 			if (last_space)
+ 			  {
+-			    fprintf(fp,"&nbsp;");
++			    fprintf(fp,"&nbsp");
+ 			    last_space=0;
+ 			    nbsp=1;
+ 			  }
+
