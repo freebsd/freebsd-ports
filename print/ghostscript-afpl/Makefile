@@ -7,7 +7,7 @@
 
 PORTNAME=	ghostscript
 PORTVERSION=	7.03
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://members.ozemail.com.au/~geoffk/pdfencrypt/ \
