@@ -1,0 +1,26 @@
+--- Makefile.orig	Thu Jan  3 00:07:27 2002
++++ Makefile	Tue Jul 30 13:38:04 2002
+@@ -14,17 +14,18 @@
+ # http://www.openssl.org/  Make sure the SSL_TREE definition points to the
+ # tree with your OpenSSL installation - depending on how you installed it,
+ # it may be in /usr/local instead of /usr/local/ssl.
++.ifndef NO_OPENSSL
+ #SSL_TREE =	/usr/local/ssl
+-#SSL_DEFS =	-DUSE_SSL
++SSL_DEFS =	-DUSE_SSL
+ #SSL_INC =	-I${SSL_TREE}/include
+-#SSL_LIBS =	-L${SSL_TREE}/lib -lssl -lcrypto
+-
++SSL_LIBS =	-lssl -lcrypto
++.endif
+ 
+ BINDIR =	/usr/local/sbin
+ MANDIR =	/usr/local/man
+-CC =		gcc
++#CC =		gcc
+ CDEFS =		${SSL_DEFS} ${SSL_INC}
+-CFLAGS =	-O ${CDEFS}
++CFLAGS +=	${CDEFS}
+ #CFLAGS =	-g ${CDEFS}
+ LDFLAGS =	-s
+ #LDFLAGS =	-g
