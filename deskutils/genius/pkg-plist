@@ -27,3 +27,4 @@ share/locale/sv/LC_MESSAGES/genius.mo
 @dirrm share/gnome/genius/gel
 @dirrm share/gnome/genius
 @dirrm lib/genius
+@dirrm include/genius
