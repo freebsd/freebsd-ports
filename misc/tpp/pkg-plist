@@ -1,0 +1,21 @@
+bin/tpp.rb
+bin/tpp
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/examples/ac-am.tpp
+%%PORTDOCS%%%%DOCSDIR%%/examples/bold.tpp
+%%PORTDOCS%%%%DOCSDIR%%/examples/center-et-al.tpp
+%%PORTDOCS%%%%DOCSDIR%%/examples/colors.tpp
+%%PORTDOCS%%%%DOCSDIR%%/examples/colors2.tpp
+%%PORTDOCS%%%%DOCSDIR%%/examples/exec.tpp
+%%PORTDOCS%%%%DOCSDIR%%/examples/horline.tpp
+%%PORTDOCS%%%%DOCSDIR%%/examples/huge.tpp
+%%PORTDOCS%%%%DOCSDIR%%/examples/list.tpp
+%%PORTDOCS%%%%DOCSDIR%%/examples/manyslides.tpp
+%%PORTDOCS%%%%DOCSDIR%%/examples/shell.tpp
+%%PORTDOCS%%%%DOCSDIR%%/examples/slidein.tpp
+%%PORTDOCS%%%%DOCSDIR%%/examples/source.tpp
+%%PORTDOCS%%%%DOCSDIR%%/examples/test.tpp
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

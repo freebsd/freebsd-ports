@@ -384,6 +384,7 @@
     SUBDIR += tkman
     SUBDIR += tkregexp
     SUBDIR += tkrunit
+    SUBDIR += tpp
     SUBDIR += translate
     SUBDIR += ttyrec
     SUBDIR += tvguide
