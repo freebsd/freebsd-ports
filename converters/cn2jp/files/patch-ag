@@ -1,0 +1,42 @@
+--- table/Makefile.orig	Tue Feb 27 09:43:44 1996
++++ table/Makefile	Sun Oct 19 01:40:02 2003
+@@ -1,7 +1,8 @@
+ INCLUDE=
+ 
+-CC=cc
+-CFLAGS= -g -I../include -I. -L../lib -L.
++CC?=cc
++CFLAGS?=-O -pipe
++CFLAGS+= -g -I../lib -I. -L../lib -L.
+ 
+ SRC = big5.c gb.c jis.c mktable.c mktbl2c.c
+ OBJS = 
+@@ -11,25 +12,21 @@
+ 
+ mktable: mktable.o
+ 	$(CC) $(CFLAGS) -o mktable mktable.o
+-	rm -f /home/sagittar/seke/bin/mktable
+-	ln mktable /home/sagittar/seke/bin/mktable
+ 
+ mktbl2c: mktbl2c.o
+ 	$(CC) $(CFLAGS) -o mktbl2c mktbl2c.o
+-	rm -f /home/sagittar/seke/bin/mktbl2c
+-	ln mktbl2c /home/sagittar/seke/bin/mktbl2c
+ 
+ big5.tbl: big5.o
+ 	$(CC) $(CFLAGS) -o big5 big5.o
+-	big5 > big5.tbl
++	./big5 > big5.tbl
+ 
+ gb.tbl: gb.o
+ 	$(CC) $(CFLAGS) -o gb gb.o
+-	gb > gb.tbl
++	./gb > gb.tbl
+ 
+ jis.tbl: jis.o
+ 	$(CC) $(CFLAGS) -o jis jis.o
+-	jis > jis.tbl
++	./jis > jis.tbl
+ 
+ tar:
+ 	echo "Produce table`date '+%m%d'`.tar..."

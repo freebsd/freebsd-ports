@@ -1,6 +1,17 @@
---- big2gb/Makefile.orig	Sun Dec 10 10:40:10 2000
-+++ big2gb/Makefile	Sun Dec 10 10:40:19 2000
-@@ -13,8 +13,8 @@
+--- big2gb/Makefile.orig	Tue Feb 27 09:44:00 1996
++++ big2gb/Makefile	Sun Oct 19 01:39:28 2003
+@@ -1,7 +1,8 @@
+ INCLUDE=
+ 
+-CC=cc
+-CFLAGS= -g -I../lib -I. -L../lib -L.
++CC?=cc
++CFLAGS?=-O -pipe
++CFLAGS+= -g -I../lib -I. -L../lib -L.
+ 
+ SRC = b2g.c b2g_table.c b2g-util.c
+ OBJS = b2g.o b2g_table.o b2g-util.o
+@@ -13,8 +14,8 @@
  	$(CC) $(CFLAGS) -o b2g $(OBJS) -llang
  
  b2g_table.c: big2gb.tbl
@@ -11,128 +22,3 @@
  
  tar:
  	echo "Produce b2g`date '+%m%d'`.tar..."
---- big2jis/Makefile.orig	Wed Feb 28 01:44:04 1996
-+++ big2jis/Makefile	Sun Dec 10 10:39:12 2000
-@@ -13,8 +13,8 @@
- 	$(CC) $(CFLAGS) -o b2j $(OBJS) -llang
- 
- b2j_table.c: big2jis.tbl
--	mktable big2jis.tbl
--	mktbl2c big2jis.t b2j > b2j_table.c
-+	../table/mktable big2jis.tbl
-+	../table/mktbl2c big2jis.t b2j > b2j_table.c
- 
- tar:
- 	echo "Produce b2j`date '+%m%d'`.tar..."
---- gb2big/Makefile.orig	Sun Dec 10 10:41:06 2000
-+++ gb2big/Makefile	Sun Dec 10 10:41:16 2000
-@@ -13,8 +13,8 @@
- 	$(CC) $(CFLAGS) -o g2b $(OBJS) -llang
- 
- g2b_table.c: gb2big.tbl
--	mktable gb2big.tbl
--	mktbl2c gb2big.t g2b > g2b_table.c
-+	../table/mktable gb2big.tbl
-+	../table/mktbl2c gb2big.t g2b > g2b_table.c
- 
- tar:
- 	echo "Produce g2b`date '+%m%d'`.tar..."
---- gb2jis/Makefile.orig	Sun Dec 10 10:41:29 2000
-+++ gb2jis/Makefile	Sun Dec 10 10:41:39 2000
-@@ -13,8 +13,8 @@
- 	$(CC) $(CFLAGS) -o g2j $(OBJS) -llang
- 
- g2j_table.c: gb2jis.tbl
--	mktable gb2jis.tbl
--	mktbl2c gb2jis.t g2j > g2j_table.c
-+	../table/mktable gb2jis.tbl
-+	../table/mktbl2c gb2jis.t g2j > g2j_table.c
- 
- tar:
- 	echo "Produce g2j`date '+%m%d'`.tar..."
---- jis2big/Makefile.orig	Sun Dec 10 10:39:44 2000
-+++ jis2big/Makefile	Sun Dec 10 10:39:52 2000
-@@ -13,8 +13,8 @@
- 	$(CC) $(CFLAGS) -o j2b $(OBJS) -llang
- 
- j2b_table.c: jis2big.tbl
--	mktable jis2big.tbl
--	mktbl2c jis2big.t j2b > j2b_table.c
-+	../table/mktable jis2big.tbl
-+	../table/mktbl2c jis2big.t j2b > j2b_table.c
- 
- tar:
- 	echo "Produce j2b`date '+%m%d'`.tar..."
---- jis2gb/Makefile.orig	Sun Dec 10 10:40:37 2000
-+++ jis2gb/Makefile	Sun Dec 10 10:40:47 2000
-@@ -13,8 +13,8 @@
- 	$(CC) $(CFLAGS) -o j2g $(OBJS) -llang
- 
- j2g_table.c: jis2gb.tbl
--	mktable jis2gb.tbl
--	mktbl2c jis2gb.t j2g > j2g_table.c
-+	../table/mktable jis2gb.tbl
-+	../table/mktbl2c jis2gb.t j2g > j2g_table.c
- 
- tar:
- 	echo "Produce j2g`date '+%m%d'`.tar..."
---- table/Makefile.orig	Wed Feb 28 01:43:44 1996
-+++ table/Makefile	Sun Dec 10 10:39:12 2000
-@@ -11,25 +11,21 @@
- 
- mktable: mktable.o
- 	$(CC) $(CFLAGS) -o mktable mktable.o
--	rm -f /home/sagittar/seke/bin/mktable
--	ln mktable /home/sagittar/seke/bin/mktable
- 
- mktbl2c: mktbl2c.o
- 	$(CC) $(CFLAGS) -o mktbl2c mktbl2c.o
--	rm -f /home/sagittar/seke/bin/mktbl2c
--	ln mktbl2c /home/sagittar/seke/bin/mktbl2c
- 
- big5.tbl: big5.o
- 	$(CC) $(CFLAGS) -o big5 big5.o
--	big5 > big5.tbl
-+	./big5 > big5.tbl
- 
- gb.tbl: gb.o
- 	$(CC) $(CFLAGS) -o gb gb.o
--	gb > gb.tbl
-+	./gb > gb.tbl
- 
- jis.tbl: jis.o
- 	$(CC) $(CFLAGS) -o jis jis.o
--	jis > jis.tbl
-+	./jis > jis.tbl
- 
- tar:
- 	echo "Produce table`date '+%m%d'`.tar..."
---- Makefile.orig	Tue Feb 27 22:35:44 1996
-+++ Makefile	Mon Jan  8 09:59:11 2001
-@@ -14,10 +14,11 @@
- 	lib/py-tbl.o lib/uzpj-tbl.o lib/uzpj-util.o \
- 	hz2gb.o gb2hz.o SINO.o jp-util2.o
- 
--all: makeall libcn2jp.a
-+all: makeall libcn2jp.a libcn2jp.so
- 
- 
- makeall:
-+	cd table; make; cd ..
- 	cd lib; make; cd ..
- 	cd big2jis; make; cd ..
- 	cd jis2big; make; cd ..
-@@ -28,9 +29,11 @@
- 
- libcn2jp.a:  $(OBJS)
- 	rm -f libcn2jp.a
--	ar r libcn2jp.a $(OBJS)
-+	ar cru libcn2jp.a $(OBJS)
- 	ranlib libcn2jp.a
--	cp libcn2jp.a ../../../lib/libcn2jp.a
-+
-+libcn2jp.so: $(OBJS)
-+	ld -o libcn2jp.so $(OBJS) -shared -soname libcn2jp.so
- 
- gb2hz.o: lib/gb2hz.c
- 	$(CC) -c lib/gb2hz.c

@@ -1,0 +1,24 @@
+--- jis2big/Makefile.orig	Tue Feb 27 09:44:46 1996
++++ jis2big/Makefile	Sun Oct 19 01:39:48 2003
+@@ -1,7 +1,8 @@
+ INCLUDE=
+ 
+-CC=cc
+-CFLAGS= -g -I../lib -I. -L../lib -L.
++CC?=cc
++CFLAGS?=-O -pipe
++CFLAGS+= -g -I../lib -I. -L../lib -L.
+ 
+ SRC = j2b.c j2b_table.c j2b-util.c
+ OBJS = j2b.o j2b_table.o j2b-util.o
+@@ -13,8 +14,8 @@
+ 	$(CC) $(CFLAGS) -o j2b $(OBJS) -llang
+ 
+ j2b_table.c: jis2big.tbl
+-	mktable jis2big.tbl
+-	mktbl2c jis2big.t j2b > j2b_table.c
++	../table/mktable jis2big.tbl
++	../table/mktbl2c jis2big.t j2b > j2b_table.c
+ 
+ tar:
+ 	echo "Produce j2b`date '+%m%d'`.tar..."

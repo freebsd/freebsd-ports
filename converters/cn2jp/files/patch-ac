@@ -1,0 +1,24 @@
+--- gb2big/Makefile.orig	Tue Feb 27 09:44:31 1996
++++ gb2big/Makefile	Sun Oct 19 01:39:41 2003
+@@ -1,7 +1,8 @@
+ INCLUDE=
+ 
+-CC=cc
+-CFLAGS= -g -I../lib -I. -L../lib -L.
++CC?=cc
++CFLAGS?=-O -pipe
++CFLAGS+= -g -I../lib -I. -L../lib -L.
+ 
+ SRC = g2b.c g2b_table.c g2b-util.c
+ OBJS = g2b.o g2b_table.o g2b-util.o
+@@ -13,8 +14,8 @@
+ 	$(CC) $(CFLAGS) -o g2b $(OBJS) -llang
+ 
+ g2b_table.c: gb2big.tbl
+-	mktable gb2big.tbl
+-	mktbl2c gb2big.t g2b > g2b_table.c
++	../table/mktable gb2big.tbl
++	../table/mktbl2c gb2big.t g2b > g2b_table.c
+ 
+ tar:
+ 	echo "Produce g2b`date '+%m%d'`.tar..."
