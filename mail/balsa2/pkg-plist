@@ -71,5 +71,6 @@ share/locale/zh_TW/LC_MESSAGES/balsa.mo
 @dirrm share/gnome/omf/balsa
 @dirrm share/gnome/help/balsa-manual/C/figures
 @dirrm share/gnome/help/balsa-manual/C
+@dirrm share/gnome/help/balsa-manual
 @dirrm share/gnome/balsa/pixmaps
 @dirrm share/gnome/balsa
