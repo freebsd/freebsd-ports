@@ -28,5 +28,11 @@ WRKSRC=		${WRKDIR}/vcdgear16
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vcdgear16_static ${PREFIX}/bin/vcdgear
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in faq.txt manual.txt whatsnew.txt
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.post.mk>
