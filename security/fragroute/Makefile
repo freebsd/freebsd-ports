@@ -7,6 +7,7 @@
 
 PORTNAME=	fragroute
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	security net
 MASTER_SITES=	http://www.monkey.org/~dugsong/fragroute/
 
@@ -18,8 +19,6 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libdnet.a:${PORTSDIR}/net/libdnet \
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-libdnet=${PREFIX} \
 			--with-libevent=${PREFIX} --with-pcap
-
-FORBIDDEN=	Distfile may be trojaned.
 
 MAN8=	fragroute.8 fragtest.8
 
