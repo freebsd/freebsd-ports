@@ -36,35 +36,6 @@ diff -ruN cf.orig/feature/ckuser_cyrus.m4 cf/feature/ckuser_cyrus.m4
 +R<!> $* $| $* <TMPF>	$# error $@ 4.3.0 $: "451 TEMPFAIL."	
 +#Mailbox doesn't exist or its ACL forbids posting
 +R<!> $* $| $*		$# error $@ 5.1.1 $: "550 Mailbox is not available."
-diff -ruN cf.orig/feature/mrs_cyrus.m4 cf/feature/mrs_cyrus.m4
---- cf.orig/feature/mrs_cyrus.m4      Thu Jan  1 07:00:00 1970
-+++ cf/feature/mrs_cyrus.m4   Wed Sep 22 19:55:05 2004
-@@ -0,0 +1,77 @@
-+divert(-1)
-+dnl
-+dnl Updates: http://anfi.webhop.net/sendmail/mrs.html
-+dnl
-+dnl By using this file, you agree to the terms and conditions set
-+dnl forth in the LICENSE file which can be found at the top level of
-+dnl the sendmail distribution (sendmail-8.12).
-+dnl
-+dnl	Contributed by Andrzej Filip
-+dnl
-+dnl THE FEATURE REQUIRES PATCHING cf/m4/proto.m4
-+dnl SEE THE LINK AFTER "Updates:"
-+dnl
-+dnl $Log: mrs.m4,v $
-+dnl Revision 8.3  2004/03/18 21:39:22  anfi
-+dnl Changed comments prefixes to dnl to avoid m4 expansions
-+dnl
-+dnl Revision 8.2  2004/03/15 09:14:28  anfi
-+dnl Added "Updates:" web link.
-+dnl
-+divert(0)
-+VERSIONID(`$Id: mrs.m4,v 8.3 2004/03/18 21:39:22 anfi Exp $')
-+divert(-1)
-+
-+define(`_MRS_RELAY_', `')
 --- /dev/null	Thu Apr  8 15:55:21 2004
 +++ cf/feature/mrs_cyrus.m4	Thu Apr  1 21:37:05 2004
 @@ -0,0 +1,74 @@
