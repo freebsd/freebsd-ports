@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.211 1998/12/24 07:38:51 steve Exp $
+# $Id: Makefile,v 1.212 1998/12/24 15:29:21 flathill Exp $
 #
 
     SUBDIR += SSLtelnet
@@ -55,7 +55,7 @@
     SUBDIR += gicq
     SUBDIR += gtkicq
     SUBDIR += gtksamba
-    SUBDIR += h2n-bind4
+    SUBDIR += h2n
     SUBDIR += hesiod
     SUBDIR += icb
     SUBDIR += icmpinfo
