@@ -55,6 +55,8 @@ pre-install:
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/etc/rc.d
+	${RM} -f ${PREFIX}/bigsister/bin/Statusmon/DisplayCFG.pm.orig \
+		 ${PREFIX}/bigsister/bin/Statusmon/bs_evgen.pm.orig
 
 .include <bsd.port.mk>
 
