@@ -8,7 +8,7 @@
 PORTNAME=	lmtp2nntp
 PORTVERSION=	1.1.1
 CATEGORIES=	mail news
-MASTER_SITES=	ftp://ftp.ossp.org/pkg/lmtp2nntp/
+MASTER_SITES=	ftp://ftp.ossp.org/pkg/tool/lmtp2nntp/
 
 MAINTAINER=	thomas.lotterer@cw.com
 
