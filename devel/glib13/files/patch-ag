@@ -1,29 +1,23 @@
---- Makefile.in.orig	Fri Nov 17 22:45:29 2000
-+++ Makefile.in	Mon Nov 20 12:01:17 2000
-@@ -108,7 +108,7 @@
+
+$FreeBSD$
+
+--- Makefile.in.orig	Tue Apr 17 22:49:12 2001
++++ Makefile.in	Sun Apr 29 14:07:07 2001
+@@ -133,7 +133,7 @@
  
  AUTOMAKE_OPTIONS = 1.4
  
 -SUBDIRS = . gobject gmodule gthread docs tests build
 +SUBDIRS = . gobject gmodule gthread docs build
  
- bin_SCRIPTS = glib-config-2.0
+ INCLUDES = -DG_LOG_DOMAIN=g_log_domain_glib @GLIB_DEBUG_FLAGS@ 	-DG_DISABLE_DEPRECATED -DGLIB_COMPILATION
  
-@@ -134,7 +134,7 @@
- glibinclude_HEADERS =  	galloca.h		garray.h		gasyncqueue.h		gbacktrace.h		gcache.h		gcompletion.h		gconvert.h		gdataset.h		gdate.h			gerror.h		gfileutils.h		ghash.h			ghook.h			giochannel.h		glib.h 			glib-object.h		glist.h			gmacros.h		gmain.h			gmarkup.h		gmem.h			gmessages.h		gnode.h			gprimes.h		gquark.h		gqueue.h		grand.h			grel.h			gscanner.h		gshell.h		gslist.h		gspawn.h		gstrfuncs.h		gstring.h		gthread.h		gthreadpool.h		gtimer.h		gtree.h			gtypes.h		gunicode.h		gutils.h		gwin32.h
+@@ -157,7 +157,7 @@
+ glibinclude_HEADERS =  	galloca.h		garray.h		gasyncqueue.h		gbacktrace.h		gcache.h		gcompletion.h		gconvert.h		gdataset.h		gdate.h			gerror.h		gfileutils.h		ghash.h			ghook.h			giochannel.h		glib.h 			glib-object.h		glist.h			gmacros.h		gmain.h			gmarkup.h		gmem.h			gmessages.h		gnode.h			gpattern.h		gprimes.h		gqsort.h		gquark.h		gqueue.h		grand.h			grel.h			gscanner.h		gshell.h		gslist.h		gspawn.h		gstrfuncs.h		gstring.h		gthread.h		gthreadpool.h		gtimer.h		gtree.h			gtypes.h		gunicode.h		gutils.h		gwin32.h
  
  
 -configexecincludedir = $(libdir)/glib-2.0/include
 +configexecincludedir = $(glibincludedir)
  
  CONFIGURE_DEPENDENCIES = acglib.m4
- 
-@@ -594,7 +594,7 @@
- 		install-exec-local
- install-exec: install-exec-recursive
- 
--install-data-am: install-m4dataDATA install-pkgconfigDATA \
-+install-data-am: install-m4dataDATA \
- 		install-glibincludeHEADERS
- install-data: install-data-recursive
- 
+ BUILT_SOURCES = glib-config-2.0

@@ -1,6 +1,7 @@
 bin/glib-config-2.0
 bin/glib-genmarshal
 bin/gobject-query
+bin/testgruntime
 include/glib-2.0/galloca.h
 include/glib-2.0/garray.h
 include/glib-2.0/gasyncqueue.h
@@ -30,6 +31,7 @@ include/glib-2.0/gobject/gboxed.h
 include/glib-2.0/gobject/gbsearcharray.h
 include/glib-2.0/gobject/gclosure.h
 include/glib-2.0/gobject/genums.h
+include/glib-2.0/gobject/gmarshal.h
 include/glib-2.0/gobject/gobject.h
 include/glib-2.0/gobject/gparam.h
 include/glib-2.0/gobject/gparamspecs.h
@@ -38,9 +40,12 @@ include/glib-2.0/gobject/gtype.h
 include/glib-2.0/gobject/gtypemodule.h
 include/glib-2.0/gobject/gtypeplugin.h
 include/glib-2.0/gobject/gvalue.h
+include/glib-2.0/gobject/gvaluearray.h
 include/glib-2.0/gobject/gvaluecollector.h
 include/glib-2.0/gobject/gvaluetypes.h
+include/glib-2.0/gpattern.h
 include/glib-2.0/gprimes.h
+include/glib-2.0/gqsort.h
 include/glib-2.0/gquark.h
 include/glib-2.0/gqueue.h
 include/glib-2.0/grand.h
@@ -61,16 +66,20 @@ include/glib-2.0/gutils.h
 include/glib-2.0/gwin32.h
 lib/libglib-1.3.a
 lib/libglib-1.3.so
-lib/libglib-1.3.so.2
+lib/libglib-1.3.so.4
 lib/libgmodule-1.3.a
 lib/libgmodule-1.3.so
-lib/libgmodule-1.3.so.2
+lib/libgmodule-1.3.so.4
 lib/libgobject-1.3.a
 lib/libgobject-1.3.so
-lib/libgobject-1.3.so.2
+lib/libgobject-1.3.so.4
 lib/libgthread-1.3.a
 lib/libgthread-1.3.so
-lib/libgthread-1.3.so.2
+lib/libgthread-1.3.so.4
+libdata/pkgconfig/glib-2.0.pc
+libdata/pkgconfig/gmodule-2.0.pc
+libdata/pkgconfig/gobject-2.0.pc
+libdata/pkgconfig/gthread-2.0.pc
 share/aclocal/glib-2.0.m4
 @dirrm include/glib-2.0/gobject
 @dirrm include/glib-2.0

@@ -1,11 +1,14 @@
---- gtk/Makefile.in.orig	Sat Nov 18 03:17:08 2000
-+++ gtk/Makefile.in	Mon Nov 20 15:30:40 2000
-@@ -164,7 +164,7 @@
+
+$FreeBSD$
+
+--- gtk/Makefile.in.orig	Sun Apr 29 14:57:36 2001
++++ gtk/Makefile.in	Sun Apr 29 14:59:46 2001
+@@ -166,7 +166,7 @@
  
  SUBDIRS = stock-icons
  
--INCLUDES = @STRIP_BEGIN@ 	-DG_LOG_DOMAIN=\"Gtk\"					-DGTK_DISABLE_COMPAT_H					-DGTK_EXE_PREFIX=\"$(exec_prefix)\"			-DGTK_DATA_PREFIX=\"$(prefix)\"				-DGTK_SYSCONFDIR=\"$(sysconfdir)\"			-DGTK_LOCALEDIR=\"$(gtklocaledir)\"			-DGTK_VERSION=\"@GTK_VERSION@\"				-DTESTGTK_RCFILE=\"`pwd`/$(srcdir)/testgtkrc\"		-I$(top_builddir)/gtk					-I$(top_srcdir) -I../gdk				-I$(top_srcdir)/gdk					-I$(top_srcdir)/gdk-pixbuf -I../gdk-pixbuf		@GTK_DEBUG_FLAGS@					@GTK_XIM_FLAGS@						@GTK_LOCALE_FLAGS@					@PANGO_CFLAGS@						@GLIB_CFLAGS@						@more_cflags@					@STRIP_END@
-+INCLUDES = @STRIP_BEGIN@ 	-DG_LOG_DOMAIN=\"Gtk\"					-DGTK_DISABLE_COMPAT_H					-DGTK_EXE_PREFIX=\"$(exec_prefix)\"			-DGTK_DATA_PREFIX=\"$(prefix)\"				-DGTK_SYSCONFDIR=\"$(datadir)/themes/Default/gtk-2.0\"			-DGTK_LOCALEDIR=\"$(gtklocaledir)\"			-DGTK_VERSION=\"@GTK_VERSION@\"				-DTESTGTK_RCFILE=\"`pwd`/$(srcdir)/testgtkrc\"		-I$(top_builddir)/gtk					-I$(top_srcdir) -I../gdk				-I$(top_srcdir)/gdk					-I$(top_srcdir)/gdk-pixbuf -I../gdk-pixbuf		@GTK_DEBUG_FLAGS@					@GTK_XIM_FLAGS@						@GTK_LOCALE_FLAGS@					@PANGO_CFLAGS@						@GLIB_CFLAGS@						@more_cflags@					@STRIP_END@
+-INCLUDES = @STRIP_BEGIN@ 	-DG_LOG_DOMAIN=\"Gtk\"					-DGTK_DISABLE_COMPAT_H					-DGTK_LIBDIR=\"$(libdir)\"				-DGTK_DATA_PREFIX=\"$(prefix)\"				-DGTK_SYSCONFDIR=\"$(sysconfdir)\"			-DGTK_LOCALEDIR=\"$(gtklocaledir)\"			-DGTK_VERSION=\"@GTK_VERSION@\"				-DTESTGTK_RCFILE=\"`pwd`/$(srcdir)/testgtkrc\"		-DG_DISABLE_CONST_RETURNS				-I$(top_builddir)/gtk					-I$(top_srcdir) -I../gdk				-I$(top_srcdir)/gdk					-I$(top_srcdir)/gdk-pixbuf -I../gdk-pixbuf		@GTK_DEBUG_FLAGS@					@GTK_XIM_FLAGS@						@GTK_LOCALE_FLAGS@					@PANGO_CFLAGS@						@GLIB_CFLAGS@						@more_cflags@					@STRIP_END@
++INCLUDES = @STRIP_BEGIN@ 	-DG_LOG_DOMAIN=\"Gtk\"					-DGTK_DISABLE_COMPAT_H					-DGTK_LIBDIR=\"$(libdir)\"				-DGTK_DATA_PREFIX=\"$(prefix)\"				-DGTK_SYSCONFDIR=\"$(datadir)/themes/Default/gtk-2.0\"			-DGTK_LOCALEDIR=\"$(gtklocaledir)\"			-DGTK_VERSION=\"@GTK_VERSION@\"				-DTESTGTK_RCFILE=\"`pwd`/$(srcdir)/testgtkrc\"		-DG_DISABLE_CONST_RETURNS				-I$(top_builddir)/gtk					-I$(top_srcdir) -I../gdk				-I$(top_srcdir)/gdk					-I$(top_srcdir)/gdk-pixbuf -I../gdk-pixbuf		@GTK_DEBUG_FLAGS@					@GTK_XIM_FLAGS@						@GTK_LOCALE_FLAGS@					@PANGO_CFLAGS@						@GLIB_CFLAGS@						@more_cflags@					@STRIP_END@
  
  
  gtarget = @gdktarget@
