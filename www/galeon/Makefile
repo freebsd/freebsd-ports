@@ -21,8 +21,8 @@ LIB_DEPENDS=	glade.4:${PORTSDIR}/devel/libglade \
 		gconf-1.1:${PORTSDIR}/devel/gconf \
 		gnomevfs.0:${PORTSDIR}/devel/gnomevfs \
 		oaf.0:${PORTSDIR}/devel/oaf
-		
-RUN_DEPENDS=	${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZILLA}
+RUN_DEPENDS=	${X11BASE}/share/gnome/sounds/login.wav:${PORTSDIR}/audio/gnomeaudio \
+		${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZILLA}
 
 .if !defined(WITH_FULL_MOZILLA)
 MOZILLA=	mozilla-embedded
