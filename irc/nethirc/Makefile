@@ -13,7 +13,8 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/5.005/Net/IRC.pm:${PORTSDIR}/irc/p5-IRC
+.include <bsd.port.pre.mk>
+RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VERSION}/Net/IRC.pm:${PORTSDIR}/irc/p5-IRC
 
 NO_BUILD=	yes
 USE_PERL5=	yes
@@ -22,4 +23,4 @@ MAN1=		nethirc.1 nhirc.1
 do-install:
 	(cd ${WRKSRC} && ${SH} install.sh ${PREFIX})
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
