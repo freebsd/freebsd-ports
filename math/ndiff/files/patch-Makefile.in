@@ -1,5 +1,17 @@
 --- Makefile.in.orig	Wed Feb 18 14:17:22 2004
 +++ Makefile.in	Wed Feb 18 14:19:31 2004
+@@ -191,9 +191,9 @@
+ 
+ DEFINES		= -DVERSION='"@VERSION@"' -DDATE='"@DATE@"' $(XDEFINES)
+ 
+-INCLUDES	= -I. -I$(prefix)/include $(XINCLUDES)
++INCLUDES	= -I. $(XINCLUDES)
+ 
+-LDFLAGS		= @LDFLAGS@ -L$(prefix)/lib $(XLDFLAGS)
++LDFLAGS		= @LDFLAGS@ $(XLDFLAGS)
+ 
+ LIBS		= @LIBS@ $(XLIBS)
+ 
 @@ -602,14 +602,12 @@
  	if test -f $(PROGNAME) ; \
  	then \

@@ -7,6 +7,7 @@
 
 PORTNAME=	ndiff
 PORTVERSION=	2.00
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.math.utah.edu/pub/misc/
 PKGNAMEPREFIX=
@@ -14,8 +15,22 @@ PKGNAMEPREFIX=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compare putatively similar files, ignoring small numeric differences
 
+.include <bsd.port.pre.mk>
+
 .if !defined(WITHOUT_GMP)
-LIB_DEPENDS=	gmp:${PORTSDIR}/math/libgmp-freebsd
+.if ${OSVERSION} > 500023
+LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+.endif
+CONFIGURE_ARGS=	--with-gmp
+CONFIGURE_ENV=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
+.else
+.if ${ARCH} == sparc64
+CONFIGURE_ARGS= --with-long-double
+.else
+CONFIGURE_ARGS= --with-double
+.endif
 .endif
 
 GNU_CONFIGURE=	yes
@@ -41,4 +56,4 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.html ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
