@@ -21,7 +21,7 @@ DIST_SUBDIR=	i-scream
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
-USE_GNOME=	gnomehack
+USE_GNOME=	gnomehack pkgconfig
 
 MAN3=		cpu_percent_usage.3 get_cpu_diff.3 get_cpu_totals.3 \
 		get_diskio_stats.3 get_diskio_stats_diff.3 get_general_stats.3 \
