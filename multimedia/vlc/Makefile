@@ -222,7 +222,7 @@ PLIST_FILES+=	lib/vlc/audio_filter/libdtstofloat32_plugin.so
 CONFIGURE_ARGS+=--disable-dts
 .endif
 
-.if defined(WITH_GGI) && !defined(WITHOUT_GCI)
+.if defined(WITH_GGI) && !defined(WITHOUT_GGI)
 LIB_DEPENDS+=	ggi.2:${PORTSDIR}/graphics/libggi
 CONFIGURE_ARGS+=--enable-ggi
 PLIST_FILES+=	lib/vlc/video_output/libggi_plugin.so
