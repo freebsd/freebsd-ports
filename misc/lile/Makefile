@@ -3,7 +3,7 @@
 # Date created:		25 Jun 1997
 # Whom:			jmz
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/06/28 00:54:46 jmz Exp $
 #
 
 DISTNAME=	lile
@@ -11,6 +11,7 @@ PKGNAME=	ile-1.6
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.inria.fr/system/user/
 EXTRACT_SUFX=	.tar.Z
+
 MAINTAINER=	jmz@FreeBSD.org
 
 MAN1=		ile.1
