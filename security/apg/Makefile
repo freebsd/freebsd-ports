@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	apg
-PORTVERSION=	1.1.61b
+PORTVERSION=	1.2.13
 CATEGORIES=	security
 MASTER_SITES=	http://www.adel.nursat.kz/apg/download/
 
