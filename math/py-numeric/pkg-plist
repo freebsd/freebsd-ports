@@ -2,6 +2,10 @@
 %%PYTHON_INCLUDEDIR%%/Numeric/f2c.h
 %%PYTHON_INCLUDEDIR%%/Numeric/ranlib.h
 %%PYTHON_INCLUDEDIR%%/Numeric/ufuncobject.h
+%%PYTHON_SITELIBDIR%%/Numeric.pth
+%%PYTHON_SITELIBDIR%%/Numeric/ArrayPrinter.py
+%%PYTHON_SITELIBDIR%%/Numeric/ArrayPrinter.pyc
+%%PYTHON_SITELIBDIR%%/Numeric/ArrayPrinter.pyo
 %%PYTHON_SITELIBDIR%%/Numeric/FFT/FFT.py
 %%PYTHON_SITELIBDIR%%/Numeric/FFT/FFT.pyc
 %%PYTHON_SITELIBDIR%%/Numeric/FFT/FFT.pyo
@@ -9,6 +13,9 @@
 %%PYTHON_SITELIBDIR%%/Numeric/FFT/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Numeric/FFT/__init__.pyo
 %%PYTHON_SITELIBDIR%%/Numeric/FFT/fftpack.so
+%%PYTHON_SITELIBDIR%%/Numeric/LinearAlgebra.py
+%%PYTHON_SITELIBDIR%%/Numeric/LinearAlgebra.pyc
+%%PYTHON_SITELIBDIR%%/Numeric/LinearAlgebra.pyo
 %%PYTHON_SITELIBDIR%%/Numeric/MA/MA.py
 %%PYTHON_SITELIBDIR%%/Numeric/MA/MA.pyc
 %%PYTHON_SITELIBDIR%%/Numeric/MA/MA.pyo
@@ -18,13 +25,6 @@
 %%PYTHON_SITELIBDIR%%/Numeric/MA/__init__.py
 %%PYTHON_SITELIBDIR%%/Numeric/MA/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Numeric/MA/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Numeric.pth
-%%PYTHON_SITELIBDIR%%/Numeric/ArrayPrinter.py
-%%PYTHON_SITELIBDIR%%/Numeric/ArrayPrinter.pyc
-%%PYTHON_SITELIBDIR%%/Numeric/ArrayPrinter.pyo
-%%PYTHON_SITELIBDIR%%/Numeric/LinearAlgebra.py
-%%PYTHON_SITELIBDIR%%/Numeric/LinearAlgebra.pyc
-%%PYTHON_SITELIBDIR%%/Numeric/LinearAlgebra.pyo
 %%PYTHON_SITELIBDIR%%/Numeric/MLab.py
 %%PYTHON_SITELIBDIR%%/Numeric/MLab.pyc
 %%PYTHON_SITELIBDIR%%/Numeric/MLab.pyo
@@ -37,6 +37,13 @@
 %%PYTHON_SITELIBDIR%%/Numeric/Precision.py
 %%PYTHON_SITELIBDIR%%/Numeric/Precision.pyc
 %%PYTHON_SITELIBDIR%%/Numeric/Precision.pyo
+%%PYTHON_SITELIBDIR%%/Numeric/RNG/RNG.so
+%%PYTHON_SITELIBDIR%%/Numeric/RNG/Statistics.py
+%%PYTHON_SITELIBDIR%%/Numeric/RNG/Statistics.pyc
+%%PYTHON_SITELIBDIR%%/Numeric/RNG/Statistics.pyo
+%%PYTHON_SITELIBDIR%%/Numeric/RNG/__init__.py
+%%PYTHON_SITELIBDIR%%/Numeric/RNG/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Numeric/RNG/__init__.pyo
 %%PYTHON_SITELIBDIR%%/Numeric/RandomArray.py
 %%PYTHON_SITELIBDIR%%/Numeric/RandomArray.pyc
 %%PYTHON_SITELIBDIR%%/Numeric/RandomArray.pyo
@@ -47,38 +54,11 @@
 %%PYTHON_SITELIBDIR%%/Numeric/arrayfns.so
 %%PYTHON_SITELIBDIR%%/Numeric/lapack_lite.so
 %%PYTHON_SITELIBDIR%%/Numeric/multiarray.so
-%%PYTHON_SITELIBDIR%%/Numeric/ranlib.so
-%%PYTHON_SITELIBDIR%%/Numeric/umath.so
 %%PYTHON_SITELIBDIR%%/Numeric/numeric_version.py
 %%PYTHON_SITELIBDIR%%/Numeric/numeric_version.pyc
 %%PYTHON_SITELIBDIR%%/Numeric/numeric_version.pyo
-%%PYTHON_SITELIBDIR%%/Numeric/PropertiedClasses/Properties.py
-%%PYTHON_SITELIBDIR%%/Numeric/PropertiedClasses/Properties.pyc
-%%PYTHON_SITELIBDIR%%/Numeric/PropertiedClasses/Properties.pyo
-%%PYTHON_SITELIBDIR%%/Numeric/PropertiedClasses/Properties_version.py
-%%PYTHON_SITELIBDIR%%/Numeric/PropertiedClasses/Properties_version.pyc
-%%PYTHON_SITELIBDIR%%/Numeric/PropertiedClasses/Properties_version.pyo
-%%PYTHON_SITELIBDIR%%/Numeric/PropertiedClasses/__init__.py
-%%PYTHON_SITELIBDIR%%/Numeric/PropertiedClasses/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Numeric/PropertiedClasses/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Numeric/RNG/RNG.so
-%%PYTHON_SITELIBDIR%%/Numeric/RNG/Statistics.py
-%%PYTHON_SITELIBDIR%%/Numeric/RNG/Statistics.pyc
-%%PYTHON_SITELIBDIR%%/Numeric/RNG/Statistics.pyo
-%%PYTHON_SITELIBDIR%%/Numeric/RNG/__init__.py
-%%PYTHON_SITELIBDIR%%/Numeric/RNG/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Numeric/RNG/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Numeric/kinds/__init__.py
-%%PYTHON_SITELIBDIR%%/Numeric/kinds/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Numeric/kinds/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Numeric/kinds/_kinds.so
-%%PYTHON_SITELIBDIR%%/Numeric/kinds/kinds.py
-%%PYTHON_SITELIBDIR%%/Numeric/kinds/kinds.pyc
-%%PYTHON_SITELIBDIR%%/Numeric/kinds/kinds.pyo
-%%PYTHON_SITELIBDIR%%/Numeric/kinds/kinds_version.py
-%%PYTHON_SITELIBDIR%%/Numeric/kinds/kinds_version.pyc
-%%PYTHON_SITELIBDIR%%/Numeric/kinds/kinds_version.pyo
-@comment share/doc/py-numeric/numpy.pdf
+%%PYTHON_SITELIBDIR%%/Numeric/ranlib.so
+%%PYTHON_SITELIBDIR%%/Numeric/umath.so
 share/examples/py-numeric/NumTut/__init__.py
 share/examples/py-numeric/NumTut/greece.pik
 share/examples/py-numeric/NumTut/mkpic.py
@@ -89,10 +69,7 @@ share/examples/py-numeric/mandelbrot.py
 share/examples/py-numeric/sieve.py
 @dirrm share/examples/py-numeric/NumTut
 @dirrm share/examples/py-numeric
-@comment @dirrm share/doc/py-numeric
-@dirrm %%PYTHON_SITELIBDIR%%/Numeric/kinds
 @dirrm %%PYTHON_SITELIBDIR%%/Numeric/RNG
-@dirrm %%PYTHON_SITELIBDIR%%/Numeric/PropertiedClasses
 @dirrm %%PYTHON_SITELIBDIR%%/Numeric/MA
 @dirrm %%PYTHON_SITELIBDIR%%/Numeric/FFT
 @dirrm %%PYTHON_SITELIBDIR%%/Numeric
