@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	tcpslice
-PORTVERSION=	1.2a1
+PORTVERSION=	2002.04.15
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.ee.lbl.gov/
+MASTER_SITES=	http://www.tcpdump.org/weekly/
 
 MAINTAINER=	smace@freebsd.org
 
