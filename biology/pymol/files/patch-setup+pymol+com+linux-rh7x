@@ -14,5 +14,5 @@
  #dbx /usr/bin/python 
  #gdb /usr/bin/python 
 -/usr/bin/python $PYMOL_PATH/modules/launch_pymol.py $*
-+@PREFIX@/bin/python $PYMOL_PATH/modules/launch_pymol.py $*
++@LOCALBASE@/bin/python $PYMOL_PATH/modules/launch_pymol.py $*
  

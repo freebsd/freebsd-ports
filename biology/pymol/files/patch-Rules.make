@@ -1,11 +1,11 @@
---- Rules.make.orig	Thu Jul 24 15:21:01 2003
-+++ Rules.make	Thu Jul 24 15:27:58 2003
+--- Rules.make.orig	Wed Mar 17 19:40:11 2004
++++ Rules.make	Wed Mar 17 19:40:33 2004
 @@ -4,22 +4,22 @@
  #
  #- Building ----------------------------------------------------------
  #--- Tell "make" how to get to PyMOL 
 -PYMOL_PATH = /users/warren/pymol
-+PYMOL_PATH = ${PREFIX}
++PYMOL_PATH = ${LOCALBASE}
  #---------------------------------------------------------------------
  #
  #- Dependencies ------------------------------------------------------
@@ -31,7 +31,12 @@
  #---------------------------------------------------------------------
  #
  #- Build for LINUX as an importable module ---------------------------
-@@ -32,14 +32,14 @@
+@@ -28,18 +28,18 @@
+ #--- PyMOL configuration
+ DEFS = -D_PYMOL_MODULE -D_PYMOL_NUMPY 
+ #--- How we build shared libraries
+-BUILD = -shared 
++BUILD = -shared
  #--- What are we trying to build?
  DEST = -o modules/pymol/_cmd.so
  #--- Gcc Options for Linux
@@ -64,7 +69,7 @@
  
  C_FLAGS = $(CCOPT1) $(CCOPT2) $(EXT_INC_DIR) $(PYTHON_INC_DIR) \
 -   $(XINC_DIR) $(PNG) $(DEFS) $(BUGS)
-+   $(XINC_DIR) $(PNG) $(DEFS) $(BUGS) $(PYMOL_INC_DIRS)
++   $(XINC_DIR) $(PNG) $(DEFS) $(BUGS) $(PYMOL_INC_DIRS) @PICFLAG@
 +
 +override CFLAGS := $(C_FLAGS) ${CFLAGS}
  
