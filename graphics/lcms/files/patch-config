@@ -1,15 +1,17 @@
---- ../include/lcms.h	Wed Aug  7 15:34:37 2002
-+++ ../include/lcms.h	Wed Nov  6 01:23:21 2002
-@@ -66,5 +73,11 @@
+--- include/lcms.h.orig	Sun Dec 21 00:00:11 2003
++++ include/lcms.h	Sun May 23 12:14:22 2004
+@@ -52,7 +52,13 @@
+ 
  // Uncomment this one if you are using big endian machines (only meaningful
  // when NON_WINDOWS is used)
 -// #define USE_BIG_ENDIAN   1
 +
-+#include <machine/endian.h>
++#include <sys/endian.h>
 +#if BYTE_ORDER == BIG_ENDIAN
-+#	define USE_BIG_ENDIAN   1
++#      define USE_BIG_ENDIAN   1
 +#elif BYTE_ORDER != LITTLE_ENDIAN
-+#	error "Unexpected BYTE_ORDER on this architecture"
++#      error "Unexpected BYTE_ORDER on this architecture"
 +#endif
  
  // Uncomment this one if your compiler/machine does support the
+ // "long long" type This will speedup fixed point math. (USE_C only)
