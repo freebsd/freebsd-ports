@@ -81,6 +81,7 @@
     SUBDIR += ispell
     SUBDIR += jade
     SUBDIR += java2html
+    SUBDIR += jing
     SUBDIR += jrefentry
     SUBDIR += kbedic
     SUBDIR += kdoc
