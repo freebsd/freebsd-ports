@@ -3,7 +3,7 @@
 # Date Created:		30 Dec 1996
 # Whom:			Tim Vanderhoek <ac199@freenet.hamilton.on.ca>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/01/17 14:32:41 max Exp $
 #
 
 DISTNAME=	plor
@@ -13,10 +13,10 @@ CATEGORIES=	news
 # out-of-date, so... sunsite.unc.edu /pub/Linux/system/BBS/mail/ if you 
 # want to try again...
 MASTER_SITES=   ftp://ftp.dei.unipd.it/pub/pluto/developers/
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ac199@freenet.hamilton.on.ca
 
-EXTRACT_SUFX=	.tgz
 MAN1=		plor.1
 
 DOCFILES=	BUGS HISTORY PER_ZENO TODO plor-1.html plor-2.html \
