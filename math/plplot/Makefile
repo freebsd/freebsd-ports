@@ -3,7 +3,7 @@
 # Date created:         03 Oct 1997
 # Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/10/06 08:18:49 tg Exp $
 #
 
 DISTNAME=       plplot4p99j
@@ -12,6 +12,11 @@ CATEGORIES=	math
 MASTER_SITES=	ftp://dino.ph.utexas.edu/plplot/distrib/alpha/
 
 MAINTAINER=	tg@FreeBSD.ORG
+
+OSVERSION!=	sysctl -n kern.osreldate
+.if ${OSVERSION} >= 300000
+BROKEN=		"A variable definition is missing from tcl headers.  This may be broken under 2.2.X as well."
+.endif
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+= --with-gcc=yes --with-double=yes
