@@ -1,0 +1,19 @@
+*** readGIF.c.orig	Sat Mar  8 06:28:02 1997
+--- readGIF.c	Sat Mar  8 06:30:05 1997
+***************
+*** 253,259 ****
+  				cur->data.image.cmapSize = 0;
+  
+  			}
+! 			cur->data.image.data = (unsigned char *)malloc(cur->width * cur->height);
+  			cur->data.image.interlaced = BitSet(buf[8], INTERLACE);
+  			readImage(fd, BitSet(buf[8], INTERLACE), 
+  				cur->width, cur->height, cur->data.image.data);
+--- 253,259 ----
+  				cur->data.image.cmapSize = 0;
+  
+  			}
+! 			cur->data.image.data = (unsigned char *)malloc(cur->width * cur->height + 1);
+  			cur->data.image.interlaced = BitSet(buf[8], INTERLACE);
+  			readImage(fd, BitSet(buf[8], INTERLACE), 
+  				cur->width, cur->height, cur->data.image.data);
