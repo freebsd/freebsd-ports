@@ -1,0 +1,9 @@
+rotfl is a simple text-formatting language. It's similar in function
+to TeX, HTML, nroff/groff, Postscript, etc. However, it's far less
+complicated than any of those. I made is simple because I didn't want
+to learn a complicated text formatting language, yet needed to format
+some stuff for use on my server. If you are looking to create some
+nicely formatted text without having to learn a complicated language,
+then rotfl is perfect for you. 
+
+WWW: http://www.bangmoney.org/projects/rotfl/
