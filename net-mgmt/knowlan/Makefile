@@ -7,7 +7,7 @@
 
 PORTNAME=	knowlan
 PORTVERSION=	0.1.1
-CATEGORIES=	net
+CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.enderunix.org/knowlan/
 
 MAINTAINER=	ofsen@enderunix.org

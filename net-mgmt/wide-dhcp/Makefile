@@ -9,7 +9,7 @@
 PORTNAME=	wide-dhcp
 PORTVERSION=	1.4.0.6
 PORTREVISION=	2
-CATEGORIES=	net
+CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://sh.wide.ad.jp/WIDE/free-ware/dhcp/ \
 		ftp://ftp.netlab.is.tsukuba.ac.jp/pub/network/wide-dhcp/ \
 		ftp://ftp.st.ryukoku.ac.jp/pub/network/dhcp/wide/ \

@@ -15,7 +15,7 @@ COMMENT=	Web-driven graphing interface for RRDTool
 
 RUN_DEPENDS=	php:${PORTSDIR}/lang/php4 \
 		rrdtool:${PORTSDIR}/net/rrdtool \
-		net-snmp-config:${PORTSDIR}/net/net-snmp
+		net-snmp-config:${PORTSDIR}/net-mgmt/net-snmp
 
 USE_MYSQL=	yes
 NO_BUILD=	yes

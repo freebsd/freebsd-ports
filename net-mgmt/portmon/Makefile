@@ -7,7 +7,7 @@
 
 PORTNAME=	portmon
 PORTVERSION=	2.0
-CATEGORIES=	net
+CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.aboleo.net/software/portmon/downloads/
 
 MAINTAINER=	krion@FreeBSD.org

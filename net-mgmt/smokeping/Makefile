@@ -15,7 +15,7 @@ COMMENT=	Latency logging and graphing system
 
 RUN_DEPENDS=	rrdtool:${PORTSDIR}/net/rrdtool \
 		${SITE_PERL}/CGI/SpeedyCGI.pm:${PORTSDIR}/www/p5-CGI-SpeedyCGI \
-		${SITE_PERL}/BER.pm:${PORTSDIR}/net/p5-SNMP_Session \
+		${SITE_PERL}/BER.pm:${PORTSDIR}/net-mgmt/p5-SNMP_Session \
 		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
 		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
 		${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-PodParser \

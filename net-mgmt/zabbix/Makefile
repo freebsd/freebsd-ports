@@ -7,7 +7,7 @@
 
 PORTNAME=	zabbix
 PORTVERSION=	1.0b13
-CATEGORIES=	net
+CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S|b|beta|}
@@ -22,7 +22,7 @@ PKGNAMESUFFIX=	-agent
 PLIST=		${MASTERDIR}/pkg-plist.agent
 PKGMESSAGE=	nonexistent
 .else # ZABBIX_AGENT_ONLY
-LIB_DEPENDS=	netsnmp.6:${PORTSDIR}/net/net-snmp
+LIB_DEPENDS=	netsnmp.6:${PORTSDIR}/net-mgmt/net-snmp
 RUN_DEPENDS=	php:${PORTSDIR}/lang/php4-nms
 
 .ifndef(WITHOUT_FPING)

@@ -7,7 +7,7 @@
 
 PORTNAME=	aggregate
 PORTVERSION=	1.6
-CATEGORIES=	net
+CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.isc.org/isc/aggregate/ \
 		http://software.automagic.org/aggregate/
 

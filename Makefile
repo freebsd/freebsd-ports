@@ -37,6 +37,7 @@ SUBDIR += mbone
 SUBDIR += misc
 SUBDIR += multimedia
 SUBDIR += net
+SUBDIR += net-mgmt
 SUBDIR += news
 SUBDIR += palm
 SUBDIR += picobsd

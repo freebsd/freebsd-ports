@@ -8,7 +8,7 @@
 PORTNAME=	libsmi
 PORTVERSION=	0.4.1
 PORTREVISION=	1
-CATEGORIES=	net
+CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.ibr.cs.tu-bs.de/pub/local/libsmi/
 
 MAINTAINER=	saper@system.pl

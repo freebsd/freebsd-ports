@@ -9,7 +9,7 @@
 PORTNAME=	gps
 PORTVERSION=	0.9.3
 PORTREVISION=	1
-CATEGORIES=	net
+CATEGORIES=	net-mgmt
 MASTER_SITES=	http://gps.sourceforge.net/release/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-FRC
 

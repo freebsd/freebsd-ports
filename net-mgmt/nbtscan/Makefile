@@ -7,7 +7,7 @@
 
 PORTNAME=	nbtscan
 PORTVERSION=	1.5.1
-CATEGORIES=	net
+CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.inetcat.org/software/
 
 MAINTAINER=	ports@FreeBSD.org

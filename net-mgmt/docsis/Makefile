@@ -8,7 +8,7 @@
 PORTNAME=	docsis
 PORTVERSION=	0.8.2
 PORTREVISION=	2
-CATEGORIES=	net
+CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-RELEASE
@@ -17,7 +17,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	jflemer@alum.rpi.edu
 COMMENT=	DOCSIS(tm) binary configuration file encoder/decoder
 
-LIB_DEPENDS=	netsnmp:${PORTSDIR}/net/net-snmp
+LIB_DEPENDS=	netsnmp:${PORTSDIR}/net-mgmt/net-snmp
 
 USE_OPENSSL=	yes
 USE_BISON=	yes

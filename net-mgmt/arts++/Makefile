@@ -9,7 +9,7 @@ PORTNAME=	arts++
 PORTVERSION=	1.1.a8
 PORTREVISION=	2
 PORTEPOCH=	1
-CATEGORIES=	net
+CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.caida.org/pub/arts++/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./-/g}
 

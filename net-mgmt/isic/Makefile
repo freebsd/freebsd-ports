@@ -7,7 +7,7 @@
 
 PORTNAME=	isic
 PORTVERSION=	0.05
-CATEGORIES=	net
+CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.packetfactory.net/Projects/ISIC/
 EXTRACT_SUFX=	.tgz
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	Cflow
 PORTVERSION=	1.051
-CATEGORIES=	net perl5
+CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	http://net.doit.wisc.edu/~plonka/Cflow/
 PKGNAMEPREFIX=	p5-
 

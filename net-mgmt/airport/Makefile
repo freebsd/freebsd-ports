@@ -7,7 +7,7 @@
 
 PORTNAME=	airport
 PORTVERSION=	2.0.1
-CATEGORIES=	net java
+CATEGORIES=	net-mgmt java
 MASTER_SITES=	http://edge.mcs.drexel.edu/GICL/people/sevy/airport/
 DISTFILES=	configurator_${PORTVERSION:S/.0.1/01/g}${EXTRACT_SUFX} \
 		configurator_${OLDAPCVERSION:S/.//g}${EXTRACT_SUFX} \

@@ -7,14 +7,14 @@
 
 PORTNAME=	pancho
 PORTVERSION=	9.2.4
-CATEGORIES=	net
+CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.panchoproject.org/archives/pancho/
 DISTNAME=	pancho-v${PORTVERSION}
 
 MAINTAINER=	ecu@ipv42.net
 COMMENT=	Network devices management tool using TFTP and SNMP
 
-RUN_DEPENDS=	${SITE_PERL}/Net/SNMP.pm:${PORTSDIR}/net/p5-Net-SNMP \
+RUN_DEPENDS=	${SITE_PERL}/Net/SNMP.pm:${PORTSDIR}/net-mgmt/p5-Net-SNMP \
 		${SITE_PERL}/Config/IniFiles.pm:${PORTSDIR}/devel/p5-Config-IniFiles \
 		${SITE_PERL}/Parallel/ForkManager.pm:${PORTSDIR}/devel/p5-Parallel-ForkManager
 

@@ -8,7 +8,7 @@
 
 PORTNAME=	oproute
 PORTVERSION=	0.7
-CATEGORIES=	net
+CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.opnix.com/oproute/
 EXTRACT_SUFX=	.tgz
 

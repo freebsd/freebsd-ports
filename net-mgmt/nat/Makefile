@@ -7,9 +7,9 @@
 
 PORTNAME=	nat
 PORTVERSION=	20
-CATEGORIES=	net security
+CATEGORIES=	net-mgmt security
 MASTER_SITES=	http://www.tux.org/pub/security/secnet/tools/nat20beta/ \
-		ftp://ftp.cert.dfn.de/pub/tools/net/nat/nat20beta/ \
+		ftp://ftp.cert.dfn.de/pub/tools/net-mgmt/nat/nat20beta/ \
 		ftp://ftp.spin.ad.jp/pub/Security/nat/nat20beta/
 DISTNAME=	${PORTNAME}${PORTVERSION}.freebsd
 

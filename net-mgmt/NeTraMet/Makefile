@@ -8,7 +8,7 @@
 PORTNAME=	NeTraMet
 PORTVERSION=	4.4
 PORTREVISION=	2
-CATEGORIES=	net
+CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.auckland.ac.nz/pub/iawg/NeTraMet/ \
 		http://www2.auckland.ac.nz/net/Accounting/
 DISTFILES+=	NeTraMet${PORTVERSION:S/.//}${EXTRACT_SUFX} \

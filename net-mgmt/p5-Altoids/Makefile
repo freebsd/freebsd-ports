@@ -7,7 +7,7 @@
 
 PORTNAME=	Altoids
 PORTVERSION=	1.017
-CATEGORIES=	net perl5
+CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	http://dave.plonka.us/Altoids/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	billf@FreeBSD.org
 COMMENT=	SNMP get/walk functionality with built-in name to OID translation
 
-RUN_DEPENDS=	${SITE_PERL}/SNMP_Session.pm:${PORTSDIR}/net/p5-SNMP_Session
+RUN_DEPENDS=	${SITE_PERL}/SNMP_Session.pm:${PORTSDIR}/net-mgmt/p5-SNMP_Session
 
 GNU_CONFIGURE=	yes
 

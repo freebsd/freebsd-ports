@@ -7,7 +7,7 @@
 
 PORTNAME=	packit
 PORTVERSION=	0.7.1
-CATEGORIES=	net
+CATEGORIES=	net-mgmt
 MASTER_SITES=	http://packit.sourceforge.net/downloads/
 EXTRACT_SUFX=	.tgz
 

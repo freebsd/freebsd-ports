@@ -7,15 +7,15 @@
 
 PORTNAME=	nsca
 PORTVERSION=	2.4
-CATEGORIES=	net
+CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	nagios
 
 MAINTAINER=	paul@nerdlabs.com
 COMMENT=	Nagios Service Check Acceptor
 
-BUILD_DEPENDS=	${NAGIOS_DIR}:${PORTSDIR}/net/nagios
-RUN_DEPENDS=	${NAGIOS_DIR}:${PORTSDIR}/net/nagios
+BUILD_DEPENDS=	${NAGIOS_DIR}:${PORTSDIR}/net-mgmt/nagios
+RUN_DEPENDS=	${NAGIOS_DIR}:${PORTSDIR}/net-mgmt/nagios
 LIB_DEPENDS=	mcrypt.8:${PORTSDIR}/security/libmcrypt
 
 GNU_CONFIGURE=	yes

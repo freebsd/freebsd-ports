@@ -7,7 +7,7 @@
 
 PORTNAME=	ifgraph
 PORTVERSION=	0.4.9
-CATEGORIES=	net www
+CATEGORIES=	net-mgmt www
 MASTER_SITES=	http://ifgraph.sourceforge.net/stable/
 
 MAINTAINER=	lars@thegler.dk
@@ -71,9 +71,9 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-RUN_DEPENDS+=	${SITE_PERL}/Net/SNMP.pm:${PORTSDIR}/net/p5-Net-SNMP3
+RUN_DEPENDS+=	${SITE_PERL}/Net/SNMP.pm:${PORTSDIR}/net-mgmt/p5-Net-SNMP3
 .else
-RUN_DEPENDS+=	${SITE_PERL}/Net/SNMP.pm:${PORTSDIR}/net/p5-Net-SNMP
+RUN_DEPENDS+=	${SITE_PERL}/Net/SNMP.pm:${PORTSDIR}/net-mgmt/p5-Net-SNMP
 .endif
 
 .include <bsd.port.post.mk>

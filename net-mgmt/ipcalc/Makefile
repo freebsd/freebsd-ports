@@ -8,7 +8,7 @@
 PORTNAME=	ipcalc
 PORTVERSION=	0.35
 PORTREVISION=	1
-CATEGORIES=	net
+CATEGORIES=	net-mgmt
 MASTER_SITES=	http://jodies.de/
 DISTNAME=	ipcalc.pl
 EXTRACT_SUFX=	# empty

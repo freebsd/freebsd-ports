@@ -8,14 +8,14 @@
 PORTNAME=	netqc
 PORTVERSION=	1.2.1
 PORTREVISION=	1
-CATEGORIES=	net
+CATEGORIES=	net-mgmt
 MASTER_SITES=	http://web.uni-svishtov.bg/netqc/
 
 MAINTAINER=	rvasilev@uni-svishtov.bg
 COMMENT=	Network Monitoring System based on Net-Snmp
 
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client \
-		snmp.4:${PORTSDIR}/net/net-snmp4
+		snmp.4:${PORTSDIR}/net-mgmt/net-snmp4
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

@@ -8,7 +8,7 @@
 PORTNAME=	rancid
 PORTVERSION=	2.3.r1
 PORTREVISION=	1
-CATEGORIES=	net
+CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.shrubbery.net/pub/rancid/
 DISTNAME=	${PORTNAME}-2.3.rc1
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	rate
 PORTVERSION=	0.9
-CATEGORIES=	net
+CATEGORIES=	net-mgmt
 MASTER_SITES=	http://s-tech.elsat.net.pl/bmtools/
 
 MAINTAINER=	mich@FreeBSD.org

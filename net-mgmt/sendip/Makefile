@@ -8,7 +8,7 @@
 PORTNAME=	sendip
 PORTVERSION=	2.5
 PORTREVISION=	1
-CATEGORIES=	net
+CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.earth.li/projectpurple/files/
 
 MAINTAINER=	joseph@randomnetworks.com

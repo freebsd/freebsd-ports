@@ -8,7 +8,7 @@
 PORTNAME=	trafd
 PORTVERSION=	3.0.1
 PORTREVISION=	2
-CATEGORIES=	net
+CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.riss-telecom.ru/pub/dev/trafd/
 EXTRACT_SUFX=	.tgz
 

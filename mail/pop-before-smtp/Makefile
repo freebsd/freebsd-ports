@@ -16,7 +16,7 @@ COMMENT=	A log parser to identify valid POP/IMAP logins for later smtp
 
 RUN_DEPENDS=	${SITE_PERL}/File/Tail.pm:${PORTSDIR}/devel/p5-File-Tail \
 		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
-		${SITE_PERL}/Net/Netmask.pm:${PORTSDIR}/net/p5-Net-Netmask \
+		${SITE_PERL}/Net/Netmask.pm:${PORTSDIR}/net-mgmt/p5-Net-Netmask \
 		${SITE_PERL}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate \
 		${SITE_PERL}/Date/Format.pm:${PORTSDIR}/devel/p5-TimeDate
 

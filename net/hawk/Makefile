@@ -16,7 +16,7 @@ COMMENT=	Track uptime and DNS status for machines on your networks
 
 RUN_DEPENDS=	php-config:${PORTSDIR}/www/mod_php4 \
 		safe_mysqld:${PORTSDIR}/databases/mysql323-server \
-		${SITE_PERL}/Net/Netmask.pm:${PORTSDIR}/net/p5-Net-Netmask
+		${SITE_PERL}/Net/Netmask.pm:${PORTSDIR}/net-mgmt/p5-Net-Netmask
 
 BROKEN=		"Inconsistent dependencies (mysql-client 3.x and 4.x)"
 DEPRECATED=	${BROKEN}

@@ -8,7 +8,7 @@
 PORTNAME=	scli
 PORTVERSION=	0.2.12
 PORTREVISION=	1
-CATEGORIES=	net
+CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.ibr.cs.tu-bs.de/pub/local/${PORTNAME}/
 
 MAINTAINER=	lyngbol@wheel.dk

@@ -41,7 +41,7 @@ pre-fetch:
 	@${FALSE}
 .elif defined(OPTION)
 .if ${OPTION}==RD
-BUILD_DEPENDS=	${SITE_PERL}/Net/Netmask.pm:${PORTSDIR}/net/p5-Net-Netmask \
+BUILD_DEPENDS=	${SITE_PERL}/Net/Netmask.pm:${PORTSDIR}/net-mgmt/p5-Net-Netmask \
 		${SITE_PERL}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net-SSLeay
 INSTALL_TARGET=	rd
 PLIST=		${PKGDIR}/pkg-plist.rd
@@ -49,7 +49,7 @@ PLIST=		${PKGDIR}/pkg-plist.rd
 BUILD_DEPENDS=	${PREFIX}/sbin/httpsd:${PORTSDIR}/www/apache13-ssl\
 		${SITE_PERL}/CGI/Carp.pm:${PORTSDIR}/www/p5-CGI.pm \
 		${SITE_PERL}/Mail/Sendmail.pm:${PORTSDIR}/mail/p5-Mail-Sendmail \
-		${SITE_PERL}/Net/Netmask.pm:${PORTSDIR}/net/p5-Net-Netmask\
+		${SITE_PERL}/Net/Netmask.pm:${PORTSDIR}/net-mgmt/p5-Net-Netmask\
 		${SITE_PERL}/File/CounterFile.pm:${PORTSDIR}/misc/p5-File-CounterFile \
 		${SITE_PERL}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net-SSLeay \
 		${SITE_PERL}/Parse/RecDescent.pm:${PORTSDIR}/devel/p5-Parse-RecDescent

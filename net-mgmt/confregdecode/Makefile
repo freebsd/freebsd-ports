@@ -7,7 +7,7 @@
 
 PORTNAME=	confregdecode
 PORTVERSION=	1.2.1
-CATEGORIES=	net java
+CATEGORIES=	net-mgmt java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	cosi-nms
 DISTNAME=	confregdecode-src-${PORTVERSION}

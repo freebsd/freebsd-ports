@@ -8,7 +8,7 @@
 PORTNAME=	net-snmp
 PORTVERSION=	5.1
 PORTREVISION=	1
-CATEGORIES=	net ipv6
+CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	net-snmp
 
@@ -146,6 +146,6 @@ post-install:
 
 # Maintainer's note:
 #   Don't forget to bump library version in these ports.
-#   lang/php4,lang/php5,net/braa,net/docsis,net/ethereal,net/mbrowse,net/quagga,net/tethereal,net/zabbix,security/libfwbuilder
+#   lang/php4,lang/php5,net-mgmt/braa,net-mgmt/docsis,net/ethereal,net-mgmt/mbrowse,net/quagga,net/tethereal,net-mgmt/zabbix,security/libfwbuilder
 
 .include <bsd.port.post.mk>

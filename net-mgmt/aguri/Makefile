@@ -7,7 +7,7 @@
 
 PORTNAME=	aguri
 PORTVERSION=	0.7
-CATEGORIES=	net ipv6
+CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	ftp://ftp.csl.sony.co.jp/pub/kjc/
 
 MAINTAINER=	yb@sainte-barbe.org

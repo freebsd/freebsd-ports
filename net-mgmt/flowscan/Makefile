@@ -8,7 +8,7 @@
 PORTNAME=	flowscan
 PORTVERSION=    1.006
 PORTREVISION=	7
-CATEGORIES=	net
+CATEGORIES=	net-mgmt
 MASTER_SITES=	http://net.doit.wisc.edu/~plonka/FlowScan/
 DISTFILES=	FlowScan-${PORTVERSION}.tar.gz
 
@@ -17,11 +17,11 @@ COMMENT=	Processes IP flows recorded in cflowd-format raw flow files
 
 BUILD_DEPENDS=	ksh:${PORTSDIR}/shells/pdksh \
 		rrdtool:${PORTSDIR}/net/rrdtool \
-		${LOCALBASE}/sbin/cflowd:${PORTSDIR}/net/cflowd \
+		${LOCALBASE}/sbin/cflowd:${PORTSDIR}/net-mgmt/cflowd \
 		${SITE_PERL}/Boulder/Stream.pm:${PORTSDIR}/converters/p5-Boulder \
 		${SITE_PERL}/ConfigReader/DirectiveStyle.pm:${PORTSDIR}/devel/p5-ConfigReader \
 		${SITE_PERL}/HTML/Table.pm:${PORTSDIR}/www/p5-HTML-Table \
-		${SITE_PERL}/${PERL_ARCH}/Cflow.pm:${PORTSDIR}/net/p5-Cflow \
+		${SITE_PERL}/${PERL_ARCH}/Cflow.pm:${PORTSDIR}/net-mgmt/p5-Cflow \
 		${SITE_PERL}/${PERL_ARCH}/Net/Patricia.pm:${PORTSDIR}/net/p5-Net-Patricia
 RUN_DEPENDS=	gmake:${PORTSDIR}/devel/gmake
 

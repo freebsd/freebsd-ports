@@ -7,7 +7,7 @@
 
 PORTNAME=	whatmask
 PORTVERSION=	1.2
-CATEGORIES=	net
+CATEGORIES=	net-mgmt
 MASTER_SITES=	http://downloads.laffeycomputer.com/current_builds/whatmask/
 
 MAINTAINER=	ports@FreeBSD.org

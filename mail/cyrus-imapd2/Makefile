@@ -83,7 +83,7 @@ PLIST_SUB+=	MURDER="@comment "
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_SNMP)
-LIB_DEPENDS+=	snmp.4:${PORTSDIR}/net/net-snmp4
+LIB_DEPENDS+=	snmp.4:${PORTSDIR}/net-mgmt/net-snmp4
 CONFIGURE_ARGS+=--with-ucdsnmp=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--with-ucdsnmp=no

@@ -1,4 +1,4 @@
-# New ports collection makefile for:	net/sysmon
+# New ports collection makefile for:	net-mgmt/sysmon
 # Date created:				23 January 2003
 # Whom:					Manuel Kreutz <mk@nomtec.net>
 #
@@ -7,7 +7,7 @@
 
 PORTNAME=	sysmon
 PORTVERSION=	0.91.20
-CATEGORIES=	net
+CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://puck.nether.net/pub/jared/ \
 		http://titan.oxeo.com/mirror/sysmon.org/
 

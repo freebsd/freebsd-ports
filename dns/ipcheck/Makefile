@@ -25,7 +25,7 @@ NO_BUILD=	yes
 PLIST_FILES=	bin/ipcheck.py
 
 .ifdef(WITH_SNMP)
-RUN_DEPENDS+=	${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages/pysnmp/v2c.py:${PORTSDIR}/net/py-snmp
+RUN_DEPENDS+=	${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages/pysnmp/v2c.py:${PORTSDIR}/net-mgmt/py-snmp
 .endif
 
 pre-everything::

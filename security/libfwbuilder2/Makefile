@@ -16,7 +16,7 @@ COMMENT=	Firewall Builder API
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 		xslt.2:${PORTSDIR}/textproc/libxslt \
-		netsnmp.6:${PORTSDIR}/net/net-snmp \
+		netsnmp.6:${PORTSDIR}/net-mgmt/net-snmp \
 		crypto.3:${PORTSDIR}/security/openssl
 
 USE_GNOME=	glib12

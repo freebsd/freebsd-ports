@@ -613,9 +613,9 @@ CONFIGURE_ARGS+=--with-ncurses=${NCURSESBASE}
 
 .if defined(WITH_SNMP)
 .if exists(${LOCALBASE}/lib/libsnmp.so.4) || defined(WITH_SNMP4)
-LIB_DEPENDS+=	snmp.4:${PORTSDIR}/net/net-snmp4
+LIB_DEPENDS+=	snmp.4:${PORTSDIR}/net-mgmt/net-snmp4
 .else
-LIB_DEPENDS+=	netsnmp.6:${PORTSDIR}/net/net-snmp
+LIB_DEPENDS+=	netsnmp.6:${PORTSDIR}/net-mgmt/net-snmp
 .endif
 CONFIGURE_ARGS+=--with-snmp=${LOCALBASE} --enable-ucd-snmp-hack
 .endif

@@ -7,7 +7,7 @@
 
 PORTNAME=	pmacct
 PORTVERSION=	0.6.0p3
-CATEGORIES=	net
+CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.ba.cnr.it/~paolo/pmacct/
 
 MAINTAINER=	krion@FreeBSD.org

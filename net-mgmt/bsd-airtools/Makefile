@@ -7,7 +7,7 @@
 
 PORTNAME=	bsd-airtools
 PORTVERSION=	0.3
-CATEGORIES=	net
+CATEGORIES=	net-mgmt
 MASTER_SITES=	http://people.FreeBSD.org/~seanc/ports/bsd-airtools/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 EXTRACT_SUFX=	.tgz

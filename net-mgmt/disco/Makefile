@@ -7,7 +7,7 @@
 
 PORTNAME=	disco
 PORTVERSION=	1.2
-CATEGORIES=	net
+CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.altmode.com/disco/
 
 MAINTAINER=	krion@FreeBSD.org
