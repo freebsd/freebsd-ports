@@ -186,6 +186,12 @@
     SUBDIR += mips64orion-rtems-gcj
     SUBDIR += mips64orion-rtems-gdb
     SUBDIR += mips64orion-rtems-objc
+    SUBDIR += mips-rtems-binutils
+    SUBDIR += mips-rtems-chill
+    SUBDIR += mips-rtems-g77
+    SUBDIR += mips-rtems-gcc
+    SUBDIR += mips-rtems-gcj
+    SUBDIR += mips-rtems-objc
     SUBDIR += mkcmd
     SUBDIR += mkmf
     SUBDIR += mm
