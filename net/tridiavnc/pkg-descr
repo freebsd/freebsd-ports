@@ -1,7 +1,6 @@
-"VNC stands for Virtual Network Computing. It is, in essence, a remote
- display system which allows you to view a computing 'desktop'
- environment not only on the machine where it is running, but from
- anywhere on the Internet and from a wide variety of machine
- architectures."
+TridiaVNC is a version of VNC with many more features and has 
+optional commercial support.  VNC is a multiplatform client and 
+server for remotly administrating systems.  It uses that uses 
+the RFB protocol.
 
-WWW: http://www.uk.research.att.com/vnc/
+WWW: http://www.tridiavnc.com/
