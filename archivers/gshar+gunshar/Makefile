@@ -3,13 +3,11 @@
 # Date created:         28 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.8 1996/11/12 02:17:25 obrien Exp $
+# $Id: Makefile,v 1.9 1996/11/18 13:55:45 asami Exp $
 #
 DISTNAME=       sharutils-4.1.4
 CATEGORIES=	archivers
 MASTER_SITES=   ftp://ftp.iro.umontreal.ca/pub/contrib/pinard/gnu/
-
-MAINTAINER=     ache@FreeBSD.ORG
 
 GNU_CONFIGURE=  yes
 CONFIGURE_ARGS= --program-prefix=g --disable-uucode --prefix=${PREFIX}
