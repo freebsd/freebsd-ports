@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gdesklets
-PORTVERSION=	0.26
+PORTVERSION=	0.26.1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.pycage.de/download/${PORTNAME}/
 DISTNAME=	gDesklets-${PORTVERSION}
@@ -25,7 +25,7 @@ USE_GMAKE=	yes
 USE_LIBTOOL_VER=	13
 USE_PYTHON=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomehack gnomeprefix gnometarget
+USE_GNOME=	gnomehack gnomeprefix gnometarget intlhack
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
