@@ -4,7 +4,7 @@ etc/rc.d/000.compat4x.sh
 %%CURRENT_ONLY:%%lib/compat/libc_r.so.4.compat4x
 %%CURRENT_ONLY:%%@exec ln -sf %B/%f %B/libc_r.so.4
 lib/compat/libcrypto.so.1
-%%LATEST_ONLY:%%lib/compat/libedit.so.3
+%%I386_ONLY:%%%%CURRENT_ONLY:%%lib/compat/libedit.so.3
 lib/compat/libssl.so.1
-%%LATEST_ONLY:%%%%CURRENT_ONLY:%%lib/compat/libperl.so.3
+%%I386_ONLY:%%%%CURRENT_ONLY:%%lib/compat/libperl.so.3
 @unexec rmdir %D/lib/compat 2>/dev/null || true
