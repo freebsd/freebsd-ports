@@ -1,0 +1,59 @@
+--- src/shar.c.orig	1999-09-10 21:20:41.000000000 +0200
++++ src/shar.c	2004-09-29 15:09:40.790061000 +0200
+@@ -1571,7 +1571,7 @@
+ 	  sprintf (command, "%s '%s'", CHARACTER_COUNT_COMMAND, local_name);
+ 	  if (pfp = popen (command, "r"), pfp)
+ 	    {
+-	      char wc[BUFSIZ];
++		char wc[BUFSIZ], tempform[50];      
+ 	      const char *prefix = "";
+ 
+ 	      if (did_md5)
+@@ -1579,8 +1579,8 @@
+ 		  fputs ("  else\n", output);
+ 		  prefix = "  ";
+ 		}
+-
+-	      fscanf (pfp, "%s", wc);
++	sprintf (tempform, "%%%ds", BUFSIZ - 1);
++	fscanf (pfp, tempform, wc);
+ 	      fprintf (output, "\
+ %s  shar_count=\"`%s '%s'`\"\n\
+ %s  test %s -eq \"$shar_count\" ||\n\
+diff -Naur ./sharutils-4.2.1/src/unshar.c ./sharutils-4.2.1_new/src/unshar.c
+--- src/unshar.c.orig	1995-11-21 17:22:14.000000000 +0100
++++ src/unshar.c	2004-09-29 15:09:44.682469264 +0200
+@@ -346,8 +346,8 @@
+ {
+   size_t size_read;
+   FILE *file;
+-  char name_buffer[NAME_BUFFER_SIZE];
+-  char copy_buffer[NAME_BUFFER_SIZE];
++  char name_buffer[NAME_BUFFER_SIZE] = {'\0'};
++  char copy_buffer[NAME_BUFFER_SIZE] = {'\0'};
+   int optchar;
+ 
+   program_name = argv[0];
+@@ -409,14 +409,14 @@
+   if (optind < argc)
+     for (; optind < argc; optind++)
+       {
+-	if (argv[optind][0] == '/')
+-	  stpcpy (name_buffer, argv[optind]);
+-	else
+-	  {
+-	    char *cp = stpcpy (name_buffer, current_directory);
+-	    *cp++ = '/';
+-	    stpcpy (cp, argv[optind]);
+-	  }
++	if (argv[optind][0] == '/') {
++		strncpy (name_buffer, argv[optind], sizeof(name_buffer));
++		name_buffer[sizeof(name_buffer)-1] = '\0';
++	}
++	else {
++		snprintf(name_buffer, sizeof(name_buffer),"%s/%s", current_directory, argv[optind]);
++		name_buffer[sizeof(name_buffer)-1] = '\0';
++	}
+ 	if (file = fopen (name_buffer, "r"), !file)
+ 	  error (EXIT_FAILURE, errno, name_buffer);
+ 	unarchive_shar_file (name_buffer, file);
