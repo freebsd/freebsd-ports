@@ -1,0 +1,9 @@
+bin/toolame
+%%PORTDOCS%%share/doc/toolame/CHANGES
+%%PORTDOCS%%share/doc/toolame/COPYING
+%%PORTDOCS%%share/doc/toolame/FUTURE
+%%PORTDOCS%%share/doc/toolame/GPL
+%%PORTDOCS%%share/doc/toolame/HISTORY
+%%PORTDOCS%%share/doc/toolame/README
+%%PORTDOCS%%share/doc/toolame/README.VBR
+%%PORTDOCS%%@dirrm share/doc/toolame
