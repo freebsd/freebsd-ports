@@ -1,20 +1,22 @@
---- pbm/Makefile.orig	Sat May  6 16:16:53 2000
-+++ pbm/Makefile	Mon May  8 00:00:00 2000
-@@ -9,11 +9,12 @@
+--- pbm/Makefile.orig	Tue May 16 10:01:33 2000
++++ pbm/Makefile	Sat May 20 00:00:00 2000
+@@ -4,13 +4,12 @@
+ include $(SRCDIR)/Makefile.config
+ 
+ 
+-INCLUDE = -I$(SRCDIR) -I$(SRCDIR)/shhopt
++INCLUDE = -I$(SRCDIR)
+ 
  # Shared library naming
  LIBROOT = pbm
  LIBPBM = lib$(LIBROOT).$(NETPBMLIBSUFFIX)
 -MAJ = 9
-+MAJ = 1
- MIN = 1
+-MIN = 2
++SOVER = 1
  
  LIBLIBS = 
  NETPBMLIBS = $(LIBPBM)
-+NETPBMLD = -L. -lpbm
- 
- PORTBINARIES =	atktopbm brushtopbm cmuwmtopbm g3topbm \
- 		icontopbm macptopbm mdatopbm mgrtopbm \
-@@ -36,8 +37,7 @@
+@@ -37,8 +36,7 @@
  
  # Library objects to be built and linked by Makefile.common:
  LIBOBJECTS = libpbm1.o libpbm2.o libpbm3.o libpbm4.o libpbm5.o 
@@ -24,38 +26,44 @@
  
  MANUALS1 =	$(BINARIES)
  MANUALS3 =	libpbm
-@@ -45,7 +45,7 @@
- 
- MERGENAME = pbmmerge
- 
--INTERFACE_HEADERS = pbm.h
-+INTERFACE_HEADERS = pbm.h $(SRCDIR)/pbmplus.h
+@@ -50,26 +48,21 @@
  
  .PHONY: all
  all:		$(BINARIES)
-@@ -55,11 +55,11 @@
+-	$(MAKE) -C pbmtoppa all
  
- # Rules for plain programs.
- $(PORTBINARIES): %: %.o $(NETPBMLIBS)
--	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLIBS) $(CDEBUG)
-+	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLD) $(CDEBUG)
- 
- # Rule for math-dependent programs.
- $(MATHBINARIES): %: %.o $(NETPBMLIBS)
--	$(LD) $(LDFLAGS) -o $@ $@.o -lm $(NETPBMLIBS) $(CDEBUG)
-+	$(LD) $(LDFLAGS) -o $@ $@.o -lm $(NETPBMLD) $(CDEBUG)
+ .PHONY: merge
+ merge: $(MERGENAME)
+-	$(MAKE) -C pbmtoppa all
  
  .PHONY: install.bin
  install.bin: install.bin.common
-@@ -72,11 +72,6 @@
- # Don't use $(SRCDIR) in the target below because Makefile.dep doesn't !
+-	$(MAKE) -C pbmtoppa install.bin
+ 
+ .PHONY: install.merge
+ install.merge: install.merge.common
+-	$(MAKE) -C pbmtoppa install.bin
+ 
+ .PHONY: install.lib
+ install.lib: install.lib.common
+ 
+ .PHONY: install.man
+ install.man: install.man.common
+-	$(MAKE) -C pbmtoppa install.man
+ 
+ include $(SRCDIR)/Makefile.common
+ 
+@@ -77,13 +70,7 @@
  ../compile.h: 
  	$(MAKE) -C $(SRCDIR) compile.h
--
+ 
 -$(SRCDIR)/shhopt/shhopt.o:
 -	cd ../shhopt; $(MAKE) shhopt.o
 -$(SRCDIR)/shhopt/libshhopt.a:
 -	cd ../shhopt; $(MAKE) libshhopt.a
- 
+-
  .PHONY: clean
- clean:
+ clean: clean.common
+-	$(MAKE) -C pbmtoppa clean
+ 
+ FORCE:

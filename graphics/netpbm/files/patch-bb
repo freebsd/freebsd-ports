@@ -1,34 +1,47 @@
---- Makefile.common.orig	Sat May  6 19:03:55 2000
-+++ Makefile.common	Mon May  8 00:00:00 2000
-@@ -56,9 +56,9 @@
- #   directories in which to resolve inclusions by C files.
+--- Makefile.common.orig	Tue May 16 10:14:14 2000
++++ Makefile.common	Sat May 20 00:00:00 2000
+@@ -97,24 +97,20 @@
+ # BUILDING NETPBM LIBRARIES
  
- # Rule for objects.
--$(OBJECTS): %.o: %.c
-+$(OBJECTS) $(LIBOBJECTS): %.o: %.c
- 	$(CC) -c $(CFLAGS) $(INCLUDE) -o $@ $<
--$(LIBOBJECTS): %.o: %.c
+ $(LIBOBJECTS): %.o: %.c
++	$(CC) -c $(CFLAGS) $(INCLUDE) -o $@ $<
++
 +$(LIBSOBJECTS): %.so: %.c
  	$(CC) -c $(CFLAGS) $(CFLAGS_SHLIB) $(INCLUDE) -o $@ $<
  
- $(MERGE_OBJECTS): %.o2: %.c
-@@ -68,7 +68,7 @@
- 	$(CC) $(CFLAGS) -Wno-implicit -c -o $@ $<
+-SONAME = lib$(LIBROOT).so.$(MAJ)
++SONAME = lib$(LIBROOT).so.$(SOVER)
  
- $(MERGENAME): $(MERGENAME).o $(MERGE_OBJECTS) $(NETPBMLIBS) 
--	$(LD) $(LDFLAGS) -o $@ $< $(MERGE_OBJECTS) -lm $(NETPBMLIBS)
-+	$(LD) $(LDFLAGS) -o $@ $< $(MERGE_OBJECTS) -lm $(NETPBMLD)
+ # The libxxx.so link is needed to link the executables.
+-lib$(LIBROOT).so: $(SONAME)
+-	rm -f $@
+-	ln -s $< $@
+-# The $(SONAME) link is only needed to test the programs without
+-# installing the libraries (in that case, you also need to direct the 
+-# dynamic linker to the source directories, e.g. set LD_LIBRARY_PATH).
+-$(SONAME): lib$(LIBROOT).so.$(MAJ).$(MIN)
++lib$(LIBROOT).so: $(SONAME) lib$(LIBROOT).a
+ 	rm -f $@
+-	ln -s $< $@
+-lib$(LIBROOT).so.$(MAJ).$(MIN): $(LIBOBJECTS) $(LIBOBJECTS_X) $(LIBLIBS) \
+-                                $(LIBOPT)
+-	$(LD) $(LDSHLIB) -o $@ $(LIBOBJECTS) $(LIBOBJECTS_X) \
+-          `$(LIBOPT) $(LIBLIBS)` -lc
++	ln -sf $< $@
++$(SONAME): $(LIBSOBJECTS) $(LIBOBJECTS_X) $(LIBLIBS) $(LIBOPT)
++	$(LD) $(LDSHLIB) -o $@ $(LIBSOBJECTS) $(LIBOBJECTS_X) \
++          `$(LIBOPT) $(LIBLIBS)`
  
- # Before Netpbm 8.4, we did hard links instead of symbolic.  A user
- # requested symbolic, and I couldn't see a reason for hard (original reason
-@@ -77,27 +77,26 @@
- install.merge: $(MERGENAME) $(NOMERGEBINARIES) install.script
+ # Static library.  Unused by default, but with a small change to make files...
+ lib$(LIBROOT).a: $(LIBOBJECTS) $(LIBOBJECTS_X)
+@@ -129,15 +125,14 @@
+ install.merge.common: $(MERGENAME) $(NOMERGEBINARIES) install.script
  	cd $(INSTALLBINARIES) ; rm -f $(BINARIES) $(MERGE_ALIASES)
  ifneq ($(MERGENAME)x,x)
 -	$(INSTALL) -s -m$(INSTALL_PERM_BIN) $(MERGENAME) $(INSTALLBINARIES)
 +	${BSD_INSTALL_PROGRAM} $(MERGENAME) $(INSTALLBINARIES)
  	cd $(INSTALLBINARIES) ; \
- 	   for i in $(BINARIES) $(MERGE_ALIASES) ; \
+ 	   for i in $(MERGEBINARIES) $(MERGE_ALIASES) ; \
 -             do ln -s $(MERGENAME)$(EXE) $$i ; \
 +             do ln -sf $(MERGENAME)$(EXE) $$i ; \
               done
@@ -39,7 +52,8 @@
 +	${BSD_INSTALL_PROGRAM} $(NOMERGEBINARIES) $(INSTALLBINARIES)
  endif
  
- .PHONY: install.bin.common
+ # INSTALLING
+@@ -146,12 +141,12 @@
  install.bin.common: $(BINARIES) install.script
  # Note that on Cygwin, the executables are actually pbmmake.exe, etc.
  # Make and Install know that pbmmake.exe counts as pbmmake.
@@ -53,8 +67,8 @@
 +	${BSD_INSTALL_SCRIPT} $(SCRIPTS) $(INSTALLSCRIPTS)
  endif
  
- .PHONY: install.man
-@@ -127,43 +126,28 @@
+ .PHONY: install.man.common
+@@ -181,8 +176,7 @@
  # compile programs that use the Netpbm libraries.  Alternatively, you may
  # prefer not to "install" them, but just to access the Netpbm source
  # directory when you compile your programs.
@@ -62,51 +76,27 @@
 -	  $(INTERFACE_HEADERS) $(INSTALLHDRS)
 +	${BSD_INSTALL_DATA} $(INTERFACE_HEADERS) $(INSTALLHDRS)
  
- # The libxxx.so link is needed to link the executables.
--lib$(LIBROOT).so: lib$(LIBROOT).so.$(MAJ)
-+lib$(LIBROOT).so: lib$(LIBROOT).so.$(MAJ) lib$(LIBROOT).a
- 	rm -f $@
--	ln -s $< $@
--# The libxxx.so.MAJ link is only needed to test the programs without
--# installing the libraries (in that case, you also need to direct the 
--# dynamic linker to the source directories, e.g. set LD_LIBRARY_PATH).
--lib$(LIBROOT).so.$(MAJ): lib$(LIBROOT).so.$(MAJ).$(MIN)
--	rm -f $@
--	ln -s $< $@
--lib$(LIBROOT).so.$(MAJ).$(MIN): $(LIBOBJECTS) $(LIBOBJECTS_X) $(LIBLIBS)
--	$(LD) $(LDSHLIB) -Wl,-soname,lib$(LIBROOT).so.$(MAJ) -o $@ \
--          $(LIBOBJECTS) $(LIBOBJECTS_X) $(LIBLIBS) -lc
-+	ln -sf $< $@
-+lib$(LIBROOT).so.$(MAJ): $(LIBSOBJECTS) $(LIBLIBS)
-+	$(LD) $(LDSHLIB) -Wl,-soname,$@ -o $@ $(LIBSOBJECTS)
- 
- # Static library.  Unused by default, but with a small change to make files...
--lib$(LIBROOT).a: $(LIBOBJECTS) $(LIBOBJECTS_X)
-+lib$(LIBROOT).a: $(LIBOBJECTS)
- 	-rm -f $@
--	ar rc $@ $(LIBOBJECTS) $(LIBOBJECTS_X)
-+	ar rc $@ $(LIBOBJECTS)
- 	-ranlib $@
- 
+ # Install a static library 
+ #
+@@ -192,16 +186,15 @@
+ # library, the dependency here will do that.
+ .PHONY: install.staticlib
+ install.staticlib: lib$(LIBROOT).a
+-	$(INSTALL) -m$(INSTALL_PERM_LIBS) $< $(INSTALLLIBS)/$<
++	${BSD_INSTALL_DATA} $< $(INSTALLLIBS)
  
  .PHONY: install.lib.common
--ifeq ($(NETPBMLIBSUFFIX),so)
--# install a shared library
+ ifeq ($(NETPBMLIBSUFFIX),so)
+ # install a shared library
 -install.lib.common: lib$(LIBROOT).so.$(MAJ).$(MIN) 
 -	cd $(INSTALLLIBS) ; rm -f lib$(LIBROOT).so.$(MAJ).*
 -	$(INSTALL) -m$(INSTALL_PERM_LIBD) $< $(INSTALLLIBS)
 -	cd $(INSTALLLIBS) ; rm -f lib$(LIBROOT).so; ln -s $< lib$(LIBROOT).so
--	cd $(INSTALLLIBS) ; rm -f; ln -s $< lib$(LIBROOT).so.$(MAJ)
--else
--# install a static library
--install.lib.common: lib$(LIBROOT).a
--	$(INSTALL) -m$(INSTALL_PERM_LIBS) $< $(INSTALLLIBS)/$<
--endif
-+install.lib.common: lib$(LIBROOT).so lib$(LIBROOT).a
-+	cd $(INSTALLLIBS) ; rm -f lib$(LIBROOT).*
-+	${BSD_INSTALL_DATA} lib$(LIBROOT).a $(INSTALLLIBS)
-+	${BSD_INSTALL_DATA} lib$(LIBROOT).so.$(MAJ) $(INSTALLLIBS)
-+	ln -sf lib$(LIBROOT).so.$(MAJ) $(INSTALLLIBS)/lib$(LIBROOT).so
+-	cd $(INSTALLLIBS) ; rm -f $(SONAME); ln -s $< $(SONAME)
++install.lib.common: $(SONAME)
++	cd $(INSTALLLIBS) ; rm -f lib$(LIBROOT).so.*
++	${BSD_INSTALL_DATA} $< $(INSTALLLIBS)
++	cd $(INSTALLLIBS) ; rm -f lib$(LIBROOT).so; ln -sf $< lib$(LIBROOT).so
+ endif
  
- .PHONY: dep
- dep Makefile.depend:
+ .PHONY: clean.common

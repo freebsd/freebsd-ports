@@ -1,26 +1,17 @@
---- GNUmakefile.orig	Sat May  6 19:14:26 2000
-+++ GNUmakefile	Mon May  8 00:00:00 2000
-@@ -30,7 +30,7 @@
- SRCDIR = .
- include $(SRCDIR)/Makefile.config
+--- GNUmakefile.orig	Tue May 16 10:15:34 2000
++++ GNUmakefile	Sat May 20 00:00:00 2000
+@@ -68,8 +68,8 @@
  
--SUBDIRS =	pbm pgm ppm pnm ppmtompeg pbmtoppa
-+SUBDIRS =	pbm pgm ppm pnm
- 
- # Note that the Tiff library, from the libtiff subdirectory, only gets built
- # if you specify the homegrown libtiff as $(TIFFLIB), in which case it is
-@@ -57,8 +57,8 @@
- 	$(SRCDIR)/stamp-date
  
  .PHONY: install
 -install: install.bin install.lib install.man 
 -install-merge: install.merge install.lib install.man
-+install: install.bin install.lib install.man install.hdr
-+install-merge: install.merge install.lib install.man install.hdr
++install: install.bin install.lib install.man install.dev
++install-merge: install.merge install.lib install.man install.dev
  
  .PHONY: merge
  merge:  compile.h
-@@ -68,21 +68,21 @@
+@@ -79,21 +79,21 @@
  
  .PHONY: install.bin
  install.bin:
@@ -30,8 +21,7 @@
  	    ( echo install.bin.$$i ; cd $$i ; $(MAKE) install.bin ); \
  	done
  
--.PHONY: install-merge
-+.PHONY: install.merge
+ .PHONY: install-merge
  install.merge:
 -	$(INSTALL) -d -mu=rwx,go=rx $(INSTALLBINARIES)
 +	-mkdir -p $(INSTALLBINARIES)
@@ -46,7 +36,7 @@
  	for i in $(SUBDIRS) ; do \
  	    ( echo install.lib.$$i ; cd $$i ; $(MAKE) install.lib ); \
  	done
-@@ -93,10 +93,17 @@
+@@ -104,7 +104,7 @@
  
  .PHONY: install.man
  install.man:
@@ -55,13 +45,23 @@
  	    $(INSTALLMANUALS1) $(INSTALLMANUALS3) $(INSTALLMANUALS5)
  	for i in $(SUBDIRS) ; do \
  	    ( echo install.man.$$i ; cd $$i ; $(MAKE) install.man ); \
-+	done
-+
-+.PHONY: install.hdr
-+install.hdr:
-+	-mkdir -p $(INSTALLHDRS)
-+	for i in $(SUBDIRS) ; do \
-+	    ( echo install.hdr.$$i ; cd $$i ; $(MAKE) install.hdr ); \
- 	done
+@@ -115,8 +115,8 @@
  
- .PHONY: clean
+ .PHONY: install.hdr
+ install.hdr:
+-	$(INSTALL) -d -mu=rwx,go=rx $(INSTALLHDRS)
+-	$(INSTALL) -m$(INSTALL_PERM_HDR) pbmplus.h $(INSTALLHDRS)
++	-mkdir -p $(INSTALLHDRS)
++	${BSD_INSTALL_DATA} pbmplus.h $(INSTALLHDRS)
+ 	for i in $(SUBDIRS) ; do \
+ 	    ( echo install.hdr.$$i ; cd $$i ; $(MAKE) install.hdr ); \
+ 	done
+@@ -127,7 +127,7 @@
+ 
+ .PHONY: install.staticlib
+ install.staticlib:
+-	$(INSTALL) -d -mu=rwx,go=rx $(INSTALLLIBS)
++	-mkdir -p $(INSTALLLIBS)
+ 	for i in $(SUBDIRS) ; do \
+ 	    (echo install.staticlib.$$i; cd $$i; $(MAKE) install.staticlib ); \
+ 	done

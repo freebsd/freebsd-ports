@@ -1,21 +1,16 @@
---- ppm/Makefile.orig	Sat May  6 12:57:43 2000
-+++ ppm/Makefile	Mon May  8 00:00:00 2000
-@@ -3,7 +3,7 @@
+--- ppm/Makefile.orig	Tue May 16 10:30:30 2000
++++ ppm/Makefile	Sat May 20 00:00:00 2000
+@@ -3,8 +3,7 @@
  
  LIBROOT = ppm
  LIBPPM = lib$(LIBROOT).$(NETPBMLIBSUFFIX)
 -MAJ = 9
-+MAJ = 1
- MIN = 1
+-MIN = 1
++SOVER = 1
  
  PGMDIR = $(SRCDIR)/pgm
-@@ -19,12 +19,13 @@
- endif
- 
- NETPBMLIBS = $(LIBPPM) $(PBMDIR)/$(LIBPBM) $(PGMDIR)/$(LIBPGM)
-+NETPBMLD = -L. -lppm -L$(PBMDIR) -lpbm -L$(PGMDIR) -lpgm
- LIBLIBS = $(PBMDIR)/$(LIBPBM) $(PGMDIR)/$(LIBPGM)
- 
+ LIBPGM = libpgm.$(NETPBMLIBSUFFIX)
+@@ -24,7 +23,7 @@
  PORTBINARIES =	bmptoppm eyuvtoppm gouldtoppm hpcdtoppm ilbmtoppm imgtoppm \
  		mtvtoppm pcxtoppm pgmtoppm pi1toppm picttoppm \
  		pjtoppm \
@@ -24,7 +19,7 @@
  		ppmdim ppmdist ppmdither \
  		ppmflash ppmhist ppmmake ppmmix ppmnorm \
  		ppmquant ppmrelief ppmshift ppmspread ppmtoacad \
-@@ -34,19 +35,20 @@
+@@ -34,12 +33,13 @@
  		ppmtotga ppmtouil ppmtoxpm ppmtoyuv \
  		ppmtoyuvsplit ppmtv \
  		qrttoppm rawtoppm rgb3toppm sldtoppm spctoppm \
@@ -39,68 +34,74 @@
  ifneq ($(JPEGLIB_DIR), NONE)
    ifneq ($(JPEGHDR_DIR), NONE)
        NOMERGEBINARIES += ppmtojpeg
-   endif
- endif
+@@ -48,7 +48,7 @@
+ 
+ MERGEBINARIES = $(PORTBINARIES) $(MATHBINARIES)
  
 -MATHBINARIES = ppmcie ppmforge ppmlabel ppmntsc ppmpat ppmqvga ppmtomap
 +MATHBINARIES = ppmcie ppmforge ppmlabel ppmpat ppmqvga ppmtomap
- BINARIES = $(PORTBINARIES) $(NOMERGEBINARIES) $(MATHBINARIES)
+ BINARIES = $(MERGEBINARIES) $(NOMERGEBINARIES) 
  SCRIPTS = ppmquantall ppmshadow ppmfade
  
-@@ -55,6 +57,8 @@
- MERGE_OBJECTS = $(patsubst %,%.o2, $(PORTBINARIES) $(MATHBINARIES))
+@@ -57,6 +57,8 @@
+ MERGE_OBJECTS = $(patsubst %,%.o2, $(MERGEBINARIES))
  
  LIBOBJECTS = libppm1.o libppm2.o libppm3.o libppm4.o libppm5.o bitio.o
 +LIBSOBJECTS = libppm1.so libppm2.so libppm3.so libppm4.so libppm5.so bitio.so
-+LIBOBJECTS_X = $(SRCDIR)/shhopt/libshhopt.a
++LIBSHHOPT = $(SRCDIR)/shhopt/libshhopt.a
  
  MANUALS1 = $(BINARIES) $(SCRIPTS)
  MANUALS3 = libppm
-@@ -62,7 +66,7 @@
+@@ -64,18 +66,24 @@
  
  MERGENAME= ppmmerge
  
--INTERFACE_HEADERS = ppm.h
+-INTERFACE_HEADERS = ppm.h ppmcmap.h
 +INTERFACE_HEADERS = ppm.h ppmcmap.h ppmdraw.h
  
  .PHONY: all
  all:        $(BINARIES)
-@@ -72,16 +76,23 @@
+-	$(MAKE) -C ppmtompeg all
+ .PHONY: merge
+ merge:      $(MERGENAME) $(NOMERGEBINARIES)
+-	$(MAKE) -C ppmtompeg all
  
- # Rules for plain programs.
- $(PORTBINARIES): %: %.o $(NETPBMLIBS)
--	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLIBS) \
--	  $(CDEBUG)
-+	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLD) $(CDEBUG)
- 
- # Rule for math-dependent programs.
- $(MATHBINARIES): %: %.o $(NETPBMLIBS)
--	$(LD) $(LDFLAGS) -o $@ $@.o -lm $(NETPBMLIBS) $(CDEBUG)
-+	$(LD) $(LDFLAGS) -o $@ $@.o -lm $(NETPBMLD) $(CDEBUG)
-+
-+ppmcolormask tgatoppm ximtoppm: %: %.o $(NETPBMLIBS) $(LIBOBJECTS_X)
-+	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLD) \
-+	  $(LIBOBJECTS_X) $(CDEBUG)
-+
-+ppmntsc: %: %.o $(NETPBMLIBS) $(LIBOBJECTS_X)
-+	$(LD) $(LDFLAGS) -o $@ $@.o -lm $(NETPBMLD) \
-+	  $(LIBOBJECTS_X) $(CDEBUG)
- 
- ppmtojpeg: %: %.o $(NETPBMLIBS)
--	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLIBS) \
+-ppmtojpeg: %: %.o $(NETPBMLIBS) $(LIBOPT)
++ppmcolormask tgatoppm ximtoppm: %: %.o $(NETPBMLIBS) $(LIBOPT) $(LIBSHHOPT)
+ 	$(LD) $(LDFLAGS) -o $@ $@.o `$(LIBOPT) $(NETPBMLIBS)` \
 -	  -L$(JPEGLIB_DIR) -ljpeg $(CDEBUG)
-+	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLD) \
-+	  $(LIBOBJECTS_X) -L$(JPEGLIB_DIR) -ljpeg $(CDEBUG)
++	  $(LIBSHHOPT) $(CDEBUG)
++
++ppmntsc: %: %.o $(NETPBMLIBS) $(LIBOPT) $(LIBSHHOPT)
++	$(LD) $(LDFLAGS) -o $@ $@.o `$(LIBOPT) $(NETPBMLIBS)` \
++	  -lm $(LIBSHHOPT) $(CDEBUG)
++
++ppmtojpeg: %: %.o $(NETPBMLIBS) $(LIBOPT) $(LIBSHHOPT)
++	$(LD) $(LDFLAGS) -o $@ $@.o `$(LIBOPT) $(NETPBMLIBS)` \
++	  -L$(JPEGLIB_DIR) -ljpeg $(LIBSHHOPT) $(CDEBUG)
  
  # And libraries.
  $(PBMDIR)/$(LIBPBM): FORCE
-@@ -96,6 +107,9 @@
+@@ -88,19 +96,19 @@
+ 
+ .PHONY: install.merge
+ install.merge: install.merge.common
+-	$(MAKE) -C ppmtompeg install.bin
+ 
+ .PHONY: install.lib
  install.lib: install.lib.common
  
+ .PHONY: install.man
+ install.man: install.man.common
+-	$(MAKE) -C ppmtompeg install.man
+ 
  include $(SRCDIR)/Makefile.common
-+
+ 
 +$(SRCDIR)/shhopt/libshhopt.a:
 +	cd ../shhopt; $(MAKE) libshhopt.a
- 
++
  .PHONY: clean
- clean:
+ clean: clean.common
+-	$(MAKE) -C ppmtompeg clean
+ 
+ FORCE:

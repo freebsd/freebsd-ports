@@ -1,41 +1,27 @@
---- pgm/Makefile.orig	Sat May  6 12:01:47 2000
-+++ pgm/Makefile	Mon May  8 00:00:00 2000
-@@ -3,7 +3,7 @@
+--- pgm/Makefile.orig	Sat May 13 09:36:06 2000
++++ pgm/Makefile	Sat May 20 00:00:00 2000
+@@ -3,14 +3,13 @@
  
  LIBROOT = pgm
  LIBPGM = lib$(LIBROOT).$(NETPBMLIBSUFFIX)
 -MAJ = 9
-+MAJ = 1
- MIN = 0
+-MIN = 0
++SOVER = 1
  
  PBMDIR = $(SRCDIR)/pbm
-@@ -13,6 +13,7 @@
- INCLUDE = -I$(SRCDIR) $(INCLUDEPBM) -I$(SRCDIR)/shhopt
+ INCLUDEPBM = -I$(PBMDIR)
+ LIBPBM = libpbm.$(NETPBMLIBSUFFIX)
+ 
+-INCLUDE = -I$(SRCDIR) $(INCLUDEPBM) -I$(SRCDIR)/shhopt
++INCLUDE = -I$(SRCDIR) $(INCLUDEPBM)
  
  NETPBMLIBS = $(LIBPGM) $(PBMDIR)/$(LIBPBM)
-+NETPBMLD = -L. -lpgm -L$(PBMDIR) -lpbm
  LIBLIBS = $(PBMDIR)/$(LIBPBM)
- 
- PORTBINARIES =	asciitopgm bioradtopgm fstopgm hipstopgm \
-@@ -26,6 +27,7 @@
- MERGE_OBJECTS = $(patsubst %,%.o2, $(BINARIES))
+@@ -27,6 +26,7 @@
+ MERGE_OBJECTS = $(patsubst %,%.o2, $(MERGEBINARIES))
  
  LIBOBJECTS = libpgm1.o libpgm2.o
 +LIBSOBJECTS = libpgm1.so libpgm2.so
  
  MANUALS1 =	$(BINARIES)
  MANUALS3 =	libpgm
-@@ -42,11 +44,11 @@
- 
- # Rules for plain programs.
- $(PORTBINARIES): %: %.o $(NETPBMLIBS)
--	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLIBS) $(CDEBUG)
-+	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLD) $(CDEBUG)
- 
- # Rule for math-dependent programs.
- $(MATHBINARIES): %: %.o $(NETPBMLIBS)
--	$(LD) $(LDFLAGS) -o $@ $@.o -lm $(NETPBMLIBS) $(CDEBUG)
-+	$(LD) $(LDFLAGS) -o $@ $@.o -lm $(NETPBMLD) $(CDEBUG)
- 
- # And libraries.
- $(PBMDIR)/$(LIBPBM): FORCE
