@@ -3,12 +3,17 @@ bin/attraction
 bin/blitspin
 bin/bouboule
 bin/braid
+bin/bsod
 bin/bubbles
 bin/coral
+bin/crystal
 bin/cynosure
 bin/decayscreen
 bin/deco
+bin/discrete
+bin/distort
 bin/drift
+bin/epicycle
 bin/fadeplot
 bin/flag
 bin/flame
@@ -24,9 +29,11 @@ bin/hopalong
 bin/hypercube
 bin/ifs
 bin/imsmap
+bin/interference
 bin/jigsaw
 bin/julia
 bin/kaleidescope
+bin/kumppa
 bin/laser
 bin/lightning
 bin/lisa
@@ -55,6 +62,7 @@ bin/starfish
 bin/strange
 bin/swirl
 bin/triangle
+bin/truchet
 bin/vines
 bin/worm
 bin/xjack
@@ -71,6 +79,7 @@ man/man1/bubbles.1.gz
 man/man1/decayscreen.1.gz
 man/man1/deco.1.gz
 man/man1/drift.1.gz
+man/man1/epicycle.1.gz
 man/man1/flag.1.gz
 man/man1/flame.1.gz
 man/man1/forest.1.gz
