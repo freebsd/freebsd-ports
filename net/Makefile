@@ -223,6 +223,7 @@
     SUBDIR += licq-qt-gui
     SUBDIR += linc
     SUBDIR += linpopup
+    SUBDIR += linux-edonkey-server
     SUBDIR += lla
     SUBDIR += macipgw
     SUBDIR += maradns
