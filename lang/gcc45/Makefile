@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	2002-04-06
+SNAPDATE=	2002-05-18
 SNAPVER=	${SNAPDATE:S/-//g}
 
 PORTNAME=	gcc
@@ -17,12 +17,12 @@ MASTER_SITES=	${MASTER_SITE_SOURCEWARE}  \
 		ftp://ftp.netwinder.org/pub/build/gcc/i386/${SNAPVER}/ \
 		ftp://egcs.cygnus.com/pub/egcs/snapshots/${SNAPDATE}/
 MASTER_SITE_SUBDIR=	gcc/snapshots/${SNAPDATE}
-DISTFILES=	\
-		gcc-core-${SNAPVER}${EXTRACT_SUFX} \
-		gcc-g++-${SNAPVER}${EXTRACT_SUFX} \
-		gcc-g77-${SNAPVER}${EXTRACT_SUFX} \
-		gcc-java-${SNAPVER}${EXTRACT_SUFX} \
-		gcc-objc-${SNAPVER}${EXTRACT_SUFX}
+#DISTFILES=	\
+#		gcc-core-${SNAPVER}${EXTRACT_SUFX} \
+#		gcc-g++-${SNAPVER}${EXTRACT_SUFX} \
+#		gcc-g77-${SNAPVER}${EXTRACT_SUFX} \
+#		gcc-java-${SNAPVER}${EXTRACT_SUFX} \
+#		gcc-objc-${SNAPVER}${EXTRACT_SUFX}
 #		gcc-ss-3.2-0_${SNAPVER}.src.rpm
 
 PATCH_SITES=	ftp://relay.nuxi.com/obrien/
@@ -35,16 +35,16 @@ LATEST_LINK=	gcc32
 
 USE_BZIP2=	yes
 
-CVS_DATE=	${SNAPDATE} 23:35 PST
+CVS_DATE=	${SNAPDATE} 04:27:07 EDT
 PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure
 
 .include <bsd.port.pre.mk>
 
-.if ${PORTOBJFORMAT} == "elf"
-CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
-.else
+.if ${PORTOBJFORMAT} == "aout"
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsdaout${OSREL}
+.else
+CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 .endif
 
 #GCC_REV=	${PORTVERSION:C/\.0$//}
@@ -82,13 +82,10 @@ pre-fetch:
 .if defined(CVS_DATE)
 NO_CHECKSUM=	yes
 DIST_SUBDIR=	${PKGNAME}
-CVS_CMD?=	cvs -z3
+CVS_CMD?=	cvs -z3 -qR
 CVSROOT=	:pserver:anoncvs@subversions.gnu.org:/cvsroot/gcc
 STAMPFILE=	${DISTDIR}/${DIST_SUBDIR}/.timestamp
 do-fetch:
-	@-[ ! -e ${DISTDIR}/${PKGNAME}/${PATCHFILES} ] \
-	    && fetch -o ${DISTDIR}/${PKGNAME}/${PATCHFILES} \
-		${PATCH_SITES}${PATCHFILES}
 	@if [ ! -e ${STAMPFILE} ] || \
 	    [ "X${CVS_DATE}" != "X$$(${CAT} ${STAMPFILE})" ]; then \
 		${MKDIR} ${DISTDIR}/${DIST_SUBDIR} && \
@@ -104,6 +101,9 @@ do-fetch:
 		${ECHO_MSG} ">> Please try again later."; \
 		exit 1; \
 	fi
+	@test -e ${DISTDIR}/${DIST_SUBDIR}/${PATCHFILES} \
+	    || fetch -o ${DISTDIR}/${DIST_SUBDIR}/${PATCHFILES} \
+		${PATCH_SITES}${PATCHFILES}
 
 do-extract:
 	${MKDIR} ${SRCDIR}
