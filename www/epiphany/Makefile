@@ -29,7 +29,7 @@ MOZILLA=	mozilla
 HEADERS_SUFX=
 .else
 .if ${WITH_MOZILLA}=="mozilla-devel-gtk2" || ${WITH_MOZILLA}=="mozilla-devel"
-MOZILLA=	${WITH_MOZILLA}
+MOZILLA=	mozilla-devel
 HEADERS_SUFX=	-devel
 MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="trunk"
 .else
