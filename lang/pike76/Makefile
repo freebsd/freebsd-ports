@@ -81,8 +81,8 @@ USE_BISON=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64" || ${ARCH} == "amd64"
-BROKEN=		"Build fails on sparc64 and amd64"
+.if ${ARCH} != "i386"
+BROKEN=		"Build fails on !i386"
 .endif
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
