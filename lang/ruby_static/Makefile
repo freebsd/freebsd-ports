@@ -81,10 +81,11 @@ PLIST_SUB+=	IF_DEFAULT=${IF_DEFAULT}
 do-fetch:
 	@${DO_NADA}
 
-.if defined(STATIC)
 post-patch:
+.if defined(STATIC)
 	${RUBY} -i -pe 'gsub /-rdynamic/, "-static"' ${WRKSRC}/configure.in
 .endif
+	${RUBY} -i -pe '$$. == 1 and puts %q/require "rbconfig.rb"/' ${WRKSRC}/ext/bdb1/extconf.rb
 
 do-extract:
 	${MKDIR} ${WRKDIR}
