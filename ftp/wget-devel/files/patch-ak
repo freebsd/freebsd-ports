@@ -1,0 +1,15 @@
+--- src/host.h.orig	Sat Jan 31 03:38:01 1998
++++ src/host.h	Fri Sep 24 15:49:42 1999
+@@ -25,8 +25,11 @@
+ /* Function declarations */
+ 
+ struct hostent *ngethostbyname PARAMS ((const char *));
++#ifdef INET6
++int store_hostaddress PARAMS ((struct sockaddr_storage *, const char *));
++#else
+ int store_hostaddress PARAMS ((unsigned char *, const char *));
+-
++#endif
+ void clean_hosts PARAMS ((void));
+ 
+ char *realhost PARAMS ((const char *));
