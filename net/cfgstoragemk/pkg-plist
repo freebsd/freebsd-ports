@@ -1,0 +1,4 @@
+bin/cfgstoragemaker
+share/cfgstoragemaker/body.tpl
+share/cfgstoragemaker/header.tpl
+@dirrm share/cfgstoragemaker

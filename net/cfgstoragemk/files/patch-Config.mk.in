@@ -1,0 +1,11 @@
+--- Config.mk.in.orig	Thu Jul  4 14:29:59 2002
++++ Config.mk.in	Thu Jul  4 14:30:10 2002
+@@ -18,7 +18,7 @@
+ # 02111-1307, USA.
+ 
+ OWN = root
+-GRP = root
++GRP = wheel
+ prefix = @prefix@
+ exec_prefix = @exec_prefix@
+ mandir = @mandir@/man1

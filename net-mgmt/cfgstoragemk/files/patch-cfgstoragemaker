@@ -1,0 +1,17 @@
+--- cfgstoragemaker.orig	Thu Jul  4 14:27:37 2002
++++ cfgstoragemaker	Thu Jul  4 14:28:21 2002
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl
+ 
+ # cfgstoragemaker: MRTG config generator for storage monitoring via SNMP
+ # Copyright (C) 2001, 2002 LibertySurf Telecom, Cyril Bouthors
+@@ -29,7 +29,7 @@
+ my $snmp_root = 'host.hrStorage.hrStorageTable.hrStorageEntry';
+ my $debug=0; #1 for additional info
+ 
+-my $tpl_dir = '/usr/share/cfgstoragemaker';
++my $tpl_dir = '%%PREFIX%%/share/cfgstoragemaker';
+ my $tpl_header = 'header.tpl';
+ my $tpl_body   = 'body.tpl';
+ 

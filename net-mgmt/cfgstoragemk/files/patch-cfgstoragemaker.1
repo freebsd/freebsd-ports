@@ -1,0 +1,15 @@
+--- cfgstoragemaker.1.orig	Thu Jul  4 14:32:22 2002
++++ cfgstoragemaker.1	Thu Jul  4 14:32:59 2002
+@@ -24,10 +24,10 @@
+ \fICfgstoragemaker\fR is written in Perl.
+ .SH FILES
+ .TP
+-.I /usr/share/snmp/mibs/HOST-RESOURCES-MIB.txt
++.I %%LOCALBASE%%/share/snmp/mibs/HOST-RESOURCES-MIB.txt
+ SNMP MIB file provided by ucd-snmp
+ .TP
+-.I /usr/share/cfgstoragemaker/templates/header.tpl /usr/share/cfgstoragemaker/templates/body.tpl
++.I %%PREFIX%%/share/cfgstoragemaker/templates/header.tpl %%PREFIX%%/share/cfgstoragemaker/templates/body.tpl
+ templates files to build the config file
+ .SH SEE ALSO
+ \fIcfgmaker\fP(1), \fIindexmaker\fP(1), \fImrtg\fP(1), \fIsnmpd\fP(1)

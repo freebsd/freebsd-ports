@@ -38,6 +38,7 @@
     SUBDIR += cap
     SUBDIR += cdpd
     SUBDIR += centericq
+    SUBDIR += cfgstoragemk
     SUBDIR += cflowd
     SUBDIR += choparp
     SUBDIR += cidr
