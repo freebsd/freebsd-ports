@@ -3,7 +3,7 @@
 # Date created:        Sun Apr 11 13:06:01 PDT 1999
 # Whom:                Michael Haro <mharo@area51.fremont.ca.us>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/05/05 22:16:12 mharo Exp $
 #
 
 DISTNAME=	libmikmod-3.1.6
@@ -12,18 +12,9 @@ MASTER_SITES=	http://www.multimania.com/miodrag/mikmod/
 
 MAINTAINER=	mharo@area51.fremont.ca.us
 
-BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
+LIB_DEPENDS=	esd.1:${PORTSDIR}/audio/esound
 
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-
-pre-build:
-	${RM} -rf ${WRKSRC}/info/mikmod.info*
-
-pre-install:
-	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
-	if [ ! -f ${PREFIX}/info/dir ]; then \
-		${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
-	fi
+USE_LIBTOOL=	yes
 
 .include <bsd.port.mk>
