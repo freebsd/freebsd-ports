@@ -1,36 +1,29 @@
---- fig2dev/Imakefile.orig	Fri Aug 22 23:33:55 1997
-+++ fig2dev/Imakefile	Sat Sep 27 14:35:49 1997
-@@ -37,7 +37,7 @@
+--- fig2dev/Imakefile.orig	Wed Jul  1 08:52:50 1998
++++ fig2dev/Imakefile	Tue Jan 19 11:14:16 1999
+@@ -42,7 +42,7 @@
  XCOMM inline functions. With the "INLINE" keyword, you should notice that
  XCOMM the display will be a bit faster in complex figures
  
 -XCOMM USEINLINE = -DUSE_INLINE
 +USEINLINE = -DUSE_INLINE
  
- XCOMM Uncomment the XPM variables here  if you have the XPM (color pixmap)
- XCOMM package and you would like to allow XPM files.
-@@ -100,8 +100,8 @@
- XCOMM     Hint: Users of LaTeX2e will probably want to include both of these
- XCOMM     options; users of LaTeX 2.09 will probably want to include neither.
- 
--XCOMM DDNFSS = -DNFSS
--XCOMM DDEPSF = -DEPSF
-+DDNFSS = -DNFSS
-+DDEPSF = -DEPSF
- 
- XCOMM For Linux machines or any machines that have a separate library for
- XCOMM the database management routines, uncomment the following line
-@@ -116,7 +116,8 @@
+ XCOMM Unomment the #define for USEXPM if you want to use the XPM
+ XCOMM (color pixmap) package.
+@@ -112,11 +112,11 @@
  
  XCOMM Uncomment the next line if you want use Japanese (i18n) on xfig.
  
--XCOMM I18N_DEFS = -DI18N -DFIG2DEV_LIBDIR='\"/usr/local/lib/fig2dev\"'
-+I18N_DEFS = -DI18N
+-XCOMM #define I18N
++#define I18N
+ 
+ #ifdef I18N
+ I18N_DEFS = -DI18N 
+-I18N_DEV_DEFS = $(I18N_DEFS) -DFIG2DEV_LIBDIR='\"/usr/local/lib/fig2dev\"'
 +I18N_DEV_DEFS = $(I18N_DEFS) -DFIG2DEV_LIBDIR='\"$(PREFIX)/lib/X11/fig2dev\"'
+ #endif
  
  DEFINES = $(NEED_STRERROR) $(HAVE_NO_STRCASECMP) $(HAVE_NO_STRNCASECMP) $(USEINLINE) \
- 	$(I18N_DEFS)
-@@ -138,7 +139,7 @@
+@@ -154,7 +154,7 @@
  
  #ifdef USEINSTALLEDJPEG
  JPEGLIBDIR = /usr/local/lib
@@ -38,26 +31,13 @@
 +JPEGINCDIR = /usr/local/include
  JPEGLIB = -L$(JPEGLIBDIR) -ljpeg
  #else
- JPEGLIBDIR = ../../jpeg
-@@ -161,7 +162,7 @@
- #endif
- 
- DEVDEFINES = $(DUSEJPEG) $(DUSEXPM) $(XPMINC) $(XPMDBM) \
--		$(DDNFSS) $(DDEPSF) $(DDA4) $(DDIBMGEC) $(DDDVIPS) $(I18N_DEFS)
-+		$(DDNFSS) $(DDEPSF) $(DDA4) $(DDIBMGEC) $(DDDVIPS) $(I18N_DEV_DEFS)
- 
- #define IHaveSubdirs
- #define PassCDebugFlags 'CDEBUGFLAGS=$(CDEBUGFLAGS)'
-@@ -175,10 +176,10 @@
- INCLUDES = -I.. -I$(JPEGINCDIR)
+ XCOMM this is relative to this directory (transfig/fig2dev)
+@@ -182,7 +182,7 @@
+ INCLUDES = -I..
  
  LOCAL_LIBRARIES = $(LIBTRANSFIG) $(JPEGLIB)
 -#if defined(NetBSDArchitecture)
-+#if defined(NetBSDArchitecture) 
- SYS_LIBRARIES = $(XPMLIB) $(DBMLIB) -lm -lcompat
++#if defined(NetBSDArchitecture) || defined(FreeBSDArchitecture)
+ SYS_LIBRARIES = $(XPMLIBS) $(DBMLIB) -lm -lcompat
  #else
--SYS_LIBRARIES = $(XPMLIB) $(DBMLIB) -lm
-+SYS_LIBRARIES = $(XPMLIB) $(XLIB) $(DBMLIB) -lm -lcompat
- #endif
- DEPLIBS = $(LIBTRANSFIG)
- 
+ SYS_LIBRARIES = $(XPMLIBS) $(DBMLIB) -lm
