@@ -1,7 +1,27 @@
-# $Id: Makefile,v 1.17 1995/04/01 13:24:03 jkh Exp $
+# $Id: Makefile,v 1.18 1995/05/01 11:55:37 ache Exp $
 #
-SUBDIR= archivers audio cad comms databases devel editors games graphics \
-	japanese lang mail math net news print russian shells utils x11
+
+SUBDIR += archivers
+SUBDIR += audio
+SUBDIR += cad
+SUBDIR += comms
+SUBDIR += databases
+SUBDIR += devel
+SUBDIR += editors
+SUBDIR += emulators
+SUBDIR += games
+SUBDIR += graphics
+SUBDIR += japanese
+SUBDIR += lang
+SUBDIR += mail
+SUBDIR += math
+SUBDIR += net
+SUBDIR += news
+SUBDIR += print
+SUBDIR += russian
+SUBDIR += shells
+SUBDIR += utils
+SUBDIR += x11
 
 .include <bsd.port.subdir.mk>
 
