@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qstat
-PORTVERSION=	2.4.e
+PORTVERSION=	2.5.a
 CATEGORIES=	games net
 MASTER_SITES=	http://www.qstat.org/
 DISTNAME=	qstat${PORTVERSION:S/.//g}
@@ -22,7 +22,6 @@ do-install:
 	@${ECHO_MSG} ""
 	@${MKDIR} ${DOCSDIR}
 	@${MKDIR} ${DOCSDIR}/template
-	@${INSTALL_DATA} ${WRKSRC}/qstat.txt ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/qstatdoc.html ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/template/* ${DOCSDIR}/template
 .endif
