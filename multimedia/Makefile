@@ -1,6 +1,5 @@
 # $FreeBSD$
 #
-    SUBDIR += WMxmms
     SUBDIR += acme
     SUBDIR += avidemux
     SUBDIR += avidemux2
