@@ -1,0 +1,8 @@
+%%RUBY_SITEARCHLIBDIR%%/termios.so
+%%PORTDOCS%%%%RUBY_DOCDIR%%/termios/ChangeLog
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/termios
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/termios/test0.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/termios/test1.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/termios/test2.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/termios/test3.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/termios
