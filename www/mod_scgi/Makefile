@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scgi
-PORTVERSION=	1.2.a2
+PORTVERSION=	1.2
 CATEGORIES=	www
 MASTER_SITES=	http://www.mems-exchange.org/software/files/scgi/
 PKGNAMEPREFIX=	mod_
@@ -17,7 +17,7 @@ COMMENT=	Apache module that implements the client side of the SCGI protocol
 
 USE_APACHE=	yes
 USE_REINPLACE=	yes
-WRKSRC=		${WRKDIR}/${DISTNAME}/${APACHE_DIR}
+WRKSRC=		${WRKDIR}/${DISTNAME}/${SCGI_DIR}
 
 .include <bsd.port.pre.mk>
 .if exists(${LOCALBASE}/include/apache2/apr.h)
@@ -25,15 +25,17 @@ WITH_APACHE2=	yes
 .endif
 
 .if defined(WITH_APACHE2)
-APACHE_DIR=	apache2
+SCGI_DIR=	apache2
 PLIST_SUB=	APACHE_DIR=apache2
 .else
-APACHE_DIR=	apache1
+SCGI_DIR=	apache1
 PLIST_SUB=	APACHE_DIR=apache
 .endif
 
-post-patch:
-	${REINPLACE_CMD} -E -e 's,apxs2?,${APXS},g' ${WRKSRC}/Makefile
+do-build:
+	cd ${WRKSRC} && ${APXS} -c mod_scgi.c
+do-install:
+	cd ${WRKSRC} && ${APXS} -i -c mod_scgi.c
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
