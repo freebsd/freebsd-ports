@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lostirc
-PORTVERSION=	0.2.5
-PORTREVISION=	1
+PORTVERSION=	0.2.7
 CATEGORIES=	irc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	rael@vectorstar.net
 COMMENT=	LostIRC is a simple and minimal IRC client for X
 
-LIB_DEPENDS=	gtkmm-2.0.6:${PORTSDIR}/x11-toolkits/gtk--2 \
+LIB_DEPENDS=	gtkmm-2:${PORTSDIR}/x11-toolkits/gtk--2 \
 		intl.4:${PORTSDIR}/devel/gettext
 
 USE_X_PREFIX=	yes
@@ -29,13 +28,15 @@ DOCS=	AUTHORS COPYING ChangeLog TODO README INSTALL
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
-
 post-patch:
 	${REINPLACE_CMD} -E "s@^(Gnomedir = ).*@\1${PREFIX}/share/gnome/apps/Internet@" ${WRKSRC}/Makefile.am
 	${REINPLACE_CMD} -E "s@(Gnomedir = ).*@\1${PREFIX}/share/gnome/apps/Internet@" ${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -E "s@^(pixmapdir = ).*@\1${PREFIX}/share/gnome/pixmaps@" ${WRKSRC}/Makefile.am
+	${REINPLACE_CMD} -E "s@(pixmapdir = ).*@\1${PREFIX}/share/gnome/pixmaps@" ${WRKSRC}/Makefile.in
+
+pre-install:
+	${REINPLACE_CMD} -E 's|MKINSTALLDIRS = \$$\(top_builddir\)/|MKINSTALLDIRS = |g' ${WRKSRC}/intl/Makefile
+	${REINPLACE_CMD} -E 's|MKINSTALLDIRS = \$$\(top_builddir\)/|MKINSTALLDIRS = |g' ${WRKSRC}/po/Makefile
 
 post-install:
 .if !defined(NOPORTDOCS)

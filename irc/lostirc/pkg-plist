@@ -1,7 +1,10 @@
-share/gnome/apps/Internet/lostirc.desktop
-share/applnk/lostirc.desktop
-share/locale/da/LC_MESSAGES/lostirc.mo
 bin/lostirc
+lib/charset.alias
+share/applnk/lostirc.desktop
+share/gnome/apps/Internet/lostirc.desktop
+share/gnome/pixmaps/lostirc.png
+share/locale/da/LC_MESSAGES/lostirc.mo
+share/locale/locale.alias
 %%PORTDOCS%%share/doc/lostirc/AUTHORS
 %%PORTDOCS%%share/doc/lostirc/COPYING
 %%PORTDOCS%%share/doc/lostirc/ChangeLog
@@ -9,3 +12,4 @@ bin/lostirc
 %%PORTDOCS%%share/doc/lostirc/README
 %%PORTDOCS%%share/doc/lostirc/TODO
 %%PORTDOCS%%@dirrm share/doc/lostirc
+
