@@ -3,7 +3,7 @@
 # Date created:					May 4th 1997
 # Whom:						jfitz@FreeBSD.ORG
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/05/30 19:59:08 jfitz Exp $
 #
 
 DISTNAME=	cyrus-imapd-v1.5.2
@@ -12,6 +12,8 @@ CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/
 
 MAINTAINER=	jfitz@FreeBSD.ORG
+
+BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 
 HAS_CONFIGURE=	YES
 CONFIGURE_ARGS=	--with-cyrus-prefix=${PREFIX}/cyrus \
