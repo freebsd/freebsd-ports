@@ -12,7 +12,7 @@ CATEGORIES=	math
 MASTER_SITES=	http://ploticus.sourceforge.net/download/
 DISTNAME=	pl${PORTVERSION:S/.//}src
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	linimon@FreeBSD.org
 COMMENT?=	Generates plots and graphs from data
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd \
