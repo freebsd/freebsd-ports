@@ -5,6 +5,7 @@ bin/my_print_defaults
 bin/myisamchk
 bin/myisamlog
 bin/myisampack
+bin/mysql_create_system_tables
 bin/mysql_install_db
 bin/mysql_waitpid
 bin/mysqld_safe
