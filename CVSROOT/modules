@@ -6188,6 +6188,7 @@ scsi_system	-a scsi_base scsi_isa scsi_eisa scsi_pci scsi_i386 scsi_dev
 scsiformat	src/sbin/scsiformat
 scspd		src/usr.sbin/atm/scspd
 scud		ports/comms/scud
+scummvm		ports/games/scummvm
 scwm		ports/x11-wm/scwm
 scwm-icons	ports/graphics/scwm-icons
 sdcc		ports/devel/sdcc
