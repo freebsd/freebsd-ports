@@ -17,6 +17,5 @@ MAINTAINER=		mph@freebsd.org
 WRKSRC=			${WRKDIR}/xinfocom
 
 USE_IMAKE=		yes
-NO_INSTALL_MANPAGES=	yes
 
 .include <bsd.port.mk>
