@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pho
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://shallowsky.com/software/pho/
 
@@ -19,8 +19,11 @@ USE_REINPLACE=	yes
 
 MAN1=		pho.1
 
-do-configure:
-	@(cd ${WRKSRC} && ${REINPLACE_CMD} -e 's|make|gmake|g' Makefile)
-	@(cd ${WRKSRC} && ${REINPLACE_CMD} -e 's|install -D|install|g' Makefile)
+post-patch:
+	@${REINPLACE_CMD} -e 's|make|${GMAKE}|g; \
+		s|$$(INSTALL) \(pho \)|${INSTALL_PROGRAM} \1|; \
+		s|$$(INSTALL) \(pho.1\)|${INSTALL_MAN} \1|; \
+		s|-g -O2|${CFLAGS}|' \
+		${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
