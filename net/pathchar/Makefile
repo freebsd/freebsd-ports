@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.ee.lbl.gov/pathchar/  \
 		http://www.caida.org/Tools/Pathchar/  \
 		http://www.fips.de/Computer/woman/  \
 		http://sitka.triumf.ca/net/  \
-		http://people.FreeBSD.org/~obrien/Distfiles/
+		ftp://ftp.freebsd.org/pub/FreeBSD/local-distfiles/obrien/
 DISTNAME=	pathchar-a1-freebsd-3.0
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} pathcharnotes.html pathchar.8 \
 		pathchar.mantxt

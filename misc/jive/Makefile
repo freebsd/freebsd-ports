@@ -10,7 +10,7 @@ PORTNAME=	jive
 PORTVERSION=	1.1
 CATEGORIES=	misc
 MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/misc/  \
-		http://people.FreeBSD.org/~obrien/Distfiles/
+		ftp://ftp.freebsd.org/pub/FreeBSD/local-distfiles/obrien/
 
 MAINTAINER=	obrien@FreeBSD.org
 
