@@ -39,6 +39,7 @@ quota		"With Quota support" OFF \
 	esac
 fi
 
+${MKDIR} ${WRKDIRPREFIX}${REALCURDIR}
 echo "SCRIPT_RUN=yes" >${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
 
 while [ "$1" ]; do
