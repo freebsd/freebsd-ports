@@ -1,0 +1,5 @@
+libmcrypt is a cryptographic library that conveniently brings together
+a variety of ciphers for convenient use.
+
+In particular, having libmcrypt allows you to build PHP3 with
+encryption.

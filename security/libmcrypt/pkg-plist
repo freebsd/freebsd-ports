@@ -1,0 +1,5 @@
+lib/libmcrypt.a
+lib/libmcrypt.la
+lib/libmcrypt.so
+lib/libmcrypt.so.2
+include/mcrypt.h
