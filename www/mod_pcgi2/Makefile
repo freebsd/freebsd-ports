@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	mod_pcgi2
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	www zope
-MASTER_SITES=	http://www.zope.org/Members/phd/mod_pcgi2/
+MASTER_SITES=	http://zope.org/Members/phd/mod_pcgi2/mod_pcgi2/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	perky@FreeBSD.org
