@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	thunderbird
-PORTVERSION=	0.7
+PORTVERSION=	0.7.1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	thunderbird/releases/${PORTVERSION}
@@ -132,6 +132,8 @@ pre-install:
 	${MKDIR} ${LOCAL_PREFIX}/lib/${PORTNAME}-${PORTVERSION}/extensions.port
 
 post-install:
+	@${INSTALL_DATA} ${FILESDIR}/Extensions.rdf \
+		${LOCAL_PREFIX}/lib/${PORTNAME}-${PORTVERSION}/extensions.port
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	${RM} -f ${PREFIX}/bin/thunderbird
 	${LN} -s ${LOCAL_PREFIX}/bin/thunderbird \
@@ -146,8 +148,6 @@ post-install:
 	${RM} -fr ${LOCAL_PREFIX}/lib/${PORTNAME}-${PORTVERSION}/chrome/en-${ii}${jj}
 .endfor
 .endfor
-	@${INSTALL_DATA} ${FILESDIR}/Extensions.rdf \
-		${LOCAL_PREFIX}/lib/${PORTNAME}-${PORTVERSION}/extensions.port
 
 cons-plist:
 	-${RM} -f ${PLIST}
