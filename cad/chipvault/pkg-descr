@@ -1,0 +1,14 @@
+ChipVault is a VHDL and Verilog Chip Design Organization tool which improves
+design efficiency by:
+   - Providing the ability to Navigate and Edit files Hierarchically.
+   - Automatically generating Schematic Component Port views of VHDL and
+     Verilog RTL files.
+   - Automating RTL instantiation and template generation.
+   - Providing Revision Control (designed for HW, not SW development).
+   - Supporting External Tool Hooks (bottom-up vcoms,etc).
+   - Providing an Issue Tracking Log with sorting.
+   - Providing Netlist sorting and hierarchy viewing.
+   - Supporting web-sharing of RTL files (both encrypted and clear).
+   - Fast and Nimble.
+
+WWW: http://chipvault.sourceforge.net/
