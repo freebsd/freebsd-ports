@@ -112,7 +112,6 @@
     SUBDIR += gforge
     SUBDIR += glibwww
     SUBDIR += gnuinfo
-    SUBDIR += gnujsp
     SUBDIR += goose
     SUBDIR += grail
     SUBDIR += gtkhtml
