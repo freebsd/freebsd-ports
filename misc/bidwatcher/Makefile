@@ -22,8 +22,10 @@ CFLAGS+=		-UHAVE_GMTIME
 
 # The software includes a "fudge factor" for the snipe timer; by default
 # it snipes 5 minutes (300 seconds) before the time that you tell it to.
-# To change the "fudge factor" to a different value, set TIMEFUDGE to the
-# desired number of seconds.
+# This fudge factor is only used in certain cases where the software
+# cannot synchronize its time to eBay (for some reason).  To change the
+# "fudge factor" to a different value, set TIMEFUDGE to the desired
+# number of seconds.
 
 TIMEFUDGE?=		300
 CFLAGS+=		-DHAVE_TM_ZONE -DTIMEFUDGE=${TIMEFUDGE}
