@@ -1,11 +1,15 @@
 bin/nabi
 share/gnome/nabi/candidate/nabi.txt
 share/gnome/nabi/compose/default
+share/gnome/nabi/compose/full
 share/gnome/nabi/keyboard/2qwerty
 share/gnome/nabi/keyboard/32qwerty
 share/gnome/nabi/keyboard/39qwerty
 share/gnome/nabi/keyboard/3fqwerty
+share/gnome/nabi/keyboard/3sqwerty
+share/gnome/nabi/nabi-about.png
 share/gnome/nabi/nabi.png
+share/gnome/nabi/nabi.svg
 share/gnome/nabi/themes/KingSejong/README
 share/gnome/nabi/themes/KingSejong/english.png
 share/gnome/nabi/themes/KingSejong/hangul.png
@@ -27,20 +31,24 @@ share/gnome/nabi/themes/Onion/none.png
 share/gnome/nabi/themes/SimplyRed/english.png
 share/gnome/nabi/themes/SimplyRed/hangul.png
 share/gnome/nabi/themes/SimplyRed/none.png
+share/gnome/nabi/themes/Tux/english.png
+share/gnome/nabi/themes/Tux/hangul.png
+share/gnome/nabi/themes/Tux/none.png
 share/gnome/nabi/themes/keyboard/README
 share/gnome/nabi/themes/keyboard/english.png
 share/gnome/nabi/themes/keyboard/hangul.png
 share/gnome/nabi/themes/keyboard/none.png
 share/locale/ko/LC_MESSAGES/nabi.mo
-@dirrm share/gnome/nabi/themes/keyboard
-@dirrm share/gnome/nabi/themes/SimplyRed
-@dirrm share/gnome/nabi/themes/Onion
-@dirrm share/gnome/nabi/themes/Mac
-@dirrm share/gnome/nabi/themes/MSWindowsXP
-@dirrm share/gnome/nabi/themes/MSWindows
 @dirrm share/gnome/nabi/themes/KingSejong
-@dirrm share/gnome/nabi/themes
-@dirrm share/gnome/nabi/keyboard
-@dirrm share/gnome/nabi/compose
+@dirrm share/gnome/nabi/themes/MSWindows
+@dirrm share/gnome/nabi/themes/MSWindowsXP
+@dirrm share/gnome/nabi/themes/Mac
+@dirrm share/gnome/nabi/themes/Onion
+@dirrm share/gnome/nabi/themes/SimplyRed
+@dirrm share/gnome/nabi/themes/Tux
+@dirrm share/gnome/nabi/themes/keyboard
 @dirrm share/gnome/nabi/candidate
+@dirrm share/gnome/nabi/compose
+@dirrm share/gnome/nabi/keyboard
+@dirrm share/gnome/nabi/themes
 @dirrm share/gnome/nabi
