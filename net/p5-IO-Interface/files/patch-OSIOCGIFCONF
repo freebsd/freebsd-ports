@@ -1,0 +1,24 @@
+--- Interface.xs.orig	Wed Apr 25 15:45:43 2001
++++ Interface.xs	Wed Apr 25 15:47:13 2001
+@@ -13,6 +13,12 @@
+ #include <sys/sockio.h>
+ #endif
+ 
++#ifdef OSIOCGIFCONF
++#define MY_SIOCGIFCONF OSIOCGIFCONF
++#else
++#define MY_SIOCGIFCONF SIOCGIFCONF
++#endif
++
+ #ifdef PerlIO
+ typedef PerlIO * InputStream;
+ #else
+@@ -581,7 +587,7 @@
+ 	   croak("Couldn't malloc buffer for ioctl: %s",strerror(errno));
+ 	 ifc.ifc_len = len;
+ 	 ifc.ifc_buf = buf;
+-	 if (ioctl(PerlIO_fileno(sock),SIOCGIFCONF,&ifc) < 0) {
++	 if (ioctl(PerlIO_fileno(sock),MY_SIOCGIFCONF,&ifc) < 0) {
+ 	   if (errno != EINVAL || lastlen != 0)
+ 	     XSRETURN_EMPTY;
+ 	 } else {
