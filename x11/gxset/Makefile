@@ -24,6 +24,10 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
 NOMAN=
+
 PLIST_FILES=	bin/gxset
+PLIST_FILES+=	share/locale/cs/LC_MESSAGES/gxset.mo
+PLIST_FILES+=	share/locale/da/LC_MESSAGES/gxset.mo
+PLIST_FILES+=	share/locale/ja/LC_MESSAGES/gxset.mo
 
 .include <bsd.port.mk>
