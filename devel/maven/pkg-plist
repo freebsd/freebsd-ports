@@ -51,12 +51,12 @@ bin/maven
 %%DATADIR%%/plugins/maven-clean-plugin-1.3.jar
 %%DATADIR%%/plugins/maven-clover-plugin-1.6.jar
 %%DATADIR%%/plugins/maven-console-plugin-1.1.jar
-%%DATADIR%%/plugins/maven-cruisecontrol-plugin-1.5.jar
-%%DATADIR%%/plugins/maven-dashboard-plugin-1.5.jar
+%%DATADIR%%/plugins/maven-cruisecontrol-plugin-1.6.jar
+%%DATADIR%%/plugins/maven-dashboard-plugin-1.6.jar
 %%DATADIR%%/plugins/maven-developer-activity-plugin-1.5.1.jar
 %%DATADIR%%/plugins/maven-dist-plugin-1.6.1.jar
 %%DATADIR%%/plugins/maven-docbook-plugin-1.2.jar
-%%DATADIR%%/plugins/maven-ear-plugin-1.5.jar
+%%DATADIR%%/plugins/maven-ear-plugin-1.6.jar
 %%DATADIR%%/plugins/maven-eclipse-plugin-1.9.jar
 %%DATADIR%%/plugins/maven-ejb-plugin-1.5.jar
 %%DATADIR%%/plugins/maven-faq-plugin-1.4.jar
@@ -69,7 +69,7 @@ bin/maven
 %%DATADIR%%/plugins/maven-j2ee-plugin-1.5.1.jar
 %%DATADIR%%/plugins/maven-jalopy-plugin-1.3.1.jar
 %%DATADIR%%/plugins/maven-jar-plugin-1.6.1.jar
-%%DATADIR%%/plugins/maven-java-plugin-1.4.jar
+%%DATADIR%%/plugins/maven-java-plugin-1.5.jar
 %%DATADIR%%/plugins/maven-javacc-plugin-1.1.jar
 %%DATADIR%%/plugins/maven-javadoc-plugin-1.7.jar
 %%DATADIR%%/plugins/maven-jboss-plugin-1.5.jar
@@ -89,7 +89,7 @@ bin/maven
 %%DATADIR%%/plugins/maven-latex-plugin-1.4.1.jar
 %%DATADIR%%/plugins/maven-latka-plugin-1.4.1.jar
 %%DATADIR%%/plugins/maven-license-plugin-1.2.jar
-%%DATADIR%%/plugins/maven-linkcheck-plugin-1.3.3.jar
+%%DATADIR%%/plugins/maven-linkcheck-plugin-1.3.4.jar
 %%DATADIR%%/plugins/maven-multichanges-plugin-1.1.jar
 %%DATADIR%%/plugins/maven-multiproject-plugin-1.3.1.jar
 %%DATADIR%%/plugins/maven-native-plugin-1.1.jar
