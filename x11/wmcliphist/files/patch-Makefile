@@ -1,20 +1,37 @@
---- Makefile.orig	Tue Mar 20 20:27:15 2001
-+++ Makefile	Fri Jul 27 16:59:05 2001
-@@ -1,13 +1,14 @@
- CC = gcc
--CFLAGS = -Wall -g -ansi `gtk-config --cflags` -I. -Ifoodock
--LFLAGS = `gtk-config --libs`
-+CFLAGS += -Wall `${GTK_CONFIG} --cflags` $(INCDIR)
-+LFLAGS = `${GTK_CONFIG} --libs`
-+INCDIR = -I. -Ifoodock -I${X11BASE}/include
- OBJECTS = wmcliphist.o
- TARGET = wmcliphist
+--- Makefile.orig	Thu Dec 20 11:31:46 2001
++++ Makefile	Sat Feb 16 22:24:52 2002
+@@ -1,6 +1,4 @@
+-CC = gcc
+-
+-INCLUDES = `gtk-config --cflags` -I. -Ifoodock
++INCLUDES = `${GTK_CONFIG} --cflags` -I. -Ifoodock
  
- all: $(TARGET)
+ # choose icon
+ #    for light background
+@@ -11,7 +9,7 @@
+ #ICON_TYPE = 2
+ 
+ # for normal use
+-CFLAGS = -Wall -O2 -ansi -pedantic $(INCLUDES) -DICON_TYPE=$(ICON_TYPE)
++CFLAGS += $(INCLUDES) -DICON_TYPE=$(ICON_TYPE)
+ DEBUG = 
+ 
+ # for debuggind purposes
+@@ -21,7 +19,7 @@
+ #DEBUG = debug.o
+ 
+ 
+-LFLAGS = `gtk-config --libs`
++LFLAGS = `${GTK_CONFIG} --libs`
+ 
+ 
+ OBJECTS = wmcliphist.o clipboard.o gui.o rcconfig.o history.o hotkeys.o $(DEBUG)
+@@ -33,7 +31,7 @@
+ 	lclint $(INCLUDES) +posixlib *.c >lclint.log
  
  wmcliphist: $(OBJECTS) foodock/foodock.o
 -	$(CC) $(LFLAGS) -o $@ $(OBJECTS) foodock/foodock.o
-+	$(CC) $(CFLAGS) $(LFLAGS) -o $@ $(OBJECTS) foodock.o
++	$(CC) $(LFLAGS) -o $@ $(OBJECTS) foodock.o
  
- wmcliphist.o: wmcliphist.c icon.xpm foodock/foodock.h
- 
+ wmcliphist.o: wmcliphist.c wmcliphist.h icon/wmcliphist_ico_mask.xbm \
+ 	icon/wmcliphist_ico_dark.xpm icon/wmcliphist_ico_mid.xpm \
