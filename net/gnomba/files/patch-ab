@@ -1,0 +1,147 @@
+--- properties.c.orig	Sat Mar 25 22:15:19 2000
++++ properties.c	Sat Mar 25 22:15:42 2000
+@@ -158,19 +158,19 @@
+   /* set net font property */
+   if (strcmp(TNetFont, NetFont)) {
+     nodeStyle = gtk_style_copy(gtk_widget_get_style(GTK_WIDGET(tree)));
+-    nodeStyle->font = gdk_font_load(NetFont);
++    nodeStyle->font = gdk_fontset_load(NetFont);
+     gtk_ctree_node_set_cell_style(GTK_CTREE(tree), GTK_CTREE_NODE(node), 0, nodeStyle);
+   }
+   /* set comment font property */
+   if (strcmp(TCommentFont, CommentFont)) {
+     nodeStyle = gtk_style_copy(gtk_widget_get_style(GTK_WIDGET(tree)));
+-    nodeStyle->font = gdk_font_load(CommentFont);
++    nodeStyle->font = gdk_fontset_load(CommentFont);
+     gtk_ctree_node_set_cell_style(GTK_CTREE(tree), GTK_CTREE_NODE(node), 1, nodeStyle);
+   }
+   /* set mount font property */
+   if (strcmp(TMountFont, MountFont)) {
+     nodeStyle = gtk_style_copy(gtk_widget_get_style(GTK_WIDGET(tree)));
+-    nodeStyle->font = gdk_font_load(MountFont);
++    nodeStyle->font = gdk_fontset_load(MountFont);
+     gtk_ctree_node_set_cell_style(GTK_CTREE(tree), GTK_CTREE_NODE(node), 2, nodeStyle);
+   }
+ }
+--- smbwrap.c.orig	Sat Mar 25 22:15:23 2000
++++ smbwrap.c	Sat Mar 25 22:16:26 2000
+@@ -269,17 +269,17 @@
+ 
+       /* set net font */
+       nodeStyle = gtk_style_copy(gtk_widget_get_style(GTK_WIDGET(workgrouplist)));
+-      nodeStyle->font = gdk_font_load(NetFont);
++      nodeStyle->font = gdk_fontset_load(NetFont);
+       gtk_ctree_node_set_cell_style(GTK_CTREE(workgrouplist), GTK_CTREE_NODE(node), 0, nodeStyle);
+ 
+       /* set comment font */
+       nodeStyle = gtk_style_copy(gtk_widget_get_style(GTK_WIDGET(workgrouplist)));
+-      nodeStyle->font = gdk_font_load(CommentFont);
++      nodeStyle->font = gdk_fontset_load(CommentFont);
+       gtk_ctree_node_set_cell_style(GTK_CTREE(workgrouplist), GTK_CTREE_NODE(node), 1, nodeStyle);
+ 
+       /* set mount font */
+       nodeStyle = gtk_style_copy(gtk_widget_get_style(GTK_WIDGET(workgrouplist)));
+-      nodeStyle->font = gdk_font_load(MountFont);
++      nodeStyle->font = gdk_fontset_load(MountFont);
+       gtk_ctree_node_set_cell_style(GTK_CTREE(workgrouplist), GTK_CTREE_NODE(node), 2, nodeStyle);
+ 
+       mn = copyMN(tmp);
+@@ -694,17 +694,17 @@
+ 
+ 	/* set net font */
+ 	nodeStyle = gtk_style_copy( gtk_widget_get_style( GTK_WIDGET(workgrouplist) ) );
+-	nodeStyle->font = gdk_font_load( NetFont ); 
++	nodeStyle->font = gdk_fontset_load( NetFont ); 
+ 	gtk_ctree_node_set_cell_style( GTK_CTREE(workgrouplist), GTK_CTREE_NODE(rootnode), 0, nodeStyle );
+ 
+ 	/* set comment font */
+ 	nodeStyle = gtk_style_copy( gtk_widget_get_style( GTK_WIDGET(workgrouplist) ) );
+-	nodeStyle->font = gdk_font_load( CommentFont ); 
++	nodeStyle->font = gdk_fontset_load( CommentFont ); 
+ 	gtk_ctree_node_set_cell_style( GTK_CTREE(workgrouplist), GTK_CTREE_NODE(rootnode), 1, nodeStyle ); 
+ 
+ 	/* set mount font */
+ 	nodeStyle = gtk_style_copy( gtk_widget_get_style( GTK_WIDGET(workgrouplist) ) );
+-	nodeStyle->font = gdk_font_load( MountFont ); 
++	nodeStyle->font = gdk_fontset_load( MountFont ); 
+ 	gtk_ctree_node_set_cell_style( GTK_CTREE(workgrouplist), GTK_CTREE_NODE(rootnode), 2, nodeStyle ); 
+ 	
+ 	
+@@ -728,17 +728,17 @@
+       
+ 			/* set net font */
+ 			nodeStyle = gtk_style_copy( gtk_widget_get_style( GTK_WIDGET(workgrouplist) ) );
+-			nodeStyle->font = gdk_font_load( NetFont ); 
++			nodeStyle->font = gdk_fontset_load( NetFont ); 
+ 			gtk_ctree_node_set_cell_style( GTK_CTREE(workgrouplist), GTK_CTREE_NODE(node), 0, nodeStyle );
+ 			
+ 			/* set comment font */
+ 			nodeStyle = gtk_style_copy( gtk_widget_get_style( GTK_WIDGET(workgrouplist) ) );
+-			nodeStyle->font = gdk_font_load( CommentFont ); 
++			nodeStyle->font = gdk_fontset_load( CommentFont ); 
+ 			gtk_ctree_node_set_cell_style( GTK_CTREE(workgrouplist), GTK_CTREE_NODE(node), 1, nodeStyle ); 
+ 		
+ 			/* set mount font */
+ 			nodeStyle = gtk_style_copy( gtk_widget_get_style( GTK_WIDGET(workgrouplist) ) );
+-			nodeStyle->font = gdk_font_load( MountFont ); 
++			nodeStyle->font = gdk_fontset_load( MountFont ); 
+ 			gtk_ctree_node_set_cell_style( GTK_CTREE(workgrouplist), GTK_CTREE_NODE(node), 2, nodeStyle ); 
+ 			 
+ 			
+@@ -758,17 +758,17 @@
+ 			
+ 			/* set net font */
+ 			nodeStyle = gtk_style_copy( gtk_widget_get_style( GTK_WIDGET(workgrouplist) ) );
+-			nodeStyle->font = gdk_font_load( NetFont ); 
++			nodeStyle->font = gdk_fontset_load( NetFont ); 
+ 			gtk_ctree_node_set_cell_style( GTK_CTREE(workgrouplist), GTK_CTREE_NODE(subtree), 0, nodeStyle );
+ 			
+ 			/* set comment font */
+ 			nodeStyle = gtk_style_copy( gtk_widget_get_style( GTK_WIDGET(workgrouplist) ) );
+-			nodeStyle->font = gdk_font_load( CommentFont ); 
++			nodeStyle->font = gdk_fontset_load( CommentFont ); 
+ 			gtk_ctree_node_set_cell_style( GTK_CTREE(workgrouplist), GTK_CTREE_NODE(subtree), 1, nodeStyle ); 
+ 		
+ 			/* set mount font */
+ 			nodeStyle = gtk_style_copy( gtk_widget_get_style( GTK_WIDGET(workgrouplist) ) );
+-			nodeStyle->font = gdk_font_load( MountFont ); 
++			nodeStyle->font = gdk_fontset_load( MountFont ); 
+ 			gtk_ctree_node_set_cell_style( GTK_CTREE(workgrouplist), GTK_CTREE_NODE(subtree), 2, nodeStyle ); 
+ 			 
+      
+@@ -787,17 +787,17 @@
+       
+ 			/* set net font */
+ 			nodeStyle = gtk_style_copy( gtk_widget_get_style( GTK_WIDGET(workgrouplist) ) );
+-			nodeStyle->font = gdk_font_load( NetFont ); 
++			nodeStyle->font = gdk_fontset_load( NetFont ); 
+ 			gtk_ctree_node_set_cell_style( GTK_CTREE(workgrouplist), GTK_CTREE_NODE(node), 0, nodeStyle );
+ 			
+ 			/* set comment font */
+ 			nodeStyle = gtk_style_copy( gtk_widget_get_style( GTK_WIDGET(workgrouplist) ) );
+-			nodeStyle->font = gdk_font_load( CommentFont ); 
++			nodeStyle->font = gdk_fontset_load( CommentFont ); 
+ 			gtk_ctree_node_set_cell_style( GTK_CTREE(workgrouplist), GTK_CTREE_NODE(node), 1, nodeStyle ); 
+ 		
+ 			/* set mount font */
+ 			nodeStyle = gtk_style_copy( gtk_widget_get_style( GTK_WIDGET(workgrouplist) ) );
+-			nodeStyle->font = gdk_font_load( MountFont ); 
++			nodeStyle->font = gdk_fontset_load( MountFont ); 
+ 			gtk_ctree_node_set_cell_style( GTK_CTREE(workgrouplist), GTK_CTREE_NODE(node), 2, nodeStyle ); 
+ 			 
+ 			
+--- gnomba.c.orig	Sat Mar 25 22:22:34 2000
++++ gnomba.c	Sat Mar 25 22:23:28 2000
+@@ -143,9 +143,9 @@
+   DefaultCommand = gnome_config_get_string("Options/DefaultCommand=gmc");
+   SilentlyCreateMountPoint = gnome_config_get_int ("Options/SilentlyCreateMountPoint=0");
+   DontRemoveCreatedMount = gnome_config_get_int ("Options/DontRemoveCreatedMount=0");
+-  NetFont = gnome_config_get_string("Options/NetFont=-adobe-helvetica-medium-r-normal-*-*-120-*-*-p-*-iso8859-1"); 
+-	CommentFont = gnome_config_get_string("Options/CommentFont=-adobe-helvetica-medium-r-normal-*-*-120-*-*-p-*-iso8859-1"); 
+-  MountFont = gnome_config_get_string("Options/MountFont=-adobe-helvetica-medium-r-normal-*-*-120-*-*-p-*-iso8859-1"); 
++  NetFont = gnome_config_get_string("Options/NetFont=-adobe-helvetica-medium-r-normal-*-*-120-*-*-p-*-iso8859-1,*"); 
++	CommentFont = gnome_config_get_string("Options/CommentFont=-adobe-helvetica-medium-r-normal-*-*-120-*-*-p-*-iso8859-1,*"); 
++  MountFont = gnome_config_get_string("Options/MountFont=-adobe-helvetica-medium-r-normal-*-*-120-*-*-p-*-iso8859-1,*"); 
+ 																								 
+ 	gnome_config_pop_prefix();
+ 
