@@ -925,6 +925,7 @@
     SUBDIR += vtcl
     SUBDIR += whups
     SUBDIR += wizard
+    SUBDIR += wxGlade
     SUBDIR += xmake
     SUBDIR += xparam
     SUBDIR += xtl
