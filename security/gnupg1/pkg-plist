@@ -27,21 +27,21 @@ share/locale/pt/LC_MESSAGES/gnupg.mo
 share/locale/pt_BR/LC_MESSAGES/gnupg.mo
 share/locale/sv/LC_MESSAGES/gnupg.mo
 share/locale/tr/LC_MESSAGES/gnupg.mo
-share/doc/gnupg/README
-share/doc/gnupg/DETAILS
-share/doc/gnupg/FAQ
-share/doc/gnupg/HACKING
-share/doc/gnupg/OpenPGP
-share/doc/gnupg/ABOUT-NLS
-share/doc/gnupg/AUTHORS
-share/doc/gnupg/BUGS
-share/doc/gnupg/COPYING
-share/doc/gnupg/INSTALL
-share/doc/gnupg/NEWS
-share/doc/gnupg/PROJECTS
-share/doc/gnupg/THANKS
-share/doc/gnupg/TODO
-share/doc/gnupg/VERSION
+%%PORTDOCS%%share/doc/gnupg/README
+%%PORTDOCS%%share/doc/gnupg/DETAILS
+%%PORTDOCS%%share/doc/gnupg/FAQ
+%%PORTDOCS%%share/doc/gnupg/HACKING
+%%PORTDOCS%%share/doc/gnupg/OpenPGP
+%%PORTDOCS%%share/doc/gnupg/ABOUT-NLS
+%%PORTDOCS%%share/doc/gnupg/AUTHORS
+%%PORTDOCS%%share/doc/gnupg/BUGS
+%%PORTDOCS%%share/doc/gnupg/COPYING
+%%PORTDOCS%%share/doc/gnupg/INSTALL
+%%PORTDOCS%%share/doc/gnupg/NEWS
+%%PORTDOCS%%share/doc/gnupg/PROJECTS
+%%PORTDOCS%%share/doc/gnupg/THANKS
+%%PORTDOCS%%share/doc/gnupg/TODO
+%%PORTDOCS%%share/doc/gnupg/VERSION
 @dirrm lib/gnupg
 @dirrm share/gnupg
 @unexec rmdir %D/share/locale/da/LC_MESSAGES 2>/dev/null || true
