@@ -8956,6 +8956,7 @@ sisc		ports/lang/sisc
 sitecopy	ports/www/sitecopy
 sitescooper	ports/palm/sitescooper
 six		ports/games/six
+sixxs-heartbeatd	ports/net/sixxs-heartbeatd
 sjog		ports/sysutils/sjog
 sk-aspell	ports/textproc/sk-aspell
 sk-ooodict-SK	ports/editors/ooodict-sk_SK
