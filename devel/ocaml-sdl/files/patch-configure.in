@@ -1,0 +1,10 @@
+--- configure.in.orig	Sun Jan  9 10:44:49 2005
++++ configure.in	Sun Jan  9 10:49:16 2005
+@@ -52,6 +52,7 @@
+ )
+ 
+ CPPFLAGS="$CPPFLAGS $SDL_CFLAGS"
++LIBS="$LIBS $SDL_LIBS"
+ 
+ # cmdline options 
+ AC_ARG_ENABLE(sdl_ttf,

@@ -17,16 +17,12 @@ DISTNAME=	ocamlsdl-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An OCaml interface to the SDL
 
-BROKEN=		Configure fails
-EXPIRATION_DATE=2005-02-18
-DEPRECATED=	${BROKEN}
-
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		ocamlfind:${PORTSDIR}/devel/ocaml-findlib \
 		lablgl:${PORTSDIR}/graphics/ocaml-lablgl
 
 USE_SDL=	sdl ttf image mixer
-GNU_CONFIGURE=	yes
+USE_AUTOCONF_VER=259
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-findlib
 USE_GMAKE=	yes
