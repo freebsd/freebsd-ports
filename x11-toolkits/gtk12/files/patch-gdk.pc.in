@@ -1,0 +1,9 @@
+--- gdk.pc.in.orig	Thu Jun 13 17:39:33 2002
++++ gdk.pc.in	Thu Jun 13 17:39:43 2002
+@@ -7,5 +7,5 @@
+ Description: GIMP Drawing Kit
+ Version: @VERSION@
+ Requires: glib
+-Libs: -L${libdir} @x_ldflags@ -lgdk @INTLLIBS@ @GDK_WLIBS@ @x_libs@ -lm
++Libs: -L${libdir} @x_ldflags@ -lgdk12 @INTLLIBS@ @GDK_WLIBS@ @x_libs@ -lm
+ Cflags: -I${includedir}/gtk-1.2 @x_cflags@
