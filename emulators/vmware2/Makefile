@@ -98,7 +98,7 @@ post-patch:
 .if ${OSVERSION} >= 500023
 	${CAT} ${FILESDIR}/kse.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
 .endif
-.if ${OSVERSION} >= 500027
+.if ${OSVERSION} >= 500027 || ${OSVERSION} < 500000 && ${OSVERSION} >= 480102
 	${CAT} ${FILESDIR}/pmap.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
 .endif
 	${CP} ${FILESDIR}/Makefile ${WRKSRC}
@@ -129,8 +129,10 @@ post-patch:
 .if ${OSVERSION} >= 500104
 	${CAT} ${FILESDIR}/cdevsw.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
 .endif
-.if ${OSVERSION} >= 500109
+.if ${OSVERSION} >= 500109 || ${OSVERSION} < 500000 && ${OSVERSION} >= 480102
 	${CAT} ${FILESDIR}/hostif_c.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
+.endif
+.if ${OSVERSION} >= 500109
 	${CAT} ${FILESDIR}/vm_types_h.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
 .endif
 	${CAT} ${FILESDIR}/vmnet-only+Makefile.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
