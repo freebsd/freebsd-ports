@@ -1,5 +1,5 @@
---- ../bench/bench-3.run.orig	Tue Jan  9 14:29:40 2001
-+++ ../bench/bench-3.run	Tue Jan  9 14:29:53 2001
+--- ../bench/bench3.run.orig	Wed Sep  5 14:00:09 2001
++++ ../bench/bench3.run	Wed Sep  5 14:01:27 2001
 @@ -1 +1 @@
--time ../bin/vibrate bench-3 0
-+time vibrate bench-3 0
+-time ../bin/vibrate bench3 0
++time vibrate bench3 0

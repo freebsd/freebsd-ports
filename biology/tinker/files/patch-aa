@@ -1,5 +1,5 @@
---- ../make/Makefile.orig	Mon Jan 15 12:39:52 2001
-+++ ../make/Makefile	Thu Apr 19 14:39:26 2001
+--- ../make/Makefile.orig	Sat Jul 21 10:04:48 2001
++++ ../make/Makefile	Wed Sep  5 13:51:19 2001
 @@ -9,8 +9,8 @@
  ##
  ##   1. make all              Build all the TINKER executables
@@ -68,7 +68,7 @@
  #################################################################
  ##  Should not be Necessary to Change Things Below this Point  ##
  #################################################################
-@@ -486,11 +504,13 @@
+@@ -494,11 +512,13 @@
             xyzpdb.x \
             xyzsybyl.x
  
@@ -84,7 +84,7 @@
  
  all:	${EXEFILES}
  
-@@ -501,56 +521,56 @@
+@@ -509,57 +529,57 @@
  	cat *.i *.f > tinker.txt
  
  rename:
@@ -112,6 +112,7 @@
 -	mv  optrigid.x   $(BINDIR)/optrigid
 -	mv  path.x       $(BINDIR)/path
 -	mv  pdbxyz.x     $(BINDIR)/pdbxyz
+-	mv  polarize.x   $(BINDIR)/polarize
 -	mv  protein.x    $(BINDIR)/protein
 -	mv  pss.x        $(BINDIR)/pss
 -	mv  pssrigid.x   $(BINDIR)/pssrigid
@@ -162,6 +163,7 @@
 +	${INSTALL_PROGRAM}  optrigid.x   $(BINDIR)/optrigid
 +	${INSTALL_PROGRAM}  path.x       $(BINDIR)/path
 +	${INSTALL_PROGRAM}  pdbxyz.x     $(BINDIR)/pdbxyz
++	${INSTALL_PROGRAM}  polarize.x   $(BINDIR)/polarize
 +	${INSTALL_PROGRAM}  protein.x    $(BINDIR)/protein
 +	${INSTALL_PROGRAM}  pss.x        $(BINDIR)/pss
 +	${INSTALL_PROGRAM}  pssrigid.x   $(BINDIR)/pssrigid
@@ -191,7 +193,7 @@
  
  remove_links:
  	rm -f $(LINKDIR)/alchemy
-@@ -671,8 +691,8 @@
+@@ -682,8 +702,8 @@
          bspline.o \
          calendar.o \
          center.o \
