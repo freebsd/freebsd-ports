@@ -6,47 +6,46 @@
 #
 
 PORTNAME=	ortep3
-PORTVERSION=	1.0
+PORTVERSION=	1.0.3
 CATEGORIES=	biology
-MASTER_SITES=	ftp://ftp.ccl.net/pub/chemistry/software/SOURCES/FORTRAN/ortep/
+#MASTER_SITES=	ftp://ftp.ccl.net/pub/chemistry/software/SOURCES/FORTRAN/ortep/ 
+#		ftp://ftp.ornl.gov/pub/ortep/src/
+MASTER_SITES=	ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/alex/
+DISTFILES=	ortep-1.0.3.tar.Z ortep-1.0.3.f
 DISTNAME=	ortep
-EXTRACT_SUFX=	.tar.Z
+EXTRACT_ONLY=	ortep.tar.Z
 
 MAINTAINER=	rmiya@cc.hirosaki-u.ac.jp
 
 LIB_DEPENDS=	pgplot.5:${PORTSDIR}/graphics/pgplot
 
+WRKSRC=		${WRKDIR}/${DISTNAME}/src
+
 .include <bsd.port.pre.mk>
-.if ${OSVERSION} >= 400002
+
+.if ${OSVERSION} >= 400002 && ${OSVERSION} < 400018
 BROKEN=	doesn\'t build with new f77 compiler
 .endif
+
+post-extract:
+	${MV} ${WRKSRC}/ortep.f ${WRKSRC}/ortep.f-1.0
+	${CP} ${DISTDIR}/ortep-${PORTVERSION}.f ${WRKSRC}/ortep.f
 
 pre-patch:
 	${CP} ${FILESDIR}/Makefile.ortep3 ${WRKDIR}/${DISTNAME}/src/Makefile
 .if defined(USEPGPLOT)
-	${CP} ${FILESDIR}/patch-aa ${PATCHDIR}/
-	${CP} ${FILESDIR}/patch-ab ${PATCHDIR}/
+	cd ${WRKSRC} && ${PATCH} < ${FILESDIR}/patch-aa
+	cd ${WRKSRC} && ${PATCH} < ${FILESDIR}/patch-ab
 .endif
-
-post-patch:
-.if defined(USEPGPLOT)
-	${RM} ${PATCHDIR}/patch-aa
-	${RM} ${PATCHDIR}/patch-ab
-.endif
-
-do-build:
-	(cd ${WRKDIR}/${DISTNAME}/src && ${MAKE} all)
 
 pre-install:
-	strip ${WRKDIR}/${DISTNAME}/src/ortep3
-	${RM} -rf ${PREFIX}/share/doc/ortep3
 	${MKDIR} ${PREFIX}/share/doc/ortep3
 	${MKDIR} ${PREFIX}/share/doc/ortep3/examples
 	${MKDIR} ${PREFIX}/share/doc/ortep3/man
 	${MKDIR} ${PREFIX}/share/doc/ortep3/src
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKDIR}/${DISTNAME}/src/ortep3 ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/ortep3 ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/examples/* \
 	      ${PREFIX}/share/doc/ortep3/examples
 	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/man/* \
