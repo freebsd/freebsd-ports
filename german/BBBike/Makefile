@@ -9,7 +9,7 @@ PORTNAME=	BBBike
 PORTVERSION=	3.13
 CATEGORIES=	german
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=     bbbike
+MASTER_SITE_SUBDIR=	bbbike
 
 MAINTAINER=	slaven@rezic.de
 COMMENT=	A route-finder for cyclists in Berlin and Brandenburg
@@ -27,14 +27,13 @@ MAN1=		bbbike.1
 MYDESTDIR=	${PREFIX}/BBBike
 
 .if !defined(PERL_VER) || ${PERL_VER} == 5.005
-PLIST=		${PKGDIR}/pkg-plist.5005
+LOCAL_PERL_ARCH=	${PERL_ARCH}
+.else
+LOCAL_PERL_ARCH=	${PERL_VER}/${ARCH}-freebsd
 .endif
+PLIST_SUB=		LOCAL_PERL_ARCH=${LOCAL_PERL_ARCH}
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502000
-BROKEN=		"Broken pkg-plist"
-.endif
 
 do-build:
 	cd ${WRKSRC}/ext && ${MAKE} PERL=${PERL5} all install
@@ -47,14 +46,25 @@ do-build:
 	${CHMOD} 0755 ${WRKSRC}/bbbike
 
 BBBIKEEXE=	bbbike cbbbike bbbikeclient cmdbbbike smsbbbike
+PLIST_IN=	pkg-plist.in
+PLIST=		${WRKDIR}/pkg-plist
+
+pre-install:
+.if !defined(PERL_VER) || ${PERL_VER} == 5.005
+	LOCAL_PERL_ARCH=`${PERL5} -MConfig -e 'print "$$Config{archname}"'`; \
+	${SED} -e "s|%%LOCAL_PERL_ARCH%%|$$LOCAL_PERL_ARCH|g" < ${PLIST_IN} > ${PLIST}
+.else
+	LOCAL_PERL_ARCH=`${PERL5} -MConfig -e 'print "$$Config{version}/$$Config{archname}"'`; \
+	${SED} -e "s|%%LOCAL_PERL_ARCH%%|$$LOCAL_PERL_ARCH|g" < ${PLIST_IN} > ${PLIST}
+.endif
 
 do-install:
 	-${RM} -rf ${MYDESTDIR}
 	${INSTALL_MAN} ${WRKSRC}/bbbike.1 ${PREFIX}/man/man1
-	${RM} -f ${WRKSRC}/bbbike.1
-	${CP} -r  ${WRKSRC} ${MYDESTDIR}
-	${FIND} ${MYDESTDIR} -exec ${CHMOD} ugo+r {} \;
-	${FIND} ${MYDESTDIR} -perm -u=x -exec ${CHMOD} go+x {} \;
+	${CP} -r ${WRKSRC} ${MYDESTDIR}
+	${RM} -f ${MYDESTDIR}/bbbike.1
+	${FIND} ${MYDESTDIR} | ${XARGS} ${CHMOD} ugo+r
+	${FIND} ${MYDESTDIR} -perm -u=x | ${XARGS} ${CHMOD} go+x
 .for f in ${BBBIKEEXE}
 	-${RM} -f ${PREFIX}/bin/$f
 	${LN} -s  ${MYDESTDIR}/$f ${PREFIX}/bin/$f
