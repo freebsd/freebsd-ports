@@ -22,7 +22,13 @@ USE_GMAKE=	yes
 USE_GNOME=	gtk12
 USE_LIBTOOL=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+BROKEN=		"Does not compile on amd64 or ia64 (needs -fPIC)"
+.endif
+
 post-install:
 	${STRIP_CMD} ${PREFIX}/lib/xmms/Input/xmms-mpegplus-1.8.0.so
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
