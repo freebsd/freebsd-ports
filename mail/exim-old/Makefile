@@ -70,10 +70,7 @@ SEDLIST+=	-e 's,^EXIM_MONITOR,\#EXIM_MONITOR,'
 .endif
 
 .if !defined(WITHOUT_TLS)
-SEDLIST+=	-e 's,XX_TLS_LIBS_XX,-lssl -lcrypto,' \
-		-e 's,^\# SUPPORT_TLS=,SUPPORT_TLS=,'
-.else
-SEDLIST+=	-e 's,^TLS_LIBS,\#TLS_LIBS,'
+SEDLIST+=	-e 's,^\# SUPPORT_TLS=,SUPPORT_TLS=,'
 .endif
 
 .if !defined(WITHOUT_PERL)
@@ -150,7 +147,7 @@ SEDLIST+=	-e 's,^\# SUPPORT_MBX=,SUPPORT_MBX=,'
 
 do-configure:
 	${MKDIR} ${WRKSRC}/Local
-	${SED} ${SEDLIST} < ${FILESDIR}/Makefile > ${WRKSRC}/Local/Makefile
+	${SED} ${SEDLIST} < ${WRKSRC}/src/EDITME > ${WRKSRC}/Local/Makefile
 	${SED} ${SEDLIST} < ${FILESDIR}/configure.default \
 	    > ${WRKSRC}/src/configure.default
 	${CP} ${FILESDIR}/eximon.conf ${WRKSRC}/Local
