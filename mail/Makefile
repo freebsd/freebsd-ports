@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.44 1997/07/15 02:02:18 obrien Exp $
+# $Id: Makefile,v 1.45 1997/08/13 18:35:22 andreas Exp $
 #
 
     SUBDIR += bulk_mailer
@@ -34,6 +34,8 @@
     SUBDIR += xfaces
     SUBDIR += xfmail
     SUBDIR += xlbiff
+    SUBDIR += xpbiff
+    SUBDIR += xpbiff-youbin
     SUBDIR += youbin
 
 .include <bsd.port.subdir.mk>
