@@ -1,0 +1,11 @@
+--- siteinit.hlx~	Tue Sep 15 13:42:22 1998
++++ siteinit.hlx	Mon Aug  2 12:49:53 1999
+@@ -11,7 +11,7 @@
+ %% This should be the URL for the icons used in the navigation panels
+ %% must end with a slash, unless you leave it empty
+ %% (empty means the icons are in the same directory as the HTML file)
+-\newcommand{\HlxIcons}{http://www.cs.ust.hk/\~{}otfried/img/}
++\newcommand{\HlxIcons}{}
+ 
+ %%
+ %% ----------------------------------------------------------------------

@@ -1,0 +1,11 @@
+--- hyperlatex~	Tue Sep 15 13:42:23 1998
++++ hyperlatex	Mon Aug  2 12:58:49 1999
+@@ -7,7 +7,7 @@
+ ## Edit the following line to reflect your choice of the
+ ## Hyperlatex directory:
+ 
+-  HYPERLATEX_DIR="$HOME/Hyperlatex/Hlx"
++  HYPERLATEX_DIR="/usr/local/share/texmf/tex/latex/hyperlatex"
+ 
+   export HYPERLATEX_DIR
+ fi
