@@ -15,7 +15,7 @@ MASTER_SITES+=	http://ny1.mirror.openoffice.org/developer/%SUBDIR%/ \
 		http://ny1.mirror.openoffice.org/miscellaneous/helpcontent/:help \
 		http://people.freebsd.org/~mbr/ooo/:moz
 MASTER_SITE_SUBDIR=	${PORTVERSION}
-DISTFILES+=	oo_${PORTVERSION}_src.tar.bz2 neon.tgz:moz expat.tgz:moz \
+DISTFILES+=	oo_${PORTVERSION}_src.tar.bz2 neon.tgz:moz \
 		gpc231.tar.Z:gpc patch-openoffice-mozilla101-2002-10-14:moz
 .if defined(L10NHELP)
 DISTFILES+=	${L10NHELP:S/$/:help/}
@@ -113,7 +113,7 @@ USE_GMAKE=	yes
 EXTRACT_BEFORE_ARGS_R= -dc
 EXTRACT_AFTER_ARGS_R= | ${TAR} -xf -
 EXTRACT_CMD_R= ${GZIP_CMD}
-EXTRACT_REST=	gpc231.tar.Z neon.tgz expat.tgz
+EXTRACT_REST=	gpc231.tar.Z neon.tgz
 
 JDK13DIR?=      ${LOCALBASE}/jdk1.3.1
 JAVAVM=         ${JDK13DIR}/bin/java
@@ -303,8 +303,7 @@ post-extract:
 	done
 	@${CP} ${WRKDIR}/gpc231/gpc.c ${WRKSRC}/../external/gpc/
 	@${CP} ${WRKDIR}/gpc231/gpc.h ${WRKSRC}/../external/gpc/
-	@${CP} -r ${WRKDIR}/neon ${WRKSRC}/../external
-	@${CP} -r ${WRKDIR}/expat ${WRKSRC}/../external
+	@${CP} -r ${WRKDIR}/neon ${WRKSRC}/../
 	@${MAKE} extract-mozilla
 	@-${RM} ${WRKSRC}/../moz/zipped/*.zip
 .if defined(L10NHELP)
