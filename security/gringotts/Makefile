@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gringotts
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	security
 MASTER_SITES=	http://devel.pluto.linux.it/projects/Gringotts/current/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
@@ -18,6 +18,7 @@ LIB_DEPENDS=	gringotts.2:${PORTSDIR}/security/libgringotts \
 		popt.0:${PORTSDIR}/devel/popt
 
 USE_BZIP2=	yes
+USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GNOMENG=	yes
 USE_REINPLACE=	yes
@@ -29,12 +30,19 @@ CONFIGURE_ARGS+=	--disable-env-check
 
 .if ${HAVE_GNOME:Mgnomehier}!=""
 USE_GNOME+=	gnomehier
+PLIST_SUB+=	GNOMEHIER=''
+.else
+PLIST_SUB+=	GNOMEHIER='@comment '
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e "s|md5sum|md5|g" ${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -e "s|mlock|mlockall|g" ${WRKSRC}/configure
+	${REINPLACE_CMD} -E -e "s|^(gringottsdocdir =).*|gringottsdocdir = $$\(datadir\)/doc/gringotts|;s|md5sum|md5|g" ${WRKSRC}/Makefile.in
+.if defined(NOPORTDOCS)
+	${REINPLACE_CMD} -E -e "s|^(install-data-am:.*)install-gringottsdocDATA|\1|" ${WRKSRC}/Makefile.in
+.endif
 .if ${HAVE_GNOME:Mgnomehier}==""
-	${REINPLACE_CMD} -E "s|(MAKE.*AM_MAKEFLAGS.*install-exec-am).*|\1|" \
+	${REINPLACE_CMD} -E -e "s|^(install-data-am:.*)install-DsktpDATA|\1|" \
 		${WRKSRC}/Makefile.in
 .endif
 

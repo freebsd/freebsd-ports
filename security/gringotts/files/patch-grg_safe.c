@@ -1,5 +1,5 @@
---- src/grg_safe.c.orig	Sat Nov 23 18:42:36 2002
-+++ src/grg_safe.c	Sat Nov 23 18:43:22 2002
+--- src/grg_safe.c.orig	Thu Dec  5 15:10:07 2002
++++ src/grg_safe.c	Sat Jan  4 19:53:18 2003
 @@ -33,6 +33,7 @@
  
  #include <stdlib.h>
@@ -8,7 +8,7 @@
  #include <regex.h>
  #include <unistd.h>
  #include <fcntl.h>
-@@ -42,7 +43,6 @@
+@@ -43,7 +44,6 @@
  #include <sys/fsuid.h>
  #endif
  #include <sys/time.h>
@@ -16,7 +16,7 @@
  #include <sys/resource.h>
  
  #define GRG_SAFE			0
-@@ -56,8 +56,6 @@
+@@ -57,8 +57,6 @@
  grg_mlockall_and_drop_root_privileges (void)
  {
    //drop eventual group root privileges
@@ -25,7 +25,16 @@
  #ifdef HAVE_SYS_FSUID_H
    setfsgid (getgid ());
    setfsgid (getgid ());
-@@ -81,8 +79,6 @@
+@@ -67,7 +65,7 @@
+   if (!geteuid ())
+     //the process is (ev. SUID) root. I can mlockall() the memory in order to avoid swapping.
+     {
+-#ifdef HAVE_MLOCK
++#ifdef HAVE_MLOCKALL
+       gint res = mlockall (MCL_CURRENT | MCL_FUTURE);
+ 
+       if (res)
+@@ -82,8 +80,6 @@
  #endif
  
        //drop root privileges
@@ -34,3 +43,21 @@
  #ifdef HAVE_SYS_FSUID_H
        setfsuid (getuid ());
        setfsuid (getuid ());
+@@ -243,7 +239,7 @@
+   if (!(geteuid () && getegid () && getuid () && getgid ()))
+     change_sec_level (GRG_UNSAFE);
+ 
+-#ifdef HAVE_MLOCK
++#ifdef HAVE_MLOCKALL
+   if (!mem_safe)
+     change_sec_level (GRG_UNSAFE);
+ #endif
+@@ -347,7 +343,7 @@
+     ADD_INDICATOR (GTK_DIALOG (dialog)->vbox,
+ 		   _("Memory protection from core dumps"), green) g_free (rl);
+ 
+-#ifdef HAVE_MLOCK
++#ifdef HAVE_MLOCKALL
+   if (mem_safe)
+     ADD_INDICATOR (GTK_DIALOG (dialog)->vbox,
+ 		   _("Memory protection from swap writings"), green)
