@@ -7,7 +7,7 @@
 
 PORTNAME=	courier-imap
 PORTVERSION=	2.1.2
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -37,6 +37,7 @@ USE_GMAKE=	yes
 # WITH_LDAP20:			Build in ldap support with openldap 2.0
 # WITH_LDAP1:			Build in ldap support with openldap 1.x
 # WITH_FAM:			Build in fam support for IDLE command
+# WITH_TRASHQUOTA:		Include deleted mails in the quota
 #
 
 CONFDIR?=	${PREFIX}/etc/${PORTNAME}
@@ -76,6 +77,10 @@ PLIST_SUB+=	VPOPMAILFLAG="@comment "
 CONFIGURE_ARGS+=--with-authvchkpw
 BUILD_DEPENDS+=	${VPOPMAILDIR}/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail
 PLIST_SUB+=	VPOPMAILFLAG=""
+.endif
+
+.if defined(WITH_TRASHQUOTA)
+CONFIGURE_ARGS+=--with-trashquota
 .endif
 
 .if defined(WITH_LDAP)
