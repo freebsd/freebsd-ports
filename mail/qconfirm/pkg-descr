@@ -1,0 +1,7 @@
+qconfirm is an implementation of a delivery confirmation process for a mail
+address under qmail. It is invoked by qmail-local through a .qmail file.
+
+qconfirm performs this delivery confirmation process either sender based or
+message based.
+	
+WWW:	http://smarden.org/qconfirm/
