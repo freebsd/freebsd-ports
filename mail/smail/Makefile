@@ -3,7 +3,7 @@
 # Date created:		16 Oct 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.9 1995/05/12 07:25:12 asami Exp $
+# $Id: Makefile,v 1.10 1995/10/06 22:03:17 torstenb Exp $
 #
 
 DISTNAME=	smail-3.1.29.1
@@ -12,9 +12,9 @@ MASTER_SITES=	ftp://ftp.uu.net/networking/mail/smail/
 
 MAINTAINER=	torstenb@FreeBSD.ORG
 
-BUILD_DEPENDS=	bash:${PREFIX}/shells/bash
+BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
-MAKE_FLAGS=	"SHELL=/usr/local/bin/bash"
+MAKE_FLAGS=	"SHELL=${PREFIX}/bin/bash"
 
 pre-install:
 	mkdir -p ${PREFIX}/lib/smail
