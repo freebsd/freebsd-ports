@@ -5119,6 +5119,7 @@ p5-Mon		ports/net/p5-Mon
 p5-Msql		ports/databases/p5-Msql
 p5-MusicBrainz-Client	ports/audio/p5-MusicBrainz-Client
 p5-MusicBrainz-Queries	ports/audio/p5-MusicBrainz-Queries
+p5-MusicBrainz-TRM	ports/audio/p5-MusicBrainz-TRM
 p5-Mysql	ports/databases/p5-Mysql
 p5-NNTPClient	ports/news/p5-NNTPClient
 p5-Net		ports/net/p5-Net
