@@ -1,0 +1,13 @@
+--- src/Makefile.in.orig	Mon Jul  7 14:21:10 2003
++++ src/Makefile.in	Mon Jul  7 14:21:38 2003
+@@ -170,6 +170,10 @@
+ 
+ 
+ install-data-local:
++	$(mkinstalldirs) $(DESTDIR)$(inst_dir)/nations
++	$(mkinstalldirs) $(DESTDIR)$(inst_dir)/units
++	$(mkinstalldirs) $(DESTDIR)$(inst_dir)/gfx/flags
++	$(mkinstalldirs) $(DESTDIR)$(inst_dir)/gfx/units
+ 	$(mkinstalldirs) $(DESTDIR)$(inst_dir)/sounds/pg
+ 	$(mkinstalldirs) $(DESTDIR)$(inst_dir)/maps/pg
+ 	$(mkinstalldirs) $(DESTDIR)$(inst_dir)/scenarios/pg
