@@ -1,1 +1,3 @@
 sbin/tinyproxy
+etc/tinyproxy/tinyproxy.conf.sample
+@dirrm etc/tinyproxy

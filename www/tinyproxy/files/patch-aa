@@ -1,0 +1,11 @@
+--- src/sock.c.dist	Tue Nov 13 06:10:29 2001
++++ src/sock.c	Thu Feb  7 18:33:24 2002
+@@ -259,7 +259,7 @@
+ 
+ 	for (n = 1; n < maxlen; n++) {
+ 	again:
+-		if ((rc = recv(fd, &c, 1, MSG_NOSIGNAL)) == 1) {
++		if ((rc = recv(fd, &c, 1, 0)) == 1) {
+ 			*ptr++ = c;
+ 			if (c == '\n')
+ 				break;
