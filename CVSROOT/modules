@@ -9453,7 +9453,9 @@ vtk-tcl		ports/math/vtk-tcl
 vtun		ports/net/vtun
 vtwm		ports/x11-wm/vtwm
 vulnerability-test-port	ports/security/vulnerability-test-port
+vuxml		ports/security/vuxml
 vx68k		ports/emulators/vx68k
+vxquery		ports/security/vxquery
 vxtools		ports/emulators/vxtools
 w3		ports/www/w3
 w3-4		ports/www/w3-4
