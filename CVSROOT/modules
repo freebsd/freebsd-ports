@@ -3793,6 +3793,7 @@ kdbg		ports/devel/kdbg
 kdc2tiff	ports/graphics/kdc2tiff
 kde-icons-amaranth	ports/x11-themes/kde-icons-amaranth
 kde-icons-amaranth-althaea	ports/x11-themes/kde-icons-amaranth-althaea
+kde-icons-crystalosx	ports/x11-themes/kde-icons-crystalosx
 kde-icons-graphite-rade8	ports/x11-themes/kde-icons-graphite-rade8
 kde-icons-kids	ports/x11-themes/kde-icons-kids
 kde-icons-kool-gorilla	ports/x11-themes/kde-icons-kool-gorilla
