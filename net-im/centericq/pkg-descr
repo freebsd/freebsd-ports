@@ -1,5 +1,5 @@
-A textmode nucurses based window- and menu-driven ICQ client.  It is
-fully featured and also includes the ability to associate sounds to
+A textmode ncurses based window- and menu-driven ICQ client.  It is
+fully featured and also includes the ability to associate sounds with 
 certain events.
 
 WWW: http://konst.org.ua/software.centericq.html
