@@ -8,10 +8,11 @@ DISTNAME=	dgd-1.0.8
 DISTFILES=	${DISTNAME}.tar.gz ${DISTNAME}/1.0.8-1.0.8.1.gz \
 		${DISTNAME}/1.0.8.1-1.0.8.2.gz ${DISTNAME}/1.0.8.2-1.0.8.3.gz \
 		${DISTNAME}/1.0.8.3-1.0.8.4.gz ${DISTNAME}/1.0.8.4-1.0.8.5.gz \
-		${DISTNAME}/1.0.8.5-1.0.8.6.gz ${DISTNAME}/1.0.8.6-1.0.8.7.gz
+		${DISTNAME}/1.0.8.5-1.0.8.6.gz ${DISTNAME}/1.0.8.6-1.0.8.7.gz \
+		${DISTNAME}/1.0.8.7-1.0.8.8.gz
 PATCHFILES=	1.0.8-1.0.8.1.gz 1.0.8.1-1.0.8.2.gz 1.0.8.2-1.0.8.3.gz \
 		1.0.8.3-1.0.8.4.gz 1.0.8.4-1.0.8.5.gz 1.0.8.5.gz-1.0.8.6.gz \
-		1.0.8.6-1.0.8.7.gz
+		1.0.8.6-1.0.8.7.gz 1.0.8.7-1.0.8.8.gz
 PATCHSITE=	epsilon.me.chalmers.se
 NCFTPFLAGS=
 PATCH_COOKIE=	${.CURDIR}/work/.patch_done
