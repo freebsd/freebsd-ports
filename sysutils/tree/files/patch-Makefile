@@ -1,0 +1,50 @@
+$FreeBSD$
+
+--- Makefile.orig	Mon Dec 11 14:43:23 2000
++++ Makefile	Mon Dec 24 08:17:21 2001
+@@ -6,15 +6,16 @@
+ # warranties, including, without limitation, the implied warranties
+ # of merchant-ability and fitness for a particular purpose.
+ 
+-CC=gcc
+-CFLAGS=-O2 -Wall -fomit-frame-pointer #-m486
+-LDFLAGS=-s
++CC?=		gcc
++CFLAGS?=	-O2 -Wall
++LDFLAGS?=
++PREFIX?=	/usr/local
++BINDIR=		${PREFIX}/bin
++MANDIR=		${PREFIX}/man/man1
+ 
+ VERSION=1.3
+ TREE_DEST=tree
+-BINDIR=/usr/local/bin
+ MAN=tree.1
+-MANDIR=/usr/man/man1
+ 
+ all:	tree
+ 
+@@ -28,18 +29,15 @@
+ 	if [ -f tree.o ]; then rm *.o; fi
+ 	rm -f *~
+ 
+-install:
+-	install -d $(BINDIR)
+-	install -d $(MANDIR)
+-	if [ -e $(TREE_DEST) ]; then \
+-		install -s $(TREE_DEST) $(BINDIR)/$(TREE_DEST); \
+-	fi
+-	install $(MAN) $(MANDIR)/$(MAN)
++install: $(TREE_DEST) $(MAN)
++	mkdir -p $(BINDIR)
++	mkdir -p $(MANDIR)
++	${BSD_INSTALL_PROGRAM} $(TREE_DEST) $(BINDIR)
++	${BSD_INSTALL_MAN} $(MAN) $(MANDIR)
+ 
+ distclean:
+ 	if [ -f tree.o ]; then rm *.o; fi
+ 	rm -f *~
+-	
+ 
+ dist:	distclean
+ 	tar zcf ../tree-$(VERSION).tgz -C .. tree-$(VERSION)/

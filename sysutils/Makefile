@@ -169,6 +169,7 @@
     SUBDIR += tdir
     SUBDIR += ticker.app
     SUBDIR += timelimit
+    SUBDIR += tree
     SUBDIR += truncate
     SUBDIR += ttyload
     SUBDIR += tua
