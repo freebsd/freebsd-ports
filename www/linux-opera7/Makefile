@@ -7,6 +7,7 @@
 
 PORTNAME=	opera
 PORTVERSION=	7.11.20030515
+PORTREVISION=	1
 CATEGORIES=	www linux
 MASTER_SITES=	ftp://ftp.opera.com/pub/opera/linux/711/final/en/i386/static/
 PKGNAMEPREFIX=	linux-
