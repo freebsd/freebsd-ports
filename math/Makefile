@@ -50,6 +50,7 @@
     SUBDIR += fftw3
     SUBDIR += fftw3-float
     SUBDIR += fftw3-long
+    SUBDIR += fityk
     SUBDIR += freefem
     SUBDIR += freefem++
     SUBDIR += fudgit
