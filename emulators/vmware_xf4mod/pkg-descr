@@ -9,4 +9,11 @@ Section "Device"
 	BusID	"PCI:0:15:0"
 EndSection
 
+The BusID line is required or X will think that the virtual ISA VGA card
+(where the text screens live) is the primary one and it will fail.
+
+Be sure to use the same depth on the guest as you do on the host or the
+X server won't start. You can arrange for this simply by not including a
+"DefaultDepth" line. The driver will then supply the correct default.
+
 WWW: http://www.vmware.com/support/reference/common/guest_linux_xf864.html

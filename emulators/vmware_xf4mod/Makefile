@@ -20,6 +20,10 @@ NO_BUILD=	yes
 
 USE_X_PREFIX=	yes
 
+ONLY_FOR_ARCHS=	i386
+
+RESTRICTED=	"Not sure if we can redistribute it"
+
 do-extract:
 		${MKDIR} ${WRKSRC}
 		${CP} ${DISTDIR}/${DISTNAME} ${WRKSRC}
