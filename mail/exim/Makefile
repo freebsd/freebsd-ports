@@ -7,6 +7,7 @@
 
 PORTNAME=	exim
 PORTVERSION=	4.30
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_EXIM}
 MASTER_SITE_SUBDIR=	exim4
@@ -145,14 +146,15 @@ WITH_DEFAULT_CHARSET?=	ISO-8859-1
 #WITHOUT_MAILSTORE=	yes
 #WITHOUT_MBX=		yes
 #
-# Define WITHOUT_CDB, WITHOUT_DNSDB, WITHOUT_DSEARCH, WILD_LSEARCH and
-# WITHOUT_NIS to disable support for CDB-style, DNS-style, directory-list,
-# wildcarded-file and NIS lookups respectively.
+# Define WITHOUT_CDB, WITHOUT_DNSDB, WITHOUT_DSEARCH, WILD_LSEARCH,
+# WITHOUT_NIS and WITHOUT_PASSWD to disable support for CDB-style, DNS-style,
+# directory-list, wildcarded-file, NIS and /etc/passwd lookups respectively.
 #WITHOUT_CDB=		yes
 #WITHOUT_DNSDB=		yes
 #WITHOUT_DSEARCH=	yes
 #WITHOUT_WILDLSEARCH=	yes
 #WITHOUT_NIS=		yes
+#WITHOUT_PASSWD=	yes
 #
 # Disable support for the LMTP (RFC 2033 "SMTP over command pipe")
 # transport.
@@ -343,6 +345,10 @@ SEDLIST+=	-e 's,^\# LOOKUP_WILDLSEARCH=,LOOKUP_WILDLSEARCH=,'
 
 .if !defined(WITHOUT_NIS)
 SEDLIST+=	-e 's,^\# LOOKUP_NIS=,LOOKUP_NIS=,'
+.endif
+
+.if !defined(WITHOUT_PASSWD)
+SEDLIST+=	-e 's,^\# LOOKUP_PASSWD=,LOOKUP_PASSWD=,'
 .endif
 
 .if !defined(WITHOUT_LMTP)
