@@ -675,6 +675,7 @@
     SUBDIR += perforce
     SUBDIR += perltidy
     SUBDIR += pharmacy
+    SUBDIR += php-dbg
     SUBDIR += picasm
     SUBDIR += picprog
     SUBDIR += pinstall
