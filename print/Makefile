@@ -15,6 +15,7 @@
     SUBDIR += apsfilter
     SUBDIR += asprint
     SUBDIR += auctex
+    SUBDIR += axpoint
     SUBDIR += bibcard
     SUBDIR += bibview
     SUBDIR += bjfilter360
