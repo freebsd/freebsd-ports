@@ -299,6 +299,7 @@
     SUBDIR += libast
     SUBDIR += libavl
     SUBDIR += libbonobo
+    SUBDIR += libbonobomm
     SUBDIR += libcache
     SUBDIR += libcapsinetwork
     SUBDIR += libchipcard
