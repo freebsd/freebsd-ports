@@ -15,6 +15,8 @@ MASTER_SITES=	http://www.soul-less.pwp.blueyonder.co.uk/pyne/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X11 offline Newsreader/Emailer
 
+BROKEN=		"Does not compile"
+
 BUILD_DEPENDS=	pygtk-codegen-2.0:${PORTSDIR}/x11-toolkits/py-gtk2
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
