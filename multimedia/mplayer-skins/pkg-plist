@@ -1626,7 +1626,7 @@
 %%XMMPLAYER%%share/mplayer/Skin/xmmplayer/symbols.fnt
 %%XMMPLAYER%%share/mplayer/Skin/xmmplayer/symbols.png
 %%XMMPLAYER%%share/mplayer/Skin/xmmplayer/volume.png
-%%WITHOUT_SKIN_DEFAULT%%share/mplayer/Skin/default
+share/mplayer/Skin/default
 share/mplayer/Skin/%%PKGNAME%%
 %%XMMPLAYER%%@dirrm share/mplayer/Skin/xmmplayer
 %%XINE_LCD%%@dirrm share/mplayer/Skin/xine-lcd

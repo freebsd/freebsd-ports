@@ -224,8 +224,11 @@ do-install:
 	@for dir in `cd ${WRKDIR} && ${FIND} . -type d ! -name ".*" | ${SORT} -r` ; do \
 		${MKDIR} "${PREFIX}/${myDATADIR}/$${dir#./}" ; \
 		LAST_DIR="$${dir#./}"; \
-	done && [ "x${WITH_SKIN_DEFAULT}" != "xyes" ] && \
-	${LN} -sf "${PREFIX}/${myDATADIR}/$${LAST_DIR#./}" "${PREFIX}/${myDATADIR}/default" || ${TRUE}
+	done && \
+	${LN} -sfh "${PREFIX}/${myDATADIR}/$${LAST_DIR#./}" "${PREFIX}/${myDATADIR}/default"
+.ifdef(WITH_SKIN_DEFAULT)
+	@${LN} -sfh "${PREFIX}/${myDATADIR}/Blue" "${PREFIX}/${myDATADIR}/default"
+.endif
 # both anotate installed and install files
 	@for f in `cd ${WRKDIR} && ${FIND} . -type f ! -name ".*" | ${SORT}` ; do \
 		${INSTALL_DATA} "${WRKDIR}/$${f#./}" ${PREFIX}/${myDATADIR}/$${f#./} ; \
