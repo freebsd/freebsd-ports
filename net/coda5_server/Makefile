@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	coda@cs.cmu.edu
 
 LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm \
-		lwp.1:${PORTSDIR}/devel/lwp \
+		lwp.2:${PORTSDIR}/devel/lwp \
 		rpc2.2:${PORTSDIR}/devel/rpc2 \
 		rvm.1:${PORTSDIR}/devel/rvm
 
@@ -28,6 +28,6 @@ USE_GMAKE=	yes
 CONFIGURE_ARGS?=	--sysconfdir=${PREFIX}/etc/rc.d
 
 CODA_SUITE?=	server
-CODA_VERSION?=	5.3.8
+CODA_VERSION?=	5.3.9
 
 .include <bsd.port.mk>
