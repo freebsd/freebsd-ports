@@ -1,0 +1,9 @@
+GHEX is a simple binary editor, allowing the user to view
+and edit a binary file in both hex and ascii with multiple
+level undo/redo mechanism. It features find and replace
+functions and conversion between binary, octal, decimal
+and hexadecimal values, making use of an alternative,
+user-configurable MDI concept to allow the user to edit
+multiple documents with multiple views of each.
+
+WWW: http://www.gnome.org/
