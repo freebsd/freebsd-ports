@@ -26,6 +26,7 @@ lib/libxml++-1.0.so
 lib/libxml++-1.0.so.1
 libdata/pkgconfig/libxml++-1.0.pc
 @dirrm include/libxml++-1.0/libxml++/exceptions
+@dirrm include/libxml++-1.0/libxml++/io
 @dirrm include/libxml++-1.0/libxml++/nodes
 @dirrm include/libxml++-1.0/libxml++/parsers
 @dirrm include/libxml++-1.0/libxml++
