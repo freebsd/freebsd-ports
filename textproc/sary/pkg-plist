@@ -19,6 +19,7 @@ include/sary/text.h
 include/sary/writer.h
 @dirrm include/sary
 lib/libsary.a
+lib/libsary.la
 lib/libsary.so
 lib/libsary.so.9
 libdata/pkgconfig/sary.pc
