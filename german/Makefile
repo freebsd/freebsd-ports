@@ -14,7 +14,6 @@
     SUBDIR += php_doc
     SUBDIR += staroffice5
     SUBDIR += staroffice52
-    SUBDIR += webalizer
     SUBDIR += webalizer2
 
 .include <bsd.port.subdir.mk>
