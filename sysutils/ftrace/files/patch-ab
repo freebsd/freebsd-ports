@@ -1,8 +1,13 @@
---- ftrace.orig	Sat Jan  6 14:11:37 2001
-+++ ftrace	Sat Jan  6 14:11:24 2001
-@@ -1,4 +1,4 @@
--#!/bin/bash
-+#!/bin/sh
+--- ftrace.c.orig	Wed Jan 10 17:38:16 2001
++++ ftrace.c	Wed Jan 10 17:36:28 2001
+@@ -10,9 +10,10 @@
+ #include <errno.h>
+ #include <unistd.h>
+ #include <string.h>
++#include <sys/types.h>
  
- if [ "$1" = "-i" ]; then
- 	export FTRACEIGNOREME=1
+ #ifdef LINUX_GLIBC
+-typedef __off64_t off64_t;
++typedef off_t off64_t;
+ #define _GNU_SOURCE
+ #endif /* LINUX_GLIBC */

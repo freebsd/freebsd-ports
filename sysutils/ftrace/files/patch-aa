@@ -1,16 +1,15 @@
---- Makefile.orig	Fri Jan  5 18:40:20 2001
-+++ Makefile	Sat Jan  6 14:11:10 2001
-@@ -1,11 +1,10 @@
--PREFIX = /usr/local
- BINDIR = $(PREFIX)/bin
- LIBDIR = $(PREFIX)/lib
+--- configure.orig	Wed Jan 10 17:34:44 2001
++++ configure	Wed Jan 10 17:35:26 2001
+@@ -632,6 +632,12 @@
+   program_prefix=${target_alias}-
  
- CC = gcc
- LD = ld
--CFLAGS = -Wall -O3 -DPIC -fPIC -D_REENTRANT
--LDFLAGS = -shared -ldl
-+CFLAGS += -Wall -O3 -DPIC -fPIC -D_REENTRANT
-+LDFLAGS = -shared
- OBJS = ftrace.o
- 
- .PHONY:	all clean install
+ case "$host" in
++	*-freebsd*)
++		cat >> confdefs.h <<\EOF
++#define LINUX_GLIBC 1
++EOF
++		LDSHARED=-shared
++	;;
+ 	*-linux*)
+ 		cat >> confdefs.h <<\EOF
+ #define LINUX_GLIBC 1
