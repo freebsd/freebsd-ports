@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	slashcode
 MAINTAINER=	autrijus@autrijus.org
 COMMENT=	Slash-Like Automatic Storytelling Homepage system
 
+BROKEN=		"Broken pkg-plist"
+
 BUILD_DEPENDS=	${LOCALBASE}/bin/safe_mysqld:${PORTSDIR}/databases/mysql323-server \
 		${SITE_PERL}/Bundle/Slash.pm:${PORTSDIR}/www/p5-Bundle-Slash
 RUN_DEPENDS=	${BUILD_DEPENDS} \
