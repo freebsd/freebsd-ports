@@ -17,4 +17,8 @@ LIB_DEPENDS+=	iconv.3:${PORTSDIR}/converters/libiconv
 # Slightly modified from http://master.debian.or.kr/~alee/patch/
 EXTRA_PATCHES=	${.CURDIR}/files/gaim-0.54-utf.diff
 
+.if !exists(/usr/include/langinfo.h)
+BROKEN=		"/usr/include/langinfo.h needed; 4-stable after Mar 13 2002 and -current"
+.endif
+
 .include "${MASTERDIR}/Makefile"
