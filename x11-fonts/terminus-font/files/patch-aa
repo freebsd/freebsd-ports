@@ -1,0 +1,279 @@
+*** Makefile.orig	Sat Nov  2 12:55:49 2002
+--- Makefile	Fri Nov 15 11:48:18 2002
+***************
+*** 2,7 ****
+--- 2,8 ----
+  BDF2PSF	= ./bdftopsf.pl +u
+  UCS2X11	= ./ucstoany.pl
+  BDF2PCF	= bdftopcf
++ MKITALIC = mkitalic
+  
+  R_88591	= ISO8859 1
+  R_88592	= ISO8859 2
+***************
+*** 182,194 ****
+--- 183,203 ----
+  	$(UCS2VGA) ter-u16b.bdf $(R_XOS42) $(V_XOS42) | $(BDF2PSF) -o $@
+  
+  PCF14N	= ter-114n.pcf ter-214n.pcf ter-514n.pcf ter-c14n.pcf ter-f14n.pcf ter-k14n.pcf ter-p14n.pcf ter-x14n.pcf
++ PCF14N	+= ter-114i.pcf ter-214i.pcf ter-514i.pcf ter-c14i.pcf ter-f14i.pcf ter-k14i.pcf ter-p14i.pcf ter-x14i.pcf
+  PCF14B	= ter-114b.pcf ter-214b.pcf ter-514b.pcf ter-c14b.pcf ter-f14b.pcf ter-k14b.pcf ter-p14b.pcf ter-x14b.pcf
++ PCF14B	+= ter-114bi.pcf ter-214bi.pcf ter-514bi.pcf ter-c14bi.pcf ter-f14bi.pcf ter-k14bi.pcf ter-p14bi.pcf ter-x14bi.pcf
+  PCF16N	= ter-116n.pcf ter-216n.pcf ter-516n.pcf ter-c16n.pcf ter-f16n.pcf ter-k16n.pcf ter-p16n.pcf ter-x16n.pcf
++ PCF16N	+= ter-116i.pcf ter-216i.pcf ter-516i.pcf ter-c16i.pcf ter-f16i.pcf ter-k16i.pcf ter-p16i.pcf ter-x16i.pcf
+  PCF16B	= ter-116b.pcf ter-216b.pcf ter-516b.pcf ter-c16b.pcf ter-f16b.pcf ter-k16b.pcf ter-p16b.pcf ter-x16b.pcf
++ PCF16B	+= ter-116bi.pcf ter-216bi.pcf ter-516bi.pcf ter-c16bi.pcf ter-f16bi.pcf ter-k16bi.pcf ter-p16bi.pcf ter-x16bi.pcf
+  PCF20N	= ter-120n.pcf ter-220n.pcf ter-520n.pcf ter-c20n.pcf ter-f20n.pcf ter-k20n.pcf ter-p20n.pcf ter-x20n.pcf
++ PCF20N	+= ter-120i.pcf ter-220i.pcf ter-520i.pcf ter-c20i.pcf ter-f20i.pcf ter-k20i.pcf ter-p20i.pcf ter-x20i.pcf
+  PCF20B	= ter-120b.pcf ter-220b.pcf ter-520b.pcf ter-c20b.pcf ter-f20b.pcf ter-k20b.pcf ter-p20b.pcf ter-x20b.pcf
++ PCF20B	+= ter-120bi.pcf ter-220bi.pcf ter-520bi.pcf ter-c20bi.pcf ter-f20bi.pcf ter-k20bi.pcf ter-p20bi.pcf ter-x20bi.pcf
+  PCF24N	= ter-124n.pcf ter-224n.pcf ter-524n.pcf ter-c24n.pcf ter-f24n.pcf ter-k24n.pcf ter-p24n.pcf ter-x24n.pcf
++ PCF24N	+= ter-124i.pcf ter-224i.pcf ter-524i.pcf ter-c24i.pcf ter-f24i.pcf ter-k24i.pcf ter-p24i.pcf ter-x24i.pcf
+  PCF24B	= ter-124b.pcf ter-224b.pcf ter-524b.pcf ter-c24b.pcf ter-f24b.pcf ter-k24b.pcf ter-p24b.pcf ter-x24b.pcf
++ PCF24B	+= ter-124bi.pcf ter-224bi.pcf ter-524bi.pcf ter-c24bi.pcf ter-f24bi.pcf ter-k24bi.pcf ter-p24bi.pcf ter-x24bi.pcf
+  PCF	= $(PCF14N) $(PCF14B) $(PCF16N) $(PCF16B) $(PCF20N) $(PCF20B) $(PCF24N) $(PCF24B)
+  
+  pcf: $(PCF)
+***************
+*** 202,207 ****
+--- 211,245 ----
+  X_PT154	= uni/x11gr.uni uni/ascii.uni uni/house.uni uni/pt-154.uni
+  X_10646	= uni/x11gr.uni uni/ascii.uni uni/10646-1.uni
+  
++ ter-u14bi.bdf: ter-u14b.bdf
++ 	mkitalic ${.ALLSRC} > ${.TARGET}
++ 
++ ter-u14i.bdf: ter-u14n.bdf
++ 	mkitalic ${.ALLSRC} > ${.TARGET}
++ 
++ ter-u14vi.bdf: ter-u14v.bdf
++ 	mkitalic ${.ALLSRC} > ${.TARGET}
++ 
++ ter-u16bi.bdf: ter-u16b.bdf
++ 	mkitalic ${.ALLSRC} > ${.TARGET}
++ 
++ ter-u16i.bdf: ter-u16n.bdf
++ 	mkitalic ${.ALLSRC} > ${.TARGET}
++ 
++ ter-u16vi.bdf: ter-u16v.bdf
++ 	mkitalic ${.ALLSRC} > ${.TARGET}
++ 
++ ter-u20bi.bdf: ter-u20b.bdf
++ 	mkitalic ${.ALLSRC} > ${.TARGET}
++ 
++ ter-u20i.bdf: ter-u20n.bdf
++ 	mkitalic ${.ALLSRC} > ${.TARGET}
++ 
++ ter-u24bi.bdf: ter-u24b.bdf
++ 	mkitalic ${.ALLSRC} > ${.TARGET}
++ 
++ ter-u24i.bdf: ter-u24n.bdf
++ 	mkitalic ${.ALLSRC} > ${.TARGET}
+  ter-114n.pcf: ter-u14n.bdf $(X_88591)
+  	$(UCS2X11) ter-u14n.bdf $(R_88591) $(X_88591) | $(BDF2PCF) -o $@
+  
+***************
+*** 394,398 ****
+  ter-x24b.pcf: ter-u24b.bdf $(X_10646)
+  	$(UCS2X11) ter-u24b.bdf $(R_10646) $(X_10646) | $(BDF2PCF) -o $@
+  
+  clean:
+! 	rm -f *.pcf *.psf
+--- 432,628 ----
+  ter-x24b.pcf: ter-u24b.bdf $(X_10646)
+  	$(UCS2X11) ter-u24b.bdf $(R_10646) $(X_10646) | $(BDF2PCF) -o $@
+  
++ ter-114i.pcf: ter-u14i.bdf $(X_88591)
++ 	$(UCS2X11) ter-u14i.bdf $(R_88591) $(X_88591) | $(BDF2PCF) -o $@
++ 
++ ter-114bi.pcf: ter-u14bi.bdf $(X_88591)
++ 	$(UCS2X11) ter-u14bi.bdf $(R_88591) $(X_88591) | $(BDF2PCF) -o $@
++ 
++ ter-214i.pcf: ter-u14i.bdf $(X_88592)
++ 	$(UCS2X11) ter-u14i.bdf $(R_88592) $(X_88592) | $(BDF2PCF) -o $@
++ 
++ ter-214bi.pcf: ter-u14bi.bdf $(X_88592)
++ 	$(UCS2X11) ter-u14bi.bdf $(R_88592) $(X_88592) | $(BDF2PCF) -o $@
++ 
++ ter-514i.pcf: ter-u14i.bdf $(X_88595)
++ 	$(UCS2X11) ter-u14i.bdf $(R_88595) $(X_88595) | $(BDF2PCF) -o $@
++ 
++ ter-514bi.pcf: ter-u14bi.bdf $(X_88595)
++ 	$(UCS2X11) ter-u14bi.bdf $(R_88595) $(X_88595) | $(BDF2PCF) -o $@
++ 
++ ter-c14i.pcf: ter-u14i.bdf $(X_W1251)
++ 	$(UCS2X11) ter-u14i.bdf $(R_W1251) $(X_W1251) | $(BDF2PCF) -o $@
++ 
++ ter-c14bi.pcf: ter-u14bi.bdf $(X_W1251)
++ 	$(UCS2X11) ter-u14bi.bdf $(R_W1251) $(X_W1251) | $(BDF2PCF) -o $@
++ 
++ ter-f14i.pcf: ter-u14i.bdf $(X_8859F)
++ 	$(UCS2X11) ter-u14i.bdf $(R_8859F) $(X_8859F) | $(BDF2PCF) -o $@
++ 
++ ter-f14bi.pcf: ter-u14bi.bdf $(X_8859F)
++ 	$(UCS2X11) ter-u14bi.bdf $(R_8859F) $(X_8859F) | $(BDF2PCF) -o $@
++ 
++ ter-k14i.pcf: ter-u14i.bdf $(X_KOI8R)
++ 	$(UCS2X11) ter-u14i.bdf $(R_KOI8R) $(X_KOI8R) | $(BDF2PCF) -o $@
++ 
++ ter-k14bi.pcf: ter-u14bi.bdf $(X_KOI8R)
++ 	$(UCS2X11) ter-u14bi.bdf $(R_KOI8R) $(X_KOI8R) | $(BDF2PCF) -o $@
++ 
++ ter-p14i.pcf: ter-u14i.bdf $(X_PT154)
++ 	$(UCS2X11) ter-u14i.bdf $(R_PT154) $(X_PT154) | $(BDF2PCF) -o $@
++ 
++ ter-p14bi.pcf: ter-u14bi.bdf $(X_PT154)
++ 	$(UCS2X11) ter-u14bi.bdf $(R_PT154) $(X_PT154) | $(BDF2PCF) -o $@
++ 
++ ter-x14i.pcf: ter-u14i.bdf $(X_10646)
++ 	$(UCS2X11) ter-u14i.bdf $(R_10646) $(X_10646) | $(BDF2PCF) -o $@
++ 
++ ter-x14bi.pcf: ter-u14bi.bdf $(X_10646)
++ 	$(UCS2X11) ter-u14bi.bdf $(R_10646) $(X_10646) | $(BDF2PCF) -o $@
++ 
++ ter-116i.pcf: ter-u16i.bdf $(X_88591)
++ 	$(UCS2X11) ter-u16i.bdf $(R_88591) $(X_88591) | $(BDF2PCF) -o $@
++ 
++ ter-116bi.pcf: ter-u16bi.bdf $(X_88591)
++ 	$(UCS2X11) ter-u16bi.bdf $(R_88591) $(X_88591) | $(BDF2PCF) -o $@
++ 
++ ter-216i.pcf: ter-u16i.bdf $(X_88592)
++ 	$(UCS2X11) ter-u16i.bdf $(R_88592) $(X_88592) | $(BDF2PCF) -o $@
++ 
++ ter-216bi.pcf: ter-u16bi.bdf $(X_88592)
++ 	$(UCS2X11) ter-u16bi.bdf $(R_88592) $(X_88592) | $(BDF2PCF) -o $@
++ 
++ ter-516i.pcf: ter-u16i.bdf $(X_88595)
++ 	$(UCS2X11) ter-u16i.bdf $(R_88595) $(X_88595) | $(BDF2PCF) -o $@
++ 
++ ter-516bi.pcf: ter-u16bi.bdf $(X_88595)
++ 	$(UCS2X11) ter-u16bi.bdf $(R_88595) $(X_88595) | $(BDF2PCF) -o $@
++ 
++ ter-c16i.pcf: ter-u16i.bdf $(X_W1251)
++ 	$(UCS2X11) ter-u16i.bdf $(R_W1251) $(X_W1251) | $(BDF2PCF) -o $@
++ 
++ ter-c16bi.pcf: ter-u16bi.bdf $(X_W1251)
++ 	$(UCS2X11) ter-u16bi.bdf $(R_W1251) $(X_W1251) | $(BDF2PCF) -o $@
++ 
++ ter-f16i.pcf: ter-u16i.bdf $(X_8859F)
++ 	$(UCS2X11) ter-u16i.bdf $(R_8859F) $(X_8859F) | $(BDF2PCF) -o $@
++ 
++ ter-f16bi.pcf: ter-u16bi.bdf $(X_8859F)
++ 	$(UCS2X11) ter-u16bi.bdf $(R_8859F) $(X_8859F) | $(BDF2PCF) -o $@
++ 
++ ter-k16i.pcf: ter-u16i.bdf $(X_KOI8R)
++ 	$(UCS2X11) ter-u16i.bdf $(R_KOI8R) $(X_KOI8R) | $(BDF2PCF) -o $@
++ 
++ ter-k16bi.pcf: ter-u16bi.bdf $(X_KOI8R)
++ 	$(UCS2X11) ter-u16bi.bdf $(R_KOI8R) $(X_KOI8R) | $(BDF2PCF) -o $@
++ 
++ ter-p16i.pcf: ter-u16i.bdf $(X_PT154)
++ 	$(UCS2X11) ter-u16i.bdf $(R_PT154) $(X_PT154) | $(BDF2PCF) -o $@
++ 
++ ter-p16bi.pcf: ter-u16bi.bdf $(X_PT154)
++ 	$(UCS2X11) ter-u16bi.bdf $(R_PT154) $(X_PT154) | $(BDF2PCF) -o $@
++ 
++ ter-x16i.pcf: ter-u16i.bdf $(X_10646)
++ 	$(UCS2X11) ter-u16i.bdf $(R_10646) $(X_10646) | $(BDF2PCF) -o $@
++ 
++ ter-x16bi.pcf: ter-u16bi.bdf $(X_10646)
++ 	$(UCS2X11) ter-u16bi.bdf $(R_10646) $(X_10646) | $(BDF2PCF) -o $@
++ 
++ ter-120i.pcf: ter-u20i.bdf $(X_88591)
++ 	$(UCS2X11) ter-u20i.bdf $(R_88591) $(X_88591) | $(BDF2PCF) -o $@
++ 
++ ter-120bi.pcf: ter-u20bi.bdf $(X_88591)
++ 	$(UCS2X11) ter-u20bi.bdf $(R_88591) $(X_88591) | $(BDF2PCF) -o $@
++ 
++ ter-220i.pcf: ter-u20i.bdf $(X_88592)
++ 	$(UCS2X11) ter-u20i.bdf $(R_88592) $(X_88592) | $(BDF2PCF) -o $@
++ 
++ ter-220bi.pcf: ter-u20bi.bdf $(X_88592)
++ 	$(UCS2X11) ter-u20bi.bdf $(R_88592) $(X_88592) | $(BDF2PCF) -o $@
++ 
++ ter-520i.pcf: ter-u20i.bdf $(X_88595)
++ 	$(UCS2X11) ter-u20i.bdf $(R_88595) $(X_88595) | $(BDF2PCF) -o $@
++ 
++ ter-520bi.pcf: ter-u20bi.bdf $(X_88595)
++ 	$(UCS2X11) ter-u20bi.bdf $(R_88595) $(X_88595) | $(BDF2PCF) -o $@
++ 
++ ter-c20i.pcf: ter-u20i.bdf $(X_W1251)
++ 	$(UCS2X11) ter-u20i.bdf $(R_W1251) $(X_W1251) | $(BDF2PCF) -o $@
++ 
++ ter-c20bi.pcf: ter-u20bi.bdf $(X_W1251)
++ 	$(UCS2X11) ter-u20bi.bdf $(R_W1251) $(X_W1251) | $(BDF2PCF) -o $@
++ 
++ ter-f20i.pcf: ter-u20i.bdf $(X_8859F)
++ 	$(UCS2X11) ter-u20i.bdf $(R_8859F) $(X_8859F) | $(BDF2PCF) -o $@
++ 
++ ter-f20bi.pcf: ter-u20bi.bdf $(X_8859F)
++ 	$(UCS2X11) ter-u20bi.bdf $(R_8859F) $(X_8859F) | $(BDF2PCF) -o $@
++ 
++ ter-k20i.pcf: ter-u20i.bdf $(X_KOI8R)
++ 	$(UCS2X11) ter-u20i.bdf $(R_KOI8R) $(X_KOI8R) | $(BDF2PCF) -o $@
++ 
++ ter-k20bi.pcf: ter-u20bi.bdf $(X_KOI8R)
++ 	$(UCS2X11) ter-u20bi.bdf $(R_KOI8R) $(X_KOI8R) | $(BDF2PCF) -o $@
++ 
++ ter-p20i.pcf: ter-u20i.bdf $(X_PT154)
++ 	$(UCS2X11) ter-u20i.bdf $(R_PT154) $(X_PT154) | $(BDF2PCF) -o $@
++ 
++ ter-p20bi.pcf: ter-u20bi.bdf $(X_PT154)
++ 	$(UCS2X11) ter-u20bi.bdf $(R_PT154) $(X_PT154) | $(BDF2PCF) -o $@
++ 
++ ter-x20i.pcf: ter-u20i.bdf $(X_10646)
++ 	$(UCS2X11) ter-u20i.bdf $(R_10646) $(X_10646) | $(BDF2PCF) -o $@
++ 
++ ter-x20bi.pcf: ter-u20bi.bdf $(X_10646)
++ 	$(UCS2X11) ter-u20bi.bdf $(R_10646) $(X_10646) | $(BDF2PCF) -o $@
++ 
++ ter-124i.pcf: ter-u24i.bdf $(X_88591)
++ 	$(UCS2X11) ter-u24i.bdf $(R_88591) $(X_88591) | $(BDF2PCF) -o $@
++ 
++ ter-124bi.pcf: ter-u24bi.bdf $(X_88591)
++ 	$(UCS2X11) ter-u24bi.bdf $(R_88591) $(X_88591) | $(BDF2PCF) -o $@
++ 
++ ter-224i.pcf: ter-u24i.bdf $(X_88592)
++ 	$(UCS2X11) ter-u24i.bdf $(R_88592) $(X_88592) | $(BDF2PCF) -o $@
++ 
++ ter-224bi.pcf: ter-u24bi.bdf $(X_88592)
++ 	$(UCS2X11) ter-u24bi.bdf $(R_88592) $(X_88592) | $(BDF2PCF) -o $@
++ 
++ ter-524i.pcf: ter-u24i.bdf $(X_88595)
++ 	$(UCS2X11) ter-u24i.bdf $(R_88595) $(X_88595) | $(BDF2PCF) -o $@
++ 
++ ter-524bi.pcf: ter-u24bi.bdf $(X_88595)
++ 	$(UCS2X11) ter-u24bi.bdf $(R_88595) $(X_88595) | $(BDF2PCF) -o $@
++ 
++ ter-c24i.pcf: ter-u24i.bdf $(X_W1251)
++ 	$(UCS2X11) ter-u24i.bdf $(R_W1251) $(X_W1251) | $(BDF2PCF) -o $@
++ 
++ ter-c24bi.pcf: ter-u24bi.bdf $(X_W1251)
++ 	$(UCS2X11) ter-u24bi.bdf $(R_W1251) $(X_W1251) | $(BDF2PCF) -o $@
++ 
++ ter-f24i.pcf: ter-u24i.bdf $(X_8859F)
++ 	$(UCS2X11) ter-u24i.bdf $(R_8859F) $(X_8859F) | $(BDF2PCF) -o $@
++ 
++ ter-f24bi.pcf: ter-u24bi.bdf $(X_8859F)
++ 	$(UCS2X11) ter-u24bi.bdf $(R_8859F) $(X_8859F) | $(BDF2PCF) -o $@
++ 
++ ter-k24i.pcf: ter-u24i.bdf $(X_KOI8R)
++ 	$(UCS2X11) ter-u24i.bdf $(R_KOI8R) $(X_KOI8R) | $(BDF2PCF) -o $@
++ 
++ ter-k24bi.pcf: ter-u24bi.bdf $(X_KOI8R)
++ 	$(UCS2X11) ter-u24bi.bdf $(R_KOI8R) $(X_KOI8R) | $(BDF2PCF) -o $@
++ 
++ ter-p24i.pcf: ter-u24i.bdf $(X_PT154)
++ 	$(UCS2X11) ter-u24i.bdf $(R_PT154) $(X_PT154) | $(BDF2PCF) -o $@
++ 
++ ter-p24bi.pcf: ter-u24bi.bdf $(X_PT154)
++ 	$(UCS2X11) ter-u24bi.bdf $(R_PT154) $(X_PT154) | $(BDF2PCF) -o $@
++ 
++ ter-x24i.pcf: ter-u24i.bdf $(X_10646)
++ 	$(UCS2X11) ter-u24i.bdf $(R_10646) $(X_10646) | $(BDF2PCF) -o $@
++ 
++ ter-x24bi.pcf: ter-u24bi.bdf $(X_10646)
++ 	$(UCS2X11) ter-u24bi.bdf $(R_10646) $(X_10646) | $(BDF2PCF) -o $@
++ 
+  clean:
+! 	rm -f *.pcf *.pcf.gz *.psf

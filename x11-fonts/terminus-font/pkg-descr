@@ -5,4 +5,8 @@ Windows-1251, Windows-1252, IBM-437, KOI8-R, KOI8-U, KOI8-E, KOI8-F,
 Bulgarian-MIK, Paratype-PT154, Paratype-PT254, IBM-855, IBM-866 and
 Macintosh-Ukrainian.
 
+Note: This ports also installed a slanted version of the terminus
+font, contributed by "Sascha Blank" <sblank@tiscali.de> which is NOT
+in the original release.
+
 WWW: http://www.is-vn.bg/hamster/

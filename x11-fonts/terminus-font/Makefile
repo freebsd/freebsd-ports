@@ -7,10 +7,13 @@
 
 PORTNAME=	terminus-font
 PORTVERSION=	3.96
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.is-vn.bg/hamster/
 
 MAINTAINER=	gugod@gugod.org
+
+BUILD_DEPENDS=	mkitalic:${PORTSDIR}/x11-fonts/mkitalic
 
 USE_X_PREFIX=	yes
 ALL_TARGET=	pcf
@@ -20,7 +23,8 @@ XFONTDIR=	${PREFIX}/lib/X11/fonts/local
 .include <bsd.port.pre.mk>
 
 .if ${XFREE86_VERSION} == 4
-BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
+BUILD_DEPENDS+=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
+RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
 .endif
 
 post-build:
@@ -29,5 +33,6 @@ post-build:
 do-install:
 	@${MKDIR} ${XFONTDIR}
 	@${INSTALL_DATA} ${WRKSRC}/*.pcf.gz ${XFONTDIR}
+	@cd ${XFONTDIR}; mkfontdir
 
 .include <bsd.port.post.mk>
