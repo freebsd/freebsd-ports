@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spambnc
-PORTVERSION=	20031128
+PORTVERSION=	20031203
 CATEGORIES=	mail
 MASTER_SITES=	http://www.spambouncer.org/	\
 		ftp://ftp.spambouncer.org/
@@ -27,19 +27,19 @@ PLIST=		${WRKDIR}/.pkg-plist
 pre-install:
 	@${RM} -f ${PLIST}
 	@(cd ${WRKDIR} && ${FIND} -s . -type f | ${GREP} -v "^\.\/\." | \
-		${SED} -e 's,.,share/spambnc,1' >> ${PLIST})
-	@${ECHO_CMD} "@dirrm share/spambnc" >> ${PLIST}
+		${SED} -e 's,.,%%DATADIR%%,1' >> ${PLIST})
+	@${ECHO_CMD} "@dirrm %%DATADIR%%" >> ${PLIST}
 .if !defined(NOPORTDOCS)
 	@${ECHO_CMD} "%%DOCSDIR%%/documentation.html" >> ${PLIST}
 	@${ECHO_CMD} "@dirrm %%DOCSDIR%%" >> ${PLIST}
 .endif
 
 do-install:
-	${MKDIR} ${PREFIX}/share/spambnc/
-	cd ${WRKDIR} && ${CP} -Rv * ${PREFIX}/share/spambnc
+	${MKDIR} ${DATADIR}
+	cd ${WRKDIR} && ${CP} -Rv * ${DATADIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/index.shtml \
+	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/index.shtml \
 		${DOCSDIR}/documentation.html
 .endif
 
