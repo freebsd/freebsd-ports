@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tgif
-PORTVERSION=	4.1.41
+PORTVERSION=	4.1.42
 CATEGORIES=	japanese
 MASTER_SITES=	http://home.jp.FreeBSD.org/~mita/LOCAL_PORTS/
 DISTNAME=	ja-${PORTNAME}-980222
@@ -21,7 +21,7 @@ NO_WRKSUBDIR=	yes
 USE_X_PREFIX=	yes
 
 do-install:
-	${MKDIR} ${PREFIX}/lib/X11/ja_JP.EUC/app-defaults
-	${INSTALL_DATA} ${WRKSRC}/Tgif ${PREFIX}/lib/X11/ja_JP.EUC/app-defaults/
+	${MKDIR} ${PREFIX}/lib/X11/ja_JP.eucJP/app-defaults
+	${INSTALL_DATA} ${WRKSRC}/Tgif ${PREFIX}/lib/X11/ja_JP.eucJP/app-defaults/
 
 .include <bsd.port.mk>
