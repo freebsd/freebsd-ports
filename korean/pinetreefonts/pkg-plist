@@ -10,5 +10,7 @@ lib/X11/fonts/misc/ptpR12.pcf.gz
 lib/X11/fonts/misc/ptpR14.pcf.gz
 lib/X11/fonts/misc/ptpR18.pcf.gz
 lib/X11/fonts/misc/ptpR24.pcf.gz
+lib/X11/fonts/misc/ptptB14.pcf.gz
+lib/X11/fonts/misc/pttpB14.pcf.gz
 @exec cd %D/lib/X11/fonts/misc ; mkfontdir
 @unexec cd %D/lib/X11/fonts/misc ; mkfontdir
