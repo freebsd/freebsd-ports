@@ -20,6 +20,9 @@ LIB_DEPENDS=	jx-1_5_3.1:${JXPORT} \
 		jsearch-0_5_6.0:${PORTSDIR}/x11-toolkits/libjsearch \
 		jtree-1_1_7.1:${PORTSDIR}/x11-toolkits/libjtree
 
+NO_PACKAGE=     ignores CXX because it breaks if CXX is other than\
+		g++
+
 WRKSRC=		${WRKDIR}/JX-1.5.3
 
 USE_XLIB=	yes
