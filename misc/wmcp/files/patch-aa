@@ -1,5 +1,5 @@
---- Makefile.orig	Tue Feb  9 23:16:16 1999
-+++ Makefile	Tue Feb  9 23:16:34 1999
+--- Makefile.orig	Thu May 27 00:17:20 1999
++++ Makefile	Tue Jun 29 10:07:22 1999
 @@ -1,6 +1,6 @@
  
  
@@ -8,3 +8,16 @@
  LIBINC =-L/usr/X11R6/lib -L/usr/include/lib
  LIBS = -lm -lX11 -lXpm -lXext
  
+@@ -31,10 +31,10 @@
+ ###################################################################
+ 
+ ${OBJECTS}: ${SOURCE}
+-	gcc -g -c -Wall ${INCLUDES} ${FLAGS} $< -o $*.o
++	${CC} ${CFLAGS} -c -Wall ${INCLUDES} ${FLAGS} $< -o $*.o
+ 
+ ${TARGET}: ${OBJECTS}
+-	gcc -g -o ${TARGET} ${OBJECTS} ${LIBINC} ${LIBS}
++	${CC} ${CFLAGS} -o ${TARGET} ${OBJECTS} ${LIBINC} ${LIBS}
+ 
+ clean::
+ 	for i in ${OBJECTS}; do if [ -e $$i ] ; then rm $$i; fi; done 
