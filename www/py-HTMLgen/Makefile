@@ -11,7 +11,7 @@ CATEGORIES=		www python
 MASTER_SITES=		http://starship.python.net/crew/friedrich/
 DISTNAME=		HTMLgen
 
-MAINTAINER=		nectar@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 
 USE_PYTHON=		yes
 

@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	nectar
 PKGNAMEPREFIX=		py-
 DISTNAME=		kjb
 
-MAINTAINER=		nectar@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 
 USE_PYTHON=		yes
 NO_WRKSUBDIR=		yes

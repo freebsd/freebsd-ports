@@ -11,7 +11,7 @@ CATEGORIES=	lang
 MASTER_SITES=	http://s48.org/0.57/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	nectar@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=  yes
 ALL_TARGET = 	enough

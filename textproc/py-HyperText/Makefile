@@ -11,7 +11,7 @@ CATEGORIES=		textproc python
 MASTER_SITES=		http://dustman.net/andy/python/HyperText/1.0.1/
 PKGNAMEPREFIX=		py-
 
-MAINTAINER=		nectar@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 
 USE_PYTHON=		yes
 WRKSRC=			${WRKDIR}/HyperText

@@ -10,7 +10,7 @@ PORTVERSION=	1.7.4
 CATEGORIES=	security net
 MASTER_SITES=	http://www-cs-students.stanford.edu/~tjw/srp/source/
 
-MAINTAINER=	nectar@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CC="${CC}" CFLAGS="${CFLAGS}" INSTALL="/usr/bin/install -C"
