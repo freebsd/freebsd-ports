@@ -164,6 +164,7 @@
     SUBDIR += openal
     SUBDIR += opennap
     SUBDIR += opmixer
+    SUBDIR += osalp
     SUBDIR += p5-Audio-CD
     SUBDIR += p5-CDDB
     SUBDIR += p5-CDDB_get

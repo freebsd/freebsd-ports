@@ -1,0 +1,12 @@
+This is the home page for the Open Source Audio Library Project. This is a
+project designed to implement a world class set of classes in C++ that will
+handle all of the audio functions one would like. It is designed to be multi-
+platform with UNIX based platforms as the base. This project is still in the
+beta code phase and a beta version that will illustrate the power and
+flexibility is now available. This version supports the Linux (OSS) audio
+device, Solaris Sparc audio device, FreeBSD (OSS) audio device, wav, au, aiff,
+aifc, mp3, and numerousother formats. It is important to note that this is
+not an application but a C++ library that others can use to create an audio
+application or to easly add audio capabilities to an existing application.
+
+WWW: http://osalp.sourceforge.net/
