@@ -13,11 +13,10 @@ cyrus/bin/ctl_cyrusdb
 cyrus/bin/ctl_deliver
 cyrus/bin/ctl_mboxlist
 cyrus/bin/cvt_cyrusdb
+cyrus/bin/cyr_expire
 cyrus/bin/cyrdump
 cyrus/bin/cyrquota
 cyrus/bin/deliver
-%%NNTP%%cyrus/bin/expirenews
-cyrus/bin/feedcyrus
 %%NNTP%%cyrus/bin/fetchnews
 cyrus/bin/fud
 cyrus/bin/imapd
@@ -26,12 +25,14 @@ cyrus/bin/lmtpd
 %%MURDER%%cyrus/bin/lmtpproxyd
 cyrus/bin/masssievec
 cyrus/bin/master
+cyrus/bin/mbexamine
 cyrus/bin/mbpath
 cyrus/bin/mkimap
 %%MURDER%%cyrus/bin/mupdate
 %%NNTP%%cyrus/bin/nntpd
 cyrus/bin/notifyd
 cyrus/bin/pop3d
+cyrus/bin/pop3proxyd
 %%MURDER%%cyrus/bin/proxyd
 cyrus/bin/reconstruct
 cyrus/bin/sievec

@@ -1,22 +1,22 @@
 Index: configure
 diff -u configure.orig configure
---- configure.orig	Tue Feb  4 16:05:15 2003
-+++ configure	Tue Feb  4 16:08:25 2003
-@@ -2760,7 +2760,7 @@
+--- configure.orig	Thu Jul 17 06:20:38 2003
++++ configure	Fri Jul 18 00:32:33 2003
+@@ -3116,7 +3116,7 @@
  	    BDB_LIBADD=""
  	fi
  
--        for dbname in db-4.1 db4.1 db-4.0 db4.0 db-4 db4 db-3.3 db3.3 db-3.2 db3.2 db-3.1 db3.1 db-3 db3 db
-+        for dbname in ${with_bdb} db-4.1 db4.1 db41 db-4.0 db4.0 db-4 db4 db-3.3 db3.3 db-3.2 db3.2 db-3.1 db3.1 db-3 db3 db
+-        for dbname in db-4.1 db4.1 db41 db-4.0 db4.0 db-4 db40 db4 db-3.3 db3.3 db33 db-3.2 db3.2 db32 db-3.1 db3.1 db31 db-3 db30 db3 db
++        for dbname in ${with_bdb} db-4.1 db4.1 db41 db-4.0 db4.0 db-4 db40 db4 db-3.3 db3.3 db33 db-3.2 db3.2 db32 db-3.1 db3.1 db31 db-3 db30 db3 db
            do
              echo $ac_n "checking for db_create in -l$dbname""... $ac_c" 1>&6
- echo "configure:2767: checking for db_create in -l$dbname" >&5
-@@ -6757,7 +6757,7 @@
+ echo "configure:3123: checking for db_create in -l$dbname" >&5
+@@ -7475,7 +7475,7 @@
  #define HAVE_UCDSNMP 1
  EOF
  
 -    LIB_UCDSNMP="-lucdagent -lucdmibs -lsnmp"
 +    LIB_UCDSNMP="-lucdagent -lucdmibs -lsnmp -lkvm"
      echo $ac_n "checking for rpmdbOpen in -lrpm""... $ac_c" 1>&6
- echo "configure:6763: checking for rpmdbOpen in -lrpm" >&5
+ echo "configure:7481: checking for rpmdbOpen in -lrpm" >&5
  ac_lib_var=`echo rpm'_'rpmdbOpen | sed 'y%./+-%__p_%'`

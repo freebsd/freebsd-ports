@@ -1,11 +1,11 @@
 Index: man/Makefile.in
 diff -u man/Makefile.in.orig man/Makefile.in
---- man/Makefile.in.orig	Fri Feb 28 03:12:33 2003
-+++ man/Makefile.in	Fri Mar 21 14:14:24 2003
+--- man/Makefile.in.orig	Fri Jun 20 05:49:50 2003
++++ man/Makefile.in	Fri Jul 18 00:30:05 2003
 @@ -69,7 +69,7 @@
  MAN3 = $(srcdir)/imclient.3
  MAN5 = imapd.conf.5 $(srcdir)/krb.equiv.5 $(srcdir)/cyrus.conf.5
- MAN8 = $(srcdir)/arbitron.8 $(srcdir)/deliver.8 \
+ MAN8 = $(srcdir)/arbitron.8 $(srcdir)/cyr_expire.8 $(srcdir)/deliver.8 \
 -	$(srcdir)/fud.8 $(srcdir)/imapd.8 $(srcdir)/pop3d.8 $(srcdir)/quota.8 \
 +	$(srcdir)/fud.8 $(srcdir)/imapd.8 $(srcdir)/pop3d.8 $(srcdir)/cyrquota.8 \
  	$(srcdir)/reconstruct.8 $(srcdir)/rmnews.8 $(srcdir)/syncnews.8 \
