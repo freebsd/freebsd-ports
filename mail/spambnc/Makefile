@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spambnc
-PORTVERSION=	20030828
+PORTVERSION=	20031106
 CATEGORIES=	mail
 MASTER_SITES=	http://www.spambouncer.org/
 DISTFILES=	sb.tar.Z index.shtml
@@ -15,6 +15,8 @@ EXTRACT_ONLY=	sb.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of procmail recipies which handle known/suspected spam
+
+RUN_DEPENDS=	procmail:${PORTSDIR}/mail/procmail
 
 IGNOREFILES=	index.shtml
 NO_WRKSUBDIR=	yes
