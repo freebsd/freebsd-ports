@@ -1739,6 +1739,7 @@ fxtv		ports/graphics/fxtv
 g-gcl		ports/www/g-gcl
 g-wrap		ports/devel/g-wrap
 g2		ports/graphics/g2
+g2c		ports/devel/g2c
 g3dviewer	ports/graphics/g3dviewer
 gaa		ports/devel/gaa
 gabber		ports/net/gabber
