@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	libgnome
-PORTVERSION=	1.117.1
+PORTVERSION=	2.0.0
 CATEGORIES?=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-20020525
+MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-20020607
 DIST_SUBDIR=	gnome2
 
 MAINTAINER?=	gnome@FreeBSD.org
@@ -27,7 +27,8 @@ INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
 		--datadir=${PREFIX}/share/gnome \
-		--with-html-dir=${PREFIX}/share/doc
+		--with-html-dir=${PREFIX}/share/doc \
+		--with-gconf-source=xml::${PREFIX}/etc/gconf/gconf.xml.defaults
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}

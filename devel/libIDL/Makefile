@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	libIDL
-PORTVERSION=	0.7.4
+PORTVERSION=	0.8.0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-20020525
+MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-20020607
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org

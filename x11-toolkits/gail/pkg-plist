@@ -5,7 +5,7 @@ lib/gtk-2.0/modules/libferret.so
 lib/gtk-2.0/modules/libgail.so
 lib/libgailutil.a
 lib/libgailutil.so
-lib/libgailutil.so.13
+lib/libgailutil.so.15
 libdata/pkgconfig/gail.pc
 @dirrm lib/gtk-2.0/modules
 @dirrm include/gail-1.0/libgail-util

@@ -8,8 +8,8 @@
 PORTNAME=	gtk
 PORTVERSION=	2.0.3
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	ftp://ftp.gtk.org/pub/gtk/v2.0/ \
-		${MASTER_SITE_GNOME:S,%SUBDIR%,pre-gnome2/releases/gnome-2.0-desktop-20020525,} \
+MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,pre-gnome2/releases/gnome-2.0-desktop-20020607,} \
+		ftp://ftp.gtk.org/pub/gtk/v2.0/ \
 		ftp://ftp.gimp.org/pub/%SUBDIR%/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/%SUBDIR%/ \
 		http://www.ameth.org/gimp/%SUBDIR%/ \
