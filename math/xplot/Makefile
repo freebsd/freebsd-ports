@@ -8,7 +8,8 @@
 PORTNAME=	xplot
 PORTVERSION=	0.90
 CATEGORIES=	math graphics net
-MASTER_SITES=	ftp://mercury.lcs.mit.edu/pub/shep/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	fenner
 
 MAINTAINER=	fenner@FreeBSD.org
 
