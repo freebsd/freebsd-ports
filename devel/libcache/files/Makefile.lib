@@ -1,9 +1,13 @@
+# $FreeBSD$
+
 LIB=		cache
 
 SHLIB_MAJOR?=	0
 NOPROFILE=	yes
 
-SRCS=		src/access.c src/parse.c
+.PATH: ${.CURDIR}/src
+
+SRCS=		access.c parse.c
 
 CFLAGS+=	-I${.CURDIR}/include
 

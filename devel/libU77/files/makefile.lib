@@ -1,3 +1,5 @@
+# $FreeBSD$
+
 LIBDIR= ${PREFIX}/lib
 NOPROFILE= no
 CFLAGS+=-D_TIMES
@@ -8,16 +10,18 @@ SHLIB_MINOR= 0
 
 LIB= U77
 
-SRCS =	src/access.c src/alarm.c src/bit.c src/chdir.c src/chmod.c         \
-	src/ctime.c src/drand.c src/dsecnd.c src/dtime.c src/etime.c       \
-	src/exit.c src/falloc.c src/fdate.c src/fork.c src/free.c          \
-	src/fstat.f src/gerror.c src/getarg.c src/getcwd.c src/getenv.c    \
-	src/getgid.c src/getlog.c src/getpid.c src/getuid.c src/gmtime.c   \
-	src/hostnm.c src/iargc.c src/idate.c src/ierrno.c src/irand.c      \
-	src/itime.c src/kill.c src/len.c src/link.c src/lnblnk.f src/loc.c \
-	src/lstat.c src/ltime.c src/malloc.c src/mclock.c src/perror.c     \
-	src/qsort.c src/rand.c src/rename.c src/second.c src/seterr.c      \
-	src/sleep.c src/stat.c src/symlnk.c src/system.c src/time.c        \
-	src/unlink.c src/util.c src/wait.c src/wclock.c
+.PATH: ${.CURDIR}/src
+
+SRCS =	access.c alarm.c bit.c chdir.c chmod.c         \
+	ctime.c drand.c dsecnd.c dtime.c etime.c       \
+	exit.c falloc.c fdate.c fork.c free.c          \
+	fstat.f gerror.c getarg.c getcwd.c getenv.c    \
+	getgid.c getlog.c getpid.c getuid.c gmtime.c   \
+	hostnm.c iargc.c idate.c ierrno.c irand.c      \
+	itime.c kill.c len.c link.c lnblnk.f loc.c \
+	lstat.c ltime.c malloc.c mclock.c perror.c     \
+	qsort.c rand.c rename.c second.c seterr.c      \
+	sleep.c stat.c symlnk.c system.c time.c        \
+	unlink.c util.c wait.c wclock.c
 
 .include <bsd.lib.mk>
