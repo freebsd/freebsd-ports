@@ -1,0 +1,103 @@
+--- kpathsea/texmf.in-teTeX.orig	Sun Feb  6 09:04:35 2005
++++ kpathsea/texmf.in-teTeX	Sat Feb 12 20:27:12 2005
+@@ -177,11 +177,18 @@
+ % latex209, useful for macros that were written for 2.09 and do not
+ % mention 2e at all, but can be used with 2e.
+ TEXINPUTS.cslatex = .;$TEXMF/tex/{cslatex,csplain,latex,generic,}//
+-TEXINPUTS.platex  = .;$TEXMF/tex/{platex,latex,generic,}//
++%TEXINPUTS.platex  = .;$TEXMF/tex/{platex,latex,generic,}//
+ TEXINPUTS.latex = .;$TEXMF/tex/{latex,generic,}//
+ TEXINPUTS.olatex = .;$TEXMF/tex/{latex,generic,}//
+ TEXINPUTS.latex209 = .;$TEXMF/tex/{latex209,generic,latex,}//
+ 
++% TeXfamily
++TEXINPUTS.jtex = .:$TEXMF/{jtex,tex}/{plain,generic,}//
++TEXINPUTS.jlatex = .:$TEXMF/{jtex,tex}/{latex,generic,}//
++TEXINPUTS.jlatex209 = .:$TEXMF/{jtex,tex}/{latex209,generic,latex,}//
++TEXINPUTS.multex = .:$TEXMF/{multex,jtex,tex}/{plain,generic,}//
++TEXINPUTS.mullatex = .:$TEXMF/{multex,jtex,tex}/{latex,generic,}//
++
+ % Fontinst needs to read afm files.
+ TEXINPUTS.fontinst = .;$TEXMF/{tex,fonts/afm}//
+ 
+@@ -246,12 +253,12 @@
+ % and string pools (.pool) for ini{tex,mf,mp}.  It is silly that we have six
+ % paths and directories here (they all resolve to a single place by default),
+ % but historically ...
+-TEXFORMATS = .;$TEXMF/web2c
+-MFBASES = .;$TEXMF/web2c
+-MPMEMS = .;$TEXMF/web2c
+-TEXPOOL = .;$TEXMF/web2c
+-MFPOOL = .;$TEXMF/web2c
+-MPPOOL = .;$TEXMF/web2c
++TEXFORMATS = .;$TEXMF/web2c{/ptex,}
++MFBASES = .;$TEXMF/web2c{/ptex,}
++MPMEMS = .;$TEXMF/web2c{/ptex,}
++TEXPOOL = .;$TEXMF/web2c{/ptex,}
++MFPOOL = .;$TEXMF/web2c{/ptex,}
++MPPOOL = .;$TEXMF/web2c{/ptex,}
+ 
+ % Device-independent font metric files.
+ VFFONTS = .;$TEXMF/fonts/vf//
+@@ -274,7 +281,7 @@
+ MISCFONTS = .;$TEXMF/fonts/misc//
+ 
+ % font name map files.
+-TEXFONTMAPS = .;$TEXMF/fonts/map//
++TEXFONTMAPS = .;$TEXMF/fonts/map{/ptex,}//
+ 
+ % support non"k"-xdvi:
+ PKFONTS.XDvi    = .:$TEXMF/%s:$VARTEXFONTS/pk/{%m,modeless}//
+@@ -291,8 +298,8 @@
+ 
+ % PostScript headers and prologues (.pro); unfortunately, some programs
+ % also use this for acessing font files (enc, type1, truetype)
+-TEXPSHEADERS = .;$TEXMF/{dvips,fonts/{enc,type1,type3}}//
+-TEXPSHEADERS.gsftopk = .;$TEXMF/{dvips,fonts/{enc,type1,type3,truetype}}//
++TEXPSHEADERS = .;$TEXMF/{dvips{/ptex,},fonts/{enc,type1,type3}}//
++TEXPSHEADERS.gsftopk = .;$TEXMF/{dvips{/ptex,},fonts/{enc,type1,type3,truetype}}//
+ 
+ % PostScript Type 1 outline fonts.
+ T1FONTS = .;$TEXMF/fonts/type1//
+@@ -310,10 +317,10 @@
+ LIGFONTS =  .;$TEXMF/fonts/lig//
+ 
+ % Dvips' config.* files (this name should not start with `TEX'!).
+-TEXCONFIG = $TEXMF/dvips//
++TEXCONFIG = $TEXMF/dvips{/ptex,}//
+ 
+ % Makeindex style (.ist) files.
+-INDEXSTYLE = .;$TEXMF/makeindex//
++INDEXSTYLE = .;$TEXMF/makeindex{/ptex,}//
+ 
+ % Font encoding files (.enc).
+ ENCFONTS = .;$TEXMF/fonts/enc//
+@@ -366,6 +373,10 @@
+ % search formats, you'll want to add their variables here as well.
+ T4HTINPUTS   = .;$TEXMF/tex4ht//
+ 
++% xdvik and dvipdfm can share some files with dvips (for old ones)
++XDVIINPUTS = .;$TEXMF/{xdvi,dvips}{/ptex,}//
++DVIPDFMINPUTS = .;$TEXMF/{dvipdfm,dvips}{/ptex,}//
++
+ % Architecture independent executables
+ TEXMFSCRIPTS = $TEXMF/scripts//
+ 
+@@ -382,7 +393,7 @@
+ %
+ % For security reasons, it is better not to have . part of the path.
+ % 
+-TEXMFCNF = {$SELFAUTOLOC,$SELFAUTODIR,$SELFAUTOPARENT}{,{/share,}/texmf{-local,}/web2c};$TETEXDIR;$TEXMF/web2c;@web2c@
++TEXMFCNF = {$SELFAUTOLOC,$SELFAUTODIR,$SELFAUTOPARENT}{,{/share,}/texmf{-local,,-dist}/web2c{/ptex,}};$TETEXDIR;$TEXMF/web2c;@web2c@
+ 
+ # $progname: kpathsea v. 3.5.3 or later overwrites this at runtime. To
+ # avoid empty expansions from binaries linked against an earlier
+@@ -556,3 +567,8 @@
+ error_line = 79
+ half_error_line = 50
+ max_print_line = 79
++
++% default file code of JTeX and MuLTeX
++% These override the code specified by TeX command in dumping (making format).
++jtex_filetype = euc
++%ml_input_code = junet
