@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
+# $Id: Makefile,v 1.179 1997/11/28 20:31:07 fenner Exp $
 #
 
     SUBDIR += FWF
@@ -42,6 +42,7 @@
     SUBDIR += libdnd
     SUBDIR += libsx
     SUBDIR += lupe
+    SUBDIR += mlclock
     SUBDIR += mlvwm
     SUBDIR += mouseclock
     SUBDIR += neXtaw
