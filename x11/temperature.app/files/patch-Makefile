@@ -1,10 +1,13 @@
-
-$FreeBSD$
-
---- Makefile	2001/05/27 11:50:22	1.1
-+++ Makefile	2001/05/27 11:51:42
-@@ -7,8 +7,8 @@
- X11_BINDIR = /usr/X11R6/bin
+--- Makefile.orig	Mon Jun 25 12:03:07 2001
++++ Makefile	Sun Jul  1 20:47:36 2001
+@@ -3,12 +3,12 @@
+ #
+ 
+ DESTDIR =
+-GNUSTEP_BINDIR = /usr/local/GNUstep/Apps/Temperature.app
+-X11_BINDIR = /usr/X11R6/bin
++GNUSTEP_BINDIR = $(X11BASE)/GNUstep/Apps/Temperature.app
++X11_BINDIR = $(X11BASE)/bin
  
  CXX=c++
 -CXXFLAGS += -Wall -pedantic -fno-rtti -fno-exceptions -O2 -I/usr/X11R6/include
