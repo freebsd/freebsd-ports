@@ -22,6 +22,9 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src/
 
 IS_INTERACTIVE=	yes
 GNU_CONFIGURE=  yes
+
+.include <bsd.port.pre.mk>
+
 .if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
 .include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
 .else
@@ -51,4 +54,4 @@ post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}pike ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}hilfe ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
