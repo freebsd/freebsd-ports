@@ -3,7 +3,7 @@
 # Date created:				May 5th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id$
+#   $Id: Makefile,v 1.1.1.1 1997/06/27 01:53:13 jfitz Exp $
 #
 
 DISTNAME=	SNMP-1.6
@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	SNMP
 MAINTAINER=	jfitz@FreeBSD.ORG
 
 BUILD_DEPENDS= 	${PREFIX}/lib/libsnmp.a:${PORTSDIR}/net/ucd-snmp
+
+BROKEN=		build
 
 USE_PERL5=	YES
 
