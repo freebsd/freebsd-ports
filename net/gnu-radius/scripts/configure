@@ -1,0 +1,81 @@
+#!/bin/sh
+
+if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
+	exit
+fi
+
+tempfile=`/usr/bin/mktemp -t checklist`
+
+if [ "${BATCH}" ]; then
+	set \"MySQL\"
+else
+	/usr/bin/dialog --title "GNU-Radius configuration options" --clear \
+		--checklist "\n\
+Please select desired options:" -1 -1 16 \
+Client		"Enable build client" OFF \
+DBM		    "Enable DBM support" OFF \
+MySQL		"Enable MySQL support" ON \
+PostgreSQL	"Enable PostgreSQL support" OFF \
+SNMP	    "Enable SNMP support" ON \
+Notify		"Enable TTL notification" OFF \
+2> /tmp/checklist.tmp.$$
+
+	retval=$?
+
+	if [ -s /tmp/checklist.tmp.$$ ]; then
+		set `cat /tmp/checklist.tmp.$$`
+	fi
+	rm -f /tmp/checklist.tmp.$$
+
+	case $retval in
+		0)	if [ -z "$*" ]; then
+				echo "Nothing selected"
+			fi
+			;;
+		1)	echo "Cancel pressed."
+			exit 1
+			;;
+	esac
+fi
+
+exec > ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+
+while [ "$1" ]; do
+	case $1 in
+		\"Client\")
+			echo "CONFIGURE_ARGS+= --with-client"
+			export GUILE=Yes
+			;;
+		\"DBM\")
+			echo "CONFIGURE_ARGS+= --enable-dbm=ndbm"
+			;;
+		\"MySQL\")
+			echo "LIB_DEPENDS+=	mysqlclient.10:\${PORTSDIR}/databases/mysql323-client:install"
+			echo "CONFIGURE_ARGS+= --with-mysql"
+			;;
+		\"PostgreSQL\")
+			echo "LIB_DEPENDS+=	pq.2:\${PORTSDIR}/databases/postgresql7:install"
+			echo "CONFIGURE_ARGS+= --with-postgres"
+			;;
+		\"SNMP\")
+			echo "CONFIGURE_ARGS+= --enable-snmp"
+			;;
+		\"Notify\")
+			echo "CONFIGURE_ARGS+= --enable-notify"
+			;;
+		*)
+			echo "Invalid option(s): $*" > /dev/stderr
+			rm -f ${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
+			exit 1
+			;;
+	esac
+	shift
+done
+
+if [ -z $GUILE ]; then
+	echo "CONFIGURE_ARGS+= --without-guile"
+echo ${PLIST}
+else
+	echo "BUILD_DEPENDS+= guile:${PORTSDIR}/lang/guile"
+	unset GUILE
+fi
