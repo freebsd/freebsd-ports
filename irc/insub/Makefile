@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	insub
-PORTVERSION=	6.6
+PORTVERSION=	7.0
 PORTREVISION?=	0
 CATEGORIES?=	irc
 MASTER_SITES=	http://gruntle.org/projects/irssi/insub/
@@ -32,6 +32,7 @@ post-install:
 	@${ECHO}
 
 do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/${SCRIPT} ${LOCALBASE}/bin/${SCRIPT:R}
 	${INSTALL_DATA} ${WRKSRC}/${SCRIPT} \
 		${LOCALBASE}/share/irssi/scripts/${SCRIPT}
 	for i in ${WRKSRC}/cows/* ; do \
