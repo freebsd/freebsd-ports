@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	memcached
-PORTVERSION=	1.1.10
+PORTVERSION=	1.1.11
 CATEGORIES=	databases
 MASTER_SITES=	http://www.danga.com/memcached/dist/
 
@@ -15,8 +15,7 @@ COMMENT=	High-performance distributed memory object cache system
 
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libevent.a:${PORTSDIR}/devel/libevent
 
-USE_AUTOMAKE_VER=	14
-WANT_AUTOCONF_VER=	253
+USE_REINPLACE=	YES
 GNU_CONFIGURE=	YES
 
 CONFIGURE_ARGS+=	--with-libevent=${LOCALBASE} --program-prefix=
@@ -24,6 +23,9 @@ CONFIGURE_ARGS+=	--with-libevent=${LOCALBASE} --program-prefix=
 MAN1=		memcached.1
 
 DOCS_LIST=	memory_management.txt protocol.txt
+
+post-configure:
+	@${REINPLACE_CMD} -e 's#doc/memcached.1##' ${WRKSRC}/Makefile
 
 post-install:
 	${INSTALL_MAN} ${MAN1:S!^!${WRKSRC}/doc/!} ${MAN1PREFIX}/man/man1
