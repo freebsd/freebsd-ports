@@ -1,0 +1,21 @@
+--- Makefile.orig	Sun Nov 29 17:40:32 1998
++++ Makefile	Sun Nov 29 17:41:27 1998
+@@ -17,7 +17,7 @@
+ ## Received from Mike Coleman
+ ############################################################################
+ 
+-CC = egcc
++CC = gcc
+ 
+ c_sources = \
+ 	common.c \
+@@ -43,8 +43,7 @@
+ 
+ #CC_SWITCHES = -O3 -DUNIX -DBS_FORMAT=BINARY $(NINT_SWITCH) -DNDEBUG
+ CC_SWITCHES =  -O9 -DUNIX -DBS_FORMAT=BINARY $(NINT_SWITCH) -DNDEBUG \
+-		-funroll-loops -fstrength-reduce -ffast-math -malign-functions=4 \
+-		-malign-jumps=4 -malign-loops=4 -enable-i386-hacks  -mpentium 
++		-funroll-loops -fstrength-reduce -ffast-math 
+ EXTRA_SWITCHES = 
+ 
+ PGM = lamer
