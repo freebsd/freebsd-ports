@@ -5,7 +5,7 @@
  	@echo "Performing DSO installation."
  	@echo
 -	$(INSTALL) src/mod_python.so $(LIBEXECDIR)
-+	/usr/local/sbin/apxs -i -a src/mod_python.so
++	$(PORTS_APXS) -i -a src/mod_python.so
  	@$(MAKE) install_py_lib
  	@echo
 -	@echo "Now don't forget to edit your main config and add"

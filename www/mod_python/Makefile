@@ -6,17 +6,15 @@
 #
 
 PORTNAME=	mod_python
-PORTVERSION=	2.7.8
+PORTVERSION=	2.7.10
 CATEGORIES=	www python
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 MASTER_SITE_SUBDIR=	modpython
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	python
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jre@vineyard.net
 COMMENT=	Apache module for integrating Python
-
-FORBIDDEN=	denial of service vulnerability
 
 USE_APACHE=	yes
 NO_PACKAGE=	"Requires Python without threads support"
@@ -27,9 +25,8 @@ USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-apxs=${APXS}
 CONFIGURE_ENV=	PYTHON_BIN=${PYTHON_CMD}
+MAKE_ENV=	PORTS_APXS=${APXS}
 PLIST_SUB+=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S/^${LOCALBASE}\///g}
-
-STRIP_CMD?=	strip
 
 pre-everything::
 	@${ECHO_MSG} ""

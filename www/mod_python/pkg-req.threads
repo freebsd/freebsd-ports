@@ -2,7 +2,7 @@
 # anders@fix.no, 2001-08-07
 
 pydir=`dirname $1 | sed "s/\/bin//"`
-if [ "`ldd $1|grep libc_r`" ]; then
+if [ "`ldd $1|egrep 'libc_r|libkse|libthr|libpthread'`" ]; then
 	echo "Error: Python installation in $pydir uses threads. mod_python requires"
 	echo "it to be built without threads. Please deinstall & rebuild/reinstall Python with"
 	echo "WITHOUT_THREADS set."
