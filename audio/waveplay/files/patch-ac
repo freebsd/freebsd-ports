@@ -1,0 +1,51 @@
+*** wavefmt.h~	Wed Sep  9 14:24:05 1998
+--- wavefmt.h	Wed Nov 24 15:05:57 1999
+***************
+*** 11,33 ****
+  /* 構造体定義 (ref. MS-Windows mmsystem.h) */
+  typedef struct tWAVEFORMAT
+  {
+!     u_short wFormatTag;
+!     u_short nChannels;
+!     u_long  nSamplesPerSec;
+!     u_long  nAvgBytesPerSec;
+!     u_short nBlockAlign;
+!     u_short wBitsPerSample;
+  } WAVEFORMAT, *PWAVEFORMAT;
+  
+  typedef struct tWAVEFORMATEX
+  {
+!     u_short wFormatTag;
+!     u_short nChannels;
+!     u_long  nSamplesPerSec;
+!     u_long  nAvgBytesPerSec;
+!     u_short nBlockAlign;
+!     u_short wBitsPerSample;
+!     u_short cbSize;
+  } WAVEFORMATEX, *PWAVEFORMATEX;
+  
+  #endif /* _WAVE_FMT_H_ */
+--- 11,33 ----
+  /* 構造体定義 (ref. MS-Windows mmsystem.h) */
+  typedef struct tWAVEFORMAT
+  {
+!     u_int16_t wFormatTag;
+!     u_int16_t nChannels;
+!     u_int32_t nSamplesPerSec;
+!     u_int32_t nAvgBytesPerSec;
+!     u_int16_t nBlockAlign;
+!     u_int16_t wBitsPerSample;
+  } WAVEFORMAT, *PWAVEFORMAT;
+  
+  typedef struct tWAVEFORMATEX
+  {
+!     u_int16_t wFormatTag;
+!     u_int16_t nChannels;
+!     u_int32_t nSamplesPerSec;
+!     u_int32_t nAvgBytesPerSec;
+!     u_int16_t nBlockAlign;
+!     u_int16_t wBitsPerSample;
+!     u_int16_t cbSize;
+  } WAVEFORMATEX, *PWAVEFORMATEX;
+  
+  #endif /* _WAVE_FMT_H_ */
