@@ -6,13 +6,13 @@
 #
 
 PORTNAME=		WiKicker
-PORTVERSION=		0.23
+PORTVERSION=		0.24
 CATEGORIES+=		japanese www perl5
 MASTER_SITES=		\
 			http://www.naney.org/comp/distrib/WiKicker/archive/
 
-MAINTAINER=		jfkimura@yahoo.co.jp
-COMMENT=		Wiki like system by perl5 (Only Japanese Language)
+MAINTAINER=		ports@freebsd.org
+COMMENT=		Wiki like system by perl5
 
 # ============================================================================
 # =  You have to appoint GPG to use a function to upload an image.           =
