@@ -8,7 +8,8 @@
 PORTNAME=	gyokuro
 PORTVERSION=	1.0.0
 CATEGORIES=	japanese textproc ruby
-MASTER_SITES=	http://downloads.sourceforge.jp/gyokuro/1017/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
+MASTER_SITE_SUBDIR=	gyokuro/1017
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 

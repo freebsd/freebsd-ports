@@ -8,7 +8,8 @@
 PORTNAME=	html2hdml
 PORTVERSION=	1.0.3
 CATEGORIES=	www textproc
-MASTER_SITES=	http://downloads.sourceforge.jp/html2hdml/3784/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
+MASTER_SITE_SUBDIR=	html2hdml/3784
 
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	An i-mode HTML to EZweb HDML converter
