@@ -1,0 +1,110 @@
+# New ports collection makefile for:	XEmacs
+# Version required:	20.4
+# Date created:		5 Dec 1997
+# Whom:			Kazuyuki IENAGA <ienaga@jsys.co.jp>
+#
+# $Id$
+#
+
+DISTNAME=	xemacs-20.4
+PKGNAME?=	xemacs-mule-20.4
+CATEGORIES?=	editors
+MASTER_SITES+=	ftp://unipro.jsys.co.jp/pub/editor/xemacs/20.4/ \
+		ftp://ftp.lab.kdd.co.jp/xemacs/xemacs-20.4/ \
+		ftp://ftp.xemacs.org/pub/xemacs-20.4/ \
+		ftp://ftp2.xemacs.org/pub/xemacs/xemacs-20.4/
+DISTFILES+=	xemacs-20.4.tar.gz xemacs-20.4-elc.tar.gz \
+		xemacs-20.4-info.tar.gz xemacs-20.4-mule.tar.gz
+
+MAINTAINER?=	kiri@kiri.toba-cmt.ac.jp
+
+BUILD_DEPENDS=	${BUILD_INPUT_METHOD}
+LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm \
+		jpeg\\.9\\.:${PORTSDIR}/graphics/jpeg \
+		png\\.2\\.:${PORTSDIR}/graphics/png \
+		compface\\.1\\.:${PORTSDIR}/mail/faces \
+		${LIB_INPUT_METHOD}
+RUN_DEPENDS=	${PREFIX}/lib/xemacs-20.4/etc/BABYL:${PORTSDIR}/editors/xemacs-mule-common
+
+EXTRACT_ONLY=	xemacs-20.4.tar.gz xemacs-20.4-elc.tar.gz \
+		xemacs-20.4-info.tar.gz xemacs-20.4-mule.tar.gz 
+WRKSRC=		${WRKDIR}/xemacs-20.4
+PATCHDIR=	${.CURDIR}/../../editors/xemacs-mule-common/patches
+FILESDIR=	${.CURDIR}/../../editors/xemacs-mule-common/files
+SCRIPTDIR=	${.CURDIR}/../../editors/xemacs-mule-common/scripts
+INSTALL_COOKIE=	${WRKDIR}/.install_done-${PKGNAME}
+PACKAGE_COOKIE=	${WRKDIR}/.package_done-${PKGNAME}
+GNU_CONFIGURE=	yes
+USE_AUTOCONF=	yes
+CONFIGURE_ARGS=	i386-unknown-freebsd --with-x11 --with-mule \
+		--x-includes=${X11BASE}/include --x-libraries=${X11BASE}/lib \
+		${MISC_OPTIONS} ${WITH_INPUT_METHOD} ${WITH_WIDGETS} \
+		--site-libraries='${SITE_LIBRARIES}' --site-includes='${SITE_INCLUDES}' \
+		--infopath=/usr/local/lib/xemacs/info:/usr/local/info:/usr/X11R6/info:/usr/info:/usr/local/lib/texmf/doc/info:/usr/lib/texmf/doc:/usr/share/info
+
+STRIP=
+
+INSTALL_TARGET=	install-arch-dep
+
+SCRIPTS_ENV=	AWK=${AWK} CAT=${CAT} CP=${CP} ECHO=${ECHO} GREP=${GREP} MKDIR="${MKDIR}" \
+		MV=${MV} RM=${RM} SED=${SED} TOUCH=${TOUCH} \
+		SITESTARTFILE=${SITESTARTFILE} DEFAULTFILE=${DEFAULTFILE} \
+		TMPL_FILES="${TMPL_FILES}" \
+		ELISPDIR=${ELISPDIR} PATCHDIR=${PATCHDIR} PKGDIR=${PKGDIR} PKGLDIR=${PKGLDIR} \
+		LANGUAGE=${LANGUAGE}
+
+ELISPDIR=	${PREFIX}/lib/xemacs/site-lisp
+PKGLDIR=	${.CURDIR}/../../editors/xemacs-mule/pkg
+SITESTARTFILE=	site-start.el
+DEFAULTFILE=	default.el
+TMPL_FILES=	INSTALL DEINSTALL
+
+.if defined(WNN4)
+SITE_INCLUDES=		${X11BASE}/include
+SITE_LIBRARIES=		${X11BASE}/lib
+.endif
+SITE_INCLUDES+=		${PREFIX}/include
+SITE_LIBRARIES+=	${PREFIX}/lib
+.if defined(CANNA)
+LIB_INPUT_METHOD+=	canna\\.1\\.:${PORTSDIR}/japanese/Canna
+WITH_INPUT_METHOD+=	--with-canna
+.endif
+.if defined(WNN4)
+BUILD_INPUT_METHOD+=	${PREFIX}/bin/Wnn4/jserver:${PORTSDIR}/japanese/Wnn
+WITH_INPUT_METHOD+=	--with-wnn
+.elif defined(WNN6)
+BUILD_INPUT_METHOD+=	${PREFIX}/include/wnn/jlib.h:${PORTSDIR}/japanese/Wnn6-lib
+WITH_INPUT_METHOD+=	--with-wnn6
+.endif
+.if !defined(WITH_INPUT_METHOD)
+WITH_INPUT_METHOD=	--with-wnn=no
+WITH_INPUT_METHOD+=	--with-wnn6=no
+WITH_INPUT_METHOD+=	--with-canna=no
+.endif
+
+WITH_WIDGETS=	--with-menubars=lucid --with-scrollbars=lucid --with-dialogs=athena
+MISC_OPTIONS=	--with-xface --with-xpm --with-sound=native --with-pop --with-xfs
+
+pre-build:
+	@find ${WRKSRC} \( -name \*.orig -o -name \*~ \) -exec ${RM} -f \{} \;
+	@${RM} -f ${WRKSRC}/lib-src/DOC* ${WRKSRC}/src/xemacs
+
+post-install::
+.for file in b2m ctags etags gnuclient xemacs-20.4
+	@strip ${PREFIX}/bin/${file}
+.endfor
+	@if [ -f ${PKGDIR}/INSTALL ]; then \
+		${SETENV} PKG_PREFIX=${PREFIX} \
+			${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL; \
+	fi
+	@${TOUCH} ${TOUCH_FLAGS} ${INSTALL_COOKIE}
+
+post-package:
+	@${TOUCH} ${TOUCH_FLAGS} ${PACKAGE_COOKIE}
+
+pre-clean:
+	@(cd ${FILESDIR}; ${RM} -f ${TMPL_FILES})
+	@(cd ${PKGDIR}; ${RM} -f PLIST ${TMPL_FILES})
+
+.include <bsd.port.mk>
+
