@@ -1,0 +1,35 @@
+bin/mecab
+bin/mecab-config
+bin/mkmecabdic
+etc/mecabrc
+include/mecab.h
+lib/libmecab.a
+lib/libmecab.so
+lib/libmecab.so.0
+lib/mecab/dic/ipadic/connect.csv
+lib/mecab/dic/ipadic/da.me
+lib/mecab/dic/ipadic/dic.csv
+lib/mecab/dic/ipadic/dicrc
+lib/mecab/dic/ipadic/feature.me
+lib/mecab/dic/ipadic/info.me
+lib/mecab/dic/ipadic/matrix.me
+lib/mecab/dic/ipadic/token.me
+@dirrm lib/mecab/dic/ipadic
+@dirrm lib/mecab/dic
+@dirrm lib/mecab
+%%PORTDOCS%%%%EXAMPLESDIR%%/example-thread.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/example-thread2.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/example-win32-dll.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/example.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/example2.cpp
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/bindings.html
+%%PORTDOCS%%%%DOCSDIR%%/dic.html
+%%PORTDOCS%%%%DOCSDIR%%/format.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/libmecab.html
+%%PORTDOCS%%%%DOCSDIR%%/mecab.css
+%%PORTDOCS%%%%DOCSDIR%%/mecab.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
