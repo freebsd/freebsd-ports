@@ -3,7 +3,7 @@
 # Date created:		24 Nov 1998
 # Whom:			mac@jp.freebsd.org
 #
-# $Id: Makefile,v 1.42 1998/11/25 23:05:42 asami Exp $
+# $Id: Makefile,v 1.44 1998/12/10 22:15:07 sada Exp $
 
 DISTNAME=	WindowMaker-0.20.3
 PKGNAME=	windowmaker-i18n-0.20.3
@@ -11,10 +11,9 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.windowmaker.org/pub/beta/srcs/ \
 		ftp://ftp.io.com/pub/mirror/windowmaker/beta/srcs/ \
 		http://jgo.local.net/cool_downloads/wm/ \
-		ftp://ftp.kr.freebsd.org/pub/FreeBSD-kr/misc/wmaker/ 
+		ftp://ftp.kr.freebsd.org/pub/FreeBSD-kr/misc/wmaker/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DATAFILES} \
-		WindowMaker-0.20.3-ko.po.gz WPrefs-0.20.3-ko.po.gz 
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} ${DATAFILES}
+		WindowMaker-0.20.3-ko.po.gz WPrefs-0.20.3-ko.po.gz
 
 MAINTAINER=	mac@jp.freebsd.org
 
@@ -26,6 +25,7 @@ LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 BUILD_DEPENDS=	${LOCALBASE}/lib/libintl.a:${PORTSDIR}/devel/gettext \
 		nkf:${PORTSDIR}/japanese/nkf
 
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} ${DATAFILES}
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	X11BASE=${X11BASE}  LOCALBASE=${LOCALBASE} \
