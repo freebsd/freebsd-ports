@@ -1,13 +1,31 @@
-#!/bin/sh
-if [ x$2 != xPOST-INSTALL ]; then
-        exit
-fi
-SPOOLDIR=/var/spool/news
-export SPOOLDIR
-mkdir -p $SPOOLDIR
-csh -c 'mkdir -p $SPOOLDIR/{message.id,interesting.groups,out.going}'
-echo This is actually quite fast, for _small_ servers.
-csh -c 'mkdir -p $SPOOLDIR/message.id/{0,1,2,3,4,5,6,7,8,9}{0,1,2,3,4,5,6,7,8,9}
-{0,1,2,3,4,5,6,7,8,9}'
-chown -R news.news $SPOOLDIR
-chmod 2750 $SPOOLDIR
+#! /bin/sh
+
+SPOOLDIR=${VAR:=/var}/spool/news
+LOCKFILE=$VAR/spool/lock/news/fetch.lck
+LIBDIR=${PREFIX:=/usr/local}/lib/leafnode
+
+mkdir -p `dirname $LOCKFILE`
+mkdir -p $SPOOLDIR $LIBDIR
+mkdir -p $SPOOLDIR/leaf.node
+mkdir -p $SPOOLDIR/message.id
+mkdir -p $SPOOLDIR/interesting.groups
+mkdir -p $SPOOLDIR/out.going
+chown news.news `dirname $LOCKFILE`
+chown news.news $SPOOLDIR $LIBDIR
+chown news.news $SPOOLDIR/leaf.node
+chown news.news $SPOOLDIR/message.id
+chown news.news $SPOOLDIR/interesting.groups
+chown news.news $SPOOLDIR/out.going
+cd $SPOOLDIR/message.id
+for a in 0 1 2 3 4 5 6 7 8 9 ; do
+	for b in 0 1 2 3 4 5 6 7 8 9 ; do
+		mkdir -p ${a}${b}0 ${a}${b}1 ${a}${b}2 \
+			${a}${b}3 ${a}${b}4 ${a}${b}5 \
+			${a}${b}6 ${a}${b}7 ${a}${b}8 \
+			${a}${b}9
+		chown news.news ${a}${b}0 ${a}${b}1 ${a}${b}2 \
+			${a}${b}3 ${a}${b}4 ${a}${b}5 \
+			${a}${b}6 ${a}${b}7 ${a}${b}8 \
+			${a}${b}9 ; \
+	done
+done
