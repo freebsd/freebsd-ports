@@ -1,0 +1,7 @@
+lib/%%PYTHON_VERSION%%/site-packages/oops/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/oops/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/oops/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/oops/core.py
+lib/%%PYTHON_VERSION%%/site-packages/oops/core.pyc
+lib/%%PYTHON_VERSION%%/site-packages/oops/core.pyo
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/oops
