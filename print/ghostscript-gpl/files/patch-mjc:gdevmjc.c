@@ -1,5 +1,5 @@
---- mjc/gdevmjc.c.orig	Tue May 23 19:16:52 2000
-+++ mjc/gdevmjc.c	Tue May 23 19:17:44 2000
+--- mjc/gdevmjc.c.orig	Sat Nov  2 17:58:50 1996
++++ mjc/gdevmjc.c	Sun Nov 10 21:37:22 2002
 @@ -43,7 +43,8 @@
  #include <limits.h>
  #include "gdevprn.h"
@@ -20,25 +20,32 @@
  #define PAPER_SIZE_B4 30
  #define PAPER_SIZE_B5 31
  
-@@ -190,14 +193,12 @@
+@@ -190,18 +193,16 @@
  private dev_proc_print_page(mjc720_print_page);
  private dev_proc_print_page(mj500c_print_page);
  
 -private dev_proc_get_props(mj_get_props);
 -private dev_proc_put_props(mj_put_props);
+-
+-private void expand_line(P4(word*, int, int, int));
+-private int put_prop_float(P5(gs_prop_item *, float *, float, float, int));
+-private int put_prop_int(P5(gs_prop_item *, int *, int, int, int));
 +private dev_proc_get_params(mj_get_params);
 +private dev_proc_put_params(mj_put_params);
  
- private void expand_line(P4(word*, int, int, int));
--private int put_prop_float(P5(gs_prop_item *, float *, float, float, int));
--private int put_prop_int(P5(gs_prop_item *, int *, int, int, int));
--
 -private void set_bpp(P2(gx_device *, int));
-+private int mj_put_param_int(P6(gs_param_list *, gs_param_name, int *, int, int, int));
-+private void mj_set_bpp(P2(gx_device *, int));
++private void expand_line(word*, int, int, int);
++private int mj_put_param_int(gs_param_list *, gs_param_name, int *, int, int, int);
++private void mj_set_bpp(gx_device *, int);
  
- private uint gdev_prn_rasterwidth(P2(const gx_device_printer *, int ));
+-private uint gdev_prn_rasterwidth(P2(const gx_device_printer *, int ));
++private uint gdev_prn_rasterwidth(const gx_device_printer *, int );
  
+-private gx_color_index mjc_correct_color(P2(gx_device_printer *, gx_color_index));
++private gx_color_index mjc_correct_color(gx_device_printer *, gx_color_index);
+ 
+ /* The device descriptors */
+ struct gx_device_mj_s {
 @@ -224,7 +225,7 @@
  #define mj    ((gx_device_mj *) pdev)
  
@@ -70,8 +77,10 @@
 +	proc_put_params\
  }
  
- private int mjc_open(P1(gx_device *));
- private int mj_colour_open(P1(gx_device *));
+-private int mjc_open(P1(gx_device *));
+-private int mj_colour_open(P1(gx_device *));
++private int mjc_open(gx_device *);
++private int mj_colour_open(gx_device *);
  
  private gx_device_procs mj_procs =
 -mj_colour_procs(mjc_open, mj_get_props, mj_put_props);
@@ -108,7 +117,7 @@
  
    switch (mj->colorcomp) {
    case 1:
-@@ -360,80 +358,74 @@
+@@ -360,84 +358,78 @@
   * and control over the bits-per-pixel used in output rendering */
  /* Added properties for DeskJet 5xxC */
  
@@ -245,6 +254,11 @@
  }
  
  /* ------ Internal routines ------ */
+-private int mj_colour_print_page(P3(gx_device_printer *, FILE *, int));
++private int mj_colour_print_page(gx_device_printer *, FILE *, int);
+ 
+ 
+ private int
 @@ -1163,7 +1155,8 @@
  
    /* Send each scan line in turn */
@@ -255,7 +269,35 @@
      int cErr, mErr, yErr, kErr;
      int this_pass, i;
      long int lnum;
-@@ -1685,39 +1678,25 @@
+@@ -1412,10 +1405,10 @@
+ 
+ void 
+ mj_color_correct(gx_color_value *Rptr ,gx_color_value *Gptr , gx_color_value *Bptr )
+-								/* R,G,B : 0`255 */
++								/* R,G,B : 0)B`255 */
+ {
+-	short	R,G,B;				/* R,G,B : 0`255  */
+-	short	C,M,Y;				/* C,M,Y : 0`1023 */
++	short	R,G,B;				/* R,G,B : 0)B`255  */
++	short	C,M,Y;				/* C,M,Y : 0)B`1023 */
+ 	short	H,D,Wa;				/* ese-HSV         */
+ 	long	S;					/*     HSV         */
+ 
+@@ -1517,9 +1510,11 @@
+  * c, m, y, inks by reducing the cyan component to give a truer black.
+  */
+ private gx_color_index
+-gdev_mjc_map_rgb_color(gx_device *pdev, gx_color_value r,
+-				 gx_color_value g, gx_color_value b)
++gdev_mjc_map_rgb_color(gx_device *pdev, const gx_color_value cv[])
+ {
++  gx_color_value r = cv[0];
++  gx_color_value g = cv[1];
++  gx_color_value b = cv[2];
+   if (gx_color_value_to_byte(r & g & b) == 0xff)
+     return (gx_color_index)0;         /* white */
+   else {
+@@ -1685,39 +1680,25 @@
  }
  
  private int
@@ -311,7 +353,7 @@
  { gx_device_color_info *ci = &pdev->color_info;
    /* Only valid bits-per-pixel are 1, 3, 8, 16, 24, 32 */
    int bpp = bits_per_pixel < 3 ? 1 : bits_per_pixel < 8 ? 3 : 
-@@ -1725,9 +1704,9 @@
+@@ -1725,9 +1706,9 @@
    ci->num_components = ((bpp == 1) || (bpp == 8) ? 1 : 3);
    ci->depth = ((bpp > 1) && (bpp < 8) ? 8 : bpp);
    ci->max_gray = (bpp >= 8 ? 255 : 1);
@@ -324,7 +366,7 @@
  }
  
  /* This returns either the number of pixels in a scan line, or the number
-@@ -1736,7 +1715,7 @@
+@@ -1736,7 +1717,7 @@
  gdev_prn_rasterwidth(const gx_device_printer *pdev, int pixelcount)
  {
    word raster_width =

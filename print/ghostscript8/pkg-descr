@@ -7,18 +7,10 @@ from the GPL. Read the file PUBLIC in the work/gsX.Y directory or in
 ${PREFIX}/share/ghostscript/X.Y/doc/PUBLIC after installation for details !
 
 This port includes add-on packages (not part of the official gs release)
-	o Support for pdfencrypt, see description on
-	  - http://members.ozemail.com.au/~geoffk/pdfencrypt/
-	o HP8XX driver for HP DeskJet 880C/882C/895C
-	  - http://www.gelhaus.net/hp880c/
+	o HP2200 driver for HP DeskJet 8xx and Business Inkjet 2200
+	  - http://hp.sourceforge.net/gs-hp2200.php
 	o DJ970 driver for HP DeskJet 970CXi
 	  - http://www.harsch.net/Ghostscript/ghostscript.html
-	o PCL3 and HPDJ driver for HP DeskJet series
-	  - http://home.t-online.de/home/Martin.Lottermoser/pcl3.html
-	o Gimp-Print driver for Canon/Epson/Lexmark/HP printers
-	  - http://gimp-print.sourceforge.net/
-	o HPinkjet driver for HP PhotoSmart/DeskJet series
-	  - http://hpinkjet.sourceforge.net/
 	o Spacial drivers for verious printer models mainly sold in Japan
 	  - Alps, Canon, Epson, NEC, Ricoh,...
 	o Additional contributed uniprint driver profiles for

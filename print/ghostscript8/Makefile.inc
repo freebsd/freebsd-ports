@@ -1,0 +1,4 @@
+# $FreeBSD$
+
+GS_VERSION=	8.00
+
