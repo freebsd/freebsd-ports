@@ -1,0 +1,46 @@
+--- configure.orig	Sun Feb 11 07:48:58 2001
++++ configure	Tue Apr 13 17:11:28 2004
+@@ -1183,21 +1194,21 @@
+ echo "$ac_t""$CPP" 1>&6
+ 
+ 
+-for ac_hdr in endian.h
++for ac_hdr in sys/endian.h
+ do
+ ac_safe=`echo "$ac_hdr" | sed 'y%./+-%__p_%'`
+ echo $ac_n "checking for $ac_hdr""... $ac_c" 1>&6
+-echo "configure:1191: checking for $ac_hdr" >&5
++echo "configure:1202: checking for $ac_hdr" >&5
+ if eval "test \"`echo '$''{'ac_cv_header_$ac_safe'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   cat > conftest.$ac_ext <<EOF
+-#line 1196 "configure"
++#line 1207 "configure"
+ #include "confdefs.h"
+ #include <$ac_hdr>
+ EOF
+ ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
+-{ (eval echo configure:1201: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
++{ (eval echo configure:1212: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
+ ac_err=`grep -v '^ *+' conftest.out | grep -v "^conftest.${ac_ext}\$"`
+ if test -z "$ac_err"; then
+   rm -rf conftest*
+@@ -1233,7 +1244,7 @@
+ ac_cv_cpu_endian_ness="unknown"
+ 
+ case "$target_cpu" in
+-	alpha* | i?86 )
++	alpha* | i?86 | ia64* | amd64* )
+ 		ac_cv_cpu_endian_ness="little"
+ 		;;
+ 		
+@@ -1941,7 +1952,7 @@
+ fi
+ 
+ if test "$ac_cv_prog_gcc" = yes ; then
+-	CFLAGS="-g -O2 -Wall -Wstrict-prototypes -pipe"
++	CFLAGS="-g $CFLAGS -Wall -Wstrict-prototypes -pipe"
+ fi
+ 
+ if test "$ac_arg_debug" = yes; then
