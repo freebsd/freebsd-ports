@@ -1,7 +1,41 @@
-*** Imakefile.orig	Mon Dec  5 14:47:52 1994
---- Imakefile	Mon Dec  5 14:49:04 1994
+*** Imakefile.orig	Thu Feb  2 18:25:44 1995
+--- Imakefile	Sun May 30 11:42:08 1999
 ***************
-*** 106,115 ****
+*** 25,31 ****
+  XCOMM will define yylineno.  If you get an "Undefined symbol: _yylineno"
+  XCOMM when linking, adjust this to work on your system.
+  
+! #if defined(i386BsdArchitecture) || defined(LinuxArchitecture)
+  # ifdef LexCmd
+  LEX = LexCmd -l
+  # else
+--- 25,31 ----
+  XCOMM will define yylineno.  If you get an "Undefined symbol: _yylineno"
+  XCOMM when linking, adjust this to work on your system.
+  
+! #if defined(FreeBSDArchitecture) || defined(LinuxArchitecture)
+  # ifdef LexCmd
+  LEX = LexCmd -l
+  # else
+***************
+*** 100,106 ****
+  SpecialObjectRule(LocPixmap.o,NullParameter,'-DBITMAPDIR="$(INCDIR)/bitmaps"')
+  SpecialObjectRule(twm.o,NullParameter,$(TWM_DEFS))
+  
+! #if defined(UltrixArchitecture) || defined(AlphaArchitecture)
+  SpecialObjectRule(menus.o,NullParameter,-Olimit 700)
+  #endif
+  
+--- 100,106 ----
+  SpecialObjectRule(LocPixmap.o,NullParameter,'-DBITMAPDIR="$(INCDIR)/bitmaps"')
+  SpecialObjectRule(twm.o,NullParameter,$(TWM_DEFS))
+  
+! #if !defined(FreeBSDArchitecture) && (defined(UltrixArchitecture) || defined(AlphaArchitecture))
+  SpecialObjectRule(menus.o,NullParameter,-Olimit 700)
+  #endif
+  
+***************
+*** 120,129 ****
   XCOMM	ln $(BINDIR)/tvtwm $(BINDIR)/twm
   
   #if (ProjectX < 5)
@@ -12,7 +46,7 @@
   /* InstallNamedProg(ssetroot,xsetroot,$(BINDIR)) */
   #endif
   
---- 106,115 ----
+--- 120,129 ----
   XCOMM	ln $(BINDIR)/tvtwm $(BINDIR)/twm
   
   #if (ProjectX < 5)
