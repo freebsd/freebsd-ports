@@ -1,0 +1,15 @@
+#!/bin/sh
+# $FreeBSD: /tmp/pcvs/ports/russian/apache13/Attic/pkg-deinstall,v 1.1 2002-07-08 09:27:37 ijliao Exp $
+#
+
+if [ "$2" != "POST-DEINSTALL" ]; then
+    exit 0
+fi
+
+USER=www
+
+if pw usershow "${USER}" 2>/dev/null 1>&2; then
+	echo "To delete Apache user permanently, use 'pw userdel ${USER}'"
+fi
+
+exit 0
