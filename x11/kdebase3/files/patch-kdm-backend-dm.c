@@ -32,7 +32,7 @@ diff -u -3 -p -r1.90.2.3 dm.c
 +		to = 0;
 +	    tv.tv_sec = to;
 +	    tv.tv_usec = 0;
-+	    tvp = &to;
++	    tvp = &tv;
 +	}
 +	nready = select (WellKnownSocketsMax + 1, &reads, 0, 0, tvp);
  	Debug ("select returns %d\n", nready);
