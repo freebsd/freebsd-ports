@@ -312,7 +312,6 @@ angst		ports/net/angst
 anjuta		ports/devel/anjuta
 ant-xinclude-task	ports/textproc/ant-xinclude-task
 anteater	ports/sysutils/anteater
-anthy		ports/japanese/anthy
 antipolix	ports/games/antipolix
 antiword	ports/textproc/antiword
 antlr		ports/devel/antlr
@@ -732,7 +731,6 @@ cadaver		ports/www/cadaver
 cadubi		ports/graphics/cadubi
 caesar		src/games/caesar
 cal		src/usr.bin/cal
-cal.rb		ports/japanese/cal.rb
 calamaris	ports/www/calamaris
 calc		ports/math/calc
 calcoo		ports/math/calcoo
@@ -823,7 +821,6 @@ cgiwrap		ports/www/cgiwrap
 cgoban		ports/games/cgoban
 chat		src/usr.bin/chat
 chbg		ports/graphics/chbg
-cheapcall	ports/german/cheapcall
 cheatah		ports/misc/cheatah
 checkbot	ports/www/checkbot
 checknr		src/usr.bin/checknr
@@ -1162,7 +1159,6 @@ cyrus-imapd2	ports/mail/cyrus-imapd2
 cyrus-imspd	ports/databases/cyrus-imspd
 cyrus-sasl	ports/security/cyrus-sasl
 cyrus-sasl2	ports/security/cyrus-sasl2
-d1489		ports/russian/d1489
 da-aspell	ports/textproc/da-aspell
 da-ooodict-DK	ports/editors/ooodict-da_DK
 dact		ports/archivers/dact
@@ -1216,6 +1212,7 @@ ddos_scan	ports/security/ddos_scan
 ddup		ports/net/ddup
 de-BBBike	ports/german/BBBike
 de-aspell	ports/german/aspell
+de-cheapcall	ports/german/cheapcall
 de-citrix_ica	ports/german/citrix_ica
 de-dict		ports/german/dict
 de-ding		ports/german/ding
@@ -1235,6 +1232,7 @@ de-openoffice	ports/german/openoffice
 de-phone	ports/german/phone
 de-staroffice52	ports/german/staroffice52
 de-steak	ports/german/steak
+de-unix-connect	ports/german/unix-connect
 de-webalizer2	ports/german/webalizer2
 deadfs		src/sys/fs/deadfs
 deal		ports/games/deal
@@ -1519,7 +1517,6 @@ elisp-manual	ports/lang/elisp-manual
 elk		ports/lang/elk
 elm		ports/mail/elm
 elm+ME		ports/mail/elm+ME
-elmar-fonts	ports/hebrew/elmar-fonts
 elscreen	ports/misc/elscreen
 elvis		ports/editors/elvis
 em		ports/editors/em
@@ -1914,7 +1911,6 @@ frontpage-it	ports/www/frontpage-it
 frontpage-ja	ports/www/frontpage-ja
 frontpage-ko	ports/www/frontpage-ko
 frontpage-nl	ports/www/frontpage-nl
-frontpage-pt_BR	ports/portuguese/frontpage-pt_BR
 frontpage-sv	ports/www/frontpage-sv
 frontpage-th	ports/www/frontpage-th
 frontpage-zh	ports/www/frontpage-zh
@@ -2587,7 +2583,6 @@ hbiff		ports/mail/hbiff
 hdconv		ports/palm/hdconv
 hdf		ports/graphics/hdf
 hdf5		ports/graphics/hdf5
-he2		ports/hebrew/he2
 head		src/usr.bin/head
 healthd		ports/sysutils/healthd
 heimdal		ports/security/heimdal
@@ -2697,6 +2692,8 @@ httplog		ports/sysutils/httplog
 httptunnel	ports/www/httptunnel
 httrack		ports/www/httrack
 hu-ispell	ports/hungarian/ispell
+hu-jdictionary-eng-hun	ports/hungarian/jdictionary-eng-hun
+hu-jdictionary-eng-hun-expr	ports/hungarian/jdictionary-eng-hun-expr
 hu-ooodict-HU	ports/editors/ooodict-hu_HU
 hu-phone	ports/hungarian/hu-phone
 hu-zipcodes	ports/hungarian/hu-zipcodes
@@ -2897,7 +2894,6 @@ iso12083	ports/textproc/iso12083
 iso8879		ports/textproc/iso8879
 isoqlog		ports/mail/isoqlog
 ispell		ports/textproc/ispell
-ispell-pt_BR	ports/portuguese/ispell-pt_BR
 isreal		ports/graphics/isreal
 isync		ports/mail/isync
 it-aspell	ports/textproc/it-aspell
@@ -2911,6 +2907,8 @@ its4		ports/security/its4
 iv		ports/x11-toolkits/iv
 iverilog	ports/cad/iverilog
 ivtools		ports/graphics/ivtools
+iw-elmar-fonts	ports/hebrew/elmar-fonts
+iw-he2		ports/hebrew/he2
 iwidgets	ports/x11-toolkits/iwidgets
 ixj		ports/comms/ixj
 ixlib		ports/devel/ixlib
@@ -2930,11 +2928,13 @@ ja-acroread-jpnfont	ports/japanese/acroread-jpnfont
 ja-addttfont	ports/japanese/addttfont
 ja-alias-fonts	ports/japanese/alias-fonts
 ja-another-htmllint	ports/japanese/another-htmllint
+ja-anthy	ports/japanese/anthy
 ja-aterm	ports/japanese/aterm
 ja-balsa	ports/japanese/balsa
 ja-bible_names-fpw	ports/japanese/bible_names-fpw
 ja-binder	ports/japanese/binder
 ja-bookview	ports/japanese/bookview
+ja-cal.rb	ports/japanese/cal.rb
 ja-cannadic	ports/japanese/cannadic
 ja-cdrom2	ports/japanese/cdrom2
 ja-celrw	ports/japanese/celrw
@@ -3024,6 +3024,7 @@ ja-jed		ports/japanese/jed
 ja-jgv		ports/japanese/jgv
 ja-jhd		ports/japanese/jhd
 ja-jisx0213-fonts	ports/japanese/jisx0213-fonts
+ja-jmode	ports/japanese/jmode
 ja-jpilot	ports/japanese/jpilot
 ja-jtex209-ascii	ports/japanese/jtex209-ascii
 ja-jtex209-both	ports/japanese/jtex209-both
@@ -3321,6 +3322,11 @@ ja-xdvik-vflib-pkall	ports/japanese/xdvik-vflib-pkall
 ja-xemacs-canna	ports/japanese/xemacs21-canna
 ja-xemacs-canna+freewnn	ports/japanese/xemacs21-canna+freewnn
 ja-xemacs-canna+wnn6	ports/japanese/xemacs21-canna+wnn6
+ja-xemacs-devel-canna	ports/japanese/xemacs-devel-canna
+ja-xemacs-devel-canna+freewnn	ports/japanese/xemacs-devel-canna+freewnn
+ja-xemacs-devel-canna+wnn6	ports/japanese/xemacs-devel-canna+wnn6
+ja-xemacs-devel-freewnn	ports/japanese/xemacs-devel-freewnn
+ja-xemacs-devel-wnn6	ports/japanese/xemacs-devel-wnn6
 ja-xemacs-freewnn	ports/japanese/xemacs21-freewnn
 ja-xemacs-sumo-canna	ports/japanese/xemacs21-sumo-canna
 ja-xemacs-sumo-canna+freewnn	ports/japanese/xemacs21-sumo-canna+freewnn
@@ -3402,8 +3408,6 @@ jdbcpool	ports/java/jdbcpool
 jde		ports/java/jde
 jde-emacs20	ports/java/jde-emacs20
 jdictionary	ports/textproc/jdictionary
-jdictionary-eng-hun	ports/hungarian/jdictionary-eng-hun
-jdictionary-eng-hun-expr	ports/hungarian/jdictionary-eng-hun-expr
 jdictionary-int-eng	ports/textproc/jdictionary-int-eng
 jdk11		ports/java/jdk11
 jdk11-doc	ports/java/jdk11-doc
@@ -3444,7 +3448,6 @@ jlint		ports/java/jlint
 jlj		ports/deskutils/jlj
 jmirror		ports/ftp/jmirror
 jmk-x11-fonts	ports/x11-fonts/jmk-x11-fonts
-jmode		ports/japanese/jmode
 joe		ports/editors/joe
 joe-devel	ports/editors/joe-devel
 john		ports/security/john
@@ -3533,8 +3536,6 @@ kde3-i18n-nb	ports/misc/kde3-i18n-nb
 kde3-i18n-nl	ports/misc/kde3-i18n-nl
 kde3-i18n-nn	ports/misc/kde3-i18n-nn
 kde3-i18n-pl	ports/misc/kde3-i18n-pl
-kde3-i18n-pt	ports/portuguese/kde3-i18n
-kde3-i18n-pt_BR	ports/portuguese/kde3-i18n-pt_BR
 kde3-i18n-ro	ports/misc/kde3-i18n-ro
 kde3-i18n-sk	ports/misc/kde3-i18n-sk
 kde3-i18n-sl	ports/misc/kde3-i18n-sl
@@ -3543,7 +3544,6 @@ kde3-i18n-sv	ports/misc/kde3-i18n-sv
 kde3-i18n-ta	ports/misc/kde3-i18n-ta
 kde3-i18n-th	ports/misc/kde3-i18n-th
 kde3-i18n-tr	ports/misc/kde3-i18n-tr
-kde3-i18n-uk	ports/ukrainian/kde3-i18n-uk
 kde3-i18n-ven	ports/misc/kde3-i18n-ven
 kde3-i18n-vi	ports/misc/kde3-i18n-vi
 kde3-i18n-xh	ports/misc/kde3-i18n-xh
@@ -3734,7 +3734,6 @@ ko-texinfo	ports/korean/texinfo
 ko-uniksc	ports/korean/uniksc
 kobodeluxe	ports/games/kobodeluxe
 koffice-kde3	ports/editors/koffice-kde3	
-koi8r-ps	ports/russian/koi8r-ps
 konverse	ports/net/konverse
 kopete		ports/net/kopete
 korelib		ports/devel/korelib
@@ -4471,7 +4470,6 @@ mesgui		ports/x11-toolkits/mesgui
 meshviewer	ports/graphics/meshviewer
 mess822		ports/mail/mess822
 messagewall	ports/mail/messagewall
-messarge	ports/russian/messarge
 metacity	ports/x11-wm/metacity
 metacity-setup	ports/x11-wm/metacity-setup
 metakit		ports/databases/metakit
@@ -4675,7 +4673,6 @@ moinmoin	ports/www/moinmoin
 molden		ports/biology/molden
 moleskine	ports/editors/moleskine
 momspider	ports/www/momspider
-monacofonts	ports/ukrainian/monacofonts
 moneydance	ports/deskutils/moneydance
 monitord	ports/sysutils/monitord
 mono		ports/lang/mono
@@ -5721,7 +5718,6 @@ p5-Lingua-EN-Syllable	ports/textproc/p5-Lingua-EN-Syllable
 p5-Lingua-Ident	ports/textproc/p5-Lingua-Ident
 p5-Lingua-Ispell	ports/textproc/p5-Lingua-Ispell
 p5-Lingua-Preferred	ports/textproc/p5-Lingua-Preferred
-p5-Lingua-RU-Charset	ports/russian/p5-Lingua-RU-Charset
 p5-Locale-Codes	ports/misc/p5-Locale-Codes
 p5-Locale-Maketext	ports/devel/p5-Locale-Maketext
 p5-Locale-Msgcat	ports/misc/p5-Locale-Msgcat
@@ -6307,7 +6303,6 @@ pgcc		ports/lang/pgcc
 pgdriver	ports/www/pgdriver
 pgen		ports/mail/pgen
 pgp		ports/security/pgp
-pgp.language	ports/russian/pgp.language
 pgp4pine	ports/mail/pgp4pine
 pgp5		ports/security/pgp5
 pgp6		ports/security/pgp6
@@ -6368,7 +6363,6 @@ pim6sd		ports/net/pim6sd
 pimp3		ports/audio/pimp3
 pinball		ports/games/pinball
 pine-pgp-filters	ports/mail/pine-pgp-filters
-pine.language	ports/ukrainian/pine.language
 pine4		ports/mail/pine4
 pinentry	ports/security/pinentry
 pinfo		ports/misc/pinfo
@@ -6686,6 +6680,10 @@ psutils-a4	ports/print/psutils-a4
 psutils-letter	ports/print/psutils-letter
 psybnc		ports/irc/psybnc
 pt-aspell	ports/portuguese/aspell
+pt-frontpage-pt_BR	ports/portuguese/frontpage-pt_BR
+pt-ispell-pt_BR	ports/portuguese/ispell-pt_BR
+pt-kde3-i18n-pt	ports/portuguese/kde3-i18n
+pt-kde3-i18n-pt_BR	ports/portuguese/kde3-i18n-pt_BR
 pt-ooodict-BR	ports/portuguese/ooodict-pt_BR
 pt-ooodict-PT	ports/portuguese/ooodict-pt_PT
 pt-openoffice	ports/portuguese/openoffice
@@ -7111,7 +7109,6 @@ ripenc		ports/audio/ripenc
 ripetools	ports/net/ripetools
 ripit		ports/audio/ripit
 ripmime		ports/mail/ripmime
-rispell		ports/russian/rispell
 rkinit		src/eBones/usr.bin/rkinit
 rkinitd		src/eBones/libexec/rkinitd
 rkive		ports/news/rkive
@@ -7218,19 +7215,29 @@ ru-apache13	ports/russian/apache13
 ru-apache13-modssl	ports/russian/apache13-modssl
 ru-aspell	ports/russian/aspell
 ru-cyrproxy	ports/russian/cyrproxy
+ru-d1489	ports/russian/d1489
 ru-elm		ports/russian/elm.language
 ru-fortuneru	ports/russian/fortuneru
 ru-gd		ports/russian/gd
 ru-kde3-i18n	ports/russian/kde3-i18n
+ru-koi8r-ps	ports/russian/koi8r-ps
+ru-messarge	ports/russian/messarge
 ru-mtc		ports/russian/mtc
 ru-openoffice	ports/russian/openoffice
+ru-p5-Lingua-RU-Charset	ports/russian/p5-Lingua-RU-Charset
 ru-p5-XML-Parser-encodings	ports/russian/p5-XML-Parser-encodings
 ru-p5-cyrillic	ports/russian/p5-cyrillic
+ru-pgp.language	ports/russian/pgp.language
 ru-pine		ports/russian/pine.language
+ru-rispell		ports/russian/rispell
+ru-ru_pscyr	ports/russian/pscyr
+ru-rus-ispell	ports/russian/rus-ispell
 ru-tac+ia	ports/russian/tac+ia
 ru-wmcyrx	ports/russian/wmcyrx
 ru-xcode	ports/russian/xcode
-ru_pscyr	ports/russian/pscyr
+ru-xcyrBGR	ports/russian/xcyrBGR
+ru-xruskb	ports/russian/xruskb
+ru-xxkb		ports/russian/xxkb
 rubix		ports/games/rubix
 ruboard		ports/www/ruboard
 ruby		ports/lang/ruby
@@ -7467,7 +7474,6 @@ ruby_static-devel	ports/lang/ruby_static-devel
 rudiments	ports/devel/rudiments
 rup		src/usr.bin/rup
 ruptime		src/usr.bin/ruptime
-rus-ispell	ports/russian/rus-ispell
 rusers		src/usr.bin/rusers
 rvi		ports/devel/rvi
 rvm		ports/devel/rvm
@@ -8494,7 +8500,10 @@ uhexen		ports/games/uhexen
 uisp		ports/devel/uisp
 uk-aspell	ports/ukrainian/aspell
 uk-gd		ports/ukrainian/gd
+uk-kde3-i18n-uk	ports/ukrainian/kde3-i18n-uk
+uk-monacofonts	ports/ukrainian/monacofonts
 uk-phone	ports/misc/uk-phone
+uk-pine.language	ports/ukrainian/pine.language
 uk-postcodes	ports/misc/uk-postcodes
 uk-webalizer	ports/ukrainian/webalizer
 ul		src/usr.bin/ul
@@ -8514,14 +8523,12 @@ understand_ada	ports/devel/understand_ada
 understand_c	ports/devel/understand_c
 undms		ports/archivers/undms
 unexpand	src/usr.bin/unexpand
-unicode-uhoai	ports/vietnamese/unicode-uhoai
 unifdef		src/usr.bin/unifdef
 union		src/sys/miscfs/union
 unionfs		src/sys/fs/unionfs
 uniq		src/usr.bin/uniq
 unison		ports/net/unison
 units		src/usr.bin/units
-unix-connect	ports/german/unix-connect
 unix2dos	ports/converters/unix2dos
 unix2tcp	ports/net/unix2tcp
 unixODBC	ports/databases/unixODBC
@@ -8606,7 +8613,9 @@ vgb-bin		ports/emulators/vgb-bin
 vgrind		src/usr.bin/vgrind
 vi		src/usr.bin/vi
 vi-libviet	ports/vietnamese/libviet
+vi-unicode-uhoai	ports/vietnamese/unicode-uhoai
 vi-vi2vn	ports/vietnamese/vi2vn
+vi-vis2u	ports/vietnamese/vis2u
 vi-vn7to8	ports/vietnamese/vn7to8
 vi-vnconvert	ports/vietnamese/vnconvert
 vi-vnelvis	ports/vietnamese/vnelvis
@@ -8645,7 +8654,6 @@ vipw		src/usr.sbin/vipw
 virt		ports/games/virt
 virtualpaper	ports/print/virtualpaper
 vis		src/usr.bin/vis
-vis2u		ports/vietnamese/vis2u
 vis5d+		ports/science/vis5d+
 visionegg	ports/graphics/visionegg
 visualos	ports/emulators/visualos
@@ -8996,7 +9004,6 @@ xcpustate	ports/sysutils/xcpustate
 xcruise		ports/x11-fm/xcruise
 xcubes		ports/games/xcubes
 xcut		ports/x11/xcut
-xcyrBGR		ports/russian/xcyrBGR
 xd		ports/misc/xd
 xdaliclock	ports/x11-clocks/xdaliclock
 xdeblock	ports/games/xdeblock
@@ -9023,12 +9030,7 @@ xemacs-additional-packages	ports/editors/xemacs-additional-packages
 xemacs-basic-mule-packages	ports/editors/xemacs-basic-mule-packages
 xemacs-comm-packages	ports/editors/xemacs-comm-packages
 xemacs-devel	ports/editors/xemacs-devel
-xemacs-devel-canna	ports/japanese/xemacs-devel-canna
-xemacs-devel-canna+freewnn	ports/japanese/xemacs-devel-canna+freewnn
-xemacs-devel-canna+wnn6	ports/japanese/xemacs-devel-canna+wnn6
-xemacs-devel-freewnn	ports/japanese/xemacs-devel-freewnn
 xemacs-devel-mule	ports/editors/xemacs-devel-mule
-xemacs-devel-wnn6	ports/japanese/xemacs-devel-wnn6
 xemacs-games-packages	ports/editors/xemacs-games-packages
 xemacs-libs-packages	ports/editors/xemacs-libs-packages
 xemacs-mule-packages	ports/editors/xemacs-mule-packages
@@ -9318,7 +9320,6 @@ xrolo		ports/deskutils/xrolo
 xrootconsole	ports/x11/xrootconsole
 xrot		ports/games/xrot
 xrubik		ports/games/xrubik
-xruskb		ports/russian/xruskb
 xsane		ports/graphics/xsane
 xsb		ports/lang/xsb
 xsc		ports/games/xsc
@@ -9417,7 +9418,6 @@ xwpl		ports/math/xwpl
 xwrits		ports/deskutils/xwrits
 xxdiff		ports/textproc/xxdiff
 xxgdb		ports/devel/xxgdb
-xxkb		ports/russian/xxkb
 xzgv		ports/graphics/xzgv
 xzip		ports/games/xzip
 xzoom		ports/x11/xzoom
