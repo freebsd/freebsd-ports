@@ -15,7 +15,7 @@ MASTER_SITES=	http://icculus.org/openbox/releases/
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Derived from, and similar to, Blackbox
 
-LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/Xft
+LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/openbox --prefix=${PREFIX} \
 		--sysconfdir=${PREFIX}/etc/openbox

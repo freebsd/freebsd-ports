@@ -14,7 +14,7 @@ DISTNAME=	fspanel-0.8beta1
 MAINTAINER=	anarcat@anarcat.dyndns.org
 COMMENT=	Tiny panel listing opened windows for gnome-compliant WM
 
-LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/Xft
+LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 
 USE_X_PREFIX=	yes
 HAS_CONFIGURE=	yes

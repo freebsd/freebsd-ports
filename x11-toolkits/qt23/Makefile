@@ -20,7 +20,7 @@ COMMENT?=	A C++ X GUI toolkit
 LIB_DEPENDS=	mng.1:${PORTSDIR}/graphics/libmng \
 		png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		Xft.2:${PORTSDIR}/x11-fonts/Xft
+		Xft.2:${PORTSDIR}/x11-fonts/libXft
 
 CONFLICTS=	qt-3.*
 

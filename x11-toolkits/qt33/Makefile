@@ -77,7 +77,7 @@ CONFIGURE_ARGS+=-platform ${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 .endif
 
 .if !defined(WITHOUT_XFT)
-LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/Xft
+LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 .else
 CONFIGURE_ARGS+=-no-xft
 .endif

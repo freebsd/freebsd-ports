@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/
 MAINTAINER=	sascha@root-login.org
 COMMENT=	Place launch icons directly on your desktop
 
-LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/Xft
+LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

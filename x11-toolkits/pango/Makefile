@@ -17,7 +17,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An open-source framework for the layout and rendering of i18n text
 
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2
-LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/Xft
+LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 RUN_DEPENDS=	${FONTSCALE}:${PORTSDIR}/x11-fonts/XFree86-4-fontScalable \
 		${FONTENCOD}:${PORTSDIR}/x11-fonts/XFree86-4-fontEncodings
 

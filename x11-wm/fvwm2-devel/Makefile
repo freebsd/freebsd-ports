@@ -24,7 +24,7 @@ COMMENT=	Popular virtual window manager for X
 
 CONFIGURE_ARGS=	--with-iconv-library=${LOCALBASE}/lib \
 		--with-iconv-includes=${LOCALBASE}/include
-LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/Xft \
+LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft \
 		biconv.2:${PORTSDIR}/converters/iconv
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 

@@ -37,7 +37,7 @@ USE_XPM=	yes
 .if ${XFREE86_VERSION} < 4 || defined(WITHOUT_XFT)
 CONFIGURE_ARGS+=	--without-xft
 .else
-LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/Xft
+LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 CONFIGURE_ARGS+=	--libs="${LDFLAGS}"
 CFLAGS+=	`freetype-config --cflags`
 LDFLAGS=	`freetype-config --libs`

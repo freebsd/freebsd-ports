@@ -37,7 +37,7 @@ USE_GNOME=	gtk20 libidl
 .endif
 
 .if !defined(WITHOUT_XFT)
-LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/Xft
+LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 .if exists(${X11BASE}/lib/X11/fonts/mozilla/fonts.dir)
 BROKEN=		Mozilla${MOZ_SUFX} and Xft2 render the mozilla-fonts \
 		illegibly. Please remove the mozilla-fonts package.

@@ -67,7 +67,7 @@ CONFIGURE_ENV+=	WITH_LOGGING=yes
 .if defined(WITHOUT_XFT)
 CONFIGURE_ENV+=	WITHOUT_XFT=yes
 .else
-LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/Xft
+LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 .endif # !defined(WITHOUT_XFT)
 
 CPPFLAGS+=		-I${X11BASE}/include
