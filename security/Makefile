@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.34 1998/08/07 23:58:36 asami Exp $
+# $Id: Makefile,v 1.35 1998/11/23 05:16:14 kuriyama Exp $
 #
 
     SUBDIR += SSLeay
@@ -10,6 +10,7 @@
     SUBDIR += crack
     SUBDIR += donkey
     SUBDIR += fwtk
+    SUBDIR += gnupg
     SUBDIR += john
     SUBDIR += krb5
     SUBDIR += libident
