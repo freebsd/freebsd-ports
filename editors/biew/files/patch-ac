@@ -1,0 +1,30 @@
+--- makefile.inc.orig	Fri Mar  3 04:02:14 2000
++++ makefile.inc	Mon Mar 20 18:43:11 2000
+@@ -121,7 +121,7 @@
+ ##############################################################################
+ ifdef CONFIG_I386
+ MACHINE=i386
+-CDEFSYS=-D__BITNESS__=32 -D__PLATFORM__='"i386"' -D__BYTE_ORDER__=__LITTLE_ENDIAN__ -D__DEFAULT_DISASM=0 -m386
++CDEFSYS=-D__BITNESS__=32 -D__PLATFORM__='"i386"' -D__BYTE_ORDER__=__LITTLE_ENDIAN__ -D__DEFAULT_DISASM=0
+ endif
+ ifdef CONFIG_I486
+ MACHINE=i386
+@@ -151,14 +151,14 @@
+ # If you do not have GNU development system, modify RM CC LD variables       #
+ ##############################################################################
+ RM=rm -f
+-CC=gcc
+-LD=gcc
++CC?=gcc
++LD=$(CC)
+ ###########################################################################
+ #  CFLAGS set it for optimization                                         #
+ #  LDFLAGS set it for link method                                         #
+ ###########################################################################
+-CFLAGS = -Wall -O2 -fomit-frame-pointer -fcaller-saves\
+- -DNDEBUG=1 $(CDEFOS) $(CDEFSYS)
++CFLAGS+= -Wall \
++ -DNDEBUG=1 $(CDEFOS) $(CDEFSYS) $(CSYSFLAGS)
+ #-ffunction-sections
+ LDFLAGS = -s $(OSLDEF)
+ 

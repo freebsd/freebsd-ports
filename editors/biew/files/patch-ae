@@ -1,0 +1,15 @@
+--- lib/sysdep/generic/unix/kbd_code.h	Fri Mar  3 11:02:00 2000
++++ lib/sysdep/generic/unix/kbd_code.h	Sat Mar  4 15:59:28 2000
+@@ -58,8 +58,11 @@
+ */
+ 
+ #ifdef HAVE_NCURSES
+-
++#if defined(__FreeBSD_version) && __FreeBSD_version < 400010
++#include <ncurses/curses.h>
++#else
+ #include <curses.h>
++#endif
+ 
+ /*
+     All non-symbol keys (function keys, arrows, etc) must be xx00

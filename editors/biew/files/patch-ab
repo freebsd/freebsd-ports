@@ -1,0 +1,11 @@
+--- tools/biewhlp/biewhlp.c.orig	Fri Mar  3 11:08:24 2000
++++ tools/biewhlp/biewhlp.c	Sat Mar  4 15:00:57 2000
+@@ -29,7 +29,7 @@
+ BGLOBAL bOutput;
+ 
+ #define BBIO_CACHE_SIZE 0x1000
+-#define ARCHIVER "lzss e"
++#define ARCHIVER "./lzss e"
+ #define TEMPFNAME "temp_hlp.tmp"
+ 
+ void MyCallBack(IniInfo *ini)
