@@ -5,4 +5,6 @@ where magic was installed, e.g. /usr/local.  Alternatively, the system
 administrator can create a dummy user named 'cad' with its home
 directory set to the installation directory.
 
+WWW: http://vlsi.cornell.edu/magic/
+
 Ported to FreeBSD by Steven Wallace, swallace@freebsd.org
