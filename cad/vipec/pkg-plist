@@ -1,5 +1,4 @@
 bin/vipec
-bin/vipec.exec
 %%DATADIR%%/ckt/amplifier.ckt
 %%DATADIR%%/ckt/bandpass.ckt
 %%DATADIR%%/ckt/bandpass.s2p

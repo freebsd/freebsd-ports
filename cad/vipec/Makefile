@@ -8,7 +8,7 @@
 
 PORTNAME=	vipec
 PORTVERSION=	3.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	cad
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,19 +23,14 @@ BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
 USE_QT_VER=	3
 USE_GMAKE=	yes
-MAKE_ENV=	QTDIR="${QT_PREFIX}"
-
-post-patch:
-	@${SED} -e 's:@PREFIX@:${PREFIX}:g' \
-		${FILESDIR}/vipec.sh.in > ${WRKSRC}/../vipec.sh
+MAKE_ENV=	QTDIR="${QT_PREFIX}" VIPECHOME="${DATADIR}"
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} qmake \
 		-spec ${LOCALBASE}/share/qt/mkspecs/freebsd-g++ vipec.pro
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/../vipec.sh ${PREFIX}/bin/vipec
-	${INSTALL_PROGRAM} ${WRKSRC}/../vipec ${PREFIX}/bin/vipec.exec
+	${INSTALL_PROGRAM} ${WRKSRC}/../vipec ${PREFIX}/bin/vipec
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/../vipec.cfg ${DATADIR}
 	@${MKDIR} ${DATADIR}/ckt
