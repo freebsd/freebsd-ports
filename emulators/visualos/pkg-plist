@@ -1,0 +1,7 @@
+bin/VisualOS
+share/gnome/VisualOS/VisualOS.glade
+share/gnome/VisualOS/io_editor_disk.xpm
+share/locale/es/LC_MESSAGES/VisualOS.mo
+share/locale/fr/LC_MESSAGES/VisualOS.mo
+share/locale/it/LC_MESSAGES/VisualOS.mo
+@dirrm share/gnome/VisualOS

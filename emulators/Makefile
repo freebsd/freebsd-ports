@@ -44,6 +44,7 @@
     SUBDIR += vgb-bin
     SUBDIR += vice
     SUBDIR += vMac
+    SUBDIR += visualos
     SUBDIR += vmsbackup
     SUBDIR += vmware
     SUBDIR += vmware-tools
