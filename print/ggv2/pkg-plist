@@ -1,87 +1,45 @@
-bin/bonobo-application-ps
 bin/ggv
-share/gnome/apps/Graphics/ggv.desktop
-share/gnome/help/ggv/C/docbook.css
-share/gnome/help/ggv/C/ggv.sgml
-share/gnome/help/ggv/C/index.html
-share/gnome/help/ggv/C/intro.html
-share/gnome/help/ggv/C/ln21.html
-share/gnome/help/ggv/C/mainwin.html
-share/gnome/help/ggv/C/menuopts.html
-share/gnome/help/ggv/C/options.html
-share/gnome/help/ggv/C/prefs.html
-share/gnome/help/ggv/C/probs.html
-share/gnome/help/ggv/C/stylesheet-images/caution.gif
-share/gnome/help/ggv/C/stylesheet-images/home.gif
-share/gnome/help/ggv/C/stylesheet-images/important.gif
-share/gnome/help/ggv/C/stylesheet-images/next.gif
-share/gnome/help/ggv/C/stylesheet-images/note.gif
-share/gnome/help/ggv/C/stylesheet-images/prev.gif
-share/gnome/help/ggv/C/stylesheet-images/tip.gif
-share/gnome/help/ggv/C/stylesheet-images/toc-blank.gif
-share/gnome/help/ggv/C/stylesheet-images/toc-minus.gif
-share/gnome/help/ggv/C/stylesheet-images/toc-plus.gif
-share/gnome/help/ggv/C/stylesheet-images/up.gif
-share/gnome/help/ggv/C/stylesheet-images/warning.gif
+bin/ggv-postscript-viewer
+etc/gconf/gconf.xml.defaults/apps/ggv/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/ggv/control/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/ggv/coordinates/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/ggv/gtkgs/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/ggv/layout/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/ggv/printing/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/ggv/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/ggv/control/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/ggv/coordinates/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/ggv/gtkgs/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/ggv/layout/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/ggv/printing/%gconf.xml
+etc/gconf/schemas/ggv.schemas
+libdata/bonobo/servers/GNOME_GGV.server
+share/gnome/applications/ggv.desktop
+share/gnome/gnome-2.0/ui/ggv-control-ui.xml
+share/gnome/gnome-2.0/ui/ggv-postscript-view-ui.xml
+share/gnome/gnome-2.0/ui/ggv-ui.xml
+share/gnome/help/ggv/C/figures/example_screenshot.png
+share/gnome/help/ggv/C/ggv.xml
+share/gnome/help/ggv/C/legal.xml
 share/gnome/help/ggv/C/topic.dat
-share/gnome/help/ggv/it/docbook.css
-share/gnome/help/ggv/it/ggv.sgml
-share/gnome/help/ggv/it/index.html
-share/gnome/help/ggv/it/intro.html
-share/gnome/help/ggv/it/ln21.html
-share/gnome/help/ggv/it/mainwin.html
-share/gnome/help/ggv/it/menuopts.html
-share/gnome/help/ggv/it/options.html
-share/gnome/help/ggv/it/prefs.html
-share/gnome/help/ggv/it/probs.html
-share/gnome/help/ggv/it/stylesheet-images/caution.gif
-share/gnome/help/ggv/it/stylesheet-images/home.gif
-share/gnome/help/ggv/it/stylesheet-images/important.gif
-share/gnome/help/ggv/it/stylesheet-images/next.gif
-share/gnome/help/ggv/it/stylesheet-images/note.gif
-share/gnome/help/ggv/it/stylesheet-images/prev.gif
-share/gnome/help/ggv/it/stylesheet-images/tip.gif
-share/gnome/help/ggv/it/stylesheet-images/toc-blank.gif
-share/gnome/help/ggv/it/stylesheet-images/toc-minus.gif
-share/gnome/help/ggv/it/stylesheet-images/toc-plus.gif
-share/gnome/help/ggv/it/stylesheet-images/up.gif
-share/gnome/help/ggv/it/stylesheet-images/warning.gif
-share/gnome/help/ggv/it/topic.dat
-share/gnome/help/ggv/ja/docbook.css
-share/gnome/help/ggv/ja/ggv.sgml
-share/gnome/help/ggv/ja/index.html
-share/gnome/help/ggv/ja/intro.html
-share/gnome/help/ggv/ja/ln21.html
-share/gnome/help/ggv/ja/mainwin.html
-share/gnome/help/ggv/ja/menuopts.html
-share/gnome/help/ggv/ja/options.html
-share/gnome/help/ggv/ja/prefs.html
-share/gnome/help/ggv/ja/probs.html
-share/gnome/help/ggv/ja/stylesheet-images/caution.gif
-share/gnome/help/ggv/ja/stylesheet-images/home.gif
-share/gnome/help/ggv/ja/stylesheet-images/important.gif
-share/gnome/help/ggv/ja/stylesheet-images/next.gif
-share/gnome/help/ggv/ja/stylesheet-images/note.gif
-share/gnome/help/ggv/ja/stylesheet-images/prev.gif
-share/gnome/help/ggv/ja/stylesheet-images/tip.gif
-share/gnome/help/ggv/ja/stylesheet-images/toc-blank.gif
-share/gnome/help/ggv/ja/stylesheet-images/toc-minus.gif
-share/gnome/help/ggv/ja/stylesheet-images/toc-plus.gif
-share/gnome/help/ggv/ja/stylesheet-images/up.gif
-share/gnome/help/ggv/ja/stylesheet-images/warning.gif
-share/gnome/help/ggv/ja/topic.dat
-share/gnome/oaf/Bonobo_GGV.oafinfo
+share/gnome/idl/Ggv.idl
 share/gnome/omf/ggv/ggv-C.omf
-share/gnome/omf/ggv/ggv-it.omf
-share/gnome/omf/ggv/ggv-ja.omf
-share/gnome/pixmaps/ggv-splash.png
+share/gnome/pixmaps/ggv/clearall.xpm
+share/gnome/pixmaps/ggv/ggv-splash.png
+share/gnome/pixmaps/ggv/toggleall.xpm
+share/gnome/pixmaps/ggv/toggleeven.xpm
+share/gnome/pixmaps/ggv/toggleodd.xpm
+share/gnome/pixmaps/ggv/zoom.xpm
 share/gnome/pixmaps/gnome-ghostview.png
+share/locale/az/LC_MESSAGES/ggv.mo
+share/locale/bg/LC_MESSAGES/ggv.mo
 share/locale/ca/LC_MESSAGES/ggv.mo
 share/locale/cs/LC_MESSAGES/ggv.mo
 share/locale/da/LC_MESSAGES/ggv.mo
 share/locale/de/LC_MESSAGES/ggv.mo
 share/locale/el/LC_MESSAGES/ggv.mo
 share/locale/es/LC_MESSAGES/ggv.mo
+share/locale/eu/LC_MESSAGES/ggv.mo
 share/locale/fi/LC_MESSAGES/ggv.mo
 share/locale/fr/LC_MESSAGES/ggv.mo
 share/locale/ga/LC_MESSAGES/ggv.mo
@@ -92,7 +50,9 @@ share/locale/it/LC_MESSAGES/ggv.mo
 share/locale/ja/LC_MESSAGES/ggv.mo
 share/locale/ko/LC_MESSAGES/ggv.mo
 share/locale/lt/LC_MESSAGES/ggv.mo
+share/locale/ms/LC_MESSAGES/ggv.mo
 share/locale/nl/LC_MESSAGES/ggv.mo
+share/locale/nn/LC_MESSAGES/ggv.mo
 share/locale/no/LC_MESSAGES/ggv.mo
 share/locale/pl/LC_MESSAGES/ggv.mo
 share/locale/pt/LC_MESSAGES/ggv.mo
@@ -104,13 +64,23 @@ share/locale/sl/LC_MESSAGES/ggv.mo
 share/locale/sv/LC_MESSAGES/ggv.mo
 share/locale/tr/LC_MESSAGES/ggv.mo
 share/locale/uk/LC_MESSAGES/ggv.mo
-share/locale/zh_CN.GB2312/LC_MESSAGES/ggv.mo
+share/locale/vi/LC_MESSAGES/ggv.mo
+share/locale/zh_CN/LC_MESSAGES/ggv.mo
 share/locale/zh_TW/LC_MESSAGES/ggv.mo
+@dirrm share/gnome/pixmaps/ggv
 @dirrm share/gnome/omf/ggv
-@dirrm share/gnome/help/ggv/ja/stylesheet-images
-@dirrm share/gnome/help/ggv/ja
-@dirrm share/gnome/help/ggv/it/stylesheet-images
-@dirrm share/gnome/help/ggv/it
-@dirrm share/gnome/help/ggv/C/stylesheet-images
+@dirrm share/gnome/help/ggv/C/figures
 @dirrm share/gnome/help/ggv/C
 @dirrm share/gnome/help/ggv
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/ggv/printing
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/ggv/layout
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/ggv/gtkgs
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/ggv/coordinates
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/ggv/control
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/ggv
+@dirrm etc/gconf/gconf.xml.defaults/apps/ggv/printing
+@dirrm etc/gconf/gconf.xml.defaults/apps/ggv/layout
+@dirrm etc/gconf/gconf.xml.defaults/apps/ggv/gtkgs
+@dirrm etc/gconf/gconf.xml.defaults/apps/ggv/coordinates
+@dirrm etc/gconf/gconf.xml.defaults/apps/ggv/control
+@dirrm etc/gconf/gconf.xml.defaults/apps/ggv

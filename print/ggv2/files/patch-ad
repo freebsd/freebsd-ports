@@ -1,6 +1,0 @@
---- src/ps.h.orig	Tue Feb 13 12:21:25 2001
-+++ src/ps.h	Tue Feb 27 18:50:19 2001
-@@ -45,2 +45,3 @@
- 
-+#undef NONE
- enum { ATEND = -1, NONE = 0, PORTRAIT, LANDSCAPE, ASCEND, DESCEND, SPECIAL };
