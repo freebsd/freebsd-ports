@@ -8,6 +8,22 @@ libdata/pkgconfig/libgsasl.pc
 %%PORTDOCS%%%%DOCSDIR%%/reference/c4.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/gsasl-gsasl.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/index.html
+%%NLS%%share/locale/de/LC_MESSAGES/gsasl.mo
+%%NLS%%share/locale/en@boldquot/LC_MESSAGES/gsasl.mo
+%%NLS%%share/locale/en@boldquot/LC_MESSAGES/libgsasl.mo
+%%NLS%%share/locale/en@quot/LC_MESSAGES/gsasl.mo
+%%NLS%%share/locale/en@quot/LC_MESSAGES/libgsasl.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/gsasl.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/gsasl.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/libgsasl.mo
+%%NLS%%share/locale/ga/LC_MESSAGES/gsasl.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/gsasl.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/libgsasl.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/gsasl.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/libgsasl.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/gsasl.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/libgsasl.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/gsasl.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/gsasl.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/libgsasl.mo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/reference
