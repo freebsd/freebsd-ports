@@ -19,7 +19,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 CATEGORIES=	mail news
 
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/ \
-		http://www.kfu.com/~nsayer/encryption/noexport/
+		http://www.kfu.com/~nsayer/encryption/software/
 
 MAINTAINER=	nsayer@freebsd.org
 
