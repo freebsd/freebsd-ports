@@ -1,30 +1,30 @@
---- main/Makefile.linux.orig	Tue Nov  7 18:16:54 2000
-+++ main/Makefile.linux	Tue Jul  2 02:16:04 2002
+--- main/Makefile.linux.orig	Fri Jul  5 06:06:15 2002
++++ main/Makefile.linux	Sun Jan  5 22:23:45 2003
 @@ -1,5 +1,5 @@
 -CC      = gcc
 -CXX     = g++
 +CC      ?= gcc
 +CXX     ?= g++
- FORMS   = ../../xforms/FORMS
  SOUND   = ../sound
  SPKIT   = ../spkit
-@@ -8,12 +8,15 @@
+ TOOLTIP = ../tooltips
+@@ -7,12 +7,15 @@
  AUDIOF  = ../libaudiofile
  BACKDIR = ../bak/main
  HOMEDIR = $(HOME)
 -X11DIR  = /usr/X11R6
--INCDIR  = -I. -I.. -I$(SOUND) -I$(SPKIT) -I$(FORMS) -I$(TOOLTIP) -I$(X11DIR)/include
+-INCDIR  = -I. -I.. -I$(SOUND) -I$(SPKIT) -I$(XFORMS)/FORMS -I$(TOOLTIP) -I$(X11DIR)/include
 +X11DIR  = ${X11BASE}
 +.if exists(${X11BASE}/include/X11/forms.h)
 +XFORMSINC = -I${X11BASE}/include/X11
 +.endif
-+INCDIR  = -I. -I.. -I$(SOUND) -I$(SPKIT) -I$(FORMS) -I$(TOOLTIP) -I$(X11DIR)/include ${XFORMSINC}
- LIBDIR  = -L$(SPKIT)/spkit -L$(FORMS) -L$(AUDIO) -L$(AUDIOF) -L$(TOOLTIP) -L$(X11DIR)/lib
++INCDIR  = -I. -I.. -I$(SOUND) -I$(SPKIT) -I$(XFORMS)/FORMS -I$(TOOLTIP) -I$(X11DIR)/include ${XFORMSINC}
+ LIBDIR  = -L$(SPKIT)/spkit -L$(XFORMS)/FORMS -L$(AUDIO) -L$(AUDIOF) -L$(TOOLTIP) -L$(X11DIR)/lib
 -CCFLAGS = $(INCDIR) $(DEBUG) $(OPTIM) -DLINUX -DBIGENDIAN -DUSINGGCC -Wall -Wno-unused
 +CCFLAGS = $(INCDIR) $(OPTIM) -DLINUX -DBIGENDIAN -DUSINGGCC -Wall -Wno-unused
  DEBUG   = -g3
 -OPTIM   = -O1
-+OPTIM   = ${CXXFLAGS}
++OPTIM   = ${CCXFLAGS}
  LDFLAGS = $(LIBDIR) -ldsp -laudio -laudiofile -ltooltips -lforms -lXpm -lX11 -lm
  
  PROGS =	DAP

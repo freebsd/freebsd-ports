@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dap
-PORTVERSION=	2.1.2
+PORTVERSION=	2.1.4
 CATEGORIES=	audio
 MASTER_SITES=	http://www.cee.hw.ac.uk/~richardk/downloads/
 EXTRACT_SUFX=.tgz
