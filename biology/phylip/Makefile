@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	phylip
-PORTVERSION=	3.6.b
+PORTVERSION=	3.62
 CATEGORIES=	biology
-MASTER_SITES=	ftp://evolution.genetics.washington.edu/pub/phylip/phylip36/
-DISTNAME=	${PORTNAME}
-DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	ftp://evolution.genetics.washington.edu/pub/phylip/
 
 MAINTAINER=	dbader@ece.unm.edu
 COMMENT=	A Phylogeny Inference Package
@@ -37,10 +35,15 @@ DOCFILES=	clique.html consense.html contchar.html contml.html \
 		pars.html penny.html phylip.gif proml.html promlk.html \
 		protdist.html protpars.html restdist.html restml.html \
 		retree.html seqboot.html sequence.html treedist.html
+FONTFILES=	font1 font2 font3 font4 font5 font6
 
 do-install:
 .for f in ${BINARIES}
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${f} ${PREFIX}/bin
+.endfor
+	${MKDIR} ${DATADIR}
+.for font in ${FONTFILES}
+	${INSTALL_DATA} ${BUILD_WRKSRC}/${font} ${DATADIR}
 .endfor
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

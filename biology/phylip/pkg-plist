@@ -75,4 +75,11 @@ bin/treedist
 %%PORTDOCS%%%%DOCSDIR%%/seqboot.html
 %%PORTDOCS%%%%DOCSDIR%%/sequence.html
 %%PORTDOCS%%%%DOCSDIR%%/treedist.html
+%%DATADIR%%/font1
+%%DATADIR%%/font2
+%%DATADIR%%/font3
+%%DATADIR%%/font4
+%%DATADIR%%/font5
+%%DATADIR%%/font6
+@dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
