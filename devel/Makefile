@@ -374,7 +374,6 @@
     SUBDIR += libglademm
     SUBDIR += libgnugetopt
     SUBDIR += libgsf
-    SUBDIR += libgtop
     SUBDIR += libgtop2
     SUBDIR += libhash
     SUBDIR += libhoard
@@ -711,7 +710,6 @@
     SUBDIR += p5-Filter
     SUBDIR += p5-Filter-CBC
     SUBDIR += p5-FreezeThaw
-    SUBDIR += p5-GTop
     SUBDIR += p5-Getargs-Long
     SUBDIR += p5-Getopt-ArgvFile
     SUBDIR += p5-Getopt-Declare
@@ -1043,7 +1041,6 @@
     SUBDIR += ruby-jttui
     SUBDIR += ruby-libglade
     SUBDIR += ruby-libglade2
-    SUBDIR += ruby-libgtop
     SUBDIR += ruby-locale
     SUBDIR += ruby-metaruby
     SUBDIR += ruby-mmap

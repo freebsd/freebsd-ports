@@ -1,6 +1,0 @@
-Ruby_libgtop -- a Ruby interface to the very useful libgtop, a
-portable library that fetches system related information such as CPU
-Load, Memory Usage and information about running processes.
-
-Author:	Colin Steele <colin@colinsteele.org>
-WWW:	http://www.colinsteele.org/
