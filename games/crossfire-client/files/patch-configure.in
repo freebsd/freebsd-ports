@@ -1,0 +1,11 @@
+--- configure.in.orig	Tue Jul  2 08:52:54 2002
++++ configure.in	Sat Jul 13 04:10:47 2002
+@@ -226,6 +226,8 @@
+ dnl so I'll just assume it is in the same dir as SDL
+ if eval "test x$use_sdl = xyes"; then
+   AM_PATH_SDL(1.1.3)
++  CPPFLAGS="$CPPFLAGS $SDL_CFLAGS"
++  LIBS="$LIBS $SDL_LIBS"
+   if eval "test x$no_sdl = x"; then
+       AC_CHECK_LIB( SDL_image, IMG_LoadPNG_RW, 
+                     have_sdlimage="yes", have_sdlimage="no", $SDL_CFLAGS) 
