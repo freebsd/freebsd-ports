@@ -1,6 +1,6 @@
---- configure.orig	Thu May  8 13:51:57 2003
-+++ configure	Wed May 14 14:18:35 2003
-@@ -13335,11 +13335,11 @@
+--- configure.orig	Thu Jun 26 06:50:27 2003
++++ configure	Fri Jun 27 20:02:38 2003
+@@ -12994,11 +12995,11 @@
    packageprefix=${prefix}
  fi
  
