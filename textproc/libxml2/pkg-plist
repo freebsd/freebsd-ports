@@ -53,6 +53,7 @@ share/aclocal/libxml.m4
 %%PYTHON:%%share/doc/libxml2-python/examples/invalid.xml
 %%PYTHON:%%share/doc/libxml2-python/examples/push.py
 %%PYTHON:%%share/doc/libxml2-python/examples/pushSAX.py
+%%PYTHON:%%share/doc/libxml2-python/examples/pushSAXhtml.py
 %%PYTHON:%%share/doc/libxml2-python/examples/serialize.py
 %%PYTHON:%%share/doc/libxml2-python/examples/tst.py
 %%PYTHON:%%share/doc/libxml2-python/examples/tst.xml
