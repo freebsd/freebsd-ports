@@ -24,9 +24,9 @@ do-install:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${PREFIX}/share/doc/dbview
-	@ ${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/dbview
-	@ ${INSTALL_DATA} ${WRKSRC}/dBASE ${PREFIX}/share/doc/dbview
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/dBASE ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
