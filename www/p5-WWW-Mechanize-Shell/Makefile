@@ -4,7 +4,7 @@
 # $FreeBSD$
 
 PORTNAME=	WWW-Mechanize-Shell
-PORTVERSION=	0.34
+PORTVERSION=	0.36
 PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
@@ -42,6 +42,18 @@ MAN3=	HTML::Display.3 \
 	HTML::Display::Win32::IE.3 \
 	HTML::Display::Win32::OLE.3 \
 	WWW::Mechanize::Shell.3
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	Changes README
+EXAMPLES=	bin/banking.postbank.de.mech bin/hotmail.signup.mech bin/wwwshell.pl
+
+post-install:
+	@${MKDIR} ${DOCSDIR} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+	@${INSTALL_DATA} ${EXAMPLES:S|^|${WRKSRC}/|} ${EXAMPLESDIR}
+	@${ECHO_MSG} "===> Documentation installed in ${EXAMPLESDIR}."
+.endif
 
 .include <bsd.port.pre.mk>
 
