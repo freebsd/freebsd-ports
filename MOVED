@@ -711,3 +711,10 @@ x11-fonts/kacst_fonts|arabic/kacst_fonts|2003-11-15|Moved to new arabic category
 misc/kde3-i18n-ar|arabic/kde3-i18n|2003-11-15|Moved to new arabic category
 misc/koffice-i18n-ar|arabic/koffice-i18n|2003-11-15|Moved to new arabic category
 net/geta|dns/geta|2003-11-16|moved to new dns category
+devel/arm-rtems-gcj|2003-11-18|devel/arm-rtems-gcc|Now included in the gcc port
+devel/i386-rtems-gcj|2003-11-18|devel/i386-rtems-gcc|Now included in the gcc port
+devel/m68k-rtems-gcj|2003-11-18|devel/m68k-rtems-gcc|Now included in the gcc port
+devel/mips-rtems-gcj|2003-11-18|devel/mips-rtems-gcc|Now included in the gcc port
+devel/powerpc-rtems-gcj|2003-11-18|devel/powerpc-rtems-gcc|Now included in the gcc port
+devel/sh-rtems-gcj|2003-11-18|devel/sh-rtems-gcc|Now included in the gcc port
+devel/sparc-rtems-gcj|2003-11-18|devel/sparc-rtems-gcc|Now included in the gcc port
