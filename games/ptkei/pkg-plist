@@ -1,0 +1,53 @@
+bin/ptkei
+ptkei/COPYING
+ptkei/TkOption
+ptkei/TkOption.w32
+ptkei/TkOption.x11
+ptkei/connect.emp
+ptkei/doc/CREDITS
+ptkei/doc/README.html
+ptkei/doc/TIPS.html
+ptkei/doc/TODO
+ptkei/doc/commands.html
+ptkei/doc/gui.html
+ptkei/doc/pics/login.gif
+ptkei/doc/pics/map.gif
+ptkei/doc/pics/mover.gif
+ptkei/doc/pics/queue.gif
+ptkei/doc/pics/status.gif
+ptkei/doc/pics/wread.gif
+ptkei/empire.py
+ptkei/first.emp
+ptkei/scripts/README
+ptkei/scripts/bundlepmw.py
+ptkei/scripts/create
+ptkei/scripts/dummyfunc.py
+ptkei/scripts/snapshot
+ptkei/scripts/stript
+ptkei/scripts/untab
+ptkei/src/CenWin.py
+ptkei/src/ChangeLog
+ptkei/src/LoginWin.py
+ptkei/src/MapWin.py
+ptkei/src/OutWin.py
+ptkei/src/Pmw.pyc
+ptkei/src/TeleWin.py
+ptkei/src/Tk_List.py
+ptkei/src/Tk_Pane.py
+ptkei/src/Tk_VDB.py
+ptkei/src/empCmd.py
+ptkei/src/empCurses.py
+ptkei/src/empDb.py
+ptkei/src/empEval.py
+ptkei/src/empParse.py
+ptkei/src/empPath.py
+ptkei/src/empQueue.py
+ptkei/src/empSector.py
+ptkei/src/empText.py
+ptkei/src/empTk.py
+ptkei/start.emp
+@dirrm ptkei/doc/pics
+@dirrm ptkei/doc
+@dirrm ptkei/scripts
+@dirrm ptkei/src
+@dirrm ptkei
