@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnomeuserdocs2
-PORTVERSION=	2.4.0
+PORTVERSION=	2.4.1
 CATEGORIES=	misc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome2-user-docs/2.4
@@ -24,6 +24,6 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomehier
+USE_GNOME=	gnomeprefix gnomehack gnomehier gnometarget
 
 .include <bsd.port.mk>

@@ -30,8 +30,11 @@ share/gnome/help/introduction-to-gnome/C/figures/typical_anno_desktop.png
 share/gnome/help/introduction-to-gnome/C/introduction-to-gnome.xml
 share/gnome/help/introduction-to-gnome/C/legal.xml
 share/gnome/help/system-admin-guide/C/appendixa.xml
+share/gnome/help/system-admin-guide/C/figures/gconf_editor_anno_window.png
 share/gnome/help/system-admin-guide/C/gconf.xml
+share/gnome/help/system-admin-guide/C/gdm.xml
 share/gnome/help/system-admin-guide/C/glossary.xml
+share/gnome/help/system-admin-guide/C/help.xml
 share/gnome/help/system-admin-guide/C/legal.xml
 share/gnome/help/system-admin-guide/C/menustructure.xml
 share/gnome/help/system-admin-guide/C/mimetypes.xml
@@ -168,6 +171,7 @@ share/gnome/omf/user-guide/gosstartsession-C.omf
 @dirrm share/gnome/omf/gnome2-user-docs
 @dirrm share/gnome/help/user-guide/C/figures
 @dirrm share/gnome/help/user-guide/C
+@dirrm share/gnome/help/system-admin-guide/C/figures
 @dirrm share/gnome/help/system-admin-guide/C
 @dirrm share/gnome/help/introduction-to-gnome/C/figures
 @dirrm share/gnome/help/introduction-to-gnome/C
