@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	lookup
-PORTVERSION=	1.3
-PORTREVISION=	1
+PORTVERSION=	1.4
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 CATEGORIES=	japanese elisp
-MASTER_SITES=	http://download.sourceforge.net/lookup/
+MASTER_SITES=	http://openlab.ring.gr.jp/edict/lookup/dist/
 
 MAINTAINER=	taoka@FreeBSD.org
 COMMENT=	Search interface on ${EMACS_PORT_NAME} for CD-ROM books, etc
