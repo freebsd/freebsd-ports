@@ -16,6 +16,7 @@ COMMENT=	Voices for MBROLA voice synthesizer
 
 .include <bsd.port.pre.mk>
 
+BROKEN=		does not extract
 NO_BUILD=	yes
 RESTRICTED=	"no commercial nor military use, no sale"
 USE_ZIP=	yes
