@@ -1,0 +1,27 @@
+--- efax-gtkrc.orig	Sun Sep  7 12:59:42 2003
++++ efax-gtkrc	Sat Mar  6 14:50:54 2004
+@@ -26,13 +26,13 @@
+ # ie state it as `ttyS1' or `cua2', etc.  With Linux, ttyS0 equates to
+ # COM 1, ttyS1 to COM 2, and so on
+ 
+-DEVICE: ttyS1
++DEVICE: cuaa0
+ 
+ 
+ # Put the lock file directory here.  If none is given or it is
+ # commented out, the program defaults to /var/lock.
+ 
+-LOCK: /var/lock
++LOCK: /var/spool/lock
+ 
+ 
+ # With efax-0.9 you don't usually need to specify this, as efax will
+@@ -128,7 +128,7 @@
+ # A4' or '-media Letter' option to select correct paper size.  ggv
+ # and kghosview do this automatically
+ 
+-PS_VIEWER: gv
++PS_VIEWER: ggv
+ 
+ 
+ # This specifies whether a socket server is to be run to receive faxes

@@ -1,0 +1,11 @@
+--- efax-gtk-faxfilter/Makefile.in.orig	Thu Feb  5 21:35:06 2004
++++ efax-gtk-faxfilter/Makefile.in	Sun Feb 29 15:48:48 2004
+@@ -441,8 +441,6 @@
+ 
+ 
+ install-data-hook:
+-	chown lp $(spooldir)
+-	chgrp lp $(spooldir)
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

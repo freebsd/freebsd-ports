@@ -1,0 +1,11 @@
+--- src/config.h.in.orig	Sun Feb 29 15:30:29 2004
++++ src/config.h.in	Sun Feb 29 15:30:35 2004
+@@ -80,8 +80,5 @@
+ /* Define to `unsigned' if <sys/types.h> does not define. */
+ #undef size_t
+ 
+-/* Define to `unsigned int' if <sys/types.h> does not define. */
+-#undef socklen_t
+-
+ /* Define to `signed int' if <sys/types.h> does not define. */
+ #undef ssize_t
