@@ -3,10 +3,10 @@
 # Date created:		23 May 1995
 # Whom:			thomas@ghpc8.ihf.rwth-aachen.de
 #
-# $Id: Makefile,v 1.9 1996/05/14 11:50:05 tg Exp $
+# $Id: Makefile,v 1.10 1996/06/04 06:50:18 tg Exp $
 #
 
-DISTNAME=	pdksh-5.2.6
+DISTNAME=	pdksh-5.2.7
 CATEGORIES+=	shells
 MASTER_SITES=	ftp://ftp.cs.mun.ca/pub/pdksh/
 
