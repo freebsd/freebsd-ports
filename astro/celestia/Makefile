@@ -40,12 +40,6 @@ CONFIGURE_ENV=	\
 CONFIGURE_ARGS+=	--without-gtk
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
-
 pre-patch:
 	${REINPLACE_CMD} -e \
 's:-O2::g; s:-Wall::g; s:-ffast-math::g; s:-fexpensive-optimizations::g; s:! /bin/sh:! ${LOCALBASE}/bin/bash:g' \
@@ -111,4 +105,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/textures/medres/*.??? \
 		${DATADIR}/textures/medres/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
