@@ -394,3 +394,5 @@ bin/orionctl
 @dirrm %%T%%/persistence/ejb
 @dirrm %%T%%/persistence
 @dirrm %%T%%
+@unexec pw groupdel orion || true
+@unexec pw userdel orion || true
