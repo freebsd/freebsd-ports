@@ -2089,6 +2089,8 @@ libdata/pkgconfig/pangomm-1.4.pc
 @dirrm lib/gtkmm-%%API_VERSION%%/proc
 @dirrm lib/gtkmm-%%API_VERSION%%/include
 @dirrm lib/gtkmm-%%API_VERSION%%
+@dirrm lib/gdkmm-%%API_VERSION%%/include
+@dirrm lib/gdkmm-%%API_VERSION%%
 @dirrm include/pangomm-1.4/pangomm/private
 @dirrm include/pangomm-1.4/pangomm
 @dirrm include/pangomm-1.4
