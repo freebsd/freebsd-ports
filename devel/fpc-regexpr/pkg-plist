@@ -1,0 +1,4 @@
+lib/fpc/%%PORTVERSION%%/units/freebsd/regexpr/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/freebsd/regexpr/regexpr.o
+lib/fpc/%%PORTVERSION%%/units/freebsd/regexpr/regexpr.ppu
+@dirrm lib/fpc/%%PORTVERSION%%/units/freebsd/regexpr
