@@ -25,6 +25,8 @@ LIB_DEPENDS=	xml.5:${PORTSDIR}/textproc/libxml \
 		ldap.1:${PORTSDIR}/net/openldap \
 		gpilotd.0:${PORTSDIR}/palm/gnomepilot
 
+BROKEN=		"Not compatible with current version of x11-toolkits/gal"
+
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	yes
