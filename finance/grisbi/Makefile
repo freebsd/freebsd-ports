@@ -27,7 +27,7 @@ USE_GCC=	3.3
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 glib20 libxml2
 
-TEXMF?=		share/texmf
+TEXMF?=		share/texmf-local
 UCS_CLASSDIR=	${LOCALBASE}/${TEXMF}/tex/latex/ucs
 
 MAN1=		grisbi.1
