@@ -1,0 +1,49 @@
+lib/perl5/site_perl/%%PERL_VER%%/LWP/Protocol/ldap.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bundle/Net/LDAP.pm
+lib/perl5/site_perl/%%PERL_VER%%/Authen/SASL.pod
+lib/perl5/site_perl/%%PERL_VER%%/Authen/SASL.pm
+lib/perl5/site_perl/%%PERL_VER%%/Authen/SASL/CRAM_MD5.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/LDAPS.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP.pod
+lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Entry.pod
+lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Filter.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Search.pod
+lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/LDIF.pod
+lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Schema.pod
+lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Entry.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Bind.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/DSML.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Schema.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Reference.pod
+lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Util.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/ASN.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/LDIF.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Filter.pod
+lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Search.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Constant.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Examples.pod
+lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Extension.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/FAQ.pod
+lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Control.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Message.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Message.pod
+lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Constant.pod
+lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/RFC.pod
+lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/DSML/Parser.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Control/Sort.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Control/SortResult.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Control/VLVResponse.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Control/VLV.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Control/Paged.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/perl-ldap/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Control
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/DSML
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Authen/SASL
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Authen
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/LWP/Protocol
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/LWP
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Bundle/Net
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Bundle
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/perl-ldap
