@@ -22,6 +22,10 @@ MAN1=		md5deep.1 sha1deep.1
 PLIST_FILES=	bin/md5deep bin/sha1deep
 
 post-patch:
-	@${REINPLACE_CMD} -e 's!/usr/local!${PREFIX}!g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's!/usr/local!${PREFIX}!g' \
+		-e 's!-Wall -O2!$(CFLAGS)!' \
+		-e 's!gcc!$(CC)!' \
+		-e 's!$$(CC)!$$(_CC)!' \
+		-e 's!^CC!_CC!' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
