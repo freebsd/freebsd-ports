@@ -1,30 +1,30 @@
 bin/ircd
 bin/mkpasswd
 bin/sendbug
-etc/codepage/cp1251.cp
-etc/codepage/cp1253.cp
-etc/codepage/cp850.cp
-etc/codepage/cp860.cp
-etc/codepage/cp866.cp
-etc/codepage/iso8859-1.cp
-etc/codepage/iso8859-5.cp
-etc/codepage/iso8859-9.cp
-etc/codepage/koi8r.cp
-etc/codepage/koi8u.cp
-etc/codepage/mac.cp
-etc/codepage/translit.cp
-etc/help.admin
-etc/help.oper
-etc/help.user
-etc/ircd.conf.sample
-etc/ircd.motd.sample
-etc/kline.conf.sample
-etc/main.dconf.sample
-etc/network.dconf.sample
-etc/opers.motd.sample
-etc/version.info
+etc/ptlink/codepage/cp1251.cp
+etc/ptlink/codepage/cp1253.cp
+etc/ptlink/codepage/cp850.cp
+etc/ptlink/codepage/cp860.cp
+etc/ptlink/codepage/cp866.cp
+etc/ptlink/codepage/iso8859-1.cp
+etc/ptlink/codepage/iso8859-5.cp
+etc/ptlink/codepage/iso8859-9.cp
+etc/ptlink/codepage/koi8r.cp
+etc/ptlink/codepage/koi8u.cp
+etc/ptlink/codepage/mac.cp
+etc/ptlink/codepage/translit.cp
+etc/ptlink/help.admin
+etc/ptlink/help.oper
+etc/ptlink/help.user
+etc/ptlink/ircd.conf.sample
+etc/ptlink/ircd.motd.sample
+etc/ptlink/kline.conf.sample
+etc/ptlink/main.dconf.sample
+etc/ptlink/network.dconf.sample
+etc/ptlink/opers.motd.sample
+etc/ptlink/version.info
 share/nls/POSIX
 share/nls/en_US.US-ASCII
-@unexec rmdir %D/var/log 2>/dev/null || true
-@unexec rmdir %D/var 2>/dev/null || true
-@dirrm etc/codepage
+@dirrm var/log
+@dirrm var
+@dirrm etc/ptlink/codepage

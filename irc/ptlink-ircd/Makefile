@@ -5,23 +5,28 @@
 # $FreeBSD$
 #
 
-PORTNAME=      	IRCd
-PORTVERSION=    6.18.2
-CATEGORIES=     irc
-MASTER_SITES=   ftp://ftp.sunsite.dk/projects/ptlink/ircd/
+PORTNAME=	IRCd
+PORTVERSION=	6.18.2
+PORTREVISION=	1
+CATEGORIES=	irc
+MASTER_SITES=	ftp://ftp.sunsite.dk/projects/ptlink/ircd/ \
+		http://www.rootxs.org/pub/FreeBSD/distfiles/
 PKGNAMEPREFIX=	PTlink-
-DISTNAME=       PTlink${PORTVERSION}
+DISTNAME=	PTlink${PORTVERSION}
 
-MAINTAINER=     dennis@rootxs.org
-COMMENT=        PTlink IRC daemon
+PATCH_DIST_STRIP=	-p1
 
-GNU_CONFIGURE=  yes
-USE_GMAKE=      yes
+MAINTAINER=	dennis@rootxs.org
+COMMENT=	PTlink IRC daemon
+
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+
+SYSCONFDIR=	${PREFIX}/etc/ptlink
+CONFIGURE_ARGS=	--sysconfdir=${SYSCONFDIR}
 
 post-install:
-.for f in ircd.conf ircd.motd kline.conf main.dconf network.dconf opers.motd
-	@${MV} ${PREFIX}/etc/${f} ${PREFIX}/etc/${f}.sample
-.endfor
-	@${SED} 's,%%PREFIX%%,${PREFIX},g' < ${PKGMESSAGE}
+	@${INSTALL_DATA} ${FILESDIR}/*.sample ${SYSCONFDIR}
+	@${SED} 's,%%SYSCONFDIR%%,${SYSCONFDIR},g' < ${PKGMESSAGE}
 
 .include <bsd.port.mk>

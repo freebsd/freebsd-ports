@@ -1,0 +1,455 @@
+#   $Id: example.conf.short,v 1.6 2004/05/20 23:02:34 jpinto Exp $
+#   IRC - Internet Relay Chat, doc/example.conf
+#
+#	CopyRight (C) 2001, João Pinto
+#	Short ircd.conf
+#	check  example.conf for original copyright
+#	
+#   This program is free software; you can redistribute it and/or modify
+#   it under the terms of the GNU General Public License as published by
+#   the Free Software Foundation; either version 1, or (at your option)
+#   any later version.
+#
+#   This program is distributed in the hope that it will be useful,
+#   but WITHOUT ANY WARRANTY; without even the implied warranty of
+#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#   GNU General Public License for more details.
+#
+#   You should have received a copy of the GNU General Public License
+#   along with this program; if not, write to the Free Software
+#   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+#
+# IRC short example configuration file
+#
+# This file describes the information that should be present in your IRC
+# configuration and how to present it.
+#
+# This is a short version please check example.conf for the full example.
+#
+
+# M: set your server's name. Fields are, in order, host name (domain style),
+#  optional bind address, a text name, and unused.
+#
+# NOTE:  The "optional bind address" is an address used in binding to a
+# local address when we connect outbound.  For example, if your server machine
+# is myhost.example.com (192.168.1.5) and you want IRCD to connect to others
+# from irc.example.com (192.168.1.250), you'd put 192.168.1.250 in the
+# "optional bind address" field.  If left blank, UNIX will choose the primary
+# address of the interface closest to the destination.
+#
+# NOTE:  As of PTlink6, the port field no longer binds a port by default.
+# It is an inoperative and obsolete field.
+# M:ServerName:bindaddress:Server Description
+M:PTlink6.server.net::PTlink6 IRCd - www.ptlink.net
+
+# 
+# A: administrative information. This line should have three fields, which
+#    may contain any arbitrary text. It is printed by the /ADMIN command.
+#
+A:IRC Server Admin: :Some Admin <ssadmin@xpto.net>
+
+
+
+#
+# Y: define connection class.  A class must be defined in a Y: line before
+#    it is used in a C, N, or I line.  The fields are, in order, class number,
+#    ping frequency in seconds, connect frequency in seconds, maximum
+#    number of links (used for auto-connecting), and size of sendq.
+#    For servers a sendq of at least 4mb is recommended if not more.
+#
+# N.B. Y lines must be defined before I lines and O lines, since
+# both I lines and O lines make reference to Y lines or classes.
+#
+# For clients, the connect frequency field is used to set the maximum
+# number of connects from same IP address. i.e. setting this field to '1'
+# will limit every I line using this Y, to one connection per IP address.
+# leaving it blank or 0, will disable any such checking.
+#
+
+# in this case, connect-frequency is 0 indicating that this is a client
+# class (servers never connect to clients, it is the other way around).   
+
+# -----------------------------------
+# Class 1  - Client connections
+Y:1:90:0:800:100000
+ 
+# Class 40 - Hub to leaf, autoconnect
+Y:40:90:90:1:3500000
+ 
+# Class 41 - Hub to leaf, autoconnect
+Y:41:90:90:1:3500000
+ 
+# Class 50 - Hub to hub, autoconnect
+Y:50:90:60:1:4000000
+ 
+# Class 51 - Hub to hub, no autoconnect
+Y:51:90:60:0:4000000      
+
+#
+# NOTE:  Y: lines must be defined before any line that has a class
+#        field (I, O, C, and N lines), and therefore must be present
+#        in either the base ircd.conf or in the first .include'd 
+#        conf file.
+
+#
+# .include lines, insert a file from DPATH directory into the conf
+# you could use this to insert a common file between several
+# ircd's if you wished. include files are handled after all the
+# other lines in the conf file are done. i.e. a .include is always
+# as if it was at the end of the conf file.
+# 
+#.include "olines.conf"
+
+#
+# I: authorize clients to connect to your server. You can use domains,
+#    IP addresses, and asterisk wildcards. The second field can contain a
+#    password that the client must use in order to be allowed to connect.
+#    The optional fifth field may contain a connection class number.
+#
+I:NOMATCH::-*::1
+
+#I:NOMATCH:password:*.net::1
+
+#
+# You can also limit the number of connections from one host
+# to any value. This can be used to stop cloners
+# This is done using the normally unused confreq line in the Y line.
+#
+# i.e.
+# Allow 100 users in a "bad boy" class, but allow only ONE
+# user per IP to connect at a time.
+#
+Y:3:90:1:100:100000
+
+#
+# Remember to put your "bad boy" I line last in the file, so it
+# seen first and matches first before your standard I lines
+#
+# With PTlink ircd, max connections is taken from the class
+# not per I line. i.e. the 3 I lines following will always add
+# up to 100 or less, not 100 per I line.
+I:NOMATCH::*@*ppp*::3
+I:NOMATCH::*@*slip*::3
+I:NOMATCH::*@*ts*::3
+
+#
+# a name pattern in the first field will never cause a match since it's only
+# ever matched against an IP# in the form a.b.c.d and a number in the third
+# field will never match since a hostname is always compared against this
+# field.  The '@' needs to be in the IP# section for ident to be used.
+
+#
+# additional prefix characters in I lines are defined
+#
+#
+# 1) There are noticeable differences in I: lines now.
+#   There are 4 special characters that you can stick in front
+#   of a hostname or ip# that do special things.
+#   These characters are:
+#   -  This will never put a ~ for a user not running identd
+#   +  This will force people matching this I: to require identd
+#   !  This means to only allow 1 connection per ip# in this I:
+# ^ This will exempt a user from K/G lines, limited protection from D lines
+# > This user is exempt from I line/server side connection limits
+#   (old F line)
+# _ This user is exempt from G lines
+#
+# < This user is exempt from idle restrictions if IDLE_CHECK is defined
+#
+
+#
+#  Examples:
+#
+# a) I:x::!*@*ppp*::class  will only allow X connections per ip# for people
+#     who have *ppp* in their hostname where X is given in the Y: line.
+#    If there is no ! and you have a limit in your Y: line, then it matches
+#      full user@host instead of just host.
+
+# b) I:x::-*@*.cris.com::class will never show a ~, even though they may
+#     not be running identd.  (This is equivilent to the old way of not
+#    specifying a @ in the I: line).
+
+# O: authorize operators. Fields are, in order, host name the operator must
+#    be logged in from (wildcards allowed), operator's password, operator's
+#    nickname, oper flags, connection class, umodes to be set on /oper, 
+#    imodes to be set on /oper
+# 
+
+# The flags are:
+# K/k - allow/disallow kill and kline
+# O/o - allow/disallow global kill
+# R/r - allow/disallow remote squit/connect
+# U/u - allow/disallow unkline
+# G/g - allow/disallow gline
+# H/h - allow the use of /rehash, default is H for O and o, add h to
+#       disable an opers use of /rehash
+# D/d - allow the use of /die or /restart. Default is d for disallowing
+#       /die /restart
+#
+# Default flags for opers are GKORUH
+# Default flags for local ops, KUH
+# These flags over-rule what the normal privs of an oper would be,
+# but they cannot allow a local oper to do global kills for example.   
+
+# Most operators have encrypted oper passwords.  These passwords can be
+# generated using the tools/mkpasswd program included with ircd.
+# Both DES and MD5 passwords are supported as long as the underlying 
+# system supports both types.
+# MD5 passwords can be generated by the -m option to mkpasswd.
+#
+
+# NOTE: The easiest way to generate O:Lines is using the mkoline utility
+# cd tools ; ./mkoline
+
+# This example will allow mynick to become global oper from *ptlink.net
+# using password "mypassword", using default oper flags,
+# setting user mode +N (Net Admin), and setting information modes: cdevf
+O:*ptlink.net:mypassword:mynick:O:3:N:cdevf
+
+#
+# This example allow this oper, to global kill, do remote squit/connect
+# unklines, glines
+#
+O:db@*db.net:-encrypted password-:Dianora:ORUG:3
+
+#
+# This example disables this opers use of global kill, unkline, and gline
+# The oper can still do remote squits/connects
+#
+O:newbie@*some.net:-encrypted password-:newbie:oug:3
+
+# C:, N: set up connections to other servers.
+#
+# C: specifies a server that your server may connect to.
+# N: allows a remote server to connect to your own.
+#
+# The two lines are usually given in pairs.
+#
+# These lines may contain a password in the second field.  In fact, to
+# maintain proper security, *all* IRC server links must have passwords.
+#
+# If a C: line contains four fields (the fourth being a TCP port number)
+# IRC will actively try to connect to that server. You should have at least
+# one such line.
+#
+# If an N: line contains four fields, the fourth should contain a number that
+# specifies how many components of your own server's name to strip off the
+# front and be replaced with a *.  This is done to implement hostmasking.
+# For example, to make hayes.ims.alaska.edu present itself to the world as
+# *.alaska.edu, I would use a 2 (to strip off the first two parts).  If you
+# use this, be sure to tell the administrator of the servers you link to --
+# they must add your hostmasked name to their configuration file or you will
+# be unable to connect.
+#
+# C/N rules:
+# The host part of C/N lines MUST contain a valid hostname or IP address
+# The host part in the C:line MUST be identical to the host part in the N:line
+# The name part of the C/N lines MUST match the associated H/L line name,
+#     and must match the other server name according to is M:line 
+# The fifth field may contain a connection class number.
+# The sixth field on a C:line can be used to specify an IP to be
+# binded for the connection attempt.
+#
+#
+# Syntax:
+#C:host:password:name:port:class[:bindip]
+#N:host:password:name:tostrip:class
+#
+# The following two lines tell my server to try connecting to
+# byron.u.washington.edu.
+#
+#C:byron.u.washington.edu:crunchyfrog:byron.u.washington.edu:6667:40
+#N:byron.u.washington.edu:crunchyfrog:byron.u.washington.edu::40
+#
+# The following two lines allow a server to connect to my server, but my
+# server will not make any attempt to connect to it.  Note that since the
+# server is local to me, I am not using hostmasking.
+#
+#C:kaja.gi.alaska.edu:llamas:kaja.gi.alaska.edu::40
+#N:kaja.gi.alaska.edu:llamas:kaja.gi.alaska.edu::40
+#
+# C and N lines may also use the "user@" combination in the same way as
+# the I-lines.
+#
+#C:wisner@kaja.gi.alaska.edu:llamas:kaja.gi.alaska.edu::40
+#N:wisner@kaja.gi.alaska.edu:llamas:kaja.gi.alaska.edu::40
+
+
+
+#
+# K: kill a user automatically upon connecting.  This is used to deny
+#    troublesome users access to your server.  The fields are, in order,
+#    hostname (wildcards are allowed), time of day, and username.
+# The second example restricts access from acad3.alaska.edu from
+# 9:00am to noon, and 2:00pm to 5:00pm.  This form is only supported if
+# TIMED_KLINES is defined.
+#
+K:*.alaska.edu::FSSPR
+K:acad3.alaska.edu:0900-1200,1400-1700:*
+
+#
+# R: restrict user access.  This is an extended form of the K: line.
+#    It looks for a match then runs an outside program that will determine
+#    whether the person should be allowed on.  The fields are hostname,
+#    program, and username.  A full pathname to the program should be used.
+#    The output of the program should be a string of the form "Y <message>"
+#    to allow the user, or "N <message>" to block them.  In the first case
+#    the message is ignored; in the latter, it is sent as an error message
+#    to the user.  R: lines are only functional if activated in config.h.
+#
+#R:kaja.gi.alaska.edu:/usr/local/lib/irc/does-eric-get-in:ejo
+
+#
+#
+# L: leaf.  This forces the server listed to act as a leaf.  If such a
+#    server allows any other servers to connect to it, its link is
+#    dropped. If a port parameter is non-zero, it is used to control the
+#    maximum depth that link will allow, where depth is the tree depth of
+#    that branch.
+#
+L:::kaja.gi.alaska.edu
+L:::cm5.eng.umd.edu:1
+
+#
+#    A new extension to the L-line allows you to be selective
+#    about which other servers you wish the connecting server to behave as
+#    as a leaf towards.  The following would not allow any server connecting
+#    with a name that matches *.fi to introduce a server matching *.edu.
+#
+L:*.edu::*.fi
+
+#
+# H: Hub.  This is required to allow other servers which connect to you as
+#    a hub and introduce other servers.
+#
+# The fields are as follows:
+# H:servers which are permitted entry::hub server #
+
+#
+#  The following example allows any *ptlink.net server to connect from some.hub.net
+H:*ptlink.net::some.hub.net
+
+#
+# P : port. The port line allows the server to listen on various ports for
+#     connections.  
+# The fields are as follows:
+# P:default_codepage:bind_ip:options:port_number
+#
+#
+# NOTES:  As of PTlink6, you MUST have at least one P: line defining a port
+# to listen on, or the server won't do much.
+# The default codepage will be the default codepage set for users connection
+# that port, it must be a codepage name loaded with dconf setting CodePages
+#
+# The listener options you can use are:
+#       S : Server Only (idea from UnrealIRCd)
+#       s : SSL connections
+#       W : WebChatPort
+#           If defined, user's IP/hostname will be retrived from USER
+#           for all connections coming from localhost on WebChatPort
+#       J - JavaChat (for CR Java Client)
+#	n - No Spoof (don't apply host spoof to users)
+#
+#
+# If you compiled PTlink6 with IPv6 support and want to
+# assing a special IPv6 address with port, put the IPv6 address
+# inside a pair of [] like this example:
+#P::[::1]::6667
+# The above example will make PTlink6 listen on port 6667 on your localhost IPv6
+# address, but you can put any other address that your machine have.
+# To listen in all IPv6 and IPv4 addresses, use a * without the [ ]
+
+# Listen on port 6667 on all available interfaces. 
+P::::6667
+
+#Listen on port 6666 for SSL connections
+#P:::s:6666
+# This will try to bind listen port to IP 209.42.128.252, port 313337
+# with default codepage set to iso8859-1
+#P:iso8859-1:209.42.128.252::31337
+
+# Listen on port 6667 on all available interfaces for servers.
+#P:::S:6667
+
+#
+# D : dump.  Dumps all connect attempts from the matched IP
+# without any procesing.
+#
+#     First arg is target IP and CIDR mask, second is a comment.
+#
+D:208.148.84.3:bot host that changes domain names frequently
+D:128.183.0/24:NASA users aren't supposed to be on IRC
+
+#
+# d : immunity to D dump
+# As in D line , First arg is targe IP and CIDR mask, second is a comment.
+#
+d:199.0.154.0/24:Don't D line ais.net:
+
+#
+# server "clusters"
+# U: lines treat each of these servers as being part of your server cluster
+# klines placed on this server will be forwarded to the servers named
+# in the U lines here. LOCOPS will also be forwarded, but will appear
+# as "SLOCOPS" instead of "LOCOPS"
+#
+# i.e. irc_hub.somewhere.net has leaf servers irc1.somewhere.net 
+# irc2.somewhere.net
+
+# Hub server would have
+U:irc1.somewhere.net:
+U:irc2.somewhere.net
+
+# each client server would have
+U:irc_hub.somewhere.net
+
+#
+#
+# Q lines, not the old server Q lines, but Quarantine lines for
+# nicks. Only checked at NICK time, i.e. if added and hashed in
+# will not kill users who match this nick.
+#
+Q:dcc-*:dcc bots not allowed on this server
+Q:lamestbot:You have to be kidding me
+Q:crush:In memory of Janet Pippin
+Q:cwush:In memory of Janet Pippin
+Q:callas:Only allowed from this host:callas@oper.irc.arpa.com
+#
+# X lines.
+# Used to match gecos fields and prohibit users or warn about users
+# who have matching strings in those fields from getting on the server.
+#
+# Field are the match string, reason, unused, and the action value
+#
+# Action values for X lines are 0, 1, and 2.
+# 0 warns opers set +r only
+# 1 rejects the user, and sends a notice to +r opers
+# 2 silently rejects the user.
+# 
+# These three examples only warn
+X:*www*:Possible spambot warning 1::0
+X:*http*:Possible spambot warning 2::0
+X:*sex*:Possible spambot warning 3::0
+#
+# These two examples reject the client
+# use this to reject IPHONE users
+X:* vc:IPHONE user::1
+# This is a very probable spambot
+X:*see me at*:This has GOT to be a spambot::1
+X:*hi baby*:This has GOT to be a spambot::1
+
+# It is possible to show a different Message of the Day to a connecting
+# client depending on its origin.
+# T:<hostmask>:<path to motd file>
+#T:*.net:net.motd
+
+# Sample lines for Services
+# Note: services don't listen on any port
+H:*::services.ptlink.net
+C:127.0.0.1:servpass:services.ptlink.net::51
+N:127.0.0.1:servpass:services.ptlink.net::51
+
+# Sample lines for PTOPM
+C:127.0.0.1:xptopass:PTOPM.ptlink.net::51
+N:127.0.0.1:xptopass:PTOPM.ptlink.net::51
