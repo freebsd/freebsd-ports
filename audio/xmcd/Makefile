@@ -1,9 +1,9 @@
 # New ports collection makefile for:	xmcd
-# Version required:	2.3
+# Version required:	2.4
 # Date created:		16 Februar 1995
 # Whom:			Gennady Sorokopud <gena@NetVision.net.il>
 #
-# $Id: Makefile,v 1.15 1998/11/11 00:30:41 mph Exp $
+# $Id: Makefile,v 1.16 1998/12/05 22:28:43 sada Exp $
 #
 
 DISTNAME=	xmcd-2.4
