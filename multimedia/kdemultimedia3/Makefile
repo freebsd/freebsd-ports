@@ -22,7 +22,7 @@ CONFLICTS=	juk-*
 LIB_DEPENDS+=	audiofile:${PORTSDIR}/audio/libaudiofile \
 		FLAC:${PORTSDIR}/audio/flac \
 		cdda_paranoia:${PORTSDIR}/audio/cdparanoia \
-		musicbrainz:${PORTSDIR}/audio/musicbrainz \
+		musicbrainz:${PORTSDIR}/audio/libmusicbrainz \
 		mp3lame:${PORTSDIR}/audio/lame \
 		ogg:${PORTSDIR}/audio/libogg \
 		tag:${PORTSDIR}/audio/taglib \
