@@ -1,5 +1,5 @@
---- configs/freebsd-g++-shared	Wed Jun 13 03:56:43 2001
-+++ configs/freebsd-g++-shared.new	Sun Dec  2 19:22:52 2001
+--- configs/freebsd-g++-shared	Fri Jan  4 21:35:53 2002
++++ configs/freebsd-g++-shared.new	Fri Jan  4 21:37:33 2002
 @@ -6,7 +6,7 @@
  
  # Compiling with support libraries
@@ -18,15 +18,6 @@
  SYSCONF_LIBS_QT_OPENGL	= 
  # OpenGL
  SYSCONF_LFLAGS_OPENGL	= -L/usr/X11R6/lib
-@@ -32,7 +32,7 @@
- SYSCONF_LIBS_YACC	= 
- 
- # Linking applications
--SYSCONF_LINK		= g++
-+SYSCONF_LINK		= objprelink $(OBJECTS) $(OBJMOC) && g++
- SYSCONF_LFLAGS		= 
- SYSCONF_LIBS		= 
- 
 @@ -46,7 +46,7 @@
  SYSCONF_LIBS_THREAD	= 
  
@@ -43,7 +34,7 @@
 -SYSCONF_LINK_TARGET_SHARED	= lib$(TARGET).so.$(VER_MAJ).$(VER_MIN).$(VER_PATCH)
 -SYSCONF_LINK_LIB_SHARED	=  $(SYSCONF_LINK_SHLIB) -shared -Wl,-soname,lib$(TARGET).so.$(VER_MAJ) \
 +SYSCONF_LINK_TARGET_SHARED	= lib$(TARGET).so.$(VER_MAJ)
-+SYSCONF_LINK_LIB_SHARED	=  objprelink $(OBJECTS) $(OBJMOC) && \
++SYSCONF_LINK_LIB_SHARED	=  \
 +	$(SYSCONF_LINK_SHLIB) -shared -Wl,-soname,lib$(TARGET).so.$(VER_MAJ) \
  				     $(LFLAGS) -o $(SYSCONF_LINK_TARGET_SHARED) \
  				     $(OBJECTS) $(OBJMOC) $(LIBS) && \
