@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	File
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	dburr@FreeBSD.ORG
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A Perl module for portably manipulating file specifications
 
 PERL_CONFIGURE=	yes
