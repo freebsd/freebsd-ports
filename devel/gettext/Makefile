@@ -8,8 +8,8 @@
 
 DISTNAME=	gettext-0.10.35
 CATEGORIES=	devel
-MASTER_SITES=	ftp://alpha.gnu.ai.mit.edu/gnu/ \
-		ftp://alpha.gnu.org/pub/gnu/
+MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	gettext
 
 MAINTAINER=	nacai@iname.com
 
