@@ -220,3 +220,9 @@ the need for the vnEraseCharacter specifier.
 vietterm(1V), vnelvis(1V)
 .SH STANDARDS
 Viet-Std Standardization Specification (Viet-Std@Haydn.Stanford.EDU)
+.PP
+RFC 1456 Vietnamese Standardization Working Group,
+"Conventions for Encoding the Vietnamese Language VISCII:
+VIetnamese Standard Code for Information Interchange VIQR:
+VIetnamese Quoted-Readable Specification Revision 1.1",
+May 1993.
