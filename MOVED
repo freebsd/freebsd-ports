@@ -988,3 +988,5 @@ editors/emacs|editors/emacs19|2004-03-20|emacs 19.x moved to a non-default port 
 editors/emacs21|editors/emacs|2004-03-20|emacs 21.x moved to default port location
 editors/openoffice-1.1-gr|editors/openoffice-1.1-el|2004-03-20|correct ISO code
 print/rubber|textproc/rubber|2004-03-22|remove duplicate port
+print/libgnomeprint20||2004-03-23|removed obsolete port
+x11-toolkits/libgnomeprintui20||2004-03-23|removed obsolete port
