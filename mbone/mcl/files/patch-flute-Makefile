@@ -1,0 +1,52 @@
+--- flute/Makefile.orig	Wed Nov 26 17:18:21 2003
++++ flute/Makefile	Wed Jan  7 12:38:28 2004
+@@ -36,6 +36,18 @@
+ 
+ endif
+ 
++ifeq (${OS},freebsd)
++	# FreeBSD version:
++	# CC requires: -mt -lpthread for multithreaded applications
++	# NB: mpatrol not installed !
++	#
++	BINDIR = ../bin/freebsd
++	LDPC_BINDIR = ../../ldpc/bin/freebsd
++	LIBRARIES = -lm -pthread -lglib-2.0 -lgdome -lxml2 -L/usr/local/lib
++	# added -I/usr/local/include for libgdome header files
++	ADD_INCLUDES = -I/usr/local/include/ -I/usr/local/include/glib-2.0/ -I/usr/local/include/libgdome/
++endif
++
+ 
+ ###### Other variables ######
+ 
+@@ -73,24 +85,24 @@
+ # codec in use: if LDPC is used, then add the libbdpc.a library.
+ # If only RSE is used and if you don't have the LDPC archive, then
+ # remove the libbdpc.a library.
+-#alc:	MCL_LIBRARY = ${BINDIR}/libmclalc.a
+-alc:	MCL_LIBRARY = ${BINDIR}/libmclalc.a ${LDPC_BINDIR}/libldpc.a
++alc:	MCL_LIBRARY = ${BINDIR}/libmclalc.a
++#alc:	MCL_LIBRARY = ${BINDIR}/libmclalc.a ${LDPC_BINDIR}/libldpc.a
+ alc:	TARGET_FLUTE = ${BINDIR}/flute
+ #alc:	all
+ 
+ alc_pure:	RM_PROTOCOL = ALC
+ # Edit the following two lines as appropriate, according to the FEC
+ # codec in use: if LDPC is used, then add the libbdpc.a library.
+-#alc_pure:	MCL_LIBRARY = ${BINDIR}/libmclalc.a
+-alc_pure:	MCL_LIBRARY = ${BINDIR}/libmclalc.a ${LDPC_BINDIR}/libldpc.a
++alc_pure:	MCL_LIBRARY = ${BINDIR}/libmclalc.a
++#alc_pure:	MCL_LIBRARY = ${BINDIR}/libmclalc.a ${LDPC_BINDIR}/libldpc.a
+ alc_pure:	TARGET_FLUTE = ${BINDIR}/flute
+ alc_pure:	pure
+ 
+ alc_quantify:	RM_PROTOCOL = ALC
+ # Edit the following two lines as appropriate, according to the FEC
+ # codec in use: if LDPC is used, then add the libbdpc.a library.
+-#alc_quantify:	MCL_LIBRARY = ${BINDIR}/libmclalc.a
+-alc_quantify:	MCL_LIBRARY = ${BINDIR}/libmclalc.a ${LDPC_BINDIR}/libldpc.a
++alc_quantify:	MCL_LIBRARY = ${BINDIR}/libmclalc.a
++#alc_quantify:	MCL_LIBRARY = ${BINDIR}/libmclalc.a ${LDPC_BINDIR}/libldpc.a
+ alc_quantify:	TARGET_FLUTE = ${BINDIR}/flute
+ alc_quantify:	quantify
+ 
