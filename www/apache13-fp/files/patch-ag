@@ -1,5 +1,5 @@
---- conf/httpd.conf-dist.orig	Sat Dec 12 11:04:29 1998
-+++ conf/httpd.conf-dist	Mon Jan 18 17:18:16 1999
+--- conf/httpd.conf-dist.orig	Wed May  5 15:17:59 1999
++++ conf/httpd.conf-dist	Mon Sep  6 13:01:08 1999
 @@ -97,6 +97,13 @@
  #ResourceConfig conf/srm.conf
  #AccessConfig conf/access.conf
@@ -14,30 +14,7 @@
  #
  # Timeout: The number of seconds before receives and sends time out.
  #
-@@ -196,6 +203,22 @@
- # Example:
- # LoadModule foo_module libexec/mod_foo.so
- 
-+<IfDefine SSL>
-+### Uncomment the following if you wish to use SSL and you need RSAREF: ###
-+#LoadFile !librsaref.so.2
-+LoadFile !libcrypto.so.0
-+LoadFile !libssl.so.0
-+LoadModule ssl_module libexec/apache/mod_ssl.so
-+AddModule mod_ssl.c
-+</IfDefine>
-+
-+<IfDefine FRONTPAGE>
-+### We need to check if it matters when the frontpage ###
-+### module is loaded, before or after the SSL module? ###
-+LoadModule frontpage_module libexec/apache/mod_frontpage.so
-+AddModule mod_frontpage.c
-+</IfDefine>
-+
- #
- # ExtendedStatus controls whether Apache will generate "full" status
- # information (ExtendedStatus On) or just basic information (ExtendedStatus
-@@ -241,7 +264,7 @@
+@@ -246,7 +253,7 @@
  #  don't use Group #-1 on these systems!
  #
  User nobody
@@ -46,7 +23,7 @@
  
  #
  # ServerAdmin: Your address, where problems with the server should be
-@@ -269,7 +292,7 @@
+@@ -274,7 +281,7 @@
  # documents. By default, all requests are taken from this directory, but
  # symbolic links and aliases may be used to point to other locations.
  #
@@ -55,24 +32,24 @@
  
  #
  # Each directory to which Apache has access, can be configured with respect
-@@ -310,7 +333,16 @@
+@@ -315,7 +322,16 @@
  # override. Can also be "All", or any combination of "Options", "FileInfo", 
  # "AuthConfig", and "Limit"
  #
-+<IfDefine !FRONTPAGE>
-     AllowOverride None
-+</IfDefine>
-+
 +<IfDefine FRONTPAGE>
 +### These are the Minimum options need by the FrontPage Module.
 +### With out these options set the FrontPage Client will not be
 +### able to access the server.
 +    AllowOverride AuthConfig Limit Indexes Options
 +</IfDefine>
++
++<IfDefine !FRONTPAGE>
+     AllowOverride None
++</IfDefine>
  
  #
  # Controls who can get stuff from this server.
-@@ -342,6 +374,15 @@
+@@ -347,6 +363,15 @@
  #    </Limit>
  #</Directory>
  
@@ -88,7 +65,7 @@
  #
  # DirectoryIndex: Name of the file or files to use as a pre-written HTML
  # directory index.  Separate multiple entries with spaces.
-@@ -459,7 +500,7 @@
+@@ -467,7 +492,7 @@
  # define per-<VirtualHost> access logfiles, transactions will be
  # logged therein and *not* in this file.
  #
@@ -97,7 +74,7 @@
  
  #
  # If you would like to have agent and referer logfiles, uncomment the
-@@ -472,7 +513,7 @@
+@@ -480,7 +505,7 @@
  # If you prefer a single logfile with access, agent, and referer information
  # (Combined Logfile Format) you can use the following directive.
  #

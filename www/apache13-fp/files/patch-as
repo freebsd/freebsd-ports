@@ -1,0 +1,11 @@
+--- config.layout.orig	Thu Jul 29 13:12:43 1999
++++ config.layout	Thu Aug 19 22:30:39 1999
+@@ -41,7 +41,7 @@
+     sysconfdir:    $prefix/etc+
+     datadir:       $prefix/share+
+     iconsdir:      $datadir/icons
+-    htdocsdir:     $datadir/htdocs
++    htdocsdir:     $datadir/data
+     cgidir:        $datadir/cgi-bin
+     includedir:    $prefix/include+
+     localstatedir: $prefix/var+
