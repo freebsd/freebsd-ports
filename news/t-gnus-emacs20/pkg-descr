@@ -1,0 +1,14 @@
+The gnus Newsreader
+*******************
+
+   You can read news (and mail) from within Emacs by using gnus.  The
+news can be gotten by any nefarious means you can think of--NNTP, local
+spool or your mbox file.  All at the same time, if you want to push your
+luck.
+
+   T-gnus provides MIME features based on SEMI API.  So T-gnus supports
+your right to read strange messages including big images or other
+various kinds of formats.  T-gnus also supports
+internationalization/localization and multiscript features based on MULE
+API.  So T-gnus does not discriminate various language communities.
+Oh, if you are a Klingon, please wait Unicode Next Generation.

@@ -1,0 +1,25 @@
+(mapcar
+ (lambda (symbol)
+   (makunbound (intern (format "message-%s" symbol))))
+ '(citation-line-function
+   cite-function courtesy-message default-headers default-mail-headers
+   default-news-headers deletable-headers fcc-handler-function
+   followup-to-function from-style generate-headers-first generate-new-buffers
+   ignored-bounced-headers ignored-cited-headers ignored-mail-headers
+   ignored-news-headers ignored-resent-headers ignored-supersedes-headers
+   included-forward-headers indent-citation-function interactive
+   kill-buffer-on-exit post-method reply-to-function required-mail-headers
+   required-news-headers send-mail-function send-news-function
+   signature signature-before-forwarded-message signature-file
+   signature-separator syntax-checks use-followup-to user-organization-file
+   wide-reply-to-function yank-prefix))
+
+(setq load-path (append (list
+	 "%%PREFIX%%/%%EMACS_LIBDIR%%/site-lisp/semi"
+	 "%%PREFIX%%/%%EMACS_LIBDIR%%/site-lisp/apel"
+	 "%%PREFIX%%/%%EMACS_LIBDIR%%/site-lisp/flim"
+	 "%%PREFIX%%/%%EMACS_LIBDIR%%/19.34/site-lisp/emu"
+	 "%%PREFIX%%/%%EMACS_LIBDIR%%/site-lisp/t-gnus"
+	 ) load-path))
+(load "mime-setup")
+(provide 't-gnus-startup)
