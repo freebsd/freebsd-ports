@@ -11,7 +11,7 @@ has a number of other features:
     Background inc.  You can set exmh to run inc periodically.
     Searching over folder listing and message body.
     A dialog-box interface to MH pick.
-    A editor editor with emacs-like bindings with MIME support.
+    An editor with emacs-like bindings and MIME support.
     Glimpse interface.  You can index all your mail with glimpse
        and search for messages by content.
     User preferences.  You can tune exmh through a dialog box.
