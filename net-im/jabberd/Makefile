@@ -32,7 +32,7 @@ CONFIGURE_ARGS+=--enable-debug
 .endif
 
 .if defined(WITH_POSTGRESQL)
-LIB_DEPENDS+=	pq.3:${PORTSDIR}/databases/postgresql-client
+LIB_DEPENDS+=	pq.3:${PORTSDIR}/databases/postgresql7
 CONFIGURE_ARGS+=--with-pgsql=${LOCALBASE}/include:${LOCALBASE}/lib
 STORAGE+=	pgsql
 AUTHREG+=	pgsql

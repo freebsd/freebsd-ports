@@ -24,7 +24,7 @@ USE_OPENSSL=	YES
 
 .if defined(WITH_PGSQL)
 CONFIGURE_ARGS+=	--with-pgsql
-LIB_DEPENDS+=		pq:${PORTSDIR}/databases/postgresql-client
+LIB_DEPENDS+=		pq:${PORTSDIR}/databases/postgresql7
 DATABASE=		postgresql
 PLIST_SUB+=		PGSQL=""
 PLIST_SUB+=		MYSQL="@comment "
