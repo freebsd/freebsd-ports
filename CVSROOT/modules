@@ -8885,6 +8885,7 @@ sapphire-themes	ports/x11-wm/sapphire-themes
 sarah		ports/sysutils/sarah
 sarep		ports/textproc/sarep
 sarg		ports/www/sarg
+sarien		ports/games/sarien
 sary		ports/textproc/sary
 sash		ports/shells/sash
 satellite	ports/net-mgmt/satellite
