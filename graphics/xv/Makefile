@@ -71,20 +71,20 @@ post-patch:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/xv
-	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/xv
-	@${INSTALL_DATA} ${WRKSRC}/README.PNG ${PREFIX}/share/doc/xv
-	@${INSTALL_DATA} ${WRKSRC}/docs/epsf.ps ${PREFIX}/share/doc/xv
-	@${INSTALL_DATA} ${WRKSRC}/docs/xpm.ps ${PREFIX}/share/doc/xv
-	@${INSTALL_DATA} ${WRKSRC}/docs/xvdocs.ps ${PREFIX}/share/doc/xv
-	@${INSTALL_DATA} ${WRKSRC}/docs/xvtitle.ps ${PREFIX}/share/doc/xv
-	@${INSTALL_DATA} ${WRKSRC}/docs/help ${PREFIX}/share/doc/xv
-	@${INSTALL_DATA} ${WRKSRC}/docs/bmp.doc ${PREFIX}/share/doc/xv
-	@${INSTALL_DATA} ${WRKSRC}/docs/gif* ${PREFIX}/share/doc/xv
-	@${INSTALL_DATA} ${WRKSRC}/../xv-jp-extension/CHANGELOG.* ${PREFIX}/share/doc/xv
-	@${INSTALL_DATA} ${WRKSRC}/../xv-jp-extension/README.PhotoCD ${PREFIX}/share/doc/xv
-	@${INSTALL_DATA} ${WRKSRC}/../xv-jp-extension/README.xv310a-ext-5.3.3 ${PREFIX}/share/doc/xv/README.xv310a-ext-5.3.3.ja
-	@${INSTALL_DATA} ${WRKSRC}/../xv-jp-extension/magic.add ${PREFIX}/share/doc/xv
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README.PNG ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/docs/epsf.ps ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/docs/xpm.ps ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/docs/xvdocs.ps ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/docs/xvtitle.ps ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/docs/help ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/docs/bmp.doc ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/docs/gif* ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/../xv-jp-extension/CHANGELOG.* ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/../xv-jp-extension/README.PhotoCD ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/../xv-jp-extension/README.xv310a-ext-5.3.3 ${DOCSDIR}/README.xv310a-ext-5.3.3.ja
+	@${INSTALL_DATA} ${WRKSRC}/../xv-jp-extension/magic.add ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

@@ -4,20 +4,20 @@ bin/vdcomp
 bin/xcmap
 bin/xvpictoppm
 lib/X11/xv_mgcsfx.sample
-share/doc/xv/README
-share/doc/xv/README.PNG
-share/doc/xv/epsf.ps
-share/doc/xv/xpm.ps
-share/doc/xv/xvdocs.ps
-share/doc/xv/xvtitle.ps
-share/doc/xv/help
-share/doc/xv/bmp.doc
-share/doc/xv/gif.ack
-share/doc/xv/gif.aspect
-share/doc/xv/gif87.doc
-share/doc/xv/gif89.doc
-share/doc/xv/CHANGELOG.jp-ext
-share/doc/xv/README.PhotoCD
-share/doc/xv/README.xv310a-ext-5.3.3.ja
-share/doc/xv/magic.add
-@dirrm share/doc/xv
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.PNG
+%%PORTDOCS%%%%DOCSDIR%%/epsf.ps
+%%PORTDOCS%%%%DOCSDIR%%/xpm.ps
+%%PORTDOCS%%%%DOCSDIR%%/xvdocs.ps
+%%PORTDOCS%%%%DOCSDIR%%/xvtitle.ps
+%%PORTDOCS%%%%DOCSDIR%%/help
+%%PORTDOCS%%%%DOCSDIR%%/bmp.doc
+%%PORTDOCS%%%%DOCSDIR%%/gif.ack
+%%PORTDOCS%%%%DOCSDIR%%/gif.aspect
+%%PORTDOCS%%%%DOCSDIR%%/gif87.doc
+%%PORTDOCS%%%%DOCSDIR%%/gif89.doc
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.jp-ext
+%%PORTDOCS%%%%DOCSDIR%%/README.PhotoCD
+%%PORTDOCS%%%%DOCSDIR%%/README.xv310a-ext-5.3.3.ja
+%%PORTDOCS%%%%DOCSDIR%%/magic.add
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
