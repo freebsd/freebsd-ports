@@ -1,4 +1,5 @@
 bin/lyx
+bin/noweb2lyx
 bin/reLyX
 share/locale/cs/LC_MESSAGES/lyx.mo
 share/locale/da/LC_MESSAGES/lyx.mo
@@ -16,6 +17,7 @@ share/locale/sl/LC_MESSAGES/lyx.mo
 share/locale/sv/LC_MESSAGES/lyx.mo
 share/locale/tr/LC_MESSAGES/lyx.mo
 share/lyx/CREDITS
+share/lyx/bind/broadway.bind
 share/lyx/bind/cua.bind
 share/lyx/bind/de_menus.bind
 share/lyx/bind/emacs.bind
@@ -32,6 +34,7 @@ share/lyx/clipart/platypus.eps
 share/lyx/configure
 share/lyx/doc/BUGS.lyx
 share/lyx/doc/Customization.lyx
+share/lyx/doc/DocStyle.lyx
 share/lyx/doc/Extended.lyx
 share/lyx/doc/Intro.lyx
 share/lyx/doc/LaTeXConfig.lyx
@@ -45,9 +48,16 @@ share/lyx/doc/de_Customization.lyx
 share/lyx/doc/de_Extended.lyx
 share/lyx/doc/de_Intro.lyx
 share/lyx/doc/de_Tutorial.lyx
+share/lyx/doc/de_UserGuide.lyx
 share/lyx/doc/escher-lsd.eps
+share/lyx/doc/fr_Intro.lyx
+share/lyx/doc/fr_Tutorial.lyx
 share/lyx/doc/mobius.eps
+share/lyx/doc/pl_Intro.lyx
+share/lyx/doc/pl_Tutorial.lyx
 share/lyx/doc/platypus.eps
+share/lyx/doc/pt_Intro.lyx
+share/lyx/doc/sl_Intro.lyx
 share/lyx/doc/sv_Intro.lyx
 share/lyx/doc/sv_Tutorial.lyx
 share/lyx/examples/Foils.lyx
@@ -66,7 +76,11 @@ share/lyx/examples/beispiel_roh.lyx
 share/lyx/examples/de_splash.lyx
 share/lyx/examples/example_lyxified.lyx
 share/lyx/examples/example_raw.lyx
+share/lyx/examples/exemple_brut.lyx
+share/lyx/examples/exemple_lyxifie.lyx
+share/lyx/examples/fr_splash.lyx
 share/lyx/examples/landslide.lyx
+share/lyx/examples/noweb2lyx.lyx
 share/lyx/examples/pl_splash.lyx
 share/lyx/examples/scriptone.lyx
 share/lyx/examples/splash.lyx
@@ -124,7 +138,9 @@ share/lyx/layouts/amsmaths.inc
 share/lyx/layouts/apa.layout
 share/lyx/layouts/article.layout
 share/lyx/layouts/book.layout
+share/lyx/layouts/broadway.layout
 share/lyx/layouts/dinbrief.layout
+share/lyx/layouts/egs.layout
 share/lyx/layouts/ejour2.layout
 share/lyx/layouts/foils.layout
 share/lyx/layouts/hollywood.layout
@@ -167,6 +183,7 @@ share/lyx/reLyX/LastLyX.pm
 share/lyx/reLyX/MakePreamble.pm
 share/lyx/reLyX/README
 share/lyx/reLyX/ReadCommands.pm
+share/lyx/reLyX/RelyxFigure.pm
 share/lyx/reLyX/RelyxTable.pm
 share/lyx/reLyX/Text/TeX.pm
 share/lyx/reLyX/Verbatim.pm
@@ -182,6 +199,7 @@ share/lyx/templates/letter.lyx
 share/lyx/templates/linuxdoctemplate.lyx
 share/lyx/templates/revtex.lyx
 share/lyx/templates/slides.lyx
+share/lyx/tex/broadway.cls
 share/lyx/tex/ejour2.cls
 share/lyx/tex/hollywood.cls
 share/lyx/tex/iletter.cls
