@@ -24,6 +24,7 @@
     SUBDIR += dcdflib
     SUBDIR += diehard
     SUBDIR += djbfft
+    SUBDIR += drgenius
     SUBDIR += eispack
     SUBDIR += entropy
     SUBDIR += eukleides
