@@ -1,13 +1,18 @@
 #!/bin/sh
 
 if [ $2 != "POST-INSTALL" ]
-then
-	exit
+    then
+    exit
 fi
 
 varrun=/var/run/bld
+logfile=/var/log/bld.log
 user=bld
 group=bld
+newsyslog_conf=/etc/newsyslog.conf
+syslog_conf=/etc/syslog.conf
+syslog_pid=/var/run/syslog.pid
+nonexistent=/nonexistent
 
 ask() {
     local question default answer
@@ -31,11 +36,11 @@ yesno() {
     while :; do
 	answer=$(ask "${question}" "${dflt}")
 	case "${answer}" in
-	[Yy]*)		return 0;;
-	[Nn]*)		return 1;;
-	esac
-	echo "Please answer yes or no."
-    done
+	    [Yy]*)		return 0;;
+[Nn]*)		return 1;;
+esac
+echo "Please answer yes or no."
+done
 }
 
 make_account() {
@@ -59,54 +64,73 @@ make_account() {
     else
 	echo "You need a user \"${u}\"."
 	pw useradd ${u} -g ${g} -h - ${homeopt} \
-		-s /nonexistent -c "${gcos}" || exit
+	    -s $nonexistent -c "${gcos}" || exit
 	echo "Done."
     fi
 
     if [ x"$homeopt" = x ]; then
 	eval home=~${u}
 	if [ ! -d "${home}" ]; then
-		mkdir -p ${home}/.cvsup || exit
-		touch ${home}/.cvsup/auth || exit
-		chown -R ${u}:${g} ${home} || exit
-		chmod -R go= ${home} || exit
+	    mkdir -p ${home}/.cvsup || exit
+	    touch ${home}/.cvsup/auth || exit
+	    chown -R ${u}:${g} ${home} || exit
+	    chmod -R go= ${home} || exit
 	fi
     fi
 }
 
 if [ ! -d "${varrun}" ]
-then
-	mkdir ${varrun} || exit
+    then
+    mkdir ${varrun} || exit
 fi
 
 echo ""
-make_account ${user} ${group} "Blacklist Daemon" "/nonexistent"
+make_account ${user} ${group} "Blacklist Daemon" "$nonexistent"
 chmod 700 ${varrun}
 chown bld ${varrun}
 
-if grep -q "^[^#]*${facility}.*/var/log/bld.log" /etc/syslog.conf; then
-	echo -n "It looks like you already have some logging set up, so I "
-	echo "will use it."
+if grep -q "^[^#]*${facility}.*$logfile" $syslog_conf; then
+    echo -n "It looks like you already have some logging set up, so I "
+    echo "will use it."
 else
-	echo "Setting up server logging in \"/etc/syslog.conf\"."
-	cat <<EOF >>/etc/syslog.conf
+    echo "Setting up server logging in \"$syslog_conf\"."
+    cat <<EOF >>$syslog_conf
 !bld
-*.*						/var/log/bld.log
+*.*						$logfile
 EOF
 
-	if [ ! -f /var/log/bld.log ]; then
-		echo "Creating \"/var/log/bld.log\"."
-		cp /dev/null /var/log/bld.log
-	fi
-
-	if [ -f /var/run/syslog.pid ]; then
-		echo "Giving syslogd a kick in the pants."
-		kill -HUP $(cat /var/run/syslog.pid)
-	fi
-
-	echo "Adding bld log entry to \"/etc/newsyslog.conf\"."
-	cat <<EOF >>/etc/newsyslog.conf
-/var/log/bld.log			664  7    *    24    Z
-EOF
-	echo "Done."
+if [ ! -f $logfile ]; then
+    echo "Creating \"$logfile\"."
+    cp /dev/null $logfile
 fi
+
+if [ -f $syslog_pid ]; then
+    echo "Giving syslogd a kick in the pants."
+    kill -HUP $(cat $syslog_pid)
+fi
+
+echo "Adding bld log entry to \"$newsyslog_conf\"."
+cat <<EOF >>$newsyslog_conf
+$logfile			664  7    *    24    Z
+EOF
+echo "Done."
+fi
+
+# Compatibility from v0.2.4 port
+for i in bld_acl.conf bld_whitelist.conf
+do
+  if [ -f ${PKG_PREFIX}/etc/$i ]
+      then
+      if [ -f ${PKG_PREFIX}/etc/bld/$i ]
+	  then
+	  echo "WARNING: You have a $i configuration file in two directories:"
+	  echo "${PKG_PREFIX}/etc and ${PKG_PREFIX}/etc/bld"
+	  echo "You must use ${PREFIX}/etc/bld/$i"
+      else
+	  echo "You seem to have a $i configuration file in ${PKG_PREFIX}/etc"
+	  echo "Copying it to ${PKG_PREFIX}/etc/bld"
+	  cp ${PKG_PREFIX}/etc/$i ${PKG_PREFIX}/etc/bld
+	  echo "You should clean the old ${PKG_PREFIX}/etc/$i"
+      fi
+  fi
+done

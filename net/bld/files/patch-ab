@@ -1,0 +1,15 @@
+--- bld.conf.sample.orig	Thu Oct 28 12:52:25 2004
++++ bld.conf.sample	Thu Oct 28 12:52:37 2004
+@@ -26,10 +26,10 @@
+ #log_level=1
+ 
+ ## User to run as
+-#user=
++#user=bld
+ 
+ ## Group to run as
+-#group=
++#group=bld
+ 
+ ## Client timeout
+ #client_timeout=60
