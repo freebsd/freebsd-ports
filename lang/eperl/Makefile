@@ -3,14 +3,15 @@
 # Date created:		03-Sep-1997
 # Whom:			Ralf S. Engelschall <rse@engelschall.com>
 #
-# $Id: Makefile,v 1.21 1997/12/24 01:21:09 alex Exp $
+# $Id: Makefile,v 1.22 1997/12/24 10:07:46 asami Exp $
 #
 
 DISTNAME=	eperl-2.2.9
 CATEGORIES=	lang www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		http://www.engelschall.com/sw/eperl/distrib/ \
-		ftp://ftp.engelschall.com/sw/eperl/
+		ftp://ftp.engelschall.com/sw/eperl/ \
+		ftp://ftp.hyperreal.org/software/engelschall/eperl/
 MASTER_SITE_SUBDIR=Parse
 
 MAINTAINER=	rse@engelschall.com
