@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-PKGNAME=	ja-nvi-iso2022jp-1.79.19990331
+PKGNAME=	ja-nvi-iso2022jp-1.79.19991117
 
 MASTERDIR=	${.CURDIR}/../../editors/nvi-m17n
 COMMENT=	${.CURDIR}/pkg/COMMENT

@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-PKGNAME=	ko-nvi-euckr-1.79.19990331
+PKGNAME=	ko-nvi-euckr-1.79.19991117
 
 MASTERDIR=	${.CURDIR}/../../editors/nvi-m17n
 COMMENT=	${.CURDIR}/pkg/COMMENT
