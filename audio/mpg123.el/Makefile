@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mpg123.el
-PORTVERSION=	1.29
+PORTVERSION=	1.30
 CATEGORIES=	audio elisp
 MASTER_SITES=	http://www.gentei.org/~yuuji/software/mpg123el/
 DISTNAME=	${PORTNAME}
