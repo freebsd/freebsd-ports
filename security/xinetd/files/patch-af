@@ -1,0 +1,11 @@
+--- xinetd/child.c.orig	Sun Apr 30 16:13:07 2000
++++ xinetd/child.c	Sun Apr 30 16:13:47 2000
+@@ -320,7 +320,7 @@
+ 										"(%s service) %s", program_name, SC_ID( scp ) ) ;
+ 			
+ #ifdef INET6
+-			if ( SC_ACCEPTS_CONNECTIONS( scp ) && !IN6_IS_ADDR_UNSPECIFIED(sinp) )
++			if ( SC_ACCEPTS_CONNECTIONS( scp ) && !IN6_IS_ADDR_UNSPECIFIED(&(sinp->sin6_addr)) )
+ 				strx_print( INT_NULL, &name[ len ], namelen - len,
+ 													" %s" , xntoa( *sinp ) ) ;
+ #else

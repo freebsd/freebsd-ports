@@ -16,7 +16,7 @@ MAINTAINER=	vanilla@FreeBSD.org
 FETCH_BEFORE_ARGS=	-b
 GNU_CONFIGURE=	yes
 ALL_TARGET=	build
-CONFIGURE_ARGS=	--with-loadavg --with-libwrap
+CONFIGURE_ARGS=	--with-loadavg --with-libwrap --with-inet6
 
 MAN5=		xinetd.conf.5
 MAN8=		xinetd.8 xinetd.log.8
