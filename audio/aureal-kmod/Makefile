@@ -29,8 +29,8 @@ MAKE_ENV=	WRKSRC="${WRKSRC}"
 .include <bsd.port.pre.mk>
 
 .if exists(${SRCPREFIX}/sys/dev/sound/pcm/sound.c)
-VERSION_SOUND_C!=	${AWK} '/.*\$$FreeBSD/ { print $$4; exit; }' \
-				${SRCPREFIX}/sys/dev/sound/pcm/sound.c
+VERSION_SOUND_C!=	ident < ${SRCPREFIX}/sys/dev/sound/pcm/sound.c | \
+			${AWK} '{ print $$3; exit }'
 .else
 VERSION_SOUND_C=
 .endif
