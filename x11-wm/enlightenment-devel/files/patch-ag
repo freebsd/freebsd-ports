@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Sun Apr 30 12:26:09 2000
++++ src/Makefile.in	Sun Apr 30 12:25:23 2000
+@@ -122,7 +122,7 @@
+ enlightenment_SOURCES =  	E.h				timestamp.h             	update.h                	actions.c			alert.c				areas.c                 	arrange.c			arrange.h			atoms.c				borders.c			buttons.c			clone.c                 	cmclass.c			comms.c				conf.h				config.c			containers.c			coords.c                	cursors.c			desktops.c			dialog.c	        	dock.c				draw.c				events.c			evhandlers.c			file.c		        	finders.c			focus.c 			fx.c                    	globals.c			gnome.c				grabs.c				groups.c			handlers.c			icccm.c				iclass.c			iconify.c			init.c				ipc.c				kde.c				lists.c				main.c				memory.c			menus.c				misc.c				modules.c			mwm.c				network.c			pager.c                 	progress.c			regex.c				scursor.c               	session.c               	settings.c              	setup.c				size.c				slideout.c			snaps.c                 	snprintf.c			sound.c				startup.c			sticky.c			stripjoints.c   		strips.c			tclass.c			text.c				theme.c                 	timers.c			tooltips.c			ttfont.c			update.c			warp.c				windowmatch.c   		x.c                     	zoom.c
+ 
+ 
+-LDADD =  	@INTLLIBS@				$(FNLIB_LIBS) 			$(TTF_LIBS) 			$(ESD_LIBS) 			$(IMLIB_LIBS) 			$(XTST_LIBS) 			$(XVM_LIBS) 			$(GHTTP_LIBS)           	$(DL_LIBS)              	$(XINERAMA_LIBS)              	-lm
++LDADD =  	@INTLLIBS@				$(FNLIB_LIBS) 			$(TTF_LIBS) 			$(ESD_LIBS) 			$(IMLIB_LIBS) 			$(XTST_LIBS) 			$(XVM_LIBS) 			$(GHTTP_LIBS)           	$(DL_LIBS)              	$(XINERAMA_LIBS)              	-lintl -lm
+ 
+ 
+ INCLUDES = -I$(top_srcdir) $(ESD_CFLAGS) $(IMLIB_CFLAGS) -I$(includedir) -I.. -I../intl -I$(top_srcdir)/intl
