@@ -1,0 +1,5 @@
+A set of small utilities for the FreeBSD Documentation Projekt
+
+makemanent/sortmanent -- create and sort entries for man-refs.ent
+slashexpand -- replace </> with proper closing tags
+suppe -- format and indent

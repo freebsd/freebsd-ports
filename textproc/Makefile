@@ -32,6 +32,7 @@
     SUBDIR += eruby
     SUBDIR += expat
     SUBDIR += expat2
+    SUBDIR += fdp-tools
     SUBDIR += freegrep
     SUBDIR += fribidi
     SUBDIR += gaspell
