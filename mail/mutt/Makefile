@@ -4,10 +4,10 @@
 # Date created:         Thur July 25, 1996
 # Whom:                 David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.42 1998/02/28 21:31:08 obrien Exp $
+# $Id: Makefile,v 1.43 1998/04/18 11:11:27 obrien Exp $
 
-DISTNAME=	mutt-0.91.1i
-PKGNAME=	mutt-0.91.1
+DISTNAME=	mutt-0.93i
+PKGNAME=	mutt-0.93
 CATEGORIES=	mail
 MASTER_SITES=	ftp://riemann.iam.uni-bonn.de/pub/mutt/  \
 		ftp://ftp.gbnet.net/pub/mutt-international/  \
@@ -32,9 +32,17 @@ RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 DIST_SUBDIR=	mutt
 PATCH_DIST_STRIP=	-p1
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= --enable-dsn --enable-pop --enable-flock \
-		--disable-fcntl --enable-hidden-host
+CONFIGURE_ARGS= --enable-dsn --enable-pop --enable-imap --enable-flock \
+		--disable-fcntl --enable-hidden-host \
+		--with-sharedir=${PREFIX}/share/misc \
+		--with-docdir=${PREFIX}/share/doc/mutt
 MAN1=		mutt.1
+
+post-patch:
+	@touch ${WRKSRC}/doc/mutt.man ${WRKSRC}/doc/manual.txt
+
+pre-configure:
+	@${MKDIR} ${PREFIX}/share/misc
 
 post-install:
 	@strip ${PREFIX}/bin/mutt

@@ -1,20 +1,27 @@
---- doc/makefile.orig	Thu Oct  3 16:40:44 1996
-+++ doc/makefile	Mon Jan 13 01:29:09 1997
-@@ -1,10 +1,16 @@
+--- doc/Makefile.in.orig	Sun Jun 21 00:13:02 1998
++++ doc/Makefile.in	Wed Jul 15 01:43:40 1998
+@@ -18,9 +18,10 @@
+ CFLAGS=@CFLAGS@ -DSHAREDIR=\"$(sharedir)\" $(XCPPFLAGS)
+ LDFLAGS=@LDFLAGS@
+ 
+-
+ all: manual.txt mutt.man manual.html
+ 
 +fbsd: manual.latin1 manual.html
 +
- all: manual.txt manual.html
- 
- manual.txt: manual.sgml
+ install: mutt.man manual.txt
+ 	../mkinstalldirs $(mandir)/man1
+ 	$(INSTALL) -m 644 mutt.man $(mandir)/man1/mutt.1
+@@ -36,7 +37,11 @@
  	sgml2txt manual
  
  manual.html: manual.sgml
 -	sgml2html manual
-+	#sgml2html manual
++	# sgml2html manual
 +	sgmlfmt -f html manual
 +
 +manual.latin1: manual.sgml
 +	sgmlfmt -f latin1 manual.sgml
  
- clean:
- 	rm -f *~
+ mutt.man: mutt.sgml
+ 	sgml2txt -man mutt

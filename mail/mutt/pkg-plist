@@ -3,7 +3,7 @@ man/man1/mutt.1.gz
 share/misc/Muttrc
 share/misc/mime.types
 share/doc/mutt/manual.txt
-share/doc/mutt/pgp-Notes.txt
+share/doc/mutt/PGP-Notes.txt
 share/doc/mutt/language.txt
 share/doc/mutt/language50.txt
 share/doc/mutt/sample.muttrc
