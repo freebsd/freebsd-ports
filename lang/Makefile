@@ -147,6 +147,7 @@
     SUBDIR += php-mode.el
     SUBDIR += php3
     SUBDIR += php4
+    SUBDIR += php4-cli
     SUBDIR += php_doc
     SUBDIR += pike70
     SUBDIR += pike72
