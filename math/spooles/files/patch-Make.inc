@@ -1,5 +1,5 @@
---- Make.inc.orig	Tue Jan 19 06:48:55 1999
-+++ Make.inc	Mon May  5 09:59:52 2003
+--- Make.inc.orig	Mon Jan 18 16:48:55 1999
++++ Make.inc	Sun May 11 14:32:36 2003
 @@ -12,7 +12,7 @@
  # for solaris
  #
@@ -26,7 +26,18 @@
  # CFLAGS = -Wall $(OPTLEVEL)
  #
  #----------------------------------------
-@@ -79,8 +79,8 @@
+@@ -50,8 +50,8 @@
+ #  set any thread libraries
+ #
+ # THREAD_LIBS =
+-# THREAD_LIBS = -D_REENTRANT=199506L -lpthread
+-  THREAD_LIBS = -D_POSIX_C_SOURCE=199506L -lpthread
++THREAD_LIBS = -D_REENTRANT=199506L %%PTHREAD_LIBS%%
++# THREAD_LIBS = -D_POSIX_C_SOURCE=199506L -lpthread
+ # THREAD_LIBS = -lpthread
+ #
+ #---------------------------------------------------------------------
+@@ -79,15 +79,15 @@
  #  set the ranlib environment
  #  (if ranlib is not needed, we echo the library name)
  #
@@ -34,6 +45,15 @@
 -  RANLIB = echo
 +  RANLIB = ranlib
 +# RANLIB = echo
+ #
+ #---------------------------------------------------------------------
+ #
+ #  set suffix rule *.c --> *.o
+ #
+-.c.o : 
+-	$(PURIFY) $(CC) -c $(CFLAGS) $<
++#.c.o : 
++#	$(PURIFY) $(CC) -c $(CFLAGS) $<
  #
  #---------------------------------------------------------------------
  #

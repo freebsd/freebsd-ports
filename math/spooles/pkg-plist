@@ -48,7 +48,6 @@ include/spooles/MPI.h
 include/spooles/MSMD.h
 include/spooles/MSMD/MSMD.h
 include/spooles/MT.h
-include/spooles/MT/spoolesMT.h
 include/spooles/Network.h
 include/spooles/PatchAndGoInfo/PatchAndGoInfo.h
 include/spooles/PatchAndGoInfo.h
@@ -102,6 +101,8 @@ include/spooles/timings.h
 lib/libspooles.a
 %%MPI%%include/spooles/MPI/spoolesMPI.h
 %%MPI%%@dirrm include/spooles/MPI
+%%MT%%include/spooles/MT/spoolesMT.h
+%%MT%%@dirrm include/spooles/MT
 @dirrm include/spooles/A2
 @dirrm include/spooles/BPG
 @dirrm include/spooles/Chv
@@ -124,7 +125,6 @@ lib/libspooles.a
 @dirrm include/spooles/InpMtx
 @dirrm include/spooles/Lock
 @dirrm include/spooles/MSMD
-@dirrm include/spooles/MT
 @dirrm include/spooles/PatchAndGoInfo
 @dirrm include/spooles/Pencil
 @dirrm include/spooles/SolveMap
