@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.11 1996/10/10 20:32:20 ache Exp $
+# $Id: Makefile,v 1.12 1996/10/13 14:26:40 ache Exp $
 #
 
     SUBDIR += d1489
@@ -6,7 +6,6 @@
     SUBDIR += elm.language
     SUBDIR += netscape2.language
     SUBDIR += netscape3.language
-    SUBDIR += netscape301.language
     SUBDIR += pgp.language
 
 .include <bsd.port.subdir.mk>
