@@ -111,6 +111,7 @@
     SUBDIR += enteruser
     SUBDIR += eroaster
     SUBDIR += est
+    SUBDIR += estctrl
     SUBDIR += etcmerge
     SUBDIR += eventwatcher
     SUBDIR += extipl

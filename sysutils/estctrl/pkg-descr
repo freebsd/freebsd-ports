@@ -1,0 +1,7 @@
+This is a daemon for controlling the CPU speed via Enhanced Speedstep on 
+Intel Pentium M processors based on the current cpu load and power source.
+
+WWW: http://www.daemonology.net/freebsd-est/
+
+- Colin Percival
+cperciva@daemonology.net
