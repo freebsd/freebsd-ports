@@ -61,5 +61,5 @@ sbin/postdrop
 sbin/sendmail
 %%WITH_TEST%%sbin/smtp-sink
 %%WITH_TEST%%sbin/smtp-source
-@unexec rmdir etc/postfix > /dev/null 2>&1 || true
+@dirrm etc/postfix
 @dirrm libexec/postfix
