@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	diction
-PORTVERSION=	1.01
+PORTVERSION=	1.02
 CATEGORIES=	misc
 MASTER_SITES=	http://www.moria.de/~michael/diction/
 
