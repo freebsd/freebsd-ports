@@ -31,6 +31,7 @@
     SUBDIR += gxmame
     SUBDIR += hercules
     SUBDIR += hfs
+    SUBDIR += hfsplusutils
     SUBDIR += hfsutils
     SUBDIR += ia64sim
     SUBDIR += ines
