@@ -26,6 +26,7 @@ share/locale/es/LC_MESSAGES/krename.mo
 share/locale/fr/LC_MESSAGES/krename.mo
 share/locale/it/LC_MESSAGES/krename.mo
 share/locale/ja/LC_MESSAGES/krename.mo
+share/locale/nl/LC_MESSAGES/krename.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/krename.mo
 @dirrm share/apps/krename
 %%PORTDOCS%%@dirrm share/doc/HTML/de/krename

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	krename
-PORTVERSION=	2.8.3
+PORTVERSION=	2.8.4
 CATEGORIES=	sysutils kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,13 +16,8 @@ COMMENT=	Very powerful batch file renamer for KDE3
 
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-
-post-patch:
-	${REINPLACE_CMD} -e 's|-pedantic ||g ; \
-		s|klineedit|KLineEdit|g' ${WRKSRC}/configure
-
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/x11/kde3/Makefile.kde"
+.include <bsd.port.post.mk>
