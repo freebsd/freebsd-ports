@@ -1,5 +1,5 @@
 # New ports collection makefile for:	elsa
-# Version required:			1.0b-017
+# Version required:			1.0b-018
 # Date created:				06 October 1999
 # Whom:					Chris D. Faulhaber <jedgar@fxp.org>
 #
@@ -7,16 +7,16 @@
 #
 
 DISTNAME=	elsa-freebsd_x86
-PKGNAME=	elsa-1.0b-017
+PKGNAME=	elsa-1.0b-018
 CATEGORIES=	net
 MASTER_SITES=	""
 
-MAINTAINER=	jedgar@fxp.org
+MAINTAINER=	jedgar@FreeBSD.org
 
 ONLY_FOR_ARCHS=	i386
 RESTRICTED=	"LIC: redistribution not allowed"
 
-WRKSRC=		${WRKDIR}/ELSA-1_0b-017-freebsd_x86
+WRKSRC=		${WRKDIR}/ELSA-1_0b-018-freebsd_x86
 NO_BUILD=	yes
 LOG_DIR?=	/var/log/elsa
 
