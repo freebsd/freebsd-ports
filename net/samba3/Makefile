@@ -28,6 +28,18 @@ CONFIGURE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include \
 		LDFLAGS=-L${LOCALBASE}/lib
 .endif
 
+.if defined(WITH_QUOTAS)
+CONFIGURE_ARGS+=	--with-quotas
+.endif
+
+.if defined(WITH_UTMP)
+CONFIGURE_ARGS+=	--with-utmp
+.endif
+
+.if defined(WITH_MSDFS)
+CONFIGURE_ARGS+=	--with-msdfs
+.endif
+
 # directories
 VARDIR=		/var
 SAMBA_SPOOL=	${VARDIR}/spool/samba
