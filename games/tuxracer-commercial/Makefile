@@ -16,8 +16,6 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz \
 
 MAINTAINER=	eanholt@gladstone.uoregon.edu
 
-BROKEN=		"Does not build"
-
 LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
 		tcl83.1:${PORTSDIR}/lang/tcl83
 
@@ -25,6 +23,7 @@ USE_MESA=	yes
 USE_GMAKE=	yes
 SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
 USE_AUTOMAKE=	yes
+AUTOMAKE_ARGS=	-a
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
 		THREAD_LIB="${PTHREAD_LIB}"
 MAKE_ENV=	${CONFIGURE_ENV}
@@ -36,6 +35,9 @@ CONFIGURE_ARGS=	--with-tcl-inc="${LOCALBASE}/include/tcl8.3" \
 
 WORKDATA=	${WRKDIR}/${PORTNAME}-data-${PORTVERSION}
 COURSEDIRS=	1 2 3 4 5 6 7 8 9 10 11
+
+post-extract:
+	${RM} ${WRKSRC}/missing
 
 post-install:
 	${MKDIR} ${DATADIR}
