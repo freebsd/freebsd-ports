@@ -8,8 +8,7 @@
 
 DISTNAME=	quirc-0.9.79
 CATEGORIES=	irc tk82
-MASTER_SITES=	http://www.quirc.org/ \
-		http://patearl.powersurfr.com/quirc/
+MASTER_SITES=	http://patearl.powersurfr.com/quirc/
 
 MAINTAINER=	cpiazza@FreeBSD.org
 
