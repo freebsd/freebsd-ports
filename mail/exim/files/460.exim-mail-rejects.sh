@@ -18,7 +18,7 @@ fi
 
 exim_status_mail_rejects_enable=${exim_status_mail_rejects_enable:-"YES"}
 exim_status_mail_rejects_logs=${exim_status_mail_rejects_logs:-2}
-exim_rejectlog=${exim_rejectlog:-"/var/log/exim/rejectlog"}
+exim_rejectlog=${exim_rejectlog:-"%%LOGDIR%%/rejectlog"}
 
 case "$exim_status_mail_rejects_enable" in
     [Yy][Ee][Ss])
