@@ -1,6 +1,6 @@
-bin/c++
-bin/g++
-bin/gcc
+bin/pc++
+bin/pg++
+bin/pgcc
 bin/gcov
 bin/pentium-freebsd-gcc
 bin/protoize
