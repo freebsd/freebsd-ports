@@ -1,20 +1,12 @@
 bin/monkey-bubble
-etc/gconf/gconf.xml.defaults/apps/monkey-bubble-game/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/monkey-bubble-game/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/monkey-bubble/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/monkey-bubble/%gconf.xml
 etc/gconf/schemas/monkey-bubble.schemas
-lib/libgdkview.a
-lib/libgdkview.so
-lib/libgdkview.so.0
-lib/libgstaudio.a
-lib/libgstaudio.so
-lib/libgstaudio.so.0
-lib/libmonkey.a
-lib/libmonkey.so
-lib/libmonkey.so.0
-lib/libmonkeyutil.a
-lib/libmonkeyutil.so
-lib/libmonkeyutil.so.0
 share/gnome/applications/monkey-bubble.desktop
+share/gnome/help/monkey-bubble/C/empty.xml
+share/gnome/help/monkey-bubble/C/monkey-bubble.xml
+share/gnome/help/monkey-bubble/fr/empty.xml
+share/gnome/help/monkey-bubble/fr/monkey-bubble.xml
 share/gnome/monkey-bubble/gfx/banana.svg
 share/gnome/monkey-bubble/gfx/bubbles/bubble_01.svg
 share/gnome/monkey-bubble/gfx/bubbles/bubble_02.svg
@@ -26,11 +18,13 @@ share/gnome/monkey-bubble/gfx/bubbles/bubble_07.svg
 share/gnome/monkey-bubble/gfx/bubbles/bubble_08.svg
 share/gnome/monkey-bubble/gfx/frozen-bubble/back_hiscores.png
 share/gnome/monkey-bubble/gfx/harm.svg
+share/gnome/monkey-bubble/gfx/harm_down.svg
+share/gnome/monkey-bubble/gfx/harm_shoot.svg
+share/gnome/monkey-bubble/gfx/harm_up.svg
 share/gnome/monkey-bubble/gfx/layout_1_player.svg
 share/gnome/monkey-bubble/gfx/layout_2_players.svg
 share/gnome/monkey-bubble/gfx/looser.svg
 share/gnome/monkey-bubble/gfx/lost.svg
-share/gnome/monkey-bubble/gfx/monkey-bubble-icon.xpm
 share/gnome/monkey-bubble/gfx/monkey.png
 share/gnome/monkey-bubble/gfx/monkeys.svg
 share/gnome/monkey-bubble/gfx/number/0.svg
@@ -129,17 +123,24 @@ share/gnome/monkey-bubble/gfx/snake/snake_6.svg
 share/gnome/monkey-bubble/gfx/snake/snake_7.svg
 share/gnome/monkey-bubble/gfx/snake/snake_8.svg
 share/gnome/monkey-bubble/gfx/snake/snake_9.svg
-share/gnome/monkey-bubble/gfx/splash.svg
-share/gnome/monkey-bubble/gfx/star.svg
 share/gnome/monkey-bubble/gfx/tomato.svg
 share/gnome/monkey-bubble/gfx/win.svg
 share/gnome/monkey-bubble/glade/keybinding.glade
 share/gnome/monkey-bubble/glade/monkey-bubble.glade
 share/gnome/monkey-bubble/levels
+share/gnome/monkey-bubble/sounds/game.ogg
+share/gnome/monkey-bubble/sounds/splash.ogg
+share/gnome/omf/monkey-bubble/monkey-bubble-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/monkey-bubble/monkey-bubble-C.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/monkey-bubble/monkey-bubble-fr.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/monkey-bubble/monkey-bubble-fr.omf 2>/dev/null || /usr/bin/true
+share/gnome/pixmaps/monkey-bubble-icon.png
 share/locale/de/LC_MESSAGES/monkey-bubble.mo
 share/locale/es/LC_MESSAGES/monkey-bubble.mo
 share/locale/eu/LC_MESSAGES/monkey-bubble.mo
 share/locale/fr/LC_MESSAGES/monkey-bubble.mo
+@dirrm share/gnome/omf/monkey-bubble
+@dirrm share/gnome/monkey-bubble/sounds
 @dirrm share/gnome/monkey-bubble/glade
 @dirrm share/gnome/monkey-bubble/gfx/snake
 @dirrm share/gnome/monkey-bubble/gfx/number
@@ -147,5 +148,10 @@ share/locale/fr/LC_MESSAGES/monkey-bubble.mo
 @dirrm share/gnome/monkey-bubble/gfx/bubbles
 @dirrm share/gnome/monkey-bubble/gfx
 @dirrm share/gnome/monkey-bubble
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/monkey-bubble-game
-@dirrm etc/gconf/gconf.xml.defaults/apps/monkey-bubble-game
+@dirrm share/gnome/help/monkey-bubble/fr
+@dirrm share/gnome/help/monkey-bubble/C
+@dirrm share/gnome/help/monkey-bubble
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/monkey-bubble
+@dirrm etc/gconf/gconf.xml.defaults/apps/monkey-bubble
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/monkey-bubble/monkey-bubble-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/monkey-bubble/monkey-bubble-fr.omf 2>/dev/null || /usr/bin/true
