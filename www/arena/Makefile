@@ -3,7 +3,7 @@
 # Date created:         Dec 1 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.6 1996/11/17 23:57:03 ache Exp $
+# $Id: Makefile,v 1.7 1998/03/28 20:10:26 ache Exp $
 #
 
 DISTNAME=       arena-CJK-beta3a
@@ -15,6 +15,8 @@ MAINTAINER=     ache@FreeBSD.ORG
 
 LIB_DEPENDS+=   jpeg\\.7\\.:${PORTSDIR}/graphics/jpeg
 LIB_DEPENDS+=   png\\.2\\.:${PORTSDIR}/graphics/png
+
+BROKEN=		png upgrade
 
 WRKSRC=         ${WRKDIR}/WWW
 
