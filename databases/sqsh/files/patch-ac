@@ -1,8 +1,0 @@
---- autoconf/install-man.orig	Fri Jan 14 21:19:45 2000
-+++ autoconf/install-man	Fri Jan 14 21:20:00 2000
-@@ -1,4 +1,4 @@
--#!/bin/sh
-+#!%%LOCALBASE%%/bin/bash
- #
- # install-man -- install or uninstall compressed or uncompressed man pages.
- #

@@ -1,32 +1,35 @@
---- configure.orig	Fri Jan 14 14:09:13 2000
-+++ configure	Fri Jan 14 14:13:12 2000
-@@ -1047,7 +1047,10 @@
+--- configure	Fri Nov  9 14:58:04 2001
++++ configure	Tue Oct 15 13:51:29 2002
+@@ -1106,4 +1106,8 @@
+ 		SYBASE_LIBS=
  
- #
- #  Is $SYBASE defined?
--#
-+#  -- it should have some defaults...
-+
-+SYBASE=%%LOCALBASE%%/
-+
- echo $ac_n "checking Open Client installation""... $ac_c" 1>&6
- echo "configure:1053: checking Open Client installation" >&5
++		if test "$SYBASE_VERSION" = "FreeTDS"
++		then
++			SYBASE_LIBS="-lct -ltds"
++		else
+ 		#
+ 		# Check for -lblk
+@@ -1152,9 +1156,4 @@
+ 		fi
  
-@@ -1095,7 +1098,7 @@
- 	# The basic client libraries that are always needed
- 	# on all platforms.
- 	#
--	SYBASE_LIBS="-lblk -lcs -lct -lcomn -ltcl -lintl"
-+	SYBASE_LIBS="-lct -liconv -lintl"
+-		#
+-		# Check for -ltds (FreeTDS project)
+-		#
+-		if test -f $SYBASE_LIBDIR/libtds.a; then
+-			SYBASE_LIBS="$SYBASE_LIBS -ltds"
+ 		fi
  
- 	MAJOR_VERSION=`echo $SYBASE_VERSION | cut -d '.' -f 1`
+@@ -1196,5 +1195,5 @@
+ 			ncr*)
+ 				SYBASE_OS="-ldl -lm";;
+-			sunos*)
++			sunos*|*bsd*)
+ 				SYBASE_OS="-lm";;
+ 			solaris*)
+@@ -2691,5 +2690,5 @@
+ cat >> $CONFIG_STATUS <<EOF
  
-@@ -1128,6 +1131,8 @@
- 	case "${host_os}" in
- 		linux*)
- 			SYBASE_OS="-ldl -lm";;
-+		freebsd*)
-+			SYBASE_OS="-lm";;
- 		irix*)
- 			SYBASE_OS="-lnsl -lm";;
- 		ncr*)
+-CONFIG_FILES=\${CONFIG_FILES-"Makefile src/Makefile scripts/install.sh scripts/make_wrapper.sh"}
++CONFIG_FILES=\${CONFIG_FILES-"Makefile src/Makefile scripts/install.sh scripts/make_wrapper.sh doc/global.sqshrc"}
+ EOF
+ cat >> $CONFIG_STATUS <<\EOF
