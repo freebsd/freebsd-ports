@@ -43,9 +43,9 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>A programming error in the handling of some Linux system
-          calls may result in memory locations being accessed without
-          proper validation.</p>
+	<p>A programming error in the handling of some Linux system
+	  calls may result in memory locations being accessed without
+	  proper validation.</p>
 	<p>It may be possible for a local attacker to read and/or
 	  overwrite portions of kernel memory, resulting in disclosure
 	  of sensitive information or potential privilege escalation.
@@ -66,17 +66,17 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <topic>XFree86 opens a chooserFd TCP socket even when DisplayManager.requestPort is 0</topic>
     <affects>
       <package>
-        <name>xorg-clients</name>
-        <range><eq>6.7.0</eq></range>
+	<name>xorg-clients</name>
+	<range><eq>6.7.0</eq></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>When the IPv6 code was added to xdm a critical
-          test to disable xdmcp was accidentally removed.  This
-          caused xdm to create the chooser socket regardless if
-          DisplayManager.requestPort was disabled in xdm-config
-          or not.</p>
+	<p>When the IPv6 code was added to xdm a critical
+	  test to disable xdmcp was accidentally removed.  This
+	  caused xdm to create the chooser socket regardless if
+	  DisplayManager.requestPort was disabled in xdm-config
+	  or not.</p>
       </body>
     </description>
     <references>
@@ -95,13 +95,13 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <topic>MoinMoin administrative group name privilege escalation vulnerability</topic>
     <affects>
       <package>
-        <name>moinmoin</name>
-        <range><lt>1.2.2</lt></range>
+	<name>moinmoin</name>
+	<range><lt>1.2.2</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>A serious flaw exists in the MoinMoin software
+	<p>A serious flaw exists in the MoinMoin software
 	  which may allow a malicious user to gain access to
 	  unauthorized privileges.</p>
       </body>
@@ -119,13 +119,13 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <topic>isc-dhcp3-server buffer overflow in logging mechanism</topic>
     <affects>
       <package>
-        <name>isc-dhcp3-{relay,server}</name>
-        <range><ge>3.0.1.r12</ge><lt>3.0.1.r14</lt></range>
+	<name>isc-dhcp3-{relay,server}</name>
+	<range><ge>3.0.1.r12</ge><lt>3.0.1.r14</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>A buffer overflow exists in the logging functionality
+	<p>A buffer overflow exists in the logging functionality
 	  of the DHCP daemon which could lead to Denial of Service
 	  attacks and has the potential to allow attackers to
 	  execute arbitrary code.</p>
@@ -187,7 +187,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-  	<p>A flaw exists in Gallery versions previous to
+	<p>A flaw exists in Gallery versions previous to
 	  1.4.3-pl1 and post 1.2 which may give an attacker
 	  the potential to log in under the "admin" account.
 	  Data outside of the gallery is unaffected and the
@@ -205,7 +205,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <entry>2004-06-24</entry>
     </dates>
   </vuln>
- 
+
   <vuln vid="6f955451-ba54-11d8-b88c-000d610a3b12">
     <topic>Buffer overflow in Squid NTLM authentication helper</topic>
     <affects>
