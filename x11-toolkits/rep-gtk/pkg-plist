@@ -38,6 +38,6 @@ libexec/rep/%%GNUHOST%%/gui/gtk/types.so
 %%GNOME:%%libexec/rep/%%GNUHOST%%/libglade.so
 libexec/rep/%%GNUHOST%%/sgtk-types.la
 libexec/rep/%%GNUHOST%%/sgtk-types.so
-%%GNOME:%%@dirrm libexec/rep/%%GNUHOST%%/gui/gnome
+@dirrm libexec/rep/%%GNUHOST%%/gui/gnome
 @dirrm libexec/rep/%%GNUHOST%%/gui/gtk
 @dirrm libexec/rep/%%GNUHOST%%/gui
