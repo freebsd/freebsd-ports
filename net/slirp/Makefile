@@ -1,24 +1,24 @@
-# Makefile for:		slirp
-# Version required:	0.9alpha
-# Date created:		05 April 1995
-# Whom:			jkh
+# New ports collection makefile for:	slirp
+# Version required:	0.95f
+# Date created:		25 Aug 1995
+# Whom:			Alain Kalker <alain@Wit401402.student.utwente.nl>
 #
-# $Id: Makefile,v 1.1.1.1 1995/04/06 06:52:41 jkh Exp $
+# $Id$
 #
 
-# This is ALPHA software, but I think it's of sufficient interest to enough
-# people to bring it over now.  I hope that both patches an go away soon
-# enough..  Yes, I know that it currently produces some weird error messages.
-# They're harmless as far as the operation of slirp is concerned.  I also
-# know that the "manpage" is cheesy - it's better than nothing! :-)
-
-DISTNAME=	slirp
-PKGNAME=	slirp-0.9a
+DISTNAME=	slirp-0.95f
 CATEGORIES+=	networking
 MASTER_SITES=	ftp://blitzen.canberra.edu.au/pub/slirp/ \
 		ftp://freedom.wit.com/misc4/danjo/SLiRP/
 
-WRKSRC=		${WRKDIR}/slurp/src
-MAKE_FLAGS=	freebsd -f
+MAINTAINER=	alain@Wit401402.student.utwente.nl
+
+WRKSRC=		${WRKDIR}/slirp-0.95f/src
+HAS_CONFIGURE=	yes
+
+post-install:
+.if !defined(NOMANCOMPRESS)
+	gzip -9nf ${PREFIX}/man/man1/slirp.1
+.endif
 
 .include <bsd.port.mk>
