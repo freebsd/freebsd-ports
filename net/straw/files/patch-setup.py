@@ -1,5 +1,5 @@
 --- setup.py.orig	Thu Jul 15 15:15:58 2004
-+++ setup.py	Mon Aug 16 22:15:09 2004
++++ setup.py	Sun Dec 19 23:29:18 2004
 @@ -108,8 +108,8 @@
      '''Build list of data files to be installed'''
      images = glob.glob('images/*.png')
@@ -11,9 +11,14 @@
      return files
  
  long_desc = '''\
-@@ -137,10 +137,9 @@
-       #config_files     = [('gconf/schemas',['data/straw.schemas'],
-       #                     'with-gconf-schema-file-dir')],
+@@ -134,13 +134,12 @@
+       data_files       = data_files(),
+       pot_file         = 'po/straw.pot',
+       translations     = translations(),
+-      #config_files     = [('gconf/schemas',['data/straw.schemas'],
+-      #                     'with-gconf-schema-file-dir')],
++      config_files     = [('gconf/schemas',['data/straw.schemas'],
++                           'with-gconf-schema-file-dir')],
        scripts          = ['src/straw'],
 -      modules_check    = modules_check,
        packages         = ['straw'],
