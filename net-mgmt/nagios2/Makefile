@@ -6,19 +6,26 @@
 #
 
 PORTNAME=	netsaint
-PORTVERSION=	0.0.5.2
+PORTVERSION=	0.0.6
 CATEGORIES=	net
-MASTER_SITES=	http://www.netsaint.org/download/
-DISTNAME=	${PORTNAME}-0.0.5-2
+MASTER_SITES=	http://netsaint.sourceforge.net/download/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	gd.1:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	gd.1:${PORTSDIR}/graphics/gd \
+		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+# no run depends due to circular reference
+#RUN_DEPENDS=	${LOCALBASE}/libexec/netsaint/check_netsaint:${PORTSDIR}/net/netsaint-plugins
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -lgd"
-INSTALL_TARGET=	install-all
+		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib -lgd -lgnugetopt"
+CONFIGURE_ARGS=	--with-command-user=root \
+		--with-command-grp=wheel \
+		--with-netsaint-user=netsaint \
+		--with-netsaint-grp=netsaint
+INSTALL_TARGET=	all install config install-config install-daemoninit
 
 pre-fetch:
 	@${SH} ${SCRIPTDIR}/checkps
