@@ -1,0 +1,15 @@
+@cd /usr/X11R6
+@owner games
+@mode 555
+bin/acms
+bin/acm
+@cd /usr/games
+@mode 444
+lib/acm/aim-9
+lib/acm/bullet
+lib/acm/f16
+lib/acm/mig23
+lib/acm/mtn
+lib/acm/rwy
+lib/acm/rwy2
+lib/acm/tower   
