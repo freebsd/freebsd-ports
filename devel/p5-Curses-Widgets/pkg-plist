@@ -1,6 +1,20 @@
-lib/perl5/site_perl/%%PERL_VER%%/Curses/Widgets.pm
-lib/perl5/site_perl/%%PERL_VER%%/Curses/Widgets.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Curses/Widgets/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Curses/Widgets
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Curses 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Curses 2>/dev/null || true
+%%SITE_PERL%%/Curses/Widgets.pm
+%%SITE_PERL%%/Curses/Widgets/ButtonSet.pm
+%%SITE_PERL%%/Curses/Widgets/Calendar.pm
+%%SITE_PERL%%/Curses/Widgets/ComboBox.pm
+%%SITE_PERL%%/Curses/Widgets/Label.pm
+%%SITE_PERL%%/Curses/Widgets/ListBox/MultiColumn.pm
+%%SITE_PERL%%/Curses/Widgets/ListBox.pm
+%%SITE_PERL%%/Curses/Widgets/Menu.pm
+%%SITE_PERL%%/Curses/Widgets/ProgressBar.pm
+%%SITE_PERL%%/Curses/Widgets/TextField.pm
+%%SITE_PERL%%/Curses/Widgets/TextMemo.pm
+%%SITE_PERL%%/Curses/Widgets/Tutorial/Creation.pod
+%%SITE_PERL%%/Curses/Widgets/Tutorial.pod
+@dirrm %%SITE_PERL%%/Curses/Widgets/ListBox
+@dirrm %%SITE_PERL%%/Curses/Widgets/Tutorial
+@dirrm %%SITE_PERL%%/Curses/Widgets
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Curses/Widgets/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Curses/Widgets
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Curses 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Curses 2>/dev/null || true
