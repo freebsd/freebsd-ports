@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fox
-PORTVERSION?=	1.0.3
+PORTVERSION?=	1.0.11
 PORTREVISION?=	0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.fox-toolkit.org/ftp/ \
