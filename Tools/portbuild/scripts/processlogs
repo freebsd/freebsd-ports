@@ -25,6 +25,8 @@ else
     echo "(cvs update finished at: $(cat cvsdone))<br>" >> $of
   fi
   echo "(timestamp of newest log: $(ls -rtTl *.log | tail -1 | awk '{printf("%s %s %s %s\n",$6,$7,$8,$9)}'))<br><br>" >> $of
+  echo "\"Aff.\" is number of ports that depend on this one<br>" >> $of
+  echo "\"<font color=\"red\">[B]</font>\" indicates port is marked BROKEN<br><br>" >> $of
   echo "<table border=1>" >>$of
   echo "<tr><th>Log</th><th>Aff.</th><th>Size</th><th>Repository</th><th>Maintainer</th><th>Reason</th></tr>" >>$of
   while [ $# -gt 0 ]; do
@@ -63,6 +65,8 @@ else
       reason="patch"; tag="patch"
     elif grep -q 'Error: category .* not in list of valid categories' $1; then
       reason="CATEGORIES"; tag="categories"
+    elif grep -q 'make: don.t know how to make .*\.man. Stop' $1; then
+      reason="X manpage"; tag="xfree4man"
     elif grep -q 'Xm/Xm\.h: No such file' $1; then
       reason="MOTIF"; tag="motif"
     elif grep -q 'undefined reference to `Xp' $1; then
@@ -109,6 +113,9 @@ else
       reason="dependency"; tag="dependency"
     else
       reason="???"; tag="unknown"
+    fi
+    if grep -q "Trying build of .* even though it is marked BROKEN" $1; then
+       echo -n "<font color=\"red\">[B]</font>" >> $of
     fi
     echo -n "<a href=\"../../index.html#$tag\">$reason</a>" >>$of
     echo "</td></tr>" >>$of
