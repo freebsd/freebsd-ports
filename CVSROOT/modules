@@ -6459,6 +6459,7 @@ p5-Gnome2-Canvas	ports/x11-toolkits/p5-Gnome2-Canvas
 p5-Gnome2-VFS	ports/x11-toolkits/p5-Gnome2-VFS
 p5-GnomePrint	ports/print/p5-GnomePrint
 p5-GnuPG-Interface	ports/security/p5-GnuPG-Interface
+p5-Gopher-Server	ports/net/p5-Gopher-Server
 p5-Graph	ports/math/p5-Graph
 p5-GraphViz	ports/graphics/p5-GraphViz
 p5-GraphViz-DBI	ports/databases/p5-GraphViz-DBI
