@@ -3,7 +3,7 @@
 # Date created:		31 January 1999
 # Whom:			Dima Sivachenko
 #
-# $Id: $
+# $Id: Makefile,v 1.1.1.1 1999/02/03 20:40:31 billf Exp $
 #
 
 DISTNAME=	squidtimes-1.12-freebsd.bin
@@ -22,6 +22,7 @@ EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	.
 
+STRIP=
 do-install:
 		@ ${INSTALL_PROGRAM} ${WRKDIR}/${DISTNAME} ${PREFIX}/bin/squidtimes
 
