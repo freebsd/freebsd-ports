@@ -1,4 +1,5 @@
 System/Headers/AppKit/AppKit.h
+System/Headers/AppKit/AppKitDefines.h
 System/Headers/AppKit/AppKitExceptions.h
 System/Headers/AppKit/DPSOperators.h
 System/Headers/AppKit/GMAppKit.h
@@ -11,8 +12,10 @@ System/Headers/AppKit/GSMethodTable.h
 System/Headers/AppKit/GSPasteboardServer.h
 System/Headers/AppKit/GSServicesManager.h
 System/Headers/AppKit/GSTable.h
+System/Headers/AppKit/GSTextConverter.h
 System/Headers/AppKit/GSTrackingRect.h
 System/Headers/AppKit/GSVbox.h
+System/Headers/AppKit/GSVersion.h
 System/Headers/AppKit/IMConnectors.h
 System/Headers/AppKit/IMCustomObject.h
 System/Headers/AppKit/IMLoading.h
@@ -49,6 +52,7 @@ System/Headers/AppKit/NSDocument.h
 System/Headers/AppKit/NSDocumentController.h
 System/Headers/AppKit/NSDocumentFrameworkPrivate.h
 System/Headers/AppKit/NSDragging.h
+System/Headers/AppKit/NSDrawer.h
 System/Headers/AppKit/NSEPSImageRep.h
 System/Headers/AppKit/NSEvent.h
 System/Headers/AppKit/NSFileWrapper.h
@@ -65,6 +69,8 @@ System/Headers/AppKit/NSImage.h
 System/Headers/AppKit/NSImageCell.h
 System/Headers/AppKit/NSImageRep.h
 System/Headers/AppKit/NSImageView.h
+System/Headers/AppKit/NSInputManager.h
+System/Headers/AppKit/NSInputServer.h
 System/Headers/AppKit/NSInterfaceStyle.h
 System/Headers/AppKit/NSLayoutManager.h
 System/Headers/AppKit/NSMatrix.h
@@ -76,6 +82,7 @@ System/Headers/AppKit/NSNibConnector.h
 System/Headers/AppKit/NSNibDeclarations.h
 System/Headers/AppKit/NSNibLoading.h
 System/Headers/AppKit/NSOpenPanel.h
+System/Headers/AppKit/NSOutlineView.h
 System/Headers/AppKit/NSPageLayout.h
 System/Headers/AppKit/NSPanel.h
 System/Headers/AppKit/NSParagraphStyle.h
@@ -102,6 +109,8 @@ System/Headers/AppKit/NSSpellChecker.h
 System/Headers/AppKit/NSSpellProtocol.h
 System/Headers/AppKit/NSSpellServer.h
 System/Headers/AppKit/NSSplitView.h
+System/Headers/AppKit/NSStepper.h
+System/Headers/AppKit/NSStepperCell.h
 System/Headers/AppKit/NSStringDrawing.h
 System/Headers/AppKit/NSTabView.h
 System/Headers/AppKit/NSTabViewItem.h
@@ -116,6 +125,7 @@ System/Headers/AppKit/NSTextField.h
 System/Headers/AppKit/NSTextFieldCell.h
 System/Headers/AppKit/NSTextStorage.h
 System/Headers/AppKit/NSTextView.h
+System/Headers/AppKit/NSUserInterfaceValidation.h
 System/Headers/AppKit/NSView.h
 System/Headers/AppKit/NSWindow.h
 System/Headers/AppKit/NSWindowController.h
@@ -127,6 +137,8 @@ System/Headers/gnustep/AppKit/GMArchiver.h
 System/Headers/gnustep/AppKit/IMConnectors.h
 System/Headers/gnustep/AppKit/IMCustomObject.h
 System/Headers/gnustep/AppKit/IMLoading.h
+System/Libraries/Resources/English.lproj/GSPageLayout.gorm
+System/Libraries/Resources/English.lproj/GSPrintPanel.gorm
 System/Libraries/Resources/Images/GNUstep.tiff
 System/Libraries/Resources/Images/GNUstepMenuImage.tiff
 System/Libraries/Resources/Images/GNUstep_Images_Copyright
@@ -188,9 +200,13 @@ System/Libraries/Resources/Images/common_Unmount.tiff
 System/Libraries/Resources/Images/common_UpAndDownArrowSmall.tiff
 System/Libraries/Resources/Images/common_WMClose.tiff
 System/Libraries/Resources/Images/common_WMCloseBroken.tiff
+System/Libraries/Resources/Images/common_copyCursor.tiff
+System/Libraries/Resources/Images/common_linkCursor.tiff
+System/Libraries/Resources/Images/common_noCursor.tiff
 System/Libraries/Resources/Images/common_ret.tiff
 System/Libraries/Resources/Images/common_retH.tiff
 System/Libraries/Resources/Images/nsmapping.strings
+System/Libraries/Resources/KeyBindings/DefaultKeyBindings.dict
 System/Libraries/Resources/PrinterTypes/English.lproj/AGFA_AccuSet.ppd
 System/Libraries/Resources/PrinterTypes/English.lproj/AGFA_AccuSetSF.ppd
 System/Libraries/Resources/PrinterTypes/English.lproj/AGFA_ProSet9400.ppd
@@ -506,19 +522,35 @@ System/Libraries/Resources/PrinterTypes/Italian.lproj/Linotronic_300.ppd
 System/Libraries/Resources/PrinterTypes/Printers
 System/Libraries/Resources/PrinterTypes/Spanish.lproj/Linotronic_300.ppd
 System/Libraries/Resources/PrinterTypes/Swedish.lproj/Linotronic_300.ppd
-System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgmodel.so
-System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgmodel.so.%%MAJORVERSION%%
-System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgmodel.so.%%VERSION%%
+System/Libraries/Resources/gnustep-gui/Resources/English.lproj/Localizable.strings
+System/Libraries/Resources/gnustep-gui/Resources/Italian.lproj/Localizable.strings
 System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgnustep-gui.so
 System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgnustep-gui.so.%%MAJORVERSION%%
 System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgnustep-gui.so.%%VERSION%%
+System/Library/Bundles/TextConverters/RTFConverter.bundle/Contents/Info.plist
+@exec ln -sf ../Resources %D/System/Library/Bundles/TextConverters/RTFConverter.bundle/Contents/Resources
+@unexec rm -f %D/System/Library/Bundles/TextConverters/RTFConverter.bundle/Contents/Resources
+System/Library/Bundles/TextConverters/RTFConverter.bundle/Resources/Info-gnustep.plist
+System/Library/Bundles/TextConverters/RTFConverter.bundle/Resources/Info.plist
+System/Library/Bundles/TextConverters/RTFConverter.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/RTFConverter
+System/Library/Bundles/libgmodel.bundle/Contents/Info.plist
+@exec ln -sf ../Resources %D/System/Library/Bundles/libgmodel.bundle/Contents/Resources
+@unexec rm -f %D/System/Library/Bundles/libgmodel.bundle/Contents/Resources
+System/Library/Bundles/libgmodel.bundle/Resources/Info-gnustep.plist
+System/Library/Bundles/libgmodel.bundle/Resources/Info.plist
+System/Library/Bundles/libgmodel.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgmodel
 System/Library/Model/ColorPanel.gmodel
 System/Library/Model/SavePanel.gmodel
+System/Library/Model/SpellPanel.gmodel
+System/Library/Services/GSspell.service/Resources/Info-gnustep.plist
+System/Library/Services/GSspell.service/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/GSspell
 System/Library/Services/example.service/Resources/Info-gnustep.plist
 System/Library/Services/example.service/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/example
 System/Makefiles/Additional/gui.make
+System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/gopen
 System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/make_services
 System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/set_show_service
+System/Tools/gopen
 System/Tools/make_services
 System/Tools/set_show_service
 @dirrm System/Library/Services/example.service/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
@@ -526,7 +558,30 @@ System/Tools/set_show_service
 @dirrm System/Library/Services/example.service/%%GNU_ARCH%%
 @dirrm System/Library/Services/example.service/Resources
 @dirrm System/Library/Services/example.service
+@dirrm System/Library/Services/GSspell.service/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+@dirrm System/Library/Services/GSspell.service/%%GNU_ARCH%%/%%OPSYS%%
+@dirrm System/Library/Services/GSspell.service/%%GNU_ARCH%%
+@dirrm System/Library/Services/GSspell.service/Resources
+@dirrm System/Library/Services/GSspell.service
+@dirrm System/Library/Services
 @dirrm System/Library/Model
+@dirrm System/Library/Bundles/libgmodel.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+@dirrm System/Library/Bundles/libgmodel.bundle/%%GNU_ARCH%%/%%OPSYS%%
+@dirrm System/Library/Bundles/libgmodel.bundle/%%GNU_ARCH%%
+@dirrm System/Library/Bundles/libgmodel.bundle/Resources
+@dirrm System/Library/Bundles/libgmodel.bundle/Contents
+@dirrm System/Library/Bundles/libgmodel.bundle
+@dirrm System/Library/Bundles/TextConverters/RTFConverter.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+@dirrm System/Library/Bundles/TextConverters/RTFConverter.bundle/%%GNU_ARCH%%/%%OPSYS%%
+@dirrm System/Library/Bundles/TextConverters/RTFConverter.bundle/%%GNU_ARCH%%
+@dirrm System/Library/Bundles/TextConverters/RTFConverter.bundle/Resources
+@dirrm System/Library/Bundles/TextConverters/RTFConverter.bundle/Contents
+@dirrm System/Library/Bundles/TextConverters/RTFConverter.bundle
+@dirrm System/Library/Bundles/TextConverters
+@dirrm System/Libraries/Resources/gnustep-gui/Resources/Italian.lproj
+@dirrm System/Libraries/Resources/gnustep-gui/Resources/English.lproj
+@dirrm System/Libraries/Resources/gnustep-gui/Resources
+@dirrm System/Libraries/Resources/gnustep-gui
 @dirrm System/Libraries/Resources/PrinterTypes/Swedish.lproj
 @dirrm System/Libraries/Resources/PrinterTypes/Spanish.lproj
 @dirrm System/Libraries/Resources/PrinterTypes/Italian.lproj
@@ -534,6 +589,7 @@ System/Tools/set_show_service
 @dirrm System/Libraries/Resources/PrinterTypes/French.lproj
 @dirrm System/Libraries/Resources/PrinterTypes/English.lproj
 @dirrm System/Libraries/Resources/PrinterTypes
+@dirrm System/Libraries/Resources/KeyBindings
 @dirrm System/Libraries/Resources/Images
 @dirrm System/Headers/gnustep/AppKit
 @dirrm System/Headers/AppKit
