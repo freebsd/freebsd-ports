@@ -20,6 +20,7 @@
     SUBDIR += arpwatch
     SUBDIR += arts++
     SUBDIR += ascend-radius
+    SUBDIR += asfrecorder
     SUBDIR += balance
     SUBDIR += bind8
     SUBDIR += bind9
