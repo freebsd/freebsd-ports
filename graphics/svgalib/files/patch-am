@@ -154,3 +154,12 @@
  
      graph_termio.c_lflag &= ~(ICANON | ECHO | ECHOE | ECHOK | ECHONL | NOFLSH);
      if (__svgalib_nosigint)
+@@ -3830,7 +3846,7 @@
+ 
+ #define ML_GETINT(x) \
+ 	ptr = strtok(NULL, " "); if(!ptr) break; \
+-	mmt.##x = atoi(ptr);
++	mmt.x = atoi(ptr);
+ 
+ 	    ML_GETINT(HDisplay);
+ 	    ML_GETINT(HSyncStart);
