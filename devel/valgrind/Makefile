@@ -26,6 +26,14 @@ USE_PERL5_BUILD=yes
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 500000
+PLIST_SUB+=	RELENG_5=""
+PLIST_SUB+=	RELENG_4="@comment "
+.else
+PLIST_SUB+=	RELENG_4=""
+PLIST_SUB+=	RELENG_5="@comment "
+.endif
+
 .if ${PERL_LEVEL} < 500601
 IGNORE=		"can\'t be built. Your Perl version is too old. Please use lang/perl5.8 port to upgrade your Perl"
 .endif
