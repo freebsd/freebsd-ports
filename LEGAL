@@ -48,6 +48,7 @@ adstudio-novm.tar.gz	ports/databases/adstudio Free for personal or educational u
 altivore.c		ports/security/altivore	No redistribution allowed
 apache*-ssl		ports/www/apache13-ssl	Crypto; export-controlled
 apache/mod_tidy-*	ports/www/mod_tidy	no license
+apache2/mod_taf_thief.c	ports/www/mod_traf_thief no license
 apache2/mod_watch4*	ports/www/mod_watch4	Do not distribute binaries. Do not put
 						distfiles on CD-ROM.
 apple_pascal_0.dsk.gz	ports/emulators/p-interp Redistribution rights for Apple
