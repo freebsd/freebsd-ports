@@ -13,9 +13,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jseger@FreeBSD.org
 
-BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
-
-BROKEN=		texindex
+BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
+		latex:${PORTSDIR}/print/teTeX
 
 USE_IMAKE=	yes
 MAN1=		pcb.1
