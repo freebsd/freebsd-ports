@@ -12,6 +12,7 @@ MASTER_SITES=	http://download.projectmayo.com/dnload/divx4linux/xmps/
 
 MAINTAINER=	lioux@FreeBSD.org
 
+ONLY_FOR_ARCHS=	i386
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
