@@ -1,0 +1,48 @@
+--- configure.orig	Wed Apr 14 18:16:08 1999
++++ configure	Wed Apr 14 18:16:44 1999
+@@ -780,9 +780,9 @@
+   if test "$ac_test_CFLAGS" = set; then
+     CFLAGS="$ac_save_CFLAGS"
+   elif test $ac_cv_prog_cc_g = yes; then
+-    CFLAGS="-g -O2"
++    CFLAGS="-g"
+   else
+-    CFLAGS="-O2"
++    CFLAGS=""
+   fi
+ else
+   GCC=
+@@ -912,9 +912,9 @@
+   if test "$ac_test_CXXFLAGS" = set; then
+     CXXFLAGS="$ac_save_CXXFLAGS"
+   elif test $ac_cv_prog_cxx_g = yes; then
+-    CXXFLAGS="-g -O2"
++    CXXFLAGS="-g"
+   else
+-    CXXFLAGS="-O2"
++    CXXFLAGS=""
+   fi
+ else
+   GXX=
+@@ -2621,8 +2621,8 @@
+     CFLAGS="-Wall $CFLAGS"
+     CXXFLAGS="-Wall -Wno-return-type $CXXFLAGS"
+     if test -z "$DEBUGFLAG"; then
+-        CFLAGS="-O2 $CFLAGS"
+-        CXXFLAGS="-O2 $CXXFLAGS"
++        CFLAGS="$CFLAGS"
++        CXXFLAGS="$CXXFLAGS"
+     fi
+     if test $PICFLAG = 1; then
+     	CFLAGS="-fPIC $CFLAGS"
+@@ -2649,8 +2649,8 @@
+         	CXXFLAGS="+w +pp $CXXFLAGS"
+ 	    fi
+ 	    if test -z "$DEBUGFLAG"; then
+-        	CFLAGS="-O2 $CFLAGS"
+-        	CXXFLAGS="-O2 $CXXFLAGS"
++        	CFLAGS="$CFLAGS"
++        	CXXFLAGS="$CXXFLAGS"
+ 	    fi
+ 	    ;;
+ 	HP-UX*)
