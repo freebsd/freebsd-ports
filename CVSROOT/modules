@@ -1772,6 +1772,7 @@ firestring	ports/misc/firestring
 firetalk	ports/net/firetalk
 firewalk	ports/security/firewalk
 fist		ports/textproc/fist
+fixesext	ports/x11/fixesext
 fkiss		ports/games/fkiss
 fl_editor	ports/x11-toolkits/fl_editor
 flac		ports/audio/flac
