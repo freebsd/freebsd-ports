@@ -7,7 +7,7 @@
 
 PORTNAME=	xpdf
 PORTVERSION=	3.00
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics print
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/ \
 		${MASTER_SITE_TEX_CTAN}
@@ -24,7 +24,7 @@ USE_X_PREFIX=	yes
 USE_MOTIF=	yes
 
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOCONF_VER=	257
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -45,11 +45,6 @@ MAN1=		pdffonts.1 \
 		pdftotext.1 \
 		xpdf.1
 MAN5=		xpdfrc.5
-
-post-patch:
-	@${CP} ${WRKSRC}/configure ${WRKSRC}/configure.orig
-	@${SED} -e "s#freetype.h#ft2build.h#" ${WRKSRC}/configure.orig > \
-		${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)
