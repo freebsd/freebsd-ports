@@ -1,0 +1,73 @@
+--- gmix/gmix.c.orig	Fri Feb 19 18:30:49 1999
++++ gmix/gmix.c	Wed Mar  3 10:49:51 1999
+@@ -94,6 +94,17 @@
+ /* 
+  * All, that is known about a mixer-device
+  */
++
++#if !defined(OPEN_SOUND_SYSTEM)
++typedef struct mixer_info
++{
++  char id[16];
++  char name[32];
++  int  modify_counter;
++  int fillers[10];
++} mixer_info;
++#endif
++
+ typedef struct device_info {
+ 	int fd;
+ 	mixer_info info;
+@@ -272,11 +283,7 @@
+ 	/*
+ 	 * open the mixer-device
+ 	 */
+-	if (num==0) {
+-		sprintf(device_name, "/dev/mixer");
+-	} else {
+-		sprintf(device_name, "/dev/mixer%i", num);
+-	}
++	sprintf(device_name, "/dev/mixer%i", num);
+ 	new_device->fd=open(device_name, O_RDWR, 0);
+ 	if (new_device->fd<0) {
+ 		free(new_device);
+@@ -291,6 +298,8 @@
+ 		fprintf(stderr, "Warning: This version of gmix was compiled with a different version of\nsoundcard.h.\n");
+ 	}
+ #endif
++
++#if defined(OPEN_SOUND_SYSTEM)
+ 	/*
+ 	 * mixer-name
+ 	 */
+@@ -301,6 +310,11 @@
+ 	}
+ 	if(!isalpha(new_device->info.name[0]))
+ 		g_snprintf(new_device->info.name, 31, "Card %d", num+1);
++#else
++	g_snprintf(new_device->info.id, 15, "mixer%d", num);
++	g_snprintf(new_device->info.name, 31, "Sound Card %d", num+1);
++	new_device->info.modify_counter=0;
++#endif
+ 	/* 
+ 	 * several bitmasks describing the mixer
+ 	 */
+@@ -386,15 +400,15 @@
+ {
+ 	int cnt;
+ 	device_info *new_device;
+-	cnt=0; devices=NULL;
++	cnt=0; num_mixers=0; devices=NULL;
+ 	do {
+ 		new_device=open_device(cnt++);
+ 		if (new_device) {
+ 			new_device->channels=make_channels(new_device);
+ 			devices=g_list_append(devices, new_device);
++			num_mixers++;
+ 		}
+-	} while (new_device);
+-	num_mixers=cnt-1;
++	} while ((errno == EACCES) || (errno == EINVAL) || new_device);
+ }
+ 
+ void free_one_device(gpointer a, gpointer b)
