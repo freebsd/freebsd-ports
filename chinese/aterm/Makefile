@@ -18,6 +18,8 @@ MAINTAINER=	davidyu@ken.csie.ntu.edu.tw
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.4:${PORTSDIR}/graphics/png
 
+BROKEN=		"Non-I18N-aware old-fashioned application no more supported"
+
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 GNU_CONFIGURE=	yes
