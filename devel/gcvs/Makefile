@@ -21,7 +21,8 @@ BUILD_DEPENDS+=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
 RUN_DEPENDS+=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
 
 USE_X_PREFIX=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 BREAKS_IF_PEDANTIC=	yes

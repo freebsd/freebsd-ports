@@ -17,13 +17,13 @@ MASTER_SITE_SUBDIR=	kris
 MAINTAINER=	lo_gafet@users.sourceforge.net
 
 USE_GMAKE=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
 WANT_GNOME=	yes
 
 .include <bsd.port.pre.mk>
 
-.if defined(HAVE_GNOME)
-USE_GNOME=	yes
+.if ${HAVE_GNOME:Mgnomelibs}!=""
+USE_GNOME=	gtk12
 .endif
 
 pre-build:
