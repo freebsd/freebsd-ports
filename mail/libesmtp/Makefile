@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	libesmtp
-PORTVERSION=	0.8.4
+PORTVERSION=	0.8.6
 CATEGORIES=	mail
 MASTER_SITES=	http://www.stafford.uklinux.net/libesmtp/ \
 		http://www.theochem.kth.se/~pawsa/balsa/ \
@@ -18,7 +18,7 @@ LIB_DEPENDS=	ltdl.1:${PORTSDIR}/devel/libtool
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOCONF=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
