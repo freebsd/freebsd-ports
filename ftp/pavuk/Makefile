@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	pavuk
-PORTVERSION=	0.9.26
+PORTVERSION=	0.9.27
 CATEGORIES=	ftp www
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://www.idata.sk/~ondrej/sw/
 MASTER_SITE_SUBDIR=	apps/www/mirroring
-DISTNAME=	${PORTNAME}-0.9pl26
+DISTNAME=	${PORTNAME}-0.9pl27
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
@@ -32,7 +32,7 @@ MAN1=		pavuk.1
 
 .if defined(HAVE_GTK)
 USE_GTK=	yes
-CONFIGURE_ARGS+=	--with-gtk-config="${GTK_CONFIG:T}"
+CONFIGURE_ARGS+=	--with-gtk-config="${GTK_CONFIG}"
 .else
 CONFIGURE_ARGS+=	--disable-gtk
 .endif
