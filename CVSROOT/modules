@@ -3635,6 +3635,7 @@ ja-dvipsk	ports/japanese/dvipsk
 ja-e2ps		ports/japanese/e2ps
 ja-easypr	ports/japanese/easypr
 ja-eb		ports/japanese/eb
+ja-eb3		ports/japanese/eb3
 ja-ebd-fpw	ports/japanese/ebd-fpw
 ja-eblook	ports/japanese/eblook
 ja-ebview	ports/japanese/ebview
