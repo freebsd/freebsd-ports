@@ -63,6 +63,7 @@
     SUBDIR += fsck_ext2fs
     SUBDIR += ftrace
     SUBDIR += gcombust
+    SUBDIR += gconf-editor
     SUBDIR += gfslicer
     SUBDIR += gkrellflynn
     SUBDIR += gkrellm
