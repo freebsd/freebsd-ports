@@ -7,6 +7,7 @@
 
 PORTNAME=	munhwafonts-cid
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	korean print
 MASTER_SITES=	ftp://ftp.ora.com/pub/examples/nutshell/cjkv/adobe/ \
 		ftp://ftp.ora.com/pub/examples/nutshell/cjkv/adobe/samples/
@@ -20,7 +21,7 @@ MAINTAINER=	cjh@FreeBSD.org
 CID_FONTS_KO=   Munhwa-Regular Munhwa-Bold \
 		MunhwaGothic-Regular MunhwaGothic-Bold
 # CID CMAP
-CID_CMAP_KO=    ak11.tar.Z
+CID_CMAP_KO=    ak12.tar.Z
 
 NO_BUILD=	YES
 
@@ -36,7 +37,7 @@ do-install:
 		${INSTALL_DATA} ${DISTDIR}/$$file \
 			${PREFIX}/share/ghostscript/fonts; \
 	done
-	${INSTALL_DATA} ${WRKDIR}/ak11/CMap/* \
+	${INSTALL_DATA} ${WRKDIR}/ak12/CMap/* \
 			${PREFIX}/share/ghostscript/fonts/CMap
 
 .include <bsd.port.mk>
