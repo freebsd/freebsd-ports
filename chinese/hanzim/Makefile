@@ -10,8 +10,8 @@ PORTNAME=	hanzim
 PORTVERSION=	1.3
 CATEGORIES=	chinese tk83
 MASTER_SITES=	ftp://kommos.ucsd.edu/pub/arobert/Chinese/%SUBDIR%/
-EXTRACT_SUFX=	.tgz
 MASTER_SITE_SUBDIR=	. Old
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Chinese character learning-aid program
@@ -20,12 +20,23 @@ BUILD_DEPENDS+=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
 RUN_DEPENDS+=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
 
 WRKSRC=		${WRKDIR}/Hanzim
-ALL_TARGET=	# empty
+ALL_TARGET=	${PORTNAME}
 USE_REINPLACE=	yes
 
-MAN1=	hanzim.1
+MAN1=		hanzim.1
 
 post-patch:
-	${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' ${WRKSRC}/hanzim.c
+	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' ${WRKSRC}/hanzim.c
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/hanzim ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/hanzim.man ${PREFIX}/man/man1/hanzim.1
+	@${MKDIR} ${PREFIX}/lib/hanzim
+	${INSTALL_DATA} ${WRKSRC}/Data/* ${PREFIX}/lib/hanzim
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/hanzim.doc ${DOCSDIR}
+.endif
+	${PREFIX}/bin/hanzim -port-install
 
 .include <bsd.port.mk>
