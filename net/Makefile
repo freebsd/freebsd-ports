@@ -615,6 +615,7 @@
     SUBDIR += ssltunnel-server
     SUBDIR += stone
     SUBDIR += straw
+    SUBDIR += stund
     SUBDIR += suckblow
     SUBDIR += sup
     SUBDIR += svnc
