@@ -1,0 +1,14 @@
+This is libsdb, the simple database library, which provides a way to support
+multiple database management systems in an application with negligeable
+overhead, in terms of code as well as system resources.
+
+Supported databases:
+   - Lago 
+   - Mysql 
+   - Sqlite 
+   - Mimer 
+   - Postgresql 
+   - Oracle 
+   - Gdbm 
+
+WWW: http://siag.nu/libsdb/

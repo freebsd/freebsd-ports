@@ -25,6 +25,7 @@
     SUBDIR += jdbc-oracle816
     SUBDIR += libgda
     SUBDIR += libiodbc
+    SUBDIR += libsdb
     SUBDIR += mdbtools
     SUBDIR += metakit
     SUBDIR += msql
