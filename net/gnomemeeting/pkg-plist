@@ -1,9 +1,15 @@
+bin/gnomemeeting
+bin/gnomemeeting-config-tool
+etc/sound/events/gnomemeeting.soundlist
+libdata/bonobo/servers/gnomemeeting.server
+share/gnome/applications/gnomemeeting.desktop
+share/gnome/gnomemeeting/xdap/ils_nm_mod.xml
+share/gnome/gnomemeeting/xdap/ils_nm_reg.xml
+share/gnome/gnomemeeting/xdap/ils_nm_unreg.xml
 share/gnome/pixmaps/gnomemeeting-logo-icon.png
 share/gnome/pixmaps/gnomemeeting-logo.png
 share/gnome/pixmaps/gnomemeeting-splash.png
-bin/gnomemeeting
-bin/gnomemeeting-config-tool
-libdata/bonobo/servers/gnomemeeting.server
+share/gnome/sounds/gnomemeeting/gnomemeeting.wav
 share/locale/am/LC_MESSAGES/gnomemeeting.mo
 share/locale/az/LC_MESSAGES/gnomemeeting.mo
 share/locale/be/LC_MESSAGES/gnomemeeting.mo
@@ -45,15 +51,6 @@ share/locale/vi/LC_MESSAGES/gnomemeeting.mo
 share/locale/wa/LC_MESSAGES/gnomemeeting.mo
 share/locale/zh_CN/LC_MESSAGES/gnomemeeting.mo
 share/locale/zh_TW/LC_MESSAGES/gnomemeeting.mo
-share/gnome/sounds/gnomemeeting/gnomemeeting.wav
-etc/sound/events/gnomemeeting.soundlist
-share/gnome/gnomemeeting/xdap/ils_nm_reg.xml
-share/gnome/gnomemeeting/xdap/ils_nm_unreg.xml
-share/gnome/gnomemeeting/xdap/ils_nm_mod.xml
-share/gnome/applications/gnomemeeting.desktop
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gnomemeeting.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/gnomemeeting.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gnomemeeting.schemas > /dev/null || /usr/bin/true
 @dirrm share/gnome/sounds/gnomemeeting
 @dirrm share/gnome/gnomemeeting/xdap
 @dirrm share/gnome/gnomemeeting
