@@ -1,0 +1,23 @@
+%%ZOPEPRODUCTDIR%%/SOAPMethod/README.txt
+%%ZOPEPRODUCTDIR%%/SOAPMethod/SOAPMethod.py
+%%ZOPEPRODUCTDIR%%/SOAPMethod/SOAPMethod.pyc
+%%ZOPEPRODUCTDIR%%/SOAPMethod/__init__.py
+%%ZOPEPRODUCTDIR%%/SOAPMethod/__init__.pyc
+%%ZOPEPRODUCTDIR%%/SOAPMethod/dtml/methodAdd.dtml
+%%ZOPEPRODUCTDIR%%/SOAPMethod/dtml/methodEdit.dtml
+%%ZOPEPRODUCTDIR%%/SOAPMethod/help/SOAPMethod.stx
+%%ZOPEPRODUCTDIR%%/SOAPMethod/help/SOAPMethodAdd.stx
+%%ZOPEPRODUCTDIR%%/SOAPMethod/help/SOAPMethodProperties.stx
+%%ZOPEPRODUCTDIR%%/SOAPMethod/help/SOAPMethodTest.stx
+%%ZOPEPRODUCTDIR%%/SOAPMethod/soapmethod.gif
+%%ZOPEPRODUCTDIR%%/SOAPMethod/tests/babelfish.py
+%%ZOPEPRODUCTDIR%%/SOAPMethod/tests/babelfish.pyc
+%%ZOPEPRODUCTDIR%%/SOAPMethod/tests/getactivities.py
+%%ZOPEPRODUCTDIR%%/SOAPMethod/tests/getactivities.pyc
+%%ZOPEPRODUCTDIR%%/SOAPMethod/version.txt
+%%ZOPEPRODUCTDIR%%/SOAPMethod/www/function.gif
+@dirrm %%ZOPEPRODUCTDIR%%/SOAPMethod/dtml
+@dirrm %%ZOPEPRODUCTDIR%%/SOAPMethod/help
+@dirrm %%ZOPEPRODUCTDIR%%/SOAPMethod/tests
+@dirrm %%ZOPEPRODUCTDIR%%/SOAPMethod/www
+@dirrm %%ZOPEPRODUCTDIR%%/SOAPMethod
