@@ -7,7 +7,7 @@
 
 PORTNAME=	server
 PORTVERSION=	6.7.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-servers
 MASTER_SITES=	http://freedesktop.org/~xorg/X11R6.7.0/src/
 PKGNAMEPREFIX=	xorg-
@@ -17,6 +17,9 @@ DISTFILES=	X11R6.7.0-src1.tar.gz \
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org X server and related programs
 
+.if !defined(WITH_MODULAR)
+WITH_XLIB=	yes
+.else
 LIB_PC_DEPENDS=	${X11BASE}/libdata/pkgconfig/xdmcp.pc:${PORTSDIR}/x11/libXdmcp \
 		${X11BASE}/libdata/pkgconfig/xau.pc:${PORTSDIR}/x11/libXau
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
@@ -24,12 +27,12 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 BUILD_DEPENDS=	${X11BASE}/include/X11/extensions/XKMformat.h:${PORTSDIR}/x11/libxkbfile \
 		${LIB_PC_DEPENDS}
 RUN_DEPENDS=	${LIB_PC_DEPENDS}
+.endif
 
 CONFLICTS=	XFree86-Server-*
 
 SCRIPTS_ENV=	WITH_DEBUG="${WITH_DEBUG}"
 MAN1=		Xorg.1 \
-		Xserver.1 \
 		getconfig.1 \
 		gtf.1 \
 		kbd_mode.1 \
