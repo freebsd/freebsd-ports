@@ -1,17 +1,17 @@
 # New ports collection makefile for:    Gimp
-# Version required:     1.0.1
+# Version required:     1.0.2
 # Date created:         Mon Nov 18 21:28:43 CST 1996
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.47 1998/09/23 00:51:58 vanilla Exp $
+# $Id: Makefile,v 1.48 1998/09/30 14:52:20 vanilla Exp $
 #
 
-DISTNAME=	gimp-1.0.1
+DISTNAME=	gimp-1.0.2
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/v1.0/v1.0.1/ \
-		ftp://ftp.cs.umn.edu/pub/gimp/gimp/v1.0/v1.0.1/ \
-		http://www.ameth.org/gimp/pub/gimp/v1.0/v1.0.1/
-DISTFILES=	gimp-1.0.1.tar.gz gimp-data-extras-1.0.0.tar.gz
+MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/v1.0/v1.0.2/ \
+		ftp://ftp.cs.umn.edu/pub/gimp/gimp/v1.0/v1.0.2/ \
+		http://www.ameth.org/gimp/pub/gimp/v1.0/v1.0.2/
+DISTFILES=	gimp-1.0.2.tar.gz gimp-data-extras-1.0.0.tar.gz
 
 MAINTAINER=	erich@FreeBSD.org
 
