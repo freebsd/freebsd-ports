@@ -1,9 +1,9 @@
---- libbalsa/send.c	2000/08/29 09:47:39	1.1
-+++ libbalsa/send.c	2000/08/29 09:47:43
-@@ -22,6 +22,9 @@
+--- libbalsa/send.c.orig	Fri Sep 29 14:00:46 2000
++++ libbalsa/send.c	Mon Oct  2 13:23:37 2000
+@@ -24,6 +24,9 @@
  
- #include "config.h"
- 
+ /* #include <radlib.h>  */
+ /* FreeBSD 4.1-STABLE FreeBSD 4.1-STABLE */
 +#include <sys/types.h>
 +#include <sys/socket.h>
 +#include <netinet/in.h>
