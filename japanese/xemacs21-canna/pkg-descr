@@ -1,9 +1,9 @@
 This is a package containing only the executables for XEmacs with
-Mule(version 21.1.8), the next generation of Emacs.
+Mule(version 21.1.9), the next generation of Emacs.
 
 You need to install a package, xemacs-common-21.1, containing emacs
 lisp files, info pages, and so on (except executables) for
-XEmacs with Mule(version 21.1.8).
+XEmacs with Mule(version 21.1.9).
 
 This package is built with Japanese support by using SKK, SJ3, Canna,
 Wnn4 or Wnn6 as an external input engine. Each input method would be
