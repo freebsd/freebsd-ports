@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	ojnk
 MAINTAINER=		krion@FreeBSD.org
 COMMENT=		Console-based AIM client
 
+USE_SIZE=		yes
 USE_PERL5=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

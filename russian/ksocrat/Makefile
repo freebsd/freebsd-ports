@@ -17,6 +17,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	KSocrat is the simple English/Russian Russian/English dictionary
 
+USE_SIZE=	yes
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
 GNU_CONFIGURE=	yes

@@ -18,6 +18,7 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		tre.4:${PORTSDIR}/textproc/libtre \
 		sigc-1.2.5:${PORTSDIR}/devel/libsigc++12
 
+USE_SIZE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

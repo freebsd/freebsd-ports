@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.ex-parrot.com/~pdw/iftop/download/
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Network utility for real-time bandwidth usage information
 
+USE_SIZE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_REINPLACE=	yes

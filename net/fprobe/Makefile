@@ -16,6 +16,7 @@ COMMENT=	Tool that collects network traffic data
 
 MAN1=		fprobe.1
 
+USE_SIZE=	yes
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_REINPLACE=	yes

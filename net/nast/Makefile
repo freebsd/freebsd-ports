@@ -25,6 +25,7 @@ DOC_FILES=	README
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
+USE_SIZE=	yes
 CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}"
 
 .include <bsd.port.pre.mk>

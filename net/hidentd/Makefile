@@ -13,6 +13,7 @@ MASTER_SITES=	http://core.segfault.pl/~hobbit/hidentd/dist/
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Simple and secure ident (RFC1413) server
 
+USE_SIZE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 

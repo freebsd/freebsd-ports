@@ -16,6 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Text-based ICQ implementation
 
+USE_SIZE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

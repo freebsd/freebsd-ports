@@ -13,6 +13,7 @@ MASTER_SITES=	http://joshbeam.com/files/
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Tunnel for TCP connections using an HTTP or SOCKS5 proxy
 
+USE_SIZE=	yes
 USE_REINPLACE=	yes
 ALL_TARGET=	${PORTNAME}
 

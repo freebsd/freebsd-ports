@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Destroy as many targets as possible
 
+USE_SIZE=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl mixer
 GNU_CONFIGURE=	yes

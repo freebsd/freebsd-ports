@@ -20,6 +20,7 @@ COMMENT=	An anonymous, distributed, reputation-based network
 LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old \
 		ltdl.4:${PORTSDIR}/devel/libltdl
 
+USE_SIZE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes

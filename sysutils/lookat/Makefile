@@ -19,6 +19,7 @@ MAN1=	  	lookat.1
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
+USE_SIZE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e \

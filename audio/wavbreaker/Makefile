@@ -12,6 +12,7 @@ MASTER_SITES=	http://huli.org/wavbreaker/
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Tool to split wav files
 
+USE_SIZE=	yes
 USE_GNOME=	gtk20 libxml2 gnomehack
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

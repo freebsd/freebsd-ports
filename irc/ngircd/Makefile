@@ -14,8 +14,9 @@ MASTER_SITES=	http://download.berlios.de/ngircd/ \
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Free open source daemon for Internet Relay Chat (IRC)
 
+USE_SIZE=	yes
 GNU_CONFIGURE=	yes
-ONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .if exists(/usr/include/tcpd.h)
 WITH_TCP_WRAPPERS=	yes

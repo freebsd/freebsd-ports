@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	snowstorm
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	SDL port of an old DOS game called Gladiator
 
+USE_SIZE=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

@@ -16,6 +16,7 @@ COMMENT=	Daemon that monitor network services
 GNU_CONFIGURE=	yes
 USE_GETOPT_LONG=	yes
 USE_REINPLACE=	yes
+USE_SIZE=	yes
 
 MAN8=		portmon.8
 

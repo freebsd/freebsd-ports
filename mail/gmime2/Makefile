@@ -17,6 +17,7 @@ LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
 CONFLICTS=	gmime-1.0.*
 
+USE_SIZE=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
