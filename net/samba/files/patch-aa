@@ -52,7 +52,7 @@
  # NOTE: You may need to add -DBSD44 if you have password problems
 -# FLAGSM = -DFreeBSD -DFAST_SHARE_MODES
 -# LIBSM = -lcrypt 
-+FLAGSM = -DFreeBSD -DFAST_SHARE_MODES -DKANJI=\"cap\"
++FLAGSM = -DFreeBSD -DFAST_SHARE_MODES
 +LIBSM = -lcrypt 
  
  
