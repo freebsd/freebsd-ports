@@ -43,8 +43,8 @@ HEIGHT=11.0
 A4_PAPERSIZE=0
 .elif ${PAPERSIZE} != letterdj
 .BEGIN:
-	@${EHCO} "Error: invalid value for PAPERSIZE: \"${PAPERSIZE}\""
-	@${EHCO} "Possible values are:  a4 or letter or letterdj"
+	@${ECHO} "Error: invalid value for PAPERSIZE: \"${PAPERSIZE}\""
+	@${ECHO} "Possible values are:  a4 or letter or letterdj"
 	@${FALSE}
 .endif
 
