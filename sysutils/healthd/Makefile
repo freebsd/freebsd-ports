@@ -6,17 +6,31 @@
 #
 
 PORTNAME=	healthd
-PORTVERSION=	0.6.0
-CATEGORIES=	sysutils
+PORTVERSION=	0.6.1
+CATEGORIES=	sysutils ipv6
 MASTER_SITES=	http://healthd.thehousleys.net/
 
 MAINTAINER=	jeh@FreeBSD.org
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--exec-prefix=${PREFIX}
+#
+# To allow reading the doWarn and doFail scripts remotely uncomment
+# the following line.  Enabling the following option might provide
+# information about the configuration of you system.
+#CONFIGURE_ARGS+= --enable-full-config
 
 MAN8=		healthd.8 healthdc.8
 INSTALL_TARGET=	install-all
+
+PLIST=		${WRKDIR}/PLIST.BASE
+HDDOCDIR=	${PREFIX}/share/doc/healthd
+
+pre-install:
+	@cp ${.CURDIR}/pkg-plist ${WRKDIR}/PLIST.BASE
+.if !defined(NOPORSDOCS)
+	@cat ${.CURDIR}/pkg-plist.doc >> ${WRKDIR}/PLIST.BASE
+.endif
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/healthd.sh ]; then \
@@ -29,5 +43,10 @@ post-install:
 		${ECHO} "before running the program."; \
 		${CP} ${PREFIX}/etc/healthd.conf.sample ${PREFIX}/etc/healthd.conf; \
 	fi
+.if !defined(NOPORTDOCS)
+	@if ! [ -d ${HDDOCDIR} ]; then ${MKDIR} ${HDDOCDIR}; fi
+	${INSTALL_DATA} ${WRKSRC}/README ${HDDOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/PROTOCOL ${HDDOCDIR}
+.endif
 
 .include <bsd.port.mk>
