@@ -47,6 +47,12 @@ WX_CONFIG?=	${X11BASE}/bin/wxgtk2-2.4-config
 FILES_ATOLL_PATCH=	src/Preferences.cpp \
 			src/otherfunctions.cpp
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000 || ${ARCH} == "sparc64"
+BROKEN=		"Does not compile on 4.x or on sparc64"
+.endif
+
 post-patch:
 # it works for FreeBSD as well
 	@${REINPLACE_CMD} -E \
@@ -90,4 +96,4 @@ post-install:
 		${WRKSRC}/ed2k \
 		${PREFIX}/bin/${PORTNAME}-ed2k-handler
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
