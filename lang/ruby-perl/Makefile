@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	perl
-PORTVERSION=	0.2.6
+PORTVERSION=	0.2.7
 CATEGORIES=	lang ruby perl5
 MASTER_SITES=	http://www.bekkoame.ne.jp/~yoshidam/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
