@@ -1793,3 +1793,4 @@
 @dirrm %%ORACLE_PREFIX%%/rdbms/mesg
 @dirrm %%ORACLE_PREFIX%%/rdbms/public
 @dirrm %%ORACLE_PREFIX%%/rdbms
+@dirrm %%ORACLE_PREFIX%%
