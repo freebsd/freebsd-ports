@@ -62,6 +62,9 @@ include/simgear/sky/oursun.hxx
 include/simgear/sky/sky.hxx
 include/simgear/sky/sphere.hxx
 include/simgear/sky/stars.hxx
+include/simgear/threads/SGGuard.hxx
+include/simgear/threads/SGQueue.hxx
+include/simgear/threads/SGThread.hxx
 include/simgear/timing/geocoord.h
 include/simgear/timing/lowleveltime.h
 include/simgear/timing/sg_time.hxx
@@ -83,12 +86,14 @@ lib/libsgroute.a
 lib/libsgscreen.a
 lib/libsgserial.a
 lib/libsgsky.a
+lib/libsgthreads.a
 lib/libsgtiming.a
 lib/libsgxgl.a
 lib/libsgxml.a
 @dirrm include/simgear/xml
 @dirrm include/simgear/xgl
 @dirrm include/simgear/timing
+@dirrm include/simgear/threads
 @dirrm include/simgear/sky/clouds3d
 @dirrm include/simgear/sky
 @dirrm include/simgear/serial

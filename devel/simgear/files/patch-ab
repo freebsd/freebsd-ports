@@ -1,0 +1,28 @@
+--- configure.orig	Mon Mar  3 14:01:49 2003
++++ configure	Mon Mar  3 14:01:59 2003
+@@ -5063,13 +5063,13 @@
+ base_LIBS="$LIBS"
+ 
+ 
+-echo "$as_me:$LINENO: checking for pthread_exit in -lpthread" >&5
+-echo $ECHO_N "checking for pthread_exit in -lpthread... $ECHO_C" >&6
++echo "$as_me:$LINENO: checking for pthread_exit in -pthread" >&5
++echo $ECHO_N "checking for pthread_exit in -pthread... $ECHO_C" >&6
+ if test "${ac_cv_lib_pthread_pthread_exit+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpthread  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ #include "confdefs.h"
+@@ -5117,7 +5117,7 @@
+ #define HAVE_LIBPTHREAD 1
+ _ACEOF
+ 
+-  LIBS="-lpthread $LIBS"
++  LIBS="-pthread $LIBS"
+ 
+ fi
+ 
