@@ -1,12 +1,11 @@
 bin/pcre-config
 bin/pcregrep
+bin/pcretest
 include/pcre.h
 include/pcreposix.h
 lib/libpcre.a
-lib/libpcre.la
 lib/libpcre.so
 lib/libpcre.so.0
 lib/libpcreposix.a
-lib/libpcreposix.la
 lib/libpcreposix.so
 lib/libpcreposix.so.0
