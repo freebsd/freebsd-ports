@@ -1,7 +1,7 @@
---- doc/libtool.texi.orig	Wed Mar 11 02:04:36 1998
-+++ doc/libtool.texi	Mon Apr 27 16:57:24 1998
-@@ -10,7 +10,7 @@
- @set BUGADDR the libtool mailing list @email{bug-libtool@@gnu.org}
+--- doc/libtool.texi.orig	Tue Jun 29 15:48:12 1999
++++ doc/libtool.texi	Tue Aug 31 23:41:25 1999
+@@ -11,7 +11,7 @@
+ @set MAILLIST the libtool mailing list @email{libtool@@gnu.org}
  @set objdir .libs
  
 -@dircategory GNU programming tools

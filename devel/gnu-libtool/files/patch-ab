@@ -1,5 +1,5 @@
---- doc/Makefile.in.orig	Fri Mar 20 17:01:52 1998
-+++ doc/Makefile.in	Mon Apr 27 17:22:55 1998
+--- doc/Makefile.in.orig	Fri Jul  2 09:24:54 1999
++++ doc/Makefile.in	Tue Aug 31 23:41:57 1999
 @@ -70,7 +70,7 @@
  LIBTOOL = @LIBTOOL@
  LIBTOOL_FLAGS = @LIBTOOL_FLAGS@
@@ -7,5 +7,5 @@
 -MAKEINFO = @MAKEINFO@
 +MAKEINFO = @MAKEINFO@ --no-split
  NM = @NM@
+ OBJDUMP = @OBJDUMP@
  PACKAGE = @PACKAGE@
- RANLIB = @RANLIB@

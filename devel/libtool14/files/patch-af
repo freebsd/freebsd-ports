@@ -1,0 +1,24 @@
+--- libltdl/Makefile.in.orig	Fri Jul  2 09:02:06 1999
++++ libltdl/Makefile.in	Thu Sep  9 22:40:10 1999
+@@ -328,17 +328,16 @@
+ distdir: $(DISTFILES)
+ 	-rm -rf $(distdir)
+ 	mkdir $(distdir)
+-	-chmod 777 $(distdir)
++	-chmod 555 $(distdir)
+ 	@for file in $(DISTFILES); do \
+ 	  d=$(srcdir); \
+ 	  if test -d $$d/$$file; then \
+-	    cp -pr $$/$$file $(distdir)/$$file; \
++	    echo no copy dir $$d/$$file; \
+ 	  else \
+-	    test -f $(distdir)/$$file \
+-	    || ln $$d/$$file $(distdir)/$$file 2> /dev/null \
+-	    || cp -p $$d/$$file $(distdir)/$$file || :; \
++	    install -c -o root -g wheel -m 444 $$d/$$file $(distdir)/$$file; \
+ 	  fi; \
+ 	done
++	-chmod a+x $(distdir)/configure
+ info-am:
+ info: info-am
+ dvi-am:

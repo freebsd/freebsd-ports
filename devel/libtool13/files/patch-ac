@@ -1,40 +1,47 @@
---- ltconfig.orig	Thu Apr 29 15:30:36 1999
-+++ ltconfig	Sat May 22 15:52:24 1999
+--- ltconfig.orig	Fri Jul  2 09:02:37 1999
++++ ltconfig	Sat Sep  4 11:34:21 1999
 @@ -169,7 +169,7 @@
  # Constants:
  PROGRAM=ltconfig
  PACKAGE=libtool
--VERSION=1.3
-+VERSION=1.3-freebsd-ports
- TIMESTAMP=" (1.385.2.117 1999/04/29 13:07:13)"
+-VERSION=1.3.3
++VERSION=1.3.3-freebsd-ports
+ TIMESTAMP=" (1.385.2.181 1999/07/02 15:49:11)"
  ac_compile='${CC-cc} -c $CFLAGS $CPPFLAGS conftest.c 1>&5'
  ac_link='${CC-cc} -o conftest $CFLAGS $CPPFLAGS $LDFLAGS conftest.c $LIBS 1>&5'
-@@ -184,6 +184,7 @@
- # All known linkers require a `.a' archive for static linking.
+@@ -185,6 +185,8 @@
+ # which needs '.lib').
  enable_static=yes
  enable_fast_install=yes
-+install_ltlibs=no
++install_ltlibs=yes
++release_suffix=yes
  enable_dlopen=unknown
  enable_win32_dll=no
  ltmain=
-@@ -244,6 +245,7 @@
+@@ -246,6 +248,9 @@
      --disable-shared       do not build shared libraries
      --disable-static       do not build static libraries
      --disable-fast-install do not optimize for fast installation
-+    --install-ltlibs       install the .la archives
++    --disable-ltlibs       don't install the .la archives
++    --release-ignore       don't use -release specification
++    --release-suffix       use -release suffix for all files
      --enable-dlopen        enable dlopen support
      --enable-win32-dll     enable building dlls on win32 hosts
      --help                 display this help and exit
-@@ -277,6 +279,8 @@
+@@ -279,6 +284,12 @@
  
    --disable-fast-install) enable_fast_install=no ;;
  
-+  --install-ltlibs) install_ltlibs=yes ;;
++  --disable-ltlibs) install_ltlibs=no ;;
++
++  --release-ignore) release_suffix=no ;;
++
++  --release-suffix) release_suffix=all ;;
 +
    --enable-dlopen) enable_dlopen=yes ;;
  
    --enable-win32-dll) enable_win32_dll=yes ;;
-@@ -927,11 +931,11 @@
+@@ -971,11 +982,11 @@
    $rm conftest.dat
    if ln -s X conftest.dat 2>/dev/null; then
      $rm conftest.dat
@@ -48,7 +55,42 @@
      echo "$ac_t"yes 1>&6
    else
      echo "$ac_t"no 1>&6
-@@ -1742,19 +1746,17 @@
+@@ -1226,8 +1237,8 @@
+ 
+   *)
+     if $LD --help 2>&1 | egrep ': supported targets:.* elf' > /dev/null; then
+-      archive_cmds='$CC -shared $libobjs $deplibs $linkopts ${wl}-soname $wl$soname -o $lib'
+-      archive_expsym_cmds='$CC -shared $libobjs $deplibs $linkopts ${wl}-soname $wl$soname ${wl}-retain-symbols-file $wl$export_symbols -o $lib'
++      archive_cmds='$CC -shared $compile_rpath $libobjs $deplibs $linkopts ${wl}-soname $wl$soname -o $lib'
++      archive_expsym_cmds='$CC -shared $compile_rpath $libobjs $deplibs $linkopts ${wl}-soname $wl$soname ${wl}-retain-symbols-file $wl$export_symbols -o $lib'
+     else
+       ld_shlibs=no
+     fi
+@@ -1348,14 +1359,6 @@
+     hardcode_shlibpath_var=no
+     ;;
+ 
+-  # FreeBSD 3 and greater uses gcc -shared to do shared libraries.
+-  freebsd*)
+-    archive_cmds='$CC -shared -o $lib $libobjs $deplibs $linkopts'
+-    hardcode_libdir_flag_spec='-R$libdir'
+-    hardcode_direct=yes
+-    hardcode_shlibpath_var=no
+-    ;;
+-
+   hpux9* | hpux10* | hpux11*)
+     case "$host_os" in
+     hpux9*) archive_cmds='$rm $objdir/$soname~$LD -b +b $install_libdir -o $objdir/$soname $libobjs $deplibs $linkopts~test $objdir/$soname = $lib || mv $objdir/$soname $lib' ;;
+@@ -1732,7 +1735,7 @@
+ version_type=none
+ dynamic_linker="$host_os ld.so"
+ sys_lib_dlsearch_path_spec="/lib /usr/lib"
+-sys_lib_search_path_spec="/lib /usr/lib /usr/local/lib"
++sys_lib_search_path_spec="/lib /usr/lib"
+ file_magic_cmd=
+ file_magic_test_file=
+ deplibs_check_method='unknown'
+@@ -1829,19 +1832,21 @@
    case "$version_type" in
      freebsd-elf*)
        deplibs_check_method='file_magic ELF [0-9][0-9]*-bit [LM]SB shared object'
@@ -68,23 +110,30 @@
 -  finish_cmds='PATH="\$PATH:/sbin" OBJFORMAT="'"$objformat"'" ldconfig -m $libdir'
 +  file_magic_cmd=/usr/bin/file
 +  file_magic_test_file=`echo /usr/lib/libc.so.*`
-+  library_names_spec='${libname}${release}.so$versuffix ${libname}${release}.so'
++  if test "$release_suffix" = all; then
++    library_names_spec='${libname}${release}.so$versuffix ${libname}${release}.so'
++  else
++    library_names_spec='${libname}${release}.so$versuffix ${libname}.so'
++  fi 
 +  need_version=no
 +  need_lib_prefix=no
 +  finish_cmds='/usr/bin/env OBJFORMAT="'"$objformat"'" /sbin/ldconfig -m $libdir'
    shlibpath_var=LD_LIBRARY_PATH
-   ;;
- 
-@@ -2613,6 +2615,12 @@
+   case "$host_os" in
+   freebsd2* | freebsd3.[01]*)
+@@ -2719,6 +2724,15 @@
  
  # Shell to use when invoking shell scripts.
  SHELL=$LTSHELL
 +
-+# Install PREFIX
-+PREFIX=$PREFIX
-+
 +# Whether to waste disk space.
 +install_ltlibs=$install_ltlibs 
++
++# What to do with -release.
++#  yes - only for shared archive
++#  no  - ingnore
++#  all - for all archives
++release_suffix=$release_suffix
  
  # Whether or not to build shared libraries.
  build_libtool_libs=$enable_shared
