@@ -17,4 +17,13 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500000
+USE_REINPLACE=	yes
+post-patch:
+	${REINPLACE_CMD} -e "s/inttypes\.h/stdint\.h/" \
+		${WRKSRC}/src/FbTk/Timer.hh
+.endif
+
+.include <bsd.port.post.mk>
