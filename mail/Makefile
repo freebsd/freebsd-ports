@@ -16,6 +16,7 @@
     SUBDIR += bbmail
     SUBDIR += biabam
     SUBDIR += biffer
+    SUBDIR += bogofilter
     SUBDIR += bsmtp
     SUBDIR += bulk_mailer
     SUBDIR += cclient
