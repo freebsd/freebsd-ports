@@ -1,11 +1,11 @@
---- configure.orig	Wed Aug 16 01:32:49 2000
-+++ configure	Sat Nov 11 14:48:08 2000
-@@ -1970,7 +1970,7 @@
- fi
- 
+--- configure.orig	Fri May 10 00:24:38 2002
++++ configure	Fri May 10 00:25:20 2002
+@@ -7096,7 +7096,7 @@
+ echo "${ECHO_T}no" >&6
+ fi;
  	;;
 -linux*)
 +linux*|freebsd*)
- 	echo $ac_n "checking for main in -lcrypt""... $ac_c" 1>&6
- echo "configure:1976: checking for main in -lcrypt" >&5
- ac_lib_var=`echo crypt'_'main | sed 'y%./+-%__p_%'`
+ 
+ echo "$as_me:$LINENO: checking for main in -lcrypt" >&5
+ echo $ECHO_N "checking for main in -lcrypt... $ECHO_C" >&6
