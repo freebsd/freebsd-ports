@@ -8,7 +8,7 @@
 PORTNAME=	rand
 PORTVERSION=	1.7
 CATEGORIES=	textproc
-MASTER_SITES=	http://math.smsu.edu/~br0ke/files/
+MASTER_SITES=	http://math.smsu.edu/~erik/files/
 
 MAINTAINER=	domi@saargate.de
 
