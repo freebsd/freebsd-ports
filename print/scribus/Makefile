@@ -7,9 +7,10 @@
 #
 
 PORTNAME=	scribus
-PORTVERSION=	0.9.8
+PORTVERSION=	0.9.9
 CATEGORIES=	print editors
-MASTER_SITES=	http://web2.altmuehlnet.de/fschmid/
+MASTER_SITES=	http://web2.altmuehlnet.de/fschmid/ \
+		http://scribus.planetmirror.com/
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
