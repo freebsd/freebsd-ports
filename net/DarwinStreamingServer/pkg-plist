@@ -6,6 +6,8 @@ sbin/DarwinStreamingServer
 sbin/streamingadminserver.pl
 libexec/StreamingServerModules/QTSSHomeDirectoryModule
 libexec/StreamingServerModules/QTSSRefMovieModule
+@exec   mkdir %D/%%DATADIR%%                 2>/dev/null || true
+@exec   mkdir %D/%%DATADIR%%/movies          2>/dev/null || true
 %%DATADIR%%/readme.txt
 %%DATADIR%%/3rdPartyAcknowledgements.rtf
 %%DATADIR%%/AdminHtml/MapUTF.pl
@@ -151,8 +153,8 @@ etc/streaming/streamingserver.xml-dist
 @dirrm %%DATADIR%%/AdminHtml/images
 @dirrm %%DATADIR%%/AdminHtml/html_en
 @dirrm %%DATADIR%%/AdminHtml
-@dirrm %%DATADIR%%/movies
-@dirrm %%DATADIR%%
+@unexec rmdir %D/%%DATADIR%%/movies          2>/dev/null || true
+@unexec rmdir %D/%%DATADIR%%                 2>/dev/null || true
 @dirrm libexec/StreamingServerModules
 @unexec rmdir %D/etc/streaming               2>/dev/null || true
 @unexec rmdir /var/spool/streaming.playlists 2>/dev/null || true
