@@ -39,7 +39,7 @@ shift 2> /dev/null;
 HOSTDIR=$AKEYS/$USER@${HOST}-22
 if [ ! -d $HOSTDIR ]; then
 	while ! [ "$answer" = "yes" -o "$answer" = "no" ]; do
-		echo -n "New host $HOST - create key (yes/no)? " 1>&2
+		echo -n "New user/host pair $USER@$HOST - create key (yes/no)? " 1>&2
 		read answer
 	done
 	if [ "$answer" = "no" ]; then
@@ -115,7 +115,22 @@ fi
 
 BASENAME=`basename $0`
 if [ "$BASENAME" = "scpsh" ]; then
-	exec $SHELL -i
+	# Print information if we are running entirely interactive (or
+	# somebody is attempting to make us believe we are)
+	if [ -t 0 -a -t 1 -a -t 2 ]; then
+		echo ">>>" 1>&2
+		echo ">>> Starting up shell with authentication variables." 1>&2
+		echo ">>> You can now scp to $USER@$HOST without passwords." 1>&2
+		if [ "$TGT" = "" ]; then
+			echo ">>> $USER@$HOST is available through the shorthand \$TGT" 1>&2
+		fi
+		echo ">>>" 1>&2
+	fi
+	if [ "$TGT" = "" ]; then
+		TGT=$USER@$HOST
+		export TGT
+	fi
+	exec $SHELL
 elif [ "$BASENAME" = "safeshinstall" ]; then
 	cat $HOSTDIR/id_dsa.pub | ssh $USER@$HOST 'mkdir -p .ssh && cat >> .ssh/authorized_keys2'
 elif [ "$1" = "" ]; then
