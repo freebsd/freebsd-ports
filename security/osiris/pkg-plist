@@ -1,21 +1,23 @@
 @comment $FreeBSD$
-sbin/osiris
-sbin/osirisd
+%%CLI%%sbin/osiris
+%%OSIRISD%%sbin/osirisd
 %%OSIRISMD%%sbin/osirismd
-etc/rc.d/osirisd.sh.sample
+%%OSIRISD%%etc/rc.d/osirisd.sh.sample
 %%OSIRISMD%%etc/rc.d/osirismd.sh.sample
-osiris/configs/default.aix
-osiris/configs/default.bsdos
-osiris/configs/default.darwin
-osiris/configs/default.freebsd
-osiris/configs/default.irix
-osiris/configs/default.linux
-osiris/configs/default.openbsd
-osiris/configs/default.sunos
-osiris/configs/default.unix-generic
-osiris/configs/default.windows2000
-osiris/configs/default.windowsnt
-osiris/configs/default.windowsserver2003
-osiris/configs/default.windowsxp
-@dirrm osiris/configs
-@dirrm osiris
+%%OSIRISMD%%osiris/configs/default.aix
+%%OSIRISMD%%osiris/configs/default.bsdos
+%%OSIRISMD%%osiris/configs/default.darwin
+%%OSIRISMD%%osiris/configs/default.freebsd
+%%OSIRISMD%%osiris/configs/default.irix
+%%OSIRISMD%%osiris/configs/default.linux
+%%OSIRISMD%%osiris/configs/default.netbsd
+%%OSIRISMD%%osiris/configs/default.openbsd
+%%OSIRISMD%%osiris/configs/default.sunos
+%%OSIRISMD%%osiris/configs/default.unix-generic
+%%OSIRISMD%%osiris/configs/default.windows2000
+%%OSIRISMD%%osiris/configs/default.windowsnt
+%%OSIRISMD%%osiris/configs/default.windowsserver2003
+%%OSIRISMD%%osiris/configs/default.windowsxp
+%%OSIRISMD%%osiris/configs/default.wrt54g
+%%OSIRISMD%%@dirrm osiris/configs
+%%OSIRISMD%%@dirrm osiris
