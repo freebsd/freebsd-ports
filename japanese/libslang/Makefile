@@ -3,7 +3,7 @@
 # Date created:		3 September 1999
 # Whom:			IWASHITA Yoji <shuna@pop16.odn.ne.jp>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	slang-1.3.8__J067
