@@ -1,0 +1,11 @@
+--- configure~	Thu Sep 13 01:13:37 2001
++++ configure	Fri Sep 21 02:42:01 2001
+@@ -1832,7 +1832,7 @@
+         OPTFLAGS="-O"
+     fi
+ fi
+-CFLAGS="$CFLAGS $OPTFLAGS"
++#CFLAGS="$CFLAGS $OPTFLAGS"
+ 
+ echo $ac_n "checking how to run the C preprocessor""... $ac_c" 1>&6
+ echo "configure:1839: checking how to run the C preprocessor" >&5

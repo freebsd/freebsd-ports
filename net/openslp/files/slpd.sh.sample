@@ -1,0 +1,23 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# OpenSLP daemon.
+#
+if ! test -x %%PREFIX%%/sbin/slpd
+then
+#	exit 0
+fi
+case $1 in
+start)
+	echo -n ' slpd'
+	%%PREFIX%%/sbin/slpd
+	;;
+stop)
+	killall slpd
+	;;
+*)
+	echo "Usage: $0: [ start | stop ]" 2>&1
+	exit 65
+	;;
+esac
