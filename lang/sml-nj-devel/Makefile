@@ -14,8 +14,8 @@ MASTER_SITES=	ftp://ftp.research.bell-labs.com/dist/smlnj/working/${PORTVERSION}
 DISTFILES=	config.tgz runtime.tgz
 .if (${MACHINE_ARCH} == "i386")
 DISTFILES+=	boot.x86-unix.tgz
-.elif (${MACHINE_ARCH} == "alpha")
-DISTFILES+=	boot.alpha32-unix.tgz
+#.elif (${MACHINE_ARCH} == "alpha")
+#DISTFILES+=	boot.alpha32-unix.tgz
 .endif
 DISTFILES+=	ml-yacc.tgz ml-lex.tgz smlnj-lib.tgz cml.tgz
 .if defined(WITH_EVERYTHING) || defined(WITH_RECOMPILE) || defined(WITH_FLINT)
@@ -35,12 +35,14 @@ USE_GMAKE=	yes
 
 NO_LATEST_LINK=	yes
 
+ONLY_FOR_ARCHS=	i386
+
 .if (${MACHINE_ARCH} == "i386")
 MLARCH=		x86
-.elif (${MACHINE_ARCH} == "alpha")
-MLARCH=		alpha32
-.else
-BROKEN=		not ported to ${MACHINE_ARCH}
+#.elif (${MACHINE_ARCH} == "alpha")
+#MLARCH=		alpha32
+#.else
+#BROKEN=		not ported to ${MACHINE_ARCH}
 .endif
 
 .if defined(WITH_FLINT)
@@ -121,7 +123,8 @@ MLFLINTPATCH=	optional-patch-flint-access
 
 do-build:
 .if defined(WITH_RECOMPILE)
-	${MV} "${WRKDIR}/config/targets.customized" "${WRKDIR}/config/targets.customized.later"
+	${MV} "${WRKDIR}/config/targets.customized" \
+	"${WRKDIR}/config/targets.customized.later"
 	${SED} -E -e '/^#request[        ]+src-smlnj$$/s/^#//' \
 	"${WRKDIR}/config/targets" > "${WRKDIR}/config/targets.customized"
 .endif
@@ -172,7 +175,8 @@ PLIST_SUB=	MLARCH=${MLARCH}
 do-install:
 	${MKDIR} "${MLROOT}"
 .if defined(WITH_RECOMPILE)
-	${MV} "${WRKDIR}/config/targets.customized" "${WRKDIR}/config/targets.customized.later"
+	${MV} "${WRKDIR}/config/targets.customized" \
+	"${WRKDIR}/config/targets.customized.later"
 	${ECHO_CMD} -n > "${WRKDIR}/config/targets.customized"
 .endif
 	cd ${WRKDIR} && unset PWD && \

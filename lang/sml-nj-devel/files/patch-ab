@@ -1,5 +1,5 @@
 --- config/install.sh.orig	Thu Oct 17 15:07:53 2002
-+++ config/install.sh	Sun Nov 10 23:59:17 2002
++++ config/install.sh	Mon Mar 17 02:11:26 2003
 @@ -550,6 +550,28 @@
  ######################################################################
  
@@ -29,7 +29,16 @@
  # create the various sub directories
  #
  for dir in $BINDIR $HEAPDIR $RUNDIR $LIBDIR $SRCDIR ; do
-@@ -664,7 +686,7 @@
+@@ -656,6 +678,8 @@
+ # build the run-time system
+ #
+ unpack "run-time" $SRCDIR runtime runtime
++do_patch do-patch-src-genposixnames
++do_patch do-patch-src-mk.x86-freebsd
+ if [ -x $RUNDIR/run.$ARCH-$OPSYS ]; then
+     vsay $this: Run-time system already exists.
+ else
+@@ -664,7 +688,7 @@
      $MAKE -f mk.$ARCH-$OPSYS $EXTRA_DEFS
      if [ -x run.$ARCH-$OPSYS ]; then
  	mv run.$ARCH-$OPSYS $RUNDIR
@@ -38,7 +47,7 @@
      else
  	complain "$this: !!! Run-time system build failed for some reason."
      fi
-@@ -728,6 +750,8 @@
+@@ -728,6 +752,8 @@
  	do
  	    unpack $src $ROOT/src $src $src
          done
