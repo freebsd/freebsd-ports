@@ -1,0 +1,34 @@
+*** makefile.in.old	Sun Dec 25 08:43:59 1994
+--- makefile.in	Sat Apr 15 15:21:08 1995
+***************
+*** 1,7 ****
+  CC	= @CC@
+  CFLAGS	= @CFLAGS@ @CPPFLAGS@ @X_CFLAGS@
+  LIBS	= @X_LIBS@ @LIBS@
+! LIBLOC	= `pwd`
+  
+  OBJS 	= coms.o error.o eval.o files.o graphics.o init.o intern.o \
+  	  libloc.o lists.o logodata.o main.o math.o mem.o paren.o parse.o \
+--- 1,7 ----
+  CC	= @CC@
+  CFLAGS	= @CFLAGS@ @CPPFLAGS@ @X_CFLAGS@
+  LIBS	= @X_LIBS@ @LIBS@
+! LIBLOC	?= `pwd`
+  
+  OBJS 	= coms.o error.o eval.o files.o graphics.o init.o intern.o \
+  	  libloc.o lists.o logodata.o main.o math.o mem.o paren.o parse.o \
+***************
+*** 35,40 ****
+--- 35,46 ----
+  
+  makehelp:	makehelp.c
+  	$(CC) -o makehelp makehelp.c
++ 
++ install:
++ 	install -c logo ${PREFIX}/bin
++ 	mkdir -p ${LIBLOC}
++ 	cp -rp logolib ${LIBLOC}
++ 	cp -rp helpfiles ${LIBLOC}
+  
+  clean:
+  	rm *.o libloc.c
