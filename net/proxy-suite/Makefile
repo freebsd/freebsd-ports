@@ -56,10 +56,16 @@ ALL_TARGET=	 -C ftp-proxy
 MAN8=		ftp-proxy.8
 MAN5=		ftp-proxy.conf.5
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502105
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 pre-install:
 	@${STRIP_CMD} ${WRKSRC}/ftp-proxy/ftp-proxy
 
 post-install:
 	@${SED} 's|PREFIX|${PREFIX}|' ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
