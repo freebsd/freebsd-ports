@@ -1,5 +1,5 @@
+lib/libvarconf.so
 lib/libvarconf.so.0
-lib/libvarconf.la
 lib/libvarconf.a
 include/varconf/Config.h
 include/varconf/parse_error.h
