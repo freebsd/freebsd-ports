@@ -17,11 +17,13 @@ MAINTAINER=	llwang@infor.org
 USE_ZIP=	yes
 USE_GMAKE=	yes
 MAKEFILE=	makefile
+USE_REINPLACE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 
 pre-build:
 	@${CP} ${WRKDIR}/fbbi.c ${WRKSRC}
+	${REINPLACE_CMD} -e 's,#include <values.h>,,' ${WRKSRC}/bf98spc.h
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/fbbi ${LOCALBASE}/bin
