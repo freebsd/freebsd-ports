@@ -1,13 +1,22 @@
---- imap/config.c.orig	Sat Dec 21 02:08:11 1996
-+++ imap/config.c	Wed Oct  8 13:56:58 1997
-@@ -23,7 +23,9 @@
- 
- extern int errno;
- 
--#define CONFIG_FILENAME "/etc/imapd.conf"
-+#if !defined(CONFIG_FILENAME)
-+	#define CONFIG_FILENAME "/etc/imapd.conf"
-+#endif
- 
- struct configlist {
-     char *key;
+*** imap/config.c.orig	Fri May 15 23:48:14 1998
+--- imap/config.c	Wed Aug 26 11:44:18 1998
+***************
+*** 37,43 ****
+  
+  extern int errno;
+  
+! #define CONFIG_FILENAME "/etc/imapd.conf"
+  /* You'd think this'd be EX_CONFIG, but you'd be wrong.
+     If it's EX_CONFIG then sendmail's result is to fatally reject the
+     message; this isn't desireable, we just want to fail the message in a
+--- 37,46 ----
+  
+  extern int errno;
+  
+! #if !defined(CONFIG_FILENAME)
+! # define CONFIG_FILENAME "/etc/imapd.conf"
+! #endif
+! 
+  /* You'd think this'd be EX_CONFIG, but you'd be wrong.
+     If it's EX_CONFIG then sendmail's result is to fatally reject the
+     message; this isn't desireable, we just want to fail the message in a

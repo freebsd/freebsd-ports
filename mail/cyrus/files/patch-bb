@@ -1,13 +1,22 @@
---- cyradm/Makefile.in.orig	Sat Dec 21 02:07:57 1996
-+++ cyradm/Makefile.in	Wed Oct  8 13:56:57 1997
-@@ -21,8 +21,8 @@
- RANLIB = @RANLIB@
- 
- DEFS = @DEFS@
--CPPFLAGS = -I. -I$(srcdir) -I$(srcdir)/../lib -I$(srcdir)/../et @CPPFLAGS@ 
--LIBS = @LIBS@ @TCLLIBS@
-+CPPFLAGS = -I. -I$(srcdir) -I$(srcdir)/../lib -I$(srcdir)/../et -I$(prefix)/include/tcl8.1 @CPPFLAGS@ 
-+LIBS = @LIBS@ -L/usr/local/lib -ltcl81 -lm
- DEPLIBS = ../lib/libcyrus.a @DEPLIBS@ 
- 
- CFLAGS = @CFLAGS@
+*** cyradm/Makefile.in.orig	Tue Jun  9 06:30:40 1998
+--- cyradm/Makefile.in	Wed Aug 26 11:35:46 1998
+***************
+*** 33,41 ****
+  RANLIB = @RANLIB@
+  
+  DEFS = @DEFS@ @TCL_DEFS@
+! CPPFLAGS = -I. -I$(srcdir) -I$(srcdir)/../lib -I$(srcdir)/../et @CPPFLAGS@ @TCL_CPPFLAGS@
+! # lazy approach to linking: just do it a lot
+! LIBS =  @TCL_LIBS@ @LIBS@ @TCL_LIBS@ @LIBS@
+  DEPLIBS = ../lib/libcyrus.a @DEPLIBS@ 
+  
+  CFLAGS = @CFLAGS@
+--- 33,40 ----
+  RANLIB = @RANLIB@
+  
+  DEFS = @DEFS@ @TCL_DEFS@
+! CPPFLAGS = -I. -I$(srcdir) -I$(srcdir)/../lib -I$(srcdir)/../et -I$(prefix)/include/tcl8.0 @CPPFLAGS@ 
+! LIBS = @LIBS@ -L/usr/local/lib -ltcl80 -lm
+  DEPLIBS = ../lib/libcyrus.a @DEPLIBS@ 
+  
+  CFLAGS = @CFLAGS@
