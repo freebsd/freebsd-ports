@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	gaphor
-PORTVERSION=	0.4.0
-PORTREVISION=	1
+PORTVERSION=	0.7.0.1
+#PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,8 +22,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT}
 .endif
 
-BROKEN=		Does not build with python 2.4
 USE_PYTHON=	2.2+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\\.[0-9]+$//}
 
 do-configure:
 	@cd ${WRKSRC}; ${PYTHON_CMD} setup.py config
@@ -33,5 +33,6 @@ do-build:
 
 do-install:
 	@cd ${WRKSRC}; ${PYTHON_CMD} setup.py install --install-data=${PREFIX}/share/gaphor; ${PYTHON_CMD} setup.py install_mo
+	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${DATADIR}
 
 .include <bsd.port.mk>
