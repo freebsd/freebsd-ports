@@ -23,15 +23,12 @@ GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502103
-BROKEN=		"Does not install on FreeBSD >= 5.x"
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	@${GREP} -lR "SDL/SDL" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|"SDL/SDL|"SDL|g ; \
 		 s|<SDL/SDL|<SDL|g'
+	@${REINPLACE_CMD} -e 's|--mode=666||g' ${WRKSRC}/src/Makefile.in
 
 post-install:
 	${CHOWN} root:games ${PREFIX}/bin/${PORTNAME}
