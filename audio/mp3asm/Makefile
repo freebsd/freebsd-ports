@@ -7,24 +7,29 @@
 #
 
 PORTNAME=	mp3asm
-PORTVERSION=	0.1.3
+PORTVERSION=	0.1.3.1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
 
-GNU_CONFIGURE=	yes
-USE_AUTOCONF=	yes
-USE_GMAKE=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-0.1
 
-WRKSRC=	${WRKDIR}/mp3asm-0.1
+USE_BZIP2=	yes
+USE_REINPLACE=	yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
 
 post-extract:
 	@${RM} ${WRKSRC}/config.cache
 
 post-patch:
-	@${PERL} -pi -e "s,getprogname,_getprogname,g" ${WRKSRC}/src/mp3asm.c
+	@${REINPLACE_CMD} -e \
+		's|^CFLAGS=|#CFLAGS=|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's|getprogname|_getprogname|g' ${WRKSRC}/src/mp3asm.c
 
 post-install:
 .if !defined(NOPORTDOCS)
