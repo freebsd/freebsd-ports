@@ -9,7 +9,7 @@ PORTNAME=	frontpage
 CATEGORIES=	www french
 PKGNAMEPREFIX=	fr-
 
-MAINTAINER=	hetzels@westbend.net
+MAINTAINER=	freebsd-maintainer@westbend.net
 COMMENT=	Microsoft Frontpage French Web Administration
 
 MD5_FILE=	${.CURDIR}/distinfo
