@@ -3,7 +3,7 @@
 # Date created:		5 Sep 1997
 # Whom:			Satoshi TAOKA <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1998/07/08 14:29:29 kuriyama Exp $
+# $Id: Makefile,v 1.2 1998/09/21 22:33:26 steve Exp $
 #
 
 DISTNAME=	jvim2.0r+onew2.2.10
@@ -17,8 +17,6 @@ MAINTAINER=	taoka@infonets.hiroshima-u.ac.jp
 BUILD_DEPENDS=	${BUILD_INPUT_METHOD}
 LIB_DEPENDS=	${LIB_INPUT_METHOD}
 
-PATCHDIR=	${.CURDIR}/../onew-wnn4/patches
-FILESDIR=	${.CURDIR}/../onew-wnn4/files
 WRKSRC=		${WRKDIR}/onew
 # A value 'all' must not be set to TARGET.
 ALL_TARGET=	
