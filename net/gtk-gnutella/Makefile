@@ -21,7 +21,8 @@ LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--enable-no-rfc1918

@@ -19,7 +19,8 @@ LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm
 
 USE_BZIP2=	yes
 USE_OPENSSL=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

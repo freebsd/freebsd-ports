@@ -17,7 +17,8 @@ MAINTAINER=	billf@FreeBSD.org
 
 USE_AUTOCONF=	yes
 USE_GMAKE=	yes
-WANT_GTK=	yes
+USE_GNOMENG=	yes
+WANT_GNOME=	yes
 WANT_IPV6=	yes
 
 MAN8=	mtr.8
@@ -34,9 +35,10 @@ CONFIGURE_ARGS+=--enable-ipv6
 CONFIGURE_ARGS+=--disable-ipv6
 .endif
 
-.if defined(HAVE_GTK)
+.if ${HAVE_GNOME:Mgtk12}!=""
+USE_GNOME+=	gtk12
+PKGNAMESUFFIX=	-gtk
 USE_XLIB=	yes
-USE_GTK=	yes
 .else
 CONFIGURE_ARGS+=--without-gtk
 .endif

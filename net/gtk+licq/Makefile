@@ -21,7 +21,8 @@ RUN_DEPENDS=	licq:${PORTSDIR}/net/licq
 # It breaks the build for some reason
 #USE_LIBTOOL=	yes
 USE_GMAKE=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -29,8 +30,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 .include <bsd.port.pre.mk>
 
-.if defined(HAVE_GNOME)
-USE_GNOME=	yes
+.if ${HAVE_GNOME:Mlibcapplet}!=""
+USE_GNOME+=	libcapplet
+PKGNAMESUFFIX=	-gnome
 CONFIGURE_ARGS+=	--enable-gnome
 .else
 CONFIGURE_ARGS+=	--disable-gnome

@@ -18,7 +18,8 @@ RUN_DEPENDS=	jags:${PORTSDIR}/net/jags
 WRKSRC=		${WRKDIR}/SambaSentinel
 USE_GMAKE=	yes
 USE_XPM=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 ALL_TARGET=	SambaSentinel
 
 do-install:

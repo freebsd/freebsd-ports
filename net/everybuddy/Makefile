@@ -16,8 +16,9 @@ LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile \
 		iconv.3:${PORTSDIR}/converters/libiconv
 
 USE_X_PREFIX=	yes
-USE_GTK=	yes
-WANT_ESOUND=	yes
+USE_GNOMENG=	yes
+WANT_GNOME=	yes
+USE_GNOME=	gtk12
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_BISON=	yes
@@ -31,8 +32,9 @@ MAN1=		everybuddy.1
 
 .include <bsd.port.pre.mk>
 
-.if defined(HAVE_ESOUND)
-USE_ESOUND=	yes
+.if ${HAVE_GNOME:Mesound}!=""
+USE_GNOME+=	esound
+PKGNAMESUFFIX=	-esound
 .else
 CONFIGURE_ARGS+=	--disable-esd
 .endif

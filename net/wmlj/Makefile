@@ -16,7 +16,8 @@ MAINTAINER=	sgt@outline.ru
 LIB_DEPENDS=	curl.2:${PORTSDIR}/ftp/curl
 
 GNU_CONFIGURE=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 
 MAN1=		wmlj.1
 

@@ -16,7 +16,8 @@ MAINTAINER=	corecode@corecode.ath.cx
 LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 

@@ -11,17 +11,18 @@ PORTVERSION=	0.99.19-1
 CATEGORIES=	net
 MASTER_SITES=	http://download.yahoo.com/dl/unix/fbsd45/
 EXTRACT_SUFX=	.tgz
-NO_WRKSUBDIR=	yes
 
 MAINTAINER=	sethk@meowfishies.com
 
-ONLY_FOR_ARCHS=	i386
-
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
-USE_GTK=	yes
+ONLY_FOR_ARCHS=	i386
+
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 USE_REINPLACE=	yes
 NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/bin/ymessenger ${PREFIX}/bin

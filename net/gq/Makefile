@@ -19,7 +19,8 @@ LIB_DEPENDS+=	ldap.1:${PORTSDIR}/net/openldap
 .endif
 
 USE_X_PREFIX=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ldap=${LOCALBASE}
 

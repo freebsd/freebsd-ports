@@ -15,7 +15,8 @@ MASTER_SITES=	http://c64.org/~nr/ \
 MAINTAINER=	billf@FreeBSD.org
 
 USE_X_PREFIX=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 
 do-install:

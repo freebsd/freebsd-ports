@@ -16,12 +16,11 @@ DISTNAME=	dc_gui-${PORTVERSION}
 MAINTAINER=	lioux@FreeBSD.org
 
 BUILD_DEPENDS=	dctc:${PORTSDIR}/net/dctc
-LIB_DEPENDS=	ORBit.2:${PORTSDIR}/devel/ORBit \
-		db4.0:${PORTSDIR}/databases/db4 \
+LIB_DEPENDS=	db4.0:${PORTSDIR}/databases/db4 \
 		intl.4:${PORTSDIR}/devel/gettext
 
-USE_GNOMELIBS=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomelibs
 USE_XLIB=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
