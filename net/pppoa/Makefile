@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pppoa
-PORTVERSION=	20010815
+PORTVERSION=	20011007
 CATEGORIES=	net
 MASTER_SITES=	http://www.xsproject.org/speedtouch/files/ \
 		http://www.alcatel.com/consumer/dsl/ \
@@ -16,12 +16,14 @@ DISTFILES=	${SPEEDTOUCH}.tar.gz speedmgmt.tar.gz
 MAINTAINER=	brian@Awfulhak.org
 
 HAS_CONFIGURE=		yes
-SPEEDTOUCH=		speedtouch-15082001
+SPEEDTOUCH=		speedtouch-${PORTVERSION}
 NO_CDROM=		"http://www.alcatel.com/consumer/dsl/disclaimer_lx.htm"
 NO_PACKAGE=		"http://www.alcatel.com/consumer/dsl/disclaimer_lx.htm"
 RESTRICTED_FILES=	speedmgmt.tar.gz
 
 WRKSRC=			${WRKDIR}/${SPEEDTOUCH}
+
+MAN1=			modem_run.1 pppoa2.1 pppoa3.1
 
 post-install:
 	if [ ! -d ${PREFIX}/libdata ]; then			\
@@ -32,5 +34,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/../mgmt/mgmt.o ${PREFIX}/libdata/.
 	${INSTALL_DATA} ${FILESDIR}/quick-install ${PREFIX}/share/speedtouch/.
 	${CAT} ${PREFIX}/share/speedtouch/quick-install
+	${INSTALL_MAN} ${WRKSRC}/doc-linux/modem_run.1 ${PREFIX}/man/man1/.
+	${INSTALL_MAN} ${WRKSRC}/doc-linux/pppoa2.1 ${PREFIX}/man/man1/.
+	${INSTALL_MAN} ${WRKSRC}/doc-linux/pppoa3.1 ${PREFIX}/man/man1/.
 
 .include <bsd.port.mk>

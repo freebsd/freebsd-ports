@@ -6,3 +6,5 @@
     as a template, then copy /usr/local/etc/rc.d/asdl.sh.sample to
     /usr/local/etc/rc.d/asdl.sh.
 
+    You may need to change the value of MODE in adsl.sh.
+
