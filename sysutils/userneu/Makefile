@@ -8,7 +8,7 @@
 PORTNAME=	userneu
 PORTVERSION=	1.38
 CATEGORIES=	sysutils
-MASTER_SITES=	http://btmdx8.mat.uni-bayreuth.de/~johannes/files/userneu/ \
+MASTER_SITES=	http://btmdxm.mat.uni-bayreuth.de/~johannes/files/userneu/ \
 		http://home.arcor.de/fehlner/inhalt/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}_1
 
@@ -23,7 +23,7 @@ RUN_DEPENDS=	\
 USE_PERL5_RUN=	yes
 NO_BUILD=	yes
 
-CONFLICTS=	userneu-devel-*
+CONFLICTS=	userneu-devel-[0-9]*
 
 SCRIPTS=	userneu.pl userquick.pl smbrepair.pl
 MAN8=		userneu.8 userquick.8
