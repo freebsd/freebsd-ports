@@ -1,0 +1,5 @@
+bin/id3put
+share/emacs/site-lisp/id3.el
+lib/xemacs/site-lisp/id3.el
+@dirrm lib/xemacs/site-lisp
+@dirrm lib/xemacs
