@@ -3,19 +3,19 @@
 # Date created:         29 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.30 1997/11/10 11:23:41 asami Exp $
+# $Id: Makefile,v 1.31 1997/12/11 00:00:20 jmz Exp $
 #
 
 DISTNAME=	web2c-7.1
 PKGNAME=	tex-3.14159
 CATEGORIES=	print
+MASTER_SITES=   ftp://ftp.cdrom.com/pub/tex/package/
 DISTFILES=	web2c-7.1.tar.gz web-7.1.tar.gz tex_base.tar.gz cm_tfm.tar.gz \
 		mf_lib.tar.gz cm_mf.tar.gz modes.mf 
 
 MAINTAINER=	jmz@FreeBSD.org
 
 MANUAL_PACKAGE_BUILD=	has to be built with latex port
-IGNOREFILES=	tex_base.tar.gz cm_tfm.tar.gz mf_lib.tar.gz cm_mf.tar.gz
 EXTRACT_ONLY=	web2c-7.1.tar.gz web-7.1.tar.gz tex_base.tar.gz cm_tfm.tar.gz \
 		mf_lib.tar.gz cm_mf.tar.gz
 
@@ -23,22 +23,6 @@ USE_GMAKE=	yes
 
 MAKE_FLAGS=	fmts= all_mems= -f
 
-CTAN?=		ftp.tex.ac.uk
-
-web2c-7.1.tar.gz: 
-	@${FETCH_CMD} -o ${DISTDIR}/$@ ftp://${CTAN}/tex-archive/systems/web2c/web2c-7.1.tar.gz 
-web-7.1.tar.gz: 
-	@${FETCH_CMD} -o ${DISTDIR}/$@ ftp://${CTAN}/tex-archive/systems/web2c/web-7.1.tar.gz 
-cm_mf.tar.gz:
-	@${FETCH_CMD} -o ${DISTDIR}/$@ ftp://${CTAN}/tex-archive/fonts/cm/mf.tar.gz 
-cm_tfm.tar.gz:
-	@${FETCH_CMD} -o ${DISTDIR}/$@ ftp://${CTAN}/tex-archive/fonts/cm/tfm.tar.gz 
-mf_lib.tar.gz: 
-	@${FETCH_CMD} -o ${DISTDIR}/$@ ftp://${CTAN}/tex-archive/systems/knuth/lib.tar.gz 
-modes.mf:
-	@${FETCH_CMD} -o ${DISTDIR}/$@ ftp://${CTAN}/tex-archive/fonts/modes/modes.mf 
-tex_base.tar.gz:
-	@${FETCH_CMD} -o ${DISTDIR}/$@ ftp://${CTAN}/tex-archive/macros/plain/base.tar.gz 
 
 post-install:
 	@for i in kpsewhich dmp bibtex dvicopy dvitomp dvitype gftodvi gftopk \
@@ -53,7 +37,5 @@ post-install:
 	@${MKDIR} ${PREFIX}/share/texmf/tex
 	@(cd ${WRKDIR}/lib; ${INSTALL_DATA} *.tex ${PREFIX}/share/texmf/tex)
 	@(cd ${WRKDIR}/base; ${INSTALL_DATA} *.tex ${PREFIX}/share/texmf/tex)
-
-.include "Makefile.inc"
 
 .include <bsd.port.mk>

@@ -3,13 +3,14 @@
 # Date created:         29 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.31 1997/07/26 15:00:34 jmz Exp $
+# $Id: Makefile,v 1.32 1997/11/10 11:23:24 asami Exp $
 #
 
 VERSION=	97.06
 DISTNAME=	latex
 PKGNAME=	latex2e-${VERSION}
-CATEGORIES=	print
+CATEGORIES=     print
+MASTER_SITES=   ftp://ftp.cdrom.com/pub/tex/package/
 DISTFILES=	latex_mf-${VERSION}.tar.gz latex_tfm-${VERSION}.tar.gz \
 		latex_base-${VERSION}.tar.gz latex_tools-${VERSION}.tar.gz
 
@@ -19,20 +20,6 @@ BUILD_DEPENDS=	tex:${PORTSDIR}/print/tex
 RUN_DEPENDS=	tex:${PORTSDIR}/print/tex
 
 MANUAL_PACKAGE_BUILD=	has to be built with tex port
-IGNOREFILES=	${DISTFILES}
-
-#other equivalent sites: ftp.cdrom.com ftp.dante.de
-CTAN?=		ftp.tex.ac.uk
-
-
-latex_base-${VERSION}.tar.gz:
-	@${FETCH_CMD} -o ${DISTDIR}/$@ ftp://${CTAN}/tex-archive/macros/latex/base.tar.gz 
-latex_mf-${VERSION}.tar.gz:
-	@${FETCH_CMD} -o ${DISTDIR}/$@ ftp://${CTAN}/tex-archive/fonts/latex/mf.tar.gz 
-latex_tfm-${VERSION}.tar.gz:
-	@${FETCH_CMD} -o ${DISTDIR}/$@ ftp://${CTAN}/tex-archive/fonts/latex/tfm.tar.gz 
-latex_tools-${VERSION}.tar.gz:
-	@${FETCH_CMD} -o ${DISTDIR}/$@ ftp://${CTAN}/tex-archive/macros/latex/packages/tools.tar.gz 
 
 do-build:
 	(cd ${WRKSRC}/base; tex --ini unpack.ins)
@@ -63,7 +50,5 @@ do-install:
 	@(cd ${WRKSRC}/packages/tools; for f in *.dtx; do \
 	    if [ -f $$f ]; then install -c -m 644  $$f ${PREFIX}/share/texmf/documentation; fi; done)
 	@(cd ${PREFIX}/bin; rm -f latex; ln -s tex latex)
-
-.include "Makefile.inc"
 
 .include <bsd.port.mk>
