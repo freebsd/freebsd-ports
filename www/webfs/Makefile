@@ -7,7 +7,7 @@
 
 PORTNAME=	webfs
 PORTVERSION= 	1.6
-CATEGORIES=	www
+CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.strusel007.de/linux/misc/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -15,6 +15,12 @@ MAINTAINER=	jedgar@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 MAN1=		webfsd.1
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} <= 400000
+BROKEN=		"Requires FreeBSD 4.x or greater due to ipv6 support"
+.endif
 
 do-configure:
 	@${CP} ${WRKSRC}/webfsd.man ${WRKSRC}/webfsd.1
@@ -30,4 +36,4 @@ do-install:
 	@${ECHO} "# Insert mime types here" > ${PREFIX}/etc/webfsd/mime.types
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
