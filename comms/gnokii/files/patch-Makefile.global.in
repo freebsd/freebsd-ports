@@ -1,6 +1,6 @@
---- Makefile.global.in.orig	Tue Jul  8 23:33:22 2003
-+++ Makefile.global.in	Tue Jul  8 23:33:03 2003
-@@ -22,15 +22,15 @@
+--- Makefile.global.in.orig	Tue Jul  6 11:57:56 2004
++++ Makefile.global.in	Tue Jul  6 11:59:17 2004
+@@ -21,14 +21,14 @@
  
  bindir         = @bindir@
  sbindir        = @sbindir@
@@ -14,9 +14,7 @@
  man1dir        = ${mandir}/man1/
  man8dir        = ${mandir}/man8/
 -xmandir        = @XGNOKIIDIR@/man/man1/
--docdir         = ${prefix}/doc/${PACKAGE}
-+xmandir        = ${man1dir}
-+docdir         = ${prefix}/share/doc/${PACKAGE}
++xmandir        = ${prefix}/man/man1/
+ docdir         = ${prefix}/share/doc/${PACKAGE}
  locdir         = @datadir@/locale
  
- BIN_MODE       = 0755

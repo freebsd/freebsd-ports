@@ -107,12 +107,9 @@ share/locale/sl/LC_MESSAGES/gnokii.mo
 %%X11%%share/xgnokii/help/POSIX
 %%X11%%share/xgnokii/help/en_US/COPYING
 %%X11%%share/xgnokii/help/en_US/CREDITS
-%%X11%%share/xgnokii/help/en_US/cables/cables.html
-%%X11%%share/xgnokii/help/en_US/config.html
 %%X11%%share/xgnokii/help/en_US/faq.html
 %%X11%%share/xgnokii/help/en_US/firmware/firmware.html
 %%X11%%share/xgnokii/help/en_US/index.html
-%%X11%%share/xgnokii/help/en_US/irda/irda.html
 %%X11%%share/xgnokii/help/en_US/netmon/faq_net0.html
 %%X11%%share/xgnokii/help/en_US/netmon/faq_net1.html
 %%X11%%share/xgnokii/help/en_US/netmon/faq_net2.html
@@ -130,14 +127,6 @@ share/locale/sl/LC_MESSAGES/gnokii.mo
 %%X11%%share/xgnokii/help/en_US/netmon/tip.png
 %%X11%%share/xgnokii/help/en_US/sample/gnokiirc
 %%X11%%share/xgnokii/help/en_US/styl.css
-%%X11%%share/xgnokii/help/en_US/windows/calendar/index.html
-%%X11%%share/xgnokii/help/en_US/windows/contacts/index.html
-%%X11%%share/xgnokii/help/en_US/windows/dtmf/index.html
-%%X11%%share/xgnokii/help/en_US/windows/main/index.html
-%%X11%%share/xgnokii/help/en_US/windows/netmon/index.html
-%%X11%%share/xgnokii/help/en_US/windows/sms/index.html
-%%X11%%share/xgnokii/help/en_US/windows/speeddial/index.html
-%%X11%%share/xgnokii/help/en_US/windows/xkeyb/index.html
 %%X11%%share/xgnokii/help/pl_PL/calendar.html
 %%X11%%share/xgnokii/help/pl_PL/contacts.html
 %%X11%%share/xgnokii/help/pl_PL/dtmf.html
