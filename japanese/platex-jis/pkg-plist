@@ -52,6 +52,7 @@ share/texmf/tex/platex/base/plnews.cls
 share/texmf/tex/platex/base/plnews01.tex
 share/texmf/tex/platex/base/plnews02.tex
 share/texmf/tex/platex/base/plnews03.tex
+share/texmf/tex/platex/base/plnews04.tex
 share/texmf/tex/platex/base/plpatch.ltx
 share/texmf/tex/platex/base/plvers.dtx
 share/texmf/tex/platex/base/ptrace.sty
