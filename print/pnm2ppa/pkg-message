@@ -1,0 +1,21 @@
+To configure your printcap to print either ascii"
+or Postscript files, add the following lines to your"
+/etc/printcap file"
+
+	lp|ascii|unix:\\"
+	        :lp=/dev/lpt0:\\"
+	        :sd=/var/spool/lpd:\\"
+	        :if=/usr/local/bin/asciippafilter:\\"
+	        :mx#0:\\"
+	        :sh:"
+
+	ps:\\"
+	        :lp=/dev/lpt0:\\"
+	        :sd=/var/spool/ps:\\"
+	        :if=/usr/local/bin/ppafilter:\\"
+	        :mx#0:\\"
+	        :sh:"
+
+Please be sure that you install the proper flavor of"
+enscript, either A4 or Letter, by setting the PAPERSIZE"
+environment variable."

@@ -1,11 +1,11 @@
---- pbm2ppa.c.orig	Mon Apr  6 23:20:07 1998
-+++ pbm2ppa.c	Tue Sep 22 22:37:45 1998
-@@ -268,7 +268,7 @@
-   exit(1);
- }
- 
--char* defaultcfgfile="/etc/pbm2ppa.conf";
-+char* defaultcfgfile=PPA_CONF;
- int main (int argc, char *argv[])
- {
-   int argn;
+--- pnm2ppa.c.orig	Sun Nov 12 04:53:03 2000
++++ pnm2ppa.c	Tue Jan 30 21:27:52 2001
+@@ -279,7 +279,7 @@
+     printf
+       ("  The order in which parameters are specified is important:\n");
+     printf
+-      ("  the file /etc/pnm2ppa.conf, if it exists, is processed as a configuration\n");
++      ("  the file " CONFDIR "/pnm2ppa.conf, if it exists, is processed as a configuration\n");
+     printf 
+       ("  file before any command-line parameters are processed.\n");
+     printf 
