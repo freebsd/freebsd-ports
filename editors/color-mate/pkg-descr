@@ -1,0 +1,23 @@
+"Color-Mate" is color customizing module for emacs/mule/xemacs/"Mule for
+Win32"/Meadow(Emacs20 for win32).
+
+"Color-Mate" requires emacs19/mule2.3 or upper version of emacs.  And
+also requires hilit19.el(emacs/mule), font-lock.el(emacs/mule/xemacs),
+paren.el(emacs/mule/xemacs). Usually, these three files are install
+with emacs.  If you want to more, see
+${PREFIX}/share/doc/color-mate/README.color-mate.eng
+
+If you can use imput method(Wnn, Canna, Sj3, skk, leim, WindowsIME),
+"Color-Mate" is coloring imput method with "kanakan-sousor".  If you
+want to more, see
+${PREFIX}/share/doc/color-mate/README.kanakan-cursor.eng
+
+To use Color-Mate, put the next line into your ~/.emacs:
+
+        (require 'color-mate-startup)
+
+and the next file into ~/.Xdefaults
+
+/usr/local/share/emacs/site-lisp/color-mate/theme/SunnyDay.X
+
+WWW: http://www.netlab.is.tsukuba.ac.jp/~yokota/izumi/color-mate/
