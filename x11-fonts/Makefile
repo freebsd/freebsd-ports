@@ -14,6 +14,7 @@
     SUBDIR += freefonts
     SUBDIR += geminifonts
     SUBDIR += getbdf
+    SUBDIR += gfe
     SUBDIR += intlfonts
     SUBDIR += jmk-x11-fonts
     SUBDIR += mkfontalias
