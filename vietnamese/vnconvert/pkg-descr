@@ -1,5 +1,5 @@
-VNconvert is similar to the VPS "convert" for DOS, and in fact, is based on
-the coding table provided by Vietnamese Professional Society (VPS).
+VNconvert is similar to the VPS "convert" for MS-DOS, and in fact, is based
+on the coding table provided by Vietnamese Professional Society (VPS).
 
 VNconvert converts Vietnamese text files between the following formats :
 VISCII, VNCII (VPSWin), VPSedit (DOS), VNI, VNLab/VNU, VNU (Windows),
