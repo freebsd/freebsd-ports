@@ -28,6 +28,7 @@
 name="apache2"
 rcvar=`set_rcvar`
 
+start_precmd="apache2_precmd"
 command="%%PREFIX%%/sbin/httpd"
 pidfile="/var/run/httpd.pid"
 required_files=%%PREFIX%%/etc/apache2/httpd.conf
@@ -43,8 +44,20 @@ load_rc_config $name
 checkyesno apache2ssl_enable && \
 			apache2_flags="-DSSL $apache2_flags"
 
-checkyesno apache2limits_enable && \
-			start_precmd="eval `/usr/bin/limits ${apache2limits_args}` 2>/dev/null"
+apache2_precmd() 
+{
+	if test -f %%PREFIX%%/sbin/envvars
+	then
+		. %%PREFIX%%/sbin/envvars
+	fi
+	if checkyesno apache2limits_enable
+	then
+		eval `/usr/bin/limits ${apache2limits_args}` 2>/dev/null
+	else
+		return 0
+        fi
+
+}
 
 sig_reload=SIGUSR1
 

@@ -172,9 +172,6 @@ pre-everything::
 post-extract:
 	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/powerlogo.gif ${WRKSRC}/docs/icons/freebsd.gif
 
-pre-configure:
-	@cd ${WRKSRC}; ${SETENV} ${SCRIPTS_ENV} ./buildconf
-
 post-patch:
 	@cd ${WRKSRC}/docs/docroot && \
 	 for f in index.html.*; do (\
@@ -190,10 +187,19 @@ post-patch:
 			${WRKSRC}/server/core.c
 	@${INSTALL_DATA} ${WRKSRC}/NOTICE ${WRKSRC}/docs/manual
 
+pre-configure:
+	@cd ${WRKSRC}; ${SETENV} ${SCRIPTS_ENV} ./buildconf
+
+post-configure:
+	@FTPUSERS=`${EGREP} -v '^#' /etc/ftpusers| ${TR} -s "\n" " "` ;\
+	${REINPLACE_CMD} -e "s,%%FTPUSERS%%,$$FTPUSERS," \
+			${WRKSRC}/docs/conf/httpd-std.conf
+
 pre-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
+	@${MKDIR} ${PREFIX}/etc/apache2/Includes
 	@if [ ! -f ${PREFIX}/etc/rc.d/apache2.sh ]; then \
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/apache2.sh startup file."; \
 		${INSTALL_SCRIPT} -m 751 ${WRKDIR}/apache2.sh ${PREFIX}/etc/rc.d/apache2.sh; \
