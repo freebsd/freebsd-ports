@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gringotts
-PORTVERSION=	1.2.2
-PORTREVISION=	1
+PORTVERSION=	1.2.3
 CATEGORIES=	security
 MASTER_SITES=	http://devel.pluto.linux.it/projects/Gringotts/current/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
@@ -37,8 +36,7 @@ PLIST_SUB+=	GNOMEHIER='@comment '
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e "s|mlock|mlockall|g" ${WRKSRC}/configure
-	${REINPLACE_CMD} -E -e "s|^(gringottsdocdir =).*|gringottsdocdir = $$\(datadir\)/doc/gringotts|;s|md5sum|md5|g" ${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -E -e "s|^(gringottsdocdir =).*|\1 $$\(datadir\)/doc/gringotts|;s|md5sum|md5|g" ${WRKSRC}/Makefile.in
 .if defined(NOPORTDOCS)
 	${REINPLACE_CMD} -E -e "s|^(install-data-am:.*)install-gringottsdocDATA|\1|" ${WRKSRC}/Makefile.in
 .endif
