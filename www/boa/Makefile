@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	boa
-PORTVERSION=	0.94.12.r5
-CATEGORIES=	www
+PORTVERSION=	0.94.12
+PORTEPOCH=	1
+CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.boa.org/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
 
 MAINTAINER=	sysadmin@alexdupre.com
 
