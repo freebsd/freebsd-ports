@@ -7,7 +7,7 @@
 
 PORTNAME=	mailman
 PORTVERSION=	2.1.4
-CATEGORIES=	mail
+CATEGORIES?=	mail
 MASTER_SITES=	http://www.list.org/ \
 		${MASTER_SITE_GNU} \
 		${MASTER_SITE_SOURCEFORGE}
@@ -21,15 +21,15 @@ DIST_SUBDIR=	mailman
 .if defined(WITH_HTDIG)
 # see http://www.openinfo.co.uk/mailman/index.html
 # Order of application of these patches is critical.
-PATCHFILES=	indexing-2.1.4-0.1.patch.gz:patch1 \
+PATCHFILES+=	indexing-2.1.4-0.1.patch.gz:patch1 \
 		htdig-2.1.4-0.1.patch.gz:patch2
 PATCH_DIST_STRIP=	-p1
-PATCH_SITES=	http://www.openinfo.co.uk/mailman/patches/444879/:patch1 \
+PATCH_SITES+=	http://www.openinfo.co.uk/mailman/patches/444879/:patch1 \
 		http://www.openinfo.co.uk/mailman/patches/444884/:patch2
 .endif
 
-MAINTAINER=	vivek@khera.org
-COMMENT=	A mailing list manager (MLM) with a user-friendly web front-end
+MAINTAINER?=	vivek@khera.org
+COMMENT?=	A mailing list manager (MLM) with a user-friendly web front-end
 
 RUN_DEPENDS=	lynx:${PORTSDIR}/www/lynx
 .if defined(WITH_CHINESE)
@@ -106,13 +106,13 @@ post-patch:
 	@ ${REINPLACE_CMD} -e 's#%%LOCALBASE%%#${LOCALBASE}#g' \
 	  ${WRKSRC}/Mailman/Defaults.py.in
 
-pre-configure:
+pre-configure::
 # Mailman's configure script needs the "mailman" user/group to exist, so
 # $PKGINSTALL has to be patched before the do-configure target executes.
 	@ ${SED} \
 	  -e 's#%%USER%%#${MM_USERNAME}#g' -e 's#%%UID%%#${MM_USERID}#g' \
 	  -e 's#%%GROUP%%#${MM_GROUPNAME}#g' -e 's#%%GID%%#${MM_GROUPID}#g' \
-	  -e 's#%%MAILMANDIR%%#${MAILMANDIR}#g' pkg-install > \
+	  -e 's#%%MAILMANDIR%%#${MAILMANDIR}#g' ${MASTERDIR}/pkg-install > \
 	  ${PKGINSTALL}
 	@ ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
@@ -120,10 +120,10 @@ post-configure:
 	@ ${SED} \
 	  -e 's#%%USER%%#${MM_USERNAME}#g' -e 's#%%GROUP%%#${MM_GROUPNAME}#g' \
 	  -e 's#%%PREFIX%%#${PREFIX}#g' -e 's#%%MAILMANDIR%%#${MAILMANDIR}#g' \
-	  pkg-deinstall > ${PKGDEINSTALL}
+	  ${MASTERDIR}/pkg-deinstall > ${PKGDEINSTALL}
 	@ ${SED} -e 's#%%MAILMANDIR%%#${MAILMANDIR}#g' \
 	  -e 's#%%DOCSDIR%%#${DOCSDIR}#g' -e 's#%%LOCALBASE%%#${LOCALBASE}#g' \
-	  pkg-message > ${PKGMESSAGE}
+	  ${MASTERDIR}/pkg-message > ${PKGMESSAGE}
 
 pre-install:
 	@ ${SH} ${PKGREQ} INSTALL
