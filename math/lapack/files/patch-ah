@@ -1,0 +1,24 @@
+--- SRC/ilaenv.f~	Tue Jun 22 14:42:46 1999
++++ SRC/ilaenv.f	Tue Sep 21 20:37:20 1999
+@@ -524,8 +524,8 @@
+ *
+ *     ISPEC = 10: ieee NaN arithmetic can be trusted not to trap
+ *
+-C     ILAENV = 0
+-      ILAENV = 1
++      ILAENV = 0
++C      ILAENV = 1
+       IF( ILAENV.EQ.1 ) THEN
+          ILAENV = IEEECK( 0, 0.0, 1.0 ) 
+       END IF
+@@ -535,8 +535,8 @@
+ *
+ *     ISPEC = 11: infinity arithmetic can be trusted not to trap
+ *
+-C     ILAENV = 0
+-      ILAENV = 1
++      ILAENV = 0
++C     ILAENV = 1
+       IF( ILAENV.EQ.1 ) THEN
+          ILAENV = IEEECK( 1, 0.0, 1.0 ) 
+       END IF

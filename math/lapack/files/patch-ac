@@ -1,13 +1,15 @@
---- Makefile.orig	Tue Oct  4 16:42:15 1994
-+++ Makefile	Wed Feb 19 16:05:52 1997
-@@ -6,18 +6,19 @@
+--- Makefile.orig	Tue Jun 22 14:29:44 1999
++++ Makefile	Tue Sep 21 21:02:17 1999
+@@ -6,19 +6,20 @@
  
  include make.inc
  
 -all: install lib testing blas_testing timing blas_timing
-+all: install lib              # testing blas_testing timing blas_timing
++all: install lib # testing blas_testing timing blas_timing
  
- lib: blaslib lapacklib tmglib
+-lib: lapacklib tmglib
++lib: lapacklib blaslib
+ #lib: blaslib lapacklib tmglib
  
  clean: cleanlib cleantesting cleantiming
  

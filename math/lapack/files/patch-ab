@@ -1,30 +1,21 @@
-*** INSTALL/Makefile~	Fri Sep 23 18:10:06 1994
---- INSTALL/Makefile	Mon Jul  3 00:49:05 1995
-***************
-*** 11,21 ****
-  testdlamch: dlamch.o lsame.o dlamchtst.o
-  	$(LOADER) -o testdlamch dlamch.o lsame.o dlamchtst.o
-  
-! testsecond: second.o secondtst.o
-! 	$(LOADER) -o testsecond second.o secondtst.o
-  
-! testdsecnd: dsecnd.o dsecndtst.o
-! 	$(LOADER) -o testdsecnd dsecnd.o dsecndtst.o
-  
-  slamch.o: slamch.f ; $(FORTRAN) $(NOOPT) -c $<
-  dlamch.o: dlamch.f ; $(FORTRAN) $(NOOPT) -c $<
---- 11,21 ----
-  testdlamch: dlamch.o lsame.o dlamchtst.o
-  	$(LOADER) -o testdlamch dlamch.o lsame.o dlamchtst.o
-  
-! testsecond: second.o secondtst.o etime_.o
-! 	$(LOADER) -o testsecond second.o secondtst.o etime_.o
-  
-! testdsecnd: dsecnd.o dsecndtst.o etime_.o
-! 	$(LOADER) -o testdsecnd dsecnd.o dsecndtst.o etime_.o
-  
-  slamch.o: slamch.f ; $(FORTRAN) $(NOOPT) -c $<
-  dlamch.o: dlamch.f ; $(FORTRAN) $(NOOPT) -c $<
+--- INSTALL/Makefile~	Mon Mar  1 21:53:16 1999
++++ INSTALL/Makefile	Tue Sep 21 17:55:59 1999
+@@ -11,11 +11,11 @@
+ testdlamch: dlamch.o lsame.o dlamchtst.o
+ 	$(LOADER) $(LOADOPTS) -o testdlamch dlamch.o lsame.o dlamchtst.o
+ 
+-testsecond: second.o secondtst.o
+-	$(LOADER) $(LOADOPTS) -o testsecond second.o secondtst.o
++testsecond: second.o secondtst.o etime_.o
++	$(LOADER) $(LOADOPTS) -o testsecond second.o secondtst.o etime_.o
+ 
+-testdsecnd: dsecnd.o dsecndtst.o
+-	$(LOADER) $(LOADOPTS) -o testdsecnd dsecnd.o dsecndtst.o
++testdsecnd: dsecnd.o dsecndtst.o etime_.o
++	$(LOADER) $(LOADOPTS) -o testdsecnd dsecnd.o dsecndtst.o etime_.o
+ 
+ testieee: tstiee.o
+ 	$(LOADER) $(LOADOPTS) -o testieee tstiee.o
 *** /dev/null	Sun Jul  2 04:00:02 1995
 --- INSTALL/etime_.c	Mon Jul  3 00:47:16 1995
 ***************

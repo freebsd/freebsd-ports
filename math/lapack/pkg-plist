@@ -3,6 +3,6 @@ lib/libblas.so
 lib/libblas.so.2
 lib/liblapack.a
 lib/liblapack.so
-lib/liblapack.so.2
+lib/liblapack.so.3
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
