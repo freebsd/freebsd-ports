@@ -16,13 +16,13 @@ MAINTAINER=	anders@FreeBSD.org
 COMMENT=	GTK application to securely store sensitive data
 
 LIB_DEPENDS=	gringotts.2:${PORTSDIR}/security/libgringotts \
-		gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20 \
 		popt.0:${PORTSDIR}/devel/popt
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
+USE_GNOME=	gtk20
 WANT_GNOME=	yes
 CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib" CPPFLAGS="-I${LOCALBASE}/include"
 CONFIGURE_ARGS+=	--disable-env-check
