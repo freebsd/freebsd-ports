@@ -24,6 +24,7 @@
     SUBDIR += clig
     SUBDIR += codecrusader
     SUBDIR += cons
+    SUBDIR += cook
     SUBDIR += crossgo32
     SUBDIR += crossgo32-djgpp2
     SUBDIR += crossgo32-djgpp2-pdcurses
