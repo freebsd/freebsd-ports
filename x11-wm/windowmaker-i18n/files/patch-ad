@@ -1,31 +1,13 @@
---- configure.orig	Sun Jan 10 10:55:54 1999
-+++ configure	Mon Jan 11 09:36:16 1999
-@@ -2214,7 +2214,7 @@
-   echo $ac_n "(cached) $ac_c" 1>&6
- else
-   ac_save_LIBS="$LIBS"
--LIBS="-lintl  $LIBS"
-+LIBS="-L${LOCALBASE}/lib -lintl  $LIBS"
- cat > conftest.$ac_ext <<EOF
- #line 2220 "configure"
- #include "confdefs.h"
-@@ -2314,8 +2314,8 @@
+--- configure.orig	Wed Feb  3 13:05:41 1999
++++ configure	Wed Feb  3 13:05:58 1999
+@@ -2860,8 +2860,8 @@
  
  
  
--supported_locales="cs de es fr gl it ja ko nl no pt ru se tr fi hr el pl ro"
+-supported_locales="cs de es fr gl it ja ko nl no pt ru se tr fi hr el pl ro dk"
 -supported_wprefs_locales="pt hr fr ko ja cs"
-+supported_locales="cs de es fr gl it ja_JP.EUC ko nl no pt ru se tr fi hr el pl ro"
++supported_locales="cs de es fr gl it ja_JP.EUC ko nl no pt ru se tr fi hr el pl ro dk"
 +supported_wprefs_locales="pt hr fr ko ja_JP.EUC cs"
  
  for lang in $LINGUAS; do
  	ok=0
-@@ -4356,7 +4356,7 @@
- #include "confdefs.h"
- #include <$ac_hdr>
- EOF
--ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
-+ac_try="$ac_cpp -I${LOCALBASE}/include conftest.$ac_ext >/dev/null 2>conftest.out"
- { (eval echo configure:4361: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
- ac_err=`grep -v '^ *+' conftest.out`
- if test -z "$ac_err"; then
