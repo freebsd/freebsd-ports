@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	icc
-PORTVERSION=	8.0.058
+PORTVERSION=	8.0.058.p059
 CATEGORIES=	lang linux devel
 MASTER_SITES=
 DISTNAME=	l_cc_pc_${PORTVERSION:C/\.p.+$//}
@@ -31,6 +31,7 @@ CONFLICTS=		linux_devtools*
 
 USE_LINUX=		yes
 USE_REINPLACE=		yes
+USE_SIZE=		yes
 NO_FILTER_SHLIBS=	yes
 
 COMPILERDIR=	intel_cc_80
@@ -52,9 +53,6 @@ EXTRACT_AFTER_ARGS=	| tar -xf - \
 			--exclude flexlm64
 
 ICCCFGVAL!=	${UNAME} -r | ${SED} -e 's/\..*//'
-
-BRANDELF?=	/usr/bin/brandelf
-OBJCOPY?=	/usr/bin/objcopy
 
 .for file in ${DISTFILES}
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/${file})
@@ -93,7 +91,7 @@ pre-patch: intel-patch
 # Remove unneeded/unsafe access rights.
 .for i in doc include lib
 	@${FIND} ${WRKSRC}/opt/${COMPILERDIR}/${i} -type f -print0 | \
-		${XARGS} -0 ${CHMOD} a-x,g-w
+		${XARGS} -0 ${CHMOD} a-x,og-w
 .endfor
 	@${FIND} ${WRKSRC}/opt -type d -print0 | ${XARGS} -0 ${CHMOD} go-w
 	@${CHMOD} a-x ${WRKSRC}/opt/${COMPILERDIR}/bin/Errormatch.txt
