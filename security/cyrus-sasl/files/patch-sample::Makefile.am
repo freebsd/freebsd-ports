@@ -1,0 +1,12 @@
+--- sample/Makefile.am.orig	Tue Jan 22 21:00:24 2002
++++ sample/Makefile.am	Tue Jan 22 21:01:02 2002
+@@ -54,7 +54,9 @@
+ client_SOURCES = client.c common.c common.h
+ 
+ server_LDADD = ../lib/libsasl.la $(LIB_SOCKET)
++server_LDFLAGS = $(GSSAPIBASE_LIBS)
+ client_LDADD = ../lib/libsasl.la $(LIB_SOCKET)
++client_LDFLAGS = $(GSSAPIBASE_LIBS)
+ 
+ sample_client_LDADD = ../lib/libsasl.la $(LIB_SOCKET)
+ sample_server_LDADD = ../lib/libsasl.la $(LIB_SOCKET)

@@ -1,0 +1,16 @@
+--- utils//Makefile.am.orig	Tue Jan 22 21:03:43 2002
++++ utils//Makefile.am	Tue Jan 22 21:02:49 2002
+@@ -45,10 +45,13 @@
+ sbin_PROGRAMS = saslpasswd sasldblistusers
+ man_MANS = saslpasswd.8 sasldblistusers.8
+ saslpasswd_LDADD = ../lib/libsasl.la
++saslpasswd_LDFLAGS = $(GSSAPIBASE_LIBS)
+ sasldblistusers_LDADD = $(SASL_DB_LIB)
++sasldblistusers_LDFLAGS = $(GSSAPIBASE_LIBS)
+ 
+ noinst_PROGRAMS = dbconverter-1.5.9
+ dbconverter_1_5_9_LDADD = ../lib/libsasl.la $(SASL_DB_LIB)
++dbconverter_1_5_9_LDFLAGS = $(GSSAPIBASE_LIBS)
+ 
+ EXTRA_PROGRAMS = testsuite
+ testsuite_LDADD = ../lib/libsasl.la $(SASL_DB_LIB) $(LIB_SOCKET)
