@@ -1,9 +1,11 @@
+bin/otcldoc
 bin/tcl2c++
 include/Tcl.h
 include/idlecallback.h
 include/iohandler.h
 include/rate-variable.h
 include/tclcl-config.h
+include/tclcl-internal.h
 include/tclcl-mappings.h
 include/tclcl.h
 include/timer.h
