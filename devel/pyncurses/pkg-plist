@@ -1,0 +1,15 @@
+lib/%%PYTHON_VERSION%%/site-packages/ncurses/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/ncurses/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/ncurses/_curses.so
+lib/%%PYTHON_VERSION%%/site-packages/ncurses/_form.so
+lib/%%PYTHON_VERSION%%/site-packages/ncurses/_menu.so
+lib/%%PYTHON_VERSION%%/site-packages/ncurses/_panel.so
+lib/%%PYTHON_VERSION%%/site-packages/ncurses/curses.py
+lib/%%PYTHON_VERSION%%/site-packages/ncurses/curses.pyc
+lib/%%PYTHON_VERSION%%/site-packages/ncurses/form.py
+lib/%%PYTHON_VERSION%%/site-packages/ncurses/form.pyc
+lib/%%PYTHON_VERSION%%/site-packages/ncurses/menu.py
+lib/%%PYTHON_VERSION%%/site-packages/ncurses/menu.pyc
+lib/%%PYTHON_VERSION%%/site-packages/ncurses/panel.py
+lib/%%PYTHON_VERSION%%/site-packages/ncurses/panel.pyc
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/ncurses

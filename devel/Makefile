@@ -351,6 +351,7 @@
     SUBDIR += py-mxStack
     SUBDIR += py-mxTools
     SUBDIR += qtarch
+    SUBDIR += pyncurses
     SUBDIR += qt-designer
     SUBDIR += qtez
     SUBDIR += qtk
