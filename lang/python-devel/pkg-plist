@@ -464,19 +464,32 @@ lib/python1.5/pickle.pyo
 lib/python1.5/pipes.py
 lib/python1.5/pipes.pyc
 lib/python1.5/pipes.pyo
-lib/python1.5/plat-freebsd/FCNTL.py
-lib/python1.5/plat-freebsd/FCNTL.pyc
-lib/python1.5/plat-freebsd/FCNTL.pyo
-lib/python1.5/plat-freebsd/IN.py
-lib/python1.5/plat-freebsd/IN.pyc
-lib/python1.5/plat-freebsd/IN.pyo
-lib/python1.5/plat-freebsd/SOCKET.py
-lib/python1.5/plat-freebsd/SOCKET.pyc
-lib/python1.5/plat-freebsd/SOCKET.pyo
-lib/python1.5/plat-freebsd/TERMIOS.py
-lib/python1.5/plat-freebsd/TERMIOS.pyc
-lib/python1.5/plat-freebsd/TERMIOS.pyo
-lib/python1.5/plat-freebsd/regen
+lib/python1.5/plat-freebsd2/FCNTL.py
+lib/python1.5/plat-freebsd2/FCNTL.pyc
+lib/python1.5/plat-freebsd2/FCNTL.pyo
+lib/python1.5/plat-freebsd2/IN.py
+lib/python1.5/plat-freebsd2/IN.pyc
+lib/python1.5/plat-freebsd2/IN.pyo
+lib/python1.5/plat-freebsd2/SOCKET.py
+lib/python1.5/plat-freebsd2/SOCKET.pyc
+lib/python1.5/plat-freebsd2/SOCKET.pyo
+lib/python1.5/plat-freebsd2/TERMIOS.py
+lib/python1.5/plat-freebsd2/TERMIOS.pyc
+lib/python1.5/plat-freebsd2/TERMIOS.pyo
+lib/python1.5/plat-freebsd2/regen
+lib/python1.5/plat-freebsd3/FCNTL.py
+lib/python1.5/plat-freebsd3/FCNTL.pyc
+lib/python1.5/plat-freebsd3/FCNTL.pyo
+lib/python1.5/plat-freebsd3/IN.py
+lib/python1.5/plat-freebsd3/IN.pyc
+lib/python1.5/plat-freebsd3/IN.pyo
+lib/python1.5/plat-freebsd3/SOCKET.py
+lib/python1.5/plat-freebsd3/SOCKET.pyc
+lib/python1.5/plat-freebsd3/SOCKET.pyo
+lib/python1.5/plat-freebsd3/TERMIOS.py
+lib/python1.5/plat-freebsd3/TERMIOS.pyc
+lib/python1.5/plat-freebsd3/TERMIOS.pyo
+lib/python1.5/plat-freebsd3/regen
 lib/python1.5/poly.py
 lib/python1.5/poly.pyc
 lib/python1.5/poly.pyo
@@ -890,7 +903,8 @@ lib/python1.5/zmod.pyo
 man/man1/python.1.gz
 @dirrm lib/python1.5/test/output
 @dirrm lib/python1.5/test
-@dirrm lib/python1.5/plat-freebsd
+@dirrm lib/python1.5/plat-freebsd2
+@dirrm lib/python1.5/plat-freebsd3
 @dirrm lib/python1.5/lib-tk
 @dirrm lib/python1.5/lib-stdwin
 @dirrm lib/python1.5/lib-dynload
