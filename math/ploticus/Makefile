@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	ploticus
-PORTVERSION=	2.02
+PORTVERSION=	2.03
 CATEGORIES=	math
 MASTER_SITES=	http://ploticus.sourceforge.net/download/
 DISTNAME=	plsrc${PORTVERSION:S/.//}
@@ -24,21 +24,18 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src
 ALL_TARGET=	# empty
 MAKE_ENV=	LIBS="-L${LOCALBASE}/lib"
 
-MAN1=	pl.1 ploticus.1 plpng.1 pltab.1
+MAN1=	pl.1
 
 post-patch:
 	@${PERL} -pi -e "s,%%X11BASE%%,${X11BASE},g ; \
-		s,%%LOCALBASE%%,${LOCALBASE},g" ${WRKSRC}/Makefile
+		s,%%LOCALBASE%%,${LOCALBASE},g ; \
+		s,^CC,#CC,g" ${WRKSRC}/Makefile
 
 do-install:
-.for file in pl pltab
-	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${PREFIX}/bin
-.endfor
+	${INSTALL_PROGRAM} ${WRKSRC}/pl ${PREFIX}/bin
 	@${MKDIR} ${DATADIR}
 	${CP} ${WRKSRC}/../prefabs/* ${DATADIR}
-.for file in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/../man/man1/${file} ${MAN1PREFIX}/man/man1
-.endfor
+	${INSTALL_MAN} ${WRKSRC}/../man/man1/${MAN1} ${MAN1PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${CP} -R ${WRKSRC}/../doc/* ${DOCSDIR}

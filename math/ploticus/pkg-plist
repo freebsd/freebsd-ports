@@ -1,5 +1,4 @@
 bin/pl
-bin/pltab
 share/ploticus/README
 share/ploticus/chron.pl
 share/ploticus/chunk_area
@@ -33,7 +32,6 @@ share/ploticus/vbars.pl
 %%PORTDOCS%%share/doc/ploticus/autorange.html
 %%PORTDOCS%%share/doc/ploticus/axis.html
 %%PORTDOCS%%share/doc/ploticus/bars.html
-%%PORTDOCS%%share/doc/ploticus/bevelrect.html
 %%PORTDOCS%%share/doc/ploticus/breakaxis.html
 %%PORTDOCS%%share/doc/ploticus/catslide.html
 %%PORTDOCS%%share/doc/ploticus/cgi.html
@@ -48,7 +46,6 @@ share/ploticus/vbars.pl
 %%PORTDOCS%%share/doc/ploticus/curvefit.html
 %%PORTDOCS%%share/doc/ploticus/dataformat.html
 %%PORTDOCS%%share/doc/ploticus/dates.html
-%%PORTDOCS%%share/doc/ploticus/datesettings.html
 %%PORTDOCS%%share/doc/ploticus/defineunits.html
 %%PORTDOCS%%share/doc/ploticus/drawcommands.html
 %%PORTDOCS%%share/doc/ploticus/endproc.html
@@ -98,9 +95,11 @@ share/ploticus/vbars.pl
 %%PORTDOCS%%share/doc/ploticus/processdata.html
 %%PORTDOCS%%share/doc/ploticus/rangebar.html
 %%PORTDOCS%%share/doc/ploticus/rangesweep.html
+%%PORTDOCS%%share/doc/ploticus/rect.html
 %%PORTDOCS%%share/doc/ploticus/scaleunits.html
 %%PORTDOCS%%share/doc/ploticus/scatterplot.html
 %%PORTDOCS%%share/doc/ploticus/scripts.html
+%%PORTDOCS%%share/doc/ploticus/settings.html
 %%PORTDOCS%%share/doc/ploticus/shell.html
 %%PORTDOCS%%share/doc/ploticus/slides.html
 %%PORTDOCS%%share/doc/ploticus/specialchars.html
