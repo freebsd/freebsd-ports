@@ -1,7 +1,7 @@
---- Makefile~	Wed Jun  6 12:07:35 2001
-+++ Makefile	Sun Jul  8 03:48:21 2001
-@@ -504,16 +504,16 @@
- # ${LIBDIR}		where *.a files are installed
+--- Makefile.orig	Wed Oct 16 12:23:06 2002
++++ Makefile	Wed Oct 16 12:26:59 2002
+@@ -510,16 +510,16 @@
+ #	LIBDIR= /usr/lib
  #
  #BINDIR= /usr/local/bin
 -BINDIR= /usr/bin
@@ -21,7 +21,7 @@
  
  # By default, these values are based on the above 4 values
  # --------------------------------------------------------
-@@ -540,7 +540,7 @@
+@@ -576,7 +576,7 @@
  #MANDIR=
  #MANDIR= /usr/local/man/man1
  #MANDIR= /usr/man/man1
@@ -30,7 +30,7 @@
  #MANDIR= /usr/man/u_man/man1
  #MANDIR= /usr/contrib/man/man1
  
-@@ -633,8 +633,8 @@
+@@ -669,8 +669,8 @@
  #
  # If in doubt, set USE_READLINE, READLINE_LIB and READLINE_INCLUDE to nothing.
  #
@@ -41,21 +41,21 @@
  #
  #READLINE_LIB=
  READLINE_LIB= -lreadline -lhistory -lncurses
-@@ -729,6 +729,7 @@
+@@ -765,6 +765,7 @@
  #
  MAKE_FILE= Makefile
  #MAKE_FILE=
-+MANDIR= ${PREFIX}/man/man1
++MANDIR=	${PREFIX}/man/man1
  
  # If you do not wish to use purify, leave PURIFY commented out.
  #
-@@ -813,13 +814,13 @@
+@@ -849,13 +850,13 @@
  CCOPT= ${DEBUG} ${NO_SHARED}
  CCMISC=
  #
--CFLAGS= -DSRC ${CCWARN} ${CCOPT} ${CCMISC}
--ICFLAGS= -DSRC ${CCWARN} ${CCMISC}
-+CFLAGS+= -DSRC
+-CFLAGS= -DCALC_SRC ${CCWARN} ${CCOPT} ${CCMISC}
+-ICFLAGS= -DCALC_SRC ${CCWARN} ${CCMISC}
++CFLAGS+= -DCALC_SRC
 +ICFLAGS= ${CFLAGS}
  #
  LDFLAGS= ${NO_SHARED} ${LD_NO_SHARED}
