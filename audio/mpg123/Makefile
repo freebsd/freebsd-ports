@@ -25,6 +25,12 @@ MAINTAINER=	sobomax@freebsd.org
 
 WANT_ESOUND=	yes
 
+.if defined(WITH_NAS)
+HAVE_NAS=	yes
+LIB_DEPENDS=	audio.1:${PORTSDIR}/audio/nas
+MAKE_ENV+=	HAVE_NAS=${HAVE_NAS}
+.endif
+
 MAN1=		mpg123.1
 
 .include <bsd.port.pre.mk>
@@ -36,22 +42,32 @@ MAKE_ENV+=	USE_INET6=yes
 .if defined(HAVE_ESOUND)
 USE_ESOUND=	yes
 ALL_TARGET=	freebsd-esd
+.elif defined(HAVE_NAS)
+PKGNAMESUFFIX=	-nas
+ALL_TARGET=	freebsd-nas
 .else
 ALL_TARGET=	freebsd
 .endif
 
-pre-configure:
+pre-fetch:
+.if !defined(WITH_NAS)
+	@${ECHO_MSG}
+	@${ECHO_MSG} "If you want to compile with NAS support,"
+	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_NAS=yes\""
+	@${ECHO_MSG}
+.endif
 .if ${MACHINE_ARCH} == "i386"
 .if !defined(OPT_ARCH) || ((${OPT_ARCH} != "i486") && (${OPT_ARCH} != "i586") \
     && (${OPT_ARCH} != "3dnow"))
-	@${ECHO_MSG} "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
-	@${ECHO_MSG} "Note: you can set OPT_ARCH to optimize for your hardware. (Eg:- make OPT_ARCH=i486)"
+	@${ECHO_MSG}
+	@${ECHO_MSG} "Note: you can set OPT_ARCH to optimize for your hardware"
+	@${ECHO_MSG} "(e.g. make OPT_ARCH=i486)."
 .if ${PORTOBJFORMAT} == "elf"
 	@${ECHO_MSG} "Valid values are: i486, i586, 3dnow"
 .else
 	@${ECHO_MSG} "Valid values are: i486"
 .endif
-	@${ECHO_MSG} "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+	@${ECHO_MSG}
 .endif
 .if ${PORTOBJFORMAT} == "elf"
 OPT_ARCH?=	i586
