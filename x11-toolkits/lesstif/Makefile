@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lesstif
-PORTVERSION=	0.93.96
+PORTVERSION=	0.93.97
 PORTEPOCH=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -24,9 +24,6 @@ INSTALLS_SHLIB=	yes
 USE_INC_LIBTOOL_VER=	13
 LIBTOOLFILES=	aclocal.m4 test/aclocal.m4
 CONFIGURE_ARGS+=	--enable-static --enable-shared --enable-production
-CONFIGURE_ARGS+=	--disable-build-Xlt --disable-build-Xbae
-CONFIGURE_ARGS+=	--enable-build-12 --disable-build-20
-CONFIGURE_ARGS+=	--enable-build-21 --enable-default-21
 CONFIGURE_ARGS+=	--disable-maintainer-mode
 
 MAN1 =	lesstif.1 ltversion.1 mwm.1 uil.1 xmbind.1
@@ -81,6 +78,12 @@ post-install:
 		${LOCALBASE}/share/aclocal
 	@${CAT} ${PKGMESSAGE}
 
-FORBIDDEN=	internal libXpm has security problems
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if ${OSVERSION} > 500000
+PLIST_SUB+=	FREEBSD5=""
+.else
+PLIST_SUB+=	FREEBSD5="@comment "
+.endif
+
+.include <bsd.port.post.mk>
