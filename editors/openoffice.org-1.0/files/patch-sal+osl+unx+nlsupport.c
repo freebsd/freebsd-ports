@@ -109,8 +109,8 @@
 +   { "ISO8859-5",	RTL_TEXTENCODING_ISO_8859_5	}, /* Cyrillic */
 +   { "ISO8859-7",	RTL_TEXTENCODING_ISO_8859_7	}, /* Greek */
 +   { "ISO8859-9",	RTL_TEXTENCODING_ISO_8859_9	}, /* Turkish */
-+   { "KOI-U",		RTL_TEXTENCODING_DONTKNOW	}, /* Not supported at the moment */
 +   { "KOI8-R",		RTL_TEXTENCODING_KOI8_R		}, /* KOI8 */
++   { "KOI8-U",		RTL_TEXTENCODING_KOI8_U		}, /* KOI8-U */
 +   { "SJIS",		RTL_TEXTENCODING_SHIFT_JIS	}, /* Japan */
 +   { "US-ASCII",	RTL_TEXTENCODING_ASCII_US	}, /* US-ASCII */
 +   { "UTF-8",		RTL_TEXTENCODING_UTF8		}  /* ISO-10646/UTF-8 */
@@ -137,8 +137,8 @@
 +   { "ISO8859-5",	RTL_TEXTENCODING_ISO_8859_5	}, /* Cyrillic */
 +   { "ISO8859-7",	RTL_TEXTENCODING_ISO_8859_7	}, /* Greek */
 +   { "ISO8859-9",	RTL_TEXTENCODING_ISO_8859_9	}, /* Turkish */
-+   { "KOI-U",		RTL_TEXTENCODING_DONTKNOW	}, /* Not supported at the moment */
 +   { "KOI8-R",		RTL_TEXTENCODING_KOI8_R		}, /* KOI8 */
++   { "KOI8-U",		RTL_TEXTENCODING_KOI8_U		}, /* KOI8-U */
 +   { "SJIS",		RTL_TEXTENCODING_SHIFT_JIS	}, /* Japan */
 +   { "US-ASCII",	RTL_TEXTENCODING_ASCII_US	}, /* US-ASCII */
 +   { "UTF-8",		RTL_TEXTENCODING_UTF8		}  /* ISO-10646/UTF-8 */
@@ -166,7 +166,15 @@
  
  /*
   * This implementation of osl_getTextEncodingFromLocale maps 
-@@ -887,6 +945,6 @@
+@@ -684,6 +742,7 @@
+     { "iso8859-8",    RTL_TEXTENCODING_ISO_8859_8  },
+     { "iso8859-9",    RTL_TEXTENCODING_ISO_8859_9  },
+     { "koi8-r",       RTL_TEXTENCODING_KOI8_R      },
++    { "koi8-u",       RTL_TEXTENCODING_KOI8_U      },
+     { "pck",          RTL_TEXTENCODING_MS_932      },
+ #if (0)
+     { "sun_eu_greek", RTL_TEXTENCODING_DONTKNOW    },
+@@ -887,6 +946,6 @@
      return 0;
  }
  
