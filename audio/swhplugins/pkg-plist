@@ -72,6 +72,7 @@ lib/ladspa/sc1_1425.so
 lib/ladspa/sc2_1426.so
 lib/ladspa/sc3_1427.so
 lib/ladspa/sc4_1882.so
+lib/ladspa/sc4m_1916.so
 lib/ladspa/se4_1883.so
 lib/ladspa/shaper_1187.so
 lib/ladspa/sifter_1210.so
