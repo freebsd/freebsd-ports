@@ -7,6 +7,7 @@
 
 PORTNAME=	libxslt
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.1
@@ -47,5 +48,11 @@ pre-everything::
 	@${ECHO_MSG} "	WITHOUT_PYTHON=yes		Turns off python support"
 	@${ECHO_MSG} "	WITH_MEM_DEBUG=yes		Turns on memory debugging"
 	@${ECHO_MSG} ""
+
+.if !defined(WITHOUT_PYTHON)
+post-install:
+	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -l ${PYTHON_SITELIBDIR}
+	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py -l ${PYTHON_SITELIBDIR}
+.endif
 
 .include <bsd.port.mk>
