@@ -3,7 +3,7 @@
 # Date created:         Sat July 20, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.4 1996/11/13 12:41:21 asami Exp $
+# $Id: Makefile,v 1.5 1997/06/20 12:41:32 tg Exp $
 #
 
 DISTNAME=	figlet22
@@ -12,7 +12,7 @@ CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.nicoh.com/pub/figlet/program/unix/  \
 		ftp://ftp.wwa.com/pub/Scarecrow/Figlet/Unix/
 
-MAINTAINER=     obrien@cs.ucdavis.edu
+MAINTAINER=     obrien@FreeBSD.org
 
 MAN6=		figlet.6
 
