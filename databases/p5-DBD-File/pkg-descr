@@ -1,0 +1,7 @@
+README FILE FOR MODULE DBD::File
+
+This module is currently not directly usable, rather it is a base subclass
+for modules like DBD::CSV and DBD::AnyData.
+See documentation for those modules.
+
+WWW: http://search.cpan.org/dist/DBD-File
