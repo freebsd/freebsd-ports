@@ -1,0 +1,17 @@
+@exec mkdir -p etc/dansguardian
+etc/dansguardian/dansguardian.conf
+etc/dansguardian/bannedphraselist
+etc/dansguardian/bannedextensionlist
+etc/dansguardian/bannedmimetypelist
+etc/dansguardian/bannedurllist
+etc/dansguardian/bannedregexpurllist
+etc/dansguardian/bannedsitelist
+etc/dansguardian/exceptionsitelist
+etc/dansguardian/exceptionuserlist
+etc/dansguardian/exceptioniplist
+etc/dansguardian/pics
+etc/dansguardian/logrotation
+sbin/dansguardian
+squid/logs/dansguardian.log
+www/cgi-bin/dansguardian.pl
+@dirrm etc/dansguardian

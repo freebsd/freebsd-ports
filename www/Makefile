@@ -50,6 +50,7 @@
     SUBDIR += comline
     SUBDIR += crawl
     SUBDIR += css-mode.el
+    SUBDIR += dansguardian
     SUBDIR += decss
     SUBDIR += demoroniser
     SUBDIR += dillo
