@@ -36,7 +36,6 @@ USE_GNOME=	yes
 .else
 	@${ECHO_MSG}	"Define WITH_GNOME to include GNOME support"
 .endif
-
 .if defined(WITH_DOCKAPP)
 CONFIGURE_ARGS+=	--enable-dockapp
 .else
