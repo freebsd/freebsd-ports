@@ -28,8 +28,14 @@ MAKE_ENV=	PREFIX=${PREFIX}
 
 ONLY_FOR_ARCHS=	i386
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"pengo.c doesn't compile on 4.10 (see ports/69509)"
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e "s, [$$]_mcpu,,g" ${WRKSRC}/detect-cpu
 	${REINPLACE_CMD} -e "s,sdl-config,${SDL_CONFIG},g" ${WRKSRC}/makefile
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
