@@ -3,7 +3,7 @@ bin/background-properties
 bin/batmon_applet
 bin/battery_applet
 bin/bell-properties
-bin/cdplay_applet
+bin/cdplayer_applet
 bin/charpick_applet
 bin/clockmail_applet
 bin/cpuload_applet
@@ -62,7 +62,7 @@ share/gnome/applets/Monitors/cpuload_applet.desktop
 share/gnome/applets/Monitors/cpumemusage_applet.desktop
 share/gnome/applets/Monitors/diskusage_applet.desktop
 share/gnome/applets/Multimedia/.directory
-share/gnome/applets/Multimedia/cdplay_applet.desktop
+share/gnome/applets/Multimedia/cdplayer_applet.desktop
 share/gnome/applets/Multimedia/mixer_applet.desktop
 share/gnome/applets/Network/.directory
 share/gnome/applets/Network/mailcheck_applet.desktop
