@@ -1,7 +1,7 @@
 include/png.h
 include/pngconf.h
 lib/libpng.a
-lib/libpng.so.2.1
 lib/libpng.so
+lib/libpng.so.3
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
