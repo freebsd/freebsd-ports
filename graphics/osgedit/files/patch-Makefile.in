@@ -1,6 +1,19 @@
---- Makefile.in.orig	Fri Jan 24 13:35:24 2003
-+++ Makefile.in	Fri Jan 24 13:35:53 2003
-@@ -380,10 +380,10 @@
+--- Makefile.in.orig	Wed Jul 16 02:27:40 2003
++++ Makefile.in	Sun Sep  7 03:04:13 2003
+@@ -88,10 +88,10 @@
+ 
+ 
+ icon_DATA = osgedit.png
+-icondir = $(DESTDIR)$(datadir)/pixmaps
++icondir = $(DESTDIR)$(datadir)/gnome/pixmaps
+ 
+ util_DATA = osgedit.desktop
+-utildir = $(DESTDIR)$(datadir)/applications
++utildir = $(DESTDIR)$(datadir)/gnome/applications
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = config.h
+@@ -425,10 +425,10 @@
  install-data-local:
  	@$(NORMAL_INSTALL)
  	if test -d $(srcdir)/pixmaps; then \
