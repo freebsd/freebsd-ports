@@ -1,0 +1,21 @@
+bin/inews
+etc/s-news/access.sample
+etc/s-news/active.sample
+etc/s-news/expire.sample
+etc/s-news/newsfeeds.sample
+etc/s-news/newsgroups.sample
+etc/s-news/overview.fmt.sample
+etc/s-news/put.news
+sbin/expire
+sbin/fetchnews
+sbin/listactive
+sbin/makehistory
+sbin/newfeed
+sbin/newgroup
+sbin/nntpd
+sbin/overview
+sbin/qnews
+sbin/rmfeed
+sbin/rmgroup
+sbin/rnews
+@dirrm etc/s-news
