@@ -18,6 +18,8 @@ DISTFILES=	${PORTNAME}-source-${PORTVERSION}${EXTRACT_SUFX} \
 
 MAINTAINER=	gnome@FreeBSD.org
 
+FORBIDDEN=	"malicious Web servers can upload files--see http://sec.greymagic.com/adv/gm001-ns/ or http://www.heise.de/ct/browsercheck/n6demo1.shtml "
+
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		freetype-config:${PORTSDIR}/print/freetype2
 LIB_DEPENDS=	ORBit.2:${PORTSDIR}/devel/ORBit \
