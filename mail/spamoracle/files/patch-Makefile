@@ -1,0 +1,11 @@
+--- Makefile.orig	Thu Mar 11 21:39:28 2004
++++ Makefile	Thu Mar 11 21:39:32 2004
+@@ -1,7 +1,7 @@
+ ### Configuration section
+ 
+ # The laguages you're interested in, besides English
+-LANGUAGES=-DFRENCH #-DSPANISH -DITALIAN -DGERMAN
++LANGUAGES=-DFRENCH -DSPANISH -DITALIAN -DGERMAN -DRUSSIAN
+ 
+ # How to invoke the C preprocessor
+ CPP=gcc -E -P $(LANGUAGES) -
