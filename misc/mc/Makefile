@@ -13,8 +13,7 @@ MASTER_SITE_SUBDIR=	stable/sources/mc
 
 MAINTAINER=	reg@FreeBSD.org
 
-LIB_DEPENDS=	glib12.3:${PORTSDIR}/devel/glib12 \
-		intl.1:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 .if defined(WITH_NCURSES_PORT)
 LIB_DEPENDS+=	ncurses.4:${PORTSDIR}/devel/ncurses
 .elif defined(WITH_SLANG)
@@ -23,9 +22,8 @@ BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 .endif
 
-GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
-
 USE_GMAKE=	yes
+USE_GLIB=	yes
 GNU_CONFIGURE=	yes
 .if defined(WITH_SLANG)
 CONFIGURE_ARGS=	--with-slang --without-gnome --with-edit
@@ -33,8 +31,6 @@ CONFIGURE_ARGS=	--with-slang --without-gnome --with-edit
 CONFIGURE_ARGS=	--with-ncurses --without-gnome --without-edit
 .endif
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		MAKE="gmake" \
-		GLIB_CONFIG="${GLIB_CONFIG}" \
 		LIBS="-L${LOCALBASE}/lib"
 
 MAN1=		midc.1

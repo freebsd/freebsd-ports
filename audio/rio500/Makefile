@@ -12,14 +12,10 @@ MASTER_SITES=   http://download.sourceforge.net/rio500/
 
 MAINTAINER=	k_nishizawa@anet.ne.jp
 
-LIB_DEPENDS=    glib12:${PORTSDIR}/devel/glib12
-
-GLIB_CONFIG=	${LOCALBASE}/bin/glib12-config
-
+USE_GLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-devicepath='/dev' \
 		--with-deviceentry='urio0' \
 		--with-id3support
-CONFIGURE_ENV=  GLIB_CONFIG="${GLIB_CONFIG}"
 
 .include <bsd.port.mk>

@@ -14,20 +14,16 @@ MASTER_SITE_SUBDIR=	stable/sources/ORBit
 
 MAINTAINER=	ade@FreeBSD.org
 
-LIB_DEPENDS=	glib12.3:${PORTSDIR}/devel/glib12 \
-		intl.1:${PORTSDIR}/devel/gettext
-
-GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 
 USE_GMAKE=	yes
+USE_GLIB=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 LIBTOOLFILES=	configure libIDL/configure popt/configure
-CONFIGURE_ENV=	GLIB_CONFIG="${GLIB_CONFIG}" \
-		CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-
 CONFIGURE_ARGS= --disable-indent
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
 
 post-install:
 	@${ECHO} "ORBIIOPIPv4=0" > ${PREFIX}/etc/orbitrc.default
