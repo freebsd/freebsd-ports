@@ -683,6 +683,7 @@
     SUBDIR += utftpd
     SUBDIR += v6eval
     SUBDIR += vchat
+    SUBDIR += verlihub
     SUBDIR += vicq
     SUBDIR += vls
     SUBDIR += vnc
