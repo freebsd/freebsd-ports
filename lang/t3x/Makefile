@@ -8,10 +8,10 @@
 PORTNAME=	t3x
 PORTVERSION=	8.1.5
 CATEGORIES=	lang devel
-MASTER_SITES=	http://t3x.dyndns.org/files/
+MASTER_SITES=	http://www.holm-und-jeschag.de/files/
 DISTNAME=	t3x-${PORTVERSION:S/.//g}
 
-MAINTAINER=	nmh@t3x.org
+MAINTAINER=	nils@holm-und-jeschag.de
 COMMENT=	A compiler for the minimum procedural language T3X
 
 ONLY_FOR_ARCHS=	i386
