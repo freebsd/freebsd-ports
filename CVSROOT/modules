@@ -6042,6 +6042,7 @@ orbital_eunuchs_sniper	ports/games/orbital_eunuchs_sniper
 orbitcpp	ports/devel/orbitcpp
 orca		ports/graphics/orca
 oregano		ports/cad/oregano
+orion		ports/x11-wm/orion
 oroborus	ports/x11-wm/oroborus
 ortep3		ports/biology/ortep3
 ortp		ports/net/ortp
@@ -9169,6 +9170,7 @@ scud		ports/comms/scud
 scummvm		ports/games/scummvm
 scummvm-tools	ports/games/scummvm-tools
 scwm-icons	ports/graphics/scwm-icons
+scx		ports/x11-toolkits/scx
 sdcc		ports/lang/sdcc
 sdd		ports/sysutils/sdd
 sdf		ports/textproc/sdf
