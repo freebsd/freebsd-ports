@@ -8,7 +8,13 @@ share/jpilot/DatebookDB.pdb
 share/jpilot/AddressDB.pdb
 share/jpilot/ToDoDB.pdb
 share/jpilot/MemoDB.pdb
-share/doc/jpilot/plugin.html
 lib/libplugin.a
+share/doc/jpilot/plugin.html
+share/locale/da/LC_MESSAGES/jpilot.mo
+share/locale/de/LC_MESSAGES/jpilot.mo
+share/locale/fr/LC_MESSAGES/jpilot.mo
+share/locale/ja/LC_MESSAGES/jpilot.mo
+share/locale/sv/LC_MESSAGES/jpilot.mo
 @dirrm share/jpilot
 @dirrm share/doc/jpilot
+@dirrm share/local

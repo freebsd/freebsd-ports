@@ -1,22 +1,19 @@
---- Makefile.in.orig	Sun Dec 12 13:23:05 1999
-+++ Makefile.in	Fri Dec 24 11:04:06 1999
-@@ -22,7 +22,7 @@
- GTKLIBS = @GTK_LIBS@
+--- Makefile.in.orig	Wed Mar  1 18:00:14 2000
++++ Makefile.in	Sat Mar  4 16:08:46 2000
+@@ -43,7 +43,7 @@
+ INTLLIBS = @INTLLIBS@
  
  # Targets
--all: jpilot
-+all: jpilot libplugin
+-all: po_dir intl_dir jpilot
++all: po_dir intl_dir jpilot libplugin
  
  jpilot: jpilot.o datebook.o address.o todo.o memo.o \
  	utils.o sync.o prefs.o log.o plugins.o \
-@@ -132,8 +132,10 @@
- 	./install-sh -c -m 755 -g bin -o bin empty/AddressDB.pdb $(prefix)/share/jpilot/
- 	./install-sh -c -m 755 -g bin -o bin empty/ToDoDB.pdb $(prefix)/share/jpilot/
- 	./install-sh -c -m 755 -g bin -o bin empty/MemoDB.pdb $(prefix)/share/jpilot/
+@@ -192,6 +192,7 @@
+ 	./install-sh -c -m 755 empty/AddressDB.pdb $(prefix)/share/jpilot/
+ 	./install-sh -c -m 755 empty/ToDoDB.pdb $(prefix)/share/jpilot/
+ 	./install-sh -c -m 755 empty/MemoDB.pdb $(prefix)/share/jpilot/
 +	./install-sh -c -m 644 libplugin.a $(prefix)/lib/
+ 	cd intl; make install
+ 	cd po; make install
  
- uninstall:
- 	rm $(prefix)/share/jpilot/*
- 	rm $(prefix)/bin/jpilot
- 	rm $(prefix)/jpilot
-+	rm $(prefix)/lib/libplugin.a

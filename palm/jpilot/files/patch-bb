@@ -1,11 +1,11 @@
---- configure.orig	Wed Nov 10 09:59:25 1999
-+++ configure	Fri Dec 24 10:58:01 1999
-@@ -951,7 +951,7 @@
+--- configure.orig	Sat Mar  4 16:10:48 2000
++++ configure	Sat Mar  4 16:10:54 2000
+@@ -3779,7 +3779,7 @@
        echo $ac_n "checking for dlopen""... $ac_c" 1>&6
- echo "configure:953: checking for dlopen" >&5
+ echo "configure:3781: checking for dlopen" >&5
     save_LIBS="$LIBS"
 -   LIBS="$LIBS -ldl"
 +   LIBS="$LIBS"
     cat > conftest.$ac_ext <<EOF
- #line 957 "configure"
+ #line 3785 "configure"
  #include "confdefs.h"
