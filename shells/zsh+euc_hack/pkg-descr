@@ -1,0 +1,23 @@
+This is Zsh with EUC encoding support.
+
+The patches are mostly based on the work by ono@ono.org (Thanks!):
+
+WWW:	http://www.ono.org/software/zsh-euc/
+
+What I did over this is disable the hack for non-EUC locales.  Maybe
+the patches can be moved to shells/zsh in the future, but it's
+premature for the moment.
+
+Notes:
+- forward-char, backward-char and backward-delete-char with no numeric
+  argument should work properly with this hack.
+- Completion and redisplay should work fine.
+- There can be some trivial side-effects if a line includes EUC
+  characters. (cut'n'paste does not work properly, etc.)
+- JIS X0201-Roman and JIS X0208-Kanji are supported.
+- JIS X0201-Katakana and JIS X0212 Kanji are NOT supported.
+- Only tested with the EUC-JP (ja_JP.eucJP) locale.  I'm not sure if
+  it works for GB 2312/CNS 11643-1/KS X 1001.  Any feedbacks is
+  welcome, especially a patch if it does not work. :)
+- This is just a hack.  Zsh's line editor apparently needs a rewrite
+  in order to support multibyte encodings properly.
