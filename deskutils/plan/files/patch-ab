@@ -1,5 +1,5 @@
-*** Makefile.orig	Sun Feb 22 02:53:33 1998
---- Makefile	Sun Mar 22 00:04:06 1998
+*** Makefile.orig	Sat May  9 16:21:09 1998
+--- Makefile	Sun Oct 25 17:48:20 1998
 ***************
 *** 6,34 ****
   # DO NOT put a blank between the path and the #, or you'll get compile errors.
@@ -37,13 +37,13 @@
   
 ! DOCBASE = $(PREFIX)/share/doc/plan#
 ! 
-! DIR  = $(PREFIX)/bin#		# user-callable executable (plan)
-! LIB  = $(PREFIX)/share#		# auxiliary programs (pland, notifier, netplan)
-! EXAMPLES = $(DOCBASE)/examples#	# Example holiday files
-! DOCS = $(DOCBASE)#		# doc files
-! HELP = $(DOCBASE)#              # help file (plan.help)
-! #MAN  = /usr/man/local/man#	# unformatted nroff manpage (plan.[14])
-! MAN = $(PREFIX)/man/man#	# for linux and freebsd
+! DIR  = $(PREFIX)/bin#	      # user-callable executable (plan)
+! LIB  = $(PREFIX)/share# 	      # auxiliary programs (pland, notifier, netplan)
+! EXAMPLES = $(DOCBASE)/examples#       # Example holiday files
+! DOCS = $(DOCBASE)#	      # doc files
+! HELP = $(DOCBASE)#		# help file (plan.help)
+! #MAN  = /usr/man/local/man#   # unformatted nroff manpage (plan.[14])
+! MAN = $(PREFIX)/man/man#      # for linux and freebsd
   NETPLANDIR = $(LIB)#		# netplan expects netplan.dir/ here
   # NETPLANDIR = "/var/lib/plan"#	# use this for Debian Linux
   CATMAN = /usr/catman/local/cat#	# formatted manpage (plan.[14])
@@ -59,7 +59,7 @@
   # JAPAN				# uncomment this for Japanese version of plan
 ! .if defined(JAPANESE)
 ! JAPAN = -DJAPAN -DESCTOASCII=$(ESCTOJISLATIN) -DLENTOASCII=3 \
-!         -DLOCALE_SJIS=\"ja_JP.SJIS\" -DLOCALE_EUC=\"ja_JP.EUC\"
+! 	-DLOCALE_SJIS=\"ja_JP.SJIS\" -DLOCALE_EUC=\"ja_JP.EUC\"
 ! .endif
   #				# JAPAN requires X11R5 and a Japanese env.
   
@@ -68,26 +68,7 @@
   #DEBUG =
   
 ***************
-*** 115,121 ****
-  BSDIG_C	= -DBSD -DRABBITS -I/usr/X11/include -DFLOCK -DNOREGEX -Dbsdi -ansi 
-  NBSD_C	= -ansi -I/usr/X11R6/include -DBSD -DRABBITS -DNOLOCK -DNOREGEX\
-  	  -DNO_MOTIF
-! FBSD_C	= -ansi -I/usr/X11R6/include -DBSD -DNOLOCK -DNOREGEX -DRABBITS\
-  	  -DSTDLIBMALLOC
-  LINUX_C	= -I/usr/X11R6/include -D_POSIX_SOURCE -DNOLOCK -DLINUX
-  SVR4_C	= -DSVR4 -DSYSV -DOLDTZ -DUSERAND -DPID_T=long -DNOMSEP
---- 121,129 ----
-  BSDIG_C	= -DBSD -DRABBITS -I/usr/X11/include -DFLOCK -DNOREGEX -Dbsdi -ansi 
-  NBSD_C	= -ansi -I/usr/X11R6/include -DBSD -DRABBITS -DNOLOCK -DNOREGEX\
-  	  -DNO_MOTIF
-! FBSD_C	= $(CFLAGS) -ansi -I$(X11BASE)/include -DBSD -DFLOCK -DPOSIX_REGEX -DRABBITS\
-! 	  -DSTDLIBMALLOC
-! OBSD_C	= $(CFLAGS) -ansi -I$(X11BASE)/include -DBSD -DFLOCK -DPOSIX_REGEX -DRABBITS\
-  	  -DSTDLIBMALLOC
-  LINUX_C	= -I/usr/X11R6/include -D_POSIX_SOURCE -DNOLOCK -DLINUX
-  SVR4_C	= -DSVR4 -DSYSV -DOLDTZ -DUSERAND -DPID_T=long -DNOMSEP
-***************
-*** 195,202 ****
+*** 197,204 ****
   BSDIG_L2= -L/usr/X11/lib -lc
   NBSD_L1	= -L/usr/X11R6/lib -lXm -lXt -lX11
   NBSD_L2	= -L/usr/X11R6/lib -lc
@@ -95,31 +76,31 @@
 ! FBSD_L2	= -L/usr/X11R6/lib -lc
   LINUX_L1= -L/usr/X11R6/lib -L/usr/lib/X11R6/lib -lSM -lXm -lXt -lX11 -lXpm -lc -lXext -lSM -lICE -lX11
   LINUX_L2= -lc
-  SVR4_L1	= -lXm -lXt -lX11 -lgen -lsocket -lnsl
+  SLINUX_L1= -L/usr/X11R6/lib -L/usr/lib/X11R6/lib -lSM /usr/X11R6/lib/libXm.a -lXt -lX11 /usr/X11R6/lib/libXpm.a -lc -lXext -lSM -lICE -lX11
 --- 203,212 ----
   BSDIG_L2= -L/usr/X11/lib -lc
   NBSD_L1	= -L/usr/X11R6/lib -lXm -lXt -lX11
   NBSD_L2	= -L/usr/X11R6/lib -lc
-! FBSD_L1	= -L$(X11BASE)/lib ${MOTIFLIB} -lXt -lSM -lICE -lX11 -lXext -lc
-! FBSD_L2	= -lc
-! OBSD_L1	= -L$(X11BASE)/lib ${MOTIFLIB} -lXt -lSM -lICE -lX11 -lXext -lc
-! OBSD_L2	= -lc
+! FBSD_L1 = -L$(X11BASE)/lib ${MOTIFLIB} -lXt -lSM -lICE -lX11 -lXext -lc
+! FBSD_L2 = -lc
+! OBSD_L1 = -L$(X11BASE)/lib ${MOTIFLIB} -lXt -lSM -lICE -lX11 -lXext -lc
+! OBSD_L2 = -lc
   LINUX_L1= -L/usr/X11R6/lib -L/usr/lib/X11R6/lib -lSM -lXm -lXt -lX11 -lXpm -lc -lXext -lSM -lICE -lX11
   LINUX_L2= -lc
-  SVR4_L1	= -lXm -lXt -lX11 -lgen -lsocket -lnsl
+  SLINUX_L1= -L/usr/X11R6/lib -L/usr/lib/X11R6/lib -lSM /usr/X11R6/lib/libXm.a -lXt -lX11 /usr/X11R6/lib/libXpm.a -lc -lXext -lSM -lICE -lX11
 ***************
-*** 259,264 ****
---- 269,275 ----
+*** 263,268 ****
+--- 271,277 ----
+  	@echo "  make bsdi      BSDI/386"
   	@echo "  make bsdig     BSDI/386 with gcc"
   	@echo "  make netbsd	NetBSD/i386 1.0A (maybe others too)"
-  	@echo "  make freebsd   FreeBSD 2.x"
 + 	@echo "  make openbsd   OpenBSD 2.x"
+  	@echo "  make freebsd   FreeBSD 2.x"
   	@echo "  make svr4      SVR4 Using gcc"
   	@echo "  make news4     Sony NEWS-OS4.x"
-  	@echo "  make news4g    Sony NEWS-OS4.x with gcc"
 ***************
-*** 386,391 ****
---- 397,405 ----
+*** 391,396 ****
+--- 400,408 ----
   freebsd:
   	env CF="$(FBSD_C)" L1F="$(FBSD_L1)" L2F="$(FBSD_L2)" MYCC=${CC} make all
   
@@ -130,7 +111,7 @@
   	env CF="$(SVR4_C)" L1F="$(SVR4_L1)" L2F="$(SVR4_L2)" MYCC=gcc make all
   
 ***************
-*** 489,495 ****
+*** 497,503 ****
   	$(MYCC) $(DEBUG) $(CF) $(JAPAN) $(INCDIR) -c -DLIB=\"$(LIB)\" $<
   
   holiday.o: holiday.c $(MAKEFILE)
@@ -138,7 +119,7 @@
   
   util.o: util.c $(MAKEFILE)
   	$(MYCC) $(DEBUG) $(CF) $(JAPAN) $(INCDIR) -c -DPATH=\"$(LIB):$(DIR):$(HELP)\" $<
---- 503,509 ----
+--- 509,515 ----
   	$(MYCC) $(DEBUG) $(CF) $(JAPAN) $(INCDIR) -c -DLIB=\"$(LIB)\" $<
   
   holiday.o: holiday.c $(MAKEFILE)
@@ -147,19 +128,19 @@
   util.o: util.c $(MAKEFILE)
   	$(MYCC) $(DEBUG) $(CF) $(JAPAN) $(INCDIR) -c -DPATH=\"$(LIB):$(DIR):$(HELP)\" $<
 ***************
-*** 520,550 ****
+*** 528,558 ****
   
   #---------------------------------------------------------------
   install:
 ! 	cp plan $(DIR)
 ! 	-rm -f $(DIR)/pland $(DIR)/notifier
 ! 	cp pland notifier netplan ../misc/plan_cal.ps $(LIB)
-! 	-(test x$(JAPAN) != x && cp ../misc/plan_calSJ.ps $(LIB)) || exit 0
+! 	-(test x'$(JAPAN)' != x && cp ../misc/plan_calSJ.ps $(LIB)) || exit 0
 ! 	cp ../misc/plan.help $(HELP)
 ! 	-strip $(DIR)/plan $(LIB)/pland $(LIB)/notifier $(LIB)/netplan
 ! 	-chmod 755 $(DIR)/plan $(LIB)/pland $(LIB)/notifier $(LIB)/netplan
 ! 	-chmod 644 $(HELP)/plan.help $(LIB)/plan_cal.ps
-! 	-(test x$(JAPAN) != x && chmod 644 $(LIB)/plan_calSJ.ps) || exit 0
+! 	-(test x'$(JAPAN)' != x && chmod 644 $(LIB)/plan_calSJ.ps) || exit 0
   	-mkdir $(LIB)/netplan.dir
   	-chmod 700 $(LIB)/netplan.dir
 - 	-(test -x `which nroff` && nroff -man ../misc/plan.1 >../misc/plan.1cat) || exit 0
@@ -179,7 +160,7 @@
   
   clean:
   	-rm -f *.o
---- 534,557 ----
+--- 540,563 ----
   
   #---------------------------------------------------------------
   install:
