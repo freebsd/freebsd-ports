@@ -13,6 +13,7 @@
 @exec mkdir %D/%%T%%/shared/classes || true
 @exec mkdir %D/%%T%%/shared/lib || true
 @exec mkdir %D/%%T%%/temp || true
+@exec mkdir %D/%%T%%/conf.orig || true
 bin/tomcat50ctl
 etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/LICENSE
@@ -38,12 +39,13 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/bin/tool-wrapper-using-launcher.sh
 %%T%%/bin/tool-wrapper.sh
 %%T%%/common/endorsed/xercesImpl.jar
-%%T%%/common/endorsed/xmlParserAPIs.jar
+%%T%%/common/endorsed/xml-apis.jar
+%%T%%/common/lib/ant-launcher.jar
 %%T%%/common/lib/ant.jar
-%%T%%/common/lib/commons-collections.jar
-%%T%%/common/lib/commons-dbcp-1.1.jar
+%%T%%/common/lib/commons-collections-2.1.1.jar
+%%T%%/common/lib/commons-dbcp-1.2.1.jar
 %%T%%/common/lib/commons-el.jar
-%%T%%/common/lib/commons-pool-1.1.jar
+%%T%%/common/lib/commons-pool-1.2.jar
 %%T%%/common/lib/jasper-compiler.jar
 %%T%%/common/lib/jasper-runtime.jar
 %%T%%/common/lib/jsp-api.jar
@@ -289,6 +291,7 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/tag/web/xhtmlbasic_tag.class
 %%T%%/webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/tagplugin/choose_jsp.class
 %%T%%/webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/tagplugin/foreach_jsp$1.class
+%%T%%/webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/tagplugin/foreach_jsp$10.class
 %%T%%/webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/tagplugin/foreach_jsp$2.class
 %%T%%/webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/tagplugin/foreach_jsp$3.class
 %%T%%/webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/tagplugin/foreach_jsp$4.class
@@ -297,7 +300,6 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/tagplugin/foreach_jsp$7.class
 %%T%%/webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/tagplugin/foreach_jsp$8.class
 %%T%%/webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/tagplugin/foreach_jsp$9.class
-%%T%%/webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/tagplugin/foreach_jsp$10.class
 %%T%%/webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/tagplugin/foreach_jsp.class
 %%T%%/webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/tagplugin/if_jsp.class
 %%T%%/webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/xml/xml_jsp.class
@@ -804,6 +806,7 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/security/package-tree.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/CGIServlet.CGIEnvironment.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/CGIServlet.CGIRunner.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/CGIServlet.HTTPHeaderInputStream.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/CGIServlet.NameValuePair.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/CGIServlet.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/Constants.html
@@ -1064,6 +1067,7 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/jk/config/package-frame.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/jk/config/package-summary.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/jk/config/package-tree.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/jk/core/JkChannel.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/jk/core/JkHandler.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/jk/core/Msg.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/jk/core/MsgContext.html
@@ -1741,6 +1745,7 @@ etc/rc.d/020.jakarta-tomcat50.sh
 @exec mkdir %D/%%T%%/work || true
 @exec mkdir %D/%%T%%/common/classes ||true
 @exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%T%%/
+@unexec rm -Rf %%T%%/conf.orig
 @dirrm %%T%%/work
 @dirrm %%T%%/webapps/webdav/WEB-INF
 @dirrm %%T%%/webapps/webdav
