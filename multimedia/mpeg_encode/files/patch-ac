@@ -1,0 +1,20 @@
+--- Makefile~	Wed Aug 16 17:16:56 1995
++++ Makefile	Fri Oct 20 19:20:05 2000
+@@ -68,7 +68,7 @@
+ #####################################################################
+ # COMPILER # specify compiler; should be ANSI-compliant if possible #
+ #####################################################################
+-CC = gcc
++CC ?= gcc
+ 
+ ################################################
+ # MAKE # command to use for the "make" command #
+@@ -96,7 +96,7 @@
+ # 
+ 
+ #	gcc
+-CFLAGS	      =  $(INCLUDEDIR) $(DEBUGFLAG) -Wall -Wmissing-prototypes $(PROFLAG) $(PROTOFLAG)
++CFLAGS	      +=  $(INCLUDEDIR) -Wall -Wmissing-prototypes $(PROFLAG) $(PROTOFLAG)
+ 
+ #	gcc-strict
+ #CFLAGS	      =  $(INCLUDEDIR) $(DEBUGFLAG) -pedantic -Wall -Waggregate-return -Wtraditional -Wshadow -Wpointer-arith -Wno-parentheses -Wwrite-strings -Wconversion -Wcast-qual -Wcast-align -Wnested-externs -Wuninitialized -Wmissing-prototypes $(PROFLAG) $(PROTOFLAG)

@@ -13,11 +13,19 @@ DISTNAME=	${PKGNAME}-src
 
 MAINTAINER=	ports@FreeBSD.org
 
-USE_GMAKE=	yes
 
 MAN1=		mpeg_encode.1
-MANCOMPRESSED=	yes
 
-WRKSRC=		${WRKDIR}/mpeg_encode
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/mpeg_encode ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/docs/mpeg_encode.1 ${PREFIX}/man/man1
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
+.for i in users-guide.ps template.param
+	${INSTALL_DATA} ${WRKSRC}/docs/${i} ${PREFIX}/share/doc/${PORTNAME}
+.endfor
+.endif
 
 .include <bsd.port.mk>
