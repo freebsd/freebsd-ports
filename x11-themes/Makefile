@@ -39,6 +39,7 @@
     SUBDIR += gtk-industrial-theme
     SUBDIR += gtk-qn-x11-theme
     SUBDIR += gtk-qnxtheme
+    SUBDIR += gtk-qt-engine
     SUBDIR += gtk-smooth-engine
     SUBDIR += gtk-xfce-engine
     SUBDIR += gtk-zenith-theme
