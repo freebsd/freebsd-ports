@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	mingw
 # Wait for release, which will be based on orognal sources
 #MASTER_SITE_SUBDIR=	binutils/releases
 PKGNAMEPREFIX=	mingw32-
-# Wait for release, which will be based on orognal sources
+# Wait for release, which will be based on orignal sources
 DISTNAME=	${PORTNAME}-${BINUTILVERSION}-${PATCHVERSION:S/./-/}-src
 #DISTNAME=	${PORTNAME}-${BINUTILVERSION}
 
