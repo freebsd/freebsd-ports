@@ -5,16 +5,19 @@
 # $FreeBSD$
 #
 
-PORTNAME=	eclipse-pmd
+PORTNAME=	pmd
 PORTVERSION=	1.1.2
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pmd
+PKGNAMEPREFIX=	eclipse-
 DISTNAME=	pmd-eclipse-bin-${PORTVERSION}
 DIST_SUBDIR=	eclipse
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	java@FreeBSD.org
 COMMENT=	Scan Java source code and look for potential problems
+
+BROKEN=		It is too hard to adopt Eclipse 3.0.
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
