@@ -2,6 +2,7 @@
 #
 
     SUBDIR += aspell
+    SUBDIR += daCode
     SUBDIR += ispell
     SUBDIR += jdictionary-fre-hun
     SUBDIR += kde3-i18n

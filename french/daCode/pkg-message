@@ -1,0 +1,28 @@
+Vous devez maintenant créer un alias dans la configuration de apache
+(dans le fichier %%PREFIX%%/etc/httpd.conf) pour utiliser correctement
+daCode. Faites pointer cet alias vers  %%PREFIX%%/www/dacode/htdocs.
+
+Par exemple, rajouter la ligne suivante :
+	Alias /dacode/ "%%PREFIX%%/www/dacode/src/htdocs"
+
+
+Puis copiez %%PREFIX%%/www/dacode/src/phplib/config.sample vers
+%%PREFIX%%/www/dacode/src/phplib/config.php3 et éditer ce fichier.
+
+Modifier le login et le mot de passe de l'administrateur par
+défaut dans le script SQL approprié.
+
+Ensuite créez les tables de la base de données choisie :
+ - Pour mysql; utilisez %%PREFIX%%/www/dacode/sql/dacode.mysql 
+ - Pour PostgreSQL, utilisez %%PREFIX%%/www/dacode/sql/dacode.pgsql
+
+Ensuite faites pointer votre browser vers cet alias, suivant l'exemple
+ précédent : 
+	http:://monsite/dacode
+
+Si cela fonctionne, dacode est installé correctement, il ne vous reste
+plus qu'a lire la documentation et publiez vos news
+
+Plus d'informations sur daCode à l'URL http://www.dacode.org
+
+S. (gioria@FreeBSD.ORG)
