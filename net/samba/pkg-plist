@@ -49,6 +49,7 @@ share/doc/samba/Application_Serving.txt
 share/doc/samba/BROWSING.txt
 share/doc/samba/BUGS.txt
 share/doc/samba/CVS_ACCESS.txt
+share/doc/samba/DHCP-Server-Configuration.txt
 share/doc/samba/DIAGNOSIS.txt
 share/doc/samba/DNIX.txt
 share/doc/samba/DOMAIN.txt
@@ -63,17 +64,20 @@ share/doc/samba/NT4_PlainPassword.reg
 share/doc/samba/NTDOMAIN.txt
 share/doc/samba/NetBIOS.txt
 share/doc/samba/OS2-Client-HOWTO.txt
+share/doc/samba/PRINTER_DRIVER.txt
+share/doc/samba/PROFILES.txt
+share/doc/samba/PROJECTS
+share/doc/samba/Passwords.txt
+share/doc/samba/Printing.txt
 share/doc/samba/README
 share/doc/samba/README.DCEDFS
 share/doc/samba/README.FreeBSD
 share/doc/samba/README.jis
 share/doc/samba/README.sambatar
-share/doc/samba/PRINTER_DRIVER.txt
-share/doc/samba/Passwords.txt
-share/doc/samba/Printing.txt
-share/doc/samba/PROJECTS
 share/doc/samba/SCO.txt
+share/doc/samba/SMBTAR.notes
 share/doc/samba/Speed.txt
+share/doc/samba/Speed2.txt
 share/doc/samba/Support.txt
 share/doc/samba/Tracing.txt
 share/doc/samba/THANKS
@@ -88,6 +92,9 @@ share/doc/samba/cifsntdomain.txt
 share/doc/samba/history
 share/doc/samba/security_level.txt
 share/doc/samba/wfw_slip.htm
+share/examples/samba/autofs/auto.a
+share/examples/samba/autofs/mount-smb.doc
+share/examples/samba/autofs/mount.smb
 share/examples/samba/dce-dfs/README
 share/examples/samba/dce-dfs/smb.conf
 share/examples/samba/tridge/smb.conf.WinNT
@@ -125,6 +132,9 @@ etc/codepages/codepage.850
 etc/codepages/codepage.852
 etc/codepages/codepage.866
 etc/codepages/codepage.932
+etc/codepages/codepage.936
+etc/codepages/codepage.949
+etc/codepages/codepage.950
 @exec mkdir %D/private ; if [ ! -f %D/private/smbpasswd ] ; then chown -R root.wheel %D/private ;  cat /etc/passwd | %D/bin/mksmbpasswd.sh > %D/private/smbpasswd ; chmod 500 %D/private ; chmod 600 %D/private/smbpasswd ; fi
 @exec mkdir -p /var/spool/samba ; chmod 1777 /var/spool/samba
 @exec cat %D/share/doc/samba/README.FreeBSD
@@ -132,6 +142,7 @@ etc/codepages/codepage.932
 @unexec rm -rf /var/spool/samba
 @dirrm share/doc/samba/faq
 @dirrm share/doc/samba
+@dirrm share/examples/samba/autofs
 @dirrm share/examples/samba/dce-dfs
 @dirrm share/examples/samba/tridge
 @dirrm share/examples/samba/thoralf

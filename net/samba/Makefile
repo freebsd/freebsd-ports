@@ -3,11 +3,11 @@
 # Date created:				11th Feb 1995
 # Whom:					gpalmer
 #
-# $Id: Makefile,v 1.21 1998/02/19 10:11:41 hosokawa Exp $
+# $Id: Makefile,v 1.22 1998/04/11 03:05:51 hosokawa Exp $
 #
 
-DISTNAME=	samba-1.9.18p4
-PKGNAME=	samba-1.9.18.4
+DISTNAME=	samba-1.9.18p6
+PKGNAME=	samba-1.9.18.6
 CATEGORIES=	net
 MASTER_SITES=	ftp://samba.anu.edu.au/pub/samba/
 
@@ -32,6 +32,7 @@ SAMBA_DOCS=${WRKDIR}/${DISTNAME}/docs/INSTALL.sambatar \
 	${WRKDIR}/${DISTNAME}/docs/history \
 	${WRKDIR}/${DISTNAME}/docs/announce \
 	${WRKDIR}/${DISTNAME}/docs/PROJECTS \
+	${WRKDIR}/${DISTNAME}/docs/SMBTAR.notes
 
 post-install:
 	${MKDIR} ${PREFIX}/share/examples/samba
