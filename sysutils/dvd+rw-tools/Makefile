@@ -6,7 +6,7 @@
 
 PORTNAME=	dvd+rw-tools
 PORTVERSION=	5.19.4.9.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.pkix.net/mirror/fy.chalmers.se/ \
 		http://fy.chalmers.se/~appro/linux/DVD+RW/tools/
@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.pkix.net/mirror/fy.chalmers.se/ \
 MAINTAINER=	chuck@pkix.net
 COMMENT=	DVD burning software
 
-RUN_DEPENDS=	${LOCALBASE}/bin/mkisofs:${PORTSDIR}/sysutils/mkisofs
+RUN_DEPENDS=	${LOCALBASE}/bin/mkisofs:${PORTSDIR}/sysutils/cdrtools
 
 USE_REINPLACE=	yes
 

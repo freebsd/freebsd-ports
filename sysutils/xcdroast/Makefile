@@ -7,7 +7,7 @@
 
 PORTNAME=	xcdroast
 PORTVERSION=	0.98.a.15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.xcdroast.org/download/:src \
@@ -20,7 +20,6 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Another X11 frontend to mkisofs/cdrecord
 
 RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools \
-		mkisofs:${PORTSDIR}/sysutils/mkisofs
 
 USE_X_PREFIX=	yes
 USE_GETTEXT=	yes

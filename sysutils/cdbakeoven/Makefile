@@ -7,7 +7,7 @@
 
 PORTNAME=	cdbakeoven
 PORTVERSION=	1.8.9
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +16,6 @@ MAINTAINER=	lofi@freebsd.org
 COMMENT=	KDE frontend for cdrecord and mkisofs/mkhybrid
 
 RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools \
-		mkisofs:${PORTSDIR}/sysutils/mkisofs \
 		mpg123:${PORTSDIR}/audio/mpg123 \
 		ogg123:${PORTSDIR}/audio/vorbis-tools
 

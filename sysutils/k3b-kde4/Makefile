@@ -7,6 +7,7 @@
 
 PORTNAME=	k3b
 PORTVERSION=	0.11.9
+PORTREVISION=	1
 CATEGORIES=	sysutils multimedia kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,8 +16,7 @@ MAINTAINER=	h.eichmann@gmx.de
 COMMENT=	A CD/DVD recording GUI for KDE
 
 RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools \
-		cdrdao:${PORTSDIR}/sysutils/cdrdao \
-		mkisofs:${PORTSDIR}/sysutils/mkisofs
+		cdrdao:${PORTSDIR}/sysutils/cdrdao
 LIB_DEPENDS=	mad:${PORTSDIR}/audio/libmad \
 		id3tag:${PORTSDIR}/audio/libid3tag \
 		vorbis:${PORTSDIR}/audio/libvorbis \

@@ -7,6 +7,7 @@
 
 PORTNAME=	dvdrip
 PORTVERSION=	0.50.16
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.exit1.org/dvdrip/dist/
 DISTNAME=	Video-DVDRip-${PORTVERSION}
@@ -23,7 +24,6 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storabl
 RUN_DEPENDS+=	cdrdao:${PORTSDIR}/sysutils/cdrdao \
 		cdrecord:${PORTSDIR}/sysutils/cdrtools \
 		convert:${PORTSDIR}/graphics/ImageMagick \
-		mkisofs:${PORTSDIR}/sysutils/mkisofs \
 		mplayer:${PORTSDIR}/multimedia/mplayer \
 		oggenc:${PORTSDIR}/audio/vorbis-tools \
 		ogmmerge:${PORTSDIR}/multimedia/ogmtools \

@@ -7,7 +7,7 @@
 
 PORTNAME=	gtoaster
 PORTVERSION=	1.0.b6
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://gnometoaster.rulez.org/archive/
@@ -17,8 +17,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical cd cooking interface
 
-RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools \
-		mkisofs:${PORTSDIR}/sysutils/mkisofs
+RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
