@@ -26,9 +26,17 @@ BROKEN=         "Does not compile (bad C++ code)"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CXXFLAGS+=	-I${LOCALBASE}/include
+
+post-patch:
+.for f in configure Config.h.in
+	@${REINPLACE_CMD} -e "s@machine/soundcard\.h@sys/soundcard\.h@g; \
+		s@HAVE_MACHINE_SOUNDCARD_H@HAVE_SYS_SOUNDCARD_H@g" \
+		${WRKSRC}/${f}
+.endfor
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fcplay ${PREFIX}/bin
