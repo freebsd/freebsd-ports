@@ -1,0 +1,175 @@
+--- configure.in.orig	Thu Jun 13 05:03:07 2002
++++ configure.in	Fri Jul 19 21:31:32 2002
+@@ -7,7 +7,7 @@
+ dnl AM_INIT_AUTOMAKE(nagios-plugins,$VERSION)
+ AM_CONFIG_HEADER(plugins/config.h plugins/common.h plugins/version.h plugins/netutils.h plugins/utils.h plugins/popen.h)
+ 
+-AC_PREFIX_DEFAULT(/usr/local/nagios)
++dnl AC_PREFIX_DEFAULT(/usr/local/nagios)
+ 
+ dnl Figure out how to invoke "install" and what install options to use.
+ 
+@@ -46,7 +46,6 @@
+ AC_ARG_WITH(nagios_group,--with-nagios-group=<group> sets group name to run nagios,nagios_grp=$withval,nagios_grp=nagios)
+ AC_SUBST(nagios_usr)
+ AC_SUBST(nagios_grp)
+-INSTALL_OPTS="-o $nagios_usr -g $nagios_grp"
+ AC_SUBST(INSTALL_OPTS)
+ 
+ AC_ARG_WITH(trusted_path,--with-trusted-path=/bin:/sbin:/usr/bin:/usr/sbin sets trusted path for executables called by scripts,trusted_path=$withval,trusted_path=/bin:/sbin:/usr/bin:/usr/sbin)
+@@ -98,8 +97,8 @@
+     AC_CHECK_HEADERS(postgresql/libpq-fe.h)
+     AC_CHECK_HEADERS(libpq-fe.h)
+     if test  "$ac_cv_header_pgsql_libpq_fe_h" = "yes"; then
+-      PGLIBS="-lpq -lcrypt"
+-      PGINCLUDE="-I/usr/include/pgsql"
++      PGLIBS="-L$PGSQL/lib -lpq -lcrypt"
++      PGINCLUDE="-I$PGSQL/include/pgsql"
+     elif test  "$ac_cv_header_postgresql_libpq_fe_h" = "yes"; then
+       PGLIBS="-L$PGSQL/lib -lpq -lcrypt"
+       PGINCLUDE="-I/usr/include/postgresql"
+@@ -127,25 +126,37 @@
+ LIBS="$_SAVEDLIBS"
+ CPPFLAGS="$_SAVEDCPPFLAGS"
+ 
++AC_ARG_ENABLE(radius,--enable-radius compile check_radius)
++if test x$enable_radius = xyes; then
++dnl Check for radiusclient header file
++_SAVEDCPPFLAGS="$CPPFLAGS"
++CPPFLAGS="-I${LOCALBASE}/include"
++AC_CHECK_HEADERS(radiusclient.h,RADIUSINCLUDE="-I${LOCALBASE}/include")
++AC_SUBST(RADIUSINCLUDE)
++CPPFLAGS="$_SAVEDCPPFLAGS $RADIUSINCLUDE"
++
+ dnl Check for radius libraries
+ _SAVEDLIBS="$LIBS"
+-AC_CHECK_LIB(radiusclient,rc_read_config)
++AC_CHECK_LIB(radiusclient,rc_read_config,,,-L${LOCALBASE}/lib)
+ if test "$ac_cv_lib_radiusclient_rc_read_config" = "yes"; then
+   EXTRAS="$EXTRAS check_radius"
+-	RADIUSLIBS="-lradiusclient"
++	RADIUSLIBS="-L${LOCALBASE}/lib -lradiusclient"
+   AC_SUBST(RADIUSLIBS)
+ else
+   AC_MSG_WARN([Skipping radius plugin])
+   AC_MSG_WARN([install radius libs to compile this plugin (see Requirements).])
+ fi
+ LIBS="$_SAVEDLIBS"
++fi
+ 
++AC_ARG_ENABLE(ldap,--enable-ldap compile check_ldap)
++if test x$enable_ldap = xyes; then
+ dnl Check for LDAP libraries
+ _SAVEDLIBS="$LIBS"
+-AC_CHECK_LIB(ldap,main,,,-llber)
+-if test "$ac_cv_lib_ldap_main" = "yes"; then
+-  LDAPLIBS="-lldap -llber"\
+-  LDAPINCLUDE="-I/usr/include/ldap"
++AC_CHECK_LIB(ldap,ldap_simple_bind,,,-L${LOCALBASE}/lib -llber)
++if test "$ac_cv_lib_ldap_ldap_simple_bind" = "yes"; then
++  LDAPLIBS="-L${LOCALBASE}/lib -lldap -llber"\
++  LDAPINCLUDE="-I${LOCALBASE}/include"
+   AC_SUBST(LDAPLIBS)
+   AC_SUBST(LDAPINCLUDE)
+   EXTRAS="$EXTRAS check_ldap"
+@@ -154,13 +165,14 @@
+   AC_MSG_WARN([install LDAP libs to compile this plugin (see Requirements).])
+ fi
+ LIBS="$_SAVEDLIBS"
++fi
+ 
+ dnl Check for mysql libraries
+ _SAVEDLIBS="$LIBS"
+ _SAVEDCPPFLAGS="$CPPFLAGS"
+-CPPFLAGS="-I/usr/include"
++CPPFLAGS="-I${LOCALBASE}/include"
+ AC_ARG_WITH(mysqllibdir,--with-mysqllibdir=<dir> sets path to mysql libraries,[MYSQLLIBDIR=$withval])
+-if test -n "$MYSQLLIBS"; then
++if test -n "$MYSQLLIBDIR"; then
+   AC_CHECK_LIB(mysqlclient,mysql_init,MYSQLLIBS="-lmysqlclient -lz" check_mysql_LDFLAGS="-L$MYSQLLIBDIR",,-L$MYSQLLIBDIR -lz)
+ elif test -f /usr/lib/libmysqlclient.so; then
+   AC_CHECK_LIB(mysqlclient,mysql_init,MYSQLLIBS="-lmysqlclient -lz",,-lz)
+@@ -176,7 +188,8 @@
+   AC_CHECK_LIB(mysqlclient,mysql_close,MYSQLLIBS="-lmysqlclient" check_mysql_LDFLAGS="-L/usr/lib/mysql",,-L/usr/lib/mysql)
+ fi
+ if test "$ac_cv_lib_mysqlclient_mysql_init" = "yes" -o "$ac_cv_lib_mysqlclient_mysql_close" = "yes"; then
+-  AC_CHECK_HEADERS(mysql/mysql.h mysql/errmsg.h)
++  AC_CHECK_HEADERS(mysql/mysql.h mysql/errmsg.h,MYSQLINCLUDE="-I${LOCALBASE}/include")
++  AC_SUBST(MYSQLINCLUDE)
+   if test "$ac_cv_header_mysql_mysql_h" = "yes" -a "$ac_cv_header_mysql_errmsg_h" = "yes"; then
+     EXTRAS="$EXTRAS check_mysql"
+     AC_SUBST(MYSQLLIBS)
+@@ -190,7 +203,7 @@
+   AC_MSG_WARN([install mysql client libs to compile this plugin (see Requirements).])
+ fi
+ LIBS="$_SAVEDLIBS"
+-CPPFLAGS="$_SAVEDCPPFLAGS"
++CPPFLAGS="$_SAVEDCPPFLAGS $MYSQLINCLUDE"
+ 
+ dnl Check for OpenSSL location
+ AC_PATH_PROG(OPENSSL,openssl)
+@@ -269,16 +282,16 @@
+ dnl AC_SUBST(libgetopt_a_DEPENDENCIES)
+ dnl AC_SUBST(libsnprintf_a_SOURCES)
+ 
+-AC_MSG_CHECKING(for getopt_long)
+-AC_TRY_COMPILE([#include <getopt.h>
+-#include <stdlib.h>],
+-[int option_index=0;
+-static struct option *long_options;
+-getopt_long(0,NULL,"+h",long_options,&option_index);],
+-[AC_DEFINE(HAVE_GETOPT_H) AC_DEFINE(HAVE_GETOPT_LONG) AC_MSG_RESULT(yes)],
+-[AC_DEFINE(HAVE_GETOPT_H) AC_DEFINE(HAVE_GETOPT_LONG) AC_MSG_RESULT(no) import_sources=getopt])
++dnl AC_MSG_CHECKING(for getopt_long)
++dnl AC_TRY_COMPILE([#include <getopt.h>
++dnl #include <stdlib.h>],
++dnl [int option_index=0;
++dnl static struct option *long_options;
++dnl getopt_long(0,NULL,"+h",long_options,&option_index);],
++dnl [AC_DEFINE(HAVE_GETOPT_H) AC_DEFINE(HAVE_GETOPT_LONG) AC_MSG_RESULT(yes)],
++dnl [AC_DEFINE(HAVE_GETOPT_H) AC_DEFINE(HAVE_GETOPT_LONG) AC_MSG_RESULT(no) import_sources=getopt])
+ 
+-AC_CHECK_FUNCS(getopt_long_only,,LIBS="$LIBS -lgetopt" DEPLIBS="$DEPLIBS libgetopt.a")
++dnl AC_CHECK_FUNCS(getopt_long_only,,LIBS="$LIBS -lgetopt" DEPLIBS="$DEPLIBS libgetopt.a")
+ 
+ AC_CHECK_FUNC(vsnprintf,,LIBS="$LIBS -lsnprintf" DEPLIBS="$DEPLIBS libsnprintf.a")
+ 
+@@ -683,6 +696,8 @@
+ 	AC_DEFINE_UNQUOTED(WHO_COMMAND,"$PATH_TO_WHO")
+ fi
+ 
++AC_ARG_ENABLE(snmp,--enable-snmp compile check_hpjd and check_snmp)
++if test x$enable_snmp = xyes; then
+ AC_PATH_PROG(PATH_TO_SNMPGET,snmpget)
+ if test -x "$PATH_TO_SNMPGET"
+ then
+@@ -705,7 +720,10 @@
+ 	echo "** Tried $PERL - install Net::SNMP perl module if you want to"
+ 	echo "        use the perl snmp plugins"
+ fi
++fi
+ 
++AC_ARG_ENABLE(qstat,--enable-qstat compile check_game)
++if test x$enable_qstat = xyes; then
+ AC_PATH_PROG(PATH_TO_QUAKESTAT,quakestat)
+ AC_PATH_PROG(PATH_TO_QSTAT,qstat)
+ if test -x "$PATH_TO_QUAKESTAT"
+@@ -719,7 +737,10 @@
+ else
+ 	echo "** Get qstat from http://www.activesw.com/people/steve/qstat.html in order to make check_game plugin"
+ fi
++fi
+ 
++AC_ARG_ENABLE(fping,--enable-fping compile check_fping)
++if test x$enable_fping = xyes; then
+ AC_PATH_PROG(PATH_TO_FPING,fping)
+ if test -x "$PATH_TO_FPING"
+ then
+@@ -727,6 +748,7 @@
+ 	EXTRAS="$EXTRAS check_fping"
+ else
+ 	echo "** Get fping from http://www.fping.com in order to make check_fping plugin"
++fi
+ fi
+ 
+ AC_PATH_PROG(PATH_TO_SSH,ssh)
