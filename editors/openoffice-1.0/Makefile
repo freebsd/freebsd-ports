@@ -49,6 +49,14 @@ DESCR=	${.CURDIR}/pkg-descr
 LANG_EXT=01
 .endif
 
+.if ${OSVERSION} < 500000
+#
+# OO build is broken with the system gcc on STABLE.
+#
+USE_GCC=3.1
+.else
+.endif
+
 .if ${OSVERSION} > 500000
 #
 # OO is still broken with the system gcc on CURRENT.
@@ -89,7 +97,6 @@ BUILD_DEPENDS+=	imake:${PORTSDIR}/devel/imake-4
 .if !defined(DISPLAY)
 BUILD_DEPENDS+= Xvfb:${PORTSDIR}/x11-servers/XFree86-4-VirtualFramebufferServer
 .endif
-LIB_DEPENDS+=	pth.14:${PORTSDIR}/devel/pth
 
 USE_PERL5=	yes
 USE_XLIB=	yes
