@@ -9,8 +9,7 @@ PORTNAME=	gtkextra
 PORTVERSION=	0.99.17
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://gtkextra.sourceforge.net/src/ \
-		${MASTER_SITE_SOURCEFORGE} \
-		http://magnet.fsu.edu/~feiguin/gtk/src/
+		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	scigraphica
 DISTNAME=	${PORTNAME:S/gtk/gtk+/}-${PORTVERSION}
 
