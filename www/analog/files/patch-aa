@@ -1,8 +1,10 @@
---- Makefile.orig	Wed May 19 15:07:25 1999
-+++ Makefile	Wed May 19 23:53:39 1999
-@@ -2,10 +2,11 @@
+--- Makefile.orig	Wed May 19 04:07:25 1999
++++ Makefile	Thu Jun  3 13:35:15 1999
+@@ -1,11 +1,12 @@
+ # Makefile for analog 3.3
  # Please read docs/Readme.html, or http://www.statslab.cam.ac.uk/~sret1/analog/
- CC = gcc           # which compiler to use: eg cc, acc, gcc. NB Different
+-CC = gcc           # which compiler to use: eg cc, acc, gcc. NB Different
++CC ?= gcc           # which compiler to use: eg cc, acc, gcc. NB Different
  #                    compilers need different CFLAGS, e.g., -O instead of -O2.
 -CEXTRAFLAGS = -O2  # options, e.g. for optimisation or ANSI compilation.
 +#CEXTRAFLAGS = -O2  # options, e.g. for optimisation or ANSI compilation.
