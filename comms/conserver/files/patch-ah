@@ -1,0 +1,74 @@
+--- autologin/autologin.c.orig	Sun Apr 19 04:04:45 1998
++++ autologin/autologin.c	Sun Apr 19 04:13:14 1998
+@@ -22,7 +22,7 @@
+ 
+ 
+ #include <errno.h>
+-#if !defined IBMR2
++#if !defined IBMR2 && !defined FREEBSD
+ extern char *sys_errlist[];
+ #define strerror(Me) (sys_errlist[Me])
+ #endif
+@@ -118,14 +118,16 @@
+ #if defined(FREEBSD)
+ #include <sys/time.h>
+ #include <sys/ioctl.h>
++#include <sys/termios.h>
+ #include <sys/uio.h>
+ #include <sys/proc.h>
+ #include <sys/ioctl_compat.h>
+-#define setsid()	getpid()
+-#define getsid(Mp)	(Mp)
+-#define USE_IOCTL	1
++#include <sys/ttydefaults.h>
++#define getsid(Mp)	(-1)
++#define USE_TC		1
+ #define USE_OLD_UTENT	1
+-#define PATH_SU		"/usr/ucb/su"
++#define PATH_SU		"/usr/bin/su"
++#define UTMP_PATH	"/var/run/utmp"
+ #else
+ 
+ #include <sys/termios.h>
+@@ -348,6 +350,11 @@
+ 		dup(0);
+ 		dup(0);
+ 	}
++#ifdef TIOCSCTTY
++	if (ioctl(0, TIOCSCTTY, NULL) == -1) {
++		(void) fprintf(stderr, "%s: TIOCSCTTY: %s\n", progname, strerror(errno));
++	}
++#endif
+ 
+ 	/* put the tty in out process group
+ 	 */
+@@ -439,6 +446,21 @@
+ 		/* NOTREACHED */
+ 	}
+ #endif
++#ifdef FREEBSD
++	n_tio.c_iflag = TTYDEF_IFLAG;
++	n_tio.c_oflag = TTYDEF_OFLAG;
++	n_tio.c_lflag = TTYDEF_LFLAG;
++	n_tio.c_cc[VEOF] = CEOF;
++	n_tio.c_cc[VEOL] = CEOL;
++	n_tio.c_cc[VERASE] = CERASE;
++	n_tio.c_cc[VINTR] = CINTR;
++	n_tio.c_cc[VSTATUS] = CSTATUS;
++	n_tio.c_cc[VKILL] = CKILL;
++	n_tio.c_cc[VQUIT] = CQUIT;
++	n_tio.c_cc[VSUSP] = CSUSP;
++	n_tio.c_cc[VSTART] = CSTART;
++	n_tio.c_cc[VSTOP] = CSTOP;
++#else
+ 	n_tio.c_iflag &= ~(IGNCR|IUCLC);
+ 	n_tio.c_iflag |= ICRNL|IXON|IXANY;
+ 	n_tio.c_oflag &= ~(OLCUC|ONOCR|ONLRET|OFILL|NLDLY|CRDLY|TABDLY|BSDLY);
+@@ -455,6 +477,7 @@
+ 	n_tio.c_cc[VSTART] = '\021';		/* ^Q	*/
+ 	n_tio.c_cc[VSTOP] = '\023';		/* ^S	*/
+ 	n_tio.c_cc[VSUSP] = '\032';		/* ^Z	*/
++#endif
+ #if USE_TC
+ 	if (0 != tcsetattr(0, TCSANOW, &n_tio)) {
+ 		(void) fprintf(stderr, "%s: tcsetattr: %s\n", progname, strerror(errno));

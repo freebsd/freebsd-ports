@@ -1,0 +1,17 @@
+--- autologin/Makefile	Sun Apr 19 03:51:53 1998
++++ autologin/Makefile	Sun Apr 19 03:54:02 1998
+@@ -7,11 +7,11 @@
+ #
+ 
+ DESTDIR=
+-BINDIR=	${DESTDIR}/usr/local/etc
++BINDIR=	${DESTDIR}/usr/local/sbin
+ 
+ INCLUDE=
+-DEBUG=	-g
+-DEFS=	-DPUCC -DSUN5
++DEBUG=	-O
++DEFS=	-DFREEBSD
+ CFLAGS=	${DEBUG} ${DEFS} ${INCLUDE}
+ 
+ GENC=	main.c
