@@ -1,0 +1,11 @@
+--- ConfigX.mk.bak	Sun Dec 27 15:00:26 1998
++++ ConfigX.mk	Sun Dec 27 15:01:06 1998
+@@ -256,7 +256,7 @@
+ ifeq ($(Arch),bsd)
+ INCDIR  +=       -I/usr/$(X11RV)/include
+ LIBDIR  +=       -L/usr/$(X11RV)/lib
+-LIBS    +=       -lV -lXaw -lXmu -lXt -lXext -lX11
++LIBS    +=       -lV -lXaw -lXmu -lXt -lXext -lX11 -lICE -lSM
+ TARZ    =
+ RANLIB  =       ranlib
+ VGPATH	=	UNIX
