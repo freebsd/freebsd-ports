@@ -1,0 +1,47 @@
+*** xroach.c.orig	Sat May  4 21:18:41 1996
+--- xroach.c	Sat May  4 17:50:29 1996
+***************
+*** 96,114 ****
+      /*
+         Process command line options.
+      */
+!     for (ax=1; ax<ac; ax++) {
+! 	arg = av[ax];
+  	if (strcmp(arg, "-display") == 0) {
+! 	    display_name = av[++ax];
+  	}
+  	else if (strcmp(arg, "-rc") == 0) {
+! 	    roachColor = av[++ax];
+  	}
+  	else if (strcmp(arg, "-speed") == 0) {
+! 	    roachSpeed = atof(av[++ax]);
+  	}
+  	else if (strcmp(arg, "-roaches") == 0) {
+! 	    maxRoaches = strtol(av[++ax], (char **)NULL, 0);
+  	}
+  	else {
+  	    Usage();
+--- 96,118 ----
+      /*
+         Process command line options.
+      */
+!     for (ax=1; ax<ac; ) {
+! 	arg = av[ax++];
+! 
+! 	if (ax >= ac)
+! 	    Usage();
+! 
+  	if (strcmp(arg, "-display") == 0) {
+! 	    display_name = av[ax++];
+  	}
+  	else if (strcmp(arg, "-rc") == 0) {
+! 	    roachColor = av[ax++];
+  	}
+  	else if (strcmp(arg, "-speed") == 0) {
+! 	    roachSpeed = atof(av[ax++]);
+  	}
+  	else if (strcmp(arg, "-roaches") == 0) {
+! 	    maxRoaches = strtol(av[ax++], (char **)NULL, 0);
+  	}
+  	else {
+  	    Usage();
