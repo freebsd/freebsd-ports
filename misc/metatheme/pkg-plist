@@ -1,0 +1,47 @@
+bin/metatheme-edit
+bin/metatheme-install
+bin/metatheme_selector_capplet
+include/mtm-ui/mtm-ext-selector.h
+include/mtm/mtm-env.h
+include/mtm/mtm-ext-handler.h
+include/mtm/mtm-ext.h
+include/mtm/mtm-handler.h
+include/mtm/mtm-init.h
+include/mtm/mtm-plugin.h
+include/mtm/mtm-stateful.h
+include/mtm/mtm-theme-ball.h
+include/mtm/mtm-theme.h
+include/mtm/mtm-util.h
+include/mtm/mtm.h
+lib/libmtm-ui.a
+lib/libmtm-ui.so
+lib/libmtm-ui.so.0
+lib/libmtm.a
+lib/libmtm.so
+lib/libmtm.so.0
+lib/metatheme/plugins/libbackground.so
+lib/metatheme/plugins/libgtk.so
+lib/metatheme/plugins/libpreview.so
+lib/metatheme/plugins/libsawfish.so
+share/gnome/apps/Applications/metatheme-edit.desktop
+share/gnome/apps/Settings/Desktop/metatheme_selector.desktop
+share/gnome/control-center/Desktop/metatheme_selector.desktop
+share/gnome/mime-info/metatheme-edit.keys
+share/gnome/mime-info/metatheme-install.keys
+share/gnome/mime-info/metatheme.keys
+share/gnome/mime-info/metatheme.mime
+share/gnome/pixmaps/gnome-application-x-metatheme.png
+share/locale/da/LC_MESSAGES/metatheme.mo
+share/locale/fr/LC_MESSAGES/metatheme.mo
+share/locale/pt_BR/LC_MESSAGES/metatheme.mo
+share/locale/tr/LC_MESSAGES/metatheme.mo
+share/metatheme-glade/metatheme-edit.glade
+share/metatheme-glade/metatheme-install.glade
+share/metatheme-glade/mtm-sel.glade
+share/metathemes/default.mtm
+@dirrm share/metathemes
+@dirrm share/metatheme-glade
+@dirrm lib/metatheme/plugins
+@dirrm lib/metatheme
+@dirrm include/mtm-ui
+@dirrm include/mtm

@@ -1,0 +1,15 @@
+--- plugins/background/background-plugin.c	2000/11/26 21:31:41	1.1
++++ plugins/background/background-plugin.c	2000/11/26 21:33:54
+@@ -227,9 +227,9 @@
+ bg_plugin_find_theme (MtmExtHandler *handler, gchar *name,
+ 	gboolean is_root)
+ {
+-	gchar *root_prefixes[] = {"/usr/share/pixmaps/backgrounds",
+-		"/usr/share/pixmaps/backgrounds/tiles",
+-		"/usr/share/wallpapers",
++	gchar *root_prefixes[] = {"%%X11BASE%%/share/gnome/pixmaps/backgrounds",
++		"%%X11BASE%%/share/gnome/pixmaps/backgrounds/tiles",
++		"%%X11BASE%%/share/gnome/wallpapers",
+ 		NULL};
+ 	gchar *user_prefixes[] = {".metatheme-backgrounds",
+ 		".backgrounds",

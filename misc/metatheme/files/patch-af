@@ -1,0 +1,21 @@
+--- plugins/gtk/gtk-plugin.c	2000/11/26 21:25:12	1.1
++++ plugins/gtk/gtk-plugin.c	2000/11/26 21:27:39
+@@ -375,15 +375,15 @@
+ 	
+ 	/* This should be more robust.
+ 	 * Perhaps we could make this user-configurable somehow. */
+-	pipe = popen ("gtk-config --prefix", "r"); 
++	pipe = popen ("%%GTK_CONFIG%% --prefix", "r"); 
+ 	if (pipe == NULL)
+-		return g_strdup ("/usr");
++		return g_strdup ("%%X11BASE%%");
+ 
+ 	fgets (prefix, 1000, pipe);
+ 	pclose (pipe);
+ 	
+ 	if (prefix == NULL)
+-		return g_strdup ("/usr");
++		return g_strdup ("%%X11BASE%%");
+ 	
+ 	return g_strchomp (g_strdup (prefix));
+ }

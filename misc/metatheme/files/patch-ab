@@ -1,0 +1,11 @@
+--- plugins/gtk/Makefile.in	2000/11/26 21:12:29	1.1
++++ plugins/gtk/Makefile.in	2000/11/26 21:12:58
+@@ -148,7 +148,7 @@
+ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+ LIBS = @LIBS@
+-libgtk_la_LDFLAGS = 
++libgtk_la_LDFLAGS = -module -avoid-version
+ libgtk_la_LIBADD = 
+ libgtk_la_OBJECTS =  gtk-plugin.lo
+ CFLAGS = @CFLAGS@

@@ -1,0 +1,11 @@
+--- mtm-ui/Makefile.in	2000/11/25 22:18:16	1.1
++++ mtm-ui/Makefile.in	2000/11/25 22:22:42
+@@ -149,7 +149,7 @@
+ 
+ 
+ test_selector_SOURCES = test-selector.c
+-test_selector_LDFLAGS =  	`gnome-config --libs xml gnome` 	`gtk-config --libs`
++test_selector_LDFLAGS = @GNOME_LIBS@ @GTK_LIBS@ @EXTRA_LIBS@
+ 
+ 
+ test_selector_LDADD =  	../mtm/libmtm.la		libmtm-ui.la
