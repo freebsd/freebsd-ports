@@ -35,8 +35,8 @@ EMACSDL_DIR=	${.CURDIR}/../../editors/emacs20-dl
 EMACSDL_SRCDIR=	${WRKDIRPREFIX}${EMACSDL_DIR}/work/emacs-${EMACS_VER}
 # hack to allow parallel build to work
 .if defined(PARALLEL_PACKAGE_BUILD)
-BUILD_DEPENDS+=	gmake:${PORTSDIR}/devel/gmake \
-		autoconf:${PORTSDIR}/devel/autoconf
+USE_GMAKE=	yes
+BUILD_DEPENDS+=	autoconf:${PORTSDIR}/devel/autoconf
 .endif
 
 post-install:
