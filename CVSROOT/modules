@@ -5872,6 +5872,7 @@ p5-XML-Filter-SAXT	ports/textproc/p5-XML-Filter-SAXT
 p5-XML-Filter-XInclude	ports/textproc/p5-XML-Filter-XInclude
 p5-XML-Filter-XSLT	ports/textproc/p5-XML-Filter-XSLT
 p5-XML-Generator-DBI	ports/textproc/p5-XML-Generator-DBI
+p5-XML-Generator-PerlData	ports/textproc/p5-XML-Generator-PerlData
 p5-XML-Grove	ports/textproc/p5-XML-Grove
 p5-XML-Handler-Trees	ports/textproc/p5-XML-Handler-Trees
 p5-XML-Handler-YAWriter	ports/textproc/p5-XML-Handler-YAWriter
