@@ -32,6 +32,38 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2689f4cb-ec4c-11d8-9440-000347a4fa7d">
+    <topic>rsync -- path sanitizing vulnerability</topic>
+    <affects>
+      <package>
+        <name>rsync</name>
+        <range><lt>2.6.2_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>An rsync security advisory reports:</p>
+	<blockquote cite="http://samba.org/rsync/#security_aug04">
+	  <p>There is a path-sanitizing bug that affects daemon mode in
+	    all recent rsync versions (including 2.6.2) but only if
+	    chroot is disabled.</p>
+	</blockquote>
+	<p>The bug may allow a remote user to access files outside
+	  of an rsync module's configured path with the privileges
+	  configured for that module.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0792</cvename>
+      <url>http://samba.org/rsync/#security_aug04</url>
+      <mlist>http://lists.samba.org/archive/rsync-announce/2004/000017.html</mlist>
+    </references>
+    <dates>
+      <discovery>2004-08-12</discovery>
+      <entry>2004-08-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7884d56f-f7a1-11d8-9837-000c41e2cdad">
     <topic>gnomevfs --- unsafe URI handling</topic>
     <affects>
