@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	apache-ant
-PORTVERSION=	1.5.3.1
-PORTREVISION=	1
+PORTVERSION=	1.5.4
 CATEGORIES=	devel java
 MASTER_SITES=	http://apache.mirror.trueserver.nl/dist/ant/binaries/ \
 		http://apache.proserve.nl/dist/ant/binaries/ \
 		http://apache.cs.uu.nl/dist/ant/binaries/ \
 		http://dist.apache.easynet.nl/ant/binaries/
-DISTNAME=	${PORTNAME}-${ANT_VERSION}-bin
+DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
 
 MAINTAINER=	znerd@FreeBSD.org
 COMMENT=	Java- and XML-based build tool, conceptually similar to make
@@ -26,13 +25,12 @@ PORTDESTDIR=	${PREFIX}/ant
 PLIST_SUB+=	T=${PORTDESTDIR:S/^${PREFIX}\///}
 
 READMES=	LICENSE README WHATSNEW
-ANT_VERSION=	1.5.3-1
 
 DATADIRS=	lib
 .if !defined(NOPORTDOCS)
 DATADIRS+=	docs
 .endif
-WRKSRC=		${WRKDIR}/${PORTNAME}-${ANT_VERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 do-patch:
 	@${CP} ${FILESDIR}/ant ${WRKSRC}/bin/ant

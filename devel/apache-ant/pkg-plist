@@ -21,7 +21,9 @@ bin/ant
 %%T%%/docs/images/ant_logo_small.gif
 %%T%%/docs/images/current.gif
 %%T%%/docs/images/group-logo.gif
+%%T%%/docs/images/jp_rcwinner_2003.gif
 %%T%%/docs/images/jw_ec_logo_winner2002.gif
+%%T%%/docs/images/jw_ec_logo_winner2003.gif
 %%T%%/docs/images/label.gif
 %%T%%/docs/images/menu-left.gif
 %%T%%/docs/images/menu-right.gif
@@ -826,6 +828,7 @@ bin/ant
 %%T%%/docs/manual/api/org/apache/tools/zip/ZipLong.html
 %%T%%/docs/manual/api/org/apache/tools/zip/ZipOutputStream.html
 %%T%%/docs/manual/api/org/apache/tools/zip/ZipShort.html
+%%T%%/docs/manual/api/resources/inherit.gif
 %%T%%/docs/manual/api/allclasses-frame.html
 %%T%%/docs/manual/api/allclasses-noframe.html
 %%T%%/docs/manual/api/constant-values.html
@@ -1018,17 +1021,16 @@ bin/ant
 %%T%%/docs/projects/antidote/index.html
 %%T%%/docs/projects/antidote/module.html
 %%T%%/docs/projects/index.html
-%%T%%/docs/ant15_todo.html
 %%T%%/docs/antnews.html
 %%T%%/docs/ant_in_anger.html
 %%T%%/docs/ant_task_guidelines.html
 %%T%%/docs/appendix_e.pdf
 %%T%%/docs/breadcrumbs.js
+%%T%%/docs/bylaws.html
 %%T%%/docs/contributors.html
 %%T%%/docs/cvs.html
 %%T%%/docs/external.html
 %%T%%/docs/faq.html
-%%T%%/docs/guidelines.html
 %%T%%/docs/index.html
 %%T%%/docs/legal.html
 %%T%%/docs/LICENSE
@@ -1104,6 +1106,7 @@ bin/ant
 @dirrm %%T%%/docs/manual/api/org/apache/tools
 @dirrm %%T%%/docs/manual/api/org/apache
 @dirrm %%T%%/docs/manual/api/org
+@dirrm %%T%%/docs/manual/api/resources
 @dirrm %%T%%/docs/manual/api
 @dirrm %%T%%/docs/manual/CoreTasks
 @dirrm %%T%%/docs/manual/CoreTypes
