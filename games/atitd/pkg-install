@@ -1,0 +1,45 @@
+#!/bin/sh
+
+PATH=/bin:/usr/sbin
+
+if [ -n "${PACKAGE_BUILDING}" ]; then
+	exit 0
+fi
+
+case $2 in
+PRE-INSTALL)
+	PW=/usr/sbin/pw
+	USER=atitd
+	GROUP=atitd
+	GECOS="A Tale in the Desert"
+
+	echo -n "Checking for group '$GROUP'... "
+
+	if ! ${PW} groupshow $GROUP >/dev/null 2>&1; then
+		echo -n "doesn't exist, adding... "
+		if ${PW} groupadd $GROUP ; then
+			echo "success."
+		else
+			echo "FAILED!"
+			exit 1
+		fi
+	else
+		echo "exists."
+	fi
+
+	echo -n "Checking for user '$USER'... "
+
+	if ! ${PW} usershow $USER >/dev/null 2>&1; then
+		echo -n "doesn't exist, adding... "
+		if ${PW} useradd $USER -c "${GECOS}" -d /nonexistent -g $GROUP -s /sbin/nologin -h - ; then
+			echo "success."
+		else
+			echo "FAILED!"
+			exit 1
+		fi
+	else
+		echo "exists."
+	fi
+
+	;;
+esac

@@ -27,6 +27,7 @@
     SUBDIR += angband
     SUBDIR += antipolix
     SUBDIR += asc
+    SUBDIR += atitd
     SUBDIR += atomix
     SUBDIR += atr3d
     SUBDIR += awele
