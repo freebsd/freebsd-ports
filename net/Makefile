@@ -310,6 +310,7 @@
     SUBDIR += p5-PlRPC
     SUBDIR += p5-RPC-XML
     SUBDIR += p5-SNMP
+    SUBDIR += p5-SNMP-MIB-Compiler
     SUBDIR += p5-SNMP-Util
     SUBDIR += p5-SNMP_Session
     SUBDIR += p5-SOAP
