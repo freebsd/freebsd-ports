@@ -1,2 +1,3 @@
 lib/libumfpack.a
 share/doc/umfpack/README.gz
+@dirrm share/doc/umfpack
