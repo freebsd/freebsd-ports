@@ -53,7 +53,9 @@ pre-extract:
 
 pre-configure:
 	${PERL} -pi -e "s|AM_PROG_INSTALL|AC_PROG_INSTALL|g" ${WRKSRC}/aclocal.m4
+.if defined(WITH_GPGME)
 	${RM} -f ${WRKSRC}/ac/gpgme.m4
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
