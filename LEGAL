@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.57 1997/01/05 23:21:30 obrien Exp $
+# $Id: LEGAL,v 1.58 1997/01/31 08:27:06 tg Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -26,6 +26,7 @@ cku190.tar.gz		ports/comms/kermit	Restrictive copyright
 contool-*		ports/x11/contool	Don't incorporate the source
 						code into a product which is
 						subsequently sold.
+crack-5.0		ports/security/crack	Crypto; export-controlled
 dgd/dgd-1.0.37.tar.gz	ports/net/dgd		License required for commercial
 						use as a server, and even for
 						distribution of sources and/or
