@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	cdrdao
-PORTVERSION=	1.1.5
+PORTVERSION=	1.1.7
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	cdrdao
+MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
@@ -17,16 +17,18 @@ MAINTAINER=	ports@FreeBSD.org
 BUILD_DEPENDS=	antlr:${PORTSDIR}/devel/pccts \
 		dlg:${PORTSDIR}/devel/pccts
 
-IGNORE=	"Project frozen because of License issues. See http://cdrdao.sourceforge.net/news.html for detail"
-
-GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
 
 MAN1=		cdrdao.1
 
 .include <bsd.port.pre.mk>
 
-CONFIGURE_ARGS=	--disable-gtkmmtest --with-pcctsbin=${LOCALBASE}/bin \
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--with-lame=no \
+		--with-gtkmm-prefix=${NONEXISTENT} \
+		--with-pcctsbin=${LOCALBASE}/bin \
 		--with-pcctsinc=${LOCALBASE}/include/pccts
 
 .if defined(WITHOUT_SCGLIB) && ${OSVERSION} > 300000
@@ -37,10 +39,13 @@ CONFIGURE_ARGS+=	--without-scglib
 CONFIGURE_ARGS+=	--without-posix-threads
 .endif
 
-pre-fetch:
+pre-everything:
+	@${ECHO_MSG} ""
 	@${ECHO_MSG} "If you don't want to use Joerg Schilling's SCSI library,"
 	@${ECHO_MSG} "set WITHOUT_SCGLIB=yes."
+	@${ECHO_MSG} ""
 	@${ECHO_MSG} "If you want to use pthreads, set WITH_PTHREADS=yes."
+	@${ECHO_MSG} ""
 
 post-extract:
 .if ${MACHINE_ARCH} == "alpha"
@@ -49,13 +54,18 @@ post-extract:
 .endif
 	@${CP} ${FILESDIR}/getopt.h ${WRKSRC}/utils
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+
 post-install:
-	strip ${PREFIX}/bin/cdrdao
-	@${INSTALL_PROGRAM} -s ${WRKSRC}/utils/toc2cue ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/share/doc/cdrdao
-.for i in COPYING CREDITS INSTALL README README.FreeBSD README.PlexDAE \
-	Release-1.1.0 Release-1.1.2 Release-1.1.3 Release-1.1.4
-	@${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/doc/cdrdao/
+.for i in cdrdao toc2cue
+	@${STRIP_CMD} ${PREFIX}/bin/${i}
+.endfor
+	@${MKDIR} ${DOCSDIR}
+.for i in CREDITS INSTALL README README.FreeBSD README.PlexDAE \
+	Release-1.1.0 Release-1.1.2 Release-1.1.3 Release-1.1.4 \
+	Release-1.1.5 Release-1.1.6 Release-1.1.7
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 	@${CAT} ${PKGMESSAGE}
 

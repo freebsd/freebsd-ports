@@ -1,7 +1,6 @@
 bin/cdrdao
 bin/toc2cue
 share/cdrdao/drivers
-%%PORTDOCS%%share/doc/cdrdao/COPYING 
 %%PORTDOCS%%share/doc/cdrdao/CREDITS
 %%PORTDOCS%%share/doc/cdrdao/INSTALL 
 %%PORTDOCS%%share/doc/cdrdao/README 
@@ -11,5 +10,8 @@ share/cdrdao/drivers
 %%PORTDOCS%%share/doc/cdrdao/Release-1.1.2
 %%PORTDOCS%%share/doc/cdrdao/Release-1.1.3
 %%PORTDOCS%%share/doc/cdrdao/Release-1.1.4
-@dirrm share/cdrdao
+%%PORTDOCS%%share/doc/cdrdao/Release-1.1.5
+%%PORTDOCS%%share/doc/cdrdao/Release-1.1.6
+%%PORTDOCS%%share/doc/cdrdao/Release-1.1.7
 %%PORTDOCS%%@dirrm share/doc/cdrdao
+@dirrm share/cdrdao
