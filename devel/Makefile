@@ -354,6 +354,7 @@
     SUBDIR += m68k-rtems-objc
     SUBDIR += make++
     SUBDIR += makedepend
+    SUBDIR += makeplus
     SUBDIR += memcheck
     SUBDIR += mico
     SUBDIR += mime
