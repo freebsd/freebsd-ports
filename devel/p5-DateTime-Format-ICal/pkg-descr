@@ -1,0 +1,5 @@
+This module understands the ICal date/time and duration formats, as defined in
+RFC 2445. It can be used to parse these formats in order to create the
+appropriate objects.
+
+WWW: http://datetime.perl.org/
