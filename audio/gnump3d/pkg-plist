@@ -70,6 +70,28 @@ etc/gnump3d/mime.types
 %%DATADIR%%/LaFrere/size.html
 %%DATADIR%%/LaFrere/stats.html
 %%DATADIR%%/LaFrere/tagbrowse.html
+%%DATADIR%%/Musicus/AUTHOR
+%%DATADIR%%/Musicus/COPYING.html
+%%DATADIR%%/Musicus/bug.html
+%%DATADIR%%/Musicus/config.ini
+%%DATADIR%%/Musicus/error.html
+%%DATADIR%%/Musicus/extras.html
+%%DATADIR%%/Musicus/footer.tmpl
+%%DATADIR%%/Musicus/index.html
+%%DATADIR%%/Musicus/info.html
+%%DATADIR%%/Musicus/now.html
+%%DATADIR%%/Musicus/playlist.html
+%%DATADIR%%/Musicus/prefs.html
+%%DATADIR%%/Musicus/random.html
+%%DATADIR%%/Musicus/recent.html
+%%DATADIR%%/Musicus/results.html
+%%DATADIR%%/Musicus/search.html
+%%DATADIR%%/Musicus/size.html
+%%DATADIR%%/Musicus/statistics.html
+%%DATADIR%%/Musicus/stats.html
+%%DATADIR%%/Musicus/style.css
+%%DATADIR%%/Musicus/tagbrowse.html
+%%DATADIR%%/Musicus/template.ini
 %%DATADIR%%/Nomad/COPYING.html
 %%DATADIR%%/Nomad/ClubNomadLogo.gif
 %%DATADIR%%/Nomad/GNUMP3dLogo.jpg
@@ -219,7 +241,6 @@ etc/gnump3d/mime.types
 %%DATADIR%%/dotNET/style.css
 %%DATADIR%%/handheld/AUTHOR
 %%DATADIR%%/handheld/config.ini
-%%DATADIR%%/handheld/error.html
 %%DATADIR%%/handheld/index.html
 %%DATADIR%%/handheld/random.html
 %%DATADIR%%/handheld/results.html
@@ -267,6 +288,7 @@ etc/gnump3d/mime.types
 @dirrm %%DATADIR%%/Tabular
 @dirrm %%DATADIR%%/SchwartzNGrau
 @dirrm %%DATADIR%%/Nomad
+@dirrm %%DATADIR%%/Musicus
 @dirrm %%DATADIR%%/LaFrere
 @dirrm %%DATADIR%%/Clean
 @dirrm %%DATADIR%%
