@@ -71,6 +71,7 @@
     SUBDIR += gnomeprint
     SUBDIR += gp
     SUBDIR += gsfonts
+    SUBDIR += gtklp
     SUBDIR += guitartex
     SUBDIR += gv
     SUBDIR += hp2xx
