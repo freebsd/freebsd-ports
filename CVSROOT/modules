@@ -7115,6 +7115,7 @@ vicq		ports/net/vicq
 vid		ports/graphics/vid
 vidcontrol	src/usr.sbin/vidcontrol
 vide		ports/x11-fm/vide
+videogen	ports/sysutils/videogen
 videotext	ports/misc/videotext
 view3ds		ports/graphics/view3ds
 viewcvs		ports/devel/viewcvs
