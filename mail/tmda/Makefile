@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tmda
-PORTVERSION=	0.89
+PORTVERSION=	0.91
 CATEGORIES=	mail python
 MASTER_SITES=	http://www.tmda.net/releases/%SUBDIR%/ \
 		http://www.us.tmda.net/releases/%SUBDIR%/ \
@@ -29,7 +29,8 @@ USE_PYTHON=	2.1+
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-DOCS=		CODENAMES CRYPTO README THANKS UPGRADE htdocs/*.html
+DOCS=		CODENAMES CRYPTO README THANKS UPGRADE htdocs/*.html 
+DOCS2=		htdocs/img/*.png
 SAMPLES=	sample.config tmda.el tofmipd.sysconfig vtmdarc
 SCRIPTS=	collectaddys def2html printcdb printdbm sendit.sh \
 	 	smtp-check-sender tofmipd.init tofmipd.sysconfig \
@@ -51,8 +52,10 @@ do-install:
 	cd ${WRKSRC}/contrib && ${INSTALL_DATA} ${SAMPLES} ${EXAMPLESDIR}
 	cd ${WRKSRC}/contrib && ${INSTALL_SCRIPT} ${SCRIPTS} ${EXAMPLESDIR}
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}/img
+	cd ${WRKSRC} && \
+		${INSTALL_DATA} ${DOCS} ${DOCSDIR} && \
+		${INSTALL_DATA} ${DOCS2} ${DOCSDIR}/img
 .endif
 	@${SED} -e 's!PREFIX!${PREFIX}!; s!DOCSDIR!${DOCSDIR}!;' \
 	       -e 's!EXAMPLESDIR!${EXAMPLESDIR}!' ${.CURDIR}/pkg-message \
