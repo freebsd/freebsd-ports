@@ -3,7 +3,7 @@
 # Date created:         27 Feb 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.6 1996/11/15 10:52:00 asami Exp $
+# $Id: Makefile,v 1.7 1996/11/18 10:34:31 asami Exp $
 #
 
 DISTNAME=       playmidi-2.3
@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	apps/sound/players
 
 MAINTAINER=     ache@FreeBSD.ORG
 
-IS_INTERACTIVE= YES
+IS_INTERACTIVE= YES	# asks what devices you want to support
 HAS_CONFIGURE=  YES
 CONFIGURE_SCRIPT=       Configure
 CONFIGURE_ENV=  PREFIX=${PREFIX}
