@@ -11,9 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.udel.edu/pub/ntp/ntp4/ \
 		http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ \
 		ftp://ftp.archive.de.uu.net/pub/unix/ntp/ntp4/ \
-		ftp://ftp.digex.net/pub/packages/network/ntp/ntp4/ \
-		ftp://ftp.netlab.is.tsukuba.ac.jp/pub/network/ntp/ntp4/ \
-		ftp://uiarchive.cso.uiuc.edu/pub/ftp/ftp.udel.edu/pub/ntp/ntp4/
+		ftp://ftp.netlab.is.tsukuba.ac.jp/pub/network/ntp/ntp4/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/-rc/}
 
 MAINTAINER=	cy@FreeBSD.org
