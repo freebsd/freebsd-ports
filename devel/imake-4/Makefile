@@ -7,6 +7,7 @@
 
 PORTNAME=	imake
 PORTVERSION=	4.2.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_XFREE} \
 		ftp://psych.psy.uq.oz.au/pub/X11R5/:wrap \
