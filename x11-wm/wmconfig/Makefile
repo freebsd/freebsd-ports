@@ -8,21 +8,17 @@
 PORTNAME=	wmconfig
 PORTVERSION=	1.0
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://www.arrishq.org/downloads/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	pav
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Menu generation tool for X window managers
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
+USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--prefix=${LOCALBASE} --sysconfdir=${LOCALBASE}/etc --mandir=${LOCALBASE}/man
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not compile on 4.x"
-.endif
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
@@ -41,4 +37,4 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/samples/gimp ${PREFIX}/etc/wmconfig
 	@${INSTALL_DATA} ${WRKSRC}/samples/eterm ${PREFIX}/etc/wmconfig
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
