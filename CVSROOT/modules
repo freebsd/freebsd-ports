@@ -3062,6 +3062,7 @@ it-ooodict-IT	ports/editors/ooodict-it_IT
 itcl		ports/lang/itcl
 ithought	ports/deskutils/ithought
 itk		ports/x11-toolkits/itk
+itl		ports/math/itl
 its		ports/emulators/its
 its4		ports/security/its4
 iverilog	ports/cad/iverilog
@@ -3864,6 +3865,7 @@ ko-unfonts-ttf	ports/korean/unfonts-ttf
 ko-uniksc	ports/korean/uniksc
 ko-unzip	ports/korean/unzip
 kobodeluxe	ports/games/kobodeluxe
+koctave		ports/math/koctave
 koffice-i18n	ports/misc/koffice-i18n
 koffice-i18n-af	ports/misc/koffice-i18n-af
 koffice-i18n-bs	ports/misc/koffice-i18n-bs
