@@ -36,6 +36,7 @@ share/aclocal%%BUILD_VERSION%%/regex.m4
 share/aclocal%%BUILD_VERSION%%/runlog.m4
 share/aclocal%%BUILD_VERSION%%/sanity.m4
 share/aclocal%%BUILD_VERSION%%/strip.m4
+share/aclocal%%BUILD_VERSION%%/tar.m4
 share/automake%%BUILD_VERSION%%/Automake/ChannelDefs.pm
 share/automake%%BUILD_VERSION%%/Automake/Channels.pm
 share/automake%%BUILD_VERSION%%/Automake/Condition.pm
@@ -74,6 +75,7 @@ share/automake%%BUILD_VERSION%%/am/footer.am
 share/automake%%BUILD_VERSION%%/am/header-vars.am
 share/automake%%BUILD_VERSION%%/am/header.am
 share/automake%%BUILD_VERSION%%/am/install.am
+share/automake%%BUILD_VERSION%%/am/inst-vars.am
 share/automake%%BUILD_VERSION%%/am/java.am
 share/automake%%BUILD_VERSION%%/am/lang-compile.am
 share/automake%%BUILD_VERSION%%/am/lex.am

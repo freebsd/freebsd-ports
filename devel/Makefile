@@ -63,6 +63,7 @@
     SUBDIR += automake14
     SUBDIR += automake15
     SUBDIR += automake18
+    SUBDIR += automake19
     SUBDIR += avalon-framework
     SUBDIR += avarice
     SUBDIR += avltree
