@@ -26,4 +26,10 @@ CONFIGURE_ARGS=	--with-pcre-dir=${LOCALBASE}/lib \
 		--with-avcall-dir=${LOCALBASE}/lib \
 		--with-avcall-inc=${LOCALBASE}/include
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500000
+BUILD_DEPENDS+= ${LOCALBASE}/include/gmp.h:${PORTSDIR}/math/libgmp4
+.endif
+
+.include <bsd.port.post.mk>
