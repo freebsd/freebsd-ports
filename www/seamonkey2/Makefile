@@ -7,7 +7,7 @@
 
 PORTNAME?=	mozilla
 PORTVERSION=	1.8.a3
-PORTREVISION?=	1
+PORTREVISION?=	4
 PORTEPOCH?=	2
 CATEGORIES?=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
@@ -49,7 +49,7 @@ USE_ICONV=	yes
 USE_GMAKE=	yes
 WANT_GNOME=	yes
 USE_REINPLACE=	yes
-GNU_CONFIGURE=	yes
+HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=					\
 		--disable-auto-deps		\
 		--enable-chrome-format=jar	\
@@ -76,6 +76,7 @@ CONFIGURE_ARGS=					\
 		--with-system-mng=${LOCALBASE}	\
 		--with-system-png=${LOCALBASE}	\
 		--with-gssapi=/usr		\
+		--prefix=${FAKEDIR}		\
 		--with-pthreads
 
 PLIST=		${WRKDIR}/pkg-plist
@@ -178,6 +179,7 @@ CONFIGURE_ARGS+=	--disable-composer
 MAKE_ENV=	LD_LIBRARY_PATH=${WRKSRC}/dist/bin \
 		MOZ_INTERNAL_LIBART_LGPL=1
 ALL_TARGET=	default
+FAKEDIR=	${WRKDIR}/fake
 
 .if ${ARCH} == "i386"
 CONFIGURE_ARGS+=	--enable-reorder
@@ -259,12 +261,12 @@ pre-configure:
 post-build:
 	${SED} -e "s|%%PREFIX%%|${PREFIX}|g" -e "s|%%MOZILLA%%|${MOZILLA}|g" \
 		${FILESDIR}/mozilla.sh >${WRKSRC}/${MOZILLA}
-	${FIND} ${WRKSRC}/dist/bin -type d | ${SORT} -r | \
-		${XARGS} ${RMDIR} 2> /dev/null || ${TRUE}
 
 pre-install:
-	${RM} -f ${PLIST}
+	${RM} -rf ${PLIST} ${FAKEDIR}
 	${TOUCH} -f ${PLIST}
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
+		Makefile ${MAKE_ARGS} install
 	if [ ! -x ${PREFIX}/bin/mozilla -a ! -L ${PREFIX}/bin/mozilla ]; then \
 		${ECHO_CMD} bin/mozilla >> ${PLIST} ; \
 	fi
@@ -278,7 +280,9 @@ pre-install:
 		done; \
 		${ECHO_CMD} @dirrm lib/browser_plugins >> ${PLIST} ; \
 	fi
-	cd ${WRKSRC}/dist/bin && ${FIND} -s * -type f -o -type l | \
+	${ECHO_CMD} lib/${MOZILLA}/mozilla >> ${PLIST}
+	${ECHO_CMD} lib/${MOZILLA}/mozilla-config >> ${PLIST}
+	cd ${FAKEDIR}/lib/${MOZILLA} && ${FIND} -s * -type f -o -type l | \
 		${SED} -e 's:^:lib/${MOZILLA}/:' >> ${PLIST} \
 			&& ${FIND} -d * -type d | \
 			${SED} -e 's:^:@dirrm lib/${MOZILLA}/:' >> ${PLIST}
@@ -286,7 +290,7 @@ pre-install:
 	for pcfile in ${PKGCONFIG_FILES}; do \
 		${ECHO_CMD} libdata/pkgconfig/$${pcfile}${MOZ_SUFX}${PKGNAMESUFFIX}.pc >> ${PLIST} ; \
 	done
-	cd ${WRKSRC}/dist/include && ${FIND} -s * -type f -o -type l | \
+	cd ${FAKEDIR}/include/${MOZILLA} && ${FIND} -s * -type f -o -type l | \
 		${SED} -e 's:^:include/${MOZILLA}/:' >> ${PLIST} \
 		&& ${FIND} -d * -type d | \
 		${SED} -e 's:^:@dirrm include/${MOZILLA}/:' >> ${PLIST}
@@ -295,7 +299,12 @@ pre-install:
 do-install:
 	${MKDIR} ${PREFIX}/lib/${MOZILLA}
 	${CHMOD} 755 ${PREFIX}/lib/${MOZILLA}
-	cd ${WRKSRC}/dist/bin && ${FIND} . | \
+	${INSTALL_SCRIPT} ${FAKEDIR}/bin/mozilla ${PREFIX}/lib/${MOZILLA}
+	${INSTALL_SCRIPT} ${FAKEDIR}/bin/mozilla-config ${PREFIX}/lib/${MOZILLA}
+	${REINPLACE_CMD} -e 's|${FAKEDIR}|${PREFIX}|g' \
+		${PREFIX}/lib/${MOZILLA}/mozilla \
+		${PREFIX}/lib/${MOZILLA}/mozilla-config
+	cd ${FAKEDIR}/lib/${MOZILLA} && ${FIND} . | \
 		${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/lib/${MOZILLA}
 	${INSTALL_SCRIPT} ${WRKSRC}/${MOZILLA} ${PREFIX}/bin
 	if [ ! -x ${PREFIX}/bin/mozilla -a ! -L ${PREFIX}/bin/mozilla ]; then \
@@ -314,13 +323,15 @@ do-install:
 		done; \
 	fi
 	for pcfile in ${PKGCONFIG_FILES}; do \
+		${REINPLACE_CMD} -e 's|${FAKEDIR}|${PREFIX}|g' \
+			${WRKSRC}/build/unix/$${pcfile}.pc; \
 		${INSTALL_DATA} ${WRKSRC}/build/unix/$${pcfile}.pc \
 			${PREFIX}/libdata/pkgconfig/$${pcfile}${MOZ_SUFX}${PKGNAMESUFFIX}.pc ; \
 	done
 	-${RM} -fr ${PREFIX}/include/${MOZILLA}
 	${MKDIR} ${PREFIX}/include/${MOZILLA}
 	${CHMOD} 755 ${PREFIX}/include/${MOZILLA}
-	cd ${WRKSRC}/dist/include && ${FIND} . | \
+	cd ${FAKEDIR}/include/${MOZILLA} && ${FIND} . | \
 		${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/include/${MOZILLA}
 
 post-install:
