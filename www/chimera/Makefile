@@ -12,8 +12,7 @@ MASTER_SITES=	ftp://ftp.cs.unlv.edu/pub/chimera/
 
 MAINTAINER=	jseger@FreeBSD.org
 
-BROKEN=		build
-
+NO_LATEST_LINK=	yes
 USE_IMAKE=	yes
 
 .include <bsd.port.mk>
