@@ -3,10 +3,10 @@
 # Date created:		30 Jun 1999
 # Whom:			Brett Taylor <brett@peloton.physics.montana.edu>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/07/01 14:13:00 sheldonh Exp $
 #
 
-DISTNAME=	tkseti-1.36
+DISTNAME=	tkseti-1.42
 CATEGORIES=	astro tk80
 MASTER_SITES=	http://www.cuug.ab.ca/~macdonal/tkseti/
 
@@ -15,7 +15,6 @@ MAINTAINER=	brett@peloton.physics.montana.edu
 RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80 \
 		setiathome:${PORTSDIR}/astro/setiathome
 
-NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
 do-install:
