@@ -7,6 +7,7 @@
 
 PORTNAME=	gnupg
 PORTVERSION=	1.0.6
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.gnupg.org/pub/gcrypt/%SUBDIR%/ \
 		ftp://pgp.iijlab.net/pub/%SUBDIR%/ \
