@@ -8,6 +8,12 @@ bin/servlink
 bin/viconf
 bin/viklines
 bin/vimotd
+etc/ircd-hybrid/example.conf
+etc/ircd-hybrid/example.efnet.conf
+etc/ircd-hybrid/ircd.motd.sample
+etc/ircd-hybrid/kline.conf.sample
+etc/ircd-hybrid/dline.conf.sample
+etc/ircd-hybrid/.convertconf-example.conf
 etc/rc.d/ircd-hybrid.sh
 include/ircd-hybrid-7
 share/ircd-hybrid-%%PORTVERSION%%/help/opers/accept
@@ -203,7 +209,7 @@ share/ircd-hybrid-%%PORTVERSION%%/messages/custom/LC_MESSAGES/ircd-hybrid.mo
 %%SHAREDMODULES%%share/ircd-hybrid-%%PORTVERSION%%/modules/m_server.so
 %%SHAREDMODULES%%share/ircd-hybrid-%%PORTVERSION%%/modules/m_sjoin.so
 %%SHAREDMODULES%%share/ircd-hybrid-%%PORTVERSION%%/modules/m_squit.so
-@unexec rmdir %D/etc/ircd-hybrid-7 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf ${PKG_PREFIX}/etc/ircd-hybrid`` to remove any configuration files left." | fmt
+@unexec rmdir %D/etc/ircd-hybrid 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf ${PKG_PREFIX}/etc/ircd-hybrid`` to remove any configuration files left." | fmt
 @unexec rmdir /var/log/ircd 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf /var/log/ircd`` to remove any configuration files left." | fmt
 @dirrm share/ircd-hybrid-%%PORTVERSION%%/modules/autoload
 @dirrm share/ircd-hybrid-%%PORTVERSION%%/modules
