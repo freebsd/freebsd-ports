@@ -1301,7 +1301,7 @@ cat > conftest.$ac_ext <<EOF
 
 int main() { return 0; }
 int t() {
-atan()
+atan(0)
 ; return 0; }
 EOF
 if eval $ac_link; then
@@ -1340,7 +1340,7 @@ cat > conftest.$ac_ext <<EOF
 
 int main() { return 0; }
 int t() {
-atan()
+atan(0)
 ; return 0; }
 EOF
 if eval $ac_link; then
