@@ -1,13 +1,13 @@
-bin/gnucash
 bin/gnc-prices
+bin/gnucash
 etc/gnucash/config
-lib/libgncengine.a
-lib/libgncengine.so
-lib/libgncengine.so.1
 lib/gnucash/perl/gnucash.so
 lib/gnucash/perl/libgncswig.a
 lib/gnucash/perl/libgncswig.so
 lib/gnucash/perl/libgncswig.so.1
+lib/libgncengine.a
+lib/libgncengine.so
+lib/libgncengine.so.1
 @exec /sbin/ldconfig -m %D/lib/gnucash
 @unexec /sbin/ldconfig -R
 share/gnome/apps/Applications/gnucash.desktop
@@ -247,30 +247,34 @@ share/gnome/gnucash/scm/testbed.scm
 share/gnome/gnucash/scm/text-export.scm
 share/gnome/gnucash/scm/utilities.scm
 share/gnome/gnucash/scm/xml-generator.scm
+share/locale/da/LC_MESSAGES/gnucash.mo
 share/locale/de/LC_MESSAGES/gnucash.mo
 share/locale/en_GB/LC_MESSAGES/gnucash.mo
 share/locale/es/LC_MESSAGES/gnucash.mo
 share/locale/fr/LC_MESSAGES/gnucash.mo
 share/locale/it/LC_MESSAGES/gnucash.mo
+share/locale/no/LC_MESSAGES/gnucash.mo
+share/locale/pt_BR/LC_MESSAGES/gnucash.mo
 share/locale/ru/LC_MESSAGES/gnucash.mo
 share/locale/sv/LC_MESSAGES/gnucash.mo
-@exec cd share/guile && ln -sf ../slib .
-@exec guile -c "(use-modules (ice-9 slib)) (require 'new-catalog)"
-@dirrm etc/gnucash
-@dirrm lib/gnucash/perl
-@dirrm lib/gnucash
-@dirrm share/gnome/gnucash/doc/examples
-@dirrm share/gnome/gnucash/doc
-@dirrm share/gnome/gnucash/html/C/image
-@dirrm share/gnome/gnucash/html/C
-@dirrm share/gnome/gnucash/html/fr/image
-@dirrm share/gnome/gnucash/html/fr
-@dirrm share/gnome/gnucash/html
-@dirrm share/gnome/gnucash/perl
-@dirrm share/gnome/gnucash/scm/gnumeric
+share/locale/uk/LC_MESSAGES/gnucash.mo
+@exec cd share/guile && ln -sf ../slib . 
+@exec guile -c "(use-modules (ice-9 slib)) (require 'new-catalog)" 
+@dirrm etc/gnucash 
+@dirrm lib/gnucash/perl 
+@dirrm lib/gnucash 
+@dirrm share/gnome/gnucash/doc/examples 
+@dirrm share/gnome/gnucash/doc 
+@dirrm share/gnome/gnucash/html/C/image 
+@dirrm share/gnome/gnucash/html/C 
+@dirrm share/gnome/gnucash/html/fr/image 
+@dirrm share/gnome/gnucash/html/fr 
+@dirrm share/gnome/gnucash/html 
+@dirrm share/gnome/gnucash/perl 
+@dirrm share/gnome/gnucash/scm/gnumeric 
 @dirrm share/gnome/gnucash/scm/printing
 @dirrm share/gnome/gnucash/scm/qif-import
-@dirrm share/gnome/gnucash/scm/srfi
-@dirrm share/gnome/gnucash/scm/report
-@dirrm share/gnome/gnucash/scm
-@dirrm share/gnome/gnucash
+@dirrm share/gnome/gnucash/scm/srfi 
+@dirrm share/gnome/gnucash/scm/report 
+@dirrm share/gnome/gnucash/scm 
+@dirrm share/gnome/gnucash 
