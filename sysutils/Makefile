@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.66 1999/05/05 20:27:03 jmg Exp $
+# $Id: Makefile,v 1.67 1999/06/09 00:55:28 steve Exp $
 #
 
     SUBDIR += LPRng
@@ -53,6 +53,7 @@
     SUBDIR += upsmon
     SUBDIR += webmin
     SUBDIR += wmavgload
+    SUBDIR += wminet
     SUBDIR += wmmon
     SUBDIR += wmmount
     SUBDIR += xbatt
