@@ -1,0 +1,11 @@
+--- configure.orig	Sun Aug  6 21:14:30 2000
++++ configure	Sun Aug  6 21:14:44 2000
+@@ -2246,7 +2246,7 @@
+ # GCC-specific warning flags
+ if test "$GCC" = yes
+ then
+-        CFLAGS="$CFLAGS -W -Wall -Wwrite-strings -Wbad-function-cast -Wmissing-prototypes -Wcast-qual -Wmissing-declarations -Werror"
++        CFLAGS="$CFLAGS -W -Wall -Wwrite-strings -Wbad-function-cast -Wmissing-prototypes -Wcast-qual -Wmissing-declarations"
+ fi
+ 
+ # Done, create the output files....
