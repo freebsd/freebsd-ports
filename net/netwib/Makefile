@@ -16,6 +16,7 @@ EXTRACT_SUFX=	-src.tgz
 MAINTAINER=	king@v2project.com
 
 WRKSRC=		${WRKDIR}/${PKGNAME}-src/src
+ONLY_FOR_ARCHS=	i386 alpha
 
 MAN3=	lcrzo.3 lcrzo_address.3 lcrzo_conf.3 lcrzo_data.3 lcrzo_device.3 \
 	lcrzo_error.3 lcrzo_file.3 lcrzo_global.3 lcrzo_header.3 \
