@@ -1,0 +1,16 @@
+bin/marcdump
+bin/marclint
+%%SITE_PERL%%/MARC/Batch.pm
+%%SITE_PERL%%/MARC/Doc/Tutorial.pod
+%%SITE_PERL%%/MARC/Field.pm
+%%SITE_PERL%%/MARC/File.pm
+%%SITE_PERL%%/MARC/File/MicroLIF.pm
+%%SITE_PERL%%/MARC/File/USMARC.pm
+%%SITE_PERL%%/MARC/Lint.pm
+%%SITE_PERL%%/MARC/Record.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MARC/Record/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MARC/Record
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MARC
+@dirrm %%SITE_PERL%%/MARC/Doc
+@dirrm %%SITE_PERL%%/MARC/File
+@dirrm %%SITE_PERL%%/MARC
