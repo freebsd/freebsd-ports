@@ -37,6 +37,7 @@ bin/xscreensaver-hacks/demon
 bin/xscreensaver-hacks/discrete
 bin/xscreensaver-hacks/distort
 bin/xscreensaver-hacks/drift
+bin/xscreensaver-hacks/endgame
 bin/xscreensaver-hacks/engine
 bin/xscreensaver-hacks/epicycle
 bin/xscreensaver-hacks/euler2d
@@ -162,6 +163,14 @@ lib/X11/app-defaults/XScreenSaver
 %%GNOME:%%share/gnome/pixmaps/screensaver-power.xpm
 %%GNOME:%%share/gnome/pixmaps/screensaver-snap.xpm
 %%GNOME:%%share/gnome/pixmaps/xscreensaver.xpm
+share/xscreensaver/xscreensaver.xpm
+share/xscreensaver/screensaver-cmndln.xpm
+share/xscreensaver/screensaver-colorselector.xpm
+share/xscreensaver/screensaver-diagnostic.xpm
+share/xscreensaver/screensaver-locking.xpm
+share/xscreensaver/screensaver-power.xpm
+share/xscreensaver/screensaver-snap.xpm
+share/xscreensaver/xscreensaver-demo.glade2
 share/xscreensaver/config/README
 share/xscreensaver/config/anemone.xml
 share/xscreensaver/config/ant.xml
@@ -196,6 +205,7 @@ share/xscreensaver/config/discrete.xml
 share/xscreensaver/config/distort.xml
 share/xscreensaver/config/drift.xml
 share/xscreensaver/config/electricsheep.xml
+share/xscreensaver/config/endgame.xml
 share/xscreensaver/config/engine.xml
 share/xscreensaver/config/epicycle.xml
 share/xscreensaver/config/euler2d.xml

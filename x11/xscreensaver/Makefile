@@ -12,7 +12,7 @@
 #************************************************************************
 
 PORTNAME=	xscreensaver
-PORTVERSION=	4.04.2
+PORTVERSION=	4.05
 CATEGORIES?=	x11
 MASTER_SITES=	http://www.jwz.org/xscreensaver/
 
@@ -20,8 +20,6 @@ MAINTAINER?=	DougB@FreeBSD.org
 
 LIB_DEPENDS=	gle.3:${PORTSDIR}/graphics/gle \
 		xml.5:${PORTSDIR}/textproc/libxml
-
-WRKSRC=		${WRKDIR}/xscreensaver-4.04
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
@@ -68,9 +66,15 @@ MAN1=	anemone.1 ant.1 apollonian.1 atlantis.1 attraction.1 blaster.1 \
 	vermiculate.1 vidwhacker.1 vines.1 wander.1 webcollage.1 \
 	whirlwindwarp.1 whirlygig.1 worm.1 xflame.1 xjack.1 xlyap.1 \
 	xmatrix.1 xrayswarm.1 xspirograph.1 xsublim.1 xteevee.1 zoom.1 \
+	endgame.1 \
 	xscreensaver-command.1 xscreensaver-demo.1 \
 	xscreensaver-getimage-file.1 xscreensaver-getimage-video.1 \
 	xscreensaver-getimage.1 xscreensaver-gl-helper.1 xscreensaver.1
+
+pre-fetch:
+.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
+	${SH} pkg-libwarning
+.endif
 
 post-patch:
 	@ ${CP} ${WRKSRC}/configure ${WRKSRC}/configure.Patched
