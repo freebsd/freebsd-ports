@@ -1,0 +1,24 @@
+Tools for the conversion to and from UTF-8 Unicode encoding. Note that
+RFC-2277 mandates that all "protocols" MUST handle UTF-8 properly.
+
+	- utrans converts text files created using any 8-bit character
+	  map into UTF-8;
+
+	- uhtrans converts UTF-8 files into 7-bit ASCII with anything
+	  else formatted as an HTML-style tags, e.g. &#1234; (decimal);
+
+	- hutrans converts 7-bit ASCII files with HTML-style tags, to UTF-8,
+	  thus complementing the functionality of hutrans;
+
+	- ptrans converts UTF-8 files into 8-bit text using any
+	  8-bit character map, thus complementing utrans.
+
+Additionally, tuc is installed if not found. Tuc converts text files
+between the DOS/Windows and the Unix formats.
+
+This port depends on ports/converters/libutf-8.
+
+Further details: http://www.whizkidtech.net/i18n/, RFC 2277, and RFC 2279.
+
+G. Adam Stanislav
+adam@whizkidtech.net
