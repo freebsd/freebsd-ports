@@ -14,20 +14,21 @@ MAINTAINER=	will@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${PKGNAME}
 USE_GMAKE=	yes
+MAN1=		httperf.1
 
 # there is no "install" target in the Makefile.
-# also, installing relevant help files, as there is no manpage yet.
 # chmod'ing httperf as it could be exploited by normal users to overload
 # a webserver, instead of for its actual purpose.
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/httperf ${PREFIX}/bin
 	${CHMOD} 750 ${PREFIX}/bin/httperf
-	@${MKDIR} ${PREFIX}/share/httperf
-	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/httperf
-	@${INSTALL_DATA} ${WRKSRC}/COPYRIGHT ${PREFIX}/share/httperf
-	@${INSTALL_DATA} ${WRKSRC}/NEWS ${PREFIX}/share/httperf
-	@${INSTALL_DATA} ${WRKSRC}/TODO ${PREFIX}/share/httperf
-	@${INSTALL_DATA} ${WRKSRC}/ChangeLog ${PREFIX}/share/httperf
+	@${INSTALL_MAN} ${WRKSRC}/httperf.man ${PREFIX}/man/man1/httperf.1
+	@${MKDIR} ${PREFIX}/share/doc/httperf
+	@${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/doc/httperf
+	@${INSTALL_MAN} ${WRKSRC}/COPYRIGHT ${PREFIX}/share/doc/httperf
+	@${INSTALL_MAN} ${WRKSRC}/NEWS ${PREFIX}/share/doc/httperf
+	@${INSTALL_MAN} ${WRKSRC}/TODO ${PREFIX}/share/doc/httperf
+	@${INSTALL_MAN} ${WRKSRC}/ChangeLog ${PREFIX}/share/doc/httperf
 
 .include <bsd.port.mk>
