@@ -1,15 +1,15 @@
 # New ports collection makefile for:	libspigot.a
-# Version required:	1.6
+# Version required:	1.7
 # Date Created:		Fri Sep 15 10:04:46 CDT 1995
 # Whom:			james@cs.uwm.edu
 #
-# $Id: Makefile,v 1.3 1996/11/18 11:29:11 asami Exp $
+# $Id: Makefile,v 1.4 1997/08/11 16:12:19 fenner Exp $
 #
 
-DISTNAME= 	spigot-1.6
+DISTNAME= 	spigot-1.7
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.cs.uwm.edu/pub/FreeBSD-UWM/spigot/
-DISTFILES=	spigot.tar.gz
+DISTFILES=	spigot.1.7.tar.gz
 
 MAINTAINER=	james@cs.uwm.edu
 
