@@ -1,5 +1,5 @@
---- Makefile.orig	Tue Oct 13 18:16:35 1998
-+++ Makefile	Sat Jan  9 15:40:09 1999
+--- Makefile.orig	Tue Oct 13 09:16:35 1998
++++ Makefile	Sun Feb  6 16:36:08 2000
 @@ -5,8 +5,8 @@
  #--------------------------------------------------------------------------
  
@@ -11,15 +11,19 @@
  
  # Use these for Mesa
  #GL	= -lglut -lMesaGLU -lMesaGL
-@@ -16,10 +16,12 @@
+@@ -15,11 +15,14 @@
+ GL	= -lglut -lGLU -lGL
  
  # Use these for gcc on Linux (may work in other systems as well)
- CC	= gcc
+-CC	= gcc
 -CFLAGS	= -O3 -fomit-frame-pointer -ffast-math -Wall -Wno-implicit-int
-+CFLAGS	= -pipe -O2 -fexpensive-optimizations -ffast-math -fomit-frame-pointer \
-+	  -fforce-mem -fforce-addr -Wall -Wno-implicit-int -I/usr/X11R6/include \
+-LD	= gcc
++CC	?= gcc
++CFLAGS	?= -pipe -O2 -fexpensive-optimizations -ffast-math -fomit-frame-pointer \
++	  -fforce-mem -fforce-addr
++CFLAGS	+= -Wall -Wno-implicit-int -I/usr/X11R6/include \
 +	  -I/usr/local/include
- LD	= gcc
++LD	= $(CC)
  LDFLAGS	= -o $@
 -LIBS	= -L/usr/X11/lib -L/usr/local/lib $(GL) -lX11 -lXext -lXmu -lXi -lm
 +LIBS	= -Wl,-rpath,/usr/X11R6/lib -L/usr/X11R6/lib -L/usr/local/lib $(GL) -lX11 -lXext -lXmu -lXi -lm
