@@ -12,6 +12,7 @@ bin/hboot
 bin/hcc
 bin/hcp
 bin/mpicc
+bin/mpic++
 bin/mpiCC
 bin/hf77
 bin/mpif77
