@@ -9,8 +9,7 @@ PORTNAME=	libunpipc
 PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.kohala.com/pub/rstevens/ \
-		http://compass.net.edu.cn:8000/programming/
+MASTER_SITES=	http://www.cse.msu.edu/~zhengpei/tech/network/tcpip/
 DISTNAME=	unpv22e
 
 MAINTAINER=	ports@FreeBSD.org
