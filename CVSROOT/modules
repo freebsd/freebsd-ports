@@ -8061,6 +8061,7 @@ pipe		ports/misc/pipe
 pipebench	ports/benchmarks/pipebench
 pipemeter	ports/sysutils/pipemeter
 pipenightdreams	ports/games/pipenightdreams
+pips-sc60s	ports/print/pips-sc60s
 pips2200	ports/print/pips2200
 pips3000	ports/print/pips3000
 pips3300	ports/print/pips3300
