@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-CATEGORIES=	french editors
+CATEGORIES=	french
 
 LANG_PKGNAME=	fr
 LANG_EXT=	33

@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-CATEGORIES=	japanese editors
+CATEGORIES=	japanese
 
 LANG_PKGNAME=	ja
 LANG_EXT=	81
