@@ -7,3 +7,4 @@ lib/libXpm.so.3.4
 @exec ranlib %D/lib/libXpm.a
 @mode 444
 include/X11/xpm.h
+man/man1/sxpm.1
