@@ -7,7 +7,7 @@
 
 PORTNAME=	teTeX-base
 PORTVERSION=	3.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
 		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/dvips/:1
@@ -126,18 +126,36 @@ TEXMFDISTDIR=	share/texmf-dist
 TEXMFLOCALDIR=	share/texmf-local
 TEXMFLOCAL_LSR=	${LOCALBASE}/${TEXMFLOCALDIR}/ls-R
 TEXMFVARDIR=	share/texmf-var
-MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
+MKTEXLSR=	${PREFIX}/bin/mktexlsr
+FMTUTIL_SYS=	"${SETENV} PATH=${PATH}:${PREFIX}/bin TEXMFMAIN=${PREFIX}/${TEXMFDIR} ${PREFIX}/bin/fmtutil-sys"
+UPDMAP_SYS=	"${SETENV} PATH=${PATH}:${PREFIX}/bin TEXMFMAIN=${PREFIX}/${TEXMFDIR} ${PREFIX}/bin/updmap-sys"
 
 PLIST_SUB+=	TEXMFDIR=${TEXMFDIR} \
 		TEXMFDISTDIR=${TEXMFDISTDIR} \
-		TEXMFVARDIR=${TEXMFVARDIR}
+		TEXMFVARDIR=${TEXMFVARDIR} \
+		FMTUTIL_SYS=${FMTUTIL_SYS} \
+		UPDMAP_SYS=${UPDMAP_SYS}
 PKGMESSAGE_SUB=	TEXMFDIR=${TEXMFDIR} \
 		TEXMFDISTDIR=${TEXMFDISTDIR} \
 		PREFIX=${PREFIX}
+OLDCONFIG=	web2c/texmf.cnf web2c/mktex.cnf web2c/fmtutil.cnf \
+		web2c/updmap.cfg \
+		xdvi/XDvi \
+		dvipdfm/config/config \
+		dvips/config/config.ps \
+		etex/plain/config/language.def \
+		tex/generic/config/language.dat \
+		tex/context/config/cont-usr.tex \
+		pdftex/config/pdftex.cfg
 
 pre-install:
 	${SED} ${PKGMESSAGE_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		< ${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
+.for F in ${OLDCONFIG}
+	if [ -f ${PREFIX}/${TEXMFVARDIR}/${F} ]; then \
+		${ECHO_CMD} "NOTICE: old config file ${F} has been removed.";\
+	fi
+.endfor
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/utils/texinfo/util/texi2dvi ${PREFIX}/bin
