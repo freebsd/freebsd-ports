@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qcad
-PORTVERSION=	1.4.14
+PORTVERSION=	1.4.16
 CATEGORIES=	cad
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -32,16 +32,16 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/qcad ${PREFIX}/bin
 	@${MKDIR} ${DATADIR}
 .for dir in cur fonts hatches libraries messages xpm
-	${TAR} -C ${WRKSRC} -cf - ${dir} | \
+	${TAR} -C ${WRKSRC} --exclude CVS --exclude hydraulics -cf - ${dir} | \
 		${TAR} -C ${DATADIR} --unlink -xf -
 .endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${TAR} -C ${WRKSRC}/doc -cf - . | \
+	${TAR} -C ${WRKSRC}/doc --exclude CVS -cf - . | \
 		${TAR} -C ${DOCSDIR} --unlink -xf -
 	@${LN} -sf ${DOCSDIR} ${DATADIR}/doc
 	@${MKDIR} ${EXAMPLESDIR}
-	${TAR} -C ${WRKSRC}/examples -cf - . | \
+	${TAR} -C ${WRKSRC}/examples --exclude CVS -cf - . | \
 		${TAR} -C ${EXAMPLESDIR} --unlink -xf -
 .endif
 
