@@ -129,6 +129,7 @@
     SUBDIR += tclX80
     SUBDIR += tclX82
     SUBDIR += tclplugin
+    SUBDIR += tinycobol
     SUBDIR += wamcc
     SUBDIR += yabasic
     SUBDIR += yorick
