@@ -193,6 +193,12 @@
     SUBDIR += ptex-common
     SUBDIR += ptex-euc
     SUBDIR += ptex-jis
+    SUBDIR += ptex-pkfonts118
+    SUBDIR += ptex-pkfonts240
+    SUBDIR += ptex-pkfonts300
+    SUBDIR += ptex-pkfonts360
+    SUBDIR += ptex-pkfonts400
+    SUBDIR += ptex-pkfonts600
     SUBDIR += ptex-sjis
     SUBDIR += qkc
     SUBDIR += recjis
