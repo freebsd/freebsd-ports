@@ -26,6 +26,8 @@ LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd \
 MAN1=		analog.1
 ALL_TARGET=	analog
 
+.include <bsd.port.pre.mk>
+
 do-install:
 	${MKDIR} ${PREFIX}/share/analog/lang
 	${MKDIR} ${PREFIX}/www/data/images
@@ -42,4 +44,4 @@ do-install:
 .endif
 	${INSTALL_MAN} ${WRKSRC}/analog.man ${PREFIX}/man/man1/analog.1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
