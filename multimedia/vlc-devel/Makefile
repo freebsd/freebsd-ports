@@ -10,6 +10,8 @@
 # WITH_ESOUND=yes
 # WITH_AALIB=yes
 # WITH_CDDB=yes
+# WITH_DTS=yes
+# WITH_FRIBIDI=yes
 # WITH_GGI=yes
 # WITH_LIBDVBPSI=yes
 # WITH_LIBID3TAG=yes
@@ -17,15 +19,18 @@
 # WITH_LIBMPEG2=yes
 # WITH_LIBTHEORA=yes
 # WITH_LIVEMEDIA=yes
+# WITH_NCURSES=yes (ncurses interface)
 # WITH_SPEEX=yes
 # WITH_SVGALIB=yes
 # WITH_XOSD=yes
+# WITH_XVID=yes
 # WITH_OPTIMIZED_CFLAGS=yes
+# WITH_DVD_DEVICE=/dev/somedevice (5.x: default is acd0, 4:x default is acd0c)
+# WITH_CDROM_DEVICE=/dev/somedevice
 # WITHOUT_LIBID3TAG=yes
 
 PORTNAME=	vlc
-PORTVERSION=	0.7.1
-PORTREVISION=	1
+PORTVERSION=	0.7.2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${PORTVERSION}/
 PKGNAMESUFFIX?=	${GNOME_SUFFIX}${ESOUND_SUFFIX}${PKGNAMESUFFIX2}
@@ -33,8 +38,7 @@ PKGNAMESUFFIX?=	${GNOME_SUFFIX}${ESOUND_SUFFIX}${PKGNAMESUFFIX2}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	An X11 video streaming client/server solution
 
-LIB_DEPENDS=	dvdcss.2:${PORTSDIR}/multimedia/libdvdcss \
-		dvdread.3:${PORTSDIR}/multimedia/libdvdread \
+LIB_DEPENDS=	dvdnav.3:${PORTSDIR}/multimedia/libdvdnav \
 		mad.2:${PORTSDIR}/audio/libmad \
 		avcodec.0:${PORTSDIR}/${FFMPEG_PORT} \
 		a52.0:${PORTSDIR}/audio/liba52 \
@@ -42,8 +46,10 @@ LIB_DEPENDS=	dvdcss.2:${PORTSDIR}/multimedia/libdvdcss \
 		FLAC.5:${PORTSDIR}/audio/flac \
 		faad.0:${PORTSDIR}/audio/faad \
 		wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2 \
-		slp.1:${PORTSDIR}/net/openslp
+		slp.1:${PORTSDIR}/net/openslp \
+		vcdinfo.0:${PORTSDIR}/multimedia/vcdimager
 
+USE_BZIP2=	yes
 USE_GETOPT_LONG=yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
@@ -52,7 +58,7 @@ USE_ICONV=	yes
 USE_REINPLACE=	yes
 USE_SDL=	sdl
 USE_XLIB=	yes
-USE_GCC=	3.2
+USE_ICONV=	yes
 
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
@@ -68,10 +74,8 @@ CONFIGURE_ARGS+=--with-dvdcss=${LOCALBASE} \
 		--with-ffmpeg=${LOCALBASE} \
 		--disable-libcdio \
 		--disable-skins2 \
-		--program-prefix="" \
-		--without-libintl-prefix \
-		--without-libiconv-prefix
-
+		--without-libintl-prefix
+CONFIGURE_TARGET+=-build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 MAN1=		vlc.1 \
 		vlc-config.1
 
@@ -81,6 +85,10 @@ CFLAGS+=	${CPPFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+USE_GCC=	3.3
+.endif
 
 .if defined(WITH_AUTODETECT) && !defined(BATCH)
 
@@ -100,6 +108,14 @@ WITH_AALIB=	yes
 WITH_CDDB=	yes
 .endif
 
+.if exists(${LOCALBASE}/lib/libdts.a) && !defined(WITHOUT_DTS)
+WITH_DTS=	yes
+.endif
+
+.if exists(${LOCALBASE}/bin/fribidi-config) && !defined(WITHOUT_FRIBIDI)
+WITH_FRIBIDI=	yes
+.endif
+
 .if exists(${LOCALBASE}/lib/libggi.so.2) && !defined(WITHOUT_GGI)
 WITH_GGI=	yes
 .endif
@@ -116,6 +132,10 @@ WITH_LIBTHEORA=	yes
 WITH_LIVEMEDIA=	yes
 .endif
 
+.if exists(${LOCALBASE}/lib/libmatroska.a) && !defined(WITHOUT_LIBMATROSKA)
+WITH_LIBMATROSKA=yes
+.endif
+
 .if exists(${LOCALBASE}/lib/libspeex.so.2) && !defined(WITHOUT_SPEEX)
 WITH_SPEEX=	yes
 .endif
@@ -128,6 +148,30 @@ WITH_SVGALIB=	yes
 WITH_XOSD=	yes
 .endif
 
+.if exists(${LOCALBASE}/libxvidcore.so.2) && !defined(WITHOUT_XVID)
+WITH_XVID=	yes
+.endif
+
+.endif
+
+.if defined(WITH_DVD_DEVICE)
+DEFAULT_DVD_DEVICE=${WITH_DVD_DEVICE}
+.else
+.if ${OSVERSION} < 500000
+DEFAULT_DVD_DEVICE=/dev/acd0c
+.else
+DEFAULT_DVD_DEVICE=/dev/acd0
+.endif
+.endif
+
+.if defined(WITH_CDROM_DEVICE)
+DEFAULT_CDROM_DEVICE=${WITH_CDROM_DEVICE}
+.else
+.if ${OSVERSION} < 500000
+DEFAULT_CDROM_DEVICE=/dev/acd0c
+.else
+DEFAULT_CDROM_DEVICE=/dev/acd0
+.endif
 .endif
 
 .if defined(WITH_GNOME) && !defined(WITHOUT_GNOME)
@@ -148,6 +192,11 @@ CONFIGURE_ARGS+=--enable-esd
 PLIST_FILES+=	lib/vlc/audio_output/libesd_plugin.so
 .endif
 
+.if defined(WITH_FRIBIDI) && !defined(WITHOUT_FRIBIDI)
+LIB_DEPENDS+=	fribidi.0:${PORTSDIR}/converters/fribidi
+CONFIGURE_ARGS+=--enable-fribidi
+.endif
+
 .if !defined(WITHOUT_LIBID3TAG)
 LIB_DEPENDS+=	id3tag.2:${PORTSDIR}/audio/libid3tag
 PLIST_FILES+=	lib/vlc/demux/libid3tag_plugin.so
@@ -163,6 +212,14 @@ LIB_DEPENDS+=	cddb.1:${PORTSDIR}/audio/libcddb
 CONFIGURE_ARGS+=--enable-libcddb
 .else
 CONFIGURE_ARGS+=--disable-libcddb
+.endif
+
+.if defined(WITH_DTS) && !defined(WITHOUT_DTS)
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libdts.a:${PORTSDIR}/multimedia/libdts
+CONFIGURE_ARGS+=--enable-dts
+PLIST_FILES+=	lib/vlc/audio_filter/libdtstofloat32_plugin.so
+.else
+CONFIGURE_ARGS+=--disable-dts
 .endif
 
 .if defined(WITH_GGI) && !defined(WITHOUT_GCI)
@@ -189,6 +246,7 @@ PLIST_FILES+=	lib/vlc/demux/libmkv_plugin.so
 .if defined(WITH_LIBMPEG2) && !defined(WITHOUT_LIBMPEG2)
 LIB_DEPENDS+=	mpeg2.0:${PORTSDIR}/multimedia/libmpeg2
 CONFIGURE_ARGS+=--enable-libmpeg2
+PLIST_FILES+=	lib/vlc/codec/liblibmpeg2_plugin.so
 .else
 CONFIGURE_ARGS+=--disable-libmpeg2
 .endif
@@ -205,6 +263,11 @@ BUILD_DEPENDS+=	${LOCALBASE}/live/liveMedia/libliveMedia.a:${PORTSDIR}/net/liveM
 CONFIGURE_ARGS+=--enable-livedotcom \
 		--with-livedotcom-tree=${LOCALBASE}/live
 PLIST_FILES+=	lib/vlc/liblivedotcom.a
+.endif
+
+.if defined(WITH_NCURSES) && !defined(WITHOUT_NCURSES)
+CONFIGURE_ARGS+=--enable-ncurses
+PLIST_FILES+=	lib/vlc/gui/libncurses_plugin.so
 .endif
 
 .if defined(WITH_SPEEX) && !defined(WITHOUT_SPEEX)
@@ -224,6 +287,14 @@ PLIST_FILES+=	lib/vlc/video_output/libsvgalib_plugin.so
 .if defined(WITH_XOSD) && !defined(WITHOUT_XOSD)
 LIB_DEPENDS+=	xosd.4:${PORTSDIR}/misc/xosd
 CONFIGURE_ARGS+=--enable-xosd
+.endif
+
+.if defined(WITH_XVID) && !defined(WITHOUT_XVID)
+LIB_DEPENDS+=	xvidcore.2:${PORTSDIR}/multimedia/xvid
+CONFIGURE_ARGS+=--enable-xvideo
+PLIST_FILES+=	lib/vlc/video_output/libxvideo_plugin.so
+.else
+CONFIGURE_ARGS+=--disable-xvideo
 .endif
 
 .if defined(WITH_OPTIMIZED_CFLAGS)
@@ -266,6 +337,9 @@ post-patch:
 		-e 's/-lc_r/${PTHREAD_LIBS}/' \
 		-e 's|postproc/postprocess.h|ffmpeg/postproc/postprocess.h|' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|/dev/cdrom|${DEFAULT_CDROM_DEVICE}|; \
+		s|/dev/dvd|${DEFAULT_DVD_DEVICE}|' \
+		${WRKSRC}/include/vlc_config.h
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/vlc.1 ${MANPREFIX}/man/man1/
