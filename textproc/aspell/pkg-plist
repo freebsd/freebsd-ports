@@ -89,9 +89,11 @@ include/aspell/vector_hash-t.hh
 include/aspell/vector_hash.hh
 include/aspell/weights.hh
 lib/libaspell.a
+lib/libaspell.la
 lib/libaspell.so
 lib/libaspell.so.11
 lib/libpspell_aspell.a
+lib/libpspell_aspell.la
 lib/libpspell_aspell.so
 lib/libpspell_aspell.so.2
 share/aspell/ASCII.dat
@@ -158,6 +160,7 @@ share/aspell/viscii.map
 %%PORTDOCS%%share/doc/aspell/man-html/E_Glossary.html
 %%PORTDOCS%%share/doc/aspell/man-html/F_Copyright.html
 %%PORTDOCS%%share/doc/aspell/man-html/contents.png
+%%PORTDOCS%%share/doc/aspell/man-html/crossref.png
 %%PORTDOCS%%share/doc/aspell/man-html/index.html
 %%PORTDOCS%%share/doc/aspell/man-html/manual.css
 %%PORTDOCS%%share/doc/aspell/man-html/manual.html

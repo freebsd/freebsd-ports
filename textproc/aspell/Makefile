@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	aspell
-PORTVERSION=	0.33.6.3
+PORTVERSION=	0.33.7
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,9 +21,12 @@ USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--enable-dict-dir=${PREFIX}/share/aspell \
-		--enable-doc-dir=${PREFIX}/share/doc/aspell
+CONFIGURE_ARGS=	--enable-dict-dir=${DATADIR} \
+		--enable-doc-dir=${DOCSDIR}
 MAKE_ARGS=	NOPORTDOCS=${NOPORTDOCS}
 INSTALLS_SHLIB=	yes
+
+pre-build:
+	@${LN} -sf ${LOCALBASE}/bin/libtool ${WRKSRC}/libtool
 
 .include <bsd.port.mk>
