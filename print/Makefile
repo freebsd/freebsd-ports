@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.87 1999/04/08 07:31:38 dima Exp $
+# $Id: Makefile,v 1.88 1999/04/08 07:45:28 dima Exp $
 #
 
     SUBDIR += a2ps-a4
@@ -9,12 +9,14 @@
     SUBDIR += acroread
     SUBDIR += acroread4
     SUBDIR += afm
+    SUBDIR += amspsfnt
     SUBDIR += apsfilter
     SUBDIR += asprint
     SUBDIR += bibcard
     SUBDIR += bibview
     SUBDIR += c2ps-a4
     SUBDIR += c2ps-letter
+    SUBDIR += cmpsfont
     SUBDIR += detex
     SUBDIR += dvi2tty
     SUBDIR += dvi2xx
