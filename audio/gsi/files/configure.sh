@@ -25,10 +25,3 @@ ${APPCONFSCRIPT} << _E_O_M2_ > /dev/null 2>&1
 
 _E_O_M2_
 echo "done."
-
-# Fix a file to reflect where the configuration file should be looked for.
-echo -n "Configuring server/config.c... "
-mv server/config.c server/config.c.orig
-cat server/config.c.orig | sed "s|/etc/gsi.conf|${PREFIX}&|" > server/config.c
-
-echo "done."
