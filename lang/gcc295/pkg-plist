@@ -1,9 +1,9 @@
-@comment $Id: PLIST,v 1.24 1999/07/04 20:58:11 obrien Exp $
+@comment $Id: PLIST,v 1.23 1999/08/05 16:06:07 obrien Exp $
 bin/chill
-bin/eg++filt
-bin/eg++
-bin/eg77
-bin/egcc
+bin/g++295
+bin/g++filt295
+bin/g77
+bin/gcc295
 bin/%%GNU_HOST%%-gcc
 bin/gcj
 bin/gcjh
