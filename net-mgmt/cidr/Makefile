@@ -12,7 +12,7 @@ DISTNAME=	cidr-current
 
 MAINTAINER=	midom@dammit.lt
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 ALL_TARGET=	cidr
 
