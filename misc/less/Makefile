@@ -3,7 +3,7 @@
 # Date created:         8 Nov 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.11 1996/07/26 04:25:29 ache Exp $
+# $Id: Makefile,v 1.12 1996/11/11 05:49:42 obrien Exp $
 #
 
 DISTNAME=       less-321
@@ -22,7 +22,7 @@ pre-clean:
 .if defined(COLOUR_LESS) || defined(COLOR_LESS)
 pre-patch:
 	@echo "Making a colour version of less."
-	@cp ${FILESDIR}/${EXTRA_PATCH} ${PATCHDIR}
+	@${CP} ${FILESDIR}/${EXTRA_PATCH} ${PATCHDIR}
 .endif
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:		12 October 1996
 # Whom:			markm
 #
-# $Id: Makefile,v 1.2 1996/11/01 06:10:22 markm Exp $
+# $Id: Makefile,v 1.3 1996/11/11 05:49:24 obrien Exp $
 #
 
 DISTNAME=	dejagnu-1.3
@@ -18,10 +18,6 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/dejagnu
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	i386-freebsd
 STRIP=
-
-post-install:
-.if !defined(NOMANCOMPRESS)
-	gzip -9nf ${PREFIX}/man/man1/runtest.1
-.endif
+MAN1=		runtest.1
 
 .include <bsd.port.mk>
