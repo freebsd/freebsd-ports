@@ -18,10 +18,6 @@ MAINTAINER=	keith@FreeBSD.org
 
 RUN_DEPENDS=	ttfm.sh:${PORTSDIR}/chinese/ttfm
 
-WANT_CJK?=	NO
-WANT_GS6?=	NO
-WANT_X?=	YES
-
 DIST_SUBDIR=	zh-wangttf
 USE_BZIP2=	yes
 USE_XLIB=	yes
@@ -30,18 +26,38 @@ SHAREMODE=	644
 FONTDIR=	${PREFIX}/share/fonts/TrueType
 XFONTDIR=	${X11BASE}/lib/X11/fonts/TrueType
 INSTALL_ENV=	PKG_PREFIX=${PREFIX} XFREE86_VERSION=${XFREE86_VERSION} \
-		WANT_CJK=${WANT_CJK} WANT_GS6=${WANT_GS6} WANT_X=${WANT_X}
+		DEFAULT=${DEFAULT} WANT_CJK=${WANT_CJK} WANT_GS6=${WANT_GS6} \
+		WITHOUT_X=${WITHOUT_X}
 
 .include <bsd.port.pre.mk>
 
-.if ${WANT_CJK} != "NO"
+.if defined(WANT_CJK)
 RUN_DEPENDS+=	bg5latex:${PORTSDIR}/chinese/CJK
 .endif
-.if ${WANT_GS6} != "NO"
+.if defined(WANT_GS6)
 RUN_DEPENDS+=	${LOCALBASE}/share/ghostscript/CJK/CMap/B5pc-H:${PORTSDIR}/chinese/ghostscript6
 .endif
-.if ${XFREE86_VERSION} == 3 && ${WANT_X} != "NO"
+.if ${XFREE86_VERSION} == 3 && !defined(WITHOUT_X)
 RUN_DEPENDS+=	mkfontdir.pl:${PORTSDIR}/x11-servers/XttXF86srv-common
+.endif
+
+pre-fetch:
+.if defined(WANT_CJK)
+	@${ECHO} "CJK support will be added."
+.endif
+.if defined(WANT_GS6)
+	@${ECHO} "Ghostscript6 support will be added."
+.endif
+.if defined(WITHOUT_X)
+	@${ECHO} "X Window support will NOT be added."
+.endif
+.if !defined(WANT_CJK) && !defined(WANT_GS6) && !defined(WITHOUT_X)
+	@${ECHO} --
+	@${ECHO} "Type \"make WANT_CJK=yes\" if you want CJK support."
+	@${ECHO} "Type \"make WANT_GS6=yes\" if you want Ghostscript6 support."
+	@${ECHO} "Type \"make WITHOUT_X=yes\" if you DONT want X Window support."
+	@${ECHO} "You can use them in combinations."
+	@${ECHO} --
 .endif
 
 do-install:
