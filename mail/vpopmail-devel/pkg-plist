@@ -15,6 +15,7 @@ vpopmail/bin/vmkpasswd
 vpopmail/bin/vmoduser
 vpopmail/bin/vpasswd
 vpopmail/bin/vpopbull
+vpopmail/bin/vqmaillocal
 vpopmail/bin/vsetuserquota
 vpopmail/bin/vuserinfo
 vpopmail/doc/doc_html/vpopmail.html

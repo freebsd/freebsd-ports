@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vpopmail
-PORTVERSION=	5.0
+PORTVERSION=	5.0.1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.inter7.com/vpopmail/
 
@@ -40,6 +40,7 @@ CONFIGURE_ARGS=	--enable-qmaildir=${QMAIL_DIR} \
 # WITHOUT_ROAMING - disallow roaming users
 # WITH_IP_ALIAS - enables IP aliasing
 # WITH_DELIVER_FILTER - enables the experimental vdelivermail filter
+# WITH_QMAIL_EXT - enables qmail-like user-* address extesions processing
 #
 # Set these to the values you'd prefer
 #
@@ -145,6 +146,10 @@ CONFIGURE_ARGS+=	--enable-ip-alias-domains=y
 
 .if defined(WITH_DELIVER_FILTER)
 CONFIGURE_ARGS+=	--enable-deliver-filter=y
+.endif
+
+.if defined(WITH_QMAIL_EXT)
+CONFIGURE_ARGS+=	--enable-qmail-ext=y
 .endif
 
 #
