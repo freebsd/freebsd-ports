@@ -1,6 +1,6 @@
 # New ports collection makefile for:	nmh
 # Date created:		07 Feb 1999
-# Whom:			Scott Blachowicz <Scott.Blachowicz@seaslug.org>
+# Whom:			Scott Blachowicz <scott+ports@sabami.seaslug.org>
 #
 # $FreeBSD$
 #
@@ -53,13 +53,13 @@
 
 PORTNAME=	nmh
 PORTVERSION=	1.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.mhost.com/pub/nmh/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	jkoshy
 
-MAINTAINER=	Scott.Blachowicz@seaslug.org
+MAINTAINER=	scott+ports@sabami.seaslug.org
 
 USE_AUTOCONF_VER=213
 CONFIGURE_ARGS=	--libdir=${PREFIX}/libexec/nmh \
@@ -114,13 +114,5 @@ post-patch:
 
 post-install:
 	@PKG_PREFIX='${PREFIX}' ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	chgrp mail ${PREFIX}/bin/inc
-	${CHMOD} g+s ${PREFIX}/bin/inc
-	for file in ${PREFIX}/etc/nmh/*.default ; do \
-		if [ \! -f $${file%%.default} ] ; then \
-			cp $$file $${file%%.default} ; \
-			chmod u+w $${file%%.default} ; \
-		fi \
-	done
 
 .include <bsd.port.mk>
