@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.62 1999/06/09 01:52:16 steve Exp $
+# $FreeBSD$
 #
 
     SUBDIR += PDL

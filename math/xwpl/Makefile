@@ -3,7 +3,7 @@
 # Date created:		31 Nov 97
 # Whom:			Pedro Giffuni <giffunip@asme.org>
 #
-# $Id: Makefile,v 1.2 1999/07/02 00:02:56 mph Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xwpl-1.3-freebsd
