@@ -61,8 +61,8 @@
 + #LOCLIBES=   $(PICODIR)/libpico.a $(IMAPDIR)/c-client.a
 + LOCLIBES=    -lpico -lc-client
 + LOCLIBDIR=   -L$(PICODIR) -L$(IMAPDIR)
-+ EXTRALIBES=  -lcanna -L/usr/local/lib
-+ LIBES=       $(EXTRALIBES) $(LOCLIBDIR) $(LOCLIBES) $(STDLIBES)
++ EXTRALIBES=  -L/usr/local/lib -lcanna
++ LIBES=       $(LOCLIBDIR) $(LOCLIBES) $(EXTRALIBES) $(STDLIBES)
 + 
 + STDCFLAGS=   -DBSDI -DSYSTYPE=\"BSF\" -DMOUSE -I/usr/local/include
 + EXTRACFLAGS= -DKANJI -DCANNA -DHELPFILE
