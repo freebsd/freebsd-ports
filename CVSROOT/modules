@@ -206,6 +206,7 @@ acron		ports/misc/acron
 acroread	ports/print/acroread
 acroread-commfont	ports/print/acroread-commfont
 acroread4	ports/print/acroread4
+acroread5	ports/print/acroread5
 acs		ports/cad/acs
 actx		ports/games/actx
 adabroker	ports/devel/adabroker
