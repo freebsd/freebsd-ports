@@ -1,18 +1,16 @@
 sbin/apache2mrtg.pl
 sbin/mod_watch.pl
-sbin/convertdbm.pl
-sbin/dbm-client.pl
-sbin/dbm-server.pl
 libexec/apache/mod_watch.so
 @exec %D/sbin/apxs -e -A -n watch %D/%F
 @unexec %D/sbin/apxs -e -A -n watch %D/%F
+%%PORTDOCS%%share/doc/mod_watch/html/Img/apache-header-476-62.png
 %%PORTDOCS%%share/doc/mod_watch/html/Img/mrpixel.gif
+%%PORTDOCS%%share/doc/mod_watch/html/Img/mrtg-bar.png
 %%PORTDOCS%%share/doc/mod_watch/html/Img/sun-logo.jpg
 %%PORTDOCS%%share/doc/mod_watch/html/Img/wave1.jpg
 %%PORTDOCS%%share/doc/mod_watch/html/apache2mrtg.html
-%%PORTDOCS%%share/doc/mod_watch/html/dbm-client.html
-%%PORTDOCS%%share/doc/mod_watch/html/dbm-server.html
 %%PORTDOCS%%share/doc/mod_watch/html/index.shtml
+%%PORTDOCS%%share/doc/mod_watch/html/mailto.js
 %%PORTDOCS%%share/doc/mod_watch/html/mod_watch.html
 %%PORTDOCS%%share/doc/mod_watch/html/style.css
 %%PORTDOCS%%share/doc/mod_watch/CHANGES.TXT

@@ -3,7 +3,7 @@ You've installed mod_watch, a module to monitor bandwidth
 usage.
 
 /var/spool/mod_watch has been created. It's owned by user 
-nobody and group nobody. For mod_watch to work, the Apache
+www and group www. For mod_watch to work, the Apache
 user/group must be able to create and update files in this
 directory.
 
