@@ -382,6 +382,7 @@
     SUBDIR += p5-C-Scan
     SUBDIR += p5-Cache-Cache
     SUBDIR += p5-Carp-Assert
+    SUBDIR += p5-Carp-Datum
     SUBDIR += p5-Cdk
     SUBDIR += p5-Class-Accessor
     SUBDIR += p5-Class-ArrayObjects
