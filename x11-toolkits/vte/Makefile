@@ -35,10 +35,6 @@ post-patch:
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|malloc\.h|stdlib.h|g' \
 		${WRKSRC}/gnome-pty-helper/gnome-pty-helper.c
-	@${REINPLACE_CMD} -e 's|Xft\.h|Xft2.h|g' \
-		${WRKSRC}/src/vte.c
-	@${REINPLACE_CMD} -Ee '/^(libvte_la_LIBADD|vte_LDADD)/s/(.*)/\1 -lXft2/' \
-		${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} -e 's|[(]libdir[)]/locale|(prefix)/share/locale|g' \
 		${WRKSRC}/po/Makefile.in.in
 
