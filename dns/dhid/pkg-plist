@@ -1,0 +1,4 @@
+bin/dtool
+etc/dhid.conf
+etc/rc.d/dhid.sh
+sbin/dhid
