@@ -1,0 +1,71 @@
+--- config.make.orig	Sat Oct 11 17:24:15 1997
++++ config.make	Fri Dec 11 22:19:58 1998
+@@ -14,32 +14,46 @@
+ # OS2 = OS/2 with EMX GCC
+ 
+ # FIDOGATE Directories
+-BINDIR		= /usr/local/bin
+-LIBDIR		= /usr/local/lib/fidogate
+-SPOOLDIR	= /var/spool/fido
+-LOGDIR		= /var/log/fido
++# BINDIR	= /usr/local/bin
++BINDIR		= /libexec/fidogate
++# LIBDIR	= /usr/local/lib/fidogate
++LIBDIR		= /libexec/fidogate
++# SPOOLDIR	= /var/spool/fido
++SPOOLDIR	= /var/spool/fidogate
++# LOGDIR	= /var/log/fido
++LOGDIR		= /var/spool/fidogate/log
+ 
+ # Doc directories
+-INFODIR		= /usr/local/info
+-HTMLDIR		= /home/mj/public_html/fidogate
++# INFODIR	= /usr/local/info
++INFODIR		= /share/doc/fidogate/info
++# HTMLDIR	= /home/mj/public_html/fidogate
++HTMLDIR		= /share/doc/fidogate/html
++  
+ 
+ # Outbound *base* directory, i.e. outbound is OUTBOUND/out.xxx
+-OUTBOUND	= /var/spool/bt
++# OUTBOUND	= /var/spool/bt
++OUTBOUND	= /var/spool/fidogate/out
+ # Normal (i.e. insecure) inbound
+-INBOUND		= /var/spool/bt/in
++# INBOUND	= /var/spool/bt/in
++INBOUND		= /var/spool/fidogate/in
+ # Protected inbound
+-PINBOUND	= /var/spool/bt/pin
++# PINBOUND	= /var/spool/bt/pin
++PINBOUND	= /var/spool/fidogate/pin
+ # Inbound for uuencoded mails (used by recvuu)
+-UUINBOUND	= /var/spool/bt/uuin
++# UUINBOUND	= /var/spool/bt/uuin
++UUINBOUND	= /var/spool/fidogate/uuin
+ 
+ # INN directories
+ NEWSETCDIR	= /etc/news
+ NEWSVARDIR	= /var/lib/news
+-NEWSLIBDIR	= /usr/lib/news
+-NEWSSPOOLDIR	= /var/spool/news
++# NEWSLIBDIR	= /usr/lib/news
++NEWSLIBDIR	= /usr/local/libexec/news
++# NEWSSPOOLDIR	= /var/spool/news
++NEWSSPOOLDIR	= /var/news
+ 
+ # Ifmail directory
+-IFMAILDIR       = /usr/local/lib/ifmail
++# IFMAILDIR       = /usr/local/lib/ifmail
++IFMAILDIR       = $(PREFIX)/libexec/ifmail
+ 
+ # perl
+ PERL		= /usr/bin/perl
+@@ -103,8 +117,6 @@
+  INSTALL_DATA	= $(INSTALL) -c -g $(GROUP) -o $(OWNER) -m $(PERM_DATA)
+  INSTALL_SETUID	= $(INSTALL) -c -g $(GROUP) -o $(OWNER) -m $(PERM_SETUID)
+  INSTALL_DIR	= $(INSTALL) -g $(GROUP) -o $(OWNER) -m $(PERM_DIR) -d
+-# extra prefix for installation
+- PREFIX         =
+ 
+ # library name
+ # LIB		= fidogate.a			# OS2
