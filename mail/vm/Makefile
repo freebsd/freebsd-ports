@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vm
-PORTVERSION=	7.14
+PORTVERSION=	7.15
 CATEGORIES=	mail elisp
 MASTER_SITES=	ftp://ftp.uni-mainz.de/pub/software/gnu/vm/ \
 		ftp://tug.org/vm/ \
@@ -29,5 +29,8 @@ MAKE_ARGS=	prefix=${PREFIX} \
 		INFODIR=${PREFIX}/info \
 		LISPDIR=${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME} \
 		PIXMAPDIR=${PREFIX}/${EMACS_LIBDIR_WITH_VER}/etc/vm
+
+post-install:
+	install-info ${PREFIX}/info/vm.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>
