@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	samba
-PORTVERSION=	3.0.0.b2
+PORTVERSION=	3.0.0.b3
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	http://us4.samba.org/samba/ftp/%SUBDIR%/archives/
@@ -147,7 +147,6 @@ post-install:
 			${WRKDIR}/${DISTNAME}/Roadmap			\
 			${WRKDIR}/${DISTNAME}/WHATSNEW.txt		\
 			${WRKDIR}/${DISTNAME}/docs/THANKS		\
-			${WRKDIR}/${DISTNAME}/docs/announce		\
 			${WRKDIR}/${DISTNAME}/docs/history ; do		\
 		${INSTALL_DATA} $$i ${DOCSDIR} ;		\
 	done
