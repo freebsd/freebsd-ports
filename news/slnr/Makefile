@@ -10,7 +10,7 @@ PORTVERSION=	2.3.0
 CATEGORIES=	news
 MASTER_SITES=	http://www3.sympatico.ca/john.vanderhoek/tim/src/slnr/
 
-MAINTAINER=	ac199@freenet.hamilton.on.ca
+MAINTAINER=	hoek@FreeBSD.org
 
 RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
