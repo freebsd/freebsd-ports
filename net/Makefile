@@ -2,6 +2,7 @@
 #
 
     SUBDIR += 44bsd-rdist
+    SUBDIR += NeTraMet
     SUBDIR += SSLtelnet
     SUBDIR += adasockets
     SUBDIR += adns

@@ -1,0 +1,9 @@
+The first implementation of the Internet Accounting Architecture (RFC 2063
+and RFC 2064).
+
+The NeTraMet distribution file contains everything you need to build
+NeTraMet (an RTFM meter) and NeMaC (a combined RTFM manager and meter
+reader), as well as nifty (Nevil's X-Windows flow analyser) and srl (an
+optimising compiler for SRL, the Simple Ruleset Language).
+
+WWW: http://www.auckland.ac.nz/net/Accounting/

@@ -1,0 +1,50 @@
+bin/NeMaC
+bin/NeTraMet
+bin/NetFlowMet
+bin/NetFwd
+bin/fd_extract
+bin/fd_filter
+%%MOTIF%%bin/nifty
+bin/nm_rc
+bin/nm_rr
+bin/nm_st
+bin/srl
+share/NeTraMet/examples/rules/rules.broadcast
+share/NeTraMet/examples/rules/rules.default
+share/NeTraMet/examples/rules/rules.gateway
+share/NeTraMet/examples/rules/rules.ipport
+share/NeTraMet/examples/rules/rules.lan
+share/NeTraMet/examples/rules/rules.manage
+share/NeTraMet/examples/rules/rules.nifty
+share/NeTraMet/examples/rules/rules.other
+share/NeTraMet/examples/rules/rules.rc.ip
+share/NeTraMet/examples/rules/rules.rc.ip.new
+share/NeTraMet/examples/rules/rules.rc.ipx
+share/NeTraMet/examples/rules/rules.rc.ports
+share/NeTraMet/examples/rules/rules.rc.ports.new
+share/NeTraMet/examples/rules/rules.sample
+share/NeTraMet/examples/rules/rules.two-adj-routers
+share/NeTraMet/examples/rules/rules.two-ip-groups
+share/NeTraMet/examples/rules/rules.x_ip
+share/NeTraMet/examples/srl/2ip8.srl
+share/NeTraMet/examples/srl/broadcast.srl
+share/NeTraMet/examples/srl/cs2.srl
+share/NeTraMet/examples/srl/icmp.srl
+share/NeTraMet/examples/srl/k1.srl
+share/NeTraMet/examples/srl/k8.srl
+share/NeTraMet/examples/srl/n-ports.srl
+share/NeTraMet/examples/srl/nifty.srl
+share/NeTraMet/examples/srl/other.srl
+share/NeTraMet/examples/srl/pr+bc.srl
+share/NeTraMet/mibs/meter-mib-31.txt
+share/NeTraMet/mibs/meter-mib-32.txt
+share/NeTraMet/mibs/mib-1.txt
+share/NeTraMet/mibs/mib-41.txt
+share/NeTraMet/mibs/mib.auckland
+share/NeTraMet/mibs/mib.txt
+share/NeTraMet/mibs/rtm-text.txt
+@dirrm share/NeTraMet/examples/srl
+@dirrm share/NeTraMet/examples/rules
+@dirrm share/NeTraMet/mibs
+@dirrm share/NeTraMet/examples
+@dirrm share/NeTraMet
