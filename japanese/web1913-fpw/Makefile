@@ -7,7 +7,7 @@
 
 PORTNAME=	web1913-fpw
 PORTVERSION=	${WEBFPW_VER}
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/web1913/
 DISTNAME=	${PORTNAME}${WEBFPW_VER}
@@ -19,7 +19,7 @@ USE_ZIP=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/web
 EXTRACT_BEFORE_ARGS=	-qL
-WEBFPW_VER=	1.1.1
+WEBFPW_VER=	1.1.2
 
 do-install:
 	${MKDIR} ${PREFIX}/share/dict/web-fpw/web/data
