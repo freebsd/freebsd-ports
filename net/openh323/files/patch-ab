@@ -1,14 +1,19 @@
-*** openh323u.mak.orig	Tue Jan 15 09:05:05 2002
---- openh323u.mak	Tue Jan 15 09:05:41 2002
+*** openh323u.mak.orig	Tue Oct  9 10:05:24 2001
+--- openh323u.mak	Tue Jan 15 14:01:29 2002
 *************** HAS_IXJ	    = 1
 *** 124,129 ****
---- 124,134 ----
+--- 124,139 ----
   STDCCFLAGS += -DHAS_IXJ
   endif
   
 + ifneq (,$(wildcard /usr/local/include/sys/telephony.h))
 + HAS_IXJ	    = 1
 + STDCCFLAGS += -DHAS_IXJ -I/usr/local/include
++ endif
++ 
++ ifneq (,$(wildcard $(OPENH323DIR)/include/sys/telephony.h))
++ HAS_IXJ	    = 1
++ STDCCFLAGS += -DHAS_IXJ
 + endif
 + 
   ifneq (,$(wildcard /usr/include/linux/soundcard.h))
