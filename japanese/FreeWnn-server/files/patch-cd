@@ -1,0 +1,14 @@
+--- Wnn/jlib/js.c~	Thu Mar  9 16:34:55 2000
++++ Wnn/jlib/js.c	Thu Mar  9 16:49:51 2000
+@@ -325,7 +325,10 @@
+ char *pserver;
+ {
+     register char *p;
+-    strcpy(pserver, server);
++    /* Workaround for pserver buffer overrun : Nov 11,1999 by T.Aono */
++    /* assumes pserver[64]. variable length string is not supported. */
++    strncpy(pserver, server, 64 - 1);
++    pserver[64 - 1] = '\0';
+     p = pserver;
+     for( ; *p && *p != ':'; p++) ;
+     if (!*p) return(0);	/* does not have a colon */

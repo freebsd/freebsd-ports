@@ -1,5 +1,5 @@
---- ../Xsi.orig/Wnn/uum/jhlp.c	Fri Aug 19 10:32:12 1994
-+++ ./Wnn/uum/jhlp.c	Fri Aug  1 18:54:18 1997
+--- Wnn/uum/jhlp.c.orig	Thu Mar  9 16:34:56 2000
++++ Wnn/uum/jhlp.c	Thu Mar  9 16:44:26 2000
 @@ -80,6 +80,9 @@
  
  jmp_buf kk_env;
@@ -10,7 +10,36 @@
  #ifdef SYSVR2
  #	include <sys/param.h>
  #endif /* SYSVR2 */
-@@ -263,9 +266,11 @@
+@@ -168,12 +171,14 @@
+ 
+     strcpy(username, getpwuid(getuid())->pw_name);
+     if((name = getenv(WNN_USERNAME_ENV)) != NULL){
+-	strcpy(username, name);
++	strncpy(username, name, PATHNAMELEN - 1);
++	username[PATHNAMELEN - 1] = '\0';
+     }
+     for (i = 1; i < argc;) {
+ 	if (!strcmp(argv[i++], "-L")) {
+ 	    if (i >= argc || argv[i][0] == '-') default_usage();
+-	    strcpy(lang_dir, argv[i++]);
++	    strncpy(lang_dir, argv[i++], 31);
++	    lang_dir[31] = '\0';
+ 	    for (;i < argc; i++) {
+ 		argv[i - 2] = argv[i];
+ 	    }
+@@ -233,8 +238,9 @@
+ 	    server_env = WNN_DEF_SERVER_ENV;
+ 	}
+ 	if(name = getenv(server_env)) {
+-	    strcpy(def_servername, name);
+-	    strcpy(def_reverse_servername, name);
++	    strncpy(def_servername, name, PATHNAMELEN - 1);
++	    def_servername[PATHNAMELEN - 1] = '\0';
++	    strcpy(def_reverse_servername, def_servername);
+ 	}
+     }
+ 
+@@ -263,9 +269,11 @@
  
  
  #if defined(BSD42) && !defined(DGUX)
@@ -22,7 +51,59 @@
  #endif /* BSD42 */
  
  
-@@ -771,7 +776,12 @@
+@@ -492,7 +500,8 @@
+ 
+ static int do_k_opt()
+ {
+-    strcpy(uumkey_name_in_uumrc, optarg);
++    strncpy(uumkey_name_in_uumrc, optarg, PATHNAMELEN - 1);
++    uumkey_name_in_uumrc[PATHNAMELEN - 1] = '\0';
+     if (*uumkey_name_in_uumrc == '\0') {
+ 	return -1;
+     }
+@@ -502,7 +511,8 @@
+ 
+ static int do_c_opt()
+ {
+-    strcpy(convkey_name_in_uumrc, optarg);
++    strncpy(convkey_name_in_uumrc, optarg, PATHNAMELEN - 1);
++    convkey_name_in_uumrc[PATHNAMELEN - 1] = '\0';
+     if (*convkey_name_in_uumrc == '\0') {
+ 	return -1;
+     }
+@@ -512,7 +522,8 @@
+ 
+ static int do_r_opt()
+ {
+-    strcpy(rkfile_name_in_uumrc, optarg);
++    strncpy(rkfile_name_in_uumrc, optarg, PATHNAMELEN - 1);
++    rkfile_name_in_uumrc[PATHNAMELEN - 1] = '\0';
+     if (*rkfile_name_in_uumrc == '\0') {
+ 	return -1;
+     }
+@@ -528,8 +539,9 @@
+ 
+ static int do_D_opt()
+ {
+-    strcpy(def_servername, optarg);
+-    strcpy(def_reverse_servername, optarg);
++    strncpy(def_servername, optarg, PATHNAMELEN - 1);
++    def_servername[PATHNAMELEN - 1] = '\0';
++    strcpy(def_reverse_servername, def_servername);
+     if (*def_servername == '\0') {
+ 	return -1;
+     }
+@@ -538,7 +550,8 @@
+ 
+ static int do_n_opt()
+ {
+-    strcpy(username, optarg);
++    strncpy(username, optarg, PATHNAMELEN - 1);
++    username[PATHNAMELEN - 1] = '\0';
+     if (*username == '\0') {
+ 	return -1;
+     }
+@@ -771,7 +784,12 @@
  #endif
      int pid;
  
@@ -36,7 +117,7 @@
  	if (WIFSTOPPED(status)) {
  #ifdef SIGCONT
  	    kill(pid, SIGCONT);
-@@ -1140,9 +1150,11 @@
+@@ -1140,9 +1158,11 @@
  	setpgrp(0, pid);
  #endif /* BSD42 */
  
@@ -48,7 +129,7 @@
  
  #ifdef linux
  	setsid();
-@@ -1562,9 +1574,11 @@
+@@ -1562,9 +1582,11 @@
  	perror(prog);
      }
  
@@ -60,7 +141,7 @@
  #ifdef TIOCSSIZE
      pty_rowcol.ts_lines = 0;
      pty_rowcol.ts_cols = 0;
-@@ -1636,7 +1650,16 @@
+@@ -1636,7 +1658,16 @@
  char *b, *pty;
  int no;
  {
