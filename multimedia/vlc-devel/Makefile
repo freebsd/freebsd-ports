@@ -27,7 +27,7 @@ PORTNAME=	vlc
 PORTVERSION=	0.7.1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${PORTVERSION}/
-PKGNAMESUFFIX?=	${GNOME_SUFFIX}${PKGNAMESUFFIX2}
+PKGNAMESUFFIX?=	${GNOME_SUFFIX}${ESOUND_SUFFIX}${PKGNAMESUFFIX2}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	An X11 video streaming client/server solution
@@ -130,9 +130,9 @@ WITH_XOSD=	yes
 .endif
 
 .if defined(WITH_GNOME) && !defined(WITHOUT_GNOME)
+GNOME_SUFFIX=	-gnome
 USE_GNOME+=	gnomelibs
 CONFIGURE_ARGS+=--enable-gnome
-GNOME_SUFFIX=	-gnome
 PLIST_FILES+=	bin/gnome-vlc \
 		lib/vlc/gui/libgnome_plugin.so \
 		lib/vlc/misc/libgnome_main_plugin.so
@@ -141,14 +141,10 @@ CONFIGURE_ARGS+=--enable-gtk
 .endif
 
 .if defined(WITH_ESOUND) && !defined(WITHOUT_ESOUND)
+ESOUND_SUFFIX=	-esound
 USE_GNOME+=	esound
 CONFIGURE_ARGS+=--enable-esd
 PLIST_FILES+=	lib/vlc/audio_output/libesd_plugin.so
-.if defined(PKGNAMESUFFIX)
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-esound
-.else
-PKGNAMESUFFIX=	-esound
-.endif
 .endif
 
 .if !defined(WITHOUT_LIBID3TAG)
