@@ -7,6 +7,7 @@
 
 PORTNAME=	allegro
 PORTVERSION=	4.0.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	alleg
@@ -39,6 +40,10 @@ pre-build:
 post-install:
 	${MKDIR} ${PREFIX}/share/doc/allegro
 	${CP} ${WRKSRC}/docs/html/* ${PREFIX}/share/doc/allegro
+	@${MV} ${LOCALBASE}/lib/liballeg-4.0.0.so \
+		${LOCALBASE}/lib/liballeg.so.4
+	@${MV} ${LOCALBASE}/lib/liballeg_unsharable.a \
+		${LOCALBASE}/lib/liballeg.a
 .endif
 
 .if !defined (WITHOUT_MAN)
