@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= ${PORTNAME}
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	clefevre@citeweb.net
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
