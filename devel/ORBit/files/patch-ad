@@ -1,6 +1,6 @@
---- orbit-config.in.orig	Tue Dec 29 04:35:37 1998
-+++ orbit-config.in	Tue Dec 29 04:35:58 1998
-@@ -27,8 +27,8 @@
+--- orbit-config.in.orig	Thu Oct  7 23:49:07 1999
++++ orbit-config.in	Tue Feb 22 18:20:47 2000
+@@ -28,8 +28,8 @@
  
  Known values for TARGET are:
  
@@ -11,14 +11,14 @@
  EOF
  
      exit $1
-@@ -86,8 +86,8 @@
+@@ -87,8 +87,8 @@
         	;;
  
      client|server)
--	the_libs="$the_libs -L@libdir@ -lORBit -lIIOP -lORBitutil `glib-config --libs` @LIBS@ -lm"
--	the_flags="$the_flags `glib-config --cflags` -I@includedir@"
-+	the_libs="$the_libs -L@libdir@ -lORBit -lIIOP -lORBitutil `@GLIB_CONFIG@ --libs` @LIBS@ -lm"
-+	the_flags="$the_flags `@GLIB_CONFIG@ --cflags` -I@includedir@"
+-	the_libs="$the_libs -L$libdir -lORBit -lIIOP -lORBitutil `glib-config --libs` @LIBS@ -lm"
+-	the_flags="$the_flags `glib-config --cflags` -I$includedir "
++	the_libs="$the_libs -L$libdir -lORBit -lIIOP -lORBitutil `@GLIB_CONFIG@ --libs` @LIBS@ -lm"
++	the_flags="$the_flags `@GLIB_CONFIG@ --cflags` -I$includedir "
  	;;
  
     --use-service=*)
