@@ -7,7 +7,7 @@
 
 PORTNAME=	quagga
 PORTVERSION=	0.98.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://quagga.net/download/
 
@@ -38,10 +38,6 @@ OPTIONS=	ISISD		"Enable experimental ISIS daemon"	off \
 		SNMP		"SNMP support"			off \
 		TCPSOCKETS	"Use TCP/IP sockets for protocol daemons" off \
 		TCPMD5		"Use experimental MD5 patch for BGP" off
-
-.if !defined(BATCH)
-SEL_OPTIONS=	yes
-.endif
 
 .include <bsd.port.pre.mk>
 
