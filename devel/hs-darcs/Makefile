@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	darcs
-PORTVERSION=	0.9.10
+PORTVERSION=	0.9.11
 CATEGORIES=	devel
 MASTER_SITES=	http://www.abridgegame.org/darcs/
 
@@ -17,53 +17,54 @@ BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
 USE_REINPLACE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${PREFIX}/lib/" \
+		CFLAGS=""
 USE_GMAKE=	yes
-ALL_TARGET=	darcs darcs.1 darcs-patcher darcs-createrepo
+MAKEFILE=	GNUmakefile
+ALL_TARGET=	darcs darcs.1
 
-GHC_VERSION=	`${LOCALBASE}/bin/ghc --numeric-version`
-
-.if defined(WITH_CGI)
-ALL_TARGET+=	darcs_cgi
+.if defined(WITH_SERVER)
+ALL_TARGET+=	darcs_cgi darcs-patcher darcs-createrepo
+INSTALL_TARGET=	install installserver
 .if !exists(${PREFIX}/www) && exists(${PREFIX}/share/apache)
 CGIDIR?=	share/apache/cgi-bin
 .else
 CGIDIR?=	www/cgi-bin
 .endif
-PLIST_SUB+=	CGIDIR=${CGIDIR}
+PLIST_SUB+=	CGIDIR=${CGIDIR} SERVER=""
 .else
-PLIST_SUB+=	CGIDIR="@comment "
+PLIST_SUB+=	SERVER="@comment "
 .endif
 
 MAN1=	darcs.1
 
 pre-everything::
-.if !defined(WITH_CGI)
+.if !defined(WITH_SERVER)
 	@${ECHO_CMD} ""
-	@${ECHO_CMD} "To build and install the cgi script define WITH_CGI."
+	@${ECHO_CMD} "To build and install the server define WITH_SERVER."
 	@${ECHO_CMD} ""
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|<curl|<${PREFIX}/include/curl|' \
-		${WRKSRC}/hscurl.c
-	@${REINPLACE_CMD} -e \
-		's|/usr/share/doc/darcs/manual/index.html|http://www.abridgegame.org/darcs/|' \
-		${WRKSRC}/man.hs
-
-do-configure:
-	@${ECHO_CMD} PREFIX=${PREFIX} >> ${WRKSRC}/make.inc
-	@${ECHO_CMD} CURL_STUFF = hscurl.c -lcurl -optl-pthread -L${PREFIX}/lib/ \
-		>> ${WRKSRC}/make.inc
-	@${ECHO_CMD} GHCINC=-I${PREFIX}/lib/ghc-${GHC_VERSION}/include >> ${WRKSRC}/make.inc
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/darcs ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/darcs.1 ${MANPREFIX}/man/man1
-	${INSTALL_PROGRAM} ${WRKSRC}/darcs-patcher ${PREFIX}/libexec
-	${INSTALL_PROGRAM} ${WRKSRC}/darcs-createrepo ${PREFIX}/bin
-.if defined(WITH_CGI)
-	${MKDIR} ${PREFIX}/${CGIDIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/darcs_cgi ${PREFIX}/${CGIDIR}/darcs
+	@${REINPLACE_CMD} -e 's|/usr/share/doc/darcs|${DOCSDIR}|' \
+		${WRKSRC}/darcsman.hs
+.if defined(WITH_SERVER)
+	@${REINPLACE_CMD} -e 's|$$(libexecdir)/cgi-bin|${PREFIX}/${CGIDIR}| ; \
+		s|darcs/cgi.conf|cgi.conf.sample|' \
+		${WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -e '/$$(sysconfdir)\/darcs/d' ${WRKSRC}/${MAKEFILE}
 .endif
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -e '/$$(datadir)/d' ${WRKSRC}/${MAKEFILE}
+.else
+	@${REINPLACE_CMD} -e 's|$$(datadir)/doc|${DOCSDIR}| ; /darcs\.ps/d' \
+		${WRKSRC}/${MAKEFILE}
+.endif
+
+post-configure:
+	@${REINPLACE_CMD} -e 's|\(^CURLFLAGS.*\)|\1 -optl-pthread| \
+		; s|all :.*|all::|' ${WRKSRC}/autoconf.mk
 
 .include <bsd.port.mk>
