@@ -1,5 +1,5 @@
 --- webmagickrc.in.orig	Sun Dec 20 01:03:42 1998
-+++ webmagickrc.in	Sun Feb 21 21:59:18 1999
++++ webmagickrc.in	Thu Mar 25 05:13:47 1999
 @@ -41,6 +41,7 @@
  # $opt_pageindexname	= '.index';	# Base name of secondary index files
  # $opt_dirindexname	= '.dirindex';	# Subdirectory Title cross-reference
@@ -8,3 +8,11 @@
  # $opt_imgindexname	= '.imgindex';	# Image name to label cross-reference file
  
  #
+@@ -83,6 +84,7 @@
+ # $opt_forcemontage	= 0;	# Force montage (default off)
+ # $opt_forcegif		= 0;	# Force GIF imagemaps (default off)
+ # $opt_forcejpeg          = 0;    # Force JPEG imagemaps (default off)
++# $opt_jpegquality      = 70;   # Quality of JPEG imagemaps
+ # $opt_help		= 0;	# Display usage message
+ # $opt_version		= 0;	# Display version info
+ # $opt_htmlext            = '.html'; # Use .shtml for SSI
