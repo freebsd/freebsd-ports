@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# $Id$
+# $Id: pgsql.sh.tmpl,v 1.1 1997/10/03 14:13:35 andreas Exp $
 
 # pgsql.sh - postgresql startup file for FreeBSD and possibly *BSD (untested)
 
@@ -14,8 +14,8 @@
 [ -d !!PREFIX!!/pgsql/lib ] && /sbin/ldconfig -m !!PREFIX!!/pgsql/lib
 
 [ -x !!PREFIX!!/pgsql/bin/postmaster ] && {
-	su -l pgsql -c 'exec !!PREFIX!!/pgsql/bin/postmaster
-		-D!!PREFIX!!/pgsql/data
+	su -l pgsql -c 'exec !!PREFIX!!/pgsql/bin/postmaster \
+		-D!!PREFIX!!/pgsql/data \
 		-S -o -F > !!PREFIX!!/pgsql/errlog' &
 	echo -n ' pgsql' 
 }
