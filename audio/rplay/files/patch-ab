@@ -1,0 +1,10 @@
+--- rplayd/sound.c.orig Sat Jul 27 22:08:07 1996
++++ rplayd/sound.c      Sat Jul 27 22:08:30 1996
+@@ -1475,6 +1475,7 @@
+ #endif
+ {
+     SINDEX *si;
++    int n;
+ 
+     si = (SINDEX *) malloc (sizeof (SINDEX));
+     if (si == NULL)
