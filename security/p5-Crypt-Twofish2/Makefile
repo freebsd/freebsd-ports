@@ -19,5 +19,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Crypt::Twofish2.3
 
-
 .include <bsd.port.mk>

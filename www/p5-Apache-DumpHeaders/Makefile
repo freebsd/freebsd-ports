@@ -21,5 +21,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Apache::DumpHeaders.3 Apache::ProxyPassThru.3
 
-
 .include <bsd.port.mk>
