@@ -15,7 +15,6 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=     ache@FreeBSD.org
 COMMENT=	Perl interface for cyclic redundency check generation
 
-SITE_PERL=	${SITE_PERL}
 PERL_CONFIGURE=	yes
 
 MAN3=           String::CRC32.3

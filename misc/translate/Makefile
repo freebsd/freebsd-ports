@@ -16,7 +16,6 @@ COMMENT=	Translates string using Babelfish
 
 RUN_DEPENDS=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww
 
-SITE_PERL=	${SITE_PERL}
 USE_PERL5=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}

@@ -22,6 +22,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=	Date::Roman.3
 
-SITE_PERL=	${SITE_PERL}
-
 .include <bsd.port.mk>

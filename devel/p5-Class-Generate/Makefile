@@ -16,8 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Perl5 module to simplify creating class hierarchies
 
 PERL_CONFIGURE=	yes
-SITE_PERL=	${SITE_PERL}
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 MAN3=		Class::Generate.3
 

@@ -19,7 +19,6 @@ RUN_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
 
 USE_PERL5=	yes
-SITE_PERL=	${SITE_PERL}
 
 MAN1=		html2wml.1
 

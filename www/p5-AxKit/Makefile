@@ -30,8 +30,6 @@ BUILD_DEPENDS=	\
 		${SITE_PERL}/XML/XPath.pm:${PORTSDIR}/textproc/p5-XML-XPath
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-SITE_PERL=	${SITE_PERL}
-
 # XXX Glitch in this release...
 WRKSRC=		${WRKDIR}/${PORTNAME}-1.61
 

@@ -18,7 +18,6 @@ COMMENT=	Perl module to retrieve weather information from weather.com
 
 RUN_DEPENDS=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww
 
-SITE_PERL=	${SITE_PERL}
 PERL_CONFIGURE=	yes
 
 MAN3=	Geo::Weather.3

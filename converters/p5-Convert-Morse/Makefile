@@ -21,7 +21,6 @@ COMMENT=	Perl module to convert between ASCII and Morse codes
 #BROKEN=		"Requires perl 5.6.0"
 .endif
 
-SITE_PERL=	${SITE_PERL}
 PERL_CONFIGURE=	yes
 
 MAN3=		Convert::Morse.3

@@ -18,7 +18,6 @@ COMMENT=	Perl module to detect newer messages in procmail-generated mailboxes
 BUILD_DEPENDS=	${SITE_PERL}/AppConfig.pm:${PORTSDIR}/devel/p5-AppConfig
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-SITE_PERL=	${SITE_PERL}
 PERL_CONFIGURE=	yes
 
 MAN3=		Mail::Stats::Record.3 Mail::Stats.3

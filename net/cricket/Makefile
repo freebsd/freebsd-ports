@@ -22,7 +22,6 @@ RUN_DEPENDS=	${SITE_PERL}/SNMP_Session.pm:${PORTSDIR}/net/p5-SNMP_Session \
 		${SITE_PERL}/Time/Zone.pm:${PORTSDIR}/devel/p5-TimeDate \
 		${SITE_PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
 
-SITE_PERL=	${SITE_PERL}
 SITE_PERL_ARCH=	${SITE_PERL}/${PERL_ARCH}
 
 HAS_CONFIGURE=	yes
