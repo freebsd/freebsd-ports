@@ -7,6 +7,5 @@ share/texmf/dvipdfm/CMap/UniKSCms-UCS2-V
 share/texmf/dvipdfm/config/cid-x.map
 share/texmf/dvipdfm/config/dvipdfmx.cfg
 @dirrm share/texmf/dvipdfm/CMap
-@dirrm share/texmf/dvipdfm/config
 @exec %D/bin/mktexlsr
 @unexec %D/bin/mktexlsr
