@@ -44,6 +44,7 @@
     SUBDIR += mp3blaster
     SUBDIR += mp3encode
     SUBDIR += mp3info
+    SUBDIR += mp3rename
     SUBDIR += mpegaudio
     SUBDIR += mpg123
     SUBDIR += mpg123.el

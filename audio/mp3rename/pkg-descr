@@ -1,0 +1,6 @@
+This program renames mp3's based on their id3tag, 
+it also allows to change id3tags and you can specify
+your own mp3 filename look.
+
+Sander Janssen
+janssen@rendo.dekooi.nl
