@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ogmrip
-PORTVERSION=	0.6.2
+PORTVERSION=	0.7.0
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -34,6 +34,14 @@ GCONF_SCHEMAS=	ogmrip.schemas
 CONFIGURE_ARGS=	--sharedstatedir=${PREFIX}/libdata
 
 .include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/bin/mkvmerge)
+BUILD_DEPENDS+=	mkvmerge:${PORTSDIR}/multimedia/mkvtoolnix
+RUN_DEPENDS+=	mkvmerge:${PORTSDIR}/multimedia/mkvtoolnix
+PLIST_SUB+=	MKV_SUPPORT=""
+.else
+PLIST_SUB+=	MKV_SUPPORT="@comment "
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
