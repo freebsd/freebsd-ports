@@ -114,6 +114,8 @@ share/neverball/data/mtrl/blue
 share/neverball/data/mtrl/blue.jpg
 share/neverball/data/mtrl/caution
 share/neverball/data/mtrl/caution.jpg
+share/neverball/data/mtrl/chrome
+share/neverball/data/mtrl/chrome.jpg
 share/neverball/data/mtrl/coin-blue
 share/neverball/data/mtrl/coin-blue.jpg
 share/neverball/data/mtrl/coin-red
@@ -147,6 +149,8 @@ share/neverball/data/mtrl/invisible.tga
 share/neverball/data/mtrl/jump
 share/neverball/data/mtrl/jump.tga
 share/neverball/data/mtrl/mirror
+share/neverball/data/mtrl/mirror-check
+share/neverball/data/mtrl/mirror-check.jpg
 share/neverball/data/mtrl/mirror.jpg
 share/neverball/data/mtrl/mtrl.shader
 share/neverball/data/mtrl/rail

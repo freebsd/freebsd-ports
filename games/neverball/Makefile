@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	neverball
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.5
 CATEGORIES=	games
 MASTER_SITES=	http://icculus.org/neverball/
 
