@@ -1,4 +1,13 @@
 This is a PC-8801 emulator for X.
 See http://www.117.ne.jp/~show/pc8801/pc88emu.html for further information.
 
+Porters note:
+
+After changes for activity of "-cpu 1" option on quasi88-0.3.1
+(and later), some softwares gain the advantage of performance.
+
+But some other softwares have become failed to work. It's worth
+trying quasi88-0.3.0 if you are in that case after update to
+newer version. The md5 for quasi88-0.3.0 is also in files/md5.
+
 WWW: http://www.117.ne.jp/~show/pc8801/pc88emu.html
