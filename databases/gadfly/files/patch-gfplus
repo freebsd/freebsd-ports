@@ -1,0 +1,10 @@
+--- gadfly/scripts/gfplus.py.orig	Wed Jul 10 09:45:07 2002
++++ gadfly/scripts/gfplus.py	Thu Apr 22 00:58:26 2004
+@@ -74,6 +74,7 @@
+     prompt2 = '... '
+ 
+     def __init__(self):
++        cmd.Cmd.__init__(self)
+         print '\ngfplus %s -- Interactive gadfly shell  %s\n' %(__version__, rl)
+         t = time.localtime(time.time())
+         print time.strftime("%A %B %d, %Y %I:%M %p", t)
