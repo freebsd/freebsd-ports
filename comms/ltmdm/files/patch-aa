@@ -108,12 +108,12 @@
 +    .d_maj = CDEV_MAJOR,
 +#endif
 +    .d_kqfilter = ttykqfilter,
-+#endif
 +#if __FreeBSD_version >= 502102
 +    .d_flags = D_TTY | D_NEEDGIANT,
 +    .d_version = D_VERSION
 +#else
 +    .d_poll = ttypoll,
++#endif
 +#endif
  };
  
