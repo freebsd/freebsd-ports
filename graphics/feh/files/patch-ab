@@ -1,0 +1,8 @@
+--- cam/cam.orig	Sat Jun 24 16:04:33 2000
++++ cam/cam	Tue Oct 17 17:08:59 2000
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/perl
+ 
+ #############################################
+ ############# CAM RUN-TIME OPTIONS ##########

@@ -31,6 +31,7 @@
     SUBDIR += epstool
     SUBDIR += eterm-bg
     SUBDIR += fbm
+    SUBDIR += feh
     SUBDIR += flashplayer
     SUBDIR += fli2gif
     SUBDIR += fly
