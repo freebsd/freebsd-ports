@@ -7332,6 +7332,7 @@ phpeclipse_phphelp	ports/java/phpeclipse_phphelp
 phpeclipse_sql	ports/java/phpeclipse_sql
 phpeclipse_tidy	ports/java/phpeclipse_tidy
 phpgroupware	ports/deskutils/phpgroupware
+phpicalendar	ports/deskutils/phpicalendar
 phplot		ports/graphics/phplot
 phpmyadmin	ports/databases/phpmyadmin
 phpnuke		ports/www/phpnuke
