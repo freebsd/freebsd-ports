@@ -1,0 +1,9 @@
+In the new major version 2, Xerces-C++ has undergone some
+significant API changes.
+
+The old java-like API has been moved from <xercesc/dom/*> to
+<xercesc/dom/depreceated/*> and is expected to go away in the
+near future.
+
+For further information please visit
+WWW: http://xml.apache.org/xerces-c/migrate.html

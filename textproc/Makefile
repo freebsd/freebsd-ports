@@ -373,6 +373,7 @@
     SUBDIR += wordnet
     SUBDIR += wv
     SUBDIR += xerces-c
+    SUBDIR += xerces-c2
     SUBDIR += xerces-j
     SUBDIR += xhtml
     SUBDIR += xincluder
