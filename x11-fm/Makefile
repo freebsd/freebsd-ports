@@ -4,6 +4,7 @@
     SUBDIR += asfiles
     SUBDIR += binder
     SUBDIR += dfm
+    SUBDIR += endeavour
     SUBDIR += explorer
     SUBDIR += ezfm
     SUBDIR += filerunner
