@@ -56,6 +56,7 @@
     SUBDIR += fakeident
     SUBDIR += find-zlib
     SUBDIR += find_ddos
+    SUBDIR += finger_mysql
     SUBDIR += firewalk
     SUBDIR += flawfinder
     SUBDIR += fpm
