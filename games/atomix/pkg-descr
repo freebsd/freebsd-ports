@@ -1,3 +1,8 @@
-a yet another little mind game
+Atomix is a little mind game where you have to build molecules
+out of single atoms. These are laying around between the walls
+and obstacles on the playfield. Once you have pushed an atom in
+one direction it moves until it hits an obstacle or another
+atom. It needs some thinking how to construct complex
+molecules with this atom behaviour.
 
-WWW: http://www.informatik.uni-oldenburg.de/~pearl/gnome/atomix.html
+WWW: http://triq.net/~jens/atomix.php
