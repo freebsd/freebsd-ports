@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 # Note: vbidecode is one part of the bttv distribution, the Linux bt848 driver
-# It therefore has a DISTNAME of vbidecode but DISTFILES of bttv
+# It therefore has a DISTNAME of bttv but a PORTNAME of vbidecode
 
 PORTNAME=		vbidecode
 PORTVERSION=		1.1.3
