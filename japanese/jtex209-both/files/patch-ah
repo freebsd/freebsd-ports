@@ -1,0 +1,84 @@
+--- jtex-1.52/configure.orig	Mon Sep 13 17:05:45 1993
++++ jtex-1.52/configure	Wed Oct 25 11:11:21 2000
+@@ -188,52 +188,44 @@
+ fi
+ 
+ if test -n "$GCC"; then
+-  echo checking whether -traditional is needed
+-  prog=
+-cat <<EOF > conftest.c
+-#include <termio.h>
+-EOF
+-err=`eval "$CPP conftest.c 2>&1 >/dev/null"`
+-if test -z "$err"; then
+-  prog='#include <sys/types.h>
+-#include <termio.h>
+-main() {
+-  struct termio t;
+-  exit(ioctl(0, TCGETA, &t) == 0);
+-}'
+-else
+-  :
+-fi
+-rm -f conftest*
+-if test -z "$prog"; then
+-cat <<EOF > conftest.c
++  echo -n "checking whether -traditional is needed...."
++  ac_pattern="Autoconf.*'x'"
++  cat > conftest.c <<EOF
++#line 858 "configure"
++#include "confdefs.h"
+ #include <sgtty.h>
++Autoconf TIOCGETP
+ EOF
+-err=`eval "$CPP conftest.c 2>&1 >/dev/null"`
+-if test -z "$err"; then
+-  prog='#include <sys/types.h>
+-#include <sgtty.h>
+-main() {
+-  struct sgttyb t;
+-  exit(ioctl(0, TIOCGETP, &t) == 0);
+-}'
++if (eval "$CPP conftest.c") 2>&1 |
++  egrep "$ac_pattern" >/dev/null 2>&1; then
++  rm -rf conftest*
++  ac_cv_prog_gcc_traditional=yes
+ else
+-  :
++  rm -rf conftest*
++  ac_cv_prog_gcc_traditional=no
+ fi
+ rm -f conftest*
+-fi
+-if test -n "$prog"; then
+-  cat <<EOF > conftest.c
+-$prog
++
++  if test $ac_cv_prog_gcc_traditional = no; then
++    cat > conftest.c <<EOF
++#line 876 "configure"
++#include "confdefs.h"
++#include <termio.h>
++Autoconf TCGETA
+ EOF
+-eval $compile
+-if test -s conftest && (./conftest) 2>/dev/null; then
+-  CC="$CC -traditional"
+-else
+-  :
++if (eval "$CPP conftest.c") 2>&1 |
++  egrep "$ac_pattern" >/dev/null 2>&1; then
++  rm -rf conftest*
++  ac_cv_prog_gcc_traditional=yes
+ fi
+ rm -f conftest*
++
++  fi
+ fi
++
++echo "$ac_t""$ac_cv_prog_gcc_traditional" 1>&2
++if test $ac_cv_prog_gcc_traditional = yes; then
++  CC="$CC -traditional"
+ fi
+ 
+ echo checking for install
