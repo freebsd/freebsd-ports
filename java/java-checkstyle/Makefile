@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	checkstyle
-PORTVERSION=	3.1
+PORTVERSION=	3.2
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,12 +24,30 @@ NEED_JAVAC=	YES
 PLIST=	${WRKDIR}/PLIST
 
 JAVALIBNAME=	${PORTNAME}-${PORTVERSION}
-APIDOCSDIR=	${DOCSDIR}/${JAVALIBNAME}
+APIDOCSDIR=	${DOCSDIR}/javadoc
 STYLEDIR=	${JAVASHAREDIR}/${PORTNAME}
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+.endif
 
 pre-install:
 	@${RM} -f ${PLIST}
 	@${TOUCH} ${PLIST}
+	@${ECHO} ${JAVAJARDIR}/${PORTNAME}.jar | \
+		${SED} "s,${PREFIX}/*,," >> ${PLIST}
+	@${ECHO} ${JAVAJARDIR}/${PORTNAME}-optional.jar | \
+		${SED} "s,${PREFIX}/*,," >> ${PLIST}
+	@${ECHO} "@unexec ${RMDIR} ${JAVAJARDIR} 2>/dev/null || true" | \
+		${SED} "s,${PREFIX}/*,," >> ${PLIST}
+	@${FIND} ${WRKSRC}/target/dist/${PORTNAME}-${PORTVERSION}/contrib/ \
+		-type f -print | \
+		${SED} "s,${WRKSRC}/target/dist/${PORTNAME}-${PORTVERSION}/contrib/,${STYLEDIR}/," | \
+		${SED} "s,${PREFIX}/*,," >> ${PLIST}
+	@${FIND} ${WRKSRC}/target/dist/${PORTNAME}-${PORTVERSION}/contrib/ \
+		-type d -print | ${SORT} -r | \
+		${SED} "s,${WRKSRC}/target/dist/${PORTNAME}-${PORTVERSION}/contrib/,${STYLEDIR}/," | \
+		${SED} -e "s,${PREFIX}/*,," -e "s,^,@dirrm ,g" >> ${PLIST}
 
 do-build:
 	@cd ${WRKSRC} && \
@@ -40,18 +58,11 @@ do-install: do-install-jar do-install-data do-install-apidocs
 do-install-jar:
 	@${MKDIR} ${JAVAJARDIR}
 	@${INSTALL_DATA} ${WRKSRC}/target/dist/${PORTNAME}-${PORTVERSION}/${PORTNAME}-all-${PORTVERSION}.jar ${JAVAJARDIR}/${PORTNAME}.jar
-	@${ECHO} ${JAVAJARDIR}/${PORTNAME}.jar | \
-		${SED} "s,${PREFIX}/*,," >> ${PLIST}
-	@${ECHO} "@unexec ${RMDIR} ${JAVAJARDIR} 2>/dev/null || true" | \
-		${SED} "s,${PREFIX}/*,," >> ${PLIST}
+	@${INSTALL_DATA} ${WRKSRC}/target/dist/${PORTNAME}-${PORTVERSION}/${PORTNAME}-${PORTVERSION}-optional.jar ${JAVAJARDIR}/${PORTNAME}-optional.jar
 
 do-install-data:
 	@${MKDIR} ${STYLEDIR}
 	@${CP} -r ${WRKSRC}/target/dist/${PORTNAME}-${PORTVERSION}/contrib/* ${STYLEDIR}
-	@${FIND} ${STYLEDIR} -type f -print | \
-		${SED} "s,${PREFIX}/*,," >> ${PLIST}
-	@${FIND} ${STYLEDIR} -type d -print | sort -r | \
-		${SED} -e "s,${PREFIX}/*,," -e "s,^,@dirrm ,g" >> ${PLIST}
 
 do-install-apidocs:
 .if !defined(NOPORTDOCS)
@@ -60,10 +71,6 @@ do-install-apidocs:
 		${TAR} -c --exclude '*.jar' --exclude contrib -f - .) | \
 		(cd ${APIDOCSDIR} && ${TAR} --unlink -x -f -)
 	@${CHOWN} -h -R ${SHAREOWN}:${SHAREGRP} ${APIDOCSDIR}
-	@${FIND} ${APIDOCSDIR} -type f -print | \
-		${SED} "s,${PREFIX}/*,," >> ${PLIST}
-	@${FIND} ${APIDOCSDIR} -type d -print | sort -r | \
-		${SED} -e "s,${PREFIX}/*,," -e "s,^,@dirrm ,g" >> ${PLIST}
 .endif
 
 .include <bsd.port.mk>
