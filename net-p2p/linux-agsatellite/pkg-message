@@ -13,8 +13,13 @@ account.txt is simply email that you used to create an account from
 the web site on the first line. The second line will be your password
 
 > account.txt
-first_line_with_Email_you_have_subscribed
+first_line_with_Username_you_have_subscribed
 second_line_with_Password_you_have_subscribed
+
+For example,
+
+echo Username_you_have_subscribed > account.txt
+echo Password_you_have_subscribed >> account.txt
 
 * Create both account.txt and shares.txt files under the directory
 .agsatellite in your HOME directory

@@ -7,7 +7,7 @@
 
 PORTNAME=	agsatellite
 PORTVERSION=	0.520
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio net linux
 MASTER_SITES=	http://www.audiogalaxy.com/downloads/
 DISTNAME=	AGSatellite${PORTVERSION:S/.//}-glibc21
@@ -26,7 +26,7 @@ DOCS=	german_readme.txt license.txt readme.txt
 BRANDELF=	/usr/bin/brandelf
 
 post-patch:
-	@${PERL} -pi -e "s|||" ${WRKSRC}/*.txt
+	@${PERL} -pi -e "s|\r\n|\n|;s|email|username|" ${WRKSRC}/*.txt
 	@${SED} -e "s|%%PREFIX%%|${PREFIX}|" ${FILESDIR}/wrapper.sh > \
 		${WRKDIR}/wrapper.sh
 
