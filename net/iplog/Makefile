@@ -30,7 +30,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/example-iplog.conf ${PREFIX}/etc
 .if !exists(${PREFIX}/etc/iplog.conf)
 	${INSTALL_DATA} ${WRKSRC}/example-iplog.conf ${PREFIX}/etc/iplog.conf
-.else
+.endif
+.if exists(${PREFIX}/etc/iplog.rules)
 	@${ECHO_MSG}
 	@${ECHO_MSG} "============================================================================"
 	@${ECHO_MSG} "Hint:	iplog changed its configuration file from ${PREFIX}/etc/iplog.rules"
@@ -38,6 +39,7 @@ post-install:
 	@${ECHO_MSG}
 	@${ECHO_MSG} "See ${PREFIX}/etc/example-iplog.conf for an example"
 	@${ECHO_MSG} "============================================================================"
+.endif
 	@${ECHO_MSG}
 	@${ECHO_MSG} "Installing ${PREFIX}/etc/rc.d/iplog.sh.sample file."
 	@${CAT} ${FILESDIR}/iplog.sh.tmpl | \
@@ -49,6 +51,5 @@ post-install:
 	@${ECHO_MSG} "cp -p ${PREFIX}/etc/rc.d/iplog.sh.sample ${PREFIX}/etc/rc.d/iplog.sh"
 	@${ECHO_MSG} "----------------------------------------------------------------------------"
 	@${ECHO_MSG}
-.endif
 
 .include <bsd.port.post.mk>
