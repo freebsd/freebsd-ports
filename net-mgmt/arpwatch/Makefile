@@ -18,6 +18,7 @@ COMMENT=	Monitor arp & rarp requests
 
 CONFLICTS=	arpwatch-devel-2.*
 
+USE_SIZE=	yes
 GNU_CONFIGURE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--quiet

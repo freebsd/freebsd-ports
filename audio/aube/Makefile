@@ -15,6 +15,7 @@ COMMENT=	System for sound generation and processing
 
 LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile
 
+USE_SIZE=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

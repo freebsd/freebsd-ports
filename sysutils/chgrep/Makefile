@@ -16,6 +16,7 @@ COMMENT=	Fast string substitution across multiple files
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_SIZE=	yes
 
 MAN1=		chgrep.1
 

@@ -16,6 +16,7 @@ COMMENT=	Nut is nutrition software to record what you eat
 
 MAN1=		nut.1
 
+USE_SIZE=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 

@@ -19,6 +19,7 @@ COMMENT=	A Virtual Private Network (VPN) daemon
 LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext-old \
 		lzo.1:${PORTSDIR}/archivers/lzo
 
+USE_SIZE=	yes
 USE_OPENSSL=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

@@ -17,6 +17,7 @@ COMMENT=	A lightweight fully POSIX compliant regexp matching library
 
 LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
 
+USE_SIZE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_GETOPT_LONG=	yes

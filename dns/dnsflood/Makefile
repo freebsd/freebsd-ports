@@ -14,6 +14,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	DNS flood detector
 
+USE_SIZE=	yes
 USE_GETOPT_LONG=	yes
 USE_REINPLACE=	yes
 

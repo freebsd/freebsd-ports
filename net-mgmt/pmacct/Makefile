@@ -15,6 +15,7 @@ MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Network tool to gather IP traffic information
 
 WRKSRC=		${WRKDIR}/pmacct-0.6.0
+USE_SIZE=	yes
 
 .if defined(WITH_MYSQL)
 USE_MYSQL=	yes

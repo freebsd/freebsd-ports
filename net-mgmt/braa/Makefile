@@ -15,6 +15,7 @@ COMMENT=	Tool for making SNMP queries
 
 LIB_DEPENDS=	netsnmp.6:${PORTSDIR}/net/net-snmp
 
+USE_SIZE=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 LDFLAGS+=	-lcompat

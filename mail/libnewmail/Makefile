@@ -17,6 +17,7 @@ LIB_DEPENDS=	gnutls.7:${PORTSDIR}/security/gnutls \
 		oop.4:${PORTSDIR}/devel/liboop \
 		ltdl.4:${PORTSDIR}/devel/libltdl
 
+USE_SIZE=	yes
 GNU_CONFIGURE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes

@@ -16,6 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	BeeCrypt is an open source cryptography library
 
+USE_SIZE=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 USE_LIBTOOL=	yes

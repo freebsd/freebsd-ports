@@ -16,6 +16,7 @@ COMMENT=	News server for low speed dial-up connections
 
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 
+USE_SIZE=	yes
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 

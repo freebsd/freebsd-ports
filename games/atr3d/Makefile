@@ -21,6 +21,7 @@ SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+USE_SIZE=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_MESA=	yes

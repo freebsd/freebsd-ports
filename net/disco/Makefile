@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.altmode.com/disco/
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	IP discovery and fingerprinting utility
 
+USE_SIZE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"

@@ -22,6 +22,7 @@ LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
 		mad.2:${PORTSDIR}/audio/mad \
 		tdb.1:${PORTSDIR}/databases/tdb
 
+USE_SIZE=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes

@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.rezrov.net/software/
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Shell authentication for TACACS+ protocol
 
+USE_SIZE=	yes
 GNU_CONFIGURE=	yes
 
 post-install:

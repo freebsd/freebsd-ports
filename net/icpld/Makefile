@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.ibiblio.org/icpld/download/
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Internet connection performance logging daemon
 
+USE_SIZE=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

@@ -15,6 +15,7 @@ COMMENT=	Lightweight, portable bandwidth shaper
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libevent.a:${PORTSDIR}/devel/libevent
 
+USE_SIZE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 

@@ -13,6 +13,7 @@ MASTER_SITES=	http://faith.eu.org/${PORTNAME}/
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Filtering HTTP proxy server
 
+USE_SIZE=	yes
 USE_REINPLACE=	yes
 
 MAN5=	${PORTNAME}.conf.5
