@@ -35,14 +35,12 @@ MASTER_SITES=	http://www.zsh.org/zsh/ \
 		http://mirrors.theonlinerecordstore.com/zsh/ \
 		ftp://uiarchive.uiuc.edu/mirrors/ftp/ftp.zsh.org/pub/zsh/ \
 		ftp://ftp.rge.com/pub/shells/zsh/ \
-		ftp://sunsite.org.uk/packages/zsh/ \
-		ftp://ftp.net.lut.ac.uk/zsh/ \
+		ftp://sunsite.org.uk/package/zsh/ \
 		ftp://ftp.fu-berlin.de/pub/unix/shells/zsh/ \
 		ftp://ftp.win.ne.jp/pub/shell/zsh/ \
 		ftp://ftp.ayamura.org/pub/zsh/ \
-		ftp://linux.sarang.net/mirror/systems/shell/zsh/ \
+		ftp://linux.sarang.net/mirror/system/zsh/ \
 		ftp://ftp.lysator.liu.se/pub/unix/zsh/ \
-		ftp://sunsite.icm.edu.pl/pub/unix/shells/zsh/ \
 		ftp://ftp.kappa.ro/pub/mirrors/ftp.zsh.org/pub/zsh/ \
 		ftp://ftp.demon.nl/pub/mirrors/zsh/
 PKGNAMESUFFIX=	-devel
