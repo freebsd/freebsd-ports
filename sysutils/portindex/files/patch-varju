@@ -1,0 +1,14 @@
+--- freebsdports.py.orig	Wed Jul 28 14:03:59 2004
++++ freebsdports.py	Sat Aug 21 22:45:41 2004
+@@ -117,9 +117,9 @@
+             print 'Output of make describe has',len(spl),'fields.'
+             return False
+         if this.path!=spl[1]:
+-            print "Port path is",this.path,"but Makefile reports",spl[1]
++            print "Warning: port path is",this.path,"but Makefile reports",spl[1]
+         this.name=spl[0]
+-        this.path=spl[1]
++        #this.path=spl[1]
+         this.prefix=spl[2]
+         this.comment=sre.sub(r'\s{2,}',' ',spl[3].strip())
+         this.dfile=spl[4]

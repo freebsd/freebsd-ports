@@ -7,6 +7,7 @@
 
 PORTNAME=	portindex
 PORTVERSION=	18
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://people.tecnik93.com/~radim/distfiles/
 DISTNAME=	bsdportsutils-${PORTVERSION}
