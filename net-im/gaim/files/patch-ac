@@ -1,5 +1,5 @@
---- src/Makefile.in.orig	Mon Dec  4 18:02:33 2000
-+++ src/Makefile.in	Mon Dec  4 18:08:39 2000
+--- src/Makefile.in.orig	Fri Dec 15 19:19:17 2000
++++ src/Makefile.in	Fri Dec 15 19:28:25 2000
 @@ -122,14 +122,14 @@
  l = @l@
  perlpath = @perlpath@
@@ -7,16 +7,16 @@
 -@GNOMEAPPLET_TRUE@bin_PROGRAMS = gaim_applet
 +@GNOMEAPPLET_TRUE@bin_PROGRAMS = gaim_applet gaim
  @GNOMEAPPLET_FALSE@bin_PROGRAMS = gaim
--@GNOMEAPPLET_TRUE@gaim_applet_SOURCES = about.c 			aim.c 			away.c 			browser.c 			buddy.c 			buddy_chat.c 			conversation.c 			dialogs.c 			gaimrc.c 			gnome_applet_mgr.c 			gtkhtml.c 			gtkspell.c 			gtkticker.c 			html.c 			idle.c 			multi.c 			oscar.c 			perl.c 			plugins.c 			prefs.c 			proxy.c 			prpl.c 			rvous.c 			server.c 			sound.c 			ticker.c 			toc.c 			util.c
+-@GNOMEAPPLET_TRUE@gaim_applet_SOURCES = about.c 			aim.c 			applet.c 			away.c 			browser.c 			buddy.c 			buddy_chat.c 			conversation.c 			dialogs.c 			gaimrc.c 			gtkhtml.c 			gtkspell.c 			gtkticker.c 			html.c 			idle.c 			multi.c 			oscar.c 			perl.c 			plugins.c 			prefs.c 			proxy.c 			prpl.c 			rvous.c 			server.c 			sound.c 			ticker.c 			toc.c 			util.c
 -@GNOMEAPPLET_TRUE@gaim_applet_DEPENDENCIES = ../libfaim/libfaim.a @LIBOBJS@
 -@GNOMEAPPLET_TRUE@gaim_applet_LDADD = @LDADD@ @LIBOBJS@
--@GNOMEAPPLET_FALSE@gaim_SOURCES = about.c 		aim.c 		away.c 		browser.c 		buddy.c 		buddy_chat.c 		conversation.c 		dialogs.c 		gaimrc.c 		gnome_applet_mgr.c 		gtkhtml.c 		gtkspell.c 		gtkticker.c 		html.c 		idle.c 		multi.c 		oscar.c 		perl.c 		plugins.c 		prefs.c 		proxy.c 		prpl.c 		rvous.c 		server.c 		sound.c 		ticker.c 		toc.c 		util.c
+-@GNOMEAPPLET_FALSE@gaim_SOURCES = about.c 		aim.c 		applet.c 		away.c 		browser.c 		buddy.c 		buddy_chat.c 		conversation.c 		dialogs.c 		gaimrc.c 		gtkhtml.c 		gtkspell.c 		gtkticker.c 		html.c 		idle.c 		multi.c 		oscar.c 		perl.c 		plugins.c 		prefs.c 		proxy.c 		prpl.c 		rvous.c 		server.c 		sound.c 		ticker.c 		toc.c 		util.c
 -@GNOMEAPPLET_FALSE@gaim_DEPENDENCIES = ../libfaim/libfaim.a @LIBOBJS@
 -@GNOMEAPPLET_FALSE@gaim_LDADD = @LDADD@ @LIBOBJS@
-+gaim_applet_SOURCES = about.c 			aim.c 			away.c 			browser.c 			buddy.c 			buddy_chat.c 			conversation.c 			dialogs.c 			gaimrc.c 			gnome_applet_mgr.c 			gtkhtml.c 			gtkspell.c 			gtkticker.c 			html.c 			idle.c 			multi.c 			oscar.c 			perl.c 			plugins.c 			prefs.c 			proxy.c 			prpl.c 			rvous.c 			server.c 			sound.c 			ticker.c 			toc.c 			util.c
++gaim_applet_SOURCES = about.c 			aim.c 			applet.c 			away.c 			browser.c 			buddy.c 			buddy_chat.c 			conversation.c 			dialogs.c 			gaimrc.c 			gtkhtml.c 			gtkspell.c 			gtkticker.c 			html.c 			idle.c 			multi.c 			oscar.c 			perl.c 			plugins.c 			prefs.c 			proxy.c 			prpl.c 			rvous.c 			server.c 			sound.c 			ticker.c 			toc.c 			util.c
 +gaim_applet_DEPENDENCIES = ../libfaim/libfaim.a @LIBOBJS@
 +gaim_applet_LDADD = @LDADD@ @LIBOBJS@
-+gaim_SOURCES = about.c 		aim.c 		away.c 		browser.c 		buddy.c 		buddy_chat.c 		conversation.c 		dialogs.c 		gaimrc.c 		gnome_applet_mgr.c 		gtkhtml.c 		gtkspell.c 		gtkticker.c 		html.c 		idle.c 		multi.c 		oscar.c 		perl.c 		plugins.c 		prefs.c 		proxy.c 		prpl.c 		rvous.c 		server.c 		sound.c 		ticker.c 		toc.c 		util.c
++gaim_SOURCES = about.c 		aim.c 		applet.c 		away.c 		browser.c 		buddy.c 		buddy_chat.c 		conversation.c 		dialogs.c 		gaimrc.c 		gtkhtml.c 		gtkspell.c 		gtkticker.c 		html.c 		idle.c 		multi.c 		oscar.c 		perl.c 		plugins.c 		prefs.c 		proxy.c 		prpl.c 		rvous.c 		server.c 		sound.c 		ticker.c 		toc.c 		util.c
 +gaim_DEPENDENCIES = ../libfaim/libfaim.a @LIBOBJS@
 +gaim_LDADD = @LDADD@ @LIBOBJS@
  
@@ -26,31 +26,31 @@
  DEFS = @DEFS@ -I. -I$(srcdir) -I..
  CPPFLAGS = @CPPFLAGS@
  LDFLAGS = @LDFLAGS@
--@GNOMEAPPLET_TRUE@gaim_applet_OBJECTS =  about.o aim.o away.o browser.o \
--@GNOMEAPPLET_TRUE@buddy.o buddy_chat.o conversation.o dialogs.o \
--@GNOMEAPPLET_TRUE@gaimrc.o gnome_applet_mgr.o gtkhtml.o gtkspell.o \
--@GNOMEAPPLET_TRUE@gtkticker.o html.o idle.o multi.o oscar.o perl.o \
--@GNOMEAPPLET_TRUE@plugins.o prefs.o proxy.o prpl.o rvous.o server.o \
--@GNOMEAPPLET_TRUE@sound.o ticker.o toc.o util.o
-+gaim_applet_OBJECTS =  about.o aim.o away.o browser.o \
-+buddy.o buddy_chat.o conversation.o dialogs.o \
-+gaimrc.o gnome_applet_mgr.o gtkhtml.o gtkspell.o \
-+gtkticker.o html.o idle.o multi.o oscar.o perl.o \
-+plugins.o prefs.o proxy.o prpl.o rvous.o server.o \
-+sound.o ticker.o toc.o util.o
+-@GNOMEAPPLET_TRUE@gaim_applet_OBJECTS =  about.o aim.o applet.o away.o \
+-@GNOMEAPPLET_TRUE@browser.o buddy.o buddy_chat.o conversation.o \
+-@GNOMEAPPLET_TRUE@dialogs.o gaimrc.o gtkhtml.o gtkspell.o gtkticker.o \
+-@GNOMEAPPLET_TRUE@html.o idle.o multi.o oscar.o perl.o plugins.o \
+-@GNOMEAPPLET_TRUE@prefs.o proxy.o prpl.o rvous.o server.o sound.o \
+-@GNOMEAPPLET_TRUE@ticker.o toc.o util.o
++gaim_applet_OBJECTS =  about.o aim.o applet.o away.o \
++browser.o buddy.o buddy_chat.o conversation.o \
++dialogs.o gaimrc.o gtkhtml.o gtkspell.o gtkticker.o \
++html.o idle.o multi.o oscar.o perl.o plugins.o \
++prefs.o proxy.o prpl.o rvous.o server.o sound.o \
++ticker.o toc.o util.o
  gaim_applet_LDFLAGS = 
--@GNOMEAPPLET_FALSE@gaim_OBJECTS =  about.o aim.o away.o browser.o \
--@GNOMEAPPLET_FALSE@buddy.o buddy_chat.o conversation.o dialogs.o \
--@GNOMEAPPLET_FALSE@gaimrc.o gnome_applet_mgr.o gtkhtml.o gtkspell.o \
--@GNOMEAPPLET_FALSE@gtkticker.o html.o idle.o multi.o oscar.o perl.o \
--@GNOMEAPPLET_FALSE@plugins.o prefs.o proxy.o prpl.o rvous.o server.o \
--@GNOMEAPPLET_FALSE@sound.o ticker.o toc.o util.o
-+gaim_OBJECTS =  about.o aim.o away.o browser.o \
-+buddy.o buddy_chat.o conversation.o dialogs.o \
-+gaimrc.o gnome_applet_mgr.o gtkhtml.o gtkspell.o \
-+gtkticker.o html.o idle.o multi.o oscar.o perl.o \
-+plugins.o prefs.o proxy.o prpl.o rvous.o server.o \
-+sound.o ticker.o toc.o util.o
+-@GNOMEAPPLET_FALSE@gaim_OBJECTS =  about.o aim.o applet.o away.o \
+-@GNOMEAPPLET_FALSE@browser.o buddy.o buddy_chat.o conversation.o \
+-@GNOMEAPPLET_FALSE@dialogs.o gaimrc.o gtkhtml.o gtkspell.o gtkticker.o \
+-@GNOMEAPPLET_FALSE@html.o idle.o multi.o oscar.o perl.o plugins.o \
+-@GNOMEAPPLET_FALSE@prefs.o proxy.o prpl.o rvous.o server.o sound.o \
+-@GNOMEAPPLET_FALSE@ticker.o toc.o util.o
++gaim_OBJECTS =  about.o aim.o applet.o away.o \
++browser.o buddy.o buddy_chat.o conversation.o \
++dialogs.o gaimrc.o gtkhtml.o gtkspell.o gtkticker.o \
++html.o idle.o multi.o oscar.o perl.o plugins.o \
++prefs.o proxy.o prpl.o rvous.o server.o sound.o \
++ticker.o toc.o util.o
  gaim_LDFLAGS = 
  COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
  LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)

@@ -1,7 +1,6 @@
 bin/gaim
 %%GNOME:%%bin/gaim_applet
 %%GNOME:%%etc/CORBA/servers/gaim_applet.gnorba
-%%GNOME:%%etc/sound/events/gaim.soundlist
 lib/gaim/autorecon.so
 lib/gaim/iconaway.so
 lib/gaim/irc.so
@@ -12,6 +11,9 @@ lib/gaim/libgaimicq.so.0
 lib/gaim/libyahoo.a
 lib/gaim/libyahoo.so
 lib/gaim/libyahoo.so.0
+lib/gaim/libmsn.a
+lib/gaim/libmsn.so
+lib/gaim/libmsn.so.0
 lib/gaim/notify.so
 lib/gaim/spellchk.so
 %%DATADIR%%/pixmaps/gaim/about_small.xpm
@@ -63,6 +65,12 @@ lib/gaim/spellchk.so
 %%DATADIR%%/pixmaps/gaim/gnome/penguin-connect.png
 %%DATADIR%%/pixmaps/gaim/gnome/penguin-offline.png
 %%DATADIR%%/pixmaps/gaim/gnome/penguin-online.png
+%%DATADIR%%/pixmaps/gaim/gnomeicu-away.xpm
+%%DATADIR%%/pixmaps/gaim/gnomeicu-dnd.xpm
+%%DATADIR%%/pixmaps/gaim/gnomeicu-ffc.xpm
+%%DATADIR%%/pixmaps/gaim/gnomeicu-na.xpm
+%%DATADIR%%/pixmaps/gaim/gnomeicu-occ.xpm
+%%DATADIR%%/pixmaps/gaim/gnomeicu-online.xpm
 %%DATADIR%%/pixmaps/gaim/gnome_add.xpm
 %%DATADIR%%/pixmaps/gaim/gnome_close.xpm
 %%DATADIR%%/pixmaps/gaim/gnome_preferences.xpm
@@ -81,6 +89,8 @@ lib/gaim/spellchk.so
 %%DATADIR%%/pixmaps/gaim/luke03.xpm
 %%DATADIR%%/pixmaps/gaim/moneymouth.xpm
 %%DATADIR%%/pixmaps/gaim/msg_pending.xpm
+%%DATADIR%%/pixmaps/gaim/msn_away.xpm
+%%DATADIR%%/pixmaps/gaim/msn_online.xpm
 %%DATADIR%%/pixmaps/gaim/no_icon.xpm
 %%DATADIR%%/pixmaps/gaim/normal.xpm
 %%DATADIR%%/pixmaps/gaim/offline.xpm
@@ -111,6 +121,9 @@ lib/gaim/spellchk.so
 %%DATADIR%%/pixmaps/gaim/smile_sad.xpm
 %%DATADIR%%/pixmaps/gaim/smile_wink.xpm
 %%DATADIR%%/pixmaps/gaim/speaker.xpm
+%%DATADIR%%/pixmaps/gaim/status-away.xpm
+%%DATADIR%%/pixmaps/gaim/status-here.xpm
+%%DATADIR%%/pixmaps/gaim/status-idle.xpm
 %%DATADIR%%/pixmaps/gaim/strike.xpm
 %%DATADIR%%/pixmaps/gaim/tb_forward.xpm
 %%DATADIR%%/pixmaps/gaim/tb_search.xpm
@@ -125,16 +138,11 @@ lib/gaim/spellchk.so
 %%GNOME:%%share/gnome/applets/Network/gaim_applet.desktop
 %%GNOME:%%share/gnome/apps/Internet/gaim.desktop
 %%GNOME:%%share/gnome/pixmaps/gaim.xpm
-%%GNOME:%%share/gnome/sounds/gaim/BuddyArrive.au
-%%GNOME:%%share/gnome/sounds/gaim/BuddyLeave.au
-%%GNOME:%%share/gnome/sounds/gaim/Receive.au
-%%GNOME:%%share/gnome/sounds/gaim/Send.au
 share/locale/de/LC_MESSAGES/gaim.mo
 share/locale/es/LC_MESSAGES/gaim.mo
 share/locale/fr/LC_MESSAGES/gaim.mo
 share/locale/ko/LC_MESSAGES/gaim.mo
 share/locale/zh_CN/LC_MESSAGES/gaim.mo
-%%GNOME:%%@dirrm share/gnome/sounds/gaim
 @dirrm %%DATADIR%%/pixmaps/gaim/gnome
 @dirrm %%DATADIR%%/pixmaps/gaim
 %%NOGNOME:%%@dirrm %%DATADIR%%/pixmaps
