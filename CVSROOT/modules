@@ -7415,6 +7415,7 @@ p5-Maypole-Component	ports/www/p5-Maypole-Component
 p5-Memoize	ports/devel/p5-Memoize
 p5-Memoize-ExpireLRU	ports/devel/p5-Memoize-ExpireLRU
 p5-Metadata	ports/databases/p5-Metadata
+p5-Mknod	ports/devel/p5-Mknod
 p5-Module-Build	ports/devel/p5-Module-Build
 p5-Module-CoreList	ports/devel/p5-Module-CoreList
 p5-Module-Info	ports/devel/p5-Module-Info
