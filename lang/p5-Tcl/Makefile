@@ -3,7 +3,8 @@
 # Date created:				June 15th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id$
+#   $Id: Makefile,v 1.1.1.1 1997/06/16 03:03:55 jfitz Exp $
+#
 
 DISTNAME=	Tcl-b1
 PKGNAME=	p5-Tcl-b1
