@@ -16,4 +16,9 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ssl/x509.rb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/ssl
 %%PORTDOCS%%%%RUBY_DOCDIR%%/ssl/ChangeLog
+%%PORTDOCS%%%%RUBY_DOCDIR%%/ssl/ssl.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/ssl/ssl.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/ssl/ja/ssl.ja.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/ssl/ja/ssl.ja.rd
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/ssl/ja
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/ssl
