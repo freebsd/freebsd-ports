@@ -46,6 +46,4 @@ etc/exim/configure.default
 @unexec rmdir %B 2>/dev/null || true
 @cwd %%RC_DIR%%
 exim%%RC_SUFX%%
-@exec mkdir -p /var/log/exim
-@exec chown mailnull:mail /var/log/exim
 @unexec rmdir /var/log/exim 2>/dev/null || true

@@ -11,10 +11,10 @@
 # $FreeBSD$
 #
 
-PKG_PREFIX=${PKG_PREFIX:=/usr/local}
+PKG_PREFIX=${PKG_PREFIX:=%%PREFIX%%}
 
-user=XX_EXIM_USER_XX
-group=XX_EXIM_GROUP_XX
+user=%%EXIM_USER%%
+group=%%EXIM_GROUP%%
 
 if [ "$2" = "PRE-INSTALL" ]; then
 	if ! /usr/bin/id ${user} > /dev/null; then
@@ -25,6 +25,8 @@ if [ "$2" = "PRE-INSTALL" ]; then
 		echo "Exim requires group ${group}.  Please update your system." 1>&2
 		exit 1
 	fi
+	/bin/mkdir -p /var/log/exim
+	/usr/sbin/chown ${user}:${group} /var/log/exim
 fi
 
 if [ "$2" = "POST-INSTALL" ]; then

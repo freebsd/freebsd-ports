@@ -368,12 +368,16 @@ RC_SUFX=	.sh
 SED_SCRIPT=	-e 's,%%PREFIX%%,${PREFIX},g' \
 		-e 's,%%DOCSDIR%%,${DOCSDIR},g' \
 		-e 's,%%EXAMPLESDIR%%,${EXAMPLESDIR},g' \
+		-e 's,%%EXIM_USER%%,${EXIM_USER},g' \
+		-e 's,%%EXIM_GROUP%%,${EXIM_GROUP},g' \
 		-e 's,%%RC_SUBR%%,${RC_SUBR},g' \
 		-e 's,%%RC_DIR%%,${RC_DIR},g' \
 		-e 's,%%RC_SUFX%%,${RC_SUFX},g'
 
 PLIST_SUB+=	RC_DIR=${RC_DIR} \
-		RC_SUFX=${RC_SUFX}
+		RC_SUFX=${RC_SUFX} \
+		EXIM_USER=${EXIM_USER} \
+		EXIM_GROUP=${EXIM_GROUP}
 
 .if ${OSVERSION} < 400014
 WITHOUT_IPV6=	yes
@@ -395,12 +399,8 @@ pre-everything::
 do-configure:
 	@${MKDIR} ${WRKSRC}/Local
 	@${SED} ${SEDLIST} ${WRKSRC}/src/EDITME > ${WRKSRC}/Local/Makefile
-	@${SED} -e 's/XX_EXIM_USER_XX/${EXIM_USER}/' \
-		-e 's/XX_EXIM_GROUP_XX/${EXIM_GROUP}/' \
-		< ${PKGDIR}/pkg-install > ${PKGINSTALL}
-	@${REINPLACE_CMD} -e 's/XX_EXIM_USER_XX/${EXIM_USER}/' \
-			  -e 's/XX_EXIM_GROUP_XX/${EXIM_GROUP}/' \
-		${WRKSRC}/src/configure.default
+	@${SED} ${SED_SCRIPT} ${MASTERDIR}/pkg-install > ${PKGINSTALL}
+	@${REINPLACE_CMD} ${SEDLIST} ${WRKSRC}/src/configure.default
 	@${REINPLACE_CMD} -e 's/"(Exim $$version_number)\\n\\t"/"(Exim $$version_number; ${OPSYS})\\n\\t"/' \
 		${WRKSRC}/src/globals.c
 	@${REINPLACE_CMD} -e 's/^#include "cnumber\.h"$$/${PORTREVISION}/' ${WRKSRC}/src/version.c
