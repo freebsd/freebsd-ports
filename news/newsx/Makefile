@@ -7,10 +7,9 @@
 
 PORTNAME=	newsx
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	news
-#MASTER_SITES=	ftp://ftp.kvaleberg.com/pub/
-MASTER_SITES=	http://home.powertech.no/egilkv/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/$/pre/}
+MASTER_SITES=	ftp://ftp.kvaleberg.com/pub/
 
 MAINTAINER=	thierry@pompo.net
 COMMENT=	A program to fetch news from and post news to a remote NNTP server
