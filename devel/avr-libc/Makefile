@@ -6,9 +6,13 @@
 #
 
 PORTNAME=	avr-libc
-PORTVERSION=	20020203
+PORTVERSION=	20020630
 CATEGORIES=	devel
-MASTER_SITES=	http://www.amelek.gda.pl/avr/libc/
+#MASTER_SITES=	http://www.amelek.gda.pl/avr/libc/
+MASTER_SITES=	http://www.amelek.gda.pl/avr/test/ \
+		http://www.enteract.com/~rneswold/avr/:libdoc
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${PDFDOC}:libdoc
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	joerg@freebsd.org
 
@@ -21,8 +25,10 @@ RUN_DEPENDS=	avr-as:${PORTSDIR}/devel/avr-binutils \
 		avr-gcc:${PORTSDIR}/devel/avr-gcc
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ENV=	CC=avr-gcc
+CONFIGURE_ENV=	CC=avr-gcc PREFIX=${PREFIX}
 CONFIGURE_SCRIPT= doconf
+
+PDFDOC=		avr-tools.pdf
 
 do-build:
 		(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ./domake MAKE=${GMAKE})
@@ -43,6 +49,6 @@ do-install:
 			${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/doc/examples/$$f \
 				${PREFIX}/share/doc/avr-libc/examples; \
 		done
-		${INSTALL_DATA} ${FILESDIR}/avr-lib.pdf ${PREFIX}/share/doc/avr-libc
+		${INSTALL_DATA} ${DISTDIR}/${PDFDOC} ${PREFIX}/share/doc/avr-libc/avr-tools.pdf
 
 .include <bsd.port.mk>
