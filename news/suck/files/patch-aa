@@ -1,5 +1,5 @@
---- Makefile.orig	Mon Mar 11 15:11:45 1996
-+++ Makefile	Sat Mar 30 01:02:42 1996
+--- Makefile.orig	Sat Mar 30 06:01:40 1996
++++ Makefile	Fri Apr  5 22:50:49 1996
 @@ -5,15 +5,15 @@
  CC=gcc
  
@@ -22,16 +22,27 @@
  MAN_MODE=644			# mode for the man pages
  
  #XXGDB=1			# uncomment this to get it ready for use by xxgdb or gdb
-@@ -55,7 +55,7 @@
+@@ -27,8 +27,8 @@
+ #USE_INNDBZ=1	# if your DBZ routines are part of libinn.a, also check INN_ stuff
+ 
+ # If the INNDBZ stuff is not in the following locations, change this
+-INN_DBINC=-I/usr/src/inn/include
+-INN_LIBDIR=-L/usr/src/inn/lib
++INN_DBINC=-I${PORTSDIR}/news/inn/work/include
++INN_LIBDIR=-L${PORTSDIR}/news/inn/work/lib
+ INN_DBLIBS=-linn
+ 
+ #---------------DON'T TOUCH BELOW HERE--------------------------------------
+@@ -85,7 +85,7 @@
  LINK = $(CC)
- LIBS = -lm $(DBLIB)
- OPTS = $(CFLAGS) $(GCC_FLAGS) $(DVERSION) $(DBOPTION)
+ LIBS = -lm $(DBLIB) $(GPROFLIB)
+ OPTS = $(CFLAGS) $(GCC_FLAGS) $(DVERSION) $(DBOPTION) $(DBINC)
 -INSTALL = install
 +INSTALL = install -c
  
  MAN = ./man
  SAMPLE = ./sample
-@@ -92,13 +92,13 @@
+@@ -122,13 +122,13 @@
  
  installbin: $(TARGETS)
  	mkdir -p $(INSTALLDIR)	
@@ -47,8 +58,8 @@
  	- $(INSTALL) -o $(MAN_OWNER) -g $(MAN_GROUP) -m $(MAN_MODE) $(LPOST_MANPGS) $(MANDIR)
  	
  clean:
---- config.h.orig	Wed Mar  6 14:46:13 1996
-+++ config.h	Sat Mar 30 01:06:55 1996
+--- config.h.orig	Sat Mar 30 11:57:59 1996
++++ config.h	Fri Apr  5 22:56:24 1996
 @@ -12,6 +12,10 @@
  /* #define DEBUG2 */
  /* #define DEBUG3 */
@@ -58,10 +69,28 @@
 +#define _HAVE_PARAM_H
 +
  /*  TIMER Option */
- /* To see the approximate BPS while downloading msgs, uncomment this */
+ /* To see the approximate BPS while downloading articles, uncomment this */
  /* If you don't like it, or want a tiny speed increase, comment this out */
-@@ -61,7 +65,7 @@
- #define CHECK_HISTORY
+@@ -19,7 +23,7 @@
+ 
+ /* If you don't EVER plan to use the KILLFILE stuff, comment this out for a slight speed increase */
+ /* If you want to, or plan to, use the KILLFILE stuff, uncomment this */
+-/* #define KILLFILE */
++#define KILLFILE /**/
+ 
+ /* If you want the kill/keep file routine to keep articles that are both flagged as */
+ /* delete and keep (either by matching both a delete group and a keep group, or by not matching */
+@@ -44,7 +48,7 @@
+ /* as number of seconds before timeout 				   */
+ /* else, comment it out.  If you comment it out, if link goes down */
+ /* we'll just sit, twiddling our bits, until whenever.             */
+-#define TIMEOUT 30
++#define TIMEOUT 90
+ 
+ /* signal which will interrupt us DON'T USE SIGKILL OR SIGSTOP */
+ /* if you don't want to be able to abort, and a miniscule speed */
+@@ -66,7 +70,7 @@
+ #define CHECK_HISTORY_EXP
  
  /* don't comment this out */
 -#define HISTORY_FILE "/usr/lib/news/history"
@@ -69,7 +98,7 @@
  
  /* If your system doesn't like the lock file stuff in suck.c  */
  /* comment this out */
-@@ -101,10 +105,10 @@
+@@ -106,7 +110,7 @@
  #define RPOST_MAXARGS 128
  
  /* RNEWS program called by lpost */

@@ -1,15 +1,15 @@
 # New ports collection makefile for:	suck
-# Version required:	2.6.1
+# Version required:	2.6.2
 # Date created:		30 Mar 1996
 # Whom:			graphite@taurus.bekkoame.or.jp
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/03/31 23:19:18 asami Exp $
 #
 
-DISTNAME=	suck-2.6.1
+DISTNAME=	suck-2.6.2
 CATEGORIES+=	news
-MASTER_SITES=	ftp://sunsite.unc.edu/pub/Linux/system/Mail/news/ \
-		ftp://tsx-11.mit.edu/pub/linux/sources/sbin/
+MASTER_SITES=	ftp://tsx-11.mit.edu/pub/linux/sources/sbin/ \
+		ftp://ftp.iis.u-tokyo.ac.jp/pub2/Linux/sources/sbin/
 
 MAINTAINER=	graphite@taurus.bekkoame.or.jp
 
