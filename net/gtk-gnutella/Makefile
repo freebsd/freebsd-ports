@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gtk-gnutella
-PORTVERSION=	0.90
-PORTREVISION=	1
+PORTVERSION=	0.91
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://gtk-gnutella.sourceforge.net/download/ \
@@ -18,7 +17,6 @@ MAINTAINER=	roman@xpert.com
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 
-USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOMENG=	yes
