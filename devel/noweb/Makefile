@@ -3,7 +3,7 @@
 # Date created:		29 July 1995
 # Whom:			thomas@ghpc8.ihf.rwth-aachen.de
 #
-# $Id: Makefile,v 1.6 1996/03/27 08:42:13 tg Exp $
+# $Id: Makefile,v 1.7 1996/11/18 11:23:26 asami Exp $
 #
 
 DISTNAME=	noweb-2.7d
@@ -25,8 +25,8 @@ MAN1=		htmltoc.1 nodefs.1 noindex.1 noroots.1 notangle.1 \
 post-install:
 	@rm ${PREFIX}/man/man1/noweave.1*
 	@rm ${PREFIX}/man/man1/nountangle.1*
-	ln ${PREFIX}/man/man1/notangle.1.gz ${PREFIX}/man/man1/noweave.1.gz
-	ln ${PREFIX}/man/man1/notangle.1.gz ${PREFIX}/man/man1/nountangle.1.gz
+	ln -sf ${PREFIX}/man/man1/notangle.1.gz ${PREFIX}/man/man1/noweave.1.gz
+	ln -sf ${PREFIX}/man/man1/notangle.1.gz ${PREFIX}/man/man1/nountangle.1.gz
 .endif
 
 .include <bsd.port.mk>
