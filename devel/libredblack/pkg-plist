@@ -1,0 +1,4 @@
+lib/libredblack.a
+lib/libredblack.so
+lib/libredblack.so.2
+include/redblack.h
