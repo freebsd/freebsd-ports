@@ -23,6 +23,8 @@ include/ORBitservices/CosTypedEventComm.idl
 include/ORBitservices/LName.pidl
 include/ORBitutil/basic_types.h
 include/ORBitutil/compat.h
+include/ORBitutil/orbit-os-config.h
+include/ORBitutil/os-feature-alloca.h
 include/ORBitutil/os-specifics.h
 include/ORBitutil/thread-safety.h
 include/ORBitutil/trace.h
@@ -35,6 +37,7 @@ include/orb/corba_any.h
 include/orb/corba_any_proto.h
 include/orb/corba_any_type.h
 include/orb/corba_basic_sequences_type.h
+include/orb/corba_context.h
 include/orb/corba_env.h
 include/orb/corba_env_type.h
 include/orb/corba_object.h
@@ -89,6 +92,7 @@ lib/libname-server.a
 lib/liborbit-c-backend.a
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+share/aclocal/ORBit.m4
 share/aclocal/libIDL.m4
 @dirrm include/IIOP
 @dirrm include/ORBitservices

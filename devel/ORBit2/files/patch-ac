@@ -42,15 +42,15 @@
  
  
  INCLUDES = -I. -I$(top_builddir)/src -I$(top_srcdir)/src  @GLIB_CFLAGS@
---- libIDL/Makefile.in.orig	Thu Feb 25 17:17:07 1999
-+++ libIDL/Makefile.in	Mon Mar  1 18:54:57 1999
-@@ -89,7 +89,7 @@
+--- libIDL/Makefile.in.orig	Mon Feb 21 12:32:32 2000
++++ libIDL/Makefile.in	Tue Feb 22 18:19:14 2000
+@@ -90,7 +90,7 @@
  LT_RELEASE = @LT_RELEASE@
  LT_REVISION = @LT_REVISION@
  MAINT = @MAINT@
 -MAKEINFO = @MAKEINFO@
 +MAKEINFO = @MAKEINFO@ --no-split
- NM = @NM@
+ OBJDUMP = @OBJDUMP@
  PACKAGE = @PACKAGE@
  RANLIB = @RANLIB@
 @@ -120,7 +120,7 @@
@@ -62,8 +62,8 @@
  
  
  m4datadir = $(datadir)/aclocal
-@@ -130,7 +130,7 @@
- tstidl_LDFLAGS = -static
+@@ -129,7 +129,7 @@
+ tstidl_SOURCES = tstidl.c
  tstidl_LDADD = libIDL.la
  
 -confexecdir = $(libdir)
