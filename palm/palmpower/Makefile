@@ -26,8 +26,8 @@ MAN1=		pilotdis.1
 
 .include <bsd.port.pre.mk>
 
-.if !exists(${DISTDIR}/${DISTNAME}.${EXTRACT_SUFX})
-BROKEN=	"Please fetch http://mxlab.com/files/palm/devel/palmpower-1.0.2.tar.gz manually and store it in ${DISTDIR}"
+.if !exists(${DISTDIR}/${DISTNAME}.${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
+IGNORE=	"Please fetch http://mxlab.com/files/palm/devel/palmpower-1.0.2.tar.gz manually and store it in ${DISTDIR}"
 .endif
 
 post-build:
