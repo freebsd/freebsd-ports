@@ -80,6 +80,7 @@
     SUBDIR += ucl
     SUBDIR += unace
     SUBDIR += unadf
+    SUBDIR += unalz
     SUBDIR += unarj
     SUBDIR += undms
     SUBDIR += unlzx
