@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	AbiWord
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.abisource.com/downloads/Version-${PORTVERSION}/lf/
@@ -32,13 +32,9 @@ USE_REINPLACE=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gtk12 gnomehier
 WANT_GNOME=	yes
-AUTOMAKE=	${WRKSRC}/autogen.sh && ${FIXME}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -liconv"
 MAKEFILE=	GNUmakefile
-FIXME=		find ${WRKSRC} -name GNUmakefile.in | xargs ${REINPLACE_CMD} -e \
-		    's|[(]libdir[)]/@PACKAGE@|(datadir)/@PACKAGE@|g ; \
-		     s|@DEFS@|-I${WRKSRC}/../libiconv/include @DEFS@|g' && ${TRUE}
 
 .if defined(PACKAGE_BUILDING) || defined(PARALLEL_PACKAGE_BUILD)
 .undef WITHOUT_GNOME
@@ -61,9 +57,13 @@ BROKEN=	"This port cannot be built when textproc/wv is installed because of a he
 .endif
 
 pre-configure:
-	@cd ${WRKSRC} && ${TOUCH} NEWS README AUTHORS ChangeLog
+	@cd ${WRKSRC} && ${TOUCH} NEWS README AUTHORS ChangeLog INSTALL
 	@cd ${WRKSRC}/ac-helpers && ${RM} -f install-sh mkinstalldirs missing
 	@${RM} -f ${WRKSRC}/configure.ac
+	@cd ${WRKSRC} && ./autogen.sh && ${TRUE}
+	@${FIND} ${WRKSRC} -name GNUmakefile.in | xargs ${REINPLACE_CMD} -e \
+		's|[(]libdir[)]/@PACKAGE@|(datadir)/@PACKAGE@|g ; \
+		 s|@DEFS@|-I${WRKSRC}/../libiconv/include @DEFS@|g' && ${TRUE}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
