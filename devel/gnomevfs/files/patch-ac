@@ -1,9 +1,15 @@
-
-$FreeBSD$
-
---- modules/Makefile.in.orig	Sun Mar 17 15:05:08 2002
-+++ modules/Makefile.in	Sun Mar 17 15:05:08 2002
-@@ -199,7 +199,7 @@
+--- modules/Makefile.in.orig	Thu Aug 26 21:10:36 2004
++++ modules/Makefile.in	Thu Aug 26 21:11:07 2004
+@@ -189,7 +189,7 @@
+ l = @l@
+ 
+ NULL = 
+-SUBDIRS = extfs
++SUBDIRS =
+ 
+ INCLUDES =  	-I$(top_srcdir)					-I$(top_srcdir)/libgnomevfs			-I$(top_builddir)/libgnomevfs			-I$(top_srcdir)/intl				-I$(top_builddir)/intl				$(GLIB_CFLAGS)					$(XML_CFLAGS)	 				$(LIBEFS_CFLAGS)				$(GCONF_CFLAGS)					$(VFS_GNOME_CFLAGS)				$(VFS_CFLAGS) $(WERROR)				-D_GNU_SOURCE					-D_REENTRANT					-D_POSIX_PTHREAD_SEMANTICS			-DSYSCONFDIR=\"$(sysconfdir)\"			-DPREFIX=\"$(prefix)\"				-D_LARGEFILE64_SOURCE                           -D_FILE_OFFSET_BITS=64
+ 
+@@ -199,10 +199,10 @@
  @HAVE_CDDA_TRUE@CDDA_LTLIBS = libcdda.la
  @HAVE_CDDA_FALSE@CDDA_LTLIBS = 
  
@@ -11,12 +17,24 @@ $FreeBSD$
 +module_flags = -export_dynamic -avoid-version -module $(PTHREAD_LIB)
  modulesdir = $(libdir)/vfs/modules
  
- modules_LTLIBRARIES =  	$(CDDA_LTLIBS)					libextfs.la					libfile.la					libvfs-test.la					$(HTTP_LTLIBS)					libbzip2.la					libgzip.la					libftp.la					libnntp.la					libvfs-pipe.la					libvfs-translate.la				libdesktop.la					$(NULL)
-@@ -217,7 +217,6 @@
- ###  `cdda' method
+-modules_LTLIBRARIES =  	$(CDDA_LTLIBS)					libextfs.la					libfile.la					libvfs-test.la					$(HTTP_LTLIBS)					libbzip2.la					libgzip.la					libftp.la					libnntp.la					libvfs-pipe.la					libvfs-translate.la				libdesktop.la					$(NULL)
++modules_LTLIBRARIES =  	$(CDDA_LTLIBS)									libfile.la					libvfs-test.la					$(HTTP_LTLIBS)					libbzip2.la					libgzip.la					libftp.la					libnntp.la					libvfs-pipe.la					libvfs-translate.la				libdesktop.la					$(NULL)
+ 
+ 
+ # Disabled for now
+@@ -218,15 +218,8 @@
  
  libcdda_la_SOURCES =  	cdda-method.c 					cdda-method.h					cdda-cddb.c 					cdda-cddb.h					cdda-cdrom-extensions.h
--
  
+-
  libcdda_la_LDFLAGS = $(module_flags)
  libcdda_la_LIBADD = -L/gnome/lib -lcdda_paranoia -lcdda_interface
+-
+-###  `extfs' method
+-
+-libextfs_la_SOURCES =  	extfs-method.c 					extfs-method.h
+-
+-libextfs_la_LDFLAGS = $(module_flags)
+ 
+ ###  `file' method
+ 
