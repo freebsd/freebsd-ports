@@ -191,6 +191,7 @@
     SUBDIR += isc-dhcp3
     SUBDIR += isic
     SUBDIR += jabber
+    SUBDIR += jabber-aim
     SUBDIR += jabber-conference
     SUBDIR += jags
     SUBDIR += javadc

@@ -1,0 +1,60 @@
+You can connect to ICQ using this transport, however you cannot
+retrieve ICQ away status messages or user information, nor search for
+users. A simple SMS sending hack is included, but for now responses do
+not come through and no SMS sending confirmation is sent.  For SMS,
+send "SEND-SMS:number:text" to any ICQ user, for example
+"SEND-SMS:+4917012345:Test".
+
+To activate aim-transport, you will need to edit your jabber.xml to
+tell jabberd to load this file, and let clients be aware of it's
+availability.  In the browse section of the jsm service you need to
+add (uncomment out this block around line 248 of the sample
+configuration):
+
+	<!--
+	 * Don't forget to change aim.localhost to your hostname
+	 * if you want to make this publicly available.
+	-->
+	<service type="aim" jid="aim.localhost" name="AIM Transport">
+	  <ns>jabber:iq:gateway</ns>
+	  <ns>jabber:iq:register</ns>
+	</service>
+
+Next you need to add the lines to load in the transport and it's
+configuration options.  Please note that the following is
+substantially different than what comes in the sample config
+file. (near line 457):
+
+  <!--
+   * Don't forget to change aim.localhost to your hostname
+   * if you want to make this publicly available.
+  -->
+  <service id='aim.localhost'>
+    <load><aim_transport>${PREFIX}/lib/jabber/aimtrans.so</aim_transport></load>
+
+    <aimtrans xmlns='jabber:config:aimtrans'>
+      <!--
+        * This is the path to the aim binary neede by libfain for
+        * for providing access to AIM's servers
+      -->
+      <aimbinarydir>/path/to/aim_install</aimbinarydir>
+      <vCard>
+        <FN>AIM Transport</FN>
+        <DESC>An AIM Transport!</DESC>
+        <URL>http://foo.bar/</URL>
+      </vCard>
+      
+    </aimtrans>
+  </service>
+
+The most interesting of these is the <aimbinarydir/> flag.  For
+aimtransport to be able to work you need a valid directory from AIM
+version 3.5.1670.  It has to be that version.  I would suggest
+searching on Google.  For legal reasons I can not distribute this
+file.
+
+The installer version that works for me is this with md5sum:
+
+04eba0bd0ea5fe1756612e14663093aa  /win/Install_AIM_3.5.1670.exe
+
+After these changes everything should be running smoothly.
