@@ -9,8 +9,7 @@ PORTNAME=	aMule
 PORTVERSION=	1.2.6
 PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	amule
+MASTER_SITES=	http://download.berlios.de/amule/
 
 MAINTAINER=	ganael.laplanche@martymac.com
 COMMENT=	Just another eMule P2P Client
