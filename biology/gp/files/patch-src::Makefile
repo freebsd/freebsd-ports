@@ -1,0 +1,10 @@
+--- src/Makefile.orig	Wed Feb 28 01:01:24 2001
++++ src/Makefile	Wed Feb 28 01:01:31 2001
+@@ -5,7 +5,6 @@
+ ######################################################################
+ # Change the following to suit your needs
+ 
+-SHELL=/bin/bash
+ CC=gcc
+ LIBS= -lz -lm
+ #CFLAGS= -DNLS -DGZ
