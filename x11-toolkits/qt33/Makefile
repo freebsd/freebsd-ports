@@ -7,7 +7,7 @@
 
 PORTNAME?=	qt
 PORTVERSION?=	3.0.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES?=	x11-toolkits
 MASTER_SITES=   ftp://ftp.trolltech.com/qt/source/ \
                 ftp://ftp.chg.ru/pub/X11/qt/source/
@@ -76,10 +76,15 @@ pre-everything:
 	@${ECHO_MSG} '===> **************************************************'
 .endif
 
-# Remove unneeded dirs (speedup).
+# Remove unneeded dirs (speedup) and fake netscape files.
 post-patch:
 	@${FIND} ${WRKSRC} -name CVS | ${XARGS} ${RM} -fr
 	@${RM} -fr ${WRKSRC}/examples ${WRKSRC}/tutorial
+	@cd ${WRKSRC}/include; \
+		${RM} -f jri.h jri_md.h jritypes.h npapi.h npupp.h
+	@cd ${WRKSRC}/extensions/nsplugin/src; \
+		${RM} -f jri.h jri_md.h jritypes.h npapi.h npupp.h \
+			npunix.c npwin.cpp
 
 # Work around qmake generated dependencies
 pre-install:

@@ -9,11 +9,6 @@ bin/qm2ts
 bin/qmake
 bin/qtconfig
 bin/uic
-include/jri.h
-include/jri_md.h
-include/jritypes.h
-include/npapi.h
-include/npupp.h
 include/private/qapplication_p.h
 include/private/qcolor_p.h
 include/private/qcom_p.h
