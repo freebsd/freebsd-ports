@@ -1,5 +1,10 @@
 #!/bin/sh
 
+# Add extra options here for the BSDftpd-ssl FTP server.
+# See ftpd-ssl(8) for more details.
+EXTRAOPTS="-l"
+
+# You shouldn't edit anything below...
 if ! PREFIX=$(expr $0 : "\(/.*\)/etc/rc\.d/$(basename $0)\$"); then
     echo "$0: Cannot determine the PREFIX" >&2
     exit 1
@@ -8,7 +13,7 @@ fi
 case "$1" in
 start)
 	if [ -x ${PREFIX}/libexec/ftpd ]; then
-		${PREFIX}/libexec/ftpd -D -l -p /var/run/ftpd.pid > /dev/null
+		${PREFIX}/libexec/ftpd -D -p /var/run/ftpd.pid ${EXTRAOPTS} > /dev/null
 		echo -n ' BSDftpd-ssl'
 	fi
 	;;

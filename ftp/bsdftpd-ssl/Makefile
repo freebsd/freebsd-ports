@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bsdftpd-ssl
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 PORTREVISION=	0
 CATEGORIES=	ftp
 MASTER_SITES=	http://bsdftpd-ssl.sc.ru/files/bsdftpd-ssl/archive/1.0/src/
