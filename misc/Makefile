@@ -93,6 +93,7 @@
     SUBDIR += uk-phone
     SUBDIR += uk-postcodes
     SUBDIR += unclutter
+    SUBDIR += upclient
     SUBDIR += us-zipcodes
     SUBDIR += vbidecode
     SUBDIR += vera
