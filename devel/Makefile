@@ -754,6 +754,7 @@
     SUBDIR += splint
     SUBDIR += st
     SUBDIR += stlport
+    SUBDIR += stlport-icc
     SUBDIR += str
     SUBDIR += strace
     SUBDIR += styx
