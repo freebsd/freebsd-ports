@@ -6,7 +6,7 @@
 
 PORTNAME=	pam_smb
 PORTVERSION=	1.9.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=   http://www.csn.ul.ie/~airlied/pam_smb/devel/
 
@@ -39,6 +39,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/pam_smb.conf.example2 ${PREFIX}/etc/
 	${INSTALL_SCRIPT} ${FILESDIR}/${STARTUP_SCRIPT} ${PREFIX}/etc/rc.d/
 	${REINPLACE_CMD} -e s,%%PREFIX%%,${PREFIX}, ${PREFIX}/etc/rc.d/${STARTUP_SCRIPT}
+	${RM} ${PREFIX}/etc/rc.d/${STARTUP_SCRIPT}.bak
 
 post-install:
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' ${PKGMESSAGE}
