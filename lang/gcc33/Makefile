@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-SNAPDATE=2003-12-08
+SNAPDATE=2003-12-22
 
 PORTNAME=	gcc
 PORTVERSION=	3.3.3
@@ -193,7 +193,7 @@ post-install:
 
 cklatest:
 .for SITE in ftp://gcc.gnu.org/pub/gcc/snapshots/                                   ftp://mirrors.rcn.net/mirrors/sources.redhat.com/gcc/snapshots/
-	@-ncftpls ${SITE} | ${GREP} LATEST
+	@-ncftpls ${SITE} | ${GREP} 'LATEST.*3\.3'
 .endfor
 
 .include <bsd.port.post.mk>
