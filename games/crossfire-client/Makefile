@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	crossfire
-PORTVERSION=	1.1.0
+PORTVERSION=	1.3.0
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.ifi.uio.no/pub/crossfire/ \
@@ -14,32 +14,45 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMESUFFIX=	-client
 DISTFILES=	${PORTNAME}-client-${PORTVERSION}.tar.gz \
-		${PORTNAME}-client-sounds-${PORTVERSION}.tar.gz
+		${PORTNAME}-client-images-${PORTVERSION}.tar.gz \
+		${PORTNAME}-client-sounds-1.1.0.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12 \
-		png.5:${PORTSDIR}/graphics/png
+BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
+LIB_DEPENDS=	SDL_image.10:${PORTSDIR}/graphics/sdl_image
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
+
+USE_X_PREFIX=	yes
+USE_PERL5=	yes
 USE_XPM=	yes
 USE_GTK=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
 CONFIGURE_ARGS=	--with-includes=-I${LOCALBASE}/include \
 		--with-ldflags=-L${LOCALBASE}/lib \
-		--with-sound-dir=${PREFIX}/share/cfclient/sounds \
 		--disable-gnome # Gnome client currently broken
 
 MAN1=		cfclient.1 gcfclient.1
 
+DATADIR=	${PREFIX}/share/${PKGBASE}
+
+pre-configure:
+	@cd ${WRKSRC} && ${LOCALBASE}/bin/autoconf
+
 post-install:
-	@${MKDIR} ${PREFIX}/share/cfclient/sounds
-	@${INSTALL_DATA} ${WRKDIR}/sounds/*.raw ${WRKDIR}/sounds/README \
-		${PREFIX}/share/cfclient/sounds
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKDIR}/bmaps.client ${DATADIR}
+	${INSTALL_DATA} ${WRKDIR}/crossfire.base ${DATADIR}
+	${INSTALL_DATA} ${WRKDIR}/crossfire.clsc ${DATADIR}
+	@${MKDIR} ${DATADIR}/sounds
+	${INSTALL_DATA} ${WRKDIR}/sounds/README ${DATADIR}/sounds
+	${INSTALL_DATA} ${WRKDIR}/sounds/*.raw ${DATADIR}/sounds
 
 .include <bsd.port.mk>
