@@ -8,7 +8,7 @@
 PORTNAME=	bchunk
 PORTVERSION=	1.1.1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://hes.iki.fi/bchunk/ \
+MASTER_SITES=	http://he.fi/bchunk/ \
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	utils/disk-management
 
