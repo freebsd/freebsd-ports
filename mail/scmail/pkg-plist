@@ -5,6 +5,9 @@ share/gauche/site/lib/scmail.scm
 share/gauche/site/lib/scmail/bayesian-filter.scm
 share/gauche/site/lib/scmail/config.scm
 share/gauche/site/lib/scmail/mail.scm
+share/gauche/site/lib/scmail/mailbox.scm
+share/gauche/site/lib/scmail/maildir.scm
+share/gauche/site/lib/scmail/mh.scm
 share/gauche/site/lib/scmail/progress.scm
 share/gauche/site/lib/scmail/util.scm
 @dirrm share/gauche/site/lib/scmail
