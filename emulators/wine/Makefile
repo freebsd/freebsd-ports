@@ -26,6 +26,7 @@ ONLY_FOR_ARCHS=	i386
 USE_XPM=	yes
 #USE_MESA=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -51,7 +52,7 @@ pre-extract:
 
 post-patch:
 .for D in ../library ../unicode
-	@${PERL} -pi.sofix -e 's/SOVERSION = 1.0/SOVERSION = 1/g' \
+	@${REINPLACE_CMD} -e 's/SOVERSION = 1.0/SOVERSION = 1/g' \
 		${WRKSRC}/dlls/${D}/Makefile.in
 .endfor
 
