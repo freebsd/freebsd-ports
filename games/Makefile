@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.174 1998/12/14 21:20:09 jmz Exp $
+# $Id: Makefile,v 1.175 1998/12/14 21:44:03 jseger Exp $
 #
 
     SUBDIR += 3dc
@@ -36,6 +36,7 @@
     SUBDIR += frotz
     SUBDIR += galaxis
     SUBDIR += gemdropx
+    SUBDIR += gleyes
     SUBDIR += gnomegames
     SUBDIR += gnuchess
     SUBDIR += gnugo
