@@ -11614,6 +11614,7 @@ xfrisk		ports/games/xfrisk
 xfsm		ports/sysutils/xfsm
 xg		ports/x11-toolkits/xg
 xgalaga		ports/games/xgalaga
+xgame		ports/games/xgame
 xgammon		ports/games/xgammon
 xgas		ports/misc/xgas
 xgfe		ports/math/xgfe
