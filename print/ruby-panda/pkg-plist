@@ -1,0 +1,16 @@
+%%RUBY_SITEARCHLIBDIR%%/panda.so
+%%PORTDOCS%%%%RUBY_DOCDIR%%/panda/README
+%%PORTDOCS%%%%RUBY_DOCDIR%%/panda/ja/ChangeLog.ja
+%%PORTDOCS%%%%RUBY_DOCDIR%%/panda/ja/README.ja
+%%PORTDOCS%%%%RUBY_DOCDIR%%/panda/ja/TODO.ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/panda/ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/panda
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/panda/brave-gnu.png
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/panda/gnu-head.jpg
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/panda/gnu-head.png
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/panda/gnu_box.jpg
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/panda/input-ms.tif
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/panda/input.tif
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/panda/input2.tif
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/panda/main.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/panda
