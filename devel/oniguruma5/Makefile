@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	oniguruma
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_RUBY}
 MASTER_SITE_SUBDIR=	contrib
-DISTNAME=	onigd20030121
+DISTNAME=	onigd20030204
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
@@ -21,6 +21,8 @@ MAKEFILE=	BSDmakefile
 MAKE_ARGS=	NOPROFILE=true
 INSTALLS_SHLIB=	yes
 
+DOCS=		README doc/*
+
 pre-build:
 	${CP} ${FILESDIR}/${MAKEFILE} ${WRKSRC}/
 
@@ -29,7 +31,9 @@ post-install:
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/sample/* ${EXAMPLESDIR}/
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
+.for f in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
+.endfor
 .endif
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 LIB=		onig
 SHLIB_MAJOR?=	0
 SHLIB_MINOR?=	0
-CFLAGS+=	-DHAVE_CONFIG_H
+CFLAGS+=	-DHAVE_CONFIG_H -DNOT_RUBY
 SRCS=		regerror.o regcomp.o regexec.o reggnu.o \
 		regposix.o regposerr.o
 INCS=		regex.h \
