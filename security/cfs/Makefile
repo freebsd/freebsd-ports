@@ -7,6 +7,7 @@
 
 PORTNAME=	cfs
 PORTVERSION=	1.4.1
+PORTREVESION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.crypto.com/software/
 
