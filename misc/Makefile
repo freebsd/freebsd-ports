@@ -430,5 +430,6 @@
     SUBDIR += yaucg
     SUBDIR += yaunc
     SUBDIR += ytree
+    SUBDIR += zaptel
 
 .include <bsd.port.subdir.mk>
