@@ -27,6 +27,8 @@ PATCHFILES=	patch-1.10-IO \
 
 MAINTAINER=	obraun@informatik.unibw-muenchen.de
 
+FORBIDDEN=	"Loops infinitely during build"
+
 .if defined(WITH_TRACER)
 RUN_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/java:${PORTSDIR}/java/jdk
 BUILD_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/javac:${PORTSDIR}/java/jdk
