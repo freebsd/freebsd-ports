@@ -1,5 +1,6 @@
 bin/sodipodi
 lib/sodipodi/extensions/ill2svg.pl
+lib/sodipodi/modules/libxmleditor.so
 share/gnome/applications/sodipodi.desktop
 share/gnome/pixmaps/sodipodi.png
 share/gnome/sodipodi/about.svg
@@ -74,6 +75,7 @@ share/gnome/sodipodi/file_import.xpm
 share/gnome/sodipodi/file_new.xpm
 share/gnome/sodipodi/file_open.xpm
 share/gnome/sodipodi/file_print.xpm
+share/gnome/sodipodi/file_print_direct.xpm
 share/gnome/sodipodi/file_print_preview.xpm
 share/gnome/sodipodi/file_save.xpm
 share/gnome/sodipodi/file_save_as.xpm
@@ -143,8 +145,11 @@ share/gnome/sodipodi/selection_break.xpm
 share/gnome/sodipodi/selection_combine.xpm
 share/gnome/sodipodi/selection_down.xpm
 share/gnome/sodipodi/selection_group.xpm
+share/gnome/sodipodi/selection_intersection.xpm
+share/gnome/sodipodi/selection_subtraction.xpm
 share/gnome/sodipodi/selection_top.xpm
 share/gnome/sodipodi/selection_ungroup.xpm
+share/gnome/sodipodi/selection_union.xpm
 share/gnome/sodipodi/selection_up.xpm
 share/gnome/sodipodi/seperate_tool.xpm
 share/gnome/sodipodi/set.xpm
@@ -186,12 +191,16 @@ share/locale/de/LC_MESSAGES/sodipodi.mo
 share/locale/el/LC_MESSAGES/sodipodi.mo
 share/locale/es/LC_MESSAGES/sodipodi.mo
 share/locale/et/LC_MESSAGES/sodipodi.mo
+share/locale/fi/LC_MESSAGES/sodipodi.mo
 share/locale/fr/LC_MESSAGES/sodipodi.mo
 share/locale/ga/LC_MESSAGES/sodipodi.mo
 share/locale/gl/LC_MESSAGES/sodipodi.mo
+share/locale/hr/LC_MESSAGES/sodipodi.mo
 share/locale/hu/LC_MESSAGES/sodipodi.mo
 share/locale/it/LC_MESSAGES/sodipodi.mo
 share/locale/ja/LC_MESSAGES/sodipodi.mo
+share/locale/ko/LC_MESSAGES/sodipodi.mo
+share/locale/mk/LC_MESSAGES/sodipodi.mo
 share/locale/nl/LC_MESSAGES/sodipodi.mo
 share/locale/no/LC_MESSAGES/sodipodi.mo
 share/locale/pl/LC_MESSAGES/sodipodi.mo
@@ -207,5 +216,6 @@ share/locale/tr/LC_MESSAGES/sodipodi.mo
 share/locale/uk/LC_MESSAGES/sodipodi.mo
 share/locale/zh_CN/LC_MESSAGES/sodipodi.mo
 @dirrm share/gnome/sodipodi
+@dirrm lib/sodipodi/modules
 @dirrm lib/sodipodi/extensions
 @dirrm lib/sodipodi
