@@ -42,7 +42,8 @@ NOMANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
-BROKEN= "Configure broken due to renaming this architecture from x86_84."
+# fscking Linux & GNU $*!%
+CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
 .endif
 
 .if ${ARCH} == sparc64
@@ -53,8 +54,6 @@ WITHOUT_LIBJAVA=	yes
 .if ${ARCH} == ia64
 WITHOUT_LIBJAVA=	yes
 .endif
-
-CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 
 SRCDIR=		${WRKDIR}/gcc-${VERSIONSTRING}
 WRKSRC=		${WRKDIR}/build
