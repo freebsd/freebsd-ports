@@ -1,0 +1,11 @@
+This is the official Flash Player from Macromedia. This plugin enables
+you to see .swf and .spl files on the 'net from your Mozilla and
+Netscape 6+ session.
+
+Version 6 of the Macromedia Flash Player no longer works with Netscape
+4.x or earlier.  For Flash support in those browsers install the
+linux-flashplugin port.
+
+Please see the Macromedia home page for more information.
+
+WWW: http://www.macromedia.com/
