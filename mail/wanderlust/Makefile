@@ -7,6 +7,7 @@
 
 PORTNAME=	wanderlust
 PORTVERSION=	2.10.0
+PORTREVISION=	1
 CATEGORIES=	mail elisp
 MASTER_SITES=	ftp://ftp.gohome.org/wl/stable/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,text/elisp/wl/stable/&,} \
@@ -99,6 +100,13 @@ pre-build:
 .endif
 
 post-install:
+.if !exists(${EMACS_W3M_LISP_FILE})
+.if defined(EMACS_PACKAGESDIR)
+	${INSTALL_DATA} ${WRKSRC}/elmo/elmo-shimbun.el ${PREFIX}/${EMACS_PACKAGESDIR}/lisp/wl
+.else
+	${INSTALL_DATA} ${WRKSRC}/elmo/elmo-shimbun.el ${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/wl
+.endif
+.endif
 .if !defined(EMACS_PACKAGESDIR)
 	@${MAKE} install-info
 .endif

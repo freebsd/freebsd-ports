@@ -56,7 +56,7 @@ share/doc/wanderlust/wl.texi
 %%WL_LISPDIR%%/elmo-pop3.elc
 %%WL_LISPDIR%%/elmo-sendlog.el
 %%WL_LISPDIR%%/elmo-sendlog.elc
-%%SHIMBUN%%%%WL_LISPDIR%%/elmo-shimbun.el
+%%WL_LISPDIR%%/elmo-shimbun.el
 %%SHIMBUN%%%%WL_LISPDIR%%/elmo-shimbun.elc
 %%WL_LISPDIR%%/elmo-split.el
 %%WL_LISPDIR%%/elmo-split.elc
