@@ -18,7 +18,6 @@ COMMENT=	GNU version of the traditional tar archiver
 INFO=		tar
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g
 CONFIGURE_ENV=	CPPFLAGS='-I${LOCALBASE}/include' \

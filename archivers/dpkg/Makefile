@@ -15,7 +15,6 @@ MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Package maintenance system for Debian
 
 GNU_CONFIGURE=	yes
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_PERL5=	yes
