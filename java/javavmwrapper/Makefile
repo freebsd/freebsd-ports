@@ -36,7 +36,8 @@ do-configure:
 	       -e 's|%%JAVALIBDIR%%|${JAVALIBDIR}|;' \
 		${SRC}/${_script}.sh >${WRKDIR}/${_script}.sh
 .endfor
-	${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|;' pkg-install > ${PKGINSTALL}
+	${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|;' \
+		${FILESDIR}/pkg-install.in > ${PKGINSTALL}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/classpath.sh ${PREFIX}/bin/classpath

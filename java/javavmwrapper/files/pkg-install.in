@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD$
+# $FreeBSD: /tmp/pcvs/ports/java/javavmwrapper/files/pkg-install.in,v 1.1 2004-12-16 15:38:17 glewis Exp $
 
 LOCALBASE=%%LOCALBASE%%
 
