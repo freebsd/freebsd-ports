@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.168 1999/04/03 01:23:47 steve Exp $
+# $Id: Makefile,v 1.169 1999/04/03 01:26:45 steve Exp $
 #
 
     SUBDIR += ElectricFence
@@ -134,6 +134,7 @@
     SUBDIR += scogdb
     SUBDIR += sfio
     SUBDIR += stlport
+    SUBDIR += swarm
     SUBDIR += tclcheck
     SUBDIR += tkcvs
     SUBDIR += tkref
