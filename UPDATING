@@ -7,6 +7,21 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20041224:
+  AFFECTS: users of x11-servers/XFree86-4-Server and graphics/dri
+  AUTHOR: lesi@FreeBSD.org
+
+  As of version 4.4.0_6, XFree86-4-Server now depends on
+  graphics/xfree86-dri.  This is due to incompatibilities between
+  XFree86 and the new xorg 6.8.1 DRI.
+
+  Users of XFree86-4-Server are strongly encouraged to switch to
+  the xfree86-dri port as follows:
+
+	portupgrade -fo graphics/xfree86-dri graphics/dri
+
+  which will also fix dependencies.
+
+20041224:
   AFFECTS: users of sysutils/portupgrade and lang/ruby18
   AUTHOR: knu@FreeBSD.org
 
