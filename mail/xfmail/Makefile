@@ -1,15 +1,14 @@
 # New ports collection makefile for:	xfmail
-# http://Burka.NetVision.net.il/xfmail/xfmail.html
-# Version required:     1.3
+# Version required:     1.3.1
 # Date created:		30 June 1996
 # Whom:			gena
 #
 # $FreeBSD$
 #
 
-DISTNAME=       xfmail-1.3
+DISTNAME=       xfmail-1.3.1
 CATEGORIES=     mail
-MASTER_SITES=	ftp://burka.netvision.net.il/pub/xfmail/
+MASTER_SITES=	ftp://xfmail.slappy.org/pub/xfmail/
 
 MAINTAINER=	gena@NetVision.net.il
 
