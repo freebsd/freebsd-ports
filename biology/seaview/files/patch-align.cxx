@@ -1,12 +1,13 @@
---- align.cxx.orig	Tue Oct  8 19:43:40 2002
-+++ align.cxx	Mon Nov 18 11:40:08 2002
-@@ -1,5 +1,6 @@
+--- align.cxx.orig	Mon Nov 17 14:15:01 2003
++++ align.cxx	Mon Nov 17 14:15:26 2003
+@@ -1,6 +1,7 @@
  #include "seaview.h"
  #include <stdlib.h>
-+#include <unistd.h>
  #include <ctype.h>
++#include <unistd.h>
  #ifndef WIN32
  #include <FL/x.H>
+ #endif
 @@ -155,7 +156,7 @@
  #endif
  debut = view->active_region->list->debut;
