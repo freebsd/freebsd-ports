@@ -1,13 +1,13 @@
 # New ports collection makefile for:    snes9x
-# Version required:     116a
+# Version required:     118e
 # Date created:         20 July 1997
 # Whom:                 Yukihiro Nakai<Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.6 1999/01/12 16:51:07 vanilla Exp $
+# $Id: Makefile,v 1.7 1999/02/03 11:11:42 asami Exp $
 #
 
-DISTNAME=	snes116a
-PKGNAME=	snes9x-116a
+DISTNAME=	snes118e
+PKGNAME=	snes9x-118e
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.snes9x.com/zips/
 EXTRACT_SUFX=	.zip
@@ -23,6 +23,7 @@ ONLY_FOR_ARCHS=	i386
 USE_GMAKE=	YES
 USE_X_PREFIX=	YES
 MAKEFILE=	Makefile.linux
+ALL_TARGET=	snes9x s9xserver
 
 EXTRACT_CMD=	unzip
 EXTRACT_BEFORE_ARGS=	# empty
