@@ -27,6 +27,12 @@ CDB_PORTDIR=	${PORTSDIR}/databases/cdb
 WRKSRC=		${WRKDIR}/ruby-${PORTNAME}
 INSTALL_TARGET=	site-install
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not build on amd64 (needs to link against shared libraries)"
+.endif
+
 post-extract:
 	${RM} -f ${WRKSRC}/cdb
 	${LN} -s `cd ${CDB_PORTDIR}; ${MAKE} -V WRKSRC` ${WRKSRC}/cdb
@@ -39,4 +45,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${RUBY_MODDOCDIR}/
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
