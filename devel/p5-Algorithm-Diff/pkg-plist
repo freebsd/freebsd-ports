@@ -4,6 +4,7 @@ lib/perl5/site_perl/%%PERL_VER%%/Algorithm/DiffOld.pm
 lib/perl5/site_perl/%%PERL_VER%%/Algorithm/cdiff.pl
 lib/perl5/site_perl/%%PERL_VER%%/Algorithm/diff.pl
 lib/perl5/site_perl/%%PERL_VER%%/Algorithm/diffnew.pl
+lib/perl5/site_perl/%%PERL_VER%%/Algorithm/htmldiff.pl
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Algorithm/Diff
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Algorithm 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Algorithm 2>/dev/null || true
