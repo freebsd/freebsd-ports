@@ -1,9 +1,9 @@
 # New ports collection makefile for:    fep
-# Version required:     
+# Version required:     1.0
 # Date created:         20 Feb 1996
 # Whom:                 Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #
-# $Id: Makefile,v 1.2 1996/11/11 05:49:31 obrien Exp $
+# $Id: Makefile,v 1.3 1998/08/23 07:34:43 hoek Exp $
 #
 
 DISTNAME=	fep
