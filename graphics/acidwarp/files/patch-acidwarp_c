@@ -1,0 +1,20 @@
+--- acidwarp.c.orig	Fri Aug 23 10:27:02 1996
++++ acidwarp.c	Sun Oct 22 03:02:21 2000
+@@ -2,7 +2,7 @@
+  * All Rights reserved. Private Proprietary Source Code by Noah Spurrier
+  * Ported to Linux by Steven Wills
+  */
+-#include <malloc.h>
++
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+@@ -41,7 +41,7 @@
+ UCHAR MainPalArray [256 * 3];
+ UCHAR TargetPalArray [256 * 3];
+ 
+-void main (int argc, char *argv[])
++int main (int argc, char *argv[])
+ {
+   int imageFuncList[NUM_IMAGE_FUNCTIONS], userOptionImageFuncNum;
+   int paletteTypeNum = 0, userPaletteTypeNumOptionFlag = FALSE;

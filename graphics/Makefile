@@ -9,6 +9,7 @@
     SUBDIR += ImageMagick
     SUBDIR += Mesa3
     SUBDIR += aalib
+    SUBDIR += acidwarp
     SUBDIR += aero
     SUBDIR += aview
     SUBDIR += avifile
