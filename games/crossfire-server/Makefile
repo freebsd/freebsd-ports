@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	crossfire
-PORTVERSION=	1.3.0
+PORTVERSION=	1.4.0
+PORTCOMMENT=	Server for multiplayer graphical arcade and adventure game
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.ifi.uio.no/pub/crossfire/ \
@@ -24,16 +25,14 @@ USE_XPM=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--with-includes="-I${LOCALBASE}/include" \
-		--with-ldflags="-L${LOCALBASE}/lib"
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 MAN6=		crossfire.6 crossedit.6
 
 post-install:
-	@${MKDIR} ${DATADIR}
-	@${CP} -R ${WRKDIR}/maps ${DATADIR}
-	@${MKDIR} ${DATADIR}/maps/tmp
+	@${TAR} -C ${WRKDIR} -cf - maps | ${TAR} -C ${DATADIR} --unlink -xf -
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
 	@${CHOWN} ${BINOWN}:games ${PREFIX}/bin/crossfire
 	@${CHMOD} 2755 ${PREFIX}/bin/crossfire
