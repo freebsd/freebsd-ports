@@ -25,6 +25,10 @@ MAKE_ARGS+=	MOZILLA_PLATFORM=tbird
 FILENAME=	mozTrayBiff-${PORTVERSION}-FreeBSD-tb1.0.xpi
 PLIST_FILES=	${DATADIR}/${FILENAME}
 PLIST_DIRS=	${DATADIR}
+PKGMESSAGE=	${WRKDIR}/pkg-message
+
+post-build:
+	${SED} 's|%%DATADIR%%|${DATADIR}|' ${PKGDIR}/pkg-message > ${PKGMESSAGE}
 
 do-install:
 	${MKDIR} ${DATADIR}
