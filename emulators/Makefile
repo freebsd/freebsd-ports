@@ -48,6 +48,7 @@
     SUBDIR += linux_base-6
     SUBDIR += linux_base-8
     SUBDIR += linux_base-debian
+    SUBDIR += linux_base-gentoo-stage1
     SUBDIR += mastergear
     SUBDIR += minivmac
     SUBDIR += mtools
