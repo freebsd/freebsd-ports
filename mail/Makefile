@@ -175,6 +175,7 @@
     SUBDIR += offlineimap
     SUBDIR += openwebmail
     SUBDIR += p5-Email-Find
+    SUBDIR += p5-Email-Folder
     SUBDIR += p5-Email-FolderType
     SUBDIR += p5-Email-Simple
     SUBDIR += p5-Email-Valid
