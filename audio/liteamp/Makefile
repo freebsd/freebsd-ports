@@ -1,5 +1,5 @@
 # New ports collection makefile for:	liteamp
-# Date created:		23 June 2003
+# Date created:		24 June 2003
 # Whom:			Hye-Shik Chang <perky@FreeBSD.org>
 #
 # $FreeBSD$
@@ -19,7 +19,7 @@ LIB_DEPENDS=	ao.3:${PORTSDIR}/audio/libao \
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 libgnomeui libbonoboui libxml2 \
-		libgnomecanvas libartlgpl2 pango gdkpixbuf \
+		libgnomecanvas libartlgpl2 pango \
 		atk gnomevfs2 gconf2 libbonobo
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	LDFLAGS="-L${LOCALBASE}/lib" CPPFLAGS="-I${LOCALBASE}/include"
