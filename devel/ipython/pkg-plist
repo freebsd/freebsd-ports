@@ -111,7 +111,6 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/usage.pyc
 %%PYTHON_SITELIBDIR%%/IPython/usage.pyo
 %%DOCSDIR%%/COPYING
-%%DOCSDIR%%/GNU-LGPL
 %%DOCSDIR%%/NEWS
 %%DOCSDIR%%/README.txt
 %%DOCSDIR%%/README_Windows.txt
