@@ -3,15 +3,15 @@
 # Date created:		21 August 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.29 1998/05/16 11:39:19 ache Exp $
+# $Id: Makefile,v 1.30 1998/07/17 20:38:14 steve Exp $
 #
 
-DISTNAME=       bash-2.02
+DISTNAME=       bash-2.02.1
 CATEGORIES=	shells
 MASTER_SITES=   ${MASTER_SITE_GNU} \
 		ftp://slc2.ins.cwru.edu/pub/dist/
 .if !defined(NOPORTDOCS)
-DISTFILES=      bash-2.02.tar.gz bash-doc-2.02.tar.gz
+DISTFILES=      bash-2.02.1.tar.gz bash-doc-2.02.tar.gz
 .endif
 
 MAINTAINER=	ache@FreeBSD.ORG
