@@ -25,7 +25,7 @@
 +	$(MAKE) \
 +	PROGS="siod tar.so parser_pratt.so ss.so \
 +	       regex.so" \
-+	CFLAGS="$(CDEBUG) $(GCCW) -DHAVE_SYS_PARAM_H $(CFLAGS)" \
++	CFLAGS="$(CDEBUG) $(GCCW) -DHAVE_SYS_PARAM_H $(CFLAGS) -fPIC" \
 +	LD_LIB_LIBS="-lcrypt -lm" \
 +	LD_LIB_FLAGS="-shared" \
 +	LD_EXE_FLAGS="-rdynamic -Xlinker -rpath -Xlinker $(LIBDIR) -Xlinker -rpath -Xlinker $(LIBSIODDIR)" \
