@@ -1,22 +1,29 @@
-Index: nsprpub/pr/src/pthreads/ptio.c
-diff -u nsprpub/pr/src/pthreads/ptio.c.orig nsprpub/pr/src/pthreads/ptio.c
---- nsprpub/pr/src/pthreads/ptio.c.orig	Fri Apr 12 03:14:39 2002
-+++ nsprpub/pr/src/pthreads/ptio.c	Tue Jul 30 18:52:11 2002
-@@ -3414,6 +3414,17 @@
+--- nsprpub/pr/src/pthreads/ptio.c.orig	Tue Jul  8 23:37:46 2003
++++ nsprpub/pr/src/pthreads/ptio.c	Wed Jul 23 00:53:15 2003
+@@ -3370,7 +3370,7 @@
+ PR_EXTERN(PRStatus) _pr_push_ipv6toipv4_layer(PRFileDesc *fd);
+ #if defined(_PR_INET6_PROBE)
+ PR_EXTERN(PRBool) _pr_ipv6_is_present;
+-#ifdef DARWIN
++#if defined(DARWIN) || defined(FREEBSD)
+ static PRBool _pr_ipv6_v6only_on_by_default;
+ #endif
+ PR_IMPLEMENT(PRBool) _pr_test_ipv6_socket()
+@@ -3385,7 +3385,7 @@
+      */
+     osfd = socket(AF_INET6, SOCK_STREAM, 0);
+     if (osfd != -1) {
+-#ifdef DARWIN
++#if defined(DARWIN) || defined(FREEBSD)
+         /* In Mac OS X v10.3 Panther Beta the IPV6_V6ONLY socket option
+          * is turned on by default, contrary to what RFC 3493, Section
+          * 5.3 says.  So we have to turn it off.  Find out whether we
+@@ -3452,7 +3452,7 @@
      if (osfd == -1) pt_MapError(_PR_MD_MAP_SOCKET_ERROR, errno);
      else
      {
-+#if (defined(_PR_INET6_PROBE) || defined(_PR_INET6)) && \
-+	defined(__FreeBSD__) && defined(IPV6_V6ONLY)
-+		if (domain == PR_AF_INET6) {
-+			int opt = 0;
-+			if (setsockopt(osfd, IPPROTO_IPV6, IPV6_V6ONLY,
-+                           &opt, sizeof(opt))) {
-+				close(osfd);
-+				return NULL;
-+			}
-+		}
-+#endif
-         fd = pt_SetMethods(osfd, ftype, PR_FALSE, PR_FALSE);
-         if (fd == NULL) close(osfd);
-     }
+-#ifdef DARWIN
++#if defined(DARWIN) || defined(FREEBSD)
+         if ((domain == AF_INET6) && _pr_ipv6_v6only_on_by_default)
+         {
+             int on = 0;
