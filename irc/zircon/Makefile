@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	zircon
-PORTVERSION=	1.18.245
+PORTVERSION=	1.18.248
 CATEGORIES=	irc tk82
-MASTER_SITES=	ftp://catless.ncl.ac.uk/pub/ \
-		ftp://ftp.lan-ks.de/pub/FreeBSD/distfiles/
+MASTER_SITES=	ftp://catless.ncl.ac.uk/pub/
 
 MAINTAINER=	jseger@FreeBSD.org
 
