@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.147 1997/08/11 08:55:36 tg Exp $
+# $Id: Makefile,v 1.148 1997/08/19 07:10:14 fenner Exp $
 #
 
     SUBDIR += FWF
@@ -52,6 +52,7 @@
     SUBDIR += tk4
     SUBDIR += tk41
     SUBDIR += tk42
+    SUBDIR += tk80
     SUBDIR += tkdesk
     SUBDIR += tkgoodstuff
     SUBDIR += tvtwm
