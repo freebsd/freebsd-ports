@@ -8,8 +8,7 @@
 PORTNAME=	ftpfind
 PORTVERSION=	0.996
 CATEGORIES=	ftp
-MASTER_SITES=	http://hp.vector.co.jp/authors/VA013366/ \
-		http://www.tryplanet.com/t-ishii/programs/ftpfind/
+MASTER_SITES=	http://hp.vector.co.jp/authors/VA013366/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Find directory&file on a ftp server
