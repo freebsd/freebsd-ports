@@ -1,0 +1,13 @@
+execline is a very light non-interactive scripting language, 
+which is similar to /bin/sh. Simple shell scripts can be 
+easily rewritten in the execline language, improving performance 
+and memory usage. execline was designed for use
+in embedded systems, but works on most Unix flavors. 
+
+execline features conditional loops, getopt-style option handling, 
+filename globbing, and more.  Meanwhile, its syntax 
+is far more logical and predictable than the shell's syntax, 
+and has no security issues.
+
+Author:	Laurent G. Bercot <ska-skaware@skarnet.org>
+WWW:	http://www.skarnet.org/software/execline/
