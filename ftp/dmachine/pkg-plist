@@ -17,5 +17,6 @@ bin/dmachine
 %%DATADIR%%/util.class
 @dirrm %%DATADIR%%
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/dmachine.cnf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
