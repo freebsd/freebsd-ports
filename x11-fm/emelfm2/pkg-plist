@@ -12,7 +12,10 @@ lib/emelfm2/plugins/rename_ext.so
 lib/emelfm2/plugins/sort_by_ext.so
 lib/emelfm2/plugins/unpack.so
 lib/emelfm2/plugins/view.so
+share/applications-registry/emelfm2.applications
+share/applications/emelfm2.desktop
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
+%%PORTDOCS%%%%DOCSDIR%%/HACKING
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
 %%PORTDOCS%%%%DOCSDIR%%/GPL
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
@@ -36,15 +39,20 @@ share/pixmaps/emelfm2/icon_emelfm2_064.png
 share/pixmaps/emelfm2/icon_emelfm2_128.png
 share/pixmaps/emelfm2/icon_emelfm2_256.png
 share/pixmaps/emelfm2/icon_emelfm2_alt_016.png
-share/pixmaps/emelfm2/icon_emelfm2_alt_022.png
+share/pixmaps/emelfm2/icon_emelfm2_alt_024.png
 share/pixmaps/emelfm2/icon_emelfm2_alt_032.png
 share/pixmaps/emelfm2/icon_emelfm2_alt_048.png
+share/pixmaps/emelfm2/icon_emelfm2_alt_064.png
+share/pixmaps/emelfm2/icon_emelfm2_alt_128.png
+share/pixmaps/emelfm2/icon_emelfm2_alt_256.png
 share/pixmaps/emelfm2/icon_emelfm2_alt_346.png
 share/pixmaps/emelfm2/icon_move2_24.png
 share/pixmaps/emelfm2/icon_move_24.png
 share/pixmaps/emelfm2/icon_up.xpm
 @dirrm share/pixmaps/emelfm2
 @dirrm share/pixmaps
+@dirrm share/applications-registry
+@dirrm share/applications
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/emelfm2/plugins
 @dirrm lib/emelfm2
