@@ -1,0 +1,13 @@
+sbin/bro
+share/bro/bro.init
+share/bro/dns.bro
+share/bro/finger.bro
+share/bro/ftp.bro
+share/bro/hot.bro
+share/bro/mt.bro
+share/bro/port-name.bro
+share/bro/portmapper.bro
+share/bro/tcp.bro
+share/bro/telnet.bro
+share/bro/udp.bro
+share/doc/bro/bro-usenix98-revised.ps.gz
