@@ -17,6 +17,8 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz \
 
 MAINTAINER=	ports@geeksrus.net
 
+BROKEN=	"The maintainer will update this to 0.3 ASAP"
+
 USE_GMAKE=	yes
 NO_PACKAGE=	'Neither CC nor CFLAGS safe.'
 WRKSRC=		${WRKDIR}/${PORTNAME}
