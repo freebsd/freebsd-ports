@@ -1,0 +1,74 @@
+# New ports collection makefile for:   frozen-bubble
+# Date created:        2002-10-06
+# Whom:                Klaus Goger <klaus.goger@reflex.at>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	frozenbubble
+PORTVERSION=	0.9.3
+CATEGORIES=	games
+MASTER_SITES=	http://people.mandrakesoft.com/~gc/fb/ \
+		http://frozenbubble.free.fr/fb/
+DISTNAME=	frozen-bubble-${PORTVERSION}
+EXTRACT_SUFX=	.tar.bz2
+
+MAINTAINER=	klaus.goger@reflex.at
+
+BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/SDL_perl.pm:${PORTSDIR}/devel/p5-SDL
+RUN_DEPENDS=	${BUILD_DEPENDS}
+LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12 \
+		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
+		SDL_image.10:${PORTSDIR}/graphics/sdl_image
+
+SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
+
+USE_GMAKE=	yes
+USE_REINPLACE=	yes
+USE_BZIP2=	yes
+MAKE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
+		MKDIR="${MKDIR}" \
+		TAR="${TAR}"
+
+WRKSRC=		${WRKDIR}/${DISTNAME}/c_stuff/
+BUILD_WRKSRC=	${WRKDIR}/${DISTNAME}/
+USE_PERL5=	yes
+PERL_CONFIGURE=	yes
+
+post-patch:
+.for file in fb_c_stuff.xs Makefile.PL
+	@${REINPLACE_CMD} -e 's|SDL/|SDL11/|g'  ${WRKSRC}/${file}
+	@${REINPLACE_CMD} -e 's|sdl-config|\${SDL_CONFIG}|g' ${WRKSRC}/Makefile.PL
+.endfor
+
+do-install:
+	cd ${WRKSRC}; ${GMAKE} install
+	@${INSTALL_SCRIPT} ${BUILD_WRKSRC}/binaries_installpathok/frozen-bubble ${PREFIX}/bin/frozen-bubble.pl
+
+	@${MKDIR} ${PREFIX}/share/frozen-bubble/
+	@${MKDIR} ${PREFIX}/share/frozen-bubble/data
+	@${MKDIR} ${PREFIX}/share/frozen-bubble/snd
+	@${MKDIR} ${PREFIX}/share/frozen-bubble/gfx
+	@${MKDIR} ${PREFIX}/share/frozen-bubble/gfx/balls
+	@${MKDIR} ${PREFIX}/share/frozen-bubble/gfx/intro
+	@${MKDIR} ${PREFIX}/share/frozen-bubble/gfx/pinguins
+	@${MKDIR} ${PREFIX}/share/frozen-bubble/gfx/shoot
+	@${MKDIR} ${PREFIX}/share/frozen-bubble/gfx/menu
+
+	@${INSTALL_DATA} ${BUILD_WRKSRC}/data/levels  ${PREFIX}/share/frozen-bubble/data/
+	@${INSTALL_DATA} ${BUILD_WRKSRC}/data/plasma.raw  ${PREFIX}/share/frozen-bubble/data/
+	@${INSTALL_DATA} ${BUILD_WRKSRC}/gfx/*.png  ${PREFIX}/share/frozen-bubble/gfx/
+	@${INSTALL_DATA} ${BUILD_WRKSRC}/gfx/balls/*.png  ${PREFIX}/share/frozen-bubble/gfx/balls/
+	@${INSTALL_DATA} ${BUILD_WRKSRC}/gfx/balls/*.gif  ${PREFIX}/share/frozen-bubble/gfx/balls/
+	@${INSTALL_DATA} ${BUILD_WRKSRC}/gfx/intro/*.png  ${PREFIX}/share/frozen-bubble/gfx/intro/
+	@${INSTALL_DATA} ${BUILD_WRKSRC}/gfx/pinguins/*.png  ${PREFIX}/share/frozen-bubble/gfx/pinguins/
+	@${INSTALL_DATA} ${BUILD_WRKSRC}/gfx/shoot/*.png  ${PREFIX}/share/frozen-bubble/gfx/shoot/
+	@${INSTALL_DATA} ${BUILD_WRKSRC}/gfx/menu/*.png  ${PREFIX}/share/frozen-bubble/gfx/menu/
+	@${INSTALL_DATA} ${BUILD_WRKSRC}/snd/*.wav  ${PREFIX}/share/frozen-bubble/snd/
+	@${INSTALL_DATA} ${BUILD_WRKSRC}/snd/*.xm  ${PREFIX}/share/frozen-bubble/snd/
+	@${INSTALL_DATA} ${BUILD_WRKSRC}/highscores.default  ${PREFIX}/share/frozen-bubble/
+
+	@printf '#!/bin/sh\nLD_PRELOAD=/usr/lib/libc_r.so perl ${PREFIX}/bin/frozen-bubble.pl' > ${WRKSRC}/frozen-bubble
+	@${INSTALL_SCRIPT} ${WRKSRC}/frozen-bubble ${PREFIX}/bin
+
+.include <bsd.port.mk>
