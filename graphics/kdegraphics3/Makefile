@@ -44,32 +44,11 @@ OPTIONS=	IMLIB "Build Kuickshow, a fast and versatile image viewer" off \
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
 
-.if exists (${X11BASE}/bin/imlib-config)
-.	if !defined(WITH_IMLIB)
-IMLIB_OVERRIDE=	yes
-WITH_IMLIB=	yes
-.	endif
-.endif
-
-.if exists(${LOCALBASE}/bin/gphoto2-config)
-.	if !defined(WITH_GPHOTO2)
-GPHOTO2_OVERRIDE=	yes
-WITH_GPHOTO2=		yes
-.	endif
-.endif
-
-.if exists (${LOCALBASE}/bin/sane-config)
-.	if !defined(WITH_SANE)
-SANE_OVERRIDE=	yes
-WITH_SANE=	yes
-.	endif
-.endif
-
 .if defined(WITH_IMLIB)
 USE_GNOME=	imlib
 PLIST_APPEND+=	plist.imlib
 CONFIGURE_ARGS+=--with-imlib-config=${X11BASE}/bin
-.else
+.elseif defined(WITHOUT_IMLIB)
 WITHOUT_IMLIB=	yes
 CONFIGURE_ARGS+=--without-imlib-config
 .endif
@@ -77,38 +56,20 @@ CONFIGURE_ARGS+=--without-imlib-config
 .if defined(WITH_GPHOTO2)
 LIB_DEPENDS+=	gphoto2.2:${PORTSDIR}/graphics/libgphoto2
 PLIST_APPEND+=	plist.gphoto2
+.elseif defined(WITHOUT_GPHOTO2)
+CONFIGURE_ARGS+=--without-kamera
 .endif
 
 .if defined(WITH_SANE)
 LIB_DEPENDS+=	sane.1:${PORTSDIR}/graphics/sane-backends
 PLIST_APPEND+=	plist.sane
 RUN_DEPENDS+=	${LOCALBASE}/bin/gocr:${PORTSDIR}/graphics/gocr
+.elseif defined(WITHOUT_SANE)
+DO_NOT_COMPILE+=kooka
 .endif
 
-pre-everything::
-.if defined(IMLIB_OVERRIDE)
-	@${ECHO_MSG}
-	@${ECHO_MSG} "********************************************************"
-	@${ECHO_MSG} "*     imlib is installed but WITH_IMLIB is not set!    *"
-	@${ECHO_MSG} "*      WITH_IMLIB has been enabled automatically.      *"
-	@${ECHO_MSG} "********************************************************"
-	@${ECHO_MSG}
-.endif
-.if defined(GPHOTO2_OVERRIDE)
-	@${ECHO_MSG}
-	@${ECHO_MSG} "********************************************************"
-	@${ECHO_MSG} "*  gphoto2 is installed but WITH_GPHOTO2 is not set!   *"
-	@${ECHO_MSG} "*     WITH_GPHOTO2 has been enabled automatically.     *"
-	@${ECHO_MSG} "********************************************************"
-	@${ECHO_MSG}
-.endif
-.if defined(SANE_OVERRIDE)
-	@${ECHO_MSG}
-	@${ECHO_MSG} "********************************************************"
-	@${ECHO_MSG} "* sane-backends is installed but WITH_SANE is not set! *"
-	@${ECHO_MSG} "*      WITH_SANE has been enabled automatically.       *"
-	@${ECHO_MSG} "********************************************************"
-	@${ECHO_MSG}
-.endif
+.if defined(DO_NOT_COMPILE)
+CONFIGURE_ENV+=DO_NOT_COMPILE="${DO_NOT_COMPILE}"
+.endif # defined(DO_NOT_COMPILE)
 
 .include <bsd.port.post.mk>

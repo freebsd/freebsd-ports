@@ -36,13 +36,6 @@ OPTIONS=	KPILOT "Build KPilot, hotsync software for KDE" off \
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/bin/pilot-xfer)
-.	if !defined(WITH_KPILOT)
-KPILOT_OVERRIDE=yes
-WITH_KPILOT=	yes
-.	endif
-.endif
-
 .if exists(${LOCALBASE}/bin/gnokii)
 .	if !defined(WITH_GNOKII)
 GNOKII_OVERRIDE=yes
@@ -58,23 +51,21 @@ LIB_DEPENDS+=	gnokii:${PORTSDIR}/comms/gnokii
 LIB_DEPENDS+=	mal:${PORTSDIR}/palm/libmal \
 		pisock:${PORTSDIR}/palm/pilot-link
 PLIST_APPEND+=	plist.kpilot
-.endif # defined ($(WITH_KPILOT))
+.elseif defined(WITHOUT_KPILOT)
+DO_NOT_COMPILE+=kpilot
+.endif
+
+.if defined(DO_NOT_COMPILE)
+CONFIGURE_ENV+=DO_NOT_COMPILE="${DO_NOT_COMPILE}"
+.endif # defined(DO_NOT_COMPILE)
 
 pre-everything::
-.if defined(KPILOT_OVERRIDE)
-	@${ECHO_MSG}
-	@${ECHO_MSG} "*******************************************************"
-	@${ECHO_MSG} "* pilot-link is installed but WITH_KPILOT is not set! *"
-	@${ECHO_MSG} "*     WITH_KPILOT has been enabled automatically.     *"
-	@${ECHO_MSG} "*******************************************************"
-	@${ECHO_MSG}
-.endif
 .if defined(GNOKII_OVERRIDE)
 	@${ECHO_MSG}
-	@${ECHO_MSG} "*******************************************************"
-	@${ECHO_MSG} "*    gnokii is installed but WITH_GNOKII is not set!  *"
-	@${ECHO_MSG} "*      WITH_GNOKII has been enabled automatically.    *"
-	@${ECHO_MSG} "*******************************************************"
+	@${ECHO_MSG} "**********************************************************"
+	@${ECHO_MSG} "*   gnokii is installed and support has been enabled     *"
+	@${ECHO_MSG} "* automatically (no additional files will be installed). *"
+	@${ECHO_MSG} "**********************************************************"
 	@${ECHO_MSG}
 .endif
 

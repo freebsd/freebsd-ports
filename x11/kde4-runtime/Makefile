@@ -44,13 +44,6 @@ OPTIONS=	ARTSWRAPPER "Suid wrapper for aRts, req'd for realtime prio" on \
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
 
-.if exists(${X11BASE}/bin/mwm)
-.	if	!defined(WITH_MOTIF)
-MOTIF_OVERRIDE=	yes
-WITH_MOTIF=	yes
-.	endif
-.endif
-
 .if defined(WITH_ARTSWRAPPER)
 RUN_DEPENDS+=	artswrapper:${PORTSDIR}/audio/artswrapper
 .endif
@@ -58,18 +51,8 @@ RUN_DEPENDS+=	artswrapper:${PORTSDIR}/audio/artswrapper
 .if defined(WITH_MOTIF)
 USE_MOTIF=	yes
 PLIST_APPEND+=	plist.motif
-.else
+.elseif defined(WITHOUT_MOTIF)
 CONFIGURE_ARGS+=	--without-motif
-.endif
-
-pre-everything::
-.if defined(MOTIF_OVERRIDE)
-	@${ECHO_MSG}
-	@${ECHO_MSG} "*******************************************************"
-	@${ECHO_MSG} "*  openmotif is installed but WITH_MOTIF is not set!  *"
-	@${ECHO_MSG} "*     WITH_MOTIF has been enabled automatically.      *"
-	@${ECHO_MSG} "*******************************************************"
-	@${ECHO_MSG}
 .endif
 
 post-extract:

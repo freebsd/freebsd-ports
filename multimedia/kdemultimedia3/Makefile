@@ -25,8 +25,8 @@ LIB_DEPENDS+=	audiofile:${PORTSDIR}/audio/libaudiofile \
 		ogg:${PORTSDIR}/audio/libogg \
 		tag:${PORTSDIR}/audio/taglib \
 		vorbis.3:${PORTSDIR}/audio/libvorbis
-BUILD_DEPENDS=	trm:${PORTSDIR}/audio/trm
-RUN_DEPENDS=	trm:${PORTSDIR}/audio/trm
+BUILD_DEPENDS+=	trm:${PORTSDIR}/audio/trm
+RUN_DEPENDS+=	trm:${PORTSDIR}/audio/trm
 
 USE_KDELIBS_VER=3
 PREFIX=		${KDE_PREFIX}
@@ -50,23 +50,11 @@ OPTIONS=	LAME "Enable support for mp3 encoding using LAME" off \
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/bin/lame)
-.	if !defined(WITH_LAME)
-LAME_OVERRIDE=	yes
-WITH_LAME=	yes
-.	endif
-.endif
-
-.if exists(${X11BASE}/bin/xine-config)
-.	if !defined(WITH_XINE)
-XINE_OVERRIDE=	yes
-WITH_XINE=	yes
-.	endif
-.endif
-
 .if defined(WITH_LAME)
 PLIST_APPEND+=	plist.lame
 LIB_DEPENDS+=	mp3lame:${PORTSDIR}/audio/lame
+.elseif defined(WITHOUT_LAME)
+CONFIGURE_ARGS+=	--without-lame --disable-lametest
 .endif
 
 .if defined(WITH_XINE)
@@ -74,38 +62,20 @@ PLIST_APPEND+=	plist.xine
 LIB_DEPENDS+=	xine:${PORTSDIR}/multimedia/libxine
 BUILD_DEPENDS+=	xine-config:${PORTSDIR}/multimedia/libxine
 CONFIGURE_ARGS+=--with-xine-prefix=${X11BASE}
-.else
+.elseif defined(WITHOUT_XINE)
 DO_NOT_COMPILE+=	xine_artsplugin
 CONFIGURE_ARGS+=	--disable-xinetest
 .endif
 
 .if defined(WITH_MPEGLIB)
 PLIST_APPEND+=	plist.mpeglib
-.else
+.elseif defined(WITHOUT_MPEGLIB)
 PLIST_APPEND+=	plist.no-mpeglib
 .endif
 
 .if defined(DO_NOT_COMPILE)
 CONFIGURE_ENV+=	DO_NOT_COMPILE="${DO_NOT_COMPILE}"
 .endif # defined(DO_NOT_COMPILE)
-
-pre-everything::
-.if defined(LAME_OVERRIDE)
-	@${ECHO_MSG}
-	@${ECHO_MSG} "********************************************************"
-	@${ECHO_MSG} "*      LAME is installed but WITH_LAME is not set!     *"
-	@${ECHO_MSG} "*       WITH_LAME has been enabled automatically.      *"
-	@${ECHO_MSG} "********************************************************"
-	@${ECHO_MSG}
-.endif
-.if defined(XINE_OVERRIDE)
-	@${ECHO_MSG}
-	@${ECHO_MSG} "********************************************************"
-	@${ECHO_MSG} "*    libxine is installed but WITH_XINE is not set!    *"
-	@${ECHO_MSG} "*       WITH_XINE has been enabled automatically.      *"
-	@${ECHO_MSG} "********************************************************"
-	@${ECHO_MSG}
-.endif
 
 pre-configure:
 .if !defined(WITH_MPEGLIB)
