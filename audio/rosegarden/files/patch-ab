@@ -1,19 +1,28 @@
-*** ./sequencer/src/Sequence_LINUX.c.orig	Mon Aug  5 00:09:00 1996
---- ./sequencer/src/Sequence_LINUX.c	Mon Aug  5 00:09:14 1996
+*** Rosegarden.orig	Wed Sep 11 06:25:10 1996
+--- Rosegarden	Thu Aug 28 15:51:58 1997
 ***************
-*** 41,47 ****
-  #undef _POSIX_SOURCE
+*** 8,19 ****
+  Rosegarden*sequencerName:	/usr/local/lib/rosegarden/sequencer
+  Rosegarden*helpFile:		/usr/local/lib/rosegarden/rosehelp.info
+  Rosegarden*midiFmPatchFile:	/usr/local/lib/rosegarden/std.sb
+! Rosegarden*externalPlayer:	/usr/local/bin/playmidi
   
-  /* include our linux soundcard header */
-! #include <sys/soundcard.h>
-  #include <sys/ioctl.h>
-  #include <errno.h>
+! Rosegarden*musicDirectory:	/usr/local/lib/music
+  Rosegarden*midiFmPatchFile:	/usr/local/lib/rosegarden/std.sb
+! !Rosegarden*midiPort:		/dev/sequencer2
+! Rosegarden*externalPlayer:	/usr/local/bin/xplaymidi
   
---- 41,47 ----
-  #undef _POSIX_SOURCE
+  Rosegarden*shouldWarpPointer:	False
   
-  /* include our linux soundcard header */
-! #include <machine/soundcard.h>
-  #include <sys/ioctl.h>
-  #include <errno.h>
+--- 8,18 ----
+  Rosegarden*sequencerName:	/usr/local/lib/rosegarden/sequencer
+  Rosegarden*helpFile:		/usr/local/lib/rosegarden/rosehelp.info
+  Rosegarden*midiFmPatchFile:	/usr/local/lib/rosegarden/std.sb
+! Rosegarden*externalPlayer:	/usr/local/bin/playmidi -f
+  
+! Rosegarden*musicDirectory:	/usr/local/lib/rosegarden/music
+  Rosegarden*midiFmPatchFile:	/usr/local/lib/rosegarden/std.sb
+! Rosegarden*midiPort:		/dev/sequencer
+  
+  Rosegarden*shouldWarpPointer:	False
   
