@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lambdamoo
-PORTVERSION=	1.8.0r8
+PORTVERSION=	1.8.1
 CATEGORIES=	japanese net
 MASTER_SITES=	ftp://ftp.place.org/pub/moo/unofficial/ \
 		ftp://ftp.leo.chubu.ac.jp/pub/network/mnews/
