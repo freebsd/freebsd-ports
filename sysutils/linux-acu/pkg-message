@@ -4,5 +4,5 @@ acu installed under ${PREFIX}/bin
 	acu will not run with linprocfs since it needs to see:
 		/compact/linux/proc/aironet
 	acu annoyingly creates
-		/compat/linux/etc/eth2.cfg
+		/compat/linux/etc/eth?.cfg
 	and will use that over the current card's settings.

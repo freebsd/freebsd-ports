@@ -19,10 +19,6 @@ RUN_DEPENDS=	${LINUXBASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base \
 
 .include <bsd.port.pre.mk>
 
-#.if ${OSVERSION} < 460000
-#BROKEN=         "${PORTNAME} is not available for your version of FreeBSD.  Please upgrade."
-#.endif
-
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
 IGNORE=		may not be automatically fetched due to licensing\
 		restrictions.  You MUST manually fetch the tarball after\
@@ -38,6 +34,26 @@ NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 NO_CDROM=	"Redistribution not allowed"
 
+LINPROCFS!=	/sbin/mount | ${GREP} linprocfs | ${AWK} '{print $1}'
+
+pre-fetch:
+.if ${OSVERSION} < 460000
+	@${ECHO}
+	@${ECHO} "OS-VERSION ${OSVERSION} too low"
+	@${ECHO}
+	@${ECHO} "acu needs some important sys/dev/an changes"
+	@${ECHO} "Please upgrade to 4.6-STABLE or greater"
+	@${FALSE}
+.endif
+
+post-extract:
+.if ${LINPROCFS}
+	@${ECHO}
+	@${ECHO} "linprocfs is mounted, please umount this filesystem"
+	@${ECHO} "becauce acu needs to read ${LINUXBASE}/proc/aironet"
+	@${FALSE}
+.endif
+
 do-install:
 	@${MKDIR} ${PREFIX}/bin
 	@${MKDIR} ${LINUXBASE}/proc/aironet
@@ -48,10 +64,8 @@ post-install:
 	@${ECHO} "notes: acu will only run from the root super-user account"
 	@${ECHO} "       to allow root access to your X session,"
 	@${ECHO} "       run 'xhost localhost' or use sudo."
-	@${ECHO} "       acu will not run with linprocfs since it needs to see:"
-	@${ECHO} "	        ${LINUXBASE}/proc/aironet""
 	@${ECHO} "	acu annoyingly creates"
-	@${ECHO} "		/compat/linux/etc/eth2.cfg"
+	@${ECHO} "		/compat/linux/etc/eth?.cfg"
 	@${ECHO} "	and will use that over the current card's settings."
 
 .include <bsd.port.post.mk>
