@@ -42,7 +42,7 @@ do-install:
 	(cd ${DISTDIR}/${DIST_SUBDIR} && ${INSTALL_DATA} $f ${PREFIX}/share/squeak/$f)
 	(cd ${PREFIX}/share/squeak && ${EXTRACT_CMD} -d $f)
 .endfor
-	(cd ${PREFIX}/share/squeak && ${CHMOD} 644 Squeak2.7.changes)
+	(cd ${PREFIX}/share/squeak && ${CHMOD} 644 Squeak-2.7.changes)
 
 post-install:
 	@${ECHO} "Make sure you have ${PREFIX}/bin in your PATH"
