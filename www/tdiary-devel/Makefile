@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	tdiary
-PORTVERSION=	1.5.6
-PORTREVISION=	2
+PORTVERSION=	1.5.7
 CATEGORIES?=	www ruby
 MASTER_SITES=	\
 		${MASTER_SITE_SOURCEFORGE} \
 		http://www.tdiary.org/download/
-MASTER_SITE_SUBDIR=	sourceforge/${PORTNAME}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-full-${PORTVERSION}
 
 MAINTAINER=	jfkimura@yahoo.co.jp
@@ -26,7 +25,7 @@ USE_RUBY=		yes
 USE_RUBY_FEATURES=	fileutils
 .endif
 
-RUBY_SHEBANG_FILES=	index.rb update.rb misc/convert2.rb misc/posttdiary.rb misc/plugin/squeeze.rb \
+RUBY_SHEBANG_FILES=	index.rb update.rb misc/convert2.rb misc/plugin/squeeze.rb \
 misc/plugin/windex.rb misc/plugin/a/a_conf.rb misc/plugin/trackback/tb.rb
 
 TDIARYDIR=	${EXAMPLESDIR}
@@ -56,10 +55,6 @@ do-install:
 	@${SED} -e 's,@@@@PREFIX@@@@,${PREFIX},g' \
 		-e 's,@@@@LANG@@@@,${TDIARY_LANG},g' \
 		${FILESDIR}/tdiaryinst.rb.in > ${TDIARYDIR}/tdiaryinst.rb
-	@${SED} -e 's,@@@@PREFIX@@@@,${PREFIX},g' \
-		-e 's,@@@@LANG@@@@,${TDIARY_LANG},g' \
-		${FILESDIR}/tdiary-FreeBSD.sh.in > ${TDIARYDIR}/tdiary-FreeBSD.sh
-	@${CHMOD} ugo=rx ${TDIARYDIR}/tdiary-FreeBSD.sh
 	@${CP} -pR ${WRKSRC}/ ${TDIARYDIR}
 .if ${TDIARY_LANG} == tdiary.conf-en
 	@${ECHO_MSG} "===>  TDIARY : English Language messages support"
