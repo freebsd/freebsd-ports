@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pine-pgp-filters
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	mail
 MASTER_SITES=	http://dougbarton.net/FreeBSD/Downloads/ \
 		${MASTER_SITE_LOCAL}
@@ -21,7 +21,7 @@ do-build:
 post-install:
 .if !defined(NOPORTDOCS)
 	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} ${DOCSDIR}
-.for file in INSTALL README
+.for file in BUGS CHANGES INSTALL LICENSE README
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
