@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	gauche-
 DISTNAME=	SXML-gauche-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	erik@smluc.org
 COMMENT=	A port of Oleg Kiselyov's (S)XML utilities to Gauche
 
 BUILD_DEPENDS=	gosh:${PORTSDIR}/lang/gauche
