@@ -243,6 +243,7 @@ sub get_revision_number {
 	}
 	close RCS;
 
+	$rcsfile =~ s|/Attic/|/|;	# Remove 'Attic/' if present.
 	return($revision, $rcsfile);
 }
 
@@ -326,7 +327,6 @@ sub change_summary_removed {
 
 		my $delta = "";
 		my ($rev, $rcsfile) = get_revision_number($file);
-		$rcsfile =~ s|/Attic/|/|;	# Remove 'Attic/' if present.
 
 		if ($rev and $rcsfile) {
 			$rev =~ /(?:(.*)\.)?([^\.]+)\.([^\.]+)$/;
