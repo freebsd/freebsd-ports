@@ -1,0 +1,11 @@
+bin/mpiologo
+bin/mpiosh
+etc/mpio/mpioshrc
+lib/libmpio.a
+lib/libmpio.so
+lib/libmpio.so.1
+include/mpio/defs.h
+include/mpio/mpio.h
+sbin/mkmpiodev
+@dirrm include/mpio
+@dirrm etc/mpio

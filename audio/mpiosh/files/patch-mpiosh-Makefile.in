@@ -1,0 +1,11 @@
+--- mpiosh/Makefile.in.orig    Thu Jun 19 19:54:46 2003
++++ mpiosh/Makefile.in Thu Jun 19 19:55:54 2003
+@@ -142,7 +142,7 @@
+
+ AM_CFLAGS = -DSYSCONFDIR=\"@sysconfdir@\"
+
+-mpiosh_LDADD = ../libmpio/libmpio.la -lreadline -lncurses
++mpiosh_LDADD = ../libmpio/libmpio.la -lreadline -lncurses -liconv
+
+ noinst_HEADERS = mpiosh.h \
+               callback.h \

@@ -1,0 +1,37 @@
+--- configure.orig	Sun Dec  7 15:00:37 2003
++++ configure	Sun Dec  7 15:03:44 2003
+@@ -7797,6 +7797,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -8118,26 +8118,6 @@
+
+
+ KERNEL_INCLUDE=
+-if test -d "/lib/modules/${kernel_version}/build/include"; then
+-    KERNEL_INCLUDE="/lib/modules/${kernel_version}/build/include"
+-elif test -d "/usr/src/linux-2.4/include"; then
+-    KERNEL_INCLUDE="/usr/src/linux-2.4/include"
+-elif test -d "/usr/include/linux"; then
+-    KERNEL_INCLUDE="/usr/include/linux"
+-elif test -d "/usr/src/linux/include"; then
+-    KERNEL_INCLUDE="/usr/src/linux/include"
+-fi
+-
+-if test -z ${KERNEL_INCLUDE}; then
+-    { { echo "$as_me:$LINENO: error: could not find directory of kernel include files" >&5
+-echo "$as_me: error: could not find directory of kernel include files" >&2;}
+-   { (exit 1); exit 1; }; }
+-else
+-    echo "$as_me:$LINENO: result: Using kernel includes from ${KERNEL_INCLUDE}" >&5
+-echo "${ECHO_T}Using kernel includes from ${KERNEL_INCLUDE}" >&6
+-fi
+-
+-
+
+ # could not find a way to compile the kernel module correctly
+ #    kernel/Makefile

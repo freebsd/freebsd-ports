@@ -1,0 +1,9 @@
+Digit@lway MPIO MP3 player tools
+
+This is a project for using Digitalway/Adtec
+digital audio player MPIO (DMG, DMK, DME, ...)
+under FreeBSD. It provides a userspace library
+and at the moment one tool to access the MPIO
+player.
+
+WWW: http://mpio.sourceforge.net/
