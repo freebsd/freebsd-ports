@@ -14,12 +14,14 @@ MASTER_SITES=	http://math.smsu.edu/~erik/files/fbsd/\
 MAINTAINER=	erik@smluc.org
 COMMENT=	A 3D positional spatialized sound library
 
+INFO=		openal
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/linux
 GNU_CONFIGURE=  yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 
-post-install:
+pre-install:
 	@${INSTALL_DATA} ${WRKSRC}/doc/openal.info ${PREFIX}/info
 	@install-info ${PREFIX}/info/openal.info ${PREFIX}/info/dir
 

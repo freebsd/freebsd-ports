@@ -8,9 +8,6 @@ include/AL/alu.h
 include/AL/alut.h
 include/AL/aluttypes.h
 include/AL/alutypes.h
-@unexec install-info --delete %D/info/openal.info %D/info/dir
-info/openal.info
-@exec install-info %D/info/openal.info %D/info/dir
 lib/libopenal.a
 lib/libopenal.so
 lib/libopenal.so.0
