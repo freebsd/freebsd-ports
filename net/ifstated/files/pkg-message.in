@@ -1,0 +1,12 @@
+
+*** ATTENTION ***
+
+To run ifstated from startup, add
+ifstated_enable="YES" to /etc/rc.conf
+
+Available variables you add/set to /etc/rc.conf.
+- ifstated_enable (bool):      Set to "NO" by default.
+                               Set it to "YES" to enable ifstated.
+- ifstated_flags (str):        Set to "-f %%PREFIX%%/etc/ifstated.conf" by default.
+                               Extra flags passed to start command.
+
