@@ -3,12 +3,12 @@
 # Date created:         2 Jun 1998
 # Whom:                 Don Croyle <croyle@gelemna.ft-wayne.in.us>
 #
-# $Id: Makefile,v 1.7 1998/10/01 06:09:56 steve Exp $
+# $Id: Makefile,v 1.8 1999/06/05 22:29:33 mharo Exp $
 #
 
 DISTNAME=	xconq-7.2.2
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.cygnus.com/pub/xconq/
+MASTER_SITES=	ftp://sourceware.cygnus.com/pub/xconq/
 
 MAINTAINER=	croyle@gelemna.ft-wayne.in.us
 
