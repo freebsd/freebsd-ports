@@ -18,7 +18,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_PERL5_BUILD=yes
 USE_GMAKE=	yes
-USE_SIZE=	yes
 
 MAN1=		${PORTNAME}.1
 
