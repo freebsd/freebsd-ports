@@ -40,8 +40,8 @@ DOCDIR=		share/doc/emacs20-dl-canna
 DLCANNA_VER=	1.4
 # hack to allow parallel build to work
 .if defined(PARALLEL_PACKAGE_BUILD)
-BUILD_DEPENDS+=	gmake:${PORTSDIR}/devel/gmake \
-		autoconf:${PORTSDIR}/devel/autoconf
+BUILD_DEPENDS+=	${GMAKE}:${PORTSDIR}/devel/gmake \
+		${AUTOCONF}:${PORTSDIR}/devel/autoconf
 .endif
 
 post-install:
