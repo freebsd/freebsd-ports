@@ -3,7 +3,7 @@
 # Date created:		19 Apr 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.13 1998/04/15 22:17:55 jseger Exp $
+# $Id: Makefile,v 1.14 1998/05/04 20:22:41 jseger Exp $
 #
 
 DISTNAME=	hylafax-v4.0pl2
@@ -16,7 +16,7 @@ EXTRACT_SUFX=	-tar.gz
 
 MAINTAINER=	itojun@itojun.org
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
+BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2 \
 		${PREFIX}/lib/afm/Courier:${PORTSDIR}/print/afm
 # no dependency on ghostscript because we don't know which
 # version the user prefers
