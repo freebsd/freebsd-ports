@@ -45,7 +45,6 @@ Have fun with this new configuration style !     -andreas \n\n\
   "m8510"    "C.Itoh M8510 printer" OFF \
   "coslw2p"  "CoStar LabelWriter II II/Plus" OFF \
   "coslwxl"  "CoStar LabelWriter XL" OFF \
-  "stp"      "Configurable Canon/Epson/Lexmark/HP driver [Gimp-Print]" ON \
   "uniprint" "Configurable ESC/P,ESC/P2,HP-RTL/PCL,P2X mono/color driver" ON \
   "dmprt"    "Configurable dot matrix printer driver [DMPRT]" ON \
   "lj250"    "DEC LJ250 Companion color printer" OFF \
@@ -58,23 +57,36 @@ Have fun with this new configuration style !     -andreas \n\n\
   "epag"     "Epson ESC/Page laser printer (generic) [EPAG]" ON \
   "escpage"  "Epson ESC/Page laser printer (generic) [LIPS]" ON \
   "lp2000"   "Epson LP-2000/3000/7000/7000G laser printer [LIPS]" ON \
+  "alc8600"  "Epson AL-C8600 color laser printer [EPLASER]" ON \
+  "alc8500"  "Epson AL-C8500 color laser printer [EPLASER]" ON \
+  "alc2000"  "Epson AL-C2000 color laser printer [EPLASER]" ON \
+  "alc4000"  "Epson AL-C4000 color laser printer [EPLASER]" ON \
   "lp8800c"  "Epson LP-8800C color laser printer [EPLASER]" ON \
   "lp8300c"  "Epson LP-8300C color laser printer [EPLASER]" ON \
   "lp8500c"  "Epson LP-8500C color laser printer [EPLASER]" ON \
   "lp3000c"  "Epson LP-3000C color laser printer [EPLASER]" ON \
   "lp8200c"  "Epson LP-8200C color laser printer [EPLASER]" ON \
   "lp8000c"  "Epson LP-8000C color laser printer [EPLASER]" ON \
+  "epl5900"  "Epson EPL-5900 laser printer [EPLASER]" ON \
+  "epl5800"  "Epson EPL-5800 laser printer [EPLASER]" ON \
+  "epl2050"  "Epson EPL-N2050 laser printer [EPLASER]" ON \
+  "epl2050p" "Epson EPL-N2050+ laser printer [EPLASER]" ON \
+  "epl2120"  "Epson EPL-N2120 laser printer [EPLASER]" ON \
+  "lp7500"   "Epson LP-7500(R) laser printer [EPLASER]" ON \
+  "lp2400"   "Epson LP-2400 laser printer [EPLASER]" ON \
   "lp2200"   "Epson LP-2200 laser printer [EPLASER]" ON \
   "lp9400"   "Epson LP-9400(R) laser printer [EPLASER]" ON \
+  "lp8900"   "Epson LP-8900(R) laser printer [EPLASER]" ON \
   "lp8700"   "Epson LP-8700(R) laser printer [EPLASER]" ON \
   "lp8100"   "Epson LP-8100(R) laser printer [EPLASER]" ON \
+  "lp7700"   "Epson LP-7700(R) laser printer [EPLASER]" ON \
   "lp8600f"  "Epson LP-8600FX(N) laser printer [EPLASER]" ON \
   "lp8400f"  "Epson LP-8400FX(N) laser printer [EPLASER]" ON \
   "lp8300f"  "Epson LP-8300F laser printer [EPLASER]" ON \
   "lp1900"   "Epson LP-1900(N) laser printer [EPLASER]" ON \
   "lp9600s"  "Epson LP-9600S laser printer [EPLASER]" ON \
-  "lp9600"   "Epson LP-9600 laser printer [EPLASER]" ON \
   "lp9300"   "Epson LP-9300 laser printer [EPLASER]" ON \
+  "lp9600"   "Epson LP-9600 laser printer [EPLASER]" ON \
   "lp8600"   "Epson LP-8600FX(N) laser printer [EPLASER]" ON \
   "lp1800"   "Epson LP-1800 laser printer [EPLASER]" ON \
   "lq850"    "Epson LQ-850 (360x360), ok for Canon BJ300 in LQ850 emul" OFF \

@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/bdftops
 bin/dvipdf
 bin/eps2eps
@@ -45,7 +46,8 @@ bin/wftopfa
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/epag/gsepagif.sh
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/epag/psprint
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/eplaser/readme-eplaser-651.euc
-%%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/gimp-print/README
+%%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/eplaser/readme-eplaser-651-jp.euc
+%%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/gdi/README
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/hpdj/NEWS
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/hpdj/hpdj.html
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/lips/Gdevlips.htm
@@ -553,7 +555,7 @@ share/ghostscript/fonts/z003034l.pfm
 %%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/md2k
 %%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/lips
 %%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/hpdj
-%%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/gimp-print
+%%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/gdi
 %%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/eplaser
 %%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/epag
 %%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/dmprt

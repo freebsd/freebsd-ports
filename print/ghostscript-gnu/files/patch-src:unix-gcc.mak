@@ -1,5 +1,5 @@
 --- src/unix-gcc.mak.orig	Sat Apr 20 07:23:09 2002
-+++ src/unix-gcc.mak	Sat Apr 27 02:05:12 2002
++++ src/unix-gcc.mak	Fri Jun  7 05:10:20 2002
 @@ -24,14 +24,15 @@
  # source, generated intermediate file, and object directories
  # for the graphics library (GL) and the PostScript/PDF interpreter (PS).
@@ -66,16 +66,7 @@
  #ZLIB_NAME=gz
  ZLIB_NAME=z
  
-@@ -185,6 +185,8 @@
- IJSSRCDIR=ijs
- IJSEXECTYPE=unix
- 
-+STPLIB=gimpprint
-+
- # Define how to build the library archives.  (These are not used in any
- # standard configuration.)
- 
-@@ -196,7 +198,7 @@
+@@ -196,7 +196,7 @@
  
  # Define the name of the C compiler.
  
@@ -84,7 +75,7 @@
  
  # Define the name of the linker for the final link step.
  # Normally this is the same as the C compiler.
-@@ -213,9 +215,9 @@
+@@ -213,9 +213,9 @@
  # Define the added flags for standard, debugging, profiling 
  # and shared object builds.
  
@@ -97,25 +88,25 @@
  CFLAGS_SO=-fPIC
  
  # Define the other compilation flags.  Add at most one of the following:
-@@ -229,7 +231,7 @@
+@@ -229,7 +229,7 @@
  # We don't include -ansi, because this gets in the way of the platform-
  #   specific stuff that <math.h> typically needs; nevertheless, we expect
  #   gcc to accept ANSI-style function prototypes and function definitions.
 -XCFLAGS=
-+XCFLAGS+=-I${.CURDIR}/gimp-print -I${LOCALBASE}/include
++XCFLAGS+=-I${LOCALBASE}/include
  
  CFLAGS=$(CFLAGS_STANDARD) $(GCFLAGS) $(XCFLAGS)
  
-@@ -240,7 +242,7 @@
+@@ -240,7 +240,7 @@
  #	-R /usr/local/xxx/lib:/usr/local/lib
  # giving the full path names of the shared library directories.
  # XLDFLAGS can be set from the command line.
 -XLDFLAGS=
-+XLDFLAGS=-L${.CURDIR}/gimp-print -L${LOCALBASE}/lib
++XLDFLAGS=-L${LOCALBASE}/lib
  
  LDFLAGS=$(XLDFLAGS)
  
-@@ -273,7 +275,7 @@
+@@ -273,7 +273,7 @@
  # Note that x_.h expects to find the header files in $(XINCLUDE)/X11,
  # not in $(XINCLUDE).
  
@@ -124,7 +115,7 @@
  
  # Define the directory/ies and library names for the X11 library files.
  # XLIBDIRS is for ld and should include -L; XLIBDIR is for LD_RUN_PATH
-@@ -285,12 +287,12 @@
+@@ -285,12 +285,12 @@
  # Solaris and other SVR4 systems with dynamic linking probably want
  #XLIBDIRS=-L/usr/openwin/lib -R/usr/openwin/lib
  # X11R6 (on any platform) may need
