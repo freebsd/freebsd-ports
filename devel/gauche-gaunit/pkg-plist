@@ -11,10 +11,14 @@ share/gauche/site/lib/test/unit/ui/text.scm
 @dirrm share/gauche/site/lib/test/unit
 @unexec rmdir %D/share/gauche/site/lib/test 2>/dev/null || true
 @unexec rmdir %D/share/doc/gauche 2>/dev/null || true
+%%EXAMPLESDIR%%/site-lisp/run-test-setting.el
 %%EXAMPLESDIR%%/site-lisp/run-test.el
-%%EXAMPLESDIR%%/symbolic_differentiation/symdiff.scm
-%%EXAMPLESDIR%%/symbolic_differentiation/test-symdiff.scm
-@dirrm %%EXAMPLESDIR%%/symbolic_differentiation
+%%EXAMPLESDIR%%/symdiff/lib/symdiff.scm
+%%EXAMPLESDIR%%/symdiff/test/run-test.scm
+%%EXAMPLESDIR%%/symdiff/test/test-symdiff.scm
+@dirrm %%EXAMPLESDIR%%/symdiff/test
+@dirrm %%EXAMPLESDIR%%/symdiff/lib
+@dirrm %%EXAMPLESDIR%%/symdiff
 @dirrm %%EXAMPLESDIR%%/site-lisp
 @dirrm %%EXAMPLESDIR%%
 @unexec rmdir %D/share/examples/gauche 2>/dev/null || true
