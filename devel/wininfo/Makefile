@@ -14,6 +14,8 @@ MASTER_SITES=		http://www.freedesktop.org/Software/wininfo/
 MAINTAINER=		jylefort@brutele.be
 COMMENT=		A window information utility
 
+BROKEN=			Checksum mismatch
+
 USE_X_PREFIX=		yes
 USE_GNOME=		gtk20 gnomeprefix
 GNU_CONFIGURE=		yes
