@@ -1,11 +1,13 @@
 bin/pth-config
 bin/pthread-config
-include/pth.h
-include/pthread.h
-lib/libpth.a
-lib/libpth.so
-lib/libpth.so.14
-lib/libpthread.a
-lib/libpthread.so
-lib/libpthread.so.14
+include/pth/pth.h
+include/pth/pthread.h
+lib/pth/libpth.a
+lib/pth/libpth.so
+lib/pth/libpth.so.14
+lib/pth/libpthread.a
+lib/pth/libpthread.so
+lib/pth/libpthread.so.14
 share/aclocal/pth.m4
+@dirrm include/pth
+@dirrm lib/pth
