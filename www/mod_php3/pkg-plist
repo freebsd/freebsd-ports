@@ -324,7 +324,6 @@ share/doc/apache/ABOUT_APACHE
 share/doc/apache/LICENSE
 share/doc/apache/README
 share/doc/php3/CODING_STANDARDS
-share/doc/php3/EXTENSION_STATUS
 share/doc/php3/LICENSE
 @dirrm etc/apache
 @dirrm include/apache
