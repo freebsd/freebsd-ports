@@ -1,0 +1,9 @@
+To use txfonts with dvips, add follow line to your "config.ps" file.
+--- add to config.ps ---
+p +txr.map
+--- end ---
+Maybe "config.ps" is found from:
+  /usr/local/share/texmf/dvips/config/config.ps  (print/teTeX)
+  /usr/local/share/texmf/dvips/base/config.ps    (japanese/dvipsk)
+If you found many "config.ps", then exec "kpsewhich psfonts.map".
+True "config.ps" is in same directory with "psfonts.map".
