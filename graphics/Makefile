@@ -1,10 +1,11 @@
-# $Id: Makefile,v 1.119 1999/04/10 20:31:59 jseger Exp $
+# $Id: Makefile,v 1.120 1999/04/12 08:18:19 asami Exp $
 #
 
     SUBDIR += 4va
     SUBDIR += Cgraph
     SUBDIR += EZWGL
     SUBDIR += GIFgraph
+    SUBDIR += Hermes
     SUBDIR += ImageMagick
     SUBDIR += Mesa3
     SUBDIR += aalib
@@ -41,6 +42,7 @@
     SUBDIR += gtkdps
     SUBDIR += gtkfig
     SUBDIR += gtksee
+    SUBDIR += gview
     SUBDIR += gyvefigs
     SUBDIR += gyvegui
     SUBDIR += gyvekernel
@@ -95,7 +97,9 @@
     SUBDIR += stamp
     SUBDIR += tgd
     SUBDIR += tgif
+    SUBDIR += tgif-nls
     SUBDIR += tiff34
+    SUBDIR += tifmerge
     SUBDIR += txtmerge
     SUBDIR += urt
     SUBDIR += vcg
