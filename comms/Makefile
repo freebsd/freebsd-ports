@@ -6,6 +6,7 @@
     SUBDIR += acfax
     SUBDIR += aldo
     SUBDIR += asmodem
+    SUBDIR += bfhist
     SUBDIR += bforce
     SUBDIR += bforce-kst
     SUBDIR += birda
