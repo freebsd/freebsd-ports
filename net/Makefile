@@ -284,6 +284,7 @@
     SUBDIR += liveMedia
     SUBDIR += lla
     SUBDIR += lmd
+    SUBDIR += lmule
     SUBDIR += loadd
     SUBDIR += macipgw
     SUBDIR += magictun
