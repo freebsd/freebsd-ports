@@ -111,7 +111,7 @@ PLIST_SUB+=	WITH_XVMC="@comment "
 .endif
 
 .if exists(${LOCALBASE}/lib/libtheora.so.1) || defined (WITH_LIBTHEORA)
-LIB_DEPENDS+=	theora.0:${PORTSDIR}/multimedia/libtheora
+LIB_DEPENDS+=	theora.1:${PORTSDIR}/multimedia/libtheora
 PLIST_SUB+=	WITH_LIBTHEORA=""
 .else
 PLIST_SUB+=	WITH_LIBTHEORA="@comment "
