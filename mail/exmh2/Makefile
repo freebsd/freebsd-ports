@@ -9,7 +9,8 @@
 PORTNAME=	exmh
 PORTVERSION=	2.2
 CATEGORIES+=	mail tk82
-MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/exmh/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER?=	bmah@FreeBSD.org
 
