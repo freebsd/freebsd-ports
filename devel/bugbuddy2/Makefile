@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bugbuddy2
-PORTVERSION=	2.2.103
+PORTVERSION=	2.2.104
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/bug-buddy/2.2
@@ -14,7 +14,7 @@ DISTNAME=	bug-buddy-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A bug reporting tool for GNOME 2.0
+COMMENT=	A bug reporting tool for GNOME 2
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
