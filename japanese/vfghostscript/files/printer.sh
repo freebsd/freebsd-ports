@@ -113,7 +113,7 @@ do
 			echo "Added G3 FAX."
 		;;
  		19)
-			PRINTER_DEVS='bj10v.dev bj10vh.dev bjc600j.dev bjc600jc.dev cdj500.dev cdj550.dev dj505j.dev dj505jc.dev dmprt.dev epag300.dev epag600.dev epag.dev jj100.dev lips3.dev lips4.dev lips4c.dev mag16.dev mag256.dev mjc180.dev mjc360.dev mjc720.dev mj500c.dev pr150.dev pr201.dev tiffg3.dev'
+			PRINTER_DEVS='bj10v.dev bj10vh.dev bjc600j.dev bjc600jc.dev cdj500.dev cdj550.dev dj505j.dev dj505jc.dev dmprt.dev epag300.dev epag600.dev epag.dev jj100.dev lips3.dev lips4.dev lips4c.dev mag16.dev mag256.dev mjc180.dev mjc360.dev mjc720.dev mj500c.dev pr150.dev pr201.dev pr1000_4.dev pr1000.dev tiffg3.dev'
 			echo "All."
 			DONE=yes
 		;;
@@ -122,7 +122,7 @@ do
 			DONE=yes
 		;;
 		*)
-			PRINTER_DEVS='bj10v.dev bj10vh.dev bjc600j.dev bjc600jc.dev cdj500.dev cdj550.dev dj505j.dev dj505jc.dev dmprt.dev epag300.dev epag600.dev epag.dev jj100.dev lips3.dev lips4.dev lips4c.dev mag16.dev mag256.dev mjc180.dev mjc360.dev mjc720.dev mj500c.dev pr150.dev pr201.dev tiffg3.dev'
+			PRINTER_DEVS='bj10v.dev bj10vh.dev bjc600j.dev bjc600jc.dev cdj500.dev cdj550.dev dj505j.dev dj505jc.dev dmprt.dev epag300.dev epag600.dev epag.dev jj100.dev lips3.dev lips4.dev lips4c.dev mag16.dev mag256.dev mjc180.dev mjc360.dev mjc720.dev mj500c.dev pr150.dev pr201.dev pr1000_4.dev pr1000.dev tiffg3.dev'
 			echo "All."
 			DONE=yes
 		;;
