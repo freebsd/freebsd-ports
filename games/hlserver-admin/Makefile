@@ -8,12 +8,25 @@
 PORTNAME=	admin
 PORTVERSION=	2.50.09
 PORTEPOCH=	1
-MASTER_SITES=	http://www.adminmod.org/downloads/
-DISTNAME=	halflife-${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	http://www.adminmod.org/downloads/ \
+		http://metamod.org/files/other/
+DISTFILES=	halflife-${PORTNAME}-${PORTVERSION}.tgz \
+		metamod_i386.so
 DIST_SUBDIR=	${PORTNAME}
-EXTRACT_SUFX=	.tgz
+EXTRACT_ONLY=	${DISTFILES:S/metamod_i386.so//}
 
 WRKSRC=		${WRKDIR}/Admin
+
+slaveport-post-extract:
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/metamod_i386.so \
+		${WRKSRC}/dlls
+	@${PERL} -pi.orig -e \
+		's|/usr/local/games/hlds_l|${PREFIX}${HLDSDIR:S/\/$//}|' \
+		${WRKSRC}/install_admin
+
+slaveport-post-install:
+	@${INSTALL_SCRIPT} ${WRKSRC}/install_admin \
+		${PREFIX}${HLDSDIR}/Admin
 
 HALFLIFE_COUNTERSTRIKE_MASTER=	${.CURDIR}/../hlserver-cs
 
