@@ -1,0 +1,4 @@
+#! /bin/sh
+PROG=$(dirname $(realpath $0))/../libexec/p7zip/7z
+
+$PROG "$@"

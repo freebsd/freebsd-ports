@@ -1,0 +1,19 @@
+Index: Windows/Time.h
+@@ -41,7 +41,7 @@
+   fileTime.dwHighDateTime = DWORD(ll >> 32);
+ }
+ 
+-inline bool FileTimeToUnixTime(const FILETIME &fileTime, long &unixTime)
++inline bool FileTimeToUnixTime(const FILETIME &fileTime, time_t &unixTime)
+ {
+   UINT64 winTime = (((UINT64)fileTime.dwHighDateTime) << 32) + fileTime.dwLowDateTime;
+   if (winTime < kUnixTimeStartValue)
+@@ -49,7 +49,7 @@
+   winTime = (winTime - kUnixTimeStartValue) / kNumTimeQuantumsInSecond;
+   if (winTime >= 0xFFFFFFFF)
+     return false;
+-  unixTime = (long)winTime;
++  unixTime = (time_t)winTime;
+   return true;
+ }
+ 

@@ -1,0 +1,54 @@
+bin/7z
+bin/7za
+libexec/p7zip/7z
+libexec/p7zip/Codecs/7zAES.dll
+libexec/p7zip/Codecs/BZip2.dll
+libexec/p7zip/Codecs/Copy.dll
+libexec/p7zip/Codecs/Implode.dll
+libexec/p7zip/Codecs/PPMD.dll
+libexec/p7zip/Codecs/AES.dll
+libexec/p7zip/Codecs/Branch.dll
+libexec/p7zip/Codecs/Deflate.dll
+libexec/p7zip/Codecs/LZMA.dll
+libexec/p7zip/Codecs/Swap.dll
+libexec/p7zip/Formats/7z.dll
+libexec/p7zip/Formats/Rar.dll
+libexec/p7zip/Formats/Tar.dll
+libexec/p7zip/Formats/Zip.dll
+libexec/p7zip/Formats/arj.dll
+libexec/p7zip/Formats/bz2.dll
+libexec/p7zip/Formats/cab.dll
+libexec/p7zip/Formats/cpio.dll
+libexec/p7zip/Formats/deb.dll
+libexec/p7zip/Formats/gz.dll
+libexec/p7zip/Formats/rpm.dll
+libexec/p7zip/Formats/split.dll
+%%PORTDOCS%%%%DOCSDIR%%/index.htm
+%%PORTDOCS%%%%DOCSDIR%%/syntax.htm
+%%PORTDOCS%%%%DOCSDIR%%/commands/add.htm
+%%PORTDOCS%%%%DOCSDIR%%/commands/delete.htm
+%%PORTDOCS%%%%DOCSDIR%%/commands/extract.htm
+%%PORTDOCS%%%%DOCSDIR%%/commands/extract_full.htm
+%%PORTDOCS%%%%DOCSDIR%%/commands/index.htm
+%%PORTDOCS%%%%DOCSDIR%%/commands/list.htm
+%%PORTDOCS%%%%DOCSDIR%%/commands/test.htm
+%%PORTDOCS%%%%DOCSDIR%%/commands/update.htm
+%%PORTDOCS%%%%DOCSDIR%%/switches/exclude.htm
+%%PORTDOCS%%%%DOCSDIR%%/switches/include.htm
+%%PORTDOCS%%%%DOCSDIR%%/switches/index.htm
+%%PORTDOCS%%%%DOCSDIR%%/switches/method.htm
+%%PORTDOCS%%%%DOCSDIR%%/switches/output_dir.htm
+%%PORTDOCS%%%%DOCSDIR%%/switches/overwrite.htm
+%%PORTDOCS%%%%DOCSDIR%%/switches/password.htm
+%%PORTDOCS%%%%DOCSDIR%%/switches/recurse.htm
+%%PORTDOCS%%%%DOCSDIR%%/switches/sfx.htm
+%%PORTDOCS%%%%DOCSDIR%%/switches/type.htm
+%%PORTDOCS%%%%DOCSDIR%%/switches/update.htm
+%%PORTDOCS%%%%DOCSDIR%%/switches/working_dir.htm
+%%PORTDOCS%%%%DOCSDIR%%/switches/yes.htm
+@dirrm libexec/p7zip/Formats
+@dirrm libexec/p7zip/Codecs
+@dirrm libexec/p7zip
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/commands
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/switches
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
