@@ -38,7 +38,6 @@
     SUBDIR += ncftp3
     SUBDIR += oftpd
     SUBDIR += omi
-    SUBDIR += paraftp
     SUBDIR += paraget
     SUBDIR += pavuk
     SUBDIR += proftpd
