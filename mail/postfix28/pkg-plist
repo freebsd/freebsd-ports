@@ -121,4 +121,4 @@ sbin/sendmail
 %%SUB_DOCS%%share/doc/postfix/virtual.5.html
 %%SUB_DOCS%%@dirrm share/doc/postfix
 @dirrm libexec/postfix
-@dirrm etc/postfix
+@unexec rmdir %D/etc/postfix 2>/dev/null || true
