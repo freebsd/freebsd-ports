@@ -12,7 +12,7 @@ teTeX
 @exec echo "   and all subdirectories if you did not configure"
 @exec echo "   font generation to use a temporary directory."
 @exec echo "6. For further information have a look at"
-@exec echo "   /usr/local/teTeX/{FAQ-teTeX,TETEXDOC.dvi}."
+@exec echo "   /usr/local/teTeX/texmf/doc/tetex/* ."
 @exec echo "------------------------------------------------------"
 @exec echo
 @unexec rm -rf teTeX
