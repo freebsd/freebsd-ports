@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	curl
-PORTVERSION=	7.12
+PORTVERSION=	7.12.3
 CATEGORIES=	ftp python
 MASTER_SITES=	http://pycurl.sourceforge.net/download/ \
 		http://pycurl.sourceforge.net/download/00-OLD-VERSIONS/

@@ -27,11 +27,11 @@ share/doc/py-curl/tests/test_multi6.py
 share/doc/py-curl/tests/test_multi_vs_thread.py
 share/doc/py-curl/tests/test_post.py
 share/doc/py-curl/tests/test_post2.py
+share/doc/py-curl/tests/test_post3.py
 share/doc/py-curl/tests/test_stringio.py
 share/doc/py-curl/tests/test_xmlrpc.py
 share/doc/py-curl/tests/util.py
 share/examples/py-curl/basicfirst.py
-share/examples/py-curl/gtkhtml_demo.py
 share/examples/py-curl/linksys.py
 share/examples/py-curl/retriever-multi.py
 share/examples/py-curl/retriever.py
