@@ -81,6 +81,7 @@ MAN3= \
 	XmClipboardUnlock.3 \
 	XmClipboardWithdrawFormat.3 \
 	XmColorSelector.3 \
+	XmColumn.3 \
 	XmComboBox.3 \
 	XmComboBoxAddItem.3 \
 	XmComboBoxDeletePos.3 \
@@ -178,6 +179,7 @@ MAN3= \
 	XmCvtXmStringTableToTextProperty.3 \
 	XmCvtXmStringToByteStream.3 \
 	XmCvtXmStringToCT.3 \
+	XmDataField.3 \
 	XmDeactivateProtocol.3 \
 	XmDeactivateWMProtocol.3 \
 	XmDestroyPixmap.3 \
