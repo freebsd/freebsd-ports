@@ -312,8 +312,6 @@ pref("font.min-size.fixed.zh-TW", 10);
 //     "fname=-urw.*;scalable=false;outline_scaled=false;xdisplay=.*;xdpy=.*;ydpy=.*;xdevice=.*");
 
 pref("mail.signature_date", 0);
-// Chatzilla
-pref("extensions.irc.charset", "Big5");
 
 // ps font
 // this list is used by the postscript font
