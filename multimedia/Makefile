@@ -125,6 +125,7 @@
     SUBDIR += xanim
     SUBDIR += xawtv
     SUBDIR += xdvshow
+    SUBDIR += xfce4-xmms-plugin
     SUBDIR += xine
     SUBDIR += xmms
     SUBDIR += xmms-avi
