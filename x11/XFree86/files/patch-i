@@ -1,0 +1,208 @@
+S3 Savage/MX and Savage/IX patches for XFree86 3.3.6 post fix-08
+
+http://www.probo.com/timr/savagemx.html
+
+from: Sun Oct 22 10:12:06 CEST 2000
+
+--- programs/Xserver/hw/xfree86/vga256/drivers/s3_savage/s3sav_cursor.c.orig	Sun Oct 22 09:52:21 2000
++++ programs/Xserver/hw/xfree86/vga256/drivers/s3_savage/s3sav_cursor.c	Fri Sep  1 22:12:56 2000
+@@ -250,7 +250,7 @@
+    /* VerticalRetraceWait(); */
+ 
+    /* turn cursor off */
+-   S3VHideCursor();
++   S3SAVHideCursor();
+ 
+    /* move cursor off-screen */
+    outb(vgaCRIndex, 0x46);
+--- programs/Xserver/hw/xfree86/vga256/drivers/s3_savage/s3sav_driver.c.orig	Sun Oct 22 09:52:21 2000
++++ programs/Xserver/hw/xfree86/vga256/drivers/s3_savage/s3sav_driver.c	Fri Sep 29 23:19:23 2000
+@@ -94,6 +94,7 @@
+ static void    S3SAVRestore();
+ static void    S3SAVAdjust();
+ static void    S3SAVFbInit();
++static int     S3SAVPitchAdjust();
+ void           S3SAVSetRead();
+ void           S3SAVAccelInit();
+ void           S3SAVInitialize2DEngine();
+@@ -721,12 +722,12 @@
+ 
+    /* Restore the desired video mode with CR67 */
+         
+-   outb(vgaCRIndex, 0x67);             
+ #if 0
++   outb(vgaCRIndex, 0x67);             
+    cr67 = inb(vgaCRReg) & 0xf; /* Possible hardware bug on VX? */
+-#endif
+    outb(vgaCRReg, 0x50 | cr67); 
+    usleep(10000);
++#endif
+    outb(vgaCRIndex, 0x67);             
+    outb(vgaCRReg, restore->CR67 & ~0x0c); /* Don't enable STREAMS yet */
+ 
+@@ -745,9 +746,11 @@
+    outb(vgaCRReg, restore->CR51);
+    
+    /* Memory timings */
+-   outb(vgaCRIndex, 0x36);             
++   outb(vgaCRIndex, 0x36);
+    outb(vgaCRReg, restore->CR36);
+-   outb(vgaCRIndex, 0x68);             
++   outb(vgaCRIndex, 0x60);
++   outb(vgaCRReg, restore->CR60);
++   outb(vgaCRIndex, 0x68);
+    outb(vgaCRReg, restore->CR68);
+    outb(vgaCRIndex, 0x69);
+    outb(vgaCRReg, restore->CR69);
+@@ -764,8 +767,11 @@
+    outb(vgaCRReg, restore->CR90);
+    outb(vgaCRIndex, 0x91);
+    outb(vgaCRReg, restore->CR91);
+-   outb(vgaCRIndex, 0xB0); /* Savage4 config3 */
+-   outb(vgaCRReg, restore->CRB0);
++   if( s3vPriv.chip == S3_SAVAGE4 )
++   {
++      outb(vgaCRIndex, 0xB0); /* Savage4 config3 */
++      outb(vgaCRReg, restore->CRB0);
++   }
+ 
+    outb(vgaCRIndex, 0x32);
+    outb(vgaCRReg, restore->CR32);
+@@ -981,6 +987,8 @@
+    save->CR53 = inb(vgaCRReg);
+    outb(vgaCRIndex, 0x58);
+    save->CR58 = inb(vgaCRReg);
++   outb(vgaCRIndex, 0x60);
++   save->CR60 = inb(vgaCRReg);
+    outb(vgaCRIndex, 0x66);
+    save->CR66 = inb(vgaCRReg);
+    outb(vgaCRIndex, 0x67);
+@@ -1135,10 +1143,29 @@
+ }
+ 
+ 
++/*
++ * This function adjusts the pitch to a multiple of 16 pixels.
++ */
++
++static int
++S3SAVPitchAdjust( void )
++{
++    int pitch = vga256InfoRec.virtualX;
++
++    if( pitch % 16 != 0 )
++    {
++	pitch = (pitch + 15) & ~15;
++
++	ErrorF("%s %s: %s: Display width padded to %d bytes.\n",
++	     XCONFIG_PROBED, vga256InfoRec.name, vga256InfoRec.chipset,
++	     pitch);
++    }
++    return pitch;
++}
++
++
+ /* 
+- * This is the main probe function for the virge chipsets.
+- * Right now, I have taken a shortcut and get most of the info from
+- * PCI probing.
++ * This is the main probe function for the Savage chipsets.
+  */
+ 
+ static Bool
+@@ -1511,6 +1538,8 @@
+    S3V.ChipLinearBase = vga256InfoRec.MemBase;
+    S3V.ChipLinearSize = vga256InfoRec.videoRam * 1024;
+ 
++   vgaSetPitchAdjustHook(S3SAVPitchAdjust);
++
+    return TRUE;   
+ }
+ 
+@@ -1782,9 +1811,9 @@
+    outb(vgaCRIndex, 0x3a);
+    tmp = inb(vgaCRReg);
+    if(!OFLG_ISSET(OPTION_PCI_BURST_ON, &vga256InfoRec.options)) 
+-      new->CR3A = tmp | 0x95;      /* ENH 256, no PCI burst! */
++      new->CR3A = tmp | 0x90;      /* ENH 256, no PCI burst! */
+    else 
+-      new->CR3A = (tmp & 0x7f) | 0x15; /* ENH 256, PCI burst */
++      new->CR3A = (tmp & 0x7f) | 0x10; /* ENH 256, PCI burst */
+ 
+    new->CR53 &= ~0x08;     /* Enables MMIO */
+    new->CR31 = 0x8c;     /* Dis. 64k window, en. ENH maps */    
+@@ -1806,12 +1835,22 @@
+ 
+    dclk = vga256InfoRec.clock[mode->Clock];
+    new->CR67 = 0x00;             /* Defaults */
+-   new->SR15 = 0x03 | 0x80; 
++   if( s3vPriv.chip != S3_SAVAGE2000 )
++      new->SR15 = 0x03 | 0x80; 
++   else
++      /* One-cycle writes broken on Savage2000? */
++      new->SR15 = 0x03;
+    new->SR18 = 0x00;
+    new->CR43 = 0x00;
+    new->CR45 = 0x00;
+    new->CR65 = 0x00;
+ 
++   outb(vgaCRIndex, 0x60);
++   new->CR60 = inb(vgaCRReg);
++
++   if( s3vPriv.chip == S3_SAVAGE_MX )
++       new->CR60 = 0x09;
++
+    outb(vgaCRIndex, 0x40);
+    new->CR40 = inb(vgaCRReg) & ~0x01;
+    
+@@ -1852,16 +1891,19 @@
+ 
+    {
+        if (vgaBitsPerPixel == 8) {
+-          if (dclk <= 110000) new->CR67 = 0x00; /* 8bpp, 135MHz */
+-          else new->CR67 = 0x10;                /* 8bpp, 220MHz */
++	  new->CR67 = 0x00;                /* 8bpp, 220MHz */
+           }
+        else if ((vgaBitsPerPixel == 16) && (vga256InfoRec.weight.green == 5)) {
+-          if (dclk <= 110000) new->CR67 = 0x20; /* 15bpp, 135MHz */
+-          else new->CR67 = 0x30;                /* 15bpp, 220MHz */
++	  if( s3vPriv.chip == S3_SAVAGE_MX )
++	    new->CR67 = 0x30;                /* 15bpp, 220MHz */
++	  else
++	    new->CR67 = 0x20;
+           }
+        else if (vgaBitsPerPixel == 16) {
+-          if (dclk <= 110000) new->CR67 = 0x40; /* 16bpp, 135MHz */
+-          else new->CR67 = 0x50;                /* 16bpp, 220MHz */
++	  if( s3vPriv.chip == S3_SAVAGE_MX )
++	    new->CR67 = 0x50;                 /* 16bpp, 220MHz */
++	  else
++	    new->CR67 = 0x40;
+           }
+        else if ((vgaBitsPerPixel == 24) || (vgaBitsPerPixel == 32)) {
+           new->CR67 = 0xd0;                     /* 24bpp, 135MHz */
+@@ -1967,8 +2009,12 @@
+    else
+       new->CR50 |= 0xC1; /* default to use GlobalBD */
+ 
+-   new->CR33 = 0x20;
++   if( s3vPriv.chip == S3_SAVAGE2000 )
++     new->CR33 = 0x08;
++   else
++     new->CR33 = 0x20;
+ 	 
++   new->std.CRTC[0x17] = 0xeb;
+ 
+    /* Now we handle various XConfig memory options and others */
+ 
+--- programs/Xserver/hw/xfree86/vga256/drivers/s3_savage/s3sav_driver.h.orig	Sun Oct 22 09:52:21 2000
++++ programs/Xserver/hw/xfree86/vga256/drivers/s3_savage/s3sav_driver.h	Sat Sep  2 02:57:01 2000
+@@ -25,7 +25,7 @@
+    unsigned char CR31, CR32, CR33, CR34, CR36, CR3A, CR3B, CR3C;
+    unsigned char CR40, CR42, CR43, CR45;
+    unsigned char CR50, CR51, CR53, CR58, CR5B, CR5D, CR5E;
+-   unsigned char CR65, CR66, CR67, CR68, CR69, CR6F; /* Video attrib. */
++   unsigned char CR60, CR65, CR66, CR67, CR68, CR69, CR6F; /* Video attrib. */
+    unsigned char CR86, CR88;
+    unsigned char CR90, CR91, CRB0;
+    unsigned char ColorStack[8]; /* S3 hw cursor color stack CR4A/CR4B */
