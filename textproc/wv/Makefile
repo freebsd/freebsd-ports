@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wvware
 
 MAINTAINER=	mzaki@e-mail.ne.jp
-COMMENT=	A library and executables which allow access to Microsoft Word files
+COMMENT=	A library and executables to access Microsoft Word files
 
 LIB_DEPENDS=	wmf.2:${PORTSDIR}/graphics/libwmf
 RUN_DEPENDS=	lynx:${PORTSDIR}/www/lynx
@@ -23,6 +23,7 @@ USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-exporter --without-glib
 MAKEFILE=	GNUmakefile
 INSTALLS_SHLIB=	yes
