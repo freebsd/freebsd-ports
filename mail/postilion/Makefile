@@ -10,7 +10,7 @@ PORTVERSION= 	0.9.3c
 CATEGORIES=	mail tk82
 MASTER_SITES=	http://www.postilion.org/
 
-MAINTAINER=	gljohns@bellsouth.net
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82 \
 		img.1:${PORTSDIR}/graphics/libimg
