@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	six
-PORTVERSION=	0.5.1
+PORTVERSION=	0.5.2
 CATEGORIES=	games kde
 MASTER_SITES=	http://six.retes.hu/download/
 
@@ -23,5 +23,7 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's,-lkdeprint$$,$$(LIB_KDEPRINT) $$(LIBPTHREAD),g' \
 		${WRKSRC}/six/Makefile.in
+	@${REINPLACE_CMD} -e \
+		's,<machine/limits.h>,<limits.h>,g' ${WRKSRC}/six/batch.h
 
 .include <bsd.port.mk>
