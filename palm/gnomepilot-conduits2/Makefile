@@ -15,8 +15,7 @@ DISTNAME=	gnome-pilot-conduits-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	pisock.4:${PORTSDIR}/palm/pilot-link \
-		gpilotd.1:${PORTSDIR}/palm/gnomepilot
+LIB_DEPENDS=	gpilotd.1:${PORTSDIR}/palm/gnomepilot
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
