@@ -150,6 +150,7 @@
     SUBDIR += kde3-i18n-bs
     SUBDIR += kde3-i18n-ca
     SUBDIR += kde3-i18n-cs
+    SUBDIR += kde3-i18n-cy
     SUBDIR += kde3-i18n-da
     SUBDIR += kde3-i18n-el
     SUBDIR += kde3-i18n-en_GB
