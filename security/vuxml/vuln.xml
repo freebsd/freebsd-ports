@@ -10275,7 +10275,7 @@ misc.c:
   </vuln>
 
   <vuln vid="e3cf89f0-53da-11d9-92b7-ceadd4ac2edd"> 
-    <topic>User input validation problem in phpBB</topic> 
+    <topic>phpbb -- arbitrary command execution vulnerability</topic>
     <affects>
       <package>
 	<name>phpbb</name> 
@@ -10304,6 +10304,7 @@ misc.c:
     <dates>
       <discovery>2004-11-18</discovery>
       <entry>2004-12-22</entry>
+      <modified>2004-12-30</modified>
     </dates>
   </vuln>
 
