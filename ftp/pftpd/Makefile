@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pftpd
-PORTVERSION=	0.39
+PORTVERSION=	0.42
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/unix/pftpd/
 
@@ -14,8 +14,8 @@ MAINTAINER=	gslin@ccca.nctu.edu.tw
 
 GNU_CONFIGURE=	yes
 
-NO_CDROM=	"License problem"
-NO_PACKAGE=	"License problem"
+NO_CDROM=	License problem
+NO_PACKAGE=	${NO_CDROM}
 
 MAN1=		pftpd.1 rpad.1
 
