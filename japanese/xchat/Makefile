@@ -7,6 +7,7 @@
 
 MASTERDIR=	${.CURDIR}/../../irc/xchat
 
+PORTREVISION=	1
 CATEGORIES=	japanese
 PATCH_SITES=	http://northeye.org/~takuo/xchat-ja/
 PATCHFILES=	${PORTNAME}-${PORTVERSION}.ja.3.diff.gz
@@ -18,6 +19,8 @@ LIB_DEPENDS=	iconv.1:${PORTSDIR}/converters/iconv
 
 MD5_FILE=	${.CURDIR}/distinfo
 
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--enable-japanese-conv # --enable-ipv6
 MAKE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -liconv -lintl"
