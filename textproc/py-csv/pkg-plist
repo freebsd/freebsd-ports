@@ -1,1 +1,1 @@
-lib/%%PYTHON_VERSION%%/site-packages/csv.so
+%%PYTHON_SITELIBDIR%%/csv.so
