@@ -1,12 +1,12 @@
 # New ports collection makefile for:	guile
-# Version required:	1.3
+# Version required:	1.3.4
 # Date created:		2 November 1997
 # Whom:			jseger@FreeBSD.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	guile-1.3
+DISTNAME=	guile-1.3.4
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	guile
@@ -14,7 +14,11 @@ MASTER_SITE_SUBDIR=	guile
 MAINTAINER=	jseger@FreeBSD.org
 
 GNU_CONFIGURE=	YES
-MAKE_ENV+=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
+
+USE_LIBTOOL=	yes
+
+
+PLIST_SUB=	GUILE_VER=1.3.4
 
 post-install:
 	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
