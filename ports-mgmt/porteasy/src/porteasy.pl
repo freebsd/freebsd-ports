@@ -1018,8 +1018,10 @@ sub build_port($) {
 	push(@makeargs, "DEPENDS_CLEAN=YES");
     }
     setproctitle("building $port");
-    make($port, @makeargs)
-	or bsd::errx(1, "failed to %s %s", $packages ? "package" : "build", $port);
+    if (!make($port, @makeargs)) {
+	bsd::errx(1, "failed to %s %s",
+	    $packages ? "package" : "build", $port);
+    }
     setproctitle();
 }
 
@@ -1226,7 +1228,7 @@ MAIN:{
 
     # Step 6: list installed ports
     if ($status) {
-	foreach $port (keys(%reqd)) {
+	foreach $port (sort({ $pkgname{$a} cmp $pkgname{$b} } keys(%reqd))) {
 	    show_port_status($port);
 	}
     }
