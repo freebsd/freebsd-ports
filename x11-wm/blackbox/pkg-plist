@@ -1,18 +1,5 @@
 bin/blackbox
 bin/bsetroot
-share/Blackbox/brueghel/babel
-share/Blackbox/brueghel/babel.gif
-share/Blackbox/brueghel/babel.txt
-share/Blackbox/brueghel/icarus
-share/Blackbox/brueghel/icarus.gif
-share/Blackbox/brueghel/icarus.txt
-share/Blackbox/brueghel/littlebabel
-share/Blackbox/brueghel/littlebabel.gif
-share/Blackbox/brueghel/littlebabel.txt
-share/Blackbox/brueghel/rebelangels
-share/Blackbox/brueghel/rebelangels.gif
-share/Blackbox/brueghel/rebelangels.txt
-share/Blackbox/brueghel/stylesmenu
 share/Blackbox/rc
 share/Blackbox/menu
 share/Blackbox/styles/blackmagic
@@ -28,6 +15,5 @@ share/Blackbox/styles/slatebox
 share/Blackbox/styles/steelblue
 share/Blackbox/styles/steelbox
 share/Blackbox/styles/stylesmenu
-@dirrm share/Blackbox/brueghel
 @dirrm share/Blackbox/styles
 @dirrm share/Blackbox
