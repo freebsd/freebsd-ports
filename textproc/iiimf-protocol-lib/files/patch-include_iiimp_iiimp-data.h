@@ -1,11 +1,14 @@
---- include/iiimp/iiimp-data.h.orig	Sat Dec  6 02:19:44 2003
-+++ include/iiimp/iiimp-data.h	Sat Dec  6 02:18:15 2003
-@@ -7,7 +7,7 @@
+--- include/iiimp/iiimp-data.h.orig	Wed Apr 21 16:01:34 2004
++++ include/iiimp/iiimp-data.h	Wed Apr 21 16:01:45 2004
+@@ -7,11 +7,8 @@
  #include <stdio.h>
  #include <sys/types.h>
  
 -#if defined(linux)
-+#if defined(linux) || defined(__FreeBSD__)
- #include <stdint.h>
+-#include <stdint.h>
  typedef unsigned char	uchar_t;
  typedef unsigned int	uint_t;
+-#endif /* linux */
+ 
+ #include <iiimp-opcode.h>
+ 
