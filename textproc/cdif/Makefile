@@ -25,7 +25,7 @@ do-extract:
 
 # assumes perl is in ${LOCALBASE}/bin/perl
 do-patch:
-	${SED} -e '1s@/usr/local/bin/perl@/usr/bin/perl@' \
+	${SED} -e '1s@/usr/local/bin/perl@${PERL}@' \
 		< ${WRKSRC}/${DISTNAME}.dist > ${WRKSRC}/${DISTNAME}
 
 do-install:
