@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	Gauche-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	knu@FreeBSD.org
 
 # Choices are: "pthreads" and "no", but it seems that FreeBSD does not
 # yet fully support threads with Boehm GC.
