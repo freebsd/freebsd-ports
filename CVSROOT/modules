@@ -1246,6 +1246,7 @@ docbook-xsl	ports/textproc/docbook-xsl
 docbookide.el	ports/textproc/docbookide.el
 doconfig	ports/sysutils/doconfig
 docproj		ports/textproc/docproj
+docsis		ports/net/docsis
 dog		ports/misc/dog
 domainname	src/bin/domainname
 domc		ports/devel/domc
