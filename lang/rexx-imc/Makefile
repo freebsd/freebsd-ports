@@ -33,7 +33,7 @@ INSTALLS_SHLIB=		yes
 MAN1=		rexx.1 rxstack.1 rxque.1
 
 DOCFILES=	rexx.info rexx.ref rexx.summary rexx.tech
-RMEFILES=       README README.Y2K README.bugreport README.docs \
+RMEFILES=	README README.Y2K README.bugreport README.docs \
 		README.files README.make README.news README.platforms
 
 post-patch:
@@ -62,8 +62,8 @@ do-install:
 # install documenation and examples
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${DOCFILES} ${RMEFILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.for FILE in ${DOCFILES} ${RMEFILES}
+	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
 .endfor
 	@${MKDIR} ${PREFIX}/share/examples/rexx-imc
 .for ex in box rexxcps.rexx rexxtest.rexx rxmathfn.rexx shell.rexx
