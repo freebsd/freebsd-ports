@@ -1,0 +1,7 @@
+bin/ghex
+share/apps/Applications/ghex.desktop
+share/gnome/help/ghex/C/index.html
+share/gnome/help/ghex/C/topic.dat
+share/pixmaps/gnome-ghex.png
+@dirrm share/gnome/help/ghex/C
+@dirrm share/gnome/help/ghex
