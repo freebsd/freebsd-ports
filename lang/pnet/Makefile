@@ -19,6 +19,7 @@ USE_REINPLACE=	yes
 USE_BISON=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--program-prefix=""
+STRIP=		#
 
 MAN1=		ilrun.1 ilasm.1 ildasm.1 ilsize.1 ilnative.1 ilfind.1	\
 		ildiff.1 ildd.1 cscc.1 csdoc.1	resgen.1 csdoc2texi.1	\
