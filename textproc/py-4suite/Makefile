@@ -16,6 +16,8 @@ DISTNAME=	4Suite-${PORTVERSION}
 MAINTAINER=	wjv@FreeBSD.org
 COMMENT=	A collection of Python tools for XML processing and object database management
 
+IGNORE=		has a broken pkg-plist that removes dozens of files not installed by this port.
+
 BUILD_DEPENDS=	${PYXML}
 RUN_DEPENDS=	${PYXML}
 
