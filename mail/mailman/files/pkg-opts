@@ -18,10 +18,10 @@ MAIL_GID|26|The group id under which your MTA performs mail delivery
 	report mistakes!)
 	----------------------------------------------
 	MTA     | MAIL_GID | Submitted by
-	Exim    | 6        | <wjv>
+	Exim    | 65534    | <wjv>
 	Postfix | 65534    | <shamrock@cypherpunks.to>
 	Qmail   | ???      |
-GGI_GID|80|The group id under which your web server executes CGI scripts
+CGI_GID|80|The group id under which your web server executes CGI scripts
 	By default, this port works with the current port of Apache.  If your
 	WWW server executes CGI scripts under a different GID, you'll have to
 	set this at build time.
