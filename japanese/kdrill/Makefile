@@ -6,14 +6,18 @@
 #
 
 PORTNAME=	kdrill
-PORTVERSION=	5.11.8
+PORTVERSION=	5.12.2
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.bolthole.com/kdrill/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	sethk@meowfishies.com
 
+# Explictly state HTML'ized man pages in packing list since not all are
+# generated from imake.
+XFREE86_HTML_MAN=no
 MAN1=		kdrill.1 makedic.1 makeedict.1
+
 MANCOMPRESSED=	yes
 USE_IMAKE=	yes
 MAKE_ENV+=	LOCALBASE=${LOCALBASE}
