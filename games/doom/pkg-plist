@@ -1,2 +1,6 @@
 bin/doom
-bin/sndserver
+libexec/doom/sndserver
+libexec/doom/xdoom
+share/doom/doom1.wad
+@dirrm share/doom
+@dirrm libexec/doom
