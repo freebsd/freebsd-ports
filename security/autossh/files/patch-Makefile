@@ -1,0 +1,13 @@
+--- Makefile.bsd.bak	Wed Oct 22 16:48:40 2003
++++ Makefile.bsd	Wed Oct 22 16:49:17 2003
+@@ -9,7 +9,9 @@
+ SSH=		/usr/bin/ssh
+ PREFIX?=	/usr/local
+ 
+-CFLAGS=		-Wall -pedantic -D"SSH_PATH=\"$(SSH)\""\
++CC?=		cc
++CFLAGS?=	-O -pipe
++CFLAGS+=	-D"SSH_PATH=\"$(SSH)\""\
+ 		-D"VER=\"$(VER)\""
+ OFILES=		autossh.o
+ LIBS=

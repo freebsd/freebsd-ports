@@ -1,5 +1,5 @@
---- Makefile.old	Fri May 15 19:21:24 1998
-+++ Makefile	Fri May 15 19:22:47 1998
+--- Makefile.orig	Sun Jan 30 09:24:09 1994
++++ Makefile	Wed Oct 22 17:00:29 2003
 @@ -1,5 +1,5 @@
  # Installation directory...
 -INSTDIR	= /mnt3/deej
@@ -16,7 +16,7 @@
  # ...BSD mailing on a BSD system...
  # CCOPTS	=
  # ...you might also want to define "SYSV" if you're on a System V machine
-@@ -24,11 +24,13 @@
+@@ -24,11 +24,15 @@
  # ...of course, you could do both, too!
  # CCOPTS 	= -DSYSV -DSysVMail
  # ...options for gcc on a Linux 386/486 system...
@@ -27,11 +27,13 @@
  # ...options for Apollo...
  # CCOPTS	= -DAPOLLO -DSysVMail
 +# ...options for FreeBSD...
-+CCOPTS		= -O6 -Wall -DSysVMail
++CFLAGS		?= -O -pipe
++CCOPTS		= ${CFLAGS}
++CCOPTS		+= -DSysVMail
  
  #
  # END OF USER-CONFIGURABLE ITEMS - NO MODIFICATIONS BEYOND THIS POINT SHOULD
-@@ -44,13 +46,23 @@
+@@ -44,13 +48,23 @@
  clean:
  	rm -f ${TARGET} ${OBJS}
  

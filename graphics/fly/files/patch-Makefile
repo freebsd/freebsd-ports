@@ -1,0 +1,22 @@
+--- Makefile.orig	Wed Oct 22 16:52:11 2003
++++ Makefile	Wed Oct 22 16:53:04 2003
+@@ -5,15 +5,16 @@
+ # following line
+ #       GD = /path/to/gd/directory
+         GD = gd1.3
+-        CC = gcc
+-    CFLAGS = -O -I$(GD)
++        CC ?= cc
++    CFLAGS ?= -O -pipe
++    CFLAGS += -I$(GD)
+    #CFLAGS = -O -pedantic -Wall -I$(GD)
+       LIBS = -L$(GD) -lgd -lm
+ 
+ all: gd fly
+ 
+ gd: $(GD)
+-	cd $(GD); make CC=$(CC)
++	cd $(GD); make CC="$(CC)" CFLAGS="$(CFLAGS)"
+ 
+ 
+ fly.o: fly.c fly.h

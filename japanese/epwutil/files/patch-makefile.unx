@@ -1,0 +1,13 @@
+--- makefile.unx.orig	Wed Oct 22 16:55:42 2003
++++ makefile.unx	Wed Oct 22 16:55:57 2003
+@@ -1,7 +1,8 @@
+ # EPWUTIL Makefile for UNIX/gcc
+ 
+-CC	= gcc
+-CFLAGS	= -DUNIX -DEUC
++CC	?= cc
++CFLAGS	?= -O -pipe
++CFLAGS	+= -DUNIX -DEUC
+ 
+ .c.o:
+ 	$(CC) -c $(CFLAGS) $*.c

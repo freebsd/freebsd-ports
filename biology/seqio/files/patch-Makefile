@@ -1,9 +1,15 @@
---- Makefile.orig	Tue Aug 21 12:50:44 2001
-+++ Makefile	Tue Aug 21 12:51:13 2001
-@@ -12,7 +12,7 @@
- CFLAGS= -g -O2 -Wall -Wshadow
+--- Makefile.orig	Tue Jul  9 20:20:42 1996
++++ Makefile	Wed Oct 22 16:43:02 2003
+@@ -8,11 +8,10 @@
+ # just set the CC value to your compiler and make sure optimization
+ # is turned on (it significantly affects the running time).
+ #
+-CC=gcc
+-CFLAGS= -g -O2 -Wall -Wshadow
++CC?=cc
++CFLAGS?=-O -pipe
  
- 
+-
 -all: grepseq fmtseq idxseq typeseq wcseq examples
 +all: grepseq fmtseq idxseq typeseq wcseq
  
