@@ -3,7 +3,7 @@
 # Date created:		18 may 1999
 # Whom:			imura@cs.titech.ac.jp
 #
-# $Id: Makefile,v 1.2 1999/08/12 00:47:33 taoka Exp $
+# $Id: Makefile,v 1.3 1999/08/17 19:37:07 cpiazza Exp $
 #
 
 DISTNAME=	kdetoys-1.1.1
@@ -28,21 +28,14 @@ EXTRACT_AFTER_ARGS=	| ${TAR} -xf - ${DISTNAME}
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
+USE_NEWGCC=	yes
 CONFIGURE_ENV=	X_EXTRA_LIBS="-lxpg4"
 CXXFLAGS?=	${CFLAGS}
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 400004
-CC=	gcc295
-CXX=	g++295
-BUILD_DEPENDS= gcc295:${PORTSDIR}/lang/egcs
-.endif
 
 .if defined(QT_GIF_AVAILABLE)
 RESTRICTED=	requires Qt compiled with gif reading support
 .else
-BROKEN=		requires Qt compiled with gif reading support
+FORBIDDEN=	requires Qt compiled with gif reading support
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
