@@ -4,7 +4,6 @@ bin/jigdo-mirror
 %%SUB_GUI%%bin/jigdo
 share/jigdo/debian-mirrors.jigdo
 %%SUB_GUI%%share/jigdo/COPYING
-%%SUB_GUI%%man/man1/jigdo.1
 %%SUB_GUI%%share/jigdo/pixmaps/close.png
 %%SUB_GUI%%share/jigdo/pixmaps/jigdo-logo.png
 %%SUB_GUI%%share/jigdo/pixmaps/pause.png
