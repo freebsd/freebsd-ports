@@ -1,2 +1,4 @@
 bin/tkman
-man/man1/tkman.1.gz
+bin/retkman
+share/doc/tkman/tkman-help.html
+@dirrm share/doc/tkman

@@ -1,23 +1,26 @@
 # New ports collection makefile for:	tkman
-# Version required:     1.8
+# Version required:     2.0b7
 # Date created:         27 Dec 1994
-# Whom:                 thomas Gellekum <tg@freebsd.org>
+# Whom:                 Thomas Gellekum <tg@freebsd.org>
 #
-# $Id: Makefile,v 1.23 1997/04/27 00:25:19 asami Exp $
+# $Id: Makefile,v 1.24 1997/06/17 06:05:50 tg Exp $
 #
 
-DISTNAME=	tkman-1.8
-CATEGORIES=	misc tk41
-MASTER_SITES=	ftp://ftp.cs.berkeley.edu/ucb/people/phelps/tcltk/old/
+DISTNAME=	tkman-2.0b7
+CATEGORIES=	misc tk80
+MASTER_SITES=	ftp://ftp.cs.berkeley.edu/ucb/people/phelps/tcltk/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	tg@freebsd.org
 
-LIB_DEPENDS=	tk41\\.1\\.:${PORTSDIR}/x11/tk41
+LIB_DEPENDS=	tk80\\.1\\.:${PORTSDIR}/x11/tk80
 RUN_DEPENDS=	rman:${PORTSDIR}/textproc/rman \
 		glimpse:${PORTSDIR}/textproc/glimpse
 
-NO_CDROM=	"Don't sell for profit"
-MAN1=		tkman.1
+.if !defined(NOPORTDOCS)
+post-install:
+	@${MKDIR} ${PREFIX}/share/doc/tkman
+	${INSTALL_DATA} ${WRKSRC}/tkman-help.html ${PREFIX}/share/doc/tkman
+.endif
 
 .include <bsd.port.mk>
