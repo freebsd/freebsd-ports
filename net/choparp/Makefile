@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	choparp
-PORTVERSION=	971007
+PORTVERSION=	20021107
 CATEGORIES=	net
-MASTER_SITES=	http://delegate.uec.ac.jp:8081/club/mma/~tree/soft/choparp/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	choparp
 
 MAINTAINER=	ports@freebsd.org
 
 MAN8=		choparp.8
-MANCOMPRESSED=	maybe
-
-WRKSRC=		${WRKDIR}/choparp
 
 .include <bsd.port.mk>
