@@ -1,13 +1,13 @@
 # New ports collection makefile for:	popper
-# Version required:     2.4b2
+# Version required:     2.41beta1
 # Date created:		1 April 1995
 # Whom:			pst
 #
-# $Id: Makefile,v 1.18 1997/10/08 09:05:11 ache Exp $
+# $Id: Makefile,v 1.19 1997/10/09 02:39:58 pst Exp $
 #
 
-DISTNAME=       qpopper2.4b2
-PKGNAME=        qpopper-2.4b2
+DISTNAME=       qpopper2.41beta1
+PKGNAME=        qpopper-2.41b1
 CATEGORIES=	mail
 MASTER_SITES=   ftp://ftp.qualcomm.com/eudora/servers/unix/popper/
 EXTRACT_SUFX=	.tar.Z
@@ -20,9 +20,7 @@ MAINTAINER=	ache@freebsd.org
 #
 
 O_DEFS=         -DSETPROCTITLE -DKEEP_TEMP_DROP -DBSD44_DBM -DBIND43 \
-		-DAPOP='\"'${PREFIX}'/etc/popper/pop.auth\"' \
-		-DPOPUID='\"pop\"' \
-		-DNONAUTHFILE='\"/etc/ftpusers\"'
+		-DBULLDB -DNONAUTHFILE='\"/etc/ftpusers\"'
 
 .if !defined(APOP_ONLY)
 .if exists(/usr/lib/libskey.a)
@@ -33,10 +31,12 @@ O_DEFS+=        -DSKEY
 O_DEFS+=        -DAPOP_ONLY
 .endif
 
-P_LIBS+=        -lmd -lcrypt -lutil
+P_LIBS+=        -lmd -lutil
 
-GNU_CONFIGURE=  yes
-CONFIGURE_ENV+= LIBS="${P_LIBS}" O_DEFS="${O_DEFS}"
+GNU_CONFIGURE=          yes
+CONFIGURE_ARGS+=        --with-apop=${PREFIX}/etc/popper/pop.auth \
+			--with-apopuid=pop
+CONFIGURE_ENV+=         LIBS="${P_LIBS}" O_DEFS="${O_DEFS}"
 
 MAN8=   popauth.8 popper.8
 
