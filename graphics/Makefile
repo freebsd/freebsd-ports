@@ -320,6 +320,7 @@
     SUBDIR += xfractint
     SUBDIR += xgrasp
     SUBDIR += xine
+    SUBDIR += xine_d4d_plugin
     SUBDIR += xli
     SUBDIR += xmagv
     SUBDIR += xmandel

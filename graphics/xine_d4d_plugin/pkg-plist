@@ -1,0 +1,3 @@
+lib/xine/plugins/xineplug_inp_d4d.la
+lib/xine/plugins/xineplug_inp_d4d.so
+@unexec rmdir %D/lib/xine/plugins 2>/dev/null || true
