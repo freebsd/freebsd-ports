@@ -34,6 +34,12 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 SAMPLEDIR=	${PREFIX}/share/examples/${PORTNAME}
 SCRIPTDIR=	${SAMPLEDIR}
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		"Does not compile on sparc64"
+.endif
+
 # Post-patch
 #
 
@@ -81,4 +87,4 @@ display-message:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
