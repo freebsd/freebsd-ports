@@ -17,6 +17,7 @@ $FreeBSD$
  	
  	CloseIO();
 -exit:
+	;	/* dummy statment for gcc 3.4 or after */
  
    } /* endo of Big roop for smb_base candidates */
    exit (0);
