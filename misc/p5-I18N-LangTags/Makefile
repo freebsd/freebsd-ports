@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	I18N-LangTags
-PORTVERSION=	0.27
-PORTREVISION=	1
+PORTVERSION=	0.28
 CATEGORIES=	misc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	I18N
@@ -18,7 +17,6 @@ COMMENT=	Functions for dealing with RFC-1766-style language tags
 
 PERL_CONFIGURE=	YES
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		I18N::LangTags.3 I18N::LangTags::List.3
 
 .include <bsd.port.mk>
