@@ -7,7 +7,7 @@
 
 PORTNAME=	enigma
 PORTVERSION=	0.90
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://savannah.nongnu.org/download/enigma/
 MASTER_SITE_SUBDIR=	${PORTNAME}

@@ -48,7 +48,7 @@ _USE_SDL_ALL=	gfx gui image mixer mm net sdl sound ttf
 # _REQUIRES_xxx	also needs these SDL libraries
 # 
 
-_VERSION_gfx=	11
+_VERSION_gfx=	13
 _SUBDIR_gfx=	graphics
 _REQUIRES_gfx=	sdl
 
