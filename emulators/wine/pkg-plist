@@ -379,6 +379,7 @@ lib/wine/wineaudioio.drv.so
 lib/wine/wineconsole.exe.so
 lib/wine/winedbg.exe.so
 lib/wine/winedos.dll.so
+lib/wine/winedos16.dll.so
 lib/wine/winefile.exe.so
 lib/wine/winemine.exe.so
 lib/wine/winemp3.acm.so
