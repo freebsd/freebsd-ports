@@ -19,12 +19,12 @@ lib/%%PYTHON_VERSION%%/site-packages/roundup/backends/back_bsddb.pyo
 lib/%%PYTHON_VERSION%%/site-packages/roundup/backends/back_bsddb3.py
 lib/%%PYTHON_VERSION%%/site-packages/roundup/backends/back_bsddb3.pyc
 lib/%%PYTHON_VERSION%%/site-packages/roundup/backends/back_bsddb3.pyo
-lib/%%PYTHON_VERSION%%/site-packages/roundup/backends/back_gadfly.py
-lib/%%PYTHON_VERSION%%/site-packages/roundup/backends/back_gadfly.pyc
-lib/%%PYTHON_VERSION%%/site-packages/roundup/backends/back_gadfly.pyo
 lib/%%PYTHON_VERSION%%/site-packages/roundup/backends/back_metakit.py
 lib/%%PYTHON_VERSION%%/site-packages/roundup/backends/back_metakit.pyc
 lib/%%PYTHON_VERSION%%/site-packages/roundup/backends/back_metakit.pyo
+lib/%%PYTHON_VERSION%%/site-packages/roundup/backends/back_mysql.py
+lib/%%PYTHON_VERSION%%/site-packages/roundup/backends/back_mysql.pyc
+lib/%%PYTHON_VERSION%%/site-packages/roundup/backends/back_mysql.pyo
 lib/%%PYTHON_VERSION%%/site-packages/roundup/backends/back_sqlite.py
 lib/%%PYTHON_VERSION%%/site-packages/roundup/backends/back_sqlite.pyc
 lib/%%PYTHON_VERSION%%/site-packages/roundup/backends/back_sqlite.pyo
@@ -148,6 +148,12 @@ lib/%%PYTHON_VERSION%%/site-packages/roundup/mailgw.pyo
 lib/%%PYTHON_VERSION%%/site-packages/roundup/password.py
 lib/%%PYTHON_VERSION%%/site-packages/roundup/password.pyc
 lib/%%PYTHON_VERSION%%/site-packages/roundup/password.pyo
+lib/%%PYTHON_VERSION%%/site-packages/roundup/rcsv.py
+lib/%%PYTHON_VERSION%%/site-packages/roundup/rcsv.pyc
+lib/%%PYTHON_VERSION%%/site-packages/roundup/rcsv.pyo
+lib/%%PYTHON_VERSION%%/site-packages/roundup/rfc2822.py
+lib/%%PYTHON_VERSION%%/site-packages/roundup/rfc2822.pyc
+lib/%%PYTHON_VERSION%%/site-packages/roundup/rfc2822.pyo
 lib/%%PYTHON_VERSION%%/site-packages/roundup/roundupdb.py
 lib/%%PYTHON_VERSION%%/site-packages/roundup/roundupdb.pyc
 lib/%%PYTHON_VERSION%%/site-packages/roundup/roundupdb.pyo
@@ -166,54 +172,6 @@ lib/%%PYTHON_VERSION%%/site-packages/roundup/scripts/roundup_server.pyo
 lib/%%PYTHON_VERSION%%/site-packages/roundup/security.py
 lib/%%PYTHON_VERSION%%/site-packages/roundup/security.pyc
 lib/%%PYTHON_VERSION%%/site-packages/roundup/security.pyo
-lib/%%PYTHON_VERSION%%/site-packages/roundup/templates/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/roundup/templates/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/roundup/templates/__init__.pyo
-lib/%%PYTHON_VERSION%%/site-packages/roundup/templates/builder.py
-lib/%%PYTHON_VERSION%%/site-packages/roundup/templates/builder.pyc
-lib/%%PYTHON_VERSION%%/site-packages/roundup/templates/builder.pyo
-lib/%%PYTHON_VERSION%%/site-packages/roundup/templates/classic/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/roundup/templates/classic/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/roundup/templates/classic/__init__.pyo
-lib/%%PYTHON_VERSION%%/site-packages/roundup/templates/classic/config.py
-lib/%%PYTHON_VERSION%%/site-packages/roundup/templates/classic/config.pyc
-lib/%%PYTHON_VERSION%%/site-packages/roundup/templates/classic/config.pyo
-lib/%%PYTHON_VERSION%%/site-packages/roundup/templates/classic/dbinit.py
-lib/%%PYTHON_VERSION%%/site-packages/roundup/templates/classic/dbinit.pyc
-lib/%%PYTHON_VERSION%%/site-packages/roundup/templates/classic/dbinit.pyo
-lib/%%PYTHON_VERSION%%/site-packages/roundup/templates/classic/detectors/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/roundup/templates/classic/detectors/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/roundup/templates/classic/detectors/__init__.pyo
-lib/%%PYTHON_VERSION%%/site-packages/roundup/templates/classic/detectors/nosyreaction.py
-lib/%%PYTHON_VERSION%%/site-packages/roundup/templates/classic/detectors/nosyreaction.pyc
-lib/%%PYTHON_VERSION%%/site-packages/roundup/templates/classic/detectors/nosyreaction.pyo
-lib/%%PYTHON_VERSION%%/site-packages/roundup/templates/classic/detectors/statusauditor.py
-lib/%%PYTHON_VERSION%%/site-packages/roundup/templates/classic/detectors/statusauditor.pyc
-lib/%%PYTHON_VERSION%%/site-packages/roundup/templates/classic/detectors/statusauditor.pyo
-lib/%%PYTHON_VERSION%%/site-packages/roundup/templates/classic/interfaces.py
-lib/%%PYTHON_VERSION%%/site-packages/roundup/templates/classic/interfaces.pyc
-lib/%%PYTHON_VERSION%%/site-packages/roundup/templates/classic/interfaces.pyo
-lib/%%PYTHON_VERSION%%/site-packages/roundup/templates/classic_htmlbase.py
-lib/%%PYTHON_VERSION%%/site-packages/roundup/templates/classic_htmlbase.pyc
-lib/%%PYTHON_VERSION%%/site-packages/roundup/templates/classic_htmlbase.pyo
-lib/%%PYTHON_VERSION%%/site-packages/roundup/templates/minimal/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/roundup/templates/minimal/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/roundup/templates/minimal/__init__.pyo
-lib/%%PYTHON_VERSION%%/site-packages/roundup/templates/minimal/config.py
-lib/%%PYTHON_VERSION%%/site-packages/roundup/templates/minimal/config.pyc
-lib/%%PYTHON_VERSION%%/site-packages/roundup/templates/minimal/config.pyo
-lib/%%PYTHON_VERSION%%/site-packages/roundup/templates/minimal/dbinit.py
-lib/%%PYTHON_VERSION%%/site-packages/roundup/templates/minimal/dbinit.pyc
-lib/%%PYTHON_VERSION%%/site-packages/roundup/templates/minimal/dbinit.pyo
-lib/%%PYTHON_VERSION%%/site-packages/roundup/templates/minimal/detectors/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/roundup/templates/minimal/detectors/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/roundup/templates/minimal/detectors/__init__.pyo
-lib/%%PYTHON_VERSION%%/site-packages/roundup/templates/minimal/interfaces.py
-lib/%%PYTHON_VERSION%%/site-packages/roundup/templates/minimal/interfaces.pyc
-lib/%%PYTHON_VERSION%%/site-packages/roundup/templates/minimal/interfaces.pyo
-lib/%%PYTHON_VERSION%%/site-packages/roundup/templates/minimal_htmlbase.py
-lib/%%PYTHON_VERSION%%/site-packages/roundup/templates/minimal_htmlbase.pyc
-lib/%%PYTHON_VERSION%%/site-packages/roundup/templates/minimal_htmlbase.pyo
 lib/%%PYTHON_VERSION%%/site-packages/roundup/token.py
 lib/%%PYTHON_VERSION%%/site-packages/roundup/token.pyc
 lib/%%PYTHON_VERSION%%/site-packages/roundup/token.pyo
@@ -221,47 +179,65 @@ lib/%%PYTHON_VERSION%%/site-packages/roundup/version_check.py
 lib/%%PYTHON_VERSION%%/site-packages/roundup/version_check.pyc
 lib/%%PYTHON_VERSION%%/site-packages/roundup/version_check.pyo
 share/roundup/cgi-bin/roundup.cgi
-share/roundup/templates/classic/html/_generic.help
-share/roundup/templates/classic/html/_generic.index
-share/roundup/templates/classic/html/_generic.item
-share/roundup/templates/classic/html/file.index
-share/roundup/templates/classic/html/file.item
-share/roundup/templates/classic/html/home
-share/roundup/templates/classic/html/home.classlist
-share/roundup/templates/classic/html/issue.index
-share/roundup/templates/classic/html/issue.item
-share/roundup/templates/classic/html/issue.search
-share/roundup/templates/classic/html/keyword.item
-share/roundup/templates/classic/html/msg.index
-share/roundup/templates/classic/html/msg.item
-share/roundup/templates/classic/html/page
-share/roundup/templates/classic/html/query.item
+share/roundup/templates/classic/TEMPLATE-INFO.txt
+share/roundup/templates/classic/__init__.py
+share/roundup/templates/classic/config.py
+share/roundup/templates/classic/dbinit.py
+share/roundup/templates/classic/detectors/__init__.py
+share/roundup/templates/classic/detectors/messagesummary.py
+share/roundup/templates/classic/detectors/nosyreaction.py
+share/roundup/templates/classic/detectors/statusauditor.py
+share/roundup/templates/classic/detectors/userauditor.py
+share/roundup/templates/classic/html/_generic.help.html
+share/roundup/templates/classic/html/_generic.index.html
+share/roundup/templates/classic/html/_generic.item.html
+share/roundup/templates/classic/html/file.index.html
+share/roundup/templates/classic/html/file.item.html
+share/roundup/templates/classic/html/help_controls.js
+share/roundup/templates/classic/html/home.classlist.html
+share/roundup/templates/classic/html/home.html
+share/roundup/templates/classic/html/issue.index.html
+share/roundup/templates/classic/html/issue.item.html
+share/roundup/templates/classic/html/issue.search.html
+share/roundup/templates/classic/html/keyword.item.html
+share/roundup/templates/classic/html/msg.index.html
+share/roundup/templates/classic/html/msg.item.html
+share/roundup/templates/classic/html/page.html
+share/roundup/templates/classic/html/query.item.html
 share/roundup/templates/classic/html/style.css
-share/roundup/templates/classic/html/user.index
-share/roundup/templates/classic/html/user.item
-share/roundup/templates/classic/html/user.register
-share/roundup/templates/minimal/html/_generic.help
-share/roundup/templates/minimal/html/_generic.index
-share/roundup/templates/minimal/html/_generic.item
-share/roundup/templates/minimal/html/home
-share/roundup/templates/minimal/html/home.classlist
-share/roundup/templates/minimal/html/page
+share/roundup/templates/classic/html/user.forgotten.html
+share/roundup/templates/classic/html/user.index.html
+share/roundup/templates/classic/html/user.item.html
+share/roundup/templates/classic/html/user.register.html
+share/roundup/templates/classic/html/user.rego_progress.html
+share/roundup/templates/classic/htmlbase.py
+share/roundup/templates/classic/interfaces.py
+share/roundup/templates/minimal/TEMPLATE-INFO.txt
+share/roundup/templates/minimal/__init__.py
+share/roundup/templates/minimal/config.py
+share/roundup/templates/minimal/dbinit.py
+share/roundup/templates/minimal/detectors/__init__.py
+share/roundup/templates/minimal/detectors/userauditor.py
+share/roundup/templates/minimal/html/_generic.help.html
+share/roundup/templates/minimal/html/_generic.index.html
+share/roundup/templates/minimal/html/_generic.item.html
+share/roundup/templates/minimal/html/home.classlist.html
+share/roundup/templates/minimal/html/home.html
+share/roundup/templates/minimal/html/page.html
 share/roundup/templates/minimal/html/style.css
-share/roundup/templates/minimal/html/user.index
-share/roundup/templates/minimal/html/user.item
-share/roundup/templates/minimal/html/user.register
+share/roundup/templates/minimal/html/user.index.html
+share/roundup/templates/minimal/html/user.item.html
+share/roundup/templates/minimal/html/user.register.html
+share/roundup/templates/minimal/interfaces.py
 @dirrm share/roundup/templates/minimal/html
+@dirrm share/roundup/templates/minimal/detectors
 @dirrm share/roundup/templates/minimal
 @dirrm share/roundup/templates/classic/html
+@dirrm share/roundup/templates/classic/detectors
 @dirrm share/roundup/templates/classic
 @dirrm share/roundup/templates
 @dirrm share/roundup/cgi-bin
 @dirrm share/roundup
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/roundup/templates/minimal/detectors
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/roundup/templates/minimal
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/roundup/templates/classic/detectors
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/roundup/templates/classic
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/roundup/templates
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/roundup/scripts
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/roundup/cgi/ZTUtils
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/roundup/cgi/TAL
