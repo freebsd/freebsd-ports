@@ -18,6 +18,7 @@ RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww
 
 USE_X_PREFIX=	yes
+USE_GTK=	yes
 USE_IMLIB=	yes
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
