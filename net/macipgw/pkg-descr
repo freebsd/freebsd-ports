@@ -1,0 +1,5 @@
+macipgw - MacIP gateway to allow IP-access for AppleTalk-only networks
+
+MacIP is a protocol that allows the encapsulation of IP packets in AppleTalk
+packets, thus allowing Macs connected through an AppleTalk-only network
+(such as LocalTalk or Apple Remote Access) to use TCP/IP-based services.
