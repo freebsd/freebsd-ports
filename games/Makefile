@@ -1,7 +1,8 @@
-# $Id: Makefile,v 1.40 1996/10/12 00:14:34 chuckr Exp $
+# $Id: Makefile,v 1.41 1996/10/30 14:41:09 jfitz Exp $
 #
 
     SUBDIR += acm
+    SUBDIR += crossfire
     SUBDIR += gnuchess
     SUBDIR += golddig
     SUBDIR += jetpack
