@@ -35,6 +35,11 @@ applies, but it's not included here for copyright reasons.  There's
 nothing unusual about it.  In particular, the section TUNING in
 FreeBSD malloc(3) does not apply.
 
+This library uses the POSIX pthread_atfork() function which was not
+committed to -CURRENT until 10 December 2004.  See PR bin/68841 for
+further details.  To build it on older versions, first install this
+patch, which should be transparent.
+
 In addition to the library, the package contains a couple of test
 cases.  Theoretically they could be run using the FreeBSD libraries,
 but they call the legacy memalign() function, which is not provided by
