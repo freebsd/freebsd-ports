@@ -102,6 +102,7 @@
     SUBDIR += cvsstat
     SUBDIR += cvsutils
     SUBDIR += cvsweb
+    SUBDIR += cvswrap
     SUBDIR += cweb
     SUBDIR += cxref
     SUBDIR += dbregc
