@@ -1,0 +1,10 @@
+tcpstat reports certain network interface statistics (such as
+bandwidth) much like vmstat does for system statistics. It gets its
+information by either monitoring a specific interface, or by reading
+previously-saved tcpdump data from a file. It has been tested under
+Linux, Solaris, FreeBSD, NetBSD, and BSD/OS.
+
+WWW: http://www.frenchfries.net/paul/tcpstat/
+
+- George Reid
+greid@ukug.uk.freebsd.org
