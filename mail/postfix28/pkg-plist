@@ -1,29 +1,34 @@
-@unexec if cmp -s %D/etc/postfix/main.cf %D/etc/postfix/dist-main.cf; then rm -f %D/etc/postfix/main.cf; fi
-@unexec if cmp -s %D/etc/postfix/master.cf %D/etc/postfix/dist-master.cf; then rm -f %D/etc/postfix/master.cf; fi
-@unexec if cmp -s %D/etc/postfix/access %D/etc/postfix/dist-access; then rm -f %D/etc/postfix/access; fi
-@unexec if cmp -s %D/etc/postfix/aliases %D/etc/postfix/dist-aliases; then rm -f %D/etc/postfix/aliases; fi
-@unexec if cmp -s %D/etc/postfix/canonical %D/etc/postfix/dist-canonical; then rm -f %D/etc/postfix/canonical; fi
-@unexec if cmp -s %D/etc/postfix/header_checks %D/etc/postfix/dist-header_checks; then rm -f %D/etc/postfix/header_checks; fi
-@unexec if cmp -s %D/etc/postfix/relocated %D/etc/postfix/dist-relocated; then rm -f %D/etc/postfix/relocated; fi
-@unexec if cmp -s %D/etc/postfix/transport %D/etc/postfix/dist-transport; then rm -f %D/etc/postfix/transport; fi
-@unexec if cmp -s %D/etc/postfix/virtual %D/etc/postfix/dist-virtual; then rm -f %D/etc/postfix/virtual; fi
+@unexec if cmp -s %D/etc/postfix/main.cf %D/etc/postfix/dist/main.cf; then rm -f %D/etc/postfix/main.cf; fi
+@unexec if cmp -s %D/etc/postfix/master.cf %D/etc/postfix/dist/master.cf; then rm -f %D/etc/postfix/master.cf; fi
+@unexec if cmp -s %D/etc/postfix/access %D/etc/postfix/dist/access; then rm -f %D/etc/postfix/access; fi
+@unexec if cmp -s %D/etc/postfix/aliases %D/etc/postfix/dist/aliases; then rm -f %D/etc/postfix/aliases; fi
+@unexec if cmp -s %D/etc/postfix/canonical %D/etc/postfix/dist/canonical; then rm -f %D/etc/postfix/canonical; fi
+@unexec if cmp -s %D/etc/postfix/header_checks %D/etc/postfix/dist/header_checks; then rm -f %D/etc/postfix/header_checks; fi
+@unexec if cmp -s %D/etc/postfix/relocated %D/etc/postfix/dist/relocated; then rm -f %D/etc/postfix/relocated; fi
+@unexec if cmp -s %D/etc/postfix/transport %D/etc/postfix/dist/transport; then rm -f %D/etc/postfix/transport; fi
+@unexec if cmp -s %D/etc/postfix/virtual %D/etc/postfix/dist/virtual; then rm -f %D/etc/postfix/virtual; fi
+@unexec if cmp -s %D/etc/postfix/generic %D/etc/postfix/dist/generic; then rm -f %D/etc/postfix/generic; fi
 etc/postfix/LICENSE
+etc/postfix/TLS_LICENSE
 etc/postfix/main.cf.default
 etc/postfix/makedefs.out
 etc/postfix/post-install
 etc/postfix/postfix-files
 etc/postfix/postfix-script
-etc/postfix/dist-main.cf
-etc/postfix/dist-master.cf
-etc/postfix/dist-access
-etc/postfix/dist-aliases
-etc/postfix/dist-canonical
-etc/postfix/dist-header_checks
-etc/postfix/dist-relocated
-etc/postfix/dist-transport
-etc/postfix/dist-virtual
+etc/postfix/dist/main.cf
+etc/postfix/dist/master.cf
+etc/postfix/dist/access
+etc/postfix/dist/aliases
+etc/postfix/dist/canonical
+etc/postfix/dist/header_checks
+etc/postfix/dist/relocated
+etc/postfix/dist/transport
+etc/postfix/dist/virtual
+etc/postfix/dist/generic
+libexec/postfix/anvil
 libexec/postfix/bounce
 libexec/postfix/cleanup
+libexec/postfix/discard
 libexec/postfix/error
 libexec/postfix/flush
 libexec/postfix/lmtp
@@ -36,6 +41,7 @@ libexec/postfix/pipe
 libexec/postfix/proxymap
 libexec/postfix/qmgr
 libexec/postfix/qmqpd
+libexec/postfix/scache
 libexec/postfix/showq
 libexec/postfix/smtp
 libexec/postfix/smtpd
@@ -43,7 +49,7 @@ libexec/postfix/spawn
 libexec/postfix/trivial-rewrite
 libexec/postfix/verify
 libexec/postfix/virtual
-%%SUB_TLS%%libexec/postfix/tlsmgr
+libexec/postfix/tlsmgr
 sbin/postalias
 sbin/postcat
 sbin/postconf
@@ -75,6 +81,9 @@ bin/mailq
 %%PORTDOCS%%%%DOCSDIR%%/BASIC_CONFIGURATION_README.html
 %%PORTDOCS%%%%DOCSDIR%%/BUILTIN_FILTER_README
 %%PORTDOCS%%%%DOCSDIR%%/BUILTIN_FILTER_README.html
+%%PORTDOCS%%%%DOCSDIR%%/CDB_README
+%%PORTDOCS%%%%DOCSDIR%%/CONNECTION_CACHE_README
+%%PORTDOCS%%%%DOCSDIR%%/CONNECTION_CACHE_README.html
 %%PORTDOCS%%%%DOCSDIR%%/CONTENT_INSPECTION_README
 %%PORTDOCS%%%%DOCSDIR%%/CONTENT_INSPECTION_README.html
 %%PORTDOCS%%%%DOCSDIR%%/CYRUS_README.html
@@ -90,7 +99,11 @@ bin/mailq
 %%PORTDOCS%%%%DOCSDIR%%/FILTER_README.html
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.html
-%%PORTDOCS%%%%SUB_IPV6%%%%DOCSDIR%%/IPV6_README
+%%PORTDOCS%%%%DOCSDIR%%/IPV6_README
+%%PORTDOCS%%%%DOCSDIR%%/IPV6_README.html
+%%PORTDOCS%%%%DOCSDIR%%/CDB_README.html
+%%PORTDOCS%%%%DOCSDIR%%/TLS_README
+%%PORTDOCS%%%%DOCSDIR%%/TLS_README.html
 %%PORTDOCS%%%%DOCSDIR%%/LDAP_README
 %%PORTDOCS%%%%DOCSDIR%%/LDAP_README.html
 %%PORTDOCS%%%%DOCSDIR%%/LINUX_README
@@ -149,12 +162,14 @@ bin/mailq
 %%PORTDOCS%%%%DOCSDIR%%/XFORWARD_README.html
 %%PORTDOCS%%%%DOCSDIR%%/access.5.html
 %%PORTDOCS%%%%DOCSDIR%%/aliases.5.html
+%%PORTDOCS%%%%DOCSDIR%%/anvil.8.html
 %%PORTDOCS%%%%DOCSDIR%%/body_checks.5.html
 %%PORTDOCS%%%%DOCSDIR%%/bounce.8.html
 %%PORTDOCS%%%%DOCSDIR%%/canonical.5.html
 %%PORTDOCS%%%%DOCSDIR%%/cidr_table.5.html
 %%PORTDOCS%%%%DOCSDIR%%/cleanup.8.html
 %%PORTDOCS%%%%DOCSDIR%%/defer.8.html
+%%PORTDOCS%%%%DOCSDIR%%/discard.8.html
 %%PORTDOCS%%%%DOCSDIR%%/error.8.html
 %%PORTDOCS%%%%DOCSDIR%%/flush.8.html
 %%PORTDOCS%%%%DOCSDIR%%/header_checks.5.html
@@ -163,8 +178,10 @@ bin/mailq
 %%PORTDOCS%%%%DOCSDIR%%/lmtp.8.html
 %%PORTDOCS%%%%DOCSDIR%%/local.8.html
 %%PORTDOCS%%%%DOCSDIR%%/mailq.1.html
+%%PORTDOCS%%%%DOCSDIR%%/master.5.html
 %%PORTDOCS%%%%DOCSDIR%%/master.8.html
 %%PORTDOCS%%%%DOCSDIR%%/mysql_table.5.html
+%%PORTDOCS%%%%DOCSDIR%%/nisplus_table.5.html
 %%PORTDOCS%%%%DOCSDIR%%/newaliases.1.html
 %%PORTDOCS%%%%DOCSDIR%%/oqmgr.8.html
 %%PORTDOCS%%%%DOCSDIR%%/pcre_table.5.html
@@ -177,6 +194,7 @@ bin/mailq
 %%PORTDOCS%%%%DOCSDIR%%/postconf.5.html
 %%PORTDOCS%%%%DOCSDIR%%/postdrop.1.html
 %%PORTDOCS%%%%DOCSDIR%%/postfix-logo.jpg
+%%PORTDOCS%%%%DOCSDIR%%/postfix-manuals.html
 %%PORTDOCS%%%%DOCSDIR%%/postfix-power.png
 %%PORTDOCS%%%%DOCSDIR%%/postfix.1.html
 %%PORTDOCS%%%%DOCSDIR%%/postkick.1.html
@@ -194,6 +212,7 @@ bin/mailq
 %%PORTDOCS%%%%DOCSDIR%%/regexp_table.5.html
 %%PORTDOCS%%%%DOCSDIR%%/relocated.5.html
 %%PORTDOCS%%%%DOCSDIR%%/sendmail.1.html
+%%PORTDOCS%%%%DOCSDIR%%/scache.8.html
 %%PORTDOCS%%%%DOCSDIR%%/showq.8.html
 %%PORTDOCS%%%%DOCSDIR%%/smtp-sink.1.html
 %%PORTDOCS%%%%DOCSDIR%%/smtp-source.1.html
@@ -206,6 +225,9 @@ bin/mailq
 %%PORTDOCS%%%%DOCSDIR%%/verify.8.html
 %%PORTDOCS%%%%DOCSDIR%%/virtual.5.html
 %%PORTDOCS%%%%DOCSDIR%%/virtual.8.html
+%%PORTDOCS%%%%DOCSDIR%%/tlsmgr.8.html
+%%PORTDOCS%%%%DOCSDIR%%/generic.5.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm libexec/postfix
+@dirrm etc/postfix/dist
 @unexec rmdir %D/etc/postfix  2>/dev/null || true
