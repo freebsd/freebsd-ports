@@ -2,10 +2,15 @@ bin/dbmmanage
 bin/htdigest
 bin/htpasswd
 etc/apache/access.conf.default
+@exec [ ! -f %B/access.conf ] && cp %B/%f %B/access.conf
 etc/apache/httpd.conf.default
+@exec [ ! -f %B/httpd.conf ] && cp %B/%f %B/httpd.conf
 etc/apache/magic.default
+@exec [ ! -f %B/magic ] && cp %B/%f %B/magic
 etc/apache/mime.types.default
+@exec [ ! -f %B/mime.types ] && cp %B/%f %B/mime.types
 etc/apache/srm.conf.default
+@exec [ ! -f %B/srm.conf ] && cp %B/%f %B/srm.conf
 etc/rc.d/apache.sh
 include/apache/alloc.h
 include/apache/ap.h
@@ -76,6 +81,8 @@ share/doc/apache/apache_pb.gif
 @exec mkdir -p %D/www
 @exec ln -fs %B %D/www/data.default
 @unexec rm -f %D/www/data.default
+@exec [ ! -d %D/www/data ] && ln -fs %B %D/www/data
+@exec [ ! -d %D/www/cgi-bin ] && ln -fs %D/www/cgi-bin.default %D/www/cgi-bin
 share/doc/apache/index.html
 share/doc/apache/manual/LICENSE
 share/doc/apache/manual/bind.html
