@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=Apache
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	skv@FreeBSD.org
 COMMENT=	A data debugging tool for the XS programmer (under mod_perl)
 
 .if defined(WITH_MODPERL2)
@@ -23,7 +23,6 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl \
 		${SITE_PERL}/${PERL_ARCH}/Apache/Test.pm:${PORTSDIR}/www/p5-Apache-Test
 MOD_PERL=	1
 .endif
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
 
@@ -31,4 +30,15 @@ CONFIGURE_ARGS=	-httpd ${LOCALBASE}/sbin/httpd
 
 MAN3=		Apache::Peek.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Devel/Peek.pm:${PORTSDIR}/devel/p5-Devel-Peek
+.endif
+
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+post-patch:
+	@${PERL} -pi -e '$$_="" if /^test_configure\(/;' ${WRKSRC}/Makefile.PL
+
+.include <bsd.port.post.mk>
