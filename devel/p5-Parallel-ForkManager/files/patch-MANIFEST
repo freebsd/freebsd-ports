@@ -1,0 +1,10 @@
+--- MANIFEST.orig	Sat Oct 26 20:48:15 2002
++++ MANIFEST	Sat Oct 26 20:48:25 2002
+@@ -4,5 +4,5 @@
+ MANIFEST
+ Makefile.PL
+ test.pl
+-ForkManager/parallel_get.pl
+-ForkManager/callback.pl
++samples/parallel_get.pl
++samples/callback.pl
