@@ -30,6 +30,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME:S/^latex-//}
 
 CLASS_FILES=	xcolor.dtx xcolor.ins xcolor.sty
 
+IGNORE=		is already included in the teTeX distribution
+
 do-install:
 	${MKDIR} ${PREFIX}/${CLASSDIR}
 	${INSTALL_DATA} ${CLASS_FILES:S@^@${WRKSRC}/@} ${PREFIX}/${CLASSDIR}

@@ -39,6 +39,8 @@ DOC_FILES=	AUTHORS ChangeLog FILES INSTALL README TODO \
 		pgf-tu-logo.mask.jpg \
 		pgfuserguide.pdf pgfuserguide.tex
 
+IGNORE=		is already included in the teTeX distribution
+
 do-install:
 	${MKDIR} ${PREFIX}/${CLASSDIR}
 	${INSTALL_DATA} ${CLASS_FILES:S@^@${WRKSRC}/@} ${PREFIX}/${CLASSDIR}

@@ -22,6 +22,5 @@
 %%CLASSDIR%%/pgfnodes.sty
 %%CLASSDIR%%/pgfshade.sty
 %%CLASSDIR%%/xxcolor.sty
-@dirrm %%CLASSDIR%%
 @exec %%MKTEXLSR%%
 @unexec %%MKTEXLSR%%
