@@ -37,6 +37,11 @@ PLIST_SUB+=	SHLIBVER=${SHLIBVER}
 INSTALLS_SHLIB=	yes
 .endif
 
+.if defined(OPENSSL_OVERWRITE_BASE)
+PKGNAMESUFFIX=	-overwrite-base
+PREFIX=		/usr
+.endif
+
 MANPREFIX=	${PREFIX}/openssl
 
 MAN1=		CA.pl.1 asn1parse.1 ca.1 ciphers.1 crl.1 crl2pkcs7.1 dgst.1 \
