@@ -8,7 +8,8 @@
 PORTNAME=	xcoloredit
 PORTVERSION= 	1.2
 CATEGORIES=	x11
-MASTER_SITES=	ftp://ftp.eos.hokudai.ac.jp/pub/X11/R5contrib/
+MASTER_SITES=	ftp://ftp.freesoftware.com/pub/X11/R5contrib/ \
+		ftp://ftp.x.org/R5contrib/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
