@@ -6,7 +6,7 @@
 
 PORTNAME=	drift
 PORTVERSION=	2.0.r3
-CATEGORIES=	devel
+CATEGORIES=	devel haskell
 MASTER_SITES=	http://repetae.net/john/computer/haskell/DrIFT/
 DISTNAME=	DrIFT-${PORTVERSION:S/.r/rc/}
 PKGNAMEPREFIX=	hs-

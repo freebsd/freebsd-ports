@@ -6,7 +6,7 @@
 
 PORTNAME=	happy
 PORTVERSION=	1.13
-CATEGORIES=	devel
+CATEGORIES=	devel haskell
 MASTER_SITES=	http://www.haskell.org/happy/dist/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 PKGNAMEPREFIX=	hs-

@@ -7,7 +7,7 @@
 PORTNAME=	nhc98
 PORTVERSION=	1.14a
 PORTREVISION=	1
-CATEGORIES=	lang
+CATEGORIES=	lang haskell
 MASTER_SITES=	ftp://ftp.cs.york.ac.uk/pub/haskell/${PORTNAME}/
 DISTNAME=	${PORTNAME}src-${PORTVERSION}
 DIST_SUBDIR=	nhc98

@@ -7,7 +7,7 @@
 
 PORTNAME=	popenhs
 PORTVERSION=	1.00.0
-CATEGORIES=	devel
+CATEGORIES=	devel haskell
 MASTER_SITES=	http://www.haskell.org/~petersen/haskell/popenhs/
 PKGNAMEPREFIX=	hs-
 
