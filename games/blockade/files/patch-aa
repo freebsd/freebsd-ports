@@ -1,0 +1,20 @@
+--- Makefile.orig	Sat May 29 14:13:39 1999
++++ Makefile	Sat May 29 14:14:38 1999
+@@ -1,7 +1,7 @@
+ # Add -I and -L options as necessary to make it find your X stuff....
+ 
+ #DESTDIR = /opt/blockade
+-DESTDIR = /usr/local
++DESTDIR = $(PREFIX) 
+ BINDIR = $(DESTDIR)/bin
+ MANDIR = $(DESTDIR)/man/man6
+ 
+@@ -22,7 +22,7 @@
+ #LDFLAGS = -s -L/usr/lib/X11R4 -lX11
+ 
+ # Linux
+-CFLAGS = -DSYSV -I/usr/include/X11 -Wall
++CFLAGS += -I$(X11BASE)/include
+ LDFLAGS = -L/usr/X11R6/lib -lX11
+ 
+ SOUND = blockade-snd.o
