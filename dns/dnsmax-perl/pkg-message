@@ -1,0 +1,12 @@
+***************************************************************
+
+The DNSMax update client has been installed.  You will need
+a dynamic dns account from a DNSMax enabled provider.
+
+Providers:
+- www.dnsmax.com
+- www.thatip.com
+
+To set up your configuration, run dnsmax-perl
+
+***************************************************************

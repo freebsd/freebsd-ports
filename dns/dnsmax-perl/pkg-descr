@@ -1,0 +1,13 @@
+A Cross Platform DNS update client, written in perl.  DNSMax update uses the
+DNSMax protocol version 2.0 to send DNS update requests.  It manages DNS
+records, update history, and allows for per record configuration.  It also
+includes a wizard for generation of configuration files.
+
+Supported Dynamic DNS services
+http://www.thatip.com/
+http://www.dnsmax.com/
+
+WWW: http://www.dynamicdnsclient.com/perl/
+
+-Dan Smith
+ dan@algenta.com
