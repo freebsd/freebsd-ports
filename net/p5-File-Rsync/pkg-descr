@@ -1,0 +1,10 @@
+The File::Rsync Perl module is a convenience wrapper to the rsync(1)
+command.  It has wrappers for almost all the rsync commands and features,
+as well as detecting errors.
+
+For more details, type 'perldoc File::Rsync' or see the CPAN homepage:
+
+WWW: http://search.cpan.org/search?dist=File-Rsync
+
+- Pete 
+petef@databits.net
