@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pam-pgsql
-PORTVERSION=	0.3
-PORTREVISION=	1
+PORTVERSION=	0.5.1
 CATEGORIES=	security databases
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/p/pam-pgsql
@@ -15,7 +14,8 @@ DISTFILES=	${PORTNAME}_${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	mi@aldan.algebra.com
 
-LIB_DEPENDS=	pq.2:${PORTSDIR}/databases/postgresql7
+LIB_DEPENDS=	mhash:${PORTSDIR}/security/mhash \
+		pq:${PORTSDIR}/databases/postgresql7
 
 # When the family of Debian mirrors is added to bsd.port.mk,
 # this will suddenly start making sense:
