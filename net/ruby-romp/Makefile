@@ -31,7 +31,7 @@ DOCS=		romp.html
 
 post-extract:
 	${MKDIR} ${WRKSRC}/lib
-.for f in druby4.rb romp.rb
+.for f in romp.rb
 	${MV} ${WRKSRC}/${f} ${WRKSRC}/lib/
 .endfor
 	${CP} ${_DISTDIR}/romp.html ${WRKSRC}/
