@@ -26,9 +26,10 @@ MAKE_ARGS=	KTARGET=freebsd CC="${CC}" CC2="${CC}" \
 		-DBSD44 -DCK_NCURSES -DCK_NEWTERM \
 		-DTCPSOCKET -DNOCOTFMC -DFREEBSD4 -DUSE_UU_LOCK -DFNFLOAT \
 		-funsigned-char -DTPUTSARGTYPE=int -DUSE_STRERROR -DCKHTTP \
-		-DCK_SSL -DCK_AUTHENTICATION -DCK_ENCRYPTION -DCK_DES" \
+		-DCK_SSL -DCK_AUTHENTICATION -DCK_ENCRYPTION -DCK_DES \
+		-DOPENSSL_DES_LIBDES_COMPATIBILITY -DOPENSSL_097" \
 		LIBS="-L${OPENSSLLIB} \
-		-lssl -lcrypto -ldes -lncurses -lcrypt -lutil -lm"
+		-lssl -lcrypto -lncurses -lcrypt -lutil -lm"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/krbmit ${PREFIX}/bin/kermit
