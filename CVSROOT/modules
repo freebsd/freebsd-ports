@@ -1221,6 +1221,7 @@ drm-kmod	ports/graphics/drm-kmod
 drscheme	ports/lang/drscheme
 drweb		ports/security/drweb
 drweb-sendmail	ports/security/drweb-sendmail
+drwebd		ports/security/drwebd
 dset		src/sbin/dset
 dsniff		ports/security/dsniff
 dsssl-docbook-cygnus	ports/textproc/dsssl-docbook-cygnus
