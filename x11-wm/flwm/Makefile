@@ -17,6 +17,8 @@ MAINTAINER=	demon@FreeBSD.org
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
+MAKE_ENV+=	PTHREAD_LIBS=${PTHREAD_LIBS}
+
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 MAN1=		flwm.1
