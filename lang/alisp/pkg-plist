@@ -1,16 +1,30 @@
 bin/alisp
 bin/alisp_install
 bin/iai
+bin/iai-1
 bin/iai_color
 bin/iai_pfmt
 share/alisp/black.rc
 share/alisp/blue.rc
 share/alisp/default.rc
+share/alisp/default-1.rc
+share/alisp/ext/date-after-p.l
+share/alisp/ext/date-before-p.l
+share/alisp/ext/date-difference.l
 share/alisp/ext/date-to-days.l
+share/alisp/ext/date.l
+share/alisp/ext/ext-date.l
+share/alisp/ext/ext-tree.l
+share/alisp/ext/tree-assoc.l
+share/alisp/ext/tree-balance.l
+share/alisp/ext/tree-flatten.l
+share/alisp/ext/tree-insert.l
+share/alisp/ext/tree-sort.l
 share/alisp/lib/abs.l
 share/alisp/lib/alisp.l
 share/alisp/lib/any.l
 share/alisp/lib/append.l
+share/alisp/lib/apply.l
 share/alisp/lib/assoc.l
 share/alisp/lib/caaaar.l
 share/alisp/lib/caaar.l
@@ -18,10 +32,12 @@ share/alisp/lib/caar.l
 share/alisp/lib/copy.l
 share/alisp/lib/count.l
 share/alisp/lib/decr.l
+share/alisp/lib/denominator.l
 share/alisp/lib/difference.l
 share/alisp/lib/digits.l
 share/alisp/lib/divide.l
 share/alisp/lib/equal.l
+share/alisp/lib/equalize.l
 share/alisp/lib/every.l
 share/alisp/lib/expt.l
 share/alisp/lib/fac.l
@@ -43,6 +59,7 @@ share/alisp/lib/ingreaterp.l
 share/alisp/lib/inlessp.l
 share/alisp/lib/insert.l
 share/alisp/lib/integer.l
+share/alisp/lib/integerp.l
 share/alisp/lib/intersection.l
 share/alisp/lib/iota.l
 share/alisp/lib/iplus.l
@@ -83,6 +100,7 @@ share/alisp/lib/nlessp.l
 share/alisp/lib/normalize.l
 share/alisp/lib/nth.l
 share/alisp/lib/numberp.l
+share/alisp/lib/numerator.l
 share/alisp/lib/o.l
 share/alisp/lib/onep.l
 share/alisp/lib/orderedp.l
@@ -95,10 +113,25 @@ share/alisp/lib/pred.l
 share/alisp/lib/product.l
 share/alisp/lib/quicksort.l
 share/alisp/lib/quotient.l
+share/alisp/lib/rational.l
+share/alisp/lib/rationalp.l
+share/alisp/lib/rdifference.l
 share/alisp/lib/reduce.l
 share/alisp/lib/remainder.l
 share/alisp/lib/remove.l
 share/alisp/lib/reverse.l
+share/alisp/lib/rexpt.l
+share/alisp/lib/rgreaterp.l
+share/alisp/lib/rlessp.l
+share/alisp/lib/rmax.l
+share/alisp/lib/rmath.l
+share/alisp/lib/rmin.l
+share/alisp/lib/rngreaterp.l
+share/alisp/lib/rnlessp.l
+share/alisp/lib/rplus.l
+share/alisp/lib/rquotient.l
+share/alisp/lib/rsquareroot.l
+share/alisp/lib/rtimes.l
 share/alisp/lib/sassoc.l
 share/alisp/lib/some.l
 share/alisp/lib/sort.l
@@ -109,11 +142,6 @@ share/alisp/lib/succ.l
 share/alisp/lib/sum.l
 share/alisp/lib/tailp.l
 share/alisp/lib/times.l
-share/alisp/lib/tree-assoc.l
-share/alisp/lib/tree-balance.l
-share/alisp/lib/tree-flatten.l
-share/alisp/lib/tree-insert.l
-share/alisp/lib/tree-sort.l
 share/alisp/lib/union.l
 share/alisp/lib/unique.l
 share/alisp/lib/unsort.l
@@ -133,6 +161,7 @@ share/alisp/src/xeval.l
 share/alisp/white.rc
 share/doc/alisp/alisp.sd
 share/doc/alisp/helpfile
+share/doc/alisp/helpfile-1
 @dirrm share/alisp/ext
 @dirrm share/alisp/lib
 @dirrm share/alisp/src
