@@ -1,0 +1,19 @@
+*** src/hsearch.c.orig	Thu Oct 31 16:19:42 1996
+--- src/hsearch.c	Thu Oct 31 16:20:02 1996
+***************
+*** 19,25 ****
+  Cambridge, MA 02139, USA.  */
+  
+  #include "ansidecl.h"
+! #include <malloc.h>
+  #include <string.h>
+  
+  #include "search.h"
+--- 19,25 ----
+  Cambridge, MA 02139, USA.  */
+  
+  #include "ansidecl.h"
+! #include <stdlib.h>
+  #include <string.h>
+  
+  #include "search.h"

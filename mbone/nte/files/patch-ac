@@ -1,0 +1,10 @@
+--- src/www_fns.c.orig	Thu Oct 31 14:35:46 1996
++++ src/www_fns.c	Thu Oct 31 14:36:00 1996
+@@ -42,7 +42,6 @@
+ #include "ui_fns.h"
+ #include <tcl.h>
+ #include <tk.h>
+-#include <malloc.h>
+ #include <string.h>
+ #include <fcntl.h>
+ #include <errno.h>

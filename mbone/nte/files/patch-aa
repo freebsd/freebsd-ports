@@ -1,0 +1,14 @@
+--- src/search.h.orig	Wed Sep  4 03:54:13 1996
++++ src/search.h	Thu Oct 31 14:19:33 1996
+@@ -14,11 +14,6 @@
+ extern "C" {
+ #endif
+ 
+-#ifndef _SIZE_T
+-#define	_SIZE_T
+-typedef unsigned	size_t;
+-#endif
+-
+ /* HSEARCH(3C) */
+ typedef enum { FIND, ENTER } ACTION;
+ 

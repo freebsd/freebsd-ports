@@ -1,0 +1,2 @@
+all install clean:
+	cd freebsd; $(MAKE) $@
