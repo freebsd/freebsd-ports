@@ -5,11 +5,11 @@ of the RSA public key which is trusted to sign the snapshots.
 
 A sample configuration file has been installed in
 
-	/usr/local/etc/portsnap.conf.sample
+	%%PREFIX%%/etc/portsnap.conf.sample
 
 which will fetch snapshots built and signed by the author.  If you want to
 use these updates, copy that file to
 
-	/usr/local/etc/portsnap.conf
+	%%PREFIX%%/etc/portsnap.conf
 
 otherwise, create that file as appropriate.
