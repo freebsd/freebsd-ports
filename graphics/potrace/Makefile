@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	potrace
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://potrace.sourceforge.net/download/
 
@@ -15,7 +15,7 @@ COMMENT=	Transforms bitmaps into vector graphics
 
 GNU_CONFIGURE=	yes
 
-MAN1=		potrace.1
+MAN1=		potrace.1 mkbitmap.1
 
 .if defined(A4)
 CONFIGURE_ARGS+=	--enable-a4
