@@ -6,7 +6,7 @@ history so mail which is left on the POP server but deleted on the
 client is only downloaded once.  XCmail has RFC 2015-compliant
 support for encrypted mail in multipart MIME format.
 
-WWW:  http://www.fsai.fh-trier.de/~schmitzj/Xclasses/XCmail/
+WWW:  http://www.js-home.org/XCmail/
 
 Trevor Johnson
 trevor@freebsd.org
