@@ -25,6 +25,12 @@
 @exec mkdir -p %D/lib/xemacs/xemacs-packages/pkginfo
 @unexec rmdir %D/lib/xemacs/xemacs-packages/pkginfo 2>/dev/null || true
 @unexec rmdir %D/lib/xemacs/xemacs-packages 2>/dev/null || true
+@exec mkdir -p %D/lib/xemacs/site-lisp
+@unexec rmdir %D/lib/xemacs/site-lisp 2>/dev/null || true
+@exec mkdir -p %D/lib/xemacs/info
+@unexec rmdir %D/lib/xemacs/info 2>/dev/null || true
+@exec mkdir -p %D/lib/xemacs/etc
+@unexec rmdir %D/lib/xemacs/etc 2>/dev/null || true
 @exec mkdir -p /var/run/emacs/lock ; chmod 1777 /var/run/emacs/lock
 etc/rc.d/xemacs21.sh
 lib/xemacs-%%XEMACS_VER%%/etc/BETA
@@ -957,7 +963,4 @@ lib/xemacs-%%XEMACS_VER%%/lisp/xpm-button.elc
 @dirrm lib/xemacs-%%XEMACS_VER%%/etc
 @unexec rmdir %D/lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%% 2>/dev/null || true
 @unexec rmdir %D/lib/xemacs-%%XEMACS_VER%% 2>/dev/null || true
-@unexec rmdir %D/lib/xemacs/site-lisp 2>/dev/null || true
-@unexec rmdir %D/lib/xemacs/info 2>/dev/null || true
-@unexec rmdir %D/lib/xemacs/etc 2>/dev/null || true
 @unexec rmdir %D/lib/xemacs 2>/dev/null || true
