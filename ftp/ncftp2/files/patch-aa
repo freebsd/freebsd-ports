@@ -1,19 +1,19 @@
-*** Makefile.in.orig	Mon Jan 23 00:06:14 1995
---- Makefile.in	Mon Jan 23 20:47:43 1995
+*** Makefile.in.orig	Thu Oct 17 04:37:03 1996
+--- Makefile.in	Fri Oct 18 02:12:57 1996
 ***************
 *** 34,40 ****
   VPATH=@srcdir@
-  CPPFLAGS=@CPPFLAGS@ -I.
+  CPPFLAGS=-I. -I@srcdir@ @CPPFLAGS@
   
 ! LIBS=@LIBS@
-  LDFLAGS=@LDFLAGS@
+  SHARED_LDFLAGS=@LDFLAGS@
+  STATIC_LDFLAGS=@LDFLAGS@ @SLDFLAGS@
   
-  # Any -D definitions:
 --- 34,40 ----
   VPATH=@srcdir@
-  CPPFLAGS=@CPPFLAGS@ -I.
+  CPPFLAGS=-I. -I@srcdir@ @CPPFLAGS@
   
 ! LIBS= -lreadline -lncurses -lmytinfo
-  LDFLAGS=@LDFLAGS@
+  SHARED_LDFLAGS=@LDFLAGS@
+  STATIC_LDFLAGS=@LDFLAGS@ @SLDFLAGS@
   
-  # Any -D definitions:
