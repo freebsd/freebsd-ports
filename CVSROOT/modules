@@ -2075,6 +2075,7 @@ gkrellkam	ports/graphics/gkrellkam
 gkrellkam2	ports/graphics/gkrellkam2
 gkrellm		ports/sysutils/gkrellm
 gkrellm-gamma	ports/misc/gkrellm-gamma
+gkrellm-helium	ports/misc/gkrellm-helium
 gkrellm-reminder	ports/misc/gkrellm-reminder
 gkrellm-xkb	ports/misc/gkrellm-xkb
 gkrellm2	ports/sysutils/gkrellm2
