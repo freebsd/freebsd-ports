@@ -14,8 +14,10 @@ DISTNAME=	${PORTFAKENAME}-${PORTVERSION}
 MAINTAINER=	erik@smluc.org
 COMMENT=	Scheme script interpreter with multibyte character handling
 
-BUILD_DEPENDS=	gosh:${PORTSDIR}/lang/gauche
-RUN_DEPENDS=	gosh:${PORTSDIR}/lang/gauche
+BUILD_DEPENDS=	gosh:${PORTSDIR}/lang/gauche \
+		${X11BASE}/lib/X11/rgb.txt:${PORTSDIR}/x11/XFree86-4-clients
+RUN_DEPENDS=	gosh:${PORTSDIR}/lang/gauche \
+		${X11BASE}/lib/X11/rgb.txt:${PORTSDIR}/x11/XFree86-4-clients
 
 PLIST_SUB=	GAUCHE_VERSION="`gauche-config -V`"\
 		TARGET="${CONFIGURE_TARGET}"
