@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-SNPP
-PORTVERSION=	1.14
+PORTVERSION=	1.15a
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
@@ -16,8 +16,15 @@ MAINTAINER=	erwin@FreeBSD.org
 COMMENT=	Net::SNPP - Perl Simple Network Pager Protocol Client
 
 PERL_CONFIGURE=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-1.15
 
-MAN3=		Net::SNPP.3
+MAN3=		Net::SNPP.3 \
+		Net::SNPP::Server.3
+
+post-patch:
+	@${PERL} -pi -e '$$_="" if /warnings/;' \
+		${WRKSRC}/lib/Net/SNPP/Server.pm
+	@${RM} ${WRKSRC}/lib/Net/SNPP/Server.pm.orig
 
 .include <bsd.port.pre.mk>
 
