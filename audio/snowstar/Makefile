@@ -17,13 +17,15 @@ RUN_DEPENDS=	rio:${PORTSDIR}/audio/rio \
 
 NO_BUILD=	true
 NO_WRKSUBDIR=	true
+USE_REINPLACE=	true
 
 DOC_FILES=	CHANGES TODO README_Snowstar LICENSE
 
 # somehow snowstar.tcl managed to get loaded with ^M's.
 post-patch:
-	@${PERL} -pi -e "s|\r\n|\n|g ; \
-		s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/snowstar.tcl
+	@${CP} ${WRKSRC}/snowstar.tcl ${WRKSRC}/snowstar.tcl.bak
+	@${TR} -d '\r' < ${WRKSRC}/snowstar.tcl.bak | \
+		sed -e "s|%%LOCALBASE%%|${LOCALBASE}|g" > ${WRKSRC}/snowstar.tcl
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/snowstar.tcl ${PREFIX}/bin/snowstar
