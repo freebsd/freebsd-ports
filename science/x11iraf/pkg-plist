@@ -1,0 +1,12 @@
+bin/ism_wcspix.e
+bin/obmsh
+bin/resize
+bin/vximtool
+bin/xgterm
+bin/ximtool
+bin/ximtool-alt
+bin/xtapemon
+include/cdl.h
+include/cdlftn.inc
+include/cdlspp.h
+lib/libcdl.a

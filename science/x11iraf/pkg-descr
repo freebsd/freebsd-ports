@@ -1,0 +1,9 @@
+x11iraf provides graphical tools to work with IRAF, notably xgterm and XImtool.
+
+Note: IRAF = Image Reduction and Analysis Facility, a general purpose software
+system for the reduction and analysis of astronomical data.
+
+WWW: http://iraf.noao.edu
+
+-David Syphers
+dsyphers@u.washington.edu
