@@ -1,0 +1,6 @@
+bin/make-ispell-pwli
+lib/libpspell_ispell.a
+lib/libpspell_ispell.so
+lib/libpspell_ispell.so.0
+share/pspell/en-american-ispell.pwli
+share/pspell/en-ispell.pwli

@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Tue Jun 20 00:31:51 2000
++++ Makefile.in	Thu Jun 29 12:21:20 2000
+@@ -86,7 +86,7 @@
+ 
+ libpspell_ispell_la_LDFLAGS = -module -version-info 0:0:0
+ 
+-pspelldatadir = `${bindir}/pspell-config pkgdatadir`
++pspelldatadir = ${prefix}/share/pspell
+ 
+ pspelldata_DATA = *.pwli
+ 

@@ -67,6 +67,7 @@
     SUBDIR += par
     SUBDIR += perl2html
     SUBDIR += pspell
+    SUBDIR += pspell-ispell
     SUBDIR += py-mxTextTools
     SUBDIR += py-xml
     SUBDIR += rand
