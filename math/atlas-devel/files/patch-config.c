@@ -34,6 +34,15 @@
        }
     }
     return(*comp ? comp : NULL);
+@@ -2801,7 +2801,7 @@
+       else if (strstr(ln, "ia64")) la = LAIA64;
+       else if ( strstr(ln, "i686") || strstr(ln, "i586") ||
+                 strstr(ln, "i486") || strstr(ln, "i386") ||
+-                strstr(ln, "x86_64") ) la = LAX86;
++                strstr(ln, "x86_64") || strstr(ln, "amd64")  ) la = LAX86;
+    }
+    return(la);
+ }
 @@ -2840,7 +2842,10 @@
           if (!CmndOneLine(targ, "sysctl hw.model", ln))
           {
@@ -51,7 +60,7 @@
              if (strstr(ln, "Pentium Pro")) mach = IntPPRO;
 +            else if (strstr(ln, "Pentium(R) Pro")) mach = IntPPRO;
 +            else if (strstr(ln, "Pentium 4")) mach = IntP4;
-+	    else if (strstr(ln, "Pentium(R) 4")) mach = IntP4;
++            else if (strstr(ln, "Pentium(R) 4")) mach = IntP4;
              else if (strstr(ln, "Pentium III")) mach = IntPIII;
 +            else if (strstr(ln, "Pentium(R) III")) mach = IntPIII;
              else if (strstr(ln, "Pentium II ")) mach = IntPII;
@@ -70,15 +79,29 @@
           }
           break;
        default:;
-@@ -3939,6 +3952,8 @@
-       USEDEFL1 = !IsYes('y', "", "Tune the Level 1 BLAS?");
+@@ -3654,8 +3654,8 @@
     }
- 
-+   fprintf(fpout, "%s", ARCH);
-+   fclose(fpout);
-    ATL_mprintf(2, fplog, stdout,"\nCreating make include file Make.%s\n", ARCH);
-    sprintf(ln, "Make.%s", ARCH);
-    fpout = fopen(ln, "w");
+    if (THREADS) /* add ncpu to ARCH */
+    {
+-      for (i=0; ARCH[i]; i++);
+-      sprintf(ARCH+i, "_%d", ncpu);
++//      for (i=0; ARCH[i]; i++); // do not add number of cpu for ARCHNAME
++//      sprintf(ARCH+i, "_%d", ncpu); // #cpu can be different in general
+    }
+    do
+    {
+@@ -4064,9 +4063,9 @@
+    if (mach == IA64Itan || mach == IA64Itan2 )
+       fprintf(fpout, " -DATL_MAXNREG=128");
+    if (ASMD != ASM_None) fprintf(fpout, " -DATL_%s", ASMNAM[ASMD]);
+-   if (mach == AmdHammer32 && (OS != OSWinNT && OS != OSWin9x))
++   if (mach == AmdHammer32 && (OS != OSWinNT && OS != OSWin9x && OS != OSFreeBSD))
+       fprintf(fpout, " -m32");
+-   else if (mach == AmdHammer64) fprintf(fpout, " -m64");
++   else if (mach == AmdHammer64 && (OS != OSFreeBSD)) fprintf(fpout, " -m64");
+    if (mach == IA64Itan2 && strstr(CC, "icc"))
+       fprintf(fpout, " -DATL_IntelIccBugs");
+    fprintf(fpout, "\n\n");
 @@ -4080,7 +4095,7 @@
     if (THREADS)
     {
