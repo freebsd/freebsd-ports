@@ -6858,6 +6858,7 @@ ruby-blowfish	ports/security/ruby-blowfish
 ruby-bsearch	ports/devel/ruby-bsearch
 ruby-byaccr	ports/devel/ruby-byaccr
 ruby-bz2	ports/archivers/ruby-bz2
+ruby-cache	ports/devel/ruby-cache
 ruby-calendar	ports/devel/ruby-calendar
 ruby-cast_256	ports/security/ruby-cast_256
 ruby-cdb	ports/databases/ruby-cdb
