@@ -5464,6 +5464,7 @@ memtest		ports/sysutils/memtest
 memtest86	ports/sysutils/memtest86
 mencal		ports/deskutils/mencal
 menushki	ports/misc/menushki
+meqcc		ports/games/meqcc
 mergeant	ports/databases/mergeant
 mergelog	ports/www/mergelog
 merlin		ports/games/merlin
