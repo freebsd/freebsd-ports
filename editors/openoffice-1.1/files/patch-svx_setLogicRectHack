@@ -1,5 +1,6 @@
---- ../svx/source/unodraw/unoshape.cxx	4 Feb 2004 13:21:23 -0000	1.109
-+++ ../svx/source/unodraw/unoshape.cxx	20 Feb 2004 00:43:50 -0000
+#i9462#
+--- svx/source/unodraw/unoshape.cxx.orig	4 Feb 2004 13:21:23 -0000	1.109
++++ svx/source/unodraw/unoshape.cxx	20 Feb 2004 00:43:50 -0000
 @@ -1067,8 +1067,10 @@
  // XShape
  

@@ -1,9 +1,9 @@
-OpenOffice.org Build 1.1.2 Personal Install How-To
+OpenOffice.org Build 1.1.3 Personal Install How-To
 
 Written by:	Martin Blapp <mbr@freebsd.org>
 
-OpenOffice.org 1.1Beta will soon been installed in
-${PREFIX}/OpenOffice.org-1.1.2
+OpenOffice.org 1.1.3 will soon been installed in
+${PREFIX}/OpenOffice.org-1.1.3
 
 1 User installation
 -------------------
@@ -12,7 +12,7 @@ Just type "openoffice" after you have successfully
 installed the package. If there is no installed
 OO.org dir in hour homedir, you'll be prompted to
 install some files and choose a installed JDK.
-The setup installs a "OpenOffice.org1.1.0" folder
+The setup installs a "OpenOffice.org1.1.3" folder
 in your homedir.
 
 If the setup tells you there is already an installed
@@ -29,31 +29,13 @@ There are some wrappers installed for fast startup.
 Add "${PREFIX}/bin/" to your PATH and you will be able
 to use them.
 
-${PREFIX}/bin/openoffice-1.1.2
-${PREFIX}/bin/openoffice-1.1.2-sagenda
-${PREFIX}/bin/openoffice-1.1.2-scalc
-${PREFIX}/bin/openoffice-1.1.2-sdraw
-${PREFIX}/bin/openoffice-1.1.2-setup
-${PREFIX}/bin/openoffice-1.1.2-sfax
-${PREFIX}/bin/openoffice-1.1.2-simpress
-${PREFIX}/bin/openoffice-1.1.2-spadmin
-${PREFIX}/bin/openoffice-1.1.2-sweb
-${PREFIX}/bin/openoffice-1.1.2-swriter
-
-3 Setup problems (FreeBSD < 4.7-RELEASE only)
----------------------------------------------
-
-If the setup complains about a missing file "setup.ins",
-it's time to upgrade your FreeBSD system to the latest
-version. You will encounter this bug only if your OS is
-older than FreeBSD 4.7-RELEASE.
-
-4 Crashes in URL-location bar (FreeBSD < 4.7-RELEASE only)
-----------------------------------------------------------
-
-OO.org can crash if you enter a non existing path
-or URL in the location bar. To fix these crashes
-you need the following patch. You will see this
-bug only if your OS is older than FreeBSD 4.7-RELEASE.
-
-http://people.freebsd.org/~mbr/ooo/rtld-symlookup.diff
+${PREFIX}/bin/openoffice-1.1.3
+${PREFIX}/bin/openoffice-1.1.3-sagenda
+${PREFIX}/bin/openoffice-1.1.3-scalc
+${PREFIX}/bin/openoffice-1.1.3-sdraw
+${PREFIX}/bin/openoffice-1.1.3-setup
+${PREFIX}/bin/openoffice-1.1.3-sfax
+${PREFIX}/bin/openoffice-1.1.3-simpress
+${PREFIX}/bin/openoffice-1.1.3-spadmin
+${PREFIX}/bin/openoffice-1.1.3-sweb
+${PREFIX}/bin/openoffice-1.1.3-swriter
