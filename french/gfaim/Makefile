@@ -12,7 +12,7 @@ CATEGORIES=	french misc
 MASTER_SITES=	http://sheepkiller.nerim.net/ports/${PORTNAME}/ \
 		http://www.cultdeadsheep.org/FreeBSD/ports/download/distfiles/
 
-MAINTAINER=	clement@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gfaim est un logiciel de recherche de recettes de cuisine
 
 USE_X_PREFIX= 	yes
@@ -20,6 +20,11 @@ USE_GNOME=	gtk12
 
 DATADIR?=	${PREFIX}/lib/gfaim
 MAKE_ENV+=	DATADIR=${DATADIR}
+
+PLIST_FILES=	bin/gfaim bin/imprec lib/gfaim/cuisine.dat \
+		lib/gfaim/cuisine.idx
+PLIST_DIRS=	lib/gfaim
+PORTDOCS=	legal.txt lisezmoi.txt
 
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/gfaim
