@@ -1,20 +1,19 @@
 # New ports collection makefile for:	bash
-# Version required:     1.14.5
+# Version required:     1.14.6 Beta 3
 # Date created:		21 August 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.12 1995/07/19 17:44:24 ache Exp $
+# $Id: Makefile,v 1.13 1995/10/04 14:45:01 asami Exp $
 #
 
-DISTNAME=       bash-1.14.5
+PKGNAME=        bash-1.14.6b3
+DISTNAME=       bash-1.14.6.beta3
+WRKSRC=         ${WRKDIR}/bash-1.14.6
 CATEGORIES+=	shells
-MASTER_SITES=   ftp://slc2.ins.cwru.edu/pub/dist/
+MASTER_SITES=   ftp://slc2.ins.cwru.edu/pub/hidden/
 
 MAINTAINER=     ache@FreeBSD.ORG
 
-post-install:
-.if !defined(NOMANCOMPRESS)
-	gzip -9nf ${PREFIX}/man/man1/bash.1 ${PREFIX}/man/man1/bash_builtins.1
-.endif
+# Don't compress manpages or .so not works.
 
 .include <bsd.port.mk>
