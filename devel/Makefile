@@ -613,6 +613,7 @@
     SUBDIR += p5-Cache-Cache
     SUBDIR += p5-Cache-FastMmap
     SUBDIR += p5-Cache-Mmap
+    SUBDIR += p5-Cache-Simple-TimedExpiry
     SUBDIR += p5-Calendar-Simple
     SUBDIR += p5-Carp-Assert
     SUBDIR += p5-Carp-Datum
