@@ -6,12 +6,15 @@
 #
 
 PORTNAME=	rmagick
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.2.1
 CATEGORIES=	graphics ruby
-MASTER_SITES=	http://home.nc.rr.com/rmagick/
+MASTER_SITES=	http://rubyforge.org/download.php/9/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-DISTNAME=	RMagick-${PORTVERSION}
+DISTNAME=	RMagick-${PORTVERSION:R}
 DIST_SUBDIR=	ruby
+
+PATCH_SITES=	http://rubyforge.org/download.php/10/
+PATCHFILES=	RMagick-${PORTVERSION}.patch
 
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Ruby binding for ImageMagick
