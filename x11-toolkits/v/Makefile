@@ -3,7 +3,7 @@
 # Date created:         8 Feb 1998
 # Whom:                 Donald Burr <dburr@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.8 1998/11/27 09:04:50 asami Exp $
+# $Id: Makefile,v 1.9 1998/12/27 23:53:44 billf Exp $
 #
 
 DISTNAME=	v-1.19
@@ -12,6 +12,10 @@ MASTER_SITES=	ftp://ftp.ntua.gr/pub/X11/v/old/ \
 		ftp://ftp.dl.ac.uk/ccp14/ftp-mirror/programming/objectcentral/old/
 
 MAINTAINER=	dburr@FreeBSD.ORG
+
+.if ${MACHINE_ARCH} == "alpha"
+BROKEN=		compiler error in function fixup_memory_subreg
+.endif
 
 WRKSRC=		${WRKDIR}/v
 
