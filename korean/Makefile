@@ -1,10 +1,11 @@
-# $Id: Makefile,v 1.32 1999/08/24 23:04:00 sada Exp $
+# $Id: Makefile,v 1.33 1999/08/25 05:44:24 taoka Exp $
 #
 
     SUBDIR += Wnn
     SUBDIR += acroread-korfont
     SUBDIR += afterstep
     SUBDIR += ami
+    SUBDIR += bitchx
     SUBDIR += elm
     SUBDIR += engdic
     SUBDIR += ftghostscript5
