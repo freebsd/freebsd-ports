@@ -7,11 +7,12 @@
 
 PORTNAME=	bogofilter
 PORTVERSION=	0.15.7
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	matthias.andree@web.de
+MAINTAINER=	matthias.andree@gmx.de
 COMMENT=	"Fast, teachable, learning spam detector"
 
 # There is a sibling port, bogofilter-tdb, which presets different
@@ -35,6 +36,10 @@ MAN1=		bogofilter.1 bogoutil.1 bogoupgrade.1 bogolexer.1 \
 
 post-patch:
 	${REINPLACE_CMD} -e 's/^@ENABLE_XMLTO_TRUE@//' ${WRKSRC}/doc/Makefile.in
+	${REINPLACE_CMD} -e "s|/bin/bash|${LOCALBASE}/bin/bash|" \
+		${WRKSRC}/contrib/randomtrain \
+		${WRKSRC}/contrib/scramble \
+		${WRKSRC}/contrib/trainbogo.sh
 
 post-build::
 	cd ${WRKSRC} && make check SHELL=${SH}
