@@ -1,6 +1,8 @@
---- Makefile.orig	Fri Oct 29 15:18:48 1999
-+++ Makefile	Tue Jul 18 21:10:50 2000
-@@ -10,14 +10,41 @@
+--- Makefile.orig	Sat Sep 23 02:27:35 2000
++++ Makefile	Wed Jan 10 16:16:18 2001
+@@ -8,16 +8,43 @@
+ #	 c++ interface to gc.a
+ # cord/de - builds dumb editor based on cords.
  ABI_FLAG= 
 -CC=cc $(ABI_FLAG)
  HOSTCC=$(CC)
@@ -30,11 +32,11 @@
 +FreeBSD-pkg-all: fbsd-libgc.a fbsd-libleak.a
 +
 +fbsd-libgc.a:
-+	make CFLAGS="$(CFLAGS)" clean c++-t
++	make CFLAGS="$(CFLAGS)" clean all
 +	mv gc.a fbsd-libgc.a
 +
 +fbsd-libleak.a:
-+	make CFLAGS="$(LEAKFLAGS)" clean c++-nt
++	make CFLAGS="$(LEAKFLAGS)" clean all
 +	mv gc.a fbsd-libleak.a
 +
 +FreeBSD-pkg-install: FreeBSD-pkg-all
@@ -46,7 +48,7 @@
  
  # For dynamic library builds, it may be necessary to add flags to generate
  # PIC code, e.g. -fPIC on Linux.
-@@ -140,7 +167,7 @@
+@@ -155,7 +182,7 @@
      -DDONT_ADD_BYTE_AT_END -DALL_INTERIOR_POINTERS
  #   Flags for building libgc.a -- the last two are required.
  
@@ -55,7 +57,7 @@
  AR= ar
  RANLIB= ranlib
  
-@@ -204,8 +231,6 @@
+@@ -220,8 +247,6 @@
  # not time-critical anyway.
  # Set SPECIALCFLAGS to -q nodirect_code on Encore.
  
@@ -64,7 +66,7 @@
  pcr: PCR-Makefile gc_private.h gc_hdrs.h gc.h gcconfig.h mach_dep.o $(SRCS)
  	make -f PCR-Makefile depend
  	make -f PCR-Makefile
-@@ -247,6 +272,12 @@
+@@ -263,6 +288,12 @@
  	./if_mach HP_PA HPUX $(CXX) $(CXXFLAGS) -o test_cpp $(srcdir)/test_cpp.cc gc_cpp.o gc.a -ldld `./threadlibs`
  	./if_not_there test_cpp $(CXX) $(CXXFLAGS) -o test_cpp $(srcdir)/test_cpp.cc gc_cpp.o gc.a `./threadlibs`
  
@@ -77,7 +79,7 @@
  c++: gc_cpp.o $(srcdir)/gc_cpp.h test_cpp
  	rm -f dont_ar_4
  	./if_mach SPARC SUNOS5 touch dont_ar_4
-@@ -255,7 +286,6 @@
+@@ -271,7 +302,6 @@
  	./if_mach M68K AMIGA $(AR) -vrus gc.a gc_cpp.o
  	./if_not_there dont_ar_4 $(AR) ru gc.a gc_cpp.o
  	./if_not_there dont_ar_4 $(RANLIB) gc.a || cat /dev/null
