@@ -15,6 +15,8 @@ DISTNAME=	TiMidity++-${PORTVERSION}
 MAINTAINER?=	yatt@luna2.org
 COMMENT?=	Software MIDI player
 
+CONFLICTS=	timidity-0.*
+
 # If you don't have X11, type "make -DWITHOUT_X11" or uncomment this.
 #WITHOUT_X11=	yes
 
