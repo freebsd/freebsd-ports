@@ -1,0 +1,6 @@
+Mail::Procmail.pm is a Perl module that provides procmail-like
+tools that you can use to write your own mail filtering program.
+
+WWW: http://search.cpan.org/dist/Mail-Procmail/
+
+- Vanilla
