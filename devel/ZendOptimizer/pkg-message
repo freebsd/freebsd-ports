@@ -1,0 +1,12 @@
+*****************************************************************************
+
+You have installed the ZendOptimizer package.
+
+Edit %%LOCALBASE%%/etc/php.ini and add:
+
+[Zend]
+zend_optimizer.optimization_level=15
+zend_extension_ts="%%PREFIX%%/lib/php/%%EXT_DIR%%/ZendOptimizer_TS.so"
+zend_extension=""%%PREFIX%%/lib/php/%%EXT_DIR%%/ZendOptimizer.so"
+
+*****************************************************************************

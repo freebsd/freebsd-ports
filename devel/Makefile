@@ -6,6 +6,7 @@
     SUBDIR += ORBit
     SUBDIR += ORBit2
     SUBDIR += SpecTcl
+    SUBDIR += ZendOptimizer
     SUBDIR += a2dev
     SUBDIR += aap
     SUBDIR += ac-archive
