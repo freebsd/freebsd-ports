@@ -32,6 +32,84 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a77849a5-696f-11d9-ae49-000c41e2cdad">
+    <topic>mozilla -- insecure permissions for some downloaded files</topic>
+    <affects>
+      <package>
+        <name>thunderbird</name>
+	<range><lt>0.9</lt></range>
+      </package>
+      <package>
+        <name>de-linux-mozillafirebird</name>
+	<name>el-linux-mozillafirebird</name>
+        <name>firefox</name>
+        <name>ja-linux-mozillafirebird-gtk1</name>
+        <name>ja-mozillafirebird-gtk2</name>
+        <name>linux-mozillafirebird</name>
+        <name>ru-linux-mozillafirebird</name>
+        <name>zhCN-linux-mozillafirebird</name>
+        <name>zhTW-linux-mozillafirebird</name>
+	<range><lt>1.0.r2,1</lt></range>
+      </package>
+      <package>
+        <name>de-netscape7</name>
+        <name>fr-netscape7</name>
+        <name>ja-netscape7</name>
+        <name>netscape7</name>
+        <name>pt_BR-netscape7</name>
+	<range><le>7.2</le></range>
+      </package>
+      <package>
+        <name>mozilla-gtk1</name>
+        <name>linux-mozilla</name>
+        <name>linux-mozilla-devel</name>
+        <range><lt>1.7.5</lt></range>
+      </package>
+      <package>
+	<name>mozilla</name>
+	<range><lt>1.7.5,2</lt></range>
+      </package>
+      <package>
+	<!-- These package names are obsolete. -->
+        <name>de-linux-netscape</name>
+        <name>fr-linux-netscape</name>
+        <name>ja-linux-netscape</name>
+        <name>linux-netscape</name>
+        <name>linux-phoenix</name>
+        <name>mozilla+ipv6</name>
+        <name>mozilla-embedded</name>
+        <name>mozilla-firebird</name>
+        <name>mozilla-gtk2</name>
+        <name>mozilla-gtk</name>
+        <name>mozilla-thunderbird</name>
+        <name>phoenix</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>In a Mozilla bug report, Daniel Kleinsinger writes:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=251297">
+	  <p>I was comparing treatment of attachments opened directly
+	    from emails on different platforms. I discovered that Linux
+	    builds save attachments in /tmp with world readable rights.
+	    This doesn't seem like a good thing. Couldn't someone else
+	    logged onto the same machine read your attachments?</p>
+	</blockquote>
+	<p>This could expose the contents of downloaded files or email
+	  attachments to other users on a multi-user system.</p>
+      </body>
+    </description>
+    <references>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=251297</url>
+      <mlist msgid="417C19F1.2040107@ptraced.net">http://marc.theaimsgroup.com/?l=full-disclosure&amp;m=109865078103911</mlist>
+    </references>
+    <dates>
+      <discovery>2004-07-13</discovery>
+      <entry>2005-01-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0f5a2b4d-694b-11d9-a9e7-0001020eed82">
     <topic>awstats -- remote command execution vulnerability</topic>
     <affects>
