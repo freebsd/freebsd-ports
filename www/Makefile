@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.11 1996/04/01 04:04:16 asami Exp $
+# $Id: Makefile,v 1.12 1996/04/01 07:24:34 asami Exp $
 #
 
 RESTRICTED += Mosaic         # requires Motif
@@ -11,6 +11,7 @@ RESTRICTED += ashe           # requires Motif
     SUBDIR += gn
     SUBDIR += harvest
     SUBDIR += javac_netscape
+    SUBDIR += jdk
     SUBDIR += kaffe
     SUBDIR += libwww
     SUBDIR += linemode
