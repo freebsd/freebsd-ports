@@ -1,0 +1,17 @@
+bin/ldapsh
+etc/LdapConfig.pl.sample
+%%SITE_PERL%%/Net/LDAP/Config.pm
+%%SITE_PERL%%/Net/LDAP/Shell.pm
+%%SITE_PERL%%/Net/LDAP/Shell/Commands/cat.pm
+%%SITE_PERL%%/Net/LDAP/Shell/Commands/clone.pm
+%%SITE_PERL%%/Net/LDAP/Shell/Commands/edit.pm
+%%SITE_PERL%%/Net/LDAP/Shell/Commands/ls.pm
+%%SITE_PERL%%/Net/LDAP/Shell/Commands/new.pm
+%%SITE_PERL%%/Net/LDAP/Shell/Commands/rm.pm
+%%SITE_PERL%%/Net/LDAP/Shell/Commands/stub.pm
+%%SITE_PERL%%/Net/LDAP/Shell/Config.pm.example
+%%SITE_PERL%%/Net/LDAP/Shell/Desc.pm
+%%SITE_PERL%%/Net/LDAP/Shell/Schema.pm
+%%SITE_PERL%%/Net/LDAP/Shell/Util.pm
+@dirrm %%SITE_PERL%%/Net/LDAP/Shell/Commands
+@dirrm %%SITE_PERL%%/Net/LDAP/Shell

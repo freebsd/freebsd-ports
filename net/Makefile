@@ -261,6 +261,7 @@
     SUBDIR += ldapbrowser
     SUBDIR += ldapdiff
     SUBDIR += ldapsdk
+    SUBDIR += ldapsh
     SUBDIR += lft
     SUBDIR += libbt
     SUBDIR += libconnect
