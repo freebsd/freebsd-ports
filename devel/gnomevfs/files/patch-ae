@@ -1,14 +1,10 @@
---- mime-type-capplet/nautilus-mime-type-capplet.c.orig	Wed Aug  2 17:10:17 2000
-+++ mime-type-capplet/nautilus-mime-type-capplet.c	Sat Aug 12 15:17:24 2000
-@@ -29,7 +29,11 @@
- #include <ctype.h>
- #include <dirent.h>
- #include <math.h>
+--- mime-type-capplet/nautilus-mime-type-capplet.c.orig	Thu Nov  2 02:37:45 2000
++++ mime-type-capplet/nautilus-mime-type-capplet.c	Fri Nov  3 10:27:38 2000
+@@ -32,3 +32,7 @@
+ #include <sys/types.h>
 +#ifdef __FreeBSD__
 +#include <gnuregex.h>
 +#else
  #include <regex.h>
 +#endif
  #include <string.h>
- #include <sys/types.h>
- 
