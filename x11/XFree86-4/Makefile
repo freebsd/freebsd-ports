@@ -94,7 +94,7 @@ BROKEN=	"can't be compiled on this system (missing headers)"
 
 .if defined(WITH_MATROX_GXX_DRIVER)
 MGA_DRIVER_VERSION=	1_01_05beta
-MASTER_SITES+=	ftp://ftp.matrox.com/pub/mga/archive/linux/2001/beta_${MGA_DRIVER_VERSION:S/beta//}
+MASTER_SITES+=	ftp://ftp.matrox.com/pub/mga/archive/linux/2001/beta_${MGA_DRIVER_VERSION:S/beta//}/
 DISTFILES+=	mga-${MGA_DRIVER_VERSION}.tgz
 .endif # WITH_MATROX_GXX_DRIVER
 
