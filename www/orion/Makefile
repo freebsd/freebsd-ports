@@ -1,6 +1,6 @@
 # New ports collection makefile for:   orion
 # Date created:        22 December 2000
-# Whom:                Ernst de Haan <ernst@jollem.com>
+# Whom:                Ernst de Haan <znerd@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -9,17 +9,15 @@ PORTNAME=	orion
 PORTVERSION=	1.4.5
 PORTREVISION=	7
 CATEGORIES=	www java
-MASTER_SITES=	http://www.orionserver.com/mirrordownload.jsp?file= \
-		ftp://ftp.sunet.se/pub/database/utils/orionserver/ \
-		http://metaverse.euronet.nl/~ernst/ \
-		${MASTER_SITE_LOCAL} \
-		http://www.jollem.com/
+MASTER_SITES=	ftp://ftp.sunet.se/pub/database/utils/orionserver/ \
+		http://www.metaverse.nl/~ernst/ \
+		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	sobomax
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	ernst@jollem.com
+MAINTAINER=	znerd@FreeBSD.org
 
-RUN_DEPENDS=	${JAVA_HOME}/bin/java:${PORTSDIR}/java/jdk13
+BUILD_DEPENDS=	${JAVA_HOME}/bin/java:${PORTSDIR}/java/jdk13
 
 USE_ZIP=	YES
 NO_BUILD=	YES
