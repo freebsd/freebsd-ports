@@ -10,6 +10,7 @@
     SUBDIR += cbb
     SUBDIR += checkrdf
     SUBDIR += dailystrips
+    SUBDIR += dragstack
     SUBDIR += gaddr
     SUBDIR += gcal
     SUBDIR += gdeskcal
