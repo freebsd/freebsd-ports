@@ -67,7 +67,7 @@ if [ ! -d "${NWNUSERDIR}" ] ; then
 	read dummy
 fi
 
-echo "Saved games will be stored in ${NWNUSERDIR}/.nwn/saves/"
+echo "Saved games will be stored in ${NWNUSERDIR}/saves/"
 
 cd "${NWNUSERDIR}"
 
