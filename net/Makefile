@@ -314,7 +314,6 @@
     SUBDIR += nsping
     SUBDIR += nstreams
     SUBDIR += ntalk
-    SUBDIR += ntimelord
     SUBDIR += ntop
     SUBDIR += ntp
     SUBDIR += ntp-devel
