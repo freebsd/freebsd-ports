@@ -73,10 +73,13 @@ EOF
 }
 
 make_account() {
-    local u g
+    local u g gcos homeopt home
 
     u=$1
     g=$2
+    gcos=$3
+    homeopt=${4:+"-d $4"}
+
     if pw group show "${g}" >/dev/null 2>&1; then
 	echo "You already have a group \"${g}\", so I will use it."
     else
@@ -99,12 +102,29 @@ make_account() {
     else
 	echo "You need a user \"${u}\"."
 	if which -s pw && yesno "Would you like me to create it" y; then
-	    pw useradd ${u} -g ${g} -h - -d /nonexistent \
-		-s /nonexistent -c "CVSup Daemon" || exit
+	    pw useradd ${u} -g ${g} -h - ${homeopt} \
+		-s /nonexistent -c "${gcos}" || exit
 	    echo "Done."
 	else
 	    echo "Please create it, and try again."
 	    exit 1
+	fi
+    fi
+
+    if [ x"$homeopt" = x ]; then
+	eval home=~${u}
+	if [ ! -d "${home}" ]; then
+	    if yesno \
+		"Would you like me to create ${u}'s home directory (${home})" y
+	    then
+		(umask 77 && \
+		    mkdir -p ${home}/.cvsup && \
+		    touch ${home}/.cvsup/auth) || exit
+		chown -R ${u}:${g} ${home} || exit
+	    else
+		echo "Please create it, and try again."
+		exit 1
+	    fi
 	fi
     fi
 }
@@ -132,8 +152,8 @@ EOF
     fi
 
     echo ""
-    make_account ${user} ${group}
-    make_account ${cuser} ${cgroup}
+    make_account ${user} ${group} "CVSup Daemon" "/nonexistent"
+    make_account ${cuser} ${cgroup} "CVSup Client"
 
     echo "Fixing ownerships and modes in \"${base}\"."
     chown -R root:wheel ${base}
