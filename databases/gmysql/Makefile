@@ -1,12 +1,12 @@
 # New ports collection makefile for:	gmysql
-# Version required:	0.3.2
+# Version required:	0.3.3
 # Date created:		Sun Nov 15 22:07:12 CET 1998
 # Whom:			Dirk Froemberg <ibex@physik.TU-Berlin.DE>
 #
-# $Id: Makefile,v 1.12 1999/05/29 03:55:32 steve Exp $
+# $Id: Makefile,v 1.13 1999/07/01 09:06:27 dirk Exp $
 #
 
-DISTNAME=	gmysql-0.3.2
+DISTNAME=	gmysql-0.3.3
 CATEGORIES=	databases
 MASTER_SITES=	http://www.loth.demon.co.uk/gmysql/ \
 		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
@@ -21,6 +21,5 @@ GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-mysql=${PREFIX}
 CONFIGURE_ENV=	GTK_CONFIG=${GTK_CONFIG}
-FETCH_BEFORE_ARGS=	-b
 
 .include <bsd.port.mk>
