@@ -4,7 +4,6 @@ bin/dspam_clean
 bin/dspam_crc
 bin/dspam_genaliases
 bin/dspam_merge
-bin/dspam_purge
 bin/dspam_stats
 bin/dspam_corpus
 lib/libdspam.so
