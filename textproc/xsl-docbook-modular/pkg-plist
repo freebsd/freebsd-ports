@@ -271,4 +271,3 @@ share/xml/docbook/xsl/modular/xhtml/xtchunk.xsl
 @dirrm share/xml/docbook/xsl/modular
 @unexec rmdir %D/share/xml/docbook/xsl 2>/dev/null || true
 @unexec rmdir %D/share/xml/docbook 2>/dev/null || true
-@unexec rmdir %D/share/xml 2>/dev/null || true
