@@ -17,22 +17,22 @@ MASTER_SITES=	${MASTER_SITE_GNU:S/$/:fonts/} \
 		http://www.harsch.net/Download/:gdevdj \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/gnu/gs652/ \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/gnu/fonts/:fonts \
-		ftp://gatekeeper.dec.com/pub/GNU/ghostscript/:gatekeeper
+		ftp://gatekeeper.dec.com/pub/GNU/ghostscript/:gatekeeper,DEFAULT,fonts,gimp_print,hpijs
 # gatekeeper is an exception, it is the only GNU site which carries
 # some of the other files, so add it although it is listed inside
 # MASTER_SITE_GNU
 MASTER_SITE_SUBDIR=     ${PORTNAME} gimp-print/:gimp_print hpinkjet/:hpijs
 PKGNAMESUFFIX=	-gnu
-DISTFILES=	${GS_SOURCES}:DEFAULT,gatekeeper \
+DISTFILES=	${GS_SOURCES}:DEFAULT \
 		${GS_FONTS_STD}:fonts \
-		${GS_FONTS_OTHER}:fonts,gatekeeper \
+		${GS_FONTS_OTHER}:fonts \
 		${DECRYPT_PDF}:pdf \
 		${HP8XX_DRV}:gdevcd \
 		${HPDJ_SRC}:hpdj_pcl3 \
 		${PCL3_SRC}:hpdj_pcl3 \
 		${HP970_DRV}:gdevdj \
-		${GPRINT_SRC}:gatekeeper,gimp_print \
-		${HPIJS_SRC}:gatekeeper,hpijs
+		${GPRINT_SRC}:gimp_print \
+		${HPIJS_SRC}:hpijs
 DIST_SUBDIR=	ghostscript
 EXTRACT_ONLY=	${GS_SOURCES}
 
