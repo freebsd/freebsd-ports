@@ -23,6 +23,8 @@ ALL_TARGET=	lib shlib
 
 PLIST_SUB=	SHLIB_VER="${SHLIB_VER}"
 
+NO_CDROM=	"Needs a license to bundle with other products"
+
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/cpdflib.h ${PREFIX}/include/
 	${INSTALL_DATA} ${WRKSRC}/libcpdf.a ${PREFIX}/lib/
