@@ -6,7 +6,7 @@
 #
 
 PKGNAMEPREFIX?=	de-
-EAGLELANG?=	g
+EAGLELANG?=	ger
 CATEGORIES?=	german cad linux
 
 MAINTAINER=	riggs@rrr.de

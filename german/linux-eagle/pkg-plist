@@ -3,6 +3,8 @@ share/eagle/README
 share/eagle/bin/eagle
 share/eagle/bin/eagle.def
 share/eagle/bin/eagle.xpm
+share/eagle/bin/eagle_de.qm
+share/eagle/bin/qt_de.qm
 share/eagle/bin/freeware.key
 share/eagle/cam/DESCRIPTION
 share/eagle/cam/excellon.cam
@@ -266,6 +268,8 @@ share/eagle/help/321.htm
 share/eagle/help/322.htm
 share/eagle/help/323.htm
 share/eagle/help/324.htm
+share/eagle/help/326.htm
+share/eagle/help/327.htm
 share/eagle/help/325.htm
 share/eagle/help/33.htm
 share/eagle/help/34.htm
@@ -393,7 +397,6 @@ share/eagle/lbr/con-jst.lbr
 share/eagle/lbr/con-lsta.lbr
 share/eagle/lbr/con-lstb.lbr
 share/eagle/lbr/con-lumberg.lbr
-share/eagle/lbr/con-ml.lbr
 share/eagle/lbr/con-molex.lbr
 share/eagle/lbr/con-neutrik_ag.lbr
 share/eagle/lbr/con-panduit.lbr
@@ -526,6 +529,7 @@ share/eagle/lbr/v-reg.lbr
 share/eagle/lbr/varistor.lbr
 share/eagle/lbr/wafer-scale-psd.lbr
 share/eagle/lbr/wirepad.lbr
+share/eagle/lbr/wuerth-elektronik.lbr
 share/eagle/lbr/zetex.lbr
 share/eagle/lbr/zilog.lbr
 share/eagle/man/eagle.1
@@ -558,7 +562,6 @@ share/eagle/scr/fill.scr
 share/eagle/scr/menu.scr
 share/eagle/scr/mylayers.scr
 share/eagle/scr/nofill.scr
-share/eagle/scr/write.scr
 share/eagle/ulp/DESCRIPTION
 share/eagle/ulp/bom.ulp
 share/eagle/ulp/cam2dxf.ulp
@@ -568,7 +571,6 @@ share/eagle/ulp/cam2print-box-grey-quickplot.bmp
 share/eagle/ulp/cam2print.ulp
 share/eagle/ulp/change-pad-in-lbr-1.bmp
 share/eagle/ulp/change-pad-in-lbr-x.bmp
-share/eagle/ulp/change-pad-in-lbr.scr
 share/eagle/ulp/change-pad-in-lbr.ulp
 share/eagle/ulp/clear-layer-in-lbr.ulp
 share/eagle/ulp/cmd-change-class.ulp
@@ -582,6 +584,7 @@ share/eagle/ulp/cmd-showzoom.ulp
 share/eagle/ulp/cmd-snap-board.ulp
 share/eagle/ulp/cmd-snappads.ulp
 share/eagle/ulp/copy-silk-screen.ulp
+share/eagle/ulp/copy-wire-to-solder-mask.ulp
 share/eagle/ulp/count.ulp
 share/eagle/ulp/del-devices.ulp
 share/eagle/ulp/del-empty-devices.ulp
@@ -610,6 +613,8 @@ share/eagle/ulp/exp-descr-html.ulp
 share/eagle/ulp/exp-descr-script.ulp
 share/eagle/ulp/exp-project-lbr.ulp
 share/eagle/ulp/export-class.ulp
+share/eagle/ulp/fabmaster.ulp
+share/eagle/ulp/fill-via4vacuum.ulp
 share/eagle/ulp/find.ulp
 share/eagle/ulp/gluemark.ulp
 share/eagle/ulp/glueout.ulp
@@ -671,7 +676,7 @@ share/eagle/ulp/silk.ulp
 share/eagle/ulp/smash-all-sch.ulp
 share/eagle/ulp/smd-coordinate.ulp
 share/eagle/ulp/snap-on-grid-sch.ulp
-share/eagle/ulp/snap-pin-in-smbol.ulp
+share/eagle/ulp/snap-pin-in-symbol.ulp
 share/eagle/ulp/ulpmessage.ulp
 share/eagle/ulp/unidat.ulp
 share/eagle/ulp/update-packages.ulp
