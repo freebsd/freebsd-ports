@@ -7,6 +7,7 @@
 
 PORTNAME=	galeon
 PORTVERSION=	0.10.6
+PORTREVISION=	1
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		${MASTER_SITE_LOCAL:S/%SUBDIR%/sobomax/}
@@ -17,12 +18,7 @@ MAINTAINER=	gnome@FreeBSD.org
 
 BUILD_DEPENDS=	${X11BASE}/include/mozilla/gtkmozembed.h:${PORTSDIR}/www/mozilla-headers \
 		${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZILLA}
-LIB_DEPENDS=	glade.4:${PORTSDIR}/devel/libglade \
-		gconf-1.1:${PORTSDIR}/devel/gconf \
-		gnomevfs.0:${PORTSDIR}/devel/gnomevfs \
-		oaf.0:${PORTSDIR}/devel/oaf
-RUN_DEPENDS=	${X11BASE}/share/gnome/sounds/login.wav:${PORTSDIR}/audio/gnomeaudio \
-		${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZILLA}
+RUN_DEPENDS=	${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZILLA}
 
 BROKEN=		"b0rken with Mozilla-0.9.1"
 

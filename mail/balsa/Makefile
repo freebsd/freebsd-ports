@@ -7,15 +7,14 @@
 
 PORTNAME=	balsa
 PORTVERSION=	1.1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://www.theochem.kth.se/~pawsa/balsa/ \
 		ftp://ftp.newton.cx/pub/balsa/
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	PropList.2:${PORTSDIR}/devel/libPropList \
-		gtkhtml.10:${PORTSDIR}/www/gtkhtml
+LIB_DEPENDS=	PropList.2:${PORTSDIR}/devel/libPropList
 
 USE_X_PREFIX=	yes
 USE_GNOME=	yes

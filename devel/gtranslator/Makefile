@@ -7,15 +7,13 @@
 
 PORTNAME=	gtranslator
 PORTVERSION=	0.38
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel gnome
 MASTER_SITES=	http://www.gtranslator.org/download/releases/${PORTVERSION}/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sobomax@FreeBSD.org
-
-LIB_DEPENDS=	gal.7:${PORTSDIR}/x11-toolkits/gal
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	gnumeric
 PORTVERSION=	0.65
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	math gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnumeric
@@ -16,7 +16,6 @@ MAINTAINER?=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	guile.9:${PORTSDIR}/lang/guile \
 		gnomeole2.0:${PORTSDIR}/devel/libole2 \
-		gal.7:${PORTSDIR}/x11-toolkits/gal \
 		gb.0:${PORTSDIR}/lang/gnomebasic
 
 USE_X_PREFIX=	yes

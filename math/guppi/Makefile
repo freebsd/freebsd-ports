@@ -7,6 +7,7 @@
 
 PORTNAME=	guppi
 PORTVERSION=	0.35.5
+PORTREVISION=	1
 CATEGORIES=	math gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/Guppi
@@ -14,10 +15,7 @@ DISTNAME=	Guppi-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	bonobo.2:${PORTSDIR}/devel/bonobo \
-		glade.4:${PORTSDIR}/devel/libglade \
-		guile.9:${PORTSDIR}/lang/guile \
-		oaf.0:${PORTSDIR}/devel/oaf
+LIB_DEPENDS=	guile.9:${PORTSDIR}/lang/guile
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
