@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zsnes
-PORTVERSION=	1.20
+PORTVERSION=	1.26
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -34,13 +34,8 @@ BUILD_WRKSRC=	${WRKSRC}/src
 MAKEFILE=	makefile.linux
 ALL_TARGET=	ALL
 
-.include <bsd.port.pre.mk>
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/zsnes ${PREFIX}/bin/zsnes
 	${INSTALL_MAN}	${WRKSRC}/src/linux/zsnes.man ${PREFIX}/man/man1/zsnes.1
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
