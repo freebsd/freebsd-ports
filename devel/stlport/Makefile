@@ -15,6 +15,12 @@ DISTNAME=	STLport-${PORTVERSION:S/.b/-b/}
 
 MAINTAINER=	ports@FreeBSD.org
 
+.include <bsd.port.pre.mk>
+
+.if !exists(/usr/include/wchar.h)
+BROKEN=		"requires /usr/include/wchar.h for compilation"
+.endif
+
 WRKSRC=		${WRKDIR}/STLport-${PORTVERSION:S/.b/b/}/src
 MAKEFILE=	gcc.mak
 ALL_TARGET=	clean all
@@ -44,4 +50,5 @@ do-install:
 	cd ${WRKSRC}/../doc ; ${INSTALL_MAN} *.css *.html ${PREFIX}/share/doc/html/stlport
 	cd ${WRKSRC}/../doc ; ${INSTALL_MAN} images/* ${PREFIX}/share/doc/html/stlport/images
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
+
