@@ -134,7 +134,7 @@ lib/libMrm.so.0.1
 lib/libXm.so.0.1
 lib/libltc.a
 @exec /sbin/ldconfig -m %D/lib
-@dirrm lib/X11/lesstif
 @dirrm lib/X11/mwm
+@dirrm lib/config
 @dirrm include/Xm
 @dirrm include/Mrm
