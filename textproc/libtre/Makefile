@@ -15,16 +15,12 @@ DISTNAME=	tre-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A lightweight fully POSIX compliant regexp matching library
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
-RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack
-USE_REINPLACE=	yes
+USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_GETOPT_LONG=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 INSTALLS_SHLIB=	yes
 
