@@ -42,6 +42,7 @@ info/gcc.info-8
 info/gcc.info-9
 @exec install-info %D/info/cpp.info %D/info/dir
 @exec install-info %D/info/gcc.info %D/info/dir
+lib/gcc-lib/%%GNUHOST%%/2.8.1/include/float.h
 lib/gcc-lib/%%GNUHOST%%/2.8.1/include/math.h
 lib/gcc-lib/%%GNUHOST%%/2.8.1/include/syslimits.h
 lib/gcc-lib/%%GNUHOST%%/2.8.1/include/typeinfo
@@ -74,6 +75,6 @@ lib/gcc-lib/%%GNUHOST%%/2.8.1/libobjc.a
 @dirrm lib/gcc-lib/%%GNUHOST%%/2.8.1/include
 @dirrm lib/gcc-lib/%%GNUHOST%%/2.8.1
 @dirrm lib/gcc-lib/%%GNUHOST%%
-@dirrm lib/gcc-lib
+@unexec rmdir %D/lib/gcc-lib 2>/dev/null || true
 @dirrm %%GNUHOST%%/include
 @dirrm %%GNUHOST%%
