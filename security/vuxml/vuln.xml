@@ -1305,6 +1305,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <cvename>CAN-2004-0421</cvename>
       <url>http://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=120508</url>
       <url>http://rhn.redhat.com/errata/RHSA-2004-181.html</url>
+      <url>http://secunia.com/advisories/11505</url>
       <url>http://www.osvdb.org/5726</url>
       <bid>10244</bid>
     </references>
@@ -3971,6 +3972,57 @@ misc.c:
     <dates>
       <discovery>2004-07-06</discovery>
       <entry>2004-07-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="4764cfd6-d630-11d8-b479-02e0185c0b53">
+    <topic>PHP memory_limit and strip_tags() vulnerabilities</topic>
+    <affects>
+      <package>
+        <name>php4</name>
+        <name>php4-{cgi,cli,dtc,horde,nms}</name>
+        <name>mod_php4-twig</name>
+        <range><lt>4.3.8</lt></range>
+      </package>
+      <package>
+        <name>mod_php4</name>
+        <range><lt>4.3.8,1</lt></range>
+      </package>
+      <package>
+        <name>php5</name>
+        <name>php5-{cgi,cli}</name>
+        <range><lt>5.0.0</lt></range>
+      </package>
+      <package>
+        <name>mod_php5</name>
+        <range><lt>5.0.0,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Stefan Esser has reported two vulnerabilities in PHP, which can
+          be exploited by malicious people to bypass security functionality
+          or compromise a vulnerable system. An error within PHP's memory_limit
+          request termination allows remote code execution on PHP servers
+          with activated memory_limit. A binary safety problem within PHP's
+          strip_tags() function may allow injection of arbitrary tags in
+          Internet Explorer and Safari browsers.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.php.net/ChangeLog-4.php</url>
+      <url>http://www.php.net/ChangeLog-5.php</url>
+      <url>http://security.e-matters.de/advisories/112004.html</url>
+      <url>http://security.e-matters.de/advisories/122004.html</url>
+      <url>http://secunia.com/advisories/12064</url>
+      <url>http://www.osvdb.org/7870</url>
+      <url>http://www.osvdb.org/7871</url>
+      <cvename>CAN-2004-0594</cvename>
+      <cvename>CAN-2004-0595</cvename>
+    </references>
+    <dates>
+      <discovery>2007-07-07</discovery>
+      <entry>2004-07-15</entry>
     </dates>
   </vuln>
 </vuxml>
