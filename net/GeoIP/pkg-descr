@@ -1,0 +1,11 @@
+GeoIP is a C library that enables the user to find the country that any
+IP address or hostname originates from.  It uses a file based database
+that is accurate as of March 2002.  This database simply contains IP blocks
+as keys, and countries as values.  This database should be more complete and
+accurate than using reverse DNS lookups.
+
+This module can be used to automatically select the geographically closest
+mirror, to analyze your web server logs to determine the countries of your
+visitors, for credit card fraud detection, and for software export controls.
+
+WWW: http://maxmind.com/geoip/

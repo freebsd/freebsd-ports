@@ -1,0 +1,9 @@
+bin/geoiplookup
+bin/geoipupdate
+etc/GeoIP.conf.default
+include/GeoIP.h
+lib/libGeoIP.a
+lib/libGeoIP.so
+lib/libGeoIP.so.1
+share/GeoIP/GeoIP.dat
+@dirrm share/GeoIP
