@@ -12201,6 +12201,7 @@ xstarroll	ports/x11/xstarroll
 xstow		ports/sysutils/xstow
 xstroke		ports/x11/xstroke
 xsu		ports/sysutils/xsu
+xsvg		ports/graphics/xsvg
 xsysinfo	ports/sysutils/xsysinfo
 xsysstats	ports/sysutils/xsysstats
 xsystem35	ports/emulators/xsystem35
