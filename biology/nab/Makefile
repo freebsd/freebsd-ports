@@ -6,24 +6,28 @@
 #
 
 PORTNAME=	nab
-PORTVERSION=	4.4
+PORTVERSION=	4.5.1
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.scripps.edu/pub/case/ \
 		http://www.scripps.edu/case/
 
 MAINTAINER=	bdodson@scms.utmb.edu
-COMMENT=	This is nab (nucleic acid builder), a language for macromolecules
+COMMENT=	\
+ "This is nab (nucleic acid builder), a language for macromolecules"
+
+BUILD_DEPENDS=	ucpp:${PORTSDIR}/devel/ucpp
+
+ONLY_FOR_ARCHS= i386
 
 MAKE_ENV+=	NABHOME=${WRKSRC} ARCH= PATH=${WRKSRC}/bin:${PATH}
 
-USE_BISON=	yes
 MAN1=		nab.1
 MANCOMPRESSED=	yes
 USE_REINPLACE=	yes
 
 BINARIES=	matextract      matmul          teLeap          tss_main \
 		matgen          nab             transform       tss_next \
-		matmerge        nab2c           tss_init        ucpp
+		matmerge        nab2c           tss_init
 
 LIBRARIES=	cifparse.a      libnab.a        libsym.a
 
@@ -44,18 +48,18 @@ pre-install:
 		${SETENV} PREFIX=${PREFIX} ${MAKE} beforerealinstall
 
 do-install:
-	@-mkdir -p ${PREFIX}/share/nab
-	@-mkdir -p ${PREFIX}/share/nab/bin
-	@-mkdir -p ${PREFIX}/share/nab/include
-	@-mkdir -p ${PREFIX}/share/nab/lib
+	@-${MKDIR} ${PREFIX}/share/nab
+	@-${MKDIR} ${PREFIX}/share/nab/bin
+	@-${MKDIR} ${PREFIX}/share/nab/include
+	@-${MKDIR} ${PREFIX}/share/nab/lib
 .if !defined(NOPORTDOCS)
-	@cd ${WRKSRC} && (tar cf - examples test peptide suppose | \
-		(cd ${PREFIX}/share/nab; tar xf -))
-	@-mkdir -p ${PREFIX}/share/doc/nab
+	@cd ${WRKSRC} && (${TAR} cf - examples test peptide suppose | \
+		(cd ${PREFIX}/share/nab; ${TAR} xf -))
+	@-${MKDIR} ${PREFIX}/share/doc/nab
 	${INSTALL_MAN} ${WRKSRC}/doc/NAB.pdf ${PREFIX}/share/doc/nab
 .endif
-	@cd ${WRKSRC} && (tar cf - dgdb reslib fd_data | \
-		(cd ${PREFIX}/share/nab; tar xf -))
+	@cd ${WRKSRC} && (${TAR} cf - dgdb reslib fd_data | \
+		(cd ${PREFIX}/share/nab; ${TAR} xf -))
 	@(cd ${PREFIX}/share; ${CHOWN} -R ${SHAREOWN}:${SHAREGRP} nab; \
 		${CHMOD} -R ugo+rX-w nab)
 	@-(cd ${PREFIX}/share/nab && ${LN} -sf ../NDB coords)

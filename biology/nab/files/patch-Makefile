@@ -1,0 +1,40 @@
+--- Makefile.orig	Mon Oct 23 20:33:23 2000
++++ Makefile	Wed Feb 12 16:33:42 2003
+@@ -1,15 +1,15 @@
+ #   top-level Makefile for the NAB suite of programs
+ 
++all: compiler test
+ compiler:
+ 	-mkdir bin lib include
+-	(cd ucpp-0.7; make install )
+ 	(cd cifparse; make install )
+ 	(cd src; make install )
+ 	(cd nss; make install )
+ 	(cd tleap; make install )
+-	@echo
+-	@echo "completed installation of NAB version 4"
+-	@echo
++#	@echo
++#	@echo "completed installation of NAB version 4"
++#	@echo
+ 
+ #   note:  "make test" needs to follow "make", since it is very hard to
+ #          tell if the compiler is completely "made" or not.
+@@ -18,17 +18,14 @@
+ 	(cd nss; make test )
+ 
+ clean:
+-	(cd ucpp-0.7; make clean )
+ 	(cd cifparse; make clean )
+ 	(cd src; make clean )
+ 	(cd nss; make clean )
+ 	(cd tleap; make clean )
+ 	
+ uninstall:
+-	(cd ucpp-0.7; make uninstall )
+ 	(cd cifparse; make uninstall )
+ 	(cd src; make uninstall )
+ 	(cd nss; make uninstall )
+ 	(cd tleap; make uninstall )
+ 	-/bin/rm config.h
+-	
