@@ -16,7 +16,8 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	gnomeui-2.0:${PORTSDIR}/x11-toolkits/libgnomeui \
-		gnomeprint-2.0:${PORTSDIR}/print/libgnomeprint
+		gnomeprint-2.0:${PORTSDIR}/print/libgnomeprint \
+		rsvg-2.2:${PORTSDIR}/graphics/librsvg2
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
