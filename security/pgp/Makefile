@@ -5,7 +5,7 @@
 # Date created:         8 Jul 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.19 1997/02/02 21:45:31 ache Exp $
+# $Id: Makefile,v 1.20 1997/08/27 13:06:01 ache Exp $
 #
 
 # Pick an initial default, else it doesn't get set in the INDEX.
@@ -54,7 +54,7 @@ EXTRACT_SUFX=   .zip
 WRKSRC=         ${WRKDIR}/src
 BUILD_DEPENDS+= gmake:${PORTSDIR}/devel/gmake
 BUILD_DEPENDS+= unzip:${PORTSDIR}/archivers/unzip
-LIB_DEPENDS+=   rsaref\\.2\\.0:${PORTSDIR}/security/rsaref
+LIB_DEPENDS+=   rsaref.2:${PORTSDIR}/security/rsaref
 EXTRACT_CMD=    unzip
 EXTRACT_ARGS=   -q
 FILESDIR=       ${.CURDIR}/files.usa

@@ -3,7 +3,7 @@
 # Date created:		Mar 29, 1998
 # Whom:			issei@jp.FreeBSD.ORG
 #
-# $Id: Makefile,v 1.2 1998/06/04 03:58:04 vanilla Exp $
+# $Id: Makefile,v 1.3 1998/08/26 09:14:48 vanilla Exp $
 
 DISTNAME=		SSLtelnet-0.11
 CATEGORIES=		net security
@@ -20,7 +20,7 @@ pre-fetch:
 	@false
 .elif defined(USA_RESIDENT)
 .if ${USA_RESIDENT} == YES
-LIB_DEPENDS=		rsaref\\.2\\.:${PORTSDIR}/security/rsaref
+LIB_DEPENDS=		rsaref.2:${PORTSDIR}/security/rsaref
 
 pre-configure:
 	${PATCH} ${PATCH_DIST_ARGS} < ${FILESDIR}/Makefile.patch
