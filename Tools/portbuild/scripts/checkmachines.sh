@@ -1,6 +1,6 @@
 #!/bin/sh
 
-s=/a/asami/portbuild/scripts/checkmachines
+s=/var/portbuild/scripts/checkmachines
 
 if [ -x $s ]; then
   $s &

@@ -2,11 +2,11 @@
 
 if [ "$1" != "start" ]; then exit; fi
 
-b=/a/asami/portbuild
-s=$b/scripts/reportload
+pb=/var/portbuild
+s=$pb/scripts/reportload
 
 echo -n ' chroot'
-rm -rf $b/*/chroot/*
+rm -rf $pb/*/chroot/*
 
 if [ -x $s ]; then
   $s &

@@ -1,10 +1,9 @@
 #!/bin/sh
 
 # configurable variables
-rhost=ftp.freebsd.org
-ruser=asami
-rdir=w/ports/i386/tmp
-pb=/a/asami/portbuild
+pb=/var/portbuild
+
+. ${pb}/portbuild.conf
 
 lock=${pb}/cppackages.lock
 
@@ -28,7 +27,7 @@ fi
 touch ${lock}
 
 cd $pb
-tar -cf - $1/packages | ssh $rhost -l $ruser tar -C $rdir -xvf - 2>&1 | tail -100
+tar -cf - $1/packages | ssh $ftpsite -l $user tar -C $packagedir -xvf - 2>&1 | tail -100
 
 echo "Ended at $(date)"
 

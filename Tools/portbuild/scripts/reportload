@@ -1,14 +1,18 @@
 #!/bin/sh
 
+# configurable variables
+pb=/var/portbuild
+
+. ${pb}/portbuild.conf
+
 me=$(hostname -s)
-master=bento
-buildroot=/a/asami/portbuild
+tmpfile=${pb}/${me}
 
 while true; do
-  num=$(echo $(ls -1d ${buildroot}/*/chroot/*/used 2>/dev/null| wc -l))
-  echo -n "$num " > /tmp/${me}
-  uptime >> /tmp/${me}
-  /usr/local/bin/scp -q /tmp/${me} $master:${buildroot}/loads/
-  rm -f /tmp/${me}
+  num=$(echo $(ls -1d ${pb}/*/chroot/*/used 2>/dev/null| wc -l))
+  echo -n "$num " > ${tmpfile}
+  uptime >> ${tmpfile}
+  scp -q ${tmpfile} $master:${pb}/loads/
+  rm -f ${tmpfile}
   sleep 5
 done
