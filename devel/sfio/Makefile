@@ -3,7 +3,7 @@
 # Date created: 	8 November 1997
 # Whom:			jraynard
 #
-# $Id: Makefile,v 1.1.1.1 1997/11/09 10:32:51 jraynard Exp $
+# $Id: Makefile,v 1.2 1997/11/10 09:13:28 asami Exp $
 #
 
 DISTNAME=	sfio97
@@ -17,6 +17,8 @@ MAINTAINER=	jraynard@freebsd.org
 NO_WRKSUBDIR=	yes
 IS_INTERACTIVE=	yes
 MAN3=		sfio.3 sfdisc.3
+
+RESTRICTED=	Requires user to register with AT&T.
 
 do-fetch:
 	@if [ ! -f ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ]; then \
