@@ -591,6 +591,7 @@
     SUBDIR += zope-guf
     SUBDIR += zope-parsedxml
     SUBDIR += zope-proxyindex
+    SUBDIR += zope-silva
     SUBDIR += zope-silvaviews
     SUBDIR += zope-xmlwidgets
     SUBDIR += zope-zmysqlda
