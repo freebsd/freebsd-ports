@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rrdtool
-PORTVERSION=	1.0.47
+PORTVERSION=	1.0.48
 CATEGORIES=	net
 MASTER_SITES=	http://people.ee.ethz.ch/~oetiker/webtools/rrdtool/pub/
 
@@ -43,7 +43,7 @@ CONFIGURE_ARGS+=	--with-latin2
 .endif
 
 .if ${ARCH} == "amd64"
-BROKEN=		"Does not build on amd64 (needs to build shared libraries with -fPIC)"
+CONFIGURE_ARGS+=--with-pic
 .endif
 
 pre-extract:
