@@ -17,6 +17,8 @@ COMMENT=	An Apache module that provides PUT and DELETE methods
 USE_APACHE=	yes
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
+CONFLICTS=	apache-contrib-1.*
+
 do-build:
 	cd ${WRKSRC} && ${LOCALBASE}/sbin/apxs -c ${PORTNAME}.c
 

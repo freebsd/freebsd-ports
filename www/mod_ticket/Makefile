@@ -18,6 +18,8 @@ COMMENT=	Apache module for a digitally signed ticket in URL
 
 USE_APACHE=	yes
 
+CONFLICTS=	apache-contrib-1.*
+
 do-extract:
 	${MKDIR} ${WRKSRC}
 	${CP} ${DISTDIR}/${DISTFILES} ${WRKSRC}

@@ -20,6 +20,8 @@ COMMENT=	Bandwidth management module for the Apache webserver
 USE_APACHE=	YES
 USE_PERL5=	YES
 
+CONFLICTS=	apache-contrib-1.*
+
 do-build:
 	@(cd ${WRKSRC} && ${APXS} -c ${PORTNAME}.c)
 
