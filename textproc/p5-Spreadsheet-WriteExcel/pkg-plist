@@ -33,6 +33,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/win32ole.gif
 %%PORTDOCS%%%%EXAMPLESDIR%%/README
 %%PORTDOCS%%%%EXAMPLESDIR%%/bigfile.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/bug_report.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/cgi.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/chess.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/colors.pl
