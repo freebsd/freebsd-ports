@@ -18,7 +18,7 @@ MAINTAINER=	mikeh@FreeBSD.org
 BROKEN=		"Must manually install ports/devel/autoconf"
 BUILD_DEPENDS+=	autoconf:${PORTSDIR}/devel/autoconf
 
-LIB_DEPENDS=	forms.0:${PORTSDIR}/x11-toolkits/xforms \
+LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms \
 		gdbm.2:${PORTSDIR}/databases/gdbm
 
 USE_AUTOMAKE_VER=	15
