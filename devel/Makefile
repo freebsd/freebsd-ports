@@ -338,6 +338,7 @@
     SUBDIR += objprelink
     SUBDIR += ocamlweb
     SUBDIR += omniORB
+    SUBDIR += openzz
     SUBDIR += orbitcpp
     SUBDIR += p4.el
     SUBDIR += p4db

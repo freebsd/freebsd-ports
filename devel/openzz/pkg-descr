@@ -1,0 +1,6 @@
+OpenZz is a dynamic parser which allows its grammar to be extended by
+commands written in its own Zz language. Due to the interpreted and
+dynamic nature of the parser OpenZz can be used to develop both fast
+language prototypes and full compilers.
+
+WWW: http://openzz.sourceforge.net/

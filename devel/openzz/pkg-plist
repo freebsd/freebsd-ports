@@ -1,0 +1,8 @@
+bin/ozz
+include/ozz/zz.h
+include/ozz/zzbind.h
+@dirrm include/ozz
+lib/libozz.a
+lib/libozz.la
+lib/libozz.so
+lib/libozz.so.1
