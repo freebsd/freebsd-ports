@@ -50,6 +50,7 @@ while [ "$1" ]; do
 		;;
 	\"SNMP\")
 		echo CONFIGURE_ARGS+=--enable-snmp
+		echo 'LIB_DEPENDS+=snmp.4:${PORTSDIR}/net/net-snmp4:install'
 		;;
 	\"TCP-ZEBRA\")
 		echo CONFIGURE_ARGS+=--enable-tcp-zebra
