@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mpc
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	musicpd
@@ -14,7 +14,6 @@ MASTER_SITE_SUBDIR=	musicpd
 MAINTAINER=	ports@mark.reidel.info
 COMMENT=	Command line client for the musicpd
 
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
