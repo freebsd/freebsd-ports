@@ -7,7 +7,7 @@
 -#define DEF_SMB_CONF  "/etc/smb.conf"
 -#define DEF_RESTART  "/etc/rc.d/init.d/smb restart"
 +#define DEF_SMB_CONF  "%%LOCALBASE%%/etc/smb.conf"
-+#define DEF_RESTART  ""
++#define DEF_RESTART  "%%LOCALBASE%%/etc/rc.d/samba.sh stop && %%LOCALBASE%%/etc/rc.d/samba.sh start"
  
  static GtkWidget *pbox=NULL;
  static GtkWidget *conf_entry=NULL;
