@@ -21,7 +21,7 @@ LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd \
 		freetype.9:${PORTSDIR}/print/freetype2
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
-
+CONFLICTS=	slffea-* swi-pl-*
 USE_XLIB=	yes
 ALL_TARGET=	${PORTNAME}
 
