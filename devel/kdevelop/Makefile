@@ -53,9 +53,9 @@ LIBVER="${SOMAJOR}"
 PLIST_SUB+=	LIBVER="${LIBVER}"
 
 pre-patch:
-.if !defined(USE_OPTIONAL_RUNDEPENDS)
+.if !defined(USE_OPTIONAL_DEPENDS)
 	@${ECHO}
-	@${ECHO} "You may define USE_OPTIONAL_RUNDEPENDS (make USE_OPTIONAL_RUNDEPENDS=YES)"
+	@${ECHO} "You may define USE_OPTIONAL_DEPENDS (make USE_OPTIONAL_DEPENDS=YES)"
 	@${ECHO} "to automatically build the suggested programs to compliment kdevelop."
 	@${ECHO}
 	@sleep 1
