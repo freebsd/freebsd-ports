@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	courier
-PORTVERSION=	0.39.1
+PORTVERSION=	0.39.3
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	courier
@@ -194,6 +194,7 @@ post-install:
 	done
 	@${CHOWN} -Rh ${MANOWN}:${MANGRP} ${MANPREFIX}/man/man[1-9ln]
 	@${CHOWN} -Rh ${SHAREOWN}:${SHAREGRP} ${DATADIR}
+	@${CHMOD} -R a+r ${DATADIR}/courierwebadmin
 	@${CHMOD} -R a-w ${DATADIR}
 	@${ECHO} ""
 	@${CAT} ${PKGMESSAGE}

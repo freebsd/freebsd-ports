@@ -58,7 +58,7 @@ OWNER0=	bin/courier-config \
 	libexec/filters/dupfilter \
 	libexec/filters/perlfilter \
 	sbin/courier \
+	sbin/courierlogger \
 	sbin/couriertcpd \
-	sbin/logger \
 	sbin/showconfig \
 	sbin/userdbpw

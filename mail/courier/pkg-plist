@@ -179,6 +179,7 @@ sbin/courier
 sbin/courieresmtpd
 sbin/courierfilter
 %%SUB_LDAP%%sbin/courierldapaliasd
+sbin/courierlogger
 sbin/couriertcpd
 sbin/esmtpd
 sbin/esmtpd-msa
@@ -186,7 +187,6 @@ sbin/esmtpd-ssl
 sbin/filterctl
 sbin/imapd
 sbin/imapd-ssl
-sbin/logger
 sbin/makeacceptmailfor
 sbin/makealiases
 sbin/makehosteddomains
@@ -643,8 +643,8 @@ share/courier/webgpg
 %%PORTDOCS%%share/doc/courier/html/dupfilter.html
 %%PORTDOCS%%share/doc/courier/html/esmtp.html
 %%PORTDOCS%%share/doc/courier/html/esmtpd.html
-%%PORTDOCS%%share/doc/courier/html/favicon.ico
 %%PORTDOCS%%share/doc/courier/html/history.html
+%%PORTDOCS%%share/doc/courier/html/icon.gif
 %%PORTDOCS%%share/doc/courier/html/imapd.html
 %%PORTDOCS%%share/doc/courier/html/index.html
 %%PORTDOCS%%share/doc/courier/html/install.html
