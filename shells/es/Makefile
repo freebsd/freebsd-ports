@@ -22,4 +22,10 @@ ALL_TARGET=	es
 MAN1=		es.1
 PLIST_FILES=	bin/es
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not compile on amd64"
+.endif
+
+.include <bsd.port.post.mk>
