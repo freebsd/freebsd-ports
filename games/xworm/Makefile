@@ -3,12 +3,12 @@
 # Date created:				18 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/07/04 19:31:54 steve Exp $
 #
 
 DISTNAME=	xworm102
 PKGNAME=	xworm-1.02
-CATEGORIES=	games x11
+CATEGORIES=	games
 MASTER_SITES=	http://www.ekran.no/archive/x/
 
 MAINTAINER=	andy@icc.surw.chel.su
