@@ -1,6 +1,6 @@
 lib/%%SHLIB_NAME%%
 lib/%%SHLIB_LINK%%
-lib/libTrfstub83.a
+lib/libTrfstub%%TCL_DVER%%.a
 lib/Trf/pkgIndex.tcl
 include/trfDecls.h
 include/transform.h
