@@ -1,9 +1,9 @@
 # New ports collection makefile for:	zsh
-# Version required:     2.6 beta7
-# Date created:		11 Feb. 1995
-# Whom:			torstenb
+# Version required:     	2.6 beta7
+# Date created:			11 Feb. 1995
+# Whom:				torstenb
 #
-# $Id: Makefile,v 1.6 1995/04/17 19:19:20 asami Exp $
+# $Id: Makefile,v 1.7 1995/04/30 12:07:46 gpalmer Exp $
 #
 
 DISTNAME=       zsh-2.6-beta7
