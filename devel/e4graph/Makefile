@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	e4graph
-PORTVERSION=	1.0a8
-PORTREVISION=	1
+PORTVERSION=	1.0a9
 CATEGORIES=	devel tcl84
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -35,10 +34,19 @@ MAKEFILE=	makefile
 INSTALLS_SHLIB=	yes
 PLIST_SUB=	TCL_VER="${TCL_VER}"
 
+.if defined(WITH_PYTHON)
+USE_PYTHON=	yes
+CONFIGURE_ARGS+=	--enable-python
+PLIST_SUB+=	PYTHON=""
+.else
+PLIST_SUB+=	PYTHON="@comment "
+.endif
+
 TCL_VER?=	8.4
 TCLVND=		${TCL_VER:S/.//}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|=-O$$|="$${CFLAGS}"|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|=-O$$|="$${CFLAGS}"|g ; \
+		 s|gcc -shared|$$(CC) -shared|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
