@@ -26,14 +26,26 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 
 DOC_FILES=	CHANGES COPYING README
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 500112
+BROKEN=         "errors in linking"
+USE_GCC=	2.95
+.endif
+
 post-patch:
-.for ii in Makefile.in PluginLink.sh
+.for ii in Makefile.in PluginLink.sh SpiralSound/Output.h
 	${MV} ${WRKSRC}/${ii} ${WRKSRC}/${ii}.orig
 	${SED} -e 's|-O3|${PTHREAD_CFLAGS}|g ; \
+			s|CC	=|CC?	=|g ; \
 			s|CFLAGS =|CFLAGS +=|g ; \
+			s|CXX	=|CXX?	=|g ; \
 			s|CXXFLAGS=|CXXFLAGS+=|g ; \
+			s|LINK	=	g++|LINK	=	${CXX}|g ; \
 			s|-lm|${PTHREAD_LIBS} -lm|g ; \
-			s|/usr/X11R6|${X11BASE}|g' < ${WRKSRC}/${ii}.orig \
+			s|/usr/X11R6|${X11BASE}|g ; \
+			s|machine/soundcard|sys/soundcard|g' \
+			< ${WRKSRC}/${ii}.orig \
 			> ${WRKSRC}/${ii}
 .endfor
 # Use as a plugin to SpiralLoops 2.0.0 results in "Can't open audio driver."
@@ -73,4 +85,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
