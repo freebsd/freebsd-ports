@@ -165,8 +165,7 @@
 # to be installed.
 
 PORTNAME=	mplayer
-PORTVERSION=	0.90.0.110
-PORTREVISION=	4
+PORTVERSION=	0.92.0
 CATEGORIES=	multimedia audio ipv6
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		http://www2.mplayerhq.hu/MPlayer/releases/ \
@@ -178,10 +177,10 @@ MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		ftp://ftp.lug.udel.edu/MPlayer/releases/ \
 		ftp://mirrors.xmission.com/MPlayer/releases/ \
 		http://www.rrr.de/~riggs/mplayer/
-DISTNAME=	MPlayer-0.90
+DISTNAME=	MPlayer-0.92
 
 PATCH_SITES=	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/kame/misc/&,}
-PATCHFILES=	mplayer-0.9.0-v6-20030430.diff.gz
+PATCHFILES=	mplayer-0.9.1-v6-20030825.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	riggs@rrr.de
@@ -517,7 +516,9 @@ pre-everything::
 	@${ECHO_MSG} "builds MPlayer with GUI support."
 
 .if defined(WITH_GUI)
-	@${ECHO_MSG} "You can download official skin collections from"
+	@${ECHO_MSG} "If you want to use the GUI, you can either install"
+	@${ECHO_MSG} "${PORTSDIR}/multimedia/mplayer-skins"
+	@${ECHO_MSG} "or download official skin collections from"
 	@${ECHO_MSG} "http://www.mplayerhq.hu/homepage/dload.html"
 .endif
 
