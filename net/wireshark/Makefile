@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ethereal
-PORTVERSION=	0.8.14
+PORTVERSION=	0.8.15
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.ethereal.com/pub/ethereal/ \
 		ftp://gd.tuwien.ac.at/infosys/security/ethereal/ \
@@ -17,10 +17,16 @@ MAINTAINER=	billf@FreeBSD.org
 
 USE_X_PREFIX=	yes
 USE_GTK=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
+LIBTOOLFILES=	configure epan/configure wiretap/configure
 CONFIGURE_ARGS+=	--enable-snmp=no
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 MAN1=		ethereal.1 tethereal.1 editcap.1
+
+pre-install:
+.for i in ${MAN1}
+	${INSTALL_MAN} ${WRKSRC}/${i} ${PREFIX}/man/man1
+.endfor
 
 .include <bsd.port.mk>
