@@ -1,0 +1,9 @@
+@comment $FreeBSD$
+bin/annoyance-filter
+bin/annoyance-filter-run
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/annoyance-filter.pdf
+%%PORTDOCS%%%%DOCSDIR%%/statlib.pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

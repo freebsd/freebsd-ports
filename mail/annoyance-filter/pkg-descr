@@ -1,0 +1,6 @@
+annoyance-filter  uses Bayesian statistics to determine the probability
+an E-mail message is junk based on an analysis of its contents compared
+to collections of known junk and legitimate E-mail.
+
+Author:	John Walker
+WWW:	http://www.fourmilab.ch/annoyance-filter/

@@ -1,0 +1,43 @@
+--- Makefile.in.orig	Tue Feb 18 15:57:20 2003
++++ Makefile.in	Fri Jan  2 02:56:16 2004
+@@ -83,11 +83,11 @@
+ 
+ #   Annoyance filter program
+ 
+-$(PRODUCT):    $(PRODUCT).o statlib.o $(DCDFLIB_OBJS) getopt.o getopt1.o
+-	$(CXX) $(PRODUCT).o statlib.o $(DCDFLIB_OBJS) getopt.o getopt1.o -o $(PRODUCT) $(CFLAGS) $(LDFLAGS)
++$(PRODUCT):    $(PRODUCT).o statlib.o $(DCDFLIB_OBJS) 
++	$(CXX) $(PRODUCT).o statlib.o $(DCDFLIB_OBJS) -o $(PRODUCT) $(CFLAGS) $(LDFLAGS)
+ 	@rm -f core core.*
+ 
+-$(PRODUCT).o: $(PRODUCT).cc config.h getopt.h
++$(PRODUCT).o: $(PRODUCT).cc config.h 
+ $(PRODUCT).cc: $(PRODUCT).w
+ $(PRODUCT).tex: $(PRODUCT).w log.w $(TOOLS)
+ $(PRODUCT).view: $(PRODUCT).dvi
+@@ -97,8 +97,8 @@
+ 
+ #   Statistical library
+ 
+-statlib_test: statlib_test.o statlib.o $(DCDFLIB_OBJS) getopt.o
+-	$(CXX) statlib_test.o statlib.o getopt.o -o statlib_test $(DCDFLIB_OBJS) $(CFLAGS) $(LDFLAGS)
++statlib_test: statlib_test.o statlib.o $(DCDFLIB_OBJS) 
++	$(CXX) statlib_test.o statlib.o -o statlib_test $(DCDFLIB_OBJS) $(CFLAGS) $(LDFLAGS)
+ 
+ statlib.o: statlib.cc config.h getopt.h
+ statlib.cc: statlib.w
+@@ -275,14 +275,6 @@
+ 	groff -man $(PRODUCT).1 | lp
+ 	
+ #   HTML edition of manual page
+-
+-$(PRODUCT)_man_raw.html: $(PRODUCT).1
+-	$(MAN2HTML) -H $(MAN2HTMLHOST) $(PRODUCT).1 \
+-		>$(PRODUCT)_man_raw.html
+-	
+-$(PRODUCT)_man.html:	$(PRODUCT)_man_raw.html
+-	$(PERL) docutil/fixman2html.pl $(PRODUCT)_man_raw.html \
+-		>$(PRODUCT)_man.html
+ 
+ manhtml:	$(PRODUCT)_man.html
+ 
