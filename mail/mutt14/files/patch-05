@@ -1,6 +1,23 @@
---- curs_lib.c.orig	Thu Jan 14 14:29:17 1999
-+++ curs_lib.c	Thu Feb 18 20:58:46 1999
-@@ -408,8 +418,9 @@
+--- curs_lib.c.old	Wed Sep  1 19:39:20 1999
++++ curs_lib.c	Sun Sep 26 23:47:03 1999
+@@ -156,6 +156,16 @@
+       def = 0;
+       break;
+     }
++    else if (tolower(ch.ch) == 'y')
++    {
++      def = 1;
++      break;
++    }
++    else if (tolower(ch.ch) == 'n')
++    {
++      def = 0;
++      break;
++    }
+     else
+     {
+       BEEP();
+@@ -413,8 +423,9 @@
  {
    event_t ch;
    int choice;
@@ -11,7 +28,7 @@
    mvaddstr (LINES - 1, 0, prompt);
    clrtoeol ();
    FOREVER
-@@ -423,6 +434,12 @@
+@@ -428,6 +439,12 @@
      }
      else
      {
@@ -24,9 +41,9 @@
        p = strchr (letters, ch.ch);
        if (p)
        {
---- browser.c.bak	Thu Jan  7 12:14:39 1999
-+++ browser.c	Thu Feb 18 20:58:45 1999
-@@ -743,7 +743,7 @@
+--- browser.c.orig	Fri Sep 24 01:08:08 1999
++++ browser.c	Sun Sep 26 23:46:25 1999
+@@ -750,7 +750,7 @@
  	  switch (mutt_multi_choice ((reverse) ?
  	      _("Reverse sort by (d)ate, (a)lpha, si(z)e or do(n)'t sort? ") :
  	      _("Sort by (d)ate, (a)lpha, si(z)e or do(n)'t sort? "),
@@ -35,9 +52,9 @@
  	  {
  	    case -1: /* abort */
  	      resort = 0;
---- commands.c.bak	Tue Feb  9 23:53:38 1999
-+++ commands.c	Thu Feb 18 20:58:45 1999
-@@ -333,7 +333,7 @@
+--- commands.c.orig	Wed Jul  7 02:56:24 1999
++++ commands.c	Sun Sep 26 23:46:25 1999
+@@ -337,7 +337,7 @@
    switch (mutt_multi_choice (reverse ?
  			     _("Rev-Sort (d)ate/(f)rm/(r)ecv/(s)ubj/t(o)/(t)hread/(u)nsort/si(z)e/s(c)ore?: ") :
  			     _("Sort (d)ate/(f)rm/(r)ecv/(s)ubj/t(o)/(t)hread/(u)nsort/si(z)e/s(c)ore?: "),
@@ -46,8 +63,8 @@
    {
    case -1: /* abort - don't resort */
      return -1;
---- compose.c.bak	Tue Jan 26 11:40:36 1999
-+++ compose.c	Thu Feb 18 20:58:46 1999
+--- compose.c.orig	Wed Aug 25 10:23:12 1999
++++ compose.c	Sun Sep 26 23:46:25 1999
 @@ -130,7 +130,7 @@
    struct pgp_vinfo *pgp = pgp_get_vinfo(PGP_SIGN);
  
@@ -57,9 +74,9 @@
    {
    case 1: /* (e)ncrypt */
      bits |= PGPENCRYPT;
---- lib.c.bak	Thu Feb 11 00:54:01 1999
-+++ lib.c	Thu Feb 18 20:58:46 1999
-@@ -795,7 +795,7 @@
+--- lib.c.orig	Wed Jul  7 02:25:45 1999
++++ lib.c	Sun Sep 26 23:46:25 1999
+@@ -859,7 +859,7 @@
    if (*append == 0 && access (fname, F_OK) == 0)
    {
      switch (mutt_multi_choice
