@@ -13,7 +13,6 @@ MASTER_SITES=	http://download.qballcow.nl/programs/gcursor/
 MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	A mouse cursor theme selector for GNOME
 
-BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/xcursor.pc:${PORTSDIR}/x11/XFree86-4-libraries
 RUN_DEPENDS=	file-roller:${PORTSDIR}/archivers/fileroller
 
 USE_GMAKE=	yes
