@@ -5,12 +5,14 @@
 # $FreeBSD$
 
 PORTNAME=	${MASTERPORTNAME}
-PORTREVISION=	3
+PORTREVISION=	0
 
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	Adaptation of SGI's Standard Template Library for ICC
 
 BUILD_DEPENDS=	icc:${PORTSDIR}/lang/icc icpc:${PORTSDIR}/lang/icc
+
+IGNORE=		does not work with stlport 4.6.2
 
 ONLY_FOR_ARCHS=	i386
 
