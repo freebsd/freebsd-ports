@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	glchess
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,37 +17,41 @@ RUN_DEPENDS=	crafty:${PORTSDIR}/games/crafty \
 		gnuchess:${PORTSDIR}/games/gnuchess
 LIB_DEPENDS=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 USE_X_PREFIX=	yes
-USE_GMAKE=	yes
 USE_GTK=	yes
 USE_MESA=	yes
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
 
 MAN6=		${PORTNAME}.6
-MANCOMPRESSED=	yes
 
 pre-patch:
 	@${PERL} -pi.orig -e 's!/usr/local/share/games/glchess!${DATADIR}!' \
-		${WRKSRC}/glchessrc
+		${WRKSRC}/../glchessrc
 	@${PERL} -pi.orig -e 's!/etc!${PREFIX}/etc!' \
-		${WRKSRC}/src/config.c
+		${WRKSRC}/config.c
+	@${PERL} -pi.orig -e 's|VERSION|\"${PORTVERSION}\"|' \
+		${WRKSRC}/dialog.c ${WRKSRC}/interface.c
+	@${PERL} -pi.orig -e 's|VERSION|${PORTVERSION}|; \
+		s|\"DATE\"||' ${WRKSRC}/../man/${PORTNAME}.6
+	@${CP} ${FILESDIR}/Makefile.bsd ${WRKSRC}/Makefile
 
 do-install:
 	@${MKDIR} ${DATADIR}
 	@${MKDIR} ${DATADIR}/textures
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} \
 		${PREFIX}/bin
-	@${INSTALL_DATA} ${WRKSRC}/glchessrc \
+	@${INSTALL_DATA} ${WRKSRC}/../glchessrc \
 		${PREFIX}/etc
-	@${INSTALL_MAN} ${WRKSRC}/man/glchess.6.gz \
+	@${INSTALL_MAN} ${WRKSRC}/../man/${PORTNAME}.6 \
 		${PREFIX}/man/man6
-	@${INSTALL_DATA} ${WRKSRC}/textures/* \
+	@${INSTALL_DATA} ${WRKSRC}/../textures/*.rgb \
 		${DATADIR}/textures
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in ChangeLog README TODO
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/../${file} ${DOCSDIR}
 .endfor
 .endif #NOPORTDOCS
 
