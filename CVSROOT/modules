@@ -7736,6 +7736,7 @@ sylpheed-claws	ports/mail/sylpheed-claws
 symlinks	ports/sysutils/symlinks
 synaesthesia	ports/graphics/synaesthesia
 syncal		ports/palm/syncal
+synce-dccm	ports/palm/synce-dccm
 synce-libsynce	ports/palm/synce-libsynce
 synce-serial	ports/palm/synce-serial
 syncmal		ports/palm/syncmal
