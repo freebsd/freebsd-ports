@@ -18,7 +18,6 @@ FETCH_BEFORE_ARGS=	-b
 
 USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
-#USE_GMAKE=	yes
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
