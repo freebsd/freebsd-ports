@@ -33,8 +33,6 @@ CONFIGURE_ARGS=	--with-gnome=${X11BASE} \
 		--enable-manual-db-detect \
 		--with-libiconv-prefix=${LOCALBASE}
 
-BROKEN=		"does not install"
-
 ADDITIONAL_SRCS=	sig_chld.c
 #
 DOC_FILES= COPYING ChangeLog README TODO
