@@ -1,0 +1,22 @@
+--- Makefile.orig	Thu Jul 31 23:27:52 2003
++++ Makefile	Sun Nov 21 18:50:08 2004
+@@ -1,13 +1,13 @@
+ # makefile for tolua hierarchy
+ 
+ tolua:
+-	cd src/lib; make all
+-	cd src/bin; make all
++	cd src/lib; ${MAKE} all
++	cd src/bin; ${MAKE} all
+ 
+ tests:
+-	cd src/tests; make all
++	cd src/tests; ${MAKE} all
+ 
+ all clean klean:
+-	cd src/lib; make $@
+-	cd src/bin; make $@
+-	cd src/tests; make $@
++	cd src/lib; ${MAKE} $@
++	cd src/bin; ${MAKE} $@
++	cd src/tests; ${MAKE} $@

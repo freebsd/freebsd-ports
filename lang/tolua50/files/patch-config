@@ -1,0 +1,30 @@
+--- config.orig	Tue Jun  8 06:09:19 2004
++++ config	Sun Nov 21 19:24:24 2004
+@@ -3,8 +3,9 @@
+ # == CHANGE THE SETTINGS BELOW TO SUIT YOUR ENVIRONMENT ======================
+ 
+ # you need an ANSI C compiler. gcc is a popular one.
+-CC= gcc
+-CCPP = g++
++#CC= ${CC}
++CC = cc
++CCPP = c++
+ WARN= -ansi -Wall
+ 
+ # on SGI's, cc is ANSI.
+@@ -22,6 +23,7 @@
+ 
+ # set lua path
+ LUA=/usr/local/lua-5.0
++LUA=${LOCALBASE}
+ LUAINC=$(LUA)/include
+ LUALIB=$(LUA)/lib
+ 
+@@ -30,5 +32,5 @@
+ INC= -I$(TOLUA)/include -I$(LUAINC) 
+ LIB= -L$(TOLUA)/lib -L$(LUALIB)
+ 
+-CFLAGS= -O2 $(WARN) $(INC)
+-CPPFLAGS=  -O2 $(WARN) $(INC)
++CFLAGS+= -O2 $(WARN) $(INC)
++CPPFLAGS+=  -O2 $(WARN) $(INC) -lstdc++
