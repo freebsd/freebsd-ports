@@ -3,7 +3,7 @@
 # Date created:		30 Dec 1995
 # Whom:			Bernd Rosauer <br@netland.inka.de>
 #
-# $Id: Makefile,v 1.4 1996/04/09 04:17:56 asami Exp $
+# $Id: Makefile,v 1.5 1996/05/13 09:30:32 asami Exp $
 #
 
 DISTNAME=	teTeX-src-0.3.3
@@ -22,6 +22,8 @@ PATCHFILES=	teTeX-src-0.3.3-patch-001.gz teTeX-src-0.3.3-patch-002.gz \
 		teTeX-src-0.3.3-patch-007.gz teTeX-src-0.3.3-patch-008.gz
 
 MAINTAINER=	tetex-freebsd@informatik.uni-hannover.de
+
+RUN_DEPENDS=	wishx:${PORTSDIR}/lang/tclX75
 
 DIST_SUBDIR=	teTeX
 EXTRACT_ONLY=	teTeX-src-0.3.3.tar.gz
