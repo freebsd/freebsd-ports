@@ -6,18 +6,22 @@
 #
 
 PORTNAME=	nurbs++
-PORTVERSION=	3.0.10
+PORTVERSION=	3.0.11
 CATEGORIES=	graphics
-MASTER_SITES=	http://yukon.genie.uottawa.ca/~lavoie/software/nurbs/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	libnurbs
 
 MAINTAINER= 	ports@FreeBSD.org
 
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
+CONFIGURE_ARGS=	--program-transform-name="s/x/x/"
 INSTALLS_SHLIB=	yes
+
+MAN1=	nurbs++-config.1
 
 pre-patch:
 	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,' \
-		${WRKSRC}/nurbs/nurbs.cc ${WRKSRC}/nurbs/nurbsS.cc
+		${WRKSRC}/nurbs/nurbs.cpp ${WRKSRC}/nurbs/nurbsS.cpp
 
 .include <bsd.port.mk>
