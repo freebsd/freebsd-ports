@@ -568,6 +568,7 @@ baudline	ports/audio/baudline
 bayespam	ports/mail/bayespam
 bb		ports/misc/bb
 bbapm		ports/sysutils/bbapm
+bbappconf	ports/x11/bbappconf
 bbconf		ports/x11-wm/bbconf
 bbdate		ports/x11-clocks/bbdate
 bbdb		ports/databases/bbdb
