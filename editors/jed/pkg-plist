@@ -1,5 +1,6 @@
 bin/jed
 bin/rgrep
+bin/jed-script
 %%NOXJED%%bin/xjed
 %%PORTDOCS%%@unexec install-info --delete --section="Miscellaneous" --entry="* JED: (jed).			JED editor documentation." %D/info/jed.info %D/info/dir
 %%PORTDOCS%%info/jed.1in
@@ -21,7 +22,6 @@ lib/jed/lib/colors/blue3.sl
 lib/jed/lib/colors/default1.sl
 lib/jed/lib/colors/white1.sl
 lib/jed/lib/colors/README
-lib/jed/lib/tm/linuxdoc.tm
 lib/jed/lib/abbrev.sl
 lib/jed/lib/abbrmisc.sl
 lib/jed/lib/acompile.sl
@@ -99,8 +99,6 @@ lib/jed/lib/mime.sl
 lib/jed/lib/mini.sl
 lib/jed/lib/minued.sl
 lib/jed/lib/misc.sl
-lib/jed/lib/mkdoc.sl
-lib/jed/lib/mktex.sl
 lib/jed/lib/modehook.sl
 lib/jed/lib/modeinfo.sl
 lib/jed/lib/most.sl
@@ -126,6 +124,8 @@ lib/jed/lib/register.sl
 lib/jed/lib/replace.sl
 lib/jed/lib/rmail.sl
 lib/jed/lib/rot13.sl
+lib/jed/lib/runpgm.sl
+lib/jed/lib/sccs.sl
 lib/jed/lib/search.sl
 lib/jed/lib/seldisp.sl
 lib/jed/lib/sendmail.sl
@@ -142,11 +142,10 @@ lib/jed/lib/tabs.sl
 lib/jed/lib/tclmode.sl
 lib/jed/lib/tex.sl
 lib/jed/lib/texcom.sl
-lib/jed/lib/textmac.sl
 lib/jed/lib/textmode.sl
 lib/jed/lib/tiasm.sl
-lib/jed/lib/tm2sgml.sl
 lib/jed/lib/tmisc.sl
+lib/jed/lib/tmmode.sl
 lib/jed/lib/tpascal.sl
 lib/jed/lib/untab.sl
 lib/jed/lib/util.sl
@@ -198,9 +197,9 @@ lib/jed/lib/README
 %%PORTDOCS%%share/doc/jed/wjed.txt
 %%PORTDOCS%%share/doc/jed/wordstar.txt
 %%PORTDOCS%%share/doc/jed/xjed.txt
+%%PORTDOCS%%share/doc/jed/xrenderfont.txt
 %%PORTDOCS%%share/doc/jed/yankpop.txt
 @dirrm lib/jed/bin
-@dirrm lib/jed/lib/tm
 @dirrm lib/jed/lib/colors/Xjed
 @dirrm lib/jed/lib/colors
 @dirrm lib/jed/lib
