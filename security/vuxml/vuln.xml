@@ -30,6 +30,38 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="fb5e227e-b8c6-11d8-b88c-000d610a3b12">
+    <topic>jailed processes can manipulate host routing tables</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><ge>4.9</ge><lt>4.9_10</lt></range>
+	<range><ge>4.0</ge><lt>4.8_23</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>A programming error resulting in a failure to verify that
+          an attempt to manipulate routing tables originated from a
+          non-jailed process.</p>
+
+        <p>Jailed processes running with superuser privileges could
+	  modify host routing tables.  This could result in a variety
+	  of consequences including packets being sent via an
+	  incorrect network interface and packets being discarded
+	  entirely.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0125</cvename>
+      <freebsdsa>SA-04:12.jailroute</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2004-02-03</discovery>
+      <entry>2004-06-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1db1ed59-af07-11d8-acb9-000d610a3b12">
     <topic>buffer cache invalidation implementation issues</topic>
     <affects>
