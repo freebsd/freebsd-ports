@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sqwebmail
-PORTVERSION=	3.6.1
+PORTVERSION=	3.6.2
 PORTREVISION=	0
 CATEGORIES=	mail www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -47,6 +47,7 @@ IMAGEURL?=	${WEBDATASUBDIR}
 # set WITH_TIMEOUTHARD to something other than 7200 seconds (2hr)
 # set WITH_TIMEOUTSOFT to something other than 1200 seconds (20m)
 # set WITHOUT_SENTRENAME to turn off periodic renaming of the Sent folder
+# set WITHOUT_IMAP if you don't use the Courier IMAP server
 # set VCHKPW to the home of the vpopmail user, if necessary
 #
 # The following settings are in bytes:
@@ -127,6 +128,10 @@ CONFIGURE_ARGS+=	--enable-https
 CONFIGURE_ARGS+=	--disable-autorenamesent
 .endif
 
+.if defined(WITHOUT_IMAP)
+CONFIGURE_ARGS+=	--disable-utf7-folder-encoding
+.endif
+
 .if defined(WITH_MYSQL)
 CONFIGURE_ARGS+=	--with-authmysql
 PLIST_SUB+=		MYSQLFLAG=""
@@ -202,8 +207,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|^case x$$lockmethod in|${TEST} \&\& &|g' \
 		${WRKSRC}/liblock/configure
 
-.if !defined(WITHOUT_AUTHDAEMON)
 post-install:
+	${INSTALL_SCRIPT} ${FILESDIR}/sqwebmail-sqwebmaild.sh \
+		${PREFIX}/etc/rc.d/
+.if !defined(WITHOUT_AUTHDAEMON)
 	${INSTALL_SCRIPT} ${FILESDIR}/sqwebmail-authdaemond.sh \
 		${PREFIX}/etc/rc.d/
 .endif
