@@ -17,6 +17,7 @@ LIB_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv \
 		freetype:${PORTSDIR}/print/freetype2
 
 USE_REINPLACE=	yes
+USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

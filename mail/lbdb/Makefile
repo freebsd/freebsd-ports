@@ -22,6 +22,7 @@ WRKSRC=		${WRKDIR}/lbdb-${PORTVERSION}
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS+=	--libdir=${PREFIX}/libexec --enable-lbdb-dotlock
 USE_GMAKE=	YES
+USE_PERL5=	yes
 
 MAN1=		nodelist2lbdb.1 lbdbq.1 lbdb-fetchaddr.1 lbdb_dotlock.1 \
 		mutt_ldap_query.1
