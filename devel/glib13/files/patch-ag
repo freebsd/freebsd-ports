@@ -1,19 +1,19 @@
 
 $FreeBSD$
 
---- Makefile.in.orig	Wed Oct 24 10:00:39 2001
-+++ Makefile.in	Wed Oct 24 10:01:07 2001
-@@ -147,7 +147,7 @@
+--- Makefile.in.orig	Fri Jan 18 09:43:54 2002
++++ Makefile.in	Fri Jan 18 09:45:49 2002
+@@ -149,7 +149,7 @@
  
  AUTOMAKE_OPTIONS = 1.4
  
--SUBDIRS = . m4macros glib gobject gmodule gthread docs tests build po
-+SUBDIRS = . m4macros glib gobject gmodule gthread docs build po
+-SUBDIRS = . m4macros glib gobject gmodule gthread tests build po docs
++SUBDIRS = . m4macros glib gobject gmodule gthread build po docs
  
- INCLUDES = -DG_LOG_DOMAIN=g_log_domain_glib @GLIB_DEBUG_FLAGS@ 	-DG_DISABLE_DEPRECATED -DGLIB_COMPILATION
+ bin_SCRIPTS = glib-gettextize
  
-@@ -159,7 +159,7 @@
- BUILT_EXTRA_DIST =  	glibconfig.h.win32		config.h.win32			glib.spec
+@@ -191,7 +191,7 @@
+ 	glib-zip
  
  
 -configexecincludedir = $(libdir)/glib-2.0/include

@@ -1,22 +1,9 @@
 
 $FreeBSD$
 
---- configure.orig	Tue Sep 25 18:36:39 2001
-+++ configure	Wed Oct 24 10:00:12 2001
-@@ -9924,6 +9924,12 @@
- 	  linux*)
- 	    G_MODULE_LDFLAGS='-rdynamic'
- 	    ;;
-+	  freebsd*)
-+	    objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
-+	    if test $objformat = "elf"; then
-+	      G_MODULE_LDFLAGS='-Wl,-E'
-+	    fi
-+	    ;;
- 	esac
- 	LIBS_orig="$LIBS"
- 	LDFLAGS_orig="$LDFLAGS"
-@@ -10472,8 +10478,8 @@
+--- configure.orig	Mon Dec 24 00:50:12 2001
++++ configure	Fri Jan 18 09:40:30 2002
+@@ -16354,8 +16354,8 @@
              	        G_THREAD_CFLAGS="$G_THREAD_CFLAGS -mthreads"
  		fi
  		;;
@@ -27,8 +14,8 @@ $FreeBSD$
  
  		# FreeBSD 2.2.x shiped with gcc 2.7.2.x, which doesn't support
  		# -mthreads flag.
-@@ -10553,13 +10559,13 @@
-            	fi	
+@@ -16433,13 +16433,13 @@
+            	fi
  		;;
               *)
 -		for thread_lib in "" pthread pthread32 pthreads c_r thread dce; do
@@ -44,38 +31,29 @@ $FreeBSD$
  			fi
  			if test x"$have_threads" = xposix; then
  				defattr=0
-@@ -11058,6 +11064,7 @@
- 		if test "$cross_compiling" = yes; then
-     { echo "configure: error: can not run test program while cross compiling" 1>&2; exit 1; }
- else
-+#  LIBS="-lgiconv  $LIBS"
-   cat > conftest.$ac_ext <<EOF
- #line 11063 "configure"
- #include "confdefs.h"
-@@ -11516,14 +11523,14 @@
+@@ -17636,13 +17636,13 @@
     #
     # Check for libiconv
     #
--   echo $ac_n "checking for libiconv_open in -liconv""... $ac_c" 1>&6
--echo "configure:11521: checking for libiconv_open in -liconv" >&5
-+   echo $ac_n "checking for libiconv_open in -lgiconv""... $ac_c" 1>&6
-+echo "configure:11521: checking for libiconv_open in -lgiconv" >&5
- ac_lib_var=`echo iconv'_'libiconv_open | sed 'y%./+-%__p_%'`
- if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
-   echo $ac_n "(cached) $ac_c" 1>&6
+-   echo "$as_me:17639: checking for libiconv_open in -liconv" >&5
+-echo $ECHO_N "checking for libiconv_open in -liconv... $ECHO_C" >&6
++   echo "$as_me:17639: checking for libiconv_open in -lgiconv" >&5
++echo $ECHO_N "checking for libiconv_open in -lgiconv... $ECHO_C" >&6
+ if test "${ac_cv_lib_iconv_libiconv_open+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
  else
-   ac_save_LIBS="$LIBS"
+   ac_check_lib_save_LIBS=$LIBS
 -LIBS="-liconv  $LIBS"
 +LIBS="-lgiconv  $LIBS"
- cat > conftest.$ac_ext <<EOF
- #line 11529 "configure"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line 17647 "configure"
  #include "confdefs.h"
-@@ -11563,7 +11570,7 @@
+@@ -17704,7 +17704,7 @@
  fi
  
  if test "x$with_libiconv" = "xyes" ; then
 -  ICONV_LIBS="-liconv"
 +  ICONV_LIBS="-lgiconv"
-   cat >> confdefs.h <<\EOF
+   cat >>confdefs.h <<\_ACEOF
  #define USE_LIBICONV 1
- EOF
+ _ACEOF
