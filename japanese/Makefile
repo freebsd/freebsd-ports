@@ -1,9 +1,10 @@
-# $Id: Makefile,v 1.53 1997/01/24 07:05:52 max Exp $
+# $Id: Makefile,v 1.54 1997/01/29 04:02:50 max Exp $
 #
 
     SUBDIR += Canna
     SUBDIR += Wnn
     SUBDIR += camltk41
+    SUBDIR += cdrom2
     SUBDIR += chimera
     SUBDIR += dserver
     SUBDIR += dvi2ps
