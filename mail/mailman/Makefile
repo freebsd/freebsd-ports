@@ -7,7 +7,7 @@
 
 PORTNAME=	mailman
 PORTVERSION=	2.0.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail
 MASTER_SITES=	http://www.list.org/ \
 		${MASTER_SITE_GNU} \
@@ -20,10 +20,10 @@ MAINTAINER=	wjv@FreeBSD.org
 RUN_DEPENDS=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${MAILMANDIR} \
-		--with-python=${PYTHON_CMD} \
-		--with-mail-gid=${MAIL_GID} --with-cgi-gid=${CGI_GID}
 USE_PYTHON=	yes
+CONFIGURE_ARGS=	--prefix=${MAILMANDIR} --with-python=${PYTHON_CMD} \
+		--with-username=${USERNAME} --with-groupname=${GROUPNAME} \
+		--with-mail-gid=${MAIL_GID} --with-cgi-gid=${CGI_GID}
 PKGOPTS=	${FILESDIR}/pkg-opts
 
 .include <bsd.port.pre.mk>
@@ -43,6 +43,9 @@ MAIL_GID?=	26
 MAIL_GID?=	1
 .endif
 CGI_GID?=	80
+IMGDIR=		${PREFIX}/www/icons
+#
+# End of user-configurable variables.
 
 MAILMANDIR=	${PREFIX}/${MMDIR}
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -87,6 +90,11 @@ post-install:
 	@ ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${MAILMANDIR}/${dir}
 .endfor
 	@ ${CHGRP} -R ${GROUPNAME} ${MAILMANDIR}
+	@ ${MKDIR} ${IMGDIR}
+.for imgfile in mailman.jpg PythonPowered.png gnu-head-tiny.jpg
+	@ ${CP} ${MAILMANDIR}/icons/${imgfile} ${IMGDIR}
+.endfor
+	@ uudecode -p ${FILESDIR}/powerlogo.gif.uue > ${IMGDIR}/powerlogo.gif
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${DOCSDIR}
 .for docfile in BUGS FAQ INSTALL NEWS README* UPGRADING

@@ -25,3 +25,4 @@ GGI_GID|80|The group id under which your web server executes CGI scripts
 	By default, this port works with the current port of Apache.  If your
 	WWW server executes CGI scripts under a different GID, you'll have to
 	set this at build time.
+IMGDIR|${PREFIX}/www/data/icons|The directory where icon images will be installed

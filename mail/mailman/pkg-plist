@@ -298,6 +298,10 @@
 %%PORTDOCS%%share/doc/mailman/README.QMAIL
 %%PORTDOCS%%share/doc/mailman/README.SENDMAIL
 %%PORTDOCS%%share/doc/mailman/UPGRADING
+www/icons/PythonPowered.png
+www/icons/gnu-head-tiny.jpg
+www/icons/mailman.jpg
+www/icons/powerlogo.gif
 @dirrm %%MMDIR%%/templates
 @dirrm %%MMDIR%%/scripts
 @dirrm %%MMDIR%%/mail
@@ -314,6 +318,8 @@
 @dirrm %%MMDIR%%/Mailman/Bouncers
 @dirrm %%MMDIR%%/Mailman/Archiver
 %%PORTDOCS%%@dirrm share/doc/mailman
+@unexec rmdir %D/www/icons 2>/dev/null || true
+@unexec rmdir %D/www 2>/dev/null || true
 @unexec rmdir %D/%%MMDIR%%/spam 2>/dev/null || true
 @unexec rmdir %D/%%MMDIR%%/qfiles 2>/dev/null || true
 @unexec rmdir %D/%%MMDIR%%/logs 2>/dev/null || true
