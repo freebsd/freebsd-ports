@@ -7,7 +7,7 @@
 
 PORTNAME?=	mozilla
 PORTVERSION=	1.5a
-PORTREVISION?=	0
+PORTREVISION?=	1
 PORTEPOCH?=	1
 CATEGORIES?=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
@@ -25,7 +25,8 @@ BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		mng.1:${PORTSDIR}/graphics/libmng \
-		freetype.9:${PORTSDIR}/print/freetype2
+		freetype.9:${PORTSDIR}/print/freetype2 \
+		nspr4.1:${PORTSDIR}/devel/nspr
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -110,12 +111,14 @@ CONFIGURE_ARGS+=	--disable-ldap --enable-mailnews
 CONFIGURE_ARGS+=	--enable-ldap --enable-mailnews
 .endif
 .endif
-
+MOZ_EXTENSIONS=	default
 .if !defined(WITHOUT_CHATZILLA)
-CONFIGURE_ARGS+=	--enable-extensions=default,irc,xmlterm
-.else
-CONFIGURE_ARGS+=	--enable-extensions=default,xmlterm
+MOZ_EXTENSIONS:=	${MOZ_EXTENSIONS},irc
 .endif
+.if !defined(WITHOUT_XMLTERM)
+MOZ_EXTENSIONS:=	${MOZ_EXTENSIONS},xmlterm
+.endif
+CONFIGURE_ARGS+=	--enable-extensions=${MOZ_EXTENSIONS}
 CONFIGURE_ENV=	MOZ_INTERNAL_LIBART_LGPL=1
 
 .if defined(WITH_JAVASCRIPT_DEBUGGER)
@@ -181,6 +184,7 @@ pre-everything::
 	@${ECHO_MSG} "	WITHOUT_COMPOSER=yes	Disables the HTML Composer module"
 	@${ECHO_MSG} "	WITHOUT_LDAP=yes	Disables LDAP support within the Mailnews module"
 	@${ECHO_MSG} "	WITHOUT_CHATZILLA=yes	Disable the Chatzilla IRC module"
+	@${ECHO_MSG} "	WITHOUT_XMLTERM=yes	Disable the XMLTerm module"
 	@${ECHO_MSG} "	WITH_JAVASCRIPT_DEBUGGER=yes		Enable the DTD and JavaScript debuggers"
 	@${ECHO_MSG} "	WITH_OPTIMIZED_CFLAGS=yes	Enable -O2 optimization"
 	@${ECHO_MSG} ""
