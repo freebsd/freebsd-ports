@@ -1,0 +1,6 @@
+%%PYTHON_SITELIBDIR%%/chart.py
+%%PYTHON_SITELIBDIR%%/gdchart.so
+%%PORTDOCS%%%%EXAMPLE_DIR%%/test.html
+%%PORTDOCS%%%%EXAMPLE_DIR%%/test.py
+%%PORTDOCS%%%%EXAMPLE_DIR%%/CHANGES
+@dirrm %%EXAMPLE_DIR%%
