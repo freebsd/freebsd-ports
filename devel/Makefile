@@ -1,8 +1,9 @@
-# $Id: Makefile,v 1.11 1995/06/04 06:20:28 asami Exp $
+# $Id: Makefile,v 1.12 1995/08/08 10:37:59 asami Exp $
 #
 
     SUBDIR += bcc
     SUBDIR += bison
+    SUBDIR += cflow
     SUBDIR += dmake
     SUBDIR += gmake
     SUBDIR += libdlmalloc
