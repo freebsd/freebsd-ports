@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qmailadmin
-PORTVERSION=	1.0.26
+PORTVERSION=	1.0.29
 CATEGORIES=	mail www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -51,6 +51,7 @@ USE_GMAKE=	YES
 # WITH_DOMAIN_AUTOFILL	- autofill the domain on login page based on the
 #			  hostname
 # WITHOUT_IDX_SQL	- disable the SQL support for mailing lists
+# WITH_HELP		- display help links on login page
 #
 
 CGIBINDIR?=	www/cgi-bin.default
@@ -81,7 +82,7 @@ CONFIGURE_ARGS+=	\
 	--enable-htmldir=${PREFIX}/${WEBDATADIR}/${WEBDATASUBDIR} \
 	--enable-imagedir=${PREFIX}/${WEBDATADIR}/${WEBDATASUBDIR}/images \
 	--enable-imageurl=${WEBDATAURL}/${WEBDATASUBDIR}/images \
-	--with-htmllibdir=${DATADIR} \
+	--enable-htmllibdir=${DATADIR} \
 	--enable-cgibindir=${PREFIX}/${CGIBINDIR}/${CGIBINSUBDIR} \
 	--enable-cgipath=${CGIBINURL}/${CGIBINSUBDIR}/qmailadmin \
 	--enable-vpopmaildir=${LOCALBASE}/vpopmail \
@@ -89,23 +90,27 @@ CONFIGURE_ARGS+=	\
 	--enable-ezmlmdir=${LOCALBASE}/bin
 
 .if defined(WITHOUT_IPAUTH)
-CONFIGURE_ARGS+=	--enable-ipauth=n
+CONFIGURE_ARGS+=	--disable-ipauth
 .endif
 
 .if defined(WITHOUT_USER_INDEX)
-CONFIGURE_ARGS+=	--enable-user-index=n
+CONFIGURE_ARGS+=	--disable-user-index
 .endif
 
 .if defined(WITH_MODIFY_QUOTA)
-CONFIGURE_ARGS+=	--enable-modify-quota=y
+CONFIGURE_ARGS+=	--enable-modify-quota
 .endif
 
 .if defined(WITH_DOMAIN_AUTOFILL)
-CONFIGURE_ARGS+=	--enable-domain-autofill=y
+CONFIGURE_ARGS+=	--enable-domain-autofill
 .endif
 
 .if defined(WITHOUT_IDX_SQL)
-CONFIGURE_ARGS+=	--enable-ezmlm-mysql=n
+CONFIGURE_ARGS+=	--disable-ezmlm-mysql
+.endif
+
+.if defined(WITH_HELP)
+CONFIGURE_ARGS+=	--enable-help
 .endif
 
 .include <bsd.port.post.mk>

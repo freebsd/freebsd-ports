@@ -7,8 +7,6 @@
 %%DATADIR%%/html/add_mailinglist-no-idx.html
 %%DATADIR%%/html/add_user.html
 %%DATADIR%%/html/colortable
-%%DATADIR%%/html/da
-%%DATADIR%%/html/de
 %%DATADIR%%/html/del_autorespond_confirm.html
 %%DATADIR%%/html/del_forward_confirm.html
 %%DATADIR%%/html/del_listdig.html
@@ -16,24 +14,13 @@
 %%DATADIR%%/html/del_listuser.html
 %%DATADIR%%/html/del_mailinglist_confirm.html
 %%DATADIR%%/html/del_user_confirm.html
-%%DATADIR%%/html/en
-%%DATADIR%%/html/es
 %%DATADIR%%/html/footer.html
-%%DATADIR%%/html/fr
 %%DATADIR%%/html/header.html
-%%DATADIR%%/html/hu
-%%DATADIR%%/html/it
-%%DATADIR%%/html/ja
 %%DATADIR%%/html/main_menu.html
 %%DATADIR%%/html/mod_autorespond.html
 %%DATADIR%%/html/mod_dotqmail.html
 %%DATADIR%%/html/mod_mailinglist-idx.html
 %%DATADIR%%/html/mod_user.html
-%%DATADIR%%/html/nl
-%%DATADIR%%/html/no
-%%DATADIR%%/html/pt-BR
-%%DATADIR%%/html/pl
-%%DATADIR%%/html/ru
 %%DATADIR%%/html/setremotecatchall.html
 %%DATADIR%%/html/show_autorespond.html
 %%DATADIR%%/html/show_digest_subscribers.html
@@ -43,10 +30,23 @@
 %%DATADIR%%/html/show_moderators.html
 %%DATADIR%%/html/show_subscribers.html
 %%DATADIR%%/html/show_users.html
-%%DATADIR%%/html/sk
-%%DATADIR%%/html/sv
-%%DATADIR%%/html/tr
-%%DATADIR%%/html/xaa
+%%DATADIR%%/lang/bg
+%%DATADIR%%/lang/da
+%%DATADIR%%/lang/de
+%%DATADIR%%/lang/en
+%%DATADIR%%/lang/es
+%%DATADIR%%/lang/fr
+%%DATADIR%%/lang/hu
+%%DATADIR%%/lang/it
+%%DATADIR%%/lang/ja
+%%DATADIR%%/lang/nl
+%%DATADIR%%/lang/no
+%%DATADIR%%/lang/pl
+%%DATADIR%%/lang/pt-BR
+%%DATADIR%%/lang/ru
+%%DATADIR%%/lang/sk
+%%DATADIR%%/lang/sv
+%%DATADIR%%/lang/tr
 %%CGIBINDIR%%/%%CGIBINSUBDIR%%/qmailadmin
 %%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/delete.png
 %%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/disabled.png
@@ -74,4 +74,5 @@
 @unexec /bin/rmdir %D/%%CGIBINDIR%%/%%CGIBINSUBDIR%% 2> /dev/null || true
 @unexec /bin/rmdir %D/%%CGIBINDIR%% 2> /dev/null || true
 @dirrm %%DATADIR%%/html
+@dirrm %%DATADIR%%/lang
 @dirrm %%DATADIR%%
