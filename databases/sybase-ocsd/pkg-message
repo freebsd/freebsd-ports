@@ -1,0 +1,14 @@
+-
+
+The Sybase's tarball also includes some examples, but they are not
+installed by this port. You are welcome to browse them on your own.
+
+You need to set the environment variable SYBASE to PREFIX/sybase
+before using the installed libraries or create a user "sybase" and
+make PREFIX/sybase its home directory.
+
+The sample interfaces.sample file was installed into PREFIX/sybase.
+You'll need to create PREFIX/sybase/interfaces for the things to
+work.
+
+-

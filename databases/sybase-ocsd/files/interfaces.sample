@@ -1,0 +1,20 @@
+#
+#	This is a sample interfaces file to get you started
+#
+#	See Sybase's manuals for details. The following are examples,
+#	that work for me. There are two Sybase servers listed here,
+#	both running on the same computer (identified by the IP
+#	address, but on different ports -- 5000 and 4100.
+#
+#	tcp0 is my desktop's network card -- yours is probably different
+#	(``ifconfig'' will list your available interfaces).
+#
+
+#server label |	type  |	proto |	iface |	server's ip  |	port
+SYB120
+		query	tcp	txp0	172.21.128.14	5000
+		master	tcp	txp0	172.21.128.14	5000
+
+ATTILA
+		query	tcp	txp0	172.21.128.14	4100
+		master	tcp	txp0	172.21.128.14	4100

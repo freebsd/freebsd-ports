@@ -160,6 +160,7 @@
     SUBDIR += sqlite
     SUBDIR += sqlrelay
     SUBDIR += sqsh
+    SUBDIR += sybase-ocsd
     SUBDIR += tcl-Mysql
     SUBDIR += tkgnats
     SUBDIR += tora

@@ -1,0 +1,18 @@
+Searching for a way to contact a Sybase-server from FreeBSD, I found
+this tarball with binary static libraries, header files, and some
+samples (which this port does not install). Apparently, Sybase thinks
+FreeBSD is a version of Linux -- see MASTER_SITES... Sigh.
+
+The tarball available was rolled in 2000, on FreeBSD-3.3 (?) according
+to some of the files inside it.
+
+You may have to use the Linux utilities with it, since the tarball
+does not even have all things needed to build some of the samples,
+such as Sybase's precompiler ``cpre''. But you can then compile and
+link native FreeBSD executables.
+
+Don't let the presense of sybase-ase-11.0.3.3-FreeBSD-6.i386.tgz on
+the MASTER_SITE fool you -- all of the binaries inside are for Linux,
+although they will run under Linux emulation.
+
+WWW: http://www.Sybase.com/
