@@ -3,7 +3,7 @@
 # Date created:         22 November 1997
 # Whom:                 Peter Wemm <peter@netplex.com.au>
 #
-# $Id: Makefile,v 1.3 1997/11/22 15:37:11 peter Exp $
+# $Id: Makefile,v 1.4 1998/03/22 10:54:36 asami Exp $
 #
 
 DISTNAME=	conserver-5.21-Beta
@@ -14,8 +14,6 @@ MASTER_SITES=	ftp://ftp.uu.net/vendor/bitsko/config-mgmt/ \
 EXTRACT_SUFX=	.shar.gz
 
 MAINTAINER=	peter@FreeBSD.org
-
-BROKEN=		patch
 
 EXTRACT_CMD=	zcat
 EXTRACT_BEFORE_ARGS=
@@ -30,8 +28,12 @@ MAN8=		console.8 conserver.8
 DEFAULTHOST?=	localhost
 MAKE_ENV+=	DEFAULTHOST="${DEFAULTHOST}"
 
+# XXX we also have to work around ``new'' uudecode behavior, thanks guys!
 post-extract:
 	cp ${FILESDIR}/Makefile ${WRKSRC}
+	if [ -f ${WRKSRC}/group.c ]; then \
+		mv ${WRKSRC}/group.c ${WRKSRC}/conserver/group.c ; \
+	fi
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/conserver.sh ]; then \
