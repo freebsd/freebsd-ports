@@ -77,6 +77,8 @@ BJAM_BUILD+=	<optimization>off
 BJAM=		${WRKSRC}/tools/build/jam_src/bin.freebsdaxp/bjam
 .elif ${ARCH} == sparc64
 BJAM=		${WRKSRC}/tools/build/jam_src/bin.freebsdsparc/bjam
+.elif ${ARCH} == ia64
+BJAM=		${WRKSRC}/tools/build/jam_src/bin.freebsdia64/bjam
 .else
 BJAM=		${WRKSRC}/tools/build/jam_src/bin.freebsd/bjam
 .endif
