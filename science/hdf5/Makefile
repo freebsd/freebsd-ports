@@ -3,7 +3,7 @@
 # Date created:		17 November 1996
 # Whom:			mi
 #
-# $Id: Makefile,v 1.5 1998/08/21 21:40:02 hoek Exp $
+# $Id: Makefile,v 1.6 1998/08/21 23:11:03 hoek Exp $
 #
 
 DISTNAME=	HDF4.1r2
@@ -60,7 +60,7 @@ pre-build:
 	-ln -s /usr/include/zconf.h /usr/include/zlib.h ${WRKSRC}/hdf/zlib/
 
 post-install:
-	@for binary in `grep ^bin/ ${PKGDIR}/PLIST` ; do strip ${PREFIX}/$$binary; done
+	@for binary in `grep ^bin/ ${PLIST}` ; do strip ${PREFIX}/$$binary; done
 	${LDCONFIG} -m ${PREFIX}/lib
 
 test:
