@@ -1,10 +1,10 @@
---- src/cmdline.c.orig	Tue Feb 17 09:49:23 2004
-+++ src/cmdline.c	Tue Feb 17 09:49:39 2004
-@@ -4,6 +4,7 @@
-  * vim: tabstop=4 shiftwidth=4 noexpandtab :
-  */
+--- src/cmdline.c.orig	Wed Mar 31 05:03:06 2004
++++ src/cmdline.c	Mon May 10 00:19:23 2004
+@@ -13,6 +13,7 @@
+ #endif
  
+ #ifdef HAVE_REGEX_H
 +#include <sys/types.h>
- #include "config.h"
+ #include <regex.h>
+ #endif
  
- #ifdef HAVE_GTK
