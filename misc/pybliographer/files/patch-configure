@@ -1,0 +1,11 @@
+--- configure.orig	Sun Apr  6 21:29:36 2003
++++ configure	Sun Apr  6 21:30:43 2003
+@@ -4316,7 +4316,7 @@
+ 
+ version=`${RECODE} --version | head -n 1 | cut -f 3 -d' '`
+ 
+-if test ${version} != "3.5" ; then
++if test ${version} >= "3.5" ; then
+   { echo "configure: error: Please check that your version of GNU Recode is 3.5" 1>&2; exit 1; }
+ fi
+ 
