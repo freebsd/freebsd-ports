@@ -1,0 +1,24 @@
+Paraphrasing the website:
+  Mailman is a mailing list manager (MLM); that is, software to help manage
+  email discussion lists, much like Majordomo, LISTSERV, and the like.
+  Unlike most similar products, Mailman gives each mailing list a web page
+  and allows users to subscribe, unsubscribe, and change their preferences
+  via the web.  Even a list manager can administer his or her list(s)
+  entirely via the web.  Mailman integrates many common MLM features,
+  including web-based archiving (though it also has hooks for external
+  archivers), mail-to-news gateways, bounce handling, spam prevention,
+  Majordomo-style email-based list administration, direct SMTP delivery (with
+  fast bulk mailing), digest delivery, virtual domain support, and more. 
+
+Mailman is written mostly in Python (with a smattering of C where necessary
+for security purposes), and includes hooks to make it easily scriptable and
+extensible.  It is compatible with most web servers and browsers, and most
+mail transfer agents (mail servers).  Mailman's documentation may be found on
+its website.
+
+The development release of Mailman is not intended for production use.
+
+Author: Barry Warsaw <barry@zope.com> and the Mailman Cabal
+WWW:    http://www.list.org/MM21/
+
+-- Johann Visagie <wjv@FreeBSD.org>
