@@ -1,4 +1,4 @@
-Firebird 1.0.0 FreeBSD Release Notes                    13-Mar-2002
+Firebird 1.0.0 FreeBSD Release Notes                    10-Nov-2002
 --------------------------------------
 FB-T6.2.796 Firebird Final Release
 
@@ -63,6 +63,13 @@ try stopping PostgreSQL:
 	/usr/local/etc/rc.d/pgsql.sh stop
 
 and see if that helps.
+
+    Super Server support has recently been added. However, there is
+anecdotal evidence that it is not as reliable nor as scalable as the
+Classic Server version.  For this reason, I have not included a
+start up method for Super Server.  For those that are interested,
+traversing to /usr/interbase/misc will find the startup scripts for
+the various flavours of Linux.
 
     Complete documentation for InterBase(tm) is available (free of
 charge) from http://www.interbase.com/ in PDF format.  While

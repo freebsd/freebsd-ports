@@ -1,0 +1,32 @@
+--- builds/original/edit_make.orig	Fri Aug  4 06:42:41 2000
++++ builds/original/edit_make	Sat Nov  9 16:06:59 2002
+@@ -16,13 +16,25 @@
+ # Contributor(s): ______________________________________.
+ if [ "$SYS_TYPE" != "NOLINK_OS" -a "$1" != "WIN_NT" -a "$1" != "OS2" -a $1 != 'WIN_NTS' ]; then
+     if [ "$3" = "make.client" ]; then
+-    sed -e "s/\$(SUPER_FLAG)/-DSUPERCLIENT/g" \
+-        -e "s/\$(SYSTEM)/$1/g" \
+-        -e "s/\$(VERSION)/$2/g" \
+-        -e "s?\$(DB_DIR)?$DB_DIR?g" $3 > $4
++        if [ "$FBBUILDHACK" = "FREEBSD" ]; then
++            sed -e "s/\$(SUPER_FLAG)/-DSUPERCLIENT -D_REENTRANT -D_THREAD_SAFE/g" \
++                -e "s/\$(SYSTEM)/$1/g" \
++                -e "s/\$(VERSION)/$2/g" \
++                -e "s?\$(DB_DIR)?$DB_DIR?g" $3 > $4
++        else
++            sed -e "s/\$(SUPER_FLAG)/-DSUPERCLIENT/g" \
++                -e "s/\$(SYSTEM)/$1/g" \
++                -e "s/\$(VERSION)/$2/g" \
++                -e "s?\$(DB_DIR)?$DB_DIR?g" $3 > $4
++        fi
+     elif [ "$3" = "make.dsql_ss" -o "$3" = "make.intl_ss" -o "$3" = "make.journal_ss" -o "$3" = "make.jrd_ss" -o "$3" = "make.lock_ss" -o "$3" = "make.remote_ss" -o "$3" = "make.wal_ss" -o "$3" = "make.burp_ss" -o "$3" = "make.alice_ss" -o "$3" = "make.utilities_ss" ]; then
+     	if [ "$1" = "HP10" -o "$1" = "LINUX" ]; then
+             sed -e "s/\$(SUPER_FLAG)/-DSUPERSERVER -D_REENTRANT/g" \
++                -e "s/\$(SYSTEM)/$1/g" \
++                -e "s/\$(VERSION)/$2/g" \
++                -e "s?\$(DB_DIR)?$DB_DIR?g" $3 > $4
++    	elif [ "$FBBUILDHACK" = "FREEBSD" ]; then
++            sed -e "s/\$(SUPER_FLAG)/-DSUPERSERVER -D_REENTRANT -D_THREAD_SAFE/g" \
+                 -e "s/\$(SYSTEM)/$1/g" \
+                 -e "s/\$(VERSION)/$2/g" \
+                 -e "s?\$(DB_DIR)?$DB_DIR?g" $3 > $4

@@ -1,0 +1,13 @@
+--- builds/original/platform.orig	Sun Sep 16 22:15:14 2001
++++ builds/original/platform	Sat Nov  9 16:16:23 2002
+@@ -32,6 +32,10 @@
+     SYS_TYPE=GENERIC
+ fi
+ export SYS_TYPE
++if [ $1 = 'FREEBSD' ]; then
++    FBBUILDHACK=$1
++    export FBBUILDHACK
++fi
+ #
+ if [ $1 = 'SUN3_4' -o $1 = 'SUN4' -o $1 = 'AP' -o $1 = 'AX' ]; then
+     TR='tr "A-Z" "a-z"'

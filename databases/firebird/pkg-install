@@ -1,9 +1,8 @@
 #!/bin/sh
 
-# Created in haste by smashing together various
-# files from the port scripts.
+case $2 in
+PRE-INSTALL)
 
-if [ "$2" = "PRE-INSTALL" ]; then
 if [ -d $PKG_PREFIX/firebird ]; then
 	if [ -d $PKG_PREFIX/firebird.old ]; then
 		rm -rf $PKG_PREFIX/firebird.old
@@ -21,60 +20,51 @@ fi
 
 ln -fs $PKG_PREFIX/firebird /usr/interbase
 
-perl <<EOF
-eval '(exit \$?0)' && eval 'exec /usr/bin/perl -S \$0 \${1+"\$@"}'
-& eval 'exec /usr/bin/perl -S \$0 \$argv:q'
-if 0;
+if [ `id -u` -ne 0 ]; then
+	echo; echo "You must be root to run this step!"; echo; echo
+  exit 1
+fi
 
-if( \$> ) {
-	print "\nYou must be root to run this step!\n\n";
-	exit 1;
-}
+nofbuid=0
+fbUID=`id -u firebird 2>/dev/null`
+if [ $? -ne 0 ]; then
+	fbUID=90
+	while [ ! -z `id -un $fbUID 2>/dev/null` ]
+	do
+		fbUID=$(($fbUID+1))
+	done
+	nofbuid=1
+fi
 
-if( getpwnam( "firebird" ) ) {
-	( \$null, \$null, \$fbUID ) = getpwnam( "firebird" );
-} else {
-	\$fbUID = 90;
-	while( getpwuid( \$fbUID ) ) {
-		\$fbUID++;
-	}
-}
+fbGID=`pw groupshow firebird 2>/dev/null`
+if [ $? -ne 0 ]; then
+	fbGID=90
+	while [ ! -z `id -gn $fbGID 2>/dev/null` ]
+	do
+		fbGID=$(($fbGID+1))
+	done
+	echo "firebird:*:$fbGID" >> /etc/group
+else
+	fbGID=`echo $fbGID | awk -F: '{print $3}'`
+fi
 
-if( getgrnam( "firebird" ) ) {
-	( \$null, \$null, \$fbGID ) = getgrnam( "firebird" );
-} else {
-	\$fbGID = 90;
-	while( getgrgid( \$fbGID ) ) {
-		\$fbGID++;
-	}
-	&append_file( "/etc/group", "firebird:*:\$fbGID:" );
-}
+echo "firebird user using uid $fbUID"
+echo "firebird user using gid $fbGID"
 
-print "firebird user using uid \$fbUID\n";
-print "firebird user using gid \$fbGID\n";
+if which -s pw; then
+	if [ $nofbuid -ne 0 ]; then
+		pw useradd firebird -u $fbUID -g $fbGID -h - -s /bin/sh \
+			-d $PKG_PREFIX/firebird -c "Firebird pseudo-user"
+	fi
+else
+	echo -n "unable to create user firebird - please create it manually,"
+	echo " before reinstalling this package."
+	exit 1
+fi
+;;
 
-system( "/usr/bin/chpass -a \"firebird:*:\$fbUID:\$fbGID\:\:0:0:Firebird pseudo-user:\$ENV{'PKG_PREFIX'}/firebird:/bin/sh\"" );
-
-sub append_file {
-	local(\$file,@list) = @_;
-	local(\$LOCK_EX) = 2;
-	local(\$LOCK_NB) = 4;
-	local(\$LOCK_UN) = 8;
-
-	open(F, ">> \$file") || die "\$file: \$!\n";
-	while( ! flock( F, \$LOCK_EX | \$LOCK_NB ) ) {
-		exit 1;
-	}
-	print F join( "\n", @list) . "\n";
-	close F;
-	flock( F, \$LOCK_UN );
-}
-EOF
-elif [ "$2" = "POST-INSTALL" ]; then
+POST-INSTALL)
 chown -R firebird:firebird $PKG_PREFIX/firebird
-
-# Turn everybody to read only.
-chmod -R o=r $PKG_PREFIX/firebird
 
 # Now fix up the mess.
 
@@ -84,22 +74,28 @@ for i in `find $PKG_PREFIX/firebird -print`
     FileName=$i
     if [ -d $FileName ]
        then
-         chmod o=rx $FileName
+         chmod u=rwx,go=rx $FileName
      fi
   done
 
 # make lib ldconfig-compatible
 chown -R root:wheel $PKG_PREFIX/firebird/lib
-chmod -R g-w $PKG_PREFIX/firebird/lib
+
+# make the following read-only
+chmod -R a=r $PKG_PREFIX/firebird/UDF/*
+chmod -R a=r $PKG_PREFIX/firebird/include/*
+chmod -R a=r $PKG_PREFIX/firebird/intl/*
+chmod -R a=r $PKG_PREFIX/firebird/lib/*
 
 # Fix UDF load problem
 cd $PKG_PREFIX/firebird/lib
 ln -sf ib_util.so libib_util.so
+ln -sf gds.so libgds.so.1
 
 cd $PKG_PREFIX/firebird/bin
 
 # all users can run everything.
-chmod o=rx *
+chmod a=rx *
 
 # SUID is needed for running server programs.
 
@@ -121,14 +117,15 @@ for i in isc_init1 isc_lock1 isc_event1
     chown firebird:firebird $FileName
   done
 
-
 touch interbase.log
-chmod ugo=rw interbase.log
+chmod u=rw,go= interbase.log
+chmod a=r interbase.msg
 
-# make databases writable by all
-chmod ugo=rw examples/v5/*.gdb
-chmod ugo=rw help/*.gdb
-chmod ugo=rw isc4.gdb
+# make databases writable by interbase only
+# local database connections are not a good idea
+chmod u=rw,go= examples/v5/*.gdb
+chmod u=rw,go= help/*.gdb
+chmod u=rw,go= isc4.gdb
 
 # remove any existing gds service
 cp /etc/services /etc/services.old
@@ -154,6 +151,7 @@ if [ -d $PKG_PREFIX/etc/rc.d ]; then
 	(
 	echo "#!/bin/sh"; echo "[ -d $PKG_PREFIX/firebird/lib ] && /sbin/ldconfig -m $PKG_PREFIX/firebird/lib"
 	) > $PKG_PREFIX/etc/rc.d/000.firebird.sh
+  chmod a=rx $PKG_PREFIX/etc/rc.d/000.firebird.sh
 fi
-
-fi
+;;
+esac

@@ -1,0 +1,38 @@
+--- builds/original/boot.sfx.interbase.orig	Tue Dec 18 01:40:08 2001
++++ builds/original/boot.sfx.interbase	Sat Nov  9 17:44:54 2002
+@@ -68,7 +68,7 @@
+ #added completed according to inprise tree
+ #FSG  093000
+ 
+-firebird:	gds.h includes fireboot run_codes executables help msgs msgs_intl extlib examples completed
++firebird:	gds.h includes fireboot run_codes executables help msgs msgs_intl extlib completed
+ 
+ #  burp wanted to build gpre	
+ #  we break this dependency
+@@ -159,14 +159,14 @@
+ # 1995-June-7 David Schnepper 
+ # removed pyxis 3-Aug-00 TMC
+ #executables:	alice burp dudley gpre miscFiles $(INTL) isql locks \
+-	$(SUPER_SERVER)  qli remote spit utilities \
+-	$(SHARED_AM) $(LINKABLE_LIBS)
++#	$(SUPER_SERVER)  qli remote spit utilities \
++#	$(SHARED_AM) $(LINKABLE_LIBS)
+ 	
+ executables:    alice dudley miscFiles $(INTL) isql locks \
+ 	$(SUPER_SERVER)  qli remote spit utilities \
+ 	$(SHARED_AM) $(LINKABLE_LIBS)
+ 
+-super_firebird: gds.h includes fireboot super_targets dudley superMiscFiles $(INTL) isql locks qli remote spit help msgs msgs_intl dba gfix gsec security_db extlib examples completed
++super_firebird: gds.h includes fireboot super_targets dudley superMiscFiles $(INTL) isql locks qli remote spit help msgs msgs_intl dba gfix relay gsec security_db extlib completed
+ 
+ super_targets: 	s_run_codes s_alice s_burp s_dba s_security_c super_client super_server super_utils 
+ 
+@@ -195,7 +195,7 @@
+ 
+ super_client:		force
+ 	$(QUIET_ECHO) "Building super/client..."
+-	$(SH) '$(CD) source/super/client; $(MAKE) CFLAGS="$(CFLAGS) -DSUPERCLIENT" SYSTEM="$(SYSTEM)" super_client'
++	$(SH) '$(CD) source/super/client; $(MAKE) SYSTEM="$(SYSTEM)" super_client'
+ 
+ csu gcsu:	$(ACCESS_METHOD) force
+ 	$(QUIET_ECHO) "Building GCSU..."
