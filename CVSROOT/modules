@@ -6697,6 +6697,7 @@ p5-Email-FolderType	ports/mail/p5-Email-FolderType
 p5-Email-LocalDelivery	ports/mail/p5-Email-LocalDelivery
 p5-Email-LocalDelivery-Ezmlm	ports/mail/p5-Email-LocalDelivery-Ezmlm
 p5-Email-MIME	ports/mail/p5-Email-MIME
+p5-Email-MIME-Attachment-Stripper	ports/mail/p5-Email-MIME-Attachment-Stripper
 p5-Email-MIME-ContentType	ports/mail/p5-Email-MIME-ContentType
 p5-Email-MIME-Encodings	ports/mail/p5-Email-MIME-Encodings
 p5-Email-Simple	ports/mail/p5-Email-Simple
