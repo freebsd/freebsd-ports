@@ -7,11 +7,12 @@
 
 PORTNAME=	tcl
 PORTVERSION=	8.2.3
+PORTREVISION=	1
 CATEGORIES=	lang tcl82
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_2/
 DISTNAME=	tcl8.2.3
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 
 NO_LATEST_LINK=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
