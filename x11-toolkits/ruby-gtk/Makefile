@@ -6,54 +6,50 @@
 #
 
 PORTNAME=	gtk
-PORTVERSION=	0.23
+PORTVERSION=	${RUBY_GNOME_PORTVERSION}
 CATEGORIES=	x11-toolkits ruby
-MASTER_SITES=	http://www.ruby-lang.org/gtk/download/
+MASTER_SITES=	${RUBY_GNOME_MASTER_SITES}
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
+DISTNAME=	${RUBY_GNOME_DISTNAME}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	yasuf@bsdclub.org
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 USE_XLIB=	yes
 USE_GTK=	yes
-WANT_IMLIB=	yes
 
-CONFIGURE_ARGS=	${CONFIG_CMD}
+.include "${.CURDIR}/../../x11/ruby-gnome/Makefile.common"
+
+WRKSRC=		${RUBY_GNOME_WRKSRC}/${PORTNAME}
+CONFIGURE_ARGS=	${GTK_CONFIG}
 INSTALL_TARGET=	site-install
 
-.include <bsd.port.pre.mk>
+DOCS_EN=	BUGS \
+		ChangeLog \
+		ENVIRONMENT \
+		README \
+		README.EXT \
+		ToDo
+DOCS_JA=	README.ja \
+		README.EXT.ja
 
-.if defined(HAVE_IMLIB)
-USE_IMLIB=	yes
-PLIST_SUB+=	IMLIB:=""
-CONFIG_CMD=	${IMLIB_CONFIG}
-.else
-PLIST_SUB+=	IMLIB:="@comment "
-CONFIG_CMD=	${GTK_CONFIG}
-.endif
-
-post-configure:
-	${PERL} -i -pe 's/\binstall\b/site-install/g' ${WRKSRC}/Makefile
+post-extract:
+	${MKDIR} ${WRKSRC}/sample/browser
+	${MV} ${WRKSRC}/doc/rbbr.rb ${WRKSRC}/sample/browser
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/lib/*.rb ${RUBY_SITELIBDIR}
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_EXAMPLESDIR}/gtk
-	${INSTALL_DATA} ${WRKSRC}/sample/*.rb ${RUBY_EXAMPLESDIR}/gtk
-	${MKDIR} ${RUBY_EXAMPLESDIR}/gtk/browser
-	${INSTALL_DATA} ${WRKSRC}/doc/*.rb ${RUBY_EXAMPLESDIR}/gtk/browser
-.if defined(HAVE_IMLIB)
-	${MKDIR} ${RUBY_EXAMPLESDIR}/gtk/gdkimlib
-	${INSTALL_DATA} ${WRKSRC}/sample/gdkimlib/*.rb ${RUBY_EXAMPLESDIR}/gtk/gdkimlib
-.endif
-	${MKDIR} ${RUBY_DOCDIR}/gtk/ja
-	${INSTALL_DATA} ${WRKSRC}/doc/api/* ${RUBY_DOCDIR}/gtk
-	${INSTALL_DATA} ${WRKSRC}/doc/api-ja/* ${RUBY_DOCDIR}/gtk/ja
+	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
+	${CP} -R ${WRKSRC}/sample/* ${RUBY_EXAMPLESDIR}/${PORTNAME}/
+	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}/ja
+.for f in ${DOCS_EN}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/
+.endfor
+.for f in ${DOCS_JA}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/ja/
+.endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

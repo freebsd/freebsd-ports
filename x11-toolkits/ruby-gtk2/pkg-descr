@@ -1,7 +1,7 @@
-Ruby extension module to use Gtk+.
+Ruby/GTK is a Ruby binding for Gtk+.
 
 Author:	Hiroshi Igarashi <igarashi@ueda.info.waseda.ac.jp>
-WWW:	http://www.ruby-lang.org/gtk/
+WWW:	http://www.ruby-lang.org/gtk/en/
 
 - Yasuhiro Fukuma
 yasuf@bsdclub.org
