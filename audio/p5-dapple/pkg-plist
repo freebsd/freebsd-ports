@@ -1,6 +1,0 @@
-%%SITE_PERL%%/Net/DAAP/Client.pm
-%%SITE_PERL%%/Net/DAAP/Client/v2.pm
-%%SITE_PERL%%/Net/DAAP/Client/v3.pm
-@unexec rmdir %D/%%SITE_PERL%%/Net/DAAP/Client 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Net/DAAP 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Net 2>/dev/null || true
