@@ -6,36 +6,32 @@
 #
 
 PORTNAME=	sablot
-PORTVERSION=	0.4.0
-PORTREVISION=	2
+PORTVERSION=	0.5.0
 CATEGORIES=	textproc ruby
-MASTER_SITES=	http://www.inac.co.jp/~maki/ruby/
+MASTER_SITES=	http://www.rubycolor.org/arc/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-LIB_DEPENDS=	sablot.60:${PORTSDIR}/textproc/sablotron
+LIB_DEPENDS=	sablot.60:${PORTSDIR}/textproc/sablotron \
+		iconv.2:${PORTSDIR}/converters/iconv \
+		expat.2:${PORTSDIR}/textproc/expat2
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
-.if !defined(NOPORTDOCS)
-USE_RUBY_RD=	yes
-.endif
 
+CONFIGURE_ARGS=	--with-sablot-lib="${LOCALBASE}" \
+		--with-iconv="${LOCALBASE}" \
+		--with-expat="${LOCALBASE}"
 INSTALL_TARGET=	site-install
 
-DOCS=		README		sablot.html	sablot.rd
-
-post-build:
-.if !defined(NOPORTDOCS)
-	cd ${WRKSRC} && ${RUBY_RD} sablot.rd > sablot.html
-.endif
+DOCS=		README		doc/*
 
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/sample/* ${RUBY_EXAMPLESDIR}/${PORTNAME}/
+	${CP} -R ${WRKSRC}/sample/* ${RUBY_EXAMPLESDIR}/${PORTNAME}/
 	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}
 .for f in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/

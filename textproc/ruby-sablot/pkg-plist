@@ -1,9 +1,28 @@
 %%RUBY_SITEARCHLIBDIR%%/sablot.so
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sablot/sample.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sablot/sample.xml
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sablot/sample.xsl
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sablot/sample2.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sablot/sample3.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sablot/basic/sample.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sablot/basic/sample.xml
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sablot/basic/sample.xsl
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sablot/basic/sample_file.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sablot/basic/sample_obj.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sablot/basic/sample_param.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sablot/basic/sample_param.xsl
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sablot/encoding/ddhc-iso-8859-1.xml
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sablot/encoding/ddhc-utf-8.xml
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sablot/encoding/doc-euc-jp.xml
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sablot/encoding/doc-iso-2022-jp.xml
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sablot/encoding/doc-shift_jis.xml
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sablot/encoding/doc-utf-8.xml
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sablot/encoding/doc2html.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sablot/encoding/doc2html.xsl
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sablot/encoding/doc2html_fr.xsl
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sablot/encoding/doc2html_ja.xsl
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sablot/handler/sample.xml
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sablot/handler/sample.xsl
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sablot/handler/sample_err.xsl
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sablot/handler/sample_mh.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/sablot/basic
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/sablot/encoding
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/sablot/handler
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/sablot
 %%PORTDOCS%%%%RUBY_DOCDIR%%/sablot/README
 %%PORTDOCS%%%%RUBY_DOCDIR%%/sablot/sablot.html
