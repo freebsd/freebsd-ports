@@ -35,11 +35,16 @@ PLIST_SUB+=	PYTHON:="@comment "
 PKGNAMESUFFIX=	-nopython
 .endif
 
-.if !defined(WITHOUT_PYTHON)
-pre-extract:
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "If you don't want Python support, add WITHOUT_PYTHON=yes to command line"
-	@${ECHO_MSG} ""
+.if defined(WITH_MEM_DEBUG)
+CONFIGURE_ARGS+=	--with-mem-debug
 .endif
+
+pre-everything::
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "libxslt has several tunables:"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "	WITHOUT_PYTHON=yes		Turns off python support"
+	@${ECHO_MSG} "	WITH_MEM_DEBUG=yes		Turns on memory debugging"
+	@${ECHO_MSG} ""
 
 .include <bsd.port.mk>
