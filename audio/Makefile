@@ -208,6 +208,7 @@
     SUBDIR += rplay
     SUBDIR += rsynth
     SUBDIR += ruby-audiofile
+    SUBDIR += ruby-esound
     SUBDIR += ruby-freedb
     SUBDIR += ruby-mp3tag
     SUBDIR += ruby-qt2sound
