@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hylafax
-PORTVERSION=	4.1.6
+PORTVERSION=	4.1.7
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.hylafax.org/source/
 
@@ -42,10 +42,11 @@ CONFIGURE_ARGS+=--nointeractive
 MAKE_ARGS+=	OPTIMIZER="" -EOPTIMIZER
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	ENVOPTS="${CFLAGS}"
+USE_REINPLACE=	yes
 
 MAN1=	hylafax-client.1 faxalter.1 faxcover.1 faxmail.1 \
 	faxrm.1 faxstat.1 sendfax.1 \
-	sendpage.1 sgi2fax.1 textfmt.1
+	sendpage.1 sgi2fax.1 textfmt.1 edit-faxcover.1
 MAN5=	pagesizes.5f typerules.5f hosts.hfaxd.5f xferfaxlog.5f \
 	cid.5f doneq.5f hylafax-config.5f destctrls.5f dialrules.5f \
 	hylafax-info.5f hylafax-log.5f pagermap.5f recvq.5f sendq.5f \
@@ -64,6 +65,10 @@ SUID_EXES=	${PREFIX}/sbin/faxgetty ${PREFIX}/sbin/faxq \
 
 post-extract:
 	${RM} -rf ${WRKSRC}/zlib ${WRKSRC}/regex
+
+post-patch:
+	${REINPLACE_CMD} -Ee 's,^(DIR.*=.*)/usr/local,\1${PREFIX},g' \
+		-e 's,/usr/local/man,${PREFIX}/man,g' ${WRKSRC}/configure
 
 pre-install:
 PLIST_SUB=	SPOOL="`${GREP} SPOOL ${WRKSRC}/defs | ${CUT} -c10-`"
