@@ -195,7 +195,9 @@ MASTER_SITE_RUBY+= \
 	ftp://ftp.TokyoNet.AD.JP/pub/misc/ruby/%SUBDIR%/ \
 	ftp://ftp.iij.ad.jp/pub/lang/ruby/%SUBDIR%/ \
 	ftp://ftp.krnet.ne.jp/pub/ruby/%SUBDIR%/ \
-	ftp://mirror.nucba.ac.jp/mirror/ruby/%SUBDIR%/
+	ftp://mirror.nucba.ac.jp/mirror/ruby/%SUBDIR%/ \
+	ftp://ftp.kr.FreeBSD.org/pub/ruby/%SUBDIR%/ \
+	ftp://ftp.easynet.be/ruby/ruby/%SUBDIR%/
 
 MASTER_SITE_SOURCEWARE+= \
 	ftp://ftp.freesoftware.com/pub/sourceware/%SUBDIR%/ \
