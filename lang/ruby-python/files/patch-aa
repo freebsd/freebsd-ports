@@ -1,5 +1,5 @@
 --- extconf.rb.orig	Mon Sep 11 01:14:42 2000
-+++ extconf.rb	Sat Jan  6 06:11:27 2001
++++ extconf.rb	Fri Jan 19 04:43:51 2001
 @@ -1,35 +1,41 @@
  require 'mkmf'
  
@@ -66,7 +66,7 @@
  
  # If python is linked with extra libraries (e.g. -lpthread on Linux,
  # -lsocket on Solaris, etc.), have_library test will fail and built
-@@ -59,11 +65,15 @@
+@@ -59,11 +65,13 @@
  end
  $LOCAL_LIBS << py_extralibs
  
@@ -77,8 +77,6 @@
 -    $CFLAGS  += " -DDEBUG"
 -  end
 -  create_makefile("python")
-+have_library("readline", "readline")
-+
 +if !have_library(py_name, "Py_Initialize") || !have_header("Python.h")
 +  exit(1)
 +end
