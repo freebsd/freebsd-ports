@@ -19,14 +19,14 @@ MAINTAINER=	okazaki@be.to
 BUILD_DEPENDS=	${EMACS}:${PORTSDIR}/editors/emacs20
 
 EXTRACT_ONLY=	${DISTNAME}.tgz
-EMACS_DISTNAME= emacs-20.5
+EMACS_DISTNAME= emacs-20.6
 EMACS_ARC=	${EMACS_DISTNAME}a.tar.gz
 EMACS_SRCDIR=	${WRKDIR}/${EMACS_DISTNAME}
 EXTRACT_FILES=	${EMACS_DISTNAME}/man/ack.texi \
 		${EMACS_DISTNAME}/lisp/textmodes/texinfmt.el
 
 # We use emacs20 to format texinfo files.
-EMACS=		emacs-20.5
+EMACS=		emacs-20.6
 
 MAKE_ENV=	EMACS="${EMACS}"
 
