@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	simicq
-PORTVERSION=	0.9
+PORTVERSION=	0.9.1
 CATEGORIES=	net kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:S/mi/m-i/}
@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME:S/icq//}-${PORTVERSION}
 MAINTAINER=	brueffer@phoenix-systems.de
 COMMENT=	Plugin-based instant messenger
 
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_QT_VER=	3
 USE_PERL5_BUILD=	yes
@@ -22,8 +23,6 @@ USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-
-.include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_SSL)
 USE_OPENSSL=	yes
@@ -56,4 +55,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/-O2//g; s/-lpthread/${PTHREAD_LIBS}/g' \
 		${CONFIGURE_WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

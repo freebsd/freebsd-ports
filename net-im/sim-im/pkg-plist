@@ -20,6 +20,7 @@ share/apps/sim/plugins/dock.so
 share/apps/sim/plugins/filter.so
 share/apps/sim/plugins/floaty.so
 share/apps/sim/plugins/forward.so
+share/apps/sim/plugins/gpg.so
 share/apps/sim/plugins/icons.so
 share/apps/sim/plugins/icq.so
 share/apps/sim/plugins/jabber.so
@@ -59,6 +60,7 @@ share/locale/de/LC_MESSAGES/sim.mo
 share/locale/es/LC_MESSAGES/sim.mo
 share/locale/fr/LC_MESSAGES/sim.mo
 share/locale/he/LC_MESSAGES/sim.mo
+share/locale/hu/LC_MESSAGES/sim.mo
 share/locale/it/LC_MESSAGES/sim.mo
 share/locale/nl/LC_MESSAGES/sim.mo
 share/locale/pl/LC_MESSAGES/sim.mo
@@ -89,6 +91,8 @@ share/locale/zh_TW/LC_MESSAGES/sim.mo
 @unexec rmdir %D/share/locale/nl 2>/dev/null || true
 @unexec rmdir %D/share/locale/it/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/it 2>/dev/null || true
+@unexec rmdir %D/share/locale/hu/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/hu 2>/dev/null || true
 @unexec rmdir %D/share/locale/he/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/he 2>/dev/null || true
 @unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true
