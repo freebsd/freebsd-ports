@@ -13,6 +13,8 @@ MASTER_SITES=	http://download.sourceforge.net/xcut/ \
 
 MAINTAINER=	cy@FreeBSD.org
 
+PORTCOMMENT=	Manipulate X cut buffers from the commandline
+
 USE_IMAKE=	YES
 MAN1=		xcut.1
 

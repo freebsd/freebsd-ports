@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	cy@FreeBSD.org
 
+PORTCOMMENT=	Manage remote serial consoles via TCP/IP
+
 BUILD_DEPENDS=	makeme:${PORTSDIR}/devel/msrc0 \
 		mkcmd:${PORTSDIR}/devel/mkcmd \
 		perl:${PORTSDIR}/lang/perl5
