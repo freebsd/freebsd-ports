@@ -1,0 +1,24 @@
+       Gnuchess  plays	a  game  of  chess against the user or it
+       plays against itself.
+
+       Gnuchess is an updated version of the  GNU  chess  playing
+       program.   It has a simple alpha-numeric board display, an
+       IBM PC compatible interface, or it can be compiled for use
+       with  the  chesstool  program on a SUN workstation or with
+       the xboard program under X-windows.  To invoke the program
+       gnuchess
+	      - simple curses based version
+
+       gnuchessn
+	      -  fancy	version using curses and inverse video on
+	      UNIX, or IBM PC cursor controls and  characters  on
+	      MSDOS
+
+       gnuchessr
+	      - ASCII based version
+
+       gnuchessc
+	      - chesstool compatible version
+
+       gnuchessx
+	      - xboard compatible version
