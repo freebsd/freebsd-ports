@@ -1,0 +1,12 @@
+*** fig2dev/dev/readjpg.c.orig	Tue Dec 21 09:52:00 1999
+--- fig2dev/dev/readjpg.c	Tue Jun 19 08:53:20 2001
+***************
+*** 39,44 ****
+--- 39,45 ----
+  {
+  
+  	*llx = *lly = 0;
++ 	pic->transp = -1;
+  	pict = pic;			/* for global access to the object */
+  	if (!read_JPEG_file(file))
+  	    return 0;
