@@ -3,7 +3,7 @@
 # Date created:		19 August 1997
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.17 1998/12/24 06:51:12 cwt Exp $
+# $Id: Makefile,v 1.18 1999/04/30 16:11:48 cwt Exp $
 #
 
 DISTNAME=	tk8.0.5
@@ -34,6 +34,10 @@ TK_LIB_FILE=  ${TK_LIB}.${SHLIB_MAJOR}
 .else
 TK_LIB_FILE=  ${TK_LIB}.${SHLIB_MAJOR}.${SHLIB_MINOR}
 .endif
+
+post-patch:
+	@${CP} ${WRKSRC}/mkLinks ${WRKSRC}/mkLinks.orig
+	@${SED} -e 's/\.[3n]/&.gz/g' ${WRKSRC}/mkLinks.orig > ${WRKSRC}/mkLinks
 
 post-configure:
 	@${CP} ${FILESDIR}/Makefile.lib ${WRKSRC}
