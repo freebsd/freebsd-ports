@@ -43,4 +43,10 @@ CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
+pre-configure:
+	@if [ -n "`${PKG_INFO} -I 'gettext-0.1[012].*' 2>/dev/null`" ]; then \
+		${ECHO_CMD} "${PKGNAME}: requires at least gettext 0.13, please upgrade your installed version."; \
+		${FALSE}; \
+	fi
+
 .include <bsd.port.mk>
