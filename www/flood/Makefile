@@ -16,7 +16,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 
 LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2 \
 		iconv.3:${PORTSDIR}/converters/libiconv \
-		apr.0:${PORTSDIR}/devel/apr
+		apr-0.9:${PORTSDIR}/devel/apr
 
 USE_AUTOCONF=	yes
 CONFIGURE_ARGS=	--disable-shared
