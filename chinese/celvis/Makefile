@@ -4,7 +4,7 @@
 # Date created:         Thur Aug 15, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.5 1997/08/23 09:33:27 obrien Exp $
+# $Id: Makefile,v 1.6 1997/09/22 17:48:24 max Exp $
 #
 
 DISTNAME=	celvis
@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.edu.cn/PUB/Chinese/
 #	if the distfile becomes unfetchable again.  Note this ver is slightly
 #	different.
 
-MAINTAINER=     obrien@NUXI.com
+MAINTAINER=     obrien@FreeBSD.org
 
 MAN1=		celvis.1
 
