@@ -28,6 +28,10 @@ CONFIGURE_ARGS= -x-libraries=${PREFIX}/lib \
 		-with-tk=${LOCALBASE}
 MAN1=		vic.1
 
+pre-patch:
+	@${FIND} ${WRKSRC} -name "*.[c,h]" | ${XARGS} ${PERL} -pi -e \
+		's|malloc.h|stdlib.h|'
+
 post-install:
 	strip ${PREFIX}/bin/vic
 	strip ${PREFIX}/bin/histtolut

@@ -17,6 +17,10 @@ LIB_DEPENDS=		xforms.0:${PORTSDIR}/x11-toolkits/xforms
 
 USE_X_PREFIX=		yes
 
+pre-patch:
+	@${PERL} -pi.orig -e 's|malloc.h|stdlib.h|' \
+		${WRKSRC}/list.h
+
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/xmastermind ${PREFIX}/bin
 	@ ${MKDIR} ${PREFIX}/share/doc/xmastermind

@@ -30,4 +30,8 @@ INSTALL_TARGET=	vertex_install
 
 MAN1=		${PORTNAME}.1
 
+pre-patch:
+	@${FIND} ${WRKSRC} -name "*.[c,h]" | ${XARGS} ${PERL} -pi -e \
+		's|malloc.h|stdlib.h|'
+
 .include <bsd.port.mk>

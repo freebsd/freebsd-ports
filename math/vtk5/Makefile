@@ -39,6 +39,8 @@ post-patch:
 		s|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|g; \
 		s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g" \
 		${WRKSRC}/user.make
+	@${FIND} ${WRKSRC} -name "*.cxx" | ${XARGS} ${PERL} -pi -e \
+		's|malloc.h|stdlib.h|'
 
 post-install:
 .if !defined(WITHOUT_PYTHON)

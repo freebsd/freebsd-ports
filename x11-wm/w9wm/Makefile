@@ -17,4 +17,7 @@ MAKEFILE=	Makefile.no-imake
 
 MAN1=		w9wm.1
 
+pre-patch:
+	@${PERL} -pi.orig -e 's|malloc.h|stdlib.h|' ${WRKSRC}/client.c
+
 .include <bsd.port.mk>

@@ -9,18 +9,21 @@ PORTNAME=	xmandel
 PORTVERSION=	1.0
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.cray.com/src/graphics/xmandel/
-EXTRACT_SUFX=	.shar
 # The README says the location is ftp.cray.com:/usr/ftp/src/graphics/xmandel,
 # but this has changed apparently.
 DISTNAME=	${PORTNAME}
+EXTRACT_SUFX=	.shar
 
-EXTRACT_CMD=	sh
+MAINTAINER=	andreas@marvin.robin.de
+
+EXTRACT_CMD=	${SH}
 EXTRACT_BEFORE_ARGS=	# empty
 EXTRACT_AFTER_ARGS=	# empty
 USE_IMAKE=	yes
 NO_WRKSUBDIR=	yes
 MAN1=		xmandel.1
 
-MAINTAINER=	andreas@marvin.robin.de
+pre-patch:
+	@${PERL} -pi.orig -e 's|malloc.h|stdlib.h|' ${WRKSRC}/mandel.c
 
 .include <bsd.port.mk>

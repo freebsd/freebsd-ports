@@ -29,6 +29,10 @@ MAKE_ENV=	LC_ALL=
 MAN1=		yudit.1 makeumap.1 stripumap.1 uniconv.1 uniprint.1
 USE_GMAKE=	YES
 
+pre-patch:
+	@${PERL} -pi.orig -e 's|malloc.h|stdlib.h|' \
+		${WRKSRC}/src/UFontMap.cpp
+
 post-install:
 	cd ${PREFIX}/bin/ && strip yudit stripumap uniconv uniprint
 
