@@ -8,7 +8,8 @@
 PORTNAME=	xjumpjump
 PORTVERSION=	0.12
 CATEGORIES=	games
-MASTER_SITES=	http://makosteszta.sote.hu/linux/jumpjump/
+# mastersite disappeared in January 2002
+MASTER_SITES=	# http://makosteszta.sote.hu/linux/jumpjump/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
