@@ -12,23 +12,44 @@ etc/gconf/gconf.xml.defaults/schemas/apps/gtranslator/language/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gtranslator/translator/%gconf.xml
 etc/gconf/schemas/gtranslator.schemas
 share/gnome/apps/Development/gtranslator.desktop
+share/gnome/gtranslator/colorschemes/boom-boom.xml
+share/gnome/gtranslator/colorschemes/default.xml
+share/gnome/gtranslator/colorschemes/extremely-kabalak.xml
+share/gnome/gtranslator/colorschemes/kabalak.xml
+share/gnome/gtranslator/colorschemes/kbabel.xml
+share/gnome/gtranslator/colorschemes/menesis.xml
+share/gnome/gtranslator/colorschemes/nizuu.xml
+share/gnome/gtranslator/colorschemes/tuey.xml
+share/gnome/gtranslator/colorschemes/vim.xml
+share/gnome/gtranslator/colorschemes/waliays.xml
+share/gnome/gtranslator/colorschemes/zuper.xml
 share/gnome/gtranslator/scripts/my-update.sh
+share/gnome/help/gtranslator/C/aa.html
 share/gnome/help/gtranslator/C/authors.html
+share/gnome/help/gtranslator/C/colorschemes.html
 share/gnome/help/gtranslator/C/commandlinearguments.html
 share/gnome/help/gtranslator/C/docbook.css
 share/gnome/help/gtranslator/C/features.html
 share/gnome/help/gtranslator/C/index.html
-share/gnome/help/gtranslator/C/thanks-to-contributors.html
-share/gnome/help/gtranslator/C/thanks-to-packagers.html
+share/gnome/help/gtranslator/C/resources.html
+share/gnome/help/gtranslator/C/thanks.html
 share/gnome/help/gtranslator/C/topic.dat
-share/gnome/help/gtranslator/C/use-of-gtranslator.html
+share/gnome/help/gtranslator/ja/authors.html
+share/gnome/help/gtranslator/ja/commandlinearguments.html
+share/gnome/help/gtranslator/ja/docbook.css
+share/gnome/help/gtranslator/ja/features.html
+share/gnome/help/gtranslator/ja/index.html
+share/gnome/help/gtranslator/ja/thanks.html
+share/gnome/help/gtranslator/ja/topic.dat
+share/gnome/help/gtranslator/ja/use-of-gtranslator.html
 share/gnome/mime-info/gtranslator.keys
 share/gnome/mime-info/gtranslator.mime
 share/gnome/pixmaps/gtranslator.png
-share/gnome/pixmaps/mc/application-x-gmo.png
 share/gnome/pixmaps/mc/application-x-po.png
+share/locale/az/LC_MESSAGES/gtranslator.mo
 share/locale/da/LC_MESSAGES/gtranslator.mo
 share/locale/de/LC_MESSAGES/gtranslator.mo
+share/locale/el/LC_MESSAGES/gtranslator.mo
 share/locale/en_GB/LC_MESSAGES/gtranslator.mo
 share/locale/es/LC_MESSAGES/gtranslator.mo
 share/locale/fi/LC_MESSAGES/gtranslator.mo
@@ -47,9 +68,12 @@ share/locale/ru/LC_MESSAGES/gtranslator.mo
 share/locale/sv/LC_MESSAGES/gtranslator.mo
 share/locale/tr/LC_MESSAGES/gtranslator.mo
 share/locale/uk/LC_MESSAGES/gtranslator.mo
+share/locale/wa/LC_MESSAGES/gtranslator.mo
+@dirrm share/gnome/help/gtranslator/ja
 @dirrm share/gnome/help/gtranslator/C
 @dirrm share/gnome/help/gtranslator
 @dirrm share/gnome/gtranslator/scripts
+@dirrm share/gnome/gtranslator/colorschemes
 @dirrm share/gnome/gtranslator
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gtranslator/translator
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gtranslator/language

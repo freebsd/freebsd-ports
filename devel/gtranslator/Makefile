@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	gtranslator
-PORTVERSION=	0.35
+PORTVERSION=	0.37
 CATEGORIES=	devel gnome
-MASTER_SITES=	http://www.gtranslator.org/download/releases/${PORTVERSION}/tarballs/ \
+MASTER_SITES=	http://www.gtranslator.org/download/releases/${PORTVERSION}/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
@@ -27,7 +27,7 @@ USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 
-MAN1=		gtranslator.1
+MAN1=		gtranslator.1 nautilus-gtranslator-view.1 pozilla.sh.1
 MANCOMPRESSED=	yes
 
 pre-patch:
