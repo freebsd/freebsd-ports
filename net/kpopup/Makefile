@@ -9,7 +9,7 @@ PORTVERSION=	0.9.1
 CATEGORIES=	net kde
 MASTER_SITES=	http://www.henschelsoft.de/kpopup/
 
-MAINTAINER=	frerich.raabe@gmx.de
+MAINTAINER=	so14k@so14k.com
 COMMENT=	KDE program for sending and receiving MS Windows WinPopup messages
 
 RUN_DEPENDS=	smbclient:${PORTSDIR}/net/samba
