@@ -6,17 +6,17 @@ bin/amuleweb
 bin/amulewebDLG
 share/gnome/pixmaps/amule.xpm
 share/gnome/applications/amule.desktop
-share/gnome/doc/amule-1.2.7/ABOUT-NLS
-share/gnome/doc/amule-1.2.7/AUTHORS
-share/gnome/doc/amule-1.2.7/Changelog
-share/gnome/doc/amule-1.2.7/ED2K-Links.HOWTO
-share/gnome/doc/amule-1.2.7/INSTALL
-share/gnome/doc/amule-1.2.7/README
-share/gnome/doc/amule-1.2.7/TODO
-share/gnome/doc/amule-1.2.7/amulesig.txt
-share/gnome/doc/amule-1.2.7/eMule-Imports-Status
-share/gnome/doc/amule-1.2.7/license.txt
-@dirrm share/gnome/doc/amule-1.2.7
+share/gnome/doc/aMule-1.2.8/ABOUT-NLS
+share/gnome/doc/aMule-1.2.8/AUTHORS
+share/gnome/doc/aMule-1.2.8/Changelog
+share/gnome/doc/aMule-1.2.8/ED2K-Links.HOWTO
+share/gnome/doc/aMule-1.2.8/INSTALL
+share/gnome/doc/aMule-1.2.8/README
+share/gnome/doc/aMule-1.2.8/TODO
+share/gnome/doc/aMule-1.2.8/amulesig.txt
+share/gnome/doc/aMule-1.2.8/eMule-Imports-Status
+share/gnome/doc/aMule-1.2.8/license.txt
+@dirrm share/gnome/doc/aMule-1.2.8
 share/locale/en/LC_MESSAGES/amule.mo
 share/locale/es/LC_MESSAGES/amule.mo
 share/locale/de/LC_MESSAGES/amule.mo
