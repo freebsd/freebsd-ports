@@ -3,13 +3,13 @@
 # Date created:         Thur Sept 25, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.1.1.1 1996/08/16 07:23:00 asami Exp $
+# $Id: Makefile,v 1.1.1.1 1996/10/27 10:08:45 max Exp $
 #
 
 DISTNAME=	vfrb101e
 PKGNAME=	vscan-1.0.2
 CATEGORIES+=	security
-MASTER_SITES=	ftp://ftp.mcafee.com/pub/antivirus/
+MASTER_SITES=   ftp://ftp.mcafee.com/pub/antivirus/english/unix/freebsd/
 EXTRACT_SUFX=	.taz
 
 MAINTAINER=     obrien@cs.ucdavis.edu
