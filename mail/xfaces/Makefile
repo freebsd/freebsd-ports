@@ -5,10 +5,10 @@
 # With some 
 # modifications from:	Andreas Klemm <andreas@FreeBSD.ORG>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/12/14 22:33:02 andreas Exp $
 #
 
-PKGNAME=	xfaces-3.3
+DISTNAME=	xfaces-3.3
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cs.indiana.edu/pub/faces/xfaces/ \
 		ftp://odie.physik2.uni-rostock.de/pub/
