@@ -5,10 +5,14 @@ bin/sntpclock
 bin/taiclock
 bin/taiclockd
 %%PORTDOCS%%share/doc/clockspeed/INSTALL
+%%PORTDOCS%%share/doc/clockspeed/INSTALL-FreeBSD
 %%PORTDOCS%%@dirrm share/doc/clockspeed
 @mode 0755
 @exec mkdir %D/etc/clockspeed
+etc/clockspeed/leapsecs.dat
+@unexec if [ -f %D/etc/rc.d/clockspeed.sh ]; then cmp -s %D/etc/rc.d/clockspeed.sh.sample %D/etc/rc.d/clockspeed.sh && rm -f %D/etc/rc.d/clockspeed.sh || echo "If you are permanently removing this port, you should do a ``rm -f ${PKG_PREFIX}/etc/rc.d/clockspeed.sh`` to remove startup files left." | fmt ; fi
+etc/rc.d/clockspeed.sh.sample
 @unexec rm %D/etc/clockspeed/atto.tmp 2>/dev/null || true
 @unexec rm %D/etc/clockspeed/atto 2>/dev/null || true
 @unexec rm %D/etc/clockspeed/adjust 2>/dev/null || true
-@unexec rmdir %D/etc/clockspeed 2>/dev/null || true
+@unexec rmdir %D/etc/clockspeed 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -Rf ${PKG_PREFIX}/etc/clockspeed`` to remove any configuration files left." | fmt

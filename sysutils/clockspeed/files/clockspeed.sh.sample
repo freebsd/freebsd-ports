@@ -1,0 +1,16 @@
+#!/bin/sh
+
+PREFIX=/usr/local/
+
+case "$1" in
+start)
+	exec ${PREFIX}/bin/clockspeed &
+	exit 0
+	;;
+stop)
+	;;
+*)
+	echo "Usage: `basename $0` {start|stop}" >&2
+	exit 64
+	;;
+esac
