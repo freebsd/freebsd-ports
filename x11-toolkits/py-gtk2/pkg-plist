@@ -82,6 +82,7 @@ share/examples/py-gtk/testgtk/README
 share/examples/py-gtk/testgtk/test.xpm
 share/examples/py-gtk/testgtk/testgtk.py
 share/examples/py-gtk/testgtk/testgtkrc
+@dirrm include/pygtk
 @dirrm lib/python1.5/site-packages/pyglade
 @dirrm share/doc/py-gtk
 @dirrm share/examples/py-gtk/gl
