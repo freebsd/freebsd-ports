@@ -32,13 +32,13 @@
  # Directory where the bitmaps for the faceup cards will be located #
  ####################################################################
 -CARDBITMAPS = /homes/bao/src/test/tksol/cardbitmaps
-+CARDBITMAPS = ${PREFIX}/lib/tk4.2/tksol/cardbitmaps
++CARDBITMAPS = ${PREFIX}/share/games/tksol/cardbitmaps
  
  ######################################################################
  # Directory where the bitmaps for the facedown cards will be located #
  ######################################################################
 -DOWNBITMAPS = /homes/bao/src/test/tksol/downbitmaps
-+DOWNBITMAPS = ${PREFIX}/lib/tk4.2/tksol/downbitmaps
++DOWNBITMAPS = ${PREFIX}/share/games/tksol/downbitmaps
  
  #####################################################################
  # Specify whether your wish has the TkPixmap patch installed or not #
