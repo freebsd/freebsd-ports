@@ -1,212 +1,140 @@
-From: Christian.Schroeder@Inf-Technik.TU-Ilmenau.DE (Ch. Schroeder)
-Message-Id: <9510171319.AA19401@pegasus>
-Subject: yale tftpd
-To: pst@cisco.com
-Date: Tue, 17 Oct 1995 14:19:32 +0100 (MET)
-
-Hello Paul,
-
-Some days ago I foung the yale tftp daemon (3.0) on the INTERNET and I want to
-use it because I have to follow symbolic links from the tftp root directory
-to some bootfiles in other directories in the local filesystem.
-
-But I found, that there are some security holes (?) in the code, specially
-if the daemon checks the pathname of the requested file. That is dangereous
-if no default access rules are specified.
-
-i.e:
-
-config file:
-------------
-
-defaultDirectory                /tftpboot
-rootDirectory                   /tftpboot
-accessList              1       readonly        141.24.20.0     0.0.3.255
-defaultAccessList       1
-
-The following reqeusts were successfully and I think, that shouldn't be so.
-
-tftp> get /etc/passwd ./foo
-Error code 1: File not found
-tftp> get /tftpboot/../../etc/passwd ./foo
-Received 474 bytes in 0.3 seconds
-tftp> get ../../etc/passwd ./foo
-Received 474 bytes in 0.1 seconds
-tftp>
-
-I found also some Problems when I dont secify a rootDirectory.
-Specially the "../.." parts are only removed, if a root directory
-is specified AND the path starts with "/" AND the path doesn't start 
-with the virtual root directory (e.g. /tftpboot). restrict rules can
-be skipped with leading ../.. etc.
-Therefore I made some changes in tftpd.c an got better results.
-
-tftp> get /etc/passwd ./foo
-Error code 1: File not found
-tftp> get /tftpboot/../../etc/passwd ./foo
-Error code 2: Access violation
-tftp> get ../../etc/passwd ./foo
-Error code 1: File not found
-tftp>
-
-It would be very nice, if you could check my modifications and
-mail me your meaning back. (Excuse please my ugly english)
-
-Christian
-
-Here's the diff File ( diff -bw -c tftpd.c tftpd.c.patched ):
-
-*** tftpd.c	Tue Oct 17 14:09:01 1995
---- tftpd.c.patched	Tue Oct 17 11:57:30 1995
-***************
-*** 459,475 ****
-  
-  	/* Rule 2:
-  	 */
-! 	if (tftpRootDirectory != 0 && IS_ROOTED(filename)) {
-  		char _tmp[1024];
-  		int maxPath;
-  		int rootLen;
-  
-! 		rootLen = strlen (tftpRootDirectory);
-  
-  		/* make sure the pathname doesn't already contain
-  		 * the virtual root.
-  		 */
-- 		if (strncmp(filename,tftpRootDirectory,rootLen) != 0) {
-  
-  			/* Insure our temporary space is big enough */
-  			maxPath = ((sizeof _tmp) - 1) - rootLen;
---- 459,483 ----
-  
-  	/* Rule 2:
-  	 */
-! 	if ((tftpRootDirectory != 0 && IS_ROOTED(filename)) ||
-! 	    (tftpDefaultDirectory != 0 && IS_ROOTED(filename))) {
-  		char _tmp[1024];
-+ 		char* realRootDir; 
-  		int maxPath;
-  		int rootLen;
-  
-! 		if (tftpRootDirectory != 0 ) {
-! 			realRootDir = tftpRootDirectory;
-! 		}
-! 		else {
-! 			realRootDir = tftpDefaultDirectory;
-! 		}
-  
-+ 		rootLen = strlen (realRootDir);
-+ 
-  		/* make sure the pathname doesn't already contain
-  		 * the virtual root.
-  		 */
-  
-  		/* Insure our temporary space is big enough */
-  		maxPath = ((sizeof _tmp) - 1) - rootLen;
-***************
-*** 481,486 ****
---- 489,496 ----
-  			return EACCESS;
-  		}
-  
-+ 		if (strncmp(filename,realRootDir,rootLen) != 0) {
-+ 
-  			/* Squeeze out any '.' or '..' components */
-  			strcpy (tmpPath, filename);
-  			if (realPath (tmpPath, _tmp) < 0) {
-***************
-*** 492,511 ****
-  			/* Create the full pathname, prefixed by the
-  			 * virtual root.
-  			 */
-! 			strcpy (tmpPath, tftpRootDirectory);
-  			strcat (tmpPath, _tmp);
-  			filename = tmpPath;
-  		}
-  	}
-  
-  	/* Rule 3:
-  	 */
-! 	if (!IS_ROOTED(filename) && tftpDefaultDirectory == 0) {
-! 		strcpy (tmpPath, tftpRootDirectory);
-! 		strcat (tmpPath, "/");
-  		strcat (tmpPath, filename);
-  		filename = tmpPath;
-  	}
-  
-  	/* Check access lists */
-  	/* Rules 4&5:
---- 502,554 ----
-  			/* Create the full pathname, prefixed by the
-  			 * virtual root.
-  			 */
-! 			strcpy (tmpPath, realRootDir);
-  			strcat (tmpPath, _tmp);
-  			filename = tmpPath;
-  		}
-+ 		else {
-+ 			/* Squeeze out any '.' or '..' components */
-+ 		        strcpy (tmpPath, filename);
-+                         if (realPath (tmpPath, _tmp) < 0) {
-+                                 if (tftpDebugLevel > 1)
-+                                         syslog (LOG_DEBUG, "realPath fails");
-+                                 return EACCESS;
-                          }	
-+ 			/* Create the full pathname */
-+ 			strcpy (tmpPath,_tmp);
-+ 			filename = tmpPath;
-+ 			if (strncmp(filename,realRootDir,rootLen) != 0) {
-+ 			    if (tftpDebugLevel > 1) {
-+ 				syslog(LOG_DEBUG, "file=%s; invalid access denied", filename);
-+ 				return EACCESS;
-+ 	                    }	
-+ 			}
-+ 		}
-+ 	}
-  
-  	/* Rule 3:
-  	 */
-! 	if ((!IS_ROOTED(filename)  && tftpRootDirectory != 0) ||
-! 	    (!IS_ROOTED(filename)  && tftpDefaultDirectory != 0)) {
-! 		char _tmp[1024];
-  		strcat (tmpPath, filename);
-+ 	        /* Squeeze out any '.' or '..' components */
-+                         strcpy (tmpPath, filename);
-+                         if (realPath (tmpPath, _tmp) < 0) {
-+                                 if (tftpDebugLevel > 1)
-+                                         syslog (LOG_DEBUG, "realPath fails");
-+                                 return EACCESS;
-+                         }
-+ 		if ( tftpDefaultDirectory == 0 ) {
-+ 			strcpy (tmpPath, tftpRootDirectory);
-+ 		}
-+ 		else {
-+ 			strcpy (tmpPath, tftpDefaultDirectory);
-+ 		}
-+ 		strcat (tmpPath, _tmp);
-  		filename = tmpPath;
-  	}
-+ 
-  
-  	/* Check access lists */
-  	/* Rules 4&5:
--- 
-
-                                             ***
-                                            (o o)
- ---------------------------------------ooO--(_)--Ooo----------------------
-|                           |                                              |
-|                           | Christian Schroeder (Dr.-Ing.)               |
-|                           |                                              |
-|        _/_/_/     _/_/_/  | Technische Universitaet Ilmenau              |
-|      _/    _/  _/     _/  | Fakultaet Elektrotechnik/Informationstechnik |
-|    _/          _/         | Mikroelektronische Schaltungen u. Systeme    |
-|   _/           _/_/_/     | Postfach 0565                                |
-|  _/                 _/    | 98684 ILMENAU                                |
-|  _/     _/  _/      _/    |                                              |
-|   _/_/_/     _/_/_/       | Phone  : +49 (0) 3677/69-1165/1168/1169      |
-|                           | FAX    : +49 (0) 3677/69-1163                |
-|                           | E-Mail : schroeder@Inf-Technik.TU-Ilmenau.DE |
- --------------------------------------------------------------------------
-
-
+--- tftpd.c.orig	Mon Mar 20 14:14:39 1995
++++ tftpd.c	Fri Aug 27 12:46:59 1999
+@@ -294,7 +294,10 @@
+ }
+ 
+ int	validate_access();
+-int	sendfile(), recvfile();
++
++struct formats;
++int	tftpsendfile(struct formats *);
++int	tftprecvfile(struct formats *);
+ 
+ struct formats {
+ 	char	*f_mode;
+@@ -303,8 +306,8 @@
+ 	int	(*f_recv)();
+ 	int	f_convert;
+ } formats[] = {
+-	{ "netascii",	validate_access,	sendfile,	recvfile, 1 },
+-	{ "octet",	validate_access,	sendfile,	recvfile, 0 },
++	{ "netascii",	validate_access,	tftpsendfile,	tftprecvfile, 1 },
++	{ "octet",	validate_access,	tftpsendfile,	tftprecvfile, 0 },
+ #ifdef notdef
+ 	{ "mail",	validate_user,		sendmail,	recvmail, 1 },
+ #endif
+@@ -459,17 +462,25 @@
+ 
+ 	/* Rule 2:
+ 	 */
+-	if (tftpRootDirectory != 0 && IS_ROOTED(filename)) {
++	if ((tftpRootDirectory != 0 && IS_ROOTED(filename)) ||
++	    (tftpDefaultDirectory != 0 && IS_ROOTED(filename))) {
+ 		char _tmp[1024];
++		char* realRootDir; 
+ 		int maxPath;
+ 		int rootLen;
+ 
+-		rootLen = strlen (tftpRootDirectory);
++		if (tftpRootDirectory != 0 ) {
++			realRootDir = tftpRootDirectory;
++		}
++		else {
++			realRootDir = tftpDefaultDirectory;
++		}
++
++		rootLen = strlen (realRootDir);
+ 
+ 		/* make sure the pathname doesn't already contain
+ 		 * the virtual root.
+ 		 */
+-		if (strncmp(filename,tftpRootDirectory,rootLen) != 0) {
+ 
+ 			/* Insure our temporary space is big enough */
+ 			maxPath = ((sizeof _tmp) - 1) - rootLen;
+@@ -481,6 +492,8 @@
+ 				return EACCESS;
+ 			}
+ 
++		if (strncmp(filename,realRootDir,rootLen) != 0) {
++
+ 			/* Squeeze out any '.' or '..' components */
+ 			strcpy (tmpPath, filename);
+ 			if (realPath (tmpPath, _tmp) < 0) {
+@@ -492,21 +505,54 @@
+ 			/* Create the full pathname, prefixed by the
+ 			 * virtual root.
+ 			 */
+-			strcpy (tmpPath, tftpRootDirectory);
++			strcpy (tmpPath, realRootDir);
+ 			strcat (tmpPath, _tmp);
+ 			filename = tmpPath;
+ 		}
++		else {
++			/* Squeeze out any '.' or '..' components */
++		        strcpy (tmpPath, filename);
++                        if (realPath (tmpPath, _tmp) < 0) {
++                                if (tftpDebugLevel > 1)
++                                        syslog (LOG_DEBUG, "realPath fails");
++                                return EACCESS;
++	}
++			/* Create the full pathname */
++			strcpy (tmpPath,_tmp);
++			filename = tmpPath;
++			if (strncmp(filename,realRootDir,rootLen) != 0) {
++			    if (tftpDebugLevel > 1) {
++				syslog(LOG_DEBUG, "file=%s; invalid access denied", filename);
++				return EACCESS;
++	                    }	
++			}
++		}
+ 	}
+ 
+ 	/* Rule 3:
+ 	 */
+-	if (!IS_ROOTED(filename) && tftpDefaultDirectory == 0) {
+-		strcpy (tmpPath, tftpRootDirectory);
+-		strcat (tmpPath, "/");
++	if ((!IS_ROOTED(filename)  && tftpRootDirectory != 0) ||
++	    (!IS_ROOTED(filename)  && tftpDefaultDirectory != 0)) {
++		char _tmp[1024];
+ 		strcat (tmpPath, filename);
++	        /* Squeeze out any '.' or '..' components */
++                        strcpy (tmpPath, filename);
++                        if (realPath (tmpPath, _tmp) < 0) {
++                                if (tftpDebugLevel > 1)
++                                        syslog (LOG_DEBUG, "realPath fails");
++                                return EACCESS;
++                        }
++		if ( tftpDefaultDirectory == 0 ) {
++			strcpy (tmpPath, tftpRootDirectory);
++		}
++		else {
++			strcpy (tmpPath, tftpDefaultDirectory);
++		}
++		strcat (tmpPath, _tmp);
+ 		filename = tmpPath;
+ 	}
+ 
++
+ 	/* Check access lists */
+ 	/* Rules 4&5:
+ 	 */
+@@ -593,7 +639,7 @@
+ /*
+  * Send the requested file.
+  */
+-sendfile(pf)
++tftpsendfile(pf)
+ 	struct formats *pf;
+ {
+ 	struct tftphdr *dp, *r_init();
+@@ -664,7 +710,7 @@
+ /*
+  * Receive a file.
+  */
+-recvfile(pf)
++tftprecvfile(pf)
+ 	struct formats *pf;
+ {
+ 	struct tftphdr *dp, *w_init();
