@@ -3,14 +3,14 @@
 # Date created:		28 November 1998
 # Whom:			Neil Blakey-Milner <nbm@rucus.ru.ac.za>
 #
-# $Id: Makefile,v 1.1.1.1 1999/01/18 03:48:08 steve Exp $
+# $Id: Makefile,v 1.2 1999/02/22 04:19:04 steve Exp $
 #
 
 DISTNAME=	ezmlm-0.53
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.ezmlm.org/pub/qmail/ \
 		ftp://ftp.ntnu.no/pub/unix/mail/qmail/ \
-		ftp://ftp.pipex.net/mirrors/qmail/ \
+		ftp://mirror.pipex.net/pub/qmail/ \
 		ftp://ftp.jp.qmail.org/qmail/ \
 		ftp://ftp.rifkin.technion.ac.il/pub/qmail/ \
 		ftp://ftp.mira.net.au/unix/mail/qmail/
