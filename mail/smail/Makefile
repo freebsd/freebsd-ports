@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	smail
-PORTVERSION=	3.2.0.111
+PORTVERSION=	3.2.0.114
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.uu.net/networking/mail/smail/ \
 		ftp://ftp.planix.com/pub/Smail/ \
-		ftp://ftp.fu-berlin.de/unix/mail/smail/
+		ftp://ftp.fu-berlin.de/unix/mail/smail/ \
+		ftp://ftp.weird.com/pub/local/
 
 MAINTAINER=	ports@FreeBSD.org
 
