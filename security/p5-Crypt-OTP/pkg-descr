@@ -1,0 +1,9 @@
+The One Time Pad encryption method is very simple, and impossible
+to crack without the actual pad file against which the to-be-encrypted
+message is XOR'ed. Encryption and decryption are performed using
+excactly the same method, and the message will decrypt correctly
+only if the same pad is used in decryption as was use in encryption.
+
+WWW: http://search.cpan.org/search?dist=Crypt-OTP
+
+Seamus Venasse <svenasse@polaris.ca>

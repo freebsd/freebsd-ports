@@ -126,6 +126,7 @@
     SUBDIR += p5-Crypt-ECB
     SUBDIR += p5-Crypt-HCE_SHA
     SUBDIR += p5-Crypt-IDEA
+    SUBDIR += p5-Crypt-OTP
     SUBDIR += p5-Crypt-OpenPGP
     SUBDIR += p5-Crypt-OpenSSL-RSA
     SUBDIR += p5-Crypt-OpenSSL-Random
