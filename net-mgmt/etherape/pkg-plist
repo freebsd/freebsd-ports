@@ -13,12 +13,9 @@ share/locale/nl/LC_MESSAGES/etherape.mo
 share/locale/tr/LC_MESSAGES/etherape.mo
 share/pixmaps/etherape.png
 @dirrm etc/etherape
+@unexec rmdir %D/share/pixmaps 2> /dev/null || true
 @dirrm share/etherape/glade
 @dirrm share/etherape
 @dirrm share/gnome/help/etherape/C/stylesheet-images
 @dirrm share/gnome/help/etherape/C
 @dirrm share/gnome/help/etherape
-@dirrm share/locale/es/LC_MESSAGES
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/nl/LC_MESSAGES
-@dirrm share/locale/tr/LC_MESSAGES
