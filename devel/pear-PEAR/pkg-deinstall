@@ -13,7 +13,10 @@ PACKAGE=$(echo $PKG_NAME | sed 's/pear-//')
 PEAR=${PKG_PREFIX}/bin/pear
 PEAR2=${PKG_PREFIX}/bin/pear2
 
-if [ ${PKG_NAME} = "pear-PEAR" ]; then
+if [ ${PACKAGE} = "PEAR" ]		\
+|| [ ${PACKAGE} = "Archive_Tar" ]	\
+|| [ ${PACKAGE} = "Console_Getopt" ]	\
+|| [ ${PACKAGE} = "XML_RPC" ]; then
 	PEAR_INSTALLER=${PEAR}
 else
 	PEAR_INSTALLER=${PEAR2}
