@@ -3,15 +3,15 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.6 1997/11/27 00:35:27 se Exp $
+# $Id: Makefile,v 1.7 1998/02/07 11:58:31 se Exp $
 #
 
 DISTNAME=	kdebase-Beta3-1
 PKGNAME=	kdebase-3.1b
 CATEGORIES=	x11 kde
 MASTER_SITES=	ftp://ftp.net.lut.ac.uk/kde/stable/Beta3/distribution/tgz/source/ \
- 		ftp://ftp.uni-erlangen.de/pub/Linux/MIRROR.KDE/stable/Beta3/distribution/tgz/source/ \
- 		ftp://ftp.caldera.com/pub/mirrors/kde/stable/Beta3/distribution/tgz/source/
+		ftp://ftp.uni-erlangen.de/pub/Linux/MIRROR.KDE/stable/Beta3/distribution/tgz/source/ \
+		ftp://ftp.caldera.com/pub/mirrors/kde/stable/Beta3/distribution/tgz/source/
 EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	se@freebsd.org
@@ -29,8 +29,8 @@ LIB_DEPENDS=	qt\\.1\\.3[1-9]:${PORTSDIR}/x11/qt \
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	"--prefix=$(PREFIX)" \
-		"--x-inc=$(X11BASE)/include -I$(PREFIX)/include -I$(PREFIX)/include/giflib" \
-		"--x-lib=$(X11BASE)/lib -L$(PREFIX)/lib"
+		"--with-extra-includes=$(PREFIX)/include/giflib"
+
 CONFIGURE_ENV=	CXXFLAGS="$(CFLAGS)" \
 		INSTALL_SCRIPT="install -c -m 555"
 
