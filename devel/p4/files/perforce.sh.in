@@ -40,8 +40,14 @@ restart)
     sleep 1
     $0 start
     ;;
+checkpoint)
+    [ -f @PREFIX@/etc/perforce.conf ] && .  @PREFIX@/etc/perforce.conf
+    if [ -x $p4d -a x$PERFORCE_START = xyes ]; then
+	su -fm $PERFORCE_USER -c "$p4d -r $PERFORCE_ROOT -jc"
+    fi
+    ;;
 *)
-    echo "usage: $0 {start|stop|restart}"
+    echo "usage: $0 {start|stop|restart|checkpoint}"
     exit 64
     ;;
 esac
