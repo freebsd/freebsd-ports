@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnustep-guile
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNUSTEP} \
 		ftp://ftp.gnustep.org/pub/gnustep/%SUBDIR%/
@@ -49,8 +49,8 @@ GUILE_VER!=	(cd ${PORTSDIR}/lang/guile && make -V GUILE_VER)
 
 pre-configure:
 	${TOUCH} ${WRKSRC}/Greg/ac_nonexistent.h
-.if defined(WITH_GNUSTEP_DEVEL)
-	${REINPLACE_CMD} -e 's=ROOT/Headers=ROOT/Library/Headers=g' \
+.if !defined(WITH_GNUSTEP_DEVEL)
+	${REINPLACE_CMD} -e 's=ROOT/Library/Headers=ROOT/Headers=g' \
 		${WRKSRC}/configure
 .endif
 
