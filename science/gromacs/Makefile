@@ -50,6 +50,10 @@ USE_XLIB=	yes
 CONFIGURE_ARGS+=	--without-fftw
 .endif
 
+.ifndef WITHOUT_FLOAT
+CONFIGURE_ARGS+=	--disable-float
+.endif
+
 .ifdef WITH_MPI
 CONFIGURE_ARGS+=	--enable-mpi
 CONFIGURE_ENV+=	MPICC=${PREFIX}/mpich/bin/mpicc
