@@ -1,0 +1,149 @@
+--- src/process.c-dist Fri Aug 14 22:51:44 1998
++++ src/process.c      Fri Jul 30 12:21:11 1999
+@@ -1,7 +1,18 @@
++/*
++ * Locally hacked process.c to add ipv6 support. -wsr
++ *
++ * The configure.in file should define "HAVE_GETADDRINFO" if it is found 
++ * in libc.
++ * 
++ */
++
+ /* Asynchronous subprocess control for GNU Emacs.
+    Copyright (C) 1985, 86, 87, 88, 93, 94, 95, 96, 1998
+       Free Software Foundation, Inc.
+ 
++   ipv6 changes are
++   Copyright (C) 1999 Wolfgang S. Rupprecht
++
+ This file is part of GNU Emacs.
+ 
+ GNU Emacs is free software; you can redistribute it and/or modify
+@@ -1808,15 +1819,22 @@
+ {
+   Lisp_Object proc;
+   register int i;
++
++#ifndef HAVE_GETADDRINFO
+   struct sockaddr_in address;
+   struct servent *svc_info;
+   struct hostent *host_info_ptr, host_info;
+   char *(addr_list[2]);
+   IN_ADDR numeric_addr;
+-  int s, outch, inch;
+-  char errstring[80];
+-  int port;
+   struct hostent host_info_fixed;
++  int port;
++#else /* HAVE_GETADDRINFO */
++  struct addrinfo hints, *res, *lres;
++  int ret = 0;
++  int xerrno = 0;
++  char *portstring, portbuf [128];
++#endif /* HAVE_GETADDRINFO */
++  int s = -1, outch, inch;
+   struct gcpro gcpro1, gcpro2, gcpro3, gcpro4;
+   int retry = 0;
+   int count = specpdl_ptr - specpdl;
+@@ -1829,6 +1847,22 @@
+   GCPRO4 (name, buffer, host, service);
+   CHECK_STRING (name, 0);
+   CHECK_STRING (host, 0);
++
++#ifdef HAVE_GETADDRINFO
++  /*
++   * caution: service can either be a string or int.
++   * Convert to a C string for later use by getaddrinfo.
++   */
++  if (INTEGERP (service)) {
++      snprintf (portbuf, sizeof (portbuf), "%d", XINT (service));
++      portstring = portbuf;
++  }
++  else
++    {
++      CHECK_STRING (service, 0);
++      portstring = XSTRING (service)->data;
++    }
++#else /* HAVE_GETADDRINFO */
+   if (INTEGERP (service))
+     port = htons ((unsigned short) XINT (service));
+   else
+@@ -1839,6 +1873,8 @@
+       error ("Unknown service \"%s\"", XSTRING (service)->data);
+       port = svc_info->s_port;
+     }
++#endif /* HAVE_GETADDRINFO */
++
+ 
+   /* Slow down polling to every ten seconds.
+      Some kernels have a bug which causes retrying connect to fail
+@@ -1848,6 +1884,62 @@
+ #endif
+ 
+ #ifndef TERM
++#ifdef HAVE_GETADDRINFO               /* We have a modern OS. -wsr */
++  {
++      immediate_quit = 1;
++      QUIT;
++      memset(&hints, 0, sizeof(hints));
++      hints.ai_flags = 0;
++      hints.ai_family = AF_UNSPEC;
++      hints.ai_socktype = SOCK_STREAM;
++      hints.ai_protocol = 0;
++      ret = getaddrinfo(XSTRING (host)->data, portstring, &hints, &res);
++      if (ret){
++        error("%s/%s %s", XSTRING (host)->data, portstring,
++              gai_strerror(ret));
++      }
++      immediate_quit = 0;
++  }
++
++  for (lres = res; lres ; lres = lres->ai_next) { /* address loop */
++      s = socket(lres->ai_family, lres->ai_socktype, lres->ai_protocol);
++      if (s < 0) 
++        continue;
++
++      /* Kernel bugs (on Ultrix at least) cause lossage (not just EINTR)
++       when connect is interrupted.  So let's not let it get interrupted.
++       Note we do not turn off polling, because polling is only used
++       when not interrupt_input, and thus not normally used on the systems
++       which have this bug.  On systems which use polling, there's no way
++       to quit if polling is turned off.  */
++      if (interrupt_input)
++        unrequest_sigio ();
++
++      immediate_quit = 1;
++      QUIT;
++
++      ret = connect(s, lres->ai_addr, lres->ai_addrlen);
++      if (ret){
++        close(s);
++        s= -1;
++        continue;
++      }
++
++      break;
++  } /* address loop */
++
++  freeaddrinfo(res);
++  if (s < 0)
++  {
++      if (interrupt_input)
++        request_sigio ();
++
++      errno = xerrno;
++      report_file_error ("connection failed",
++                       Fcons (host, Fcons (name, Qnil)));
++  }
++#else /* HAVE_GETADDRINFO */
++
+   while (1)
+     {
+ #ifdef TRY_AGAIN
+@@ -1938,6 +2030,7 @@
+       report_file_error ("connection failed",
+                        Fcons (host, Fcons (name, Qnil)));
+     }
++#endif /* HAVE_GETADDRINFO */
+ 
+   immediate_quit = 0;
