@@ -12,8 +12,8 @@ PATCHDIR=	${SUBMASTERDIR}/patches
 PKGDIR=		${SUBMASTERDIR}/pkg
 
 BROWSER_VER=	47
-BROWSER_VERSION=	4.73
+BROWSER_VERSION=	4.74
 NETHELP=        nethelp-v451
-KOREAN_KIT=	netscape-korean-kit-v473.20000514
+KOREAN_KIT=	netscape-korean-kit-v474.20000726
 
 .include "${MASTERDIR}/Makefile"
