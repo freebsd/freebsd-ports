@@ -4320,6 +4320,7 @@ mod_put		ports/www/mod_put
 mod_python	ports/www/mod_python
 mod_roaming	ports/www/mod_roaming
 mod_ruby	ports/www/mod_ruby
+mod_scgi	ports/www/mod_scgi
 mod_sed		ports/www/mod_sed
 mod_sequester	ports/www/mod_sequester
 mod_snake	ports/www/mod_snake
