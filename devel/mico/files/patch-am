@@ -100,3 +100,56 @@
  	done
  
  install-cd: install
+--- demo/boa/Makefile.orig	Mon Sep 27 22:52:48 1999
++++ demo/boa/Makefile	Mon Sep 27 22:53:43 1999
+@@ -31,7 +31,7 @@
+ 	for i in $(DIRS); do $(MAKE) -C $$i clean || exit 1; done
+ 
+ install:
+-	$(IDIRCMD) $(INSTDIR)/doc/mico/examples/boa
+-	$(ISRCCMD) Makefile $(INSTDIR)/doc/mico/examples/boa
+-	$(ISRCCMD) README $(INSTDIR)/doc/mico/examples/boa
++	$(IDIRCMD) $(SHARED_INSTDIR)/doc/mico/examples/boa
++	$(ISRCCMD) Makefile $(SHARED_INSTDIR)/doc/mico/examples/boa
++	$(ISRCCMD) README $(SHARED_INSTDIR)/doc/mico/examples/boa
+ 	for i in $(DIRS); do $(MAKE) -C $$i install || exit 1; done
+--- demo/dispatcher/Makefile.orig	Mon Sep 27 22:54:58 1999
++++ demo/dispatcher/Makefile	Mon Sep 27 22:55:23 1999
+@@ -27,8 +27,8 @@
+ 	rm -f *.o core *~ .depend
+ 
+ install:
+-	$(IDIRCMD) $(INSTDIR)/doc/mico/examples/dispatcher
+-	$(ISRCCMD) Makefile $(INSTDIR)/doc/mico/examples/dispatcher
+-	$(ISRCCMD) README $(INSTDIR)/doc/mico/examples/dispatcher
++	$(IDIRCMD) $(SHARED_INSTDIR)/doc/mico/examples/dispatcher
++	$(ISRCCMD) Makefile $(SHARED_INSTDIR)/doc/mico/examples/dispatcher
++	$(ISRCCMD) README $(SHARED_INSTDIR)/doc/mico/examples/dispatcher
+ 	test -z "$(DIRS)" || \
+ 	  eval 'for i in $(DIRS); do $(MAKE) -C $$i install || exit 1; done'
+--- demo/obv/Makefile.orig	Mon Sep 27 22:56:17 1999
++++ demo/obv/Makefile	Mon Sep 27 22:56:39 1999
+@@ -13,7 +13,7 @@
+ 	rm -f *.o core *~ .depend
+ 
+ install:
+-	$(IDIRCMD) $(INSTDIR)/doc/mico/examples/obv
+-	$(ISRCCMD) Makefile $(INSTDIR)/doc/mico/examples/obv
+-	$(ISRCCMD) README $(INSTDIR)/doc/mico/examples/obv
++	$(IDIRCMD) $(SHARED_INSTDIR)/doc/mico/examples/obv
++	$(ISRCCMD) Makefile $(SHARED_INSTDIR)/doc/mico/examples/obv
++	$(ISRCCMD) README $(SHARED_INSTDIR)/doc/mico/examples/obv
+ 	for i in $(DIRS); do $(MAKE) -C $$i install || exit 1; done
+--- demo/services/Makefile.orig	Mon Sep 27 22:57:19 1999
++++ demo/services/Makefile	Mon Sep 27 22:57:43 1999
+@@ -13,7 +13,7 @@
+ 	rm -f *.o core *~ .depend
+ 
+ install:
+-	$(IDIRCMD) $(INSTDIR)/doc/mico/examples/services
+-	$(ISRCCMD) Makefile $(INSTDIR)/doc/mico/examples/services
+-	$(ISRCCMD) README $(INSTDIR)/doc/mico/examples/services
++	$(IDIRCMD) $(SHARED_INSTDIR)/doc/mico/examples/services
++	$(ISRCCMD) Makefile $(SHARED_INSTDIR)/doc/mico/examples/services
++	$(ISRCCMD) README $(SHARED_INSTDIR)/doc/mico/examples/services
+ 	for i in $(DIRS) stream-sound; do $(MAKE) -C $$i install || exit 1; done

@@ -1,19 +1,12 @@
-*** auxdir/Makefile.orig	Wed Aug  4 13:04:27 1999
---- auxdir/Makefile	Wed Aug  4 13:04:57 1999
-***************
-*** 49,55 ****
-  ifeq ($(HAVE_GTK), yes)
-  STATIC_LIBS := $(STATIC_LIBS) libmicogtk$(VERSION).a
-  CXXFLAGS := $(CXXFLAGS) $(GTK_CFLAGS)
-! GTK_SRCS := gtkmico.cc gtkmico-c.cc
-  STATIC_GTK_OBJS = $(GTK_SRCS:.cc=.o)
-  SHARED_GTK_OBJS = $(GTK_SRCS:.cc=.pic.o)
-  endif
---- 49,55 ----
-  ifeq ($(HAVE_GTK), yes)
-  STATIC_LIBS := $(STATIC_LIBS) libmicogtk$(VERSION).a
-  CXXFLAGS := $(CXXFLAGS) $(GTK_CFLAGS)
-! GTK_SRCS := gtkmico.cc 
-  STATIC_GTK_OBJS = $(GTK_SRCS:.cc=.o)
-  SHARED_GTK_OBJS = $(GTK_SRCS:.cc=.pic.o)
-  endif
+diff -ruN work/mico/auxdir/Makefile mico/auxdir/Makefile
+--- work/mico/auxdir/Makefile	Mon Jul 26 20:44:45 1999
++++ auxdir/Makefile	Sun Sep 26 04:48:35 1999
+@@ -24,7 +24,7 @@
+ 
+ LDLIBS    = -lmico$(VERSION) $(CONFLIBS)
+ LDFLAGS  := -L../orb $(LDFLAGS)
+-CXXFLAGS := -I. -I../include $(CXXFLAGS) $(X_CFLAGS)
++CXXFLAGS := -I. -I../include -I$(QT_INCLUDES) $(CXXFLAGS) $(X_CFLAGS)
+ 
+ AUX_SRCS=dynany_impl.cc
+ STATIC_AUX_OBJS = $(AUX_SRCS:.cc=.o)
