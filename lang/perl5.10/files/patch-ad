@@ -1,3 +1,5 @@
+$FreeBSD$
+
 --- perl.h.ORIG	Thu Mar 22 07:05:02 2001
 +++ perl.h	Tue Apr 10 20:29:46 2001
 @@ -151,6 +151,15 @@
