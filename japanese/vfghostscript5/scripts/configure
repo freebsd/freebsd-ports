@@ -8,8 +8,8 @@ PRINTER_JAPAN=' epag300.dev epag600.dev mjc180.dev mjc360.dev mjc720.dev mj500c.
 
 sed -e "s;XINCLUDE=-I/usr/local/X/include;XINCLUDE=-I/usr/X11R6/include;" \
     -e "s;XLIBDIRS=-L/usr/X11/lib;XLIBDIRS=-L/usr/X11R6/lib;" \
-    -e "s;JSRCDIR=jpeg-6a;JSRCDIR=${PORTSDIR}/graphics/jpeg/work/jpeg-6a;" \
-    -e "s;PSRCDIR=libpng;PSRCDIR=${PORTSDIR}/graphics/png/work/libpng-0.89c;" \
+    -e "s;JSRCDIR=jpeg-6a;JSRCDIR=${WRKDIR}/jpeg-6a;" \
+    -e "s;PSRCDIR=libpng;PSRCDIR=${WRKDIR}/libpng-0.89c;" \
     -e "s;ZSRCDIR=zlib;ZSRCDIR=.;" \
     -e "s;CC=gcc;CC=cc;" \
     -e "s;DEVICE_DEVS15=pdfwrite.dev;DEVICE_DEVS15=pdfwrite.dev stcolor.dev ${PRINTER_JAPAN};" \
@@ -23,8 +23,8 @@ else
 # This can be null if these files are in the default linker search path.
 sed -e "s;XINCLUDE=-I/usr/local/X/include;XINCLUDE=-I/usr/X11R6/include;" \
     -e "s;XLIBDIRS=-L/usr/X11/lib;XLIBDIRS=-L/usr/X11R6/lib;" \
-    -e "s;JSRCDIR=jpeg-6a;JSRCDIR=${PORTSDIR}/graphics/jpeg/work/jpeg-6a;" \
-    -e "s;PSRCDIR=libpng;PSRCDIR=${PORTSDIR}/graphics/png/work/libpng-0.89c;" \
+    -e "s;JSRCDIR=jpeg-6a;JSRCDIR=${WRKDIR}/jpeg-6a;" \
+    -e "s;PSRCDIR=libpng;PSRCDIR=${WRKDIR}/libpng-0.89c;" \
     -e "s;ZSRCDIR=zlib;ZSRCDIR=.;" \
     -e "s;CC=gcc;CC=cc;" \
     -e "s;^DEVICE_DEVS=.*;;" \

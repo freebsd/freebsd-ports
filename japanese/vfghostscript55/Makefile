@@ -3,7 +3,7 @@
 # Date created:		23 Nov 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.7 1997/04/30 03:18:03 asami Exp $
+# $Id: Makefile,v 1.8 1997/04/30 16:02:58 max Exp $
 #
 
 DISTNAME=	ghostscript-4.03
@@ -20,17 +20,19 @@ MAINTAINER=	mita@jp.FreeBSD.org
 
 LIB_DEPENDS=	VFlib\\.2\\.:${PORTSDIR}/japanese/vflib
 
-EXTRACT_ONLY=	ghostscript-4.03.tar.gz
+EXTRACT_ONLY=	ghostscript-4.03.tar.gz jpegsrc.v6a.tar.gz libpng-0.89c.tar.gz
 WRKSRC=		${WRKDIR}/gs4.03
 MAKEFILE=	unix-gcc.mak
 MAKE_FLAGS=	prefix=${PREFIX} zlibc_=-lz CFLAGS="${CFLAGS}" -f
 MAN1=		gs.1 pdf2ps.1 ps2ascii.1 ps2epsi.1 ps2pdf.1
 
 CFLAGS+=	-DA4
-DOC_DIR=	${PREFIX}/share/ghostscript/4.03vflib/doc 
+DOC_DIR=	${PREFIX}/share/ghostscript/4.03vflib/doc
 PRINTER=	${WRKSRC}/jp-printers
 GS_SOURCES=	ghostscript-4.03.tar.gz
 GS_SOURCES+=	ghostscript-4.03gnu.tar.gz
+GS_SOURCES+=	jpegsrc.v6a.tar.gz
+GS_SOURCES+=	libpng-0.89c.tar.gz
 GS_DRIVERS=	gs4.03-vflib.tar.gz
 GS_DRIVERS+=	gdevlips4-1.2.0.tar.gz
 GS_DRIVERS+=	gdevmjc-0.7.tar.gz
@@ -43,18 +45,14 @@ GS_DRIVERS+=	gdev10v.tar.gz
 GS_FONTS_STD=	ghostscript-fonts-std-4.0.tar.gz
 GS_FONTS_OTHER=	ghostscript-fonts-other-3.0.tar.gz
 
-pre-extract:
-	@(cd ${PORTSDIR}/graphics/jpeg ; ${MAKE} extract)
-	@(cd ${PORTSDIR}/graphics/png  ; ${MAKE} extract)
-
 pre-patch:
-	@(cd ${WRKSRC} ; tar xzf ${DISTDIR}/gs4.03-vflib.tar.gz ) 
+	@(cd ${WRKSRC} ; tar xzf ${DISTDIR}/gs4.03-vflib.tar.gz )
 	@(cd ${WRKDIR} ; \
 	  ${PATCH} -p < ${WRKSRC}/gs4.03-vflib/gs4.03-vflib.diff >/dev/null 2>&1; \
 	)
 
 post-patch:
-	@( mkdir ${PRINTER} ; \
+	@( ${MKDIR} ${PRINTER} ; \
 	  cd ${PRINTER} ; \
 	  ${PATCH} -p0 < ${FILESDIR}/gdevep82.patch >/dev/null 2>&1 ; \
 	  tar xzf ${DISTDIR}/gdevlips4-1.2.0.tar.gz ; \
@@ -77,7 +75,7 @@ post-patch:
 	@${CAT} ${WRKSRC}/mjc.dev >> ${WRKSRC}/unix-gcc.mak
 
 pre-install:
-	@mkdir -p ${PREFIX}/share/ghostscript
+	@${MKDIR} -p ${PREFIX}/share/ghostscript
 	@tar -C ${PREFIX}/share/ghostscript -xzf ${DISTDIR}/${GS_FONTS_STD}
 	@tar -C ${PREFIX}/share/ghostscript -xzf ${DISTDIR}/${GS_FONTS_OTHER}
 
@@ -90,9 +88,5 @@ post-install:
 	  ${CP} ${PRINTER}/gdevmjc-0.7/README.jis ${DOC_DIR}/gdevmjc.jis ; \
 	  ${CP} ${PRINTER}/gdevmjc-0.7/MJ700V2C.FAQ ${DOC_DIR} ; \
 	)
-
-pre-clean:
-	@(cd ${PORTSDIR}/graphics/jpeg ; ${MAKE} clean)
-	@(cd ${PORTSDIR}/graphics/png  ; ${MAKE} clean)
 
 .include <bsd.port.mk>
