@@ -9,8 +9,8 @@ PORTNAME=	webmin
 PORTVERSION=	0.84
 PORTREVISION=	2
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.webmin.com/webmin/updates/ \
-		http://www.webmin.com/webmin/download/
+MASTER_SITES=	http://webadmin.sourceforge.net/webmin/updates/ \
+		http://webadmin.sourceforge.net/webmin/download/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${WEBMIN_MODULES}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 IGNOREFILES=	${WEBMIN_MODULES}
