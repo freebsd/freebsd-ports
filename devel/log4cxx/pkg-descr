@@ -1,0 +1,4 @@
+Log4cxx is a C++ port of the Log4j project.
+The goal is to have the same functionality and interfaces as log4j.
+
+WWW:	http://logging.apache.org/log4cxx/

@@ -507,6 +507,7 @@
     SUBDIR += log4c
     SUBDIR += log4cplus
     SUBDIR += log4cpp
+    SUBDIR += log4cxx
     SUBDIR += log4j
     SUBDIR += lwp
     SUBDIR += m17n-db
