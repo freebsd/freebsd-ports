@@ -197,6 +197,7 @@
     SUBDIR += dotconf
     SUBDIR += doxygen
     SUBDIR += dparser
+    SUBDIR += dprog
     SUBDIR += e4graph
     SUBDIR += ebnf2yacc
     SUBDIR += eboxy

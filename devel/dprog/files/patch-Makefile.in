@@ -1,0 +1,20 @@
+--- Makefile.in.orig	Mon Apr 21 20:29:07 2003
++++ Makefile.in	Tue Apr  6 09:05:17 2004
+@@ -87,7 +87,7 @@
+ ARCH = `uname -mrs`
+ DATE = `date '+%d %h %y'`
+ 
+-CXXFLAGS = -DARCH="\"$(ARCH)\"" -DDATE="\"$(DATE)\"" -Wall -frepo -g
++CXXFLAGS = -DARCH="\"$(ARCH)\"" -DDATE="\"$(DATE)\"" -Wall -g
+ 
+ #CXXFLAGS += -pg
+ #CXXFLAGS += -O3
+@@ -121,7 +121,7 @@
+ type_check_test_LDADD = @LEXLIB@
+ type_check_test_SOURCES = lexer.ll parser.yy ast.hh ast.cc visitor.hh pretty_printer.hh pretty_printer.cc functions.hh functions.cc cxx_codegen.hh cxx_codegen.cc symbol_checking.hh symbol_checking.cc type_checking.hh type_checking.cc options.hh options.cc type_check_test.cc
+ 
+-cxx_dprog_test_LDADD = -L. -lcxx_dprog -lefence
++cxx_dprog_test_LDADD = -L. -lcxx_dprog
+ cxx_dprog_test_SOURCES = cxx_dprog_test.cc
+ 
+ symbol_checking_test_SOURCES = ast.hh ast.cc visitor.hh pretty_printer.hh pretty_printer.cc symbol_checking.hh symbol_checking.cc type_checking.hh type_checking.cc functions.hh functions.cc codegen.hh codegen.cc cxx_codegen.hh cxx_codegen.cc options.hh options.cc symbol_checking_test.cc
