@@ -1,0 +1,15 @@
+--- src/theme.c.orig	Sat Feb  5 22:51:13 2000
++++ src/theme.c	Sat Feb  5 22:51:36 2000
+@@ -199,10 +199,10 @@
+ 					g_free(directory);
+ 				}
+ 			}
++			g_free(dent);
++			closedir(dir);
+ 		}
+ 
+-		g_free(dent);
+-		closedir(dir);
+ 	}
+ 
+ 	for(i = 0; i < n_dirs; i++) g_free(search_dirs[i]);

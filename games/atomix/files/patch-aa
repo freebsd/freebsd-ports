@@ -1,0 +1,14 @@
+--- src/level.c.orig	Sat Feb  5 22:50:24 2000
++++ src/level.c	Sat Feb  5 22:50:51 2000
+@@ -164,10 +164,10 @@
+ 					g_free(filepath);
+ 				}
+ 			}
++		        closedir(dir);
+ 		}
+ 
+ 		//g_free(dent);
+-		closedir(dir);
+ 	}
+     
+ 	for(i = 0; i < n_dirs; i++) g_free(search_dirs[i]);
