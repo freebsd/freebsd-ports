@@ -1,0 +1,14 @@
+--- lib/daemon.c.orig	Thu Feb  5 16:01:34 1998
++++ lib/daemon.c	Thu Dec 10 07:57:36 1998
+@@ -11,10 +11,10 @@
+  *           added sleep on bind failure.
+  */
+ 
++#include	<sys/types.h>
+ #include	<sys/signal.h>
+ #include	<syslog.h>
+ #include	<errno.h>
+-#include	<sys/types.h>
+ #include	<sys/socket.h>
+ #ifdef SYSV
+ #include	<sys/sockio.h>
