@@ -1,13 +1,22 @@
 bin/glewinfo
+bin/visualinfo
 include/GL/glew.h
 include/GL/glxew.h
+include/GL/wglew.h
 lib/libGLEW.a
 lib/libGLEW.so
 lib/libGLEW.so.1
+%%PORTDOCS%%%%DOCSDIR%%/advanced.html
+%%PORTDOCS%%%%DOCSDIR%%/basic.html
+%%PORTDOCS%%%%DOCSDIR%%/credits.html
 %%PORTDOCS%%%%DOCSDIR%%/glew.css
-%%PORTDOCS%%%%DOCSDIR%%/README.html
 %%PORTDOCS%%%%DOCSDIR%%/glew.html
-%%PORTDOCS%%%%DOCSDIR%%/glxew.html
-%%PORTDOCS%%%%DOCSDIR%%/wglew.html
 %%PORTDOCS%%%%DOCSDIR%%/glew.png
+%%PORTDOCS%%%%DOCSDIR%%/glxew.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/install.html
+%%PORTDOCS%%%%DOCSDIR%%/log.html
+%%PORTDOCS%%%%DOCSDIR%%/new.png
+%%PORTDOCS%%%%DOCSDIR%%/ogl_sm.jpg
+%%PORTDOCS%%%%DOCSDIR%%/wglew.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

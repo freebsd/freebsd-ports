@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	glew
-PORTVERSION=	1.2.5
+PORTVERSION=	1.3.1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,25 +20,22 @@ USE_X_PREFIX=	yes
 USE_GL=		yes
 INSTALLS_SHLIB=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
-MAKE_ENV=	CC=${CC}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/glewinfo ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/visualinfo ${PREFIX}/bin
 
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/libGLEW.so.${PORTVERSION} \
 		${PREFIX}/lib/libGLEW.so.1
 	@${LN} -sf ${PREFIX}/lib/libGLEW.so.1 ${PREFIX}/lib/libGLEW.so
 	${INSTALL_DATA} ${WRKSRC}/lib/libGLEW.a ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/include/GL/*.h ${PREFIX}/include/GL
 
-.for i in glew glxew
-	${INSTALL_DATA} ${WRKSRC}/include/GL/${i}.h ${PREFIX}/include/GL
-.endfor
-
-.if !defined(NOPORTDOCS)
+.ifndef (NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/glew.css ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/glew.png ${DOCSDIR}
+.for i in css html jpg png
+	${INSTALL_DATA} ${WRKSRC}/doc/*.${i} ${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.mk>
