@@ -104,6 +104,7 @@
     SUBDIR += pysol
     SUBDIR += qcc
     SUBDIR += qstat
+    SUBDIR += quakeforge
     SUBDIR += quakeserver
     SUBDIR += rocksndiamonds
     SUBDIR += rollemup
