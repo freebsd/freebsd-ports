@@ -1,0 +1,10 @@
+--- select.c.orig	Sun Feb  9 17:42:32 2003
++++ select.c	Sun Feb  9 17:43:04 2003
+@@ -25,6 +25,7 @@
+ #include <unistd.h>
+ #include <time.h>
+ #include <sys/select.h>
++#include <sys/socket.h>
+ #include <string.h>
+ #include <math.h>
+ #include <errno.h>

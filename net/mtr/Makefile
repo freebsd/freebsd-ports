@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mtr
-PORTVERSION=	0.49
-PORTREVISION=	2
+PORTVERSION=	0.52
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/ \
 		ftp://ftp.netsw.org/net/ip/audit/packets/ \
@@ -15,7 +14,7 @@ MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/ \
 
 MAINTAINER=	billf@FreeBSD.org
 
-USE_AUTOCONF=	yes
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOMENG=	yes
 WANT_GNOME=	yes
@@ -26,7 +25,7 @@ MAN8=	mtr.8
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 400014 && defined(WANT_IPV6)
-PATCHFILES=	mtr-049-v6-20020402.diff.gz
+PATCHFILES=	mtr-052-v6-20030110b.diff.gz
 PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/
 PATCH_DIST_STRIP=	-p1
 
@@ -40,7 +39,7 @@ USE_GNOME+=	gtk12
 PKGNAMESUFFIX=	-gtk
 USE_XLIB=	yes
 .else
-CONFIGURE_ARGS+=--without-gtk
+CONFIGURE_ARGS+=--without-gtk --with-gtk-prefix=/nonexistant
 .endif
 
 post-patch:
