@@ -7,6 +7,7 @@
 
 PORTNAME=	frodo
 PORTVERSION=	4.1b
+PORTREVISION=	1
 CATEGORIES=	emulators tk84
 MASTER_SITES=	http://iphcip1.physik.uni-mainz.de/~cbauer/
 DISTNAME=	FrodoV4_1b.Src
@@ -22,13 +23,21 @@ WRKNAME=	Frodo-4.1b
 WRKSRC=		${WRKDIR}/${WRKNAME}/Src
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS}"
+USE_REINPLACE=	yes
+.if !defined(WITHOUT_SDL)
+USE_SDL=	yes
+.endif
 
 ROM=		1541 Basic Char Kernal
 
+
 post-patch:
-	@${MV} ${WRKDIR}/${WRKNAME}/TkGui.tcl ${WRKDIR}/${WRKNAME}/TkGui.tcl.sed
-	${SED} -e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
-		${WRKDIR}/${WRKNAME}/TkGui.tcl.sed > ${WRKDIR}/${WRKNAME}/TkGui.tcl
+	${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
+		${WRKDIR}/${WRKNAME}/TkGui.tcl
+.if !defined(WITHOUT_SDL)
+	${REINPLACE_CMD} -e "s|sdl-config|${SDL_CONFIG}|g" \
+		${WRKSRC}/configure
+.endif
 
 do-install:
 	${SED} -e 's=\$${PREFIX}=${PREFIX}=g' \
