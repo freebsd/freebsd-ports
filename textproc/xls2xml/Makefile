@@ -18,6 +18,7 @@ LIB_DEPENDS=	cole.2:${PORTSDIR}/textproc/cole \
 
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -lcole"
 
 .include <bsd.port.mk>
