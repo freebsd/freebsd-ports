@@ -1,13 +1,24 @@
 lib/perl5/site_perl/%%PERL_VER%%/ResourcePool.pm
 lib/perl5/site_perl/%%PERL_VER%%/ResourcePool.pod
+lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/BigPicture.pod
+lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/ExtensionGuide.pod
 lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Factory.pm
+lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Factory.pod
 lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Factory/DBI.pm
+lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Factory/DBI.pod
 lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Factory/Net/LDAP.pm
+lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Factory/Net/LDAP.pod
 lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/LoadBalancer.pm
+lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/LoadBalancer.pod
 lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Resource.pm
+lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Resource.pod
 lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Resource/DBI.pm
+lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Resource/DBI.pod
 lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Resource/Net/LDAP.pm
+lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Resource/Net/LDAP.pod
 lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Singleton.pm
+lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Singleton.pod
+lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/UML.pod
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Factory/Net
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Factory
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Resource/Net
