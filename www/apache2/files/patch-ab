@@ -34,52 +34,6 @@
   AllowOverride None
   Options None
   </Directory>
-*** conf/httpd.conf-dist.orig	Sat Jun  8 00:56:47 1996
---- conf/httpd.conf-dist	Fri Jul  5 06:25:42 1996
-***************
-*** 33,44 ****
-  # ServerAdmin: Your address, where problems with the server should be
-  # e-mailed.
-  
-! ServerAdmin you@your.address
-  
-  # ServerRoot: The directory the server's config, error, and log files
-  # are kept in
-  
-! ServerRoot /usr/local/etc/httpd
-  
-  # BindAddress: You can support virtual hosts with this option. This option
-  # is used to tell the server which IP address to listen to. It can either
---- 33,44 ----
-  # ServerAdmin: Your address, where problems with the server should be
-  # e-mailed.
-  
-! ServerAdmin you@your.address.domain
-  
-  # ServerRoot: The directory the server's config, error, and log files
-  # are kept in
-  
-! ServerRoot /usr/local/etc/apache
-  
-  # BindAddress: You can support virtual hosts with this option. This option
-  # is used to tell the server which IP address to listen to. It can either
-***************
-*** 161,167 ****
-   
-  #<VirtualHost host.foo.com>
-  #ServerAdmin webmaster@host.foo.com
-! #DocumentRoot /www/docs/host.foo.com
-  #ServerName host.foo.com
-  #ErrorLog logs/host.foo.com-error_log
-  #TransferLog logs/host.foo.com-access_log
---- 161,167 ----
-   
-  #<VirtualHost host.foo.com>
-  #ServerAdmin webmaster@host.foo.com
-! #DocumentRoot /usr/local/www/host.foo.com/data
-  #ServerName host.foo.com
-  #ErrorLog logs/host.foo.com-error_log
-  #TransferLog logs/host.foo.com-access_log
 *** conf/srm.conf-dist.orig	Thu Jun 13 06:04:43 1996
 --- conf/srm.conf-dist	Fri Jul  5 06:37:24 1996
 ***************
