@@ -1,0 +1,18 @@
+--- src/rrd_tool.c.orig	Thu Nov 18 14:52:04 1999
++++ src/rrd_tool.c	Thu Nov 18 14:54:16 1999
+@@ -202,12 +202,12 @@
+ 	    datai=data;
+ 	    printf("           ");
+ 	    for (i = 0; i<ds_cnt;i++)
+-	        printf("%10s",ds_namv[i]);
++	        printf("%14s ",ds_namv[i]);
+ 	    printf ("\n\n");
+ 	    for (i = start; i <= end; i += step){
+-	        printf("%10lu:", i);
++	        printf("%10lu: ", i);
+ 	        for (ii = 0; ii < ds_cnt; ii++)
+-		    printf("%10.2f", *(datai++));
++		    printf("%14.2f ", *(datai++));
+ 	        printf("\n");
+ 	    }
+ 	    for (i=0;i<ds_cnt;i++)
