@@ -46,7 +46,7 @@ MAN1=	clrwrap.1 csant.1 cscc.1 csdoc.1 csdoc2hier.1 csdoc2html.1 \
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"
-BROKEN=		"Configure fails on !i386"
+CONFIGURE_ARGS+=	--without-libffi
 .endif
 
 post-everything::
