@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	khacc
-PORTVERSION=	3.0
+PORTVERSION=	3.2
 CATEGORIES=	finance
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	qhacc
@@ -13,12 +13,14 @@ MASTER_SITE_SUBDIR=	qhacc
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple KDE-base financial manager
 
-LIB_DEPENDS=	qhacc.3:${PORTSDIR}/finance/qhacc
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
+LIB_DEPENDS=	qhacc.4:${PORTSDIR}/finance/qhacc
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_KDELIBS_VER=	3
-USE_REINPLACE=	yes
+USE_PERL5_BUILD=	yes
 USE_GMAKE=	yes
+WANT_AUTOMAKE_VER=	18
+WANT_AUTOCONF_VER=	259
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-qhacc-config=${X11BASE}/bin
@@ -28,9 +30,14 @@ MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e \
+	@${PERL} -pi -e \
 		's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/khacc/khacc.in
-	@${REINPLACE_CMD} -e 's|-pedantic||g ; \
-		s|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+
+pre-configure:
+	@cd ${CONFIGURE_WRKSRC} \
+		&& ${SETENV} ${AUTOTOOLS_ENV} ${AUTOMAKE} ${AUTOMAKE_ARGS} \
+		&& ${PERL} admin/am_edit \
+		&& ${SETENV} ${AUTOTOOLS_ENV} ${AUTOCONF} ${AUTOCONF_ARGS} \
+		&& ${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g' configure
 
 .include <bsd.port.post.mk>
