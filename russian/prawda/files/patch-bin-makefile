@@ -1,0 +1,10 @@
+--- bin/makefile.orig	Thu Jul 29 06:55:15 2004
++++ bin/makefile	Thu Jul 29 06:55:26 2004
+@@ -32,7 +32,6 @@
+ 	cp -r ../dicts/*		/usr/local/share/prawda/dicts
+ 	cp -r ../grammar/*		/usr/local/share/prawda/grammar
+ 	cp ../fonts/*			/usr/local/share/prawda/fonts
+-	/usr/sbin/chkfontpath -q -a     /usr/local/share/prawda/fonts
+ 	cp ../language.rc               /usr/local/share/prawda
+ 	cp ../prawdarc.local            /usr/local/share/prawda
+ 	cp ../prawdarc.root             /usr/local/share/prawda

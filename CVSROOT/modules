@@ -9000,6 +9000,7 @@ ru-pgp.language	ports/russian/pgp.language
 ru-pine		ports/russian/pine.language
 ru-pine.language	ports/russian/pine.language
 ru-pscyr	ports/russian/pscyr
+ru-prawda	ports/russian/prawda
 ru-rispell		ports/russian/rispell
 ru-ru_pscyr	ports/russian/pscyr
 ru-rus-ispell	ports/russian/rus-ispell

@@ -33,6 +33,7 @@
     SUBDIR += p5-cyrillic
     SUBDIR += pgp.language
     SUBDIR += pine.language
+    SUBDIR += prawda
     SUBDIR += pscyr
     SUBDIR += rispell
     SUBDIR += rus-ispell
