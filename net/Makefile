@@ -556,6 +556,7 @@
     SUBDIR += xwhois
     SUBDIR += yaz
     SUBDIR += ymessenger
+    SUBDIR += ysm
     SUBDIR += ytalk
     SUBDIR += zebra
     SUBDIR += zebra-server

@@ -1,0 +1,7 @@
+You Sick Me - command line ICQ client with ICQ2000 and recoding support
+
+YSM (You Sick Me) v7 is an ICQ console client. It was originally meant to
+run in Linux, but it has been successfully tested in FreeBSD, Win32, BeOS,
+and QNX. YSM is based on the last ICQ protocol version, v7/8. 
+
+WWW: http://ysmv7.sourceforge.net/
