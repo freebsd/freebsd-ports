@@ -114,6 +114,8 @@ post-patch:
 	${CP} ${SPEECHTOOLS}/config/systems/ix86_FreeBSD4.0.mak \
 		${SPEECHTOOLS}/config/systems/ix86_FreeBSD4.1.mak
 	${CP} ${SPEECHTOOLS}/config/systems/ix86_FreeBSD4.0.mak \
+		${SPEECHTOOLS}/config/systems/ix86_FreeBSD4.2.mak
+	${CP} ${SPEECHTOOLS}/config/systems/ix86_FreeBSD4.0.mak \
 		${SPEECHTOOLS}/config/systems/ix86_FreeBSD5.0.mak
 
 do-install:
