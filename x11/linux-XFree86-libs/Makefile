@@ -14,8 +14,10 @@ MASTER_SITE_SUBDIR=	updates/9/en/os/i386
 
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	XFree86 libraries, Linux/i386 binary
+CONFLICTS=	linux_base-6* linux_base-7* linux_base-deb* linux_base-gentoo*
 
 BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm2cpio
+RUN_DEPENDS=${LINUXBASE}/lib/libc-2.3.2.so:${PORTSDIR}/emulators/linux_base-8
 
 BASEVERSION=	9
 ONLY_FOR_ARCHS=	i386
