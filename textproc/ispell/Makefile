@@ -3,7 +3,7 @@
 # Date created:         6 November 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.19 1997/04/27 00:11:47 asami Exp $
+# $Id: Makefile,v 1.20 1997/04/29 10:53:47 asami Exp $
 #
 
 DISTNAME=	ispell-3.1
@@ -13,8 +13,6 @@ MASTER_SITES=	ftp://ftp.cs.ucla.edu/pub/ispell-3.1/
 DISTFILES=	ispell-3.1.20.tar.gz
 
 MAINTAINER=	jmz@FreeBSD.org
-
-BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs
 
 MAKE_FLAGS=	TMPDIR=${.CURDIR} -f 
 MAN1=		buildhash.1 findaffix.1 ispell.1 munchlist.1 \
@@ -61,9 +59,6 @@ french:
 	@${MAKE} ${.MAKEFLAGS} ISPELL_FR=yes
 
 pre-install:
-	@${MKDIR} ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/lib
-	@${MKDIR} ${PREFIX}/man/man1
-	@${MKDIR} ${PREFIX}/man/man4
+	@${MKDIR} ${PREFIX}/share/emacs/site-lisp
 
 .include <bsd.port.mk>
