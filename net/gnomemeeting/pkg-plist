@@ -28,7 +28,7 @@ etc/gconf/gconf.xml.defaults/schemas/apps/gnomemeeting/video_settings/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnomemeeting/view/%gconf.xml
 etc/gconf/schemas/gnomemeeting.schemas
 etc/sound/events/gnomemeeting.soundlist
-lib/bonobo/servers/gnomemeeting.server
+libdata/bonobo/servers/gnomemeeting.server
 share/gnome/applications/gnomemeeting.desktop
 share/gnome/gnomemeeting/xdap/ils_nm_reg.xml
 share/gnome/gnomemeeting/xdap/ils_nm_unreg.xml
