@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	enigma
-PORTVERSION=	0.60
+PORTVERSION=	0.70
 CATEGORIES=	games
 MASTER_SITES=	http://savannah.nongnu.org/download/enigma/
 
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Enigma is a reimplementation of Oxyd, a puzzle game
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/sdl11-config:${PORTSDIR}/devel/sdl12 \
+BUILD_DEPENDS=	sdl11-config:${PORTSDIR}/devel/sdl12 \
 		lua:${PORTSDIR}/lang/lua
 LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer	\
 		SDL_image.10:${PORTSDIR}/graphics/sdl_image
@@ -21,12 +21,16 @@ LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer	\
 GNU_CONFIGURE=	yes
 USE_XLIB=	yes
 USE_REINPLACE=	yes
+USE_GMAKE=	yes
 SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
-CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
+CONFIGURE_ARGS=	--target=""
+CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
+		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
+		CXXFLAGS="${PTHREAD_CFLAGS} -I${X11BASE}/include"
 
 MAN6=		enigma.6
 
 post-install:
-	${CAT} pkg-message
+	@${CAT} pkg-message
 
 .include <bsd.port.mk>
