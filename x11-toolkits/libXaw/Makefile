@@ -7,7 +7,7 @@
 
 PORTNAME=	libXaw
 PORTVERSION=	7.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://pdx.freedesktop.org/~xlibs/release/
 
@@ -16,7 +16,8 @@ COMMENT=	X Athena Widgets library
 
 LIB_PC_DEPENDS=	${X11BASE}/libdata/pkgconfig/x11.pc:${PORTSDIR}/x11/libX11 \
 		${X11BASE}/libdata/pkgconfig/xt.pc:${PORTSDIR}/x11-toolkits/libXt \
-		${X11BASE}/libdata/pkgconfig/xmu.pc:${PORTSDIR}/x11-toolkits/libXmu
+		${X11BASE}/libdata/pkgconfig/xmu.pc:${PORTSDIR}/x11-toolkits/libXmu \
+		${X11BASE}/libdata/pkgconfig/xpm.pc:${PORTSDIR}/x11/libXpm
 BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/xproto.pc:${PORTSDIR}/x11/xproto \
 		${X11BASE}/libdata/pkgconfig/xextensions.pc:${PORTSDIR}/x11/xextensions \
 		${LIB_PC_DEPENDS}
