@@ -5513,6 +5513,7 @@ nnap		ports/news/nnap
 nntp		ports/news/nntp
 nntpbtr		ports/news/nntpbtr
 nntpcache	ports/news/nntpcache
+nntpswitch	ports/news/nntpswitch
 no-aspell	ports/textproc/no-aspell
 no-login	ports/sysutils/no-login
 noattach	ports/mail/noattach
