@@ -1,0 +1,6 @@
+include/X11/extensions/Xinerama.h
+lib/libXinerama.a
+lib/libXinerama.la
+lib/libXinerama.so
+lib/libXinerama.so.1
+libdata/pkgconfig/xinerama.pc
