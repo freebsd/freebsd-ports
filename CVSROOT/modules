@@ -6112,6 +6112,7 @@ p5-HTTPD-Tools	ports/www/p5-HTTPD-Tools
 p5-Heap		ports/devel/p5-Heap
 p5-I18N-Charset	ports/misc/p5-I18N-Charset
 p5-I18N-LangTags	ports/misc/p5-I18N-LangTags
+p5-IDNA-Punycode	ports/textproc/p5-IDNA-Punycode
 p5-IMAP-Admin	ports/mail/p5-IMAP-Admin
 p5-IMAP-Sieve	ports/mail/p5-IMAP-Sieve
 p5-IMDB-Movie	ports/www/p5-IMDB-Movie
