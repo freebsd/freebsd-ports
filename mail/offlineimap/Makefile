@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	offlineimap
-PORTVERSION=	3.99.6
+PORTVERSION=	3.99.7
 CATEGORIES=	mail python
 MASTER_SITES=	http://gopher.quux.org:70/devel/offlineimap/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
