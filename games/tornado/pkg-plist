@@ -1,2 +1,3 @@
 bin/tornado
 share/games/tornado.scores
+@dirrm share/games
