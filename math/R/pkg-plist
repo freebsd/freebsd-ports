@@ -4007,6 +4007,7 @@ lib/R/library/cluster/R-ex/flower.R
 lib/R/library/cluster/R-ex/lower.to.upper.tri.inds.R
 lib/R/library/cluster/R-ex/mona.R
 lib/R/library/cluster/R-ex/pam.R
+lib/R/library/cluster/R-ex/plot.diana.R
 lib/R/library/cluster/R-ex/plot.partition.R
 lib/R/library/cluster/R-ex/pluton.R
 lib/R/library/cluster/R-ex/print.dissimilarity.R
@@ -4031,6 +4032,7 @@ lib/R/library/cluster/help/agnes
 lib/R/library/cluster/help/agnes.object
 lib/R/library/cluster/help/agriculture
 lib/R/library/cluster/help/animals
+lib/R/library/cluster/help/bannerplot
 lib/R/library/cluster/help/clara
 lib/R/library/cluster/help/clara.object
 lib/R/library/cluster/help/clusplot
@@ -4084,6 +4086,7 @@ lib/R/library/cluster/html/agnes.html
 lib/R/library/cluster/html/agnes.object.html
 lib/R/library/cluster/html/agriculture.html
 lib/R/library/cluster/html/animals.html
+lib/R/library/cluster/html/bannerplot.html
 lib/R/library/cluster/html/clara.html
 lib/R/library/cluster/html/clara.object.html
 lib/R/library/cluster/html/clusplot.default.html
@@ -4136,6 +4139,7 @@ lib/R/library/cluster/latex/agnes.object.tex
 lib/R/library/cluster/latex/agnes.tex
 lib/R/library/cluster/latex/agriculture.tex
 lib/R/library/cluster/latex/animals.tex
+lib/R/library/cluster/latex/bannerplot.tex
 lib/R/library/cluster/latex/clara.object.tex
 lib/R/library/cluster/latex/clara.tex
 lib/R/library/cluster/latex/clusplot.default.tex
@@ -4568,6 +4572,7 @@ lib/R/library/grid/latex/width.details.tex
 lib/R/library/grid/libs/grid.so
 lib/R/library/grid/man/grid.Rd
 lib/R/library/lattice/CONTENTS
+lib/R/library/lattice/Changes
 lib/R/library/lattice/DESCRIPTION
 lib/R/library/lattice/INDEX
 lib/R/library/lattice/R-ex/cloud.R
@@ -4585,7 +4590,6 @@ lib/R/library/lattice/R-ex/tmd.R
 lib/R/library/lattice/R-ex/trellis.par.get.R
 lib/R/library/lattice/R-ex/xyplot.R
 lib/R/library/lattice/R/lattice
-lib/R/library/lattice/README
 lib/R/library/lattice/TITLE
 lib/R/library/lattice/data/00Index
 lib/R/library/lattice/data/barley.R
@@ -4927,7 +4931,6 @@ lib/R/library/mgcv/DESCRIPTION
 lib/R/library/mgcv/INDEX
 lib/R/library/mgcv/R-ex/GAMsetup.R
 lib/R/library/mgcv/R-ex/QT.R
-lib/R/library/mgcv/R-ex/SANtest.R
 lib/R/library/mgcv/R-ex/gam.R
 lib/R/library/mgcv/R-ex/gam.check.R
 lib/R/library/mgcv/R-ex/gam.models.R
@@ -4947,7 +4950,6 @@ lib/R/library/mgcv/TITLE
 lib/R/library/mgcv/help/AnIndex
 lib/R/library/mgcv/help/GAMsetup
 lib/R/library/mgcv/help/QT
-lib/R/library/mgcv/help/SANtest
 lib/R/library/mgcv/help/gam
 lib/R/library/mgcv/help/gam.check
 lib/R/library/mgcv/help/gam.control
@@ -4976,7 +4978,6 @@ lib/R/library/mgcv/help/uniquecombs
 lib/R/library/mgcv/html/00Index.html
 lib/R/library/mgcv/html/GAMsetup.html
 lib/R/library/mgcv/html/QT.html
-lib/R/library/mgcv/html/SANtest.html
 lib/R/library/mgcv/html/gam.check.html
 lib/R/library/mgcv/html/gam.control.html
 lib/R/library/mgcv/html/gam.fit.html
@@ -5004,7 +5005,6 @@ lib/R/library/mgcv/html/theta.maxl.html
 lib/R/library/mgcv/html/uniquecombs.html
 lib/R/library/mgcv/latex/GAMsetup.tex
 lib/R/library/mgcv/latex/QT.tex
-lib/R/library/mgcv/latex/SANtest.tex
 lib/R/library/mgcv/latex/gam.check.tex
 lib/R/library/mgcv/latex/gam.control.tex
 lib/R/library/mgcv/latex/gam.fit.tex

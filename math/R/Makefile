@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	R
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.1
 CATEGORIES=	math
 MASTER_SITES=	http://cran.r-project.org/src/base/ \
 		ftp://cran.r-project.org/pub/R/src/base/ \
