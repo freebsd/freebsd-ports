@@ -11,16 +11,19 @@ PKGNAME=	uclmmbase-1.1.2
 CATEGORIES=	devel
 MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/common/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fenner@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/common
 GNU_CONFIGURE=	yes
+.if ${OSVERSION} > 400015
+CONFIGURE_ARGS+=	--enable-ipv6
+.endif
 
 RESTRICTED=	"Contains DES cryptography."
 
 INSTALL_HDRS=	base64.h config_win32.h config_unix.h crypt_random.h \
 		debug.h hmac.h mbus.h md5.h memory.h net_udp.h qfDES.h \
-		rtp.h util.h version.h
+		rtp.h uclconf.h util.h version.h
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libuclmmbase.a ${PREFIX}/lib
