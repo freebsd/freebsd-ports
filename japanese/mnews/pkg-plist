@@ -1,7 +1,6 @@
 bin/mnews
 lib/mnews/jnames
 lib/mnews/default-domain
-man/ja/man1/mnews.1.gz
 share/doc/mnews/FAQ.doc
 share/doc/mnews/board.doc
 share/doc/mnews/gnspool.doc

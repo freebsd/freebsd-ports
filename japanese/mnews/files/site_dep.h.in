@@ -64,7 +64,11 @@
 #define	AUDIO_COMMAND	""
 #define	PS_COMMAND	"DEFAULT_PS_COMMAND"
 
+#if @GNSPOOL@
+#define	NNTP_MODE	0
+#else /*GNSPOOL*/
 #define	NNTP_MODE	1
+#endif /*GNSPOOL*/
 #define	SMTP_MODE	0
 #define	POP3_MODE	0
 #define	RPOP_MODE	0
