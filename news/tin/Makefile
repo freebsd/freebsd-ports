@@ -4,7 +4,7 @@
 # Date created:		25 July 1996
 # Whom:			obrien@cs.ucdavis.edu
 #
-# $Id: Makefile,v 1.61 1998/08/04 00:10:12 obrien Exp $
+# $Id: Makefile,v 1.62 1998/08/18 09:34:56 obrien Exp $
 #
 
 DISTNAME=       tinpre-1.4-980818
@@ -15,6 +15,8 @@ MASTER_SITES=   ftp://ftp.tin.org/pub/news/clients/tin/current/ \
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=     ache@FreeBSD.org
+
+BROKEN_ELF=	yes
 
 WRKSRC=         ${WRKDIR}/${DISTNAME:S/pre-1.4//}
 GNU_CONFIGURE=	yes
