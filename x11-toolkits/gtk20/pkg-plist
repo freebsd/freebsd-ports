@@ -455,10 +455,11 @@ share/themes/Emacs/gtk-2.0-key/gtkrc
 @dirrm share/gtk-2.0/demo
 @dirrm share/gtk-2.0
 @unexec /bin/rmdir %D/lib/gtk-2.0/modules 2>/dev/null || /usr/bin/true
-@dirrm lib/gtk-2.0/%%GTK_VERSION%%/loaders
-@dirrm lib/gtk-2.0/%%GTK_VERSION%%/immodules
-@dirrm lib/gtk-2.0/%%GTK_VERSION%%
-@dirrm lib/gtk-2.0
+@unexec /bin/rmdir %D/lib/gtk-2.0/%%GTK_VERSION%%/loaders 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/lib/gtk-2.0/%%GTK_VERSION%%/immodules 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/lib/gtk-2.0/%%GTK_VERSION%%/engines 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/lib/gtk-2.0/%%GTK_VERSION%% 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/lib/gtk-2.0 2>/dev/null || /usr/bin/true
 @dirrm include/gtk-2.0/gtk
 @dirrm include/gtk-2.0/gdk-pixbuf-xlib
 @dirrm include/gtk-2.0/gdk-pixbuf
@@ -466,6 +467,7 @@ share/themes/Emacs/gtk-2.0-key/gtkrc
 @dirrm include/gtk-2.0
 @dirrm etc/gtk-2.0
 @exec /bin/mkdir -p %D/lib/gtk-2.0/modules
+@exec /bin/mkdir -p %D/lib/gtk-2.0/%%GTK_VERSION%%/engines
 @unexec /bin/rmdir %D/share/themes/Default 2>/dev/null || /usr/bin/true
 @unexec /bin/rmdir %D/share/themes 2>/dev/null || /usr/bin/true
 @unexec rmdir %D/share/locale/ang/LC_MESSAGES 2> /dev/null || true
