@@ -2,9 +2,8 @@
 
 MAKE		= /usr/bin/make
 INTERFACE_OPTS  = -DWANT_X11
-CC              = gcc
+CC		= cc
 CC_OPT          = -O2 -pipe
 CC_OPT_SAFE     = -O2 -fno-strength-reduce -pipe
 LDFLAGS		= -L$(X11BASE)/lib -lm -ltermcap
-ASM_HACK	= < /dev/null
 SYS_CFLAGS	= -Dbsd

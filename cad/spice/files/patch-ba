@@ -1,0 +1,60 @@
+*** spice3f4/conf/hpux	Fri Jan 22 20:32:01 1993
+--- conf/hpux	Mon Jun 27 15:10:31 1994
+***************
+*** 11,13 ****
+--- 11,17 ----
+  
+  CFLAGS	=	-O
+  RANLIB	=	echo
++ 
++ # for release 9.0 of HP-UX define HPUXR9 for os_hpux.h.
++ #CC_OPT  =       -O -DHPUXR9
++ #CFLAGS  =       -O -DHPUXR9
+*** spice3f4/src/lib/dev/mos6/mos6itf.h	Mon Sep 28 03:25:22 1992
+--- src/lib/dev/mos6/mos6itf.h	Fri Jun 17 12:59:58 1994
+***************
+*** 46,58 ****
+      NULL, /* MOS6acLoad, XXX */
+      NULL,
+      MOS6destroy,
+! #ifdef DELETES
+!     MOS6mDelete,
+!     MOS6delete,
+! #else /* DELETES */
+!     NULL,
+!     NULL,
+! #endif /* DELETES */
+      MOS6getic,
+      MOS6ask,
+      MOS6mAsk,
+--- 46,53 ----
+      NULL, /* MOS6acLoad, XXX */
+      NULL,
+      MOS6destroy,
+!     NULL, /* DELETES */
+!     NULL,/* DELETES */
+      MOS6getic,
+      MOS6ask,
+      MOS6mAsk,
+*** spice3f4/src/include/os_hpux.h	Sat Apr 24 19:09:53 1993
+--- src/include/os_hpux.h	Mon Jun 27 15:02:02 1994
+***************
+*** 4,11 ****
+--- 4,13 ----
+  
+  #include "os_sysv.h"
+  
++ #ifndef HPUXR9 /* latter version does not need following definitions */
+  #undef HAS_ATRIGH
+  #define void int
+  
+  #define HAS_NO_IEEE_LOGB
++ #endif
+  
+*** spice3f4/src/include/patchlev.h	Wed Jun 15 14:32:24 1994
+--- src/include/patchlev.h	Wed Jun 22 08:34:07 1994
+***************
+*** 1 ****
+! #define PATCHLEVEL	0
+--- 1 ----
+! #define PATCHLEVEL	1

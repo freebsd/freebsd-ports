@@ -1,0 +1,112 @@
+*** spice3f4/src/lib/fte/cpitf.c.orig	Sun Dec  7 13:40:46 1997
+--- src/lib/fte/cpitf.c			Sun Dec  7 13:41:41 1997
+***************
+*** 212,218 ****
+  		cp_interactive = false;
+  		inp_spsource(fp, true, buf);
+  		cp_interactive = true;
+! 		(void) fclose(fp);
+  		found = true;
+  		break;
+  	    } else if (ft_controldb)
+--- 212,220 ----
+  		cp_interactive = false;
+  		inp_spsource(fp, true, buf);
+  		cp_interactive = true;
+!                 /* the following caused me SIGSEGV's since inp_spsource
+!                    already closes fp - A. Veliath 12/7/97 */
+! 		/* (void) fclose(fp); */
+  		found = true;
+  		break;
+  	    } else if (ft_controldb)
+*** spice3f4/src/lib/fte/device.c	Wed Nov 30 21:48:12 1994
+--- src/lib/fte/device.c		Fri Jan 22 22:33:24 1999
+***************
+*** 661,667 ****
+      }
+  
+      dv = ft_evaluate(n2->pn_right);
+!     free_pnode(names);
+      if (!dv)
+  	return;
+      if (dv->v_length < 1) {
+--- 661,669 ----
+      }
+  
+      dv = ft_evaluate(n2->pn_right);
+!     /* prevent names from getting freed twice
+!        Guenther Roehrich 22-Jan-99 */
+!     /* free_pnode(names); */
+      if (!dv)
+  	return;
+      if (dv->v_length < 1) {
+*** spice3f4/src/lib/fte/x11.c	Fri Jan 22 22:17:56 1999
+--- src/lib/fte/x11.c		Fri Jan 22 22:26:29 1999
+***************
+*** 120,126 ****
+  	/* "invert" works better than "xor" for B&W */
+  
+  	/* xor gc should be a function of the pixels that are written on */
+! 	gcvalues.function = GXxor;
+  	gcvalues.line_width = 1;
+  	gcvalues.foreground = 1;
+  	gcvalues.background = 0;
+--- 120,129 ----
+  	/* "invert" works better than "xor" for B&W */
+  
+  	/* xor gc should be a function of the pixels that are written on */
+! 	/* gcvalues.function = GXxor; */
+! 	/* this patch makes lines visible on true color displays
+!            Guenther Roehrich 22-Jan-99 */
+! 	gcvalues.function = GXinvert;
+  	gcvalues.line_width = 1;
+  	gcvalues.foreground = 1;
+  	gcvalues.background = 0;
+*** spice3f4/src/lib/fte/graf.c	Thu Jun 17 23:32:52 1993
+--- src/lib/fte/graf.c		Fri Jan 22 23:11:43 1999
+***************
+*** 289,297 ****
+  		if (*tics == (double) np) {
+  		    Text("x", (int) (tox - currentgraph->fontwidth / 2),
+  			(int) (toy - currentgraph->fontheight / 2));
+! 		    SaveText(currentgraph, "x",
+  			(int) (tox - currentgraph->fontwidth / 2),
+! 			(int) (toy - currentgraph->fontheight / 2));
+  		    break;
+  		}
+  	    }
+--- 289,299 ----
+  		if (*tics == (double) np) {
+  		    Text("x", (int) (tox - currentgraph->fontwidth / 2),
+  			(int) (toy - currentgraph->fontheight / 2));
+! 	       /* gr_redraw will redraw this w/o our having to save it
+!                   Guenther Roehrich 22-Jan-99 */ 
+! 	       /*   SaveText(currentgraph, "x",
+  			(int) (tox - currentgraph->fontwidth / 2),
+! 			(int) (toy - currentgraph->fontheight / 2)); */
+  		    break;
+  		}
+  	    }
+***************
+*** 301,309 ****
+  	    /* Draw an 'x' */
+  	    Text("x", (int) (tox - currentgraph->fontwidth / 2),
+  		(int) (toy - currentgraph->fontheight / 2));
+! 	    SaveText(currentgraph, "x",
+  		(int) (tox - currentgraph->fontwidth / 2),
+! 		(int) (toy - currentgraph->fontheight / 2));
+  	}
+          break;
+        case PLOT_COMB:
+--- 303,313 ----
+  	    /* Draw an 'x' */
+  	    Text("x", (int) (tox - currentgraph->fontwidth / 2),
+  		(int) (toy - currentgraph->fontheight / 2));
+!           /* gr_redraw will redraw this w/o our having to save it
+!                   Guenther Roehrich 22-Jan-99 */ 
+! 	  /* SaveText(currentgraph, "x",
+  		(int) (tox - currentgraph->fontwidth / 2),
+! 		(int) (toy - currentgraph->fontheight / 2)); */
+  	}
+          break;
+        case PLOT_COMB:
