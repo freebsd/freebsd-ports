@@ -7,6 +7,7 @@
 
 PORTNAME=	opera
 PORTVERSION=	7.11.20030429
+PORTREVISION=	1
 CATEGORIES=	www linux
 MASTER_SITES=	http://snapshot.opera.com/unix/intel-linux/395-20030429-7.11-TP5/
 PKGNAMEPREFIX=	linux-
