@@ -1,0 +1,8 @@
+--- scripts/gcin-user-setup.orig	Thu Dec 23 11:20:56 2004
++++ scripts/gcin-user-setup	Mon Jan 31 23:36:59 2005
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ if [ -z "$1" ]; then
+   echo "please specify gcin table dir"
