@@ -7,11 +7,13 @@
 
 PORTNAME=	mrtg
 PORTVERSION=	2.9.26
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://people.ee.ethz.ch/~oetiker/webtools/mrtg/pub/ \
 		ftp://ftp.chg.ru/pub/networking/monitoring/mrtg/ \
 		${MASTER_SITE_RINGSERVER}
 MASTER_SITE_SUBDIR=	net/mrtg
+DISTNAME=	mrtg-2.9.26b
 
 MAINTAINER=	demon@FreeBSD.org
 
@@ -20,7 +22,6 @@ LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd2
 CONFIGURE_ARGS=	--with-gd-lib=${LOCALBASE}/lib \
 		--with-gd-inc=${LOCALBASE}/include
 .else
-LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
 CONFIGURE_ARGS=	--with-gd-lib=${LOCALBASE}/lib \
 		--with-gd-inc=${LOCALBASE}/include/gd
 .endif
