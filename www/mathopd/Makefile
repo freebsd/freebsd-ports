@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mathopd
-PORTVERSION= 	1.3p5
+PORTVERSION= 	1.3p6
 CATEGORIES=	www
 MASTER_SITES=	http://mathop.diva.nl/dist/ \
 		ftp://ftp.prima.eu.org/pub/mirrored_files/mathop.diva.nl/
