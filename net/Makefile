@@ -139,6 +139,7 @@
     SUBDIR += frost
     SUBDIR += fspclient
     SUBDIR += fspd
+    SUBDIR += fsplib
     SUBDIR += fugu
     SUBDIR += gaim
     SUBDIR += gaim-openq
