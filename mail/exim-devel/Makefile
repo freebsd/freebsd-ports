@@ -3,7 +3,7 @@
 # Date created:		23 June 1996
 # Whom:			markm@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.29 1999/06/08 23:27:48 steve Exp $
+# $Id: Makefile,v 1.30 1999/06/09 11:09:56 steve Exp $
 #
 
 DISTNAME=	exim-3.02
@@ -44,8 +44,9 @@ do-configure:
 	done
 
 post-build:
-	${INSTALL_SCRIPT} ${FILESDIR}/exim.sh ${WRKSRC}/build-FreeBSD-i386
-	${TOUCH} ${WRKSRC}/build-FreeBSD-i386/eximon.bin
-	${TOUCH} ${WRKSRC}/build-FreeBSD-i386/eximon
+	${INSTALL_SCRIPT} ${FILESDIR}/exim.sh \
+		${WRKSRC}/build-${OPSYS}-${MACHINE_ARCH}
+	${TOUCH} ${WRKSRC}/build-${OPSYS}-${MACHINE_ARCH}/eximon.bin
+	${TOUCH} ${WRKSRC}/build-${OPSYS}-${MACHINE_ARCH}/eximon
 
 .include <bsd.port.mk>
