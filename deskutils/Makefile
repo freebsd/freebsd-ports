@@ -14,6 +14,7 @@
     SUBDIR += dailystrips
     SUBDIR += dlume
     SUBDIR += dragstack
+    SUBDIR += drivel
     SUBDIR += fusenshi
     SUBDIR += gaddr
     SUBDIR += gcal
