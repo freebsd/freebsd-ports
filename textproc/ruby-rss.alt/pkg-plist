@@ -1,0 +1,47 @@
+%%RUBY_SITELIBDIR%%/rss/0.9.rb
+%%RUBY_SITELIBDIR%%/rss/1.0.rb
+%%RUBY_SITELIBDIR%%/rss/content.rb
+%%RUBY_SITELIBDIR%%/rss/converter.rb
+%%RUBY_SITELIBDIR%%/rss/dublincore.rb
+%%RUBY_SITELIBDIR%%/rss/parser.rb
+%%RUBY_SITELIBDIR%%/rss/rexmlparser.rb
+%%RUBY_SITELIBDIR%%/rss/rss.rb
+%%RUBY_SITELIBDIR%%/rss/syndication.rb
+%%RUBY_SITELIBDIR%%/rss/taxonomy.rb
+%%RUBY_SITELIBDIR%%/rss/utils.rb
+%%RUBY_SITELIBDIR%%/rss/xmlscanner.rb
+%%RUBY_SITELIBDIR%%/rwiki/recent1.0.rrdf
+%%RUBY_SITELIBDIR%%/rwiki/rss-maneger.rb
+%%RUBY_SITELIBDIR%%/rwiki/rss-navi.rhtml
+%%RUBY_SITELIBDIR%%/rwiki/rss-page.rb
+%%RUBY_SITELIBDIR%%/rwiki/rss-recent.erd
+%%RUBY_SITELIBDIR%%/rwiki/rss-recent.rb
+%%RUBY_SITELIBDIR%%/rwiki/rss-recent.rhtml
+%%RUBY_SITELIBDIR%%/rwiki/rss-topic.erd
+%%RUBY_SITELIBDIR%%/rwiki/rss-topic.rb
+%%RUBY_SITELIBDIR%%/rwiki/rss-topic.rhtml
+%%RUBY_SITELIBDIR%%/rwiki/rss.rb
+@dirrm %%RUBY_SITELIBDIR%%/rwiki
+@dirrm %%RUBY_SITELIBDIR%%/rss
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/articles.rss
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/list_description.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/news.rss
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/php.rss
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/raa-rdf10.xml
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rnn.rdf
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rssMarkPilgrimExample.xml
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rss_recent.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rwiki.rss
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sampleRss.xml
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/slashdot.rdf
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/slashdotorg.rdf
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/t.rdf
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/w3c.rdf
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/wiliki.rss
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README.en
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/Tutorial.en
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/README.ja
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/Tutorial.ja
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

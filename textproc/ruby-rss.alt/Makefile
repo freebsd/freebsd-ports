@@ -1,0 +1,44 @@
+# New ports collection makefile for:	Ruby/RSS (alternative impl.)
+# Date created:		23 March 2003
+# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	rss
+PORTVERSION=	0.0.1
+CATEGORIES=	textproc ruby
+MASTER_SITES=	http://cozmixng.sgk.iwate-u.ac.jp/~kou/download/
+PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
+PKGNAMESUFFIX=	.alt
+DIST_SUBDIR=	ruby
+
+MAINTAINER=	knu@FreeBSD.org
+COMMENT=	Ruby library for handling RSS (alternative impl.)
+
+RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/uconv.so:${PORTSDIR}/japanese/ruby-uconv \
+		${RUBY_SITELIBDIR}/xmlscan/parser.rb:${PORTSDIR}/textproc/ruby-xmlscan
+# You can use REXML as an alternative to xmlscan, but 2.5.0 or later only:
+#		${RUBY_SITELIBDIR}/rexml/document.rb:${PORTSDIR}/textproc/ruby-rexml
+
+USE_RUBY=	yes
+USE_RUBY_SETUP=	yes
+RUBY_SETUP=	install.rb
+
+DOCS_EN=	README.en Tutorial.en
+DOCS_JA=	README.ja Tutorial.ja
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${RUBY_MODEXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/sample/* ${RUBY_MODEXAMPLESDIR}/
+	${MKDIR} ${RUBY_MODDOCDIR}/ja
+.for f in ${DOCS_EN}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
+.endfor
+.for f in ${DOCS_JA}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja/
+.endfor
+.endif
+
+.include <bsd.port.mk>
