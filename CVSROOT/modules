@@ -6792,6 +6792,7 @@ ruby-openssl	ports/security/ruby-openssl
 ruby-pam	ports/security/ruby-pam
 ruby-panda	ports/print/ruby-panda
 ruby-panel-applet	ports/x11/ruby-panel-applet
+ruby-password	ports/security/ruby-password
 ruby-pcap	ports/net/ruby-pcap
 ruby-pcsc-lite	ports/devel/ruby-pcsc-lite
 ruby-pdflib	ports/print/ruby-pdflib
