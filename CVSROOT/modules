@@ -2147,6 +2147,7 @@ gbottler	ports/games/gbottler
 gbuffy		ports/mail/gbuffy
 gcal		ports/deskutils/gcal
 gcalctool	ports/math/gcalctool
+gcc-objc	ports/lang/gcc-objc
 gcc27		ports/lang/gcc27
 gcc28		ports/lang/gcc28
 gcc295		ports/lang/gcc295
