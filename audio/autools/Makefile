@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	autools
-PORTVERSION=	1.1.9
+PORTVERSION=	1.1.9a
 CATEGORIES=	audio
 MASTER_SITES=	http://www.tnt.uni-hannover.de/~purnhage/software/
 EXTRACT_SUFX=	.tgz
