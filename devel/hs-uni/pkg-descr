@@ -1,0 +1,7 @@
+The UniForM workbench is an integration framework mainly geared towards
+tools for formal methods. It uses a simple, powerful and flexible notion
+of events to model all interactions between tools and users. In
+particular, the workbench provides HTk, an encapsulation of Tcl/Tk based
+on our event model (see HTk under Graphical User Interfaces).
+
+WWW: http://www.informatik.uni-bremen.de/uniform/wb/

@@ -254,6 +254,7 @@
     SUBDIR += hs-idoc
     SUBDIR += hs-popenhs
     SUBDIR += hs-tclhaskell-ghc
+    SUBDIR += hs-uni
     SUBDIR += hypersrc
     SUBDIR += i386-rtems-binutils
     SUBDIR += i386-rtems-g77

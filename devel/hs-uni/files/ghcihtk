@@ -1,0 +1,2 @@
+#!/bin/sh
+ghci -package-conf #PWD/uni-package.conf -package uni-htk $*
