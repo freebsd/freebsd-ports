@@ -7,6 +7,7 @@
     SUBDIR += asmail
     SUBDIR += arrow
     SUBDIR += autorespond
+    SUBDIR += autosig
     SUBDIR += balsa
     SUBDIR += bbmail
     SUBDIR += biabam
