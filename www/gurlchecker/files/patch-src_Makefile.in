@@ -1,11 +1,11 @@
---- src/Makefile.in.orig	Mon Aug  4 17:21:49 2003
-+++ src/Makefile.in	Mon Aug  4 17:22:39 2003
-@@ -97,7 +97,7 @@
- gurlchecker_SOURCES =  	getopt.c getopt1.c getopt.h 	main.c 	callbacks.c callbacks.h 	utils.c utils.h 	cache.c cache.h 	html_parser.c html_parser.h 	check.c check.h 	url.c url.h 	application.c application.h 	report.c report.h 	lists.c lists.h 	icons_factory.c icons_factory.h 	progress_spinner.c progress_spinner.h 	general.h
+--- src/Makefile.in.orig	Sun Nov 30 16:46:29 2003
++++ src/Makefile.in	Sun Nov 30 16:46:36 2003
+@@ -128,7 +128,7 @@
+ 	general.h
  
  
 -gurlchecker_LDADD = @PACKAGE_LIBS@ -lresolv
 +gurlchecker_LDADD = @PACKAGE_LIBS@
+ subdir = src
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
- CONFIG_HEADER = ../config.h
- CONFIG_CLEAN_FILES = 
+ CONFIG_HEADER = $(top_builddir)/config.h
