@@ -7,7 +7,7 @@
 
 PORTNAME=	noattach
 PORTVERSION=	1.1.1
-PORTVREVISION=	1
+PORTVREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.rhnet.is/pub/noattach/
 DISTNAME=	${PORTNAME}-1.1p1
@@ -25,8 +25,12 @@ USE_REINPLACE=	yes
 MAN8=		noattach.8
 DOCSFILES=	AUTHORS THANKS INSTALL NEWS README TODO ChangeLog
 SAMPLEFILES=	README noattach.patterns noattach.patterns.johncon
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 .if defined(SENDMAIL_WITH_LDAP)
 CONFIGURE_ARGS+=	--enable-ldap
+.endif
+.if !defined(SENDMAIL_MILTER_IN_BASE)
+LDFLAGS+=	-L${LOCALBASE}/lib
 .endif
 
 .include <bsd.port.pre.mk>
