@@ -307,6 +307,7 @@ ample		ports/audio/ample
 amsn		ports/net/amsn
 amspsfnt	ports/print/amspsfnt
 amule		ports/net/amule
+amule-devel	ports/net/amule-devel
 amy		ports/games/amy
 amyc		ports/www/amyc
 an		ports/games/an
