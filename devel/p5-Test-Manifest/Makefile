@@ -7,6 +7,7 @@
 
 PORTNAME=	Test-Manifest
 PORTVERSION=	0.93
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Test
@@ -19,4 +20,8 @@ PERL_CONFIGURE=	YES
 
 MAN3=		Test::Manifest.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.if ${PERL_LEVEL} <= 500503
+EXTRA_PATCHES=	${FILESDIR}/5.005_03-lib::Manifest.pm
+.endif
+.include <bsd.port.post.mk>
