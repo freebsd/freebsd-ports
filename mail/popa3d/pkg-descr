@@ -1,14 +1,22 @@
-The popa3d goals
+the popa3d goals
 ================
 
-Well, the goals themselves are obvious; they"re probably the same for most
-other POP3 servers as well. It"s their priority that differs. For popa3d,
+Is a POP3 daemon by Solar Designer.
+
+Well, the goals themselves are obvious; they're probably the same for most
+other POP3 servers as well. It's their priority that differs. For popa3d,
 the goals are:
 
 1. Security (to the extent that is possible with POP3 at all, of course).
 2. Reliability (again, as limited by the mailbox format and the protocol).
 3. RFC compliance (slightly relaxed to work with real-world POP3 clients).
 4. Performance (limited by the more important goals, above).
+
+This port is installed to be run from inetd, which is sufficient 
+for normal usage. However, it is possible to build a stand-alone 
+version, should you need better performance. 
+
+WWW: http://www.openwall.com/popa3d/
 
 -- Sergey Samoyloff
 gonza@techline.ru

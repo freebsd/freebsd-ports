@@ -1,20 +1,10 @@
-#!/bin/sh
+# $FreeBSD$
+#
 
-USER=popa3d
-GROUP=popa3d
+if [ "$2" != "POST-DEINSTALL" ]; then
+    exit 0
+fi
 
-case $2 in
-    DEINSTALL)
-	
-	;;
-    POST-DEINSTALL)
-	    pw groupdel $GROUP
-	    pw userdel $USER 
-	;;
-    *)
-	echo "usage: $0 <pkg-name> 
-{DEINSTALL|POST-DEINSTALL}"
-	exit 64
-esac
+PATH=/bin
 
-exit 0
+echo "Remember to remove popa3d from /etc/inetd.conf and restart inetd"
