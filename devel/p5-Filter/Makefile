@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Filter
-PORTVERSION=	1.28
+PORTVERSION=	1.29
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Filter
@@ -17,7 +17,6 @@ COMMENT=	A number of source filters for perl5 programs
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Filter::Util::Call.3 \
 		Filter::Util::Exec.3 \
 		Filter::cpp.3 \
