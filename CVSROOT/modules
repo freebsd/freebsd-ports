@@ -9529,6 +9529,7 @@ wmmon		ports/sysutils/wmmon
 wmmoonclock	ports/astro/wmmoonclock
 wmmount		ports/sysutils/wmmount
 wmmp3		ports/audio/wmmp3
+wmmsg		ports/x11/wmmsg
 wmmultipop3	ports/mail/wmmultipop3
 wmnd		ports/net/wmnd
 wmnet		ports/net/wmnet
