@@ -21,6 +21,8 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
+
 #
 # User Configurable Variables
 #
