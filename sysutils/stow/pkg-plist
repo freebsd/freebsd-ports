@@ -1,0 +1,4 @@
+bin/stow
+@unexec install-info --delete %D/info/stow.info %D/info/dir
+info/stow.info
+@exec install-info %D/info/stow.info %D/info/dir

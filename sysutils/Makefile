@@ -78,6 +78,7 @@
     SUBDIR += socket
     SUBDIR += star
     SUBDIR += stat
+    SUBDIR += stow
     SUBDIR += stmpclean
     SUBDIR += su2
     SUBDIR += symlinks
