@@ -5,7 +5,5 @@ Juke is a simple curses/ncurses based juke box program.
 It uses command line based players to play all kinds
 of music formats. 
 
-WWW: http://johan.nocrew.org/unix/juke/
-
 - Oyvind Moll
 <oyvindmo@initio.no>
