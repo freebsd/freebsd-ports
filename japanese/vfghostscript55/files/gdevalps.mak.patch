@@ -1,0 +1,14 @@
+--- gdevalps.mk.orig	Tue Mar  9 09:58:18 1999
++++ gdevalps.mk	Tue Mar  9 10:04:00 1999
+@@ -1,8 +1,9 @@
+ ### ------------ The ALPS Micro Dry printer devices ------------ ###
+ 
+-alps_=gdevalps.$(OBJ)
++alps_= $(GLOBJ)gdevalps.$(OBJ)
+ 
+ alps.dev: $(alps_) page.dev
+ 	$(SETPDEV) alps $(alps_)
+ 
+-gdevalps.$(OBJ): gdevalps.c $(PDEVH)
++$(GLOBJ)gdevalps.$(OBJ): $(GLSRC)gdevalps.c $(PDEVH)
++	$(GLCC) $(GLO_)gdevalps.$(OBJ)  $(C_) $(GLSRC)gdevalps.c
