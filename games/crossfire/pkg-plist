@@ -1497,7 +1497,6 @@ crossfire/lib/maps/world/world_e2
 crossfire/lib/messages
 crossfire/lib/motd
 crossfire/lib/races
-crossfire/lib/shutdown
 crossfire/lib/skill_params
 crossfire/lib/sounds
 crossfire/lib/spell_params
