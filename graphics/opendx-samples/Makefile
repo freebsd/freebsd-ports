@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	opendx-samples
-PORTVERSION=	4.0.8
+PORTVERSION=	4.1.3
 CATEGORIES=	graphics math
-MASTER_SITES=	http://opendx.npaci.edu/source/
+MASTER_SITES=	http://www.research.ibm.com/dx/srcDownload/srcArchive \
+	        http://opendx.npaci.edu/source/
 DISTNAME=	dxsamples-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
