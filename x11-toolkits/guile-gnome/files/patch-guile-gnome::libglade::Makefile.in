@@ -1,0 +1,19 @@
+--- guile-gnome/libglade/Makefile.in.orig	Sat Feb 16 23:57:11 2002
++++ guile-gnome/libglade/Makefile.in	Sat Feb 16 23:58:57 2002
+@@ -63,6 +63,7 @@
+ BUILD_GUILE = @BUILD_GUILE@
+ CC = @CC@
+ DLLTOOL = @DLLTOOL@
++GLADE_INCLUDES = `libglade-config --cflags gnome`
+ GNOMEGNORBA_LIBS = @GNOMEGNORBA_LIBS@
+ GNOMEUI_LIBS = @GNOMEUI_LIBS@
+ GNOME_ACLOCAL_DIR = @GNOME_ACLOCAL_DIR@
+@@ -98,7 +99,7 @@
+ VERSION = @VERSION@
+ ZVT_LIBS = @ZVT_LIBS@
+ 
+-INCLUDES = -I.. -I$(srcdir)/.. -I../../guile-gtk -I$(srcdir)/../../guile-gtk 	-I$(includedir) $(GUILE_INCS) $(GNOME_INCLUDEDIR)
++INCLUDES = -I.. -I$(srcdir)/.. -I../../guile-gtk -I$(srcdir)/../../guile-gtk 	-I$(includedir) $(GUILE_INCS) $(GNOME_INCLUDEDIR) $(GLADE_INCLUDES)
+ 
+ 
+ GLADE_LIBS = `libglade-config --libs gnome`
