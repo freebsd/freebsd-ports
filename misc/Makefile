@@ -88,6 +88,7 @@
     SUBDIR += gkrellshoot
     SUBDIR += gkrellweather
     SUBDIR += gman
+    SUBDIR += gnomehier
     SUBDIR += gnomemimedata
     SUBDIR += gnomepm
     SUBDIR += gnomeuserdocs
