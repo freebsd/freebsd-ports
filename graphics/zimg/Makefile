@@ -7,12 +7,13 @@
 
 PORTNAME=	zimg
 PORTVERSION=	4.5.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.zellner.org/zimg/download/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	gd.1:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

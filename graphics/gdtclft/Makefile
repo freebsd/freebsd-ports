@@ -7,6 +7,7 @@
 
 PORTNAME=	Gdtclft
 PORTVERSION=	2.2.5
+PORTREVISION=	1
 CATEGORIES=	graphics tcl${TCL_DVER}
 MASTER_SITES=	ftp://ftp.graphviz.org/pub/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -14,7 +15,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	mi@aldan.algebra.com
 
 LIB_DEPENDS=	tcl${TCL_DVER}.1:${PORTSDIR}/lang/tcl${TCL_DVER} \
-		gd.1:${PORTSDIR}/graphics/gd
+		gd.2:${PORTSDIR}/graphics/gd
 
 TCL_VER=	8.3
 TCL_DVER=	${TCL_VER:S/.//}

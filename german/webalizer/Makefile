@@ -6,6 +6,7 @@
 
 PORTNAME=	webalizer
 PORTVERSION=	1.30.4
+PORTREVISION=	1
 CATEGORIES=	german www
 MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/ \
 		ftp://ftp.lan-ks.de/pub/FreeBSD/distfiles/
@@ -14,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	dirk.meyer@dinoex.sub.org
 
-LIB_DEPENDS=	gd.1:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
 
 WEBALIZER_LANG?=	german
 GNU_CONFIGURE=	yes

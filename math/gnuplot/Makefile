@@ -7,13 +7,14 @@
 
 PORTNAME=	gnuplot
 PORTVERSION=	3.7.1
+PORTREVISION=	1
 CATEGORIES=	math graphics
 MASTER_SITES=	ftp://ftp.gnuplot.vt.edu/pub/gnuplot/
 
 MAINTAINER=	chuckr@FreeBSD.org
 
 LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png \
-		gd.1:${PORTSDIR}/graphics/gd
+		gd.2:${PORTSDIR}/graphics/gd
 
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
