@@ -17,7 +17,7 @@ MAINTAINER=	knu@FreeBSD.org
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/Lib
-#MAKE_ARGS=	LOCALBASE="${LOCALBASE}"
+MAKE_ARGS=	NOPROFILE=true
 
 pre-build:
 	${CP} ${FILESDIR}/Makefile ${WRKSRC}/
