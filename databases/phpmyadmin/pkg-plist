@@ -7,7 +7,7 @@
 %%MYADMDIR%%/INSTALL
 %%MYADMDIR%%/LICENSE
 %%MYADMDIR%%/README
-%%MYADMDIR%%/RELEASE-DATE-2.3.0-rc4
+%%MYADMDIR%%/RELEASE-DATE-2.3.2
 %%MYADMDIR%%/TODO
 %%MYADMDIR%%/badwords.txt
 %%MYADMDIR%%/chk_rel.%%PHP_VERSION%%
@@ -17,6 +17,7 @@
 %%MYADMDIR%%/db_details_common.%%PHP_VERSION%%
 %%MYADMDIR%%/db_details_db_info.%%PHP_VERSION%%
 %%MYADMDIR%%/db_details_export.%%PHP_VERSION%%
+%%MYADMDIR%%/db_details_importdocsql.%%PHP_VERSION%%
 %%MYADMDIR%%/db_details_links.%%PHP_VERSION%%
 %%MYADMDIR%%/db_details_qbe.%%PHP_VERSION%%
 %%MYADMDIR%%/db_details_structure.%%PHP_VERSION%%
@@ -37,11 +38,14 @@
 %%MYADMDIR%%/images/minus.gif
 %%MYADMDIR%%/images/partialtext.png
 %%MYADMDIR%%/images/plus.gif
+%%MYADMDIR%%/images/pma_logo.png
 %%MYADMDIR%%/images/spacer.gif
 %%MYADMDIR%%/images/vertical_line.gif
 %%MYADMDIR%%/index.%%PHP_VERSION%%
 %%MYADMDIR%%/lang/add_message.sh
 %%MYADMDIR%%/lang/add_message_file.sh
+%%MYADMDIR%%/lang/afrikaans-iso-8859-1.inc.%%PHP_VERSION%%
+%%MYADMDIR%%/lang/afrikaans-utf-8.inc.%%PHP_VERSION%%
 %%MYADMDIR%%/lang/albanian-iso-8859-1.inc.%%PHP_VERSION%%
 %%MYADMDIR%%/lang/albanian-utf-8.inc.%%PHP_VERSION%%
 %%MYADMDIR%%/lang/arabic-utf-8.inc.%%PHP_VERSION%%
@@ -53,6 +57,7 @@
 %%MYADMDIR%%/lang/bulgarian-windows-1251.inc.%%PHP_VERSION%%
 %%MYADMDIR%%/lang/catalan-iso-8859-1.inc.%%PHP_VERSION%%
 %%MYADMDIR%%/lang/catalan-utf-8.inc.%%PHP_VERSION%%
+%%MYADMDIR%%/lang/check_lang.sh
 %%MYADMDIR%%/lang/chinese_big5-utf-8.inc.%%PHP_VERSION%%
 %%MYADMDIR%%/lang/chinese_big5.inc.%%PHP_VERSION%%
 %%MYADMDIR%%/lang/chinese_gb-utf-8.inc.%%PHP_VERSION%%
@@ -83,6 +88,7 @@
 %%MYADMDIR%%/lang/greek-iso-8859-7.inc.%%PHP_VERSION%%
 %%MYADMDIR%%/lang/greek-utf-8.inc.%%PHP_VERSION%%
 %%MYADMDIR%%/lang/hebrew-iso-8859-8-i.inc.%%PHP_VERSION%%
+%%MYADMDIR%%/lang/hindi-utf-8.inc.%%PHP_VERSION%%
 %%MYADMDIR%%/lang/hungarian-iso-8859-2.inc.%%PHP_VERSION%%
 %%MYADMDIR%%/lang/hungarian-utf-8.inc.%%PHP_VERSION%%
 %%MYADMDIR%%/lang/indonesian-iso-8859-1.inc.%%PHP_VERSION%%
@@ -97,6 +103,8 @@
 %%MYADMDIR%%/lang/latvian-windows-1257.inc.%%PHP_VERSION%%
 %%MYADMDIR%%/lang/lithuanian-utf-8.inc.%%PHP_VERSION%%
 %%MYADMDIR%%/lang/lithuanian-windows-1257.inc.%%PHP_VERSION%%
+%%MYADMDIR%%/lang/malay-iso-8859-1.inc.%%PHP_VERSION%%
+%%MYADMDIR%%/lang/malay-utf-8.inc.%%PHP_VERSION%%
 %%MYADMDIR%%/lang/norwegian-iso-8859-1.inc.%%PHP_VERSION%%
 %%MYADMDIR%%/lang/norwegian-utf-8.inc.%%PHP_VERSION%%
 %%MYADMDIR%%/lang/polish-iso-8859-2.inc.%%PHP_VERSION%%
@@ -117,6 +125,7 @@
 %%MYADMDIR%%/lang/slovenian-iso-8859-2.inc.%%PHP_VERSION%%
 %%MYADMDIR%%/lang/slovenian-utf-8.inc.%%PHP_VERSION%%
 %%MYADMDIR%%/lang/slovenian-windows-1250.inc.%%PHP_VERSION%%
+%%MYADMDIR%%/lang/sort_lang.sh
 %%MYADMDIR%%/lang/spanish-iso-8859-1.inc.%%PHP_VERSION%%
 %%MYADMDIR%%/lang/spanish-utf-8.inc.%%PHP_VERSION%%
 %%MYADMDIR%%/lang/swedish-iso-8859-1.inc.%%PHP_VERSION%%
@@ -158,6 +167,7 @@
 %%MYADMDIR%%/libraries/fpdf/font/zapfdingbats.%%PHP_VERSION%%
 %%MYADMDIR%%/libraries/fpdf/fpdf.%%PHP_VERSION%%
 %%MYADMDIR%%/libraries/functions.js
+%%MYADMDIR%%/libraries/get_foreign.lib.%%PHP_VERSION%%
 %%MYADMDIR%%/libraries/grab_globals.lib.%%PHP_VERSION%%
 %%MYADMDIR%%/libraries/indexes.js
 %%MYADMDIR%%/libraries/ip_allow_deny.lib.%%PHP_VERSION%%
@@ -169,6 +179,8 @@
 %%MYADMDIR%%/libraries/select_lang.lib.%%PHP_VERSION%%
 %%MYADMDIR%%/libraries/sqlparser.data.%%PHP_VERSION%%
 %%MYADMDIR%%/libraries/sqlparser.lib.%%PHP_VERSION%%
+%%MYADMDIR%%/libraries/sqlvalidator.class.%%PHP_VERSION%%
+%%MYADMDIR%%/libraries/sqlvalidator.lib.%%PHP_VERSION%%
 %%MYADMDIR%%/libraries/string.lib.%%PHP_VERSION%%
 %%MYADMDIR%%/libraries/tbl_change.js
 %%MYADMDIR%%/libraries/user_details.js
@@ -183,6 +195,8 @@
 %%MYADMDIR%%/scripts/check_lang.%%PHP_VERSION%%
 %%MYADMDIR%%/scripts/convertcfg.pl
 %%MYADMDIR%%/scripts/create-release.sh
+%%MYADMDIR%%/scripts/create_tables.sql
+%%MYADMDIR%%/scripts/decode_bug.%%PHP_VERSION%%
 %%MYADMDIR%%/scripts/extchg.sh
 %%MYADMDIR%%/scripts/remove_control_m.sh
 %%MYADMDIR%%/sql.%%PHP_VERSION%%

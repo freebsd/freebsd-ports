@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phpMyAdmin
-PORTVERSION=	2.3.0.rc4
+PORTVERSION=	2.3.2
 CATEGORIES=	databases www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	phpmyadmin
@@ -17,7 +17,11 @@ MAINTAINER=	nbm@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/lib/mysql/libmysqlclient.so:${PORTSDIR}/databases/mysql323-client
 .if !defined(WITH_PHP3)
+.if defined(WITH_APACHE2)
+RUN_DEPENDS+=	${LOCALBASE}/libexec/apache2/libphp4.so:${PORTSDIR}/www/mod_php4
+.else
 RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
+.endif
 PHP_VERSION=	php
 .else
 RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp3.so:${PORTSDIR}/www/mod_php3
