@@ -1,7 +1,6 @@
 bin/bdftops
 bin/dvipdf
 bin/eps2eps
-bin/escputil
 bin/fixmswrd.pl
 bin/font2c
 bin/gs
@@ -11,6 +10,7 @@ bin/gsdj500
 bin/gslj
 bin/gslp
 bin/gsnd
+bin/hpijs
 bin/lprsetup.sh
 bin/pdf2dsc
 bin/pdf2ps
@@ -30,7 +30,6 @@ bin/pv.sh
 bin/sysvlp.sh
 bin/unix-lpr.sh
 bin/wftopfa
-libexec/hpijs
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/hpdj/NEWS
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/hpdj/hpdj.html
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/pcl3/NEWS
@@ -98,7 +97,10 @@ share/ghostscript/%%GS_VERSION%%/hpdj/margins-A4.ps
 share/ghostscript/%%GS_VERSION%%/hpdj/margins-A4Rotated.ps
 share/ghostscript/%%GS_VERSION%%/hpdj/margins-Letter.ps
 share/ghostscript/%%GS_VERSION%%/hpdj/margins-LetterRotated.ps
+share/ghostscript/%%GS_VERSION%%/hpijs/append_db.sh
+share/ghostscript/%%GS_VERSION%%/hpijs/gs_hpijs.png
 share/ghostscript/%%GS_VERSION%%/hpijs/hpijs_readme.html
+share/ghostscript/%%GS_VERSION%%/hpijs/printerdb_append
 share/ghostscript/%%GS_VERSION%%/lib/Fontmap
 share/ghostscript/%%GS_VERSION%%/lib/Fontmap.GS
 share/ghostscript/%%GS_VERSION%%/lib/acctest.ps

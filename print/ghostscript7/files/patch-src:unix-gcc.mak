@@ -1,5 +1,5 @@
 --- src/unix-gcc.mak.orig	Tue Jul 10 12:01:06 2001
-+++ src/unix-gcc.mak	Sat Nov  3 05:10:14 2001
++++ src/unix-gcc.mak	Sat Dec 15 04:22:49 2001
 @@ -27,14 +27,15 @@
  # source, generated intermediate file, and object directories
  # for the graphics library (GL) and the PostScript/PDF interpreter (PS).
@@ -106,21 +106,19 @@
  
  # Define the name of the linker for the final link step.
  # Normally this is the same as the C compiler.
-@@ -216,9 +226,11 @@
+@@ -216,9 +226,9 @@
  # We don't include -ansi, because this gets in the way of the platform-
  #   specific stuff that <math.h> typically needs; nevertheless, we expect
  #   gcc to accept ANSI-style function prototypes and function definitions.
 -XCFLAGS=
-+ifdef A4
-+XCFLAGS=-DA4
-+endif
++#XCFLAGS=
  
 -CFLAGS=$(CFLAGS_STANDARD) $(GCFLAGS) $(XCFLAGS)
 +CFLAGS+=$(XCFLAGS)
  
  # Define platform flags for ld.
  # SunOS 4.n may need -Bstatic.
-@@ -227,7 +239,7 @@
+@@ -227,7 +237,7 @@
  #	-R /usr/local/xxx/lib:/usr/local/lib
  # giving the full path names of the shared library directories.
  # XLDFLAGS can be set from the command line.
@@ -129,7 +127,7 @@
  
  LDFLAGS=$(XLDFLAGS) -fno-common
  
-@@ -260,7 +272,7 @@
+@@ -260,7 +270,7 @@
  # Note that x_.h expects to find the header files in $(XINCLUDE)/X11,
  # not in $(XINCLUDE).
  
@@ -138,7 +136,7 @@
  
  # Define the directory/ies and library names for the X11 library files.
  # XLIBDIRS is for ld and should include -L; XLIBDIR is for LD_RUN_PATH
-@@ -272,12 +284,12 @@
+@@ -272,12 +282,12 @@
  # Solaris and other SVR4 systems with dynamic linking probably want
  #XLIBDIRS=-L/usr/openwin/lib -R/usr/openwin/lib
  # X11R6 (on any platform) may need
@@ -154,7 +152,7 @@
  
  # Define whether this platform has floating point hardware:
  #	FPU_TYPE=2 means floating point is faster than fixed point.
-@@ -406,7 +418,7 @@
+@@ -406,7 +416,7 @@
  
  # Define the compilation rules and flags.
  
