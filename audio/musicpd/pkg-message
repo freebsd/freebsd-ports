@@ -9,12 +9,12 @@ and add the following line to /etc/rc.conf:
   musicpd_enable="YES"
 
 Then start the server with
-  %%PREFIX%%/etc/rc.d/musicpd%%RC_SUFX%% start
+  %%PREFIX%%/etc/rc.d/musicpd.sh start
 or reboot.
 
 NOTE: The musicpd server is pretty useless without a
-      client. You might want to install the traymp-port,
-      too.
+      client. You might want to install one of the following
+      ports, too: traymp, mpc or kmp.
 
 ************************************************************
 
