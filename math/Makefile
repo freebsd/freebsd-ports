@@ -67,6 +67,7 @@
     SUBDIR += linpack
     SUBDIR += linux-relview
     SUBDIR += matrix
+    SUBDIR += maxima
     SUBDIR += metis
     SUBDIR += mtl
     SUBDIR += mtrxmath
