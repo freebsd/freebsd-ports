@@ -1,50 +1,60 @@
 %%SITE_PERL%%/Apache/MVC.pm
 %%SITE_PERL%%/CGI/Maypole.pm
 %%SITE_PERL%%/Maypole.pm
+%%SITE_PERL%%/Maypole/Application.pm
 %%SITE_PERL%%/Maypole/CLI.pm
+%%SITE_PERL%%/Maypole/Config.pm
 %%SITE_PERL%%/Maypole/Constants.pm
+%%SITE_PERL%%/Maypole/Manual.pod
+%%SITE_PERL%%/Maypole/Manual/About.pod
+%%SITE_PERL%%/Maypole/Manual/Beer.pod
+%%SITE_PERL%%/Maypole/Manual/BuySpy.pod
+%%SITE_PERL%%/Maypole/Manual/Flox.pod
+%%SITE_PERL%%/Maypole/Manual/Model.pod
+%%SITE_PERL%%/Maypole/Manual/Request.pod
+%%SITE_PERL%%/Maypole/Manual/StandardTemplates.pod
+%%SITE_PERL%%/Maypole/Manual/View.pod
+%%SITE_PERL%%/Maypole/Manual/Workflow.pod
 %%SITE_PERL%%/Maypole/Model/Base.pm
 %%SITE_PERL%%/Maypole/Model/CDBI.pm
 %%SITE_PERL%%/Maypole/Model/CDBI/Plain.pm
 %%SITE_PERL%%/Maypole/View/Base.pm
-%%SITE_PERL%%/Maypole/View/Mason.pm
 %%SITE_PERL%%/Maypole/View/TT.pm
-%%SITE_PERL%%/Maypole/Workflow.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Maypole/.packlist
 %%PORTDOCS%%%%DOCSDIR%%/About.pod
 %%PORTDOCS%%%%DOCSDIR%%/Beer.pod
 %%PORTDOCS%%%%DOCSDIR%%/BuySpy.pod
 %%PORTDOCS%%%%DOCSDIR%%/Flox.pod
+%%PORTDOCS%%%%DOCSDIR%%/Manual.pod
 %%PORTDOCS%%%%DOCSDIR%%/Model.pod
-%%PORTDOCS%%%%DOCSDIR%%/Overview.pod
 %%PORTDOCS%%%%DOCSDIR%%/Request.pod
 %%PORTDOCS%%%%DOCSDIR%%/StandardTemplates.pod
-%%PORTDOCS%%%%DOCSDIR%%/Templates.pod
 %%PORTDOCS%%%%DOCSDIR%%/View.pod
-%%PORTDOCS%%%%DOCSDIR%%/makedoc.pl
+%%PORTDOCS%%%%DOCSDIR%%/Workflow.pod
 %%PORTDOCS%%%%EXAMPLESDIR%%/BeerDB.pm
-%%DATADIR%%/templates/beerdb.css
+%%DATADIR%%/templates/maypole.css
 %%DATADIR%%/templates/beer/addnew
-%%DATADIR%%/templates/custom/frontpage
-%%DATADIR%%/templates/custom/header
 %%DATADIR%%/templates/factory/addnew
 %%DATADIR%%/templates/factory/edit
 %%DATADIR%%/templates/factory/footer
+%%DATADIR%%/templates/factory/frontpage
 %%DATADIR%%/templates/factory/header
 %%DATADIR%%/templates/factory/list
 %%DATADIR%%/templates/factory/macros
+%%DATADIR%%/templates/factory/maypole
 %%DATADIR%%/templates/factory/navbar
 %%DATADIR%%/templates/factory/pager
 %%DATADIR%%/templates/factory/search_form
+%%DATADIR%%/templates/factory/title
 %%DATADIR%%/templates/factory/view
 @dirrm %%DATADIR%%/templates/factory
-@dirrm %%DATADIR%%/templates/custom
 @dirrm %%DATADIR%%/templates/beer
 @dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Maypole
+@unexec rmdir %D/%%SITE_PERL%%/Maypole/Manual 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/Maypole/Model/CDBI 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/Maypole/Model 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/Maypole/View 2>/dev/null || true
