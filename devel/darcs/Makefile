@@ -66,4 +66,7 @@ post-patch:
 		 ${WRKSRC}/${MAKEFILE}
 .endif
 
+post-install:
+	@${STRIP_CMD} ${PREFIX}/bin/darcs
+
 .include <bsd.port.post.mk>
