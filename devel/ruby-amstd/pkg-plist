@@ -1,30 +1,18 @@
-%%RUBY_SITELIBDIR%%/amstd/aliascm.rb
-%%RUBY_SITELIBDIR%%/amstd/bench.rb
+%%RUBY_SITELIBDIR%%/amstd/aliasing.rb
+%%RUBY_SITELIBDIR%%/amstd/benchmark.rb
 %%RUBY_SITELIBDIR%%/amstd/bug.rb
-%%RUBY_SITELIBDIR%%/amstd/collfrom.rb
-%%RUBY_SITELIBDIR%%/amstd/constdef.rb
+%%RUBY_SITELIBDIR%%/amstd/const.rb
 %%RUBY_SITELIBDIR%%/amstd/d.rb
 %%RUBY_SITELIBDIR%%/amstd/daemon.rb
-%%RUBY_SITELIBDIR%%/amstd/dispatch.rb
-%%RUBY_SITELIBDIR%%/amstd/extmod.rb
-%%RUBY_SITELIBDIR%%/amstd/fileutils.rb
-%%RUBY_SITELIBDIR%%/amstd/futils.rb
-%%RUBY_SITELIBDIR%%/amstd/gconst.rb
-%%RUBY_SITELIBDIR%%/amstd/getdep.rb
-%%RUBY_SITELIBDIR%%/amstd/info.rb
 %%RUBY_SITELIBDIR%%/amstd/must.rb
 %%RUBY_SITELIBDIR%%/amstd/protect.rb
 %%RUBY_SITELIBDIR%%/amstd/rbparams.rb
-%%RUBY_SITELIBDIR%%/amstd/recycle.rb
-%%RUBY_SITELIBDIR%%/amstd/rubyemu.rb
-%%RUBY_SITELIBDIR%%/amstd/strquote.rb
-%%RUBY_SITELIBDIR%%/amstd/symbol.rb
+%%RUBY_SITELIBDIR%%/amstd/rubyloader.rb
 %%RUBY_SITELIBDIR%%/amstd/timer.rb
-%%RUBY_SITELIBDIR%%/amstd/to_s.rb
 %%RUBY_SITELIBDIR%%/amstd/version.rb
 @dirrm %%RUBY_SITELIBDIR%%/amstd
 %%PORTDOCS%%%%RUBY_DOCDIR%%/amstd/README.en
 %%PORTDOCS%%%%RUBY_DOCDIR%%/amstd/ja/README.ja
-%%PORTDOCS%%%%RUBY_DOCDIR%%/amstd/ja/amstd-ja.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/amstd/ja/manual.rd.ja
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/amstd/ja
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/amstd

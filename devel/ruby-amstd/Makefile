@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	amstd
-PORTVERSION=	1.10.0
+PORTVERSION=	2.0.0
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://www.loveruby.net/archive/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,9 +17,10 @@ MAINTAINER=	knu@FreeBSD.org
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
+RUBY_SETUP=	install.rb
 
 DOCS_EN=	README.en
-DOCS_JA=	README.ja amstd-ja.rd
+DOCS_JA=	README.ja manual.rd.ja
 
 post-install:
 .if !defined(NOPORTDOCS)
