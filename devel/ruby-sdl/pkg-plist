@@ -2,7 +2,6 @@
 %%RUBY_SITELIBDIR%%/sdl.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/alpha.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/cdrom.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/event2.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/font.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/icon.bmp
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/joy.rb
@@ -15,6 +14,9 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/testsprite.rb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/sdl
 %%PORTDOCS%%%%RUBY_DOCDIR%%/sdl/README.en
+%%PORTDOCS%%%%RUBY_DOCDIR%%/sdl/event2_doc.en.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/sdl/event2_doc.en.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/sdl/rubysdl_const_list.txt
 %%PORTDOCS%%%%RUBY_DOCDIR%%/sdl/rubysdl_doc.en.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/sdl/rubysdl_doc.en.rd
 %%PORTDOCS%%%%RUBY_DOCDIR%%/sdl/ja/README.ja
