@@ -15,6 +15,7 @@ MAINTAINER=	sysadmin@alexdupre.com
 
 RUN_DEPENDS=	${LOCALBASE}/bin/php-config:${PORTSDIR}/www/mod_php4
 
+PKGMESSAGE=	${WRKDIR}/pkg-message
 NO_BUILD=	yes
 
 pre-everything:
@@ -25,6 +26,10 @@ pre-everything:
 	@${ECHO} "If you have already compiled PHP without IMAP,"
 	@${ECHO} "press CTRL+C now and rebuild it before installing Nocc."
 	@${ECHO} ""
+
+pre-patch:
+	@${SED} 's|%%PREFIX%%|${PREFIX}|g' \
+		${.CURDIR}/pkg-message > ${PKGMESSAGE}
 
 do-install:
 	${MKDIR} ${PREFIX}/www/nocc
@@ -43,6 +48,6 @@ do-install:
 .endif
 
 post-install:
-	@${SED} 's|%%PREFIX%%|${PREFIX}|' ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
