@@ -7,6 +7,7 @@
 
 PORTNAME=	net-snmp
 PORTVERSION=	5.0.9
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= net-snmp
@@ -14,7 +15,6 @@ MASTER_SITE_SUBDIR= net-snmp
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	An extendable SNMP implementation
 
-USE_PERL5=	yes
 USE_REINPLACE=	yes
 USE_AUTOCONF_VER=213
 USE_LIBTOOL=	yes
@@ -22,6 +22,9 @@ USE_RC_SUBR=	yes
 INSTALLS_SHLIB=	yes
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 NO_LATEST_LINK=	yes
+.if !defined(WITHOUT_PERL)
+USE_PERL5=	yes
+.endif
 
 CONFIGURE_ARGS+= --enable-shared --with-mib-modules="host ucd-snmp/diskio" \
 		 --with-default-snmp-version="${DEFAULT_SNMP_VERSION}" \
@@ -29,10 +32,15 @@ CONFIGURE_ARGS+= --enable-shared --with-mib-modules="host ucd-snmp/diskio" \
 		 --with-sys-location="${NET_SNMP_SYS_LOCATION}" \
 		 --with-logfile="${NET_SNMP_LOGFILE}" \
 		 --with-persistent-directory="${NET_SNMP_PERSISTENTDIR}" \
-		 --with-perl-modules \
 		 --with-gnu-ld --with-libwrap --with-libs="-lkvm -ldevstat"
+.if defined(WITHOUT_PERL)
+PLIST_SUB+=	WITHPERL="@comment "
+.else
+CONFIGURE_ARGS+=	--with-perl-modules
+PLIST_SUB+=	WITHPERL=""
+.endif
 .if defined(BATCH)
-CONFIGURE_ARGS+= --with-defaults --with-sys-contact=nobody@no.where
+CONFIGURE_ARGS+= --with-defaults
 .else
 IS_INTERACTIVE= yes
 .endif
@@ -75,12 +83,14 @@ MAN3=		add_mibdir.3 add_module_replacement.3 default_store.3 \
 		snmp_sess_send.3 snmp_sess_session.3 snmp_sess_timeout.3 \
 		snmp_set_mib_warnings.3 snmp_set_save_descriptions.3 \
 		snmp_timeout.3 snmp_trap_api.3
+.if !defined(WITHOUT_PERL)
 MAN3PERL=	NetSNMP::default_store.3 NetSNMP::ASN.3 NetSNMP::OID.3 \
 		NetSNMP::agent::default_store.3 \
 		NetSNMP::netsnmp_request_infoPtr.3 \
 		NetSNMP::agent.3 SNMP.3
 MAN3PERLPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 _MANPAGES+=     ${MAN3PERL:S%^%${MAN3PERLPREFIX}/man/man3/%}
+.endif
 MAN5=		snmp.conf.5 snmp_config.5 snmpd.conf.5 \
 		snmptrapd.conf.5 variables.5
 MAN8=		snmpd.8 snmptrapd.8
@@ -107,9 +117,11 @@ post-patch:
 		-e 's|%%LTMAIN%%|${LIBTOOL_SHAREDIR}/ltmain.sh|g' \
 		${WRKSRC}/aclocal.m4
 
+.if !defined(WITHOUT_PERL)
 post-build:
 	@${FIND} ${CONFIGURE_WRKSRC}/perl -name Makefile | \
 	 ${XARGS} ${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//'
+.endif
 
 pre-install:
 	-@[ -f ${STARTUP_FILE} ] && \
