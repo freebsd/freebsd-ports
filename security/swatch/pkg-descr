@@ -1,43 +1,23 @@
 SWATCH - The Simple WATCHer and filter
 
-HOW TO INSTALL
-	
-    To install Swatch simply type "sh install.sh" and you will be prompted
-for
-    the information that it need to make the installation
+       Swatch is designed to  monitor  system  activity.   Swatch
+       requires a configuration file which contains pattern(s) to
+       look for and action(s) to do when each pattern is found.
 
-NEW FEATURES
+      The file contains four TAB separated fields:
 
-    * Now using the getopts.pl library as the command line parser instead
-      of the non-standard library that I was using.
+/pattern/[,/pattern/,...] action[,action,...] [[HH:]MM:]SS start:length
 
-    * No longer writing the watcher script into a temporary file. Instead
-      I store the script internally and run it inside a child process.
-      This also fixed the bug where 2.1 did not remove the watcher script
-      upon exit.
+       A pattern must be a regular expression which perl(1)  will
+       accept,  which  is very similar to the regular expressions
+       which egrep(1) accepts.
 
-    * Reduced the history reporting to one line.
+       The following actions are acceptable:
 
-    * Cleaned up code to follow PERL style rules more closely.
-
-COMING ATTRACTIONS
-
-    * Better history handling
-
-    * Expanded history options
-
-    * Ability to use an easier to read configuration file
-
-    * Color
-
-    * One or two more actions
-
-The latest version of swatch can be found at
-
-    ftp://ftp.stanford.edu/general/security-tools/swatch
-
-You can send you questions, comments, or suggestions to
-
-    Todd.Atkins@CAST.Stanford.EDU
-
-Enjoy
+       echo[=mode]
+       bell[=N]
+       exec=command
+       ignore
+       mail[=address:address:...]
+       pipe=command
+       write[=user:user:...]
