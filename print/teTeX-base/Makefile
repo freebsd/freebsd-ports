@@ -16,7 +16,7 @@ DISTFILES=	${TETEX_SRC} ${TETEX_TEXMF}
 MAINTAINER=	br@netland.inka.de
 
 LIB_DEPENDS=	png.3:${PORTSDIR}/graphics/png \
-		www.6:${PORTSDIR}/www/libwww
+		wwwcore.1:${PORTSDIR}/www/libwww
 
 USE_XLIB=	yes
 MANUAL_PACKAGE_BUILD=	can only build with empty /usr/local
