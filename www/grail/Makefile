@@ -9,7 +9,8 @@ PORTNAME=	grail
 PORTVERSION=	0.6
 PORTREVISION=	1
 CATEGORIES=	www python
-MASTER_SITES=	http://prdownloads.sourceforge.net/grail/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=grail
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@freebsd.org
