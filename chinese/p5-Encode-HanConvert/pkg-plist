@@ -8,3 +8,4 @@ bin/g2b.pl
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/HanConvert
 @dirrm %%SITE_PERL%%/Encode/HanConvert
 @dirrm %%SITE_PERL%%/Encode
+@dirrm %%SITE_PERL%%/auto/Encode
