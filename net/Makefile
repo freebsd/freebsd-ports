@@ -171,6 +171,7 @@
     SUBDIR += isic
     SUBDIR += jabber
     SUBDIR += jags
+    SUBDIR += javadc
     SUBDIR += jumpgate
     SUBDIR += jwhois
     SUBDIR += kdenetwork2
