@@ -104,7 +104,4 @@ post-configure:
 		s|%%LOCALBASE%%|${LOCALBASE}|' \
 			${WRKSRC}/src/kazehakase
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
 .include <bsd.port.post.mk>
