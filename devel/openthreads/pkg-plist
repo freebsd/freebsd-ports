@@ -1,0 +1,8 @@
+include/OpenThreads/Barrier
+include/OpenThreads/Mutex
+include/OpenThreads/Thread
+include/OpenThreads/ScopedLock
+include/OpenThreads/Exports
+include/OpenThreads/Condition
+lib/libOpenThreads.so
+@dirrm include/OpenThreads

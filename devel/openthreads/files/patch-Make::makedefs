@@ -1,0 +1,29 @@
+--- Make/makedefs.orig	Thu Oct 16 19:33:14 2003
++++ Make/makedefs	Thu Oct 16 19:38:33 2003
+@@ -252,15 +252,22 @@
+       CXX               = g++
+     endif
+   DEPARG            = -MM
+-  INC               +=  -I/usr/local/include -I/usr/X11R6/include
++  INC               +=  -I${LOCALBASE}/include -I${X11BASE}/include
+   DEF               += -W -Wall
+-  OPTF              = -O2 
++  OPTF              = %%CXXFLAGS%%
+   DBGF              = -g 
+   SHARED            = -shared
+   ARCH              = 32
+   ARCHARGS          = 
+-  INST_LOCATION   = /opt/X11R6
+-  INST_SHARE = /usr/share/OpenThreads
++  INST_SYS_PREFIX   = $(PREFIX)
++  INST_SHARE_PREFIX = $(DATADIR)
++  LINKARGS          = -L${X11BASE}/lib -L${LOCALBASE}/lib -rpath ${LOCALBASE}/lib -rpath ${X11BASE}/lib
++  INST_LOCATION     = $(INST_SYS_PREFIX)
++  INST_SHARE        = $(INST_SHARE_PREFIX)
++  INST_DEMOS        = $(EXAMPLESDIR)/bin
++  INST_SRC          = $(EXAMPLESDIR)/src
++  INST_DOC          = $(DOCSDIR)
++  INST_DATA         = $(DATADIR)
+ endif
+ 
+ #### MacOS X specific definitions

@@ -1,0 +1,13 @@
+--- pthread_src/GNUmakefile.orig	Thu Oct 16 19:43:25 2003
++++ pthread_src/GNUmakefile	Thu Oct 16 19:43:56 2003
+@@ -15,6 +15,10 @@
+ LIBS += -lpthread
+ endif 
+ 
++ifeq ($(OS),FreeBSD) 
++LIBS += $(PTHREAD_LIBS)
++endif 
++
+ ifeq ($(OS),SunOS)
+ LIBS +=  -lpthread -lposix4
+ endif
