@@ -150,6 +150,7 @@
     SUBDIR += libecc
     SUBDIR += libfwbuilder
     SUBDIR += libgcrypt
+    SUBDIR += libgcrypt-devel
     SUBDIR += libgpg-error
     SUBDIR += libgringotts
     SUBDIR += libidea

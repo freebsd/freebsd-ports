@@ -1,6 +1,10 @@
 bin/libgcrypt-config
 include/gcrypt.h
+include/gcrypt-module.h
 lib/libgcrypt.a
 lib/libgcrypt.so
-lib/libgcrypt.so.6
+lib/libgcrypt.so.10
+lib/libgcrypt-pthread.a
+lib/libgcrypt-pthread.so.10
+lib/libgcrypt-pthread.so
 share/aclocal/libgcrypt.m4
