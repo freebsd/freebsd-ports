@@ -9089,6 +9089,7 @@ qmake		ports/devel/qmake
 qmc		ports/misc/qmc
 qmls		ports/cad/qmls
 qmrtg		ports/mail/qmrtg
+qnetwalk	ports/games/qnetwalk
 qnxstyle	ports/x11-themes/qnxstyle
 qpage		ports/comms/qpage
 qpopper		ports/mail/qpopper
