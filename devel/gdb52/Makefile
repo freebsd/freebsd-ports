@@ -22,6 +22,10 @@ COMMENT=	GNU GDB 5.2 developmental snapshot
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "amd64"
+BROKEN=		"Configure fails on amd64"
+.endif
+
 NO_LATEST_LINK=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
