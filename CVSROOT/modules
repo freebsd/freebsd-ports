@@ -3141,6 +3141,7 @@ java-cup	ports/java/java-cup
 java-sqlrelay	ports/databases/java-sqlrelay
 java-tutorial	ports/java/java-tutorial
 java2html	ports/textproc/java2html
+javacc		ports/textproc/javacc
 javadc		ports/net/javadc
 javamail	ports/java/javamail
 javanns		ports/math/javanns
