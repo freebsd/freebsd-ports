@@ -20,8 +20,6 @@ include/pvm++/taskset.hh
 include/pvm++/types.hh
 @dirrm include/pvm++
 lib/libpvm++.a
-lib/libpvm++.la
-lib/libpvm++.so
 lib/libpvm++.so.1
 share/aclocal/pvm++.m4
 %%PORTDOCS%%share/doc/pvm++/General.html
