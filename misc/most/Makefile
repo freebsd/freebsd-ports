@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	most
-PORTVERSION=	4.9.4
+PORTVERSION=	4.9.5
 CATEGORIES=	misc
-MASTER_SITES=	ftp://ftp.jedsoft.org/pub/davis/most/ \
-		ftp://space.mit.edu/pub/davis/most/ \
-		ftp://ftp.uni-stuttgart.de/pub/unix/misc/slang/most/
+MASTER_SITES=	ftp://space.mit.edu/pub/davis/most/ \
+		ftp://ftp.uni-stuttgart.de/pub/unix/misc/slang/most/ \
+		http://gd.tuwien.ac.at/editors/davis/most/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A pager (like less) which has support for windows and binary files
