@@ -1,35 +1,37 @@
-share/xml/catalog
-share/xml/docbook/40chg.txt
-share/xml/docbook/41chg.txt
-share/xml/docbook/calstblx.dtd
-share/xml/docbook/catalog
-share/xml/docbook/dbcentx.mod
-share/xml/docbook/dbgenent.mod
-share/xml/docbook/dbhierx.mod
-share/xml/docbook/dbnotnx.mod
-share/xml/docbook/dbpoolx.mod
-share/xml/docbook/docbookx.dtd
-share/xml/docbook/ent/iso-amsa.ent
-share/xml/docbook/ent/iso-amsb.ent
-share/xml/docbook/ent/iso-amsc.ent
-share/xml/docbook/ent/iso-amsn.ent
-share/xml/docbook/ent/iso-amso.ent
-share/xml/docbook/ent/iso-amsr.ent
-share/xml/docbook/ent/iso-box.ent
-share/xml/docbook/ent/iso-cyr1.ent
-share/xml/docbook/ent/iso-cyr2.ent
-share/xml/docbook/ent/iso-dia.ent
-share/xml/docbook/ent/iso-grk1.ent
-share/xml/docbook/ent/iso-grk2.ent
-share/xml/docbook/ent/iso-grk3.ent
-share/xml/docbook/ent/iso-grk4.ent
-share/xml/docbook/ent/iso-lat1.ent
-share/xml/docbook/ent/iso-lat2.ent
-share/xml/docbook/ent/iso-num.ent
-share/xml/docbook/ent/iso-pub.ent
-share/xml/docbook/ent/iso-tech.ent
-share/xml/docbook/readme.txt
-share/xml/docbook/soextblx.dtd
-@dirrm share/xml/docbook/ent
+share/xml/docbook/%%DTD_VERSION%%/40chg.txt
+share/xml/docbook/%%DTD_VERSION%%/41chg.txt
+share/xml/docbook/%%DTD_VERSION%%/ChangeLog
+share/xml/docbook/%%DTD_VERSION%%/calstblx.dtd
+share/xml/docbook/%%DTD_VERSION%%/dbcentx.mod
+share/xml/docbook/%%DTD_VERSION%%/dbgenent.mod
+share/xml/docbook/%%DTD_VERSION%%/dbhierx.mod
+share/xml/docbook/%%DTD_VERSION%%/dbnotnx.mod
+share/xml/docbook/%%DTD_VERSION%%/dbpoolx.mod
+@unexec %%MKCATALOG%% -q -c%%CATALOG%% deinstall docbook/%%DTD_VERSION%% docbook.cat
+share/xml/docbook/%%DTD_VERSION%%/docbook.cat
+@exec %%MKCATALOG%% -q -c%%CATALOG%% install docbook/%%DTD_VERSION%% docbook.cat
+share/xml/docbook/%%DTD_VERSION%%/docbookx.dtd
+share/xml/docbook/%%DTD_VERSION%%/ent/iso-amsa.ent
+share/xml/docbook/%%DTD_VERSION%%/ent/iso-amsb.ent
+share/xml/docbook/%%DTD_VERSION%%/ent/iso-amsc.ent
+share/xml/docbook/%%DTD_VERSION%%/ent/iso-amsn.ent
+share/xml/docbook/%%DTD_VERSION%%/ent/iso-amso.ent
+share/xml/docbook/%%DTD_VERSION%%/ent/iso-amsr.ent
+share/xml/docbook/%%DTD_VERSION%%/ent/iso-box.ent
+share/xml/docbook/%%DTD_VERSION%%/ent/iso-cyr1.ent
+share/xml/docbook/%%DTD_VERSION%%/ent/iso-cyr2.ent
+share/xml/docbook/%%DTD_VERSION%%/ent/iso-dia.ent
+share/xml/docbook/%%DTD_VERSION%%/ent/iso-grk1.ent
+share/xml/docbook/%%DTD_VERSION%%/ent/iso-grk2.ent
+share/xml/docbook/%%DTD_VERSION%%/ent/iso-grk3.ent
+share/xml/docbook/%%DTD_VERSION%%/ent/iso-grk4.ent
+share/xml/docbook/%%DTD_VERSION%%/ent/iso-lat1.ent
+share/xml/docbook/%%DTD_VERSION%%/ent/iso-lat2.ent
+share/xml/docbook/%%DTD_VERSION%%/ent/iso-num.ent
+share/xml/docbook/%%DTD_VERSION%%/ent/iso-pub.ent
+share/xml/docbook/%%DTD_VERSION%%/ent/iso-tech.ent
+share/xml/docbook/%%DTD_VERSION%%/readme.txt
+share/xml/docbook/%%DTD_VERSION%%/soextblx.dtd
+@dirrm share/xml/docbook/%%DTD_VERSION%%/ent
+@dirrm share/xml/docbook/%%DTD_VERSION%%
 @unexec rmdir %D/share/xml/docbook 2>/dev/null || true
-@unexec rmdir %D/share/xml 2>/dev/null || true
