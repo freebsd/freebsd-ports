@@ -1,0 +1,36 @@
+This is the cosmo gang the puzzle for X Window System.
+
+The cosmo gang the puzzle is a tetris-like puzzle game. 
+You can erase cosmo with ball, falling once of several blocks.
+The  star  is  the bonus charactor to erase all cosmos in the 
+screen  but  you  may  also get bonus score without taking an
+effect.
+
+OPTIONS:
+	-display [displayname] : Specify the X server.
+	-cmap [private/public] : Use private colormap or use
+	                         public colormap.
+	-bg [filename]         : Specify the file you paaste
+	                         on background.
+	                         (Uncompressed 256 tiff only.)
+	-rough                 : Half frequency of redraw.
+	-smooth                : Normal frequency of redraw.
+	-pad [device/no]       : Specify device name when you
+	                         use PAD. (Only available under
+	                         TOWNS+Linux)
+	You may configure the environment with ~/.cosmorc .
+	(Sample is at /usr/X11R6/lib/X11/cosmo/cosmorc .)
+	And the background file the author recommend is at
+	/usr/X11R6/lib/X11/cosmo/moon.tif.gz .)
+
+KEYBOARD:
+	Up	block rotation.
+	Down	block down (1 line)
+	Space	block down (Fast)
+	Left	left
+	Right	right
+	Control	Get the score bonus from the star.
+	y	Select yes
+	n	Select no
+	p	Pause game
+	q	Quit game
