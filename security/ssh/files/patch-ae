@@ -1,5 +1,5 @@
-*** server_config.sample.bak	Fri Oct  4 17:00:43 1996
---- server_config.sample	Sat Nov  2 03:15:57 1996
+*** server_config.sample.orig	Wed Oct 30 15:27:55 1996
+--- server_config.sample	Thu Jan 30 23:00:04 1997
 ***************
 *** 15,21 ****
   FascistLogging no

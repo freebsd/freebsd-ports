@@ -1,8 +1,21 @@
-*** sshd.c.orig	Fri Oct  4 17:00:42 1996
---- sshd.c	Tue Nov 12 04:23:15 1996
+*** sshd.c.orig	Wed Oct 30 15:27:55 1996
+--- sshd.c	Fri Jan 31 00:36:15 1997
 ***************
-*** 2083,2088 ****
---- 2083,2098 ----
+*** 298,303 ****
+--- 298,307 ----
+  extern char *setlimits();
+  #endif
+  
++ #ifdef HAVE_LOGIN_CAP_H
++ #include <login_cap.h>
++ #endif
++ 
+  #ifdef _PATH_BSHELL
+  #define DEFAULT_SHELL		_PATH_BSHELL
+  #else
+***************
+*** 2108,2113 ****
+--- 2112,2127 ----
   	    printf("Last login: %s from %s\r\n", time_string, buf);
   	}
   
@@ -20,8 +33,8 @@
   	 disabled in server options.  Note that some machines appear to
   	 print it in /etc/profile or similar. */
 ***************
-*** 2099,2104 ****
---- 2109,2123 ----
+*** 2124,2129 ****
+--- 2138,2152 ----
   	      fclose(f);
   	    }
   	}
@@ -37,3 +50,190 @@
   
         /* Do common processing for the child, such as execing the command. */
         do_child(command, pw, term, display, auth_proto, auth_data, ttyname);
+***************
+*** 2376,2382 ****
+    char *user_shell;
+    char *remote_ip;
+    int remote_port;
+!   
+    /* Check /etc/nologin. */
+    f = fopen("/etc/nologin", "r");
+    if (f)
+--- 2399,2412 ----
+    char *user_shell;
+    char *remote_ip;
+    int remote_port;
+! #ifdef HAVE_LOGIN_CAP_H
+!   login_cap_t *lc;
+!   char **tmpenv;
+!   char *real_shell;
+!   
+!   lc = login_getuserclass(pw);
+!   auth_checknologin(lc);
+! #else /* !HAVE_LOGIN_CAP_H */
+    /* Check /etc/nologin. */
+    f = fopen("/etc/nologin", "r");
+    if (f)
+***************
+*** 2390,2395 ****
+--- 2420,2426 ----
+        if (pw->pw_uid != 0)
+  	exit(254);
+      }
++ #endif /* HAVE_LOGIN_CAP_H */
+  
+    if (command != NULL)
+      {
+***************
+*** 2402,2408 ****
+        else
+  	log_msg("executing remote command as user %.200s", pw->pw_name);
+      }
+!   
+  #ifdef HAVE_SETLOGIN
+    /* Set login name in the kernel.  Warning: setsid() must be called before
+       this. */
+--- 2433,2440 ----
+        else
+  	log_msg("executing remote command as user %.200s", pw->pw_name);
+      }
+! 
+! #ifndef HAVE_LOGIN_CAP_H
+  #ifdef HAVE_SETLOGIN
+    /* Set login name in the kernel.  Warning: setsid() must be called before
+       this. */
+***************
+*** 2417,2422 ****
+--- 2449,2455 ----
+    if (setpcred((char *)pw->pw_name, NULL))
+      log_msg("setpcred %.100s: %.100s", strerror(errno));
+  #endif /* HAVE_USERSEC_H */
++ #endif /* HAVE_LOGIN_CAP_H */
+  
+    /* Save some data that will be needed so that we can do certain cleanups
+       before we switch to user's uid.  (We must clear all sensitive data 
+***************
+*** 2474,2479 ****
+--- 2507,2553 ----
+        close(i);
+      }
+  
++ #ifdef HAVE_LOGIN_CAP_H
++   /* Save previous environment array
++    */
++   tmpenv = environ;
++   /* Initialize the new environment.
++    */
++   envsize = 64;
++   environ = env = xmalloc(envsize * sizeof(char *));
++   env[0] = NULL;
++ 
++   child_set_env(&env, &envsize, "PATH", DEFAULT_PATH ":" SSH_BINDIR);
++ 
++   /* Let it inherit timezone if we have one. */
++   if (getenv("TZ"))
++     child_set_env(&env, &envsize, "TZ", getenv("TZ"));
++ 
++ #ifdef MAIL_SPOOL_DIRECTORY
++   sprintf(buf, "%.200s/%.50s", MAIL_SPOOL_DIRECTORY, user_name);
++   child_set_env(&env, &envsize, "MAIL", buf);
++ #else /* MAIL_SPOOL_DIRECTORY */
++ #ifdef MAIL_SPOOL_FILE
++   sprintf(buf, "%.200s/%.50s", user_dir, MAIL_SPOOL_FILE);
++   child_set_env(&env, &envsize, "MAIL", buf);
++ #endif /* MAIL_SPOOL_FILE */
++ #endif /* MAIL_SPOOL_DIRECTORY */
++ 
++   /* Set the user's login environment
++    */
++   if (setusercontext(lc, pw, user_uid, LOGIN_SETALL) < 0)
++     {
++       perror("setgid");
++       exit(1);
++     }
++   env = environ;
++   environ = tmpenv; /* Restore parent environment */
++   for (envsize = 0; env[envsize] != NULL; ++envsize)
++     ;
++   /* Reallocate this to what is expected */
++   envsize = (envsize < 100) ? 100 : envsize + 16;
++   env = xrealloc(env, envsize * sizeof(char *));
++ #else /* !HAVE_LOGIN_CAP_H */
+    /* At this point, this process should no longer be holding any confidential
+       information, as changing uid below will permit the user to attach with
+       a debugger on some machines. */
+***************
+*** 2514,2519 ****
+--- 2588,2594 ----
+  
+    if (getuid() != user_uid || geteuid() != user_uid)
+      fatal("Failed to set uids to %d.", (int)user_uid);
++ #endif /* HAVE_LOGIN_CAP_H */
+  
+    /* Reset signals to their default settings before starting the user
+       process. */
+***************
+*** 2523,2538 ****
+--- 2598,2621 ----
+       and means /bin/sh. */
+    shell = (user_shell[0] == '\0') ? DEFAULT_SHELL : user_shell;
+  
++ #ifdef HAVE_LOGIN_CAP_H
++   real_shell = login_getcapstr(lc, "shell", (char*)shell, (char*)shell);
++ #else /* !HAVE_LOGIN_CAP_H */
+    /* Initialize the environment.  In the first part we allocate space for
+       all environment variables. */
+    envsize = 100;
+    env = xmalloc(envsize * sizeof(char *));
+    env[0] = NULL;
++ #endif /* HAVE_LOGIN_CAP_H */
+  
+    /* Set basic environment. */
+    child_set_env(&env, &envsize, "USER", user_name);
+    child_set_env(&env, &envsize, "LOGNAME", user_name);
+    child_set_env(&env, &envsize, "HOME", user_dir);
++ 
++ #ifdef HAVE_LOGIN_CAP_H
++   login_close(lc);
++ #else /* !HAVE_LOGIN_CAP_H */
+    child_set_env(&env, &envsize, "PATH", DEFAULT_PATH ":" SSH_BINDIR);
+  
+    /* Let it inherit timezone if we have one. */
+***************
+*** 2548,2553 ****
+--- 2631,2637 ----
+    child_set_env(&env, &envsize, "MAIL", buf);
+  #endif /* MAIL_SPOOL_FILE */
+  #endif /* MAIL_SPOOL_DIRECTORY */
++ #endif /* HAVE_LOGIN_CAP_H */
+  
+  #ifdef HAVE_ETC_DEFAULT_LOGIN
+    /* Read /etc/default/login; this exists at least on Solaris 2.x.  Note
+***************
+*** 2710,2716 ****
+--- 2794,2804 ----
+        /* Execute the shell. */
+        argv[0] = buf;
+        argv[1] = NULL;
++ #ifdef HAVE_LOGIN_CAP_H
++       execve(real_shell, argv, env);
++ #else
+        execve(shell, argv, env);
++ #endif /* HAVE_LOGIN_CAP_H */
+        /* Executing the shell failed. */
+        perror(shell);
+        exit(1);
+***************
+*** 2722,2728 ****
+--- 2810,2820 ----
+    argv[1] = "-c";
+    argv[2] = (char *)command;
+    argv[3] = NULL;
++ #ifdef HAVE_LOGIN_CAP_H
++   execve(real_shell, argv, env);
++ #else
+    execve(shell, argv, env);
++ #endif /* HAVE_LOGIN_CAP_H */
+    perror(shell);
+    exit(1);
+  }
