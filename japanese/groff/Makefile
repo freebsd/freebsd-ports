@@ -7,7 +7,7 @@
 
 PORTNAME=	groff
 PORTVERSION=	0.100
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		${MASTER_SITE_LOCAL}
@@ -22,7 +22,7 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	okazaki@FreeBSD.org
 
-TMAC_DATE=	20010207
+TMAC_DATE=	20010314
 TMAC_DISTNAME=	tmac-${TMAC_DATE}
 
 USE_GMAKE=	yes
@@ -57,7 +57,7 @@ MAN7=		groff_char.7 groff_man.7 groff_mdoc.7 groff_mdoc.samples.7 \
 		groff_me.7 groff_mm.7 groff_mmse.7 groff_ms.7 groff_msafer.7
 
 TMACFILES=	tmac.X tmac.a4 \
-		tmac.an tmac.andoc tmac.arkup \
+		tmac.an tmac.an-old tmac.andoc tmac.arkup \
 		tmac.doc tmac.dvi tmac.html \
 		tmac.latin1 tmac.lbp tmac.m \
 		tmac.man tmac.mandoc tmac.markup tmac.mdoc \
