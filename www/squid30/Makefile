@@ -30,7 +30,6 @@ CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin  --sysconfdir=${PREFIX}/etc/squid \
 		--localstatedir=${PREFIX}/squid
 STRIP=		# won't install scripts correctly othervise.
 MAKEFILE=	makefile
-NO_LATEST_LINK=	yes
 
 .if defined(PATCH_DEBUG)
 PATCH_DIST_ARGS?=       -d ${WRKSRC}/src -E ${PATCH_DIST_STRIP}
