@@ -1,0 +1,11 @@
+--- app/main.c.old	Tue Apr 28 09:54:27 1998
++++ app/main.c	Tue Apr 28 09:53:51 1998
+@@ -80,6 +80,8 @@
+   int i, j;
+   gchar *display_name, *display_env;
+ 
++#define ATEXIT(proc)   (atexit (proc))
++
+   ATEXIT (g_mem_profile);
+ 
+   /* Initialize variables */

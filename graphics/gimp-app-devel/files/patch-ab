@@ -18,14 +18,3 @@
    else
 
 
---- plug-ins/mail/mail.c.orig	Tue Nov 25 06:04:27 1997
-+++ plug-ins/mail/mail.c	Thu Dec 18 00:40:23 1997
-@@ -89,7 +89,7 @@
-    *
-  */
- #ifndef MAILER
--#define MAILER "/usr/lib/sendmail"
-+#define MAILER "/usr/sbin/sendmail"
- #endif
- 
- #ifndef UUENCODE
