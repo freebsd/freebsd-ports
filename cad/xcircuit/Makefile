@@ -3,7 +3,7 @@
 # Date created:		3 Apr 1998
 # Whom:			giffunip@asme.org
 #
-# $Id: Makefile,v 1.1.1.1 1998/05/18 04:20:21 mph Exp $
+# $Id: Makefile,v 1.2 1998/05/25 21:03:03 fenner Exp $
 #
 
 DISTNAME=	xcircuit-1.7
@@ -18,6 +18,8 @@ USE_IMAKE=	yes
 XMKMF=		xmkmf
 ALL_TARGET=
 INSTALL_TARGET=	install install.man
+
+MAN1=		xcircuit.1
 
 post-install:
 .if !defined(NOPORTDOCS)

@@ -3,7 +3,7 @@
 # Date created:		15 September 1996
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.5 1997/05/29 01:49:59 fenner Exp $
+# $Id: Makefile,v 1.6 1998/07/08 12:08:46 scrappy Exp $
 #
 
 DISTNAME=	sunclock-1.4
@@ -15,5 +15,7 @@ MASTER_SITE_SUBDIR=	applications
 MAINTAINER=	torstenb@FreeBSD.org
 
 USE_IMAKE=	YES
+
+MAN1=		sunclock.1
 
 .include <bsd.port.mk>
