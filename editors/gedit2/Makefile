@@ -8,14 +8,13 @@
 
 DISTNAME=	gedit-0.6.1
 CATEGORIES=	editors gnome
-MASTER_SITES=	http://www.oscentral.org/files/software/ \
-		http://gedit.pn.org/tar/ \
-		ftp://ftp.oscentral.org/pub/software/
+MASTER_SITES=	http://gedit.pn.org/tar/
 
 MAINTAINER=	andy@icc.surw.chel.su
 
 LIB_DEPENDS=	gnomeui.3:${PORTSDIR}/x11/gnomelibs
 
+FETCH_BEFORE_ARGS=	-b
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
