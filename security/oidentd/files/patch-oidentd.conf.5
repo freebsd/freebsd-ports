@@ -1,0 +1,38 @@
+--- doc/oidentd.conf.5.orig	Sun Apr 27 20:40:59 2003
++++ doc/oidentd.conf.5	Sat Sep  4 16:12:48 2004
+@@ -16,7 +16,7 @@
+ The \fBoidentd\fP configuration file is used to specify the amount of control users have over the responses \fBoidentd\fP returns upon successful lookups for connections owned by them.
+ .PP
+ The \fB$HOME/.oidentd.conf\fP file allows a user to specify what ident response will be returned for specific connections.
+-.SH /etc/oidentd.conf SYNTAX
++.SH %%PREFIX%%/etc/oidentd.conf SYNTAX
+ .TP
+ .B USER DIRECTIVE
+ The \fBoidentd.conf\fP file consists of 0 or more \fIuser\fP directives. The \fIuser\fP directive is used to grant capabilities on a per-user basis.
+@@ -101,7 +101,7 @@
+ 
+ The \fIglobal\fP directive acts as a wildcard, matching all connections, so if used at all, the global directive should be the first entry in the file and should be used only once. Use is permitted anywhere in the file and infinitely many times, however it doesn't make much sense to use it in this manner.
+ 
+-The range directive has the same syntax and semantics as the range directive in the \fB/etc/oidentd.conf\fP file. See above for a description.
++The range directive has the same syntax and semantics as the range directive in the \fB%%PREFIX%%/etc/oidentd.conf\fP file. See above for a description.
+ 
+ Valid capabilities are \fIreply\fP, \fIrandom\fP, \fInumeric\fP, \fIrandom_numeric\fP, and \fIhide\fP. Descriptions can be found below.
+ .SH CAPABILITIES
+@@ -126,7 +126,7 @@
+ 
+ In a user's \fB$HOME/.oidentd.conf\fP file, up to 20 strings may be specified for a \fBreply\fP statement.
+ 
+-In the \fB/etc/oidentd.conf\fP file, there is no limitation on the number of strings that may be specified.
++In the \fB%%PREFIX%%/etc/oidentd.conf\fP file, there is no limitation on the number of strings that may be specified.
+ 
+ The strings must be quoted strings (e.g. "string"). Strings may contain the following escape characters:
+ 
+@@ -183,7 +183,7 @@
+ .TP
+ .B random_numeric
+ Reply to successful with a randomly generated ident response of the form userN, where N is a random number between 0 and 100000.
+-.SH EXAMPLE /etc/oidentd.conf FILE
++.SH EXAMPLE %%PREFIX%%/etc/oidentd.conf FILE
+ .nf
+ default {
+ 	default {

@@ -1,0 +1,11 @@
+--- doc/oidentd_masq.conf.5.orig	Sun Apr 27 20:40:59 2003
++++ doc/oidentd_masq.conf.5	Sat Sep  4 16:12:11 2004
+@@ -13,7 +13,7 @@
+ oidentd_masq.conf - oidentd IP masquerading/NAT configuration file.
+ 
+ .SH DESCRIPTION
+-If you are using IP masquerading or NAT, oidentd can optionally return a username for connections from other machines.  Support for this is specified by calling \fBoidentd\fP with the \-m (or \-\-masq) flag and by creating an \fB/etc/oidentd_masq.conf\fP file.
++If you are using IP masquerading or NAT, oidentd can optionally return a username for connections from other machines.  Support for this is specified by calling \fBoidentd\fP with the \-m (or \-\-masq) flag and by creating an \fB%%PREFIX%%/etc/oidentd_masq.conf\fP file.
+ .PP
+ \fBoidentd\fP can also forward requests for an IP masqueraded connection to the machine from which connection originates by way of the -f option.  This will only work if the host to which the connection is forwarded is running oidentd with the -P (proxy) flag, or if the host's ident daemon will return a valid reply regardless of the input supplied by and the address of the host requesting the info (some ident daemons for windows do this, maybe others).
+ 

@@ -21,12 +21,23 @@ name=oidentd
 rcvar=`set_rcvar`
 
 command=%%PREFIX%%/sbin/${name}
-required_files=%%PREFIX%%/etc/${name}.conf
 
 # set defaults
 
 oidentd_enable=${oidentd_enable:-"NO"}
+oidentd_conf=${oidentd_conf:-"%%PREFIX%%/etc/${name}.conf"}
 oidentd_flags=${oidentd_flags:-""}
 
+oidentd_precmd ()
+{
+	if [ -n "${oidentd_conf}" ]; then
+		rc_flags="${rc_flags} -C ${oidentd_conf}"
+	fi
+}
+
 load_rc_config ${name}
+
+start_precmd=${name}_precmd
+required_files=${oidentd_conf}
+
 run_rc_command "$1"
