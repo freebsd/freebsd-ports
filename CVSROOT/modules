@@ -292,7 +292,6 @@ amavis-perl	ports/security/amavis-perl
 amavisd		ports/security/amavisd
 amavisd-new	ports/security/amavisd-new
 amaya		ports/www/amaya
-amcl		ports/net/amcl
 amd		src/usr.sbin/amd
 amiwm		ports/x11-wm/amiwm
 amldb		src/usr.sbin/acpi/amldb
@@ -2271,6 +2270,7 @@ gnome-devel	ports/devel/gnome-devel
 gnome-fifth-toe	ports/x11/gnome-fifth-toe
 gnome-icon-theme	ports/misc/gnome-icon-theme
 gnome-look	ports/x11-toolkits/gnome-look
+gnome-mud	ports/net/gnome-mud
 gnome-pkgview	ports/sysutils/gnome-pkgview
 gnome-themes	ports/x11-toolkits/gnome-themes
 gnome-vnc	ports/net/gnome-vnc
