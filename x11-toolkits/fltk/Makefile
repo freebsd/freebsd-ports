@@ -58,7 +58,7 @@ post-install:
 	@ ${INSTALL_MAN} ${WRKSRC}/documentation/fluid.1 \
 		${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${DICSDIR}
+	@ ${MKDIR} ${DOCSDIR}
 	for ext in html gif jpg ; do \
 		${INSTALL_DATA} ${WRKSRC}/documentation/*.$$ext \
 		${DOCSDIR}; \
