@@ -1,0 +1,91 @@
+diff -ur src/wprint-ft2.c.orig src/wprint-ft2.c
+--- src/wprint-ft2.c.orig	2001-10-26 02:41:29.000000000 +0800
++++ src/wprint-ft2.c	2003-07-19 15:18:55.000000000 +0800
+@@ -20,8 +20,11 @@
+ 		Error("Couldn't find suitable Cmap");
+ 
+ 	index = FT_Get_Char_Index(ti->font.ttface,unicode );
++	
++	FT_Set_Char_Size (ti->font.ttface, 0, 16*64, 0, 0);
+ 
+-	if((error=FT_Load_Glyph(ti->font.ttface, index, FT_LOAD_NO_SCALE)))
++	if((error=FT_Load_Glyph(ti->font.ttface, index, FT_LOAD_NO_BITMAP 
++						    | FT_LOAD_IGNORE_GLOBAL_ADVANCE_WIDTH)))
+ 		FTError("Couldn't load glyph", error);
+ 	glyphToPs(out,unicode,ti,b64name);
+ 
+@@ -280,13 +283,13 @@
+ {
+ 	FT_Done_Face(ti->font.ttface);
+ }
+-int	setFont(struct tt_info *ti,char *file)
++int	setFont(struct tt_info *ti,char *file,int faceindex)
+ {
+ int	error;
+ int	i,l,total;
+ FT_SfntName	name;
+ 
+-	if ((error = FT_New_Face(ti->ttengine,file,0,&(ti->font.ttface)) != 0))
++	if ((error = FT_New_Face(ti->ttengine,file,faceindex,&(ti->font.ttface)) != 0))
+ 	{
+ 		FTError("Coudn't set TrueType font", error);
+ 	}
+diff -ur src/wprint.c.orig src/wprint.c
+--- src/wprint.c.orig	2002-04-02 04:59:57.000000000 +0800
++++ src/wprint.c	2003-07-19 15:18:32.000000000 +0800
+@@ -518,6 +518,7 @@
+ 			fnc[i].xr = 72;
+ 			fnc[i].yr = 72;
+ 			fnc[i].pt = 14.0;
++			fnc[i].faceindex = 0;
+ 
+ 			comma = strchr(from,',');
+ 			if (comma != NULL)
+@@ -531,8 +532,8 @@
+ 
+ 				*p = 0;
+ 				if (strchr(p + 1,';') != NULL)
+-					sscanf(p + 1,"%[^;];%d;%d;%lf",enco,
+-					&fnc[i].xr,&fnc[i].yr,&fnc[i].pt);
++					sscanf(p + 1,"%[^;];%d;%d;%lf;%d",enco,
++					&fnc[i].xr,&fnc[i].yr,&fnc[i].pt,&fnc[i].faceindex);
+ 				else
+ 					strcpy(enco,p + 1);
+ 
+@@ -559,6 +560,7 @@
+ 			fnc[i].xr = fnc[i - 1].xr;
+ 			fnc[i].yr = fnc[i - 1].yr;
+ 			fnc[i].pt = fnc[i - 1].pt;
++			fnc[i].faceindex = fnc[i - 1].faceindex;
+ 		}
+ 	}
+ 	return(i);
+@@ -925,7 +927,7 @@
+ 				ttglobalinfo.font.xr = fnc[i].xr;
+ 				ttglobalinfo.font.yr = fnc[i].yr;
+ 				ttglobalinfo.font.charsize = fnc[i].pt;
+-				setFont(&ttglobalinfo,fnc[i].filename);
++				setFont(&ttglobalinfo,fnc[i].filename,fnc[i].faceindex);
+ 				generateFont(out,aux,&ttglobalinfo);
+ 				unsetFont(&ttglobalinfo);
+ 			}
+diff -ur src/wprint.h.orig src/wprint.h
+--- src/wprint.h.orig	2002-04-02 04:39:04.000000000 +0800
++++ src/wprint.h	2003-07-19 14:58:57.000000000 +0800
+@@ -152,6 +152,7 @@
+ 	int	xr;
+ 	int	yr;
+ 	double	pt;
++	int	faceindex;
+ };
+ typedef struct
+ {
+@@ -161,7 +162,7 @@
+ Font	*newFont(unsigned short fid,unsigned short feid);
+ Font	*addChar(unsigned short unicode,int fontid);
+ int	initTT(struct tt_info *ti);
+-int	setFont(struct tt_info *ti,char *);
++int	setFont(struct tt_info *ti,char *,int faceindex);
+ int	unsetFont(struct tt_info *ti);
+ void	finalizeTT(struct tt_info *ti);
+ FILE	*processConfiguration(FILE *in,char *entry,char *encoding);
