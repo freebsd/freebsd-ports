@@ -1,5 +1,5 @@
---- devrec.c.orig	Thu Oct  7 01:19:47 1999
-+++ devrec.c	Thu Oct  7 13:52:49 1999
+--- endeavour/devrec.cpp.orig	Sat May 26 07:03:07 2001
++++ endeavour/devrec.cpp	Thu Jun  7 00:50:17 2001
 @@ -389,8 +389,9 @@
  			capacity_available = atol(strv[3]);
  
