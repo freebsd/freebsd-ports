@@ -7,30 +7,28 @@ sbin/cfkey
 sbin/cfrun
 sbin/cfservd
 sbin/vicf
-share/cfengine/cf.chflags.example
-share/cfengine/cf.freebsd.example
-share/cfengine/cf.ftp.example
-share/cfengine/cf.groups.example
-share/cfengine/cf.linux.example
-share/cfengine/cf.main.example
-share/cfengine/cf.motd.example
-share/cfengine/cf.preconf.example
-share/cfengine/cf.services.example
-share/cfengine/cf.site.example
-share/cfengine/cf.solaris.example
-share/cfengine/cf.sun4.example
-share/cfengine/cf.users.example
-share/cfengine/cfagent.conf-advanced.example
-share/cfengine/cfagent.conf.example
-share/cfengine/cfengine.el
-share/cfengine/cfrc.example
-share/cfengine/cfrun.hosts.example
-share/cfengine/cfservd.conf.example
-share/cfengine/html/cfengine-Anomalies.html
-share/cfengine/html/cfengine-Reference.html
-share/cfengine/html/cfengine-Tutorial.html
-share/cfengine/update.conf.example
-@dirrm share/cfengine/html
-@dirrm share/cfengine/doc
-@dirrm share/cfengine
-@dirrm doc/cfengine-2.1.0p1
+%%EXAMPLESDIR%%/cf.chflags.example
+%%EXAMPLESDIR%%/cf.freebsd.example
+%%EXAMPLESDIR%%/cf.ftp.example
+%%EXAMPLESDIR%%/cf.groups.example
+%%EXAMPLESDIR%%/cf.linux.example
+%%EXAMPLESDIR%%/cf.main.example
+%%EXAMPLESDIR%%/cf.motd.example
+%%EXAMPLESDIR%%/cf.preconf.example
+%%EXAMPLESDIR%%/cf.services.example
+%%EXAMPLESDIR%%/cf.site.example
+%%EXAMPLESDIR%%/cf.solaris.example
+%%EXAMPLESDIR%%/cf.sun4.example
+%%EXAMPLESDIR%%/cf.users.example
+%%EXAMPLESDIR%%/cfagent.conf-advanced.example
+%%EXAMPLESDIR%%/cfagent.conf.example
+%%EXAMPLESDIR%%/cfengine.el
+%%EXAMPLESDIR%%/cfrc.example
+%%EXAMPLESDIR%%/cfrun.hosts.example
+%%EXAMPLESDIR%%/cfservd.conf.example
+%%EXAMPLESDIR%%/update.conf.example
+%%DOCSDIR%%/cfengine-Anomalies.html
+%%DOCSDIR%%/cfengine-Reference.html
+%%DOCSDIR%%/cfengine-Tutorial.html
+@dirrm %%DOCSDIR%%
+@dirrm %%EXAMPLESDIR%%

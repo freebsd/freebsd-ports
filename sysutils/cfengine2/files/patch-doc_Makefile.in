@@ -1,0 +1,24 @@
+--- doc/Makefile.in.orig	Sun Jan 11 17:16:59 2004
++++ doc/Makefile.in	Tue Jan 27 01:31:55 2004
+@@ -146,10 +146,10 @@
+ 
+ info_TEXINFOS = cfengine-Reference.texinfo cfengine-Tutorial.texinfo cfengine-Anomalies.texinfo
+ 
+-docdir = $(prefix)/doc/$(PACKAGE)-$(VERSION)
++docdir = $(prefix)/share/doc/cfengine2
+ doc_DATA = 
+ # Info used in building and installing HTML files
+-htmldir = $(pkgdatadir)/html
++htmldir = $(docdir)
+ htmlfiles = cfengine-Reference.html cfengine-Tutorial.html cfengine-Anomalies.html
+ html_DATA = $(htmlfiles)
+ 
+@@ -161,7 +161,7 @@
+ # then uncomment the reference to ps2
+ psfiles = $(ps1)	# $(ps2)
+ 
+-psdir = $(pkgdatadir)/doc
++psdir = $(docdir)
+ ps_DATA = $(psfiles)
+ 
+ # Make sure these get distributed with everything else.
