@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	mailman
-PORTVERSION=	2.0.3
+PORTVERSION=	2.0.4
 CATEGORIES=	mail
 MASTER_SITES=   ${MASTER_SITE_GNU} \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mailman
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	demon@FreeBSD.org
 
@@ -19,11 +18,13 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS= --prefix=${MAILMANDIR} \
-		--with-mail-gid=daemon --with-cgi-gid=nogroup
+		--with-mail-gid=daemon --with-cgi-gid=${CGI_GID}
 USE_PYTHON=	yes
 
 USERNAME?=	mailman
 USERID?=	89
+
+CGI_GID?=	nogroup
 
 MMDIR?=		mailman
 MAILMANDIR=	${PREFIX}/${MMDIR}
