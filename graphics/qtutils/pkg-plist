@@ -1,0 +1,6 @@
+bin/mpegize
+bin/qtconv
+bin/qtsg
+bin/qtsplit
+bin/screenqt
+bin/vcdize

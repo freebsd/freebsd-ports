@@ -307,6 +307,7 @@
     SUBDIR += qglviewer
     SUBDIR += qiv
     SUBDIR += qslim
+    SUBDIR += qtutils
     SUBDIR += quat
     SUBDIR += quat-gui
     SUBDIR += quickpics
