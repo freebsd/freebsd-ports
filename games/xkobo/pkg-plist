@@ -1,0 +1,4 @@
+bin/xkobo
+man/man1/xkobo.1.gz
+@exec mkdir /usr/games/xkobo-scores && chmod 777 /usr/games/xkobo-scores
+@unexec rm -r /usr/games/xkobo-scores
