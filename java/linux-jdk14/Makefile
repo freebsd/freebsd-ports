@@ -15,6 +15,7 @@ EXTRACT_SUFX=	.bin
 
 MAINTAINER=	ernst@jollem.com
 
+BUILD_DEPENDS=  ${LINUXBASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 
 NO_CDROM=	"License doesn\'t allow distribution with fee"
