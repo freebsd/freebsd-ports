@@ -92,6 +92,7 @@
     SUBDIR += git
     SUBDIR += gkrellm-gamma
     SUBDIR += gkrellm-reminder
+    SUBDIR += gkrellm-xkb
     SUBDIR += gkrellmaflag
     SUBDIR += gkrellmbgchg
     SUBDIR += gkrellmfmonitor
