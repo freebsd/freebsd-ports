@@ -7,6 +7,7 @@
 
 PORTNAME=	gtksql
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.multimania.com/bbrox/GtkSQL/
 

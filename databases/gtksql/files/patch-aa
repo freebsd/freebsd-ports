@@ -11,8 +11,8 @@
 -PGSQLIBS    = -L/usr/local/pgsql/lib -lpq
 -PGSQLCFLAGS = -I/usr/local/pgsql/include -DUSE_POSTGRESQL
 -PGSQLOBJS   = postgres.o
-+#PGSQLIBS    = -L/usr/local/pgsql/lib -lpq
-+#PGSQLCFLAGS = -I/usr/local/pgsql/include -DUSE_POSTGRESQL
++#PGSQLIBS    = -L/usr/local/lib -lpq
++#PGSQLCFLAGS = -I/usr/local/include/pgsql -DUSE_POSTGRESQL
 +#PGSQLOBJS   = postgres.o
  
  # Here, what you need for MySQL

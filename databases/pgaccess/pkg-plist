@@ -99,8 +99,10 @@ share/pgaccess/lib/forms.tcl
 share/pgaccess/lib/reports.tcl
 share/pgaccess/lib/languages/czech
 share/pgaccess/lib/languages/deutsch
+share/pgaccess/lib/languages/euskara
 share/pgaccess/lib/languages/francais
 share/pgaccess/lib/languages/italiano
+share/pgaccess/lib/languages/japanese
 share/pgaccess/lib/languages/magyar
 share/pgaccess/lib/languages/nederlands
 share/pgaccess/lib/languages/portugues

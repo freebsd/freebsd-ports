@@ -7,6 +7,7 @@
 
 PORTNAME=	pam-pgsql
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	security databases
 # When the family of Debian mirrors is added to bsd.port.mk,
 # this will suddenly start making sense:
@@ -18,7 +19,7 @@ DISTFILES=	${PORTNAME}_${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	mi@aldan.algebra.com
 
-LIB_DEPENDS=	pq:${PORTSDIR}/databases/postgresql7
+LIB_DEPENDS=	pq.2:${PORTSDIR}/databases/postgresql7
 
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 MAKE_ARGS+=	-j 2

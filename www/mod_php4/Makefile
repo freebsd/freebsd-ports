@@ -7,6 +7,7 @@
 
 PORTNAME?=	mod_php4
 PORTVERSION=	4.0.4pl1
+PORTREVISION=	1
 CATEGORIES?=	www
 MASTER_SITES=	http://us.php.net/${PHP_DISTDIR}/ \
 		http://php.he.net/${PHP_DISTDIR}/ \

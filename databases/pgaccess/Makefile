@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	pgaccess
-PORTVERSION=	0.98.6
+PORTVERSION=	0.98.7
 CATEGORIES=	databases
-MASTER_SITES=	ftp://speedy.flex.ro/pub/pgaccess/
+MASTER_SITES=	http://www.flex.ro/pgaccess/download/
 
 MAINTAINER=	ports@FreeBSD.org
 
-RUN_DEPENDS=	${LOCALBASE}/pgsql/bin/postmaster:${PORTSDIR}/databases/postgresql7\
-		wish8.3:${PORTSDIR}/x11-toolkits/tk83
+RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
+LIB_DEPENDS=	pgtcl.2:${PORTSDIR}/databases/postgresql7
 
 WRKSRC=		${WRKDIR}/pgaccess
 NO_BUILD=		yes

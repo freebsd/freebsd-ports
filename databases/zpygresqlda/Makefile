@@ -7,6 +7,7 @@
 
 PORTNAME=	zpygresqlda
 PORTVERSION=	0.3.2
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.zope.org/Members/reedstrm/ZPyGreSQLDA-rjr/
 DISTNAME=	ZPyGreSQLDA-0.3-rjr2
@@ -34,8 +35,8 @@ do-build:
 	@${ECHO} '*shared*' > ${WRKSRC}/src/Setup
 	@${ECHO} '' >> ${WRKSRC}/src/Setup
 	@${ECHO} '_pg   pgmodule.c ' \
-		'-I${LOCALBASE}/pgsql/include ' \
-		'-L${LOCALBASE}/pgsql/lib ' \
+		'-I${LOCALBASE}/include/pgsql ' \
+		'-L${LOCALBASE}/lib ' \
 		'-lpq -lcrypt' >> ${WRKSRC}/src/Setup
 	@(cd ${WRKSRC}/src && \
 		make -f Makefile.pre.in boot && \
