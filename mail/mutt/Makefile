@@ -103,7 +103,7 @@ post-build:
 .if defined(WITH_SGML_DOCS) && ${WITH_SGML_DOCS} != "no"
 PLIST:=		${WRKDIR}/PLIST
 pre-install:
-	@${CAT} ${PKGDIR}/pkg-plist.htmlfiles >> ${PLIST}
+	@${CAT} ${PKGDIR}/pkg-plist.htmlfiles > ${PLIST}
 	@${CAT} ${PKGDIR}/pkg-plist >> ${PLIST}
 .endif
 .endif
