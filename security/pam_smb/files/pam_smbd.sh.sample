@@ -1,0 +1,14 @@
+#!/bin/sh
+pidfiledir=/var/run
+pamsmbd=%%PREFIX%%/sbin/pamsmbd
+
+# start
+if [ "x$1" = "x" -o "x$1" = "xstart" ]; then
+        echo -n ' pamsmbd'
+        $pamsmbd
+fi
+
+# stop
+elif [ "x$1" = "xstop" ]; then
+        kill `cat $pidfiledir/pamsmbd.pid`
+fi

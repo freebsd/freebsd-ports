@@ -1,2 +1,11 @@
+sbin/pamsmbd
 lib/pam_smb_auth.so
-etc/pam_smb.conf.sample
+etc/pam_smb.conf.example
+etc/pam_smb.conf.example2
+etc/rc.d/pam_smbd.sh.sample
+share/doc/pam_smb/README
+share/doc/pam_smb/INSTALL
+share/doc/pam_smb/TODO
+share/doc/pam_smb/BUGS
+share/doc/pam_smb/CHANGES
+@dirrm share/doc/pam_smb
