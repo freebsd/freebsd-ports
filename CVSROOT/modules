@@ -3977,6 +3977,7 @@ jhead		ports/graphics/jhead
 jigdo		ports/ftp/jigdo
 jikes		ports/java/jikes
 jing		ports/textproc/jing
+jit		ports/net/jit
 jive		ports/misc/jive
 jkill		ports/sysutils/jkill
 jlex		ports/java/jlex
