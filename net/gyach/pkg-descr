@@ -1,0 +1,20 @@
+Gyach is a Yahoo! chat program with a GTK+ interface.  It was originally
+based upon the yahmini program (see AUTHORS file).  All yahmini code
+has since been replaced.  Gyach was written for a few reasons:
+
+1 - I run Linux at home and I couldn't stand the yahoo java interface.
+2 - I didn't want to run qt unless absolutely necessary.
+3 - I wanted to occasionally have something a little more fancy than
+    the text-based interface that a few others are working on.
+4 - I'm impatient and didn't want to wait for someone else to write a
+    simple GTK-based interface.
+
+So, I got the source to yahmini and created a GTK+ interface for it using
+Glade.  Functionality was limited in the early stages, but I continue to
+add new features.  Yahmini code has now been totally replaced as well as
+conversion from Yahoo's older YCHT protocol to their newer YMSG protocol.
+
+WWW: http://www4.infi.net/~cpinkham/gyach
+
+- Aaron Landwehr
+aaron@snaphat.com
