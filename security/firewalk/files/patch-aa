@@ -1,5 +1,5 @@
---- Makefile.in.orig	Thu Apr 29 01:16:53 1999
-+++ Makefile.in	Thu Dec 23 20:27:01 1999
+--- Makefile.in.orig	Fri Nov 19 06:20:56 1999
++++ Makefile.in	Wed Sep 27 02:00:42 2000
 @@ -7,13 +7,14 @@
  #   @configure_input@
  
@@ -8,13 +8,14 @@
 +FIREWALK_LOC=   $(PREFIX)
  FIREWALK_MAN=   $(FIREWALK).1
  INSTALL     =   ./install-sh
-+LIBNET_CONFIG = $(PREFIX)/bin/libnet-config
- DEFINES     +=  @DEFS@
+-DEFINES     +=  @DEFS@ `libnet-config --defines`
++LIBNET_CONFIG=	$(PREFIX)/bin/libnet-config
++DEFINES     +=  @DEFS@ `$(LIBNET_CONFIG) --defines`
  CFLAGS      =   @CFLAGS@
 -CPPFLAGS    =   @CPPFLAGS@
--LIBS        =   -lnet -lpcap @FW_GTK_CONFIG@
-+CPPFLAGS    =   `$(LIBNET_CONFIG) --defines` -I$(PREFIX)/include @CPPFLAGS@
-+LIBS        =   -L$(PREFIX)/lib `$(LIBNET_CONFIG) --libs` -lpcap @FW_GTK_CONFIG@
+-LIBS        =   -lnet -lpcap @FW_GTK_CONFIG@ `libnet-config --libs`
++CPPFLAGS    =   -I$(PREFIX)/include @CPPFLAGS@
++LIBS        =   -L$(PREFIX)/lib @FW_GTK_CONFIG@ `$(LIBNET_CONFIG) --libs` -lpcap
  OBJECTS     =   main.o firewalk.o watcher.o p_cap.o signal.o \
  		packet.o udptcpwalk.o port_list.o util.o @FW_GTK_OBJS@
  

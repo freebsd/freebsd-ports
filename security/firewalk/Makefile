@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	firewalk
-PORTVERSION=	0.9.9b
+PORTVERSION=	0.99.1
 CATEGORIES=	security
 MASTER_SITES=	http://www.packetfactory.net/firewalk/
-DISTNAME=	firewalk-0.99beta
 
 MAINTAINER=	shipley@dis.org
 
@@ -21,12 +20,12 @@ GNU_CONFIGURE=	YES
 CONFIGURE_ENV+=	LDFLAGS="-L${PREFIX}/lib"
 CONFIGURE_ARGS=	--with-gtk=no
 
+WRKSRC=         ${WRKDIR}/Firewalk-${PORTVERSION}
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} <= 300000
 BROKEN=		may not build
 .endif
-
-WRKSRC=		${WRKDIR}/Firewalk-0.99b-beta3
 
 .include <bsd.port.post.mk>
