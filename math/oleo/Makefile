@@ -22,9 +22,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 CONFIGURE_ARGS=	--with-x --without-xlt --without-SciPlot
 
 .if defined(WITH_MOTIF)
-LIB_DEPENDS+=	plot.3:${PORTSDIR}/graphics/plotutils \
-		Xbae.8:${PORTSDIR}/x11-toolkits/xbae \
-		XmHTML.1:${PORTSDIR}/x11-toolkits/xmhtml
+LIB_DEPENDS+=	plot:${PORTSDIR}/graphics/plotutils \
+		Xbae:${PORTSDIR}/x11-toolkits/xbae \
+		XmHTML:${PORTSDIR}/x11-toolkits/xmhtml
 USE_MOTIF=	yes
 CONFIGURE_ARGS+=	--with-motif
 .else
