@@ -121,6 +121,11 @@ post-patch:
 		-e 's|api.mpt||' \
 		-e 's|^(install-man.*)install-manm|\1|' \
 		${WRKSRC}/doc/mp4v2/Makefile.in
+.if ${ARCH} != "i386"
+# emms opcode should be noop in non-i386 non-MMX ARCH
+	@${ECHO_CMD} '#define EMMS()' \
+		>> ${WRKSRC}/lib/xvid/portab.h
+.endif
 
 post-configure:
 # disable GNU auto* tools
