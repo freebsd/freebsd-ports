@@ -1,6 +1,7 @@
 drweb/CHANGES
 drweb/README
 drweb/README.RUS
+drweb/clients/Changes
 drweb/clients/cgp/README
 drweb/clients/cgp/readme.cgp
 drweb/clients/cgp/readme.cgp.rus
@@ -104,7 +105,6 @@ drweb/drwebd
 @unexec if [ -f %D/drweb/drwebd.key ] && cmp -s %D/drweb/drwebd.key %D/drweb/drwebd.key-dist; then rm -f %D/drweb/drwebd.key; fi
 drweb/drwebd.key-dist
 @exec if [ ! -f %D/drweb/drwebd.key ] ; then cp -p %D/%F %B/drwebd.key; fi
-drweb/drwebd_4.26c_update.tgz
 drweb/russian.dwl
 drweb/update/readme.update
 drweb/update/readme.update.rus
