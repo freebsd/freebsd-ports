@@ -1,0 +1,16 @@
+Otojiro is a dictionary compiled by E.D.P.  For details, such as how to
+obtain the whole data, visit EDP's Web site.
+
+     http://member.nifty.ne.jp/eijiro/
+
+-- E.D.P.
+
+Data in this port are converted from the original dictionary into JIS
+X 4081 format (that is a subset of EPWING V1) by FreePWING. So this
+can be used by EPWING viewers on Unix and the other OS (e.g. Windows
+or MacOS).
+
+o URL for this converted dictionary:
+WWW: http://openlab.ring.gr.jp/edict/fpw/
+
+-- S.TAOKA

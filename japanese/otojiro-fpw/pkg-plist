@@ -1,0 +1,10 @@
+share/dict/otojiro-fpw/otojiro/data/honmon
+share/dict/otojiro-fpw/otojiro/gaiji/gai16h
+share/dict/otojiro-fpw/catalogs
+@dirrm share/dict/otojiro-fpw/otojiro/data
+@dirrm share/dict/otojiro-fpw/otojiro/gaiji
+@dirrm share/dict/otojiro-fpw/otojiro
+@dirrm share/dict/otojiro-fpw
+share/doc/otojiro-fpw/COPYING
+share/doc/otojiro-fpw/readme.txt
+@dirrm share/doc/otojiro-fpw
