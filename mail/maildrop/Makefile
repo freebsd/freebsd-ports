@@ -10,8 +10,6 @@
 # MAILDROP_SUID=<uid>,
 # MAILDROP_SGID=<gid>	Maildrop will be installed with suid permissions for
 #			MAILDROP_SUID, and sgid permissions for MAILDROP_SGID.
-#			If undefined, these values default to "root" and "mail"
-#			respectively, which should be suitable for most systems.
 # MAILDROP_TRUSTED_USERS=<user> Specify users allowed to use the -d option
 # NO_MAILWRAPPER=yes	If defined, let configure guess which sendmail binary
 #			to use
@@ -19,7 +17,7 @@
 
 PORTNAME=	maildrop
 PORTVERSION=	1.8.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	courier
@@ -34,8 +32,6 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-syslog=1 \
 		--enable-use-flock=1 \
 		--with-etcdir="${PREFIX}/etc" \
-		--enable-maildrop-uid="${MAILDROP_SUID}" \
-		--enable-maildrop-gid="${MAILDROP_SGID}" \
 		--enable-maildirquota
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -52,6 +48,14 @@ LIB_DEPENDS+=		gdbm.3:${PORTSDIR}/databases/gdbm
 CONFIGURE_ARGS+=	--with-db=gdbm
 .else
 CONFIGURE_ARGS+=	--without-db
+.endif
+
+.if defined(MAILDROP_SUID)
+CONFIGURE_ARGS+=	--enable-maildrop-uid="${MAILDROP_SUID}"
+.endif
+
+.if defined(MAILDROP_SGID)
+CONFIGURE_ARGS+=	--enable-maildrop-gid="${MAILDROP_SGID}"
 .endif
 
 .if !defined(NO_MAILWRAPPER)
@@ -80,9 +84,6 @@ post-patch:
 CONFIGURE_ARGS+=	--disable-authlib
 .endif
 
-MAILDROP_SUID?=	root
-MAILDROP_SGID?=	mail
-
 .if defined(NOPORTDOCS)
 # Just install the binary and man pages, no extra documentation
 INSTALL_TARGET=	install-maildrop install-deliverquota install-man
@@ -98,9 +99,15 @@ MAN8+=	deliverquota.8
 DOCS=	AUTHORS INSTALL INSTALL.html README README.html README.postfix \
 	UPGRADE UPGRADE.html maildroptips.txt maildir/README.*
 
-.if !defined(NOPORTDOCS)
 post-install:
+.if !defined(NOPORTDOCS)
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+.endif
+.if defined(MAILDROP_SUID)
+	${CHMOD} u+s ${PREFIX}/bin/maildrop
+.endif
+.if defined(MAILDROP_SGID)
+	${CHMOD} g+s ${PREFIX}/bin/maildrop
 .endif
 
 .include <bsd.port.post.mk>
