@@ -214,7 +214,6 @@
     SUBDIR += kisomandel
     SUBDIR += kix-kmod
     SUBDIR += kludge3d
-    SUBDIR += kolourpaint
     SUBDIR += kooka
     SUBDIR += kuickshow
     SUBDIR += landscape
