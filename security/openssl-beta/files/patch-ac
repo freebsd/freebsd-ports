@@ -6,7 +6,7 @@
  #
 -"FreeBSD-alpha","gcc:-DTERMIOS -O -fomit-frame-pointer::(unknown):::SIXTY_FOUR_BIT_LONG RC4_CHUNK DES_INT DES_PTR DES_RISC2::::::::::dlfcn:bsd-gcc-shared:-fPIC::.so.\$(SHLIB_MAJOR).\$(SHLIB_MINOR)",
 +"FreeBSD-alpha","$ENV{CC}:-DTERMIOS $ENV{CFLAGS}::(unknown):::SIXTY_FOUR_BIT_LONG RC4_CHUNK DES_INT DES_PTR DES_RISC2::::::::::dlfcn:bsd-gcc-shared:-fPIC::.so.\$(SHLIB_MAJOR).\$(SHLIB_MINOR)",
-+"FreeBSD-sparc64","$ENV{CC}:-DB_ENDIAN -DTERMIOS -DULTRASPARC -DBN_DIV2W $ENV{CFLAGS}::(unknown)::SIXTY_FOUR_BIT_LONG RC4_CHAR RC4_CHUNK DES_INT DES_PTR DES_RISC1 DES_UNROLL BF_PTR:::::",
++"FreeBSD-sparc64","$ENV{CC}:-DB_ENDIAN -DTERMIOS -DULTRASPARC -DBN_DIV2W $ENV{CFLAGS}::(unknown):::SIXTY_FOUR_BIT_LONG RC4_CHAR RC4_CHUNK DES_INT DES_PTR DES_RISC1 DES_UNROLL BF_PTR:::::",
  
  #### Alpha Linux with GNU C and Compaq C setups
  # Special notes:
