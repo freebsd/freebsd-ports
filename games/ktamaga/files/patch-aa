@@ -1,7 +1,7 @@
-*** Makefile~	Sun Nov 30 20:46:24 1997
---- Makefile	Mon Feb 15 21:44:29 1999
+*** Makefile.orig	Mon Dec  1 04:46:24 1997
+--- Makefile	Sat Feb 12 03:51:22 2000
 ***************
-*** 11,22 ****
+*** 11,28 ****
   HAVE_KDE=1
   
 ! QTDIR	= /usr/lib/qt
@@ -14,7 +14,13 @@
 ! DEBUG_FL = -g
   
   # Binaries
---- 11,22 ----
+  
+  SHELL   = /bin/sh
+! CC	= gcc
+! MOC	= /usr/bin/moc
+  install = /usr/bin/install -c
+  
+--- 11,28 ----
   HAVE_KDE=1
   
 ! QTDIR	= $(X11BASE)
@@ -27,16 +33,9 @@
 ! #DEBUG_FL = -g
   
   # Binaries
-***************
-*** 24,28 ****
-  SHELL   = /bin/sh
-  CC	= gcc
-! MOC	= /usr/bin/moc
-  install = /usr/bin/install -c
   
---- 24,28 ----
   SHELL   = /bin/sh
-  CC	= gcc
+! CC	?= gcc
 ! MOC	= $(X11BASE)/bin/moc
   install = /usr/bin/install -c
   
