@@ -1,11 +1,24 @@
---- Makefile.in.orig	Wed Mar  1 22:52:12 2000
-+++ Makefile.in	Mon May  8 00:05:03 2000
-@@ -582,7 +582,7 @@
+
+$FreeBSD$
+
+--- Makefile.in.orig	Mon Nov 12 17:42:45 2001
++++ Makefile.in	Wed Nov 21 00:08:16 2001
+@@ -59,6 +59,7 @@
+ 
+ INSTALL = @INSTALL@
+ INSTALL_PROGRAM = @INSTALL_PROGRAM@
++INSTALL_SCRIPT = @INSTALL_SCRIPT@
+ INSTALL_DATA = @INSTALL_DATA@
+ INSTALLMODE= -m 0755
+ INSTALLMODE2 = -m 0555
+@@ -627,8 +628,8 @@
+ 	@${SHELL} $(SUPPORT_SRC)mkdirs $(DESTDIR)$(infodir)
  
  install:	.made installdirs
- 	$(INSTALL_PROGRAM) $(INSTALLMODE) $(Program) $(bindir)/$(Program)
--	$(INSTALL_PROGRAM) $(INSTALLMODE2) bashbug $(bindir)/bashbug
-+	$(INSTALL) $(INSTALLMODE2) bashbug $(bindir)/bashbug
+-	$(INSTALL_PROGRAM) $(INSTALLMODE) $(Program) $(DESTDIR)$(bindir)/$(Program)
+-	$(INSTALL_PROGRAM) $(INSTALLMODE2) bashbug $(DESTDIR)$(bindir)/bashbug
++	$(INSTALL_PROGRAM) $(Program) $(DESTDIR)$(bindir)/$(Program)
++	$(INSTALL_SCRIPT) bashbug $(DESTDIR)$(bindir)/bashbug
  	-( cd $(DOCDIR) ; $(MAKE) $(MFLAGS) \
  		man1dir=$(man1dir) man1ext=$(man1ext) \
  		man3dir=$(man3dir) man3ext=$(man3ext) \

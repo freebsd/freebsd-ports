@@ -1,0 +1,22 @@
+
+$FreeBSD$
+
+--- builtins/shopt.def.orig	Tue Sep 11 21:55:06 2001
++++ builtins/shopt.def	Tue Nov 20 23:52:45 2001
+@@ -56,7 +56,7 @@
+ 
+ #define OPTFMT		"%-15s\t%s\n"
+ 
+-extern int allow_null_glob_expansion, glob_dot_filenames;
++extern int allow_null_glob_expansion, fail_glob_expansion, glob_dot_filenames;
+ extern int cdable_vars, mail_warning, source_uses_path;
+ extern int no_exit_on_failed_exec, print_shift_error;
+ extern int check_hashed_filenames, promptvars, interactive_comments;
+@@ -140,6 +140,7 @@
+ #endif
+   { "nocaseglob", &glob_ignore_case, (shopt_set_func_t *)NULL },
+   { "nullglob",	&allow_null_glob_expansion, (shopt_set_func_t *)NULL },
++  { "failglob", &fail_glob_expansion, (Function *)NULL },
+ #if defined (PROGRAMMABLE_COMPLETION)
+   { "progcomp", &prog_completion_enabled, (shopt_set_func_t *)NULL },
+ #endif

@@ -1,0 +1,37 @@
+
+$FreeBSD$
+
+--- doc/bashref.texi.orig	Tue Nov 13 18:55:03 2001
++++ doc/bashref.texi	Tue Nov 20 23:52:45 2001
+@@ -1700,7 +1700,8 @@
+ and replaced with an alphabetically sorted list of
+ file names matching the pattern. If no matching file names are found,
+ and the shell option @code{nullglob} is disabled, the word is left
+-unchanged.
++unchanged. If the @code{failglob} option is set, an error message is
++printed and the commandline is not executed.
+ If the @code{nullglob} option is set, and no matches are found, the word
+ is removed.
+ If the shell option @code{nocaseglob} is enabled, the match is performed
+@@ -1713,8 +1714,8 @@
+ matched explicitly.
+ In other cases, the @samp{.} character is not treated specially.
+ 
+-See the description of @code{shopt} in @ref{Bash Builtins},
+-for a description of the @code{nocaseglob}, @code{nullglob},
++See the description of @code{shopt} in @ref{Bash Builtins}, for a
++description of the @code{nocaseglob}, @code{nullglob}, @code{failglob}
+ and @code{dotglob} options.
+ 
+ The @env{GLOBIGNORE}
+@@ -3372,6 +3373,10 @@
+ @item extglob
+ If set, the extended pattern matching features described above
+ (@pxref{Pattern Matching}) are enabled.
++
++@item failglob
++If set, filenames that have globbing characters in them, but don't match
++anything, will cause an error.
+ 
+ @item histappend
+ If set, the history list is appended to the file named by the value

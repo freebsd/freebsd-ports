@@ -1,0 +1,25 @@
+
+$FreeBSD$
+
+--- tests/shopt.tests.orig	Tue Sep 21 17:49:32 1999
++++ tests/shopt.tests	Tue Nov 20 23:52:45 2001
+@@ -21,6 +21,7 @@
+ shopt -u mailwarn
+ shopt -u nocaseglob
+ shopt -u nullglob
++shopt -u failglob
+ shopt -s promptvars
+ shopt -u shift_verbose
+ shopt -s sourcepath
+@@ -92,3 +93,11 @@
+ builtin printf -- "--\n"
+ shopt -p xyz1
+ shopt -o -p xyz1
++
++mkdir tmp
++touch tmp/l1 tmp/l2 tmp/l3
++builtin echo tmp/l[12] tmp/*4 tmp/*3
++shopt -s failglob
++builtin echo tmp/l[12] tmp/*4 tmp/*3
++rm -r tmp
++shopt -u failglob
