@@ -14,15 +14,10 @@ MASTER_SITE_SUBDIR=	will
 
 MAINTAINER=	markp@FreeBSD.org
 
-BROKEN=		"Does not build manpages with XFree86-4"
-
+ALL_TARGET=	xrot
 WRKSRC=		${WRKDIR}/xrot
 USE_IMAKE=	yes
 USE_XPM=	yes
-NO_INSTALL_MANPAGES=	yes
-
-post-configure:
-	${PERL} -pi -e "s@: xrot.man@:@g; s@xrot.man@/dev/null@g" ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xrot ${PREFIX}/bin
