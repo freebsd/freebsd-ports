@@ -1,6 +1,7 @@
 # $FreeBSD$
 #
 
+    SUBDIR += avalon-logkit
     SUBDIR += bluej
     SUBDIR += bouncycastle
     SUBDIR += bsh
