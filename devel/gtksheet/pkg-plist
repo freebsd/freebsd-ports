@@ -1,8 +1,0 @@
-lib/libgtksheet.a
-include/gtksheet/gtksheet.h
-include/gtksheet/gtkbordercombo.h
-include/gtksheet/gtkcolorcombo.h
-include/gtksheet/gtkcombobox.h
-include/gtksheet/gtkitementry.h
-include/gtksheet/icons.h
-@dirrm include/gtksheet

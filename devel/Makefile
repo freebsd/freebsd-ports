@@ -111,7 +111,6 @@
     SUBDIR += gnustep
     SUBDIR += gpasm
     SUBDIR += gperf
-    SUBDIR += gtksheet
     SUBDIR += gtranslator
     SUBDIR += gvd
     SUBDIR += happy
