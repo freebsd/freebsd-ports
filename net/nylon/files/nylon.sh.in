@@ -1,0 +1,36 @@
+#!/bin/sh
+#
+
+# PROVIDE: nylon
+# REQUIRE: LOGIN
+# KEYWORD: FreeBSD shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable nylon:
+#
+#nylon_enable="YES"
+#
+# See nylon(1) for flags
+#
+
+. %%RC_SUBR%%
+
+name=nylon
+rcvar=`set_rcvar`
+
+command=%%PREFIX%%/bin/nylon
+
+stop_postcmd=stop_postcmd
+
+stop_postcmd()
+{
+  rm -f $pidfile
+}
+
+# set defaults
+
+nylon_enable=${nylon_enable:-"NO"}
+nylon_flags=${nylon_flags:-"-s"}
+
+load_rc_config $name
+run_rc_command "$1"
