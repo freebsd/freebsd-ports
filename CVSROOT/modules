@@ -2042,6 +2042,7 @@ gnujsp		ports/www/gnujsp
 gnuls		ports/misc/gnuls
 gnumail		ports/mail/gnumail
 gnumeric	ports/math/gnumeric
+gnump3d		ports/audio/gnump3d
 gnunet		ports/net/gnunet
 gnupg		ports/security/gnupg
 gnupg-idea	ports/security/gnupg-idea
