@@ -7,23 +7,19 @@
 
 PORTNAME=	html2ps-${PAPERSIZE}
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print www perl5
 MASTER_SITES=	http://user.it.uu.se/~jan/
 DISTNAME=	html2ps-1.0b3
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	HTML to PostScript converter
 
 USE_GHOSTSCRIPT_BUILD=	yes
 
-BUILD_DEPENDS=	mogrify:${PORTSDIR}/graphics/ImageMagick \
-		djpeg:${PORTSDIR}/graphics/jpeg \
-		giftopnm:${PORTSDIR}/graphics/netpbm \
-		tex:${PORTSDIR}/print/teTeX \
+RUN_DEPENDS=	mogrify:${PORTSDIR}/graphics/ImageMagick \
 		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		weblint:${PORTSDIR}/www/weblint
-RUN_DEPENDS=	mogrify:${PORTSDIR}/graphics/ImageMagick
 
 USE_PERL5=	YES
 NO_BUILD=	YES
