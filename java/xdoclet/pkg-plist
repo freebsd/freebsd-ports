@@ -395,6 +395,7 @@ share/java/classes/xdoclet-tjdo-module-1.2b4.jar
 share/java/classes/xdoclet-web-module-1.2b4.jar
 share/java/classes/xdoclet-webwork-module-1.2b4.jar
 share/java/classes/xdoclet-xdoclet-module-1.2b4.jar
+share/java/classes/xjavadoc-%%XJAVADOC_VER%%.jar
 %%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/ConfigParameter.html
 %%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/DocletTask.html
 %%PORTDOCS%%share/doc/xdoclet/ant/xdoclet/SubTask.html
@@ -923,7 +924,6 @@ share/java/classes/xdoclet-xdoclet-module-1.2b4.jar
 @dirrm share/examples/xdoclet
 @dirrm share/doc/xdoclet/templates
 @dirrm share/doc/xdoclet/tags
-@dirrm share/doc/xdoclet/stylesheets
 @dirrm share/doc/xdoclet/style
 @dirrm share/doc/xdoclet/licenses
 @dirrm share/doc/xdoclet/images/logos
