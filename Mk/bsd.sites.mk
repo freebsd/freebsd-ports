@@ -189,7 +189,6 @@ MASTER_SITE_EXIM+=	\
 	http://www.no.exim.org/ftp/%SUBDIR%/ \
 	http://sunsite.icm.edu.pl/pub/unix/mail/exim/%SUBDIR%/ \
 	ftp://exim.directnet.ru/pub/exim/%SUBDIR%/ \
-	ftp://ftp.smux.net/pub/exim/%SUBDIR%/ \
 	ftp://ftp.is.co.za/networking/mail/mta/exim/%SUBDIR%/ \
 	ftp://ftp.reaper.org/pub/exim/%SUBDIR%/ \
 	ftp://sunsite.cnlab-switch.ch/mirror/exim/%SUBDIR%/ \
