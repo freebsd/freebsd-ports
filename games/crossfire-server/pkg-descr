@@ -1,5 +1,5 @@
-This is a multiplayer graphical arcade and adventure game made for
-the X11 environment.
+This is the server part of a multiplayer graphical arcade and
+adventure game made for the X11 environment.
 
 It has certain flavours from other games, especially Gauntlet (TM)
 and Nethack/Moria.
