@@ -1,5 +1,5 @@
 --- libIDL/Makefile.in.orig	Mon Sep 21 13:50:12 1998
-+++ libIDL/Makefile.in	Wed Sep 23 23:18:22 1998
++++ libIDL/Makefile.in	Wed Nov 25 21:06:38 1998
 @@ -95,7 +95,7 @@
  noinst_PROGRAMS		= tstidl
  
@@ -9,6 +9,15 @@
  
  tstidl_SOURCES		= tstidl.c
  tstidl_LDADD		= libIDL.la
+@@ -139,7 +139,7 @@
+ SOURCES = $(libIDL_la_SOURCES) $(tstidl_SOURCES)
+ OBJECTS = $(libIDL_la_OBJECTS) $(tstidl_OBJECTS)
+ 
+-all: Makefile $(INFO_DEPS) $(LTLIBRARIES) $(PROGRAMS) $(HEADERS)
++all: Makefile $(INFO_DEPS) $(LTLIBRARIES) $(HEADERS)
+ 
+ .SUFFIXES:
+ .SUFFIXES: .S .c .dvi .info .lo .o .ps .s .texi .texinfo .txi
 @@ -446,7 +446,7 @@
  install-exec: install-libLTLIBRARIES
  	@$(NORMAL_INSTALL)
