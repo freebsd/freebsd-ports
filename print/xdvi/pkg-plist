@@ -1,7 +1,7 @@
 @cd /usr/local
 @owner bin
 @mode 644
-man/man1/xdvi.1
+man/man1/xdvi.1.gz
 @mode 755
 bin/xdvi
 bin/MakeTeXPK
