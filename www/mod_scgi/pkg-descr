@@ -1,0 +1,9 @@
+An Apache module that implements the client side of the Simple Common
+Gateway Interface protocol.
+
+The SCGI protocol is a replacement for the Common Gateway Interface
+(CGI) protocol.  It is a standard for applications to interface with
+HTTP servers.  It is similar to FastCGI but is designed to be easier to
+implement.
+
+WWW:	http://www.mems-exchange.org/software/scgi/
