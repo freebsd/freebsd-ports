@@ -12,7 +12,7 @@ CATEGORIES=	net dns
 MASTER_SITES=	http://darwinsource.opendarwin.org/tarballs/apsl/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	alfred@freebsd.org
+MAINTAINER=	ports@freebsd.org
 COMMENT=	"Apple's mDNSResponder"
 
 INSTALLS_SHLIB=	YES
