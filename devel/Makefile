@@ -404,6 +404,7 @@
     SUBDIR += lightning
     SUBDIR += lincvs
     SUBDIR += linguist
+    SUBDIR += linux-atk
     SUBDIR += linux-libglade
     SUBDIR += linux-p4v
     SUBDIR += linux-runrev
