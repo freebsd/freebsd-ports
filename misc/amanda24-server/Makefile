@@ -3,7 +3,7 @@
 # Date created:				28th Feb 1995
 # Whom:					gpalmer
 #
-# $Id: Makefile,v 1.9 1997/03/08 05:00:11 gpalmer Exp $
+# $Id: Makefile,v 1.10 1998/02/18 14:23:28 cwt Exp $
 #
 
 DISTNAME=	amanda-2.4.0b6
@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.amanda.org/pub/amanda/
 
 MAINTAINER=	cwt@FreeBSD.ORG
 
+NO_LATEST_LINK=	yes
 GNU_CONFIGURE=  yes
 CONFIGURE_ARGS= --libexecdir=${PREFIX}/libexec/amanda \
 		--with-user=operator --with-group=operator
