@@ -22,6 +22,8 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	olgeni@FreeBSD.org
 
+BUILD_DEPENDS=	autoconf213:${PORTSDIR}/devel/autoconf213
+
 # Set JAVABINDIR to where you have javac, if different from below
 JAVABINDIR?=	${LOCALBASE}/jdk1.3.1/bin
 JAVAPORT?=	${JAVABINDIR}/javac:${PORTSDIR}/java/jdk13
