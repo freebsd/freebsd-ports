@@ -34,6 +34,8 @@ include/libmarlin/marlin-save-pipeline.h
 include/libmarlin/marlin-stock.h
 include/libmarlin/marlin-time-line.h
 include/libmarlin/marlin-types.h
+include/libmarlin/marlin-undo-manager.h
+include/libmarlin/marlin-undoable.h
 include/libmarlin/marlin-utils.h
 include/libmarlin/marlin-x-utils.h
 lib/libmarlinx.a
