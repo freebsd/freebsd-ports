@@ -56,6 +56,7 @@
     SUBDIR += gtl
     SUBDIR += gyvescm
     SUBDIR += hello
+    SUBDIR += heyu
     SUBDIR += iselect
     SUBDIR += jargon
     SUBDIR += jive
