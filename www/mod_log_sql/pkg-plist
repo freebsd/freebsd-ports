@@ -1,0 +1,9 @@
+@exec %D/sbin/apxs -e -A -n log_mysql -A mod_log_mysql.so
+libexec/apache/mod_log_mysql.so
+@unexec %D/sbin/apxs -e -A -n log_mysql %f
+%%PORTDOCS%%share/doc/mod_log_mysql/CONFIGURATION
+%%PORTDOCS%%share/doc/mod_log_mysql/INSTALL
+%%PORTDOCS%%share/doc/mod_log_mysql/README
+%%PORTDOCS%%share/doc/mod_log_mysql/access_log.sql
+%%PORTDOCS%%share/doc/mod_log_mysql/make_combined_log.pl
+%%PORTDOCS%%@dirrm share/doc/mod_log_mysql
