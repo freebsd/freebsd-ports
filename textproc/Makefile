@@ -42,6 +42,7 @@
     SUBDIR += mswordview
     SUBDIR += nfbtrans
     SUBDIR += nicetext
+    SUBDIR += p5-Text-Template
     SUBDIR += p5-XML-Parser
     SUBDIR += par
     SUBDIR += perl2html
