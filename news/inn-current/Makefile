@@ -3,7 +3,7 @@
 # Date created:		20 Oct 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.6 1995/05/09 00:48:44 asami Exp $
+# $Id: Makefile,v 1.7 1995/05/30 09:56:20 asami Exp $
 #
 
 DISTNAME=	inn1.4sec
@@ -13,16 +13,23 @@ MASTER_SITES=	ftp://ftp.uu.net/networking/news/nntp/inn/
 EXTRACT_SUFX=	.tar.Z
 
 PATCH_SITES=	ftp://ftp.math.psu.edu/pub/INN/patches/
-PATCHFILES=	select-loop-bug.patch
+PATCHFILES=	select-loop-bug.patch innxmit-long-lines
 
 MAINTAINER=	torstenb@FreeBSD.ORG
 
 NO_WRKSUBDIR=	YES
 
 pre-install:
-	mkdir -p ${PREFIX}/news /var/spool/news/over.view
+	mkdir -p ${PREFIX}/news
 
 post-install:
+	if [ -d /var/spool/news ] && [ ! -d /var/news ]; then \
+		mkdir -m 0775 -p /var/spool/news/over.view; \
+		chown news.news /var/spool/news/over.view; \
+	else \
+		mkdir -m 0775 -p /var/news/over.view; \
+		chown news.news /var/news/over.view; \
+	fi
 	gzip -9nf ${PREFIX}/man/man1/convdate.1 ${PREFIX}/man/man1/getlist.1 \
 	${PREFIX}/man/man1/grephistory.1 ${PREFIX}/man/man1/inews.1 \
 	${PREFIX}/man/man1/innconfval.1 ${PREFIX}/man/man1/installit.1 \
