@@ -1,38 +1,46 @@
-*** initx.c.orig	Mon Apr  6 12:59:29 1992
---- initx.c	Mon Jan  2 12:14:16 1995
-***************
-*** 44,57 ****
-  	resulting fontname right into the code.
-  */
-  
-! static char	*fontname = "-*-fixed-medium-r-normal--*-70-*-*-c-*-*-*";
-  static char	*bigfontname = "-*-courier-bold-r-normal--*-180-*-*-m-150-*-*";
-  
-  /*	init_X opens the display and sets up all the color stuff
-  */
-  init_X()
-  {
-!     display = XOpenDisplay(NULL);
-      if (display == NULL) {
-         fprintf(stderr, "Jetpack : Cannot connect to X Server %s\n",
-                 XDisplayName(NULL));
---- 44,62 ----
-  	resulting fontname right into the code.
-  */
-  
-! static char	*fontname = "-misc-fixed-medium-r-semicondensed--13-120-75-75-c-*-*-*";
-  static char	*bigfontname = "-*-courier-bold-r-normal--*-180-*-*-m-150-*-*";
-  
-  /*	init_X opens the display and sets up all the color stuff
-  */
-  init_X()
-  {
-!     int saved_euid;
-! 
-!     saved_euid = geteuid();
-!     seteuid(getuid());
-!     display = XOpenDisplay("");
-!     seteuid(saved_euid);
-      if (display == NULL) {
-         fprintf(stderr, "Jetpack : Cannot connect to X Server %s\n",
-                 XDisplayName(NULL));
+--- initx.c.orig	Sun Mar 29 21:41:21 1992
++++ initx.c	Fri Jun  9 02:52:35 2000
+@@ -44,14 +44,19 @@
+ 	resulting fontname right into the code.
+ */
+ 
+-static char	*fontname = "-*-fixed-medium-r-normal--*-70-*-*-c-*-*-*";
++static char	*fontname = "-misc-fixed-medium-r-semicondensed--13-120-75-75-c-*-*-*";
+ static char	*bigfontname = "-*-courier-bold-r-normal--*-180-*-*-m-150-*-*";
+ 
+ /*	init_X opens the display and sets up all the color stuff
+ */
+ init_X()
+ {
+-    display = XOpenDisplay(NULL);
++    int saved_euid;
++
++    saved_euid = geteuid();
++    seteuid(getuid());
++    display = XOpenDisplay("");
++    seteuid(saved_euid);
+     if (display == NULL) {
+        fprintf(stderr, "Jetpack : Cannot connect to X Server %s\n",
+                XDisplayName(NULL));
+@@ -134,6 +139,14 @@
+ 			else ctable[i].pixelvalue = whitepixel;
+ 		}
+ 	} else {
++	    if (DefaultDepth (display, screen) > 8) {
++		XColor c1, c2;
++		for(i=0; i<NCOLORS; i++) {
++		    XAllocNamedColor (display, colormap, ctable[i].name, 
++				      &c1, &c2);
++		    ctable[i].pixelvalue = c1.pixel;
++		}		    
++	    } else {
+ 		XAllocColorCells(display, colormap, False, planes, 3, &pixel, 1);
+ 		for(i=0; i<NCOLORS; i++) {
+ 			XParseColor(display, colormap, ctable[i].name, &tmpcolor);
+@@ -166,5 +179,6 @@
+ 			XStoreColor(display, colormap, &tmpcolor);
+ 			ctable[i].pixelvalue = tmpcolor.pixel;
+ 		}
++	    }
+ 	}
+ }
