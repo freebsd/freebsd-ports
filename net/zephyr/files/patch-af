@@ -1,0 +1,38 @@
+--- zwgc/main.c.orig	Fri Jan 22 18:20:22 1999
++++ zwgc/main.c	Tue Nov 20 13:57:24 2001
+@@ -141,7 +141,7 @@
+ 
+ /*    var_clear_all_variables(); <<<>>> */
+ 
+-    sprintf(defdesc, "%s/zephyr/%s", DATADIR, DEFDESC);
++    sprintf(defdesc, "%s/%s", DATADIR, DEFDESC);
+     input_file = locate_file(description_filename_override, USRDESC, defdesc);
+     if (input_file)
+       program = parse_file(input_file);
+--- zwgc/X_driver.c.orig	Fri Jan 22 18:20:06 1999
++++ zwgc/X_driver.c	Tue Nov 20 13:57:56 2001
+@@ -264,7 +264,7 @@
+       return(1);
+ 
+     /* Read in our application-specific resources: */
+-    sprintf(dbasename, "%s/zephyr/zwgc_resources", DATADIR);
++    sprintf(dbasename, "%s/zwgc_resources", DATADIR);
+     temp_db1 = XrmGetFileDatabase(dbasename);
+ 
+     /*
+--- clients/xzwrite/interface.c.orig	Thu Apr 30 16:03:32 1998
++++ clients/xzwrite/interface.c	Tue Nov 20 13:58:24 2001
+@@ -140,11 +140,11 @@
+ 				  strlen(DATADIR) + 12);
+ 	  if (path2 != NULL) {
+ #ifdef HAVE_PUTENV
+-	       sprintf(path2, "XFILESEARCHPATH=%s:%s/zephyr/%%N", path1,
++	       sprintf(path2, "XFILESEARCHPATH=%s:%s/%%N", path1,
+ 		       DATADIR);
+ 	       putenv(path2);
+ #else
+-	       sprintf(path2, "%s:%s/zephyr/%%N", path1, DATADIR);
++	       sprintf(path2, "%s:%s/%%N", path1, DATADIR);
+ 	       setenv("XFILESEARCHPATH", path2, 1);
+ 	       free(path2);
+ #endif
