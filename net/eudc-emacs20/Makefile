@@ -15,7 +15,9 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Emacs client to directory servers
 
-BROKEN=		"Requires net/openldap12 which is no more. If you are adventurish, maybe you would like to take over the maintainership and make this port working with net/openldap21-client"
+FORBIDDEN=		"Requires net/openldap12 which is no more. If you are adventurish, maybe you would like to take over the maintainership and make this port working with net/openldap21-client"
+DEPRECATED=		${FORBIDDEN}
+EXPIRATION_DATE=	2004-04-18
 
 RUN_DEPENDS=	ldapsearch:${PORTSDIR}/net/openldap12
 

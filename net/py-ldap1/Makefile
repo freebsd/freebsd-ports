@@ -15,7 +15,9 @@ DISTNAME=	python-ldap-${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An LDAP module for python
 
-BROKEN=		"Depends on net/openldap12 which is no more. Maybe net/py-ldap2 will do the trick?"
+FORBIDDEN=		"Depends on net/openldap12 which is no more. Maybe net/py-ldap2 will do the trick?"
+DEPRECATED=		${FORBIDDEN}
+EXPIRATION_DATE=	2004-04-18
 
 LIB_DEPENDS=	ldap.1:${PORTSDIR}/net/openldap12
 

@@ -13,7 +13,9 @@ MASTER_SITES=	http://www.i2pi.com/smunge/
 MAINTAINER=	midom@dammit.lt
 COMMENT=	Funneling POP3 proxy server
 
-BROKEN=		Depends on net/openldap12 which is no more.
+FORBIDDEN=		Depends on net/openldap12 which is no more.
+DEPRECATED=		${FORBIDDEN}
+EXPIRATION_DATE=	2004-04-18
 
 LIB_DEPENDS=	ldap:${PORTSDIR}/net/openldap12
 
