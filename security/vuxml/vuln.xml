@@ -32,6 +32,30 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   "http://www.vuxml.org/dtd/vuxml-1/vuxml-10.dtd">
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
 
+  <vuln vid="6c7661ff-7912-11d8-9645-0020ed76ef5a">
+    <topic>uudeview buffer overflows</topic>
+    <affects>
+      <package>
+	<name>uulib</name>
+	<name>uudeview</name>
+	<range><lt>0.5.20</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The authors of UUDeview report repairing two buffer
+	  overflows in their software.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.fpx.de/fp/Software/UUDeview/HISTORY.txt</url>
+    </references>
+    <dates>
+      <discovery>2004-03-01</discovery>
+      <entry>2004-03-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="68233cba-7774-11d8-89ed-0020ed76ef5a">
     <topic>OpenSSL ChangeCipherSpec denial-of-service vulnerability</topic>
     <affects>
