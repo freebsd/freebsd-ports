@@ -1,0 +1,20 @@
+--- tools/cxxflags.orig	Wed Jan  8 06:26:51 2003
++++ tools/cxxflags	Tue May 13 05:50:41 2003
+@@ -240,7 +240,7 @@
+ 
+ 	$flags{'debug'}		= "-g";
+ 	$flags{'depend'}	= '-M';
+-	$flags{'optimize'}	= '-O2';
++	$flags{'optimize'}	= '';
+ 	$flags{'ar'}		= $ENV{'AR'} || 'ar';
+ 	$flags{'arflags'}	= $ENV{'ARFLAGS'} || 'rc';
+ 	$flags{'sar'}		= $clo{'cxx'};
+@@ -353,7 +353,7 @@
+ 	$flags{'debug'}		= "-g";
+ 	$flags{'depend'}	= '-xM';
+ 	$flags{'pic'}		= '-Kpic';
+-	$flags{'optimize'}	= '-s -xlibmil -xlibmopt -xO2';
++	$flags{'optimize'}	= '-s -xlibmil -xlibmopt';
+ 	$flags{'ar'}		= $clo{'cxx'};
+ 	$flags{'arflags'}	= '-xar -o';
+ 	$flags{'sar'}		= $clo{'cxx'};

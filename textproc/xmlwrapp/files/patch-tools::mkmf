@@ -1,0 +1,30 @@
+--- tools/mkmf.orig	Tue Apr  8 07:23:38 2003
++++ tools/mkmf	Tue May 13 06:05:24 2003
+@@ -469,6 +469,7 @@
+ 	'BINDIR'	=> '/usr/local/bin',
+ 	'INCLUDEDIR'	=> '/usr/local/include',
+ 	'LIBDIR'	=> '/usr/local/lib',
++	'LIBDATADIR'	=> '/usr/local/libdata',
+ 	'MANDIR'	=> '/usr/local/share/man',
+     );
+ 
+@@ -558,7 +559,7 @@
+ 	print MF "\tmkdir -p $vars{'BINDIR'}\n" if @binaries;
+ 	print MF "\tmkdir -p $vars{'INCLUDEDIR'}\n" if @include_files or @include_dirs;
+ 	print MF "\tmkdir -p $vars{'LIBDIR'}\n" if @static_libraries or @shared_libraries;
+-	print MF "\tmkdir -p $vars{'LIBDIR'}/pkgconfig\n" if @pkgconfig;
++	print MF "\tmkdir -p $vars{'LIBDATADIR'}/pkgconfig\n" if @pkgconfig;
+ 	print MF "\tmkdir -p $vars{'MANDIR'}\n" if @man_pages;
+ 
+ 	foreach my $binary (@binaries) {
+@@ -567,8 +568,8 @@
+ 	}
+ 
+ 	foreach my $pc (@pkgconfig) {
+-	    print MF "\tcp $pc $vars{'LIBDIR'}/pkgconfig/$pc\n";
+-	    print MF "\tchmod 644 $vars{'LIBDIR'}/pkgconfig/$pc\n";
++	    print MF "\tcp $pc $vars{'LIBDATADIR'}/pkgconfig/$pc\n";
++	    print MF "\tchmod 644 $vars{'LIBDATADIR'}/pkgconfig/$pc\n";
+ 	}
+ 
+ 	foreach my $directory (@include_dirs) {
