@@ -8,7 +8,11 @@ enabled web server.  Only the following ports/packages qualifies:
 
 Ports:
     www/apache13-fp     >=1.3.20_1
+	or
+    www/mod_frontpage	>=1.5.2		(DSO module, not from Microsoft)
 
 Packages:
     apache_fp           >=1.3.20_1
+	or
+    mod_frontpage	>=1.5.2		(DSO module, not from Microsoft)
 
