@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mail
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	mail ruby
 MASTER_SITES=	http://www.lickey.com/rubymail/download/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -21,17 +21,21 @@ NO_BUILD=	yes
 
 RUBY_SHEBANG_FILES=	${WRKSRC}/bin/*.rb
 
-post-extract:
-	${FIND} ${WRKSRC} -type f -name 'heaer*' -delete
+DOCS=		NEWS README THANKS doc/*
+EXAMPLES=	bin/*.rb dot.rdeliver
 
 do-install:
 	${MKDIR} ${RUBY_SITELIBDIR}/mail
-	${INSTALL_DATA} ${WRKSRC}/mail/* ${RUBY_SITELIBDIR}/mail/
+	${CP} -R ${WRKSRC}/mail/* ${RUBY_SITELIBDIR}/mail/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/*.rb ${RUBY_EXAMPLESDIR}/${PORTNAME}/
+.for f in ${EXAMPLES}
+	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${RUBY_EXAMPLESDIR}/${PORTNAME}/
+.endfor
 	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/NEWS ${WRKSRC}/README ${RUBY_DOCDIR}/${PORTNAME}/
+.for f in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/
+.endfor
 	${CP} -R ${WRKSRC}/doc/* ${RUBY_DOCDIR}/${PORTNAME}/
 .endif
 
