@@ -1,0 +1,2 @@
+xsysinfo - display FreeBSD system states (cpu, load, memory, swap,
+disk I/O, network packets, NFS client/server) statistics.
