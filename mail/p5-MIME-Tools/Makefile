@@ -7,8 +7,8 @@
 
 PORTNAME=	p5-MIME-Tools
 PORTVERSION=	5.411a
-PORTREVISION=	3
-PORTEPOCH=	1
+PORTREVISION=	4
+PORTEPOCH=	2
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	MIME
@@ -18,7 +18,9 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	A set of perl5 modules for MIME
 
 BUILD_DEPENDS=	${SITE_PERL}/Mail/Header.pm:${PORTSDIR}/mail/p5-Mail-Tools \
-		${SITE_PERL}/IO/Wrap.pm:${PORTSDIR}/devel/p5-IO-stringy
+		${SITE_PERL}/IO/Wrap.pm:${PORTSDIR}/devel/p5-IO-stringy \
+		${SITE_PERL}/Convert/BinHex.pm:${PORTSDIR}/converters/p5-Convert-BinHex \
+		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
@@ -48,9 +50,6 @@ MAN3=	MIME::Body.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500800
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
-.endif
 
 post-patch:
 	@${RM} -f ${WRKSRC}/lib/MIME/Field/ParamVal.pm.orig \
