@@ -69,12 +69,29 @@ outgoing/U98hgItueyIbW8udnZuMjpg
 outgoing/Uh-W1UuCia4-wLoZYEnRrXw
 outgoing/Ux3oAN7UMcBN5bQi-qYGkoA
 html/README
-html/de/FAQ.html
-html/de/README.CONF.html
 html/de/Welcome.html
-html/de/index.html
+html/de/local/index.html
 html/de/messages/AddCacheInfo.html
+html/de/messages/AliasRedirect.html
 html/de/messages/CantRefreshPosted.html
+html/de/messages/ConfigurationAuthFail.html
+html/de/messages/ConfigurationChange.html
+html/de/messages/ConfigurationIllegal.html
+html/de/messages/ConfigurationItem-Body.html
+html/de/messages/ConfigurationItem-Head.html
+html/de/messages/ConfigurationItem-Tail.html
+html/de/messages/ConfigurationPage-Body.html
+html/de/messages/ConfigurationPage-Head.html
+html/de/messages/ConfigurationPage-Tail.html
+html/de/messages/ConfigurationSection-Body.html
+html/de/messages/ConfigurationSection-Head.html
+html/de/messages/ConfigurationSection-Tail.html
+html/de/messages/ConfigurationUrl-Body.html
+html/de/messages/ConfigurationUrl-Head.html
+html/de/messages/ConfigurationUrl-Tail.html
+html/de/messages/ControlDelete-Body.html
+html/de/messages/ControlDelete-Head.html
+html/de/messages/ControlDelete-Tail.html
 html/de/messages/ConfirmRequest.html
 html/de/messages/ControlAuthFail.html
 html/de/messages/ControlEditError.html
@@ -86,10 +103,13 @@ html/de/messages/ControlIllegal.html
 html/de/messages/ControlPage.html
 html/de/messages/ControlWWWOFFLE-Head.html
 html/de/messages/ControlWWWOFFLE-Tail.html
+html/de/messages/ExecCGIFailed.html
 html/de/messages/FTPDir-Head.html
 html/de/messages/FTPDir-Tail.html
 html/de/messages/FTPDirRedirect.html
 html/de/messages/FileLocked.html
+html/de/messages/FTPPut.html
+html/de/messages/HostNotCached.html
 html/de/messages/HostNotGot.html
 html/de/messages/IllegalProtocol.html
 html/de/messages/Index-Head.html
@@ -99,6 +119,9 @@ html/de/messages/IndexHost-Body.html
 html/de/messages/IndexHost-Head.html
 html/de/messages/IndexHost-Tail.html
 html/de/messages/IndexIllegal.html
+html/de/messages/IndexLastOut-Body.html
+html/de/messages/IndexLastOut-Head.html
+html/de/messages/IndexLastOut-Tail.html
 html/de/messages/IndexLastTime-Body.html
 html/de/messages/IndexLastTime-Head.html
 html/de/messages/IndexLastTime-Tail.html
@@ -123,6 +146,8 @@ html/de/messages/MonitorPage.html
 html/de/messages/MonitorWillGet.html
 html/de/messages/PageNotFound.html
 html/de/messages/ProxyAuthFail.html
+html/de/messages/README
+html/de/messages/README.CONF.txt
 html/de/messages/RefreshFormError.html
 html/de/messages/RefreshIllegal.html
 html/de/messages/RefreshPage.html
@@ -130,6 +155,7 @@ html/de/messages/RefreshRedirect.html
 html/de/messages/RefreshWillGet.html
 html/de/messages/RefusedRequest.html
 html/de/messages/RemoteHostError.html
+html/de/messages/SearchIllegal.html
 html/de/messages/ServerError.html
 html/de/messages/UserNeedsPass.html
 html/de/messages/WillGet.html
@@ -806,6 +832,7 @@ search/namazu/scripts/wwwoffle-namazu
 search/udmsearch
 @dirrm lastout
 @dirrm local
+@dirrm html/de/local
 @dirrm html/de/messages
 @dirrm html/de/search/htdig
 @dirrm html/de/search
