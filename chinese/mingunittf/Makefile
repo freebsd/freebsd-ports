@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.info.gov.hk/digital21/chi/hkscs/download/
 DISTNAME=	ming_uni.ttf
 EXTRACT_SUFX=	.gz
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Chinese Big5HKSCS TrueType fonts
 
 BUILD_DEPENDS=	ttfm.sh:${PORTSDIR}/chinese/ttfm \

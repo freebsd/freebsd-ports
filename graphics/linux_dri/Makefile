@@ -17,7 +17,7 @@ DISTFILES=	Xbin.tgz:x \
 		linux-dri-tools.tar.gz:anholt
 DIST_SUBDIR=	linux_dri-${PORTVERSION}
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Binary Linux DRI libraries for 3D hardware acceleration of linux apps
 
 WRKSRC=		${WRKDIR}/lib
