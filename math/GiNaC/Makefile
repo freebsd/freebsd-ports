@@ -17,6 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	cln.2:${PORTSDIR}/math/cln
 
+USE_REINPLACE=	yes
 USE_BZIP2=	yes
 USE_NEWGCC=	yes
 USE_GMAKE=	yes
@@ -34,10 +35,10 @@ post-extract:
 
 post-patch:
 .for file in configure ginac/numeric.cpp ginac/tostring.h
-	@${PERL} -pi -e 's|sstream|strstream|g ; \
+	@${REINPLACE_CMD} -e 's|sstream|strstream|g ; \
 		 s|stringstream|strstream|g' ${WRKSRC}/${file}
 .endfor
-	@${PERL} -pi -e 's|-release \$$\(LT_RELEASE\)||g' \
+	@${REINPLACE_CMD} -e 's|-release \$$(LT_RELEASE)||g' \
 		${WRKSRC}/ginac/Makefile.in
 
 .include <bsd.port.mk>

@@ -15,13 +15,14 @@ MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/GDK.py:${PORTSDIR}/x11-toolkits/py-gtk
 
+USE_REINPLACE=	yes
 USE_PYTHON=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAN1=	clarence.1
 
 post-patch:
-	@${PERL} -pi -e "s,#!/usr/bin/python,#!/usr/bin/env python,g" ${WRKSRC}/clarence.py
+	@${REINPLACE_CMD} -e "s,#!/usr/bin/python,#!/usr/bin/env python,g" ${WRKSRC}/clarence.py
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/clarence.py ${PREFIX}/bin/clarence

@@ -16,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
+USE_REINPLACE=	yes
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	F77="${FC}" FFLAGS="${FFLAGS}" \
@@ -54,7 +55,7 @@ PLIST_SUB+=	TCLTK="@comment "
 
 post-patch:
 .for file in scripts/mktclIndex
-	@${PERL} -pi -e 's|tclsh|${LOCALBASE}/bin/tclsh8.3|g' ${WRKSRC}/${file}
+	@${REINPLACE_CMD} -e 's|tclsh|${LOCALBASE}/bin/tclsh8.3|g' ${WRKSRC}/${file}
 .endfor
 
 .include <bsd.port.mk>

@@ -15,12 +15,13 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 MAINTAINER=	ports@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKEFILE=	nm_gnu.mak
 ALL_TARGET=	everything
 
 post-patch:
-	@${PERL} -pi -e "s,^CXX,#CXX,g ; \
+	@${REINPLACE_CMD} -e "s,^CXX,#CXX,g ; \
 		s,^CXXFLAGS,#CXXFLAGS,g" ${WRKSRC}/${MAKEFILE}
 
 do-install:

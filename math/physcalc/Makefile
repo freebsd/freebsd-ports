@@ -17,6 +17,7 @@ EXTRACT_BEFORE_ARGS=	-aq
 EXTRACT_AFTER_ARGS=	-x physcalc -d ${WRKDIR}
 
 NO_WRKSUBDIR=	yes
+USE_REINPLACE=	yes
 USE_ZIP=	yes
 
 DEFS=		-DSHAREDIR="\"${PREFIX}/share/physcalc/\""
@@ -24,7 +25,7 @@ SRCS=		physconv.c physmain.c physmlib.c physnode.c physoper.c \
 		physsolv.c
 
 pre-build:
-	${PERL} -pi -e "s@void main@int main@g" ${WRKSRC}/physmain.c
+	${REINPLACE_CMD} -e "s@void main@int main@g" ${WRKSRC}/physmain.c
 
 do-build:
 	(cd ${WRKSRC} && ${CC} ${CFLAGS} ${DEFS} ${SRCS} -lm -o physcalc)

@@ -16,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 
+USE_REINPLACE=	yes
 USE_MESA=	yes
 WRKSRC=		${WRKDIR}/vtk${PORTVERSION}
 INSTALLS_SHLIB=	yes
@@ -35,11 +36,11 @@ PLIST=		${PKGDIR}/pkg-plist.with_patented
 .endif
 
 post-patch:
-	${PERL} -pi -e "s|%%PYTHON_INCLUDEDIR%%|${PYTHON_INCLUDEDIR}|g; \
+	@${REINPLACE_CMD} -e "s|%%PYTHON_INCLUDEDIR%%|${PYTHON_INCLUDEDIR}|g; \
 		s|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|g; \
 		s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g" \
 		${WRKSRC}/user.make
-	@${FIND} ${WRKSRC} -name "*.cxx" | ${XARGS} ${PERL} -pi -e \
+	@${FIND} ${WRKSRC} -name "*.cxx" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|malloc.h|stdlib.h|'
 
 post-install:

@@ -16,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 
+USE_REINPLACE=	yes
 USE_AUTOCONF_VER=213
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
@@ -42,6 +43,6 @@ pre-everything::
 
 post-patch:
 	@find ${WRKSRC} -name '*.[ch]' | xargs \
-		${PERL} -pi -e "s|<malloc.h>|<stdlib.h>|g"
+		${REINPLACE_CMD} -e "s|<malloc.h>|<stdlib.h>|g"
 
 .include <bsd.port.mk>
