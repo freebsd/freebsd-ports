@@ -8,7 +8,7 @@
 PORTNAME=	pngcheck
 PORTVERSION=	1.99.2
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.cdrom.com/pub/png/src/ \
+MASTER_SITES=	ftp://ftp.libpng.org/pub/png/src/ \
 		ftp://swrinde.nde.swri.edu/pub/png/applications/
 
 MAINTAINER=	ports@FreeBSD.org
