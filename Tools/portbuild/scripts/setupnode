@@ -12,6 +12,11 @@ if [ $(echo $(/sbin/mount | grep "$2/.*read-only" | awk '{print $3}' | wc -c)) !
   /sbin/umount -f $(/sbin/mount | grep "$2/.*read-only" | awk '{print $3}')
 fi
 
+#cd $2
+#fs=$(df . | sed -e '1d' | awk '{print $6}')
+
+#mount -u -w $fs
+
 if ! rm -rf $2/*/chroot/* >/dev/null 2>&1; then
   chflags -R noschg $2/*/chroot/*
   rm -rf $2/*/chroot/*
@@ -32,3 +37,5 @@ if [ "$nocopy" = 0 ]; then
     scp -p $1:$2/$3/tarballs/bindist.tar $2/$3/tarballs
   fi
 fi
+
+#mount -u -r $fs
