@@ -1,1 +1,1 @@
-Multi-link PPP daemon
+Multi-link PPP daemon based on netgraph(4)
