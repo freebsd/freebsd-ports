@@ -124,7 +124,7 @@ MAN8=	actsync.8 actsyncd.8 archive.8 auth_smb.8 batcher.8 buffchan.8 \
 
 .if defined(WITH_STANDARD_ETC)
 ETC_DIR=	${PREFIX}/etc/inn
-PLIST_SUB+=	ETCDIR=etc/inn
+PLIST_SUB+=	ETCDIR="etc/inn"
 .else
 ETC_DIR=	${PREFIX}/news/etc
 PLIST_SUB+=	ETCDIR="news/etc"
