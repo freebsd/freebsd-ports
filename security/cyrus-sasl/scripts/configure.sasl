@@ -6,13 +6,43 @@ if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
 fi
 
 if [ "${BATCH}" ]; then
-	exit
+	if [ "x${ENABLE_DB3}" = "xYES" ]; then
+		OPTIONS=\"DB3\"
+	fi
+	if [ "x${ENABLE_MYSQL}" = "xYES" ]; then
+		OPTIONS="${OPTIONS} \"MySQL\""
+	fi
+	if [ "x${ENABLE_LDAP}" = "xYES" ]; then
+		OPTIONS="${OPTIONS} \"OpenLDAP\""
+	fi
+	if [ "x${OPTIONS}" != "x" ]; then
+		set ${OPTIONS}
+	fi
 else
-	/usr/bin/dialog --title "Additional pwcheck methods" --clear \
+
+	if [ "x${ENABLE_DB3}" = "xYES" -o -f ${PREFIX}/lib/libdb3.so ] ; then
+		SET_DB3="ON"
+	else
+		SET_DB3="OFF"
+	fi
+	if [ "x${ENABLE_MYSQL}" = "xYES" -o -f ${PREFIX}/lib/libmysqlclient.so ] ; then
+		SET_MYSQL="ON"
+	else
+		SET_MYSQL="OFF"
+	fi
+	if [ "x${ENABLE_LDAP}" = "xYES" -o \
+	     -f ${PREFIX}/lib/libldap.so -a -f ${PREFIX}/lib/liblber.so ] ; then
+		SET_LDAP="ON"
+	else
+		SET_LDAP="OFF"
+	fi
+
+	/usr/bin/dialog --title "Additional SASL options" --clear \
 		--checklist "\n\
 Please select desired options:" -1 -1 16 \
-MySQL		"MySQL password Authentication" OFF \
-OpenLDAP	"OpenLDAP password Authentication" OFF \
+DB3		"Berkeley DB package, revision 3" ${SET_DB3} \
+MySQL		"MySQL password Authentication" ${SET_MYSQL} \
+OpenLDAP	"OpenLDAP password Authentication" ${SET_LDAP} \
 2> /tmp/checklist.tmp.$$
 
 	retval=$?
@@ -40,6 +70,13 @@ echo "PREFIX=	${PREFIX}"
 
 while [ "$1" ]; do
 	case $1 in
+		\"DB3\")
+			#Can't use LIB_DEPENDS - no libdb3.so.1 in db3 port
+			#echo "LIB_DEPENDS+=	db3.1:\${PORTSDIR}/databases/db3"
+			echo "BUILD_DEPENDS+=	\${LOCALBASE}/lib/libdb3.1.so:\${PORTSDIR}/databases/db3"
+			echo "RUN_DEPENDS+=	\${LOCALBASE}/lib/libdb3.1.so:\${PORTSDIR}/databases/db3"
+			echo "CONFIGURE_ARGS+=--with-dblib=berkeley"
+			;;
 		\"MySQL\")
 			echo "LIB_DEPENDS+=	mysqlclient.6:\${PORTSDIR}/databases/mysql322-client"
 			echo "CONFIGURE_ARGS+=--with-mysql=\${PREFIX}"

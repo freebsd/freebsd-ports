@@ -1,5 +1,5 @@
 --- configure.in.orig	Thu Jul 20 21:35:01 2000
-+++ configure.in	Sat Sep 16 13:58:02 2000
++++ configure.in	Tue Sep 19 21:51:11 2000
 @@ -66,8 +66,9 @@
  dnl check for -R, etc. switch
  CMU_GUESS_RUNPATH_SWITCH
@@ -12,7 +12,21 @@
  
  AM_DISABLE_STATIC
  
-@@ -310,6 +311,88 @@
+@@ -232,6 +233,13 @@
+     SASL_DB_BACKEND="db_${dblib}.lo"
+     AC_DEFINE(SASL_BERKELEYDB)
+     SASL_DB_LIB="-ldb"
++    for db3loc in ${prefix} /usr/local /usr
++    do
++      if test -d ${db3loc}/include/db3; then
++	CPPFLAGS="-I${db3loc}/include/db3 $CPPFLAGS"
++	break
++      fi
++    done
+     ;;
+   *)
+     AC_MSG_WARN([Disabling SASL authentication database support])
+@@ -310,6 +318,88 @@
  fi
  AM_CONDITIONAL(PWCHECK, test "$with_pwcheck" != no)
  
@@ -101,7 +115,7 @@
  dnl CRAM-MD5
  AC_ARG_ENABLE(cram, [  --enable-cram           enable CRAM-MD5 authentication [yes] ],
    cram=$enableval,
-@@ -434,11 +517,15 @@
+@@ -434,11 +524,15 @@
    fi
  
    if test "$with_des" != no; then
