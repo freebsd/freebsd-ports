@@ -5,6 +5,7 @@ include/%%PYTHON_VERSION%%/pygame/pygame.h
 include/%%PYTHON_VERSION%%/pygame/setproctitle.h
 lib/%%PYTHON_VERSION%%/site-packages/pygame/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/pygame/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/pygame/__init__.pyo
 lib/%%PYTHON_VERSION%%/site-packages/pygame/base.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/bluebold.ttf
 lib/%%PYTHON_VERSION%%/site-packages/pygame/bluebold.txt
@@ -12,6 +13,7 @@ lib/%%PYTHON_VERSION%%/site-packages/pygame/cdrom.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/constants.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/cursors.py
 lib/%%PYTHON_VERSION%%/site-packages/pygame/cursors.pyc
+lib/%%PYTHON_VERSION%%/site-packages/pygame/cursors.pyo
 lib/%%PYTHON_VERSION%%/site-packages/pygame/display.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/draw.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/event.so
@@ -22,6 +24,7 @@ lib/%%PYTHON_VERSION%%/site-packages/pygame/joystick.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/key.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/locals.py
 lib/%%PYTHON_VERSION%%/site-packages/pygame/locals.pyc
+lib/%%PYTHON_VERSION%%/site-packages/pygame/locals.pyo
 lib/%%PYTHON_VERSION%%/site-packages/pygame/mixer.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/mixer_music.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/mouse.so
@@ -34,6 +37,7 @@ lib/%%PYTHON_VERSION%%/site-packages/pygame/rect.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/rwobject.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/sprite.py
 lib/%%PYTHON_VERSION%%/site-packages/pygame/sprite.pyc
+lib/%%PYTHON_VERSION%%/site-packages/pygame/sprite.pyo
 lib/%%PYTHON_VERSION%%/site-packages/pygame/surface.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/surfarray.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/surflock.so
@@ -41,6 +45,7 @@ lib/%%PYTHON_VERSION%%/site-packages/pygame/time.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/transform.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/version.py
 lib/%%PYTHON_VERSION%%/site-packages/pygame/version.pyc
+lib/%%PYTHON_VERSION%%/site-packages/pygame/version.pyo
 %%PORTDOCS%%share/doc/py-game/LGPL
 %%PORTDOCS%%share/doc/py-game/index.html
 %%PORTDOCS%%share/doc/py-game/logos.html
