@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	prtunnel
-PORTVERSION=	0.1.7
+PORTVERSION=	0.1.8
 CATEGORIES=	net
 MASTER_SITES=	http://joshbeam.com/files/
 
