@@ -5,9 +5,12 @@ bin/quirc
 %%PORTDOCS%%share/doc/quirc/NEWS
 %%PORTDOCS%%share/doc/quirc/README
 %%PORTDOCS%%share/doc/quirc/color.txt
+%%PORTDOCS%%share/doc/quirc/dccresum.txt
+%%PORTDOCS%%share/doc/quirc/links.txt
 %%PORTDOCS%%share/doc/quirc/nickcomp.txt
 %%PORTDOCS%%share/doc/quirc/quedit.txt
 %%PORTDOCS%%share/doc/quirc/rfc1459.txt
+%%PORTDOCS%%share/doc/quirc/tdcc.txt
 share/quirc/VERSION
 share/quirc/common/install.tcl
 share/quirc/dal.tcl
