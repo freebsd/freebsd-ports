@@ -39,6 +39,7 @@ CUT?=	/usr/bin/cut
 
 .include <bsd.port.pre.mk>
 
+BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 .if !defined(INSTALLATION_BASEDIR)
 INSTALLATION_BASEDIR=	OpenOffice.org1.0
 .if defined(RDEP)
