@@ -29,7 +29,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 .include <bsd.port.pre.mk>
 
 .if defined(HAVE_GNOME)
-LIB_DEPENDS+=	glade.4:${PORTSDIR}/devel/libglade
+LIB_DEPENDS+=	glade.4:${PORTSDIR}/devel/libglade \
+		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
+USE_GNOMELIBS=	yes
 CONFIGURE_ARGS=	--with-gnome --with-libglade --with-gdk-pixbuf \
 		--with-gnome-canvas-pixbuf
 .else
