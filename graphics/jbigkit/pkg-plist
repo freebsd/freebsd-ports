@@ -8,4 +8,5 @@ lib/libjbig.a
 @exec ranlib %D/%F
 lib/libjbig.so.0.9
 @exec ldconfig -m %B
+@unexec /sbin/ldconfig -R
 share/doc/jbig/jbig.doc

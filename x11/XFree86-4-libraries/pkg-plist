@@ -1456,6 +1456,7 @@ lib/liboldX.so.6.0
 lib/libxkbfile.a
 lib/libxkbui.a
 @exec /sbin/ldconfig -m %B
+@unexec /sbin/ldconfig -R
 lib/modules/pex5.so
 lib/modules/xf86Elo.so
 lib/modules/xf86Jstk.so

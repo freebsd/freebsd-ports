@@ -24,6 +24,7 @@ include/tk8.1/unix/tkUnixPort.h
 lib/libtk81.a
 lib/libtk81.so.1.0
 @exec /sbin/ldconfig -m %B
+@unexec /sbin/ldconfig -R
 lib/tk8.1/bgerror.tcl
 lib/tk8.1/button.tcl
 lib/tk8.1/clrpick.tcl

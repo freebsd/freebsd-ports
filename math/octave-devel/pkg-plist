@@ -509,3 +509,4 @@ include/octave
 @exec /bin/mkdir -p %D/libexec/octave/site/oct/i386-unknown-freebsd
 @exec /bin/mkdir -p %D/libexec/octave/2.0.9/oct/i386-unknown-freebsd
 @exec /sbin/ldconfig -m %D/lib
+@unexec /sbin/ldconfig -R

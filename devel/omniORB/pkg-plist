@@ -147,3 +147,4 @@ share/doc/omniORB/utilities/utilities.html
 @dirrm share/doc/omniORB/utilities
 @dirrm share/doc/omniORB
 @exec /sbin/ldconfig -m %D/lib
+@unexec /sbin/ldconfig -R

@@ -13,6 +13,7 @@ include/tcl8.1/unix/tclUnixPort.h
 lib/libtcl81.a
 lib/libtcl81.so.1.0
 @exec /sbin/ldconfig -m %B
+@unexec /sbin/ldconfig -R
 lib/tcl8.1/auto.tcl
 lib/tcl8.1/encoding/ascii.enc
 lib/tcl8.1/encoding/big5.enc

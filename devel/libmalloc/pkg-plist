@@ -6,5 +6,6 @@ include/malloc.h
 include/libmalloc.h
 lib/libmalloc_d.so.1.18
 @exec /sbin/ldconfig -m %B
+@unexec /sbin/ldconfig -R
 share/doc/libmalloc/malloc.doc
 share/doc/libmalloc/NOTE

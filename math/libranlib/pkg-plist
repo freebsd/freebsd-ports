@@ -2,6 +2,7 @@ include/ranlib.h
 lib/libranlib.a
 lib/libranlib.so.1.0
 @exec /sbin/ldconfig -m %B
+@unexec /sbin/ldconfig -R
 share/doc/ranlib/Basegen.c.doc
 share/doc/ranlib/ranlib.c.chs
 share/doc/ranlib/ranlib.c.fdoc

@@ -56,6 +56,7 @@ share/kaffe/classes.zip
 share/kaffe/ENVIRONMENT
 share/kaffe/license.terms
 @exec /sbin/ldconfig -m %B
+@unexec /sbin/ldconfig -R
 @dirrm include/kaffe
 @dirrm share/kaffe/lib/security
 @dirrm share/kaffe/lib

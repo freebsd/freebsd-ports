@@ -15,3 +15,4 @@ include/Xbae
 man/man3/XbaeMatrix.3.gz
 man/man3/XbaeCaption.3.gz
 @exec /sbin/ldconfig -m %D
+@unexec /sbin/ldconfig -R

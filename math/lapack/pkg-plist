@@ -3,6 +3,7 @@ lib/libblas.so.2.0
 lib/liblapack.a
 lib/liblapack.so.2.0
 @exec ldconfig -m %B
+@unexec /sbin/ldconfig -R
 man/manl/cgbmv.l.gz
 man/manl/cgemm.l.gz
 man/manl/cgemv.l.gz

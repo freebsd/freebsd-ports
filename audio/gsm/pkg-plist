@@ -10,6 +10,7 @@ man/man3/gsm_option.3.gz
 man/man3/gsm_print.3.gz
 lib/libgsm.so.1.0.10
 @exec /sbin/ldconfig -m %B
+@unexec /sbin/ldconfig -R
 lib/libgsm.a
 @exec ranlib %D/%F
 include/gsm.h

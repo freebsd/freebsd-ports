@@ -41,3 +41,4 @@ lib/m3/pkg/videovbt/FreeBSD2/libvideovbt.so.6.0
 lib/m3/pkg/web/FreeBSD2/libweb.so.6.0
 share/modula-3-lib/COPYRIGHT
 @exec /sbin/ldconfig -m %D/lib/m3/FreeBSD2
+@unexec /sbin/ldconfig -R

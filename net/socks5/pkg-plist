@@ -20,3 +20,4 @@ lib/libsocks5.a
 @exec ranlib -m %D/lib/libsocks5.a
 lib/libsocks5_sh.so
 @exec /sbin/ldconfig -m %D/lib
+@unexec /sbin/ldconfig -R

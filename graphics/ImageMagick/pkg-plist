@@ -23,7 +23,8 @@ lib/libMagick.a
 lib/libMagick.la
 lib/libMagick.so
 lib/libMagick.so.4.5
-@exec ldconfig -m %D/lib
+@exec /sbin/ldconfig -m %D/lib
+@unexec /sbin/ldconfig -R
 man/man1/ImageMagick.1.gz
 man/man1/animate.1.gz
 man/man1/combine.1.gz

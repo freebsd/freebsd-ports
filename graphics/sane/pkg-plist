@@ -94,6 +94,7 @@ lib/libsane.a
 lib/libsane.so
 lib/libsane.so.0.72
 @exec /sbin/ldconfig -m %D/lib
+@unexec /sbin/ldconfig -R
 man/man1/scanimage.1.gz
 man/man1/xscanimage.1.gz
 man/man1/saned.1.gz

@@ -4,6 +4,7 @@ lib/libxforms.a
 lib/libxforms.so.0.88
 lib/libxforms.so
 @exec ldconfig -m %B
+@unexec /sbin/ldconfig -R
 @exec ranlib %D/lib/libxforms.a
 include/forms.h
 man/man1/fdesign.1.gz

@@ -1,3 +1,4 @@
 lib/liblinpack.a
 lib/liblinpack.so.1.0
 @exec /sbin/ldconfig -m %B
+@unexec /sbin/ldconfig -R

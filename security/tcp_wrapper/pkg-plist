@@ -8,6 +8,7 @@ lib/libwrap.a
 @exec ranlib %D/%F
 lib/libwrap.so.7.6
 @exec /sbin/ldconfig -m %B
+@unexec /sbin/ldconfig -R
 man/man3/hosts_access.3.gz
 man/man5/hosts_access.5.gz
 man/man5/hosts_options.5.gz
