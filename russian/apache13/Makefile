@@ -1,0 +1,92 @@
+# New ports collection makefile for:    apache HTTPD
+# Version required:     1.3*
+# Date created:         Sat Apr 10 22:30:36 EEST 1999
+# Whom:                 vns@delta.odessa.ua
+#
+# $Id:$
+#
+
+DISTNAME=	apache_1.3.6
+PKGNAME=	ru-apache-1.3.6
+CATEGORIES=	www russian
+MASTER_SITES=	http://www.apache.org/dist/ \
+		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/ \
+		ftp://ftp.rge.com/pub/infosystems/apache/dist/ \
+		ftp://apache.compuex.com/pub/apache/dist/ \
+		ftp://apache.arctic.org/pub/apache/dist/ \
+		ftp://ftp.epix.net/pub/apache/dist/ \
+		ftp://ftp.ameth.org/pub/mirrors/ftp.apache.org/apache/dist/ \
+		ftp://ftp.connectnet.com/pub/www/apache/ \
+		ftp://apache.technomancer.com/mirrors/apache/dist/ \
+		ftp://ftp.raver.net/pub/ftp.apache.org/ \
+		ftp://www3.service.digital.com/apache/dist/ \
+		ftp://galileo.galilei.com/pub/apache/ \
+		ftp://ftp.mtnranch.net/pub/apache/dist/ \
+		ftp://ftp.iodynamics.com/pub/mirror/apache/dist/ \
+		ftp://apache.nextpath.com/pub/apache/dist/
+
+PATCH_SITES=	ftp://ftp.lexa.ru/pub/apache-rus/
+PATCHFILES=	patches_1.3.6rusPL${RA_VERSION}.tar.gz
+
+MAINTAINER=	vns@delta.odessa.ua
+
+Y2K=		http://www.apache.org/docs/misc/FAQ.html#year2000
+RA_VERSION=	28.14
+
+#
+# Small hack for alternate processing patchfiles
+#
+GZCAT=sh -c 'tar -zxf $$0 -C ${WRKSRC};cat ${WRKSRC}/RA-1.3rusPL${RA_VERSION}.patch'
+
+#
+# Set APACHE_PERF_TUNING env. variable to YES to get maximum performance
+#
+
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	\
+		 --prefix=${PREFIX} \
+		 --with-layout=GNU \
+		 --sysconfdir=${PREFIX}/etc/apache \
+		 --includedir=${PREFIX}/include/apache \
+		 --localstatedir=/var \
+		 --datadir=${PREFIX}/www \
+		 --suexec-docroot=${PREFIX}/www/data \
+		 --proxycachedir=${PREFIX}/www/proxy \
+		 --libexecdir=${PREFIX}/libexec/apache \
+		 --without-confadjust \
+		 --enable-shared=remain \
+		 --enable-module=most \
+		 --enable-module=auth_db \
+		 --disable-module=auth_dbm
+
+# Currently perl version don't matter
+#                 --with-perl=${PERL5}
+
+OPTIM=-DHARD_SERVER_LIMIT=512 \
+-DDOCUMENT_LOCATION=\\"${PREFIX}/www/data/\\" \
+-DDEFAULT_PATH=\\"/bin:/usr/bin:${PREFIX}/bin\\"
+
+.if defined(APACHE_PERF_TUNING) && ${APACHE_PERF_TUNING} == YES
+OPTIM+= -DBUFFERED_LOGS
+CFLAGS+= -O6 -fomit-frame-pointer
+.endif
+
+CONFIGURE_ENV= OPTIM='${OPTIM}'
+
+MAN1= dbmmanage.1 htdigest.1 htpasswd.1
+MAN8= ab.8 apachectl.8 apxs.8 httpd.8 logresolve.8 rotatelogs.8
+
+pre-install:
+	@if [ -f ${WRKSRC}/htdocs/index.html.orig ]; then \
+		${RM} ${WRKSRC}/htdocs/index.html.orig; \
+	fi
+
+post-install:
+	@if [ ! -f ${PREFIX}/etc/rc.d/apache.sh ]; then \
+		${ECHO} "Installing ${PREFIX}/etc/rc.d/apache.sh startup file."; \
+		${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/apache.sh; \
+		${ECHO} "[ -x ${PREFIX}/sbin/apachectl ] && ${PREFIX}/sbin/apachectl start > /dev/null && echo -n ' apache'" >> ${PREFIX}/etc/rc.d/apache.sh; \
+		chmod 751 ${PREFIX}/etc/rc.d/apache.sh; \
+	fi
+
+.include <bsd.port.mk>
