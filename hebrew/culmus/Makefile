@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	culmus
-PORTVERSION=	0.8
+PORTVERSION=	0.90
 CATEGORIES=	hebrew
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,7 +21,7 @@ NO_BUILD=	yes
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/X11/fonts/culmus
-.	for file in Aharoni-Bold Aharoni-BoldOblique Aharoni-Book Aharoni-BookOblique Caladings David-Bold David-Medium David-MediumItalic Drugulin-Bold Drugulin-BoldItalic FrankRuehl-Bold FrankRuehl-BoldOblique FrankRuehl-Medium FrankRuehl-MediumOblique KtavYad-BoldItalic KtavYad-MediumItalic MiriamMono-Bold MiriamMono-BoldOblique MiriamMono-Book MiriamMono-BookOblique Nachlieli-Bold Nachlieli-BoldOblique Nachlieli-Light Nachlieli-LightOblique
+.	for file in Aharoni-Bold Aharoni-BoldOblique Aharoni-Book Aharoni-BookOblique Caladings David-Bold David-Medium David-MediumItalic Drugulin-Bold Drugulin-BoldItalic Ellinia-Bold Ellinia-BoldItalic Ellinia-Light Ellinia-LightItalic FrankRuehl-Bold FrankRuehl-BoldOblique FrankRuehl-Medium FrankRuehl-MediumOblique KtavYad-BoldItalic KtavYad-MediumItalic MiriamMono-Bold MiriamMono-BoldOblique MiriamMono-Book MiriamMono-BookOblique Nachlieli-Bold Nachlieli-BoldOblique Nachlieli-Light Nachlieli-LightOblique
 		${INSTALL_DATA} ${WRKSRC}/${file}.afm ${PREFIX}/lib/X11/fonts/culmus
 		${INSTALL_DATA} ${WRKSRC}/${file}.pfa ${PREFIX}/lib/X11/fonts/culmus
 .	endfor
