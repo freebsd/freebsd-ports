@@ -1,7 +1,7 @@
 # New ports collection makefile for:	paledit
 # Version required:	1.0
 # Date created:		14 Jan 1999
-# Whom:			Shigeyuki FUKUSHIMA <shige@kuis.kyoto-u.ac.jp>
+# Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
 #
 # $FreeBSD$
 #

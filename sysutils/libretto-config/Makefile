@@ -1,7 +1,7 @@
 # New ports collection makefile for:	libretto-config
 # Version required:	1.0
 # Date created:		19 Nov 1998
-# Whom:			Shigeyuki FUKUSHIMA <shige@kuis.kyoto-u.ac.jp>
+# Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
 #
 # $FreeBSD$
 #
