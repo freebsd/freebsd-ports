@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-Amazon
-PORTVERSION=	0.16
+PORTVERSION=	0.17
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
@@ -43,7 +43,7 @@ MAN3=		Net::Amazon.3 Net::Amazon::Attribute::Review.3 \
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500601
-IGNORE=         This port requires perl 5.6.x or later. Install lang/perl5 then try again
+IGNORE=		This port requires perl 5.6.x or later. Install lang/perl5 then try again
 .endif
 
 .include <bsd.port.post.mk>
