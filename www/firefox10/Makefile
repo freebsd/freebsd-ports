@@ -37,6 +37,10 @@ WRKSRC=			${WRKDIR}/mozilla
 
 .include <bsd.port.pre.mk>
 
+.if !defined(PERL_VER) || ${PERL_VER} != "5.8.0"
+BROKEN=	This port requires Perl 5.8.0 because of File::Spec issues.
+.endif # !defined(PERL_VER) || ${PERL_VER} != "5.8.0"
+
 post-extract:
 	${SED} -e 's|@CFLAGS@|${CFLAGS}|'		\
 		-e 's|@LIBS@|${LIBS}|'			\

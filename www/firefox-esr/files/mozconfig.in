@@ -14,8 +14,8 @@ ac_add_options --disable-composer
 # FBSD specific
 export CFLAGS=@CFLAGS@
 export LIBS=@LIBS@
-#export PERL=@LOCALBASE@/bin/perl5.8.0
-#mk_add_options PERL=$PERL
+export PERL=@LOCALBASE@/bin/perl5.8.0
+mk_add_options PERL=$PERL
 export GTK_CONFIG=@X11BASE@/bin/gtk12-config
 mk_add_options GTK_CONFIG=$GTK_CONFIG
 export GLIB_CONFIG=@LOCALBASE@/bin/glib12-config
