@@ -1,13 +1,300 @@
---- gcc/config/avr/avr.c.orig	Mon Aug 12 15:13:56 2002
-+++ gcc/config/avr/avr.c	Thu Aug 29 12:53:14 2002
-@@ -2711,8 +2711,8 @@
-             }
-         }
-       else
--        return  *l=2, (AS2 (st ,%0,%A1)    CR_TAB
--                       AS2 (std,%0+1,%B1));
-+        return  *l=2, (AS2 (std,%0+1,%B1)  CR_TAB
-+                       AS2 (st ,%0,%A1));
-     }
-   else if (GET_CODE (base) == PLUS)
-     {
+From marekm@amelek.gda.pl Sun Jan 19 02:37:50 2003
+Path: interface-business.de!not-for-mail
+Newsgroups: local.avr.gcc
+Followup-To: poster
+Reply-To: avr-gcc-list@avr1.org
+Subject: [avr-gcc-list] Patch for indirect 16-bit I/O
+To: avr-gcc-list@avr1.org
+X-Mailer: ELM [version 2.4ME+ PL95 (25)]
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset=US-ASCII
+Message-ID: <E18a4PG-0004Cs-00@alf.amelek.gda.pl>
+From: Marek Michalkiewicz <marekm@amelek.gda.pl>
+Sender: owner-avr-gcc-list@avr1.org
+Precedence: bulk
+Date: Sun, 19 Jan 2003 02:37:50 +0100 (CET)
+Lines: 280
+Xref: interface-business.de local.avr.gcc:2452
+
+Hi,
+
+This should handle all these 16-bit I/O accesses addressed with
+pointers ("volatile" is required to force writing high byte first
+and reading low byte first in absolutely all cases, even if that
+makes the code less efficient).  The patch is for CVS mainline, but
+should apply cleanly to the 3.3 branch too.  I'm not committing it
+to GCC CVS just yet - please test, I haven't... well, it compiles :)
+
+BTW, mainline currently requires that SEEK_{SET,CUR,END} are
+defined in <stdio.h> - otherwise some new libgcc2.c stuff (unused
+on the AVR, but it has to compile) will cause the build to fail.
+Just edit /usr/local/avr/include/stdio.h to add them manually...
+
+Marek
+
+
+Index: gcc/config/avr/avr.c
+===================================================================
+RCS file: /cvs/gcc/gcc/gcc/config/avr/avr.c,v
+retrieving revision 1.87
+diff -c -3 -p -r1.87 avr.c
+*** gcc/config/avr/avr.c	16 Dec 2002 18:20:58 -0000	1.87
+--- gcc/config/avr/avr.c	19 Jan 2003 01:07:52 -0000
+*************** print_operand (file, x, code)
+*** 1138,1143 ****
+--- 1138,1153 ----
+  
+  	  print_operand (file, XEXP (addr, 1), 0);
+  	}
++       else if (code == 'p' || code == 'r')
++ 	{
++ 	  if (GET_CODE (addr) != POST_INC && GET_CODE (addr) != PRE_DEC)
++ 	    fatal_insn ("bad address, not post_inc or pre_dec:", addr);
++ 
++ 	  if (code == 'p')
++ 	    print_operand_address (file, XEXP (addr, 0));  /* X, Y, Z */
++ 	  else
++ 	    print_operand (file, XEXP (addr, 0), 0);  /* r26, r28, r30 */
++ 	}
+        else if (GET_CODE (addr) == PLUS)
+  	{
+  	  print_operand_address (file, XEXP (addr,0));
+*************** out_movhi_r_mr (insn, op, l)
+*** 1944,1949 ****
+--- 1954,1962 ----
+    rtx base = XEXP (src, 0);
+    int reg_dest = true_regnum (dest);
+    int reg_base = true_regnum (base);
++   /* "volatile" forces reading low byte first, even if less efficient,
++      for correct operation with 16-bit I/O registers.  */
++   int mem_volatile_p = MEM_VOLATILE_P (src);
+    int tmp;
+  
+    if (!l)
+*************** out_movhi_r_mr (insn, op, l)
+*** 2037,2042 ****
+--- 2050,2074 ----
+        if (reg_overlap_mentioned_p (dest, XEXP (base, 0)))
+  	fatal_insn ("incorrect insn:", insn);
+  
++       if (mem_volatile_p)
++ 	{
++ 	  if (REGNO (XEXP (base, 0)) == REG_X)
++ 	    {
++ 	      *l = 4;
++ 	      return (AS2 (sbiw,r26,2)  CR_TAB
++ 		      AS2 (ld,%A0,X+)   CR_TAB
++ 		      AS2 (ld,%B0,X)    CR_TAB
++ 		      AS2 (sbiw,r26,1));
++ 	    }
++ 	  else
++ 	    {
++ 	      *l = 3;
++ 	      return (AS2 (sbiw,%r1,2)   CR_TAB
++ 		      AS2 (ld,%A0,%p1)  CR_TAB
++ 		      AS2 (ldd,%B0,%p1+1));
++ 	    }
++ 	}
++ 
+        *l = 2;
+        return (AS2 (ld,%B0,%1) CR_TAB
+  	      AS2 (ld,%A0,%1));
+*************** out_movhi_mr_r (insn, op, l)
+*** 2668,2674 ****
+--- 2700,2710 ----
+    rtx base = XEXP (dest, 0);
+    int reg_base = true_regnum (base);
+    int reg_src = true_regnum (src);
++   /* "volatile" forces writing high byte first, even if less efficient,
++      for correct operation with 16-bit I/O registers.  */
++   int mem_volatile_p = MEM_VOLATILE_P (dest);
+    int tmp;
++ 
+    if (!l)
+      l = &tmp;
+    if (CONSTANT_ADDRESS_P (base))
+*************** out_movhi_mr_r (insn, op, l)
+*** 2688,2720 ****
+          {
+            if (reg_src == REG_X)
+              {
+! 	      /* "st X+,r26" is undefined */
+!               if (reg_unused_after (insn, src))
+  		return *l=4, (AS2 (mov,__tmp_reg__,r27) CR_TAB
+  			      AS2 (st,X,r26)            CR_TAB
+  			      AS2 (adiw,r26,1)          CR_TAB
+  			      AS2 (st,X,__tmp_reg__));
+                else
+  		return *l=5, (AS2 (mov,__tmp_reg__,r27) CR_TAB
+- 			      AS2 (st,X,r26)            CR_TAB
+  			      AS2 (adiw,r26,1)          CR_TAB
+  			      AS2 (st,X,__tmp_reg__)    CR_TAB
+! 			      AS2 (sbiw,r26,1));
+              }
+            else
+              {
+!               if (reg_unused_after (insn, base))
+                  return *l=2, (AS2 (st,X+,%A1) CR_TAB
+                                AS2 (st,X,%B1));
+                else
+!                 return *l=3, (AS2 (st  ,X+,%A1) CR_TAB
+!                               AS2 (st  ,X,%B1) CR_TAB
+!                               AS2 (sbiw,r26,1));
+              }
+          }
+        else
+!         return  *l=2, (AS2 (st ,%0,%A1)    CR_TAB
+!                        AS2 (std,%0+1,%B1));
+      }
+    else if (GET_CODE (base) == PLUS)
+      {
+--- 2724,2756 ----
+          {
+            if (reg_src == REG_X)
+              {
+! 	      /* "st X+,r26" and "st -X,r26" are undefined.  */
+!               if (!mem_volatile_p && reg_unused_after (insn, src))
+  		return *l=4, (AS2 (mov,__tmp_reg__,r27) CR_TAB
+  			      AS2 (st,X,r26)            CR_TAB
+  			      AS2 (adiw,r26,1)          CR_TAB
+  			      AS2 (st,X,__tmp_reg__));
+                else
+  		return *l=5, (AS2 (mov,__tmp_reg__,r27) CR_TAB
+  			      AS2 (adiw,r26,1)          CR_TAB
+  			      AS2 (st,X,__tmp_reg__)    CR_TAB
+! 			      AS2 (sbiw,r26,1)          CR_TAB
+! 			      AS2 (st,X,r26));
+              }
+            else
+              {
+!               if (!mem_volatile_p && reg_unused_after (insn, base))
+                  return *l=2, (AS2 (st,X+,%A1) CR_TAB
+                                AS2 (st,X,%B1));
+                else
+!                 return *l=3, (AS2 (adiw,r26,1) CR_TAB
+!                               AS2 (st,X,%B1)   CR_TAB
+!                               AS2 (st,-X,%A1));
+              }
+          }
+        else
+!         return  *l=2, (AS2 (std,%0+1,%B1) CR_TAB
+!                        AS2 (st,%0,%A1));
+      }
+    else if (GET_CODE (base) == PLUS)
+      {
+*************** out_movhi_mr_r (insn, op, l)
+*** 2727,2740 ****
+  
+  	  if (disp <= 63 + MAX_LD_OFFSET (GET_MODE (dest)))
+  	    return *l = 4, (AS2 (adiw,r28,%o0-62) CR_TAB
+- 			    AS2 (std,Y+62,%A1)    CR_TAB
+  			    AS2 (std,Y+63,%B1)    CR_TAB
+  			    AS2 (sbiw,r28,%o0-62));
+  
+  	  return *l = 6, (AS2 (subi,r28,lo8(-%o0)) CR_TAB
+  			  AS2 (sbci,r29,hi8(-%o0)) CR_TAB
+- 			  AS2 (st,Y,%A1)           CR_TAB
+  			  AS2 (std,Y+1,%B1)        CR_TAB
+  			  AS2 (subi,r28,lo8(%o0))  CR_TAB
+  			  AS2 (sbci,r29,hi8(%o0)));
+  	}
+--- 2763,2776 ----
+  
+  	  if (disp <= 63 + MAX_LD_OFFSET (GET_MODE (dest)))
+  	    return *l = 4, (AS2 (adiw,r28,%o0-62) CR_TAB
+  			    AS2 (std,Y+63,%B1)    CR_TAB
++ 			    AS2 (std,Y+62,%A1)    CR_TAB
+  			    AS2 (sbiw,r28,%o0-62));
+  
+  	  return *l = 6, (AS2 (subi,r28,lo8(-%o0)) CR_TAB
+  			  AS2 (sbci,r29,hi8(-%o0)) CR_TAB
+  			  AS2 (std,Y+1,%B1)        CR_TAB
++ 			  AS2 (st,Y,%A1)           CR_TAB
+  			  AS2 (subi,r28,lo8(%o0))  CR_TAB
+  			  AS2 (sbci,r29,hi8(%o0)));
+  	}
+*************** out_movhi_mr_r (insn, op, l)
+*** 2746,2772 ****
+  	      *l = 7;
+  	      return (AS2 (mov,__tmp_reg__,r26)  CR_TAB
+  		      AS2 (mov,__zero_reg__,r27) CR_TAB
+! 		      AS2 (adiw,r26,%o0)         CR_TAB
+! 		      AS2 (st,X+,__tmp_reg__)    CR_TAB
+  		      AS2 (st,X,__zero_reg__)    CR_TAB
+  		      AS1 (clr,__zero_reg__)     CR_TAB
+! 		      AS2 (sbiw,r26,%o0+1));
+  	    }
+  	  *l = 4;
+! 	  return (AS2 (adiw,r26,%o0) CR_TAB
+! 		  AS2 (st,X+,%A1)    CR_TAB
+! 		  AS2 (st,X,%B1)     CR_TAB
+! 		  AS2 (sbiw,r26,%o0+1));
+  	}
+!       return *l=2, (AS2 (std,%A0,%A1)    CR_TAB
+! 		    AS2 (std,%B0,%B1));
+      }
+    else if (GET_CODE (base) == PRE_DEC) /* (--R) */
+      return *l=2, (AS2 (st,%0,%B1) CR_TAB
+  		  AS2 (st,%0,%A1));
+    else if (GET_CODE (base) == POST_INC) /* (R++) */
+!     return *l=2, (AS2 (st,%0,%A1)  CR_TAB
+! 		  AS2 (st,%0,%B1));
+    fatal_insn ("unknown move insn:",insn);
+    return "";
+  }
+--- 2782,2830 ----
+  	      *l = 7;
+  	      return (AS2 (mov,__tmp_reg__,r26)  CR_TAB
+  		      AS2 (mov,__zero_reg__,r27) CR_TAB
+! 		      AS2 (adiw,r26,%o0+1)       CR_TAB
+  		      AS2 (st,X,__zero_reg__)    CR_TAB
++ 		      AS2 (st,-X,__tmp_reg__)    CR_TAB
+  		      AS1 (clr,__zero_reg__)     CR_TAB
+! 		      AS2 (sbiw,r26,%o0));
+  	    }
+  	  *l = 4;
+! 	  return (AS2 (adiw,r26,%o0+1) CR_TAB
+! 		  AS2 (st,X,%B1)       CR_TAB
+! 		  AS2 (st,-X,%A1)      CR_TAB
+! 		  AS2 (sbiw,r26,%o0));
+  	}
+!       return *l=2, (AS2 (std,%B0,%B1)    CR_TAB
+! 		    AS2 (std,%A0,%A1));
+      }
+    else if (GET_CODE (base) == PRE_DEC) /* (--R) */
+      return *l=2, (AS2 (st,%0,%B1) CR_TAB
+  		  AS2 (st,%0,%A1));
+    else if (GET_CODE (base) == POST_INC) /* (R++) */
+!     {
+!       if (mem_volatile_p)
+! 	{
+! 	  if (REGNO (XEXP (base, 0)) == REG_X)
+! 	    {
+! 	      *l = 4;
+! 	      return (AS2 (adiw,r26,1)  CR_TAB
+! 		      AS2 (st,X,%B1)    CR_TAB
+! 		      AS2 (st,-X,%A1)   CR_TAB
+! 		      AS2 (adiw,r26,2));
+! 	    }
+! 	  else
+! 	    {
+! 	      *l = 3;
+! 	      return (AS2 (std,%p0+1,%B1) CR_TAB
+! 		      AS2 (st,%p0,%A1)    CR_TAB
+! 		      AS2 (adiw,%r0,2));
+! 	    }
+! 	}
+! 
+!       *l = 2;
+!       return (AS2 (st,%0,%A1)  CR_TAB
+! 	      AS2 (st,%0,%B1));
+!     }
+    fatal_insn ("unknown move insn:",insn);
+    return "";
+  }
+
+
+
+avr-gcc-list at http://avr1.org
+
