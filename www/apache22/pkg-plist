@@ -25,7 +25,6 @@ include/apache/http_protocol.h
 include/apache/http_request.h
 include/apache/http_vhost.h
 include/apache/httpd.h
-include/apache/md5.h
 include/apache/multithread.h
 include/apache/os.h
 include/apache/rfc1413.h
@@ -68,7 +67,6 @@ www/cgi-bin.default/test-cgi
 www/data.default/apache_pb.gif
 www/data.default/index.html
 www/data.default/manual/LICENSE
-www/data.default/manual/TODO
 www/data.default/manual/bind.html
 www/data.default/manual/cgi_path.html
 www/data.default/manual/content-negotiation.html
@@ -104,7 +102,6 @@ www/data.default/manual/misc/footer.html
 www/data.default/manual/misc/header.html
 www/data.default/manual/misc/howto.html
 www/data.default/manual/misc/index.html
-www/data.default/manual/misc/known_bugs.html
 www/data.default/manual/misc/known_client_problems.html
 www/data.default/manual/misc/nopgp.html
 www/data.default/manual/misc/perf-bsd44.html
