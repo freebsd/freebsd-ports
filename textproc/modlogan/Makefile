@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	modlogan
-PORTVERSION=	0.8.7
+PORTVERSION=	0.8.9
 CATEGORIES=	textproc www
 MASTER_SITES=	http://jan.kneschke.de/projects/modlogan/download/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -45,7 +45,7 @@ CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" CFLAGS="${CFLAGS}" CPPFL
 
 MAN1=		modlogan.1
 DOC1=		faq.txt glosar manual.txt translations.txt \
-		using-plugins.txt writing-plugins.txt Changes-0.8.0.txt
+		using-plugins.txt writing-plugins.txt
 
 post-patch:
 	@${REINPLACE_CMD} -e 's:\@config_path\@:${PREFIX}/etc/modlogan:g' ${WRKSRC}/doc/modlogan.conf-dist.in
