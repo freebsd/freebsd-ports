@@ -136,7 +136,7 @@ bin/xscreensaver-hacks/xsublim
 bin/xscreensaver-hacks/xteevee
 bin/xscreensaver-hacks/zoom
 %%GNOME:%%share/gnome/control-center/Desktop/screensaver-properties.desktop
-%%GNOME:%%share/gnome/gnome/apps/Settings/Desktop/screensaver-properties.desktop
+%%GNOME:%%share/gnome/apps/Settings/Desktop/screensaver-properties.desktop
 %%GNOME:%%share/gnome/pixmaps/screensaver-cmndln.xpm
 %%GNOME:%%share/gnome/pixmaps/screensaver-colorselector.xpm
 %%GNOME:%%share/gnome/pixmaps/screensaver-diagnostic.xpm
