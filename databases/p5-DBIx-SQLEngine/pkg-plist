@@ -1,31 +1,44 @@
 %%SITE_PERL%%/DBIx/SQLEngine.pm
-%%SITE_PERL%%/DBIx/SQLEngine/AnyData.pm
-%%SITE_PERL%%/DBIx/SQLEngine/CSV.pm
 %%SITE_PERL%%/DBIx/SQLEngine/Criteria.pm
 %%SITE_PERL%%/DBIx/SQLEngine/Criteria/And.pm
 %%SITE_PERL%%/DBIx/SQLEngine/Criteria/Comparison.pm
 %%SITE_PERL%%/DBIx/SQLEngine/Criteria/Compound.pm
+%%SITE_PERL%%/DBIx/SQLEngine/Criteria/Equality.pm
+%%SITE_PERL%%/DBIx/SQLEngine/Criteria/Greater.pm
 %%SITE_PERL%%/DBIx/SQLEngine/Criteria/HashGroup.pm
+%%SITE_PERL%%/DBIx/SQLEngine/Criteria/Lesser.pm
+%%SITE_PERL%%/DBIx/SQLEngine/Criteria/Like.pm
 %%SITE_PERL%%/DBIx/SQLEngine/Criteria/LiteralSQL.pm
 %%SITE_PERL%%/DBIx/SQLEngine/Criteria/Not.pm
 %%SITE_PERL%%/DBIx/SQLEngine/Criteria/NumericLesser.pm
 %%SITE_PERL%%/DBIx/SQLEngine/Criteria/Or.pm
+%%SITE_PERL%%/DBIx/SQLEngine/Criteria/StringComparison.pm
 %%SITE_PERL%%/DBIx/SQLEngine/Criteria/StringEquality.pm
-%%SITE_PERL%%/DBIx/SQLEngine/Criteria/unfinished_code
 %%SITE_PERL%%/DBIx/SQLEngine/Docs/Changes.pod
 %%SITE_PERL%%/DBIx/SQLEngine/Docs/ReadMe.pod
+%%SITE_PERL%%/DBIx/SQLEngine/Docs/Related.pod
 %%SITE_PERL%%/DBIx/SQLEngine/Docs/ToDo.pod
-%%SITE_PERL%%/DBIx/SQLEngine/File.pm
-%%SITE_PERL%%/DBIx/SQLEngine/MSSQL.pm
+%%SITE_PERL%%/DBIx/SQLEngine/Driver/AnyData.pm
+%%SITE_PERL%%/DBIx/SQLEngine/Driver/CSV.pm
+%%SITE_PERL%%/DBIx/SQLEngine/Driver/File.pm
+%%SITE_PERL%%/DBIx/SQLEngine/Driver/MSSQL.pm
+%%SITE_PERL%%/DBIx/SQLEngine/Driver/Mysql.pm
+%%SITE_PERL%%/DBIx/SQLEngine/Driver/NullP.pm
+%%SITE_PERL%%/DBIx/SQLEngine/Driver/Oracle.pm
+%%SITE_PERL%%/DBIx/SQLEngine/Driver/Pg.pm
+%%SITE_PERL%%/DBIx/SQLEngine/Driver/SQLite.pm
 %%SITE_PERL%%/DBIx/SQLEngine/Mixin/SeqTable.pm
-%%SITE_PERL%%/DBIx/SQLEngine/Mysql.pm
-%%SITE_PERL%%/DBIx/SQLEngine/Pg.pm
-%%SITE_PERL%%/DBIx/SQLEngine/SQLite.pm
+%%SITE_PERL%%/DBIx/SQLEngine/Schema/Column.pm
+%%SITE_PERL%%/DBIx/SQLEngine/Schema/ColumnSet.pm
+%%SITE_PERL%%/DBIx/SQLEngine/Schema/Table.pm
+%%SITE_PERL%%/DBIx/SQLEngine/Schema/TableSet.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/SQLEngine/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/SQLEngine
 @unexec rmdir %D%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx 2>/dev/null || true
-@dirrm %%SITE_PERL%%/DBIx/SQLEngine/Mixin
-@dirrm %%SITE_PERL%%/DBIx/SQLEngine/Docs
 @dirrm %%SITE_PERL%%/DBIx/SQLEngine/Criteria
+@dirrm %%SITE_PERL%%/DBIx/SQLEngine/Docs
+@dirrm %%SITE_PERL%%/DBIx/SQLEngine/Driver
+@dirrm %%SITE_PERL%%/DBIx/SQLEngine/Mixin
+@dirrm %%SITE_PERL%%/DBIx/SQLEngine/Schema
 @dirrm %%SITE_PERL%%/DBIx/SQLEngine
 @unexec rmdir %D%%SITE_PERL%%/DBIx 2>/dev/null || true
