@@ -6,5 +6,6 @@ FD for unix by shirai@red.nintendo.co.jp, and it is a clone of
 FD for DOS (AT and PC9801) designed by A. Idei (SDI00544@niftyserve.or.jp).
 
       Currently, the man page is available only in Japanese, but it's
-    easy to use. Setting `LANG' environment to 'C' you can use english help.
+    easy to use. Setting `FD_LANGUAGE' environment to 'english' you can 
+    use English help.
                                      -- nobu@psrc.isac.co.jp
