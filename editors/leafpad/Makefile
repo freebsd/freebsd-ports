@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	leafpad
-PORTVERSION=	0.7.4
+PORTVERSION=	0.7.5
 CATEGORIES=	editors
 MASTER_SITES=	http://tarot.freeshell.org/leafpad/
 
@@ -32,8 +32,9 @@ PLIST_SUB+=	NLS:="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/pixmaps|/${PORTNAME}|g' \
-		${WRKSRC}/Makefile.in ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e 's|/pixmaps|/gnome/pixmaps|; \
+		s|/applications|/gnome/applications|' \
+			${WRKSRC}/Makefile.in ${WRKSRC}/src/Makefile.in
 
 .ifndef (NOPORTDOCS)
 post-install:
