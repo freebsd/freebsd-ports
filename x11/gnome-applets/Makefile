@@ -16,20 +16,17 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Applets components for the Gnome 2.0 Desktop Environment
 
-LIB_DEPENDS=	panel-applet-2.0:${PORTSDIR}/x11/gnomepanel \
-		gailutil.17:${PORTSDIR}/x11-toolkits/gail \
-		gtop-2.0:${PORTSDIR}/devel/libgtop2
+LIB_DEPENDS=	gtop-2.0:${PORTSDIR}/devel/libgtop2
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-USE_GNOMENG=	yes
-USE_GNOME=	gnomehier gnomeprefix gnomehack
+USE_GNOME_DESKTOP=2
+USE_GNOME=	gnomehier gnomeprefix gnomehack gnomepanel gail
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 .include <bsd.port.pre.mk>
 

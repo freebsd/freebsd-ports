@@ -26,7 +26,7 @@ LIB_DEPENDS+=	fam.0:${PORTSDIR}/devel/fam
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
+GNOME_DESKTOP_VERSION=1
 USE_GNOME=	gnomehack gnomeprefix gnomehier libpanel libghttp bonobo \
 		gnomevfs
 INSTALLS_SHLIB=	yes

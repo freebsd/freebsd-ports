@@ -19,7 +19,7 @@ COMMENT=	Core component for the Gnome Desktop Environment
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
+GNOME_DESKTOP_VERSION=1
 USE_GNOME=	gnomehack gnomeprefix gnomehier libcapplet libglade gnomeaudio \
 		libpanel
 INSTALLS_SHLIB=	yes

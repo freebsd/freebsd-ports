@@ -16,7 +16,7 @@ COMMENT=	A library for writing custom applets for GNOME Panel
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
+GNOME_DESKTOP_VERSION=1
 USE_GNOME=	gnomelibs
 INSTALLS_SHLIB=	yes
 MAKE_ENV=	X11BASE="${X11BASE}" LOCALBASE="${LOCALBASE}"

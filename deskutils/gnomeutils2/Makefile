@@ -17,18 +17,15 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME 2.0 support utilities
 
-LIB_DEPENDS=	panel-applet-2.0:${PORTSDIR}/x11/gnomepanel
-
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomehier
+GNOME_DESKTOP_VERSION=2
+USE_GNOME=	gnomeprefix gnomehack gnomehier gnomepanel
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 MAN1=	gnome-calculator.1 \
 	gnome-character-map.1 gnome-dictionary.1 \
