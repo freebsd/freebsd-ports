@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	delegate
-PORTVERSION=	7.5.4
+PORTVERSION=	7.7.0
 CATEGORIES=	net www
-MASTER_SITES=	ftp://www.delegate.org/pub/DeleGate/ \
+MASTER_SITES=	ftp://ftp.delegate.org/pub/DeleGate/ \
 		ftp://ftp.etl.go.jp/pub/DeleGate/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
