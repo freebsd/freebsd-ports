@@ -1,16 +1,16 @@
-# New ports collection makefile for:	Ruby-libwrap
+# New ports collection makefile for:	Ruby-tcpwrap
 # Date created:		15 Aug 2000
 # Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	libwrap
+PORTNAME=	tcpwrap
 PORTVERSION=	0.1
 CATEGORIES=	security ruby
-MASTER_SITES=	http://www.ruby-lang.org/~shugo/libwrap-ruby/
+MASTER_SITES=	http://www.ruby-lang.org/~shugo/ruby-tcpwrap/
 PKGNAMEPREFIX=	ruby-
-DISTNAME=	${PORTNAME}-ruby-${PORTVERSION}
+DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
@@ -23,31 +23,37 @@ LIB_DEPENDS=	wrap.7:${PORTSDIR}/security/tcp_wrapper
 RUN_DEPENDS=	ruby:${PORTSDIR}/lang/ruby
 
 INSTALL_TARGET=	site-install
+CONFIGURE_ARGS=	--with-ident-dir="${LOCALBASE}"
+.if !exists(/usr/include/tcpd.h)
+CONFIGURE_ARGS+=	--with-libwrap-dir="/usr"
+.else
+CONFIGURE_ARGS+=	--with-libwrap-dir="${LOCALBASE}"
+.endif
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-ruby
+WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME}
 PLIST_SUB=	RUBY_VER="${RUBY_VER}" RUBY_ARCH="${RUBY_ARCH}"
 
 RUBY?=		${LOCALBASE}/bin/ruby
 RUBY_VER?=	1.4
 RUBY_ARCH?=	${ARCH}-freebsd${OSREL}
 
-DOCS_EN=	README.en	doc/en/tcpd.html
-DOCS_JA=	README.ja	doc/ja/tcpd.html
+DOCS_EN=	README.en	doc/tcpwrap.html.en
+DOCS_JA=	README.ja	doc/tcpwrap.html.ja
 
 do-configure:
 	@cd ${WRKSRC}; \
-	${SETENV} ${CONFIGURE_ENV} ${RUBY} extconf.rb
+	${SETENV} ${CONFIGURE_ENV} ${RUBY} extconf.rb ${CONFIGURE_ARGS}
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/examples/ruby/tcpd
-	${INSTALL_DATA} ${WRKSRC}/sample/echod.rb ${PREFIX}/share/examples/ruby/tcpd/
-	${MKDIR} ${PREFIX}/share/doc/ruby/tcpd/ja
+	${MKDIR} ${PREFIX}/share/examples/ruby/tcpwrap
+	${INSTALL_DATA} ${WRKSRC}/sample/echod.rb ${PREFIX}/share/examples/ruby/tcpwrap/
+	${MKDIR} ${PREFIX}/share/doc/ruby/tcpwrap/ja
 .for f in ${DOCS_EN}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/ruby/tcpd/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/ruby/tcpwrap/
 .endfor
 .for f in ${DOCS_JA}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/ruby/tcpd/ja/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/ruby/tcpwrap/ja/
 .endfor
 .endif
 
