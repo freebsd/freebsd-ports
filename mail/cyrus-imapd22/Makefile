@@ -8,10 +8,10 @@
 PORTNAME=	cyrus-imapd
 PORTVERSION= 	2.2.0.a
 #PORTREVISION=	0
-DISTNAME=	${PORTNAME}-2.2.0-ALPHA
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		ftp://ftp.hanse.de/sites/transit/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/
+DISTNAME=	${PORTNAME}-2.2.0-ALPHA
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	The cyrus mail server, supporting POP3 and IMAP4 protocols
@@ -180,7 +180,7 @@ post-install:
 		@${ECHO} share/doc/cyrus-imapd22/${file}.html >>${TMPPLIST}
 .endfor
 .for file in ${MAN1} ${MAN3} ${MAN5} ${MAN8}
-		ofile=`echo ${file} | sed s/cyrquota/quota/`; \
+		ofile=`echo ${file} | ${SED} s/cyrquota/quota/`; \
 		if [ -f ${WRKSRC}/doc/man/$${ofile}.html ]; then \
 		${INSTALL_DATA} ${WRKSRC}/doc/man/$${ofile}.html \
 			${DOCSDIR}/man/$${ofile}.html; \

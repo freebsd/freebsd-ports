@@ -141,7 +141,7 @@ post-install:
 		@${ECHO} share/doc/cyrus-imapd2/${file}.html >>${TMPPLIST}
 .endfor
 .for file in ${MAN1} ${MAN3} ${MAN5} ${MAN8}
-		ofile=`echo ${file} | sed s/cyrquota/quota/`; \
+		ofile=`echo ${file} | ${SED} s/cyrquota/quota/`; \
 		if [ -f ${WRKSRC}/doc/man/$${ofile}.html ]; then \
 		${INSTALL_DATA} ${WRKSRC}/doc/man/$${ofile}.html \
 			${PREFIX}/share/doc/cyrus-imapd2/man/$${ofile}.html; \
