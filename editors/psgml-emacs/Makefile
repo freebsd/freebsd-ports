@@ -3,7 +3,7 @@
 # Date created:		23 January 1999
 # Whom:			shige
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/02/12 14:43:41 kuriyama Exp $
 #
 
 DISTNAME=	psgml-1.1.6
@@ -66,7 +66,6 @@ PLIST_SUB=	EMACS_LIBDIR=${EMACS_LIBDIR} EMACS_VER=${EMACS_VER}
 # main configurations
 #
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-emacs="${EMACS_CMD}"
 RUN_DEPENDS+=	${CATALOG}:${PORTSDIR}/textproc/dtd-catalogs
 
 pre-configure:
