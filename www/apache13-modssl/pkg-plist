@@ -723,7 +723,7 @@ www/icons/world2.png
 @unexec if [ -L %D/www/cgi-bin ]; then rm -f %D/www/cgi-bin; fi
 @unexec if [ -L %D/www/data ]; then rm -f %D/www/data; fi
 @exec cd %D/etc/apache/ssl.crt && make >/dev/null 2>&1
-@unexec rm -f %D/etc/apache/ssl.crt/[0-9a-fA-F]*.[0-9]*
+@unexec for i in %D/etc/apache/ssl.crt/[0-9a-fA-F]*.[0-9]*; do if [ -L $i ]; then rm -f $i; fi; done
 @dirrm etc/apache/ssl.crt
 @dirrm etc/apache/ssl.crl
 @dirrm etc/apache/ssl.csr
