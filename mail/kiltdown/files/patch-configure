@@ -1,0 +1,10 @@
+--- configure.orig	Mon May 14 05:25:23 2001
++++ configure	Sat Jul 14 07:43:13 2001
+@@ -337,7 +337,6 @@
+     echo
+     echo
+     
+-    exit 1;
+ fi
+ echo ok.
+ 
