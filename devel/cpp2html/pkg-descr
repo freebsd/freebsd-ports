@@ -1,0 +1,5 @@
+This is a simple program that, given a source C/C++ file, produces a
+HTML source with syntax highlighting.
+
+- George Reid
+greid@ukug.uk.freebsd.org
