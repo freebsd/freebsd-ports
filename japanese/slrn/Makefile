@@ -1,5 +1,5 @@
 # New ports collection makefile for:	ja-slrn
-# Version required:   0.9.6.2.jp1
+# Version required:	0.9.6.2jp0
 # Date created:		6 Sept 1999
 # Whom:			Takashi Mega <mega@minz.org>
 #
