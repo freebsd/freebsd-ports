@@ -1,0 +1,17 @@
+include/%%PYTHON_VERSION%%/CXX/Config.hxx
+include/%%PYTHON_VERSION%%/CXX/Exception.hxx
+include/%%PYTHON_VERSION%%/CXX/Extensions.hxx
+include/%%PYTHON_VERSION%%/CXX/IndirectPythonInterface.hxx
+include/%%PYTHON_VERSION%%/CXX/Objects.hxx
+@dirrm include/%%PYTHON_VERSION%%/CXX
+lib/%%PYTHON_VERSION%%/site-packages/CXX/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/CXX/__init__.pyc
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/CXX
+share/%%PYTHON_VERSION%%/CXX/IndirectPythonInterface.cxx
+share/%%PYTHON_VERSION%%/CXX/cxx_extensions.cxx
+share/%%PYTHON_VERSION%%/CXX/cxxextensions.c
+share/%%PYTHON_VERSION%%/CXX/cxxsupport.cxx
+@dirrm share/%%PYTHON_VERSION%%/CXX
+@dirrm share/%%PYTHON_VERSION%%
+%%PORTDOCS%%share/doc/cxx/PyCXX.html
+%%PORTDOCS%%@dirrm share/doc/cxx

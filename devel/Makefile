@@ -446,6 +446,7 @@
     SUBDIR += pth-devel
     SUBDIR += ptl
     SUBDIR += py-coro
+    SUBDIR += py-cxx
     SUBDIR += py-functional
     SUBDIR += py-game
     SUBDIR += py-grouch
