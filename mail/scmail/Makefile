@@ -10,7 +10,7 @@ PORTVERSION=	0.2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.namazu.org/~satoru/scmail/
 
-MAINTAINER=	fuyuki@hadaly.org
+MAINTAINER=	fuyuki@nigredo.org
 COMMENT=	A mail filter written in Scheme
 
 BUILD_DEPENDS=	gosh:${PORTSDIR}/lang/gauche
