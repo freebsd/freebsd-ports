@@ -4,6 +4,3 @@ reference-count based memory management, circular references will cause
 memory leaks.
 
 WWW: http://search.cpan.org/dist/Devel-Cycle/
-
--- Sergey Skvortsov
-skv@FreeBSD.org
