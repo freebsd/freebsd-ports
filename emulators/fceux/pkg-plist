@@ -1,14 +1,9 @@
 bin/fceu
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/FAQ
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/cheat.html
+%%PORTDOCS%%%%DOCSDIR%%/faq.html
 %%PORTDOCS%%%%DOCSDIR%%/fceultra.html
+%%PORTDOCS%%%%DOCSDIR%%/fcm.txt
 %%PORTDOCS%%%%DOCSDIR%%/fcs.txt
-%%PORTDOCS%%%%DOCSDIR%%/porting.txt
 %%PORTDOCS%%%%DOCSDIR%%/protocol.txt
 %%PORTDOCS%%%%TECHDOCS%%%%DOCSDIR%%/tech/README.now
 %%PORTDOCS%%%%TECHDOCS%%%%DOCSDIR%%/tech/README.sound
@@ -22,12 +17,14 @@ bin/fceu
 %%PORTDOCS%%%%TECHDOCS%%%%DOCSDIR%%/tech/exp/SMB2j.txt
 %%PORTDOCS%%%%TECHDOCS%%%%DOCSDIR%%/tech/exp/mmc5-e.txt
 %%PORTDOCS%%%%TECHDOCS%%%%DOCSDIR%%/tech/exp/mmc5_bank_switch.txt
+%%PORTDOCS%%%%TECHDOCS%%%%DOCSDIR%%/tech/exp/namco.txt
+%%PORTDOCS%%%%TECHDOCS%%%%DOCSDIR%%/tech/exp/taito.txt
 %%PORTDOCS%%%%TECHDOCS%%%%DOCSDIR%%/tech/exp/tengen.txt
 %%PORTDOCS%%%%TECHDOCS%%%%DOCSDIR%%/tech/exp/vrcvi.txt
 %%PORTDOCS%%%%TECHDOCS%%%%DOCSDIR%%/tech/exp/vrcvii.txt
+%%PORTDOCS%%%%TECHDOCS%%%%DOCSDIR%%/tech/ppu/2C02_technical_operation.TXT
 %%PORTDOCS%%%%TECHDOCS%%%%DOCSDIR%%/tech/ppu/loopy1.txt
 %%PORTDOCS%%%%TECHDOCS%%%%DOCSDIR%%/tech/ppu/loopy2.txt
-%%PORTDOCS%%%%TECHDOCS%%%%DOCSDIR%%/tech/ppu/2C02_technical_operation.TXT
 %%PORTDOCS%%%%TECHDOCS%%@dirrm %%DOCSDIR%%/tech/ppu
 %%PORTDOCS%%%%TECHDOCS%%@dirrm %%DOCSDIR%%/tech/exp
 %%PORTDOCS%%%%TECHDOCS%%@dirrm %%DOCSDIR%%/tech/cpu

@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	fceu
-PORTVERSION=	0.97.5
-PORTREVISION=	2
+PORTVERSION=	0.98.8
 CATEGORIES=	emulators
-MASTER_SITES=	http://xodnizel.net/fceultra/downloads/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	fceultra
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	gibbon@cocoa.freemail.ne.jp
@@ -20,20 +20,21 @@ MAN6=		fceu.6
 WRKSRC=		${WRKDIR}/fceu
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-MAKEFILE=	Makefile.unixsdl
-USE_REINPLACE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
-DOCS=		AUTHORS COPYING ChangeLog FAQ README TODO \
-		cheat.html fceultra.html fcs.txt porting.txt protocol.txt
+DOCS=		cheat.html faq.html fceultra.html fcm.txt fcs.txt protocol.txt
 TECHDOCS=	README.now README.sound UNIF_current.txt nsfspec.txt
 TECHCPUDOC=	4017.txt 6502_cpu.txt NESSOUND-4th.txt NESSOUND.txt dmc.txt
-TECHEXPDOCS=	SMB2j.txt mmc5-e.txt mmc5_bank_switch.txt tengen.txt \
-		vrcvi.txt vrcvii.txt
+TECHEXPDOCS=	SMB2j.txt mmc5-e.txt mmc5_bank_switch.txt namco.txt taito.txt \
+		tengen.txt vrcvi.txt vrcvii.txt
 TECHPPUDOCS=	"2C02_technical_operation.TXT" loopy1.txt loopy2.txt
+
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_OPTIMIZED_FLAGS)
 CFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double
-.if (${MACHINE_ARCH} == "i386")
+.if (${ARCH} == "i386")
 CFLAGS+=	-ffast-math -mfancy-math-387
 .endif # i386
 .endif
@@ -53,22 +54,11 @@ PLIST_SUB=	TECHDOCS=""
 PLIST_SUB=	TECHDOCS="@comment "
 .endif
 
-.include <bsd.port.pre.mk>
-
-post-patch:
-.if (${MACHINE_ARCH} != "i386")
-# do I have to do this for ia64 and amd64 too?
-	@${REINPLACE_CMD} -e 's|-DC80x86||g;' ${WRKSRC}/Makefile.unixsdl
-.if (${MACHINE_ARCH} == "sparc64")
-	@${REINPLACE_CMD} -e 's|-DLSB_FIRST||g;' ${WRKSRC}/Makefile.unixsdl
-.endif
-.endif
-
 pre-build:
 	@${CP} ${WRKSRC}/Documentation/fceu-sdl.6 ${WRKSRC}/Documentation/fceu.6
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/fceu ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/fceu ${PREFIX}/bin
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
