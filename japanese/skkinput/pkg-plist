@@ -1,6 +1,6 @@
 bin/skkinput
 lib/X11/app-defaults/Skkinput
-man/ja_JP.EUC/man1/skkinput.1.gz
+man/ja/man1/skkinput.1.gz
 share/doc/skkinput/BUGS.jis
 share/doc/skkinput/CHANGES.jis
 share/doc/skkinput/FAQ.jis

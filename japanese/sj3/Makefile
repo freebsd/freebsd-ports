@@ -3,7 +3,7 @@
 # Date created:		10 Aug 1996
 # Whom:			Hidekazu Kuroki <hidekazu@cs.titech.ac.jp>
 #
-# $Id: Makefile,v 1.4 1996/11/13 12:41:12 asami Exp $
+# $Id: Makefile,v 1.5 1997/09/14 21:35:56 max Exp $
 #
 
 DISTNAME=	sj3-2.0.1.13
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.sony.co.jp/pub/unsupported/src/ \
 MAINTAINER=	hidekazu@cs.titech.ac.jp
 
 MAN1=		sj3.1 sj3dic.1 sj3mkdic.1 sj3serv.1
-MANLANG=	ja_JP.EUC
+MANLANG=	ja
 
 # This port requires xmkmf but installs in /usr/local
 #

@@ -3,7 +3,7 @@
 @@ -1,5 +1,7 @@
  XCOMM $ Imakefile for skkinput,v 0.10 96/10/16 12:45 $
  
-+MANDIR	=	${PREFIX}/man/ja_JP.EUC/man1
++MANDIR	=	${PREFIX}/man/ja/man1
 +
  /* SKK Server Address */
  #define SkkServer	localhost

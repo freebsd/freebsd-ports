@@ -2,7 +2,7 @@ bin/jweblint
 lib/perl/jcode.pl
 lib/perl/html-ext.pl
 lib/perl/htmli18n.pl
-man/ja_JP.EUC/man1/jweblint.1.gz
+man/ja/man1/jweblint.1.gz
 share/doc/jweblint/warnings.html
 share/doc/jweblint/jmanpage.html
 @dirrm share/doc/jweblint

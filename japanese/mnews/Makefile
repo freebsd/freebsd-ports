@@ -3,7 +3,7 @@
 # Date created:			23 Sep 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.9 1997/09/14 21:35:02 max Exp $
+# $Id: Makefile,v 1.10 1998/03/20 17:40:11 itojun Exp $
 #
 
 DISTNAME=	mnews121
@@ -14,7 +14,7 @@ MAINTAINER=	kiroh@kh.rim.or.jp
 
 WRKSRC=		${WRKDIR}/mnews-1.21/build
 MAN1=		mnews.1
-MANLANG=	ja_JP.EUC
+MANLANG=	ja
 
 DOCS=		FAQ.doc board.doc gnspool.doc mnews.doc prerel.doc	\
 		present.doc read1ST.doc readme.doc update.doc youbin.doc
@@ -42,7 +42,7 @@ do-install:
 .for f in ${SAMPLES}
 	${INSTALL_DATA} ${WRKSRC}/../etc/$f ${PREFIX}/share/examples/mnews
 .endfor
-	${INSTALL_MAN} ${WRKSRC}/../doc/mnews.1 ${PREFIX}/man/ja_JP.EUC/man1
+	${INSTALL_MAN} ${WRKSRC}/../doc/mnews.1 ${PREFIX}/man/ja/man1
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/mnews
 .for f in ${DOCS}
