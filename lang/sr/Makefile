@@ -3,7 +3,7 @@
 # Date created:			2 Jun 1997
 # Whom:				Ruslan Shevchenko <rssh@satori.ipri.kiev.ua>
 #
-# $Id: Makefile,v 1.3 1997/06/29 09:29:03 obrien Exp $
+# $Id: Makefile,v 1.4 1998/10/14 04:10:03 jseger Exp $
 #
 
 DISTNAME=	sr
@@ -13,8 +13,6 @@ MASTER_SITES=	ftp://ftp.cs.arizona.edu/sr/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	rssh@cki.ipri.kiev.ua
-
-BROKEN_ELF=	yes
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	prefix

@@ -1,0 +1,22 @@
+diff -udr work.origin/csw/asm.c work/csw/asm.c
+--- csw/asm.c.orig	Mon Nov 22 23:18:14 1993
++++ csw/asm.c	Wed May 12 05:05:46 1999
+@@ -8,7 +8,17 @@
+ 
+ #include "../arch.h"
+ 
+-#ifdef __svr4__		/* if SVR4 (including Solaris 2.x) */
++#ifdef __FreeBSD__
++#if __FreeBSD__ >= 2
++#include <osreldate.h>
++#if __FreeBSD_version >= 300004
++#define __elf__
++#endif
++#endif
++#endif
++
++	/* if SVR4 (including Solaris 2.x)  or FreeBSD-elf */
++#if defined(__svr4__) || defined (__elf__)
+ #define SR_BUILD_CONTEXT	sr_build_context
+ #define SR_CHG_CONTEXT		sr_chg_context
+ #define SR_CHECK_STK		sr_check_stk
