@@ -20,8 +20,6 @@ BUILD_DEPENDS+=	xmms-config:${PORTSDIR}/audio/xmms
 LIB_DEPENDS+=	xmms.1:${PORTSDIR}/audio/xmms
 .endif
 
-ONLY_FOR_ARCHS=	i386
-
 USE_LIBTOOL=	yes
 USE_AUTOMAKE=	yes
 USE_AUTOCONF=	yes
