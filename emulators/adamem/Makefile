@@ -13,6 +13,8 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	karlj000@unbc.ca
 
+BROKEN=		"Does not compile"
+
 USE_XLIB=	yes
 USE_X_PREFIX=	yes
 ALL_TARGET=	x

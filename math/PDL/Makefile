@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	PDL pdl
 
 MAINTAINER=	ports@FreeBSD.org
 
+BROKEN=		"Does not compile"
+
 BUILD_DEPENDS=	${PERL_SITELIBDIR}/${PERL_ARCH}/PGPLOT.pm:${PORTSDIR}/graphics/pgperl \
 		${PERL_SITELIBDIR}/ExtUtils/F77.pm:${PORTSDIR}/lang/p5-F77 \
 		${PERL_SITELIBDIR}/Inline.pm:${PORTSDIR}/devel/p5-Inline \
