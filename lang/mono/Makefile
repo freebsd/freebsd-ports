@@ -38,7 +38,7 @@ ONLY_FOR_ARCHS=	i386
 .if ${OSVERSION} < 500000
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-signbit
 .else
-BROKEN=	"Does not work on -CURRENT with garbage collection enabled"
+IGNORE=	"Does not work on -CURRENT with garbage collection enabled"
 .endif
 
 post-patch:
