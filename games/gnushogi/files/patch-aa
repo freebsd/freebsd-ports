@@ -1,5 +1,5 @@
 --- src/Makefile.orig	Wed May 24 07:05:26 1995
-+++ src/Makefile	Fri Jan  3 02:57:59 1997
++++ src/Makefile	Sun Apr 29 21:39:00 2001
 @@ -41,22 +41,22 @@
  DIST=   ../README-$(VERS) ../doc ../misc ../src
  
@@ -27,13 +27,22 @@
  
  # Programs being distributed
  PROGS=gnushogi-$(VERS)
+@@ -76,7 +76,7 @@
+ #CC= c89 $(OPT) $(GENOPT)
+ # Use this if you are lucky enough to have GNU CC.
+ #CC=	/usr/pub/bin/gcc -fsigned-char $(OPT) $(GENOPT)
+-CC=	gcc -W -fsigned-char $(OPT) $(GENOPT)
++CC+=	-W -fsigned-char $(OPT) $(GENOPT)
+ #CC=	cc $(OPT) $(GENOPT)
+ 
+ # Miscellaneous CFLAGS. Uncomment the one you need and comment the other
 @@ -96,7 +96,8 @@
  #CFLAGS= -O2 -funroll-loops -traditional-cpp -DNO_STRING_INCLUDE -DNOFIONREAD # gnu cc  2.00 (hawk)
  #CFLAGS= -O2 -funroll-loops -DSEVENBIT # djgpp
  #CFLAGS= -g -funroll-loops # gnu cc 2.00 on SunOS with debug
 -CFLAGS= -O2 -funroll-loops # gnu cc 2.00 on SunOS
 +#CFLAGS= -O2 -funroll-loops # gnu cc 2.00 on SunOS
-+CFLAGS= -O2 -pipe -fno-strength-reduce
++CFLAGS+=-fno-strength-reduce
  
  # flags for DJGPP package
  #COFF2EXE= coff2exe $(GNUSHOGI)
