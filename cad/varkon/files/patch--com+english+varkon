@@ -29,7 +29,7 @@
  # The VARKON documentation (*.htm)
  
 -VARKON_DOC=$VARKON_ROOT/man
-+VARKON_DOC=%%DOCSDIR%%/man
++VARKON_DOC=%%DOCSDIR%%
  export VARKON_DOC
  
  # System module library   (*.MBO)
