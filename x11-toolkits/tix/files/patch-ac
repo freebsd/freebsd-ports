@@ -1,67 +1,11 @@
---- unix-tk4.1/Makefile.in.orig	Wed Oct  2 03:47:57 1996
-+++ unix-tk4.1/Makefile.in	Sun Dec 22 16:19:46 1996
-@@ -28,7 +28,7 @@
+--- unix-tk4.1/Makefile.in.orig	Sat Dec 28 06:15:15 1996
++++ unix-tk4.1/Makefile.in	Mon Dec 30 19:29:02 1996
+@@ -31,7 +31,7 @@
  # Directory in which to install the library of Tix scripts and demos
  # (note: you can set the TIX_LIBRARY environment variable at run-time to
  # override the compiled-in location):
--TIX_LIBRARY =	$(prefix)/lib/tix
-+TIX_LIBRARY =	$(prefix)/share/tix
+-TIX_LIBRARY =	$(prefix)/lib/tix$(TIX_VERSION)
++TIX_LIBRARY =	$(prefix)/share/tix$(TIX_VERSION)
  
  # Directory in which to install the archive libtix.a:
  LIB_DIR =	$(exec_prefix)/lib
-@@ -105,9 +105,9 @@
-     $(X11_LIB_SWITCHES) $(DL_LIBS) \
-     @LIBS@ @MATH_LIBS@
- 
--TIX_SHLIB = libtix${SHLIB_SUFFIX}
-+TIX_SHLIB = libtix$(SHLIB_SUFFIX).$(TIX_VERSION)
- 
--LIBS_S = $(TIX_SHLIB) @TK_BUILD_LIB_SPEC@ @TCL_BUILD_LIB_SPEC@ \
-+LIBS_S = -ltix @TK_BUILD_LIB_SPEC@ @TCL_BUILD_LIB_SPEC@ \
-     $(X11_LIB_SWITCHES) $(DL_LIBS) \
-     @LIBS@ @MATH_LIBS@
- 
-@@ -426,8 +426,8 @@
- 	rm -f $(TIX_SHLIB) 
- 	${SHLIB_LD} $(SO_OBJS) @TIX_EXTRA_LDFLAGS@ -o $(TIX_SHLIB)
- 
--tixwish_s: tixAppInit.o libtix${SHLIB_SUFFIX}
--	$(CC) $(SO_CC_SWITCHES) tixAppInit.o @TIX_EXTRA_LDFLAGS@ $(LIBS_S) \
-+tixwish_s: tixAppInit.o ${TIX_SHLIB}
-+	$(CC) $(SO_CC_SWITCHES) tixAppInit.o @TIX_EXTRA_LDFLAGS@ -L. $(LIBS_S) \
- 	    -o tixwish_s
- 
- 
-@@ -580,15 +580,15 @@
- 		else true; \
- 		fi; \
- 	    done;
--	@echo "Installing libtix.a as $(LIB_DIR)/libtix-tk4.1.a"
--	@$(INSTALL_DATA) libtix.a $(LIB_DIR)/libtix-tk4.1.a
--	@$(RANLIB) $(LIB_DIR)/libtix-tk4.1.a
--	@echo "Installing tixwish as $(BIN_DIR)/tixwish-tk4.1"
--	@$(INSTALL_PROGRAM) tixwish $(BIN_DIR)/tixwish-tk4.1
-+	@echo "Installing libtix.a as $(LIB_DIR)/libtix.a"
-+	@$(INSTALL_DATA) libtix.a $(LIB_DIR)/libtix.a
-+	@$(RANLIB) $(LIB_DIR)/libtix.a
-+#	@echo "Installing tixwish as $(BIN_DIR)/tixwish-tk4.1"
-+#	@$(INSTALL_PROGRAM) tixwish $(BIN_DIR)/tixwish-tk4.1
- 
- TIX_VERSION = @TIX_VERSION@
- 
--INSTALL_SHLIB_NAME = $(LIB_DIR)/libtix$(TIX_VERSION)$(SHLIB_SUFFIX)
-+INSTALL_SHLIB_NAME = $(LIB_DIR)/${TIX_SHLIB}
- 
- install-shared: shared_lib
- 	@for i in $(LIB_DIR) ; \
-@@ -602,8 +602,8 @@
- 	    done;
- 	@echo "Installing $(TIX_SHLIB) as $(INSTALL_SHLIB_NAME)"
- 	@$(INSTALL_DATA) $(TIX_SHLIB) $(INSTALL_SHLIB_NAME)
--	@echo "Installing tixwish_s as $(BIN_DIR)/tixwish_s-tk4.1"
--	@$(INSTALL_PROGRAM) tixwish $(BIN_DIR)/tixwish_s-tk4.1
-+	@echo "Installing tixwish_s as $(BIN_DIR)/tixwish"
-+	@$(INSTALL_PROGRAM) tixwish_s $(BIN_DIR)/tixwish
- 
- #----------------------------------------------------------------------
- #
