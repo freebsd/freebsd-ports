@@ -623,6 +623,7 @@
     SUBDIR += p5-DB_File-Lock
     SUBDIR += p5-Data-Compare
     SUBDIR += p5-Data-Dump
+    SUBDIR += p5-Data-Dump-Streamer
     SUBDIR += p5-Data-DumpXML
     SUBDIR += p5-Data-Dumper
     SUBDIR += p5-Data-Flow
