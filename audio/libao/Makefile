@@ -37,13 +37,16 @@ USE_ESOUND=	yes
 PLIST_SUB=	ESOUND=""
 .else
 PLIST_SUB=	ESOUND="@comment "
+CONFIGURE_ARGS+= --disable-esd
 .endif
 
+# XXX  This needs a better check.
 .if exists(${LOCALBASE}/bin/artsc-config)
 LIB_DEPENDS=	artsc.0:${PORTSDIR}/audio/arts
 PLIST_SUB+=	ARTS=""
 .else
 PLIST_SUB+=	ARTS="@comment "
+CONFIGURE_ARGS+= --disable-arts
 .endif
 
 .include <bsd.port.post.mk>
