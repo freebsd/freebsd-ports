@@ -1,5 +1,5 @@
 # New ports collection makefile for:	mldonkey
-# Date created:		21 August 2002
+# Date created:		18 January 2003
 # Whom:			Holger Lamm <holger@e-gitt.net>
 #
 # $FreeBSD$
@@ -10,20 +10,39 @@ PORTVERSION=	2.02.0
 PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://ernie.eit.uni-kl.de/mldonkey/ \
-		http://savannah.nongnu.org/download/mldonkey/stable/contributed/
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/.0$/-0/}.shared.${ARCH}-${OPSYS}
+		http://savannah.nongnu.org/download/mldonkey/stable/
+PKGNAMESUFFIX=	-src
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/.0$/-0/}.sources
 
 MAINTAINER=	holger@e-gitt.net
 
-ONLY_FOR_ARCHS=	alpha i386
-USE_BZIP2=	yes
-NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-distrib-${PORTVERSION:C/.(.)$/-\1/}
+BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
-DIRNAME=	${HOME}/.mldonkey
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-multinet
+WRKSRC=		${WRKDIR}/${PORTNAME}
+USE_GMAKE=	yes
+ALL_TARGET=	depend all
+
+.if defined(WITHOUT_GUI)
+# have no 'without-' flag
+CONFIGURE_ENV=	GTK_CONFIG=no
+PLIST_SUB+=	GUI="@comment "
+.else
+PLIST_SUB+=	GUI=""
+BUILD_DEPENDS+=	lablgtk:${PORTSDIR}/x11-toolkits/ocaml-lablgtk
+# we don't need lablgtk as RUN dependency, but we need gtk+glib
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
+.endif
 
 DOCFILES=	AUTHORS BUGS ChangeLog Developers.txt FAQ.html \
 		Readme.txt TODO ed2k_links.txt
+
+pre-everything::
+.if !defined(WITHOUT_GUI)
+	@${ECHO_MSG} "You can disable the GUI by defining WITHOUT_GUI."
+.endif
 
 post-patch:
 	@${SED} -e "s|%%PREFIX%%|${PREFIX}|" ${FILESDIR}/wrapper.sh > \
@@ -31,23 +50,32 @@ post-patch:
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/mldonkey		${PREFIX}/bin/mldonkey-real
+	@${INSTALL_SCRIPT} ${WRKSRC}/distrib/mldonkey_previewer	${PREFIX}/bin
 	@${INSTALL_SCRIPT} ${FILESDIR}/kill_mldonkey	${PREFIX}/bin
-	@${INSTALL_SCRIPT} ${WRKSRC}/mldonkey_previewer	${PREFIX}/bin
 	@${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh		${PREFIX}/bin/mldonkey
+.ifndef(WITHOUT_GUI)
+	@${INSTALL_PROGRAM} ${WRKSRC}/mldonkey_guistarter	${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/mldonkey_gui	${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/mldonkey_gui2	${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/mlchat		${PREFIX}/bin
+.endif
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in ${DOCFILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/distrib/${file} ${DOCSDIR}
 .endfor
 .endif
 
 post-install:
-	@${SED} -e 's|/usr/local/|${PREFIX}/|' ${PKGMESSAGE}
+	@${FMT} < ${PKGMESSAGE}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500000
-LIB_DEPENDS+=	c_r.4:${PORTSDIR}/misc/compat4x
+install-user: extract
+.if !defined(LANG)
+	@${ECHO_MSG} "Please call as:  make install-user LANG=<lang>"
+	@${ECHO_MSG} "with <lang> one of en,de,fr,fr.noaccents !"
+.else
+	@${CP} ${WRKSRC}/i18n/gui_messages.ini.${LANG}\
+		${HOME}/.mldonkey_gui_messages.ini
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
