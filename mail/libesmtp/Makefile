@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	libesmtp
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.0.1
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.stafford.uklinux.net/libesmtp/ \
@@ -26,18 +25,20 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 # require-all-recipients (implied by enable-all) is required for Balsa
 CONFIGURE_ARGS=	--enable-all --disable-isoc
 
+DOCS=		AUTHORS ChangeLog NEWS Notes README TODO
+EXAMPLES=	examples/*
+
 post-install:
-.ifndef(NOPORTDOCS)
 	@${MKDIR} ${EXAMPLESDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${EXAMPLES} ${EXAMPLESDIR}
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/INSTALL ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/Notes ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
