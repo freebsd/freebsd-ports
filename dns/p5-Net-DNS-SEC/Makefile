@@ -6,18 +6,20 @@
 #
 
 PORTNAME=	Net-DNS-SEC
-PORTVERSION=	0.07
+PORTVERSION=	0.09
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		http://www.ripe.net/ripencc/pub-services/np/DISI/SRC/
 MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	erwin@lansing.dk
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/DNS.pm:${PORTSDIR}/net/p5-Net-DNS \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Crypt/OpenSSL/RSA.pm:${PORTSDIR}/security/p5-Crypt-OpenSSL-RSA \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Crypt/OpenSSL/DSA.pm:${PORTSDIR}/security/p5-Crypt-OpenSSL-DSA \
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Digest/BubbleBabble.pm:${PORTSDIR}/security/p5-Digest-BubbleBabble \
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
@@ -25,6 +27,7 @@ PERL_CONFIGURE=	yes
 
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Net::DNS::Keyset.3 Net::DNS::RR::DS.3 Net::DNS::RR::KEY.3 \
-		Net::DNS::RR::NXT.3 Net::DNS::RR::SIG.3 Net::DNS::SEC.3
+		Net::DNS::RR::NXT.3 Net::DNS::RR::SIG.3 \
+		Net::DNS::RR::SIG::Private.3 Net::DNS::SEC.3
 
 .include <bsd.port.mk>
