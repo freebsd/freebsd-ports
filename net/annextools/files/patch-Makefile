@@ -1,0 +1,10 @@
+--- Makefile.orig	Thu Sep 18 20:10:32 2003
++++ Makefile	Thu Sep 18 20:10:32 2003
+@@ -0,0 +1,7 @@
++SUBDIR=		libannex
++SUBDIR+=	netadm
++SUBDIR+=	erpcd
++SUBDIR+=	na
++SUBDIR+=	rtelnet
++
++.include <bsd.subdir.mk>

@@ -1,0 +1,12 @@
+--- erpcd/Makefile.orig	Wed Jun 24 17:23:53 1998
++++ erpcd/Makefile	Thu Sep 18 20:10:32 2003
+@@ -227,6 +227,9 @@
+ CDBCFILES = acp_dbm_lib.c
+ CDBOFILES = acp_dbm_lib.o
+ 
++CFLAGS += -I../inc
++LIBFLAG = -lcrypt
++
+ CFILES =	${ERPCFILES} ch_passwd.c convert.c ${COMCFILES} ${STUBCFILES}\
+ 		${CDBCFILES} ${SECURIDCFILES} ${ENIGMACFILES} acp_dbm.c \
+ 		tms_dbm.c tms_convert.c spy.c

@@ -1,0 +1,30 @@
+annex/sbin/acplint
+annex/sbin/ch_passwd
+annex/sbin/erpcd
+annex/sbin/spy
+annex/sbin/tms_convert
+annex/sbin/tms_dbm
+annex/sbin/na
+annex/sbin/rtelnet
+@dirrm annex/sbin
+annex/snmp/xylo-anx.mib
+annex/snmp/xylo-callmgmt.mib
+annex/snmp/xylo-modem.mib
+annex/snmp/xylo-ports.mib
+annex/snmp/xylo-protocol.mib
+annex/snmp/xylo-trpobj.mib
+annex/snmp/xylo-wan.mib
+annex/snmp/xylo.cap
+annex/snmp/xylo.smi
+annex/snmp/xylo.trp
+@dirrm annex/snmp
+annex/examples/laser
+annex/examples/lprinterface
+annex/examples/macro1
+annex/examples/macro2
+annex/examples/map3270
+annex/examples/modem.configs
+annex/examples/rotary
+annex/examples/termcap
+@dirrm annex/examples
+@dirrm annex

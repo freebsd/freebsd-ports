@@ -1,0 +1,13 @@
+--- libannex/Makefile.orig	Tue Oct  1 12:46:00 1996
++++ libannex/Makefile	Thu Sep 18 20:10:32 2003
+@@ -29,6 +29,10 @@
+ #  REVISION:	$Revision: 1.12 $
+ #
+ 
++CFLAGS += -I../inc
++
++LIBANX_O = bcopy.o dup2.o erpc_subr.o srpc.o hostname.o in_cksum.o inet.o ip_layer.o sendrecv.o slip_layer.o socket_layer.o udp_layer.o api_if.o asn1.o conv.o proctitle.o random.o servname.o
++
+ LIBANX_OT = ${LIBANX_O} .
+ 
+ GFLG =
