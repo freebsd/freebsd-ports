@@ -7,10 +7,14 @@
 
 PORTNAME=	kronolith
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils www
-MASTER_SITES=	ftp://ftp.horde.org/pub/kronolith/tarballs/%SUBDIR%/
-MASTER_SITE_SUBDIR=	. old
+MASTER_SITES=	ftp://ftp.horde.org/pub/kronolith/			\
+		ftp://ftp.au.horde.org/pub/horde/kronolith/		\
+		ftp://ftp.es.horde.org/pub/kronolith/			\
+		ftp://ftp.it.horde.org/pub/mirror/horde.org/kronolith/	\
+		ftp://ftp.nl.horde.org/mirror/horde-ftp/pub/kronolith/	\
+		ftp://ftp.pt.horde.org/pub/horde-ftp/kronolith/
 
 MAINTAINER=	thierry@pompo.net
 

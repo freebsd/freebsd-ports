@@ -47,6 +47,7 @@
 %%KRONOLITHDIR%%/lib/Driver.php
 %%KRONOLITHDIR%%/lib/Driver/mcal.php
 %%KRONOLITHDIR%%/lib/Driver/sql.php
+%%KRONOLITHDIR%%/lib/Driver/sql.php.orig
 %%KRONOLITHDIR%%/lib/Event.php
 %%KRONOLITHDIR%%/lib/Kronolith.php
 %%KRONOLITHDIR%%/lib/Month.php
