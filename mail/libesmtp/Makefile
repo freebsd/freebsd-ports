@@ -15,10 +15,12 @@ MAINTAINER=	jmcoopr@webmail.bmi.net
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
+USE_OPENSSL=	yes
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 # the following is required for Balsa-1.17
 CONFIGURE_ARGS=	--enable-require-all-recipients
