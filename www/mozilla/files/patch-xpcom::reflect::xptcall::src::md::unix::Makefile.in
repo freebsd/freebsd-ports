@@ -1,0 +1,33 @@
+--- xpcom/reflect/xptcall/src/md/unix/Makefile.in.orig	Sat Jul 19 22:50:35 2003
++++ xpcom/reflect/xptcall/src/md/unix/Makefile.in	Sat Jul 19 23:46:56 2003
+@@ -59,13 +59,11 @@
+ CPPSRCS		:= xptcinvoke_gcc_x86_unix.cpp xptcstubs_gcc_x86_unix.cpp
+ endif
+ endif
+-# IA64 Linux
+-ifneq (,$(filter Linux,$(OS_ARCH)))
++# IA64 Linux & FreeBSD
+ ifneq (,$(findstring ia64,$(OS_TEST)))
+ CPPSRCS		:= xptcinvoke_ipf64.cpp xptcstubs_ipf64.cpp
+ ASFILES		:= xptcstubs_asm_ipf64.s xptcinvoke_asm_ipf64.s
+ endif
+-endif
+ #
+ # BeOS/Intel (uses the same unixish_x86 code)
+ #
+@@ -298,6 +296,15 @@
+ ifeq ($(OS_ARCH)$(OS_TEST),NetBSDsparc)
+ CPPSRCS		:= xptcinvoke_sparc_netbsd.cpp xptcstubs_sparc_netbsd.cpp
+ ASFILES		:= xptcinvoke_asm_sparc_netbsd.s xptcstubs_asm_sparc_netbsd.s
++endif
++#
++# FreeBSD/SPARC64
++#
++ifeq ($(OS_ARCH),FreeBSD)
++ifneq (,$(findstring sparc,$(OS_TEST)))
++CPPSRCS		:= xptcinvoke_sparc64_freebsd.cpp xptcstubs_sparc64_freebsd.cpp
++ASFILES		:= xptcinvoke_asm_sparc64_freebsd.s xptcstubs_asm_sparcv9_solaris.s
++endif
+ endif
+ #
+ # Solaris/SPARC
