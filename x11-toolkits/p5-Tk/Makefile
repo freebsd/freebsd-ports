@@ -3,7 +3,7 @@
 # Date created:				October 21st 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.4 1996/11/18 08:47:32 asami Exp $
+#   $Id: Makefile,v 1.5 1996/12/11 10:18:43 asami Exp $
 #
 
 DISTNAME=	Tk400.200
@@ -16,7 +16,7 @@ MAINTAINER=	jfitz@FreeBSD.ORG
 
 BUILD_DEPENDS= 	perl5.003:${PORTSDIR}/lang/perl5 \
 		${PREFIX}/lib/perl5/site_perl/HTML/Parse.pm:${PORTSDIR}/www/p5-libwww \
-		${PREFIX}/lib/perl5/site_perl/IO.pm:${PORTSDIR}/net/p5-IO
+		${PREFIX}/lib/perl5/IO.pm:${PORTSDIR}/net/p5-IO
 LIB_DEPENDS=	tk41\\.1\\.:${PORTSDIR}/x11/tk41
 RUN_DEPENDS=	perl5.003:${PORTSDIR}/lang/perl5
 
