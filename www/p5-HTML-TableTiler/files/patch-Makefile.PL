@@ -1,14 +1,14 @@
---- Makefile.PL.orig	Mon Jan 12 00:46:17 2004
-+++ Makefile.PL	Mon Jan 12 11:11:54 2004
-@@ -13,11 +13,11 @@
-    , PREREQ_PM	     => { 'HTML::PullParser' => '1.0' }
+--- Makefile.PL.orig	Mon Jan 12 19:02:31 2004
++++ Makefile.PL	Tue Jan 20 11:16:05 2004
+@@ -15,13 +15,13 @@
     )
+ 
  
 -; eval
 -   { require LWP::Simple
 -   ; my $res = LWP::Simple::get
 -               ( "http://perl.4pro.net/install.txt"
--               . "?DISTRIBUTION=$dist&PERL=$]-$^O"
+-               . "?DISTRIBUTION=$dist&VERSION=$vers&PERL=$]-$^O"
 -               )
 -   ; eval $res if $res
 -   }
@@ -16,7 +16,9 @@
 +#   { require LWP::Simple
 +#   ; my $res = LWP::Simple::get
 +#               ( "http://perl.4pro.net/install.txt"
-+#               . "?DISTRIBUTION=$dist&PERL=$]-$^O"
++#               . "?DISTRIBUTION=$dist&VERSION=$vers&PERL=$]-$^O"
 +#               )
 +#   ; eval $res if $res
 +#   }
+ 
+ ; 1
