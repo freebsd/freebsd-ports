@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Sat Feb 23 16:59:27 2002
++++ src/Makefile.in	Sat Feb 23 17:00:02 2002
+@@ -603,7 +603,7 @@
+ 	  p1=`echo $$p|sed 's/$(EXEEXT)$$//'`; \
+ 	  if test -f $$p \
+ 	  ; then \
+-	    f=`echo $$p1|sed '$(transform);s/$$/$(EXEEXT)/'`; \
++	    f=splint; \
+ 	   echo " $(INSTALL_PROGRAM_ENV) $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/$$f"; \
+ 	   $(INSTALL_PROGRAM_ENV) $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/$$f; \
+ 	  else :; fi; \
