@@ -1,5 +1,4 @@
 # New ports collection makefile for:	psgml for mule
-# Version required:	1.2.0
 # Date created:		23 January 1999
 # Whom:			shige
 #

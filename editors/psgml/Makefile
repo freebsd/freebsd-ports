@@ -1,14 +1,15 @@
 # New ports collection makefile for:	psgml for emacs
-# Version required:	1.2.0
 # Date created:		23 January 1999
 # Whom:			shige
 #
 # $FreeBSD$
 #
 
-DISTNAME=	psgml-${PSGML_VER}
+PORTNAME=	psgml-${EMACS_PORT}
+PORTVERSION=	${PSGML_VER}
 CATEGORIES=	editors elisp
 MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/sgml/
+DISTNAME=	psgml-${PSGML_VER}
 
 MAINTAINER?=	shige@FreeBSD.org
 
@@ -36,7 +37,6 @@ HAS_COMMON_PORT=	NO
 # emacs ports setup
 #
 .if defined(EMACS_PORT)
-PKGNAME=	psgml-${EMACS_PORT}-${PSGML_VER}
 EMACS_CMD?=	${PREFIX}/bin/${EMACS_NAME}-${EMACS_VER}
 BUILD_DEPENDS=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT}
 .if defined(HAS_COMMON_PORT) && (${HAS_COMMON_PORT} == "YES")

@@ -1,5 +1,4 @@
 # New ports collection makefile for:	custom for mule
-# Version required:	1.9962
 # Date created:		27 December 1998
 # Whom:			shige
 #

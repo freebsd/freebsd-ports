@@ -1,5 +1,4 @@
 # New ports collection makefile for:	flim for emacs20
-# Version required:	1.12.7
 # Date created:		23 September 1998
 # Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
 #

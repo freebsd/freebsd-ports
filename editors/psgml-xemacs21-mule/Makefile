@@ -1,5 +1,4 @@
 # New ports collection makefile for:	psgml for xemacs-mule
-# Version required:	1.2.0
 # Date created:		26 May 1999
 # Whom:			kuriyama
 #

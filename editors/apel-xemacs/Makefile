@@ -1,5 +1,4 @@
 # New ports collection makefile for:	apel for xemacs
-# Version required:	9.23
 # Date created:		13 June 1999
 # Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
 #

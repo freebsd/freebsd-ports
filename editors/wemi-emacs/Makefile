@@ -1,16 +1,17 @@
 # New ports collection makefile for:	wemi for emacs
-# Version required:	1.13.4
 # Date created:		9 May 1999
 # Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	wemi-${WEMI_VER}
+PORTNAME=	wemi-${EMACS_PORT}
+PORTVERSION=	${WEMI_VER}
 CATEGORIES=	editors elisp
 MASTER_SITES=	ftp://ftp.jpl.org/pub/elisp/wemi/ \
 		${MASTER_SITE_PORTS_JP} \
 		http://people.FreeBSD.org/~shige/ports/distfiles/
+DISTNAME=	wemi-${WEMI_VER}
 
 MAINTAINER?=	shige@FreeBSD.org
 
@@ -42,7 +43,6 @@ REQUIRE_SETUPEL=  YES
 ALL_TARGET?=	elc
 
 .if defined(EMACS_PORT)
-PKGNAME=	wemi-${EMACS_PORT}-${WEMI_VER}
 EMACS_CMD?=	${PREFIX}/bin/${EMACS_NAME}-${EMACS_VER}
 BUILD_DEPENDS+=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT}
 .if defined(HAS_COMMON_PORT) && (${HAS_COMMON_PORT} == "YES")

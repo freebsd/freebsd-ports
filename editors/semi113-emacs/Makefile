@@ -1,17 +1,18 @@
 # New ports collection makefile for:	semi-current for emacs
-# Version required:	1.13.7
 # Date created:		9 May 1999
 # Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	semi-${SEMI_VER}
+PORTNAME=	semi-${EMACS_PORT}
+PORTVERSION=	${SEMI_VER}
 CATEGORIES=	editors elisp
 MASTER_SITES=	ftp://ftp.etl.go.jp/pub/mule/semi/semi-1.13-for-flim-1.13/ \
 		ftp://ftp.media.kyoto-u.ac.jp/pub/mule/semi/semi-1.13-for-flim-1.13/ \
 		ftp://ftp.win.or.jp/pub/word/mule/semi/semi-1.13-for-flim-1.13/ \
 		ftp://ftp.eos.hokudai.ac.jp/pub/GNU/emacs/mule/semi/semi-1.13-for-flim-1.13/
+DISTNAME=	semi-${SEMI_VER}
 
 MAINTAINER?=	shige@FreeBSD.org
 
@@ -42,7 +43,6 @@ REQUIRE_SETUPEL=  YES
 ALL_TARGET?=	elc
 
 .if defined(EMACS_PORT)
-PKGNAME=	semi-${EMACS_PORT}-${SEMI_VER}
 EMACS_CMD=	${PREFIX}/bin/${EMACS_NAME}-${EMACS_VER}
 BUILD_DEPENDS+=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT}
 .if defined(HAS_COMMON_PORT) && (${HAS_COMMON_PORT} == "YES")
