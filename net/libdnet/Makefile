@@ -16,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple interface to low level networking routines
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -fPIC"
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .include <bsd.port.pre.mk>
