@@ -9972,6 +9972,7 @@ zh-xsim		ports/chinese/xsim
 zh-xttmgr	ports/chinese/xttmgr
 zh-zhcon	ports/chinese/zhcon
 ziarc		ports/cad/ziarc
+zidrav		ports/sysutils/zidrav
 zile		ports/editors/zile
 zimg		ports/graphics/zimg
 zinf		ports/audio/zinf
