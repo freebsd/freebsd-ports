@@ -1,5 +1,14 @@
---- scripts/wrapzap	Fri Dec 28 09:11:04 2001
-+++ scripts/wrapzap.new	Fri Dec 28 09:13:32 2001
+--- scripts/wrapzap.orig	Wed Jan  9 16:57:21 2002
++++ scripts/wrapzap	Sun Jan 13 01:02:59 2002
+@@ -16,7 +16,7 @@
+ #
+ 
+ # modify this to match your install
+-zapper=/usr/local/script/squid_redirect
++zapper=%%PREFIX%%/libexec/squid_redirect
+ 
+ ZAP_MODE=				# or "CLEAR"
+ ZAP_BASE=http://adzap.cs.zip.com.au	# a local web server will be better
 @@ -28,6 +28,9 @@
  					# for patterns in addition to the
  					# stock zapper; this is the one to
@@ -18,4 +27,4 @@
 +. %%PREFIX%%/etc/adzap.conf
  
  export ZAP_MODE ZAP_BASE ZAP_BASE_SSL ZAP_PREMATCH ZAP_POSTMATCH
- export STUBURL_AD STUBURL_ADSSL STUBURL_ADJS STUBURL_ADHTML STUDURL_ADMP3 STUBURL_ADPOPUP \
+ export STUBURL_AD STUBURL_ADSSL STUBURL_ADJS STUBURL_ADHTML STUDURL_ADMP3 \
