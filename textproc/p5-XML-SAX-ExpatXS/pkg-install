@@ -1,0 +1,6 @@
+#!/usr/bin/perl
+if('POST-INSTALL' eq $ARGV[1])	{
+	eval "use XML::SAX;";
+	die $@ if $@;
+	XML::SAX->add_parser(q(XML::SAX::ExpatXS))->save_parsers();
+}

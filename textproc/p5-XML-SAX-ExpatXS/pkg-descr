@@ -1,0 +1,6 @@
+This module is an XS only implementation of PerlSAX2 parser using Expat.
+
+WWW: http://search.cpan.org/dist/XML-SAX-ExpatXS/
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
