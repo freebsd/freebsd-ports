@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- Makefile	2001/03/20 16:46:26	1.1
-+++ Makefile	2001/03/20 16:46:37
+--- Makefile.FreeBSD	2001/07/17 15:05:11	1.1
++++ Makefile.FreeBSD	2001/07/17 15:05:23
 @@ -52,7 +52,7 @@
  #
  GTK_CONFIG ?= gtk-config
