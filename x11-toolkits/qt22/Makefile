@@ -13,7 +13,7 @@ DISTNAME=	qt-x11-${PORTVERSION}
 
 MAINTAINER=	will@FreeBSD.org
 
-LIB_DEPENDS=	mng.0:${PORTSDIR}/graphics/libmng \
+LIB_DEPENDS=	mng.1:${PORTSDIR}/graphics/libmng \
 		png.4:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
