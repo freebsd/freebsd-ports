@@ -1,4 +1,4 @@
-This is XSLT4R, an XSLT processor in pure Ruby.
+This is a Ruby class for processing XSLT.
 
-Author:	Michael Neumann <neumann@s-direktnet.de>
-WWW:	http://www.ruby-lang.org/raa/list.rhtml?name=xslt4r
+Author:	Gregoire Lejeune <glejeune.lejeune@free.fr>
+WWW:	http://www.webtime-project.net/ruby-xslt/

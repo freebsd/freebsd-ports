@@ -6,35 +6,28 @@
 #
 
 PORTNAME=	xslt
-PORTVERSION=	0.0.2
+PORTVERSION=	0.3.0
 CATEGORIES=	textproc ruby
-MASTER_SITES=	http://www.fantasy-coders.de/ruby/xslt4r/
+MASTER_SITES=	http://www.webtime-project.net/ruby-xslt/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME}4r-${PORTVERSION}
+DISTNAME=	ruby-${PORTNAME}_${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	An XSLT processor in pure Ruby
 
-RUN_DEPENDS=	${RUBY_SITELIBDIR}/xpathtree.rb:${PORTSDIR}/textproc/ruby-xmlscan-old
-
 USE_RUBY=	yes
+USE_RUBY_EXTCONF=	yes
 
-RUBY_SHEBANG_FILES=	${WRKSRC}/xslt.rb
+WRKSRC=		${WRKDIR}/ruby-${PORTNAME}
 
-NO_BUILD=	yes
+DOCS=		AUTHORS README docs/*.rd doc
 
-DOCS=		ChangeLog ToDo
-
-do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/xslt.rb ${RUBY_SITELIBDIR}/
-	${LN} -sf ${RUBY_SITELIBDIR}/xslt.rb ${LOCALBASE}/bin/xslt
+post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODEXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/test/*.x* ${RUBY_MODEXAMPLESDIR}
 	${MKDIR} ${RUBY_MODDOCDIR}
 .for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}
+	${CP} -R ${WRKSRC}/${f} ${RUBY_MODDOCDIR}
 .endfor
 .endif
 
