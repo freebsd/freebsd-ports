@@ -7,7 +7,7 @@
 
 PORTNAME=	pike72
 PORTVERSION=	7.2.492
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.oav.net/pkg_freebsd/distfiles/ \
 		http://ftp.oav.net/pkg_freebsd/distfiles/ \
@@ -106,7 +106,7 @@ WITH_SANE=	yes
 WITH_MESA=	yes
 .endif
 
-.if exists(${LOCALBASE}/lib/libpdf.so.4)
+.if exists(${LOCALBASE}/lib/libpdf.so.5)
 WITH_PDF=	yes
 .endif
 
@@ -180,7 +180,7 @@ CONFIGURE_ARGS+= --without-sane
 .endif
 
 .if defined(WITH_PDF)
-LIB_DEPENDS+=	pdf.5:${PORTSDIR}/print/pdflib4
+LIB_DEPENDS+=	pdf.5:${PORTSDIR}/print/pdflib
 CONFIGURE_ARGS+= --with-libpdf
 .else
 CONFIGURE_ARGS+= --without-libpdf
