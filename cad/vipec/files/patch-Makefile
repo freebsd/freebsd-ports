@@ -1,0 +1,11 @@
+--- Makefile.orig	Tue Apr  3 12:24:18 2001
++++ Makefile	Tue Apr  3 12:32:56 2001
+@@ -9,7 +9,7 @@
+ SUBDIRS = src
+ SOURCEPATH = `pwd`
+ VERSION = 3.0.3
+-INSTALLDIR = /opt/vipec
++INSTALLDIR = ${PREFIX}/vipec
+ 
+ export VERSION
+ 
