@@ -1,5 +1,8 @@
+include/popt.h
+lib/libpopt.a
+lib/libpopt.so
+lib/libpopt.so.0
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 share/locale/sk/LC_MESSAGES/popt.mo
 share/locale/ro/LC_MESSAGES/popt.mo
-lib/libpopt.la
-lib/libpopt.a
-include/popt.h
