@@ -3,7 +3,7 @@
 # Date created:		Sa   1 Feb 1997 14:46:05 MET
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.8 1997/02/01 16:46:12 andreas Exp $
+# $Id: Makefile,v 1.9 1997/02/06 07:58:40 asami Exp $
 #
 
 DISTNAME=	fvwm95-2.0.43a-Autoconf
@@ -22,7 +22,10 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--includedir=/usr/local/include \
 		--libdir=/usr/local/lib
 
-post-configure:
-	@${ECHO} "See the sample.fvwm95rc file in the files directory"
+MAN1=		fvwm95.1
+
+post-install:
+		@${INSTALL_MAN}	$(WRKSRC)/fvwm/fvwm95.man \
+				$(PREFIX)/man/man1/fvwm95.1
 
 .include <bsd.port.mk>
