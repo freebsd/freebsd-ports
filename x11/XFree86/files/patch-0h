@@ -1,0 +1,17 @@
+--- programs/Xserver/hw/xfree86/xf86config/cards.c~	Tue Oct 12 20:09:06 1999
++++ programs/Xserver/hw/xfree86/xf86config/cards.c	Mon Nov 10 14:39:17 2003
+@@ -112,12 +112,12 @@
+ "# (this avoids the linear framebuffer probe). If that fails try\n"
+ "# option \"nomemaccess\".\n"
+ "#\n"
+-"# Refer to /usr/X11R6/lib/doc/README.S3, and the XF86_S3 man page.\n";
++"# Refer to /usr/X11R6/lib/X11/doc/README.S3, and the XF86_S3 man page.\n";
+ 
+ static char *cirrus_comment =
+ "# Use Option \"no_bitblt\" if you have graphics problems. If that fails\n"
+ "# try Option \"noaccel\".\n"
+-"# Refer to /usr/X11R6/lib/doc/README.cirrus.\n"
++"# Refer to /usr/X11R6/lib/X11/doc/README.cirrus.\n"
+ "# To allow linear addressing, uncomment the Option line and the\n"
+ "# address that the card maps the framebuffer to.\n";
+ 
