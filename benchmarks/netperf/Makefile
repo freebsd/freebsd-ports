@@ -6,16 +6,10 @@
 #
 
 PORTNAME=	netperf
-PORTVERSION=	2.2.2
-PORTREVISION=	1
+PORTVERSION=	2.2.3
 CATEGORIES=	benchmarks ipv6
-MASTER_SITES=	ftp://ftp.cup.hp.com/dist/networking/benchmarks/netperf/%SUBDIR%/
-MASTER_SITE_SUBDIR=. archive
-DISTNAME=	netperf-2.2pl2
-
-PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/
-PATCHFILES=	netperf-22pl2-v6-20030121.diff.gz
-PATCH_DIST_STRIP=	-p1
+MASTER_SITES=	ftp://ftp.cup.hp.com/dist/networking/benchmarks/netperf/
+DISTNAME=	netperf-2.2pl3
 
 MAINTAINER=	sumikawa@FreeBSD.org
 
