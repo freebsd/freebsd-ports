@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	stmpclean
-PORTVERSION=	0.1
-CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.mccme.ru/users/shalunov/
+PORTVERSION=	0.2
+CATEGORIES=	sysutils security
+MASTER_SITES=	http://www.internet2.edu/~shalunov/stmpclean/
 
-MAINTAINER=	shalunov@mccme.ru
+MAINTAINER=	shalunov@internet2.edu
 COMMENT=	Remove old files from temporary directories
 
 MAN8=		stmpclean.8
