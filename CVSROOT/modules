@@ -2055,6 +2055,7 @@ http-analyze	ports/www/http-analyze
 http_load	ports/www/http_load
 http_ping	ports/net/http_ping
 httperf		ports/www/httperf
+httpgrabber	ports/www/httpgrabber
 httptunnel	ports/www/httptunnel
 httrack		ports/www/httrack
 hugelatex	ports/print/hugelatex
