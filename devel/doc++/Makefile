@@ -18,6 +18,8 @@ COMMENT=	Javadoc style C++ documentatation system
 RUN_DEPENDS=	tex:${PORTSDIR}/print/teTeX \
 		anytopnm:${PORTSDIR}/graphics/netpbm
 
+BROKEN=		Does not correctly use gettext
+
 .if defined(WITH_GHOSTSCRIPT_AFPL) && ${WITH_GHOSTSCRIPT_AFPL} == yes
 RUN_DEPENDS+=	gs:${PORTSDIR}/print/ghostscript-afpl
 .else
