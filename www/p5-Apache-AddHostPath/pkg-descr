@@ -1,0 +1,13 @@
+Apache::AddHostPath is a perl module that can transform a requested URI based
+on the hostname and port number from the http request header.  It allows you
+to manage an arbitrary number of domains/subdomains all pointed at the same
+document root, but for which you want a combination of shared and distinct
+files.  Essentially, the module implements Apache's URI translation phase by
+attempting to use some or all of the URL hostname and port number as the base
+of the URI.  It simply does file and directory existence tests on a series
+of URIs (from most-specific to least-specific) and sets the URI to the
+most specific match.
+
+Author: Robert C W Jenks <rjenks@cvsroot.org>
+
+--will
