@@ -40,3 +40,5 @@ fi
 cp -f testdata/defs.con ./DEFS.CON
 cp -f testdata/game.con ./GAME.CON
 cp -f testdata/user.con ./USER.CON
+
+echo Three files successfully copied
