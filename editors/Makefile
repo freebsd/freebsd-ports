@@ -100,6 +100,7 @@
     SUBDIR += semi-xemacs21-mule-current
     SUBDIR += staroffice5
     SUBDIR += staroffice52
+    SUBDIR += staroffice60
     SUBDIR += sted
     SUBDIR += tamago
     SUBDIR += tamago-emacs20
