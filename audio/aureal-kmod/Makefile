@@ -16,6 +16,8 @@ MAINTAINER=	matey@cis.ohio-state.edu
 
 NO_PACKAGE=	package doesn't make any sense, because kld's should be in sync with running kernel to work correctly
 
+ONLY_FOR_ARCHS=	i386
+
 WRKSRC=		${WRKDIR}
 
 PKGMESSAGE=	${WRKSRC}/.MESSAGE
