@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	ayttm
-PORTVERSION=	0.4.6
-PORTREVISION=	1
+PORTVERSION=	0.4.6.17
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A "chat" program that combines AIM, ICQ, and Yahoo! Chat into one
@@ -20,17 +20,19 @@ LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile \
 		gpgme.9:${PORTSDIR}/security/gpgme \
 		pspell.15:${PORTSDIR}/textproc/aspell
 
-USE_LIBLTDL=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
+
 USE_BZIP2=	yes
-USE_GCC=	3.2
+USE_GCC=	3.3
 USE_X_PREFIX=	yes
 WANT_GNOME=	yes
 USE_GNOME=	gdkpixbuf gnometarget lthack
 USE_OPENSSL=	yes
 USE_GETOPT_LONG=	yes
+USE_LIBLTDL=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=	13
 LIBTOOLFLAGS=	# none
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-smtp --enable-jasper-filter
@@ -77,5 +79,8 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS:S/"//g}|g; \
 		 s|-pthread|${PTHREAD_CFLAGS:S/"//g}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|= pixmaps|=|g ; \
+		 s|^Utilities|#Utilities|g ; \
+		 s|^gnome|#gnome|g' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.post.mk>
