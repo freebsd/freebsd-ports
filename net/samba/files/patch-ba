@@ -1,5 +1,5 @@
---- source/configure.in.orig	Sat Jun  8 07:55:55 2002
-+++ source/configure.in	Mon Jun 17 18:15:30 2002
+--- source/configure.in.orig	Fri Aug  9 08:52:09 2002
++++ source/configure.in	Fri Aug  9 08:53:11 2002
 @@ -884,7 +884,7 @@
  			LDSHFLAGS="-shared"
  			DYNEXP="-Wl,-Bdynamic"
@@ -20,10 +20,10 @@
      ;;
 @@ -2073,7 +2073,7 @@
      AC_DEFINE(WITH_LDAP_SAM)
-     LIBS="-lldap $LDAPLIBS"
+     LDAPLIBS="-lldap"
      AC_CHECK_LIB(lber, ber_bvfree, [LDAPLIBS="$LDAPLIBS -llber"])
 -    LDAPLIBS="-lresolv $LDAPLIBS"
 +    LDAPLIBS="$LDAPLIBS"
+     old_LDFLAGS="$LDFLAGS"
+     LDFLAGS="$LDFLAGS $LDAPLIBS"
      AC_CHECK_FUNCS(ldap_start_tls_s)
-     with_smbpasswd_sam=no
-     ;;

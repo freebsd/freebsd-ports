@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	samba
-PORTVERSION=	2.2.5
-PORTREVISION=	3
+PORTVERSION=	2.2.6.p1
 CATEGORIES=	net
-MASTER_SITES=	http://us4.samba.org/samba/ftp/
+MASTER_SITES=	http://us4.samba.org/samba/ftp/%SUBDIR%/
+MASTER_SITE_SUBDIR=	pre old-versions .
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/pre/}
 
 MAINTAINER=	dwcjr@FreeBSD.org
 
 USE_BZIP2=	YES
+USE_REINPLACE=	YES
 USE_SUBMAKE=	YES
 USE_GMAKE=	YES
 USE_LIBTOOL=	YES
@@ -164,7 +166,12 @@ post-build:
 .endif
 
 pre-configure:
-	${PERL} -pi.fbsd -e 's/DYNEXP="-Wl,-Bdynamic"/DYNEXP="-Wl,--export-dynamic"/' ${WRKSRC}/configure.in
+	${REINPLACE_CMD} -e 's/DYNEXP="-Wl,-Bdynamic"/DYNEXP="-Wl,--export-dynamic"/' ${WRKSRC}/configure.in
+
+pre-build:
+	${RM} -fr ${WRKSRC}/include/proto.h
+	(cd ${WRKSRC} && make proto)
+
 post-install:
 .if defined(WITH_AUDIT) || defined(WITH_RECYCLE)
 	@test -d ${SAMBA_VFSDIR} || ${MKDIR} ${SAMBA_VFSDIR}
