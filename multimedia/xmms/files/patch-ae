@@ -1,6 +1,6 @@
---- Makefile.in.orig	Mon Jul 31 10:27:32 2000
-+++ Makefile.in	Mon Jul 31 10:27:49 2000
-@@ -147,7 +147,10 @@
+--- Makefile.in.orig	Tue Nov 28 14:55:51 2000
++++ Makefile.in	Tue Nov 28 14:57:22 2000
+@@ -152,7 +152,10 @@
  sidplay_library = @sidplay_library@
  xmmsdir = @xmmsdir@
  
@@ -8,11 +8,11 @@
 +SUBDIRS = intl libxmms xmms Output Input Effect General Visualization wmxmms po
 +.ifdef HAVE_GNOME
 +SUBDIRS += gnomexmms
-+.endif 
++.endif
  
  bin_SCRIPTS = xmms-config
  
-@@ -205,9 +205,9 @@
+@@ -211,9 +214,9 @@
  		rm -f $(srcdir)/stamp-h.in; \
  		$(MAKE) $(srcdir)/stamp-h.in; \
  	else :; fi
