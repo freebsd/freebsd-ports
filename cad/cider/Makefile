@@ -7,7 +7,7 @@
 
 PORTNAME=	cider
 PORTVERSION=	1.b1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	cad
 MASTER_SITES=	ftp://ic.eecs.berkeley.edu/pub/Cider/new/
 DISTNAME=	cider1b1
@@ -15,6 +15,7 @@ DISTNAME=	cider1b1
 MAINTAINER=	amakawa@jp.FreeBSD.org
 COMMENT=	A mixed-level circuit and device simulator (includes SPICE3)
 
+CONFLICTS=	spice-*
 WRKSRC=		${WRKDIR}/sim
 USE_XLIB=	yes
 MAN1=		sconvert.1 nutmeg.1 spice.1 cider.1
