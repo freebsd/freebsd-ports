@@ -16,10 +16,18 @@ MAINTAINER=	ports@FreeBSD.org
 
 ONLY_FOR_ARCHS=	alpha i386
 
+.ifdef WITHOUT_X11
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
+CONFIG_CMD=	Configure
+PLIST_SUB=	WITHOUT_X11="@comment "
+.else
 USE_XLIB=	yes
-USE_REINPLACE=	yes
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -I${X11BASE}/include" \
 		XLIBS="-L${X11BASE}/lib -lX11"
+CONFIG_CMD=	X-Configure
+PLIST_SUB=	WITHOUT_X11=
+.endif
+USE_REINPLACE=	yes
 ALL_TARGET=	All
 
 MAN1=		icont.1
@@ -35,7 +43,7 @@ pre-patch:
 
 do-configure:
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} \
-		${MAKEFILE} ${MAKE_ARGS} X-Configure name=${ARCH_NAME})
+		${MAKEFILE} ${MAKE_ARGS} ${CONFIG_CMD} name=${ARCH_NAME})
 
 do-install:
 	${INSTALL_MAN} ${WRKSRC}/man/man1/icont.1 ${PREFIX}/man/man1
@@ -43,12 +51,17 @@ do-install:
 .for file in icont iconx patchstr
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${file} ${ICONDIR}/bin
 .endfor
+.ifndef WITHOUT_X11
 .for file in colrbook colrpick fontpick ipatch palette vib wevents xgamma
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/${file} ${ICONDIR}/bin
 .endfor
-.for file in icont iconx vib
+.endif
+.for file in icont iconx
 	@${LN} -sf ${ICONDIR}/bin/${file} ${PREFIX}/bin/${file}
 .endfor
+.ifndef WITHOUT_X11
+	@${LN} -sf ${ICONDIR}/bin/vib ${PREFIX}/bin/vib
+.endif
 	@${MKDIR} ${ICONDIR}/lib
 	${INSTALL_DATA} ${WRKSRC}/lib/*.* ${ICONDIR}/lib
 .if !defined(NOPORTDOCS)
