@@ -10,7 +10,7 @@ PORTVERSION=	0.5
 CATEGORIES=	audio windowmaker
 MASTER_SITES=	http://www.hibernaculum.net/download/
 
-MAINTAINER=	kkonstan@daemon.gr
+MAINTAINER=	ports@FreeBSD.org
 
 USE_XPM=	YES
 USE_IMAKE=	YES
