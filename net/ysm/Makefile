@@ -7,9 +7,13 @@
 
 PORTNAME=	ysm
 PORTVERSION=	7.2.7.1
+PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		ftp://vampiro.rootshell.ru/pub/warez/
+MASTER_SITES=	ftp://vampiro.rootshell.ru/pub/warez/ \
+		http://vampiro.rootshell.ru/ \
+		ftp://ftp.treasury.ru/pub/unix/ \
+		http://www.treasury.ru/ \
+		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	ysmv7_2_7_1
 EXTRACT_SUFX=	.tgz
