@@ -22,6 +22,7 @@ LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 
 USE_GMAKE=	yes
 USE_AUTOMAKE_VER=14
+USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--with-glob
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -34,7 +35,7 @@ MAN8=		rpm.8 rpm2cpio.8
 
 post-patch:
 .for file in rpm.c doc/rpm.8 lib/macro.c lib/rpmrc.c
-	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/${file}
+	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/${file}
 .endfor
 
 post-install:
