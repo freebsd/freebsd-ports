@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# usage: $0 BRANCH PKGNAME.tar DIRNAME [DEPENDENCY.tar ...]
+# usage: $0 BRANCH [-noclean] PKGNAME.tgz DIRNAME [DEPENDENCY.tgz ...]
 
 master=bento
 
@@ -17,6 +17,7 @@ export WRKDIRPREFIX=/tmp
 export DEPENDS_TARGET=/usr/bin/true
 # don't pass -j, -k etc. to sub-makes
 unset MAKEFLAGS
+unset PORTSDIR
 
 # 15 minutes
 export FTP_TIMEOUT=900
@@ -31,6 +32,12 @@ buildroot=/a/asami/portbuild
 
 branch=$1
 shift
+
+noclean=0
+if [ "x$1" = "x-noclean" ]; then
+  noclean=1
+  shift
+fi
 
 if [ ${branch} = "3.0" ]; then
   export OSREL=3.0
@@ -98,6 +105,8 @@ if [ "${error}" = 0 ]; then
     ssh -a $master tar --unlink -C ${buildroot} -xvf -
   tar -C ${chroot}/tmp -cf - packages | \
     ssh -a $master tar --unlink -C ${buildroot}/${branch} -xvf -
+  ssh -a $master touch ${buildroot}/${branch}/packages/All/${pkgname}.tgz
+  ssh $master rm -f ${buildroot}/${branch}/logs/${pkgname}.log
 else
   scp ${chroot}/tmp/${pkgname}.log ${master}:${buildroot}/${branch}/logs/${pkgname}.log
 fi
@@ -108,9 +117,11 @@ umount -f ${chroot}/usr/ports
 umount -f ${chroot}/usr/opt/doc
 umount -f ${chroot}/usr/src
 
-if ! rm -rf ${chroot} >/dev/null 2>&1; then
-  chflags -R noschg ${chroot}
-  rm -rf ${chroot} >/dev/null 2>&1
+if [ $noclean != 1 ]; then
+  if ! rm -rf ${chroot} >/dev/null 2>&1; then
+    chflags -R noschg ${chroot}
+    rm -rf ${chroot} >/dev/null 2>&1
+  fi
 fi
 
 echo -n "$pkgname done on $(hostname -s) at "
