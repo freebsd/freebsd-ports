@@ -54,8 +54,8 @@ CONFIGURE_ARGS+=	--enable-gtk2
 PYDISTUTILS_BUILDARGS+=	WXPORT=gtk2
 PYDISTUTILS_INSTALLARGS:=	${PYDISTUTILS_INSTALLARGS} ${PYDISTUTILS_BUILDARGS}
 .else
-LIB_DEPENDS=	wx_gtk-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk
-WX_CONFIG=	${X11BASE}/bin/wxgtk-2.4-config
+LIB_DEPENDS=	wx_gtk-2.2.2:${PORTSDIR}/x11-toolkits/wxgtk
+WX_CONFIG=	${X11BASE}/bin/wxgtk-2.2-config
 .endif
 
 .include <bsd.port.post.mk>
