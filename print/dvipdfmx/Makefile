@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dvipdfmx
-PORTVERSION=	20030728
+PORTVERSION=	20030813
 CATEGORIES=	print
 MASTER_SITES=	http://project.ktug.or.kr/dvipdfmx/snapshot/
 
@@ -18,7 +18,6 @@ LIB_DEPENDS=	png:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/Resource/ai0/CMap/Identity-H:${PORTSDIR}/print/adobe-cmaps \
 		kpsepath:${PORTSDIR}/print/teTeX
 
-USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 
 post-patch:
