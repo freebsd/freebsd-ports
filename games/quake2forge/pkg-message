@@ -12,4 +12,8 @@ If you experience problems with mouse move-
 ments when running in GLX-Mode, try setting
 in_dgamouse to 1.
 
+ATTENTION: The Quake2Forge binary now gets 
+installed as q2f instead of quake2 to avoid
+conflicting with games/quake2lnx
+
 ===============================================

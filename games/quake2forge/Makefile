@@ -7,6 +7,7 @@
 
 PORTNAME=	quake2forge
 PORTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	quake
@@ -24,7 +25,7 @@ LDCONFIG_DIRS=	${PREFIX}/lib/quake2 ${PREFIX}/lib/quake2/baseq2 ${PREFIX}/lib/qu
 
 .include <bsd.port.pre.mk>
 
-CONFIGURE_ARGS=	--enable-static=no
+CONFIGURE_ARGS=	--enable-static=no --program-transform-name='s/^quake2$$/q2f/'
 CONFIGURE_TARGET=
 
 .if exists(${LOCALBASE}/lib/libSDL-1.1.so.5)
