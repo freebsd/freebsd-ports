@@ -15,10 +15,10 @@
 %%SITE_PERL%%/XML/PatAct/ToObjects.pm
 %%SITE_PERL%%/XML/Perl2SAX.pm
 %%SITE_PERL%%/XML/SAX2Perl.pm
-@dirrm %%SITE_PERL%%/Data/Grove
-@dirrm %%SITE_PERL%%/XML/Handler
-@dirrm %%SITE_PERL%%/XML/Parser
-@dirrm %%SITE_PERL%%/XML/PatAct
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/libxml-perl
+@unexec rmdir %D/%%SITE_PERL%%/Data/Grove 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/XML/Handler 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/XML/Parser 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/XML/PatAct 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/XML 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/Data 2>/dev/null || true
