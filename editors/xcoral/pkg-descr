@@ -1,0 +1,18 @@
+
+From the docs:
+
+  Xcoral is a multiwindow mouse-based text editor for the X Window System. A
+  built-in browser enables you to navigate through C functions, C++ classes,
+  methods and files. A SMall Ansi C Interpreter (Smac) is also built-in to
+  dynamically extend the editor's possibilities (user functions, key
+  bindings, modes etc). Xcoral provides variable width fonts, menus,
+  scrollbars, buttons, search, regions, kill-buffers, macros and undo. An
+  on-line manual box, with a table of contents and an index, helps you to
+  use and customize the editor. Commands are accessible from menus or key
+  bindings. Xcoral is a direct Xlib client and runs on color/bw X Display. 
+
+The example .xcoralrc is in ${PREFIX}/lib/X11/xcoral/xcoralrc.fl; cp it
+to ~/.xcoralrc, and fire up xcoral.
+
+eric.
+erich@rrnet.com
