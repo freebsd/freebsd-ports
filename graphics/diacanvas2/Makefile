@@ -18,6 +18,8 @@ COMMENT=	A general drawing canvas from dia dialog editor
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gnome/__init__.py:${PORTSDIR}/x11-toolkits/py-gnome2
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gnome/__init__.py:${PORTSDIR}/x11-toolkits/py-gnome2
 
+BROKEN=		"Broken pkg-plist"
+
 USE_GNOME=	gnomehack libgnomeprint libgnomeprintui libartlgpl2 \
 		libgnomecanvas
 USE_PYTHON=	2.2+
