@@ -1,11 +1,8 @@
-A simple yet featureful ncurses frontend to mpg123.
-Includes playlist support, volume control and tools to help
-with file management.
+A simple yet featureful ncurses frontend to mpg123.  Includes
+playlist support, volume control and tools to help with file
+management.  The author is Neville Kadwa <pandama@psu.edu>.
 
-Homepage:
-http://nkk104.rh.psu.edu/cmp3/
-Author:
-Neville Kadwa <pandama@psu.edu>
+WWW: http://nkk104.rh.psu.edu/cmp3/
 
 -Chris Piazza
 cpiazza@home.net

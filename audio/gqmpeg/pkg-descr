@@ -1,7 +1,7 @@
-A GTK-based mp3 front-end.
-Uses mpg123 for decoding and supports winamp themes..
+A GTK-based mp3 front-end.  Uses mpg123 for decoding and supports
+winamp themes..
 
-Author's homepage: http://www.geocities.com/SiliconValley/Haven/5235/
+WWW: http://www.geocities.com/SiliconValley/Haven/5235/
 
 -Vanilla
 vanilla@FreeBSD.ORG

@@ -1,10 +1,9 @@
 gmixer is an X11/gtk+ mixer control program.  Features a clean interface
 and the ability to auto load/save a configuration.
 
-Homepage:
-http://junior.technion.ac.il/~sergey/linux.html
-Author:
-Sergey Kiselev <asm@maxho.com>
+Author: Sergey Kiselev <asm@maxho.com>
+
+WWW: http://junior.technion.ac.il/~sergey/linux.html
 
 -Chris Piazza
 cpiazza@home.net

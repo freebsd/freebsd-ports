@@ -7,10 +7,10 @@ naming. A manual naming option is also available.
 
 This is version 0.6 (released Feb 27, 1999).
 
-URL: http://www.asde.com/~mjparme/index.htm
+WWW: http://www.asde.com/~mjparme/index.htm
 
---
-Ported by: Joao Carlos Mendes Luis <jonny@jonny.eng.br>
+- Joao Carlos Mendes Luis
+<jonny@jonny.eng.br>
 
 Note: This port does not depend on the binary utilities referenced
 above.  Choose and install then based on your own preferences.
