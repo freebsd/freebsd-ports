@@ -1,5 +1,5 @@
---- Makefile.orig	Mon Jul 19 05:56:27 1999
-+++ Makefile	Sun May  5 01:53:17 2002
+--- Makefile.orig	Mon Jul 19 14:56:27 1999
++++ Makefile	Sat Jan 25 14:51:03 2003
 @@ -4,29 +4,30 @@
  
  ####### Installation directory
@@ -15,7 +15,7 @@
 -X11_INCLUDE_DIR = /usr/X11R6/include
 -QT_INCLUDE_DIR  = $(QTDIR)/include
 +X11_INCLUDE_DIR = $(X11BASE)/include
-+QT_INCLUDE_DIR  = $(X11BASE)/include/X11/qt1
++QT_INCLUDE_DIR  = $(X11BASE)/include/
  
 -QT_LIB_DIR      = $(QTDIR)/lib
 -X11_LIB_DIR     = /usr/X11R6/lib
@@ -27,11 +27,10 @@
  
 -CPP     = g++
 -LINK    = g++
--MOC     = moc
 +CXX    ?= c++
 +CPP     = ${CXX} 
 +LINK    = ${CXX} 
-+MOC     = moc1
+ MOC     = moc
  INSTALL = install
  
  ####### compile and link options
@@ -46,7 +45,7 @@
  LIB_DIRS     = -L$(QT_LIB_DIR) -L$(X11_LIB_DIR)
  
 -LIBS         = -lX11 -lqt -lm
-+LIBS         = -lX11 -lqt1 -lm
++LIBS         = -lX11 -lqt-mt -lm ${PTHREAD_LIBS}
  # If you want to use the QImageIO lib (to support jpg and png maps) use the
  # next two lines and comment the one above
  #WITH_QIMGIO  = -DWITH_QIMAGEIO

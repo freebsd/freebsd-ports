@@ -7,14 +7,16 @@
 
 PORTNAME=	xglobe
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	astro
-MASTER_SITES=	http://www.uni-karlsruhe.de/~uddn/xglobe/
+MASTER_SITES=	http://www.cs.unc.edu/~scheuerm/xglobe/
 
 MAINTAINER=	kris@FreeBSD.org
 
-USE_QT_VER=	1
+USE_QT_VER=	3
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
+MAKE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS}
 
 do-install:
 	@${MKDIR} ${PREFIX}/share/xglobe/
