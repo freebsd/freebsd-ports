@@ -141,115 +141,115 @@ System/Applications/GormTest.app/Resources/Info-gnustep.plist
 System/Applications/GormTest.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/GormTest
 System/Applications/GormTest.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/library_paths.openapp
 System/Applications/GormTest.app/stamp.make
-System/Developer/Palettes/0Menus.palette/Resources/Info-gnustep.plist
-System/Developer/Palettes/0Menus.palette/Resources/MenusPalette.tiff
-System/Developer/Palettes/0Menus.palette/Resources/palette.table
-System/Developer/Palettes/0Menus.palette/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/0Menus
-System/Developer/Palettes/1Windows.palette/Resources/GormNSWindowInspector.gorm/data.classes
-System/Developer/Palettes/1Windows.palette/Resources/GormNSWindowInspector.gorm/objects.gorm
-System/Developer/Palettes/1Windows.palette/Resources/GormNSWindowSizeInspector.gorm/data.classes
-System/Developer/Palettes/1Windows.palette/Resources/GormNSWindowSizeInspector.gorm/objects.gorm
-System/Developer/Palettes/1Windows.palette/Resources/Info-gnustep.plist
-System/Developer/Palettes/1Windows.palette/Resources/WindowDrag.tiff
-System/Developer/Palettes/1Windows.palette/Resources/WindowsPalette.tiff
-System/Developer/Palettes/1Windows.palette/Resources/palette.table
-System/Developer/Palettes/1Windows.palette/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/1Windows
-System/Developer/Palettes/2Controls.palette/Resources/ControlsPalette.tiff
-System/Developer/Palettes/2Controls.palette/Resources/GormNSBoxInspector.gorm/data.classes
-System/Developer/Palettes/2Controls.palette/Resources/GormNSBoxInspector.gorm/objects.gorm
-System/Developer/Palettes/2Controls.palette/Resources/GormNSButtonInspector.gorm/data.classes
-System/Developer/Palettes/2Controls.palette/Resources/GormNSButtonInspector.gorm/objects.gorm
-System/Developer/Palettes/2Controls.palette/Resources/GormNSCellInspector.gorm/data.classes
-System/Developer/Palettes/2Controls.palette/Resources/GormNSCellInspector.gorm/objects.gorm
-System/Developer/Palettes/2Controls.palette/Resources/GormNSFormInspector.gorm/data.classes
-System/Developer/Palettes/2Controls.palette/Resources/GormNSFormInspector.gorm/objects.gorm
-System/Developer/Palettes/2Controls.palette/Resources/GormNSMatrixInspector.gorm/data.classes
-System/Developer/Palettes/2Controls.palette/Resources/GormNSMatrixInspector.gorm/objects.gorm
-System/Developer/Palettes/2Controls.palette/Resources/GormNSPopUpButtonInspector.gorm/data.classes
-System/Developer/Palettes/2Controls.palette/Resources/GormNSPopUpButtonInspector.gorm/objects.gorm
-System/Developer/Palettes/2Controls.palette/Resources/GormNSSliderInspector.gorm/data.classes
-System/Developer/Palettes/2Controls.palette/Resources/GormNSSliderInspector.gorm/objects.gorm
-System/Developer/Palettes/2Controls.palette/Resources/GormNSStepperInspector.gorm/data.classes
-System/Developer/Palettes/2Controls.palette/Resources/GormNSStepperInspector.gorm/objects.gorm
-System/Developer/Palettes/2Controls.palette/Resources/GormNSTextFieldInspector.gorm/data.classes
-System/Developer/Palettes/2Controls.palette/Resources/GormNSTextFieldInspector.gorm/objects.gorm
-System/Developer/Palettes/2Controls.palette/Resources/Info-gnustep.plist
-System/Developer/Palettes/2Controls.palette/Resources/palette.table
-System/Developer/Palettes/2Controls.palette/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/2Controls
-System/Developer/Palettes/3Containers.palette/Resources/ContainersPalette.tiff
-System/Developer/Palettes/3Containers.palette/Resources/GormNSBrowserInspector.gorm/data.classes
-System/Developer/Palettes/3Containers.palette/Resources/GormNSBrowserInspector.gorm/objects.gorm
-System/Developer/Palettes/3Containers.palette/Resources/GormNSTableColumnInspector.gorm/data.classes
-System/Developer/Palettes/3Containers.palette/Resources/GormNSTableColumnInspector.gorm/objects.gorm
-System/Developer/Palettes/3Containers.palette/Resources/GormNSTableColumnSizeInspector.gorm/data.classes
-System/Developer/Palettes/3Containers.palette/Resources/GormNSTableColumnSizeInspector.gorm/objects.gorm
-System/Developer/Palettes/3Containers.palette/Resources/GormNSTableViewInspector.gorm/data.classes
-System/Developer/Palettes/3Containers.palette/Resources/GormNSTableViewInspector.gorm/objects.gorm
-System/Developer/Palettes/3Containers.palette/Resources/GormTabViewInspector.gorm/data.classes
-System/Developer/Palettes/3Containers.palette/Resources/GormTabViewInspector.gorm/objects.gorm
-System/Developer/Palettes/3Containers.palette/Resources/Info-gnustep.plist
-System/Developer/Palettes/3Containers.palette/Resources/palette.table
-System/Developer/Palettes/3Containers.palette/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/3Containers
-System/Developer/Palettes/4Data.palette/Resources/DataPalette.tiff
-System/Developer/Palettes/4Data.palette/Resources/GormNSComboBoxInspector.gorm/data.classes
-System/Developer/Palettes/4Data.palette/Resources/GormNSComboBoxInspector.gorm/objects.gorm
-System/Developer/Palettes/4Data.palette/Resources/GormNSDateFormatterInspector.gorm/data.classes
-System/Developer/Palettes/4Data.palette/Resources/GormNSDateFormatterInspector.gorm/objects.gorm
-System/Developer/Palettes/4Data.palette/Resources/GormNSImageViewInspector.gorm/data.classes
-System/Developer/Palettes/4Data.palette/Resources/GormNSImageViewInspector.gorm/objects.gorm
-System/Developer/Palettes/4Data.palette/Resources/GormNSNumberFormatterInspector.gorm/data.classes
-System/Developer/Palettes/4Data.palette/Resources/GormNSNumberFormatterInspector.gorm/objects.gorm
-System/Developer/Palettes/4Data.palette/Resources/GormNSTextViewInspector.gorm/data.classes
-System/Developer/Palettes/4Data.palette/Resources/GormNSTextViewInspector.gorm/objects.gorm
-System/Developer/Palettes/4Data.palette/Resources/Info-gnustep.plist
-System/Developer/Palettes/4Data.palette/Resources/palette.table
-System/Developer/Palettes/4Data.palette/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/4Data
-@dirrm System/Developer/Palettes/4Data.palette/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm System/Developer/Palettes/4Data.palette/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm System/Developer/Palettes/4Data.palette/%%GNU_ARCH%%
-@dirrm System/Developer/Palettes/4Data.palette/Resources/GormNSTextViewInspector.gorm
-@dirrm System/Developer/Palettes/4Data.palette/Resources/GormNSNumberFormatterInspector.gorm
-@dirrm System/Developer/Palettes/4Data.palette/Resources/GormNSImageViewInspector.gorm
-@dirrm System/Developer/Palettes/4Data.palette/Resources/GormNSDateFormatterInspector.gorm
-@dirrm System/Developer/Palettes/4Data.palette/Resources/GormNSComboBoxInspector.gorm
-@dirrm System/Developer/Palettes/4Data.palette/Resources
-@dirrm System/Developer/Palettes/4Data.palette
-@dirrm System/Developer/Palettes/3Containers.palette/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm System/Developer/Palettes/3Containers.palette/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm System/Developer/Palettes/3Containers.palette/%%GNU_ARCH%%
-@dirrm System/Developer/Palettes/3Containers.palette/Resources/GormTabViewInspector.gorm
-@dirrm System/Developer/Palettes/3Containers.palette/Resources/GormNSTableViewInspector.gorm
-@dirrm System/Developer/Palettes/3Containers.palette/Resources/GormNSTableColumnSizeInspector.gorm
-@dirrm System/Developer/Palettes/3Containers.palette/Resources/GormNSTableColumnInspector.gorm
-@dirrm System/Developer/Palettes/3Containers.palette/Resources/GormNSBrowserInspector.gorm
-@dirrm System/Developer/Palettes/3Containers.palette/Resources
-@dirrm System/Developer/Palettes/3Containers.palette
-@dirrm System/Developer/Palettes/2Controls.palette/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm System/Developer/Palettes/2Controls.palette/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm System/Developer/Palettes/2Controls.palette/%%GNU_ARCH%%
-@dirrm System/Developer/Palettes/2Controls.palette/Resources/GormNSTextFieldInspector.gorm
-@dirrm System/Developer/Palettes/2Controls.palette/Resources/GormNSStepperInspector.gorm
-@dirrm System/Developer/Palettes/2Controls.palette/Resources/GormNSSliderInspector.gorm
-@dirrm System/Developer/Palettes/2Controls.palette/Resources/GormNSPopUpButtonInspector.gorm
-@dirrm System/Developer/Palettes/2Controls.palette/Resources/GormNSMatrixInspector.gorm
-@dirrm System/Developer/Palettes/2Controls.palette/Resources/GormNSFormInspector.gorm
-@dirrm System/Developer/Palettes/2Controls.palette/Resources/GormNSCellInspector.gorm
-@dirrm System/Developer/Palettes/2Controls.palette/Resources/GormNSButtonInspector.gorm
-@dirrm System/Developer/Palettes/2Controls.palette/Resources/GormNSBoxInspector.gorm
-@dirrm System/Developer/Palettes/2Controls.palette/Resources
-@dirrm System/Developer/Palettes/2Controls.palette
-@dirrm System/Developer/Palettes/1Windows.palette/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm System/Developer/Palettes/1Windows.palette/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm System/Developer/Palettes/1Windows.palette/%%GNU_ARCH%%
-@dirrm System/Developer/Palettes/1Windows.palette/Resources/GormNSWindowSizeInspector.gorm
-@dirrm System/Developer/Palettes/1Windows.palette/Resources/GormNSWindowInspector.gorm
-@dirrm System/Developer/Palettes/1Windows.palette/Resources
-@dirrm System/Developer/Palettes/1Windows.palette
-@dirrm System/Developer/Palettes/0Menus.palette/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm System/Developer/Palettes/0Menus.palette/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm System/Developer/Palettes/0Menus.palette/%%GNU_ARCH%%
-@dirrm System/Developer/Palettes/0Menus.palette/Resources
-@dirrm System/Developer/Palettes/0Menus.palette
+%%PALETTES%%/0Menus.palette/Resources/Info-gnustep.plist
+%%PALETTES%%/0Menus.palette/Resources/MenusPalette.tiff
+%%PALETTES%%/0Menus.palette/Resources/palette.table
+%%PALETTES%%/0Menus.palette/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/0Menus
+%%PALETTES%%/1Windows.palette/Resources/GormNSWindowInspector.gorm/data.classes
+%%PALETTES%%/1Windows.palette/Resources/GormNSWindowInspector.gorm/objects.gorm
+%%PALETTES%%/1Windows.palette/Resources/GormNSWindowSizeInspector.gorm/data.classes
+%%PALETTES%%/1Windows.palette/Resources/GormNSWindowSizeInspector.gorm/objects.gorm
+%%PALETTES%%/1Windows.palette/Resources/Info-gnustep.plist
+%%PALETTES%%/1Windows.palette/Resources/WindowDrag.tiff
+%%PALETTES%%/1Windows.palette/Resources/WindowsPalette.tiff
+%%PALETTES%%/1Windows.palette/Resources/palette.table
+%%PALETTES%%/1Windows.palette/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/1Windows
+%%PALETTES%%/2Controls.palette/Resources/ControlsPalette.tiff
+%%PALETTES%%/2Controls.palette/Resources/GormNSBoxInspector.gorm/data.classes
+%%PALETTES%%/2Controls.palette/Resources/GormNSBoxInspector.gorm/objects.gorm
+%%PALETTES%%/2Controls.palette/Resources/GormNSButtonInspector.gorm/data.classes
+%%PALETTES%%/2Controls.palette/Resources/GormNSButtonInspector.gorm/objects.gorm
+%%PALETTES%%/2Controls.palette/Resources/GormNSCellInspector.gorm/data.classes
+%%PALETTES%%/2Controls.palette/Resources/GormNSCellInspector.gorm/objects.gorm
+%%PALETTES%%/2Controls.palette/Resources/GormNSFormInspector.gorm/data.classes
+%%PALETTES%%/2Controls.palette/Resources/GormNSFormInspector.gorm/objects.gorm
+%%PALETTES%%/2Controls.palette/Resources/GormNSMatrixInspector.gorm/data.classes
+%%PALETTES%%/2Controls.palette/Resources/GormNSMatrixInspector.gorm/objects.gorm
+%%PALETTES%%/2Controls.palette/Resources/GormNSPopUpButtonInspector.gorm/data.classes
+%%PALETTES%%/2Controls.palette/Resources/GormNSPopUpButtonInspector.gorm/objects.gorm
+%%PALETTES%%/2Controls.palette/Resources/GormNSSliderInspector.gorm/data.classes
+%%PALETTES%%/2Controls.palette/Resources/GormNSSliderInspector.gorm/objects.gorm
+%%PALETTES%%/2Controls.palette/Resources/GormNSStepperInspector.gorm/data.classes
+%%PALETTES%%/2Controls.palette/Resources/GormNSStepperInspector.gorm/objects.gorm
+%%PALETTES%%/2Controls.palette/Resources/GormNSTextFieldInspector.gorm/data.classes
+%%PALETTES%%/2Controls.palette/Resources/GormNSTextFieldInspector.gorm/objects.gorm
+%%PALETTES%%/2Controls.palette/Resources/Info-gnustep.plist
+%%PALETTES%%/2Controls.palette/Resources/palette.table
+%%PALETTES%%/2Controls.palette/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/2Controls
+%%PALETTES%%/3Containers.palette/Resources/ContainersPalette.tiff
+%%PALETTES%%/3Containers.palette/Resources/GormNSBrowserInspector.gorm/data.classes
+%%PALETTES%%/3Containers.palette/Resources/GormNSBrowserInspector.gorm/objects.gorm
+%%PALETTES%%/3Containers.palette/Resources/GormNSTableColumnInspector.gorm/data.classes
+%%PALETTES%%/3Containers.palette/Resources/GormNSTableColumnInspector.gorm/objects.gorm
+%%PALETTES%%/3Containers.palette/Resources/GormNSTableColumnSizeInspector.gorm/data.classes
+%%PALETTES%%/3Containers.palette/Resources/GormNSTableColumnSizeInspector.gorm/objects.gorm
+%%PALETTES%%/3Containers.palette/Resources/GormNSTableViewInspector.gorm/data.classes
+%%PALETTES%%/3Containers.palette/Resources/GormNSTableViewInspector.gorm/objects.gorm
+%%PALETTES%%/3Containers.palette/Resources/GormTabViewInspector.gorm/data.classes
+%%PALETTES%%/3Containers.palette/Resources/GormTabViewInspector.gorm/objects.gorm
+%%PALETTES%%/3Containers.palette/Resources/Info-gnustep.plist
+%%PALETTES%%/3Containers.palette/Resources/palette.table
+%%PALETTES%%/3Containers.palette/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/3Containers
+%%PALETTES%%/4Data.palette/Resources/DataPalette.tiff
+%%PALETTES%%/4Data.palette/Resources/GormNSComboBoxInspector.gorm/data.classes
+%%PALETTES%%/4Data.palette/Resources/GormNSComboBoxInspector.gorm/objects.gorm
+%%PALETTES%%/4Data.palette/Resources/GormNSDateFormatterInspector.gorm/data.classes
+%%PALETTES%%/4Data.palette/Resources/GormNSDateFormatterInspector.gorm/objects.gorm
+%%PALETTES%%/4Data.palette/Resources/GormNSImageViewInspector.gorm/data.classes
+%%PALETTES%%/4Data.palette/Resources/GormNSImageViewInspector.gorm/objects.gorm
+%%PALETTES%%/4Data.palette/Resources/GormNSNumberFormatterInspector.gorm/data.classes
+%%PALETTES%%/4Data.palette/Resources/GormNSNumberFormatterInspector.gorm/objects.gorm
+%%PALETTES%%/4Data.palette/Resources/GormNSTextViewInspector.gorm/data.classes
+%%PALETTES%%/4Data.palette/Resources/GormNSTextViewInspector.gorm/objects.gorm
+%%PALETTES%%/4Data.palette/Resources/Info-gnustep.plist
+%%PALETTES%%/4Data.palette/Resources/palette.table
+%%PALETTES%%/4Data.palette/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/4Data
+@dirrm %%PALETTES%%/4Data.palette/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+@dirrm %%PALETTES%%/4Data.palette/%%GNU_ARCH%%/%%OPSYS%%
+@dirrm %%PALETTES%%/4Data.palette/%%GNU_ARCH%%
+@dirrm %%PALETTES%%/4Data.palette/Resources/GormNSTextViewInspector.gorm
+@dirrm %%PALETTES%%/4Data.palette/Resources/GormNSNumberFormatterInspector.gorm
+@dirrm %%PALETTES%%/4Data.palette/Resources/GormNSImageViewInspector.gorm
+@dirrm %%PALETTES%%/4Data.palette/Resources/GormNSDateFormatterInspector.gorm
+@dirrm %%PALETTES%%/4Data.palette/Resources/GormNSComboBoxInspector.gorm
+@dirrm %%PALETTES%%/4Data.palette/Resources
+@dirrm %%PALETTES%%/4Data.palette
+@dirrm %%PALETTES%%/3Containers.palette/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+@dirrm %%PALETTES%%/3Containers.palette/%%GNU_ARCH%%/%%OPSYS%%
+@dirrm %%PALETTES%%/3Containers.palette/%%GNU_ARCH%%
+@dirrm %%PALETTES%%/3Containers.palette/Resources/GormTabViewInspector.gorm
+@dirrm %%PALETTES%%/3Containers.palette/Resources/GormNSTableViewInspector.gorm
+@dirrm %%PALETTES%%/3Containers.palette/Resources/GormNSTableColumnSizeInspector.gorm
+@dirrm %%PALETTES%%/3Containers.palette/Resources/GormNSTableColumnInspector.gorm
+@dirrm %%PALETTES%%/3Containers.palette/Resources/GormNSBrowserInspector.gorm
+@dirrm %%PALETTES%%/3Containers.palette/Resources
+@dirrm %%PALETTES%%/3Containers.palette
+@dirrm %%PALETTES%%/2Controls.palette/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+@dirrm %%PALETTES%%/2Controls.palette/%%GNU_ARCH%%/%%OPSYS%%
+@dirrm %%PALETTES%%/2Controls.palette/%%GNU_ARCH%%
+@dirrm %%PALETTES%%/2Controls.palette/Resources/GormNSTextFieldInspector.gorm
+@dirrm %%PALETTES%%/2Controls.palette/Resources/GormNSStepperInspector.gorm
+@dirrm %%PALETTES%%/2Controls.palette/Resources/GormNSSliderInspector.gorm
+@dirrm %%PALETTES%%/2Controls.palette/Resources/GormNSPopUpButtonInspector.gorm
+@dirrm %%PALETTES%%/2Controls.palette/Resources/GormNSMatrixInspector.gorm
+@dirrm %%PALETTES%%/2Controls.palette/Resources/GormNSFormInspector.gorm
+@dirrm %%PALETTES%%/2Controls.palette/Resources/GormNSCellInspector.gorm
+@dirrm %%PALETTES%%/2Controls.palette/Resources/GormNSButtonInspector.gorm
+@dirrm %%PALETTES%%/2Controls.palette/Resources/GormNSBoxInspector.gorm
+@dirrm %%PALETTES%%/2Controls.palette/Resources
+@dirrm %%PALETTES%%/2Controls.palette
+@dirrm %%PALETTES%%/1Windows.palette/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+@dirrm %%PALETTES%%/1Windows.palette/%%GNU_ARCH%%/%%OPSYS%%
+@dirrm %%PALETTES%%/1Windows.palette/%%GNU_ARCH%%
+@dirrm %%PALETTES%%/1Windows.palette/Resources/GormNSWindowSizeInspector.gorm
+@dirrm %%PALETTES%%/1Windows.palette/Resources/GormNSWindowInspector.gorm
+@dirrm %%PALETTES%%/1Windows.palette/Resources
+@dirrm %%PALETTES%%/1Windows.palette
+@dirrm %%PALETTES%%/0Menus.palette/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+@dirrm %%PALETTES%%/0Menus.palette/%%GNU_ARCH%%/%%OPSYS%%
+@dirrm %%PALETTES%%/0Menus.palette/%%GNU_ARCH%%
+@dirrm %%PALETTES%%/0Menus.palette/Resources
+@dirrm %%PALETTES%%/0Menus.palette
 @dirrm System/Applications/GormTest.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
 @dirrm System/Applications/GormTest.app/%%GNU_ARCH%%/%%OPSYS%%
 @dirrm System/Applications/GormTest.app/%%GNU_ARCH%%
