@@ -1,0 +1,56 @@
+--- Makefile.orig	Sun Jun 17 22:13:03 2001
++++ Makefile	Sun Jun 17 22:14:19 2001
+@@ -6,8 +6,8 @@
+ # they should be set.  All of them are conditional on options set in this
+ # file, so it should be relatively easy to determine which branch is correct
+ 
+-BINDIR = ..
+-MODDIR = ../modules
++BINDIR = ${PREFIX}/ecartis
++MODDIR = ${PREFIX}/ecartis/modules
+ 
+ # First things first we need to set up some various options since OS's aren't
+ # as nice about things are they could be.
+@@ -38,7 +38,7 @@
+ # Uncomment this if you are on a BSD system AND you want dynamic modules
+ # SunOS (4 and 5 both) also needs this setting.
+ #
+-#BSDMOD = 1
++BSDMOD = 1
+ 
+ # Uncomment this if you are compiling on OpenBSD with modules (BSDMOD = 1)
+ #OBSDMOD = 1
+@@ -60,7 +60,7 @@
+ # Uncomment this if you have the GNU strftime() function.  This version
+ # of the function understands %z to return the numerical offset.  It's better
+ # to use that if it's available for RFC822 date headers
+-GNU_STRFTIME=-DGNU_STRFTIME
++#GNU_STRFTIME=-DGNU_STRFTIME
+ 
+ # Uncomment this if you are on a machine that doesn't have strerror()
+ #
+@@ -125,7 +125,6 @@
+ ifdef BSDIMOD
+ CC=shlicc
+ else
+-CC=gcc
+ endif
+ 
+ # Warning-level flags.  Under SunOS (4 and 5), this NEEDS TO BE BLANK.
+@@ -134,7 +133,7 @@
+ #
+ # It appears that IRIX is also rather stupid, and may require this
+ # to be removed.
+-WFLAGS=-Wall -Werror
++WFLAGS:=${CFLAGS}
+ 
+ # Now set up the initial command line.  SUNOS_5 makes this a bit wierd.
+ ifndef SUNOS_5
+@@ -321,6 +320,7 @@
+ install: targets
+ 	cp build/ecartis ${BINDIR}
+ 	chmod ug+s ${BINDIR}/ecartis
++	chown -R ecartis:ecartis ${BINDIR}
+ ifdef DYNMOD
+ 	@for dir in ${MODULES}; do \
+ 		cp build/$${dir}.lpm ${MODDIR}/$${dir}.lpm; \
