@@ -3,6 +3,6 @@ include an HTML editor, e-mail user agent, IRC client, or news reader.
 
 This is a pre-compiled Linux/i386 version, able to run plugins from that
 platform.  This port is compatible with the Flash plugins from the
-www/linuxflashplugin and www/netscape7 ports.
+www/linux-flashplugin and www/netscape7 ports.
 
 WWW:  http://mozilla.org/projects/phoenix/
