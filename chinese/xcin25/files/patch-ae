@@ -1,13 +1,13 @@
---- src/xcinrc.in.orig	Mon Oct 18 11:48:24 1999
-+++ src/xcinrc.in	Mon Oct 18 11:50:39 1999
-@@ -95,8 +95,8 @@
- (define bimsphone
- 	'((SETKEY	6)
- 	  (MODULE	"bimsphone")
--	  (TSI_FNAME    "tsi.db")
--	  (YIN_FNAME    "yin.db")
-+	  (TSI_FNAME    "/usr/local/share/tabe/tsiyin/tsi.db")
-+	  (YIN_FNAME    "/usr/local/share/tabe/tsiyin/yin.db")
- 	  (SPACE_SEL	NO)
- 	  (MOD_PHR	1)		; 1: shift, 2: ctrl, 4: alt
- 	  (NSELKEY	9)		; The maximun number is 10
+--- src/xcinrc.in.orig	Sat Dec 18 15:42:02 1999
++++ src/xcinrc.in	Sat Dec 18 15:42:58 1999
+@@ -105,8 +105,8 @@
+ 	  (AUTO_SELECTION	YES)
+ 	;
+ 	; The following has effect only when AUTO_SELECTION is YES
+-	  (TSI_FNAME		"tsi.db")
+-	  (YIN_FNAME		"yin.db")
++	  (TSI_FNAME		"/usr/local/share/tabe/tsiyin/tsi.db")
++	  (YIN_FNAME		"/usr/local/share/tabe/tsiyin/yin.db")
+ 	  (SPACE_SELECTION	NO)
+ 	  (PHRASE_SELECTION	YES)
+ 	  (N_SELECTION_PHR	4)))
