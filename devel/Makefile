@@ -1,8 +1,8 @@
-# $Id: Makefile,v 1.9 1995/05/03 05:41:02 asami Exp $
+# $Id: Makefile,v 1.10 1995/05/14 03:29:24 asami Exp $
 #
 # BROKEN: libmalloc
 #
 
-SUBDIR=	bcc bison gmake m4 mprof xxgdb
+SUBDIR=	bcc bison gmake libdlmalloc m4 mprof xxgdb
 
 .include <bsd.port.subdir.mk>
