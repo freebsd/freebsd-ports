@@ -33,6 +33,7 @@
     SUBDIR += mailagent
     SUBDIR += mailcrypt
     SUBDIR += maildrop
+    SUBDIR += mailfilter
     SUBDIR += mailx
     SUBDIR += majorcool
     SUBDIR += majordomo

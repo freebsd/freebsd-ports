@@ -1,0 +1,8 @@
+This is a simple-to-use mail filtering program written in perl 5.  It was
+mainly designed to work with pine, however it can easily be used with other
+e-mail clients.
+
+WWW: http://mailfilter.ruin.org/
+
+- Justin Robinson
+jmrobins@samurai.ruin.org
