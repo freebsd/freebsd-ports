@@ -1,5 +1,4 @@
 bin/bdftops
-bin/ert
 bin/font2c
 bin/gs
 bin/gsbj
@@ -43,10 +42,11 @@ share/ghostscript/5.10vflib/decrypt.ps
 share/ghostscript/5.10vflib/dmp_init.ps
 share/ghostscript/5.10vflib/dmp_site.ps
 share/ghostscript/5.10vflib/doc/COPYING
-share/ghostscript/5.10vflib/doc/MJ700V2C.FAQ
+share/ghostscript/5.10vflib/doc/Gdevlips.htm
 share/ghostscript/5.10vflib/doc/NEWS
 share/ghostscript/5.10vflib/doc/README
 share/ghostscript/5.10vflib/doc/README.CID.gs5.10-vflib
+share/ghostscript/5.10vflib/doc/README.gdevalps
 share/ghostscript/5.10vflib/doc/README.gs5.10-jpdf
 share/ghostscript/5.10vflib/doc/README.gs5.10-vflib
 share/ghostscript/5.10vflib/doc/bug-form.txt
@@ -55,20 +55,19 @@ share/ghostscript/5.10vflib/doc/current.txt
 share/ghostscript/5.10vflib/doc/devices.txt
 share/ghostscript/5.10vflib/doc/djgpp.sj
 share/ghostscript/5.10vflib/doc/drivers.txt
-share/ghostscript/5.10vflib/doc/epag-3.08/FILES
-share/ghostscript/5.10vflib/doc/epag-3.08/adjust.ps
-share/ghostscript/5.10vflib/doc/epag-3.08/ert.txt
-share/ghostscript/5.10vflib/doc/epag-3.08/gdevepag.txt
-share/ghostscript/5.10vflib/doc/epag-3.08/gsepagif.sh
-share/ghostscript/5.10vflib/doc/epag-3.08/psprint
 share/ghostscript/5.10vflib/doc/fonts.txt
 share/ghostscript/5.10vflib/doc/gdev10v.jis
 share/ghostscript/5.10vflib/doc/gdevdmpr.sj
-share/ghostscript/5.10vflib/doc/gdevlips4.euc
-share/ghostscript/5.10vflib/doc/gdevmjc.jis
-share/ghostscript/5.10vflib/doc/gdevnpdl.jis
+share/ghostscript/5.10vflib/doc/gdevmd2k.jis
+share/ghostscript/5.10vflib/doc/gdevmjc-0.8/README.mjc
+share/ghostscript/5.10vflib/doc/gdevmjc-0.8/README.mje
+share/ghostscript/5.10vflib/doc/gdevmjc-0.8/README.noz
+share/ghostscript/5.10vflib/doc/gdevmjc-0.8/MJ700V2C.FAQ
+share/ghostscript/5.10vflib/doc/gdevmjc-0.8/cpem.doc
+share/ghostscript/5.10vflib/doc/gdevrpdl.doc 
 share/ghostscript/5.10vflib/doc/gs261j.doc
 share/ghostscript/5.10vflib/doc/gs261j.jis
+share/ghostscript/5.10vflib/doc/gs_statd.dif
 share/ghostscript/5.10vflib/doc/helpers.txt
 share/ghostscript/5.10vflib/doc/hershey.txt
 share/ghostscript/5.10vflib/doc/history1.txt
@@ -392,10 +391,10 @@ share/ghostscript/fonts/u004006t.pfm
 share/ghostscript/fonts/z003034l.afm
 share/ghostscript/fonts/z003034l.pfb
 share/ghostscript/fonts/z003034l.pfm
-@dirrm share/ghostscript/fonts
-@dirrm share/ghostscript/5.10vflib/kanji
-@dirrm share/ghostscript/5.10vflib/examples
-@dirrm share/ghostscript/5.10vflib/doc/epag-3.08
+@dirrm share/ghostscript/5.50vflib/doc/gdevmjc-0.8
 @dirrm share/ghostscript/5.10vflib/doc
+@dirrm share/ghostscript/5.10vflib/examples
+@dirrm share/ghostscript/5.10vflib/kanji
 @dirrm share/ghostscript/5.10vflib
+@dirrm share/ghostscript/fonts
 @dirrm share/ghostscript
