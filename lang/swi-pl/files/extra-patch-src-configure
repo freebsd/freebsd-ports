@@ -1,6 +1,6 @@
---- src/configure.orig	Sat Dec 20 00:49:33 2003
-+++ src/configure	Sat Dec 20 00:50:26 2003
-@@ -2960,8 +2960,8 @@
+--- src/configure.orig	Sat Oct  9 11:58:20 2004
++++ src/configure	Sat Oct  9 11:58:45 2004
+@@ -3533,8 +3533,8 @@
  fi
  
  if test "$GCC" = "yes"; then

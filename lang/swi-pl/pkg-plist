@@ -7,6 +7,7 @@ lib/%%DISTNAME%%/bin/%%ARCH%%-%%OS%%/pl
 lib/%%DISTNAME%%/bin/%%ARCH%%-%%OS%%/plld
 lib/%%DISTNAME%%/bin/%%ARCH%%-%%OS%%/plrc
 lib/%%DISTNAME%%/bin/swipl
+lib/%%DISTNAME%%/boot/attvar.pl
 lib/%%DISTNAME%%/boot/apply.pl
 lib/%%DISTNAME%%/boot/autoload.pl
 lib/%%DISTNAME%%/boot/bags.pl
@@ -33,6 +34,14 @@ lib/%%DISTNAME%%/dotfiles/edit
 lib/%%DISTNAME%%/include/SWI-Prolog.h
 lib/%%DISTNAME%%/include/SWI-Stream.h
 lib/%%DISTNAME%%/include/stub.c
+lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/libpl.a
+lib/%%DISTNAME%%/library/clp/bounds.pl
+lib/%%DISTNAME%%/library/option.pl
+lib/%%DISTNAME%%/library/assoc.pl
+lib/%%DISTNAME%%/library/dif.pl
+lib/%%DISTNAME%%/library/when.pl
+lib/%%DISTNAME%%/library/operators.pl
+lib/%%DISTNAME%%/library/prolog_stack.pl
 lib/%%DISTNAME%%/library/INDEX.pl
 lib/%%DISTNAME%%/library/MANUAL
 lib/%%DISTNAME%%/library/am_match.pl
@@ -71,11 +80,9 @@ lib/%%DISTNAME%%/library/system.pl
 lib/%%DISTNAME%%/library/threadutil.pl
 lib/%%DISTNAME%%/library/tty.pl
 lib/%%DISTNAME%%/library/url.pl
-lib/%%DISTNAME%%/runtime/%%ARCH%%-%%OS%%/libpl.a
 lib/%%DISTNAME%%/swipl
-@dirrm lib/%%DISTNAME%%/runtime/%%ARCH%%-%%OS%%
-@dirrm lib/%%DISTNAME%%/runtime
 @dirrm lib/%%DISTNAME%%/man
+@dirrm lib/%%DISTNAME%%/library/clp
 @dirrm lib/%%DISTNAME%%/library
 @dirrm lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%
 @dirrm lib/%%DISTNAME%%/lib
