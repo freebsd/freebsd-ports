@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smlnj
-PORTVERSION=	110.41
+PORTVERSION=	110.42
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.research.bell-labs.com/dist/smlnj/working/${PORTVERSION}/ \
 		ftp://flint.cs.yale.edu/pub/smlnj/working/${PORTVERSION}/ \
@@ -17,11 +17,11 @@ DISTFILES+=	boot.x86-unix.tgz
 .elif (${MACHINE_ARCH} == "alpha")
 DISTFILES+=	boot.alpha32-unix.tgz
 .endif
-DISTFILES+=	ml-yacc.tgz ml-lex.tgz smlnj-lib.tgz
+DISTFILES+=	ml-yacc.tgz ml-lex.tgz smlnj-lib.tgz cml.tgz
 .if defined(WITH_EVERYTHING) || defined(WITH_RECOMPILE) || defined(WITH_FLINT)
 DISTFILES+=	ml-burg.tgz \
 		ckit.tgz ml-nlffi-lib.tgz ml-nlffigen.tgz \
-		cml.tgz eXene.tgz \
+		eXene.tgz \
 		MLRISC.tgz cm.tgz compiler.tgz system.tgz
 .endif
 EXTRACT_ONLY=	config.tgz

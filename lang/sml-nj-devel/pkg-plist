@@ -28,6 +28,12 @@ smlnj/lib/SMLNJ-MLRISC/CM/%%MLARCH%%-unix/SPARC.cm
 smlnj/lib/SMLNJ-MLRISC/CM/%%MLARCH%%-unix/Visual.cm
 smlnj/lib/basis.cm/CM/%%MLARCH%%-unix/basis.cm
 smlnj/lib/burg-ext.cm/CM/%%MLARCH%%-unix/burg-ext.cm
+smlnj/lib/cml/CM/%%MLARCH%%-unix/basis.cm
+smlnj/lib/cml/CM/%%MLARCH%%-unix/cml-internal.cm
+smlnj/lib/cml/CM/%%MLARCH%%-unix/cml.cm
+smlnj/lib/cml/CM/%%MLARCH%%-unix/core-cml.cm
+smlnj/lib/cml-lib/CM/%%MLARCH%%-unix/smlnj-lib.cm
+smlnj/lib/cml-lib/CM/%%MLARCH%%-unix/trace-cml.cm
 smlnj/lib/controls-lib.cm/CM/%%MLARCH%%-unix/controls-lib.cm
 smlnj/lib/dir-tool.cm/CM/%%MLARCH%%-unix/dir-tool.cm
 smlnj/lib/grm-ext.cm/CM/%%MLARCH%%-unix/grm-ext.cm
@@ -115,6 +121,12 @@ smlnj/lib/unix-lib.cm/CM/%%MLARCH%%-unix/unix-lib.cm
 @dirrm smlnj/lib/burg-ext.cm/CM/%%MLARCH%%-unix
 @dirrm smlnj/lib/burg-ext.cm/CM
 @dirrm smlnj/lib/burg-ext.cm
+@dirrm smlnj/lib/cml/CM/%%MLARCH%%-unix
+@dirrm smlnj/lib/cml/CM
+@dirrm smlnj/lib/cml
+@dirrm smlnj/lib/cml-lib/CM/%%MLARCH%%-unix
+@dirrm smlnj/lib/cml-lib/CM
+@dirrm smlnj/lib/cml-lib
 @dirrm smlnj/lib/controls-lib.cm/CM/%%MLARCH%%-unix
 @dirrm smlnj/lib/controls-lib.cm/CM
 @dirrm smlnj/lib/controls-lib.cm
