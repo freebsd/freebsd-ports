@@ -60,7 +60,7 @@ while [ "$1" ]; do
 			;;
 		\"GD\")
 			echo "LIB_DEPENDS+=	gd.0:\${PORTSDIR}/graphics/gd"
-			echo "PHP_CONF_ARGS+=	--with-gd=shared,\${PREFIX}"
+			echo "PHP_CONF_ARGS+=	--with-gd=\${PREFIX}"
 			GD=1
 			;;
 		\"FreeType\")
@@ -106,7 +106,7 @@ while [ "$1" ]; do
 			;;
 		\"MySQL\")
 			echo "LIB_DEPENDS+=	mysqlclient.6:\${PORTSDIR}/databases/mysql322-client"
-			echo "PHP_CONF_ARGS+=	--with-mysql=shared,\${PREFIX}"
+			echo "PHP_CONF_ARGS+=	--with-mysql=\${PREFIX}"
 			;;
 		\"PostgreSQL\")
 			echo "BUILD_DEPENDS+=	\${PREFIX}/pgsql/bin/psql:\${PORTSDIR}/databases/postgresql"
@@ -129,7 +129,7 @@ while [ "$1" ]; do
 			;;
 		\"SNMP\")
 			echo "LIB_DEPENDS+=	snmp.4:\${PORTSDIR}/net/ucd-snmp"
-			echo "PHP_CONF_ARGS+=	--with-snmp=shared,\${PREFIX} --enable-ucd-snmp-hack"
+			echo "PHP_CONF_ARGS+=	--with-snmp=\${PREFIX} --enable-ucd-snmp-hack"
 			;;
 		\"XML\")
 			echo "BUILD_DEPENDS+=	\${PREFIX}/lib/libexpat.a:\${PORTSDIR}/textproc/expat"
