@@ -1,0 +1,11 @@
+--- configure.orig	Sun Oct 27 09:09:53 2002
++++ configure	Fri Nov  1 16:45:23 2002
+@@ -2124,7 +2124,7 @@
+ int
+ main ()
+ {
+-pthread_create ();
++pthread_create_pthread_stuff_looks_ugly_feel_free_to_make_it_working ();
+   ;
+   return 0;
+ }

@@ -6,23 +6,26 @@
 #
 
 PORTNAME=	ysm
-PORTVERSION=	7.2.7.1
-PORTREVISION=	1
+PORTVERSION=	7.2.8.1
 CATEGORIES=	net
-MASTER_SITES=	ftp://vampiro.rootshell.ru/pub/warez/ \
+MASTER_SITES=	ftp://vampiro.rootshell.ru/pub/FreeBSD/distfiles/ \
 		http://vampiro.rootshell.ru/ \
 		ftp://ftp.treasury.ru/pub/unix/ \
-		http://www.treasury.ru/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	ysmv7_2_7_1
+DISTNAME=	ysmv7_2_8_1
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	vampiro@rootshell.ru
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		CFLAGS="-DYSM_USE_ICONV" \
+		LDFLAGS="-lcipher -L${LOCALBASE}/lib -liconv"
+
 MAN1=		ysm.1
-MANCOMPRESSED=	yes
 
 .include <bsd.port.mk>

@@ -1,11 +1,12 @@
---- YSM_Setup.c.orig	Fri Apr 12 11:07:38 2002
-+++ YSM_Setup.c	Tue May 28 11:21:08 2002
-@@ -441,7 +441,7 @@
+--- src/YSM_Setup.c.orig	Fri Nov  1 15:34:33 2002
++++ src/YSM_Setup.c	Fri Nov  1 15:34:56 2002
+@@ -596,8 +596,7 @@
  
  		fprintf(YSM_CFGFD,"\n# TRANS_CHARSET is charset for transfering/receiving of messages");
  		fprintf(YSM_CFGFD,"\n# LOCAL_CHARSET is charset for displaying/inputting of messages");
--		fprintf(YSM_CFGFD,"\n# Russian Generic are TRANS: CP1251 LOCAL: KOI8R\n");
-+		fprintf(YSM_CFGFD,"\n# Russian Generic are TRANS: CP1251 LOCAL: KOI8-R\n");
+-		fprintf(YSM_CFGFD,"\n# Russian Generic are TRANS: CP1251 LOCAL: KOI8R");
+-		fprintf(YSM_CFGFD,"\n# FreeBSD users please use those in lowercase.\n");
++		fprintf(YSM_CFGFD,"\n# Russian Generic are TRANS: CP1251 LOCAL: KOI8-R");
  		fprintf(YSM_CFGFD,"\nCHARSET_TRANS>0");
  		fprintf(YSM_CFGFD,"\nCHARSET_LOCAL>0");
  #endif
