@@ -19,6 +19,7 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		png.5:${PORTSDIR}/graphics/png \
 		jbig.1:${PORTSDIR}/graphics/jbigkit
 
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	LN="${LN}" RANLIB="${RANLIB}"
 MAKEFILE=	GNUmakefile
