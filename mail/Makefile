@@ -6,6 +6,7 @@
     SUBDIR += aileron
     SUBDIR += akpop3d
     SUBDIR += althea
+    SUBDIR += anomy-sanitizer
     SUBDIR += anubis
     SUBDIR += archivemail
     SUBDIR += arrow

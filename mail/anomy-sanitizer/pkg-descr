@@ -1,0 +1,18 @@
+The Anomy sanitizer is what most people would call 
+"an email virus scanner". The most important jobs that the sanitizer 
+can do for you - it can scan email attachments for viruses. 
+
+Other things it can do:
+- Disable potentially dangerous HTML code, such as javascript, 
+  within incoming email.
+- Protect you from email-based break-in attempts which exploit 
+  bugs in common email programs (Outlook, Eudora, Pine, ...).
+- Block or "mangle" attachments based on their file names. 
+  This way if you don't need to recieve e.g. visual basic scripts, 
+  then you don't have to worry about the security risk they imply 
+  (the ILOVEYOU virus was a visual basic program). 
+  This lets you protect yourself and your users from whole
+  classes of attacks, instead of blocking individual exploits.
+
+Author:	Bjarni R. Einarsson <bre@netverjar.is>
+WWW:	http://mailtools.anomy.net/

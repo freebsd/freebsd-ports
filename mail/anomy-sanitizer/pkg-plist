@@ -1,0 +1,18 @@
+@comment $FreeBSD$
+bin/sanitizer.pl
+bin/simplify.pl
+etc/sanitizer.cfg.sample
+%%SITE_PERL%%/Anomy/HTMLCleaner.pm
+%%SITE_PERL%%/Anomy/Log.pm
+%%SITE_PERL%%/Anomy/MIMEStream.pm
+%%SITE_PERL%%/Anomy/Sanitizer.pm
+%%SITE_PERL%%/Anomy/Sanitizer/FProt.pm
+%%SITE_PERL%%/Anomy/Sanitizer/MacroScanner.pm
+%%SITE_PERL%%/Anomy/Sanitizer/Scoring.pm
+@dirrm %%SITE_PERL%%/Anomy/Sanitizer/
+@dirrm %%SITE_PERL%%/Anomy/
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.sanitizer
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/README.sanitizer
+%%PORTDOCS%%%%DOCSDIR%%/sanitizer.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -1,0 +1,57 @@
+# Active features.
+#
+feat_boundaries     = 0
+feat_files          = 1
+feat_forwards       = 1
+feat_html           = 1
+feat_lengths        = 1
+feat_log_inline     = 1
+feat_log_stderr     = 0
+feat_scripts        = 1
+feat_trust_pgp      = 0
+feat_uuencoded      = 1
+feat_verbose        = 1
+file_list_rules     = 4
+#
+# Note:  This directory must exist and be writable by
+# the user running the sanitizer.
+#
+file_name_tpl       = /var/quarantine/att-$F-$T.$$
+
+# Files we absolutely don't want (mostly executables).
+#
+file_list_1_scanner = 0
+file_list_1_policy  = save
+file_list_1         = (?i)(winmail\.dat
+file_list_1        += |\.(exe|vb[es]|c(om|hm)|bat|pif|s(ys|cr))
+file_list_1        += (\.g?z|\.bz\d?)*)$
+
+# Pure data, don't mangle this stuff (much).
+#
+file_list_2_scanner = 0
+file_list_2_policy  = accept
+file_list_2         = (?i)\.(gif|jpe?g|pn[mg]|x[pb]m|dvi|e?ps|p(df|cx)|bmp
+file_list_2        += |mp[32]|wav|au|ram?
+file_list_2        += |avi|mov|mpe?g
+file_list_2        += |t(xt|ex)|csv|l(og|yx)|sql|jtmpl
+file_list_2        += |[ch](pp|\+\+)?|s|inc|asm|pa(tch|s)|java|php\d?
+file_list_2        += |[ja]sp
+file_list_2        += |can|pos|ux|reg|kbf|xal|\d+)(\.g?z|\.bz\d?)*$
+
+file_list_3_scanner = 0
+file_list_3_policy  = accept
+file_list_3         = ^[^\.]+$
+
+# Scan WinWord and Excel attachments with built-in macro scanner.
+# We consider anything exceeding the score of 25 to be dangerous,
+# and save it in the quarantine.
+#
+file_list_4 = (?i)\.(doc|dot|xls|xlw)$
+file_list_4_policy = accept:accept:save:save
+file_list_4_scanner = 0:1:2:builtin/macro 25
+
+
+
+# Default policy: accept, but mangle file name.
+#
+file_default_policy = defang
