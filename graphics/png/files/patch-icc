@@ -1,0 +1,53 @@
+This patch is needed by Intel's C Compiler (icc), which otherwise
+gets confused and treats _const4 and _const6 as undefined symbols.
+
+I don't see, how it can hurt the GCC either.
+
+	-mi
+
+--- pnggccrd.c	Thu Oct  3 07:32:28 2002
++++ pnggccrd.c	Sun Oct 19 23:55:15 2003
+@@ -327,7 +327,7 @@
+ static unsigned long long _mask48_0 = 0x4040808080808080LL;
+ 
+-static unsigned long long _const4   = 0x0000000000FFFFFFLL;
++static const unsigned long long _const4   = 0x0000000000FFFFFFLL;
+ //static unsigned long long _const5 = 0x000000FFFFFF0000LL;     // NOT USED
+-static unsigned long long _const6   = 0x00000000000000FFLL;
++static const unsigned long long _const6   = 0x00000000000000FFLL;
+ 
+ // These are used in the row-filter routines and should/would be local
+@@ -344,33 +344,4 @@
+ #endif
+ 
+-void /* PRIVATE */
+-png_squelch_warnings(void)
+-{
+-#ifdef PNG_THREAD_UNSAFE_OK
+-   _dif = _dif;
+-   _patemp = _patemp;
+-   _pbtemp = _pbtemp;
+-   _pctemp = _pctemp;
+-   _MMXLength = _MMXLength;
+-#endif
+-   _const4  = _const4;
+-   _const6  = _const6;
+-   _mask8_0  = _mask8_0;
+-   _mask16_1 = _mask16_1;
+-   _mask16_0 = _mask16_0;
+-   _mask24_2 = _mask24_2;
+-   _mask24_1 = _mask24_1;
+-   _mask24_0 = _mask24_0;
+-   _mask32_3 = _mask32_3;
+-   _mask32_2 = _mask32_2;
+-   _mask32_1 = _mask32_1;
+-   _mask32_0 = _mask32_0;
+-   _mask48_5 = _mask48_5;
+-   _mask48_4 = _mask48_4;
+-   _mask48_3 = _mask48_3;
+-   _mask48_2 = _mask48_2;
+-   _mask48_1 = _mask48_1;
+-   _mask48_0 = _mask48_0;
+-}
+ #endif /* PNG_ASSEMBLER_CODE_SUPPORTED */
+ 
