@@ -35,6 +35,7 @@
     SUBDIR += sunclock
     SUBDIR += tkseti
     SUBDIR += wmglobe
+    SUBDIR += wmjupiter
     SUBDIR += wmmoonclock
     SUBDIR += wmspaceweather
     SUBDIR += wmsun
