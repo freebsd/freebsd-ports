@@ -16,6 +16,7 @@ MAINTAINER=		zach@neurosoft.org
 BUILD_DEPENDS= 	gsed:${PORTSDIR}/textproc/gsed
 
 USE_JAVA=	1.1+
+NEED_JAVAC=	YES
 USE_JIKES=	NO
 
 MAN1: kawa
