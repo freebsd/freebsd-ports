@@ -1,10 +1,9 @@
 bin/timidity
-share/doc/timidity/C/README.dl
-share/doc/timidity/C/README.sf
-share/doc/timidity/ja/README.dl
-share/doc/timidity/ja/README.sf
+%%PORTDOCS%%share/doc/timidity++/README.dl
+%%PORTDOCS%%share/doc/timidity++/README.sf
+%%PORTDOCS%%share/doc/ja/timidity++/README.dl
+%%PORTDOCS%%share/doc/ja/timidity++/README.sf
 @dirrm lib/timidity
-@dirrm share/doc/timidity/C
-@dirrm share/doc/timidity/ja
-@dirrm share/doc/timidity
+%%PORTDOCS%%@dirrm share/doc/ja/timidity++
+%%PORTDOCS%%@dirrm share/doc/timidity++
 @dirrm share/timidity

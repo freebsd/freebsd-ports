@@ -15,6 +15,6 @@ lib/timidity/bitmaps/repeat.xbm
 lib/timidity/bitmaps/stop.xbm
 lib/timidity/bitmaps/timidity.xbm
 lib/timidity/interface_a.so
-share/doc/timidity/C/README.xaw
-share/doc/timidity/ja/README.xaw
+%%PORTDOCS%%share/doc/timidity++/README.xaw
+%%PORTDOCS%%share/doc/ja/timidity++/README.xaw
 @dirrm lib/timidity/bitmaps

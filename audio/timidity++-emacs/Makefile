@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	timidity++
-PORTVERSION=	2.10.4
+PORTVERSION=	2.11.3
 CATEGORIES+=	audio
 MASTER_SITES=	http://www.goice.co.jp/member/mo/timidity/dist/
 PKGNAMESUFFIX=	-${INTERFACE}
@@ -78,7 +78,7 @@ CONFIGURE_ENV=	WISH=wish8.0
 LINK=		xawmidi
 DOCFILES=	README.xaw
 DOCLANG=	C ja_JP.ujis
-INTERFACE_DEPS=	Xaw3d.6:${PORTSDIR}/x11-toolkits/Xaw3d
+INTERFACE_DEPS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 .elif ${INTERFACE} == "xskin"
 LINK=		xskinmidi
 DOCFILES=	README.xskin
@@ -124,9 +124,9 @@ post-install:
 .if !defined(NOPORTDOCS)
 .for lang in ${DOCLANG}
 	@${MKDIR} \
-	${PREFIX}/share/doc/timidity/`echo ${lang} | ${SED} 's/_JP.ujis//'`
+	${PREFIX}/share/doc/`echo ${lang} | ${SED} -e 's/^C$$//' -e 's/_JP.ujis$$//'`/timidity++
 	${INSTALL_DATA} ${WRKSRC}/doc/${lang}/${DOCFILES} \
-	${PREFIX}/share/doc/timidity/`echo ${lang} | ${SED} 's/_JP.ujis//'`
+	${PREFIX}/share/doc/`echo ${lang} | ${SED} -e 's/^C$$//' -e 's/_JP.ujis$$//'`/timidity++
 .endfor
 .endif
 .endif

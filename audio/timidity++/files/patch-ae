@@ -1,0 +1,14 @@
+--- timidity/Makefile.in.orig	Fri Jan 18 08:43:16 2002
++++ timidity/Makefile.in	Sun Jan 20 15:27:17 2002
+@@ -363,9 +363,8 @@
+ 	  p1=`echo $$p|sed 's/$(EXEEXT)$$//'`; \
+ 	  if test -f $$p \
+ 	  ; then \
+-	    f=`echo $$p1|sed '$(transform);s/$$/$(EXEEXT)/'`; \
+-	   echo " $(INSTALL_PROGRAM_ENV) $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/$$f"; \
+-	   $(INSTALL_PROGRAM_ENV) $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/$$f; \
++	   echo " $(INSTALL_PROGRAM_ENV) $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/$$p"; \
++	   $(INSTALL_PROGRAM_ENV) $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/$$p; \
+ 	  else :; fi; \
+ 	done
+ 
