@@ -18,6 +18,7 @@ COMMENT=	Python coroutine implementation
 BUILD_DEPENDS=		${LOCALBASE}/lib/libcoro.a:${PORTSDIR}/devel/libcoro
 
 USE_PYTHON=		yes
+USE_REINPLACE=		yes
 PLIST_SUB+=		PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S/^${LOCALBASE}\///g}
 MAKE_ENV=		PYTHON_VERSION=${PYTHON_VERSION:S/python//} \
 			EXTRA_INCLUDE="-I${LOCALBASE}/include" \
@@ -31,6 +32,18 @@ CORO_PACKAGE=		__init__ coro corodns coro_fd coro_subproc corodevice \
 			dnsclass dnslib dnsopcode dnstype fifo
 CORO_EXAMPLES= 		backdoor coro_fd coro_subproc coro_ehttpd \
 			corohttpd
+
+.include <bsd.port.pre.mk>
+
+post-patch:
+.if ${PYTHON_REL} >= 230
+	@${REINPLACE_CMD} -e 's,@DEFS@,,g' ${WRKSRC}/coromodule/Makefile.pre.in
+.for f in coro.py coro_fd.py coro_subproc.py corodevice.py corodns.py corohttpd.py
+	@${REINPLACE_CMD} -e 's,yield,yield_,g' ${WRKSRC}/${f}
+	# yield is a reserved keyword always from python2.3.
+.endfor
+	@${RM} -f ${WRKSRC}/*.bak
+.endif
 
 do-configure:
 	@${COROMOD_MAKE} -f Makefile.pre.in boot ${CONFIGURE_ARGS}
@@ -58,4 +71,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
