@@ -13,9 +13,11 @@ MASTER_SITES=	http://www.vcdgear.com/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool to convert VCDs from cue/bin format to mpeg
 
+ONLY_FOR_ARCHS=	alpha i386
+
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} < 300004
-BROKEN=	'Only an ELF binary is distributed'
+IGNORE=	"Only an ELF binary is distributed; requires FreeBSD 3.1 or later"
 .endif
 
 .if ${ARCH} == i386
