@@ -1,5 +1,7 @@
 bin/hpack
 bin/keycvt
-etc/hpack.cfg
+@unexec if cmp -s %D/etc/hpack.cfg %D/etc/hpack.cfg.dist; then rm -f %D/etc/hpack.cfg; fi
+etc/hpack.cfg.dist
+@exec [ -f %B/hpack.cfg ] || cp %B/%f %B/hpack.cfg
 lib/hpack/language.dat
 @dirrm lib/hpack
