@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	samba
-PORTVERSION=	2.2.3
+PORTVERSION=	2.2.3a
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.samba.org/pub/samba/%SUBDIR%/ \
 		ftp://samba.anu.edu.au/pub/samba/%SUBDIR%/ \
@@ -16,10 +16,6 @@ MASTER_SITES=	ftp://ftp.samba.org/pub/samba/%SUBDIR%/ \
 MASTER_SITE_SUBDIR=	. old-versions old
 
 MAINTAINER=	dwcjr@FreeBSD.org
-
-.if defined(WITH_CUPS)
-LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-base
-.endif
 
 .if defined(WITH_RECYCLE)
 PATCH_SITES+=	http://www.amherst.edu/~bbstone/recycle_bin/2.2.2/
@@ -45,9 +41,15 @@ CONFIGURE_ARGS=	--libdir=${SAMBA_CONFDIR} \
 
 .include <bsd.port.pre.mk>
 
-# to find CUPS libs, includes
+.if !defined(WITHOUT_CUPS)
+WITH_CUPS=	yes
+.endif
+
+.if defined(WITH_CUPS)
+LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-base
 CONFIGURE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include \
 		LDFLAGS=-L${LOCALBASE}/lib
+.endif
 
 .if defined(KRB5_HOME) && exists(${KRB5_HOME})
 CONFIGURE_ARGS+=	--with-krb5=${KRB5_HOME}
