@@ -1,0 +1,19 @@
+include/cgi-lib.h
+include/cgi-llist.h
+include/html-lib.h
+include/string-lib.h
+lib/libcgihtml.a
+lib/libcgihtml.so.1.0
+@exec /sbin/ldconfig -m %B
+share/doc/cgihtml/CHANGES
+share/doc/cgihtml/CREDITS
+share/doc/cgihtml/html/cgihtml-1.html
+share/doc/cgihtml/html/cgihtml-2.html
+share/doc/cgihtml/html/cgihtml-3.html
+share/doc/cgihtml/html/cgihtml-4.html
+share/doc/cgihtml/html/cgihtml-5.html
+share/doc/cgihtml/html/cgihtml-6.html
+share/doc/cgihtml/html/cgihtml-7.html
+share/doc/cgihtml/html/cgihtml.html
+@dirrm share/doc/cgihtml/html
+@dirrm share/doc/cgihtml
