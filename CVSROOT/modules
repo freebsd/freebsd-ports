@@ -1935,6 +1935,7 @@ eventwatcher	ports/sysutils/eventwatcher
 evg		ports/www/evg
 evilfinder	ports/games/evilfinder
 evilwm		ports/x11-wm/evilwm
+evince		ports/graphics/evince
 evolution	ports/mail/evolution
 evolution-data-server	ports/databases/evolution-data-server
 evolution-webcal	ports/www/evolution-webcal
@@ -2786,6 +2787,7 @@ gnofin		ports/finance/gnofin
 gnofract4d	ports/graphics/gnofract4d
 gnokii		ports/comms/gnokii
 gnomba		ports/net/gnomba
+gnome-backgrounds	ports/x11-themes/gnome-backgrounds
 gnome-btdownload	ports/net/gnome-btdownload
 gnome-clipboard-daemon	ports/x11/gnome-clipboard-daemon
 gnome-commander	ports/x11-fm/gnome-commander
@@ -2811,6 +2813,7 @@ gnome-industrial-theme	ports/x11-themes/gnome-industrial-theme
 gnome-jabber	ports/net/gnome-jabber
 gnome-look	ports/x11-themes/gnome-look
 gnome-menu-editor	ports/deskutils/gnome-menu-editor
+gnome-menus	ports/x11/gnome-menus
 gnome-mud	ports/net/gnome-mud
 gnome-music-quiz	ports/games/gnome-music-quiz
 gnome-osd	ports/misc/gnome-osd
@@ -2847,6 +2850,7 @@ gnomecontrolcenter2	ports/sysutils/gnomecontrolcenter2
 gnomecrash	ports/devel/gnomecrash
 gnomedb		ports/databases/gnomedb
 gnomedesktop	ports/x11/gnomedesktop
+gnomedocutils	ports/textproc/gnomedocutils
 gnomefind	ports/sysutils/gnomefind
 gnomegames2	ports/games/gnomegames2
 gnomegames2-extra-data	ports/games/gnomegames2-extra-data
@@ -4991,7 +4995,9 @@ libgnomedb	ports/databases/libgnomedb
 libgnomemm	ports/x11/libgnomemm
 libgnomemm26	ports/x11/libgnomemm26
 libgnomeprint	ports/print/libgnomeprint
+libgnomeprintmm	ports/print/libgnomeprintmm
 libgnomeprintui	ports/x11-toolkits/libgnomeprintui
+libgnomeprintuimm	ports/x11-toolkits/libgnomeprintuimm
 libgnomesu	ports/security/libgnomesu
 libgnomeui	ports/x11-toolkits/libgnomeui
 libgnomeuimm	ports/x11-toolkits/libgnomeuimm
@@ -8917,6 +8923,7 @@ popd		ports/mail/popd
 popfile		ports/mail/popfile
 poppassd	ports/mail/poppassd
 popper		ports/mail/popper
+poppler		ports/graphics/poppler
 poppwd		ports/mail/poppwd
 poppy		ports/mail/poppy
 popt		ports/devel/popt
@@ -9534,6 +9541,7 @@ pymsgauth	ports/mail/pymsgauth
 pyne		ports/news/pyne
 pyobfuscate	ports/devel/pyobfuscate
 pypanda		ports/misc/pypanda
+pyphany		ports/www/pyphany
 pypvm		ports/net/pypvm
 pyrex		ports/devel/pyrex
 pyslsk		ports/net/pyslsk
@@ -10871,6 +10879,7 @@ synergy 	ports/sysutils/synergy
 sysconftool	ports/devel/sysconftool
 syslog-ng	ports/sysutils/syslog-ng
 sysmon		ports/net-mgmt/sysmon
+system-tools-backends	ports/sysutils/system-tools-backends
 systemg		ports/x11-fm/systemg
 szip		ports/archivers/szip
 t-gnus		ports/news/t-gnus
