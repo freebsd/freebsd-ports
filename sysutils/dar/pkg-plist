@@ -14,6 +14,7 @@ include/dar/erreurs.hpp
 include/dar/generic_file.hpp
 include/dar/header_version.hpp
 include/dar/infinint.hpp
+include/dar/int_tools.hpp
 include/dar/integers.hpp
 include/dar/libdar.hpp
 include/dar/limitint.hpp
@@ -32,18 +33,18 @@ lib/libdar.a
 lib/libdar.la
 lib/libdar.so
 lib/libdar.so.2
-share/dar/DOC_API_V1
-share/dar/DOC_API_V2
-share/dar/FEATURES
-share/dar/GOOD_BACKUP_PRACTICE
-share/dar/LIMITATIONS
-share/dar/LINKS
-share/dar/NOTES
-share/dar/README
-share/dar/TUTORIAL
-share/dar/dar-differential-backup-mini-howto.en.html
-share/dar/dar_par.dcf
-share/dar/dar_par_create.duc
-share/dar/dar_par_test.duc
+%%DATADIR%%/DOC_API_V1
+%%DATADIR%%/DOC_API_V2
+%%DATADIR%%/FEATURES
+%%DATADIR%%/GOOD_BACKUP_PRACTICE
+%%DATADIR%%/LIMITATIONS
+%%DATADIR%%/LINKS
+%%DATADIR%%/NOTES
+%%DATADIR%%/README
+%%DATADIR%%/TUTORIAL
+%%DATADIR%%/dar-differential-backup-mini-howto.en.html
+%%DATADIR%%/dar_par.dcf
+%%DATADIR%%/dar_par_create.duc
+%%DATADIR%%/dar_par_test.duc
+@dirrm %%DATADIR%%
 @dirrm include/dar
-@dirrm share/dar
