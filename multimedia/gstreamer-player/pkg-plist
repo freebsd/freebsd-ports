@@ -40,6 +40,8 @@ share/gnome/gst-player/ui/volume.png
 share/gnome/gst-player/ui/volume_mute.png
 share/gnome/mime-info/gst-player.keys
 share/gnome/pixmaps/gst-player-48.png
+share/locale/nl/LC_MESSAGES/gst-player.mo
+share/locale/no/LC_MESSAGES/gst-player.mo
 @dirrm share/gnome/gst-player/ui
 @dirrm share/gnome/gst-player
 @unexec rmdir %D/share/gnome/applications 2>/dev/null || true
