@@ -5904,6 +5904,7 @@ npadmin		ports/sysutils/npadmin
 npc		ports/www/npc
 nqc		ports/lang/nqc
 nrg		ports/net-mgmt/nrg
+nrg2iso		ports/sysutils/nrg2iso
 nrpe		ports/net-mgmt/nrpe
 nrpep		ports/net-mgmt/nrpep
 ns		ports/net/ns
