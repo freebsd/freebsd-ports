@@ -105,10 +105,13 @@ lib/jnethackdir/minend-1.lev
 lib/jnethackdir/minend-2.lev
 lib/jnethackdir/minetn-1.lev
 lib/jnethackdir/minetn-2.lev
+lib/jnethackdir/nh_icon.xpm
 lib/jnethackdir/options
 lib/jnethackdir/oracle.lev
 lib/jnethackdir/orcus.lev
+lib/jnethackdir/pet_mark.xbm
 lib/jnethackdir/quest.dat
+lib/jnethackdir/rip.xpm
 lib/jnethackdir/sanctum.lev
 lib/jnethackdir/tower1.lev
 lib/jnethackdir/tower2.lev
@@ -118,26 +121,20 @@ lib/jnethackdir/water.lev
 lib/jnethackdir/wizard1.lev
 lib/jnethackdir/wizard2.lev
 lib/jnethackdir/wizard3.lev
-lib/jnethackdir/logfile
-lib/jnethackdir/record
-lib/jnethackdir/perm
-lib/jnethackdir/nh_icon.xpm
-lib/jnethackdir/pet_mark.xbm
-lib/jnethackdir/rip.xpm
 lib/jnethackdir/x11tiles
-share/doc/ja/nethack/jGuidebook.txt
-share/doc/ja/nethack/README
-share/doc/ja/nethack/README.j
-share/doc/ja/nethack/ChangeLog.j
-share/doc/ja/nethack/INSTALL.j
-share/examples/ja/nethack/nethack.rc
-share/examples/ja/nethack/JNetHack.ad
-share/examples/ja/nethack/nh10.pcf.gz
-share/examples/ja/nethack/ibm.pcf.gz
 @mode 664
 lib/jnethackdir/logfile
-lib/jnethackdir/record
 lib/jnethackdir/perm
-@dirrm share/doc/ja/nethack
-@dirrm share/examples/ja/nethack
+lib/jnethackdir/record
 @dirrm lib/jnethackdir
+share/doc/ja/nethack/ChangeLog.j
+share/doc/ja/nethack/INSTALL.j
+share/doc/ja/nethack/README
+share/doc/ja/nethack/README.j
+share/doc/ja/nethack/jGuidebook.txt
+share/examples/ja/nethack/JNetHack.ad
+share/examples/ja/nethack/ibm.pcf.gz
+share/examples/ja/nethack/nethack.rc
+share/examples/ja/nethack/nh10.pcf.gz
+@dirrm share/examples/ja/nethack
+@dirrm share/doc/ja/nethack
