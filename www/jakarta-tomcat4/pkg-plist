@@ -21,6 +21,14 @@ etc/rc.d/020.jakarta-tomcat4.sh
 %%T%%/RELEASE-PLAN-4.0.txt
 %%T%%/RUNNING.txt
 %%T%%/bin/bootstrap.jar
+%%T%%/bin/catalina.sh
+%%T%%/bin/digest.sh
+%%T%%/bin/jasper.sh
+%%T%%/bin/jspc.sh
+%%T%%/bin/setclasspath.sh
+%%T%%/bin/shutdown.sh
+%%T%%/bin/startup.sh
+%%T%%/bin/tool-wrapper.sh
 %%T%%/common/lib/activation.jar
 %%T%%/common/lib/jdbc2_0-stdext.jar
 %%T%%/common/lib/jndi.jar
@@ -29,6 +37,7 @@ etc/rc.d/020.jakarta-tomcat4.sh
 %%T%%/common/lib/naming-common.jar
 %%T%%/common/lib/naming-resources.jar
 %%T%%/common/lib/servlet.jar
+%%T%%/common/lib/tools.jar
 %%T%%/common/lib/tyrex-0.9.7.0.jar
 %%T%%/common/lib/tyrex.license
 %%T%%/common/lib/xerces.jar
