@@ -6,38 +6,39 @@
 #
 
 PORTNAME=	dfm
-PORTVERSION= 	0.99.1
+PORTVERSION= 	0.99.6
 CATEGORIES=	x11-fm
-MASTER_SITES=	http://www-c.informatik.uni-hannover.de/~kaiser/dfm/
+MASTER_SITES=	http://linux.tucows.com/files/x11/file/
 
 MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
-		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
+		gdk_imlib.5:${PORTSDIR}/graphics/imlib
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
+WRKSRC=		${WRKDIR}/${PORTNAME}
+USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		GTK_CONFIG="${GTK_CONFIG}" \
 		LIBS="-L${LOCALBASE}/lib"		
+CONFIGURE_ARGS=	--disable-gtktest --disable-imlibtest
 
-USE_X_PREFIX=	yes
+MAN1=		dfm.1x
 
-WRKSRC=		${WRKDIR}/dfm
-
-MAN1=		dfm.1
+DFM_DOCS=	ANNOUNCE BUGS COPYRIGHT CREDITS ChangeLog DOWNLOAD HELP.ERROR \
+		NO_WARRANTY README START TESTED TODO
 
 post-install:
-	@ ${MV} ${PREFIX}/man/man1/dfm.1x ${PREFIX}/man/man1/dfm.1
-	@ ${MKDIR} ${PREFIX}/share/examples/dfm
-	@ ${INSTALL_DATA} ${WRKSRC}/dfmext-samples/dfmext_local ${PREFIX}/share/examples/dfm/dfmext.sample.local
-	@ ${INSTALL_DATA} ${WRKSRC}/dfmext-samples/dfmext_normal ${PREFIX}/share/examples/dfm/dfmext.sample.normal
-	@ ${INSTALL_DATA} ${WRKSRC}/dfmext-samples/dfmext_user ${PREFIX}/share/examples/dfm/dfmext.sample.user
+	@${MKDIR} ${PREFIX}/share/examples/dfm
+	${INSTALL_DATA} ${WRKSRC}/dfmext-samples/dfmext_local ${PREFIX}/share/examples/dfm/dfmext.sample.local
+	${INSTALL_DATA} ${WRKSRC}/dfmext-samples/dfmext_normal ${PREFIX}/share/examples/dfm/dfmext.sample.normal
+	${INSTALL_DATA} ${WRKSRC}/dfmext-samples/dfmext_user ${PREFIX}/share/examples/dfm/dfmext.sample.user
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${PREFIX}/share/doc/dfm
-.for file in ANNOUNCE BUGS COPYING COPYRIGHT CREDITS ChangeLog DOWNLOAD HELP.ERROR NO_WARRANTY README START TESTED TODO
-	@ ${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/dfm
+	@${MKDIR} ${PREFIX}/share/doc/dfm
+.for file in ${DFM_DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/dfm
 .endfor
 .endif
 
