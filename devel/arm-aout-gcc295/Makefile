@@ -17,7 +17,6 @@ MAINTAINER=	pbecke@javagear.com
 
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - -T ${FILESDIR}/tlist -X ${FILESDIR}/xlist
 
-USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--target=arm-aout --with-gnu-as --with-gnu-ld --with-newlib
