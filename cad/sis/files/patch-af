@@ -1,0 +1,11 @@
+--- nova/log_output.c.orig	Thu Jan 27 22:23:24 2000
++++ nova/log_output.c	Thu Jan 27 22:23:38 2000
+@@ -157,7 +157,7 @@
+ 
+ {
+ 
+-    long time();
++    time_t time();
+     int i,new_code,increment,range,current_size,seed,trandom();
+ 
+     seed = (int) time(0);

@@ -1,0 +1,11 @@
+--- nova/anneal_code.c.orig	Fri Apr 22 21:02:21 1994
++++ nova/anneal_code.c	Thu Jan 27 22:17:11 2000
+@@ -195,7 +195,7 @@
+ * Assign nodes initial encodings prior to annealing
+ */
+ 
+-    long time();
++    time_t time();
+     int i,new_code,increment,range,seed,trandom();
+ 
+     /* seed = (int) time(0); */
