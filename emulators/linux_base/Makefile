@@ -133,26 +133,6 @@ do-install:
 	@cd ${LINUXBASE}/lib && ${LN} -sf libtermcap.so.2.0.8 libtermcap.so.2
 	@${RPM} --initdb --root ${LINUXBASE} --dbpath ${DBPATH}
 #
-# Make sure we have a /dev/null in the chrooted environment.
-.if !defined(WITH_JAIL)
-	@${MKDIR} ${LINUXBASE}/dev
-	@${RM} -f ${LINUXBASE}/dev/null
-	@mknod ${LINUXBASE}/dev/null c 2 2
-	@${CHMOD} 666 ${LINUXBASE}/dev/null
-.endif
-.if !defined(BATCH) && !exists(${LINUXBASE}/dev/null)
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "You need to create the null device in your jailed Linux environment. Run this"
-	@${ECHO_MSG} "outside the jail, then press enter:"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "mkdir -m 0755 -p <Jail root dir>/dev"
-	@${ECHO_MSG} "rm -f <Jail root dir>${LINUXBASE}/dev/null"
-	@${ECHO_MSG} "mknod <Jail root dir>${LINUXBASE}/dev/null c 2 2"
-	@${ECHO_MSG} "chmod 666 <Jail root dir>${LINUXBASE}/dev/null"
-	@${ECHO_MSG} ""
-	@${SH} -c "read line"
-.endif
-#
 # Install all packages. Ignore dependencies just like the Red Hat installer.
 # Also, set the ELF fallback brand to Linux, so that we don't have to do
 # anything special to run staticly linked binaries.
