@@ -7,6 +7,7 @@
 
 PORTNAME=	libmpeg2
 PORTVERSION=	0.4.0b
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://libmpeg2.sourceforge.net/files/
 DISTNAME=	mpeg2dec-${PORTVERSION}
