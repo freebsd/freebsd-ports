@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	freecell-solver
-PORTVERSION=	2.6.2
+PORTVERSION=	2.6.3
 CATEGORIES=	games
 MASTER_SITES=	http://vipe.technion.ac.il/~shlomif/freecell-solver/ \
 		http://fc-solve.berlios.de/
