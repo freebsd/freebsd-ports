@@ -8,7 +8,8 @@
 PORTNAME=	c2man
 PORTVERSION=	2.0.42
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.research.canon.com.au/pub/misc/c2man/
+MASTER_SITES=	ftp://ftp.heitec.net/pub/distfiles/ \
+		ftp://ftp.ntua.gr/pub/linux/openpkg/sources/DST/c2man/
 DISTNAME=	$(PORTNAME)-$(PORTVERSION:C/\.([0-9]*)$/@\1/)
 
 MAINTAINER=	bdluevel@heitec.net
