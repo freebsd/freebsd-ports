@@ -98,6 +98,7 @@ KnightCap	ports/games/KnightCap
 L-Breeder	ports/biology/L-Breeder
 LPRng		ports/sysutils/LPRng
 LPRngTool	ports/sysutils/LPRngTool
+MT		ports/www/MT
 Maaate		ports/audio/Maaate
 MathPlanner	ports/editors/MathPlanner
 Mesa3		ports/graphics/Mesa3
