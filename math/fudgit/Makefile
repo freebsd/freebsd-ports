@@ -3,7 +3,7 @@
 # Date created:         17 November 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.3 1995/04/11 01:18:52 asami Exp $
+# $Id: Makefile,v 1.4 1995/04/11 02:00:55 jmz Exp $
 #
 
 DISTNAME=	Fudgit_2.41
@@ -11,8 +11,9 @@ PKGNAME=	Fudgit-2.41
 MASTER_SITES=	ftp://ftp.physics.mcgill.ca/pub/Fudgit/
 DISTFILES=	fudgit_2.41.tar.gz
 
-USE_GMAKE=	yes
 MAINTAINER=	jmz@FreeBSD.org
+
+USE_GMAKE=	yes
 
 pre-install:
 	@mkdir -p ${PREFIX}/bin

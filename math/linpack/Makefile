@@ -3,10 +3,11 @@
 # Date created:         31 October 1994
 # Whom:                 ljo
 #
-# $Id$
+# $Id: Makefile,v 1.5 1995/04/11 01:19:04 asami Exp $
 #
 
 DISTNAME=	linpack
+PKGNAME=	linpack-1.0
 
 DISTDIR=${PORTSDIR}/distfiles/${DISTNAME}
 MASTER_SITES=	ftp://netlib.att.com/netlib/linpack/
