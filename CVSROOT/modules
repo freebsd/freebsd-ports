@@ -3338,7 +3338,6 @@ ksetiwatch	ports/astro/ksetiwatch
 ksh93		ports/shells/ksh93
 ksmp3play	ports/audio/ksmp3play
 kssh		ports/security/kssh
-kstars		ports/astro/kstars
 ksubeditor	ports/multimedia/ksubeditor
 kvirc		ports/irc/kvirc
 kwatch		ports/misc/kwatch
