@@ -8204,6 +8204,7 @@ tkgoodstuff	ports/x11/tkgoodstuff
 tkhfs		ports/emulators/tkhfs
 tkhylafax	ports/comms/tkhylafax
 tkinfo		ports/misc/tkinfo
+tkinspect	ports/devel/tkinspect
 tkirc		ports/irc/tkirc
 tkman		ports/misc/tkman
 tkmoo		ports/games/tkmoo
