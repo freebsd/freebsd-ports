@@ -21,7 +21,6 @@ MAINTAINER=	ports@FreeBSD.org
 
 PREV_VERSION=	${PORTVERSION:S/p1/p0/}
 
-FETCH_BEFORE_ARGS=	-b
 USE_IMAKE=	yes
 MAN1=		chimera.1
 

@@ -21,8 +21,6 @@ MAN6=		xhime.6
 
 NO_CDROM=	'contains commercial character data'
 
-FETCH_BEFORE_ARGS=	-b
-
 post-install:
 	strip ${PREFIX}/bin/xhime
 	${INSTALL_MAN} ${WRKSRC}/xhime-man.euc \
