@@ -19,9 +19,30 @@ etc/gconf/gconf.xml.defaults/apps/panel/default_setup/objects/menu_bar/%gconf.xm
 etc/gconf/gconf.xml.defaults/apps/panel/default_setup/objects/nautilus_launcher/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/panel/default_setup/objects/terminal_launcher/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/panel/default_setup/toplevels/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/panel/default_setup/toplevels/bottom_panel/background/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/panel/default_setup/toplevels/bottom_panel/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/panel/default_setup/toplevels/top_panel/background/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/panel/default_setup/toplevels/top_panel/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/panel/global/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/panel/profiles/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/applets/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/applets/clock/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/applets/mixer/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/applets/show_desktop_button/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/applets/window_list/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/applets/window_menu/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/applets/workspace_switcher/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/general/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/objects/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/objects/menu_bar/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/objects/nautilus_launcher/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/objects/terminal_launcher/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/toplevels/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/toplevels/bottom_panel/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/toplevels/bottom_panel/background/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/toplevels/top_panel/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/toplevels/top_panel/background/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/clock_applet/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/clock_applet/prefs/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/fish_applet/%gconf.xml
@@ -372,6 +393,7 @@ share/gnome/pixmaps/gnome-run.png
 share/gnome/pixmaps/gnome-screenshot.png
 share/gnome/pixmaps/panel-drawer.png
 share/gnome/pixmaps/panel-force-quit.png
+share/locale/af/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/am/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/ar/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/az/LC_MESSAGES/gnome-panel-2.0.mo
@@ -395,6 +417,7 @@ share/locale/fi/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/fr/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/ga/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/gl/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/gu/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/he/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/hi/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/hr/LC_MESSAGES/gnome-panel-2.0.mo
@@ -556,8 +579,29 @@ share/locale/zh_TW/LC_MESSAGES/gnome-panel-2.0.mo
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/fish_applet
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/clock_applet/prefs
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/clock_applet
+@dirrm etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/toplevels/top_panel/background
+@dirrm etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/toplevels/top_panel
+@dirrm etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/toplevels/bottom_panel/background
+@dirrm etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/toplevels/bottom_panel
+@dirrm etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/toplevels
+@dirrm etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/objects/terminal_launcher
+@dirrm etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/objects/nautilus_launcher
+@dirrm etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/objects/menu_bar
+@dirrm etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/objects
+@dirrm etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/general
+@dirrm etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/applets/workspace_switcher
+@dirrm etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/applets/window_menu
+@dirrm etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/applets/window_list
+@dirrm etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/applets/show_desktop_button
+@dirrm etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/applets/mixer
+@dirrm etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/applets/clock
+@dirrm etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/applets
+@dirrm etc/gconf/gconf.xml.defaults/apps/panel/profiles/default
+@dirrm etc/gconf/gconf.xml.defaults/apps/panel/profiles
 @dirrm etc/gconf/gconf.xml.defaults/apps/panel/global
+@dirrm etc/gconf/gconf.xml.defaults/apps/panel/default_setup/toplevels/top_panel/background
 @dirrm etc/gconf/gconf.xml.defaults/apps/panel/default_setup/toplevels/top_panel
+@dirrm etc/gconf/gconf.xml.defaults/apps/panel/default_setup/toplevels/bottom_panel/background
 @dirrm etc/gconf/gconf.xml.defaults/apps/panel/default_setup/toplevels/bottom_panel
 @dirrm etc/gconf/gconf.xml.defaults/apps/panel/default_setup/toplevels
 @dirrm etc/gconf/gconf.xml.defaults/apps/panel/default_setup/objects/terminal_launcher
