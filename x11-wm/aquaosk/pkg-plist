@@ -1,0 +1,8 @@
+lib/kde3/libkwinaqua_config.so
+lib/kde3/libkwinaqua_config.la
+lib/kde3/libkwinaqua.so
+lib/kde3/libkwinaqua.la
+share/apps/kwin/aqua.desktop
+@unexec rmdir %%PREFIX%%/share/apps/kwin 2>/dev/null || true
+@unexec rmdir %%PREFIX%%/share/apps 2>/dev/null || true
+@unexec rmdir %%PREFIX%%/lib/kde3 2>/dev/null || true

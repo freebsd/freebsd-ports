@@ -1,0 +1,12 @@
+A native Acqua-like window decoration for KDE 3, by David Sansome.
+
+Features:
+
+   * Mac OS X style drop shadows for windows.
+   * Rounded title bar corners.
+   * Application icon in title bar.
+   * Configurable window borders.
+
+WWW:	http://www.kde-look.org/content/show.php?content=5063
+
+brian@quynh-and-brian.org
