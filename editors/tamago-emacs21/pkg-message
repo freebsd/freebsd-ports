@@ -1,0 +1,12 @@
+Enabling Tamago
+=================
+  You can now tell your users to enable Tamago with Emacs 20.5 by adding
+
+  If you use with Asian Languages, select suitable languages, such as
+
+Japanese:	(set-language-environment "Japanese")
+Korean:		(set-language-environment "Korean")
+Chinese-GB:	(set-language-environment "Chinese-GB")
+Chinese-CNS:	(set-language-environment "Chinese-CNS")
+
+add to their `~/.emacs' file.
