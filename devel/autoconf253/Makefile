@@ -21,7 +21,8 @@ RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 USE_BZIP2=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	M4=${LOCALBASE}/bin/gm4
+CONFIGURE_ENV+=	CONFIG_SHELL=/bin/sh
+CONFIGURE_ENV+=	M4=${LOCALBASE}/bin/gm4
 
 .if exists(${LOCALBASE}/bin/emacs)
 PLIST_SUB+=	EMACS="" EMACSDIR=share/emacs

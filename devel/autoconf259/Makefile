@@ -28,15 +28,18 @@ USE_GMAKE=	yes
 USE_PERL5=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	M4=${LOCALBASE}/bin/gm4
+CONFIGURE_ENV+=	CONFIG_SHELL=/bin/sh
+CONFIGURE_ENV+=	M4=${LOCALBASE}/bin/gm4
 
+.if ${PORTNAME} == "autoconf"
 .if exists(${LOCALBASE}/bin/emacs)
 PLIST_SUB+=	EMACS="" EMACSDIR=share/emacs
 .elif exists(${LOCALBASE}/bin/xemacs)
 PLIST_SUB+=	EMACS="" EMACSDIR=lib/xemacs
 .else
 PLIST_SUB+=	EMACS="@comment " EMACSDIR=""
-.endif
+.endif # no emacs found
+.endif # ${PORTNAME} == "autoconf"
 
 GENERIC_TOOLS=	config.guess	\
 		config.sub	\
