@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cgic
-PORTVERSION=	2.01
+PORTVERSION=	2.02
 CATEGORIES=	www
 MASTER_SITES=	http://www.boutell.com/cgic/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
