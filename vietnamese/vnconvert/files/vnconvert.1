@@ -1,0 +1,65 @@
+.\"
+.\" Copyright (c) 1996,2001 David E. O'Brien
+.\"
+.\" All rights reserved.
+.\"
+.\" Redistribution and use in source and binary forms, with or without
+.\" modification, are permitted provided that the following conditions
+.\" are met:
+.\" 1. Redistributions of source code must retain the above copyright
+.\"    notice, this list of conditions and the following disclaimer.
+.\" 2. Redistributions in binary form must reproduce the above copyright
+.\"    notice, this list of conditions and the following disclaimer in the
+.\"    documentation and/or other materials provided with the distribution.
+.\"
+.\" THIS SOFTWARE IS PROVIDED BY THE DEVELOPERS ``AS IS'' AND ANY EXPRESS OR
+.\" IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+.\" OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+.\" IN NO EVENT SHALL THE DEVELOPERS BE LIABLE FOR ANY DIRECT, INDIRECT,
+.\" INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+.\" NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+.\" DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+.\" THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+.\" (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+.\" THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+.\"
+.\" $FreeBSD$
+.\"
+.Dd March 20, 2001
+.Os
+.Dt VNCONVERT 1
+.Sh NAME
+.Nm vnconvert
+.Sh SYNOPSIS
+.Nm
+.Sh DESCRIPTION
+.Nm
+converts files encoded in one Vietnamese encoding format to another
+Vietnamese encoding.  When run,
+.Nm
+prompts for the input and output filenames.
+.Nm
+is similar to the VPS "convert" for MS-DOS; and in fact, is based on
+the coding table provided by Vietnamese Professional Society (VPS).
+.Pp
+Supported Vietnamese encodings include:
+8-bit VISCII (VIetnamese Standard Code for Information Interchange),
+VNCII (VPSWin), VPSedit (DOS), VNI, VNLab/VNU, VNU (Windows),
+VN Thin-Art (Mac), VN Thin-Art (PC), Viet-Toan, Plain Vietnamese,
+and Standard 7-bit VIQR (VIetnamese Quoted Readable).
+.\" .Sh COMPATIBILITY
+.Sh SEE ALSO
+.Xr vn7to8 1 ,
+.Xr vn8to7 1 ,
+.Xr vn80to81 1 ,
+.Xr vnterm 1 ,
+.Xr vnelivs 1 ,
+.Xr vnless 1
+.Sh STANDARDS
+Viet-Std Standardization Specification (Viet-Std@Haydn.Stanford.EDU)
+.\" .Sh HISTORY
+.Sh AUTHORS
+Binh Do <binhdo@cs.ubc.ca>
+.br
+This man page was written by David E. O'Brien.
+.\" .Sh BUGS
