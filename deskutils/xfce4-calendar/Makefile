@@ -17,7 +17,8 @@ COMMENT=	A calendar application to manage your time with XFce 4
 
 BUILD_DEPENDS=	xfce-mcs-manager:${PORTSDIR}/sysutils/xfce4-mcs-manager
 LIB_DEPENDS=	xfce4util.1:${PORTSDIR}/x11/libxfce4util \
-		xfcegui4.1:${PORTSDIR}/x11-toolkits/libxfce4gui
+		xfcegui4.1:${PORTSDIR}/x11-toolkits/libxfce4gui \
+		dbh.1:${PORTSDIR}/databases/dbh
 
 USE_GNOME=	gtk20 libxml2
 USE_X_PREFIX=	yes
