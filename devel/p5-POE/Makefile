@@ -31,4 +31,8 @@ MAN3=		POE::Driver::SysRW.3 POE::Wheel::ListenAccept.3\
 		POE::Filter::Block.3 POE::Wheel::FollowTail.3 POE::Kernel.3\
 		POE::Filter::Stream.3 POE::Wheel::Curses.3
 
+post-install:
+		@${MKDIR} ${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
+		${INSTALL_DATA} ${WRKSRC}/samples/* ${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
+
 .include <bsd.port.mk>
