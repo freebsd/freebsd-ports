@@ -3,7 +3,7 @@
 # Date created:		6 Mar 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.2 1997/03/15 11:56:05 asami Exp $
+# $Id: Makefile,v 1.3 1997/04/09 07:10:07 asami Exp $
 #
 
 # can't use PORTSDIR here, since we haven't included bsd.port.mk
@@ -14,7 +14,7 @@ COMMENT=	${.CURDIR}/pkg/COMMENT
 
 .include <${.CURDIR}/../../editors/nvi/Makefile>
 
-PKGNAME=	jp-nvi-sjis-1.79-970403
+PKGNAME=	jp-nvi-sjis-1.79-970408
 CATEGORIES=	japanese editors
 
 MAINTAINER=	itojun@itojun.org
