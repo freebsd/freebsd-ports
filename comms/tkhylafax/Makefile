@@ -3,7 +3,7 @@
 # Date released:		Sun Jun  8 11:51:21 CEST 1997
 # Whom:				Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/06/08 11:23:35 andreas Exp $
 #
 
 DISTNAME=	tkhylafax-3.0b2
@@ -13,12 +13,12 @@ MASTER_SITES=	http://www.NeoSoft.com/tcl/ftparchive/sorted/comm/tkhylafax-3.0b2/
 
 MAINTAINER=	andreas@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/tkhylafax-3.0
 RUN_DEPENDS=	wish4.2:${PORTSDIR}/x11/tk42 \
 		sendfax:${PORTSDIR}/comms/hylafax \
 		gs:${PORTSDIR}/print/ghostscript4 \
 		gv:${PORTSDIR}/print/gv
 
+WRKSRC=		${WRKDIR}/tkhylafax-3.0
 MAN1=		tkhylafax.1
 
 .include <bsd.port.mk>
