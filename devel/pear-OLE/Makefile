@@ -15,6 +15,7 @@ COMMENT=	PEAR class for reading and writing OLE containers
 USE_PHP=	yes
 WANT_PHP_PEAR=	yes
 
+CATEGORY=	OLE
 FILES=		OLE.php PPS.php PPS/File.php PPS/Root.php
 
 .include <bsd.port.pre.mk>
