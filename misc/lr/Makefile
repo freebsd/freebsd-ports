@@ -7,14 +7,16 @@
 #
 
 PORTNAME=	lr
-PORTVERSION=	1.7
+PORTVERSION=	1.9
 CATEGORIES=	misc
 MASTER_SITES=	http://www.seekrut.com/rk/
+DISTNAME=	lazyread-${PORTVERSION}
 
 MAINTAINER=	mich@freebsdcluster.org
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
 do-build:
-	cd ${WRKSRC}; ${CC} ${CFLAGS} -o lr lr.c -lncurses
+	cd ${WRKSRC}; ${CC} ${CFLAGS} -o lr lazyread.c -lncurses
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lr ${PREFIX}/bin
