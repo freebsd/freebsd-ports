@@ -1,0 +1,26 @@
+bin/wdm
+bin/wdmLogin
+lib/X11/wdm/GiveConsole
+lib/X11/wdm/TakeConsole
+lib/X11/wdm/Xaccess
+lib/X11/wdm/Xclients
+lib/X11/wdm/Xresources
+lib/X11/wdm/Xservers
+lib/X11/wdm/Xservers.fs
+lib/X11/wdm/Xservers.ws
+lib/X11/wdm/Xsession
+lib/X11/wdm/Xsetup_0
+lib/X11/wdm/pixmaps/Eagle.xpm
+lib/X11/wdm/pixmaps/Earth.jpg
+lib/X11/wdm/pixmaps/Earth200x130.xpm
+lib/X11/wdm/pixmaps/GnuLinux-logo.jpg
+lib/X11/wdm/pixmaps/README
+lib/X11/wdm/pixmaps/Stars.jpg
+lib/X11/wdm/pixmaps/StarsLogo.jpg
+lib/X11/wdm/pixmaps/daemon1-HQ-1280x960.jpg
+lib/X11/wdm/pixmaps/gnuLogo.xpm
+lib/X11/wdm/wdm-config
+@dirrm lib/X11/wdm/pixmaps
+@unexec rmdir %D/lib/X11/wdm/authdir/authfiles 2>/dev/null || true
+@dirrm lib/X11/wdm/authdir
+@dirrm lib/X11/wdm
