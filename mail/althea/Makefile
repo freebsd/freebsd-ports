@@ -14,13 +14,15 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
+REINPLACE_ARGS=	-i ""
 USE_GTK=	yes
 USE_OPENSSL=	yes
 MAKE_ENV=	MKDIR="${MKDIR}"
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 
 post-patch:
-	@${PERL} -pi -e "s|/etc|${PREFIX}/etc|g" \
+	@${REINPLACE_CMD} -e "s|/etc|${PREFIX}/etc|g" \
 		${WRKSRC}/Documentation/help.html \
 		${WRKSRC}/load_config.cpp \
 		${WRKSRC}/load_config.h \

@@ -13,13 +13,14 @@ MASTER_SITES=	http://linuxberg.tele.net/files/gnome/network/
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	yes
 GNU_CONFIGURE=	yes
 
 pre-patch:
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
-		's|\$$\(datadir\)/gnome/|\$$\(datadir\)/|g'
+	@find ${WRKSRC} -name "Makefile.in" | xargs ${REINPLACE_CMD} -e \
+		's|\$$(datadir)/gnome/|\$$(datadir)/|g'
 
 .include <bsd.port.mk>

@@ -16,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
 
+USE_REINPLACE=	yes
 USE_QT_VER=	2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
@@ -24,7 +25,7 @@ CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 USE_GMAKE=	yes
 
 post-patch:
-	@${PERL} -pi -e "s/qt.so/qt2.so/g" ${WRKSRC}/configure
-	@${PERL} -pi -e "s/-lqt/-lqt2/g" ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e "s/qt.so/qt2.so/g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s/-lqt/-lqt2/g" ${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>
