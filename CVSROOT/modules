@@ -4202,6 +4202,7 @@ muh		ports/irc/muh
 mulberry	ports/mail/mulberry
 mule		ports/editors/mule
 mule-common	ports/editors/mule-common
+mule-ucs	ports/converters/mule-ucs
 mule-ucs-emacs20	ports/converters/mule-ucs-emacs20
 multi-gnome-terminal	ports/x11/multi-gnome-terminal
 mupad		ports/math/mupad
