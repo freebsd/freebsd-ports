@@ -8,7 +8,8 @@
 PORTNAME=	peps
 PORTVERSION=	1.0
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.whizkidtech.net/peps/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	petef
 
 MAINTAINER=	petef@FreeBSD.org
 
