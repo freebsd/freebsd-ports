@@ -1,0 +1,8 @@
+
+*WARNING* *WARNING* *WARNING* *WARNING* *WARNING* *WARNING* *WARNING*
+
+  Please note that this port does *NOT* work in 16bit color mode!
+      You must set your X-server to at use least 24bit color.
+
+*WARNING* *WARNING* *WARNING* *WARNING* *WARNING* *WARNING* *WARNING*
+
