@@ -1,0 +1,19 @@
+--- configure.orig	Fri Feb 15 01:30:05 2002
++++ configure	Fri Feb 15 01:30:53 2002
+@@ -6465,14 +6465,14 @@
+ 		;;
+ 	no)  echo "$as_me:6466: result: no." >&5
+ echo "${ECHO_T}no." >&6
+-		CFLAGS="-O3 -funroll-loops -fomit-frame-pointer -Wall"
++#		CFLAGS="-O3 -funroll-loops -fomit-frame-pointer -Wall"
+ 		ac_cv_ec_debug=no
+ 		;;
+ esac
+ else
+   echo "$as_me:6473: result: no. disabled by default." >&5
+ echo "${ECHO_T}no. disabled by default." >&6
+-	CFLAGS="-O3 -funroll-loops -fomit-frame-pointer -Wall"
++#	CFLAGS="-O3 -funroll-loops -fomit-frame-pointer -Wall"
+ 	ac_cv_ec_debug=no
+ 
+ fi;
