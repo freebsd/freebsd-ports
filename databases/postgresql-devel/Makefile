@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	postgresql
-PORTVERSION?=	8.0.rc1.2004.12.18
+PORTVERSION?=	8.0.rc5.2005.01.16
 CATEGORIES?=	databases
 MASTER_SITES=	http://people.FreeBSD.org/~seanc/ports/pgsql/
 PATCH_SITES=	http://people.FreeBSD.org/~seanc/patches/pgsql/

@@ -558,6 +558,10 @@ share/postgresql/psqlrc.sample
 %%GETTEXT%%share/locale/nb/LC_MESSAGES/pg_resetxlog.mo
 %%GETTEXT%%share/locale/nb/LC_MESSAGES/postgres.mo
 %%GETTEXT%%share/locale/nb/LC_MESSAGES/psql.mo
+%%GETTEXT%%share/locale/pl/LC_MESSAGES/libpq.mo
+%%GETTEXT%%share/locale/pl/LC_MESSAGES/initdb.mo
+%%GETTEXT%%share/locale/pl/LC_MESSAGES/pg_config.mo
+%%GETTEXT%%share/locale/pl/LC_MESSAGES/pg_controldata.mo
 %%GETTEXT%%share/locale/pt_BR/LC_MESSAGES/initdb.mo
 %%GETTEXT%%share/locale/pt_BR/LC_MESSAGES/libpq.mo
 %%GETTEXT%%share/locale/pt_BR/LC_MESSAGES/pg_config.mo
@@ -574,6 +578,8 @@ share/postgresql/psqlrc.sample
 %%GETTEXT%%share/locale/ro/LC_MESSAGES/psql.mo
 %%GETTEXT%%share/locale/ro/LC_MESSAGES/pg_config.mo
 %%GETTEXT%%share/locale/ro/LC_MESSAGES/pg_resetxlog.mo
+%%GETTEXT%%share/locale/ro/LC_MESSAGES/postgres.mo
+%%GETTEXT%%share/locale/ro/LC_MESSAGES/pg_controldata.mo
 %%GETTEXT%%share/locale/ru/LC_MESSAGES/initdb.mo
 %%GETTEXT%%share/locale/ru/LC_MESSAGES/libpq.mo
 %%GETTEXT%%share/locale/ru/LC_MESSAGES/pg_config.mo
