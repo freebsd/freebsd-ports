@@ -1,6 +1,18 @@
---- config/gdm.conf.in.orig	Mon Mar  5 05:27:12 2001
-+++ config/gdm.conf.in	Fri Apr 20 20:42:22 2001
-@@ -7,7 +7,7 @@
+
+$FreeBSD$
+
+--- config/gdm.conf.in.orig	Sat Sep  1 13:03:45 2001
++++ config/gdm.conf.in	Tue Oct  2 15:10:39 2001
+@@ -3,7 +3,7 @@
+ AutomaticLogin=
+ AlwaysRestartServer=false
+ Configurator=@EXPANDED_GDMCONFIGDIR@/gdmconfig --disable-sound --disable-crash-dialog
+-GnomeDefaultSession=@EXPANDED_DATADIR@/gnome/default.session
++GnomeDefaultSession=@EXPANDED_DATADIR@/default.session
+ Chooser=@EXPANDED_BINDIR@/gdmchooser --disable-sound --disable-crash-dialog
+ DefaultPath=/bin:/usr/bin:/usr/bin/X11:/usr/local/bin:@EXPANDED_BINDIR@
+ DisplayInitDir=@EXPANDED_SYSCONFDIR@/gdm/Init
+@@ -11,7 +11,7 @@
  Group=gdm
  HaltCommand=/sbin/shutdown -h now
  KillInitClients=true
@@ -9,11 +21,41 @@
  PidFile=/var/run/gdm.pid
  PostSessionScriptDir=@EXPANDED_SYSCONFDIR@/gdm/PostSession/
  PreSessionScriptDir=@EXPANDED_SYSCONFDIR@/gdm/PreSession/
-@@ -47,11 +47,11 @@
+@@ -19,7 +19,7 @@
+ XKeepsCrashing=@EXPANDED_SYSCONFDIR@/gdm/XKeepsCrashing
+ XKeepsCrashingConfigurators=/usr/bin/X11/XF86Setup /usr/bin/X11/Xconfigurator
+ RebootCommand=/sbin/shutdown -r now
+-RootPath=/sbin:/usr/sbin:/bin:/usr/bin:/usr/bin/X11:/usr/local/bin:@EXPANDED_BINDIR@
++RootPath=/sbin:/usr/sbin:/bin:/usr/bin:/usr/X11R6/bin:/usr/local/bin:@EXPANDED_BINDIR@
+ ServAuthDir=@EXPANDED_AUTHDIR@
+ SessionDir=@EXPANDED_SYSCONFDIR@/gdm/Sessions/
+ SuspendCommand=
+@@ -30,9 +30,9 @@
+ TimedLoginEnable=false
+ TimedLogin=
+ TimedLoginDelay=30
+-StandardXServer=/usr/bin/X11/X
++StandardXServer=@EXPANDED_BINDIR@/X
+ FlexibleXServers=5
+-Xnest=/usr/bin/X11/Xnest -name Xnest
++Xnest=@EXPANDED_BINDIR@/Xnest -name Xnest
+ 
+ [security]
+ AllowRoot=true
+@@ -57,7 +57,7 @@
+ Willing=@EXPANDED_SYSCONFDIR@/gdm/Xwilling
+ 
+ [gui]
+-GtkRC=@EXPANDED_DATADIR@/themes/Default/gtk/gtkrc
++GtkRC=@EXPANDED_DATADIR@/../themes/Default/gtk/gtkrc
+ MaxIconWidth=128
+ MaxIconHeight=128
+ 
+@@ -68,11 +68,11 @@
  DefaultFace=@EXPANDED_PIXMAPDIR@/nobody.png
- DefaultLocale=english
+ DefaultLocale=en_US
  Exclude=bin,daemon,adm,lp,sync,shutdown,halt,mail,news,uucp,operator,nobody,gdm,postgres,pvm
--Font=-*-helvetica-bold-r-normal-*-*-180-*-*-*-*-*-*
+-Font=-*-helvetica-bold-r-normal-*-*-180-*-*-*-*-*-*,*
 +Font=-*-helvetica-bold-r-normal-*-*-180-*-*-*-*-*-*,*-r-*,*
  GlobalFaceDir=@EXPANDED_DATADIR@/faces/
  Icon=@EXPANDED_PIXMAPDIR@/gdm.xpm
@@ -23,14 +65,10 @@
  Quiver=true
  SystemMenu=true
  Welcome=Welcome to %n
-@@ -75,8 +75,8 @@
- Enable=false
+@@ -117,5 +117,5 @@
  
- [servers]
--0=/usr/bin/X11/X
--#1=/usr/bin/X11/X
-+0=@EXPANDED_BINDIR@/X
-+#1=@EXPANDED_BINDIR@/X
- #Note: If you want to make sure X runs on a specific virtual console on linux,
- #      you can use the following (for console 7):
- #0=/usr/bin/X11/X vt7
+ [server-Standard]
+ name=Standard server
+-command=/usr/bin/X11/X
++command=@EXPANDED_BINDIR@/X
+ flexible=true

@@ -1,0 +1,11 @@
+--- utils/Makefile.in.orig	Mon Oct  1 12:42:50 2001
++++ utils/Makefile.in	Mon Oct  1 12:43:00 2001
+@@ -161,7 +161,7 @@
+ gdmopen_SOURCES =  	gdmopen.c
+ 
+ 
+-gdmaskpass_LDADD =  	$(GNOME_LIBDIR)			$(INTLLIBS)			-lpam				-lpam_misc
++gdmaskpass_LDADD =  	$(GNOME_LIBDIR)			$(INTLLIBS)			-lpam
+ 
+ 
+ gdmopen_LDADD =  	$(GNOME_LIBDIR)			$(INTLLIBS)

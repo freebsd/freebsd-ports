@@ -1,0 +1,15 @@
+--- daemon/gdm-net.c.orig	Mon Oct  1 12:37:53 2001
++++ daemon/gdm-net.c	Mon Oct  1 12:37:34 2001
+@@ -156,7 +156,12 @@
+ 	if ( ! conn->writable)
+ 		return FALSE;
+ 
++#ifndef __FreeBSD__
+ 	if (send (conn->fd, str, strlen (str), MSG_NOSIGNAL) < 0)
++#else
++	/* According to send(2), FreeBSD doesn't return SIGPIPE */
++	if (send (conn->fd, str, strlen (str), 0) < 0)
++#endif
+ 		return FALSE;
+ 	else
+ 		return TRUE;

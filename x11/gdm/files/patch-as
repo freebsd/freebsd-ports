@@ -1,0 +1,14 @@
+--- gui/gdmflexiserver.c.orig	Mon Oct  1 12:39:52 2001
++++ gui/gdmflexiserver.c	Mon Oct  1 12:40:08 2001
+@@ -59,7 +59,11 @@
+ 		g_print ("Sending command: '%s'\n", command);
+ 
+ 	cstr = g_strdup_printf ("%s\n", command);
++#ifndef __FreeBSD__
+ 	if (send (fd, cstr, strlen (cstr), MSG_NOSIGNAL) < 0)
++#else
++	if (send (fd, cstr, strlen (cstr), 0) < 0)
++#endif
+ 		return NULL;
+ 
+ 	if ( ! get_response)
