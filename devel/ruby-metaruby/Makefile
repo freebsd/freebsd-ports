@@ -8,7 +8,7 @@
 PORTNAME=	metaruby
 PORTVERSION=	0.7
 CATEGORIES=	devel ruby
-MASTER_SITES=	http://hostname.2y.net/~matju/MetaRuby/
+MASTER_SITES=	http://artengine.ca/matju/MetaRuby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	MetaRuby-${PORTVERSION}
 DIST_SUBDIR=	ruby
