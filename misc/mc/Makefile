@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	utils/file/managers/mc/
 
 MAINTAINER=	fjoe@FreeBSD.org
+COMMENT=	Midnight Commander, a free Norton Commander Clone
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 

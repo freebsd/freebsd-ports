@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.physcip.uni-stuttgart.de:8080/fidosoft.husky/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	fjoe@FreeBSD.org
+COMMENT=	Msged/TE (full-featured FTN mail reader)
 
 LIB_DEPENDS=	fidoconfig.0:${PORTSDIR}/news/husky-fidoconf
 

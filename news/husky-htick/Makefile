@@ -12,6 +12,7 @@ CATEGORIES=	news mail
 DISTNAME=	${PORTNAME}_${PORTVERSION}-${PORTREVISION}
 
 MAINTAINER=	fjoe@FreeBSD.org
+COMMENT=	FTN File ticker
 
 LIB_DEPENDS=	fidoconfig.0:${PORTSDIR}/news/husky-fidoconf
 

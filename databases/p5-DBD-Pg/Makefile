@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	DBD
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	fjoe@freebsd.org
+COMMENT=	Provides access to PostgreSQL databases through the DBI
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
 LIB_DEPENDS=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
