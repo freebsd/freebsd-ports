@@ -1,53 +1,34 @@
-# New ports collection makefile for:	X-Emacs Packages
-# Date created:		24 Apr 1999
-# Whom:			Michael Elbel (me@FreeBSD.org)
+# New ports collection makefile for:	XEmacs elisp packages for Office Automation
+# Date created:		03 June 2000
+# Whom:			KIRIYAMA Kazuhiko<kiri@pis.toba-cmt.ac.jp>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	xemacs-packages
-PORTVERSION=	1.4
-CATEGORIES=	editors elisp
+PORTNAME=	xemacs-oa-packages
+PORTVERSION=	1.0
+CATEGORIES=	editors
 MASTER_SITES=	\
 		ftp://ftp.xemacs.org/pub/xemacs/packages/ \
 		ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/ftp.xemacs.org/xemacs/packages/ \
 		ftp://ftp.usyd.edu.au/pub/Xemacs/packages/ \
 		ftp://ftp.lab.kdd.co.jp/xemacs/packages/ \
 		ftp://ftp.th-darmstadt.de/pub/editors/xemacs/packages/
-DISTFILES=	\
-		apel-1.16-pkg.tar.gz \
-		auctex-1.19-pkg.tar.gz \
-		c-support-1.14-pkg.tar.gz \
-		cc-mode-1.17-pkg.tar.gz \
-		debug-1.11-pkg.tar.gz \
-		dired-1.07-pkg.tar.gz \
-		edit-utils-1.45-pkg.tar.gz \
-		efs-1.16-pkg.tar.gz \
-		fsf-compat-1.07-pkg.tar.gz \
-		hm--html-menus-1.14-pkg.tar.gz \
-		ispell-1.18-pkg.tar.gz \
-		mail-lib-1.28-pkg.tar.gz \
-		mailcrypt-2.04-pkg.tar.gz \
-		net-utils-1.13-pkg.tar.gz \
-		os-utils-1.19-pkg.tar.gz \
-		pcl-cvs-1.41-pkg.tar.gz \
-		prog-modes-1.23-pkg.tar.gz \
-		ps-print-nomule-1.03-pkg.tar.gz \
-		psgml-1.15-pkg.tar.gz \
-		sgml-1.06-pkg.tar.gz \
-		sh-script-1.11-pkg.tar.gz \
-		texinfo-1.18-pkg.tar.gz \
-		text-modes-1.22-pkg.tar.gz \
-		time-1.09-pkg.tar.gz \
-		vc-1.22-pkg.tar.gz \
-		viper-1.18-pkg.tar.gz \
-		w3-1.15-pkg.tar.gz \
-		xemacs-base-1.37-pkg.tar.gz \
-		xemacs-devel-1.25-pkg.tar.gz
 
-MAINTAINER=	kiri@pis.toba-cmt.ac.jp
+DISTFILES=	\
+		calc-1.12-pkg.tar.gz \
+		calendar-1.14-pkg.tar.gz \
+		forms-1.12-pkg.tar.gz \
+		frame-icon-1.08-pkg.tar.gz \
+		pc-1.17-pkg.tar.gz \
+		slider-1.11-pkg.tar.gz \
+		speedbar-1.14-pkg.tar.gz \
+		strokes-1.06-pkg.tar.gz
+
+MAINTAINER=	KIRIYAMA Kazuhiko<kiri@pis.toba-cmt.ac.jp>
 
 DIST_SUBDIR=	xemacs
+MASTER_SITE_SUBDIR=${DIST_SUBDIR}
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/xemacs-packages
@@ -63,15 +44,17 @@ do-extract:
 
 do-install:
 	${MKDIR} ${XEMACSDIR}
-	${CP} -Rp ${WRKSRC} ${XEMACSDIR}
+	${CP} -Rp ${WRKDIR}/xemacs-packages ${XEMACSDIR}
 
 post-install:
-	@${ECHO_MSG} "This is only a subset of the available packages for xemacs."
-	@${ECHO_MSG} "You can install additional packages yourself from within xemacs by"
-	@${ECHO_MSG} "running it as root and using the 'Manage Packages' menu within"
-	@${ECHO_MSG} "the 'Options' menu of the menubar."
-	@${ECHO_MSG} "To install all packages besides basic packages(xemacs-packages or"
-	@${ECHO_MSG} "xemacs-mule-packages), consider using the xemacs-sumo-packages or"
-	@${ECHO_MSG} "xemacs-mule-sumo-packages port."
+	@${ECHO_MSG} "    This is the set of the packages for xemacs with the oa category. You can"
+	@${ECHO_MSG} "install other packages provided by XEmacs.org with editors/xemacs-*-packages"
+	@${ECHO_MSG} "ports. These ports are prepared for corresponding XEmacs packages except for"
+	@${ECHO_MSG} "xemacs-packages, xemacs-basic-packages and xemacs-additional-packages. Where"
+	@${ECHO_MSG} "xemacs-additional-packages is a meta ports for packages out of xemacs, xemacs"
+	@${ECHO_MSG} "mule-basic and xemacs mule category packages."
+	@${ECHO_MSG} "    You can also install with running it as root and using the 'Manage Packes'"
+	@${ECHO_MSG} "menu within the 'Options' menu of the menubar. But using this xemacs package"
+	@${ECHO_MSG} "managing, you could not control under ports managing ;-)"
 
 .include <bsd.port.mk>
