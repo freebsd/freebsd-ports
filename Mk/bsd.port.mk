@@ -843,7 +843,7 @@ BUILD_DEPENDS+=			imake:${PORTSDIR}/devel/imake-4
 USE_XLIB=				yes
 .endif
 .if defined(USE_MESA)
-LIB_DEPENDS+=			GLU.1:${PORTSDIR}/graphics/Mesa3
+LIB_DEPENDS+=			glut.3:${PORTSDIR}/graphics/Mesa3
 .endif
 XAWVER=					7
 PKG_IGNORE_DEPENDS?=	'this_port_does_not_exist'
