@@ -34,8 +34,8 @@ CONFIGURE_ARGS+=--enable-ssl=no
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
-BROKEN=		"Does not compile on amd64"
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
 .endif
 
 pre-everything::
