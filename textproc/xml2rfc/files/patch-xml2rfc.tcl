@@ -6,8 +6,8 @@ $FreeBSD$
 @@ -1,6 +1,6 @@
  #!/bin/sh
  # the next line restarts using the correct interpreter \
--exec tclsh "$0" "$0" "$@"
-+exec tclsh8.3 "$0" "$0" "$@"
+-LC_ALL=C exec tclsh "$0" "$0" "$@"
++LC_ALL=C exec tclsh8.3 "$0" "$0" "$@"
  
  
- # NOTE FROM CLIVE
+ #

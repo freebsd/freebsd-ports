@@ -3,6 +3,7 @@ bin/xml2html
 bin/xml2nroff
 bin/xml2rfc
 bin/xml2txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README.html
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.xml
@@ -15,10 +16,15 @@ bin/xml2txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc2629.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc2629.xml
 %%PORTDOCS%%%%DOCSDIR%%/rfc2629.xsd
+%%PORTDOCS%%%%DOCSDIR%%/sample.txt
+%%PORTDOCS%%%%DOCSDIR%%/sample.xml
 %%PORTDOCS%%%%DOCSDIR%%/contrib/concat.pl
 %%PORTDOCS%%%%DOCSDIR%%/contrib/fast-sync.sh
-%%PORTDOCS%%%%DOCSDIR%%/contrib/new-draft.xml
+%%PORTDOCS%%%%DOCSDIR%%/contrib/new-draft-1.xml
+%%PORTDOCS%%%%DOCSDIR%%/contrib/new-draft-2.xml
 %%PORTDOCS%%%%DOCSDIR%%/contrib/template.xml
+%%PORTDOCS%%%%DOCSDIR%%/contrib/template0.xml
+%%PORTDOCS%%%%DOCSDIR%%/contrib/template1b.xml
 %%PORTDOCS%%%%DOCSDIR%%/contrib/xml2rfcpp.pl
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/contrib
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
