@@ -1,0 +1,5 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTML/Table/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/HTML/Table.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTML/Table
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTML
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/HTML
