@@ -1,5 +1,16 @@
---- ../cppuhelper/source/makefile.mk.orig	Wed Nov 14 14:17:37 2001
-+++ ../cppuhelper/source/makefile.mk	Sun Mar  3 17:40:47 2002
+--- ../cppuhelper/source/makefile.mk.orig	Thu Mar  7 16:37:48 2002
++++ ../cppuhelper/source/makefile.mk	Thu Mar  7 16:37:55 2002
+@@ -149,8 +149,8 @@
+ SHL1TARGET=$(TARGET)$(UDK_MAJOR)$(COMID)
+ 
+ SHL1STDLIBS= \
+-		$(CPPULIB)		\
+-		$(SALLIB)
++		$(SALLIB)		\
++		$(CPPULIB)
+ 
+ SHL1DEPN=
+ SHL1IMPLIB=i$(TARGET)
 @@ -173,6 +173,10 @@
  SHL1VERSIONMAP=gcc2_linux_intel.map
  .ELIF "$(OS)$(CPU)$(COMNAME)"=="LINUXIgcc3"
