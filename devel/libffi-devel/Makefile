@@ -8,7 +8,7 @@
 PORTNAME=	libffi
 PORTVERSION=	1.20
 CATEGORIES=	devel
-MASTER_SITES=	ftp://sourceware.cygnus.com/pub/libffi/
+MASTER_SITES=	ftp://sources.redhat.com/pub/libffi/
 
 MAINTAINER=	horance@freedom.ie.cycu.edu.tw
 
