@@ -130,6 +130,10 @@ MAN8=	actsync.8 actsyncd.8 archive.8 auth_smb.8 batcher.8 buffchan.8 \
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "ia64"
+BROKEN=		"Does not compile on ia64"
+.endif
+
 .if defined(WITH_STANDARD_ETC)
 ETC_DIR=	${PREFIX}/etc/inn
 PLIST_SUB+=	ETCDIR="etc/inn"
