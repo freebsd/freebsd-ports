@@ -1,14 +1,14 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Class/Fields/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/Class/Fields.pm
-lib/perl5/site_perl/%%PERL_VER%%/Class/Fields/Attribs.pm
-lib/perl5/site_perl/%%PERL_VER%%/Class/Fields/Fuxor.pm
-lib/perl5/site_perl/%%PERL_VER%%/Class/Fields/Inherit.pm
-lib/perl5/site_perl/%%PERL_VER%%/base.pm
-lib/perl5/site_perl/%%PERL_VER%%/fields.pm
-lib/perl5/site_perl/%%PERL_VER%%/private.pm
-lib/perl5/site_perl/%%PERL_VER%%/protected.pm
-lib/perl5/site_perl/%%PERL_VER%%/public.pm
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Class/Fields
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Class/Fields
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Class 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Class 2>/dev/null || true
+%%SITE_PERL%%/Class/Fields.pm
+%%SITE_PERL%%/Class/Fields/Attribs.pm
+%%SITE_PERL%%/Class/Fields/Fuxor.pm
+%%SITE_PERL%%/Class/Fields/Inherit.pm
+%%SITE_PERL%%/base.pm
+%%SITE_PERL%%/fields.pm
+%%SITE_PERL%%/private.pm
+%%SITE_PERL%%/protected.pm
+%%SITE_PERL%%/public.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Fields/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Fields
+@dirrm %%SITE_PERL%%/Class/Fields
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Class 2>/dev/null || true
