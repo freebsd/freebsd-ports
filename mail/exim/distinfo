@@ -1,4 +1,4 @@
 MD5 (exim/exim-4.32.tar.bz2) = f2dcbca57a8051c4d89d2cc8d96efd94
 SIZE (exim/exim-4.32.tar.bz2) = 1321711
-MD5 (exim/exiscan-acl-4.32-18.patch.bz2) = 6704112506aa9b8a7b28fa68094a2931
-SIZE (exim/exiscan-acl-4.32-18.patch.bz2) = 72288
+MD5 (exim/exiscan-acl-4.32-19.patch.bz2) = d1a3e095ab8c0733bc242155437d1729
+SIZE (exim/exiscan-acl-4.32-19.patch.bz2) = 73403
