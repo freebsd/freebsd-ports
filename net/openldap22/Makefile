@@ -3,12 +3,15 @@
 # Date created:         20 Sep 1998
 # Whom:                 Lachlan O'Dea
 #
-# $Id: Makefile,v 1.2 1998/10/26 13:02:26 vanilla Exp $
+# $Id: Makefile,v 1.3 1999/01/02 19:49:15 steve Exp $
 #
 
 DISTNAME=       openldap-1.1.2
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.OpenLDAP.org/pub/OpenLDAP/
+MASTER_SITES=	ftp://ftp.OpenLDAP.org/pub/OpenLDAP/openldap-release/ \
+		ftp://ftp.net.lut.ac.uk/openldap/openldap-release/ \
+		ftp://sunsite.cnlab-switch.ch/mirror/OpenLDAP/openldap-release/
+
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=     ulmo@earthling.net
