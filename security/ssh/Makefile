@@ -3,12 +3,14 @@
 # Date created:		30 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.6 1995/11/23 17:19:00 peter Exp $
+# $Id: Makefile,v 1.7 1996/01/21 00:32:30 ache Exp $
 #
 
 DISTNAME=       ssh-1.2.12a
 CATEGORIES=	security net
 MASTER_SITES=   ftp://ftp.cs.hut.fi/pub/ssh/snapshots/
+BUILD_DEPENDS+= wish:${PORTSDIR}/x11/tk
+BUILD_DEPENDS+= perl5.001:${PORTSDIR}/lang/perl5
 
 MAINTAINER=	torstenb@FreeBSD.ORG
 
