@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bsearch
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://namazu.org/~satoru/ruby-bsearch/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
