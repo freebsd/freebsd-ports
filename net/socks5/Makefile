@@ -36,15 +36,8 @@ MAN1=		runsocks.1 socks5.1 stopsocks.1 socks5_clients.1
 MAN5=		libsocks5.conf.5 socks5.conf.5
 CONFIGURE_ENV=  LIBS=-lcrypt
 
-do-fetch:
-	@if [ ! -f ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ]; then \
-	  ${ECHO} ""; \
-	  ${ECHO} "NEC requires that you grab the dist files from their"; \
-	  ${ECHO} "web site at http://www.socks.nec.com.  Please make sure"; \
-	  ${ECHO} "you have ${DISTNAME}${EXTRACT_SUFX} in ${DISTDIR}"; \
-	  ${ECHO} "and run make again."; \
-	  ${ECHO} ""; \
-	  exit 1;\
-	fi
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
+IGNORE="NEC requires that you grab the dist files from their web site at http://www.socks.nec.com.  Please make sure you have ${DISTNAME}${EXTRACT_SUFX} in ${DISTDIR} and run make again."
+.endif
 
 .include <bsd.port.mk>
