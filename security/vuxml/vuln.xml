@@ -37,7 +37,11 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>up-imapproxy</name>
-	<range><lt>1.2.3.rc2</lt></range>
+	<range><lt>1.2.2</lt></range>
+      </package>
+      <package>
+	<name>pop3proxy</name>
+	<range><le>1.1</le></range>
       </package>
     </affects>
     <description>
