@@ -1,5 +1,5 @@
---- configure.orig	Mon Mar 18 20:43:16 2002
-+++ configure	Fri May 10 11:49:42 2002
+--- configure.orig	Tue May 21 14:59:19 2002
++++ configure	Tue May 21 19:19:28 2002
 @@ -104,7 +104,7 @@
      if [ "$INPUT" != "y" -a "x$INPUT" != "x" ] ; then
          MILTER_VER="FFR"
@@ -9,15 +9,18 @@
          SM_LIB="libsm"
          SM_LIB_CMD="-lsm"
      elif [ $OS = "Linux" ] ; then
-@@ -114,52 +114,6 @@
+@@ -114,60 +114,6 @@
          SM_LIB=""
          SM_LIB_CMD=""
      fi
 -    if [ ! -f include/libmilter/mfapi.h ] ; then
 -        echo "no include/libmilter/mfapi.h"
 -    fi
--    if [ ! -f include/libmilter/mfdef.h ] ; then
+-    if [ $MILTER_VER = "STD" -a ! -f include/libmilter/mfdef.h ] ; then
 -        echo "no include/libmilter/mfdef.h"
+-        FAIL_MFDEF="yes"
+-    else
+-        FAIL_MFDEF="no"
 -    fi
 -    if [ "x$SM_LIB" != "x" -a ! -f "lib/$SM_LIB.a" ] ; then
 -        NO_ADD="yes"        
@@ -30,13 +33,16 @@
 -    fi
 -    if [ ! -f include/libmilter/mfapi.h\
 -         -o\
--         ! -f include/libmilter/mfdef.h\
+-         $FAIL_MFDEF = "yes"\
 -         -o\
 -         ! -f lib/libmilter.a\
 -         -o $NO_ADD = "yes" ] ; then
 -        echo 
 -        echo "Please copy (or make symlinks) for next files:"
--        echo "in ./include/libmilter directory mfapi.h and mfdef.h"
+-        echo $n "in ./include/libmilter directory mfapi.h"
+-        if [ $MILTER_VER = "STD" ] ; then
+-            echo " and mfdef.h"
+-        fi
 -        echo $n "in ./lib directory libmilter.a"
 -        if [ $SM_LIB = "libsm" -a $OS = "Linux" ] ; then
 -            echo " and libsm.a" 
@@ -48,7 +54,9 @@
 -        echo
 -        echo "So you should have next tree:"
 -        echo "include/libmilter/mfapi.h"
--        echo "                  mfdef.h"
+-        if [ $MILTER_VER = "STD" ] ; then
+-            echo "                  mfdef.h"
+-        fi
 -        echo "lib/libmilter.a"
 -        if [ $SM_LIB = "libsm" -a $OS = "Linux" ] ; then
 -            echo "    libsm.a" 
@@ -62,7 +70,7 @@
  else
      DRWEB_SM=""
  fi 
-@@ -256,7 +210,7 @@
+@@ -269,7 +215,7 @@
  if [ "x$BSD_MAKE" = "xyes" ] ; then
      COMPILE_RULE_1=".c.o:"
      COMPILE_RULE_2="	\$(CC) -c \$(ADD_CFLAGS) -D__SIGNAL_BASED_DW \${.ALLSRC}"
