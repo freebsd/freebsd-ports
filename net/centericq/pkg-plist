@@ -16,6 +16,7 @@ include/libicq2000/libicq2000/userinfoconstants.h
 include/libicq2000/libicq2000/version.h
 %%DATADIR%%/email.wav
 %%DATADIR%%/msg.wav
+%%DATADIR%%/offline.wav
 %%DATADIR%%/online.wav
 %%DATADIR%%/sms.wav
 %%DATADIR%%/url.wav
