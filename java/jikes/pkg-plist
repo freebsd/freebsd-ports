@@ -1,1 +1,7 @@
 bin/jikes
+share/doc/jikes-1.12/contrib.html
+share/doc/jikes-1.12/jikes.gif
+share/doc/jikes-1.12/jikes.html
+share/doc/jikes-1.12/license.htm
+share/doc/jikes-1.12/news.html
+@dirrm share/doc/jikes-1.12
