@@ -52,8 +52,6 @@
     SUBDIR += gide
     SUBDIR += gindent
     SUBDIR += glade
-    SUBDIR += glib11
-    SUBDIR += glib11-devel
     SUBDIR += glib12
     SUBDIR += gmake
     SUBDIR += gnustep
