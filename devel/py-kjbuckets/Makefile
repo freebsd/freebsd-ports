@@ -8,7 +8,10 @@
 PORTNAME=		kjbuckets
 PORTVERSION=		2.2
 CATEGORIES=		devel python
-MASTER_SITES=		http://www.chordate.com/kjbuckets/
+MASTER_SITES=		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	nectar
+# http://www.chordate.com/kjbuckets/ appears to be down.
+
 PKGNAMEPREFIX=		py-
 DISTNAME=		kjb
 
