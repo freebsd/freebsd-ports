@@ -15,4 +15,10 @@ COMMENT=	A simple UPS daemon for APC BK Pro(TM)
 
 MAN8=		bkpupsd.8
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=		"Does not compile due to deprecation of varargs.h"
+.endif
+
+.include <bsd.port.post.mk>
