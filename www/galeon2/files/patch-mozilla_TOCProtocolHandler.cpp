@@ -11,34 +11,6 @@
  
  /* Implementation file */
  NS_IMPL_ISUPPORTS1 (GTOCProtocolHandler, nsIProtocolHandler)
-@@ -126,17 +126,24 @@
- 	if (NS_FAILED(rv)) return rv;
- 
- 	/* finish the rendering */
--	PRUint32 size;  
--	rv = mStream->GetLength(&size);
--	if (NS_FAILED(rv)) return rv;
- 
- 	nsCOMPtr<nsIInputStream> iStream;
- 	rv = mStream->NewInputStream(0, getter_AddRefs(iStream));
- 	if (NS_FAILED(rv)) return rv;
- 
-+#if MOZILLA_SNAPSHOT > 3
-+	rv = NS_NewInputStreamChannel(getter_AddRefs(mChannel), mURI,
-+				      iStream, NS_LITERAL_CSTRING("text/html"),
-+				      NS_LITERAL_CSTRING("utf-8"));
-+#else
-+	PRUint32 size;
-+	rv = mStream->GetLength(&size);
-+	if (NS_FAILED(rv)) return rv;
-+
- 	rv = NS_NewInputStreamChannel(getter_AddRefs(mChannel), mURI,
- 				      iStream, NS_LITERAL_CSTRING("text/html"),
- 				      NS_LITERAL_CSTRING("utf-8"), size);
-+#endif
- 	if (NS_FAILED(rv)) return rv;
- 
- 	return rv;
 @@ -401,7 +408,7 @@
  }
  

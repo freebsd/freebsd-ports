@@ -8,16 +8,3 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -18588,7 +18589,11 @@
- # Check whether --enable-werror or --disable-werror was given.
- if test "${enable_werror+set}" = set; then
-   enableval="$enable_werror"
--  disable_werror=no
-+  if test "x$enable_werror" != "xno"; then                                
-+    disable_werror=no
-+  else
-+    disable_werror=yes
-+  fi
- else
-   disable_werror=yes
- fi;
