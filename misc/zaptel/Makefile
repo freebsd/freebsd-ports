@@ -23,12 +23,6 @@ ONLY_FOR_ARCHS=	i386
 PKGMESSAGE=	${WRKSRC}/.MESSAGE
 MAKE_ENV=	KMODDIR=${PREFIX}/lib/zaptel
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=		"requires FreeBSD 5.x to build."
-.endif
-
 pre-everything::
 	@if [ ! -f /usr/src/sys/Makefile ]; then \
 		${ECHO_MSG} ">> The zaptel port needs FreeBSD kernel source code to compile."; \
@@ -48,4 +42,4 @@ post-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/zaptel.sh.sample ${PREFIX}/etc/rc.d
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
