@@ -3,7 +3,7 @@
 # Date created:		7 Apr 1998
 # Whom:			Robert Nordier <rnordier@iafrica.com>
 #
-# $Id: Makefile,v 1.2 1998/04/14 11:49:14 rnordier Exp $
+# $Id: Makefile,v 1.3 1998/06/06 12:18:39 rnordier Exp $
 #
 
 DISTNAME=	TenDRA-4.1.2
@@ -34,14 +34,12 @@ pre-configure:
 do-build:
 	@(PATH=${WRKSRC}/bin:$$PATH && \
 	cd ${WRKSRC} && \
-	./INSTALL.build 2>&1 | tee ${.CURDIR}/mklog && \
-	${RM} -f ${.CURDIR}/mklog)
+	./INSTALL.build)
 	@${ECHO} "Bootstrapping the compiler ..."
 	@${RM} -fr ${WRKSRC}/work
 	@(PATH=${WRKSRC}/bin:$$PATH && \
 	cd ${WRKSRC} && \
-	./INSTALL.build -tcc 2>&1 | tee ${.CURDIR}/mklog && \
-	${RM} -f ${.CURDIR}/mklog)
+	./INSTALL.build -tcc)
 
 pre-install:
 	@(cd ${WRKSRC} && \
@@ -56,8 +54,7 @@ do-install:
 	@${MKDIR} ${PREFIX}/lib/TenDRA
 	@(PATH=${WRKSRC}/bin:$$PATH && \
 	cd ${WRKSRC} && \
-	./INSTALL.install -tcc -strip 2>&1 | tee ${.CURDIR}/mklog && \
-	${RM} -f ${.CURDIR}/mklog)
+	./INSTALL.install -tcc -strip)
 	@(cd ${PREFIX}/bin && \
 	chown ${BINOWN}:${BINGRP} tcc tchk tspec && \
 	chmod ${BINMODE} tcc tchk tspec)
