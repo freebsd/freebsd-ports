@@ -12,6 +12,11 @@ MASTER_SITES=	ftp://ftp.astron.com/pri/
 
 MAINTAINER=	issei@jp.FreeBSD.org
 
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} >= 500006 || ${OSVERSION} < 500000 && ${OSVERSION} >= 400021
+FORBIDDEN=	"Japanese support is already in the base system"
+.endif
+
 GNU_CONFIGURE=	yes
 ALL_TARGET=	all catalogs
 INSTALL_TARGET=	install install.man
@@ -34,4 +39,4 @@ post-install:
 	@(${GREP} -v ${PREFIX}/bin/tcsh /etc/shells.bak; ${ECHO} ${PREFIX}/bin/tcsh) >/etc/shells
 	@${CAT} ${PKGDIR}/MESSAGE
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -15,7 +15,11 @@ DISTNAME=	tcsh-${PORTVERSION}.add2
 MAINTAINER=	issei@jp.FreeBSD.org
 
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
-RUN_DEPENDS=	tcsh:${PORTSDIR}/japanese/tcsh
+
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} >= 500006 || ${OSVERSION} < 500000 && ${OSVERSION} >= 400021
+FORBIDDEN=	tcsh in base system cannot deal with local message catalogs yet
+.endif
 
 CATALOGNAME?=	generic
 
@@ -64,4 +68,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
