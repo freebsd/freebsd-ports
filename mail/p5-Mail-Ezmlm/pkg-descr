@@ -1,0 +1,24 @@
+$Id: README,v 1.1 2000/01/26 06:08:13 guy Exp $
+
+Ezmlm.pm
+
+Object methods for ezmlm mailing lists.
+
+This software is beta release. As such, please treat it with the appropriate 
+amount of caution. Let me know if you find any bugs, etc.
+
+The main reason for release is to sort of 'test the waters' ... Does anyone
+apart from me think this is a good idea??
+
+Install by doing the following ...
+# perl Makefile.PL
+# make test
+# make install
+
+One thing. For some reason MakeMaker doesn't like symlinks. Please make sure
+you use the full cantonical path for the qmail and ezmlm binaries.
+
+Documentation is in pod format. Please run perldoc Mail::Ezmlm after you have
+installed it.
+
+- Guy Antony Halse <guy-ezmlm@rucus.ru.ac.za>

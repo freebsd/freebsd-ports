@@ -1,0 +1,19 @@
+--- Makefile.PL.orig	Wed Jan 26 08:08:01 2000
++++ Makefile.PL	Thu May 18 14:00:48 2000
+@@ -1,4 +1,7 @@
+ # $Id: Makefile.PL,v 1.1 2000/01/26 06:07:42 guy Exp $
++#
++# Modified for FreeBSD Ports BATCH mode
++#
+ 
+ use ExtUtils::MakeMaker;
+ # See lib/ExtUtils/MakeMaker.pm for details of how to influence
+@@ -14,6 +17,8 @@
+ 
+ sub set_paths {
+    my($qmail_path, $ezmlm_path);
++
++	return if $ENV{BSD_BATCH_INSTALL};
+ 
+    print << 'EOM';
+ 
