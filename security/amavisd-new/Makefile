@@ -7,8 +7,7 @@
 # Based on amavisd ports makefile.
 
 PORTNAME=	amavisd-new
-PORTVERSION=	20021227.p2
-PORTREVISION=	2
+PORTVERSION=	20030314.p1
 CATEGORIES=	security
 MASTER_SITES=	http://www.ijs.si/software/amavisd/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/-p/}
@@ -33,8 +32,6 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/IO/Socket/UNIX.pm:${PORTSDIR}/devel/p5-IO
 		${LOCALBASE}/bin/unarj:${PORTSDIR}/archivers/unarj \
 		${LOCALBASE}/bin/unrar:${PORTSDIR}/archivers/unrar \
 		${LOCALBASE}/bin/zoo:${PORTSDIR}/archivers/zoo
-
-SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 
 USE_PERL5_RUN=	yes
 
@@ -75,7 +72,7 @@ pre-build:
 		       -e 's,%%PREFIX%%,${PREFIX},g' \
 	               < ${FILESDIR}/$${file}.tmpl > ${WRKDIR}/$${file}; \
 	done
-	for file in amavisd.conf amavisd amavisdconf; do \
+	for file in amavisd.conf amavisd; do \
 		${SED} -e 's,%%AMAVISUSER%%,${AMAVISUSER},g' \
 		       -e 's,%%AMAVISGROUP%%,${AMAVISGROUP},g' \
 		       -e 's,%%AMAVISDIR%%,${AMAVISDIR},g' \
@@ -93,7 +90,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/helper-progs/amavis-milter ${PREFIX}/sbin
 .endif
 	${INSTALL_SCRIPT} ${WRKDIR}/amavisd ${PREFIX}/sbin
-	${INSTALL_SCRIPT} ${WRKDIR}/amavisdconf ${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKDIR}/amavisd.conf ${PREFIX}/etc/amavisd.conf-dist
 	${INSTALL_SCRIPT} ${WRKDIR}/amavisd.sh ${PREFIX}/etc/rc.d
 .if !defined(NOPORTDOCS)
@@ -102,7 +98,7 @@ do-install:
 	README_FILES/README.customize README_FILES/README.exim_v3 \
 	README_FILES/README.exim_v4 README_FILES/README.exim_v4_app \
 	README_FILES/README.lookups README_FILES/README.milter \
-	README_FILES/README.old README_FILES/README.old.scanners \
+	README_FILES/README.chroot README_FILES/README.old.scanners \
 	README_FILES/README.performance README_FILES/README.postfix \
 	README_FILES/README.sendmail RELEASE_NOTES
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
