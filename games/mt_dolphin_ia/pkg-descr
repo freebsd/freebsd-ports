@@ -1,0 +1,8 @@
+MaitreTarot is a Tarot card game. Understand a game like freecell or
+poker, nothing to do with astrology. Tarot is rather a French game.
+
+This is a basic AI to play against your machine.
+
+Check the port games/mt_gtk_client for a GTK+ client.
+
+WWW: http://www.nongnu.org/maitretarot/

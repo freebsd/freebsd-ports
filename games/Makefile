@@ -273,6 +273,7 @@
     SUBDIR += moon-buggy
     SUBDIR += moonlander
     SUBDIR += moria
+    SUBDIR += mt_dolphin_ia
     SUBDIR += mvdsv
     SUBDIR += mythserver
     SUBDIR += nInvaders
