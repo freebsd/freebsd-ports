@@ -11840,6 +11840,7 @@ wping		ports/net/wping
 wprint		ports/print/wprint
 wput		ports/ftp/wput
 wrapper		ports/x11/wrapper
+wsdlpull	ports/www/wsdlpull
 wsmake		ports/www/wsmake
 wsoundprefs	ports/audio/wsoundprefs
 wsoundserver	ports/audio/wsoundserver
