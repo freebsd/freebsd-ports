@@ -7129,6 +7129,7 @@ ruby-o_dbm	ports/databases/ruby-o_dbm
 ruby-odbc	ports/databases/ruby-odbc
 ruby-opengl	ports/graphics/ruby-opengl
 ruby-openssl	ports/security/ruby-openssl
+ruby-p4		ports/devel/ruby-p4
 ruby-pam	ports/security/ruby-pam
 ruby-panda	ports/print/ruby-panda
 ruby-panel-applet	ports/x11/ruby-panel-applet
