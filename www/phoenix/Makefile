@@ -9,6 +9,7 @@
 
 PORTNAME=		phoenix
 PORTVERSION=		0.4
+PORTREVISION=		1
 CATEGORIES=		www
 MASTER_SITES=		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	trevor
@@ -30,12 +31,12 @@ USE_X_PREFIX=		yes
 
 USE_BZIP2=		yes
 USE_GMAKE=		yes
+USE_PERL5=		yes
 USE_REINPLACE=		yes
-#USE_AUTOCONF_VER=	213
-GNU_CONFIGURE=		yes
+HAS_CONFIGURE=		yes
 
 USE_GNOMENG=		yes
-USE_GNOME=		gtk12 ORBit
+USE_GNOME=		gtk12 orbit
 
 CFLAGS+=		${PTHREAD_CFLAGS}
 LIBS+=			${PTHREAD_LIBS}
@@ -55,8 +56,8 @@ PERL_MAJOR=${PERL_VER:C|^([1-9]+).*|\1|}
 PERL_MINOR=${PERL_VER:C|^[1-9]+\.0*([1-9]+).*|\1|}
 
 .if ${PERL_MAJOR} < 5 || ${PERL_MAJOR} == 5 && ${PERL_MINOR} < 8
+RUN_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
 BUILD_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
-RUN_DEPENDS=	${BUILD_DEPENDS}
 .endif # ${PERL_MAJOR} < 5 || ${PERL_MAJOR} == 5 && ${PERL_MINOR} < 8
 
 .if ${OSVERSION} > 500038
@@ -78,8 +79,10 @@ post-patch:
 		nsDrawingSurfaceGTK.cpp	nsFontMetricsXft.h
 
 post-install:
+	${RM} ${PREFIX}/bin/phoenix
 	${LN} -s ${LOCAL_PREFIX}/bin/phoenix \
 		${PREFIX}/bin/phoenix
+	${RM} ${PREFIX}/bin/phoenix-config
 	${LN} -s ${LOCAL_PREFIX}/bin/mozilla-config \
 		${PREFIX}/bin/phoenix-config
 
