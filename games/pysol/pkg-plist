@@ -85,11 +85,14 @@ share/pysol/html/introduction.html
 share/pysol/html/rules_8x8.html
 share/pysol/html/rules_braid.html
 share/pysol/html/rules_divorce.html
+share/pysol/html/rules_eiffeltower.html
 share/pysol/html/rules_fortythieves.html
 share/pysol/html/rules_freecell.html
 share/pysol/html/rules_gypsy.html
+share/pysol/html/rules_harp.html
 share/pysol/html/rules_irmgard.html
 share/pysol/html/rules_klondike.html
+share/pysol/html/rules_matriarchy.html
 share/pysol/html/rules_picturegallery.html
 share/pysol/html/rules_seahaventowers.html
 share/pysol/html/rules_spider.html
