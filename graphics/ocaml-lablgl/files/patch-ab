@@ -1,6 +1,6 @@
---- Makefile.config.orig	Sun Jan 13 19:30:59 2002
-+++ Makefile.config	Sun Jan 13 19:44:33 2002
-@@ -7,22 +7,22 @@
+--- Makefile.config.orig	Fri Aug  2 20:48:31 2002
++++ Makefile.config	Fri Aug  2 20:52:28 2002
+@@ -7,28 +7,28 @@
  ##### Adjust these always
  
  # Where to put the lablgl script
@@ -26,14 +26,19 @@
 -GLLIBS = -lGL -lGLU
 +GLLIBS = -L${X11BASE}/lib -R${X11BASE}/lib -lGL -lGLU -lXmu -lXext
  # The following libraries may be required (try to add them one at a time)
- # GLLIBS = -lGL -lGLU -lXmu -lXext -lpthread
+ #GLLIBS = -lGL -lGLU -lXmu -lXext -lpthread
  
-@@ -45,7 +45,7 @@
- TOGLDIR = Togl
+ # How to index a library after installing (required on MacOSX)
+-RANLIB = :
+-#RANLIB = ranlib
++#RANLIB = :
++RANLIB = ranlib
+ 
+ ##### Uncomment these for windows
+ #TKLIBS = tk83.lib tcl83.lib gdi32.lib user32.lib
+@@ -55,4 +55,4 @@
+ #TOGLDIR = Togl
  
  # C Compiler options
--COPTS = -c -O
+-#COPTS = -c -O
 +COPTS = -c ${CFLAGS}
- 
- ###### No need to change these
- 

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lablgl
-PORTVERSION=	0.97
+PORTVERSION=	0.98
 CATEGORIES=	graphics
 MASTER_SITES=	http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/dist/ \
 		ftp://ftp.inria.fr/lang/caml-light/bazar-ocaml/
@@ -17,6 +17,7 @@ BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 RUN_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
 USE_MESA=	yes
+USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/lablGL-${PORTVERSION}
 ALL_TARGET=	all opt
 EXAMPLESDIR=	${PREFIX}/share/examples/ocaml/${PORTNAME}
