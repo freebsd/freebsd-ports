@@ -50,7 +50,10 @@ MASTER_SITE_KDE_kde=	${kmaster:S@%SUBDIR%/@${ksub}/@g}
 
 # USE_KDEBASE_VER section
 .if defined(USE_KDEBASE_VER)
-.if ${USE_KDEBASE_VER} == 3
+.if ${USE_KDEBASE_VER} == CVS
+LIB_DEPENDS+=	konq:${PORTSDIR}/x11/kdebase
+USE_KDELIBS_VER=CVS
+.elif ${USE_KDEBASE_VER} == 3
 # kdebase 3.x common stuff
 LIB_DEPENDS+=	konq:${PORTSDIR}/x11/kdebase3
 USE_KDELIBS_VER=3
@@ -62,7 +65,11 @@ USE_KDELIBS_VER=2
 
 # USE_KDELIBS_VER section
 .if defined(USE_KDELIBS_VER)
-.if ${USE_KDELIBS_VER} == 3
+.if ${USE_KDELIBS_VER} == CVS
+LIB_DEPENDS+=	kdecore:${PORTSDIR}/x11/kdelibs
+USE_QT_VER=		CVS
+PREFIX=			${KDE_CVS_PREFIX}
+.elif ${USE_KDELIBS_VER} == 3
 # kdelibs 3.x common stuff
 LIB_DEPENDS+=	kdecore:${PORTSDIR}/x11/kdelibs3
 USE_QT_VER=		3
@@ -88,6 +95,24 @@ QTDIR=                 ${PREFIX}
 QTDIR=                 ${X11BASE}
 .endif # defined(PREFIX)
 CONFIGURE_ENV+=        MOC="${MOC}" QTDIR="${QTDIR}"
+
+.elif ${USE_QT_VER} == CVS
+
+KDE_CVS_PREFIX?=	${LOCALBASE}/kde-cvs
+QT_CVS_PREFIX?=		${X11BASE}/qt-cvs
+QTCPPFLAGS?=
+QTCFGLIBS?=
+
+MOC?=				${QT_CVS_PREFIX}/bin/moc
+BUILD_DEPENDS+=		${MOC}:${PORTSDIR}/x11-toolkits/qt-copy
+RUN_DEPENDS+=		${MOC}:${PORTSDIR}/x11-toolkits/qt-copy
+QTCPPFLAGS+=		-D_GETOPT_H		# added to work around broken getopt.h #inc
+.if !defined (QT_NONSTANDARD)
+CONFIGURE_ARGS+=--with-extra-libs="${LOCALBASE}/lib" \
+				--with-extra-includes="${LOCALBASE}/include"
+CONFIGURE_ENV+=	MOC="${MOC}" CPPFLAGS="${QTCPPFLAGS}" LIBS="${QTCFGLIBS}" \
+				QTDIR="${QT_CVS_PREFIX}" KDEDIR="${KDE_CVS_PREFIX}"
+.endif
 
 .elif ${USE_QT_VER} == 3
 
