@@ -11404,6 +11404,7 @@ wm2		ports/x11-wm/wm2
 wmDeskGuide	ports/x11-wm/wmDeskGuide
 wmScoreBoard	ports/misc/wmScoreBoard
 wmakerconf	ports/x11-wm/wmakerconf
+wmalbum		ports/audio/wmalbum
 wmanager	ports/x11-wm/wmanager
 wmapm		ports/sysutils/wmapm
 wmapmload	ports/sysutils/wmapmload
