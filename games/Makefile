@@ -386,6 +386,7 @@
     SUBDIR += xpenguins
     SUBDIR += xphotohunter
     SUBDIR += xpilot
+    SUBDIR += xpilotmon
     SUBDIR += xpipeman
     SUBDIR += xpuyo
     SUBDIR += xpuyopuyo
