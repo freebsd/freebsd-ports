@@ -379,6 +379,9 @@ lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/yow
 @unexec rmdir %D/lib/xemacs/mule-packages/etc/app-defaults 2>/dev/null || true
 @unexec rmdir %D/lib/xemacs/mule-packages/etc 2>/dev/null || true
 @unexec rmdir %D/lib/xemacs/mule-packages 2>/dev/null || true
+@dirrm lib/xemacs/site-lisp
+@dirrm lib/xemacs/site-modules
+@dirrm lib/xemacs
 @dirrm lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/s
 @dirrm lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/m
 @dirrm lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include
