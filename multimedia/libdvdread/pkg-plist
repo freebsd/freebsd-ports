@@ -1,12 +1,17 @@
 lib/libdvdread.a
+lib/libdvdread.la
 lib/libdvdread.so
-lib/libdvdread.so.1
+lib/libdvdread.so.2
 include/dvdread/dvd_reader.h
-include/dvdread/dvd_udf.h
 include/dvdread/ifo_types.h
 include/dvdread/ifo_read.h
 include/dvdread/ifo_print.h
 include/dvdread/nav_types.h
 include/dvdread/nav_read.h
 include/dvdread/nav_print.h
+%%PORTDOCS%%share/doc/libdvdread/AUTHORS
+%%PORTDOCS%%share/doc/libdvdread/NEWS
+%%PORTDOCS%%share/doc/libdvdread/README
+%%PORTDOCS%%share/doc/libdvdread/TODO
+%%PORTDOCS%%@dirrm share/doc/libdvdread
 @dirrm include/dvdread
