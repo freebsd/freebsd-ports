@@ -6,19 +6,20 @@
 #
 
 PORTNAME=	cups
-PORTVERSION=	${CUPS_VERSION}
-CATEGORIES=	print
+PORTVERSION=	${CUPS_PORTVER}
+CATEGORIES?=	print
 MASTER_SITES=	# empty
 DISTFILES=	# none
 EXTRACT_ONLY=	# empty
 
 MAINTAINER=	jah4007@cs.rit.edu
 
-LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-base
-RUN_DEPENDS=	${LOCALBASE}/sbin/cupsaddsmb:${PORTSDIR}/print/cups-lpr
+LIB_DEPENDS?=	cups.2:${.CURDIR}/../../print/cups-base
+RUN_DEPENDS?=	${LOCALBASE}/sbin/cupsaddsmb:${.CURDIR}/../../print/cups-lpr
 
 NO_BUILD=	true
 do-install:	# empty
+do-patch:	# empty
 
-.include "${.CURDIR}/Makefile.inc"
+.include "${.CURDIR}/../../print/cups/Makefile.inc"
 .include <bsd.port.mk>
