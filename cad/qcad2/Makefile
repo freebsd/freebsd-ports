@@ -35,7 +35,7 @@ post-patch:
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} qmake \
-		-spec ${X11BASE}/mkspecs/freebsd-g++ qcad.pro
+		-spec ${X11BASE}/share/qt/mkspecs/freebsd-g++ qcad.pro
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/qcad ${PREFIX}/bin

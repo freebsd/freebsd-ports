@@ -24,7 +24,7 @@ post-patch:
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} qmake \
-		-spec ${X11BASE}/mkspecs/freebsd-g++ tuxcards.pro
+		-spec ${X11BASE}/share/qt/mkspecs/freebsd-g++ tuxcards.pro
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
