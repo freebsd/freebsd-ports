@@ -1,6 +1,6 @@
 # New ports collection makefile for:	JDOM
 # Date created:		June 1, 2001
-# Whom:			Ernst de Haan <ernst@jollem.com>
+# Whom:			Ernst de Haan <znerd@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	java
 MASTER_SITES=	http://www.jdom.org/dist/binary/
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/[0-9]*\.[0-9]*//}
 
-MAINTAINER=	ernst@jollem.com
+MAINTAINER=	znerd@FreeBSD.org
 
 PLIST_SUB+=	TARGET_PREFIX=${TARGET_DIR:S/^${PREFIX}\///}
 PLIST_SUB+=	PREFIX=${PREFIX}

@@ -1,6 +1,6 @@
 # New ports collection makefile for:	jdk-doc-1.3
 # Date created:		June 1, 2001
-# Whom:			Ernst de Haan <ernst@jollem.com>
+# Whom:			Ernst de Haan <znerd@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	java
 MASTER_SITES=	#
 DISTNAME=	j2sdk-${JDK_VERSION:S/./_/g}-doc
 
-MAINTAINER=	ernst@jollem.com
+MAINTAINER=	znerd@FreeBSD.org
 
 NO_CDROM=	"License does not allow distribution with fee."
 RESTRICTED=	"This software is under license and export control."
