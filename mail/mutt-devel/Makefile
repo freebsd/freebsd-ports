@@ -346,6 +346,9 @@ post-patch::
 pre-configure::
 	@(cd ${WRKSRC}; ${SETENV} ${AUTOMAKE_ENV} ${ACLOCAL} -I m4)
 
+.if defined(MUTT_SLAVE_HTML_PAGES)
+SCRIPTS_ENV+=	MUTT_SLAVE_HTML_PAGES="$(MUTT_SLAVE_HTML_PAGES)"
+.endif
 .if defined(WITH_MUTT_NNTP)
 SCRIPTS_ENV+=	MUTT_NNTP="yes"
 .endif
