@@ -17,9 +17,10 @@ GNU_CONFIGURE=	yes
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/nap
-	${INSTALL_DATA} ${WRKSRC}/NEWS ${PREFIX}/share/doc/nap
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/nap
+	@${MKDIR} ${DOCSDIR}
+.for file in NEWS README doc/napster.txt doc/userguide.html
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.mk>
