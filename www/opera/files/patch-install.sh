@@ -1,5 +1,5 @@
---- install.sh.orig	Fri Dec 10 13:53:57 2004
-+++ install.sh	Wed Dec 15 15:35:18 2004
+--- install.sh.orig	Mon Jan 31 16:21:15 2005
++++ install.sh	Wed Feb  9 12:32:04 2005
 @@ -373,7 +373,7 @@
  	    mvv=''    # SunOS mv (no -v verbose option)
  	;;
@@ -9,7 +9,7 @@
  		cpf='-f'
  		if test "$verbose" -gt '1'; then
  		    chmodv='-v'
-@@ -873,47 +873,12 @@
+@@ -873,52 +873,13 @@
  
  if test ! \"\${OPERA_JAVA_DIR}\"; then
  
@@ -22,6 +22,10 @@
 +    PREFIXES=\"%%LOCALBASE%%\"
  
      for SUNJAVA in \\
+-	jre1.5.0_01 \\
+ 	jdk1.5.0_01/jre \\
+-	j2re1.4.2_06 \\
+-	j2sdk1.4.2_06/jre \\
 -	j2re1.4.2_04 \\
 -	j2sdk1.4.2_04/jre \\
 -	j2re1.4.2_03 \\
@@ -43,6 +47,7 @@
 -	j2se/1.4/jre \\
 -	j2se/1.3/jre \\
 -	j2se/jre \\
+-	jre1.3.1_15 \\
 -	jre1.3.1_02 \\
 -	jre1.3.1_01 \\
 -	j2re1.3.1 \\
@@ -60,7 +65,7 @@
  	; do
  	for PREFIX in \${PREFIXES}; do
  	    if test -f \"\${PREFIX}/\${SUNJAVA}/lib/${wrapper_sunjava_machine}/libjava.so\"; then OPERA_JAVA_DIR=\"\${PREFIX}/\${SUNJAVA}/lib/${wrapper_sunjava_machine}\" && break; fi
-@@ -962,11 +927,8 @@
+@@ -967,11 +928,8 @@
  
  # Acrobat Reader
  for BINDIR in \\
@@ -74,7 +79,7 @@
      ; do
      if test -d \${BINDIR} ; then PATH=\${PATH}:\${BINDIR}; fi
  done
-@@ -1281,36 +1243,13 @@
+@@ -1285,36 +1243,13 @@
  
  	if test -z "${OPERADESTDIR}"; then
  
@@ -115,7 +120,7 @@
  
  	fi # OPERADESTDIR
  
-@@ -1439,72 +1378,36 @@
+@@ -1443,72 +1378,36 @@
  
      debug_msg 1 "in gnome()"
  
@@ -210,7 +215,7 @@
     fi
     # Add ximian here
  }
-@@ -1515,39 +1418,31 @@
+@@ -1519,39 +1418,31 @@
  
      debug_msg 1 "in kde()"
  

@@ -29,9 +29,9 @@ MAINTAINER=	avleeuwen@piwebs.com
 COMMENT=	A blazingly fast, full-featured, standards-compliant browser
 
 OPERA_VER=	7.54
-OPERA_MINVER=	u1
+OPERA_MINVER=	u2
 OPERA_REL=	final
-OPERA_DATE=	20041210
+OPERA_DATE=	20050131
 
 DATADIR=	${PREFIX}/share/${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}
