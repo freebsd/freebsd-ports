@@ -1,0 +1,16 @@
+lib/libXbae-4.6.a
+lib/libXbae.a
+lib/libXbae.so.6.2
+include/Xbae-4.6/Caption.h
+include/Xbae-4.6/CaptionP.h
+include/Xbae-4.6/Cell.h
+include/Xbae-4.6/CellP.h
+include/Xbae-4.6/Clip.h
+include/Xbae-4.6/ClipP.h
+include/Xbae-4.6/Matrix.h
+include/Xbae-4.6/MatrixP.h
+include/Xbae-4.6/patchlevel.h
+@dirrm include/Xbae-4.6
+include/Xbae
+man/man3/XbaeMatrix.3.gz
+man/man3/XbaeCaption.3.gz
