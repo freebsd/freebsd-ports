@@ -1,0 +1,10 @@
+--- Makefile.in.orig	Wed Aug 27 22:44:39 2003
++++ Makefile.in	Wed Aug 27 22:45:35 2003
+@@ -185,7 +185,6 @@
+ # subdirectories to scan
+ SUBDIRS = \
+ 	glade help icons man misc pixmaps src win32 \
+-	plugins registry \
+ 	po intl
+ 
+ 
