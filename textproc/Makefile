@@ -75,6 +75,7 @@
     SUBDIR += p5-Text-Autoformat
     SUBDIR += p5-Text-Bind
     SUBDIR += p5-Text-CSV_XS
+    SUBDIR += p5-Text-DoubleMetaphone
     SUBDIR += p5-Text-Template
     SUBDIR += p5-XML-DOM
     SUBDIR += p5-XML-Parser
