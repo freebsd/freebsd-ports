@@ -10,7 +10,6 @@ bin/opera-devel
 %%DATADIR%%/config/opera6rc.fixed
 %%DATADIR%%/hhd.ssr
 %%DATADIR%%/html40_entities.dtd
-%%DATADIR%%/images/background.gif
 %%DATADIR%%/images/blank.gif
 %%DATADIR%%/images/drive.gif
 %%DATADIR%%/images/file.gif
@@ -22,10 +21,6 @@ bin/opera-devel
 %%DATADIR%%/images/opera_32x32.png
 %%DATADIR%%/images/opera_48x48.png
 %%DATADIR%%/images/operabanner.png
-%%DATADIR%%/images/shared.gif
-%%DATADIR%%/images/splash.png
-%%DATADIR%%/images/startup1.png
-%%DATADIR%%/images/startup2.png
 %%DATADIR%%/ini/dialog.ini
 %%DATADIR%%/ini/fastforward.ini
 %%DATADIR%%/ini/filehandler.ini
