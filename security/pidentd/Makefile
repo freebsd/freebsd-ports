@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pidentd
-PORTVERSION=	2.8.5
+PORTVERSION=	3.0.16
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/ident/servers/ \
 		ftp://ftp.fu-berlin.de/unix/security/ident/servers/
@@ -15,38 +15,33 @@ PATCH_SITES=	http://www.imasy.or.jp/~ume/ipv6/ \
 		http://home.jp.FreeBSD.org/~ume/ipv6/ \
 		${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	dinoex
-PATCHFILES=	pidentd-2.8.5-ipv6-1.5.diff.gz
-PATCH_DIST_STRIP=	-p2
+PATCHFILES=	pidentd-${PORTVERSION}-ipv6-20040227.diff.gz
+PATCH_DIST_STRIP=	-p0
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	An RFC1413 identification server
 
-ALL_TARGET=	freebsd
-MAKE_ENV=	REALPREFIX=${PREFIX}
+USE_REINPLACE=	yes
+GNU_CONFIGURE=	yes
 MAN8=		identd.8 idecrypt.8
+PLIST_FILES=	sbin/ibench sbin/identd sbin/idecrypt sbin/ikeygen
 
 .if defined(WITH_DES)
 USE_OPENSSL=	yes
+CFLAGS+=	-DINCLUDE_CRYPT -DOPENSSL_DES_LIBDES_COMPATIBILITY
+LDFLAGS+=	-L${OPENSSLLIB} -lcrypto
 .endif
 
-.include <bsd.port.pre.mk>
+post-extract:
+	${CP} ${FILESDIR}/idecrypt.8 ${WRKSRC}/doc/idecrypt.8
 
-.if ${OSVERSION} >= 400014
-ADD_GDEFS+=	-DINET6 -D__ss_family=ss_family -D__ss_len=ss_len
-.endif
+post-patch:
+	@${REINPLACE_CMD} \
+		-e "s| /etc/identd.conf| ${PREFIX}/etc/identd.conf|" \
+		-e "s| /etc/identd.key| ${PREFIX}/etc/identd.key|" \
+		${WRKSRC}/doc/identd.8 ${WRKSRC}/doc/idecrypt.8
 
-# Uncomment to activate the use of verifiable "cookies".  The idea is to be
-# able to detect fake "logs" intended to get your innocent users in trouble.
-# Naturally, since it uses libcrypto, you must have OpenSSL installed.
-#WITH_DES=	yes
+post-install:
+	${INSTALL_MAN} -m 644 ${WRKSRC}/doc/idecrypt.8 ${MANPREFIX}/man/man8/
 
-.if defined(WITH_DES)
-ADD_GDEFS+=	-DINCLUDE_CRYPT -DOPENSSL_DES_LIBDES_COMPATIBILITY \
-		-I${OPENSSLINC} -I${OPENSSLINC}/openssl
-ADD_GLIBS=	-L${OPENSSLLIB} -lcrypto
-.endif
-.if defined(WITH_DES) || ${OSVERSION} >= 400014
-MAKE_ENV+=	ADD_GDEFS="${ADD_GDEFS}" ADD_GLIBS="${ADD_GLIBS}"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
