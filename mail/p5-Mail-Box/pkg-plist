@@ -10,9 +10,9 @@ lib/perl5/site_perl/%%PERL_VER%%/Mail/Box/Message.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/Box/Thread.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/Box/Threads.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/Box/Tie.pm
-lib/perl5/site_perl/%%PERL_VER%%/mach/auto/Mail/Box/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/mach/auto/Mail/Box
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/mach/auto/Mail 2>/dev/null || true
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail/Box/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail/Box
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail 2>/dev/null || true
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Mail/Box/Mbox
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Mail/Box/MH
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Mail/Box
