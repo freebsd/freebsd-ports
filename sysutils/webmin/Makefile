@@ -7,7 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	1.030
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/updates/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -26,8 +26,9 @@ SCRIPTS_ENV+=	WRKDIR="${WRKDIR}"
 
 WEBMIN_MODULES=	bind8-1.030-1.wbm.gz \
 		dhcpd-1.030-2.wbm.gz \
-		firewall-1.030-2.wbm.gz \
+		firewall-1.030-3.wbm.gz \
 		fsdump-1.030-1.wbm.gz \
+		mysql-1.030-1.wbm.gz \
 		sendmail-1.030-1.wbm.gz \
 		squid-1.030-1.wbm.gz \
 		sshd-1.030-1.wbm.gz \
