@@ -15,10 +15,6 @@ FastCGI, then FastCGI applications get all the perks (mainly being *really*
 fast); if the server does not support FastCGI, then FastCGI applications
 behave exactly like standard CGIs.
 
-See http://www.fastcgi.com/ for more information about the benefits of
-FastCGI, for developer documentation, and for the Apache FastCGI module (to
-enable FastCGI support for the popular Apache web server).
-
 WWW: http://www.fastcgi.com/
 
   -Kelly

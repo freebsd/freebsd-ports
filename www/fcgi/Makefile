@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	fcgi-devkit
-PORTVERSION= 	2.1
+PORTVERSION= 	2.2.0
 CATEGORIES=	www
 MASTER_SITES=	http://www.fastcgi.com/dist/
+DISTNAME=	devkit_2.2.0
 
 MAINTAINER=	kbyanc@posi.net
 
@@ -25,7 +26,7 @@ post-install:
 .for i in fastcgi-prog-guide fastcgi-whitepaper
 	    ${MKDIR} ${PREFIX}/share/doc/${PORTNAME}/$i
 	    cd ${WRKSRC}/doc/$i && \
-                ${INSTALL_DATA} * ${PREFIX}/share/doc/${PORTNAME}/$i
+		${INSTALL_DATA} * ${PREFIX}/share/doc/${PORTNAME}/$i
 	    @if [ -f ${PREFIX}/share/doc/${PORTNAME}/$i/Makefile ]; then \
 		${RM} ${PREFIX}/share/doc/${PORTNAME}/$i/Makefile; \
 	    fi
