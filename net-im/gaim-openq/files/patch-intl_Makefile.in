@@ -1,0 +1,11 @@
+--- intl/Makefile.in.orig	Tue Oct 12 22:43:15 2004
++++ intl/Makefile.in	Tue Oct 12 22:44:57 2004
+@@ -40,7 +40,7 @@
+ INSTALL = @INSTALL@
+ INSTALL_DATA = @INSTALL_DATA@
+ MKINSTALLDIRS = @MKINSTALLDIRS@
+-mkinstalldirs = $(SHELL) `case "$(MKINSTALLDIRS)" in /*) echo "$(MKINSTALLDIRS)" ;; *) echo "$(top_builddir)/$(MKINSTALLDIRS)" ;; esac`
++mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ 
+ l = @INTL_LIBTOOL_SUFFIX_PREFIX@
+ 
