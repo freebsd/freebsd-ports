@@ -15,6 +15,8 @@ DISTNAME=	js-1.5-rc5a
 MAINTAINER=	citric@cubicone.tmetic.com
 COMMENT=	A standalone JavaScript interpreter from the Mozilla project
 
+CONFLICTS=	njs-*
+
 USE_GMAKE=	YES
 
 post-extract:
