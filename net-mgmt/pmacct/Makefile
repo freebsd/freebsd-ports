@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pmacct
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.1
 CATEGORIES=	net
 MASTER_SITES=	http://www.ba.cnr.it/~paolo/pmacct/
 
@@ -14,7 +14,7 @@ MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Network tool to gather IP traffic information
 
 .if defined(WITH_MYSQL)
-LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
+USE_MYSQL=	yes
 CONFIGURE_ARGS+=--with-mysql-lib=${LOCALBASE}/lib/mysql \
 		--with-mysql-includes=${LOCALBASE}/include/mysql \
 		--enable-mysql
