@@ -38,6 +38,4 @@ do-install:
 	${CP} -R ${WRKSRC}/README.ja ${WRKSRC}/doc.ja/ ${RUBY_DOCDIR}/tmail/ja/
 .endif
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/Mk/bsd.ruby.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

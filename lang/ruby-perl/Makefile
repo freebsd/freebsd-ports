@@ -45,6 +45,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/README.ja ${RUBY_DOCDIR}/perl/ja/
 .endif
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/Mk/bsd.ruby.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -25,7 +25,6 @@ EXAMPLES=	euc2unicode.rb	test_euc.txt	test_euc.xml \
 		trilang.xml	unicode2euc.rb	xmlconv.rb
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/Mk/bsd.ruby.mk"
 
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}${RUBY_PKGNAMEPREFIX}
 

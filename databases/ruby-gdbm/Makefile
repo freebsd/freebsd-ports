@@ -26,6 +26,4 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/ext/gdbm
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/Mk/bsd.ruby.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -26,7 +26,6 @@ EMACSLISPDIR=	${PREFIX}/share/emacs/site-lisp
 XEMACSLISPDIR=	${PREFIX}/lib/xemacs/site-lisp
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/Mk/bsd.ruby.mk"
 
 .if !empty(RUBY_SUFFIX)
 CONFIGURE_ARGS+=	--program-suffix="${RUBY_SUFFIX}"

@@ -30,6 +30,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README.html ${RUBY_DOCDIR}/html-parser/
 .endif
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/Mk/bsd.ruby.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

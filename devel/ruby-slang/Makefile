@@ -36,7 +36,6 @@ DOCS_EN=	README		changes.txt
 DOCS_JA=	README.euc
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/Mk/bsd.ruby.mk"
 
 .if defined(PKGNAMEPREFIX)
 PKGNAMEPREFIX:= ${PKGNAMEPREFIX}${RUBY_PKGNAMEPREFIX}
