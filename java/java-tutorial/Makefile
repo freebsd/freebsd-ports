@@ -5,14 +5,16 @@
 # $FreeBSD$
 #
 
-#  Install size for version 2004.03.11 is ~22827 kB.
-
 PORTNAME=	jdk-tutorial
-PORTVERSION=	2004.03.11
-PORTREVISION=	1
+PORTVERSION=	2005.02.17
 CATEGORIES=	java
-MASTER_SITES=	http://java.sun.com/docs/books/tutorial/download/
+MASTER_SITES=	http://java.sun.com/docs/books/tutorialNB/download/
+.if defined(WITH_EXTRAS)
+DISTNAME=	tutorial.zip tut-examples.zip tut-swing.zip tut-bookstore-21.zip \
+		tut-bookstore-tomcat.zip tut-bingo
+.else
 DISTNAME=	tutorial
+.endif
 
 MAINTAINER=	ringworm01@gmail.com
 COMMENT=	Official Java 2 SDK tutorial
@@ -34,5 +36,27 @@ do-install:
 	@${CP} -R ${WRKSRC}/* ${DOCSDIR}
 	@${CHOWN} -h -R ${DOCOWN}:${DOCGRP} ${DOCSDIR}
 	@${ECHO_MSG} " [ DONE ]"
+
+post-install:
+	@${ECHO}	"***********************************************************************"
+	@${ECHO}	"*                                                                     *"
+.if !defined(WITH_EXTRAS)
+	@${ECHO}	"* make install WITH_EXTRAS=1 will add to the installation:            *"
+	@${ECHO}	"*                                                                     *"
+	@${ECHO}	"* 1) source files for all the tutorial examples                       *"
+	@${ECHO}	"*                                                                     *"
+	@${ECHO}	"* 2) Some examples such as the BINGO and Servlets Bookstore examples  *"
+	@${ECHO}	"* include many source files in a rather complex directory structure,  *"
+	@${ECHO}	"* so these examples are separate files.                               *"
+	@${ECHO}	"*                                                                     *"
+	@${ECHO}	"* 3) The JFC/Swing trail                                              *"
+	@${ECHO}	"*                                                                     *"
+.endif
+	@${ECHO}	"* Set your browser to ${DOCSDIR}/index.html and enjoy!                *"
+	@${ECHO}	"*                                                                     *"
+	@${ECHO}	"* Michael C. Shultz (port maintainer)                                 *"
+	@${ECHO}	"* ringworm01@gmail.com                                                *"
+	@${ECHO}	"*                                                                     *"
+	@${ECHO}	"***********************************************************************"
 
 .include <bsd.port.post.mk>
