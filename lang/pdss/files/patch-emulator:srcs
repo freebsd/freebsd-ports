@@ -1,0 +1,529 @@
+Index: emulator/assemble.c
+===================================================================
+RCS file: /ext/cvs/PDSS/emulator/assemble.c,v
+retrieving revision 1.1.1.1
+diff -u -u -r1.1.1.1 assemble.c
+--- emulator/assemble.c	11 Jun 2002 16:11:11 -0000	1.1.1.1
++++ emulator/assemble.c	3 Dec 2002 14:39:51 -0000
+@@ -24,6 +24,13 @@
+ static OBJ	*module_top, *predicate_top;
+ static jmp_buf	assemble_env;
+ 
++static make_jump_on_xxx_table(register int size, OBJ **pcp, FILE *file);
++static make_branch_on_int_table(register int size, OBJ **pcp, FILE *file);
++static make_branch_on_atom_table(register int size, OBJ **pcp, FILE *file);
++static make_hash_mask(register unsigned int size);
++static make_hash_on_int_table(int size, int mask, OBJ **pcp, FILE *file);
++static make_hash_on_atom_table(register int size, register int mask,
++			       OBJ **pcp, FILE *file);
+ 
+ /*************************************************************************
+ *   Put Relative Address.						 *
+Index: emulator/blt_iodev.c
+===================================================================
+RCS file: /ext/cvs/PDSS/emulator/blt_iodev.c,v
+retrieving revision 1.1.1.1
+diff -u -u -r1.1.1.1 blt_iodev.c
+--- emulator/blt_iodev.c	11 Jun 2002 16:11:11 -0000	1.1.1.1
++++ emulator/blt_iodev.c	11 Dec 2002 15:17:32 -0000
+@@ -6,12 +6,13 @@
+ *************************************************************************/
+ 
+ #include <sys/types.h>
+-#include <sys/dir.h>
++#include <dirent.h>
+ #include "pdss.h"
+ #include "memory.h"
+ #include "io.h"
+ #include "instr.h"
+ 
++static CHAR *wildcard_to_regular_expression(CHAR*, CHAR*);
+ 
+ /*************************************************************************
+ *   b_create_window(Rname,^Rstt,^Rinterrupt,^Rio)			 *
+@@ -869,9 +870,8 @@
+     }else{
+ 	register CELL *p, *q;
+ 	CHAR *dn, bufn[256], bufw[256], ex[512];
+-	CHAR *wildcard_to_regular_expression(), *re_comp();
+ 	DIR *dirp;
+-	struct direct *dp, *readdir();
++	struct dirent *dp, *readdir();
+ 	int st;
+ 	convert_to_c_string(name, bufn, 250);
+ 	convert_to_c_string(wild, bufw, 250);
+@@ -967,9 +967,8 @@
+ 	}
+     }else{
+ 	CHAR *dn, bufn[256], bufw[256], ex[512];
+-	CHAR *wildcard_to_regular_expression(), *re_comp();
+ 	DIR *dirp, *dirp2;
+-	struct direct *dp, *readdir();
++	struct dirent *dp, *readdir();
+ 	int st;
+ 	convert_to_c_string(name, bufn, 250);
+ 	convert_to_c_string(wild, bufw, 250);
+RCS file: /ext/cvs/PDSS/emulator/emulate.c,v
+retrieving revision 1.1.1.1
+diff -u -u -r1.1.1.1 emulate.c
+--- emulator/emulate.c	11 Jun 2002 16:11:11 -0000	1.1.1.1
++++ emulator/emulate.c	3 Dec 2002 13:10:32 -0000
+@@ -44,6 +44,9 @@
+ #define	 DUPLICATE_TABLE_SIZE  8
+ static int duplicate_table[DUPLICATE_TABLE_SIZE];
+ 
++static do_interrupt(void);
++static idle(void);
++static idle2(void);
+ 
+ /*************************************************************************
+ *  KL1-B Emulator Top Level Loop -- emulate()				 *
+Index: emulator/exception.c
+===================================================================
+RCS file: /ext/cvs/PDSS/emulator/exception.c,v
+retrieving revision 1.1.1.1
+diff -u -u -r1.1.1.1 exception.c
+--- emulator/exception.c	11 Jun 2002 16:11:11 -0000	1.1.1.1
++++ emulator/exception.c	3 Dec 2002 13:37:30 -0000
+@@ -11,6 +11,7 @@
+ #include "io.h"
+ #include "klb.h"
+ 
++static create_goal_and_wait_new_code(CELL *code, CELL *argv);
+ 
+ /*************************************************************************
+ *   Exception Tag Table.						 *
+Index: emulator/float.c
+===================================================================
+RCS file: /ext/cvs/PDSS/emulator/float.c,v
+retrieving revision 1.1.1.1
+diff -u -u -r1.1.1.1 float.c
+--- emulator/float.c	11 Jun 2002 16:11:11 -0000	1.1.1.1
++++ emulator/float.c	12 Dec 2002 01:49:47 -0000
+@@ -14,7 +14,7 @@
+ 
+ initialize_float_calculator()
+ {
+-    signal(SIGFPE, float_error);
++    signal(SIGFPE, (sig_t)float_error);
+ }
+ 
+ #define FLOAT_HUGE 3.4028234e38
+Index: emulator/gc.c
+===================================================================
+RCS file: /ext/cvs/PDSS/emulator/gc.c,v
+retrieving revision 1.1.1.1
+diff -u -u -r1.1.1.1 gc.c
+--- emulator/gc.c	11 Jun 2002 16:11:11 -0000	1.1.1.1
++++ emulator/gc.c	3 Dec 2002 13:47:12 -0000
+@@ -18,6 +18,7 @@
+ 
+ #define CD if(gc_code)
+ 
++static swap_highest_queue(void);
+ 
+ /*************************************************************************
+ *  Collect Garbage & Display Memory Statistics.				 *
+Index: emulator/gc_cell.c
+===================================================================
+RCS file: /ext/cvs/PDSS/emulator/gc_cell.c,v
+retrieving revision 1.1.1.1
+diff -u -u -r1.1.1.1 gc_cell.c
+--- emulator/gc_cell.c	11 Jun 2002 16:11:11 -0000	1.1.1.1
++++ emulator/gc_cell.c	3 Dec 2002 13:49:05 -0000
+@@ -10,6 +10,7 @@
+ #include "io.h"
+ #include "gc.h"
+ 
++static gc_stream_merger(CELL *old, CELL *new);
+ 
+ /*************************************************************************
+ *   GC CELL - KL1 Data.							 *
+Index: emulator/gc_dead.c
+===================================================================
+RCS file: /ext/cvs/PDSS/emulator/gc_dead.c,v
+retrieving revision 1.1.1.1
+diff -u -u -r1.1.1.1 gc_dead.c
+--- emulator/gc_dead.c	11 Jun 2002 16:11:11 -0000	1.1.1.1
++++ emulator/gc_dead.c	3 Dec 2002 14:01:46 -0000
+@@ -43,6 +43,13 @@
+     deadlock_goal_merger_list = (m)->priority;\
+ }
+ 
++static deadlock_mark_goals(CELL *c, GOAL_RECORD *goal0);
++static deadlock_link_goals(CELL *c, GOAL_RECORD *goal0);
++static deadlock_report_goal(GOAL_RECORD	*goal, int f);
++static deadlock_report_merger(MERGER_RECORD *merger, int f);
++static dead_cp_cell(register CELL *old, register CELL *new);
++static dead_cp_stream_merger(register MERGER_RECORD *oldmg, CELL *newref);
++static terminate_shoen_without_child(PARENT_RECORD *prec);
+ 
+ /*************************************************************************
+ *   Detect Deadlock & Report -- Top Level.				 *
+Index: emulator/goal.c
+===================================================================
+RCS file: /ext/cvs/PDSS/emulator/goal.c,v
+retrieving revision 1.1.1.1
+diff -u -u -r1.1.1.1 goal.c
+--- emulator/goal.c	11 Jun 2002 16:11:11 -0000	1.1.1.1
++++ emulator/goal.c	3 Dec 2002 13:24:44 -0000
+@@ -28,6 +28,9 @@
+ CELL *SSP;
+ CELL suspension_stack[SUSPMAX];
+ 
++static int other_var_exist(register CELL *c);
++static unsigned int rnd(void);
++static int same_var_exist(register CELL *c);
+ 
+ /*************************************************************************
+ *   Initialize Ready Queue.						 *
+Index: emulator/instr.c
+===================================================================
+RCS file: /ext/cvs/PDSS/emulator/instr.c,v
+retrieving revision 1.1.1.1
+diff -u -u -r1.1.1.1 instr.c
+--- emulator/instr.c	11 Jun 2002 16:11:11 -0000	1.1.1.1
++++ emulator/instr.c	12 Dec 2002 01:52:12 -0000
+@@ -13,6 +13,9 @@
+ #define INVALID	      -1
+ #define NOT_SUPPORTED ASSM_NOT_SUPPORTED
+ 
++static reset_instruction_table(void);
++static op(unsigned int opcode, CHAR *mnem, unsigned int type);
++
+ initialize_instruction_table()
+ {
+     reset_instruction_table();
+Index: emulator/io.c
+===================================================================
+RCS file: /ext/cvs/PDSS/emulator/io.c,v
+retrieving revision 1.1.1.1
+diff -u -u -r1.1.1.1 io.c
+--- emulator/io.c	11 Jun 2002 16:11:11 -0000	1.1.1.1
++++ emulator/io.c	11 Dec 2002 16:18:47 -0000
+@@ -21,6 +21,8 @@
+ int  current_window;
+ int  print_var_mode;
+ 
++static int keyboard_interrupt(void);
++static int keyboard_interrupt_without_emacs(void);
+ 
+ /*************************************************************************
+ *   Initialize I/O.							 *
+@@ -31,8 +33,6 @@
+     register IO_BACKET	*it, **nx;
+     register int i, j;
+     register CHAR *buf;
+-    int	 keyboard_interrupt();
+-    int	 keyboard_interrupt_without_emacs();
+     CHAR *malloc();
+ 
+     current_window = -1;
+@@ -116,14 +116,14 @@
+     *nx = NULL;
+ 
+     if(use_windows){
+-	signal(SIGINT,	keyboard_interrupt);
+-	signal(SIGQUIT, abort_pdss);
+-	signal(SIGTERM, abort_pdss);
++	signal(SIGINT,	(sig_t)keyboard_interrupt);
++	signal(SIGQUIT, (sig_t)abort_pdss);
++	signal(SIGTERM, (sig_t)abort_pdss);
+     }else{
+-	signal(SIGINT,	keyboard_interrupt_without_emacs);
+-	signal(SIGQUIT, abort_pdss);
+-	signal(SIGTERM, abort_pdss);
+-	signal(SIGTSTP, stop_pdss);
++	signal(SIGINT,	(sig_t)keyboard_interrupt_without_emacs);
++	signal(SIGQUIT, (sig_t)abort_pdss);
++	signal(SIGTERM, (sig_t)abort_pdss);
++	signal(SIGTSTP, (sig_t)stop_pdss);
+     }
+ }
+ 
+@@ -147,7 +147,7 @@
+ 
+ io_ctrl_when_resume()
+ {
+-    signal(SIGTSTP, stop_pdss);
++    signal(SIGTSTP, (sig_t)stop_pdss);
+ }
+ 
+ 
+Index: emulator/iosub.c
+===================================================================
+RCS file: /ext/cvs/PDSS/emulator/iosub.c,v
+retrieving revision 1.1.1.1
+diff -u -u -r1.1.1.1 iosub.c
+--- emulator/iosub.c	11 Jun 2002 16:11:11 -0000	1.1.1.1
++++ emulator/iosub.c	11 Dec 2002 12:17:32 -0000
+@@ -10,6 +10,19 @@
+ #include  "io.h"
+ #include  "ctype.h"
+ 
++static remove_suspended_goals(CELL *cc); 
++static int scan_integer_or_float(int sign, register int chr,
++				 register IO_BACKET *it);
++static int conv_to_integer(int sign, register CHAR *c, unsigned int *x);
++static scan_variable(register int chr, register IO_BACKET *it);
++static scan_alpha_atom(register int chr, register IO_BACKET *it);
++static scan_symbol_atom(register int chr, register IO_BACKET *it);
++static int scan_quote_atom(register IO_BACKET *it);
++static int scan_string(register IO_BACKET *it);
++static int scan_comment(register IO_BACKET *it);
++static expand_ts_buffer(register IO_BACKET *it);
++static int reset_var_table(register IO_BACKET *it);
++static int conv_to_var(CHAR *name, IO_BACKET *it);
+ 
+ /*************************************************************************
+ *   Create New Window							 *
+Index: emulator/module.c
+===================================================================
+RCS file: /ext/cvs/PDSS/emulator/module.c,v
+retrieving revision 1.1.1.1
+diff -u -u -r1.1.1.1 module.c
+--- emulator/module.c	11 Jun 2002 16:11:11 -0000	1.1.1.1
++++ emulator/module.c	3 Dec 2002 13:43:36 -0000
+@@ -12,6 +12,9 @@
+ 
+ MODULE_ENTRY  *module_id_table[MODULE_TABLE_SIZE];
+ 
++static load_sav_file(CHAR *fname, MODULE_ENTRY **mod_table);
++static load_asm_file(CHAR *fname, MODULE_ENTRY **mod_table);
++static save_sav_file(CHAR *fname, MODULE_ENTRY *mod_table);
+ 
+ /*************************************************************************
+ *   Module Table.							 *
+Index: emulator/mrbgc.c
+===================================================================
+RCS file: /ext/cvs/PDSS/emulator/mrbgc.c,v
+retrieving revision 1.1.1.1
+diff -u -u -r1.1.1.1 mrbgc.c
+--- emulator/mrbgc.c	11 Jun 2002 16:11:11 -0000	1.1.1.1
++++ emulator/mrbgc.c	3 Dec 2002 14:17:21 -0000
+@@ -10,6 +10,13 @@
+ #include "io.h"
+ #include "klb.h"
+ 
++static collect_value_sub(CELL *c, int d);
++static int is_deadlock_occurred_really(CELL *c);
++static display_deadlock_suspended_goals(CELL *c);
++static display_deadlock_suspended_goal(GOAL_RECORD *goal);
++static report_deadlock_suspended_goals(int type, CELL *c, OBJ *ptop);
++static report_deadlock_suspended_goal(int type, GOAL_RECORD *grec, OBJ *ptop);
++static report_deadlock_suspended_merger(int type, MERGER_RECORD *mg, OBJ *ptop);
+ 
+ /*************************************************************************
+ *   Collect Value.							 *
+Index: emulator/option.c
+===================================================================
+RCS file: /ext/cvs/PDSS/emulator/option.c,v
+retrieving revision 1.1.1.1
+diff -u -u -r1.1.1.1 option.c
+--- emulator/option.c	11 Jun 2002 16:11:11 -0000	1.1.1.1
++++ emulator/option.c	3 Dec 2002 13:06:50 -0000
+@@ -30,6 +30,8 @@
+ int	     option_instruction_count = NO;
+ #endif
+ 
++static read_option_sub(CHAR *s);
++
+ read_option(argc, argv)
+     int	 argc;
+     CHAR **argv;
+Index: emulator/pdss.c
+===================================================================
+RCS file: /ext/cvs/PDSS/emulator/pdss.c,v
+retrieving revision 1.1.1.1
+diff -u -u -r1.1.1.1 pdss.c
+--- emulator/pdss.c	11 Jun 2002 16:11:11 -0000	1.1.1.1
++++ emulator/pdss.c	3 Dec 2002 13:05:04 -0000
+@@ -20,6 +20,11 @@
+ 
+ static CHAR execute_goal[128];	/** top level goal name **/
+ 
++static load_kl1b_file(void);
++static load_kl1b_file_and_enter_module(CHAR *file);
++static OBJ *read_top_level_goal(void);
++static CHAR *scan_name(CHAR **s);
++static write_result(void);
+ 
+ /*************************************************************************
+ *    PDSS Main.								 *
+Index: emulator/print.c
+===================================================================
+RCS file: /ext/cvs/PDSS/emulator/print.c,v
+retrieving revision 1.1.1.1
+diff -u -u -r1.1.1.1 print.c
+--- emulator/print.c	11 Jun 2002 16:11:11 -0000	1.1.1.1
++++ emulator/print.c	30 Nov 2002 12:15:47 -0000
+@@ -10,7 +10,7 @@
+ #include  "io.h"
+ #include  "klb.h"
+ 
+-static FILE *file = stdout;
++static FILE *file;
+ static int  deadlock = NO;
+ static int  var_mode = PRINT_VAR_MODE_ABC;
+ static int  length;
+@@ -19,6 +19,16 @@
+ static CHAR *gen_name();
+ extern CELL *lookup_var();
+ 
++static int get_var_number(CHAR *name);
++static initializr_var_table(void);
++static print_nue(CELL *c, int depth, int mrb1);
++static putc2(int c, FILE *f);
++static fprint_string2(FILE *f, CELL *c);
++static print_nbit_string(CELL *c);
++static print_vector(CELL *c, int depth, int mrb1);
++static print_list(CELL *c, int depth, int mrb1);
++static int print_sub(CELL *c, CELL *r, int mrb, int depth);
++
+ #define Deref1(c, res){\
+     res = c;\
+     while(Typeof(res)==REF) res = Objectof(res);\
+@@ -43,6 +53,7 @@
+ 
+ initialize_print_routine()
+ {
++    file = stdout;
+     initializr_var_table();
+ }
+ 
+Index: emulator/saveload.c
+===================================================================
+RCS file: /ext/cvs/PDSS/emulator/saveload.c,v
+retrieving revision 1.1.1.1
+diff -u -u -r1.1.1.1 saveload.c
+--- emulator/saveload.c	11 Jun 2002 16:11:11 -0000	1.1.1.1
++++ emulator/saveload.c	3 Dec 2002 14:52:35 -0000
+@@ -17,6 +17,15 @@
+ #define ATOMMAX	   4096
+ static unsigned short atom_id_table[ATOMMAX];
+ 
++static make_atom_table(OBJ *cp);
++static enter_atoms_in_constant_section(CELL *p, CELL *bottom);
++static enter_atom(unsigned int atom);
++static write_atom_table(FILE *fp);
++static write_code_body(OBJ *cp, FILE *fp);
++static write_constant_section(CELL *p, CELL *bottom, FILE *fp);
++static read_atom_table(FILE *fp);
++static read_code_body(OBJ *cp, FILE *fp);
++static read_constant_section(CELL *p, CELL *bottom, FILE *fp);
+ 
+ /*************************************************************************
+ *   Save Module -- Macros.						 *
+Index: emulator/shoen.c
+===================================================================
+RCS file: /ext/cvs/PDSS/emulator/shoen.c,v
+retrieving revision 1.1.1.1
+diff -u -u -r1.1.1.1 shoen.c
+--- emulator/shoen.c	11 Jun 2002 16:11:11 -0000	1.1.1.1
++++ emulator/shoen.c	3 Dec 2002 13:35:36 -0000
+@@ -25,6 +25,12 @@
+ static int shoen_id_counter;
+ #define GetShoenid() (shoen_id_counter++)
+ 
++static delete_from_and_tree(PARENT_RECORD *shoen);
++static int resource_divide_to_children(PARENT_RECORD *p);
++static divide_resource(PARENT_RECORD *from, PARENT_RECORD *to);
++static shoen_active_unify_with_list(CELL *report, CELL *list);
++static dump_shoen_tree(PARENT_RECORD *root, int level);
++static dump_shoen_tree_sub(PARENT_RECORD *prec, int level);
+ 
+ /*************************************************************************
+ *   Initialize Shoen Tree.						 *
+Index: emulator/timer.c
+===================================================================
+RCS file: /ext/cvs/PDSS/emulator/timer.c,v
+retrieving revision 1.1.1.1
+diff -u -u -r1.1.1.1 timer.c
+--- emulator/timer.c	11 Jun 2002 16:11:11 -0000	1.1.1.1
++++ emulator/timer.c	11 Dec 2002 16:21:19 -0000
+@@ -24,6 +24,10 @@
+ static int timer_next_count;
+ CELL *timer_table;
+ 
++static alarm_clock_int(void);
++set_timer_on_after(int count, CELL *var);
++static set_timer(int count, CELL *var);
++
+ 
+ initialize_timer()
+ {
+@@ -37,7 +41,7 @@
+     timer_next_count = HUGE;
+     AllocCell(timer_table);
+     SetAll(timer_table, ATOM, NIL, MRBOFF);
+-    signal(SIGALRM, alarm_clock_int);
++    signal(SIGALRM, (sig_t)alarm_clock_int);
+     if(option_alarm_clock_sw) alarm(1);
+ }
+ 
+Index: emulator/tracer.c
+===================================================================
+RCS file: /ext/cvs/PDSS/emulator/tracer.c,v
+retrieving revision 1.1.1.1
+diff -u -u -r1.1.1.1 tracer.c
+--- emulator/tracer.c	11 Jun 2002 16:11:11 -0000	1.1.1.1
++++ emulator/tracer.c	11 Dec 2002 14:07:08 -0000
+@@ -38,6 +38,32 @@
+ static int trace_last_priority = -1;
+ static OBJ *tracer_pcode;
+ 
++static initialize_tracer_command_table(void);
++static initialize_tracer_command_table2(void);
++static initialize_tracer_command_table3(void);
++static int trace_set_count(int argn, CHAR **argv);
++static trace_depth_first(int argn, CHAR **argv);
++static trace_breadth_first(int argn, CHAR **argv);
++static trace_random_enqueue(int argn, CHAR **argv);
++static trace_set_rewrite_status(int argn, CHAR **argv);
++static trace_set_debug_flag(int argn, CHAR **argv, int flag);
++static trace_set_predicate_spy(int argn, CHAR **argv, int flag);
++static trace_set_goal_spy(int mode, GOAL_RECORD *grec, int flag);
++static trace_where_called_from(int argn, CHAR **argv);
++static int trace_inspect_ready_queue(int argn, CHAR **argv);
++static int trace_inspect_variable(int argn, CHAR **argv);
++static int trace_set_variable(int argn, CHAR **argv);
++static trace_set_gate_switch(int chr, int *flag);
++static int trace_monitor_stream(int argn, CHAR **argv);
++static int trace_scan_integer(CHAR *str);
++static int scan_module_and_predicate(CHAR *str, unsigned int *module,
++				     unsigned int *pred, unsigned int *arity);
++static write_priority(void);
++static write_mode(int mode, OBJ *code, GOAL_RECORD *grec);
++static int display_ready_queues(int priority);
++static display_merge_tree(CELL *mmm);
++static int display_queue_more(int count);
++static unsigned int make_module_predicate_atom(CHAR *s, CHAR *p);
+ 
+ /*************************************************************************
+ *   Initialize Tracer.							 *
+@@ -1351,7 +1377,6 @@
+     unsigned int *module, *pred, *arity;
+ {
+     CHAR *s;
+-    unsigned int make_module_predicate_atom();
+     if(IsAlpha(*str)){
+ 	s = str;
+ 	while(IsAlNum(*str)) str++;
+Index: emulator/unify.c
+===================================================================
+RCS file: /ext/cvs/PDSS/emulator/unify.c,v
+retrieving revision 1.1.1.1
+diff -u -u -r1.1.1.1 unify.c
+--- emulator/unify.c	11 Jun 2002 16:11:11 -0000	1.1.1.1
++++ emulator/unify.c	3 Dec 2002 13:20:40 -0000
+@@ -11,6 +11,10 @@
+ 
+ static CELL work;
+ 
++static terminate_merger(MERGER_RECORD *merger);
++static make_unify_goal_and_enqueue_for_merger(TYPE type1, CELL *val1, MRB mrb1,
++					      TYPE type2, CELL *val2, MRB mrb2,
++					      MERGER_RECORD *merger);
+ 
+ /*************************************************************************
+ *   General Unification.  X=Y.						 *

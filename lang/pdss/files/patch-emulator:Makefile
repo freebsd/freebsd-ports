@@ -2,10 +2,9 @@ Index: emulator/Makefile
 ===================================================================
 RCS file: /ext/cvs/PDSS/emulator/Makefile,v
 retrieving revision 1.1.1.1
-retrieving revision 1.1.1.1.2.2
-diff -u -r1.1.1.1 -r1.1.1.1.2.2
+diff -u -u -r1.1.1.1 Makefile
 --- emulator/Makefile	11 Jun 2002 16:11:11 -0000	1.1.1.1
-+++ emulator/Makefile	5 Sep 2002 08:26:56 -0000	1.1.1.1.2.2
++++ emulator/Makefile	12 Dec 2002 06:49:53 -0000
 @@ -5,11 +5,12 @@
  #  ALL RIGHTS RESERVED.							 #
  ##########################################################################
@@ -33,7 +32,7 @@ diff -u -r1.1.1.1 -r1.1.1.1.2.2
  
  pdss:	$(PARA)	$(KL1)
 -	$(CC) $(CFLAGS) -o pdss.x -D"MAKEDATE=\"`date`\"" version.c $(KL1) -lm
-+	${SETENV} LC_ALL=C $(CC) $(CFLAGS) -o pdss.x -D"MAKEDATE=\"`date`\"" version.c $(KL1) -lcompat -lm
++	$(CC) $(CFLAGS) -o pdss.x -D"MAKEDATE=\"`env LC_ALL=C date`\"" version.c $(KL1) -lcompat -lm
  	mv -f pdss.x pdss
  	rm -f version.o
  
