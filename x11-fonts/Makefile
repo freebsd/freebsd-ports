@@ -18,7 +18,6 @@
     SUBDIR += intlfonts
     SUBDIR += jmk-x11-fonts
     SUBDIR += mozilla-fonts
-    SUBDIR += ms-fonts
     SUBDIR += nexfontsel
     SUBDIR += nucleus
     SUBDIR += p5-type1inst
