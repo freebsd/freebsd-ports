@@ -35,6 +35,12 @@ CONFIGURE_ARGS=	--doc-dir="${RUBY_MODDOCDIR}"
 
 DOCS=		ChangeLog README.html
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile on FreeBSD 4.x"
+.endif
+
 pre-configure:
 	cd ${CONFIGURE_WRKSRC}; \
 	${SETENV} ${CONFIGURE_ENV} ./configure --prefix="${PREFIX}"
@@ -49,4 +55,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${RUBY_MODEXAMPLESDIR}/
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
