@@ -24,6 +24,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
 		 ${WRKSRC}/configure
 
+PORTDOCS=	ChangeLog README
+PLIST_FILES=	bin/fprobe
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
