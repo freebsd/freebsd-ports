@@ -33,5 +33,4 @@ post-extract:
 	@${PERL} -pi -e "s|^CFLAGS\s+=\s+-Wall\s+-g|CFLAGS = \@CFLAGS@ -Wall|" ${WRKSRC}/src/$i
 .endfor
 
-
 .include <bsd.port.mk>
