@@ -3,7 +3,7 @@
 # Date created:         03 October 1998
 # Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/05/10 11:31:58 tg Exp $
 #
 
 DISTNAME=       gstep-core-0.5.5
@@ -24,18 +24,20 @@ BROKEN=		"Sorry, this port does not work on FreeBSD-2.2.x"
 .elif ${OSVERSION} < 400000
 BUILD_DEPENDS=	egcc:${PORTSDIR}/lang/egcs
 RUN_DEPENDS=	egcc:${PORTSDIR}/lang/egcs
+CC=		egcc
 .endif
 
 WRKSRC=		${WRKDIR}/gstep-0.5.5
 PREFIX=		${LOCALBASE}/GNUstep
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CC=egcc INSTALL_PROGRAM="install -c" INSTALL_DATA="install -c"
+CONFIGURE_ENV=	INSTALL_PROGRAM="${INSTALL} -c" INSTALL_DATA="${INSTALL} -c"
 CONFIGURE_ARGS=	--with-library-combo=gnu-gnu-gnu-xraw \
 		--with-jpeg-library=${LOCALBASE}/lib \
 		--with-jpeg-include=${LOCALBASE}/include \
 		--with-tiff-library=${LOCALBASE}/lib \
 		--with-tiff-include=${LOCALBASE}/include
 USE_GMAKE=	yes
+USE_XLIB=	yes
 MAKEFILE=
 MAKE_FLAGS=	OPTFLAG="${CFLAGS}"
 NO_MTREE=	yes
