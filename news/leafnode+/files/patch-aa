@@ -1,5 +1,5 @@
---- Makefile.orig	Thu Dec 24 01:41:37 1998
-+++ Makefile	Sun Dec 27 17:04:30 1998
+--- Makefile.orig	Sun Jan 31 19:17:52 1999
++++ Makefile	Tue Apr  6 17:12:29 1999
 @@ -1,11 +1,8 @@
  # -*- makefile -*-
  # $Orig-Id: Makefile,v 1.16 1997/07/20 00:28:31 agulbra Exp $
@@ -22,6 +22,15 @@
  
  all: leafnode fetchnews texpire checkgroups leaftool
  
+@@ -79,7 +76,7 @@
+ 	@if [ -f $(BINDIR)/fetch ]; then echo don"'"t forget to change the name of a command in scripts and crontab from fetch into fetchnews.; fi
+ 	@if [ -f $(BINDIR)/newsfetch ]; then echo don"'"t forget to change the name of a command in scripts and crontab from newsfetch into fetchnews.; fi
+ 
+-installall: install
++installall:
+ 	-mkdir -p $(SPOOLDIR) $(LIBDIR)
+ 	-mkdir -p $(SPOOLDIR)/message.id
+ 	-mkdir -p $(SPOOLDIR)/interesting.groups
 @@ -91,7 +88,6 @@
  				$${a}$${b}6 $${a}$${b}7 $${a}$${b}8 \
  				$${a}$${b}9 ; \
