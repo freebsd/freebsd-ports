@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xine
-PORTVERSION=	0.9.10
+PORTVERSION=	0.9.12
 CATEGORIES=	graphics
 MASTER_SITES=	http://xine.sourceforge.net/files/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -22,7 +22,8 @@ LIB_DEPENDS=	a52.0:${PORTSDIR}/audio/liba52 \
 		aa.1:${PORTSDIR}/graphics/aalib \
 		SDL-1.1:${PORTSDIR}/devel/sdl12 \
 		intl.2:${PORTSDIR}/devel/gettext \
-		iconv.3:${PORTSDIR}/converters/libiconv
+		iconv.3:${PORTSDIR}/converters/libiconv \
+		divxdecore.1:${PORTSDIR}/graphics/libdivxdecore-devel
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-lib-${PORTVERSION}
 
@@ -32,13 +33,16 @@ USE_IMLIB=	yes
 USE_GMAKE=	yes
 USE_AUTOMAKE=	yes
 USE_MESA=	yes
+USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		SDL_CONFIG="${LOCALBASE}/bin/sdl11-config" \
 		THREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		THREAD_LIBS="${PTHREAD_LIBS}" \
 		X_EXTRA_LIBS="-lGL -lGLU -lXext -lX11 -lm"
-CONFIGURE_ARGS=	--with-w32-path=${LOCALBASE}/lib/win32
+CONFIGURE_ARGS=	--with-w32-path=${LOCALBASE}/lib/win32 \
+		--disable-dxr3 --disable-vidix --disable-dha-kmod \
+		--disable-alsa
 INSTALLS_SHLIB=	yes
 
 MAN1=		xine-config.1
@@ -84,13 +88,17 @@ PLIST_SUB+=	HAVE_OGG="@comment "
 .endif
 
 post-patch:
-	@${PERL} -pi -e \
+	@${REINPLACE_CMD} -i.bak -e \
 		's|THREAD_LIBS=.*$$|THREAD_LIBS="\$$THREAD_LIBS"|g ; \
 		 s|THREAD_CFLAGS=.*$$|THREAD_CFLAGS="\$$THREAD_CFLAGS"|g ; \
 		 s|-L/usr/local/lib||g ; \
 		 s|-I/usr/local/include||g ; \
+		 s|-lgiconv|-liconv|g ; \
+		 s|-malign-loops|-falign-loops|g ; \
+		 s|-malign-jumps|-falign-jumps|g ; \
+		 s|-malign-functions|-falign-functions|g ; \
 		 s|-funroll-loops||g' ${WRKSRC}/configure.in
-	@${PERL} -pi -e \
+	@${REINPLACE_CMD} -i.bak -e \
 		's|aclocal,|${ACLOCAL},|g ; \
 		 s|autoconf,|${AUTOCONF},|g ; \
 		 s|automake,|${AUTOMAKE},|g ; \
