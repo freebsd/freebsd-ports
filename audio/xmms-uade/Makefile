@@ -10,15 +10,15 @@ PORTVERSION=	0.80
 PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	http://ee.tut.fi/~heikki/uade/
-DISTFILES=	uade-${PORTVERSION}${EXTRACT_SUFX}
+DISTNAME=	uade-${PORTVERSION}
 
 MAINTAINER=	mbr@FreeBSD.org
-COMMENT=	Unix Amiga Delitracker Emulator with XMMS Input plugin.
-
-BROKEN=		Does not fetch
+COMMENT=	Unix Amiga Delitracker Emulator with XMMS Input plugin
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 BUILD_DEPENDS=	lha:${PORTSDIR}/archivers/lha
+
+BROKEN=		Does not fetch
 
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
