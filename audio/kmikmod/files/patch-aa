@@ -1,0 +1,11 @@
+--- kmikmod/Makefile.in.orig	Sat Sep 30 11:47:17 2000
++++ kmikmod/Makefile.in	Sat Sep 30 11:47:44 2000
+@@ -150,7 +150,7 @@
+ MIKMOD=../libmikmod
+ 
+ APPSDIR = $(kde_appsdir)/Multimedia
+-INCLUDES= $(all_includes) -I./$(MIKMOD)/include
++INCLUDES= -I./$(MIKMOD)/include $(all_includes)
+ SUBDIRS = pics
+ bin_PROGRAMS = 	kmikmod
+ kmikmod_SOURCES = LCDWidget.cpp Main.cpp ModClass.cpp PlayList.cpp \
