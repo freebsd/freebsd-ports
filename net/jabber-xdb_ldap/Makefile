@@ -6,7 +6,7 @@
 
 PORTNAME=	xdb_ldap
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.jabberstudio.org/files/xdb_ldap/
 PKGNAMEPREFIX=	jabber-
