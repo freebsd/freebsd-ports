@@ -1,0 +1,6 @@
+Owner=$MAINTAINER
+Subdirs=docs
+Indexfile=index.html
+Title=Welcome to the Web server at $SITENAME
+Link=/docs/index.html
+Title=Documentation for the WN server

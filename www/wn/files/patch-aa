@@ -1,0 +1,164 @@
+*** Makefile.dist	Thu Jul  6 16:40:36 1995
+--- Makefile	Sun Jul 23 02:09:47 1995
+***************
+*** 7,13 ****
+  #
+  #	Where to put the programs
+  #
+! SERVBINDIR  =../bin
+  BINDIR  = ../bin
+  LIBDIR = ../lib
+  
+--- 7,13 ----
+  #
+  #	Where to put the programs
+  #
+! SERVBINDIR = ../bin
+  BINDIR  = ../bin
+  LIBDIR = ../lib
+  
+***************
+*** 22,28 ****
+  #
+  #	Libraries to be included.
+  #
+! LIBS =
+  
+  #For Solaris 5.X or SVR4.2 use
+  #LIBS = -lsocket -lnsl
+--- 22,28 ----
+  #
+  #	Libraries to be included.
+  #
+! LIBS = -lcrypt
+  
+  #For Solaris 5.X or SVR4.2 use
+  #LIBS = -lsocket -lnsl
+*** config.h.dist	Tue Jul 11 15:55:43 1995
+--- config.h	Sun Jul 23 02:28:27 1995
+***************
+*** 7,13 ****
+   ********************************************************/
+  
+  
+! #define SUN_OS4		/* Operating System */
+  /*
+     Pick one of the following Operating System types which describes
+     your system and replace the SUN_OS4 value above
+--- 7,13 ----
+   ********************************************************/
+  
+  
+! #define FREE_BSD_2		/* Operating System */
+  /*
+     Pick one of the following Operating System types which describes
+     your system and replace the SUN_OS4 value above
+***************
+*** 30,38 ****
+   * Enter the complete path of your root data directory here.
+   */
+  
+! #define WN_LOGFILE  "/usr/local/wnlogs/wn.log"
+! #define WN_ERRLOGFILE  "/usr/local/wnlogs/wn.log.err"
+! #define AUTH_ERRLOGFILE  "/usrlocal/wnlogs/wn.log.err"
+  
+  /*
+   * Full path of the file you want to use for a log file and the
+--- 30,38 ----
+   * Enter the complete path of your root data directory here.
+   */
+  
+! #define WN_LOGFILE	"/usr/local/wnlogs/wn.log"
+! #define WN_ERRLOGFILE	"/usr/local/wnlogs/wn-err.log"
+! #define AUTH_ERRLOGFILE	"/usr/local/wnlogs/wn-err.log"
+  
+  /*
+   * Full path of the file you want to use for a log file and the
+***************
+*** 52,58 ****
+   */
+  
+  
+! #define MIME_TYPE_FILE  "/usr/local/lib/wn/mime.types"
+  /*
+   * This file contains information permitting wndex to translate 
+   * ascertain the MIME "Content-type" from the suffix of a file name
+--- 52,58 ----
+   */
+  
+  
+! #define MIME_TYPE_FILE	"/usr/local/etc/wn_mime.types"
+  /*
+   * This file contains information permitting wndex to translate 
+   * ascertain the MIME "Content-type" from the suffix of a file name
+***************
+*** 77,83 ****
+   */
+  
+  
+! /* #define VERBOSELOG */
+  /* By default WN uses the Common Log Format used by NCSA and CERN httpd.
+   * Uncommenting this will cause additional information to be added to
+   * the end of each log line.  In particular the User-Agent and Referrer
+--- 77,83 ----
+   */
+  
+  
+! #define VERBOSELOG
+  /* By default WN uses the Common Log Format used by NCSA and CERN httpd.
+   * Uncommenting this will cause additional information to be added to
+   * the end of each log line.  In particular the User-Agent and Referrer
+***************
+*** 111,121 ****
+  
+  
+  #ifndef SOLARIS2
+! #define USERID          (65534)
+! #define GROUPID         (65534)
+  #else
+! #define USERID		(60001)		/* uid of nobody under Solaris */
+! #define GROUPID		(60001)		/* gid of nobody under Solaris */
+  #endif
+  /*
+   * These are the group and user id you want the server to switch to when
+--- 111,121 ----
+  
+  
+  #ifndef SOLARIS2
+! #define USERID	(65534)
+! #define GROUPID	(65534)
+  #else
+! #define USERID	(65534)
+! #define GROUPID	(65534)
+  #endif
+  /*
+   * These are the group and user id you want the server to switch to when
+***************
+*** 198,204 ****
+  #define TILDE_TABLE	"/path/to/rootdir_table"
+  */
+  
+! /* #define TILDE_USER_PWFILE */
+  
+  #define TILDE_USER_STRING	"/~"
+  /*
+--- 198,204 ----
+  #define TILDE_TABLE	"/path/to/rootdir_table"
+  */
+  
+! #define TILDE_USER_PWFILE
+  
+  #define TILDE_USER_STRING	"/~"
+  /*
+*** config.h.old	Thu Oct 19 21:29:04 1995
+--- config.h	Thu Oct 19 21:01:36 1995
+***************
+*** 380,385 ****
+--- 380,386 ----
+  
+  #if defined(FREE_BSD_2)
+  #define BSD_LIKE
++ #define SIGCLD SIGCHLD
+  #endif
+  
+  #if defined(AIX) || defined(IRIX)
