@@ -19,5 +19,6 @@ GNU_CONFIGURE=	yes
 USE_PERL5=	yes
 
 MAN1=	help2man.1
+INFO=	help2man
 
 .include <bsd.port.mk>
