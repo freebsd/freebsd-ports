@@ -1,0 +1,14 @@
+--- client.0.0-h+/lock.c.orig	Thu May  6 14:23:44 1993
++++ client.0.0-h+/lock.c	Mon Dec 27 20:53:16 1999
+@@ -14,7 +14,11 @@
+ #ifndef NOLOCKING
+ 
+ #ifndef KEY_PREFIX
++#ifdef __FreeBSD__
++#  define KEY_PREFIX "/tmp/.FL"
++#else
+ #  define KEY_PREFIX "/usr/tmp/.FL"
++#endif
+ #endif
+ 
+ static char key_string[sizeof(KEY_PREFIX)+32];

@@ -1,0 +1,44 @@
+--- client.0.0-h+/remote/rget.c.orig	Mon May  3 11:31:20 1993
++++ client.0.0-h+/remote/rget.c	Mon Dec 27 20:53:08 1999
+@@ -36,7 +36,7 @@
+ static int recursive;
+ 
+ typedef enum { GET_WHOLE, GET_HEAD, GET_MIDDLE, GET_TAIL } GetOp;
+-static GetOp getmode;
++static GetOp _getmode;
+ 
+ static int
+ #ifndef ANSI_PROTOTYPES
+@@ -87,7 +87,7 @@
+     else
+ 	remname = name;
+ 
+-    switch (getmode)
++    switch (_getmode)
+     {
+       case GET_WHOLE:
+ 	if (access(path, W_OK) == 0)
+@@ -304,11 +304,11 @@
+     errcnt = 0;
+ 
+     if (strcmp(argv[0], "head") == 0)
+-	getmode = GET_HEAD;
++	_getmode = GET_HEAD;
+     else if (strcmp(argv[0], "tail") == 0)
+-	getmode = GET_TAIL;
++	_getmode = GET_TAIL;
+     else
+-	getmode = GET_WHOLE;
++	_getmode = GET_WHOLE;
+ 
+     while ((ch = getopt(argc, argv, "ftnr")) != EOF)
+         switch (ch)
+@@ -326,7 +326,7 @@
+         return 1;
+ 
+ #if 0
+-    if (getmode == GET_WHOLE && (frompos != 0 || getlen XXX))
++    if (_getmode == GET_WHOLE && (frompos != 0 || getlen XXX))
+ 	;
+ #endif
+ 

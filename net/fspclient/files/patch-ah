@@ -1,0 +1,11 @@
+--- client.0.0-h+/Makefile.in.orig	Wed Apr 28 03:53:43 1993
++++ client.0.0-h+/Makefile.in	Mon Dec 27 20:53:08 1999
+@@ -52,7 +52,7 @@
+ .c.o:
+ 	$(CC) -c $(CFLAGS) $(CPPFLAGS) $(DEFS) $(INCLUDES) $<
+ 
+-install: all
++install:
+ 	$(INSTALL_PROGRAM) fsp $(bindir)/fsp
+ 	-$(INSTALL_DATA) $(srcdir)/fsp.man $(man1dir)/fsp$(man1ext)
+ 

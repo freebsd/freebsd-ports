@@ -1,0 +1,26 @@
+--- Makefile.in.orig	Thu May  6 10:11:58 1993
++++ Makefile.in	Mon Dec 27 22:07:20 1999
+@@ -3,19 +3,19 @@
+ srcdir = @srcdir@
+ VPATH = @srcdir@
+ 
+-CC = @CC@
++#CC = @CC@
+ AR = ar
+ # set RANLIB = @: if your system doesn't have or need ranlib
+ RANLIB = @RANLIB@
+ # use cp if you don't have install
+ INSTALL = @INSTALL@
+-INSTALL_PROGRAM = @INSTALL_PROGRAM@
++INSTALL_PROGRAM = install -c -s -o bin -g bin -m 555
+ INSTALL_DATA = @INSTALL_DATA@
+ 
+ DEFS = @DEFS@
+ 
+-CFLAGS = -g
+-LDFLAGS = $(CFLAGS)
++#CFLAGS = -g
++#LDFLAGS = $(CFLAGS)
+ LIBS = @LIBS@
+ 
+ prefix = /usr/local

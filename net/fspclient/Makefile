@@ -1,18 +1,18 @@
-# New ports collection makefile for:    fspclient
-# Version required:     0.0-h+
-# Date created:         7 Nov 1994
-# Whom:                 ache
+# New ports collection makefile for:	fspclient
+# Version required:	0.0-h+
+# Date created:		7 Nov 1994
+# Whom:			ache
 #
 # $FreeBSD$
 #
 
-DISTNAME=       fspclient.0.0-h+
-PKGNAME=        fspclient-0.0.h
+DISTNAME=	fspclient
+PKGNAME=	fspclient-0.0.h
 CATEGORIES=	net
-MASTER_SITES=   ftp://ftp.germany.eu.net/pub/networking/fsp/
-EXTRACT_SUFX=   .tar.z
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	system/network/file-transfer
 
-MAINTAINER=     ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/fspclient
 GNU_CONFIGURE=	yes
