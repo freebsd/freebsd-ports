@@ -36,7 +36,7 @@
  
  # you might need to change "libtcl" and "libtk" to "libtcl8.x" and "libtk8.x"
 -LIBS = $(LIBXDIR) $(LIBTCLDIR) -ltk -ltcl -lX11 -lm -ldl
-+LIBS = $(LIBXDIR) $(LIBTCLDIR) -ltk83 -ltcl83 -lX11 -lm
++LIBS = $(LIBXDIR) $(LIBTCLDIR) -ltk84 -ltcl84 -lX11 -lm
  
  INSTALL = install
  RM = rm -f
@@ -47,7 +47,7 @@
 -CC = cc
 -DEFINES = -D$(OS) -DLIBDIR=\"$(LIBDIR)\"
 -CFLAGS = -O2 $(DEFINES)
-+DEFINES = -D$(OS) -DLIBDIR=\"$(LIBDIR)\" -I${LOCALBASE}/include/tk8.3 -I${LOCALBASE}/include/tcl8.3 -I${X11BASE}/include
++DEFINES = -D$(OS) -DLIBDIR=\"$(LIBDIR)\" -I${LOCALBASE}/include/tk8.4 -I${LOCALBASE}/include/tcl8.4 -I${X11BASE}/include
 +CFLAGS += $(DEFINES)
  #CFLAGS = -O2 -Wall -pedantic -ansi $(DEFINES)
  LFLAGS = $(LIBS)  -s
