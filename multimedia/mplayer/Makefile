@@ -93,7 +93,8 @@
 # libdvdread). This only affect mplayer if WITH_DVD is used.
 #
 # WITH_LIBDVDNAV
-# default: autodetect
+# Completely disabled at the moment because of incompatibility issues
+# with the new libdvdnav. This will probably be fixed in mplayer-1.0.
 #
 # WITH_LIBUNGIF
 # default: autodetect
@@ -170,7 +171,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	0.92.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	multimedia audio ipv6
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		http://www2.mplayerhq.hu/MPlayer/releases/ \
@@ -207,7 +208,8 @@ CONFIGURE_ARGS=	--with-extralibdir=${LOCALBASE}/lib \
 		--with-x11incdir=${X11BASE}/include \
 		--enable-png \
 		--disable-libfame \
-		--disable-tv-v4l
+		--disable-tv-v4l \
+		--disable-dvdnav
 
 .if defined(WITH_LANG)
 CONFIGURE_ARGS+=--language=${WITH_LANG}
@@ -249,9 +251,9 @@ WITH_LIBDV=	yes
 WITH_DVD=	yes
 .endif
 
-.if exists(${LOCALBASE}/lib/libdvdnav.so.3)
-WITH_LIBDVDNAV=	yes
-.endif
+#.if exists(${LOCALBASE}/lib/libdvdnav.so.3)
+#WITH_LIBDVDNAV=	yes
+#.endif
 
 .if exists(${LOCALBASE}/lib/libungif.so.5)
 WITH_LIBUNGIF=	yes
@@ -369,13 +371,13 @@ LIB_DEPENDS+=	dvdcss.2:${PORTSDIR}/multimedia/libdvdcss
 .else
 LIB_DEPENDS+=	dvdread.3:${PORTSDIR}/multimedia/libdvdread
 .endif
-.if defined(WITH_LIBDVDNAV)
-LIB_DEPENDS+=	dvdnav.3:${PORTSDIR}/multimedia/libdvdnav
+#.if defined(WITH_LIBDVDNAV)
+#LIB_DEPENDS+=	dvdnav.3:${PORTSDIR}/multimedia/libdvdnav
 
-CONFIGURE_ARGS+=	--enable-dvdnav
-.else
-CONFIGURE_ARGS+=	--disable-dvdnav
-.endif
+#CONFIGURE_ARGS+=	--enable-dvdnav
+#.else
+#CONFIGURE_ARGS+=	--disable-dvdnav
+#.endif
 
 CONFIGURE_ARGS+=	--enable-css \
 			--with-csslibdir=${LOCALBASE}/lib
