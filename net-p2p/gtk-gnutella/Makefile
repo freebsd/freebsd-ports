@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gtk-gnutella
-PORTVERSION=	0.18
-PORTREVISION=	1
+PORTVERSION=	0.80
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://gtk-gnutella.sourceforge.net/download/ \
@@ -20,5 +19,7 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GTK=	yes
 GNU_CONFIGURE=	yes
+
+CONFIGURE_ARGS=	--enable-no-rfc1918
 
 .include <bsd.port.mk>
