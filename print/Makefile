@@ -20,6 +20,7 @@
     SUBDIR += c2ps-a4
     SUBDIR += c2ps-letter
     SUBDIR += cdlabelgen
+    SUBDIR += cjk-lyx
     SUBDIR += cmpsfont
     SUBDIR += detex
     SUBDIR += dvi2tty
