@@ -1,0 +1,43 @@
+# $FreeBSD$
+
+_OBJS!=	${MAKE} -f Makefile.unix -V OBJS -V QOBJS
+# We'd like to avoid using qconfig.cpp, but can't -- see the comment
+# next to -DHAVE_CONFIG_CPP below: 
+#_OBJS:=	${_OBJS:S/qconfig.o//}
+SRCS:=	${_OBJS:.o=.cpp}
+NOMAN=	true	# qmake.1 anyone?
+
+.PATH:	${.CURDIR} ${.CURDIR:H}/src/tools
+CXXFLAGS+=-I${.CURDIR:H}/mkspecs/freebsd-g++
+
+.for s in tools kernel codecs
+CXXFLAGS+=-I${.CURDIR:H}/src/$s
+.endfor
+
+.for g in /. /unix /win32 /mac
+.PATH:	${.CURDIR}/generators$g
+CXXFLAGS+=-I${.CURDIR}/generators$g
+.endfor
+
+CXXFLAGS+=-I. -I"${FILESDIR}"
+
+CXXFLAGS+=-DQT_NO_TEXTCODEC -DQT_NO_UNICODETABLES -DQT_NO_COMPONENT \
+	-DQT_NO_STL -DQT_NO_COMPRESS -DQT_INSTALL_DATA="\"${SHAREDIR}\""
+
+# I guess, qconfig.cpp used to be optional, but no longer is -- due to
+# bit-rot in Qt sources. So we still have to compile it, but, by not
+# adding the following define, we reduce the seemingly needless usage of
+# it:
+# -DHAVE_QCONFIG_CPP
+
+PROG_CXX=	qmake
+BINDIR=	${PREFIX}/bin
+SHAREDIR=${PREFIX}/share/qt
+
+${SHAREDIR}:
+	mkdir -p "$@"
+
+beforeinstall: ${SHAREDIR}
+	cp -Rp ${.CURDIR:H}/mkspecs ${SHAREDIR}
+
+.include <bsd.prog.mk>
