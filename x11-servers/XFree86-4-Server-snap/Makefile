@@ -142,15 +142,18 @@ PLIST_SUB+=	XIE:="@comment "
 # I don't confirm feather it is newer than the one which included in 4.2.0,
 # but you can try the BETA driver. Just set that variable.
 
+pre-everything::
+	@${ECHO_MSG} "********************************************************"
+	@${ECHO_MSG} "WARNING: MATROX DRIVERS NOT FULLY TESTED WITH XFREE86"
+	@${ECHO_MSG} "4.2.0!  ENABLE AT YOUR OWN RISK!"
+	@${ECHO_MSG} "********************************************************"
+
 .if ${BuildXF86DRI} == YES
 .if !defined(WITH_MATROX_GXX_DRIVER)
 HaveMatroxHal=		NO
 PLIST_SUB+=		MATROX="@comment "
 pre-fetch::
 	@${ECHO_MSG} "********************************************************"
-	@${ECHO_MSG} "WARNING: NOT FULLY TESTED WITH XFREE86 4.2.0!"
-	@${ECHO_MSG} "ENABLE AT YOUR OWN RISK!"
-	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Define WITH_MATROX_GXX_DRIVER to enable the official"
 	@${ECHO_MSG} "Matrox drivers for the G200, G400, G450, and G550"
 	@${ECHO_MSG} "graphic adapters."
@@ -162,8 +165,8 @@ NO_PACKAGE=	"Matrox drivers may not be distributed."
 RESTRICTED=	"Matrox drivers may not be distributed."
 HaveMatroxHal=		YES
 MGA_DRIVER_VERSION=	2.0
-MASTER_SITES+=		ftp://ftp.matrox.com/pub/mga/archive/linux/2002/
-DISTFILES+=		mgadrivers-${MGA_DRIVER_VERSION}-src.tgz
+MASTER_SITES+=		ftp://ftp.matrox.com/pub/mga/archive/linux/2002/:mga
+DISTFILES+=		mgadrivers-${MGA_DRIVER_VERSION}-src.tgz:mga
 EXTRACT_ONLY+=		mgadrivers-${MGA_DRIVER_VERSION}-src.tgz
 RESTRICTED_FILES=	mgadrivers-${MGA_DRIVER_VERSION}-src.tgz
 PLIST_SUB+=		MATROX=""
