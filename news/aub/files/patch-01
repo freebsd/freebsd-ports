@@ -1,7 +1,7 @@
---- aub.orig	Sat Oct 31 14:17:33 1998
-+++ aub	Sat Oct 31 14:18:37 1998
+--- aub.orig	Sat Jan 15 18:12:02 2000
++++ aub	Sat Jan 15 18:14:26 2000
 @@ -38,6 +38,8 @@
- $SUM = "/bin/sum";   &find_pg("sum", 0)  unless (-x $SUM);
+ $SUM = "/usr/bin/sum";   &find_pg("sum", 0)  unless (-x $SUM);
  $CAT = "/bin/cat";   &find_pg("cat", 0)  unless (-x $CAT);
  $MV = "/bin/mv";     &find_pg("mv", 0)   unless (-x $MV);
 +$HOSTNAME = "/bin/hostname"; $HOSTNAME = &find_pg("hostname", 0) unless
@@ -67,6 +67,15 @@
    &abort("Remote nntp service doesn't look like nntp service to me.");
  } 
  
+@@ -968,7 +989,7 @@
+   $timeout_flag = 0;				# Not a local variable
+   alarm($timeout_interval);			# Can't wait forever.
+ 
+-  while ($socket_stuff !~ m/\n/) {		# No complete line in buffer
++  while ($socket_stuff !~ m/\r\n/) {		# No complete line in buffer
+     recv($sockname, $inp, 256, 0);		# Need more data
+     $socket_stuff .= $inp;			# Append to our buffer.
+   }
 @@ -1022,7 +1043,7 @@
    local($protocol) = "tcp";
    local($thishost, $problem, $junk);
