@@ -50,6 +50,7 @@
     SUBDIR += p5-BerkeleyDB
     SUBDIR += p5-CDB_File
     SUBDIR += p5-DBD-CSV
+    SUBDIR += p5-DBD-InterBase
     SUBDIR += p5-DBD-Pg
     SUBDIR += p5-DBD-Sybase
     SUBDIR += p5-DBD-XBase
