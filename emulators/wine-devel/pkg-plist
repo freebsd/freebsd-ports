@@ -135,6 +135,7 @@ include/wine/winver.h
 include/wine/wownt32.h
 include/wine/wnaspi32.h
 include/wine/ws2spi.h
+include/wine/ws2tcpip.h
 include/wine/wshisotp.h
 include/wine/wsipx.h
 include/wine/wtypes.h
@@ -149,8 +150,12 @@ include/wine/msvcrt/fcntl.h
 include/wine/msvcrt/io.h
 include/wine/msvcrt/locale.h
 include/wine/msvcrt/malloc.h
+include/wine/msvcrt/mbctype.h
+include/wine/msvcrt/mbstring.h
 include/wine/msvcrt/process.h
 include/wine/msvcrt/search.h
+include/wine/msvcrt/setjmp.h
+include/wine/msvcrt/share.h
 include/wine/msvcrt/stddef.h
 include/wine/msvcrt/stdio.h
 include/wine/msvcrt/stdlib.h

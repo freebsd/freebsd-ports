@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	wine
-PORTVERSION=	2001.11.08
-PORTREVISION=	1
+PORTVERSION=	2001.12.26
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	ALPHA/wine/development
@@ -61,7 +60,7 @@ post-configure:
 	cd ${WRKSRC} && make depend
 
 post-build:
-	cd ${WRKSRC}/programs/regapi && ${GMAKE}
+	#cd ${WRKSRC}/programs/regapi && ${GMAKE}
 	${SED} '1s/bash/sh/;s-\./\(reg.*\.pl\)-'${PREFIX}/lib/wine/reg/'\1-' <${WRKSRC}/programs/regapi/regSet.sh >${WRKDIR}/regSet.sh
 
 do-install:
