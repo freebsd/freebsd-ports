@@ -1,6 +1,6 @@
 bin/tidy
-share/doc/tidy/Overview.html
-share/doc/tidy/grid.gif
-share/doc/tidy/release-notes.html
-share/doc/tidy/tidy.gif
-@dirrm share/doc/tidy
+%%PORTDOCS%%%%DOCSDIR%%/Overview.html
+%%PORTDOCS%%%%DOCSDIR%%/grid.gif
+%%PORTDOCS%%%%DOCSDIR%%/release-notes.html
+%%PORTDOCS%%%%DOCSDIR%%/tidy.gif
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
