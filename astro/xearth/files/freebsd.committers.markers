@@ -1,0 +1,78 @@
+#
+# Walnut Creek, our good friends.
+#
+37.91  -122.06 "Walnut Creek"		# Walnut Creek CD-ROM
+#
+# FreeBSD core team members
+#
+40.0, -123.5,  "jkh"                            # Miranda, CA
+37.9, -122.3,  "asami"                          # Berkeley, CA
+40.1, -105.3,  "gibbs"                          # Boulder, CO (wow!)
+45.5, -122.6,  "dg"                             # near Portland, OR
+47.5, -122.4,  "jdp"                            # Seattle, WA
+42.34, -71.19, "gwollman"                       # Brighton, MA
+39.2,  -77.0,  "jmb"                            # Silver Spring, MD
+56.0,   -4.5,  "gary"                           # Glasgow, UK
+55.8,   37.6,  "ache"                           # Moscow
+53.0,    5.0,  "guido"                          # Eindhoven, the Netherlands
+55.4,   11.3,  "phk"                            # Denmark
+52.2,   10.2,  "   ,sos"                        # Denmark
+52.0,   13.8,  "joerg"                          # Germany
+29.7,  -95.4,  "rich"                           # Houston, TX
+-33.55,151.1,  "bde"                            # Sydney, Australia.
+-31.58,115.49, "peter"                          # Perth, Australia.
+#
+# Other committers
+#
+  39.25, -121.02 "truckman"                     # Nevada City, CA
+  38.54  -121.76 "     ,obrien,mharo"           # Davis, CA
+  37.80  -122.43 "                  ,julian"    # Downtown San Francisco, CA
+  37.77  -122.44 "                         ,archie" # Haight, San Francisco, CA 
+  37.55  -122.26 "                                ,terry" # Foster City, CA 
+  37.32  -121.94 "                                      ,jmg" # San Jose, CA
+  37.40  -121.94 "                                          ,alfred" # Santa Clara
+  37.33  -121.96 "                                                 ,nsayer" # ??? CA
+  39.2    -77.0  "   ,gpalmer"			# Silver Spring, MD
+  34.13  -118.12 "mph"                          # Pasadena, CA
+  49.01  -122.68 "cpiazza"                      # near Vancouver, BC
+  40.55  -111.90 "wes"                          # South Jordan, UT
+  46.59  -112.04 "nate"                         # Helena, MT
+  40.1   -105.3  "     ,imp,ken,fsmp"           # Boulder, CO
+  43.19   -89.38 "jlemon"                       # Madison, WI
+  42.02   -93.67 "ghelmer"                      # Ames, IA
+  39.8    -86.2  "dyson"                        # Indianapolis, IN
+  42.63   -83.02 "billf"                        # Utica, MI
+  43.37   -79.79 "hoek"                         # Burlington, ON
+  44.99   -93.26 "nectar"                       # Minneapolis, MN
+  34.8    -86.7  "steve"                        # Harvest, AL
+  38.75   -76.87 "   ,green"                    # Clinton, MD
+  44.99   -93.25 "mpp,mks"                      # Minneapolis, MN
+  37.23   -80.41 "jhb"				# Blacksburg, VA
+
+  59.72    10.85 "eivind,"                      # Ski, Norway
+  59.92    10.75 "       des,tegge"             # Oslo, Norway
+  52.14    21.03 "abial"                        # Warsaw, Poland
+  50.70     6.2  "tg"                           # Aachen, Germany
+  53.33     9.59 "stb"                          # Hamburg, Germany
+  53.56    10.02 "   ,cracauer"                 # Hamburg, Germany
+  53.65     9.81 "            ,hw"		# Rellingen, Germany
+  50.92     6.95 "se"				# Cologne, Germany
+  48.36     2.99 "charnier"                     # Cannes Ecluse, France
+  48.7      2.17 "roberto"                      # Les Ulis, France
+  55.87    -4.26 "    ,roger"                   # Glasgow, UK
+  51.50    -0.48 "nik"                          # West Drayton, Middx., UK
+  51.67     0.61 "brian"                        # Amersham, Bucks, UK
+  51.67     0.61 "     ,joe"                    # Amersham, Bucks, UK
+  43.71    10.40 "luigi"                        # Pisa, Italy
+
+  36.45   139.37 "dcs"				# ???
+ -34.14   138.77 "grog"                         # Echunga, SA Australia
+ -34.53   138.35 "    ,newton,kris"             # Adelaide, SA Australia
+ -37.7     144.9 "jb,danny,thepish"             # Melbourne, NSW? Australia
+
+  12.58    77.35 "jkoshy"                       # Bangalore, India
+
+   8.62    45.87 "n_hibma"                      # Somewhere in East Africa?
+ -34       18    "markm"                        # Cape Town, South Africa
+ -34       18    "     ,sheldonh"		# Cape Town, South Africa
+
