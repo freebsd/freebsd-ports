@@ -32,6 +32,7 @@ share/yudit/data/GB2312R.bumap
 share/yudit/data/Georgian.kmap
 share/yudit/data/German.kmap
 share/yudit/data/Greek.kmap
+share/yudit/data/GreekBible.kmap
 share/yudit/data/GreekMono.kmap
 share/yudit/data/Guarani.kmap
 share/yudit/data/Hangul.kmap
@@ -51,14 +52,19 @@ share/yudit/data/Lithuanian.kmap
 share/yudit/data/Mnemonic.kmap
 share/yudit/data/OLD5601.bumap
 share/yudit/data/Polish.kmap
+share/yudit/data/Polytonic.kmap
 share/yudit/data/Russian.kmap
 share/yudit/data/SGML.kmap
+share/yudit/data/Spanish.kmap
 share/yudit/data/TeX.kmap
+share/yudit/data/Thai.kmap
 share/yudit/data/Troff.kmap
 share/yudit/data/Unicode2.kmap
 share/yudit/data/VISCII.bumap
 share/yudit/data/Vietnamese.kmap
+share/yudit/data/VietnameseTelex.kmap
 share/yudit/data/VNtelex.kmap
+share/yudit/data/Welsh.kmap
 share/yudit/data/XKB_iso8859-4.kmap
 share/yudit/help/Config-de.help
 share/yudit/help/Config-fr.help
@@ -70,7 +76,10 @@ share/yudit/help/General-hu.help
 share/yudit/help/General-zh_TW.help
 share/yudit/help/General.help
 share/yudit/help/TestPage.help
+share/yudit/locale/az.utf8/LC_MESSAGES/messages.mo
+share/yudit/locale/da.utf8/LC_MESSAGES/messages.mo
 share/yudit/locale/de.utf8/LC_MESSAGES/messages.mo
+share/yudit/locale/es.utf8/LC_MESSAGES/messages.mo
 share/yudit/locale/fr.utf8/LC_MESSAGES/messages.mo
 share/yudit/locale/hu.utf8/LC_MESSAGES/messages.mo
 share/yudit/locale/it.utf8/LC_MESSAGES/messages.mo
@@ -80,28 +89,34 @@ share/yudit/locale/ru.utf8/LC_MESSAGES/messages.mo
 share/yudit/locale/sl.utf8/LC_MESSAGES/messages.mo
 share/yudit/locale/your.utf8/LC_MESSAGES/messages.mo
 share/yudit/locale/zh_TW.utf8/LC_MESSAGES/messages.mo
-@dirrm share/yudit/config
-@dirrm share/yudit/data
-@dirrm share/yudit/help
-@dirrm share/yudit/locale/de.utf8/LC_MESSAGES
-@dirrm share/yudit/locale/de.utf8
-@dirrm share/yudit/locale/fr.utf8/LC_MESSAGES
-@dirrm share/yudit/locale/fr.utf8
-@dirrm share/yudit/locale/hu.utf8/LC_MESSAGES
-@dirrm share/yudit/locale/hu.utf8
-@dirrm share/yudit/locale/it.utf8/LC_MESSAGES
-@dirrm share/yudit/locale/it.utf8
-@dirrm share/yudit/locale/ja.utf8/LC_MESSAGES
-@dirrm share/yudit/locale/ja.utf8
-@dirrm share/yudit/locale/po.utf8/LC_MESSAGES
-@dirrm share/yudit/locale/po.utf8
-@dirrm share/yudit/locale/ru.utf8/LC_MESSAGES
-@dirrm share/yudit/locale/ru.utf8
-@dirrm share/yudit/locale/sl.utf8/LC_MESSAGES
-@dirrm share/yudit/locale/sl.utf8
-@dirrm share/yudit/locale/your.utf8/LC_MESSAGES
-@dirrm share/yudit/locale/your.utf8
 @dirrm share/yudit/locale/zh_TW.utf8/LC_MESSAGES
 @dirrm share/yudit/locale/zh_TW.utf8
+@dirrm share/yudit/locale/your.utf8/LC_MESSAGES
+@dirrm share/yudit/locale/your.utf8
+@dirrm share/yudit/locale/sl.utf8/LC_MESSAGES
+@dirrm share/yudit/locale/sl.utf8
+@dirrm share/yudit/locale/ru.utf8/LC_MESSAGES
+@dirrm share/yudit/locale/ru.utf8
+@dirrm share/yudit/locale/po.utf8/LC_MESSAGES
+@dirrm share/yudit/locale/po.utf8
+@dirrm share/yudit/locale/ja.utf8/LC_MESSAGES
+@dirrm share/yudit/locale/ja.utf8
+@dirrm share/yudit/locale/it.utf8/LC_MESSAGES
+@dirrm share/yudit/locale/it.utf8
+@dirrm share/yudit/locale/hu.utf8/LC_MESSAGES
+@dirrm share/yudit/locale/hu.utf8
+@dirrm share/yudit/locale/fr.utf8/LC_MESSAGES
+@dirrm share/yudit/locale/fr.utf8
+@dirrm share/yudit/locale/es.utf8/LC_MESSAGES
+@dirrm share/yudit/locale/es.utf8
+@dirrm share/yudit/locale/de.utf8/LC_MESSAGES 
+@dirrm share/yudit/locale/de.utf8
+@dirrm share/yudit/locale/da.utf8/LC_MESSAGES
+@dirrm share/yudit/locale/da.utf8
+@dirrm share/yudit/locale/az.utf8/LC_MESSAGES
+@dirrm share/yudit/locale/az.utf8
 @dirrm share/yudit/locale
+@dirrm share/yudit/help
+@dirrm share/yudit/data
+@dirrm share/yudit/config
 @dirrm share/yudit
