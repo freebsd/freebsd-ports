@@ -7,7 +7,7 @@
 
 PORTNAME=	clients
 PORTVERSION=	4.3.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XFREE}
 MASTER_SITE_SUBDIR=	4.3.0
@@ -28,7 +28,7 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 SCRIPTS_ENV=		InstallXdmConfig=${InstallXdmConfig} \
 			InstallXinitConfig=${InstallXinitConfig} \
 			InstallAppDefFiles=${InstallAppDefFiles}
-			
+
 MAKE_ENV=		PKGNAMEPREFIX=${PKGNAMEPREFIX} \
 			PORTNAME=${PORTNAME} \
 			PORTVERSION=${PORTVERSION}
@@ -51,6 +51,18 @@ XINSTALL_MAN_DIRS=	programs
 InstallXdmConfig?=	DEFAULT
 InstallXinitConfig?=	DEFAULT
 InstallAppDefFiles?=	DEFAULT
+
+.if !defined(WITH_SETUID_LUIT)
+pre-everything::
+	@${ECHO_MSG} "If you want to use xterm with locales in a secure manner, luit must be installed"
+	@${ECHO_MSG} "setuid.  If you want to do this, hit Ctrl-C now and use \"make WITH_SETUID_LUIT=yes\""
+.endif
+
+.if defined(WITH_SETUID_LUIT)
+post-install:
+	${CHOWN} root:wheel ${PREFIX}/bin/luit
+	${CHMOD} 04711 ${PREFIX}/bin/luit
+.endif
 
 .include "${.CURDIR}/../../x11/XFree86-4-libraries/Makefile.inc"
 .include <bsd.port.pre.mk>
