@@ -7,7 +7,6 @@
 
 PORTNAME=	gnuplot
 PORTVERSION=	3.7.3
-PORTREVISION=	1
 CATEGORIES=	math graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +15,7 @@ MAINTAINER=	chuckr@FreeBSD.org
 COMMENT=	A command-driven interactive function plotting program
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--datadir=${DATADIR} \
+CONFIGURE_ARGS=	--datadir=${PREFIX}/share \
 		--without-linux-vga --without-gd \
 		--with-readline=gnu --with-lasergnu
 
@@ -38,7 +37,7 @@ CONFIGURE_ARGS+=	--without-png
 .endif
 
 .if !defined(WITHOUT_PDF)
-LIB_DEPENDS+=	pdf.5:${PORTSDIR}/print/pdflib
+LIB_DEPENDS+=	pdf.4:${PORTSDIR}/print/pdflib
 CONFIGURE_ARGS+=	--with-pdf=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-pdf
@@ -49,6 +48,8 @@ post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${FILESDIR}/README ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/demo/* ${EXAMPLESDIR}
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/gnuplot.gih ${DATADIR}
 .endif
 
 .include <bsd.port.mk>
