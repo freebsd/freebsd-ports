@@ -12,4 +12,4 @@ MAINTAINER=	jeh@FreeBSD.org
 LCLTARGET=	m68k-rtems
 
 MASTERDIR=	${.CURDIR}/../i386-rtems-gdb
-.include "${.CURDIR}/../i386-rtems-gdb/Makefile"
+.include "${MASTERDIR}/Makefile"
