@@ -1,0 +1,4 @@
+bin/ppc
+etc/ppccfg.example
+%%DATADIR%%/video.x
+@dirrm %%DATADIR%%
