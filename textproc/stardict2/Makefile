@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	stardict
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.1
 CATEGORIES=	chinese textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://freebsd.sinica.edu.tw/pub/statue/stardict2/
