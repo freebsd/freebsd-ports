@@ -39,6 +39,7 @@
     SUBDIR += bozohttpd
     SUBDIR += cadaver
     SUBDIR += calamaris
+    SUBDIR += caudium-devel
     SUBDIR += caudium10
     SUBDIR += caudium12
     SUBDIR += cgi-lib
