@@ -70,7 +70,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>libxml</name>
-	<range><gt>0</gt></range>
+	<range><lt>1.8.17_3</lt></range>
       </package>
       <package>
 	<name>libxml2</name>
@@ -94,6 +94,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-10-26</discovery>
       <entry>2004-11-09</entry>
+      <modified>2004-11-10</modified>
     </dates>
   </vuln>
 
