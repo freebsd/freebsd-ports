@@ -1,0 +1,47 @@
+--- afterstep/afterstep.man.old	Fri Oct 23 00:13:34 1998
++++ afterstep/afterstep.man	Fri Oct 23 00:15:28 1998
+@@ -146,7 +146,7 @@
+ See the section on "Mouse" for more information.  Further modifications to
+ .I AfterStep's
+ behavior can be made in the ~/.steprc file, using
+-/usr/X11R6/lib/X11/afterstep/system.steprc as a guide.
++%%PREFIX%%/lib/X11/afterstep/system.steprc as a guide.
+ 
+ Shaped windows such as xeyes or oclock get a title bar that floats above
+ the window and no bottom bar.  The background area of shaped windows is
+@@ -216,7 +216,7 @@
+ these  files will be described later. First,
+ .I AfterStep
+ will search for a file  named .steprc in the user's home directory.
+-Failing that, it will look for /usr/lib/X11/afterstep/system.steprc for system-wide
++Failing that, it will look for %%PREFIX%%/lib/X11/afterstep/system.steprc.${LOCALE} and %%PREFIX%%/lib/X11/afterstep/system.steprc for system-wide
+ defaults. If that file is not found,
+ .I AfterStep
+ will exit.
+@@ -1299,7 +1299,7 @@
+ replaced with a key name. The
+ .I keyname
+ is one of the
+-entries from /usr/include/X11/keysymdef.h, with the
++entries from %%PREFIX%%/include/X11/keysymdef.h, with the
+ leading XK_  omitted.  The
+ .I Context
+ and
+@@ -1619,7 +1619,7 @@
+ 
+ The cursor_type  argument  is a number which tells
+ the cursor shape to use. The available numbers  can
+-be  found in /usr/include/X11/cursorfont.h, and are
++be  found in %%PREFIX%%/include/X11/cursorfont.h, and are
+ currently even numbers between 0 and  152.  At  the
+ current time, the following cursor types are available.
+ 
+@@ -1911,7 +1911,7 @@
+ Key F1 R N Restart " " afterstep &
+ Key F1 R N Restart " " $(HOME)/bin/afterstep
+ Key F1 R N Restart " " twm -f .mystartupfile
+-Key F1 R N Restart " " /usr/local/bin/afterstep
++Key F1 R N Restart " " %%PREFIX%%/bin/afterstep
+ .fi
+ .RE
+ 
