@@ -5,10 +5,12 @@ share/GTorrentViewer/pixmaps/dictionary.png
 share/GTorrentViewer/pixmaps/error.png
 share/GTorrentViewer/pixmaps/gtorrentviewer.png
 share/GTorrentViewer/pixmaps/gtorrentviewer.xpm
+share/GTorrentViewer/pixmaps/info.png
 share/GTorrentViewer/pixmaps/integer.png
 share/GTorrentViewer/pixmaps/list.png
 share/GTorrentViewer/pixmaps/ok.png
 share/GTorrentViewer/pixmaps/string.png
+share/GTorrentViewer/pixmaps/unknown.png
 share/GTorrentViewer/pixmaps/warning.png
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtorrentviewer
-PORTVERSION=	0.2a
+PORTVERSION=	0.2b
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,21 +18,18 @@ COMMENT=	GTK+2 viewer and editor for BitTorrent meta files
 LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl
 
 USE_GNOME=	gtk20 gnomehier
+USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 USE_GETOPT_LONG=yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--with-pixmapsdir=${PREFIX}/share/gnome/pixmaps \
+		--with-desktopdir=${PREFIX}/share/gnome/applications
 
 MAN1=		gtorrentviewer.1
 DOCS=		AUTHORS COPYING ChangeLog README
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|[(]datadir[)]/applications|(prefix)/share/gnome/applications|g' \
-		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|[(]datadir[)]/pixmaps|(prefix)/share/gnome/pixmaps|g' \
-		${WRKSRC}/pixmaps/Makefile.in
-	@${REINPLACE_CMD} -e 's|SYSTEM_PIXMAPS_DIR|PIXMAPS_DIR|g' \
-		${WRKSRC}/src/mainwindow.h
 
 .ifndef (NOPORTDOCS)
 post-install:
