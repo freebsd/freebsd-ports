@@ -1,21 +1,16 @@
 bin/amon
-bin/arlad
 bin/bos
 bin/fs
 bin/klog
 bin/mk_cmds
-bin/mount_xfs
 bin/pts
 bin/rxdebug
-bin/startarla
 bin/tokens
 bin/udebug
-bin/umount_xfs
 bin/unlog
 bin/up
 bin/vos
 bin/xfs.ko
-bin/xfs_makedev
 bin/ydr
 @unexec if cmp -s %D/etc/CellServDB %D/etc/CellServDB.default; then rm -f %D/etc/CellServDB; fi
 etc/CellServDB.default
@@ -100,7 +95,12 @@ lib/librxvolserver.a
 lib/libsl.a
 lib/libss.a
 lib/libutil.a
+libexec/arlad
 sbin/rxperf
+sbin/mount_xfs
+sbin/startarla
+sbin/umount_xfs
+sbin/xfs_makedev
 @dirrm include/afs
 @dirrm include/rx
 @dirrm include/ss
