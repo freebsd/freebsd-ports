@@ -19,6 +19,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gnomeprefix gnomevfs2
+USE_GNOME=	gnomehack gnomeprefix gnomevfs2 libgnomeui
 
 .include <bsd.port.mk>
