@@ -1,18 +1,16 @@
-*** Makefile	Tue Oct  4 22:47:03 1994
---- Makefile	Thu Oct 27 14:46:17 1994
+*** Makefile	Thu Oct  6 17:41:10 1994
+--- Makefile	Mon Mar 20 12:39:08 1995
 ***************
-*** 4,13 ****
+*** 4,11 ****
   PROG=	tftpd
   MAN8=	tftpd.8
   
 ! ETCDIR?=${DESTDIR}/etc
 ! BINDIR?=${DESTDIR}/usr/libexec
   
-! CFLAGS+=-DCONFIGFILE='"${ETCDIR}/tftpd.conf"'
+  CFLAGS+=-DCONFIGFILE='"${ETCDIR}/tftpd.conf"'
   
-  classes/libclasses.a:
-  	(cd classes ; make)
---- 4,14 ----
+--- 4,12 ----
   PROG=	tftpd
   MAN8=	tftpd.8
   
@@ -20,72 +18,5 @@
 ! BINDIR=${DESTDIR}/usr/local/libexec
 ! MANDIR=${DESTDIR}/usr/local/man/man
   
-! CFLAGS+=-DCONFIGFILE='"${ETCDIR}/tftpd.conf"' -DHAVE_STRERROR
+  CFLAGS+=-DCONFIGFILE='"${ETCDIR}/tftpd.conf"'
   
-  classes/libclasses.a:
-  	(cd classes ; make)
-*** classes/Makefile	Tue Oct  4 22:33:02 1994
---- classes/Makefile	Thu Oct 27 14:43:57 1994
-***************
-*** 6,9 ****
---- 6,12 ----
-  NOPIC=	true
-  NOPROFILE=true
-  
-+ install:
-+ 	@echo not installing library
-+ 
-  .include <bsd.lib.mk>
-*** tftpyale.c	Tue Oct  4 22:20:49 1994
---- tftpyale.c	Thu Oct 27 14:37:03 1994
-***************
-*** 232,238 ****
-  		if ((configf = fopen (fileName, "r")) == NULL) {
-  			syslog (LOG_ERR,
-  				"Cannot open configFile '%s'; reason = %s",
-! 				fileName, sys_errlist[errno]);
-  			return 0;
-  		}
-  	}
---- 232,238 ----
-  		if ((configf = fopen (fileName, "r")) == NULL) {
-  			syslog (LOG_ERR,
-  				"Cannot open configFile '%s'; reason = %s",
-! 				fileName, strerror(errno));
-  			return 0;
-  		}
-  	}
-***************
-*** 278,284 ****
-  				if (tftpDebugLevel > 0) {
-  					syslog (LOG_DEBUG,
-  						"chdir fails; '%s'",
-! 						sys_errlist[errno]);
-  				}
-  			}
-  			else
---- 278,284 ----
-  				if (tftpDebugLevel > 0) {
-  					syslog (LOG_DEBUG,
-  						"chdir fails; '%s'",
-! 						strerror(errno));
-  				}
-  			}
-  			else
-***************
-*** 290,296 ****
-  			if (cargc == 2) {
-  				if (access(cargv[1], 0) != 0)
-  					syslog(LOG_DEBUG, "directory '%s': %s",
-! 						cargv[1], sys_errlist[errno]);
-  				else
-  					tftpRootDirectory = newString(cargv[1]);
-  			}
---- 290,296 ----
-  			if (cargc == 2) {
-  				if (access(cargv[1], 0) != 0)
-  					syslog(LOG_DEBUG, "directory '%s': %s",
-! 						cargv[1], strerror(errno));
-  				else
-  					tftpRootDirectory = newString(cargv[1]);
-  			}
