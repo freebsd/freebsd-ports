@@ -1,5 +1,5 @@
 *** ../xperfmon++/misc.c	Wed Jul 27 22:29:33 1994
---- ./misc.c	Sun Jan 10 21:14:22 1999
+--- ./misc.c	Tue Apr 10 21:48:00 2001
 ***************
 *** 1,10 ****
   /* Copyright 1994, Roger Smith for Sterling Software and NASA-Ames Research Center
@@ -17,7 +17,7 @@
 +  * Enhancement and error correction for FreeBSD-3.X
 +  * COPYRIGHT 1998 by Lars Köller <Lars.Koeller@Uni-Bielefeld.de>
 +  *
-+  *      $Id: misc.c,v 3.3 1999/01/10 20:13:27 lkoeller Exp lkoeller $
++  *      $Id: misc.c,v 3.4 2001/04/10 19:47:38 lkoeller Exp lkoeller $
 +  */
 + 
   /* Copyright 1994, Roger Smith for Sterling Software and NASA-Ames Research Center
@@ -58,7 +58,7 @@
    */
 + 
 + #ifndef LINT
-+ static char rcsid[] = "$Id: misc.c,v 3.3 1999/01/10 20:13:27 lkoeller Exp lkoeller $";
++ static char rcsid[] = "$Id: misc.c,v 3.4 2001/04/10 19:47:38 lkoeller Exp lkoeller $";
 + #endif
 + 
 + #include "fbsd_vers.h"
@@ -135,6 +135,16 @@
   		       pw->strip_chart.highWarn,
   		       pw->strip_chart.highAlarm,
 ***************
+*** 142,148 ****
+  adjust_timeout(delta)
+  int delta;
+  {
+-     int i;
+      char hostname[132], *c;
+  
+      if ( appData.ms_per_sec == 1 )
+--- 155,160 ----
+***************
 *** 152,158 ****
   	appData.interval += delta;
   
@@ -143,7 +153,7 @@
   	appData.interval_id =
   	    XtAppAddTimeOut(appData.app_context,
   			    appData.interval*appData.ms_per_sec, start_graphs, (caddr_t) appData.toplevel);
---- 165,171 ----
+--- 164,170 ----
   	appData.interval += delta;
   
   	XtRemoveTimeOut(appData.interval_id);
@@ -160,7 +170,7 @@
   	    (float)(appData.interval*appData.ms_per_sec)/1000.0);
       XtVaSetValues(labelBox, XtNlabel, hostname, NULL);
   }
---- 173,179 ----
+--- 172,178 ----
   
       (void)gethostname(hostname, sizeof(hostname));
       c = (char *) ((long) &hostname[0] + (int) strlen(hostname));

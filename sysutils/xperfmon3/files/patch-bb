@@ -111,5 +111,4 @@
   #define XtNvmunix "vmunix"
 ! 
   typedef struct _TimeChartRec *TimeChartWidget;
-  typedef struct _TimeChartClassRec *TimeChartWidgetClass;
-  
+  typedef struct _TimeChartClassRec *TimeChartWidgetClass;  
