@@ -3,7 +3,7 @@
 # Date created:		10 May 1998
 # Whom:			nordwick@xcf.berkeley.edu
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/04/11 02:51:41 jseger Exp $
 #
 
 DISTNAME=	java_cup_v10g
@@ -18,7 +18,7 @@ JAVADIR=	${PREFIX}/${JAVASUBDIR}
 JAVALIBDIR=	${JAVADIR}/lib
 
 BUILD_DEPENDS=	${JAVADIR}/bin/javac:${PORTSDIR}/lang/jdk
-RUN_DEPENDS=	${JAVADIR}//bin/java:${PORTSDIR}/lang/jdk
+RUN_DEPENDS=	${JAVADIR}/bin/java:${PORTSDIR}/lang/jdk
 
 NO_WRKSUBDIR=	yes
 
