@@ -14,7 +14,7 @@
       printf("NSPmod version " LIT(VERSION_MAJOR) "." LIT(VERSION_MINOR) "\n");
       printf("Usage: %s [options] modfile\n", argv0);
       printf("Options:\n");
-+     printf(" -b #  number of bits to output (8 or 16)");
++     printf(" -b #  number of bits to output (8 or 16)\n");
       printf(" -c #  play only the channel\n");
       printf(" -e    show events\n");
       printf(" -f #  output sample rate\n");

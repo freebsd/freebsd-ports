@@ -100,12 +100,12 @@
   	perror("dacioConf");
   	exit(1);
       }
-!     fprintf(stderr, "sound buffer size = 0x%x\n", buf.size);
+!     /*fprintf(stderr, "sound buffer size = 0x%x\n", buf.size);*/
 !     tmp = buf.size;
 !     while (tmp <= (0.1 * (dcp->speed * (dcp->stereo+1) * (dcp->bits/8))))
 ! 	tmp += buf.size;
 !     buf.size = tmp;
-!     fprintf(stderr, "buffer size = 0x%x\n", buf.size);
+!     /*fprintf(stderr, "buffer size = 0x%x\n", buf.size);*/
       dci = *dcp;
       /*if (buf.top != NULL) free(buf.top);*/
 !     buf.top = memPerm(buf.size);
