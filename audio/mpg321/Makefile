@@ -6,17 +6,15 @@
 #
 
 PORTNAME=	mpg321
-PORTVERSION=	0.1.5
+PORTVERSION=	0.2.0
 CATEGORIES=	audio
 MASTER_SITES=	http://people.debian.org/~drew/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	naddy@mips.inka.de
 
-LIB_DEPENDS=	ao.1:${PORTSDIR}/audio/libao
-BUILD_DEPENDS=	${LOCALBASE}/lib/libmad.a:${PORTSDIR}/audio/mad
-
-BROKEN=		"not yet updated for libao.so.2"
+LIB_DEPENDS=	ao.2:${PORTSDIR}/audio/libao \
+		mad.0:${PORTSDIR}/audio/mad
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-mpg123-symlink
