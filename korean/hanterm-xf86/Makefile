@@ -3,7 +3,7 @@
 # Date created:		22 Mar 1997
 # Whom:			CHOI Junho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.10 1998/10/25 19:29:32 fenner Exp $
+# $Id: Makefile,v 1.11 1999/01/05 01:11:59 steve Exp $
 #
 
 DISTNAME=	hanterm-xf-p15
@@ -13,7 +13,7 @@ MASTER_SITES=	http://pseudo.snu.ac.kr/~hwang/
 
 MAINTAINER=	junker@jazz.snu.ac.kr
 
-RUN_DEPENDS=	${PREFIX}/lib/X11/fonts/misc/johabm16.pcf.gz:${PORTSDIR}/korean/johabfonts
+RUN_DEPENDS=	${PREFIX}/lib/X11/fonts/local/johabm16.pcf.gz:${PORTSDIR}/korean/johabfonts
 
 USE_X_PREFIX=		yes
 GNU_CONFIGURE=		yes
