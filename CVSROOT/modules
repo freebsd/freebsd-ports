@@ -9555,6 +9555,7 @@ tr-aspell	ports/textproc/tr-aspell
 tr-ircd		ports/irc/tr-ircd
 tr-openoffice-1.0	ports/editors/openoffice-1.0-tr
 tr2latex	ports/print/tr2latex
+trac		ports/www/trac
 trackballs	ports/games/trackballs
 tracker		ports/audio/tracker
 tractorgen	ports/games/tractorgen
