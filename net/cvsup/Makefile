@@ -52,7 +52,7 @@ TARGET=		FBSD_ALPHA
 .endif
 
 pre-fetch:
-.if empty(TARGET)
+.if !defined(TARGET)
 	@${ECHO_MSG} "Cannot determine M3 target for this architecture"
 	@${FALSE}
 .endif
