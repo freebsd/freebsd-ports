@@ -1,27 +1,71 @@
-# New ports collection makefile for:    icu2
-# Date created:		18 Jan 2002
-# Whom:			andrew@ids.pl
+# New ports collection makefile for:	icu
+# Date created:				22 Jan 2001
+# Whom:					dwm
 #
 # $FreeBSD$
 #
 
-PORTNAME=	icu
-PORTVERSION=	2.0
+PORTNAME=	icu2
+PORTVERSION=	2.4
 CATEGORIES=	devel
-MASTER_SITES=	http://oss.software.ibm.com/icu/download/2.0/
+MASTER_SITES=	http://oss.software.ibm.com/icu/download/${PORTVERSION}/
+DISTNAME=	icu-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	andrew@ids.pl
+MAINTAINER?=	andrew@ids.pl
 COMMENT=	International Components for Unicode
 
-BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
+INSTALLS_SHLIB=		yes
+NO_FILTER_SHLIBS=	yes
 
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--enable-threads=no
+WRKSRC=			${WRKDIR}/icu
+ICUWRKSRC=		${WRKSRC}/source
+CONFIGURE_WRKSRC=	${ICUWRKSRC}
+BUILD_WRKSRC=		${ICUWRKSRC}
+INSTALL_WRKSRC=		${ICUWRKSRC}
 
-INSTALLS_SHLIB= yes
+GNU_CONFIGURE=		yes
+CONFIGURE_SCRIPT=	runConfigureICU
+CONFIGURE_ARGS=		FreeBSD
+CONFIGURE_ARGS+=	--enable-shared
+CONFIGURE_ARGS+=	--enable-static
+CONFIGURE_ARGS+=	--enable-samples=no --enable-tests=no
+.if defined(NO_THREADS)
+CONFIGURE_ARGS+=	--enable-threads=no
+.endif
+CONFIGURE_ENV+=		CXXFLAGS="-O3"
+CONFIGURE_ENV+=		CFLAGS="-O3"
+USE_GMAKE=		yes
 
-WRKSRC=		${WRKDIR}/icu/source
+MAN1+=	gencnval.1
+MAN1+=	genrb.1
+MAN1+=	icu-config.1
+MAN1+=	makeconv.1
+MAN1+=	pkgdata.1
+MAN1+=	uconv.1
+MAN5+=	cnvalias.dat.5
+MAN5+=	convrtrs.txt.5
+MAN8+=	decmn.8
+MAN8+=	genccode.8
+MAN8+=	gencmn.8
+MAN8+=	gennames.8
+MAN8+=	gennorm.8
+MAN8+=	genprops.8
+MAN8+=	genuca.8
+
+ICUMAJOR=	${PORTVERSION:S/.//:R}
+PLIST_SUB+=	ICUMAJOR=${ICUMAJOR}
+PLIST_SUB+=	ICUVER=${PORTVERSION}
+
+pre-fetch:
+.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
+	@${ECHO} ''
+	@${ECHO} 'You may use the following build options by defining'
+	@${ECHO} 'them on the command line with -D'
+	@${ECHO} ''
+	@${ECHO} 'NO_THREADS	do not build a thread enabled library'
+	@${ECHO} ''
+	@/bin/sleep 2
+.endif
 
 .include <bsd.port.mk>
