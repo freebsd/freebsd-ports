@@ -1,0 +1,9 @@
+etc/ngircd.conf.sample
+sbin/ngircd
+%%PORTDOCS%%share/doc/ngircd/AUTHORS
+%%PORTDOCS%%share/doc/ngircd/COPYING
+%%PORTDOCS%%share/doc/ngircd/ChangeLog
+%%PORTDOCS%%share/doc/ngircd/INSTALL
+%%PORTDOCS%%share/doc/ngircd/NEWS
+%%PORTDOCS%%share/doc/ngircd/README
+@dirrm share/doc/ngircd

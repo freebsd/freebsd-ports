@@ -1,0 +1,56 @@
+# New ports collection makefile for: 	ngircd
+# Date created:        1 May CEST 2003
+# Whom:                Kirill Ponomarew <ponomarew@oberon.net>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	ngircd
+PORTVERSION=	0.7.0
+CATEGORIES=	irc
+MASTER_SITES=	http://download.berlios.de/ngircd/ \
+		ftp://ftp.berlios.de/pub/ngircd/
+DISTNAME=	${PORTNAME}-${PORTVERSION}
+
+MAINTAINER=	ponomarew@oberon.net
+COMMENT=	Free open source daemon for Internet Relay Chat (IRC)
+
+GNU_CONFIGURE=	yes
+
+.if exists(/usr/include/tcpd.h)
+USE_TCP_WRAPPERS=	yes
+CONFIGURE_ARGS+=	--with-tcp-wrappers
+.endif
+
+.if defined(WITHOUT_SYSLOG)
+CONFIGURE_ARGS+=	--without-syslog
+.endif
+
+.if defined(WITHOUT_ZLIB)
+CONFIGURE_ARGS+=	--without-zlib
+.endif
+
+pre-configure:
+	@${ECHO_MSG} ""
+.if defined(USE_TCP_WRAPPERS)
+	@${ECHO_MSG} "Enabling TCP wrappers support"
+	@${ECHO_MSG} ""
+.endif
+.if defined(WITHOUT_SYSLOG)
+	@${ECHO_MSG} "Disable syslog support"
+	@${ECHO_MSG} ""
+.endif
+.if defined(WITHOUT_ZLIB)
+	@${ECHO_MSG} "Disable zlib suppot"
+	@${ECHO_MSG} ""
+.endif
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/ngircd
+.for i in AUTHORS COPYING ChangeLog INSTALL NEWS README 
+	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/ngircd/
+.endfor
+.endif
+
+.include <bsd.port.mk>

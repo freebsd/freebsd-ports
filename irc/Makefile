@@ -32,6 +32,7 @@
     SUBDIR += lostirc
     SUBDIR += muh
     SUBDIR += nethirc
+    SUBDIR += ngircd
     SUBDIR += ninja
     SUBDIR += olirc
     SUBDIR += p5-IRC
