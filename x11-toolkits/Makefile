@@ -30,6 +30,8 @@
     SUBDIR += jx
     SUBDIR += kde-qt-addon
     SUBDIR += lesstif
+    SUBDIR += libj2dplot
+    SUBDIR += libjparser
     SUBDIR += libjsearch
     SUBDIR += libjtoolbar
     SUBDIR += libjtree
