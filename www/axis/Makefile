@@ -2,16 +2,21 @@
 # Date created:				6 JUNE 2003
 # Whom:					Kensaku MASUDA <greg@greg.rim.or.jp>
 #
+# Most of pkg-plist can be created with:
+# # make PREFIX=`pwd`/install install
+# # (echo @cwd %%WEBAPPS%% ; /usr/ports/Tools/scripts/plist -d -m /etc/mtree/BSD.local.dist /usr/local/jakarta-tomcat4.1/webapps/axis/ | sed -E 's,^([^@]),axis/\1,g ; s,^(@.+ ),\1axis/,g' ; echo @dirrm axis) > temp-pkg-plist
+# # (echo @cwd %%PREFIX%% ; /usr/ports/Tools/scripts/plist -d -m /etc/mtree/BSD.local.dist `pwd`/install|sed -E 's,^.+share/nls/.+$,,g'|tr -s '\n') >> temp-pkg-plist
+#
 # $FreeBSD$
 
 PORTNAME=		axis
 PORTVERSION=		1.1
+PORTREVISION=		1
 CATEGORIES=		www java
-MASTER_SITES=		http://ws.apache.org/axis/dist/1_1rc2/
-MASTER_SITE_SUBDIR=	znerd
-DISTNAME=		axis-1_1rc2
+MASTER_SITES=		http://ws.apache.org/axis/dist/1_1/
+DISTNAME=		axis-${PORTVERSION:S,.,_,g}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rui@ruilopes.com
 COMMENT=	SOAP implementation by APACHE project
 
 #
@@ -33,8 +38,6 @@ RUN_DEPENDS+=	${LOCALBASE}/jakarta-tomcat4.1:${PORTSDIR}/www/jakarta-tomcat41
 
 NO_BUILD=	YES
 USE_JAVA=	1.4+
-PLIST=		${WRKDIR}/pkg-plist
-WRKSRC=		${WRKDIR}/axis-1_1RC2
 USER=		www
 GROUP=		www
 
@@ -43,32 +46,27 @@ GROUP=		www
 # Change install directory by JDK version
 #
 .if defined(JAVA_VER) && (${JAVA_VER} == 1.4.1)
-JAR_INSTALL_DEST_DIR=	${JAVA_HOME}/jre/lib/endorsed
+LIB_SUBDIR=		endorsed
 .else
-JAR_INSTALL_DEST_DIR=	${JAVA_HOME}/jre/lib/ext
+LIB_SUBDIR=		ext
 .endif
+JAR_INSTALL_DEST_DIR=	${JAVA_HOME}/jre/lib/${LIB_SUBDIR}
 
 #
 # Install procedure
 #
 SYSTEM_JARS=	jaxrpc.jar saaj.jar
-
-pre-install:
-	@${SED} -e 's@PREFIX@${PREFIX}@g' -e s'@WEBAPPS@${WEBAPPDIR}@g' -e 's@JDK_HOME@${JAVA_HOME}/jre@g' < pkg-plist > ${PLIST}
+PLIST_SUB=	PREFIX=${PREFIX} WEBAPPS=${WEBAPPDIR} JRE_HOME="${JAVA_HOME}/jre" \
+		LIB_SUBDIR=${LIB_SUBDIR} USER=${USER} GROUP=${GROUP}
 
 do-install:
-.if !exists(${JAR_INSTALL_DEST_DIR})
 	${MKDIR} ${JAR_INSTALL_DEST_DIR}
-.endif
 .for i in ${SYSTEM_JARS}
 	${INSTALL_DATA} ${WRKSRC}/lib/${i} ${JAR_INSTALL_DEST_DIR}
 .endfor
-	(cd ${WRKSRC}/webapps ; tar cf - axis) | (cd ${WEBAPPDIR} ; tar xvf - )
-	${CHOWN} -R ${USER} ${WEBAPPDIR}/axis
-	${CHGRP} -R ${GROUP} ${WEBAPPDIR}/axis
-.if !exists(${PREFIX}/share/doc/axis)
+	(cd ${WRKSRC}/webapps ; tar cf - axis) | (cd ${WEBAPPDIR} ; tar xvf -)
+	${CHOWN} -R ${USER}:${GROUP} ${WEBAPPDIR}/axis
 	${MKDIR} ${PREFIX}/share/doc/axis
-.endif
 	(cd ${WRKSRC}/docs ; tar cf - *) | (cd ${PREFIX}/share/doc/axis ; tar xvf -)
 
 .include <bsd.port.post.mk>
