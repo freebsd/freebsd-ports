@@ -8,7 +8,7 @@
 PORTNAME=	t-gnus
 PORTVERSION=	${TGNUSVERSION:S/quimby/q/g:S/_/./g:S/-/./g}
 CATEGORIES=	news mail elisp
-MASTER_SITES=	http://www.jpl.org/elips/t-gnus-6.15/snapshots/ \
+MASTER_SITES=	http://www.jpl.org/elips/t-gnus-6.16/snapshots/ \
 		http://cvs.m17n.org/archives/gnus/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 DISTNAME=	${PORTNAME}-${TGNUSVERSION}
@@ -23,7 +23,7 @@ HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 
-TGNUSVERSION=	6_15_24-00-quimby
+TGNUSVERSION=	6_16_2-02
 EMACS_PORT_NAME?=emacs21
 EMACS_W3M_PORT_NAME?=	emacs-w3m
 EMACS_W3M_LISP_FILE?=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/w3m/shimbun.el
