@@ -4,8 +4,9 @@
     SUBDIR += cdb
     SUBDIR += db
     SUBDIR += db3
-    SUBDIR += dbview
     SUBDIR += dbf2mysql
+    SUBDIR += dbmetrix
+    SUBDIR += dbview
     SUBDIR += freetds
     SUBDIR += gadfly
     SUBDIR += gdbm

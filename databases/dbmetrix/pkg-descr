@@ -1,0 +1,14 @@
+dbMetrix is a copy-lefted, open-sourced SQL database tool. My goal is to
+write a very graphical, clean, consistent, modularized front end to
+various (currently opensourced) SQL servers. I plan to incorporate
+administration utilities, sql dumps, dbf2sql/sql2dbf and client support
+for all supported data sources. My motivation for writing dbMetrix is a
+current lack of nice, truely GUI SQL admin/client tools. Most of the tools
+available are written for a single, specific SQL server in mind and are
+usually only a GUI-fied text interface. dbMetrix supports multiple and
+various SQL servers simultaneously, however it is not a multi-threaded
+application.
+
+David E. Storey <dave@tomas.net>
+
+WWW: http://apoc.tamos.net/sw/dbMetrix/
