@@ -6,17 +6,13 @@
 #
 
 PORTNAME=	fspclient
-PORTVERSION=	0.0.6
+PORTVERSION=	0.0.7
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	hsn@netmag.cz
-COMMENT=	A client for the fsp service
-
-IGNORE=		does not work correctly under FreeBSD libc
-EXPIRATION_DATE=2004-08-20
-DEPRECATED=	${IGNORE}
+COMMENT=	A ftp-like client for the fsp service
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
