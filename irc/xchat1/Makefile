@@ -29,8 +29,7 @@ GNU_CONFIGURE=		yes
 # Assign with `+=' for slave ports
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LIBS="-L${LOCALBASE}/lib -lintl -liconv"
-CONFIGURE_ARGS+=	--disable-python \
-			--without-included-gettext \
+CONFIGURE_ARGS+=	--without-included-gettext \
 			--enable-nls \
 			--enable-ipv6 \
 			--datadir="${PREFIX}/share" \
@@ -62,6 +61,13 @@ MAKE_ARGS=		icondir="${PREFIX}/share/gnome/pixmaps" \
 			utildir="${PREFIX}/share/gnome/apps/Internet"
 .else
 CONFIGURE_ARGS+=	--disable-gnome --disable-zvt
+.endif
+
+.if defined(WITH_PYTHON)
+USE_PYTHON=     yes
+CONFIGURE_ARGS+=	--enable-python
+.else
+CONFIGURE_ARGS+=	--disable-python
 .endif
 
 post-patch:
