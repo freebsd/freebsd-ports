@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.108 1998/08/25 14:24:07 vanilla Exp $
+# $Id: Makefile,v 1.109 1998/08/26 09:42:48 obrien Exp $
 #
 
     SUBDIR += ETHOberonV4
@@ -26,6 +26,7 @@
     SUBDIR += gcl
     SUBDIR += glibstdc++28
     SUBDIR += gnat
+    SUBDIR += gnomeobjc
     SUBDIR += guavac
     SUBDIR += guile
     SUBDIR += hugs
