@@ -1,20 +1,22 @@
 # New ports collection makefile for:	ssh
-# Version required:     1.2.13
+# Version required:     1.2.14
 # Date created:		30 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.21 1996/04/17 01:07:04 asami Exp $
+# $Id: Makefile,v 1.22 1996/05/24 19:13:04 peter Exp $
 #
 # Maximal ssh package requires YES values for
-# USE_PERL, USE_WISH, USE_TCPWRAP
+# USE_PERL, USE_TCPWRAP
 #
 
-DISTNAME=       ssh-1.2.13
+DISTNAME=       ssh-1.2.14
 CATEGORIES=	security net
-MASTER_SITES=   ftp://ftp.cs.hut.fi/pub/ssh/snapshots/
+MASTER_SITES=   ftp://ftp.cs.hut.fi/pub/ssh/
 LIB_DEPENDS=    z\\.1\\.:${PORTSDIR}/devel/libz
 
 MAINTAINER=	torstenb@FreeBSD.ORG
+
+# You can set USA_RESIDENT appropriately in /etc/make.conf if this bugs you..
 
 .if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
 DISTFILES=	${DISTNAME}.tar.gz rsaref2.tar.gz
@@ -84,28 +86,14 @@ post-install:
 		${PREFIX}/man/man1/ssh-agent.1 ${PREFIX}/man/man1/ssh-keygen.1 \
 		${PREFIX}/man/man1/ssh.1 ${PREFIX}/man/man8/sshd.8 \
 		${PREFIX}/man/man1/make-ssh-known-hosts.1
+	@echo "---------------------------------------------------------------"
+	@echo "If you are installing for the first time, do not forget to run:"
+	@echo "   ssh-keygen -b 1024 -f $(PREFIX)/etc/ssh_host_key -N '' "
+	@echo "---------------------------------------------------------------"
 
 .include <bsd.port.mk>
 
 # Following stuff must be after <bsd.port.mk> to expand exists() properly
-
-.if defined(USE_WISH) && ${USE_WISH} == YES || \
-    (exists(${PREFIX}/bin/wish4.0) || exists(${PREFIX}/bin/wish4.1) || \
-     exists(${PREFIX}/bin/wish)) && \
-    (!defined(USE_WISH) || ${USE_WISH} != NO)
-.if exists(${PREFIX}/bin/wish4.1)
-BUILD_DEPENDS+= wish4.1:${PORTSDIR}/x11/tk41
-CONFIGURE_ENV+= WISH=${PREFIX}/bin/wish4.1
-.elif exists(${PREFIX}/bin/wish4.0)
-BUILD_DEPENDS+= wish4.0:${PORTSDIR}/x11/tk4
-CONFIGURE_ENV+= WISH=${PREFIX}/bin/wish4.0
-.else
-BUILD_DEPENDS+= wish:${PORTSDIR}/x11/tk
-CONFIGURE_ENV+= WISH=${PREFIX}/bin/wish
-.endif
-.else
-CONFIGURE_ENV+= WISH=/replace_it_with_WISH_path
-.endif
 
 .if defined(USE_PERL) && ${USE_PERL} == YES || \
     exists(${PREFIX}/bin/perl5.002) && \
