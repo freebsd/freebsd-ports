@@ -6088,6 +6088,7 @@ pdss		ports/lang/pdss
 pdumpfs		ports/sysutils/pdumpfs
 peacock		ports/www/peacock
 pear		ports/devel/pear
+pear-APC	ports/www/pear-APC
 pear-Archive_Tar	ports/archivers/pear-Archive_Tar
 pear-Auth	ports/security/pear-Auth
 pear-Auth_SASL	ports/security/pear-Auth_SASL
