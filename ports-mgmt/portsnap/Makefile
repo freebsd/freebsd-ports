@@ -7,22 +7,35 @@
 
 PORTNAME=	portsnap
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://www.daemonology.net/portsnap/
 
 MAINTAINER=	cperciva@daemonology.net
 COMMENT=	Provides secure snapshots of the ports directory
 
-# The freebsd-sha1 port is marked IGNORE for some versions of FreeBSD,
-# but for those sha1 should be found in /sbin/, so this should be safe.
 RUN_DEPENDS=	bspatch:${PORTSDIR}/misc/bsdiff		\
-		sha1:${PORTSDIR}/sysutils/freebsd-sha1	\
 		freebsd-update-verify:${PORTSDIR}/security/freebsd-update
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 491101 || (${OSVERSION} > 499999 && ${OSVERSION} < 502114)
+RUN_DEPENDS+=	sha1:${PORTSDIR}/sysutils/freebsd-sha1
+.endif
 
 MAN5=		portsnap.conf.5
 MAN8=		portsnap.8
 PLIST_FILES=	etc/portsnap.conf.sample sbin/portsnap
 PLIST_DIRS=	portsnap
+
+PKGMESSAGE=	${WRKDIR}/pkg-message
+
+post-extract:
+	${SED} -e "s#PREFIX=/usr/local#PREFIX=${PREFIX}#g" \
+		${WRKSRC}/portsnap > ${WRKSRC}/portsnap.new
+	${MV} ${WRKSRC}/portsnap.new ${WRKSRC}/portsnap
+	@${SED} -e "s=%%PREFIX%%=${PREFIX}=g" ${PKGDIR}/pkg-message \
+		> ${PKGMESSAGE}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/portsnap ${PREFIX}/sbin
@@ -35,4 +48,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
