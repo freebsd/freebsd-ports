@@ -1,6 +1,7 @@
 bin/aps2file
 bin/apsfilter-bug
 bin/apspreview
+etc/apsfilter/basedir
 share/apsfilter/SETUP
 share/apsfilter/bin/apsfilter
 share/apsfilter/bin/setup_dvips.sh
@@ -11,7 +12,11 @@ share/apsfilter/driver/README
 share/apsfilter/driver/alc2000
 share/apsfilter/driver/ap3250
 share/apsfilter/driver/bitcmyk
+share/apsfilter/driver/bjc4000
+share/apsfilter/driver/bjc50
 share/apsfilter/driver/bjc600
+share/apsfilter/driver/bjc70
+share/apsfilter/driver/bjc7000
 share/apsfilter/driver/bjc800
 share/apsfilter/driver/bmp
 share/apsfilter/driver/cdeskjet
@@ -265,7 +270,7 @@ share/doc/apsfilter/HOWTO-BUGREPORTS
 share/doc/apsfilter/LICENSE
 share/doc/apsfilter/README.BSD
 share/doc/apsfilter/README.TeX
-share/doc/apsfilter/apsfilter4.gif
+share/doc/apsfilter/apsfilter4.png
 share/doc/apsfilter/handbook.html
 share/doc/apsfilter/paper
 @dirrm etc/apsfilter
