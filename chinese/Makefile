@@ -24,7 +24,6 @@
     SUBDIR += chinput
     SUBDIR += chinput2
     SUBDIR += chinput3
-    SUBDIR += chitex
     SUBDIR += cle_base
     SUBDIR += cless
     SUBDIR += cmexfonts
