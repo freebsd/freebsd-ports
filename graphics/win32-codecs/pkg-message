@@ -1,0 +1,11 @@
+	ATTENTIONATTENTION:
+
+This port requires a kernel built with
+the directive:
+
+options USE_LDT
+
+Please, check the FreeBSD Handbook for instructions
+on building a custom kernel. If you do not know
+where to find it, check the FreeBSD website
+http://www.freebsd.org/
