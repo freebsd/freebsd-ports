@@ -1,0 +1,6 @@
+bin/fyre
+%%PORTDOCS%%%%DOCSDIR%%/README
+share/gnome/fyre/animation-render.glade
+share/gnome/fyre/explorer.glade
+@dirrm share/gnome/fyre
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

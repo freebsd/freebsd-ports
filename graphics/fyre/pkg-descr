@@ -1,0 +1,14 @@
+Fyre provides a rendering of the Peter de Jong map, with an interactive
+GTK+ 2 frontend and a command line interface for easy and efficient
+rendering of high-resolution, high quality images.
+
+This program was previously known as 'de Jong Explorer', but has been
+renamed to make way for supporting other chaotic functions.
+
+All the images you can create with this program are based on the simple
+Peter de Jong map equations:
+
+   x' = sin(a * y) - cos(b * x)
+   y' = sin(c * x) - cos(d * y)
+
+WWW: http://fyre.navi.cx/
