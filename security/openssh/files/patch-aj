@@ -1,6 +1,14 @@
-diff -ru /home/green/ssh/lib/Makefile ./lib/Makefile
---- /home/green/ssh/lib/Makefile	Wed Oct 27 03:33:00 1999
-+++ ./lib/Makefile	Mon Nov  8 00:06:40 1999
+--- ./lib/Makefile.orig	Thu Nov 11 05:32:55 1999
++++ ./lib/Makefile	Thu Nov 11 08:54:34 1999
+@@ -4,7 +4,7 @@
+ SRCS=   authfd.c authfile.c bufaux.c buffer.c canohost.c channels.c \
+ 	cipher.c compat.c compress.c crc32.c deattack.c hostfile.c \
+ 	log.c match.c mpaux.c nchan.c packet.c readpass.c rsa.c \
+-	tildexpand.c ttymodes.c uidswap.c xmalloc.c
++	tildexpand.c ttymodes.c uidswap.c xmalloc.c strlcpy.c
+ 
+ NOPROFILE= yes
+ NOPIC=	yes
 @@ -13,6 +13,7 @@
  	@echo -n
  
