@@ -12,7 +12,7 @@ share/opensc/etoken.profile
 lib/security/pam_opensc.so
 lib/security/pam_opensc.la
 lib/security/pam_opensc.a
-lib/pkgconfig/libopensc.pc
+libdata/pkgconfig/libopensc.pc
 lib/pkcs11/pkcs11-spy.so
 lib/pkcs11/pkcs11-spy.la
 lib/pkcs11/pkcs11-spy.a
