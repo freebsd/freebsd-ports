@@ -7278,6 +7278,7 @@ splint		ports/devel/splint
 splitmpg	ports/multimedia/splitmpg
 splitvt		ports/misc/splitvt
 spooles		ports/math/spooles
+spooles-mpich	ports/math/spooles-mpich
 spread		ports/net/spread
 springgraph	ports/graphics/springgraph
 spruce		ports/mail/spruce
