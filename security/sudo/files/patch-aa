@@ -1,17 +1,17 @@
---- /usr/ports/security/sudo/work2/sudo.v1.5.7p4/configure	Tue Nov 24 05:40:24 1998
-+++ configure	Sat Jan  2 04:07:08 1999
-@@ -667,8 +669,8 @@
+--- configure.orig	Mon Nov  8 15:59:48 1999
++++ configure	Thu Dec 16 22:54:41 1999
+@@ -681,8 +681,8 @@
  
  test "$mandir" = '${prefix}/man' && mandir='$(prefix)/man'
  test "$bindir" = '${exec_prefix}/bin' && bindir='$(exec_prefix)/bin'
 -test "$sbindir" = '${exec_prefix}/sbin' && sbindir='$(exec_prefix)/sbin'
 -test "$sysconfdir" = '${prefix}/etc' && sysconfdir='/etc'
 +test "$sbindir" = '${exec_prefix}/sbin' || sbindir='$(exec_prefix)/sbin'
-+test "$sysconfdir" = '${prefix}/etc' || sysconfdir='/etc'
++#test "$sysconfdir" = '${prefix}/etc' || sysconfdir='/etc'
  
  
- # Check whether --with-CC or --without-CC was given.
-@@ -7170,7 +7188,7 @@
+ # Check whether --with-otp-only or --without-otp-only was given.
+@@ -7737,7 +7737,7 @@
  fi
  
  if test "$with_skey" = "yes"; then
