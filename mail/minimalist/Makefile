@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	minimalist
-PORTVERSION=	2.3.3r3
+PORTVERSION=	2.4
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mml.org.ua/LIST/ \
 		http://www.giovannelli.it/~gmarco/files/
@@ -28,7 +28,7 @@ do-install:
 	@${MKDIR} ${PREFIX}/share/minimalist/FAQ
 	@${MKDIR} ${PREFIX}/share/minimalist/sample
 	@${INSTALL_SCRIPT} ${WRKSRC}/minimalist.pl ${PREFIX}/bin/
-	@${INSTALL_SCRIPT} ${WRKSRC}/contrib/* ${PREFIX}/bin/
+	@${INSTALL_SCRIPT} ${WRKSRC}/contrib/minimalist_request.pl ${PREFIX}/bin/
 	@${INSTALL_DATA} ${WRKSRC}/minimalist.conf-sample ${PREFIX}/share/minimalist/
 	@${INSTALL_DATA} ${WRKSRC}/minimalist.conf-sample ${PREFIX}/etc/minimalist.conf-sample
 	@${INSTALL_DATA} ${WRKSRC}/docs/CHANGES.txt ${PREFIX}/share/minimalist/
