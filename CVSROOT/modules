@@ -4549,7 +4549,6 @@ libjtree	ports/x11-toolkits/libjtree
 libksba		ports/security/libksba
 liblingoteach	ports/textproc/liblingoteach
 liblrdf		ports/textproc/liblrdf
-libltdl		ports/devel/libltdl
 libltdl15	ports/devel/libltdl15
 liblug		ports/graphics/liblug
 libmad		ports/audio/libmad
