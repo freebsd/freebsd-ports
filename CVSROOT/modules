@@ -6460,6 +6460,7 @@ ttmkfdir	ports/x11-fonts/ttmkfdir
 ttraffic	ports/games/ttraffic
 ttt		ports/net/ttt
 tty		src/usr.bin/tty
+ttyload		ports/sysutils/ttyload
 ttyrec		ports/misc/ttyrec
 tua		ports/sysutils/tua
 tuc		ports/converters/tuc
