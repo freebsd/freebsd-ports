@@ -1,34 +1,35 @@
 # New ports collection makefile for:    apache HTTPSD
-# Version required:     1.1.1
-# Date created:         Fri Aug 25 16:42:36 CDT 1995
-# Whom:                 markm@FreeBSD.org
+# Version required:     1.2.1
+# Date created:     	15th August 1997
+# Whom:			Richard Seaman <dick@tar.com>
 #
-# $Id: Makefile,v 1.35 1997/07/08 13:04:09 ache Exp $
-#
+# $Id$
 
-DISTNAME=       apache_1.1.1
-PKGNAME=        apache_SSL-1.1.1
+DISTNAME=       apache_1.2.1
+PKGNAME=        apacheSSL-1.2.1
 CATEGORIES=	www
-MASTER_SITES+=  ftp://www.apache.org/apache/dist/old/1.1/ \
+MASTER_SITES=   ftp://www.apache.org/apache/dist/ \
 		ftp://ftp.ox.ac.uk/pub/crypto/SSL/
 
 MAIN_SRC=	${DISTNAME}${EXTRACT_SUFX}
-SSL_EXTRAS=	${DISTNAME}+1.3.ssl${EXTRACT_SUFX}
-
+SSL_EXTRAS=	apache_1.2.0+ssl_1.8.tar.gz
 DISTFILES=	${MAIN_SRC} ${SSL_EXTRAS}
 EXTRACT_ONLY=	${MAIN_SRC}
+BUILD_DEPENDS=	ssleay:${PORTSDIR}/security/SSLeay-0.8.1
+RESTRICTED=     "Contains cryptography"
 
 MAINTAINER=	markm@freebsd.org
-
-BROKEN=		"SSLeay has changed, and the patches for apache need more work"
-
-DEPENDS=	${PORTSDIR}/security/SSLeay
 
 post-extract:
 	@cd ${WRKSRC} && tar xzf ${DISTDIR}/${SSL_EXTRAS}
 
+# SSLpatch from SSL_EXTRAS is for apache_1.2.0 ... if/when it is upgraded
+# we can revert to the commented out line.  There are only minor tweaks needed
+# to get to SSLpatch-1.2.1 
 pre-patch:
-	@cd ${WRKSRC} && ${PATCH} ${PATCH_DIST_ARGS} < SSLpatch
+#       @cd ${WRKSRC} && ${PATCH} ${PATCH_DIST_ARGS} < SSLpatch
+	@cd ${WRKSRC} && ${PATCH} ${PATCH_DIST_ARGS} \
+		< ${FILESDIR}/SSLpatch-1.2.1
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/apache_ssl.sh ]; then \
@@ -37,5 +38,19 @@ post-install:
 		echo "[ -x /usr/local/sbin/httpsd ] && /usr/local/sbin/httpsd && echo -n ' httpsd'" >> ${PREFIX}/etc/rc.d/apache_ssl.sh; \
 		chmod 751 ${PREFIX}/etc/rc.d/apache_ssl.sh; \
 	fi
+
+.if !defined(USA_RESIDENT) || ${USA_RESIDENT} != YES && ${USA_RESIDENT} != NO
+pre-fetch:
+	@echo
+	@echo You must set variable USA_RESIDENT to YES, if you are USA resident
+	@echo or to NO, if you aren\'t USA resident to build this package.
+	@echo You must also have installed RSAREF if you are USA resident.
+	@false
+.elif defined(USA_RESIDENT)
+.if ${USA_RESIDENT} == YES
+pre-build:
+	${PATCH} <${FILESDIR}/Makefile.rsa.patch
+.endif
+.endif
 
 .include <bsd.port.mk>
