@@ -3,7 +3,7 @@
 # Date created:                8 August 1997
 # Whom:                        lukin@okbmei.msk.su
 #
-# $Id: Makefile,v 1.2 1997/11/19 12:18:02 tg Exp $
+# $Id: Makefile,v 1.3 1997/11/19 12:22:01 tg Exp $
 #
 
 DISTNAME=	dnd.1.1
@@ -23,6 +23,6 @@ post-install:
 	${MKDIR} ${PREFIX}/share/doc/libdnd
 	${INSTALL_MAN} ${WRKDIR}/DND/DNDdoc/* ${PREFIX}/share/doc/libdnd
 .endif
-	${LDCONFIG} -m ${PREFIX}/lib
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
