@@ -1,6 +1,7 @@
 include/Judy.h
 lib/libJudy.a
 lib/libJudy.so
+lib/libJudy.so.%%SHLIB_MAJOR%%
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
 %%PORTDOCS%%%%DOCSDIR%%/Judy1_3x.htm
 %%PORTDOCS%%%%DOCSDIR%%/Judy1_funcs_3x.htm
