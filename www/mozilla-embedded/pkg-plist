@@ -123,7 +123,6 @@ lib/mozilla-embedded/chrome/classic/skin/classic/global/toolbar.css
 lib/mozilla-embedded/chrome/classic/skin/classic/global/toolbargrippy-texture.gif
 lib/mozilla-embedded/chrome/classic/skin/classic/global/toolbargrippy-twisty.gif
 lib/mozilla-embedded/chrome/classic/skin/classic/global/tree.css
-lib/mozilla-embedded/chrome/classic/skin/classic/global/treeBindings.xml
 lib/mozilla-embedded/chrome/classic/skin/classic/global/twisty-closed-active.gif
 lib/mozilla-embedded/chrome/classic/skin/classic/global/twisty-closed-selected.gif
 lib/mozilla-embedded/chrome/classic/skin/classic/global/twisty-closed.gif
@@ -157,17 +156,22 @@ lib/mozilla-embedded/chrome/en-US/locale/en-US/global/globalOverlay.dtd
 lib/mozilla-embedded/chrome/en-US/locale/en-US/global/helperAppLauncher.dtd
 lib/mozilla-embedded/chrome/en-US/locale/en-US/global/helperAppLauncher.properties
 lib/mozilla-embedded/chrome/en-US/locale/en-US/global/intl.css
+lib/mozilla-embedded/chrome/en-US/locale/en-US/global/keys.properties
 lib/mozilla-embedded/chrome/en-US/locale/en-US/global/languageNames.properties
 lib/mozilla-embedded/chrome/en-US/locale/en-US/global/platformDialogOverlay.dtd
 lib/mozilla-embedded/chrome/en-US/locale/en-US/global/platformGlobalOverlay.dtd
 lib/mozilla-embedded/chrome/en-US/locale/en-US/global/printdialog.dtd
 lib/mozilla-embedded/chrome/en-US/locale/en-US/global/regionNames.properties
+lib/mozilla-embedded/chrome/en-US/locale/en-US/global/replacedialog.dtd
 lib/mozilla-embedded/chrome/en-US/locale/en-US/global/textcontext.dtd
 lib/mozilla-embedded/chrome/en-US/locale/en-US/global/unknownContent.dtd
 lib/mozilla-embedded/chrome/en-US/locale/en-US/global/unknownContent.properties
 lib/mozilla-embedded/chrome/en-US/locale/en-US/global/wizardManager.properties
 lib/mozilla-embedded/chrome/en-US/locale/en-US/global/wizardOverlay.dtd
 lib/mozilla-embedded/chrome/en-US/locale/en-US/global/xpcom.properties
+lib/mozilla-embedded/chrome/en-US/locale/en-US/necko/contents.rdf
+lib/mozilla-embedded/chrome/en-US/locale/en-US/necko/necko.properties
+lib/mozilla-embedded/chrome/en-US/locale/en-US/necko/redirect_loop.dtd
 lib/mozilla-embedded/chrome/installed-chrome.txt
 lib/mozilla-embedded/chrome/toolkit/content/global/about.xul
 lib/mozilla-embedded/chrome/toolkit/content/global/autocomplete.xml
@@ -176,6 +180,7 @@ lib/mozilla-embedded/chrome/toolkit/content/global/charsetDetectorsOverlay.js
 lib/mozilla-embedded/chrome/toolkit/content/global/charsetDetectorsOverlay.xul
 lib/mozilla-embedded/chrome/toolkit/content/global/charsetOverlay.js
 lib/mozilla-embedded/chrome/toolkit/content/global/charsetOverlay.xul
+lib/mozilla-embedded/chrome/toolkit/content/global/colorpickerBindings.xml
 lib/mozilla-embedded/chrome/toolkit/content/global/commonDialog.js
 lib/mozilla-embedded/chrome/toolkit/content/global/commonDialog.xul
 lib/mozilla-embedded/chrome/toolkit/content/global/console.css
@@ -211,12 +216,16 @@ lib/mozilla-embedded/chrome/toolkit/content/global/nsTreeController.js
 lib/mozilla-embedded/chrome/toolkit/content/global/nsTreeUtils.js
 lib/mozilla-embedded/chrome/toolkit/content/global/nsUserSettings.js
 lib/mozilla-embedded/chrome/toolkit/content/global/nsWidgetStateManager.js
+lib/mozilla-embedded/chrome/toolkit/content/global/outlinerBindings.xml
 lib/mozilla-embedded/chrome/toolkit/content/global/platformDialogOverlay.xul
 lib/mozilla-embedded/chrome/toolkit/content/global/platformGlobalOverlay.xul
 lib/mozilla-embedded/chrome/toolkit/content/global/plugins.html
+lib/mozilla-embedded/chrome/toolkit/content/global/popupBindings.xml
 lib/mozilla-embedded/chrome/toolkit/content/global/printdialog.js
 lib/mozilla-embedded/chrome/toolkit/content/global/printdialog.xul
 lib/mozilla-embedded/chrome/toolkit/content/global/radioBindings.xml
+lib/mozilla-embedded/chrome/toolkit/content/global/replacedialog.js
+lib/mozilla-embedded/chrome/toolkit/content/global/replacedialog.xul
 lib/mozilla-embedded/chrome/toolkit/content/global/scrollbarBindings.xml
 lib/mozilla-embedded/chrome/toolkit/content/global/selectDialog.js
 lib/mozilla-embedded/chrome/toolkit/content/global/selectDialog.xul
@@ -265,6 +274,7 @@ lib/mozilla-embedded/components/libpref.so
 lib/mozilla-embedded/components/libprofile.so
 lib/mozilla-embedded/components/librdf.so
 lib/mozilla-embedded/components/libshistory.so
+lib/mozilla-embedded/components/libstrres.so
 lib/mozilla-embedded/components/libtimer_gtk.so
 lib/mozilla-embedded/components/libuconv.so
 lib/mozilla-embedded/components/libucvlatin.so
@@ -302,6 +312,9 @@ lib/mozilla-embedded/components/xpcom_xpti.xpt
 lib/mozilla-embedded/components/xpconnect.xpt
 lib/mozilla-embedded/components/xpti.dat
 lib/mozilla-embedded/components/xptitemp.dat
+lib/mozilla-embedded/defaults/pref/all.js
+lib/mozilla-embedded/defaults/pref/initpref.js
+lib/mozilla-embedded/defaults/pref/unix.js
 lib/mozilla-embedded/gtkEmbed
 lib/mozilla-embedded/libgkgfx.so
 lib/mozilla-embedded/libgtkembedmoz.so
@@ -328,10 +341,13 @@ lib/mozilla-embedded/res/ua.css
 lib/mozilla-embedded/res/unixcharset.properties
 @dirrm lib/mozilla-embedded/res/builtin
 @dirrm lib/mozilla-embedded/res
+@dirrm lib/mozilla-embedded/defaults/pref
+@dirrm lib/mozilla-embedded/defaults
 @dirrm lib/mozilla-embedded/components
 @dirrm lib/mozilla-embedded/chrome/toolkit/content/global
 @dirrm lib/mozilla-embedded/chrome/toolkit/content
 @dirrm lib/mozilla-embedded/chrome/toolkit
+@dirrm lib/mozilla-embedded/chrome/en-US/locale/en-US/necko
 @dirrm lib/mozilla-embedded/chrome/en-US/locale/en-US/global
 @dirrm lib/mozilla-embedded/chrome/en-US/locale/en-US
 @dirrm lib/mozilla-embedded/chrome/en-US/locale
