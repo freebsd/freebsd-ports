@@ -1967,6 +1967,7 @@ gadfly		ports/databases/gadfly
 gag		ports/security/gag
 gail		ports/x11-toolkits/gail
 gaim		ports/net/gaim
+gaim-snapshot	ports/net/gaim-snapshot
 gal		ports/x11-toolkits/gal
 gal2		ports/x11-toolkits/gal2
 galax		ports/textproc/galax
