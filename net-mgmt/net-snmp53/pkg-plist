@@ -275,6 +275,7 @@ sbin/snmptrapd
 %%DATADIR%%/mibs/SNMP-PROXY-MIB.txt
 %%DATADIR%%/mibs/SNMP-TARGET-MIB.txt
 %%DATADIR%%/mibs/SNMP-USER-BASED-SM-MIB.txt
+%%DATADIR%%/mibs/SNMP-USM-AES-MIB.txt
 %%DATADIR%%/mibs/SNMP-VIEW-BASED-ACM-MIB.txt
 %%DATADIR%%/mibs/SNMPv2-CONF.txt
 %%DATADIR%%/mibs/SNMPv2-MIB.txt

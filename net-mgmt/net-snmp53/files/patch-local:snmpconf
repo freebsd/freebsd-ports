@@ -1,62 +1,53 @@
---- local/snmpconf.orig	Wed Feb 11 01:33:42 2004
-+++ local/snmpconf	Wed May 12 11:51:15 2004
+--- local/snmpconf.orig	Tue Apr 20 23:20:51 2004
++++ local/snmpconf	Thu Jun 24 23:12:06 2004
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl -w
 +#!%%PERL%% -w
  
  #
  # A simple configuration file builder based on questions listed in
-@@ -17,7 +17,7 @@
- %arrayitems=qw(question 1 validanswer 1);
+@@ -21,7 +21,7 @@
+   $opts{'c'} = "$ENV{SNMPSHAREPATH}/snmpconf-data";
+ }
+ else {
+-  $opts{'c'} = "/usr/local/share/snmp/snmpconf-data";
++  $opts{'c'} = "%%PREFIX%%/share/snmp/snmpconf-data";
+ }
  
- #defaults
--$opts{'c'} = "/usr/local/share/snmp/snmpconf-data";
-+$opts{'c'} = "%%PREFIX%%/share/snmp/snmpconf-data";
+ # default config file path
+@@ -29,7 +29,7 @@
+   $confpath = "$ENV{SNMPCONFPATH}";
+ }
+ else {
+-  $confpath = "/usr/local/share/snmp";
++  $confpath = "%%PREFIX%%/share/snmp";
+ }
  
- # read the argument string
- getopts("qadhfc:piI:r:R:g:G", \%opts);
-@@ -27,7 +27,7 @@
-     print "$0 [options] [FILETOCREATE...]\n";
-     print "options:\n";
-     print "  -f           overwrite existing files without prompting\n";
--    print "  -i           install created files into /usr/local/share/snmp.\n";
-+    print "  -i           install created files into %%PREFIX%%/share/snmp.\n";
-     print "  -p           install created files into $ENV{HOME}/.snmp.\n";
-     print "  -I DIR       install created files into DIR.\n";
-     print "  -a           Don't ask any questions, just read in current\n";
-@@ -63,7 +63,7 @@
+ # home environment variable
+@@ -84,7 +84,7 @@
  #
  # Find existing files to possibly read in.
  #
--my @searchpath = (qw(/usr/local/share/snmp /usr/local/etc/snmp .), "$ENV{HOME}/.snmp");
-+my @searchpath = (qw(%%PREFIX%%/share/snmp %%PREFIX%%/etc/snmp .), "$ENV{HOME}/.snmp");
+-my @searchpath = ("$confpath","/usr/local/etc/snmp", ".", "$home");
++my @searchpath = ("$confpath","%%PREFIX%%/etc/snmp", ".", "$home");
  push @searchpath, $opts{I} if ($opts{I});
  foreach my $i (@searchpath) {
      debug("searching $i\n");
-@@ -160,7 +160,7 @@
- foreach my $i (@didfiles) {
-     if ($didfile{$i} ne "1") {
+@@ -183,7 +183,7 @@
  	if ($opts{'i'} || $opts{'I'}) {
--	  $opts{'I'} = "/usr/local/share/snmp" if (!$opts{'I'});
-+	  $opts{'I'} = "%%PREFIX%%/share/snmp" if (!$opts{'I'});
- 	  
- 	  move ("$opts{'I'}/$i", "$opts{'I'}/$i.bak") if (-f "$opts{'I'}/$i");
- 	  if (move ("$didfile{$i}", "$opts{'I'}")) {
-@@ -171,7 +171,7 @@
- 	    print ("File $didfile{$i} left in current directory\n");
- 	  }
- 	} elsif ($opts{'p'}) {
--	  if (! (-d "$ENV{HOME}/.snmp") && ! (mkdir ("$ENV{HOME}/.snmp"))) {
-+	  if (! (-d "$ENV{HOME}/.snmp") && ! (mkdir("$ENV{HOME}/.snmp", 0777))) {
- 	    print "\nCould not create $ENV{HOME}/.snmp directory: $!\n";
+           $opts{'I'} = "$confpath" if (!$opts{'I'});
+ 
+-          if (! (-d "$opts{'I'}") && ! (mkdir ("$opts{'I'}"))) {
++          if (! (-d "$opts{'I'}") && ! (mkdir ("$opts{'I'}", 0777))) {
+ 	    print "\nCould not create $opts{'I'} directory: $!\n";
  	    print ("File $didfile{$i} left in current directory\n");
  	  }
 @@ -198,7 +198,7 @@
- }
- 
- if (!$opts{'p'} && !$opts{'i'} && !$opts{'I'}) {
--    Print("\nThese files should be moved to /usr/local/share/snmp/ if you
-+    Print("\nThese files should be moved to %%PREFIX%%/share/snmp/ if you
- want them used by everyone on the system.  In the future, if you add 
- the -i option to the command line I'll copy them there automatically for you.
- 
+             }
+           }
+ 	} elsif ($opts{'p'}) {
+-	  if (! (-d "$home") && ! (mkdir ("$home"))) {
++	  if (! (-d "$home") && ! (mkdir ("$home", 0777))) {
+ 	    print "\nCould not create $home directory: $!\n";
+ 	    print ("File $didfile{$i} left in current directory\n");
+ 	  }

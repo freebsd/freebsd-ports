@@ -1,15 +1,6 @@
---- agent/mibgroup/host/hr_storage.c.orig	Thu Jan 29 22:53:59 2004
-+++ agent/mibgroup/host/hr_storage.c	Wed Jun 23 11:50:55 2004
-@@ -148,7 +148,7 @@
- #define HRFS_mount	mnt_mountp
- #define HRFS_statfs	statvfs
- 
--#elif defined(HAVE_STATVFS)
-+#elif defined(HAVE_STATVFS) && defined(HAVE_MNTENT)
- 
- extern struct mntent *HRFS_entry;
- extern int      fscount;
-@@ -193,6 +193,10 @@
+--- agent/mibgroup/host/hr_storage.c.orig	Sat Jun 19 03:39:14 2004
++++ agent/mibgroup/host/hr_storage.c	Mon Jul  5 16:38:55 2004
+@@ -212,6 +212,10 @@
  void            sol_get_swapinfo(int *, int *);
  #endif
  
@@ -20,7 +11,7 @@
  #define	HRSTORE_MEMSIZE		1
  #define	HRSTORE_INDEX		2
  #define	HRSTORE_TYPE		3
-@@ -431,7 +435,8 @@
+@@ -450,7 +454,8 @@
      NULL,
      "Memory Buffers",           /* HRS_TYPE_MBUF */
      "Real Memory",              /* HRS_TYPE_MEM */
@@ -30,7 +21,7 @@
  };
  
  
-@@ -546,6 +551,7 @@
+@@ -565,6 +570,7 @@
                  storage_type_id[storage_type_len - 1] = 3;      /* Virtual Mem */
                  break;
              case HRS_TYPE_MBUF:
@@ -38,16 +29,7 @@
                  storage_type_id[storage_type_len - 1] = 1;      /* Other */
                  break;
              default:
-@@ -567,7 +573,7 @@
-         }
-     case HRSTORE_UNITS:
-         if (store_idx > HRS_TYPE_FIXED_MAX)
--#if STRUCT_STATVFS_HAS_F_FRSIZE
-+#if defined(STRUCT_STATVFS_HAS_F_FRSIZE) && defined(HAVE_MNTENT)
-             long_return = stat_buf.f_frsize;
- #else
-             long_return = stat_buf.f_bsize;
-@@ -631,7 +637,7 @@
+@@ -650,7 +656,7 @@
              case HRS_TYPE_SWAP:
                  long_return = memory_totals.t_vm;
                  break;
@@ -56,7 +38,7 @@
              case HRS_TYPE_MEM:
                  long_return = physmem;
                  break;
-@@ -641,6 +647,8 @@
+@@ -660,6 +666,8 @@
  #endif
                  long_return = 0;
                  break;
@@ -65,7 +47,7 @@
              case HRS_TYPE_MBUF:
  #if HAVE_SYS_POOL_H
                  long_return = 0;
-@@ -650,7 +658,26 @@
+@@ -669,7 +677,26 @@
                       i++)
                      long_return += mbstat.m_mtypes[i];
  #elif defined(MBSTAT_SYMBOL)
@@ -92,7 +74,7 @@
  #elif defined(NO_DUMMY_VALUES)
                  goto try_next;
  #else
-@@ -658,6 +685,18 @@
+@@ -677,6 +704,18 @@
  #endif
                  break;
  #endif              /* !linux && !solaris2 && !hpux10 && !hpux11 && ... */
@@ -111,7 +93,7 @@
              default:
  #if NO_DUMMY_VALUES
                  goto try_next;
-@@ -708,7 +747,18 @@
+@@ -727,7 +766,18 @@
                      * mbpool.pr_size + (mclpool.pr_nget - mclpool.pr_nput)
                      * mclpool.pr_size;
  #elif defined(MBSTAT_SYMBOL)
@@ -130,7 +112,7 @@
  #elif defined(NO_DUMMY_VALUES)
                  goto try_next;
  #else
-@@ -716,6 +766,11 @@
+@@ -735,6 +785,11 @@
  #endif
                  break;
  #endif                      /* !linux && !solaris2 && !hpux10 && !hpux11 && ... */
@@ -142,7 +124,7 @@
              default:
  #if NO_DUMMY_VALUES
                  goto try_next;
-@@ -742,7 +797,11 @@
+@@ -761,7 +816,11 @@
                  break;
  #if !defined(linux) && !defined(solaris2) && !defined(hpux10) && !defined(hpux11)  && defined(MBSTAT_SYMBOL)
              case HRS_TYPE_MBUF:
@@ -154,7 +136,7 @@
                  break;
  #endif                          /* !linux && !solaris2 && !hpux10 && !hpux11 && MBSTAT_SYMBOL */
              default:
-@@ -853,3 +912,97 @@
+@@ -872,3 +931,97 @@
      *usedP = ainfo.ani_resv;
  }
  #endif                          /* solaris2 */
