@@ -7,8 +7,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=	lsof_4.47_W
-PKGNAME=	lsof-4.47.1
+DISTNAME=	lsof_4.48A.freebsd
+PKGNAME=	lsof-4.47.2
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/  \
 		ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/NEW/ \
@@ -16,9 +16,6 @@ MASTER_SITES=	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/  \
 		ftp://ftp.auscert.org.au/pub/mirrors/vic.cc.purdue.edu/lsof/  \
 		ftp://ftp.web.ad.jp/pub/UNIX/tools/lsof/  \
 		ftp://ftp.sunet.se/pub/unix/admin/lsof/
-
-PATCH_SITES=	${MASTER_SITES:S^lsof^lsof/patches/4.47^}
-PATCHFILES=	arg.c_patch
 
 MAINTAINER=     obrien@FreeBSD.org
 
