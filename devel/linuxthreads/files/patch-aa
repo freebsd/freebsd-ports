@@ -13,7 +13,7 @@ diff -ru ../../work/linuxthreads-2.2.3/Examples/Makefile ./Examples/Makefile
 diff -ru ../../work/linuxthreads-2.2.3/Makefile ./Makefile
 --- ../../work/linuxthreads-2.2.3/Makefile	Wed Apr 25 21:50:59 2001
 +++ ./Makefile	Thu Jun  7 23:13:52 2001
-@@ -1,128 +1,84 @@
+@@ -1,128 +1,88 @@
 -# Copyright (C) 1996,1997,1998,1999,2000,2001 Free Software Foundation, Inc.
 -# This file is part of the GNU C Library.
 +LIB=lthread
@@ -23,6 +23,10 @@ diff -ru ../../work/linuxthreads-2.2.3/Makefile ./Makefile
 +SHLIB_MAJOR= 2
 +.endif
 +SHLIB_MINOR= 2
++
++.if defined(INSTALL_LIBLTHREAD_PIC_ARCHIVE)
++INSTALL_PIC_ARCHIVE=	yes
++.endif
 +
 +.if !defined(MACHINE_ARCH)
 +MACHINE_ARCH != /usr/bin/uname -m
