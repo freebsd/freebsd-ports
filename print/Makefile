@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.37 1997/02/11 15:54:37 jmz Exp $
+# $Id: Makefile,v 1.38 1997/02/18 17:11:18 jmz Exp $
 #
 
     SUBDIR += a2ps
@@ -32,5 +32,6 @@
     SUBDIR += unroff
     SUBDIR += virtualpaper
     SUBDIR += xdvi
+    SUBDIR += xmgr
 
 .include <bsd.port.subdir.mk>
