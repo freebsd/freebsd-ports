@@ -1,14 +1,15 @@
---- support/ethertalk/bpfiltp.c.orig	Thu Jan  9 07:46:14 1997
-+++ support/ethertalk/bpfiltp.c	Thu Jan  9 07:53:14 1997
-@@ -41,6 +41,7 @@
+--- support/ethertalk/bpfiltp.c.orig	Fri Jan 10 10:29:53 1997
++++ support/ethertalk/bpfiltp.c	Fri Jan 10 11:24:11 1997
+@@ -41,7 +41,7 @@
  #include <net/if.h>
  #include <net/bpf.h>
  #include <netinet/in.h>
-+#include <net/if_var.h>
- #include <netinet/if_ether.h>
+-#include <netinet/if_ether.h>
++#include <net/ethernet.h>
  #include <netdb.h>
  #include <ctype.h>
-@@ -63,6 +64,9 @@
+ 
+@@ -63,6 +63,9 @@
  #ifdef __FreeBSD__
  #define MULTI_BPF_PKT
  #define USE_SIOCGIFCONF
@@ -18,7 +19,7 @@
  #endif __FreeBSD__
  
  #ifdef NeXT
-@@ -785,7 +789,7 @@
+@@ -785,7 +788,7 @@
  
    bcopy(eaddr, &eh.ether_dhost, 6);
  #ifdef PHASE2
@@ -27,7 +28,7 @@
    /* This should really be fixed in the kernel. */
    eh.ether_type = buflen;
  #else
-@@ -806,7 +810,7 @@
+@@ -806,7 +809,7 @@
    *q++ = (eph->protocol >> 8) & 0xff;
    *q++ = (eph->protocol & 0xff);
  #else  PHASE2
