@@ -1,0 +1,5 @@
+http_ping is like the regular ping(8) command, except that it sends
+HTTP requests isntead of ICMP echo requests.  I.e., it runs an HTTP
+fetch every few seconds, timing how long they take.
+
+WWW: http://www.acme.com/software/http_ping/

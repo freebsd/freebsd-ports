@@ -133,6 +133,7 @@
     SUBDIR += hesiod
     SUBDIR += hlmaster
     SUBDIR += host
+    SUBDIR += http_ping
     SUBDIR += hx
     SUBDIR += icb
     SUBDIR += icmpinfo
