@@ -3,14 +3,14 @@
 # Date created:        16 November 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1996/11/20 07:06:58 tg Exp $
+# $Id: Makefile,v 1.2 1996/11/20 12:38:49 asami Exp $
 #
 
-DISTNAME=	xsokoban-3.3b
+DISTNAME=	xsokoban-3.3c
 CATEGORIES=	games
 MASTER_SITES=   ftp://ftp.pmg.lcs.mit.edu/pub/xsokoban/
 
-MAINTAINER=     Nakai@Mlab.t.u-tokyo.ac.jp
+MAINTAINER=     Nakai@technologist.com
 
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 
