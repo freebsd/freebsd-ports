@@ -7,6 +7,7 @@
 
 PORTNAME=	tsclient
 PORTVERSION=	0.104
+PORTREVISION=	1
 CATEGORIES=	net gnome
 MASTER_SITES=	http://www.gnomepro.com/tsclient/
 
@@ -18,11 +19,16 @@ RUN_DEPENDS=	rdesktop:${PORTSDIR}/net/rdesktop
 
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes
+USE_REINPLACE=	yes
 USE_GNOME=	gnomeprefix gnomehack
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|g;' \
+		${WRKSRC}/applet/GNOME_TSClientApplet.server
 
 post-install:
 	@${LN} -sf ${PREFIX}/share/gnome/pixmaps/tsclient/tsclient.png \
