@@ -1,24 +1,24 @@
---- Makefile.orig	Sat Jan  3 13:42:44 1998
-+++ Makefile	Sat Jun 27 23:59:49 1998
-@@ -62,19 +62,21 @@
- # definitions for some arbitrary little-endian system
- #SYSTEMFLAGS = -DLITTLE_END_MODE
+--- Makefile.orig	Sat Jul 11 18:27:32 1998
++++ Makefile	Mon Jul 20 14:38:38 1998
+@@ -64,8 +64,10 @@
+ # definitions for where the X lib and include directories are.
+ # The following are defaults that might work.
  
-+SYSTEMFLAGS = -DAUTO_END_MODE
+-XINCLUDE = /usr/include/X11
+-XLIB = /usr/lib/X11
++XINCLUDE = $(X11BASE)/include
++XLIB = $(X11BASE)/lib
 +
- # --------------------
++SYSTEMFLAGS = -DAUTO_END_MODE
  
- # definitions for where the X lib and include directories are
--XDIR = /usr
--XINCLUDE = $(XDIR)/include/X11
--XLIB = $(XDIR)/lib/X11
-+XDIR = ${X11BASE}
-+XINCLUDE = $(XDIR)/include
-+XLIB = $(XDIR)/lib
+ # If your compiler can't find these things, try commenting out the
+ # above, and uncommenting various versions below. Also look around
+@@ -90,11 +92,11 @@
+ # --------------------
  
  # definition for where to install xzip executable and man page
 -DESTDIR = /usr/local
-+DESTDIR = ${PREFIX}
++DESTDIR = $(PREFIX)
  
  # --------------------
  
@@ -27,7 +27,7 @@
  LDFLAGS =
  LIBS = -L$(XLIB) -lX11 $(SYSTEMLIBS)
  
-@@ -132,8 +134,8 @@
+@@ -152,8 +154,8 @@
  	$(CC) $(CFLAGS) $(FONTDEFAULTLIST) -c xinit.c
  
  install: $(PROGRAM)
