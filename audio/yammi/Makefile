@@ -7,6 +7,7 @@
 
 PORTNAME=	yammi
 PORTVERSION=	1.0.r1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +16,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.0.r/.0-rc/}
 MAINTAINER=	avleeuwen@piwebs.com
 COMMENT=	A QT-based music manager with fuzzy search
 
-LIB_DEPENDS=	vorbis.2:${PORTSDIR}/audio/libvorbis \
+LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis \
 		id3-3.8.2:${PORTSDIR}/audio/id3lib \
 		xmms.4:${PORTSDIR}/multimedia/xmms
 

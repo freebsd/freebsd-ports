@@ -7,7 +7,7 @@
 
 PORTNAME=	musicpd
 PORTVERSION=	0.9.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -38,10 +38,10 @@ CONFIGURE_ARGS+=--disable-flac
 LIB_DEPENDS+=	FLAC.5:${PORTSDIR}/audio/flac
 .endif
 
-.ifdef(WITHOUT_OGG)
+.ifdef(WITHOUT_VORBIS)
 CONFIGURE_ARGS+=--disable-ogg
 .else
-LIB_DEPENDS+=	vorbis.2:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
 .endif
 
 .ifdef(WITHOUT_WAV)
@@ -76,10 +76,10 @@ PLIST_SUB+=	RC_SUFX=${RC_SUFX}
 pre-everything::
 	@${ECHO_CMD} "You can build ${PKGNAME} with the following options:"
 	@${ECHO_CMD}
-	@${ECHO_CMD} "WITHOUT_OGG             Disable OGG-Vorbis-support"
-	@${ECHO_CMD} "WITHOUT_FLAC            Disable FLAC-support"
-	@${ECHO_CMD} "WITHOUT_WAV             Disable libao-support"
-	@${ECHO_CMD} "WITHOUT_ICONV           Disable international-chars-support"
+	@${ECHO_CMD} "WITHOUT_VORBIS          Disable Ogg Vorbis support"
+	@${ECHO_CMD} "WITHOUT_FLAC            Disable FLAC support"
+	@${ECHO_CMD} "WITHOUT_WAV             Disable libao support"
+	@${ECHO_CMD} "WITHOUT_ICONV           Disable international chars support"
 	@${ECHO_CMD}
 
 post-build:

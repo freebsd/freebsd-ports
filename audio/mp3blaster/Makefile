@@ -7,6 +7,7 @@
 
 PORTNAME=	mp3blaster
 PORTVERSION=	3.2.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.stack.nl/~brama/mp3blaster/src/
 
@@ -45,7 +46,7 @@ CONFIGURE_ARGS+=	--without-sidplay
 .if defined(WITHOUT_VORBIS)
 CONFIGURE_ARGS+=	--without-oggvorbis
 .else
-LIB_DEPENDS+=	vorbisfile.3:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbisfile.4:${PORTSDIR}/audio/libvorbis
 .endif
 
 pre-everything::

@@ -6,7 +6,7 @@
 
 PORTNAME=	liteamp
 PORTVERSION=	0.2.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio gnome
 MASTER_SITES=	http://download.kldp.net/liteamp/
 
@@ -15,8 +15,7 @@ COMMENT=	Light-weight Music Player for GNOME2
 
 LIB_DEPENDS=	ao.3:${PORTSDIR}/audio/libao \
 		mad.2:${PORTSDIR}/audio/mad \
-		ogg.4:${PORTSDIR}/audio/libogg \
-		vorbisfile.3:${PORTSDIR}/audio/libvorbis
+		vorbisfile.4:${PORTSDIR}/audio/libvorbis
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

@@ -137,7 +137,7 @@ PLIST_SUB+=		VORBIS="@comment "
 CONFIGURE_ARGS+=	--enable-oggvorbis \
 			--with-vorbis-prefix=${LOCALBASE} \
 			--with-ogg-prefix=${LOCALBASE}
-LIB_DEPENDS+=		vorbis.2:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=		vorbis.3:${PORTSDIR}/audio/libvorbis
 PLIST_SUB+=		VORBIS=""
 .endif
 

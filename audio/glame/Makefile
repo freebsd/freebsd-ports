@@ -7,7 +7,7 @@
 
 PORTNAME=	glame
 PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A powerful, fast, stable, and easily extensible sound editor for GNOME
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
-LIB_DEPENDS=	vorbis.2:${PORTSDIR}/audio/libvorbis \
+LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis \
 		ltdl.4:${PORTSDIR}/devel/libltdl
 
 USE_REINPLACE=	yes

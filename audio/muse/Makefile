@@ -8,7 +8,7 @@
 
 PORTNAME=	MuSE
 PORTVERSION=	0.8.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
 		http://muse.dyne.org/releases/
@@ -19,7 +19,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiple Streaming Engine
 
 LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
-		vorbis.2:${PORTSDIR}/audio/libvorbis
+		vorbis.3:${PORTSDIR}/audio/libvorbis
 
 USE_GETOPT_LONG=	yes
 USE_REINPLACE=	yes

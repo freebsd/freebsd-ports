@@ -32,7 +32,7 @@ WITH_LIBOGG=	yes
 .endif
 
 .if defined(WITH_LIBOGG)
-LIB_DEPENDS+=	ogg.4:${PORTSDIR}/audio/libogg
+LIB_DEPENDS+=	ogg.5:${PORTSDIR}/audio/libogg
 .endif
 
 pre-everything::

@@ -8,13 +8,14 @@
 
 PORTNAME=	vorbisgain
 PORTVERSION=	0.34
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://users.pandora.be/sjeng/ftp/vorbis/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Calculates the perceived sound level of an Ogg Vorbis file
 
-LIB_DEPENDS=	vorbis.2:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis
 
 USE_ZIP=	yes
 GNU_CONFIGURE=	yes

@@ -7,6 +7,7 @@
 
 PORTNAME=	jamboree
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.3
@@ -15,8 +16,7 @@ MAINTAINER=	jylefort@brutele.be
 COMMENT=	A simple GNOME music player
 
 LIB_DEPENDS+=	id3tag:${PORTSDIR}/audio/mad \
-		ogg:${PORTSDIR}/audio/libogg \
-		vorbis:${PORTSDIR}/audio/libvorbis \
+		vorbis.3:${PORTSDIR}/audio/libvorbis \
 		gstplay-0.6:${PORTSDIR}/multimedia/gstreamer-plugins \
 		gdbm.3:${PORTSDIR}/databases/gdbm
 

@@ -7,8 +7,9 @@
 
 PORTNAME=	vorbisfile
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	audio ruby
-MASTER_SITES=	 http://rikkus.info/arch/
+MASTER_SITES=	http://rikkus.info/arch/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
@@ -16,7 +17,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Ruby extension wrapping libvorbisfile
 
-LIB_DEPENDS=	vorbis.2:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	vorbisfile.4:${PORTSDIR}/audio/libvorbis
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
