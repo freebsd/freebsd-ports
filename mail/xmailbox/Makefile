@@ -3,11 +3,11 @@
 # Date created:				23 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/07/04 19:42:45 steve Exp $
 #
 
 DISTNAME=		xmailbox-2.5
-CATEGORIES=		mail x11
+CATEGORIES=		mail
 MASTER_SITES=		${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
 
