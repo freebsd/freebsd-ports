@@ -1,0 +1,8 @@
+A GTK+ Binding for Haskell. The basic functionality and many advanced widgets
+are supported. The implemented functionality should be sufficient for average
+user interfaces.
+
+WWW: http://www.cse.unsw.edu.au/~chak/haskell/gtk/
+
+-- Oliver Braun
+obraun@FreeBSD.org
