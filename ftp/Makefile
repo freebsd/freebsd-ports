@@ -20,6 +20,7 @@
     SUBDIR += hsftp
     SUBDIR += jmirror
     SUBDIR += junglemonkey
+    SUBDIR += kmago
     SUBDIR += lftp
     SUBDIR += llnlxdir
     SUBDIR += llnlxftp
