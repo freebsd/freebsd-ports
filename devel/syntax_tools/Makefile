@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.erlang.org/contrib/ \
 		http://www.csd.uu.se/ftp/mirror/erlang/contrib/ \
 		http://www.serc.rmit.edu.au/mirrors/ose_mirror/contrib/
 EXTRACT_SUFX=	.tgz
+DIST_SUBDIR=	erlang
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Erlang modules for code manipulation
