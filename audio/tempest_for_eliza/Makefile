@@ -13,13 +13,9 @@ MASTER_SITES=	http://www.erikyyy.de/tempest/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program to send AM radio signals using a PC monitor
 
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
-
-SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
-
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
+USE_SDL=	yes
 
 post-install:
 	${MKDIR} ${PREFIX}/share/tempest
