@@ -8,7 +8,7 @@
 PORTNAME=	xmsgsaver
 PORTVERSION=	1.8.1
 CATEGORIES=	japanese misc
-MASTER_SITES=	http://www.xdsl.ne.jp/ga/cdr/soft/dl/
+MASTER_SITES=	http://www19.xdsl.ne.jp/~cdr/soft/dl/
 
 MAINTAINER=	cdr@ga.xdsl.ne.jp
 
