@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.200 1999/04/25 17:54:56 steve Exp $
+# $Id: Makefile,v 1.201 1999/04/27 03:26:52 taoka Exp $
 #
 
     SUBDIR += 221upgrade
@@ -17,6 +17,7 @@
     SUBDIR += buffer
     SUBDIR += chord
     SUBDIR += colorls
+    SUBDIR += colortail
     SUBDIR += crosspad
     SUBDIR += cstream
     SUBDIR += ctk
