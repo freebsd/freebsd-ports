@@ -57,7 +57,6 @@ sbin/swat
 %%PORTDOCS%%share/doc/samba/Roadmap
 %%PORTDOCS%%share/doc/samba/THANKS
 %%PORTDOCS%%share/doc/samba/WHATSNEW.txt
-%%PORTDOCS%%share/doc/samba/announce
 %%PORTDOCS%%share/doc/samba/history
 %%PORTDOCS%%share/doc/samba/htmldocs/Samba-Developers-Guide.html
 %%PORTDOCS%%share/doc/samba/htmldocs/AccessControls.html
