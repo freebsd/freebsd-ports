@@ -1012,3 +1012,25 @@ games/scummvm|emulators/scummvm|2004-04-06|new category
 ftp/wget+ipv6|ftp/wget|2004-04-06|removed, ftp/wget has this function
 misc/metatheme2||2004-04-09|removed obsolete port
 x11-fm/apotheke||2004-04-10|removed obsolete port
+devel/glg||2004-04-10|removed unfetchable port
+devel/py-orbit|devel/py-orbit2|2004-04-10|removed deprecated port
+devel/veepee||2004-04-10|removed deprecated port
+graphics/cybervrml97||2004-04-10|removed unfetchable port
+security/inflex||2004-04-10|removed deprecated port
+www/Mosaic||2004-04-10|removed broken port
+x11-servers/XttXF86srv-3DLabs||2004-04-10|removed broken port
+x11-servers/XttXF86srv-8514||2004-04-10|removed broken port
+x11-servers/XttXF86srv-AGX||2004-04-10|removed broken port
+x11-servers/XttXF86srv-I128||2004-04-10|removed broken port
+x11-servers/XttXF86srv-Mach32||2004-04-10|removed broken port
+x11-servers/XttXF86srv-Mach64||2004-04-10|removed broken port
+x11-servers/XttXF86srv-Mach8||2004-04-10|removed broken port
+x11-servers/XttXF86srv-Mono||2004-04-10|removed broken port
+x11-servers/XttXF86srv-P9000||2004-04-10|removed broken port
+x11-servers/XttXF86srv-S3||2004-04-10|removed broken port
+x11-servers/XttXF86srv-S3V||2004-04-10|removed broken port
+x11-servers/XttXF86srv-SVGA||2004-04-10|removed broken port
+x11-servers/XttXF86srv-VGA16||2004-04-10|removed broken port
+x11-servers/XttXF86srv-W32||2004-04-10|removed broken port
+x11-servers/XttXF86srv-common||2004-04-10|removed broken port
+x11-servers/XttXF86srv-xfs||2004-04-10|removed broken port
