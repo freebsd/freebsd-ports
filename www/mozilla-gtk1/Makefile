@@ -1,19 +1,17 @@
-# New ports collection makefile for:	mozilla-devel-gtk2
-# Date created:		17 November 2002
-# Whom:			Joe Marcus Clarke <marcus@FreeBSD.org>
+# New ports collection makefile for:	mozilla-devel-gtk1
+# Date created:		17 February 2004
+# Whom:			Adam Weinberger <adamw@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	mozilla
-PORTREVISION=	2
-PORTEPOCH=	0
 CATEGORIES=	www
 
 MASTERDIR=	${.CURDIR}/../mozilla
-DESCR=		${PKGDIR}/pkg-descr.gtk2
+DESCR=		${PKGDIR}/pkg-descr.gtk1
 
 WITH_GTK2=	yes
-MOZILLA=	mozilla-gtk2
+MOZILLA=	mozilla-gtk1
 
 .include "${MASTERDIR}/Makefile"

@@ -47,7 +47,6 @@ CONFIGURE_ARGS+=	--disable-imlib \
 .if defined (WITH_MOZILLA)
 PLIST=		${PKGDIR}/pkg-plist.mozilla
 CONFIGURE_ARGS+=	--enable-mozilla
-BUILD_DEPENDS+=	${PREFIX}/include/mozilla/gtkmozembed.h:${PORTSDIR}/www/mozilla-headers
 RUN_DEPENDS+=	${PREFIX}/bin/mozilla:${PORTSDIR}/www/mozilla
 .endif
 

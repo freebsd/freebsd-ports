@@ -32,11 +32,11 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MOZILLA?=	mozilla
 
-.if defined(WITH_GTK2)
-PKGNAMESUFFIX=	-gtk2
-USE_GNOME=	gtk20 libidl
-.else
+.if defined(WITH_GTK1)
+PKGNAMESUFFIX=	-gtk1
 USE_GNOME=	gtk12 orbit
+.else
+USE_GNOME=	gtk20 libidl
 .endif
 
 .if !defined(WITHOUT_XFT)
@@ -136,10 +136,10 @@ CONFIGURE_ARGS+=	--enable-calendar
 CONFIGURE_ARGS+=	--disable-composer
 .endif
 
-.if defined(WITH_GTK2)
-CONFIGURE_ARGS+=	--enable-default-toolkit=gtk2
-.else
+.if defined(WITH_GTK1)
 CONFIGURE_ARGS+=	--enable-default-toolkit=gtk
+.else
+CONFIGURE_ARGS+=	--enable-default-toolkit=gtk2
 .endif
 
 .if !defined(WITHOUT_XFT)

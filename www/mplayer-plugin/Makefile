@@ -31,7 +31,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib"
 
 .if !defined(WITH_MOZILLA)
-HEADERS_SUFX=	-gtk2
+HEADERS_SUFX=
 .else
 .if ${WITH_MOZILLA}=="mozilla"
 HEADERS_SUFX=
@@ -39,10 +39,10 @@ HEADERS_SUFX=
 .if ${WITH_MOZILLA}=="mozilla-devel"
 HEADERS_SUFX=	-devel
 .else
-.if ${WITH_MOZILLA}=="mozilla-devel-gtk"
-HEADERS_SUFX=	-devel-gtk2
+.if ${WITH_MOZILLA}=="mozilla-devel-gtk1"
+HEADERS_SUFX=	-devel-gtk1
 .else
-HEADERS_SUFX=	-gtk2
+HEADERS_SUFX=	-gtk1
 .endif
 .endif
 .endif
@@ -50,12 +50,12 @@ HEADERS_SUFX=	-gtk2
 
 pre-everything::
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} " By default this port uses www/mozilla-gtk2 for Gecko support, but you can"
+	@${ECHO_MSG} " By default this port uses www/mozilla for Gecko support, but you can"
 	@${ECHO_MSG} " change this by defining WITH_MOZILLA to one of the following values:"
 	@${ECHO_MSG}
-	@${ECHO_MSG} " mozilla "
 	@${ECHO_MSG} " mozilla-devel "
-	@${ECHO_MSG} " mozilla-devel-gtk2 "
+	@${ECHO_MSG} " mozilla-gtk1 "
+	@${ECHO_MSG} " mozilla-devel-gtk1 "
 	@${ECHO_MSG} ""
 
 post-patch:

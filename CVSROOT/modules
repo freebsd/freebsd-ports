@@ -5040,9 +5040,9 @@ mozart		ports/lang/mozart
 mozilla		ports/www/mozilla
 mozilla-bonobo	ports/www/mozilla-bonobo
 mozilla-devel	ports/www/mozilla-devel
-mozilla-devel-gtk2	ports/www/mozilla-devel-gtk2
+mozilla-devel-gtk1	ports/www/mozilla-devel-gtk1
 mozilla-fonts	ports/x11-fonts/mozilla-fonts
-mozilla-gtk2	ports/www/mozilla-gtk2
+mozilla-gtk1	ports/www/mozilla-gtk1
 mp		ports/editors/mp
 mp-a4		ports/print/mp-a4
 mp-letter	ports/print/mp-letter
