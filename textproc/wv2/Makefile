@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wvware
 
 MAINTAINER=	lofi@freebsd.org
-COMMENT=	A library providing routines to access Microsoft Word/Excel files
+COMMENT=	A library providing routines to access Microsoft Word files
 
 LIB_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
 
