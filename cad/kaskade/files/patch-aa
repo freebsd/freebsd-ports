@@ -1,5 +1,5 @@
---- makefile.orig	Wed Sep 25 16:32:22 1996
-+++ makefile	Mon Nov 17 11:36:27 1997
+--- makefile.orig	Wed Sep 25 09:32:22 1996
++++ makefile	Fri Sep 25 15:22:12 1998
 @@ -1,6 +1,6 @@
  PURIFY   = #purify
  PURELINK = #purelink
@@ -8,7 +8,7 @@
  LD     = $(PURELINK) g++
  
  #C++    = $(PURIFY) g++ -w  -I/sgisoft/gnu/lib/g++-include 	# !!! SGI GNU 2.7.1
-@@ -18,25 +18,25 @@
+@@ -18,25 +18,29 @@
  #FORFLAGS = -O -extend_source 				# SGI
  
  DEBFLAG  = -g
@@ -17,9 +17,13 @@
  
  LIBS     = -lX11 -lm $(F77LIBS) 
 -#LIBDIR  = /usr/X11/lib						# PC LINUX, XFree86 3.1.1
-+LIBDIR  = $(X11BASE)/lib						# PC LINUX, XFree86 3.1.1
++.if ${PORTOBJFORMAT} == "elf"
++LIBS+=-Wl,-rpath,$(X11BASE)/lib
++.endif
  
 -F77LIBS  = -L/opt/SUNWspro/SC4.0/lib -lF77 -lM77 -lsunmath -lsocket -lnsl # SUN
++LIBDIR  = $(X11BASE)/lib						# PC LINUX, XFree86 3.1.1
++
 +#F77LIBS  = -L/opt/SUNWspro/SC4.0/lib -lF77 -lM77 -lsunmath -lsocket -lnsl # SUN
  #F77LIBS  = -lftn						# SGI
  #F77LIBS  = -L/opt/SUNWspro/SC3.0/lib -lF77 -lM77 -lcomplex -lsunmath  -lnsl -lsocket # SUN SC3.0
@@ -41,7 +45,7 @@
  
  default: k6
  
-@@ -77,18 +77,18 @@
+@@ -77,18 +81,18 @@
  FSources = ma28.f madc28.f
  
  # SUN / SGI:
@@ -67,7 +71,7 @@
  # IBM:
  #ma28.o: ma28.f  sysmat.h sysmatml.h sysmatsp.h 
  #	$(FOR)  -c -qextname  $(FORFLAGS) ma28.f
-@@ -224,12 +224,12 @@
+@@ -224,12 +228,12 @@
  k3: 	$(k3O) 
  	$(LD) $(LDFLAGS) -o  k3   $(k3O) $(LIBS)
  

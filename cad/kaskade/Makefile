@@ -3,7 +3,7 @@
 # Date created:		19 Sept. 1997
 # Whom:			Pedro Giffuni
 #
-# $Id: Makefile,v 1.3 1997/11/26 23:10:55 jseger Exp $
+# $Id: Makefile,v 1.4 1998/08/05 09:30:45 asami Exp $
 #
 
 DISTNAME=	3.1.1
@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://elib.zib-berlin.de/pub/kaskade/3.x/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	giffunip@asme.org
+
+BROKEN_ELF=	undefined reference to MAIN__ /usr/lib/libf2c.so
 
 DIST_SUBDIR=	kaskade
 WRKSRC=         ${WRKDIR}/3.1
