@@ -3,7 +3,7 @@
 # Date created:		18 Feb 1999
 # Whom:			Peter Hawkins <thepish@freebsd.org>
 #
-# $Id: Makefile,v 1.4 1999/04/20 18:51:26 mharo Exp $
+# $Id: Makefile,v 1.5 1999/05/02 08:32:58 mharo Exp $
 #
 
 DISTNAME=	XmHTML-1.1.0
@@ -20,10 +20,9 @@ MAINTAINER=	thepish@freebsd.org
 LIB_DEPENDS=    png.3:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
-BROKEN=  "doesn't support MOTIFLIB"
-
 REQUIRES_MOTIF=	yes
 USE_IMAKE=	yes
+XMKMF=		PORTOBJFORMAT=${PORTOBJFORMAT} xmkmf -a
 
 EXMP_DIR=	${PREFIX}/share/examples/${DISTNAME}/
 DOCS_DIR=	${PREFIX}/share/doc/${DISTNAME}/
