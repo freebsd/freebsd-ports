@@ -21,7 +21,7 @@ DISTFILES=	ircii-pana-${PORTVERSION}${EXTRACT_SUFX} \
 EXTRACT_ONLY=	ircii-pana-${PORTVERSION}${EXTRACT_SUFX}
 .endif
 
-MAINTAINER?=	freebsdports@arved.de
+MAINTAINER?=	arved@FreeBSD.org
 
 BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
 .if defined(WITH_XMMS)
@@ -49,7 +49,7 @@ USE_X_PREFIX=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gnomelibs
 CONFIGURE_ARGS+=--with-gtk
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${X11BASE}/include/gnome-1.0/"
+CFLAGS+=	-I${X11BASE}/include/gnome-1.0/
 PLIST_SUB+=	NOGNOME:="@comment " GNOME:=""
 .else
 CONFIGURE_ARGS+=--without-gtk
@@ -60,6 +60,7 @@ USE_GNOMENG=	yes
 USE_GNOME+=	esound
 CONFIGURE_ARGS+=--enable-sound
 .endif
+.include <bsd.port.pre.mk>
 .if defined(WITH_IPV6)
 USE_IPV6=	yes
 CONFIGURE_ARGS+=--enable-ipv6
@@ -68,13 +69,17 @@ CONFIGURE_ARGS+=--enable-ipv6
 BUILD_DEPENDS+=	${LOCALBASE}/include/tcl8.3/tcl.h:${PORTSDIR}/lang/tcl83
 CONFIGURE_ARGS+=--with-tcl \
 		--with-tcl-libs=${LOCALBASE}/lib
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/tcl8.3" \
-		CFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/tcl8.3"
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/tcl8.3"
+CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/tcl8.3
 .endif
 .if defined(WITH_SOCKS5)
 BUILD_DEPENDS+=		${LOCALBASE}/lib/libsocks5.a:${PORTSDIR}/net/socks5
 CONFIGURE_ARGS+=	--with-socks5=${LOCALBASE}
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include"
+.endif
+.if defined(WITH_SSL)
+USE_OPENSSL=		yes
+CONFIGURE_ARGS+=	--with-ssl
 .endif
 .if defined(WITH_PLUGINS)
 PLUGINS= 	abot,acro,aim,arcfour,autocycle,blowfish,cavlink,encrypt,fserv,hint,identd,nap,pkga,possum,qbx,qmail,scan,wavplay
@@ -93,8 +98,10 @@ PLIST_SUB+=	XMMS:="@comment "
 PLUGINS= 	abot,acro,aim,arcfour,autocycle,blowfish,cavlink,encrypt,fserv,hint,identd,nap,pkga,possum,qbx,qmail,scan,wavplay,xmms
 .endif
 .if (defined(WITH_PLUGINS) || defined(WITH_XMMS))
-CONFIGURE_ARGS+=--with-plugins=${PLUGINS}
+INSTALLS_SHLIB=		yes
+CONFIGURE_ARGS+=	--with-plugins=${PLUGINS}
 .endif
+CONFIGURE_ENV+=		CFLAGS="${CFLAGS}"
 
 pre-patch:
 .if defined(WITH_LATIN)
@@ -120,9 +127,12 @@ pre-extract:
 .if !defined(WITH_SOCKS5)
 	@${ECHO_CMD} "WITH_SOCKS5  - Build BitchX with SOCKS5 support"
 .endif
+.if !defined(WITH_SSL)
+	@${ECHO_CMD} "WITH_SSL	   - Build BitchX with SSL support"
+.endif
 .if !defined(WITH_IPV6)
 	@${ECHO_CMD} "WITH_IPV6    - Build BitchX with IPV6 support"
-	@${ECHO_CMD} "               (Please Note: /detach is not working with IPv6)"
+	@${ECHO_CMD} "               (Please Note: /detach crashes BitchX with IPv6)"
 .endif
 .if !defined(WITH_GNOME)
 	@${ECHO_CMD} "WITH_GNOME   - Build BitchX with Gtk-Frontend"
@@ -148,4 +158,4 @@ post-install:
 	${RMDIR} ${PREFIX}/share/bx/help
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
