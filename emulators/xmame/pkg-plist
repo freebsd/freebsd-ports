@@ -1,0 +1,14 @@
+bin/xmame
+lib/mame/CHEAT.DOC
+lib/mame/Changes
+lib/mame/MailList.notes
+lib/mame/README.port
+lib/mame/README.unix
+lib/mame/cheat.dat
+lib/mame/conv2zip
+lib/mame/mamelist.txt
+lib/mame/mov
+lib/mame/readme.txt
+lib/mame/whatsnew.txt
+man/man6/xmame.6.gz
+@dirrm lib/mame
