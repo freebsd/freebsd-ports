@@ -311,6 +311,7 @@
     SUBDIR += gsoap
     SUBDIR += gtgt
     SUBDIR += gtranslator
+    SUBDIR += guikachu
     SUBDIR += gvd
     SUBDIR += happydoc
     SUBDIR += hapy
