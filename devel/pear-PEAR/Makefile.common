@@ -136,9 +136,9 @@ do-install-docs: do-install-docs-msg
 . if !defined(NOPORTDOCS) && !empty(DOCS)
 	@${ECHO_MSG} "===> Installing documentation in ${DOCSDIR}."
 	@${MKDIR} ${DOCSDIR}
-. for dir in ${DOCSDIRS}
+.  for dir in ${DOCSDIRS}
 	@${MKDIR} ${DOCSDIR}/${dir}
-. endfor
+.  endfor
 .  for file in ${DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${_DOCSDIR}/${file} ${DOCSDIR}/${file}
 .  endfor
@@ -148,9 +148,9 @@ do-install-tests: do-install-tests-msg
 . if !empty(TESTS)
 	@${ECHO_MSG} "===> Installing tests in ${TESTSDIR}."
 	@${MKDIR} ${TESTSDIR}
-. for dir in ${TESTSDIRS}
+.  for dir in ${TESTSDIRS}
 	@${MKDIR} ${TESTSDIR}/${dir}
-. endfor
+.  endfor
 .  for file in ${TESTS}
 	@${INSTALL_DATA} ${WRKSRC}/${_TESTSDIR}/${file} ${TESTSDIR}/${file}
 .  endfor
@@ -160,9 +160,9 @@ do-install-examples: do-install-examples-msg
 . if !defined(NOPORTDOCS) && !empty(EXAMPLES)
 	@${ECHO_MSG} "===> Installing examples in ${EXAMPLESDIR}."
 	@${MKDIR} ${EXAMPLESDIR}
-. for dir in ${EXAMPLESDIRS}
+.  for dir in ${EXAMPLESDIRS}
 	@${MKDIR} ${EXAMPLESDIR}/${dir}
-. endfor
+.  endfor
 .  for file in ${EXAMPLES}
 	@${INSTALL_DATA} ${WRKSRC}/${_EXAMPLESDIR}/${file} ${EXAMPLESDIR}/${file}
 .  endfor
