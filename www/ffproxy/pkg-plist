@@ -1,5 +1,6 @@
 bin/ffproxy
 etc/ffproxy.conf.sample
+%%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/db/access.dyndns
 %%PORTDOCS%%%%DOCSDIR%%/db/access.host
 %%PORTDOCS%%%%DOCSDIR%%/db/access.ip
@@ -18,7 +19,6 @@ etc/ffproxy.conf.sample
 %%PORTDOCS%%%%DOCSDIR%%/html/notcached
 %%PORTDOCS%%%%DOCSDIR%%/html/post
 %%PORTDOCS%%%%DOCSDIR%%/html/resolve
-%%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/db
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
