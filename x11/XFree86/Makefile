@@ -68,6 +68,9 @@ pre-fetch:
 .endif
 .endif
 
+post-extract:
+	@${MV} ${WRKSRC}/programs/Xserver/hw/xfree86/vga256/drivers/i810/os-support/linux/agpgart.h ${WRKSRC}/programs/Xserver/hw/xfree86/vga256/drivers/i810/
+
 .include <bsd.port.pre.mk>
 
 pre-install:
