@@ -329,16 +329,6 @@ eclipse/features/org.eclipse.emf_1.1.1/eclipse_update_120.jpg
 eclipse/features/org.eclipse.emf_1.1.1/feature.properties
 eclipse/features/org.eclipse.emf_1.1.1/feature.xml
 eclipse/features/org.eclipse.emf_1.1.1/license.html
-eclipse/features/org.eclipse.emf_1.1.1/feature_de.properties
-eclipse/features/org.eclipse.emf_1.1.1/feature_es.properties
-eclipse/features/org.eclipse.emf_1.1.1/feature_fr.properties
-eclipse/features/org.eclipse.emf_1.1.1/feature_it.properties
-eclipse/features/org.eclipse.emf_1.1.1/feature_ja.properties
-eclipse/features/org.eclipse.emf_1.1.1/feature_ko.properties
-eclipse/features/org.eclipse.emf_1.1.1/feature_pt_BR.properties
-eclipse/features/org.eclipse.emf_1.1.1/feature_zh_CN.properties
-eclipse/features/org.eclipse.emf_1.1.1/feature_zh_TW.properties
-
 
 @dirrm eclipse/plugins/org.eclipse.emf_1.1.1
 @dirrm eclipse/plugins/org.eclipse.emf.mapping_1.1.1/runtime
