@@ -1,7 +1,2 @@
 A DockApp that shows the weather at geosynchronous orbit.  It gets data
 from the GOES satellites.
-
-Author:
-Mike Henderson <mghenderson@lanl.gov>
-
-WWW: http://nis-www.lanl.gov/~mgh/WindowMaker/DockApps.shtml
