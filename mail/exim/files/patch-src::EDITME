@@ -43,15 +43,16 @@
  
  # If you don't set any of these, Exim assumes the original University of
  # Michigan (OpenLDAP 1) library.
-@@ -276,8 +277,9 @@
+@@ -276,8 +277,10 @@
  # don't need to set LOOKUP_INCLUDE if the relevant directories are already
  # specified in INCLUDE.
  
 -# LOOKUP_INCLUDE=-I /usr/local/ldap/include -I /usr/local/mysql/include -I /usr/local/pgsql/include
 -# LOOKUP_LIBS=-L/usr/local/lib -lldap -llber -lmysqlclient -lpq
-+INCLUDE=-I XX_PREFIX_XX/include
++INCLUDE=-IXX_PREFIX_XX/include XX_DB_INCLUDES_XX
 +LOOKUP_INCLUDE=XX_MYSQL_INCLUDE_XX XX_PGSQL_INCLUDE_XX XX_LDAP_INCLUDE_XX
-+LOOKUP_LIBS=XX_MYSQL_LIBS_XX XX_PGSQL_LIBS_XX XX_LDAP_LIBS_XX XX_DB_LIBS_XX
++LOOKUP_LIBS=XX_MYSQL_LIBS_XX XX_PGSQL_LIBS_XX XX_LDAP_LIBS_XX
++DBMLIB=XX_DB_LIBS_XX
  
  
  #------------------------------------------------------------------------------
