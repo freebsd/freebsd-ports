@@ -15,8 +15,6 @@ MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		ftp://ftp.cygnus.com/pub/embedded/crossgcc/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} dosrel-1.0${EXTRACT_SUFX}
 
-MAINTAINER=	sutton@aardvark.apana.org.au
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--target=${TARGET}
 USE_GMAKE=	yes
