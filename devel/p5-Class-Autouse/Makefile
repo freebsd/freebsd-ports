@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Class-Autouse
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Class
@@ -17,7 +17,6 @@ COMMENT=	Defer loading of one or more classes
 
 PERL_CONFIGURE=	yes
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Class::Autouse.3
 
 .include <bsd.port.mk>
