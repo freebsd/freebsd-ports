@@ -1,5 +1,5 @@
---- makefile.orig	Tue Aug 10 19:47:06 1993
-+++ makefile	Sat Apr  7 05:32:44 2001
+--- makefile.orig	Tue Aug 10 18:47:06 1993
++++ makefile	Tue Jun  4 13:56:54 2002
 @@ -42,7 +42,7 @@
  
  PROJ	= hpack
@@ -40,10 +40,10 @@
 +		-@mkdir -p ${PREFIX}/etc
 +		-@mkdir -p ${PREFIX}/lib/hpack
 +		-@mkdir -p ${PREFIX}/man/man1
-+		$(INSTALL) $(COPY) $(STRIP) -o $(BINOWN) -g $(BINGRP) -m $(BINMODE) $(PROJ) $(PREFIX)/bin
-+		$(INSTALL) $(COPY) -o $(BINOWN) -g $(BINGRP) -m 444 language.dat $(PREFIX)/lib/hpack
-+		$(INSTALL) $(COPY) -o $(BINOWN) -g $(BINGRP) -m 444 docs/$(PROJ).1 $(PREFIX)/man/man1
-+		-[ ! -f $(PREFIX)/etc/hpack.cfg ] && $(INSTALL) $(COPY) -o $(BINOWN) -g $(BINGRP) -m 644 docs/hpack.cfg $(PREFIX)/etc
++		$(BSD_INSTALL_PROGRAM) $(PROJ) $(PREFIX)/bin
++		$(BSD_INSTALL_DATA) language.dat $(PREFIX)/lib/hpack
++		$(BSD_INSTALL_DATA) docs/$(PROJ).1 $(PREFIX)/man/man1
++		-[ ! -f $(PREFIX)/etc/hpack.cfg ] && $(BSD_INSTALL_DATA) -m 644 docs/hpack.cfg $(PREFIX)/etc
 +		cd keycvt; $(MAKE) freebsd.install
  
  # Generic: Generic BSD-ish system running gcc
