@@ -52,11 +52,11 @@ MAN1=		spamd.1 spamassassin.1 spamc.1 sa-learn.1
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
-SED_SCRIPT=     -e 's|%%PREFIX%%|${PREFIX}|g'
+SED_SCRIPT=	-e 's|%%PREFIX%%|${PREFIX}|g'
 
 USE_RC_SUBR=	yes
-RC_DIR=		${PREFIX}/etc/rc.d
-RC_SUFX=	.sh
+RC_DIR?=	${PREFIX}/etc/rc.d
+RC_SUFX?=	.sh
 SED_SCRIPT+=	-e 's|%%RC_SUBR%%|${RC_SUBR}|g' \
 		-e 's|%%RC_DIR%%|${RC_DIR}|g' \
 		-e 's|%%RC_SUFX%%|${RC_SUFX}|g'
@@ -72,11 +72,11 @@ post-patch:
 	@${MV} ${WRKSRC}/Makefile.PL.sed ${WRKSRC}/Makefile.PL
 
 post-build:
-	@${SED} ${SED_SCRIPT} ${FILESDIR}/spamd.sh > ${WRKSRC}/spamd.sh
+	@${SED} ${SED_SCRIPT} ${FILESDIR}/spamd.sh > ${WRKDIR}/spamd.sh
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/spamc
-	${INSTALL_SCRIPT} ${WRKSRC}/spamd.sh ${PREFIX}/etc/rc.d/spamd${RC_SUFX}
+	${INSTALL_SCRIPT} ${WRKDIR}/spamd.sh ${RC_DIR}/spamd${RC_SUFX}
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
