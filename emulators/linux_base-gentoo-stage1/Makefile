@@ -38,8 +38,6 @@ EXTRACT_ONLY=
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Files from Gentoo distribution, for Linux compatibility
 
-BROKEN=		"Does not fetch properly"
-
 MD5_FILE=	${MASTERDIR}/distinfo.${MACHINE_ARCH}
 NO_BUILD=	y
 ONLY_FOR_ARCHS=	alpha amd64 ia64 i386 sparc64
