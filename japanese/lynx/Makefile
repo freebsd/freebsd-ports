@@ -13,6 +13,8 @@ MASTER_SITES=   http://sol.slcc.edu/lynx/current/
 
 MAINTAINER=	shige@FreeBSD.org
 
+FORBIDDEN=  "Riddled with buffer overflows exploitable by a malicious server to execute code as the local user."
+
 WRKSRC=		${WRKDIR}/lynx2-8-2
 
 USE_BZIP2?=	YES
