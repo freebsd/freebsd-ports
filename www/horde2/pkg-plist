@@ -268,6 +268,8 @@
 %%HORDEDIR%%/scripts/db/pgsql_drop.sql
 %%HORDEDIR%%/scripts/db/prefs.sql
 %%HORDEDIR%%/scripts/db/sessionhandler.sql
+%%HORDEDIR%%/scripts/db/sessionhandler_oracle.sql
+%%HORDEDIR%%/scripts/db/sessionhandler_pgsql.sql
 %%HORDEDIR%%/scripts/db/sessionhandler_sapdb.sql
 %%HORDEDIR%%/scripts/db/vfs.sql
 %%HORDEDIR%%/scripts/horde-rsync.sh
