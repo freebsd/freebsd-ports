@@ -32,7 +32,7 @@
 #	clean-for-cdrom-list, clean-restricted-list,
 #	configure, deinstall,
 #	depend, depends, describe, extract, fetch, fetch-list, ignorelist,
-#	install, package, package-loop, readmes, realinstall, reinstall, tags
+#	install, package, readmes, realinstall, reinstall, tags
 #
 #	search:
 #		Search for ports using either 'make search key=<keyword>'
@@ -89,7 +89,7 @@ TARGETS+=	fetch
 TARGETS+=	fetch-list
 TARGETS+=	ignorelist
 TARGETS+=	package
-TARGETS+=	package-loop
+TARGETS+=	realinstall
 TARGETS+=	reinstall
 TARGETS+=	tags
 
