@@ -1,1 +1,3 @@
 bin/xrick
+share/xrick/data.zip
+@dirrm share/xrick
