@@ -3,7 +3,7 @@
 # Date created:		29 April 1999
 # Whom:			G. Adam Stanislav <adam@whizkidtech.net>
 #
-# $Id: Makefile,v 1.1.1.1 1999/05/03 04:27:41 steve Exp $
+# $Id: Makefile,v 1.2 1999/05/04 04:20:36 steve Exp $
 #
 
 DISTNAME=	tiff
@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.whizkidtech.net/fports/
 
 MAINTAINER=	adam@whizkidtech.net
 
-BUILD_DEPENDS=	tuc:${PORTSDIR}/textproc/tuc
+BUILD_DEPENDS=	tuc:${PORTSDIR}/converters/tuc
 
 USE_ZIP=	yes
 DIST_SUBDIR=	tifmerge
