@@ -417,7 +417,6 @@
     SUBDIR += xmms-finespectrum
     SUBDIR += xmms-fishmatic
     SUBDIR += xmms-gdancer
-    SUBDIR += xmms-gforce
     SUBDIR += xmms-goom
     SUBDIR += xmms-infinity
     SUBDIR += xmms-iris
