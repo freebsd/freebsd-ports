@@ -1,0 +1,13 @@
+@comment $FreeBSD$
+lib/libvntype.a
+lib/libviqr.a
+include/viet/charset.h
+include/viet/charseta.h
+include/viet/charsetv.h
+include/viet/ctype.h
+include/viet/portable.h
+include/viet/vncompos.h
+include/viet/vnkeys.h
+include/viet/vntype.h
+share/doc/libviet/README.lib
+@dirrm include/viet
