@@ -13,6 +13,7 @@
     SUBDIR += apache13-php3
     SUBDIR += apache13-php4
     SUBDIR += apache13-ssl
+    SUBDIR += apache13+ipv6
     SUBDIR += apache-jserv
     SUBDIR += arena
     SUBDIR += ashe           # requires Motif
