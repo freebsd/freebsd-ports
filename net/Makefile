@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.139 1998/02/13 17:49:12 vanilla Exp $
+# $Id: Makefile,v 1.140 1998/02/16 11:56:29 asami Exp $
 #
 
     SUBDIR += archie
@@ -63,6 +63,7 @@
     SUBDIR += p5-SNMP
     SUBDIR += pcnfsd
     SUBDIR += pmf
+    SUBDIR += pppload
     SUBDIR += proftpd
     SUBDIR += radius
     SUBDIR += ratoolset
