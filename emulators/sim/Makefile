@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sim
-PORTVERSION=	2.9.4
+PORTVERSION=	2.9.5
 CATEGORIES=	emulators
 MASTER_SITES=	http://simh.trailing-edge.com/sources/ \
 		${MASTER_SITE_LOCAL}
