@@ -5,9 +5,6 @@ lib/libmikmod.so
 lib/libmikmod.so.1.1
 @unexec install-info --delete %D/info/mikmod.info %D/info/dir
 info/mikmod.info
-info/mikmod.info-1
-info/mikmod.info-2
-info/mikmod.info-3
 @exec install-info %D/info/mikmod.info %D/info/dir
 share/aclocal/libmikmod.m4
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R

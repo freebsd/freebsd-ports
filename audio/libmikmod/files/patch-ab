@@ -1,0 +1,11 @@
+--- docs/Makefile.in.orig	Sat May  8 18:42:08 1999
++++ docs/Makefile.in	Sat May  8 18:42:28 1999
+@@ -75,7 +75,7 @@
+ LIB_LDADD = @LIB_LDADD@
+ LN_S = @LN_S@
+ MAINT = @MAINT@
+-MAKEINFO = @MAKEINFO@
++MAKEINFO = @MAKEINFO@ --no-split
+ NM = @NM@
+ PACKAGE = @PACKAGE@
+ PLAYER_LIB = @PLAYER_LIB@
