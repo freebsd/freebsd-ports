@@ -3,7 +3,6 @@ sbin/jabberd
 etc/jabber.xml.sample
 etc/rc.d/jabberd.sh
 include/jabber/lib/lib.h
-include/jabber/lib/xmlparse.h
 include/jabber/platform-settings
 include/jabber/jabberd.h
 lib/jabber/dialback/dialback.so

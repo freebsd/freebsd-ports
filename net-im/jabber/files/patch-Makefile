@@ -11,7 +11,7 @@
  
  all: all-recursive
  
-@@ -13,8 +17,28 @@
+@@ -13,8 +17,27 @@
  
  single: single-recursive
  
@@ -36,7 +36,6 @@
 +	${INSTALL_DATA} jabberd/jabberd.h ${INCDIR}
 +	${INSTALL_DIR} ${INCDIR}/lib
 +	${INSTALL_DATA} jabberd/lib/lib.h ${INCDIR}/lib
-+	${INSTALL_DATA} jabberd/lib/xmlparse.h ${INCDIR}/lib
 +	
  
  all-local:
