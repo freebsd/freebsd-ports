@@ -31,7 +31,12 @@ CONFIGURE_SCRIPT=	make_configure
 MAN1=		cvs.1
 MAN5=		cvs.5
 MAN8=		cvsbug.8
+INFO=		cvs cvsclient
 WANT_AUTOMAKE_VER=	14
 WANT_AUTOCONF_VER=	213
+
+post-install:
+	install-info ${PREFIX}/info/cvs.info ${PREFIX}/info/dir
+	install-info ${PREFIX}/info/cvsclient.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>
