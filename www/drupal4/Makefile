@@ -15,7 +15,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	esn@x123.info
 COMMENT=	CMS that supports pgsql and mysql
 
-.if exists(/usr/local/lib/libpq.so.3)
+.include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/lib/libpq.so.3)
 RUN_DEPENDS=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB
 .endif
 
@@ -65,4 +67,4 @@ do-install:
 	@${ECHO_MSG} " GoTo: http://<your_website>/drupal"
 	@${ECHO_MSG} ""
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
