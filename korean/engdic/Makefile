@@ -14,4 +14,6 @@ MASTER_SITES=	ftp://ftp.holywar.net/pub/engdic/ \
 
 MAINTAINER=	hollywar@mail.holywar.net
 
+ALL_TARGET=	clean all
+
 .include <bsd.port.mk>
