@@ -21,7 +21,7 @@ COMMENT=	A wrapper allowing use of linux-plugins with native applications
 .if		!defined(WITHOUT_PLUGINS)
 RUN_DEPENDS=	${LOCALBASE}/lib/linux-flashplugin6/libflashplayer.so:${PORTSDIR}/www/linux-flashplugin6
 .if		${OSVERSION} >= 500000
-RUN_DEPENDS+=	${LOCALBASE}/Acrobat5/Browsers/intellinux/nppdf.so:${PORTSDIR}/print/acroread5
+RUN_DEPENDS+=	${LOCALBASE}/Acrobat5/Browsers/intellinux/nppdf.so:${PORTSDIR}/print/acroread
 .else
 USE_MOTIF=	yes
 .endif

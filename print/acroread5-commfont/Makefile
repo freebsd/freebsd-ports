@@ -43,7 +43,7 @@ DISTFILES=	korfont.tar.gz
 WRKSUBDIR=	KORKIT
 .endif
 TAR_FILE=	LANGCOM.TAR
-RUN_DEPENDS=	acroread5:${PORTSDIR}/print/acroread5
+RUN_DEPENDS=	acroread5:${PORTSDIR}/print/acroread
 
 .else
 ###### For slave ports ##############################

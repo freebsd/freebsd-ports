@@ -17,7 +17,7 @@ MAINTAINER=	coop9211@uidaho.edu
 COMMENT=	Meta package installing all author-recommended Plugger plugins
 
 RUN_DEPENDS=	sidplay:${PORTSDIR}/audio/sidplay \
-		acroread5:${PORTSDIR}/print/acroread5 \
+		acroread5:${PORTSDIR}/print/acroread \
 		mpg123:${PORTSDIR}/audio/mpg123 \
 		mikmod:${PORTSDIR}/audio/mikmod \
 		ogg123:${PORTSDIR}/audio/vorbis-tools \
