@@ -1,0 +1,16 @@
+AFT (Almost Free Text) is a document preparation system. It is mostly
+free form meaning that there is little intrusive markup. AFT source
+documents look a lot like plain old ASCII text.
+
+AFT has a few rules for structuring your document and these rules have
+more to do with formatting your text rather than embedding commands.
+
+Right now, AFT produces pretty good (weblint-able) HTML, XHTML, LaTeX,
+lout and RTF. It can, in fact, be coerced into producing all types of
+output (e.g. roll-your-own XML). All that needs to be done is to edit
+a rule file. You can even customize your own HTML rule files for
+specialized output.
+
+WWW: http://www.maplefish.com/todd/aft.html
+
+-- AlanE <ports@geeksrus.net>
