@@ -90,10 +90,10 @@ do-build:
 	@${CP} ${PORTSDIR}/math/lapack/pkg-descr ${WRKDIR}/lapack
 	@cd ${WRKDIR}/lapack ; ${MAKE} "FFLAGS=${FFLAGS}" FC="${FC}" build WRKDIRPREFIX=""
 .endif
-#	@(cd ${WRKSRC}; ${MAKE_ENV} ${MAKE} install arch=NON_THREADED)
-#	@(cd ${WRKSRC}; ${MAKE_ENV} ${MAKE} install arch=NON_THREADED_PIC)
-#	@(cd ${WRKSRC}; ${MAKE_ENV} ${MAKE} install arch=THREADED)
-#	@(cd ${WRKSRC}; ${MAKE_ENV} ${MAKE} install arch=THREADED_PIC)
+	@(cd ${WRKSRC}; ${MAKE_ENV} ${MAKE} install arch=NON_THREADED)
+	@(cd ${WRKSRC}; ${MAKE_ENV} ${MAKE} install arch=NON_THREADED_PIC)
+	@(cd ${WRKSRC}; ${MAKE_ENV} ${MAKE} install arch=THREADED)
+	@(cd ${WRKSRC}; ${MAKE_ENV} ${MAKE} install arch=THREADED_PIC)
 # make atlas enhanced lapack (static ver)
 	(cd ${WRKSRC}; ${MKDIR} tmp1 ; \
 		${CP} ${WRKDIR}/lapack/work/LAPACK/SRC/liblapack.a tmp1 ;\
