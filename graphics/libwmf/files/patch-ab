@@ -1,5 +1,5 @@
---- xgd-1.7.3/Makefile.in.orig	Thu Dec 16 13:31:47 1999
-+++ xgd-1.7.3/Makefile.in	Fri May 26 00:46:31 2000
+--- xgd-1.7.3/Makefile.in.orig	Fri Dec 17 00:31:47 1999
++++ xgd-1.7.3/Makefile.in	Tue May 30 19:20:35 2000
 @@ -29,14 +29,14 @@
  
  #If you don't have FreeType and/or Xpm installed, including the
@@ -17,7 +17,16 @@
  
  #If you do have FreeType and/or Xpm fully installed, uncomment a 
  #variation of this and comment out the line above. Note that
-@@ -80,26 +80,18 @@
+@@ -59,7 +59,7 @@
+ INSTALL_LIB=@libdir@
+ 
+ #Location where .h files should be installed by "make install".
+-INSTALL_INCLUDE=@includedir@
++INSTALL_INCLUDE=@includedir@/xgd
+ 
+ #Location where useful non-test programs should be installed by "make install".
+ INSTALL_BIN=@bindir@
+@@ -80,18 +80,18 @@
  BIN_PROGRAMS=pngtogd pngtogd2 gdtopng gd2topng gd2copypal gdparttopng webpng
  TEST_PROGRAMS=gdtest gddemo gd2time gdtestttf
  
@@ -34,28 +43,20 @@
 -	$(INSTALL) gdparttopng $(INSTALL_BIN)/gdparttopng
 -	$(INSTALL) webpng $(INSTALL_BIN)/webpng
 -	$(INSTALL) bdftogd $(INSTALL_BIN)/bdftogd
--	$(INSTALL_DATA) gd.h $(INSTALL_INCLUDE)/gd.h
--	$(INSTALL_DATA) gdcache.h $(INSTALL_INCLUDE)/gdcache.h
--	$(INSTALL_DATA) gd_io.h $(INSTALL_INCLUDE)/gd_io.h
--	$(INSTALL_DATA) gdfontg.h $(INSTALL_INCLUDE)/gdfontg.h
--	$(INSTALL_DATA) gdfontl.h $(INSTALL_INCLUDE)/gdfontl.h
--	$(INSTALL_DATA) gdfontmb.h $(INSTALL_INCLUDE)/gdfontmb.h
--	$(INSTALL_DATA) gdfonts.h $(INSTALL_INCLUDE)/gdfonts.h
--	$(INSTALL_DATA) gdfontt.h $(INSTALL_INCLUDE)/gdfontt.h
 +.c.so:
-+	$(CC) -fpic -DPIC $(CFLAGS) -c $(.IMPSRC) -o $(.TARGET)
++	$(CC) $(CFLAGS) -fPIC -DPIC -o $@ -c $<
 +
-+all: libxgd.a libxgd.so.0
++all: libxgd.a libxgd.so.1
 +
-+install: libxgd.a libxgd.so.0
++install: libxgd.a libxgd.so.1
 +	$(INSTALL_DATA) libxgd.a $(INSTALL_LIB)/libxgd.a
-+	$(INSTALL_DATA) libxgd.so.0 $(INSTALL_LIB)/libxgd.so.0
-+	ln -sf libxgd.so.0 $(INSTALL_LIB)/libxgd.so
-+	$(INSTALL_DATA) gd.h $(INSTALL_INCLUDE)/xgd.h
- 
- gddemo: gddemo.o libxgd.a
- 	$(CC) gddemo.o -o gddemo	$(LIBDIRS) $(LIBS)
-@@ -134,16 +126,19 @@
++	$(INSTALL_DATA) libxgd.so.1 $(INSTALL_LIB)/libxgd.so.1
++	ln -sf libxgd.so.1 $(INSTALL_LIB)/libxgd.so
++	mkdir -p $(INSTALL_INCLUDE)
+ 	$(INSTALL_DATA) gd.h $(INSTALL_INCLUDE)/gd.h
+ 	$(INSTALL_DATA) gdcache.h $(INSTALL_INCLUDE)/gdcache.h
+ 	$(INSTALL_DATA) gd_io.h $(INSTALL_INCLUDE)/gd_io.h
+@@ -134,16 +134,19 @@
  gdtestttf: gdtestttf.o libxgd.a
  	$(CC) gdtestttf.o -o gdtestttf	$(LIBDIRS) $(LIBS)
  
@@ -76,9 +77,9 @@
 +	$(AR) rc libxgd.a $(OBJS)
  	-ranlib libxgd.a
 +
-+libxgd.so.0:	$(INCS) $(OBJS:S/o$/so/g)
-+	$(CC) -shared -Wl,-x -Wl,-assert -Wl,pure-text -Wl,-soname,$@ -o $@ $(OBJS:S/o$/so/g) $(LIBDIRS) $(LIBS)
-+	ln -sf libxgd.so.0 libxgd.so
++libxgd.so.1:	$(INCS) $(OBJS:.o=.so)
++	$(CC) -shared -Wl,-soname,$@ -o $@ $(OBJS:.o=.so) $(LIBDIRS) $(LIBS)
++	ln -sf libxgd.so.1 libxgd.so
  
  clean:
  	rm -f *.o *.a ${PROGRAMS}

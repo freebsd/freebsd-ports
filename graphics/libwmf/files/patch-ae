@@ -1,0 +1,14 @@
+--- xgd-1.7.3/gdcache.h.orig	Thu Oct 14 06:20:11 1999
++++ xgd-1.7.3/gdcache.h	Tue May 30 19:59:48 2000
+@@ -40,7 +40,11 @@
+ /* header                                                */
+ /*********************************************************/
+ 
++#ifdef __STDC__
++#include <stdlib.h>
++#else
+ #include <malloc.h>
++#endif
+ #ifndef NULL
+ #define NULL (void *)0
+ #endif
