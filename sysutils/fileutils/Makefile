@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=   ${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	fileutils
 
-MAINTAINER=	clefevre@citeweb.net
+MAINTAINER=	clefevre@redirect.to
 
 #
 # Global variables
