@@ -1,54 +1,101 @@
---- Makefile	Thu Jul  2 17:27:53 1998
-+++ /home/andy/tmp/wrk/Makefile	Thu Jul 30 11:11:08 1998
-@@ -1,31 +1,35 @@
+--- Makefile	Wed Dec  9 23:31:06 1998
++++ /home/andy/tmp/wrk/Makefile	Tue Mar 16 17:13:19 1999
+@@ -1,36 +1,49 @@
+-#-------------------------------------------------------------------------------
+ #
+-# Where to install ezfm files
++# X11 base directory
 +#
-+# Prefix definition
++X11BASE?=/usr/X11R6
++
++#
++# Local packages directory
+ #
+-DEST_DIR=/usr/local
++LOCALBASE?=/usr/local
++
+ #
++# Installation prefix
 +#
 +PREFIX?=/usr/X11R6
- #-------------------------------------------------------------------------------
++
++#-------------------------------------------------------------------------------
++#
++# Where to install ezfm files
  #
- # Where to install the default magic file.
- #
--EZFM_MAGIC=/usr/local/lib/ezfm/ezfmMagic
--EZFM_EXTENSION=/usr/local/lib/ezfm/ezfmExtension
-+EZFM_MAGIC=${PREFIX}/share/ezfm/ezfmMagic
-+EZFM_EXTENSION=${PREFIX}/share/ezfm/ezfmExtension
+-EZFM_MAGIC=$(DEST_DIR)/lib/ezfm/ezfmMagic
+-EZFM_EXTENSION=$(DEST_DIR)/lib/ezfm/ezfmExtension
++EZFM_MAGIC=$(PREFIX)/share/ezfm/ezfmMagic
++EZFM_EXTENSION=$(PREFIX)/share/ezfm/ezfmExtension
  #
  # Where to install default initialization file
  # this file is consulted if ~/.ezfmrc $EZFMRC
  # are not found.
  #
--EZFM_RC=/usr/local/lib/ezfm/ezfmrc
-+EZFM_RC=${PREFIX}/share/ezfm/ezfmrc
+-EZFM_RC=$(DEST_DIR)/lib/ezfm/ezfmrc
++EZFM_RC=$(PREFIX)/share/ezfm/ezfmrc
  
  #
  # Where to install the icons
  #
--EZFM_ICONS=/usr/local/lib/ezfm/ezfmIcons
-+EZFM_ICONS=${PREFIX}/share/ezfm/ezfmIcons
+-EZFM_ICONS=$(DEST_DIR)/lib/ezfm/ezfmIcons
++EZFM_ICONS=$(PREFIX)/share/ezfm/ezfmIcons
  #
  # Where to install the binary
  #
--BIN=/usr/local/bin
-+BIN=${PREFIX}/bin
+-BIN=$(DEST_DIR)/bin
++BIN=$(PREFIX)/bin
  #
  #----------------------------------------------------------------------------------
  #
--CC= gcc  -O -DLINUX
-+CC+= -I${PREFIX}/include
- #
- #----------------------------------------------------------------------------------
--LIBS = libfile.a  -lEZ  ../jpeg/libjpeg.a -L/usr/X11R6/lib -lX11 -lXext  -lm  -lc
-+LIBS = libfile.a  -lEZ -ljpeg -L/usr/local/lib -L${X11BASE}/lib -lX11 -lXext -lm  -lc
+-CC= gcc  -O2 -DLINUX -I../include
++CC?= cc
++CFLAGS+= -I$(LOCALBASE)/include -I$(X11BASE)/include
  
+ #
+ #----------------------------------------------------------------------------------
+-LIBS = libfile.a -L../EZWGL/lib -lEZ -L/usr/X11R6/lib -lX11 -lXext  -lm  -lc
+-STATICLIBS = libfile.a /usr/local/lib/libEZ.a -L/usr/X11R6/lib -lX11 -lXext  -lm  -lc
++LIBS = libfile.a -lEZ -ljpeg -L$(LOCALBASE)/lib -L$(X11BASE)/lib -lX11 -lXext  -lm  -lc
++STATICLIBS = libfile.a $(LOCALBASE)/lib/libEZ.a -L$(X11BASE)/lib -lX11 -lXext  -lm  -lc
  
  SRC= action.c folder.c atoms.c clientMessage.c main.c icons.c items.c finfo.c \
-@@ -54,7 +58,7 @@
+      signal.c info.c infoBtn.c printer.c misc.c mbtnFile.c mbtnView.c mbtnHelp.c popup.c\
+@@ -45,10 +58,10 @@
+ all: ezfm  ezfmMagic
+ 
+ ezfm: libfile.a $(OBJECTS)
+-	$(CC) $(CFLAG)  -o ezfm $(OBJECTS) $(LIBS) $(JPEG_LIB)
++	$(CC) $(CFLAGS)  -o ezfm $(OBJECTS) $(LIBS) $(JPEG_LIB)
+ 
+ ezfm-static: libfile.a $(OBJECTS)
+-	$(CC) $(CFLAG)  -o ezfm $(OBJECTS) $(STATICLIBS) $(JPEG_LIB)
++	$(CC) $(CFLAGS)  -o ezfm $(OBJECTS) $(STATICLIBS) $(JPEG_LIB)
+ 
+ 
+ install: ezfm ezfmMagic ezfmExtension ezfmrc ezfmIcons
+@@ -62,7 +75,7 @@
  	cp ezfm $(BIN)
  
  libfile.a:
 -	(cd libfile; make libfile.a CC="gcc -O"; mv libfile.a ../ )
 +	(cd libfile; make libfile.a; mv libfile.a ../ )
+ 	- ranlib libfile.a
  
  ezfmMagic:
- 	(cd libfile/Magdir; make all)
+@@ -79,13 +92,13 @@
+ 	$(RM)  $(OBJECTS) ezfm
+  
+ .c.o:
+-	$(CC) $(CFLAG) -c $<
++	$(CC) $(CFLAGS) -c $<
+ 
+ .o:
+ 	$(CC) $<  -o $@  $(LIBS) $(JPEG_LIB)
+ 
+ .c:
+-	$(CC) $(CFLAG)  $< -o $@  $(LIBS) $(JPEG_LIB)
++	$(CC) $(CFLAGS)  $< -o $@  $(LIBS) $(JPEG_LIB)
+ 
+ #
+ #  That's all folks,

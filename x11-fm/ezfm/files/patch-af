@@ -1,15 +1,15 @@
---- ezfmrc.orig	Tue Jun 30 10:59:34 1998
-+++ ezfmrc	Sun Aug  9 16:53:48 1998
-@@ -5,9 +5,9 @@
- # ezfm needs the following two files to start. 
+--- ezfmrc	Wed Dec  9 12:05:32 1998
++++ /home/andy/tmp/wrk/ezfmrc	Tue Mar 16 17:18:22 1999
+@@ -2,9 +2,9 @@
+ # Initialization file for ezfm. Path should be ~/.ezfmrc
  #
  Section  "Files"
--   Magicfile     ezfmMagic:~/.ezfmMagic:/etc/ezfmMagic:/usr/lib/ezfm/ezfmMagic:/usr/local/lib/ezfm/ezfmMagic
+-   Magicfile     ezfmMagic:~/.ezfmMagic:/etc/ezfmMagic:/usr/local/lib/ezfm/ezfmMagic
 -   IconPath      ezfmIcons:~/.ezfmIcons:/usr/lib/ezfm/ezfmIcons:/usr/local/lib/ezfm/ezfmIcons
 -   ExtensionFile ezfmExtension:~/.ezfmExtension
 +   Magicfile     ezfmMagic:~/.ezfmMagic:/usr/X11R6/share/ezfm/ezfmMagic
 +   IconPath      ezfmIcons:~/.ezfmIcons:/usr/X11R6/share/ezfm/ezfmIcons
 +   ExtensionFile ezfmExtension:~/.ezfmExtension:/usr/X11R6/share/ezfm/ezfmExtension
  EndSection
- 
- # list all removable devices here. The format is
+ #
+ # Note: the extension file above is used to supress magic check. You can
