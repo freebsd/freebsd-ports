@@ -18,6 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 LIB_DEPENDS=	usb-0.1.5:${PORTSDIR}/devel/libusb \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -42,7 +43,7 @@ pre-everything::
 .endif
 
 post-patch:
-	@${PERL} -pi -e 's| -I/usr/local/include||g ; \
+	@${REINPLACE_CMD} -e 's| -I/usr/local/include||g ; \
 		 s|gphoto2 2.0.1|gphoto2 2.0|g' ${WRKSRC}/configure
 
 .include "Makefile.man"

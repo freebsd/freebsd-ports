@@ -16,11 +16,12 @@ DISTNAME=	gSculpt-${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/gSculpt-${PORTVERSION}
+USE_REINPLACE=	yes
 USE_GTK=	yes
 USE_GMAKE=	yes
 
 post-patch:
-	@${PERL} -pi -e "s,-O3 -Wall -Werror,${CXXFLAGS},g ; \
+	@${REINPLACE_CMD} -e "s,-O3 -Wall -Werror,${CXXFLAGS},g ; \
 		s,gtk-config,${GTK_CONFIG},g ; \
 		s,/usr/include/glib.h,${LOCALBASE}/include/glib12/glib.h,g ; \
 		s,/usr/include/gtk/,${X11BASE}/include/gtk12/gtk/,g ; \

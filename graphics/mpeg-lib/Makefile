@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.bic.mni.mcgill.ca/pub/mpeg/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	OPTIMIZE="${CFLAGS}"
@@ -20,6 +21,6 @@ CONFIGURE_ENV=	OPTIMIZE="${CFLAGS}"
 post-patch:
 	@(cd ${WRKSRC} ; \
 		${GREP} -r -l "<malloc.h>" * | \
-		xargs ${PERL} -pi -e "s/<malloc.h>/<stdlib.h>/")
+		${XARGS} ${REINPLACE_CMD} -e "s/<malloc.h>/<stdlib.h>/")
 
 .include <bsd.port.mk>

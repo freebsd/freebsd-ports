@@ -24,6 +24,7 @@ LIB_DEPENDS=	AfterBase.0:${PORTSDIR}/devel/libafterbase \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		freetype.9:${PORTSDIR}/print/freetype2
 
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
@@ -52,8 +53,8 @@ post-extract:
 	@${LN} -sf ${WRKSRC} ${WRKDIR}/libAfterImage
 
 post-patch:
-	@${PERL} -pi -e 's|-lgif|-lungif|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name '*.[ch]' | xargs ${PERL} -pi -e \
+	@${REINPLACE_CMD} -e 's|-lgif|-lungif|g' ${WRKSRC}/configure
+	@${FIND} ${WRKSRC} -name '*.[ch]' | ${XARGS} ${REINPLACE_CMD} -e \
 		's|<malloc.h>|<stdlib.h>|g'
 
 .include <bsd.port.post.mk>

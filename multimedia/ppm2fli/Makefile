@@ -12,10 +12,12 @@ MASTER_SITES=	http://vento.pi.tu-berlin.de/ppm2fli/
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
+
 MAN1=	ppm2fli.1 unflick.1
 
 pre-patch:
-	@${PERL} -pi -e 's|^C|#C|g ; \
+	@${REINPLACE_CMD} -e 's|^C|#C|g ; \
 		 s|gcc |\$${CC} |g' ${WRKSRC}/Makefile
 
 do-install:

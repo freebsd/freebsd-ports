@@ -19,6 +19,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		ungif.5:${PORTSDIR}/graphics/libungif
 
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_FREETYPE=	yes
 USE_LIBTOOL=	yes
@@ -34,6 +35,6 @@ CONFIGURE_ARGS=	--enable-mmx
 .endif
 
 post-configure:
-	@${PERL} -pi -e 's|\@localbase\@|${LOCALBASE}|g' ${WRKSRC}/imlib2-config
+	@${REINPLACE_CMD} -e 's|\@localbase\@|${LOCALBASE}|g' ${WRKSRC}/imlib2-config
 
 .include <bsd.port.post.mk>

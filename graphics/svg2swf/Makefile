@@ -17,6 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/${PACKAGE_DIR}/sax/saxexts.py:${PORTSDIR}/textproc/py-xml
 
+USE_REINPLACE=	yes
 USE_PYTHON=	yes
 NO_BUILD=	yes
 
@@ -33,7 +34,7 @@ do-extract:
 	@${CP} ${DISTDIR}/${DISTFILES} ${WRKSRC}
 
 post-patch:
-	@${PERL} -pi -e "s,/usr/bin/python,${PYTHON_CMD},g" ${WRKSRC}/svg2swf
+	@${REINPLACE_CMD} -e "s,/usr/bin/python,${PYTHON_CMD},g" ${WRKSRC}/svg2swf
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/svg2swf ${PREFIX}/bin

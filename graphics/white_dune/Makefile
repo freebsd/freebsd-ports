@@ -17,6 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 LIB_DEPENDS=	png:${PORTSDIR}/graphics/png \
 		jpeg:${PORTSDIR}/graphics/jpeg
 
+USE_REINPLACE=	yes
 USE_BISON=	yes
 USE_MESA=	yes
 USE_MOTIF=	yes
@@ -27,9 +28,9 @@ MAN1=	dune.1
 
 post-patch:
 	@${GREP} -lR "malloc.h" ${WRKSRC} | ${XARGS} \
-		${PERL} -pi -e "s/malloc\.h/stdlib.h/g"
-	@${PERL} -pi -e "s/values\.h/limits.h/g" ${WRKSRC}/stdafx.h
-	@${PERL} -pi -e "s/alloca\.h/stdlib.h/g" ${WRKSRC}/NodeNurbsSurface.cpp
+		${REINPLACE_CMD} -e "s/malloc\.h/stdlib.h/g"
+	@${REINPLACE_CMD} -e "s/values\.h/limits.h/g" ${WRKSRC}/stdafx.h
+	@${REINPLACE_CMD} -e "s/alloca\.h/stdlib.h/g" ${WRKSRC}/NodeNurbsSurface.cpp
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dune ${PREFIX}/bin

@@ -15,6 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
 
+USE_REINPLACE=	yes
 USE_SUBMAKE=	yes
 USE_MESA=	yes
 WANT_GTK=	yes
@@ -48,7 +49,7 @@ post-extract:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/genman3list.sh
 
 post-patch:
-	@${PERL} -pi -e "s,%%X11BASE%%,${X11BASE},g ; \
+	@${REINPLACE_CMD} -e "s,%%X11BASE%%,${X11BASE},g ; \
 		s,%%CC%%,${CC},g ; \
 		s,%%CXX%%,${CXX},g ; \
 		s,%%CFLAGS%%,${CFLAGS},g ; \
@@ -56,7 +57,7 @@ post-patch:
 		s,%%PTHREAD_CFLAGS%%,${PTHREAD_CFLAGS},g ; \
 		s,%%PTHREAD_LIBS%%,${PTHREAD_LIBS},g ; \
 		s,gtk-config,${GTK_CONFIG},g" ${WRKSRC}/setup
-	@${PERL} -pi -e "s,gtk-config,${GTK_CONFIG},g" ${WRKSRC}/examples/misc/GTK/Makefile
+	@${REINPLACE_CMD} -e "s,gtk-config,${GTK_CONFIG},g" ${WRKSRC}/examples/misc/GTK/Makefile
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/*.* ${PREFIX}/lib

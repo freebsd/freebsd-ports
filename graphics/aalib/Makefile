@@ -16,6 +16,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
 MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-1.4.0
+USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 
@@ -53,10 +54,10 @@ post-extract:
 
 post-patch:
 	@${RM} -f ${WRKSRC}/config.cache
-	@${PERL} -pi -e 's|/usr/local|${LOCALBASE}|g; \
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g; \
 		s|MAKEINFO=makeinfo|MAKEINFO="makeinfo --no-split"|g' \
 		${WRKSRC}/configure
-	@find ${WRKSRC} \( -name '*.[ch]' \! -name acconfig.h \) \
-		| xargs ${PERL} -pi -e 's|<malloc.h>|<stdlib.h>|g'
+	@${FIND} ${WRKSRC} \( -name '*.[ch]' \! -name acconfig.h \) \
+		| ${XARGS} ${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|g'
 
 .include <bsd.port.mk>

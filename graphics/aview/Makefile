@@ -20,14 +20,15 @@ LIB_DEPENDS=	aa.1:${PORTSDIR}/graphics/aalib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-x=no
 
 MAN1=		asciiview.1 aview.1
 
 post-patch:
-	@${PERL} -pi -e 's|/bash|/sh|g' ${WRKSRC}/asciiview
-	@find ${WRKSRC} -name '*.[ch]' | xargs ${PERL} -pi -e \
+	@${REINPLACE_CMD} -e 's|/bash|/sh|g' ${WRKSRC}/asciiview
+	@${FIND} ${WRKSRC} -name '*.[ch]' | ${XARGS} ${REINPLACE_CMD} -e \
 		's|<malloc.h>|<stdlib.h>|g'
 
 .include <bsd.port.mk>

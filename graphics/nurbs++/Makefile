@@ -12,11 +12,12 @@ MASTER_SITES=	http://yukon.genie.uottawa.ca/~lavoie/software/nurbs/
 
 MAINTAINER= 	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 
 pre-patch:
-	@${PERL} -pi -e 's,<malloc.h>,<stdlib.h>,' \
+	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,' \
 		${WRKSRC}/nurbs/nurbs.cc ${WRKSRC}/nurbs/nurbsS.cc
 
 .include <bsd.port.mk>

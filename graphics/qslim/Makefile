@@ -18,6 +18,7 @@ LIB_DEPENDS=	xforms:${PORTSDIR}/x11-toolkits/xforms \
 		tiff:${PORTSDIR}/graphics/tiff \
 		png:${PORTSDIR}/graphics/png
 
+USE_REINPLACE=	yes
 USE_MESA=	yes
 USE_XLIB=	yes
 CONFIGURE_WRKSRC=	${WRKSRC}/mixkit/build
@@ -30,7 +31,7 @@ USE_GMAKE=	yes
 ALL_TARGET=	# empty
 
 post-patch:
-	@${PERL} -pi -e "s,\@XFORMS_LIBS\@,${X11BASE}/lib/libforms.a,g" ${CONFIGURE_WRKSRC}/mix-config.in
+	@${REINPLACE_CMD} -e "s,\@XFORMS_LIBS\@,${X11BASE}/lib/libforms.a,g" ${CONFIGURE_WRKSRC}/mix-config.in
 
 post-build:
 	@(cd ${BUILD_WRKSRC}/../../tools/qslim ; ${GMAKE} all)

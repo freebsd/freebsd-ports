@@ -18,10 +18,11 @@ MAINTAINER=	ports@FreeBSD.org
 LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
 RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray
 
+USE_REINPLACE=	yes
 USE_IMAKE=	yes
 USE_GMAKE=	yes
 
 post-patch:
-	${PERL} -pi -e "s|%%LOCALBASE%%|${LOCALBASE}|g;" ${WRKSRC}/src/xfpovray.h
+	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g;" ${WRKSRC}/src/xfpovray.h
 
 .include <bsd.port.mk>

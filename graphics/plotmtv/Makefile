@@ -16,12 +16,13 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 USE_IMAKE=	yes
 ALL_TARGET=	World
 MAN1=		plotmtv.1
 
 post-patch:
-	find ${WRKSRC} -name \*.c | xargs ${PERL} -pi.malloc.h -e 's/<malloc.h>/<stdlib.h>/'
+	@${FIND} ${WRKSRC} -name \*.c | ${XARGS} ${REINPLACE_CMD} -e 's/<malloc.h>/<stdlib.h>/'
 
 post-install:
 .if !defined(NOPORTDOCS)
