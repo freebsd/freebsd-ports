@@ -242,7 +242,12 @@ pre-install:
 		${ECHO_CMD} bin/${MOZILLA} >> ${PLIST} ; \
 	fi
 	if [ ! -L ${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ]; then \
-		${ECHO_CMD} lib/browser_plugins/libjavaplugin_oji.so >> ${PLIST} ; \
+		for jpi in ${JPI_LIST}; do \
+			if [ -f $${jpi} ]; then \
+				${ECHO_CMD} lib/browser_plugins/libjavaplugin_oji.so >> ${PLIST} ; \
+				break; \
+			fi; \
+		done; \
 		${ECHO_CMD} @dirrm lib/browser_plugins >> ${PLIST} ; \
 	fi
 	cd ${WRKSRC}/dist/bin && ${FIND} -s * -type f -o -type l | \
@@ -271,6 +276,7 @@ do-install:
 			if [ -f $${jpi} ]; then \
 				${LN} -sf $${jpi} \
 					${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ; \
+				break; \
 			fi; \
 		done; \
 	fi
