@@ -221,6 +221,7 @@
     SUBDIR += licq-console
     SUBDIR += licq-devel
     SUBDIR += licq-qt-gui
+    SUBDIR += linc
     SUBDIR += linpopup
     SUBDIR += lla
     SUBDIR += macipgw

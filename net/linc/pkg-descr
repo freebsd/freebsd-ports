@@ -1,0 +1,8 @@
+linc is a library that eases the task of writing networked servers & clients.
+It takes care of connection initiation and maintainance, and the details of
+various transports. It is used by the ORBit2 to handle message
+transmission/receipt.
+
+The connections can optionally be encrypted using OpenSSL.
+
+WWW: http://developer.gnome.org/projects/gap/

@@ -1,0 +1,23 @@
+bin/linc-config
+include/linc-1.0/linc/linc-config.h
+include/linc-1.0/linc/linc-connection.h
+include/linc-1.0/linc/linc-protocol.h
+include/linc-1.0/linc/linc-server.h
+include/linc-1.0/linc/linc-types.h
+include/linc-1.0/linc/linc.h
+lib/liblinc.a
+lib/liblinc.so
+lib/liblinc.so.1
+libdata/pkgconfig/linc.pc
+share/aclocal/linc.m4
+share/doc/linc/c4.html
+share/doc/linc/index.html
+share/doc/linc/index.sgml
+share/doc/linc/linc-linc-protocol.html
+share/doc/linc/linc-linc-types.html
+share/doc/linc/linc-linc.html
+share/doc/linc/linc-lincconnection.html
+share/doc/linc/linc-lincserver.html
+@dirrm share/doc/linc
+@dirrm include/linc-1.0/linc
+@dirrm include/linc-1.0
