@@ -1,0 +1,40 @@
+--- Makefile.orig	Fri Mar  2 02:45:41 2001
++++ Makefile	Sat Mar  3 02:17:12 2001
+@@ -3,7 +3,7 @@
+ # Well, the only configurable part is the following variable.
+ # Make sure the directory you specify exists.
+ 
+-PREFIX=/usr/local
++#PREFIX=/usr/local
+ 
+ # End of configurable part
+ 
+@@ -15,10 +15,10 @@
+ all: installwatch.so
+ 
+ installwatch.so: installwatch.o
+-	ld -shared -o installwatch.so installwatch.o -ldl
++	ld -shared -o installwatch.so installwatch.o
+ 
+ installwatch.o: installwatch.c localdecls.h
+-	gcc -Wall -c -DPIC -fPIC -D_REENTRANT -DVERSION=\"$(VERSION)\" installwatch.c
++	$(CC) -Wall -c $(CFLAGS) -DPIC -fPIC -D_REENTRANT -DVERSION=\"$(VERSION)\" installwatch.c
+ 
+ localdecls.h:
+ 	./create-localdecls
+@@ -28,8 +28,6 @@
+ 	
+ 	sed -e "s|#PREFIX#|$(PREFIX)|" < installwatch > $(BINDIR)/installwatch
+ 	chmod 755 $(BINDIR)/installwatch
+-	cp contrib/inst2rpm $(BINDIR)/inst2rpm
+-	chmod 755 $(BINDIR)/inst2rpm
+ 
+ uninstall:
+ 	rm $(LIBDIR)/installwatch.so
+@@ -43,7 +41,7 @@
+ 	tar -czvC .. -f ../installwatch-$(VERSION).tar.gz installwatch-$(VERSION)
+ 
+ test: install
+-	gcc -Wall -DVERSION=\"$(VERSION)\" -o test-installwatch test-installwatch.c -ldl
++	gcc -Wall -DVERSION=\"$(VERSION)\" -o test-installwatch test-installwatch.c
+ 	$(PREFIX)/bin/installwatch ./test-installwatch
