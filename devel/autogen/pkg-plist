@@ -10,7 +10,7 @@ lib/libguileopts.so
 lib/libguileopts.so.0
 lib/libopts.a
 lib/libopts.so
-lib/libopts.so.22
+lib/libopts.so.23
 share/aclocal/autoopts.m4
 %%DATADIR%%/aginfo.tpl
 %%DATADIR%%/aginfo3.tpl
@@ -23,7 +23,7 @@ share/aclocal/autoopts.m4
 %%DATADIR%%/fsm-trans.tpl
 %%DATADIR%%/fsm.tpl
 %%DATADIR%%/getopt.tpl
-%%DATADIR%%/libopts-22.2.13.tar.gz
+%%DATADIR%%/libopts-23.0.14.tar.gz
 %%DATADIR%%/optcode.tpl
 %%DATADIR%%/opthead.tpl
 %%DATADIR%%/options.tpl
