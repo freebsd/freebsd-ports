@@ -5,21 +5,29 @@
 # $FreeBSD$
 #
 
-MASTERDIR=	${.CURDIR}/../../lang/ruby-usersguide
-
+PORTNAME=	ruby-usersguide
+PORTVERSION=	980206
+CATEGORIES=	japanese lang ruby
 MASTER_SITES=	${MASTER_SITE_RUBY}
 MASTER_SITE_SUBDIR=	doc
-DISTNAME=	${SHORTNAME}-${VERSION}
-
-CATEGORIES=	japanese
+DISTNAME=	${SHORTNAME}-${PORTVERSION}
+DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-VERSION=	980206
+USE_RUBY=	yes
+RUBY_NO_BUILD_DEPENDS=	yes
+RUBY_NO_RUN_DEPENDS=	yes
 
-MD5_FILE=	${.CURDIR}/distinfo
-PKGDIR=		${.CURDIR}
+SHORTNAME=	${PORTNAME:S/usersguide/uguide/}
 
-LANGSUFFIX=	-jp
+WRKSRC=		${WRKDIR}/${SHORTNAME}
+NO_BUILD=	yes
+DOCDIR=		${RUBY_DOCDIR}/${PORTNAME}-jp
 
-.include "${MASTERDIR}/Makefile"
+do-install:
+	${MKDIR} ${DOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/* ${DOCDIR}
+	${LN} -fs uguide00.html ${DOCDIR}/index.html
+
+.include <bsd.port.mk>
