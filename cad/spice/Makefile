@@ -3,12 +3,12 @@
 # Date created:         26 Mar 96
 # Whom:                 Julian Jenkins <kaveman@magna.com.au>
 #
-# $Id$
+# $Id: Makefile,v 1.3 1996/05/27 03:11:48 asami Exp $
 #
 
 DISTNAME=       spice3f4
 PKGNAME=	spice-3f4
-CATEGORIES+=	cad
+CATEGORIES=	cad
 MASTER_SITES=	ftp://sunsite.unc.edu/pub/Linux/apps/circuits/
 
 #PATCH_SITES=	ftp://ic.eecs.berkeley.edu/pub/Spice3/3f4patches

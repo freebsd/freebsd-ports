@@ -3,11 +3,11 @@
 # Date created:		19 October 1994
 # Whom:			mr
 #
-# $Id: Makefile,v 1.13 1996/09/11 05:53:30 asami Exp $
+# $Id: Makefile,v 1.14 1996/09/21 09:53:07 asami Exp $
 #
 
 DISTNAME=	pcb-1.4.0
-CATEGORIES+=	cad
+CATEGORIES=	cad
 MASTER_SITES=	ftp://ftp.uni-ulm.de/pub/pcb/1.4/
 EXTRACT_SUFX=	.tar.gz
 

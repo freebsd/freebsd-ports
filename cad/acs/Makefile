@@ -3,12 +3,12 @@
 # Date created:		01 January 1995
 # Whom:			thomas@ghpc8.ihf.rwth-aachen.de
 #
-# $Id: Makefile,v 1.7 1996/04/18 08:47:07 tg Exp $
+# $Id: Makefile,v 1.8 1996/08/15 06:21:43 tg Exp $
 #
 
 DISTNAME=	acs021
 PKGNAME=	acs-0.21
-CATEGORIES+=	cad
+CATEGORIES=	cad
 MASTER_SITES=	ftp://mammoth.lle.rochester.edu/pub/local/acs/ \
 		ftp://cs.rit.edu/pub/acs/ \
 		ftp://ee.rochester.edu/pub/acs/
