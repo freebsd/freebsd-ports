@@ -1,0 +1,12 @@
+
+$FreeBSD$
+
+--- src/Makefile.am.orig	Thu Jul 25 16:35:09 2002
++++ src/Makefile.am	Thu Jul 25 16:35:18 2002
+@@ -30,6 +30,4 @@
+ 
+ # debugging
+ #CFLAGS = -g -Wall
+-CFLAGS = -Wall -O2
+-CPPFLAGS =
+  

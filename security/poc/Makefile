@@ -13,12 +13,12 @@ MASTER_SITE_SUBDIR=poc
 
 MAINTAINER=	king@v2project.com
 
-LIB_DEPENDS=	towitoko.2:${PORTSDIR}/devel/towitoko
+LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
+		towitoko.2:${PORTSDIR}/devel/towitoko
 
-USE_GMAKE=	YES
-GNU_CONFIGURE=	YES
-
-CONFIGURE_ENV+=CPPFLAGS=-I${LOCALBASE}/include CFLAGS=-I${LOCALBASE}/include \
-		LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt"
+USE_AUTOMAKE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		LIBS="-lgnugetopt"
 
 .include <bsd.port.mk>
