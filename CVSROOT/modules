@@ -604,7 +604,6 @@ bmf		ports/mail/bmf
 bmon		ports/net/bmon
 bmsync		ports/www/bmsync
 bnc		ports/irc/bnc
-bnetd		ports/games/bnetd
 bnf		ports/devel/bnf
 boa		ports/www/boa
 boaconstructor	ports/devel/boaconstructor
