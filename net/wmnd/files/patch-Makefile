@@ -1,0 +1,36 @@
+--- Makefile.orig	Tue May 22 07:30:58 2001
++++ Makefile	Thu Nov 29 16:11:31 2001
+@@ -6,7 +6,6 @@
+ VERSION = `sed -n "s/\#define WMND_VERSION \"\([[0-9]]*\).\([[0-9]]*\).\([[0-9]]*\)\"/\1\\.\2\\.\\3/p" src/wmnd.h`
+ PRE =
+ 
+-prefix  = /usr/local/
+ bindir  = $(prefix)/bin/
+ mandir  = $(prefix)/man/
+ datadir = $(prefix)/share/
+@@ -14,13 +13,13 @@
+ 
+ # X11 headers location may vary on some systems
+ # XFree (linux etc):
+-X11CFLAGS = -I/usr/X11R6/include
+-X11LDFLAGS = -L/usr/X11R6/lib -lXpm -lXext -lX11
++X11CFLAGS = -I${X11BASE}/include
++X11LDFLAGS = -L${X11BASE}/lib -lXpm -lXext -lX11
+ # OpenWindows (solaris, sco unixware etc):
+ #   X11CFLAGS = -I/usr/openwin/include
+ #   X11LDFLAGS = -L/usr/openwin/lib -lXpm -lXext -lX11 -lsocket -lnsl
+ # Solaris specific (for use with kstat)
+-LDFLAGS = -lkstat -lsocket -lnsl
++# LDFLAGS = -lkstat -lsocket -lnsl
+ 
+ ##################
+ # compiler flags #
+@@ -32,7 +31,7 @@
+ VPATH = $(SRC):$(MAN)
+ 
+ # Optimizing
+-CFLAGS = -Wall -O3 -fomit-frame-pointer -fstrict-aliasing -pipe
++# CFLAGS = -Wall -O -fomit-frame-pointer -fstrict-aliasing -pipe
+ 
+ # Profiling
+ # CFLAGS = -Wall -ansi -pg -g -O3 -pipe -D_GNU_SOURCE -DPRO

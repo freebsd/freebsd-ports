@@ -1,0 +1,8 @@
+bin/wmnd
+%%PORTDOCS%%share/doc/wmnd/CHANGELOGS
+%%PORTDOCS%%share/doc/wmnd/DISPLAY
+%%PORTDOCS%%share/doc/wmnd/HINTS
+%%PORTDOCS%%share/doc/wmnd/README
+share/examples/wmnd/wmndrc
+@dirrm share/examples/wmnd
+%%PORTDOCS%%@dirrm share/doc/wmnd
