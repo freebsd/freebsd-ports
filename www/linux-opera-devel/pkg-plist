@@ -19,7 +19,6 @@ share/linux-opera/help/fonts.html
 share/linux-opera/help/glossary.html
 share/linux-opera/help/help.css
 share/linux-opera/help/history.html
-share/linux-opera/help/hotlist.html
 share/linux-opera/help/index.html
 share/linux-opera/help/input.html
 share/linux-opera/help/keyboard.html
@@ -47,6 +46,7 @@ share/linux-opera/help/toc.html
 share/linux-opera/help/toolbars.html
 share/linux-opera/help/windows.html
 share/linux-opera/hhd.ssr
+share/linux-opera/html40_entities.dtd
 share/linux-opera/images/background.gif
 share/linux-opera/images/blank.gif
 share/linux-opera/images/drive.gif
@@ -83,7 +83,6 @@ share/linux-opera/locale/en/search.ini
 share/linux-opera/locale/english.lng
 share/linux-opera/opera6.adr
 share/linux-opera/plugins/libnpp.so
-share/linux-opera/plugins/operamotifwrapper-2
 share/linux-opera/plugins/operamotifwrapper-3
 share/linux-opera/plugins/operaplugincleaner
 share/linux-opera/search.ini
@@ -116,7 +115,6 @@ share/linux-opera/styles/user/showstructure.css
 share/linux-opera/styles/user/textonly.css
 share/linux-opera/styles/user/userstyle.ini
 share/linux-opera/styles/wml.css
-share/pixmaps/linux-opera.xpm
 @dirrm share/linux-opera/styles/user
 @dirrm share/linux-opera/styles
 @dirrm share/linux-opera/skin
