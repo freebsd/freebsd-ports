@@ -1,0 +1,11 @@
+@comment $FreeBSD$
+bin/galculator
+share/applications/galculator.desktop
+share/galculator/glade/about.glade
+share/galculator/glade/color.glade
+share/galculator/glade/font.glade
+share/galculator/glade/main.glade
+share/galculator/glade/prefs.glade
+share/locale/de/LC_MESSAGES/galculator.mo
+@dirrm share/galculator/glade
+@dirrm share/galculator

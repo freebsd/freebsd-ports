@@ -1,0 +1,5 @@
+galculator is a GTK2-based scientific calculator with ordinary
+notation/reverse polish notation, different number bases (DEC, HEX,
+OCT, BIN) and different units of angular measure (DEG, RAD, GRAD).
+
+WWW: http://galculator.sourceforge.net/
