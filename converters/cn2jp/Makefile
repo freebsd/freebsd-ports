@@ -20,6 +20,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 PORTDOCS=	README
 TEST_PROGRAM=	big2gb/b2g big2jis/b2j gb2big/g2b gb2jis/g2j jis2big/j2b jis2gb/j2g
 
+CFLAGS+=	-fPIC
+
 do-install:
 .for test_program in ${TEST_PROGRAM}
 	@${INSTALL_PROGRAM} ${WRKSRC}/${test_program} ${PREFIX}/bin
