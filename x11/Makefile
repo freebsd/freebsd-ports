@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.107 1996/11/15 04:49:18 asami Exp $
+# $Id: Makefile,v 1.108 1996/11/15 19:30:58 erich Exp $
 #
 
     SUBDIR += FWF
@@ -51,6 +51,7 @@
     SUBDIR += xkeycaps
     SUBDIR += xloadimage
     SUBDIR += xlockmore
+    SUBDIR += xmascot
     SUBDIR += xmold
     SUBDIR += xpostit
     SUBDIR += xscreensaver
