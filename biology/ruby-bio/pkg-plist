@@ -62,6 +62,8 @@ etc/bioinformatics/seqdatabase.ini.sample
 %%RUBY_SITELIBDIR%%/bio/db/kegg/microarray.rb
 %%RUBY_SITELIBDIR%%/bio/db/litdb.rb
 %%RUBY_SITELIBDIR%%/bio/db/medline.rb
+%%RUBY_SITELIBDIR%%/bio/db/nbrf.rb
+%%RUBY_SITELIBDIR%%/bio/db/pdb.rb
 %%RUBY_SITELIBDIR%%/bio/db/prosite.rb
 %%RUBY_SITELIBDIR%%/bio/db/transfac.rb
 %%RUBY_SITELIBDIR%%/bio/extend.rb
