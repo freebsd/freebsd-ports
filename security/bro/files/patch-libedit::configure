@@ -1,0 +1,19 @@
+--- libedit/configure.orig	Tue Oct 14 12:30:58 2003
++++ libedit/configure	Tue Oct 14 12:31:54 2003
+@@ -733,13 +733,13 @@
+   CFLAGS="$ac_save_CFLAGS"
+ elif test $ac_cv_prog_cc_g = yes; then
+   if test "$GCC" = yes; then
+-    CFLAGS="-g -O2"
++    CFLAGS=""
+   else
+-    CFLAGS="-g"
++    CFLAGS=""
+   fi
+ else
+   if test "$GCC" = yes; then
+-    CFLAGS="-O2"
++    CFLAGS=""
+   else
+     CFLAGS=
+   fi
