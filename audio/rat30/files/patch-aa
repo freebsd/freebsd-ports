@@ -1,69 +1,62 @@
-*** src/auddev_freebsd.c.orig	Wed Mar 24 16:22:19 1999
---- src/auddev_freebsd.c	Sat Sep 16 00:03:22 2000
-***************
-*** 89,102 ****
-      }
-      if ((ioctl(audio_fd, SNDCTL_DSP_SETFMT, &mode) == -1) || (mode != AFMT_S16_LE)) { 
-        printf("Device doesn't support 16bit linear format!\n");
-        return -1;
-      }
-      if ((ioctl(audio_fd, SNDCTL_DSP_STEREO, &stereo) == -1) || (stereo != 0)) {
-        printf("Device doesn't support mono!\n");
-        return -1;
-      }
-!     if ((ioctl(audio_fd, SNDCTL_DSP_SPEED, &speed) == -1) || (speed != 8000)) {
-        printf("Device doesn't support 8kHz sampling!\n");
-        return -1;
-      }
-  
---- 89,106 ----
-      }
-      if ((ioctl(audio_fd, SNDCTL_DSP_SETFMT, &mode) == -1) || (mode != AFMT_S16_LE)) { 
-        printf("Device doesn't support 16bit linear format!\n");
-+       close(audio_fd);
-        return -1;
-      }
-      if ((ioctl(audio_fd, SNDCTL_DSP_STEREO, &stereo) == -1) || (stereo != 0)) {
-        printf("Device doesn't support mono!\n");
-+       close(audio_fd);
-        return -1;
-      }
-! //    if ((ioctl(audio_fd, SNDCTL_DSP_SPEED, &speed) == -1) || (speed != 8000)) {
-!     if (ioctl(audio_fd, SNDCTL_DSP_SPEED, &speed) == -1){
-        printf("Device doesn't support 8kHz sampling!\n");
-+       close(audio_fd);
-        return -1;
-      }
-  
-***************
-*** 158,163 ****
---- 162,168 ----
-     * be open to do this, so if we're passed -1 as a file-descriptor we open
-     * the device, do the ioctl, and then close it again...
-     */
-+ /*
-          snd_chan_param scp;
-          if (audio_fd == -1) {
-                  audio_fd = audio_open_rw(O_RDONLY);
-***************
-*** 174,179 ****
---- 179,197 ----
-          if (ioctl(audio_fd, AIOSFMT, 0) == -1) {
-                  return FALSE;
-          }
-+ */
-+ 	int caps;
-+ 	int was_defined = 1;
-+         if (audio_fd == -1) {
-+                 audio_fd = audio_open_rw(O_RDWR);
-+ 		was_defined = 0;
-+ 	}
-+         ioctl(audio_fd, SNDCTL_DSP_GETCAPS, &caps);
-+         if ((caps & DSP_CAP_DUPLEX) == 0) {
-+ 		if( was_defined == 0 ) audio_close(audio_fd);
-+                 return FALSE;
-+         }
-+ 	if( was_defined == 0 ) audio_close(audio_fd);
-          return TRUE;
-  }
-  
+--- ./src/auddev_freebsd.c.orig	Sun Oct 20 14:05:07 2002
++++ ./src/auddev_freebsd.c	Sun Oct 20 14:05:16 2002
+@@ -45,7 +45,7 @@
+ #include "bat_include.h"
+ #ifdef FreeBSD
+ 
+-#include <machine/soundcard.h>
++#include <sys/soundcard.h>
+ 
+ int          can_read  = FALSE;
+ int          can_write = FALSE;
+@@ -204,18 +204,10 @@
+   if (audio_fd <= 0) {
+     return;
+   }
+-  switch (iport) {
+-  case AUDIO_MICROPHONE : if (ioctl(audio_fd, MIXER_WRITE(SOUND_MIXER_MIC), &volume) == -1) {
+-                            perror("Setting gain");
+-                          }
+-			  return;
+-  case AUDIO_LINE_IN    : if (ioctl(audio_fd, MIXER_WRITE(SOUND_MIXER_LINE), &volume) == -1) {
+-                            perror("Setting gain");
+-                          }
+-			  return;
++  if (ioctl(audio_fd, SOUND_MIXER_WRITE_RECLEV, &volume) == -1) {
++         perror("Setting gain");
+   }
+-  printf("ERROR: Unknown iport in audio_set_gain!\n");
+-  abort();
++  return;
+ }
+ 
+ int
+@@ -226,17 +218,8 @@
+   if (audio_fd <= 0) {
+     return (0);
+   }
+-  switch (iport) {
+-  case AUDIO_MICROPHONE : if (ioctl(audio_fd, MIXER_READ(SOUND_MIXER_MIC), &volume) == -1) {
+-                            perror("Getting gain");
+-                          }
+-			  break;
+-  case AUDIO_LINE_IN    : if (ioctl(audio_fd, MIXER_READ(SOUND_MIXER_LINE), &volume) == -1) {
+-                            perror("Getting gain");
+-                          }
+-			  break;
+-  default               : printf("ERROR: Unknown iport in audio_set_gain!\n");
+-                          abort();
++  if (ioctl(audio_fd, SOUND_MIXER_READ_RECLEV, &volume) == -1) {
++         perror("Setting gain");
+   }
+   return device_to_bat(volume & 0xff);
+ }
+@@ -263,7 +246,7 @@
+   if (audio_fd <= 0) {
+     return (0);
+   }
+-  if (ioctl(audio_fd, MIXER_READ(SOUND_MIXER_VOLUME), &volume) == -1) {
++  if (ioctl(audio_fd, MIXER_READ(SOUND_MIXER_PCM), &volume) == -1) {
+     perror("Getting volume");
+   }
+   return device_to_bat(volume & 0x000000ff); /* Extract left channel volume */

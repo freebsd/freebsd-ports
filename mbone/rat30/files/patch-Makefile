@@ -1,5 +1,16 @@
---- Makefile.orig	Tue Sep 14 19:39:00 1999
-+++ Makefile	Thu May 10 11:07:38 2001
+--- Makefile.orig	Tue Sep 14 03:39:00 1999
++++ Makefile	Sun Oct 20 14:06:27 2002
+@@ -10,8 +10,8 @@
+ # -DDEBUG_RTP -DREPEAT
+ 
+ DEFS += -D$(OSTYPE) -D$(OSTYPE)_$(OSMVER) 
+-CC     = gcc
+-CFLAGS = -Wall -Werror -Wno-implicit-int $(INCS) $(DEFS) -g -O -fsigned-char
++CC     ?= cc
++CFLAGS += -Wall -Wno-implicit-int $(INCS) $(DEFS) -g -fsigned-char
+ LDFLAGS= 
+ LDLIBS=  $(LDLIBS) -lm
+ RANLIB = ranlib
 @@ -82,6 +82,7 @@
  $(BINDIR)/rat-$(OSTYPE)-$(OSVERS): $(OBJS) $(GSMOBJS) $(CRYPTOBJS) $(RATOBJS)
  	rm -f $(BINDIR)/rat-$(OSTYPE)-$(OSVERS)

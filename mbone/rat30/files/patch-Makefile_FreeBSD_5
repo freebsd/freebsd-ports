@@ -1,0 +1,9 @@
+--- Makefile_FreeBSD_5.orig	Sun Oct 20 14:03:11 2002
++++ Makefile_FreeBSD_5	Sun Oct 20 14:03:06 2002
+@@ -0,0 +1,6 @@
++TCL_INC = /usr/local/include/tcl8.2
++TK_INC  = /usr/local/include/tk8.2
++INCS   = -I/usr/X11R6/include \
++         -I$(TCL_INC)/generic -I$(TK_INC)/generic
++LDLIBS = -L/usr/local/lib \
++         -L/usr/X11R6/lib -ltk82 -ltcl82 -lXext -lX11 -lm 
