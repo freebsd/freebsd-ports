@@ -115,19 +115,18 @@ info/gtk.info
 lib/libgdk.a
 lib/libgdk.la
 lib/libgdk.so
-lib/libgdk.so.1.4
+lib/libgdk.so.1.5
 lib/libglib.a
 lib/libglib.la
 lib/libglib.so
-lib/libglib.so.1.4
+lib/libglib.so.1.5
 lib/libgtk.a
 lib/libgtk.la
 lib/libgtk.so
-lib/libgtk.so.1.4
+lib/libgtk.so.1.5
 man/man1/gtk-config.1.gz
+share/aclocal/gtk.m4
 @unexec /sbin/ldconfig -R
 @exec /sbin/ldconfig -m %D/lib
 @dirrm include/gdk
 @dirrm include/gtk
-@cwd /usr/local
-share/aclocal/gtk.m4
