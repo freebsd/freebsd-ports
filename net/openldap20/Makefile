@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openldap
-PORTVERSION=	1.2.9
+PORTVERSION=	1.2.10
 CATEGORIES=	net databases
 MASTER_SITES=	ftp://ftp.OpenLDAP.org/pub/OpenLDAP/openldap-release/ \
 		ftp://ftp.net.lut.ac.uk/openldap/openldap-release/ \
@@ -25,10 +25,11 @@ MAINTAINER=	ulmo@earthling.net
 BUILD_DEPENDS=	${LOCALBASE}/lib/libdb2.a:${PORTSDIR}/databases/db/
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/db2 -D_THREAD_SAFE" \
 		LDFLAGS=-L${LOCALBASE}/lib
+CONFIGURE_ARGS+=	--enable-ldbm --with-ldbm-api=db2
 .endif
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--localstatedir=/var/run --enable-shared --enable-dns
+CONFIGURE_ARGS+=	--localstatedir=/var/run --enable-shared --enable-dns
 
 # Include tcp-wrapper support
 .if exists(/usr/include/tcpd.h)
