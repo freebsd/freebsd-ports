@@ -18,3 +18,7 @@ include/glprsm.h
 include/glpset.h
 include/glpstr.h
 lib/libglpk.a
+%%PORTDOCS%%share/doc/glpk/glpk_lr-1.1.1.ps
+%%PORTDOCS%%share/doc/glpk/glpk_ug-1.1.1.ps
+%%PORTDOCS%%share/doc/glpk/glpk_sm.ps
+%%PORTDOCS%%@dirrm share/doc/glpk
