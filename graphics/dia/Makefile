@@ -7,7 +7,7 @@
 
 PORTNAME=	dia
 PORTVERSION=	0.86
-CATEGORIES=	graphics
+CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/dia
 
