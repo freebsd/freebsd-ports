@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gringotts
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.7
 CATEGORIES=	security
 MASTER_SITES=	http://devel.pluto.linux.it/projects/Gringotts/current/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/

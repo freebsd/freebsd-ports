@@ -1,5 +1,5 @@
---- src/grg_safe.c.orig	Tue Feb 18 22:04:29 2003
-+++ src/grg_safe.c	Tue Feb 18 22:05:27 2003
+--- src/grg_safe.c.orig	Wed May 14 02:02:13 2003
++++ src/grg_safe.c	Wed May 14 02:03:43 2003
 @@ -33,6 +33,7 @@
  
  #include <stdlib.h>
@@ -14,23 +14,23 @@
  #include <sys/time.h>
 -#include <sys/types.h>
  #include <sys/resource.h>
+ #include <sys/stat.h>
  
- #define GRG_SAFE			0
-@@ -57,8 +57,6 @@
- grg_mlockall_and_drop_root_privileges (void)
+@@ -59,8 +59,6 @@
+ grg_mlockall_and_drop_root_privileges(void)
  {
-   //drop eventual group root privileges
--  setgid (getgid ());
--  setgid (getgid ());		//twice for counter "saved IDs", cfr. Secure Programming HowTo
+     // drop eventual group root privileges
+-    setgid(getgid());
+-    setgid(getgid());		// twice for counter "saved IDs", cfr.
+ 				// Secure Programming HowTo
  #ifdef HAVE_SYS_FSUID_H
-   setfsgid (getgid ());
-   setfsgid (getgid ());
-@@ -82,8 +80,6 @@
+     setfsgid(getgid());
+@@ -84,8 +82,6 @@
  #endif
  
-       //drop root privileges
--      setuid (getuid ());
--      setuid (getuid ());
+ 	// drop root privileges
+-	setuid(getuid());
+-	setuid(getuid());
  #ifdef HAVE_SYS_FSUID_H
-       setfsuid (getuid ());
-       setfsuid (getuid ());
+ 	setfsuid(getuid());
+ 	setfsuid(getuid());
