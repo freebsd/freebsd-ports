@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- ../coreconf/FreeBSD.mk.orig	Fri Mar  1 18:08:12 2002
-+++ ../coreconf/FreeBSD.mk	Thu Aug  8 20:16:30 2002
+--- ../coreconf/FreeBSD.mk.orig	Thu Mar 27 02:17:25 2003
++++ ../coreconf/FreeBSD.mk	Fri Apr 11 00:53:38 2003
 @@ -35,9 +35,9 @@
  
  include $(CORE_DEPTH)/coreconf/UNIX.mk
@@ -25,16 +25,16 @@ $FreeBSD$
  
  DSO_CFLAGS		= -fPIC
  DSO_LDOPTS		= -shared -Wl,-soname -Wl,$(notdir $@)
-@@ -57,7 +59,7 @@
- ifndef CLASSIC_NSPR
+@@ -58,7 +60,7 @@
  USE_PTHREADS		= 1
  DEFINES			+= -D_THREAD_SAFE -D_REENTRANT
+ OS_LIBS			+= -pthread
 -DSO_LDOPTS		+= -pthread
 +DSO_LDOPTS		+= $(BSD_LDOPTS)
  endif
  
  ARCH			= freebsd
-@@ -65,7 +67,7 @@
+@@ -66,7 +68,7 @@
  MOZ_OBJFORMAT		:= $(shell test -x /usr/bin/objformat && /usr/bin/objformat || echo aout)
  
  ifeq ($(MOZ_OBJFORMAT),elf)
