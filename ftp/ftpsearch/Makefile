@@ -3,7 +3,7 @@
 # Date created:		07 Dec 1996
 # Whom:			Tor.Egge@idi.ntnu.no
 #
-# $Id: Makefile,v 1.3 1997/02/19 09:31:07 tg Exp $
+# $Id: Makefile,v 1.4 1997/10/30 02:42:19 tegge Exp $
 #
 
 DISTNAME=	ftpsearch-1.0
@@ -20,7 +20,9 @@ PATCHFILES =	ftpsearch-1.0.patch1 \
 		ftpsearch-1.0.patch3 \
 		ftpsearch-1.0.patch4 \
 		ftpsearch-1.0.patch5 \
-		ftpsearch-1.0.patch6
+		ftpsearch-1.0.patch6 \
+		ftpsearch-1.0.patch7 \
+		ftpsearch-1.0.patch8
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	FTPSEARCHROOT=${PREFIX}/ftpsearch
