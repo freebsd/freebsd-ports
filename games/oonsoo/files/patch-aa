@@ -1,11 +1,23 @@
---- Makefile.orig	Thu Feb 24 03:02:50 2000
-+++ Makefile	Thu Feb 24 03:03:06 2000
-@@ -12,7 +12,7 @@
- CPPFLAGS=-O -ansi
+--- Makefile.orig	Thu Feb 24 03:29:29 2000
++++ Makefile	Thu Feb 24 03:42:58 2000
+@@ -6,16 +6,16 @@
+ ###############################################################################
+ 
+ ## C++ compiler to use
+-CC=g++
++CC = ${CXX}
+ 
+ ## C++ compiler flags
+-CPPFLAGS=-O -ansi
++CPPFLAGS = ${CXXFLAGS} -ansi
  
  ## System Includes
 -SYS_INCLUDES =
-+SYS_INCLUDE = -I/usr/X11R6/include
++SYS_INCLUDE = -I${X11BASE}/include
  
  ## System Libraries
- SYS_LIBS = -L/usr/X11R6/lib -lX11
+-SYS_LIBS = -L/usr/X11R6/lib -lX11
++SYS_LIBS = -L${X11BASE}/lib -lX11
+ 
+ ## Archiver
+ AR=ar
