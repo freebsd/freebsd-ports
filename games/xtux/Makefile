@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	xtux
-PORTVERSION=	2000.11.25
+PORTVERSION=	2000.12.30
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=xtux
-DISTNAME=	xtux-arena-src-nov-25
+MASTER_SITES=	http://xtux.sourceforge.net/
+DISTNAME=	xtux-src-20001230
 
 MAINTAINER=	goranrunfeldt@home.se
 
