@@ -3,7 +3,7 @@
 # Date created:				23 August 1998
 # Whom:					yoshiaki Uchikawa
 #
-# $Id: Makefile,v 1.1.1.1 1998/09/16 12:54:00 vanilla Exp $
+# $Id: Makefile,v 1.2 1998/09/26 23:17:58 steve Exp $
 #
 
 DISTNAME=	DAPSource
@@ -12,8 +12,6 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.cee.hw.ac.uk/~richardk/
 
 MAINTAINER=	yoshiaki@kt.rim.or.jp
-
-BROKEN_ELF=	xforms is a.out only
 
 LIB_DEPENDS=	xforms.0:${PORTSDIR}/x11-toolkits/xforms
 
