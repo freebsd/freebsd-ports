@@ -54,6 +54,7 @@
     SUBDIR += xcoloredit
     SUBDIR += xcolors
     SUBDIR += xcolorsel
+    SUBDIR += xcruise
     SUBDIR += xcut
     SUBDIR += xdtm
     SUBDIR += xfedor
