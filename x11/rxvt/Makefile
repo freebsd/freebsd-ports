@@ -5,6 +5,9 @@
 #
 # $FreeBSD$
 #
+# If possible, please consider updating the simple ports/x11-clocks/rclock
+# (and maybe ports/chinese/rxvt) when you upgrade rxvt.  These ports all use
+# the same distfile.
 
 DISTNAME=	rxvt-2.7.1
 CATEGORIES=	x11
