@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	tor
-PORTVERSION=	0.0.7
+PORTVERSION=	0.0.7.2
 CATEGORIES=	security
 MASTER_SITES=	http://freehaven.net/tor/dist/
 
 MAINTAINER=	freebsd-ports@rikrose.net
 COMMENT=	An anonymizing overlay network for TCP
+
+RUN_DEPENDS= tsocks:${PORTSDIR}/net/tsocks
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -26,5 +28,8 @@ post-patch:
 		${WRKSRC}/contrib/tor-tsocks.conf.sample
 	@${REINPLACE_CMD} -e "s|tor-tsocks.conf|tor-tsocks.conf.sample|g" \
 		${WRKSRC}/contrib/Makefile.in
+
+post-install:
+	@${CP} ${WRKSRC}/contrib/tor.sh ${LOCALBASE}/etc/rc.d/tor.sh.sample
 
 .include <bsd.port.mk>
