@@ -1,6 +1,7 @@
-# $Id: Makefile,v 1.2 1998/09/09 08:11:49 tg Exp $
+# $Id: Makefile,v 1.3 1998/12/13 13:53:49 jseger Exp $
 #
 
+    SUBDIR += Xg
     SUBDIR += etlfonts
     SUBDIR += freefonts
     SUBDIR += getbdf

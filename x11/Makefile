@@ -1,6 +1,7 @@
-# $Id: Makefile,v 1.245 1999/01/02 19:20:21 sada Exp $
+# $Id: Makefile,v 1.246 1999/01/07 12:05:29 asami Exp $
 #
 
+    SUBDIR += 9term
     SUBDIR += XFree86
     SUBDIR += XFree86-contrib
     SUBDIR += Xfstt

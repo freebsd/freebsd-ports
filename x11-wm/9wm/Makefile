@@ -3,11 +3,11 @@
 # Date created:         Sun Aug 13 12:36:14 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.5 1998/10/04 00:56:47 steve Exp $
+# $Id: Makefile,v 1.6 1998/11/21 17:18:15 steve Exp $
 #
 
 DISTNAME=	9wm-1.1
-CATEGORIES=	plan9 x11-wm
+CATEGORIES=	x11-wm plan9
 MASTER_SITES=	ftp://ftp.mathcs.emory.edu/pub/arnold/
 EXTRACT_SUFX=	.shar.gz
 
