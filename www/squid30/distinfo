@@ -44,3 +44,5 @@ MD5 (squid2.5/squid-2.5.STABLE7-short_icons_urls.patch) = 3cbed4fe923641bff5f23e
 SIZE (squid2.5/squid-2.5.STABLE7-short_icons_urls.patch) = 704
 MD5 (squid2.5/squid-2.5.STABLE7-response_splitting.patch) = ff3d8ae3e933817c91e745beba76b5fc
 SIZE (squid2.5/squid-2.5.STABLE7-response_splitting.patch) = 9782
+MD5 (squid2.5/squid-2.5.STABLE7-wccp_buffer_overflow.patch) = 01b1a4a23f170723d7e2bc3846e12c73
+SIZE (squid2.5/squid-2.5.STABLE7-wccp_buffer_overflow.patch) = 505
