@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.feral.com/pub/networker/freebsd/freebsd_40/
 DISTNAME=	nwclient-${PORTVERSION}-freebsd-${ARCH}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mjacob@freebsd.org
 
 .include <bsd.port.pre.mk>
 
