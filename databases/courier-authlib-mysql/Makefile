@@ -119,8 +119,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|$$VPOPMAILLIBS|& -lcrypt|g ; \
 		s|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|%%INSTALL_MAN%%|${INSTALL_MAN}|' \
-		${WRKSRC}/Makefile.in ${WRKSRC}/Makefile.in \
-		${WRKSRC}/liblog/Makefile.in ${WRKSRC}/userdb/Makefile.in
+		${WRKSRC}/Makefile.in ${WRKSRC}/liblog/Makefile.in \
+		${WRKSRC}/userdb/Makefile.in
 	@${REINPLACE_CMD} -e 's|DEFAULTOPTIONS=""|DEFAULTOPTIONS="wbnodsn=1"|' \
 		${WRKSRC}/authdaemonrc.in
 
