@@ -20,6 +20,7 @@ LIB_DEPENDS=	wnck-1.4:${PORTSDIR}/x11-toolkits/libwnck \
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
+INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomehier
