@@ -28,50 +28,50 @@ lib/libjack.a
 lib/libjack.so
 lib/libjack.so.0
 libdata/pkgconfig/jack.pc
-share/jack-audio-connection-kit/reference/html/annotated.html
-share/jack-audio-connection-kit/reference/html/dir_000000.html
-share/jack-audio-connection-kit/reference/html/dir_000001.html
-share/jack-audio-connection-kit/reference/html/dirs.html
-share/jack-audio-connection-kit/reference/html/deprecated.html
-share/jack-audio-connection-kit/reference/html/files.html
-share/jack-audio-connection-kit/reference/html/functions.html
-share/jack-audio-connection-kit/reference/html/functions_vars.html
-share/jack-audio-connection-kit/reference/html/globals.html
-share/jack-audio-connection-kit/reference/html/globals_defs.html
-share/jack-audio-connection-kit/reference/html/globals_enum.html
-share/jack-audio-connection-kit/reference/html/globals_eval.html
-share/jack-audio-connection-kit/reference/html/globals_func.html
-share/jack-audio-connection-kit/reference/html/globals_type.html
-share/jack-audio-connection-kit/reference/html/globals_vars.html
-share/jack-audio-connection-kit/reference/html/index.html
-share/jack-audio-connection-kit/reference/html/inprocess_8c.html
-share/jack-audio-connection-kit/reference/html/jack_8h-source.html
-share/jack-audio-connection-kit/reference/html/jack_8h.html
-share/jack-audio-connection-kit/reference/html/mainpage_8dox.html
-share/jack-audio-connection-kit/reference/html/pages.html
-share/jack-audio-connection-kit/reference/html/porting-guide.html
-share/jack-audio-connection-kit/reference/html/porting_8dox.html
-share/jack-audio-connection-kit/reference/html/ringbuffer_8h-source.html
-share/jack-audio-connection-kit/reference/html/ringbuffer_8h.html
-share/jack-audio-connection-kit/reference/html/simple__client_8c.html
-share/jack-audio-connection-kit/reference/html/structjack__position__t.html
-share/jack-audio-connection-kit/reference/html/structjack__ringbuffer__data__t.html
-share/jack-audio-connection-kit/reference/html/structjack__ringbuffer__t.html
-share/jack-audio-connection-kit/reference/html/structjack__transport__info__t.html
-share/jack-audio-connection-kit/reference/html/structport__pair__t.html
-share/jack-audio-connection-kit/reference/html/thread_8h-source.html
-share/jack-audio-connection-kit/reference/html/thread_8h.html
-share/jack-audio-connection-kit/reference/html/transport-design.html
-share/jack-audio-connection-kit/reference/html/transport_8dox.html
-share/jack-audio-connection-kit/reference/html/transport_8h-source.html
-share/jack-audio-connection-kit/reference/html/transport_8h.html
-share/jack-audio-connection-kit/reference/html/types_8h-source.html
-share/jack-audio-connection-kit/reference/html/types_8h.html
-share/jack-audio-connection-kit/reference/html/doxygen.png
-share/jack-audio-connection-kit/reference/html/fsm.png
-share/jack-audio-connection-kit/reference/html/doxygen.css
-@dirrm share/jack-audio-connection-kit/reference/html
-@dirrm share/jack-audio-connection-kit/reference
-@dirrm share/jack-audio-connection-kit
+%%DOCS%%share/jack-audio-connection-kit/reference/html/annotated.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/dir_000000.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/dir_000001.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/dirs.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/deprecated.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/files.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/functions.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/functions_vars.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/globals.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/globals_defs.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/globals_enum.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/globals_eval.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/globals_func.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/globals_type.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/globals_vars.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/index.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/inprocess_8c.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/jack_8h-source.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/jack_8h.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/mainpage_8dox.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/pages.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/porting-guide.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/porting_8dox.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/ringbuffer_8h-source.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/ringbuffer_8h.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/simple__client_8c.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/structjack__position__t.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/structjack__ringbuffer__data__t.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/structjack__ringbuffer__t.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/structjack__transport__info__t.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/structport__pair__t.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/thread_8h-source.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/thread_8h.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/transport-design.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/transport_8dox.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/transport_8h-source.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/transport_8h.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/types_8h-source.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/types_8h.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/doxygen.png
+%%DOCS%%share/jack-audio-connection-kit/reference/html/fsm.png
+%%DOCS%%share/jack-audio-connection-kit/reference/html/doxygen.css
+%%DOCS%%@dirrm share/jack-audio-connection-kit/reference/html
+%%DOCS%%@dirrm share/jack-audio-connection-kit/reference
+%%DOCS%%@dirrm share/jack-audio-connection-kit
 @dirrm include/jack
 @dirrm lib/jack
