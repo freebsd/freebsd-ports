@@ -131,8 +131,6 @@ lib/libgdk12.so.2
 lib/libgtk12.a
 lib/libgtk12.so
 lib/libgtk12.so.2
-@exec /sbin/ldconfig -m %D/lib
-@unexec /sbin/ldconfig -R
 libdata/pkgconfig/gdk.pc
 libdata/pkgconfig/gtk+.pc
 share/aclocal/gtk.m4
