@@ -1,26 +1,31 @@
---- Makefile.orig	Mon Aug 16 11:51:13 1999
-+++ Makefile	Mon Aug 16 12:28:08 1999
-@@ -6,17 +6,20 @@
+--- Makefile.orig	Thu Sep 16 17:44:50 1999
++++ Makefile	Thu Oct 14 10:27:50 1999
+@@ -6,10 +6,13 @@
  CLEANFILES=	*.core *.o pipsecd
  
  # Where your OpenSSL includes are located
 -INCDIR=/usr/local/ssl/include
-+INCDIR=-I$(PREFIX)/include -I$(PREFIX)/include/openssl
++INCDIR=-I$(PREFIX)/include/openssl -I$(PREFIX)/include
  
  # Where your libcrypto is located
 -LIBDIR=/usr/local/ssl/lib
 +LIBDIR=-L$(PREFIX)/lib
 +
-+# Misc Defines
++# Misc defines
 +DEFINES=-DFILE_PREFIX=\"$(PREFIX)\"
  
- # Optional (to use FreeBSD's libmd)
- #OPTLIB= -lmd
- #OPTDEF= -DUSE_SYSTEM_HASH
+ # Optional: use FreeBSD's libmd
+ #OPTLIB += -lmd
+@@ -19,10 +22,10 @@
+ #OPTDEF += -DUSE_ETHERTAP
  
  pipsecd:	tunip.c defs.h
--	gcc -Wall -I$(INCDIR) -g -o $(OPTDEF) pipsecd tunip.c -L$(LIBDIR) $(OPTLIB) -lcrypto
-+	gcc -Wall $(INCDIR) -g -o $(OPTDEF) pipsecd tunip.c $(LIBDIR) $(OPTLIB) -lcrypto $(DEFINES)
+-	gcc -Wall -I$(INCDIR) -g $(OPTDEF) -o pipsecd tunip.c -L$(LIBDIR) $(OPTLIB) -lcrypto
++	gcc -Wall $(INCDIR) -g $(OPTDEF) -o pipsecd tunip.c $(LIBDIR) $(OPTLIB) -lcrypto $(DEFINES)
  
  install: pipsecd
- 	install pipsecd /usr/local/sbin/
+-	install pipsecd /usr/local/sbin/
++	install pipsecd $(PREFIX)/sbin/
+ 
+ tar:
+ 	tar cfvz tunip.tar.gz $(DISTFILES)
