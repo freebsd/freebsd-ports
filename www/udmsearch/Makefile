@@ -16,6 +16,8 @@ MASTER_SITES=	http://search.mnogo.ru/Download/	\
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full featured SQL-based hypertext search engine
 
+BROKEN=		Does not build
+
 MAN1=		indexer.1
 MAN5=		indexer.conf.5
 
