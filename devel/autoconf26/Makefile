@@ -7,20 +7,29 @@
 
 PORTNAME=	autoconf
 PORTVERSION=	2.53
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	autoconf
 
 MAINTAINER=	ports@geeksrus.net
 
-BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
+BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
+		help2man:${PORTSDIR}/misc/help2man
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 USE_BZIP2=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	M4=${LOCALBASE}/bin/gm4
-CONFIGURE_ARGS=	--without-lispdir
+
+.if exists(${LOCALBASE}/bin/emacs)
+PLIST_SUB+=	EMACS="" EMACSDIR=share/emacs
+.elif exists(${LOCALBASE}/bin/xemacs)
+PLIST_SUB+=	EMACS="" EMACSDIR=lib/xemacs
+.else
+PLIST_SUB+=	EMACS="@comment " EMACSDIR=""
+.endif
 
 GENERIC_TOOLS=	config.guess	\
 		config.sub	\
