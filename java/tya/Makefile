@@ -1,22 +1,21 @@
 # New ports collection makefile for:	tya
-# Version required:	1.6
 # Date created:		16 May 1999
-# Whom:			jake@checker.org
+# Whom:			jburkhol@home.com
 #
 # $FreeBSD$
 #
 
-DISTNAME=	tya16
-PKGNAME=	tya-1.6
+DISTNAME=	tya17
+PKGNAME=	tya-1.7
 CATEGORIES=	java
-MASTER_SITES=	ftp://gonzalez.cyberus.ca/pub/Linux/java/
+MASTER_SITES=	http://sax.sax.de/~adlibit/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jake@checker.org
+MAINTAINER=	jburkhol@home.com
 
 BUILD_DEPENDS=	${LOCALBASE}/${JAVADIR}/bin/java:${PORTSDIR}/java/jdk
 
-WRKSRC=		${WRKDIR}/tya1.6
+WRKSRC=		${WRKDIR}/tya1.7
 
 ONLY_FOR_ARCHS=	i386
 
