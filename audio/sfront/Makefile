@@ -23,6 +23,8 @@ USE_BISON=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 ALL_TARGET=	# empty
 
+BROKEN=		"Distinfo incorrect"
+
 post-patch:
 	@${REINPLACE_CMD} -e "s,^CFLAGS,#CFLAGS,g" ${WRKSRC}/Makefile
 
