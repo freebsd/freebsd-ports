@@ -49,12 +49,17 @@ vipec/ckt/bandpass.s2p
 vipec/ckt/bandpass2.ckt
 vipec/ckt/coupled_line_filter.ckt
 vipec/ckt/coupler.ckt
+vipec/ckt/combined.ckt
 vipec/ckt/datafile.ckt
+vipec/ckt/filter.ckt
 vipec/ckt/highpass.ckt
 vipec/ckt/nec70000.s2p
 vipec/ckt/stripline.ckt
+vipec/ckt/test.ckt
 vipec/messages/vipec_fr.qm
 vipec/messages/vipec_fr.ts
+vipec/messages/vipec_pt.qm
+vipec/messages/vipec_pt.ts
 @dirrm vipec/help/models
 @dirrm vipec/help
 @dirrm vipec/ckt
