@@ -1,5 +1,5 @@
 --- configure.orig	Thu Jul 25 17:53:13 2002
-+++ configure	Fri Jul 26 14:44:17 2002
++++ configure	Thu Oct 17 11:18:59 2002
 @@ -4,6 +4,7 @@
  use_plot=0
  use_pari=0
@@ -29,20 +29,26 @@
  libname=$libname"_pari"
  libpari=pari-2.2
  echo "#define USE_PARI" >> include/config.h
-+echo "#define PARI_VERSION \"PARI ${PARI_VERSION}, copyright (C) 2000,
++echo "#define PARI_DEVEL_VERSION \"PARI ${PARI_VERSION}, copyright (C) 2000,
 +     C. Batut, K. Belabas, D. Bernardi, H. Cohen and M. Olivier\"" >> include/version.h
  fi
  
  if [ $use_plot != 0 ]; then
-@@ -59,6 +66,11 @@
- if [ $use_interval != 0 ]; then
- libname=$libname"_itv"
+@@ -61,6 +68,11 @@
  echo "#define USE_INTERVAL" >> include/config.h
-+fi
-+
+ fi
+ 
 +if [ $use_lapack != 0 ]; then
 +echo "#define USE_LAPACK" >> include/config.h
 +echo "#define LAPACK_VERSION \"LAPACK Project Version ${LAPACK_VERSION}\"" >> include/version.h
- fi
- 
++fi
++
  if [ $use_fep != 0 ]; then
+ echo "#define USE_FEP" >> include/config.h
+ fi
+@@ -68,4 +80,4 @@
+ echo LIBPARI=$libpari >> include/config.h
+ echo LIBASIR=$libname.a >> include/config.h
+ 
+-(cd gc; ./configure)
++(cd gc; ./configure --disable-threads)

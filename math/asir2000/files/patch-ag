@@ -1,5 +1,5 @@
---- parse/glob.c.orig	Fri Jul 26 09:33:03 2002
-+++ parse/glob.c	Fri Jul 26 14:38:01 2002
+--- parse/glob.c.orig	Wed Sep 11 17:57:21 2002
++++ parse/glob.c	Thu Oct 17 11:19:30 2002
 @@ -51,6 +51,7 @@
  #include "al.h"
  #include "parse.h"
@@ -8,14 +8,13 @@
  #if PARI
  #include "genpari.h"
  #endif
-@@ -669,8 +670,12 @@
+@@ -669,7 +670,12 @@
  	printf("Copyright (C) 1994-2000, all rights reserved, FUJITSU LABORATORIES LIMITED.\n");
  	printf("Copyright 2000,2001, Risa/Asir committers, http://www.openxm.org/.\n");
  	printf("GC 6.1(alpha5) copyright 2001, H-J. Boehm, A. J. Demers, Xerox, SGI, HP.\n");
--	printf("PARI 2.2.1(alpha), copyright (C) 2000,\n");
--	printf("     C. Batut, K. Belabas, D. Bernardi, H. Cohen and M. Olivier.\n");
+-	printf("PARI 2.2.4, copyright (C) 2002 The PARI Group.\n");
 +#if PARI
-+	printf("%s.\n",PARI_VERSION);
++	printf("%s.\n",PARI_DEVEL_VERSION);
 +#endif
 +#if LAPACK
 +	printf("%s.\n",LAPACK_VERSION);
