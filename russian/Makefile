@@ -39,6 +39,5 @@
     SUBDIR += xcyrBGR
     SUBDIR += xmms
     SUBDIR += xruskb
-    SUBDIR += xxkb
 
 .include <bsd.port.subdir.mk>

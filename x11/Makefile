@@ -239,6 +239,7 @@
     SUBDIR += xvkbd
     SUBDIR += xwatchwin
     SUBDIR += xwit
+    SUBDIR += xxkb
     SUBDIR += xzoom
     SUBDIR += yalias
     SUBDIR += yelp
