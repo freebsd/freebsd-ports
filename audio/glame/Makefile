@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
+LIB_DEPENDS=	ltdl.1:${PORTSDIR}/devel/libtool
+
 USE_GNOME=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
