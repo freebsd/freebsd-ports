@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pam_alreadyloggedin
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_LOCAL}					\
 		http://green.bikeshed.org/~green/
@@ -14,6 +14,6 @@ MASTER_SITE_SUBDIR=	green
 
 MAINTAINER=	green@FreeBSD.org
 
-MAN=		pam_alreadyloggedin.8
+MAN8=		pam_alreadyloggedin.8
 
 .include <bsd.port.mk>
