@@ -33,8 +33,8 @@ ALL_TARGET=	package
 INSTALL_TARGET=	install-package
 EMH_LISPDIR=	${EMACS_LIBDIR}/site-packages/lisp/emh
 XEMACS_ONLY=	""
-BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR}/xemacs-packages/lisp/mh-e/mh-e.el:${PORTSDIR}/editors/xemacs-comm-packages
-RUN_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR}/xemacs-packages/lisp/mh-e/mh-e.el:${PORTSDIR}/editors/xemacs-comm-packages
+BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR}/xemacs-packages/lisp/mh-e/mh-e.el:${PORTSDIR}/editors/xemacs-packages
+RUN_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR}/xemacs-packages/lisp/mh-e/mh-e.el:${PORTSDIR}/editors/xemacs-packages
 .else
 ALL_TARGET=	elc
 EMH_LISPDIR=	${EMACS_VERSION_SITE_LISPDIR}/semi
