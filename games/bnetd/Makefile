@@ -3,10 +3,10 @@
 # Date created:		24 April 1999
 # Whom:			Ying-Chieh Liao <ijliao@csie.nctu.edu.tw>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/04/27 01:06:57 taoka Exp $
 #
 
-DISTNAME=	bnetd-0.4.6
+DISTNAME=	bnetd-0.4.7
 CATEGORIES=	net game
 MASTER_SITES=	http://www.bnetd.org/files/
 
@@ -29,7 +29,7 @@ post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/bnetd.sh ]; then \
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/bnetd.sh startup file."; \
 		${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/bnetd.sh; \
-		${ECHO} "cd ${PREFIX}; [ -x sbin/bnetd -a -f bnetd/conf/bnetd.conf ] && sbin/bnetd -c bnetd/conf/bnetd.conf > /dev/null && echo -n ' bnetd'" >> ${PREFIX}/etc/rc.d/bnetd.sh; \
+		${ECHO} "cd ${PREFIX}; [ -x sbin/bnetd -a -f bnetd/conf/bnetd.conf ] && sbin/bnetd -c bnetd/conf/bnetd.conf > /dev/null && ${ECHO} -n ' bnetd'" >> ${PREFIX}/etc/rc.d/bnetd.sh; \
 		chmod 751 ${PREFIX}/etc/rc.d/bnetd.sh; \
 	fi
 
