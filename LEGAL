@@ -1,6 +1,14 @@
 # Creator:  Jordan Hubbard
 # $FreeBSD$
 
+   **********************************************************************
+   ***                      NOTE TO COMMITTERS                        ***
+   ***                                                                ***
+   *** If you are adding a port to this list that has previously been ***
+   *** distributed, please inform portmgr@FreeBSD.org so that the     ***
+   *** distfile/packages can be removed from the FTP site.            ***
+   **********************************************************************
+
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
 of FreeBSD on such mass media, you should be sure and NOT distribute
