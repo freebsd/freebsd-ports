@@ -7,23 +7,19 @@
 
 PORTNAME=	word2x
 PORTVERSION=	0.005
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	word2x
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converter from MS Word to text, HTML or LaTeX
 
+USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-MAN1=	word2x.1
+MAN1=		word2x.1
+PLIST_FILES=	bin/rtest2 bin/word2x
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
