@@ -7,12 +7,14 @@
 
 PORTNAME=	kdemultimedia
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/distribution/tar/generic/src
 
 MAINTAINER=	kevlo@FreeBSD.org
 
+BUILD_DEPENDS=	xanim:${PORTSDIR}/graphics/xanim
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		kdecore.4:${PORTSDIR}/x11/kdelibs2
 
@@ -29,5 +31,19 @@ CONFIGURE_ENV+=	MOC="${MOC}" LIBQT="-lqt2" LIBQTFILE="libqt2" \
 		LIBS="-Wl,-export-dynamic -L${LOCALBASE}/lib -ljpeg -lstdc++ -lgcc" \
 		USER_LDFLAGS="-Wl,-export-dynamic -L${LOCALBASE}/lib -ljpeg -lstdc++ -lgcc"
 USE_GMAKE=	yes
+
+post-install:
+	@${ECHO_MSG}
+	@${ECHO_MSG} "To run kscd program, as root, please run"
+	@${ECHO_MSG}
+	@${ECHO_MSG} " % ${LN} -sf <cdrom_device> /dev/cdrom"
+	@${ECHO_MSG} " % ${CHMOD} 666 <cdrom_device>"
+	@${ECHO_MSG}
+	@${ECHO_MSG} "to link and give permission to access the CD-ROM device."
+	@${ECHO_MSG} 
+	@${ECHO_MSG} "For example(IDE CD-ROM device):"
+	@${ECHO_MSG} " % ${LN} -sf /dev/racd0c /dev/cdrom"
+	@${ECHO_MSG} " % ${CHMOD} 666 /dev/racd0c"
+	@${ECHO_MSG} 
 
 .include <bsd.port.mk>

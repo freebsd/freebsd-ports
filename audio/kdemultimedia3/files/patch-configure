@@ -1,0 +1,11 @@
+--- configure.orig	Fri Nov 24 09:18:04 2000
++++ configure	Fri Nov 24 09:18:44 2000
+@@ -10913,7 +10913,7 @@
+ echo "configure:10914: checking if kscd can be compiled" >&5
+ case "$host" in
+   *-*-linux*) kscd_compile=yes;;
+-  *-*-*bsd*) kscd_compile=no;;
++  *-*-*bsd*) kscd_compile=yes;;
+   *) kscd_compile=yes;;
+ esac
+ echo "$ac_t""$kscd_compile" 1>&6
