@@ -8,7 +8,7 @@
 #
 
 COMMENT=	Polish (Poland) MySpell dictionary for OpenOffice.org
-CATEGORIES=	editors
+CATEGORIES=	polish
 
 LANGPREFIX=	pl
 LANGSUFFIX=	PL
