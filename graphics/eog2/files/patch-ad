@@ -1,0 +1,60 @@
+--- src/main.c.orig	Sun Sep  3 17:34:48 2000
++++ src/main.c	Mon Oct  2 11:22:02 2000
+@@ -38,3 +38,3 @@
+ 	gboolean opened;
+-	GConfError *error;
++	GError *error;
+ 
+@@ -50,4 +50,4 @@
+ 		g_assert (error != NULL);
+-		g_message ("GConf init failed: %s", error->str);
+-		gconf_error_destroy (error);
++		g_message ("GConf init failed: %s", error->message);
++		g_error_free(error);
+ 		exit (EXIT_FAILURE);
+--- src/image-view.c.orig	Sat Sep  2 23:37:19 2000
++++ src/image-view.c	Mon Oct  2 11:24:22 2000
+@@ -243,3 +243,3 @@
+ {
+-	image_view_set_interp_type (IMAGE_VIEW (data), gconf_value_int (value));
++	image_view_set_interp_type (IMAGE_VIEW (data), gconf_value_get_int (value));
+ }
+@@ -251,3 +251,3 @@
+ {
+-	image_view_set_check_type (IMAGE_VIEW (data), gconf_value_int (value));
++	image_view_set_check_type (IMAGE_VIEW (data), gconf_value_get_int (value));
+ }
+@@ -259,3 +259,3 @@
+ {
+-	image_view_set_check_size (IMAGE_VIEW (data), gconf_value_int (value));
++	image_view_set_check_size (IMAGE_VIEW (data), gconf_value_get_int (value));
+ }
+@@ -267,3 +267,3 @@
+ {
+-	image_view_set_dither (IMAGE_VIEW (data), gconf_value_int (value));
++	image_view_set_dither (IMAGE_VIEW (data), gconf_value_get_int (value));
+ }
+@@ -275,3 +275,3 @@
+ {
+-	image_view_set_scroll (IMAGE_VIEW (data), gconf_value_int (value));
++	image_view_set_scroll (IMAGE_VIEW (data), gconf_value_get_int (value));
+ }
+--- src/full-screen.c.orig	Sat Sep  2 23:37:19 2000
++++ src/full-screen.c	Mon Oct  2 11:27:44 2000
+@@ -125,3 +125,3 @@
+ 
+-	priv->sb_policy = gconf_value_int (value);
++	priv->sb_policy = gconf_value_get_int (value);
+ 
+@@ -141,3 +141,3 @@
+ 
+-	priv->bevel = gconf_value_bool (value);
++	priv->bevel = gconf_value_get_bool (value);
+ 
+--- src/window.c.orig	Sat Sep  2 23:37:19 2000
++++ src/window.c	Mon Oct  2 11:28:25 2000
+@@ -324,3 +324,3 @@
+ 
+-	priv->sb_policy = gconf_value_int (value);
++	priv->sb_policy = gconf_value_get_int (value);
+ 

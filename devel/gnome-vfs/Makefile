@@ -17,7 +17,7 @@ MAINTAINER=	ade@FreeBSD.org
 LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
 		capplet.4:${PORTSDIR}/sysutils/gnomecontrolcenter \
 		bonobo.2:${PORTSDIR}/devel/bonobo \
-		gconf-1.0:${PORTSDIR}/devel/gconf \
+		gconf-1.1:${PORTSDIR}/devel/gconf \
 		bz2.1:${PORTSDIR}/archivers/bzip2
 
 GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config

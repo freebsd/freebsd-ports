@@ -7,6 +7,7 @@
 
 PORTNAME=	eog
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/eog
@@ -16,7 +17,7 @@ MAINTAINER=	ade@FreeBSD.org
 LIB_DEPENDS=	panel_applet.4:${PORTSDIR}/x11/gnomecore \
 		glade.4:${PORTSDIR}/devel/libglade \
 		bonobo.2:${PORTSDIR}/devel/bonobo \
-		gconf-1.0:${PORTSDIR}/devel/gconf
+		gconf-1.1:${PORTSDIR}/devel/gconf
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
