@@ -7,6 +7,7 @@
 
 PORTNAME=	search-namazu
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	databases ruby
 MASTER_SITES=	ftp://ftp.tietew.jp/pub/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -14,7 +15,7 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-LIB_DEPENDS=	nmz.5:${PORTSDIR}/japanese/namazu2
+LIB_DEPENDS=	nmz.6:${PORTSDIR}/japanese/namazu2
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
