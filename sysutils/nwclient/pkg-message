@@ -1,0 +1,14 @@
+--------------------- Networker Configuration Information --------------------
+
+The networker clients need to have a Networker server somewhere on
+the network that will agree to take these clients on. Please consult
+Networker documentation from Legato about this.
+
+This version of the client places all binaries in ROOTDIR/nsr/bin-
+adjust your PATH environment variable to reflect this.
+
+Also- very important- please remember to edit ROOTDIR/etc/rc.d/networker.sh
+to restrict the access rights to servers you want to have access to this
+machine.
+
+-------------------------------------------------------------------------------
