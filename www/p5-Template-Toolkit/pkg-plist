@@ -1,64 +1,87 @@
 bin/tpage
 bin/ttree
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Base.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Config.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Constants.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Context.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Directive.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Document.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Exception.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/FAQ.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Filters.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Grammar.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Iterator.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Library/HTML.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Library/PostScript.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Library/Splash.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Manual.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Manual/Config.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Manual/Credits.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Manual/Directives.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Manual/Filters.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Manual/Internals.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Manual/Intro.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Manual/Plugins.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Manual/Refs.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Manual/Syntax.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Manual/Variables.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Manual/Views.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Modules.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Parser.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/Autoformat.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/CGI.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/DBI.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/Datafile.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/Date.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/Directory.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/Dumper.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/File.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/Format.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/GD/Constants.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/GD/Graph/area.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/GD/Graph/bars.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/GD/Graph/bars3d.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/GD/Graph/lines.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/GD/Graph/lines3d.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/GD/Graph/linespoints.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/GD/Graph/mixed.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/GD/Graph/pie.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/GD/Graph/pie3d.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/GD/Graph/points.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/GD/Image.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/GD/Polygon.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/GD/Text.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/GD/Text/Align.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/GD/Text/Wrap.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/HTML.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/Iterator.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/Pod.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/Table.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/URL.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/View.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/Wrap.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/XML/DOM.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/XML/RSS.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/XML/Simple.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/XML/XPath.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugins.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Provider.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Service.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Stash.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Stash/Context.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Stash/XS.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Test.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Tools/tpage.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Tools/ttree.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Tutorial.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Tutorial/Datafile.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Tutorial/Web.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/View.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Template/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/Template.pm
-lib/perl5/site_perl/%%PERL_VER%%/Template/Base.pm
-lib/perl5/site_perl/%%PERL_VER%%/Template/Config.pm
-lib/perl5/site_perl/%%PERL_VER%%/Template/Constants.pm
-lib/perl5/site_perl/%%PERL_VER%%/Template/Context.pm
-lib/perl5/site_perl/%%PERL_VER%%/Template/Directive.pm
-lib/perl5/site_perl/%%PERL_VER%%/Template/Document.pm
-lib/perl5/site_perl/%%PERL_VER%%/Template/Exception.pm
-lib/perl5/site_perl/%%PERL_VER%%/Template/FAQ.pod
-lib/perl5/site_perl/%%PERL_VER%%/Template/Filters.pm
-lib/perl5/site_perl/%%PERL_VER%%/Template/Grammar.pm
-lib/perl5/site_perl/%%PERL_VER%%/Template/Iterator.pm
-lib/perl5/site_perl/%%PERL_VER%%/Template/Library/HTML.pod
-lib/perl5/site_perl/%%PERL_VER%%/Template/Library/PostScript.pod
-lib/perl5/site_perl/%%PERL_VER%%/Template/Library/Splash.pod
-lib/perl5/site_perl/%%PERL_VER%%/Template/Manual.pod
-lib/perl5/site_perl/%%PERL_VER%%/Template/Manual/Config.pod
-lib/perl5/site_perl/%%PERL_VER%%/Template/Manual/Credits.pod
-lib/perl5/site_perl/%%PERL_VER%%/Template/Manual/Directives.pod
-lib/perl5/site_perl/%%PERL_VER%%/Template/Manual/Filters.pod
-lib/perl5/site_perl/%%PERL_VER%%/Template/Manual/Internals.pod
-lib/perl5/site_perl/%%PERL_VER%%/Template/Manual/Intro.pod
-lib/perl5/site_perl/%%PERL_VER%%/Template/Manual/Plugins.pod
-lib/perl5/site_perl/%%PERL_VER%%/Template/Manual/Refs.pod
-lib/perl5/site_perl/%%PERL_VER%%/Template/Manual/Syntax.pod
-lib/perl5/site_perl/%%PERL_VER%%/Template/Manual/Variables.pod
-lib/perl5/site_perl/%%PERL_VER%%/Template/Manual/Views.pod
-lib/perl5/site_perl/%%PERL_VER%%/Template/Modules.pod
-lib/perl5/site_perl/%%PERL_VER%%/Template/Parser.pm
-lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin.pm
-lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin/Autoformat.pm
-lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin/CGI.pm
-lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin/DBI.pm
-lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin/Datafile.pm
-lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin/Date.pm
-lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin/Directory.pm
-lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin/Dumper.pm
-lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin/File.pm
-lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin/Format.pm
-lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin/Iterator.pm
-lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin/Pod.pm
-lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin/Table.pm
-lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin/URL.pm
-lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin/View.pm
-lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin/Wrap.pm
-lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin/XML/DOM.pm
-lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin/XML/RSS.pm
-lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin/XML/Simple.pm
-lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin/XML/XPath.pm
-lib/perl5/site_perl/%%PERL_VER%%/Template/Plugins.pm
-lib/perl5/site_perl/%%PERL_VER%%/Template/Provider.pm
-lib/perl5/site_perl/%%PERL_VER%%/Template/Service.pm
-lib/perl5/site_perl/%%PERL_VER%%/Template/Stash.pm
-lib/perl5/site_perl/%%PERL_VER%%/Template/Test.pm
-lib/perl5/site_perl/%%PERL_VER%%/Template/Tools/tpage.pod
-lib/perl5/site_perl/%%PERL_VER%%/Template/Tools/ttree.pod
-lib/perl5/site_perl/%%PERL_VER%%/Template/Tutorial.pod
-lib/perl5/site_perl/%%PERL_VER%%/Template/View.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Template/Stash/XS/XS.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Template/Stash/XS/XS.so
 share/tt2/docs/README
 share/tt2/docs/html/FAQ/FAQ.html
 share/tt2/docs/html/FAQ/index.html
@@ -98,6 +121,23 @@ share/tt2/docs/html/Modules/Template/Plugin/Directory.html
 share/tt2/docs/html/Modules/Template/Plugin/Dumper.html
 share/tt2/docs/html/Modules/Template/Plugin/File.html
 share/tt2/docs/html/Modules/Template/Plugin/Format.html
+share/tt2/docs/html/Modules/Template/Plugin/GD/Constants.html
+share/tt2/docs/html/Modules/Template/Plugin/GD/Graph/area.html
+share/tt2/docs/html/Modules/Template/Plugin/GD/Graph/bars.html
+share/tt2/docs/html/Modules/Template/Plugin/GD/Graph/bars3d.html
+share/tt2/docs/html/Modules/Template/Plugin/GD/Graph/lines.html
+share/tt2/docs/html/Modules/Template/Plugin/GD/Graph/lines3d.html
+share/tt2/docs/html/Modules/Template/Plugin/GD/Graph/linespoints.html
+share/tt2/docs/html/Modules/Template/Plugin/GD/Graph/mixed.html
+share/tt2/docs/html/Modules/Template/Plugin/GD/Graph/pie.html
+share/tt2/docs/html/Modules/Template/Plugin/GD/Graph/pie3d.html
+share/tt2/docs/html/Modules/Template/Plugin/GD/Graph/points.html
+share/tt2/docs/html/Modules/Template/Plugin/GD/Image.html
+share/tt2/docs/html/Modules/Template/Plugin/GD/Polygon.html
+share/tt2/docs/html/Modules/Template/Plugin/GD/Text.html
+share/tt2/docs/html/Modules/Template/Plugin/GD/Text/Align.html
+share/tt2/docs/html/Modules/Template/Plugin/GD/Text/Wrap.html
+share/tt2/docs/html/Modules/Template/Plugin/HTML.html
 share/tt2/docs/html/Modules/Template/Plugin/Iterator.html
 share/tt2/docs/html/Modules/Template/Plugin/Pod.html
 share/tt2/docs/html/Modules/Template/Plugin/Table.html
@@ -112,17 +152,22 @@ share/tt2/docs/html/Modules/Template/Plugins.html
 share/tt2/docs/html/Modules/Template/Provider.html
 share/tt2/docs/html/Modules/Template/Service.html
 share/tt2/docs/html/Modules/Template/Stash.html
+share/tt2/docs/html/Modules/Template/Stash/Context.html
+share/tt2/docs/html/Modules/Template/Stash/XS.html
 share/tt2/docs/html/Modules/Template/Test.html
 share/tt2/docs/html/Modules/index.html
 share/tt2/docs/html/README
 share/tt2/docs/html/Release/Changes.html
+share/tt2/docs/html/Release/HACKING.html
+share/tt2/docs/html/Release/INSTALL.html
 share/tt2/docs/html/Release/README.html
 share/tt2/docs/html/Release/TODO.html
 share/tt2/docs/html/Release/index.html
 share/tt2/docs/html/Tools/index.html
 share/tt2/docs/html/Tools/tpage.html
 share/tt2/docs/html/Tools/ttree.html
-share/tt2/docs/html/Tutorial/Tutorial.html
+share/tt2/docs/html/Tutorial/Datafile.html
+share/tt2/docs/html/Tutorial/Web.html
 share/tt2/docs/html/Tutorial/index.html
 share/tt2/docs/html/index.html
 share/tt2/docs/lib/config
@@ -174,6 +219,23 @@ share/tt2/docs/src/Modules/Template/Plugin/Directory.html
 share/tt2/docs/src/Modules/Template/Plugin/Dumper.html
 share/tt2/docs/src/Modules/Template/Plugin/File.html
 share/tt2/docs/src/Modules/Template/Plugin/Format.html
+share/tt2/docs/src/Modules/Template/Plugin/GD/Constants.html
+share/tt2/docs/src/Modules/Template/Plugin/GD/Graph/area.html
+share/tt2/docs/src/Modules/Template/Plugin/GD/Graph/bars.html
+share/tt2/docs/src/Modules/Template/Plugin/GD/Graph/bars3d.html
+share/tt2/docs/src/Modules/Template/Plugin/GD/Graph/lines.html
+share/tt2/docs/src/Modules/Template/Plugin/GD/Graph/lines3d.html
+share/tt2/docs/src/Modules/Template/Plugin/GD/Graph/linespoints.html
+share/tt2/docs/src/Modules/Template/Plugin/GD/Graph/mixed.html
+share/tt2/docs/src/Modules/Template/Plugin/GD/Graph/pie.html
+share/tt2/docs/src/Modules/Template/Plugin/GD/Graph/pie3d.html
+share/tt2/docs/src/Modules/Template/Plugin/GD/Graph/points.html
+share/tt2/docs/src/Modules/Template/Plugin/GD/Image.html
+share/tt2/docs/src/Modules/Template/Plugin/GD/Polygon.html
+share/tt2/docs/src/Modules/Template/Plugin/GD/Text.html
+share/tt2/docs/src/Modules/Template/Plugin/GD/Text/Align.html
+share/tt2/docs/src/Modules/Template/Plugin/GD/Text/Wrap.html
+share/tt2/docs/src/Modules/Template/Plugin/HTML.html
 share/tt2/docs/src/Modules/Template/Plugin/Iterator.html
 share/tt2/docs/src/Modules/Template/Plugin/Pod.html
 share/tt2/docs/src/Modules/Template/Plugin/Table.html
@@ -188,16 +250,21 @@ share/tt2/docs/src/Modules/Template/Plugins.html
 share/tt2/docs/src/Modules/Template/Provider.html
 share/tt2/docs/src/Modules/Template/Service.html
 share/tt2/docs/src/Modules/Template/Stash.html
+share/tt2/docs/src/Modules/Template/Stash/Context.html
+share/tt2/docs/src/Modules/Template/Stash/XS.html
 share/tt2/docs/src/Modules/Template/Test.html
 share/tt2/docs/src/Modules/index.html
 share/tt2/docs/src/Release/Changes.html
+share/tt2/docs/src/Release/HACKING.html
+share/tt2/docs/src/Release/INSTALL.html
 share/tt2/docs/src/Release/README.html
 share/tt2/docs/src/Release/TODO.html
 share/tt2/docs/src/Release/index.html
 share/tt2/docs/src/Tools/index.html
 share/tt2/docs/src/Tools/tpage.html
 share/tt2/docs/src/Tools/ttree.html
-share/tt2/docs/src/Tutorial/Tutorial.html
+share/tt2/docs/src/Tutorial/Datafile.html
+share/tt2/docs/src/Tutorial/Web.html
 share/tt2/docs/src/Tutorial/index.html
 share/tt2/docs/src/index.html
 share/tt2/docs/style/plain/booktabs
@@ -233,6 +300,7 @@ share/tt2/examples/html/splash/colours.html
 share/tt2/examples/html/splash/config.html
 share/tt2/examples/html/splash/dropbox.html
 share/tt2/examples/html/splash/frame.html
+share/tt2/examples/html/splash/hair.html
 share/tt2/examples/html/splash/icon.html
 share/tt2/examples/html/splash/index.html
 share/tt2/examples/html/splash/menu.html
@@ -352,6 +420,8 @@ share/tt2/examples/lib/examples/splash/frame/2
 share/tt2/examples/lib/examples/splash/frame/3
 share/tt2/examples/lib/examples/splash/frame/4
 share/tt2/examples/lib/examples/splash/frame/5
+share/tt2/examples/lib/examples/splash/hair/1
+share/tt2/examples/lib/examples/splash/hair/2
 share/tt2/examples/lib/examples/splash/icon/1
 share/tt2/examples/lib/examples/splash/icon/2
 share/tt2/examples/lib/examples/splash/icon/3
@@ -408,6 +478,7 @@ share/tt2/examples/lib/splash/about/box
 share/tt2/examples/lib/splash/about/button
 share/tt2/examples/lib/splash/about/dropbox
 share/tt2/examples/lib/splash/about/frame
+share/tt2/examples/lib/splash/about/hair
 share/tt2/examples/lib/splash/about/icon
 share/tt2/examples/lib/splash/about/menu
 share/tt2/examples/lib/splash/about/menubar
@@ -435,6 +506,7 @@ share/tt2/examples/src/splash/colours.html
 share/tt2/examples/src/splash/config.html
 share/tt2/examples/src/splash/dropbox.html
 share/tt2/examples/src/splash/frame.html
+share/tt2/examples/src/splash/hair.html
 share/tt2/examples/src/splash/icon.html
 share/tt2/examples/src/splash/index.html
 share/tt2/examples/src/splash/menu.html
@@ -448,11 +520,14 @@ share/tt2/examples/src/splash/tabset.html
 share/tt2/examples/src/splash/text.html
 share/tt2/examples/ttree.cfg
 share/tt2/images/splash/aqua/bl.gif
+share/tt2/images/splash/aqua/blhair.gif
 share/tt2/images/splash/aqua/box.gif
 share/tt2/images/splash/aqua/br.gif
+share/tt2/images/splash/aqua/brhair.gif
 share/tt2/images/splash/aqua/diamond.gif
 share/tt2/images/splash/aqua/dot.gif
 share/tt2/images/splash/aqua/down.gif
+share/tt2/images/splash/aqua/horz.gif
 share/tt2/images/splash/aqua/left.gif
 share/tt2/images/splash/aqua/minus.gif
 share/tt2/images/splash/aqua/negbox.gif
@@ -461,15 +536,22 @@ share/tt2/images/splash/aqua/posbox.gif
 share/tt2/images/splash/aqua/right.gif
 share/tt2/images/splash/aqua/ring.gif
 share/tt2/images/splash/aqua/ringdot.gif
+share/tt2/images/splash/aqua/single.gif
+share/tt2/images/splash/aqua/square.gif
 share/tt2/images/splash/aqua/tl.gif
+share/tt2/images/splash/aqua/tlhair.gif
 share/tt2/images/splash/aqua/tr.gif
+share/tt2/images/splash/aqua/trhair.gif
 share/tt2/images/splash/aqua/up.gif
 share/tt2/images/splash/black/bl.gif
+share/tt2/images/splash/black/blhair.gif
 share/tt2/images/splash/black/box.gif
 share/tt2/images/splash/black/br.gif
+share/tt2/images/splash/black/brhair.gif
 share/tt2/images/splash/black/diamond.gif
 share/tt2/images/splash/black/dot.gif
 share/tt2/images/splash/black/down.gif
+share/tt2/images/splash/black/horz.gif
 share/tt2/images/splash/black/left.gif
 share/tt2/images/splash/black/minus.gif
 share/tt2/images/splash/black/negbox.gif
@@ -478,15 +560,22 @@ share/tt2/images/splash/black/posbox.gif
 share/tt2/images/splash/black/right.gif
 share/tt2/images/splash/black/ring.gif
 share/tt2/images/splash/black/ringdot.gif
+share/tt2/images/splash/black/single.gif
+share/tt2/images/splash/black/square.gif
 share/tt2/images/splash/black/tl.gif
+share/tt2/images/splash/black/tlhair.gif
 share/tt2/images/splash/black/tr.gif
+share/tt2/images/splash/black/trhair.gif
 share/tt2/images/splash/black/up.gif
 share/tt2/images/splash/blood/bl.gif
+share/tt2/images/splash/blood/blhair.gif
 share/tt2/images/splash/blood/box.gif
 share/tt2/images/splash/blood/br.gif
+share/tt2/images/splash/blood/brhair.gif
 share/tt2/images/splash/blood/diamond.gif
 share/tt2/images/splash/blood/dot.gif
 share/tt2/images/splash/blood/down.gif
+share/tt2/images/splash/blood/horz.gif
 share/tt2/images/splash/blood/left.gif
 share/tt2/images/splash/blood/minus.gif
 share/tt2/images/splash/blood/negbox.gif
@@ -495,15 +584,22 @@ share/tt2/images/splash/blood/posbox.gif
 share/tt2/images/splash/blood/right.gif
 share/tt2/images/splash/blood/ring.gif
 share/tt2/images/splash/blood/ringdot.gif
+share/tt2/images/splash/blood/single.gif
+share/tt2/images/splash/blood/square.gif
 share/tt2/images/splash/blood/tl.gif
+share/tt2/images/splash/blood/tlhair.gif
 share/tt2/images/splash/blood/tr.gif
+share/tt2/images/splash/blood/trhair.gif
 share/tt2/images/splash/blood/up.gif
 share/tt2/images/splash/blue/bl.gif
+share/tt2/images/splash/blue/blhair.gif
 share/tt2/images/splash/blue/box.gif
 share/tt2/images/splash/blue/br.gif
+share/tt2/images/splash/blue/brhair.gif
 share/tt2/images/splash/blue/diamond.gif
 share/tt2/images/splash/blue/dot.gif
 share/tt2/images/splash/blue/down.gif
+share/tt2/images/splash/blue/horz.gif
 share/tt2/images/splash/blue/left.gif
 share/tt2/images/splash/blue/minus.gif
 share/tt2/images/splash/blue/negbox.gif
@@ -512,15 +608,22 @@ share/tt2/images/splash/blue/posbox.gif
 share/tt2/images/splash/blue/right.gif
 share/tt2/images/splash/blue/ring.gif
 share/tt2/images/splash/blue/ringdot.gif
+share/tt2/images/splash/blue/single.gif
+share/tt2/images/splash/blue/square.gif
 share/tt2/images/splash/blue/tl.gif
+share/tt2/images/splash/blue/tlhair.gif
 share/tt2/images/splash/blue/tr.gif
+share/tt2/images/splash/blue/trhair.gif
 share/tt2/images/splash/blue/up.gif
 share/tt2/images/splash/blue25/bl.gif
+share/tt2/images/splash/blue25/blhair.gif
 share/tt2/images/splash/blue25/box.gif
 share/tt2/images/splash/blue25/br.gif
+share/tt2/images/splash/blue25/brhair.gif
 share/tt2/images/splash/blue25/diamond.gif
 share/tt2/images/splash/blue25/dot.gif
 share/tt2/images/splash/blue25/down.gif
+share/tt2/images/splash/blue25/horz.gif
 share/tt2/images/splash/blue25/left.gif
 share/tt2/images/splash/blue25/minus.gif
 share/tt2/images/splash/blue25/negbox.gif
@@ -529,15 +632,22 @@ share/tt2/images/splash/blue25/posbox.gif
 share/tt2/images/splash/blue25/right.gif
 share/tt2/images/splash/blue25/ring.gif
 share/tt2/images/splash/blue25/ringdot.gif
+share/tt2/images/splash/blue25/single.gif
+share/tt2/images/splash/blue25/square.gif
 share/tt2/images/splash/blue25/tl.gif
+share/tt2/images/splash/blue25/tlhair.gif
 share/tt2/images/splash/blue25/tr.gif
+share/tt2/images/splash/blue25/trhair.gif
 share/tt2/images/splash/blue25/up.gif
 share/tt2/images/splash/blue50/bl.gif
+share/tt2/images/splash/blue50/blhair.gif
 share/tt2/images/splash/blue50/box.gif
 share/tt2/images/splash/blue50/br.gif
+share/tt2/images/splash/blue50/brhair.gif
 share/tt2/images/splash/blue50/diamond.gif
 share/tt2/images/splash/blue50/dot.gif
 share/tt2/images/splash/blue50/down.gif
+share/tt2/images/splash/blue50/horz.gif
 share/tt2/images/splash/blue50/left.gif
 share/tt2/images/splash/blue50/minus.gif
 share/tt2/images/splash/blue50/negbox.gif
@@ -546,15 +656,22 @@ share/tt2/images/splash/blue50/posbox.gif
 share/tt2/images/splash/blue50/right.gif
 share/tt2/images/splash/blue50/ring.gif
 share/tt2/images/splash/blue50/ringdot.gif
+share/tt2/images/splash/blue50/single.gif
+share/tt2/images/splash/blue50/square.gif
 share/tt2/images/splash/blue50/tl.gif
+share/tt2/images/splash/blue50/tlhair.gif
 share/tt2/images/splash/blue50/tr.gif
+share/tt2/images/splash/blue50/trhair.gif
 share/tt2/images/splash/blue50/up.gif
 share/tt2/images/splash/blue75/bl.gif
+share/tt2/images/splash/blue75/blhair.gif
 share/tt2/images/splash/blue75/box.gif
 share/tt2/images/splash/blue75/br.gif
+share/tt2/images/splash/blue75/brhair.gif
 share/tt2/images/splash/blue75/diamond.gif
 share/tt2/images/splash/blue75/dot.gif
 share/tt2/images/splash/blue75/down.gif
+share/tt2/images/splash/blue75/horz.gif
 share/tt2/images/splash/blue75/left.gif
 share/tt2/images/splash/blue75/minus.gif
 share/tt2/images/splash/blue75/negbox.gif
@@ -563,15 +680,22 @@ share/tt2/images/splash/blue75/posbox.gif
 share/tt2/images/splash/blue75/right.gif
 share/tt2/images/splash/blue75/ring.gif
 share/tt2/images/splash/blue75/ringdot.gif
+share/tt2/images/splash/blue75/single.gif
+share/tt2/images/splash/blue75/square.gif
 share/tt2/images/splash/blue75/tl.gif
+share/tt2/images/splash/blue75/tlhair.gif
 share/tt2/images/splash/blue75/tr.gif
+share/tt2/images/splash/blue75/trhair.gif
 share/tt2/images/splash/blue75/up.gif
 share/tt2/images/splash/bud/bl.gif
+share/tt2/images/splash/bud/blhair.gif
 share/tt2/images/splash/bud/box.gif
 share/tt2/images/splash/bud/br.gif
+share/tt2/images/splash/bud/brhair.gif
 share/tt2/images/splash/bud/diamond.gif
 share/tt2/images/splash/bud/dot.gif
 share/tt2/images/splash/bud/down.gif
+share/tt2/images/splash/bud/horz.gif
 share/tt2/images/splash/bud/left.gif
 share/tt2/images/splash/bud/minus.gif
 share/tt2/images/splash/bud/negbox.gif
@@ -580,15 +704,22 @@ share/tt2/images/splash/bud/posbox.gif
 share/tt2/images/splash/bud/right.gif
 share/tt2/images/splash/bud/ring.gif
 share/tt2/images/splash/bud/ringdot.gif
+share/tt2/images/splash/bud/single.gif
+share/tt2/images/splash/bud/square.gif
 share/tt2/images/splash/bud/tl.gif
+share/tt2/images/splash/bud/tlhair.gif
 share/tt2/images/splash/bud/tr.gif
+share/tt2/images/splash/bud/trhair.gif
 share/tt2/images/splash/bud/up.gif
 share/tt2/images/splash/green/bl.gif
+share/tt2/images/splash/green/blhair.gif
 share/tt2/images/splash/green/box.gif
 share/tt2/images/splash/green/br.gif
+share/tt2/images/splash/green/brhair.gif
 share/tt2/images/splash/green/diamond.gif
 share/tt2/images/splash/green/dot.gif
 share/tt2/images/splash/green/down.gif
+share/tt2/images/splash/green/horz.gif
 share/tt2/images/splash/green/left.gif
 share/tt2/images/splash/green/minus.gif
 share/tt2/images/splash/green/negbox.gif
@@ -597,15 +728,22 @@ share/tt2/images/splash/green/posbox.gif
 share/tt2/images/splash/green/right.gif
 share/tt2/images/splash/green/ring.gif
 share/tt2/images/splash/green/ringdot.gif
+share/tt2/images/splash/green/single.gif
+share/tt2/images/splash/green/square.gif
 share/tt2/images/splash/green/tl.gif
+share/tt2/images/splash/green/tlhair.gif
 share/tt2/images/splash/green/tr.gif
+share/tt2/images/splash/green/trhair.gif
 share/tt2/images/splash/green/up.gif
 share/tt2/images/splash/green25/bl.gif
+share/tt2/images/splash/green25/blhair.gif
 share/tt2/images/splash/green25/box.gif
 share/tt2/images/splash/green25/br.gif
+share/tt2/images/splash/green25/brhair.gif
 share/tt2/images/splash/green25/diamond.gif
 share/tt2/images/splash/green25/dot.gif
 share/tt2/images/splash/green25/down.gif
+share/tt2/images/splash/green25/horz.gif
 share/tt2/images/splash/green25/left.gif
 share/tt2/images/splash/green25/minus.gif
 share/tt2/images/splash/green25/negbox.gif
@@ -614,15 +752,22 @@ share/tt2/images/splash/green25/posbox.gif
 share/tt2/images/splash/green25/right.gif
 share/tt2/images/splash/green25/ring.gif
 share/tt2/images/splash/green25/ringdot.gif
+share/tt2/images/splash/green25/single.gif
+share/tt2/images/splash/green25/square.gif
 share/tt2/images/splash/green25/tl.gif
+share/tt2/images/splash/green25/tlhair.gif
 share/tt2/images/splash/green25/tr.gif
+share/tt2/images/splash/green25/trhair.gif
 share/tt2/images/splash/green25/up.gif
 share/tt2/images/splash/green50/bl.gif
+share/tt2/images/splash/green50/blhair.gif
 share/tt2/images/splash/green50/box.gif
 share/tt2/images/splash/green50/br.gif
+share/tt2/images/splash/green50/brhair.gif
 share/tt2/images/splash/green50/diamond.gif
 share/tt2/images/splash/green50/dot.gif
 share/tt2/images/splash/green50/down.gif
+share/tt2/images/splash/green50/horz.gif
 share/tt2/images/splash/green50/left.gif
 share/tt2/images/splash/green50/minus.gif
 share/tt2/images/splash/green50/negbox.gif
@@ -631,15 +776,22 @@ share/tt2/images/splash/green50/posbox.gif
 share/tt2/images/splash/green50/right.gif
 share/tt2/images/splash/green50/ring.gif
 share/tt2/images/splash/green50/ringdot.gif
+share/tt2/images/splash/green50/single.gif
+share/tt2/images/splash/green50/square.gif
 share/tt2/images/splash/green50/tl.gif
+share/tt2/images/splash/green50/tlhair.gif
 share/tt2/images/splash/green50/tr.gif
+share/tt2/images/splash/green50/trhair.gif
 share/tt2/images/splash/green50/up.gif
 share/tt2/images/splash/green75/bl.gif
+share/tt2/images/splash/green75/blhair.gif
 share/tt2/images/splash/green75/box.gif
 share/tt2/images/splash/green75/br.gif
+share/tt2/images/splash/green75/brhair.gif
 share/tt2/images/splash/green75/diamond.gif
 share/tt2/images/splash/green75/dot.gif
 share/tt2/images/splash/green75/down.gif
+share/tt2/images/splash/green75/horz.gif
 share/tt2/images/splash/green75/left.gif
 share/tt2/images/splash/green75/minus.gif
 share/tt2/images/splash/green75/negbox.gif
@@ -648,15 +800,22 @@ share/tt2/images/splash/green75/posbox.gif
 share/tt2/images/splash/green75/right.gif
 share/tt2/images/splash/green75/ring.gif
 share/tt2/images/splash/green75/ringdot.gif
+share/tt2/images/splash/green75/single.gif
+share/tt2/images/splash/green75/square.gif
 share/tt2/images/splash/green75/tl.gif
+share/tt2/images/splash/green75/tlhair.gif
 share/tt2/images/splash/green75/tr.gif
+share/tt2/images/splash/green75/trhair.gif
 share/tt2/images/splash/green75/up.gif
 share/tt2/images/splash/grey25/bl.gif
+share/tt2/images/splash/grey25/blhair.gif
 share/tt2/images/splash/grey25/box.gif
 share/tt2/images/splash/grey25/br.gif
+share/tt2/images/splash/grey25/brhair.gif
 share/tt2/images/splash/grey25/diamond.gif
 share/tt2/images/splash/grey25/dot.gif
 share/tt2/images/splash/grey25/down.gif
+share/tt2/images/splash/grey25/horz.gif
 share/tt2/images/splash/grey25/left.gif
 share/tt2/images/splash/grey25/minus.gif
 share/tt2/images/splash/grey25/negbox.gif
@@ -665,15 +824,22 @@ share/tt2/images/splash/grey25/posbox.gif
 share/tt2/images/splash/grey25/right.gif
 share/tt2/images/splash/grey25/ring.gif
 share/tt2/images/splash/grey25/ringdot.gif
+share/tt2/images/splash/grey25/single.gif
+share/tt2/images/splash/grey25/square.gif
 share/tt2/images/splash/grey25/tl.gif
+share/tt2/images/splash/grey25/tlhair.gif
 share/tt2/images/splash/grey25/tr.gif
+share/tt2/images/splash/grey25/trhair.gif
 share/tt2/images/splash/grey25/up.gif
 share/tt2/images/splash/grey50/bl.gif
+share/tt2/images/splash/grey50/blhair.gif
 share/tt2/images/splash/grey50/box.gif
 share/tt2/images/splash/grey50/br.gif
+share/tt2/images/splash/grey50/brhair.gif
 share/tt2/images/splash/grey50/diamond.gif
 share/tt2/images/splash/grey50/dot.gif
 share/tt2/images/splash/grey50/down.gif
+share/tt2/images/splash/grey50/horz.gif
 share/tt2/images/splash/grey50/left.gif
 share/tt2/images/splash/grey50/minus.gif
 share/tt2/images/splash/grey50/negbox.gif
@@ -682,15 +848,22 @@ share/tt2/images/splash/grey50/posbox.gif
 share/tt2/images/splash/grey50/right.gif
 share/tt2/images/splash/grey50/ring.gif
 share/tt2/images/splash/grey50/ringdot.gif
+share/tt2/images/splash/grey50/single.gif
+share/tt2/images/splash/grey50/square.gif
 share/tt2/images/splash/grey50/tl.gif
+share/tt2/images/splash/grey50/tlhair.gif
 share/tt2/images/splash/grey50/tr.gif
+share/tt2/images/splash/grey50/trhair.gif
 share/tt2/images/splash/grey50/up.gif
 share/tt2/images/splash/grey75/bl.gif
+share/tt2/images/splash/grey75/blhair.gif
 share/tt2/images/splash/grey75/box.gif
 share/tt2/images/splash/grey75/br.gif
+share/tt2/images/splash/grey75/brhair.gif
 share/tt2/images/splash/grey75/diamond.gif
 share/tt2/images/splash/grey75/dot.gif
 share/tt2/images/splash/grey75/down.gif
+share/tt2/images/splash/grey75/horz.gif
 share/tt2/images/splash/grey75/left.gif
 share/tt2/images/splash/grey75/minus.gif
 share/tt2/images/splash/grey75/negbox.gif
@@ -699,15 +872,22 @@ share/tt2/images/splash/grey75/posbox.gif
 share/tt2/images/splash/grey75/right.gif
 share/tt2/images/splash/grey75/ring.gif
 share/tt2/images/splash/grey75/ringdot.gif
+share/tt2/images/splash/grey75/single.gif
+share/tt2/images/splash/grey75/square.gif
 share/tt2/images/splash/grey75/tl.gif
+share/tt2/images/splash/grey75/tlhair.gif
 share/tt2/images/splash/grey75/tr.gif
+share/tt2/images/splash/grey75/trhair.gif
 share/tt2/images/splash/grey75/up.gif
 share/tt2/images/splash/leaf/bl.gif
+share/tt2/images/splash/leaf/blhair.gif
 share/tt2/images/splash/leaf/box.gif
 share/tt2/images/splash/leaf/br.gif
+share/tt2/images/splash/leaf/brhair.gif
 share/tt2/images/splash/leaf/diamond.gif
 share/tt2/images/splash/leaf/dot.gif
 share/tt2/images/splash/leaf/down.gif
+share/tt2/images/splash/leaf/horz.gif
 share/tt2/images/splash/leaf/left.gif
 share/tt2/images/splash/leaf/minus.gif
 share/tt2/images/splash/leaf/negbox.gif
@@ -716,15 +896,22 @@ share/tt2/images/splash/leaf/posbox.gif
 share/tt2/images/splash/leaf/right.gif
 share/tt2/images/splash/leaf/ring.gif
 share/tt2/images/splash/leaf/ringdot.gif
+share/tt2/images/splash/leaf/single.gif
+share/tt2/images/splash/leaf/square.gif
 share/tt2/images/splash/leaf/tl.gif
+share/tt2/images/splash/leaf/tlhair.gif
 share/tt2/images/splash/leaf/tr.gif
+share/tt2/images/splash/leaf/trhair.gif
 share/tt2/images/splash/leaf/up.gif
 share/tt2/images/splash/lilac/bl.gif
+share/tt2/images/splash/lilac/blhair.gif
 share/tt2/images/splash/lilac/box.gif
 share/tt2/images/splash/lilac/br.gif
+share/tt2/images/splash/lilac/brhair.gif
 share/tt2/images/splash/lilac/diamond.gif
 share/tt2/images/splash/lilac/dot.gif
 share/tt2/images/splash/lilac/down.gif
+share/tt2/images/splash/lilac/horz.gif
 share/tt2/images/splash/lilac/left.gif
 share/tt2/images/splash/lilac/minus.gif
 share/tt2/images/splash/lilac/negbox.gif
@@ -733,15 +920,22 @@ share/tt2/images/splash/lilac/posbox.gif
 share/tt2/images/splash/lilac/right.gif
 share/tt2/images/splash/lilac/ring.gif
 share/tt2/images/splash/lilac/ringdot.gif
+share/tt2/images/splash/lilac/single.gif
+share/tt2/images/splash/lilac/square.gif
 share/tt2/images/splash/lilac/tl.gif
+share/tt2/images/splash/lilac/tlhair.gif
 share/tt2/images/splash/lilac/tr.gif
+share/tt2/images/splash/lilac/trhair.gif
 share/tt2/images/splash/lilac/up.gif
 share/tt2/images/splash/marine/bl.gif
+share/tt2/images/splash/marine/blhair.gif
 share/tt2/images/splash/marine/box.gif
 share/tt2/images/splash/marine/br.gif
+share/tt2/images/splash/marine/brhair.gif
 share/tt2/images/splash/marine/diamond.gif
 share/tt2/images/splash/marine/dot.gif
 share/tt2/images/splash/marine/down.gif
+share/tt2/images/splash/marine/horz.gif
 share/tt2/images/splash/marine/left.gif
 share/tt2/images/splash/marine/minus.gif
 share/tt2/images/splash/marine/negbox.gif
@@ -750,15 +944,22 @@ share/tt2/images/splash/marine/posbox.gif
 share/tt2/images/splash/marine/right.gif
 share/tt2/images/splash/marine/ring.gif
 share/tt2/images/splash/marine/ringdot.gif
+share/tt2/images/splash/marine/single.gif
+share/tt2/images/splash/marine/square.gif
 share/tt2/images/splash/marine/tl.gif
+share/tt2/images/splash/marine/tlhair.gif
 share/tt2/images/splash/marine/tr.gif
+share/tt2/images/splash/marine/trhair.gif
 share/tt2/images/splash/marine/up.gif
 share/tt2/images/splash/mauve/bl.gif
+share/tt2/images/splash/mauve/blhair.gif
 share/tt2/images/splash/mauve/box.gif
 share/tt2/images/splash/mauve/br.gif
+share/tt2/images/splash/mauve/brhair.gif
 share/tt2/images/splash/mauve/diamond.gif
 share/tt2/images/splash/mauve/dot.gif
 share/tt2/images/splash/mauve/down.gif
+share/tt2/images/splash/mauve/horz.gif
 share/tt2/images/splash/mauve/left.gif
 share/tt2/images/splash/mauve/minus.gif
 share/tt2/images/splash/mauve/negbox.gif
@@ -767,15 +968,22 @@ share/tt2/images/splash/mauve/posbox.gif
 share/tt2/images/splash/mauve/right.gif
 share/tt2/images/splash/mauve/ring.gif
 share/tt2/images/splash/mauve/ringdot.gif
+share/tt2/images/splash/mauve/single.gif
+share/tt2/images/splash/mauve/square.gif
 share/tt2/images/splash/mauve/tl.gif
+share/tt2/images/splash/mauve/tlhair.gif
 share/tt2/images/splash/mauve/tr.gif
+share/tt2/images/splash/mauve/trhair.gif
 share/tt2/images/splash/mauve/up.gif
 share/tt2/images/splash/mint/bl.gif
+share/tt2/images/splash/mint/blhair.gif
 share/tt2/images/splash/mint/box.gif
 share/tt2/images/splash/mint/br.gif
+share/tt2/images/splash/mint/brhair.gif
 share/tt2/images/splash/mint/diamond.gif
 share/tt2/images/splash/mint/dot.gif
 share/tt2/images/splash/mint/down.gif
+share/tt2/images/splash/mint/horz.gif
 share/tt2/images/splash/mint/left.gif
 share/tt2/images/splash/mint/minus.gif
 share/tt2/images/splash/mint/negbox.gif
@@ -784,15 +992,22 @@ share/tt2/images/splash/mint/posbox.gif
 share/tt2/images/splash/mint/right.gif
 share/tt2/images/splash/mint/ring.gif
 share/tt2/images/splash/mint/ringdot.gif
+share/tt2/images/splash/mint/single.gif
+share/tt2/images/splash/mint/square.gif
 share/tt2/images/splash/mint/tl.gif
+share/tt2/images/splash/mint/tlhair.gif
 share/tt2/images/splash/mint/tr.gif
+share/tt2/images/splash/mint/trhair.gif
 share/tt2/images/splash/mint/up.gif
 share/tt2/images/splash/navy/bl.gif
+share/tt2/images/splash/navy/blhair.gif
 share/tt2/images/splash/navy/box.gif
 share/tt2/images/splash/navy/br.gif
+share/tt2/images/splash/navy/brhair.gif
 share/tt2/images/splash/navy/diamond.gif
 share/tt2/images/splash/navy/dot.gif
 share/tt2/images/splash/navy/down.gif
+share/tt2/images/splash/navy/horz.gif
 share/tt2/images/splash/navy/left.gif
 share/tt2/images/splash/navy/minus.gif
 share/tt2/images/splash/navy/negbox.gif
@@ -801,15 +1016,46 @@ share/tt2/images/splash/navy/posbox.gif
 share/tt2/images/splash/navy/right.gif
 share/tt2/images/splash/navy/ring.gif
 share/tt2/images/splash/navy/ringdot.gif
+share/tt2/images/splash/navy/single.gif
+share/tt2/images/splash/navy/square.gif
 share/tt2/images/splash/navy/tl.gif
+share/tt2/images/splash/navy/tlhair.gif
 share/tt2/images/splash/navy/tr.gif
+share/tt2/images/splash/navy/trhair.gif
 share/tt2/images/splash/navy/up.gif
+share/tt2/images/splash/orange/bl.gif
+share/tt2/images/splash/orange/blhair.gif
+share/tt2/images/splash/orange/box.gif
+share/tt2/images/splash/orange/br.gif
+share/tt2/images/splash/orange/brhair.gif
+share/tt2/images/splash/orange/diamond.gif
+share/tt2/images/splash/orange/dot.gif
+share/tt2/images/splash/orange/down.gif
+share/tt2/images/splash/orange/horz.gif
+share/tt2/images/splash/orange/left.gif
+share/tt2/images/splash/orange/minus.gif
+share/tt2/images/splash/orange/negbox.gif
+share/tt2/images/splash/orange/plus.gif
+share/tt2/images/splash/orange/posbox.gif
+share/tt2/images/splash/orange/right.gif
+share/tt2/images/splash/orange/ring.gif
+share/tt2/images/splash/orange/ringdot.gif
+share/tt2/images/splash/orange/single.gif
+share/tt2/images/splash/orange/square.gif
+share/tt2/images/splash/orange/tl.gif
+share/tt2/images/splash/orange/tlhair.gif
+share/tt2/images/splash/orange/tr.gif
+share/tt2/images/splash/orange/trhair.gif
+share/tt2/images/splash/orange/up.gif
 share/tt2/images/splash/purple/bl.gif
+share/tt2/images/splash/purple/blhair.gif
 share/tt2/images/splash/purple/box.gif
 share/tt2/images/splash/purple/br.gif
+share/tt2/images/splash/purple/brhair.gif
 share/tt2/images/splash/purple/diamond.gif
 share/tt2/images/splash/purple/dot.gif
 share/tt2/images/splash/purple/down.gif
+share/tt2/images/splash/purple/horz.gif
 share/tt2/images/splash/purple/left.gif
 share/tt2/images/splash/purple/minus.gif
 share/tt2/images/splash/purple/negbox.gif
@@ -818,15 +1064,22 @@ share/tt2/images/splash/purple/posbox.gif
 share/tt2/images/splash/purple/right.gif
 share/tt2/images/splash/purple/ring.gif
 share/tt2/images/splash/purple/ringdot.gif
+share/tt2/images/splash/purple/single.gif
+share/tt2/images/splash/purple/square.gif
 share/tt2/images/splash/purple/tl.gif
+share/tt2/images/splash/purple/tlhair.gif
 share/tt2/images/splash/purple/tr.gif
+share/tt2/images/splash/purple/trhair.gif
 share/tt2/images/splash/purple/up.gif
 share/tt2/images/splash/red/bl.gif
+share/tt2/images/splash/red/blhair.gif
 share/tt2/images/splash/red/box.gif
 share/tt2/images/splash/red/br.gif
+share/tt2/images/splash/red/brhair.gif
 share/tt2/images/splash/red/diamond.gif
 share/tt2/images/splash/red/dot.gif
 share/tt2/images/splash/red/down.gif
+share/tt2/images/splash/red/horz.gif
 share/tt2/images/splash/red/left.gif
 share/tt2/images/splash/red/minus.gif
 share/tt2/images/splash/red/negbox.gif
@@ -835,15 +1088,22 @@ share/tt2/images/splash/red/posbox.gif
 share/tt2/images/splash/red/right.gif
 share/tt2/images/splash/red/ring.gif
 share/tt2/images/splash/red/ringdot.gif
+share/tt2/images/splash/red/single.gif
+share/tt2/images/splash/red/square.gif
 share/tt2/images/splash/red/tl.gif
+share/tt2/images/splash/red/tlhair.gif
 share/tt2/images/splash/red/tr.gif
+share/tt2/images/splash/red/trhair.gif
 share/tt2/images/splash/red/up.gif
 share/tt2/images/splash/red25/bl.gif
+share/tt2/images/splash/red25/blhair.gif
 share/tt2/images/splash/red25/box.gif
 share/tt2/images/splash/red25/br.gif
+share/tt2/images/splash/red25/brhair.gif
 share/tt2/images/splash/red25/diamond.gif
 share/tt2/images/splash/red25/dot.gif
 share/tt2/images/splash/red25/down.gif
+share/tt2/images/splash/red25/horz.gif
 share/tt2/images/splash/red25/left.gif
 share/tt2/images/splash/red25/minus.gif
 share/tt2/images/splash/red25/negbox.gif
@@ -852,15 +1112,22 @@ share/tt2/images/splash/red25/posbox.gif
 share/tt2/images/splash/red25/right.gif
 share/tt2/images/splash/red25/ring.gif
 share/tt2/images/splash/red25/ringdot.gif
+share/tt2/images/splash/red25/single.gif
+share/tt2/images/splash/red25/square.gif
 share/tt2/images/splash/red25/tl.gif
+share/tt2/images/splash/red25/tlhair.gif
 share/tt2/images/splash/red25/tr.gif
+share/tt2/images/splash/red25/trhair.gif
 share/tt2/images/splash/red25/up.gif
 share/tt2/images/splash/red50/bl.gif
+share/tt2/images/splash/red50/blhair.gif
 share/tt2/images/splash/red50/box.gif
 share/tt2/images/splash/red50/br.gif
+share/tt2/images/splash/red50/brhair.gif
 share/tt2/images/splash/red50/diamond.gif
 share/tt2/images/splash/red50/dot.gif
 share/tt2/images/splash/red50/down.gif
+share/tt2/images/splash/red50/horz.gif
 share/tt2/images/splash/red50/left.gif
 share/tt2/images/splash/red50/minus.gif
 share/tt2/images/splash/red50/negbox.gif
@@ -869,15 +1136,22 @@ share/tt2/images/splash/red50/posbox.gif
 share/tt2/images/splash/red50/right.gif
 share/tt2/images/splash/red50/ring.gif
 share/tt2/images/splash/red50/ringdot.gif
+share/tt2/images/splash/red50/single.gif
+share/tt2/images/splash/red50/square.gif
 share/tt2/images/splash/red50/tl.gif
+share/tt2/images/splash/red50/tlhair.gif
 share/tt2/images/splash/red50/tr.gif
+share/tt2/images/splash/red50/trhair.gif
 share/tt2/images/splash/red50/up.gif
 share/tt2/images/splash/red75/bl.gif
+share/tt2/images/splash/red75/blhair.gif
 share/tt2/images/splash/red75/box.gif
 share/tt2/images/splash/red75/br.gif
+share/tt2/images/splash/red75/brhair.gif
 share/tt2/images/splash/red75/diamond.gif
 share/tt2/images/splash/red75/dot.gif
 share/tt2/images/splash/red75/down.gif
+share/tt2/images/splash/red75/horz.gif
 share/tt2/images/splash/red75/left.gif
 share/tt2/images/splash/red75/minus.gif
 share/tt2/images/splash/red75/negbox.gif
@@ -886,15 +1160,22 @@ share/tt2/images/splash/red75/posbox.gif
 share/tt2/images/splash/red75/right.gif
 share/tt2/images/splash/red75/ring.gif
 share/tt2/images/splash/red75/ringdot.gif
+share/tt2/images/splash/red75/single.gif
+share/tt2/images/splash/red75/square.gif
 share/tt2/images/splash/red75/tl.gif
+share/tt2/images/splash/red75/tlhair.gif
 share/tt2/images/splash/red75/tr.gif
+share/tt2/images/splash/red75/trhair.gif
 share/tt2/images/splash/red75/up.gif
 share/tt2/images/splash/rose/bl.gif
+share/tt2/images/splash/rose/blhair.gif
 share/tt2/images/splash/rose/box.gif
 share/tt2/images/splash/rose/br.gif
+share/tt2/images/splash/rose/brhair.gif
 share/tt2/images/splash/rose/diamond.gif
 share/tt2/images/splash/rose/dot.gif
 share/tt2/images/splash/rose/down.gif
+share/tt2/images/splash/rose/horz.gif
 share/tt2/images/splash/rose/left.gif
 share/tt2/images/splash/rose/minus.gif
 share/tt2/images/splash/rose/negbox.gif
@@ -903,15 +1184,22 @@ share/tt2/images/splash/rose/posbox.gif
 share/tt2/images/splash/rose/right.gif
 share/tt2/images/splash/rose/ring.gif
 share/tt2/images/splash/rose/ringdot.gif
+share/tt2/images/splash/rose/single.gif
+share/tt2/images/splash/rose/square.gif
 share/tt2/images/splash/rose/tl.gif
+share/tt2/images/splash/rose/tlhair.gif
 share/tt2/images/splash/rose/tr.gif
+share/tt2/images/splash/rose/trhair.gif
 share/tt2/images/splash/rose/up.gif
 share/tt2/images/splash/scarlet/bl.gif
+share/tt2/images/splash/scarlet/blhair.gif
 share/tt2/images/splash/scarlet/box.gif
 share/tt2/images/splash/scarlet/br.gif
+share/tt2/images/splash/scarlet/brhair.gif
 share/tt2/images/splash/scarlet/diamond.gif
 share/tt2/images/splash/scarlet/dot.gif
 share/tt2/images/splash/scarlet/down.gif
+share/tt2/images/splash/scarlet/horz.gif
 share/tt2/images/splash/scarlet/left.gif
 share/tt2/images/splash/scarlet/minus.gif
 share/tt2/images/splash/scarlet/negbox.gif
@@ -920,15 +1208,22 @@ share/tt2/images/splash/scarlet/posbox.gif
 share/tt2/images/splash/scarlet/right.gif
 share/tt2/images/splash/scarlet/ring.gif
 share/tt2/images/splash/scarlet/ringdot.gif
+share/tt2/images/splash/scarlet/single.gif
+share/tt2/images/splash/scarlet/square.gif
 share/tt2/images/splash/scarlet/tl.gif
+share/tt2/images/splash/scarlet/tlhair.gif
 share/tt2/images/splash/scarlet/tr.gif
+share/tt2/images/splash/scarlet/trhair.gif
 share/tt2/images/splash/scarlet/up.gif
 share/tt2/images/splash/sky/bl.gif
+share/tt2/images/splash/sky/blhair.gif
 share/tt2/images/splash/sky/box.gif
 share/tt2/images/splash/sky/br.gif
+share/tt2/images/splash/sky/brhair.gif
 share/tt2/images/splash/sky/diamond.gif
 share/tt2/images/splash/sky/dot.gif
 share/tt2/images/splash/sky/down.gif
+share/tt2/images/splash/sky/horz.gif
 share/tt2/images/splash/sky/left.gif
 share/tt2/images/splash/sky/minus.gif
 share/tt2/images/splash/sky/negbox.gif
@@ -937,15 +1232,22 @@ share/tt2/images/splash/sky/posbox.gif
 share/tt2/images/splash/sky/right.gif
 share/tt2/images/splash/sky/ring.gif
 share/tt2/images/splash/sky/ringdot.gif
+share/tt2/images/splash/sky/single.gif
+share/tt2/images/splash/sky/square.gif
 share/tt2/images/splash/sky/tl.gif
+share/tt2/images/splash/sky/tlhair.gif
 share/tt2/images/splash/sky/tr.gif
+share/tt2/images/splash/sky/trhair.gif
 share/tt2/images/splash/sky/up.gif
 share/tt2/images/splash/white/bl.gif
+share/tt2/images/splash/white/blhair.gif
 share/tt2/images/splash/white/box.gif
 share/tt2/images/splash/white/br.gif
+share/tt2/images/splash/white/brhair.gif
 share/tt2/images/splash/white/diamond.gif
 share/tt2/images/splash/white/dot.gif
 share/tt2/images/splash/white/down.gif
+share/tt2/images/splash/white/horz.gif
 share/tt2/images/splash/white/left.gif
 share/tt2/images/splash/white/minus.gif
 share/tt2/images/splash/white/negbox.gif
@@ -954,21 +1256,30 @@ share/tt2/images/splash/white/posbox.gif
 share/tt2/images/splash/white/right.gif
 share/tt2/images/splash/white/ring.gif
 share/tt2/images/splash/white/ringdot.gif
+share/tt2/images/splash/white/single.gif
+share/tt2/images/splash/white/square.gif
 share/tt2/images/splash/white/tl.gif
+share/tt2/images/splash/white/tlhair.gif
 share/tt2/images/splash/white/tr.gif
+share/tt2/images/splash/white/trhair.gif
 share/tt2/images/splash/white/up.gif
 share/tt2/images/tt2power.gif
 share/tt2/images/ttdotorg.gif
 share/tt2/templates/README
 share/tt2/templates/html/bar
+share/tt2/templates/html/body
 share/tt2/templates/html/box
 share/tt2/templates/html/button
 share/tt2/templates/html/cell
+share/tt2/templates/html/config
 share/tt2/templates/html/edge
 share/tt2/templates/html/edgebar
 share/tt2/templates/html/edgebox
 share/tt2/templates/html/footer
+share/tt2/templates/html/head
 share/tt2/templates/html/header
+share/tt2/templates/html/html
+share/tt2/templates/html/html3.2
 share/tt2/templates/html/indent
 share/tt2/templates/html/item
 share/tt2/templates/html/link
@@ -1018,10 +1329,13 @@ share/tt2/templates/ps/tilepage
 share/tt2/templates/ps/tiles
 share/tt2/templates/splash/bar
 share/tt2/templates/splash/box
+share/tt2/templates/splash/breakdown
 share/tt2/templates/splash/button
 share/tt2/templates/splash/config
+share/tt2/templates/splash/dots
 share/tt2/templates/splash/dropbox
 share/tt2/templates/splash/frame
+share/tt2/templates/splash/hair
 share/tt2/templates/splash/homelink
 share/tt2/templates/splash/icon
 share/tt2/templates/splash/menu
@@ -1035,118 +1349,135 @@ share/tt2/templates/splash/tabset
 share/tt2/templates/splash/text
 share/tt2/templates/splash/ttdotorg
 share/tt2/templates/splash/ttpower
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Template/Stash/XS
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Template/Stash
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Template
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Template/Tools
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin/XML
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Template/Manual
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Template/Library
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Template
-@dirrm share/tt2/templates/splash
-@dirrm share/tt2/templates/ps
-@dirrm share/tt2/templates/pod/html
-@dirrm share/tt2/templates/pod
-@dirrm share/tt2/templates/html
-@dirrm share/tt2/templates
-@dirrm share/tt2/images/splash/white
-@dirrm share/tt2/images/splash/sky
-@dirrm share/tt2/images/splash/scarlet
-@dirrm share/tt2/images/splash/rose
-@dirrm share/tt2/images/splash/red75
-@dirrm share/tt2/images/splash/red50
-@dirrm share/tt2/images/splash/red25
-@dirrm share/tt2/images/splash/red
-@dirrm share/tt2/images/splash/purple
-@dirrm share/tt2/images/splash/navy
-@dirrm share/tt2/images/splash/mint
-@dirrm share/tt2/images/splash/mauve
-@dirrm share/tt2/images/splash/marine
-@dirrm share/tt2/images/splash/lilac
-@dirrm share/tt2/images/splash/leaf
-@dirrm share/tt2/images/splash/grey75
-@dirrm share/tt2/images/splash/grey50
-@dirrm share/tt2/images/splash/grey25
-@dirrm share/tt2/images/splash/green75
-@dirrm share/tt2/images/splash/green50
-@dirrm share/tt2/images/splash/green25
-@dirrm share/tt2/images/splash/green
-@dirrm share/tt2/images/splash/bud
-@dirrm share/tt2/images/splash/blue75
-@dirrm share/tt2/images/splash/blue50
-@dirrm share/tt2/images/splash/blue25
-@dirrm share/tt2/images/splash/blue
-@dirrm share/tt2/images/splash/blood
-@dirrm share/tt2/images/splash/black
-@dirrm share/tt2/images/splash/aqua
-@dirrm share/tt2/images/splash
-@dirrm share/tt2/images
-@dirrm share/tt2/examples/src/splash
-@dirrm share/tt2/examples/src/ps
-@dirrm share/tt2/examples/src/html
-@dirrm share/tt2/examples/src
-@dirrm share/tt2/examples/lib/splash/about
-@dirrm share/tt2/examples/lib/splash
-@dirrm share/tt2/examples/lib/examples/splash/text
-@dirrm share/tt2/examples/lib/examples/splash/tabset
-@dirrm share/tt2/examples/lib/examples/splash/tabsbox
-@dirrm share/tt2/examples/lib/examples/splash/tabbox
-@dirrm share/tt2/examples/lib/examples/splash/tab
-@dirrm share/tt2/examples/lib/examples/splash/pulldown
-@dirrm share/tt2/examples/lib/examples/splash/panel
-@dirrm share/tt2/examples/lib/examples/splash/menubar
-@dirrm share/tt2/examples/lib/examples/splash/menu
-@dirrm share/tt2/examples/lib/examples/splash/icon
-@dirrm share/tt2/examples/lib/examples/splash/frame
-@dirrm share/tt2/examples/lib/examples/splash/dropbox
-@dirrm share/tt2/examples/lib/examples/splash/config
-@dirrm share/tt2/examples/lib/examples/splash/button
-@dirrm share/tt2/examples/lib/examples/splash/box
-@dirrm share/tt2/examples/lib/examples/splash/bar
-@dirrm share/tt2/examples/lib/examples/splash
-@dirrm share/tt2/examples/lib/examples/ps/marks
-@dirrm share/tt2/examples/lib/examples/ps
-@dirrm share/tt2/examples/lib/examples/html/tables
-@dirrm share/tt2/examples/lib/examples/html/rgb
-@dirrm share/tt2/examples/lib/examples/html/menus
-@dirrm share/tt2/examples/lib/examples/html/lists
-@dirrm share/tt2/examples/lib/examples/html/links
-@dirrm share/tt2/examples/lib/examples/html/headers
-@dirrm share/tt2/examples/lib/examples/html/bars
-@dirrm share/tt2/examples/lib/examples/html
-@dirrm share/tt2/examples/lib/examples
-@dirrm share/tt2/examples/lib/example
-@dirrm share/tt2/examples/lib
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Tools
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Stash
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Library
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Tutorial
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Manual
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/XML
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/GD/Text
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/GD/Graph
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/GD
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template
+@dirrm share/tt2/docs/html/Tools
+@dirrm share/tt2/docs/html/Tutorial
+@dirrm share/tt2/docs/html/Library
+@dirrm share/tt2/docs/html/Manual
+@dirrm share/tt2/docs/html/Release
+@dirrm share/tt2/docs/html/FAQ
+@dirrm share/tt2/docs/html/Modules/Template/Stash
+@dirrm share/tt2/docs/html/Modules/Template/Plugin/XML
+@dirrm share/tt2/docs/html/Modules/Template/Plugin/GD/Text
+@dirrm share/tt2/docs/html/Modules/Template/Plugin/GD/Graph
+@dirrm share/tt2/docs/html/Modules/Template/Plugin/GD
+@dirrm share/tt2/docs/html/Modules/Template/Plugin
+@dirrm share/tt2/docs/html/Modules/Template
+@dirrm share/tt2/docs/html/Modules
+@dirrm share/tt2/docs/html
+@dirrm share/tt2/docs/lib/docset
+@dirrm share/tt2/docs/lib
+@dirrm share/tt2/docs/style/splash
+@dirrm share/tt2/docs/style/plain
+@dirrm share/tt2/docs/style
+@dirrm share/tt2/docs/src/Tools
+@dirrm share/tt2/docs/src/Tutorial
+@dirrm share/tt2/docs/src/Library
+@dirrm share/tt2/docs/src/Manual
+@dirrm share/tt2/docs/src/Release
+@dirrm share/tt2/docs/src/FAQ
+@dirrm share/tt2/docs/src/Modules/Template/Stash
+@dirrm share/tt2/docs/src/Modules/Template/Plugin/XML
+@dirrm share/tt2/docs/src/Modules/Template/Plugin/GD/Text
+@dirrm share/tt2/docs/src/Modules/Template/Plugin/GD/Graph
+@dirrm share/tt2/docs/src/Modules/Template/Plugin/GD
+@dirrm share/tt2/docs/src/Modules/Template/Plugin
+@dirrm share/tt2/docs/src/Modules/Template
+@dirrm share/tt2/docs/src/Modules
+@dirrm share/tt2/docs/src
+@dirrm share/tt2/docs
 @dirrm share/tt2/examples/html/splash
 @dirrm share/tt2/examples/html/ps
 @dirrm share/tt2/examples/html/html
 @dirrm share/tt2/examples/html
+@dirrm share/tt2/examples/lib/examples/ps/marks
+@dirrm share/tt2/examples/lib/examples/ps
+@dirrm share/tt2/examples/lib/examples/html/lists
+@dirrm share/tt2/examples/lib/examples/html/headers
+@dirrm share/tt2/examples/lib/examples/html/tables
+@dirrm share/tt2/examples/lib/examples/html/links
+@dirrm share/tt2/examples/lib/examples/html/bars
+@dirrm share/tt2/examples/lib/examples/html/rgb
+@dirrm share/tt2/examples/lib/examples/html/menus
+@dirrm share/tt2/examples/lib/examples/html
+@dirrm share/tt2/examples/lib/examples/splash/pulldown
+@dirrm share/tt2/examples/lib/examples/splash/button
+@dirrm share/tt2/examples/lib/examples/splash/menubar
+@dirrm share/tt2/examples/lib/examples/splash/box
+@dirrm share/tt2/examples/lib/examples/splash/config
+@dirrm share/tt2/examples/lib/examples/splash/tab
+@dirrm share/tt2/examples/lib/examples/splash/dropbox
+@dirrm share/tt2/examples/lib/examples/splash/tabsbox
+@dirrm share/tt2/examples/lib/examples/splash/bar
+@dirrm share/tt2/examples/lib/examples/splash/tabset
+@dirrm share/tt2/examples/lib/examples/splash/text
+@dirrm share/tt2/examples/lib/examples/splash/hair
+@dirrm share/tt2/examples/lib/examples/splash/tabbox
+@dirrm share/tt2/examples/lib/examples/splash/frame
+@dirrm share/tt2/examples/lib/examples/splash/menu
+@dirrm share/tt2/examples/lib/examples/splash/icon
+@dirrm share/tt2/examples/lib/examples/splash/panel
+@dirrm share/tt2/examples/lib/examples/splash
+@dirrm share/tt2/examples/lib/examples
+@dirrm share/tt2/examples/lib/splash/about
+@dirrm share/tt2/examples/lib/splash
+@dirrm share/tt2/examples/lib/example
+@dirrm share/tt2/examples/lib
+@dirrm share/tt2/examples/src/splash
+@dirrm share/tt2/examples/src/ps
+@dirrm share/tt2/examples/src/html
+@dirrm share/tt2/examples/src
 @dirrm share/tt2/examples
-@dirrm share/tt2/docs/style/splash
-@dirrm share/tt2/docs/style/plain
-@dirrm share/tt2/docs/style
-@dirrm share/tt2/docs/src/Tutorial
-@dirrm share/tt2/docs/src/Tools
-@dirrm share/tt2/docs/src/Release
-@dirrm share/tt2/docs/src/Modules/Template/Plugin/XML
-@dirrm share/tt2/docs/src/Modules/Template/Plugin
-@dirrm share/tt2/docs/src/Modules/Template
-@dirrm share/tt2/docs/src/Modules
-@dirrm share/tt2/docs/src/Manual
-@dirrm share/tt2/docs/src/Library
-@dirrm share/tt2/docs/src/FAQ
-@dirrm share/tt2/docs/src
-@dirrm share/tt2/docs/lib/docset
-@dirrm share/tt2/docs/lib
-@dirrm share/tt2/docs/html/Tutorial
-@dirrm share/tt2/docs/html/Tools
-@dirrm share/tt2/docs/html/Release
-@dirrm share/tt2/docs/html/Modules/Template/Plugin/XML
-@dirrm share/tt2/docs/html/Modules/Template/Plugin
-@dirrm share/tt2/docs/html/Modules/Template
-@dirrm share/tt2/docs/html/Modules
-@dirrm share/tt2/docs/html/Manual
-@dirrm share/tt2/docs/html/Library
-@dirrm share/tt2/docs/html/FAQ
-@dirrm share/tt2/docs/html
-@dirrm share/tt2/docs
+@dirrm share/tt2/images/splash/black
+@dirrm share/tt2/images/splash/green50
+@dirrm share/tt2/images/splash/red50
+@dirrm share/tt2/images/splash/green
+@dirrm share/tt2/images/splash/mauve
+@dirrm share/tt2/images/splash/blue
+@dirrm share/tt2/images/splash/marine
+@dirrm share/tt2/images/splash/green75
+@dirrm share/tt2/images/splash/red75
+@dirrm share/tt2/images/splash/grey25
+@dirrm share/tt2/images/splash/purple
+@dirrm share/tt2/images/splash/leaf
+@dirrm share/tt2/images/splash/blue50
+@dirrm share/tt2/images/splash/lilac
+@dirrm share/tt2/images/splash/bud
+@dirrm share/tt2/images/splash/scarlet
+@dirrm share/tt2/images/splash/blue75
+@dirrm share/tt2/images/splash/red25
+@dirrm share/tt2/images/splash/green25
+@dirrm share/tt2/images/splash/orange
+@dirrm share/tt2/images/splash/white
+@dirrm share/tt2/images/splash/mint
+@dirrm share/tt2/images/splash/red
+@dirrm share/tt2/images/splash/grey50
+@dirrm share/tt2/images/splash/rose
+@dirrm share/tt2/images/splash/navy
+@dirrm share/tt2/images/splash/aqua
+@dirrm share/tt2/images/splash/sky
+@dirrm share/tt2/images/splash/blue25
+@dirrm share/tt2/images/splash/grey75
+@dirrm share/tt2/images/splash/blood
+@dirrm share/tt2/images/splash
+@dirrm share/tt2/images
+@dirrm share/tt2/templates/ps
+@dirrm share/tt2/templates/pod/html
+@dirrm share/tt2/templates/pod
+@dirrm share/tt2/templates/html
+@dirrm share/tt2/templates/splash
+@dirrm share/tt2/templates
 @dirrm share/tt2
