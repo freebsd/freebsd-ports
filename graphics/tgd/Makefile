@@ -9,12 +9,14 @@
 DISTNAME=	tgd1.2c
 PKGNAME=	tgd-1.2c
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://dendrome.ucdavis.edu/pub/tgd/ \
-		ftp://probe.nalusda.gov/pub/treegenes/
+MASTER_SITES=	ftp://probe.nalusda.gov/pub/treegenes/ \
+		ftp://dendrome.ucdavis.edu/pub/tgd/
 
 MAINTAINER=	mharo@FreeBSD.org
 
 BUILD_DEPENDS=	${PREFIX}/lib/libgd.a:${PORTSDIR}/graphics/gd
+
+BROKEN=	gd changes
 
 ALL_TARGET=	tgd
 DOCS=		README arc.gif cap.gif char.gif fill.gif fontdemo \
