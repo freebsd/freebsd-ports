@@ -7,6 +7,7 @@
 
 PORTNAME=	heretic
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://heretic.linuxgames.com/heretic/src/ \
 		http://heretic.linuxgames.com/wad/
@@ -34,7 +35,7 @@ BINARY=		xaheretic
 ALL_TARGET=	sdl
 BINARY=		sdlheretic
 SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
-LIB_DEPENDS=	SDL-1.0.2:${PORTSDIR}/devel/sdl10
+LIB_DEPENDS=	SDL-1.1:${PORTSDIR}/devel/sdl12
 MAKE_ENV+=	SDL_CONFIG="${SDL_CONFIG}"
 CFLAGS+=	`${SDL_CONFIG} --cflags`
 .endif
