@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	jc
-PORTVERSION=	1.2.2
-PORTREVISION=	1
+PORTVERSION=	1.2.3
 CATEGORIES=	java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		${MASTER_SITE_GNU:S/$/:CLASSPATH/g}
@@ -19,13 +18,12 @@ DIST_SUBDIR=	jcvm
 MAINTAINER=	archie@freebsd.org
 COMMENT=	JVM that converts class files to C source and compiles them with GCC
 
-BUILD_DEPENDS=	jikes:${PORTSDIR}/java/jikes \
-		zip:${PORTSDIR}/archivers/zip
+BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
-		ffi.2:${PORTSDIR}/devel/libffi \
-		gtk-x11-2.0:${PORTSDIR}/x11-toolkits/gtk20 \
-		art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl2
+		ffi.2:${PORTSDIR}/devel/libffi
 
+USE_GNOME=	gtk20 libartlgpl2 pkgconfig
+USE_JIKES=	yes
 USE_LIBTOOL_VER=15
 LIBTOOLFILES=	${CLASSPATHDIR}/configure
 USE_GMAKE=	yes
@@ -43,10 +41,10 @@ JCDIR=		${PORTNAME}-${PORTVERSION}
 CLASSPATHDIR=	classpath-${CLASSPATHVERSION}
 
 # Classpath version
-CLASSPATHVERSION=0.10
+CLASSPATHVERSION=0.12
 
 # Jikes version expected
-JIKESVERSION=	1.21
+JIKESVERSION=	1.22
 
 # Configure args
 CLASSPATH_CONF=	--prefix=${PREFIX}/jc --enable-jni --with-jikes
