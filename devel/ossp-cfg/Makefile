@@ -26,9 +26,5 @@ INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
-BROKEN=		"Does not compile on amd64"
-.endif
-
 .include "${FILESDIR}/manpages.mk"
 .include <bsd.port.post.mk>
