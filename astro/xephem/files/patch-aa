@@ -1,20 +1,11 @@
---- Imakefile.orig	Wed Mar  4 17:36:44 1998
-+++ Imakefile	Wed Apr 22 13:21:12 1998
-@@ -55,7 +55,7 @@
- 
+--- Imakefile.orig	Tue Mar 16 09:00:21 1999
++++ Imakefile	Sun Apr  4 15:06:31 1999
+@@ -63,7 +63,7 @@
  SRCS = 	$(OBJS:.o=.c)
  
--          XMLIB = -lXm -lXpm
-+          XMLIB = ${MOTIFLIB} -lXpm
+ XCOMM Sometimes you need -lXp after -lXm
+-          XMLIB = -lXm
++          XMLIB = ${MOTIFLIB} -lXm
          DEPLIBS = $(DEPXMLIB) $(DEPXTOOLLIB) $(DEPXLIB)
   EXTRA_INCLUDES = -I../../libastro
    LOCAL_LDFLAGS = -L../../libastro
-@@ -64,3 +64,8 @@
-        PROGRAMS = xephem
- 
- ComplexProgramTarget(xephem)
-+
-+install::
-+	mkdir -p ${PREFIX}/lib/X11/xephem
-+	tar -cf - auxil catalogs tools |(cd ${PREFIX}/lib/X11/xephem; tar -xf -)
-+	sed s,@PREFIX@,${PREFIX}, XEphem.ad > ${PREFIX}/lib/X11/app-defaults/XEphem
