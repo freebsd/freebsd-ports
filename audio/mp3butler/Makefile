@@ -8,7 +8,7 @@
 PORTNAME=	mp3butler
 PORTVERSION=	1.0.2
 CATEGORIES=	audio
-MASTER_SITES=	http://projects.babblica.net/butler/versions/
+MASTER_SITES=	http://babblica.net/pub/mp3butler/
 
 MAINTAINER=	rbg@gayteenresource.org
 

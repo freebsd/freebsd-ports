@@ -5,7 +5,7 @@ Mp3butler is a program written in perl for renaming your mp3's.
 	o It can create ID3 tags using the filename
 	o It can reorganize your mp3's into an organizational hierarchy 
 
-WWW: http://projects.babblica.net/butler/
+WWW: http://www.babblica.net/mp3butler/
 
 - Christopher Preston
 rbg@gayteenresource.org
