@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	potracegui
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	markus@FreeBSD.org
 COMMENT=	GUI for potrace, a program for tracing bitmap images
-
-RUN_DEPENDS=    potrace:${PORTSDIR}/graphics/potrace
 
 EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-configure
 
@@ -24,10 +22,20 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
-post-extract:
-	@${TOUCH} ${WRKSRC}/config.h.in
+OPTIONS=	POTRACE "potrace backend" on \
+		AUTOTRACE "Autotrace backend" on
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_POTRACE)
+RUN_DEPENDS+=	potrace:${PORTSDIR}/graphics/potrace
+.endif
+
+.if !defined(WITHOUT_AUTOTRACE)
+RUN_DEPENDS+=	autotrace:${PORTSDIR}/graphics/autotrace
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
