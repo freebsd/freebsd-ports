@@ -1,0 +1,8 @@
+--- Makefile.orig	Sun Mar  2 15:01:11 2003
++++ Makefile	Sun Mar  2 15:01:18 2003
+@@ -7,4 +7,4 @@
+ 	install -c -o root -g wheel -m 755 ./mailfmt ${PREFIX}/bin
+ 	mkdir ${PREFIX}/share/doc/mailfmt
+ 	install -c -o root -g wheel -m 644 ./mailfmt.1.gz ${PREFIX}/man/man1
+-	install -c -o root -g wheel -m 644 ./mailfmt-license.txt ${PREFIX}/share/doc/mailfmt
++#	install -c -o root -g wheel -m 644 ./mailfmt-license.txt ${PREFIX}/share/doc/mailfmt
