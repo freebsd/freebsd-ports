@@ -4,6 +4,7 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/google/spell.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/google/tkspell.rb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/google
+%%PORTDOCS%%%%RUBY_DOCDIR%%/google/CHANGES
 %%PORTDOCS%%%%RUBY_DOCDIR%%/google/Changelog
 %%PORTDOCS%%%%RUBY_DOCDIR%%/google/README
 %%PORTDOCS%%%%RUBY_DOCDIR%%/google/google.html
