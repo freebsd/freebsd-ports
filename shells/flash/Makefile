@@ -8,7 +8,8 @@
 PORTNAME=	flash
 PORTVERSION=	0.9.4
 CATEGORIES=	shells
-MASTER_SITES=	ftp://ftp.netsoc.ucd.ie/pub/computing/flash/
+MASTER_SITES=	http://www.netsoc.ucd.ie/flash/ \
+		ftp://ftp.netsoc.ucd.ie/pub/computing/flash/
 
 MAINTAINER=	ports@FreeBSD.org
 
