@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	bmon
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	net
 MASTER_SITES=	http://trash.net/~reeler/bmon/files/
 
 MAINTAINER=	nistor@snickers.org
-COMMENT=	"BWMON - bandwidth monitor using curses lib"
+COMMENT=	"BMON - bandwidth monitor using curses lib"
 
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
