@@ -46,7 +46,7 @@ post-patch:
 
 pre-install:
 .if exists(${STRIP_CMD})
-	@${STRIP_CMD} ${WRKSRC}/${BINARY_NAME}
+#	@${STRIP_CMD} ${WRKSRC}/${BINARY_NAME}
 .endif
 	@${BRANDELF} -t Linux ${WRKSRC}/${BINARY_NAME}
 
