@@ -7607,6 +7607,7 @@ rdfdb		ports/databases/rdfdb
 rdiff-backup	ports/sysutils/rdiff-backup
 rdist6		ports/net/rdist6
 re2c		ports/devel/re2c
+readline	ports/devel/readline
 readlink	ports/sysutils/readlink
 reallyslick	ports/graphics/reallyslick
 rebler		ports/audio/rebler
