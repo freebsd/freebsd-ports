@@ -1,0 +1,10 @@
+--- config.h.in	2000/12/01 14:19:23	1.1
++++ config.h.in	2000/12/01 14:19:33
+@@ -136,7 +136,6 @@
+ #undef HAVE_UNISTD_H
+ 
+ /* Define if you have the <w3c-libwww/WWWSSL.h> header file.  */
+-#undef HAVE_W3C_LIBWWW_WWWSSL_H
+ 
+ /* Define if you have the i library (-li).  */
+ #undef HAVE_LIBI

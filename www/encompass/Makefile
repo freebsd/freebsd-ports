@@ -6,23 +6,30 @@
 #
 
 PORTNAME=	encompass
-PORTVERSION=	0.2.0
+PORTVERSION=	0.3.0
 CATEGORIES=	www gnome
-MASTER_SITES=	http://www.geocities.com/lordzephyroth/
+MASTER_SITES=	ftp://ftp.one.net/pub/users/dobez/
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
-		gtkhtml.5:${PORTSDIR}/www/gtkhtml \
+LIB_DEPENDS=	gtkhtml.5:${PORTSDIR}/www/gtkhtml \
 		glibwww.1:${PORTSDIR}/www/glibwww \
-		gconf-1.1:${PORTSDIR}/devel/gconf
-RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore \
-		${X11BASE}/share/gnome/sounds/login.wav:${PORTSDIR}/audio/gnomeaudio
+		gconf-1.1:${PORTSDIR}/devel/gconf \
+		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf \
+		gnomeprint.13:${PORTSDIR}/print/gnomeprint
+RUN_DEPENDS=	${X11BASE}/share/gnome/sounds/login.wav:${PORTSDIR}/audio/gnomeaudio
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/src
-
+USE_GNOME=	yes
 USE_X_PREFIX=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
-MAKE_ENV=	MKDIR="${MKDIR}"
+pre-patch:
+	@${PERL} -pi -e 's|-lpthread|-pthread|g ; \
+		s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
+	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
+		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 
 .include <bsd.port.mk>
