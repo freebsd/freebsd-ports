@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mono
-PORTVERSION=	0.24
-PORTREVISION=	1
+PORTVERSION=	0.28
 CATEGORIES=	lang
 MASTER_SITES=	http://www.go-mono.com/archive/
 
@@ -20,6 +19,7 @@ USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
 USE_BISON=	yes
 USE_GNOME=	gnomehack glib20 pkgconfig
+USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--program-transform-name=\'\'
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -29,5 +29,7 @@ MAN1=		cert2spc.1 cilc.1 ilasm.1 mcs.1 mint.1 mono.1 \
 		monoburg.1 monodis.1 monostyle.1 oldmono.1 \
 		sqlsharp.1
 MAN5=		mono-config.5
+
+ONLY_FOR_ARCHS=	i386
 
 .include <bsd.port.mk>
