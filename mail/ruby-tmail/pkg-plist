@@ -1,8 +1,7 @@
-%%RUBY_SITEARCHLIBDIR%%/tmail/cmails.so
-%%RUBY_SITEARCHLIBDIR%%/tmail/tmbase64.so
+%%RUBY_SITEARCHLIBDIR%%/tmail/base64.so
+%%RUBY_SITEARCHLIBDIR%%/tmail/scanner_c.so
 %%RUBY_SITELIBDIR%%/tmail.rb
 @dirrm %%RUBY_SITEARCHLIBDIR%%/tmail
-%%RUBY_SITELIBDIR%%/tmail/_loadlib.rb
 %%RUBY_SITELIBDIR%%/tmail/address.rb
 %%RUBY_SITELIBDIR%%/tmail/base64.rb
 %%RUBY_SITELIBDIR%%/tmail/config.rb
@@ -12,13 +11,14 @@
 %%RUBY_SITELIBDIR%%/tmail/info.rb
 %%RUBY_SITELIBDIR%%/tmail/loader.rb
 %%RUBY_SITELIBDIR%%/tmail/mail.rb
+%%RUBY_SITELIBDIR%%/tmail/mailbox.rb
 %%RUBY_SITELIBDIR%%/tmail/mbox.rb
 %%RUBY_SITELIBDIR%%/tmail/net.rb
 %%RUBY_SITELIBDIR%%/tmail/obsolete.rb
 %%RUBY_SITELIBDIR%%/tmail/parser.rb
 %%RUBY_SITELIBDIR%%/tmail/port.rb
-%%RUBY_SITELIBDIR%%/tmail/rmails.rb
 %%RUBY_SITELIBDIR%%/tmail/scanner.rb
+%%RUBY_SITELIBDIR%%/tmail/scanner_r.rb
 %%RUBY_SITELIBDIR%%/tmail/stringio.rb
 %%RUBY_SITELIBDIR%%/tmail/tmail.rb
 %%RUBY_SITELIBDIR%%/tmail/utils.rb
@@ -35,16 +35,19 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/data/test
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/data
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/0ChangeLog
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/BUGS
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/Incompatibilities
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README.en
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/TODO
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/address.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/basics.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/config.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/details.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/index.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/mail.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/mbox.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/notes.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/mailbox.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/port.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/tmail.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/usage.html
@@ -56,8 +59,7 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/details.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/index.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/mail.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/mbox.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/notes.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/mailbox.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/port.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/tmail.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/usage.html
