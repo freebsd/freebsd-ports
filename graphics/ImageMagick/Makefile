@@ -3,12 +3,12 @@
 # Date created:		15 November 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.41 1998/07/27 00:49:00 steve Exp $
+# $Id: Makefile,v 1.45 1998/08/17 20:49:22 ache Exp $
 #
 
 DISTNAME=       ImageMagick-4.0.9
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.freebsd.org/~jseger/ \
+MASTER_SITES=	http://www.freebsd.org/~asami/ \
 		ftp://ftp.wizards.dupont.com/pub/ImageMagick/ \
 		ftp://ftp.cci.fr/pub/unix/gfx/ImageMagick/ \
 		ftp://ftp.u-aizu.ac.jp/pub/graphics/image/ImageMagick/ \
