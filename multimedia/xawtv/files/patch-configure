@@ -1,6 +1,24 @@
---- configure.orig	Fri Feb  7 12:02:43 2003
-+++ configure	Thu Feb 13 16:57:29 2003
-@@ -5399,7 +5399,7 @@
+--- configure.orig	Tue Apr 15 14:37:29 2003
++++ configure	Sun Feb  8 21:07:06 2004
+@@ -5287,7 +5287,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lzvbi  $LIBS"
++LIBS="-lzvbi -L/usr/X11R6/lib -lunicode -lpthread $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -5340,7 +5340,7 @@
+ cat >>confdefs.h <<\_ACEOF
+ #define HAVE_ZVBI 1
+ _ACEOF
+- FOUND_ZVBI="yes"; LIBZVBI="-lzvbi -lpthread -lm -lpng -lz"
++ FOUND_ZVBI="yes"; LIBZVBI="-lzvbi -L/usr/X11R6/lib -lunicode -lpthread -lm -lpng -lz"
+ fi
+ 
+ else
+@@ -5427,7 +5427,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -9,7 +27,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  #line $LINENO "configure"
  /* confdefs.h.  */
-@@ -5452,7 +5452,7 @@
+@@ -5480,7 +5480,7 @@
  cat >>confdefs.h <<\_ACEOF
  #define HAVE_DV 1
  _ACEOF
@@ -18,7 +36,7 @@
  fi
  
  else
-@@ -5466,7 +5466,7 @@
+@@ -5494,7 +5494,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -27,7 +45,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  #line $LINENO "configure"
  /* confdefs.h.  */
-@@ -5527,7 +5527,7 @@
+@@ -5555,7 +5555,7 @@
  fi
  QTLIBS=""
  if test "$FOUND_LQT" = "yes"; then
@@ -36,7 +54,7 @@
  fi
  
  
-@@ -6062,9 +6062,6 @@
+@@ -6218,9 +6218,6 @@
  echo "$as_me:$LINENO: checking for X11 config directory" >&5
  echo $ECHO_N "checking for X11 config directory... $ECHO_C" >&6
  x11conf=/usr/X11R6/lib/X11
@@ -46,7 +64,7 @@
  echo "$as_me:$LINENO: result: $x11conf" >&5
  echo "${ECHO_T}$x11conf" >&6
  
-@@ -6072,9 +6069,6 @@
+@@ -6228,9 +6225,6 @@
  echo "$as_me:$LINENO: checking for X11 app-defaults directory" >&5
  echo $ECHO_N "checking for X11 app-defaults directory... $ECHO_C" >&6
  resdir=/usr/X11R6/lib/X11

@@ -5,6 +5,7 @@ bin/pia
 bin/propwatch
 bin/record
 bin/rootv
+%%ZVBI%%bin/scantv
 bin/showqt
 bin/showriff
 bin/streamer
