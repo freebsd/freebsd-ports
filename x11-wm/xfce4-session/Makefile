@@ -10,6 +10,7 @@ PORTVERSION=	0.1.4
 PORTREVISION=	3
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	http://echobase.homeunix.net/~bmeurer/tmp/xfce4-session/ \
+		http://matt.nerim.net/xfce-goodies/ \
 		http://www.bsd-blax.org/ports/mirrors/
 
 MAINTAINER=	matt@rimasec.net

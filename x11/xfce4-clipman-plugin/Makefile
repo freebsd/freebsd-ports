@@ -9,7 +9,10 @@ PORTNAME=	xfce4-clipman-plugin
 PORTVERSION=	0.4.0
 PORTREVISION=	2
 CATEGORIES=	x11 xfce
-MASTER_SITES=	http://download.berlios.de/xfce-goodies/
+MASTER_SITES=	http://download.berlios.de/xfce-goodies/ \
+		http://matt.nerim.net/xfce-goodies/ \
+		http://xfce.org/~kelnos/mirrors/xfce-goodies/ \
+		http://www.bsd-blax.org/ports/mirrors/
 
 MAINTAINER=	matt@rimasec.net
 COMMENT=	XFce 4 clipboard module for xfce4-panel
