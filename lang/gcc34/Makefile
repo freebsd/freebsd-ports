@@ -158,7 +158,7 @@ post-install: fake-manpages
 
 cklatest:
 .for SITE in ftp://gcc.gnu.org/pub/gcc/snapshots/                                   ftp://mirrors.rcn.net/mirrors/sources.redhat.com/gcc/snapshots/
-	@-ncftpls ${SITE} | ${GREP} 'LATEST.*3\.4'
+	@-ncftpls -l ${SITE} | ${GREP} 'LATEST.*3\.4'
 .endfor
 
 .include <bsd.port.post.mk>
