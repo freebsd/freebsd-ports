@@ -8,6 +8,8 @@ info/gst.info
 @exec install-info %D/info/gst.info %D/info/dir
 lib/libgst.a
 lib/libgst.la
+%%TCLTK%%lib/smalltalk/blox-tk.la
+%%TCLTK%%lib/smalltalk/blox-tk.so
 lib/smalltalk/md5.la
 lib/smalltalk/md5.so
 lib/smalltalk/regex.la
