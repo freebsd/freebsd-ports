@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	bash
-PORTVERSION=	2.03
+PORTVERSION=    2.04
 CATEGORIES=	shells
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.cwru.edu/pub/bash/
 MASTER_SITE_SUBDIR=	bash
 .if !defined(NOPORTDOCS)
-DISTFILES=	bash-2.03.tar.gz bash-doc-2.03.tar.gz
+DISTFILES=      bash-${PORTVERSION}.tar.gz bash-doc-${PORTVERSION}.tar.gz
 .endif
 
 MAINTAINER=	ache@FreeBSD.org
