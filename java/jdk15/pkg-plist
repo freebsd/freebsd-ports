@@ -813,8 +813,12 @@ jdk%%JDK_VERSION%%/jre/lib/i18n.jar
 jdk%%JDK_VERSION%%/jre/lib/i386/classic/Xusage.txt
 jdk%%JDK_VERSION%%/jre/lib/i386/classic/libjvm.so
 %%DEBUG:%%jdk%%JDK_VERSION%%/jre/lib/i386/classic/libjvm_g.so
+%%HOTSPOT:%%jdk%%JDK_VERSION%%/jre/lib/i386/client/Xusage.txt
+%%HOTSPOT:%%jdk%%JDK_VERSION%%/jre/lib/i386/client/libjvm.so
+%%HOTSPOT:%%%%DEBUG:%%jdk%%JDK_VERSION%%/jre/lib/i386/client/libjvm_g.so
 jdk%%JDK_VERSION%%/jre/lib/i386/green_threads/libhpi.so
 %%DEBUG:%%jdk%%JDK_VERSION%%/jre/lib/i386/green_threads/libhpi_g.so
+%%HOTSPOT:%%jdk%%JDK_VERSION%%/jre/lib/i386/hotspot
 jdk%%JDK_VERSION%%/jre/lib/i386/libJdbcOdbc.so
 %%DEBUG:%%jdk%%JDK_VERSION%%/jre/lib/i386/libJdbcOdbc_g.so
 jdk%%JDK_VERSION%%/jre/lib/i386/libagent.so
@@ -855,6 +859,9 @@ jdk%%JDK_VERSION%%/jre/lib/i386/libzip.so
 %%DEBUG:%%jdk%%JDK_VERSION%%/jre/lib/i386/libzip_g.so
 %%NATIVE:%%jdk%%JDK_VERSION%%/jre/lib/i386/native_threads/libhpi.so
 %%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/jre/lib/i386/native_threads/libhpi_g.so
+%%HOTSPOT:%%jdk%%JDK_VERSION%%/jre/lib/i386/server/Xusage.txt
+%%HOTSPOT:%%jdk%%JDK_VERSION%%/jre/lib/i386/server/libjvm.so
+%%HOTSPOT:%%%%DEBUG:%%jdk%%JDK_VERSION%%/jre/lib/i386/server/libjvm_g.so
 jdk%%JDK_VERSION%%/jre/lib/images/cursors/cursors.properties
 jdk%%JDK_VERSION%%/jre/lib/images/cursors/invalid32x32.gif
 jdk%%JDK_VERSION%%/jre/lib/images/cursors/motif_CopyDrop32x32.gif
@@ -956,8 +963,10 @@ jdk%%JDK_VERSION%%/src.jar
 @dirrm jdk%%JDK_VERSION%%/jre/lib/locale
 @dirrm jdk%%JDK_VERSION%%/jre/lib/images/cursors
 @dirrm jdk%%JDK_VERSION%%/jre/lib/images
+%%HOTSPOT:%%@dirrm jdk%%JDK_VERSION%%/jre/lib/i386/server
 %%NATIVE:%%@dirrm jdk%%JDK_VERSION%%/jre/lib/i386/native_threads
 @dirrm jdk%%JDK_VERSION%%/jre/lib/i386/green_threads
+%%HOTSPOT:%%@dirrm jdk%%JDK_VERSION%%/jre/lib/i386/client
 @dirrm jdk%%JDK_VERSION%%/jre/lib/i386/classic
 @dirrm jdk%%JDK_VERSION%%/jre/lib/i386
 @dirrm jdk%%JDK_VERSION%%/jre/lib/fonts

@@ -7,6 +7,7 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}p${JDK_PATCHSET_VERSION}
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	# http://www.sun.com/software/java2/download.html
 #		 http://www.eyesbeyond.com/freebsddom/java/jdk13.html
@@ -89,7 +90,7 @@ PKGNAMESUFFIX=	-nodebug
 PLIST_SUB+=	DEBUG:=""
 .endif
 
-.if defined(WITH_NATIVE_THREADS)
+.if defined(WITH_NATIVE_THREADS) || defined(WITH_HOTSPOT)
 PLIST_SUB+=    NATIVE:=""
 MAKE_ARGS+=    HPIS="green native"
 .else
@@ -102,7 +103,28 @@ PLIST_SUB+=    PLUGIN:="@comment "
 PLIST_SUB+=    PLUGIN:=""
 .endif
 
+.if defined(WITH_HOTSPOT)
+PLIST_SUB+=    HOTSPOT:=""
+USE_REINPLACE= yes
+.if defined(NODEBUG)
+HOTSPOT_TARGETS=product1 product
+.else
+HOTSPOT_TARGETS=compiler1 compiler2
+.endif
+.else
+PLIST_SUB+=    HOTSPOT:="@comment "
+.endif
+
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_HOTSPOT) && ${OSVERSION} < 500039
+USE_GCC=	3.2
+BUILD_DEPENDS+=	gcc32:${PORTSDIR}/lang/gcc32
+MAKE_ENV+=	ALT_COMPILER_PATH=${LOCALBASE}/bin
+HOTSPOT_BUILD=	../ext/plugin/build/solaris/GNUmakefile \
+	../../hotspot1.3.1/build/linux/makefiles/adlc.make \
+	../../hotspot1.3.1/build/linux/platform_i486
+.endif
 
 .if ${OSVERSION} < 460101 || ( ${OSVERSION} >= 500000 && ${OSVERSION} < 500038 )
 BUILD_DEPENDS+=	gtar:${PORTSDIR}/archivers/gtar
@@ -134,6 +156,29 @@ http://www.eyesbeyond.com/freebsddom/java/jdk13.html.\n\
 Please place the patchset in ${DISTDIR}.\n
 .endif
 
+# HotSpot and/or native threads require a recent version of FreeBSD
+.if ( defined(WITH_NATIVE_THREADS) || defined(WITH_HOTSPOT) ) && ( ${OSVERSION} < 470101 || ( ${OSVERSION} >= 500000 && ${OSVERSION} < 500043 ) )
+ECHO_MSG=/usr/bin/printf
+IGNORE= :\n\
+You must have a version of FreeBSD later than 4.7-STABLE February 2003\n\
+or 5-CURRENT February 2003 to use either native threads or HotSpot.\n
+.endif
+
+# Warn user about HotSpot build
+.if defined(WITH_HOTSPOT)
+pre-everything:
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "You have set WITH_HOTSPOT to enable the build of the HotSpot VM."
+	@${ECHO_MSG} "Please note that HotSpot development is still experimental and is"
+	@${ECHO_MSG} "not suitable for use in a production environment."
+	@${ECHO_MSG} "To use the browser plugin with HotSpot you will need to set the"
+	@${ECHO_MSG} "THREADS_FLAG environment variable when running the browser, e.g."
+	@${ECHO_MSG} "    setenv THREADS_FLAG native"
+	@${ECHO_MSG} "Compiling HotSpot into the JDK will also currently make the"
+	@${ECHO_MSG} "Classic VM unusable."
+	@${ECHO_MSG} ""
+.endif
+
 pre-patch:
 	@cd ${WRKDIR} &&  \
 		${CHMOD} -R u+w * && \
@@ -147,6 +192,16 @@ pre-patch:
 		${MKDIR} hotspot1.3.1/src/os/bsd/vm && \
 		${MKDIR} hotspot1.3.1/src/os_cpu/bsd_i486/vm && \
 			${PATCH} < ${WRKDIR}/jdk131.patches
+
+post-patch:
+.if defined(WITH_HOTSPOT)
+.if defined(USE_GCC) && ${USE_GCC} == 3.2
+	@for file in ${HOTSPOT_BUILD}; do \
+        	${REINPLACE_CMD} -e "s:gcc:gcc32:g ; s:g\+\+:g\+\+32:g" ${WRKSRC}/$${file}; \
+	done
+	@${REINPLACE_CMD} -e "s:PATH[)]gcc:PATH)gcc32:g ; s:PATH[)]g\+\+:PATH)g\+\+32:g" ${WRKSRC}/common/Defs-bsd.gmk 
+.endif
+.endif
 
 .if !defined(NATIVE_BOOTSTRAP)
 pre-build:
@@ -170,7 +225,33 @@ pre-build:
 	fi
 .endif
 
+do-build:
+	# Start of jdk build
+	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
+.if defined(WITH_HOTSPOT)
+	# Start of HotSpot build
+	@(cd ${WRKDIR}/hotspot1.3.1/build/linux ;  \
+		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${HOTSPOT_TARGETS})
+.endif
+
 post-build:
+.if defined(WITH_HOTSPOT)
+	# Copy HotSpot VM to image dir
+	${MKDIR} ${JDKIMAGEDIR}/jre/lib/i386/client
+	${INSTALL_PROGRAM} ${WRKDIR}/hotspot1.3.1/build/linux/linux_i486_compiler1/product/libjvm.so ${JDKIMAGEDIR}/jre/lib/i386/client/
+	${INSTALL_DATA} ${WRKDIR}/hotspot1.3.1/src/share/vm/Xusage.txt ${JDKIMAGEDIR}/jre/lib/i386/client/
+	${MKDIR} ${JDKIMAGEDIR}/jre/lib/i386/server
+	${INSTALL_PROGRAM} ${WRKDIR}/hotspot1.3.1/build/linux/linux_i486_compiler2/product/libjvm.so ${JDKIMAGEDIR}/jre/lib/i386/server/
+	${INSTALL_DATA} ${WRKDIR}/hotspot1.3.1/src/share/vm/Xusage.txt ${JDKIMAGEDIR}/jre/lib/i386/server/
+	@(cd ${JDKIMAGEDIR}/jre/lib/i386; ${LN} -sf client hotspot)
+.if !defined(NODEBUG)
+	# Copy debug version of HotSpot VM to image dir
+	${MKDIR} ${JDKIMAGEDIR_G}/jre/lib/i386/client
+	${INSTALL_PROGRAM} ${WRKDIR}/hotspot1.3.1/build/linux/linux_i486_compiler1/jvmg/libjvm_g.so ${JDKIMAGEDIR_G}/jre/lib/i386/client/
+	${MKDIR} ${JDKIMAGEDIR_G}/jre/lib/i386/server
+	${INSTALL_PROGRAM} ${WRKDIR}/hotspot1.3.1/build/linux/linux_i486_compiler2/jvmg/libjvm_g.so ${JDKIMAGEDIR_G}/jre/lib/i386/server/
+.endif
+.endif
 	# Prune empty dirs
 	${FIND} ${JDKIMAGEDIR} -type d | ${SORT} -r | \
 		${XARGS} ${RMDIR} 2> /dev/null || ${TRUE}
