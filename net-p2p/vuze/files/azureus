@@ -15,7 +15,7 @@ ECLIPSE_WS=`echo "${ECLIPSE_SWT}" | sed -e "s+^${ECLIPSE_BASE}/plugins/org.eclip
 ECLIPSE_SWT_JAR=${ECLIPSE_SWT}/ws/${ECLIPSE_WS}
 LIB_PATH=${ECLIPSE_SWT}/os/freebsd/x86/
 
-CLASS_PATH=:%%JAVAJARDIR%%/Azureus2.jar:${ECLIPSE_SWT_JAR}/swt-mozilla.jar:${ECLIPSE_SWT_JAR}/swt-pi.jar:${ECLIPSE_SWT_JAR}/swt.jar
+CLASS_PATH=:%%JAVAJARDIR%%/%%JARFILE%%:${ECLIPSE_SWT_JAR}/swt-pi.jar:${ECLIPSE_SWT_JAR}/swt.jar
 
 if [ "${DEBUG}" ]
 then

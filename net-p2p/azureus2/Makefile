@@ -7,28 +7,35 @@
 
 PORTNAME=	azureus
 PORTVERSION=	2.2.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	Azureus${PORTVERSION}.jar
-EXTRACT_SUFX=
-EXTRACT_ONLY=
+DISTNAME=	Azureus_${PORTVERSION}_source
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A BitTorrent client written in Java
 
-RUN_DEPENDS=	${LOCALBASE}/eclipse:${PORTSDIR}/java/eclipse
+BUILD_DEPENDS=	\
+		${LOCALBASE}/eclipse/plugins/org.eclipse.swt.gtk_${ECLIPSE_VERSION}/ws/gtk/swt-pi.jar:${PORTSDIR}/java/eclipse \
+		${LOCALBASE}/eclipse/plugins/org.eclipse.swt.gtk_${ECLIPSE_VERSION}/ws/gtk/swt.jar:${PORTSDIR}/java/eclipse
+RUN_DEPENDS=	\
+		${BUILD_DEPENDS}
 
-NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 JAVA_OS=	native
+USE_ANT=	yes
 
-DATADIR=	${JAVASHAREDIR}/${PORTNAME}
-JARFILE=	Azureus2.jar
+USE_ZIP=	yes
+NO_WRKSUBDIR=	yes
+
+JARFILE=	${PORTNAME}.jar
+
+# build classpath from BUILD_DEPENDS
+CLASSPATH_JARS=	${BUILD_DEPENDS:C/:.+$//:M*.jar}
 
 PLIST_FILES=	%%JAVAJARDIR%%/${JARFILE} bin/${PORTNAME}
 
@@ -38,11 +45,28 @@ do-configure:
 		-e "s|%%JAVA%%|${LOCALBASE}/bin/java|" \
 		-e "s|%%JAVA_VERSION%%|${JAVA_VERSION}|" \
 		-e "s|%%JAVA_OS%%|${JAVA_OS}|" \
+		-e "s|%%JARFILE%%|${JARFILE}|" \
 		${FILESDIR}/${PORTNAME} > ${WRKDIR}/${PORTNAME}
 
 do-install:
 	${MKDIR} ${JAVAJARDIR}
-	${INSTALL_DATA} ${DISTDIR}/${DISTNAME} ${JAVAJARDIR}/${JARFILE}
+	${INSTALL_DATA} ${WRKSRC}/dist/lib/${JARFILE} \
+		${JAVAJARDIR}/
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+ECLIPSE_PORT=		${PORTSDIR}/java/eclipse
+ECLIPSE_VERSION!=	cd ${ECLIPSE_PORT} && ${MAKE} -V PORTVERSION
+
+CLASSPATH=.
+.for jar in ${CLASSPATH_JARS}
+CLASSPATH:=${CLASSPATH}:${jar}
+.endfor
+
+post-patch:
+	@${SED} -E \
+		-e 's|%%CLASSPATH%%|${CLASSPATH}|' \
+		${FILESDIR}/build.xml > ${WRKSRC}/build.xml
+
+.include <bsd.port.post.mk>
