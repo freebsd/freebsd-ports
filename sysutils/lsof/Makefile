@@ -18,12 +18,14 @@ MASTER_SITES=	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/  \
 		ftp://ftp.web.ad.jp/pub/UNIX/tools/lsof/NEW/  \
 		ftp://ftp.sunet.se/pub/unix/admin/lsof/  \
 		ftp://ftp.sunet.se/pub/unix/admin/lsof/NEW/
-DISTNAME=	${PORTNAME}_${PORTVERSION}_W
 #DISTNAME=	${PORTNAME}_4.59B.freebsd
+#FIXUP_RELEASE=	yes
+.if !defined(FIXUP_RELEASE)
+DISTNAME=	${PORTNAME}_${PORTVERSION}_W
+.endif
 
 MAINTAINER=	obrien@FreeBSD.org
 
-FIXUP_RELEASE=	yes
 WRKSRC=		${WRKDIR}/${SRCBALL_NAME}
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
