@@ -244,6 +244,7 @@ afbinit		ports/sysutils/afbinit
 affenspiel	ports/games/affenspiel
 afio		ports/sysutils/afio
 afm		ports/print/afm
+afnix		ports/lang/afnix
 afsp		ports/audio/afsp
 aft		ports/textproc/aft
 afternoonstalker	ports/games/afternoonstalker
@@ -276,7 +277,6 @@ akregator	ports/www/akregator
 ald		ports/devel/ald
 aldo		ports/comms/aldo
 ale		ports/graphics/ale
-aleph		ports/lang/aleph
 alephone	ports/games/alephone
 alephone-data	ports/games/alephone-data
 alevt		ports/misc/alevt
