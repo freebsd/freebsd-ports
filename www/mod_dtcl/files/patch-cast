@@ -1,5 +1,10 @@
 --- mod_dtcl.c	Tue May  1 11:56:01 2001
 +++ mod_dtcl.c	Fri Jun  1 20:29:10 2001
+@@ -735,3 +735,3 @@
+     /* take results and create tcl variables from them */
+-#if USE_ONLY_VAR_COMMAND == 1
++#if USE_ONLY_VAR_COMMAND == 0
+     if (req->parms)
 @@ -792 +792,6 @@
 -		chan = Tcl_MakeFileChannel((ClientData *)fileno(upload->fp), TCL_READABLE);
 +		union {
