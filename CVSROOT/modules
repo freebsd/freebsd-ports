@@ -4004,6 +4004,7 @@ m68k-rtems-gcj	ports/devel/m68k-rtems-gcj
 m68k-rtems-gdb	ports/devel/m68k-rtems-gdb
 m68k-rtems-objc	ports/devel/m68k-rtems-objc
 mac-robber	ports/security/mac-robber
+macopix		ports/games/macopix
 macutils	ports/archivers/macutils
 mad		ports/audio/mad
 madbomber	ports/games/madbomber
