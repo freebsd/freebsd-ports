@@ -1,0 +1,9 @@
+Libvc is a vCard library. The library handles scanning a vCard file, parsing
+the vCard file into a data storage structure, manipulating the data storage
+structure, and writing back to file.  It was originally written for `rolo', but
+has been split-off as a generic library for general use.
+
+WWW: http://rolo.sf.net/
+
+-- Oliver Braun
+obraun@FreeBSD.org

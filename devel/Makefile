@@ -345,6 +345,7 @@
     SUBDIR += libvanessa_adt
     SUBDIR += libvanessa_logger
     SUBDIR += libvanessa_socket
+    SUBDIR += libvc
     SUBDIR += libxalloc
     SUBDIR += lightning
     SUBDIR += lincvs
