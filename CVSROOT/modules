@@ -6702,6 +6702,7 @@ ports		ports
 ports_Mk	ports/Mk
 ports_Templates	ports/Templates
 ports_Tools	ports/Tools
+ports_arabic	ports/arabic
 ports_archivers	ports/archivers
 ports_astro	ports/astro
 ports_at	ports/science/at
