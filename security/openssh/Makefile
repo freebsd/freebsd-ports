@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	openssh
-PORTVERSION=	3.1
-PORTREVISION=	7
+PORTVERSION=	3.2.3
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/ \
 		ftp://ftp.usa.openbsd.org/pub/OpenBSD/OpenSSH/ \
@@ -16,7 +15,7 @@ DISTNAME=	openssh-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	openbsd28_3.1.patch openssh-3.1-adv.token.patch
+PATCHFILES=	openbsd28_${PORTVERSION}.patch
 
 MAINTAINER=	dinoex@FreeBSD.org
 
