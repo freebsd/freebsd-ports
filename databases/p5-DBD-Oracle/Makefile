@@ -7,6 +7,7 @@
 
 PORTNAME=	DBD-Oracle
 PORTVERSION=	1.14
+PORTREVISION=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBD
@@ -26,6 +27,9 @@ CONFIGURE_ENV=	ORACLE_HOME="${ORACLE_HOME}"
 MAN1=		ora_explain.1
 MAN1PREFIX=	${PREFIX}
 MAN3=		DBD::Oracle.3 DBD::Oraperl.3
+
+post-patch:
+	@${PERL} -pi -e 's!\(void\*\)(SvOK)!$$1!g' ${WRKSRC}/oci7.c
 
 post-install:
 .ifndef(NOPORTDOCS)
