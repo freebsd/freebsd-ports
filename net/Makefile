@@ -257,6 +257,7 @@
     SUBDIR += p5-Net-Traceroute
     SUBDIR += p5-Net-Wake
     SUBDIR += p5-Net-Whois
+    SUBDIR += p5-Net-XWhois
     SUBDIR += p5-Net-ext
     SUBDIR += p5-NetAddr-IP
     SUBDIR += p5-NetAddr-IP-Count

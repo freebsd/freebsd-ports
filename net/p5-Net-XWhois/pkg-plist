@@ -1,0 +1,3 @@
+lib/perl5/site_perl/%%PERL_VER%%/Net/XWhois.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/XWhois/.packlist
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/XWhois 2>/dev/null || true
