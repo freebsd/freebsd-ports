@@ -6,24 +6,23 @@
 #
 
 PORTNAME=	Coin
-PORTVERSION=	2.1.0
-PORTREVISION=	2
+PORTVERSION=	2.3.0
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.coin3d.org/pub/coin/src/
+MASTER_SITES=	http://ftp.coin3d.org/coin/src/ \
+		ftp://ftp.coin3d.org/pub/coin/src/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ 3D graphics library based on the Open Inventor 2.1 API
 
-BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
-LIB_DEPENDS=	simage.26:${PORTSDIR}/graphics/simage \
-		openal.0:${PORTSDIR}/audio/openal
+LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \
+		simage.26:${PORTSDIR}/graphics/simage
 
-USE_REINPLACE=	yes
 USE_GL=		yes
-USE_XLIB=	yes
-USE_LIBTOOL_VER=13
-CONFIGURE_ARGS=	--program-transform-name="s/x/x/" --with-pthread=yes --enable-threadsafe \
-		--enable-3ds-import --enable-sound --enable-html
+USE_REINPLACE=	yes
+USE_LIBTOOL_VER=	15
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--with-pthread=yes --enable-threadsafe \
+		--enable-3ds-import --enable-sound
 INSTALLS_SHLIB=	yes
 
 MAN1=		coin-config.1
