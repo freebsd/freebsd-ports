@@ -24,6 +24,7 @@ CONFLICTS=	clanlib-0.6.*
 
 WRKSRC=		${WRKDIR}/ClanLib-${PORTVERSION:R}
 
+LATEST_LINK=	clanlib-devel
 USE_BZIP2=	yes
 USE_PERL5_BUILD=	yes
 USE_XLIB=	yes
