@@ -40,6 +40,7 @@
 %%CHORADIR%%/lib/CVSLib/Error.php
 %%CHORADIR%%/lib/CVSLib/File.php
 %%CHORADIR%%/lib/CVSLib/Log.php
+%%CHORADIR%%/lib/CVSLib/Log.php.orig
 %%CHORADIR%%/lib/CVSLib/Rev.php
 %%CHORADIR%%/lib/Chora.php
 %%CHORADIR%%/lib/MIME/Viewer/text.php
