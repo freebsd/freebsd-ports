@@ -3,7 +3,7 @@
 # Date created:         20th April 1997
 # Whom:                 Phil Maker <pjm@cs.ntu.edu.au>
 #
-# $Id: Makefile,v 1.1.1.1 1997/04/20 19:29:24 pjm Exp $
+# $Id: Makefile,v 1.1.1.1 1997/10/15 19:58:51 max Exp $
 #
 
 DISTNAME=	nana-1.09
@@ -14,8 +14,6 @@ MAINTAINER=	pjm@cs.ntu.edu.au
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-
-RUN_DEPENDS=	gdb:${PORTSDIR}/devel/gdb
 
 MAN1=		nana.1 nana-clg.1
 MAN3= 		nana.3 I.3 DI.3 L.3 DL.3 Q.3 Qstl.3
