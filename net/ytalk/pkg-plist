@@ -1,0 +1,5 @@
+@cwd ${PREFIX}
+@mode 755
+bin/ytalk
+@mode 644
+man/man1/ytalk.1.gz
