@@ -10,7 +10,6 @@ PORTVERSION=	1.0.1
 PORTREVISION=	0
 CATEGORIES+=	editors
 MASTER_SITES+=	http://sf1.mirror.openoffice.org/${PORTVERSION}/ \
-		ftp://gd.tuwien.ac.at/office/openoffice/${PORTVERSION}/ \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/ \
 		http://people.freebsd.org/~mbr/distfiles/ \
 		http://dict.progbits.com/
