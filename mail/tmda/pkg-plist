@@ -15,21 +15,21 @@ lib/%%PYTHON_VERSION%%/site-packages/TMDA/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/TMDA/__init__.pyc
 share/tmda/bounce_dated.txt
 share/tmda/bounce_sender.txt
-share/doc/tmda/COPYRIGHT
-share/doc/tmda/CRYPTO
-share/doc/tmda/ChangeLog
-share/doc/tmda/FAQ
-share/doc/tmda/INSTALL
-share/doc/tmda/README
-share/doc/tmda/README.RELAY
-share/doc/tmda/THANKS
-share/doc/tmda/TODO
-share/doc/tmda/UPGRADE
-share/doc/tmda/qmail-smtpd_auth.patch
-share/doc/tmda/sample.tmdarc
-share/doc/tmda/tmda.spec
-share/doc/tmda/tmda-server-flow.gif
-share/doc/tmda/tmda.html
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/TMDA
+%%PORTDOCS%%share/doc/tmda/COPYRIGHT
+%%PORTDOCS%%share/doc/tmda/CRYPTO
+%%PORTDOCS%%share/doc/tmda/ChangeLog
+%%PORTDOCS%%share/doc/tmda/FAQ
+%%PORTDOCS%%share/doc/tmda/INSTALL
+%%PORTDOCS%%share/doc/tmda/README
+%%PORTDOCS%%share/doc/tmda/README.RELAY
+%%PORTDOCS%%share/doc/tmda/THANKS
+%%PORTDOCS%%share/doc/tmda/TODO
+%%PORTDOCS%%share/doc/tmda/UPGRADE
+%%PORTDOCS%%share/doc/tmda/qmail-smtpd_auth.patch
+%%PORTDOCS%%share/doc/tmda/sample.tmdarc
+%%PORTDOCS%%share/doc/tmda/tmda.spec
+%%PORTDOCS%%share/doc/tmda/tmda-server-flow.gif
+%%PORTDOCS%%share/doc/tmda/tmda.html
 @dirrm share/tmda
-@dirrm share/doc/tmda
+%%PORTDOCS%%@dirrm share/doc/tmda
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/TMDA
