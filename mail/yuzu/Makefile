@@ -1,6 +1,6 @@
 # New ports collection makefile for:	yuzu
 # Date created:		31 March 2000
-# Whom:			Daichi T.GOTO
+# Whom:			Daichi GOTO
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.ongs.net/yuzu/
 
-MAINTAINER=	daichi@ongs.net
+MAINTAINER=	daichi@freebsd.org
 COMMENT=	A nicer mail user agent powered by JavaMail and JFC/Swing
 
 RUN_DEPENDS=	${LOCALBASE}/jdk1.1.8:${PORTSDIR}/java/jdk11 \
