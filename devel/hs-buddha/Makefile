@@ -27,6 +27,12 @@ USE_GMAKE=	yes
 
 PLIST_SUB+=	BUDDHA_VERSION=${PORTVERSION:S/.r/-rc/}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502102
+BROKEN=		"Does not compile"
+.endif
+
 pre-everything::
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "You need the profiling versions of GHC's libraries to build buddha."
@@ -40,4 +46,4 @@ post-patch:
 pre-build:
 	@(cd ${WRKSRC} && ${GMAKE} depend)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

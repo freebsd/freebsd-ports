@@ -58,6 +58,12 @@ GFXDIR=		${IMPORT_DIR}/Graphics
 CEXAMPLES=	aaindex aapoly aargb accanti accpersp alpha alpha3D anti bezcurve bezmesh bezsurf blendeqn checker clip colormat colormatrix cube depthcue dof double drawf feedback fog fogindex font hello image light lines list material mipmap model movelight multitex nurbs pickdepth picksquare plane planet polyoff polys robot sccolorlight scene scenebamb sceneflat select smooth stencil stroke surface surfpoints teaambient teapots tess tesswind texbind texgen texprox texsub texture3d texturesurf torus trim unproject varray wrap
 HSEXAMPLES=	AAIndex AAPoly AARGB AccAnti AccPersp Alpha Alpha3D Anti BezCurve BezMesh BezSurf BlendEqn Checker Clip ColorMat Cube DList DOF DepthCue Double DrawF Feedback Fog FogIndex Font Hello Image Light Lines Material Mipmap Model MoveLight PickDepth PickSquare Plane Planet PolyOff Polys Quadric Robot ScColorLight Scene SceneBAmb SceneFlat Select Smooth Stencil Stroke TeaAmbient Teapots Tess TexBind TexGen TexProx TexSub TextureSurf Torus Unproject Varray Wrap
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502102
+BROKEN=		"Does not compile"
+.endif
+
 post-install:
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/lib/HOpenGL.conf ${DATADIR}
@@ -97,4 +103,4 @@ post-install:
 
 	@${RM} -f ${PREFIX}/lib/ghc-${GHC_VERSION}/package.conf.old
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
