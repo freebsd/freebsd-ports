@@ -1,5 +1,5 @@
-*** Imakefile.orig	Mon Oct  2 23:04:39 2000
---- Imakefile	Fri Oct 13 04:56:42 2000
+*** Imakefile.orig	Tue Dec 19 06:19:13 2000
+--- Imakefile	Wed Dec 20 02:58:57 2000
 ***************
 *** 28,46 ****
   #CCOPTIONS = -O2
@@ -14,19 +14,20 @@
   #------------------------------------------------------------------------
   #
 ! PREFIX = /usr/local
-  # XCIRCUIT_LIB_DIR = $(PREFIX)/src/xcircuit-2.1b5/psfiles
-! XCIRCUIT_LIB_DIR = $(PREFIX)/lib/xcircuit-2.1
+  # XCIRCUIT_LIB_DIR = $(PREFIX)/src/xcircuit-2.2.0/psfiles
+! XCIRCUIT_LIB_DIR = $(PREFIX)/lib/xcircuit-2.2
 ! XCIRCUIT_BIN_DIR = $(PREFIX)/bin
 ! XCIRCUIT_MAN_DIR = $(PREFIX)/man/man1
   
   #------------------------------------------------------------------------
   # Support for graphics double-buffering (A memory hog, but yields fastest
---- 28,46 ----
+--- 28,47 ----
   #CCOPTIONS = -O2
   #
   # for debugging purposes uncomment the following line:
 ! #CDEBUGFLAGS = -g
 ! STD_INCLUDES = -I. -I$(INCDIR)/X11
+! EXTRA_DEFINES = -DHAVE_DIRENT_H -DHAVE_PUTENV
   
   #------------------------------------------------------------------------
   # Installation directories:
@@ -34,7 +35,7 @@
   #------------------------------------------------------------------------
   #
 ! #PREFIX = /usr/local
-  # XCIRCUIT_LIB_DIR = $(PREFIX)/src/xcircuit-2.1b5/psfiles
+  # XCIRCUIT_LIB_DIR = $(PREFIX)/src/xcircuit-2.2.0/psfiles
 ! XCIRCUIT_LIB_DIR = $(LIBDIR)/xcircuit
 ! XCIRCUIT_BIN_DIR = $(BINDIR)
 ! XCIRCUIT_MAN_DIR = $(MANDIR)
@@ -50,7 +51,7 @@
   
   #------------------------------------------------------------------------
   # Window manager bug workaround---If you don't like xcircuit grabbing kbd
---- 58,64 ----
+--- 59,65 ----
   # Support for background rendering through ghostscript.  Change this
   # to the path where gs can be found.
   # GS_EXEC= /usr/local/src/gs5.50/obj/gs
