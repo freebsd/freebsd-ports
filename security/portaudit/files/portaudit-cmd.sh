@@ -151,3 +151,8 @@ if [ -n "$opt_file" ]; then
 	portaudit_prerequisites
 	audit_file "$opt_file"
 fi
+
+if [ $# -gt 0 ]; then
+	portaudit_prerequisites
+	audit_args "$@"
+fi
