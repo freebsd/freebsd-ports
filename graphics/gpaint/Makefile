@@ -8,20 +8,16 @@
 PORTNAME=	gpaint
 PORTVERSION=	0.2.2
 CATEGORIES=	graphics gnome
-MASTER_SITES=	ftp://alpha.gnu.org/pub/gnu/gpaint/
+MASTER_SITES=	http://www.atai.org/gpaint/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small-scale painting program for GNOME
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack gdkpixbuf gnomeprint
+USE_GNOME=	gnomehack gnomeprefix gnomeprint
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
