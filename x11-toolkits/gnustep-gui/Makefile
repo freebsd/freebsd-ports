@@ -52,12 +52,10 @@ MAKE_FLAGS+=	OPTFLAG="${CFLAGS}"
 BREAKS_IF_PEDANTIC=	yes
 USE_REINPLACE=	yes
 
-post-extract:
+pre-configure:
 .for file in config.guess config.sub install-sh
 	@${CP} ${PREFIX}/System/Makefiles/${file} ${WRKSRC}
 .endfor
-
-pre-configure:
 	${REINPLACE_CMD} -e "s|-lphread|${PTHREAD_LIBS}|" -e "s|CFLAGS =|CFLAGS+=|" \
 		-e "s|-Wall|-Wall ${PTHREAD_CFLAGS:S=""==}|" \
 		${WRKSRC}/Tools/gsnd/portaudio/pa_unix_oss/Makefile
