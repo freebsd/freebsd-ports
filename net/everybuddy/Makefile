@@ -7,7 +7,7 @@
 
 PORTNAME=	everybuddy
 PORTVERSION=	0.4.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.everybuddy.com/files/
 
@@ -50,7 +50,7 @@ pre-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|^Utilitiesdir|#Utilitiesdir|g; \
 		 s|^Utilities_DATA|#Utilities_DATA|g; \
-		 s|[(]datadir[)]/everybuddy|(prefix)/lib/everybuddy|g; \
+		 s|[({]datadir[})]/everybuddy|(prefix)/lib/everybuddy|g; \
 		 s|-module|-module -avoid-version|g'
 
 .include <bsd.port.post.mk>
