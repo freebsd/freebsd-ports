@@ -87,6 +87,7 @@
     SUBDIR += flow-tools
     SUBDIR += flowscan
     SUBDIR += fping
+    SUBDIR += freeradius-devel
     SUBDIR += freewais-sf
     SUBDIR += fspclient
     SUBDIR += fugu

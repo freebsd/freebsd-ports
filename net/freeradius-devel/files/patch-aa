@@ -1,0 +1,13 @@
+--- configure.in~	Fri Mar  9 13:30:09 2001
++++ configure.in	Wed Mar 14 12:58:01 2001
+@@ -52,8 +52,8 @@
+ 		from ftp://prep.ai.mit.edu/pub/gnu/make/ before continuing.)
+ fi
+ 
+-dnl libltdl is installable
+-AC_LIBLTDL_INSTALLABLE
++dnl libltdl is not installable
++AC_LIBLTDL_CONVENIENCE
+ 
+ dnl ensure that we're looking for dlopen
+ AC_LIBTOOL_DLOPEN
