@@ -1,20 +1,23 @@
 DansGuardian is a web content filtering proxy for Linux, FreeBSD, OpenBSD,
-and Solaris. It relies on a proxy server, such as Squid, for all fetching;
-however, DansGuardian should work with any proxy server.
+and Solaris. It relies on a proxy server, for all fetching.  The preferred
+proxy is Squid, however, DansGuardian should work with any proxy server.
 
 It filters using multiple methods, including:
   - URL and domain filtering
-  - content phrase filtering
+  - textual content filtering
   - PICS filtering
-  - MIME filtering
+  - MIME-type filtering
   - file extension filtering
   - POST filtering
+  - user filtering
+  - client IP filtering
+  - exception lists for most of the above
 
 Running make with WITHOUT_PICS=yes will disable the PICS filtering.  All
 other filtering is controlled via the configuration file.
 
 WWW: http://dansguardian.org
-WWW: http://backup.dansguardian.org
+WWW: http://dansguardian.intmain.org
 
 - Freddie Cash
-fcash@bigfoot.com
+fcash@sd73.bc.ca
