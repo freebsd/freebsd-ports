@@ -48,6 +48,7 @@
     SUBDIR += fressh
     SUBDIR += fsh
     SUBDIR += fuzz
+    SUBDIR += fwanalog
     SUBDIR += fwbuilder
     SUBDIR += fwlogwatch
     SUBDIR += fwtk

@@ -1,0 +1,10 @@
+sbin/fwanalog
+etc/fwanalog/fwanalog-dom.tab-dist
+etc/fwanalog/fwanalog.analog.conf-dist
+etc/fwanalog/fwanalog.analog.conf.local-dist
+etc/fwanalog/fwanalog.lng-dist
+etc/fwanalog/fwanalog.opts-dist
+etc/fwanalog/services.conf-dist
+%%PORTDOCS%%share/doc/fwanalog/README
+%%PORTDOCS%%@dirrm share/doc/fwanalog
+@unexec echo If permanently deleting this package, %%ETCDIR%%/fwanalog must be removed manually
