@@ -124,6 +124,23 @@ include/wine/wshisotp.h
 include/wine/wsipx.h
 include/wine/wtypes.h
 include/wine/zmouse.h
+include/wine/msvcrt/conio.h
+include/wine/msvcrt/ctype.h
+include/wine/msvcrt/direct.h
+include/wine/msvcrt/dos.h
+include/wine/msvcrt/fcntl.h
+include/wine/msvcrt/io.h
+include/wine/msvcrt/process.h
+include/wine/msvcrt/stddef.h
+include/wine/msvcrt/stdio.h
+include/wine/msvcrt/stdlib.h
+include/wine/msvcrt/string.h
+include/wine/msvcrt/time.h
+include/wine/msvcrt/wchar.h
+include/wine/msvcrt/sys/stat.h
+include/wine/msvcrt/sys/timeb.h
+include/wine/msvcrt/sys/types.h
+include/wine/msvcrt/sys/utime.h
 include/wine/wine/exception.h
 include/wine/wine/icmpapi.h
 include/wine/wine/ipexport.h
@@ -285,6 +302,7 @@ lib/wine/libwinmm.so
 lib/wine/libwinnls.so
 lib/wine/libwinnls32.so
 lib/wine/libwinsock.so
+lib/wine/libwintrust.so
 lib/wine/libws2_32.so
 lib/wine/libwinspool.drv.so
 lib/wine/libwnaspi32.so
@@ -292,6 +310,8 @@ lib/wine/libwow32.so
 lib/wine/libwprocs.so
 lib/wine/libwsock32.so
 lib/wine/libx11drv.so
+@dirrm include/wine/msvcrt/sys
+@dirrm include/wine/msvcrt
 @dirrm include/wine/wine
 @dirrm include/wine
 @dirrm lib/wine/reg
