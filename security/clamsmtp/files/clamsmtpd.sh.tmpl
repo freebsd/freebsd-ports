@@ -26,7 +26,7 @@ clamsmtpd_conf=${clamsmtpd_conf-"%%PREFIX%%/etc/clamsmtpd.conf"}
 clamsmtpd_pid=${clamsmtpd_pid-"%%CLAMAV_PID_DIR%%/clamsmtpd.pid"}
 clamsmtpd_debug=${clamsmtpd_debug-"0"}
 
-command_args="-f ${clamsmtpd_conf} -d ${clamsmtpd_debug} -p ${clamsmtpd_pid}"
+command_args="-f ${clamsmtpd_conf} -p ${clamsmtpd_pid}"
 
 pidfile=${clamsmtpd_pid}
 
