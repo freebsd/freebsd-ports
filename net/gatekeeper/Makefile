@@ -8,7 +8,7 @@
 PORTNAME=	gatekeeper
 PORTVERSION=	0.12p
 CATEGORIES=	net
-MASTER_SITES=	http://www.willamowius.de/download/
+MASTER_SITES=	http://download.sourceforge.net/openh323gk/
 DISTNAME=	gk012pre4
 
 MAINTAINER=	roger@freebsd.org
@@ -22,8 +22,8 @@ NOCLEANDEPENDS=	yes
 USE_BISON=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	opt
-MAKE_ENV=	PWLIBDIR=${WRKDIRPREFIX}${PORTSDIR}/net/openh323/work/pwlib \
-		OPENH323DIR=${WRKDIRPREFIX}${PORTSDIR}/net/openh323/work/openh323
+MAKE_ENV=	PWLIBDIR=${WRKDIRPREFIX}${.CURDIR}/../openh323/work/pwlib \
+		OPENH323DIR=${WRKDIRPREFIX}${.CURDIR}/../openh323/work/openh323
 THE_MACHTYPE=	${ARCH:S/i386/x86/}
 MAKE_ARGS=	OSTYPE=${OPSYS} MACHTYPE=${THE_MACHTYPE} OSRELEASE=${OSVERSION}
 
