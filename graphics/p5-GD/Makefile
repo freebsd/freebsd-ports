@@ -16,7 +16,7 @@ DISTNAME=	GD-${PORTVERSION}
 MAINTAINER=	philip@p6m7g8.com
 COMMENT=	A perl5 interface to Gd Graphics Library version2
 
-LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd2
+LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	-options "JPEG,FT,XPM" -lib_gd_path ${LOCALBASE} -lib_ft_path ${X11BASE} -lib_png_path ${LOCALBASE} -lib_zlib_path ${LOCALBASE}
