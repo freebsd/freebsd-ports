@@ -8,7 +8,7 @@
 PORTNAME=	colortail
 PORTVERSION=	0.2.0
 CATEGORIES=	misc
-MASTER_SITES=	ftp://ftp.FreeBSD.org/pub/FreeBSD/local-distfiles/cpiazza/	
+MASTER_SITES=	ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/cpiazza/
 # commented out until I upgrade to 0.3.0
 # MASTER_SITES=	http://www.student.hk-r.se/~pt98jan/
 
