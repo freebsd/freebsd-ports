@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.61 1999/06/28 22:38:59 nsayer Exp $
+# $Id: Makefile,v 1.62 1999/06/28 22:55:58 nsayer Exp $
 #
 
     SUBDIR += bjorb
@@ -47,6 +47,7 @@
     SUBDIR += slush
     SUBDIR += smurflog
     SUBDIR += sniff
+    SUBDIR += snort
     SUBDIR += ssh
     SUBDIR += ssh2
     SUBDIR += sslproxy
