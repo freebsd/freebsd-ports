@@ -415,6 +415,7 @@
     SUBDIR += libdlmalloc
     SUBDIR += libds
     SUBDIR += libdsp
+    SUBDIR += libdwarf
     SUBDIR += libedit
     SUBDIR += libelf
     SUBDIR += libevent
