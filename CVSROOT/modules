@@ -2056,7 +2056,7 @@ geomview	ports/graphics/geomview
 geotrace	ports/net/geotrace
 geramik		ports/x11-toolkits/geramik
 gerbv		ports/cad/gerbv
-geta		ports/net/geta
+geta		ports/dns/geta
 getbdf		ports/x11-fonts/getbdf
 getmail		ports/mail/getmail
 gettext		ports/devel/gettext
