@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	xplanet
-PORTVERSION=	0.50
+PORTVERSION=	0.60
 CATEGORIES=	astro x11
-MASTER_SITES=	http://www.alumni.caltech.edu/~hari/xplanet/ \
+MASTER_SITES=	ftp://ftp.sourceforge.net/pub/sourceforge/xplanet/ \
 		http://www.radcyberzine.com/xglobe/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} photo_1600.jpg
 
