@@ -246,6 +246,7 @@
     SUBDIR += sntop
     SUBDIR += socks5
     SUBDIR += spat
+    SUBDIR += ssldump
     SUBDIR += sting
     SUBDIR += suckblow
     SUBDIR += sup
