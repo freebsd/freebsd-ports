@@ -3,7 +3,7 @@
 # Date created:         01 June 1997
 # Whom:                 Peter Cornelius <pc@inr.fzk.de>
 #
-# $Id: Makefile,v 1.5 1998/06/27 05:19:25 asami Exp $
+# $Id: Makefile,v 1.6 1998/10/12 18:16:47 jseger Exp $
 
 DISTNAME=	xtem_texmenu.6.18
 PKGNAME=	xtem-6.18
@@ -11,8 +11,6 @@ CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.iwd.uni-bremen.de/pub/tex/xtem/
 
 MAINTAINER=     ports@FreeBSD.ORG
-
-BROKEN_ELF=	patch
 
 RUN_DEPENDS=	wishx:${PORTSDIR}/lang/tclX80
 .if defined(BUILD_IT_ALL)
@@ -30,9 +28,9 @@ post-extract:
 	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
 
 post-patch:
-	@/usr/bin/perl -pi.bak -e "s|@WISHX@|${PREFIX}/bin/wishx|; \
-		s|@TCLSH@|${PREFIX}/bin/tclsh8.0|; \
-		s|@XTEMPATH@|${PREFIX}/share/xtem|" \
+	@/usr/bin/perl -pi.bak -e "s|\@WISHX\@|${PREFIX}/bin/wishx|; \
+		s|\@TCLSH\@|${PREFIX}/bin/tclsh8.0|; \
+		s|\@XTEMPATH\@|${PREFIX}/share/xtem|" \
 		${WRKSRC}/xtem
 
 post-install:
