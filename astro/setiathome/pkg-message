@@ -1,3 +1,4 @@
 ****  %%PREFIX%%/etc/rc.setiathome.conf may be edited to tune some startup
       variables such as `seti_nice' defaulted to 15 and `seti_maxprocs'
-      defaulted to your number of processors.
+      defaulted to your number of processors. also, `seti_idprio' may be
+      sets to 31. See idprio(1) for details.
