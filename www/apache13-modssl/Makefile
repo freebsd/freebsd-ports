@@ -51,7 +51,7 @@ BUILD_DEPENDS=	mm-config:${PORTSDIR}/devel/mm \
 VERSION_APACHE=	1.3.11
 VERSION_MODSSL=	2.5.0
 
-Y2K=		http://www.modssl.org/docs/2.4/ssl_faq.html#y2k
+Y2K=		http://www.modssl.org/docs/2.5/ssl_faq.html#y2k
 
 USE_PERL5=	yes
 HAS_CONFIGURE=	yes
