@@ -24,6 +24,8 @@ USE_REINPLACE=		yes
 USE_GMAKE=		yes
 USE_AUTOCONF_VER=	259
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+#CONFIGURE_ENV+=		CC=${CC} CFLAGS="${CFLAGS}" CXX=${CXX} \
+#			CXXFLAGS="${CXXFLAGS}" CPP=${CPP}
 
 OPTIONS=	SERVICES "Build with all services, not only ORB" on \
 		SSL "Build with SSL" on \
