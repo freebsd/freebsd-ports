@@ -5511,6 +5511,7 @@ ports_misc	ports/misc
 ports_net	ports/net
 ports_news	ports/news
 ports_ntp	ports/net/ntp
+ports_ntp-devel	ports/net/ntp-devel
 ports_nut	ports/sysutils/nut
 ports_openssh	ports/security/openssh
 ports_palm	ports/palm
