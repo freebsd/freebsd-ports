@@ -7,12 +7,14 @@
 
 PORTNAME=	apotheke
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	x11-fm
 MASTER_SITES=	ftp://ftp.berlios.de/pub/apotheke/
 
 MAINTAINER=	martin.klaffenboeck@gmx.at
 
 LIB_DEPENDS=	nautilus.2:${PORTSDIR}/x11-fm/nautilus2
+RUN_DEPENDS=	ssh-askpass:${PORTSDIR}/security/openssh-askpass
 
 USE_GNOMENG=	yes
 USE_GNOME=	gnomehack gnomeprefix
