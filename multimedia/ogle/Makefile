@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ogle
-PORTVERSION=	0.8.3
+PORTVERSION=	0.8.4
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.dtek.chalmers.se/groups/dvd/dist/
 
@@ -17,6 +17,7 @@ LIB_DEPENDS=	a52.0:${PORTSDIR}/audio/liba52 \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
+USE_REINPLACE=	yes
 USE_SUBMAKE=	yes
 USE_XLIB=	yes
 USE_GMAKE=	yes
@@ -25,28 +26,22 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include"
 CONFIGURE_ARGS=	--with-libjpeg=${LOCALBASE} \
 		--with-dvdread=${LOCALBASE} \
 		--with-liba52=${LOCALBASE}
-MAKE_ENV=	SDL_CONFIG=${SDL_CONFIG}
 INSTALLS_SHLIB=	yes
-
-CUT?=	/usr/bin/cut
 
 MAN1=	ogle.1
 MAN5=	oglerc.5
 
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
-
 post-patch:
 .ifdef(WITH_DVD_DEVICE)
-	@${PERL} -pi.orig -e \
-		"s|(DEFAULT_DVD_DEVICE=\")/dev/acd0c(\")|\1${WITH_DVD_DEVICE}\2|" \
+	@${REINPLACE_CMD} -E -e "s|(DEFAULT_DVD_DEVICE=\")/dev/acd0c(\")|\1${WITH_DVD_DEVICE}\2|" \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 .endif
-	@${PERL} -pi -e "s|%%X11BASE%%|${X11BASE}|" ${WRKSRC}/scripts/ogle.in
-	@${PERL} -pi -e 's|(-la52)|\1 ${LIBA52_DEP_LIBS}|' \
+	@${REINPLACE_CMD} -e "s|%%X11BASE%%|${X11BASE}|" ${WRKSRC}/scripts/ogle.in
+	@${REINPLACE_CMD} -E -e 's|(-la52)|\1 ${LIBA52_DEP_LIBS}|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 pre-configure:
-	@${TOUCH} `find -E ${WRKSRC} -regex ".*Makefile\.(am|in)"`
+	@${TOUCH} `${FIND} -E ${WRKSRC} -regex ".*Makefile\.(am|in)"`
 	@${TOUCH} ${WRKSRC}/configure.in ${WRKSRC}/configure
 
 post-install:
