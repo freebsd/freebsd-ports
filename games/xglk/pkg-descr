@@ -1,0 +1,8 @@
+XGlk: X Windows Implementation of the Glk API.
+
+XGlk Library: version 0.4.11
+Glk API which this implements: version 0.6.1.
+Designed by Andrew Plotkin <erkyrath@eblong.com>
+http://www.eblong.com/zarf/glk/index.html
+
+WWW:		http://www.ifarchive.org/if-archive/programming/glk/implementations/

@@ -1,0 +1,62 @@
+--- Makefile.orig	Fri Feb  4 21:21:01 2005
++++ Makefile	Fri Feb  4 21:24:41 2005
+@@ -58,8 +58,8 @@
+ #XLIB = -L/usr/X11R6/lib -lX11
+ 
+ # for Red Hat Linux
+-XINCLUDE = -I/usr/X11R6/include/X11
+-XLIB = -L/usr/X11R6/lib -lX11
++XINCLUDE = -I${X11BASE}/include
++XLIB = -L${X11BASE}/lib -lX11
+ 
+ # for SparcStation / Solaris 
+ #XINCLUDE = -I/usr/openwin/include
+@@ -68,8 +68,8 @@
+ # --------------------
+ 
+ # definitions for where the PNG and JPEG libs are. 
+-PNGINCLUDE = 
+-PNGLIB = -lpng
++PNGINCLUDE = -I${LOCALBASE}/include
++PNGLIB = -L${LOCALBASE}/lib -lpng
+ JPEGINCLUDE = 
+ JPEGLIB = -ljpeg
+ 
+@@ -82,10 +82,11 @@
+ 
+ # Pick a C compiler.
+ #CC = cc
+-CC = gcc
++CC ?= gcc
+ 
+-CFLAGS = -O -ansi $(PNGFLAG) $(JPEGFLAG) $(PNGINCLUDE) $(JPEGINCLUDE) -Wall -Wmissing-prototypes -Wstrict-prototypes -Wno-unused -Wbad-function-cast $(SYSTEMFLAGS) $(XINCLUDE)
+-LDFLAGS =
++CFLAGS ?= -O -ansi -Wall -Wmissing-prototypes -Wstrict-prototypes -Wno-unused -Wbad-function-cast
++CFLAGS += $(PNGFLAG) $(JPEGFLAG) $(PNGINCLUDE) $(JPEGINCLUDE) $(SYSTEMFLAGS) $(XINCLUDE)
++LDFLAGS ?=
+ LIBS = $(XLIB) $(PNGLIB) $(JPEGLIB) $(SYSTEMLIBS)
+ 
+ OBJS = main.o xglk.o xglk_vars.o xglk_prefs.o xglk_loop.o xglk_init.o \
+@@ -99,12 +100,12 @@
+ all: libxglk.a Make.xglk
+ 
+ libxglk.a: $(OBJS)
+-	ar r libxglk.a $(OBJS)
+-	ranlib libxglk.a
++	${AR} r libxglk.a $(OBJS)
++	${RANLIB} libxglk.a
+ 
+ Make.xglk:
+-	echo LINKLIBS = $(LIBDIRS) $(LIBS) > Make.xglk
+-	echo GLKLIB = -lxglk >> Make.xglk
++	${ECHO} LINKLIBS = $(LIBDIRS) $(LIBS) > Make.xglk
++	${ECHO} GLKLIB = -lxglk >> Make.xglk
+ 
+ $(OBJS): xglk.h xg_internal.h xglk_option.h glk.h gi_dispa.h gi_blorb.h
+ 
+@@ -113,4 +114,4 @@
+ xg_win_textbuf.o xg_window.o xglk_key.o: xg_win_textbuf.h
+ 
+ clean:
+-	-rm -f *~ *.o libxglk.a Make.xglk
++	-${RM} *~ *.o libxglk.a Make.xglk

@@ -1,0 +1,14 @@
+include/xglk/gi_blorb.h
+include/xglk/gi_dispa.h
+include/xglk/glk.h
+include/xglk/glkstart.h
+include/xglk/xg_internal.h
+include/xglk/xg_win_graphics.h
+include/xglk/xg_win_textbuf.h
+include/xglk/xg_win_textgrid.h
+include/xglk/xglk.h
+include/xglk/xglk_option.h
+@dirrm include/xglk
+lib/libxglk.a
+%%DATADIR%%/Make.xglk
+@dirrm %%DATADIR%%
