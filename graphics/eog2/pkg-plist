@@ -55,9 +55,9 @@ share/gnome/pixmaps/eog/orient-vertical.png
 share/gnome/pixmaps/eog/right-down.png
 share/gnome/pixmaps/eog/stock-flip-horizontal-16.png
 share/gnome/pixmaps/eog/stock-flip-vertical-16.png
-share/gnome/pixmaps/eog/stock-rotate-90-16.png
-share/gnome/pixmaps/eog/stock-rotate-270-16.png
 share/gnome/pixmaps/eog/stock-rotate-180-16.png
+share/gnome/pixmaps/eog/stock-rotate-270-16.png
+share/gnome/pixmaps/eog/stock-rotate-90-16.png
 share/gnome/pixmaps/gnome-eog.png
 share/locale/af/LC_MESSAGES/eog.mo
 share/locale/am/LC_MESSAGES/eog.mo
@@ -129,6 +129,7 @@ share/locale/wa/LC_MESSAGES/eog.mo
 share/locale/zh_CN/LC_MESSAGES/eog.mo
 share/locale/zh_TW/LC_MESSAGES/eog.mo
 share/locale/zu/LC_MESSAGES/eog.mo
+@dirrm share/gnome/pixmaps/eog
 @dirrm share/gnome/omf/eog
 @dirrm share/gnome/help/eog/zh_TW/figures
 @dirrm share/gnome/help/eog/zh_TW
@@ -152,6 +153,7 @@ share/locale/zu/LC_MESSAGES/eog.mo
 @dirrm share/gnome/help/eog/de
 @dirrm share/gnome/help/eog/C/figures
 @dirrm share/gnome/help/eog/C
+@dirrm share/gnome/help/eog
 @dirrm share/gnome/eog/glade
 @dirrm share/gnome/eog
 @unexec update-desktop-database > /dev/null || /usr/bin/true
