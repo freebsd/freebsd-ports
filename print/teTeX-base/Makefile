@@ -70,9 +70,9 @@ MLINKS=		allcm.1 allec.1 mktexlsr.1 texhash.1 tex.1 virtex.1 \
 		omega.1 viromega.1 pdftex.1 pdfvirtex.1
 INFO=		kpathsea latex web2c
 
-OPTIONS=	DVIPSK "Build and install dvipsk" off \
-		XDVIK "Build and install xdvik" off \
-		X11 "Build with X Window System support" on
+#OPTIONS=	DVIPSK "Build and install dvipsk" off \
+#		XDVIK "Build and install xdvik" off \
+#		X11 "Build with X Window System support" on
 
 .include <bsd.port.pre.mk>
 
