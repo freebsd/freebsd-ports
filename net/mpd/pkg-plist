@@ -1,5 +1,4 @@
 sbin/mpd
-man/man1/mpd.1.gz
 etc/mpd/mpd.conf.sample
 etc/mpd/mpd.links.sample
 etc/mpd/mpd.script.sample

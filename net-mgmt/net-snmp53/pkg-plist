@@ -25,24 +25,6 @@ lib/libsnmp.so
 @exec ln %D/lib/libsnmp.so %D/lib/libsnmp.so.3.5
 @unexec rm -f %D/lib/libsnmp.so.3.5
 man/man1/snmpcmd.1
-man/man1/snmpstatus.1.gz
-man/man1/snmpd.1.gz
-man/man1/snmpnetstat.1.gz
-man/man1/snmpset.1.gz
-man/man1/snmptrap.1.gz
-man/man1/snmptable.1.gz
-man/man1/snmptest.1.gz
-man/man1/snmptranslate.1.gz
-man/man1/snmpbulkwalk.1.gz
-man/man1/snmpdelta.1.gz
-man/man1/snmpget.1.gz
-man/man1/snmpgetnext.1.gz
-man/man1/snmpwalk.1.gz
-man/man3/mib_api.3.gz
-man/man3/snmp_api.3.gz
-man/man5/variables.5.gz
-man/man5/snmpd.conf.5.gz
-man/man8/snmptrapd.8.gz
 sbin/snmpd
 sbin/snmptrapd
 share/examples/ucd-snmp/README

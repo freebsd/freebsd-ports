@@ -9,13 +9,3 @@ bin/roe
 bin/aoe
 bin/relayd
 bin/prtraceroute
-man/man1/CIDRAdvisor.1.gz
-man/man1/aoe.1.gz
-man/man1/pmatch.1.gz
-man/man1/prpath.1.gz
-man/man1/RtConfig.1.gz
-man/man1/peval.1.gz
-man/man1/prcheck.1.gz
-man/man1/roe.1.gz
-man/man8/prtraceroute.8.gz
-man/man8/relayd.8.gz

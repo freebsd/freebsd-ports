@@ -4,9 +4,6 @@ bin/radwho
 bin/radzap
 sbin/checkrad
 sbin/radiusd
-man/man5/clients.5rad.gz
-man/man5/naslist.5rad.gz
-man/man8/radiusd.8.gz
 etc/raddb/clients
 etc/raddb/dictionary
 etc/raddb/dictionary.ascend

@@ -1,8 +1,6 @@
 bin/lftp
 bin/ftpget
 etc/lftp.conf.sample
-man/man1/lftp.1.gz
-man/man1/ftpget.1.gz
 share/doc/lftp/COPYING
 share/doc/lftp/FAQ
 share/doc/lftp/NEWS

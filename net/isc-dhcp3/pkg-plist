@@ -1,12 +1,3 @@
-man/cat5/dhclient.conf.5.gz
-man/cat5/dhclient.leases.5.gz
-man/cat5/dhcp-options.5.gz
-man/cat5/dhcpd.conf.5.gz
-man/cat5/dhcpd.leases.5.gz
-man/cat8/dhclient.8.gz
-man/cat8/dhclient-script.8.gz
-man/cat8/dhcpd.8.gz
-man/cat8/dhcrelay.8.gz
 sbin/dhclient
 sbin/dhcpd
 sbin/dhcrelay

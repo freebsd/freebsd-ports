@@ -1,7 +1,5 @@
 sbin/arpwatch
 sbin/arpsnmp
-man/man8/arpwatch.8.gz
-man/man8/arpsnmp.8.gz
 arpwatch/arp2ethers
 arpwatch/ethercodes.dat
 arpwatch/d.awk

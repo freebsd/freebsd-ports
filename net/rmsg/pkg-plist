@@ -1,4 +1,2 @@
 bin/rmsg
 sbin/rmsgd
-man/man1/rmsg.1.gz
-man/man8/rmsgd.8.gz

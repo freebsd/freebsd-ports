@@ -26,16 +26,4 @@ lib/XwaisHELP
 lib/XwaisqHELP
 lib/app-defaults/Xwais
 lib/emacs/lisp/wais.el
-man/man1/catalog.1.gz
-man/man1/dictionary.1.gz
-man/man1/inverted_file.1.gz
-man/man1/makedb.1.gz
-man/man1/mkfmt.1.gz
-man/man1/waisindex.1.gz
-man/man1/waisq.1.gz
-man/man1/waissearch.1.gz
-man/man1/xwais.1.gz
-man/man1/xwaisq.1.gz
-man/man3/ftw.3.gz
-man/man3/scandir.3.gz
 share/doc/SF/fwsf.ps

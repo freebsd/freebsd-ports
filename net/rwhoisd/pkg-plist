@@ -90,8 +90,6 @@ lib/rwhois/sbin/rwhoisd
 lib/rwhois/usr/lib/libc.so.3.1
 lib/rwhois/usr/lib/libwrap.so.7.6
 lib/rwhois/usr/libexec/ld.so
-man/man8/rmkdbindex.8.gz
-man/man8/rwhoisd.8.gz
 share/doc/rwhois/EXAMPLES
 share/doc/rwhois/INSTALLATION
 share/doc/rwhois/NEWS

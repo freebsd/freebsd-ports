@@ -572,5 +572,3 @@ lib/irc/help/window/stack
 lib/irc/help/window/sticky
 lib/irc/help/window/swap
 lib/irc/help/window/window
-man/man1/ircII.1.gz
-man/man1/ircbug.1.gz

@@ -60,9 +60,3 @@ gopher-data/lib/htmlicon.s
 lib/gopher.hlp
 lib/gopher.rc
 lib/gopherremote.rc
-man/man1/gopher.1.gz
-man/man1/gophfilt.1.gz
-man/man5/gopherd.conf.5.gz
-man/man5/gopherrc.5.gz
-man/man8/gopherd.8.gz
-man/man8/gopherindex.8.gz
