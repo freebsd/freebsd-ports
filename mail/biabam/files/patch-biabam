@@ -15,7 +15,7 @@
  TOTAL_ATTACHMENTS=`echo "$1" | awk -F$SP '{print NF}'`
  
 -for i in `seq 1 $TOTAL_ATTACHMENTS`;
-+for i in `jot 1 $TOTAL_ATTACHMENTS`;
++for i in `jot $TOTAL_ATTACHMENTS 1`;
  do
    STR="'{print \$$i}'"
    # store filenames in an array
@@ -24,7 +24,7 @@
  BASETEMP="`basename $TEMPFILE`"
  
 -for i in `seq 1 $TOTAL_ATTACHMENTS`; do
-+for i in `jot 1 $TOTAL_ATTACHMENTS`; do
++for i in `jot $TOTAL_ATTACHMENTS 1`; do
    # array for attachments basename
    BASEATTACHMENT[$i]="`basename \"${ARR_ATTACHMENTS[$i]}\"`"
    # test if file exists
@@ -42,7 +42,7 @@
  TOTAL_EMAILS=`echo "$1" | awk -F$SP '{print NF}'`
  
 -for i in `seq 1 $TOTAL_EMAILS`; do
-+for i in `jot 1 $TOTAL_EMAILS`; do
++for i in `jot $TOTAL_EMAILS 1`; do
    STR="'{print \$$i}'"
    # store recipients in an array
    ARR_EMAILS[$i]=`sh -c "echo "$1" | awk -F$SP $STR" `
@@ -51,7 +51,7 @@
  TO="To:"
  
 -for i in `seq 1 $TOTAL_EMAILS`; do
-+for i in `jot 1 $TOTAL_EMAILS`; do
++for i in `jot $TOTAL_EMAILS 1`; do
    # write the 'To:' field with all recipients previously stored in the array
    TO="$TO <${ARR_EMAILS[$i]}>,"
  done
@@ -60,7 +60,7 @@
  echo >> $TEMPFILE
  
 -for i in `seq 1 $TOTAL_ATTACHMENTS`; do
-+for i in `jot 1 $TOTAL_ATTACHMENTS`; do
++for i in `jot $TOTAL_ATTACHMENTS 1`; do
    echo "--$BOUNDARY" >> $TEMPFILE
    echo "Content-Type: ${TYPE[$i]}" >> $TEMPFILE
    echo "Content-Disposition: attachment; filename=\"${BASEATTACHMENT[$i]}\"" >> $TEMPFILE
@@ -69,7 +69,7 @@
  echo >> $TEMPFILE
  
 -for i in `seq 1 $TOTAL_EMAILS`; do
-+for i in `jot 1 $TOTAL_EMAILS`; do
++for i in `jot $TOTAL_EMAILS 1`; do
    # put all recipients together to call sendmail below
    RECIPIENTS="$RECIPIENTS ${ARR_EMAILS[$i]}"
  done
@@ -77,7 +77,7 @@
  cat $TEMPFILE | $SENDMAIL $SENDMAIL_OPTS $RECIPIENTS # here we call sendmail
  
 -for i in `seq 1 $TOTAL_ATTACHMENTS`; do
-+for i in `jot 1 $TOTAL_ATTACHMENTS`; do
++for i in `jot $TOTAL_ATTACHMENTS 1`; do
    /bin/rm -f ${TEMPUUENCODED[$i]} # remove all temp files created
  done
  
