@@ -1,0 +1,24 @@
+bin/nethirc
+bin/nhirc
+share/nethirc/HACKING
+share/nethirc/INSTALL
+share/nethirc/LICENSE
+share/nethirc/README
+share/nethirc/TODO
+share/nethirc/channel_mode
+share/nethirc/classes
+share/nethirc/commands
+share/nethirc/commands.pl
+share/nethirc/complaints
+share/nethirc/ctcp
+share/nethirc/deities
+share/nethirc/disasters
+share/nethirc/formats
+share/nethirc/handlers
+share/nethirc/handlers.pl
+share/nethirc/helpers.pl
+share/nethirc/monsters
+share/nethirc/nhircrc
+share/nethirc/scrolls
+share/nethirc/self_mode
+@dirrm share/nethirc
