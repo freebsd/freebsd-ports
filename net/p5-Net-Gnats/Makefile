@@ -26,8 +26,8 @@ MAN3=	Net::Gnats.3 Net::Gnats::PR.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500800
-IGNORE=		This port requires perl 5.8.0 or later. Install lang/perl5.8 then try again
+.if ${PERL_LEVEL} < 500600
+IGNORE=		This port requires perl 5.6.0 or later. Install lang/perl5 then try again
 .endif
 
 .include <bsd.port.post.mk>
