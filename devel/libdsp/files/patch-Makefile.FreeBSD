@@ -1,5 +1,5 @@
---- Makefile.FreeBSD.orig	Sat Dec 29 23:25:39 2001
-+++ Makefile.FreeBSD	Sun Dec 30 10:35:30 2001
+--- Makefile.FreeBSD.orig	Sat Apr  6 09:07:37 2002
++++ Makefile.FreeBSD	Wed Apr 17 02:02:45 2002
 @@ -17,15 +17,8 @@
  # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  #
@@ -34,9 +34,9 @@
 -PREFIX = /usr/local
 +PREFIX ?= /usr/local
  
- VERSION = 3:4:0
+ VERSION = 4:0:0
  
-@@ -113,24 +106,24 @@
+@@ -116,26 +109,26 @@
  	$(LIBTOOL) --mode=link $(CXX) $(LDFLAGS) -rpath $(PREFIX)/lib -version-info $(VERSION) -o libdsp.la $(LOBJS) $(LIBS)
  
  install: libdsp.la
@@ -57,6 +57,8 @@
 -	install -m 644 dsp/Transform4.hh $(PREFIX)/include/dsp
 -	install -m 644 dsp/Transform8.hh $(PREFIX)/include/dsp
 -	install -m 644 dsp/TransformS.hh $(PREFIX)/include/dsp
+-	install -m 644 dsp/dsptypes.h $(PREFIX)/include/dsp
+-	install -m 644 dsp/dspop.h $(PREFIX)/include/dsp
 -	install -m 644 dsp/X86.h $(PREFIX)/include/dsp
 +	${MKDIR} $(PREFIX)/include/dsp
 +	${BSD_INSTALL_DATA} dsp/DSPConfig.hh $(PREFIX)/include/dsp
@@ -75,6 +77,8 @@
 +	${BSD_INSTALL_DATA} dsp/Transform4.hh $(PREFIX)/include/dsp
 +	${BSD_INSTALL_DATA} dsp/Transform8.hh $(PREFIX)/include/dsp
 +	${BSD_INSTALL_DATA} dsp/TransformS.hh $(PREFIX)/include/dsp
++	${BSD_INSTALL_DATA} dsp/dsptypes.h $(PREFIX)/include/dsp
++	${BSD_INSTALL_DATA} dsp/dspop.h $(PREFIX)/include/dsp
 +	${BSD_INSTALL_DATA} dsp/X86.h $(PREFIX)/include/dsp
  	$(LIBTOOL) --mode=install install libdsp.la $(PREFIX)/lib
  
