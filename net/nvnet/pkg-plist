@@ -1,0 +1,8 @@
+@comment $FreeBSD$
+@comment We just copy the file in the kernel module dir. 
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/nvidia_pci.c.diff
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%FREEBSD4%%@cwd /modules
+%%FREEBSD5%%@cwd /boot/kernel
+if_nv.ko

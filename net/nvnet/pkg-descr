@@ -1,0 +1,7 @@
+This port contains a driver for the NVIDIA nForce MCP Ethernet adapter.
+It contains a wrapper that replaces the Linux nvnet.c, and links against
+the Linux binary only object file (nvnetlib.o) included in the NVIDIA
+driver source distribution.
+
+This should work on all nForce and nForce2 based motherboards that have
+the onboard MCP MAC enabled.
