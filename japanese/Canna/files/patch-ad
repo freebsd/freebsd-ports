@@ -1,0 +1,160 @@
+diff -cr cmd/cannakill/cannakill.man  cmd/cannakill/cannakill.man
+*** cmd/cannakill/cannakill.man	Thu Jan 27 19:45:37 1994
+---  cmd/cannakill/cannakill.man	Thu Sep 19 18:31:07 1996
+***************
+*** 18,24 ****
+  .\" USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+  .\" OTHER TORTUOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+  .\" PERFORMANCE OF THIS SOFTWARE.
+! 
+  .\" $Id: cannakill.man,v 1.5 1994/01/27 10:45:37 misao Exp $
+  .TH CANNAKILL 1M
+  .SH "NAME"
+--- 18,24 ----
+  .\" USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+  .\" OTHER TORTUOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+  .\" PERFORMANCE OF THIS SOFTWARE.
+! .\"
+  .\" $Id: cannakill.man,v 1.5 1994/01/27 10:45:37 misao Exp $
+  .TH CANNAKILL 1M
+  .SH "NAME"
+diff -cr cmd/catdic/addwords.man  cmd/catdic/addwords.man
+*** cmd/catdic/addwords.man	Mon May 16 19:12:49 1994
+---  cmd/catdic/addwords.man	Thu Sep 19 18:31:11 1996
+***************
+*** 18,24 ****
+  .\" USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+  .\" OTHER TORTUOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+  .\" PERFORMANCE OF THIS SOFTWARE.
+! 
+  .\" $Id: addwords.man,v 1.4 1994/05/16 10:12:49 hamada Exp $
+  .TH ADDWORDS 1
+  .SH "NAME"
+--- 18,24 ----
+  .\" USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+  .\" OTHER TORTUOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+  .\" PERFORMANCE OF THIS SOFTWARE.
+! .\"
+  .\" $Id: addwords.man,v 1.4 1994/05/16 10:12:49 hamada Exp $
+  .TH ADDWORDS 1
+  .SH "NAME"
+diff -cr cmd/catdic/catdic.man  cmd/catdic/catdic.man
+*** cmd/catdic/catdic.man	Thu Jan 27 19:46:29 1994
+---  cmd/catdic/catdic.man	Thu Sep 19 18:31:49 1996
+***************
+*** 18,24 ****
+  .\" USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+  .\" OTHER TORTUOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+  .\" PERFORMANCE OF THIS SOFTWARE.
+! 
+  .\" $Id: catdic.man,v 1.2 1994/01/27 10:46:29 misao Exp $
+  .TH CATDIC 1        
+  .SH "NAME"
+--- 18,24 ----
+  .\" USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+  .\" OTHER TORTUOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+  .\" PERFORMANCE OF THIS SOFTWARE.
+! .\"
+  .\" $Id: catdic.man,v 1.2 1994/01/27 10:46:29 misao Exp $
+  .TH CATDIC 1        
+  .SH "NAME"
+diff -cr cmd/catdic/cpdic.man  cmd/catdic/cpdic.man
+*** cmd/catdic/cpdic.man	Thu Jan 27 19:46:34 1994
+---  cmd/catdic/cpdic.man	Thu Sep 19 18:31:42 1996
+***************
+*** 18,24 ****
+  .\" USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+  .\" OTHER TORTUOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+  .\" PERFORMANCE OF THIS SOFTWARE.
+! 
+  .\" $Id: cpdic.man,v 1.2 1994/01/27 10:46:34 misao Exp $
+  .TH CPDIC 1
+  .SH "NAME"
+--- 18,24 ----
+  .\" USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+  .\" OTHER TORTUOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+  .\" PERFORMANCE OF THIS SOFTWARE.
+! .\"
+  .\" $Id: cpdic.man,v 1.2 1994/01/27 10:46:34 misao Exp $
+  .TH CPDIC 1
+  .SH "NAME"
+diff -cr cmd/catdic/delwords.man  cmd/catdic/delwords.man
+*** cmd/catdic/delwords.man	Thu Oct  6 17:52:32 1994
+---  cmd/catdic/delwords.man	Thu Sep 19 18:31:26 1996
+***************
+*** 18,24 ****
+  .\" USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+  .\" OTHER TORTUOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+  .\" PERFORMANCE OF THIS SOFTWARE.
+! 
+  .\" $Id: delwords.man,v 1.4 1994/10/06 08:52:32 misao Exp $
+  .TH DELWORDS 1
+  .SH "NAME"
+--- 18,24 ----
+  .\" USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+  .\" OTHER TORTUOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+  .\" PERFORMANCE OF THIS SOFTWARE.
+! .\"
+  .\" $Id: delwords.man,v 1.4 1994/10/06 08:52:32 misao Exp $
+  .TH DELWORDS 1
+  .SH "NAME"
+diff -cr cmd/catdic/lsdic.man  cmd/catdic/lsdic.man
+*** cmd/catdic/lsdic.man	Thu Jan 27 19:46:45 1994
+---  cmd/catdic/lsdic.man	Thu Sep 19 18:32:07 1996
+***************
+*** 18,24 ****
+  .\" USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+  .\" OTHER TORTUOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+  .\" PERFORMANCE OF THIS SOFTWARE.
+! 
+  .\" $Id: lsdic.man,v 1.2 1994/01/27 10:46:45 misao Exp $
+  .TH LSDIC 1         
+  .SH "NAME"
+--- 18,24 ----
+  .\" USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+  .\" OTHER TORTUOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+  .\" PERFORMANCE OF THIS SOFTWARE.
+! .\"
+  .\" $Id: lsdic.man,v 1.2 1994/01/27 10:46:45 misao Exp $
+  .TH LSDIC 1         
+  .SH "NAME"
+diff -cr cmd/catdic/mkdic.man  cmd/catdic/mkdic.man
+*** cmd/catdic/mkdic.man	Thu Jan 27 19:46:50 1994
+---  cmd/catdic/mkdic.man	Thu Sep 19 18:31:56 1996
+***************
+*** 18,24 ****
+  .\" USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+  .\" OTHER TORTUOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+  .\" PERFORMANCE OF THIS SOFTWARE.
+! 
+  .\" $Id: mkdic.man,v 1.2 1994/01/27 10:46:50 misao Exp $
+  .TH MKDIC 1
+  .SH "NAME"
+--- 18,24 ----
+  .\" USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+  .\" OTHER TORTUOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+  .\" PERFORMANCE OF THIS SOFTWARE.
+! .\"
+  .\" $Id: mkdic.man,v 1.2 1994/01/27 10:46:50 misao Exp $
+  .TH MKDIC 1
+  .SH "NAME"
+diff -cr cmd/catdic/mvdic.man  cmd/catdic/mvdic.man
+*** cmd/catdic/mvdic.man	Thu Jan 27 19:46:54 1994
+---  cmd/catdic/mvdic.man	Thu Sep 19 18:31:34 1996
+***************
+*** 18,24 ****
+  .\" USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+  .\" OTHER TORTUOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+  .\" PERFORMANCE OF THIS SOFTWARE.
+! 
+  .\" $Id: mvdic.man,v 1.2 1994/01/27 10:46:54 misao Exp $
+  .TH MVDIC 1
+  .SH "NAME"
+--- 18,24 ----
+  .\" USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+  .\" OTHER TORTUOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+  .\" PERFORMANCE OF THIS SOFTWARE.
+! .\"
+  .\" $Id: mvdic.man,v 1.2 1994/01/27 10:46:54 misao Exp $
+  .TH MVDIC 1
+  .SH "NAME"
