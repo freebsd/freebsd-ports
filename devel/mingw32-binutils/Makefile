@@ -7,7 +7,6 @@
 
 PORTNAME=	binutils
 PORTVERSION=	${BINUTILVERSION}.${PATCHVERSION}
-PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
@@ -19,14 +18,13 @@ PATCH_SITES=	${MASTER_SITE_SOURCEFORGE}
 ## Special hack: I don't use SITE_SUBDIR & DIST_SUBDIR, and only pathces
 ##               will be placed to subdirectory
 ##               It allows to use main binutils sources from other ports.
-PATCHFILES=	mingw/${PORTNAME}-${BINUTILVERSION}.${PATCHVERSION:S/./-/g}-src.diff.gz
-PATCH_DIST_STRIP=	-p1
+PATCHFILES=	mingw/${PORTNAME}-${BINUTILVERSION}.${PATCHVERSION:S/./-/g}-src.diff
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	FSF binutils-2.14 for Windows cross-development
 
 BINUTILVERSION=	2.14
-PATCHVERSION=	90.20030807.1
+PATCHVERSION=	90.20040120.1
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${BINUTILVERSION}
 
