@@ -1,0 +1,7 @@
+prips is a tool that can be used to print all of the IP address on a given
+range.  It can enhance the usability of tools that are made to work on only
+one host at a time (e.g. whois).
+
+WWW: http://www.interloper.net/~dan/software/software.html
+
+-Jeremy <jeremy@external.org>
