@@ -5,12 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	spu
-PORTVERSION=	1.3
+PORTNAME=	peops-spu
+PORTVERSION=	1.7
 CATEGORIES=	emulators linux
 MASTER_SITES=	http://home.t-online.de/home/PeteBernert/
-PKGNAMEPREFIX=	linux-peops-
-DISTNAME=	spupeopsoss103
+PKGNAMEPREFIX=	linux-
+DISTNAME=	spupeopsoss107
 
 MAINTAINER=	jylefort@brutele.be
 COMMENT=	A PSEmu Pro SPU plugin using the OSS interface (Linux version)
@@ -28,15 +28,13 @@ STRIP=
 
 .include <bsd.port.pre.mk>
 
-DOCSDIR=		${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
-
-PSEMUPRO_PLUGINS_DIR=	${LOCALBASE}/lib/linux-psemupro/plugins
-PSEMUPRO_CFGBINS_DIR=	${LOCALBASE}/libexec/linux-psemupro/cfg
-PSEMUPRO_CFGFILES_DIR=	${LOCALBASE}/share/linux-psemupro/cfg
+PSEMUPRO_PLUGINS_DIR=	${LOCALBASE}/lib/psemupro/plugins
+PSEMUPRO_CFGBINS_DIR=	${LOCALBASE}/libexec/psemupro/cfg
+PSEMUPRO_CFGFILES_DIR=	${LOCALBASE}/share/psemupro/cfg
 
 do-install:
 	${MKDIR} ${PSEMUPRO_PLUGINS_DIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/libspuPeopsOSS.so.1.0.3 ${PSEMUPRO_PLUGINS_DIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/libspuPeopsOSS.so.1.0.7 ${PSEMUPRO_PLUGINS_DIR}
 
 	${MKDIR} ${PSEMUPRO_CFGBINS_DIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/cfgPeopsOSS ${PSEMUPRO_CFGBINS_DIR}
@@ -47,8 +45,8 @@ do-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} \
-		${WRKSRC}/readme_1_3.txt \
-		${WRKSRC}/version_1_3.txt \
+		${WRKSRC}/readme_1_7.txt \
+		${WRKSRC}/version_1_7.txt \
 		${DOCSDIR}
 .endif
 
