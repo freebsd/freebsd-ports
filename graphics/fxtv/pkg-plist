@@ -1,6 +1,7 @@
 bin/fxtv
 lib/X11/app-defaults/Fxtv
 lib/X11/fxtv/README
+@unexec rm -rf %B
 lib/X11/fxtv/bitmaps/mini-camera.xpm
 lib/X11/fxtv/bitmaps/mini-down.xbm
 lib/X11/fxtv/bitmaps/mini-resize.xpm
