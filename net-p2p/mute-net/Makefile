@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mute
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}-net
@@ -22,8 +22,10 @@ HAS_CONFIGURE=	yes
 USE_PERL5_BUILD=yes
 USE_REINPLACE=	yes
 
-WRKSRC=		${WRKDIR}/MUTE_fileSharing-0.1-rc5_UnixSource/MUTE
-PATCH_WRKSRC=	${WRKDIR}/MUTE_fileSharing-0.1-rc5_UnixSource
+RELEASE_DIRECTORY=	MUTE_fileSharing-0.2-rc1_UnixSource
+
+WRKSRC=		${WRKDIR}/${RELEASE_DIRECTORY}/MUTE
+PATCH_WRKSRC=	${WRKDIR}/${RELEASE_DIRECTORY}
 
 .ifndef(WITHOUT_GUI)
 LIB_DEPENDS+=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
@@ -99,9 +101,6 @@ post-configure:
 	@${REINPLACE_CMD} -E \
 		-e 's|g\+\+|${CXX}|' \
 		${WRKSRC}/otherApps/fileSharing/userInterface/wxWindows/Makefile
-# add our post-configure_patch
-	@cd ${PATCH_WRKSRC} ; ${PATCH} < \
-		${FILESDIR}/post-configure_patch-MUTE::layers::messageRouting::Makefile
 
 post-build:
 .ifndef(WITHOUT_GUI)
@@ -145,7 +144,7 @@ post-install:
 
 # we cannot install if either a slave or master port is already
 # installed
-CONFLICTS+=	mute-net-*
+CONFLICTS+=	mute-net-[0-9]*
 
 # gui interface
 .ifndef(WITHOUT_GUI)
@@ -156,6 +155,8 @@ PLIST_SUB+=	GUI=""
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-text
 
 PLIST_SUB+=	GUI="@comment "
+
+CONFLICTS+=	mute-net-text-*
 .endif
 
 # text interface
@@ -166,6 +167,8 @@ PLIST_SUB+=	TEXT=""
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-gui
 
 PLIST_SUB+=	TEXT="@comment "
+
+CONFLICTS+=	mute-net-gui-*
 .endif
 
 .include <bsd.port.post.mk>
