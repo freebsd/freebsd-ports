@@ -1,0 +1,24 @@
+ezmlm is an easy-to-use, high-speed mailing list manager for qmail.
+
+ezmlm lets users set up their own mailing lists within qmail's address
+hierarchy. A user, Joe, types
+
+   ezmlm-make ~/SOS ~/.qmail-sos joe-sos isp.net
+
+and instantly has a functioning mailing list, joe-sos@isp.net, with all
+relevant information stored in a new ~/SOS directory.
+
+ezmlm takes advantage of qmail's VERPs to reliably determine the
+recipient address and message number for every incoming bounce message.
+It waits ten days and then sends the subscriber a list of message
+numbers that bounced. If that warning bounces, ezmlm sends a probe; if
+the probe bounces, ezmlm automatically removes the subscriber from the list.
+
+ezmlm is reliable, even in the face of system crashes. It writes each
+new subscription and each new message safely to disk before it reports
+success to qmail.
+
+ezmlm doesn't mind huge mailing lists. Lists don't even have to fit into
+memory. ezmlm hashes the subscription list into a set of independent
+files so that it can handle subscription requests quickly. ezmlm uses
+qmail for blazingly fast parallel SMTP deliveries.
