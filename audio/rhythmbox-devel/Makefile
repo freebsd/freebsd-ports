@@ -27,6 +27,10 @@ USE_LIBTOOL=	yes
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
 
+.if defined(PACKAGE_BUILDING) || defined(PARALLEL_PACKAGE_BUILD)
+WITH_XINE=	yes
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libvorbis.so)
@@ -47,6 +51,11 @@ LIB_DEPENDS+=		gstplay-0.6.1:${PORTSDIR}/multimedia/gstreamer-plugins
 .endif
 
 pre-everything::
+.if !defined(WITH_XINE)
+	@${ECHO_MSG}
+	@${ECHO_MSG} "You must have gstreamer-plugins built with MAD support!"
+	@${ECHO_MSG}
+.endif
 .if !defined(WITH_VORBIS)
 	@${ECHO_MSG}
 	@${ECHO_MSG} "Define WITH_VORBIS to enable Vorbis support"
