@@ -32,6 +32,37 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="33ab4a47-bfc1-11d8-b00e-000347a4fa7d">
+    <topic>Several vulnerabilities found in PHPNuke</topic>
+    <affects>
+      <package>
+	<name>PHPNuke</name>
+	<range><lt>7.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Janek Vind "waraxe" reports that several issues in the
+	  PHPNuke software may be exploited via carefully crafted
+	  URL requests.  These URLs will permit the injection of
+	  SQL code, cookie theft, and the readability of the
+	  PHPNuke administrator account.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2003-0279</cvename>
+      <cvename>CAN-2003-0318</cvename>
+      <cvename>CAN-2004-0266</cvename>
+      <cvename>CAN-2004-0269</cvename>
+      <url>http://www.waraxe.us/index.php?modname=sa&amp;id=27</url>
+      <url>http://secunia.com/advisories/11920</url>
+    </references>
+    <dates>
+      <discovery>2004-05-05</discovery>
+      <entry>2004-07-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8ecaaca2-cc07-11d8-858d-000d610a3b12">
     <topic>Linux binary compatibility mode input validation error</topic>
     <affects>
