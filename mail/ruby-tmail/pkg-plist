@@ -1,12 +1,12 @@
 %%RUBY_SITEARCHLIBDIR%%/tmail/mails.so
 @dirrm %%RUBY_SITEARCHLIBDIR%%/tmail
 %%RUBY_SITELIBDIR%%/tmail/encode.rb
-%%RUBY_SITELIBDIR%%/tmail/info.rb
-%%RUBY_SITELIBDIR%%/tmail/mailp.rb
-%%RUBY_SITELIBDIR%%/tmail/port.rb
 %%RUBY_SITELIBDIR%%/tmail/field.rb
+%%RUBY_SITELIBDIR%%/tmail/info.rb
 %%RUBY_SITELIBDIR%%/tmail/loader.rb
-%%RUBY_SITELIBDIR%%/tmail/mails.rb
+%%RUBY_SITELIBDIR%%/tmail/parsemail.rb
+%%RUBY_SITELIBDIR%%/tmail/port.rb
+%%RUBY_SITELIBDIR%%/tmail/scanmail.rb
 %%RUBY_SITELIBDIR%%/tmail/tmail.rb
 @dirrm %%RUBY_SITELIBDIR%%/tmail
 %%RUBY_EXAMPLESDIR%%/tmail/from-check.rb
@@ -15,10 +15,10 @@
 %%RUBY_EXAMPLESDIR%%/tmail/parse-bench.rb
 %%RUBY_EXAMPLESDIR%%/tmail/parse-test.rb
 %%RUBY_EXAMPLESDIR%%/tmail/sendmail.rb
-%%RUBY_EXAMPLESDIR%%/tmail/m/normal
-%%RUBY_EXAMPLESDIR%%/tmail/m/simple
 %%RUBY_EXAMPLESDIR%%/tmail/m/multipart
+%%RUBY_EXAMPLESDIR%%/tmail/m/normal
 %%RUBY_EXAMPLESDIR%%/tmail/m/sendtest
+%%RUBY_EXAMPLESDIR%%/tmail/m/simple
 @dirrm %%RUBY_EXAMPLESDIR%%/tmail/m
 @dirrm %%RUBY_EXAMPLESDIR%%/tmail
 %%RUBY_DOCDIR%%/tmail/README.en
