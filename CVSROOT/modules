@@ -1758,6 +1758,7 @@ gift		ports/net/gift
 giftool		ports/graphics/giftool
 giftrans	ports/graphics/giftrans
 gigabase	ports/databases/gigabase
+gimageview	ports/graphics/gimageview
 gimp-manual-html	ports/graphics/gimp-manual-html
 gimp-manual-pdf		ports/graphics/gimp-manual-pdf
 gimp-manual-ps		ports/graphics/gimp-manual-ps
