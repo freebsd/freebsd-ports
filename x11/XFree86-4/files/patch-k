@@ -1,0 +1,32 @@
+--- programs/Xserver/hw/xfree86/input/mouse/mouse.c.orig	Sun Jul 23 17:50:10 2000
++++ programs/Xserver/hw/xfree86/input/mouse/mouse.c	Sun Jul 23 17:54:22 2000
+@@ -692,10 +692,15 @@
+ 	    pMse->protocolID = protocolID;
+ 	}
+     }
++#ifndef __FreeBSD__
+     memcpy(pMse->protoPara, proto[pMse->protocolID], sizeof(pMse->protoPara));
++#endif
+     if (automatic) {
+ 	
+ 	if (name) {
++#ifdef __FreeBSD__
++       memcpy(pMse->protoPara, proto[pMse->protocolID], sizeof(pMse->protoPara));
++#endif
+ 	    /* Possible protoPara overrides from SetupAuto. */
+ 	    for (i = 0; i < sizeof(pMse->protoPara); i++)
+ 		if (protoPara[i] != -1)
+--- programs/Xserver/hw/xfree86/os-support/bsd/bsd_mouse.c.orig	Sat Feb 12 22:45:41 2000
++++ programs/Xserver/hw/xfree86/os-support/bsd/bsd_mouse.c	Sun Jul 23 17:50:10 2000
+@@ -165,7 +165,11 @@
+     mode.rate = rate > 0 ? rate : -1;
+     mode.resolution = res > 0 ? res : -1;
+     mode.accelfactor = -1;
++#ifdef __FreeBSD__
++    mode.level = 1;
++#else
+     mode.level = -1;
++#endif
+     ioctl(pInfo->fd, MOUSE_SETMODE, &mode);
+ }
+ #endif
