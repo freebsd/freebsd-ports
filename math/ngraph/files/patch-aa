@@ -1,9 +1,9 @@
---- Makefile.orig	Sun Jul  7 00:47:14 2002
-+++ Makefile	Tue Aug 27 21:34:22 2002
+--- Makefile.orig	Fri Feb 21 19:53:54 2003
++++ Makefile	Sat Feb 22 18:09:03 2003
 @@ -1,26 +1,26 @@
  #
  MAINVERSION = '"6.03"'
- GUIVERSION = '".16"'
+ GUIVERSION = '".20"'
 -LIBDIR = '"/usr/local/lib/Ngraph"'
 -INSTALLDIR = /usr/local/lib/Ngraph
 -BINDIR = /usr/local/bin
@@ -14,7 +14,7 @@
  #
  ###############################################################################
  #
- # Linux + Open Motif 2.1 [static link]
+ # Linux + Open Motif 2.1 [dynamic link]
  #
 -CC = gcc
 -CCOPTION = -O2 -m486
@@ -25,8 +25,8 @@
 -DEFS = -DJAPANESE
 -PLATFORM  = '"for X11 [Linux(glibc2) + Open Motif]"'
 -X11INCLUDE = -I/usr/X11R6/include
--STATICLINK = /usr/X11R6/lib/libXm.a 
--X11LIB = -L/usr/X11R6/lib -lm -lXext -lXt -lXp -lX11 -lICE -lSM
+-STATICLINK =
+-X11LIB = -L/usr/X11R6/lib -lm -lXm -lXext -lXt -lXp -lX11 -lICE -lSM
 +#CC = gcc
 +#CCOPTION = -O2 -m486
 +#MAKE = make
@@ -36,8 +36,8 @@
 +#DEFS = -DJAPANESE
 +#PLATFORM  = '"for X11 [Linux(glibc2) + Open Motif]"'
 +#X11INCLUDE = -I/usr/X11R6/include
-+#STATICLINK = /usr/X11R6/lib/libXm.a 
-+#X11LIB = -L/usr/X11R6/lib -lm -lXext -lXt -lXp -lX11 -lICE -lSM
++#STATICLINK =
++#X11LIB = -L/usr/X11R6/lib -lm -lXm -lXext -lXt -lXp -lX11 -lICE -lSM
  #
  #
  ###############################################################################
