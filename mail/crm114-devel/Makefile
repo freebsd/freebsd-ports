@@ -7,7 +7,7 @@
 
 PORTNAME=	crm114
 PORTVERSION=	20040221
-PORTREVISION=	1
+PORTREVISION=	2
 # WARNING change versionname in CRM114RELEASENAME too.
 # portlint didn't like this variable at this place.
 # So I have to put it down in this file.
@@ -23,7 +23,7 @@ DISTFILES=	${DISTNAME}.tar.gz ${DISTNAME:R}.css.tar.gz
 MAINTAINER=	Meno.Abels@Adviser.com
 COMMENT=	An Markov based SpamFilter
 
-LIB_DEPENDS=	tre.4:${PORTSDIR}/textproc/libtre
+LIB_DEPENDS=	tre.5:${PORTSDIR}/textproc/libtre
 # there is no other then formail on this planet
 RUN_DEPENDS=	procmail:${PORTSDIR}/mail/procmail
 
