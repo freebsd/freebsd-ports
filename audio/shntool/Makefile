@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	shntool
-PORTVERSION=	1.2.3
-PORTREVISION=	1
+PORTVERSION=	2.0.3
 CATEGORIES=	audio
 MASTER_SITES=	http://www.etree.org/shnutils/shntool/source/ \
 		${MASTER_SITE_LOCAL}

@@ -1,11 +1,13 @@
 bin/shncat
 bin/shncmp
 bin/shnconv
+bin/shncue
 bin/shnfix
 bin/shninfo
 bin/shnjoin
 bin/shnlen
 bin/shnmd5
+bin/shnpad
 bin/shnsplit
 bin/shnstrip
 bin/shntool
