@@ -3,10 +3,11 @@
 # Date created:		7 June 1995
 # Whom:			Takashi Ogura <ogura@st.rim.or.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1995/06/24 09:25:16 asami Exp $
 #
 
 DISTNAME=	kon
+PKGNAME=	kon-0994e
 CATEGORIES+=	japanese
 MASTER_SITES=	ftp://ftp.iij.ad.jp/pub/linux-j/JE-sources/JE/
 DISTFILES=	kon-0.99.4e.tgz
