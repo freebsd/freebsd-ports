@@ -1,11 +1,11 @@
 # New ports collection makefile for:    crossgo32
 # Version required:     1.3
 # Date created:         6 Mar 97
-# Whom:                 Pedro Giffuni <pgiffuni@fps.biblos.unal.edu.co>
+# Whom:                 Pedro Giffuni <giffunip@asme.org>
 # Date updated: 	Sun Jun 22 16:11:40 EST 1997
 # Whom:			Joel Sutton <sutton@aardvark.apana.org.au>
 #
-# $Id$
+# $Id: Makefile,v 1.4 1997/08/13 09:06:51 tg Exp $
 #
 
 DISTNAME=	crosstree-1.3

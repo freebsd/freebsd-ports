@@ -3,14 +3,14 @@
 # Date created:		29 October 1994
 # Whom:			pst
 #
-# $Id: Makefile,v 1.15 1997/01/10 07:34:35 asami Exp $
+# $Id: Makefile,v 1.16 1997/03/08 22:02:40 obrien Exp $
 #
 
 DISTNAME=	w3c-httpd-3.0A
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.w3.org/pub/httpd/
 
-MAINTAINER=	pgiffuni@fps.biblos.unal.edu.co
+MAINTAINER=	giffunip@asme.org
 
 NO_WRKSUBDIR=	yes
 

@@ -3,7 +3,7 @@
 # Date created:			21 Sept 1996
 # Whom:				Pedro
 #
-# $Id: Makefile,v 1.3 1997/02/19 09:36:05 tg Exp $
+# $Id: Makefile,v 1.4 1997/04/27 00:11:47 asami Exp $
 #
 
 DISTNAME=	Isearch-1.14
@@ -11,7 +11,7 @@ PKGNAME=	isearch-1.14
 CATEGORIES=	textproc databases
 MASTER_SITES=	ftp://ftp.cnidr.org/pub/NIDR.tools/Isearch/
 
-MAINTAINER=	pgiffuni@FPS.biblos.unal.edu.co
+MAINTAINER=	giffunip@asme.org
 
 GNU_CONFIGURE= yes 
 

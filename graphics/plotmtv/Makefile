@@ -3,7 +3,7 @@
 # Date created:		19 October 1996
 # Whom:			pgs
 #
-# $Id: Makefile,v 1.3 1997/02/26 13:19:14 obrien Exp $
+# $Id: Makefile,v 1.4 1997/06/19 12:35:44 tg Exp $
 #
 
 DISTNAME=	Plotmtv1.4.1
@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	pgiffuni@FPS.biblos.unal.edu.co
+MAINTAINER=	giffunip@asme.org
 
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes

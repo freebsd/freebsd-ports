@@ -3,14 +3,14 @@
 # Date created:         26 Ag 97
 # Whom:                 Pedro Giffuni
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/11/17 09:48:17 tg Exp $
 #
 
 DISTNAME=	atlast-1.0
 CATEGORIES=	lang
 MASTER_SITES=	http://www.fourmilab.ch/atlast/
 
-MAINTAINER=	pgiffuni@FPS.biblos.unal.edu.co
+MAINTAINER=	giffunip@asme.org
 
 do-install:
 	$(INSTALL_PROGRAM) $(WRKSRC)/atlast $(PREFIX)/bin

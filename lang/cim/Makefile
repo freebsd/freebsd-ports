@@ -3,7 +3,7 @@
 # Date created:			21 Sept 1996
 # Whom:				Pedro
 #
-# $Id: Makefile,v 1.3 1997/04/27 00:50:26 max Exp $
+# $Id: Makefile,v 1.4 1997/07/21 03:14:35 obrien Exp $
 #
 
 DISTNAME=	cim-1.92
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.ifi.uio.no/pub/cim/  \
 		ftp://ftp.fenk.wau.nl/pub/lang/simula/compilers/cim/
 MASTER_SITE_SUBDIR=	devel/lang/simula
 
-MAINTAINER=	pgiffuni@FPS.biblos.unal.edu.co
+MAINTAINER=	giffunip@asme.org
 
 STRIP=
 GNU_CONFIGURE= 	yes 
