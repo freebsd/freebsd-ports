@@ -30,7 +30,7 @@ start)
 	${MODELS}/${UPSTYPE} ${UPSFLAGS}
 	${SBIN}/upsd
 	${SBIN}/upsmon localhost
-	${BIN}/upslog localhost ${UPSLOG} ${UPSLOGINTERVAL}
+	${BIN}/upslog -s backups@localhost -l ${UPSLOG} -i ${UPSLOGINTERVAL}
 	;;
 stop)
 	/usr/bin/killall upslog upsmon upsd ${UPSTYPE}
