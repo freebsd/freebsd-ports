@@ -1,0 +1,13 @@
+Gnarwl is an email autoresponder.
+
+Unlike the original vacation(1) program, gnarwl is based on LDAP.
+Traditionally you had to give every user, who wanted to use autoreply
+facilities full fledged system accounts (trusting them to set their
+forwarding up properly, cursing when they didn't).
+
+With gnarwl this is history. User information is now stored in LDAP.
+Thats right, no more messing around with system accounts or homedirs for
+users who just want their email working, but don't care to fuss around
+with shell commands.
+
+WWW: http://www.oss.billiton.de/software.shtml
