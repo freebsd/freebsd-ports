@@ -1479,6 +1479,7 @@ docproj-nojadetex	ports/textproc/docproj-nojadetex
 docsis		ports/net-mgmt/docsis
 doctorj		ports/devel/doctorj
 documancer	ports/misc/documancer
+dodgindiamond2	ports/games/dodgindiamond2
 dog		ports/misc/dog
 domc		ports/textproc/domc
 domtools	ports/dns/domtools
