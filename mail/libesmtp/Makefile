@@ -5,13 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	libesmtp
-PORTVERSION=	1.0.2
-PORTREVISION=	2
+PORTVERSION=	1.0.3
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.stafford.uklinux.net/libesmtp/ \
 		http://www.tobez.org/download/port-mirrors/mail/libesmtp/ \
 		http://www.borgsdemons.com/distfiles/
+DISTNAME=	${PORTNAME}-${PORTVERSION}r1
 
 MAINTAINER=	coop9211@uidaho.edu
 COMMENT=	A library for posting electronic mail
@@ -19,7 +19,7 @@ COMMENT=	A library for posting electronic mail
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 USE_PERL5_BUILD=yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
