@@ -11,15 +11,23 @@ info/sawmill.info-1
 info/sawmill.info-2
 info/sawmill.info-3
 libexec/sawmill/%%VERSION%%/%%GNUHOST%%/gtk-style
-libexec/sawmill/%%VERSION%%/%%GNUHOST%%/libflippers.a
 libexec/sawmill/%%VERSION%%/%%GNUHOST%%/libflippers.la
 libexec/sawmill/%%VERSION%%/%%GNUHOST%%/libflippers.so
-libexec/sawmill/%%VERSION%%/%%GNUHOST%%/libflippers.so.0
-libexec/sawmill/%%VERSION%%/%%GNUHOST%%/libgradient.a
 libexec/sawmill/%%VERSION%%/%%GNUHOST%%/libgradient.la
 libexec/sawmill/%%VERSION%%/%%GNUHOST%%/libgradient.so
-libexec/sawmill/%%VERSION%%/%%GNUHOST%%/libgradient.so.0
+libexec/sawmill/%%VERSION%%/%%GNUHOST%%/libx.la
+libexec/sawmill/%%VERSION%%/%%GNUHOST%%/libx.so
 libexec/sawmill/%%VERSION%%/%%GNUHOST%%/sawmill-menu
+share/gnome/apps/Settings/Sawmill/.directory
+share/gnome/apps/Settings/Sawmill/appearance-properties.desktop
+share/gnome/apps/Settings/Sawmill/bindings-properties.desktop
+share/gnome/apps/Settings/Sawmill/focus-properties.desktop
+share/gnome/apps/Settings/Sawmill/match-properties.desktop
+share/gnome/apps/Settings/Sawmill/maximize-properties.desktop
+share/gnome/apps/Settings/Sawmill/misc-properties.desktop
+share/gnome/apps/Settings/Sawmill/move-properties.desktop
+share/gnome/apps/Settings/Sawmill/placement-properties.desktop
+share/gnome/apps/Settings/Sawmill/workspace-properties.desktop
 share/gnome/wm-properties/Sawmill.desktop
 share/locale/da/LC_MESSAGES/sawmill.mo
 share/locale/de/LC_MESSAGES/sawmill.mo
@@ -32,8 +40,7 @@ share/locale/nl/LC_MESSAGES/sawmill.mo
 share/locale/pt_PT/LC_MESSAGES/sawmill.mo
 share/locale/sv/LC_MESSAGES/sawmill.mo
 share/locale/tr/LC_MESSAGES/sawmill.mo
-share/sawmill/%%VERSION%%/DOC.dir
-share/sawmill/%%VERSION%%/DOC.pag
+share/sawmill/%%VERSION%%/DOC
 share/sawmill/%%VERSION%%/lisp/auto-raise.jl
 share/sawmill/%%VERSION%%/lisp/auto-raise.jlc
 share/sawmill/%%VERSION%%/lisp/autoload.jl
@@ -79,6 +86,8 @@ share/sawmill/%%VERSION%%/lisp/group-funs.jl
 share/sawmill/%%VERSION%%/lisp/group-funs.jlc
 share/sawmill/%%VERSION%%/lisp/groups.jl
 share/sawmill/%%VERSION%%/lisp/groups.jlc
+share/sawmill/%%VERSION%%/lisp/grow-pack.jl
+share/sawmill/%%VERSION%%/lisp/grow-pack.jlc
 share/sawmill/%%VERSION%%/lisp/gtkrc.jl
 share/sawmill/%%VERSION%%/lisp/gtkrc.jlc
 share/sawmill/%%VERSION%%/lisp/iconify.jl
@@ -109,6 +118,10 @@ share/sawmill/%%VERSION%%/lisp/open-look.jl
 share/sawmill/%%VERSION%%/lisp/open-look.jlc
 share/sawmill/%%VERSION%%/lisp/place-window.jl
 share/sawmill/%%VERSION%%/lisp/place-window.jlc
+share/sawmill/%%VERSION%%/lisp/prompt-extras.jl
+share/sawmill/%%VERSION%%/lisp/prompt-extras.jlc
+share/sawmill/%%VERSION%%/lisp/prompt.jl
+share/sawmill/%%VERSION%%/lisp/prompt.jlc
 share/sawmill/%%VERSION%%/lisp/raise-commands.jl
 share/sawmill/%%VERSION%%/lisp/raise-commands.jlc
 share/sawmill/%%VERSION%%/lisp/rects.jl
@@ -127,6 +140,8 @@ share/sawmill/%%VERSION%%/lisp/shade-hover.jl
 share/sawmill/%%VERSION%%/lisp/shade-hover.jlc
 share/sawmill/%%VERSION%%/lisp/shading.jl
 share/sawmill/%%VERSION%%/lisp/shading.jlc
+share/sawmill/%%VERSION%%/lisp/size-window.jl
+share/sawmill/%%VERSION%%/lisp/size-window.jlc
 share/sawmill/%%VERSION%%/lisp/slide-window.jl
 share/sawmill/%%VERSION%%/lisp/slide-window.jlc
 share/sawmill/%%VERSION%%/lisp/sm-common.jl
@@ -151,6 +166,8 @@ share/sawmill/%%VERSION%%/lisp/viewport.jl
 share/sawmill/%%VERSION%%/lisp/viewport.jlc
 share/sawmill/%%VERSION%%/lisp/window-order.jl
 share/sawmill/%%VERSION%%/lisp/window-order.jlc
+share/sawmill/%%VERSION%%/lisp/with-output.jl
+share/sawmill/%%VERSION%%/lisp/with-output.jlc
 share/sawmill/%%VERSION%%/lisp/workspace.jl
 share/sawmill/%%VERSION%%/lisp/workspace.jlc
 share/sawmill/%%VERSION%%/lisp/x-cycle.jl
@@ -297,6 +314,7 @@ share/sawmill/%%VERSION%%/themes/smaker/theme.jl
 @dirrm libexec/sawmill/%%VERSION%%/%%GNUHOST%%
 @dirrm libexec/sawmill/%%VERSION%%
 @dirrm libexec/sawmill
+@dirrm share/gnome/apps/Settings/Sawmill
 @dirrm share/sawmill/%%VERSION%%/lisp
 @dirrm share/sawmill/%%VERSION%%/themes/absolute-e
 @dirrm share/sawmill/%%VERSION%%/themes/brushed-metal

@@ -1,12 +1,12 @@
 # New ports collection makefile for:   sawmill
-# Version required:    0.24
+# Version required:    0.25.1
 # Date created:        13 September 1999
 # Whom:                Yukihiro Nakai <nakai@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	sawmill-0.24
+DISTNAME=	sawmill-0.25.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://sawmill.sourceforge.net/pub/sawmill/
 
@@ -14,18 +14,18 @@ MAINTAINER=	nakai@FreeBSD.org
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 		Imlib.5:${PORTSDIR}/graphics/imlib \
-		rep.7:${PORTSDIR}/lang/librep
+		rep.8:${PORTSDIR}/lang/librep
 .if !defined(NOGNOME)
 LIB_DEPENDS+=	capplet.1:${PORTSDIR}/sysutils/gnomecontrolcenter
 .endif
-BUILD_DEPENDS=	${LOCALBASE}/libexec/rep/${ARCH}--freebsd${OSREL}/libgtk.so:${PORTSDIR}/x11-toolkits/rep-gtk
-RUN_DEPENDS=	${LOCALBASE}/libexec/rep/${ARCH}--freebsd${OSREL}/libgtk.so:${PORTSDIR}/x11-toolkits/rep-gtk
+BUILD_DEPENDS=	${LOCALBASE}/libexec/rep/${ARCH}--freebsd${OSREL}/gtk.so:${PORTSDIR}/x11-toolkits/rep-gtk
+RUN_DEPENDS=	${LOCALBASE}/libexec/rep/${ARCH}--freebsd${OSREL}/gtk.so:${PORTSDIR}/x11-toolkits/rep-gtk
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
 
 PLIST_SUB=	GNUHOST=${ARCH}--freebsd${OSREL} VERSION=${VERSION}
-VERSION=	0.24
+VERSION=	0.25.1
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
