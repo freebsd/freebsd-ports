@@ -243,7 +243,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # NO_WRKSUBDIR	- Assume port unpacks directly into ${WRKDIR}.
 # PATCHDIR 		- A directory containing any additional patches you made
 #				  to port this software to FreeBSD (default:
-#				  ${MASTERDIR}/patches)
+#				  ${MASTERDIR}/files)
 # SCRIPTDIR 	- A directory containing any auxiliary scripts
 #				  (default: ${MASTERDIR}/scripts)
 # FILESDIR 		- A directory containing any miscellaneous additional files.
