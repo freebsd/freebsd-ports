@@ -2,41 +2,23 @@ bin/comp_err
 bin/isamchk
 bin/isamlog
 bin/msql2mysql
-bin/mysql
 bin/mysql_fix_privilege_tables
 bin/mysql_install_db
 bin/mysql_setpermission
 bin/mysql_zap
 bin/mysqlaccess
-bin/mysqladmin
 bin/mysqlbug
-bin/mysqldump
-bin/mysqlimport
-bin/mysqlshow
 bin/perror
 bin/replace
 bin/resolveip
 bin/safe_mysqld
-etc/rc.d/mysql.sh
-include/mysql/dbug.h
-include/mysql/errmsg.h
-include/mysql/m_ctype.h.in
-include/mysql/m_string.h
-include/mysql/my_list.h
-include/mysql/my_sys.h
-include/mysql/mysql.h
-include/mysql/mysql_com.h
-include/mysql/mysql_version.h
-include/mysql/mysqld_error.h
+etc/rc.d/mysql-server.sh
 @unexec install-info --delete %D/info/mysql.info %D/info/dir
 info/mysql.info
 @exec install-info %D/info/mysql.info %D/info/dir
 lib/mysql/libdbug.a
 lib/mysql/libheap.a
 lib/mysql/libmerge.a
-lib/mysql/libmysqlclient.a
-lib/mysql/libmysqlclient.so
-lib/mysql/libmysqlclient.so.6
 lib/mysql/libmystrings.a
 lib/mysql/libmysys.a
 lib/mysql/libnisam.a
@@ -87,8 +69,6 @@ share/mysql/spanish/errmsg.sys
 share/mysql/spanish/errmsg.txt
 share/mysql/swedish/errmsg.sys
 share/mysql/swedish/errmsg.txt
-@dirrm include/mysql
-@dirrm lib/mysql
 @dirrm share/doc/mysql
 @dirrm share/mysql/czech
 @dirrm share/mysql/dutch
@@ -99,7 +79,6 @@ share/mysql/swedish/errmsg.txt
 @dirrm share/mysql/italian
 @dirrm share/mysql/japanese
 @dirrm share/mysql/korean
-@dirrm share/mysql/mysql
 @dirrm share/mysql/norwegian
 @dirrm share/mysql/norwegian-ny
 @dirrm share/mysql/polish
@@ -111,5 +90,3 @@ share/mysql/swedish/errmsg.txt
 @dirrm share/mysql
 @exec %D/bin/mysql_install_db
 @exec /usr/bin/killall mysqld
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib/mysql
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
