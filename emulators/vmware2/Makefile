@@ -7,6 +7,7 @@
 #
 
 PORTNAME=	vmware2
+#PORTVERSION=	2.0.1.546	# 2.0.1 beta
 PORTVERSION=	2.0.476
 CATEGORIES=	emulators linux
 MASTER_SITES=	http://www4.vmware.com/software/ \
@@ -16,7 +17,7 @@ MASTER_SITES=	http://www4.vmware.com/software/ \
 		http://www.vmware.co.uk/software/ \
 		http://mirror.aarnet.edu.au/pub/vmware/software/ \
 		ftp://mirror.aarnet.edu.au/pub/vmware/software/
-DISTNAME=	VMware-2.0-476
+DISTNAME=	VMware-${PORTVERSION:R}-${PORTVERSION:E}
 
 PATCH_SITES=	http://www.mindspring.com/~vsilyaev/vmware/files/ \
 		ftp://mirror.aarnet.edu.au/pub/vmware/freebsd/ \
@@ -24,7 +25,9 @@ PATCH_SITES=	http://www.mindspring.com/~vsilyaev/vmware/files/ \
 PATCHFILES=	vmmon-freebsd-0.95.tar.gz \
 		vmnet-freebsd-0.11.tar.gz
 
-MAINTAINER=	freebsd-emulation@FreeBSD.org
+# Feel free to post your questions/reports/suggestions on this port to
+# freebsd-emulation mailing list with the following maintainer address CC'ed.
+MAINTAINER=	knu@FreeBSD.org
 
 RUN_DEPENDS=	${LINUX_DIR}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base \
 		${LINUX_DIR}/dev/rtc:${PORTSDIR}/emulators/rtc
