@@ -1,0 +1,11 @@
+--- doc/Makefile.in.orig	Tue Jun 25 14:49:12 2002
++++ doc/Makefile.in	Tue Jun 25 14:49:23 2002
+@@ -94,7 +94,7 @@
+ 
+ DOXYFILE = Doxyfile
+ 
+-docdir = $(prefix)/doc/$(PACKAGE)-$(VERSION)
++docdir = $(prefix)/share/doc/$(PACKAGE)
+ 
+ TEMPLATES = index.tmpl license.tmpl lists.tmpl bugs.tmpl demos.tmpl	\
+ cgi-overview.tmpl tutorial.tmpl lib-overview.tmpl COPYING COPYING.LIB	\
