@@ -1,0 +1,30 @@
+share/texmf/bibtex/bib/abntex/abnt-bibtex-doc.bib
+share/texmf/bibtex/bib/abntex/abnt-def.bib
+share/texmf/bibtex/bib/abntex/abnt-options.bib
+share/texmf/bibtex/bib/abntex/abnt-test.bib
+share/texmf/bibtex/bst/abntex/abnt-alf.bst
+share/texmf/bibtex/bst/abntex/abnt-num.bst
+share/texmf/bibtex/bst/abntex/changelog.txt
+share/texmf/doc/bibtex/abntex/abnt-bibtex-alf-doc.css
+share/texmf/doc/bibtex/abntex/abnt-bibtex-alf-doc.pdf
+share/texmf/doc/bibtex/abntex/abnt-bibtex-alf-doc.ps.gz
+share/texmf/doc/bibtex/abntex/abnt-bibtex-alf-doc.tex
+share/texmf/doc/bibtex/abntex/abnt-bibtex-doc.css
+share/texmf/doc/bibtex/abntex/abnt-bibtex-doc.pdf
+share/texmf/doc/bibtex/abntex/abnt-bibtex-doc.ps.gz
+share/texmf/doc/bibtex/abntex/abnt-bibtex-doc.tex
+share/texmf/doc/latex/abntex/abnt-classe-doc.css
+share/texmf/doc/latex/abntex/abnt-classe-doc.pdf
+share/texmf/doc/latex/abntex/abnt-classe-doc.ps.gz
+share/texmf/doc/latex/abntex/abnt-classe-doc.tex
+share/texmf/tex/latex/abntex/abnt-alf.sty
+share/texmf/tex/latex/abntex/abnt-num.sty
+share/texmf/tex/latex/abntex/abnt.cls
+share/texmf/tex/latex/abntex/devel.txt
+@dirrm share/texmf/tex/latex/abntex
+@dirrm share/texmf/doc/latex/abntex
+@dirrm share/texmf/doc/bibtex/abntex
+@dirrm share/texmf/bibtex/bst/abntex
+@dirrm share/texmf/bibtex/bib/abntex
+@exec texhash
+@unexec texhash
