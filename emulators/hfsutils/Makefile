@@ -3,7 +3,7 @@
 # Date Created:		7 Sep 1997
 # Whom:			Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
-# $Id: Makefile,v 1.12 1998/10/24 17:08:47 vanilla Exp $
+# $Id: Makefile,v 1.13 1998/10/26 07:19:47 asami Exp $
 #
 
 DISTNAME=	hfsutils-3.2.2
@@ -13,8 +13,6 @@ MASTER_SITES=	ftp://ftp.mars.org/pub/hfs/
 MAINTAINER=	vanilla@FreeBSD.ORG
 
 LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
-
-BROKEN=		install
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcl --with-tk
