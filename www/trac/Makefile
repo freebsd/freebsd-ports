@@ -25,4 +25,7 @@ USE_PYDISTUTILS=	yes
 x-generate-plist:
 	(${PORTSDIR}/Tools/scripts/plist -d -m ${MTREE_FILE} ${PREFIX}|sed -E 's,.*share/nls/.+$$,,g;s,${PYTHON_SITELIBDIR:S,^${PYTHONBASE}/,,},%%PYTHON_SITELIBDIR%%,g'|tr -s '\n') > temp-pkg-plist
 
+post-install:
+	@${CAT} ${PKGMESSAGE}
+
 .include <bsd.port.mk>
