@@ -7577,6 +7577,7 @@ swarm		ports/devel/swarm
 swatch		ports/security/swatch
 sweep		ports/audio/sweep
 swftools	ports/graphics/swftools
+swhplugins	ports/audio/swhplugins
 swi-pl		ports/lang/swi-pl
 swig11		ports/devel/swig11
 swig13		ports/devel/swig13
