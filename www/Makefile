@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.73 1998/04/11 17:22:35 andreas Exp $
+# $Id: Makefile,v 1.74 1998/05/03 20:51:46 mph Exp $
 #
 
     SUBDIR += Mosaic         # requires Motif
@@ -53,6 +53,7 @@
     SUBDIR += vrweb
     SUBDIR += w3
     SUBDIR += w3c-httpd
+    SUBDIR += w3mir
     SUBDIR += webcopy
     SUBDIR += weblint
     SUBDIR += webstone
