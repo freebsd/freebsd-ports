@@ -8,11 +8,11 @@
 PORTNAME=	opencdk
 PORTVERSION=	0.4.1
 CATEGORIES=	security
-MASTER_SITES=	http://gd.tuwien.ac.at/privacy/gnupg/alpha/gnutls/opencdk/ \
+MASTER_SITES=	${MASTER_SITE_GNUPG} \
 		http://www.mirrors.wiretapped.net/security/network-security/gnutls/opencdk/ \
-		ftp://ftp.gnupg.org/pub/gcrypt/alpha/gnutls/opencdk/ \
 		ftp://ftp.mirrors.wiretapped.net/security/network-security/gnutls/opencdk/ \
 		ftp://ftp.gnutls.org/pub/gnutls/opencdk/
+MASTER_SITE_SUBDIR=	alpha/gnutls/opencdk
 
 MAINTAINER=	sergei@kolobov.com
 
