@@ -88,6 +88,8 @@ bin/gwc
 bin/gwho
 bin/gwhoami
 bin/gyes
+share/locale/af/LC_MESSAGES/coreutils.mo
+share/locale/af/LC_TIME/coreutils.mo
 share/locale/be/LC_MESSAGES/coreutils.mo
 share/locale/be/LC_TIME/coreutils.mo
 share/locale/ca/LC_MESSAGES/coreutils.mo
