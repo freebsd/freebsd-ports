@@ -68,10 +68,8 @@ share/fvwm/themes/awol/README
 share/fvwm/themes/awol/menustyle
 share/fvwm/themes/awol/buttons
 share/fvwm/themes/awol/colors
-share/fvwm/themes/awol/images/16x16
 share/fvwm/themes/awol/images/background/bckgnd3.xpm
 share/fvwm/themes/awol/images/background/bckgnd1.xpm
-share/fvwm/themes/awol/images/bar
 share/fvwm/themes/awol/images/module/Pinky.xpm
 share/fvwm/themes/awol/images/module/fvwm3.xpm
 share/fvwm/themes/awol/images/module/isn_next.xpm
