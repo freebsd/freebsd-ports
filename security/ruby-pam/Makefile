@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pam
-PORTVERSION=	1.1
+PORTVERSION=	1.3
 CATEGORIES=	security ruby
 MASTER_SITES=	http://kt-www.jaist.ac.jp/~ttate/ftp/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
