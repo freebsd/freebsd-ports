@@ -12,8 +12,7 @@ CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.academ.com/pub/nntp/server/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
-PATCH_SITES=	ftp://ftp.lan-ks.de/pub/c-news/ \
-		ftp://ftp.dinoex.org/pub/c-news/
+PATCH_SITES=	ftp://ftp.dinoex.org/pub/c-news/
 PATCHFILES=	nntp-patch-y2k
 
 MAINTAINER=	dinoex@FreeBSD.org

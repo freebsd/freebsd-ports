@@ -8,8 +8,7 @@
 PORTNAME=	pathalias
 PORTVERSION=	9.16
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.lan-ks.de/pub/approved/ \
-		ftp://ftp.dinoex.de/pub/approved/
+MASTER_SITES=	ftp://ftp.dinoex.de/pub/approved/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	dinoex@FreeBSD.org
