@@ -7,6 +7,7 @@
 
 PORTNAME=	ogmtools
 PORTVERSION=	0.9.60
+PORTREVISION=	1
 CATEGORIES=	graphics audio
 MASTER_SITES=	http://www.bunkus.org/videotools/ogmtools/
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(.{2})$/\1/}
@@ -23,7 +24,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ogg-prefix=${LOCALBASE} \
   		--with-vorbis-prefix=${LOCALBASE}
 
-MAN1=		ogmdemux.1 ogminfo.1 ogmmerge.1 ogmsplit.1
+MAN1=		ogmcat.1 ogmdemux.1 ogminfo.1 ogmmerge.1 ogmsplit.1
 
 post-patch:
 # disable GNU auto* tools
