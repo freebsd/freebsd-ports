@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ngircd
-PORTVERSION=	0.7.7
+PORTVERSION=	0.8.0
 CATEGORIES=	irc
 MASTER_SITES=	http://download.berlios.de/ngircd/ \
 		ftp://ftp.berlios.de/pub/ngircd/
@@ -20,6 +20,10 @@ CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 .if exists(/usr/include/tcpd.h)
 WITH_TCP_WRAPPERS=	yes
 CONFIGURE_ARGS+=	--with-tcp-wrappers
+.endif
+
+.if defined(WITH_IDENT)
+CONFIGURE_ARGS+=	--with-ident
 .endif
 
 .if defined(WITHOUT_SYSLOG)
@@ -36,7 +40,11 @@ MAN8=		ngircd.8
 pre-configure:
 	@${ECHO_MSG} ""
 .if defined(WITH_TCP_WRAPPERS)
-	@${ECHO_MSG} "Enabling TCP wrappers support"
+	@${ECHO_MSG} "Enable TCP wrappers support"
+	@${ECHO_MSG} ""
+.endif
+.if defined(WITH_IDENT)
+	@${ECHO_MSG} "Enable ident support"
 	@${ECHO_MSG} ""
 .endif
 .if defined(WITHOUT_SYSLOG)
