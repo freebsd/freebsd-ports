@@ -1,0 +1,23 @@
+*** tosha.c.orig	Fri Jan  1 16:57:49 1999
+--- tosha.c	Sun Dec 10 01:04:54 2000
+***************
+*** 240,247 ****
+  		return template;
+  	if (!(tmpstr = malloc(strlen(template) + strlen(formatspec->ext) - 1)))
+  		out_of_memory();
+! 	if ((prefix = cptr - template))
+  		strncpy (tmpstr, template, prefix);
+  	strcat (tmpstr + prefix, formatspec->ext);
+  	prefix += strlen(formatspec->ext);
+  	strcat (tmpstr + prefix, cptr + 2);
+--- 240,249 ----
+  		return template;
+  	if (!(tmpstr = malloc(strlen(template) + strlen(formatspec->ext) - 1)))
+  		out_of_memory();
+! 	if ((prefix = cptr - template)) {
+  		strncpy (tmpstr, template, prefix);
++ 		tmpstr[prefix] = '\0';
++ 	}
+  	strcat (tmpstr + prefix, formatspec->ext);
+  	prefix += strlen(formatspec->ext);
+  	strcat (tmpstr + prefix, cptr + 2);
