@@ -7,7 +7,7 @@
 
 PORTNAME=	ghostscript
 PORTVERSION=	${GS_VERSION}
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:gs_srcs,gprint,bjc250/} \
 		http://www.gelhaus.net/hp880c/1.4beta/:hp8xx \
@@ -22,7 +22,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:gs_srcs,gprint,bjc250/} \
 		http://www.linuxprinting.org/download/printing/samsung-gdi/:gdi \
 		http://www.linuxprinting.org/download/printing/:lxm3200 \
 		http://homepage.powerup.com.au/~pbwest/lexmark/:lx5000 \
-		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/fonts/:gs_fonts \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/gnu/gs${GS_VERSION:S/.//}/:gs_srcs
 MASTER_SITE_SUBDIR=	ghostscript/:gs_srcs,ports_jp_gs \
 			gimp-print/:gprint \
@@ -30,8 +29,6 @@ MASTER_SITE_SUBDIR=	ghostscript/:gs_srcs,ports_jp_gs \
 			./:ports_jp
 PKGNAMESUFFIX=	-gnu
 DISTFILES=	${GS_SRCS}:gs_srcs \
-		${GS_FONTS_STD}:gs_fonts \
-		${GS_FONTS_OTHER}:gs_fonts \
 		${HP8XX_SRCS}:hp8xx \
 		${HPDJ_SRCS}:hpdj_pcl3 \
 		${PCL3_SRCS}:hpdj_pcl3 \
@@ -59,6 +56,7 @@ COMMENT=	GNU Postscript interpreter
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
+RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/gs/fonts.dir:${PORTSDIR}/print/gsfonts
 
 CONFLICTS=	ghostscript-afpl*
 USE_BZIP2=	yes
@@ -114,8 +112,6 @@ PLIST_SUB+=	SHLIB="@comment "
 .endif
 
 GS_SRCS=	${DISTNAME}${EXTRACT_SUFX}
-GS_FONTS_STD=	ghostscript-fonts-std-8.11.tar.gz
-GS_FONTS_OTHER=	ghostscript-fonts-other-6.0.tar.gz
 
 # Additional Drivers:
 
@@ -159,7 +155,7 @@ DJ970_SRCS=	${DJ970}.c.gz
 #
 # For that reason, integlation of stp driver is disabled by default.
 GPRINT=		gimp-print
-GPRINT_VERS=	4.2.1
+GPRINT_VERS=	4.2.6
 GPRINT_NAME=	${GPRINT}-${GPRINT_VERS}
 GPRINT_SRCS=	${GPRINT_NAME}.tar.gz
 
@@ -444,6 +440,7 @@ post-configure:
 		${SETENV} ${MAKE_ENV} ${SH} ./configure \
 			--without-translated-ppds --with-ghost \
 			--without-gimp --without-samples \
+			--without-cups --without-ijs \
 			--without-user-guide --disable-escputil \
 			--disable-nls --disable-shared \
 			--prefix=${PREFIX}
@@ -525,9 +522,6 @@ pre-su-install:
 	${ECHO_MSG} ">>> in pre-install ..."
 	${ECHO_MSG} ">>>   creating ghostscript destdir ..."
 	${MKDIR} ${DATADIR}
-	${ECHO_MSG} ">>>   extracting ghostscript fonts ..."
-	${TAR} -C ${DATADIR} -xzf ${DISTDIR}/${DIST_SUBDIR}/${GS_FONTS_STD}
-	${TAR} -C ${DATADIR} -xzf ${DISTDIR}/${DIST_SUBDIR}/${GS_FONTS_OTHER}
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
 
 post-install:
