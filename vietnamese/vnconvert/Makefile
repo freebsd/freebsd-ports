@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.tar
 
 MAINTAINER=	obrien@FreeBSD.org
 
+PORTCOMMENT=	Converts Vietnamese text files between popular formats
+
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
 ALL_TARGET=

@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	obrien
 
 MAINTAINER=	obrien@FreeBSD.org
 
+PORTCOMMENT=	VIQR<->VISCII conversion and VISCII ctype-like routines
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/lib
 
 do-install:

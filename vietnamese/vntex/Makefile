@@ -14,6 +14,8 @@ DISTNAME=	vntex
 
 MAINTAINER=     obrien@FreeBSD.org
 
+PORTCOMMENT=	teTeX Vietnamese language + font support
+
 #	actually just need to make sure ${PREFIX}/share/texmf/tex/ exists
 RUN_DEPENDS=	virtex:${PORTSDIR}/print/teTeX
 

@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	obrien@FreeBSD.org
 
+PORTCOMMENT=	Converts 8-bit VISCII Vietnamese text into PostScript
+
 CFLAGS+=	-I../../include
 MAN1=		vnpstext.1
 
