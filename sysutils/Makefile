@@ -76,6 +76,7 @@
     SUBDIR += psmisc
     SUBDIR += pwgen
     SUBDIR += rdate
+    SUBDIR += rotate
     SUBDIR += rtty
     SUBDIR += roottail
     SUBDIR += ruby-syslog
