@@ -32,7 +32,18 @@ USE_OPENSSL=	yes
 EXTRA_OPTS=	SSL_LINK="-L${OPENSSLLIB} -lssl -lcrypto"
 .endif
 
+.if defined(WITH_MAILDIR)
+PATCH_SITES+=	http://www.qmail.org/
+PATCHFILES+=	pine-maildir-4.33
+PATCH_DIST_STRIP=-p1
+.endif
+
 pre-fetch:
+.if !defined(WITH_MAILDIR)
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "WITH_MAILDIR=yes enables support of Maildir"
+	@${ECHO_MSG} ""
+.endif
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
 	${SH} pkg-install
 .endif
