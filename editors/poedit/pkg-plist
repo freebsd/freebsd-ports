@@ -23,6 +23,7 @@ share/locale/nl/LC_MESSAGES/poedit.mo
 share/locale/nn/LC_MESSAGES/poedit.mo
 share/locale/pl/LC_MESSAGES/poedit.mo
 share/locale/pt_BR/LC_MESSAGES/poedit.mo
+share/locale/pt_PT/LC_MESSAGES/poedit.mo
 share/locale/ro/LC_MESSAGES/poedit.mo
 share/locale/ru/LC_MESSAGES/poedit.mo
 share/locale/sk/LC_MESSAGES/poedit.mo
@@ -33,7 +34,6 @@ share/locale/ta/LC_MESSAGES/poedit.mo
 share/locale/tr/LC_MESSAGES/poedit.mo
 share/locale/zh_CN/LC_MESSAGES/poedit.mo
 share/locale/zh_TW/LC_MESSAGES/poedit.mo
-share/locale/pt_PT/LC_MESSAGES/poedit.mo
 %%DATADIR%%/help-gettext.zip
 %%DATADIR%%/help-hr.zip
 %%DATADIR%%/help.zip
