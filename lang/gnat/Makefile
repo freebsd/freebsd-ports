@@ -204,6 +204,7 @@ do-install:
 	    ${PREFIX}/lib/gcc-lib/${GNUHOST}/${GCC_VERSION}/adalib/libgnat.so
 	${LN} -s ${PREFIX}/lib/libgnarl-${LIBRARY_VERSION}.so.${SHARED_MAJOR} \
 	    ${PREFIX}/lib/gcc-lib/${GNUHOST}/${GCC_VERSION}/adalib/libgnarl.so
+	${INSTALL_SCRIPT} ${WRKSRC}/ada/gnathtml.pl ${PREFIX}/bin
 .ifndef(NOPORTDOCS)
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} \
