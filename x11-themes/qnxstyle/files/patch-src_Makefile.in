@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Sat May 22 00:01:43 2004
++++ src/Makefile.in	Sat May 22 00:02:13 2004
+@@ -228,7 +228,7 @@
+ noinst_HEADERS = qnx.h
+ kde_style_LTLIBRARIES = qnx.la
+ qnx_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN) -lkdefx -module
+-qnx_la_LIBADD = 
++qnx_la_LIBADD = $(LIBPTHREAD)
+ qnx_la_SOURCES = qnx.cpp
+ #>- qnx_la_METASOURCES = AUTO
+ 

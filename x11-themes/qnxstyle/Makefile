@@ -22,11 +22,14 @@ USE_KDELIBS_VER=	3
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
+USE_REINPLACE=	yes
 
 PLIST_FILES=	lib/kde3/plugins/styles/qnx.so \
 		lib/kde3/plugins/styles/qnx.la \
 		share/apps/kstyle/themes/qnx.themerc
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/x11/kde3/Makefile.kde"
-.include <bsd.port.post.mk>
+post-patch:
+	@${REINPLACE_CMD} -e 's|-O2||g' -e 's|-lpthread|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/${CONFIGURE_SCRIPT}
+
+.include <bsd.port.mk>
