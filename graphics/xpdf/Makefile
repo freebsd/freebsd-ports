@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	chuckr@FreeBSD.org
 
-LIB_DEPENDS=	t1.2:${PORTSDIR}/devel/t1lib
+LIB_DEPENDS=	t1.3:${PORTSDIR}/devel/t1lib
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
