@@ -1,0 +1,10 @@
+--- main.c.orig	Sat May 20 04:57:58 2000
++++ main.c	Sun May 21 18:49:43 2000
+@@ -532,6 +532,7 @@
+   }
+ 
+ }
++void
+ usage(char *progname)
+ {
+   fprintf(stderr, "Usage: %s: [-hV]\n", progname);
