@@ -1,5 +1,5 @@
---- configure.orig	Thu Feb 10 11:11:02 2000
-+++ configure	Wed Feb 21 23:03:47 2001
+--- configure.orig	Thu Feb 10 20:11:02 2000
++++ configure	Mon Nov 15 10:15:21 2004
 @@ -18,6 +18,8 @@
  ac_help="$ac_help
    --with-tcl              directory containing tcl configuration (tclConfig.sh)"
@@ -1380,7 +1380,7 @@
      # Check whether --enable-shared or --disable-shared was given.
  if test "${enable_shared+set}" = set; then
    enableval="$enable_shared"
-@@ -4049,6 +4097,202 @@
+@@ -4049,6 +4097,143 @@
  TK_SHARED_BUILD=${SHARED_BUILD}
  
  #--------------------------------------------------------------------
@@ -1517,65 +1517,6 @@
 +    rm -rf ImakeCheck
 +fi
 +
-+# At last check FreeBSD and have -lxpg4.
-+echo $ac_n "checking system version (for additional locale library)""... $ac_c" 1>&6
-+echo "configure:4234: checking system version (for additional locale library)" >&5
-+if test -f /usr/lib/NextStep/software_version; then
-+    system=NEXTSTEP-`awk '/3/,/3/' /usr/lib/NextStep/software_version`
-+else
-+    system=`uname -s`-`uname -r`
-+    if test "$?" -ne 0 ; then
-+        system=unknown
-+    else
-+        # Special check for weird MP-RAS system (uname returns weird
-+        # results, and the version is kept in special file).
-+    
-+        if test -r /etc/.relid -a "X`uname -n`" = "X`uname -s`" ; then
-+            system=MP-RAS-`awk '{print $3}' /etc/.relid'`
-+        fi
-+        if test "`uname -s`" = "AIX" ; then
-+            system=AIX-`uname -v`.`uname -r`
-+        fi
-+    fi
-+fi
-+
-+case $system in
-+    FreeBSD-*)
-+	LIBS="$XLIBSW -lxpg4 $tk_oldLibs"
-+	CFLAGS="$CFLAGS $X11_IMAKE_FLAGS"
-+	cat > conftest.$ac_ext <<EOF
-+#line 4259 "configure"
-+#include "confdefs.h"
-+
-+#include <locale.h>
-+
-+int main() {
-+
-+(void)setlocale(LC_ALL, "");
-+
-+; return 0; }
-+EOF
-+if { (eval echo configure:4270: \"$ac_compile\") 1>&5; (eval $ac_compile) 2>&5; }; then
-+  rm -rf conftest*
-+  
-+echo "$ac_t""use xpg4 library." 1>&6
-+XLIBSW="$XLIBSW -lxpg4"
-+
-+else
-+  echo "configure: failed program was:" >&5
-+  cat conftest.$ac_ext >&5
-+  rm -rf conftest*
-+  
-+echo "$ac_t""no need other libraries." 1>&6
-+
-+fi
-+rm -f conftest*
-+	;;
-+    *)
-+	echo "$ac_t""No additional library is needed." 1>&6
-+	;;
-+esac
-+
 +CFLAGS=$tk_oldCflags
 +LIBS=$tk_oldLibs
 +
@@ -1583,7 +1524,7 @@
  # The statements below define various symbols relating to creating
  # the stub'd version of the Tk library
  #
-@@ -4281,10 +4525,12 @@
+@@ -4281,10 +4466,12 @@
  s%@TCL_BIN_DIR@%$TCL_BIN_DIR%g
  s%@TCL_SRC_DIR@%$TCL_SRC_DIR%g
  s%@TCL_LIB_FILE@%$TCL_LIB_FILE%g
@@ -1596,7 +1537,7 @@
  s%@STUB_LIB_FILE@%$STUB_LIB_FILE%g
  s%@TK_STUB_LIB_FILE@%$TK_STUB_LIB_FILE%g
  s%@TK_STUB_LIB_FLAG@%$TK_STUB_LIB_FLAG%g
-@@ -4327,6 +4573,7 @@
+@@ -4327,6 +4514,7 @@
  s%@XINCLUDES@%$XINCLUDES%g
  s%@XLIBSW@%$XLIBSW%g
  s%@TK_SHARED_BUILD@%$TK_SHARED_BUILD%g

@@ -5,7 +5,7 @@
  
  #define LIBS_DEBUG
 -#define LIBS_SYSTEM -lutil
-+#define LIBS_SYSTEM -lutil -lcrypt -lxpg4
++#define LIBS_SYSTEM -lutil -lcrypt
  #define LIBS_TERMCAP -ltermcap
  
  #define SYSV_SYSTEM_DIR

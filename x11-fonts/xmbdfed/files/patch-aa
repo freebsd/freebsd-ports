@@ -66,7 +66,7 @@ $FreeBSD$
  
 +INCS = -I${X11BASE}/include ${FTYPE_INCS}
 +LIBS = -L${X11BASE}/lib ${MOTIFLIB} \
-+       -lXpm -lXmu -lXt -lX11 -lSM -lICE -lXext -lxpg4 ${FTYPE_LIBS}
++       -lXpm -lXmu -lXt -lX11 -lSM -lICE -lXext ${FTYPE_LIBS}
 +
  all: xmbdfed
 +

@@ -40,14 +40,12 @@ LOCALENAME=	ja_JP.eucJP
 LOCALENAME=	ja_JP.EUC
 .else
 LOCALENAME=	ja_JP.EUC
-LIBXPG4=	LD_PRELOAD=/usr/lib/libxpg4.so.2; export LD_PRELOAD
 .endif
 
 do-build:
 	${SED} -e "s^%%PREFIX%%^${PREFIX}^g" \
 	       -e "s^%%LOCALBASE%%^${LOCALBASE}^g" \
 	       -e "s^%%LOCALENAME%%^${LOCALENAME}^g" \
-	       -e "s^%%LIBXPG4%%^${LIBXPG4}^g" \
 	       -e "s^%%MOZILLA%%^${MOZILLA}^g" \
 	${FILESDIR}/mozilla.sh > ${WRKDIR}/${MOZILLA}
 

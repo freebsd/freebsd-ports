@@ -52,13 +52,6 @@ CFLAGS+=	-I${LOCALBASE}/include/ncurses -I${LOCALBASE}/include
 CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
 .endif
 
-.if ${OSVERSION} >= 500000 && ${OSVERSION} < 500005
-CONFIGURE_ARGS+=	--with-libs='-lxpg4'
-.endif
-.if ${OSVERSION} < 400020
-CONFIGURE_ARGS+=	--with-libs='-lxpg4'
-.endif
-
 .if ${OSVERSION} >= 500000
 PLATFORMS=plat-freebsd2 plat-freebsd3 plat-freebsd4
 .elif ${OSVERSION} >= 400000

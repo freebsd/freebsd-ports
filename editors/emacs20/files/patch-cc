@@ -33,11 +33,3 @@
  
  # UNIX98 PTYs.
  AC_CHECK_FUNCS(grantpt)
-@@ -1656,6 +1664,7 @@
- # Solaris requires -lintl if you want strerror (which calls dgettext)
- # to return localized messages.
- AC_CHECK_LIB(intl, dgettext)
-+AC_CHECK_LIB(xpg4, _xpg4_setrunelocale)
- 
- AC_MSG_CHECKING(whether localtime caches TZ)
- AC_CACHE_VAL(emacs_cv_localtime_cache,

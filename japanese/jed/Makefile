@@ -27,7 +27,7 @@ JP_VERSION=	067
 
 DIST_SUBDIR=	jed
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	JED_ROOT="${JED_ROOT}" X_EXTRA_LIBS="-lxpg4 -lcurses"
+CONFIGURE_ENV=	JED_ROOT="${JED_ROOT}" X_EXTRA_LIBS="-lcurses"
 CONFIGURE_ARGS=	--enable-x-locale=no
 ALL_TARGET=	${BINSTUFF} getmail
 MAN1=		jed.1 rgrep.1

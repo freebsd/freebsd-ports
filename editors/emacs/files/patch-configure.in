@@ -27,11 +27,3 @@
        *-nextstep* )             opsys=nextstep ;;
        ## Otherwise, we'll fall through to the generic opsys code at the bottom.
      esac
-@@ -2050,6 +2061,7 @@
- # Solaris requires -lintl if you want strerror (which calls dgettext)
- # to return localized messages.
- AC_CHECK_LIB(intl, dgettext)
-+AC_CHECK_LIB(xpg4, _xpg4_setrunelocale)
- 
- AC_MSG_CHECKING(whether localtime caches TZ)
- AC_CACHE_VAL(emacs_cv_localtime_cache,

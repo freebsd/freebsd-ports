@@ -59,13 +59,6 @@ SCRIPTS_ENV=	SED=${SED} MV=${MV} \
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_XPG4)
-.if ${OSVERSION} >= 220000 && ${OSVERSION} < 400020 || \
-	${OSVERSION} >= 500000 && ${OSVERSION} < 500005
-CONFIGURE_ARGS+=	--with-xpg4
-.endif
-.endif
-
 RECOMPILE_ELS=	dired.el startup.el
 
 pre-patch:

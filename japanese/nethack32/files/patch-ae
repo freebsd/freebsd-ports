@@ -41,12 +41,3 @@ diff -ruN ./sys/unix/Makefile.src ../nethack-3.2.2/sys/unix/Makefile.src
  
  # any other strange libraries your system needs (for Sysunix only -- the more
  # specialized targets should already be right)
-@@ -204,7 +205,7 @@
- #
- # LIBS = -lxpg4
- #
--LIBS =
-+LIBS = -lxpg4
- 
- # make NetHack
- #JP by issei(96/5/27)

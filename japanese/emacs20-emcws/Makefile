@@ -135,15 +135,6 @@ PLIST_SUB+=	EMACS_VER=${EMACS_VER} EMACS_ARCH=${CONFIGURE_TARGET} \
 SCRIPTS_ENV=	SED=${SED} MV=${MV} \
 		DOC_FILE=${DOC_FILE}
 
-.if defined(WITH_XPG4)
-.if ${OSVERSION} >= 220000 && ${OSVERSION} < 400020
-CONFIGURE_ARGS+=	--with-xpg4
-.endif
-.if ${OSVERSION} >= 500000 && ${OSVERSION} < 500005
-CONFIGURE_ARGS+=	--with-xpg4
-.endif
-.endif
-
 pre-fetch:
 	@${CAT} ${FILESDIR}/emcws-message
 
