@@ -48,6 +48,12 @@ MAN1=		cpp.1 avr-gcc.1 avr-g++.1 gcov.1
 MAN7=		fsf-funding.7 gfdl.7 gpl.7
 INFO=		cpp gcc gccint cppinternals
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386" && ${ARCH} != "alpha"
+BROKEN=		"Does not build on !i386 and !alpha"
+.endif
+
 # Since the pod2man in FreeBSD 4-stable's /usr/bin cannot be used, we
 # help out by extracting precompiled manpages there.
 pre-build:
@@ -58,4 +64,4 @@ pre-build:
 			${TAR} -xvzf ${DISTDIR}/${MAN_AUX} ; \
 		fi
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
