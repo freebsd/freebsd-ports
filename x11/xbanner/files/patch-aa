@@ -1,7 +1,7 @@
-*** Makefile.orig	Mon May 12 17:55:59 1997
---- Makefile	Tue May 18 21:22:21 1999
+*** Makefile.orig	Tue May 13 00:55:59 1997
+--- Makefile	Sat Dec 18 03:25:54 1999
 ***************
-*** 6,30 ****
+*** 6,27 ****
   
   .SUFFIXES: .c .o
   
@@ -23,11 +23,8 @@
 ! #INCDIR =-I/usr/X11R6/include
   
   # Library directories for the Ultrix (probably most Unixes)
-! #XLIBDIR =/usr/lib/X11
-  
-  # Comment out the following line if you do not have the XPM library.
-  XPM     =-DHAS_XPM
---- 6,30 ----
+  #XLIBDIR =/usr/lib/X11
+--- 6,27 ----
   
   .SUFFIXES: .c .o
   
@@ -49,10 +46,7 @@
 ! INCDIR =-I$(X11BASE)/include
   
   # Library directories for the Ultrix (probably most Unixes)
-! XLIBDIR =$(X11BASE)/lib
-  
-  # Comment out the following line if you do not have the XPM library.
-  XPM     =-DHAS_XPM
+  #XLIBDIR =/usr/lib/X11
 ***************
 *** 34,40 ****
   	$(CC) $(INCDIR) $(CFLAGS) $(XPM) -c $*.c
@@ -66,7 +60,7 @@
   	$(CC) $(INCDIR) $(CFLAGS) $(XPM) -c $*.c
   
   # Linux CFLAGS (actually generic gcc)
-! CFLAGS+= -O2
+! #CFLAGS=-Wall -O2
   
   # Want static binaries?
   #CFLAGS=-Wall -O2 -static
@@ -85,7 +79,7 @@
   # Just change it to wherever your libX11.a resides.
 ! LDFLAGS+=-L$(XLIBDIR)
   
-  all: xbanner freetemp random_effect xb_check
+  all: xbanner freetemp random_effect xb_check 
   
 ***************
 *** 70,79 ****
@@ -100,14 +94,14 @@
   strip: exe
   	strip xbanner freetemp xb_check random_effect
 --- 70,80 ----
-  xb_check: xb_check.o
-  	$(CC) $(CFLAGS) -o xb_check xb_check.o
+  xb_check: xb_check.o 
+  	$(CC) $(CFLAGS) -o xb_check xb_check.o 
   
-! install: freetemp xbanner xb_check random_effect
-! 	$(INSTALL) -cs -g bin -m "0755" -o root freetemp $(BINDIR)/freetemp
-! 	$(INSTALL) -cs -g bin -m "0755" -o root xbanner $(BINDIR)/xbanner
-! 	$(INSTALL) -cs -g bin -m "0755" -o root xb_check $(BINDIR)/xb_check
-! 	$(INSTALL) -cs -g bin -m "0755" -o root random_effect $(BINDIR)/random_effect
+! install: freetemp xbanner xb_check random_effect 
+! 	${BSD_INSTALL_PROGRAM} freetemp $(BINDIR)/freetemp
+! 	${BSD_INSTALL_PROGRAM} xbanner $(BINDIR)/xbanner
+! 	${BSD_INSTALL_PROGRAM} xb_check $(BINDIR)/xb_check
+! 	${BSD_INSTALL_PROGRAM} random_effect $(BINDIR)/random_effect
   
   strip: exe
   	strip xbanner freetemp xb_check random_effect
