@@ -7,3 +7,9 @@ man/man1/cjpeg.1
 man/man1/djpeg.1
 man/man1/rdjpgcom.1
 man/man1/wrjpgcom.1
+include/jconfig.h
+include/jpeglib.h
+include/jmorecfg.h
+include/jerror.h
+lib/libjpeg.so.5.0
+lib/libjpeg.a
