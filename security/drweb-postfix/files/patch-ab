@@ -1,5 +1,5 @@
---- etc/drweb_postfix.conf.orig	Sat Mar  1 00:19:10 2003
-+++ etc/drweb_postfix.conf	Sat Mar  1 00:28:41 2003
+--- etc/drweb_postfix.conf.orig	Sat Jul 12 16:30:33 2003
++++ etc/drweb_postfix.conf	Sat Jul 12 16:40:30 2003
 @@ -17,14 +17,14 @@
  #   Address = local:/usr/local/drweb/run/drwebd.skt
  #   Address = pid:/usr/local/drweb/run/drwebd.pid
@@ -30,14 +30,22 @@
  
  # Permissions for created spool files
  SpoolFilesMode = 0600
-@@ -176,22 +176,22 @@
- ProcessingErrors = reject
+@@ -192,28 +192,28 @@
+ #        redirect - redirect to RedirectMail and reject message 
+ #        reject - reject such messages with permanent error 
+ #        tempfail - reject such message with temporary error 
+-ProcessingErrors = quarantine 
++ProcessingErrors = tempfail
  
  # Admin mail address (may be unix-local address)
 -AdminMail = av-master@example.com
 +AdminMail = postmaster
  
- # Filter address, that be used in From:
+ # Mail address for redirect action (may be unix-local address)
+-RedirectMail = quarantine@example.com
++RedirectMail = postmaster
+ 
+ # Filter address, that be used in From: (should be qualified)
 -FilterMail = DrWEB-DAEMON@example.com
 +FilterMail = DrWEB-DAEMON@%HOSTNAME%
  
@@ -58,45 +66,53 @@
  
  # Permissions for quarantined files
  QuarantineFilesMode = 0660
-@@ -206,9 +206,9 @@
+@@ -237,15 +237,15 @@
  RcptsNotify = yes
  
  # Files with notification templates
+-SenderTemplate = /etc/drweb/templates/en-ru/postfix/virus-sender.msg
 -AdminTemplate = /etc/drweb/templates/en-ru/postfix/virus-admin.msg
 -RcptsTemplate = /etc/drweb/templates/en-ru/postfix/virus-rcpts.msg
--SenderTemplate = /etc/drweb/templates/en-ru/postfix/virus-sender.msg
 +AdminTemplate = %PREFIX%/etc/drweb/templates/en-ru/postfix/virus-admin.msg
 +RcptsTemplate = %PREFIX%/etc/drweb/templates/en-ru/postfix/virus-rcpts.msg
 +SenderTemplate = %PREFIX%/etc/drweb/templates/en-ru/postfix/virus-sender.msg
  
  [SkipNotifications]
  SenderNotify = yes
-@@ -216,23 +216,23 @@
+ AdminNotify = no
  RcptsNotify = no
- AdminTemplate = 
- RcptsTemplate = 
 -SenderTemplate = /etc/drweb/templates/en-ru/postfix/skip-sender.msg
 +SenderTemplate = %PREFIX%/etc/drweb/templates/en-ru/postfix/skip-sender.msg
+ AdminTemplate = 
+ RcptsTemplate = 
  
- [ArchiveRestrictionNotifications]
+@@ -253,16 +253,16 @@
  SenderNotify = yes
  AdminNotify = yes
  RcptsNotify = no
+-SenderTemplate = /etc/drweb/templates/en-ru/postfix/archive-sender.msg
 -AdminTemplate = /etc/drweb/templates/en-ru/postfix/archive-admin.msg
++SenderTemplate = %PREFIX%/etc/drweb/templates/en-ru/postfix/archive-sender.msg
 +AdminTemplate = %PREFIX%/etc/drweb/templates/en-ru/postfix/archive-admin.msg
  RcptsTemplate = 
--SenderTemplate = /etc/drweb/templates/en-ru/postfix/archive-sender.msg
-+SenderTemplate = %PREFIX%/etc/drweb/templates/en-ru/postfix/archive-sender.msg
  
  [ErrorNotifications]
  SenderNotify = yes
  AdminNotify = yes
  RcptsNotify = no
+-SenderTemplate = /etc/drweb/templates/en-ru/postfix/error-sender.msg
 -AdminTemplate = /etc/drweb/templates/en-ru/postfix/error-admin.msg
++SenderTemplate = %PREFIX%/etc/drweb/templates/en-ru/postfix/error-sender.msg
 +AdminTemplate = %PREFIX%/etc/drweb/templates/en-ru/postfix/error-admin.msg
  RcptsTemplate = 
--SenderTemplate = /etc/drweb/templates/en-ru/postfix/error-sender.msg
-+SenderTemplate = %PREFIX%/etc/drweb/templates/en-ru/postfix/error-sender.msg
+ 
+ [RuleFilterNotifications]
+@@ -270,7 +270,7 @@
+ AdminNotify = yes
+ RcptsNotify = no
+ SenderTemplate = 
+-AdminTemplate = /etc/drweb/templates/en-ru/postfix/rule-admin.msg
++AdminTemplate = %PREFIX%/etc/drweb/templates/en-ru/postfix/rule-admin.msg
+ RcptsTemplate = 
  
  ###################
- # Logging section #

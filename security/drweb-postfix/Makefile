@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	drweb_postfix
-PORTVERSION=	4.29.10a
+PORTVERSION=	4.29.12d
 CATEGORIES=	security mail
 MASTER_SITES=	ftp://ftp.drweb.ru/pub/unix/
-DISTNAME=	drweb-clients-4.29.10-A-sources
+DISTNAME=	drweb-clients-4.29.12-D-sources
 
 MAINTAINER=	zaa@ulstu.ru
 COMMENT=	Postfix message filter for virus processing through DrWeb daemon
@@ -24,7 +24,7 @@ DOC_DIR=	${PREFIX}/share/doc/drweb-postfix
 LANGS=en-ru
 CONFS=drweb_postfix users viruses addresses
 TMPLS=archive-admin archive-sender error-admin error-sender skip-sender \
-      virus-admin virus-rcpts virus-sender
+      virus-admin virus-rcpts virus-sender rule-admin
 DOCS=addresses_list.rus.txt addresses_list.txt conf_file.rus.txt \
 	conf_file.txt notify.rus.txt notify.txt readme readme.rus \
 	users_list.rus.txt users_list.txt viruses_list.rus.txt viruses_list.txt
@@ -41,6 +41,7 @@ post-patch:
 post-configure:
 	cd ${WRKSRC} && { \
 		${ECHO_CMD} ${PORTVERSION}; \
+		${ECHO_CMD} n; \
 		${ECHO_CMD} n; \
 		${ECHO_CMD} n; \
 		${ECHO_CMD} n; \

@@ -17,6 +17,9 @@ etc/drweb/templates/en-ru/postfix/error-admin.msg-dist
 @unexec if [ -f %D/etc/drweb/templates/en-ru/postfix/error-sender.msg ] && cmp -s %D/etc/drweb/templates/en-ru/postfix/error-sender.msg %D/etc/drweb/templates/en-ru/postfix/error-sender.msg-dist; then rm -f %D/etc/drweb/templates/en-ru/postfix/error-sender.msg; fi
 etc/drweb/templates/en-ru/postfix/error-sender.msg-dist
 @exec [ -f %B/error-sender.msg ] || cp %B/%f %B/error-sender.msg
+@unexec if [ -f %D/etc/drweb/templates/en-ru/postfix/rule-admin.msg ] && cmp -s %D/etc/drweb/templates/en-ru/postfix/rule-admin.msg %D/etc/drweb/templates/en-ru/postfix/rule-admin.msg-dist; then rm -f %D/etc/drweb/templates/en-ru/postfix/rule-admin.msg; fi
+etc/drweb/templates/en-ru/postfix/rule-admin.msg-dist
+@exec [ -f %B/rule-admin.msg ] || cp %B/%f %B/rule-admin.msg
 @unexec if [ -f %D/etc/drweb/templates/en-ru/postfix/skip-sender.msg ] && cmp -s %D/etc/drweb/templates/en-ru/postfix/skip-sender.msg %D/etc/drweb/templates/en-ru/postfix/skip-sender.msg-dist; then rm -f %D/etc/drweb/templates/en-ru/postfix/skip-sender.msg; fi
 etc/drweb/templates/en-ru/postfix/skip-sender.msg-dist
 @exec [ -f %B/skip-sender.msg ] || cp %B/%f %B/skip-sender.msg
