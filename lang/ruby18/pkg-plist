@@ -1134,9 +1134,10 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_RIDIR%%/CGI/Session/MemoryStore/new-c.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/CGI/Session/MemoryStore/restore-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/CGI/Session/MemoryStore/update-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/CGI/Session/NoSession/cdesc-NoSession.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/CGI/Session/cdesc-Session.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/CGI/Session/close-i.yaml
-%%PORTDOCS%%%%RUBY_RIDIR%%/CGI/Session/create_new_id-c.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/CGI/Session/create_new_id-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/CGI/Session/delete-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/CGI/Session/new-c.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/CGI/Session/update-i.yaml
@@ -1663,7 +1664,6 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_RIDIR%%/Hash/each_pair-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Hash/each_value-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Hash/empty%3f-i.yaml
-%%PORTDOCS%%%%RUBY_RIDIR%%/Hash/eql%3f-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Hash/fetch-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Hash/has_key%3f-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Hash/has_value%3f-i.yaml
@@ -2215,6 +2215,8 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_RIDIR%%/Pathname/chown-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Pathname/chroot-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Pathname/cleanpath-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Pathname/cleanpath_aggressive-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Pathname/cleanpath_conservative-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Pathname/ctime-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Pathname/delete-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Pathname/dir_foreach-i.yaml
@@ -3139,6 +3141,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Comparable
 %%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Class
 %%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/CGI/TagMaker
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/CGI/Session/NoSession
 %%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/CGI/Session/MemoryStore
 %%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/CGI/Session/FileStore
 %%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/CGI/Session
