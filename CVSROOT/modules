@@ -6288,6 +6288,7 @@ swatch		ports/security/swatch
 sweep		ports/audio/sweep
 swi-pl		ports/lang/swi-pl
 swigruby	ports/devel/swigruby
+swish++		ports/www/swish++
 swish-e		ports/www/swish-e
 swisswatch	ports/x11-clocks/swisswatch
 swm		ports/x11-wm/swm
