@@ -8625,6 +8625,7 @@ srp		ports/security/srp
 srvx		ports/irc/srvx
 ss		ports/math/ss
 ssamtse		ports/games/ssamtse
+ssc		ports/games/ssc
 sscalc		ports/astro/sscalc
 ssed		ports/editors/ssed
 ssh		ports/security/ssh
