@@ -1,7 +1,7 @@
-# $Id: Makefile,v 1.16 1994/10/29 22:17:33 pst Exp $
+# $Id: Makefile,v 1.17 1994/10/31 04:38:27 smace Exp $
 #
 SUBDIR=	emu fvwm ghostview iv ivs olvwm pcb tk xarchie xcdplayer xdvi \
-	xpm xtexshell xv
+	xearth xpm xtexshell xv
 
 #
 # imm & nv depends on tk, so might as well build tk first...
