@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	libgcrypt
-PORTVERSION=	1.1.11
+PORTVERSION=	1.1.12
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	alpha/libgcrypt
@@ -15,7 +15,7 @@ COMMENT=	"General purpose crypto library based on code used in GnuPG"
 
 USE_REINPLACE=	yes
 USE_PERL5=	yes
-USE_AUTOCONF_VER=	253
+#USE_AUTOCONF_VER=	253
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
