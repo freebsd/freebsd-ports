@@ -38,14 +38,23 @@ CONFIGURE_ARGS=	--localstatedir=/var/run \
 CONFIGURE_ARGS+=	--enable-wrappers
 .endif
 
-.if defined(WITH_DB2)
-BUILD_DEPENDS=	${LOCALBASE}/lib/libdb2.a:${PORTSDIR}/databases/db/
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/db2 -D_THREAD_SAFE" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+.if defined(WITH_DB2)
+BUILD_DEPENDS=	${LOCALBASE}/lib/libdb2.a:${PORTSDIR}/databases/db
+CPPFLAGS+=	-I${LOCALBASE}/include/db2 -D_THREAD_SAFE
 CONFIGURE_ARGS+=	--enable-ldbm \
 			--with-ldbm-api=db2
 .endif
+
+.if defined(WITH_SASL)
+LIB_DEPENDS=	sasl.8:${PORTSDIR}/security/cyrus-sasl
+CPPFLAGS+=	-I${LOCALBASE}/include/sasl
+.endif
+
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
+		LDFLAGS="${LDFLAGS}"
 
 BINS=		bin/ldapadd \
 		bin/ldapdelete \
