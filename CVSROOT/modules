@@ -83,6 +83,7 @@ Gofer		ports/lang/Gofer
 Hermes		ports/graphics/Hermes
 HeroesOfMightAndMagic	ports/games/HeroesOfMightAndMagic
 Howto		ports/misc/Howto
+IPA		ports/graphics/IPA
 IPXrouted	src/usr.sbin/IPXrouted
 IglooFTP	ports/ftp/IglooFTP
 ImageMagick	ports/graphics/ImageMagick
