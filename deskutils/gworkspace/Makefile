@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gworkspace
-PORTVERSION=	0.4.6.1
+PORTVERSION=	0.5
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.gnustep.it/enrico/gworkspace/ \
 		http://www.imago.ro/gworkspace/
@@ -19,7 +19,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libcallback.a:${PORTSDIR}/devel/ffcall
 RUN_DEPENDS=	${BACKBUNDLEDIR}/libgnustep-back:${PORTSDIR}/x11-toolkits/gnustep-back
 
 PREFIX=		${LOCALBASE}/GNUstep
-WRKSRC=		${WRKDIR}/GWorkspace-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 GUN_CONFIGURE=	yes
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
