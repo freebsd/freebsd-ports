@@ -10,6 +10,7 @@ bin/widl
 bin/wine
 bin/wineboot
 bin/winebuild
+bin/winecfg
 bin/wineclipsrv
 bin/wineconsole
 bin/winedbg
@@ -553,6 +554,8 @@ share/aclocal/wine.m4
 %%PORTDOCS%%share/doc/wine/LICENSE
 %%PORTDOCS%%share/doc/wine/README
 %%PORTDOCS%%share/doc/wine/README.regapi
+%%PORTDOCS%%share/doc/wine/README.wcmd
+%%PORTDOCS%%share/doc/wine/README.winedbg
 %%PORTDOCS%%share/doc/wine/README.winedump
 %%PORTDOCS%%@dirrm share/doc/wine
 @unexec if [ -f %D/lib/wine/glu32.dll.so    ]; then rm %D/lib/wine/glu32.dll.so; fi
