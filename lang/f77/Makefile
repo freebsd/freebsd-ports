@@ -8,10 +8,11 @@
 PORTNAME=	f77
 PORTVERSION=	0.3
 CATEGORIES=	lang
-MASTER_SITES=	ftp://troutmask.apl.washington.edu/pub/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	lioux
 DISTNAME=	f77-freebsd.0.3
 
-MAINTAINER=	kargl@troutmask.apl.washington.edu
+MAINTAINER=	ports@FreeBSD.org
 
 .ifdef GNU_CPP
 RUN_DEPENDS=	${PREFIX}/bin/f2c:${PORTSDIR}/lang/f2c

@@ -3,6 +3,3 @@ install and use Sun microsystem's fpp Fortran 77 preprocessor;
 the driver can be built to use cpp instead.  The driver recognizes
 all f2c and fpp (or cpp) options that could be used in the context
 of compiling Fortran 77 source code.
-
-Steve
-kargl@troutmask.apl.washington.edu
