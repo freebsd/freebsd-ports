@@ -1,0 +1,19 @@
+ USB Webcam based sonix SN9C101 chip Utility Programs 0.2 for NetBSD/FreeBSD
+
+1. What is it?
+	They are image capture programs for Webcam based SN9C101 via ugen(4)
+        for NetBSD/FreeBSD.
+
+	snx101shot ... simple image capture program ( output stdout PPM file )
+	snx101view ... sequential image viewer program
+
+2. What is supported USB camera on SN9C101 ?
+
+	Vendor	Device	Product Name
+	------	------	------------
+	0x0c45	0x6005	Tama Electronic Corp. Z-102/Z-104
+	0x0c45  0x6005  SWEEX USB Mini Webcam JA000030
+	0x0c45  0x6005  V-Gear MiniCam2
+	0x0c45  0x6005  (no name)
+
+WWW: http://www2.starcat.ne.jp/~takam/bsd/NetBSD.html#sonix
