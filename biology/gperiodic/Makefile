@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gperiodic
-PORTVERSION=	2.0.5
+PORTVERSION=	2.0.6
 CATEGORIES=	biology
 MASTER_SITES=	http://www.acclab.helsinki.fi/~frantz/software/
 
@@ -19,13 +19,13 @@ MAKE_ARGS=	CC="${CC} ${CFLAGS}"
 ALL_TARGET=	${PORTNAME}
 
 post-build:
-.for lang in da pl sv
+.for lang in da fr pl sv
 	cd ${WRKSRC}/po && msgfmt -f -v -o ${lang}.mo ${lang}.po
 .endfor
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gperiodic ${PREFIX}/bin
-.for lang in da pl sv
+.for lang in da fr pl sv
 	@${MKDIR} ${PREFIX}/share/locale/${lang}/LC_MESSAGES
 	${INSTALL_DATA} ${WRKSRC}/po/${lang}.mo \
 		${PREFIX}/share/locale/${lang}/LC_MESSAGES/${PORTNAME}.mo
