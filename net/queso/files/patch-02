@@ -1,0 +1,19 @@
+--- configure.orig	Tue Sep 22 13:42:29 1998
++++ configure	Sat Oct 24 11:56:57 1998
+@@ -1110,6 +1110,16 @@
+             ;;
+        esac
+        ;;
++FreeBSD)
++       PCAP=1
++       case "`uname -m`" in
++       i386)
++            unset NEEDS_HTONS_IP_LEN
++            ;;
++       alpha)
++            ;;
++       esac
++       ;;
+     *)
+        PCAP=1
+        ;;
