@@ -7074,6 +7074,7 @@ powerpc-rtems-gdb	ports/devel/powerpc-rtems-gdb
 powerpc-rtems-objc	ports/devel/powerpc-rtems-objc
 powershell	ports/x11/powershell
 pp		ports/games/pp
+pp3		ports/astro/pp3
 ppantsfonts	ports/x11-fonts/ppantsfonts
 ppgen		ports/security/ppgen
 ppl		ports/devel/ppl
