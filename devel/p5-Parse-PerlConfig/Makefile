@@ -7,7 +7,7 @@
 
 PORTNAME=	Parse-PerlConfig
 PORTVERSION=	0.05
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Parse
@@ -18,10 +18,6 @@ COMMENT=	Perl5 module to use perl scripts as config files
 
 PERL_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
+MAN3=		Parse::PerlConfig.3
 
-.if ${PERL_LEVEL} >= 500600
-MAN3+=		Parse::PerlConfig.3
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
