@@ -393,11 +393,13 @@ PERL=		${LOCALBASE}/bin/perl
 .include "${PORTSDIR}/Mk/bsd.sdl.mk"
 .endif
 
-# defaults to 4.x for 5.0-CURRENT and 4.5-STABLE; and 3.3.6 for all other branches
-.if ${OSVERSION} > 500025 || ( ${OSVERSION} >= 450005 && ${OSVERSION} < 500000 )
-XFREE86_VERSION?=	4
+.if ${OSVERSION} >= 502123
+X_WINDOW_SYSTEM ?= xorg
+.elif (${OSVERSION} >= 450005 && !defined(XFREE86_VERSION)) || \
+	(defined(XFREE86_VERSION) && ${XFREE86_VERSION} == 4)
+X_WINDOW_SYSTEM ?= xfree86-4
 .else
-XFREE86_VERSION?=	3
+X_WINDOW_SYSTEM ?= xfree86-3
 .endif
 
 # Location of mounted CDROM(s) to search for files

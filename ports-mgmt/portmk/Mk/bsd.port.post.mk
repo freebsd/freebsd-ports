@@ -241,30 +241,92 @@ LIB_DEPENDS+=		Xm.3:${PORTSDIR}/x11-toolkits/open-motif
 LIB_DEPENDS+=			ttf.4:${PORTSDIR}/print/freetype
 .endif
 
-.if ${XFREE86_VERSION} == 3
-.if defined(USE_IMAKE)
-BUILD_DEPENDS+=			imake:${PORTSDIR}/x11/XFree86
+.if defined(X_WINDOW_SYSTEM) && ${X_WINDOW_SYSTEM:L} == xorg
+X_IMAKE_PORT=		${PORTSDIR}/devel/imake-6
+X_LIBRARIES_PORT=	${PORTSDIR}/x11/xorg-libraries
+X_CLIENTS_PORT=		${PORTSDIR}/x11/xorg-clients
+X_SERVER_PORT=		${PORTSDIR}/x11-servers/xorg-server
+X_FONTSERVER_PORT=	${PORTSDIR}/x11-servers/xorg-fontserver
+X_PRINTSERVER_PORT=	${PORTSDIR}/x11-servers/xorg-printserver
+X_VFBSERVER_PORT=	${PORTSDIR}/x11-servers/xorg-vfbserver
+X_NESTSERVER_PORT=	${PORTSDIR}/x11-servers/xorg-nestserver
+X_FONTS_ENCODINGS_PORT=	${PORTSDIR}/x11-fonts/xorg-fonts-encodings
+X_FONTS_MISC_PORT=	${PORTSDIR}/x11-fonts/xorg-fonts-miscbitmaps
+X_FONTS_100DPI_PORT=	${PORTSDIR}/x11-fonts/xorg-fonts-100dpi
+X_FONTS_75DPI_PORT=	${PORTSDIR}/x11-fonts/xorg-fonts-75dpi
+X_FONTS_CYRILLIC_PORT=	${PORTSDIR}/x11-fonts/xorg-fonts-cyrillic
+X_FONTS_TTF_PORT=	${PORTSDIR}/x11-fonts/xorg-fonts-truetype
+X_FONTS_TYPE1_PORT=	${PORTSDIR}/x11-fonts/xorg-fonts-type1
+X_MANUALS_PORT=		${PORTSDIR}/x11/xorg-manpages
+.elif defined(X_WINDOW_SYSTEM) && ${X_WINDOW_SYSTEM:L} == xfree86-4
+X_IMAKE_PORT=		${PORTSDIR}/devel/imake-4
+X_LIBRARIES_PORT=	${PORTSDIR}/x11/XFree86-4-libraries
+X_CLIENTS_PORT=		${PORTSDIR}/x11/XFree86-4-clients
+X_SERVER_PORT=		${PORTSDIR}/x11-servers/XFree86-4-Server
+X_FONTSERVER_PORT=	${PORTSDIR}/x11-servers/XFree86-4-FontServer
+X_PRINTSERVER_PORT=	${PORTSDIR}/x11-servers/XFree86-4-PrintServer
+X_VFBSERVER_PORT=	${PORTSDIR}/x11-servers/XFree86-4-VirtualFramebufferServer
+X_NESTSERVER_PORT=	${PORTSDIR}/x11-servers/XFree86-4-NestServer
+X_FONTS_ENCODINGS_PORT=	${PORTSDIR}/x11-fonts/XFree86-4-fontEncodings
+X_FONTS_MISC_PORT=	${PORTSDIR}/x11-fonts/XFree86-4-fontDefaultBitmaps
+X_FONTS_100DPI_PORT=	${PORTSDIR}/x11-fonts/XFree86-4-font100dpi
+X_FONTS_75DPI_PORT=	${PORTSDIR}/x11-fonts/XFree86-4-font75dpi
+X_FONTS_CYRILLIC_PORT=	${PORTSDIR}/x11-fonts/XFree86-4-fontCyrillic
+X_FONTS_TTF_PORT=	${PORTSDIR}/x11-fonts/XFree86-4-fontScalable
+X_FONTS_TYPE1_PORT=	${PORTSDIR}/x11-fonts/XFree86-4-fontScalable
+X_MANUALS_PORT=		${PORTSDIR}/x11/XFree86-4-manuals
+.elif defined(X_WINDOW_SYSTEM) && ${X_WINDOW_SYSTEM:L} == xfree86-3
+X_IMAKE_PORT=		${PORTSDIR}/x11/XFree86
+X_LIBRARIES_PORT=	${PORTSDIR}/x11/XFree86
+X_CLIENTS_PORT=		${PORTSDIR}/x11/XFree86
+X_SERVER_PORT=		${PORTSDIR}/x11/XFree86
+X_FONTSERVER_PORT=	${PORTSDIR}/x11/XFree86
+X_PRINTSERVER_PORT=	${PORTSDIR}/x11/XFree86
+X_VFBSERVER_PORT=	${PORTSDIR}/x11/XFree86
+X_NESTSERVER_PORT=	${PORTSDIR}/x11/XFree86
+X_FONTS_ENCODINGS_PORT=	${PORTSDIR}/x11/XFree86
+X_FONTS_MISC_PORT=	${PORTSDIR}/x11/XFree86
+X_FONTS_100DPI_PORT=	${PORTSDIR}/x11/XFree86
+X_FONTS_75DPI_PORT=	${PORTSDIR}/x11/XFree86
+X_FONTS_CYRILLIC_PORT=	${PORTSDIR}/x11/XFree86
+X_FONTS_TTF_PORT=	${PORTSDIR}/x11/XFree86
+X_FONTS_TYPE1_PORT=	${PORTSDIR}/x11/XFree86
+X_MANUALS_PORT=		${PORTSDIR}/x11/XFree86
+.else
+.error Bad X_WINDOW_SYSTEM setting
 .endif
+
+.if defined(USE_IMAKE)
+BUILD_DEPENDS+=			imake:${X_IMAKE_PORT}
+.endif
+
+.if ${X_WINDOW_SYSTEM:L} == xfree86-3
+
 .if defined(USE_XPM)
 LIB_DEPENDS+=			Xpm.4:${PORTSDIR}/graphics/xpm
 .endif
 .if defined(USE_GL)
 LIB_DEPENDS+=			GL.14:${PORTSDIR}/graphics/mesagl
 .endif
-XAWVER=					6
-PKG_IGNORE_DEPENDS?=	'^XFree86-3\.'
+
+XAWVER=				6
+PKG_IGNORE_DEPENDS?=		'^XFree86-3\.'
+
 .else
+
 .if defined(USE_IMAKE)
-BUILD_DEPENDS+=			${X11BASE}/lib/X11/config/date.def:${PORTSDIR}/devel/imake-4
-RUN_DEPENDS+=			mkhtmlindex:${PORTSDIR}/devel/imake-4
+RUN_DEPENDS+=			mkhtmlindex:${X_IMAKE_PORT}
 .endif
 .if defined(USE_XPM) || defined(USE_GL)
-USE_XLIB=				yes
+USE_XLIB=			yes
 .endif
-XAWVER=					7
-PKG_IGNORE_DEPENDS?=	'this_port_does_not_exist'
+
+XAWVER=				7
+PKG_IGNORE_DEPENDS?=		'this_port_does_not_exist'
+
 .endif
-PLIST_SUB+=				XAWVER=${XAWVER}
+
+PLIST_SUB+=			XAWVER=${XAWVER}
 
 .if defined(USE_MESA)
 LIB_DEPENDS+=			glut.3:${PORTSDIR}/graphics/libglut
@@ -338,7 +400,7 @@ MYSQL_VER=	${DEFAULT_MYSQL_VER}
 .if defined(BROKEN_WITH_MYSQL)
 .	for VER in ${BROKEN_WITH_MYSQL}
 .		if (${MYSQL_VER} == "${VER}")
-IGNORE=		"Doesn't work with MySQL version : ${MYSQL_VER} (Doesn't support MySQL ${BROKEN_WITH_MYSQL})"
+IGNORE=		Doesn't work with MySQL version : ${MYSQL_VER} (Doesn't support MySQL ${BROKEN_WITH_MYSQL})
 .		endif
 .	endfor
 .endif # BROKEN_WITH_MYSQL
@@ -349,15 +411,7 @@ BROKEN=		"unknown MySQL version: ${MYSQL_VER}"
 .endif # USE_MYSQL
 
 .if defined(USE_XLIB)
-.if ${XFREE86_VERSION} == 3
-# Don't try to build XFree86-3 even if ALWAYS_BUILD_DEPENDS is defined --
-# it's just too big....
-.if !defined(ALWAYS_BUILD_DEPENDS)
-LIB_DEPENDS+=	X11.6:${PORTSDIR}/x11/XFree86
-.endif
-.else
-LIB_DEPENDS+=	X11.6:${PORTSDIR}/x11/XFree86-4-libraries
-.endif
+LIB_DEPENDS+=	X11.6:${X_LIBRARIES_PORT}
 # Add explicit X options to avoid problems with false positives in configure
 .if defined(GNU_CONFIGURE)
 CONFIGURE_ARGS+=--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
@@ -536,7 +590,7 @@ EXTRACT_CMD?=			${GZIP_CMD}
 # Figure out where the local mtree file is
 .if !defined(MTREE_FILE) && !defined(NO_MTREE)
 .if defined(USE_X_PREFIX)
-.if ${XFREE86_VERSION} == 3
+.if ${X_WINDOW_SYSTEM:L} == xfree86-3
 MTREE_FILE=	/etc/mtree/BSD.x11.dist
 .else
 MTREE_FILE=	/etc/mtree/BSD.x11-4.dist
@@ -958,7 +1012,7 @@ INFO_PATH?=	share/info
 INFO_PATH?=	info
 .endif
 
-.if ${XFREE86_VERSION} == 3
+.if ${X_WINDOW_SYSTEM:L} == xfree86-3
 XFREE86_HTML_MAN=	no
 .else
 .if defined(USE_IMAKE)
