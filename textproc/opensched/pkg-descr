@@ -1,24 +1,6 @@
+OpenSched is a project management / scheduling program. It reads a
+description file that describes what must be done and who can do what
+work, and it automatically assigns work to people, and schedules the
+entire project.
 
-From the opensched home page:
-
-  OPENSCHED is a project scheduler. It reads a project description file,
-  which contains information about:
-
-	Tasks which must be accomplished. 
-	Resources (e.g., people, equipment, facilities) which may work
-        on tasks.
-	Work that has already been completed. 
-
-  It schedules resources to work on tasks, and produces various reports: 
-
-	A summary of all tasks and task dependencies. 
-	A work schedule for the entire project. 
-	A work schedule for each resource. 
-	GANTT charts. 
-	Weekly and monthly work summaries for each resource. 
-
-  These reports are typeset using LaTeX, for display or printing.
-
-For more details, please see the opensched homepage:
-
-WWW: http://www.m-tech.ab.ca/download/sched/
+WWW: http://mtechit.com/dlsoftware/opensched/
