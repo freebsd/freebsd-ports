@@ -8,7 +8,7 @@
 PORTNAME=	xmbmon
 PORTVERSION=	205
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.nt.phys.kyushu-u.ac.jp/shimizu/download/
+MASTER_SITES=	http://www.nt.phys.kyushu-u.ac.jp/shimizu/download/xmbmon/
 .if defined(WITHOUT_X11)
 PKGNAMESUFFIX=	-nox11
 .endif
