@@ -1,5 +1,5 @@
---- Makefile.orig	Tue Nov 10 03:50:23 1998
-+++ Makefile	Thu Nov 19 19:49:05 1998
+--- Makefile.orig	Thu Dec 24 01:41:37 1998
++++ Makefile	Sun Dec 27 17:04:30 1998
 @@ -1,11 +1,8 @@
  # -*- makefile -*-
  # $Orig-Id: Makefile,v 1.16 1997/07/20 00:28:31 agulbra Exp $
@@ -10,29 +10,19 @@
 -BINDIR = /usr/local/sbin
 -MANDIR = /usr/local/man
 +BINDIR = $(PREFIX)/sbin
- VERSION = 1.2
+ VERSION = 2.3
  #
  # if you want to use Socks, use following
-@@ -27,14 +24,14 @@
+@@ -27,7 +24,7 @@
  #
  # this is the directory where the configuration and group information is
  # kept.  It should preferably not be on the same partition as spooldir
 -LIBDIR = /usr/lib/leafnode
 +LIBDIR = $(PREFIX)/lib/leafnode
  
--all: nntpd fetch texpire checkgroups leaftool
-+all: leafnode fetch-news texpire checkgroups leaftool
+ all: leafnode fetchnews texpire checkgroups leaftool
  
--nntpd: nntpd.o util.o config.o
-+leafnode: nntpd.o util.o config.o
- 	$(CC) -g -o $@ nntpd.o util.o config.o $(LIBS)
- 
--fetch: fetch.o util.o config.o
-+fetch-news: fetch.o util.o config.o
- 	$(CC) -o $@ fetch.o util.o config.o $(LIBS)
- 
- texpire: texpire.o util.o config.o
-@@ -90,7 +87,6 @@
+@@ -91,7 +88,6 @@
  				$${a}$${b}6 $${a}$${b}7 $${a}$${b}8 \
  				$${a}$${b}9 ; \
  			done ; done
