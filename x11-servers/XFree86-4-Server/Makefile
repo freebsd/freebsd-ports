@@ -104,15 +104,6 @@ BuildXF86DRI=		NO
 PLIST_SUB+=		DRI="@comment "
 .endif # i386
 
-.if ${ARCH} == alpha
-PLIST_SUB+=	ALPHA_NA="@comment "
-.else
-PLIST_SUB+=	ALPHA_NA=""
-.if ${ARCH} != sparc64
-MAN1+=		scanpci.1
-.endif
-.endif
-
 .if ${ARCH} == ia64
 PLIST_SUB+=	IA64_NA="@comment "
 .else
