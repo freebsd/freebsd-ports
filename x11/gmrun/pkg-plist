@@ -2,3 +2,4 @@ bin/gmrun
 share/gnome/gmrun/gmrunrc
 %%PORTDOCS%%share/doc/gmrun/README
 %%PORTDOCS%%@dirrm share/doc/gmrun
+@dirrm share/gnome/gmrun
