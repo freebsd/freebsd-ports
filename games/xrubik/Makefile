@@ -3,10 +3,10 @@
 # Date created:		20 October 1996
 # Whom:			Yukihiro Nakai <nakai@mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.5 1997/01/03 09:37:48 obrien Exp $
+# $Id: Makefile,v 1.6 1997/06/13 20:16:57 max Exp $
 #
 
-DISTNAME=	xrubik-5.4.1
+DISTNAME=	xrubik-5.4.3
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games/xpuzzles
