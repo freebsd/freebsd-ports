@@ -1,7 +1,14 @@
 bin/htcobol
-bin/htcobpp
+bin/htcobf2f
+bin/htcobdispcv.tcl
+bin/htcobviscomp.tcl
 lib/libhtcobol.a
 share/htcobol/cobopt
+share/htcobol/htcobolpp
+share/htcobol/copybook/CMDLine.cpy
+share/htcobol/copybook/CMDLine1.cpy
+share/htcobol/copybook/ENVAR1.cpy
+@dirrm share/htcobol/copybook
 @dirrm share/htcobol
 share/doc/tinycobol/Comments.old.txt
 share/doc/tinycobol/ProgramHeaders.Info.txt
