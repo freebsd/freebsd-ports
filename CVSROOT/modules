@@ -6839,6 +6839,7 @@ p5-CGI-Application	ports/www/p5-CGI-Application
 p5-CGI-Application-ValidateRM	ports/www/p5-CGI-Application-ValidateRM
 p5-CGI-ArgChecker	ports/www/p5-CGI-ArgChecker
 p5-CGI-Builder	ports/www/p5-CGI-Builder
+p5-CGI-Builder-TT2	ports/www/p5-CGI-Builder-TT2
 p5-CGI-Cache	ports/www/p5-CGI-Cache
 p5-CGI-FastTemplate	ports/www/p5-CGI-FastTemplate
 p5-CGI-Framework	ports/www/p5-CGI-Framework
