@@ -32,6 +32,42 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3d1e9267-073f-11d9-b45d-000c41e2cdad">
+    <topic>gdk-pixbuf --- image decoding vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gdk-pixbuf</name>
+	<name>linux-gdk-pixbuf</name>
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>gtk</name>
+	<range><ge>2.0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Chris Evans discovered several flaws in the gdk-pixbuf
+          XPM image decoder:</p>
+	<ul>
+	  <li>Heap-based overflow in pixbuf_create_from_xpm</li>
+	  <li>Stack-based overflow in xpm_extract_color</li>
+	  <li>Integer overflows in io-ico.c</li>
+	</ul>
+	<p>Some of these flaws are believed to be exploitable.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0782</cvename>
+      <cvename>CAN-2004-0783</cvename>
+      <cvename>CAN-2004-0788</cvename>
+    </references>
+    <dates>
+      <discovery>2004-09-15</discovery>
+      <entry>2004-09-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="05dcf751-0733-11d9-b45d-000c41e2cdad">
     <topic>cups --- print queue browser denial-of-service</topic>
     <affects>
