@@ -12,7 +12,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://www.exit1.org/dvdrip/dist/
 DISTNAME=	Video-DVDRip-${PORTVERSION}
 
-MAINTAINER=	michaelnottebrock@gmx.net
+MAINTAINER=	lofi@freebsd.org
 COMMENT=	This is dvd::rip, a Perl Gtk+ based dvd-ripper
 
 .if !defined(WITHOUT_CLUSTER)
@@ -20,10 +20,6 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storabl
 		${SITE_PERL}/${PERL_ARCH}/Event.pm:${PORTSDIR}/devel/p5-Event \
 		${LOCALBASE}/sbin/fping:${PORTSDIR}/net/fping \
 		pstree:${PORTSDIR}/sysutils/pstree
-.endif
-.if defined(WITH_XINE)
-RUN_DEPENDS+=	xine:${PORTSDIR}/multimedia/xine \
-		${X11BASE}/lib/xine/plugins/xineplug_inp_d4d.so:${PORTSDIR}/multimedia/xine_d4d_plugin
 .endif
 RUN_DEPENDS+=	cdrdao:${PORTSDIR}/sysutils/cdrdao \
 		cdrecord:${PORTSDIR}/sysutils/cdrtools \
@@ -34,7 +30,8 @@ RUN_DEPENDS+=	cdrdao:${PORTSDIR}/sysutils/cdrdao \
 		ogmmerge:${PORTSDIR}/multimedia/ogmtools \
 		rar:${PORTSDIR}/archivers/rar \
 		transcode:${PORTSDIR}/multimedia/transcode \
-		vcdimager:${PORTSDIR}/multimedia/vcdimager
+		vcdimager:${PORTSDIR}/multimedia/vcdimager \
+		${BUILD_DEPENDS}
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk \
 		${SITE_PERL}/${PERL_ARCH}/Gtk/Gdk/Pixbuf.pm:${PORTSDIR}/x11-toolkits/p5-GdkPixbuf
 
@@ -51,17 +48,11 @@ MAN3=		Video::DVDRip.3
 pre-everything::
 .if !defined(WITHOUT_CLUSTER)
 	@${ECHO_MSG}
-	@${ECHO_MSG} "You can disable the cluster daemon and it's"
+	@${ECHO_MSG} "You can disable the cluster daemon and its"
 	@${ECHO_MSG} "dependencies by defining WITHOUT_CLUSTER."
 	@${ECHO_MSG}
 	@${ECHO_MSG} "Warning: dvdrip does not like this and will"
 	@${ECHO_MSG} "throw cryptic error-messages. Use with caution."
-.endif
-.if !defined(WITH_XINE)
-	@${ECHO_MSG}
-	@${ECHO_MSG} "Define WITH_XINE to pull in XINE as a dependency"
-	@${ECHO_MSG} "(alternative DVD previewer)"
-	@${ECHO_MSG}
 .endif
 
 post-patch:
