@@ -20,7 +20,7 @@ IGNORE=		"This port does not support mod_perl2"
 .else
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl
 BUILD_DEPENDS=	${RUN_DEPENDS} \
-		${SITE_PERL}/Apache/Test.pm::${PORTSDIR}/www/p5-Apache-Test
+		${SITE_PERL}/Apache/Test.pm:${PORTSDIR}/www/p5-Apache-Test
 .endif
 
 PERL_CONFIGURE=	yes
