@@ -21,10 +21,16 @@ USE_REINPLACE=	yes
 PLIST_FILES=	bin/alac
 PORTDOCS=	README
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 .if !defined(WITH_DEBUG)
 	@${REINPLACE_CMD} -e 's|-ggdb||' \
 		${WRKSRC}/${MAKEFILE}
+.endif
+.if ${OSVERSION} < 500000
+	@${REINPLACE_CMD} -e 's|stdint.h|inttypes.h|' \
+		${WRKSRC}/*.*
 .endif
 	@${REINPLACE_CMD} -e 's|gcc|${CC}|; s|-O3|${CFLAGS}|' \
 		${WRKSRC}/${MAKEFILE}
@@ -36,4 +42,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
