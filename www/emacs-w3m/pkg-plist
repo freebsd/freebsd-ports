@@ -63,6 +63,8 @@
 %%SHIMBUN%%%%LISPDIR%%/sb-cnet-jp.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-cnet.el
 %%SHIMBUN%%%%LISPDIR%%/sb-cnet.elc
+%%SHIMBUN%%%%LISPDIR%%/sb-cnn-jp.el
+%%SHIMBUN%%%%LISPDIR%%/sb-cnn-jp.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-coldsync.el
 %%SHIMBUN%%%%LISPDIR%%/sb-coldsync.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-debian-jp.el
@@ -75,6 +77,12 @@
 %%SHIMBUN%%%%LISPDIR%%/sb-digiko.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-elips.el
 %%SHIMBUN%%%%LISPDIR%%/sb-elips.elc
+%%SHIMBUN%%%%LISPDIR%%/sb-emacs-w3m.el
+%%SHIMBUN%%%%LISPDIR%%/sb-emacs-w3m.elc
+%%SHIMBUN%%%%LISPDIR%%/sb-emacswiki.el
+%%SHIMBUN%%%%LISPDIR%%/sb-emacswiki.elc
+%%SHIMBUN%%%%LISPDIR%%/sb-exconn.el
+%%SHIMBUN%%%%LISPDIR%%/sb-exconn.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-f1express.el
 %%SHIMBUN%%%%LISPDIR%%/sb-f1express.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-f1fan.el
@@ -87,6 +95,8 @@
 %%SHIMBUN%%%%LISPDIR%%/sb-glimpse.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-gnome.el
 %%SHIMBUN%%%%LISPDIR%%/sb-gnome.elc
+%%SHIMBUN%%%%LISPDIR%%/sb-heise.el
+%%SHIMBUN%%%%LISPDIR%%/sb-heise.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-hns.el
 %%SHIMBUN%%%%LISPDIR%%/sb-hns.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-ibm-dev.el
@@ -137,8 +147,12 @@
 %%SHIMBUN%%%%LISPDIR%%/sb-mhonarc.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-mozilla-jp.el
 %%SHIMBUN%%%%LISPDIR%%/sb-mozilla-jp.elc
+%%SHIMBUN%%%%LISPDIR%%/sb-msports-nifty.el
+%%SHIMBUN%%%%LISPDIR%%/sb-msports-nifty.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-muchy.el
 %%SHIMBUN%%%%LISPDIR%%/sb-muchy.elc
+%%SHIMBUN%%%%LISPDIR%%/sb-n24-de.el
+%%SHIMBUN%%%%LISPDIR%%/sb-n24-de.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-namazu.el
 %%SHIMBUN%%%%LISPDIR%%/sb-namazu.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-netbsd.el
@@ -151,8 +165,6 @@
 %%SHIMBUN%%%%LISPDIR%%/sb-orca.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-palmfan.el
 %%SHIMBUN%%%%LISPDIR%%/sb-palmfan.elc
-%%SHIMBUN%%%%LISPDIR%%/sb-palmoslove.el
-%%SHIMBUN%%%%LISPDIR%%/sb-palmoslove.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-pcweb-column.el
 %%SHIMBUN%%%%LISPDIR%%/sb-pcweb-column.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-pilot-link.el
@@ -163,8 +175,6 @@
 %%SHIMBUN%%%%LISPDIR%%/sb-plucker.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-pocketgames.el
 %%SHIMBUN%%%%LISPDIR%%/sb-pocketgames.elc
-%%SHIMBUN%%%%LISPDIR%%/sb-quickml.el
-%%SHIMBUN%%%%LISPDIR%%/sb-quickml.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-rakuten.el
 %%SHIMBUN%%%%LISPDIR%%/sb-rakuten.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-redhat.el
@@ -185,6 +195,8 @@
 %%SHIMBUN%%%%LISPDIR%%/sb-sml.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-sourceforge-jp.el
 %%SHIMBUN%%%%LISPDIR%%/sb-sourceforge-jp.elc
+%%SHIMBUN%%%%LISPDIR%%/sb-spiegel.el
+%%SHIMBUN%%%%LISPDIR%%/sb-spiegel.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-sponichi.el
 %%SHIMBUN%%%%LISPDIR%%/sb-sponichi.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-squeak-dev.el
@@ -207,12 +219,16 @@
 %%SHIMBUN%%%%LISPDIR%%/sb-vinelinux.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-w3m-dev.el
 %%SHIMBUN%%%%LISPDIR%%/sb-w3m-dev.elc
+%%SHIMBUN%%%%LISPDIR%%/sb-welt-de.el
+%%SHIMBUN%%%%LISPDIR%%/sb-welt-de.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-wiki.el
 %%SHIMBUN%%%%LISPDIR%%/sb-wiki.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-wincefan.el
 %%SHIMBUN%%%%LISPDIR%%/sb-wincefan.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-wired.el
 %%SHIMBUN%%%%LISPDIR%%/sb-wired.elc
+%%SHIMBUN%%%%LISPDIR%%/sb-x51.el
+%%SHIMBUN%%%%LISPDIR%%/sb-x51.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-xemacs.el
 %%SHIMBUN%%%%LISPDIR%%/sb-xemacs.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-yahoo.el
@@ -221,6 +237,8 @@
 %%SHIMBUN%%%%LISPDIR%%/sb-yomiuri-html.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-yomiuri.el
 %%SHIMBUN%%%%LISPDIR%%/sb-yomiuri.elc
+%%SHIMBUN%%%%LISPDIR%%/sb-zeit-de.el
+%%SHIMBUN%%%%LISPDIR%%/sb-zeit-de.elc
 %%SHIMBUN%%%%LISPDIR%%/shimbun.el
 %%SHIMBUN%%%%LISPDIR%%/shimbun.elc
 %%LISPDIR%%/w3m-antenna.el
