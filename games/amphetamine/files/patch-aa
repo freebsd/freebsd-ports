@@ -1,24 +1,29 @@
---- Makefile.orig	Sun Feb 27 05:45:57 2000
-+++ Makefile	Mon Apr 30 01:16:01 2001
-@@ -5,14 +5,14 @@
- # User settings
+
+$FreeBSD$
+
+--- Makefile.orig	Wed Mar 28 12:11:39 2001
++++ Makefile	Fri Oct  5 19:43:34 2001
+@@ -3,8 +3,8 @@
  #===============
  
+ # Install Paths
 -PREFIX := /usr/local
 -INSTALL_DIR := ${PREFIX}/games/amph
-+#PREFIX := /usr/local
++PREFIX ?= /usr/local
 +INSTALL_DIR := ${PREFIX}/share/amph
  
- # Linux or SPARC
- TARGET_ARCH := Linux
- 
+ # Endianess:
+ # LITTLE_ENDIAN    (for Intel) 
+@@ -14,7 +14,7 @@
+ # Libraries
  USE_LIB_XPM := TRUE
--SDL_HEADERS := `sdl-config --cflags`
-+SDL_HEADERS := `$(SDL_CONFIG) --cflags`
- # For framerate dislpay (doesn't work yet)
- USE_LIB_SGE := FLASE
  
-@@ -24,7 +24,7 @@
+-SDL_CONFIG := sdl-config
++SDL_CONFIG ?= sdl-config
+ SDL_HEADERS := $(shell $(SDL_CONFIG) --cflags)
+ SDL_LIBS := $(shell $(SDL_CONFIG) --libs)
+ 
+@@ -27,7 +27,7 @@
  
  # Directories to search for header files
  
@@ -27,7 +32,7 @@
  
  # makemake variables
  
-@@ -34,13 +34,13 @@
+@@ -37,13 +37,13 @@
  
  # C
  
@@ -45,17 +50,8 @@
  
  %.o : %.cpp
  	${CXX} ${CPPFLAGS} -c $< ${CXXFLAGS} -o $@
-@@ -65,7 +65,7 @@
- 
- # linker
- 
--LOADLIBES := -lm `sdl-config --libs`
-+LOADLIBES := -lm `$(SDL_CONFIG) --libs`
- 
- ifeq ($(USE_LIB_XPM),TRUE)
+@@ -76,7 +76,7 @@
      LOADLIBES := $(LOADLIBES) -lXpm -lXt
-@@ -75,7 +75,7 @@
-     LOADLIBES := $(LOADLIBES) -lSGE
  endif
  
 -LDFLAGS   = -L/usr/lib -L/usr/local/lib -L/usr/X11R6/lib 
@@ -63,7 +59,7 @@
  
  .PHONY : default
  default : amph
-@@ -83,9 +83,9 @@
+@@ -84,9 +84,9 @@
  .PHONY : install
  install: amph
  	@./mkinstalldirs ${INSTALL_DIR}
@@ -76,7 +72,7 @@
  
  # This is what makemake added
  
-@@ -203,7 +203,7 @@
+@@ -204,7 +204,7 @@
  
  ./src/Surface.o: ./src/AmpHead.hpp ./src/Clut.hpp ./src/ConstVal.hpp ./src/Graphfil.hpp ./src/Shape.hpp ./src/ShapeLd.hpp ./src/Surface.hpp ./src/System.hpp /usr/include/limits.h /usr/include/math.h /usr/include/stdio.h /usr/include/stdlib.h
  
