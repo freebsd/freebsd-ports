@@ -21,6 +21,7 @@
 
 PORTNAME=	php4
 PORTVERSION=	4.3.7
+PORTREVISION?=	1
 CATEGORIES?=	lang devel www
 MASTER_SITES=	${MASTER_SITE_PHP:S,$,:release,} \
 		http://downloads.php.net/ilia/:rc \
@@ -235,7 +236,7 @@ CONFIGURE_ARGS+=--enable-ctype
 .endif
 
 .if defined(WITH_CURL)
-LIB_DEPENDS+=	curl.2:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	curl.3:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=--with-curl=${LOCALBASE}
 .endif
 

@@ -6,7 +6,7 @@
 
 PORTNAME=	jabber-msn
 PORTVERSION=	1.2.8.rc1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://msn-transport.jabberstudio.org/
 DISTNAME=	msn-transport-${PORTVERSION:S/.rc/rc/}
@@ -14,7 +14,7 @@ DISTNAME=	msn-transport-${PORTVERSION:S/.rc/rc/}
 MAINTAINER=	martijn@pacno.net
 COMMENT=	Jabber MSN-Transport module
 
-LIB_DEPENDS=	curl.2:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl
 BUILD_DEPENDS=	${LOCALBASE}/sbin/jabberd:${PORTSDIR}/net/jabber
 
 USE_GMAKE=	yes

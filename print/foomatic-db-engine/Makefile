@@ -7,7 +7,7 @@
 
 PORTNAME=	foomatic-db-engine
 PORTVERSION=	20031213
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	#
 
@@ -16,7 +16,7 @@ COMMENT=	Foomatic database engine
 
 BUILD_DEPENDS=	aclocal:${PORTSDIR}/devel/automake
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
-		curl.2:${PORTSDIR}/ftp/curl
+		curl.3:${PORTSDIR}/ftp/curl
 
 USE_GMAKE=	yes
 USE_PERL5=	yes

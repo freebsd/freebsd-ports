@@ -7,6 +7,7 @@
 
 PORTNAME=	libbt
 PORTVERSION=	1.02
+PORTREVISION?=	1
 CATEGORIES=	net devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +16,7 @@ MAINTAINER=	flz@xbsd.org
 COMMENT=	C library implementing the core BitTorrent protocol
 
 LIB_DEPENDS=	uuid.1:${PORTSDIR}/sysutils/e2fsprogs \
-		curl.2:${PORTSDIR}/ftp/curl
+		curl.3:${PORTSDIR}/ftp/curl
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

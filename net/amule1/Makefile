@@ -7,7 +7,7 @@
 
 PORTNAME=	aMule
 PORTVERSION=	1.2.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://download.berlios.de/amule/
 
@@ -15,7 +15,7 @@ MAINTAINER=	ganael.laplanche@martymac.com
 COMMENT=	Just another eMule P2P Client
 
 LIB_DEPENDS=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2 \
-		curl.2:${PORTSDIR}/ftp/curl
+		curl.3:${PORTSDIR}/ftp/curl
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehier gnomehack gnomeprefix

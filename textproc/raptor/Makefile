@@ -8,7 +8,7 @@
 
 PORTNAME=	raptor
 PORTVERSION=	1.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.redland.opensource.ac.uk/dist/source/
@@ -17,7 +17,7 @@ MASTER_SITE_SUBDIR=	librdf
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RDF Parser Toolkit for Redland
 
-LIB_DEPENDS=	curl.2:${PORTSDIR}/ftp/curl \
+LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl \
 		xmlparse.1:${PORTSDIR}/www/libwww
 
 USE_GETOPT_LONG=	yes

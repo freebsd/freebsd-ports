@@ -7,6 +7,7 @@
 
 PORTNAME=	curl
 PORTVERSION=	0.0.2.a0
+PORTREVISION?=	1
 CATEGORIES=	ftp www ruby
 MASTER_SITES=	http://www.d1.dion.ne.jp/~matuyuki/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -19,7 +20,7 @@ COMMENT=	Ruby interface to libcurl
 
 BROKEN=		"Does not compile"
 
-LIB_DEPENDS=	curl.2:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes

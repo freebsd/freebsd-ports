@@ -6,13 +6,14 @@
 
 PORTNAME=		gambas
 PORTVERSION=		0.93b
+PORTREVISION?=	1
 CATEGORIES=		lang
 MASTER_SITES=		http://gambas.sourceforge.net/
 
 MAINTAINER=		thierry@FreeBSD.org
 COMMENT=		Gambas Almost Means BASic
 
-LIB_DEPENDS=		curl.2:${PORTSDIR}/ftp/curl			\
+LIB_DEPENDS=		curl.3:${PORTSDIR}/ftp/curl			\
 			ltdl.4:${PORTSDIR}/devel/libltdl
 RUN_DEPENDS=		pgrep:${PORTSDIR}/sysutils/pkill
 
