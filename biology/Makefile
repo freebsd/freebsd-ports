@@ -24,6 +24,7 @@
     SUBDIR += hmmer
     SUBDIR += kinemage
     SUBDIR += lamarc
+    SUBDIR += libgenome
     SUBDIR += migrate
     SUBDIR += molden
     SUBDIR += mopac
