@@ -21,6 +21,7 @@
     SUBDIR += freefem
     SUBDIR += fudgit
     SUBDIR += geg
+    SUBDIR += glove
     SUBDIR += gnumeric
     SUBDIR += gnuplot
     SUBDIR += gnuplot+
@@ -36,6 +37,7 @@
     SUBDIR += metis
     SUBDIR += netcdf
     SUBDIR += ngraph
+    SUBDIR += ntl
     SUBDIR += numpy
     SUBDIR += octave
     SUBDIR += oleo
