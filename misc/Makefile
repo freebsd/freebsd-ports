@@ -93,6 +93,7 @@
     SUBDIR += pinfo
     SUBDIR += proxyper
     SUBDIR += qclock
+    SUBDIR += qhacc
     SUBDIR += quotes
     SUBDIR += rfc
     SUBDIR += rpm
