@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnometelnet
-PORTVERSION=	2.4
-PORTREVISION=	1
+PORTVERSION=	2.5
 CATEGORIES=	net gnome
 MASTER_SITES=	http://www.cyest.org/downloads/
 DISTNAME=	${PORTNAME:S/gnome/gnome-/}-${PORTVERSION}
@@ -26,11 +25,11 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 pre-configure:
-.for file in install-sh mkinstalldirs
-	@${LN} -sf ${LOCALBASE}/share/automake/${file} ${WRKSRC}/${file}
-.endfor
+	@${LN} -sf ${LOCALBASE}/share/automake/install-sh ${WRKSRC}
 	@${RM} -f ${WRKSRC}/config.cache
-
+.for file in config.guess config.sub
+	@${RM} -f ${WRKSRC}/${file} && ${TOUCH} ${WRKSRC}/${file}
+.endfor
 
 post-install:
 	@${MKDIR} ${PREFIX}/share/gnome/apps/Internet
