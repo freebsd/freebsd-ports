@@ -3,7 +3,7 @@
 # Date created:		23.sept.1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.4 1995/04/01 12:50:56 jkh Exp $
+# $Id: Makefile,v 1.5 1995/04/12 20:31:13 asami Exp $
 #
 
 VERSION=	3.1
@@ -13,7 +13,6 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 WRKSRC=		${WRKDIR}/iv
 MAKEFILE=	makefile
-NCFTPFLAGS=	-NP
 
 .if ${DISTNAME} != ${VERSION}
 pre-fetch:
