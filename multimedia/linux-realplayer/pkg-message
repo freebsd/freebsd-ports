@@ -17,6 +17,6 @@ After install goto ${PREFIX}/lib/RealPlayer8 directory
 (as user) and launch:
   ./mimeinstall.sh - for install mime types for the mail and 
                      browser
-  ./plugininstall.sh - for install plugin for the Linux 
+  ./pluginstall.sh - for install plugin for the Linux 
                        Netscape
 ************************************************************
