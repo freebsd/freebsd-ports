@@ -1,0 +1,11 @@
+--- wmGrabImage.1.orig Thu Nov  4 02:20:22 1999
++++ wmGrabImage.1      Thu Nov  4 02:20:58 1999
+@@ -47,7 +47,7 @@
+ The original sized image and the thumbnail XPM image are both stored in
+ ~/.wmGrabImage/ which gets created if it doesnt already exist.
+ .SH SEE ALSO
+-wget and the ImageMagick convert utility.
++fetch and the ImageMagick convert utility.
+ .SH BUGS
+ Who knows? -- its still Beta though. (Let me know if you find any). Oldish
+ versions of the ImageMagick convert utility have a memory leak -- if you have

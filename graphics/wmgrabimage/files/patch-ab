@@ -1,0 +1,11 @@
+--- GrabImage.orig     Thu Nov  4 01:44:43 1999
++++ GrabImage  Thu Nov  4 01:46:12 1999
+@@ -52,7 +52,7 @@
+         #  I think some of these wget command line options may cause problems
+         #  for some people? Dont know why...
+         #
+-        $GrabCmd = "wget --proxy=off --passive-ftp --tries 0 -q -O $home/.wmGrabImage/$ImageName $URL";
++        $GrabCmd = "fetch -p -q -o $home/.wmGrabImage/$ImageName $URL";
+         system "$GrabCmd";
+
+     }
