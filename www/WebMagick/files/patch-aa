@@ -2,15 +2,15 @@ Index: webmagick.in
 ===================================================================
 RCS file: /cvsroot/webmagick/WebMagick/webmagick.in,v
 retrieving revision 1.117
-retrieving revision 1.149
-diff -u -r1.117 -r1.149
+retrieving revision 1.150
+diff -u -r1.117 -r1.150
 --- webmagick.in	23 Oct 2002 16:14:47 -0000	1.117
-+++ webmagick.in	20 Nov 2004 04:11:43 -0000	1.149
++++ webmagick.in	20 Nov 2004 05:22:55 -0000	1.150
 @@ -1,6 +1,6 @@
  #! @PERL@ 
  #
 -# $Id: webmagick.in,v 1.117 2002/10/23 16:14:47 clindell Exp $
-+# $Id: webmagick.in,v 1.149 2004/11/20 04:11:43 ache Exp $
++# $Id: webmagick.in,v 1.150 2004/11/20 05:22:55 ache Exp $
  #
  # You are looking at the main PERL script for WebMagick, a package to
  # intelligently create HTML and JavaScript index files and imagemaps
@@ -1063,7 +1063,7 @@ diff -u -r1.117 -r1.149
 +			if ($pic =~ /\.(jpg|jpeg?|gif|xbm|png)$/i) {
 +			    print( PICHTML "<A HREF=\"$opt_pichtmllink\">")
 +				if ($opt_pichtmllink ne '');
-+			    print( PICHTML "<IMG SRC=\"", escapeurl($pic), "\" BORDER=0 ALT=\"${altlabel}\">" );
++			    print( PICHTML "<IMG SRC=\"", escapeurl($pic), "\" BORDER=0 ALT=\"${altlabel}\" TITLE=\"${altlabel}\">" );
 +			    print( PICHTML "</A>")
 +				if ($opt_pichtmllink ne '');
  			} else {
@@ -1081,7 +1081,7 @@ diff -u -r1.117 -r1.149
  			unless ($opt_tables)
  			{				
 -				print( INDEX "  <AREA${target} HREF=\"",
-+				print( INDEX "  <AREA${target} ALT=\"${altlabel}\" HREF=\"",
++				print( INDEX "  <AREA${target} ALT=\"${altlabel}\" TITLE=\"${altlabel}\" HREF=\"",
  				       escapeurl($pichtml), "\" SHAPE=RECT COORDS=", $imageThumbCoords[$pageNumber - 1][$imageNum],">\n" );
  			}
  	    } else 
@@ -1089,7 +1089,7 @@ diff -u -r1.117 -r1.149
  		    unless ($opt_tables) 
  		    {
 -				print( INDEX "  <AREA HREF=\"", escapeurl($pic),
-+				print( INDEX "  <AREA ALT=\"${altlabel}\" HREF=\"", escapeurl($pic),
++				print( INDEX "  <AREA ALT=\"${altlabel}\" TITLE=\"${altlabel}\" HREF=\"", escapeurl($pic),
  				       "\" SHAPE=RECT COORDS=", $imageThumbCoords[$pageNumber - 1][$imageNum],">\n" );
  		    } 
  	    }
@@ -1108,11 +1108,11 @@ diff -u -r1.117 -r1.149
  			if ( $thumbImageSizes{$pic}) {
 -				print (INDEX "<IMG SRC=\"", $opt_cachedir, "/", escapeurl($pic), ".\L${opt_cacheformat}", "\" $thumbImageSizes{$pic} BORDER=0>");
 +				print (INDEX "<IMG SRC=\"", $opt_cachedir, "/", escapeurl($pic), ".\L${opt_cacheformat}",
-+				       "\" $thumbImageSizes{$pic} ALT=\"${altlabel}\" BORDER=0>");
++				       "\" $thumbImageSizes{$pic} ALT=\"${altlabel}\" TITLE=\"${altlabel}\" BORDER=0>");
  			} else {
 -				print (INDEX "<IMG SRC=\"", escapeurl($pic), "\" BORDER=0>");
 +				print (INDEX "<IMG SRC=\"", escapeurl($pic),
-+				       "\" ALT=\"${altlabel}\" BORDER=0>");
++				       "\" ALT=\"${altlabel}\" TITLE=\"${altlabel}\" BORDER=0>");
  			}
  			
 -			print (INDEX "</A><BR><FONT SIZE=\"-1\">" . $tableImageLabels{$imageNames[$pageNumber - 1][$imageNum]} . "</FONT></TD>\n");
