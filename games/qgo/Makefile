@@ -7,16 +7,13 @@
 #
 
 PORTNAME=	qgo
-PORTVERSION=	1.0.0.2
+PORTVERSION=	1.0.1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}-r${PORTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Go board and SGF editor written with the Qt library
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 USE_QT_VER=	3
 USE_REINPLACE=	yes
@@ -31,7 +28,5 @@ post-patch:
 		's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e \
 		's|src templates|src|g' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e \
-		's|: install-includeHEADERS|:|g' ${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>
