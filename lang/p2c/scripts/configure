@@ -1,0 +1,21 @@
+#!/bin/sh
+
+if [ $# != 3 ]; then exit 1; fi
+
+cat >>$3/Makefile <<END || exit 1;
+all:
+	cd src; make OPT=-O
+END
+
+mv $3/src/p2cc.perl $3/src/p2cc.perl.orig || exit 1;
+sed -e 1s/--.*// < $3/src/p2cc.perl.orig > $3/src/p2cc.perl || exit 1;
+
+cat >>$3/src/Makefile <<END || exit 1;
+HOMEDIR=/usr/local/lib/p2c
+INCDIR=/usr/local/include/p2c
+BINDIR=/usr/local/bin
+LIBDIR=/usr/local/lib
+MANDIR=/usr/local/man/man1
+END
+
+exit 0;
