@@ -93,7 +93,6 @@
     SUBDIR += tcl82
     SUBDIR += tclX80
     SUBDIR += tclplugin
-    SUBDIR += xpl
     SUBDIR += yorick
 
 .include <bsd.port.subdir.mk>
