@@ -3,7 +3,7 @@
 # Date created:		Jan 5 1997
 # Whom:			cfs@ing.puc.cl (original)
 #
-# $Id: Makefile,v 1.4 1997/12/12 16:31:36 tg Exp $
+# $Id: Makefile,v 1.5 1998/02/11 08:46:40 tg Exp $
 #
 
 DISTNAME=	urt
@@ -14,13 +14,13 @@ DISTFILES=	urt-3.1b.tar.Z urt-doc.tar urt-img.tar
 
 MAINTAINER=	giffunip@asme.org
 
+LIB_DEPENDS=	tiff34\\.1\\.:${PORTSDIR}/graphics/tiff34
+BUILD_DEPENDS=	${X11BASE}/lib/libpbm.a:${PORTSDIR}/graphics/netpbm
+
 EXTRACT_ONLY=	urt-3.1b.tar.Z
 PATCH_SITES=	ftp://ptolemy.berkeley.edu/pub/misc/urt/
 PATCHFILES=	urt-3.1b-3.1b1.patch
 PATCH_DIST_STRIP=-p1
-
-LIB_DEPENDS=	tiff34\\.1\\.:${PORTSDIR}/graphics/tiff34
-BUILD_DEPENDS=	${X11BASE}/lib/libpbm.a:${PORTSDIR}/graphics/netpbm
 
 NO_WRKSUBDIR=   yes
 CONFIGURE_SCRIPT=Configure
