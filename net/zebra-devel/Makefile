@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	zebra
-PORTVERSION=	0.90
-PORTREVISION=	1
+PORTVERSION=	0.90.a
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.zebra.org/pub/zebra/
+DISTFILES=	zebra-0.90a.tar.gz
 
 MAINTAINER=	andreas@FreeBSD.org
 
