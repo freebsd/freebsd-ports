@@ -1,0 +1,10 @@
+bin/jcat
+bin/jgrep
+bin/jfold
+bin/jvim
+bin/jview
+lib/jvim.hlp
+man/ja/man1/jcat.1.gz
+man/ja/man1/jgrep.1.gz
+man/ja/man1/jfold.1.gz
+man/ja/man1/jvim.1.gz

@@ -1,0 +1,76 @@
+--- ./src/makefile.junx.orig	Mon Jul  3 05:54:33 1995
++++ ./src/makefile.junx	Fri Oct 31 14:53:29 1997
+@@ -15,12 +15,12 @@
+ #
+ #>>>>> choose Japanese Kanji code
+ #JPCODE = -DJP=\".NN\"
+-#JPCODE = -DJP=\".EE\"
++JPCODE = -DJP=\".EE\"
+ #JPCODE = -DJP=\".NN\" -DJPFEP
+ 
+ #>>>>> ONEW specific options
+-JPDEF = -DONEW -DWNN_ISDIR		# Wnn + Canna / Onew
+-JPLIB = -lonew -ljd -lcanna		# Wnn + Canna / Onew
++#JPDEF = -DONEW -DWNN_ISDIR		# Wnn + Canna / Onew
++#JPLIB = -lonew -ljd -lcanna		# Wnn + Canna / Onew
+ #JPDEF = -DONEW				# Canna / Onew
+ #JPLIB = -lonew -lcanna			# Canna / Onew
+ #JPDEF = -DONEW -DWNN_ISDIR		# Wnn / Onew
+@@ -47,7 +47,13 @@
+ 	    -L/usr/X386/lib		\
+ 	    -L/usr/local/X11R5/lib	\
+ 	    -L/usr/local/lib		\
+-	    -L/usr/lib
++	    -L/usr/lib 			\
++	    -L%LOCALBASE%/lib 		\
++	    -L%X11BASE%/lib 		\
++	    -L/usr/X11R6/lib
++
++INSTALL_MAN?=	install -c -m ${MANMOD}
++
+ ######################################################################
+ 
+ all:
+@@ -183,6 +189,7 @@
+ 	@echo 'FreeBSD'
+ 	$(MAKE) $(TARGET)			\
+ 		'MACHINE = -DBSD_UNIX'		\
++		'LIBS = -ltermcap'	\
+ 		'CC = gcc -O2 -Wall'
+ 
+ # for FreeBSD before 2.0.5R, 'LIBS = -ltermcap -lcompat' may be needed.
+@@ -368,13 +375,13 @@
+ JGREP = jgrep
+ 
+ ### Prefix for location of files
+-PREFIX = /usr/local/jvim2.0
++PREFIX?= /usr/local
+ 
+ ### Location of binary
+ BINLOC = $(PREFIX)/bin
+ 
+ ### Location of man page
+-MANDIR = $(PREFIX)/man
++MANDIR = $(PREFIX)/man/ja
+ MANLOC = $(MANDIR)/man1
+ 
+ ### Location of help file
+@@ -500,14 +507,10 @@
+ 	chmod  $(BINMOD) $(BINLOC)/$(JFOLD)
+ 	@$(CSH) -f -c "if (! -d $(MANDIR)) mkdir $(MANDIR)"
+ 	@$(CSH) -f -c "if (! -d $(MANLOC)) mkdir $(MANLOC)"
+-	cp ../doc/$(MANFILE) $(MANLOC)
+-	chmod $(MANMOD) $(MANLOC)/$(MANFILE)
+-	cp ../doc/$(JGREP).1   ../doc/$(JGREP).man $(MANLOC)
+-	chmod $(MANMOD) $(MANLOC)/$(JGREP).1 $(MANLOC)/$(JGREP).man
+-	cp ../doc/$(JCAT).1    ../doc/$(JCAT).man  $(MANLOC)
+-	chmod $(MANMOD) $(MANLOC)/$(JCAT).1  $(MANLOC)/$(JCAT).man
+-	cp ../doc/$(JFOLD).1   ../doc/$(JFOLD).man $(MANLOC)
+-	chmod $(MANMOD) $(MANLOC)/$(JFOLD).1 $(MANLOC)/$(JFOLD).man
++	${INSTALL_MAN} ../doc/$(MANFILE) $(MANLOC)
++	${INSTALL_MAN} ../doc/$(JGREP).1 $(MANLOC)
++	${INSTALL_MAN} ../doc/$(JCAT).1 $(MANLOC)
++	${INSTALL_MAN} ../doc/$(JFOLD).1 $(MANLOC)
+ 	@$(CSH) -f -c "if (! -d $(HELPLOC)) mkdir $(HELPLOC)"
+ 	cp ../doc/$(HELPFILE) $(HELPLOC)
+ 	chmod $(HELPMOD) $(HELPLOC)/$(HELPFILE)
