@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_php
-PORTVERSION= 	4.0.1
+PORTVERSION= 	4.0.1.2
 CATEGORIES=	www
 MASTER_SITES=	http://us.php.net/${PHP_DISTDIR}/ \
 		http://php.he.net/${PHP_DISTDIR}/ \
@@ -17,7 +17,11 @@ MASTER_SITES=	http://us.php.net/${PHP_DISTDIR}/ \
 		http://php.easydns.com/${PHP_DISTDIR}/ \
 		http://www.php.cz/${PHP_DISTDIR}/ \
 		http://php3.globe.de/${PHP_DISTDIR}/
-DISTNAME=	php-${PORTVERSION}
+DISTNAME=	php-4.0.1
+
+PATCHFILES=	php-4.0.1-4.0.1pl2.diff.gz
+PATCH_SITES=	${MASTER_SITES}
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	dirk@FreeBSD.org
 
