@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jlj
-PORTVERSION=	2.5
+PORTVERSION=	2.7
 CATEGORIES=	deskutils net
 MASTER_SITES=	http://www.cis.rit.edu/~jerry/Software/perl/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
