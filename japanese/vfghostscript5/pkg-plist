@@ -55,12 +55,12 @@ share/ghostscript/5.10vflib/doc/current.txt
 share/ghostscript/5.10vflib/doc/devices.txt
 share/ghostscript/5.10vflib/doc/djgpp.sj
 share/ghostscript/5.10vflib/doc/drivers.txt
-share/ghostscript/5.10vflib/doc/epag-3.01/FILES
-share/ghostscript/5.10vflib/doc/epag-3.01/adjust.ps
-share/ghostscript/5.10vflib/doc/epag-3.01/ert.txt
-share/ghostscript/5.10vflib/doc/epag-3.01/gdevepag.txt
-share/ghostscript/5.10vflib/doc/epag-3.01/gsepagif.sh
-share/ghostscript/5.10vflib/doc/epag-3.01/psprint
+share/ghostscript/5.10vflib/doc/epag-3.08/FILES
+share/ghostscript/5.10vflib/doc/epag-3.08/adjust.ps
+share/ghostscript/5.10vflib/doc/epag-3.08/ert.txt
+share/ghostscript/5.10vflib/doc/epag-3.08/gdevepag.txt
+share/ghostscript/5.10vflib/doc/epag-3.08/gsepagif.sh
+share/ghostscript/5.10vflib/doc/epag-3.08/psprint
 share/ghostscript/5.10vflib/doc/fonts.txt
 share/ghostscript/5.10vflib/doc/gdev10v.jis
 share/ghostscript/5.10vflib/doc/gdevdmpr.sj
@@ -395,7 +395,7 @@ share/ghostscript/fonts/z003034l.pfm
 @dirrm share/ghostscript/fonts
 @dirrm share/ghostscript/5.10vflib/kanji
 @dirrm share/ghostscript/5.10vflib/examples
-@dirrm share/ghostscript/5.10vflib/doc/epag-3.01
+@dirrm share/ghostscript/5.10vflib/doc/epag-3.08
 @dirrm share/ghostscript/5.10vflib/doc
 @dirrm share/ghostscript/5.10vflib
 @dirrm share/ghostscript
