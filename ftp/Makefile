@@ -30,6 +30,7 @@
     SUBDIR += wget
     SUBDIR += wu-ftpd
     SUBDIR += wxftp
+    SUBDIR += xrmftp
     SUBDIR += yafc
     SUBDIR += yale-tftpd
 
