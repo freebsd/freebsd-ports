@@ -239,6 +239,12 @@ post-patch:
 			${WRKSRC}/build/unix/$${pcfile}.pc.in; \
 	done
 
+pre-configure:
+	@if [ -n "`${PKG_INFO} -xI '^bind[0-9]*-base-[0-9]'`" ]; then \
+		${ECHO_CMD} "${PKGNAME}: bind installed with PORT_REPLACES_BASE_BIND causes build problems."; \
+		${FALSE}; \
+	fi
+
 post-build:
 	${SED} -e "s|%%PREFIX%%|${PREFIX}|g" -e "s|%%MOZILLA%%|${MOZILLA}|g" \
 		${FILESDIR}/mozilla.sh >${WRKSRC}/${MOZILLA}

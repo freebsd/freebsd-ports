@@ -28,6 +28,12 @@ MAKE_ENV=	DIST=${WRKSRC}/dist
 
 LIBS=		libnspr4.so.1 libplc4.so.1 libplds4.so.1
 
+pre-configure:
+	@if [ -n "`${PKG_INFO} -xI '^bind[0-9]*-base-[0-9]'`" ]; then \
+		${ECHO_CMD} "${PKGNAME}: bind installed with PORT_REPLACES_BASE_BIND causes build problems."; \
+		${FALSE}; \
+	fi
+
 do-install:
 	${MKDIR} ${PREFIX}/include/nspr
 	${TAR} -C ${WRKSRC}/dist/include --dereference -cf - . | \

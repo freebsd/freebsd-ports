@@ -126,6 +126,12 @@ post-patch:
 	< ${WRKSRC}/${ii}/all.js.bak > ${WRKSRC}/${ii}/all.js
 .endfor
 
+pre-configure:
+	@if [ -n "`${PKG_INFO} -xI '^bind[0-9]*-base-[0-9]'`" ]; then \
+		${ECHO_CMD} "${PKGNAME}: bind installed with PORT_REPLACES_BASE_BIND causes build problems."; \
+		${FALSE}; \
+	fi
+
 pre-install:
 # Overview:  the program installs itself in FAKEDIR, then a list is made of the
 # files and directories in there.  This is the PLIST (packing list) for the
