@@ -1143,6 +1143,7 @@
     SUBDIR += templ
     SUBDIR += terminality
     SUBDIR += tide
+    SUBDIR += tigcc
     SUBDIR += tinyq
     SUBDIR += titano
     SUBDIR += tkcon
