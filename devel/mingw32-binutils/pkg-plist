@@ -20,7 +20,6 @@
 %%BINUTILS_TARG%%/lib/ldscripts/i386pe.xn
 %%BINUTILS_TARG%%/lib/ldscripts/i386pe.xr
 %%BINUTILS_TARG%%/lib/ldscripts/i386pe.xu
-lib/libiberty.a
 bin/%%BINUTILS_TARG%%-addr2line
 bin/%%BINUTILS_TARG%%-ar
 bin/%%BINUTILS_TARG%%-as
