@@ -1,5 +1,5 @@
---- Makefile.FreeBSD.orig	Sat Apr  6 09:07:37 2002
-+++ Makefile.FreeBSD	Wed Apr 17 02:02:45 2002
+--- Makefile.FreeBSD.bak	Mon Jun 16 23:46:56 2003
++++ Makefile.FreeBSD	Tue Jun 17 07:59:44 2003
 @@ -17,15 +17,8 @@
  # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  #
@@ -34,9 +34,9 @@
 -PREFIX = /usr/local
 +PREFIX ?= /usr/local
  
- VERSION = 4:0:0
+ VERSION = 5:0:4
  
-@@ -116,26 +109,26 @@
+@@ -143,35 +136,35 @@
  	$(LIBTOOL) --mode=link $(CXX) $(LDFLAGS) -rpath $(PREFIX)/lib -version-info $(VERSION) -o libdsp.la $(LOBJS) $(LIBS)
  
  install: libdsp.la
@@ -46,14 +46,23 @@
 -	install -m 644 dsp/DSPVector.hh $(PREFIX)/include/dsp
 -	install -m 644 dsp/Decimator.hh $(PREFIX)/include/dsp
 -	install -m 644 dsp/FFTDecimator.hh $(PREFIX)/include/dsp
+-	install -m 644 dsp/FFTInterpolator.hh $(PREFIX)/include/dsp
+-	install -m 644 dsp/FFTMultiRate.hh $(PREFIX)/include/dsp
 -	install -m 644 dsp/Filter.hh $(PREFIX)/include/dsp
 -	install -m 644 dsp/Filter2.hh $(PREFIX)/include/dsp
 -	install -m 644 dsp/FIRDecimator.hh $(PREFIX)/include/dsp
+-	install -m 644 dsp/FIRInterpolator.hh $(PREFIX)/include/dsp
+-	install -m 644 dsp/FIRMultiRate.hh $(PREFIX)/include/dsp
 -	install -m 644 dsp/Hankel.hh $(PREFIX)/include/dsp
+-	install -m 644 dsp/IIRCascade.hh $(PREFIX)/include/dsp
+-	install -m 644 dsp/IIRDecimator.hh $(PREFIX)/include/dsp
+-	install -m 644 dsp/IIRInterpolator.hh $(PREFIX)/include/dsp
+-	install -m 644 dsp/IIRMultiRate.hh $(PREFIX)/include/dsp
 -	install -m 644 dsp/ReBuffer.hh $(PREFIX)/include/dsp
 -	install -m 644 dsp/ReBuffer2.hh $(PREFIX)/include/dsp
 -	install -m 644 dsp/ReBuffer3.hh $(PREFIX)/include/dsp
 -	install -m 644 dsp/RecDecimator.hh $(PREFIX)/include/dsp
+-	install -m 644 dsp/RecInterpolator.hh $(PREFIX)/include/dsp
 -	install -m 644 dsp/Transform4.hh $(PREFIX)/include/dsp
 -	install -m 644 dsp/Transform8.hh $(PREFIX)/include/dsp
 -	install -m 644 dsp/TransformS.hh $(PREFIX)/include/dsp
@@ -66,14 +75,23 @@
 +	${BSD_INSTALL_DATA} dsp/DSPVector.hh $(PREFIX)/include/dsp
 +	${BSD_INSTALL_DATA} dsp/Decimator.hh $(PREFIX)/include/dsp
 +	${BSD_INSTALL_DATA} dsp/FFTDecimator.hh $(PREFIX)/include/dsp
++	${BSD_INSTALL_DATA} dsp/FFTInterpolator.hh $(PREFIX)/include/dsp
++	${BSD_INSTALL_DATA} dsp/FFTMultiRate.hh $(PREFIX)/include/dsp
 +	${BSD_INSTALL_DATA} dsp/Filter.hh $(PREFIX)/include/dsp
 +	${BSD_INSTALL_DATA} dsp/Filter2.hh $(PREFIX)/include/dsp
 +	${BSD_INSTALL_DATA} dsp/FIRDecimator.hh $(PREFIX)/include/dsp
++	${BSD_INSTALL_DATA} dsp/FIRInterpolator.hh $(PREFIX)/include/dsp
++	${BSD_INSTALL_DATA} dsp/FIRMultiRate.hh $(PREFIX)/include/dsp
 +	${BSD_INSTALL_DATA} dsp/Hankel.hh $(PREFIX)/include/dsp
++	${BSD_INSTALL_DATA} dsp/IIRCascade.hh $(PREFIX)/include/dsp
++	${BSD_INSTALL_DATA} dsp/IIRDecimator.hh $(PREFIX)/include/dsp
++	${BSD_INSTALL_DATA} dsp/IIRInterpolator.hh $(PREFIX)/include/dsp
++	${BSD_INSTALL_DATA} dsp/IIRMultiRate.hh $(PREFIX)/include/dsp
 +	${BSD_INSTALL_DATA} dsp/ReBuffer.hh $(PREFIX)/include/dsp
 +	${BSD_INSTALL_DATA} dsp/ReBuffer2.hh $(PREFIX)/include/dsp
 +	${BSD_INSTALL_DATA} dsp/ReBuffer3.hh $(PREFIX)/include/dsp
 +	${BSD_INSTALL_DATA} dsp/RecDecimator.hh $(PREFIX)/include/dsp
++	${BSD_INSTALL_DATA} dsp/RecInterpolator.hh $(PREFIX)/include/dsp
 +	${BSD_INSTALL_DATA} dsp/Transform4.hh $(PREFIX)/include/dsp
 +	${BSD_INSTALL_DATA} dsp/Transform8.hh $(PREFIX)/include/dsp
 +	${BSD_INSTALL_DATA} dsp/TransformS.hh $(PREFIX)/include/dsp

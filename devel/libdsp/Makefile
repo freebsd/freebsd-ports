@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libdsp
-PORTVERSION=	4.4.2
+PORTVERSION=	4.6.0
 CATEGORIES=	devel audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -27,6 +27,12 @@ MAKE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" MKDIR="${MKDIR}" \
 MAKEFILE=	Makefile.FreeBSD
 INSTALLS_SHLIB=	yes
 
-INLINE_VER=	1.2.4
+INLINE_VER=	1.2.5
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386"
+CFLAGS+=	-DDSP_X86
+.endif
+
+.include <bsd.port.post.mk>
