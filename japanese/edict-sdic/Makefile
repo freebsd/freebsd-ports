@@ -8,12 +8,12 @@
 PORTNAME=	edict-sdic
 PORTVERSION=	20010615
 CATEGORIES=	japanese
-MASTER_SITES=	ftp://pine.kuee.kyoto-u.ac.jp/pub/tsuchiya/sdic/ \
+MASTER_SITES=	http://www.namazu.org/~tsuchiya/sdic/ \
 		ftp://ftp.cc.monash.edu.au/pub/nihongo/ \
 		ftp://ftp.cdrom.com/pub/japanese/monash/ \
 		ftp://ftp.sedl.org/pub/mirrors/nihongo/ \
 		ftp://ftp.u-aizu.ac.jp/pub/SciEng/nihongo/ftp.cc.monash.edu.au/
-DISTNAME=	sdic-2.1.2
+DISTNAME=	sdic-2.1.3
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		edict.gz \
 		edict_doc.txt
