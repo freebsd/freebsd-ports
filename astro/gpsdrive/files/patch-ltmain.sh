@@ -1,7 +1,5 @@
-$FreeBSD$
-
---- ltmain.sh.orig	Wed Sep 26 23:26:27 2001
-+++ ltmain.sh	Sat Nov 17 08:35:28 2001
+--- ltmain.sh.orig	Sun Jul 14 20:22:08 2002
++++ ltmain.sh	Thu Jul 31 17:46:34 2003
 @@ -1043,7 +1043,7 @@
  	    # These systems don't actually have a C library (as such)
  	    test "X$arg" = "X-lc" && continue
@@ -11,7 +9,7 @@ $FreeBSD$
  	    # Do not include libc due to us having libc/libc_r.
  	    test "X$arg" = "X-lc" && continue
  	    ;;
-@@ -2441,7 +2441,7 @@
+@@ -2445,7 +2445,7 @@
  	  *-*-netbsd*)
  	    # Don't link with libc until the a.out ld.so is fixed.
  	    ;;
@@ -20,7 +18,7 @@ $FreeBSD$
  	    # Do not include libc due to us having libc/libc_r.
  	    ;;
  	  *)
-@@ -4210,10 +4210,12 @@
+@@ -4225,10 +4225,12 @@
  	fi
  
  	# Install the pseudo-library for information purposes.
