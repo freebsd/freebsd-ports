@@ -1,4 +1,5 @@
 # New ports collection makefile for:    less
+# http://www.flash.net/~marknu/less/
 # Version required:     3.*
 # Date created:         8 Nov 1994
 # Whom:                 ache
