@@ -41,6 +41,7 @@ include/chipcard/hbcicard.h
 include/chipcard/libchipcard.h
 include/chipcard/rsacard.h
 include/ctversion.h
+lib/libchipcard.a
 lib/libchipcard.la
 lib/libchipcard.so
 lib/libchipcard.so.17
@@ -59,6 +60,8 @@ share/libchipcard/drivers/ctapi-fake.dsc
 share/libchipcard/drivers/cyberjack.dsc
 share/libchipcard/drivers/kobil.dsc
 share/libchipcard/drivers/towitoko.dsc
+@dirrm include/chameleon
+@dirrm include/chipcard
 @dirrm share/libchipcard/drivers
 @dirrm share/libchipcard/commands
 @dirrm share/libchipcard
