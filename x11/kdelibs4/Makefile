@@ -55,6 +55,8 @@ pre-fetch:
 	@${ECHO} "then KDE2 will not build with SSL support."
 	@${ECHO}
 .endif
+
+pre-extract:
 .if exists(${LOCALBASE}/include/kfm.h)
 	@${ECHO}
 	@${ECHO} "			NOTICE"
