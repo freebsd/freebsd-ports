@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	algebra
-PORTVERSION=	0.49
+PORTVERSION=	0.52
 CATEGORIES=	math ruby
 MASTER_SITES=	http://blade.nagaokaut.ac.jp/~sinara/ruby/math/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
