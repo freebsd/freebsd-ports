@@ -9,7 +9,8 @@ PORTNAME=	lyx
 PORTVERSION=	1.3.4
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/ \
-		ftp://ftp.sdsc.edu/pub/other/lyx/stable/ \
+		ftp://planetmirror.com/pub/lyx/stable/ \
+		http://www-ftp.lip6.fr/ftp/pub/lyx/stable/ \
 		ftp://gd.tuwien.ac.at/publishing/tex/lyx/stable/
 
 MAINTAINER=	ports@FreeBSD.org
