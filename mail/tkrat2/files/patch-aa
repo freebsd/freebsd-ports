@@ -1,6 +1,6 @@
---- configure.orig	Wed Aug 23 02:20:34 2000
-+++ configure	Sat Sep  2 18:50:13 2000
-@@ -2034,7 +2034,7 @@
+--- configure.orig	Fri Nov  3 02:48:38 2000
++++ configure	Tue Dec  5 21:08:05 2000
+@@ -1953,7 +1953,7 @@
  for i in $tcl_dirs ; do
      tcl_include_dirs="$tcl_include_dirs $i/include"
  done
