@@ -3,7 +3,7 @@
 # Date created:		November 13, 1998
 # Whom:			Marc G. Fournier <scrappy@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.30 1998/11/24 05:09:06 asami Exp $
+# $Id: Makefile,v 1.31 1998/12/23 17:37:03 billf Exp $
 #
 
 DISTNAME=	postgresql-v6.4
@@ -12,6 +12,8 @@ CATEGORIES=	databases
 MASTER_SITES=	ftp://ftp.postgresql.org/pub/
 
 MAINTAINER=	andreas@FreeBSD.ORG
+
+Y2K=		http://www.postgresql.org/y2k.html
 
 # if you want to use the tcl/tk frontend pgaccess, then you need to build
 # postgresql with tcl support by typing: make USE_TCL=yes
