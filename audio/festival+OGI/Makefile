@@ -23,6 +23,8 @@ PATCHFILES=	OGIfestpatch-1.4.1.2.tar.gz
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Text-to-speech system with OGI residual LPC synthesizer
 
+BROKEN=		"Does not fetch"
+
 LIB_DEPENDS=	audio.2:${PORTSDIR}/audio/nas \
 		esd.2:${PORTSDIR}/audio/esound
 
