@@ -1327,7 +1327,6 @@ dcc		ports/irc/dcc
 dcc-dccd	ports/mail/dcc-dccd
 dcdflib		ports/math/dcdflib
 dcetest		ports/security/dcetest
-dcgui		ports/net/dcgui
 dclib		ports/net/dclib
 dclock		ports/x11-clocks/dclock
 dcraw		ports/graphics/dcraw
@@ -10752,6 +10751,7 @@ v7sh		ports/shells/v7sh
 vMac		ports/emulators/vMac
 valgrind	ports/devel/valgrind
 valgrind-snapshot	ports/devel/valgrind-snapshot
+valknut		ports/net/valknut
 vamos		ports/games/vamos
 varconf		ports/devel/varconf
 varkon		ports/cad/varkon
