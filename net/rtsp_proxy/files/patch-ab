@@ -1,0 +1,11 @@
+--- ../qts_proxy.conf	Wed Apr 21 15:45:50 1999
++++ ../qts_proxy.conf	Tue Jun  8 01:51:04 1999
+@@ -7,7 +7,7 @@
+ #                           NOTE: lack of this line allows connections from any IP address
+ #                           It is best to limit incoming connections to your internal network.
+ #
+-allow	 	17.0.0.0/8
++allow	 	10.0.0.0/8
+ 
+ #
+ # users 					specifies the maximum number of simultaneous users
