@@ -1,0 +1,11 @@
+--- docs/Makefile.in.orig	Mon Dec 11 11:49:34 2000
++++ docs/Makefile.in	Mon Dec 11 11:50:01 2000
+@@ -113,7 +113,7 @@
+ sedpath = @sedpath@
+ static_lib = @static_lib@
+ 
+-docdir = $(prefix)/doc/irssi
++docdir = $(prefix)/share/doc/irssi
+ 
+ doc_DATA =  	botnet.txt 	design.txt 	formats.txt 	manual.txt 	perl.txt 	signals.txt 	special_vars.txt 	startup-HOWTO.txt
+ 
