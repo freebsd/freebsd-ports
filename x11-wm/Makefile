@@ -25,6 +25,7 @@
     SUBDIR += enlightenment
     SUBDIR += epplets
     SUBDIR += evilwm
+    SUBDIR += fbdesk
     SUBDIR += fluxbox
     SUBDIR += fluxconf
     SUBDIR += flwm
