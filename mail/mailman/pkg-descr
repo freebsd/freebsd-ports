@@ -17,7 +17,7 @@ extensible.  It is compatible with most web servers and browsers, and most
 mail transfer agents (mail servers).  Mailman's documentation may be found on
 its website.
 
-Author: Barry Warsaw <barry@zope.com> and the Mailman Cabal
+Author: Barry Warsaw <barry@python.org> and the Mailman Cabal
 WWW:    http://www.list.org/
 
 -- Johann Visagie <wjv@FreeBSD.org>
