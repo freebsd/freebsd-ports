@@ -7,14 +7,15 @@
 
 PORTNAME=	cnet
 PORTVERSION=	1.7.7
-CATEGORIES=	net tk83
+PORTREVISION=	1
+CATEGORIES=	net tcl84 tk84
 MASTER_SITES=	http://www.cs.uwa.edu.au/cnet/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A networking simulator
 
-LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
+LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
@@ -24,8 +25,8 @@ ALL_TARGET=	# empty
 MAN1=		cnet.1
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|8.2|8.3|g ; \
-		 s|82|83|g' ${WRKSRC}/src/Makefile.freebsd
+	@${REINPLACE_CMD} -e 's|8.2|8.4|g ; \
+		 s|82|84|g' ${WRKSRC}/src/Makefile.freebsd
 	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|g ; \
 		 s|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/src/config.h
 
