@@ -536,9 +536,9 @@ post-install:
 			-e 's#%%BUILD_NR%%#${BUILD_NR}#g' \
 			-e 's#%%RELEASE_NR%%#${RELEASE_NR}#g' \
 			-e 's#%%FRELEASE_NR%%#${FRELEASE_NR}#g' \
-			${WRKDIR}/openoffice \
+			${WRKDIR}/openoffice-wrapper \
 			${WRKDIR}/freebsd-local.sh
-	@${INSTALL_SCRIPT} ${WRKDIR}/openoffice \
+	@${INSTALL_SCRIPT} ${WRKDIR}/openoffice-wrapper \
 		${PREFIX}/bin/openoffice-${RELEASE_NR}
 	@${INSTALL_SCRIPT} ${WRKDIR}/freebsd-local.sh \
 		${PREFIX}/${INSTALLATION_BASEDIR}/freebsd-local.sh
