@@ -1,11 +1,13 @@
---- example/apps.Dist	Sat Aug  5 00:40:31 2000
-+++ example/apps	Sun Nov 19 18:32:02 2000
-@@ -4,8 +4,6 @@
+--- example/defaults.Dist	Sat Aug  5 00:40:06 2000
++++ example/defaults	Sun Nov 19 18:28:53 2000
+@@ -12,4 +12,10 @@
  
- "GNUstep.xpm"		Menu title
- "linuxterm.xpm"		xterm -T Terminal -name terminal -geometry 80x50 &
--"HomeNeighborOpen.xpm"	xterm -T "Login terminal" -name loginxterm -e bin/rloginsession &
--"FileManager.xpm"	xterm -T "Midnight Commander" -name mc -geometry 100x50 -sl 1000 -e mc -c &
- "mixer.xpm"		gaumix &
- "HP-16C-48.xpm"		kcalc &
- 
+ xpmpath	/usr/local/share/WindowMaker/Icons
+ xpmpath /usr/local/share/pixmaps
++
++xpmpath %%PREFIX%%/share/WindowMaker/Backgrounds
++xpmpath %%PREFIX%%/share/WindowMaker/Icons
++xpmpath %%PREFIX%%/share/WindowMaker/Pixmaps
++xpmpath %%PREFIX%%/include/X11/pixmaps
++
+ tile	tile2.xpm
