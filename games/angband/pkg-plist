@@ -66,8 +66,8 @@ lib/X11/angband/user/user.prf
 @exec chmod 775 %D/lib/X11/angband/help
 @exec chmod 775 %D/lib/X11/angband/info
 @exec chmod 775 %D/lib/X11/angband/xtra
-@exec chmod 1777 %D/lib/X11/angband/save
-@exec chmod 1777 %D/lib/X11/angband/user
+@exec chmod 775 %D/lib/X11/angband/save
+@exec chmod 775 %D/lib/X11/angband/user
 @exec chmod 664 %D/lib/X11/angband/apex/scores.raw
 @dirrm lib/X11/angband/bone
 @dirrm lib/X11/angband/data
