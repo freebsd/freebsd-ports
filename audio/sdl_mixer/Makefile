@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sdl_mixer
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.4
 CATEGORIES=	audio
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_mixer/release/
 DISTNAME=	SDL_mixer-${PORTVERSION}
