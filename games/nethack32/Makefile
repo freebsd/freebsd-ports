@@ -41,7 +41,6 @@ HACKLINK=	nethack
 DATADIR=	${PREFIX}/${HACKDIR}
 DOCSDIR=	${PREFIX}/share/doc/${HACKNAME}
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
-PLIST_SUB+=	HACKNAME="${HACKNAME}"
 
 .include <bsd.port.pre.mk>
 
