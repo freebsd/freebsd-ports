@@ -1,0 +1,11 @@
+--- calc.c.orig	Sun Feb  6 00:53:48 2000
++++ calc.c	Sun Feb  6 00:57:01 2000
+@@ -233,7 +233,7 @@
+ 			/* argument + space separator */
+ 			cmdlen += strlen(argv[i]) + 1;
+ 		}
+-		if (i > MAXCMD) {
++		if (cmdlen > MAXCMD) {
+ 			/*
+ 			 * we are too early in processing to call
+ 			 * libcalc_call_me_last() - nothing to cleanup

@@ -1,11 +1,28 @@
---- Makefile.orig	Sun Dec 19 01:48:45 1999
-+++ Makefile	Sun Dec 19 01:49:31 1999
-@@ -623,7 +623,7 @@
- #
- CCWARN= -Wall -Wno-implicit -Wno-comment
+--- Makefile.orig	Sat Dec 18 22:20:02 1999
++++ Makefile	Sun Feb  6 00:16:45 2000
+@@ -625,14 +625,14 @@
  CCOPT= ${DEBUG} ${NO_SHARED}
  CCMISC=
  #
 -CFLAGS= ${CCWARN} ${CCOPT} ${CCMISC}
 +CFLAGS+= ${CCWARN} ${CCOPT} ${CCMISC}
  ICFLAGS= ${CCWARN} ${CCMISC}
+ #
+ LDFLAGS= ${NO_SHARED} ${LD_NO_SHARED}
+ ILDFLAGS=
+ #
+ LCC= gcc
+-CC= ${PURIFY} ${LCC}
++CC?= ${PURIFY} ${LCC}
+ #
+ ###
+ #
+@@ -1073,7 +1073,7 @@
+ all: .hsrc ${TARGETS}
+ 
+ calc: .hsrc ${CALC_LIBS} ${CALCOBJS}
+-	${CC} ${LDFLAGS} ${CALCOBJS} ${CALC_LIBS} ${LD_DEBUG} ${READLINE_LIB} -o calc
++	${CC} ${CFLAGS} ${LDFLAGS} ${CALCOBJS} ${CALC_LIBS} ${LD_DEBUG} ${READLINE_LIB} -o calc
+ 
+ libcalc.a: ${LIBOBJS} ${MAKE_FILE}
+ 	-rm -f libcalc.a
