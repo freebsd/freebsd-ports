@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	pose
-PORTVERSION=	3.0a6
+PORTVERSION=	3.1
 CATEGORIES=	palm emulators
 MASTER_SITES=	http://www.palmos.com/dev/tech/tools/emulator/
-DISTNAME=	emulator_src_30a6
+# DISTNAME=	emulator_src_31
+DISTFILES=	emulator_src_31.tar.gz emulator_skins_16.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wlloyd@slap.net
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
@@ -24,7 +25,8 @@ CONFIGURE_ARGS=	--x-includes=${X11BASE}/include \
 
 post-install:
 	${MKDIR} ${PREFIX}/share/pose
-	${INSTALL_DATA} "${WRKSRC}/../ROMTransfer/Source/ROM Transfer.prc" ${PREFIX}/share/pose
+	${INSTALL_DATA} "${WRKSRC}/../ROMTransfer/Source/ROM_Transfer.prc" ${PREFIX}/share/pose
 	@${SED} -e 's#/usr/local#${PREFIX}#g' ${PKGMESSAGE}
+	${CP} -Rp ${WRKDIR}/Skins_v1.6 ${PREFIX}/share/pose/skins
 
 .include <bsd.port.mk>

@@ -1,3 +1,78 @@
 bin/pose
-share/pose/ROM Transfer.prc
+share/pose/ROM_Transfer.prc
+share/pose/skins/Handspring/Visor_Prism_Japanese.skin
+share/pose/skins/Handspring/Visor_Blue_16.jpg
+share/pose/skins/Handspring/Visor_Blue_16_Japanese.jpg
+share/pose/skins/Handspring/Visor_Blue_32.jpg
+share/pose/skins/Handspring/Visor_Blue_32_Japanese.jpg
+share/pose/skins/Handspring/Visor_Blue_Japanese.skin
+share/pose/skins/Handspring/Visor_Graphite.skin
+share/pose/skins/Handspring/Visor_Graphite_16.jpg
+share/pose/skins/Handspring/Visor_Graphite_16_Japanese.jpg
+share/pose/skins/Handspring/Visor_Graphite_32.jpg
+share/pose/skins/Handspring/Visor_Graphite_32_Japanese.jpg
+share/pose/skins/Handspring/Visor_Graphite_Japanese.skin
+share/pose/skins/Handspring/Visor_Platinum.skin
+share/pose/skins/Handspring/Visor_Platinum_16.jpg
+share/pose/skins/Handspring/Visor_Prism.skin
+share/pose/skins/Handspring/Visor_Platinum_16_Japanese.jpg
+share/pose/skins/Handspring/Visor_Platinum_32.jpg
+share/pose/skins/Handspring/Visor_Platinum_32_Japanese.jpg
+share/pose/skins/Handspring/Visor_Platinum_Japanese.skin
+share/pose/skins/Handspring/Visor_Prism_16.jpg
+share/pose/skins/Handspring/Visor_Prism_16_Japanese.jpg
+share/pose/skins/Handspring/Visor_Prism_32.jpg
+share/pose/skins/Handspring/Visor_Prism_32_Japanese.jpg
+share/pose/skins/Handspring/Visor_Blue.skin
+share/pose/skins/Palm/m100_32.jpg
+share/pose/skins/Palm/Palm_IIIc.skin
+share/pose/skins/Palm/Palm_IIIe.skin
+share/pose/skins/Palm/Palm_IIIx.skin
+share/pose/skins/Palm/Palm_Pilot.skin
+share/pose/skins/Palm/Palm_V.skin
+share/pose/skins/Palm/Palm_VII.skin
+share/pose/skins/Palm/Palm_VIIx.skin
+share/pose/skins/Palm/Pilot.skin
+share/pose/skins/Palm/Workpad.skin
+share/pose/skins/Palm/Workpad_c3.skin
+share/pose/skins/Palm/m100.skin
+share/pose/skins/Palm/Palm_III_16.jpg
+share/pose/skins/Palm/Palm_III_32.jpg
+share/pose/skins/Palm/Palm_IIIc_16.jpg
+share/pose/skins/Palm/Palm_IIIc_32.jpg
+share/pose/skins/Palm/Palm_IIIe_16.jpg
+share/pose/skins/Palm/Palm_IIIe_32.jpg
+share/pose/skins/Palm/Palm_IIIx_16.jpg
+share/pose/skins/Palm/Palm_VII_16.jpg
+share/pose/skins/Palm/Palm_IIIx_32.jpg
+share/pose/skins/Palm/Palm_Pilot_16.jpg
+share/pose/skins/Palm/Palm_Pilot_32.jpg
+share/pose/skins/Palm/Palm_VII_32.jpg
+share/pose/skins/Palm/Palm_VIIx_16.jpg
+share/pose/skins/Palm/Palm_VIIx_32.jpg
+share/pose/skins/Palm/Palm_V_16.jpg
+share/pose/skins/Palm/Palm_V_32.jpg
+share/pose/skins/Palm/Pilot_16.jpg
+share/pose/skins/Palm/Pilot_32.jpg
+share/pose/skins/Palm/Workpad_16.jpg
+share/pose/skins/Palm/Workpad_32.jpg
+share/pose/skins/Palm/Workpad_c3_16.jpg
+share/pose/skins/Palm/Workpad_c3_32.jpg
+share/pose/skins/Palm/m100_16.jpg
+share/pose/skins/Palm/Palm_III.skin
+share/pose/skins/Symbol/Symbol_1500.skin
+share/pose/skins/Symbol/Symbol_1700.skin
+share/pose/skins/Symbol/Symbol_1500_16.jpg
+share/pose/skins/Symbol/Symbol_1500_32.jpg
+share/pose/skins/Symbol/Symbol_1700_16.jpg
+share/pose/skins/Symbol/Symbol_1700_32.jpg
+share/pose/skins/TRG/TRGpro.skin
+share/pose/skins/TRG/TRGpro_16.jpg
+share/pose/skins/TRG/TRGpro_32.jpg
+share/pose/skins/ReadMe.txt
+@dirrm share/pose/skins/Handspring
+@dirrm share/pose/skins/Palm
+@dirrm share/pose/skins/Symbol
+@dirrm share/pose/skins/TRG
+@dirrm share/pose/skins
 @dirrm share/pose
