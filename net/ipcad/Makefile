@@ -6,17 +6,19 @@
 #
 
 PORTNAME=	ipcad
-PORTVERSION=	2.2
+PORTVERSION=	2.5
 CATEGORIES=	net
 MASTER_SITES=	http://www.spelio.net.ru/soft/
 
 MAINTAINER=	vlm@spelio.net.ru
 
+MANCOMPRESSED=	no
+MAN5=	ipcad.conf.5
+MAN8=	ipcad.8
+
 post-install:
 	strip ${PREFIX}/bin/ipcad
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/ipcad
-	${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/doc/ipcad
-.endif
+	${INSTALL_MAN} ${WRKSRC}/ipcad.8 ${PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/ipcad.conf.5 ${PREFIX}/man/man5
 
 .include <bsd.port.mk>
