@@ -39,28 +39,28 @@ DEFAULTPGP=	PGP2
 RUN_DEPENDS=	pgp:${PORTSDIR}/security/pgp
 PGPSTYLE?=	PGP2
 .ifndef PGP
-PGP!=	which pgp || ${ECHO_CMD} ${PREFIX}/bin/pgp
+PGP!=	which pgp || ${ECHO} ${PREFIX}/bin/pgp
 .endif
 .elif (${DEFAULTPGP} == PGP5 )
 RUN_DEPENDS=	pgps:${PORTSDIR}/security/pgp5
 PGPSTYLE?=	PGP5
 .ifndef PGPS
-PGPS!=	which pgps || ${ECHO_CMD} ${PREFIX}/bin/pgps
+PGPS!=	which pgps || ${ECHO} ${PREFIX}/bin/pgps
 .endif
 .ifndef PGPV
-PGPV!=	which pgpv || ${ECHO_CMD} ${PREFIX}/bin/pgpv
+PGPV!=	which pgpv || ${ECHO} ${PREFIX}/bin/pgpv
 .endif
 .elif (${DEFAULTPGP} == PGP6)
 RUN_DEPENDS=	pgp:${PORTSDIR}/security/pgp6
 PGPSTYLE?=	PGP6
 .ifndef PGP
-PGP!=	which pgp || ${ECHO_CMD} ${PREFIX}/bin/pgp
+PGP!=	which pgp || ${ECHO} ${PREFIX}/bin/pgp
 .endif
 .elif (${DEFAULTPGP} == GPG)
 RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 PGPSTYLE?=	GPG
 .ifndef PGP
-PGP!=	which gpg || ${ECHO_CMD} ${PREFIX}/bin/gpg
+PGP!=	which gpg || ${ECHO} ${PREFIX}/bin/gpg
 .endif
 .else
 .error Unsupported DEFAULTPGP value.  See the Makefile for a list of acceptable values.
