@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	Gtk
 PKGNAMEPREFIX=	p5-
 DISTNAME=	Gtk-Perl-${PORTVERSION}
 
-MAINTAINER=	vanilla@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Glade interface files of Gtk-Perl
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gnome.pm:${PORTSDIR}/x11-toolkits/p5-Gnome

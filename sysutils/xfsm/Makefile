@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/status/xstatus
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	vanilla@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X File System Monitor
 
 USE_IMAKE=	yes

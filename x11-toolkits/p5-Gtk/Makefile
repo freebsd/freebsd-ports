@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	Gtk
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-Perl-${PORTVERSION}
 
-MAINTAINER=	vanilla@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The base module of Gtk-Perl
 
 BUILD_DEPENDS=	${SITE_PERL}/XML/Writer.pm:${PORTSDIR}/textproc/p5-XML-Writer \

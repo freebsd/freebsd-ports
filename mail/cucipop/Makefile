@@ -25,7 +25,7 @@ PATCH_DIST_STRIP=	-p1
 
 #BUILD_DEPENDS=  ${PREFIX}/include/db2/db.h:${PORTSDIR}/databases/db2
 
-MAINTAINER=	vanilla@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cubic Circle's POP3 daemon (fully RFC1939 compliant)
 
 MAN8=		cucipop.8 #makevpopdb.8

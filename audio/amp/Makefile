@@ -13,7 +13,7 @@ CATEGORIES=	audio
 # the author's site seems dead.
 MASTER_SITES=	ftp://ftp.clara.net/pub/unix/Audio/
 
-MAINTAINER=	vanilla@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another mp3 player
 
 GNU_CONFIGURE=	yes
