@@ -1,4 +1,4 @@
-@cwd /usr/X11R6
+@cwd ${X11BASE}
 bin/xlife
 bin/lifeconv
 bin/collect

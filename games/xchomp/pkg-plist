@@ -1,2 +1,2 @@
-@cwd /usr/X11R6
+@cwd ${X11BASE}
 bin/xchomp
