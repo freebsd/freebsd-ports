@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Math-BigInt
-PORTVERSION=	1.63
+PORTVERSION=	1.66
 CATEGORIES=	math perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Math
@@ -16,12 +16,11 @@ MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Math::BigInt - Arbitrary size integer math package
 
 PERL_CONFIGURE=	yes
-CONFIGURE_ARGS+=	INSTALLDIRS='site'
+CONFIGURE_ARGS=	INSTALLDIRS='site'
 
 MAN3=		Math::BigFloat.3 \
 		Math::BigInt.3 \
 		Math::BigInt::Calc.3 \
 		Math::BigInt::Scalar.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>
