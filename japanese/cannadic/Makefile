@@ -7,6 +7,7 @@
 
 PORTNAME=	cannadic
 PORTVERSION=	0.92
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://cgi3.osk.3web.ne.jp/~nowaki/computer/
 
