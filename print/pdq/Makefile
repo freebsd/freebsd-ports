@@ -26,6 +26,6 @@ post-install:
 	strip ${PREFIX}/bin/lpd_cancel
 	strip ${PREFIX}/bin/lpd_print
 	strip ${PREFIX}/bin/lpd_status
-	@${SED} 's|%%PREFIX%%|${PREFIX}|g' pkg/MESSAGE
+	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${PKGMESSAGE}
 
 .include <bsd.port.mk>
