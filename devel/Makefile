@@ -106,6 +106,7 @@
     SUBDIR += cl-asdf-cmucl
     SUBDIR += cl-asdf-sbcl
     SUBDIR += cl-port
+    SUBDIR += cl-port-cmucl
     SUBDIR += cl-port-sbcl
     SUBDIR += cl-split-sequence
     SUBDIR += clanlib

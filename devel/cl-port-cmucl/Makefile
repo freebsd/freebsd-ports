@@ -1,0 +1,41 @@
+# New ports collection Makefile for:	cl-port-cmucl
+# Date created:				12 May 2003
+# Whom:					Henrik Motakef <henrik.motakef@web.de>
+#
+# $FreeBSD$
+
+PORTNAME=		port
+PORTVERSION=		2002.10.02.1
+CATEGORIES=		devel
+MASTER_SITES=		ftp://ftp.linux.org.uk/pub/lisp/experimental/cclan/ \
+			ftp://ftp.ntnu.no/pub/lisp/cclan/ \
+			ftp://www.aarg.net/pub/cclan/ \
+			http://thingamy.com/cclan/ \
+			http://www-jcsu.jesus.cam.ac.uk/ftp/pub/cclan/
+PKGNAMEPREFIX=		cl-
+PKGNAMESUFFIX=		-cmucl
+DISTFILES=		# use installed sources from CL_LIBDIR
+EXTRACT_ONLY=		# use installed sources from CL_LIBDIR
+
+MAINTAINER=		henrik.motakef@web.de
+COMMENT=		Cross-Lisp portability package
+
+BUILD_DEPENDS=		${LOCALBASE}/lib/common-lisp/port/port.asd:${PORTSDIR}/devel/cl-port \
+			${LOCALBASE}/lib/common-lisp/asdf/cmuclfasl/asdf.fasl:${PORTSDIR}/devel/cl-asdf-cmucl \
+			lisp:${PORTSDIR}/lang/cmucl
+RUN_DEPENDS=		${LOCALBASE}/lib/common-lisp/port/port.asd:${PORTSDIR}/devel/cl-port \
+			${LOCALBASE}/lib/common-lisp/asdf/cmuclfasl/asdf.fasl:${PORTSDIR}/devel/cl-asdf-cmucl \
+			lisp:${PORTSDIR}/lang/cmucl
+
+do-build:
+	WRKSRC=${WRKSRC}/ FBSD_ASDF_COMPILE_PORT=t\
+	lisp -nositeinit -noinit \
+		-load ${LOCALBASE}/etc/asdf-init.lisp \
+		-eval "(asdf:oos 'asdf:compile-op :port)" \
+		-eval "(quit)"
+
+do-install:
+	${MKDIR} ${PREFIX}/lib/common-lisp/port/cmuclfasl
+	${INSTALL_DATA} ${WRKSRC}/*.fasl ${PREFIX}/lib/common-lisp/port/cmuclfasl/
+
+.include <bsd.port.mk>
