@@ -7,6 +7,7 @@
 
 PORTNAME=	abiword
 PORTVERSION=	2.2.4
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.abisource.com/downloads/%SUBDIR%/${PORTVERSION}/source/
@@ -235,13 +236,13 @@ PLIST_SUB+=		WMF:=""
 PLIST_SUB+=		WMF:="@comment "
 .endif
 
-#.if defined(WITH_WORDPERFECT) || defined(PACKAGE_BUILDING)
-#LIB_DEPENDS+=		wpd-1.7:${PORTSDIR}/textproc/libwpd
-#CONFIGURE_ARGS+=	--enable-wordperfect
-#PLIST_SUB+=		WORDPERFECT:=""
-#.else
-#PLIST_SUB+=		WORDPERFECT:="@comment "
-#.endif
+.if defined(WITH_WORDPERFECT) || defined(PACKAGE_BUILDING)
+LIB_DEPENDS+=		wpd-0.8.8:${PORTSDIR}/textproc/libwpd
+CONFIGURE_ARGS+=	--enable-wordperfect
+PLIST_SUB+=		WORDPERFECT:=""
+.else
+PLIST_SUB+=		WORDPERFECT:="@comment "
+.endif
 
 .if defined(WITH_XSLFO) || defined(PACKAGE_BUILDING)
 CONFIGURE_ARGS+=	--enable-xsl-fo
@@ -348,9 +349,9 @@ pre-everything::
 .if !defined(WITH_WMF)
 	@${ECHO_MSG} "WITH_WMF=yes		View Windows Metafiles."
 .endif
-#.if !defined(WITH_WORDPERFECT)
-#	@${ECHO_MSG} "WITH_WORDPERFECT=yes	Import/export Wordperfect files."
-#.endif
+.if !defined(WITH_WORDPERFECT)
+	@${ECHO_MSG} "WITH_WORDPERFECT=yes	Import/export Wordperfect files."
+.endif
 .if !defined(WITH_XSLFO)
 	@${ECHO_MSG} "WITH_XSLFO=yes		Import/export XSL-FO."
 .endif
