@@ -6,23 +6,23 @@
 #
 
 PORTNAME=	plone
-PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTVERSION=	1.0.5
 CATEGORIES=	www zope
 MASTER_SITES= 	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	plone
-DISTNAME=	CMFPlone1.0.1
+DISTNAME=	CMFPlone1.0.5
 DIST_SUBDIR=	zope
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	filippo@widestore.net
 COMMENT=	A user friendly implementation of the CMF written on top of ZOPE
 
-RUN_DEPENDS=    ${LOCALBASE}/${SZOPEBASEDIR}/z2.py:${PORTSDIR}/www/zope \
-		${LOCALBASE}/${SZOPEBASEDIR}/lib/python/Products/CMFDefault/__init__.py:${PORTSDIR}/www/zope-cmf
+RUN_DEPENDS= ${LOCALBASE}/${SZOPEBASEDIR}/lib/python/Products/CMFDefault/__init__.py:${PORTSDIR}/www/zope-cmf13
+
 USE_PYTHON=	yes
+USE_ZOPE=	yes
 PYTHON_VERSION=	python2.1
 
-WRKSRC=		${WRKDIR}/CMFPlone-1.0.1
+WRKSRC=		${WRKDIR}/CMFPlone-1.0.5
 MODULES=	CMFPlone DCWorkflow Formulator i18n
 
 # You can change this in the environment if you like.
