@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	libbonoboui
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.0.1
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.2
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	GUI frontend to the libbonobo component of GNOME2
 
 LIB_DEPENDS=	gnomecanvas-2.200:${PORTSDIR}/graphics/libgnomecanvas \
 		gnome-2.200:${PORTSDIR}/x11/libgnome
