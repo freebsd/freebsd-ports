@@ -1,0 +1,12 @@
+*** -	Thu Jan 20 16:03:33 2000
+--- src/cronoutils.c	Thu Jan 20 16:01:37 2000
+***************
+*** 71,77 ****
+  
+  #include "cronoutils.h"
+  extern char *tzname[2];
+- extern long int timezone;
+  
+  
+  /* debug_file is the file to output debug messages to.  No debug
+--- 71,76 ----

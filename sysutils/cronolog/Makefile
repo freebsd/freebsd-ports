@@ -1,0 +1,22 @@
+# New ports collection makefile for:   cronolog
+# Version required:    1.6.1
+# Date created:        20 January 2000
+# Whom:                Mark Blackman <tmb_ports@maddog.u-net.com>
+#
+# $FreeBSD$
+#
+
+DISTNAME=      cronolog-1.6.1
+CATEGORIES=    sysutils
+MASTER_SITES=  http://www.ford-mason.co.uk/resources/cronolog/
+
+MAINTAINER=    tmb_ports@maddog.u-net.com
+
+MAN1=          cronolog.1m cronosplit.1m
+
+GNU_CONFIGURE= yes
+
+post-install:
+	${STRIP} ${PREFIX}/sbin/cronolog ${PREFIX}/sbin/cronolog
+
+.include <bsd.port.mk>
