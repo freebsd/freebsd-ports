@@ -8,6 +8,7 @@
 
 PORTNAME=	janosvm
 PORTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	java
 MASTER_SITES=	http://www.cs.utah.edu/flux/janos/${DISTNAME}/
 
