@@ -1,0 +1,6 @@
+======================================================================
+Babytrans is now installed! Go to: http://www.babylon.com and download
+the  dictionaries that  suit your needs. Use  unzip to decompress  the
+.EXE file you downloaded, and modify the configuration file located in
+%%DATADIR%%/dictionary
+======================================================================
