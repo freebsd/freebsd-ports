@@ -8,6 +8,7 @@
 PORTNAME=	mozilla
 PORTVERSION=	1.0.rc2
 PORTEPOCH=	1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
 		http://people.FreeBSD.org/~marcus/:local
@@ -69,6 +70,7 @@ CONFIGURE_ARGS=					\
 CONFIGURE_ARGS+=	--enable-extensions=default,irc,xmlterm
 PLIST_SUB+=	CHATZILLA=""
 .else
+CONFIGURE_ARGS+=	--enable-extensions=default,xmlterm
 PLIST_SUB+=	CHATZILLA="@comment "
 .endif
 CONFIGURE_ENV=	MOZ_INTERNAL_LIBART_LGPL=1
