@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	aterm
-PORTVERSION= 	0.3.6
+PORTVERSION= 	0.4.0
 CATEGORIES=	x11
-MASTER_SITES=	http://members.xoom.com/sashav/aterm/ \
-		http://www.tigr.net/afterstep/as-apps/download/aterm/
+MASTER_SITES=	http://download.sourceforge.net/aterm/
 
 MAINTAINER=	jim@FreeBSD.org
 
@@ -22,6 +21,14 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-transparency --enable-background-image \
 		--disable-delete-key --disable-backspace-key \
 		--enable-fading --enable-utmp --enable-wtmp
+
+.if defined(WITH_MENUBAR)
+CONFIGURE_ARGS+= --enable-menubar
+.endif
+
+.if defined(WITH_NEXTSCROLL)
+CONFIGURE_ARGS+= --enable-next-scroll
+.endif
 
 MAN1=		aterm.1
 
