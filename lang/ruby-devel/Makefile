@@ -35,6 +35,8 @@ CONFIGURE_ARGS=	${RUBY_CONFIGURE_ARGS} \
 		--enable-shared
 MAN1=		ruby${_RUBY_SUFFIX}.1
 
+LATEST_LINK=	ruby-devel
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 400014
