@@ -1,0 +1,12 @@
+TrafShow continuously display the information regarding packet
+traffic on the configured network interface that match the boolean
+expression. It periodically sort and updates this information. It
+may be useful for locating suspicious network traffic on the net.
+
+To use TrafShow, your kernel must be rebuilt with the following line
+added to your kernel config file (/sys/i386/conf/<YourMachine>):
+
+pseudo-device   bpfilter        4       # Berkeley packet filter
+
+The number of devices determines the maximum number of simultaneous
+BPF clients programs runnable. See /sys/i386/conf/LINT for details.

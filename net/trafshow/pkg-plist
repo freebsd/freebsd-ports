@@ -1,0 +1,6 @@
+@owner bin
+@group wheel
+@mode 750
+bin/trafshow
+@mode 644
+man/man1/trafshow.1.gz
