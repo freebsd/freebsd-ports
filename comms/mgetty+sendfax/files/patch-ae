@@ -1,0 +1,14 @@
+--- mgetty.c.orig	Tue Sep  1 20:22:57 1998
++++ mgetty.c	Tue Jan  5 18:57:26 1999
+@@ -64,7 +64,10 @@
+ /* prototypes for system functions (that are missing in some 
+  * system header files)
+  */
+-#ifndef __NetBSD__
++#if (defined(__unix__) || defined(unix)) && !defined(USG)
++#include <sys/param.h>
++#endif
++#if !(defined(BSD) && (BSD >= 199306))
+ time_t		time _PROTO(( long * tloc ));
+ #endif
+ 

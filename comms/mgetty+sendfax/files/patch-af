@@ -1,0 +1,14 @@
+--- faxrec.c.orig	Tue Dec 16 20:39:24 1997
++++ faxrec.c	Tue Jan  5 18:59:48 1999
+@@ -35,7 +35,10 @@
+ extern time_t call_start;		/* in faxrecp.c, set in mgetty.c */
+ static time_t call_done;
+ 
+-#ifndef __NetBSD__
++#if (defined(__unix__) || defined(unix)) && !defined(USG)
++#include <sys/param.h>
++#endif
++#if !(defined(BSD) && (BSD >= 199306))
+ time_t	time _PROTO(( long * tloc ));
+ #endif
+ 
