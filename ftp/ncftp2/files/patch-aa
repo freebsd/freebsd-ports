@@ -23,7 +23,7 @@
   VPATH=@srcdir@
   CPPFLAGS=@CPPFLAGS@ -I.
   
-! LIBS= -lresolv -lreadline -lncurses -lmytinfo
+! LIBS= -lreadline -lncurses -lmytinfo
   LDFLAGS=@LDFLAGS@
   
   # Any -D definitions:
