@@ -1,0 +1,95 @@
+*** etc/changeme.in~	Mon Mar 12 16:22:57 2001
+--- etc/changeme.in	Sun Dec  2 13:44:38 2001
+***************
+*** 6,12 ****
+  # We send an email message to root to notify him.
+  #
+  SYSADMIN=root
+! MAIL="/bin/mail"
+
+  HOSTNAME=`hostname`
+  MSG="$HOSTNAME UPS battery needs changing NOW."
+--- 6,12 ----
+  # We send an email message to root to notify him.
+  #
+  SYSADMIN=root
+! MAIL="/usr/bin/mail"
+
+  HOSTNAME=`hostname`
+  MSG="$HOSTNAME UPS battery needs changing NOW."
+*** etc/commfailure.in~	Mon Mar 12 16:22:57 2001
+--- etc/commfailure.in	Sun Dec  2 13:45:25 2001
+***************
+*** 6,12 ****
+  # We send an email message to root to notify him.
+  #
+  SYSADMIN=root
+! MAIL="/bin/mail"
+
+  HOSTNAME=`hostname`
+  MSG="$HOSTNAME Serial port communications with UPS lost"
+--- 6,12 ----
+  # We send an email message to root to notify him.
+  #
+  SYSADMIN=root
+! MAIL="/usr/bin/mail"
+
+  HOSTNAME=`hostname`
+  MSG="$HOSTNAME Serial port communications with UPS lost"
+*** etc/commok.in~	Mon Mar 12 16:22:58 2001
+--- etc/commok.in	Sun Dec  2 13:45:17 2001
+***************
+*** 6,12 ****
+  # We send an email message to root to notify him.
+  #
+  SYSADMIN=root
+! MAIL="/bin/mail"
+
+  HOSTNAME=`hostname`
+  MSG="$HOSTNAME Serial port communications with UPS restored"
+--- 6,12 ----
+  # We send an email message to root to notify him.
+  #
+  SYSADMIN=root
+! MAIL="/usr/bin/mail"
+
+  HOSTNAME=`hostname`
+  MSG="$HOSTNAME Serial port communications with UPS restored"
+*** etc/mainsback.in~	Mon Mar 12 16:22:58 2001
+--- etc/mainsback.in	Sun Dec  2 13:45:11 2001
+***************
+*** 6,12 ****
+  # We send an email message to root to notify him.
+  #
+  SYSADMIN=root
+! MAIL="/bin/mail"
+
+  HOSTNAME=`hostname`
+  MSG="$HOSTNAME Power has returned"
+--- 6,12 ----
+  # We send an email message to root to notify him.
+  #
+  SYSADMIN=root
+! MAIL="/usr/bin/mail"
+
+  HOSTNAME=`hostname`
+  MSG="$HOSTNAME Power has returned"
+*** etc/onbattery.in~	Mon Mar 12 16:22:57 2001
+--- etc/onbattery.in	Sun Dec  2 13:45:05 2001
+***************
+*** 6,12 ****
+  # We send an email message to root to notify him.
+  #
+  SYSADMIN=root
+! MAIL="/bin/mail"
+
+  HOSTNAME=`hostname`
+  MSG="$HOSTNAME Power Failure !!!"
+--- 6,12 ----
+  # We send an email message to root to notify him.
+  #
+  SYSADMIN=root
+! MAIL="/usr/bin/mail"
+
+  HOSTNAME=`hostname`
+  MSG="$HOSTNAME Power Failure !!!"
