@@ -1,0 +1,11 @@
+bin/xspeakfree
+lib/xspeakfree/busy.au
+lib/xspeakfree/cmd.tcl
+lib/xspeakfree/gui.tcl
+lib/xspeakfree/newdialog.tcl
+lib/xspeakfree/open3.tcl
+lib/xspeakfree/ring.au
+lib/xspeakfree/siteconf.tcl
+lib/xspeakfree/xspeakfree-version.tcl
+lib/xspeakfree/xspeakfree.tcl
+@dirrm lib/xspeakfree
