@@ -1,0 +1,10 @@
+bin/fwchat
+@unexec /bin/rm -f %D/lib/dcons/linker.hints
+lib/dcons/dcons.ko
+@exec type kldxref > /dev/null 2>&1 && kldxref %D/lib/dcons
+etc/rc.d/dcons.sh
+%%DOCSDIR%%/gdb-usage
+%%DOCSDIR%%/README.dcons
+%%DOCSDIR%%/sample-script
+@dirrm lib/dcons
+@dirrm %%DOCSDIR%%

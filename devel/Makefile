@@ -144,6 +144,7 @@
     SUBDIR += cxref
     SUBDIR += darcs
     SUBDIR += darts
+    SUBDIR += dcons
     SUBDIR += ddd
     SUBDIR += decompyle
     SUBDIR += devhelp
