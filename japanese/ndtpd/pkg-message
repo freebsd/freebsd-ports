@@ -1,0 +1,11 @@
+************************************************************************
+   To use `ndtpd', copy a sample configuration file `ndtpd.conf.sample'
+to `ndtpd.conf' in '${PREFIX}/etc' directory, and edit it.  Consult the
+"Configuration File" section of info file.
+
+   If you want to start `ndtpd' as a standalone daemon, copy a script
+`ndtpd.sh.sample' to `ndtpd.sh' in '${PREFIX}/etc/rc.d' directory, and
+exec it.  Otherwise, to start as a child process of `inetd', edit the
+file `/etc/inetd.conf'.  In either case, consult the "Start the Server"
+section of info file.
+************************************************************************

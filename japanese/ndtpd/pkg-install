@@ -1,114 +1,61 @@
-#! /bin/sh
+#!/bin/sh -
+# an installation script for ndtpd
 
-[ "$2" = "POST-INSTALL" ] || exit 0
-[ "X${IS_INTERACTIVE}" != X ] || exit 0
+ask() {
+    local question default answer
 
-#
-# Make directories under /var.
-#
-[ ! -d /var/ndtpd ] && mkdir /var/ndtpd
-[ ! -d /var/ndtpd/log ] && mkdir /var/ndtpd/log
+    question=$1
+    default=$2
 
-#
-# Add `ndtp' to /etc/services.
-#
-sed -e 's/#.*//' -e 's/^/ /' -e 's/$/ /g' -e 's/	/ /g' /etc/services \
-    | grep ' ndtp ' > /dev/null 2>&1
+    if [ -z "${PACKAGE_BUILDING}" ]; then
+	read -p "${question} (y/n) [${default}]? " answer
+        [ "${answer}" ] && default=${answer}
+    fi
+    echo ${default}
+}
 
-if [ $? -ne 0 ] ; then
-    YESNO=YET
-    while [ "${YESNO}" = YET ] ; do
-	if [ -z "${PACKAGE_BUILDING}" ]; then
-	    echo -n "May I register the \`ndtp' service name to /etc/services? ([y]/n) "
-	    read LINE
-	else
-	    LINE=y
-	fi
-	case "X${LINE}" in
-	Xy|XY|X)
-	    YESNO=YES
-	    ;;
-	Xn|XN)
-	    YESNO=NO
-	    ;;
-	*)
-	    echo "Please answer \`y' or \`n'."
-	    ;;
+yesno() {
+    local question default
+
+    question=$1
+    default=$2
+
+    while :; do
+	case `ask "${question}" ${default}` in
+	    [Yy]*) return 0;;
+	    [Nn]*) return 1;;
 	esac
+	echo "Please answer yes or no."
     done
+}
 
-    if [ "${YESNO}" = YES ] ; then
-	if grep '[ 	]2010/tcp' /etc/services > /dev/null 2>&1 ; then
-	    cp /etc/services /etc/services.bak
-	    sed -e 's/\([ 	]2010\/tcp\)/\1	ndtp/' /etc/services.bak \
-		> /etc/services
+[ "$2" = POST-INSTALL ] || exit 0
+
+#
+# Add an entry for `ndtp' to /etc/services.
+#
+file=/etc/services
+back=${file}.bak
+name=ndtp
+port=2010/tcp
+comment="Network Dictionary Transfer Protocol"
+
+echo "************************************************************************"
+if sed 's/#.*//' ${file} | grep -qw ${name}; then
+    echo "This system has already an entry for ${name} in ${file}."
+else
+    echo "This system has no entry for ${name} in ${file}."
+    if yesno "  Would you like to add it automatically?" y; then
+	cp -f ${file} ${back}
+	echo "    The original file is saved as ${back}."
+
+	if sed 's/#.*//' ${file} | grep -qw ${port}; then
+	    sed 's,^\([^#]*[ 	]'${port}'\),\1	'${name}, ${back} > ${file}
 	else
-	    echo 'ndtp		2010/tcp' >> /etc/services
+	    echo "${name}		${port}   #${comment}" >> ${file}
 	fi
-	echo "The original file is saved as /etc/services.bak."
-	echo
     fi
 fi
-
-#
-# Copy a rc-file to `${PKG_PREFIX}/etc/rc.d/ndtpd.sh'.
-#
-if [ -f ${PKG_PREFIX}/etc/rc.d/ndtpd.sh ] ; then
-    YESNO=YET
-    while [ "${YESNO}" = YET ] ; do
-	if [ -z "${PACKAGE_BUILDING}" ]; then
-	    echo -n "${PKG_PREFIX}/etc/rc.d/ndtpd.sh already exists.  May I overwrite it? (y/[n]) "
-	    read LINE
-	else
-	    LINE=y
-	fi
-	case "X${LINE}" in
-	Xy|XY)
-	    YESNO=YES
-	    ;;
-	Xn|XN|X)
-	    YESNO=NO
-	    ;;
-	*)
-	    echo "Please answer \`y' or \`n'."
-	    ;;
-	esac
-    done
-else
-    YESNO=YES
-fi
-
-if [ "${YESNO}" = YES ] ; then
-    sed "s;@prefix@;${PKG_PREFIX};" > ${PKG_PREFIX}/etc/rc.d/ndtpd.sh \
-	<< '__END__'
-#! /bin/sh
-#
-# NDTPD: rc-file for FreeBSD.
-#
-
-### NDTPD options: ###
-ndtpd_enable="NO"		# Run ndtpd (or NO).
-ndtpd_flags=""			# Flags to ndtpd (if enabled).
-### End of NDTPD options: ###
-
-ndtpd="@prefix@/sbin/ndtpd"
-if [ "X${ndtpd_enable}" = X"YES" -a -f ${ndtpd} ]; then
-	echo -n " ndtpd"
-	${ndtpd} ${ndtpd_flags}
-fi
-__END__
-
-    chmod 755 ${PKG_PREFIX}/etc/rc.d/ndtpd.sh
-    echo
-    echo "I put a rc-file to ${PKG_PREFIX}/etc/rc.d/ndtpd.sh, but ndtpd doesn't"
-    echo "start through the script.  If you want to start ndtpd as standalone"
-    echo "daemon through the script, please turn the \`ndtpd_enable' variable"
-    echo "in the script to \`YES', and set \`ndtpd_flags' to an appropriate"
-    echo "value if required."
-    echo ""
-    echo "If you want to start ndtpd through inetd, the script is not"
-    echo "required."
-    echo
-fi
+echo "************************************************************************"
 
 exit 0
