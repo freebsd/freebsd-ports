@@ -226,6 +226,7 @@
     SUBDIR += samba
     SUBDIR += scotty
     SUBDIR += scotty3
+    SUBDIR += sdl_net
     SUBDIR += sendfile
     SUBDIR += sharity-light
     SUBDIR += slirp
