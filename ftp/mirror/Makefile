@@ -17,7 +17,6 @@ NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
 MAN1=		mirror.1 mirror-master.1
 
-
 pre-install:
 	${MKDIR} ${PREFIX}/lib/mirror
 
