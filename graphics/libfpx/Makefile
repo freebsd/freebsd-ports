@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libfpx
-PORTVERSION=	1.2.0.7
+PORTVERSION=	1.2.0.8
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://gd.tuwien.ac.at/pub/graphics/%SUBDIR%/ \
 		ftp://ftp.sunet.se/pub/multimedia/graphics/%SUBDIR%/ \
