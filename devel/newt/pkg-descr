@@ -1,10 +1,10 @@
-   Newt is a windowing toolkit for text mode built from the slang
-   library. It allows color text mode applications to easily use
-   stackable windows, push buttons, check boxes, radio buttons, lists,   
-   entry fields, labels, and displayable text. Scrollbars are supported,
-   and forms may be nested to provide extra functionality.
+Newt is a windowing toolkit for text mode built from the slang
+library. It allows color text mode applications to easily use
+stackable windows, push buttons, check boxes, radio buttons, lists,   
+entry fields, labels, and displayable text. Scrollbars are supported,
+and forms may be nested to provide extra functionality.
 
-WWW: http://www.redhat.com/support/manuals/archive/RHL-5.1-Installation-Guide/ manual/doc102.html
+WWW: http://www.msg.com.mx/Newt/
 
 Besides the newt library, this port provides whiptail, which may
 be used from shell scripts similarly to Savio Lam's "dialog". Newt

@@ -6,34 +6,70 @@
 #
 
 PORTNAME=	newt
-PORTVERSION=	0.50.8.2
+PORTVERSION=	${RPMVERSION}.${RPMREVISION}
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.redhat.com/pub/redhat/redhat-6.2-en/os/i386/SRPMS/
-
-DISTNAME=	${PORTNAME}-0.50.8-2
+MASTER_SITES=	http://www.silug.org/%SUBDIR%/ \
+		ftp://ftp.redhat.com/%SUBDIR%/ \
+		http://ftp.dulug.duke.edu/%SUBDIR%/ 
+MASTER_SITE_SUBDIR=	pub/redhat/linux/rawhide/SRPMS/SRPMS
+DISTNAME=	${PORTNAME}-${RPMVERSION}-${RPMREVISION}
 EXTRACT_SUFX=	.src.rpm
+PKGNAMESUFFIX=	${PYTHONSUFFIX}${TCLSUFFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perky@fallin.lv
 
+BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang \
-		tcl82.1:${PORTSDIR}/lang/tcl82 \
 		popt.0:${PORTSDIR}/devel/popt
-BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm \
-		python1.5:${PORTSDIR}/lang/python15
 
-USE_GMAKE=	yes
+RPMVERSION=	0.50.33
+RPMREVISION=	1
+WRKSRC=		${WRKDIR}/newt-${RPMVERSION}
+
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-WRKSRC=		${WRKDIR}/newt-0.50.8
 VERSION=	0
-MAKE_ENV+=	prefix=${PREFIX} VERSION=${VERSION} CC=${CC} PCFLAGS="${CFLAGS}"
-PLIST_SUB+=	VERSION="${VERSION}"
+TCL_VERSION?=	tcl8.3
+TCL_NODOT=	${TCL_VERSION:S/.//}
+MAKE_ENV+=	VERSION=${VERSION} CC=${CC} PCFLAGS="${CFLAGS}" TCLVERSION="${TCL_VERSION}"
+PLIST_SUB+=	VERSION=${VERSION} EXAMPLESDIR="${EXAMPLESDIR:S,${PREFIX}/,,}"
 CPIO?=		/usr/bin/cpio
+
+.if !defined(WITHOUT_PYTHON)
+PYTHONSUFFIX=	-${PYTHON_PKGNAMEPREFIX:S/-//}
+BUILD_DEPENDS+=	${PYDISTUTILS}
+USE_PYTHON=	yes
+MAKE_ENV+=	WITH_PYTHON=yes
+PLIST_SUB+=	PYTHONOPT=""
+.else
+PLIST_SUB+=	PYTHONOPT="@comment "
+.endif
+
+.if !defined(WITHOUT_TCL)
+TCLSUFFIX=	-${TCL_NODOT}
+LIB_DEPENDS+=	${TCL_NODOT}:${PORTSDIR}/lang/${TCL_NODOT}
+MAKE_ENV+=	WITH_TCL=yes
+PLIST_SUB+=	TCLOPT=""
+.else
+PLIST_SUB+=	TCLOPT="@comment "
+.endif
 
 do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
 	@${LOCALBASE}/bin/rpm2cpio ${_DISTDIR}${DISTFILES} | (cd ${WRKDIR};${CPIO} -i)
 	@${TAR} xfz ${WRKSRC}.tar.gz -C ${WRKDIR}
+
+.if !defined(WITHOUT_PYTHON)
+post-build:
+	@cd ${WRKSRC} && ${MAKE_ENV} ${PYTHON_CMD} ${FILESDIR}/setup.py build
+
+post-install:
+	@cd ${WRKSRC} && ${MAKE_ENV} ${PYTHON_CMD} ${FILESDIR}/setup.py install
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/peanuts.py ${WRKSRC}/popcorn.py ${EXAMPLESDIR}
+.endif
+.endif
 
 .include <bsd.port.mk>
