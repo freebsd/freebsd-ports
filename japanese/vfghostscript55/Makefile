@@ -7,7 +7,7 @@
 
 PORTNAME=	vfghostscript
 PORTVERSION=	5.50a
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/gnu/gs550/ \
@@ -66,7 +66,7 @@ GS_DRIVERS+=	gdevalps-0.21.tar.gz
 GS_DRIVERS+=	gdevmd2k-0.2a.tar.gz
 GS_DRIVERS+=	gdevrpdl-1.4.tar.gz
 GS_DRIVERS+=	eplaser-2.0.6-550.tgz
-GS_DRIVERS+=	hpijs-1.0.1.tar.gz
+GS_DRIVERS+=	hpijs-1.0.2.tar.gz
 
 # replacement for pdf_sec.ps, that allows you to read encrypted PDF files
 DECRYPT_PDF=	pdf_sec.ps
@@ -82,21 +82,23 @@ post-extract:
 	  ${MKDIR} ${PRINTER}/gdevdmpr ; \
 	  ${TAR} -C gdevdmpr --unlink -xzf ${_DISTDIR}/dmprt-2.01.tar.gz ; \
 	  ${TAR} --unlink -xzf ${_DISTDIR}/gdevnpdl-1.6.3.tar.gz ; \
+	  ${PATCH} -s -d ${PRINTER}/gdevnpdl-1.6.3 < \
+			${PRINTER}/gdevnpdl-1.6.3/gdevnpdl.patch-gs5.50 ; \
 	  ${TAR} --unlink -xzf ${_DISTDIR}/epag-3.09.tar.gz ; \
 	  ${TAR} --unlink -xzf ${_DISTDIR}/gdevalps-0.21.tar.gz ; \
 	  ${TAR} --unlink -xzf ${_DISTDIR}/gdevmd2k-0.2a.tar.gz ; \
 	  ${TAR} --unlink -xzf ${_DISTDIR}/gdevrpdl-1.4.tar.gz ; \
 	  ${TAR} --unlink -xzf ${_DISTDIR}/eplaser-2.0.6-550.tgz ; \
-	  ${TAR} --unlink -xzf ${_DISTDIR}/hpijs-1.0.1.tar.gz ; \
+	  ${TAR} --unlink -xzf ${_DISTDIR}/hpijs-1.0.2.tar.gz ; \
 	)
 
 pre-patch:
 	@${CAT} ${WRKSRC}/gs5.50-vflib-1.0/gs5.50-vflib-1.0.diff | \
 		${PATCH} -d ${WRKSRC} -p1 --forward --quiet -E
-	@${PERL} -pi -e 's|CFLAGS="-O2 -Wall"|CFLAGS=\$$CFLAGS"| ; \
-	   s|CXXFLAGS="-O2 -Wall"|CXXFLAGS="\$$CXXFLAGS"|g ; \
-	    ${WRKSRC}/hpijs-1.0.1/configure
-	@find ${PRINTER}/hpijs-1.0.1 -name '*.h' | xargs ${PERL} -pi -e \
+	@${PERL} -pi -e 's|CFLAGS="-O2 -Wall"|CFLAGS="\$$CFLAGS"|g ; \
+		 s|CXXFLAGS="-O2 -Wall"|CXXFLAGS="\$$CXXFLAGS"|g' \
+			${PRINTER}/hpijs-1.0.2/configure
+	@find ${PRINTER}/hpijs-1.0.2 -name '*.h' | xargs ${PERL} -pi -e \
 	  's|#include <malloc.h>||g'
 
 post-patch:
@@ -114,11 +116,11 @@ post-patch:
 	  ${CP} gdevrpdl-1.4/gdevrpdl.c gdevrpdl-1.4/gdevrpdl.mak ${WRKSRC}; \
 	  ${CP} eplaser/gdevescv.[ch] eplaser/gdevescv.mak ${WRKSRC}; \
 	  ${CP} eplaser/gdevesmv.c eplaser/gdevesmv.mak ${WRKSRC}; \
-	  ${CP} hpijs-1.0.1/gdevijs.[ch] hpijs-1.0.1/ijs.[ch] ${WRKSRC}; \
-	  ${CP} hpijs-1.0.1/ijs_client.[ch] hpijs-1.0.1/ijs_exec_unix.c ${WRKSRC}; \
-	  ${CP}	hpijs-1.0.1/unistd_.h ${WRKSRC}; \
+	  ${CP} hpijs-1.0.2/gdevijs.[ch] hpijs-1.0.2/ijs.[ch] ${WRKSRC}; \
+	  ${CP} hpijs-1.0.2/ijs_client.[ch] hpijs-1.0.2/ijs_exec_unix.c ${WRKSRC}; \
+	  ${CP}	hpijs-1.0.2/unistd_.h ${WRKSRC}; \
 	  ${SED} -n -e '/^### -* IJS Interface -*/,/^###/p' \
-	    hpijs-1.0.1/contrib.mak | ${SED} '$d' > ${WRKSRC}/gdevijs.mak; \
+	    hpijs-1.0.2/contrib.mak | ${SED} '$d' > ${WRKSRC}/gdevijs.mak; \
 	  )
 	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/gdev10v.mak.patch
 	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/mjc.dev.patch
@@ -129,7 +131,6 @@ post-patch:
 	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/gdevlips.mak.patch
 	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/gdevescv.c.patch
 	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/gdevesmv.c.patch
-	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/gdevijs.mak.patch
 	@${CAT} ${WRKSRC}/gdev10v.mak >> ${WRKSRC}/contrib.mak
 	@${CAT} ${WRKSRC}/gdevdmpr.mak >> ${WRKSRC}/contrib.mak
 	@${CAT} ${WRKSRC}/gdevepag.mak >> ${WRKSRC}/contrib.mak
@@ -144,7 +145,7 @@ post-patch:
 	@${CAT} ${WRKSRC}/gdevijs.mak >> ${WRKSRC}/contrib.mak
 
 post-configure:
-	@(cd ${PRINTER}/hpijs-1.0.1 ; \
+	@(cd ${PRINTER}/hpijs-1.0.2 ; \
 	  ${SETENV} ${MAKE_ENV} ${SH} ./configure --prefix=${PREFIX})
 
 pre-build:
@@ -153,7 +154,7 @@ pre-build:
 post-build:
 	@(cd ${PRINTER}/epag-3.09 ; \
 	  ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} Makefile)
-	@(cd ${PRINTER}/hpijs-1.0.1 ; \
+	@(cd ${PRINTER}/hpijs-1.0.2 ; \
 	  ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} Makefile)
 
 pre-install:
@@ -164,7 +165,7 @@ pre-install:
 post-install:
 	${INSTALL_DATA} ${_DISTDIR}/pdf_sec.ps ${GSINST_DIR}
 	${INSTALL_PROGRAM} ${PRINTER}/epag-3.09/ert ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${PRINTER}/hpijs-1.0.1/hpijs ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${PRINTER}/hpijs-1.0.2/hpijs ${PREFIX}/bin
 	@strip ${PREFIX}/bin/gs
 	@( \
 	  ${CP} ${WRKSRC}/gs5.50-vflib-1.0/README ${DOC_DIR}/README.gs5.10-vflib ; \
@@ -196,7 +197,7 @@ post-install:
 	  ${CP} ${PRINTER}/epag-3.09/psprint ${DOC_DIR}/epag-3.09 ; \
 	  ${CP} ${PRINTER}/gdevmjc-0.8/gdevmjc.ps ${GSINST_DIR} ; \
 	  ${CP} ${PRINTER}/eplaser/readme-eplaser.euc ${DOC_DIR} ; \
-	  ${CP} ${PRINTER}/hpijs-1.0.1/hpijs_readme.html ${DOC_DIR} ; \
+	  ${CP} ${PRINTER}/hpijs-1.0.2/hpijs_readme.html ${DOC_DIR} ; \
 	)
 
 .include <bsd.port.mk>
