@@ -10766,7 +10766,6 @@ tdl		ports/devel/tdl
 tdtd.el		ports/textproc/tdtd.el
 teTeX		ports/print/teTeX
 teTeX-base	ports/print/teTeX-base
-teTeX-latex2e	ports/print/teTeX-latex2e
 teTeX-texmf	ports/print/teTeX-texmf
 tea		ports/editors/tea
 tea-total	ports/security/tea-total
