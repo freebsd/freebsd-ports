@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	retawq
-PORTVERSION=	0.0.5
+PORTVERSION=	0.0.6
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -30,7 +30,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/retawq ${PREFIX}/bin
-.for lang in de fr
+.for lang in de es fr
 	${INSTALL_DATA} ${WRKSRC}/i18n/${lang}.mo ${PREFIX}/share/locale/${lang}/LC_MESSAGES/${PORTNAME}.mo
 .endfor
 
