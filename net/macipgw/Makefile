@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	stb/netatalk
 
 MAINTAINER=	ports@freebsd.org
 
+BROKEN=		"Does not build"
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libatalk.a:${PORTSDIR}/net/netatalk \
 		${LOCALBASE}/include/atalk/ddp.h:${PORTSDIR}/net/netatalk
 RUN_DEPENDS=	${LOCALBASE}/libexec/atalkd:${PORTSDIR}/net/netatalk
