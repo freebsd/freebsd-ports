@@ -42,14 +42,12 @@ DISTFILES=	apache_${VERSION_APACHE}.tar.gz php-${VERSION_PHP}.tar.gz
 
 MAINTAINER=	dirk@FreeBSD.org
 
-BROKEN=		"PHP-${VERSION_PHP} is beta. Beware the bugs. Enter at your own risk!"
-
 Y2K=		http://www.php.net/y2k.php3
 
 PHP_DISTDIR=	version4/downloads
 
 VERSION_APACHE=	1.3.12
-VERSION_PHP=	4.0b3
+VERSION_PHP=	4.0b4pl1
 
 NO_LATEST_LINK=	yes
 USE_PERL5=	yes
