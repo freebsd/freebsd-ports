@@ -1,6 +1,6 @@
---- mike.c.orig	Tue Sep 14 08:27:51 1999
-+++ mike.c	Fri Dec 31 15:29:10 1999
-@@ -132,8 +132,8 @@
+--- mike.c.orig	Mon Aug 19 17:20:52 2002
++++ mike.c	Thu Dec 12 02:46:38 2002
+@@ -130,8 +130,8 @@
  #endif /* UNIX420 */
  
  #ifdef UNIX5
@@ -11,7 +11,7 @@
  #endif /* UNIX5 */
  
  /* Set raw mode on terminal file.  Basically, get the terminal into a
-@@ -152,16 +152,16 @@
+@@ -150,16 +150,16 @@
  #endif /* UNIX420 */
  
  #ifdef UNIX5
@@ -31,7 +31,7 @@
  #endif /* UNIX5 */
  /*printf("\n(raw)\n");*/
  }
-@@ -180,7 +180,7 @@
+@@ -178,7 +178,7 @@
  #endif /* UNIX420 */
  
  #ifdef UNIX5
@@ -40,15 +40,15 @@
  #endif /* UNIX5 */
  /*printf("\n(cooked)\n");*/
  }
-@@ -1144,7 +1144,7 @@
+@@ -1135,7 +1135,7 @@
  /*  SENDFILE  --  Send a file or, if the file name is NULL or a
  		  single period, send real-time sound input. */
  
--static int sendfile(f)
-+static int sfsendfile(f)
-   char *f;
+-static int sendfile(char *f)
++static int sfsendfile(char *f)
  { 
      soundbuf netbuf;
+ #define buf netbuf.buffer.buffer_val
 @@ -2306,7 +2306,7 @@
  		    return 1;
  		}

@@ -1,28 +1,33 @@
---- Makefile.orig	Sat Sep 18 18:29:44 1999
-+++ Makefile	Wed Jan  5 20:23:52 2000
-@@ -3,7 +3,7 @@
- 
- # Debugging options
- 
--DEBUG = -g -DHEXDUMP
-+#DEBUG = -g -DHEXDUMP
- #DEBUG = -g -DHEXDUMP -DNOCRYPTO
+--- Makefile.orig	Fri Oct 19 07:01:35 2001
++++ Makefile	Thu Dec 12 02:44:56 2002
+@@ -6,7 +6,7 @@
  #DEBUG = -O
+ #DEBUG = -g -DHEXDUMP
+ #DEBUG = -g -DHEXDUMP -DNOCRYPTO
+-DEBUG = -O3 -DHEXDUMP
++#DEBUG = -O3 -DHEXDUMP
    
-@@ -38,9 +38,9 @@
- #    functionality is working.	Please see the detailed description
+ # Installation 
+ 
+@@ -43,13 +43,13 @@
  #    of the available flags which follows these declarations.
  #
--CCFLAGS =  -DAUDIO_BLOCKING -DLINUX -DHALF_DUPLEX -DM_LITTLE_ENDIAN
--CC = gcc -O3 # for GNU's gcc compiler
+ #CCFLAGS =  -DAUDIO_BLOCKING -DLINUX -DHALF_DUPLEX -DM_LITTLE_ENDIAN
+-CCFLAGS =  -DAUDIO_BLOCKING -DLINUX -DHALF_DUPLEX -DM_LITTLE_ENDIAN -DNEEDED_LINEAR -DLINUX_DSP_SMALL_BUFFER
+-CC = gcc -Wall # for GNU's gcc compiler
++#CCFLAGS =  -DAUDIO_BLOCKING -DLINUX -DHALF_DUPLEX -DM_LITTLE_ENDIAN -DNEEDED_LINEAR -DLINUX_DSP_SMALL_BUFFER
++#CC = gcc -Wall # for GNU's gcc compiler
+ #   CELPFLAGS below are tweaked for GCC 2.96 on Intel Pentium
+ #   Comment out if you are using a compiler which doesn't
+ #   understand these options.
+-CELPFLAGS = -fomit-frame-pointer -ffast-math -funroll-loops
 -LFLAGS = -lncurses -lm
-+#CCFLAGS =  -DAUDIO_BLOCKING -DLINUX -DHALF_DUPLEX -DM_LITTLE_ENDIAN
-+#CC = gcc -O3 # for GNU's gcc compiler
++#CELPFLAGS = -fomit-frame-pointer -ffast-math -funroll-loops
 +#LFLAGS = -lncurses -lm
  #
  # If the above LFLAGS doesn't work, try the one below.
  #LFLAGS = -lcurses -lm
-@@ -220,8 +220,8 @@
+@@ -237,8 +237,8 @@
  #    Depending on how your driver handles non-blocking I/O,
  #    you may also have to add -DAUDIO_BLOCKING to the
  #    CCFLAGS line.
@@ -33,31 +38,31 @@
  
  #			   Hewlett-Packard
  #		      (courtesy of Marc Kilian)
-@@ -269,7 +269,7 @@
+@@ -286,7 +286,7 @@
  
  #   Compiler flags
  
--CFLAGS = $(DEBUG) -Iadpcm -Ilpc -Igsm/inc -Imd5 -Iidea -Ilibdes -Iblowfish $(CARGS) $(DUPLEX) $(CCFLAGS) $(DOMAIN)
-+CFLAGS = $(OPTFLAGS) $(DEBUG) -Iadpcm -Ilpc -I$(LOCALBASE)/include -Iidea -Ilibdes -Iblowfish $(CARGS) $(DUPLEX) $(CCFLAGS) $(DOMAIN)
+-CFLAGS = $(DEBUG) -Iadpcm -Icelp -Ilpc -Igsm/inc -Ilpc10 -Imd5 -Ides -Iidea -Ilibdes -Iblowfish $(CARGS) $(DUPLEX) $(CCFLAGS) $(DOMAIN)
++CFLAGS = $(OPTFLAGS) $(DEBUG) -Iadpcm -Icelp -Ilpc -I$(LOCALBASE)/include -Ilpc10 -Imd5 -Ides -Iidea -Ilibdes -Iblowfish $(CARGS) $(DUPLEX) $(CCFLAGS) $(DOMAIN)
  
- PROGRAMS = sfspeaker sfmike sflaunch sflwld sflwl sfecho sfreflect sfvod
+ BINARIES = sfspeaker sfmike sflaunch sflwld sflwl sfecho sfreflect
  
-@@ -278,12 +278,12 @@
+@@ -301,12 +301,12 @@
  SPKROBJS = speaker.o codecs.o deskey.o g711.o rate.o rtpacket.o soundbyte.o ulaw.o usleep.o vatpkt.o vox.o audio_hp.o audio_sgi.o common.o
  
- sfspeaker: $(SPKROBJS) adpcmlib.o libblowfish.o lpclib.o lpc10lib.o gsmlib.o deslib.o md5lib.o idealib.o libdes.o xdsub.o 
--	$(CC) $(SPKROBJS) adpcm/adpcm-u.o blowfish/libblowfish.a des/des.a md5/md5.o idea/idea.a lpc10/liblpc10.a gsm/lib/libgsm.a lpc/lpc.o xdsub.o libdes/libdes.a $(LFLAGS) -o sfspeaker
-+	$(CC) $(SPKROBJS) adpcm/adpcm-u.o blowfish/libblowfish.a des/des.a -lmd idea/idea.a lpc10/liblpc10.a -L/usr/local/lib -lgsm lpc/lpc.o xdsub.o libdes/libdes.a $(LFLAGS) -o sfspeaker
+ sfspeaker: $(SPKROBJS) adpcmlib.o celplib.o libblowfish.o lpclib.o lpc10lib.o gsmlib.o deslib.o md5lib.o idealib.o libdes.o xdsub.o 
+-	$(CC) $(SPKROBJS) adpcm/adpcm-u.o blowfish/libblowfish.a celp/celp.o des/des.a md5/md5.o idea/idea.a lpc10/liblpc10.a gsm/lib/libgsm.a lpc/lpc.o xdsub.o libdes/libdes.a $(LFLAGS) -o sfspeaker
++	$(CC) $(SPKROBJS) adpcm/adpcm-u.o blowfish/libblowfish.a celp/celp.o des/des.a -lmd idea/idea.a lpc10/liblpc10.a gsm/lib/libgsm.a lpc/lpc.o xdsub.o libdes/libdes.a $(LFLAGS) -o sfspeaker
  
  MIKEOBJS = mike.o codecs.o deskey.o g711.o rate.o rtpacket.o soundbyte.o ulaw.o usleep.o vatpkt.o xdsub.o audio_hp.o audio_sgi.o
  
- sfmike: $(MIKEOBJS) adpcmlib.o libblowfish.o lpclib.o lpc10lib.o gsmlib.o deslib.o md5lib.o idealib.o libdes.o
--	$(CC) $(MIKEOBJS) adpcm/adpcm-u.o des/des.a md5/md5.o idea/idea.a -lm blowfish/libblowfish.a lpc10/liblpc10.a gsm/lib/libgsm.a lpc/lpc.o libdes/libdes.a $(LFLAGS) -o sfmike
-+	$(CC) $(MIKEOBJS) adpcm/adpcm-u.o des/des.a -lmd idea/idea.a -lm blowfish/libblowfish.a lpc10/liblpc10.a -L/usr/local/lib -lgsm lpc/lpc.o libdes/libdes.a $(LFLAGS) -o sfmike
+ sfmike: $(MIKEOBJS) adpcmlib.o celplib.o libblowfish.o lpclib.o lpc10lib.o gsmlib.o deslib.o md5lib.o idealib.o libdes.o
+-	$(CC) $(MIKEOBJS) adpcm/adpcm-u.o celp/celp.o des/des.a md5/md5.o idea/idea.a -lm blowfish/libblowfish.a lpc10/liblpc10.a gsm/lib/libgsm.a lpc/lpc.o libdes/libdes.a $(LFLAGS) -o sfmike
++	$(CC) $(MIKEOBJS) adpcm/adpcm-u.o celp/celp.o des/des.a -lmd idea/idea.a -lm blowfish/libblowfish.a lpc10/liblpc10.a gsm/lib/libgsm.a lpc/lpc.o libdes/libdes.a $(LFLAGS) -o sfmike
  
  LAUNCHOBJS = launch.o soundbyte.o usleep.o g711.o
  
-@@ -303,12 +303,12 @@
+@@ -326,12 +326,12 @@
  ECHOOBJS = echo.o codecs.o g711.o rtpacket.o ulaw.o xdsub.o
  
  sfecho: $(ECHOOBJS) md5lib.o
@@ -72,16 +77,7 @@
  
  #	Configure the voice on demand server for the platform's
  #	location of Perl and network constant definitions.
-@@ -337,7 +337,7 @@
- #	in make not necessarily available on all platforms.
- 
- adpcmlib.o:
--	( echo "Building ADPCM library."; cd adpcm ; make CC="$(CC)" )
-+	( echo "Building ADPCM library."; cd adpcm ; make CC="$(CC) $(CCFLAGS)" )
- 	echo "ADPCM" >adpcmlib.o
- 
- deslib.o:
-@@ -349,11 +349,11 @@
+@@ -376,11 +376,11 @@
  	echo "BLOWFISH" >libblowfish.o
  
  libdes.o:
@@ -95,22 +91,3 @@
  	echo "LPC" >lpclib.o
  
  lpc10lib.o:
-@@ -361,15 +361,15 @@
- 	echo "LPC" >lpc10lib.o
- 
- gsmlib.o:
--	( echo "Building GSM library."; cd gsm ; make CC="$(CC)" )
-+#	( echo "Building GSM library."; cd gsm ; make CC="$(CC) $(CCFLAGS)" )
- 	echo "GSM" >gsmlib.o
- 
- md5lib.o:
--	( echo "Building MD5 library."; cd md5 ; make CC="$(CC)" )
-+#	( echo "Building MD5 library."; cd md5 ; make CC="$(CC) $(CCFLAGS)" )
- 	echo "MD5" >md5lib.o
- 
- idealib.o:
--	( echo "Building IDEA library."; cd idea ; make CC="$(CC)" )
-+	( echo "Building IDEA library."; cd idea ; make CC="$(CC) $(CCFLAGS)" )
- 	echo "IDEA" >idealib.o
- 
- #   Object file dependencies

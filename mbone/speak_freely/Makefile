@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	speak_freely
-PORTVERSION=	7.1
+PORTVERSION=	7.5
 CATEGORIES=	mbone audio security
-MASTER_SITES=	http://www.fourmilab.ch/speakfree/unix/
+MASTER_SITES=	http://www.fourmilab.ch/speakfree/unix/download/${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 
