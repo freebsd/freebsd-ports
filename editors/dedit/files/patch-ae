@@ -1,0 +1,29 @@
+--- configure.orig	Fri Aug 11 17:27:06 2000
++++ configure	Wed Aug 23 00:14:49 2000
+@@ -4109,7 +4109,7 @@
+   cat conftest.$ac_ext >&5
+   rm -rf conftest*
+   CATOBJEXT=.mo
+-		   DATADIRNAME=lib
++		   DATADIRNAME=share
+ fi
+ rm -f conftest*
+ 		INSTOBJEXT=.mo
+@@ -4383,7 +4383,7 @@
+        fi
+        for lang in $LINGUAS; do
+          case "$ALL_LINGUAS" in
+-          *\ $lang\ *|$lang\ *|*\ $lang) NEW_LINGUAS="$NEW_LINGUAS $lang" ;;
++          *$lang*) NEW_LINGUAS="$NEW_LINGUAS $lang" ;;
+          esac
+        done
+        LINGUAS=$NEW_LINGUAS
+@@ -4482,7 +4482,7 @@
+ 	< $srcdir/po/POTFILES.in > po/POTFILES
+   
+ 
+-localedir=$datadir/locale
++localedir=$prefix/share/locale
+ 
+ 
+ echo $ac_n "checking for ANSI C header files""... $ac_c" 1>&6
