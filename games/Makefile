@@ -25,6 +25,7 @@
     SUBDIR += blue
     SUBDIR += bnetd
     SUBDIR += bogged
+    SUBDIR += bomberinstinct
     SUBDIR += bombermaze
     SUBDIR += bs
     SUBDIR += bugsx
