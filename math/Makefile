@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.20 1996/12/12 03:47:50 erich Exp $
+# $Id: Makefile,v 1.21 1997/01/11 11:39:44 asami Exp $
 #
 
     SUBDIR += blas
@@ -14,6 +14,7 @@
     SUBDIR += maxima
     SUBDIR += octave
     SUBDIR += oleo
+    SUBDIR += ss
     SUBDIR += wingz
     SUBDIR += xgraph
     SUBDIR += xlispstat
