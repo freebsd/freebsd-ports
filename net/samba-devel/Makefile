@@ -39,7 +39,7 @@ CONFIGURE_ARGS=	--libdir=${SAMBA_CONFDIR} \
 		--localstatedir=${VARDIR} --with-swatdir=${PREFIX}/share/swat \
 		--with-sambabook=${PREFIX}/share/swat/using_samba \
 		--with-lockdir=${VARDIR}/lock --with-privatedir=${SAMBA_PRIVATE} \
-		--with-pam
+		--exec-prefix=${PREFIX} --with-pam
 
 .include <bsd.port.pre.mk>
 
@@ -64,10 +64,9 @@ CONFIGURE_ARGS+=	--with-acl-support
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/source
 
-MAN1=		findsmb.1 make_smbcodepage.1 rpcclient.1 make_unicodemap.1 \
-		nmblookup.1 smbcacls.1 smbclient.1 smbcontrol.1 smbrun.1 \
-		smbsh.1 smbstatus.1 smbtar.1 testparm.1 \
-		testprns.1 wbinfo.1
+MAN1=		findsmb.1 make_smbcodepage.1 make_unicodemap.1 nmblookup.1 \
+		rpcclient.1 smbcacls.1 smbclient.1 smbcontrol.1 smbsh.1 \
+		smbstatus.1 smbtar.1 testparm.1 testprns.1 wbinfo.1
 MAN5=		lmhosts.5 smb.conf.5 smbpasswd.5
 MAN7=		samba.7
 MAN8=		nmbd.8 smbd.8 smbmnt.8 smbmount.8 \
