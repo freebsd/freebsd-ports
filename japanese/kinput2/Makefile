@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	kinput2
-PORTVERSION=	3.0
+PORTVERSION=	3.1.b2
 PKGNAMESUFFIX=	${INPUT_METHOD}
 CATEGORIES=	japanese x11
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/x11/kinput2/ 
-DISTNAME=	kinput2-v3
+DISTNAME=	kinput2-v3.1-beta2
 
 MAINTAINER=	taoka@FreeBSD.org
 
