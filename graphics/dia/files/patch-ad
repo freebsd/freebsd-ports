@@ -1,9 +1,12 @@
---- configure.orig	Fri May 11 04:08:46 2001
-+++ configure	Thu May 17 15:59:22 2001
-@@ -5296,4 +5296,19 @@
+
+$FreeBSD$
+
+--- configure.orig	Mon Jun  3 00:34:03 2002
++++ configure	Mon Jun  3 00:34:24 2002
+@@ -3651,8 +3651,23 @@
+ done
  
--
--
+ 
 +# Actually configure libtool.  ac_aux_dir is where install-sh is found.
 +CC="$CC" CFLAGS="$CFLAGS" CPPFLAGS="$CPPFLAGS" \
 +LD="$LD" LDFLAGS="$LDFLAGS" LIBS="$LIBS" \
@@ -12,7 +15,8 @@
 +${CONFIG_SHELL-/bin/sh} $ac_aux_dir/ltconfig --no-reexec \
 +$libtool_flags $ac_aux_dir/ltmain.sh $lt_target \
 +|| { echo "configure: error: libtool configure failed" 1>&2; exit 1; }
-+
+ 
+-
 +# Reload cache, that may have been modified by ltconfig
 +if test -r "$cache_file"; then
 +  echo "loading cache $cache_file"
@@ -22,7 +26,16 @@
 +  > $cache_file
 +fi
  
-@@ -5306,4 +5321,5 @@
+ # Only perform the check for file, if the check method requires it
+ case $deplibs_check_method in
+@@ -7118,12 +7133,14 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
  
 -# Prevent multiple expansion
 -
@@ -30,8 +43,14 @@
 +# clobbered by the next message.
 +exec 5>>./config.log
  
-@@ -6197,3 +6213,3 @@
+ 
+ echo "$as_me:$LINENO: checking whether build environment is sane" >&5
+@@ -7911,7 +7928,7 @@
+ 
+ 
  OLDCPPFLAGS=$CPPFLAGS
 -CPPFLAGS="$CPPFLAGS `glib-config --cflags`"
 +CPPFLAGS="$CPPFLAGS `$GLIB_CONFIG --cflags`"
  
+ 
+   echo "$as_me:$LINENO: checking for nl_langinfo and CODESET" >&5
