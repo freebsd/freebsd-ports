@@ -1,0 +1,51 @@
+--- server/context_i386.c.orig	Wed Aug 14 13:59:03 2002
++++ server/context_i386.c	Thu Nov  7 14:54:01 2002
+@@ -371,14 +371,15 @@
+     {
+ #ifdef PTRACE_GETDBREGS
+ 	struct dbreg dbregs;
+-        if (ptrace( PTRACE_GETDBREGS, pid, (caddr_t) &dbregs, 0 ) == -1)
++	struct dbreg *dbregs_ptr = &dbregs; /* ptr to workaround buggy macro */
++        if (ptrace( PTRACE_GETDBREGS, pid, (caddr_t) dbregs_ptr, 0 ) == -1)
+ 		goto error;
+-	context->Dr0 = dbregs.dr0;
+-	context->Dr1 = dbregs.dr1;
+-	context->Dr2 = dbregs.dr2;
+-	context->Dr3 = dbregs.dr3;
+-	context->Dr6 = dbregs.dr6;
+-	context->Dr7 = dbregs.dr7;
++	context->Dr0 = DBREG_DRX(dbregs_ptr, 0);
++	context->Dr1 = DBREG_DRX(dbregs_ptr, 1);
++	context->Dr2 = DBREG_DRX(dbregs_ptr, 2);
++	context->Dr3 = DBREG_DRX(dbregs_ptr, 3);
++	context->Dr6 = DBREG_DRX(dbregs_ptr, 6);
++	context->Dr7 = DBREG_DRX(dbregs_ptr, 7);
+ #endif
+     }
+     if (flags & CONTEXT_FLOATING_POINT)
+@@ -437,15 +438,16 @@
+     {
+ #ifdef PTRACE_SETDBREGS
+ 	struct dbreg dbregs;
+-	dbregs.dr0 = context->Dr0;
+-	dbregs.dr1 = context->Dr1;
+-	dbregs.dr2 = context->Dr2;
+-	dbregs.dr3 = context->Dr3;
+-	dbregs.dr4 = 0;
+-	dbregs.dr5 = 0;
+-	dbregs.dr6 = context->Dr6;
+-	dbregs.dr7 = context->Dr7;
+-        if (ptrace( PTRACE_SETDBREGS, pid, (caddr_t) &dbregs, 0 ) == -1)
++	struct dbreg *dbregs_ptr = &dbregs; /* ptr to workaround buggy macro */
++	DBREG_DRX(dbregs_ptr, 0) = context->Dr0;
++	DBREG_DRX(dbregs_ptr, 1) = context->Dr1;
++	DBREG_DRX(dbregs_ptr, 2) = context->Dr2;
++	DBREG_DRX(dbregs_ptr, 3) = context->Dr3;
++	DBREG_DRX(dbregs_ptr, 4) = 0;
++	DBREG_DRX(dbregs_ptr, 5) = 0;
++	DBREG_DRX(dbregs_ptr, 6) = context->Dr6;
++	DBREG_DRX(dbregs_ptr, 7) = context->Dr7;
++        if (ptrace( PTRACE_SETDBREGS, pid, (caddr_t) dbregs_ptr, 0 ) == -1)
+ 		goto error;
+ #endif
+     }
