@@ -109,4 +109,6 @@ post-install:
 		${WRKSRC}/README ${DOCSDIR}/
 .endif
 
+	@${CAT} ${PKGMESSAGE}
+
 .include <bsd.port.post.mk>
