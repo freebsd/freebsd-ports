@@ -6,7 +6,10 @@
 %%SITE_PERL%%/Net/LDAP/Bind.pm
 %%SITE_PERL%%/Net/LDAP/Constant.pm
 %%SITE_PERL%%/Net/LDAP/Control.pm
+%%SITE_PERL%%/Net/LDAP/Control/EntryChange.pm
+%%SITE_PERL%%/Net/LDAP/Control/ManageDsaIT.pm
 %%SITE_PERL%%/Net/LDAP/Control/Paged.pm
+%%SITE_PERL%%/Net/LDAP/Control/PersistentSearch.pm
 %%SITE_PERL%%/Net/LDAP/Control/ProxyAuth.pm
 %%SITE_PERL%%/Net/LDAP/Control/Sort.pm
 %%SITE_PERL%%/Net/LDAP/Control/SortResult.pm

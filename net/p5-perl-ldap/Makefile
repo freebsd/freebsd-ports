@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	perl-ldap
-PORTVERSION=	0.31
+PORTVERSION=	0.32
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
@@ -28,7 +28,10 @@ MAN3=		Bundle::Net::LDAP.3 \
 		Net::LDAP.3 \
 		Net::LDAP::Constant.3 \
 		Net::LDAP::Control.3 \
+		Net::LDAP::Control::EntryChange.3 \
+		Net::LDAP::Control::ManageDsaIT.3 \
 		Net::LDAP::Control::Paged.3 \
+		Net::LDAP::Control::PersistentSearch.3 \
 		Net::LDAP::Control::ProxyAuth.3 \
 		Net::LDAP::Control::Sort.3 \
 		Net::LDAP::Control::SortResult.3 \
@@ -37,6 +40,7 @@ MAN3=		Bundle::Net::LDAP.3 \
 		Net::LDAP::DSML.3 \
 		Net::LDAP::Entry.3 \
 		Net::LDAP::Examples.3 \
+		Net::LDAP::Extension::SetPassword.3 \
 		Net::LDAP::Extra.3 \
 		Net::LDAP::FAQ.3 \
 		Net::LDAP::Filter.3 \
@@ -53,6 +57,10 @@ MAN3=		Bundle::Net::LDAP.3 \
 		Net::LDAPS.3
 
 .include <bsd.port.pre.mk>
+
+pre-configure:
+	@${PERL} -ni'.bak' -e 'next if 2../^__END__$$/; print' \
+		'${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}'
 
 .if ${PERL_LEVEL} < 500800
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
