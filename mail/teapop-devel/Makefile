@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-latest
 MAINTAINER=	jim@FreeBSD.org
 
 .if defined(WITH_PGSQL)
-LIB_DEPENDS=	pq.2:${PORTSDIR}/databases/postgresql
+LIB_DEPENDS=	pq.2:${PORTSDIR}/databases/postgresql7
 .endif
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

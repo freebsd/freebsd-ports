@@ -22,7 +22,7 @@ WITH_MYSQL=	yes
 LIB_DEPENDS +=	mysqlclient.6:${PORTSDIR}/databases/mysql322-client
 .endif
 .if defined(WITH_PGSQL)
-LIB_DEPENDS +=	pq.2:${PORTSDIR}/databases/postgresql
+LIB_DEPENDS +=	pq.2:${PORTSDIR}/databases/postgresql7
 .endif
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
