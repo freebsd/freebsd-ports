@@ -51,7 +51,6 @@
     SUBDIR += emh-xemacs21-mule
     SUBDIR += emil
     SUBDIR += evolution
-    SUBDIR += evolution-devel
     SUBDIR += exact
     SUBDIR += exim
     SUBDIR += exim-doc-html
