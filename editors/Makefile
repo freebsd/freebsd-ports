@@ -28,6 +28,7 @@
     SUBDIR += e3
     SUBDIR += e93
     SUBDIR += elvis
+    SUBDIR += em
     SUBDIR += emacs
     SUBDIR += emacs20
     SUBDIR += emacs20-dl
