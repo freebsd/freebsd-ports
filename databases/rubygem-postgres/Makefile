@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	postgres
-PORTVERSION=	0.6.4
-PORTREVISION=	1
+PORTVERSION=	0.6.5
 CATEGORIES=	databases ruby
-MASTER_SITES=	http://webclub.kcom.ne.jp/mb/noborus/ruby/archive/
+MASTER_SITES=	http://www.asahi-net.or.jp/~dk3n-situ/ruby/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
