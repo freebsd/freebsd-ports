@@ -1,79 +1,36 @@
-#!/usr/bin/perl
+#!/bin/sh
+# $FreeBSD$
 #
 
-@groups = ("operator");
-%users = ('ftp', "operator");
-# daemon, local, pop, queue, remote, deliver, respectively.
-# alias is a special case above...
-%gids = ('operator', 5);
-%uids = ('ftp', 14);
+if [ "$2" != "PRE-INSTALL" ]; then
+    exit 0
+fi
 
-if ($ENV{PACKAGE_BUILDING} || $ARGV[1] eq "PRE-INSTALL") {
-	$doguid=1;  # Make sure we get the assigned guids.
-}
+if ! pw groupshow operator >/dev/null; then
+	if pw groupadd operator 5; then
+		echo "Added group operator for vsftpd"
+	else
+		echo "Failed to add group operator as gid 5" >&2
+		exit 1
+	fi
+fi
 
-foreach $group (@groups) {
-	if (! getgrnam ($group)) {
-		do checkrpw;  # May exit
+if ! pw usershow ftp >/dev/null; then
+	if pw useradd ftp -g operator -u 14 -h - -d /var/ftp -s /nonexistent -c "Annonymus Ftp"; then
+		echo "Added user ftp for vsftpd"
+	else
+		echo "Failed to add user ftp as gid 14" >&2
+		exit 1
+	fi
+fi
 
-		$x = "-g $gids{$group}";
-		$result = system ("/usr/sbin/pw groupadd $group $x");
-		if ($result) {
-			die "Failed to add group $group as gid $gids{$group}\n";
-		}
-		print "Added group $group for vsftpd\n";
-	}
-}
+# uid=14(ftp) gid=5(operator) groups=5(operator)
+view="$(id ftp)"
+view="${view%% *}"
+if test "${view}" = "uid=14(ftp)"; then
+	exit 0
+fi
 
-foreach $user (keys %users) {
-	if (! getpwnam ($user)) {
-		do checkrpw;  # May exit
-
-		$x = "-u $uids{$user}";
-		$result = system ("/usr/sbin/pw useradd $user -g $users{$user} -d \"/var/ftp\" -s /nonexistent $x");
-		if ($result) {
-			die "Failed to add user $user as uid $uids{$user}\n";
-		}
-		print "Added user $user for vsftpd\n";
-	}
-}
-
-# Check that all gids/uids are as they should be...
-# If we are being installed as a package...
-if ($doguid) {
-	foreach $group (@groups) {
-		if (getgrnam($group) != $gids{$group}) {
-			die "Group $group should have gid $gids{$group}\n";
-		}
-	}
-
-	foreach $user (keys %users) {
-		if (getpwnam($user) != $uids{$user}) {
-			die "User $user should have uid $uids{$user}\n";
-		}
-	}
-}
-
-exit 0;
-
-sub checkrpw {
-	if (! -x "/usr/sbin/pw") {
-		print <<'EOM';
-This system looks like a pre-2.2 version of FreeBSD.  We see that it
-is missing the "pw" utility.  We need this utility.  Please get and
-install it, and try again.  You can get the source from:
-
-  ftp://ftp.freebsd.org/pub/FreeBSD/FreeBSD-current/src/usr.sbin/pw.tar.gz
-
-EOM
-		die "No /usr/sbin/pw";
-	}
-
-	if ($> != 0) {
-		print "It is necessary to add missing vsftpd users/groups at";
-		print "this stage.  Please either add them manually or retry";
-		print "as root.";
-		# Let pw(1) signal the failure so the user can see which
-		# group/user is actually missing.
-	}
-}
+echo "User ftp should have uid 14"; >&2
+exit 1
+# eof
