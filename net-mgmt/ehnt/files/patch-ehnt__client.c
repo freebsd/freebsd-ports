@@ -2,8 +2,18 @@
 $FreeBSD$
 
 --- ehnt_client.c.orig	Thu Oct  4 22:18:29 2001
-+++ ehnt_client.c	Mon May 24 11:59:17 2004
-@@ -69,7 +69,8 @@
++++ ehnt_client.c	Mon Aug  9 23:49:05 2004
+@@ -27,6 +27,9 @@
+ static void sig_int (int);
+ char getkey();
+ 
++
++ssize_t read_n(int fd, void *vptr, size_t n);
++
+ int ehnt_client(char * servername, int serverport, struct ehnt_struct *my_ehnt_struct ) {
+  char ips[100];
+   int c;
+@@ -69,7 +72,8 @@
     printf("Warning: can't catch interrupt signal\n");
   }
   fflush(stdout);
@@ -13,7 +23,7 @@ $FreeBSD$
   setbuf(stdout,NULL);
  
   for ( ; ; ) {
-@@ -78,7 +79,8 @@
+@@ -78,7 +82,8 @@
     int maxfd=sockfd;
     
     FD_ZERO(&read_fds);
@@ -23,7 +33,7 @@ $FreeBSD$
     FD_SET(sockfd,&read_fds);
  
     fflush(stdout);
-@@ -89,7 +91,7 @@
+@@ -89,7 +94,7 @@
     if (FD_ISSET(sockfd,&read_fds)) {
       ehnt_client_processmessage(sockfd,routeraddr,my_ehnt_struct);
     }
