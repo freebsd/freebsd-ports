@@ -18,13 +18,14 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/GUI/xephem
 
 USE_MOTIF=	yes
 USE_IMAKE=	yes
+USE_REINPLACE=	yes
 MAN1=		xephem.1
 
 LIBASTROSRC=	${WRKDIR}/${DISTNAME}/libastro
 LIBIPSRC=	${WRKDIR}/${DISTNAME}/libip
 
 post-patch:
-	@${PERL} -pi -e 's|CC =|CC?=|g ; \
+	@${REINPLACE_CMD} -e 's|CC =|CC?=|g ; \
 		 s|CFLAGS=|CFLAGS+=|g ; \
 		 s|-O2 ||g' ${LIBASTROSRC}/Makefile ${LIBIPSRC}/Makefile
 
