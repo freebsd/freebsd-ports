@@ -9,9 +9,7 @@ PORTNAME=	mysql++
 PORTVERSION=	1.7.8
 CATEGORIES=	databases devel
 MASTER_SITES=	ftp://mysql.omnipotent.net/mysql++/ \
-		ftp://mysql.valueclick.com/mysql/mysql++/ \
-		ftp://ftp.u-aizu.ac.jp/ftp/pub/dbms/mysql/mysql.com/mysql++/ \
-		ftp://mirror.aarnet.edu.au/pub/mysql/mysql++
+		ftp://ftp.u-aizu.ac.jp/ftp/pub/dbms/mysql/mysql.com/mysql++/
 
 MAINTAINER=	mico@bsd.hu
 
