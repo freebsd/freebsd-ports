@@ -7,6 +7,7 @@
 
 PORTNAME=	pango
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/${PORTNAME}/1.2,} \
 		ftp://ftp.gtk.org/pub/gtk/v2.0/ \
@@ -42,7 +43,7 @@ GLIB2_CFLAGS=	`pkg-config glib-2.0 --cflags`
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/freetype2 \
 			${GLIB2_CFLAGS} -I${LOCALBASE}/include \
 			-I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 PLIST_SUB=	VERSION="1.2.0"
 
 FONTSCALE=	${X11BASE}/lib/X11/fonts/TTF/luximb.ttf
