@@ -47,7 +47,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<p>Ciaran McCreesh discovered news ways in which a VIM modeline
 	  can be used to trojan a text file.  The patch by Bram
 	  Moolenaar reads:</p>
-	<blockquote cite="">
+	<blockquote cite="ftp://ftp.vim.org/pub/vim/patches/6.3/6.3.045">
 	  <p>Problem: Unusual characters in an option value may cause
 	    unexpected behavior, especially for a modeline. (Ciaran
 	    McCreesh)</p>
