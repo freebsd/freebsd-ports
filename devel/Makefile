@@ -161,6 +161,7 @@
     SUBDIR += cweb
     SUBDIR += cxmon
     SUBDIR += cxref
+    SUBDIR += cxxtest
     SUBDIR += darcs
     SUBDIR += darts
     SUBDIR += dcons

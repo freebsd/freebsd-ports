@@ -1,0 +1,15 @@
+--- sample/Makefile.unix.orig	Fri Aug 15 02:51:52 2003
++++ sample/Makefile.unix	Fri Aug 15 03:03:55 2003
+@@ -5,9 +5,9 @@
+ # For the X11 GUI
+ X11_FLAGS = -I/usr/X11R6/include -L/usr/X11R6/lib -lX11
+ 
+-# For the Qt GUI
+-#QTDIR = /usr/lib/qt
+-QT_FLAGS = -I$(QTDIR)/include -L$(QTDIR)/lib -lqt -O2
++# For the Qt 3.1 GUI
++QTDIR = /usr/X11R6
++QT_FLAGS = -I$(QTDIR)/include -L$(QTDIR)/lib -lqt-mt -O2
+ 
+ TARGETS = error_printer stdio_printer yes_no_runner file_printer aborter
+ GUI_TARGETS = x11_runner qt_runner
