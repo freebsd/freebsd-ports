@@ -9,6 +9,7 @@
     SUBDIR += chrootuid
     SUBDIR += cops
     SUBDIR += crack
+    SUBDIR += cyrus-sasl
     SUBDIR += donkey
     SUBDIR += fakebo
     SUBDIR += firewalk

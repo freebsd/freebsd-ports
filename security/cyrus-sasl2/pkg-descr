@@ -1,0 +1,11 @@
+The Cyrus SASL (Simple Authentication and Security Layer)
+
+SASL is the Simple Authentication and Security Layer, a method
+for adding authentication support to connection-based protocols.
+To use SASL, a protocol includes a command for identifying and
+authenticating a user to a server and for optionally negotiating
+protection of subsequent protocol interactions. If its use is
+negotiated, a security layer is inserted between the protocol
+and the connection.
+
+WWW: http://asg.web.cmu.edu/sasl/

@@ -1,0 +1,21 @@
+--- lib/Makefile.in.orig	Thu Dec  2 14:11:14 1999
++++ lib/Makefile.in	Sun Dec 26 16:54:42 1999
+@@ -75,6 +75,7 @@
+ INSTALL = @INSTALL@
+ INSTALL_PROGRAM = @INSTALL_PROGRAM@ $(AM_INSTALL_PROGRAM_FLAGS)
+ INSTALL_DATA = @INSTALL_DATA@
++INSTALL_LIB = @INSTALL_LIB@
+ INSTALL_SCRIPT = @INSTALL_SCRIPT@
+ transform = @program_transform_name@
+ 
+@@ -190,8 +191,8 @@
+ 	$(mkinstalldirs) $(DESTDIR)$(libdir)
+ 	@list='$(lib_LTLIBRARIES)'; for p in $$list; do \
+ 	  if test -f $$p; then \
+-	    echo "$(LIBTOOL)  --mode=install $(INSTALL) $$p $(DESTDIR)$(libdir)/$$p"; \
+-	    $(LIBTOOL)  --mode=install $(INSTALL) $$p $(DESTDIR)$(libdir)/$$p; \
++	    echo "$(LIBTOOL)  --mode=install $(INSTALL_LIB) $$p $(DESTDIR)$(libdir)/$$p"; \
++	    $(LIBTOOL)  --mode=install $(INSTALL_LIB) $$p $(DESTDIR)$(libdir)/$$p; \
+ 	  else :; fi; \
+ 	done
+ 
