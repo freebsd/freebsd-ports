@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 CATEGORIES=	audio kde
 MASTER_SITES=	http://area51.mfh-iserlohn.de/kmp3/tarballs/
 
-MAINTAINER=	mb@imp.ch
+MAINTAINER=	mbr@FreeBSD.org
 
 LIB_DEPENDS=	QwSpriteField.7:${PORTSDIR}/converters/kdesupport11
 

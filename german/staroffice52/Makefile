@@ -27,7 +27,7 @@ DISTFILES+=	soa-5_2-ga-bin-linux-de.bin
 .endif
 EXTRACT_ONLY=	109939-03.tar.Z
 
-MAINTAINER=	mb@imp.ch
+MAINTAINER=	mbr@FreeBSD.org
 
 FETCH_DEPENDS=	${LINUXBASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
 

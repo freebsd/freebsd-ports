@@ -16,7 +16,7 @@ DISTFILES=	so60dat-20011016.tar.bz2
 EXTRACT_SUFX=
 EXTRACT_ONLY=	so60dat-20011016.tar.bz2
 
-MAINTAINER=	mb@imp.ch
+MAINTAINER=	mbr@FreeBSD.org
 
 FETCH_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1.0:${PORTSDIR}/emulators/linux_base-7
 BUILD_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1.0:${PORTSDIR}/emulators/linux_base-7
