@@ -1,0 +1,14 @@
+--- contrib/subrip/Makefile.orig	Mon Jun  9 13:09:32 2003
++++ contrib/subrip/Makefile	Mon Jun  9 13:09:39 2003
+@@ -8,8 +8,8 @@
+ INCLUDES :=
+ 
+ ### enable ppm support ###
+-DEFINES  += -D_HAVE_LIB_PPM_
+-LIBS     += -lppm
++#DEFINES  += -D_HAVE_LIB_PPM_
++#LIBS     += -lppm
+ 
+ ### enable zlib support ###
+ DEFINES += -D_HAVE_ZLIB_
+
