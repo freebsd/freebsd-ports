@@ -1,0 +1,19 @@
+ipcserver and ipcclient are command-line tools for building local-domain
+client-server applications. They conform to the UNIX Client-Server
+Program Interface, UCSPI.
+
+ipcserver listens for connections on a local-domain stream socket, and
+runs a program for each connection it accepts. The program environment
+includes variables that hold the local and remote socket addresses, and
+the effective user and group IDs of the process that called connect.
+ipcserver offers a concurrency limit on acceptance of new connections,
+and selective handling of connections based on client identity.
+
+ipcclient requests a connection to a local-domain socket, and runs a
+program. The program environment includes a variable that holds the
+local socket address.
+
+ipcperl is an example of an ipchandle server. It invokes a perl
+subroutine for each request.
+
+WWW: http://www.superscript.com/ucspi-ipc/intro.html
