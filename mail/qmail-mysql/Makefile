@@ -12,7 +12,7 @@ CATEGORIES=	mail
 PKGNAMESUFFIX=	-mysql
 
 PATCH_SITES+=	http://iain.cx/unix/qmail/download/:mysql
-PATCHFILES+=	qmail-mysql-${MYSQL_PATCH_VERSION}.patch:mysql,local
+PATCHFILES+=	qmail-mysql-${MYSQL_PATCH_VERSION}.patch:mysql
 
 MAINTAINER=	lioux@FreeBSD.org
 

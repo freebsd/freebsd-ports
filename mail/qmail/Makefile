@@ -17,9 +17,6 @@ MASTER_SITES=	http://cr.yp.to/software/ \
 		${MASTER_SITE_QMAIL}
 DISTNAME=	${PORTNAME}-${QMAIL_VERSION}
 
-PATCH_SITES+=	${MASTER_SITE_LOCAL:S/$/:local/}
-PATCH_SITE_SUBDIR+=	lioux/:local
-
 # qmail-* skeleton ports including this port may not want
 # its patches
 .if !defined(MAIN_QMAIL_PORT_DNS_PATCH_BARRIER)
@@ -27,9 +24,12 @@ PATCH_SITE_SUBDIR+=	lioux/:local
 # Since AOL has been using those, the problem has skyrocketed from minor to
 # groundzero. qmail being RFC compliant need to be "fixed" to work with those
 PATCH_SITES+=	http://www.ckdhr.com/ckd/:dns
-PATCHFILES+=	qmail-103.patch:dns,local
+PATCHFILES+=	qmail-103.patch:dns
 PATCH_DIST_STRIP+=	-p1
 .endif # MAIN_QMAIL_PORT_DNS_PATCH_BARRIER
+
+PATCH_SITES+=	${MASTER_SITE_LOCAL:S/$/:local,dns,ldap,mysql,tls/}
+PATCH_SITE_SUBDIR+=	lioux/:local,dns,ldap,mysql,tls
 
 MASTER_SITE_QMAIL+= \
 	http://qmail.deliver3.com/%SUBDIR%/ \
