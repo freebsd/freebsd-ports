@@ -24,7 +24,11 @@ CONFLICTS?=	kde-lite-[0-9]*
 ## This is the file where the selections made in the interactive dialog
 ## are saved in and initialized from.
 
+.if defined(KDE_PREFIX)
+CONFIG_FILE=	${KDE_PREFIX}/etc/kde-meta.conf
+.else
 CONFIG_FILE=	${LOCALBASE}/etc/kde-meta.conf
+.endif
 
 ## The list of all modules that make up KDE, excluding the base modules
 ## arts, kdebase and kdelibs
