@@ -32,10 +32,6 @@ SNAPDATE=	20040130
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502000
-BROKEN=		"Broken pkg-plist"
-.endif
-
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 
 SRCDIR=		${WRKDIR}/gcc
@@ -70,7 +66,6 @@ CONFIGURE_ARGS+=	--enable-threads=posix
 ALL_TARGET=	bootstrap-lean
 MAN1=		cpptree-ssa.1   gcctree-ssa.1   gcovtree-ssa.1
 MAN7=		fsf-funding.7 gfdl.7 gpl.7
-INFO=		cpp gcc gccint cppinternals gccinstall
 
 pre-everything::
 	@${ECHO_MSG} "Making GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL} ${PORTOBJFORMAT}	target ${CONFIGURE_TARGET}"
