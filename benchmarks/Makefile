@@ -4,6 +4,7 @@
     COMMENT = Benchmarking tools
 
     SUBDIR += autobench
+    SUBDIR += blogbench
     SUBDIR += bonnie
     SUBDIR += bonnie++
     SUBDIR += dbench
