@@ -1,26 +1,15 @@
---- ../../Makefile.in	Wed Sep  3 04:23:21 2003
-+++ qgo/Makefile.in	Mon Nov  3 02:02:16 2003
-@@ -251,6 +251,8 @@
+--- qgo/Makefile.in.orig	Thu Dec 11 08:40:40 2003
++++ qgo/Makefile.in	Tue Dec 16 02:00:51 2003
+@@ -235,7 +235,7 @@
+ KDE_OPTIONS = qtonly
+ qgo_LDADD = ./src/libsrc.a $(LIB_QPE) $(LIB_QT) $(LIBSOCKET)
  
- # them while "make clean", use CLEANFILES
- DISTCLEANFILES = $(qgo_METASOURCES)
-+
-+EXTRA_PROGRAMS = fubar
- mkinstalldirs = $(SHELL) $(top_srcdir)/admin/mkinstalldirs
- CONFIG_HEADER = ../config.h
- CONFIG_CLEAN_FILES = 
-@@ -262,24 +264,36 @@
- CPPFLAGS = @CPPFLAGS@
- LDFLAGS = @LDFLAGS@
- LIBS = @LIBS@
-+fubar_SOURCES = fubar.c
-+#>- fubar_OBJECTS =  fubar.$(OBJEXT)
-+#>+ 1
-+fubar_OBJECTS = fubar.$(OBJEXT)
-+fubar_LDADD = $(LDADD)
-+fubar_DEPENDENCIES = 
-+fubar_LDFLAGS = 
- #>- qgo_OBJECTS = 
+-SUBDIRS = src templates 
++SUBDIRS = src
+ 
+ EXTRA_DIST = filenew.xpm filesave.xpm fileopen.xpm 
+ 
+@@ -266,6 +266,11 @@
  #>+ 1
  qgo_OBJECTS = 
  qgo_DEPENDENCIES =  ./src/libsrc.a
@@ -32,32 +21,3 @@
  DIST_COMMON =  Makefile.am Makefile.in
  
  
- #>- DISTFILES = $(DIST_COMMON) $(SOURCES) $(HEADERS) $(TEXINFOS) $(EXTRA_DIST)
- #>+ 4
--KDE_DIST=qgo.spec.in Doxyfile qgo.lsm.in qgo 
-+KDE_DIST=qgo.spec.in Doxyfile qgo.lsm.in 
- 
- DISTFILES= $(DIST_COMMON) $(SOURCES) $(HEADERS) $(TEXINFOS) $(EXTRA_DIST) $(KDE_DIST)
- 
- 
--TAR = gtar
-+TAR = tar
- GZIP_ENV = --best
--SOURCES = $(qgo_SOURCES)
--OBJECTS = $(qgo_OBJECTS)
-+SOURCES = fubar.c $(qgo_SOURCES)
-+OBJECTS = fubar.$(OBJEXT) $(qgo_OBJECTS)
- 
- #>- all: all-redirect
- #>+ 1
-@@ -366,6 +380,10 @@
- 
- maintainer-clean-libtool:
- 
-+fubar$(EXEEXT): $(fubar_OBJECTS) $(fubar_DEPENDENCIES)
-+	@rm -f fubar$(EXEEXT)
-+	$(LINK) $(fubar_LDFLAGS) $(fubar_OBJECTS) $(fubar_LDADD) $(LIBS)
-+
- qgo$(EXEEXT): $(qgo_OBJECTS) $(qgo_DEPENDENCIES)
- 	@rm -f qgo$(EXEEXT)
- 	$(LINK) $(qgo_LDFLAGS) $(qgo_OBJECTS) $(qgo_LDADD) $(LIBS)

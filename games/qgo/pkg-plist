@@ -1,4 +1,5 @@
 bin/qgo
+share/qGo/pics/Bowl.png
 share/qGo/sounds/click.wav
 share/qGo/sounds/connect.wav
 share/qGo/sounds/enter.wav
@@ -12,6 +13,8 @@ share/qGo/sounds/talk.wav
 share/qGo/sounds/tictoc.wav
 share/qGo/translations/qgo_de.qm
 share/qGo/translations/qgo_fr.qm
+share/qGo/translations/qgo_it.qm
 @dirrm share/qGo/translations
 @dirrm share/qGo/sounds
+@dirrm share/qGo/pics
 @dirrm share/qGo
