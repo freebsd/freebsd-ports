@@ -3,13 +3,13 @@
 # Date created:        02 November 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.3 1997/04/30 03:17:59 asami Exp $
+# $Id: Makefile,v 1.4 1997/07/01 11:40:41 tg Exp $
 #
 
 DISTNAME=	SMS
 PKGNAME=        mastergear-1.0
 CATEGORIES=     emulators
-MASTER_SITES=	http://www.freeflight.com/fms/MG/
+MASTER_SITES=	http://www.komkon.org/fms/MG/
 DISTFILES=	MG.tar.Z
 
 MAINTAINER=	Nakai@Mlab.t.u-tokyo.ac.jp
