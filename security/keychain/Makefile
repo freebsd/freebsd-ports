@@ -7,6 +7,7 @@
 
 PORTNAME=	keychain
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.ibiblio.org/gentoo/distfiles/
 
