@@ -29,7 +29,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SVN/Core.pm:${PORTSDIR}/devel/subversio
 		${SITE_PERL}/IO/Digest.pm:${PORTSDIR}/devel/p5-IO-Digest \
 		${SITE_PERL}/Locale/Maketext/Lexicon.pm:${PORTSDIR}/devel/p5-Locale-Maketext-Lexicon \
 		${SITE_PERL}/Locale/Maketext/Simple.pm:${PORTSDIR}/devel/p5-Locale-Maketext-Simple \
-		${SITE_PERL}/${PERL_ARCH}/PerlIO/eol/eol.pm:${PORTSDIR}/devel/p5-PerlIO-eol \
+		${SITE_PERL}/${PERL_ARCH}/PerlIO/eol.pm:${PORTSDIR}/devel/p5-PerlIO-eol \
 		${SITE_PERL}/PerlIO/via/dynamic.pm:${PORTSDIR}/devel/p5-PerlIO-via-dynamic \
 		${SITE_PERL}/PerlIO/via/symlink.pm:${PORTSDIR}/devel/p5-PerlIO-via-symlink \
 		${SITE_PERL}/Pod/Escapes.pm:${PORTSDIR}/textproc/p5-Pod-Escapes \
