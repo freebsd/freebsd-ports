@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.ossp.org/pkg/lib/${PORTNAME}/
 PKGNAMEPREFIX=	ossp-
 
-MAINTAINER=	fuyuki@nigredo.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A generic and extensible framework for serialization
 
 USE_LIBTOOL_VER=	15
@@ -23,10 +23,4 @@ MAN3=		xds.3
 test:
 	cd ${WRKSRC}; make check
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-BROKEN=		"Does not compile on amd64"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
