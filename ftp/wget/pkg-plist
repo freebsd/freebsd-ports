@@ -1,10 +1,9 @@
 bin/wget
 etc/wgetrc
+@unexec install-info --delete %D/info/wget.info %D/info/dir
 info/wget.info
 info/wget.info-1
 info/wget.info-2
 info/wget.info-3
-@unexec install-info --delete %D/info/wget.info %D/info/dir
 @exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/wget.info %D/info/dir
-man/man1/wget.1.gz
