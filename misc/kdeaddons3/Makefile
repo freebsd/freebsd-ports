@@ -25,14 +25,14 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 PLIST_SUB+=	RM=${RM}
-SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
-CONFIGURE_ENV+=	SDL_CONFIG="${SDL_CONFIG}"
+SDL_CONFIG=	sdl11-config
+CONFIGURE_ENV+=	SDL_CONFIG="${LOCALBASE}/bin/${SDL_CONFIG}"
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 
-post-configure:
-	${FIND} ${WRKSRC} -type f | ${XARGS} ${PERL} -pi -e \
-		"s@sdl-config@${SDL_CONFIG}@g"
+#post-configure:
+#	${FIND} ${WRKSRC} -type f | ${XARGS} ${PERL} -pi -e \
+#		"s@sdl-config@${SDL_CONFIG}@g"
 
 .include <bsd.port.pre.mk>
 
