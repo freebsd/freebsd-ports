@@ -30,6 +30,8 @@ lib/ggi/filter/tcp.la
 lib/ggi/filter/tcp.so
 lib/ggi/input/file.la
 lib/ggi/input/file.so
+%%KII%%lib/ggi/input/kii.la
+%%KII%%lib/ggi/input/kii.so
 lib/ggi/input/linux_mouse.la
 lib/ggi/input/linux_mouse.so
 lib/ggi/input/mouse.la
