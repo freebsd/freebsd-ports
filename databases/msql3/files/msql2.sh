@@ -7,7 +7,10 @@ fi
 
 case "$1" in
 start)
-	[ -x ${PREFIX}/sbin/msql2d ] && su -f -l msql -c "exec ${PREFIX}/sbin/msql2d" > /dev/null 2>&1 & && echo -n ' msql2'
+	if [ -x ${PREFIX}/sbin/msql2d ]; then
+		su -f -l msql -c "exec ${PREFIX}/sbin/msql2d" > /dev/null 2>&1 &
+		echo -n ' msql2'
+	fi
 	;;
 stop)
 	killall msql2d && echo -n ' msql2d' && rm -f ${PREFIX}/etc/msql2/msql2d.pid
