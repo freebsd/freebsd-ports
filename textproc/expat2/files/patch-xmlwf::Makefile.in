@@ -1,0 +1,13 @@
+
+$FreeBSD$
+
+--- xmlwf/Makefile.in	2002/05/10 17:31:29	1.1
++++ xmlwf/Makefile.in	2002/05/10 17:31:48
+@@ -43,6 +43,7 @@
+ prefix = @prefix@
+ exec_prefix = @exec_prefix@
+ 
++all: xmlwf
+ 
+ xmlwf: $(OBJS)
+ 	$(CC) -o xmlwf $(LDFLAGS) $(OBJS) $(LIBS)
