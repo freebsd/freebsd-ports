@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	dod
-PORTVERSION=	3.1
-MASTER_SITES=	http://www.redphive.org/files/ \
-		ftp://gamefiles.blueyonder.co.uk/blueyondergames/halflife/modifications/dayofdefeat/patches/linux/ \
-		http://bajar.juegosonline.com/mods/ \
-		ftp://ftpuk.jolt.co.uk/games/halflife/mods/dod/patches/ \
-		ftp://ftp.dodfrance.com/dod/dod/3.1/linux/
-DISTNAME=	${PORTNAME}_v${PORTVERSION:S/.//}_full
+PORTVERSION=	1.0b
+PORTEPOCH=	1
+MASTER_SITES=	ftp://ftp.clanserver4u.de/exp/hl/mod/dod/ \
+		ftp://ftp2.extreme-players.de/hl/mod/dod/ \
+		http://mirror.redphive.org/
+
+DISTFILES=	dod_v10_linux${EXTRACT_SUFX} dod_v10b${EXTRACT_SUFX}
 
 COMMENT=	Half-Life mod Day of Defeat full server package for Linux
 
