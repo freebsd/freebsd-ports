@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	qcad
-PORTVERSION=	2.0.2.0.1
+PORTVERSION=	2.0.3.1.1
 CATEGORIES=	cad
 MASTER_SITES=	http://www.ribbonsoft.com/archives/qcad/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.1/-1/}.src
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/1.1/1-1/}.src
 
 MAINTAINER=	mr@FreeBSD.org
 COMMENT=	Professional CAD system
@@ -17,19 +17,20 @@ COMMENT=	Professional CAD system
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2 \
 		qmake:${PORTSDIR}/devel/qmake
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.1/-1/}.src
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.1.1/.1-1/}.src
 
 QTDIR?=		${X11BASE}
 
 USE_QT_VER=	3
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
+PLIST=		${WRKDIR}/pkg-plist
 MAKE_ENV=	QTDIR="${QTDIR}" MAKE="${GMAKE}" \
 		QMAKESPEC="${LOCALBASE}/share/qt/mkspecs/freebsd-g++"
 
 .include <bsd.port.pre.mk>
 
-.if ${MACHINE_ARCH} == "alpha"
+.if ${ARCH} == "alpha"
 CFLAGS+=	-O0
 .endif
 
@@ -40,19 +41,44 @@ post-patch:
 .endif
 
 do-build:
-	cd ${WRKSRC}/scripts && ${SETENV} ${MAKE_ENV} ${SH} ./build_qcad.sh
+	cd ${WRKSRC}/scripts && ${SETENV} ${MAKE_ENV} bash ./build_qcad.sh
+
+pre-install:
+	@${ECHO_CMD} bin/qcad > ${PLIST}
+	@${ECHO_CMD} '@exec mkdir -p %D/share/qcad/libraries' >> ${PLIST}
+	@${FIND} ${WRKSRC}/qcad/doc/ -type f | \
+		${SED} -e "s:^${WRKSRC}/:%%PORTDOCS%%share/:g" >> ${PLIST}
+	@${FIND} ${WRKSRC}/qcad/examples/ -type f | \
+		${SED} -e "s:^${WRKSRC}/:%%PORTDOCS%%share/:g" >> ${PLIST}
+	@${FIND} ${WRKSRC}/qcad/fonts/ -type f | \
+		${SED} -e "s:^${WRKSRC}/:share/:g" >> ${PLIST}
+	@${FIND} ${WRKSRC}/qcad/patterns/ -type f | \
+		${SED} -e "s:^${WRKSRC}/:share/:g" >> ${PLIST}
+	@${FIND} ${WRKSRC}/qcad/qm/ -type f | \
+		${SED} -e "s:^${WRKSRC}/:share/:g" >> ${PLIST}
+	@${FIND} ${WRKSRC}/qcad/scripts/ -type f | \
+		${SED} -e "s:^${WRKSRC}/:share/:g" >> ${PLIST}
+	@${ECHO_CMD} '%%PORTDOCS%%@dirrm share/qcad/doc' >> ${PLIST}
+	@${ECHO_CMD} '%%PORTDOCS%%@dirrm share/qcad/examples' >> ${PLIST}
+	@${ECHO_CMD} '@dirrm share/qcad/libraries' >> ${PLIST}
+	@${ECHO_CMD} '@dirrm share/qcad/fonts' >> ${PLIST}
+	@${ECHO_CMD} '@dirrm share/qcad/patterns' >> ${PLIST}
+	@${ECHO_CMD} '@dirrm share/qcad/scripts/python' >> ${PLIST}
+	@${ECHO_CMD} '@dirrm share/qcad/scripts' >> ${PLIST}
+	@${ECHO_CMD} '@dirrm share/qcad' >> ${PLIST}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/qcad/qcad ${PREFIX}/bin/qcad
-	@${MKDIR} ${DATADIR}
 	@${MKDIR} ${DATADIR}/libraries
 .for dir in fonts patterns qm scripts
 	${TAR} -C ${WRKSRC}/qcad --exclude CVS -cf - ${dir} | \
 		${TAR} -C ${DATADIR} --unlink -xf -
 .endfor
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/qcad/examples/* ${EXAMPLESDIR}
+.for dir in doc examples
+	${TAR} -C ${WRKSRC}/qcad --exclude CVS -cf - ${dir} | \
+		${TAR} -C ${DATADIR} --unlink -xf -
+.endfor
 .endif
 
 .include <bsd.port.post.mk>
