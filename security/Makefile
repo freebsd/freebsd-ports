@@ -315,6 +315,7 @@
     SUBDIR += proxycheck
     SUBDIR += proxytunnel
     SUBDIR += pscan
+    SUBDIR += putty
     SUBDIR += pwman
     SUBDIR += pxytest
     SUBDIR += py-cryptkit
