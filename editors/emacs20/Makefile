@@ -18,6 +18,7 @@ PATCHFILES=		emacs-20.7-linespace-patch.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	GNU editing macros
 
 USE_AUTOCONF_VER=213
 USE_GMAKE=	yes

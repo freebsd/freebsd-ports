@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.cs.pdx.edu/pub/elvis/ \
 DISTNAME=	${PORTNAME}-2.1_4
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A clone of the ex/vi text editor
 
 USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes

@@ -13,6 +13,7 @@ MASTER_SITES=	http://gmanedit.sourceforge.net/files/ \
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A GNOME manpages editor
 
 USE_REINPLACE=	yes
 USE_BZIP2=	yes

@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.lightlink.com/pub/hessling/THE/	\
 DISTNAME=	THE-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	"The Hessling Editor", an implementation of the xedit editor
 
 BUILD_DEPENDS=	rexx:${PORTSDIR}/lang/rexx-imc
 RUN_DEPENDS=	rexx:${PORTSDIR}/lang/rexx-imc

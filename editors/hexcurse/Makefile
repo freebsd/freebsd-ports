@@ -12,6 +12,7 @@ CATEGORIES=	editors
 MASTER_SITES=	http://jewfish.net/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A versatile ncurses-based hex editor
 
 GNU_CONFIGURE=	yes
 

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.ntlug.org/~ccox/impress/
 DISTNAME=	imp${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Publishing and presentation tool
 
 RUN_DEPENDS=    wish8.3:${PORTSDIR}/x11-toolkits/tk83
 

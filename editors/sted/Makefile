@@ -12,6 +12,7 @@ CATEGORIES=	editors
 MASTER_SITES=	http://user.tninet.se/~uxm165t/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Simple/Small/Stupid Text Editor
 
 WRKSRC=		${WRKDIR}/sted
 

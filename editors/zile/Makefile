@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 MASTER_SITE_SUBDIR=	apps/editors/emacs/clones zile
 
 MAINTAINER=	ports@freebsd.org
+COMMENT=	Small emacs-like text editor
 
 USE_AUTOCONF=	yes
 GNU_CONFIGURE=	yes

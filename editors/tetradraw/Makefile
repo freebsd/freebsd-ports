@@ -12,6 +12,7 @@ CATEGORIES=	editors
 MASTER_SITES=	ftp://tentacle.dhs.org/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Fully featured ANSI art editor/viewer with TCP/IP multidraw support
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}

@@ -13,6 +13,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.msg.gz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A unix version of Rob Pike's editor for plan9
 
 EXTRACT_CMD=		${GZCAT}
 EXTRACT_BEFORE_ARGS=	# empty

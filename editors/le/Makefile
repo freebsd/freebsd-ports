@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.yars.free.net/pub/software/unix/util/texteditors/ \
 MASTER_SITE_SUBDIR=	apps/editors/terminal
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Text editor
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
