@@ -24,7 +24,7 @@ LIB_DEPENDS=	netsnmp.6:${PORTSDIR}/net/net-snmp
 RUN_DEPENDS=	php:${PORTSDIR}/lang/php4-nms
 
 .ifndef(WITHOUT_FPING)
-RUN_DEPENDS+=	fping:${PORTSDIR}/net/fping
+RUN_DEPENDS+=	${LOCALBASE}/sbin/fping:${PORTSDIR}/net/fping
 .endif
 
 USE_MYSQL=	yes
