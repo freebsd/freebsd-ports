@@ -14,6 +14,8 @@ DISTNAME=	skk${PORTVERSION}
 MAINTAINER=	matusita@FreeBSD.org
 COMMENT=Emacs-lisp frontend for the SKK Japanese-input software
 
+BROKEN=		"Does not install"
+
 BUILD_DEPENDS=	mule:${.CURDIR}/../../editors/mule
 RUN_DEPENDS=	${LOCALBASE}/share/skk/${SKKJISYO}:${SKK_MASTERDIR}
 
