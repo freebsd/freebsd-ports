@@ -239,6 +239,7 @@
     SUBDIR += quakeforge
     SUBDIR += quakeserver
     SUBDIR += race
+    SUBDIR += rfksay
     SUBDIR += robocode
     SUBDIR += rocksndiamonds
     SUBDIR += rollemup
