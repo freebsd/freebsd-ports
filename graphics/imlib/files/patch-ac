@@ -1,5 +1,5 @@
---- config/Makefile.in.orig	Wed Dec 16 11:15:46 1998
-+++ config/Makefile.in	Thu Dec 24 06:02:32 1998
+--- config/Makefile.in.orig	Thu Jan 14 18:24:27 1999
++++ config/Makefile.in	Thu Jan 14 18:24:37 1999
 @@ -23,7 +23,7 @@
  sbindir = @sbindir@
  libexecdir = @libexecdir@
@@ -9,15 +9,15 @@
  sharedstatedir = @sharedstatedir@
  localstatedir = @localstatedir@
  libdir = @libdir@
---- Imlib/Makefile.in.orig	Wed Dec 16 11:15:45 1998
-+++ Imlib/Makefile.in	Thu Dec 24 06:02:55 1998
-@@ -119,12 +119,12 @@
+--- Imlib/Makefile.in.orig	Wed Jan 13 06:05:39 1999
++++ Imlib/Makefile.in	Thu Jan 14 18:07:58 1999
+@@ -127,12 +127,12 @@
  	save.c		\
  	snprintf.c
  
--libImlib_la_LDFLAGS    = -version-info 9:1:8
-+libImlib_la_LDFLAGS    = -version-info 1:9:0
- libImlib_la_LDDADD     = $(LIBS)
+-libImlib_la_LDFLAGS    = -version-info 10:0:9
++libImlib_la_LDFLAGS    = -version-info 2:0:0
+ libImlib_la_LDDADD     = $(SUPPORT_LIBS)
  
  DEFS = -DDJPEG_PROG=\"@DJPEG_PROG@\"  -DCJPEG_PROG=\"@CJPEG_PROG@\" \
  	-DCONVERT_PATH=\"@CONVERT_PATH@\" \
@@ -26,20 +26,22 @@
  
  INCLUDES = -I. -I$(srcdir) -I.. -I$(srcdir)/.. $(X_CFLAGS)
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
---- gdk_imlib/Makefile.in.orig	Wed Dec 16 11:15:43 1998
-+++ gdk_imlib/Makefile.in	Thu Dec 24 06:03:08 1998
-@@ -119,12 +119,12 @@
- utils.c      \
- save.c
+--- gdk_imlib/Makefile.in.orig	Wed Jan 13 06:05:37 1999
++++ gdk_imlib/Makefile.in	Thu Jan 14 18:07:58 1999
+@@ -164,14 +164,14 @@
+ 	save.c			\
+ 	modules.c
  
--libgdk_imlib_la_LDFLAGS      = -version-info 9:1:8
-+libgdk_imlib_la_LDFLAGS      = -version-info 1:9:0
- libgdk_imlib_la_LDDADD = $(LIBS)
+-libgdk_imlib_la_LDFLAGS = -version-info 10:0:9
++libgdk_imlib_la_LDFLAGS = -version-info 2:0:0
+ libgdk_imlib_la_LIBADD = $(GMODULE_LIBS)
+ 
+ include_HEADERS = gdk_imlib.h gdk_imlib_private.h gdk_imlib_types.h
  
  DEFS = -DDJPEG_PROG=\"@DJPEG_PROG@\"  -DCJPEG_PROG=\"@CJPEG_PROG@\" \
  	-DCONVERT_PATH=\"@CONVERT_PATH@\" \
--	-DNETPBM_PATH=\"@NETPBM_PATH@\" -DSYSTEM_IMRC=\"@sysconfdir@/imrc\"
-+	-DNETPBM_PATH=\"@NETPBM_PATH@\" -DSYSTEM_IMRC=\"@sysconfdir@/imlib/imrc\"
+-	-DNETPBM_PATH=\"@NETPBM_PATH@\" -DSYSTEM_IMRC=\"@sysconfdir@/imrc\" \
++	-DNETPBM_PATH=\"@NETPBM_PATH@\" -DSYSTEM_IMRC=\"@sysconfdir@/imlib/imrc\" \
+ 	-DIMLIB_LIB=\""$(libdir)"\"
  
- INCLUDES = -I. -I$(srcdir) -I.. -I$(srcdir)/.. $(GTK_CFLAGS) $(X_CFLAGS)
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ INCLUDES = -I. -I$(srcdir) -I.. -I$(srcdir)/.. \

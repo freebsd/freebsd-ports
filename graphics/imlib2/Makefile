@@ -1,18 +1,17 @@
 # New ports collection makefile for:	imlib
-# Version required:	1.8.2
+# Version required:	1.9.0
 # Date created:		10 June 1997
 # Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.38 1998/12/26 19:54:26 vanilla Exp $
+# $Id: Makefile,v 1.39 1999/01/04 08:43:07 vanilla Exp $
 #
 
-DISTNAME=	imlib-1.8.2
+DISTNAME=	imlib-1.9.0
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.jimpick.com/pub/mirrors/gnome/sources/ \
-		ftp://ftp.gnome.org/pub/GNOME/sources/
-#MASTER_SITES=	ftp://ftp.enlightenment.org/pub/enlightenment/enlightenment/ \
-#		ftp://www.rasterman.com/pub/enlightenment/enlightenment/ \
-#		ftp://ftp.labs.redhat.com/pub/imlib/TAR/
+MASTER_SITES=	ftp://ftp.jimpick.com/pub/mirrors/gnome/sources/latest/ \
+		ftp://ftp.geo.net/pub/gnome/sources/latest/ \
+		ftp://gnomeftp.wgn.net/pub/gnome/sources/latest/ \
+		ftp://ftp.gnome.org/pub/GNOME/sources/latest/
 
 MAINTAINER=	vanilla@FreeBSD.ORG
 
