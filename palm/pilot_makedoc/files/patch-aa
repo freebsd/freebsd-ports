@@ -1,6 +1,6 @@
---- makedoc7.cpp.orig	Sat May 10 20:05:27 1997
-+++ makedoc7.cpp	Sat May 10 20:05:53 1997
-@@ -588,7 +584,7 @@
+--- makedoc7.cpp.orig	Wed Mar 13 21:37:41 2002
++++ makedoc7.cpp	Wed Mar 13 21:39:39 2002
+@@ -589,7 +589,7 @@
  		printf("\n       -n builds the .prc file without compression");
  		printf("\n       -b option compresses/decompresses binary");
  #if UNIX
@@ -9,3 +9,10 @@
  #endif
  		exit(1);
  	}
+@@ -746,5 +746,6 @@
+ 		fclose(fin);
+ 		fclose(fout);
+ 	}
++	printf("\n");
+ 	exit(0);
+ }
