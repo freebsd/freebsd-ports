@@ -1,0 +1,11 @@
+--- callMail.c.orig	Thu Jan 26 21:52:01 1995
++++ callMail.c	Wed Feb  4 23:30:07 1998
+@@ -81,7 +81,7 @@
+ #ifdef		hpux
+ #define	PTYCHAR2	"fedcba9876543210"
+ #else	/* !hpux */
+-#define	PTYCHAR2	"0123456789abcdef"
++#define	PTYCHAR2	"0123456789abcdefghijklmnopqrstuvwxyz"
+ #endif	/* !hpux */
+ #endif	/* !PTYCHAR2 */
+ 
