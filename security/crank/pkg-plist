@@ -8,5 +8,10 @@ lib/crank/plugins/text.simple-filters.so
 lib/crank/plugins/transpositions.grid-brute-force.so
 lib/crank/plugins/transpositions.grid-controls.so
 lib/crank/plugins/utilities.notepad.so
+share/crank/bift.dat
+share/crank/slft.dat
+share/crank/trift.dat
+share/crank/word-list.dat
 @dirrm lib/crank/plugins
 @dirrm lib/crank
+@dirrm share/crank
