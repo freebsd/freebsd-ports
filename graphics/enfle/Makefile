@@ -1,28 +1,28 @@
 # New ports collection makefile for:	enfle
-# Version required:	19991206
+# Version required:	19991224
 # Date created:		Tue Sep 28 02:25:17 JST 1999
 # Whom:			Yuuki SAWADA <mami@whale.cc.muroran-it.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	enfle-19991206
+DISTNAME=	enfle-19991224
 CATEGORIES=	graphics
 MASTER_SITES=	http://enfle.fennel.org/ \
 		ftp://ftp.goldmoon.org:1200/pub/FreeBSD/ports/distfiles/
 
 MAINTAINER=	mami@whale.cc.muroran-it.ac.jp
 
-BUILD_DEPENDS=	bzip2:${PORTSDIR}/archivers/bzip2
-LIB_DEPENDS=    png.3:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png.3:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-all-plugins --disable-static \
-		--enable-plugins-dir
+CONFIGURE_ARGS=	--enable-all-plugins \
+		--enable-plugins-dir \
+		--disable-static
 
 MAN1=		enfle.1
 
