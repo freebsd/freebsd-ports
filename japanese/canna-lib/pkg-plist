@@ -2,12 +2,9 @@ bin/addwords
 bin/canlisp
 bin/cannacheck
 bin/cannastat
-bin/canvert
 bin/catdic
-bin/chmoddic
 bin/cpdic
 bin/crfreq
-bin/crrdic
 bin/crxdic
 bin/crxgram
 bin/cshost
@@ -16,11 +13,9 @@ bin/delwords
 bin/dicar
 bin/dpbindic
 bin/dpromdic
-bin/dpwdic
 bin/dpxdic
 bin/forcpp
 bin/forsort
-bin/itoc
 bin/kpdic
 bin/lsdic
 bin/mergeword
@@ -38,75 +33,68 @@ include/canna/jrkanji.h
 include/canna/keydef.h
 include/canna/mfdef.h
 lib/canna/default.canna
-lib/canna/dic/canna/bushu.fq
+lib/canna/dic/canna/bushu.cld
+lib/canna/dic/canna/chimei.ctd
 lib/canna/dic/canna/dics.dir
-lib/canna/dic/canna/fuzokugo.d
-lib/canna/dic/canna/fuzokugo.fq
-lib/canna/dic/canna/hojomwd.t
-lib/canna/dic/canna/hojoswd.t
-lib/canna/dic/canna/iroha.d
-lib/canna/dic/canna/iroha.fq
-lib/canna/dic/canna/number.t
-lib/canna/dic/canna/suffix.t
-lib/canna/dic/canna/yuubin.fq
-lib/canna/dic/default.kp
-lib/canna/dic/default.rdic
-lib/canna/dic/english.kp
-lib/canna/dic/hyoujun.gram
-lib/canna/dic/jdaemon.kp
-lib/canna/dic/jdaemon.rdic
-lib/canna/dic/just.kp
-lib/canna/dic/just.rdic
-lib/canna/dic/kaisoku.kp
-lib/canna/dic/kana.kp
-lib/canna/dic/kana.rdic
-lib/canna/dic/lan5.kp
-lib/canna/dic/newjis.kp
-lib/canna/dic/newjis.rdic
-lib/canna/dic/premountdics
-lib/canna/dic/romaji.kp
-lib/canna/dic/sokuon.kp
-lib/canna/dic/tut.kp
-lib/canna/dic/user/user/chimei.t
-lib/canna/dic/user/user/dics.dir
-lib/canna/dic/user/user/katakana.t
-lib/canna/dic/user/user/necgaiji.t
-lib/canna/dic/user/user/software.t
-lib/canna/dic/user/user/user.t
+lib/canna/dic/canna/fuzokugo.cbd
+lib/canna/dic/canna/fuzokugo.cld
+lib/canna/dic/canna/hojomwd.ctd
+lib/canna/dic/canna/hojoswd.ctd
+lib/canna/dic/canna/iroha.cbd
+lib/canna/dic/canna/iroha.cld
+lib/canna/dic/canna/kanasmpl.ctd
+lib/canna/dic/canna/katakana.ctd
+lib/canna/dic/canna/keishiki.ctd
+lib/canna/dic/canna/necgaiji.ctd
+lib/canna/dic/canna/number.ctd
+lib/canna/dic/canna/software.ctd
+lib/canna/dic/canna/suffix.ctd
+lib/canna/dic/default.cbp
+lib/canna/dic/english.cbp
+lib/canna/dic/jdaemon.cbp
+lib/canna/dic/just.cbp
+lib/canna/dic/kaisoku.cbp
+lib/canna/dic/kana.cbp
+lib/canna/dic/lan5.cbp
+lib/canna/dic/matsu.cbp
+lib/canna/dic/newjis.cbp
+lib/canna/dic/romaji.cbp
+lib/canna/dic/sokuon.cbp
+lib/canna/dic/tut.cbp
+lib/canna/dic/vje.cbp
+lib/canna/dic/wx2+.cbp
 lib/canna/engine.cf
 lib/canna/sample/1.1.canna
-lib/canna/sample/1.1.iroha
 lib/canna/sample/1.2.canna
 lib/canna/sample/default.canna
-lib/canna/sample/default.iroha
 lib/canna/sample/fixer.canna
-lib/canna/sample/fixer.iroha
 lib/canna/sample/jdemon.canna
-lib/canna/sample/jdemon.iroha
 lib/canna/sample/just.canna
-lib/canna/sample/just.iroha
 lib/canna/sample/lan5.canna
+lib/canna/sample/matsu.canna
 lib/canna/sample/modes.canna
-lib/canna/sample/modes.iroha
 lib/canna/sample/sample.canna
-lib/canna/sample/sample.iroha
+lib/canna/sample/skk.canna
 lib/canna/sample/src/Makefile
-lib/canna/sample/src/default.kpdef
-lib/canna/sample/src/english.kpdef
+lib/canna/sample/src/default.ctd
+lib/canna/sample/src/english.ctd
 lib/canna/sample/src/is.c
-lib/canna/sample/src/jdaemon.kpdef
-lib/canna/sample/src/just.kpdef
-lib/canna/sample/src/kaisoku.kpdef
-lib/canna/sample/src/kana.kpdef
-lib/canna/sample/src/lan5.kpdef
-lib/canna/sample/src/newjis.kpdef
-lib/canna/sample/src/romaji.kpdef
-lib/canna/sample/src/sokuon.kpdef
-lib/canna/sample/src/tut.kpdef
+lib/canna/sample/src/jdaemon.ctd
+lib/canna/sample/src/just.ctd
+lib/canna/sample/src/kaisoku.ctd
+lib/canna/sample/src/kana.ctd
+lib/canna/sample/src/lan5.ctd
+lib/canna/sample/src/matsu.ctd
+lib/canna/sample/src/newjis.ctd
+lib/canna/sample/src/romaji.ctd
+lib/canna/sample/src/sokuon.ctd
+lib/canna/sample/src/tut.ctd
+lib/canna/sample/src/vje.ctd
+lib/canna/sample/src/wx2+.ctd
 lib/canna/sample/tut.canna
 lib/canna/sample/unix.canna
 lib/canna/sample/vje.canna
-lib/canna/sample/vje.iroha
+lib/canna/sample/wx2+.canna
 lib/libRKC.a
 lib/libRKC.so
 lib/libRKC.so.1
@@ -119,21 +107,19 @@ lib/libcanna.so.1
 lib/libcanna16.a
 lib/libcanna16.so
 lib/libcanna16.so.1
-sbin/cannakill
 sbin/cannaserver
-@exec mkdir -p /var/run/canna
-@exec chown bin:bin /var/run/canna
-@exec chown bin:bin %D/lib/canna/dic/canna
+sbin/cannakill
+@exec mkdir /var/run/canna
+@exec chown bin.bin /var/run/canna
+@exec chown bin.bin %D/lib/canna/dic/canna
 @exec chmod 775 %D/lib/canna/dic/canna
 @exec chown bin.bin %D/lib/canna/dic
 @exec chmod 775 %D/lib/canna/dic
-@exec chown bin:bin %D/lib/canna/dic/user/user %D/lib/canna/dic/user
+@exec chown bin.bin %D/lib/canna/dic/user/user %D/lib/canna/dic/user
 @exec chmod 775 %D/lib/canna/dic/user/user %D/lib/canna/dic/user
 @unexec /bin/rmdir /var/run/canna
 @dirrm lib/canna/sample/src
 @dirrm lib/canna/sample
-@dirrm lib/canna/dic/user/user
-@dirrm lib/canna/dic/user
 @dirrm lib/canna/dic/canna
 @dirrm lib/canna/dic
 @dirrm lib/canna
