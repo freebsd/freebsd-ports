@@ -1,25 +1,23 @@
-# New ports collection makefile for:   linuxthreads
-# Version required:	0.71
+# New ports collection makefile for: linuxthreads
+# Version required:	2.1.2
 # Date created:		14 Jan 1999
 # Whom:			Richard Seaman, Jr. <dick@tar.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=      linuxthreads
-PKGNAME=       linuxthreads-0.71
+DISTNAME=      glibc-linuxthreads-2.1.2
+PKGNAME=       linuxthreads-2.1.2
 CATEGORIES=    devel
-MASTER_SITES=  ftp://ftp.inria.fr/INRIA/Projects/cristal/Xavier.Leroy/
+MASTER_SITES=  ${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR= glibc
 ONLY_FOR_ARCHS= i386
 
-#MAINTAINER=    dick@tar.com
 MAINTAINER=    jasone@freebsd.org
 
-threads_files=	_atomic_lock.S  libc_spinlock.h   uthread_rwlock.c \
-		uthread_rwlockattr.c libc_private.h uthread_file.c \
-		clone.S clone.h lclone.c sched.c spinlock.c libc_calls.c \
-		README.FreeBSD getgr_r.c syscalls.c libc_thread.c pthread_stack.h \
-		stack.c stack_attr.c pthread_rw.h pthread_private.h
+threads_files := README.FreeBSD _atomic_lock.S clone.S clone.h getgr_r.c \
+	lclone.c libc_calls.c libc_private.h libc_spinlock.c libc_spinlock.h \
+	libc_thread.c sched.c uthread_file.c
 
 WRKSRC=		${WRKDIR}/${PKGNAME}
 
@@ -27,13 +25,12 @@ SRC_BASE=	/usr/src
 LIBSRC_BASE=	${SRC_BASE}/lib
 
 post-extract:
-	@mv ${WRKSRC}/semaphore.h ${WRKSRC}/semaphore.h.unused
-	@mv ${WRKSRC}/semaphore.c ${WRKSRC}/semaphore.c.unused
-	@rm ${WRKSRC}/.depend
-	@rm ${WRKSRC}/.cvsignore
+	@mv ${WRKDIR}/linuxthreads ${WRKDIR}/${PKGNAME}
+.for src in no-tsd.c oldsemaphore.c sysdeps/pthread/semaphore.h
+	@mv ${WRKSRC}/$(src) ${WRKSRC}/$(src).unused
+.endfor
 	@cd ${FILESDIR} ; \
-		${CP} -p ${threads_files} ${WRKSRC}/.  ;  \
-		${CP} -p Examples/ex6.c ${WRKSRC}/Examples/.
+		${CP} -p ${threads_files} ${WRKSRC}/.
 
 post-build:
 	@cd ${FILESDIR} ; \
@@ -47,12 +44,10 @@ pre-install:
 		${MAKE} install
 
 post-install:
-	@sh ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m /usr/lib
 	${CAT} ${PKGDIR}/MESSAGE
-	@echo ""
-	@echo "Also see the file README.FreeBSD"
-	@echo ""
+
+#	@sh ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
