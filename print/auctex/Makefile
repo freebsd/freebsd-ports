@@ -13,34 +13,18 @@ MASTER_SITE_SUBDIR=	support/auctex
 
 MAINTAINER=		mkamm@gmx.net
 
-# NOTE: AUC TeX 10 requires Emacs version to be >= 20
-# EMACS_NAME must be 'emacs' or 'xemacs' - it is used for byte compiling
-#    emacs lisp files (*.el => *.elc)
-# EMACS_PORT is only used for dependency registration, the installed bits
-#    are always the same (regardless of what [x]emacs version is used)
-.if !defined(EMACS_NAME)
-.if exists(${LOCALBASE}/bin/xemacs)
-EMACS_NAME = xemacs
-EMACS_PORT = xemacs21
-.else
-EMACS_NAME = emacs
-EMACS_PORT = emacs20
-.endif
-.endif
-MAKE_ENV += EMACS='${EMACS_NAME}'
+RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 
-BUILD_DEPENDS =	${EMACS_NAME}:${PORTSDIR}/editors/${EMACS_PORT}
-RUN_DEPENDS =	${EMACS_NAME}:${PORTSDIR}/editors/${EMACS_PORT} \
-		latex:${PORTSDIR}/print/teTeX
+EMACS_PORT_NAME?=	emacs21
+EMACS_NO_RUN_DEPENDS=	yes
+LISPDIR=	${EMACS_SITE_LISPDIR}
+MAKE_ARGS+=	lispdir=${PREFIX}/${LISPDIR}
+PLIST_SUB+=	LISPDIR=${LISPDIR}
 
-.include <bsd.port.pre.mk>
-
-.if ${PREFIX} != /usr/local
 # adjust a hardcoded '/usr/local' string
 post-patch:
 	@${ECHO_MSG} "===>  Substituting hardcoded '/usr/local' paths"
-	${PERL} -wpi -e 's¦/usr/local¦${PREFIX}¦g' ${WRKSRC}/tex.el
-.endif
+	${PERL} -wpi -e 's?/usr/local?${PREFIX}?g' ${WRKSRC}/tex.el
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -51,6 +35,6 @@ post-install:
 	cd ${WRKSRC} &&  ${SETENV} ${MAKE_ENV} ${MAKE} install-info >/dev/null
 	install-info --entry='* AUC-Tex mode: (auctex).	Emacs mode for editing TeX and LaTeX files.' --section='TeX' ${PREFIX}/info/auctex ${PREFIX}/info/dir
 .endif
-	@${CAT} ${PKGMESSAGE} | ${SED} 's¦/usr/local¦${PREFIX}¦g'
+	@${CAT} ${PKGMESSAGE} | ${SED} 's?/usr/local?${PREFIX}?g'
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
