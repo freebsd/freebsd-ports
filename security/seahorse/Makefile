@@ -16,7 +16,8 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	asa@gascom.ru
 COMMENT=	A front end for GnuPG
 
-RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
+BUILD_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
+RUN_DEPENDS=	${BUILD_DEPENDS}
 LIB_DEPENDS=	gpgme.9:${PORTSDIR}/security/gpgme
 
 USE_BZIP2=	yes
