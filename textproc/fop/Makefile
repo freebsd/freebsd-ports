@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	fop
-PORTVERSION=	0.20.4
+PORTVERSION=	0.20.5
 CATEGORIES=	textproc java
-MASTER_SITES=	http://xml.apache.org/dist/fop/ \
-		http://xml.apache.org/dist/fop/recent/
+MASTER_SITES=	http://www.apache.org/dist/xml/fop/ \
+		http://nagoya.apache.org/mirror/xml/fop/recent/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	kiri@FreeBSD.org
@@ -22,23 +22,21 @@ PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 USE_JAVA=	1.2+
 NO_BUILD_DEPENDS_JAVA=	YES
 
-JAVA_LIBDIR=	${PREFIX}/share/java/classes
-
 pre-install:
-	${MKDIR} ${JAVA_LIBDIR} ${DATADIR} ${DOCSDIR}
-	${FIND} ${WRKSRC} \( -name \*.orig -o -name \*~ -o -name CVS \) \
-		-exec ${RM} -rf \{} \;
+	${MKDIR} ${DATADIR} ${DATADIR}/build ${DOCSDIR}
+	${FIND} ${WRKSRC} \( -name \*.orig -o -name \*~ -o -name CVS \) -exec ${RM} -rf \{} \;
 
 do-install:
 	cd ${WRKSRC}; \
-		${INSTALL_DATA} build/fop.jar ${JAVA_LIBDIR}; \
 		${INSTALL_DATA} CHANGES LICENSE README ReleaseNotes.html \
-			STATUS build.xml buildtools.xml ${DATADIR}; \
-		${INSTALL_SCRIPT} build.sh fop.sh ${DATADIR}; \
+			STATUS ${DATADIR}; \
+		${INSTALL_SCRIPT} fop.sh ${DATADIR}; \
+		${SED} -i "" -e s,%%PREFIX%%,${PREFIX}, ${DATADIR}/fop.sh ;\
 		${LN} -sf ${DATADIR}/fop.sh ${PREFIX}/bin/fop; \
-		${CP} -R build conf hyph lib ${DATADIR}
+		${CP} -R conf src/hyph lib ${DATADIR}; \
+		${CP} build/fop.jar ${DATADIR}/build
 .if !defined(NOPORTDOCS)
-	(cd ${WRKSRC}/docs && \
+	(cd ${WRKSRC}/build/site && \
 		${TAR} -cf - . | ${TAR} -xf - -C ${DOCSDIR})
 .endif
 

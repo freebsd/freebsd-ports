@@ -1,10 +1,10 @@
---- fop.sh.orig	Sat Jul  6 03:06:22 2002
-+++ fop.sh	Sat Aug  3 14:45:50 2002
-@@ -1,5 +1,28 @@
+--- fop.sh.orig	Fri Oct  3 00:24:47 2003
++++ fop.sh	Fri Oct  3 00:25:24 2003
+@@ -1,5 +1,25 @@
  #! /bin/sh
  #
 +# Common variables
-+PREFIX=/usr/local
++PREFIX=%%PREFIX%%
 +
 +# Default JAVACMD, JAVA_HOME, FOP_HOME
 +JAVACMD=${JAVACMD:-`which javavm`}
@@ -16,20 +16,17 @@
 +SHAREDIR=${PREFIX}/share
 +FOP_HOME=${SHAREDIR}/fop
 +DIRLIBS="\
-+    ${FOP_HOME}/lib/xalan-2.3.1.jar
-+    ${FOP_HOME}/lib/ant-1.4.1.jar
-+    ${FOP_HOME}/lib/avalon-framework-cvs-20020315.jar
++    ${FOP_HOME}/lib/xml-apis.jar
++    ${FOP_HOME}/lib/xercesImpl-2.2.1.jar
++    ${FOP_HOME}/lib/xalan-2.4.1.jar
 +    ${FOP_HOME}/lib/batik.jar
-+    ${FOP_HOME}/lib/bsf.jar
-+    ${FOP_HOME}/lib/buildtools.jar
-+    ${FOP_HOME}/lib/stylebook.jar
-+    ${FOP_HOME}/lib/xercesImpl-2.0.1.jar
-+    ${FOP_HOME}/lib/xml-apis.jar"
++    ${FOP_HOME}/lib/avalon-framework-cvs-20020806.jar
++    ${FOP_HOME}/lib/ant-1.5.1.jar"
 +
  # Shell script to run FOP, adapted from the Jakarta-Ant project.
  
  if [ -f $HOME/.foprc ] ; then 
-@@ -79,7 +102,7 @@
+@@ -79,7 +99,7 @@
  LOCALCLASSPATH=${FOP_HOME}/build/fop.jar:$LOCALCLASSPATH
  
  # add in the dependency .jar files, which reside in $FOP_HOME/lib
