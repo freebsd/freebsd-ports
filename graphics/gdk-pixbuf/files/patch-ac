@@ -1,9 +1,9 @@
---- gdk-pixbuf/Makefile.in.orig	Sat Jan 22 17:28:47 2000
-+++ gdk-pixbuf/Makefile.in	Fri Jan 28 10:36:20 2000
-@@ -147,14 +147,14 @@
+--- gdk-pixbuf/Makefile.in.orig	Mon Feb 21 18:25:11 2000
++++ gdk-pixbuf/Makefile.in	Mon Feb 21 23:55:30 2000
+@@ -216,14 +216,14 @@
  AM_CPPFLAGS = "-DPIXBUF_LIBDIR=\"$(libexecdir)\""
  
- LDADDS = libgdk_pixbuf.la $(LIBART_LIBS) $(GLIB_LIBS) $(GTK_LIBS)
+ LDADDS = libgdk_pixbuf.la $(LIBART_LIBS) $(GLIB_LIBS) $(GTK_LIBS) $(STATIC_LIB_DEPS)
 -@INSIDE_GNOME_LIBS_TRUE@testpixbuf_LDADD = $(LDADDS) $(LIBART_LIBS) -lgmodule
 -@INSIDE_GNOME_LIBS_FALSE@testpixbuf_LDADD = $(LDADDS) $(LIBART_LIBS) $(GNOME_LIBS) -lgmodule
 +@INSIDE_GNOME_LIBS_TRUE@testpixbuf_LDADD = $(LDADDS) $(LIBART_LIBS)

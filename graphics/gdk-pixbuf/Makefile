@@ -1,12 +1,12 @@
 # New ports collection makefile for:	gdk-pixbuf
-# Version required:	0.5.0
+# Version required:	0.6.0
 # Date created:		5th October 1999
 # Whom:			Ade Lovett <ade@lovett.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gdk-pixbuf-0.5.0
+DISTNAME=	gdk-pixbuf-0.6.0
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gdk-pixbuf

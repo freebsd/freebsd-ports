@@ -1,5 +1,4 @@
 bin/gdk-pixbuf-config
-bin/timescale
 etc/gdk_pixbufConf.sh
 etc/gnomecanvaspixbufConf.sh
 include/gdk-pixbuf/gdk-pixbuf.h
@@ -28,6 +27,8 @@ share/gnome/html/gdk-pixbuf.hierarchy
 share/gnome/html/gdk-pixbuf.html
 share/gnome/html/gdk-pixbuf.types
 share/gnome/html/gdk-pixbuf/book1.html
+share/gnome/html/gdk-pixbuf/compiling.html
+share/gnome/html/gdk-pixbuf/extra-configuration-options.html
 share/gnome/html/gdk-pixbuf/gdk-pixbuf-animation.html
 share/gnome/html/gdk-pixbuf/gdk-pixbuf-creating.html
 share/gnome/html/gdk-pixbuf/gdk-pixbuf-file-loading.html
