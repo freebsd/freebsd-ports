@@ -17,7 +17,7 @@ MAINTAINER=	mita@FreeBSD.org
 COMMENT=	Japanese Vector font library
 
 BUILD_DEPENDS=	xmkmf:${X_IMAKE_PORT}
-RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/TrueType/kochi-mincho-subst.ttf:${PORTSDIR}/japanese/kochi-ttfonts
+RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/TrueType/sazanami-mincho.ttf:${PORTSDIR}/japanese/sazanami-ttf
 
 VFLIB_VERSION=	2.25.6
 PLIST_SUB=	VFLIB_VERSION=${VFLIB_VERSION}
