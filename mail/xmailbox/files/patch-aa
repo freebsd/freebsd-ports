@@ -1,14 +1,16 @@
---- Imakefile.orig	Wed Jul 16 11:36:17 1997
-+++ Imakefile	Sun Jun 20 10:50:43 1999
-@@ -5,7 +5,7 @@
+--- Imakefile.orig	Thu Jul 17 01:36:17 1997
++++ Imakefile	Sat Apr  8 07:13:59 2000
+@@ -5,8 +5,8 @@
  # Note: you need to have XPM 3.4 or higher!
  #------------------------------------------
  #
 -XPMINCDIR = /usr/include/X11
-+XPMINCDIR = $(X11BASE)/include/X11
- XPMLIBDIR = /usr/X11/lib
+-XPMLIBDIR = /usr/X11/lib
++XPMINCDIR = $(INCDIR)/X11
++XPMLIBDIR = $(USRLIBDIR)
     XPMLIB = -L$(XPMLIBDIR) -lXpm
  
+ #-------------------------------
 @@ -20,7 +20,9 @@
  # Comment the following define if you
  # want audio support
@@ -30,3 +32,12 @@
  
  #------------------------------------------
  # Uncomment the following define if you
+@@ -84,7 +88,7 @@
+   EXTRA_DEFINES = -DCOM_AUDIO 
+ #else
+          SNDLIB = 
+-       INCLUDES = -I$(XPMINCDIR) -I/usr/public/include
++       INCLUDES = -I$(XPMINCDIR)
+   EXTRA_DEFINES = $(SUN_AUDIO)
+ #endif /* COM_AUDIO */
+ #endif /* RPLAY_AUDIO */
