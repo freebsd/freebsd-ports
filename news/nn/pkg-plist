@@ -11,6 +11,8 @@ bin/nntidy
 bin/nnusage
 bin/nnview
 bin/nn-inews
+etc/nntp_domain
+etc/nntp_server
 lib/nn/aux
 lib/nn/conf
 lib/nn/help/Manual
