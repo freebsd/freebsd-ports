@@ -3,7 +3,7 @@
 # Date created:		12 Sep 1996
 # Whom:			gurney_j@efn.org
 #
-# $Id: Makefile,v 1.2 1997/06/26 08:57:14 jmg Exp $
+# $Id: Makefile,v 1.3 1998/10/27 07:52:30 obrien Exp $
 #
 
 DISTNAME=	su2-1.3
@@ -14,5 +14,8 @@ MAINTAINER=	jmg@freebsd.org
 
 NO_CDROM=	"Don't sell for profit"
 MAN1=		su2.1
+
+post-patch:
+	${PERL} -pi -e 's,/etc/super,${PREFIX}/etc/super,g' ${WRKSRC}/su2.man
 
 .include <bsd.port.mk>
