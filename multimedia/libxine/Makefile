@@ -7,6 +7,7 @@
 
 PORTNAME=	xine
 PORTVERSION=	0.9.8
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://xine.sourceforge.net/files/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -22,15 +23,17 @@ LIB_DEPENDS=	a52.0:${PORTSDIR}/audio/liba52 \
 		intl.1:${PORTSDIR}/devel/gettext
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-lib-${PORTVERSION}
-CONFIGURE_ARGS=	--with-w32-path=${LOCALBASE}/lib/win32
-CONFIGURE_ENV=	CPPFLAGS="-I.. -I${LOCALBASE}/include" \
-		LIBS=-L${LOCALBASE}/lib
 
-USE_AUTOMAKE=	yes
-USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_IMLIB=	yes
 USE_ESOUND=	yes
+USE_IMLIB=	yes
+USE_GMAKE=	yes
+USE_AUTOMAKE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		THREAD_CFLAGS="${PTHREAD_CFLAGS}" \
+		THREAD_LIBS="${PTHREAD_LIBS}"
+CONFIGURE_ARGS=	--with-w32-path=${LOCALBASE}/lib/win32
 INSTALLS_SHLIB=	yes
 
 MAN1=		xine-config.1
@@ -75,9 +78,17 @@ PLIST_SUB+=	HAVE_OGG=""
 PLIST_SUB+=	HAVE_OGG="@comment "
 .endif
 
-# XXX: To avoid internal error in gcc.
-post-configure:
-	@${SED} -e "s/-funroll-loops//" < ${WRKSRC}/src/libw32dll/wine/Makefile > ${WRKSRC}/src/libw32dll/wine/Makefile.tmp
-	@${MV} ${WRKSRC}/src/libw32dll/wine/Makefile.tmp ${WRKSRC}/src/libw32dll/wine/Makefile
+post-patch:
+	@${PERL} -pi -e \
+		's|THREAD_LIBS=.*$$|THREAD_LIBS="\$$THREAD_LIBS"|g ; \
+		 s|THREAD_CFLAGS=.*$$|THREAD_CFLAGS="\$$THREAD_CFLAGS"|g ; \
+		 s|-L/usr/local/lib||g ; \
+		 s|-I/usr/local/include||g ; \
+		 s|-funroll-loops||g' ${WRKSRC}/configure.in
+	@${PERL} -pi -e \
+		's|aclocal,|${ACLOCAL},|g ; \
+		 s|autoconf,|${AUTOCONF},|g ; \
+		 s|automake,|${AUTOMAKE},|g ; \
+		 s|autoheader,|${AUTOHEADER},|g' ${WRKSRC}/aclocal.m4
 
 .include <bsd.port.post.mk>
