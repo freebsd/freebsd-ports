@@ -17,6 +17,9 @@ DISTNAME=	${PORTNAME}-beta-0.4-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A file and string hashing utility
 
+# Apparently out of sync with cryptopp
+BROKEN=		"Compile fails: cannot find cryptopp/sapphire.h"
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libcryptopp.a:${PORTSDIR}/security/cryptopp
 LIB_DEPENDS=	wx_gtk:${PORTSDIR}/x11-toolkits/wxgtk-devel
 
