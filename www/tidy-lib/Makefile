@@ -12,7 +12,7 @@ PKGNAMESUFFIX=	-lib
 MAINTAINER=	thierry@pompo.net
 COMMENT=	Utility to clean up and pretty print HTML/XHTML/XML (with shared lib)
 
-MASTERDIR=	${PORTSDIR}/www/tidy-devel
+MASTERDIR=	${.CURDIR}/../../www/tidy-devel
 
 WITH_SHLIB=	yes
 
