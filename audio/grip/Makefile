@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	grip
-PORTVERSION=	3.0.1
+PORTVERSION=	3.0.2
 # PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -17,14 +17,12 @@ MAINTAINER=	alane@FreeBSD.org
 LIB_DEPENDS=	id3-3.7.13:${PORTSDIR}/audio/id3lib \
 		ghttp.1:${PORTSDIR}/www/libghttp
 
-USE_AUTOMAKE_VER=	14
-USE_AUTOCONF_VER=	213
+USE_X_PREFIX=	yes
 
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
+GNU_CONFIGURE=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gnomelibs
-GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS+=	--datadir=${PREFIX}/share
 
@@ -41,10 +39,7 @@ CONFIGURE_ENV+=	CXXFLAGS="${CXXFLAGS}"
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ENV+= LIBS=${PTHREAD_LIBS}
 
-pre-configure:
-	cd ${WRKSRC}; ${AUTOHEADER}; ${AUTOMAKE}; ${AUTOCONF}
-
-post-install:
+post-install::
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
