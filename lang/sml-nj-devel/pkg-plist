@@ -1,24 +1,18 @@
 bin/ml-build
-bin/ml-burg
 bin/ml-lex
 bin/ml-makedepend
-bin/ml-nlffigen
 bin/ml-yacc
 bin/sml
 smlnj/bin/.arch-n-opsys
-smlnj/bin/.heap/ml-burg.%%MLARCH%%-bsd
 smlnj/bin/.heap/ml-lex.%%MLARCH%%-bsd
-smlnj/bin/.heap/ml-nlffigen.%%MLARCH%%-bsd
 smlnj/bin/.heap/ml-yacc.%%MLARCH%%-bsd
 smlnj/bin/.heap/sml.%%MLARCH%%-bsd
 smlnj/bin/.link-sml
 smlnj/bin/.run/run.%%MLARCH%%-freebsd
 smlnj/bin/.run-sml
 smlnj/bin/ml-build
-smlnj/bin/ml-burg
 smlnj/bin/ml-lex
 smlnj/bin/ml-makedepend
-smlnj/bin/ml-nlffigen
 smlnj/bin/ml-yacc
 smlnj/bin/sml
 smlnj/lib/SMLNJ-MLRISC/CM/%%MLARCH%%-unix/ALPHA.cm
@@ -34,16 +28,13 @@ smlnj/lib/SMLNJ-MLRISC/CM/%%MLARCH%%-unix/SPARC.cm
 smlnj/lib/SMLNJ-MLRISC/CM/%%MLARCH%%-unix/Visual.cm
 smlnj/lib/basis.cm/CM/%%MLARCH%%-unix/basis.cm
 smlnj/lib/burg-ext.cm/CM/%%MLARCH%%-unix/burg-ext.cm
-smlnj/lib/c-int.cm/CM/%%MLARCH%%-unix/c-int.cm
-smlnj/lib/c.cm/CM/%%MLARCH%%-unix/c.cm
-smlnj/lib/ckit-lib.cm/CM/%%MLARCH%%-unix/ckit-lib.cm
 smlnj/lib/dir-tool.cm/CM/%%MLARCH%%-unix/dir-tool.cm
 smlnj/lib/grm-ext.cm/CM/%%MLARCH%%-unix/grm-ext.cm
+smlnj/lib/hash-cons-lib.cm/CM/%%MLARCH%%-unix/hash-cons-lib.cm
 smlnj/lib/html-lib.cm/CM/%%MLARCH%%-unix/html-lib.cm
 smlnj/lib/inet-lib.cm/CM/%%MLARCH%%-unix/inet-lib.cm
 smlnj/lib/lex-ext.cm/CM/%%MLARCH%%-unix/lex-ext.cm
 smlnj/lib/make-tool.cm/CM/%%MLARCH%%-unix/make-tool.cm
-smlnj/lib/memory.cm/CM/%%MLARCH%%-unix/memory.cm
 smlnj/lib/ml-yacc-lib.cm/CM/%%MLARCH%%-unix/ml-yacc-lib.cm
 smlnj/lib/mlburg-tool.cm/CM/%%MLARCH%%-unix/mlburg-tool.cm
 smlnj/lib/mllex-tool.cm/CM/%%MLARCH%%-unix/mllex-tool.cm
@@ -122,21 +113,15 @@ smlnj/lib/unix-lib.cm/CM/%%MLARCH%%-unix/unix-lib.cm
 @dirrm smlnj/lib/burg-ext.cm/CM/%%MLARCH%%-unix
 @dirrm smlnj/lib/burg-ext.cm/CM
 @dirrm smlnj/lib/burg-ext.cm
-@dirrm smlnj/lib/c-int.cm/CM/%%MLARCH%%-unix
-@dirrm smlnj/lib/c-int.cm/CM
-@dirrm smlnj/lib/c-int.cm
-@dirrm smlnj/lib/c.cm/CM/%%MLARCH%%-unix
-@dirrm smlnj/lib/c.cm/CM
-@dirrm smlnj/lib/c.cm
-@dirrm smlnj/lib/ckit-lib.cm/CM/%%MLARCH%%-unix
-@dirrm smlnj/lib/ckit-lib.cm/CM
-@dirrm smlnj/lib/ckit-lib.cm
 @dirrm smlnj/lib/dir-tool.cm/CM/%%MLARCH%%-unix
 @dirrm smlnj/lib/dir-tool.cm/CM
 @dirrm smlnj/lib/dir-tool.cm
 @dirrm smlnj/lib/grm-ext.cm/CM/%%MLARCH%%-unix
 @dirrm smlnj/lib/grm-ext.cm/CM
 @dirrm smlnj/lib/grm-ext.cm
+@dirrm smlnj/lib/hash-cons-lib.cm/CM/%%MLARCH%%-unix
+@dirrm smlnj/lib/hash-cons-lib.cm/CM
+@dirrm smlnj/lib/hash-cons-lib.cm
 @dirrm smlnj/lib/html-lib.cm/CM/%%MLARCH%%-unix
 @dirrm smlnj/lib/html-lib.cm/CM
 @dirrm smlnj/lib/html-lib.cm
@@ -149,9 +134,6 @@ smlnj/lib/unix-lib.cm/CM/%%MLARCH%%-unix/unix-lib.cm
 @dirrm smlnj/lib/make-tool.cm/CM/%%MLARCH%%-unix
 @dirrm smlnj/lib/make-tool.cm/CM
 @dirrm smlnj/lib/make-tool.cm
-@dirrm smlnj/lib/memory.cm/CM/%%MLARCH%%-unix
-@dirrm smlnj/lib/memory.cm/CM
-@dirrm smlnj/lib/memory.cm
 @dirrm smlnj/lib/ml-yacc-lib.cm/CM/%%MLARCH%%-unix
 @dirrm smlnj/lib/ml-yacc-lib.cm/CM
 @dirrm smlnj/lib/ml-yacc-lib.cm

@@ -1,7 +1,49 @@
---- config/install.sh.orig	Wed Jun 20 22:39:12 2001
-+++ config/install.sh	Wed Aug 15 19:16:18 2001
-@@ -408,6 +408,28 @@
+--- config/install.sh.orig	Fri Feb 15 23:17:39 2002
++++ config/install.sh	Wed Feb 20 03:36:14 2002
+@@ -92,6 +92,17 @@
+     return 0
  }
+ 
++isin() {
++    tested_x=$1
++    shift
++    for set_y in "$@" ; do
++	if [ ${tested_x} = ${set_y} ] ; then
++	    return 0
++	fi
++    done
++    return 1
++}
++
+ require() {
+     require_who=$1
+     shift
+@@ -105,8 +116,10 @@
+ }
+ 
+ onepass() {
+-    while read depline ; do
+-	require $depline
++    while read depwho depon ; do
++	if isin $depwho ${TARGETS} ; then
++		require $depwho $depon
++	fi
+     done
+ }
+ 
+@@ -123,9 +136,7 @@
+ #
+ NEWTARGETS=""
+ for t in ${ALLTARGETS} ; do
+-    if isnotin $t ${TARGETS} ; then
+-	:
+-    else
++    if isin $t ${TARGETS} ; then
+ 	NEWTARGETS="$NEWTARGETS $t"
+     fi
+ done
+@@ -552,6 +563,28 @@
+ ######################################################################
  
  #
 +# do_patch patch-file
@@ -29,16 +71,16 @@
  # create the various sub directories
  #
  for dir in $BINDIR $HEAPDIR $RUNDIR $LIBDIR $SRCDIR ; do
-@@ -527,7 +549,7 @@
+@@ -668,7 +701,7 @@
      $MAKE -f mk.$ARCH-$OPSYS $EXTRA_DEFS
      if [ -x run.$ARCH-$OPSYS ]; then
  	mv run.$ARCH-$OPSYS $RUNDIR
 -	$MAKE MAKE=$MAKE clean
 +	[ "$MLNORUNTIMECLEAN" ] || $MAKE MAKE=$MAKE clean
      else
- 	echo "$this: !!! Run-time system build failed for some reason."
- 	exit 1
-@@ -594,6 +616,8 @@
+ 	complain "$this: !!! Run-time system build failed for some reason."
+     fi
+@@ -732,6 +765,8 @@
  	do
  	    unpack $src $ROOT/src $src $src
          done
