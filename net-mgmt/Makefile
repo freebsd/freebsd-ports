@@ -132,6 +132,7 @@
     SUBDIR += sendip
     SUBDIR += sing
     SUBDIR += sipcalc
+    SUBDIR += slate
     SUBDIR += snmptt
     SUBDIR += sting
     SUBDIR += subcalc
