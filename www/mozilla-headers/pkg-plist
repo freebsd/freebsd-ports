@@ -313,6 +313,7 @@ include/mozilla/docshell/nsIWebPageDescriptor.h
 include/mozilla/dom/domstubs.h
 include/mozilla/dom/nsDOMCID.h
 include/mozilla/dom/nsDOMError.h
+include/mozilla/dom/nsIBaseDOMException.h
 include/mozilla/dom/nsIDOM3Node.h
 include/mozilla/dom/nsIDOMAbstractView.h
 include/mozilla/dom/nsIDOMAttr.h
@@ -470,6 +471,7 @@ include/mozilla/dom/nsIDOMPluginArray.h
 include/mozilla/dom/nsIDOMProcessingInstruction.h
 include/mozilla/dom/nsIDOMRGBColor.h
 include/mozilla/dom/nsIDOMRange.h
+include/mozilla/dom/nsIDOMRangeException.h
 include/mozilla/dom/nsIDOMRect.h
 include/mozilla/dom/nsIDOMSVGAnimPresAspRatio.h
 include/mozilla/dom/nsIDOMSVGAnimTransformList.h
@@ -1280,6 +1282,7 @@ include/mozilla/msgsmime/nsSMimeJSHelper.h
 include/mozilla/necko/mozITXTToHTMLConv.h
 include/mozilla/necko/netCore.h
 include/mozilla/necko/nsCPasswordManager.h
+include/mozilla/necko/nsCPasswordManagerInternal.h
 include/mozilla/necko/nsHTTPChunkConv.h
 include/mozilla/necko/nsIAboutModule.h
 include/mozilla/necko/nsIAuthPrompt.h
@@ -1343,6 +1346,8 @@ include/mozilla/necko/nsISecretDecoderRing.h
 include/mozilla/necko/nsISecureBrowserUI.h
 include/mozilla/necko/nsISecurityEventSink.h
 include/mozilla/necko/nsISecurityManagerComponent.h
+include/mozilla/necko/nsISimpleStreamListener.h
+include/mozilla/necko/nsISimpleStreamProvider.h
 include/mozilla/necko/nsISocketProvider.h
 include/mozilla/necko/nsISocketProviderService.h
 include/mozilla/necko/nsISocketTransport.h
@@ -1353,8 +1358,11 @@ include/mozilla/necko/nsIStreamConverterService.h
 include/mozilla/necko/nsIStreamIO.h
 include/mozilla/necko/nsIStreamIOChannel.h
 include/mozilla/necko/nsIStreamListener.h
+include/mozilla/necko/nsIStreamListenerProxy.h
+include/mozilla/necko/nsIStreamListenerTee.h
 include/mozilla/necko/nsIStreamLoader.h
 include/mozilla/necko/nsIStreamProvider.h
+include/mozilla/necko/nsIStreamProviderProxy.h
 include/mozilla/necko/nsITXTToHTMLConv.h
 include/mozilla/necko/nsITransport.h
 include/mozilla/necko/nsITransportSecurityInfo.h
@@ -1547,6 +1555,7 @@ include/mozilla/pippki/nsIASN1Tree.h
 include/mozilla/pippki/nsIPKIParamBlock.h
 include/mozilla/plugin/npapi.h
 include/mozilla/plugin/npupp.h
+include/mozilla/plugin/nsDefaultPlugin.h
 include/mozilla/plugin/nsICookieStorage.h
 include/mozilla/plugin/nsIEventHandler.h
 include/mozilla/plugin/nsIFileUtilities.h
@@ -1842,16 +1851,6 @@ include/mozilla/xmlextras/nsISOAPTransportListener.h
 include/mozilla/xmlextras/nsISchema.h
 include/mozilla/xmlextras/nsISchemaLoader.h
 include/mozilla/xmlextras/nsIXMLHttpRequest.h
-include/mozilla/xmlterm/lineterm.h
-include/mozilla/xmlterm/mozILineTerm.h
-include/mozilla/xmlterm/mozIXMLTermShell.h
-include/mozilla/xmlterm/mozIXMLTermStream.h
-include/mozilla/xmlterm/mozIXMLTerminal.h
-include/mozilla/xmlterm/mozXMLT.h
-include/mozilla/xmlterm/mozXMLTermUtils.h
-include/mozilla/xmlterm/ptystream.h
-include/mozilla/xmlterm/tracelog.h
-include/mozilla/xmlterm/unistring.h
 include/mozilla/xp_path.h
 include/mozilla/xp_str.h
 include/mozilla/xpcom/nsAVLTree.h
@@ -1974,6 +1973,7 @@ include/mozilla/xpcom/nsIThreadPool.h
 include/mozilla/xpcom/nsITimelineService.h
 include/mozilla/xpcom/nsITimer.h
 include/mozilla/xpcom/nsITimerCallback.h
+include/mozilla/xpcom/nsITimerManager.h
 include/mozilla/xpcom/nsIUnicharBuffer.h
 include/mozilla/xpcom/nsIUnicharInputStream.h
 include/mozilla/xpcom/nsIVariant.h
@@ -2072,7 +2072,6 @@ include/mozilla/zlib/zlib.h
 @dirrm include/mozilla/xpinstall
 @dirrm include/mozilla/xpconnect
 @dirrm include/mozilla/xpcom
-@dirrm include/mozilla/xmlterm
 @dirrm include/mozilla/xmlextras
 @dirrm include/mozilla/xml-rpc
 @dirrm include/mozilla/xlibrgb
