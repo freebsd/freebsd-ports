@@ -65,6 +65,7 @@ EXTRACT_ONLY=	X400src-1.tgz X400src-2.tgz
 DISTFILES+=	Wraphelp.c
 IGNOREFILES=	Wraphelp.c
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
+.BEGIN:
 	${SH} ${PKGDIR}/INSTALL
 .endif
 .endif
