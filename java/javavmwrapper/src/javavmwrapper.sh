@@ -29,6 +29,7 @@
 #
 # MAINTAINER=java@FreeBSD.org
 
+SAVE_PATH=${PATH}
 export PATH=/bin:/sbin:/usr/bin:/usr/sbin
 
 PREFIX="%%PREFIX%%"
@@ -42,6 +43,9 @@ MAKE=/usr/bin/make
 tryJavaCommand () {
     # Check for the command being executable and exec it if so.
     if [ -x "${1}" ]; then
+        if [ ! -z "${SAVE_PATH}" ]; then
+            export PATH=${SAVE_PATH}
+        fi
         exec "${@}"
     fi
 
