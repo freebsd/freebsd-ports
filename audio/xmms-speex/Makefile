@@ -15,6 +15,8 @@ DISTNAME=	speex-xmms-${PORTVERSION}
 MAINTAINER=	dyeske@yahoo.com
 COMMENT=	XMMS input plugin to play speex files
 
+BROKEN=		Broken dependency
+
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 LIB_DEPENDS=	speex.1:${PORTSDIR}/audio/speex
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
