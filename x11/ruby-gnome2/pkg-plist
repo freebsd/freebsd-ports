@@ -35,7 +35,7 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/test-gnome/pixmap-entry.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/test-gnome/sample.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/test-gnome/test-gnome.rb
-+./gnome/sample/test-gnome/toroid.png
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/test-gnome/toroid.png
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/gnome/test-gnome
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/gnome/gnome-hello
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/gnome/browser
