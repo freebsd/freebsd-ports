@@ -3,12 +3,12 @@
 # Date created:         17 July 1995
 # Whom:                 asami
 #
-# $Id: Makefile,v 1.2 1995/07/27 10:11:27 ats Exp $
+# $Id: Makefile,v 1.3 1996/11/18 11:29:33 asami Exp $
 #
 
 DISTNAME=	xdl-2.1
 CATEGORIES=	graphics x11
-MASTER_SITES=	ftp://ftp.uoknor.edu/src/X11R5/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
 
 MAINTAINER=	asami@FreeBSD.ORG
 
