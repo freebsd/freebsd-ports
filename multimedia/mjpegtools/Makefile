@@ -64,6 +64,14 @@ PLIST_SUB+=	DIVX=''
 .if exists(${LOCALBASE}/lib/libdv.so.2)
 WITH_LIBDV=	yes
 .endif
+# LIBGNUGETOPT
+# If this is found in the system, the port tries to use it
+# Furthermore, we will only do this if gnugetopt is installed so
+# that we don't break -CURRENT since libgnugetopt is a problem for
+# -CURRENT right now
+.if exists(${LOCALBASE}/lib/libgnugetopt.so)
+WITH_LIBGNUGETOPT=	yes
+.endif
 # LIBMOVTAR
 .if exists(${LOCALBASE}/lib/libmovtar.a)
 WITH_LIBMOVTAR=	yes
@@ -86,6 +94,10 @@ USE_GNOME+=	gtk12
 LIB_DEPENDS+=	dv.2:${PORTSDIR}/multimedia/libdv
 
 CONFIGURE_ARGS+=	--with-dv=${LOCALBASE}
+.endif
+#
+.ifdef(WITH_LIBGNUGETOPT)
+LIB_DEPENDS+=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 .endif
 #
 .ifdef(WITH_LIBMOVTAR)
@@ -155,6 +167,10 @@ post-patch:
 .if ${OPSYS:L} == "freebsd"
 	@${REINPLACE_CMD} -E -e 's|^(have_pthread=).+$$|\1true|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+.endif
+.ifdef(WITH_LIBGNUGETOPT)
+	@${REINPLACE_CMD} -E -e 's|(AVIPLAY_LIBS \=.*)|\1 -lgnugetopt|' \
+		${WRKSRC}/lavtools/Makefile.in
 .endif
 
 post-configure:
