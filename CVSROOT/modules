@@ -5737,6 +5737,7 @@ p5-P4		ports/devel/p5-P4
 p5-P4-Client	ports/devel/p5-P4-Client
 p5-PAR		ports/devel/p5-PAR
 p5-PAR-Dist	ports/devel/p5-PAR-Dist
+p5-PCSC-Card	ports/devel/p5-PCSC-Card
 p5-PDF-API2	ports/textproc/p5-PDF-API2
 p5-PDF-Create	ports/textproc/p5-PDF-Create
 p5-PDFLib	ports/print/p5-PDFLib
