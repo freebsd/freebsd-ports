@@ -1,0 +1,63 @@
+share/gnome/gdesklets/Displays/Calendar/Calendar.display
+share/gnome/gdesklets/Displays/Calendar/gfx/cur.png
+share/gnome/gdesklets/Displays/Calendar/gfx/next.png
+share/gnome/gdesklets/Displays/Calendar/gfx/prev.png
+share/gnome/gdesklets/Sensors/Calendar/__init__.py
+share/gnome/gdesklets/Sensors/Calendar/__init__.pyc
+share/gnome/gdesklets/Sensors/Calendar/__init__.pyo
+share/gnome/gdesklets/Sensors/Calendar/cal.py
+share/gnome/gdesklets/Sensors/Calendar/cal.pyc
+share/gnome/gdesklets/Sensors/Calendar/cal.pyo
+share/gnome/gdesklets/Sensors/Calendar/docdb.py
+share/gnome/gdesklets/Sensors/Calendar/docdb.pyc
+share/gnome/gdesklets/Sensors/Calendar/docdb.pyo
+share/gnome/gdesklets/Sensors/Calendar/ev_editor.py
+share/gnome/gdesklets/Sensors/Calendar/ev_editor.pyc
+share/gnome/gdesklets/Sensors/Calendar/ev_editor.pyo
+share/gnome/gdesklets/Sensors/Calendar/ev_list.py
+share/gnome/gdesklets/Sensors/Calendar/ev_list.pyc
+share/gnome/gdesklets/Sensors/Calendar/ev_list.pyo
+share/gnome/gdesklets/Sensors/Calendar/ev_viewer.py
+share/gnome/gdesklets/Sensors/Calendar/ev_viewer.pyc
+share/gnome/gdesklets/Sensors/Calendar/ev_viewer.pyo
+share/gnome/gdesklets/Sensors/Calendar/event.py
+share/gnome/gdesklets/Sensors/Calendar/event.pyc
+share/gnome/gdesklets/Sensors/Calendar/event.pyo
+share/gnome/gdesklets/Sensors/Calendar/events.py
+share/gnome/gdesklets/Sensors/Calendar/events.pyc
+share/gnome/gdesklets/Sensors/Calendar/events.pyo
+share/gnome/gdesklets/Sensors/Calendar/evtypes.py
+share/gnome/gdesklets/Sensors/Calendar/evtypes.pyc
+share/gnome/gdesklets/Sensors/Calendar/evtypes.pyo
+share/gnome/gdesklets/Sensors/Calendar/gfx/calendar.png
+share/gnome/gdesklets/Sensors/Calendar/gfx/event.png
+share/gnome/gdesklets/Sensors/Calendar/gfx/recurrency.png
+share/gnome/gdesklets/Sensors/Calendar/helpers.py
+share/gnome/gdesklets/Sensors/Calendar/helpers.pyc
+share/gnome/gdesklets/Sensors/Calendar/helpers.pyo
+share/gnome/gdesklets/Sensors/Calendar/info_editor.py
+share/gnome/gdesklets/Sensors/Calendar/info_editor.pyc
+share/gnome/gdesklets/Sensors/Calendar/info_editor.pyo
+share/gnome/gdesklets/Sensors/Calendar/locale/ca/LC_MESSAGES/calendar-sensor.mo
+share/gnome/gdesklets/Sensors/Calendar/locale/de/LC_MESSAGES/calendar-sensor.mo
+share/gnome/gdesklets/Sensors/Calendar/locale/de_DE/LC_MESSAGES/calendar-sensor.mo
+share/gnome/gdesklets/Sensors/Calendar/locale/es/LC_MESSAGES/calendar-sensor.mo
+share/gnome/gdesklets/Sensors/Calendar/locale/fr/LC_MESSAGES/calendar-sensor.mo
+share/gnome/gdesklets/Sensors/Calendar/recurrence_editor.py
+share/gnome/gdesklets/Sensors/Calendar/recurrence_editor.pyc
+share/gnome/gdesklets/Sensors/Calendar/recurrence_editor.pyo
+@dirrm share/gnome/gdesklets/Sensors/Calendar/locale/fr/LC_MESSAGES
+@dirrm share/gnome/gdesklets/Sensors/Calendar/locale/fr
+@dirrm share/gnome/gdesklets/Sensors/Calendar/locale/es/LC_MESSAGES
+@dirrm share/gnome/gdesklets/Sensors/Calendar/locale/es
+@dirrm share/gnome/gdesklets/Sensors/Calendar/locale/de_DE/LC_MESSAGES
+@dirrm share/gnome/gdesklets/Sensors/Calendar/locale/de_DE
+@dirrm share/gnome/gdesklets/Sensors/Calendar/locale/de/LC_MESSAGES
+@dirrm share/gnome/gdesklets/Sensors/Calendar/locale/de
+@dirrm share/gnome/gdesklets/Sensors/Calendar/locale/ca/LC_MESSAGES
+@dirrm share/gnome/gdesklets/Sensors/Calendar/locale/ca
+@dirrm share/gnome/gdesklets/Sensors/Calendar/locale
+@dirrm share/gnome/gdesklets/Sensors/Calendar/gfx
+@dirrm share/gnome/gdesklets/Sensors/Calendar
+@dirrm share/gnome/gdesklets/Displays/Calendar/gfx
+@dirrm share/gnome/gdesklets/Displays/Calendar
