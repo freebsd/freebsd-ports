@@ -863,7 +863,7 @@ MASTER_SITE_SUSE+= 	\
 	ftp://ftp.unina.it/pub/linux/distributions/SuSE/%SUBDIR%/ \
 	ftp://ftp.uniroma2.it/Linux/suse/pub/suse/%SUBDIR%/ \
 	ftp://ftp.riken.jp/Linux/suse/%SUBDIR%/ \
-	http.riken.jp/Linux/suse/%SUBDIR%/ \
+	http://http.riken.jp/Linux/suse/%SUBDIR%/ \
 	ftp://ftp.kddilabs.jp/Linux/packages/SuSE/%SUBDIR%/ \
 	ftp://ftp.novell.co.jp/pub/suse/suse/%SUBDIR%/ \
 	ftp://ftp.kreonet.re.kr/pub/Linux/suse/%SUBDIR%/ \
