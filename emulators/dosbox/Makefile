@@ -14,12 +14,11 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	knyghtmare@knyghtmare.com
 COMMENT=	An emulator of a PC with DOS
 
-LIB_DEPENDS=	SDL_net.0:${PORTSDIR}/net/sdl_net \
-		png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
-USE_SDL=	yes
+USE_SDL=	sdl net
 
 MAN1=		dosbox.1
 PKGMESSAGE=	${WRKDIR}/pkg-message
