@@ -1,6 +1,6 @@
 # New ports collection makefile for:	cclient
 # Date created:				2 July 2000
-# Whom:					Kelly Yancey <kbyanc@posi.net>
+# Whom:					Kelly Yancey <kbyanc@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -8,14 +8,13 @@
 PORTNAME=	cclient
 PORTVERSION=	4.7c
 CATEGORIES=	mail devel
-MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/ \
-		ftp://ftp.funet.fi/pub/mirrors/ftp.cac.washington.edu/mail/ \
-		http://mirror.nucba.ac.jp/mirror/imap/ \
-		ftp://ftp.uni-halle.de/pub/mail/pine/
+MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/old/ \
+		ftp://ftp.funet.fi/pub/mirrors/ftp.cac.washington.edu/imap/old/ \
+		http://mirror.nucba.ac.jp/mirror/imap/old/
 DISTNAME=	imap-${PORTVERSION}2
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	kbyanc@posi.net
+MAINTAINER=	kbyanc@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/imap-${PORTVERSION}
 
