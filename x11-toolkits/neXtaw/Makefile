@@ -6,24 +6,31 @@
 #
 
 PORTNAME=	neXtaw
-PORTVERSION=	0.9
+PORTVERSION=	0.15.1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://siag.nu/pub/neXtaw/
 
-MAINTAINER=	tg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Athena Widgets with N*XTSTEP appearance
 
-USE_IMAKE=	yes
+USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
+USE_LIBTOOL=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
+		LDFLAGS="-L${X11BASE}/lib"
 INSTALLS_SHLIB=	yes
 
-MAN1=		neXtclock.1
+post-patch:
+	@${REINPLACE_CMD} -e 's|version-info.*$$|version-info ${XAWVER}:0:0|g' \
+		${WRKSRC}/X11/neXtaw/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/neXtaw
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/neXtaw
-	${INSTALL_DATA} ${WRKSRC}/doc/CHANGES ${PREFIX}/share/doc/neXtaw
-	${INSTALL_DATA} ${WRKSRC}/doc/FAQ ${PREFIX}/share/doc/neXtaw
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/CHANGES ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/FAQ ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
