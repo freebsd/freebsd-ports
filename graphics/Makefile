@@ -187,6 +187,7 @@
     SUBDIR += librsvg
     SUBDIR += librsvg2
     SUBDIR += libungif
+    SUBDIR += libv3d
     SUBDIR += libwmf
     SUBDIR += libxine
     SUBDIR += linplasma
