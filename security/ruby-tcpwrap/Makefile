@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tcpwrap
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	security ruby
 MASTER_SITES=	http://www.shugo.net/archive/ruby-tcpwrap/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
