@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gimp
-PORTVERSION=	1.3.13
+PORTVERSION=	1.3.14
 PORTEPOCH=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
@@ -18,9 +18,7 @@ MASTER_SITE_SUBDIR=	gimp/v${PORTVERSION:R}/v${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A GNU Image Manipulation Program (unstable development version)
 
-LIB_DEPENDS=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20 \
-		art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl2 \
-		aa.1:${PORTSDIR}/graphics/aalib \
+LIB_DEPENDS=	aa.1:${PORTSDIR}/graphics/aalib \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
@@ -34,8 +32,8 @@ USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
-USE_GNOMENG=	yes
-USE_GNOME=	gnomehack
+USE_GNOME=	gnomehack gtk20 libartlgpl2
+WANT_GNOME=	yes
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
@@ -68,12 +66,11 @@ CONFIGURE_ARGS+=	--disable-print
 LIB_DEPENDS+=		gimpprint.2:${PORTSDIR}/print/gimp-print
 .endif
 
-.if exists(${X11BASE}/libdata/pkgconfig/libpanelapplet-2.0.pc)
-RUN_DEPENDS+=	gnome-panel:${PORTSDIR}/x11/gnomepanel
+.include <bsd.port.pre.mk>
+
+.if ${HAVE_GNOME:Mgnomepanel}!=""
+USE_GNOME+=		gnomepanel
 CONFIGURE_ARGS+=	--with-gnome-datadir=${X11BASE}/share/gnome
-PLIST_SUB+=	GNOME:=""
-.else
-PLIST_SUB+=	GNOME:="@comment "
 .endif
 
 #.if exists(${X11BASE}/libdata/pkgconfig/libgtkhtml-2.0.pc) || defined(WITH_HTML_HELP_BROWSER)
@@ -88,4 +85,4 @@ pre-everything::
 	@${ECHO_MSG} "		WITHOUT_PRINT=yes	Turns off GIMP printing"
 	@${ECHO_MSG} ""
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
