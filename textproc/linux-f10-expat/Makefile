@@ -16,7 +16,7 @@ COMMENT=	Linux/i386 binary port of Expat XML-parsing library
 RUN_DEPENDS=
 
 BASEVERSION=	9
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 PLIST=		${WRKDIR}/plist
 RPM_SET=	expat-1.95.5-2.i386.rpm
 
