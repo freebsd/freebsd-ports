@@ -18,6 +18,12 @@ EXTRACT_ONLY=	sp3f4.kit${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A general-purpose circuit simulation program
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
+.endif
+
 USE_XLIB=	yes
 USE_REINPLACE=	yes
 NO_WRKSUBDIR=	yes
@@ -40,4 +46,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/examples/*.cir ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
