@@ -11,6 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.trolltech.com/qt/source/
 DISTNAME=	${PORTNAME:S/1//}-${PORTVERSION}
+DIST_SUBDIR=	KDE
 
 PATCH_SITES=	ftp://ftp.kde.gr.jp/pub/qt/patch/
 PATCHFILES=	qt-1.45-i18n-20000531.diff.gz

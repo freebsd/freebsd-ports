@@ -7,6 +7,7 @@
 
 PORTNAME=	qt
 PKGNAMESUFFIX=	-static
+DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
 
