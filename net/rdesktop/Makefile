@@ -35,8 +35,10 @@ LIB_DEPENDS=	gmp.4:${PORTSDIR}/math/libgmp3
 do-patch:
 	@${EXTRACT_CMD} -dc ${_DISTDIR}/${PATCHFILES} | \
 		${PATCH} ${PATCH_DIST_ARGS}
-.if ${OSVERSION} >= 500023
-	@${PERL} -pi.orig -e 's:-O2.*-Wall:${CFLAGS} -I${PREFIX}/include:g' \
+.if ${OSVERSION} > 500023
+	@${PERL} -pi.orig -e 's:-O2.*-Wall:${CFLAGS} -I${LOCALBASE}/include:g' \
+		${WRKSRC}/Makefile
+	@${PERL} -pi.orig -e 's:-lgmp:-L${LOCALBASE}/lib -lgmp:g' \
 		${WRKSRC}/Makefile
 .else
 	@${PERL} -pi.orig -e 's:-O2.*-Wall:${CFLAGS}:g' ${WRKSRC}/Makefile
