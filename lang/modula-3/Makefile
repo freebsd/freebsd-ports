@@ -3,7 +3,7 @@
 # Date created:		18 Mar 1996
 # Whom:			John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.18 1997/07/26 00:24:53 jdp Exp $
+# $Id: Makefile,v 1.19 1998/04/28 22:23:10 jdp Exp $
 #
 
 DISTNAME=	modula-3-3.6
@@ -18,10 +18,19 @@ WRKSRC=		${PORTSDIR}/lang/modula-3-lib/work
 NO_CHECKSUM=	yes
 NO_CONFIGURE=	yes
 NO_BUILD=	yes
-MAN1=		analyze_coverage.1 formsedit.1 m3browser.1 \
-		m3build.1 m3bundle.1 m3pp.1 m3ship.1 m3tohtml.1 \
-		m3totex.1 m3where.1 quake.1 recordheap.1 \
-		replayheap.1 showheap.1 shownew.1 showthread.1
+MAN1=		analyze_coverage.1 m3browser.1 m3build.1 \
+		m3bundle.1 m3pp.1 m3ship.1 m3tohtml.1 \
+		m3totex.1 m3where.1 quake.1 recordheap.1
+
+# Support building on systems with or without X11 installed.  The port
+# only supports X11R6 in the standard location, so we don't bother using
+# the X11BASE macro.  It's not defined yet at this point in the Makefile
+# anyway.
+.if !exists(/usr/X11R6/lib/libX11.a)
+PLIST=		${PKGDIR}/PLIST.noX11
+.else
+MAN1+=		formsedit.1 replayheap.1 showheap.1 shownew.1 showthread.1
+.endif
 
 # Keep these in sync with the PLIST and with the library version numbers
 # in the modula-3-lib port (PLIST and patch-ah there).
@@ -44,7 +53,7 @@ do-install:
 	@cd ${temp_prefix}; \
 	    umask 022; \
 	    sed -e "/^@/d" -e "/m3build-/d" -e "s/\.gz$$//" \
-		-e "/^share/d" ${PKGDIR}/PLIST | \
+		-e "/^share/d" ${PLIST} | \
 		cpio -dump -R ${BINOWN}.${BINGRP} ${PREFIX}
 	@echo "Fixing absolute pathnames in installed files"
 	@${SH} ${SCRIPTDIR}/fix_pathnames ${temp_prefix} ${PREFIX}
@@ -87,9 +96,9 @@ do-install:
 	    ln -f m3build m3build-${major}.${minor}
 	@echo "Fixing file permissions"
 	@cd ${PREFIX}; \
-	    sed -e "/^@/d" -e "s/\.gz$$//" ${PKGDIR}/PLIST |\
+	    sed -e "/^@/d" -e "s/\.gz$$//" ${PLIST} |\
 		xargs chown ${BINOWN}.${BINGRP}; \
-	    sed -e "/^@/d" -e "s/\.gz$$//" ${PKGDIR}/PLIST |\
+	    sed -e "/^@/d" -e "s/\.gz$$//" ${PLIST} |\
 		xargs chmod go=u-w; \
 	    find -X lib/m3 -type d | xargs chown ${BINOWN}.${BINGRP}; \
 	    find -X lib/m3 -type d | xargs chmod 755

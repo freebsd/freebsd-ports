@@ -1,0 +1,28 @@
+etc/rc.d/50.m3.sh
+lib/m3/FreeBSD2/libDiGraph.so.6.0
+lib/m3/FreeBSD2/libGeometry.so.6.0
+lib/m3/FreeBSD2/libTempFiles.so.6.0
+lib/m3/FreeBSD2/libm3.so.6.0
+lib/m3/FreeBSD2/libm3core.so.6.0
+lib/m3/FreeBSD2/libm3parseparams.so.6.0
+lib/m3/FreeBSD2/libm3tcp.so.6.0
+lib/m3/FreeBSD2/libm3tools.so.6.0
+lib/m3/FreeBSD2/libset.so.6.0
+lib/m3/FreeBSD2/libtable-list.so.6.0
+lib/m3/FreeBSD2/libtcpextras.so.6.0
+lib/m3/FreeBSD2/libweb.so.6.0
+lib/m3/pkg/digraph/FreeBSD2/libDiGraph.so.6.0
+lib/m3/pkg/libm3/FreeBSD2/libm3.so.6.0
+lib/m3/pkg/m3core/FreeBSD2/libm3core.so.6.0
+lib/m3/pkg/m3tools/FreeBSD2/libm3tools.so.6.0
+lib/m3/pkg/parseparams/FreeBSD2/libm3parseparams.so.6.0
+lib/m3/pkg/realgeometry/FreeBSD2/libGeometry.so.6.0
+lib/m3/pkg/set/FreeBSD2/libset.so.6.0
+lib/m3/pkg/table-list/FreeBSD2/libtable-list.so.6.0
+lib/m3/pkg/tcp/FreeBSD2/libm3tcp.so.6.0
+lib/m3/pkg/tcpextras/FreeBSD2/libtcpextras.so.6.0
+lib/m3/pkg/tempfiles/FreeBSD2/libTempFiles.so.6.0
+lib/m3/pkg/web/FreeBSD2/libweb.so.6.0
+share/modula-3-lib/COPYRIGHT
+@exec /sbin/ldconfig -m %D/lib/m3/FreeBSD2
+@unexec /sbin/ldconfig -R
