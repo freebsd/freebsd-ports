@@ -1,0 +1,16 @@
+--- include/string.hh.orig	Sun Nov 28 21:29:10 1999
++++ include/string.hh	Sun Nov 28 21:29:34 1999
+@@ -57,11 +57,11 @@
+         }
+         else ptr = right.ptr;
+     }
+-    operator==(const string &right) {
++    int operator==(const string &right) {
+       return
+         strcmp(ptr,right.ptr) != 0 ? 0 : 1;
+     }
+-    operator!=(const string &right) {
++    int operator!=(const string &right) {
+       return
+         strcmp(ptr,right.ptr) != 0 ? 1 : 0;
+     }

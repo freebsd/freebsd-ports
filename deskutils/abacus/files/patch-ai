@@ -1,0 +1,11 @@
+--- include/utils.hh.orig	Thu Dec 30 15:18:25 1999
++++ include/utils.hh	Thu Dec 30 15:18:48 1999
+@@ -45,7 +45,7 @@
+ #define MIN(a,b)		((a) < (b) ? (a) : (b))
+ #endif
+ 
+-#define panic(msg) err_print(msg)
++#define punt(msg) err_print(msg)
+ 
+ void err_print(char *message);
+ void err_print(char *message,int n);

@@ -13,10 +13,13 @@ MASTER_SITES=	http://www-cad.eecs.berkeley.edu/HomePages/aml/abacus/ \
 		http://tahoe.inesc.pt/~aml/abacus/
 EXTRACT_SUFX=	.tgz
 
+PATCH_SITES=	http://www.freebsd.org/~steve/distfiles/
+PATCHFILES=	${PKGNAME}.patch.gz
+
 MAINTAINER=	andy@icc.surw.chel.su
 
-LIB_DEPENDS=	tcl80.1:${PORTSDIR}/lang/tcl80 \
-		tk80.1:${PORTSDIR}/x11-toolkits/tk80
+LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82 \
+		tk82.1:${PORTSDIR}/x11-toolkits/tk82
 
 ALL_TARGET=	dep tcl_interf/nxlc
 USE_GMAKE=	yes
@@ -24,6 +27,12 @@ USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/${PKGNAME}
 
 MAN1=		abacus.1
+
+pre-patch:
+	@ (cd ${WRKSRC}; find -d . -name RCS -exec ${RM} -rf {} \;)
+
+post-patch:
+	@ (cd ${WRKSRC}; ${RM} canvas; ${LN} -sf canvas-tcl8.2.2 canvas)
 
 do-install:
 	@ ${INSTALL_SCRIPT} ${WRKSRC}/${DISTNAME} ${PREFIX}/bin
@@ -48,7 +57,7 @@ post-install:
 	@ ${RM} -fr ${WRKSRC}/doc/RCS ${WRKSRC}/doc/help/RCS
 	@ ${MKDIR} ${PREFIX}/share/doc/abacus
 	@ cd ${WRKSRC}/doc; tar --exclude ${DISTNAME}.1 -cf - . | \
-                (cd ${PREFIX}/share/doc/abacus; tar --unlink -xf - )
+		(cd ${PREFIX}/share/doc/abacus; tar --unlink -xf - )
 .endif
 
 .include <bsd.port.mk>

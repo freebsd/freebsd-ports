@@ -14,7 +14,7 @@
  
  # Add extra include dirs here
 -IFLAGS = -I$(IDIR)
-+IFLAGS = -I$(IDIR) -I$(X11BASE)/include -I$(LOCALBASE)/include/tcl8.0 -I$(LOCALBASE)/include/tk8.0
++IFLAGS = -I$(IDIR) -I$(X11BASE)/include -I$(LOCALBASE)/include/tcl8.2 -I$(LOCALBASE)/include/tk8.2
  
  # Add extra directories where you want the abacus to search for libraries here
  LFLAGS = -L/usr/local/lib -L/usr/X11R6/lib -L$(LIBDIR) -L.

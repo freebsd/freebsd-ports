@@ -1,0 +1,20 @@
+--- tcl_interf/interf_aux.cc.orig	Thu Dec 30 12:30:22 1999
++++ tcl_interf/interf_aux.cc	Thu Dec 30 12:33:44 1999
+@@ -480,7 +480,7 @@
+       to->value=from->value;
+       to->ivalue=from->ivalue;
+       to->label=from->label;
+-      to->formula=&(Formula(strlen(aux_s),aux_s));
++      to->formula=new Formula(strlen(aux_s),aux_s);
+       free(aux_s);
+     }
+   if(from->type==CODE_NUMBER)
+@@ -512,7 +512,7 @@
+       to->value=from->value;
+       to->ivalue=from->ivalue;
+       to->label=from->label;
+-      to->formula=&(Formula(strlen(aux_s),aux_s));
++      to->formula=new Formula(strlen(aux_s),aux_s);
+       free(aux_s);
+     }
+ }
