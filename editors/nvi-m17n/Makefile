@@ -27,10 +27,17 @@ PATCH_DIST_ARGS=-d ${WRKSRC}/.. --forward --quiet -E -p1 -f
 CONFIGURE_ENV=	OPTFLAG='-D_PATH_SYSEXRC=\"${PREFIX}/etc/vi.exrc\"'
 CONFIGURE_ARGS=	--enable-multibyte --program-prefix=n
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 400000
+post-extract:
+	${RM} -f ${WRKSRC}/../include/sys/queue.h
+.endif
+
 post-install:
 	@${CP} ${WRKSRC}/../docs.m17n/README.english \
 		${PREFIX}/share/vi/
 	@${CP} ${WRKSRC}/../docs.m17n/README.japanese \
 		${PREFIX}/share/vi/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
