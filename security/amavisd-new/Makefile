@@ -7,94 +7,88 @@
 # Based on amavisd ports makefile.
 
 PORTNAME=	amavisd-new
-PORTVERSION=	20020517
+PORTVERSION=	20021227.p1
 CATEGORIES=	security
 MASTER_SITES=	http://www.ijs.si/software/amavisd/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/-p/}
 
-MAINTAINER=	ckd-freebsd@ckdhr.com
+MAINTAINER=	blaz@si.FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/arc:${PORTSDIR}/archivers/arc \
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
+		${SITE_PERL}/${PERL_ARCH}/Unix/Syslog.pm:${PORTSDIR}/sysutils/p5-Unix-Syslog \
+		${SITE_PERL}/MIME/Words.pm:${PORTSDIR}/mail/p5-MIME-Tools \
+		${SITE_PERL}/Convert/TNEF.pm:${PORTSDIR}/converters/p5-Convert-TNEF \
+		${SITE_PERL}/${PERL_ARCH}/Convert/UUlib.pm:${PORTSDIR}/converters/p5-Convert-UUlib \
+		${SITE_PERL}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
+		${SITE_PERL}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar \
+		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
+		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
+		${SITE_PERL}/Net/Server.pm:${PORTSDIR}/net/p5-Net-Server \
+		${SITE_PERL}/Mail/SpamAssassin.pm:${PORTSDIR}/mail/p5-Mail-SpamAssassin \
+		${LOCALBASE}/bin/arc:${PORTSDIR}/archivers/arc \
 		${LOCALBASE}/bin/lha:${PORTSDIR}/archivers/lha \
 		${LOCALBASE}/bin/unarj:${PORTSDIR}/archivers/unarj \
 		${LOCALBASE}/bin/unrar:${PORTSDIR}/archivers/unrar \
-		${LOCALBASE}/bin/zoo:${PORTSDIR}/archivers/zoo \
-		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
-		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
-		${SITE_PERL}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
-		${SITE_PERL}/${PERL_ARCH}/Convert/UUlib.pm:${PORTSDIR}/converters/p5-Convert-UUlib \
-		${SITE_PERL}/${PERL_ARCH}/IO/Socket/UNIX.pm:${PORTSDIR}/devel/p5-IO \
-		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
-		${SITE_PERL}/${PERL_ARCH}/Unix/Syslog.pm:${PORTSDIR}/sysutils/p5-Unix-Syslog \
-		${SITE_PERL}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar \
-		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
-		${SITE_PERL}/Convert/TNEF.pm:${PORTSDIR}/converters/p5-Convert-TNEF \
-		${SITE_PERL}/IO/AtomicFile.pm:${PORTSDIR}/devel/p5-IO-stringy \
-		${SITE_PERL}/MIME/Body.pm:${PORTSDIR}/mail/p5-MIME-Tools \
-		${SITE_PERL}/Mail/Address.pm:${PORTSDIR}/mail/p5-Mail-Tools \
-		${SITE_PERL}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net \
-		${SITE_PERL}/Net/Server.pm:${PORTSDIR}/net/p5-Net-Server
+		${LOCALBASE}/bin/zoo:${PORTSDIR}/archivers/zoo
 
-RUN_DEPENDS=	${BUILD_DEPENDS}
+SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 
-GNU_CONFIGURE=	yes
+USE_PERL5_RUN=	yes
 
-SITE_PERL=		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+PKGINSTALL=	${WRKDIR}/INSTALL
+PKGDEINSTALL=	${WRKDIR}/DEINSTALL
+PKGMESSAGE=	${WRKDIR}/MESSAGE
+
 AMAVISUSER?=	vscan
 AMAVISGROUP?=	vscan
+AMAVISDIR?=	/var/amavis
+AMAVISQUARANTINE?=	/var/virusmails
 
-CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc --with-amavisuser=${AMAVISUSER}:${AMAVISGROUP}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\.p.+//}
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-user=${AMAVISUSER} --with-runtime-dir=${AMAVISDIR}
+CONFIGURE_WRKSRC=	${WRKSRC}/helper-progs
+BUILD_WRKSRC=	${WRKSRC}/helper-progs
 
-STARTSCRIPT=	amavisd.sh
-
-.if defined(WITH_POSTFIX)
-CONFIGURE_ARGS+=	--enable-postfix
-MTA?=		postfix
-RUN_DEPENDS+=	${LOCALBASE}/libexec/postfix/smtpd:${PORTSDIR}/mail/postfix
-.elif defined(WITH_POSTFIX_CURRENT)
-CONFIGURE_ARGS+=	--enable-postfix
-MTA?=		postfix
-RUN_DEPENDS+=	${LOCALBASE}/libexec/postfix/smtpd:${PORTSDIR}/mail/postfix-current
-.elif defined(WITH_MILTER)
-CONFIGURE_ARGS+=	--enable-milter
-MTA?=		milter
-PLIST=		${PKGDIR}/pkg-plist.milter
-STARTSCRIPT=	amavisd-milter.sh
-.else
-CONFIGURE_ARGS+=	--enable-sendmail
-MTA?=		sendmail
-.endif
-
-.if defined(WITH_SPAMASSASSIN)
-BUILD_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Mail/SpamAssassin.pm:${PORTSDIR}/mail/p5-Mail-SpamAssassin \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/DNS.pm:${PORTSDIR}/net/p5-Net-DNS \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Razor/Client.pm:${PORTSDIR}/mail/razor-agents
-
-pre-configure:
-		${CP} ${WRKSRC}/amavis/amavisd.in.all ${WRKSRC}/amavis/amavisd.in
-.endif
-
-# you must define this if you have no scanners (example: to use amavisd-new only as a SpamAssassin/Razor filter)
-.if defined(WITH_ALL_SCANNERS)
-CONFIGURE_ARGS+=	--enable-all
-.endif
-
-post-patch:
-	@${SED} 's,%%AMAVISUSER%%,${AMAVISUSER},g' ${FILESDIR}/${STARTSCRIPT} > ${WRKSRC}/${STARTSCRIPT}
+pre-build:
+	for file in amavisd.sh INSTALL DEINSTALL MESSAGE; do \
+		${SED} -e 's,%%AMAVISUSER%%,${AMAVISUSER},g' \
+		       -e 's,%%AMAVISGROUP%%,${AMAVISGROUP},g' \
+		       -e 's,%%AMAVISDIR%%,${AMAVISDIR},g' \
+		       -e 's,%%AMAVISQUARANTINE%%,${AMAVISQUARANTINE},g' \
+		       -e 's,%%DOCSDIR%%,${DOCSDIR},g' \
+		       -e 's,%%PREFIX%%,${PREFIX},g' \
+	               < ${FILESDIR}/$${file}.tmpl > ${WRKDIR}/$${file}; \
+	done
+	${SED} -e 's,%%AMAVISUSER%%,${AMAVISUSER},g' \
+	       -e 's,%%AMAVISGROUP%%,${AMAVISGROUP},g' \
+	       -e 's,%%AMAVISDIR%%,${AMAVISDIR},g' \
+	       -e 's,%%AMAVISQUARANTINE%%,${AMAVISQUARANTINE},g' \
+		< ${WRKSRC}/amavisd.conf > ${WRKDIR}/amavisd.conf
 
 pre-install:
-	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${AMAVISUSER} ${AMAVISGROUP}
+	@${SH} ${PKGINSTALL} ${DISTNAME} PRE-INSTALL
 
-post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${STARTSCRIPT} ${PREFIX}/etc/rc.d
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/helper-progs/amavis ${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/helper-progs/amavis-milter ${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/amavisd ${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKDIR}/amavisd.conf ${PREFIX}/etc/amavisd.conf-dist
+	${INSTALL_SCRIPT} ${WRKDIR}/amavisd.sh ${PREFIX}/etc/rc.d
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for FILE in FAQ INSTALL README README.exim README.milter README.postfix README.qmail README.scanners README.sendmail doc/amavis.html doc/amavis.m4 doc/amavis.png doc/amavis.txt
+.for FILE in AAAREADME.first INSTALL LICENSE \
+	README_FILES/README.customize README_FILES/README.exim_v3 \
+	README_FILES/README.exim_v4 README_FILES/README.exim_v4_app \
+	README_FILES/README.lookups README_FILES/README.milter \
+	README_FILES/README.old README_FILES/README.old.scanners \
+	README_FILES/README.performance README_FILES/README.postfix \
+	README_FILES/README.sendmail RELEASE_NOTES
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
 .endfor
-	@${ECHO} "==============================================================================="
-	@${ECHO} "Please read ${DOCSDIR}/README.${MTA}"
-	@${ECHO} "==============================================================================="
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 .endif
 
 .include <bsd.port.mk>
