@@ -3,21 +3,12 @@ $FreeBSD$
 
 --- configure.orig	Thu Jun 21 08:22:18 2001
 +++ configure	Tue Jun 26 13:02:00 2001
-@@ -553,7 +553,7 @@
- # if backwards compatibility has been broken,
- # set BINARY_AGE and INTERFACE_AGE to 0.
- 
--MAJOR_VERSION=2
-+MAJOR_VERSION=3
- MINOR_VERSION=0
- MICRO_VERSION=3
- INTERFACE_AGE=3
 @@ -569,7 +569,7 @@
  
  # libtool versioning
  LT_RELEASE=$MAJOR_VERSION.$MINOR_VERSION
 -LT_CURRENT=`expr $MICRO_VERSION - $INTERFACE_AGE`
-+LT_CURRENT=$MAJOR_VERSION
++LT_CURRENT=3
  LT_REVISION=$INTERFACE_AGE
  LT_AGE=`expr $BINARY_AGE - $INTERFACE_AGE`
  
