@@ -34,6 +34,7 @@ bin/lwp-rget
 %%SITE_PERL%%/LWP/MemberMixin.pm
 %%SITE_PERL%%/LWP/Protocol.pm
 %%SITE_PERL%%/LWP/Protocol/GHTTP.pm
+%%SITE_PERL%%/LWP/Protocol/cpan.pm
 %%SITE_PERL%%/LWP/Protocol/data.pm
 %%SITE_PERL%%/LWP/Protocol/file.pm
 %%SITE_PERL%%/LWP/Protocol/ftp.pm
