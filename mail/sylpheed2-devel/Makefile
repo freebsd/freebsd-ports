@@ -47,12 +47,6 @@ CONFIGURE_ARGS+=--enable-compface
 .else
 CONFIGURE_ARGS+=--disable-compface
 .endif
-.if defined(WITH_JCONV)
-LIB_DEPENDS+=	jconv.0:${PORTSDIR}/japanese/libjconv
-CONFIGURE_ARGS+=--enable-jconv
-.else
-CONFIGURE_ARGS+=--disable-jconv
-.endif
 .if defined(WITH_JPILOT)
 LIB_DEPENDS+=	pisock.8:${PORTSDIR}/palm/pilot-link
 RUN_DEPENDS+=	jpilot:${PORTSDIR}/palm/jpilot
@@ -85,8 +79,6 @@ pre-everything::
 	@${ECHO} "      WITH_PIXBUF=yes   Enable GDK Pixbuf support"
 	@${ECHO} "      WITH_GPGME=yes    Enable GnuPG support using GPGME."
 	@${ECHO} "      WITH_COMPFACE=yes Enable X-Face support."
-	@${ECHO} "      WITH_JCONV=yes    Enable Japanese charset conversion"
-	@${ECHO} "                        library libjconv."
 	@${ECHO} "      WITH_JPILOT=yes   Enable JPilot support."
 	@${ECHO} "      WITH_LDAP=yes     Enable LDAP support."
 	@${ECHO} ""
