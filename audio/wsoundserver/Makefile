@@ -3,16 +3,17 @@
 # Date created:		9 December 1998
 # Whom:			gljohns@bellsouth.net
 #
-# $Id: Makefile,v 1.2 1999/01/18 06:42:59 asami Exp $
+# $Id: Makefile,v 1.3 1999/01/26 02:10:38 steve Exp $
 #
 
-DISTNAME=	wmsound-0.9.2
+DISTNAME=	wmsound-0.9.3
 CATEGORIES=	audio windowmaker
 MASTER_SITES=	ftp://shadowmere.student.utwente.nl/pub/WindowMaker/
 
 MAINTAINER=	gljohns@bellsouth.net
 
 BUILD_DEPENDS=	wmaker:${PORTSDIR}/x11-wm/windowmaker
+LIB_DEPENDS=	PropList.1:${PORTSDIR}/devel/libPropList
 
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes
