@@ -20,4 +20,10 @@ PERL_CONFIGURE=	YES
 MAN3=		MIME::Base64.3 \
 		MIME::QuotedPrint.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+BROKEN=		Does not run.
+.endif
+
+.include <bsd.port.post.mk>
