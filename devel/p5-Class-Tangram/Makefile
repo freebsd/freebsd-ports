@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Class-Tangram
-PORTVERSION=	1.13
+PORTVERSION=	1.54
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Class
@@ -22,6 +22,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Class::Tangram.3
+MAN3=		Class::Tangram.3 Class::Tangram::Containers.3 \
+		Class::Tangram::Generator.3
 
 .include <bsd.port.mk>
