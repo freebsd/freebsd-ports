@@ -6,28 +6,26 @@
 #
 
 PORTNAME=	adabroker
-PORTVERSION=	1.0p3
+PORTVERSION=	1.0p4
 CATEGORIES=	devel
 MASTER_SITES=	http://adabroker.eu.org/distrib/
-DISTNAME=	adabroker-1.0pre3
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/p/pre/}
 
 MAINTAINER=	sam@inf.enst.fr
 
 BUILD_DEPENDS=	adagcc:${PORTSDIR}/lang/gnat
 LIB_DEPENDS=	adasockets.0:${PORTSDIR}/net/adasockets
 
-USE_AUTOCONF=	yes
-USE_AUTOMAKE=	yes
 USE_LIBTOOL=	yes
-USE_GMAKE=	yes
-
+USE_AUTOMAKE=	yes
 CONFIGURE_ARGS=	--enable-adasockets
+USE_GMAKE=	yes
+INSTALLS_SHLIB=	yes
+
+MAN1=	ab_names.1 ab_gnome.1
+MAN7=	adabroker.7
 
 post-install:
 	${RM} ${PREFIX}/lib/adabroker/allsrc.adb
-	${LDCONFIG} -m ${PREFIX}/lib
-
-MAN1=		ab_names.1 ab_gnome.1
-MAN7=		adabroker.7
 
 .include <bsd.port.mk>
