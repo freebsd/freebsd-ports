@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freefem++
-PORTVERSION=	1.43
+DISTVERSION=	1.45-6
 CATEGORIES=	math science
 MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Projects/Gamma/freefem/	\
 		http://mule.ann.jussieu.fr/~hecht/ftp/freefem/
@@ -14,10 +14,11 @@ MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Projects/Gamma/freefem/	\
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An implementation of a language dedicated to the finite element method
 
-LIB_DEPENDS=	atlas.1:${PORTSDIR}/math/atlas	\
-		f2c.2:${PORTSDIR}/lang/f2c	\
-		gsl.6:${PORTSDIR}/math/gsl	\
-		lapack.3:${PORTSDIR}/math/lapack
+LIB_DEPENDS=	atlas.1:${PORTSDIR}/math/atlas				\
+		f2c.2:${PORTSDIR}/lang/f2c				\
+		gsl.6:${PORTSDIR}/math/gsl				\
+		lapack.3:${PORTSDIR}/math/lapack			\
+		fltk.1:${PORTSDIR}/x11-toolkits/fltk-threads
 BUILD_DEPENDS=	${LOCALBASE}/lib/libumfpack.a:${PORTSDIR}/math/umfpack	\
 		${LOCALBASE}/lib/libarpack.a:${PORTSDIR}/math/arpack	\
 		dvips:${PORTSDIR}/print/dvipsk-tetex			\
@@ -44,7 +45,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}"	\
 LIBBLAS=	-lf2c -lf77blas -latlas -lgslcblas
 LIBARPACK=	-larpack -lalapack ${LIBBLAS}
 
-DOCS=		AUTHORS BUGS COPYING HISTORY README TODO DOC/manual.pdf
+DOCS=		AUTHORS BUGS COPYING HISTORY README TODO DOC/manual-full.pdf
 BADSAMPLES=	load/myfunction.o tutorial/Makefile.in.orig
 
 .include <bsd.port.pre.mk>

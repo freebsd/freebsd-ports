@@ -1,6 +1,15 @@
---- configure.orig	Mon Sep  6 16:00:20 2004
-+++ configure	Thu Sep  9 00:14:54 2004
-@@ -7852,7 +7852,7 @@
+--- configure.orig	Tue Feb  1 22:24:30 2005
++++ configure	Thu Feb  3 22:07:34 2005
+@@ -7137,7 +7137,7 @@
+ #  --------------------
+ ff_cadna_ok=no
+ ff_libs_old="$LIBS"
+-ff_ldflag_old="$LDFLAGS"
++ff_ldflags_old="$LDFLAGS"
+ ff_cadna_dir="${curdir}/download/cadna"
+   LDFLAGS="$LDFLAGS -L$ff_cadna_dir"
+   echo "$as_me:$LINENO: checking for arit_zero in -lcadnafree" >&5
+@@ -8137,7 +8137,7 @@
  if test "${with_umfpack+set}" = set; then
    withval="$with_umfpack"
    ff_umfpack_ok=yes
@@ -9,7 +18,7 @@
  
  cat >>confdefs.h <<\_ACEOF
  #define HAVE_LIBUMFPACK 1
-@@ -7864,7 +7864,7 @@
+@@ -8149,7 +8149,7 @@
  
  
  
