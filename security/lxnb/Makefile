@@ -8,7 +8,8 @@
 PORTNAME=	lxnb
 PORTVERSION=	0.4
 CATEGORIES=	security
-MASTER_SITES=	http://ns2.crw.se/~tm/projects/lxnb/
+# mastersite disappeared in December 2001
+MASTER_SITES=	# http://ns2.crw.se/~tm/projects/lxnb/
 DISTFILES=	linux-netbus-client-v${PORTVERSION}.tgz
 
 MAINTAINER=	ports@FreeBSD.org
