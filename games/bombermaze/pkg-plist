@@ -6,6 +6,7 @@ share/gnome/bombermaze/15x13.map
 share/gnome/bombermaze/15x13random.map
 share/gnome/bombermaze/15x15.map
 share/gnome/bombermaze/15x15random.map
+share/gnome/help/bombermaze/C/advanced.html
 share/gnome/help/bombermaze/C/index.html
 share/gnome/help/bombermaze/C/topic.dat
 share/gnome/pixmaps/bombermaze.png
