@@ -1,0 +1,11 @@
+--- include/rle_config.tlr.orig	Thu Apr 30 23:06:23 1992
++++ include/rle_config.tlr	Fri Dec 27 23:02:36 2002
+@@ -48,7 +48,7 @@
+ #endif /* NO_DECLARE_MALLOC */
+ 
+ #ifdef USE_PROTOTYPES
+-extern char *getenv( CONST_DECL char *name );
++extern char *getenv( CONST_DECL char *CONST_DECL name);
+ #else
+ extern char *getenv();
+ #endif

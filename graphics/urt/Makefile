@@ -18,19 +18,17 @@ PATCH_DIST_STRIP=-p1
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
-BUILD_DEPENDS=	${LOCALBASE}/lib/libnetpbm.a:${PORTSDIR}/graphics/netpbm
+LIB_DEPENDS=	netpbm.1:${PORTSDIR}/graphics/netpbm
 
-EXTRACT_ONLY=	urt-3.1b.tar.Z
+NO_WRKSUBDIR=   yes
 
 USE_XLIB=	yes
-INSTALLS_SHLIB=	yes
-NO_WRKSUBDIR=   yes
+HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=Configure
 CONFIGURE_ARGS=	config/urt
-HAS_CONFIGURE=	yes
 MAKEFILE=	makefile
-ALL_TARGET=
+ALL_TARGET=	# none
+INSTALLS_SHLIB=	yes
 
 MAN1=	aliastorle.1 applymap.1 avg4.1 crop.1 cubitorle.1 dvirle.1	\
 	fant.1 getx11.1 giftorle.1 graytorle.1 into.1 mcut.1 mergechan.1\
@@ -56,22 +54,17 @@ MAN3=	buildmap.3 bwdithermap.3 colorquant.3 dither.3 ditherbw.3	\
 	rle_puteof.3 rle_putraw.3 rle_putrow.3 rle_raw_alloc.3		\
 	rle_raw_free.3 rle_rawtorow.3 rle_row_alloc.3 rle_row_free.3	\
 	rle_skiprow.3
-#Note:	Don't compress man5, it won't work !
+MAN5=	rle.5
+MLINKS=	rle.5 RLE.5
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/urt ${PREFIX}/share/examples/urt
-	cd ${PREFIX}/share/doc/urt; \
-	${TAR} xf $(DISTDIR)/urt-doc.tar; \
-	cd doc; \
-	${FIND} -d . | cpio -dump ..; \
-	cd ..; \
-	${RM} -rf doc; \
-	cd ${PREFIX}/share/examples/urt; \
-	${TAR} xf $(DISTDIR)/urt-img.tar; \
-	${CHOWN} -R root:wheel . ; \
-	${FIND} . -type d -exec ${CHMOD} 755 '{}' \; ; \
-	${FIND} . -type f -exec ${CHMOD} 644 '{}' \;
+	@${MKDIR} ${DOCSDIR}
+	cd ${WRKDIR}/doc && ${FIND} . | \
+		cpio -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
+	@${MKDIR} ${EXAMPLESDIR}
+	cd ${WRKDIR} && ${FIND} img | \
+		cpio -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>

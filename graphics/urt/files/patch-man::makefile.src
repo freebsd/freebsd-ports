@@ -1,0 +1,48 @@
+--- man/makefile.src.orig	Fri Feb 28 06:26:52 1992
++++ man/makefile.src	Sat Dec 28 00:43:57 2002
+@@ -211,39 +211,35 @@
+ 
+ # Put the manual pages into a global location
+ install: install-1 install-3 install-5
+-	touch install
+ 
+ install-1: $(PAGES1)
+ 	@-sh -c "if test '$(DEST)X' != X ; then \
+ 		for i in $? ; do \
+ 			dpgm=\`basename \$$i .1\`.$(SUFF1) ; \
+-			echo cp \$$i $(DEST1)/\$$dpgm ; \
+-			cp \$$i $(DEST1)/\$$dpgm ; \
++			echo install \$$i $(DEST1)/\$$dpgm ; \
++			${BSD_INSTALL_MAN} \$$i $(DEST1)/\$$dpgm ; \
+ 		done ; \
+ 	else \
+ 		true ; \
+ 	fi"
+-	touch install-1
+ 
+ install-3: $(PAGES3)
+ 	@-sh -c "if test '$(DEST)X' != X ; then \
+ 		for i in $? ; do \
+ 			dpgm=${PAGE3_INSTALL_NAME} ; \
+-			echo cp \$$i $(DEST3)/\$$dpgm ; \
+-			cp \$$i $(DEST3)/\$$dpgm ; \
++			echo install \$$i $(DEST3)/\$$dpgm ; \
++			${BSD_INSTALL_MAN} \$$i $(DEST3)/\$$dpgm ; \
+ 		done ; \
+ 	else \
+ 		true ; \
+ 	fi"
+-	touch install-3
+ 
+ install-5: man5/*.5
+ 	@-sh -c "if test $(DEST)X != X; then \
+-		echo cp $? $(DEST5); \
+-		cp $? $(DEST5); \
++		echo install $? $(DEST5); \
++		${BSD_INSTALL_MAN} $? $(DEST5); \
+ 	else true; \
+ 	fi"
+-	touch install-5
+ 
+ # Clean up installed man pages
+ pristine:

@@ -1,0 +1,21 @@
+--- include/makefile.src.orig	Sat Jun  8 00:56:22 1991
++++ include/makefile.src	Sat Dec 28 00:45:11 2002
+@@ -35,8 +35,8 @@
+ 	@sh -c "if test 'x$(DEST)' != x ; then \
+ 		if test 'x$(HDRS)' != x ; then eval \
+ 			'for hdr in $?; do \
+-				echo cp \$$hdr $(DEST)/\$$hdr ; \
+-				cp \$$hdr $(DEST)/\$$hdr; \
++				echo install \$$hdr $(DEST)/\$$hdr ; \
++				${BSD_INSTALL_DATA} \$$hdr $(DEST)/\$$hdr; \
+ 			done' ; \
+ 		else \
+ 		    true ; \
+@@ -44,7 +44,6 @@
+ 	else \
+ 		true ; \
+ 	fi"
+-	touch install
+ 
+ # Nothing to clean
+ clean:
