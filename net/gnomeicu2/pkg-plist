@@ -1,5 +1,5 @@
 bin/gtkicq
-share/gnome/apps/Network/GtkICQ.desktop
+share/gnome/applets/Network/GtkICQ.desktop
 share/gnome/pixmaps/gnome-gtkicq.xpm
 share/gnome/pixmaps/gtkicq-away.xpm
 share/gnome/pixmaps/gtkicq-dnd.xpm
