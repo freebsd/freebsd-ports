@@ -341,7 +341,6 @@
     SUBDIR += wdic-fpw
     SUBDIR += web1913-fpw
     SUBDIR += weblint97
-    SUBDIR += wine
     SUBDIR += word
     SUBDIR += wordnet-fpw
     SUBDIR += wwasw-fpw
