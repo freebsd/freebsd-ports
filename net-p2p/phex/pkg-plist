@@ -1,5 +1,6 @@
 bin/phex
 %%PORTDOCS%%share/doc/phex/COPYING
+%%PORTDOCS%%share/doc/phex/GPL.txt
 %%PORTDOCS%%share/doc/phex/License-RI.html
 %%PORTDOCS%%share/doc/phex/License-W3C.html
 %%PORTDOCS%%share/doc/phex/changelog.txt
@@ -15,4 +16,3 @@ bin/phex
 @dirrm %%JAR_DIR%%
 @unexec rmdir %D/share/java/jar 2>/dev/null || true
 @unexec rmdir %D/share/java 2>/dev/null || true
-
