@@ -1,23 +1,23 @@
 bin/xbattle
-etc/xbattle/xbas/simple.xba
-etc/xbattle/xbos/atlas.xbo
-etc/xbattle/xbos/default.xbo
-etc/xbattle/xbos/demo.xbo
-etc/xbattle/xbos/desert.xbo
-etc/xbattle/xbos/io.xbo
-etc/xbattle/xbos/skirmish.xbo
-etc/xbattle/xbos/space.xbo
-etc/xbattle/xbos/tribal.xbo
-etc/xbattle/xbos/tropical.xbo
-etc/xbattle/xbos/tropical2.xbo
-etc/xbattle/xbos/tundra.xbo
-etc/xbattle/xbts/castle.xbt
-etc/xbattle/xbts/natural.xbt
+share/xbattle/xbas/simple.xba
+share/xbattle/xbos/atlas.xbo
+share/xbattle/xbos/default.xbo
+share/xbattle/xbos/demo.xbo
+share/xbattle/xbos/desert.xbo
+share/xbattle/xbos/io.xbo
+share/xbattle/xbos/skirmish.xbo
+share/xbattle/xbos/space.xbo
+share/xbattle/xbos/tribal.xbo
+share/xbattle/xbos/tropical.xbo
+share/xbattle/xbos/tropical2.xbo
+share/xbattle/xbos/tundra.xbo
+share/xbattle/xbts/castle.xbt
+share/xbattle/xbts/natural.xbt
 share/doc/xbattle/README
 share/doc/xbattle/tutorial1
 share/doc/xbattle/tutorial2
-@dirrm etc/xbattle/xbas
-@dirrm etc/xbattle/xbos
-@dirrm etc/xbattle/xbts
-@dirrm etc/xbattle
 @dirrm share/doc/xbattle
+@dirrm share/xbattle/xbas
+@dirrm share/xbattle/xbos
+@dirrm share/xbattle/xbts
+@dirrm share/xbattle
