@@ -38,6 +38,7 @@ lib/perl5/site_perl/%%PERL_VER%%/URI/sips.pm
 lib/perl5/site_perl/%%PERL_VER%%/URI/snews.pm
 lib/perl5/site_perl/%%PERL_VER%%/URI/ssh.pm
 lib/perl5/site_perl/%%PERL_VER%%/URI/telnet.pm
+lib/perl5/site_perl/%%PERL_VER%%/URI/tn3270.pm
 lib/perl5/site_perl/%%PERL_VER%%/URI/urn.pm
 lib/perl5/site_perl/%%PERL_VER%%/URI/urn/isbn.pm
 lib/perl5/site_perl/%%PERL_VER%%/URI/urn/oid.pm
