@@ -1,6 +1,6 @@
 --- src/if_nv.c.orig	Sat Nov  8 05:03:00 2003
-+++ src/if_nv.c	Sat Dec  6 21:50:47 2003
-@@ -457,8 +457,13 @@
++++ src/if_nv.c	Tue Dec  9 08:54:39 2003
+@@ -457,8 +457,12 @@
  	/* Setup interface parameters */
  	ifp = &sc->sc_if;
  	ifp->if_softc = sc;
@@ -8,8 +8,7 @@
  	ifp->if_unit = unit;
  	ifp->if_name = "nv";
 +#else
-+	ifp->if_dunit = unit;
-+	ifp->if_dname = "nv";
++	if_initname(ifp, "nv", unit);
 +#endif
  	ifp->if_flags = IFF_BROADCAST | IFF_SIMPLEX | IFF_MULTICAST;
  	ifp->if_ioctl = nv_ioctl;
