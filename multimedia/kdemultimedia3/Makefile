@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kdemultimedia
-PORTVERSION=	2.1
+PORTVERSION=	2.1.1
 CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/distribution/tar/generic/src
@@ -14,18 +14,13 @@ MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/distribution/tar/generic/src
 MAINTAINER=	will@FreeBSD.org
 
 RUN_DEPENDS=	xanim:${PORTSDIR}/graphics/xanim
-LIB_DEPENDS=	kdecore.4:${PORTSDIR}/x11/kdelibs2
 
-USE_QT2=	yes
-MOC?=		${X11BASE}/bin/moc2
+USE_KDELIBS_VER=2
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
 USE_AUTOCONF=	yes
 CONFIGURE_ARGS+=--with-qt-includes=${X11BASE}/include/qt2 \
 		--with-qt-libraries=${X11BASE}/lib
-CONFIGURE_ENV+=	MOC="${MOC}" LIBQT="-lqt2" \
-		CPPFLAGS="-I/usr/include -D_PTH_H_ -D_PTH_PTHREAD_H_ -D_GETOPT_H -D_XOPEN_UNIX -I${LOCALBASE}/include" \
-		LIBS="-Wl,-export-dynamic -L${LOCALBASE}/lib -ljpeg -lstdc++ -lgcc"
 USE_GMAKE=	yes
 
 pre-configure:

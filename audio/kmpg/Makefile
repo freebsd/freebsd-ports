@@ -13,10 +13,7 @@ MASTER_SITE_SUBDIR=	tom
 
 MAINTAINER=	tom@FreeBSD.org
 
-LIB_DEPENDS=	kdecore.3:${PORTSDIR}/x11/kdelibs11 \
-		kdeui.3:${PORTSDIR}/x11/kdelibs11
-
-USE_QT=		yes
+USE_KDELIBS_VER=1
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 

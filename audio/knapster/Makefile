@@ -14,11 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	jedgar@FreeBSD.org
 
-LIB_DEPENDS=	kdecore.3:${PORTSDIR}/x11/kdelibs11
-RUN_DEPENDS=	kdehelp:${PORTSDIR}/x11/kdebase11
-
+USE_KDEBASE_VER=1
 USE_AUTOCONF=	yes
 USE_GMAKE=	yes
-USE_QT=		yes
 
 .include <bsd.port.mk>

@@ -13,10 +13,8 @@ MASTER_SITE_SUBDIR= unstable/apps/office
 EXTRACT_SUFX=	.tgz
 
 BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
-LIB_DEPENDS=	kdecore.3:${PORTSDIR}/x11/kdelibs11 \
-		kdeui.3:${PORTSDIR}/x11/kdelibs11
 
-USE_QT=		yes
+USE_KDELIBS_VER=1
 WRKSRC=		${WRKDIR}/kproject
 
 .include <bsd.port.mk>

@@ -15,11 +15,11 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
 
-USE_QT2=	yes
+USE_QT_VER=	2
 WRKSRC=		${WRKDIR}/${PORTNAME}
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${X11BASE}/include/qt2 -I${LOCALBASE}/include/gd" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+CONFIGURE_ARGS=	--x-includes=${X11BASE}/include --x-libraries=${X11BASE}/lib
+QTCPPFLAGS+=	-I/usr/local/include/gd
 USE_GMAKE=	yes
 USE_AUTOMAKE=	yes
 

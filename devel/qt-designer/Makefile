@@ -10,6 +10,12 @@ MASTERDIR=	${.CURDIR}/../../x11-toolkits/qt23
 PORTNAME=	qt-designer
 CATEGORIES=	devel
 
+post-patch:
+	${PERL} -pi -e "s@-fno-exceptions@-fno-exceptions -I${X11BASE}/include/qt2@g" ${CONFIG}
+
+do-build:
+	(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
+
 .include "${MASTERDIR}/Makefile"
 
 LIB_DEPENDS+=	qt2.4:${PORTSDIR}/x11-toolkits/qt23

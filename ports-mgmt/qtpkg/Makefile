@@ -13,7 +13,7 @@ DISTNAME=	qtpkg
 
 MAINTAINER=	twschulz@gloria.cord.edu
 
-USE_QT2=	yes
+USE_QT_VER=	2
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/qtpkg ${PREFIX}/sbin

@@ -14,10 +14,8 @@ MASTER_SITE_SUBDIR= kdbg/
 MAINTAINER=	jedgar@FreeBSD.org
 
 BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
-LIB_DEPENDS=	kdecore.3:${PORTSDIR}/x11/kdelibs11
-RUN_DEPENDS=	kdehelp:${PORTSDIR}/x11/kdebase11
 
+USE_KDEBASE_VER=1
 GNU_CONFIGURE=	yes
-USE_QT=		yes
 
 .include <bsd.port.mk>

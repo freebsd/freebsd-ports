@@ -13,11 +13,10 @@ MASTER_SITES=	http://www.islc.net/~icszepp/downloads/
 
 MAINTAINER=	obrien@FreeBSD.org
 
-LIB_DEPENDS=	kdecore.3:${PORTSDIR}/x11/kdelibs11
 RUN_DEPENDS=	nmap:${PORTSDIR}/security/nmap
 
+USE_KDELIBS_VER=1
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
-USE_QT=		yes
 
 .include <bsd.port.mk>

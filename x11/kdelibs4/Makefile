@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kdelibs
-PORTVERSION=	2.1
+PORTVERSION=	2.1.1
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/distribution/tar/generic/src
@@ -18,21 +18,17 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		mimelib.3:${PORTSDIR}/converters/kdesupport2
 
 USE_OPENSSL=	yes
-USE_QT2=	yes
-MOC?=		${X11BASE}/bin/moc2
+USE_QT_VER=	2
 SOMAJOR=	4
 SOMINOR=	0
 USE_BZIP2=	yes
-USE_NEWGCC=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ARGS+=--with-qt-includes=${X11BASE}/include/qt2 \
-		--with-qt-libraries=${X11BASE}/lib \
-		--with-extra-libs=${LOCALBASE}/lib
-CONFIGURE_ENV=	MOC="${MOC}" LIBQT="-lqt2" \
-		CPPFLAGS="-I${LOCALBASE}/include -I${PREFIX}/include -D_GETOPT_H" \
-		LIBS="-Wl,-export-dynamic -L${LOCALBASE}/lib -ljpeg -lgcc -lstdc++"
+.if ${MACHINE_ARCH} == "alpha"
+CFLAGS=		-O0 ${KDE_CFLAGS}
+.endif
+
 USE_GMAKE=	yes
 MAKE_ENV=	SOMAJOR="${SOMAJOR}" SOMINOR="${SOMINOR}"
 PLIST_SUB+=	LIBVER="${SOMAJOR}"
@@ -52,6 +48,7 @@ pre-fetch:
 .endif
 
 pre-configure:
+	${PERL} -pi -e "s@-O2@-O0@g" ${WRKSRC}/configure
 	(find ${WRKSRC} -name Makefile.in | xargs ${PERL} -pi.orig -e \
 		"s@version-info 1:0@version-info ${SOMAJOR}:${SOMINOR}@g; \
 		 s@version-info 3:0@version-info ${SOMAJOR}:${SOMINOR}@g")

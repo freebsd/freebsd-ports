@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_QT=		yes
+USE_QT_VER=	1
 
 MAN1=		blackjack.1
 

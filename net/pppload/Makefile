@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=		system/network/serial/ppp
 
 MAINTAINER=	ports@FreeBSD.org
 
-USE_QT=		yes
+USE_QT_VER=	1
 USE_GMAKE=	yes
 
 MAN1=		pppload.1

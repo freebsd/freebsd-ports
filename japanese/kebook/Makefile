@@ -13,16 +13,13 @@ MASTER_SITES=	http://www.os.rim.or.jp/~s_mitu/library/kebook/ \
 
 MAINTAINER=	hige@higesoft.os.rim.or.jp
 
-LIB_DEPENDS=	kdecore.3:${PORTSDIR}/x11/kdelibs11 \
-		eb.3:${PORTSDIR}/japanese/eb
+LIB_DEPENDS=	eb.3:${PORTSDIR}/japanese/eb
 BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
-RUN_DEPENDS=	kfm:${PORTSDIR}/x11/kdebase11
 
+USE_KDEBASE_VER=1
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_NEWGCC=	yes
 USE_LIBTOOL=	yes
-USE_QT=		yes
 
 CONFIGURE_ARGS=	"--with-qt-dir=${QTDIR}" \
 		"--with-qt-includes=${QTDIR}/include/X11/qt" \

@@ -17,15 +17,14 @@ BUILD_DEPENDS=	tmake:${PORTSDIR}/devel/tmake
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_QT2=	yes
+USE_QT_VER=	2
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	TMAKEPATH="${LOCALBASE}/share/tmake/freebsd-g++" \
 		QTDIR="${X11BASE}"
 MAKE_ENV=	TMAKEPATH="${LOCALBASE}/share/tmake/freebsd-g++" \
-		QTDIR="${X11BASE}" \
-		MOC="${X11BASE}/bin/moc2"
+		QTDIR="${X11BASE}"
 MAKE_ARGS=	-e
 
 .include <bsd.port.pre.mk>

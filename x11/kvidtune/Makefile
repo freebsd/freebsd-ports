@@ -13,12 +13,7 @@ MASTER_SITE_SUBDIR= unstable/apps/admin
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	kdecore.3:${PORTSDIR}/x11/kdelibs11 \
-		kdeui.3:${PORTSDIR}/x11/kdelibs11 \
-		kfm.3:${PORTSDIR}/x11/kdelibs11 \
-		kfile.3:${PORTSDIR}/x11/kdelibs11
-
-USE_QT=		yes
+USE_KDELIBS_VER=1
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 

@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-USE_QT=		yes
+USE_QT_VER=	1
 USE_X_PREFIX=	yes
 NO_WRKSUBDIR=	yes
 

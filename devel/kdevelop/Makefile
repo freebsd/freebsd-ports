@@ -6,16 +6,14 @@
 #
 
 PORTNAME=	kdevelop
-PORTVERSION=	1.4
-PORTREVISION=	1
+PORTVERSION=	1.4.1
 CATEGORIES=	devel kde
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/2.1/distribution/tar/generic/src
+MASTER_SITE_SUBDIR=	stable/2.1.1/distribution/tar/generic/src
 
 MAINTAINER=	demon@FreeBSD.org
 
 BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
-LIB_DEPENDS=	kdeui.4:${PORTSDIR}/x11/kdelibs2
 RUN_DEPENDS=	gmake:${PORTSDIR}/devel/gmake
 .if defined(WITH_OPTIONAL_DEPENDS)
 RUN_DEPENDS+=	autoconf:${PORTSDIR}/devel/autoconf \
@@ -32,19 +30,12 @@ RUN_DEPENDS+=	autoconf:${PORTSDIR}/devel/autoconf \
 		a2ps:${PORTSDIR}/print/a2ps43-letter
 .endif
 
+USE_KDELIBS_VER=2
 USE_BZIP2=	yes
-USE_QT2=	yes
-MOC?=		${X11BASE}/bin/moc2
 USE_GMAKE=	yes
 USE_AUTOCONF=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-qt-includes=${X11BASE}/include/qt2 \
-		--with-qt-libraries=${X11BASE}/lib \
-		--with-qtdoc-dir=${X11BASE}/share/doc/qt2/html \
-		--with-extra-libs=${LOCALBASE}/lib
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${PREFIX}/include" \
-		MOC="${MOC}" LIBQT="-lqt2" LIBQTFILE="libqt2" \
-		LIBS="-Wl,-export-dynamic -L${LOCALBASE}/lib -ljpeg -lgcc -lstdc++"
+CONFIGURE_ARGS+= --with-qtdoc-dir=${X11BASE}/share/doc/qt2/html
 
 pre-everything::
 .if !defined(WITH_OPTIONAL_DEPENDS)

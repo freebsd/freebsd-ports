@@ -5,7 +5,7 @@
  # Compiling with support libraries
  SYSCONF_CXXFLAGS_X11	= -I/usr/X11R6/include
 -SYSCONF_CXXFLAGS_QT	= -I$(QTDIR)/include
-+SYSCONF_CXXFLAGS_QT= -I$(QTDIR)/include -I/usr/X11R6/include/qt2 $(SYSCONF_CXXFLAGS_THREAD)
++SYSCONF_CXXFLAGS_QT= -I$(QTDIR)/include $(SYSCONF_CXXFLAGS_THREAD)
  SYSCONF_CXXFLAGS_OPENGL	= -I/usr/X11R6/include
  
  # Compiling YACC output
@@ -51,10 +51,10 @@
  SYSCONF_LINK_LIB_STATIC	= rm -f $(DESTDIR)$(SYSCONF_LINK_TARGET_STATIC) ; \
  				 $(SYSCONF_AR) $(DESTDIR)$(SYSCONF_LINK_TARGET_STATIC) $(OBJECTS) $(OBJMOC) 
  # Compiling application source
--SYSCONF_CXXFLAGS	= -pipe -O2
--SYSCONF_CFLAGS		= -pipe -O2
-+SYSCONF_CXXFLAGS	= -DQT_PREFIX=\"${PREFIX}\" -pipe -O2
-+SYSCONF_CFLAGS		= -DQT_PREFIX=\"${PREFIX}\" -pipe -O2
+-SYSCONF_CXXFLAGS	= -pipe -fno-exceptions -O2
+-SYSCONF_CFLAGS		= -pipe -fno-exceptions -O2
++SYSCONF_CXXFLAGS	= -DQT_PREFIX=\"${PREFIX}\" -pipe -O -fno-exceptions
++SYSCONF_CFLAGS		= -DQT_PREFIX=\"${PREFIX}\" -pipe -O -fno-exceptions
  # Default link type (static linking is still be used where required)
  SYSCONF_LINK_LIB	= $(SYSCONF_LINK_LIB_SHARED)
  SYSCONF_LINK_TARGET	= $(SYSCONF_LINK_TARGET_SHARED)

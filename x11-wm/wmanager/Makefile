@@ -19,7 +19,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_QT=		yes
+USE_QT_VER=	1
 USE_GMAKE=	yes
 MAKE_ENV=	prefix=${PREFIX}
 

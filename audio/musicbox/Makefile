@@ -16,8 +16,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	trevor@FreeBSD.org
 
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
-LIB_DEPENDS=	qt.3:${PORTSDIR}/x11-toolkits/qt145
 
+USE_QT_VER=	1
 DOCS=		ChangeLog README
 EVAL_PREFIX+=	QT1DIR=qt
 PATH=		${QT1DIR}/qt/bin:$$PATH

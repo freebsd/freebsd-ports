@@ -14,7 +14,7 @@ DISTFILES=	ppinst-0.01.tar.gz ppsrc-0.01.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/ppsrc
-USE_QT=		yes
+USE_QT_VER=	1
 USE_X_PREFIX=	yes
 
 do-install:

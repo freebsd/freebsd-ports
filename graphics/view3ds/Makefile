@@ -16,7 +16,7 @@ MAINTAINER=	sobomax@FreeBSD.org
 LIB_DEPENDS=	3ds.0:${PORTSDIR}/graphics/lib3ds
 
 USE_X_PREFIX=	yes
-USE_QT2=	yes
+USE_QT_VER=	2
 USE_MESA=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes

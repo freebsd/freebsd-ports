@@ -12,26 +12,11 @@ MASTER_SITES=	http://dforce.sh.cvut.cz/~seli/en/khotkeys/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	kdecore.3:${PORTSDIR}/x11/kdelibs11 \
-		kdeui.3:${PORTSDIR}/x11/kdelibs11 \
-		kfm.3:${PORTSDIR}/x11/kdelibs11 \
-		kfile.3:${PORTSDIR}/x11/kdelibs11
-RUN_DEPENDS=	kcontrol:${PORTSDIR}/x11/kdebase11
-
+USE_KDEBASE_VER=1
 NO_LATEST_LINK=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_NEWGCC=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ARGS=	"--with-qt-includes=${QTDIR}/include/X11/qt" \
-		"--with-extra-includes=${LOCALBASE}/include" \
-		"--with-extra-libs=${LOCALBASE}/lib"
-CONFIGURE_ENV=	MOC=${X11BASE}/bin/moc QTDIR=${QTDIR}
-
-.if defined(PREFIX)
-QTDIR?=		${PREFIX}
-.else
-QTDIR?=		${X11BASE}
-.endif
+CONFIGURE_ARGS=	"--with-extra-includes=${LOCALBASE}/include"
 
 .include <bsd.port.mk>

@@ -170,10 +170,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #						target.
 # USE_X_PREFIX	- Says that the port installs in ${X11BASE}.  Implies USE_XLIB.
 # USE_XLIB		- Says that the port uses X libraries.
-# USE_QT		- Says that the port uses version 1 of the qt toolkit.
-#				  Implies USE_NEWGCC.
-# USE_QT2		- Says that the port uses version 2 of the qt toolkit.
-#				  Implies USE_NEWGCC.
 # USE_MOTIF		- Says that the port uses the Motif toolkit.  Implies USE_XPM.
 #
 # Dependency checking.  Use these if your port requires another port
@@ -764,16 +760,6 @@ MANCOMPRESSED?=	yes
 MANCOMPRESSED?=	no
 .endif
 
-.if defined(USE_QT)
-LIB_DEPENDS+=	qt.3:${PORTSDIR}/x11-toolkits/qt145
-USE_NEWGCC=	yes
-.endif
-
-.if defined(USE_QT2)
-LIB_DEPENDS+=	qt2.4:${PORTSDIR}/x11-toolkits/qt23
-USE_NEWGCC=	yes
-.endif
-
 .if defined(USE_BZIP2)
 BUILD_DEPENDS+=		bzip2:${PORTSDIR}/archivers/bzip2
 .endif
@@ -902,6 +888,10 @@ LIB_DEPENDS+=	X11.6:${PORTSDIR}/x11/XFree86
 .else
 LIB_DEPENDS+=	X11.6:${PORTSDIR}/x11/XFree86-4-libraries
 .endif
+.endif
+
+.if defined(USE_QT) || defined(USE_QT2) || defined(USE_QT_VER) || defined(USE_KDELIBS_VER) || defined(USE_KDEBASE_VER)
+.include "${PORTSDIR}/Mk/bsd.kde.mk"
 .endif
 
 .include "${PORTSDIR}/Mk/bsd.gnome.mk"

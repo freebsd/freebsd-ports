@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.uni-karlsruhe.de/~uddn/xglobe/
 
 MAINTAINER=	kris@FreeBSD.org
 
-USE_QT=		yes
+USE_QT_VER=	1
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 

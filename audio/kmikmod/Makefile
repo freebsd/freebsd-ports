@@ -19,7 +19,7 @@ LIB_DEPENDS=	kdecore.3:${PORTSDIR}/x11/kdelibs11 \
 
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/kmikmod
-USE_QT=		yes
+USE_QT_VER=	1
 USE_GMAKE=	yes
 WANT_ESOUND=	yes
 USE_LIBTOOL=	yes
