@@ -1,0 +1,24 @@
+
+$FreeBSD$
+
+--- Makefile.orig	Sun Apr 27 19:23:16 2003
++++ Makefile	Sun Apr 27 19:23:38 2003
+@@ -1,7 +1,7 @@
+ # Compiler, flags, etc...
+-CC = cc
++#CC = cc
+ #CFLAGS = -Wall -g -DDEBUG2 -DDEBUG1
+-CFLAGS=-Wall -O2
++#CFLAGS=-Wall -O2
+ 
+ # program variables
+ FILENAME = yaunc
+@@ -12,7 +12,7 @@
+ 
+ # platform dependant stuff has the appropriate suffix :)
+ OBJ1 = read_conf.o usage.o unp_error.o encode.o unp_sock_wrappers.o \
+-		 unp_inet_pton.o unp_inet_ntop.o unp_wraplib.o send_data.o \
++		 unp_wraplib.o send_data.o \
+ 		 resolv.o daemon_init.o sigfuncs.o inlines.o
+ OBJ_LIN = $(OBJ1) linux_funcs.o
+ OBJ_SUN = $(OBJ1) get_ut_proc.o

@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	yaunc
-PORTVERSION=	0.06
-PORTREVISION=	1
+PORTVERSION=	1.00
 CATEGORIES=	misc
 MASTER_SITES=	http://www.redterror.net/code/yaunc/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Yet Another uptimes.net client
+COMMENT=	Yet another uptimes.net client
 
 USE_REINPLACE=	yes
-GNU_CONFIGURE=	yes
+ALL_TARGET=	bsd
+CFLAGS+=	-DCONFFILE=\\\"${PREFIX}/etc/yaunc.conf\\\"
+
 MAN1=		yaunc.1
 
 post-patch:
