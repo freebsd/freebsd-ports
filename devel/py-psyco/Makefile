@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	psyco
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	psyco
@@ -22,9 +22,5 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
 WRKSRC=		${WRKDIR}/psyco-${PORTVERSION}
-
-post-install:
-# fix installation permissions
-	@${CHMOD} ${SHAREMODE} ${PYTHON_SITELIBDIR}/psyco/*
 
 .include <bsd.port.mk>

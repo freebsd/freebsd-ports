@@ -8,6 +8,9 @@
 %%PYTHON_SITELIBDIR%%/psyco/core.py
 %%PYTHON_SITELIBDIR%%/psyco/core.pyc
 %%PYTHON_SITELIBDIR%%/psyco/core.pyo
+%%PYTHON_SITELIBDIR%%/psyco/kdictproxy.py
+%%PYTHON_SITELIBDIR%%/psyco/kdictproxy.pyc
+%%PYTHON_SITELIBDIR%%/psyco/kdictproxy.pyo
 %%PYTHON_SITELIBDIR%%/psyco/logger.py
 %%PYTHON_SITELIBDIR%%/psyco/logger.pyc
 %%PYTHON_SITELIBDIR%%/psyco/logger.pyo
