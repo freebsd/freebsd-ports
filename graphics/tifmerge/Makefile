@@ -8,10 +8,10 @@
 PORTNAME=	tifmerge
 PORTVERSION=	1.0
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.whizkidtech.net/fports/
+MASTER_SITES=	http://www.whizkidtech.redprince.net/fports/
 DISTNAME=	tiff
 
-MAINTAINER=	adam@whizkidtech.net
+MAINTAINER=	adam@redprince.net
 COMMENT=	Library to merge TIFF files into multi-page TIFF files
 
 BUILD_DEPENDS=	tuc:${PORTSDIR}/converters/tuc
