@@ -15,6 +15,8 @@ bin/tftopl-ptex
 %%TEXMFDIR%%/web2c/ptex/ptex.fmt
 %%TEXMFDIR%%/web2c/ptex/ptex.pool
 %%TEXMFDIR%%/web2c/ptex/texmf.cnf
+%%TEXMFDIR%%/web2c/ptex/updmap.cfg
+@unexec rm -f %D/%%TEXMFVARDIR%%/web2c/ptex/updmap.log
 @dirrm %%TEXMFDIR%%/web2c/ptex
 %%TEXMFDIR%%/doc/jbibtex/doc-ascii/Makefile
 %%TEXMFDIR%%/doc/jbibtex/doc-ascii/README
@@ -238,7 +240,6 @@ bin/tftopl-ptex
 @dirrm %%TEXMFDIR%%/ptex/plain/base
 %%TEXMFDIR%%/ptex/plain/config/ptex.ini
 @dirrm %%TEXMFDIR%%/ptex/plain/config
-@dirrm %%TEXMFDIR%%/ptex/plain
 %%TEXMFDIR%%/ptex/platex/base/Changes.txt
 %%TEXMFDIR%%/ptex/platex/base/README.txt
 %%TEXMFDIR%%/ptex/platex/base/README2.txt
@@ -314,12 +315,46 @@ bin/tftopl-ptex
 %%TEXMFDIR%%/ptex/platex/config/hyphen.cfg
 %%TEXMFDIR%%/ptex/platex/config/platex.ini
 @dirrm %%TEXMFDIR%%/ptex/platex/config
-@dirrm %%TEXMFDIR%%/ptex/platex
-@dirrm %%TEXMFDIR%%/ptex
 %%TEXMFDIR%%/dvips/ptex/jis.map
 %%TEXMFDIR%%/dvips/ptex/morisawa.map
 @unexec rmdir %D/%%TEXMFDIR%%/dvips/ptex 2> /dev/null || true
+@exec /bin/mkdir -p %D/%%TEXMFCONFIGDIR%%/dvips/ptex
+@unexec rmdir %D/%%TEXMFCONFIGDIR%%/dvips/ptex 2> /dev/null || true
 %%TEXMFCONFIGDIR%%/texconfig/tcfmgr.map
 @dirrm %%TEXMFCONFIGDIR%%/texconfig
+@exec %%MKTEXLSR%%
+@exec /bin/mkdir -p %D/%%TEXMFDIR%%/fonts/map/ptex/dvips/updmap
+@exec /bin/mkdir -p %D/%%TEXMFDIR%%/fonts/map/ptex/dvipdfm/updmap
+@exec /bin/mkdir -p %D/%%TEXMFDIR%%/fonts/map/ptex/pdftex/updmap
+@exec /bin/mkdir -p %D/%%TEXMFVARDIR%%/fonts/map/ptex/dvips/updmap
+@exec /bin/mkdir -p %D/%%TEXMFVARDIR%%/fonts/map/ptex/dvipdfm/updmap
+@exec /bin/mkdir -p %D/%%TEXMFVARDIR%%/fonts/map/ptex/pdftex/updmap
+@exec %%UPDMAP_SYS_PTEX%%
+@unexec rm -f %D/%%TEXMFVARDIR%%/fonts/map/ptex/dvips/updmap/download35.map
+@unexec rm -f %D/%%TEXMFVARDIR%%/fonts/map/ptex/dvips/updmap/builtin35.map
+@unexec rm -f %D/%%TEXMFVARDIR%%/fonts/map/ptex/dvips/updmap/psfonts_t1.map
+@unexec rm -f %D/%%TEXMFVARDIR%%/fonts/map/ptex/dvips/updmap/psfonts_pk.map
+@unexec rm -f %D/%%TEXMFVARDIR%%/fonts/map/ptex/dvips/updmap/ps2pk.map
+@unexec rm -f %D/%%TEXMFVARDIR%%/fonts/map/ptex/dvips/updmap/psfonts.map
+@unexec rm -f %D/%%TEXMFVARDIR%%/fonts/map/ptex/pdftex/updmap/pdftex_dl14.map
+@unexec rm -f %D/%%TEXMFVARDIR%%/fonts/map/ptex/pdftex/updmap/pdftex_ndl14.map
+@unexec rm -f %D/%%TEXMFVARDIR%%/fonts/map/ptex/pdftex/updmap/pdftex.map
+@unexec rm -f %D/%%TEXMFVARDIR%%/fonts/map/ptex/dvipdfm/updmap/dvipdfm_dl14.map
+@unexec rm -f %D/%%TEXMFVARDIR%%/fonts/map/ptex/dvipdfm/updmap/dvipdfm_ndl14.map
+@unexec rm -f %D/%%TEXMFVARDIR%%/fonts/map/ptex/dvipdfm/updmap/dvipdfm.map
+@dirrm %%TEXMFDIR%%/fonts/map/ptex/dvips/updmap
+@dirrm %%TEXMFDIR%%/fonts/map/ptex/dvips
+@dirrm %%TEXMFDIR%%/fonts/map/ptex/dvipdfm/updmap
+@dirrm %%TEXMFDIR%%/fonts/map/ptex/dvipdfm
+@dirrm %%TEXMFDIR%%/fonts/map/ptex/pdftex/updmap
+@dirrm %%TEXMFDIR%%/fonts/map/ptex/pdftex
+@dirrm %%TEXMFDIR%%/fonts/map/ptex
+@dirrm %%TEXMFVARDIR%%/fonts/map/ptex/dvips/updmap
+@dirrm %%TEXMFVARDIR%%/fonts/map/ptex/dvips
+@dirrm %%TEXMFVARDIR%%/fonts/map/ptex/dvipdfm/updmap
+@dirrm %%TEXMFVARDIR%%/fonts/map/ptex/dvipdfm
+@dirrm %%TEXMFVARDIR%%/fonts/map/ptex/pdftex/updmap
+@dirrm %%TEXMFVARDIR%%/fonts/map/ptex/pdftex
+@dirrm %%TEXMFVARDIR%%/fonts/map/ptex
 @exec %%MKTEXLSR%%
 @unexec %%MKTEXLSR%%
