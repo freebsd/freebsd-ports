@@ -7,13 +7,15 @@
 
 PORTNAME=	gxditview
 PORTVERSION=	1.18.1
+PORTREVISION=	1
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	groff
 DISTNAME=	groff-${PORTVERSION}
 
-PATCH_SITES=	http://people.debian.org/~ukai/groff/
-PATCHFILES=	${DISTNAME:S,-,_,}-7.diff.gz
+PATCH_SITES=	${MASTER_SITE_DEBIAN}
+PATCH_SITE_SUBDIR=	pool/main/g/groff
+PATCHFILES=	${DISTNAME:S,-,_,}-10.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	okazaki@FreeBSD.org
@@ -21,6 +23,8 @@ COMMENT=	Japanese enhancement of GNU xditview
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 RUN_DEPENDS=	${LOCALBASE}/bin/groff:${PORTSDIR}/japanese/groff
+
+CONFLICTS=	gxditview-*
 
 GNU_CONFIGURE=	yes
 #USE_GMAKE=	yes
