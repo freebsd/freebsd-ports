@@ -37,9 +37,12 @@ include/hk_classes/hk_drivermanager.h
 include/hk_classes/hk_colour.h
 include/hk_classes/hk_font.h
 include/hk_classes/hk_interpreter.h
-lib/hk_classes/drivers/libhk_mysqldriver.so.3
-lib/hk_classes/drivers/libhk_mysqldriver.so
-lib/hk_classes/drivers/libhk_mysqldriver.la
+%%MYSQL%%lib/hk_classes/drivers/libhk_mysqldriver.so.3
+%%MYSQL%%lib/hk_classes/drivers/libhk_mysqldriver.so
+%%MYSQL%%lib/hk_classes/drivers/libhk_mysqldriver.la
+%%POSTGRESQL%%lib/hk_classes/drivers/libhk_postgresdriver.so.0
+%%POSTGRESQL%%lib/hk_classes/drivers/libhk_postgresdriver.so
+%%POSTGRESQL%%lib/hk_classes/drivers/libhk_postgresdriver.la
 lib/hk_classes/libhk_classes.so.5
 lib/hk_classes/libhk_classes.la
 lib/hk_classes/libhk_classes.so
