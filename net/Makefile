@@ -220,6 +220,7 @@
     SUBDIR += rsync
     SUBDIR += rtsp_proxy
     SUBDIR += ruby-drb
+    SUBDIR += ruby-ldap
     SUBDIR += ruby-snmp
     SUBDIR += ruby-uri
     SUBDIR += rwhois

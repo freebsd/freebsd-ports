@@ -1,0 +1,11 @@
+%%RUBY_SITEARCHLIBDIR%%/ldap.so
+%%RUBY_EXAMPLESDIR%%/ldap/test1.rb
+%%RUBY_EXAMPLESDIR%%/ldap/test2.rb
+%%RUBY_EXAMPLESDIR%%/ldap/test3.rb
+%%RUBY_EXAMPLESDIR%%/ldap/test4.rb
+%%RUBY_EXAMPLESDIR%%/ldap/test5.rb
+%%RUBY_EXAMPLESDIR%%/ldap/test6.rb
+@dirrm %%RUBY_EXAMPLESDIR%%/ldap
+%%RUBY_DOCDIR%%/ldap/README
+%%RUBY_DOCDIR%%/ldap/README.html
+@dirrm %%RUBY_DOCDIR%%/ldap
