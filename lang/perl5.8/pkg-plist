@@ -511,4 +511,5 @@ lib/perl5/5.00502/termcap.pl
 lib/perl5/5.00502/timelocal.pl
 lib/perl5/5.00502/validate.pl
 lib/perl5/5.00502/vars.pm
-@unexec rm -rf lib/perl5/site_perl/5.005
+@unexec rm -rf %D/lib/perl5/5.00502
+@unexec rm -rf %D/lib/perl5/site_perl/5.005
