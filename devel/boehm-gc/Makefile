@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	boehm-gc
-PORTVERSION=	6.2
-PORTREVISION=	2
+PORTVERSION=	6.3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.hpl.hp.com/personal/Hans_Boehm/gc/gc_source/
 DISTNAME=	gc${PORTVERSION:S/.a/alpha/}

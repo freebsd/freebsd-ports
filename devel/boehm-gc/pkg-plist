@@ -59,6 +59,7 @@ share/doc/gc/gcdescr.html
 share/doc/gc/gcinterface.html
 share/doc/gc/leak.html
 share/doc/gc/scale.html
+share/doc/gc/simple_example.html
 share/doc/gc/tree.html
 @dirrm share/doc/gc
 @dirrm include/gc
