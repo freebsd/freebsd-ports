@@ -16,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GTK=	yes
+USE_XPM=	yes
 CONFIGURE_ENV=	GTKCONFIG="${GTK_CONFIG}" CFLAGS="${CFLAGS} -I${X11BASE}/include"
 CONFIGURE_ARGS=	--x-includes="${X11BASE}/include" \
 		--x-libraries="${X11BASE}/lib"
