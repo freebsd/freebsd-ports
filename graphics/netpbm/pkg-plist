@@ -146,6 +146,7 @@ bin/pnmtoplainpnm
 bin/pnmtopng
 bin/pnmtops
 bin/pnmtorast
+bin/pnmtorle
 bin/pnmtosgi
 bin/pnmtosir
 bin/pnmtotiff
@@ -213,6 +214,7 @@ bin/rasttopnm
 bin/rawtopgm
 bin/rawtoppm
 bin/rgb3toppm
+bin/rletopnm
 bin/sbigtopgm
 bin/sgitopnm
 bin/sirtopnm
