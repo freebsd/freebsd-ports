@@ -1,36 +1,44 @@
---- ltmain.sh.orig	Tue Dec 15 01:22:13 1998
-+++ ltmain.sh	Wed Dec 23 03:12:43 1998
-@@ -923,6 +923,18 @@
+--- ltmain.sh.orig	Thu Dec 31 19:15:49 1998
++++ ltmain.sh	Thu Dec 31 19:17:02 1998
+@@ -923,6 +923,16 @@
          versuffix="$current.$revision"
          ;;
  
-+      freebsd-aout)
++      freebsd)
 +        version_vars="$version_vars major versuffix"
 +        major="$current"
-+        versuffix="$current.$revision"
-+        ;;
-+
-+      freebsd-elf)
-+        version_vars="$version_vars major versuffix"
-+        major="$current"
++	if [ $PORTOBJFORMAT = elf ]; then
 +        versuffix="$current"
++	else
++        versuffix="$current.$revision"
++	fi
 +        ;;
 +
        *)
          $echo "$modename: unknown library version type \`$version_type'" 1>&2
          echo "Fatal configuration error.  See the $PACKAGE docs for more information." 1>&2
---- ltconfig.orig	Tue Dec 15 01:22:13 1998
-+++ ltconfig	Wed Dec 23 03:14:11 1998
-@@ -1106,9 +1106,10 @@
+--- ltconfig.orig	Thu Dec 31 19:15:52 1998
++++ ltconfig	Thu Dec 31 19:17:52 1998
+@@ -1105,10 +1105,21 @@
+   finish_eval='for lib in `ls $libdir/*.ixlibrary 2>/dev/null`; do libname=`$echo "$lib" | sed '\''s%^.*/\([^/]*\)\.ixlibrary$%\1%'\''`; test $rm /sys/libs/${libname}_ixlibrary.a; $show "(cd /sys/libs && $LN_S $lib ${libname}_ixlibrary.a)"; (cd /sys/libs && $LN_S $lib ${libname}_ixlibrary.a) || exit 1; done'
    ;;
  
- freebsd2* | freebsd3*)
--  version_type=sunos
-+  objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
-+  version_type=freebsd-$objformat
+-freebsd2* | freebsd3*)
++freebsd2*)
+   version_type=sunos
    library_names_spec='$libname.so.$versuffix $libname.so'
--  finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
-+  finish_cmds='PATH="\$PATH:/sbin" OBJFORMAT="$objformat" ldconfig -m $libdir'
+   finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
++  shlibpath_var=LD_LIBRARY_PATH
++  ;;
++
++freebsd3*)
++  version_type=freebsd
++  library_names_spec='$libname.so.$versuffix $libname.so'
++  if [ $PORTOBJFORMAT = elf ]; then
++  finish_cmds='PATH="\$PATH:/sbin" OBJFORMAT="$PORTOBJFORMAT" ldconfig -m $libdir'
++  else
++  finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
++  fi
    shlibpath_var=LD_LIBRARY_PATH
    ;;
  
