@@ -5,5 +5,3 @@ provided by this package implement the interface for various
 cryptographic engines, like GnuPG.
 
 WWW: http://www.gnupg.org/aegypten
-
-michaelnottebrock@gmx.net
