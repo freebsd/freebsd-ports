@@ -1,5 +1,4 @@
 %%RUBY_SITEARCHLIBDIR%%/web/escape_ext.so
-%%RUBY_SITEARCHLIBDIR%%/web/writebuffer.so
 @dirrm %%RUBY_SITEARCHLIBDIR%%/web
 %%RUBY_SITELIBDIR%%/web.rb
 %%RUBY_SITELIBDIR%%/web/agent.rb
@@ -9,13 +8,13 @@
 %%RUBY_SITELIBDIR%%/web/agent/lirs.rb
 %%RUBY_SITELIBDIR%%/web/agent/passwordmanager.rb
 %%RUBY_SITELIBDIR%%/web/agent/robots.rb
-%%RUBY_SITELIBDIR%%/web/agent/table.sql
 %%RUBY_SITELIBDIR%%/web/common.rb
 %%RUBY_SITELIBDIR%%/web/controller.rb
-%%RUBY_SITELIBDIR%%/web/controller/application_old.rb
 %%RUBY_SITELIBDIR%%/web/controller/polystate.rb
 %%RUBY_SITELIBDIR%%/web/controller/simple.rb
 %%RUBY_SITELIBDIR%%/web/cookie.rb
+%%RUBY_SITELIBDIR%%/web/css/scan.rb
+%%RUBY_SITELIBDIR%%/web/css/scan.rl
 %%RUBY_SITELIBDIR%%/web/escape.rb
 %%RUBY_SITELIBDIR%%/web/interface.rb
 %%RUBY_SITELIBDIR%%/web/interface/basic.rb
@@ -24,6 +23,7 @@
 %%RUBY_SITELIBDIR%%/web/interface/mod_ruby.rb
 %%RUBY_SITELIBDIR%%/web/interface/rinda.rb
 %%RUBY_SITELIBDIR%%/web/interface/rubymail.rb
+%%RUBY_SITELIBDIR%%/web/linkextor.rb
 %%RUBY_SITELIBDIR%%/web/persistent.rb
 %%RUBY_SITELIBDIR%%/web/persistent/idgen.rb
 %%RUBY_SITELIBDIR%%/web/persistent/idgen/default.rb
@@ -45,6 +45,7 @@
 @dirrm %%RUBY_SITELIBDIR%%/web/persistent/idgen
 @dirrm %%RUBY_SITELIBDIR%%/web/persistent
 @dirrm %%RUBY_SITELIBDIR%%/web/interface
+@dirrm %%RUBY_SITELIBDIR%%/web/css
 @dirrm %%RUBY_SITELIBDIR%%/web/controller
 @dirrm %%RUBY_SITELIBDIR%%/web/agent
 @dirrm %%RUBY_SITELIBDIR%%/web
@@ -54,20 +55,13 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/bench.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/counter_persistent.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/counter_pstore.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/devlog.htm
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/dotsuki.lirs.gz
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/dotsuki.lirs.txt
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/f
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/form.html
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/form2.html
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/form_test.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/hello.cgi
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/hello.fcgi
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/hello.rbx
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/hina.txt
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/mailtest.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/nantenna.lirs.gz
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/nantenna.lirs.txt.gz
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/natsumican.di
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/parse_hinadi.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/parse_lirs.rb
@@ -106,6 +100,7 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testapp/testapp.cgi
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testapp/testapp.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testcgi.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testcookie.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testfcgi.html
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testrbx.html
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/x.html
