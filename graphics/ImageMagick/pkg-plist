@@ -65,6 +65,8 @@ lib/ImageMagick/delegates.mgk
 %%MODULES%%lib/ImageMagick/modules/coders/cut.so
 %%MODULES%%lib/ImageMagick/modules/coders/dcm.la
 %%MODULES%%lib/ImageMagick/modules/coders/dcm.so
+%%MODULES%%lib/ImageMagick/modules/coders/dib.la
+%%MODULES%%lib/ImageMagick/modules/coders/dib.so
 %%MODULES%%lib/ImageMagick/modules/coders/dps.la
 %%MODULES%%lib/ImageMagick/modules/coders/dps.so
 %%MODULES%%lib/ImageMagick/modules/coders/dpx.la
@@ -116,6 +118,8 @@ lib/ImageMagick/delegates.mgk
 %%MODULES%%lib/ImageMagick/modules/coders/mono.so
 %%MODULES%%lib/ImageMagick/modules/coders/mpc.la
 %%MODULES%%lib/ImageMagick/modules/coders/mpc.so
+%%MODULES%%lib/ImageMagick/modules/coders/mpr.la
+%%MODULES%%lib/ImageMagick/modules/coders/mpr.so
 %%MODULES%%lib/ImageMagick/modules/coders/mpeg.la
 %%MODULES%%lib/ImageMagick/modules/coders/mpeg.so
 %%MODULES%%lib/ImageMagick/modules/coders/mtv.la
@@ -158,8 +162,6 @@ lib/ImageMagick/delegates.mgk
 %%MODULES%%lib/ImageMagick/modules/coders/psd.so
 %%MODULES%%lib/ImageMagick/modules/coders/pwp.la
 %%MODULES%%lib/ImageMagick/modules/coders/pwp.so
-%%MODULES%%lib/ImageMagick/modules/coders/registry.la
-%%MODULES%%lib/ImageMagick/modules/coders/registry.so
 %%MODULES%%lib/ImageMagick/modules/coders/rgb.la
 %%MODULES%%lib/ImageMagick/modules/coders/rgb.so
 %%MODULES%%lib/ImageMagick/modules/coders/rla.la
@@ -214,6 +216,8 @@ lib/ImageMagick/delegates.mgk
 %%MODULES%%lib/ImageMagick/modules/coders/xbm.so
 %%MODULES%%lib/ImageMagick/modules/coders/xc.la
 %%MODULES%%lib/ImageMagick/modules/coders/xc.so
+%%MODULES%%lib/ImageMagick/modules/coders/xcf.la
+%%MODULES%%lib/ImageMagick/modules/coders/xcf.so
 %%MODULES%%lib/ImageMagick/modules/coders/xpm.la
 %%MODULES%%lib/ImageMagick/modules/coders/xpm.so
 %%MODULES%%lib/ImageMagick/modules/coders/xwd.la
@@ -299,7 +303,6 @@ share/ImageMagick/www/api/blob.html
 share/ImageMagick/www/api/cache.html
 share/ImageMagick/www/api/cache_view.html
 share/ImageMagick/www/api/color.html
-share/ImageMagick/www/api/compress.html
 share/ImageMagick/www/api/constitute.html
 share/ImageMagick/www/api/decorate.html
 share/ImageMagick/www/api/display.html
@@ -308,13 +311,10 @@ share/ImageMagick/www/api/effect.html
 share/ImageMagick/www/api/enhance.html
 share/ImageMagick/www/api/error.html
 share/ImageMagick/www/api/image.html
-share/ImageMagick/www/api/mac.html
 share/ImageMagick/www/api/magick.html
 share/ImageMagick/www/api/memory.html
 share/ImageMagick/www/api/monitor.html
 share/ImageMagick/www/api/montage.html
-share/ImageMagick/www/api/nt.html
-share/ImageMagick/www/api/pixel_cache.html
 share/ImageMagick/www/api/quantize.html
 share/ImageMagick/www/api/registry.html
 share/ImageMagick/www/api/segment.html
@@ -323,7 +323,6 @@ share/ImageMagick/www/api/signature.html
 share/ImageMagick/www/api/stream.html
 share/ImageMagick/www/api/transform.html
 share/ImageMagick/www/api/types/ChromaticityInfo.html
-share/ImageMagick/www/api/types/ColorPacket.html
 share/ImageMagick/www/api/types/DrawInfo.html
 share/ImageMagick/www/api/types/Enumerations.html
 share/ImageMagick/www/api/types/ExceptionInfo.html
@@ -336,8 +335,6 @@ share/ImageMagick/www/api/types/PointInfo.html
 share/ImageMagick/www/api/types/ProfileInfo.html
 share/ImageMagick/www/api/types/QuantizeInfo.html
 share/ImageMagick/www/api/types/RectangleInfo.html
-share/ImageMagick/www/api/utility.html
-share/ImageMagick/www/api/vms.html
 share/ImageMagick/www/api/widget.html
 share/ImageMagick/www/api/zoom.html
 share/ImageMagick/www/api.html
