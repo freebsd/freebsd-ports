@@ -10,15 +10,6 @@
  #include <ctype.h>
  
  
-@@ -196,7 +198,7 @@
-   { "header-col",     0, offsetof (struct uparams, header_col) },
-   { "usage-indent",   0, offsetof (struct uparams, usage_indent) },
-   { "rmargin",        0, offsetof (struct uparams, rmargin) },
--  { 0 }
-+  { 0, 0, 0 }
- };
- 
- /* Read user options from the environment, and fill in UPARAMS appropiately.  */
 @@ -1114,7 +1116,7 @@
    int old_wm = __argp_fmtstream_wmargin (stream);
    /* PEST is a state block holding some of our variables that we'd like to
