@@ -1,0 +1,6 @@
+This is a port of poppassd, a program which allows users to change their
+password using the "Change Password" menu item in Eudora.  poppassd connections
+use TCP port 106 by default.
+
+- Andrew
+andrew@ugh.net.au

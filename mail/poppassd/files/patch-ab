@@ -1,0 +1,175 @@
+--- poppassd.c.orig	Wed Aug 21 17:02:02 1996
++++ poppassd.c	Sat Jun 22 11:32:44 1996
+@@ -13,11 +13,11 @@
+  * 
+  * Doesn't actually change any passwords itself.  It simply listens for
+  * incoming requests, gathers the required information (user name, old
+- * password, new password) and executes /bin/passwd, talking to it over
++ * password, new password) and executes /usr/bin/passwd, talking to it over
+  * a pseudo-terminal pair.  The advantage of this is that we don't need
+  * to have any knowledge of either the password file format (which may
+  * include dbx files that need to be rebuilt) or of any file locking
+- * protocol /bin/passwd and cohorts may use (and which isn't documented).
++ * protocol /usr/bin/passwd and cohorts may use (and which isn't documented).
+  *
+  * The current version has been tested at NU under SunOS release 4.1.2 
+  * and 4.1.3, and under HP-UX 8.02 and 9.01. We have tested the server 
+@@ -29,7 +29,7 @@
+  * Note that unencrypted passwords are transmitted over the network.  If
+  * this bothers you, think hard about whether you want to implement the
+  * password changing feature.  On the other hand, it's no worse than what
+- * happens when you run /bin/passwd while connected via telnet or rlogin.
++ * happens when you run /usr/bin/passwd while connected via telnet or rlogin.
+  * Well, maybe it is, since the use of a dedicated port makes it slightly
+  * easier for a network snooper to snarf passwords off the wire.
+  *
+@@ -47,7 +47,7 @@
+  * (which talks to /bin/password) is directly descended from Smith's
+  * version, with changes for SunOS and HP-UX by Norstad (with help from
+  * sample code in "Advanced Programming in the UNIX Environment"
+- * by W. Richard Stevens). The code to report /bin/passwd error messages
++ * by W. Richard Stevens). The code to report /usr/bin/passwd error messages
+  * back to the client in the final 500 response, and a new version of the
+  * code to find the next free pty, is by Norstad.
+  *        
+@@ -145,6 +145,7 @@
+ static char *P1[] =
+    {"Old password:",
+     "Changing password for *.\nOld password:",
++    "Changing local password for *.\nOld password:",
+     "Changing password for * on *.\nOld password:",
+     "Changing NIS password for * on *.\nOld password:",
+     "Changing password for *\n*'s Old password:",
+@@ -165,6 +166,7 @@
+     
+ static char *P4[] =
+    {"\n",
++    "\npasswd: rebuilding the database...\npasswd: done\n",
+     "NIS entry changed on *\n",
+     ""};
+ 
+@@ -186,11 +188,7 @@
+      
+      *user = *oldpass = *newpass = 0;
+      
+-     if (openlog ("poppassd", LOG_PID, LOG_LOCAL2) < 0)
+-     {
+-	  WriteToClient ("500 Can't open syslog.");
+-	       exit (1);
+-     }
++     openlog("poppassd", LOG_PID, LOG_LOCAL2);
+      
+      WriteToClient ("200 poppassd v%s hello, who are you?", VERSION);
+      ReadFromClient (line);
+@@ -218,6 +216,7 @@
+ 
+      if (chkPass (user, oldpass, pw) == FAILURE)
+      {
++	  syslog(LOG_ERR, "Incorrect password from %s", user);
+ 	  WriteToClient ("500 Old password is incorrect.");
+ 	  exit(1);
+      }
+@@ -264,28 +263,28 @@
+ 
+ 	  if ((wpid = waitpid (pid, &wstat, 0)) < 0)
+ 	  {
+-	       syslog (LOG_ERR, "wait for /bin/passwd child failed: %m");
++	       syslog (LOG_ERR, "wait for /usr/bin/passwd child failed: %m");
+ 	       WriteToClient ("500 Server error (wait failed), get help!");
+ 	       exit (1);
+ 	  }
+ 
+ 	  if (pid != wpid)
+ 	  {
+-	       syslog (LOG_ERR, "wrong child (/bin/passwd waited for!");
++	       syslog (LOG_ERR, "wrong child (/usr/bin/passwd) waited for!");
+ 	       WriteToClient ("500 Server error (wrong child), get help!");
+ 	       exit (1);
+ 	  }
+ 
+ 	  if (WIFEXITED (wstat) == 0)
+ 	  {
+-	       syslog (LOG_ERR, "child (/bin/passwd) killed?");
++	       syslog (LOG_ERR, "child (/usr/bin/passwd) killed?");
+ 	       WriteToClient ("500 Server error (funny wstat), get help!");
+ 	       exit (1);
+ 	  }
+ 
+ 	  if (WEXITSTATUS (wstat) != 0)
+ 	  {
+-	       syslog (LOG_ERR, "child (/bin/passwd) exited abnormally");
++	       syslog (LOG_ERR, "child (/usr/bin/passwd) exited abnormally");
+ 	       WriteToClient ("500 Server error (abnormal exit), get help!");
+ 	       exit (1);
+ 	  }
+@@ -306,7 +305,7 @@
+      {
+ 	  /*
+ 	   * Become the user trying who's password is being changed.  We're
+-	   * about to exec /bin/passwd with is setuid root anyway, but this
++	   * about to exec /usr/bin/passwd with is setuid root anyway, but this
+ 	   * way it looks to the child completely like it's being run by
+ 	   * the normal user, which makes it do its own password verification
+ 	   * before doing any thing.  In theory, we've already verified the
+@@ -324,7 +323,7 @@
+ /*
+  * dochild
+  *
+- * Do child stuff - set up slave pty and execl /bin/passwd.
++ * Do child stuff - set up slave pty and execl /usr/bin/passwd.
+  *
+  * Code adapted from "Advanced Programming in the UNIX Environment"
+  * by W. Richard Stevens.
+@@ -387,10 +386,10 @@
+       return(0);
+    }
+ 
+-   /* Fork /bin/passwd. */
++   /* Fork /usr/bin/passwd. */
+ 
+-   if (execl("/bin/passwd", "passwd", user, (char*)0) < 0) {
+-      syslog(LOG_ERR, "can't exec /bin/passwd: %m");
++   if (execl("/usr/bin/passwd", "passwd", user, (char*)0) < 0) {
++      syslog(LOG_ERR, "can't exec /usr/bin/passwd: %m");
+       return(0);
+    }
+ }
+@@ -408,15 +407,20 @@
+  *
+  * Modified by Norstad to remove assumptions about number of pty's allocated
+  * on this UNIX box.
++ *
++ * Modified by Stephen Melvin to allocate local space for static character
++ * array, rather than local space to pointer to constant string, which is
++ * not kosher and was crashing FreeBSD 1.1.5.1.
+  */
+ findpty (slave)
+ char **slave;
+ {
+    int master;
+-   static char *line = "/dev/ptyXX";
++   static char line[11];
+    DIR *dirp;
+    struct dirent *dp;
+ 
++   strcpy(line,"/dev/ptyXX");
+    dirp = opendir("/dev");
+    while ((dp = readdir(dirp)) != NULL) {
+       if (strncmp(dp->d_name, "pty", 3) == 0 && strlen(dp->d_name) == 5) {
+@@ -485,7 +489,7 @@
+      }
+ 
+      writestring(master, pswd);
+-
++     sleep(2);
+      if (!expect(master, P4, buf)) return FAILURE;
+ 
+      return SUCCESS;
+@@ -566,6 +570,7 @@
+ 	}
+ 	n += m;
+ 	buf[n] = 0;
++/* syslog(LOG_ERR, "read from child: %s",buf); */
+ 	initialSegment = 0;
+         for (s = expected; **s != 0; s++) {
+            result = match(buf, *s);
