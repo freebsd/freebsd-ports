@@ -8,7 +8,7 @@
 
 DISTNAME=	znibbles-0.0.7
 CATEGORIES=	games
-MASTER_SITES=	http://www.stud.enst.fr/~vmallet/archives/
+MASTER_SITES=	ftp://koala.inria.fr/pub/games/znibbles/
 
 MAINTAINER=	yinjieh@csie.nctu.edu.tw
 
