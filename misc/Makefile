@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.179 1998/12/24 13:50:40 jseger Exp $
+# $Id: Makefile,v 1.180 1998/12/26 17:19:27 sada Exp $
 #
 
     SUBDIR += 221upgrade
@@ -13,7 +13,6 @@
     SUBDIR += bb
     SUBDIR += chord
     SUBDIR += colorls
-    SUBDIR += comconsole
     SUBDIR += crosspad
     SUBDIR += ctk
     SUBDIR += cwish
