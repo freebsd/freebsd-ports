@@ -15,8 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	sobomax@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/share/automake/install-sh:${PORTSDIR}/devel/automake
-LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
-		Xpm.4:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
