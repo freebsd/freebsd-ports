@@ -7,6 +7,7 @@
 
 PORTNAME=	sawfish2
 PORTVERSION=	1.3
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
@@ -29,7 +30,7 @@ PLIST_SUB=	GNUHOST=${GNUHOST} VERSION=${PORTVERSION}
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehier gnomehack
+USE_GNOME=	gnomehier gnomehack esound
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-readline \
@@ -39,17 +40,8 @@ CONFIGURE_ARGS=	--with-readline \
 		--disable-themer
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=		--with-esd
 CONFIGURE_TARGET=	${ARCH}-pc-freebsd${OSREL:C/\..*//}
-
-.include <bsd.port.pre.mk>
-
-.if ${HAVE_GNOME:Mesound}!=""
-USE_GNOME+=		esound
-PKGNAMESUFFIX=		-esound
-CONFIGURE_ARGS+=	--with-esd
-.else
-CONFIGURE_ARGS+=	--without-esd
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's^-l(pthread|c_r)^${PTHREAD_LIBS}^g ; \
@@ -62,4 +54,4 @@ post-install:
 	--entry="* sawfish: (sawfish).           sawfish programming manual" \
 	${PREFIX}/info/sawfish.info ${PREFIX}/info/dir
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
