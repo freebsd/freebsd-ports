@@ -1,16 +1,12 @@
 bin/dbmmanage
 bin/htdigest
 bin/htpasswd
-etc/apache/access.conf
-etc/apache/access.conf.default
 etc/apache/apache.conf
 etc/apache/apache.conf.default
 etc/apache/magic
 etc/apache/magic.default
 etc/apache/mime.types
 etc/apache/mime.types.default
-etc/apache/srm.conf
-etc/apache/srm.conf.default
 etc/rc.d/apache.sh
 include/apache/alloc.h
 include/apache/ap.h
