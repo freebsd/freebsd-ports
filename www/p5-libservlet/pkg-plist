@@ -14,6 +14,7 @@ lib/perl5/site_perl/%%PERL_VER%%/Servlet/Http/HttpSessionActivationListener.pm
 lib/perl5/site_perl/%%PERL_VER%%/Servlet/Http/HttpSessionBindingListener.pm
 lib/perl5/site_perl/%%PERL_VER%%/Servlet/Util/Event.pm
 lib/perl5/site_perl/%%PERL_VER%%/Servlet/Util/Exception.pm
+lib/perl5/site_perl/%%PERL_VER%%/Servlet/Util/Principal.pm
 lib/perl5/site_perl/%%PERL_VER%%/Servlet/Config.pm
 lib/perl5/site_perl/%%PERL_VER%%/Servlet/Filter.pm
 lib/perl5/site_perl/%%PERL_VER%%/Servlet/FilterChain.pm
