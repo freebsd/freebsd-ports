@@ -3799,6 +3799,7 @@ kde-icons-kool-gorilla	ports/x11-themes/kde-icons-kool-gorilla
 kde-icons-noia	ports/x11-themes/kde-icons-noia
 kde-icons-noia-warm	ports/x11-themes/kde-icons-noia-warm
 kde-icons-nuvola	ports/x11-themes/kde-icons-nuvola
+kde-icons-outline	ports/x11-themes/kde-icons-outline
 kde-lite	ports/x11/kde-lite
 kde3		ports/x11/kde3
 kde3-i18n	ports/misc/kde3-i18n
