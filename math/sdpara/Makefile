@@ -7,13 +7,13 @@
 
 PORTNAME=	sdpara
 PORTVERSION=	0.90
-CATEGORIES=	math paralell
+CATEGORIES=	math parallel
 MASTER_SITES=	http://sdpa.is.titech.ac.jp/
 DISTFILES=	${PORTNAME}.${PORTVERSION}.src.tar.gz
 .if !defined(NOPORTDOCS)
 DISTFILES+=	${PORTNAME}.${PORTVERSION}.install.txt
 .endif
-DIST_SUBDIR=    sdpara
+DIST_SUBDIR=	sdpara
 EXTRACT_ONLY=	${PORTNAME}.${PORTVERSION}.src.tar.gz
 
 MAINTAINER=	maho@FreeBSD.org
@@ -32,11 +32,11 @@ LAPACK=		-lalapack
 CBLAS=		-lcblas -lf77blas -latlas -lg2c
 
 .if defined(WITH_OPTIMIZED_FLAGS)
-FFLAGS+=        -O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double
-CXXFLAGS+=      -O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double  -Wno-multichar
+FFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double
+CXXFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double  -Wno-multichar
 .if (${MACHINE_ARCH} == "i386")
-FFLAGS+=        -mfancy-math-387 -mpreferred-stack-boundary=3
-CXXFLAGS+=      -mfancy-math-387 -mpreferred-stack-boundary=3
+FFLAGS+=	-mfancy-math-387 -mpreferred-stack-boundary=3
+CXXFLAGS+=	-mfancy-math-387 -mpreferred-stack-boundary=3
 .endif # i386
 .endif
 
