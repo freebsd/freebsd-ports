@@ -5,7 +5,7 @@
 
     SUBDIR += GiNaC
     SUBDIR += PDL
-    SUBDIR += R-project
+    SUBDIR += R
     SUBDIR += abs
     SUBDIR += add
     SUBDIR += algae
