@@ -334,7 +334,7 @@ PATCHFILES+=	p0-patch-${DW_MBOX_PATCH_VERSION}.dw.mbox-hook.1:dw
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/i$//}
-MAN1=		flea.1 mutt.1 mutt_dotlock.1 muttbug.1
+MAN1=		mutt.1 mutt_dotlock.1
 MAN5=		muttrc.5 mbox.5
 
 post-patch::
