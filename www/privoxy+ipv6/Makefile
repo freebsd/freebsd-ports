@@ -7,6 +7,7 @@
 
 PORTNAME=	privoxy+ipv6
 PORTVERSION=	20030523
+PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://ftp.deepspace6.net/pub/sources/privoxy/
 DISTNAME=	privoxy_CVS_${PORTVERSION}_ipv6_5
@@ -23,13 +24,12 @@ DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:S/+ipv6//}
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_AUTOCONF=	yes
+USE_AUTOHEADER=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-user=${USER} --with-group=${GROUP} \
 		--sysconfdir=${ETCDIR} --localstatedir=/var
-
 
 MAKEFILE=	GNUmakefile
 

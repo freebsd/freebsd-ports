@@ -91,4 +91,3 @@ sbin/privoxy
 @dirrm %%DOCSDIR%%/man-page
 @dirrm %%DOCSDIR%%/user-manual
 @dirrm %%DOCSDIR%%
-
