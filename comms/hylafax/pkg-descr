@@ -1,4 +1,4 @@
-(excerpt from HylaFAX FAQ, http://www.vix.com/hylafax/FAQ/Q1.html)
+(excerpt from HylaFAX FAQ, http://www.hylafax.org/HylaFAQ/Q001.html)
 
      HylaFAX is a facsimile system for UNIX systems. It supports:
         o sending facsimile
@@ -12,7 +12,5 @@
      time to communicate). Any modem that supports one of the standard
      interfaces for facsimile operation can be used; i.e. any Class 1, Class
      2, or Class 2.0 modem.
-
-http://www.vix.com/hylafax/
 
 WWW: http://www.hylafax.org/
