@@ -1,17 +1,18 @@
 bin/Amy
-share/amy/Book.db
-share/amy/Eco.db
-@dirrm share/amy
-%%PORTDOCS%%share/doc/amy/README
-share/doc/amy/index.html
-share/doc/amy/amy.css
-share/doc/amy/ch01.html
-share/doc/amy/ch01s02.html
-share/doc/amy/ch01s03.html
-share/doc/amy/ch02.html
-share/doc/amy/ch03.html
-share/doc/amy/ch03s02.html
-share/doc/amy/ch03s03.html
-share/doc/amy/ch03s04.html
-share/doc/amy/ch04.html
-@dirrm share/doc/amy
+%%DATADIR%%/Book.db
+%%DATADIR%%/Eco.db
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/amy.css
+%%PORTDOCS%%%%DOCSDIR%%/ch01.html
+%%PORTDOCS%%%%DOCSDIR%%/ch01s02.html
+%%PORTDOCS%%%%DOCSDIR%%/ch01s03.html
+%%PORTDOCS%%%%DOCSDIR%%/ch01s04.html
+%%PORTDOCS%%%%DOCSDIR%%/ch02.html
+%%PORTDOCS%%%%DOCSDIR%%/ch03.html
+%%PORTDOCS%%%%DOCSDIR%%/ch03s02.html
+%%PORTDOCS%%%%DOCSDIR%%/ch03s03.html
+%%PORTDOCS%%%%DOCSDIR%%/ch03s04.html
+%%PORTDOCS%%%%DOCSDIR%%/ch04.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%

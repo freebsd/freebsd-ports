@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	amy
-PORTVERSION=	0.8.6
+PORTVERSION=	0.8.7
 CATEGORIES=	games
 MASTER_SITES=	http://tgreiner.net/
 DISTFILES=	amy-${PORTVERSION}.tar.gz ClassicGames.pgn.bz2
@@ -19,9 +19,10 @@ LIB_DEPENDS=	db2.0:${PORTSDIR}/databases/db2:install
 
 NOT_FOR_ARCHS=	sparc64 alpha
 
-MAN6=           Amy.6
+MAN6=		Amy.6
 
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 post-extract:
 	${BZCAT} ${DISTDIR}/ClassicGames.pgn.bz2 > \
