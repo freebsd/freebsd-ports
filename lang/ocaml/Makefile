@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ocaml
-PORTVERSION=	3.01
+PORTVERSION=	3.02
 CATEGORIES=	lang
 MASTER_SITES=	http://caml.inria.fr/distrib/ \
 		ftp://ftp.inria.fr/lang/caml-light/ \
@@ -16,8 +16,12 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-refman.html${EXTRACT_SUFX}
 
 MAINTAINER=	patrick@watson.org
 
+WITH_TK=        yes
+
 .if defined(WITH_TK)
 PLIST_SUB+=	LABLTK:=""
+BUILD_DEPENDS+=	${LOCALBASE}/include/tcl8.3:${PORTSDIR}/lang/tcl83
+BUILD_DEPENDS+=	${LOCALBASE}/include/tk8.3:${PORTSDIR}/x11-toolkits/tk83
 LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 .else
 PLIST_SUB+=	LABLTK:="@comment "
@@ -25,7 +29,7 @@ PLIST_SUB+=	LABLTK:="@comment "
 
 USE_XLIB=	yes
 HAS_CONFIGURE=	yes
-ALL_TARGET=	world bootstrap opt opt.opt
+ALL_TARGET=	world opt opt.opt
 
 .if ${MACHINE_ARCH} != "i386"
 PLIST_SUB+=	PROF:="@comment "
@@ -51,12 +55,17 @@ DOCFILES=	${DISTNAME}-refman.html.tar.gz ${DISTNAME}-refman.ps.gz
 .endif
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/doc/ocaml
-	${INSTALL_DATA} ${WRKSRC}/LICENSE ${PREFIX}/share/doc/ocaml/
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/LICENSE ${DOCSDIR}/
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/ocaml/html
-	@cd ${WRKDIR}/htmlman; ${INSTALL_DATA} * ${PREFIX}/share/doc/ocaml/html
-	@${CP} ${DISTDIR}/${DISTNAME}-refman.ps.gz ${PREFIX}/share/doc/ocaml
+	@${MKDIR} ${DOCSDIR}/html
+	@cd ${WRKDIR}/htmlman; ${INSTALL_DATA} * ${DOCSDIR}/html
+	@${CP} ${DISTDIR}/${DISTNAME}-refman.ps.gz ${DOCSDIR}
+.endif
+.if defined(WITH_TK)
+	@${MKDIR} ${PREFIX}/share/examples/ocaml
+	@${MKDIR} ${PREFIX}/share/examples/ocaml/labltk
+	@cd ${WRKSRC}/otherlibs/labltk/example; ${INSTALL_DATA} * ${PREFIX}/share/examples/ocaml/labltk
 .endif
 	@strip ${PREFIX}/bin/ocamlrun ${PREFIX}/bin/ocamlyacc
 

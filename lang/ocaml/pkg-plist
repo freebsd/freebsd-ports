@@ -188,7 +188,9 @@ lib/ocaml/condition.mli
 lib/ocaml/mutex.mli
 lib/ocaml/thread.mli
 lib/ocaml/libgraphics.a
+lib/ocaml/graphicsX11.mli
 lib/ocaml/graphics.mli
+lib/ocaml/graphicsX11.cmi
 lib/ocaml/graphics.cmi
 lib/ocaml/graphics.cma
 lib/ocaml/libmldbm.a
@@ -394,6 +396,16 @@ lib/ocaml/dbm.cmx
 %%LABLTK:%%lib/ocaml/labltk/fileselect.cmx
 %%LABLTK:%%lib/ocaml/labltk/libjpf.a
 %%LABLTK:%%lib/ocaml/labltk/libjpf.cmxa
+%%LABLTK:%%share/examples/ocaml/labltk/Lambda2.back.gif
+%%LABLTK:%%share/examples/ocaml/labltk/Makefile
+%%LABLTK:%%share/examples/ocaml/labltk/README
+%%LABLTK:%%share/examples/ocaml/labltk/calc.ml
+%%LABLTK:%%share/examples/ocaml/labltk/clock.ml
+%%LABLTK:%%share/examples/ocaml/labltk/demo.ml
+%%LABLTK:%%share/examples/ocaml/labltk/eyes.ml
+%%LABLTK:%%share/examples/ocaml/labltk/hello.ml
+%%LABLTK:%%share/examples/ocaml/labltk/hello.tcl
+%%LABLTK:%%share/examples/ocaml/labltk/tetris.ml
 share/doc/ocaml/LICENSE
 share/doc/ocaml/html/contents_motif.gif
 share/doc/ocaml/html/index.html
@@ -478,10 +490,12 @@ share/doc/ocaml/html/manual074.html
 share/doc/ocaml/html/manual075.html
 share/doc/ocaml/html/next_motif.gif
 share/doc/ocaml/html/previous_motif.gif
-share/doc/ocaml/ocaml-3.01-refman.ps.gz
+share/doc/ocaml/ocaml-3.02-refman.ps.gz
 @dirrm share/doc/ocaml/html
 @dirrm share/doc/ocaml
 @dirrm lib/ocaml/caml
 @dirrm lib/ocaml/threads
 %%LABLTK:%%@dirrm lib/ocaml/labltk
+%%LABLTK:%%@dirrm share/examples/ocaml/labltk
+%%LABLTK:%%@dirrm share/examples/ocaml
 @dirrm lib/ocaml
