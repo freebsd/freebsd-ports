@@ -1,0 +1,10 @@
+--- sentinel.cf.SAMPLE.orig	Tue May 14 17:18:45 2002
++++ sentinel.cf.SAMPLE	Tue May 14 17:19:20 2002
+@@ -1,6 +1,6 @@
+ [global]
+ tmp:/var/tmp
+-log:/var/log/smfilter.log
++log:/usr/local/var/sentinel/smfilter.log
+ user:smmsp
+ group:smmsp
+ 
