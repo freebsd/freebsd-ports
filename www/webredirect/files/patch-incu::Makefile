@@ -6,7 +6,7 @@ $FreeBSD$
 @@ -1,6 +1,6 @@
  SRC	= error.cc socket.cc log.cc system.cc time.cc pipe.cc
  OBJS	= ${SRC:.cc=.o}
--CXXFLAGS = -I. -pipe -Wall -O2
+-CXXFLAGS = -I. -pipe -g -Wall -O2
 +CXXFLAGS += -I. -pipe -Wall
  RANLIB	= ranlib
  
