@@ -11,7 +11,6 @@ PORTVERSION=	0.5
 PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.pacificsites.com/~ccrayne/  \
-		http://www.glue.umd.edu/~jasonp/  \
 		http://www.boo.net/~jasonp/
 DISTNAME=	${PORTNAME}
 
