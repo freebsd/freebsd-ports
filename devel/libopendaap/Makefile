@@ -8,7 +8,7 @@
 PORTNAME=	libopendaap
 PORTVERSION=	0.2.3
 CATEGORIES=	devel net
-MASTER_SITES=	http://crazney.net/programs/itunes/files/
+MASTER_SITES=	http://craz.net/programs/itunes/files/
 
 MAINTAINER=	ahze@ahze.net
 COMMENT=	C lib used to connect to iTunes(R) music shares
