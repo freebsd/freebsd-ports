@@ -34,7 +34,7 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI-137
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
 .endif
 
-POSTGRESQL_PORT?=	databases/postgresql-client
+POSTGRESQL_PORT?=	databases/postgresql7
 PGSQL_PORTDIR?=		${PORTSDIR}/${POSTGRESQL_PORT}
 PGSQL_WRKSRC!=		cd ${PGSQL_PORTDIR} && ${MAKE} -V WRKSRC
 
