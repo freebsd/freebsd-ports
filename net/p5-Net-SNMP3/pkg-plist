@@ -1,17 +1,6 @@
-bin/snmpkey
 %%SITE_PERL%%/Net/SNMP.pm
-%%SITE_PERL%%/Net/SNMP/Dispatcher.pm
-%%SITE_PERL%%/Net/SNMP/Message.pm
-%%SITE_PERL%%/Net/SNMP/MessageProcessing.pm
-%%SITE_PERL%%/Net/SNMP/PDU.pm
-%%SITE_PERL%%/Net/SNMP/Security.pm
-%%SITE_PERL%%/Net/SNMP/Security/Community.pm
-%%SITE_PERL%%/Net/SNMP/Security/USM.pm
-%%SITE_PERL%%/Net/SNMP/Transport/UDP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SNMP/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SNMP
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
-@dirrm %%SITE_PERL%%/Net/SNMP/Transport
-@dirrm %%SITE_PERL%%/Net/SNMP/Security
-@dirrm %%SITE_PERL%%/Net/SNMP
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Net 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/Net 2>/dev/null || true

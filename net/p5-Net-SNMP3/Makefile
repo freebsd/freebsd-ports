@@ -1,35 +1,30 @@
-# New ports collection makefile for:	p5-Net-SNMP
-# Date created:				30 June 2000
-# Whom:					Christopher N. Harrell <cnh@ivmg.net>
+# New ports collection makefile for:	p5-Net-SNMP3
+# Date created:				2 oct 2003
+# Whom:					Lars Thegler <lars@thegler.dk>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	Net-SNMP
-PORTVERSION=	4.1.2
+PORTVERSION=	3.65
 CATEGORIES=	net perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Net
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	krion
 PKGNAMEPREFIX=	p5-
+PKGNAMESUFFIX=	-365
 
 MAINTAINER=	lars@thegler.dk
-COMMENT=	A perl module for SNMP... Net::SNMP
+COMMENT=	Net::SNMP for pre-5.6 perl
 
-RUN_DEPENDS=	${ARCH_PERL}/Crypt/DES.pm:${PORTSDIR}/security/p5-Crypt-DES \
-		${ARCH_PERL}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
-		${ARCH_PERL}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
-		${SITE_PERL}/Digest/HMAC.pm:${PORTSDIR}/security/p5-Digest-HMAC
-
+CONFLICTS=	p5-Net-SNMP-*
 PERL_CONFIGURE=	yes
-ARCH_PERL=	${SITE_PERL}/${PERL_ARCH}
 
-MAN1=		snmpkey.1
 MAN3=		Net::SNMP.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600
-IGNORE=		Port requires perl 5.6.x or later. Install lang/perl5 then try again
+.if ${PERL_LEVEL} >= 500600
+IGNORE=	This port is only for pre-5.6 perl. Install net/p5-Net-SNMP instead.
 .endif
 
 .include <bsd.port.post.mk>
