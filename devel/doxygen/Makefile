@@ -74,7 +74,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/doxywizard ${PREFIX}/bin
 .ifndef NOPORTDOCS
 	${MKDIR} ${PREFIX}/share/doc/doxygen/html
-	${INSTALL_DATA} ${WRKSRC}/html/* ${PREFIX}/share/doc/doxygen/html
+	${TAR} -C ${WRKSRC} --exclude '*/_*' -cf - html | \
+		${TAR} -C ${PREFIX}/share/doc/doxygen --unlink -xf -
 	${TAR} -C ${WRKSRC} --exclude '*/Makefile*' --exclude '*.dot' -cf - examples | \
 		${TAR} -C ${PREFIX}/share/doc/doxygen --unlink -xf -
 .ifdef HAVE_LATEX
