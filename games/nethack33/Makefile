@@ -7,28 +7,73 @@
 
 PORTNAME=	nethack
 PORTVERSION=	3.3.1
-CATEGORIES=	games
+PORTREVISION=	1
+CATEGORIES?=	games
 MASTER_SITES=	ftp://ftp.nethack.org/pub/nethack/nh${PORTVERSION:S/.//g}/src/
-MASTER_SITE_SUBDIR=	nethack
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	dscheidt@enteract.com
+MAINTAINER?=	dscheidt@enteract.com
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USE_XPM=	yes
+
 USE_GMAKE=	yes
+MAKE_ENV=	CXX="${CXX}" GRAPHICS="${GRAPHICS}"
+
 MAN6=		dgn_comp.6 dlb.6 lev_comp.6 nethack.6 recover.6
+
+.if defined(WITH_GNOME_GRAPHICS)
+CATEGORIES=	games gnome
+PKGNAMESUFFIX=	-gnome
+LIB_DEPENDS+=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
+USE_GNOME=	yes
+GRAPHICS=	GNOME_GRAPHICS
+.elif defined(WITH_QT_GRAPHICS)
+PKGNAMESUFFIX=	-qt
+USE_QT_VER=	2
+MAKE_ENV+=	QTCPPFLAGS="${QTCPPFLAGS}" QTCFGLIBS="${QTCFGLIBS}" \
+		MOC="${MOC}" LIBQT="-l${QTNAME}"
+GRAPHICS=	QT_GRAPHICS
+.elif defined(WITH_TTY_GRAPHICS) || defined(WITHOUT_X11)
+PKGNAMESUFFIX=	-nox11
+.else
+USE_XPM=	yes
+GRAPHICS=	X11_GRAPHICS
+.endif
+
+pre-everything::
+.if defined(WITH_GNOME_GRAPHICS) || defined(WITH_QT_GRAPHICS) \
+		|| defined(WITH_TTY_GRAPHICS) || defined(WITHOUT_X11)
+	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+	@${ECHO_MSG} " You cannot install nethack and ${PKGBASE} in parallel   "
+	@${ECHO_MSG} " But ${PKGBASE} read your prior nethack scores           "
+	@${ECHO_MSG} " Don't forget to backup your nethack libdir if it's      "
+	@${ECHO_MSG} " important for you                                       "
+	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+.else
+	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+	@${ECHO_MSG} " You may use the following build options:                "
+	@${ECHO_MSG} " WITH_GNOME_GRAPHICS=yes            build with GNOME GUI "
+	@${ECHO_MSG} " WITH_QT_GRAPHICS=yes               build with Qt GUI    "
+	@${ECHO_MSG} " WITH_TTY_GRAPHICS=yes              build with no GUI    "
+	@${ECHO_MSG} " WITHOUT_X11=yes                    same as above        "
+	@${ECHO_MSG} "                                                         "
+	@${ECHO_MSG} " By default, nethack port is built with X11 GUI.         "
+	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+.endif
+
+post-patch:
+	@${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/include/config.h
+	@${PERL} -pi -e 's|<malloc.h>|<stdlib.h>|g' ${WRKSRC}/win/Qt/qt_win.cpp
 
 pre-configure:
 	@cd ${WRKSRC}/sys/unix; ${SH} setup.sh
 
 post-install:
-	@cd ${WRKSRC}/doc; ${CHMOD} 644 *.6
-	@cd ${WRKSRC}/doc; PREFIX=${PREFIX} ${MAKE} manpages
+	@cd ${WRKSRC}/doc; ${SETENV} ${MAKE_ENV} ${MAKE} manpages
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/nethack
-	${CP} ${WRKSRC}/doc/Guidebook.txt ${PREFIX}/share/doc/nethack
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/Guidebook.txt ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

@@ -1,51 +1,114 @@
---- ./sys/unix/Makefile.src.orig	Sat Aug  5 20:52:57 2000
-+++ ./sys/unix/Makefile.src	Fri Oct 13 10:10:21 2000
-@@ -144,8 +144,8 @@
+--- sys/unix/Makefile.src.orig	Sat Aug  5 19:52:57 2000
++++ sys/unix/Makefile.src	Sat May 18 01:19:31 2002
+@@ -139,19 +139,28 @@
+ # directories.  The ones given below is the usual spot for linux systems.
+ # The paths are for glibconfig.h and gnomesupport.h respectively.
+ #
+-GNOMEINC=-I/usr/lib/glib/include -I/usr/lib/gnome-libs/include -I../win/gnome
++GNOMEINC= $(shell ${GNOME_CONFIG} --cflags gnomeui)
+ 
  # flags for debugging:
  # CFLAGS = -g -I../include
++CFLAGS += -I../include
++ifeq ("$(GRAPHICS)","X11_GRAPHICS")
++CFLAGS += -DX11_GRAPHICS -I${X11BASE}/include
++endif
++ifeq ("$(GRAPHICS)","QT_GRAPHICS")
++CFLAGS += -DQT_GRAPHICS
++endif
++ifeq ("$(GRAPHICS)","GNOME_GRAPHICS")
++CFLAGS += -DGNOME_GRAPHICS
++endif
  
 -CFLAGS = -O -I../include
--LFLAGS =
-+CFLAGS += -O -I../include -I${X11BASE}/include
-+LFLAGS = -L${X11BASE}/lib
+ LFLAGS =
  
  # The Qt and Be window systems are written in C++, while the rest of
  # NetHack is standard C.  If using Qt, uncomment the LD line here to get
-@@ -203,8 +203,8 @@
+ # the C++ libraries linked in.
+-CXXFLAGS = $(CFLAGS) -I. -I$(QTDIR)/include
+-CXX=g++
++CXXFLAGS += -I. -I../include ${QTCPPFLAGS}
++#CXX=g++
+ #LD=g++
  
+ # Set the WINSRC, WINOBJ, and WINLIB lines to correspond to your desired
+@@ -204,7 +213,26 @@
  #
  #
--WINSRC = $(WINTTYSRC)
--WINOBJ = $(WINTTYOBJ)
-+WINSRC = $(WINTTYSRC) $(WINX11SRC)
-+WINOBJ = $(WINTTYOBJ) $(WINX11OBJ)
+ WINSRC = $(WINTTYSRC)
++ifeq ("$(GRAPHICS)","X11_GRAPHICS")
++WINSRC += $(WINX11SRC)
++endif
++ifeq ("$(GRAPHICS)","QT_GRAPHICS")
++WINSRC += $(WINQTSRC)
++endif
++ifeq ("$(GRAPHICS)","GNOME_GRAPHICS")
++WINSRC += $(WINGNOMESRC)
++endif
++
+ WINOBJ = $(WINTTYOBJ)
++ifeq ("$(GRAPHICS)","X11_GRAPHICS")
++WINOBJ += $(WINX11OBJ)
++endif
++ifeq ("$(GRAPHICS)","QT_GRAPHICS")
++WINOBJ += $(WINQTOBJ)
++endif
++ifeq ("$(GRAPHICS)","GNOME_GRAPHICS")
++WINOBJ += $(WINGNOMEOBJ)
++endif
  
  # on some systems the termcap library is in -ltermcap or -lcurses
  # on 386 Xenix, the -ltermlib tputs() seems not to work; use -lcurses instead
-@@ -224,7 +224,7 @@
+@@ -224,19 +252,19 @@
  #
  # libraries for X11
  # If USE_XPM is defined in config.h, you will also need -lXpm here.
 -WINX11LIB = -lXaw -lXmu -lXext -lXt -lX11
-+WINX11LIB = -lXaw -lXmu -lXext -lXt -lX11 -lXpm
++WINX11LIB = -lXaw -lXmu -lXpm -lXext -lXt -lX11 -lSM -lICE -L${X11BASE}/lib
  # WINX11LIB = -lXaw -lXmu -lXt -lX11
  # WINX11LIB = -lXaw -lXmu -lXext -lXt -lXpm -lX11 -lm
  # WINX11LIB = -lXaw -lXmu -lXpm -lXext -lXt -lX11 -lSM -lICE -lm # BSD/OS 2.0
-@@ -244,7 +244,7 @@
- # libraries for BeOS 
+ #
+ # libraries for Qt
+-WINQTLIB = -L$(QTDIR)/lib -lqt
++WINQTLIB = ${QTCFGLIBS} ${LIBQT}
+ #
+ # libraries for KDE (with Qt)
+ WINKDELIB = -lkdecore -lkdeui -lXext
+ #
+ # libraries for Gnome
+-WINGNOMELIB = -lgnomeui -lgnome -lart_lgpl -lgtk -lgdk -lpopt
++WINGNOMELIB = $(shell ${GNOME_CONFIG} --libs gnomeui) -lgnugetopt
+ #
+ # libraries for Gem port
+ WINGEMLIB = -le_gem -lgem
+@@ -245,6 +273,15 @@
  WINBELIB = -lbe
  
--WINLIB = $(WINTTYLIB)
-+WINLIB = $(WINTTYLIB) $(WINX11LIB)
+ WINLIB = $(WINTTYLIB)
++ifeq ("$(GRAPHICS)","X11_GRAPHICS")
++WINLIB += $(WINX11LIB)
++endif
++ifeq ("$(GRAPHICS)","QT_GRAPHICS")
++WINLIB += $(WINQTLIB)
++endif
++ifeq ("$(GRAPHICS)","GNOME_GRAPHICS")
++WINLIB += $(WINGNOMELIB)
++endif
  
  # any other strange libraries your system needs (for Sysunix only -- the more
  # specialized targets should already be right)
-@@ -271,7 +271,7 @@
- # IRIX 4.0.x needs -lsun if NIS (YP) is being used for passwd file lookup
- # LIBS = -lsun
- #
--LIBS =
-+LIBS = -lSM -lICE
+@@ -445,10 +482,10 @@
  
- # make NetHack
- GAME     = nethack
+ # Qt windowport meta-object-compiler output
+ qt_kde0.moc: ../include/qt_kde0.h
+-	$(QTDIR)/bin/moc ../include/qt_kde0.h > qt_kde0.moc
++	${MOC} ../include/qt_kde0.h > qt_kde0.moc
+ 
+ qt_win.moc: ../include/qt_win.h
+-	$(QTDIR)/bin/moc ../include/qt_win.h > qt_win.moc
++	${MOC} ../include/qt_win.h > qt_win.moc
+ 
+ $(MAKEDEFS): ../util/makedefs.c  $(CONFIG_H) ../include/permonst.h \
+ 		../include/objclass.h ../include/monsym.h \
