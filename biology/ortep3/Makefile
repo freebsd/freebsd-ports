@@ -3,7 +3,7 @@
 # Date created:		1999-05-08
 # Whom:			Ryo MIYAMOTO
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/05/19 13:37:58 taoka Exp $
 #
 
 DISTNAME= ortep
@@ -15,6 +15,11 @@ EXTRACT_SUFX= .tar.Z
 MAINTAINER= rmiya@cc.hirosaki-u.ac.jp
 
 LIB_DEPENDS= pgplot.5:${PORTSDIR}/graphics/pgplot
+
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} >= 400002
+BROKEN=	doesn\'t build with new f77 compiler
+.endif
 
 pre-patch:
 	${CP} ${FILESDIR}/Makefile.ortep3 ${WRKDIR}/${DISTNAME}/src/Makefile
@@ -51,4 +56,4 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/README.1st \
 	      ${PREFIX}/share/doc/ortep3
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
