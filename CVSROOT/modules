@@ -4076,6 +4076,7 @@ nethack3	ports/games/nethack3
 nethack3-gnome	ports/games/nethack3-gnome
 nethack3-tty	ports/games/nethack3-tty
 nethirc		ports/irc/nethirc
+netmap		ports/net/netmap
 netmask		ports/net/netmask
 netpbm		ports/graphics/netpbm
 netperf		ports/benchmarks/netperf
