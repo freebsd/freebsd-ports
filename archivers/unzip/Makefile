@@ -3,13 +3,13 @@
 # Date created:         17 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.6 1996/11/12 02:17:43 obrien Exp $
+# $Id: Makefile,v 1.7 1996/11/18 13:55:59 asami Exp $
 #
 
 DISTNAME=       unzip-5.2
 CATEGORIES=	archivers
-MASTER_SITES=   ftp://quest.jpl.nasa.gov/pub/
-DISTFILES=      unzip52.tar.Z
+MASTER_SITES=   ftp://ftp.cdrom.com/pub/infozip/src/
+DISTFILES=      unzip52.tar.gz
 
 MAINTAINER=     ache@FreeBSD.ORG
 
