@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	clarence
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.2
 CATEGORIES=	math python
 MASTER_SITES=	http://clay.ll.pl/download/
 
@@ -19,7 +19,6 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/GDK.py:${PORTSDIR}/x11-toolkits/py-gtk
 USE_REINPLACE=	yes
 USE_PYTHON=	yes
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}
 MAN1=	clarence.1
 
 post-patch:
