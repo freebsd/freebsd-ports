@@ -1,0 +1,56 @@
+bin/rvplayer
+lib/rvplayer5.0/License.txt
+lib/rvplayer5.0/Mailcap
+lib/rvplayer5.0/Mime.types
+lib/rvplayer5.0/RAObserver.class
+lib/rvplayer5.0/RAPlayer.class
+lib/rvplayer5.0/rvplayer.ad
+lib/rvplayer5.0/libdecdnet.so
+lib/rvplayer5.0/libra14_4.so
+lib/rvplayer5.0/libra28_8.so
+lib/rvplayer5.0/libradnet.so
+lib/rvplayer5.0/librarv10.so
+lib/rvplayer5.0/librasipr.so
+lib/rvplayer5.0/librv10dec.so
+lib/rvplayer5.0/librvcore.so
+lib/rvplayer5.0/librvplayer.so
+share/doc/rvplayer5.0/gifs/webhelp.gif
+share/doc/rvplayer5.0/gifs/config4_1.jpg
+share/doc/rvplayer5.0/gifs/config4_2.jpg
+share/doc/rvplayer5.0/gifs/download.gif
+share/doc/rvplayer5.0/gifs/emhelp.gif
+share/doc/rvplayer5.0/gifs/plugin.jpg
+share/doc/rvplayer5.0/gifs/prefs.jpg
+share/doc/rvplayer5.0/gifs/ra-logo.gif
+share/doc/rvplayer5.0/gifs/ra-logo2.gif
+share/doc/rvplayer5.0/gifs/realplayer4.jpg
+share/doc/rvplayer5.0/gifs/rnlogo.gif
+share/doc/rvplayer5.0/gifs/config3.jpg
+share/doc/rvplayer5.0/browser.htm
+share/doc/rvplayer5.0/configure.htm
+share/doc/rvplayer5.0/contents.htm
+share/doc/rvplayer5.0/embed.htm
+share/doc/rvplayer5.0/freebsd.htm
+share/doc/rvplayer5.0/general.htm
+share/doc/rvplayer5.0/install.htm
+share/doc/rvplayer5.0/intro.htm
+share/doc/rvplayer5.0/irix.htm
+share/doc/rvplayer5.0/license.htm
+share/doc/rvplayer5.0/linux.htm
+share/doc/rvplayer5.0/notes.htm
+share/doc/rvplayer5.0/notice.html
+share/doc/rvplayer5.0/path.htm
+share/doc/rvplayer5.0/plugin.htm
+share/doc/rvplayer5.0/setup.htm
+share/doc/rvplayer5.0/shared.htm
+share/doc/rvplayer5.0/solaris.htm
+share/doc/rvplayer5.0/sysreq.htm
+share/doc/rvplayer5.0/title.html
+share/doc/rvplayer5.0/toc.html
+share/doc/rvplayer5.0/index.htm
+share/doc/rvplayer5.0/README
+share/rvplayer5.0/welcome.rm
+@dirrm share/rvplayer5.0
+@dirrm share/doc/rvplayer5.0/gifs
+@dirrm share/doc/rvplayer5.0
+@dirrm lib/rvplayer5.0
