@@ -10,7 +10,7 @@
 -BINDIR=/usr/pgrad/matty/bin/$(cputype)
 +OS= -D_LIBXG_EXTENSION -DSUNOS
 +
-+SAMPATH=../../../sam/work
++SAMPATH=${SAMDIR}
 +
 +BINDIR=.			# where we'll install it
  
