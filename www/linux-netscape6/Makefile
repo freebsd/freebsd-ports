@@ -75,9 +75,7 @@ pre-everything::
 	${MKDIR} ${WRKSRC}/bin/plugins ${WRKSRC}/bin/chrome \
 		${WRKSRC}/plugins
 	${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure
-.if exists(${.CURDIR}/work/${WRKSRC}/components.conf)
 DISTFILES!=${CAT} ${.CURDIR}/work/${WRKSRC}/components.conf; ${TRUE}
-.endif
 
 do-extract:
 .for i in ${DISTFILES}
