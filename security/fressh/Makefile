@@ -21,7 +21,11 @@ USE_BZIP2=	yes
 LIB_DEPENDS+=	ssl.1:${PORTSDIR}/security/openssl
 MAKE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
-		RSAGLUE="-lrsaref -lRSAglue"
+		RSAGLUE="${RSAGLUE}"
+.if exists(${LOCALBASE}/lib/librsaref.a)
+RSAGLUE=	-lrsaref
+.endif
+RSAGLUE+=	-lRSAglue
 .endif
 .endif
 
