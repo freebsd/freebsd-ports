@@ -1,0 +1,11 @@
+--- configure.orig	Mon May 19 14:05:29 2003
++++ configure	Mon May 19 14:05:56 2003
+@@ -1703,7 +1703,7 @@
+ 
+ 
+ 
+-ALL_LINGUAS="am az be bg bn ca cs cy da de el es et fa fi fr ga he hi hu id is it ja kn ko lv mk ml mn ms nl no pl pt pt_BR ro ru sk sl sq sr sr@Latn sv ta th tr uk vi zh_CN zh_TW"
++ALL_LINGUAS="am az be bg bn ca cs cy da de el es et fa fi fr ga he hi hu id is ja kn ko lv mk ml mn ms nl no pl pt pt_BR ro ru sk sl sq sr sr@Latn sv ta th tr uk vi zh_CN zh_TW"
+ GETTEXT_PACKAGE=gnome-icon-theme
+ 
+ ac_ext=c
