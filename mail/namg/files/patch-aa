@@ -1,0 +1,15 @@
+--- src/Makefile.in.orig	Wed Jul  5 06:33:54 2000
++++ src/Makefile.in		Mon Jan  1 17:06:30 2001
+@@ -26,10 +26,8 @@
+ 		mkdir -p @prefix@/bin ;		\
+ 	fi
+ 	cp $(PROGNAME) @prefix@/bin
+-	if [ ! -f $(HOME)/.namgrc ]; then	\
+-		cp .namgrc $(HOME) ;		\
+-		chmod 600 $(HOME)/.namgrc ;	\
+-	fi
++	mkdir -p @prefix@/share/namg/
++	cp .namgrc @prefix@/share/namg/namgrc.default
+ 
+ clean:
+ 		rm -f $(OBJS)
