@@ -1,4 +1,4 @@
---- configure.tmp	Sat Apr 10 03:28:51 2004
+--- configure.orig	Sat Apr 10 03:28:51 2004
 +++ configure	Sat Apr 10 04:47:54 2004
 @@ -16589,17 +16589,12 @@
  cat >>conftest.$ac_ext <<_ACEOF

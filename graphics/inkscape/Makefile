@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	inkscape
-PORTVERSION=	0.38
+PORTVERSION=	0.38.1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -31,6 +31,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2
 MAN1=		inkscape.1 inkview.1
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+EXTRA_PATCHES=  ${PATCHDIR}/extra-patch-old_gcc_bugs
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|g' \
