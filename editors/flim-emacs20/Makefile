@@ -3,7 +3,7 @@
 # Date created:		23 September 1998
 # Whom:			Shigeyuki FUKUSHIMA <shige@kuis.kyoto-u.ac.jp>
 #
-# $Id: Makefile,v 1.5 1999/03/01 09:37:23 shige Exp $
+# $Id: Makefile,v 1.6 1999/03/09 04:27:15 shige Exp $
 #
 
 DISTNAME=	flim-${FLIM_VER}
@@ -57,9 +57,10 @@ post-install:
 	done)
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/${FLIMDOCDIR}
-	@for i in ChangeLog README.* ; do \
-		${INSTALL_DATA} ${WRKSRC}/$${i} ${PREFIX}/${FLIMDOCDIR}/ ; \
-	done
+	@(cd ${WRKSRC} ; \
+	for i in ChangeLog README.* ; do \
+		${INSTALL_DATA} $${i} ${PREFIX}/${FLIMDOCDIR}/ ; \
+	done)
 .endif
 
 .include <bsd.port.post.mk>

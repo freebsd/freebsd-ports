@@ -3,7 +3,7 @@
 # Date created:		23 September 1998
 # Whom:			Shigeyuki FUKUSHIMA <shige@kuis.kyoto-u.ac.jp>
 #
-# $Id: Makefile,v 1.4 1999/03/01 09:37:45 shige Exp $
+# $Id: Makefile,v 1.5 1999/03/09 04:39:12 shige Exp $
 #
 
 DISTNAME=	semi-${SEMI_VER}
@@ -66,9 +66,10 @@ post-install:
 	done)
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/${SEMIDOCDIR}
-	@for i in ChangeLog NEWS README.* TODO VERSION ; do \
-		${INSTALL_DATA} ${WRKSRC}/$${i} ${PREFIX}/${SEMIDOCDIR}/ ; \
-	done
+	@(cd ${WRKSRC} ; \
+	for i in ChangeLog NEWS README.* TODO VERSION ; do \
+		${INSTALL_DATA} $${i} ${PREFIX}/${SEMIDOCDIR}/ ; \
+	done)
 .endif
 
 .include <bsd.port.post.mk>
