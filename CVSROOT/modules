@@ -4125,6 +4125,7 @@ latex-logpap	ports/print/latex-logpap
 latex-mathabx	ports/print/latex-mathabx
 latex-mk	ports/misc/latex-mk
 latex-pgf	ports/print/latex-pgf
+latex-pict2e	ports/print/latex-pict2e
 latex-subfig	ports/print/latex-subfig
 latex-subfloat	ports/print/latex-subfloat
 latex-timing	ports/print/latex-timing
