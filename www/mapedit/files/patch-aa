@@ -1,0 +1,24 @@
+--- mapedit.orig	Sun Mar 15 16:11:07 1998
++++ mapedit	Sun Mar 15 16:12:24 1998
+@@ -9,18 +9,17 @@
+ #the path of end users.
+ 
+ #Where you have moved the mapedit directory to
+-MAPEDIT_DIR=/usr/local/lib/mapedit
++MAPEDIT_DIR=!!LOCALBASE!!/lib/mapedit
+ 
+ #The regular class path, which will probably
+ #differ on your system -- this setting
+ #is correct for the Linux JDK
+-CLASSPATH=/usr/local/java/lib/classes.zip
++CLASSPATH=!!LOCALBASE!!/java/lib/classes.zip
+ 
+ #Where is your Java interpreter? If it is not in a typical
+ #user's path you may need to change this setting
+-JAVA=java
++JAVA=!!LOCALBASE!!/java/bin/java
+ 
+ #Now run it!
+ 
+ $JAVA -classpath $CLASSPATH:$MAPEDIT_DIR:$MAPEDIT_DIR/MRJToolkitStubs.zip Mapedit -datadir $MAPEDIT_DIR
+-
