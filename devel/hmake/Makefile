@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hmake
-PORTVERSION=	2.03
+PORTVERSION=	3.05
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.cs.york.ac.uk/pub/haskell/hmake/
 
@@ -14,16 +14,27 @@ MAINTAINER=	mwest@uct.ac.za
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 
-BROKEN=		"Does not build"
-
 HAS_CONFIGURE=	YES
 CONFIGURE_ARGS+=	--prefix=${PREFIX}
 USE_GMAKE=	YES
 
-# cheat a bit, otherwise LIBDIR gets clobbered
+.include <bsd.port.pre.mk>
+
 do-install:
+.if exists(${PREFIX}/bin/hmake) && !defined(OVERRIDE_HMAKE)
+	@${ECHO} ""
+	@${ECHO} "It seems that there is already a version of hmake installed on"
+	@${ECHO} "this system. Please deinstall it, or define OVERRIDE_HMAKE to"
+	@${ECHO} "override the installed version."
+	@${ECHO} ""
+	@${ECHO} "NOTE: hmake is part of nhc98"
+	@${ECHO} ""
+	@${FALSE}
+.else
+# cheat a bit, otherwise LIBDIR gets clobbered
 	(cd ${WRKSRC} && ./configure --install)
+.endif
 
 MAN1=		hmake.1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
