@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	openldap
+PORTNAME=	openldap12
 PORTVERSION=	1.2.13
 CATEGORIES=	net databases
 MASTER_SITES=	ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
@@ -18,6 +18,7 @@ MASTER_SITES=	ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
 		ftp://ftp.loxinfo.co.th/pub/unix/LDAP/OpenLDAP/%SUBDIR%/ \
 		ftp://ftp.zcu.cz/pub/network/openldap/%SUBDIR%/
 MASTER_SITE_SUBDIR=	openldap-release
+DISTNAME=	openldap-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	lodea@vet.com.au
