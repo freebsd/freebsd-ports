@@ -33,6 +33,7 @@ LIB_DEPENDS+=	audiofile.0:${PORTSDIR}/audio/libaudiofile
 
 BREAKS_IF_PEDANTIC=	yes
 .if defined(GNUSTEP_GUI_DEVEL)
+EXTRA_PATCHES=	${FILESDIR}/extra-pa_unix_oss.c
 PLIST_SUB+=	DEVEL=""
 PLIST_SUB+=	NODEVEL="@comment "
 .else
@@ -52,7 +53,7 @@ CONFIGURE_TARGET=
 USE_GMAKE=	yes
 MAKEFILE=
 MAKE_FLAGS+=	OPTFLAG="${CFLAGS}"
-MAKE_FLAGS+=	ADDITIONAL_LIB_DIRS=/usr/local/lib to core/gui/Source/GNUmakefile.preamble
+MAKE_FLAGS+=	ADDITIONAL_LIB_DIRS=/usr/local/lib
 NO_MTREE=	yes
 CONFIGURE_ARGS+=	--with-tiff-library=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-tiff-include=${LOCALBASE}/include
@@ -75,11 +76,13 @@ post-extract:
 	@${CP} ${PREFIX}/System/Makefiles/${file} ${WRKSRC}
 .endfor
 
+.if defined(GNUSTEP_GUI_DEVEL)
 pre-configure:
 	@ ${MV} ${EXTRA_FIX} ${EXTRA_FIX}.sed
 	${SED} -e "s=-lphread=${PTHREAD_LIBS}=" -e "s;CFLAGS =;CFLAGS+=;" \
 		-e "s;-Wall;-Wall ${PTHREAD_CFLAGS:S=""==};" \
 		${EXTRA_FIX}.sed > ${EXTRA_FIX}
+.endif
 
 do-configure:
 	@(cd ${WRKSRC}; . ${PREFIX}/System/Makefiles/GNUstep.sh; \
