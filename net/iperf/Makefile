@@ -7,12 +7,13 @@
 
 PORTNAME=	iperf
 PORTVERSION= 	1.6.4
-DISTNAME=	iperf-1.6.4-source
 CATEGORIES=	net
 MASTER_SITES=	http://dast.nlanr.net/Projects/Iperf/
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+DISTNAME=	iperf-1.6.4-source
 
 MAINTAINER=	smace@FreeBSD.org
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 NO_CDROM=	"can't charge a fee for the software"
 
