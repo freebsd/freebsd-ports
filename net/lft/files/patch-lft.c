@@ -1,6 +1,15 @@
---- lft.c.orig	Thu May  8 00:43:30 2003
-+++ lft.c	Fri Aug 15 13:50:43 2003
-@@ -76,6 +76,12 @@
+--- lft.c.orig	Wed May  7 15:43:30 2003
++++ lft.c	Tue Sep 30 05:24:47 2003
+@@ -25,6 +25,8 @@
+ #include "acconfig.h"
+ #include <assert.h>
+ 
++#define INT_MAX ((int))~0U>>1))
++
+ #ifdef __CYGWIN__
+ #define __USE_W32_SOCKETS
+ #include "windows.h"
+@@ -76,6 +78,12 @@
  #ifdef BSD
  #include <machine/limits.h>
  #endif
@@ -13,7 +22,7 @@
  
  #ifdef sun
  #include <limits.h>
-@@ -961,7 +967,7 @@
+@@ -961,7 +969,7 @@
        	return; * not for us */
  
  
@@ -22,7 +31,7 @@
      recv_packet (ntohl (tcp->th_seq) , orig_ip->ip_src,
  		 (icmp->icmp_type == ICMP_TIMXCEED) ? -2 : icmp->icmp_code);
      break;
-@@ -1046,6 +1052,9 @@
+@@ -1046,6 +1054,9 @@
  	   "LFT version 2.2 2003/05/07 compiled for " HOST_SYSTEM_TYPE "\n\n"
  	   "    Compile-time options:\n\n"
  #if defined(BSD_IP_STACK)
@@ -32,7 +41,7 @@
  	   "      + BSD\n"
  #endif
  #if defined(linux)
-@@ -1111,6 +1120,7 @@
+@@ -1111,6 +1122,7 @@
    int use_fins = 0;
    char *cp;
    struct timeval tb;
@@ -40,7 +49,16 @@
  
    setbuf (stdout, NULL);
  
-@@ -1311,6 +1321,13 @@
+@@ -1131,7 +1143,7 @@
+       dport = atoi (optarg);
+       break;
+     case 'q':
+-      seq_start = atol (optarg);
++      seq_start = atoll (optarg);
+       break;
+     case 'w':
+       win_len = atoi(optarg);
+@@ -1311,6 +1323,13 @@
      fprintf (stderr, "%s\n", ebuf);
      exit (1);
    }
