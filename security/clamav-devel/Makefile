@@ -23,7 +23,7 @@ RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
 		arc:${PORTSDIR}/archivers/arc \
 		unzip:${PORTSDIR}/archivers/unzip
 
-WRKSRC=		work/${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
