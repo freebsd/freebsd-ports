@@ -8,7 +8,7 @@
 #
 
 DISTNAME=	VMware-2.0-476
-PKGNAME=	vmware-2.0.476
+PKGNAME=	vmware2-2.0.476
 CATEGORIES=	emulators linux
 MASTER_SITES=	http://www4.vmware.com/software/ \
 		http://vmware-svca.www.conxion.com/software/ \
