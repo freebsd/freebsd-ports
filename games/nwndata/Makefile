@@ -18,6 +18,7 @@ COMMENT=	Neverwinter Nights Data Files
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/nwn
+NO_PACKAGE=	"Compressed package is in excess of 1 GB"
 
 do-install:
 	${MKDIR} ${DATADIR}
