@@ -1,0 +1,11 @@
+--- configure.orig	Sat Aug 23 15:28:24 1997
++++ configure	Sat Aug 23 15:29:56 1997
+@@ -1995,7 +1995,7 @@
+ echo "configure:1996: checking for location of Motif GUI libs" >&5
+   GUI_LIB_LOC=
+   for try in $gui_libs; do
+-    if test -f "$try/libXm.a" -o -f "$try/libXm.so" -o -f "$try/libXm.sl"; then
++    if test -f "$try/libXm.a" -o -f "$try/libXm.so.0.1" -o -f "$try/libXm.sl"; then
+       GUI_LIB_LOC=$try
+       if test "`(uname) 2>/dev/null`" = SunOS &&
+             uname -r | grep '^5' >/dev/null; then
