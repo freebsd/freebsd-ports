@@ -7,7 +7,7 @@
 
 PORTNAME=	autoconf
 PORTVERSION=	2.59
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	autoconf
@@ -68,6 +68,12 @@ post-patch:
 post-install:
 .for FILE in ${GENERIC_TOOLS}
 	${INSTALL_SCRIPT} ${WRKSRC}/config/${FILE} ${PREFIX}/share/autoconf${BUILD_VERSION}
+.endfor
+	@-${RM} -fr ${PREFIX}/libexec/autoconf${BUILD_VERSION}
+	${MKDIR} ${PREFIX}/libexec/autoconf${BUILD_VERSION}
+.for i in autoconf autoheader autoreconf autoscan autoupdate ifnames
+	${LN} -sf ${PREFIX}/bin/${i}${BUILD_VERSION} \
+		${PREFIX}/libexec/autoconf${BUILD_VERSION}/${i}
 .endfor
 
 .include <bsd.port.mk>
