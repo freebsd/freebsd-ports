@@ -10,7 +10,7 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/bin/mkzopeinstance.py
 %%ZOPEBASEDIR%%/bin/python
 %%ZOPEBASEDIR%%/bin/requestprofiler.py
-%%ZOPEBASEDIR%%/bin/testrunner.py
+%%ZOPEBASEDIR%%/bin/test.py
 %%ZOPEBASEDIR%%/bin/zpasswd.py
 %%ZOPEBASEDIR%%/doc/CHANGES.txt
 %%ZOPEBASEDIR%%/doc/CREDITS.txt
@@ -28,11 +28,6 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/doc/UNITTEST.txt
 %%ZOPEBASEDIR%%/doc/WEBSERVER.txt
 %%ZOPEBASEDIR%%/doc/ZODB.txt
-%%ZOPEBASEDIR%%/doc/changenotes/010516-2.4-unicode.stx
-%%ZOPEBASEDIR%%/doc/changenotes/010529-2.4-dropinindex.stx
-%%ZOPEBASEDIR%%/doc/changenotes/010529-2.4-exreg.stx
-%%ZOPEBASEDIR%%/doc/changenotes/010529-2.4-pluggableindex.stx
-%%ZOPEBASEDIR%%/doc/changenotes/010620-2.4-btreeconflict.stx
 %%ZOPEBASEDIR%%/doc/zconfig/schema.dtd
 %%ZOPEBASEDIR%%/doc/zconfig/zconfig.pdf
 %%ZOPEBASEDIR%%/import/Examples.zexp
@@ -224,6 +219,14 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/App/special_dtml.pyc
 %%ZOPEBASEDIR%%/lib/python/App/tar.py
 %%ZOPEBASEDIR%%/lib/python/App/tar.pyc
+%%ZOPEBASEDIR%%/lib/python/App/tests/__init__.py
+%%ZOPEBASEDIR%%/lib/python/App/tests/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/App/tests/test_cachemanager.py
+%%ZOPEBASEDIR%%/lib/python/App/tests/test_cachemanager.pyc
+%%ZOPEBASEDIR%%/lib/python/App/tests/test_setConfiguration.py
+%%ZOPEBASEDIR%%/lib/python/App/tests/test_setConfiguration.pyc
+%%ZOPEBASEDIR%%/lib/python/App/tests/test_version_txt.py
+%%ZOPEBASEDIR%%/lib/python/App/tests/test_version_txt.pyc
 %%ZOPEBASEDIR%%/lib/python/App/version_txt.py
 %%ZOPEBASEDIR%%/lib/python/App/version_txt.pyc
 %%ZOPEBASEDIR%%/lib/python/App/www/CacheManager_icon.gif
@@ -627,12 +630,17 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/mime.types-1
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/mime.types-2
+%%ZOPEBASEDIR%%/lib/python/OFS/tests/test.gif
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/testAppInitializer.py
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/testAppInitializer.pyc
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/testContentTypes.py
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/testContentTypes.pyc
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/testCopySupport.py
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/testCopySupport.pyc
+%%ZOPEBASEDIR%%/lib/python/OFS/tests/testFileAndImage.py
+%%ZOPEBASEDIR%%/lib/python/OFS/tests/testFileAndImage.pyc
+%%ZOPEBASEDIR%%/lib/python/OFS/tests/testObjectManager.py
+%%ZOPEBASEDIR%%/lib/python/OFS/tests/testObjectManager.pyc
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/testOrderSupport.py
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/testOrderSupport.pyc
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/testOrderedFolder.py
@@ -951,6 +959,8 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/testHTMLTests.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/testTALES.py
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/testTALES.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/testZopePageTemplate.py
+%%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/testZopePageTemplate.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/test_ptfile.py
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/test_ptfile.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/util.py
@@ -1118,6 +1128,7 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/Products/PythonScripts/tests/tscripts/class.__name__.ps
 %%ZOPEBASEDIR%%/lib/python/Products/PythonScripts/tests/tscripts/complex_print.ps
 %%ZOPEBASEDIR%%/lib/python/Products/PythonScripts/tests/tscripts/fibonacci.ps
+%%ZOPEBASEDIR%%/lib/python/Products/PythonScripts/tests/tscripts/filepath.ps
 %%ZOPEBASEDIR%%/lib/python/Products/PythonScripts/tests/tscripts/for_loop.ps
 %%ZOPEBASEDIR%%/lib/python/Products/PythonScripts/tests/tscripts/global_is_declaration.ps
 %%ZOPEBASEDIR%%/lib/python/Products/PythonScripts/tests/tscripts/mutate_literals.ps
@@ -1233,6 +1244,8 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/Products/TemporaryFolder/patchfs.py
 %%ZOPEBASEDIR%%/lib/python/Products/TemporaryFolder/patchfs.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/TemporaryFolder/www/tempfolder.gif
+%%ZOPEBASEDIR%%/lib/python/Products/Transience/Fake.py
+%%ZOPEBASEDIR%%/lib/python/Products/Transience/Fake.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Transience/HowTransienceWorks.stx
 %%ZOPEBASEDIR%%/lib/python/Products/Transience/Transience.py
 %%ZOPEBASEDIR%%/lib/python/Products/Transience/Transience.pyc
@@ -1415,6 +1428,8 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/Products/ZCatalog/regressiontests/unittest_patched.py
 %%ZOPEBASEDIR%%/lib/python/Products/ZCatalog/tests/__init__.py
 %%ZOPEBASEDIR%%/lib/python/Products/ZCatalog/tests/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ZCatalog/tests/testBrains.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZCatalog/tests/testBrains.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/ZCatalog/tests/testCatalog.py
 %%ZOPEBASEDIR%%/lib/python/Products/ZCatalog/tests/testCatalog.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/ZCatalog/version.txt
@@ -2329,6 +2344,8 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/ZPublisher/HTTPRequest.pyc
 %%ZOPEBASEDIR%%/lib/python/ZPublisher/HTTPResponse.py
 %%ZOPEBASEDIR%%/lib/python/ZPublisher/HTTPResponse.pyc
+%%ZOPEBASEDIR%%/lib/python/ZPublisher/Iterators.py
+%%ZOPEBASEDIR%%/lib/python/ZPublisher/Iterators.pyc
 %%ZOPEBASEDIR%%/lib/python/ZPublisher/Publish.py
 %%ZOPEBASEDIR%%/lib/python/ZPublisher/Publish.pyc
 %%ZOPEBASEDIR%%/lib/python/ZPublisher/Request.py
@@ -2543,6 +2560,14 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/Zope/Startup/options.pyc
 %%ZOPEBASEDIR%%/lib/python/Zope/Startup/run.py
 %%ZOPEBASEDIR%%/lib/python/Zope/Startup/run.pyc
+%%ZOPEBASEDIR%%/lib/python/Zope/Startup/tests/__init__.py
+%%ZOPEBASEDIR%%/lib/python/Zope/Startup/tests/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/Zope/Startup/tests/testStarter.py
+%%ZOPEBASEDIR%%/lib/python/Zope/Startup/tests/testStarter.pyc
+%%ZOPEBASEDIR%%/lib/python/Zope/Startup/tests/test_schema.py
+%%ZOPEBASEDIR%%/lib/python/Zope/Startup/tests/test_schema.pyc
+%%ZOPEBASEDIR%%/lib/python/Zope/Startup/tests/test_warnfilter.py
+%%ZOPEBASEDIR%%/lib/python/Zope/Startup/tests/test_warnfilter.pyc
 %%ZOPEBASEDIR%%/lib/python/Zope/Startup/warnfilter.py
 %%ZOPEBASEDIR%%/lib/python/Zope/Startup/warnfilter.pyc
 %%ZOPEBASEDIR%%/lib/python/Zope/Startup/warnfilter.xml
@@ -2563,6 +2588,8 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/docutils/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/core.py
 %%ZOPEBASEDIR%%/lib/python/docutils/core.pyc
+%%ZOPEBASEDIR%%/lib/python/docutils/examples.py
+%%ZOPEBASEDIR%%/lib/python/docutils/examples.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/frontend.py
 %%ZOPEBASEDIR%%/lib/python/docutils/frontend.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/io.py
@@ -2571,6 +2598,8 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/docutils/languages/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/languages/af.py
 %%ZOPEBASEDIR%%/lib/python/docutils/languages/af.pyc
+%%ZOPEBASEDIR%%/lib/python/docutils/languages/cs.py
+%%ZOPEBASEDIR%%/lib/python/docutils/languages/cs.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/languages/de.py
 %%ZOPEBASEDIR%%/lib/python/docutils/languages/de.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/languages/en.py
@@ -2583,6 +2612,8 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/docutils/languages/fr.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/languages/it.py
 %%ZOPEBASEDIR%%/lib/python/docutils/languages/it.pyc
+%%ZOPEBASEDIR%%/lib/python/docutils/languages/pt_br.py
+%%ZOPEBASEDIR%%/lib/python/docutils/languages/pt_br.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/languages/ru.py
 %%ZOPEBASEDIR%%/lib/python/docutils/languages/ru.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/languages/sk.py
@@ -2615,6 +2646,8 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/languages/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/languages/af.py
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/languages/af.pyc
+%%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/languages/cs.py
+%%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/languages/cs.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/languages/de.py
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/languages/de.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/languages/en.py
@@ -2627,12 +2660,16 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/languages/fr.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/languages/it.py
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/languages/it.pyc
+%%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/languages/pt_br.py
+%%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/languages/pt_br.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/languages/ru.py
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/languages/ru.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/languages/sk.py
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/languages/sk.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/languages/sv.py
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/languages/sv.pyc
+%%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/roles.py
+%%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/roles.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/states.py
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/states.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/tableparser.py
@@ -2688,8 +2725,6 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/reStructuredText/README.txt
 %%ZOPEBASEDIR%%/lib/python/reStructuredText/__init__.py
 %%ZOPEBASEDIR%%/lib/python/reStructuredText/__init__.pyc
-%%ZOPEBASEDIR%%/lib/python/reStructuredText/html4zope.py
-%%ZOPEBASEDIR%%/lib/python/reStructuredText/html4zope.pyc
 %%ZOPEBASEDIR%%/lib/python/reStructuredText/reStructuredText.txt
 %%ZOPEBASEDIR%%/lib/python/tempstorage/TemporaryStorage.py
 %%ZOPEBASEDIR%%/lib/python/tempstorage/TemporaryStorage.pyc
@@ -2828,6 +2863,7 @@ etc/rc.d/zope.sh
 @dirrm %%ZOPEBASEDIR%%/lib/python/docutils
 @dirrm %%ZOPEBASEDIR%%/lib/python/ZopeUndo/tests
 @dirrm %%ZOPEBASEDIR%%/lib/python/ZopeUndo
+@dirrm %%ZOPEBASEDIR%%/lib/python/Zope/Startup/tests
 @dirrm %%ZOPEBASEDIR%%/lib/python/Zope/Startup/nt
 @dirrm %%ZOPEBASEDIR%%/lib/python/Zope/Startup/misc
 @dirrm %%ZOPEBASEDIR%%/lib/python/Zope/Startup
@@ -3030,6 +3066,7 @@ etc/rc.d/zope.sh
 @dirrm %%ZOPEBASEDIR%%/lib/python/BDBStorage/tests
 @dirrm %%ZOPEBASEDIR%%/lib/python/BDBStorage
 @dirrm %%ZOPEBASEDIR%%/lib/python/App/www
+@dirrm %%ZOPEBASEDIR%%/lib/python/App/tests
 @dirrm %%ZOPEBASEDIR%%/lib/python/App/dtml
 @dirrm %%ZOPEBASEDIR%%/lib/python/App
 @dirrm %%ZOPEBASEDIR%%/lib/python/AccessControl/www
@@ -3045,10 +3082,9 @@ etc/rc.d/zope.sh
 @dirrm %%ZOPEBASEDIR%%/lib/python/AccessControl
 @dirrm %%ZOPEBASEDIR%%/lib/python
 @dirrm %%ZOPEBASEDIR%%/lib
-@dirrm %%ZOPEBASEDIR%%/Products
 @dirrm %%ZOPEBASEDIR%%/import
 @dirrm %%ZOPEBASEDIR%%/doc/zconfig
-@dirrm %%ZOPEBASEDIR%%/doc/changenotes
 @dirrm %%ZOPEBASEDIR%%/doc
 @dirrm %%ZOPEBASEDIR%%/bin
+@dirrm %%ZOPEBASEDIR%%/Products
 @dirrm %%ZOPEBASEDIR%%

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Start or stop zope
-# $FreeBSD: /tmp/pcvs/ports/www/zope211/files/Attic/zope.sh,v 1.2 2004-04-20 14:29:26 perky Exp $
+# $FreeBSD: /tmp/pcvs/ports/www/zope211/files/Attic/zope.sh,v 1.3 2004-07-02 20:41:00 thierry Exp $
 
 # PROVIDE: zope
 # REQUIRE: DAEMON
@@ -18,7 +18,7 @@ prefix=%%PREFIX%%
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
 zope_enable=${zope_enable:-"NO"}        # Enable gkrellmd
-zope_instances=${zope_instances:-""}    # List of instancehome dirs 
+zope_instances=${zope_instances:-""}    # List of instancehome dirs
 
 . %%RC_SUBR%%
 
@@ -47,7 +47,7 @@ if checkyesno zope_enable; then
 	do
 		if [ -r ${instance}/etc/${name}.conf -a -x ${instance}/bin/zopectl ]; then
 			echo -n "       Instance ${instance} -> "
-			${instance}/bin/zopectl $1                           
+			${instance}/bin/zopectl $1
 		fi
 	done
 fi
