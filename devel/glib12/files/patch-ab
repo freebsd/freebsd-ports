@@ -1,0 +1,144 @@
+--- Makefile.in.orig	Mon Jul 27 13:33:53 1998
++++ Makefile.in	Tue Jul 28 23:02:07 1998
+@@ -77,17 +77,15 @@
+ RANLIB = @RANLIB@
+ VERSION = @VERSION@
+ 
+-configincludedir = $(pkglibdir)/include
+-
+ bin_SCRIPTS=glib-config
+ 
+ EXTRA_DIST =	\
+ 		glib.m4 \
+ 		glib.spec
+ 
+-lib_LTLIBRARIES = libglib-1.1.la
++lib_LTLIBRARIES = libglib.la
+ 
+-libglib_1_1_la_SOURCES = \
++libglib_la_SOURCES = \
+ 		garray.c	\
+ 		gcache.c	\
+ 		gcompletion.c	\
+@@ -108,17 +106,15 @@
+ 		gutils.c
+ 
+ include_HEADERS = \
+-		glib.h
+-
+-configinclude_DATA = \
++		glib.h \
+ 		glibconfig.h
+ 
+-libglib_1_1_la_LDFLAGS = -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
++libglib_la_LDFLAGS = -version-info 1:5:0
+ 
+ INCLUDES = -I$(top_srcdir)
+ 
+ noinst_PROGRAMS = testglib
+-testglib_LDADD = libglib-@LT_RELEASE@.la
++testglib_LDADD = libglib.la
+ 
+ m4datadir = $(datadir)/aclocal
+ m4data_DATA = glib.m4
+@@ -133,8 +129,8 @@
+ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+ LIBS = @LIBS@
+-libglib_1_1_la_LIBADD = 
+-libglib_1_1_la_OBJECTS =  garray.lo gcache.lo gcompletion.lo gdataset.lo \
++libglib_la_LIBADD = 
++libglib_la_OBJECTS =  garray.lo gcache.lo gcompletion.lo gdataset.lo \
+ gerror.lo ghash.lo glist.lo gmem.lo gmessages.lo gprimes.lo gslist.lo \
+ gtimer.lo gtree.lo grel.lo gstring.lo gstrfuncs.lo gscanner.lo \
+ gutils.lo
+@@ -142,7 +138,7 @@
+ 
+ testglib_SOURCES = testglib.c
+ testglib_OBJECTS =  testglib.o
+-testglib_DEPENDENCIES =  libglib-@LT_RELEASE@.la
++testglib_DEPENDENCIES =  libglib.la
+ testglib_LDFLAGS = 
+ SCRIPTS =  $(bin_SCRIPTS)
+ 
+@@ -150,7 +146,7 @@
+ COMPILE = $(CC) $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS)
+ LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS)
+ LINK = $(LIBTOOL) --mode=link $(CC) $(CFLAGS) $(LDFLAGS) -o $@
+-DATA =  $(configinclude_DATA) $(m4data_DATA)
++DATA =  $(m4data_DATA)
+ 
+ HEADERS =  $(include_HEADERS)
+ 
+@@ -164,8 +160,8 @@
+ 
+ TAR = tar
+ GZIP = --best
+-SOURCES = $(libglib_1_1_la_SOURCES) testglib.c
+-OBJECTS = $(libglib_1_1_la_OBJECTS) testglib.o
++SOURCES = $(libglib_la_SOURCES) testglib.c
++OBJECTS = $(libglib_la_OBJECTS) testglib.o
+ 
+ all: Makefile $(LTLIBRARIES) $(PROGRAMS) $(SCRIPTS) $(DATA) $(HEADERS) glibconfig.h
+ 
+@@ -272,8 +268,8 @@
+ 
+ maintainer-clean-libtool:
+ 
+-libglib-1.1.la: $(libglib_1_1_la_OBJECTS) $(libglib_1_1_la_DEPENDENCIES)
+-	$(LINK) -rpath $(libdir) $(libglib_1_1_la_LDFLAGS) $(libglib_1_1_la_OBJECTS) $(libglib_1_1_la_LIBADD) $(LIBS)
++libglib.la: $(libglib_la_OBJECTS) $(libglib_la_DEPENDENCIES)
++	$(LINK) -rpath $(libdir) $(libglib_la_LDFLAGS) $(libglib_la_OBJECTS) $(libglib_la_LIBADD) $(LIBS)
+ 
+ mostlyclean-noinstPROGRAMS:
+ 
+@@ -307,25 +303,6 @@
+ 	  rm -f $(DESTDIR)$(bindir)/`echo $$p|sed '$(transform)'`; \
+ 	done
+ 
+-install-configincludeDATA: $(configinclude_DATA)
+-	@$(NORMAL_INSTALL)
+-	$(mkinstalldirs) $(DESTDIR)$(configincludedir)
+-	@list='$(configinclude_DATA)'; for p in $$list; do \
+-	  if test -f $(srcdir)/$$p; then \
+-	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(configincludedir)/$$p"; \
+-	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(configincludedir)/$$p; \
+-	  else if test -f $$p; then \
+-	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(configincludedir)/$$p"; \
+-	    $(INSTALL_DATA) $$p $(DESTDIR)$(configincludedir)/$$p; \
+-	  fi; fi; \
+-	done
+-
+-uninstall-configincludeDATA:
+-	@$(NORMAL_UNINSTALL)
+-	list='$(configinclude_DATA)'; for p in $$list; do \
+-	  rm -f $(DESTDIR)$(configincludedir)/$$p; \
+-	done
+-
+ install-m4dataDATA: $(m4data_DATA)
+ 	@$(NORMAL_INSTALL)
+ 	$(mkinstalldirs) $(DESTDIR)$(m4datadir)
+@@ -455,13 +432,13 @@
+ install-exec: install-libLTLIBRARIES install-binSCRIPTS
+ 	@$(NORMAL_INSTALL)
+ 
+-install-data: install-configincludeDATA install-m4dataDATA install-includeHEADERS
++install-data: install-m4dataDATA install-includeHEADERS
+ 	@$(NORMAL_INSTALL)
+ 
+ install: install-exec install-data all
+ 	@:
+ 
+-uninstall: uninstall-libLTLIBRARIES uninstall-binSCRIPTS uninstall-configincludeDATA uninstall-m4dataDATA uninstall-includeHEADERS
++uninstall: uninstall-libLTLIBRARIES uninstall-binSCRIPTS uninstall-m4dataDATA uninstall-includeHEADERS
+ 
+ install-strip:
+ 	$(MAKE) INSTALL_PROGRAM='$(INSTALL_PROGRAM) -s' INSTALL_SCRIPT='$(INSTALL_PROGRAM)' install
+@@ -517,7 +494,6 @@
+ maintainer-clean-libtool mostlyclean-noinstPROGRAMS \
+ distclean-noinstPROGRAMS clean-noinstPROGRAMS \
+ maintainer-clean-noinstPROGRAMS uninstall-binSCRIPTS install-binSCRIPTS \
+-uninstall-configincludeDATA install-configincludeDATA \
+ uninstall-m4dataDATA install-m4dataDATA uninstall-includeHEADERS \
+ install-includeHEADERS tags mostlyclean-tags distclean-tags clean-tags \
+ maintainer-clean-tags distdir info dvi installcheck install-exec \
