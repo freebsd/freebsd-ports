@@ -102,6 +102,7 @@ MathPlanner	ports/editors/MathPlanner
 Mesa3		ports/graphics/Mesa3
 Mosaic		ports/www/Mosaic
 Motif-dummy	ports/x11-toolkits/Motif-dummy
+MuSE		ports/audio/muse
 NeTraMet	ports/net/NeTraMet
 ORBacus		ports/devel/ORBacus
 ORBit		ports/devel/ORBit
@@ -410,7 +411,6 @@ atp		ports/news/atp
 aub		ports/news/aub
 auctex		ports/print/auctex
 audacity	ports/audio/audacity
-MuSE		ports/audio/muse
 audit		ports/security/audit
 august		ports/www/august
 aumix		ports/audio/aumix
@@ -4094,8 +4094,8 @@ mhwaveedit	ports/audio/mhwaveedit
 mico		ports/devel/mico
 micq		ports/net/micq
 micro_httpd	ports/www/micro_httpd
-midimountain	ports/audio/midimountain
 middleman	ports/www/middleman
+midimountain	ports/audio/midimountain
 mifluz		ports/textproc/mifluz
 migrate		ports/biology/migrate
 mikmod		ports/audio/mikmod
@@ -4804,9 +4804,9 @@ p5-Apache-SubProcess	ports/www/p5-Apache-SubProcess
 p5-ApacheBench	ports/www/p5-ApacheBench
 p5-ApacheDBILogConfig	ports/databases/p5-ApacheDBILogConfig
 p5-ApacheDBILogger	ports/databases/p5-ApacheDBILogger
+p5-App-Info	ports/devel/p5-App-Info
 p5-AppConfig	ports/devel/p5-AppConfig
 p5-AppConfig-Std	ports/devel/p5-AppConfig-Std
-p5-App-Info	ports/devel/p5-App-Info
 p5-Archie	ports/net/p5-Archie
 p5-Archive-Tar	ports/archivers/p5-Archive-Tar
 p5-Archive-Zip	ports/archivers/p5-Archive-Zip
@@ -6670,8 +6670,8 @@ rshell		ports/net/rshell
 rsync		ports/net/rsync
 rsynth		ports/audio/rsynth
 rt2		ports/www/rt2
-rt3		ports/www/rt3
 rt2-demo	ports/games/rt2-demo
+rt3		ports/www/rt3
 rtb		ports/games/rtb
 rtc		ports/emulators/rtc
 rtcw		ports/games/rtcw
