@@ -1,4 +1,4 @@
-bin/ko-communicator-47
+bin/ko-%%BROWSER%%-47
 @exec ln -sf %f %B/netscape.run
 %%NSUBDIR%%/netscape.cfg
 %%NSUBDIR%%/%%LANG%%/Netscape
