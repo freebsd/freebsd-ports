@@ -1,0 +1,18 @@
+--- Makefile.orig	Sun Jul  6 10:32:42 1997
++++ Makefile	Fri Nov 14 14:07:40 1997
+@@ -1,11 +1,11 @@
+ 
+-PREFIX      = /usr/local
++PREFIX      = $(X11BASE)
+ BINDIR      = $(PREFIX)/bin
+ LIBDIR      = $(PREFIX)/lib/X11/icewm
+-ETCDIR      = /etc/X11/icewm
++ETCDIR      = ${LIBDIR}
+ 
+-INSTALL     = install
+-INSTALLDIR  = $(INSTALL) -m 755 -d
++INSTALL     = install -c
++INSTALLDIR  = mkdir -p
+ INSTALLBIN  = $(INSTALL) -m 555
+ INSTALLLIB  = $(INSTALL) -m 444
+ #INSTALLETC  = $(INSTALL) -m 644
