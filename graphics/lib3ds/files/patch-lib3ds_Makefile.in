@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- lib3ds/Makefile.in	2001/01/18 17:32:01	1.1
++++ lib3ds/Makefile.in	2001/01/18 17:32:22
+@@ -97,7 +97,7 @@
+ EXTRA_DIST =    types.doc   chunktable.sed
+ 
+ 
+-lib3ds_la_LDFLAGS =   -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)  -release $(LT_RELEASE)
++lib3ds_la_LDFLAGS =   -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
+ 
+ 
+ lib3ds_la_LIBADD =    -lm

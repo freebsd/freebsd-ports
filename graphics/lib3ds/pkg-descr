@@ -1,0 +1,5 @@
+Lib3ds is a free alternative to Autodesk's 3DS File Toolkit for handling 3DS
+files. It's main goal is to simplify the creation of 3DS import and export
+filters.
+
+WWW: http://lib3ds.sourceforge.net/

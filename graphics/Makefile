@@ -102,6 +102,7 @@
     SUBDIR += lcms
     SUBDIR += leafpak
     SUBDIR += lfview
+    SUBDIR += lib3ds
     SUBDIR += libdjvu++
     SUBDIR += libflash
     SUBDIR += libggi
