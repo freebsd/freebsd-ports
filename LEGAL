@@ -175,8 +175,8 @@ ksh93			ports/shells/ksh93	User must agree to "regularly monitor the Website".
 ksocrat			ports/russian/ksocrat	No redistribution allowed
 l_cc_p*_*.*.*.tar.gz	ports/lang/icc		No redistribution allowed
 l_cc_p*_*.*.*.tar	ports/lang/icc7		No redistribution allowed
-l_fc_p*_*.*.*.tar	ports/lang/ifc		No redistribution allowed
-l_fc_p*_*.*.*.tar.gz	ports/lang/ifc8		No redistribution allowed
+l_fc_p*_*.*.*.tar	ports/lang/ifc7		No redistribution allowed
+l_fc_p*_*.*.*.tar.gz	ports/lang/ifc		No redistribution allowed
 lame			ports/audio/lame	may be patented
 lgrind			ports/print/lgrind	Contains non-free code written by Van Jacobson
 libidea			ports/security/libidea	Crypto; export-controlled
