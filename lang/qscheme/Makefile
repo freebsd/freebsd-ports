@@ -7,7 +7,7 @@
 
 PORTNAME=	qscheme
 PORTVERSION=	0.5.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://www.sof.ch/dan/qscheme/files/
 
@@ -20,8 +20,6 @@ LIB_DEPENDS=	getline:${PORTSDIR}/devel/libgetline
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-#USE_AUTOCONF=	yes
-USE_GCC=	2.95
 USE_REINPLACE=	yes
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
@@ -42,7 +40,7 @@ post-patch:
 
 .if ${OSVERSION} >= 500000
 BUILD_DEPENDS+=	${LOCALBASE}/include/gmp.h:${PORTSDIR}/math/libgmp4
-CONFIGURE_ARGS+=	--with-gmp-lib=${LOCALBASE}/lib \
+CONFIGURE_ARGS+=	--with-gmp-dir=${LOCALBASE}/lib \
 		--with-gmp-inc=${LOCALBASE}/include
 .endif
 
