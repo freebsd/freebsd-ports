@@ -1,5 +1,14 @@
---- pop_uidl.c.old	Fri Jul 10 03:44:08 1998
-+++ pop_uidl.c	Mon Apr 17 22:56:13 2000
+--- pop_uidl.c.orig	Thu Jul  9 16:44:08 1998
++++ pop_uidl.c	Thu May 25 00:45:38 2000
+@@ -59,7 +59,7 @@
+ 
+ 	sprintf(buffer, "%d %s", msg_id, mp->uidl_str);
+         if (nl = index(buffer, NEWLINE)) *nl = 0;
+-	return (pop_msg (p,POP_SUCCESS, buffer));
++	return (pop_msg (p,POP_SUCCESS, "%s", buffer));
+       }
+     } else {
+ 	/* yes, we can do this */
 @@ -98,6 +98,7 @@
  {
    static char buf[MAXLINELEN];
@@ -17,6 +26,15 @@
  	return(cp);
        }
      }
+@@ -149,7 +152,7 @@
+ 	sprintf(buffer, "%d %s", msg_id, mp->uidl_str);
+         if (nl = index(buffer, NEWLINE)) *nl = 0;
+ 	sprintf(buffer, "%s %d %.128s", buffer, mp->length, from_hdr(p, mp));
+-	return (pop_msg (p,POP_SUCCESS, buffer));
++	return (pop_msg (p,POP_SUCCESS, "%s", buffer));
+       }
+     } else {
+ 	/* yes, we can do this */
 @@ -165,7 +168,7 @@
  
  	    sprintf(buffer, "%d %s", x, mp->uidl_str);
