@@ -24,6 +24,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-python=${PYTHON_CMD}				\
 		--with-gnome-config=${X11BASE}/bin/gnome-config		\
 		--with-gtkhtml
+CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 EG_SRC_DIR=	${WRKSRC}/pygnome/examples
 EG_DST_DIR=	${PREFIX}/share/examples/py-gnome
