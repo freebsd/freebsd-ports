@@ -21,6 +21,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 OPTIONS=	ARCHIVERCS		"Page Archival Using RCS" on \
 		ARCHIVESVK		"Page Archival Using SVK" off \
+		GDGRAPHGENERATOR	"GD Graph Generator" off \
+		NEWPAGE			"New Page Plugin" on \
 		REVISIONS		"Revisions Plugin" on \
 		RECENTCHANGES		"Recent Changes Plugin" on \
 		RECENTCHANGESRSS	"RSS Plugin" on \
@@ -38,6 +40,14 @@ RUN_DEPENDS+=	${SITE_PERL}/Kwiki/Archive/Rcs.pm:${PORTSDIR}/www/p5-Kwiki-Archive
 
 .if defined(WITH_ARCHIVESVK)
 RUN_DEPENDS+=	${SITE_PERL}/Kwiki/Archive/SVK.pm:${PORTSDIR}/www/p5-Kwiki-Archive-SVK
+.endif
+
+.if defined(WITH_GDGRAPHGENERATOR)
+RUN_DEPENDS+=	${SITE_PERL}/Kwiki/GDGraphGenerator.pm:${PORTSDIR}/www/p5-Kwiki-GDGraphGenerator
+.endif
+
+.if defined(WITH_NEWPAGE)
+RUN_DEPENDS+=	${SITE_PERL}/Kwiki/NewPage.pm:${PORTSDIR}/www/p5-Kwiki-NewPage
 .endif
 
 .if defined(WITH_REVISIONS)
