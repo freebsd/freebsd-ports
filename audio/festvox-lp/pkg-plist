@@ -1,0 +1,8 @@
+share/festival/lib/voices/italian/lp_ogi_diphone/festvox/lp_ogi_diphone.scm
+share/festival/lib/voices/italian/lp_ogi_diphone/group/lp_ogi_diphone.group
+share/festival/lib/voices/italian/lp_ogi_diphone/group/lp_ogi_diphone.group-README
+@dirrm share/festival/lib/voices/italian/lp_ogi_diphone/festvox
+@dirrm share/festival/lib/voices/italian/lp_ogi_diphone/group
+@dirrm share/festival/lib/voices/italian/lp_ogi_diphone
+@unexec rmdir %D/share/festival/lib/voices/italian 2>/dev/null || true
+@unexec rmdir %D/share/festival/lib/voices 2>/dev/null || true
