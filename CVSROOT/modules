@@ -7974,6 +7974,7 @@ viz		ports/misc/viz
 vlc		ports/multimedia/vlc
 vlock		ports/security/vlock
 vlog		ports/security/vlog
+vls		ports/net/vls
 vm		ports/mail/vm
 vm-pop3d	ports/mail/vm-pop3d
 vmsbackup	ports/emulators/vmsbackup
