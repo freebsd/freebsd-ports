@@ -3,7 +3,7 @@
 # Date created:		17 August 1998
 # Whom:			Sheldon Hearn <axl@iafrica.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/08/17 21:37:02 jdp Exp $
 #
 
 DISTNAME=	cvsupd-bin-15.4.2
@@ -18,6 +18,7 @@ MAINTAINER=	axl@iafrica.com
 NO_BUILD=	yes
 
 MAN8=	cvsupd.8
+STRIP=
 
 do-configure:
 	cd ${WRKSRC}; gunzip cvsupd.8.gz
