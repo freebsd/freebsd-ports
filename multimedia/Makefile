@@ -101,6 +101,7 @@
     SUBDIR += nxtvepg
     SUBDIR += ogle
     SUBDIR += ogle-gui
+    SUBDIR += ogmrip
     SUBDIR += ogmtools
     SUBDIR += okle
     SUBDIR += openquicktime

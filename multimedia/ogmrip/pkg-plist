@@ -1,0 +1,50 @@
+@comment $FreeBSD$
+bin/ogmrip
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/ogmrip.schemas >/dev/null || /usr/bin/true
+etc/gconf/schemas/ogmrip.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/ogmrip.schemas >/dev/null || /usr/bin/true
+include/ogmdvd.h
+include/ogmrip/ogmrip-ac3.h
+include/ogmrip/ogmrip-audio.h
+include/ogmrip/ogmrip-codec.h
+include/ogmrip/ogmrip-lavc.h
+include/ogmrip/ogmrip-merge.h
+include/ogmrip/ogmrip-misc.h
+include/ogmrip/ogmrip-mp3.h
+include/ogmrip/ogmrip-mux.h
+include/ogmrip/ogmrip-split.h
+include/ogmrip/ogmrip-tools.h
+include/ogmrip/ogmrip-video.h
+include/ogmrip/ogmrip-vorbis.h
+include/ogmrip/ogmrip-wav.h
+include/ogmrip/ogmrip-xvid.h
+include/ogmrip/ogmrip.h
+include/ogmspawn/ogmsp-bin.h
+include/ogmspawn/ogmsp-container.h
+include/ogmspawn/ogmsp-enums.h
+include/ogmspawn/ogmsp-exec.h
+include/ogmspawn/ogmsp-list.h
+include/ogmspawn/ogmsp-marshal.h
+include/ogmspawn/ogmsp-pipeline.h
+include/ogmspawn/ogmsp-queue.h
+include/ogmspawn/ogmsp-spawn.h
+include/ogmspawn/ogmspawn.h
+lib/libogmdvd.a
+lib/libogmdvd.so.0
+lib/libogmrip.a
+lib/libogmrip.so.0
+lib/libogmspawn.a
+lib/libogmspawn.so.0
+libdata/pkgconfig/ogmdvd.pc
+libdata/pkgconfig/ogmrip.pc
+libdata/pkgconfig/ogmspawn.pc
+share/applications/ogmrip.desktop
+%%DATADIR%%/ogmrip-main.glade
+%%DATADIR%%/ogmrip-pref.glade
+%%DATADIR%%/ogmrip-progress.glade
+share/pixmaps/ogmrip.png
+@dirrm include/ogmrip
+@dirrm include/ogmspawn
+@dirrm share/applications
+@dirrm share/ogmrip
+@dirrm share/pixmaps
