@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	fget
-PORTVERSION=	1.2.8
+PORTVERSION=	1.2.9
 CATEGORIES=	ftp www
 MASTER_SITES=	ftp://ftp-dev.cso.uiuc.edu/pub/fget/
 
 MAINTAINER=	demon@FreeBSD.org
+COMMENT=	A commandline tool for mirroring remote files via FTP
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
