@@ -12,7 +12,7 @@ MASTER_SITES=	http://xmps.sourceforge.net/sources/
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-LIB_DEPENDS=	smpeg.0:${PORTSDIR}/graphics/smpeg
+LIB_DEPENDS=	smpeg.1:${PORTSDIR}/graphics/smpeg
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
