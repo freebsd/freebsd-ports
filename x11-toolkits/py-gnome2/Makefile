@@ -1,14 +1,14 @@
-# New ports collection makefile for:	py-gtk
-# Version required:			0.5.12
-# Date created:				12/26/1998
+# New ports collection makefile for:	py-gnome
+# Version required:			1.0.1
+# Date created:				03/14/1999
 # Whom:					nectar@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.22 1999/03/15 03:17:09 nectar Exp $
+# $Id: Makefile,v 1.21 1999/02/28 18:48:50 nectar Exp $
 #
 
-DISTNAME=	pygtk-0.5.12
-PKGNAME=	py-gtk-0.5.12
-CATEGORIES=	x11-toolkits python
+DISTNAME=	gnome-python-1.0.1
+PKGNAME=	py-gnome-1.0.1
+CATEGORIES=	x11-toolkits python gnome
 MASTER_SITES=	ftp://ftp.daa.com.au/pub/james/python/ \
 		ftp://ftp.gimp.org/pub/gtk/python/ \
 		ftp://infosoc.uni-koeln.de/pub/ftp.gimp.org/pub/gtk/python/ \
@@ -18,23 +18,24 @@ MASTER_SITES=	ftp://ftp.daa.com.au/pub/james/python/ \
 MAINTAINER=	nectar@FreeBSD.ORG
 
 BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
-LIB_DEPENDS=	gdk_imlib.3:${PORTSDIR}/graphics/imlib
+LIB_DEPENDS=	gnome.1:${PORTSDIR}/x11/gnomelibs
 RUN_DEPENDS=	python:${PORTSDIR}/lang/python
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CONFIGURE_ENV=	GTK_CONFIG=${X11BASE}/bin/gtk12-config
-MAKE_FLAGS=	OPT="${CFLAGS}"
+CONFIGURE_ENV=	GTK_CONFIG="${X11BASE}/bin/gtk12-config"
+PLIST=		${WRKSRC}/PLIST
 
-PLIST=		${WRKDIR}/PLIST
-SORT?=		sort
+DOCDIR=		share/doc/py-gnome
+DOCFILES=	README:py-gnome.README pygtk/README:py-gtk.README      \
+		pygtk/MAPPING:MAPPING.py-gtk
 
-DOCDIR=		share/doc/py-gtk
-DOCFILES=	README MAPPING
-
-EXAMDIR=	share/examples/py-gtk
-EXAMSUBDIRS=	glade ide imlib neil simple testgtk
-EXAMFILES=	glade/README glade/test2.glade glade/glade.py          \
+EGDIR=		share/examples/py-gnome
+EGSUBDIRS=	gnome gtk gtk/glade gtk/ide gtk/imlib gtk/neil         \
+		gtk/simple gtk/testgtk
+EGGNOME=	canvas.py fifteen.py html_demo.py stock_demo.py        \
+		ted_demo.py uiinfo_demo.py zterm.py
+EGGTK=		glade/README glade/test2.glade glade/glade.py          \
 		glade/test.glade ide/gtkcons.py ide/gtkdb.py           \
 		ide/edit.py ide/browse.py ide/minibreak.xpm ide/README \
 		ide/gtkprof.py ide/pyide.py ide/break.xpm              \
@@ -50,30 +51,37 @@ EXAMFILES=	glade/README glade/test2.glade glade/glade.py          \
 		simple/README testgtk/testgtk.py testgtk/test.xpm      \
 		testgtk/testgtkrc testgtk/README
 
-# NOTE: for packaging to work properly, this port should be
-# built with PREFIX set the same as when the python port
-# was built.
+SORT?=		sort
 
+# Examples and docs are added to the packing list on the fly.
 pre-install:
 	@${CP} ${PKGDIR}/PLIST ${PLIST}
 	@${CP} /dev/null ${PLIST}.dirrm
-.for d in ${EXAMSUBDIRS}
-	@${MKDIR} ${PREFIX}/${EXAMDIR}/${d}
-	@${ECHO} @dirrm ${EXAMDIR}/${d} >> ${PLIST}.dirrm
+.for d in ${EGSUBDIRS}
+	@${MKDIR} ${PREFIX}/${EGDIR}/${d}
+	@${ECHO} @dirrm ${EGDIR}/${d} >> ${PLIST}.dirrm
 .endfor
-	@${ECHO} @dirrm ${EXAMDIR} >> ${PLIST}.dirrm
-.for f in ${EXAMFILES}
-	${INSTALL_DATA} ${WRKSRC}/examples/${f} \
-		${PREFIX}/${EXAMDIR}/${f}
-	@${ECHO} ${EXAMDIR}/${f} >> ${PLIST}
+	@${ECHO} @dirrm ${EGDIR} >> ${PLIST}.dirrm
+.for f in ${EGGNOME}
+	${INSTALL_DATA} ${WRKSRC}/pygnome/examples/${f}                \
+		${PREFIX}/${EGDIR}/gnome/${f}
+	@${ECHO} ${EGDIR}/gnome/${f} >> ${PLIST}
+.endfor
+.for f in ${EGGTK}
+	${INSTALL_DATA} ${WRKSRC}/pygtk/examples/${f}                  \
+		${PREFIX}/${EGDIR}/gtk/${f}
+	@${ECHO} ${EGDIR}/gtk/${f} >> ${PLIST}
 .endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/${DOCDIR}
 	@${ECHO} @dirrm ${DOCDIR} >> ${PLIST}.dirrm
-.for f in ${DOCFILES}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/${DOCDIR}/${f}
-	@${ECHO} ${DOCDIR}/${f} >> ${PLIST}
-.endfor
+	@for i in ${DOCFILES}; do                                      \
+		src=`${ECHO} $$i | ${AWK} -F: '{ print $$1 }'`;        \
+		dst=`${ECHO} $$i | ${AWK} -F: '{ print $$2 }'`;        \
+		${INSTALL_DATA} ${WRKSRC}/$$src                        \
+			${PREFIX}/${DOCDIR}/$$dst &&                   \
+		${ECHO} ${DOCDIR}/$$dst >> ${PLIST};                   \
+	done
 .endif
 	@${SORT} -r ${PLIST}.dirrm >> ${PLIST}
 
