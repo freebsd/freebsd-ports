@@ -12,7 +12,7 @@ CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://kappa.allnet.ne.jp/20dot.fonts/
 DISTNAME=	Kappa20-${PORTVERSION}
 
-MAINTAINER=	ginga@athena.club.ne.jp
+MAINTAINER=	ginga-freebsd@ginganet.org
 COMMENT=	X11 20-dot kanji font 'kappa font'
 
 USE_X_PREFIX=	yes
