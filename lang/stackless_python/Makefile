@@ -21,6 +21,8 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Python implementation that does not use the C stack
 
+BROKEN=		Distinfo out of date
+
 CONFLICTS=	python-2.3.*
 ONLY_FOR_ARCHS=	i386 powerpc
 CVSDATE=	040225
