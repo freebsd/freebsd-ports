@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	thefish
-PORTVERSION=	0.3.5
+PORTVERSION=	0.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.energyhq.es.eu.org/files/
 
@@ -24,7 +24,9 @@ USE_X_PREFIX=	yes
 MAN1=		thefish.1
 
 pre-everything::
+.if !defined(WITHOUT_X11) && !defined(NO_GUI)
 	@${CAT} ${PKGMESSAGE}
+.endif
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/thefish ${PREFIX}/bin
