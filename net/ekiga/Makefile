@@ -7,7 +7,7 @@
 
 PORTNAME=	gnomemeeting
 PORTVERSION=	0.85.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net gnome
 MASTER_SITES=	http://www.gnomemeeting.org/downloads/0.85/sources/
 DISTNAME=	GnomeMeeting-0.85.1
