@@ -3,7 +3,7 @@
 # Date created:				4 July 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/08/24 01:51:29 steve Exp $
 #
 
 DISTNAME=	xataxx
@@ -16,6 +16,7 @@ MAINTAINER=	andy@icc.surw.chel.su
 
 USE_IMAKE=	yes
 MAN6=		xataxx.6
+MANCOMPRESSED=	no
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/xataxx ${PREFIX}/bin
