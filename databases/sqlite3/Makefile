@@ -12,7 +12,7 @@
 # SQLITE_WITH_TCL83 and SQLITE_WITH_TCL84.
 
 PORTNAME=	sqlite
-PORTVERSION=	3.0.5
+PORTVERSION=	3.0.8
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -97,8 +97,8 @@ post-install:
 .endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	for file in `${DOCFILES}`; do \
-		${INSTALL_DATA} ${WRKSRC}/doc/$${file} ${DOCSDIR}; \
+	for f in `${DOCFILES}`; do \
+		${INSTALL_DATA} ${WRKSRC}/doc/$${f} ${DOCSDIR}; \
 	done
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${FILESDIR}/example.tcl ${EXAMPLESDIR}

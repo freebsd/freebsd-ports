@@ -4,7 +4,8 @@ include/sqlite3.h
 lib/libsqlite3.a
 lib/libsqlite3.so
 lib/libsqlite3.so.8
-libdata/pkgconfig/sqlite3.pc
+lib/libsqlite3.la
+lib/pkgconfig/sqlite3.pc
 %%WITH_TCL%%lib/sqlite/libtclsqlite3.so.8
 %%WITH_TCL%%lib/sqlite/libtclsqlite3.so
 %%WITH_TCL%%lib/sqlite/libtclsqlite3.a

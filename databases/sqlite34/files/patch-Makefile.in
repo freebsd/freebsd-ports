@@ -1,15 +1,15 @@
---- Makefile.in.orig	Sat Aug 28 11:22:30 2004
-+++ Makefile.in	Tue Aug 31 14:13:52 2004
-@@ -33,7 +33,7 @@
- prefix = @prefix@
+--- Makefile.in.orig	Wed Oct  6 12:03:05 2004
++++ Makefile.in	Tue Nov 30 21:55:09 2004
+@@ -34,7 +34,7 @@
  exec_prefix = @exec_prefix@
+ libdir = @libdir@
  INSTALL = @INSTALL@
 -LIBTOOL = ./libtool
 +LIBTOOL = /usr/local/bin/libtool13
  RELEASE = @ALLOWRELEASE@
  
  # libtool compile/link/install
-@@ -401,25 +401,25 @@
+@@ -396,25 +396,25 @@
  # Rules used to build documentation
  #
  arch.html:	$(TOP)/www/arch.tcl
@@ -41,7 +41,7 @@
  
  copyright-release.html:	$(TOP)/www/copyright-release.html
  	cp $(TOP)/www/copyright-release.html .
-@@ -431,77 +431,76 @@
+@@ -426,77 +426,77 @@
  	cp $(TOP)/www/common.tcl .
  
  conflict.html:	$(TOP)/www/conflict.tcl
@@ -61,7 +61,7 @@
 +	$(TCLSH) $(TOP)/www/docs.tcl >docs.html
  
  download.html:	$(TOP)/www/download.tcl
--	mkdir doc
+ 	mkdir -p doc
 -	tclsh $(TOP)/www/download.tcl >download.html
 +	$(TCLSH) $(TOP)/www/download.tcl >download.html
  
@@ -142,19 +142,3 @@
  
  
  # Files to be published on the website.
-@@ -548,12 +547,13 @@
- install:	sqlite3 libsqlite3.la sqlite3.h
- 	$(INSTALL) -d $(DESTDIR)$(exec_prefix)/lib
- 	$(LTINSTALL) libsqlite3.la $(DESTDIR)$(exec_prefix)/lib
-+	rm $(DESTDIR)$(exec_prefix)/lib/libsqlite3.la
- 	$(INSTALL) -d $(DESTDIR)$(exec_prefix)/bin
- 	$(LTINSTALL) sqlite3 $(DESTDIR)$(exec_prefix)/bin
- 	$(INSTALL) -d $(DESTDIR)$(prefix)/include
- 	$(INSTALL) -m 0644 sqlite3.h $(DESTDIR)$(prefix)/include
--	$(INSTALL) -d $(DESTDIR)$(exec_prefix)/lib/pkgconfig; 
--	$(INSTALL) -m 0644 sqlite3.pc $(DESTDIR)$(exec_prefix)/lib/pkgconfig; 
-+	$(INSTALL) -d $(DESTDIR)$(exec_prefix)/libdata/pkgconfig; 
-+	$(INSTALL) -m 0644 sqlite3.pc $(DESTDIR)$(exec_prefix)/libdata/pkgconfig; 
- 
- clean:	
- 	rm -f *.lo *.la *.o sqlite3@TARGET_EXEEXT@ libsqlite3.la
