@@ -63,6 +63,7 @@
     SUBDIR += iv
     SUBDIR += iwidgets
     SUBDIR += jx
+    SUBDIR += lablgtk
     SUBDIR += lesstif
     SUBDIR += libbonoboui
     SUBDIR += libgail-gnome

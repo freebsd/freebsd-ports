@@ -1,0 +1,17 @@
+LablGTK uses the rich type system of Objective Caml 3 to provide a
+strongly typed, yet very comfortable, object-oriented interface to
+gtk+. This is not that easy if you know the dynamic typing approach
+taken by gtk+.
+
+It is still under development, but already fully functional. All
+widgets (but one) are available, with almost all their methods. The
+GLArea widget is also supported in combination with LablGL. Lots of
+examples are provided.
+
+Objective Caml threads are supported, including for the toplevel,
+which allows for interactive use of the library.
+
+Please see ${PREFIX}/share/doc/ocaml/lablgtk/README for further
+information.
+
+WWW: http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/lablgtk.html
