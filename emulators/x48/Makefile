@@ -3,12 +3,13 @@
 # Date created:         Thu Oct 24 13:10:59 CDT 1996
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.1.1.1 1996/10/24 20:41:37 erich Exp $
+# $Id: Makefile,v 1.2 1996/11/12 02:17:07 obrien Exp $
 #
 
 DISTNAME=	x48-0.4.0
 CATEGORIES=	emulators
-MASTER_SITES=	ftp://sunsite.unc.edu/pub/Linux/system/Emulators/
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	system/Emulators
 
 MAINTAINER=	erich@FreeBSD.org
 

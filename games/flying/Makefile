@@ -3,18 +3,13 @@
 # Date created:				12 Jul 1996
 # Whom:					searle
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/08/09 21:25:54 chuckr Exp $
 #
 
 DISTNAME=	flying-6.20
-CATEGORIES+=	games
-MASTER_SITES=	ftp://fsuj01.rz.uni-jena.de/pub/linux/MIRROR.sunsite/games/x11/ \
-		ftp://dei.unipd.it/linux/sunsite/games/x11/ \
-		ftp://pippen.bl.physik.tu-muenchen.de/pub/comp/os/linux/sunsite/games/x11/ \
-		ftp://nic.switch.ch/mirror/linux/sunsite.games/x11/ \
-		ftp://unix.hensa.ac.uk/mirrors/sunsite/pub/Linux/games/x11/ \
-		ftp://sunsite.rediris.es/software/linux/sunsite/games/x11/ \
-		ftp://fvkma.tu-graz.ac.at/.2/x11/R6contrib/games/multiplayer/
+CATEGORIES=	games
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	games/x11
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	searle@longacre.demon.co.uk

@@ -3,12 +3,13 @@
 # Date created:		12 May 1995
 # Whom:			me
 #
-# $Id: Makefile,v 1.19 1995/08/08 10:35:06 asami Exp $
+# $Id: Makefile,v 1.20 1996/05/27 12:33:48 peter Exp $
 #
 
 DISTNAME=	fvwm-1.24r
-MASTER_SITES=	ftp://sunsite.unc.edu/pub/Linux/X11/window-managers/
-CATEGORIES+=	x11
+CATEGORIES=	x11
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	X11/window-managers
 
 MAINTAINER=	me@FreeBSD.org
 

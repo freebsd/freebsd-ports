@@ -3,13 +3,14 @@
 # Date created:         3 Jan 1995
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.6 1995/10/11 00:11:25 asami Exp $
+# $Id: Makefile,v 1.7 1996/06/14 03:15:20 asami Exp $
 #
 
 DISTNAME=       xinvaders
 PKGNAME=	xinvaders-1.1
-CATEGORIES+=	games
-MASTER_SITES=	ftp://sunsite.unc.edu/pub/Linux/games/x11/video/
+CATEGORIES=	games
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	games/x11/video
 
 USE_IMAKE=	yes
 
