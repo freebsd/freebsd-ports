@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	drweb
-PORTVERSION=    4.28.1
-PORTREVISION=   1
+PORTVERSION=    4.28.2
 CATEGORIES=	security
 MASTER_SITES=   http://drweb.spb.ru/download/unix/
 DISTFILES=      ${MAIN_NAME}.tgz
@@ -16,7 +15,7 @@ MAINTAINER=	anton@chelcom.ru
 
 NO_BUILD=       yes
 
-WRKSRC=         ${WRKDIR}/${MAIN_NAME}
+WRKSRC=         ${WRKDIR}/${MAIN_NAME}/install
 
 # Needed for update.pl
 RUN_DEPENDS=    ${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/String/CRC32.pm:${PORTSDIR}/devel/p5-String-CRC32
@@ -32,6 +31,7 @@ do-install:
 		--exclude "*.key" --exclude "update/update.pl*"
 	${TAR} -cf - -C ${WRKSRC}/var/drweb bases | \
 		${TAR} -xf - -C ${DRWEB_PREFIX}
+	chmod 755 ${DRWEB_PREFIX}/bases
 	${INSTALL_DATA} ${WRKSRC}/opt/drweb/drweb.key \
 		${DRWEB_PREFIX}/drweb.key-dist
 	${INSTALL_DATA} ${WRKSRC}/opt/drweb/drwebd.key \

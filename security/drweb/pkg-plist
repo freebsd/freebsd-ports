@@ -29,9 +29,7 @@ drweb/drwebd
 drweb/drwebd.key-dist
 @exec if [ ! -f %D/drweb/drwebd.key ] ; then cp -p %D/%F %B/drwebd.key; fi
 drweb/lib/drweb32.dll
-drweb/lib/german.dwl
 drweb/lib/russian.dwl
-drweb/lib/spanish.dwl
 drweb/update/readme.update
 drweb/update/readme.update.rus
 drweb/update/update.pl
