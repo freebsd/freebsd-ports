@@ -64,6 +64,7 @@ RUN_DEPENDS=	${LINUX_BASE}/lib/ld.so:${PORTSDIR}/emulators/linux_base \
 		${LINUX_BASE}/usr/lib/libjpeg.so.62.0.0:${PORTSDIR}/graphics/linux-jpeg
 
 BROKEN=		"menus do not display correctly"
+LATEST_LINK=	linux-netscape6
 LINUX_BASE=	/compat/linux
 NO_BUILD=	yes
 NO_FILTER_SHLIBS=	yes
