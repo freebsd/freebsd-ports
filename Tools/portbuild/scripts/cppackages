@@ -1,0 +1,35 @@
+#!/bin/sh
+
+# configurable variables
+rhost=ftp.freebsd.org
+ruser=asami
+rdir=w/ports/i386/tmp
+pb=/a/asami/portbuild
+
+lock=${pb}/cppackages
+
+unset DISPLAY
+
+echo "Subject: package copying logs"
+echo
+echo "Called with arguments: "${1+"$@"}
+echo "Started at $(date)"
+
+if [ $# != 1 ]; then
+  echo "usage: $0 branch"
+  exit 1
+fi
+
+if [ -e ${lock} ]; then
+  echo "Skipped since lock file exists"
+  exit 1
+fi
+
+touch ${lock}
+
+cd $pb
+tar -cf - $1/packages | ssh $rhost -l $ruser tar -C $rdir -xvf - 2>&1 | tail -100
+
+echo "Ended at $(date)"
+
+rm -f ${lock}
