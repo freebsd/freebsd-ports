@@ -6,6 +6,9 @@ share/nethack/nethack
 @exec chown games.games %D/share/nethack/save
 @unexec rm -rf %D/share/nethack/save
 share/doc/nethack/Guidebook.txt
+share/nethack/pet_mark.xbm
+share/nethack/rip.xpm
+share/nethack/x11tiles
 share/nethack/A-filla.lev
 share/nethack/A-fillb.lev
 share/nethack/A-goal.lev
