@@ -14,10 +14,10 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-${PORTREVISION}
 
 MAINTAINER=	dinoex@FreeBSD.org
 
-.if defined(METAKIT_WITH_TCL)
+.if defined(METAKIT_WITH_TCL83)
 LIB_DEPENDS=	tcl83.1:${PORTSDIR}/lang/tcl83
 .endif
-.if defined(METAKIT_WITH_TCLKIT)
+.if defined(METAKIT_WITH_TCL84)
 LIB_DEPENDS=	tcl84.1:${PORTSDIR}/lang/tcl84
 BUILD_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 .endif
@@ -29,8 +29,9 @@ LIBTOOLFILES=	${CONFIGURE_SCRIPT}
 INSTALLS_SHLIB=	yes
 MAKE_ARGS=	CXXFLAGS="-Dq4_INLINE ${CFLAGS} -fpermissive"
 
-.if !defined(METAKIT_WITHOUT_PYTHON)
-USE_PYTHON=	yes
+.if defined(METAKIT_WITH_PYTHON)
+# BROKEN for python 2.2
+PYTHON_VERSION=	python2.1
 CONFIGURE_ARGS+=	--enable-python
 CATEGORIES+=	python
 PLIST_SUB+=	WITH_PYTHON=""
@@ -38,24 +39,23 @@ PLIST_SUB+=	WITH_PYTHON=""
 PLIST_SUB+=	WITH_PYTHON="@comment "
 .endif
 
-.if defined(METAKIT_WITH_TCL)
-CONFIGURE_ARGS+=	--with-tcl=${LOCALBASE}/include/tcl${TCL_V}
+.if defined(METAKIT_WITH_TCL83)
 CATEGORIES+=	tcl83
 TCL_V=		8.3
 TCL_SHORT_V=	83
+.endif
+
+.if defined(METAKIT_WITH_TCL84)
+TCL_V=		8.4
+TCL_SHORT_V=	84
+.endif
+
+.if defined(METAKIT_WITH_TCL83) || defined(METAKIT_WITH_TCL84)
+CONFIGURE_ARGS+=	--with-tcl=${LOCALBASE}/include/tcl${TCL_V}
+MAKE_ENV+=	V=${TCL_V} SHORT_V=${TCL_SHORT_V}
 PLIST_SUB+=	WITH_TCL=""
 .else
 PLIST_SUB+=	WITH_TCL="@comment "
-.endif
-
-.if defined(METAKIT_WITH_TCLKIT)
-CONFIGURE_ARGS+=	--with-tcl=${LOCALBASE}/include/tcl${TCL_V}
-TCL_V=		8.4
-TCL_SHORT_V=	84
-MAKE_ENV+=	V=${TCL_V} SHORT_V=${TCL_SHORT_V}
-PLIST_SUB+=	WITH_TCLKIT=""
-.else
-PLIST_SUB+=	WITH_TCLKIT="@comment "
 .endif
 
 pre-patch:
@@ -64,7 +64,7 @@ pre-patch:
 	@${PERL5} -pi -e "s=doc/==" ${WRKSRC}/../MetaKit.html
 
 post-install:
-.if !defined(METAKIT_WITHOUT_PYTHON)
+.if defined(METAKIT_WITH_PYTHON)
 	@${INSTALL_PROGRAM} ${WRKSRC}/Mk4py.so ${PYTHON_SITELIBDIR}/
 .endif
 .if !defined(NOPORTDOCS)
@@ -78,7 +78,7 @@ post-install:
 test:
 	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 	${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test)
-.if defined(METAKIT_WITH_TCL) || defined(METAKIT_WITH_TCLKIT)
+.if defined(METAKIT_WITH_TCL83) || defined(METAKIT_WITH_TCL84)
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 	${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test-tcl)
 .endif
