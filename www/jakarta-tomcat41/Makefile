@@ -54,7 +54,6 @@ REPLACE_FILES=	${PORTSDIR}/www/jakarta-tomcat4/files/daemonctl.c \
 		${PORTSDIR}/www/jakarta-tomcat4/files/startup.sh \
 		${WRKSRC}/conf/server.xml
 JAR_FILE=	bin/bootstrap.jar
-WRKDIR?=	${WRKDIRPREFIX}${.CURDIR}/work
 CONF_EXT=	sample
 PLIST_SUB+=	CONF_EXT=${CONF_EXT}
 
