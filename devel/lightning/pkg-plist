@@ -20,12 +20,6 @@ include/lightning/sparc/asm.h
 include/lightning/sparc/core.h
 include/lightning/sparc/fp.h
 include/lightning/sparc/funcs.h
-@unexec install-info --delete %D/info/lightning.info %D/info/dir
-info/lightning.info
-info/lightning.info-1
-info/lightning.info-2
-info/lightning.info-3
-@exec install-info %D/info/lightning.info %D/info/dir
 share/aclocal/lightning.m4
 share/lightning/Makefile.am
 @dirrm include/lightning/i386
