@@ -1,0 +1,17 @@
+Tarpits like spamd are fake SMTP servers, which accept connections but don't
+deliver mail. Instead, they keep the connections open and reply very slowly.
+If the peer is patient enough to actually complete the SMTP dialogue (which
+will take ten minutes or more), the tarpit returns a 'temporary error' code
+(4xx), which indicates that the mail could not be delivered successfully and
+that the sender should keep the mail in his queue and retry again later. If
+he does, the same procedure repeats. Until, after several attempts, wasting
+both his queue space and socket handles for several days, he gives up. The
+resources I have to waste to do this are minimal.
+
+If the sender is badly configured, an uncooperative recipient might actually
+delay his entire queue handling for several minutes each time he connects to
+the tarpit. And many spammers use badly configured open relays
+
+WWW: http://www.benzedrine.cx/relaydb.html
+
+-Max <max@love2party.net>
