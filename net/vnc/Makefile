@@ -6,18 +6,18 @@
 # $FreeBSD$
 #
 
-DISTNAME=       	vnc-3.3.2r3_unixsrc
-PKGNAME=        	vnc-3.3.2r3
+DISTNAME=       	vnc-3.3.3_unixsrc
+PKGNAME=        	vnc-3.3.3
 CATEGORIES=		net
 MASTER_SITES=   	http://www.uk.research.att.com/vnc/dist/
-DISTFILES=		vnc-3.3.2r3_unixsrc.tgz \
-			vnc-3.3.2_doc.tgz
+DISTFILES=		vnc-3.3.3_unixsrc.tgz \
+			vnc-latest_doc.tgz
 
 MAINTAINER=	 	bmah@ca.sandia.gov
 
 USE_PERL5=		YES
 
-EXTRACT_ONLY=		vnc-3.3.2r3_unixsrc.tgz
+EXTRACT_ONLY=		vnc-3.3.3_unixsrc.tgz
 IGNOREFILES=		${DISTFILES}
 
 WRKSRC=			${WRKDIR}/vnc_unixsrc
@@ -39,8 +39,8 @@ post-install:
 		> ${WRKSRC}/vncserver.local
 	${INSTALL_SCRIPT} ${WRKSRC}/vncserver.local ${PREFIX}/bin/vncserver
 # The documentation comes with bogus ownerships; this is a little leaky security-wise
-	${MKDIR} ${PREFIX}/share/doc/vnc
-	tar -C ${PREFIX}/share/doc/vnc -xzf ${DISTDIR}/vnc-3.3.2_doc.tgz
+	${TAR} -C ${PREFIX}/share/doc -xzf ${DISTDIR}/vnc-latest_doc.tgz
+	(cd ${PREFIX}/share/doc; ${MV} vnc_docs vnc)
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/doc/vnc
 # Go install Java classes
 	${MKDIR} ${PREFIX}/share/vnc
