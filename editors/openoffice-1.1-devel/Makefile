@@ -216,6 +216,12 @@ pre-fetch:
 	@${ECHO}
 	@${ECHO} "If must have license from the Unisys and IBM patents"
 	@${ECHO} "to enable this option to get compressed GIF images."
+	@${ECHO} "According to http://www.unisys.com/about__unisys/lzw"
+	@${ECHO} "Patent expires:"
+	@${ECHO} "June 20, 2003 : U.S."
+	@${ECHO} "June 18, 2004 : U.K., France, Germany and Italy"
+	@${ECHO} "June 20, 2004 : Japan"
+	@${ECHO} "July  7, 2004 : Canada"
 	@${ECHO}
 .endif
 .if ${OSVERSION} < 450002
