@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	expect
-PORTVERSION=	5.31.8
+PORTVERSION=	5.32.1
 CATEGORIES=	lang tcl82 tk82
 MASTER_SITES=	http://expect.nist.gov/
 DISTNAME=	expect
@@ -14,7 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS?=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 
-WRKSRC=		${WRKDIR}/expect-5.31
+WRKSRC=		${WRKDIR}/expect-5.32
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS?= --enable-shared \
@@ -30,6 +30,6 @@ MAN3=		libexpect.3
 .endif
 
 post-install:
-	${LN} -sf libexpect531.so.1 ${PREFIX}/lib/libexpect531.so
+	${LN} -sf libexpect532.so.2 ${PREFIX}/lib/libexpect532.so
 
 .include <bsd.port.mk>
