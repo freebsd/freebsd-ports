@@ -1,0 +1,18 @@
+--- Makefile.in	Sun Sep 26 18:53:29 1999
++++ Makefile.in	Thu May  4 17:10:29 2000
+@@ -46,1 +46,1 @@
+-CFLAGS = -O
++#CFLAGS = -O
+@@ -107,3 +107,3 @@
+ CC_SWITCHES =	${CFLAGS} ${SHLIB_CFLAGS} -I${GENERIC_DIR} -I${SRC_DIR} \
+-    -I${prefix}/include ${AC_FLAGS} ${PROTO_FLAGS} \
++    -I${prefix}/include/tcl@TCL_VERSION@ ${AC_FLAGS} ${PROTO_FLAGS} \
+     ${ENV_FLAGS} ${SSL_FLAGS} @TCL_EXTRA_FLAGS@
+@@ -140,3 +140,3 @@
+ 	rm -f ${LIB_FILE}
+-	@TCL_SHLIB_LD@ -o ${LIB_FILE} ${OBJS} @TCL_SHLIB_LD_LIBS@
++	@TCL_SHLIB_LD@ -o ${LIB_FILE} ${OBJS} @TCL_SHLIB_LD_LIBS@ ${LIBS}
+ 	$(RANLIB) ${LIB_FILE}
+@@ -146,1 +146,1 @@
+-	( echo cd $(TOP_DIR)/tests\; source all ) | tclsh80
++	( echo 'cd $(TOP_DIR)/tests; foreach f [glob *.tcl] { source $$f }') | tclsh@TCL_VERSION@

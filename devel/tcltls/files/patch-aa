@@ -1,0 +1,18 @@
+--- configure	Thu Sep  6 15:26:44 1999
++++ configure	Thu May  4 16:49:16 2000
+@@ -534,7 +534,7 @@
+ 
+-if test -r "$prefix/lib/tclConfig.sh"; then
+-    . $prefix/lib/tclConfig.sh
+-    echo "$ac_t""using $prefix/lib/tclConfig.sh" 1>&6
++if test -r "$TCLLIB/tclConfig.sh"; then
++    . $TCLLIB/tclConfig.sh
++    echo "$ac_t""using $TCLLIB/tclConfig.sh" 1>&6
+ else
+-    { echo "configure: error: count not find lib/tclConfig.sh in $prefix" 1>&2; exit 1; }
++    { echo "configure: error: count not find tclConfig.sh in $TCLLIB" 1>&2; exit 1; }
+ fi
+@@ -768,2 +768,3 @@
+ s%@TCL_COMPAT_OBJS@%$TCL_COMPAT_OBJS%g
++s%@TCL_VERSION@%$TCL_VERSION%g
+ 

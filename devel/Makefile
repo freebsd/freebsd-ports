@@ -221,6 +221,7 @@
     SUBDIR += tclcl
     SUBDIR += tclgetopts
     SUBDIR += tclreadline
+    SUBDIR += tcltls
     SUBDIR += templ
     SUBDIR += tkcon
     SUBDIR += tkcvs

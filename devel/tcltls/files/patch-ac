@@ -1,0 +1,7 @@
+--- pkgIndex.tcl.in	Mon May 24 14:51:36 1999
++++ pkgIndex.tcl.in	Thu May  4 17:43:01 2000
+@@ -1,2 +1,2 @@
+-package ifneeded @PACKAGE@ @VERSION@ [list load [file join $dir @LIB_FILE@]]
+-
++package ifneeded @PACKAGE@ @VERSION@ "load [file join $dir .. @LIB_FILE@]; \
++	source [file join $dir tls.tcl]"
