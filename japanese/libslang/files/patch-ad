@@ -1,0 +1,63 @@
+--- configure.orig	Fri Apr 24 01:16:57 1998
++++ configure	Tue Sep 22 16:11:04 1998
+@@ -1489,35 +1489,25 @@
+ 
+ echo $ac_n "checking SLANG_VERSION""... $ac_c" 1>&6
+ echo "configure:1492: checking SLANG_VERSION" >&5
+-slang_version=`grep "^#define  *SLANG_VERSION " $srcdir/src/slang.h |
+-               awk '{ print $3 }'`
+-slang_major_version=`echo $slang_version |
+- awk '{ print int($1/10000) }'`
+-slang_minor_version=`echo $slang_version $slang_major_version |
+- awk '{ print int(($1 - $2*10000)/100) }'`
+-slang_mminor_version=`echo $slang_version $slang_major_version $slang_minor_version |
+- awk '{ print ($1 - $2*10000 - $3*100) }'`
+-
+-slang_minor_version=$slang_minor_version.$slang_mminor_version
++slang_major_version=1
++slang_minor_version=3
+ echo "$ac_t""$slang_major_version.$slang_minor_version" 1>&6
+ 
+ 
+ 
+ 
+ 
+-if test "$GCC" = yes; then
+-  ELF_CC="gcc"
+-  ELF_CFLAGS="-O2 -fno-strength-reduce -fPIC"
+-  ELF_LINK="gcc -shared -Wl,-soname#"
+-  ELF_LINK_CMD="\$(ELF_LINK),\$(ELFLIB_MAJOR)"
++if [ $PORTOBJFORMAT = elf ]; then
++ELF_CC="\$(CC)"
++ELF_CFLAGS="\$(CFLAGS) -fPIC"
++ELF_LINK="\$(CC) -shared -Wl,-soname,\$(ELFLIB_MAJOR)"
++ELF_LINK_CMD="\$(ELF_LINK)"
+ else
+-  ELF_CC="cc"
+-  ELF_CFLAGS="-K pic"
+-  ELF_LINK="ld -G -z text"
+-  ELF_LINK_CMD="\$(ELF_LINK)"
++ELF_CC="\$(CC)"
++ELF_CFLAGS="\$(CFLAGS) -fPIC"
++ELF_LINK="ld -Bshareable -x"
++ELF_LINK_CMD="\$(ELF_LINK)"
+ fi
+-
+-
+ 
+ 
+ 
+--- src/Makefile.in	Fri Apr 24 01:17:04 1998
++++ /tmp/Makefile.in	Tue Sep 22 15:45:26 1998
+@@ -68,7 +68,11 @@
+ 
+ ELFLIB = lib$(THIS_LIB).so#
+ ELFLIB_MAJOR = $(ELFLIB).$(ELF_MAJOR_VERSION)#
++.if ${PORTOBJFORMAT} == elf
++ELFLIB_MAJOR_MINOR = $(ELFLIB).$(ELF_MAJOR_VERSION)#
++.else
+ ELFLIB_MAJOR_MINOR = $(ELFLIB).$(ELF_MAJOR_VERSION).$(ELF_MINOR_VERSION)#
++.endif
+ 
+ ELFDIR_ELF_LIB = $(ELFDIR)/$(ELFLIB_MAJOR_MINOR)#
+ 
