@@ -4764,7 +4764,7 @@ lib/libClient_Test.so.%%ACE_VERSION%%
 %%TAO%%%%TESTS%%lib/libCollocation_Diamond.so
 %%TAO%%%%TESTS%%lib/libCollocation_Diamond.so.%%TAO_VERSION%%
 %%TAO%%%%TESTS%%lib/libDiamond.so
-%%TAO%%%%TESTS%%lib/libDiamond.so.1.4.0
+%%TAO%%%%TESTS%%lib/libDiamond.so.%%TAO_VERSION%%
 %%TAO%%%%TESTS%%lib/libIBM1047_ISO8859.so
 %%TAO%%%%TESTS%%lib/libIBM1047_ISO8859.so.%%TAO_VERSION%%
 %%TAO%%lib/libTAO.so
