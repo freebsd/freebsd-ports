@@ -10,7 +10,6 @@
     SUBDIR += bwidget
     SUBDIR += clean-theme-gtk
     SUBDIR += colorstep
-    SUBDIR += crux
     SUBDIR += easygtk
     SUBDIR += eazel-themes
     SUBDIR += eel
