@@ -1,0 +1,10 @@
+bin/cuebreakpoints
+bin/cueconvert
+bin/cuerename
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.formats
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%EXAMPLESDIR%%/EXAMPLE.cuerenamerc
+%%PORTDOCS%%%%EXAMPLESDIR%%/EXAMPLE.useage
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%

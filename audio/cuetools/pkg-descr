@@ -1,0 +1,8 @@
+Cuetools is a set of utilities for working with cue files and toc files.
+It contains:
+- cueconverter: convert between cue and toc formats
+- cuebreakpoints: output track break points from a cue/toc file, in a
+  format usable by shnsplit (part of the shntool package)
+- cuerename: rename files based on a template
+
+WWW: http://cuetools.sourceforge.net/
