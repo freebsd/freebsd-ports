@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	zenity
-PORTVERSION=	1.0
-PORTREVISION=	2
+PORTVERSION=	1.1
 CATEGORIES=	x11 gnome
-MASTER_SITES=	http://ftp.acc.umu.se/pub/GNOME/sources/zenity/1.0/
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	klammer@webonaut.com
 COMMENT=	Display GNOME dialogs from the command line
@@ -24,6 +24,9 @@ USE_GNOME=	gnomeprefix gnomehack libgnomecanvas gconf2
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
+
+MAN1=		zenity.1
+
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 
 pre-configure:
