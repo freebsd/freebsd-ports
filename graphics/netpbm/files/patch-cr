@@ -1,0 +1,44 @@
+--- pnm/pnmtotiff.c.orig	Tue Feb 20 14:50:18 2001
++++ pnm/pnmtotiff.c	Sat Feb 24 00:00:00 2001
+@@ -34,6 +34,8 @@
+ #include "ppmcmap.h"
+ #define MAXCOLORS 256
+ 
++#include "shhopt.h"
++
+ struct cmdline_info {
+     /* All the information the user supplied in the command line,
+        in a form easy for the program to use.
+@@ -67,6 +69,15 @@
+ 
+     unsigned int option_def_index;
+ 
++    /* Create the OptStruct structure describing our options */
++    #define OPTENTRY(shortvalue,longvalue,typevalue,outputvalue,flagvalue) {\
++      option_def[option_def_index].shortName = (shortvalue); \
++      option_def[option_def_index].longName = (longvalue); \
++      option_def[option_def_index].type = (typevalue); \
++      option_def[option_def_index].arg = (outputvalue); \
++      option_def[option_def_index].flags = (flagvalue); \
++      option_def_index++; \
++      }
+     option_def_index = 0;   /* incremented by OPTENTRY */
+     OPTENTRY(0, "none",         OPT_FLAG,   &none,                    0);
+     OPTENTRY(0, "packbits",     OPT_FLAG,   &packbits,                0);
+@@ -83,6 +94,7 @@
+     OPTENTRY(0, "rowsperstrip", OPT_UINT,   &cmdline_p->rowsperstrip, 0);
+     OPTENTRY(0, "xresolution",  OPT_FLOAT,  &cmdline_p->xresolution,  0);
+     OPTENTRY(0, "yresolution",  OPT_FLOAT,  &cmdline_p->yresolution,  0);
++    option_def[option_def_index].type = OPT_END;
+ 
+     /* Set the defaults */
+     none = packbits = lzw = g3 = g4 = msb2lsb = lsb2msb = opt_2d = FALSE;
+@@ -97,7 +109,7 @@
+     opt.short_allowed = FALSE;  /* We have no short (old-fashioned) options */
+     opt.allowNegNum = FALSE;  /* We have no parms that are negative numbers */
+ 
+-    pm_optParseOptions2(&argc, argv, opt, 0);
++    optParseOptions2(&argc, argv, opt, 0);
+         /* Uses and sets argc, argv, and some of *cmdline_p and others. */
+ 
+     if (none + packbits + lzw + g3 + g4 > 1)

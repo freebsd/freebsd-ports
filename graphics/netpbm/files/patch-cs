@@ -1,0 +1,38 @@
+--- ppm/bmptoppm.c.orig	Sat Jan 13 14:19:01 2001
++++ ppm/bmptoppm.c	Sat Feb 24 00:00:00 2001
+@@ -54,6 +54,7 @@
+ #include	"bmp.h"
+ #include	"ppm.h"
+ #include	"bitio.h"
++#include	"shhopt.h"
+ 
+ /* MAXCOLORS is the maximum size of a color map in a BMP image */
+ #define	MAXCOLORS   	256
+@@ -113,8 +114,18 @@
+ 
+     unsigned int option_def_index;
+ 
++    /* Create the OptStruct structure describing our options */
++    #define OPTENTRY(shortvalue,longvalue,typevalue,outputvalue,flagvalue) {\
++      option_def[option_def_index].shortName = (shortvalue); \
++      option_def[option_def_index].longName = (longvalue); \
++      option_def[option_def_index].type = (typevalue); \
++      option_def[option_def_index].arg = (outputvalue); \
++      option_def[option_def_index].flags = (flagvalue); \
++      option_def_index++; \
++      }
+     option_def_index = 0;   /* incremented by OPTENTRY */
+     OPTENTRY(0,   "verbose",     OPT_FLAG,   &cmdline_p->verbose,         0);
++    option_def[option_def_index].type = OPT_END;
+ 
+     /* Set the defaults */
+     cmdline_p->verbose = FALSE;
+@@ -123,7 +134,7 @@
+     opt.short_allowed = FALSE;  /* We have no short (old-fashioned) options */
+     opt.allowNegNum = FALSE;  /* We have no parms that are negative numbers */
+ 
+-    pm_optParseOptions2(&argc, argv, opt, 0);
++    optParseOptions2(&argc, argv, opt, 0);
+         /* Uses and sets argc, argv, and some of *cmdline_p and others. */
+ 
+     if (argc-1 == 0) 

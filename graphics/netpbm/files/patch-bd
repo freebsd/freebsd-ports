@@ -1,15 +1,6 @@
---- pbm/Makefile.orig	Sat Sep  2 12:59:29 2000
-+++ pbm/Makefile	Fri Dec  8 00:00:00 2000
-@@ -5,7 +5,7 @@
- include $(BUILDDIR)/Makefile.config
- 
- 
--INCLUDE = -I$(SRCDIR) -I$(SRCDIR)/shhopt
-+INCLUDE = -I$(SRCDIR)
- 
- # Shared library naming
- LIBROOT = pbm
-@@ -16,6 +16,8 @@
+--- pbm/Makefile.orig	Wed Feb 21 13:05:01 2001
++++ pbm/Makefile	Sat Feb 24 00:00:00 2001
+@@ -17,10 +17,12 @@
  LIBLIBS = 
  NETPBMLIBS = $(LIBPBM)
  
@@ -18,11 +9,34 @@
  PORTBINARIES =	atktopbm brushtopbm cmuwmtopbm g3topbm \
  		icontopbm macptopbm mdatopbm mgrtopbm \
  		pbmclean pbmlife pbmmake pbmmask pbmpscale \
-@@ -38,11 +40,10 @@
+-		pbmreduce pbmtext \
++		pbmreduce \
+ 		pbmto10x pbmto4425 pbmtoascii pbmtoatk \
+ 		pbmtobbnbg pbmtocmuwm \
+ 		pbmtoepsi pbmtoepson \
+@@ -29,21 +31,26 @@
+ 		pbmtopi3 pbmtoplot pbmtoptx pbmtowbmp \
+ 		pbmtox10bm pbmtoxbm pbmtoybm pbmtozinc \
+ 		pbmupc pi3topbm pktopbm wbmptopbm xbmtopbm ybmtopbm
++SHHOPTBINARIES =	pbmtext
++
++NOMERGEBINARIES =	$(SHHOPTBINARIES)
++
++MERGEBINARIES =	$(PORTBINARIES) $(MATHBINARIES)
++
+ MATHBINARIES =	pbmpage pbmtopk
+-BINARIES =	$(PORTBINARIES) $(MATHBINARIES)
++BINARIES =	$(MERGEBINARIES) $(NOMERGEBINARIES)
+ 
+ OBJECTS = $(patsubst %, %.o, $(BINARIES))
+ 
+-MERGEBINARIES = $(BINARIES)
+ MERGE_OBJECTS = $(patsubst %,%.o2, $(MERGEBINARIES))
  
  # Library objects to be built and linked by Makefile.common:
  LIBOBJECTS = libpbm1.o libpbm2.o libpbm3.o libpbm4.o libpbm5.o 
 +SHLIBOBJECTS = $(patsubst %.o, %.lo, $(LIBOBJECTS))
++LIBSHHOPT = $(SRCDIR)/shhopt/libshhopt.a
  ifneq (${VMS}x,x)
  LIBOBJECTS += libpbmvms.o
  endif
@@ -31,15 +45,49 @@
  
  MANUALS1 =	$(BINARIES)
  MANUALS3 =	libpbm
-@@ -80,11 +81,6 @@
- # Don't use $(SRCDIR) in the target below because Makefile.dep doesn't !
- ../compile.h: 
- 	$(MAKE) -C $(SRCDIR) compile.h
+@@ -55,26 +62,24 @@
+ 
+ .PHONY: all
+ all:		$(BINARIES)
+-	$(MAKE) -C pbmtoppa all
 -
+ .PHONY: merge
+-merge: $(MERGENAME)
+-	$(MAKE) -C pbmtoppa all
++merge: $(MERGENAME) $(NOMERGEBINARIES)
++
++$(SHHOPTBINARIES): %: %.o $(NETPBMLIBS) $(LIBOPT) $(LIBSHHOPT)
++	$(LD) $(LDFLAGS) -o $@ $@.o `$(LIBOPT) $(NETPBMLIBS)` \
++	  $(LIBSHHOPT) $(CDEBUG)
+ 
+ .PHONY: install.bin
+ install.bin: install.bin.common
+-	$(MAKE) -C pbmtoppa install.bin
+ 
+ .PHONY: install.merge
+ install.merge: install.merge.common
+-	$(MAKE) -C pbmtoppa install.bin
+ 
+ .PHONY: install.lib
+ install.lib: install.lib.common
+ 
+ .PHONY: install.man
+ install.man: install.man.common
+-	$(MAKE) -C pbmtoppa install.man
+ 
+ HEADERLINKS = pbmplus.h version.h compile.h
+ 
+@@ -88,13 +93,10 @@
+ compile.h:
+ 	$(SRCDIR)/stamp-date
+ 
 -$(BUILDDIR)/shhopt/shhopt.o:
 -	cd ../shhopt; $(MAKE) shhopt.o
--$(BUILDDIR)/shhopt/libshhopt.a:
--	cd ../shhopt; $(MAKE) libshhopt.a
+ $(BUILDDIR)/shhopt/libshhopt.a:
+ 	cd ../shhopt; $(MAKE) libshhopt.a
  
  .PHONY: clean
  clean: clean.common
+-	$(MAKE) -C pbmtoppa clean
+ 
+ FORCE:

@@ -1,0 +1,42 @@
+--- pbm/pbmtext.c.orig	Tue Jan 30 06:33:13 2001
++++ pbm/pbmtext.c	Sat Feb 24 00:00:00 2001
+@@ -14,6 +14,7 @@
+ 
+ #include "pbm.h"
+ #include "pbmfont.h"
++#include "shhopt.h"
+ 
+ struct cmdline_info {
+     /* All the information the user supplied in the command line,
+@@ -48,12 +49,22 @@
+ 
+     unsigned int option_def_index;
+ 
++    /* Create the OptStruct structure describing our options */
++    #define OPTENTRY(shortvalue,longvalue,typevalue,outputvalue,flagvalue) {\
++      option_def[option_def_index].shortName = (shortvalue); \
++      option_def[option_def_index].longName = (longvalue); \
++      option_def[option_def_index].type = (typevalue); \
++      option_def[option_def_index].arg = (outputvalue); \
++      option_def[option_def_index].flags = (flagvalue); \
++      option_def_index++; \
++      }
+     option_def_index = 0;   /* incremented by OPTENTRY */
+     OPTENTRY(0,   "font",     OPT_STRING,   &cmdline_p->font,         0);
+     OPTENTRY(0,   "builtin",  OPT_STRING,   &cmdline_p->builtin,      0);
+     OPTENTRY(0,   "dump",     OPT_INT,      &cmdline_p->dump,         0);
+     OPTENTRY(0,   "space",    OPT_FLOAT,    &cmdline_p->space,        0);
+     OPTENTRY(0,   "width",    OPT_INT,      &cmdline_p->width,        0);
++    option_def[option_def_index].type = OPT_END;
+ 
+     /* Set the defaults */
+     cmdline_p->font = NULL;
+@@ -65,7 +76,7 @@
+     opt.short_allowed = FALSE;  /* We have no short (old-fashioned) options */
+     opt.allowNegNum = FALSE;  /* We have no parms that are negative numbers */
+ 
+-    pm_optParseOptions2(&argc, argv, opt, 0);
++    optParseOptions2(&argc, argv, opt, 0);
+         /* Uses and sets argc, argv, and some of *cmdline_p and others. */
+ 
+     if (argc-1 == 0)
