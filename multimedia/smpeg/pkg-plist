@@ -5,6 +5,7 @@ include/smpeg/MPEG.h
 include/smpeg/MPEGaction.h
 include/smpeg/MPEGaudio.h
 include/smpeg/MPEGerror.h
+include/smpeg/MPEGfilter.h
 include/smpeg/MPEGlist.h
 include/smpeg/MPEGring.h
 include/smpeg/MPEGstream.h
@@ -12,7 +13,6 @@ include/smpeg/MPEGsystem.h
 include/smpeg/MPEGvideo.h
 include/smpeg/smpeg.h
 lib/libsmpeg.a
-lib/libsmpeg.la
 lib/libsmpeg.so
-lib/libsmpeg.so.0
+lib/libsmpeg.so.1
 @dirrm include/smpeg

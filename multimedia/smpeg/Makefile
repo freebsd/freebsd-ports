@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smpeg
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.lokigames.com/pub/open-source/smpeg/ \
 		ftp://sunsite.auc.dk/pub/os/linux/loki/open-source/smpeg/ \
@@ -22,7 +22,7 @@ SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
 
 USE_GMAKE=	yes
 USE_GTK=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
 		GLBASE="${X11BASE}" \
@@ -34,5 +34,9 @@ CONFIGURE_ARGS=	--disable-opengl-player \
 		--enable-mmx
 
 MAN1=		gtv.1 plaympeg.1
+
+post-configure:
+	@${PERL} -pi -e 's|^deplibs_check_method=.*|deplibs_check_method=pass_all|' \
+		${WRKSRC}/libtool
 
 .include <bsd.port.mk>
