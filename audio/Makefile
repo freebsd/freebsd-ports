@@ -174,6 +174,7 @@
     SUBDIR += quelcom
     SUBDIR += radio
     SUBDIR += raproxy
+    SUBDIR += rebler
     SUBDIR += replay
     SUBDIR += rio
     SUBDIR += rio500
