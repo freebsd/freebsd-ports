@@ -1,31 +1,16 @@
---- configure.orig	Thu Dec 21 19:28:40 2000
-+++ configure	Thu Dec 21 19:30:24 2000
-@@ -1272,7 +1272,7 @@
-   echo $ac_n "(cached) $ac_c" 1>&6
- else
-   ac_save_LIBS="$LIBS"
--LIBS="-lSDL  $LIBS"
-+LIBS="$LIBS"
- cat > conftest.$ac_ext <<EOF
- #line 1278 "configure"
- #include "confdefs.h"
-@@ -1302,7 +1302,7 @@
- #define $ac_tr_lib 1
- EOF
- 
--  LIBS="-lSDL $LIBS"
-+  LIBS="$LIBS"
- 
- else
-   echo "$ac_t""no" 1>&6
-@@ -1322,8 +1322,8 @@
+
+$FreeBSD$
+
+--- configure	2002/01/14 13:27:57	1.1
++++ configure	2002/01/14 13:28:20
+@@ -1617,8 +1617,8 @@
  
  
  
--sdir=$datadir/games/ltris
--hdir=/var/lib/games/ltris
-+sdir=$datadir/ltris
-+hdir=/var/games/ltris
- inst_flag="-DSRC_DIR=\\\"$sdir/\\\""
- hi_inst_flag="-DHI_DIR=\\\"$hdir/\\\""
+-inst_dir=$datadir/games/ltris
+-hi_dir=/var/lib/games
++inst_dir=$datadir/ltris
++hi_dir=/var/games/ltris
  
+ # Check whether --enable-install or --disable-install was given.
+ if test "${enable_install+set}" = set; then
