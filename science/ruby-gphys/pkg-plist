@@ -8,6 +8,8 @@
 %%RUBY_SITELIBDIR%%/numru/gphys/coordtransform.rb
 %%RUBY_SITELIBDIR%%/numru/gphys/gphys.rb
 %%RUBY_SITELIBDIR%%/numru/gphys/gphys_fft.rb
+%%RUBY_SITELIBDIR%%/numru/gphys/gphys_io.rb
+%%RUBY_SITELIBDIR%%/numru/gphys/gphys_io_common.rb
 %%RUBY_SITELIBDIR%%/numru/gphys/gphys_grads_io.rb
 %%RUBY_SITELIBDIR%%/numru/gphys/gphys_netcdf_io.rb
 %%RUBY_SITELIBDIR%%/numru/gphys/grads_gridded.rb
