@@ -38,6 +38,8 @@ PLIST_SUB+=	GNOMEHIER='@comment '
 
 post-patch:
 	${REINPLACE_CMD} -E -e "s|^(gringottsdocdir =).*|\1 $$\(datadir\)/doc/gringotts|;s|md5sum|md5|g" ${WRKSRC}/Makefile.in
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
+		's|-D.*_DISABLE_DEPRECATED||g'
 .if defined(NOPORTDOCS)
 	${REINPLACE_CMD} -E -e "s|^(install-data-am:.*)install-gringottsdocDATA|\1|" ${WRKSRC}/Makefile.in
 .endif
