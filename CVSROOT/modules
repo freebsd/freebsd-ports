@@ -641,6 +641,7 @@ biggles		ports/math/biggles
 bigloo		ports/lang/bigloo
 bigsister	ports/net-mgmt/bigsister
 bigyear		ports/deskutils/bigyear
+bihar		ports/math/bihar
 bin86		ports/devel/bin86
 bincimap	ports/mail/bincimap
 bind8		ports/dns/bind8
@@ -1969,7 +1970,6 @@ ffcall		ports/devel/ffcall
 ffmpeg		ports/multimedia/ffmpeg
 ffproxy		ports/www/ffproxy
 ffsrecov	ports/sysutils/ffsrecov
-fftpack		ports/math/fftpack
 fftw		ports/math/fftw
 fftw3		ports/math/fftw3
 fftw3-float	ports/math/fftw3-float
