@@ -11,6 +11,7 @@
     SUBDIR += ispell-alt
     SUBDIR += ispell-neu
     SUBDIR += kde3-i18n
+    SUBDIR += linux-eagle
     SUBDIR += linux-netscape6
     SUBDIR += manpages
     SUBDIR += ooodict-de_CH
