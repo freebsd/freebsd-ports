@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	tya
-PORTVERSION=	1.7.3
+PORTVERSION=	1.8
 CATEGORIES=	java
 MASTER_SITES=	http://sax.sax.de/~adlibit/
-DISTNAME=	tya17v3
+DISTNAME=	tya18
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
@@ -28,18 +28,25 @@ CONFIGURE_ARGS+=	--with-jdk=${JAVADIR}
 JAVADIR?=	${LOCALBASE}/jdk1.1.8
 JAVALIBDIR=	${PREFIX}/lib/tya
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500000
+post-patch:
+	@${REINPLACE_CMD} -e "s|-malign|-falign|g" ${WRKSRC}/Makefile.in
+.endif
+
 post-configure:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/README
 
 do-install:
 	@${MKDIR} ${JAVALIBDIR}
 	@${INSTALL_PROGRAM} ${WRKSRC}/libtya.so ${JAVALIBDIR}
-
-post-install:
-	@${MKDIR} ${PREFIX}/share/tya
-	@${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/tya
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "See ${PREFIX}/share/tya/README for usage instructions."
+	@${ECHO_MSG} "See ${DOCSDIR}/README for usage instructions."
 	@${ECHO_MSG} ""
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
