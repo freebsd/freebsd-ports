@@ -1,0 +1,16 @@
+From readme.txt:
+  This program splits an ISO 11172-1 System layer stream into its
+  component elemental streams.
+
+  Comments and suggestions are welcome.
+  For the present (22 of June 1994) I can be contacted via 
+  Email: michael@ecel.uwa.edu.au
+  Post: P.O. Box 506, NEDLANDS WA 6009, AUSTRALIA
+
+  Updates to this source will first appear on
+  decel.ecel.uwa.edu.au in the /users/michael directory
+  This machine may change name within the next 6 months.
+
+eric.
+erich@FreeBSD.org
+
