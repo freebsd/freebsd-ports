@@ -1,0 +1,28 @@
+--- bin/jre.orig	Tue Sep 19 02:08:12 2000
++++ bin/jre	Fri Sep 12 20:00:46 2003
+@@ -6,7 +6,7 @@
+ export THREADS_TYPE
+ 
+ progname=`basename $0`
+-ARCH=`arch`
++ARCH=`uname -m`
+ 
+ case $1 in
+ -native)
+@@ -21,13 +21,13 @@
+ 
+ if [ -z "$JAVA_HOME" ]
+ then
+-    PRG=`type -p $0` >/dev/null 2>&1
++    PRG=$0
+     # If PRG is a symlink, trace it to the real home directory
+ 
+     while [ -L "$PRG" ]
+     do
+-	newprg=`expr "\`/bin/ls -l "$PRG"\`" : ".*$PRG -> \(.*\)"`
+-	expr "$newprg" : / >/dev/null || newprg="`dirname $PRG`/$newprg"
++	newprg=`/compat/linux/usr/bin/expr "\`/bin/ls -l "$PRG"\`" : ".*$PRG -> \(.*\)"`
++	/compat/linux/usr/bin/expr "$newprg" : / >/dev/null || newprg="`dirname $PRG`/$newprg"
+ 	PRG="$newprg"
+     done
+ 

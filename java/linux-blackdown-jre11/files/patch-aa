@@ -1,0 +1,26 @@
+--- bin/.java_wrapper.orig	Fri Sep 12 19:54:03 2003
++++ bin/.java_wrapper	Fri Sep 12 19:54:43 2003
+@@ -7,19 +7,19 @@
+ 
+ # Set up default variable values if not supplied by the user.
+ 
+-PRG=`type -p $0` >/dev/null 2>&1
++PRG=$0
+ # If PRG is a symlink, trace it to the real home directory
+ 
+ while [ -L "$PRG" ]
+ do
+-    newprg=`expr "\`/bin/ls -l "$PRG"\`" : ".*$PRG -> \(.*\)"`
+-    expr "$newprg" : / >/dev/null || newprg="`dirname $PRG`/$newprg"
++    newprg=`/compat/linux/usr/bin/expr "\`/bin/ls -l "$PRG"\`" : ".*$PRG -> \(.*\)"`
++    /compat/linux/usr/bin/expr "$newprg" : / >/dev/null || newprg="`dirname $PRG`/$newprg"
+     PRG="$newprg"
+ done
+ 
+ J_HOME=`dirname $PRG`/..
+ progname=`basename $0`
+-ARCH=`arch`
++ARCH=`uname -m`
+ 
+ # The default THREADS_TYPE is "green_threads".  To change the default change
+ # the setting of the DEFAULT_THREADS_FLAG variable.  The only valid values 
