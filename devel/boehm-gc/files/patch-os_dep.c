@@ -1,6 +1,6 @@
---- os_dep.c.orig	Thu Jul  8 04:16:28 2004
-+++ os_dep.c	Fri Dec 17 03:29:13 2004
-@@ -700,7 +700,7 @@
+--- os_dep.c.orig	Sat Dec 18 10:42:19 2004
++++ os_dep.c	Wed Dec 29 22:48:03 2004
+@@ -699,7 +699,7 @@
      || defined(HURD) || defined(NETBSD)
  	static struct sigaction old_segv_act;
  #	if defined(_sigargs) /* !Irix6.x */ || defined(HPUX) \
@@ -9,7 +9,7 @@
  	    static struct sigaction old_bus_act;
  #	endif
  #   else
-@@ -715,7 +715,7 @@
+@@ -714,7 +714,7 @@
  #   endif
      {
  #	if defined(SUNOS5SIGS) || defined(IRIX5)  \
@@ -18,34 +18,12 @@
  	  struct sigaction	act;
  
  	  act.sa_handler	= h;
-@@ -2372,7 +2372,7 @@
- #   endif
- #   ifdef FREEBSD
- #     define SIG_OK (sig == SIGBUS)
--#     define CODE_OK (code == BUS_PAGE_FAULT)
-+#     define CODE_OK TRUE
- #   endif
- # endif /* SUNOS4 || (FREEBSD && !SUNOS5SIGS) */
- 
-@@ -3943,7 +3943,11 @@
- #	 if defined(OPENBSD) || defined(NETBSD)
- #	   include <frame.h>
- #	 else
--#	   include <sys/frame.h>
-+#	   if defined(FREEBSD)
-+#	     include <machine/frame.h>
-+#	   else
-+#	     include <sys/frame.h>
-+#	   endif
- #	 endif
- #      endif
- #    endif
-@@ -3989,7 +3993,7 @@
- 
- #else /* No builtin backtrace; do it ourselves */
- 
--#if (defined(OPENBSD) || defined(NETBSD)) && defined(SPARC)
-+#if (defined(OPENBSD) || defined(NETBSD) || defined(FREEBSD)) && defined(SPARC)
- #  define FR_SAVFP fr_fp
- #  define FR_SAVPC fr_pc
- #else
+@@ -734,7 +734,7 @@
+ #	  else
+ 	        (void) sigaction(SIGSEGV, &act, &old_segv_act);
+ #		if defined(IRIX5) && defined(_sigargs) /* Irix 5.x, not 6.x */ \
+-		   || defined(HPUX) || defined(HURD) || defined(NETBSD)
++		   || defined(HPUX) || defined(HURD) || defined(NETBSD) || defined(FREEBSD)
+ 		    /* Under Irix 5.x or HP/UX, we may get SIGBUS.	*/
+ 		    /* Pthreads doesn't exist under Irix 5.x, so we	*/
+ 		    /* don't have to worry in the threads case.		*/
