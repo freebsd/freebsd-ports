@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 sbin/authdump
 sbin/authload
 sbin/authmgr

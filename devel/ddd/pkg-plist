@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/ddd
 info/ddd.info
 @exec install-info %D/info/ddd.info %D/info/dir

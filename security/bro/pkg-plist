@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 sbin/bro
 share/bro/bro.init
 share/bro/analy.bro

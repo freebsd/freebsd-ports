@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 sbin/dlint
 sbin/digparse
 share/doc/dlint/README
