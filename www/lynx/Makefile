@@ -17,8 +17,8 @@ PATCHFILES=	lynx2.8.4rel.1a.patch \
 		lynx2.8.4rel.1b.patch \
 		lynx2.8.4rel.1c.patch
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A non-graphical, text-based World-Wide Web client
+MAINTAINER?=	ports@FreeBSD.org
+COMMENT?=	A non-graphical, text-based World-Wide Web client
 
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}2-8-4
