@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.caida.org/pub/arts++/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lyngbol@wheel.dk
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
