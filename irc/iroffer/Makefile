@@ -12,7 +12,7 @@ MASTER_SITES=	http://iroffer.org/archive/v1.2/
 DISTNAME=	iroffer${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	dburr@FreeBSD.ORG
+MAINTAINER=	dinoex@FreeBSD.ORG
 COMMENT=	An IRC "bot" that makes sharing files via DCC extremely easy
 
 HAS_CONFIGURE=	yes
