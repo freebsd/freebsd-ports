@@ -1,0 +1,12 @@
+UPX is a free, portable, extendable, high-performance executable
+packer for several different executable formats. It achieves an
+excellent compression ratio and offers very fast decompression.
+Your executables suffer no memory overhead or other drawbacks
+because of in-place decompression.
+
+UPX is copyrighted software distributed under the terms of the
+GNU General Public License, with special exceptions granting
+the free usage for commercial programs as stated in the
+UPX License Agreement.
+
+WWW: http://upx.sourceforge.net/

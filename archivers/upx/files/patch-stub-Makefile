@@ -1,0 +1,70 @@
+--- stub/Makefile.orig	Wed Jan 28 03:28:03 2004
++++ stub/Makefile	Tue Feb 17 07:22:01 2004
+@@ -27,6 +27,7 @@
+ 	l_djgpp2.h stubify.h \
+ 	l_exe.h \
+ 	l_lx_n2b.h l_lx_n2d.h l_lx_n2e.h \
++	l_b_n2b.h l_b_n2d.h l_b_n2e.h \
+ 	l_sys.h \
+ 	l_t_n2b.h l_t_n2bs.h l_t_n2d.h l_t_n2ds.h l_t_n2e.h l_t_n2es.h \
+ 	l_tmt.h \
+@@ -81,6 +82,13 @@
+ CC_LINUX_I386 += -funsigned-char
+ ###CC_LINUX_I386 += -fwritable-strings -save-temps
+ 
++# Compiler for the FreeBSD/386 stubs.
++CC_FREEBSD_I386 = gcc -march=i386 -mcpu=i386 -Os -fno-strict-aliasing
++CC_FREEBSD_I386 += -falign-functions=0 -falign-jumps=0 -falign-loops=0
++CC_FREEBSD_I386 += -Werror
++CC_FREEBSD_I386 += -Wall -W -Wcast-align -Wcast-qual -Wwrite-strings
++CC_FREEBSD_I386 += -funsigned-char
++
+ # Preprocessor for the a68k 68000-assembler.
+ CPP_M68K = gcc -I$(UCL_UPX) -E -x assembler-with-cpp -Wall -Wp,-P,-C,-traditional,-nostdinc -D__A68K__
+ ASM_M68K = a68k -q -x
+@@ -255,6 +263,31 @@
+ 
+ 
+ # /***********************************************************************
++# // FreeBSD rules
++# ************************************************************************/
++
++l_b_n2b.h: l_linux.c l_xe_n2b.o
++	$(CC_FREEBSD_I386) -DNRV2B -s -o $T.o -c $<
++	ld -s -Map $T.map -o $T.bin l_xe_n2b.o $T.o -static -lc
++	objcopy -S -R .comment -R .note $T.bin
++	$(STRIPELF) $T.bin
++	$(BIN2H) $T.bin freebsd_i386_nrv2b_loader $@
++
++l_b_n2d.h: l_linux.c l_xe_n2d.o
++	$(CC_FREEBSD_I386) -DNRV2D -s -o $T.o -c $<
++	ld -s -Map $T.map -o $T.bin l_xe_n2d.o $T.o -static -lc
++	objcopy -S -R .comment -R .note $T.bin
++	$(STRIPELF) $T.bin
++	$(BIN2H) $T.bin freebsd_i386_nrv2d_loader $@
++
++l_b_n2e.h: l_linux.c l_xe_n2e.o
++	$(CC_FREEBSD_I386) -DNRV2E -s -o $T.o -c $<
++	ld -s -Map $T.map -o $T.bin l_xe_n2e.o $T.o -static -lc
++	objcopy -S -R .comment -R .note $T.bin
++	$(STRIPELF) $T.bin
++	$(BIN2H) $T.bin freebsd_i386_nrv2e_loader $@
++
++# /***********************************************************************
+ # // dependencies
+ # ************************************************************************/
+ 
+@@ -274,10 +307,13 @@
+ l_djgpp2.h:     n2b_d32.asy  n2d_d32.asy  n2e_d32.asy  $(DEPS2)
+ l_exe.h:        n2b_d8e.asy  n2d_d8e.asy  n2e_d8e.asy  $(DEPS2)
+ l_lx_n2b.h:     n2b_d32.ash  $(DEPS1)
++l_b_n2b.h:      n2b_d32.ash  $(DEPS1)
+ l_xe_n2b.o:     n2b_d32.ash  $(DEPS1)
+ l_lx_n2d.h:     n2d_d32.ash  $(DEPS1)
++l_b_n2d.h:      n2d_d32.ash  $(DEPS1)
+ l_xe_n2d.o:     n2d_d32.ash  $(DEPS1)
+ l_lx_n2e.h:     n2e_d32.ash  $(DEPS1)
++l_b_n2e.h:      n2e_d32.ash  $(DEPS1)
+ l_xe_n2e.o:     n2e_d32.ash  $(DEPS1)
+ l_sys.h:        n2b_d16.asy  $(DEPS2)
+ l_t_n2b.h:      n2b_d.ash    bits.ash  $(DEPS1)
