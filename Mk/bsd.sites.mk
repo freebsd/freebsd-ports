@@ -736,7 +736,7 @@ MASTER_SITE_SAMBA+= \
 	ftp://ru.samba.org/pub/samba/%SUBDIR%/ \
 	ftp://tr.samba.org/samba/%SUBDIR%/ \
 	http://sambafr.idealx.org/samba/ftp/%SUBDIR%/ \
-	ftp://ftp.easynet.be/samba/ftp/%SUBDIR%/ \
+	ftp://ftp.easynet.be/samba/%SUBDIR%/ \
 	ftp://ftp.linuxforum.net/ftp.samba.org/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/samba/&,}
 
