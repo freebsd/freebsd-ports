@@ -1,5 +1,6 @@
 include/X11/X.h
 include/X11/XF86keysym.h
+include/X11/Xalloca.h
 include/X11/Xarch.h
 include/X11/Xatom.h
 include/X11/Xdefs.h

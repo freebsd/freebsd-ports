@@ -1,0 +1,10 @@
+--- Makefile.in.orig	Sun Mar 14 02:08:42 2004
++++ Makefile.in	Sun Mar 14 02:09:50 2004
+@@ -116,6 +116,7 @@
+ xprotoincludedir = $(includedir)/X11
+ xprotoinclude_HEADERS = \
+ 	X.h \
++	Xalloca.h \
+ 	Xarch.h \
+ 	Xatom.h \
+ 	Xdefs.h \
