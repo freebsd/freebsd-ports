@@ -21,10 +21,8 @@ MAINTAINER=	ports@FreeBSD.org
 GNU_CONFIGURE=	YES
 #USE_LIBTOOL=	YES
 
-post-build:
-	${RM} -f ${WRKDIR}/lib/.lib/lib*.la*
-
 post-install:
+	${RM} -f ${PREFIX}/lib/libchasen.la
 	${MKDIR} ${PREFIX}/share/chasen/dic
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/chasen/doc
