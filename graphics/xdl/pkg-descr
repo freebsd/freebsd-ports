@@ -1,0 +1,7 @@
+xdl is a program to display DL animations in an X window.
+
+This is version 2.1, plus some bug fixes by me to make it work on
+16-bit displays, freeing pixmaps when done with an animation, etc.
+
+-Satoshi
+asami@cs.berkeley.edu
