@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	docbook-xsl
-PORTVERSION=	1.51.1
+PORTVERSION=	1.55.0
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= docbook
@@ -18,6 +18,8 @@ RUN_DEPENDS=	${XMLDIR}/docbook/catalog:${PORTSDIR}/textproc/docbook-xml \
 
 XMLDIR=		${LOCALBASE}/share/xml
 INSTDIR=	${PREFIX}/share/xsl/docbook
+COPYDIRS=	common fo extensions html images javahelp lib manpages \
+		params xhtml
 
 NO_BUILD=	yes
 
@@ -34,7 +36,7 @@ do-install:
 		${TAR} -xf - -C${DOCSDIR}/htmlhelp)
 .endif
 	${MKDIR} ${INSTDIR}
-	(cd ${WRKSRC} && ${TAR} -cf - VERSION common fo html lib params xhtml |\
+	(cd ${WRKSRC} && ${TAR} -cf - VERSION ${COPYDIRS} |\
 		${TAR} -xf - -C${INSTDIR})
 
 .include <bsd.port.mk>
