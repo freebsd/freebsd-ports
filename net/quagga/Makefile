@@ -125,6 +125,7 @@ pre-everything::
 	@${ECHO} "   RTADV            IPv6 Router Advertisements"
 	@${ECHO} "   SNMP             SNMP support"
 	@${ECHO} "   TCPSOCKETS       Use TCP/IP sockets for protocol daemons"
+	@${ECHO} "   TCPMD5           TCP-MD5 support for BGP sessions"
 
 pre-configure:
 	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOMAKE_ENV} ${ACLOCAL} )

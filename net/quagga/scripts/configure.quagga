@@ -3,7 +3,7 @@
 # configure - quagga compile time option configurator
 # by Bruce M Simpson <bms@FreeBSD.org>
 #
-# $FreeBSD: /tmp/pcvs/ports/net/quagga/scripts/Attic/configure.quagga,v 1.4 2004-03-02 04:02:52 bms Exp $
+# $FreeBSD: /tmp/pcvs/ports/net/quagga/scripts/Attic/configure.quagga,v 1.5 2004-05-20 11:51:44 bms Exp $
 
 if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
 	exit
@@ -29,6 +29,7 @@ OSPF_OPAQUE_LSA	"OSPF Opaque-LSA with OSPFAPI support (RFC2370)"	"$status_OSPF_O
 RTADV		"IPv6 Router Advertisements"	"$status_RTADV" \
 SNMP		"SNMP support"			"$status_SNMP" \
 TCPSOCKETS	"Use TCP/IP sockets for protocol daemons"	"$status_TCPSOCKETS" \
+TCPMD5		"Support TCP-MD5 for BGP sessions"	"$status_TCPMD5" \
 2> $tempfile
 
 	retval=$?
@@ -75,6 +76,10 @@ while [ "$1" ]; do
 		else
 			echo 'LIB_DEPENDS+=netsnmp.6:${PORTSDIR}/net-mgmt/net-snmp:install'
 		fi
+		;;
+	TCPMD5)
+		echo 'CONFIGURE_ARGS+=	--enable-tcp-signature'
+		echo 'EXTRA_PATCHES+=	${PATCHDIR}/extra-tcpmd5-patch-configure.ac ${PATCHDIR}/extra-tcpmd5-patch-bgpd::bgp_network.c ${PATCHDIR}/extra-tcpmd5-patch-bgpd::bgp_vty.c ${PATCHDIR}/extra-tcpmd5-patch-bgpd::bgpd.c ${PATCHDIR}/extra-tcpmd5-patch-bgpd::bgpd.h ${PATCHDIR}/extra-tcpmd5-patch-lib::sockopt.c ${PATCHDIR}/extra-tcpmd5-patch-lib::sockopt.h'
 		;;
 	TCPSOCKETS)
 		echo 'CONFIGURE_ARGS+=	--enable-tcp-zebra'
