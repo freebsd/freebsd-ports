@@ -198,7 +198,6 @@
     SUBDIR += openjade
     SUBDIR += opensched
     SUBDIR += opensp
-    SUBDIR += orchard-c
     SUBDIR += p5-Apache-ParseLog
     SUBDIR += p5-CSS-SAC
     SUBDIR += p5-CSS-Tiny
@@ -238,7 +237,6 @@
     SUBDIR += p5-MARC
     SUBDIR += p5-NetAddr-IP-Find
     SUBDIR += p5-Number-Format
-    SUBDIR += p5-Orchard-Perl
     SUBDIR += p5-PDF-API2
     SUBDIR += p5-PDF-Create
     SUBDIR += p5-Parse-Syslog
@@ -328,7 +326,6 @@
     SUBDIR += p5-XML-Directory
     SUBDIR += p5-XML-Dumper
     SUBDIR += p5-XML-Encoding
-    SUBDIR += p5-XML-Filter-Base
     SUBDIR += p5-XML-Filter-BufferText
     SUBDIR += p5-XML-Filter-DetectWS
     SUBDIR += p5-XML-Filter-GenericChunk
