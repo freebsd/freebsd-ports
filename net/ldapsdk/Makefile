@@ -8,7 +8,8 @@
 PORTNAME=	ldapsdk
 PORTVERSION=	1998.12.31
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.mozilla.org/pub/directory/c-sdk/ldap/
+MASTER_SITES=	${MASTER_SITE_MOZILLA}
+MASTER_SITE_SUBDIR=	directory/c-sdk/ldap
 DISTNAME=	ldapsdk_12311998
 
 MAINTAINER=	paul@FreeBSD.org

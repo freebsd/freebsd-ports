@@ -8,7 +8,8 @@
 PORTNAME=	mozilla
 PORTVERSION= 	M17
 CATEGORIES=	www
-MASTER_SITES=	ftp://ftp.mozilla.org/pub/mozilla/releases/${PORTVERSION:S/M/m/}/src/
+MASTER_SITES=	${MASTER_SITE_MOZILLA}
+MASTER_SITE_SUBDIR=	mozilla/releases/${PORTVERSION:S/M/m/}/src
 DISTNAME=	${PORTNAME}-source-${PORTVERSION}
 
 MAINTAINER=	reg@FreeBSD.org
