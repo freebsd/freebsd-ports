@@ -1,11 +1,11 @@
 # New ports collection makefile for:	dsniff
-# Version required:	1.2
+# Version required:	1.3
 # Date created:		08 Jan 2000
 # Whom:			kris@FreeBSD.org
 #
 # $FreeBSD$
 
-DISTNAME=	dsniff-1.2
+DISTNAME=	dsniff-1.3
 CATEGORIES=	security
 MASTER_SITES=	http://www.monkey.org/~dugsong/dsniff/
 
