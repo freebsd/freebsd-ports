@@ -1,8 +1,3 @@
-WWW: http://www.feral.com/NetWorker/networker.html
-
 This is the NetWorker Client for FreeBSD. It is based on NetWorker 5.5.2.
 
-BUGS for the FreeBSD client may be entered at
-http://www.feral.com/bugzilla. Do not contact
-Legato for support- it is not supported by them
-at all.
+This is now a completely unsupported and unmaintained package.
