@@ -1,10 +1,13 @@
---- Makefile.orig	Sun Feb  8 13:00:52 2004
-+++ Makefile.in	Sun Feb  8 13:00:58 2004
-@@ -518,7 +518,6 @@
- 	uninstall-info-am uninstall-info-recursive uninstall-recursive \
- 	uninstall-textDATA
+$FreeBSD$
+
+--- Makefile.in.orig	Tue Jun  8 13:21:43 2004
++++ Makefile.in	Tue Jun  8 13:22:32 2004
+@@ -110,7 +110,7 @@
  
--dnl gnome_menudir=$(shell gnome-config --datadir)/gnome/apps/Multimedia
- # Tell versions [3.59,3.63) of GNU make to not export all variables.
- # Otherwise a system limit (for SysV at least) may be exceeded.
- .NOEXPORT:
+ SUBDIRS = src intl po pixmaps doc
+ 
+-gnome_menudir = $(datadir)/applications
++gnome_menudir = $(prefix)/share/gnome/apps/Multimedia
+ gnome_menu_DATA = easytag.desktop
+ 
+ textdir = $(datadir)/$(PACKAGE)
