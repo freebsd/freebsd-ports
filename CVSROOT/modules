@@ -1260,6 +1260,7 @@ docbookide.el	ports/textproc/docbookide.el
 doconfig	ports/sysutils/doconfig
 docproj		ports/textproc/docproj
 docproj-jadetex	ports/textproc/docproj-jadetex
+docproj-nojadetex	ports/textproc/docproj-nojadetex
 docsis		ports/net/docsis
 dog		ports/misc/dog
 domainname	src/bin/domainname
