@@ -3,7 +3,7 @@ Center.  Modula-3 is a modern compiled programming language designed
 for systems programming as well as large applications.  A wealth
 of information about Modula-3 can be found at:
 
-    http://www.research.digital.com/SRC/modula-3/html/home.html
+WWW: http://www.research.digital.com/SRC/modula-3/html/home.html
 
 This port includes patches for a number of bugs found since the
 release of DEC SRC's version 3.6.  To save space and time, only

@@ -3,6 +3,6 @@ its own implementation of the Java standard classes, including the
 AWT classes. Kaffe also does "just-in-time" compilation of Java
 bytecode into machine code for increased execution speed.
 
-See http://www.kaffe.org for more info.
+WWW: http://www.kaffe.org
 
 * Java and Javasoft are registered trademark of Sun Microsystems, Inc.
