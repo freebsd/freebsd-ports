@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	tdir
+PORTNAME=	traindirector
 PORTVERSION=	1.18n
 PORTREVISION=	1
 CATEGORIES=	games
