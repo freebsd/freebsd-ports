@@ -5,3 +5,4 @@ share/doc/most/default.rc
 share/doc/most/lesskeys.rc
 share/doc/most/most-fun.txt
 share/doc/most/most.doc
+@dirrm share/doc/most
