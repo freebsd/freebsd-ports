@@ -39,6 +39,7 @@ do-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#-O2#${CFLAGS}#' ${WRKSRC}/art/qt/Bluecurve/Makefile
+	@${RM} ${THEMES_SUBDIRS}/bluecurve.moc
 
 do-build:
 	@for theme_dir in ${THEMES_SUBDIRS};do \
