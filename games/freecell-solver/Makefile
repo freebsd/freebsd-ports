@@ -7,7 +7,8 @@
 #
 
 PORTNAME=	freecell-solver
-PORTVERSION=	2.8.0
+PORTVERSION=	2.8.2
+PORTCOMMENT=	A program that automatically solves games of Freecell
 CATEGORIES=	games
 MASTER_SITES=	http://vipe.technion.ac.il/~shlomif/freecell-solver/ \
 		http://fc-solve.berlios.de/
