@@ -1,5 +1,8 @@
---- Tkinter.py.orig	Mon Dec  4 19:27:43 2000
-+++ Tkinter.py	Mon Dec  4 19:36:19 2000
+
+$FreeBSD$
+
+--- Tkinter.py.orig	Tue Jan 14 19:47:57 2003
++++ Tkinter.py	Tue Jan 14 19:57:55 2003
 @@ -0,0 +1,22 @@
 +import os
 +
@@ -8,7 +11,7 @@
 +		pass
 +	def call(self, a1='', a2='', a3='', a4='', a5=''):
 +		os.system('echo' + ' ' + a1 + ' ' + a2 + ' ' + a3 + ' ' + a4 + \
-+		 ' ' + a5 + ' >> register.tcl')
++		 ' ' + a5 + ' > register.tcl')
 +
 +class Tk:
 +	tk = None
