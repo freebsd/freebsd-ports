@@ -1,0 +1,4 @@
+Mailsync is a way of keeping a collection of mailboxes synchronized. The
+mailboxes may be on the local filesystem or on an IMAP server.
+
+WWW:   http://mailsync.sourceforge.net/

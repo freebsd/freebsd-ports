@@ -1,0 +1,40 @@
+--- Makefile.orig	Thu Oct 24 16:03:07 2002
++++ Makefile	Wed Feb 26 23:39:48 2003
+@@ -1,32 +1,32 @@
+ # compiling with g++-3 worked for me with the commented ## lines - tpo
+ 
+ # path to c-client headers
+-C = /usr/include/c-client
++C = ${PREFIX}/include/c-client
+ #C = ../../libs/imap-2002.RC5/c-client/
+ ##C = /usr/include/c-client -I/usr/include/g++-v3/
+ 
+ # path to c-client library
+ # linking dynamically
+-CCLIENTLIB = /usr/lib/libc-client.so
++CCLIENTLIB = ${PREFIX}/lib/libc-client4.so
+ # linkging statically
+ #CCLIENTLIB = ../imap-2001a/c-client/c-client.a
+ 
+ # compiler
+-CC = g++
++CC = ${CXX}
+ ##CC = g++-3.0
+ 
+ # flags for your compiler
+ CFLAGS = -g  -O2 -Wall -I$(C)
+ 
+ # required libraries
+-LDFLAGS = -lm -lssl -lgssapi_krb5
++LDFLAGS = -lm -lssl
+ # if your system requires pam to access crypt() you have to link pam in
+ #LDFLAGS = -lm -lssl -lpam
+ 
+ default: mailsync
+ 
+ mailsync: mailsync.o $(CCLIENTLIB)
+-	$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)
++	${CC} $(CFLAGS) -o $@ $^ $(LDFLAGS)
+ 
+ clean:
+ 	rm -f mailsync mailsync.o core
