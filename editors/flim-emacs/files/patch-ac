@@ -1,0 +1,14 @@
+--- mime-en.texi.orig	Sun Dec 27 17:48:47 1998
++++ mime-en.texi	Sun Dec 27 17:49:17 1998
+@@ -9,6 +9,11 @@
+ @node Top, Introduction, (dir), (dir)
+ @top FLIM 1.9 Manual about MIME Features
+ 
++@dircategory The Emacs editor and associated tools 
++@direntry 
++* mime-en: (mime-en).		MIME features for GNU Emacs. (English)
++@end direntry 
++
+ @ifinfo
+ 
+ This file documents MIME features of FLIM, a Internet message

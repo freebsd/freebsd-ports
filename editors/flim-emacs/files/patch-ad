@@ -1,0 +1,14 @@
+--- mime-ja.texi.orig	Sun Dec 27 17:46:55 1998
++++ mime-ja.texi	Sun Dec 27 17:48:34 1998
+@@ -9,6 +9,11 @@
+ @node Top, Introduction, (dir), (dir)
+ @top FLIM 1.9 MIME 機能説明書
+ 
++@dircategory The Emacs editor and associated tools
++@direntry
++* mime-ja: (mime-ja).		MIME features for GNU Emacs. (Japanese)
++@end direntry
++
+ @ifinfo
+ 
+ This file documents MIME features of FLIM, a Internet message
