@@ -20,7 +20,8 @@ BUILD_DEPENDS=	gesym-config:${PORTSDIR}/cad/geda-symbols
 
 USE_LIBTOOL=	yes
 USE_AUTOCONF=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-gdgeda
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
