@@ -7,7 +7,7 @@
 -	$(shell $(MOZILLA_CONFIG) --cflags)
 +	$(shell $(MOZILLA_CONFIG) --cflags) \
 +	$(shell for i in \
-+		`find $${X11BASE}/lib/thunderbird/include/thunderbird-1.0 -type d`; \
++		`find $${X11BASE}/lib/thunderbird/include/thunderbird-%%TBVER%% -type d`; \
 +		do echo -n "-I$$i "; done)
  
  CXXFLAGS += \
