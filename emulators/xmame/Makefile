@@ -154,8 +154,23 @@ CFLAGS+=	-O3 -march=i686 -Wall -Wno-unused -funroll-loops \
 		-malign-functions=4 -malign-jumps=4 -malign-loops=4
 .endif
 
-# SDL extension - enabled by default because x{mame,mess} can run full
+# Choose one of several display targets:
+#  WITH_GL	OpenGL based, displays vector games with hardware
+#		acceleration
+#  WITH_SDL	Uses the SDL library to be able to play fullscreen
+#		without root rights
+#  WITH_X11	The standard display target, should work without
+#		dependancies other than X
+#
+# WITH_SDL is enabled by default because x{mame,mess} can run full
 # screen without having to be setuid root.
+.if defined(WITH_GL) && ${WITH_GL} == "yes"
+CFLAGS+=	${PTHREAD_CFLAGS}
+USE_MESA=	yes
+DISPLAY_METHOD=	xgl
+PLIST_SUB+=	OPENGL=""
+.else
+PLIST_SUB+=	OPENGL="@comment "
 .if !defined(WITH_SDL) || ${WITH_SDL} != "no"
 LIB_DEPENDS=    SDL-1.1.3:${PORTSDIR}/devel/sdl-devel
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
@@ -164,8 +179,11 @@ DISPLAY_METHOD=	SDL
 pre-everything::
 	@${ECHO_MSG} "===> If you don't want ${MAMEMESS:U} to be built with SDL support,"
 	@${ECHO_MSG} "     use \"make WITH_SDL=no\""
+	@${ECHO_MSG} "===> You can also build ${MAMEMESS:U} with OpenGL support."
+	@${ECHO_MSG} "     use \"make WITH_GL=yes\" for this"
 .else
 DISPLAY_METHOD=	x11
+.endif
 .endif
 
 # The large number of sed regexes here is intended to make this port a whole
@@ -182,10 +200,11 @@ do-configure:
 		-e "s@= x11@= ${DISPLAY_METHOD}@g" \
 		-e "s@= mame@= ${MAMEMESS}@g" \
 		-e "s@# X86_ASM@${ASM_COMMENT}X86_ASM@g" \
+		-e "s@GLLIBS=.-ldl@GLLIBS= ${PTHREAD_LIBS}@g" \
 			${WRKSRC}/makefile.unix.sed > ${WRKSRC}/makefile.unix
-.if !defined(WITH_SDL) || ${WITH_SDL} != "no"
 	${PERL} -pi -e 's@SDL/@SDL11/@' ${WRKSRC}/src/unix/video-drivers/SDL.c
-.endif
+	${PERL} -pi -e 's@png.h@../../png.h@' \
+				${WRKSRC}/src/unix/video-drivers/glexport.c
 
 post-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} SDL_VIDEODRIVER=aalib \
