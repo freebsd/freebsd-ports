@@ -14,7 +14,7 @@ CATEGORIES=	devel
 MASTER_SITES=	# none
 DISTFILES=	# none
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	A verifier for FreeBSD port directory
 
 NO_BUILD=	yes
