@@ -13,6 +13,8 @@ DISTNAME=	mgetty1.1.21-Jul24
 
 MAINTAINER=	jmz@FreeBSD.org
 
+FORBIDDEN=	"Insecure tempfile handling: can overwrite any file on the system"
+
 WRKSRC=		${WRKDIR}/mgetty-1.1.21
 MAKE_FLAGS=	prefix=${PREFIX} -f
 MAN1=		coverpg.1 \
