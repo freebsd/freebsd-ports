@@ -14,11 +14,12 @@ DISTNAME=	pyWeather
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 USE_PYTHON=	yes
 NO_BUILD=	yes
 
 post-patch:
-	@${PERL} -pi -e "s:/usr/bin/python:${PYTHON_CMD}:g ; \
+	@${REINPLACE_CMD} -e "s:/usr/bin/python:${PYTHON_CMD}:g ; \
 		s:pyWeather.py:pyWeather:g" ${WRKSRC}/pyWeather.py
 
 do-install:
