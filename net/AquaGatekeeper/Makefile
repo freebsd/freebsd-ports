@@ -7,6 +7,7 @@
 
 PORTNAME=	AquaGatekeeper
 PORTVERSION=	1.22
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.aqua.comptek.ru/pub/GateKeeper/ \
 		ftp://www.kuzbass.ru/pub/FreeBSD/ports/distfiles/
@@ -57,9 +58,9 @@ LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x
 .endif
 
 .if ${ARCH} == "amd64"
-DISTNAME=	AquaGatekeeper122FreeBSDamd64
+DISTNAME=	AquaGatekeeper122FreeBSDamd64Build131
 .else
-DISTNAME=	AquaGatekeeper122FreeBSD
+DISTNAME=	AquaGatekeeper122FreeBSDBuild131
 .endif
 
 .include <bsd.port.post.mk>
