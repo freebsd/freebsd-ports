@@ -7063,6 +7063,7 @@ ruby-snmp	ports/net/ruby-snmp
 ruby-soap	ports/net/ruby-soap
 ruby-spread	ports/net/ruby-spread
 ruby-spreadsheet-excel	ports/textproc/ruby-spreadsheet-excel
+ruby-sqlite	ports/databases/ruby-sqlite
 ruby-sqlrelay	ports/databases/ruby-sqlrelay
 ruby-strongtyping	ports/devel/ruby-strongtyping
 ruby-svg	ports/graphics/ruby-svg
