@@ -9,12 +9,13 @@ PORTNAME=	Glib2
 PORTVERSION=	1.040
 PORTREVISION=	0
 CATEGORIES=	devel perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
-		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	../by-authors/id/R/RM/RMCFARLA/Gtk2-Perl \
-		gtk2-perl
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN:S/$/:cpan/} \
+		${MASTER_SITE_SOURCEFORGE:S/$/:sf/}
+MASTER_SITE_SUBDIR=	../by-authors/id/R/RM/RMCFARLA/Gtk2-Perl/:cpan \
+		gtk2-perl/:sf
 PKGNAMEPREFIX=	p5-
-DISTNAME=	Glib-${PORTVERSION}
+DISTFILES=	Glib-${PORTVERSION}${EXTRACT_SUFX}:cpan \
+		Glib-${PORTVERSION}${EXTRACT_SUFX}:sf
 
 MAINTAINER=	clsung@dragon2.net
 COMMENT=	This module provides access to Glib and GObject libraries
