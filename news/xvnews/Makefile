@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	applications
 
 MAINTAINER=	shanee@augusta.de
 
+BROKEN=		"Does not compile on -current; manpage does not build on -stable"
+
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
 USE_IMAKE=	yes
