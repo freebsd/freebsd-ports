@@ -21,14 +21,14 @@ MAINTAINER=	billf@FreeBSD.org
 LIB_DEPENDS=	snmp.4:${PORTSDIR}/net/net-snmp4
 .endif
 
+USE_GNOMENG=	yes
 .if !defined(WITHOUT_X11)
 USE_X_PREFIX=	yes
-USE_GTK=	yes
+USE_GNOME=	gtk12
 MAN1+=		ethereal.1
 PLIST_SUB+=	ETHEREAL=bin/ethereal
 .else
 PLIST_SUB+=	ETHEREAL="@comment ethereal not built"
-USE_GNOMENG=	yes
 USE_GNOME=	glib12
 CONFIGURE_ARGS+=	--enable-ethereal=no \
 			--disable-gtktest
