@@ -1,6 +1,6 @@
---- configure.in.orig	Fri Nov 22 03:46:49 2002
-+++ configure.in	Tue Nov 26 14:48:27 2002
-@@ -14,7 +14,7 @@
+--- configure.in.orig	Sun Mar  2 05:58:12 2003
++++ configure.in	Thu Mar  6 22:03:33 2003
+@@ -12,7 +12,7 @@
  AM_INIT_AUTOMAKE(nagios-plugins,${PACKAGE_VERSION})
  AM_CONFIG_HEADER(plugins/config.h plugins/common.h plugins/version.h plugins/netutils.h plugins/utils.h plugins/popen.h)
  
@@ -9,7 +9,7 @@
  
  dnl Figure out how to invoke "install" and what install options to use.
  
-@@ -56,7 +56,6 @@
+@@ -60,7 +60,6 @@
  AC_ARG_WITH(nagios_group,--with-nagios-group=<group> sets group name to run nagios,nagios_grp=$withval,nagios_grp=nagios)
  AC_SUBST(nagios_usr)
  AC_SUBST(nagios_grp)
@@ -17,18 +17,7 @@
  AC_SUBST(INSTALL_OPTS)
  
  AC_ARG_WITH(trusted_path,--with-trusted-path=/bin:/sbin:/usr/bin:/usr/sbin sets trusted path for executables called by scripts,trusted_path=$withval,trusted_path=/bin:/sbin:/usr/bin:/usr/sbin)
-@@ -102,8 +101,8 @@
-     AC_CHECK_HEADERS(postgresql/libpq-fe.h)
-     AC_CHECK_HEADERS(libpq-fe.h)
-     if test  "$ac_cv_header_pgsql_libpq_fe_h" = "yes"; then
--      PGLIBS="-lpq -lcrypt"
--      PGINCLUDE="-I/usr/include/pgsql"
-+      PGLIBS="-L$PGSQL/lib -lpq -lcrypt"
-+      PGINCLUDE="-I$PGSQL/include/pgsql"
-     elif test  "$ac_cv_header_postgresql_libpq_fe_h" = "yes"; then
-       PGLIBS="-L$PGSQL/lib -lpq -lcrypt"
-       PGINCLUDE="-I/usr/include/postgresql"
-@@ -131,25 +130,37 @@
+@@ -143,25 +142,37 @@
  LIBS="$_SAVEDLIBS"
  CPPFLAGS="$_SAVEDCPPFLAGS"
  
@@ -48,11 +37,11 @@
  if test "$ac_cv_lib_radiusclient_rc_read_config" = "yes"; then
    EXTRAS="$EXTRAS check_radius"
 -	RADIUSLIBS="-lradiusclient"
-+	RADIUSLIBS="-L${LOCALBASE}/lib -lradiusclient"
++  RADIUSLIBS="-L${LOCALBASE}/lib -lradiusclient"
    AC_SUBST(RADIUSLIBS)
  else
    AC_MSG_WARN([Skipping radius plugin])
-   AC_MSG_WARN([install radius libs to compile this plugin (see Requirements).])
+   AC_MSG_WARN([install radius libs to compile this plugin (see REQUIREMENTS).])
  fi
  LIBS="$_SAVEDLIBS"
 +fi
@@ -72,8 +61,8 @@
    AC_SUBST(LDAPLIBS)
    AC_SUBST(LDAPINCLUDE)
    EXTRAS="$EXTRAS check_ldap"
-@@ -158,7 +169,7 @@
-   AC_MSG_WARN([install LDAP libs to compile this plugin (see Requirements).])
+@@ -170,7 +181,7 @@
+   AC_MSG_WARN([install LDAP libs to compile this plugin (see REQUIREMENTS).])
  fi
  LIBS="$_SAVEDLIBS"
 -
@@ -81,32 +70,7 @@
  
  dnl Check for mysql libraries
  _SAVEDLIBS="$LIBS"
-@@ -351,24 +362,6 @@
-   LIBS="$LIBS -lsnprintf" DEPLIBS="$DEPLIBS libsnprintf.a"
- fi
- 
--dnl We used to not do long options unless a compatible lib was found
--dnl Now we provide code and make libgetopt if native is not suitable
--AC_MSG_CHECKING(for getopt_long)
--AC_TRY_COMPILE([#include <getopt.h>
--                #include <stdlib.h>],
--               [int option_index=0;
--                static struct option *long_options;
--                getopt_long(0,NULL,"+h",long_options,&option_index);],
--               [AC_DEFINE(HAVE_GETOPT_H,1,[Define if getopt headers are found])
--                AC_DEFINE(HAVE_GETOPT_LONG,1,[Define if getopt_long is found])
--                AC_MSG_RESULT(yes)],
--               [AC_DEFINE(HAVE_GETOPT_H,1,[Define if getopt headers are found])
--                AC_DEFINE(HAVE_GETOPT_LONG,1,[Define if getopt_long is found])
--                AC_MSG_RESULT(no)
--                import_sources=getopt
--                LIBS="$LIBS -lgetopt"
--                DEPLIBS="$DEPLIBS libgetopt.a"])
--
- AC_TRY_COMPILE([#include <sys/time.h>],
-                [struct timeval *tv;
-                 struct timezone *tz;],
-@@ -775,6 +768,8 @@
+@@ -818,6 +829,8 @@
  	AC_DEFINE_UNQUOTED(WHO_COMMAND,"$PATH_TO_WHO",[path and arguments for invoking 'who'])
  fi
  
@@ -115,7 +79,7 @@
  AC_PATH_PROG(PATH_TO_SNMPGET,snmpget)
  if test -x "$PATH_TO_SNMPGET"
  then
-@@ -797,7 +792,10 @@
+@@ -840,7 +853,10 @@
  	echo "** Tried $PERL - install Net::SNMP perl module if you want to"
  	echo "        use the perl snmp plugins"
  fi
@@ -126,7 +90,7 @@
  AC_PATH_PROG(PATH_TO_QUAKESTAT,quakestat)
  AC_PATH_PROG(PATH_TO_QSTAT,qstat)
  if test -x "$PATH_TO_QUAKESTAT"
-@@ -811,7 +809,10 @@
+@@ -854,7 +870,10 @@
  else
  	echo "** Get qstat from http://www.activesw.com/people/steve/qstat.html in order to make check_game plugin"
  fi
@@ -137,7 +101,7 @@
  AC_PATH_PROG(PATH_TO_FPING,fping)
  if test -x "$PATH_TO_FPING"
  then
-@@ -819,6 +820,7 @@
+@@ -862,6 +881,7 @@
  	EXTRAS="$EXTRAS check_fping"
  else
  	echo "** Get fping from http://www.fping.com in order to make check_fping plugin"
