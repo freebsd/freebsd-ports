@@ -7,6 +7,7 @@
 
 PORTNAME=	w3m
 PORTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES+=	www ipv6
 MASTER_SITES=	ftp://ei5nazha.yz.yamagata-u.ac.jp/w3m/ \
 		http://mi.med.tohoku.ac.jp/~satodai/w3m/src/ \
