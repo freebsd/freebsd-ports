@@ -7,16 +7,15 @@
 #
 
 PORTNAME=	nInvaders
-PORTVERSION=	0.0.10
+PORTVERSION=	0.1.1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ninvaders
-DISTNAME=	ninvaders${PORTVERSION}
+DISTNAME=	ninvaders-${PORTVERSION}
 
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	The nIvaders game is a Space Invaders clone for ncurses
 
-WRKSRC=		${WRKDIR}/ninvaders-${PORTVERSION}
 USE_REINPLACE=	yes
 
 post-patch:
