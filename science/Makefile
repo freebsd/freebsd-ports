@@ -12,6 +12,7 @@
     SUBDIR += euler
     SUBDIR += felt
     SUBDIR += flounder
+    SUBDIR += gave
     SUBDIR += gchempaint
     SUBDIR += gchemutils
     SUBDIR += gdis
