@@ -1,28 +1,24 @@
 # New ports collection makefile for:	xinetd
-# Version required:	2.2.1
-# Date created:		28 June 1996
-# Whom:			markm
+# Version required:			2.1.8.6b5
+# Date created:				28 June 1996
+# Whom:					markm
 #
-# $Id: Makefile,v 1.5 1998/07/11 00:37:00 steve Exp $
+# $Id: Makefile,v 1.6 1998/12/06 09:34:31 vanilla Exp $
 #
 
-DISTNAME=	xinetd-2.2.1
+DISTNAME=	xinetd-2.1.8.6b5
 CATEGORIES=	security
-MASTER_SITES=	ftp://coast.cs.purdue.edu/pub/tools/unix/xinetd/
+MASTER_SITES=	http://synack.net/xinetd/
 
 MAINTAINER=	markm@FreeBSD.ORG
 
-MAN1=		xinetd.1
-MAN5=		xinetd.conf.5 xinetd.log.5
+FETCH_BEFORE_ARGS=	-b
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+ALL_TARGET=	build
 
-do-build:
-	cd ${WRKSRC} ; ./compile-src -os freebsd2
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/xinetd/xinetd ${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/xinetd/xinetd.man ${PREFIX}/man/man1/xinetd.1
-	${INSTALL_MAN} ${WRKSRC}/xinetd/xinetd.conf.man ${PREFIX}/man/man5/xinetd.conf.5
-	${INSTALL_MAN} ${WRKSRC}/xinetd/xinetd.log.man ${PREFIX}/man/man5/xinetd.log.5
+MAN5=		xinetd.conf.5
+MAN8=		xinetd.8 xinetd.log.8
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/xinetd.sh ]; then \
@@ -31,5 +27,6 @@ post-install:
 		${ECHO} "[ -x ${PREFIX}/sbin/xinetd ] && ${PREFIX}/sbin/xinetd && echo -n ' xinetd'" >> ${PREFIX}/etc/rc.d/xinetd.sh; \
 		chmod 751 ${PREFIX}/etc/rc.d/xinetd.sh; \
 	fi
+	strip ${PREFIX}/sbin/xinetd
 
 .include <bsd.port.mk>

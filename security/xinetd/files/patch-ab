@@ -1,32 +1,16 @@
---- compile-src.orig	Thu Oct 16 09:06:46 1997
-+++ compile-src	Thu Oct 16 09:09:32 1997
-@@ -43,7 +43,7 @@
- # The default is optimization.
- #
- cc=
--ccopt=-O
-+ccopt=-O2
- lib_defs=
- xinetd_defs=
+--- Makefile.in.orig	Tue May 11 01:06:13 1999
++++ Makefile.in	Tue May 11 01:06:36 1999
+@@ -39,11 +39,11 @@
+ 		INCLUDEDIR=-I$(LIB_INCLUDEDIR) \
+ 		"DEFS=$(PROG_DEFS)" \
+ 		"CC=$(CC)" \
+-		DEBUG=-O
++		"DEBUG=$(CFLAGS)"
  
-@@ -677,13 +677,13 @@
- case "$want_SB" in
- 	yes) modify_manpages=yes ;;
- 	no)  modify_manpages= ;;
--	*)   echo -n "Convert .B -> .SB in man pages ? (if you are not sure, say no) -->"
--	read x
--	if test "$x" = "y" -o "$x" = "yes"; then
--		modify_manpages=yes
--	else
--		modify_manpages=
--	fi
-+#	*)   echo -n "Convert .B -> .SB in man pages ? (if you are not sure, say no) -->"
-+#	read x
-+#	if test "$x" = "y" -o "$x" = "yes"; then
-+#		modify_manpages=yes
-+#	else
-+#		modify_manpages=
-+#	fi
- esac
+ makelibs:
+ 	for lib in $(MANDATORY_LIBS) ; do \
+-		( cd libs/src/$$lib ; make install LIBDIR=$(LIB_INSTALLDIR) INCLUDEDIR=$(LIB_INCLUDEDIR) MANDIR=$(LIB_MANDIR) "INSTALL=$(INSTALL_CMD)" "DEFS=$(LIB_DEFS)" RANLIB=true "CC=$(CC)" DEBUG=-O ) \
++		( cd libs/src/$$lib ; make install LIBDIR=$(LIB_INSTALLDIR) INCLUDEDIR=$(LIB_INCLUDEDIR) MANDIR=$(LIB_MANDIR) "INSTALL=$(INSTALL_CMD)" "DEFS=$(LIB_DEFS)" RANLIB=true "CC=$(CC)" "DEBUG=$(CFLAGS)" ) \
+ 	; done
  
- if test "$modify_manpages" ; then
+ install:
