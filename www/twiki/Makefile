@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	twiki
-PORTVERSION=	20040901
+PORTVERSION=	20040902
 CATEGORIES=	www
 MASTER_SITES=	http://twiki.org/swd/ http://www.thoeny.com/peter/twiki/
 DISTNAME=	TWiki${PORTVERSION}
