@@ -271,3 +271,4 @@ math/ruby-bigfloat||2003-04-19|integrated into ruby16-shim-ruby18
 palm/prc-tools-binutils||2003-04-27|integrate into palm/prc-tools
 palm/prc-tools-gcc||2003-04-27|integrate into palm/prc-tools
 multimedia/gini|net/gini|2003-04-27|inappropriate primary CATEGORIES
+graphics/gimp-manual-ps||2003-04-29|new versions of the manual not available as PS
