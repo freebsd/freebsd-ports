@@ -12,7 +12,7 @@ CATEGORIES=	japanese
 MASTER_SITES=	http://home.jp.FreeBSD.org/~mita/LOCAL_PORTS/
 DISTNAME=	ja-${PORTNAME}-980222
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mita@FreeBSD.org
 COMMENT=	2-D drawing facility (with Japanese configuration)
 
 RUN_DEPENDS=	tgif:${PORTSDIR}/graphics/tgif-nls\

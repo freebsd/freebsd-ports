@@ -13,7 +13,7 @@ DISTFILES=	pstoepsi README.this-site
 DIST_SUBDIR=	pstoepsi
 EXTRACT_ONLY=	#empty
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mita@FreeBSD.org
 COMMENT=	Wiliam Chia-Wei Cheng's yet another PS to EPSI converter
 
 RUN_DEPENDS=	pbmtoepsi:${PORTSDIR}/graphics/netpbm

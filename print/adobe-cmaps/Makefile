@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.gyve.org/pub/gs-cjk/ \
 		http://www.matsusaka-u.ac.jp/mirror/gs-cjk/
 DIST_SUBDIR=	ghostscript
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mita@jp.FreeBSD.org
 COMMENT=	Adobe CMap collection
 
 NO_WRKSUBDIR=	yes
