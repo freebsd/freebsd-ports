@@ -20,6 +20,6 @@ MAN1=		nload.1
 MANCOMPRESSED=	yes
 
 post-install:
-	strip ${PREFIX}/bin/nload
+	${STRIP_CMD} ${PREFIX}/bin/nload
 
 .include <bsd.port.mk>
