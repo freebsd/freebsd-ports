@@ -32,14 +32,9 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 IGNORE=		"Out-of-date, use www/mozilla instead for now"
 
 MOZILLA?=	mozilla-devel
-MOZ_SUFX=	-devel
+MOZ_SUFX?=	-devel
 
-.if defined(WITH_GTK1)
-PKGNAMESUFFIX=	-gtk
-USE_GNOME=	gtk12 orbit
-.else
 USE_GNOME=	gtk20 libidl
-.endif
 
 LATEST_LINK=	${MOZILLA}
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude */CVS/* \
@@ -89,11 +84,7 @@ MOZ_EXTENSIONS=	default
 CONFIGURE_ENV=	MOZ_INTERNAL_LIBART_LGPL=1 \
 		LOCALBASE=${LOCALBASE}
 
-.if defined(WITH_GTK1)
-CONFIGURE_ARGS+=	--enable-default-toolkit=gtk
-.else
 CONFIGURE_ARGS+=	--enable-default-toolkit=gtk2
-.endif
 
 ESD_LIB=	libesd.so.2
 FREETYPE_LIB=	libfreetype.so.9
