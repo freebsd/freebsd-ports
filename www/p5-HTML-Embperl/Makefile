@@ -16,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/p5-Apache
 
+IS_INTERACTIVE=	yes
 USE_PERL5=	yes
 
 MAN3=		HTML::Embperl.3 HTML::EmbperlD.3
