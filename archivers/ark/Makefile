@@ -7,6 +7,7 @@
 
 PORTNAME=	kdeutils
 PORTVERSION=	${KDE_VERSION}
+PORTREVISION=	1
 CATEGORIES?=	misc kde
 MASTER_SITES=		${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
@@ -25,13 +26,20 @@ MAN1=		efax.1 efix.1 fax.1
 
 #klaptop doesn't like alpha because alpha doesn't support apm
 .if ${MACHINE_ARCH} == "alpha"
-post-extract:
-	mv ${WRKSRC}/subdirs ${WRKSRC}/subdirs.orig
-	grep -v klaptopdaemon ${WRKSRC}/subdirs.orig > ${WRKSRC}/subdirs
-
+DO_NOT_COMPILE+=klaptopdaemon
 PLIST_SUB+=	ALPHA_NA="@comment "
 .else
 PLIST_SUB+=	ALPHA_NA=""
+.endif
+# kfloppy is a mostly broken, non-standard, linux-centric pain...
+.if !defined(WITH_KFLOPPY)
+DO_NOT_COMPILE+=kfloppy
+PLIST_SUB+=	KFLOPPY="@comment "
+.else
+PLIST_SUB+=	KFLOPPY=""
+.endif
+.if defined(DO_NOT_COMPILE)
+CONFIGURE_ENV+=	DO_NOT_COMPILE="${DO_NOT_COMPILE}"
 .endif
 
 .include <bsd.port.mk>
