@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	screem
-PORTVERSION= 	0.2.10
+PORTVERSION= 	0.3.0
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.screem.org/src/
@@ -20,7 +20,7 @@ LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
 		glade.4:${PORTSDIR}/devel/libglade \
 		guile.9:${PORTSDIR}/lang/guile \
 		wwwcore.1:${PORTSDIR}/www/libwww
-RUN_DEPENDS=    gnomecc:${PORTSDIR}/sysutils/gnomecontrolcenter
+RUN_DEPENDS=    panel:${PORTSDIR}/x11/gnomecore
 
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
@@ -44,6 +44,7 @@ pre-patch:
 		s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
 		's|\@GNOME_DATA_PREFIX\@/gnome|\@GNOME_DATA_PREFIX\@|g ; \
+		 s|\$\(datadir\)/gnome|\$\(datadir\)|g ; \
 		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 
 .include <bsd.port.mk>

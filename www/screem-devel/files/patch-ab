@@ -1,0 +1,11 @@
+--- configure	2000/08/21 10:10:04	1.1
++++ configure	2000/08/21 10:10:33
+@@ -5006,7 +5006,7 @@
+   HAVE_PTHREADS_FALSE=
+ fi
+ 
+-GTHREAD_LIBS=`glib-config gthread --libs`
++GTHREAD_LIBS=`${GLIB_CONFIG} gthread --libs`
+ 
+ 
+ 

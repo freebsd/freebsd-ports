@@ -1,5 +1,62 @@
 bin/screem
 share/gnome/apps/Development/screem.desktop
+share/gnome/help/screem/C/authors.html
+share/gnome/help/screem/C/buttons.html
+share/gnome/help/screem/C/docbook.css
+share/gnome/help/screem/C/figs/color.png
+share/gnome/help/screem/C/figs/copybutton.png
+share/gnome/help/screem/C/figs/css.png
+share/gnome/help/screem/C/figs/emailwiz.png
+share/gnome/help/screem/C/figs/entity.png
+share/gnome/help/screem/C/figs/extbutton.png
+share/gnome/help/screem/C/figs/filebutton.png
+share/gnome/help/screem/C/figs/find.png
+share/gnome/help/screem/C/figs/fontbutton.png
+share/gnome/help/screem/C/figs/form.png
+share/gnome/help/screem/C/figs/formbutton.png
+share/gnome/help/screem/C/figs/frame.png
+share/gnome/help/screem/C/figs/gallery.png
+share/gnome/help/screem/C/figs/linkwiz.png
+share/gnome/help/screem/C/figs/main.png
+share/gnome/help/screem/C/figs/miscbutton.png
+share/gnome/help/screem/C/figs/newPrj.png
+share/gnome/help/screem/C/figs/pagewiz.png
+share/gnome/help/screem/C/figs/picwizard.png
+share/gnome/help/screem/C/figs/pref.png
+share/gnome/help/screem/C/figs/printpreview.png
+share/gnome/help/screem/C/figs/quickbutton.png
+share/gnome/help/screem/C/figs/sitepref.png
+share/gnome/help/screem/C/figs/sitetemplate.png
+share/gnome/help/screem/C/figs/spellCheck.png
+share/gnome/help/screem/C/figs/ssi.png
+share/gnome/help/screem/C/figs/table.png
+share/gnome/help/screem/C/figs/tablebutton.png
+share/gnome/help/screem/C/figs/tagbutton.png
+share/gnome/help/screem/C/figs/todo.png
+share/gnome/help/screem/C/figs/upload.png
+share/gnome/help/screem/C/figs/wizardbutton.png
+share/gnome/help/screem/C/index.html
+share/gnome/help/screem/C/install.html
+share/gnome/help/screem/C/ln7.html
+share/gnome/help/screem/C/menus.html
+share/gnome/help/screem/C/pgrmref.html
+share/gnome/help/screem/C/screem.sgml
+share/gnome/help/screem/C/setup.html
+share/gnome/help/screem/C/started.html
+share/gnome/help/screem/C/stylesheet-images/caution.gif
+share/gnome/help/screem/C/stylesheet-images/home.gif
+share/gnome/help/screem/C/stylesheet-images/important.gif
+share/gnome/help/screem/C/stylesheet-images/next.gif
+share/gnome/help/screem/C/stylesheet-images/note.gif
+share/gnome/help/screem/C/stylesheet-images/prev.gif
+share/gnome/help/screem/C/stylesheet-images/tip.gif
+share/gnome/help/screem/C/stylesheet-images/toc-blank.gif
+share/gnome/help/screem/C/stylesheet-images/toc-minus.gif
+share/gnome/help/screem/C/stylesheet-images/toc-plus.gif
+share/gnome/help/screem/C/stylesheet-images/up.gif
+share/gnome/help/screem/C/stylesheet-images/warning.gif
+share/gnome/help/screem/C/topic.dat
+share/gnome/help/screem/C/window.html
 share/gnome/mc/templates/screem.desktop
 share/gnome/mime-info/screem.keys
 share/gnome/mime-info/screem.mime
@@ -35,6 +92,7 @@ share/gnome/screem/glade/linkWizard.glade
 share/gnome/screem/glade/screem.glade
 share/gnome/screem/glade/uploadwizard.glade
 share/gnome/screem/hints/screem_hints.txt
+share/gnome/screem/hints/screem_hints_fr.txt
 share/gnome/screem/htmlhelp/alist.html
 share/gnome/screem/htmlhelp/attrs.html
 share/gnome/screem/htmlhelp/aural.css
@@ -180,6 +238,7 @@ share/locale/it/LC_MESSAGES/screem.mo
 share/locale/ja/LC_MESSAGES/screem.mo
 share/locale/pl/LC_MESSAGES/screem.mo
 share/locale/ru/LC_MESSAGES/screem.mo
+share/locale/tr/LC_MESSAGES/screem.mo
 @dirrm share/gnome/screem/syntax
 @dirrm share/gnome/screem/resources/PHP3
 @dirrm share/gnome/screem/resources/Javascript
@@ -206,3 +265,7 @@ share/locale/ru/LC_MESSAGES/screem.mo
 @dirrm share/gnome/screem
 @dirrm share/gnome/pixmaps/screem/splash
 @dirrm share/gnome/pixmaps/screem
+@dirrm share/gnome/help/screem/C/stylesheet-images
+@dirrm share/gnome/help/screem/C/figs
+@dirrm share/gnome/help/screem/C
+@dirrm share/gnome/help/screem
