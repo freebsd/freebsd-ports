@@ -20,10 +20,24 @@
 ;;   (1=Shift JIS, 2=JIS, 3=EUC)
 ;(setq YaTeX-kanji-code 3)
 ;;
-;; For XEmacs, it is not supported that YaTeX originally color
-;; LaTeX commands (e.g. \section{foo}) by using hilit19
-;; so you had better uncomment the next line.
-;(put 'yatex-mode 'font-lock-defaults 'latex-mode)
+
+;; To highlight buffer, LaTeX commands (e.g. \section{foo})
+(if (featurep 'xemacs)
+    (progn
+      ;;;;;; XEmacs 21 or later ;;;;;;
+    	(setq YaTeX-use-font-lock t)
+      )
+  (if (string-match  "19.34" emacs-version)
+      (progn
+	;;;;;; Emacs 19.34 ;;;;;
+	(setq YaTeX-use-hilit19 t)
+	)
+    (progn
+      ;;;;;; Emacs 20 or later ;;;;;;
+	(setq YaTeX-use-hilit19 t)
+;    	(setq YaTeX-use-font-lock t)
+	)))
+
 ;;
 ;;;;;;;; Yahtml (another html-mode) ;;;;;;
 ;(setq auto-mode-alist
