@@ -31,7 +31,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
   <vuln vid="f7a3b18c-624c-4703-9756-b6b27429e5b0">
-    <topic>Remote denial of service in leafnode</topic>
+    <topic>leafnode denial-of-service triggered by article request</topic>
     <affects>
       <package>
 	<name>leafnode</name>
@@ -65,7 +65,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   </vuln>
 
   <vuln vid="7b0208ff-3f65-4e16-8d4d-48fd9851f085">
-    <topic>Remote denial of service in leafnode's fetchnews program</topic>
+    <topic>leafnode fetchnews denial-of-service triggered by missing
+      header</topic>
     <affects>
       <package>
 	<name>leafnode</name>
@@ -96,7 +97,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   </vuln>
 
   <vuln vid="a051a4ec-3aa1-4dd1-9bdc-a61eb5700153">
-    <topic>Remote denial of service in leafnode's fetchnews program</topic>
+    <topic>leafnode fetchnews denial-of-service triggered by truncated
+      transmission</topic>
     <affects>
       <package>
 	<name>leafnode</name>
