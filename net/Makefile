@@ -377,6 +377,7 @@
     SUBDIR += wide-dhcp
     SUBDIR += wmnet
     SUBDIR += wmnetmon
+    SUBDIR += wmqmon
     SUBDIR += xarchie
     SUBDIR += xbone
     SUBDIR += xferstats

@@ -1,0 +1,42 @@
+# New ports collection makefile for:	wmqmon
+# Date created:				Mon May 28 13:59:51 EDT 2001
+# Whom:					Patrick Li <pat@databits.net>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	wmqmon
+PORTVERSION=	0.7
+CATEGORIES=	net windowmaker
+MASTER_SITES=	http://www.gibfest.org/~w1nter/
+DISTNAME=	${PORTNAME}.${PORTVERSION}
+
+MAINTAINER=	pat@databits.net
+
+ONLY_FOR_ARCHS=	i386
+WRKSRC=		${WRKDIR}/${PORTNAME}/${PORTNAME}
+USE_GMAKE=	yes
+USE_X_PREFIX=	yes
+USE_XPM=	yes
+
+do-configure:
+	@${PERL} -pi -ne "s|/usr/X11R6/|${X11BASE}/|" \
+		${WRKSRC}/Makefile
+
+do-install:
+	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	@${ECHO} "===>   Installing wmqmon.rcfile.example in ${PREFIX}/share/examples/${PORTNAME}"
+	@${MKDIR} ${PREFIX}/share/examples/${PORTNAME}
+	@${INSTALL_DATA} ${WRKSRC}/wmqmon.rcfile.example ${PREFIX}/share/examples/${PORTNAME}
+	@${ECHO} "===>   Modify to your config and copy to ~/.wmqmon.rcfile.example"
+.ifndef(NOPORTDOCS)
+	@${ECHO} "===>   Installing README in ${PREFIX}/share/doc/${PORTNAME}"
+	@${ECHO} "===>   Please read it for usage instructions"
+	@${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 555 \
+		${PREFIX}/share/doc/${PORTNAME}
+.for file in BUGS README
+	@${INSTALL_DATA} ${WRKSRC}/../${file} ${PREFIX}/share/doc/${PORTNAME}
+.endfor
+.endif # !NOPORTDOCS
+
+.include <bsd.port.mk>
