@@ -13,7 +13,7 @@ CATEGORIES=	editors
 LANGPREFIX=	pl
 LANGSUFFIX=	PL
 LANGDIST+=	pl_PL.zip
-MASTERDIR=	${.CURDIR}/../ooodict-all
+MASTERDIR=	${.CURDIR}/../../editors/ooodict-all
 RDEP=		${PORTSDIR}/editors/openoffice-pl
 
 .include "${MASTERDIR}/Makefile"
