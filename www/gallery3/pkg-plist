@@ -4,6 +4,7 @@
 %%PORTDOCS%%share/doc/gallery/UPGRADING
 %%GALLERYDIR%%/Version.php
 %%GALLERYDIR%%/add_comment.php
+%%GALLERYDIR%%/add_photo.php
 %%GALLERYDIR%%/add_photos.php
 %%GALLERYDIR%%/album_permissions.php
 %%GALLERYDIR%%/albums.php
@@ -48,6 +49,7 @@
 %%GALLERYDIR%%/errors/needinit.php
 %%GALLERYDIR%%/errors/reconfigure.php
 %%GALLERYDIR%%/errors/unconfigured.php
+%%GALLERYDIR%%/extra_fields.php
 %%GALLERYDIR%%/gallery_remote.php
 %%GALLERYDIR%%/gallery_remote2.php
 %%GALLERYDIR%%/highlight_photo.php
@@ -130,8 +132,9 @@
 %%GALLERYDIR%%/secure.sh
 %%GALLERYDIR%%/session.php
 %%GALLERYDIR%%/setup/.htaccess
-%%GALLERYDIR%%/setup/check_imagemagick.php
+%%GALLERYDIR%%/setup/backup_albums.php
 %%GALLERYDIR%%/setup/check.inc
+%%GALLERYDIR%%/setup/check_imagemagick.php
 %%GALLERYDIR%%/setup/check_netpbm.php
 %%GALLERYDIR%%/setup/config_data.inc
 %%GALLERYDIR%%/setup/confirm.inc
@@ -158,23 +161,23 @@
 %%GALLERYDIR%%/view_comments.php
 %%GALLERYDIR%%/view_photo.php
 %%GALLERYDIR%%/view_photo_properties.php
+@dirrm %%GALLERYDIR%%/setup
+@dirrm %%GALLERYDIR%%/platform
+@dirrm %%GALLERYDIR%%/layout
+@dirrm %%GALLERYDIR%%/js
+@dirrm %%GALLERYDIR%%/java
+@dirrm %%GALLERYDIR%%/images
+@dirrm %%GALLERYDIR%%/html_wrap
+@dirrm %%GALLERYDIR%%/html
+@dirrm %%GALLERYDIR%%/errors
+@dirrm %%GALLERYDIR%%/css
+@dirrm %%GALLERYDIR%%/classes/remote
+@dirrm %%GALLERYDIR%%/classes/postnuke0.7.1
+@dirrm %%GALLERYDIR%%/classes/postnuke
+@dirrm %%GALLERYDIR%%/classes/nuke5
+@dirrm %%GALLERYDIR%%/classes/gallery
 @dirrm %%GALLERYDIR%%/classes/database/mysql
 @dirrm %%GALLERYDIR%%/classes/database
-@dirrm %%GALLERYDIR%%/classes/gallery
-@dirrm %%GALLERYDIR%%/classes/nuke5
-@dirrm %%GALLERYDIR%%/classes/postnuke
-@dirrm %%GALLERYDIR%%/classes/postnuke0.7.1
-@dirrm %%GALLERYDIR%%/classes/remote
 @dirrm %%GALLERYDIR%%/classes
-@dirrm %%GALLERYDIR%%/errors
-@dirrm %%GALLERYDIR%%/html
-@dirrm %%GALLERYDIR%%/images
-@dirrm %%GALLERYDIR%%/java
-@dirrm %%GALLERYDIR%%/js
-@dirrm %%GALLERYDIR%%/layout
-@dirrm %%GALLERYDIR%%/platform
-@dirrm %%GALLERYDIR%%/setup
 %%PORTDOCS%%@dirrm share/doc/gallery
-@unexec rmdir %D/%%GALLERYDIR%%/html_wrap 2>/dev/null || true
-@unexec rmdir %D/%%GALLERYDIR%%/css 2>/dev/null || true
 @unexec rmdir %D/%%GALLERYDIR%% 2>/dev/null || true
