@@ -37,7 +37,12 @@ DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 .endif
 
+PKGDEINSTALL=	${PKGINSTALL}
+
 post-install:
+	@${FIND} ${PREFIX}/lib/ocaml/site-lib/pcre -type f | \
+		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST}
+	@${ECHO_CMD} "@dirrm lib/ocaml/site-lib/pcre" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec ocamlfind remove pcre 2>/dev/null || true" >> ${TMPPLIST}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
