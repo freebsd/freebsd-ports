@@ -1,0 +1,7 @@
+bin/add
+share/add/add.hlp
+share/doc/add/CHANGES
+share/doc/add/COPYING
+share/doc/add/README
+@dirrm share/add
+@dirrm share/doc/add
