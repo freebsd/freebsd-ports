@@ -3959,6 +3959,7 @@ libU77		ports/devel/libU77
 libX11		ports/x11/libX11
 libXau		ports/x11/libXau
 libXcursor	ports/x11/libXcursor
+libXdamage	ports/x11/libXdamage
 libXdmcp	ports/x11/libXdmcp
 libXext		ports/x11/libXext
 libXfixes	ports/x11/libXfixes
