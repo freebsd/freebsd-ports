@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	enlightenment
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enlightenment Database Library
 
+BROKEN=		checksum mismatch
 USE_LIBTOOL=	yes
 USE_GNOME=	gtk12
 INSTALLS_SHLIB=	yes
