@@ -304,7 +304,7 @@ while [ "$1" ]; do
 			fi
 			;;
 		\"pspell\")
-			echo "LIB_DEPENDS+=	pspell.4:\${PORTSDIR}/textproc/pspell"
+			echo "LIB_DEPENDS+=	aspell.15:\${PORTSDIR}/textproc/aspell"
 			echo "CONFIGURE_ARGS+=--with-pspell=\${LOCALBASE}"
 			;;
 		\"mbregex\")
