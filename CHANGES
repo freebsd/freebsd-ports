@@ -10,6 +10,12 @@ in the release notes.
 
 All ports committers are allowed to commit to this file.
 
+20041113:
+AUTHOR: portmgr@FreeBSD.org
+  Since INDEX version in CVS is always too old, portmgr decided to
+  remove it.  You will still be able to build your own INDEX or use
+  'fetchindex' target in /usr/ports/.
+
 20041109:
 AUTHOR: gnome@FreeBSD.org
   The way GConf schema files are handled has been changed to use the new
