@@ -7,7 +7,6 @@
 
 PORTNAME=	ruby${RUBY_R}
 PORTVERSION=	${RUBY_PORTVERSION}
-PORTREVISION=	1
 CATEGORIES=	lang ruby ipv6
 MASTER_SITES=		${MASTER_SITE_RUBY} \
 			${ONIGURUMA_MASTER_SITES:S,$,:oniguruma,}
@@ -27,7 +26,7 @@ MAINTAINER=	knu@FreeBSD.org
 .if defined(WITH_ONIGURUMA)
 ONIGURUMA_MASTER_SITES=		${MASTER_SITE_RUBY}
 ONIGURUMA_MASTER_SITE_SUBDIR=	contrib
-ONIGURUMA_DISTFILE=		onigd20030109.tar.gz
+ONIGURUMA_DISTFILE=		onigd20030121.tar.gz
 PLIST_SUB+=	ONIGURUMA=""
 .else
 PLIST_SUB+=	ONIGURUMA="@comment "
@@ -62,9 +61,7 @@ LATEST_LINK=	ruby-devel
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != sparc64
 MAKE_ARGS=	-j3
-.endif
 
 .if ${OSVERSION} >= 400014
 CONFIGURE_ARGS+=	--enable-ipv6
