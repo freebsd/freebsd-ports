@@ -1,0 +1,617 @@
+--- gmat.sgm.orig	Thu Jan  1 09:30:00 1970
++++ gmat.sgm	Sun Jan  7 12:44:25 2001
+@@ -0,0 +1,614 @@
++<!-- $Id: gmat.sgm 1.2 1994/08/29 17:53:27 norm Exp $ -->
++
++<chapter id=gmat><title>gmat</>
++
++<sect1><title>Usage</>
++
++<para>
++Usage: <command>gmat</> [switches] filename { [[switches] filename] }
++&hellip;
++</para>
++
++</sect1>
++<sect1><title>Description</>
++
++<para>
++<command>gmat</> handles the routine processing of text documents into
++printed or previewed output.  Beginning with one or more input files (in
++a formatting language like troff or TeX; or in SGML), <command>gmat</>
++performs any necessary preprocessing (e.g. construction of an
++<acronym>SGML</acronym> driver file), executes the appropriate
++formatter, and previews or prints the resulting output file (generally
++PostScript).
++</para>
++
++<para>
++Most aspects of <command>gmat</> are configurable through command line
++switches  and/or configuration files.  <command>gmat</> reads two
++configuration files: the <filename>oratoolsrc</> file and the
++<filename>bookfiles</> file.
++</para>
++
++<para>
++The following command line switches are available:
++
++<variablelist>
++  <varlistentry><term><option>&ndash;d</></term>
++    <listitem><para>
++      Enable debugging.  If the <option>&ndash;d</option> switch is used, 
++      temporary files
++      created by <command>gmat</> are not deleted when <command>gmat</>
++      ends.
++    </para></listitem>
++  </varlistentry>
++  <varlistentry><term><option>&ndash;f</></term>
++    <listitem><para>
++      Keep the output file.  If the <option>&ndash;f</option> switch is used, 
++      the output file
++      is not deleted after previewing or printing.  Ordinarily,
++      <command>gmat</> treats the output file as a temporary file.
++    </para></listitem>
++  </varlistentry>
++  <varlistentry><term><option>&ndash;F</> <replaceable>file</></term>
++    <listitem><para>
++      Specify the name of the output file.  The name of the output file
++      is controlled by the <filename>oratoolsrc</> variable
++      <literal>PS_BASE</> if the <option>&ndash;F</> option is not used.
++    </para></listitem>
++  </varlistentry>
++  <varlistentry><term><option>&ndash;k</></term>
++    <listitem><para>
++      Keep the formatter input file.  The <option>&ndash;k</> option is only meaningful
++      when <acronym>SGML</acronym> files are being processed by
++      <command>gmat</>.  The <acronym>SGML</acronym> file is
++      automatically translated into a formatter input file; if the <option>&ndash;k</>
++      option isn't used, <command>gmat</> treats the output file as a
++      temporary file.
++    </para></listitem>
++  </varlistentry>
++  <varlistentry><term><option>&ndash;K</> <replaceable>file</></term>
++    <listitem><para>
++      Specify the name of the formatter input file.  The name of the
++      formatter input file is controlled by the <filename>oratoolsrc</> variables
++      <literal>EXT_BASE</> and <literal>EXT3L</> if the <option>&ndash;K</> option isn't used.
++    </para></listitem>
++  </varlistentry>
++  <varlistentry><term><option>&ndash;o</> <replaceable>pages</></term>
++    <listitem><para>
++      Specify a list of pages.  Only the pages specified will appear in
++      the output file.  Pages are specified by page number.  By default,
++      all of the pages in the formatter input file will appear in the
++      output file.
++    </para></listitem>
++  </varlistentry>
++  <varlistentry><term><option>&ndash;p</></term>
++    <listitem><para>
++      Print the output file. Selection of the output action is
++      controlled by the <option>&ndash;p</> and <option>&ndash;v</> options and the <filename>oratoolsrc</>
++      variable <literal>ACTION</>. If the <option>&ndash;p</> option is used, the file will be
++      printed regardless of the action specified by the <filename>oratoolsrc</>
++      variable <literal>ACTION</>.
++    </para></listitem>
++  </varlistentry>
++  <varlistentry><term><option>&ndash;P</> <replaceable>printer</></term>
++    <listitem><para>
++      Select printer.  Output will be sent to the printer specified.  If
++      the <option>&ndash;P</> option is not used, output will be sent to the printer 
++      specified by the <filename>oratoolsrc</> variable <literal>PRINTER</>.  This option has
++      no meaning if the output file is not printed (e.g. if the
++      previewer is used instead).   Selection of the output action is
++      controlled by the <option>&ndash;p</> and <option>&ndash;v</> options and the <filename>oratoolsrc</>
++      variable <literal>ACTION</>.
++    </para></listitem>
++  </varlistentry>
++  <varlistentry><term><option>&ndash;q</></term>
++    <listitem><para>
++      Suppress warning messages.  The ``verbosity'' of messages is
++      controlled by the <filename>oratoolsrc</> variables <literal>QUIET</> and <literal>VERBOSE</> and
++      the <option>&ndash;q</> option.
++    </para></listitem>
++  </varlistentry>
++  <varlistentry><term><option>&ndash;s</></term>
++    <listitem><para>
++      Save the <acronym>SGML</acronym> driver file.  If the <option>&ndash;s</> option
++      is not used, <command>gmat</> treats the <acronym>SGML</acronym>
++      driver file (containing the &lt;!DOCTYPE&gt; declaration and the
++      locally defined entities) as a temporary file.
++    </para></listitem>
++  </varlistentry>
++  <varlistentry><term><option>&ndash;S</></term>
++    <listitem><para>
++      Don't merge multiple <acronym>SGML</acronym> files together with
++      an <acronym>SGML</acronym> driver file. If the <option>&ndash;S</> option is
++      used, <command>gmat</> does not build a driver file.  Each
++      <acronym>SGML</acronym> file must contain it's own &lt;DOCTYPE&gt;
++      specification. When multiple <acronym>SGML</acronym> files are
++      given on the command line, <command>gmat</> ordinarily merges them
++      together in the <acronym>SGML</acronym> driver.  If the <option>&ndash;S</>
++      option is specified, each file is processed individually.  
++    </para></listitem>
++  </varlistentry>
++  <varlistentry><term><option>&ndash;T</> <replaceable>progname</></term>
++    <listitem><para>
++      Process the formatter input file with the specified program. This
++      option is not implemented yet.  Ultimately, it will allow
++      <command>gmat</> to handle arbitrary document formatters instead
++      of just gtroff.
++    </para></listitem>
++  </varlistentry>
++  <varlistentry><term><option>&ndash;v</></term>
++    <listitem><para>
++      Preview the output file. Selection of the output action is
++      controlled by the <option>&ndash;p</> and <option>&ndash;v</> options and the <filename>oratoolsrc</>
++      variable <literal>ACTION</>. If the <option>&ndash;v</> option is used, the file will be
++      previewed regardless of the action specified by the <filename>oratoolsrc</>
++      variable <literal>ACTION</>.
++    </para></listitem>
++  </varlistentry>
++  <varlistentry><term><option>&ndash;W</></term>
++    <listitem><para>
++      Wait on error.  If <command>gmat</> detects a user error (such as
++      an invalid option) it prints an error message and ends.  If the
++      <option>&ndash;W</> option is specified, it also waits for the user to press
++      Enter.  This option is useful if <command>gmat</> is executed by
++      shell script or batch file and subsequent processing might cause
++      the error message to scroll off of the screen before it could be
++      read or even noticed.
++    </para></listitem>
++  </varlistentry>
++  <varlistentry><term><option>&ndash;x</></term>
++    <listitem><para>
++      Just check for errors.  If the <option>&ndash;x</> option is specified,
++      <command>gmat</> does not preview or print the output file.
++    </para></listitem>
++  </varlistentry>
++</variablelist> 
++</para>
++
++<para>
++The <filename>oratoolsrc</> file provides another way to customize
++<command>gmat</>.  <command>gmat</> loads each of the following
++<filename>oratoolsrc</> files if they exist: the system default file, the user
++default file, and the <filename>oratoolsrc</> file in the current directory.  If a
++variable is set in more than one file, the value in the most recently
++loaded file is the value that <command>gmat</> uses.
++</para>
++
++<para>
++The system default file is <filename>oratoolsrc</>. The location of the system
++default file is controlled by the environment variable <systemitem class=environvar>ORALIBDIR</>.  If
++<systemitem class=environvar>ORALIBDIR</> is not set, the value <filename>/usr/local/prod/lib</> is used.  The
++user default file is $HOME/.oratoolsrc.  The <filename>oratoolsrc</> file in the
++current directory is <filename>.oratoolsrc</>.
++</para>
++
++<para>
++The following variables are recognized by <command>gmat</> in the <literal>GMAT</>
++or global sections of the <filename>oratoolsrc</> configuration file.
++
++<variablelist>
++  <varlistentry><term>action (view, print, check, file)</term>
++    <listitem><para>
++      Output file processing.  Valid values are view (equivalent to the
++      <option>&ndash;v</> option), print (equivalent to the <option>&ndash;p</> option), check
++      (equivalent to the <option>&ndash;x</> option), and file (equivalent to the <option>&ndash;f</>
++      option).
++    </para></listitem>
++  </varlistentry>
++  <varlistentry><term>bindir dir</term>
++    <listitem><para>
++      Additional <systemitem class=environvar>PATH</> directory. <command>gmat</> adds the specified
++      directory to the <systemitem class=environvar>PATH</> environment variable  before running
++      subprocesses. This variable allows the installer to place
++      <command>gmat</> in a standard place (e.g. <filename>/usr/local/bin</>) but
++      leave the rest of the executables somewhere else without requiring
++      that every user update their <systemitem class=environvar>PATH</>.
++    </para></listitem>
++  </varlistentry>
++  <varlistentry><term>bookfiles filename</term>
++    <listitem><para>
++      Name of the <filename>bookfiles</> file.  The <filename>bookfiles</> file is a
++      configuration file for a particular book.  This variable should be
++      a simple filename (e.g. <filename>BOOKFILES</>) and not a path name.
++    </para></listitem>
++  </varlistentry>
++  <varlistentry><term>debug boolean</term>
++    <listitem><para>
++      Enable debugging?  Enabling this variable is equivalent to using
++      the <option>&ndash;d</> option.
++    </para></listitem>
++  </varlistentry>
++  <varlistentry><term>debugdir dir</term>
++    <listitem><para>
++      Directory for temporary files.  Temporary files are generally
++      placed in <filename>/tmp</>, but if this variable is set they are stored in
++      the directory specified.  Temporary files are automatically
++      deleted when <command>gmat</> ends unless debugging is enabled.
++    </para></listitem>
++  </varlistentry>
++  <varlistentry><term>entity_file filename { filename &hellip; }</term>
++    <listitem><para>
++      Local entities for the &lt;DOCTYPE&gt; declaration.  This is used
++      only if <literal>entities</> is not set in the <filename>BOOKFILES</>
++      file.
++    </para></listitem>
++  </varlistentry>
++  <varlistentry><term>eqn progname</term>
++    <listitem><para>
++      The <command>eqn</> preprocessor to use for gtroff files.
++    </para></listitem>
++  </varlistentry>
++  <varlistentry><term>eqn_opts any</term>
++    <listitem><para>
++      Options for <command>eqn</>
++    </para></listitem>
++  </varlistentry>
++  <varlistentry><term>extension_3l ext</term>
++    <listitem><para>
++      The default extension for formatter input files.
++    </para></listitem>
++  </varlistentry>
++  <varlistentry><term>ext_base rule</term>
++    <listitem><para>
++      The rule for constructing the base filename for the formatter
++      input file.  See below.
++    </para></listitem>
++  </varlistentry>
++  <varlistentry><term>gsoelim progname</term>
++    <listitem><para>
++      The <command>gsoelim</> preprocessor to use for gtroff files.
++    </para></listitem>
++  </varlistentry>
++  <varlistentry><term>keep3l boolean</term>
++    <listitem><para>
++      Keep the formatter input file?
++    </para></listitem>
++  </varlistentry>
++  <varlistentry><term>macrodir dir</term>
++    <listitem><para>
++      Directory where local macro files are kept. This value should be a
++      path relative to the current directory, for example <filename>./macros</>.
++    </para></listitem>
++  </varlistentry>
++  <varlistentry><term>pic progname</term>
++    <listitem><para>
++      The <command>pic</> preprocessor to use for gtroff files.
++    </para></listitem>
++  </varlistentry>
++  <varlistentry><term>pic_opts any</term>
++    <listitem><para>
++      Options for <command>pic</>
++    </para></listitem>
++  </varlistentry>
++  <varlistentry><term>printer printer</term>
++    <listitem><para>
++      Name of the default printer. 
++    </para></listitem>
++  </varlistentry>
++  <varlistentry><term>ps_base rule</term>
++    <listitem><para>
++      The rule for constructing the base filename for the output file.
++      See below.
++    </para></listitem>
++  </varlistentry>
++  <varlistentry><term>quiet</term>
++    <listitem><para>
++      Suppress warning messages?
++    </para></listitem>
++  </varlistentry>
++  <varlistentry><term>scriptdir dir</term>
++    <listitem><para>
++      Directory where local scripts are kept. This value should be a
++      path relative to the current directory, for example <filename>./scripts</>.
++    </para></listitem>
++  </varlistentry>
++  <varlistentry><term>seddir dir</term>
++    <listitem><para>
++      Directory where <command>sed</> scripts are kept.
++    </para></listitem>
++  </varlistentry>
++  <varlistentry><term>sgmlto3l progname</term>
++    <listitem><para>
++      Name of the program that converts an <acronym>SGML</acronym>
++      document instance into a formatter input file.
++    </para></listitem>
++  </varlistentry>
++  <varlistentry><term>sgml_base rule</term>
++    <listitem><para>
++      The rule for constructing the base filename for the
++      <acronym>SGML</acronym> driver file. See below.
++    </para></listitem>
++  </varlistentry>
++  <varlistentry><term>tbl progname</term>
++    <listitem><para>
++      The <command>tbl</> preprocessor to use for gtroff files.
++    </para></listitem>
++  </varlistentry>
++  <varlistentry><term>tbl_opts any</term>
++    <listitem><para>
++      Options for <command>tbl</>
++    </para></listitem>
++  </varlistentry>
++  <varlistentry><term>temp_base rule</term>
++    <listitem><para>
++      The rule for constructing the base filename for temporary files.
++      See below.
++    </para></listitem>
++  </varlistentry>
++  <varlistentry><term>verbose boolean</term>
++    <listitem><para>
++      Print additional informatory messages?
++    </para></listitem>
++  </varlistentry>
++  <varlistentry><term>wait_on_error boolean</term>
++    <listitem><para>
++      Wait on error?  Enabling this variable is equivalent to using  the
++      <option>&ndash;w</> switch.
++    </para></listitem>
++  </varlistentry>
++  <varlistentry><term>workdir dir</term>
++    <listitem><para>
++      Additional <systemitem class=environvar>PATH</> directory. <command>gmat</> adds the specified
++      directory to the <systemitem class=environvar>PATH</> environment variable  before running
++      subprocesses. Obsolete?
++    </para></listitem>
++  </varlistentry>
++</variablelist>
++</para>
++
++<para>
++The following variables are recognized by
++<command>gmat</> in the <literal>GMAT</> or global sections of the <filename>bookfiles</>
++configuration file.
++
++<variablelist>
++  <varlistentry><term>doctype</term>
++    <listitem><para>
++      The &lt;DOCTYPE&gt; definition for the <acronym>SGML</acronym>
++      driver file. For example, ``book system
++      &ldquo;docbook.dtd&rdquo;''.
++    </para></listitem>
++  </varlistentry>
++  <varlistentry><term>sgmlto3l</term>
++    <listitem><para>
++      Name of the program that converts an <acronym>SGML</acronym>
++      document instance into a formatter input file. If this variable is
++      specfied in the <filename>bookfiles</> file, it takes precedence over the
++      value specified in the <filename>oratoolsrc</> file.
++    </para></listitem>
++  </varlistentry>
++  <varlistentry><term>entities filename { filename &hellip; }</term>
++    <listitem><para>
++      Local entities for the &lt;DOCTYPE&gt; declaration.  If this variable
++      is not set, the value of <literal>entity_file</> from the 
++      <filename>oratoolsrc</> file is used.
++    </para></listitem>
++  </varlistentry>
++</variablelist>
++</para>
++
++<para>
++<command>gmat</> uses the <filename>bookfiles</> configuration
++file to identify options for each file that it processes.  Several of
++these options only apply to <acronym>SGML</acronym> files and a few only
++apply to files processed with the gtroff text formatter.
++</para>
++
++<para>
++The following variables are recognized by <command>gmat</> in the
++section named by the file that is being processed (for example, the
++<filename>ch01.sgm</> section when the file <filename>ch01.sgm</> is being processed) or the
++global section of the <filename>bookfiles</> configuration file.  Options that
++apply to the text formatter or text formatter input file (such as
++<literal>macros</> and <literal>scripts</>) should only be specified in the global section
++of a <filename>bookfiles</> configuration file for <acronym>SGML</acronym> files.
++Specifying options for each file does not make sense since they are all
++merged into a single driver file.
++</para>
++
++<variablelist>
++  <varlistentry><term>appendix appletter</term>
++    <listitem><para>
++      Identifies the file as an appendix and specifies its appendix
++      letter (i.e. appendix number).
++    </para></listitem>
++  </varlistentry>
++  <varlistentry><term>chapter chapnum</term>
++    <listitem><para>
++      Specifies the chapter number of the file. 
++    </para></listitem>
++  </varlistentry>
++  <varlistentry><term>not_a_chapter</term>
++    <listitem><para>
++      Indicates that the file is not a chapter (or appendix).  See
++      below.
++    </para></listitem>
++  </varlistentry>
++  <varlistentry><term>page number</term>
++    <listitem><para>
++      Specifies the starting page number for the file.
++    </para></listitem>
++  </varlistentry>
++  <varlistentry><term>part number</term>
++    <listitem><para>
++      Identifies the part of the book that contains the file.
++    </para></listitem>
++  </varlistentry>
++  <varlistentry><term>part<emphasis>n</>_title</term>
++    <listitem><para>
++      Specifies the title of the <emphasis>n</>'th part of the book.  This
++      information may be used in page headers or footers, for example.
++    </para></listitem>
++  </varlistentry>
++  <varlistentry><term>pagecount number</term>
++    <listitem><para>
++      Identifies how many formatted pages occur in the file. This
++      information is used by <command>gmat</> to calculate starting page
++      numbers for files that do not have a <literal>page</> variable.  It is
++      updated automatically each time <command>gmat</> processes the
++      file.
++    </para></listitem>
++  </varlistentry>
++  <varlistentry><term>macros filenames</term>
++    <listitem><para>
++      Identifies the macro packages that should be used when the file is
++      processed.  At present, this option only applies to files
++      processed with gtroff.
++    </para></listitem>
++  </varlistentry>
++  <varlistentry><term>page number</term>
++    <listitem><para>
++      Identifies the starting page of the file.
++    </para></listitem>
++  </varlistentry>
++  <varlistentry><term>scripts prognames</term>
++    <listitem><para>
++      A list of scripts that should be used to preprocess the text
++      formatter input file. Each script must be  a filter (accepting
++      input on <filename>stdin</> and writing output to <filename>stdout</>. The first filter
++      will recieve the formatter input file as input and the output of
++      the last filter will become the new formatter input.
++    </para></listitem>
++  </varlistentry>
++  <varlistentry><term>wraptag</term>
++    <listitem><para>
++      When <command>gmat</> creates an <acronym>SGML</acronym> driver
++      file, it inserts the specified tag around the contents of the
++      files that are processed.
++    </para></listitem>
++  </varlistentry>
++</variablelist>
++
++</sect1>
++<sect1><title>Rules</>
++
++<para>
++The values of the <literal>ext_base</>, <literal>sgml_base</>, <literal>ps_base</>, and <literal>temp_base</>
++variables are interpreted as filenames with the following extensions. In
++order to make it possible for more than one person to work in the same
++directory at the same time (or for one person to run several concurrent
++<command>gmat</>s), it is neessary to specify that the temporary files
++have different names.  <command>gmat</> accomplishes this by allowing
++you to use the special strings ``$WHOAMI'' and``$PID'' in the value for
++each of these variables.  In addition, you can use the string
++``$BASEFILE'' to refer to the base name of the file that
++<command>gmat</> is processing.
++</para>
++
++<para>
++For example, if ``norm'' processes ``<filename>myfile.tr</>'' with <literal>ps_base</> set 
++to ``$BASEFILE-$WHOAMI.$PID.ps'' and <command>gmat</> happens to be
++process number 3142, the ouput file produced by <command>gmat</> would
++be ``<filename>myfile-norm.3142.ps</>''.
++</para>
++
++</sect1>
++<sect1><title>Chapter and Appendix Numbering</>
++
++<para>
++<command>gmat</> assumes that the sections in the <filename>bookfiles</>
++configuration file identify the chapters of a book.  When files are
++listed on the  command line, they are reordered into the order that they
++appear in the bookfiles file before processing.  <command>gmat</>
++determines the chapter or  appendix number of each chapter and the
++starting page number of each chapter by examining the <literal>chapter</>,
++<literal>appendix</>, <literal>page</>, and <literal>pagecount</> variables for each file.  If a given
++file does not have a <literal>chapter</> variable, it is assumed to have a number
++one greater than the previous chapter. <command>gmat</> does not
++increment the chapter count when it processes a section that has the
++<literal>not_a_chapter</> variable set.  After the first appendix has been
++encountered, <command>gmat</> begins enumerating chapters with letters
++rather than numbers.
++</para>
++
++</sect1>
++<sect1><title>Handling <filename>BOOKFILES</></title>
++
++<para>
++The <filename>bookfiles</> file is <emphasis>always</> read only.  You must not
++edit the file by hand.  Because <command>gmat</> updates the file each
++time it processes a document, any changes that you introduce while 
++<command>gmat</> is running will potentially be lost.
++</para>
++
++<para>
++Always use the <command>bookfiles</> program to update the <filename>bookfiles</>
++configuration file.
++</para>
++
++</sect1>
++<sect1><title>Formating A Document</>
++
++<para>
++When formatting a non-SGML document, <command>gmat</> reads the command
++line switches and filenames and verifies that they are correct.  If all
++of the switches are valid, <command>gmat</> checks that each filename
++specified  exists and that the most recent <acronym>RCS</acronym>
++version has been checked out (if applicable).
++</para>
++
++<para>
++Each filename in turn is passed through the text formatter and the
++output file is processed as requested.
++</para>
++
++<para>
++If switches are used before the first filename, the results of those
++switches become the default behavior for the rest of the files specified
++on the command line.
++</para>
++
++</sect1>
++<sect1><title>Formating an SGML Document</>
++
++<para>
++Formating and <acronym>SGML</acronym> document is slightly more
++complicated than formating a text document.  If all of the filenames
++listed on the command line end in <filename>.sgm</> or <filename>.sgml</>, <command>gmat</>
++assumes that the files are SGML.  Unless the <option>&ndash;S</> switch is used,
++<command>gmat</> will attempt to create a single driver file to process
++all of the specified files  simultaneously.  The general format of the
++driver file that  <command>gmat</> produces is:
++</para>
++
++<screen>
++&lt;!DOCTYPE *doctype* [
++&lt;!ENTITY file1.sgm SYSTEM "file1.sgm"&gt;
++&lt;!ENTITY file2.sgm SYSTEM "file2.sgm"&gt;
++&lt;!ENTITY file3.sgm SYSTEM "file3.sgm"&gt;
++*local entities*
++*wraptag*
++&lt;?gmat-file "file1.3l"&gt;
++&lt;?gmat-part "part title"&gt;
++&lt;?gmat-chapter-number "1"&gt;
++&lt;?gmat-page-number "1"&gt;
++&amp;file1.sgm;
++&lt;?gmat-file "file2.3l"&gt;
++&lt;?gmat-part "part title"&gt;
++&lt;?gmat-chapter-number "2"&gt;
++&lt;?gmat-page-number "17"&gt;
++&amp;file2.sgm;
++&lt;?gmat-file "file3.3l"&gt;
++&lt;?gmat-part "part title"&gt;
++&lt;?gmat-chapter-number "3"&gt;
++&lt;?gmat-page-number "23"&gt;
++&amp;file3.sgm;
++*/wraptag*
++</screen>
++
++<para>
++The files are arranged in the order that they appear in the <filename>bookfiles</>
++configuration file regardless of the order specified on the command
++line.
++</para>
++
++</sect1>
++</chapter>
++<?troff .BLANK>
++
++<!-- Keep this comment at the end of the file
++Local variables:
++mode: sgml
++sgml-default-dtd-file: "oraprod.ced"
++End:
++-->
