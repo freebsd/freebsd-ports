@@ -140,7 +140,7 @@ include/gal/widgets/widget-color-combo.h
 include/gal/widgets/widget-pixmap-combo.h
 lib/libgal.a
 lib/libgal.so
-lib/libgal.so.21
+lib/libgal.so.22
 share/doc/gal/gal-api.sgml
 share/doc/gal/gal-decl.txt
 share/doc/gal/gal-sections.txt
