@@ -1,0 +1,11 @@
+--- src/wmspec.c.old	Sun Mar 27 19:42:28 2005
++++ src/wmspec.c	Sun Mar 27 19:43:56 2005
+@@ -381,7 +381,7 @@
+                                 XA_CARDINAL, &actual_type_return, &actual_format_return,
+                                 &nitems_return, &bytes_after_return, &prop_return);
+ 
+-    if (rc==Success && prop_return) {
++    if (0 && rc==Success && prop_return) {
+         unsigned int *data = (unsigned int *)prop_return;
+         unsigned int pos = 0, len = 0;
+         unsigned int best_pos = 0, best_tmp = ~0;
