@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 %%CUPS%%bin/cups-calibrate
 bin/escputil
 bin/gimpprint-config
@@ -9,7 +10,7 @@ info/gimpprint.info
 @exec install-info %D/info/gimpprint.info %D/info/dir
 lib/libgimpprint.a
 lib/libgimpprint.so
-lib/libgimpprint.so.1
+lib/libgimpprint.so.2
 %%CUPS%%libexec/cups/backend/canon
 %%CUPS%%libexec/cups/backend/epson
 %%CUPS%%libexec/cups/filter/commandtocanon
