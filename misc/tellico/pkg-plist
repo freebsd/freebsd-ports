@@ -32,6 +32,7 @@ share/locale/ja/LC_MESSAGES/bookcase.mo
 share/locale/nb/LC_MESSAGES/bookcase.mo
 share/locale/nl/LC_MESSAGES/bookcase.mo
 share/locale/ro/LC_MESSAGES/bookcase.mo
+share/locale/sv/LC_MESSAGES/bookcase.mo
 share/mimelnk/application/x-bookcase.desktop
 @unexec rmdir %D/share/mimelnk/application 2>/dev/null || true
 @unexec rmdir %D/share/mimelnk 2>/dev/null || true
@@ -41,14 +42,13 @@ share/mimelnk/application/x-bookcase.desktop
 @unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
 @unexec rmdir %D/share/icons 2>/dev/null || true
-@dirrm share/doc/HTML/en/bookcase-apidocs/src/html
-@dirrm share/doc/HTML/en/bookcase-apidocs/src
+@unexec rmdir %D/share/doc/HTML/en/bookcase-apidocs/src/html 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML/en/bookcase-apidocs/src 2>/dev/null || true
 @dirrm share/doc/HTML/en/bookcase-apidocs
 @dirrm share/doc/HTML/en/bookcase
 @unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
 @unexec rmdir %D/share/doc/HTML 2>/dev/null || true
 @dirrm share/apps/bookcase/pics
 @dirrm share/apps/bookcase
-@unexec rmdir %D/share/apps 2>/dev/null || true
 @unexec rmdir %D/share/applnk/Applications 2>/dev/null || true
 @unexec rmdir %D/share/applnk 2>/dev/null || true
