@@ -1,47 +1,36 @@
---- config/gdm.conf.in.orig	Tue Sep  7 13:37:16 1999
-+++ config/gdm.conf.in	Wed Sep 13 01:26:33 2000
-@@ -1,20 +1,20 @@
- [daemon]
- Chooser=@bindir@/gdmchooser --disable-sound --disable-crash-dialog
--DefaultPath=/bin:/usr/bin:/usr/bin/X11:/usr/local/bin:@bindir@
-+DefaultPath=/bin:/usr/bin:/usr/local/bin:@X11BASE@/bin:@LOCALBASE@/bin
- DisplayInitDir=@sysconfdir@/gdm/Init
- Greeter=@bindir@/gdmlogin --disable-sound --disable-crash-dialog
--Group=gdm
-+Group=wheel
+--- config/gdm.conf.in.orig	Mon Mar  5 05:27:12 2001
++++ config/gdm.conf.in	Fri Apr 20 20:42:22 2001
+@@ -7,7 +7,7 @@
+ Group=gdm
  HaltCommand=/sbin/shutdown -h now
- KillInitClients=1
--LogDir=@authdir@
+ KillInitClients=true
+-LogDir=@EXPANDED_AUTHDIR@
 +LogDir=/var/log
  PidFile=/var/run/gdm.pid
- PostSessionScriptDir=@sysconfdir@/gdm/PostSession/
- PreSessionScriptDir=@sysconfdir@/gdm/PreSession/
- RebootCommand=/sbin/shutdown -r now
--RootPath=/sbin:/usr/sbin:/bin:/usr/bin:/usr/bin/X11:/usr/local/bin:@bindir@
-+RootPath=/sbin:/usr/sbin:/bin:/usr/bin:/usr/local/bin:@X11BASE@/bin:@LOCALBASE@/bin
- ServAuthDir=@authdir@
- SessionDir=@sysconfdir@/gdm/Sessions/
--User=gdm
-+User=root
- UserAuthDir=
- UserAuthFBDir=/tmp
- UserAuthFile=.Xauthority
-@@ -50,7 +50,7 @@
- GlobalFaceDir=@datadir@/faces/
- Icon=@pixmapdir@/gdm.xpm
- LocaleFile=@localedir@/locale.alias
--Logo=@pixmapdir@/gnome-logo-large.png
-+Logo=@pixmapdir@/Daemon.png
- Quiver=1
- SystemMenu=0
+ PostSessionScriptDir=@EXPANDED_SYSCONFDIR@/gdm/PostSession/
+ PreSessionScriptDir=@EXPANDED_SYSCONFDIR@/gdm/PreSession/
+@@ -47,11 +47,11 @@
+ DefaultFace=@EXPANDED_PIXMAPDIR@/nobody.png
+ DefaultLocale=english
+ Exclude=bin,daemon,adm,lp,sync,shutdown,halt,mail,news,uucp,operator,nobody,gdm,postgres,pvm
+-Font=-*-helvetica-bold-r-normal-*-*-180-*-*-*-*-*-*
++Font=-*-helvetica-bold-r-normal-*-*-180-*-*-*-*-*-*,*-r-*,*
+ GlobalFaceDir=@EXPANDED_DATADIR@/faces/
+ Icon=@EXPANDED_PIXMAPDIR@/gdm.xpm
+ LocaleFile=@EXPANDED_LOCALEDIR@/locale.alias
+-Logo=@EXPANDED_PIXMAPDIR@/gnome-logo-large.png
++Logo=@EXPANDED_PIXMAPDIR@/Daemon.png
+ Quiver=true
+ SystemMenu=true
  Welcome=Welcome to %n
-@@ -64,7 +64,7 @@
- Enable=0
+@@ -75,8 +75,8 @@
+ Enable=false
  
  [servers]
 -0=/usr/bin/X11/X
 -#1=/usr/bin/X11/X
-+0=@X11BASE@/bin/X
-+#1=@X11BASE@/bin/X
- 
- 
++0=@EXPANDED_BINDIR@/X
++#1=@EXPANDED_BINDIR@/X
+ #Note: If you want to make sure X runs on a specific virtual console on linux,
+ #      you can use the following (for console 7):
+ #0=/usr/bin/X11/X vt7
