@@ -199,6 +199,7 @@ share/sip/qtext/qextscintillabase.sip
 share/sip/qtext/qextscintilla.sip
 share/sip/qtext/qextscintillacommand.sip
 share/sip/qtext/qextscintillacommandset.sip
+share/sip/qtext/qextscintilladocument.sip
 share/sip/qtext/qextscintillalexer.sip
 share/sip/qtext/qextscintillalexercpp.sip
 share/sip/qtext/qextscintillalexercsharp.sip
@@ -206,6 +207,7 @@ share/sip/qtext/qextscintillalexerhtml.sip
 share/sip/qtext/qextscintillalexeridl.sip
 share/sip/qtext/qextscintillalexerjava.sip
 share/sip/qtext/qextscintillalexerjavascript.sip
+share/sip/qtext/qextscintillalexerperl.sip
 share/sip/qtext/qextscintillalexerpython.sip
 share/sip/qtext/qextscintillalexersql.sip
 share/sip/qtext/qextscintillamacro.sip
