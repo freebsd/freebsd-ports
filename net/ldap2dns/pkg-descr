@@ -1,0 +1,11 @@
+From the website:
+
+ldap2dns is a program to create DNS (Domain Name Service) records directly
+from a LDAP directory. ldap2dns is designed to write ASCII data files used
+by tinydns from the djbdns package, but also may be used to write .db-files
+used by named as found in the BIND package.
+
+WWW: http://ldap2dns.tiscover.com/
+
+Bruce
+bms@spc.org

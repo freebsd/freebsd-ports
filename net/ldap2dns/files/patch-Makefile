@@ -1,0 +1,15 @@
+--- Makefile.orig	Tue Aug 13 15:58:27 2002
++++ Makefile	Mon Sep 29 01:33:57 2003
+@@ -6,9 +6,9 @@
+ CFLAGS=$(INC) -DVERSION='"$(VERSION)"'
+ LIBS=-lldap -llber
+ LD=gcc 
+-LDFLAGS=
+-INSTALL_PREFIX=
+-PREFIXDIR=$(INSTALL_PREFIX)/usr
++LDFLAGS= $(LIB)
++INSTALL_PREFIX=$(PREFIX)
++PREFIXDIR=$(INSTALL_PREFIX)
+ LDAPCONFDIR=$(INSTALL_PREFIX)/etc/openldap
+ TARFILE=/usr/src/redhat/SOURCES/ldap2dns-$(VERSION).tar.gz
+ SPECFILE=ldap2dns.spec
