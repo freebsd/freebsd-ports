@@ -31,6 +31,7 @@
     SUBDIR += libiodbc
     SUBDIR += libodbc++
     SUBDIR += libsdb
+    SUBDIR += libudbc
     SUBDIR += mdbtools
     SUBDIR += metakit
     SUBDIR += msql
