@@ -1,3 +1,12 @@
-An object-based image creation/layout application which utilizes Imlib2.
+Geist is an object/vector based image manipulation package in its early
+stage of development.
+
+Basically, the idea of Geist is to be able to lay out images, shapes, etc,
+whilst supporting full RGBA colorspace.  Layered, transparent objects a
+speciality.
+
+Geist can currently export to every file format supported by Imlib2, plus
+it uses its own XML file format for saving documents between editing
+sessions.
 
 WWW: http://www.linuxbrit.co.uk/geist/
