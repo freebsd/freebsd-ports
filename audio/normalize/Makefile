@@ -16,13 +16,13 @@ COMMENT=	A tool for adjusting the volume of wave/MP3 files to a standard level
 
 LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/mad
 
+USE_BZIP2=	yes	# XXX set before OPTIONS
 OPTIONS=	XMMS "Build XMMS plugin" off
 .include <bsd.port.pre.mk>
 .if defined(WITH_XMMS)
 LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
 .endif
 
-USE_BZIP2=	yes
 USE_GETOPT_LONG=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
