@@ -1,0 +1,7 @@
+--- po/Makefile.in.in.orig	Thu May 17 14:51:15 2001
++++ po/Makefile.in.in	Thu May 17 14:52:27 2001
+@@ -55,3 +55,3 @@
+ CATOBJEXT = @CATOBJEXT@
+-INSTOBJEXT = @INSTOBJEXT@
++INSTOBJEXT = .mo
+ 

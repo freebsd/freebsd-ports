@@ -1,21 +1,20 @@
---- app/Makefile.in.orig	Mon Aug  7 13:13:57 2000
-+++ app/Makefile.in	Mon Aug  7 13:15:10 2000
-@@ -157,7 +157,7 @@
- @HAVE_BONOBO_TRUE@dia_oafinfo = @HAVE_BONOBO_TRUE@dia.oafinfo
- @HAVE_BONOBO_FALSE@dia_oafinfo = 
+--- app/Makefile.in.orig	Fri May 11 05:04:49 2001
++++ app/Makefile.in	Thu May 17 16:18:20 2001
+@@ -177,4 +177,2 @@
  
 -bin_PROGRAMS = dia $(dia_embedd)
-+bin_PROGRAMS = dia-bin $(dia_embedd)
- 
- gnorbadir = $(sysconfdir)/CORBA/servers
- gnorba_DATA = $(dia_gnorba)
-@@ -488,6 +488,9 @@
- dia: $(dia_OBJECTS) $(dia_DEPENDENCIES)
- 	@rm -f dia
+-
+ oafinfodir = $(datadir)/oaf
+@@ -336,4 +334,4 @@
+ CONFIG_CLEAN_FILES =
+-@HAVE_BONOBO_TRUE@bin_PROGRAMS = dia$(EXEEXT) dia-embedd$(EXEEXT)
+-@HAVE_BONOBO_FALSE@bin_PROGRAMS = dia$(EXEEXT)
++@HAVE_BONOBO_TRUE@bin_PROGRAMS = dia-bin$(EXEEXT) dia-embedd$(EXEEXT)
++@HAVE_BONOBO_FALSE@bin_PROGRAMS = dia-bin$(EXEEXT)
+ noinst_PROGRAMS = run_dia.sh
+@@ -552,2 +550,5 @@
  	$(LINK) $(dia_LDFLAGS) $(dia_OBJECTS) $(dia_LDADD) $(LIBS)
 +
-+dia-bin: dia
-+	cp dia dia-bin
++dia-bin$(EXEEXT): dia$(EXEEXT)
++	cp dia$(EXEEXT) dia-bin$(EXEEXT)
  
- dia-embedd: $(dia_embedd_OBJECTS) $(dia_embedd_DEPENDENCIES)
- 	@rm -f dia-embedd
