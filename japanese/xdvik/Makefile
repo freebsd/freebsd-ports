@@ -7,6 +7,7 @@
 
 PORTNAME=	xdvik-vflib
 PORTVERSION=	22.15
+PORTREVISION=	1
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.appi.keio.ac.jp/pub/xdvi/ \
 		ftp://ftp.ipc.chiba-u.ac.jp/pub/pub.yamaga/xdvik-22/ \
@@ -26,7 +27,7 @@ PATCH_SITES=	ftp://ftp.appi.keio.ac.jp/pub/xdvi/ \
 		ftp://ftp.chem.eng.himeji-tech.ac.jp/pub/xdvi/ \
 		${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	asami/LOCAL_PORTS
-PATCHFILES=	${DISTNAME}-j1.03.patch.gz
+PATCHFILES=	${DISTNAME}-j1.04.patch.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	inagaki@tg.rim.or.jp
@@ -149,6 +150,12 @@ pre-fetch:
 	${ECHO} "*           or, after installation, please change            *"; \
 	${ECHO} "*                ${PREFIX}/libexec/xdviprint.                *"; \
 	${ECHO} "**************************************************************")
+
+pre-patch:
+.for i in FTP.c Host.c String.c String.h
+	@${PERL} -pi -e 's|strcasestr|HTStrCaseStr|g' \
+		${WRKSRC}/libs/libwww/HT${i}
+.endfor
 
 pre-build:
 	@(cd ${WRKSRC} ; find . -name '*.orig' -exec ${RM} -f {} \;)
