@@ -19,7 +19,7 @@ EXTRACT_ONLY=	OOo_${RELEASE_NR}m${MILESTONE}_source.tar.bz2
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadheet/drawing/chart/browser(developer version)
 
-SNAPDATE=	20050130
+SNAPDATE=	20050202
 NO_LATEST_LINK=	yes
 USE_GNOME=	gtk20
 MOZILLA_PROJECT=	cws_srx645_mozooo.20041016.tar.gz
@@ -49,7 +49,7 @@ BROKEN=		"rtld depends on _end symbol. type make -DBROKEN to see how to upgrade 
 
 CODELINE=		680
 RELEASE_NR=		1.9
-MILESTONE=		75
+MILESTONE=		76
 INSTALLATION_BASEDIR=	openoffice.org${RELEASE_NR}m${MILESTONE}
 EXECBASE=		openoffice.org-${RELEASE_NR}m${MILESTONE}
 DIST_SUBDIR=		openoffice.org2.0
@@ -149,10 +149,10 @@ do-build:
 .endif
 	@cd ${WRKSRC} ;	${SETENV} "DEFAULT_TO_ENGLISH_FOR_PACKING=yes" ${TCSH} -c 'source FreeBSDEnv.Set ; dmake -P${NUMOFPROCESSES}'
 
-OOOFILES1=	openofficeorg-calc.sw openofficeorg-core.sw openofficeorg-draw.sw openofficeorg-graphicfilter.sw
-OOOFILES2=	openofficeorg-impress.sw openofficeorg-javafilter.sw
-OOOFILES3=	openofficeorg-math.sw openofficeorg-spellcheck.sw openofficeorg-testtool.sw
-OOOFILES4=	openofficeorg-writer.sw openofficeorg-xsltfilter.sw
+OOOFILES1=	openofficeorg-calc.sw openofficeorg-core01.sw openofficeorg-core02.sw openofficeorg-core03.sw openofficeorg-core04.sw openofficeorg-core05.sw
+OOOFILES2=	openofficeorg-core06.sw openofficeorg-core07.sw openofficeorg-core08.sw
+OOOFILES3=	openofficeorg-draw.sw openofficeorg-graphicfilter.sw openofficeorg-impress.sw
+OOOFILES4=	openofficeorg-javafilter.sw openofficeorg-math.sw openofficeorg-spellcheck.sw openofficeorg-testtool.sw openofficeorg-writer.sw openofficeorg-xsltfilter.sw
 
 do-install:
 	@${RM} -Rf ${WRKDIR}/tmp
