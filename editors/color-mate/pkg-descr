@@ -1,5 +1,5 @@
-"Color-Mate" is color customizing module for emacs/mule/xemacs/"Mule for
-Win32"/Meadow(Emacs20 for win32).
+"Color-Mate" is a color customizing module for Mule, Emacs, XEmacs,
+XEmacs UTF-2000, Mule for Win32 and Meadow.
 
 "Color-Mate" requires emacs19/mule2.3 or upper version of emacs.  And
 also requires hilit19.el(emacs/mule), font-lock.el(emacs/mule/xemacs),
@@ -20,4 +20,4 @@ and the next file into ~/.Xdefaults
 
 /usr/local/share/emacs/site-lisp/color-mate/theme/SunnyDay.X
 
-WWW: http://www.netlab.is.tsukuba.ac.jp/~yokota/izumi/color-mate/
+WWW: http://www.netlab.is.tsukuba.ac.jp/~yokota/izumi/color_mate/

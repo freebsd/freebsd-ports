@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	color-mate
-PORTVERSION=	10.0.1
+PORTVERSION=	10.4
 CATEGORIES=	editors elisp
 MASTER_SITES=	http://www.netlab.is.tsukuba.ac.jp/~yokota/archive/
 
