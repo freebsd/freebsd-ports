@@ -45,6 +45,10 @@ MAN1=	Animate.1x Audio.1x Banner.1x Cascade.1x Clean.1x Form.1x Gnome.1x \
 	Ident.1x Pager.1x Save.1x Script.1x Scroll.1x Tile.1x Wharf.1x \
 	WinList.1x Zharf.1x afterstep.1x asetroot.1x
 
+post-patch:
+	${PERL} -pi.orig -e 's,/usr/X11/,${X11BASE}/,' \
+		${WRKSRC}/src/afterstep/afterstep.man
+
 post-install:
 	@${INSTALL_DATA} ${FILESDIR}/monitor_bsd.xpm ${PREFIX}/share/afterstep/desktop/icons/common/
 .if defined(WITH_DIFFERENT_LOOKNFEELS)
