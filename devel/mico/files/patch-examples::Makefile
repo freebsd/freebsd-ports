@@ -1,0 +1,11 @@
+--- demo/Makefile.orig	Mon Jun 30 05:51:13 2003
++++ demo/Makefile	Mon Jun 30 05:51:23 2003
+@@ -27,7 +27,7 @@
+ 
+ RUNDIRS = bench dynany interceptor codesets poa obv mcast generic pi
+ 
+-INST_DIRS = $(DIRS) shlib ssl
++INST_DIRS = $(DIRS) shlib
+ 
+ ifeq ($(HAVE_DYNAMIC), yes)
+ DIRS := $(DIRS) shlib
