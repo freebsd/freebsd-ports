@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	ragel
-PORTVERSION=	1.4.1
+PORTVERSION=	2.2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.essemage.com/ragel/
 
