@@ -7,8 +7,8 @@
 PORTNAME=	wordplay
 PORTVERSION=	7.22
 CATEGORIES=	games
-MASTER_SITES=	http://pokey.itsc.uah.edu/~criswell/
-DISTNAME=	wordplay722
+MASTER_SITES= 	http://www.itsc.uah.edu/~criswell/wordplay/
+DISTNAME=	${PORTNAME}{PORTVERSION:S/.//}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
@@ -24,8 +24,8 @@ post-patch:
 
 do-install:
 	@${MKDIR} ${PREFIX}/share/wordplay
-	@${INSTALL_DATA} ${WRKSRC}/words721.txt ${WRKSRC}/readme \
+	${INSTALL_DATA} ${WRKSRC}/words721.txt ${WRKSRC}/readme \
 	  ${PREFIX}/share/wordplay
-	@${INSTALL_PROGRAM} ${WRKSRC}/wordplay ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/wordplay ${PREFIX}/bin
 
 .include <bsd.port.mk>
