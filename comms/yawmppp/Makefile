@@ -36,8 +36,8 @@ pre-patch:
 
 do-install:
 .for file in dockapp/yagetmodemspeed dockapp/${PORTNAME} gtklog/${PORTNAME}.log \
-	${PORTNAME}.pref ${PORTNAME}.thin 
-	@${INSTALL_PROGRAM} ${WRKSRC}/${file} ${PREFIX}/bin
+	gtksetup/${PORTNAME}.pref thinppp/${PORTNAME}.thin 
+	@${INSTALL_PROGRAM} ${WRKSRC}/src/${file} ${PREFIX}/bin
 .endfor
 	@${INSTALL_MAN} ${WRKSRC}/src/${PORTNAME}.1x ${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
