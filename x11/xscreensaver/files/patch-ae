@@ -1,0 +1,33 @@
+--- driver/Makefile.in.orig	Mon Apr  3 05:04:08 2000
++++ driver/Makefile.in	Mon May  8 19:09:10 2000
+@@ -147,17 +147,17 @@
+ CMD_LIBS	= $(LIBS) $(X_LIBS) \
+ 		  $(X_PRE_LIBS) -lX11 -lXext $(X_EXTRA_LIBS)
+ 
+-EXES		= xscreensaver xscreensaver-command xscreensaver-demo
++EXES		= xscreensaver xscreensaver-command
+ EXES2		= @ALL_DEMO_PROGRAMS@
+ 
+ HDRS		= XScreenSaver_ad.h xscreensaver.h prefs.h remote.h \
+ 		  demo-Gtk-widgets.h demo-Gtk-stubs.h
+-MEN		= xscreensaver.man xscreensaver-demo.man \
++MEN		= xscreensaver.man \
+ 		  xscreensaver-command.man
+ ALL_MEN		= xscreensaver.man \
+-		  xscreensaver-demo.man xscreensaver-command.man
++		  xscreensaver-command.man
+ EXTRAS		= README Makefile.in XScreenSaver.ad.in xscreensaver.pam \
+-		  xscreensaver.kss xscreensaver-demo.glade \
++		  xscreensaver.kss \
+ 		  screensaver-properties.desktop.in .gdbinit
+ VMSFILES	= compile_axp.com compile_decc.com link_axp.com link_decc.com \
+ 		  vms-getpwnam.c vms-pwd.h vms-hpwd.c vms-validate.c \
+@@ -211,8 +211,6 @@
+ 	$$inst xscreensaver $(install_prefix)$(bindir)/xscreensaver
+ 	$(INSTALL_PROGRAM) xscreensaver-command \
+ 	  $(install_prefix)$(bindir)/xscreensaver-command
+-	$(INSTALL_PROGRAM) xscreensaver-demo \
+-	  $(install_prefix)$(bindir)/xscreensaver-demo
+ 
+ install-ad: XScreenSaver.ad
+ 	@if [ ! -d $(install_prefix)$(AD_DIR) ]; then			      \
