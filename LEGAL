@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.134 1999/04/09 17:39:49 flathill Exp $
+# $Id: LEGAL,v 1.135 1999/04/13 23:44:03 taoka Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -92,12 +92,14 @@ nte-1.5a23		ports/mbone/nte		Crypto; export-controlled
 openssl-*		ports/security/openssl	Crypto; export/import-controlled
 Crypt-*			ports/security/p5-Crypt-*	Crypto; export-controlled
 pgp*			ports/security/pgp*	Various locality restrictions
+pklin*			ports/archivers/pkzip	Shareware
 prodosemu.*		ports/emulators/prodosemu	Restrictive copyright on the ROM image
 qvplay-*		ports/graphics/qvplay	No redistribution due to
 						beta status
 quake101.zip		ports/games/quakeserver	Shareware
 radius*			ports/net/radius	Binary redistribution only,
 						no fee allowed
+rarlnx*			ports/archivers/linux_rar	Only unmodified original package can be distributed
 rkive3.1.tar.gz		ports/news/rkive	Restrictive copyright
 rman-2.4.tar.Z		ports/misc/rman		Restrictive copyright
 rman-3.*		ports/textproc/rman	Don't sell for profit
