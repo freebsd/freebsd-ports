@@ -14,6 +14,7 @@
     SUBDIR += comserv
     SUBDIR += conserver
     SUBDIR += conserver-com
+    SUBDIR += echolinux
     SUBDIR += ecu
     SUBDIR += efax
     SUBDIR += efax-gtk

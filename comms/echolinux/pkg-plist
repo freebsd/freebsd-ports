@@ -1,0 +1,10 @@
+bin/echoaudio
+bin/echogui
+bin/echolinux
+share/echolinux/echolinux.desktop
+share/echolinux/pixmaps/echolinux_48x48.png
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/Using_EchoLinux.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm share/echolinux/pixmaps
+@dirrm share/echolinux
