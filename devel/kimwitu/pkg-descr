@@ -1,0 +1,14 @@
+Kimwitu is a system that supports the construction of programs that use
+trees or terms as their main data structure. It is a `meta-tool' in the
+development process of tools. Its input is an abstract description of
+terms, annotated with implementation directives, plus a definition of
+functions on these terms. The output consists of a number of C-files that
+contain data-structure definitions for the terms, a number of standard
+functions on those terms, and a translation (in C) of the function
+definitions in the input (eg. term rewriting).
+
+The standard functions can be used to create terms, compare them for
+equality, read and write them on files in various formats and do
+manipulations like list concatenation.
+
+WWW: http://purl.oclc.org/net/kimwitu/

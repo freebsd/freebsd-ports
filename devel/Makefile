@@ -168,6 +168,7 @@
     SUBDIR += kdestudio
     SUBDIR += kdevelop
     SUBDIR += kelp
+    SUBDIR += kimwitu
     SUBDIR += kpp
     SUBDIR += ktranslator
     SUBDIR += lclint
