@@ -3,32 +3,32 @@
 # Date created:         Fri Dec 01, 1995
 # Whom:                 obrien@cs.ucdavis.edu
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/03/05 07:46:57 asami Exp $
 #
 
-DISTNAME=	minicom-1.74
+DISTNAME=	minicom-1.75
 CATEGORIES+=	comms
 MASTER_SITES=	ftp://sunsite.unc.edu/pub/Linux/apps/comm/ \
 		ftp://ftp.yggdrasil.com/mirrors/sunsite/apps/comm/
 
 MAINTAINER=     obrien@cs.ucdavis.edu
 
-EXEC_DEPENDS=	rz:${PORTSDIR}/comms/rzsz \
+RUN_DEPENDS=	rz:${PORTSDIR}/comms/rzsz \
 		sz:${PORTSDIR}/comms/rzsz \
 		kermit:${PORTSDIR}/comms/kermit
 
 WRKSRC=		${WRKDIR}/${PKGNAME}/src
-IS_INTERACTIVE= yes
-NO_PACKAGE=	yes	# modem port etc. built in
 
-# I believe I prefer to do this in Minicom's Makefile so as to use its macros
+.if !defined(BATCH)
 pre-install:
-#	[ -d ${PREFIX}/etc/minicom ] || /bin/mkdir -p ${PREFIX}/etc/minicom
+	# this script creates a link from your comm port to /dev/modem
+	/bin/sh ${SCRIPTDIR}/create-dev-link
+.endif
 
 post-install:
 .if !defined(NOMANCOMPRESS)
-	gzip -9nf ${PREFIX}/man/man1/minicom.1
-	gzip -9nf ${PREFIX}/man/man1/runscript.1
+	@for mp in minicom.1 runscript.1 ascii-xfr.1 ; do \
+		gzip -9nf ${PREFIX}/man/man1/$$mp ; done
 .endif
 
 .include <bsd.port.mk>
