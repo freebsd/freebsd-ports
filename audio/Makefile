@@ -242,6 +242,7 @@
     SUBDIR += splaytk
     SUBDIR += streamripper
     SUBDIR += sweep
+    SUBDIR += swhplugins
     SUBDIR += tclmidi
     SUBDIR += teknap
     SUBDIR += tempest_for_eliza

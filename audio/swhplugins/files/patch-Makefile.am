@@ -1,0 +1,66 @@
+--- Makefile.am.orig	Fri Nov  1 21:10:34 2002
++++ Makefile.am	Sun Nov  3 17:54:07 2002
+@@ -1,31 +1,31 @@
+ VERSION = @VERSION@
+ 
+ SOBS =	amp_1181.so debug_1184.so diode_1185.so \
+-	divider_1186.so shaper_1187.so ringmod_1188.so comb_1190.so \
++	divider_1186.so shaper_1187.so comb_1190.so \
+ 	declip_1195.so foverdrive_1196.so sinus_wavewrapper_1198.so \
+-	hermes_filter_1200.so multivoice_chorus_1201.so flanger_1191.so \
++	hermes_filter_1200.so \
+ 	decimator_1202.so single_para_1203.so triple_para_1204.so \
+ 	transient_1206.so fad_delay_1192.so \
+ 	dc_remove_1207.so retro_flange_1208.so valve_1209.so \
+-	sifter_1210.so tape_delay_1211.so step_muxer_1212.so \
+-	foldover_1213.so svf_1214.so gsm_1215.so gverb_1216.so \
+-	phasers_1217.so harmonic_gen_1220.so surround_encoder_1401.so \
+-	delayorama_1402.so dyson_compress_1403.so crossover_dist_1404.so \
++	step_muxer_1212.so \
++	foldover_1213.so \
++	harmonic_gen_1220.so surround_encoder_1401.so \
++	dyson_compress_1403.so crossover_dist_1404.so \
+ 	valve_rect_1405.so split_1406.so alias_1407.so \
+-	satan_maximiser_1408.so karaoke_1409.so gate_1410.so \
++	karaoke_1409.so \
+ 	comb_splitter_1411.so wave_terrain_1412.so \
+-	hard_limiter_1413.so smooth_decimate_1414.so fm_osc_1415.so \
+-	analogue_osc_1416.so rate_shifter_1417.so freq_tracker_1418.so \
+-	mod_delay_1419.so matrix_st_ms_1420.so matrix_ms_st_1421.so \
+-	matrix_spatialiser_1422.so plate_1423.so gong_1424.so \
+-	sc1_1425.so sc2_1426.so sc3_1427.so zm1_1428.so inv_1429.so \
+-	mbeq_1197.so pitch_scale_1193.so pitch_scale_1194.so imp_1199.so
++	hard_limiter_1413.so smooth_decimate_1414.so \
++	rate_shifter_1417.so freq_tracker_1418.so \
++	matrix_st_ms_1420.so matrix_ms_st_1421.so \
++	 plate_1423.so gong_1424.so \
++	zm1_1428.so inv_1429.so \
++	mbeq_1197.so pitch_scale_1193.so pitch_scale_1194.so
+ 
+ SUBDIRS = util gsm gverb
+ 
+ # Wacky stuff to stop automake getting confused
+ EXTRA_DIST = *.xml *.c *.h *.dtd *.pl *.css impulses/*.h
+-LINK = ld -shared -Bsymbolic -lc -lm -o $@
++LINK = ld -shared -Bsymbolic -L/usr/local/lib -L/usr/local/lib -L/usr/local/lib -lc -lm -o $@
+ pkgbin_PROGRAMS = $(SOBS)
+ pkgbindir = @prefix@/lib/ladspa
+ DESTDIR = $(INSTALL_ROOT)
+@@ -39,17 +39,6 @@
+ pitch_scale_1194_so_SOURCES = pitch_scale_1194.so.c
+ mbeq_1197_so_LDADD = $(FFTLIBS)
+ mbeq_1197_so_SOURCES = mbeq_1197.so.c
+-imp_1199_so_LDADD = $(FFTLIBS)
+-imp_1199_so_DEPENDENCIES = impulses/*
+-fm_osc_1415_so_DEPENDENCIES = util/blo.h
+-fm_osc_1415_so_SOURCES = fm_osc_1415.so.c util/blo.c
+-analogue_osc_1416_so_DEPENDENCIES = util/blo.h
+-analogue_osc_1416_so_LDADD = util/libblo.a
+-sc1_1425_so_LDADD = util/libdb.a util/librms.a
+-sc2_1426_so_LDADD = util/libdb.a util/librms.a
+-sc3_1427_so_LDADD = util/libdb.a util/librms.a
+-gsm_1215_so_LDADD = gsm/libgsm.a
+-gverb_1216_so_LDADD = gverb/libgverb.a
+ 
+ # Rule to build .c files from XML source
+ %.so.c:	%.xml

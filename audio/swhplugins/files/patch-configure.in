@@ -1,0 +1,20 @@
+--- configure.in.orig	Fri Nov  1 21:07:14 2002
++++ configure.in	Sun Nov  3 17:33:21 2002
+@@ -15,7 +15,8 @@
+ AC_REQUIRE_CPP
+ dnl AC_CHECK_HEADER(ladspa.h, [], [AC_MSG_ERROR([Cannot find ladspa.h, please install the LADSPA_SDK, or put ladspa.h somewhere it can be found]);])
+ 
+-CFLAGS="-lm"
++CFLAGS="-I/usr/local/include"
++LDFLAGS="-lm -L/usr/local/lib"
+ 
+ AC_CHECK_LIB(sfftw,fftw_one,
+     [
+@@ -41,7 +42,6 @@
+ 
+ dnl For gcc use:
+ MACHINE=${build_cpu}
+-CFLAGS="-Wall -O6 -fomit-frame-pointer -fstrength-reduce -funroll-loops -fmove-all-movables -ffast-math -fPIC -DPIC -mcpu=${MACHINE} -march=${MACHINE}"
+ 
+ dnl For Intel's C compiler use:
+ dnl CC="icc"
