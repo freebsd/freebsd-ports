@@ -1,5 +1,5 @@
 --- ARmake.inc.orig	Fri Apr 26 14:12:57 1996
-+++ ARmake.inc	Thu May 29 09:36:26 2003
++++ ARmake.inc	Fri Jul 11 16:41:11 2003
 @@ -25,14 +25,14 @@
  # | other than your home directory.      |
  # %--------------------------------------%
@@ -31,9 +31,10 @@
  # %---------------------------------------------------%
  #
 -ARPACKLIB  = $(home)/libarpack_$(PLAT).a
-+ARPACKLIB  = $(home)/libarpack.a
- LAPACKLIB = 
+-LAPACKLIB = 
 -BLASLIB = 
++ARPACKLIB  = $(home)/libarpack.a
++LAPACKLIB = $(home)/liblapack.a
 +BLASLIB = %%BLAS_LIBS%%
  #
  ALIBS =  $(ARPACKLIB) $(LAPACKLIB) $(BLASLIB) 
