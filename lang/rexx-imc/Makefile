@@ -3,7 +3,7 @@
 # Date created:				Septermber 21 96
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.3 1997/07/17 15:12:49 max Exp $
+# $Id: Makefile,v 1.4 1998/05/03 18:03:23 steve Exp $
 #
 
 DISTNAME=	rexx-imc-1.6d
@@ -11,6 +11,8 @@ CATEGORIES=	lang
 MASTER_SITES=	http://www.comlab.ox.ac.uk/oucl/users/ian.collier/distribution/
 
 MAINTAINER=	jfitz@FreeBSD.ORG
+
+BROKEN_ELF=	yes
 
 NO_WRKSUBDIR=	YES
 
