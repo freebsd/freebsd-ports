@@ -13,7 +13,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${CARDSETS}${EXTRACT_SUFX}
 
 MAINTAINER=	tg@FreeBSD.org
 
-RUN_DEPENDS=	python:${PORTSDIR}/lang/python
+RUN_DEPENDS=	${LOCALBASE}/lib/python1.5/site-packages/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 
 NO_BUILD=	yes
 
