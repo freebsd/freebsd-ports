@@ -135,6 +135,7 @@ share/locale/zh_TW/LC_MESSAGES/gdm-2.4.mo
 @dirrm share/gnome/xsessions
 @dirrm share/gnome/omf/gdm
 @dirrm share/gnome/help/gdm/C
+@dirrm share/gnome/help/gdm
 @dirrm share/gnome/gdm/themes/happygnome
 @dirrm share/gnome/gdm/themes/happygnome-list
 @dirrm share/gnome/gdm/themes/circles
