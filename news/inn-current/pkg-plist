@@ -1,3 +1,7 @@
+@exec mkdir /var/spool/news
+@exec chown news:news /var/spool/news
+@exec chmod 0775 /var/spool/news
+etc/rc.d/innd.sh
 news/bin/actived
 news/bin/actmerge
 news/bin/actsync
@@ -122,4 +126,3 @@ news/lib/innshellvars.pl
 news/lib/innshellvars.tcl
 news/lib/libinn.a
 news/lib/libstorage.a
-etc/rc.d/innd.sh
