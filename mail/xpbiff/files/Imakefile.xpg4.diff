@@ -1,0 +1,11 @@
+--- Imakefile.org	Thu Apr 10 23:39:59 1997
++++ Imakefile	Thu Apr 10 23:40:16 1997
+@@ -58,7 +58,7 @@
+   LOCAL_LDFLAGS = $(XI18NLIBDIR) $(UCBLIBDIR)
+         DEPLIBS = $(DEPXPMLIB) XawClientDepLibs $(DEPXWCHARLIB)
+ LOCAL_LIBRARIES = $(XPMLIB) XawClientLibs $(XWCHARLIB)
+-EXTRA_LIBRARIES = $(UCBLIB) -lm ExtraLibraries
++EXTRA_LIBRARIES = $(UCBLIB) -lm -lxpg4 ExtraLibraries
+            SRCS = xpbiff.c $(CONVSRC)
+            OBJS = xpbiff.o $(CONVOBJ)
+ 
