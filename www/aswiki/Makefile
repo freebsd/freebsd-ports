@@ -7,7 +7,7 @@
 
 PORTNAME=		aswiki
 PORTVERSION=		1.0.1
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		www ruby
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -32,7 +32,7 @@ post-extract:
 
 post-patch:
 	${REINPLACE_CMD} -e "s|__DATADIR__|${DATADIR}|" ${WRKSRC}/setup.sh
-	${ECHO} "\$$DIR_TEMPLATE = '__DATADIR__/templete'" \
+	${ECHO} "\$$DIR_TEMPLATE = '__DATADIR__/template'" \
 						>> ${WRKSRC}/aswiki.conf
 	${ECHO} "\$$DIR_PLUGIN = '__DATADIR__/plugin'" \
 						>> ${WRKSRC}/aswiki.conf
