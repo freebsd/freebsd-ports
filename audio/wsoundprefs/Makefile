@@ -19,5 +19,6 @@ LIB_DEPENDS=	PropList.2:${PORTSDIR}/devel/libPropList \
 
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=yes
+BROKEN=		"waiting for wmsound -> wsoundserver repo copy"
 
 .include <bsd.port.mk>
