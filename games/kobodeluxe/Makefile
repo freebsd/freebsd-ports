@@ -13,7 +13,7 @@ MASTER_SITES=	http://olofson.net/skobo/download/ \
 		http://olofson.net/download/
 DISTNAME=	KoboDeluxe-${PORTVERSION:S/.p/pre/}
 
-MAINTAINER=	verm@drunkmonk.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Kobo Deluxe (formerly SKobo) is an SDL port of Akira Higuchi's XKobo
 
 GNU_CONFIGURE=	yes

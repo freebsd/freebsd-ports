@@ -12,7 +12,7 @@ CATEGORIES=	emulators gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	grustibus
 
-MAINTAINER=	verm@drunkmonk.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An xmame frontend for Gnome
 
 RUN_DEPENDS=	xmame:${PORTSDIR}/emulators/xmame

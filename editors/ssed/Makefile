@@ -12,7 +12,7 @@ CATEGORIES=	editors textproc
 MASTER_SITES=	http://queen.rett.polimi.it/~paolob/seders/ssed/
 DISTNAME=	sed-${PORTVERSION}
 
-MAINTAINER=	verm@drunkmonk.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Super-sed is a heavily enhanced version of sed
 
 LIB_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
