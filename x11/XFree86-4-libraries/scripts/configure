@@ -147,7 +147,7 @@ cat <<'END'
  cryptography.
 
  If you have aquired a copy of "Wraphelp.c" and it currently resides in
- the same location as the XFree86 upgrade patches or in the ports "files"
+ the same location as the XFree86 source or in the ports "files"
  subdirectory,  it will be copied into the right place in the X11 source
  distribution and support for this feature will be enabled if you answer
  YES to the following question.
@@ -166,7 +166,7 @@ if [ $answ = YES ]; then
 	echo "==> $WH found in source distribution."
     elif [ -f $DISTDIR/Wraphelp.c ] ; then
 	echo "==> Wraphelp.c found in DISTDIR directory, copying to source tree."
-	cpwh=$X11FIXES/Wraphelp.c
+	cpwh=$DISTDIR/Wraphelp.c
     elif [ -f $FILESDIR/Wraphelp.c ] ; then
 	echo "==> Wraphelp.c found in files directory, copying to source tree."
 	cpwh=$FILESDIR/Wraphelp.c
