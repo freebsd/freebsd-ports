@@ -9,3 +9,12 @@
  
  # The top-level font directory.
  fontdir = $(texmf)/fonts
+@@ -80,7 +80,7 @@
+ fontnamedir = $(texmf)/fontname
+ 
+ # For dvips configuration files, psfonts.map, etc.
+-dvipsdir = $(texmf)/dvips
++dvipsdir = $(texmf)/dvips-ptex
+ 
+ # For dvips .pro files, gsftopk's render.ps, etc.
+ psheaderdir = $(dvipsdir)

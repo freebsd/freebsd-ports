@@ -1,5 +1,5 @@
---- xdvik-22.40w/texk/xdvik/Makefile.in.orig	Wed Apr 16 23:26:11 2003
-+++ xdvik-22.40w/texk/xdvik/Makefile.in	Wed Apr 16 23:29:12 2003
+--- xdvik-22.40y1/texk/xdvik/Makefile.in.orig	Mon Sep 20 04:09:40 2004
++++ xdvik-22.40y1/texk/xdvik/Makefile.in	Mon Sep 20 04:10:30 2004
 @@ -80,7 +80,7 @@
    paper.o tategaki.o vfontmap.o vf2ft.o \
    $(ALLOCA) dvips.o tfmload.o
@@ -25,4 +25,13 @@
 +	for p in $(program) $(perlprog); do rm -f $(bindir)/$$p; done
  
  ### //FIXME: add installation for encoding.map here!! (same place where psfonts.map is?)
- install-data: xdvi.1 t1mapper.1 vfontmap.sample
+ install-data: xdvi.1 t1mapper.1 vfontmap.vflib vfontmap.freetype
+@@ -167,7 +166,7 @@
+ 	$(INSTALL_DATA) xdvi.1 $(man1dir)/xdvi.$(manext)
+ 	$(INSTALL_DATA) $(srcdir)/t1mapper.1 $(man1dir)/t1mapper.$(manext)
+ 	$(INSTALL_DATA) $(srcdir)/xdvizilla.1 $(man1dir)/xdvizilla.$(manext)
+-	$(INSTALL_DATA) $(srcdir)/texmf/xdvi-teTeX.cfg $(texmf)/xdvi/xdvi.cfg
++	$(INSTALL_DATA) $(srcdir)/texmf/xdvi-teTeX.cfg $(XDVIETCDIR)/xdvi.cfg
+ 	if test ! -f $(XDVIETCDIR)/vfontmap; then \
+ 	 case "$(vflib_def)" in \
+ 	  *-DVF2FT) $(INSTALL_DATA) vfontmap.freetype $(XDVIETCDIR)/vfontmap;; \
