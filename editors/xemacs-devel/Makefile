@@ -17,6 +17,8 @@ DIST_SUBDIR=	xemacs
 MAINTAINER=	gj@FreeBSD.org
 COMMENT=	This port tracks the development (GAMMA) version of the XEmacs text editor
 
+NOT_FOR_ARCHS=	sparc64
+
 RUN_DEPENDS+=	${LOCALBASE}/lib/xemacs/xemacs-packages/etc/enriched.doc:${PORTSDIR}/editors/xemacs-packages
 .if !defined(WITHOUT_X11)
 LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
