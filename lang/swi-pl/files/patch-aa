@@ -1,6 +1,6 @@
---- Makefile.in.orig	Tue Jan 21 01:23:04 1997
-+++ Makefile.in	Mon Feb  3 05:47:28 1997
-@@ -288,7 +288,7 @@
+--- Makefile.in.orig	Wed May 14 17:52:28 1997
++++ Makefile.in	Sat May 17 21:09:48 1997
+@@ -292,7 +292,7 @@
  		-$(INSTALL_DATA) $(PLBASE)/man/$(PL).$(mansec) $(mandir)
  		-$(INSTALL_DATA) $(PLBASE)/man/chpl.$(mansec) $(mandir)
  		-$(INSTALL_DATA) $(PLBASE)/man/plld.$(mansec) $(mandir)
