@@ -7,22 +7,22 @@
 #
 
 PORTNAME?=	vim
-PORTVERSION=	6.0ax
-PORTREVISION?=	20
+PORTVERSION=	6.0
+PORTREVISION?=	0
 CATEGORIES?=	editors
-MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unreleased/unix/ \
-		ftp://ftp.nuxi.com/pub/vim/unreleased/unix/ \
-		ftp://ftp.vim.org/pub/vim/unreleased/unix/  \
-		ftp://ftp.is.co.za/applications/editors/unreleased/vim/  \
-		ftp://ftp.prz.tu-berlin.de/pub/unix/editors/vim/unreleased/unix/  \
-		ftp://ftp.mirror.ac.uk/sites/ftp.vim.org/pub/vim/unreleased/unix/ \
-		ftp://ftp.progsoc.uts.edu.au/pub/vim/unreleased/unix/
+MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unix/ \
+		ftp://ftp.nuxi.com/pub/vim/unix/ \
+		ftp://ftp.vim.org/pub/vim/unix/  \
+		ftp://ftp.is.co.za/applications/editors/vim/unix/  \
+		ftp://ftp.prz.tu-berlin.de/pub/unix/editors/vim/unix/  \
+		ftp://ftp.mirror.ac.uk/sites/ftp.vim.org/pub/vim/unix/ \
+		ftp://ftp.progsoc.uts.edu.au/pub/vim/unix/
 DISTNAME=	vim-${PORTVERSION}
 
 PATCH_SITES=	${MASTER_SITES:S/unix/patches/}
-.for p in 01 02 03 04 05 06 07 08 09 10 11 12 13 15 16 17 18 19 20
-PATCHFILES+=	${PORTVERSION}.0${p}
-.endfor
+#.for p in
+#PATCHFILES+=	${PORTVERSION}.0${p}
+#.endfor
 
 MAINTAINER?=	obrien@FreeBSD.org
 
