@@ -5,11 +5,6 @@ eval '(exit $?0)' && eval 'exec /usr/bin/perl -S $0 ${1+"$@"}'
 & eval 'exec /usr/bin/perl -S $0 $argv:q'
 if 0;
 
-if( $> ) {
-	print "\nYou must be root to run this step!\n\n";
-	exit 1;
-} 
-
 if( ! -x "/usr/sbin/pw" ) {
 	print "\nYou require the pw command, which was included in FreeBSD v2.2 builds\n";
 	print "as of Dec 9th 1996.  If you don't have it, try looking in\n";
@@ -36,6 +31,13 @@ if( getgrnam( "majordom" ) ) {
 		$mjGID++;
 	}
 }
+
+if( $have_group && $have_user ) {
+	exit 0;
+} elsif( $> ) {
+	print "\nYou must be root to run this step!\n\n";
+	exit 1;
+} 
 
 print "majordom user using uid $mjUID\n";
 print "majordom user using gid $mjGID\n";
