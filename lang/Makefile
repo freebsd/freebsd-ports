@@ -14,6 +14,7 @@
     SUBDIR += cim
     SUBDIR += clisp
     SUBDIR += cmucl
+    SUBDIR += compaq-cc
     SUBDIR += cu-prolog
     SUBDIR += dylan
     SUBDIR += egcs

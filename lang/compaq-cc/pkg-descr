@@ -1,0 +1,9 @@
+`ccc' is the Compaq C compiler for Linux Alpha.  It is a port of the same
+compiler that is available on the Compaq Tru64 UNIX platform (and also on
+OpenVMS Alpha).  The compiler produces excellent optimized code for the
+Alpha architecture, particularly for floating-point intensive applications. 
+
+See the on-line usage docs at
+ftp://ftp.compaq.com/pub/products/C-CXX/linux/compaq_c_v62/docs/ccc/readme.htm
+
+WWW:  http://www.support.compaq.com/alpha-tools/software/index.html

@@ -1,0 +1,194 @@
+@comment $FreeBSD$
+@comment ccc RPM
+usr/bin/ccc
+usr/doc/ccc-6.2.9.504/1_800_at_compaq.gif
+usr/doc/ccc-6.2.9.504/COPYING
+usr/doc/ccc-6.2.9.504/Language_Reference/compaqn2.gif
+usr/doc/ccc-6.2.9.504/Language_Reference/lrm.pdf
+usr/doc/ccc-6.2.9.504/Language_Reference/lrm.txt
+usr/doc/ccc-6.2.9.504/Language_Reference/penguin.gif
+usr/doc/ccc-6.2.9.504/Language_Reference/penguin.htm
+usr/doc/ccc-6.2.9.504/Language_Reference/title.htm
+usr/doc/ccc-6.2.9.504/Language_Reference/title001.htm
+usr/doc/ccc-6.2.9.504/Language_Reference/title002.htm
+usr/doc/ccc-6.2.9.504/Language_Reference/title003.htm
+usr/doc/ccc-6.2.9.504/Language_Reference/title004.htm
+usr/doc/ccc-6.2.9.504/Language_Reference/title005.htm
+usr/doc/ccc-6.2.9.504/Language_Reference/title006.htm
+usr/doc/ccc-6.2.9.504/Language_Reference/title007.htm
+usr/doc/ccc-6.2.9.504/Language_Reference/title008.htm
+usr/doc/ccc-6.2.9.504/Language_Reference/title009.htm
+usr/doc/ccc-6.2.9.504/Language_Reference/title010.htm
+usr/doc/ccc-6.2.9.504/Language_Reference/title011.htm
+usr/doc/ccc-6.2.9.504/Language_Reference/title012.htm
+usr/doc/ccc-6.2.9.504/Language_Reference/title013.htm
+usr/doc/ccc-6.2.9.504/Language_Reference/title014.htm
+usr/doc/ccc-6.2.9.504/Language_Reference/title015.htm
+usr/doc/ccc-6.2.9.504/Language_Reference/title016.htm
+usr/doc/ccc-6.2.9.504/Language_Reference/title017.htm
+usr/doc/ccc-6.2.9.504/Language_Reference/title018.htm
+usr/doc/ccc-6.2.9.504/Language_Reference/title019.htm
+usr/doc/ccc-6.2.9.504/Language_Reference/title020.htm
+usr/doc/ccc-6.2.9.504/Language_Reference/title021.htm
+usr/doc/ccc-6.2.9.504/Language_Reference/title022.htm
+usr/doc/ccc-6.2.9.504/Language_Reference/title023.htm
+usr/doc/ccc-6.2.9.504/Language_Reference/title024.htm
+usr/doc/ccc-6.2.9.504/Language_Reference/title025.htm
+usr/doc/ccc-6.2.9.504/Language_Reference/title026.htm
+usr/doc/ccc-6.2.9.504/Language_Reference/title027.htm
+usr/doc/ccc-6.2.9.504/Language_Reference/title028.htm
+usr/doc/ccc-6.2.9.504/Language_Reference/title029.htm
+usr/doc/ccc-6.2.9.504/Language_Reference/titlei01.htm
+usr/doc/ccc-6.2.9.504/Language_Reference/titlei02.htm
+usr/doc/ccc-6.2.9.504/Language_Reference/titlei03.htm
+usr/doc/ccc-6.2.9.504/Language_Reference/titlei04.htm
+usr/doc/ccc-6.2.9.504/Language_Reference/titlei05.htm
+usr/doc/ccc-6.2.9.504/Language_Reference/titleidx.htm
+usr/doc/ccc-6.2.9.504/Language_Reference/titlet01.htm
+usr/doc/ccc-6.2.9.504/Language_Reference/titlet02.htm
+usr/doc/ccc-6.2.9.504/Language_Reference/titlet03.htm
+usr/doc/ccc-6.2.9.504/Language_Reference/titletoc.htm
+usr/doc/ccc-6.2.9.504/Language_Reference/zk-8422a.gif
+usr/doc/ccc-6.2.9.504/Programmers_Guide/BUTTONS.HTM
+usr/doc/ccc-6.2.9.504/Programmers_Guide/CMPLRCHP.HTM
+usr/doc/ccc-6.2.9.504/Programmers_Guide/CNFGKRNL.HTM
+usr/doc/ccc-6.2.9.504/Programmers_Guide/COMPAQN2.GIF
+usr/doc/ccc-6.2.9.504/Programmers_Guide/DBGGRCHP.HTM
+usr/doc/ccc-6.2.9.504/Programmers_Guide/FIGU_001.GIF
+usr/doc/ccc-6.2.9.504/Programmers_Guide/FIGU_004.GIF
+usr/doc/ccc-6.2.9.504/Programmers_Guide/FIGU_005.GIF
+usr/doc/ccc-6.2.9.504/Programmers_Guide/FIGU_006.GIF
+usr/doc/ccc-6.2.9.504/Programmers_Guide/FIGU_007.GIF
+usr/doc/ccc-6.2.9.504/Programmers_Guide/FIGU_008.GIF
+usr/doc/ccc-6.2.9.504/Programmers_Guide/FIGU_009.GIF
+usr/doc/ccc-6.2.9.504/Programmers_Guide/FIGU_010.GIF
+usr/doc/ccc-6.2.9.504/Programmers_Guide/FIGU_011.GIF
+usr/doc/ccc-6.2.9.504/Programmers_Guide/FIGU_012.GIF
+usr/doc/ccc-6.2.9.504/Programmers_Guide/FIGU_013.GIF
+usr/doc/ccc-6.2.9.504/Programmers_Guide/FIGU_014.GIF
+usr/doc/ccc-6.2.9.504/Programmers_Guide/FIGU_015.GIF
+usr/doc/ccc-6.2.9.504/Programmers_Guide/FIGU_016.GIF
+usr/doc/ccc-6.2.9.504/Programmers_Guide/FOOTNOTE.HTM
+usr/doc/ccc-6.2.9.504/Programmers_Guide/HELP.GIF
+usr/doc/ccc-6.2.9.504/Programmers_Guide/HELP.HTM
+usr/doc/ccc-6.2.9.504/Programmers_Guide/HELP2.GIF
+usr/doc/ccc-6.2.9.504/Programmers_Guide/HELP3.GIF
+usr/doc/ccc-6.2.9.504/Programmers_Guide/HLPSMALL.GIF
+usr/doc/ccc-6.2.9.504/Programmers_Guide/INDEX.GIF
+usr/doc/ccc-6.2.9.504/Programmers_Guide/INDEX.HTM
+usr/doc/ccc-6.2.9.504/Programmers_Guide/INDEX2.GIF
+usr/doc/ccc-6.2.9.504/Programmers_Guide/INDEX3.GIF
+usr/doc/ccc-6.2.9.504/Programmers_Guide/LNTCHPXX.HTM
+usr/doc/ccc-6.2.9.504/Programmers_Guide/NCH0001X.HTM
+usr/doc/ccc-6.2.9.504/Programmers_Guide/NTRCHPXX.HTM
+usr/doc/ccc-6.2.9.504/Programmers_Guide/PENGUIN.GIF
+usr/doc/ccc-6.2.9.504/Programmers_Guide/PNTRPPXX.HTM
+usr/doc/ccc-6.2.9.504/Programmers_Guide/PPCHPXXX.HTM
+usr/doc/ccc-6.2.9.504/Programmers_Guide/PRFCHPXX.HTM
+usr/doc/ccc-6.2.9.504/Programmers_Guide/PRGMCHPX.HTM
+usr/doc/ccc-6.2.9.504/Programmers_Guide/PTMZCHPX.HTM
+usr/doc/ccc-6.2.9.504/Programmers_Guide/SHLBCHPX.HTM
+usr/doc/ccc-6.2.9.504/Programmers_Guide/SYSVPPND.HTM
+usr/doc/ccc-6.2.9.504/Programmers_Guide/THRDDGRC.HTM
+usr/doc/ccc-6.2.9.504/Programmers_Guide/THRDSCHP.HTM
+usr/doc/ccc-6.2.9.504/Programmers_Guide/TITLE.HTM
+usr/doc/ccc-6.2.9.504/Programmers_Guide/TITLETXT.HTM
+usr/doc/ccc-6.2.9.504/Programmers_Guide/TMCHPXXX.HTM
+usr/doc/ccc-6.2.9.504/Programmers_Guide/TOC.HTM
+usr/doc/ccc-6.2.9.504/Programmers_Guide/XCPTCHPX.HTM
+usr/doc/ccc-6.2.9.504/Programmers_Guide/prog_guide.pdf
+usr/doc/ccc-6.2.9.504/README
+usr/doc/ccc-6.2.9.504/README.htm
+usr/doc/ccc-6.2.9.504/README.pdf
+usr/doc/ccc-6.2.9.504/README.txt
+usr/doc/ccc-6.2.9.504/arrow.gif
+usr/doc/ccc-6.2.9.504/cinset.gif
+usr/doc/ccc-6.2.9.504/compaq.gif
+usr/doc/ccc-6.2.9.504/compaqn2.gif
+usr/doc/ccc-6.2.9.504/ctitle.gif
+usr/doc/ccc-6.2.9.504/dot.gif
+usr/doc/ccc-6.2.9.504/index.htm
+usr/doc/ccc-6.2.9.504/penguin.gif
+usr/doc/ccc-6.2.9.504/penguin.htm
+usr/doc/ccc-6.2.9.504/readme.htm
+usr/doc/ccc-6.2.9.504/readme_contents.htm
+usr/doc/ccc-6.2.9.504/top_nav.gif
+usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/bin/__DECC_include_epilogue.h
+usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/bin/__DECC_include_prologue.h
+usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/bin/as
+usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/bin/ccc
+usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/bin/comp.config
+usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/bin/cpp.Linux-bad
+usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/bin/cpp
+usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/bin/create-comp-config.sh
+usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/bin/crt1.o
+usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/bin/crtbegin.o
+usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/bin/crtend.o
+usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/bin/crti.o
+usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/bin/crtn.o
+usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/bin/gcrt1.o
+usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/bin/ld.Linux-bad
+usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/bin/ld
+usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/bin/lnxcc
+usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/bin/lnxcc_driver
+usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/bin/probe_linux.sh
+usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/bin/protect_headers_setup.sh
+usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/include/alpha/builtins.h
+usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/include/ansidecl.h
+usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/include/c_asm.h
+usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/include/cvt.h
+usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/include/glob.h
+usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/include/gnu/types.h
+usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/include/libio.h
+usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/include/machine
+usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/include/malloc.h
+usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/include/nan.h
+usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/include/resourcebits.h
+usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/include/stdarg.h
+usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/include/stdbool.h
+usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/include/stddef.h
+usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/include/stdio.h
+usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/include/sys/cdefs.h
+usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/include/sys/sysmacros.h
+usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/include/sys/types.h
+usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/include/va_list.h
+usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/include/varargs.h
+usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/man/man1/ccc.1
+usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/man/man8/protect_headers_setup.8
+usr/man/man1/ccc.1
+usr/man/man8/protect_headers_setup.8
+usr/man/rsml
+usr/man/sml
+@dirrm usr/doc/ccc-6.2.9.504/Language_Reference
+@dirrm usr/doc/ccc-6.2.9.504/Programmers_Guide
+@dirrm usr/doc/ccc-6.2.9.504
+@dirrm usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/include/alpha
+@dirrm usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/include/gnu
+@dirrm usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/include/sys
+@dirrm usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/include
+@dirrm usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/man/man1
+@dirrm usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/man/man8
+@dirrm usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/man/rsml
+@dirrm usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/man/sml
+@dirrm usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/man
+@dirrm usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux
+@dirrm usr/lib/compaq/ccc-6.2.9.504-2
+@comment libots RPM
+usr/lib/compaq/libots-2.2.7/README
+usr/lib/compaq/libots-2.2.7/libots.a
+usr/lib/compaq/libots-2.2.7/libots.so
+usr/lib/libots.a
+usr/lib/libots.so
+@dirrm usr/lib/compaq/libots-2.2.7
+@comment cpml RPM
+usr/doc/cpml-5.1.0/README
+usr/doc/cpml-5.1.0/Release_Notes-5.1.0
+usr/include/cpml.h
+usr/lib/compaq/cpml-5.1.0/cpml.h
+usr/lib/compaq/cpml-5.1.0/libcpml_ev5.a
+usr/lib/compaq/cpml-5.1.0/libcpml_ev5.so
+usr/lib/libcpml.a
+usr/lib/libcpml.so
+@dirrm usr/doc/cpml-5.1.0
+@dirrm usr/lib/compaq/cpml-5.1.0
+@dirrm usr/lib/compaq
