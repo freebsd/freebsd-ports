@@ -1,0 +1,66 @@
+#!/bin/sh
+# wargus - wargus/stratagus wrapper script
+#
+# Note: If you have noticed any problems with this script or my port, please
+# let me know as soon as possible!
+#
+# 2004 Travis Poppe <tlp@LiquidX.org>
+
+USERDIR=$HOME/.wargus
+DATADIR=%%PREFIX%%/share/wargus/data.wc2
+
+if [ ! -x $DATADIR ]; then
+	echo "Warcraft2 data not found in $DATADIR/"
+	echo ""
+	echo "Did you run build.sh yet?"
+	echo ""
+	echo "Giving you instructions in 5 seconds..."
+	sleep 5
+	echo ""
+	echo "The Wargus tool has been installed to %%PREFIX%%/share/wargus/"
+	echo ""
+	echo "You can now use this tool to extract Warcraft2 data for use with the"
+	echo "Stratagus engine from the following CDs:"
+	echo ""
+	echo "* US Expansion (both MAC/DOS)"
+	echo "* US Original (both MAC/DOS)" 
+	echo "* UK/Australian Original"
+	echo "* UK/Australian Expansion"
+	echo "* German Original"
+	echo "* German Expansion"
+	echo "* Spanish Original"
+	echo ""
+	echo "If you have one of the above CDs mounted on /cdrom, su to root and change to"
+	echo "the %%PREFIX%%/share/wargus/ directory and try executing:"
+	echo ""
+	echo "./build.sh -p /cdrom"
+ 	echo ""
+	echo "After your Warcraft2 data has been successfully extracted, run 'wargus' as the"
+	echo "user you intend to play the game with."
+ 	echo ""
+	echo "For more information, please visit: http://wargus.sourceforge.net"
+fi
+
+if [ -x $USERDIR ]; then
+	echo "Warcraft2 data appears to be installed/linked to $USERDIR/"
+	echo ""
+	echo "Attempting to run Stratagus with Warcraft2 data"
+	echo ""
+	cd $USERDIR
+	stratagus -d $USERDIR/data $*
+	exit
+fi
+
+if [ -x $DATADIR ]; then
+	mkdir $USERDIR
+	mkdir $USERDIR/data
+	ln -s %%PREFIX%%/share/wargus/data.wc2/* $USERDIR/data
+
+	echo "Installed/linked Warcraft2 data to $USERDIR/"
+	echo ""
+	echo "Attempting to run Stratagus with Warcraft2 data"
+	echo ""
+	cd $USERDIR
+	stratagus -d $USERDIR/data $*
+	exit
+fi

@@ -1,0 +1,24 @@
+-------------------------------------------------------------------------------
+The Wargus tool has been installed to %%PREFIX%%/share/wargus/
+
+You can now use this tool to extract Warcraft2 data for use with the 
+Stratagus engine from the following CDs:
+
+* US Expansion (both MAC/DOS)
+* US Original (both MAC/DOS)
+* UK/Australian Original
+* UK/Australian Expansion
+* German Original
+* German Expansion
+* Spanish Original
+
+If you have one of the above CDs mounted on /cdrom, su to root and change to 
+the %%PREFIX%%/share/wargus/ directory and try executing: 
+
+./build.sh -p /cdrom
+
+After your Warcraft2 data has been successfully extracted, run 'wargus' as the
+user you intend to play the game with.
+
+For more information, please visit: http://wargus.sourceforge.net
+-------------------------------------------------------------------------------
