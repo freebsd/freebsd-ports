@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.44 1997/09/13 20:19:28 chuckr Exp $
+# $Id: Makefile,v 1.45 1997/12/14 14:48:37 jseger Exp $
 #
 
     SUBDIR += asedit
@@ -21,6 +21,7 @@
     SUBDIR += uemacs
     SUBDIR += uzap
     SUBDIR += vile
+    SUBDIR += vilearn
     SUBDIR += vim
     SUBDIR += vim5beta
     SUBDIR += xcoral
