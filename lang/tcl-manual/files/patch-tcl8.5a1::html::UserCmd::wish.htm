@@ -1,0 +1,38 @@
+--- tcl8.5a1/html/UserCmd/wish.htm.orig	Thu Mar  4 11:24:31 2004
++++ tcl8.5a1/html/UserCmd/wish.htm	Thu Nov 18 12:47:04 2004
+@@ -4,7 +4,7 @@
+ <DL><DD>wish - Simple windowing shell</DL>
+ <DD><A HREF="wish.htm#M3" NAME="L16">SYNOPSIS</A>
+ <DL>
+-<DD><B>wish</B> ?-encoding <I>name</I>? ?<I>fileName arg arg ...</I>?
++<DD><B>wish8.5</B> ?-encoding <I>name</I>? ?<I>fileName arg arg ...</I>?
+ </DL>
+ <DD><A HREF="wish.htm#M4" NAME="L17">OPTIONS</A>
+ <DL>
+@@ -36,7 +36,7 @@
+ <H3><A NAME="M2">NAME</A></H3>
+ wish - Simple windowing shell
+ <H3><A NAME="M3">SYNOPSIS</A></H3>
+-<B>wish</B> ?-encoding <I>name</I>? ?<I>fileName arg arg ...</I>?<BR>
++<B>wish8.5</B> ?-encoding <I>name</I>? ?<I>fileName arg arg ...</I>?<BR>
+ <H3><A NAME="M4">OPTIONS</A></H3>
+ <DL>
+ <DT><A NAME="M5"><B>-encoding </B><I>name</I></A><DD>
+@@ -154,7 +154,7 @@
+ <P></DL>
+ <H3><A NAME="M23">SCRIPT FILES</A></H3>
+ If you create a Tcl script in a file whose first line is
+-<PRE><B>#!/usr/local/bin/wish</B></PRE>
++<PRE><B>#!/usr/local/bin/wish8.5</B></PRE>
+ then you can invoke the script file directly from your shell if
+ you mark it as executable.
+ This assumes that <B>wish</B> has been installed in the default
+@@ -168,7 +168,7 @@
+ following three lines:
+ <PRE><B>#!/bin/sh
+ # the next line restarts using wish &#92;
+-exec wish &quot;$0&quot; &quot;$@&quot;</B></PRE>
++exec wish8.5 &quot;$0&quot; &quot;$@&quot;</B></PRE>
+ This approach has three advantages over the approach in the previous
+ paragraph.  First, the location of the <B>wish</B> binary doesn't have
+ to be hard-wired into the script:  it can be anywhere in your shell
