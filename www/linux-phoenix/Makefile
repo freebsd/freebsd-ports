@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	phoenix
-PORTVERSION=	0.3
+PORTVERSION=	0.5
 CATEGORIES=	www linux
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	phoenix/releases/${PORTVERSION}
 PKGNAMEPREFIX=	linux-
 DISTNAME=	phoenix-${PORTVERSION}-i686-pc-linux-gnu
 
-MAINTAINER=	voisine@bytemobile.com
+MAINTAINER=	voisine@yahoo.com
 COMMENT=	Web browser branched from Mozilla
 
 RUN_DEPENDS=	\
