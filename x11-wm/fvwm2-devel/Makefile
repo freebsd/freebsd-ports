@@ -55,7 +55,7 @@ CONFIGURE_ARGS+=	--with-png --with-png-includes=${LOCALBASE}/include \
 .endif
 
 .if !defined(WITHOUT_ICONV)
-LIB_DEPENDS+=	iconv.2:${PORTSDIR}/converters/iconv
+LIB_DEPENDS+=	biconv.2:${PORTSDIR}/converters/iconv
 CONFIGURE_ARGS+=	--with-iconv-lib=/usr/local/lib \
 			--with-iconv-includes=/usr/local/include
 .endif
