@@ -1,0 +1,27 @@
+--- Makefile.in.orig	Tue Oct 22 04:56:02 2002
++++ Makefile.in	Fri Jan 24 03:36:00 2003
+@@ -8,10 +8,13 @@
+ mandir      = @mandir@
+ 
+ CC          = @CC@
++CPPFLAGS    = @CPPFLAGS@
+ CFLAGS      = -I. -Wall @CFLAGS@
+ LDFLAGS     = @LDFLAGS@
+ LIBS        = @LIBS@
+ INSTALL     = @INSTALL@
++INSTALL_PROGRAM = @INSTALL_PROGRAM@
++INSTALL_DATA    = @INSTALL_DATA@
+ LN_S        = @LN_S@
+ 
+ all: wmpuzzle
+@@ -23,8 +26,8 @@
+ wmgeneral.o: wmgeneral.c wmgeneral.h
+ 
+ install: wmpuzzle wmpuzzle.6
+-	$(INSTALL) -D -s -m 755 wmpuzzle $(DESTDIR)$(bindir)/wmpuzzle
+-	$(INSTALL) -D -m 644 wmpuzzle.6 $(DESTDIR)$(mandir)/man6/wmpuzzle.6
++	$(INSTALL_PROGRAM) wmpuzzle $(DESTDIR)$(bindir)/wmpuzzle
++	$(INSTALL_DATA) wmpuzzle.6 $(DESTDIR)$(mandir)/man6/wmpuzzle.6
+ 
+ uninstall:
+ 	rm -f $(DESTDIR)$(bindir)/wmpuzzle

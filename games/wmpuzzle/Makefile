@@ -18,27 +18,31 @@ EXTRACT_ONLY=	wmpuzzle_${PORTVERSION}.orig${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -lgnugetopt"
-USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
+
 USE_X_PREFIX=	yes
 USE_XPM=	yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN6=		wmpuzzle.6
 
 BSDIMAGES=	daemon.xpm
 
+CPPFLAGS+=	-I${X11BASE}/include 
+LDFLAGS+=	-L${X11BASE}/lib
+
+.if !exists(/usr/include/getopt.h)
+LIB_DEPENDS+=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+CPPFLAGS+=	-I${LOCALBASE}/include 
+LDFLAGS+=	-L${LOCALBASE}/lib -lgnugetopt
+.endif
+
 post-extract:
 .for i in ${BSDIMAGES}
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/$i ${WRKSRC}/
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/${i} ${WRKSRC}/
 .endfor
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/wmpuzzle ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/wmpuzzle.6 ${PREFIX}/man/man6
 
 .include <bsd.port.mk>
