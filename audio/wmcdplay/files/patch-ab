@@ -1,0 +1,8 @@
+--- Imakefile.orig	Sun Sep  6 00:11:26 1998
++++ Imakefile	Wed Nov  1 08:58:25 2000
+@@ -5,4 +5,4 @@
+ SRCS = wmcdplay.cc
+ OBJS = wmcdplay.o
+ 
+-ComplexProgramTarget(wmcdplay)
++ComplexProgramTargetNoMan(wmcdplay)
