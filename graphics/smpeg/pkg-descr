@@ -1,0 +1,4 @@
+SMPEG is a free, general purpose mpeg player that uses the
+SDL library.  Combines the functionality of mpeg_play and splay. 
+
+WWW: http://www.lokigames.com/development/smpeg.php3
