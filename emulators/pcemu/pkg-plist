@@ -1,0 +1,21 @@
+@cd /usr/local
+@mode 555
+bin/pcemu
+@exec mkdir -p %D/lib/pcemu/doc %D/lib/pcemu/font %D/lib/pcemu/C
+@mode 444
+lib/pcemu/doc/BUGS
+lib/pcemu/doc/CHANGES
+lib/pcemu/doc/README
+lib/pcemu/doc/TODO
+lib/pcemu/doc/README.FreeBSD
+lib/pcemu/doc/lredir.readme
+lib/pcemu/doc/report.ps.gz
+lib/pcemu/font/vga.pcf.Z
+@exec mkfontdir %B
+lib/pcemu/C/vga50.com
+lib/pcemu/C/config.sys
+lib/pcemu/C/dumpdisk.exe
+lib/pcemu/C/lredir.exe
+@mode 666
+lib/pcemu/DriveA
+@unexec rm -rf %D/lib/pcemu
