@@ -3,4 +3,4 @@ XML documents. Functionality includes creating of attribute
 lists from arrays, creation of tags, validation of XML names
 and more.
 
-WWW: http://pear.php.net/package-info.php?package=XML_Util
+WWW: http://pear.php.net/package/XML_Util/
