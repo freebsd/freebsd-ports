@@ -58,4 +58,9 @@ do-install:
 	@${MV} /tmp/webmin.sh ${PREFIX}/etc/rc.d/webmin.sh
 	@${CHMOD} 554 ${PREFIX}/etc/rc.d/webmin.sh
 
+post-install:
+	@${CP} ${PLIST} ${TMPPLIST}
+	@find ${PREFIX}/lib/webmin -type f | ${SED} -e "s@${PREFIX}/@@" | sort >> ${TMPPLIST}
+	@find ${PREFIX}/lib/webmin -type d | ${SED} -e "s@${PREFIX}/@@" | ${PERL} -e 'print (join ("\n", reverse map ("\@dirrm " . substr ($$_, 0, -1), <STDIN>)) . "\n");' >> ${TMPPLIST}
+
 .include <bsd.port.mk>
