@@ -153,3 +153,4 @@ x11-toolkits/gnustep-xgps|x11-toolkits/gnustep-back|2003-01-20|full substitute
 devel/ruby-unit|devel/ruby-testunit|2003-01-23|succeeded
 mail/p5-Mail-SpamAssassin-devel|mail/p5-Mail-SpamAssassin-snapshot|2003-01-25|directory renamed
 devel/uml|devel/umbrello|2003-01-26|project renamed
+x11-toolkits/qt30|x11-toolkits/qt31|2003-01-28|qt30 replaced by qt31
