@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		p0f
-PORTVERSION=		2.0.1
+PORTVERSION=		2.0.2
 CATEGORIES=		net
 MASTER_SITES=		http://lcamtuf.coredump.cx/p0f/
 EXTRACT_SUFX=		.tgz
@@ -14,7 +14,8 @@ EXTRACT_SUFX=		.tgz
 MAINTAINER=		trevor@FreeBSD.org
 COMMENT=		Passive OS fingerprinting tool
 
-DOCFILES=		COPYING CREDITS KNOWN_BUGS README TODO winxp-memleak.txt
+DOCFILES=	COPYING CREDITS ChangeLog KNOWN_BUGS README TODO win-memleak.txt
+MAN1=		p0f.1
 PLIST=			${WRKDIR}/pkg-plist
 WRKSRC=			${WRKDIR}/p0f
 
@@ -28,7 +29,9 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/p0f ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/p0frep ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/p0f.fp ${PREFIX}/etc
+	${MKDIR} ${PREFIX}/etc/p0f
+	${INSTALL_DATA} ${WRKSRC}/p0f.fp ${PREFIX}/etc/p0f
+	${INSTALL_MAN} ${WRKSRC}/p0f.1 ${MANPREFIX}/man/man1/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for ii in ${DOCFILES}
@@ -39,7 +42,8 @@ do-install:
 pre-install:
 	${ECHO_CMD} bin/p0f	> ${PLIST}
 	${ECHO_CMD} bin/p0frep	>> ${PLIST}
-	${ECHO_CMD} etc/p0f.fp	>> ${PLIST}
+	${ECHO_CMD} etc/p0f/p0f.fp	>> ${PLIST}
+	${ECHO_CMD} "@dirrm etc/p0f" >> ${PLIST}
 .if !defined(NOPORTDOCS)
 .for i in ${DOCFILES}
 	${ECHO_CMD} share/doc/p0f/$i >> ${PLIST}
