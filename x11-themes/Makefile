@@ -1,5 +1,6 @@
 # $FreeBSD$
 #
+    SUBDIR += gnome-icons-aqua-fusion
     SUBDIR += kde-icons-amaranth
     SUBDIR += kde-icons-amaranth-althaea
     SUBDIR += kde-icons-crystalosx
