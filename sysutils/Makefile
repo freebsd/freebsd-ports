@@ -54,6 +54,7 @@
     SUBDIR += file
     SUBDIR += filedupe
     SUBDIR += fileutils
+    SUBDIR += flasher
     SUBDIR += flexbackup
     SUBDIR += flog
     SUBDIR += fontedit

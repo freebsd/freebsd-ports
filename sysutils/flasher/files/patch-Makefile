@@ -1,0 +1,16 @@
+$FreeBSD$
+
+--- Makefile.orig	Mon Mar 18 18:03:38 2002
++++ Makefile	Mon Mar 18 18:04:08 2002
+@@ -1,8 +1,8 @@
+ 
+-CFLAGS = -Wall -O
++CFLAGS += -Wall
+ 
+-CC = gcc
+-DESTDIR=/usr/local
++CC ?= gcc
++DESTDIR= ${PREFIX}
+ 
+ all: flasher man
+ 
