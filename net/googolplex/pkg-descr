@@ -1,0 +1,3 @@
+Googolplex is just a Python class to do a query on http://www.google.com, parse it and returns the result as a list.
+
+WWW: http://googolplex.sourceforge.net/
