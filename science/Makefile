@@ -12,6 +12,7 @@
     SUBDIR += chemtool
     SUBDIR += chemtool-devel
     SUBDIR += clhep
+    SUBDIR += dcl
     SUBDIR += devisor
     SUBDIR += dft++
     SUBDIR += euler
