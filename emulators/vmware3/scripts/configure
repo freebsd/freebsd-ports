@@ -93,7 +93,7 @@ if [ _$BATCH = _ ]; then
 	10 50
     fi
 else #BATCH
-    [ -f ${WRKDIR}/Makefile.inc.net ] && exit
+    [ -f ${WRKDIR}/Makefile.inc.net ] && exit 0
 fi #BATCH
 
 (
@@ -104,3 +104,5 @@ echo VMNET_HOST_IP=$host_ip
 echo VMNET_NETMASK=$netmask
 [ $networking -ne 0 ] && echo VMNET_NETWORKING=1
 )
+
+exit 0
