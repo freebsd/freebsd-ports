@@ -23,17 +23,23 @@ LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
 
 USE_GETOPT_LONG=	yes
 USE_REINPLACE=	yes
-USE_GNOME=	gtk12
+USE_GNOME=	gnometarget
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-debug
 
 MAN1=		muse.1
 
-CPPFLAGS=	-I${LOCALBASE}/include -DHAVE_DECL_GETOPT
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS=	-I${LOCALBASE}/include -DHAVE_DECL_GETOPT ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+
+.if defined(WITHOUT_X11)
+PKGNAMESUFFIX=	-nox11
+CONFIGURE_ARGS+=	--without-x --with-rubik
+.else
+USE_GNOME+=	gtk12
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CFLAGS=.*$$|CFLAGS="\$$CFLAGS"|g ; \
