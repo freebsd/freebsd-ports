@@ -2,32 +2,6 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/CHANGES
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/TODO
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/docs/api/classes/XmlConfigFile.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/docs/api/classes/XmlConfigFile.src/M000001.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/docs/api/classes/XmlConfigFile.src/M000002.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/docs/api/classes/XmlConfigFile.src/M000003.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/docs/api/classes/XmlConfigFile.src/M000004.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/docs/api/classes/XmlConfigFile.src/M000005.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/docs/api/classes/XmlConfigFile.src/M000006.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/docs/api/classes/XmlConfigFile.src/M000007.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/docs/api/classes/XmlConfigFile.src/M000008.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/docs/api/classes/XmlConfigFile.src/M000009.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/docs/api/classes/XmlConfigFile.src/M000010.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/docs/api/classes/XmlConfigFile.src/M000011.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/docs/api/classes/XmlConfigFile.src/M000012.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/docs/api/classes/XmlConfigFile.src/M000013.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/docs/api/classes/XmlConfigFile.src/M000014.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/docs/api/created.rid
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/docs/api/files/xmlconfigfile_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/docs/api/fr_class_index.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/docs/api/fr_file_index.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/docs/api/fr_method_index.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/docs/api/index.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/docs/api/rdoc-style.css
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/docs/index.html
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/docs/api/files
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/docs/api/classes/XmlConfigFile.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/docs/api/classes
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/docs/api
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/docs
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
