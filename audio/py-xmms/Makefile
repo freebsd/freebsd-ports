@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	xmms
-PORTVERSION=	1.05
+PORTVERSION=	1.06
 CATEGORIES=	audio python
-MASTER_SITES=	http://www.via.ecp.fr/~flo/2002/PyXMMS/dist/ \
-		http://www3.kr.freebsd.org/~perky/distfiles/
+MASTER_SITES=	http://www.via.ecp.fr/~flo/2002/PyXMMS/dist/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyxmms-${PORTVERSION}
 
@@ -22,7 +21,6 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	glib12
-PLIST_SUB+=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S,^${LOCALBASE}/,,g}
 XMMS_CONFIG?=	${X11BASE}/bin/xmms-config
 MAKE_ENV=	GLIB_CONFIG="${GLIB_CONFIG}" XMMS_CONFIG="${XMMS_CONFIG}"
 
