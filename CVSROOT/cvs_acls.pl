@@ -79,10 +79,10 @@ use strict;
 
 use lib $ENV{CVSROOT};
 use CVSROOT::cfg;
+my $CVSROOT = $ENV{'CVSROOT'} || die "Can't determine \$CVSROOT!";
 
 my $debug = $cfg::DEBUG;
-my $cvsroot = $ENV{'CVSROOT'};
-my $availfile = $cvsroot . "/CVSROOT/avail";
+my $availfile = "$CVSROOT/CVSROOT/avail";
 my $myname = $ENV{"LOGNAME"} || $ENV{"USER"};
 
 my $die = '';
@@ -90,10 +90,8 @@ eval "print STDERR \$die='Unknown parameter $1\n' if !defined \$$1; \$$1=\$';"
     while ($ARGV[0] =~ /^(\w+)=/ && shift(@ARGV));
 exit 255 if $die;		# process any variable=value switches
 
-die "Must set CVSROOT\n" if !$cvsroot;
-
 my $repos = shift;
-$repos =~ s:^$cvsroot/::;
+$repos =~ s:^$CVSROOT/::;
 grep($_ = $repos . '/' . $_, @ARGV);
 
 print "$$ Repos: $repos\n","$$ ==== ",join("\n$$ ==== ",@ARGV),"\n" if $debug;

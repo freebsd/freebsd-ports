@@ -14,11 +14,14 @@
 package cfg;
 use strict;
 use vars qw(
-	$ADD_TO_LINE $CHECK_HEADERS $DEBUG $FILE_PREFIX $IDHEADER
-	$LAST_FILE $MAILADDRS $MAILBANNER $MAILCMD $MAIL_BRANCH_HDR
+	$ADD_TO_LINE $CHECK_HEADERS $DEBUG $EXCLUDE_FILE $FILE_PREFIX
+	$IDHEADER $LAST_FILE $MAILADDRS $MAILBANNER $MAILCMD $MAIL_BRANCH_HDR
 	$MAIL_ON_DIR_CREATION $MAIL_TRANSFORM $PID $PROG_CVS $PROG_MV
 	$TMPDIR $UNEXPAND_RCSID %TEMPLATE_HEADERS @COMMIT_HOSTS
 );
+
+my $CVSROOT = $ENV{'CVSROOT'} || die "Can't determine \$CVSROOT!";
+
 
 
 ######################
@@ -87,10 +90,11 @@ $PROG_MV =	'/bin/mv';		# mv(1)
 
 # Check for instances of $IDHEADER in committed files, and
 # bomb out if they're not present, or corrupted.
-# Exclusions can be specified in the CVSROOT/exclude file.
+# Exclusions can be specified in the exclude file.
 # Currently $IDHEADER must be an instance of '$ CVSHeader $', or an alias
 # defined in CVSROOT/options.
 $CHECK_HEADERS = 0;
+$EXCLUDE_FILE = "$CVSROOT/CVSROOT/exclude";
 
 # WARNING: You will also need to be running the version of cvs that
 # the FreeBSD project is using; I believe that we have some local patches
@@ -208,8 +212,8 @@ sub add_cvsweb_entry {
 # Load the local configuration file, that allows the entries in this
 # file to be overridden.
 ######################################################################
-eval { require "$ENV{CVSROOT}/CVSROOT/cfg_local.pm" }
-    if -e "$ENV{CVSROOT}/CVSROOT/cfg_local.pm";
+eval { require "$CVSROOT/CVSROOT/cfg_local.pm" }
+    if -e "$CVSROOT/CVSROOT/cfg_local.pm";
 warn $@ if $@;
 
 1; # Perl requires all modules to return true.  Don't delete!!!!

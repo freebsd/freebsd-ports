@@ -25,6 +25,7 @@ use Text::Tabs;
 
 use lib $ENV{CVSROOT};
 use CVSROOT::cfg;
+my $CVSROOT = $ENV{'CVSROOT'} || die "Can't determine \$CVSROOT!";
 
 
 ############################################################
@@ -49,7 +50,6 @@ my $MAIL_FILE     = "$BASE_FN.mail";
 my $SUBJ_FILE     = "$BASE_FN.subj";
 my $TAGS_FILE     = "$BASE_FN.tags";
 
-my $CVSROOT       = $ENV{'CVSROOT'} || "/home/ncvs";
 
 ############################################################
 #

@@ -28,6 +28,7 @@ require 5.003;	# to be sure.  log_accum needs perl5
 use strict;
 use lib $ENV{CVSROOT};
 use CVSROOT::cfg;
+my $CVSROOT = $ENV{'CVSROOT'} || die "Can't determine \$CVSROOT!";
 
 
 ############################################################
@@ -40,8 +41,6 @@ my $ENTRIES       = "CVS/Entries";
 
 # The "Id" header to check for.
 my $HEADER	= $cfg::IDHEADER;
-
-my $cvsroot= $ENV{'CVSROOT'} || "/home/ncvs";
 
 ############################################################
 #
@@ -93,9 +92,8 @@ sub exclude_file {
 	my $filename = shift;
 	my $directory = shift;
 
-	my $exclude = "$cvsroot/CVSROOT/exclude";
 	my $path = "$directory/$filename";
-	if (open(EX, "<$exclude")) {
+	if (open(EX, "< $cfg::EXCLUDE_FILE")) {
 		while (<EX>) {
 			chomp;
 			my $ex_entry = $_;
@@ -260,7 +258,7 @@ close ENTRIES;
 my $directory = $ARGV[0];
 shift @ARGV;
 
-$directory =~ s,^$cvsroot[/]+,,;
+$directory =~ s,^$CVSROOT[/]+,,;
 
 my $check_id = 0;
 if ($directory =~ /^src\/contrib/) {
