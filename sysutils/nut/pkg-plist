@@ -19,3 +19,4 @@ etc/nut/upsset.passwd.sample
 etc/rc.d/upsd.sh.sample
 @dirrm cgi-bin
 @dirrm etc/nut
+@dirrm misc
