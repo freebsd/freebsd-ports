@@ -22,6 +22,8 @@ CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib"
 GNU_CONFIGURE=		yes
 USE_GETOPT_LONG=	yes
 
+PLIST_FILES=		sbin/policyd
+
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
 .endif
