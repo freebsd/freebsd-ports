@@ -10,4 +10,7 @@ LITE=		yes
 
 MASTERDIR=	${.CURDIR}/../vim
 
+MAINTAINER?=	obrien@FreeBSD.org
+COMMENT?=	Vi "workalike", with many additional features (Lite package)
+
 .include "${MASTERDIR}/Makefile"

@@ -13,8 +13,7 @@ CATEGORIES=	editors ruby
 PKGNAMESUFFIX=	+ruby
 
 MAINTAINER=	knu@FreeBSD.org
-
-COMMENTFILE=	${.CURDIR}/pkg-comment
+COMMENT=	Vi IMproved version 6 with embedded Ruby interpreter
 
 #EXTRA_PATCHES=	${.CURDIR}/files/patch-*
 
