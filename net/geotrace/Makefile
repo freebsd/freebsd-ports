@@ -15,7 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ijliao@FreeBSD.org
 
-USE_GNOMECTRL=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	libcapplet
 
 post-patch:
 	@${PERL} -pi -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/prefs.h

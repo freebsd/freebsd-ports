@@ -16,13 +16,15 @@ MAINTAINER=	doc@lublin.t1.pl
 WRKSRC=	${WRKDIR}/gg-${PORTVERSION}
 
 USE_GMAKE=	yes
-USE_GTK=	yes
-WANT_ESOUND=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
+WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
-.if defined(HAVE_ESOUND)
-USE_ESOUND=	yes
+.if ${HAVE_GNOME:Mesound}!=""
+USE_GNOME+=	esound
+PKGNAMESUFFIX=	-esound
 .else
 CONFIGURE_ARGS+=	--disable-esd
 .endif

@@ -15,7 +15,8 @@ MAINTAINER=	markp@FreeBSD.org
 LIB_DEPENDS=	snmp.4:${PORTSDIR}/net/net-snmp4
 
 GNU_CONFIGURE=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 CONFIGURE_ARGS+=	--with-ucdsnmp-prefix=${LOCALBASE}
 
 post-patch:

@@ -13,7 +13,8 @@ MASTER_SITE_SUBDIR=     ${PORTNAME}
 
 MAINTAINER=     Nicolas.Jombart@hsc-labs.com
 
-USE_GTK=        yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 
 post-patch:
 	@${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.old

@@ -19,8 +19,9 @@ LIB_DEPENDS=	gtkmm:${PORTSDIR}/x11-toolkits/gtk-- \
 		icq2000.5:${PORTSDIR}/net/libicq2000
 
 USE_X_PREFIX=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 WANT_GNOME=	yes
-USE_GTK=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
@@ -35,9 +36,9 @@ post-patch:
 
 .include <bsd.port.pre.mk>
 
-.if defined(HAVE_GNOME) || defined(WITH_GNOME)
-USE_GNOME=	yes
-
+.if ${HAVE_GNOME:Mlibcapplet}!="" || defined(WITH_GNOME)
+USE_GNOME+=	libcapplet
+PKGNAMESUFFIX=	-gnome
 PLIST_SUB+=	ICKLEDATADIR="share/gnome/" GNOME="" NOGNOME="@comment "
 .else
 CONFIGURE_ARGS+=	--with-gnome=no
@@ -54,7 +55,7 @@ PLIST_SUB+=	ICKLECONTROL="@comment "
 .endif
 
 pre-everything::
-.if !defined(HAVE_GNOME) && !defined(WITH_GNOME)
+.if ${HAVE_GNOME:Mlibcapplet}=="" && !defined(WITH_GNOME)
 	@${ECHO_MSG} "===> Define WITH_GNOME		to enable GNOME support"
 .endif
 .if !defined(WITH_ICKLE_CONTROL)
