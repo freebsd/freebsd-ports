@@ -11,7 +11,7 @@ CATEGORIES=	converters kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/distribution/tar/generic/src
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	kevlo@FreeBSD.org
 
 BUILD_DEPENDS=	jade:${PORTSDIR}/textproc/jade \
 		${PREFIX}/share/sgml/linuxdoc:${PORTSDIR}/textproc/linuxdoc

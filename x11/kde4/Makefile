@@ -12,7 +12,7 @@ MASTER_SITES=	# empty
 DISTFILES=	# none
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	kevlo@FreeBSD.org
 
 LIB_DEPENDS=	kdecore.4:${PORTSDIR}/x11/kdelibs2
 RUN_DEPENDS=	konqueror:${PORTSDIR}/x11/kdebase2 \

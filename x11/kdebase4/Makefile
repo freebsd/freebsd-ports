@@ -11,7 +11,7 @@ CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/distribution/tar/generic/src
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	kevlo@FreeBSD.org
 
 LIB_DEPENDS=	kdeui.4:${PORTSDIR}/x11/kdelibs2 \
 		intl.1:${PORTSDIR}/devel/gettext
