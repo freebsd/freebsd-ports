@@ -1,5 +1,13 @@
 --- src/msql/libmsql.c.bak	Wed Aug 22 04:17:08 2001
 +++ src/msql/libmsql.c	Thu Sep 11 11:02:19 2003
+@@ -31,6 +31,7 @@
+ #  include <stdlib.h>
+ #  include <string.h>
+ 
++#define ANSI_ARGS
+ 
+ #if defined(_OS_WIN32)
+ #  include <winsock.h>
 @@ -88,11 +88,11 @@
  RETSIGTYPE pipeHandler(int);
  #endif

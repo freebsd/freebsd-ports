@@ -1,5 +1,13 @@
 --- src/msql/msqld.c.orig	Thu Aug 19 07:33:20 1999
 +++ src/msql/msqld.c	Sat Jan 27 07:45:13 2001
+@@ -23,6 +23,7 @@
+ #  include <os2.h>
+ #endif
+ 
++#define ANSI_ARGS
+ 
+ #include <stdio.h>
+ #include <fcntl.h>
 @@ -749,7 +749,7 @@
  #endif
  #if defined(_OS_UNIX)
