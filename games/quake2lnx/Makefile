@@ -7,6 +7,7 @@
 
 PORTNAME=	quake2lnx
 PORTVERSION=	0.15
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.icculus.org/quake2/files/:src \
 		http://freebsd.nsu.ru/distfiles/q2/:pak
