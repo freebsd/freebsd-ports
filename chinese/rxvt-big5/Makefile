@@ -17,8 +17,7 @@ PKGMESSAGE=	${.CURDIR}/pkg-message
 .include "${MASTERDIR}/Makefile"
 
 PORTNAME=	rxvt
-PORTVERSION=	2.6.3
-PORTREVISION=	1
+PORTVERSION=	2.6.4
 
 #.include <bsd.port.pre.mk>
 PKGNAMEPREFIX:= ${PKGNAMEPREFIX}tw-
