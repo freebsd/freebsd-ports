@@ -23,6 +23,7 @@ NO_PACKAGE=	"parts are under GPL, parts under X license"
 DATADIR=	share/${PORTNAME}/
 DOCDIR=		share/doc/${PORTNAME}/
 DOCS=		COPYING README bomb.lsm guile.txt manual.txt notes.txt
+ONLY_FOR_ARCHS=	i386
 PLIST=		${WRKDIR}/pkg-plist
 SRCS=		acidlife anneal bomb brain cmap fast fuse gif image image_rule \
 			image_seq libifs match quad rd rotor rug rug_multi \
