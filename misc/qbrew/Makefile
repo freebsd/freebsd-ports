@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qbrew
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.3
 CATEGORIES=	misc
 MASTER_SITES=	http://www.usermode.org/code/
 
