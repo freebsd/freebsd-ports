@@ -20,10 +20,12 @@ ALL_TARGET=	bulk_mailer
 MAN1=		bulk_mailer.1
 
 do-install:
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/bulk_mailer ${PREFIX}/bin/bulk_mailer
-	@ ${MKDIR} ${PREFIX}/share/doc/bulk_mailer
-	@ ${INSTALL_MAN} ${WRKSRC}/bulk_mailer.README \
-		${PREFIX}/share/doc/bulk_mailer/README
-	@ ${INSTALL_MAN} ${WRKSRC}/bulk_mailer.1 ${PREFIX}/man/man1/bulk_mailer.1
+	${INSTALL_PROGRAM} ${WRKSRC}/bulk_mailer ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/bulk_mailer.1 ${PREFIX}/man/man1
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/bulk_mailer.README ${DOCSDIR}/README
+	${INSTALL_DATA} ${WRKSRC}/bulk_mailer.ps ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
