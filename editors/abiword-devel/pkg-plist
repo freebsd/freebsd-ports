@@ -390,6 +390,7 @@ share/AbiSuite/AbiWord/strings/gl-ES.strings
 share/AbiSuite/AbiWord/strings/hu-HU.strings
 share/AbiSuite/AbiWord/strings/id-ID.strings
 share/AbiSuite/AbiWord/strings/it-IT.strings
+share/AbiSuite/AbiWord/strings/ja-JP.strings
 share/AbiSuite/AbiWord/strings/lt-LT.strings
 share/AbiSuite/AbiWord/strings/nb-NO.strings
 share/AbiSuite/AbiWord/strings/nl-NL.strings
@@ -404,6 +405,7 @@ share/AbiSuite/AbiWord/strings/sv-SE.strings
 share/AbiSuite/AbiWord/strings/tr-TR.strings
 share/AbiSuite/AbiWord/strings/uk-UA.strings
 share/AbiSuite/AbiWord/strings/zh-CN.strings
+share/AbiSuite/AbiWord/strings/zh-HK.strings
 share/AbiSuite/AbiWord/strings/zh-TW.strings
 share/AbiSuite/AbiWord/system.profile
 share/AbiSuite/AbiWord/system.profile-CP1254
@@ -437,6 +439,7 @@ share/AbiSuite/AbiWord/system.profile-fr-FR
 share/AbiSuite/AbiWord/system.profile-gl-ES
 share/AbiSuite/AbiWord/system.profile-hu-HU
 share/AbiSuite/AbiWord/system.profile-it-IT
+share/AbiSuite/AbiWord/system.profile-ja-JP
 share/AbiSuite/AbiWord/system.profile-lt-LT
 share/AbiSuite/AbiWord/system.profile-nb-NO
 share/AbiSuite/AbiWord/system.profile-nl-NL
@@ -576,7 +579,10 @@ share/AbiSuite/icons/abiword_48.png
 share/AbiSuite/icons/abiword_48.tif
 share/AbiSuite/icons/abiword_48.xpm
 %%GNOME:%%share/AbiSuite/icons/abiword_logo.xpm
+share/AbiSuite/templates/2-columns.awt
+share/AbiSuite/templates/a4.awt
 share/AbiSuite/templates/normal.awt
+share/AbiSuite/templates/us-letter.awt
 %%GNOME:%%share/gnome/apps/Applications/abiword.desktop
 %%GNOME:%%share/gnome/pixmaps/abiword_48.png
 @dirrm share/AbiSuite/templates
