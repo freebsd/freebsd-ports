@@ -1208,6 +1208,7 @@ ed		src/bin/ed
 edb		ports/databases/edb
 eddie		ports/www/eddie
 editss		ports/games/editss
+edonkey-core	ports/net/edonkey-core
 edquota		src/usr.sbin/edquota
 ee		src/usr.bin/ee
 eel		ports/x11-toolkits/eel
