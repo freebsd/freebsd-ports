@@ -3,7 +3,7 @@
 # Date created:		6 Mar 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.3 1997/04/09 07:10:10 asami Exp $
+# $Id: Makefile,v 1.4 1997/04/09 07:34:50 asami Exp $
 #
 
 # can't use PORTSDIR here, since we haven't included bsd.port.mk
@@ -14,7 +14,7 @@ COMMENT=	${.CURDIR}/pkg/COMMENT
 
 .include <${.CURDIR}/../../editors/nvi/Makefile>
 
-PKGNAME=	kr-nvi-euckr-1.79-970408
+PKGNAME=	kr-nvi-euckr-1.79-970617
 CATEGORIES=	korean editors
 
 MAINTAINER=	itojun@itojun.org
