@@ -1,0 +1,5 @@
+Lingua::PT::Stemmer - Stemmers for Portuguese and Galician. While these
+stemmers can be used stand alone, they are typically used as back ends to
+the general stemmer front end provided by textproc/p5-Lingua-Stem.
+
+WWW: http://search.cpan.org/dist/Lingua-PT-Stemmer

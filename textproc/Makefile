@@ -223,6 +223,7 @@
     SUBDIR += p5-Lingua-EN-Tagger
     SUBDIR += p5-Lingua-Ident
     SUBDIR += p5-Lingua-Ispell
+    SUBDIR += p5-Lingua-PT-Stemmer
     SUBDIR += p5-Lingua-Preferred
     SUBDIR += p5-Lingua-Stem
     SUBDIR += p5-MARC
