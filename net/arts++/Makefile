@@ -26,4 +26,10 @@ MANL=		artsportagg.l artsports.l artsprotos.l artsnets.l artsdump.l \
 		artsasagg.l artsportms.l artsportmagg.l artsintfms.l \
 		artsintfmagg.l artsnexthops.l artsnexthopagg.l artstos.l
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502000
+BROKEN=		"Does not compile"
+.endif
+
+.include <bsd.port.post.mk>
