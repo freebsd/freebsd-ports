@@ -1,7 +1,7 @@
 ports/databases/db             http://www.sleepycat.com/faq.html#A8
 ports/databases/mysql321       http://www.tcx.se/Manual_chapter/manual_Introduction.html#Year_2000_compliance
 ports/databases/mysql322       http://www.tcx.se/Manual_chapter/manual_Introduction.html#Year_2000_compliance
-ports/databases/postgresql     http://www.postgresql.org/y2k.html
+ports/databases/postgresql7    http://www.postgresql.org/y2k.html
 ports/devel/gmake              http://www.gnu.org/software/year2000.html
 ports/devel/id-utils           http://www.gnu.org/software/year2000.html
 ports/devel/m4                 http://www.gnu.org/software/year2000.html
