@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	ipdf
-PORTVERSION=	0.9.9
+PORTVERSION=	1.0.0
 CATEGORIES=	textproc
 MASTER_SITES=	http://hoopajoo.net/static/projects/
 
