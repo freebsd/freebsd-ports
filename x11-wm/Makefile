@@ -61,7 +61,6 @@
     SUBDIR += metacity
     SUBDIR += mkultra
     SUBDIR += mlvwm
-    SUBDIR += mosfet-liquid
     SUBDIR += novawm
     SUBDIR += obconf
     SUBDIR += olvwm
