@@ -19,3 +19,4 @@ share/unroff/scm/misc/hyper.scm.orig
 @dirrm share/unroff/scm/html
 @dirrm share/unroff/scm/misc
 @dirrm share/unroff/scm
+@dirrm share/unroff
