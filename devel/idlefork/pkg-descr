@@ -1,3 +1,7 @@
-IDLE - an Integrated DeveLopment Environment for Python.
+The IDLEfork project is an official experimental development fork of Python's
+small, light, 'bundled' integrated development environment, IDLE. Changes to
+this version that are approved by Python's benevolent dictator for life
+(python's creator, Guido van Rossum) will go back into the stable distribution
+version.
 
-WWW: http://www.python.org/idle/
+WWW: http://idlefork.sourceforge.net/

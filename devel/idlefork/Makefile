@@ -1,38 +1,34 @@
-# New ports collection makefile for:    idle
-# Date created:         		13 April 2000
+# New ports collection makefile for:    idlefork
+# Date created:         		9 August 2001
 # Whom:                 		Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	idle
-PORTVERSION=	0.5
+PORTNAME=	idlefork
+PORTVERSION=	0.8.1
 CATEGORIES=	devel
-MASTER_SITES=	http://www.python.org/idle/
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 
 USE_PYTHON=	yes
-PYTHON_VERSION=	python1.5
+
+SETUP_CMD=	cd ${WRKSRC} && ${PYTHON_CMD} setup.py
 
 do-build:
-		${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
+	${SETUP_CMD} build
 
 do-install:
-		@${MKDIR} ${PREFIX}/share/idle/Icons
-		@cd ${WRKSRC} && \
-			${INSTALL_DATA} *.py? help.txt ${PREFIX}/share/idle
-		@${INSTALL_DATA} ${WRKSRC}/Icons/* ${PREFIX}/share/idle/Icons
-		@printf "#!/bin/sh\n${PYTHON_CMD} ${PREFIX}/share/idle/idle.pyc\n" \
-			> ${WRKDIR}/idle.sh
-		@${INSTALL_SCRIPT} ${WRKDIR}/idle.sh ${PREFIX}/bin/idle
+	@printf "#!/bin/sh\nexec ${PYTHON_CMD} ${PREFIX}/lib/${PYTHON_VERSION}/site-packages/idlelib/idle.pyc\n" \
+		> ${WRKSRC}/idle
+	${SETUP_CMD} install -c -O1 --prefix=${PREFIX}
 .if !defined(NOPORTDOCS)
-		@${MKDIR} ${PREFIX}/share/doc/idle
-		@cd ${WRKSRC} && ${INSTALL_DATA} NEWS.txt README.txt TODO.txt \
-			extend.txt ${PREFIX}/share/doc/idle
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/[^c]*.txt ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
