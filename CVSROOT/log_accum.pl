@@ -252,10 +252,12 @@ sub do_avail_file {
 sub mail_notification {
     local(@text) = @_;
     local($names);
-
+    local($mailing_lists); 
+    $commiters = "CVS-commiters"; 
     print "Mailing commit message...\n";
     dbmopen(MAILFILE, "$MAIL_FILE.$id", 0666);
-    $names = join(" ", keys %MAILFILE) . " $mlist";
+    $mailing_lists = join(' ', $mlist, $commiters);
+    $names = join(" ", keys %MAILFILE) . " $mailing_lists";
     $names =~ s,\n,,;
     dbmclose(MAILFILE);
 
@@ -308,7 +310,7 @@ if ($ARGV[0] =~ /New directory/) {
     exit 0;
 }
 
-&do_avail_file($dir);
+#&do_avail_file($dir);
 
 #
 # Iterate over the body of the message collecting information.
