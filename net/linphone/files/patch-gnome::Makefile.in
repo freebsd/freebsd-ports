@@ -1,0 +1,21 @@
+
+$FreeBSD$
+
+--- gnome/Makefile.in	2002/12/30 08:51:17	1.1
++++ gnome/Makefile.in	2002/12/30 08:59:06
+@@ -167,12 +167,13 @@
+ @BUILD_GNOME_TRUE@	propertybox.c propertybox.h
+ 
+ 
+-@BUILD_GNOME_TRUE@linphone_LDADD = $(GNOME_LIBDIR) $(GNOMEUI_LIBS) $(INTLLIBS) @SOUNDLIB@ -lgthread -lpthread -lpanel_applet -lgnorba \
++@BUILD_GNOME_TRUE@linphone_LDADD = $(GNOME_LIBDIR) $(GNOMEUI_LIBS) $(INTLLIBS) @SOUNDLIB@ `gnome-config --libs applets` \
+ @BUILD_GNOME_TRUE@								$(top_srcdir)/mediastreamer/audiostream.o \
+ @BUILD_GNOME_TRUE@								$(top_srcdir)/osipua/src/libosipua.la \
+ @BUILD_GNOME_TRUE@								$(top_srcdir)/oRTP/src/libortp.la  \
+ @BUILD_GNOME_TRUE@								$(top_srcdir)/mediastreamer/libmediastreamer.la \
+-@BUILD_GNOME_TRUE@								$(top_srcdir)/mediastreamer/libmsspeex.la 
++@BUILD_GNOME_TRUE@								$(top_srcdir)/mediastreamer/.libs/libmsspeex.so \
++@BUILD_GNOME_TRUE@								$(top_srcdir)/speex/libspeex/libspeex.la
+ 
+ 
+ DEFS = @DEFS@ @SOUNDDEFS@	-DENABLE_TRACE		

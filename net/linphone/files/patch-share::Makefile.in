@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- share/Makefile.in	2002/12/30 09:26:56	1.1
++++ share/Makefile.in	2002/12/30 09:27:28
+@@ -158,7 +158,7 @@
+ #linphone_sys2dir=$(prefix)/etc/CORBA/servers
+ 
+ #linphone_sys2_DATA=linphone.gnorba
+-linphone_appletdir = $(prefix)/share/applets/Network
++linphone_appletdir = $(prefix)/share/gnome/applets/Network
+ 
+ linphone_applet_DATA = linphone_applet.desktop
+ 

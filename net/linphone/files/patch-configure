@@ -1,0 +1,31 @@
+
+$FreeBSD$
+
+--- configure	2002/12/16 19:20:25	1.1
++++ configure	2002/12/16 19:21:24
+@@ -7572,6 +7572,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -14026,7 +14027,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lc  $LIBS"
++#LIBS="-lc  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ #include "confdefs.h"
+@@ -14074,7 +14075,7 @@
+ #define HAVE_LIBC 1
+ _ACEOF
+ 
+-  LIBS="-lc $LIBS"
++#  LIBS="-lc $LIBS"
+ 
+ fi
+ 
