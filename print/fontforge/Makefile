@@ -32,7 +32,7 @@ ALL_TARGET=	pfaedit
 
 MAN1=		pfaedit.1
 
-DIST_VER=	020220
+DIST_VER=	020306
 
 .if !defined(NOPORTDOCS)
 DOC_VER=	020214
