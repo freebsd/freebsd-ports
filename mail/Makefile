@@ -87,6 +87,7 @@
     SUBDIR += smtpfeed
     SUBDIR += spruce
     SUBDIR += tkrat
+    SUBDIR += tkrat2
     SUBDIR += wanderlust-emacs
     SUBDIR += wanderlust-emacs20
     SUBDIR += wanderlust-mule
