@@ -7,6 +7,7 @@
 
 PORTNAME=       	wapsh
 PORTVERSION=		1.0
+PORTREVISION=		1
 CATEGORIES=     	shells
 MASTER_SITES=   	http://www.exolution.de/wapsh/
 DISTNAME=		${PORTNAME}_${PORTVERSION}
@@ -46,7 +47,7 @@ post-patch:
 
 do-build:
 	(cd ${WRKSRC}/htshd && ${CC} ${CFLAGS} -o htshd htshd.c -lcrypt \
-		-lutil -DUSE_DEV_RANDOM=1)
+		-lutil -DUSE_DEV_RANDOM=1 -DHAVE_SETENV)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/htshd/htshd ${PREFIX}/sbin
