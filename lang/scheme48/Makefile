@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Scheme Underground's implementation of R4RS
 
 .if ${MACHINE_ARCH} != i386
-BROKEN=		"fails to install on ${ARCH}"
+BROKEN=		"fails to install on ${MACHINE_ARCH}"
 .endif
 
 GNU_CONFIGURE=	yes
