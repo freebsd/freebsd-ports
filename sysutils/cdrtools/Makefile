@@ -3,10 +3,10 @@
 # Date created:         2 November 1997
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.11 1999/03/24 20:54:01 jmz Exp $
+# $Id: Makefile,v 1.12 1999/03/27 22:18:05 asami Exp $
 #
 
-DISTNAME=	cdrecord-1.8a19
+DISTNAME=	cdrecord-1.8a20
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/cdrecord/alpha/
 
