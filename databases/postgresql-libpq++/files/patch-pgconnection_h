@@ -1,0 +1,13 @@
+--- pgconnection.h.orig Wed Nov 27 05:46:08 2002
++++ pgconnection.h      Sun Dec  7 23:15:54 2003
+@@ -21,6 +21,10 @@
+ #ifndef PGCONNECTION_H
+ #define PGCONNECTION_H
+ 
++#ifndef DLLIMPORT
++#define DLLIMPORT
++#endif
++
+ #ifdef HAVE_CXX_STRING_HEADER
+ #include <string>
+ #endif
