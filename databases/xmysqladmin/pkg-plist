@@ -1,2 +1,3 @@
 bin/xmysqladmin
-include/X11/pixmaps/xmysqladmin.xpm
+include/X11/pixmaps/mysql.xpm
+
