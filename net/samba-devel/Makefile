@@ -47,7 +47,7 @@ DOCSDIR=	${PREFIX}/share/doc/samba
 NO_LATEST_LINK=	yes
 USE_AUTOCONF=	yes
 WANT_AUTOCONF_VER=	253
-CONFIGURE_ARGS=	--libdir=${SAMBA_CONFDIR} \
+CONFIGURE_ARGS+=--libdir=${SAMBA_CONFDIR} \
 		--localstatedir=${VARDIR} --with-swatdir=${PREFIX}/share/swat \
 		--with-sambabook=${PREFIX}/share/swat/using_samba \
 		--with-lockdir=${VARDIR}/lock --with-privatedir=${SAMBA_PRIVATE} \
