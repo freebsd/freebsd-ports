@@ -133,5 +133,5 @@
 +#define PACKAGE "fpm"
 +
 +/* Version number of package */
-+#define VERSION "0.53"
++#define VERSION "0.59"
 +
