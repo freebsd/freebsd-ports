@@ -1,0 +1,16 @@
+FreeBSD graphics console (VGL) version of the famous Digger game.
+
+HISTORY
+-------
+Digger was originally created by Windmill software in 1983 and released as
+a copy-protected, bootable 5.25" floppy disk for the IBM PC/XT. As it
+requires a genuine CGA card, it didn't work on modern PCs. In 1998 a new
+version was created by Andrew Jenner which runs on all PCs with CGA or
+better and, whilst retaining all the atmosphere and playability of the
+original, has many new features.
+
+In 2000 it was ported to several Unix-like architectures by Maxim Sobolev.
+Currently it supports FreeBSD, using either VGL or SDL library, and Linux using
+SDL library.
+
+WWW: http://www.digger.org/
