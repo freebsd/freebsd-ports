@@ -1137,7 +1137,6 @@ cracklib	ports/security/cracklib
 crafty		ports/games/crafty
 crafty-open-large	ports/games/crafty-open-large
 crafty-open-medium	ports/games/crafty-open-medium
-crafty-open-small	ports/games/crafty-open-small
 crank		ports/security/crank
 crashecho	ports/mail/crashecho
 crashmail	ports/news/crashmail
