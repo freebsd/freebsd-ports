@@ -1,0 +1,76 @@
+# New ports collection makefile for:	Merchant Of Venice
+# Date created:		Thu Jan 20 03:24:01 UTC 2005
+# Whom:                 Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	venice
+DISTVERSION=	0.4alpha
+CATEGORIES=	finance java
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	mov
+DISTNAME=	${PORTNAME}-${DISTVERSION}
+
+MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	Merchant Of Venice, a stock market trading program
+
+USE_JAVA=	yes
+JAVA_VERSION=	1.4+
+USE_ANT=	yes
+ALL_TARGET=	build jar
+
+USE_REINPLACE=	yes
+
+BUILD_WRKSRC=	${WRKDIR}/${DISTNAME}/build
+
+JARFILE=	${PORTNAME}.jar
+
+PLIST_FILES=	\
+		bin/${PKGNAMEPREFIX}${PORTNAME} \
+		%%JAVAJARDIR%%/${JARFILE}
+
+# docs
+DOC_FILES=	\
+		changelog.txt \
+		readme.txt
+
+.ifndef(NOPORTDOCS)
+PORTDOCS=	\
+		*
+.endif
+
+post-extract:
+# extract docs
+	@cd ${BUILD_WRKSRC}/src && ${JAR} -xf ${WRKSRC}/venice.jar org/mov/help/doc
+	@cd ${BUILD_WRKSRC}/src && ${JAR} -xf ${WRKSRC}/venice.jar org/mov/quote/samples
+	@cd ${BUILD_WRKSRC} && ${JAR} -xf ${WRKSRC}/venice.jar META-INF
+	@${MV} ${BUILD_WRKSRC}/META-INF/MANIFEST.MF ${BUILD_WRKSRC}/src
+
+post-patch:
+	@${REINPLACE_CMD} -E \
+		-e 's|(build),[[:space:]]*doc|\1|' \
+		${BUILD_WRKSRC}/build.xml
+	@${SED} -E \
+		-e "s|%%JAVAVM%%|${LOCALBASE}/bin/java|" \
+		-e "s|%%JAVA_VERSION%%|${JAVA_VERSION}|" \
+		-e "s|%%JAVAJARDIR%%|${JAVAJARDIR}|" \
+		-e "s|%%JARFILE%%|${JARFILE}|" \
+		${FILESDIR}/wrapper.sh > ${WRKDIR}/wrapper.sh
+
+do-install:
+# docs
+.ifndef(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for doc in ${DOC_FILES}
+	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+.endfor
+.endif
+# wrapper
+	@${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh \
+		${PREFIX}/bin/${PORTNAME}
+# jar
+	@${MKDIR} ${JAVAJARDIR}
+	@${INSTALL_DATA} ${BUILD_WRKSRC}/${JARFILE} ${JAVAJARDIR}/${JARFILE}
+
+.include <bsd.port.mk>
