@@ -8,15 +8,12 @@
 PORTNAME=	crafty-open-medium
 PORTVERSION=	19960910
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.cis.uab.edu/pub/hyatt/common/medium/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	dd/crafty
 DISTNAME=	medium
 
 MAINTAINER=	seggers@semyam.dinoco.de
 COMMENT=	The medium opening book (about 1.9 MByte) for crafty
-
-BROKEN=		"Does not fetch"
-EXPIRATION_DATE=2004-11-23
-DEPRECATED=	${BROKEN}
 
 BUILD_DEPENDS=	crafty:${PORTSDIR}/games/crafty
 RUN_DEPENDS=	crafty:${PORTSDIR}/games/crafty
