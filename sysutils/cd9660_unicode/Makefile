@@ -21,7 +21,7 @@ ENCODINGS=	cd ${WRKSRC}/templates && ${ECHO} [^C]* | \
 			${SED} 's|\.txt|,|g'
 FMT=		/usr/bin/fmt
 FLAG!=		/usr/bin/grep -e cd9660_wchar2char \
-			${SRCPREFIX}/sys/isofs/cd9660/cd9660_util.c || \
+			${SRCPREFIX}/sys/isofs/cd9660/cd9660_util.c 2>/dev/null || \
 			/usr/bin/true
 
 .if (${FLAG} == "")
