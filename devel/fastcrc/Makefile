@@ -11,6 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.whizkidtech.net/fports/
 
 MAINTAINER=	adam@whizkidtech.net
+COMMENT=	Fast CRC routines
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 

@@ -12,6 +12,7 @@ MASTER_SITES=	http://adabroker.eu.org/distrib/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/p/pre/}
 
 MAINTAINER=	sam@inf.enst.fr
+COMMENT=	A full Ada ORB to develop CORBA application
 
 BUILD_DEPENDS=	adagcc:${PORTSDIR}/lang/gnat
 LIB_DEPENDS=	adasockets.0:${PORTSDIR}/net/adasockets

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.physics.purdue.edu/pub/pundits/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ajk@waterspout.com
+COMMENT=	Meta source fake-out script for building ksb tools
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.6

@@ -11,6 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://www.ctgi.net/pub/ctgi/
 
 MAINTAINER=	markc@ctgi.net
+COMMENT=	List status of files checked out of RCS repositories
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rinfo ${PREFIX}/bin/rinfo

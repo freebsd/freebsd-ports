@@ -13,6 +13,7 @@ MASTER_SITES=	http://okmij.org/ftp/packages/ \
 MASTER_SITE_SUBDIR=	ijliao
 
 MAINTAINER=	oleg@pobox.com
+COMMENT=	Advanced i/o, networking, and arithmetic compression C++ classlib
 
 WRKSRC=		${WRKDIR}/cppadvio
 ALL_TARGET=	lib

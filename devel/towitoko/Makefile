@@ -11,6 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.geocities.com/cprados/files/
 
 MAINTAINER=	king@v2project.com
+COMMENT=	UNIX driver for Towitoko smartcard readers
 
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes

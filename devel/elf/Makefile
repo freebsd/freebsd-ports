@@ -11,6 +11,7 @@ CATEGORIES=    devel
 MASTER_SITES=  http://www.kerneled.com/projects/elf/
 
 MAINTAINER=    samy@kerneled.com
+COMMENT=	A commandline based ELF header analyzer
 
 MAN1=          elf.1
 MANCOMPRESSED= no

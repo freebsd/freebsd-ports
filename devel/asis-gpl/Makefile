@@ -15,6 +15,7 @@ DISTNAME=	asis-${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	thomas@cuivre.fr.eu.org
+COMMENT=	GNAT implementation of the Ada Semantic Interface Specification
 
 BUILD_DEPENDS=	adagcc:${PORTSDIR}/lang/gnat
 

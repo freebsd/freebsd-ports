@@ -16,6 +16,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-20010828-src
 DIST_SUBDIR=	mingw
 
 MAINTAINER=	doc@hisio.safenet.pl
+COMMENT=	FSF gcc-2.95.2 for Windows cross-development
 
 BUILD_DEPENDS=	${LOCALBASE}/i386-mingw32msvc/bin/as:${PORTSDIR}/devel/mingw-binutils \
 		${LOCALBASE}/bin/mingwm10.dll:${PORTSDIR}/devel/mingw-bin-msvcrt \

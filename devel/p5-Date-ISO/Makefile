@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Date
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	fuyuki@hadaly.org
+COMMENT=	Converts dates between ISO and Gregorian formats
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Date/ICal.pm:${PORTSDIR}/devel/p5-Date-ICal \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Date/Leapyear.pm:${PORTSDIR}/devel/p5-Date-Leapyear \

@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.iki.fi/hyvatti/pic/	\
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 
 MAINTAINER=	bms@spc.org
+COMMENT=	Portable assembler for 16C84 series PICs
 
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile.uni

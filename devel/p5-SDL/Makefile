@@ -12,6 +12,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	SDL_perl-${PORTVERSION}
 
 MAINTAINER=	klaus.goger@reflex.at
+COMMENT=	Perl Bindings for SDL
 
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
 		png.5:${PORTSDIR}/graphics/png \

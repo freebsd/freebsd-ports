@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	ups-3.38-beta1
 
 MAINTAINER=	sergei@kolobov.com
+COMMENT=	X based source level debugger for C, C++, and Fortran
 
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes

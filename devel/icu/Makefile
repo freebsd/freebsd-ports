@@ -12,6 +12,7 @@ MASTER_SITES=	http://oss.software.ibm.com/developerworks/opensource/icu/project/
 EXTRACT_SUFX=   .tgz
 
 MAINTAINER=	dwm@caimis.com
+COMMENT=	International Components for Unicode (from IBM)
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/source
 GNU_CONFIGURE=	yes

@@ -12,6 +12,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	bovynf@awe.be
+COMMENT=	A free C++ GUI library
 
 USE_GCC=	2.95
 USE_X_PREFIX=	yes

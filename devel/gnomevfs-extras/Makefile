@@ -14,6 +14,7 @@ DISTNAME=	gnome-vfs-extras-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	einekoai@chello.nl
+COMMENT=	A plugin for gnomevfs2 to browse smb shares with nautilus2
 
 LIB_DEPENDS=	gnomevfs-2.0:${PORTSDIR}/devel/gnomevfs2
 

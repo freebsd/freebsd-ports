@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	a-a-p
 DISTNAME=	exec-${PORTVERSION}
 
 MAINTAINER=	bram@a-a-p.org
+COMMENT=	A build tool alternative to make with internet access and CVS support
 
 # A-A-P requires an "scp" command.  If it doesn't exist, we need to chose which
 # one to install.  The OpenSSH one is probably the best choice.

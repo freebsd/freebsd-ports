@@ -12,6 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://osdn.dl.sourceforge.net/sourceforge/freeassociation/
 
 MAINTAINER=	joe@zircon.seattle.wa.us
+COMMENT=	An implementation of the IETF's Calendaring and Scheduling protocols
 
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes

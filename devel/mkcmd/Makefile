@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.physics.purdue.edu/pub/pundits/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ajk@waterspout.com
+COMMENT=	Command-line parser and manual page generator
 
 BUILD_DEPENDS=	makeme:${PORTSDIR}/devel/msrc0
 

@@ -11,6 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.ggi-project.org/pub/ggi/ggi/2_0_beta_3/
 
 MAINTAINER=	mwest@uct.ac.za
+COMMENT=	API for input sources
 
 USE_BZIP2=	yes
 USE_XLIB=	yes

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	dom@happygiraffe.net
+COMMENT=	Perl Compatible Regular Expressions library
 
 # Disabled until SourceForge put a proper copy of .tar.bz2 file on its mirrors
 # Currently, it is corrupted and does not match the one on the master site:

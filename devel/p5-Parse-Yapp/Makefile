@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Parse
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lyngbol@wheel.dk
+COMMENT=	Perl extension for generating and using LALR parsers
 
 PERL_CONFIGURE=	yes
 

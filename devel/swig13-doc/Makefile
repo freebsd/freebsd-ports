@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	swig
 DISTNAME=	swig-1.3.16
 
 MAINTAINER=	slaven@rezic.de
+COMMENT=	Simplified Wrapper and Interface Generator - Documentation
 
 WRKSRC=		${WRKDIR}/${DISTNAME:U}
 

@@ -14,6 +14,7 @@ MASTER_SITES=	http://spinroot.com/spin/Src/ \
 DISTFILES=	spin${PORTVERSION:S/.//g}.tar.gz html.tar.gz
 
 MAINTAINER=	jhanna@shaw.ca
+COMMENT=	An on-the-fly verification system for asynchronous concurrent systems
 
 DIST_SUBDIR=	spin
 WRKSRC=		${WRKDIR}/Src3.5.2

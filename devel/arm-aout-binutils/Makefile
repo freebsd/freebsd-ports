@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	binutils/releases
 PKGNAMEPREFIX=	arm-aout-
 
 MAINTAINER=	pbecke@javagear.com
+COMMENT=	FSF Binutils for embedded ARM cross-development
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Tree
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svenasse@polaris.ca
+COMMENT=	Super class for representing nodes in a tree
 
 PERL_CONFIGURE=	yes
 

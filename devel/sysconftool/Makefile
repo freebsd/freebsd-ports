@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	courier
 
 MAINTAINER=	yds@CoolRat.org
+COMMENT=	Helps to install application configuration files
 
 USE_PERL5=	yes
 USE_AUTOMAKE_VER=	14

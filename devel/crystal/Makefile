@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://sunsite.dk/projects/crystal/cs094/source/
 DISTNAME=	cs94_002
 
 MAINTAINER=	mkm@ieee.org
+COMMENT=	A 3d/2d development API
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	App/ABW
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	igor@zynaps.ru
+COMMENT=	A Perl module for reading configuration files
 
 PERL_CONFIGURE=	YES
 

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://invisible-island.net/bcpp/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	buchanon@msu.edu
+COMMENT=	A utility similar to indent for C++ code
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/code
 MAKEFILE=	makefile

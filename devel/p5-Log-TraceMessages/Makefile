@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	../../authors/id/E/ED/EDAVIS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svenasse@polaris.ca
+COMMENT=	Perl extension for trace messages used in debugging
 
 BUILD_DEPENDS=	${SITE_PERL}/HTML/FromText.pm:${PORTSDIR}/www/p5-HTML-FromText
 RUN_DEPENDS=	${BUILD_DEPENDS}

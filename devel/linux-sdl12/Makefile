@@ -16,6 +16,7 @@ EXTRACT_SUFX=	.rpm
 EXTRACT_ONLY=
 
 MAINTAINER=	martin@tradex.sk
+COMMENT=	Cross-platform multi-media development API (linux version)
 
 BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
 

@@ -13,6 +13,7 @@ DISTNAME=	fdfpp
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	vazquez@iqm.unicamp.br
+COMMENT=	Fortran preprocessor for FORTRAN 77 and Fortran 90 programs
 
 USE_GMAKE=	yes
 ALL_TARGET=	bsd44

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Tie
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	erwin@lansing.dk
+COMMENT=	LRU Cache in Memory through a tie interface
 
 PERL_CONFIGURE=	yes
 

@@ -13,6 +13,7 @@ MASTER_SITES=	http://troi.lincom-asg.com/~rjamison/byacc/ \
 DISTNAME=	byaccj1.1
 
 MAINTAINER=	davidxu@viatech.com.cn
+COMMENT=	A java extension of BSD YACC-compatible parser generator
 
 WRKSRC=		$(WRKDIR)/byaccj1.1/src
 USE_REINPLACE=	yes

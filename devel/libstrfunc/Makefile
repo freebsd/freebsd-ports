@@ -11,6 +11,7 @@ CATEGORIES=	devel www
 MASTER_SITES=	http://www.spelio.net.ru/soft/
 
 MAINTAINER=	vlm@spelio.net.ru
+COMMENT=	Handles CGI forms, MIME, templates, date conversions, etc
 
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes

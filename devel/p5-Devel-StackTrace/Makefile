@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	Devel
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	erwin@lansing.dk
+COMMENT=	Stack trace and stack trace frame objects
 
 PERL_CONFIGURE=	yes
 

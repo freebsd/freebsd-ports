@@ -14,6 +14,7 @@ DIST_SUBDIR=	antlr
 EXTRACT_ONLY=	antlr-${PORTVERSION}.tar.gz
 
 MAINTAINER=	mainland@apeiron.net
+COMMENT=	ANTLR: ANother Tool for Language Recognition
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper
 RUN_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper

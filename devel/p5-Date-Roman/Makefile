@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Date
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	philip@paeps.cx
+COMMENT=	Perl module to play with Roman dates
 
 BUILD_DEPENDS=	${SITE_PERL}/Roman.pm:${PORTSDIR}/math/p5-Roman
 RUN_DEPENDS=	${BUILD_DEPENDS}

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	docpp
 
 MAINTAINER=	Ruslan@Shevchenko.Kiev.UA
+COMMENT=	Javadoc style C++ documentatation system
 
 RUN_DEPENDS=	tex:${PORTSDIR}/print/teTeX \
 		gs:${PORTSDIR}/print/ghostscript-gnu \

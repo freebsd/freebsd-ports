@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Sub
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	erwin@lansing.dk
+COMMENT=	Sub::Uplevel - apparently run a function in a higher stack frame
 
 PERL_CONFIGURE=	yes
 

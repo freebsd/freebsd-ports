@@ -18,6 +18,7 @@ DIST_SUBDIR=	perforce/${VERSION}/${ARCH}
 EXTRACT_ONLY=	# none
 
 MAINTAINER=	marshall@chezmarshall.com
+COMMENT=	Perforce client and server
 
 NO_PACKAGE=	Restricted distribution
 NO_CDROM=	Restricted distribution

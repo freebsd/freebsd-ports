@@ -24,6 +24,7 @@ EXTRACT_SUFX=	.EXE
 DIST_SUBDIR=	mingw
 
 MAINTAINER=	doc@lublin.t1.pl
+COMMENT=	OpenGL headers from Microsoft(TM) for Windows development with Mingw
 
 BUILD_DEPENDS=	mingwm10.dll:${PORTSDIR}/devel/mingw-bin-msvcrt
 

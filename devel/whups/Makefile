@@ -11,6 +11,7 @@ CATEGORIES=	devel www
 MASTER_SITES=	http://pompo.net/horde/whups/
 
 MAINTAINER=	thierry@pompo.net
+COMMENT=	WHUPS is a web-based bug tracking system
 
 RUN_DEPENDS=	${LOCALBASE}/www/horde/index.php:${PORTSDIR}/www/horde2
 

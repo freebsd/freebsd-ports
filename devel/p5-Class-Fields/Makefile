@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Class
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@protey.ru
+COMMENT=	Set of modules to operate with inheritance, fields, members access
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Carp/Assert.pm:${PORTSDIR}/devel/p5-Carp-Assert
 RUN_DEPENDS=	${BUILD_DEPENDS}

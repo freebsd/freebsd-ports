@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.linuxnet.com/middleware/files/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	toni@soth.at
+COMMENT=	A smartcard development library
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

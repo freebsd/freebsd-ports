@@ -11,6 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://konst.org.ua/download/
 
 MAINTAINER=	sysadmin@alexdupre.com
+COMMENT=	A powerful text mode based programming IDE
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 

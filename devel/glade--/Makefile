@@ -12,6 +12,7 @@ MASTER_SITES=	http://home.wtal.de/petig/Gtk/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/5./5_/}
 
 MAINTAINER=	fujie@tk.elec.waseda.ac.jp
+COMMENT=	A C++(GTK--) code generator for glade
 
 RUN_DEPENDS=	glade:${PORTSDIR}/devel/glade
 LIB_DEPENDS=	gtkmm.2:${PORTSDIR}/x11-toolkits/gtk--

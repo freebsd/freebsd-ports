@@ -11,6 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.pn.com/pub/bb/cvsmapfs/
 
 MAINTAINER=	rip@pinetec.co.za
+COMMENT=	Helps keep track of modes and permissions of files in cvs
 
 USE_PERL5=	YES
 NO_BUILD=	YES

@@ -16,6 +16,7 @@ MASTER_SITES=	ftp://ftp.horde.org/pub/chora/				\
 		ftp://ftp.pt.horde.org/pub/horde-ftp/chora/
 
 MAINTAINER=	thierry@pompo.net
+COMMENT=	The Horde CVS web-viewer
 
 #-----------------------------------------------------------------------
 # You may define these options:

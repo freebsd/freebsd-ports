@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.directfb.org/download/DirectFB/
 DISTNAME=	DirectFB-${PORTVERSION}
 
 MAINTAINER=	fab@gcu.info
+COMMENT=	Graphic development lightweight API
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		SDL-1.1.5:${PORTSDIR}/devel/sdl12 \

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Devel/DROLSKY
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dsh@vlink.ru
+COMMENT=	Validate method/function parameters
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Attribute/Handlers.pm:${PORTSDIR}/devel/p5-Attribute-Handlers
 RUN_DEPENDS=	${BUILD_DEPENDS}

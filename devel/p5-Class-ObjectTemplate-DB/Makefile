@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Class
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tonym@biolateral.com.au
+COMMENT=	An optimized template builder base class with lookup capability
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Class/ObjectTemplate.pm:${PORTSDIR}/devel/p5-Class-ObjectTemplate
 

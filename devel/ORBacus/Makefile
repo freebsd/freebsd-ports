@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.ooc.com/pub/OB/3.2/
 DISTNAME=	OB-${PORTVERSION}
 
 MAINTAINER=	ejc@bazzle.com
+COMMENT=	A CORBA 2 implementation
 
 USE_XLIB=	yes
 INSTALLS_SHLIB=	yes

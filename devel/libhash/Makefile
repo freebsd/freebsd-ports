@@ -11,6 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.ugh.net.au/pub/unix/libhash/
 
 MAINTAINER=	andrew@ugh.net.au
+COMMENT=	A library for manipulating hash tables
 
 WRKSRC=		${WRKDIR}/libhash
 

@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	mipsel-linux-
 DISTNAME=	kernel-headers-2.4.0-test9_1
 
 MAINTAINER=	lev@serebryakov.spb.ru
+COMMENT=	Kernel headers for linux 2.4.0-pre9 for development for mipsel-linux
 
 USE_BZIP2=	yes
 NO_BUILD=	yes

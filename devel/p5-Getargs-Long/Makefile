@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Getargs
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svenasse@polaris.ca
+COMMENT=	Parse routine arguments
 
 BUILD_DEPENDS=	${SITE_PERL}/Log/Agent.pm:${PORTSDIR}/devel/p5-Log-Agent
 RUN_DEPENDS=	${BUILD_DEPENDS}
