@@ -85,6 +85,7 @@
     SUBDIR += jgnat-doc-txt
     SUBDIR += jruby
     SUBDIR += jython
+    SUBDIR += kawa
     SUBDIR += klone
     SUBDIR += librep
     SUBDIR += linux-j
