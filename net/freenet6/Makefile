@@ -30,6 +30,9 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 .if ${OSVERSION} < 400000
 IGNORE=		This program might not be working on FreeBSD version below 4.0
 .endif
+.if ${OSVERSION} > 500000
+EXTRA_PATCHES=	patch5-template::freebsd.sh
+.endif
 
 MAKE_ARGS=	target=freebsd installdir=${PREFIX}
 
