@@ -11,7 +11,7 @@ CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gttr
 
-MAINTAINER=	einekoai@chello.nl
+MAINTAINER=	kwm@rainbow-runner.nl
 COMMENT=	GnoTime is a time tracker for gnome2
 
 LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile

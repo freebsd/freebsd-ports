@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.cs.auc.dk/~olau/monster-masher/source/
 PKGNAMESUFFIX=	-masher
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
-MAINTAINER=	einekoai@chello.nl
+MAINTAINER=	kwm@rainbow-runner.nl
 COMMENT=	Gnomemm puzzle game where you have to clean the caves of monsters
 
 LIB_DEPENDS=	gnomeuimm-2.0:${PORTSDIR}/x11-toolkits/libgnomeuimm

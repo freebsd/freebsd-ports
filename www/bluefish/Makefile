@@ -15,7 +15,7 @@ MASTER_SITES=	http://pkedu.fbt.eitn.wau.nl/~olivier/downloads/ \
 		ftp://ftp.ratisbona.com/pub/bluefish/downloads/ \
 		http://bluefish.shellhung.org/downloads/
 
-MAINTAINER=	einekoai@chello.nl
+MAINTAINER=	kwm@rainbow-runner.nl
 COMMENT=	HTML editor designed for the experienced web designer
 
 RUN_DEPENDS=	weblint:${PORTSDIR}/www/weblint

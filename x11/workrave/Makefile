@@ -12,7 +12,7 @@ CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	einekoai@chello.nl
+MAINTAINER=	kwm@rainbow-runner.nl
 COMMENT=	A Gnome RSI prevention tool
 
 LIB_DEPENDS=	gtkmm-2.0.6:${PORTSDIR}/x11-toolkits/gtk--2 \

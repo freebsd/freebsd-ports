@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	sources/gnome-vfs-extras/0.99
 DISTNAME=	gnome-vfs-extras-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	einekoai@chello.nl
+MAINTAINER=	kwm@rainbow-runner.nl
 COMMENT=	A plugin for gnomevfs2 to browse smb shares with nautilus2
 
 LIB_DEPENDS=	smbclient.0:${PORTSDIR}/net/samba-libsmbclient
