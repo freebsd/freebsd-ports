@@ -10,7 +10,7 @@ DISTNAME=	X336contrib
 PKGNAME=	XFree86-contrib-3.3.6
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.xfree86.org/pub/XFree86/3.3.6/source/ \
-		ftp://xfree86.cdrom.com/pub/XFree86/3.3.6/source/ \
+		ftp://ftp.freesoftware.com/pub/XFree86/3.3.6/source/ \
 		ftp://ftp.lip6.fr/pub/X11/XFree86/XFree86-3.3.6/source/ \
 		ftp://sunsite.doc.ic.ac.uk/packages/XFree86/3.3.6/source/
 EXTRACT_SUFX=	.tgz
