@@ -1,6 +1,6 @@
 --- /usr/ports/security/sudo/work2/sudo.v1.5.7p4/configure	Tue Nov 24 05:40:24 1998
 +++ configure	Sat Jan  2 04:07:08 1999
-@@ -665,8 +667,8 @@
+@@ -667,8 +669,8 @@
  
  test "$mandir" = '${prefix}/man' && mandir='$(prefix)/man'
  test "$bindir" = '${exec_prefix}/bin' && bindir='$(exec_prefix)/bin'
@@ -11,7 +11,7 @@
  
  
  # Check whether --with-CC or --without-CC was given.
-@@ -7000,7 +7016,7 @@
+@@ -7170,7 +7188,7 @@
  fi
  
  if test "$with_skey" = "yes"; then
