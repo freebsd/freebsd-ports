@@ -7,7 +7,7 @@
 #
 
 DISTNAME=	omniORB_280
-PKGNAME=	omniORB-2.8.0	
+PKGNAME=	omniORB-2.8.0
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.orl.co.uk/pub/omniORB/
 
