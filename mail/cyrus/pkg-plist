@@ -37,6 +37,7 @@ include/cyrus/sysexits.h
 include/cyrus/util.h
 include/cyrus/xmalloc.h
 lib/libcyrus.a
+@unexec rm /etc/periodic/daily/600.cyrus
 @dirrm cyrus/bin
 @dirrm cyrus
 @dirrm include/cyrus

@@ -1,0 +1,21 @@
+#!/bin/sh
+#
+# $Id$
+#
+# If there is a global system configuration file, suck it in.
+#
+if [ -r /etc/defaults/periodic.conf ]
+then
+	. /etc/defaults/periodic.conf
+	source_periodic_confs
+fi
+
+if [ -x LOCALBASE/cyrus/bin/deliver ] ; then
+	echo LOCALBASE/cyrus/bin/deliver -E 3 | su -m cyrus && rc=0 || rc=3
+	rc=0
+else
+	echo "deliver isn't executable"
+	rc=2
+fi
+
+exit $rc
