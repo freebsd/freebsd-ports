@@ -1,5 +1,5 @@
-*** Makefile.in.orig	Sun Nov  6 15:35:49 1994
---- Makefile.in	Tue Jan  3 20:56:32 1995
+*** Makefile.in.orig	Mon Nov  7 00:35:49 1994
+--- Makefile.in	Sun Jan 29 01:13:25 1995
 ***************
 *** 94,100 ****
   # Number to put on the man page filename.
@@ -34,3 +34,20 @@
   	mv $@.new $@
   
   $(infodir)/make.info: make.info
+***************
+*** 264,270 ****
+  	$(SHELL) config.status
+  glob/Makefile: config.status $(srcdir)/glob/Makefile.in
+  	$(SHELL) config.status
+! config.h: stamp-config ;
+  stamp-config: config.status $(srcdir)/config.h.in
+  	$(SHELL) config.status
+  	touch stamp-config
+--- 264,270 ----
+  	$(SHELL) config.status
+  glob/Makefile: config.status $(srcdir)/glob/Makefile.in
+  	$(SHELL) config.status
+! config.h: stamp-config
+  stamp-config: config.status $(srcdir)/config.h.in
+  	$(SHELL) config.status
+  	touch stamp-config
