@@ -242,7 +242,7 @@
 ;   login script = login.bat
 
 #   移動プロファイルを保存する場所の指定とホームディレクトリの指定
-	%N はこのサーバの NetBIOS 名、%U はユーザ名に置換されます。
+#	%N はこのサーバの NetBIOS 名、%U はユーザ名に置換されます。
 ;   logon path = \\%N\%U\profile
 ;   logon home = \\%N\%U
 
