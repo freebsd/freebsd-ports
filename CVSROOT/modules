@@ -1452,6 +1452,7 @@ diablo-jdk13	ports/java/diablo-jdk13
 diablo-jre13	ports/java/diablo-jre13
 diacanvas	ports/graphics/diacanvas
 diacanvas2	ports/graphics/diacanvas2
+dialyzer	ports/devel/dialyzer
 dice		ports/lang/dice
 dictd		ports/net/dictd
 dictd-database	ports/net/dictd-database
