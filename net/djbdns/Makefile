@@ -7,7 +7,7 @@
 
 PORTNAME=	djbdns
 PORTVERSION=	${DJBDNS_VER}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://cr.yp.to/djbdns/ \
 		ftp://cr.yp.to/djbdns/
@@ -31,8 +31,17 @@ MANCOMPRESSED=	no
 .if defined(WITH_IPV6)
 PKGNAMESUFFIX=	-ipv6
 PORTVERSION=	${DJBDNS_VER}.${DJBDNS_V6_VER:S/test/b/:S/diff//}
-PATCH_SITES=	http://www.fefe.de/dns/
-PATCHFILES=	${PORTNAME}-${DJBDNS_VER}-${DJBDNS_V6_VER}.diff.bz2
+PATCH_SITES+=	http://www.fefe.de/dns/
+PATCHFILES+=	${PORTNAME}-${DJBDNS_VER}-${DJBDNS_V6_VER}.diff.bz2
+PATCH_DIST_STRIP=	-p1
+.endif
+
+.if defined(WITH_DNSCACHE_DUMPCACHE)
+.if defined(WITH_IPV6)
+BROKEN=		The IPv6 and dnscache-dumpcache patches are currently in conflict.
+.endif
+PATCH_SITES+=	http://mapage.noos.fr/efge/djbdns/
+PATCHFILES+=	patch-dnscache-dumpcache-v4.txt
 PATCH_DIST_STRIP=	-p1
 .endif
 
@@ -53,6 +62,15 @@ PLIST_SUB+=	WITH_IPV6=""
 .else
 PLIST_SUB+=	WITH_IPV6="@comment "
 .endif
+
+pre-fetch:
+	@${ECHO} "You can define the following variables to configure the djbdns build:"
+	@${ECHO} "- WITH_IPV6               - build with IPv6 support"
+	@${ECHO} "                            http://www.fefe.de/dns/"
+	@${ECHO} "- WITH_DNSCACHE_DUMPCACHE - build with the persistent cache patch for dnscache"
+	@${ECHO} "                            http://mapage.noos.fr/efge/djbdns/"
+	@${ECHO} "- WITHOUT_MAN             - do NOT install Gerritt Pape's manual pages"
+	@${ECHO} "                            http://smarden.org/pape/djb/manpages/"
 
 post-patch:
 	@echo "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
