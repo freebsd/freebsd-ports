@@ -8,6 +8,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/Z3950/Manager.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/Z3950/Record.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/Z3950/ResultSet.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/Z3950/ScanSet.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/Z3950/Tutorial.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Z3950
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
