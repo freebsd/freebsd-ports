@@ -1,0 +1,32 @@
+--- freebsd_tcpdump/print-pflog.c.orig	Fri Jun 13 18:14:50 2003
++++ freebsd_tcpdump/print-pflog.c	Fri Jun 13 18:15:39 2003
+@@ -64,7 +64,9 @@
+ 	u_int length = h->len;
+ 	u_int caplen = h->caplen;
+ 	const struct ip *ip;
++#ifdef INET6
+ 	const struct ip6_hdr *ip6;
++#endif
+ 	const struct pfloghdr *hdr;
+ 	u_short res;
+ 	char reason[128], *why;
+@@ -129,13 +131,16 @@
+ 		if (xflag)
+ 			default_print((const u_char *)ip,
+ 			    caplen - PFLOG_HDRLEN);
+-	} else {
++	} 
++#ifdef INET6
++	else {
+ 		ip6 = (struct ip6_hdr *)(p + PFLOG_HDRLEN);
+ 		ip6_print((const u_char *)ip6, length);
+ 		if (xflag)
+ 			default_print((const u_char *)ip6,
+ 			    caplen - PFLOG_HDRLEN);
+ 	}
++#endif
+ 
+ out:
+ 	putchar('\n');
+
+
