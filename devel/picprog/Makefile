@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	picprog
-PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTVERSION=	1.1
 CATEGORIES=	devel
 MASTER_SITES=	http://hyvatti.iki.fi/~jaakko/pic/
 
@@ -15,6 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
+USE_GMAKE=	yes
 MAN1=		picprog.1
 
 post-install:
