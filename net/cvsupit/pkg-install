@@ -157,6 +157,8 @@ this package was created (in alphabetical order by domain name).
     "cvsup6.FreeBSD.org" "U.S. server." \
     "cvsup7.FreeBSD.org" "U.S. server." \
     "cvsup8.FreeBSD.org" "U.S. server." \
+    "cvsup9.FreeBSD.org" "U.S. server." \
+    "cvsup10.FreeBSD.org" "U.S. server." \
     "cvsup.ar.FreeBSD.org" "Argentina server." \
     "cvsup.au.FreeBSD.org" "Australia server." \
     "cvsup.br.FreeBSD.org" "Brazil server." \
