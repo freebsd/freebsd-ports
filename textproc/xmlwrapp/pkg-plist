@@ -12,10 +12,10 @@ include/xmlwrapp/xmlwrapp.h
 %%GNOME:%%include/xsltwrapp/xsltwrapp.h
 lib/libxmlwrapp.a
 lib/libxmlwrapp.so
-lib/libxmlwrapp.so.4
+lib/libxmlwrapp.so.5
 %%GNOME:%%lib/libxsltwrapp.a
 %%GNOME:%%lib/libxsltwrapp.so
-%%GNOME:%%lib/libxsltwrapp.so.1
+%%GNOME:%%lib/libxsltwrapp.so.2
 libdata/pkgconfig/xmlwrapp.pc
 %%GNOME:%%@dirrm include/xsltwrapp
 @dirrm include/xmlwrapp
