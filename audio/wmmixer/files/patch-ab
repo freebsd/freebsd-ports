@@ -1,0 +1,11 @@
+--- mixctl.h.orig	Sat Sep  7 18:36:29 2002
++++ mixctl.h	Sat Sep  7 18:36:36 2002
+@@ -19,7 +19,7 @@
+ #include <soundcard.h>
+ #endif
+ #ifdef __FreeBSD__
+-#include <machine/soundcard.h>
++#include <sys/soundcard.h>
+ #endif
+ #ifdef __linux__
+ #include <linux/soundcard.h>
