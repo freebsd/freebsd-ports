@@ -1,0 +1,15 @@
+Imagine a heterogene network environment with both UN*X and DOS / Windows/
+Macintosh workstations. Now think of an UN*X server that serves Windows
+and/or Macintosh workstations via a POP3 service. Would it not be nice to
+ensure attachments coming via email are scanned for viruses before they reach
+a system they are able to infect? Well - that is what this package is for.
+It resides on the server that handles your incoming mails. When a mail
+arrives, instead of being delivered via procmail directly, is parsed through
+a script that extracts all attachments from the mail, unpacks (if needed)
+and scans them using a professional virus scanner program.
+
+This is a perl implementation of the mailscan.
+
+WWW: http://www.amavis.org/
+
+Roman Shterenzon <roman@xpert.com>

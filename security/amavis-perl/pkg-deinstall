@@ -1,0 +1,28 @@
+#!/bin/sh
+# $FreeBSD$
+
+prefix=/usr/local
+PATH="/bin:/usr/bin"
+
+if [ "$2" != "POST-DEINSTALL" ]; then
+  exit 0
+fi
+
+if [ -f /etc/sendmail.cf.pre-amavis ]; then
+  CFG=/etc
+elif [ -f /etc/mail/sendmail.cf.pre-amavis ]; then
+  CFG=/etc/mail
+else
+  echo "No sendmail.cf.pre-amavis found, are you sure that amavis was installed?"
+  exit 1
+fi
+ 
+rm -f ${CFG}/sendmail.cf
+rm -f ${CFG}/sendmail.orig.cf
+mv ${CFG}/sendmail.cf.pre-amavis ${CFG}/sendmail.cf
+sed /^virusalert/d ${CFG}/aliases > ${CFG}/aliases.tmp
+mv ${CFG}/aliases.tmp ${CFG}/aliases
+newaliases
+rmdir /var/spool/mqamavis 2>/dev/null || echo "You may wish to inspect /var/spool/mqamavis directory by yourself and remove it"
+rmdir /var/spool/quarantine 2>/dev/null || echo "You may wish to inspect /var/spool/quarantine directory by yourself and remove it"
+exit 0

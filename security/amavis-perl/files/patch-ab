@@ -1,0 +1,20 @@
+--- amavis/amavis.in.orig	Sun Dec 31 15:16:34 2000
++++ amavis/amavis.in	Sun Dec 31 15:24:31 2000
+@@ -414,7 +414,7 @@
+ 		do_exit($REGERR, __LINE__);
+ 	}
+ 
+-	my $filetype = `$file -b $TEMPDIR/parts/$part`;
++	my $filetype = `$file $TEMPDIR/parts/$part`;
+ 	chop $filetype;
+ 	do_debug("File-type of $part: $filetype\n");
+ 
+@@ -609,7 +609,7 @@
+ 	}
+ 
+ 	# older versions of file report tnef files as data
+-	if ($filetype =~ /^data$/) {
++	if ($filetype =~ /:\sdata$/) {
+ 		# may be tnef
+ 
+ 		# checked already?
