@@ -1,10 +1,11 @@
---- Makefile.in.orig	Sun Mar 28 21:31:37 1999
-+++ Makefile.in	Tue Jun  8 11:07:52 1999
-@@ -10,6 +10,7 @@
+--- Makefile.in.orig	Fri Dec 24 20:05:41 1999
++++ Makefile.in	Fri Dec 24 20:05:48 1999
+@@ -9,7 +9,7 @@
+ first_rule: all
  dummy:
  
- subdirs = src doc rclock src/graphics
-+subdirs = src doc # rclock src/graphics
+-subdirs = src doc rclock src/graphics src/test
++subdirs = src doc # rclock src/graphics src/test
  
  DIST =	INSTALL README.configure configure Makefile Makefile.in ChangeLog
  
