@@ -12,6 +12,7 @@
     SUBDIR += conserver-com
     SUBDIR += ecu
     SUBDIR += efax
+    SUBDIR += gammu
     SUBDIR += garmin-utils
     SUBDIR += gfax
     SUBDIR += ghfaxviewer
