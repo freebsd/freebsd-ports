@@ -1,0 +1,373 @@
+#!/bin/sh
+
+
+H=$3/policy.h
+trap "rm -f $H; exit 1" 1 2 3
+cp $3/policy.h-dist $H || exit 1
+
+
+ww () {
+  echo "#undef $1" >>$H
+  echo "#define $1 $2" >>$H
+}
+wq () {
+  echo -n "$1 [$2] "
+  read answ; if [ "$answ" = "" ]; then answ=$2; fi
+  ww $3 "\"$answ\""
+  echo "---------------------------------------------------------------------" ; echo
+}
+wd () {
+  echo -n "$1 [$2] "
+  read answ; if [ "$answ" = "" ]; then answ=$2; fi
+  ww $3 "$answ"
+  echo "---------------------------------------------------------------------" ; echo
+}
+wb () {
+  echo -n "$1 [$2] "
+  read answ; if [ "$answ" = "" ]; then answ=$2; fi
+  ww $3 $4$answ
+  echo "---------------------------------------------------------------------" ; echo
+}
+wa () {
+  echo -n "$1 [$2] "
+  read answ; if [ "$answ" = "" ]; then answ=$2; fi
+  if [ $answ = "y" ]; then
+    echo "#define $3 $4" >>$H
+  fi
+  echo "---------------------------------------------------------------------" ; echo
+}
+wn () {
+  echo -n "$1 "
+  read answ; if [ "$answ" != "" ]; then
+    echo "#define $2  \""$answ"\"" >>$H
+  fi
+  echo "---------------------------------------------------------------------" ; echo
+}
+
+
+
+cat <<END
+
+
+ login dispatcher config file
+
+ In this file, you can configure which "login" program (default /bin/login)
+ to call for what user name.
+
+ You could use it to call "uucico" for all users starting with "U*"
+ (works only with Taylor UUCP 1.04 with my patch), or to call a fido
+ mailer for fido calls (only if -DFIDO defined)...
+ See the samples in the example mgetty.login file.
+
+ WARNING: make sure that this file isn't world-accessable (SECURITY!)
+
+ If you want to call /bin/login in any case, do not define this
+END
+wn "config file:" LOGIN_CFG_FILE  
+
+ww DEFAULT_LOGIN_PROGRAM \"/usr/bin/login\"
+
+
+cat <<END
+ user id of the "uucp" user. The tty device will be owned by this user,
+ so parallel dial-out of uucico will be possible
+END
+wq "uucp user:" uucp UUCPID 
+
+cat <<END
+ access mode for the line while getty has it - it should be accessible
+ by uucp / uucp, but not by others (imagine someone dialing into your
+ system and using another modem to dial to another country...)
+END
+wd "access mode:" 0660 FILE_MODE
+
+cat <<END
+ Name of the mgetty log file
+ e.g. "/usr/spool/log/mgetty.log.%s"
+ a "%s" will be replaced by the device name, e.g. "tty2a"
+END
+wq "log file:"  /tmp/log_mg.%s LOG_PATH 
+
+cat <<END
+ Default log error level threshold. Possible error levels are
+ L_FATAL, L_ERROR, L_WARN, L_AUDIT, L_MESG, L_NOISE, L_JUNK (see mgetty.h)
+END
+wd level: L_MESG LOG_LEVEL
+
+cat <<END
+ System administrator - if a severe error happens (lprintf called
+ with log_level L_FATAL) and writing to CONSOLE is not possible,
+ the logfile will be mailed to him
+END
+wq "system administrator:" root ADMIN
+
+cat <<END
+ 	Syslog
+
+ If you want logging messages of type L_AUDIT, L_ERROR and L_FATAL
+ to go to the "syslog", define this.
+ mgetty will use the facility "LOG_AUTH", and the priorities
+ LOG_NOTICE, LOG_ERR and LOG_ALERT, respectively.
+END
+wa "do you want logging messages?" n SYSLOG ""
+
+cat <<END
+ System name - printed at login prompt
+ If you do not define this, the uname() call will be used
+END
+wn "system name:" SYSTEM 
+
+cat <<END
+	Login prompt
+ The "@", "\\D" and "\\T" escapes will be replaced by SYSTEM, the
+ current date and time, respectively.
+ override with "-p <prompt>" switch
+END
+wq "login prompt:" "@!login: " LOGIN_PROMPT
+
+cat <<END
+ Maximum time before login name has to be entered (in seconds)
+ (after that time a warning will be issued, after that, the call is
+ dropped). 
+END
+wd "max login time:" 240 MAX_LOGIN_TIME
+
+cat <<END
+	 nologin file
+
+ If that file exists, a ringing phone won't be answered (see manual).
+ "%s" will be replaced by the device name.
+END
+wq "login file:" /etc/nologin.%s NOLOGIN_FILE 
+
+ww LOCK \"/usr/spool/lock/LCK..%s\"
+
+cat <<END
+ Set this to "1" if your system uses binary lock files (i.e., the pid
+ as four byte integer in host byte order written to the lock file)
+ If it is "0", HDB locking will be used - the PID will be written as
+ 10 byte ascii, with a trailing newline
+ (Just check "LOCK" while uucico or pcomm or ... are running to find
+ out what lock files are used on your system)
+END
+wd "blocks binary:" 0 LOCKS_BINARY
+
+cat <<END
+ the default speed used by mgetty - override it with "-s <speed>"
+
+ WARNING: ZyXELs *can* do faxreceive with 38400, but a lot other modems,
+ especially such based on the rockwell chipset can *not*. So, if
+ your fax receive fails mysteriously, timing out waiting for "OK", try
+ setting this to 19200
+END
+
+wb speed: 38400 DEFAULT_PORTSPEED	B
+
+cat <<END
+	the modem initialization string
+
+ this sample string is for ZyXELs, for other modems you'll have to
+     replace &H3 (rts/cts flow control), &K4 (enable v42bis) and &N0
+     (answer with all known protocols).
+ For instructions how to setup various other modems, look into
+     mgetty.texi ("modems" section) and check your modem manual
+ For some modems, an initial "\d" is needed.
+ If you need a "\" in the modem command, give it as "\\\\".
+ If you wish to use ZyXEL callerid, add "S40.2=1"
+ The modem must answer with "OK" (!!!) - otherwise, change mgetty.c
+END
+wq "initialization string:" "ATS0=0Q0&D3&H3&N0&K4" MODEM_INIT_STRING
+
+cat <<END
+	 command termination string
+
+ for most modems, terminating the AT... command with "\r" is
+ sufficient and "\r\n" also works without doing harm.
+ Unfortunately, for the Courier HST, you've to use *only* \r,
+ otherwise ATA won't work (immediate NO CARRIER), and for some
+ ZyXELs, you have to use \r\n (no OK otherwise).
+ So, try one, and if it doesn't work, try the other.
+END
+wq "suffix:" "\r" MODEM_CMD_SUFFIX
+
+cat <<END
+	 "keep alive"
+
+ mgetty can periodically check whether the modem is still alive
+ by issueing an "AT\r" command and checking for the "OK"
+ Define here, in seconds, how often mgetty should check. For normal
+ reliable modems, once an hour should be sufficient...
+ If you use "-1", mgetty won't check.
+END
+wd "check time" 3600 MODEM_CHECK_TIME 
+
+
+cat <<END
+	 modem mode
+
+ specify the default way mgetty+sendfax handle a faxmodem.
+ You have four choices:
+   "data" - data only, no faxing available (for sendfax, equal to "auto")
+   "cls2" - use AT+FCLASS=2
+   "c2.0" - use AT+FCLASS=2.0
+   "auto" - try "2.0", then "2", then fall to "data".
+
+ Normally, you can leave this to "auto", but if you have a modem that
+ can do class 2.0 and class 2, and 2.0 doesn't work, then you could try
+ setting it to "cls2".
+ You can override this define with the "-C <mode>" switch.
+END
+wq "modem mode:" auto  DEFAULT_MODEMTYPE 
+
+
+cat <<END
+ some modems are a little bit slow - after sending a response (OK)
+ to the host, it will take some time before they can accept the next
+ command - specify the amount needed in data mode here (in
+ milliseconds). Normally, 50 ms should be sufficient. (On a slow
+ machine it may even work without any delay at all)
+
+ Be warned: if your machine isn't able to sleep for less than one
+ second, this may cause problems.
+ and this is the delay before sending each command while in fax mode
+END
+wd delay: 50 DO_CHAT_SEND_DELAY 
+
+cat <<END
+ incoming faxes will be chmod()ed to this mode
+ (if you do not define this, the file mode will be controlled by
+ mgetty's umask)
+END
+wd "fax file mode:" 0660 FAX_FILE_MODE
+
+cat <<END
+ if your faxmodem switches to 19200 bps just after sending the "+FCON"
+ message to the host, define this. (Not important if you have the
+ portspeed set to 19200 anyway).
+ Some Tornado and Supra modems are know to do this.
+ ZyXELs do *not* do this, except if explicitely told to do so.
+
+ You can see if this happens if mgetty gets the "+FCON" response,
+ starts the fax receiver, and times out waiting for OK, receiving
+ nothing or just junk.
+END
+wa "do your faxmodem switches to 19200?" n FAX_RECEIVE_USE_B19200
+
+wa "do you have a US Robotics?" n FAX_USRobotics ""
+
+cat <<END
+local station ID
+
+ 20 character string, most faxmodem allow all ascii characters 32..127,
+ but some do only allow digits and blank
+ AT+FLID=? should tell you what's allowed and what not.
+END
+wq "station id:" "00 00 0000000" FAX_STATION_ID	
+
+cat <<END
+ ------ sendfax-specific stuff follows here -------- 
+ ---------------------------------------------------
+
+ the baudrate used for *sending* faxes. ZyXELs can handle 38400,
+ SUPRAs (and other rockwell-based faxmodems) do not
+ I recommend 38400, since 19200 may be to slow for 14400 bps faxmodems!
+END
+wb "baud rate:" 38400 FAX_SEND_BAUD B
+
+cat <<END
+ 	switch baud rate after +FCLASS=2
+
+ some weird modems require that you initialize the modem with one
+ baud rate (e.g. 2400 or 9600 for cheap 2400+fax modems, or "smart"
+ modems that insist on staying locked to 38400 (ELSA!)), but switch
+ to another baud rate, typically 19200, immediately after receiving
+ the "AT+FCLASS=2" command.
+
+ If the following is defined, sendfax will switch to the speed given
+ here after sending AT+FCLASS=2.
+
+ Only try fiddling with this if sendfax times out during modem
+ initialization, receiving junk instead of "OK" or "ERROR" (logfile!)
+END
+wa "switch to 19200?" n FAX_SEND_SWITCHBD B19200
+
+cat <<END
+this is the command to set the modem to use the desired flow control.
+ For hardware handshake, this could be &H3 for the ZyXEL, &K3 for
+ Rockwell-Based modems or \\Q3&S0 for Exar-Based Modems (i.e. some GVC's)
+END
+wq command: "&H3" FAX_MODEM_HANDSHAKE 
+
+cat <<END
+ When sending a fax, if the other side says "page bad, retrain
+ requested", sendfax will retry the page. Specifiy here the maximum
+ number of retries (I recommend 3) before hanging up.
+
+ If you set it to "0", sendfax will *never* retransmit a page (only
+ do this if you know that your modem returns +FPTS:2 even if the
+ page arrived properly, but be warned - you wont' be able to react
+ properly to transmission errors!)
+END
+wd "max tries:" 3 FAX_SEND_MAX_TRIES 
+
+cat <<END
+ the device(s) used for faxing
+ multiple devices can be separated by ":", e.g. "tty1a:tty2a"
+ (without (!) leading /dev/)
+END
+wq devices: cua01 FAX_MODEM_TTYS
+
+cat <<END
+ some modems, notably some GVC modems and the german telecom approved
+ ZyXEL EG+ have the annoying behaviour of lowering and raising the
+ DCD line during the pre- and post-page handshake (when sending).
+
+ If your modem does this, sendfax will terminate immediately after
+ starting to send the first page, or between the first and second
+ page, and the fax log file will show something like
+ "read failed, I/O error".
+
+ If you define this, sendfax will (try to) ignore that line
+END
+wa define? n FAX_SEND_IGNORE_CARRIER ""
+
+cat <<END
+	 Xon or not?
+
+ the first issues of the class 2 drafts required that the program waits
+ for an Xon character before sending the page data. Later versions
+ removed that. Sendfax can do both, default is to wait for it.
+
+ If you get an error message "... waiting for XON" when trying to
+ send a fax, try this one. Some ELSA modems are know to need it.
+END
+wa "Xon ?" n FAXSEND_NO_XON ""
+
+cat <<END
+ where to send notify mail about incoming faxes to
+ (remember to create an mail alias if no such user exists!)
+END
+wq "send to:" faxadmin MAIL_TO	
+
+cat <<END
+ after a fax has arrived, mgetty can call a program for further
+ processing of this fax.
+
+ (e.g.: printing of the fax, sending as MIME mail, displaying in an X
+ window (the latter one could be tricky) ...)
+
+ It will be called as:
+ <program> <result code> "<sender_id>" <#pgs> <pg1> <pg2>...
+ 
+ Define the name of this program here
+ If you don't want this type of service, do not define it at all
+END
+wn "program name (eg /usr/local/lib/mgetty+sendfax/new_fax): " FAX_NOTIFY_PROGRAM
+
+cat <<END
+ if this file exists, it can be used to control what callers
+ are allowed in.  If undefined, the functionality is omitted.
+END
+wn "file (eg /usr/local/lib/mgetty+sendfax/dialin.config):" CNDFILE 
+
+exit 0

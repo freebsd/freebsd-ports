@@ -1,0 +1,41 @@
+@cd /usr/local
+@owner bin
+@group bin
+bin/faxspool
+bin/faxq
+bin/faxrm
+bin/g3topbm
+bin/pbmtog3
+bin/g3cat
+@mode 700
+bin/faxrunq 
+sbin/mgetty
+sbin/sendfax
+@owner root
+@mode 600
+lib/mgetty+sendfax/dialin.config
+lib/mgetty+sendfax/login.config
+@owner bin
+@mode 644 
+lib/mgetty+sendfax/faxheader 
+lib/mgetty+sendfax/cour24i.pbm
+man/man1/g3topbm.1
+man/man1/pbmtog3.1
+man/man1/g3cat.1
+man/man1/faxspool.1
+man/man1/faxrunq.1
+man/man1/faxq.1
+man/man1/faxrm.1
+man/man4/mgettydefs.4 
+man/man5/faxqueue.5
+man/man8/sendfax.8
+man/man8/mgetty.8
+info/mgetty.info
+info/mgetty.info-1
+info/mgetty.info-2
+info/mgetty.info-3
+@cd /var/spool
+@exec mkdir -p %D/fax/incoming
+@exec mkdir -p %D/fax/outging
+@exec chmod -R 775 %D/fax
+@unexec rm -r %D/fax
