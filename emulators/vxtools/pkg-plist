@@ -1,0 +1,8 @@
+bin/prtvtoc
+bin/vxmount
+bin/vxumount
+bin/vxls
+bin/vxcd
+bin/vxpwd
+bin/vxidump
+bin/vxcat
