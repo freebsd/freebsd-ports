@@ -1,19 +1,19 @@
---- Makefile.orig	Tue Aug 31 14:57:46 1999
-+++ Makefile	Mon Sep 20 11:32:09 1999
+--- Makefile.orig	Sun Nov 21 18:20:58 1999
++++ Makefile	Thu Feb 24 18:07:32 2000
 @@ -1,8 +1,8 @@
 -CC = gcc
 -CFLAGS = -O2 `gtk-config --cflags`
 -INSTALLDIR = /usr/local/bin
-+# CC = gcc
-+CFLAGS += `${GTK_CONFIG} --cflags`
++CC?= gcc
++CFLAGS+= `${GTK_CONFIG} --cflags`
 +INSTALLDIR = ${PREFIX}/bin
  
 -LIBS =  `gtk-config --libs`
 +LIBS =  `${GTK_CONFIG} --libs`
- OBJS = runxanim.o gxanim.o memory.o filesel.o util.o valxanim.o control.o windows.o config.o prefs.o
- 
- FINAL = gxanim
-@@ -29,5 +29,5 @@
+ OBJS = runxanim.o gxanim.o memory.o filesel.o util.o \
+ 	 valxanim.o control.o windows.o config.o prefs.o \
+ 	 history.o gtkmovie.o
+@@ -31,5 +31,5 @@
  	rm -f ${FINAL}
  
  install :
