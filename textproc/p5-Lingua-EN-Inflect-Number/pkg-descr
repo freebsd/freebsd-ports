@@ -1,0 +1,4 @@
+This module extends the functionality of Lingua::EN::Inflect with
+three new functions available for export.
+
+WWW: http://search.cpan.org/dist/Lingua-EN-Inflect-Number/
