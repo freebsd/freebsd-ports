@@ -53,6 +53,7 @@
     SUBDIR += dmake
     SUBDIR += doc++
     SUBDIR += doxygen
+    SUBDIR += dryad
     SUBDIR += elftoaout
     SUBDIR += f77flow
     SUBDIR += fastcrc
@@ -74,6 +75,7 @@
     SUBDIR += glib12
     SUBDIR += global
     SUBDIR += gmake
+    SUBDIR += gnomedebug
     SUBDIR += gnustep
     SUBDIR += gperf
     SUBDIR += gtksheet
