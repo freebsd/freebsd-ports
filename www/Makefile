@@ -141,6 +141,7 @@
     SUBDIR += links1
     SUBDIR += linux-beonex
     SUBDIR += linux-flashplugin
+    SUBDIR += linux-flashplugin6
     SUBDIR += linux-lesstif-ns
     SUBDIR += linux-mozilla
     SUBDIR += linux-opera
