@@ -22,14 +22,11 @@ if ! grep -q "^!drweb" /etc/syslog.conf; then
   echo "*.*             /var/log/drwebd.log"
   echo ""
 fi
-if crontab -u drweb -l 2>&1 | grep -q "no crontab"; then
-  echo "You may also use this crontab entry for \"drweb\" user:"
-  echo "SHELL=/bin/sh"
-  echo "MAILTO=root"
-  echo "0 12 * * * ${PREFIX}/drweb/update/update.pl ${PREFIX}/drweb"
+if ! grep -q drweb /etc/crontab; then
+  echo "You may also add this crontab entry to /etc/crontab"
+  echo "0 12 * * * ${BINOWN} ${PREFIX}/drweb/update/update.pl ${PREFIX}/drweb"
   echo ""
 fi
 [ "$ex" = "1" ] && exit 1
-usrdir=${PREFIX}/drweb
-chown -R drweb:drweb $usrdir
+install -dv -m 0775 -o ${BINOWN} -g drweb ${PREFIX}/drweb/run
 exit 0
