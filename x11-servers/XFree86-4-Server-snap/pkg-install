@@ -1,0 +1,3 @@
+#!/bin/sh
+
+/usr/bin/dialog --yesno "XFree86 4.0 may contain vulnerabilities yielding root privileges to local users, due to insecure coding of the setuid root X server. It is not recommended that this port be installed on multi-user systems. Do you wish to accept the security risk and build XFree86 4.0 anyway?" 10 60 || /usr/bin/false
