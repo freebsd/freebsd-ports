@@ -1,57 +1,15 @@
-*** Makefile.orig	Sun Jan 28 17:53:14 1996
---- Makefile	Fri Mar 22 19:39:36 1996
-***************
-*** 5,28 ****
-  # HASSTRERROR - whether system has strerror() call
-  # LIBS - local libraries to link in (e.g. -lresolv)
-  
-!      HASSTRDUP = # -DHAS_STRDUP
-!    HASSTRERROR = # -DHAS_STRERROR
-            LIBS = # -lresolv
-  
-! DEFINES = $(HASSTRDUP) $(HASSTRERROR) $(DEFAULT_DOMAIN)
-  
-! CFLAGS = $(DEFINES)
-  
-  FILES = bulk_mailer.README INSTALL bulk_mailer.c patchlevel.h Makefile
-  
-  bulk_mailer: bulk_mailer.o
-  	$(CC) $(CFLAGS) -o bulk_mailer bulk_mailer.o $(LIBS)
-  
-  bulk_mailer.o: bulk_mailer.c patchlevel.h
-  	$(CC) -c $(CFLAGS) bulk_mailer.c
-  
-  install: bulk_mailer
-! 	cp bulk_mailer /usr/local/bin
-  
-  clean:
-  	rm -f bulk_mailer bulk_mailer.o
---- 5,32 ----
-  # HASSTRERROR - whether system has strerror() call
-  # LIBS - local libraries to link in (e.g. -lresolv)
-  
-!      HASSTRDUP = -DHAS_STRDUP
-!    HASSTRERROR = -DHAS_STRERROR
-            LIBS = # -lresolv
-  
-! DEFINES = $(HASSTRDUP) $(HASSTRERROR) $(DEFAULT_DOMAIN) -DPIPECOMMAND='"/usr/sbin/sendmail -bs %s"'
-  
-! CFLAGS = -O2 -Wall $(DEFINES)
-  
-  FILES = bulk_mailer.README INSTALL bulk_mailer.c patchlevel.h Makefile
-  
-+ all:	bulk_mailer
-+ 
-  bulk_mailer: bulk_mailer.o
-  	$(CC) $(CFLAGS) -o bulk_mailer bulk_mailer.o $(LIBS)
-+ 	strip bulk_mailer
-  
-  bulk_mailer.o: bulk_mailer.c patchlevel.h
-  	$(CC) -c $(CFLAGS) bulk_mailer.c
-  
-  install: bulk_mailer
-! 	install -c -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} bulk_mailer ${PREFIX}/bin/bulk_mailer
-! 	install -c -o ${SHAREOWN} -g ${SHAREGRP} -m ${SHAREMODE} bulk_mailer.README ${PREFIX}/share/doc/bulk_mailer.README
-  
-  clean:
-  	rm -f bulk_mailer bulk_mailer.o
+--- Makefile.in.ORIG	Thu Jan 29 22:26:50 1998
++++ Makefile.in	Thu Jan 29 22:30:35 1998
+@@ -11,10 +11,10 @@
+ 
+ 
+ #DEFINES = $(HASSTRDUP) $(HASSTRERROR) $(DEFAULT_DOMAIN)
+-DEFINES = @DEFS@
++DEFINES = @DEFS@ -DDEFAULT_DOMAIN=1
+ LIBS = @LIBS@
+ 
+-CFLAGS = $(DEFINES)
++CFLAGS = -O2 -Wall $(DEFINES)
+ 
+ FILES = bulk_mailer.README INSTALL bulk_mailer.c patchlevel.h Makefile
+ 

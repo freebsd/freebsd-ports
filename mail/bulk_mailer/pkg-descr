@@ -5,4 +5,3 @@ recipient list by reversed domain (so similar ones sort together),
 splits up the recipients into several groups containing no more than N
 domains each, creates an SMTP envelope for each group of recipients,
 and feeds that envelope to "/usr/sbin/sendmail -bs".
-

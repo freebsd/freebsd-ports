@@ -1,2 +1,3 @@
 bin/bulk_mailer
 share/doc/bulk_mailer.README
+man/man1/bulk_mailer.1.gz
