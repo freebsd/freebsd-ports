@@ -5,6 +5,7 @@
     SUBDIR += mbone_vcr
     SUBDIR += nte
     SUBDIR += rat
+    SUBDIR += rqm
     SUBDIR += rtpmon
     SUBDIR += rtptools
     SUBDIR += sdr
