@@ -9,8 +9,12 @@ PORTNAME=	nntpcache
 PORTVERSION=	3.0.1
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.nntpcache.org/pub/nntpcache/ \
-		ftp://ftp.nethelp.no/pub/news/ \
-		ftp://ftp.netsw.org/net/news/proxy/nntpcache/
+		ftp://ftp.cs.tu-berlin.de/pub/net/news/nntpcache/ \
+		ftp://ftp.sbs.de/pub/news/servers/nntpcache/ \
+		ftp://ftp.ntua.gr/pub/net/news/nntpcache/ \
+		ftp://ftp.task.gda.pl/mirror/ftp.nntpcache.org/pub/nntpcache/ \
+		ftp://ftp.eos.hokudai.ac.jp/pub/network/news/nntpcache/ \
+		ftp://ftp.ayamura.org/pub/misc/
 
 MAINTAINER=	ports@FreeBSD.org
 
