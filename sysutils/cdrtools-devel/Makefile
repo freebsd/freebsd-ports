@@ -6,13 +6,13 @@
 #
 
 PORTNAME?=	cdrtools
-PORTVERSION?=	2.0
-PORTREVISION?=	1
+PORTVERSION?=	2.0.3
+PORTREVISION?=	0
 CATEGORIES?=	sysutils audio
 MASTER_SITES=	ftp://ftp.berlios.de/pub/cdrecord/ \
 		ftp://ftp.cs.tu-berlin.de/pub/misc/cdrecord/ \
 		ftp://ftp.gwdg.de/pub/linux/misc/cdrecord/
-DISTNAME=	cdrtools-2.0
+DISTNAME=	cdrtools-2.00.3
 
 MAINTAINER=	dirk@FreeBSD.org
 COMMENT?=	Cdrecord, mkisofs and several other programs to record CD-R[W]
