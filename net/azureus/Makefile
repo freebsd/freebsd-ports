@@ -15,7 +15,7 @@ DISTNAME=	Azureus${PORTVERSION}.jar
 EXTRACT_SUFX=
 EXTRACT_ONLY=
 
-MAINTAINER=	gldisater@gldis.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A BitTorrent client written in Java
 
 RUN_DEPENDS=	${LOCALBASE}/eclipse:${PORTSDIR}/java/eclipse
