@@ -3,7 +3,7 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.19 1998/09/30 02:07:26 jseger Exp $
+# $Id: Makefile,v 1.20 1998/10/01 18:35:41 brian Exp $
 #
 
 DISTNAME=	kdegames-1.0
@@ -12,6 +12,8 @@ MASTER_SITES=	$(MASTER_SITE_KDE)
 MASTER_SITE_SUBDIR= stable/1.0/distribution/tar/generic/source 
 
 MAINTAINER=	se@freebsd.org
+
+BROKEN=		upgrade
 
 LIB_DEPENDS=	gif.3:${PORTSDIR}/graphics/giflib \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \

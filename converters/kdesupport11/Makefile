@@ -3,7 +3,7 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.12 1998/10/01 01:07:21 jseger Exp $
+# $Id: Makefile,v 1.13 1998/10/01 18:35:36 brian Exp $
 #
 
 DISTNAME=	kdesupport-1.0
@@ -12,6 +12,8 @@ MASTER_SITES=	$(MASTER_SITE_KDE)
 MASTER_SITE_SUBDIR= stable/1.0/distribution/tar/generic/source 
 
 MAINTAINER=	se@freebsd.org
+
+BROKEN=		upgrade
 
 USE_QT=		yes
 HAS_CONFIGURE=	yes
