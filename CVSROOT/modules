@@ -4148,6 +4148,7 @@ linux-libaudiofile	ports/audio/linux-libaudiofile
 linux-libglade	ports/devel/linux-libglade
 linux-libxml	ports/textproc/linux-libxml
 linux-mozilla	ports/www/linux-mozilla
+linux-nwserver	ports/games/linux-nwserver
 linux-openmotif	ports/x11-toolkits/linux-openmotif
 linux-opera	ports/www/linux-opera
 linux-peops-spu	ports/emulators/linux-peops-spu
