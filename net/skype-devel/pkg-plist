@@ -26,7 +26,11 @@ bin/skype
 %%DATADIR%%/lang/skype_zh_CN.qm
 %%DATADIR%%/lang/skype_zh_TW.qm
 @dirrm %%DATADIR%%/lang
+%%DATADIR%%/busy4.wav
 %%DATADIR%%/call_in.wav
+%%DATADIR%%/call_out.wav
+%%DATADIR%%/hangup.wav
+%%DATADIR%%/im.wav
 %%DATADIR%%/LICENSE
 @dirrm %%DATADIR%%
 %%GNOME%%share/gnome/applications/skype.desktop
