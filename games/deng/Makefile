@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	deng
-PORTVERSION=	1.8.1.r4
+PORTVERSION=	1.8.2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-1.8.1-rc4
 
 MAINTAINER=	ip@doom.homeunix.org
 COMMENT=	An enhanced Doom, Heretic and Hexen source port
+
+RUN_DEPENDS=	${LOCALBASE}/bin/timidity:${PORTSDIR}/audio/timidity
 
 USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
