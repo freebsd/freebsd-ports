@@ -1,8 +1,10 @@
-lib/X11/fonts/freefont/fonts.dir
+lib/X11/fonts/freefont/Fontmap
+lib/X11/fonts/freefont/README
 lib/X11/fonts/freefont/agate.pfb
 lib/X11/fonts/freefont/agateb.pfb
 lib/X11/fonts/freefont/agatei.pfb
 lib/X11/fonts/freefont/ans.pfb
+lib/X11/fonts/freefont/ans.tgz
 lib/X11/fonts/freefont/baskvl.pfb
 lib/X11/fonts/freefont/baskvlb.pfb
 lib/X11/fonts/freefont/baskvli.pfb
@@ -11,7 +13,6 @@ lib/X11/fonts/freefont/blippo.pfb
 lib/X11/fonts/freefont/bodoni.pfb
 lib/X11/fonts/freefont/bodonib.pfb
 lib/X11/fonts/freefont/bodonii.pfb
-lib/X11/fonts/freefont/ans.tgz
 lib/X11/fonts/freefont/boecklin.pfb
 lib/X11/fonts/freefont/brahc___.pfb
 lib/X11/fonts/freefont/brushstr.license
@@ -20,15 +21,18 @@ lib/X11/fonts/freefont/calig___.pfb
 lib/X11/fonts/freefont/capri.license
 lib/X11/fonts/freefont/capri.pfb
 lib/X11/fonts/freefont/carrickc.license
-lib/X11/fonts/freefont/cheq.pfb
 lib/X11/fonts/freefont/carrickc.pfb
+lib/X11/fonts/freefont/cheq.license
+lib/X11/fonts/freefont/cheq.pfb
 lib/X11/fonts/freefont/classhvy.pfb
+lib/X11/fonts/freefont/cooprblk.pfb
 lib/X11/fonts/freefont/coronet.pfb
 lib/X11/fonts/freefont/crf_____.license
 lib/X11/fonts/freefont/crf_____.pfb
 lib/X11/fonts/freefont/crillee.license
 lib/X11/fonts/freefont/crillee.pfb
 lib/X11/fonts/freefont/cunei.pfb
+lib/X11/fonts/freefont/dabkc____.license
 lib/X11/fonts/freefont/dabkc___.pfb
 lib/X11/fonts/freefont/dos_____.pfb
 lib/X11/fonts/freefont/dragonwi.license
@@ -43,6 +47,8 @@ lib/X11/fonts/freefont/eraselt.pfb
 lib/X11/fonts/freefont/erasltra.pfb
 lib/X11/fonts/freefont/erasmed.pfb
 lib/X11/fonts/freefont/florence.pfb
+lib/X11/fonts/freefont/fonts.dir
+lib/X11/fonts/freefont/fonts.dir.orig
 lib/X11/fonts/freefont/frquad.pfb
 lib/X11/fonts/freefont/frquadb.pfb
 lib/X11/fonts/freefont/ftpstrps.pfb
@@ -58,13 +64,11 @@ lib/X11/fonts/freefont/gocmseq_.pfb
 lib/X11/fonts/freefont/goudyo.pfb
 lib/X11/fonts/freefont/goudyob.pfb
 lib/X11/fonts/freefont/goudyoi.pfb
-lib/X11/fonts/freefont/Fontmap
 lib/X11/fonts/freefont/igloolas.pfb
 lib/X11/fonts/freefont/linotext.pfb
 lib/X11/fonts/freefont/luxembrg.pfb
 lib/X11/fonts/freefont/manzanit.license
 lib/X11/fonts/freefont/manzanit.pfb
-lib/X11/fonts/freefont/README
 lib/X11/fonts/freefont/mazama.license
 lib/X11/fonts/freefont/mazama.pfb
 lib/X11/fonts/freefont/muriel.license
@@ -104,9 +108,6 @@ lib/X11/fonts/freefont/tribeca.license
 lib/X11/fonts/freefont/tribeca.pfb
 lib/X11/fonts/freefont/victoria.pfb
 lib/X11/fonts/freefont/windsord.pfb
-lib/X11/fonts/freefont/zalescap.pfb
-lib/X11/fonts/freefont/cooprblk.pfb
-lib/X11/fonts/freefont/cheq.license
 lib/X11/fonts/freefont/zalescap.license
-lib/X11/fonts/freefont/dabkc____.license
+lib/X11/fonts/freefont/zalescap.pfb
 @dirrm lib/X11/fonts/freefont
