@@ -1,6 +1,6 @@
---- Imakefile.orig	Thu Aug  3 22:25:52 2000
-+++ Imakefile	Mon Mar 26 03:32:39 2001
-@@ -18,8 +18,32 @@
+--- Imakefile.orig	Thu Mar 22 02:36:43 2001
++++ Imakefile	Mon Jan 21 22:15:51 2002
+@@ -25,8 +25,27 @@
  #endif
  #endif
  
@@ -12,11 +12,6 @@
 +#else
 +#if defined(FreeBSDBuildXbin) && FreeBSDBuildXbin
 +        SUBDIRS = include config lib $(NLSSUBDIR) \
-+		programs/Xserver/include programs/Xserver/hw/xfree86/parser \
-+		programs/Xserver/hw/xfree86/dummylib \
-+		programs/Xserver/hw/xfree86/loader \
-+		programs/Xserver/hw/xfree86/xf86cfg \
-+		programs/Xserver/hw/xfree86/os-support \
 +		programs/rgb \
 +		programs \
 +		fonts/util
@@ -33,7 +28,7 @@
    LNINSTALLDIRS = lib
  
  #if HasParallelMake
-@@ -210,3 +234,98 @@
+@@ -227,3 +246,98 @@
  #undef BootstrapCleanSubdirs
  #define BootstrapCleanSubdirs BOOTSTRAPSUBDIRS="$(BOOTSTRAPSUBDIRS)"
  BOOTSTRAPSUBDIRS = imake makedepend
@@ -47,7 +42,7 @@
 +			programs/Xserver/hw/xfree86/parser
 +#else
 +#if defined(FreeBSDBuildXbin) && FreeBSDBuildXbin
-+FreeBSDPortsInstallDir = lib programs programs programs/Xserver/hw/xfree86/xf86cfg fonts/util programs/rgb
++FreeBSDPortsInstallDir = lib programs/rgb programs fonts/util
 +#else
 +#if defined(FreeBSDBuildXxserv) && FreeBSDBuildXxserv
 +FreeBSDPortsInstallDir = programs lib/font $(FreeBSDPortsDRIDir)

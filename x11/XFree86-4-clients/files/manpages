@@ -18,6 +18,7 @@ MAN1=	Xmark.1 \
 	ico.1 \
 	lbxproxy.1 \
 	listres.1 \
+	luit.1 \
 	makepsres.1 \
 	mkcfm.1 \
 	mkfontdir.1 \
@@ -52,7 +53,6 @@ MAN1=	Xmark.1 \
 	xedit.1 \
 	xev.1 \
 	xeyes.1 \
-	xf86cfg.1 \
 	xfd.1 \
 	xfindproxy.1 \
 	xfontsel.1 \
@@ -93,4 +93,13 @@ MAN1=	Xmark.1 \
 	xvinfo.1 \
 	xwd.1 \
 	xwininfo.1 \
-	xwud.1
+	xwud.1 \
+	xrandr.1 \
+	xtrap.1 \
+	xtrapchar.1 \
+	xtrapin.1 \
+	xtrapinfo.1 \
+	xtrapout.1 \
+	xtrapproto.1 \
+	xtrapreset.1 \
+	xtrapstats.1

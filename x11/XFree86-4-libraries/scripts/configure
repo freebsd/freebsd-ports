@@ -73,10 +73,8 @@ configure () {
     echo "#define FreeBSDBuildXlib  YES" >> $LOCALDEF
     echo "#define FreeBSDBuildXbin   NO" >> $LOCALDEF
 
-    # Check Wraphelp.c
-    if [ $HasXdmAuth = DEFAULT ]; then
-	HasXdmAuth=$(awk '/^#define.*HasXdmAuth/ {print $3}' $ORIGDEF|tail -1)
-    fi
+    HasXdmAuth=YES
+
     cpwh=NO
     if [ $HasXdmAuth = YES ]; then
     	WH=$WRKDIR/xc/lib/Xdmcp/Wraphelp.c

@@ -6,14 +6,17 @@
 #
 
 PORTNAME=	Server
-PORTVERSION=	4.1.0
-PORTREVISION=	4
+PORTVERSION=	4.2.0
 CATEGORIES=	x11-servers
-MASTER_SITES=	${MASTER_SITE_XFREE}
-MASTER_SITE_SUBDIR=	4.1.0
+MASTER_SITES=	${MASTER_SITE_XFREE} \
+		ftp://psych.psy.uq.oz.au/pub/X11R5/:wrap \
+		ftp://ftp.internat.freebsd.org/pub/FreeBSD/X11-Crypto/:wrap \
+		ftp://ftp3.za.freebsd.org/pub/FreeBSD/X11-Crypto/:wrap
+MASTER_SITE_SUBDIR=	${PORTVERSION}
 PKGNAMEPREFIX=	XFree86-
-DISTFILES=	X410src-1.tgz
-EXTRACT_ONLY=	X410src-1.tgz
+DISTFILES=	X${PORTVERSION:S/.//g}src-1.tgz Wraphelp.c:wrap
+EXTRACT_ONLY=	X${PORTVERSION:S/.//g}src-1.tgz
+IGNOREFILES=	Wraphelp.c
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
@@ -53,7 +56,8 @@ MAN3=			XF86VidMode.3 \
 			XF86VidModeQueryVersion.3 \
 			XF86VidModeSetViewPort.3 \
 			XF86VidModeSwitchMode.3 \
-			XF86VidModeSwitchToMode.3
+			XF86VidModeSwitchToMode.3 \
+			XF86VidModeValidateModeLine.3
 MAN4=			mga.4 \
 			tdfx.4 \
 			glint.4 \
@@ -79,22 +83,23 @@ PKGMESSAGE=		${WRKDIR}/.pkg-message
 # HasSecureRPC	YES		build with SecureRPC (require FreeBSD-3 or later)
 # HasPam	YES		support PAM (require FreeBSD-3.1 or later)
 # ExtendedInputDevices	YES	support extended input devices
-HasXdmAuth?=		DEFAULT
+HasXdmAuth?=		YES
 HasSecureRPC?=		DEFAULT
 HasPam?=		DEFAULT
 ExtendedInputDevices?=	DEFAULT
 .if (exists(/sys) || exists(/usr/src/sys))
 BuildXF86DRI=		YES
+BuildXF86DRM=		YES
 PLIST_SUB+=		DRI=""
+PLIST_SUB+=		DRI_KMOD=""
 .else
 pre-fetch::
 	@${ECHO_MSG} "DRI would not build: kernel source required in /sys."
 BuildXF86DRI=		NO
-PLIST_SUB+=		DRI="@comment "
-.endif	# have /sys
-# DRM and DRI kernel modules bundled with 4.1.0 are broken
 BuildXF86DRM=		NO
+PLIST_SUB+=		DRI="@comment "
 PLIST_SUB+=		DRI_KMOD="@comment "
+.endif	# have /sys
 
 .if ${ARCH} == i386
 PLIST_SUB+=	I386:=""
@@ -130,13 +135,21 @@ MAN4+=		citron.4 \
 PLIST_SUB+=	XIE:="@comment "
 .endif
 
+# matrox BETA driver is not ready for 4.2.0.
+# I don't confirm feather it is newer than the one which included in 4.2.0,
+# but you can try the BETA driver. Just set that variable.
+
 .if ${BuildXF86DRI} == YES
 .if !defined(WITH_MATROX_GXX_DRIVER)
 HaveMatroxHal=		NO
 PLIST_SUB+=		MATROX="@comment "
 pre-fetch::
-	@${ECHO_MSG} "Define WITH_MATROX_GXX_DRIVER to enable the official Matrox drivers for"
-	@${ECHO_MSG} "the G200, G400, G450 and G550 graphic adapters."
+	@${ECHO_MSG} "*** WARNING: UNTESTED WITH XFREE86 4.2.0!  ENABLE AT"
+	@${ECHO_MSG} "YOUR OWN RISK!  ***"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Define WITH_MATROX_GXX_DRIVER to enable the official"
+	@${ECHO_MSG} "Matrox drivers for the G200, G400, G450, and G550"
+	@${ECHO_MSG} "graphic adapters."
 .else
 NO_PACKAGE=	"Matrox drivers may not be distributed."
 HaveMatroxHal=		YES
@@ -155,19 +168,6 @@ post-install::
 	${INSTALL_DATA} ${WRKSRC}/programs/Xserver/hw/xfree86/drivers/mga/README_HALLIB ${PREFIX}/lib/X11/doc/README.mga_HALLIB
 .endif	# !WITH_MATROX_GXX_DRIVER
 .endif
-
-.if ${HasXdmAuth} == DEFAULT || ${HasXdmAuth} == YES
-.if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
-pre-everything::
-	@${ECHO_MSG} "Assuming that you have fetched a USA-Legal Wraphelp.c."
-.else
-MASTER_SITES+=	ftp://psych.psy.uq.oz.au/pub/X11R5/ \
-		ftp://ftp.internat.freebsd.org/pub/FreeBSD/X11-Crypto/ \
-		ftp://ftp3.za.freebsd.org/pub/FreeBSD/X11-Crypto/
-DISTFILES+=	Wraphelp.c
-IGNOREFILES=	Wraphelp.c
-.endif	# USA_RESIDENT
-.endif	# HasXdmAuth
 
 do-configure:
 	cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure

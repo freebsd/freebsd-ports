@@ -1,0 +1,11 @@
+--- programs/Xserver/hw/xfree86/loader/Imakefile.orig	Sat Nov 17 01:47:55 2001
++++ programs/Xserver/hw/xfree86/loader/Imakefile	Mon Jan 21 00:22:06 2002
+@@ -35,7 +35,7 @@
+ 
+ MODULEDEFINES = -DDEFAULT_MODULE_PATH=\"$(MODULEDIR)\"
+ 
+-   INCLUDES = -I. -I.. -I$(XF86COMSRC) -I$(XF86OSSRC) -I$(XF86OSSRC)/vbe \
++   INCLUDES = -I. -I.. -I../parser -I$(XF86COMSRC) -I$(XF86OSSRC) -I$(XF86OSSRC)/vbe \
+ 		-I$(SERVERSRC)/dbe -I$(SERVERSRC)/Xext -I$(XF86SRC)/int10 \
+ 		-I$(SERVERSRC)/mfb -I$(SERVERSRC)/mi -I$(SERVERSRC)/include \
+ 		-I$(SERVERSRC)/os -I$(XINCLUDESRC) -I$(FONTINCSRC) \

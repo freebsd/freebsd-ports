@@ -11,6 +11,7 @@ lib/X11/Cards
 lib/X11/Options
 lib/X11/XF86Config.98
 lib/X11/XF86Config.eg
+lib/X11/doc/BUILD
 lib/X11/doc/BugReport
 lib/X11/doc/DESIGN
 lib/X11/doc/Install
@@ -38,6 +39,7 @@ lib/X11/doc/README.mouse
 lib/X11/doc/README.rapidaccess
 lib/X11/doc/README.rendition
 lib/X11/doc/README.s3virge
+lib/X11/doc/RELNOTES
 lib/X11/doc/ServersOnly
 lib/X11/doc/Status
 lib/X11/doc/Versions
@@ -46,9 +48,10 @@ lib/X11/etc/Xinstall.sh
 lib/X11/etc/sun.termcap
 lib/X11/etc/sun.terminfo
 lib/X11/etc/xmodmap.std
-%%DRI_KMOD%%lib/X11/kernel/drm.ko
 %%DRI_KMOD%%lib/X11/kernel/gamma.ko
 %%DRI_KMOD%%lib/X11/kernel/mga.ko
+%%DRI_KMOD%%lib/X11/kernel/r128.ko
+%%DRI_KMOD%%lib/X11/kernel/radeon.ko
 %%DRI_KMOD%%lib/X11/kernel/tdfx.ko
 %%DRI_KMOD%%@dirrm lib/X11/kernel
 lib/X11/xserver/SecurityPolicy
@@ -84,6 +87,7 @@ lib/modules/codeconv/libTCVN.a
 lib/modules/codeconv/libVISCII.a
 %%DRI%%lib/modules/dri/gamma_dri.so
 %%I386:%%%%DRI%%lib/modules/dri/i810_dri.so
+%%I386:%%%%DRI%%lib/modules/dri/i830_dri.so
 %%DRI%%lib/modules/dri/mga_dri.so
 %%DRI%%lib/modules/dri/radeon_dri.so
 %%I386:%%%%DRI%%lib/modules/dri/r128_dri.so
@@ -109,6 +113,7 @@ lib/modules/drivers/nv_drv.o
 %%I386:%%lib/modules/drivers/r128_drv.o
 %%I386:%%lib/modules/drivers/radeon_drv.o
 lib/modules/drivers/rendition_drv.o
+lib/modules/drivers/s3_drv.o
 lib/modules/drivers/s3virge_drv.o
 lib/modules/drivers/savage_drv.o
 lib/modules/drivers/siliconmotion_drv.o
@@ -128,6 +133,7 @@ lib/modules/extensions/libglx.a
 lib/modules/extensions/libpex5.a
 lib/modules/extensions/librecord.a
 lib/modules/extensions/libxie.a
+lib/modules/extensions/libxtrap.a
 lib/modules/fonts/libbitmap.a
 lib/modules/fonts/libfreetype.a
 lib/modules/fonts/libspeedo.a
@@ -157,6 +163,7 @@ lib/modules/libddc.a
 lib/modules/libfb.a
 lib/modules/libi2c.a
 lib/modules/libint10.a
+lib/modules/liblayer.a
 lib/modules/libmfb.a
 lib/modules/libpcidata.a
 lib/modules/librac.a

@@ -6,13 +6,17 @@
 #
 
 PORTNAME=	VirtualFramebufferServer
-PORTVERSION=	4.1.0
-PORTREVISION=	1
+PORTVERSION=	4.2.0
 CATEGORIES=	x11-servers
-MASTER_SITES=	${MASTER_SITE_XFREE}
-MASTER_SITE_SUBDIR=	4.1.0
+MASTER_SITES=	${MASTER_SITE_XFREE} \
+		ftp://psych.psy.uq.oz.au/pub/X11R5/:wrap \
+		ftp://ftp.internat.freebsd.org/pub/FreeBSD/X11-Crypto/:wrap \
+		ftp://ftp3.za.freebsd.org/pub/FreeBSD/X11-Crypto/:wrap
+MASTER_SITE_SUBDIR=	${PORTVERSION}
 PKGNAMEPREFIX=	XFree86-
-DISTFILES=	X410src-1.tgz
+DISTFILES=	X${PORTVERSION:S/.//g}src-1.tgz Wraphelp.c:wrap
+EXTRACT_ONLY=	X${PORTVERSION:S/.//g}src-1.tgz
+IGNOREFILES=	Wraphelp.c
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
@@ -27,21 +31,7 @@ INSTALL_TARGET=		installXvfb installXserver.man
 MAKE_ENV=		MAN_INSTALL_TARGET=installXvfb.man
 MAN1=			Xserver.1 Xvfb.1
 
-HasXdmAuth?=		DEFAULT
-
-.if ${HasXdmAuth} == DEFAULT || ${HasXdmAuth} == YES
-.if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
-pre-everything::
-	@${ECHO_MSG} "Assuming that you have fetched a USA-Legal Wraphelp.c."
-.else
-MASTER_SITES+=	ftp://psych.psy.uq.oz.au/pub/X11R5/ \
-		ftp://ftp.internat.freebsd.org/pub/FreeBSD/X11-Crypto/ \
-		ftp://ftp3.za.freebsd.org/pub/FreeBSD/X11-Crypto/
-EXTRACT_ONLY=	X410src-1.tgz
-DISTFILES+=	Wraphelp.c
-IGNOREFILES=	Wraphelp.c
-.endif	# USA_RESIDENT
-.endif	# HasXdmAuth
+HasXdmAuth?=		YES
 
 do-configure:
 	cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure
