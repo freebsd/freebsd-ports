@@ -19,7 +19,8 @@ DISTFILES=		${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 MAINTAINER=		rui@ruilopes.com
 COMMENT=		An interactive tool for performing search and replace operations
 
-LIB_DEPENDS=		gnomevfsmm-1.3:${PORTSDIR}/devel/gnome-vfsmm
+LIB_DEPENDS=		gnomevfsmm-1.3:${PORTSDIR}/devel/gnome-vfsmm \
+			gconfmm-2.0:${PORTSDIR}/devel/gconfmm
 
 USE_X_PREFIX=		yes
 USE_REINPLACE=		yes
