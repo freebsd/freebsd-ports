@@ -1,6 +1,22 @@
---- configure.in.orig	Thu Nov  8 16:29:04 2001
-+++ configure.in	Tue Dec 11 13:20:46 2001
-@@ -893,16 +893,11 @@
+--- configure.in.orig	Thu Dec 27 19:40:55 2001
++++ configure.in	Thu Jan 24 11:02:57 2002
+@@ -799,12 +799,10 @@
+ 
+ if test ".${GDBM_ROOT}" != .; then
+   AC_MSG_CHECKING([for the GNU Database Manager Library gdbm (required package)])
+-  if test -d $GDBM_ROOT &&
+-     test -r $GDBM_ROOT/libgdbm.a &&
+-     test -r $GDBM_ROOT/gdbm.h; then
++  if test 1; then
+        GDBM_ROOT=`cd ${GDBM_ROOT} && pwd`
+-       CORELIBS="${CORELIBS} -L$GDBM_ROOT -lgdbm"
+-       INCS="${INCS} -I$GDBM_ROOT"
++       CORELIBS="${CORELIBS} -L$GDBM_ROOT/lib -lgdbm"
++       INCS="${INCS} -I$GDBM_ROOT/include"
+        AC_DEFINE(HAVE_GDBM_H)
+        AC_MSG_RESULT([found in $GDBM_ROOT])
+   else
+@@ -873,16 +871,11 @@
  dnl>
  dnl> user defined directory passed as option at configuration time
  dnl>
@@ -21,3 +37,19 @@
           AC_DEFINE(HAVE_GDCHART)
           AC_MSG_RESULT([found in $GDCHART_ROOT])
      else
+@@ -936,12 +929,10 @@
+ if test ".$ac_disable_openssl" = ".no"; then
+   AC_MSG_CHECKING([for OpenSSL Library by Open SLL Project (optional package)])
+   if test ".${OSSL_ROOT}" != .; then
+-    if test -d $OSSL_ROOT &&
+-       test -r $OSSL_ROOT/libssl.a &&
+-       test -r $OSSL_ROOT/openssl/ssl.h; then
++    if test 1; then
+          OSSL_ROOT=`cd ${OSSL_ROOT} && pwd`
+-         MORELIBS="${MORELIBS} -L$OSSL_ROOT -lssl"
+-         INCS="${INCS} -I$OSSL_ROOT"
++         MORELIBS="${MORELIBS} -L$OSSL_ROOT/crypto -lssl"
++         INCS="${INCS} -I$OSSL_ROOT/include"
+          AC_DEFINE(HAVE_OPENSSL)
+          AC_MSG_RESULT([found in $OSSL_ROOT])
+     elif test -d $OSSL_ROOT &&

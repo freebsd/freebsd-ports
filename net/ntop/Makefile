@@ -7,6 +7,7 @@
 
 PORTNAME=	ntop
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.ntop.org/pub/local/ntop/source/ \
 		ftp://ftp.us.ntop.org/pub/ntop/source/ \
@@ -34,7 +35,14 @@ USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--localstatedir=${DBDIR} \
-		--with-gdchart-root=${LOCALBASE}
+		--with-gdbm-root=${LOCALBASE} \
+		--with-gdchart-root=${LOCALBASE} \
+
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} < 400014
+LIB_DEPENDS+=	ssl.2:${PORTSDIR}/security/openssl
+CONFIGURE_ARGS+=	--with-ossl-root=${LOCALBASE}
+.endif
 
 MAN1=		intop.1
 MAN8=		ntop.8 ntop-rules.8
@@ -51,4 +59,4 @@ post-install:
 	  ${WRKDIR}/ntop.sh
 	@ ${INSTALL_SCRIPT} ${WRKDIR}/ntop.sh ${PREFIX}/etc/rc.d
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
