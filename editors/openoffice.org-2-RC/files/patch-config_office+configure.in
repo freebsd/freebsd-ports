@@ -6,8 +6,8 @@ Index: config_office/configure.in
 RCS file: /cvs/tools/config_office/configure.in,v
 retrieving revision 1.63
 diff -u -r1.63 configure.in
---- ../config_office/configure.in	17 Mar 2004 09:33:26 -0000	1.63
-+++ ../config_office/configure.in	8 Jun 2004 20:53:16 -0000
+--- config_office/configure.in	17 Mar 2004 09:33:26 -0000	1.63
++++ config_office/configure.in	8 Jun 2004 20:53:16 -0000
 @@ -1830,10 +1831,12 @@
  
  if test "$enable_java" != "no"; then
