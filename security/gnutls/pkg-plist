@@ -6,6 +6,7 @@ bin/gnutls-serv
 bin/gnutls-srpcrypt
 bin/libgnutls-config
 bin/libgnutls-extra-config
+bin/srptool
 include/gnutls/compat4.h
 include/gnutls/compat8.h
 include/gnutls/extra.h
@@ -17,15 +18,15 @@ include/gnutls/x509.h
 lib/libgnutls-extra.a
 lib/libgnutls-extra.la
 lib/libgnutls-extra.so
-lib/libgnutls-extra.so.13
+lib/libgnutls-extra.so.12
 lib/libgnutls-openssl.a
 lib/libgnutls-openssl.la
 lib/libgnutls-openssl.so
-lib/libgnutls-openssl.so.13
+lib/libgnutls-openssl.so.12
 lib/libgnutls.a
 lib/libgnutls.la
 lib/libgnutls.so
-lib/libgnutls.so.13
+lib/libgnutls.so.12
 share/aclocal/libgnutls-extra.m4
 share/aclocal/libgnutls.m4
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
@@ -42,7 +43,6 @@ share/aclocal/libgnutls.m4
 %%EXAMPLESDIR%%/ex-client1.c
 %%EXAMPLESDIR%%/ex-client2.c
 %%EXAMPLESDIR%%/ex-crq.c
-%%EXAMPLESDIR%%/ex-pgp-keyserver.c
 %%EXAMPLESDIR%%/ex-pkcs12.c
 %%EXAMPLESDIR%%/ex-rfc2818.c
 %%EXAMPLESDIR%%/ex-serv-export.c
