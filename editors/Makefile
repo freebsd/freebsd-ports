@@ -75,6 +75,7 @@
     SUBDIR += lfhex
     SUBDIR += lpe
     SUBDIR += manedit
+    SUBDIR += mew2-emacs20
     SUBDIR += mg
     SUBDIR += moleskine
     SUBDIR += mp

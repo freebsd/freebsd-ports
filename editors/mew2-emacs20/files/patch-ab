@@ -1,0 +1,25 @@
+--- bin/Makefile~	Wed Oct 27 08:55:11 1999
++++ bin/Makefile	Tue Jul 10 01:06:02 2001
+@@ -22,7 +22,7 @@
+ 	$(CC) -o $@ $(OBJS)
+ 	$(RM) $(ALT)
+ 	for f in $(ALT); do \
+-	  ln $(PRG) $${f}; done
++	  ln -sf $(PRG) $${f}; done
+ 
+ uumerge: uumerge.in
+ 	sed -e "s|@PERL@|${PERL}|" < uumerge.in > uumerge
+@@ -32,10 +32,10 @@
+ 	-@if [ ! -d $(BINDIR) ]; then \
+ 		$(MKDIR) $(BINDIR); \
+ 	fi; \
+-	cp $(PRG) $(BINDIR)
++	${BSD_INSTALL_PROGRAM} $(PRG) $(BINDIR)
+ 	for f in $(ALT); do \
+-	  $(RM) $(BINDIR)/$${f}; ln $(BINDIR)/$(PRG) $(BINDIR)/$${f}; done
+-	cp $(OTH) $(BINDIR)
++	  $(RM) $(BINDIR)/$${f}; ln -sf $(BINDIR)/$(PRG) $(BINDIR)/$${f}; done
++	${BSD_INSTALL_SCRIPT} $(OTH) $(BINDIR)
+ 
+ clean:
+ 	$(RM) $(OBJS) $(PRG) $(ALT) $(OTH)
