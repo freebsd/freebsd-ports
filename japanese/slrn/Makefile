@@ -3,7 +3,8 @@
 # Date created:		26 Jun 1998
 # Whom:			Takashi Mega <mega@minz.org>
 #
-# $Id: Makefile,v 1.5 1999/04/02 03:55:14 taoka Exp $
+# $Id: Makefile,v 1.6 1999/05/01 03:33:13 steve Exp $
+#
 
 DISTNAME=	slrn0.9.5.4
 PKGNAME=	ja-slrn-0.9.5.4
