@@ -13,9 +13,23 @@ MASTER_SITES=	ftp://catless.ncl.ac.uk/pub/
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	An X11 interface to Internet Relay Chat
 
+.if defined(ZIRCON_WITH_TCL84) || defined(ZIRCON_WITH_TK84)
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
+.else
+RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
+.endif
 
 NO_BUILD=	yes
+USE_REINPLACE=	yes
+.if defined(ZIRCON_WITH_TCL84) || defined(ZIRCON_WITH_TK84)
+TCL_INCLUDE=	${LOCALBASE}/include/tcl8.4
+.else
+TCL_INCLUDE=	${LOCALBASE}/include/tcl8.3
+.endif
+
+do-configure:
+	${REINPLACE_CMD} -e 's=%%TCL_INCLUDE%%=${TCL_INCLUDE}=' \
+		${WRKSRC}/installer/unix.tcl
 
 do-install:
 	${ECHO_CMD} "set go {Yes}" >>${WRKSRC}/install.in
