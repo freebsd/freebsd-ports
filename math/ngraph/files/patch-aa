@@ -1,5 +1,5 @@
---- Makefile.orig	Sat Oct 16 19:00:08 1999
-+++ Makefile	Tue Nov  9 10:54:39 1999
+--- Makefile.orig	Sat Oct 16 03:00:08 1999
++++ Makefile	Sun Jul  2 20:17:54 2000
 @@ -1,27 +1,27 @@
  #
  MAINVERSION = '"6.03"'
@@ -43,7 +43,7 @@
  #
  #
  ###############################################################################
-@@ -132,17 +132,17 @@
+@@ -132,17 +132,18 @@
  #
  # (Thanks to MIHIRA Sanpei Yoshiro <sanpei@sanpei.org>)
  #
@@ -58,7 +58,8 @@
 -#X11INCLUDE = -I/usr/X11R6/include -I/usr/dt/include
 -#STATICLINK = /usr/dt/lib/libXm.a
 -#X11LIB = -L/usr/X11R6/lib -L/usr/dt/lib -lm -lXext -lXt -lXp -lX11 -lICE -lSM -lxpg4
-+CC = gcc
++CC ?= gcc
++CFLAGS ?= -O -pipe
 +CCOPTION = ${CFLAGS}
 +MAKE = gmake
 +AR = ar
