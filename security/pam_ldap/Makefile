@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pam_ldap
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.4
 CATEGORIES=	security net
 MASTER_SITES=	http://www.padl.com/download/ \
 		ftp://ftp.padl.com/pub/
@@ -30,6 +30,9 @@ CONFIGURE_ARGS=	--with-ldap-lib=openldap \
 USE_GMAKE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.//g}
+
+post-extract:
+	@find ${WRKSRC} -type f | xargs touch -f
 
 post-install:
 	@${ECHO} "================================================================================"
