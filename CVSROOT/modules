@@ -5399,6 +5399,7 @@ p5-XML-Parser	ports/textproc/p5-XML-Parser
 p5-XML-RSS	ports/textproc/p5-XML-RSS
 p5-XML-RegExp	ports/textproc/p5-XML-RegExp
 p5-XML-SAX	ports/textproc/p5-XML-SAX
+p5-XML-SAX-Base	ports/textproc/p5-XML-SAX-Base
 p5-XML-SAX-Expat	ports/textproc/p5-XML-SAX-Expat
 p5-XML-SAX-Machines	ports/textproc/p5-XML-SAX-Machines
 p5-XML-SAX-Simple	ports/textproc/p5-XML-SAX-Simple
