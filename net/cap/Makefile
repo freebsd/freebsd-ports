@@ -124,4 +124,4 @@ post-install:
 	@${LN} -fs ${PREFIX}/man/man8/papif.8${GZ} ${PREFIX}/man/man8/papof.8${GZ}
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include "bsd.port.post.mk"
+.include <bsd.port.post.mk>
