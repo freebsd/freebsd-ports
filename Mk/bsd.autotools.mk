@@ -58,6 +58,12 @@ Autotools_Include_MAINTAINER=	ade@FreeBSD.org
 #
 # USE_LIBTOOL_VER=<value>
 #	- Port wishes to use libtool, including the configuration step
+#	- Port will use the ports version of libtool
+#	- Implies GNU_CONFIGURE?=yes and WANT_LIBTOOL_VER=<value>
+#
+# USE_INC_LIBTOOL_VER=<value>
+#	- Port wishes to use libtool, including the configuration step
+#	- Port will use its own included version of libtool
 #	- Implies GNU_CONFIGURE?=yes and WANT_LIBTOOL_VER=<value>
 #
 # WANT_LIBTOOL_VER=<value>
