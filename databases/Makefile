@@ -112,6 +112,7 @@
     SUBDIR += p5-BerkeleyDB
     SUBDIR += p5-CDB_File
     SUBDIR += p5-CDB_File-Generator
+    SUBDIR += p5-Cache-Memcached
     SUBDIR += p5-Class-DBI
     SUBDIR += p5-Class-DBI-AbstractSearch
     SUBDIR += p5-Class-DBI-AsForm
