@@ -316,6 +316,7 @@
     SUBDIR += libical
     SUBDIR += libmba
     SUBDIR += libmcve
+    SUBDIR += libmtrie
     SUBDIR += libol
     SUBDIR += libole2
     SUBDIR += liboop
