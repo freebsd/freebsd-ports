@@ -25,15 +25,10 @@ PATCH_DIST_STRIP=       -p1
 
 MAINTAINER=	issei@jp.FreeBSD.org
 
-.if defined(XFREE86_VERSION) && (${XFREE86_VERSION} == 4)
-BUILD_DEPENDS=	${X11BASE}/bin/xmkmf:${PORTSDIR}/x11/XFree86-4
-.else
-BUILD_DEPENDS=	${X11BASE}/bin/xmkmf:${PORTSDIR}/x11/XFree86
-.endif
-
 DIST_SUBDIR=	afterstep
 USE_X_PREFIX=	yes
 USE_XPM=	yes
+USE_IMAKE=	yes
 INSTALL_TARGET=	install install.man
 MANCOMPRESSED=	yes
 MAN1=		afterstep.1 asclock.1 Animate.1 Audio.1 Auto.1 Banner.1 \

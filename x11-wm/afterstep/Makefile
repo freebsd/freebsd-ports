@@ -13,17 +13,12 @@ MASTER_SITES=	${MASTER_SITE_AFTERSTEP} \
 MASTER_SITE_SUBDIR=	stable/archives
 DISTNAME=	AfterStep-${PORTVERSION}
 
-.if defined(XFREE86_VERSION) && (${XFREE86_VERSION} == 4)
-BUILD_DEPENDS=	${X11BASE}/bin/xmkmf:${PORTSDIR}/x11/XFree86-4
-.else
-BUILD_DEPENDS=	${X11BASE}/bin/xmkmf:${PORTSDIR}/x11/XFree86
-.endif
-
 MAINTAINER=	jfitz@FreeBSD.org
 
 NO_LATEST_LINK= yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
+USE_IMAKE=	yes
 INSTALL_TARGET=	install install.man
 MANCOMPRESSED=	yes
 MAN1=		afterstep.1 asclock.1 Animate.1 Audio.1 Auto.1 Banner.1 Pager.1 Wharf.1
