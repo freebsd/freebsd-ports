@@ -1,5 +1,5 @@
---- Makefile.in.orig	Fri Sep 27 10:48:20 1996
-+++ Makefile.in	Mon Feb 24 01:09:28 1997
+--- Makefile.in.orig	Sun Mar  8 09:47:15 1998
++++ Makefile.in	Sun Mar  8 09:48:22 1998
 @@ -7,7 +7,7 @@
  first_rule: all
  dummy:
@@ -7,5 +7,16 @@
 -subdirs = src doc rclock src/graphics
 +subdirs = src doc #rclock src/graphics
  
- DIST_ETC = etc/XTerm.ad etc/color etc/termcap etc/terminfo etc/xmkdir
+ DIST =	INSTALL configure Makefile Makefile.in
  
+--- doc/Makefile.in.orig	Sun Mar  8 09:51:09 1998
++++ doc/Makefile.in	Sun Mar  8 09:51:27 1998
+@@ -53,7 +53,7 @@
+ 
+ tags allbin:
+ 
+-alldoc:	lsm rxvt.1
++alldoc:	rxvt.1
+ 
+ clean:
+ 	$(RMF) $(VERNAME).lsm rxvt.1 *~
