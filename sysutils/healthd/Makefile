@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	healthd
-PORTVERSION=	0.3
+PORTVERSION=	0.4.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://healthd.thehousleys.net/
 
@@ -23,6 +23,12 @@ post-install:
 		${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/healthd.sh; \
 		${ECHO} "[ -x ${PREFIX}/bin/healthd ] && ${PREFIX}/bin/healthd > /dev/null && ${ECHO} -n ' healthd'" >> ${PREFIX}/etc/rc.d/healthd.sh; \
 		${CHMOD} 751 ${PREFIX}/etc/rc.d/healthd.sh; \
+	fi
+	@if [ ! -f ${PREFIX}/etc/healthd.conf ]; then \
+		${ECHO} "Installing ${PREFIX}/etc/healthd.conf configuration file."; \
+		${ECHO} "It is recommended you edit this file to match your system"; \
+		${ECHO} "before running the program."; \
+		${CP} ${PREFIX}/etc/healthd.conf.sample ${PREFIX}/etc/healthd.conf; \
 	fi
 
 .include <bsd.port.mk>
