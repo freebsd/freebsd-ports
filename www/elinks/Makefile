@@ -6,15 +6,18 @@
 #
 
 PORTNAME=	elinks
-PORTVERSION=	0.5.p.0
+PORTVERSION=	0.3.2
 CATEGORIES=	www
 MASTER_SITES=	http://elinks.or.cz/download/
-DISTNAME=	${PORTNAME}-0.5pre0
-MAINTAINER=	alane@freebsd.org
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
+
+MAINTAINER=	jharris@widomaker.com
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--program-prefix=e
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 
-.include "${.CURDIR}/manpages.mk"
+MAN1=		elinks.1
+
 .include <bsd.port.mk>
