@@ -1,13 +1,13 @@
 # New ports collection makefile for:    p5-SQL-Statement
-# Version required:			0.1012
+# Version required:			0.1016
 # Date created:				August 8th, 1999
 # Whom:	      				wolman@cs.washington.edu
 #
-# $Id$
+# $FreeBSD$
 #
 
-DISTNAME=	SQL-Statement-0.1012
-PKGNAME=	p5-SQL-Statement-0.1012
+DISTNAME=	SQL-Statement-0.1016
+PKGNAME=	p5-SQL-Statement-0.1016
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	SQL
