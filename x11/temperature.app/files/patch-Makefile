@@ -1,0 +1,16 @@
+
+$FreeBSD$
+
+--- Makefile	2001/05/27 11:50:22	1.1
++++ Makefile	2001/05/27 11:51:42
+@@ -7,8 +7,8 @@
+ X11_BINDIR = /usr/X11R6/bin
+ 
+ CXX=c++
+-CXXFLAGS += -Wall -pedantic -fno-rtti -fno-exceptions -O2 -I/usr/X11R6/include
+-LDFLAGS += -L/usr/X11R6/lib -lXpm -lXext -lX11
++CXXFLAGS += -Wall -pedantic -fno-rtti -fno-exceptions -I$(X11BASE)/include
++LDFLAGS += -L$(X11BASE)/lib -lXpm -lXext -lX11
+ 
+ OBJECTS = Main.o Temperature.o Xpm.o
+ 

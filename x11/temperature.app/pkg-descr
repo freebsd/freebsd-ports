@@ -1,0 +1,8 @@
+Temperature.app is a Window Maker dock application which
+fetches local temperature information every 15 minutes from
+ftp://weather.noaa.gov and displays it (in Celsius or Fahrenheit).
+
+WWW: http://www.fukt.bth.se/~per/temperature/
+
+- Pelle
+pelle@fukt.bth.se
