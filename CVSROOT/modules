@@ -6459,6 +6459,7 @@ qscanplot	ports/math/qscanplot
 qscheme		ports/lang/qscheme
 qslim		ports/graphics/qslim
 qstat		ports/games/qstat
+qt-bluecurve-theme	ports/x11-toolkits/qt-bluecurve-theme
 qt-designer	ports/devel/qt-designer
 qt2-static	ports/x11-toolkits/qt2-static
 qt23		ports/x11-toolkits/qt23
