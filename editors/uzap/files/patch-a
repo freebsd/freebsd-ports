@@ -1,0 +1,40 @@
+*** Makefile.orig	Thu Mar 30 20:04:11 1989
+--- Makefile	Mon Jun 19 22:15:57 1995
+***************
+*** 1,7 ****
+  # Makefile for Uzap.
+! BINDIR = /usr/local
+! MANDIR = /usr/man/manl
+! MSECT = l
+  
+  uzap: uzap.o edit.o search.o screen.o
+  	cc -O uzap.o edit.o search.o screen.o -lcurses -ltermcap -o uzap
+--- 1,9 ----
+  # Makefile for Uzap.
+! BINDIR = ${PREFIX}/bin/
+! MANDIR = ${PREFIX}/man/man1
+! MSECT = 1
+! 
+! all: uzap
+  
+  uzap: uzap.o edit.o search.o screen.o
+  	cc -O uzap.o edit.o search.o screen.o -lcurses -ltermcap -o uzap
+***************
+*** 19,26 ****
+  	cc -c -O screen.c
+  
+  install: uzap
+! 	install -s -m 771 uzap $(BINDIR)
+! 	install -c -m 664 uzap.man $(MANDIR)/uzap.$(MSECT)
+  
+  clean:
+! 	rm -f *.o core uzap
+--- 21,28 ----
+  	cc -c -O screen.c
+  
+  install: uzap
+! 	install -s -m 755 -o bin -g bin uzap $(BINDIR)
+! 	install -c -m 644 -o bin -g bin uzap.man $(MANDIR)/uzap.$(MSECT)
+  
+  clean:
+! 	rm -f *.o core *.core uzap

@@ -1,0 +1,19 @@
+*** search.c.orig	Thu Mar 30 20:04:12 1989
+--- search.c	Mon Jun 19 22:17:24 1995
+***************
+*** 217,223 ****
+           }
+        }
+        for(x= 0; x < len - 1; x+= 2){
+!          strcpy(hdigit, hex + (len - x - 2), 2);
+           hdigit[2]= '\0';
+     
+           if(hdigit[0] < 96) hdigit[0]= hdigit[0] - 48;
+--- 217,223 ----
+           }
+        }
+        for(x= 0; x < len - 1; x+= 2){
+!          strncpy(hdigit, hex + (len - x - 2), 2);
+           hdigit[2]= '\0';
+     
+           if(hdigit[0] < 96) hdigit[0]= hdigit[0] - 48;
