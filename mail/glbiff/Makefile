@@ -11,7 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.dgp.utoronto.ca/~mac/projects/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	petef@databits.net
+MAINTAINER=	petef@FreeBSD.org
 
 USE_X_PREFIX=	yes
 USE_MESA=	yes

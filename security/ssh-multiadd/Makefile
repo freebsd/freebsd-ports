@@ -10,7 +10,7 @@ PORTVERSION=	1.3.1
 CATEGORIES=	security
 MASTER_SITES=	http://www.azstarnet.com/~donut/programs/ssh-multiadd/
 
-MAINTAINER=	petef@databits.net
+MAINTAINER=	petef@FreeBSD.org
 
 USE_PYTHON=	yes
 NO_BUILD=	yes

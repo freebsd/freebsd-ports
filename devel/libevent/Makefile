@@ -10,7 +10,7 @@ PORTVERSION=	0.3d
 CATEGORIES=	devel
 MASTER_SITES=	http://www.monkey.org/~provos/
 
-MAINTAINER=	petef@databits.net
+MAINTAINER=	petef@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

@@ -1,6 +1,6 @@
 # New ports collection makefile for:	eboard
 # Date created:				22 June 2001
-# Whom:					petef@databits.net
+# Whom:					petef@FreeBSD.org
 #
 # $FreeBSD$
 #
@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} eboard-extras-${EXTRASVERSION}.tar.gz
 
-MAINTAINER=	petef@databits.net
+MAINTAINER=	petef@FreeBSD.org
 
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 

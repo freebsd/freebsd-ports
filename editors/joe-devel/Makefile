@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	joe-editor
 DISTNAME=	joe-${PORTVERSION:S/p/-pre/}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	petef@databits.net
+MAINTAINER=	petef@FreeBSD.org
 
 MAN1=		joe.1
 

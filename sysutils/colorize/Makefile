@@ -1,6 +1,6 @@
 # New ports collection makefile for:	colorize
 # Date created:				12 June 2001
-# Whom:					petef@databits.net
+# Whom:					petef@FreeBSD.org
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://nrg.martos.bme.hu/release/colorize/download/gz/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	petef@databits.net
+MAINTAINER=	petef@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Term/ANSIColor.pm:${PORTSDIR}/devel/p5-Term-ANSIColor
 

@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	dbiwrapper
 PKGNAMEPREFIX=	p5-
 DISTNAME=	dbi_wrapper-${PORTVERSION}
 
-MAINTAINER=	petef@databits.net
+MAINTAINER=	petef@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
 RUN_DEPENDS=	${BUILD_DEPENDS}

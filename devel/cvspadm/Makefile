@@ -10,7 +10,7 @@ PORTVERSION=	0.1.1
 CATEGORIES=	devel
 MASTER_SITES=	http://hackfoo.net/projs/
 
-MAINTAINER=	petef@databits.net
+MAINTAINER=	petef@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

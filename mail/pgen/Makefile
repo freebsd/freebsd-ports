@@ -1,6 +1,6 @@
 # New ports collection makefile for:	pgen
 # Date created:				30 June 2001
-# Whom:					petef@databits.net
+# Whom:					petef@FreeBSD.org
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	0.2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.myrddin.demon.co.uk/dist/
 
-MAINTAINER=	petef@databits.net
+MAINTAINER=	petef@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 

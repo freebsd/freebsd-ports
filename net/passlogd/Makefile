@@ -10,7 +10,7 @@ PORTVERSION=	0.1d
 CATEGORIES=	net
 MASTER_SITES=	http://www.morphine.com/src/
 
-MAINTAINER=	petef@databits.net
+MAINTAINER=	petef@FreeBSD.org
 
 post-patch:
 	${PERL} -pi -e "s/.\(CXX\)/${CC} ${CFLAGS}/g" ${WRKSRC}/Makefile

@@ -10,7 +10,7 @@ PORTVERSION=	1.0.21
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.bftpd.f2s.com/downloads/src/
 
-MAINTAINER=	petef@databits.net
+MAINTAINER=	petef@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-pam

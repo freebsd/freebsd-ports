@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.rucus.ru.ac.za/~mtsegaye/rvi/ \
 		http://www.databits.net/~petef/distfiles/
 DISTNAME=	rvi
 
-MAINTAINER=	petef@databits.net
+MAINTAINER=	petef@FreeBSD.org
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

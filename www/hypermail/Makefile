@@ -10,7 +10,7 @@ PORTVERSION=	2.1.2
 CATEGORIES=	www mail
 MASTER_SITES=	http://www.landfield.com/hypermail/dist/
 
-MAINTAINER=	petef@databits.net
+MAINTAINER=	petef@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-htmldir=${PREFIX}/share/doc/hypermail

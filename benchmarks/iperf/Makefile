@@ -10,7 +10,7 @@ PORTVERSION= 	1.2
 CATEGORIES=	net
 MASTER_SITES=	http://dast.nlanr.net/Projects/Iperf/
 
-MAINTAINER=     petef@databits.net
+MAINTAINER=	petef@FreeBSD.org
 
 NO_CDROM=	"can't charge a fee for the software"
 

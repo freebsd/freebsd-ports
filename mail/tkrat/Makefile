@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.karen.hik.se/pub2/unix/mail/ratatosk/ \
 		ftp://ftp.riken.go.jp/pub/net/mail/tkrat/ \
 		ftp://ftp.uni-koeln.de/windows/xcontrib/
 
-MAINTAINER=	petef@databits.net
+MAINTAINER=	petef@FreeBSD.org
 
 BUILD_DEPENDS=	tclsh8.2:${PORTSDIR}/lang/tcl82
 LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82 \
