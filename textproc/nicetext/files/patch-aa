@@ -1,0 +1,11 @@
+--- gendict/src/genmodel.cc.orig	Sat Jun 19 17:22:05 1999
++++ gendict/src/genmodel.cc	Sat Jun 19 17:22:34 1999
+@@ -102,7 +102,7 @@
+ #include <fstream.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+-#include <String.h>
++#include <string.h>
+ #include "../../mtc++/include/MTC++.h"
+ #include "../../mtc++/include/mstring.h"
+ #include "../../mtc++/include/errormsg.h"
