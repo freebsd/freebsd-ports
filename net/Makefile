@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.190 1998/11/17 20:49:15 billf Exp $
+# $Id: Makefile,v 1.191 1998/11/17 23:38:25 billf Exp $
 #
 
     SUBDIR += SSLtelnet
@@ -17,6 +17,7 @@
     SUBDIR += cap
     SUBDIR += cftp
     SUBDIR += choparp
+    SUBDIR += ciscoconf
     SUBDIR += citrix_ica
     SUBDIR += clog
     SUBDIR += cnet
