@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_dtcl
-PORTVERSION=	0.11.1
+PORTVERSION=	0.11.2
 CATEGORIES=	www tcl83
 MASTER_SITES=	http://tcl.apache.org/mod_dtcl/download/
 

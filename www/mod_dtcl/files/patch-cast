@@ -18,19 +18,19 @@
  		{
 @@ -684,4 +690,3 @@
  		    char *channelname = NULL;
--		    chan = Tcl_MakeFileChannel((ClientData *)fileno(
+-		    chan = Tcl_MakeFileChannel((ClientData)fileno(
 -			ApacheUpload_FILE(upload)), TCL_READABLE);
 +		    chan = Tcl_MakeFileChannel(handle.handle, TCL_READABLE);
  		    Tcl_RegisterChannel(interp, chan);
 @@ -709,4 +714,3 @@
  
--		chan = Tcl_MakeFileChannel((ClientData *)fileno(
+-		chan = Tcl_MakeFileChannel((ClientData)fileno(
 -		    ApacheUpload_FILE(upload)), TCL_READABLE);
 +		chan = Tcl_MakeFileChannel(handle.handle, TCL_READABLE);
  		Tcl_SetChannelOption(interp, chan, "-translation", "binary");
 @@ -736,4 +740,3 @@
  		    bytes = Tcl_Alloc(ApacheUpload_size(upload));
--		    chan = Tcl_MakeFileChannel((ClientData *)fileno(
+-		    chan = Tcl_MakeFileChannel((ClientData)fileno(
 -			ApacheUpload_FILE(upload)), TCL_READABLE);
 +		    chan = Tcl_MakeFileChannel(handle.handle, TCL_READABLE);
  		    Tcl_SetChannelOption(interp, chan, "-translation", "binary");
