@@ -1,0 +1,41 @@
+--- Makefile.orig	Tue Apr 18 08:37:44 2000
++++ Makefile	Fri May  5 23:55:16 2000
+@@ -4,24 +4,24 @@
+ OS=$(shell uname -s)
+ 
+ # Compiler
+-CC=	gcc
++CC?=	gcc
+ 
+ # Install prefix
+-PREFIX=/usr
++PREFIX?=/usr/local
+ 
+ # Installation directory -- where the binary will go
+ INSTALLDIR= $(PREFIX)/bin
+ 
+ # Location to store auxilliary files
+-AUXDIR= $(PREFIX)/lib/grip
++AUXDIR= $(PREFIX)/lib
+ 
+ 
+ # Compiler flags
+-CFLAGS=	-Wall `gtk-config --cflags` -DAUXDIR=\"$(AUXDIR)\" \
++CFLAGS=	-Wall `gtk12-config --cflags` -DAUXDIR=\"$(AUXDIR)\" \
+ 	-DINSTALLDIR=\"$(INSTALLDIR)\" -D_REENTRANT
+ 
+ # Link libraries
+-LIBS=	`gtk-config --libs`
++LIBS=	`gtk12-config --libs`
+ ifeq ($(OS), Linux)
+ LIBS+=	-lpthread
+ endif
+@@ -34,7 +34,7 @@
+ # This is needed for "make install"
+ OWNER  = root
+ GROUP  = root
+-INSTALL  = /usr/bin/install -o $(OWNER) -g $(GROUP)
++INSTALL  ?= /usr/bin/install -o $(OWNER) -g $(GROUP)
+ 
+ 
+ # ----------- You shouldn't need to make changes below here. -------------
