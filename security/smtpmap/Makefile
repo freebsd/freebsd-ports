@@ -22,7 +22,7 @@ USE_GETOPT_LONG=yes
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-
+USE_GCC=	2.95
 MAKEFILE=	makefile
 
 .include <bsd.port.pre.mk>
@@ -33,9 +33,9 @@ BROKEN=		"Does not compile on FreeBSD >= 5.x"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
-		-e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/makefile.conf
-	@${REINPLACE_CMD} -e 's|\(INC)\) \(small\)|\1 $$(LIBS) \2|g' ${WRKSRC}/src/makefile
-	@${REINPLACE_CMD} -e 's|-j 5||g' -e 's|@\(./inst\)|\1|g' ${WRKSRC}/makefile
+		-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		-e 's|g++|${CXX}|g' ${WRKSRC}/makefile.conf
+	@${REINPLACE_CMD} -e 's|-j 5||g' ${WRKSRC}/makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/smtpmap ${PREFIX}/bin
