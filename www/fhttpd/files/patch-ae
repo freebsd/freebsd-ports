@@ -1,0 +1,20 @@
+--- sockobj.cc.orig	Sat Jan 29 00:54:37 2000
++++ sockobj.cc	Sat Jan 29 00:55:34 2000
+@@ -645,7 +645,7 @@
+ global_nconnections++;
+ if(xsocket->status==0){
+  hisaddresslength=128;
+- h=accept(xsocket->gethandle(),(struct sockaddr*)s,&hisaddresslength);
++ h=accept(xsocket->gethandle(),(struct sockaddr*)s,(socklen_t*)&hisaddresslength);
+  if(h<0) return;
+  hisaddress=(struct sockaddr*)malloc(hisaddresslength);
+  if(hisaddress) memcpy(hisaddress,s,hisaddresslength); else{
+@@ -1861,7 +1861,7 @@
+     if(fdarray[sockets[i]->handleindexforwheel].revents&POLLIN){
+      fdarray[sockets[i]->handleindexforwheel].revents&=~POLLIN;
+      hisaddresslength=128;
+-     h=accept(sockets[i]->gethandle(),(struct sockaddr*)s,&hisaddresslength);
++     h=accept(sockets[i]->gethandle(),(struct sockaddr*)s,(socklen_t*)&hisaddresslength);
+      if(h>=0){
+ #ifdef DEBUG
+       log("Wheel::onepass: accepting connection");

@@ -1,0 +1,47 @@
+--- fhttpd.cc.orig	Sat Jan 29 00:56:40 2000
++++ fhttpd.cc	Sat Jan 29 00:58:31 2000
+@@ -130,7 +130,7 @@
+ basedir[255]=0;
+ strncpy(username,globalhttppw->pw_name,128); 
+ username[128]=0;
+-if(!getsockname(connection->gethandle(),(sockaddr*)&currsock,&currsockaddrlen)){
++if(!getsockname(connection->gethandle(),(sockaddr*)&currsock,(socklen_t*)&currsockaddrlen)){
+  AddressRoot *curraddrroot=(AddressRoot*)addressroots.start;
+  while(curraddrroot){
+   if((*((__s32*)&currsock.sin_addr))==curraddrroot->address){
+@@ -250,7 +250,7 @@
+ if(c->socket){
+  sprintf(tmpstr,"%d",c->socket->port);
+  LogMessage(this,NULL,NULL,NULL,0,"LOCAL_PORT",tmpstr);
+- if(!getsockname(c->gethandle(),(sockaddr*)&currsock,&currsockaddrlen)){
++ if(!getsockname(c->gethandle(),(sockaddr*)&currsock,(socklen_t*)&currsockaddrlen)){
+   LogMessage(this,NULL,NULL,NULL,0,"LOCAL_IP",inet_ntoa(currsock.sin_addr));
+   }
+  LogMessage(this,NULL,NULL,NULL,0,"IP",inet_ntoa(((sockaddr_in*)c->getaddress())->sin_addr));
+@@ -349,7 +349,7 @@
+ if(servertype==ftp_server_port){
+  strncpy(tmphostname,hostname,256);
+  tmphostname[255]=0;
+- if(!getsockname(client->gethandle(),(sockaddr*)&currsock,&currsockaddrlen)){
++ if(!getsockname(client->gethandle(),(sockaddr*)&currsock,(socklen_t*)&currsockaddrlen)){
+   AddressRoot *curraddrroot=(AddressRoot*)addressroots.start;
+   while(curraddrroot){
+    if((*((__s32*)&currsock.sin_addr))==curraddrroot->address){
+@@ -2554,7 +2554,7 @@
+      if(blength>253) param[1][253]=0;
+      }else ((ControlFTPServerApp*)client->app)->trailingslash=1;
+     j=0;
+-    if(getsockname(client->gethandle(),(sockaddr*)&currsock,&currsockaddrlen)){
++    if(getsockname(client->gethandle(),(sockaddr*)&currsock,(socklen_t*)&currsockaddrlen)){
+      (*((__s32*)&currsock.sin_addr))=-1;
+      }
+ 
+@@ -3139,7 +3139,7 @@
+ 
+              struct sockaddr_in currsock;
+              sockaddr_size_type currsockaddrlen=sizeof(currsock);
+-             if(!getsockname(client->gethandle(),(sockaddr*)&currsock,&currsockaddrlen)){
++             if(!getsockname(client->gethandle(),(sockaddr*)&currsock,(socklen_t*)&currsockaddrlen)){
+               AddressRoot *curraddrroot=(AddressRoot*)addressroots.start;
+               while(curraddrroot){
+                if((*((__s32*)&currsock.sin_addr))==curraddrroot->address){

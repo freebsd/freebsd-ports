@@ -1,0 +1,80 @@
+--- http-root/root-fhttpd.conf	Mon Apr 19 13:31:49 1999
++++ http-root/root-fhttpd.conf.new	Fri Dec 24 19:29:00 1999
+@@ -5,7 +5,7 @@
+ 
+ # HTTP root directory
+ #
+-HTTPRoot /home/ftp
++HTTPRoot /usr/local/share/fhttpd
+ 
+ # honor Keep-Alive option
+ #
+@@ -44,19 +44,19 @@
+ # access control
+ #
+ AccessRealm system /etc/passwd
+-AccessRealm http_users /etc/passwd.http_users
+-AccessRights /home/ftp/private* restrict
+-AccessRights /home/ftp/private* http_users default
++#AccessRealm http_users /etc/passwd.http_users
++AccessRights /usr/local/share/fhttpd/private* restrict
++#AccessRights /usr/local/share/fhttpd/private* http_users default
+ 
+ # finger redirected to script
+ #
+-PipeOutExec */fingerlocal /home/ftp/bin/finger-nohtml
+-AbsPipeOutExec /home/ftp/fingerlocal.html\
+- /home/ftp/cgi-bin/finger @localhost
++PipeOutExec */fingerlocal /usr/local/share/fhttpd/bin/finger-nohtml
++#AbsPipeOutExec /home/ftp/fingerlocal.html\
++# /home/ftp/cgi-bin/finger @localhost
+ 
+ # directories with executables
+ #
+-ExecMask /home/ftp/cgi-bin/*
++ExecMask /usr/local/share/fhttpd/cgi-bin/*
+ 
+ # default header and footer
+ #
+@@ -92,8 +92,8 @@
+ 
+ # CD-ROM
+ #
+-AbsDirType /home/ftp/cdrom <DT><IMG_SRC="/icons/cdromicon.gif"\
+-_ALIGN=TOP_ALT=""><B>_ _</B>
++#AbsDirType /home/ftp/cdrom <DT><IMG_SRC="/icons/cdromicon.gif"\
++#_ALIGN=TOP_ALT=""><B>_ _</B>
+ 
+ # "folder" icon for directory
+ #
+@@ -287,11 +287,11 @@
+ 
+ # preloaded files
+ #
+-PreLoad - /home/ftp/file_index.html
+-PreLoad /icons/folder.gif /home/ftp/icons/folder.gif
+-PreLoad /icons/html.gif /home/ftp/icons/html.gif
+-PreLoad /icons/text.gif /home/ftp/icons/text.gif
+-PreLoad /icons/image.gif /home/ftp/icons/image.gif
++#PreLoad - /home/ftp/file_index.html
++PreLoad /icons/folder.gif /usr/local/share/fhttpd/icons/folder.gif
++PreLoad /icons/html.gif /usr/local/share/fhttpd/icons/html.gif
++PreLoad /icons/text.gif /usr/local/share/fhttpd/icons/text.gif
++PreLoad /icons/image.gif /usr/local/share/fhttpd/icons/image.gif
+ 
+ # applications
+ #
+@@ -305,11 +305,11 @@
+ # default application
+ #
+ Application fhttpd-file - ftp 3000,30 1 * \
+-/usr/local/sbin/fhttpd-file -s -u 022 -c /etc/fhttpd.conf
++/usr/local/sbin/fhttpd-file -s -u 022 -c /usr/local/etc/fhttpd.conf
+ 
+ # log aplication
+ #
+ LogApplication log - ftp 1 1 - \
+-/usr/local/sbin/fhttpd-log -u 022 -c /etc/fhttpd.conf -l /tmp/fhttpd-log.log
++/usr/local/sbin/fhttpd-log -u 022 -c /usr/local/etc/fhttpd.conf -l %%LOGFILE%%
+ 
+ # EOF
