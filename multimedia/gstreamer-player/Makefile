@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.5.1
-PORTREVISION=	1
+PORTVERSION=	0.6.0
 CATEGORIES=	multimedia audio gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +16,6 @@ DISTNAME=	gst-player-${PORTVERSION}
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Simple yet functional mediaplayer written with GStreamer
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 LIB_DEPENDS=	gstreamer-0.6.1:${PORTSDIR}/multimedia/gstreamer \
 		gstplay-0.6.1:${PORTSDIR}/multimedia/gstreamer-plugins \
 		popt.0:${PORTSDIR}/devel/popt
@@ -27,12 +25,11 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack \
 		gnomehier \
 		gnomeprefix \
+		pkgconfig \
 		gconf2 \
 		libglade2 \
 		libgnomeui
 USE_LIBTOOL=	yes
-USE_REINPLACE=	yes
-CONFIGURE_ENV=	PKG_CONFIG=${PKG_CONFIG}
 WANT_GNOME=	yes
 PLIST_SUB=	\
 	VERSION="${PORTVERSION}" \
@@ -41,14 +38,35 @@ INSTALLS_SHLIB=	yes
 
 MAN1=		gst-player.1
 
-PKG_CONFIG?="${LOCALBASE}/bin/pkg-config"
-
 # library minor number
 SHLIB_VERSION=	0
 
 pre-install:
 # required for PREFIX safeness, the dir might not exist under PREFIX
 	@${MKDIR} ${PREFIX}/etc/gconf/
+
+.if defined(WITH_MOZILLA_PLUGIN)
+BUILD_DEPENDS+=	${X11BASE}/include/mozilla${HEADERS_SUFX}/plugin/npapi.h:${PORTSDIR}/www/mozilla-headers${HEADERS_SUFX}
+
+.if !defined(WITH_MOZILLA)
+MOZILLA=	mozilla-gtk2
+HEADERS_SUFX=
+.else
+.if ${WITH_MOZILLA}=="mozilla-devel-gtk2"
+MOZILLA=	${WITH_MOZILLA}
+HEADERS_SUFX=	-devel
+.else
+MOZILLA=	mozilla-gtk2
+HEADERS_SUFX=
+.endif
+.endif
+
+CONFIGURE_ENV+=	MOZILLA_CONFIG="${X11BASE}/lib/${MOZILLA}/mozilla-config"
+PLIST_SUB+=	MOZILLA_PLUGIN=""
+.else
+CONFIGURE_ENV+=	MOZILLA_CONFIG="${FALSE}"
+PLIST_SUB+=	MOZILLA_PLUGIN="@comment "
+.endif
 
 .include <bsd.port.pre.mk>
 
