@@ -24,7 +24,6 @@ include/gnunet_afs_esed2.h
 include/gnunet_core.h
 include/gnunet_transport.h
 include/gnunet_util.h
-include/ltdl.h
 lib/libgnunet_afs_esed2.la
 lib/libgnunet_afs_esed2.so
 lib/libgnunet_afs_esed2.so.0
@@ -59,7 +58,3 @@ lib/libgnunettransport_udp.so
 lib/libgnunetutil.la
 lib/libgnunetutil.so
 lib/libgnunetutil.so.0
-lib/libltdl.a
-lib/libltdl.la
-lib/libltdl.so
-lib/libltdl.so.4
