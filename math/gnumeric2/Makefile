@@ -1,45 +1,52 @@
-# New ports collection makefile for:	gnumeric
-# Date created:				08 October 1998
-# Whom:					Yukihiro Nakai <Nakai@technologist.com>
+# New ports collection makefile for:	gnumeric2
+# Date created:				26 August 2002
+# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	gnumeric
-PORTVERSION=	1.0.9
-CATEGORIES?=	math gnome
+PORTNAME=	gnumeric2
+PORTVERSION=	1.1.8
+CATEGORIES=	math gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	stable/sources/gnumeric
-DIST_SUBDIR=	gnome
+MASTER_SITE_SUBDIR=	unstable/sources/${PORTNAME:S/2$//}
+DISTNAME=	${PORTNAME:S/2$//}-${PORTVERSION}
+DIST_SUBDIR=	gnome2
 
-MAINTAINER?=	gnome@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	gnomeole2.0:${PORTSDIR}/devel/libole2 \
-		gbrun.0:${PORTSDIR}/lang/gnomebasic \
-		iconv.3:${PORTSDIR}/converters/libiconv \
-		psiconv.8:${PORTSDIR}/converters/psiconv
-RUN_DEPENDS=	guppi-gnumeric:${PORTSDIR}/math/guppi
+LIB_DEPENDS=	gnomeprintui-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui \
+		gal-2-0.2:${PORTSDIR}/x11-toolkits/gal2 \
+		gsf-1.4:${PORTSDIR}/devel/libgsf
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_GNOMENG=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomelibs bonobo libglade gal
+USE_GNOME=	gnomeprefix gnomehack gnomehier
 USE_PYTHON=	yes
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
-INSTALLS_SHLIB=	yes
-CONFIGURE_ARGS=	--with-evolution --without-guile
+CONFIGURE_ARGS=	--without-guile --with-bonobo
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LIBS="-L${LOCALBASE}/lib -lintl -liconv ${PTHREAD_LIBS}"
+		LIBS="-L${LOCALBASE}/lib -liconv ${PTHREAD_LIBS}"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 PLIST_SUB=	VERSION=${PORTVERSION}-bonobo
 
+.if defined(WITH_DATABASE_ACCESS)
+LIB_DEPENDS+=	gda-2.1:${PORTSDIR}/databases/libgda2
+CONFIGURE_ARGS+=	--with-gda
+.else
+CONFIGURE_ARGS+=	--without-gda
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
+	@${FIND} ${WRKSRC}/plugins -name "plugin.xml.in" | ${XARGS} \
+		${REINPLACE_CMD} -e 's|\.la|.so|g'
 
 post-install:
 .for dir in share/gnome lib
