@@ -6,11 +6,11 @@
 #
 
 PORTNAME=		exult
-PORTVERSION=		0.96
+PORTVERSION=		0.99.1
 CATEGORIES=		games
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=		${PORTNAME}-${PORTVERSION}beta1
+DISTNAME=		${PORTNAME}-${PORTVERSION}RC2
 
 MAINTAINER=	tiamat@telegraph.spb.ru
 
@@ -26,7 +26,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-x \
 		--x-includes=${X11BASE}/include \
 		--x-libraries=${X11BASE}/lib \
-		--disable-tools
+		--disable-tools \
+		--disable-sdltest
 # SDL cannot find X11 includes in normal way
 CONFIGURE_ENV=	CPPFLAGS=-I${X11BASE}/include \
 		SDL_CONFIG="${SDL_CONFIG}"
