@@ -29,6 +29,12 @@ fi
 
 printed=0
 
+if [ -f /usr/bin/UNAME_VERSION ]; then
+	VERSION=$(cat /usr/bin/UNAME_VERSION)
+else
+	VERSION=4.5-RELEASE #XXX Perhaps make it the same as the host version?
+fi
+
 if [ "$s" = 1 ]; then
   echo -n "FreeBSD"
   printed=1
@@ -48,13 +54,13 @@ fi
 
 if [ "$r" = 1 ]; then
   printsp $printed
-  echo -n "4.0-CURRENT"
+  echo -n "${VERSION}"
   printed=1
 fi
 
 if [ "$v" = 1 ]; then
   printsp $printed
-  echo -n "FreeBSD 4.0-CURRENT #0: Sun Dec 13 03:47:56 PST 1998 asami@bento.freebsd.org:/usr/src/sys/compile/BENTO"
+  echo -n "FreeBSD ${VERSION} #0: Sun Apr 1 02:34:56 PST 2002 asami@bento.freebsd.org:/usr/src/sys/compile/BENTO"
   printed=1
 fi
 
