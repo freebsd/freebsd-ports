@@ -19,15 +19,10 @@ COMMENT=	Get Videotext/Teletext (.vtx) and other VBI data from TV channels
 
 PLIST_FILES=		bin/vbidecode
 WRKSRC=			${WRKDIR}/bttv/apps/vbidecode
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
+USE_GCC=		2.95
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vbidecode ${PREFIX}/bin
 	@${STRIP_CMD} ${PREFIX}/bin/vbidecode
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
