@@ -46,6 +46,10 @@ MLINKS+=	vim.1 gvim.1  vim.1 gview.1  vim.1 rgvim.1  vim.1 rgview.1
 
 .include <bsd.port.pre.mk>
 
+.if ${PERL_LEVEL} >= 500800
+BROKEN=		"Does not compile with perl 5.8"
+.endif
+
 # Determine if we need xpg4.
 # No xpg4 in libc below 400020 and 500005
 .if ${OSVERSION} < 400020 && ${OSVERSION} < 500005
