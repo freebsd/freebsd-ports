@@ -1,12 +1,15 @@
-The Biopython Project is an international association of developers of freely
-available Python tools for use in areas of computational molecular biology
-such as bioinformatics and genomics.
+The Biopython Project is an international association of developers who are
+providing freely available Python tools for use in areas of computational
+molecular biology such as bioinformatics and genomics.
 
 Biopython is a collection of Python packages and modules created by the
 Biopython Project, intended to provide the basis for building bioinformatics
-applications in the Python language.  It is currently in developer's
-(pre-alpha) release.  Caveat emptor.
+applications in the Python language.
 
-WWW: http://www.biopython.org/
+Note that the current release is alpha quality, and not yet deemed to be
+stable.
+
+Authors: <biopython-dev@biopython.org>
+WWW:     http://biopython.org/
 
 -- Johann Visagie <johann@egenetics.com>
