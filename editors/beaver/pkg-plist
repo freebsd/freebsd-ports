@@ -1,8 +1,4 @@
 bin/beaver
-share/beaver/bl/example1.bl
-share/beaver/bl/example2.bl
-share/beaver/bl/glib.bl
 share/gnome/pixmaps/beaver.png
 share/gnome/applications/beaver.desktop
-@dirrm share/beaver/bl
 @dirrm share/beaver

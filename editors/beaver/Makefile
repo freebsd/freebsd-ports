@@ -6,27 +6,24 @@
 #
 
 PORTNAME=		beaver
-PORTVERSION=		0.3.0
+PORTVERSION=		0.3.1
 CATEGORIES=		editors
 MASTER_SITES=		http://savannah.nongnu.org/download/beaver/
 
 MAINTAINER=		jylefort@brutele.be
 COMMENT=		A programmer's text editor for GTK+ 2.0
 
-BUILD_WRKSRC=		${WRKSRC}/src
 USE_GNOME=		gtk20
-INSTALL_WRKSRC=		${WRKSRC}/src
 
 USE_X_PREFIX=		yes
 USE_GMAKE=		yes
+GNU_CONFIGURE=		yes
+USE_REINPLACE=		yes
 
-MANCOMPRESSED=		yes
-MAN1=			beaver.1x
+LIB_DEPENDS=		gtksourceview-1.0.0:${PORTSDIR}/x11-toolkits/gtksourceview
 
-MAKE_ENV=		PREFIX="${PREFIX}" \
-			MKDIR="${MKDIR}" \
-			INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
-			INSTALL_DATA="${INSTALL_DATA}" \
-			INSTALL_MAN="${INSTALL_MAN}"
+post-patch:
+	@${REINPLACE_CMD} -e 's|/applications|/gnome/applications|' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|/pixmaps|/gnome/pixmaps|' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
