@@ -7,17 +7,20 @@
 
 PORTNAME=	gemdropx
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.sonic.net/pub/users/nbs/unix/x/gemdropx/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	SDL-1.0.2:${PORTSDIR}/devel/sdl
+LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
+
+SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-ALL_TARGET=	nosound
-MAKE_ARGS=	JOY=NO DATA_PREFIX=${PREFIX}/share/gemdropx -f
+MAKE_ENV=	JOY=NO \
+		SDL_CONFIG="${SDL_CONFIG}"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gemdropx ${PREFIX}/bin

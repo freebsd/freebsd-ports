@@ -1,6 +1,23 @@
---- Makefile.orig	Tue Dec 28 17:33:54 1999
-+++ Makefile	Thu Mar 30 00:18:17 2000
-@@ -22,7 +22,7 @@
+
+$FreeBSD$
+
+--- Makefile.orig	Tue Dec 28 10:33:54 1999
++++ Makefile	Thu Feb  8 18:04:06 2001
+@@ -12,17 +12,17 @@
+ # 100% SDL Version: December 27, 1999
+ 
+ 
+-DATA_PREFIX=data
+-SDL_CFLAGS := $(shell sdl-config --cflags)
+-SDL_LDFLAGS := $(shell sdl-config --libs)
++DATA_PREFIX=$(PREFIX)/share/gemdropx
++SDL_CFLAGS := $(shell $(SDL_CONFIG) --cflags)
++SDL_LDFLAGS := $(shell $(SDL_CONFIG) --libs)
+ 
+ 
+-MIXER=-lmixer
++MIXER=-lSDL_mixer
+ NOSOUNDFLAG=$(SOUND)SOUND
  JOYFLAG=$(JOY)JOYSTICK
  
  
@@ -9,12 +26,3 @@
  	-DDATA_PREFIX=\"$(DATA_PREFIX)\" -D$(NOSOUNDFLAG) -D$(JOYFLAG)
  SDL_LIB=$(MIXER) $(SDL_LDFLAGS)
  
-@@ -30,7 +30,7 @@
- all:	gemdropx
- 
- nosound:
--	make MIXER= NOSOUNDFLAG=NOSOUND JOY=$(JOY)
-+	$(MAKE) MIXER= NOSOUNDFLAG=NOSOUND JOY=$(JOY)
- 
- clean:
- 	-rm gemdropx
