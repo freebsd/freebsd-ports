@@ -8,7 +8,7 @@
 PORTNAME=	icqnix
 PORTVERSION=	b1
 CATEGORIES=	net
-MASTER_SITES=	http://icqnix.linuxbox.com/
+MASTER_SITES=	http://www.csie.nctu.edu.tw/~yinjieh/
 DISTNAME=	icqnix-beta1
 
 MAINTAINER=	yinjieh@csie.nctu.edu.tw
