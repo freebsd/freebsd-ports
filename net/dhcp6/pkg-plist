@@ -1,9 +1,12 @@
-sbin/dhcp6c
-sbin/dhcp6s
-sbin/dhcp6relay
-sbin/dhcp6sctl
 etc/dhcp6s.conf.sample
 etc/dhcp6c.conf.sample
-%%PORTDOCS%%%%DOCSDIR%%/README
+etc/rc.d/dhcp6c.sh
+etc/rc.d/dhcp6relay.sh
+etc/rc.d/dhcp6s.sh
+sbin/dhcp6c
+sbin/dhcp6relay
+sbin/dhcp6s
+sbin/dhcp6sctl
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
