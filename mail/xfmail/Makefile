@@ -48,7 +48,22 @@ USE_GNOME+=	esound
 CONFIGURE_ARGS+=	--with-esd-sound
 .endif
 
+.if defined(WITH_FACES)
+LIB_DEPENDS+=	compface:${PORTSDIR}/mail/faces
+CONFIGURE_ARGS+=	--with-faces
+.endif
+
 MAN1=		xfmail.1
+
+pre-everything::
+	@echo
+.ifndef(WITH_ESOUND)
+	@echo "To build with esound support, restart make and define WITH_ESOUND"
+.endif
+.ifndef(WITH_FACES)
+	@echo "To build with faces support, restart make and define WITH_FACES"
+.endif
+	@echo
 
 pre-configure:
 	@(cd ${WRKSRC} && ${SH} autogen.sh);	\

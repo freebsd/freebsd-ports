@@ -37,3 +37,6 @@ share/xfmail/sign.xpm
 share/xfmail/spell.xpm
 share/xfmail/view.xpm
 @dirrm share/xfmail
+@unexec rm -f %D/lib/libface.a
+@unexec rm -f %D/lib/libface.so.0
+@unexec rm -f %D/lib/libface.so
