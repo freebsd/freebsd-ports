@@ -28,7 +28,7 @@ do-install:
 	@${ECHO} "===>   Installing wmqmon.rcfile.example in ${PREFIX}/share/examples/${PORTNAME}"
 	@${MKDIR} ${PREFIX}/share/examples/${PORTNAME}
 	@${INSTALL_DATA} ${WRKSRC}/wmqmon.rcfile.example ${PREFIX}/share/examples/${PORTNAME}
-	@${ECHO} "===>   Modify to your config and copy to ~/.wmqmon.rcfile.example"
+	@${ECHO} "===>   Modify to your config and copy to ~/.wmqmon"
 .ifndef(NOPORTDOCS)
 	@${ECHO} "===>   Installing README in ${PREFIX}/share/doc/${PORTNAME}"
 	@${ECHO} "===>   Please read it for usage instructions"
