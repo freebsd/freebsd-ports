@@ -30,6 +30,7 @@ post-install:
 
 .if ${OSVERSION} < 500041
 PATCHFILES+=	configure-getopt.patch
+BROKEN=		"Does not fetch"
 .endif
 
 .include <bsd.port.post.mk>
