@@ -5,24 +5,22 @@
 # $FreeBSD$
 #
 
-PORTNAME=		EasyTCP
-PORTVERSION=		0.17
-CATEGORIES=		net perl5
-MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../../authors/id/M/MN/MNAGUIB
-PKGNAMEPREFIX=		p5-
+PORTNAME=	EasyTCP
+PORTVERSION=	0.23
+CATEGORIES=	net perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Net
+PKGNAMEPREFIX=	p5-
 
-MAINTAINER=		svenasse@polaris.ca
+MAINTAINER=	svenasse@polaris.ca
 COMMENT=	Easily create TCP/IP clients and servers
 
-BUILD_DEPENDS=		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
-			${SITE_PERL}/Crypt/RSA.pm:${PORTSDIR}/security/p5-Crypt-RSA
-RUN_DEPENDS=		${BUILD_DEPENDS}
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
+		${SITE_PERL}/Crypt/RSA.pm:${PORTSDIR}/security/p5-Crypt-RSA
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
-SITE_PERL=		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
-PERL_CONFIGURE=		yes
+PERL_CONFIGURE=	yes
 
-MAN3=			Net::EasyTCP.3
-MANPREFIX=		${PREFIX}/lib/perl5/${PERL_VERSION}
+MAN3=		Net::EasyTCP.3
 
 .include <bsd.port.mk>
