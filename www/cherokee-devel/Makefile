@@ -29,6 +29,12 @@ MAN1=		cherokee-config.1 cherokee.1
 CPPFLAGS=	${PTHREAD_CFLAGS}
 LDFLAGS=	${PTHREAD_LIBS}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Broken pkg-plist"
+.endif
+
 pre-install:
 	@if [ ! -f ${PREFIX}/www ]; then \
 		${MKDIR} ${PREFIX}/www;\
@@ -45,4 +51,4 @@ post-install:
 	@${ECHO_MSG} " ${PREFIX}/share/cherokee/Intro.txt"
 	@${ECHO_MSG} " "
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
