@@ -1,0 +1,11 @@
+--- include/config.h.orig	Wed Jun 14 22:54:31 2000
++++ include/config.h	Wed Jun 14 22:54:34 2000
+@@ -374,7 +374,7 @@
+  * otherwise it will be the current directory.
+  */
+ # ifndef HACKDIR
+-#  define HACKDIR "/usr/games/lib/nethackdir"	/* nethack directory */
++#  define HACKDIR "/usr/local/share/nethack"	/* nethack directory */
+ # endif
+ 
+ /*
