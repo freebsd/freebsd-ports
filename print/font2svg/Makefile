@@ -15,11 +15,25 @@ MASTER_SITES=	http://www.gdv.uni-hannover.de/~peinecke/font2svg/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	All font to svg-font converter
 
+.if defined(WITH_GHOSTSCRIPT_AFPL) && ${WITH_GHOSTSCRIPT_AFPL} == yes
+GSPORT?=	print/ghostscript-afpl
+.else
+GSPORT?=	print/ghostscript-gnu
+.endif
+
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2 \
-		gs:${PORTSDIR}/print/ghostscript-gnu
+		gs:${PORTSDIR}/${GSPORT}
 
 USE_REINPLACE=	yes
 NO_BUILD=	yes
+
+pre-fetch:
+.if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
+	@${ECHO} ""
+	@${ECHO} "      Define WITH_GHOSTSCRIPT_AFPL=yes to use"
+	@${ECHO} "      AFPL Postscript interpreter instead of GNU one"
+	@${ECHO} ""
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|/bin/bash|${LOCALBASE}/bin/bash|" \
