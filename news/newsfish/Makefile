@@ -1,12 +1,12 @@
 # New ports collection makefile for:	newsfish
-# Version required:	1.0.1
+# Version required:	1.1
 # Date created:		17 January 1999
 # Whom:			asaddi@philosophysw.com
 #
 # $Id$
 #
 
-DISTNAME=	newsfish-1.0.1
+DISTNAME=	newsfish-1.1
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.philosophysw.com/software/
 
