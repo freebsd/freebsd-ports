@@ -1,6 +1,6 @@
---- saferpay/idpapp.mk.orig	Tue Jan  6 15:33:08 2004
-+++ saferpay/idpapp.mk	Tue Jan  6 15:34:28 2004
-@@ -1,17 +1,11 @@
+--- saferpay/idpapp.mk.orig	Tue Jul 22 07:07:20 2003
++++ saferpay/idpapp.mk	Sat Mar 13 18:15:44 2004
+@@ -1,19 +1,13 @@
  ####### Compiler, tools and options
  
 -SSLVERSION = openssl-0.9.7b
@@ -20,5 +20,8 @@
 -LINK	=	g++
 +LINK	+=	${CXX}
  LFLAGS	=	-fPIC -shared
- LIBS	=	/usr/lib/libssl.a /usr/lib/libcrypto.a
+-LIBS	=	/usr/lib/libssl.a /usr/lib/libcrypto.a
++LIBS	=	-lssl -lcrypto
  AR	=	ar cq
+ RANLIB	=	
+ MOC	=	moc
