@@ -44,7 +44,6 @@
     SUBDIR += iwidgets
     SUBDIR += iv
     SUBDIR += jx
-    SUBDIR += kde-qt-addon
     SUBDIR += lesstif
     SUBDIR += libgtkeditor
     SUBDIR += libj2dplot
