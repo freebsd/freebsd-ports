@@ -10,8 +10,7 @@ PORTVERSION=	3.0.1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.povray.org/pub/povray/Old-Versions/Official-3.0/Unix/ \
 		ftp://ftp.gigabell.net/pub/unix/apps/graphics/povray/Old-Versions/Official-3.0/Unix/ \
-		ftp://www.hensa.ac.uk/mirrors/povray/Old-Versions/Official-3.0/Unix/ \
-		ftp://ftp.dl.ac.uk/ccp14/ftp-mirror/pov-ray/pub2/pov-ray/Official-3.0/Unix/
+		ftp://www.hensa.ac.uk/mirrors/povray/Old-Versions/Official-3.0/Unix/
 DISTNAME=	povray3
 DISTFILES=	povuni_s.tgz povuni_d.tgz
 
