@@ -7,7 +7,7 @@
 # "?=" and "+=" are for localized (i.e. Japanese) version
 
 PORTNAME=	magicpoint
-PORTVERSION=	1.07a
+PORTVERSION=	1.09a
 CATEGORIES+=	misc
 MASTER_SITES=	ftp://ftp.mew.org/pub/MagicPoint/
 
@@ -23,12 +23,12 @@ CONFIGURE_ARGS?=--disable-vflib
 
 MAN1=	mgp.1 mgp2ps.1 mgpembed.1 mgpnet.1 xwintoppm.1 xmindpath.1
 
-DOCS=	COPYRIGHT COPYRIGHT.jp README README.fonts README.fonts.jp \
+DOCS=	COPYRIGHT COPYRIGHT.jp FAQ README README.fonts README.fonts.jp \
 	README.lang RELNOTES SYNTAX TODO.jp USAGE USAGE.jp
 SAMPLES=	README README.jp cloud.jpg dad.eps dad.jpg default.mgp \
-		dns-jp.mgp embed-jp.mgp embed.mgp gradation-jp.mgp \
+		embed-jp.mgp embed.mgp gradation-jp.mgp \
 		gradation.mgp mgp-old1.jpg mgp-old2.jpg mgp-old3.jpg \
-		mgp1.jpg mgp2.jpg mgp3.jpg mgp3.xbm mgprc-sample \
+		mgp.mng mgp1.jpg mgp2.jpg mgp3.jpg mgp3.xbm mgprc-sample \
 		multilingual.mgp sample-fr.mgp sample-jp.mgp sample.mgp \
 		sendmail6-jp.mgp sendmail6.mgp tutorial-jp.mgp \
 		tutorial.mgp v6-jp.mgp v6.mgp v6header.eps v6header.jpg
