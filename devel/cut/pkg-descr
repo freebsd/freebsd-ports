@@ -1,0 +1,17 @@
+CUT is a simple, to-the-point unit testing system. It's different from
+other unit test packages in that it follows the KISS principle. It's
+designed for C testing, not designed to emulate SUnit.
+
+CUT works with C, C++ and Objective-C.
+
+CUT was primarily written by Samuel A. Falvo II and by Billy Tanksley,
+starting life as distinct, and even competing, CUT 1.0 and test-assert
+packages. When it was finally decided to combine both packages into a
+single tool, CUT 2.0 was released, and found to be vastly more useful
+than either expected. CUT 2.3 is the latest version of the CUT 2.x
+series.
+
+CUT follows standard error messages format supported by Emacs.
+
+SourceForge.net location: WWW: http://sourceforge.net/projects/cut/
+Home Page: WWW: http://www.falvotech.com/projects/cut.php
