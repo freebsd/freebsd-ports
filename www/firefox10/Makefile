@@ -7,6 +7,7 @@
 
 PORTNAME=	firefox
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${PORTVERSION}
@@ -98,7 +99,7 @@ post-extract::
 		-e 's|@LIBS@|${LIBS}|'			\
 		-e 's|@X11BASE@|${X11BASE}|'		\
 		-e 's|@LOCALBASE@|${LOCALBASE}|'	\
-		-e 's|@PREFIX@|${FAKEDIR}/lib/firefox|'	\
+		-e 's|@PREFIX@|${PREFIX}/lib/firefox|'	\
 		-e 's|@PERL@|${PERL5}|'			\
 		<${FILESDIR}/mozconfig.in >${WRKSRC}/.mozconfig
 
