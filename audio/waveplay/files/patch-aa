@@ -1,0 +1,10 @@
+--- Makefile.orig	Thu Dec 23 17:48:19 1999
++++ Makefile	Thu Dec 23 17:48:39 1999
+@@ -1,7 +1,5 @@
+ #CC       = gcc28
+-CC       = cc #egcc
+ #CFLAGS   = -g -O -Wall -DDEBUG
+-CFLAGS   = -O -Wall 
+ SRC      = waveplay.c
+ OBJS     = waveplay.o
+ HDR      = wavefmt.h

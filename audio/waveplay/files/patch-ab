@@ -1,0 +1,19 @@
+*** waveplay.c~	Wed Sep  9 14:24:05 1998
+--- waveplay.c	Wed Nov 24 15:11:40 1999
+***************
+*** 150,156 ****
+      {
+  	if (!stdin_flag)
+              fprintf(stderr, "File name     : %s\n", filename);
+!         fprintf(stderr, "Sampling rate : %ld Hz\n", wf.nSamplesPerSec);
+          fprintf(stderr, "Bits/Sample   : %d Bits\n", wf.wBitsPerSample);
+          fprintf(stderr, "Channels      : %d\n", wf.nChannels);
+  	if (!rflag)
+--- 150,156 ----
+      {
+  	if (!stdin_flag)
+              fprintf(stderr, "File name     : %s\n", filename);
+!         fprintf(stderr, "Sampling rate : %d Hz\n", wf.nSamplesPerSec);
+          fprintf(stderr, "Bits/Sample   : %d Bits\n", wf.wBitsPerSample);
+          fprintf(stderr, "Channels      : %d\n", wf.nChannels);
+  	if (!rflag)
