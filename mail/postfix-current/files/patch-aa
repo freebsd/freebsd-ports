@@ -50,8 +50,8 @@
 ***************
 *** 209,211 ****
   #
-! # mail_spool_directory = /var/mail
-  # mail_spool_directory = /var/spool/mail
+! #mail_spool_directory = /var/mail
+  #mail_spool_directory = /var/spool/mail
 --- 209,211 ----
   #
 ! mail_spool_directory = /var/mail
