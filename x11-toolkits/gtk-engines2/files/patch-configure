@@ -1,0 +1,11 @@
+--- configure.orig	Tue Mar 20 03:08:42 2001
++++ configure	Tue Mar 20 03:08:57 2001
+@@ -2177,7 +2177,7 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lgtk $GTK_LIBS $LIBS"
++LIBS="$GTK_LIBS $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 2183 "configure"
+ #include "confdefs.h"

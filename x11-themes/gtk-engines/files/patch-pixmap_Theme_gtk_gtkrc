@@ -1,0 +1,13 @@
+--- pixmap/Theme/gtk/gtkrc.orig	Sun Nov 19 21:53:57 2000
++++ pixmap/Theme/gtk/gtkrc	Tue Mar 20 02:49:23 2001
+@@ -13,7 +13,9 @@
+ # testgtkrc2 sets all the buttons in the main window to blue by default
+ #include "testgtkrc2"
+ 
+-#module_path ".:/home/raster/themes"
++#module_path "%%PREFIX%%/lib/gtk/themes"
++
++pixmap_path "%%PREFIX%%/share/themes/Pixmap/gtk"
+ 
+ style "eventbox" {
+   bg_pixmap[NORMAL] = "<parent>"

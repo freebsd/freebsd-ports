@@ -1,3 +1,8 @@
+lib/gtk/themes/engines/libmetal.so
+lib/gtk/themes/engines/libnotif.so
+lib/gtk/themes/engines/libpixmap.so
+lib/gtk/themes/engines/libraleigh.so
+lib/gtk/themes/engines/libredmond95.so
 share/themes/Metal/ICON.png
 share/themes/Metal/README.html
 share/themes/Metal/gtk/gtkrc
@@ -76,15 +81,16 @@ share/themes/Pixmap/gtk/shadow1.png
 share/themes/Pixmap/gtk/shadow2.png
 share/themes/Pixmap/gtk/trough.png
 share/themes/Pixmap/gtk/vline.png
+share/themes/Raleigh/ICON.png
+share/themes/Raleigh/README.html
+share/themes/Raleigh/gtk/gtkrc
 share/themes/Redmond95/ICON.png
 share/themes/Redmond95/README.html
 share/themes/Redmond95/gtk/gtkrc
-lib/gtk/themes/engines/libmetal.so
-lib/gtk/themes/engines/libnotif.so
-lib/gtk/themes/engines/libpixmap.so
-lib/gtk/themes/engines/libredmond95.so
 @dirrm share/themes/Redmond95/gtk
 @dirrm share/themes/Redmond95
+@dirrm share/themes/Raleigh/gtk
+@dirrm share/themes/Raleigh
 @dirrm share/themes/Pixmap/gtk
 @dirrm share/themes/Pixmap
 @dirrm share/themes/Notif/gtk
