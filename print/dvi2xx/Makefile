@@ -3,7 +3,7 @@
 # Date created:         14 October 1994
 # Whom:                 jmz
 #
-# $Id$
+# $Id: Makefile,v 1.5 1995/04/15 04:33:39 asami Exp $
 #
 
 DISTNAME=	dvi2xx
@@ -11,32 +11,13 @@ PKGNAME=	dvi2xx-0.51a9
 DISTFILES=	dvi2xx.tar.gz
 CATEGORIES+=	printing
 
-.if !defined(MASTER_SITE_OVERRIDE)
 #other equivalent sites: ftp.shsu.edu dtp.dante.de
 CTAN=		ftp.tex.ac.uk
-FTP_DIR=	/tex-archive/dviware
-FTPGET=		${WRKDIR}/ftpget
+FTPGET=		${FILESDIR}/ftpget
 
-pre-fetch:
-	@if [ ! -d ${DISTDIR} ]; then mkdir -p ${DISTDIR}; fi
-	@mkdir -p ${WRKDIR}
-	@${SCRIPTDIR}/ftpget magic ${WRKDIR}
-
-fetch: pre-fetch ${DISTFILES}
-.endif
 
 dvi2xx.tar.gz:
-	@(cd ${DISTDIR}; if [ ! -f $@ ]; then \
-	  echo ">> $@ doesn't seem to exist on this system."; \
-	  echo ">> Attempting to fetch it from a master site."; \
-	  ${FTPGET} ${CTAN} ${FTP_DIR} $@ $@ ;\
-	  if [ ! -f $@ ]; then \
-			echo ">> Couldn't fetch it - please try to retrieve this";\
-		echo ">> port manually into ${DISTDIR} and try again."; \
-		exit 1; \
-	  else \
-		echo ">> $@ Fetched!" ; \
-	  fi; fi)
+	@${FTPGET} ${CTAN} /tex-archive/dviware dvi2xx.tar.gz ${DISTDIR}/$@
 
 pre-install:
 	@mkdir -p ${PREFIX}/bin
@@ -45,5 +26,7 @@ pre-install:
 	@(cd ${WRKSRC}; install -m 755 -c MakeTeXPK ${PREFIX}/bin)
 	@(cd ${WRKSRC}; install -c -m 644 2up.sty  graybox.sty lj3-filter \
 	  printcap.sample sample2.tex testpage.tex ${PREFIX}/lib/dvi2xx/)
+
+.include "Makefile.inc"
 
 .include <bsd.port.mk>
