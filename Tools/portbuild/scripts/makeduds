@@ -1,10 +1,12 @@
 #!/bin/sh
-# usage: $0 branch
+# usage: $0 arch branch
 
 # configurable variables
 pb=/var/portbuild
+arch=$1
+shift
 
-. ${pb}/portbuild.conf
+. ${pb}/${arch}/portbuild.conf
 
 . ${pb}/scripts/buildenv
 
@@ -21,9 +23,9 @@ fi
 
 branch=$1
 
-buildenv ${pb} ${branch}
+buildenv ${pb} ${arch} ${branch}
 
-duds=${pb}/${branch}/duds
+duds=${pb}/${arch}/${branch}/duds
 
 unset DISPLAY
 
