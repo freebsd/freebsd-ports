@@ -3999,6 +3999,7 @@ no-login	ports/sysutils/no-login
 nocol		ports/net/nocol
 nohup		src/usr.bin/nohup
 nologin		src/sbin/nologin
+nomarch		ports/archivers/nomarch
 nonsense	ports/games/nonsense
 normalize	ports/audio/normalize
 nos-tun		src/sbin/nos-tun
