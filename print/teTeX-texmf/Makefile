@@ -5,16 +5,16 @@
 # $FreeBSD$
 
 PORTNAME=	teTeX-texmf
-PORTVERSION=	2.0.2
-PORTREVISION=	3
+PORTVERSION=	2.99.13.20050204
+PORTREVISION=	0
 CATEGORIES=	print
-MASTER_SITES=	ftp://sunsite.informatik.rwth-aachen.de/pub/comp/tex/teTeX/2.0/distrib/ \
+MASTER_SITES=	ftp://ftp.dante.de/tex-archive/systems/unix/teTeX-beta/ \
 		${MASTER_SITE_TEX_CTAN} \
 		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/dvips/:1
-MASTER_SITE_SUBDIR=	systems/unix/teTeX/2.0/distrib/
-DISTFILES=	${TETEX_TEXMF} dvipsk-jpatch-p1.6a${EXTRACT_SUFX}:1
+MASTER_SITE_SUBDIR=	systems/unix/teTeX-beta
+DISTFILES=	${TETEX_TEXMF_SRC} dvipsk-jpatch-p1.6a1${EXTRACT_SUFX}:1
 DIST_SUBDIR=	teTeX
-EXTRACT_ONLY=	dvipsk-jpatch-p1.6a${EXTRACT_SUFX}
+EXTRACT_ONLY=	dvipsk-jpatch-p1.6a1${EXTRACT_SUFX}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Thomas Esser's distribution of TeX & friends (texmf tree)
@@ -28,46 +28,38 @@ CONFLICTS=	latex2e-[0-9]* tex-[0-9]* dvips-[0-9]* xdvi-[0-9]*
 
 NO_WRKSUBDIR=	YES
 NO_BUILD=	YES
-PLIST_SUB=	TEXMF=${TEXMF} \
+PLIST_SUB=	TEXMFDIR=${TEXMFDIR} \
+		TEXMFDISTDIR=${TEXMFDISTDIR} \
+		TEXMFCONFIGDIR=${TEXMFCONFIGDIR} \
 		MKTEXLSR=${MKTEXLSR} \
 		TEXMF_LSR=${TEXMF_LSR}
 CONFLICTS=	ja-ptex-base-[0-9]*
 
-TETEX_TEXMF=	tetex-texmf-${PORTVERSION}.tar.gz
-TEXMF=		share/texmf
-TEXMF_LSR=	${PREFIX}/${TEXMF}/ls-R
-TEXMFLOCAL=	share/texmf-local
-TEXMFLOCAL_LSR=	${LOCALBASE}/${TEXMFLOCAL}/ls-R
-TEXMFVAR=	share/texmf-var
-TEXMFVAR_LSR=	${LOCALBASE}/${TEXMFVAR}/ls-R
+TETEX_TEXMF_SRC=tetex-texmf-${PORTVERSION}-beta.tar.gz
+TEXMFDIR=	share/texmf
+TEXMF_LSR=	${PREFIX}/${TEXMFDIR}/ls-R
+TEXMFLOCALDIR=	share/texmf-local
+TEXMFLOCAL_LSR=	${LOCALBASE}/${TEXMFLOCALDIR}/ls-R
+TEXMFVARDIR=	share/texmf-var
+TEXMFVAR_LSR=	${LOCALBASE}/${TEXMFVARDIR}/ls-R
+TEXMFDISTDIR=	share/texmf-dist
+TEXMFDIST_LSR=	${LOCALBASE}/${TEXMFDISTDIR}/ls-R
+TEXMFCONFIGDIR=	share/texmf-config
+TEXMFCONFIG_LSR=${LOCALBASE}/${TEXMFCONFIGDIR}/ls-R
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
 
-CNFFILES=	DVIPSKCNF XDVIKCNF DVIPDFMCNF
-DVIPSKCNF=	dvips/config/config.ps
-XDVIKCNF=	xdvi/XDvi
-DVIPDFMCNF=	dvipdfm/config/config
-
-TEXMF_IN_SUB=	TEXMF=${TEXMF} PREFIX=${PREFIX}
-
-# XXX: when OPTIONS is set NO_BUILD does not work
-do-build:
-	@${DO_NADA}
-
 do-install:
-	${MKDIR} ${PREFIX}/${TEXMF}
-	cd ${PREFIX}/${TEXMF} && \
-		${TAR} xzUf ${DISTDIR}/${DIST_SUBDIR}/${TETEX_TEXMF} \
-			--exclude "*/texmf.cnf"
-	${MV} ${PREFIX}/${TEXMF}/omega/lambda/omegabook/ltpatch.ltx \
-		${PREFIX}/${TEXMF}/omega/lambda/omegabook/NOUSE_ltpatch.ltx_
-	${INSTALL_DATA} \
-		${FILESDIR}/listings.sty \
-		${PREFIX}/${TEXMF}/tex/latex/listings/
-	cd ${PREFIX}/${TEXMF}/dvips/pstricks && \
+	${MKDIR} ${PREFIX}/${TEXMFDISTDIR}
+	cd ${PREFIX}/${TEXMFDISTDIR} && \
+		${TAR} xzUf ${DISTDIR}/${DIST_SUBDIR}/${TETEX_TEXMF_SRC}
+	cd ${PREFIX}/${TEXMFDISTDIR}/dvips/pstricks && \
 		${PATCH} --quiet < ${WRKDIR}/PSTricks.patch && \
 		${RM} -f pst-text.pro.orig
-.for F in ${CNFFILES}
-	${CP} ${PREFIX}/${TEXMF}/${${F}} ${PREFIX}/${TEXMF}/${${F}}.tetex
-.endfor
+	( ${ECHO_CMD} '% ls-R -- filename database for kpathsea; do not change this line.'; \
+		${ECHO_CMD} './:'; \
+		${ECHO_CMD} 'ls-R'; \
+		${ECHO_CMD} '' ) > ${PREFIX}/${TEXMFDISTDIR}/ls-R
+	${MKDIR} ${PREFIX}/${TEXMFDISTDIR}/xdvi
+	${TOUCH} ${PREFIX}/${TEXMFDISTDIR}/xdvi/XDvi
 
 .include <bsd.port.post.mk>

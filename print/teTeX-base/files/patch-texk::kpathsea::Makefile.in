@@ -1,11 +1,27 @@
---- texk/kpathsea/Makefile.in.orig	Sun Feb 16 02:21:42 2003
-+++ texk/kpathsea/Makefile.in	Fri Jun 11 20:49:40 2004
-@@ -126,7 +126,7 @@
- 	| sed 's/^\([^ 	=]*\)[ 	]*=*[ 	]*\(.*\)/#ifndef DEFAULT_\1%#define DEFAULT_\1 "\2"%#endif/' \
- 	| tr '%' '\012' \
- 	| sed -e 's%\$$TEXMFMAIN%$(texmf)%g' \
--	      -e 's%\$$TEXMF%$(texmf)%g' \
-+	      -e 's%\$$TEXMF\([,}/]\)%$(texmf)\1%g' \
- 	      -e 's%\$$VARTEXFONTS%$(vartexfonts)%g' \
- 	      -e 's%\$$web2cdir%$(web2cdir)%g' \
- 	      -e 's%\$$prefix%$(prefix)%g' \
+--- texk/kpathsea/Makefile.in.orig	Mon Jan 31 01:56:30 2005
++++ texk/kpathsea/Makefile.in	Sun Feb  6 08:09:44 2005
+@@ -182,13 +182,13 @@
+ 	$(INSTALL_SCRIPT) $(srcdir)/mktexnam $(web2cdir)/mktexnam
+ 	$(INSTALL_DATA) $(srcdir)/mktexnam.opt $(web2cdir)/mktexnam.opt
+ 	$(INSTALL_SCRIPT) $(srcdir)/mktexupd $(web2cdir)/mktexupd
+-	$(INSTALL_LIBTOOL_LIBS) lib$(library).la $(libdir)
++	$(INSTALL_LIBTOOL_LIBS) .libs/lib$(library).a $(libdir)
+ 	$(INSTALL_LIBTOOL_PROG) kpsewhich $(bindir)
+ 	$(INSTALL_PROGRAM) kpsestat $(bindir)
+ 	$(INSTALL_PROGRAM) kpseaccess $(bindir)
+ 	$(INSTALL_PROGRAM) kpsereadlink $(bindir)
+ uninstall-exec:
+-	$(UNINSTALL_LIBTOOL_LIBS) $(libdir)/lib$(library).la
++	$(UNINSTALL_LIBTOOL_LIBS) $(libdir)/lib$(library).a
+ 	$(UNINSTALL_LIBTOOL_PROG) $(bindir)/kpsewhich
+ 	$(UNINSTALL_PROGRAM) $(bindir)/kpsestat
+ 	$(UNINSTALL_PROGRAM) $(bindir)/kpseaccess
+@@ -271,7 +271,7 @@
+ 
+ mostlyclean::
+ 	rm -f kpsewhich kpsestat kpseaccess kpsereadlink *.lo
+-	$(LIBTOOL) --mode=clean $(RM) lib$(library).la
++	$(LIBTOOL) --mode=clean $(RM) lib$(library).a
+ distclean::
+ 	rm -f paths.h texmf.cnf texmf.sed stamp-paths
+ 
