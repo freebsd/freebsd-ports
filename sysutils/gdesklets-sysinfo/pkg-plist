@@ -1,7 +1,5 @@
 share/gnome/gdesklets/Displays/SysInfo/gfx/Info.png
-share/gnome/gdesklets/Displays/SysInfo/gfx/Info_.png
 share/gnome/gdesklets/Displays/SysInfo/gfx/SysInfo.png
-share/gnome/gdesklets/Displays/SysInfo/gfx/_hdd.png
 share/gnome/gdesklets/Displays/SysInfo/gfx/bg.png
 share/gnome/gdesklets/Displays/SysInfo/gfx/bg_g.png
 share/gnome/gdesklets/Displays/SysInfo/gfx/cpu.png
@@ -11,7 +9,6 @@ share/gnome/gdesklets/Displays/SysInfo/gfx/gauge-bg.png
 share/gnome/gdesklets/Displays/SysInfo/gfx/gauge.png
 share/gnome/gdesklets/Displays/SysInfo/gfx/hdd.png
 share/gnome/gdesklets/Displays/SysInfo/gfx/memory.png
-share/gnome/gdesklets/Displays/SysInfo/gfx/memory_.png
 share/gnome/gdesklets/Displays/SysInfo/gfx/n.png
 share/gnome/gdesklets/Displays/SysInfo/gfx/ne.png
 share/gnome/gdesklets/Displays/SysInfo/gfx/network.png
@@ -23,7 +20,8 @@ share/gnome/gdesklets/Displays/SysInfo/gfx/w.png
 share/gnome/gdesklets/Displays/SysInfo/sysinfo.display
 share/gnome/gdesklets/Sensors/SysInfo/__init__.py
 share/gnome/gdesklets/Sensors/SysInfo/__init__.pyc
-share/gnome/gdesklets/Sensors/SysInfo/__init__.pyo
+share/gnome/gdesklets/Sensors/SysInfo/SysInfo.py
+share/gnome/gdesklets/Sensors/SysInfo/SysInfo.pyc
 share/gnome/gdesklets/Sensors/SysInfo/locale/de/LC_MESSAGES/sysinfo-sensor.mo
 share/gnome/gdesklets/Sensors/SysInfo/locale/es/LC_MESSAGES/sysinfo-sensor.mo
 share/gnome/gdesklets/Sensors/SysInfo/locale/fr/LC_MESSAGES/sysinfo-sensor.mo
