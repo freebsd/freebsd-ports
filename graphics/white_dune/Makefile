@@ -7,9 +7,8 @@
 #
 
 PORTNAME=	white_dune
-PORTVERSION=	0.26.5
+PORTVERSION=	0.28.1
 PORTEPOCH=	1
-PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.csv.ica.uni-stuttgart.de/vrml/dune/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}pl${PORTVERSION:E}
@@ -18,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical VRML97 Editor and animation tool
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		glut:${PORTSDIR}/graphics/libglut \
+		glut.3:${PORTSDIR}/graphics/libglut \
 		png.5:${PORTSDIR}/graphics/png
 
 USE_MOTIF=	yes
@@ -31,12 +30,12 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 CONFIGURE_ARGS=	--with-optimization \
 		--without-devil \
 		--with-helpurl="${DOCSDIR}/index.html" \
-		--with-nurbscurveprotourl="${DATADIR}/NurbsCurvePROTO.wrl" \
-		--with-nurbsgroupprotourl="${DATADIR}/NurbsGroupPROTO.wrl" \
-		--with-nurbssurfaceprotourl="${DATADIR}/NurbsSurfacePROTO.wrl"
+		--with-vrml97am1url="${DOCSDIR}/vrml97Amendment1" \
+		--with-x3ddrafturl="${DOCSDIR}/x3dDraft" \
+		--with-scriptednodesurl="${DOCSDIR}/scriptedNodes"
 ALL_TARGET=	# empty
 
-MAN1=		dune.1
+MAN1=		dune.1 illegal2vrml.1
 
 CPPFLAGS=	-I${LOCALBASE}/include `${SDL_CONFIG} --cflags` \
 		-DUSBHID_UCR_DATA
@@ -50,11 +49,11 @@ CPPFLAGS+=	-DUSBHID_NEW
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/dune ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/dune4kids ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/man/dune.1 ${MANPREFIX}/man/man1
-	@${MKDIR} ${DATADIR}
-.for file in NurbsCurvePROTO.wrl NurbsGroupPROTO.wrl NurbsSurfacePROTO.wrl
-	${INSTALL_DATA} ${WRKSRC}/docs/vrml200x_nurbssurface/${file} ${DATADIR}
+.for file in dune4kids illegal2vrml
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/${file} ${PREFIX}/bin
+.endfor
+.for file in dune.1 illegal2vrml.1
+	${INSTALL_MAN} ${WRKSRC}/man/${file} ${MANPREFIX}/man/man1
 .endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

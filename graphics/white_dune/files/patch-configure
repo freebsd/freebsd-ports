@@ -1,0 +1,54 @@
+--- configure.orig	Mon Sep 27 18:50:13 2004
++++ configure	Sat Nov 20 21:16:08 2004
+@@ -2893,51 +2893,8 @@
+   echo "$ac_t""no" 1>&6
+ fi
+ 
+-        echo $ac_n "checking for hid_init in -lusb""... $ac_c" 1>&6
+-echo "configure:2898: checking for hid_init in -lusb" >&5
+-ac_lib_var=`echo usb'_'hid_init | sed 'y%./+-%__p_%'`
+-if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+-  echo $ac_n "(cached) $ac_c" 1>&6
+-else
+-  ac_save_LIBS="$LIBS"
+-LIBS="-lusb  $LIBS"
+-cat > conftest.$ac_ext <<EOF
+-#line 2906 "configure"
+-#include "confdefs.h"
+-/* Override any gcc2 internal prototype to avoid an error.  */
+-/* We use char because int might match the return type of a gcc2
+-    builtin and then its argument prototype would still apply.  */
+-char hid_init();
+-
+-int main() {
+-hid_init()
+-; return 0; }
+-EOF
+-if { (eval echo configure:2917: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest; then
+-  rm -rf conftest*
+-  eval "ac_cv_lib_$ac_lib_var=yes"
+-else
+-  echo "configure: failed program was:" >&5
+-  cat conftest.$ac_ext >&5
+-  rm -rf conftest*
+-  eval "ac_cv_lib_$ac_lib_var=no"
+-fi
+-rm -f conftest*
+-LIBS="$ac_save_LIBS"
+-
+-fi
+-if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+-  echo "$ac_t""yes" 1>&6
+-  have_libusb=yes
+-else
+-  echo "$ac_t""no" 1>&6
+-fi
+-
+         if test x$have_libusbhid = xyes; then
+             SYSTEM_LIBS="$SYSTEM_LIBS -lusbhid"
+-        fi
+-        if test x$have_libusb = xyes; then
+-            SYSTEM_LIBS="$SYSTEM_LIBS -lusb"
+         fi
+ 
+         ac_safe=`echo "usb.h" | sed 'y%./+-%__p_%'`
