@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.220 1999/08/14 03:52:54 cpiazza Exp $
+# $Id: Makefile,v 1.221 1999/08/18 19:49:05 cpiazza Exp $
 #
 
     SUBDIR += 3dc
@@ -89,6 +89,7 @@
     SUBDIR += oonsoo
     SUBDIR += phalanx
     SUBDIR += pmars
+    SUBDIR += powerpak
     SUBDIR += pp
     SUBDIR += pysol
     SUBDIR += qcc
