@@ -7,6 +7,7 @@
 
 PORTNAME=	tor
 PORTVERSION=	0.0.9.2
+PORTREVISION=	1
 CATEGORIES=	security net
 MASTER_SITES=	http://tor.eff.org/dist/
 
@@ -33,6 +34,9 @@ post-patch:
 		-n 10 ${REINPLACE_CMD} -E \
 		-e 's!-g -O2!!' \
 		-e 's!-O2!!'
+
+pre-install:
+	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
 	@${CP} ${WRKSRC}/contrib/tor.sh ${LOCALBASE}/etc/rc.d/tor.sh.sample
