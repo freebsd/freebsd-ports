@@ -3,7 +3,7 @@
 # Date created:		18 July 1997
 # Whom:			jseger@scds.com
 #
-# $Id: Makefile,v 1.6 1998/07/19 05:11:59 gpalmer Exp $
+# $Id: Makefile,v 1.7 1998/12/10 02:59:27 jseger Exp $
 #
 
 DISTNAME=	bind-8.1.2
@@ -12,6 +12,8 @@ MASTER_SITES=	ftp://ftp.isc.org/isc/bind/src/8.1.2/
 DISTFILES=	bind-8.1.2-src.tar.gz bind-8.1.2-doc.tar.gz
 
 MAINTAINER=	jseger@FreeBSD.org
+
+Y2K=		http://www.isc.org/y2k.html
 
 WRKSRC=		${WRKDIR}/src
 
