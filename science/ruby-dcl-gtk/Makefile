@@ -7,8 +7,6 @@
 
 PKGNAMESUFFIX=	-gtk
 
-PORTREVISION=	1
-
 MAINTAINER=	murakami@ahs.scitec.kobe-u.ac.jp
 CATEGORIES=	science graphics ruby
 
