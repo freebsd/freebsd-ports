@@ -3,12 +3,12 @@
 # Date created:				6/5/1998
 # Whom:					n@nectar.com
 #
-# $Id: Makefile,v 1.3 1998/07/27 22:45:10 dima Exp $
+# $Id: Makefile,v 1.4 1998/08/01 19:47:54 dima Exp $
 #
 
 DISTNAME=		krb5-1.0.5
 CATEGORIES=		security
-MASTER_SITES=		ftp://athena-dist.mit.edu/pub/kerberos/
+MASTER_SITES=		# empty here.  See below for real setting.
 DISTFILES=		krb5-1.0.5.src.tar.gz       \
 			krb5-1.0.5.doc.tar.gz       \
 			krb5-1.0.5.crypto.tar.gz
@@ -18,6 +18,24 @@ MAINTAINER=		n@nectar.com
 BUILD_DEPENDS=		gm4:${PORTSDIR}/devel/m4
 
 DIST_SUBDIR=		krb5
+
+# Deal with "secret" subdirectory on the canonical MASTER_SITE.
+# If USA_RESIDENT=YES then:
+#	we fetch from the canonical MASTER_SITE in the USA,
+#	and deal with a "secret" subdirectory whose name
+#	we obtain by using an awk script to search a README file.
+# If USA_RESIDENT=NO then:
+#	we fetch from a MASTER_SITE outside the USA,
+#	and we don't need to deal with any "secret" subdirectory,
+#	so we use an empty awk script.
+README_KRB5=		README.KRB5-1.0.5
+.if defined(USA_RESIDENT) && ${USA_RESIDENT} == "YES"
+MASTER_SITES=		ftp://athena-dist.mit.edu/pub/kerberos/
+AWK_SCRIPT=		'(/1\) Change into the directory/) { if (match($$0, "dist/[0-9]+")) print substr($$0, RSTART, RLENGTH) }'
+.else
+MASTER_SITES=		ftp://ftp.internat.freebsd.org/pub/FreeBSD/distfiles/
+AWK_SCRIPT=		''
+.endif
 
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
@@ -31,7 +49,6 @@ CONFIGURE_ARGS+=	--without-krb4
 .if defined(KRB5_HOME)
 PREFIX=			${KRB5_HOME}
 .endif
-
 
 RESTRICTED=		"Crypto; export-controlled"
 # Set USA_RESIDENT appropriately in /etc/make.conf if you like
@@ -47,7 +64,19 @@ pre-fetch:
 	@${ECHO} "the KerberosIV compatibility libraries.               "
 	@${ECHO} "------------------------------------------------------"
 .endif
-.if !defined(USA_RESIDENT) || ${USA_RESIDENT} != "YES"
+.if defined(USA_RESIDENT) && ${USA_RESIDENT} == "YES"
+	@${ECHO}
+	@${ECHO} ">> If you are a US resident, understand that this software"
+	@${ECHO} "   may be export restricted."
+.elif defined(USA_RESIDENT) && ${USA_RESIDENT} == "NO"
+	@${ECHO}
+	@${ECHO} ">> If you are not a US resident, then you cannot obtain"
+	@${ECHO} "   Kerberos V source from a server within the United"
+	@${ECHO} "   States.  If automatic fetching of the sources from"
+	@${ECHO} "   a server outside the US fails then you will have to"
+	@${ECHO} "   find the sources elsewhere yourself, and put them"
+	@${ECHO} "   in ${_DISTDIR}."
+.else
 	@${ECHO}
 	@${ECHO} ">> You must set the variable USA_RESIDENT to YES if you are"
 	@${ECHO} "   a United States resident, otherwise NO."
@@ -55,8 +84,7 @@ pre-fetch:
 	@${ECHO} "   may be export restricted."
 	@${ECHO} "   If you are not a US resident, then you cannot obtain"
 	@${ECHO} "   Kerberos V source from a server within the United"
-	@${ECHO} "   States.  You will have to find the source elsewhere,"
-	@${ECHO} "   and put them in ${_DISTDIR}."
+	@${ECHO} "   States."
 	@${FALSE}
 .endif
 
@@ -70,8 +98,6 @@ MAN8=			krb5kdc.8 kadmin.8 kadmin.local.8 kdb5_util.8 \
 
 WRKSRC=			${WRKDIR}/${DISTNAME}/src
 RECONF_COOKIE=		${WRKDIR}/.reconf_done
-README_KRB5=		README.KRB5-1.0.5
-AWK_SCRIPT=		'(/1\) Change into the directory/) { if (match($$0, "dist/[0-9]+")) print substr($$0, RSTART, RLENGTH) }'
 
 WANT_HTML?=		YES
 HTML_DOC_DIR=		${WRKDIR}/${DISTNAME}/doc
