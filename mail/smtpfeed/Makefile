@@ -3,7 +3,7 @@
 # Date created:		17 January 1998
 # Whom:			itojun@itojun.org
 #
-# $Id: Makefile,v 1.19 1998/09/29 03:07:25 itojun Exp $
+# $Id: Makefile,v 1.20 1998/10/01 17:18:40 itojun Exp $
 #
 
 DISTNAME=	smtpfeed-0.89
@@ -15,6 +15,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${SENDMAIL}${EXTRACT_SUFX} \
 		${SENDMAILPATCH}.patch.gz
 
 MAINTAINER=	itojun@itojun.org
+
+BROKEN=		fetch
 
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} ${SENDMAIL}${EXTRACT_SUFX}
 PATCH_SENDMAIL_ARGS=	-d ${WRKSRC_SENDMAIL} -E ${PATCH_DIST_STRIP}
