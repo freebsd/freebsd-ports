@@ -10,7 +10,7 @@ PORTVERSION=	0.4.4
 CATEGORIES=	security
 MASTER_SITES=	http://steghide.sourceforge.net/download/
 
-MAINTAINER=	rasputin@submonkey.net
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	mcrypt.7:${PORTSDIR}/security/libmcrypt \
 		mhash.2:${PORTSDIR}/security/mhash
