@@ -152,6 +152,7 @@
     SUBDIR += tamago
     SUBDIR += tamago-emacs20
     SUBDIR += ted
+    SUBDIR += tetradraw
     SUBDIR += texmacs
     SUBDIR += textedit
     SUBDIR += the
