@@ -13,11 +13,10 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	bms@spc.org
 
+ONLY_FOR_ARCHS=	i386
 USE_AUTOMAKE=	yes
 GNU_CONFIGURE=  yes
 USE_GTK=        yes
 USE_GMAKE=      yes
-
-NOMAN=
 
 .include <bsd.port.mk>
