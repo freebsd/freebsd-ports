@@ -1,2 +1,3 @@
 MD5 (ruby/ruby-1.6-2001.09.01.tar.bz2) = 5712f954c795c9843ce2dd55daa1e51f
 MD5 (ruby/ruby-1.6-2001.09.01-2001.09.08.diff.gz) = 0abbe7068162eae3fd19227d8caf3f5a
+MD5 (ruby/ruby-thread_alloc_hotfix.diff) = 3d78a8125743b471c3d0c6a6685970f8
