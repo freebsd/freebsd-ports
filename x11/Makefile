@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.200 1998/05/06 12:42:28 tg Exp $
+# $Id: Makefile,v 1.201 1998/05/14 09:18:11 tg Exp $
 #
 
     SUBDIR += FWF
@@ -63,6 +63,7 @@
     SUBDIR += qvwm
     SUBDIR += rclock
     SUBDIR += rxvt
+    SUBDIR += sharefonts
     SUBDIR += sliderule
     SUBDIR += slingshot
     SUBDIR += swisswatch
