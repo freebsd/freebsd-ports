@@ -29,9 +29,10 @@ share/BomberInstinct/Decors/mode.bmp
 share/BomberInstinct/Decors/mode_0.bmp
 share/BomberInstinct/Decors/mode_1.bmp
 share/BomberInstinct/Decors/mode_2.bmp
+share/BomberInstinct/Niveaux/arena.niv
 share/BomberInstinct/Niveaux/choix.niv
-share/BomberInstinct/Niveaux/cs.niv
 share/BomberInstinct/Niveaux/dedale.niv
+share/BomberInstinct/Niveaux/dyna.niv
 share/BomberInstinct/Niveaux/electr.g
 share/BomberInstinct/Niveaux/enfer.niv
 share/BomberInstinct/Niveaux/fatum.niv
@@ -43,11 +44,8 @@ share/BomberInstinct/Niveaux/menu.niv
 share/BomberInstinct/Niveaux/mysteredesruinesanciennes.niv
 share/BomberInstinct/Niveaux/nils.niv
 share/BomberInstinct/Niveaux/nol.niv
-share/BomberInstinct/Niveaux/nouv.niv
 share/BomberInstinct/Niveaux/options.niv
 share/BomberInstinct/Niveaux/shadow.niv
-share/BomberInstinct/Niveaux/tdm.niv
-share/BomberInstinct/Niveaux/vide.niv
 share/BomberInstinct/Sprites/1.spr
 share/BomberInstinct/Sprites/2.spr
 share/BomberInstinct/Sprites/3.spr
@@ -59,6 +57,7 @@ share/BomberInstinct/Sprites/8.spr
 share/BomberInstinct/Sprites/TeraSoft1.spr
 share/BomberInstinct/Sprites/TeraSoft2.spr
 share/BomberInstinct/Sprites/barbare.spr
+share/BomberInstinct/Sprites/barbareb.spr
 share/BomberInstinct/Sprites/bombe.spr
 share/BomberInstinct/Sprites/bonus.spr
 share/BomberInstinct/Sprites/bouton.spr
@@ -77,9 +76,14 @@ share/BomberInstinct/Sprites/grotte.spr
 share/BomberInstinct/Sprites/infos.spr
 share/BomberInstinct/Sprites/intro.spr
 share/BomberInstinct/Sprites/louis.spr
+share/BomberInstinct/Sprites/louisb.spr
+share/BomberInstinct/Sprites/maagus.spr
 share/BomberInstinct/Sprites/magus.spr
+share/BomberInstinct/Sprites/magusb.spr
 share/BomberInstinct/Sprites/menu.spr
+share/BomberInstinct/Sprites/miroirs.spr
 share/BomberInstinct/Sprites/murlave.spr
+share/BomberInstinct/Sprites/murnul.spr
 share/BomberInstinct/Sprites/nived.spr
 share/BomberInstinct/Sprites/pschit.spr
 share/BomberInstinct/Sprites/puce.spr
@@ -88,6 +92,7 @@ share/BomberInstinct/Sprites/ruines.spr
 share/BomberInstinct/Sprites/telgris.spr
 share/BomberInstinct/Sprites/telrouge.spr
 share/BomberInstinct/Sprites/troll.spr
+share/BomberInstinct/Sprites/trollb.spr
 share/BomberInstinct/Sprites/tunnel.spr
 share/BomberInstinct/bi.cfg
 @dirrm share/BomberInstinct/Sprites

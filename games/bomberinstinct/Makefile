@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	bomberinstinct
-PORTVERSION=	0.8.7
+PORTVERSION=	0.8.9
 CATEGORIES=	games
-MASTER_SITES=	http://harpe.dptmaths.ens-cachan.fr/U/gesbert/dl/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	BomberInstinct-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
@@ -23,7 +24,7 @@ USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
 		CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lintl"
 
 pre-patch:
 	@find ${WRKSRC} -name "*.[ch]" | xargs ${PERL} -pi -e 's|<SDL/|<|g'

@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- data/Sprites/Makefile.in	2002/07/02 12:58:45	1.1
++++ data/Sprites/Makefile.in	2002/07/02 13:05:49
+@@ -66,7 +66,7 @@
+ VERSION = @VERSION@
+ 
+ spritesdir = $(pkgdatadir)/Sprites
+-sprites_DATA =  	1.spr 	2.spr 	3.spr 	4.spr 	5.spr 	6.spr 	7.spr 	8.spr 	TeraSoft1.spr 	TeraSoft2.spr 	barbare.spr 	bombe.spr 	bonus.spr 	bouton.spr 	caillou.spr 	circuit.spr 	citrouille.spr 	condens.spr 	court-circuit.spr 	etoiles.spr 	faille.spr 	flammes.spr 	fleche.spr 	flechrouge.spr 	fontaine.spr 	grotte.spr 	infos.spr 	intro.spr 	louis.spr 	maagus.spr 	magus.spr 	menu.spr 	miroirs.spr 	murlave.spr 	murnul.spr 	nived.spr 	pschit.spr 	puce.spr 	rien.spr 	ruines.spr 	telgris.spr 	telrouge.spr 	troll.spr 	tunnel.spr
++sprites_DATA =  	1.spr 	2.spr 	3.spr 	4.spr 	5.spr 	6.spr 	7.spr 	8.spr 	TeraSoft1.spr 	TeraSoft2.spr 	barbare.spr 	barbareb.spr	bombe.spr 	bonus.spr 	bouton.spr 	caillou.spr 	circuit.spr 	citrouille.spr 	condens.spr 	court-circuit.spr 	etoiles.spr 	faille.spr 	flammes.spr 	fleche.spr 	flechrouge.spr 	fontaine.spr 	grotte.spr 	infos.spr 	intro.spr 	louis.spr 	louisb.spr	maagus.spr 	magus.spr 	magusb.spr	menu.spr 	miroirs.spr 	murlave.spr 	murnul.spr 	nived.spr 	pschit.spr 	puce.spr 	rien.spr 	ruines.spr 	telgris.spr 	telrouge.spr 	troll.spr 	trollb.spr	tunnel.spr
+ 
+ 
+ EXTRA_DIST = $(sprites_DATA)
