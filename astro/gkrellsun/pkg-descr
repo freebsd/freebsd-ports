@@ -1,0 +1,8 @@
+A Gkrellm-Plugin that displays the local sun rise and sun set times.
+The local latitude and longtitude can be set.
+
+Author:  Norman Walsh  <ndw@nwalsh.com>
+WWW: http://nwalsh.com/hacks/gkrellsun/
+
+-- Steffen Vogelreuter
+steffen@vogelreuter.de
