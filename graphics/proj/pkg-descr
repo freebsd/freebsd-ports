@@ -1,0 +1,7 @@
+Cartographic Projections library that performs projections to and from
+various cartographic coordinate systems.
+
+WWW: http://www.remotesensing.org/proj/
+
+- Chris D. Faulhaber
+ <jedgar@FreeBSD.org>
