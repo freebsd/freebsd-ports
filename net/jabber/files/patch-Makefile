@@ -11,7 +11,7 @@
  
  all: all-recursive
  
-@@ -13,8 +17,29 @@
+@@ -13,8 +17,28 @@
  
  single: single-recursive
  
@@ -37,7 +37,6 @@
 +	${INSTALL_DIR} ${INCDIR}/lib
 +	${INSTALL_DATA} jabberd/lib/lib.h ${INCDIR}/lib
 +	${INSTALL_DATA} jabberd/lib/xmlparse.h ${INCDIR}/lib
-+	${INSTALL_DATA} jabberd/pth-1.4.0/pth.h ${INCDIR}
 +	
  
  all-local:

@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 
 if ! PREFIX=$(expr $0 : "\(/.*\)/etc/rc\.d/jabberd\.sh\$"); then
     echo "$0: Cannot determine the PREFIX" >&2
