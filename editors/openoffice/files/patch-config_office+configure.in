@@ -1,5 +1,5 @@
 --- configure.in.orig	Wed Apr 17 22:37:42 2002
-+++ configure.in	Tue May 28 11:44:41 2002
++++ configure.in	Tue Jun  4 12:09:37 2002
 @@ -103,6 +103,12 @@
  
                            Usage: --with-asm-home=<path to ml.exe directory>
@@ -139,7 +139,34 @@
  if test "$_os" = "Darwin"; then
     if test "$CC" = "cc"; then
        AC_PATH_PROGS(_cc, cc)
-@@ -815,6 +887,10 @@
+@@ -589,6 +661,26 @@
+    fi
+ fi
+ 
++dnl *************************************************************
++dnl Testing for exception handling - dwarf2 or sjlj exceptions...
++dnl *************************************************************
++AC_MSG_CHECKING([try to compile exception code])
++AC_LANG_SAVE
++AC_LANG_CPLUSPLUS
++AC_CACHE_VAL(exceptions_type, [AC_TRY_COMPILE(
++	[#include <iostream>
++
++extern "C" void __sjthrow(void) __attribute__ ((__noreturn__));
++
++	],
++	[__sjthrow() ],
++	[exceptions_type="sjlj"],
++	[exceptions_type="dwarf2"])
++])
++
++AC_MSG_RESULT(Exceptions type: $exceptions_type)
++AC_LANG_RESTORE
++
+ dnl **************************************************************
+ dnl Testing for required  Solaris and workshop compiler patches...
+ dnl **************************************************************
+@@ -815,6 +907,10 @@
     fi
     if test "$_os" = "FreeBSD" -o "$_os" = "NetBSD"; then
        _jdk_middle=`echo $_jdk | $AWK -F. '{ if ($2 != 2) print "false"; else print "true" }'`
@@ -150,7 +177,13 @@
     fi
     if test "$_os" = "Linux" -a "$_machine_type" = "sparc"; then
        _jdk_middle=`echo $_jdk | $AWK -F. '{ if ($2 != 2) print "false"; else print "true" }'`
-@@ -1201,7 +1277,7 @@
+@@ -1196,12 +1292,13 @@
+ echo "\$MINGWIN32="$WITH_MINGWIN
+ echo "\$with_use_shell="$with_use_shell
+ echo "\$USE_GCC3="$USE_GCC3
++echo "\$EXCEPTIONS="$exceptions_type
+ echo
+ fi
  
  # Executing the set_soenv script to setup the environment variables.
  if test -z "$enable_check_only"; then
