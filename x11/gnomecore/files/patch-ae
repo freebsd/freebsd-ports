@@ -609,3 +609,47 @@
  
  
  LDADD = -lXt -lXmu $(GNOME_LIBDIR) $(GNOMEUI_LIBS) $(INTLLIBS)
+--- applets/another_clock/Makefile.in.orig	Sat Oct 16 13:03:28 1999
++++ applets/another_clock/Makefile.in	Sat Oct 16 13:03:38 1999
+@@ -153,7 +153,7 @@
+ cxxflags_set = @cxxflags_set@
+ l = @l@
+ 
+-INCLUDES = -I. -I$(srcdir) 					-I$(top_srcdir)/intl -I$(top_builddir)/intl		-I$(srcdir)/../../panel					-I$(top_builddir)/panel					-DGNOMELOCALEDIR=\""$(datadir)/locale"\"		-I$(includedir) $(GNOME_INCLUDEDIR)			-DVERSION=\""$(VERSION)"\"
++INCLUDES = -I. -I$(srcdir) 					-I$(top_srcdir)/intl -I$(top_builddir)/intl		-I$(srcdir)/../../panel					-I$(top_builddir)/panel					-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"		-I$(includedir) $(GNOME_INCLUDEDIR)			-DVERSION=\""$(VERSION)"\"
+ 
+ 
+ bin_PROGRAMS = another_clock_applet
+--- applets/icewm-pager/Makefile.in.orig	Sat Oct 16 13:05:16 1999
++++ applets/icewm-pager/Makefile.in	Sat Oct 16 13:05:53 1999
+@@ -153,7 +153,7 @@
+ cxxflags_set = @cxxflags_set@
+ l = @l@
+ 
+-INCLUDES = -I. -I$(srcdir) 					-I$(top_srcdir)/intl -I$(top_builddir)/intl		-I$(srcdir)/../../panel					-I$(top_builddir)/panel 	-DGNOMELOCALEDIR=\""$(datadir)/locale"\"		-I$(includedir) $(GNOME_INCLUDEDIR)			-DVERSION=\""$(VERSION)"\"
++INCLUDES = -I. -I$(srcdir) 					-I$(top_srcdir)/intl -I$(top_builddir)/intl		-I$(srcdir)/../../panel					-I$(top_builddir)/panel 	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"		-I$(includedir) $(GNOME_INCLUDEDIR)			-DVERSION=\""$(VERSION)"\"
+ 
+ 
+ bin_PROGRAMS = wmpager_applet
+--- applets/life/Makefile.in.orig	Sat Oct 16 13:06:24 1999
++++ applets/life/Makefile.in	Sat Oct 16 13:06:34 1999
+@@ -153,7 +153,7 @@
+ cxxflags_set = @cxxflags_set@
+ l = @l@
+ 
+-INCLUDES = -I. -I$(srcdir) 					-I$(top_srcdir)/intl -I$(top_builddir)/intl		-I$(srcdir)/../../panel					-I$(top_builddir)/panel 	-DGNOMELOCALEDIR=\""$(datadir)/locale"\"		-I$(includedir) $(GNOME_INCLUDEDIR)
++INCLUDES = -I. -I$(srcdir) 					-I$(top_srcdir)/intl -I$(top_builddir)/intl		-I$(srcdir)/../../panel					-I$(top_builddir)/panel 	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"		-I$(includedir) $(GNOME_INCLUDEDIR)
+ 
+ 
+ bin_PROGRAMS = life_applet
+--- applets/jbc/Makefile.in.orig	Sat Oct 16 13:12:59 1999
++++ applets/jbc/Makefile.in	Sat Oct 16 13:13:12 1999
+@@ -153,7 +153,7 @@
+ cxxflags_set = @cxxflags_set@
+ l = @l@
+ 
+-INCLUDES = -I. -I$(srcdir) 					-I$(top_srcdir)/intl -I$(top_builddir)/intl		-I$(srcdir)/../../panel					-I$(top_builddir)/panel 	-DGNOMELOCALEDIR=\""$(datadir)/locale"\"		-I$(includedir) $(GNOME_INCLUDEDIR)
++INCLUDES = -I. -I$(srcdir) 					-I$(top_srcdir)/intl -I$(top_builddir)/intl		-I$(srcdir)/../../panel					-I$(top_builddir)/panel 	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"		-I$(includedir) $(GNOME_INCLUDEDIR)
+ 
+ 
+ bin_PROGRAMS = jbc_applet
