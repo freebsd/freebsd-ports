@@ -40,6 +40,10 @@ WANT_SDL=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64"
+BROKEN=		"Does not compile on sparc64"
+.endif
+
 CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
 		--with-global-cfg=${PREFIX}/etc/quakeforge.conf \
 		--with-sharepath=${PREFIX}/share/quakeforge \
