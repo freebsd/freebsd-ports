@@ -1,5 +1,5 @@
 --- Makefile.orig	Thu Aug 26 09:49:08 1999
-+++ Makefile	Sat Oct  2 23:19:17 1999
++++ Makefile	Mon Oct  4 19:01:45 1999
 @@ -2,17 +2,17 @@
  # Maarten Boekhold (boekhold@cindy.et.tudelft.nl) 1995
  
@@ -31,3 +31,13 @@
  
  # Set this if your system needs extra libraries
  #
+@@ -42,7 +42,8 @@
+ all: dbf2mysql mysql2dbf
+ 
+ libdbf.a: dbf.o endian.o
+-	$(AR) rcs libdbf.a dbf.o endian.o
++	$(AR) rc libdbf.a dbf.o endian.o
++	$(RANLIB) libdbf.a
+ 
+ dbf2mysql: dbf2mysql.o libdbf.a
+ 	$(CC) $(CFLAGS) -s -L. $(MYSQLLIB) -o $@ dbf2mysql.o -ldbf \
