@@ -1,0 +1,15 @@
+--- ../vmware-distrib/vmmon-only/common/hostif.h.orig	Wed Jul 18 11:27:34 2001
++++ ../vmware-distrib/vmmon-only/common/hostif.h	Wed Jul 18 11:29:28 2001
+@@ -118,7 +118,12 @@
+ EXTERN void  HostIF_GlobalVMLock(int callerID);
+ EXTERN void  HostIF_GlobalVMUnLock(int callerID);
+ 
++#ifdef __FreeBSD__
++/* The HostIF_APIC_Base for FreeBSD still just takes two parameters */
++EXTERN MA    HostIF_APIC_Base(VMDriver *vm, Bool setVMPtr);
++#else
+ EXTERN MA    HostIF_APIC_Base(VMDriver *vm, Bool setVMPtr, Bool probe);
++#endif
+ EXTERN MA    HostIF_IOAPIC_Base(VMDriver *vm);
+ 
+ EXTERN void  HostIF_LockKernel(void);
