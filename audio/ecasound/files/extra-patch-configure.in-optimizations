@@ -1,20 +1,12 @@
---- configure.in.orig	Tue Dec  4 12:42:12 2001
-+++ configure.in	Tue Dec  4 12:42:51 2001
-@@ -74,7 +74,7 @@
+--- configure.in.orig	Mon Mar 10 20:10:14 2003
++++ configure.in	Thu Apr  3 19:22:56 2003
+@@ -67,7 +67,8 @@
+ dnl modifies: CXXFLAGS, CFLAGS
  dnl ---
- dnl Set CXXFLAGS.
- dnl ---
--CXXFLAGS="-O2 -D_REENTRANT -DNDEBUG -ffast-math -fstrict-aliasing -funroll-loops"
-+CXXFLAGS="-D_REENTRANT -DNDEBUG"
- dnl CXXFLAGS="-O2 -D_REENTRANT -fomit-frame-pointer -finline-functions -ffast-math -funroll-loops -Wall -Wstrict-prototypes -pedantic -fstrict-aliasing"
- 
- dnl ------------------------------------------------------------------
-@@ -84,7 +84,7 @@
- include_debug=yes)
- AM_CONDITIONAL(INCLUDE_DEBUG, test x$include_debug = xyes)
- if test x$include_debug = xyes; then
--CXXFLAGS="-D_REENTRANT -g -Wall -Wstrict-prototypes -ffast-math"
-+CXXFLAGS="-D_REENTRANT -g -Wall -Wstrict-prototypes"
- dnl CXXFLAGS="-D_REENTRANT -DENABLE_DBC -g -Wall -Wstrict-prototypes -ffast-math"
- dnl LDFLAGS="-pg -pedantic -funroll-loops"
- fi                                     
+ EXTRAFLAGS="-D_REENTRANT"
+-EXTRAGCCFLAGS="$EXTRAFLAGS -ffast-math -fstrict-aliasing -funroll-loops"
++EXTRAGCCFLAGS="$EXTRAFLAGS"
++dnl EXTRAGCCFLAGS="$EXTRAFLAGS -ffast-math -fstrict-aliasing -funroll-loops"
+ if test x${GXX} = xyes; then
+    CXXFLAGS="$CXXFLAGS $EXTRAFLAGS $EXTRAGCCFLAGS"
+ fi

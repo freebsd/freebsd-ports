@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	ecasound
-PORTVERSION=	2.0.4
+PORTVERSION=	2.2.2
 CATEGORIES=	audio
 MASTER_SITES=	http://ecasound.seul.org/download/
 
-MAINTAINER=	anarcat@anarcat.dyndns.org
+MAINTAINER=	anarcat@anarcat.ath.cx
 COMMENT=	Multitrack audio processing software
 
 USE_GMAKE=	yes
@@ -57,7 +57,8 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-configure.in-optimizations
 .endif
 
 MAN1=		ecasound-iam.1 ecasound.1 ecatools.1 ecaconvert.1 \
-		ecafixdc.1 ecanormalize.1 ecaplay.1 ecasignalview.1
+		ecafixdc.1 ecalength.1 ecamonitor.1 ecanormalize.1 \
+		ecaplay.1 ecasignalview.1
 MAN5=		ecasoundrc.5
 
 pre-everything::
@@ -72,19 +73,6 @@ pre-everything::
 post-patch:
 .if !defined(WITH_OPTIMIZED_CFLAGS)
 	@${PERL} -pi -e 's!-O2 -ffast-math!!' ${WRKSRC}/kvutils/Makefile.am
-.endif
-
-post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/ecasound
-	${MKDIR} ${PREFIX}/share/doc/ecasound/programmers_guide
-	${MKDIR} ${PREFIX}/share/doc/ecasound/users_guide
-	${INSTALL_MAN} ${WRKSRC}/Documentation/*.html ${WRKSRC}/Documentation/*.txt \
-		${PREFIX}/share/doc/ecasound
-	${INSTALL_MAN} ${WRKSRC}/Documentation/programmers_guide/*.html \
-		${PREFIX}/share/doc/ecasound/programmers_guide
-	${INSTALL_MAN} ${WRKSRC}/Documentation/users_guide/*.html \
-		${PREFIX}/share/doc/ecasound/users_guide
 .endif
 
 #	strip ${PREFIX}/bin/ecaconvert ${PREFIX}/bin/ecafixdc \
