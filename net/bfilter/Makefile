@@ -16,7 +16,7 @@ MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Smart filtering HTTP proxy
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
-		tre.5:${PORTSDIR}/textproc/libtre \
+		tre.6:${PORTSDIR}/textproc/libtre \
 		sigc-1.2.5:${PORTSDIR}/devel/libsigc++12
 
 GNU_CONFIGURE=	yes

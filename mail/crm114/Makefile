@@ -23,7 +23,7 @@ DISTFILES=	${DISTNAME}.tar.gz ${DISTNAME:R}.css.tar.gz
 MAINTAINER=	Meno.Abels@Adviser.com
 COMMENT=	An Markov based SpamFilter
 
-LIB_DEPENDS=	tre.5:${PORTSDIR}/textproc/libtre
+LIB_DEPENDS=	tre.6:${PORTSDIR}/textproc/libtre
 # there is no other then formail on this planet
 RUN_DEPENDS=	procmail:${PORTSDIR}/mail/procmail
 
