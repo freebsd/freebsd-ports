@@ -101,11 +101,11 @@
 %%Q3DIR%%instagib.cfg
 %%Q3DIR%%locs/pro-q3dm6.cfg
 %%Q3DIR%%locs/q3dm6.cfg
-%%Q3DIR%%paks/z-osp-game099v2.pk3
+%%Q3DIR%%paks/z-osp-game099v3.pk3
 %%Q3DIR%%spectool.cfg
 %%Q3DIR%%team.cfg
 %%Q3DIR%%vm/qagame.qvm
-%%Q3DIR%%z-osp-cgame099v2.pk3
+%%Q3DIR%%z-osp-cgame099v3.pk3
 %%Q3DIR%%z-osp-extra099u.pk3
 %%Q3DIR%%z-osp-players-099u.pk3
 @dirrm %%Q3DIR%%vm
