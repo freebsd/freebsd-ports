@@ -13,8 +13,8 @@ MASTER_SITES=	http://avifile.sourceforge.net/:binaries \
 		http://mplayerhq.hu/MPlayer/releases/:w32codec \
 		ftp://mplayerhq.hu/MPlayer/releases/:w32codec \
 		http://www2.mplayerhq.hu/MPlayer/releases/:w32codec \
-		http://ftp.mplayerhq.hu/MPlayer/releases/:w32codec \
-		http://ftp2.mplayerhq.hu/MPlayer/releases/:w32codec
+		ftp://ftp.mplayerhq.hu/MPlayer/releases/:w32codec \
+		ftp://ftp2.mplayerhq.hu/MPlayer/releases/:w32codec
 DISTFILES=	w32codec-${CODEC_MPLAYER_VERSION}.tar.bz2:w32codec \
 		binaries-${CODEC_VERSION}.tgz:binaries \
 		wmvds32.ax.gz
