@@ -56,9 +56,16 @@ share/gnome/help/bombermaze/C/index.html
 share/gnome/help/bombermaze/C/numeric.html
 share/gnome/help/bombermaze/C/topic.dat
 share/gnome/pixmaps/bombermaze.png
+share/locale/da/LC_MESSAGES/bombermaze.mo
+share/locale/de/LC_MESSAGES/bombermaze.mo
+share/locale/es/LC_MESSAGES/bombermaze.mo
 share/locale/fr/LC_MESSAGES/bombermaze.mo
+share/locale/it/LC_MESSAGES/bombermaze.mo
 share/locale/ja/LC_MESSAGES/bombermaze.mo
+share/locale/no/LC_MESSAGES/bombermaze.mo
 share/locale/pt_BR/LC_MESSAGES/bombermaze.mo
+share/locale/ru/LC_MESSAGES/bombermaze.mo
+share/locale/uk/LC_MESSAGES/bombermaze.mo
 @dirrm share/gnome/help/bombermaze/C
 @dirrm share/gnome/help/bombermaze
 @dirrm share/gnome/bombermaze/themes/space
