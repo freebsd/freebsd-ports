@@ -7,6 +7,7 @@
 
 PORTNAME=	smm++
 PORTVERSION=	5r0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.issever.de/smm/downloads/
 DISTNAME=	smm
