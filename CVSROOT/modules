@@ -1112,6 +1112,7 @@ crossgo32-djgpp2-pdcurses	ports/devel/crossgo32-djgpp2-pdcurses
 crossip		ports/dns/crossip
 crosspad	ports/misc/crosspad
 crossword	ports/games/crossword
+crp		ports/www/crp
 crw		ports/graphics/crw
 cryptcat	ports/net/cryptcat
 cryptix-jce	ports/java/cryptix-jce
