@@ -1,0 +1,12 @@
+Half-Life Admin Mod - the ultimate half-life server administration
+tool.
+
+This mod will let you give people access to your servers, without
+giving access to rcon. It also lets you define users who can access
+the server, each with a different password. It is a plug-in
+replacement for several mods.
+
+WWW: http://www.adminmod.org/
+
+- Patrick Li
+pat@databits.net

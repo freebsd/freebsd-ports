@@ -109,6 +109,7 @@
     SUBDIR += heroes
     SUBDIR += hex
     SUBDIR += hlserver-action
+    SUBDIR += hlserver-admin
     SUBDIR += hlserver-cs
     SUBDIR += hlserver-dod
     SUBDIR += hlserver-fa
