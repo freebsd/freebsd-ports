@@ -48,7 +48,7 @@ KINPUT2_DEF+=		-DUseWnn -Dport_WNNINCDIR=$(LOCALBASE)/include/wnn \
 			-Dport_WNNLIB="-L$(LOCALBASE)/lib -lwnn -lcrypt"
 .elif defined(WNN6)
 INPUT_METHOD+=		wnn6
-LIB_INPUT_METHOD+=	wnn6.1:${PORTSDIR}/japanese/Wnn6-lib
+LIB_INPUT_METHOD+=	wnn6.2:${PORTSDIR}/japanese/Wnn6-lib
 KINPUT2_DEF+=		-DUseWnn -DUseWnn6 -Dport_WNNINCDIR=$(LOCALBASE)/include/wnn6/wnn \
 			-Dport_WNNLIB="-L$(LOCALBASE)/lib -lwnn6 -lcrypt"
 .elif defined(WNN7)
