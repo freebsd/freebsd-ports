@@ -1,0 +1,15 @@
+HOpenGL is a Haskell binding for OpenGL (GL 1.2.1 / GLU 1.3) and GLUT
+for the lazy functional language Haskell. It uses a foreign language
+interface and complex instance heads, language extensions which are
+not yet fully standardized. Because of this, HOpenGL works only with
+recent versions of the Glasgow Haskell Compiler (GHC) and Hugs. With
+a little work it can probably tweaked to work with NHC98, but this has
+not been tested yet. Following the discussions in the relevant mailing
+lists, the above extensions are likely to be included into the next
+version of the Haskell language, so HOpenGL is simply a little bit
+ahead of time...  ;-)                                (From the README)
+
+WWW: http://haskell.cs.yale.edu/HOpenGL/
+
+- Janni
+jan.rochel@epost.de
