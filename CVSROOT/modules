@@ -9099,6 +9099,7 @@ python-doc-postscript-a4	ports/lang/python-doc-postscript-a4
 python-doc-postscript-letter	ports/lang/python-doc-postscript-letter
 python21	ports/lang/python21
 python22	ports/lang/python22
+python23	ports/lang/python23
 pythoncad	ports/cad/pythoncad
 pythondirector	ports/net/pythondirector
 pythoong	ports/games/pythoong
