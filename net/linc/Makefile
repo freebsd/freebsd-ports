@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	linc
-PORTVERSION=	0.1.19
+PORTVERSION=	0.1.20
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-beta2
+MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-beta3
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org

@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- Makefile.in.orig	Thu Jan 31 03:44:13 2002
-+++ Makefile.in	Thu Feb 14 11:53:48 2002
+--- Makefile.in.orig	Wed Apr  3 01:58:07 2002
++++ Makefile.in	Wed Apr  3 01:59:13 2002
 @@ -34,7 +34,7 @@
  includedir = @includedir@
  oldincludedir = /usr/include
@@ -12,10 +9,10 @@ $FreeBSD$
  pkgincludedir = $(includedir)/@PACKAGE@
  top_builddir = .
  
-@@ -100,7 +100,7 @@
+@@ -104,7 +104,7 @@
+ am__include = @am__include@
  am__quote = @am__quote@
  install_sh = @install_sh@
- 
 -SUBDIRS = glade doc tests
 +SUBDIRS = glade doc
  
