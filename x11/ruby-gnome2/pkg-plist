@@ -1,47 +1,27 @@
-%%RUBY_SITEARCHLIBDIR%%/gnome.so
-%%RUBY_SITELIBDIR%%/gnome.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/animator_demo.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/browser/gnobrows.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/browser/rbbr.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/browser/rbbr_gnome.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/browser/rbbr_rb.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/browser/rbdump.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gnome-init-popt.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gnome-hello/README.ja
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gnome-hello/gnoconfig.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gnome-hello/gnome-hello-0-basic.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gnome-hello/gnome-hello-1-menus.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gnome-hello/gnome-hello-2-i18n.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gnome-hello/gnome-hello-4-SM.rb
+%%RUBY_SITEARCHLIBDIR%%/gnome2.so
+%%RUBY_SITELIBDIR%%/gnome2.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gnome-app-helper.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gnome-config.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gnome-druid.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gnome-program.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test-gnome/about.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test-gnome/app-helper.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test-gnome/calculator.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test-gnome/canvas-arrowhead.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test-gnome/canvas-features.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test-gnome/canvas-fifteen.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test-gnome/canvas-primitives.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test-gnome/canvas.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test-gnome/clock.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test-gnome/bomb.xpm
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test-gnome/color-picker.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test-gnome/dateedit.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test-gnome/dialog.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test-gnome/entry.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test-gnome/file-entry.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test-gnome/flower.png
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test-gnome/font-picker.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test-gnome/href.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test-gnome/icon-entry.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test-gnome/less.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test-gnome/number-entry.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test-gnome/paper-selector.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test-gnome/icon-list.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test-gnome/pixmap-entry.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test-gnome/sample.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test-gnome/test-gnome-app.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test-gnome/test-gnome.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test-gnome/toroid.png
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/test-gnome
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/gnome-hello
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/browser
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/AUTHORS
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/NEWS
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ToDo
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README.gnome2-all
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

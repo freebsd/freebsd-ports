@@ -1,38 +1,34 @@
-# New ports collection makefile for:	ruby-gconf
+# New ports collection makefile for:	Ruby/GConf2
 # Date created:		20 October 2001
 # Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	gconf
-PORTVERSION=	0.2
+PORTNAME=	gconf2
+PORTVERSION=	${RUBY_GNOME_PORTVERSION}
 CATEGORIES=	devel ruby
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	ruby-gnome
+MASTER_SITES=	${RUBY_GNOME_MASTER_SITES}
+MASTER_SITE_SUBDIR=	${RUBY_GNOME_MASTER_SITE_SUBDIR}
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
+DISTNAME=	${RUBY_GNOME_DISTNAME}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-LIB_DEPENDS=	gconf-gtk-1.1:${PORTSDIR}/devel/gconf
+LIB_DEPENDS=	gconf-2.5:${PORTSDIR}/devel/gconf2
+RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/glib2.so:${PORTSDIR}/devel/ruby-glib2
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
-USE_GNOMENG=	yes
-USE_GNOME=	gtk12
 
-CONFIGURE_ARGS=	--with-gtk-config=${GTK_CONFIG}
+.include "${.CURDIR}/../../x11/ruby-gnome2/Makefile.common"
+
+WRKSRC=		${RUBY_GNOME_WRKSRC}/gconf
 INSTALL_TARGET=	site-install
 
-DOCS=	CREDITS \
-	ChangeLog \
-	INSTALL \
-	Makefile \
-	README \
-	README.DEV \
-	TODO
+DOCS=	ChangeLog \
+	README
 
 post-install:
 .if !defined(NOPORTDOCS)

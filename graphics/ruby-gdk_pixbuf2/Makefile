@@ -1,11 +1,11 @@
-# New ports collection makefile for:	ruby-gdk_pixbuf
+# New ports collection makefile for:	Ruby/GdkPixbuf2
 # Date created:		28 February 2001
 # Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	gdk_pixbuf
+PORTNAME=	gdk_pixbuf2
 PORTVERSION=	${RUBY_GNOME_PORTVERSION}
 CATEGORIES=	graphics ruby gnome
 MASTER_SITES=	${RUBY_GNOME_MASTER_SITES}
@@ -16,24 +16,20 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk.so:${PORTSDIR}/x11-toolkits/ruby-gtk
+LIB_DEPENDS=    gdk_pixbuf-2.0.0:${PORTSDIR}/x11-toolkits/gtk20
+RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 USE_XLIB=	yes
-USE_GNOMENG=	yes
-USE_GNOME=	glib12 libcapplet gdkpixbuf
 
-.include "${.CURDIR}/../../x11/ruby-gnome/Makefile.common"
+.include "${.CURDIR}/../../x11/ruby-gnome2/Makefile.common"
 
-WRKSRC=		${RUBY_GNOME_WRKSRC}/${PORTNAME}
-CONFIGURE_ARGS=	--with-glib-config=${GLIB_CONFIG}
+WRKSRC=		${RUBY_GNOME_WRKSRC}/gdkpixbuf
 INSTALL_TARGET=	site-install
 
-DOCS_EN=	ChangeLog	README
-
-post-extract:
-	${MV} ${WRKSRC:S/gdk_pixbuf$/gdkpixbuf/} ${WRKSRC}
+DOCS_EN=	ChangeLog \
+		README
 
 post-install:
 .if !defined(NOPORTDOCS)

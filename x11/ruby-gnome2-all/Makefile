@@ -1,11 +1,11 @@
-# New ports collection makefile for:	Ruby-GNOME-all
+# New ports collection makefile for:	Ruby/GNOME2-all
 # Date created:		3 June 2002
 # Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	gnome-all
+PORTNAME=	gnome2-all
 PORTVERSION=	${RUBY_GNOME_PORTVERSION}
 CATEGORIES=	x11 ruby gnome
 MASTER_SITES=	# none
@@ -15,23 +15,25 @@ EXTRACT_ONLY=	# none
 
 MAINTAINER=	knu@FreeBSD.org
 
-#RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/gtk.so:${PORTSDIR}/x11-toolkits/ruby-gtk
-RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/lglade.so:${PORTSDIR}/devel/ruby-libglade
-#RUN_DEPENDS+=	${RUBY_SITELIBDIR}/gdk_imlib.rb:${PORTSDIR}/graphics/ruby-gdk_imlib
-RUN_DEPENDS+=	${RUBY_SITELIBDIR}/gdk_pixbuf.rb:${PORTSDIR}/graphics/ruby-gdk_pixbuf
-#RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/gnome.so:${PORTSDIR}/x11/ruby-gnome
-RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/panel_applet.so:${PORTSDIR}/x11/ruby-panel-applet
-#RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/libart.so:${PORTSDIR}/graphics/ruby-libart
+RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/glib2.so:${PORTSDIR}/devel/ruby-glib2
+RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2
+RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/gdk_pixbuf2.so:${PORTSDIR}/graphics/ruby-gdk_pixbuf
+RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/gnome2.so:${PORTSDIR}/x11/ruby-gnome2
+RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/gnomecanvas2.so:${PORTSDIR}/graphics/ruby-gnomecanvas2
+RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/libart2.so:${PORTSDIR}/graphics/ruby-libart2
+RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/libglade2.so:${PORTSDIR}/devel/ruby-libglade2
+RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/gconf2.so:${PORTSDIR}/devel/ruby-gconf2
 
-# libglade	depends on gtk, gnome
-# gdk_imlib	depends on gtk
-# gdk_pixbuf	depends on gtk
-# gnome		depends on gtk, gdk_imlib, libart
-# panel-applet	depends on gtk, gnome
+# gtk2          depends on glib2
+# gdk_pixbuf2   depends on gtk2
+# gnome2        depends on gtk2, gnomecanvas2
+# gnomecanvas2  depends on glib2, gtk2 and libart2
+# libglade2     depends on gtk2 and gnome2 (optional)
+# gconf2        depends on glib2
 
-USE_RUBY=	yes
+USE_RUBY=       yes
 
-.include "${.CURDIR}/../../x11/ruby-gnome/Makefile.common"
+.include "${.CURDIR}/../../x11/ruby-gnome2/Makefile.common"
 
 NO_BUILD=	yes
 
