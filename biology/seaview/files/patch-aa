@@ -1,14 +1,15 @@
---- makefile.orig	Wed Sep 25 23:58:15 2002
-+++ makefile	Mon Nov 18 11:26:42 2002
-@@ -1,13 +1,15 @@
+
+$FreeBSD$
+
+--- makefile.orig	Thu Nov 21 10:48:08 2002
++++ makefile	Thu May 22 01:12:43 2003
+@@ -1,16 +1,16 @@
 -FLTK = ../fltk-1.1.0
-+OPT = -O2
+-
+ OBJECTS = seaview.o use_mase_files.o regions.o load_seq.o align.o xfmatpt.o comlines.o chooser_plus.o resource.o nexus.o old_file_chooser.o
  
--OBJECTS = seaview.o use_mase_files.o regions.o load_seq.o align.o xfmatpt.o comlines.o chooser_plus.o resource.o nexus.o old_file_chooser.o
-+OBJECTS = seaview.o use_mase_files.o regions.o load_seq.o align.o xfmatpt.o comlines.o chooser_plus.o resource.o nexus.o
- 
--CFLAGS  = -c $(OPT) -I$(FLTK)
-+CFLAGS  = -c $(OPT) -I$(PREFIX)/include
+-CFLAGS  = -c $(OPT) -I$(FLTK) $(DEBUG)
++CFLAGS+= -I $(PREFIX)/include -L $(PREFIX)/lib
  
 -CXX = CC
 +CXX = g++
@@ -16,8 +17,12 @@
 +all: seaview
  
  seaview : $(OBJECTS) 
--	$(CXX) -o $@ $(OBJECTS) -L$(FLTK)/lib -lfltk -lX11 -lm
-+	$(CXX) -o $@ $(OBJECTS) -L$(PREFIX)/lib -lfltk -lX11 -lMesaGL -lXext -lm
+-	$(CXX) $(DEBUG) -o $@ $(OBJECTS) -L$(FLTK)/lib -lfltk -lX11 -lm
++	$(CXX) $(CFLAGS) -o $@ $(OBJECTS) -lfltk -lX11 -lMesaGL -lXext -lm
  
  
  .SUFFIXES:	.cxx .h .o
+ 
+ .cxx.o :
+-	$(CXX) $(CFLAGS) $<
++	$(CXX) -c $(CFLAGS) $<
