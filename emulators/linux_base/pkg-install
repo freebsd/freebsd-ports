@@ -26,6 +26,10 @@ POST-INSTALL)
 		echo 'Re-mounting linprocfs...'
 		mount linprocfs
 	fi
+	if [ -n "`grep -w ^linproc /etc/fstab`" ]; then
+		echo 'Re-mounting linproc...'
+		mount linproc
+	fi
 	;;
 DEINSTALL)
 	if [ -n "`mount | grep -w ^linprocfs`" ]; then
