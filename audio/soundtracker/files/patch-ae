@@ -1,7 +1,11 @@
---- app/Makefile.am.orig	Mon Nov 29 01:49:43 1999
-+++ app/Makefile.am		Mon Nov 29 01:49:53 1999
-@@ -42,3 +42,3 @@
+--- app/Makefile.am.orig    Fri Feb 18 23:16:48 2000
++++ app/Makefile.am 	Fri Feb 18 23:18:42 2000
+@@ -44,6 +44,6 @@
+ 
  install-exec-local:
 -	chown root.root $(bindir)/soundtracker
+-	chmod +s $(bindir)/soundtracker
 +	chown root.wheel $(bindir)/soundtracker
- 	chmod +s $(bindir)/soundtracker
++#	chmod +s $(bindir)/soundtracker
+ 
+ stdir = $(datadir)/soundtracker

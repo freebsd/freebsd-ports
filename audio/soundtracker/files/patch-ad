@@ -1,7 +1,11 @@
---- app/Makefile.in.orig	Mon Nov 29 01:49:07 1999
-+++ app/Makefile.in		Mon Nov 29 01:49:59 1999
-@@ -466,3 +466,3 @@
+--- app/Makefile.in.orig	Fri Feb 18 23:15:50 2000
++++ app/Makefile.in 		Fri Feb 18 23:18:29 2000
+@@ -475,6 +475,6 @@
+ 
  install-exec-local:
 -	chown root.root $(bindir)/soundtracker
+-	chmod +s $(bindir)/soundtracker
 +	chown root.wheel $(bindir)/soundtracker
- 	chmod +s $(bindir)/soundtracker
++#	chmod +s $(bindir)/soundtracker
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
