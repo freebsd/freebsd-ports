@@ -42,6 +42,9 @@ AGSatellite0520*	ports/net/linux-agsatellite Unsure of licensing issues
 AlephOne-*		ports/games/alephone-data Bungie/Microsoft do not
 						allow charging for Marathon
 						data files
+adstudio-novm.tar.gz	ports/databases/adstudio Free for personal or educational use
+						but a commercial license is required
+						for all other usages.
 altivore.c		ports/security/altivore	No redistribution allowed
 apache*-ssl		ports/www/apache13-ssl	Crypto; export-controlled
 apache/mod_tidy-*	ports/www/mod_tidy	no license
