@@ -19,8 +19,8 @@ MAINTAINER=	max@FreeBSD.org
 PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	ptex2.1.10-11.patch
 
-BUILD_DEPENDS=	${LOCALBASE}/share/texmf/ptex/plain/base/ptex.tex:${PORTSDIR}/japanese/ptex-common
-RUN_DEPENDS=	${LOCALBASE}/share/texmf/ptex/plain/base/ptex.tex:${PORTSDIR}/japanese/ptex-common
+BUILD_DEPENDS=	${PREFIX}/share/texmf/ptex/plain/base/ptex.tex:${PORTSDIR}/japanese/ptex-common
+RUN_DEPENDS=	${PREFIX}/share/texmf/ptex/plain/base/ptex.tex:${PORTSDIR}/japanese/ptex-common
 
 MANUAL_PACKAGE_BUILD=	incompatible with other versions of ptex-*
 USE_GMAKE=	yes
