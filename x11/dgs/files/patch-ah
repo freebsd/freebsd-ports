@@ -1,0 +1,19 @@
+--- configure.orig	Wed Oct 20 15:57:45 1999
++++ configure	Wed Oct 20 15:58:34 1999
+@@ -2952,6 +2952,7 @@
+ s%@oldincludedir@%$oldincludedir%g
+ s%@infodir@%$infodir%g
+ s%@mandir@%$mandir%g
++s%@INSTALL@%install%g
+ s%@INSTALL_PROGRAM@%$INSTALL_PROGRAM%g
+ s%@INSTALL_SCRIPT@%$INSTALL_SCRIPT%g
+ s%@INSTALL_DATA@%$INSTALL_DATA%g
+@@ -3096,7 +3097,7 @@
+ s%@configure_input@%$configure_input%g
+ s%@srcdir@%$srcdir%g
+ s%@top_srcdir@%$top_srcdir%g
+-s%@INSTALL@%$INSTALL%g
++s%@INSTALL@%install%g
+ " $ac_file_inputs | (eval "$ac_sed_cmds") > $ac_file
+ fi; done
+ rm -f conftest.s*
