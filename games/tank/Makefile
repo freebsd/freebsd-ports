@@ -3,7 +3,7 @@
 # Date created:         4 Mar 1998
 # Whom:                 Donald Burr <dburr@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1998/05/15 15:01:10 dburr Exp $
+# $Id: Makefile,v 1.3 1998/05/30 12:36:17 dburr Exp $
 #
 
 DISTNAME=	tank-0.4a-src
@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.info.polymtl.ca/~coyote/tank/
 
 MAINTAINER=	dburr@FreeBSD.ORG
 
-LIB_DEPENDS=	MesaGL\\.13\\.:${PORTSDIR}/graphics/Mesa
+LIB_DEPENDS=	MesaGL\\.13\\.:${PORTSDIR}/graphics/Mesa2
 
 WRKSRC=		${WRKDIR}/${PKGNAME}
 
