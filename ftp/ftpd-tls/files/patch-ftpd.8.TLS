@@ -45,7 +45,14 @@
  when this file exists.
  .It Fl U
  Each concurrent
-@@ -182,14 +182,14 @@
+@@ -176,20 +176,20 @@
+ .El
+ .Pp
+ The file
+-.Pa /etc/nologin
++.Pa /var/run/nologin
+ can be used to disable ftp access.
+ If the file exists,
  .Nm
  displays it and exits.
  If the file
@@ -107,7 +114,8 @@
 -.It Pa /etc/ftpwelcome
 +.It Pa %%PREFIX%%/etc/ftpd-tls/ftpwelcome
  welcome notice
- .It Pa /etc/nologin
+-.It Pa /etc/nologin
++.It Pa /var/run/nologin
  displayed and access refused
  .It Pa /var/run/utmp
  list of users on the system
