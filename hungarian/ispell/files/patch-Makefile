@@ -1,51 +1,201 @@
---- Makefile.orig	Wed Nov 20 00:46:09 2002
-+++ Makefile	Mon Nov 25 09:49:09 2002
-@@ -12,16 +12,16 @@
+--- Makefile.orig	Mon Jun 30 07:05:31 2003
++++ Makefile	Thu Jul 24 01:07:50 2003
+@@ -8,7 +8,7 @@
+ # célkönyvtárak prefixuma
+ PREFIX?=/usr
+ # ispell célkönyvtár; ide kerülnek: magyar.hash hungarian.hash magyar.aff
+-ISPELLDIR?=$(PREFIX)/lib/ispell
++ISPELLDIR?=$(PREFIX)/share/ispell
+ # myspell célkönyvtár; ide kerülnek:
+ # hu_HU.dic hu_HU.aff hungarian.dic hungarian.aff
+ MYSPELLDIR?=$(PREFIX)/share/myspell
+@@ -16,7 +16,7 @@
+ OODIR?=$(PREFIX)/OpenOffice.org/user/wordbook
+ # parancsok
+ INSTALL_DATA?=install
+-M4?=m4
++M4?=gm4
+ CC?=cc
+ FLEX?=flex
+ AWK?=awk
+@@ -31,7 +31,7 @@
+ # gyökérkönyvtár
+ ROOTDIR=$(shell pwd)
+ # munkakönyvtar
+-WRKDIR=$(ROOTDIR)/tmp
++WKDIR=$(ROOTDIR)/tmp
+ # a szótárkönyvtár
+ SZOTAR=$(ROOTDIR)/szotar
+ # affix állományok
+@@ -39,7 +39,7 @@
+ # awk scriptek
+ AWKDIR=$(ROOTDIR)/awk
+ # szótárfájl
+-DICT=$(WRKDIR)/dictionary
++DICT=$(WKDIR)/dictionary
+ # soremelés
+ EN=
+ EC=
+@@ -52,48 +52,48 @@
  
- magyar.aff: aff.fej aff.alanyi aff.fonev
- 	# ******* magyar ispell ragozási táblázat (magyar.aff) elõállítása *********
--	cat aff.fej aff.alanyi aff.fonev aff.fonev.morfo | m4 >magyar.aff
--	cat aff.targyas aff.ige_kiv | m4 >>magyar.aff
-+	cat aff.fej aff.alanyi aff.fonev aff.fonev.morfo | gm4 >magyar.aff
-+	cat aff.targyas aff.ige_kiv | gm4 >>magyar.aff
+ # keresési útvonalak:
+ 	vpath %.aff $(AFFDIR)
+-	vpath %.aff $(WRKDIR)
+-	vpath %.hash $(WRKDIR)
+-	vpath %.dict $(WRKDIR)
++	vpath %.aff $(WKDIR)
++	vpath %.hash $(WKDIR)
++	vpath %.dict $(WKDIR)
+ 	vpath %.awk $(AWKDIR)
  
- magyar.dict: ige_gen.awk fonev_gen.awk
- 	# ******* magyar ispell alapszótár (magyar.dict) elõállítása *********
- 	# szótárak egybemásolása
--	for i in _alap/*; do j=$$(basename $$i | sed 's/\..*$$//'); cat [A-Z]*/$$j [A-Z]*/$$j.* | \
-+	-for i in _alap/*; do j=$$(basename $$i | sed 's/\..*$$//'); cat [A-Z]*/$$j [A-Z]*/$$j.* | \
- 	    grep -v '#[A-Z]' | \
- 	    sed 's/[	 ]*#.*$$//' | grep -v '^$$' >$$j; done
--	for i in _alap/*; do j=$$(basename $$i | sed 's/\..*$$//'); cat [A-Z]*/$$j [A-Z]*/$$j.* | \
-+	-for i in _alap/*; do j=$$(basename $$i | sed 's/\..*$$//'); cat [A-Z]*/$$j [A-Z]*/$$j.* | \
- 	    grep '#$(SPELL)' | \
- 	    sed 's/[	 ]*#.*$$//' | grep -v '^$$' >>$$j; done
- 	# igékbõl képzett más szófajú alakok elõállítása
-@@ -67,19 +67,19 @@
- 	awk -f melleknev_gen.awk <ige_ando | awk -f igekoto_filter.awk >>magyar.dict
- 	awk -f melleknev_gen.awk <ige_hato | awk -f igekoto_filter.awk >>magyar.dict
- 	# egyéb kivételek
--	cat kivetelek/igekötõs/* | grep -v ^# | m4 | tr "\t" "\n" | grep -v ^$$ | sed -e 's/$$/\/X/' >>magyar.dict
--	cat ragozatlan kivetelek/ragozatlan/* | m4 | grep -v ^# | grep -v "#[A-Z]" | sed 's/[	 ]*#.*$$//' | tr "\t" "\n" >>magyar.dict
--	cat ragozatlan kivetelek/ragozatlan/* | m4 | grep '#$(SPELL)' | sed 's/[	 ]*#.*$$//' | tr "\t" "\n" >>magyar.dict
-+	cat kivetelek/igekötõs/* | grep -v ^# | gm4 | tr "\t" "\n" | grep -v ^$$ | sed -e 's/$$/\/X/' >>magyar.dict
-+	cat ragozatlan kivetelek/ragozatlan/* | gm4 | grep -v ^# | grep -v "#[A-Z]" | sed 's/[	 ]*#.*$$//' | tr "\t" "\n" >>magyar.dict
-+	cat ragozatlan kivetelek/ragozatlan/* | gm4 | grep '#$(SPELL)' | sed 's/[	 ]*#.*$$//' | tr "\t" "\n" >>magyar.dict
+ # ez a default target ha nincs megadva paraméter
+-default: menu all
++default: all
  
- install:
- 	# magyar.hash, magyar.aff a helyére, rendszergazdaként adjuk ki!
--	! [ -d $(DESTDIR)/usr/lib/ispell/ ] && mkdir /usr/lib/ispell || true
--	mv magyar.hash $(DESTDIR)/usr/lib/ispell
--	mv magyar.aff $(DESTDIR)/usr/lib/ispell
-+	##@#! [ -d $(DESTDIR)/usr/lib/ispell/ ] && mkdir /usr/lib/ispell || true
-+	##@#mv magyar.hash $(DESTDIR)/usr/lib/ispell
-+	##@#mv magyar.aff $(DESTDIR)/usr/lib/ispell
- 	# hungarian.hash -> magyar.hash kötés létrehozása
--	! [ -f $(DESTDIR)/usr/lib/ispell/hungarian.hash ] && ln -s magyar.hash $(DESTDIR)/usr/lib/ispell/hungarian.hash || true
-+	##@#! [ -f $(DESTDIR)/usr/lib/ispell/hungarian.hash ] && ln -s magyar.hash $(DESTDIR)/usr/lib/ispell/hungarian.hash || true
- 	# spellhtml és spellhtmlic a helyére
--	cp spellhtml/spellhtmlic spellhtml/spellhtml $(DESTDIR)/usr/bin
-+	##@#cp spellhtml/spellhtmlic spellhtml/spellhtml $(DESTDIR)/usr/bin
+ # modulválasztós, menüs interfész
+ menu:
+ 	@$(SH) bin/modul $(SZOTAR)
  
+ # munkakönyvtárak létrehozása
+-$(WRKDIR) $(OODIR) $(MYSPELLDIR) $(ISPELLDIR): 
++$(WKDIR) $(OODIR) $(MYSPELLDIR) $(ISPELLDIR): 
+ 	@mkdir -p $@ 
  
- inst:
+ # hasítótábla létrehozása a megfelelõ helyesírás-ellenõrzõhöz (Ispell/Myspell)
+ # magyar4X.hash ahol X={ispell,myspell}
+-magyar4%.hash: $(WRKDIR) magyar4%.dict magyar.aff
++magyar4%.hash: $(WKDIR) magyar4%.dict magyar.aff
+ 	@echo "===> magyar $(*F) ragozási szótár (magyar4$(*F).hash)"
+-	@buildhash $(WRKDIR)/magyar4$(*F).dict $(WRKDIR)/magyar.aff \
+-	    $(WRKDIR)/magyar4$(*F).hash 2> $(WRKDIR)/magyar4$(*F).log
++	@buildhash $(WKDIR)/magyar4$(*F).dict $(WKDIR)/magyar.aff \
++	    $(WKDIR)/magyar4$(*F).hash 2> $(WKDIR)/magyar4$(*F).log
+ 
+ # szótár (.dic állomány) létrehozása a megfelelõ helyesírás-ellenõrzõhöz (Ispell/Myspell)
+ # magyar4X.dict ahol X={ispell,myspell}
+-magyar4%.dict: $(WRKDIR)
++magyar4%.dict: $(WKDIR)
+ 	@echo "===> magyar $(*F) alapszótár (magyar4$(*F).dict) elõállítása"
+ 
+ 	@echo "==> szótárak egybemásolása"
+-	@$(SH) bin/copydict $(SZOTAR) $(WRKDIR) $(*F)
++	$(SH) bin/copydict $(SZOTAR) $(WKDIR) $(*F)
+ 
+ 	@echo "==> igébõl képzett alakok elõállítása"
+-	@$(SH) bin/igesgen $(ROOTDIR)
++	$(SH) bin/igesgen $(ROOTDIR)
+ 
+ 	@echo "==> igék"
+-	@$(SH) bin/igek $(ROOTDIR)
++	$(SH) bin/igek $(ROOTDIR)
+ 
+ 	@echo "==> fõnevek"
+-	@$(SH) bin/fonevek $(ROOTDIR)
++	$(SH) bin/fonevek $(ROOTDIR)
+ 
+ 	@echo "==> melléknevek"
+-	@$(SH) bin/melleknevek $(ROOTDIR) $(*F)
++	$(SH) bin/melleknevek $(ROOTDIR) $(*F)
+ 
+ # egyéb kivételek: az m4 miatt nem megy külön héjprogramba
+ 	@echo "==> kivételek"
+@@ -116,13 +116,13 @@
+ 		| tr "\t" "\n" \
+ 		>> $(DICT)
+ 	@echo $(EN) ."$(EC)"
+-	@cat $(WRKDIR)/ragozatlan.2 $(SZOTAR)/kivetelek/ragozatlan/*.2* \
++	@cat $(WKDIR)/ragozatlan.2 $(SZOTAR)/kivetelek/ragozatlan/*.2* \
+ 		| $(M4) | grep -v ^# | grep -v "#[A-Z]" \
+ 		| sed 's/[	 ]*#.*$$//' \
+ 		| $(AWK) -f $(AWKDIR)/tovek.awk \
+ 		>> $(DICT)
+ 	@echo $(EN) ."$(EC)"
+-	@cat $(WRKDIR)/ragozatlan.2 $(SZOTAR)/kivetelek/ragozatlan/*.2* \
++	@cat $(WKDIR)/ragozatlan.2 $(SZOTAR)/kivetelek/ragozatlan/*.2* \
+ 		| $(M4) | grep -i "#$(*F)" | sed 's/[	 ]*#.*$$//' \
+ 		| $(AWK) -f $(AWKDIR)/tovek.awk \
+ 		>> $(DICT)
+@@ -132,25 +132,25 @@
+ 	@echo "==> tiltott szavak"
+ 	@$(SH) bin/tiltott $(ROOTDIR) $(*F)
+ 
+-	@mv $(DICT) $(WRKDIR)/magyar4$(*F).dict
++	@mv $(DICT) $(WKDIR)/magyar4$(*F).dict
+ 	@echo ok.
+ 
+ # ragozási táblázat (magyar.aff) elõállítása
+-magyar.aff: $(WRKDIR) eleje.aff ige_alanyi.aff fonev.aff
++magyar.aff: $(WKDIR) eleje.aff ige_alanyi.aff fonev.aff
+ 	@echo "===> ragozási táblázat (magyar.aff) elõállítása"
+ 	@cd $(AFFDIR);\
+ 	    cat eleje.aff ige_alanyi.aff fonev.aff fonev_morfo.aff \
+-	    | $(M4) > $(WRKDIR)/magyar.aff;\
++	    | $(M4) > $(WKDIR)/magyar.aff;\
+ 	    cat ige_targyas.aff ige_morfo.aff \
+-	    | $(M4) >> $(WRKDIR)/magyar.aff;
++	    | $(M4) >> $(WKDIR)/magyar.aff;
+ 
+ # ispell-installálás: magyar.hash, magyar.aff a helyére (ISPELLDIR könyvtár)
+ # a default értékkel csak rendszergazdaként tudjuk kiadni!
+ install_ispell: ispell $(ISPELLDIR)
+ 	@echo "==> ispell állományok (magyar.aff magyar.hash) telepítése"
+ 	@echo "	célkönyvtár: $(ISPELLDIR)"
+-	@$(INSTALL_DATA) $(WRKDIR)/magyar.aff $(ISPELLDIR)/magyar.aff
+-	@$(INSTALL_DATA) $(WRKDIR)/magyar4ispell.hash $(ISPELLDIR)/magyar.hash
++	@$(INSTALL_DATA) $(WKDIR)/magyar.aff $(ISPELLDIR)/magyar.aff
++	@$(INSTALL_DATA) $(WKDIR)/magyar4ispell.hash $(ISPELLDIR)/magyar.hash
+ # hungarian.aff link nem kell?
+ 	@if [ ! -h $(ISPELLDIR)/hungarian.hash ]; then \
+ 		ln -s magyar.hash $(ISPELLDIR)/hungarian.hash; \
+@@ -163,7 +163,7 @@
+ 	@echo "==> myspell állományok (hu_HU.dic és hu_HU.aff) telepítése"
+ 	@echo "	célkönyvtár: $(MYSPELLDIR)"
+ 
+-	@cp -f $(WRKDIR)/hu_HU.{dic,aff} $(MYSPELLDIR)/
++	@cp -f $(WKDIR)/hu_HU.{dic,aff} $(MYSPELLDIR)/
+ #	
+ # magyar.aff -> hu_HU.aff kötés létrehozása
+ 	@echo " myspell linkek ({magyar,hungarian}.{dic,aff}) létrehozása"
+@@ -189,7 +189,7 @@
+ install_OO: myspell $(OODIR)
+ 	@echo "OpenOffice.org állományok (hu_HU.dic és hu_HU.aff) telepítése"
+ 	@echo "	célkönyvtár: $(OODIR)"
+-	@$(INSTALL_DATA) $(WRKDIR)/hu_HU.{dic,aff} $(OODIR)
++	@$(INSTALL_DATA) $(WKDIR)/hu_HU.{dic,aff} $(OODIR)
+ 
+ install: install_all
+ 
+@@ -206,9 +206,9 @@
+ # a myspellhez elõállított hashtáblából (magyar4myspell.hash)
+ hu_HU.aff: magyar4myspell.hash
+ 	@echo "===> myspell ragozási táblázat (hu_HU.aff) elõállítása"
+-	@$(SH) bin/i2myspell $(WRKDIR)/magyar4myspell MYSPELL_heading \
++	@$(SH) bin/i2myspell $(WKDIR)/magyar4myspell MYSPELL_heading \
+ 		A-ZÁÉÍÓÖÕÚÜÛ a-záéíóöõúüû | \
+-		sed 's/q\([^[]*\]\)/-\1/' >$(WRKDIR)/hu_HU.aff 
++		sed 's/q\([^[]*\]\)/-\1/' >$(WKDIR)/hu_HU.aff 
+ # q kötõjellé alakítva a szabályokban
+ 
+ # hu_HU.dic szótár elõállítása
+@@ -216,10 +216,10 @@
+ hu_HU.dic: magyar4myspell.hash
+ 	@echo "===> myspell szótár (hu_HU.dic) elõállítása"
+ 	@$(SH) bin/i2myspell \
+-	    -d $(WRKDIR)/magyar4myspell.dict > $(WRKDIR)/hu_HU.dic
++	    -d $(WKDIR)/magyar4myspell.dict > $(WKDIR)/hu_HU.dic
+ 
+ # minden komponens kompilálása
+-all: ispell myspell
++all: ispell
+ 
+ # új modul létrehozása
+ new:
+@@ -228,7 +228,7 @@
+ 
+ # takarítás
+ clean: 
+-	@-rm -rf $(WRKDIR) *~
++	@-rm -rf $(WKDIR) *~
+ 
+ # a modulválasztás defaultra való visszaállítása
+ # a kizárandó modulok explicite megadandók az "if"-ben

@@ -1,7 +1,9 @@
 bin/ispell-hu
-share/ispell/magyar.aff
-share/ispell/magyar.dict
-share/ispell/magyar.hash
-%%PORTDOCS%%share/doc/hu-ispell/README
-%%PORTDOCS%%share/doc/hu-ispell/OLVASSEL
-%%PORTDOCS%%@dirrm share/doc/hu-ispell
+%%DATADIR%%/magyar.aff
+%%DATADIR%%/magyar.dict
+%%DATADIR%%/magyar.hash
+%%DATADIR%%/hungarian.hash
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/OLVASSEL
+%%PORTDOCS%%%%DOCSDIR%%/GYIK
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
