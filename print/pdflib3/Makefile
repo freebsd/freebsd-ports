@@ -3,7 +3,7 @@
 # Date created:		Mon Jan 18 17:03:33 CET 1999
 # Whom:			Dirk Froemberg <dirk@FreeBSD.org>
 #
-# $Id: Makefile,v 1.2 1999/05/19 21:45:53 dirk Exp $
+# $Id: Makefile,v 1.3 1999/07/30 21:03:54 dirk Exp $
 #
 
 DISTNAME=	pdflib-2.0
@@ -17,6 +17,7 @@ RUN_DEPENDS=	${PREFIX}/lib/afm/Courier:${PORTSDIR}/print/afm
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff34 \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
+FETCH_BEFORE_ARGS=	-b
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-perl5=${PERL} \
 		--with-tiff=${PREFIX} \
