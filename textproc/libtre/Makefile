@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	libtre
-PORTVERSION=	0.6.8
-PORTREVISION=	1
+PORTVERSION=	0.7.0
 CATEGORIES=	textproc
 MASTER_SITES=	http://laurikari.net/tre/
 DISTNAME=	tre-${PORTVERSION}
@@ -19,7 +18,7 @@ COMMENT=	A lightweight fully POSIX compliant regexp matching library
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig lthack
 USE_GETOPT_LONG=	yes
-USE_INC_LIBTOOL_VER=	13
+USE_LIBTOOL_VER=	15
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 INSTALLS_SHLIB=	yes
