@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.202 1999/05/01 02:28:58 taoka Exp $
+# $Id: Makefile,v 1.203 1999/05/01 02:39:36 taoka Exp $
 #
 
     SUBDIR += 3dc
@@ -96,6 +96,7 @@
     SUBDIR += tksol
     SUBDIR += tvp
     SUBDIR += uox3
+    SUBDIR += wmtictactoe
     SUBDIR += wmtimebomb
     SUBDIR += wmeyes
     SUBDIR += xabacus
