@@ -7,7 +7,7 @@
 
 PORTNAME=	quagga
 PORTVERSION=	0.96.5
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://quagga.net/download/
 
@@ -89,8 +89,6 @@ USE_RC_SUBR=	yes
 RC_DIR=		${PREFIX}/etc/rc.d
 RC_SUFX=	.sh
 .endif
-
-QUAGGA_SCRIPTS=	zebra ripd ripngd ospfd ospf6d bgpd
 
 SED_SCRIPT=	-e 's,%%PREFIX%%,${PREFIX},g' \
 		-e 's,%%SYSCONF_DIR%%,${SYSCONF_DIR},g' \
