@@ -8,9 +8,11 @@
     SUBDIR += clean-theme-gtk
     SUBDIR += fltk
     SUBDIR += fox
+    SUBDIR += gnome-look
     SUBDIR += gob
     SUBDIR += gtk--
     SUBDIR += gtk-engines
+    SUBDIR += gtk-engines-collection
     SUBDIR += gtk10
     SUBDIR += gtk12
     SUBDIR += gtkglarea
