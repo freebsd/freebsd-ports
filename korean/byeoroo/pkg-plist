@@ -1,0 +1,18 @@
+bin/byeoroo
+lib/byeoroo/byeoroo.real
+@dirrm lib/byeoroo
+share/byeoroo/2.kdf
+share/byeoroo/Byeoroo
+share/byeoroo/loose390.kdf
+share/byeoroo/strict390.kdf
+share/byeoroo/strict3f.kdf
+share/byeoroo/qwertywhole.ksm
+share/byeoroo/raw.ksm
+share/byeoroo/sample.cd
+share/byeoroo/sample.cdi
+share/byeoroo/XLC_LOCALE
+@comment copy new locale definition(no harm, so need not be uninstalled)
+@exec if [ -f %D/lib/X11/locale/ko/XLC_LOCALE ]; then mv -f %D/lib/X11/locale/ko/XLC_LOCALE %D/lib/X11/locale/ko/XLC_LOCALE.orig; fi
+@exec cp %D/share/byeoroo/XLC_LOCALE %D/lib/X11/locale/ko/
+@unexec if [ -f %D/lib/X11/locale/ko/XLC_LOCALE.orig ]; then mv -f %D/lib/X11/locale/ko/XLC_LOCALE.orig %D/lib/X11/locale/ko/XLC_LOCALE; fi
+@dirrm share/byeoroo

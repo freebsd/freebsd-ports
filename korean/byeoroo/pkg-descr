@@ -1,0 +1,13 @@
+Byeoroo: An X11R6 Input Method Server for the Korean Language
+
+  Byeoroo supports over-the-spot, off-the-spot input styles.
+  For more information, please refer documentation files.
+
+  *NOTE*: Byeoroo is in an alpha stage and very unstable.
+  Use at your own risk.
+
+  Byeoroo is by Park, Jae-hyon <jhpark@entropy.kaist.ac.kr>
+  Autoconf patch by Changwoo Ryu <cwryu@adam.kaist.ac.kr>
+
+--
+CHOI Junho <cjh@kr.freebsd.org>
