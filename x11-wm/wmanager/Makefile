@@ -8,12 +8,12 @@
 PORTNAME=	wmanager
 PORTVERSION=	0.2.1
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://kassandra.techfak.uni-bielefeld.de/mtessmer/wmanager/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	trevor
 EXTRACT_SUFX=	-src.tar.bz2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 window manager selector
-BROKEN=		unfetchable
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
