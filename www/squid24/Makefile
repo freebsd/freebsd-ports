@@ -9,7 +9,7 @@ PORTNAME=	squid
 PORTVERSION=	2.4
 PORTREVISION=	10
 CATEGORIES=	www
-MASTER_SITES=  \
+MASTER_SITES=	\
 	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 	ftp://www.unimelb.edu.au/pub/cwis/servers/unix/squid/%SUBDIR%/ \
 	ftp://sunsite.auc.dk/pub/infosystems/squid/%SUBDIR%/ \
@@ -25,8 +25,11 @@ PATCHFILES=
 MAINTAINER=	tmseck@netcologne.de
 COMMENT=	The successful WWW proxy cache and accelerator
 
+CONFLICTS=	squid-*
+
 DIST_SUBDIR=	squid2.4
-PATCH_DIST_STRIP= -p0
+PATCH_DIST_STRIP=	-p0
+
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 USE_PERL5_RUN=	yes
