@@ -1,0 +1,11 @@
+--- Makefile.global.in.orig	Sun Dec  6 00:08:56 1998
++++ Makefile.global.in	Sat Feb 27 04:23:12 1999
+@@ -79,7 +79,7 @@
+ POSTMANDIR= $(POSTGRESDIR)/man
+ 
+ # Where the formatted documents (e.g., the reference manual) get installed.
+-POSTDOCDIR= $(POSTGRESDIR)/doc
++POSTDOCDIR= !!PREFIX!!/share/doc/pgsql
+ 
+ # Where the header files necessary to build frontend programs get installed.
+ HEADERDIR= $(POSTGRESDIR)/include
