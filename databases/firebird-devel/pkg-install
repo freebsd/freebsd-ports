@@ -73,6 +73,10 @@ EOF
 elif [ "$2" = "POST-INSTALL" ]; then
 chown -R firebird:firebird $PKG_PREFIX/firebird
 
+# make lib ldconfig-compatible
+chown -R root:wheel $PKG_PREFIX/firebird/lib
+chmod -R g-w $PKG_PREFIX/firebird/lib
+
 # Turn everybody to read only.
 chmod -R o=r $PKG_PREFIX/firebird
 
