@@ -3,7 +3,7 @@
 # Date created:         Dec 1 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.13 1998/09/17 00:50:50 asami Exp $
+# $Id: Makefile,v 1.14 1999/01/23 07:05:20 vanilla Exp $
 #
 
 DISTNAME=       arena-CJK-beta3a
@@ -18,6 +18,7 @@ LIB_DEPENDS+=   png.3:${PORTSDIR}/graphics/png
 
 BROKEN=		png upgrade
 
+USE_XLIB=	yes
 WRKSRC=         ${WRKDIR}/WWW
 
 do-build:
