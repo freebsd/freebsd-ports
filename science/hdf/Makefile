@@ -16,6 +16,8 @@ COMMENT=	Hierarchical Data Format library (from NCSA)
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
+CONFLICTS=	netcdf-*
+
 MAN1=		hdf.1 hdfunpac.1 ncdump.1 ncgen.1
 MAN3=		gr_chunk.3
 MANCOMPRESSED=	maybe

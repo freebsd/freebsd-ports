@@ -17,6 +17,8 @@ COMMENT=	Library for machine-independent, array-oriented data access
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
+CONFLICTS=	hdf-4.*
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-fPIC -DPIC -Df2cFortran"
 INSTALLS_SHLIB=	yes
