@@ -20,7 +20,7 @@ case "$1" in
             ;;
     start )
             echo -n ' internal modem'
-            kldstat -n mwave 2>/dev/null >/dev/null || kldload /usr/local/share/mwavem/mwave
+            kldstat -n mwave 2>/dev/null >/dev/null || kldload /usr/local/share/mwavem/mwave.ko
             ${MWAVEM_PATH}${MWAVEM_NAME} > /dev/null &
             ;;
 esac
