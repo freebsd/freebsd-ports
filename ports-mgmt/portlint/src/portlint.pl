@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $Id: portlint.pl,v 1.71 2004/12/17 17:23:52 marcus Exp $
+# $Id: portlint.pl,v 1.73 2005/02/14 08:17:17 marcus Exp $
 #
 
 use vars qw/ $opt_a $opt_A $opt_b $opt_C $opt_c $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
@@ -40,7 +40,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 6;
-my $micro = 10;
+my $micro = 11;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -651,6 +651,14 @@ sub checkplist {
 				"disallowed.");
 		}
 
+		if ($_ =~ /charset\.alias$/ || $_ =~ /locale\.alias$/) {
+			&perror("WARN: $file [$.]: installing charset.alias or locale.alias, ".
+				"please add USE_GETTEXT=yes and use libintl from devel/gettext ".
+				"instead of from outdated bundled one if possible. ".
+				"See http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/71531 ".
+				"for more details.");
+		}
+
 		if ($_ =~ /\.la$/ && $makevar{USE_LIBTOOL_VER} eq '') {
 			&perror("WARN: $file [$.]: installing libtool archives, ".
 				"please use USE_LIBTOOL_VER in Makefile if possible.  ".
@@ -1221,6 +1229,7 @@ pax perl printf rm rmdir ruby sed sh sort touch tr which xargs xmkmf
 				&& $curline !~ /^MAINTAINER(.)?=[^\n]+$i/m
 				&& $curline !~ /^CATEGORIES(.)?=[^\n]+$i/m
 				&& $curline !~ /^#.+$/m
+				&& $curline !~ /\-\-$i/m
 				&& $curline !~ /^COMMENT(.)?=[^\n]+$i/m) {
 					&perror("WARN: $file [$lineno]: possible direct use of ".
 						"command \"$i\" found. use ".
