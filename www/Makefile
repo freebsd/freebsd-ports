@@ -114,6 +114,7 @@
     SUBDIR += jakarta-jmeter
     SUBDIR += jakarta-tomcat3
     SUBDIR += jakarta-tomcat4
+    SUBDIR += jakarta-tomcat41
     SUBDIR += jdresolve
     SUBDIR += jesred
     SUBDIR += jetty
