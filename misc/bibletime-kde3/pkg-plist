@@ -1,0 +1,105 @@
+share/apps/bibletime/printing/bw_muchtext.xml
+share/apps/bibletime/printing/standard.xml
+@unexec rmdir %D/share/apps/bibletime/printing 2>/dev/null || true
+share/apps/bibletime/bibletimeui.rc
+share/apps/bibletime/pics/startuplogo.png
+@unexec rmdir %D/share/apps/bibletime/pics 2>/dev/null || true
+@unexec rmdir %D/share/apps/bibletime 2>/dev/null || true
+@unexec rmdir %D/share/apps 2>/dev/null || true
+share/icons/hicolor/16x16/actions/bt_bible.png
+share/icons/hicolor/16x16/actions/bt_bible_add.png
+share/icons/hicolor/16x16/actions/bt_bible_locked.png
+share/icons/hicolor/16x16/actions/bt_book.png
+share/icons/hicolor/16x16/actions/bt_book_add.png
+share/icons/hicolor/16x16/actions/bt_book_locked.png
+share/icons/hicolor/16x16/actions/bt_cascade.png
+share/icons/hicolor/16x16/actions/bt_cascade_auto.png
+share/icons/hicolor/16x16/actions/bt_commentary.png
+share/icons/hicolor/16x16/actions/bt_commentary_add.png
+share/icons/hicolor/16x16/actions/bt_commentary_locked.png
+share/icons/hicolor/16x16/actions/bt_displayconfig.png
+share/icons/hicolor/16x16/actions/bt_lexicon.png
+share/icons/hicolor/16x16/actions/bt_lexicon_add.png
+share/icons/hicolor/16x16/actions/bt_lexicon_locked.png
+share/icons/hicolor/16x16/actions/bt_startconfig.png
+share/icons/hicolor/16x16/actions/bt_swordconfig.png
+share/icons/hicolor/16x16/actions/bt_sync.png
+share/icons/hicolor/16x16/actions/bt_tile.png
+share/icons/hicolor/16x16/actions/bt_tile_auto.png
+@unexec rmdir %D/share/icons/hicolor/16x16/actions 2>/dev/null || true
+share/icons/hicolor/16x16/apps/bibletime.png
+@unexec rmdir %D/share/icons/hicolor/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
+share/icons/hicolor/22x22/actions/bt_bible.png
+share/icons/hicolor/22x22/actions/bt_bible_add.png
+share/icons/hicolor/22x22/actions/bt_bible_locked.png
+share/icons/hicolor/22x22/actions/bt_book.png
+share/icons/hicolor/22x22/actions/bt_book_add.png
+share/icons/hicolor/22x22/actions/bt_book_locked.png
+share/icons/hicolor/22x22/actions/bt_cascade.png
+share/icons/hicolor/22x22/actions/bt_cascade_auto.png
+share/icons/hicolor/22x22/actions/bt_commentary.png
+share/icons/hicolor/22x22/actions/bt_commentary_add.png
+share/icons/hicolor/22x22/actions/bt_commentary_locked.png
+share/icons/hicolor/22x22/actions/bt_displayconfig.png
+share/icons/hicolor/22x22/actions/bt_lexicon.png
+share/icons/hicolor/22x22/actions/bt_lexicon_add.png
+share/icons/hicolor/22x22/actions/bt_lexicon_locked.png
+share/icons/hicolor/22x22/actions/bt_parallel.png
+share/icons/hicolor/22x22/actions/bt_startconfig.png
+share/icons/hicolor/22x22/actions/bt_sync.png
+share/icons/hicolor/22x22/actions/bt_swordconfig.png
+share/icons/hicolor/22x22/actions/bt_tile.png
+share/icons/hicolor/22x22/actions/bt_tile_auto.png
+@unexec rmdir %D/share/icons/hicolor/22x22/actions 2>/dev/null || true
+share/icons/hicolor/22x22/apps/bibletime.png
+@unexec rmdir %D/share/icons/hicolor/22x22/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/22x22 2>/dev/null || true
+share/icons/hicolor/32x32/actions/bt_bible.png
+share/icons/hicolor/32x32/actions/bt_bible_add.png
+share/icons/hicolor/32x32/actions/bt_book.png
+share/icons/hicolor/32x32/actions/bt_book_add.png
+share/icons/hicolor/32x32/actions/bt_cascade.png
+share/icons/hicolor/32x32/actions/bt_cascade_auto.png
+share/icons/hicolor/32x32/actions/bt_commentary.png
+share/icons/hicolor/32x32/actions/bt_commentary_add.png
+share/icons/hicolor/32x32/actions/bt_displayconfig.png
+share/icons/hicolor/32x32/actions/bt_lexicon.png
+share/icons/hicolor/32x32/actions/bt_lexicon_add.png
+share/icons/hicolor/32x32/actions/bt_startconfig.png
+share/icons/hicolor/32x32/actions/bt_swordconfig.png
+share/icons/hicolor/32x32/actions/bt_sync.png
+share/icons/hicolor/32x32/actions/bt_tile.png
+share/icons/hicolor/32x32/actions/bt_tile_auto.png
+@unexec rmdir %D/share/icons/hicolor/32x32/actions 2>/dev/null || true
+share/icons/hicolor/32x32/apps/bibletime.png
+@unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
+share/icons/hicolor/48x48/actions/bt_bible.png
+share/icons/hicolor/48x48/actions/bt_bible_add.png
+share/icons/hicolor/48x48/actions/bt_book.png
+share/icons/hicolor/48x48/actions/bt_book_add.png
+share/icons/hicolor/48x48/actions/bt_cascade.png
+share/icons/hicolor/48x48/actions/bt_cascade_auto.png
+share/icons/hicolor/48x48/actions/bt_commentary.png
+share/icons/hicolor/48x48/actions/bt_commentary_add.png
+share/icons/hicolor/48x48/actions/bt_displayconfig.png
+share/icons/hicolor/48x48/actions/bt_lexicon.png
+share/icons/hicolor/48x48/actions/bt_lexicon_add.png
+share/icons/hicolor/48x48/actions/bt_startconfig.png
+share/icons/hicolor/48x48/actions/bt_swordconfig.png
+share/icons/hicolor/48x48/actions/bt_sync.png
+share/icons/hicolor/48x48/actions/bt_tile.png
+share/icons/hicolor/48x48/actions/bt_tile_auto.png
+@unexec rmdir %D/share/icons/hicolor/48x48/actions 2>/dev/null || true
+share/icons/hicolor/48x48/apps/bibletime.png
+@unexec rmdir %D/share/icons/hicolor/48x48/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/48x48 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
+@unexec rmdir %D/share/icons 2>/dev/null || true
+share/config/bt-printing
+@unexec rmdir %D/share/config 2>/dev/null || true
+share/applnk/Applications/bibletime.desktop
+@unexec rmdir %D/share/applnk/Applications 2>/dev/null || true
+@unexec rmdir %D/share/applnk 2>/dev/null || true
+bin/bibletime
