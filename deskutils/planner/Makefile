@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	planner
-PORTVERSION=	0.12.1
-PORTREVISION=	2
+PORTVERSION=	0.13
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.12
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.13
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -23,13 +22,16 @@ USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui libgnomeprintui \
 		libgsf
 WANT_GNOME=	yes
 INSTALLS_OMF=	yes
-GNU_CONFIGURE=	yes
+INSTALLS_SHLIB=	yes
+USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--enable-static \
 		--disable-python \
 		--disable-dotnet
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+GCONF_SCHEMAS=	planner.schemas
 
 .include <bsd.port.pre.mk>
 
