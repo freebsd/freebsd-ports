@@ -7,7 +7,7 @@
 
 PORTNAME=	xemacs-${NAMEPREFIX}sumo
 PORTVERSION=	${XEMACS_REL}
-CATEGORIES=	editors
+CATEGORIES+=	editors
 MASTER_SITES=	# empty
 DISTFILES=	# empty
 
@@ -22,11 +22,13 @@ NO_BUILD=	yes
 
 XEMACS_MAJOR_VER=	21
 XEMACS_REL=		21.1
-XEMACS_VER=		21.1.8
+XEMACS_VER=		21.1.9
 XEMACS_ARCH=		${MACHINE_ARCH}--freebsd
 
+.include <bsd.port.pre.mk>
+
 .if defined(PKGNAMEPREFIX) && (${PKGNAMEPREFIX} == "ja-")
-RUN_DEP_LIST=		${PREFIX}/lib/xemacs-${XEMACS_VER}/${XEMACS_ARCH}/config.values:${PORTSDIR}/japanese/xemacs${XEMACS_MAJOR_VER}${NAMEEXT}
+RUN_DEP_LIST=		${PREFIX}/lib/xemacs-${XEMACS_VER}/${XEMACS_ARCH}/config.values:${PORTSDIR}/japanese/xemacs${XEMACS_MAJOR_VER}${PKGNAMESUFFIX}
 .else
 RUN_DEP_LIST=		${PREFIX}/lib/xemacs-${XEMACS_VER}/${XEMACS_ARCH}/config.values:${PORTSDIR}/editors/xemacs${XEMACS_MAJOR_VER}-mule
 NAMEPREFIX=		mule-
@@ -34,4 +36,4 @@ NAMEPREFIX=		mule-
 
 do-install:		# empty
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
