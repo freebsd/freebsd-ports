@@ -1,3 +1,4 @@
+bin/rbscrobbler
 %%DATADIR%%/Audioscrobbler.py
 %%DATADIR%%/Debug.py
 %%DATADIR%%/MyQueue.py
