@@ -4393,6 +4393,7 @@ mctoolame-encoder	ports/audio/mctoolame-encoder
 mdbconv		ports/palm/mdbconv
 mdbtools	ports/databases/mdbtools
 mdcrack		ports/security/mdcrack
+mdh		ports/deskutils/mdh
 mdk		ports/lang/mdk
 mdnsd		ports/dns/mdnsd
 mdw		ports/www/mdw
