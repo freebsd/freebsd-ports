@@ -104,6 +104,7 @@
     SUBDIR += lfview
     SUBDIR += lib3ds
     SUBDIR += libdivxdecore
+    SUBDIR += libdivxdecore-devel
     SUBDIR += libdjvu++
     SUBDIR += libflash
     SUBDIR += libfpx
