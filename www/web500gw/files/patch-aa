@@ -1,11 +1,11 @@
 --- Makefile.orig	Fri Mar 13 08:12:44 1998
-+++ Makefile	Thu Jul 30 06:40:39 1998
++++ Makefile	Tue Aug 18 12:18:18 1998
 @@ -3,14 +3,14 @@
  #-----------------------------------------------------------------------------
  
  # Where to install web500gw
 -INSTDIR = /usr/local/etc
-+#INSTDIR = /usr/local/www/cgi-bin
++#INSTDIR = /usr/local/bin
  
  # Where to install the manual web500gw.8
 -MANDIR	= /usr/local/man/man8

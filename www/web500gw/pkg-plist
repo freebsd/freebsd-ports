@@ -1,3 +1,4 @@
+bin/web500gw
 etc/web500gw/ldapfriendly
 etc/web500gw/ldapfriendly.de
 etc/web500gw/sample.ldapfilter.conf
@@ -9,4 +10,4 @@ etc/web500gw/web500gw.help
 etc/web500gw/web500gw.help.de
 etc/web500gw/web500gw.messages
 etc/web500gw/web500gw.messages.de
-www/cgi-bin/web500gw
+@dirrm etc/web500gw
