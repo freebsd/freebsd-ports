@@ -22,13 +22,14 @@ USE_PERL5=	yes
 NO_BUILD=	yes
 PLIST_SUB=	CONS_VER=${PORTVERSION}
 
+MANCOMPRESSED=	yes
 MAN1=		cons.1
 DOCS=		CHANGES COPYING COPYRIGHT INSTALL MANIFEST README RELEASE \
 		cons.html TODO
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/cons ${PREFIX}/bin/cons
-	${INSTALL_MAN} ${WRKSRC}/cons.1 ${PREFIX}/man/man1/cons.1
+	${INSTALL_MAN} ${WRKSRC}/cons.1.gz ${PREFIX}/man/man1/cons.1.gz
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/${PKGNAME}
 .for f in ${DOCS}
