@@ -7,7 +7,6 @@
 
 PORTNAME=	qmail
 PORTVERSION=	${QMAIL_VERSION}.${TLS_PATCH_DATE}
-PORTREVISION=	1
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-tls
 
@@ -19,7 +18,7 @@ MAINTAINER=	lioux@FreeBSD.org
 
 USE_OPENSSL=	YES
 
-TLS_PATCH_DATE=	20000823
+TLS_PATCH_DATE=	20010627
 
 # Using default from master port, i.e., /var/qmail
 PREFIX?=	${QMAIL_PORT_PREFIX}
@@ -64,9 +63,9 @@ certificate:
 			${MKDIR} ${WRKDIR} ; \
 		fi ; \
 		${OPENSSLBASE}/bin/openssl req -new -x509 -nodes \
-			-out ${WRKDIR}/cert.pem -days 366 \
-			-keyout ${WRKDIR}/cert.pem ; \
-		${INSTALL} -o qmaild -g qmail -m 0640 ${WRKDIR}/cert.pem ${PREFIX}/control/cert.pem ; \
+			-out ${WRKDIR}/servercert.pem -days 366 \
+			-keyout ${WRKDIR}/servercert.pem ; \
+		${INSTALL} -o qmaild -g qmail -m 0640 ${WRKDIR}/servercert.pem ${PREFIX}/control/servercert.pem ; \
 		${ECHO_MSG} "===> Do not forget to do 'make clean' to clean up temporary files" ; \
 	else \
 		${ECHO_MSG} "===> You must create the file ${OPENSSLDIR}/openssl.cnf first." ; \
@@ -81,12 +80,12 @@ certificate-req:
 		fi ; \
 		${OPENSSLBASE}/bin/openssl req -new -nodes \
 			-out ${WRKDIR}/req.pem \
-			-keyout ${WRKDIR}/cert.pem ; \
-		${INSTALL} -o qmaild -g qmail -m 0640 ${WRKDIR}/cert.pem ${PREFIX}/control/cert.pem ; \
+			-keyout ${WRKDIR}/servercert.pem ; \
+		${INSTALL} -o qmaild -g qmail -m 0640 ${WRKDIR}/servercert.pem ${PREFIX}/control/servercert.pem ; \
 		${ECHO_MSG} ; \
 		${ECHO_MSG} "===> Do not forget to do 'make clean' to clean up temporary files" ; \
 		${ECHO_MSG} "===> Send ${WRKDIR}/req.pem to your CA to obtain signed_req.pem, and do:" ; \
-		${ECHO_MSG} "===> cat signed_req.pem >> ${PREFIX}/control/cert.pem" ; \
+		${ECHO_MSG} "===> cat signed_req.pem >> ${PREFIX}/control/servercert.pem" ; \
 	else \
 		${ECHO_MSG} "===> You must create the file ${OPENSSLDIR}/openssl.cnf first." ; \
 	fi
