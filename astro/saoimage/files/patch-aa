@@ -1,5 +1,5 @@
---- makefile.FreeBSD.orig	Sat Nov  6 06:57:30 1999
-+++ makefile.FreeBSD	Sat Apr 22 02:58:08 2000
+--- makefile.FreeBSD.orig	Thu Sep 20 06:27:49 2001
++++ makefile.FreeBSD	Wed Jul 24 01:12:35 2002
 @@ -36,9 +36,9 @@
  # FBCONFIG_2, which is set to the value of IMTOOLRC in the definition of
  # the CFLAGS macro below.)
@@ -46,3 +46,23 @@
  #XLIB = -L/usr/X11R6/lib -lX11	# ATTENTION: OpenWindows users...
  #F77LIB = -lF77 -lI77 -lU77
  F77LIB = -lf2c
+@@ -307,7 +307,7 @@
+ 	$(MAKE) ARCFILE=$(TAPEDEV) tar
+ 
+ 
+-XLIBH = /usr/X11R6/include/X11/Xlib.h /usr/X11R6/include/X11/Xutil.h
++XLIBH = ${X11BASE}/include/X11/Xlib.h ${X11BASE}/include/X11/Xutil.h
+ STRUCT = hfiles/struct.h hfiles/buffer.h hfiles/color.h hfiles/control.h \
+ 	 hfiles/coord.h hfiles/cursor.h hfiles/image.h hfiles/window.h
+ WORKS = $(XLIBH) $(STRUCT) hfiles/constant.h hfiles/extern.h $(WCSH)
+@@ -419,8 +419,8 @@
+ 		defs/dispbox.def defs/magnibox.def defs/panbox.def \
+ 		defs/btnbox.def defs/colorbox.def defs/graphbox.def \
+ 		defs/desktop.def defs/cursor.def
+-mainkey.o	: $(WORKS) /usr/include/X11/keysym.h \
+-		/usr/include/X11/keysymdef.h
++mainkey.o	: $(WORKS) ${X11BASE}/include/X11/keysym.h \
++		${X11BASE}/include/X11/keysymdef.h
+ #mainkey.o	: $(WORKS)	# for OpenWindows
+ mainslct.o	: $(WORKS)
+ mainutil.o	: $(XLIBH) $(STRUCT) hfiles/extern.h
