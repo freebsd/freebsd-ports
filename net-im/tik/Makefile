@@ -1,37 +1,71 @@
 # New ports collection makefile for:	tik
-# Version required:	0.52
-# Date created:		13 January 1999
-# Whom:			Eugene M. Kim <astralblue@usa.net>
+# Version required:			0.59
+# Date created:				13 January 1999
+# Whom:					Eugene M. Kim <astralblue@usa.net>
 #
-# $Id: Makefile,v 1.1.1.1 1998/12/24 15:28:00 flathill Exp $
+# $Id: Makefile,v 1.2 1999/01/18 03:15:29 steve Exp $
 #
 
-DISTNAME=	tik-0.52
+DISTNAME=	tik-0.59
 CATEGORIES=	net tk80
-MASTER_SITES=	http://www.aim.aol.com/tik/
+MASTER_SITES=	http://www.aim.aol.com/tik/ \
+		http://www.nectar.com/distfiles/
 
 MAINTAINER=	astralblue@usa.net
 
 RUN_DEPENDS=	tclsh8.0:${PORTSDIR}/lang/tcl80 \
 		wish8.0:${PORTSDIR}/x11-toolkits/tk80
 
-WRKSRC=		${WRKDIR}/tik
-
 NO_BUILD=	yes
-PLIST_SUB=	DISTNAME=${DISTNAME}
+WRKSRC=		${WRKDIR}/tik
+PLIST=		${WRKDIR}/PLIST
 
+SORT?=		sort
+
+SRCDIRS= 	share/tik share/tik/media share/tik/packages
+SRCFILES=	media/AOL.gif media/Admin.gif media/DT.gif media/Login.gif \
+		media/Logo.gif media/Logout.gif media/Oscar.gif            \
+		media/downarrow.gif media/uparrow.gif media/BuddyArrive.au \
+		media/BuddyLeave.au media/Pounce.au media/Receive.au       \
+		media/Send.au packages/away.tcl packages/imcapture.tcl     \
+		packages/mynews.tcl packages/pounce.tcl                    \
+		packages/quickchat.tcl packages/search.tcl                 \
+		packages/socksproxy.tcl packages/sslproxy.tcl              \
+		packages/stock.tcl packages/ticker.tcl sflap.tcl           \
+		configTool.tcl toc.tcl tik.tcl tac.tcl sag.tcl
+EGDIR=		share/examples/tik
+EGFILES=	example.tacrc example.tikpre example.tikrc
+DOCDIR=		share/doc/tik
+DOCFILES=	CHANGES LICENSE README PROTOCOL
+
+# The packing list starts with just bin/tik.  As we install things,
+# build onto the list.
 do-install:
-	cd ${WRKSRC} ; \
-	find -d media packages *.tcl -print0 | \
-	    cpio -dump0 --owner=root:wheel ${PREFIX}/lib/${DISTNAME} ; \
-	${MKDIR} ${PREFIX}/share/examples/${DISTNAME} ; \
-	${INSTALL_DATA} example.* ${PREFIX}/share/examples/${DISTNAME}/ ; \
-	${INSTALL_SCRIPT} ${FILESDIR}/tik ${PREFIX}/bin/${DISTNAME} ; \
-	ln -sf ${DISTNAME} ${PREFIX}/bin/tik
+	@${CP} ${PKGDIR}/PLIST ${PLIST}
+.for d in ${SRCDIRS}
+	@${MKDIR} ${PREFIX}/${d}
+	@${ECHO} @dirrm ${d} >> ${PLIST}.dirrm
+.endfor
+.for f in ${SRCFILES}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/tik/${f}
+	@${ECHO} share/tik/${f} >> ${PLIST}
+.endfor
+	@${MKDIR} ${PREFIX}/${EGDIR}
+	@${ECHO} @dirrm ${EGDIR} >> ${PLIST}.dirrm
+.for f in ${EGFILES}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/${EGDIR}/${f}
+	@${ECHO} ${EGDIR}/${f} >> ${PLIST}
+.endfor
+	@${SED} 's#@PREFIX@#${PREFIX}#g' < ${FILESDIR}/tik >${WRKDIR}/tik.sh
+	${INSTALL_SCRIPT} ${WRKDIR}/tik.sh ${PREFIX}/bin/tik
 .if !defined(NOPORTDOCS)
-	cd ${WRKSRC} ; \
-	${MKDIR} ${PREFIX}/share/doc/${DISTNAME} ; \
-	${INSTALL_DATA} PROTOCOL CHANGES README LICENSE ${PREFIX}/share/doc/${DISTNAME}/
+	@${MKDIR} ${PREFIX}/${DOCDIR}
+	@${ECHO} @dirrm ${DOCDIR} >> ${PLIST}.dirrm
+.for f in ${DOCFILES}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/${DOCDIR}/${f}
+	@${ECHO} ${DOCDIR}/${f} >> ${PLIST}
+.endfor
 .endif
+	@${SORT} -r ${PLIST}.dirrm >> ${PLIST} && ${RM} ${PLIST}.dirrm
 
 .include <bsd.port.mk>
