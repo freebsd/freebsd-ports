@@ -1,0 +1,11 @@
+--- Greg/configure.orig	Thu May 10 12:48:26 2001
++++ Greg/configure	Mon May  5 08:05:35 2003
+@@ -2259,7 +2259,7 @@
+ done
+ 
+ 
+-GUILE_LIB_PATH=`$GUILEPATH -c '(display (string-append (%package-data-dir) "/" (version)))'`
++GUILE_LIB_PATH=`$GUILEPATH -c '(display (%library-dir))'`
+ 
+ cat >> confdefs.h <<EOF
+ #define GUILE_LIB_PATH $GUILE_LIB_PATH
