@@ -5,36 +5,76 @@
 # $FreeBSD$
 #
 
-PORTNAME=	CS
-PORTVERSION=	1.1b
+PORTNAME?=	cs
+PORTVERSION?=	1.1b
 CATEGORIES=	games linux
-MASTER_SITES=	http://hex.databits.net/~pat/ \
-		ftp://ftp.icrontic.com/pub/ \
+MASTER_SITES?=	ftp://ftp.icrontic.com/pub/ \
 		http://flf.playnet.com/
-DISTNAME=	cs_11b_full
-EXTRACT_ONLY=	
+PKGNAMEPREFIX=	hlserver-
+DISTNAME?=	cs_11b_full
 
-MAINTAINER=	pat@databits.net
+MAINTAINER?=	pat@databits.net
 
-BUILD_DEPENDS=	/compat/linux/lib/ld.so:${PORTSDIR}/emulators/linux_base
-RUN_DEPENDS=	/compat/linux/usr/i486-linux-libc5/lib/libc.so.5:${PORTSDIR}/emulators/linux_base \
-		hlds_l:${PORTSDIR}/games/halflifeserver
+RUN_DEPENDS=	${LINUXBASE}${HLDSDIR}${HL_PROGRAM}:${HALFLIFESERVER_PORT}
 
+USE_LINUX_PREFIX=	yes
 NO_CDROM=	"Size; the data set is much too big"
 NO_BUILD=	yes
-PREFIX=		/compat/linux
-WRKSRC=		${WRKDIR}/hlds_l
-EXTRACT_ONLY_1=	cs_11b_full.tar.gz
+WRKSRC?=		${WRKDIR}/cstrike
+PLIST_SUB=	${PLIST_SUB_MASTER}
 
-HLDSDIR=	/usr/games/hlds_l
+INSTALL_DIR=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m ${BINMODE}
+SORT?=		/usr/bin/sort
 
-do-install:
-	@cd ${PREFIX}${HLDSDIR} ;\
-	for file in ${EXTRACT_ONLY_1}; do \
-		if ! (${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/$${file} ${EXTRACT_AFTER_ARGS}) ;\
-		then \
-			exit 1 ;\
-		fi \
-	done
+HALFLIFESERVER_PORT=	${.CURDIR}/../halflifeserver
+HLDSDIR!=	cd ${HALFLIFESERVER_PORT} && ${MAKE} -V HLDSDIR
+HL_PROGRAM!=	cd ${HALFLIFESERVER_PORT} && ${MAKE} -V HL_PROGRAM
+PLIST_SUB_MASTER!=	cd ${HALFLIFESERVER_PORT} && ${MAKE} -V PLIST_SUB
+
+pre-patch:
+# remove trailing ^M
+.for file in *.cfg */*.cfg *.gam */*.gam *.htm */*.htm \
+	*.inf */*.inf *.lst */*.lst *.sc */*.sc \
+	*.scr */*.scr *.txt */*.txt
+	@${PERL} -pi -ne 's!\r\n!\n!' ${WRKDIR}/${file} >/dev/null 2>/dev/null
+.endfor
+
+# if you change the PLIST, please re-think the following
+# Parses PLIST
+# creates dirs from @dirrm entries
+# copies files from non ^@ entries
+do-install: install-parse-plist install-run-scripts
+# scan libraries
+	@( cd ${HALFLIFESERVER_PORT} ; ${MAKE} scan-libs )
+
+# kaboom, ashes to ashes, .... The problem is dead :)
+# Contributed by <lioux@FreeBSD.org>
+install-parse-plist:
+	@${PERL} -e 'open(FHANDLER,"${PLIST}");' \
+		-e 'open(FDIR,">${WRKDIR}/dirs.sh.tmp");' \
+		-e 'open(FFILES,">${WRKDIR}/files.sh");' \
+		-e 'while (!eof(FHANDLER)) {' \
+			-e 'chop($$file = <FHANDLER>);' \
+			-e '$$file =~ s!%%HLDSDIR%%!!;' \
+			-e '$$dir = $$file;' \
+			-e '$$file =~ s!^\@.+!!;' \
+			-e 'print FDIR "${INSTALL_DIR}", \
+				" ", "\"${PREFIX}/${HLDSDIR}/$$dir\"", \
+				"\n" if $$dir =~ s!(^\@dirrm\s+)!!;' \
+			-e 'print FFILES "${INSTALL_DATA}", \
+				" ", "\"${WRKDIR}/$$file\"", \
+				" ", "\"${PREFIX}/${HLDSDIR}/$$file\"", \
+				"\n" if (length($$file) > 0);' \
+		-e '}' \
+		-e 'close(FFILES);' \
+		-e 'close(FDIR);' \
+		-e 'close(FHANDLER);'
+# we want it sorted
+	@${SORT} ${WRKDIR}/dirs.sh.tmp > ${WRKDIR}/dirs.sh
+
+install-run-scripts:
+.for script in dirs files
+	@${SH} ${WRKDIR}/${script}.sh
+.endfor
 
 .include <bsd.port.mk>
