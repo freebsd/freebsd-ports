@@ -139,7 +139,7 @@ include/WWWWAIS.h
 include/WWWZip.h
 include/sysdep.h
 lib/libwww.a
-lib/libwww.so.5.1
+lib/libwww.so.5.2
 @exec ldconfig -m %B
 share/doc/libwww/User/Patch/Makefile
 share/doc/libwww/User/Patch/Makefile.am
