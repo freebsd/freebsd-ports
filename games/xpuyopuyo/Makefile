@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	xpuyopuyo-0.2.7
+DISTNAME=	xpuyopuyo-0.3.1
 CATEGORIES=	games
 MASTER_SITES=	http://chaos2.org/xpuyopuyo/ \
 		http://lenin.dabney.caltech.edu/~justins/xpuyopuyo/
@@ -24,16 +24,8 @@ USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}" \
 		GLIB_CONFIG="${GLIB_CONFIG}"
+CONFIGURE_ARGS=	--enable-rotate-fixed --without-gnome
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/xpuyopuyo ${PREFIX}/bin/xpuyopuyo
-
-post-install:
-	@${MKDIR} ${PREFIX}/share/xpuyopuyo
-.for i in AUTHORS COPYING ChangeLog INSTALL NEWS README TESTED TODO gtkrc
-	@${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/xpuyopuyo
-.endfor
-	@${MKDIR} ${PREFIX}/share/xpuyopuyo/img
-	@${INSTALL_DATA} ${WRKSRC}/img/*.xpm ${PREFIX}/share/xpuyopuyo/img
+MAN1=		xpuyopuyo.1
 
 .include <bsd.port.mk>
