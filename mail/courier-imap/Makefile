@@ -99,8 +99,9 @@ CONFIGURE_ARGS+=	\
 		--without-authpam
 .endif
 
-MAN1=		maildirmake.1
-MAN8=		authlib.7 makeuserdb.8 userdb.8 userdbpw.8 couriertcpd.1 \
+MAN1=		couriertcpd.1 maildirmake.1
+MAN7=		authlib.7
+MAN8=		makeuserdb.8 userdb.8 userdbpw.8 \
 		deliverquota.8 imapd.8 mkimapdcert.8 mkpop3dcert.8
 
 MLINKS=		authlib.7 authpwd.7 \
