@@ -1,4 +1,6 @@
+@comment $FreeBSD$
 bin/sec
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/convert.pl
 %%PORTDOCS%%%%DOCSDIR%%/itostream.c
