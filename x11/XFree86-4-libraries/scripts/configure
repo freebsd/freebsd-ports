@@ -83,7 +83,7 @@ echo -n "default server to install. [none] "
 read answ
 if [ X$answ = X ]; then answ=none; fi
 if [ $answ != none ]; then
-  echo "#define ServerToInstall		XF86_$i" >>$F
+  echo "#define ServerToInstall		XF86_$answ" >>$F
 fi
 
 cat >> $F <<END
