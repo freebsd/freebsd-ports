@@ -15,7 +15,7 @@ DISTNAME=	gnome-core-${PORTVERSION}
 
 MAINTAINER?=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	gtkhtml.20:${PORTSDIR}/www/gtkhtml
+LIB_DEPENDS=	gtkhtml.21:${PORTSDIR}/www/gtkhtml
 RUN_DEPENDS=	${X11BASE}/share/gnome/sounds/login.wav:${PORTSDIR}/audio/gnomeaudio
 
 USE_X_PREFIX=	yes
