@@ -3374,6 +3374,7 @@ jwhois		ports/net/jwhois
 jx		ports/x11-toolkits/jx
 jython		ports/lang/jython
 jzip		ports/games/jzip
+kadu		ports/polish/kadu
 kaffe		ports/java/kaffe
 kaffe-devel	ports/java/kaffe-devel
 kaffeine	ports/multimedia/kaffeine
