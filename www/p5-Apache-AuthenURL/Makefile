@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Apache-AuthenURL
-PORTVERSION=	0.8
+PORTVERSION=	0.9
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Apache
@@ -22,5 +22,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN3=		Apache::AuthenURL.3
+
+post-patch:
+	@${FIND} ${WRKSRC} -name "*.orig" -a -exec ${RM} -f {} \;
 
 .include <bsd.port.mk>
