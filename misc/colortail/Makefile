@@ -17,10 +17,16 @@ COMMENT=	A colour-able replacement for tail(1)
 USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502000
+BROKEN=		"Does not compile"
+.endif
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/example-conf/conf* ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
