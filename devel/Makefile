@@ -1283,6 +1283,7 @@
     SUBDIR += swig13-doc
     SUBDIR += swigruby
     SUBDIR += syntax_tools
+    SUBDIR += syntax_tools-devel
     SUBDIR += sysconftool
     SUBDIR += t1lib
     SUBDIR += tavrasm
