@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=		gambas
-PORTVERSION=		0.96
+PORTVERSION=		0.97
 CATEGORIES=		lang
 MASTER_SITES=		http://gambas.sourceforge.net/
 
@@ -19,7 +19,7 @@ USE_LIBLTDL=		yes
 USE_KDELIBS_VER=	3
 USE_GETTEXT=		yes
 USE_BZIP2=		yes
-USE_LIBTOOL_VER=	13
+USE_LIBTOOL_VER=	15
 LIBTOOLFILES=		configure libltdl/configure
 LIBTOOLFLAGS=		# none
 USE_GMAKE=		yes
