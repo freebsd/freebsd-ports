@@ -1,0 +1,3 @@
+Sarah is a program which is used to trim, rotate, archive and delete log
+files.  It is meant to run periodically out of cron, determining what to do
+based on a configuration file.
