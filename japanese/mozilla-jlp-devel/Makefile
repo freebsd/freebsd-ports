@@ -6,15 +6,19 @@
 #
 
 PORTNAME=	mozilla
-PORTVERSION=	1.0.rc2
+PORTVERSION=	1.0
 #PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	japanese www
 MASTER_SITES=	http://www.ash.ne.jp/~mal/mozilla/ \
 		http://dev.jp/ \
+		${MASTER_SITE_SOURCEFORGE} \
+		http://ryuzi.dyndns.org/ \
+		ftp://takuomix.homeip.net/pub/jlp/ \
 		http://www.mozilla.gr.jp/jlp/
+MASTER_SITE_SUBDIR=	jlpmoz
 PKGNAMESUFFIX=	-jlp
-DISTNAME=	${PORTNAME}1.0rc2-jajppack-v1.0
+DISTNAME=	${PORTNAME}1.0-jajppack-1
 EXTRACT_SUFX=	.xpi
 
 MAINTAINER=	yatt@msc.biglobe.ne.jp

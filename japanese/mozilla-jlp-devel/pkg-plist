@@ -13,6 +13,7 @@ lib/mozilla/chrome/ja-win.jar
 lib/mozilla/defaults/pref/unix.js
 lib/mozilla/defaults/profile/JP/chrome/userChrome-example.css
 lib/mozilla/defaults/profile/JP/chrome/userContent-example.css
+lib/mozilla/defaults/profile/JP/chrome/userContent.css
 lib/mozilla/defaults/profile/JP/bookmarks.html
 lib/mozilla/defaults/profile/JP/localstore.rdf
 lib/mozilla/defaults/profile/JP/mimeTypes.rdf
@@ -66,6 +67,8 @@ lib/mozilla/searchplugins/ascii_ghelp.png
 lib/mozilla/searchplugins/ascii_ghelp.src
 lib/mozilla/searchplugins/atmarkIT.png
 lib/mozilla/searchplugins/atmarkIT.src
+lib/mozilla/searchplugins/eijiro.png
+lib/mozilla/searchplugins/eijiro.src
 lib/mozilla/searchplugins/GoogleJapan.png
 lib/mozilla/searchplugins/GoogleJapan.src
 lib/mozilla/searchplugins/jpnic_rfc.png
