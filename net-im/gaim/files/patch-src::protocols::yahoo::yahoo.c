@@ -1,5 +1,5 @@
-*** src/protocols/yahoo/yahoo.c.orig	Thu Jan 22 09:57:03 2004
---- src/protocols/yahoo/yahoo.c	Thu Jan 22 10:15:11 2004
+*** src/protocols/yahoo/yahoo.c.orig	Fri Jan  9 23:04:09 2004
+--- src/protocols/yahoo/yahoo.c	Tue Jan 27 14:10:22 2004
 ***************
 *** 20,25 ****
 --- 20,26 ----
@@ -12,12 +12,13 @@
   #include "account.h"
 ***************
 *** 131,138 ****
---- 132,146 ----
+--- 132,147 ----
   		while (pos + 1 < len) {
   			if (data[pos] == 0xc0 && data[pos + 1] == 0x80)
   				break;
 + 			if (x >= sizeof(key)-1) {
 + 				x++;
++ 				pos++;
 + 				continue;
 + 
 + 			}
@@ -62,7 +63,7 @@
   static void yahoo_process_mail(GaimConnection *gc, struct yahoo_packet *pkt)
   {
   	GaimAccount *account = gaim_connection_get_account(gc);
---- 876,941 ----
+--- 877,942 ----
   	}
   }
   
@@ -163,7 +164,7 @@
   	gaim_input_remove(gc->inpa);
   	close(source);
   	/* Now we have our cookies to login with.  I'll go get the milk. */
---- 1945,1974 ----
+--- 1946,1975 ----
   
   static void yahoo_web_pending(gpointer data, gint source, GaimInputCondition cond)
   {
@@ -203,7 +204,7 @@
   }
   
   static void yahoo_got_cookies(gpointer data, gint source, GaimInputCondition cond)
---- 1977,1983 ----
+--- 1978,1984 ----
   			       yahoo_got_web_connected, gc) != 0) {
   		gaim_connection_error(gc, _("Connection problem"));
   		return;
@@ -228,7 +229,7 @@
   			*d = *c;
   		*d = '\0';
   		g_hash_table_insert(hash, g_strdup(name), g_strdup(value));
---- 2014,2030 ----
+--- 2015,2031 ----
   	const char *c = buf;
   	char *d;
   	char name[64], value[64];
