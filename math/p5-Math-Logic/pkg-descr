@@ -1,0 +1,10 @@
+Perl's built-in logical operators, C<and>, C<or>, C<xor> and C<not>
+support 2-value logic. This means that they always produce a result
+which is either true or false. In fact perl sometimes returns 0
+and sometimes returns undef for false depending on the operator
+and the order of the arguments. For "true" Perl generally returns
+the first value that evaluated to true which turns out to be
+extremely useful in practice. Given the choice Perl's built-in
+logical operators are to be preferred -- but when you really want
+pure 2-degree logic or 3-degree logic or multi-degree logic they
+are available through this module
