@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	${DISTVERSION:S/-/./g}
+PORTVERSION=	${DISTVERSION:S/-rc//g:S/-/./g}
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	clamav
 DISTNAME=	${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	markun@onohara.to
+MAINTAINER=	eik@FreeBSD.org
+# I've just adopted the port to ensure timely updates. Please
+# reset the maintainer if TERAMOTO Masahiro shows up again.
 COMMENT=	Command line virus scanner written entirely in C
 
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
@@ -23,21 +26,36 @@ RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
 		arc:${PORTSDIR}/archivers/arc \
 		unzip:${PORTSDIR}/archivers/unzip
 
-DISTVERSION=	0.67-1
+DISTVERSION=	0.70-rc
+
+CLAMAVUSER?=	clamav
+CLAMAVGROUP?=	clamav
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
+USE_RC_SUBR=	yes
 
 PKGINSTALL=	${WRKDIR}/pkg-install
+PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
+
+PORTDOCS=	NEWS ChangeLog html
 
 CONFIGURE_ARGS=	--with-dbdir=${DATADIR} \
-		--disable-clamav --enable-bigstack
-CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
-LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
+		--disable-clamuko \
+		--disable-clamav \
+		--enable-bigstack \
+		--disable-dependency-tracking \
+		--with-user=${CLAMAVUSER} \
+		--with-group=${CLAMAVGROUP}
+CPPFLAGS+=	-I${LOCALBASE}/include \
+		${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib \
+		${PTHREAD_LIBS}
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" \
+		LDFLAGS="${LDFLAGS}"
 MAN1=		clamscan.1 freshclam.1 sigtool.1 clamdscan.1
 MAN5=		clamav.conf.5
 MAN8=		clamd.8 clamav-milter.8
@@ -49,6 +67,8 @@ CONFLICTS=	clamav-devel-*
 
 SED_SCRIPT=	-e 's|%%PREFIX%%|${PREFIX}|g' \
 		-e 's|%%DATADIR%%|${DATADIR}|g' \
+		-e 's|%%CLAMAVUSER%%|${CLAMAVUSER}|g' \
+		-e 's|%%CLAMAVGROUP%%|${CLAMAVGROUP}|g' \
 		-e 's|%%CLAMAV_CLAMD_SOCKET%%|${CLAMAV_CLAMD_SOCKET}|g' \
 		-e 's|%%CLAMAV_MILTER_SOCKET%%|${CLAMAV_MILTER_SOCKET}|g'
 
@@ -59,11 +79,14 @@ SED_CONF=	-E -e 's|^\#?(Example)$$|\#\1|' \
 		-e 's|^\#?(User) .*$$|\1 clamav|' \
 		-e 's|^\#?(AllowSupplementaryGroups)$$|\1|' \
 		-e 's|^\#?(FixStaleSocket)$$|\1|' \
-		-e 's|^\#?(ScanMail)$$|\1|'
+		-e 's|^\#?(ScanMail)$$|\1|' \
+		-e 's|^\#?(DatabaseDirectory) .*$$|\1 ${DATADIR}|' \
+		-e 's|^\#?(DatabaseOwner) .*$$|\1 ${CLAMAVUSER}|' \
+		-e 's|^\#?(UpdateLogFile) .*$$|\1 /var/log/clamav/freshclam.log|'
 
-.include <bsd.port.pre.mk>
+PLIST_SUB+=	CLAMAVUSER=${CLAMAVUSER} \
+		CLAMAVGROUP=${CLAMAVGROUP}
 
-USE_RC_SUBR=	yes
 RC_DIR=		${PREFIX}/etc/rc.d
 RC_SUFX=	.sh
 SED_SCRIPT+=	-e 's|%%RC_SUBR%%|${RC_SUBR}|g' \
@@ -72,13 +95,16 @@ SED_SCRIPT+=	-e 's|%%RC_SUBR%%|${RC_SUBR}|g' \
 PLIST_SUB+=	RC_DIR=${RC_DIR} \
 		RC_SUFX=${RC_SUFX}
 
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_MILTER)
-.if exists(${LOCALBASE}/lib/libmilter.a)
-CPPFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}"
-.endif
+.if exists(/usr/lib/libmilter.a) || exists(${LOCALBASE}/lib/libmilter.a)
 CONFIGURE_ARGS+=	--enable-milter
 PLIST_SUB+=	CLAMAV-MILTER=""
+.else
+BROKEN=		requires Sendmail 8.12
+PLIST_SUB+=	CLAMAV-MILTER="@comment "
+.endif
 .else
 PLIST_SUB+=	CLAMAV-MILTER="@comment "
 .endif
@@ -89,9 +115,13 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/lib/sendmail|/usr/sbin/sendmail|g' \
 		${WRKSRC}/clamav-milter/clamav-milter.c
 
+#	@${REINPLACE_CMD} -E -e 's/(_LIBS=.*)-l?pthread -lc_r[[:>:]]/\1${PTHREAD_LIBS}/' \
+
 post-build:
 	@${REINPLACE_CMD} ${SED_CONF} ${BUILD_WRKSRC}/etc/clamav.conf
+	@${REINPLACE_CMD} ${SED_CONF} ${BUILD_WRKSRC}/etc/freshclam.conf
 	@${SED} ${SED_SCRIPT} ${PKGDIR}/pkg-install >${PKGINSTALL}
+	@${SED} ${SED_SCRIPT} ${PKGDIR}/pkg-deinstall >${PKGDEINSTALL}
 	@${SED} ${SED_SCRIPT} ${FILESDIR}/clamav-clamd.sh \
 		>${WRKDIR}/clamav-clamd.sh
 	@${SED} ${SED_SCRIPT} ${FILESDIR}/clamav-freshclam.sh \
@@ -110,7 +140,7 @@ post-install:
 		${RC_DIR}/clamav-clamd${RC_SUFX}
 	@${INSTALL_SCRIPT} ${WRKDIR}/clamav-freshclam.sh \
 		${RC_DIR}/clamav-freshclam${RC_SUFX}
-	@${CHOWN} -R clamav:clamav ${DATADIR}
+	@${CHOWN} -R ${CLAMAVUSER}:${CLAMAVGROUP} ${DATADIR}
 .for c in clamav freshclam
 	@[ -f ${PREFIX}/etc/${c}.conf ] || \
 		${CP} ${PREFIX}/etc/${c}.conf.default ${PREFIX}/etc/${c}.conf
@@ -120,9 +150,12 @@ post-install:
 		${RC_DIR}/clamav-milter${RC_SUFX}
 .endif
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${INSTALL_WRKSRC}/NEWS ${INSTALL_WRKSRC}/ChangeLog \
 		${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}/html
+	@${INSTALL_DATA} ${INSTALL_WRKSRC}/docs/html/*.* \
+		${DOCSDIR}/html
 .endif
 	@${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PREFIX} POST-INSTALL
