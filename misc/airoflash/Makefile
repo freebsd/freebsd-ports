@@ -8,7 +8,7 @@
 PORTNAME=	airoflash
 PORTVERSION=	${AF_VERSION}
 CATEGORIES=	misc
-MASTER_SITES=	"http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/~checkout~/airo-linux/airo-linux/tools/airoflash.c?rev=${AF_VERSION}&content-type=text/plain"
+MASTER_SITES=	"http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/~checkout~/airo-linux/airo-linux/tools/airoflash.c?rev=${AF_VERSION}"
 DISTNAME=	airoflash.c
 EXTRACT_SUFX=
 
