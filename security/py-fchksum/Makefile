@@ -9,7 +9,7 @@
 PORTNAME=	fchksum
 PORTVERSION=	1.6.1
 CATEGORIES=	security python
-MASTER_SITES=	http://www.azstarnet.com/~donut/programs/fchksum/
+MASTER_SITES=	http://www.dakotacom.net/~donut/programs/fchksum/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 
