@@ -1,11 +1,9 @@
---- etc/Makefile.orig	Wed Feb  2 22:20:34 2000
-+++ etc/Makefile	Fri Aug  4 23:49:51 2000
-@@ -21,7 +21,7 @@
- 	@if [ -f /etc/xmp-modules.conf ]; then \
- 	    mv -f /etc/xmp-modules.conf /etc/xmp-modules.conf.old; \
+--- etc/Makefile.old	Mon Jan  1 16:49:34 2001
++++ etc/Makefile	Mon Jan  1 16:50:29 2001
+@@ -20,5 +20,5 @@
+ 	@if [ -f $(DEST_DIR)/etc/xmp-modules.conf ]; then \
+ 	    mv -f $(DEST_DIR)/etc/xmp-modules.conf $(DEST_DIR)/etc/xmp-modules.conf.old; \
  	fi
--	$(INSTALL) -m644 xmp.conf xmp-modules.conf /etc
+-	$(INSTALL) -m644 xmp.conf xmp-modules.conf $(DEST_DIR)/etc
 +	$(INSTALL_DATA) xmp.conf xmp-modules.conf $(ETC_DIR)
  
- xmp.spec: xmp.spec.in ../Makefile.rules
- 	cat $@.in | sed 's/@VERSION@/$(VERSION)/g' > $@
