@@ -7,6 +7,7 @@
 
 PORTNAME=	pixie
 PORTVERSION=	1.3.16
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -39,8 +40,6 @@ PIXIE_SHLIBS=	file framebuffer rgbe
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -i "" -e 's|malloc\.h|stdlib\.h|g' \
 		`${FIND} -E ${WRKSRC} -iregex '.*\.(cpp|h)'`
@@ -66,8 +65,6 @@ do-install:
 .for i in sdr ri
 	${INSTALL_DATA} ${WRKSRC}/src/${i}/.libs/lib${i}.a \
 		${PREFIX}/lib/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/src/${i}/.libs/lib${i}.la \
-		${PREFIX}/lib/${PORTNAME}
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${i}/.libs/lib${i}.so.0 \
 		${PREFIX}/lib/${PORTNAME}
 	${LN} -sf ${PREFIX}/lib/${PORTNAME}/lib${i}.so.0 \
@@ -76,8 +73,6 @@ do-install:
 
 .for i in ${PIXIE_SHLIBS}
 	${INSTALL_DATA} ${WRKSRC}/src/${i}/.libs/${i}.a \
-		${PREFIX}/lib/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/src/${i}/.libs/${i}.la \
 		${PREFIX}/lib/${PORTNAME}
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${i}/.libs/${i}.so.0 \
 		${PREFIX}/lib/${PORTNAME}
@@ -112,4 +107,4 @@ post-install:
 	@(${SED} -e 's|%%PREFIX%%|${PREFIX}|; s|%%PORTNAME%%|${PORTNAME}|' \
 		<pkg-message >${PKGMESSAGE} && ${CAT} ${PKGMESSAGE})
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
