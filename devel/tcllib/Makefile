@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	tcllib
 
 MAINTAINER=	mi@aldan.algebra.com
 
+BUILD_DEPENDS=	tclsh:${PORTSDIR}/lang/tcl83
 GNU_CONFIGURE=	yes
 ALL_TARGET=	test
 MAKE_ENV+=	LANG=C
