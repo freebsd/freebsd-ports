@@ -8,6 +8,7 @@
     SUBDIR += genius
     SUBDIR += gnomepim
     SUBDIR += gnucash
+    SUBDIR += grun
     SUBDIR += gtimer
     SUBDIR += ical
     SUBDIR += korganizer
