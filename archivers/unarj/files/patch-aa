@@ -1,84 +1,16 @@
-*** Makefile.old	Wed Jul 17 22:02:20 1991
---- Makefile	Wed Dec 28 04:39:21 1994
-***************
-*** 1,5 ****
-! 
-! CC=cc 
-  
-  all:	      unarj
-  
---- 1,4 ----
-! CFLAGS+=-DUNIX
-  
-  all:	      unarj
-  
-*** environ.c.old	Wed Jun 23 09:07:20 1993
---- environ.c	Wed Dec 28 04:38:04 1994
-***************
-*** 534,541 ****
-  }
-  
-  long
-! gettz()         /* returns the offset from GMT in seconds */
-  {
-  #define NOONOFFSET    43200L
-  #define SEC_IN_DAY    (24L * 60L * 60L)
-  #define INV_VALUE     (SEC_IN_DAY + 1L)
---- 534,545 ----
-  }
-  
-  long
-! gettz(stamp)         /* returns the offset from GMT in seconds */
-! time_t stamp;
-  {
-+ #if defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__)
-+ 	return -localtime(&stamp)->tm_gmtoff;
-+ #else
-  #define NOONOFFSET    43200L
-  #define SEC_IN_DAY    (24L * 60L * 60L)
-  #define INV_VALUE     (SEC_IN_DAY + 1L)
-***************
-*** 551,556 ****
---- 555,561 ----
-      noontm = localtime(&noon);
-      retval = NOONOFFSET - 60 * (60 * noontm->tm_hour - noontm->tm_min);
-      return retval;
-+ #endif
-  }
-  
-  long
-***************
-*** 608,614 ****
-      (uint) attribute;
-      (uint) host;
-  
-!     m_time = mstonix(tstamp) + gettz();
-  
-      tb.mtime = m_time;                  /* Set modification time */
-      tb.atime = m_time;                  /* Set access time */
---- 613,620 ----
-      (uint) attribute;
-      (uint) host;
-  
-!     m_time = mstonix(tstamp);
-!     m_time += gettz(m_time);
-  
-      tb.mtime = m_time;                  /* Set modification time */
-      tb.atime = m_time;                  /* Set access time */
-*** unarj.h.old	Wed Jun 23 09:07:20 1993
---- unarj.h	Wed Dec 28 04:25:07 1994
-***************
-*** 104,111 ****
---- 104,115 ----
-  #endif
-  
-  typedef unsigned char  uchar;   /*  8 bits or more */
-+ #if !defined(__FreeBSD__) && !defined(__OpenBSD__) && !defined(__NetBSD__)
-  typedef unsigned int   uint;    /* 16 - 32 bits or more */
-  typedef unsigned short ushort;  /* 16 bits or more */
-+ #else
-+ #  include <sys/types.h>
-+ #endif
-  typedef unsigned long  ulong;   /* 32 bits or more */
-  
-  #define USHRT_BIT   (CHAR_BIT * sizeof(ushort))
+--- unarj.h.orig	Wed Jun 23 06:07:20 1993
++++ unarj.h	Wed Jan 21 15:03:39 1998
+@@ -104,9 +104,13 @@
+ #endif
+ 
+ typedef unsigned char  uchar;   /*  8 bits or more */
++#if !defined(__FreeBSD__) && !defined(__OpenBSD__) && !defined(__NetBSD__)
+ typedef unsigned int   uint;    /* 16 - 32 bits or more */
+ typedef unsigned short ushort;  /* 16 bits or more */
++#else
++#  include <sys/types.h>
++#endif
+ typedef unsigned long  ulong;   /* 32 bits or more */
+ 
+ #define USHRT_BIT   (CHAR_BIT * sizeof(ushort))
+ 

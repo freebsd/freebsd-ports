@@ -1,0 +1,61 @@
+--- environ.c.orig	Tue Jun 22 22:07:20 1993
++++ environ.c	Sat Dec 26 08:39:07 1998
+@@ -429,16 +429,23 @@
+ 
+ #define SUBS_DEFINED
+ 
++#include <stdlib.h>
++#include <string.h>
+ #include <time.h>
++#include <sys/types.h>
+ 
+-#ifndef time_t
+-#define time_t long
+-#endif
++/*#ifndef time_t
++ #define time_t long
++ #endif*/
++
++#include <sys/param.h>
+ 
++#if !(defined(BSD) && BSD >= 199306)
+ extern struct tm *localtime();
+ extern time_t time();
+ extern char   *strcpy();
+ extern voidp  *malloc();
++#endif
+ 
+ FILE *
+ file_open(name, mode)
+@@ -534,8 +541,12 @@
+ }
+ 
+ long
+-gettz()         /* returns the offset from GMT in seconds */
++gettz(stamp)         /* returns the offset from GMT in seconds */
++time_t stamp;
+ {
++#if defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__)
++	return -localtime(&stamp)->tm_gmtoff;
++#else
+ #define NOONOFFSET    43200L
+ #define SEC_IN_DAY    (24L * 60L * 60L)
+ #define INV_VALUE     (SEC_IN_DAY + 1L)
+@@ -551,6 +562,7 @@
+     noontm = localtime(&noon);
+     retval = NOONOFFSET - 60 * (60 * noontm->tm_hour - noontm->tm_min);
+     return retval;
++#endif
+ }
+ 
+ long
+@@ -608,7 +620,8 @@
+     (uint) attribute;
+     (uint) host;
+ 
+-    m_time = mstonix(tstamp) + gettz();
++    m_time = mstonix(tstamp);
++    m_time += gettz(m_time);
+ 
+     tb.mtime = m_time;                  /* Set modification time */
+     tb.atime = m_time;                  /* Set access time */
