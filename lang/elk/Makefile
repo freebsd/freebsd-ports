@@ -1,14 +1,16 @@
 # New ports collection makefile for:    elk
-# Version required:     2.2
+# Version required:     3.0
 # Date created:         08 March 1995
 # Whom:                 thomas@ghpc8.ihf.rwth-aachen.de
 #
-# $Id$
+# $Id: Makefile,v 1.6 1995/04/24 11:29:00 asami Exp $
 #
 
-DISTNAME=       elk-2.2
+DISTNAME=       elk-3.0
 CATEGORIES+=	languages
-MASTER_SITES=	ftp://ftp.x.org/contrib/devel_tools/
+KEYWORDS+=	languages scheme
+MASTER_SITES=	ftp://crl.dec.com/pub/X11/contrib/devel_tools/ \
+		ftp://ftp.th-darmstadt.de/pub/X11/contrib/devel_tools/
 
 MAINTAINER=	thomas@ghpc8.ihf.rwth-aachen.de
 
@@ -23,14 +25,14 @@ ALL_TARGET=	default
 #
 
 pre-install:
-	@mkdir -p ${PREFIX}/lib/elk
+	@mkdir -p ${PREFIX}/share/elk
 
 post-install:
-	@(cd ${PREFIX}/lib/elk; \
-	  mv bin/scheme ${PREFIX}/bin/elk; \
+	@(cd ${PREFIX}/share/elk; \
+	  cp bin/scheme ${PREFIX}/bin/elk; \
 	  mkdir -p ${PREFIX}/include/elk; \
-	  mv include/*.h ${PREFIX}/include/elk; \
-	  rmdir bin include)
+	  cp -R include/* ${PREFIX}/include/elk; \
+	  rm -rf bin include)
 	@install -c -o bin -g bin -m 444 ${WRKSRC}/doc/man/elk.1 ${PREFIX}/man/man1
 	@gzip -9nf ${PREFIX}/man/man1/elk.1
 
