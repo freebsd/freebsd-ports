@@ -53,9 +53,11 @@ share/mutella/remote/template/log.html
 share/mutella/remote/template/message.html
 share/mutella/remote/template/move.html
 share/mutella/remote/template/mutella-remote.css
-share/mutella/remote/template/results-detail.html
-share/mutella/remote/template/results-overview.html
-share/mutella/remote/template/results-ungrouped.html
+share/mutella/remote/template/modules/results-detail.html
+share/mutella/remote/template/modules/results-grouped-body.html
+share/mutella/remote/template/modules/results-grouped-head.html
+share/mutella/remote/template/modules/results-ungrouped-body.html
+share/mutella/remote/template/modules/results-ungrouped-head.html
 share/mutella/remote/template/results.html
 share/mutella/remote/template/searches.html
 share/mutella/remote/template/transfers.html
