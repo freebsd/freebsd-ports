@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	openssl
-PORTVERSION=	0.0.9
+PORTVERSION=	0.1.0
 CATEGORIES=	security ruby
-MASTER_SITES=	http://klokan.sh.cvut.cz/~rokosm/
+MASTER_SITES=	http://freesoftware.fsf.org/download/rubypki/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ossl-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
@@ -27,8 +27,8 @@ INSTALL_TARGET=	site-install
 DOCS=		ChangeLog README
 
 post-extract:
-	find ${WRKSRC} -type d -name CVS | xargs ${RM} -rf
-	find ${WRKSRC} -type f -name '*~' -delete
+	${FIND} ${WRKSRC} -type d -name CVS | xargs ${RM} -rf
+	${FIND} ${WRKSRC} -type f -name '*~' -delete
 
 post-install:
 .if !defined(NOPORTDOCS)
