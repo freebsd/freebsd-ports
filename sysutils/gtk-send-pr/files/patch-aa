@@ -1,0 +1,38 @@
+--- gtk_ui.c.old	Thu Jan 29 21:16:44 2004
++++ gtk_ui.c	Fri Jan 30 10:43:42 2004
+@@ -21,7 +21,7 @@
+   OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+-  $Id: //depot/gtk-send-pr/gtk_ui.c#10 $
++  $Id: //depot/gtk-send-pr/gtk_ui.c#11 $
+ 
+ */
+ 
+@@ -925,16 +925,19 @@
+ 
+   mypr->smtp_cc_text=(char *)gtk_entry_get_text(GTK_ENTRY(email_entry4));
+   cc_field=(char *)gtk_entry_get_text(GTK_ENTRY(email_entry4));
++  if(strlen(mypr->smtp_cc_text)>0) {
+ 
+-  do {
+-    temp_cc=strsep(&cc_field,",");
+-    if(temp_cc!=NULL) {
++    do {
++      temp_cc=strsep(&cc_field,",");
++      if(temp_cc!=NULL) {
+ 	
+-      mypr->smtp_cc[mypr->smtp_cc_num]=temp_cc;
+-      mypr->smtp_cc_num++;
+-    }
++	mypr->smtp_cc[mypr->smtp_cc_num]=temp_cc;
++	mypr->smtp_cc_num++;
++      }
++
++    } while(temp_cc!=NULL);
+ 
+-  } while(temp_cc!=NULL);
++  }
+ 
+   mypr->smtp_server=(char *)gtk_entry_get_text(GTK_ENTRY(email_entry8));
+   mypr->smtp_from=(char *)gtk_entry_get_text(GTK_ENTRY(email_entry2));
