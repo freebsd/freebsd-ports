@@ -1098,6 +1098,7 @@ cursive		ports/games/cursive
 custom-emacs	ports/editors/custom-emacs
 custom-mule	ports/editors/custom-mule
 cutils		ports/devel/cutils
+cvm		ports/security/cvm
 cvs+ipv6		ports/devel/cvs+ipv6
 cvs2cl		ports/devel/cvs2cl
 cvs2html	ports/devel/cvs2html
