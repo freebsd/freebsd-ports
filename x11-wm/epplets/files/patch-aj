@@ -1,0 +1,117 @@
+--- epplets/E-Power.c.bak	Sat Mar 25 02:35:06 2000
++++ epplets/E-Power.c	Sat Mar 25 03:37:24 2000
+@@ -1,5 +1,10 @@
+ #include "epplet.h"
+ 
++#include<stdio.h>
++#include<fcntl.h>
++#include<sys/ioctl.h>
++#include<machine/apm_bios.h>
++
+ int                prev_bat_val = 110;
+ int                bat_val = 0;
+ int                time_val = 0;
+@@ -18,25 +23,24 @@
+ static void
+ cb_timer(void *data)
+ {
+-   static FILE *f;
++   int fd;
+ 
+-   f = fopen("/proc/apm", "r");
+-   if (f)
++   fd = open("/dev/apm", O_RDONLY);
++   if (fd != -1)
+      {
+ 	char s[256], s1[32], s2[32], s3[32];
+ 	int apm_flags, ac_stat, bat_stat, bat_flags;
+ 	int  i, hours, minutes, up, up2;
+ 	char *s_ptr;
++	struct apm_info info;
++	
++	ioctl(fd,APMIO_GETINFO,&info);
++	ac_stat=info.ai_acline;
++	bat_stat=info.ai_batt_stat;
++	time_val=info.ai_batt_time;
++	bat_val=info.ai_batt_life;
+ 	
+-	fgets(s, 255, f);
+-	sscanf(s, "%*s %*s %x %x %x %x %s %s %s", &apm_flags, &ac_stat, &bat_stat, &bat_flags, s1, s2, s3);
+-	s1[strlen(s1) - 1] = 0;
+-	bat_val=atoi(s1);
+-	if (!strcmp(s3, "sec"))
+-	   time_val = atoi(s2);
+-	else if (!strcmp(s3, "min"))
+-	   time_val = atoi(s2) * 60;
+-	fclose(f);
++	close(fd);
+ 	
+ 	up = bat_val - prev_bat_val;
+ 	up2 = up;
+@@ -52,50 +56,47 @@
+ 	
+         s_ptr = s;
+ 
+-        if( bat_flags != 0xff
+-	    && bat_flags & 0x80 )
+-	  {
+-	    s_ptr += Esnprintf( s_ptr, sizeof(s_ptr), "no battery" );
+-	  }
+-	else
+-	  {
+ 	    if( bat_val > 0 )
+-	      s_ptr += Esnprintf( s_ptr, sizeof(s_ptr), "%i%%", bat_val );
++	      s_ptr += Esnprintf( s_ptr, sizeof("%i%%"), "%i%%", bat_val );
+ 
+ 	    switch( bat_stat )
+ 	      {
+ 		case 0:
+-	          s_ptr += Esnprintf( s_ptr, sizeof(s_ptr), ", high" );
++	          s_ptr += Esnprintf( s_ptr, sizeof(", high"), ", high" );
+ 		  break;
+ 		case 1:
+-	          s_ptr += Esnprintf( s_ptr, sizeof(s_ptr), ", low" );
++	          s_ptr += Esnprintf( s_ptr, sizeof(", low"), ", low" );
+ 		  break;
+ 		case 2:
+-	          s_ptr += Esnprintf( s_ptr, sizeof(s_ptr), ", crit." );
++	          s_ptr += Esnprintf( s_ptr, sizeof(", crit."), ", crit." );
+ 		  break;
+ 		case 3:
+-	          s_ptr += Esnprintf( s_ptr, sizeof(s_ptr), ", charge" );
++	          s_ptr += Esnprintf( s_ptr, sizeof(", charge"), ", charge" );
+ 		  break;
+ 	      }
+-	  }
+-	s_ptr += Esnprintf( s_ptr, sizeof(s_ptr), "\n" );
++
++	s_ptr += Esnprintf( s_ptr, sizeof("\n"), "\n" );
+ 
+ 
+ 	if( ac_stat == 1 )
+           {
+-	    s_ptr += Esnprintf(s_ptr, sizeof(s_ptr), "AC on-line" );
++	    s_ptr += Esnprintf(s_ptr, sizeof("AC on-line"), "AC on-line" );
+           }
+         else
+           {
++	    if( time_val >= 0){
+ 	    hours = time_val / 3600;
+             minutes = (time_val / 60) % 60;
+ 	    if (up2 > 0)
+-	       s_ptr += Esnprintf(s_ptr, sizeof(s_ptr), "(%i:%02i)\n%i:%02i", 
++	       s_ptr += Esnprintf(s_ptr, sizeof("(%i:%02i)\n%i:%02i"), "(%i:%02i)\n%i:%02i", 
+ 		       		(((100 - bat_val) * 2 * 60) / up2) / 60, 
+ 		       		(((100 - bat_val) * 2 * 60) / up2) % 60, 
+ 		       		hours, minutes);
+ 	    else
+-	       s_ptr += Esnprintf(s_ptr, sizeof(s_ptr), "%i:%02i", hours, minutes);
++	       s_ptr += Esnprintf(s_ptr, sizeof("%i:%02i"), "%i:%02i", hours, minutes);
++	    }
++	    else
++	      s_ptr += Esnprintf(s_ptr, sizeof("unknown"),"unknown");
+           }
+ 	Epplet_change_label(label, s);
+ 
+
+
