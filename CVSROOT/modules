@@ -2374,6 +2374,7 @@ gkrellscore	ports/misc/gkrellscore
 gkrellshoot	ports/misc/gkrellshoot
 gkrellshoot2	ports/misc/gkrellshoot2
 gkrellsun	ports/astro/gkrellsun
+gkrelltop	ports/sysutils/gkrelltop
 gkrellweather	ports/misc/gkrellweather
 gkrellweather2	ports/misc/gkrellweather2
 gkx86info	ports/misc/gkx86info
