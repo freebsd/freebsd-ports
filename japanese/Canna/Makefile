@@ -24,6 +24,10 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	max@FreeBSD.org
 
+.if ${XFREE86_VERSION} == 3
+BUILD_DEPENDS=	xmkmf:${PORTSDIR}/devel/imake
+.endif
+
 USE_IMAKE=	yes
 USE_X_PREFIX=	no
 ALL_TARGET=	canna
