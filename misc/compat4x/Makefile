@@ -40,7 +40,7 @@ COMPAT4X_DISTFILES=	${PORTNAME}.aa \
 IGNORE=			unsupported architecture
 .endif
 .else
-COMPAT4X_OSVERSION=	4.9
+COMPAT4X_OSVERSION=	4.10
 PLIST=			${.CURDIR}/pkg-plist.freebsd4
 .if ${ARCH} == i386
 COMPAT4X_DISTFILES=	${PORTNAME}.aa \
