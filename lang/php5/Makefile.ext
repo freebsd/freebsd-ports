@@ -102,8 +102,7 @@ CONFIGURE_ARGS+=--with-xpm-dir=${X11BASE}
 
 OPTIONS=	T1LIB "Include T1lib support" on \
 		TRUETYPE "Enable TrueType string function" on \
-		JIS "Enable JIS-mapped Japanese font support" off \
-		LZW "Enable LZW-compressed GIF write support" off
+		JIS "Enable JIS-mapped Japanese font support" off
 
 PHP_HEADER_DIRS=libgd
 .endif
@@ -207,7 +206,7 @@ CONFIGURE_ARGS+=--with-mysqli=${LOCALBASE}/bin/mysql_config
 
 USE_MYSQL=	yes
 DEFAULT_MYSQL_VER=	41
-BROKEN_WITH_MYSQL=	323 40
+BROKEN_WITH_MYSQL=	323 40 50
 .endif
 
 .if ${PHP_MODNAME} == "ncurses"
@@ -437,9 +436,6 @@ CONFIGURE_ARGS+=--enable-gd-native-ttf
 .	endif
 .	if defined(WITH_JIS)
 CONFIGURE_ARGS+=--enable-gd-jis-conv
-.	endif
-.	if defined(WITH_LZW)
-CONFIGURE_ARGS+=--enable-gd-lzw-gif
 .	endif
 .endif
 

@@ -1,6 +1,16 @@
---- scripts/phpize.in.orig	Sat Jan  3 15:03:46 2004
-+++ scripts/phpize.in	Fri Jun 25 12:58:49 2004
-@@ -108,7 +108,7 @@
+--- scripts/phpize.in.orig	Mon Aug 23 14:25:48 2004
++++ scripts/phpize.in	Mon Aug 23 14:26:41 2004
+@@ -101,14 +101,14 @@
+ 
+ phpize_autotools()
+ {
+-  aclocal    || exit 1
+-  autoconf   || exit 1
+-  autoheader || exit 1
++  aclocal15     || exit 1
++  autoconf253   || exit 1
++  autoheader253 || exit 1
+ }
  
  phpize_libtoolize()
  {
