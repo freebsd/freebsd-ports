@@ -1,13 +1,13 @@
 # New ports collection makefile for:	ja-perl5
-# Version required:	5.004_01
+# Version required:	5.004_04
 # Date created:		7 January 1997
 # Whom:			Yoshiro MIHIRA
 #
-# $Id: Makefile,v 1.9 1997/08/31 16:20:35 max Exp $
+# $Id: Makefile,v 1.10 1997/09/14 21:35:39 max Exp $
 #
 
-DISTNAME=	perl5.004_01
-PKGNAME=	ja-perl-5.004.01
+DISTNAME=	perl5.004_04
+PKGNAME=	ja-perl-5.004.04
 CATEGORIES=	japanese perl5
 MASTER_SITES=	ftp://ftp.funet.fi/pub/languages/perl/CPAN/src/5.0/ \
 		ftp://ftp.is.co.za/pub/packages/perl/CPAN/src/5.0/ \
@@ -21,7 +21,7 @@ MASTER_SITES=	ftp://ftp.funet.fi/pub/languages/perl/CPAN/src/5.0/ \
 		ftp://ftp.delphi.com/pub/mirrors/packages/perl/CPAN/src/5.0/ \
 		ftp://uiarchive.cso.uiuc.edu/pub/lang/perl/CPAN/src/5.0/
 
-PATCHFILES=	jperl5.004_01-970617.pat.gz
+PATCHFILES=	jperl5.004_04-980303.pat.gz
 PATCH_SITES=	ftp://ftp.funet.fi/pub/languages/perl/CPAN/authors/id/WATANABE/ \
 		ftp://ftp.is.co.za/pub/packages/perl/CPAN/authors/id/WATANABE/ \
 		ftp://ftp.math.ncu.edu.tw/perl/CPAN/authors/id/WATANABE/ \
@@ -34,7 +34,7 @@ PATCH_SITES=	ftp://ftp.funet.fi/pub/languages/perl/CPAN/authors/id/WATANABE/ \
 		ftp://ftp.delphi.com/pub/mirrors/packages/perl/CPAN/authors/id/WATANABE/ \
 		ftp://uiarchive.cso.uiuc.edu/pub/lang/perl/CPAN/authors/id/WATANABE/
 
-MAINTAINER=	hikura@kaisei.org
+MAINTAINER=	shige@kuis.kyoto-u.ac.jp
 
 PATCH_DIST_STRIP=       -p1
 HAS_CONFIGURE=		yes
@@ -76,12 +76,15 @@ MAN3=	AnyDBM_File.3 AutoLoader.3 AutoSplit.3 Benchmark.3 Bundle::CPAN.3 \
 	Text::Soundex.3 Text::Tabs.3 Text::Wrap.3 Tie::Hash.3 \
 	Tie::RefHash.3 Tie::Scalar.3 Tie::SubstrHash.3 Time::Local.3 \
 	Time::gmtime.3 Time::localtime.3 Time::tm.3 UNIVERSAL.3 \
-	User::grent.3 User::pwent.3 autouse.3 blib.3 constant.3 diagnostics.3 \
+	User::grent.3 User::pwent.3 \
+	autouse.3 base.3 blib.3 constant.3 diagnostics.3 \
 	integer.3 less.3 lib.3 locale.3 ops.3 overload.3 sigtrap.3 strict.3 \
 	subs.3 vars.3 I18N::Japanese.3 File::DosGlob.3
 
 MAN3PREFIX=	${PREFIX}/lib/perl5
 
+post-patch:
+	@(cd ${WRKSRC}; chmod +x t/kanji/*.t)
 test:
 	@(cd ${WRKSRC}; make test)
 
