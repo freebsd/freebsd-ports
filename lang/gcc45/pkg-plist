@@ -25,19 +25,17 @@ include/ffi.h
 include/ffi_mips.h
 include/jni.h
 include/jvmpi.h
-lib/libffi-2.00-beta.so
 lib/libffi.la
 lib/libffi.a
 lib/security/classpath.security
 lib/security/libgcj.security
 @dirrm lib/security
-lib/lib-org-xml-sax.so.0
 lib/lib-org-xml-sax.la
 lib/lib-org-xml-sax.a
-lib/lib-org-w3c-dom.so.0
 lib/lib-org-w3c-dom.la
 lib/lib-org-w3c-dom.a
 share/java/libgcj-3.3.jar
+@dirrm share/java/classes
 @dirrm share/java
 @comment not needed post-libstdc++-v3:	%%GNU_HOST%%/include/_G_config.h
 @comment Insert PLIST.gcc-lib here
