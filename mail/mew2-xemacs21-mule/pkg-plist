@@ -1,3 +1,4 @@
+bin/incm
 bin/mewcat
 bin/mewdecode
 bin/mewencode
@@ -48,6 +49,7 @@ bin/mewls
 %%EMACS_PACKAGESDIR%%/info/mew%%MEW_MAJOR_VER%%.jis.info
 %%EMACS_PACKAGESDIR%%/info/mew%%MEW_MAJOR_VER%%.jis.info-1
 %%EMACS_PACKAGESDIR%%/info/mew%%MEW_MAJOR_VER%%.jis.info-2
+%%EMACS_PACKAGESDIR%%/info/mew%%MEW_MAJOR_VER%%.jis.info-3
 %%EMACS_PACKAGESDIR%%/lisp/mew%%MEW_MAJOR_VER%%/_pkg.el
 %%EMACS_PACKAGESDIR%%/lisp/mew%%MEW_MAJOR_VER%%/auto-autoloads.el
 %%EMACS_PACKAGESDIR%%/lisp/mew%%MEW_MAJOR_VER%%/auto-autoloads.elc
@@ -161,9 +163,6 @@ share/doc/mew%%MEW_MAJOR_VER%%/00diff
 share/doc/mew%%MEW_MAJOR_VER%%/00readme
 share/doc/mew%%MEW_MAJOR_VER%%/contrib/00readme
 share/doc/mew%%MEW_MAJOR_VER%%/contrib/00readme-namazu.jis
-share/doc/mew%%MEW_MAJOR_VER%%/contrib/README-mewinc.jis
-share/doc/mew%%MEW_MAJOR_VER%%/contrib/incdir
-share/doc/mew%%MEW_MAJOR_VER%%/contrib/incmbox
 share/doc/mew%%MEW_MAJOR_VER%%/contrib/mew-browse.el
 share/doc/mew%%MEW_MAJOR_VER%%/contrib/mew-caesar.el
 share/doc/mew%%MEW_MAJOR_VER%%/contrib/mew-fancy-summary.el
@@ -173,7 +172,6 @@ share/doc/mew%%MEW_MAJOR_VER%%/contrib/mew-nmz.el
 share/doc/mew%%MEW_MAJOR_VER%%/contrib/mew-refile-view.el
 share/doc/mew%%MEW_MAJOR_VER%%/contrib/mew-smime-ja.texi
 share/doc/mew%%MEW_MAJOR_VER%%/contrib/mew-toolbar-frame.el
-share/doc/mew%%MEW_MAJOR_VER%%/contrib/mewinc
 @dirrm share/doc/mew%%MEW_MAJOR_VER%%/contrib
 @dirrm share/doc/mew%%MEW_MAJOR_VER%%
 @unexec rmdir %D/%%EMACS_PACKAGESDIR%%/pkginfo 2>/dev/null || true

@@ -19,7 +19,7 @@
 -INFO  = mew.info mew.info-1 mew.info-2 mew.info-3
 -JINFO = mew.jis.info mew.jis.info-1 mew.jis.info-2 mew.jis.info-3
 +INFO  = mew${MEW_MAJOR_VER}.info mew${MEW_MAJOR_VER}.info-1 mew${MEW_MAJOR_VER}.info-2 mew${MEW_MAJOR_VER}.info-3
-+JINFO = mew${MEW_MAJOR_VER}.jis.info mew${MEW_MAJOR_VER}.jis.info-1 mew${MEW_MAJOR_VER}.jis.info-2
++JINFO = mew${MEW_MAJOR_VER}.jis.info mew${MEW_MAJOR_VER}.jis.info-1 mew${MEW_MAJOR_VER}.jis.info-2 mew${MEW_MAJOR_VER}.jis.info-3
 +MANUALS= 00readme mew.texi
  
  all: info
