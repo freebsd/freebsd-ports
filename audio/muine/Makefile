@@ -7,7 +7,7 @@
 
 PORTNAME=	muine
 PORTVERSION=	0.6.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio gnome
 MASTER_SITES=	http://muine.gooeylinux.org/
 
@@ -21,7 +21,8 @@ BUILD_DEPENDS=	gapi-fixup:${PORTSDIR}/x11-toolkits/gtk-sharp
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_GNOME=	gnomeprefix gnomehack intltool libgnomeui
-USE_X_PREFIX=   yes
+WANT_GSTREAMER=	yes
+USE_X_PREFIX=	yes
 USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
 
@@ -36,7 +37,7 @@ OPTIONS=	GSTREAMER "Enable Gstreamer backend" off
 
 .if defined (WITH_GSTREAMER)
 CONFIGURE_ARGS+= --enable-gstreamer=yes
-USE_GNOME+=	gstreamerplugins
+USE_GSTREAMER+=	mad vorbis flac
 .else
 LIB_DEPENDS+=	xine.12:${PORTSDIR}/multimedia/libxine
 .endif

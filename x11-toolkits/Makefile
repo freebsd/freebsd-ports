@@ -37,6 +37,7 @@
     SUBDIR += gnustep-gui
     SUBDIR += gnustep-xdps
     SUBDIR += gob
+    SUBDIR += gstreamer-plugins-pango
     SUBDIR += gtk--
     SUBDIR += gtk--2
     SUBDIR += gtk-sharp

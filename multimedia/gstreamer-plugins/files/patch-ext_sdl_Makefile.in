@@ -1,0 +1,23 @@
+--- ext/sdl/Makefile.in.orig	Mon Oct  4 00:56:57 2004
++++ ext/sdl/Makefile.in	Mon Oct  4 00:57:47 2004
+@@ -76,8 +76,7 @@
+ pluginLTLIBRARIES_INSTALL = $(INSTALL)
+ LTLIBRARIES = $(plugin_LTLIBRARIES)
+ am__DEPENDENCIES_1 =
+-libgstsdlvideosink_la_DEPENDENCIES = $(am__DEPENDENCIES_1) \
+-	$(top_builddir)/gst-libs/gst/libgstinterfaces-@GST_MAJORMINOR@.la
++libgstsdlvideosink_la_DEPENDENCIES = $(am__DEPENDENCIES_1)
+ am_libgstsdlvideosink_la_OBJECTS =  \
+ 	libgstsdlvideosink_la-sdlvideosink.lo
+ libgstsdlvideosink_la_OBJECTS = $(am_libgstsdlvideosink_la_OBJECTS)
+@@ -617,9 +616,7 @@
+ plugin_LTLIBRARIES = libgstsdlvideosink.la
+ libgstsdlvideosink_la_SOURCES = sdlvideosink.c
+ libgstsdlvideosink_la_CFLAGS = $(GST_CFLAGS) $(SDL_CFLAGS)
+-libgstsdlvideosink_la_LIBADD = $(SDL_LIBS) \
+-		$(top_builddir)/gst-libs/gst/libgstinterfaces-@GST_MAJORMINOR@.la
+-
++libgstsdlvideosink_la_LIBADD = $(SDL_LIBS) -lgstinterfaces-%%VERSION%%
+ libgstsdlvideosink_la_LDFLAGS = $(GST_PLUGIN_LDFLAGS)
+ noinst_HEADERS = sdlvideosink.h
+ all: all-am

@@ -7,6 +7,7 @@
 
 PORTNAME=	kmplayer
 DISTVERSION=	0.8.4-rc5
+PORTREVISION=	1
 CATEGORIES=	multimedia audio kde
 MASTER_SITES=	http://www.xs4all.nl/%7Ejjvrieze/
 #DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.r/-rc/}
@@ -29,7 +30,7 @@ CONFIGURE_ARGS+=--with-x=${X11BASE} --disable-debug
 OPTIONS=	GSTREAMER "Enable support for video playback using gstreamer" off \
 		XINE "Enable support for video playback using libxine" off
 
-WANT_GNOME=	gstreamerplugins
+WANT_GSTREAMER=	yes
 
 ###
 ## Lib Detection
@@ -57,20 +58,12 @@ post-patch:
 .include <bsd.port.pre.mk>
 
 ###
-## Internal Detection
-###
-# gstreamer
-.if ${HAVE_GNOME:Mgstreamerplugins}
-WITH_GSTREAMER=yes
-.endif
-
-###
 ## Support Activation
 ###
 # gstreamer
 .undef WITH_GSTREAMER
 .if defined(WITH_GSTREAMER)
-USE_GNOME+=	gstreamerplugins
+USE_GSTREAMER+=	yes
 
 PLIST_FILES+=	bin/kgstplayer
 .else

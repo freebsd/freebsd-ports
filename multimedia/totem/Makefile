@@ -7,6 +7,7 @@
 
 PORTNAME=	totem
 PORTVERSION=	0.100
+PORTREVISION=	1
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION}
@@ -21,6 +22,7 @@ USE_REINPLACE=	yes
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack gnomedesktop desktopfileutils
+WANT_GSTREAMER=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=15
 INSTALLS_OMF=	yes
@@ -39,7 +41,7 @@ CONFLICTS=	totem-gstreamer-[0-9]*
 
 .if defined(WITH_GSTREAMER)
 CONFIGURE_ARGS+=--enable-gstreamer
-USE_GNOME+=	gstreamerplugins
+USE_GSTREAMER=	gnomevfs core
 WITHOUT_DVDNAV=	yes
 PLIST_SUB=	GSTREAMER=""
 .else

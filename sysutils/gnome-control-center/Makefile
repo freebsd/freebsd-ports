@@ -7,7 +7,7 @@
 
 PORTNAME=	gnomecontrolcenter2
 PORTVERSION=	2.8.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/control-center/2.8
@@ -25,7 +25,8 @@ USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNOME_DESKTOP_VERSION=2
 USE_GNOME=	gnomeprefix gnomehack gnomehier intlhack metacity nautilus2 \
-		gstreamerplugins desktopfileutils
+		desktopfileutils
+USE_GSTREAMER=	yes
 USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \

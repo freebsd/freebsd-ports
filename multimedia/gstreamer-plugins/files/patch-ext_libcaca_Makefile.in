@@ -1,0 +1,23 @@
+--- ext/libcaca/Makefile.in.orig	Mon Oct  4 00:07:18 2004
++++ ext/libcaca/Makefile.in	Mon Oct  4 00:07:59 2004
+@@ -76,8 +76,7 @@
+ pluginLTLIBRARIES_INSTALL = $(INSTALL)
+ LTLIBRARIES = $(plugin_LTLIBRARIES)
+ am__DEPENDENCIES_1 =
+-libgstcacasink_la_DEPENDENCIES = $(am__DEPENDENCIES_1) \
+-	$(top_builddir)/gst-libs/gst/libgstinterfaces-$(GST_MAJORMINOR).la
++libgstcacasink_la_DEPENDENCIES = $(am__DEPENDENCIES_1)
+ am_libgstcacasink_la_OBJECTS = libgstcacasink_la-gstcacasink.lo
+ libgstcacasink_la_OBJECTS = $(am_libgstcacasink_la_OBJECTS)
+ DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
+@@ -616,9 +615,7 @@
+ plugin_LTLIBRARIES = libgstcacasink.la
+ libgstcacasink_la_SOURCES = gstcacasink.c
+ libgstcacasink_la_CFLAGS = $(GST_CFLAGS) $(LIBCACA_CFLAGS)
+-libgstcacasink_la_LIBADD = $(LIBCACA_LIBS) \
+-	$(top_builddir)/gst-libs/gst/libgstinterfaces-$(GST_MAJORMINOR).la
+-
++libgstcacasink_la_LIBADD = $(LIBCACA_LIBS) -lgstinterfaces-%%VERSION%%
+ libgstcacasink_la_LDFLAGS = $(GST_PLUGIN_LDFLAGS)
+ noinst_HEADERS = gstcacasink.h
+ all: all-am

@@ -7,6 +7,7 @@
 
 PORTNAME=	cupid
 PORTVERSION=	0.0.1
+PORTREVISION=	1
 CATEGORIES=	multimedia audio gnome
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-recorder/
 DIST_SUBDIR=    gnome2
@@ -14,13 +15,13 @@ DIST_SUBDIR=    gnome2
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	GNOME Gstreamer based video/audio capture solution
 
+USE_GSTREAMER=	core
 USE_GNOME=	\
 		gnomehack \
 		gnomehier \
 		gnomeprefix \
 		gconf2 \
 		gnomevfs2 \
-		gstreamerplugins \
 		gtk20 \
 		intlhack \
 		intltool \

@@ -27,10 +27,10 @@ BUILD_DEPENDS+=	xmlto:${PORTSDIR}/textproc/xmlto \
 
 USE_PYTHON=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gstreamerplugins \
-		pygtk2 \
+USE_GNOME=	pygtk2 \
 		gnomehack \
 		pkgconfig
+USE_GSTREAMER=	yes
 USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \

@@ -320,6 +320,8 @@
     SUBDIR += gperf
     SUBDIR += gputils
     SUBDIR += gsoap
+    SUBDIR += gstreamer-plugins-gnomevfs
+    SUBDIR += gstreamer-plugins-sdl
     SUBDIR += gtgt
     SUBDIR += gtranslator
     SUBDIR += guikachu

@@ -7,7 +7,7 @@
 
 PORTNAME=	sound-juicer
 PORTVERSION=	0.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio gnome
 MASTER_SITES=	http://www.burtonini.com/computing/
 DIST_SUBDIR=	gnome2
@@ -22,16 +22,12 @@ USE_X_PREFIX=	yes
 INSTALLS_OMF=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-USE_GNOME=	gnomehack intlhack gnomeprefix libgnomeui gstreamerplugins
+USE_GNOME=	gnomehack intlhack gnomeprefix libgnomeui
+USE_GSTREAMER=	cdparanoia vorbis flac
 USE_LIBTOOL_VER=15
 CONFIGURE_ARGS=	--enable-ignore-missing-cd
 
 GCONF_SCHEMAS=	sound-juicer.schemas
-
-pre-everything::
-	@${ECHO_MSG}
-	@${ECHO_MSG} "You must have gstreamer-plugins built with Cdparanoia support!"
-	@${ECHO_MSG}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^\(SUBDIRS = .*\)tests\(.*\)|\1\2|' ${WRKSRC}/Makefile.in

@@ -1,0 +1,14 @@
+# New ports collection makefile for:	gstreamer-plugins-musepack
+# Date created:			4 Dec 2004
+# Whom:				Michael Johnson <ahze@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+CATEGORIES=	audio
+
+GST_PLUGIN=	musepack
+
+MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
+
+.include "${MASTERDIR}/Makefile"

@@ -7,6 +7,7 @@
 
 PORTNAME=	nautilus-media
 PORTVERSION=	0.8.1
+PORTREVISION=	1
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.8
@@ -19,7 +20,8 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 GNOME_DESKTOP_VERSION=2
-USE_GNOME=	gnomeprefix gnomehack intlhack lthack nautilus2 gstreamerplugins
+USE_GNOME=	gnomeprefix gnomehack intlhack lthack nautilus2
+USE_GSTREAMER=	core gnomevfs
 USE_INC_LIBTOOL_VER=13
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

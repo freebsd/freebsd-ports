@@ -160,6 +160,16 @@
     SUBDIR += graphviz
     SUBDIR += gridpix
     SUBDIR += gsculpt
+    SUBDIR += gstreamer-plugins-aalib
+    SUBDIR += gstreamer-plugins-gdkpixbuf
+    SUBDIR += gstreamer-plugins-hermes
+    SUBDIR += gstreamer-plugins-jpeg
+    SUBDIR += gstreamer-plugins-jpeg-mmx
+    SUBDIR += gstreamer-plugins-libcaca
+    SUBDIR += gstreamer-plugins-libmng
+    SUBDIR += gstreamer-plugins-libpng
+    SUBDIR += gstreamer-plugins-libvisual
+    SUBDIR += gstreamer-plugins-swfdec
     SUBDIR += gthumb
     SUBDIR += gtkam
     SUBDIR += gtkcairo
