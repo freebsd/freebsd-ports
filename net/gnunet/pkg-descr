@@ -1,0 +1,14 @@
+GNUnet is an anonymous, distributed, reputation-based network. A first
+service implemented on top of the networking layer allows censorship-
+resistant file-sharing.
+
+Our goal is to provide an infrastructure for secure networking. All
+communication in GNUnet is authenticated and encrypted. The reputation
+model makes attacks on the network harder. GNUnet does not rely on any
+centralized services.
+
+While our goals are similar to projects like Freenet, Gnutella, MojoNation
+and others, we hope to provide a superior combination of features for users
+that value security more than efficiency.
+
+WWW: http://www.gnu.org/software/GNUnet/

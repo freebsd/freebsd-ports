@@ -146,6 +146,7 @@
     SUBDIR += gnu-finger
     SUBDIR += gnu-radius
     SUBDIR += gnugadu
+    SUBDIR += gnunet
     SUBDIR += gnut
     SUBDIR += googolplex
     SUBDIR += gopher
