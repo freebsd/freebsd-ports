@@ -1,4 +1,4 @@
-# New ports collection makefile for:	linux-gtk
+# New ports collection makefile for:	linux-sdl
 # Date created:				8 October 2001
 # Whom:                         Martin Matuska <matuska@wu-wien.ac.at>
 # Based on:		emulators/linux_base by marcel@FreeBSD.org
