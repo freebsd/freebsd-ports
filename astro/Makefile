@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.14 1999/06/26 08:35:00 cpiazza Exp $
+# $Id: Makefile,v 1.15 1999/06/30 04:05:52 dbaker Exp $
 #
 
     SUBDIR += dgpsip
@@ -10,6 +10,7 @@
     SUBDIR += ssystem
     SUBDIR += stars
     SUBDIR += sunclock
+    SUBDIR += tkseti
     SUBDIR += wmglobe
     SUBDIR += wmmoonclock
     SUBDIR += wmspaceweather
