@@ -1,0 +1,35 @@
+bin/fpwmake
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/ASCIItoX.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/BaseText.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/BaseWord.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/Control.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/EndWord.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/FPWUtils/FPWParser.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/FPWUtils/FPWUtils.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/Heading.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/Index.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/Link.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/Reference.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/Sort.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/Tag.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/Text.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/Word.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/Word2.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/FPWUtils
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING
+libexec/freepwing/fpwcontrol
+libexec/freepwing/fpwindex
+libexec/freepwing/fpwlink
+libexec/freepwing/fpwsort
+libexec/freepwing/mkdirhier
+libexec/freepwing/perl.sh
+@dirrm libexec/freepwing
+share/doc/freepwing/catalogs/catalogs
+share/doc/freepwing/catalogs/catalogs.txt
+share/doc/freepwing/doc/freepwing.html
+share/doc/freepwing/doc/index.html
+share/doc/freepwing/fpwutils.mk
+@dirrm share/doc/freepwing/catalogs
+@dirrm share/doc/freepwing/doc
+@dirrm share/doc/freepwing
+
