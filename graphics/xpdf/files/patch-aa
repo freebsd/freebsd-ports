@@ -1,6 +1,6 @@
---- configure.in.orig	Mon Dec  4 13:28:07 2000
-+++ configure.in	Thu Jan 11 21:05:07 2001
-@@ -183,6 +183,16 @@
+--- configure.in.orig	Fri Feb  1 15:15:45 2002
++++ configure.in	Sun Feb 10 17:42:52 2002
+@@ -193,6 +193,16 @@
  if test "$xpdf_cv_func_mkstemp" = yes; then
    AC_DEFINE(HAVE_MKSTEMP)
  fi
