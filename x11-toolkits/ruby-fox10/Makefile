@@ -21,7 +21,9 @@ LIB_DEPENDS=	FOX.1:${PORTSDIR}/x11-toolkits/fox \
 		png.4:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
-FOX_VERSION=	0.99.172
+BROKEN=		"Out of sync with FOX"
+
+FOX_VERSION=	0.99.173
 #FXRUBY_REVISION=	
 .if defined(FXRUBY_REVISION) && !empty(FXRUBY_REVISION)
 FXRUBY_PORTVERSION=	${FOX_VERSION}.${FXRUBY_REVISION}
@@ -32,33 +34,27 @@ FXRUBY_DISTNAME=	FXRuby-${FOX_VERSION}
 .endif
 
 USE_RUBY=	yes
-USE_RUBY_EXTCONF=	yes
+USE_RUBY_SETUP=	yes
 
 USE_XLIB=	yes
 USE_MESA=	yes
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/src
-INSTALL_TARGET=	site-install
-CONFIGURE_ARGS=	--with-fox-include="${LOCALBASE}/include/fox" \
-		--with-fox-lib="${LOCALBASE}/lib"
-#MAKE_ARGS=	LOCAL_LIBS="-lgcc"
-
-DOCS_EN=	README	index.html
+DOCS_EN=	ANNOUNCE	ChangeLog	README	\
+		index.html	doc
 
 post-patch:
-	${RUBY} -i -pe 'sub %r:/usr/X11R6\b:, "${X11BASE}"' ${WRKSRC}/extconf.rb
-
-pre-build:
-#	cd ${WRKSRC}/../swig-interfaces; ${MAKE}
-	${RUBY} -i -pe 'sub %r:^CXXFLAGS *=.*:, "CXXFLAGS = $$(CFLAGS) $$(CPPFLAGS)"' ${WRKSRC}/Makefile
+	${RUBY} -i -p \
+		-e 'gsub %r:/usr/local\b:, "${LOCALBASE}"' \
+		-e 'gsub %r:/usr/X11R6\b:, "${X11BASE}"' \
+		${WRKSRC}/ext/fox/extconf.rb
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_EXAMPLESDIR}/fox
-	${CP} -R ${WRKSRC}/../examples/* ${RUBY_EXAMPLESDIR}/fox/
-	${MKDIR} ${RUBY_DOCDIR}/fox
+	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
+	${CP} -R ${WRKSRC}/examples/* ${RUBY_EXAMPLESDIR}/${PORTNAME}/
+	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}
 .for f in ${DOCS_EN}
-	${INSTALL_DATA} ${WRKSRC}/../${f} ${RUBY_DOCDIR}/fox/
+	${CP} -R ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/
 .endfor
 .endif
 
