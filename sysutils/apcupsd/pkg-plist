@@ -2,6 +2,8 @@ sbin/apcupsd
 sbin/apcaccess
 sbin/apcnisd
 %%POWERFL%%sbin/powerflute
+etc/apcupsd/apcupsd.conf.net-master.sample
+etc/apcupsd/apcupsd.conf.net-slave.sample
 etc/apcupsd/apccontrol
 etc/apcupsd/changeme
 etc/apcupsd/commfailure
