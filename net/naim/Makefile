@@ -6,16 +6,14 @@
 #
 
 PORTNAME=	naim
-PORTVERSION=	0.9.6.2010
+PORTVERSION=	0.10.1
 CATEGORIES=	net
 MASTER_SITES=	http://dev.n.ml.org/ \
 		ftp://ftp.netmug.org/pub/FreeBSD/distfiles/
-DISTNAME=	naim-0.9.6-2000-06-30-2010
 
 MAINTAINER=	mharo@FreeBSD.org
 
 GNU_CONFIGURE=	yes
-WRKSRC=		${WRKDIR}/naim-0.9.6
 
 # Manpage is empty
 #MAN1=		naim.1
