@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sisc
-PORTVERSION=	1.7.8
+PORTVERSION=	1.7.9
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -33,7 +33,7 @@ do-build:
 	cd ${WRKSRC}; ${SETENV} JAVA_HOME=${JAVA_HOME} ant sisc-lib
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/*.jar ${WRKSRC}/boot/*.shp ${JAVAJARDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.jar ${WRKSRC}/*.shp ${JAVAJARDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/dist/sisc.sh ${PREFIX}/bin/sisc
 	${MKDIR} ${DOCSDIR}
 .for i in COPYING README
