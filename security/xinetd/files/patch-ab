@@ -1,7 +1,7 @@
---- Makefile.in.orig	Tue May 11 01:06:13 1999
-+++ Makefile.in	Tue May 11 01:06:36 1999
-@@ -39,11 +39,11 @@
- 		INCLUDEDIR=-I$(LIB_INCLUDEDIR) \
+--- Makefile.in.orig	Sun Jul 18 22:23:22 1999
++++ Makefile.in	Sun Sep 12 01:52:44 1999
+@@ -29,11 +29,11 @@
+ 		LIBS="$(LIBS)" \
  		"DEFS=$(PROG_DEFS)" \
  		"CC=$(CC)" \
 -		DEBUG=-O
@@ -9,8 +9,8 @@
  
  makelibs:
  	for lib in $(MANDATORY_LIBS) ; do \
--		( cd libs/src/$$lib ; make install LIBDIR=$(LIB_INSTALLDIR) INCLUDEDIR=$(LIB_INCLUDEDIR) MANDIR=$(LIB_MANDIR) "INSTALL=$(INSTALL_CMD)" "DEFS=$(LIB_DEFS)" RANLIB=true "CC=$(CC)" DEBUG=-O ) \
-+		( cd libs/src/$$lib ; make install LIBDIR=$(LIB_INSTALLDIR) INCLUDEDIR=$(LIB_INCLUDEDIR) MANDIR=$(LIB_MANDIR) "INSTALL=$(INSTALL_CMD)" "DEFS=$(LIB_DEFS)" RANLIB=true "CC=$(CC)" "DEBUG=$(CFLAGS)" ) \
+-		( cd libs/src/$$lib ; make install "INSTALL=$(INSTALL_CMD)" "DEFS=$(LIB_DEFS)" RANLIB=true "CC=$(CC)" DEBUG=-O ) \
++		( cd libs/src/$$lib ; make install "INSTALL=$(INSTALL_CMD)" "DEFS=$(LIB_DEFS)" RANLIB=true "CC=$(CC)" "DEBUG=$(CLAGS)" ) \
  	; done
  
  install:
