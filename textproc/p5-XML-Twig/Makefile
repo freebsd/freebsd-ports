@@ -17,7 +17,7 @@ COMMENT=	Process huge XML documents by chunks via a tree interface
 
 # On Perl < 5.8.0, XML::Twig has a further optional dependency on WeakRef.
 # However, WeakRef needs Perl 5.005_55.
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Text/Iconv.pm:${PORTSDIR}/converters/p5-Text-Iconv \
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Text/Iconv.pm:${PORTSDIR}/converters/p5-Text-Iconv \
 		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
 
 PERL_CONFIGURE=	YES
