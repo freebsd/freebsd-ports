@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Fri Nov 10 09:03:22 2000
++++ Makefile.in	Sun Nov 12 14:39:59 2000
+@@ -76,7 +76,7 @@
+ SUBDIRS = giblib
+ 
+ docs_DATA = README AUTHORS ChangeLog TODO
+-docsdir = $(prefix)/doc/giblib
++docsdir = $(datadir)/doc/giblib
+ 
+ EXTRA_DIST = $(docs_DATA)
+ 
