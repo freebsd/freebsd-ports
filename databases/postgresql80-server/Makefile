@@ -85,7 +85,7 @@ MAKEFILE=	GNUmakefile
 .endif
 
 .if defined(WITH_MIT_KRB5)
-KRB5CONF=	${LOCALBASE}/bin/krb5-config
+KRB5CONF=	${KRB5_HOME}/bin/krb5-config
 LIB_DEPENDS+=	krb5.3:${PORTSDIR}/security/krb5
 WITH_KRB5=	yes
 .endif

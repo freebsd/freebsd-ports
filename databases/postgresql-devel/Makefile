@@ -113,7 +113,7 @@ LDFLAGS+=	`${KRB5CONF} --libs krb5`
 .endif
 
 .if defined(WITH_MIT_KRB5)
-KRB5CONF=	${LOCALBASE}/bin/krb5-config
+KRB5CONF=	${KRB5_HOME}/bin/krb5-config
 WITH_KRB5=	yes
 .endif
 
