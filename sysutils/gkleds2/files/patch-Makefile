@@ -1,0 +1,47 @@
+$FreeBSD$
+
+--- Makefile.orig	Tue Jan 28 17:14:08 2003
++++ Makefile	Sun Jun  1 08:47:34 2003
+@@ -11,16 +11,14 @@
+ DEGUG = -DGKLEDS_DEBUG
+ LIBFLAGS = -shared
+ INCS = $(GTK_INCLUDES) -DGKLEDS_SELFCOMPILE
+-COMPFLAGS = -Wall -O2 -fPIC
+-CC = gcc
++COMPFLAGS = -Wall -fPIC ${CFLAGS}
++CC ?= gcc
+ 
+ SRCS = src/gkleds.c src/gkleds_ind.c src/gkleds_conf.c src/gkrellm2/win32-plugin.c
+ HDRS = src/gkleds.h src/gkleds_ind.c src/gkleds_conf.c src/gkrellm2/win32-plugin.h
+ WIN32_OBJS = gkleds.o gkleds_ind.o gkleds_conf.o win32-plugin.o
+ UNIX_OBJS = gkleds.o gkleds_ind.o gkleds_conf.o
+ 
+-INSTALL_PROG = install
+-
+ .PHONY : clean
+ .PHONY : install
+ .PHONY : uninstall
+@@ -29,7 +27,7 @@
+ #=======================================================================
+ #=======================================================================
+ 
+-unix : $(UNIX_OBJS)
++all : $(UNIX_OBJS)
+ 	$(CC) $(LIBFLAGS) $(UNIX_LIBS) -o gkleds.so $^
+ 
+ win32 : $(WIN32_OBJS)
+@@ -59,13 +57,4 @@
+ 	rm -rf src/gkrellm2/*~ src/gkrellm2/\#*
+ 
+ install : gkleds.so
+-	@ if [ $$UID -ne 0 ]; \
+-		then PLUGIN_DIR=$$HOME/.gkrellm2/plugins; \
+-	elif [ -e /usr/bin/gkrellm ]; \
+-		then PLUGIN_DIR=/usr/lib/gkrellm2/plugins; \
+-	else \
+-		PLUGIN_DIR=/usr/local/lib/gkrellm2/plugins; \
+-	fi; \
+-	$(INSTALL_PROG) -d $$PLUGIN_DIR; \
+-	$(INSTALL_PROG) -s gkleds.so $$PLUGIN_DIR; \
+-	printf "\ngkleds installed in $$PLUGIN_DIR\n"
++	$(INSTALL_PROG) gkleds.so $(PLUGIN_DIR); 

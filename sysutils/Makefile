@@ -94,6 +94,7 @@
     SUBDIR += gcombust
     SUBDIR += gconf-editor
     SUBDIR += gfslicer
+    SUBDIR += gkleds2
     SUBDIR += gkrellflynn
     SUBDIR += gkrellm
     SUBDIR += gkrellm2

@@ -1,0 +1,9 @@
+gkleds is a GKrellM plugin which monitors the CapsLock, NumLock and
+ScrollLock keys and reports their current status via on-screen LEDs.
+This is useful for people who have keyboards without LEDs (typically
+cordless keyboards).
+
+Author:  Oyvind Hagen <oyvinha@ifi.uio.no>
+WWW: http://www.stud.ifi.uio.no/~oyvinha/gkleds
+
+- Jan Stocker <Jan.Stocker@t-online.de>
