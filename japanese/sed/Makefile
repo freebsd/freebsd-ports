@@ -1,9 +1,9 @@
 # New ports collection makefile for:	sed+mb
 # Version required:	1.18+mb1.03
 # Date created:		2 April 1995
-# Whom:			Nobuhiro Yasutomi
+# Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #
-# $Id: Makefile,v 1.2 1995/03/27 13:50:07 asami Exp $
+# $Id: Makefile,v 1.1.1.1 1995/04/04 09:37:51 asami Exp $
 #
 
 DISTNAME=	sed-1.18
