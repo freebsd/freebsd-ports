@@ -9,4 +9,3 @@ include/itl/modified_gram_schmidt.h
 include/itl/matrix_free_operator.h
 include/itl/number_traits.h
 @dirrm include/itl
-
