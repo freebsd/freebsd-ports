@@ -7,7 +7,7 @@
 
 PORTNAME?=	mozilla
 PORTVERSION=	1.7.a
-PORTREVISION?=	1
+PORTREVISION?=	2
 PORTEPOCH?=	2
 CATEGORIES?=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
@@ -270,10 +270,10 @@ pre-install:
 		${ECHO_CMD} libdata/pkgconfig/$${pcfile}${MOZ_SUFX}${PKGNAMESUFFIX}.pc >> ${PLIST} ; \
 	done
 	cd ${WRKSRC}/dist/include && ${FIND} -s * -type f -o -type l | \
-		${SED} -e 's:^:include/mozilla/:' >> ${PLIST} \
+		${SED} -e 's:^:include/${MOZILLA}/:' >> ${PLIST} \
 		&& ${FIND} -d * -type d | \
-		${SED} -e 's:^:@dirrm include/mozilla/:' >> ${PLIST}
-	${ECHO_CMD} @dirrm include/mozilla >> ${PLIST}
+		${SED} -e 's:^:@dirrm include/${MOZILLA}/:' >> ${PLIST}
+	${ECHO_CMD} @dirrm include/${MOZILLA} >> ${PLIST}
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/${MOZILLA}
@@ -300,11 +300,11 @@ do-install:
 		${INSTALL_DATA} ${WRKSRC}/build/unix/$${pcfile}.pc \
 			${PREFIX}/libdata/pkgconfig/$${pcfile}${MOZ_SUFX}${PKGNAMESUFFIX}.pc ; \
 	done
-	-${RM} -fr ${PREFIX}/include/mozilla
-	${MKDIR} ${PREFIX}/include/mozilla
-	${CHMOD} 755 ${PREFIX}/include/mozilla
+	-${RM} -fr ${PREFIX}/include/${MOZILLA}
+	${MKDIR} ${PREFIX}/include/${MOZILLA}
+	${CHMOD} 755 ${PREFIX}/include/${MOZILLA}
 	cd ${WRKSRC}/dist/include && ${FIND} . | \
-		${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/include/mozilla
+		${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/include/${MOZILLA}
 
 post-install:
 	@${CHMOD} -R u-w ${PREFIX}/lib/${MOZILLA}/components
