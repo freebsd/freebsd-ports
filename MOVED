@@ -982,3 +982,4 @@ textproc/yaxi|textproc/ocaml-yaxi|2004-03-19|port renamed
 devel/camomile|devel/ocaml-camomile|2004-03-19|port renamed
 archivers/gshar+gunshar|archivers/sharutils|2004-03-19|port renamed
 devel/imake|devel/imake-4|2004-03-19|removed, obsoleted by imake-4 long ago
+net/arpwatch-devel|net-mgmt/arpwatch-devel|2004-03-20|moved to better fitting category

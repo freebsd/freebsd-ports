@@ -24,7 +24,6 @@
     SUBDIR += arping
     SUBDIR += arprelease
 #XXX move to net-mgmt
-    SUBDIR += arpwatch-devel
     SUBDIR += asfrecorder
     SUBDIR += aslookup
     SUBDIR += asterisk
