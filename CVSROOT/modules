@@ -4329,6 +4329,7 @@ manedit		ports/editors/manedit
 mangband	ports/games/mangband
 mango		ports/misc/mango
 manued.el	ports/textproc/manued.el
+mapagi		ports/print/mapagi
 mapedit		ports/www/mapedit
 maplay		ports/audio/maplay
 maradns		ports/dns/maradns
