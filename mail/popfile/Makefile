@@ -74,8 +74,8 @@ pre-fetch:
 	@${ECHO_CMD} "        applied to POPFile itself, and install japanese/p5-jcode.pl."
 .endif
 	@${ECHO_CMD} ""
-	@${ECHO_CMD} "Both option are just add runtime (perl) module dependency; you can"
-	@${ECHO_CMD} "install databases/p5-BerkeleyDB and japanese/p5-Text-Kakasi separately."
+	@${ECHO_CMD} "Both options just add runtime (perl) module dependencies; you can install"
+	@${ECHO_CMD} "databases/p5-BerkeleyDB and/or japanese/p5-Text-Kakasi separately."
 	@${ECHO_CMD} ""
 
 post-patch:
