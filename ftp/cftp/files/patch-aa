@@ -1,10 +1,0 @@
---- util.h.orig	Wed Sep 12 11:00:36 2001
-+++ util.h	Wed Sep 12 11:00:41 2001
-@@ -26,7 +26,6 @@
- 
- 
- char *canonical(char *path, char *current);
--char *dirname(char *name);
- char *local_exp(char *path);
- char *args_to_string(char **args);
- char *get_anon_passwd(void);
