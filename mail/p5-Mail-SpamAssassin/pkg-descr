@@ -8,6 +8,9 @@ commercial email.
 Once identified, the mail can then be optionally tagged as spam for later
 filtering using the user's own mail user-agent application.
 
+Additional drop-in rule sets are available at
+http://wiki.apache.org/spamassassin/CustomRulesets
+
 WWW:	http://spamassassin.org/
 
 - Doug Barton
