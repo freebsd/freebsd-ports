@@ -1674,6 +1674,7 @@ gkrellmms	ports/audio/gkrellmms
 gkrellmoon	ports/astro/gkrellmoon
 gkrellmouse	ports/sysutils/gkrellmouse
 gkrellmqst	ports/net/gkrellmqst
+gkrellmss	ports/audio/gkrellmss
 gkrellmvolume	ports/audio/gkrellmvolume
 gkrellscore	ports/misc/gkrellscore
 gkrellweather	ports/misc/gkrellweather
