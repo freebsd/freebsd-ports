@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	snow
-PORTVERSION=	0.0.94.b
-MASTER_SITES=	ftp://ftp.task.gda.pl/mirror/ftp.extreme-players.de/exp/hl/mod/snowwar/ \
-		http://gamedesign.4players.de:1026/downloads/ \
-		http://www1.cod2001.com/Downloads-5371-/Half-Life_default/Mods/SnowWar/ \
-		http://www.ancient.co.jp/~game/files/
-DISTFILES=	sw094.exe hl_i386.so
+PORTVERSION=	1.0
+MASTER_SITES=	http://ftp.gigabell.net/pub/exp/hl/mod/snowwar/ \
+		ftp://ftp2.extreme-players.de/hl/mod/snowwar/ \
+		ftp://ftp.task.gda.pl/mirror/ftp.extreme-players.de/exp/hl/mod/snowwar/
+DISTFILES=	sw10.zip 10linux.zip
 DIST_SUBDIR=	snow
-EXTRACT_ONLY=	sw094.exe
 
 MAINTAINER=	lioux@FreeBSD.org
 

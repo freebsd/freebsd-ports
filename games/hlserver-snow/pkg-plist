@@ -1,12 +1,16 @@
+%%HLDSDIR%%snow/badwordlist.exe
+%%HLDSDIR%%snow/bdws.dat
 %%HLDSDIR%%snow/cached.wad
 %%HLDSDIR%%snow/cl_dlls/client.dll
 %%HLDSDIR%%snow/config.cfg
-%%HLDSDIR%%snow/custom.hpk
 %%HLDSDIR%%snow/decals.wad
+%%HLDSDIR%%snow/delta.lst
 %%HLDSDIR%%snow/dlls/hl_i386.so
-%%HLDSDIR%%snow/dlls/mp.dll
-%%HLDSDIR%%snow/game.cfg
+%%HLDSDIR%%snow/dlls/snow.dll
+%%HLDSDIR%%snow/events/flag.sc
+%%HLDSDIR%%snow/events/teleport.sc
 %%HLDSDIR%%snow/gfx.wad
+%%HLDSDIR%%snow/gfx/env/arcd_readme.txt
 %%HLDSDIR%%snow/gfx/env/arcdbk.bmp
 %%HLDSDIR%%snow/gfx/env/arcdbk.tga
 %%HLDSDIR%%snow/gfx/env/arcddn.bmp
@@ -19,6 +23,7 @@
 %%HLDSDIR%%snow/gfx/env/arcdrt.tga
 %%HLDSDIR%%snow/gfx/env/arcdup.bmp
 %%HLDSDIR%%snow/gfx/env/arcdup.tga
+%%HLDSDIR%%snow/gfx/env/arcn_readme.txt
 %%HLDSDIR%%snow/gfx/env/arcnbk.bmp
 %%HLDSDIR%%snow/gfx/env/arcnbk.tga
 %%HLDSDIR%%snow/gfx/env/arcndn.bmp
@@ -31,6 +36,7 @@
 %%HLDSDIR%%snow/gfx/env/arcnrt.tga
 %%HLDSDIR%%snow/gfx/env/arcnup.bmp
 %%HLDSDIR%%snow/gfx/env/arcnup.tga
+%%HLDSDIR%%snow/gfx/env/arcs_readme.txt
 %%HLDSDIR%%snow/gfx/env/arcssbk.bmp
 %%HLDSDIR%%snow/gfx/env/arcssbk.tga
 %%HLDSDIR%%snow/gfx/env/arcssdn.bmp
@@ -43,18 +49,23 @@
 %%HLDSDIR%%snow/gfx/env/arcssrt.tga
 %%HLDSDIR%%snow/gfx/env/arcssup.bmp
 %%HLDSDIR%%snow/gfx/env/arcssup.tga
-%%PORTDOCS%%%%HLDSDIR%%snow/gfx/env/readme.txt
 %%HLDSDIR%%snow/gfx/env/snowbk.tga
 %%HLDSDIR%%snow/gfx/env/snowdn.tga
 %%HLDSDIR%%snow/gfx/env/snowft.tga
 %%HLDSDIR%%snow/gfx/env/snowlf.tga
 %%HLDSDIR%%snow/gfx/env/snowrt.tga
 %%HLDSDIR%%snow/gfx/env/snowup.tga
-%%HLDSDIR%%snow/gfx/shell/Btns_main.bmp
+%%PORTDOCS%%%%HLDSDIR%%snow/gfx/manual/bag.jpg
+%%PORTDOCS%%%%HLDSDIR%%snow/gfx/manual/coco.jpg
+%%PORTDOCS%%%%HLDSDIR%%snow/gfx/manual/email.gif
+%%PORTDOCS%%%%HLDSDIR%%snow/gfx/manual/house.gif
+%%PORTDOCS%%%%HLDSDIR%%snow/gfx/manual/hud.gif
+%%PORTDOCS%%%%HLDSDIR%%snow/gfx/manual/logo.gif
+%%PORTDOCS%%%%HLDSDIR%%snow/gfx/manual/shield.jpg
+%%PORTDOCS%%%%HLDSDIR%%snow/gfx/manual/shoes.jpg
 %%HLDSDIR%%snow/gfx/shell/Cb_over.bmp
 %%HLDSDIR%%snow/gfx/shell/Min_d.bmp
-%%HLDSDIR%%snow/gfx/shell/Splash.bmp
-%%HLDSDIR%%snow/gfx/shell/Splash2.bmp
+%%HLDSDIR%%snow/gfx/shell/btns_main.bmp
 %%HLDSDIR%%snow/gfx/shell/cb_checked.bmp
 %%HLDSDIR%%snow/gfx/shell/cb_down.bmp
 %%HLDSDIR%%snow/gfx/shell/cb_empty.bmp
@@ -62,94 +73,53 @@
 %%HLDSDIR%%snow/gfx/shell/cls_f.bmp
 %%HLDSDIR%%snow/gfx/shell/cls_n.bmp
 %%HLDSDIR%%snow/gfx/shell/colors.lst
-%%HLDSDIR%%snow/gfx/shell/head_advanced.bmp
-%%HLDSDIR%%snow/gfx/shell/head_advoptions.bmp
-%%HLDSDIR%%snow/gfx/shell/head_audio.bmp
-%%HLDSDIR%%snow/gfx/shell/head_config.bmp
-%%HLDSDIR%%snow/gfx/shell/head_controls.bmp
-%%HLDSDIR%%snow/gfx/shell/head_creategame.bmp
-%%HLDSDIR%%snow/gfx/shell/head_createroom.bmp
-%%HLDSDIR%%snow/gfx/shell/head_custom.bmp
-%%HLDSDIR%%snow/gfx/shell/head_customize.bmp
-%%HLDSDIR%%snow/gfx/shell/head_filter.bmp
-%%HLDSDIR%%snow/gfx/shell/head_gameopts.bmp
-%%HLDSDIR%%snow/gfx/shell/head_gore.bmp
-%%HLDSDIR%%snow/gfx/shell/head_inetgames.bmp
-%%HLDSDIR%%snow/gfx/shell/head_keyboard.bmp
-%%HLDSDIR%%snow/gfx/shell/head_lan.bmp
-%%HLDSDIR%%snow/gfx/shell/head_load.bmp
-%%HLDSDIR%%snow/gfx/shell/head_multi.bmp
-%%HLDSDIR%%snow/gfx/shell/head_newgame.bmp
-%%HLDSDIR%%snow/gfx/shell/head_readme.bmp
-%%HLDSDIR%%snow/gfx/shell/head_room.bmp
-%%HLDSDIR%%snow/gfx/shell/head_rooms.bmp
-%%HLDSDIR%%snow/gfx/shell/head_save.bmp
-%%HLDSDIR%%snow/gfx/shell/head_saveload.bmp
-%%HLDSDIR%%snow/gfx/shell/head_single.bmp
-%%HLDSDIR%%snow/gfx/shell/head_video.bmp
-%%HLDSDIR%%snow/gfx/shell/head_vidmodes.bmp
-%%HLDSDIR%%snow/gfx/shell/head_vidoptions.bmp
+%%HLDSDIR%%snow/gfx/shell/head_advanced.BMP
+%%HLDSDIR%%snow/gfx/shell/head_advoptions.BMP
+%%HLDSDIR%%snow/gfx/shell/head_audio.BMP
+%%HLDSDIR%%snow/gfx/shell/head_config.BMP
+%%HLDSDIR%%snow/gfx/shell/head_controls.BMP
+%%HLDSDIR%%snow/gfx/shell/head_creategame.BMP
+%%HLDSDIR%%snow/gfx/shell/head_createroom.BMP
+%%HLDSDIR%%snow/gfx/shell/head_custom.BMP
+%%HLDSDIR%%snow/gfx/shell/head_customize.BMP
+%%HLDSDIR%%snow/gfx/shell/head_filter.BMP
+%%HLDSDIR%%snow/gfx/shell/head_gameopts.BMP
+%%HLDSDIR%%snow/gfx/shell/head_gore.BMP
+%%HLDSDIR%%snow/gfx/shell/head_inetgames.BMP
+%%HLDSDIR%%snow/gfx/shell/head_keyboard.BMP
+%%HLDSDIR%%snow/gfx/shell/head_lan.BMP
+%%HLDSDIR%%snow/gfx/shell/head_load.BMP
+%%HLDSDIR%%snow/gfx/shell/head_multi.BMP
+%%HLDSDIR%%snow/gfx/shell/head_newgame.BMP
+%%HLDSDIR%%snow/gfx/shell/head_readme.BMP
+%%HLDSDIR%%snow/gfx/shell/head_room.BMP
+%%HLDSDIR%%snow/gfx/shell/head_rooms.BMP
+%%HLDSDIR%%snow/gfx/shell/head_save.BMP
+%%HLDSDIR%%snow/gfx/shell/head_saveload.BMP
+%%HLDSDIR%%snow/gfx/shell/head_single.BMP
+%%HLDSDIR%%snow/gfx/shell/head_specgames.BMP
+%%HLDSDIR%%snow/gfx/shell/head_video.BMP
+%%HLDSDIR%%snow/gfx/shell/head_vidmodes.BMP
+%%HLDSDIR%%snow/gfx/shell/head_vidoptions.BMP
 %%HLDSDIR%%snow/gfx/shell/kb_act.lst
 %%HLDSDIR%%snow/gfx/shell/kb_def.lst
 %%HLDSDIR%%snow/gfx/shell/min_f.bmp
 %%HLDSDIR%%snow/gfx/shell/min_n.bmp
+%%HLDSDIR%%snow/gfx/shell/splash.bmp
 %%HLDSDIR%%snow/gfx/shell/strings.lst
+%%HLDSDIR%%snow/gfx/shell/unbenannt.jpg
 %%HLDSDIR%%snow/liblist.gam
-%%HLDSDIR%%snow/manual/content/Ice.gif
-%%HLDSDIR%%snow/manual/content/Manual.gif
-%%HLDSDIR%%snow/manual/content/alley.html
-%%HLDSDIR%%snow/manual/content/alley.jpg
-%%HLDSDIR%%snow/manual/content/back.gif
-%%HLDSDIR%%snow/manual/content/backyard.html
-%%HLDSDIR%%snow/manual/content/backyard.jpg
-%%HLDSDIR%%snow/manual/content/badtaste.html
-%%HLDSDIR%%snow/manual/content/badtaste.jpg
-%%HLDSDIR%%snow/manual/content/banner.html
-%%HLDSDIR%%snow/manual/content/cream.html
-%%HLDSDIR%%snow/manual/content/cream.jpg
-%%HLDSDIR%%snow/manual/content/ferret.html
-%%HLDSDIR%%snow/manual/content/ferret.jpg
-%%HLDSDIR%%snow/manual/content/frostbite.html
-%%HLDSDIR%%snow/manual/content/frostbite.jpg
-%%HLDSDIR%%snow/manual/content/game.html
-%%HLDSDIR%%snow/manual/content/hud.gif
-%%HLDSDIR%%snow/manual/content/hud.html
-%%HLDSDIR%%snow/manual/content/lake.html
-%%HLDSDIR%%snow/manual/content/lake.jpg
-%%HLDSDIR%%snow/manual/content/main.html
-%%HLDSDIR%%snow/manual/content/maps.html
-%%HLDSDIR%%snow/manual/content/pic/a1.jpg
-%%HLDSDIR%%snow/manual/content/pic/a2.jpg
-%%HLDSDIR%%snow/manual/content/pic/a3.jpg
-%%HLDSDIR%%snow/manual/content/pic/ba1.jpg
-%%HLDSDIR%%snow/manual/content/pic/ba2.jpg
-%%HLDSDIR%%snow/manual/content/pic/ba3.jpg
-%%HLDSDIR%%snow/manual/content/pic/by1.jpg
-%%HLDSDIR%%snow/manual/content/pic/by2.jpg
-%%HLDSDIR%%snow/manual/content/pic/by3.jpg
-%%HLDSDIR%%snow/manual/content/pic/c1.jpg
-%%HLDSDIR%%snow/manual/content/pic/c2.jpg
-%%HLDSDIR%%snow/manual/content/pic/c3.jpg
-%%HLDSDIR%%snow/manual/content/pic/f1.jpg
-%%HLDSDIR%%snow/manual/content/pic/f2.jpg
-%%HLDSDIR%%snow/manual/content/pic/f3.jpg
-%%HLDSDIR%%snow/manual/content/pic/fr1.jpg
-%%HLDSDIR%%snow/manual/content/pic/fr2.jpg
-%%HLDSDIR%%snow/manual/content/pic/fr3.jpg
-%%HLDSDIR%%snow/manual/content/pic/l1.jpg
-%%HLDSDIR%%snow/manual/content/pic/l2.jpg
-%%HLDSDIR%%snow/manual/content/pic/l3.jpg
-%%HLDSDIR%%snow/manual/content/team.html
-%%HLDSDIR%%snow/manual/manual.html
+%%HLDSDIR%%snow/listenserver.cfg
+%%PORTDOCS%%%%HLDSDIR%%snow/manual.htm
 %%HLDSDIR%%snow/mapcycle.txt
-%%HLDSDIR%%snow/mapping_tips.txt
+%%PORTDOCS%%%%HLDSDIR%%snow/mapping_tips.txt
+%%HLDSDIR%%snow/maps/ctf_fiume.bsp
+%%HLDSDIR%%snow/maps/ctf_fiume.txt
 %%HLDSDIR%%snow/maps/sw_alley.bsp
 %%HLDSDIR%%snow/maps/sw_backyard.bsp
 %%HLDSDIR%%snow/maps/sw_badtaste1_snowfall.bsp
 %%HLDSDIR%%snow/maps/sw_cream.bsp
-%%HLDSDIR%%snow/maps/sw_ferret.bsp
 %%HLDSDIR%%snow/maps/sw_frostbite.bsp
-%%HLDSDIR%%snow/maps/sw_lake.bsp
 %%HLDSDIR%%snow/media/launch_deny1.wav
 %%HLDSDIR%%snow/media/launch_deny2.wav
 %%HLDSDIR%%snow/media/launch_dnmenu1.wav
@@ -158,61 +128,109 @@
 %%HLDSDIR%%snow/media/launch_select2.wav
 %%HLDSDIR%%snow/media/launch_upmenu1.wav
 %%HLDSDIR%%snow/media/logo.avi
+%%HLDSDIR%%snow/models/flag.mdl
+%%HLDSDIR%%snow/models/grapple.mdl
 %%HLDSDIR%%snow/models/p_snowball.mdl
+%%HLDSDIR%%snow/models/player.mdl
+%%HLDSDIR%%snow/models/player/barney/barney.bmp
+%%HLDSDIR%%snow/models/player/barney/barney.mdl
+%%HLDSDIR%%snow/models/player/gordon/gordon.bmp
+%%HLDSDIR%%snow/models/player/gordon/gordon.mdl
+%%HLDSDIR%%snow/models/player/hgrunt/hgrunt.bmp
+%%HLDSDIR%%snow/models/player/hgrunt/hgrunt.mdl
+%%HLDSDIR%%snow/models/player/lisa/lisa.bmp
+%%HLDSDIR%%snow/models/player/lisa/lisa.mdl
+%%HLDSDIR%%snow/models/player/recon/Recon.bmp
+%%HLDSDIR%%snow/models/player/recon/recon.mdl
+%%HLDSDIR%%snow/models/player/santa/santa.bmp
+%%HLDSDIR%%snow/models/player/santa/santa.mdl
+%%HLDSDIR%%snow/models/player/scientist/Scientist.bmp
+%%HLDSDIR%%snow/models/player/scientist/scientist.mdl
+%%HLDSDIR%%snow/models/pw_bag.mdl
+%%HLDSDIR%%snow/models/pw_coco.mdl
+%%HLDSDIR%%snow/models/pw_shield.mdl
+%%HLDSDIR%%snow/models/pw_shoes.mdl
 %%HLDSDIR%%snow/models/say.mdl
 %%HLDSDIR%%snow/models/splash.mdl
 %%HLDSDIR%%snow/models/v_snowball.mdl
 %%HLDSDIR%%snow/models/w_snowball.mdl
+%%PORTDOCS%%%%HLDSDIR%%snow/playermodels.txt
 %%PORTDOCS%%%%HLDSDIR%%snow/readme.txt
 %%HLDSDIR%%snow/server.cfg
 %%HLDSDIR%%snow/settings.scr
 %%HLDSDIR%%snow/snow.fgd
+%%HLDSDIR%%snow/snow.ico
 %%HLDSDIR%%snow/snow.wad
-%%HLDSDIR%%snow/sound/Wesi.wav
+%%HLDSDIR%%snow/sound/alert.wav
 %%HLDSDIR%%snow/sound/ambience/frostbite_wind1.wav
 %%HLDSDIR%%snow/sound/ambience/frostbite_wind2.wav
-%%HLDSDIR%%snow/sound/materials.bak
-%%PORTDOCS%%%%HLDSDIR%%snow/sound/materials.txt
+%%HLDSDIR%%snow/sound/fanfaari.wav
+%%HLDSDIR%%snow/sound/grp_fire.wav
+%%HLDSDIR%%snow/sound/grp_hit.wav
+%%HLDSDIR%%snow/sound/grp_return.wav
+%%HLDSDIR%%snow/sound/grp_roll.wav
+%%HLDSDIR%%snow/sound/materials.txt
 %%HLDSDIR%%snow/sound/misc/talk.wav
 %%HLDSDIR%%snow/sound/player/pl_snow1.wav
 %%HLDSDIR%%snow/sound/player/pl_snow2.wav
 %%HLDSDIR%%snow/sound/player/pl_snow3.wav
 %%HLDSDIR%%snow/sound/player/pl_snow4.wav
-%%HLDSDIR%%snow/sound/snowfly.wav
+%%HLDSDIR%%snow/sound/pw_bag.wav
+%%HLDSDIR%%snow/sound/pw_coco.wav
+%%HLDSDIR%%snow/sound/pw_shield.wav
+%%HLDSDIR%%snow/sound/pw_shoes.wav
+%%HLDSDIR%%snow/sound/return.wav
 %%HLDSDIR%%snow/sound/snowhit_ground1.wav
 %%HLDSDIR%%snow/sound/snowhit_ground2.wav
 %%HLDSDIR%%snow/sound/snowhit_human1.wav
 %%HLDSDIR%%snow/sound/snowhit_human2.wav
+%%HLDSDIR%%snow/sound/snowhit_shield.wav
+%%HLDSDIR%%snow/sound/snowhit_water.wav
 %%HLDSDIR%%snow/sound/snowthrow1.wav
 %%HLDSDIR%%snow/sound/snowthrow2.wav
 %%HLDSDIR%%snow/sound/tap.wav
 %%HLDSDIR%%snow/sprites/aim.spr
 %%HLDSDIR%%snow/sprites/ball.spr
+%%HLDSDIR%%snow/sprites/ball2.spr
 %%HLDSDIR%%snow/sprites/breath.spr
 %%HLDSDIR%%snow/sprites/d_snowball.spr
+%%HLDSDIR%%snow/sprites/flag.spr
 %%HLDSDIR%%snow/sprites/health1.spr
 %%HLDSDIR%%snow/sprites/health2.spr
-%%HLDSDIR%%snow/sprites/hud.bak
 %%HLDSDIR%%snow/sprites/hud.txt
+%%HLDSDIR%%snow/sprites/pw_bag.spr
+%%HLDSDIR%%snow/sprites/pw_shield.spr
+%%HLDSDIR%%snow/sprites/pw_shoes.spr
+%%HLDSDIR%%snow/sprites/rope.spr
+%%HLDSDIR%%snow/sprites/shellchrome.spr
 %%HLDSDIR%%snow/sprites/trail.spr
 %%HLDSDIR%%snow/sprites/weapon_snowball.txt
+%%HLDSDIR%%snow/sw_fiume.wad
 %%HLDSDIR%%snow/sw_frostbite.wad
-%%HLDSDIR%%snow/test1.rmf
-%%HLDSDIR%%snow/user.scr
+%%HLDSDIR%%snow/swctf.wad
+%%HLDSDIR%%snow/testmap.rmf
+%%HLDSDIR%%snow/titles.txt
 @dirrm %%HLDSDIR%%snow/sprites
 @dirrm %%HLDSDIR%%snow/sound/player
 @dirrm %%HLDSDIR%%snow/sound/misc
 @dirrm %%HLDSDIR%%snow/sound/ambience
 @dirrm %%HLDSDIR%%snow/sound
+@dirrm %%HLDSDIR%%snow/models/player/scientist
+@dirrm %%HLDSDIR%%snow/models/player/santa
+@dirrm %%HLDSDIR%%snow/models/player/recon
+@dirrm %%HLDSDIR%%snow/models/player/lisa
+@dirrm %%HLDSDIR%%snow/models/player/hgrunt
+@dirrm %%HLDSDIR%%snow/models/player/gordon
+@dirrm %%HLDSDIR%%snow/models/player/barney
+@dirrm %%HLDSDIR%%snow/models/player
 @dirrm %%HLDSDIR%%snow/models
 @dirrm %%HLDSDIR%%snow/media
 @dirrm %%HLDSDIR%%snow/maps
-@dirrm %%HLDSDIR%%snow/manual/content/pic
-@dirrm %%HLDSDIR%%snow/manual/content
-@dirrm %%HLDSDIR%%snow/manual
 @dirrm %%HLDSDIR%%snow/gfx/shell
+%%PORTDOCS%%@dirrm %%HLDSDIR%%snow/gfx/manual
 @dirrm %%HLDSDIR%%snow/gfx/env
 @dirrm %%HLDSDIR%%snow/gfx
+@dirrm %%HLDSDIR%%snow/events
 @dirrm %%HLDSDIR%%snow/dlls
 @dirrm %%HLDSDIR%%snow/cl_dlls
 @unexec rmdir %D/%%HLDSDIR%%snow 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf ${PKG_PREFIX}/%%HLDSDIR%%snow`` to remove any configuration files and logs left." | fmt
