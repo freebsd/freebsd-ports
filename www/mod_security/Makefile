@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_security
-PORTVERSION=	1.7.6
+PORTVERSION=	1.8
 CATEGORIES=	www security
 MASTER_SITES=	http://www.modsecurity.org/download/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -33,7 +33,7 @@ PLIST_SUB=	APACHE=apache
 SO=		so
 .endif
 
-MANVER=		1.7.4
+MANVER=		1.8
 DOCS=		CHANGES INSTALL LICENSE README modsecurity-manual-${MANVER}.pdf
 PLIST_SUB+=	VER=${MANVER}
 
