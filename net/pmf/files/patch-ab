@@ -1,5 +1,5 @@
---- Makefile.orig	Sun May 23 20:54:05 1993
-+++ Makefile	Fri Feb 11 04:02:29 2000
+--- Makefile.orig	Sun May 23 13:54:05 1993
++++ Makefile	Mon Nov 18 18:08:10 2002
 @@ -29,12 +29,13 @@
  # pmf without GNU readline or without sound.
  # Remove one (or both) of "-DGNU_READLINE" and "-DSOUND".
@@ -30,7 +30,7 @@
  # Distribution: CFLAGS = -O
  # Maximum debug: CFLAGS = -g -pg -DDEBUG -pipe
 -CFLAGS = -O
-+CFLAGS += -D_ANSI_SOURCE -DSYSTEM_DIR=\"${PREFIX}/share/pmf\"
++CFLAGS += -DSYSTEM_DIR=\"${PREFIX}/share/pmf\"
  
  ######################################################################
  

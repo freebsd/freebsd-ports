@@ -1,0 +1,16 @@
+--- c_packages/safe_malloc/Makefile.orig	Mon Nov 18 18:14:39 2002
++++ c_packages/safe_malloc/Makefile	Mon Nov 18 18:14:58 2002
+@@ -14,11 +14,11 @@
+ INCLUDEDIRS =
+ 
+ # CC = gcc -traditional
+-CC = cc
++CC ?= cc
+ 
+ # Distribution: CFLAGS = -O
+ # Maximum debug: CFLAGS = -g -pg -DDEBUG -pipe
+-CFLAGS = -O
++#CFLAGS = -O
+ 
+ all: $(OBJECTS)
+ 
