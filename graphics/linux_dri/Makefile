@@ -7,6 +7,7 @@
 
 PORTNAME=	linux_dri
 PORTVERSION=	4.3.0
+PORTREVISION=	1
 CATEGORIES=	graphics linux
 MASTER_SITES=	ftp://ftp.xfree86.org/pub/XFree86/${PORTVERSION}/binaries/Linux-ix86-glibc21/:x \
 		http://people.freebsd.org/~anholt/dri/files/:anholt
@@ -28,6 +29,7 @@ ONLY_FOR_ARCHS=	i386
 MODULELIST=	gamma_dri.so i810_dri.so i830_dri.so mga_dri.so r128_dri.so \
 		r200_dri.so radeon_dri.so tdfx_dri.so
 LDCONFIG_LINUX=	${LINUXBASE}/sbin/ldconfig
+NO_FILTER_SHLIBS=	yes
 STRIP=
 
 do-install:
