@@ -21,6 +21,8 @@ MASTER_SITES=	${MASTER_SITE_GNU:S/$/:gs_fonts/} \
 		http://www.epkowa.on.arena.ne.jp/pips/data/V306/:eplaser \
 		http://www.hi.is.uec.ac.jp/~osamuw/gdevnpdl/:npdl \
 		http://www.linuxprinting.org/download/printing/samsung-gdi/:gdi \
+		http://www.linuxprinting.org/download/printing/:lxm3200 \
+		http://homepage.powerup.com.au/~pbwest/lexmark/:lx5000 \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/gnu/fonts/:gs_fonts \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/gnu/gs${GS_VERSION:S/.//}/:gs_srcs
 MASTER_SITE_SUBDIR=	ghostscript/:gs_srcs,gs_fonts,ports_jp_gs \
@@ -47,7 +49,11 @@ DISTFILES=	${GS_SRCS}:gs_srcs \
 		${EPLASER_SRCS}:eplaser \
 		${MJC_SRCS}:ports_jp \
 		${NPDL_SRCS}:npdl \
-		${GDI_SRCS}:gdi
+		${GDI_SRCS}:gdi \
+		${LXM3200_SRCS}:lxm3200 \
+		${LX5000_SRCS}:lx5000 \
+		${LEX7000_SRCS}:lx5000
+
 DIST_SUBDIR=	ghostscript
 EXTRACT_ONLY=	${GS_SRCS}
 
@@ -62,10 +68,12 @@ USE_BZIP2=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	CC="${CC}" CXX="${CXX}" CFLAGS_STANDARD="${CFLAGS}" \
-		XCFLAGS="${XCFLAGS}" WITHOUT_X11="${WITHOUT_X11}"
-PLIST_SUB=	GS_VERSION=${GS_VERSION}
+		XCFLAGS="${XCFLAGS}"
+PLIST_SUB=	GS_VERSION="${GS_VERSION}"
 
-SCRIPTS_ENV=	GS_OPTIONS="${GS_OPTIONS}" WITHOUT_X11="${WITHOUT_X11}"
+SCRIPTS_ENV=	GS_DRIVERS_LIST="${GS_DRIVERS_LIST}" \
+		WITHOUT_X11="${WITHOUT_X11}" \
+		WITH_SVGALIB="${WITH_SVGALIB}"
 
 MAN1=		ansi2knr.1 dvipdf.1 font2c.1 gs.1 gslp.1 gsnd.1 pdf2dsc.1 \
 		pdf2ps.1 pdfopt.1 pf2afm.1 pfbtopfa.1 printafm.1 ps2ascii.1 \
@@ -88,6 +96,10 @@ XCFLAGS+=	-DA4
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-nox11
 .else
 USE_XLIB=	yes
+.endif
+
+.if defined(WITH_SVGALIB)
+LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
 .endif
 
 .if defined(WITH_SHLIB)
@@ -234,10 +246,27 @@ GDI=		gdi
 GDI_NAME=	Samsung-SmartGDI-all-GS
 GDI_SRCS=	${GDI_NAME}.tar.gz
 
+# LXM3200 - additional driver for Lexmark 3200/Z12/Z22/Z31/Z32
+LXM3200=	lxm3200
+LXM3200_VERS=	20030501
+LXM3200_NAME=	${LXM3200}-tweaked-${LXM3200_VERS}
+LXM3200_SRCS=	${LXM3200_NAME}.tar.gz
+
+# LX5000 - additional driver for Lexmark 5000/Z51/Z82
+# http://homepage.powerup.com.au/~pbwest/lexmark/lexmark.html
+LX5000=		lx5000
+LX5000_SRCS=	gdevlx50.c
+
+# LEX7000 - additional driver for Lexmark 2050/3200/5700/7000
+# http://bimbo.fjfi.cvut.cz/~paluch/l7kdriver/
+LEX7000=	lex7000
+LEX7000_SRCS=	gs6.0.lexmark7000.patch
+
 # contributed uniprint profiles
 CONTRIB_UPP=	lqx70ch.upp lqx70cl.upp lqx70cm.upp \
 		stc740ih.upp stc740p.upp stc740pl.upp
 
+.include <bsd.port.pre.mk>
 .SILENT:
 
 pre-everything::
@@ -320,6 +349,19 @@ post-extract:
 # for GDI driver
 	${ECHO_MSG} ">>>   extracting ${GDI_SRCS} ..."
 	${TAR} -C ${WRKSRC}/src -xzf ${DISTDIR}/${DIST_SUBDIR}/${GDI_SRCS}
+# for LXM3200 driver
+	${ECHO_MSG} ">>>   extracting ${LXM3200_SRCS} ..."
+	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${LXM3200_SRCS}
+	${LN} -sf ${LXM3200_NAME} ${WRKSRC}/${LXM3200}
+# for LX5000 driver
+	${ECHO_MSG} ">>>   extracting ${LX5000_SRCS} ..."
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/${LX5000_SRCS} ${WRKSRC}/src
+# for LEX7000 driver
+	${ECHO_MSG} ">>>   extracting ${LEX7000_SRCS} ..."
+	${MKDIR} ${WRKSRC}/${LEX7000}
+	${CAT} ${DISTDIR}/${DIST_SUBDIR}/${LEX7000_SRCS} | \
+		${PATCH} -d ${WRKSRC}/${LEX7000} -f -s -N -E -p1 \
+		2>/dev/null || ${TRUE}
 
 post-patch:
 	${REINPLACE_CMD} -e 's|^DEVICE_DEVS|#DEVICE_DEVS|g' \
@@ -402,6 +444,18 @@ pre-configure:
 # for GDI driver
 	${ECHO_MSG} ">>>   adding ${GDI} driver to contrib.mak ..."
 	${CAT} ${WRKSRC}/src/smartgdi-contrib.mak \
+		>> ${WRKSRC}/src/contrib.mak
+# for LXM3200 driver
+	${ECHO_MSG} ">>>   adding ${LXM3200} driver to contrib.mak ..."
+	${CAT} ${FILESDIR}/lxm3200.contrib.mak \
+		>> ${WRKSRC}/src/contrib.mak
+# for LX5000 driver
+	${ECHO_MSG} ">>>   adding ${LX5000} driver to contrib.mak ..."
+	${CAT} ${FILESDIR}/lx5000.contrib.mak \
+		>> ${WRKSRC}/src/contrib.mak
+# for LEX7000 driver
+	${ECHO_MSG} ">>>   adding ${LEX7000} driver to contrib.mak ..."
+	${CAT} ${FILESDIR}/lex7000.contrib.mak \
 		>> ${WRKSRC}/src/contrib.mak
 
 post-configure:
@@ -486,6 +540,16 @@ pre-build:
 	${ECHO_MSG} ">>>   creating symlinks for ${NPDL} ..."
 .for i in gdevnpdl.c
 	${LN} -sf ${WRKSRC}/${NPDL_NAME}/${i} ${WRKSRC}/src
+.endfor
+# for LXM3200 driver
+	${ECHO_MSG} ">>>   creating symlinks for ${LXM3200} ..."
+.for i in gdevlx32.c
+	${LN} -sf ${WRKSRC}/${LXM3200_NAME}/${i} ${WRKSRC}/src
+.endfor
+# for LEX7000 driver
+	${ECHO_MSG} ">>>   creating symlinks for ${LEX7000} ..."
+.for i in gdevlx7.c
+	${LN} -sf ${WRKSRC}/${LEX7000}/src/${i} ${WRKSRC}/src
 .endfor
 
 pre-install:
@@ -647,8 +711,15 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/src/${i} \
 		${DOCSDIR}/${GS_VERSION}/${GDI}
 .endfor
+# for LXM3200 driver
+	${ECHO_MSG} ">>>   installing ${LXM3200} docs ..."
+	${MKDIR} ${DOCSDIR}/${GS_VERSION}/${LXM3200}
+.for i in README RELEASE_NOTES Z12-Z31-QuickSetup
+	${INSTALL_DATA} ${WRKSRC}/${LXM3200_NAME}/${i} \
+		${DOCSDIR}/${GS_VERSION}/${LXM3200}
+.endfor
 .endif
 	${ECHO_MSG} "> post-installation tasks completed."
 
 .include "Makefile.inc"
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
