@@ -100,6 +100,7 @@
     SUBDIR += xfce4
     SUBDIR += xfce4-desktop
     SUBDIR += xfce4-panel
+    SUBDIR += xfce4-systray
     SUBDIR += xfce4-wm
     SUBDIR += xwmm
     SUBDIR += yawm
