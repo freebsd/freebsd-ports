@@ -1,0 +1,8 @@
+--- rotate      Sat Apr 20 10:40:33 2002
++++ rotate.new  Sat Apr 20 10:40:11 2002
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/perl
+ ;#
+ ;# Name: rotate-1.1
+ ;#   Copyright (c) 1995, 1996 by Ikuo Nakagawa. All rights reserved.
