@@ -91,15 +91,6 @@ diff -ur mail.local/mail.local.c src/contrib/sendmail/mail.local/mail.local.c
  # endif /* defined(BSD4_4) || defined(__GLIBC__) */
  
  # ifdef BSD4_4
-@@ -215,7 +217,7 @@
- # endif /* USE_SETRESUID */
- 
- # ifndef _PATH_LOCTMP
--#  define _PATH_LOCTMP	"/tmp/local.XXXXXX"
-+#  define _PATH_LOCTMP	"/var/tmp/local.XXXXXX"
- # endif /* ! _PATH_LOCTMP */
- #  ifndef _PATH_MAILDIR
- #   define _PATH_MAILDIR	"/var/spool/mail"
 @@ -252,6 +254,8 @@
  bool	HoldErrs = FALSE;		/* Hold errors in ErrBuf */
  bool	LMTPMode = FALSE;
