@@ -1,4 +1,4 @@
-# New ports collection makefile for:	linux jdk 1.3.0
+# New ports collection makefile for:	Sun Linux JDK 1.3.x
 # Date created:				06 December 2000
 # Whom:					Kevin Lo <kevlo@FreeBSD.org>
 #
@@ -22,6 +22,7 @@ RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 
 NO_CDROM=	"License does not allow distribution with fee"
 RESTRICTED=	"Redistribution of repackaged binaries not permitted"
+LATEST_LINK=	linux-sun-jdk13
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${JDK_VERSION}_${JDK_REVISION}
 PLIST_SUB+=	T=${TARGET_DIR:S/^${PREFIX}\///} \
