@@ -13,7 +13,7 @@ require 5.002;
 
 # Helper function to map a directory to a pkgname.
 sub by_path {
-    my $name = shift;
+    my ($name, $port) = @_;
 
   # If a direct mapping exists, then use it.
     return $by_path{$name} if (defined $by_path{$name});
@@ -28,7 +28,7 @@ sub by_path {
     $name = join('/', @p);
     return $by_path{$name} if (defined $by_path{$name});
 
-    print STDERR "make_index: no entry for: $name\n";
+    print STDERR "make_index: $port: no entry for $name\n";
     return undef;
 }
 
@@ -101,12 +101,12 @@ foreach $name (keys %index) {
     my $pkg = $index{$name};
   # first the build dependencies
     if (@{$pkg->{bdep}}) {
-	my @bdep = map { by_path($_) } @{$pkg->{bdep}};
+	my @bdep = map { by_path($_, $name) } @{$pkg->{bdep}};
 	$pkg->{bdep} = \@bdep;
     }
   # and now the run dependencies
     if (@{$pkg->{rdep}}) {
-	my @rdep = map { by_path($_) } @{$pkg->{rdep}};
+	my @rdep = map { by_path($_, $name) } @{$pkg->{rdep}};
 	$pkg->{rdep} = \@rdep;
     }
 }
