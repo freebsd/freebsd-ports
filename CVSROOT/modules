@@ -4546,6 +4546,7 @@ p5-Net-Traceroute6	ports/net/p5-Net-Traceroute6
 p5-Net-Wake	ports/net/p5-Net-Wake
 p5-Net-Whois	ports/net/p5-Net-Whois
 p5-Net-XWhois	ports/net/p5-Net-XWhois
+p5-Net-Z3950	ports/net/p5-Net-Z3950
 p5-Net-ext	ports/net/p5-Net-ext
 p5-NetAddr-IP	ports/net/p5-NetAddr-IP
 p5-NetAddr-IP-Count	ports/net/p5-NetAddr-IP-Count
