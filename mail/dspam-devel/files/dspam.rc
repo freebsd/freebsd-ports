@@ -1,0 +1,41 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: dspam
+# REQUIRE: LOGIN NETWORKING SERVERS %%MYSQL%%
+# BEFORE: mail
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf[.local] to enable dspam:
+#
+# dspam_enable="YES"
+#
+
+. /etc/rc.subr
+
+name=dspam
+rcvar=`set_rcvar`
+
+command=%%PREFIX%%/bin/${name}
+command_args="--daemon  > /dev/null 2>&1 &"
+pidfile=/var/run/${name}.pid
+required_dirs=%%DSPAM_HOME%%
+required_files=%%PREFIX%%/etc/${name}.conf
+
+extra_commands=reload
+
+reload()
+{
+ kill -HUP `cat $pidfile`
+}
+
+# set defaults
+
+dspam_enable=${dspam_enable:-"NO"}
+#dspam_flags=${dspam_flags:-"--daemon &"}
+
+load_rc_config $name
+run_rc_command "$1"

@@ -1,4 +1,5 @@
 bin/dspam
+bin/dspamc
 bin/dspam_2sql
 bin/dspam_admin
 bin/dspam_clean
@@ -8,11 +9,13 @@ bin/dspam_dump
 bin/dspam_genaliases
 bin/dspam_merge
 bin/dspam_stats
+@unexec if cmp -s %D/etc/dspam.conf %D/etc/dspam.conf.sample; then rm -f %D/etc/dspam.conf; fi
 etc/dspam.conf.sample
 include/dspam/buffer.h
 include/dspam/config.h
 include/dspam/decode.h
 include/dspam/error.h
+include/dspam/heap.h
 include/dspam/lht.h
 include/dspam/libdspam.h
 include/dspam/libdspam_objects.h
