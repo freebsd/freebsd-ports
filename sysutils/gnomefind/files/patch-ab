@@ -1,0 +1,11 @@
+--- src/pred.h	2000/05/26 09:43:28	1.1
++++ src/pred.h	2000/05/26 09:43:36
+@@ -30,7 +30,7 @@
+ 
+ #include <time.h>
+ 
+-#include <regex.h>
++#include <gnuregex.h>
+ 
+ #if __STDC__
+ # define P_(s) s

@@ -1,0 +1,32 @@
+# New ports collection makefile for:	gnomefind
+# Date created:		26 May 2000
+# Whom:			Maxim Sobolev
+#
+# $FreeBSD$
+#
+
+PORTNAME=	gnomefind
+PORTVERSION= 	0.4
+CATEGORIES=	sysutils gnome
+MASTER_SITES=	http://download.sourceforge.net/gnome-find/
+DISTNAME=	gnome-find-${PORTVERSION}
+
+MAINTAINER=	sobomax@FreeBSD.org
+
+LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
+		glade.3:${PORTSDIR}/devel/libglade
+
+GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
+GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
+
+CONFIGURE_ENV=	GLIB_CONFIG="${GLIB_CONFIG}" \
+		GTK_CONFIG="${GTK_CONFIG}" \
+		CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-lgnuregex -L${LOCALBASE}/lib"
+
+USE_X_PREFIX=	yes
+GNU_CONFIGURE=	yes
+
+MAN1=		gnome-find.1
+
+.include <bsd.port.mk>
