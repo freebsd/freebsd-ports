@@ -5,3 +5,6 @@ man/man1/w3mir.1.gz
 man/man1/w3mfix.1.gz
 bin/w3mir
 bin/w3mfix
+share/doc/w3mir/README
+share/doc/w3mir/Artistic
+share/doc/w3mir/w3mir-HOWTO.html

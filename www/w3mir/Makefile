@@ -4,7 +4,7 @@
 # Date created:                         9 May 1998
 # Whom:                                 ache
 #
-# $Id: Makefile,v 1.1.1.1 1998/05/09 10:20:39 ache Exp $
+# $Id: Makefile,v 1.17 1998/04/28 14:45:37 vanilla Exp $
 #
 
 DISTNAME=       w3mir-1.0.2
@@ -21,5 +21,12 @@ MAN1=           w3mir.1 w3mfix.1
 
 do-configure:
 		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL
+
+post-install:
+		${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 755 \
+			${PREFIX}/share/doc/w3mir
+		cd ${WRKSRC} && ${INSTALL_DATA} \
+			README Artistic w3mir-HOWTO.html \
+			${PREFIX}/share/doc/w3mir
 
 .include <bsd.port.mk>
