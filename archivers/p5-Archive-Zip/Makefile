@@ -24,8 +24,7 @@ MAN3=		Archive::Zip.3 Archive::Zip::Tree.3 Archive::Zip::FAQ.3 Archive::Zip::Mem
 
 .include <bsd.port.mk>
 
-# ${PERL} defined after bsd.port.post.mk.  So place this after .include line.
-USE_FILESPEC!=	${PERL} -MFile::Spec -e 'print $$File::Spec::VERSION<0.8'
-.if (${USE_FILESPEC} == 1)
+.if ${OSVERSION} < 500000 && !exists(${SITE_PERL}/File/Spec.pm)
 BUILD_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
+RUN_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
 .endif
