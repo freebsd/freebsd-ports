@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	metakit
-PORTVERSION=	2.4.8
+PORTVERSION=	2.4.9
 CATEGORIES=	databases
 MASTER_SITES=	http://www.equi4.com/pub/mk/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-${KITREVISION}
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	C++ embedded database engine, supports Python and Tcl
@@ -22,7 +22,6 @@ LIB_DEPENDS=	tcl84.1:${PORTSDIR}/lang/tcl84
 BUILD_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 .endif
 
-KITREVISION=	38
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/builds
 USE_LIBTOOL=	yes
 CONFIGURE_SCRIPT=	../unix/configure
@@ -33,7 +32,7 @@ ONLY_FOR_ARCHS=	i386 alpha
 
 .if defined(METAKIT_WITH_PYTHON)
 USE_PYTHON=	yes
-CONFIGURE_ARGS+=	--enable-python
+CONFIGURE_ARGS+=	--with-python=${LOCALBASE}
 CATEGORIES+=	python
 PLIST_SUB+=	WITH_PYTHON=""
 .else
@@ -53,6 +52,7 @@ TCL_SHORT_V=	84
 
 .if defined(METAKIT_WITH_TCL83) || defined(METAKIT_WITH_TCL84)
 CONFIGURE_ARGS+=	--with-tcl=${LOCALBASE}/include/tcl${TCL_V}
+CONFIGURE_ENV+=	V=${TCL_V} SHORT_V=${TCL_SHORT_V}
 MAKE_ENV+=	V=${TCL_V} SHORT_V=${TCL_SHORT_V}
 PLIST_SUB+=	TCL_V="${TCL_V}"
 PLIST_SUB+=	WITH_TCL=""
