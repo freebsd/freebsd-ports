@@ -3,7 +3,7 @@
 # Date created:         2 Oct 1995
 # Whom:                 se
 #
-# $Id: Makefile,v 1.3 1996/11/18 11:25:01 asami Exp $
+# $Id: Makefile,v 1.4 1997/12/25 22:29:17 asami Exp $
 #
 
 DISTNAME=	spider
@@ -15,5 +15,6 @@ MAINTAINER=	ports@FreeBSD.ORG
 
 USE_IMAKE=	yes
 INSTALL_TARGET=	install install.doc
+MAN1=		spider.1
 
 .include <bsd.port.mk>
