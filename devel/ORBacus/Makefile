@@ -3,7 +3,7 @@
 # Whom:			ejc@bazzle.com
 # Version required:	1.0
 #
-# $Id: Makefile,v 1.3 1997/06/29 11:39:45 obrien Exp $
+# $Id: Makefile,v 1.4 1997/11/26 23:58:54 jseger Exp $
 #
 
 DISTNAME=	OB-1.0
@@ -12,6 +12,8 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.ooc.com/pub/OmniBroker/1.0/
 
 MAINTAINER=	ejc@bazzle.com
+
+BROKEN=		awaiting upgrade to ORBacus -- see PR ports/7034
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	CXX=c++ CXXFLAGS="--no-implicit-templates -fhandle-exceptions -Wall"
