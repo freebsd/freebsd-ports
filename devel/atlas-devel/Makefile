@@ -9,7 +9,7 @@ PORTNAME=	Atlas
 PORTVERSION=	0.4.94
 PORTREVISION=	0
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.worldforge.org/pub/worldforge/libs/Atlas-C++/transitional/ \
+MASTER_SITES=	ftp://ftp.worldforge.org/libs/Atlas-C++/transitional/ \
 		http://purple.worldforge.org/wf/downloads/libs/Atlas-C++/transitional/
 DISTNAME=	${PORTNAME}-C++-${PORTVERSION}
 
