@@ -3,7 +3,7 @@
 # Date created:		23.sept.1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.16 1998/08/07 22:56:38 asami Exp $
+# $Id: Makefile,v 1.17 1998/10/15 13:24:08 jseger Exp $
 #
 
 DISTNAME=	iv-3.1
@@ -11,6 +11,7 @@ CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://interviews.stanford.edu/pub/
 DISTFILES=	3.1.tar.Z
 
+USE_XLIB=	yes
 BROKEN_ELF=	yes
 
 DIST_SUBDIR=	iv
