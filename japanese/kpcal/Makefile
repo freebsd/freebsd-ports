@@ -7,13 +7,14 @@
 
 PORTNAME=	kpcal
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://www.eken.phys.nagoya-u.ac.jp/~yoichi/FreeBSD/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-PATCH_SITES= http://www.tamaru.kuee.kyoto-u.ac.jp/~tsuchiya/misc/
-PATCHFILES= ${PORTNAME}-${PORTVERSION}-Shunbun.patch
-PATCH_DIST_STRIP= -p1
+PATCH_SITES=	http://www.tamaru.kuee.kyoto-u.ac.jp/~tsuchiya/misc/
+PATCHFILES=	${PORTNAME}-${PORTVERSION}-HappyMonday2003.patch
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	yoichi@eken.phys.nagoya-u.ac.jp
 
