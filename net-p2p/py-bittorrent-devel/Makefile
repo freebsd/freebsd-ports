@@ -7,7 +7,7 @@
 
 PORTNAME=	BitTorrent
 PORTVERSION=	3.9.0
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES?=	net python
 MASTER_SITES=	http://www.bittorrent.com/
@@ -40,7 +40,7 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 # required for GUI
 .ifndef(WITHOUT_GUI)
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/wxPython/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pygtk.py:${PORTSDIR}/x11-toolkits/py-gtk2
 
 PLIST_FILES+=	\
 		bin/btmaketorrentgui.py \
