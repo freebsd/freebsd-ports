@@ -9,7 +9,6 @@ PORTNAME=	xephem
 PORTVERSION=	3.5.2
 CATEGORIES=	astro
 MASTER_SITES=	# http://www.clearskyinstitute.com/xephem/
-DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An interactive astronomical ephemeris program
