@@ -17,6 +17,7 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A library for XML processing in Erlang
 
 BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
+RUN_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
 
 USE_GMAKE=	yes
 

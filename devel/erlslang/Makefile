@@ -20,7 +20,7 @@ COMMENT=	SLang binding for Erlang/OTP
 
 BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
-RUN_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
+RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 

@@ -19,6 +19,7 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Erlang modules for code manipulation
 
 BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
+RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
