@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	lioux@FreeBSD.org
 
+BROKEN=		"Cannot find moc executable"
+
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
