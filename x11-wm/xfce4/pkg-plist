@@ -625,16 +625,16 @@ share/xfce/textures/oldwood.xpm
 share/xfce/textures/paper.xpm
 share/xfce/textures/silver.xpm
 share/xfce/textures/stripe.xpm
-@dirrm share/xfce/textures
-@dirrm share/xfce/sounds
-@dirrm share/xfce/palettes
-@dirrm share/xfce/icons
-@dirrm share/xfce/help/html/stylesheet-images
+@dirrm etc/xfce
+@dirrm share/xfce/backdrops
+@dirrm share/xfce/cursors
+@dirrm share/xfce/fonts
 @dirrm share/xfce/help/html/images
+@dirrm share/xfce/help/html/stylesheet-images
 @dirrm share/xfce/help/html
 @dirrm share/xfce/help
-@dirrm share/xfce/fonts
-@dirrm share/xfce/cursors
-@dirrm share/xfce/backdrops
+@dirrm share/xfce/icons
+@dirrm share/xfce/palettes
+@dirrm share/xfce/sounds
+@dirrm share/xfce/textures
 @dirrm share/xfce
-@dirrm etc/xfce
