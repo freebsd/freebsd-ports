@@ -7,6 +7,7 @@
 
 PORTNAME=	flashplayer
 PORTVERSION=	0.4.10
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.swift-tools.com/Flash/
 DISTNAME=	flash-${PORTVERSION}
@@ -15,6 +16,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	knu@FreeBSD.org
 
 LIB_DEPENDS=	flash.0:${.CURDIR}/../libflash
+
+USE_X_PREFIX=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/Player
 
