@@ -1,5 +1,6 @@
 bin/rascal
 bin/rascal.rc
+bin/grascal
 share/doc/rascal/rascal.pdf
 share/doc/rascal/rascal.ps
 share/doc/rascal/CHANGES
