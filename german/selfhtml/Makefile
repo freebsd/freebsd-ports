@@ -7,6 +7,7 @@
 
 PORTNAME=	selfhtml
 PORTVERSION=	80
+PORTREVISION=	1
 CATEGORIES=	german www
 MASTER_SITES=	http://www.fsai.fh-trier.de/~gielj/files/ \
 		http://home.t-online.de/home/b.michna/selfhtml/ \
@@ -31,6 +32,7 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
 PORTDOCS=	\
+		index.htm \
 		cgiperl \
 		css \
 		dhtml \
