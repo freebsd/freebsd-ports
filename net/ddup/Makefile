@@ -17,6 +17,10 @@ WRKSRC=		${WRKDIR}/ddup-nic
 MAN1=		ddup.1
 MANCOMPRESSED=	no
 
+post-configure:
+	@${PERL} -pi.orig -e 's:/etc/ddup.conf:${PREFIX}/etc/ddup.conf:' \
+		${WRKSRC}/INSTALL-C
+
 post-install:
 	strip ${PREFIX}/sbin/ddup
 
