@@ -1,0 +1,17 @@
+--- src/libXicq/structs.h.orig	Sun Feb 27 12:34:45 2000
++++ src/libXicq/structs.h	Sun Feb 27 12:37:10 2000
+@@ -16,10 +16,10 @@
+ */
+ struct LIB_INFORMATION
+ {
+-    const char NAME[]		= "libXicq";
+-    const char VERSION[]	= "071298-snapshot";
+-    const char AUTHOR[]		= "tnc";
+-    const char CONTACT[]	= "xtrophy@it.dk";
++    static const char NAME[]	= "libXicq";
++    static const char VERSION[]	= "071298-snapshot";
++    static const char AUTHOR[]	= "tnc";
++    static const char CONTACT[]	= "xtrophy@it.dk";
+ };
+ 
+ 
