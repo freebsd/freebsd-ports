@@ -1,4 +1,4 @@
-# New ports collection makefile for:	linux-sun-jdk
+# New ports collection makefile for:	Sun Linux JDK 1.2.x
 # Date created:				27 April 2002
 # Whom:					Ernst de Haan <znerd@FreeBSD.org>
 #
@@ -22,6 +22,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION:R}
 PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///}
+LATEST_LINK=	linux-sun-jdk12
 
 NO_BUILD=	yes
 USE_LINUX=	yes
