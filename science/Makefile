@@ -37,6 +37,7 @@
     SUBDIR += libsvm
     SUBDIR += libsvm-python
     SUBDIR += mayavi
+    SUBDIR += mcstas
     SUBDIR += mmtk
     SUBDIR += mpb
     SUBDIR += mpqc
