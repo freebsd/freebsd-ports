@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	devhelp
-PORTVERSION=	0.7
-PORTREVISION=	3
+PORTVERSION=	0.9
 CATEGORIES?=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C,^([[:digit:]]+\.[[:digit:]]+).*,\1,}
@@ -15,6 +14,9 @@ DIST_SUBDIR=	gnome2
 
 MAINTAINER=	rui@ruilopes.com
 COMMENT=	Developer help browser for GNOME 2
+
+BUILD_DEPENDS=	${X11BASE}/lib/mozilla/libgtkembedmoz.so:${PORTSDIR}/www/mozilla
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
@@ -27,7 +29,6 @@ CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
 		LIBS="${PTHREAD_LIBS} -L${LOCALBASE}/lib"
 
 post-patch:
-	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} \
-		${REINPLACE_CMD} -e 's|-DG[TD]K_DISABLE_DEPRECATED||g'
+	@${REINPLACE_CMD} -E 's,^(LD_),export \1,g' ${WRKSRC}/devhelp.in
 
 .include <bsd.port.mk>
