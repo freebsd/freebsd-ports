@@ -3,7 +3,7 @@
 # Date created:		4 Mar 1998
 # Whom:			handy@physics.montana.edu
 #
-# $Id: Makefile,v 1.11 1998/10/13 23:44:03 jseger Exp $
+# $Id: Makefile,v 1.12 1998/10/20 01:46:39 steve Exp $
 #
 
 DISTNAME=	mgv-3.1.5
@@ -21,6 +21,8 @@ CONFIGURE_ENV=	X11BASE=${X11BASE}
 CONFIGURE_ARGS=	--enable-optimize \
 		--disable-debug
 PLIST_SUB=	MGV_VERSION=3.1.5
+
+MAN1=		mgv.1
 
 post-install:
 		@ ${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
