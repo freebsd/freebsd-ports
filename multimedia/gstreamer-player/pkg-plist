@@ -1,11 +1,9 @@
 bin/gst-player
-bin/gst-player-gtk
 etc/gconf/gconf.xml.defaults/apps/gst-player/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gst-player/%gconf.xml
 etc/gconf/schemas/gst-player.schemas
 include/gst-player-%%VERSION%%/gst/gstvideowidget.h
 include/gst-player-%%VERSION%%/gst/gtk-playlist.h
-%%MOZILLA_PLUGIN%%lib/browser_plugins/libmozstreamer.so
 lib/libgstplayer.a
 lib/libgstplayer.so
 lib/libgstplayer.so.%%SHLIB_VERSION%%
