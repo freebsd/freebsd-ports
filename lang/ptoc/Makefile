@@ -37,16 +37,16 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/libptoc.a ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/libXbgi.a ${PREFIX}/lib
 	@${MKDIR} ${PREFIX}/include/ptoc
-.for file in array.h graph.h io.h paslib.h ptoc.h set.h
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/include/ptoc
+.for f in array.h graph.h io.h paslib.h ptoc.h set.h
+	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/include/ptoc
 .endfor
 	@${MKDIR} ${DATADIR}
-.for file in graph.pas ptoc.pas tptoc.pas
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DATADIR}
+.for f in graph.pas ptoc.pas tptoc.pas
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DATADIR}
 .endfor
 	@${MKDIR} ${EXAMPLESDIR}
-.for file in ${EXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/examples/${file} ${EXAMPLESDIR}
+.for f in ${EXAMPLES}
+	${INSTALL_DATA} ${WRKSRC}/examples/${f} ${EXAMPLESDIR}
 .endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
