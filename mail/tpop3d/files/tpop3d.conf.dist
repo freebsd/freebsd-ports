@@ -1,0 +1,7 @@
+listen-address: 0.0.0.0
+max-children: 20
+
+mailbox: bsd:/var/mail/$(user)
+
+auth-pam-enable: yes
+

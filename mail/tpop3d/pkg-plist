@@ -1,0 +1,5 @@
+sbin/tpop3d
+etc/rc.d/tpop3d.sh.sample
+@unexec if cmp -s %D/etc/tpop3d.conf.dist %D/etc/tpop3d.conf; then rm -f %D/etc/tpop3d.conf; fi
+etc/tpop3d.conf.dist
+@exec if [ ! -f %D/etc/tpop3d.conf ]; then cp %D/etc/%f %D/etc/tpop3d.conf; fi
