@@ -1,0 +1,6 @@
+Glens simulates a gravitational lens composed of any number of punctual
+deflectors. Light comes from a punctual light source at an infinite distance,
+the direction of which can be specified. It is then deflected by a
+distribution of punctual deflectors (such as a black hole) into a small
+region of space. The rays can be seen, and directions and parameters
+specified to see multiple images, or the famous "Einstein ring".

@@ -6,6 +6,7 @@
     SUBDIR += clhep
     SUBDIR += euler
     SUBDIR += gdis
+    SUBDIR += glens
     SUBDIR += libsvm
     SUBDIR += mayavi
     SUBDIR += mpqc

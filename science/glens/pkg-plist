@@ -1,0 +1,16 @@
+bin/glens
+%%PORTDOCS%%share/examples/glens/cfg/bh.cgf
+%%PORTDOCS%%share/examples/glens/cfg/conf1.cgf
+%%PORTDOCS%%share/examples/glens/cfg/conf2.cgf
+%%PORTDOCS%%share/examples/glens/cfg/conf3.cgf
+%%PORTDOCS%%share/examples/glens/cfg/conf4.cgf
+%%PORTDOCS%%share/examples/glens/cfg/conf5.cgf
+%%PORTDOCS%%share/examples/glens/cfg/conf6.cgf
+%%PORTDOCS%%share/examples/glens/cfg/conf7.cgf
+%%PORTDOCS%%share/examples/glens/cfg/conf9.cgf
+%%PORTDOCS%%share/examples/glens/cfg/confbad.cgf
+%%PORTDOCS%%share/examples/glens/cfg/glens.cgf
+%%PORTDOCS%%share/examples/glens/cfg/simple.cgf
+%%PORTDOCS%%share/examples/glens/cfg/simple2.cgf
+%%PORTDOCS%%@dirrm share/examples/glens/cfg
+%%PORTDOCS%%@dirrm share/examples/glens
