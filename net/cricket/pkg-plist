@@ -91,6 +91,7 @@ cricket/cricket-%%VERSION%%/util/LeanODBC/stripsql.h
 cricket/cricket-%%VERSION%%/util/LeanODBC/test.pl
 cricket/cricket-%%VERSION%%/util/README
 cricket/cricket-%%VERSION%%/util/README.listInterfaces
+cricket/cricket-%%VERSION%%/util/convert-named-ds
 cricket/cricket-%%VERSION%%/util/dump-targets
 cricket/cricket-%%VERSION%%/util/generate-statics
 cricket/cricket-%%VERSION%%/util/get-collector-stats
