@@ -1,0 +1,14 @@
+libexec/apache/mod_zap.so
+share/mod_zap/advanced.html
+share/mod_zap/advanced.zap
+share/mod_zap/ccl.html
+share/mod_zap/cgi.html
+share/mod_zap/default.zap
+share/mod_zap/full.zap
+share/mod_zap/gils-display-f.zap
+share/mod_zap/search.html
+share/mod_zap/simple.html
+share/mod_zap/simple.zap
+share/mod_zap/thesaurus.zap
+share/mod_zap/try.html
+@dirrm share/mod_zap
