@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.71 1998/07/31 19:10:16 asami Exp $
+# $Id: Makefile,v 1.72 1998/08/07 22:02:54 asami Exp $
 #
 
     SUBDIR += adcomplain
@@ -36,6 +36,7 @@
     SUBDIR += p5-Mail-Folder
     SUBDIR += p5-Mail-POP3Client
     SUBDIR += p5-Mail-Tools
+    SUBDIR += pathalias
     SUBDIR += pgpsendmail
     SUBDIR += pine3
     SUBDIR += pine4
