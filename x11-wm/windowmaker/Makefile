@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	windowmaker
-PORTVERSION=	0.64.0
+PORTVERSION=	0.65.0
 CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	${MASTER_SITE_WINDOWMAKER} \
 		http://jgo.local.net/cool_downloads/wm/ \
@@ -14,7 +14,6 @@ MASTER_SITES=	${MASTER_SITE_WINDOWMAKER} \
 MASTER_SITE_SUBDIR=	beta/srcs
 DISTNAME=	WindowMaker-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		libwmfun-${PORTVERSION}${EXTRACT_SUFX} \
 		${DATAFILES}
 
 MAINTAINER=	sobomax@FreeBSD.org
@@ -24,7 +23,8 @@ LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
 		png.4:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		PropList.2:${PORTSDIR}/devel/libPropList \
-		intl.1:${PORTSDIR}/devel/gettext
+		intl.1:${PORTSDIR}/devel/gettext \
+		Hermes.1:${PORTSDIR}/graphics/Hermes
 
 USE_BZIP2=	yes
 USE_PERL5=	yes
@@ -42,6 +42,7 @@ CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/include/X11/pixmaps \
 		--with-libs-from="-L${LOCALBASE}/lib" \
 		--with-incs-from="-I${LOCALBASE}/include" \
 		--with-appspath="${PREFIX}/GNUstep/Apps" \
+		--enable-hermes \
 		--disable-debug
 
 MAN1=		geticonset.1x getstyle.1x seticons.1x setstyle.1x wdwrite.1x \
@@ -63,10 +64,6 @@ CONFIGURE_ARGS+=	--enable-kde
 .SILENT:
 pre-extract:
 	@${ECHO} "You can add hooks for KDE by defining WITH_KDE"
-.endif
-
-.if defined(WITH_SINGLE_ICON)
-CONFIGURE_ARGS+=	--enable-single-icon
 .endif
 
 post-patch:
