@@ -21,7 +21,8 @@ COMMENT=	A Sun's powerful and extensible IDE for Java
 BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT}
 .endif
 
-USE_JAVA=	1.3+
+USE_JAVA=	yes
+JAVA_VERSION=	1.3+
 JAVAVM=		${JAVA_HOME}/bin/java
 
 RESTRICTED=	"Restrictive license"
