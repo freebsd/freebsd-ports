@@ -1,4 +1,3 @@
-@cwd /usr/local
 bin/arc
 bin/marc
 man/man1/arc.1
