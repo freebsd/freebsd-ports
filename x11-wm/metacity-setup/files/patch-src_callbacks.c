@@ -1,5 +1,14 @@
---- src/callbacks.c.orig	Tue Aug 27 15:30:54 2002
-+++ src/callbacks.c	Tue Aug 27 15:30:36 2002
+--- src/callbacks.c.original	Sat Oct 12 14:42:02 2002
++++ src/callbacks.c	Sat Oct 12 14:50:10 2002
+@@ -35,7 +35,7 @@
+ GtkWidget *treeview1_cheat;
+ GtkWidget *install_dialog_cheat;
+ GtkWidget *refresh_button_cheat;
+-gchar *metacity_version = "2.3";
++gchar *metacity_version = "2.4";
+ 
+ enum
+ {
 @@ -228,14 +228,25 @@
  
  			while ((filename =
@@ -28,3 +37,9 @@
  					{
  						g_ptr_array_add (themeNameHolder,
  							 g_strdup (filename));
+@@ -690,4 +701,4 @@
+ 	else 
+ 		metacity_version = "2.4";
+ 	on_treeview1_realize (treeview1_cheat, user_data);
+-}
++}
