@@ -1,4 +1,4 @@
 bin/empire
-%%PORTDOCS%%share/doc/empire/BUGS
-%%PORTDOCS%%share/doc/empire/READ.ME
-%%PORTDOCS%%@dirrm share/doc/empire
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/READ.ME
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
