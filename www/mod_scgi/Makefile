@@ -6,20 +6,32 @@
 #
 
 PORTNAME=	scgi
-PORTVERSION=	0.2
+PORTVERSION=	1.2.a2
 CATEGORIES=	www
 MASTER_SITES=	http://www.mems-exchange.org/software/files/scgi/
 PKGNAMEPREFIX=	mod_
+DISTNAME=	scgi-${PORTVERSION:S/.a/a/}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dryice@liu.com.cn
 COMMENT=	Apache module that implements the client side of the SCGI protocol
 
-BUILD_DEPENDS=	${APXS}:${PORTSDIR}/${APACHE_PORT}
+USE_APACHE=	yes
+WRKSRC=		${WRKDIR}/${DISTNAME}/${APACHE_DIR}
 
-do-build:
-	cd ${WRKSRC} && ${APXS} -c -o mod_scgi.so mod_scgi.c
+.include <bsd.port.pre.mk>
+.if exists(${LOCALBASE}/include/apache2/apr.h)
+WITH_APACHE2=	yes
+.endif
 
-do-install:
-	cd ${WRKSRC} && ${APXS} -i -a mod_scgi.so
+.if defined(WITH_APACHE2)
+APACHE_DIR=	apache2
+PLIST_SUB=	APACHE_DIR=apache2
+.else
+APACHE_DIR=	apache1
+PLIST_SUB=	APACHE_DIR=apache
+.endif
 
-.include <bsd.port.mk>
+post-install:
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.post.mk>
