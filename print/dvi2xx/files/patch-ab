@@ -1,0 +1,15 @@
+--- Makefile.orig	Sun Jan 10 18:39:22 1999
++++ Makefile	Mon May 31 16:58:31 1999
+@@ -16,9 +16,10 @@
+ 
+ # for gcc you might wish to set the following flags
+ CC=gcc
+-CFLAGS=-Dunix -ansi -pedantic -O2
++#CFLAGS=-Dunix -ansi -pedantic -O2
+ # under Linux you might want to use the following configuration
+-CFLAGS=-Dunix -ansi -pedantic -O2 -m486
++#CFLAGS=-Dunix -ansi -pedantic -O2 -m486
++CFLAGS+=-Dunix -ansi -pedantic
+ 
+ # of DO_SUBDIRS is specifies the fontpath is searched recursively
+ # for each subpart (applies to raster info and tfm files); the
