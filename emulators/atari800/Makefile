@@ -32,7 +32,7 @@ ATARI_XF=	ataribas.rom atariosb.rom atarixl.rom demos1.xfd \
 		demos2.xfd dos25.xfd mydos45d.atr
 ATARI_LIB=	${PREFIX}/share/atari
 SED_CONFIG=	${ATARI_LIB:S/\//\\\//g}
-DOC_FILES= 	BUGS CHANGES CREDITS INSTALL README TODO USAGE
+DOC_FILES=	BUGS CHANGES CREDITS INSTALL README TODO USAGE
 
 MAN1=		atari800.1
 

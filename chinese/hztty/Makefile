@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.ifcss.org/pub/software/unix/convert/  \
 
 MAINTAINER=	ada@bsd.org
 
-ALL_TARGET= 	bsd
+ALL_TARGET=	bsd
 MAN1=		hztty.1
 
 do-install:

@@ -24,7 +24,7 @@ PORTCLASS?=	master
 
 # emacs port setup
 .if (${PORTCLASS} == "master")
-EMACS_PORT_NAME=  emacs
+EMACS_PORT_NAME=	emacs
 .endif
 
 # target name for make build

@@ -22,12 +22,12 @@ USE_GTK=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_MYSQL) || (exists(${LOCALBASE}/lib/mysql/libmysqlclient.a) \
-     && !defined(WITHOUT_MYSQL))
+	&& !defined(WITHOUT_MYSQL))
 HAVE_MYSQL=	yes
 LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 .endif
 .if defined(WITH_PGSQL) || (exists(${LOCALBASE}/lib/libpq.a) \
-     && !defined(WITHOUT_PGSQL))
+	&& !defined(WITHOUT_PGSQL))
 HAVE_PGSQL=	yes
 LIB_DEPENDS+=	pq.2:${PORTSDIR}/databases/postgresql7
 .endif

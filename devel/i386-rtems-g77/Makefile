@@ -9,7 +9,7 @@ PORTNAME=	g77
 PORTVERSION=	2.95.2
 PORTREVISION=	11
 CATEGORIES=	devel
-MASTER_SITES=   ftp://ftp.oarcorp.com/pub/rtems/snapshots/c_tools/source/ \
+MASTER_SITES=	ftp://ftp.oarcorp.com/pub/rtems/snapshots/c_tools/source/ \
 		http://rtems.thehousleys.net/
 DISTFILES=	${F77NAME}.tar.gz ${NEWLIBNAME}.tar.gz
 PATCHFILES=	${F77NAME}-rtems-20001030.diff.gz \

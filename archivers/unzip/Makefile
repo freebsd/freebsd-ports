@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	unzip
-PORTVERSION=    5.42
+PORTVERSION=	5.42
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.freesoftware.com/pub/infozip/src/
-DISTNAME=       ${PORTNAME}542
+DISTNAME=	${PORTNAME}542
 
 MAINTAINER=	ache@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKEFILE=	unix/Makefile
-MAKE_FLAGS=     LOCAL_UNZIP="${CFLAGS} -DUSE_UNSHRINK" -f
+MAKE_FLAGS=	LOCAL_UNZIP="${CFLAGS} -DUSE_UNSHRINK" -f
 MAN1=		funzip.1 unzip.1 unzipsfx.1 zipgrep.1 zipinfo.1
 
 .include <bsd.port.pre.mk>

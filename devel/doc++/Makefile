@@ -39,7 +39,7 @@ ADDITIONAL_DOCS=	ClassGraph.class \
 			Intermediate.html \
 			Introduction.html \
 			ManualEntries.html \
-                        ManualEntryFields.html \
+			ManualEntryFields.html \
 			NavigatorButton.class \
 			Quickstart.html \
 			ReferenceManual.html \
@@ -59,7 +59,7 @@ post-install:
 .if !defined(NOPORTSDOCS)
 	${MKDIR} ${PREFIX}/share/doc/doc++
 	for i in $(ADDITIONAL_DOCS); do \
-            ${INSTALL_MAN} ${WRKSRC}/doc/manual/html/$$i ${PREFIX}/share/doc/doc++ ;\
+		${INSTALL_MAN} ${WRKSRC}/doc/manual/html/$$i ${PREFIX}/share/doc/doc++ ;\
 	done
 .endif
 

@@ -36,12 +36,12 @@ CONFIGURE_ARGS=	--with-INSTALL="" \
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	ENVOPTS="${CFLAGS}"
 
-MAN1=   hylafax.1 faxalter.1 faxcover.1 faxmail.1 faxrm.1 faxstat.1 sendfax.1 \
+MAN1=	hylafax.1 faxalter.1 faxcover.1 faxmail.1 faxrm.1 faxstat.1 sendfax.1 \
 	sendpage.1 sgi2fax.1 textfmt.1
-MAN5=   pagesizes.5f typerules.5f hosts.hfaxd.5f xferfaxlog.5f \
+MAN5=	pagesizes.5f typerules.5f hosts.hfaxd.5f xferfaxlog.5f \
 	hylafax.5f cid.5f config.5f destctrls.5f dialrules.5f info.5f \
 	log.5f pagermap.5f recvq.5f sendq.5f shutdown.5f status.5f tsi.5f
-MAN8=   cqtest.8c choptest.8c dialtest.8c faxabort.8c faxaddmodem.8c \
+MAN8=	cqtest.8c choptest.8c dialtest.8c faxabort.8c faxaddmodem.8c \
 	faxadduser.8c faxanswer.8c faxconfig.8c faxdeluser.8c faxmodem.8c \
 	faxstate.8c faxcron.8c faxgetty.8c faxinfo.8c faxq.8c faxqclean.8c \
 	faxquit.8c faxrcvd.8c faxsend.8c faxsetup.8c faxwatch.8c hfaxd.8c \
@@ -49,7 +49,7 @@ MAN8=   cqtest.8c choptest.8c dialtest.8c faxabort.8c faxaddmodem.8c \
 	tagtest.8c tiff2fax.8c tiffcheck.8c tsitest.8c wedged.8c \
 	xferfaxstats.8c
 
-SUID_EXES= 	${PREFIX}/sbin/faxgetty ${PREFIX}/sbin/faxq \
+SUID_EXES=	${PREFIX}/sbin/faxgetty ${PREFIX}/sbin/faxq \
 		${PREFIX}/bin/faxrm ${PREFIX}/bin/faxalter
 
 post-extract:

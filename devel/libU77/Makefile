@@ -17,7 +17,7 @@ INSTALLS_SHLIB=	yes
 pre-build:
 	${CP} ${FILESDIR}/makefile.lib ${WRKSRC}/Makefile
 
-MAN3=   access.3f alarm.3f chdir.3f chmod.3f ctime.3f drand.3f dsecnd.3f    \
+MAN3=	access.3f alarm.3f chdir.3f chmod.3f ctime.3f drand.3f dsecnd.3f    \
 	dtime.3f etime.3f exit.3f falloc.3f fdate.3f fork.3f free.3f        \
 	fstat.3f gerror.3f getarg.3f getcwd.3f getenv.3f getgid.3f          \
 	getlog.3f getpid.3f getuid.3f gmtime.3f hostnm.3f iargc.3f idate.3f \

@@ -14,7 +14,7 @@ DISTFILES=	malloc-2.6.5.c
 
 MAINTAINER=	roberto@FreeBSD.org
 
-NO_WRKSUBDIR=   yes
+NO_WRKSUBDIR=	yes
 INSTALLS_SHLIB=	yes
 
 do-extract:
