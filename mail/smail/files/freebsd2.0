@@ -39,7 +39,7 @@ LIB_DIR=!!PREFIX!!/etc/smail
 UTIL_BIN_DIR=!!PREFIX!!/libexec/smail
 
 # Enable rfc1413 (ident protocol) and ESMTP sending support (EHLO)
-HAVE=$HAVE:EHLO:RFC1413
+HAVE=$HAVE:EHLO:RFC1413:LIBWRAP
 
 # NOBODY - a user with few access capabilities
 NOBODY=nobody
@@ -61,8 +61,12 @@ FORCE_SMTP_TYPE=lsearch
 # CPPFLAGS - interesting flags for the cpp, and cc commands
 CPPFLAGS="-I!!PREFIX!!/include"
 
+CFLAGS="$CFLAGS -I!!PREFIX!!/include"
+
 # LDFLAGS - flags to pass to the loader
 LDFLAGS="-L!!PREFIX!!/lib"
 
 # LIBS - libraries to include in binaries
-LIBS="-lident"
+LIBS="-lident -lwrap"
+
+MISC_DEFINES="$MISC_DEFINES:USE_TARGET_DOMAIN:NO_FORWARDTO_FILE"
