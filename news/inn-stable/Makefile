@@ -3,26 +3,38 @@
 # Date created:		20 Oct 1994 (1.4), 18 Dec 1996 (1.5.1)
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.34 1999/02/17 06:35:44 andreas Exp $
+# $Id: Makefile,v 1.35 1999/02/17 06:40:02 andreas Exp $
 #
 
-DISTNAME=	inn-STABLE_2_2-1999-02-14_03-02
+DISTNAME=	inn-STABLE_2_2-1999-02-17_03-02
 PKGNAME=	inn-stable-v22
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.isc.org/isc/inn/snapshots/
 
 MAINTAINER=	andreas@FreeBSD.ORG
 
+.if defined(BATCH)
+# in BATCH mode we use the default
+NEWSSPOOL=/var/spool/news
+.else
+# you can set this in /etc/make.conf !
+NEWSSPOOL?=/var/spool/news
+.endif
+
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=--prefix=${PREFIX}/news
 CONFIGURE_ARGS+=--infodir=${PREFIX}/info
 CONFIGURE_ARGS+=--mandir=${PREFIX}/man
-CONFIGURE_ARGS+=--with-spool-dir=/var/spool/news
+CONFIGURE_ARGS+=--with-spool-dir=${NEWSSPOOL}
 CONFIGURE_ARGS+=--with-log-dir=/var/log/news
-CONFIGURE_ARGS+=--with-tmp-path=/tmp
+
+# tmp- and spool-dir have to live on the same filesystem, to avoid this error:
+# "rnews: cant rename /tmp/36d24c3ehN1072
+#              to /var/spool/news/incoming/36d24c3eTg1072 Cross-device link"
+CONFIGURE_ARGS+=--with-tmp-path=${NEWSSPOOL}/tmp
 
 # Highly recommended, because many of the really good spam filters
-# are written in Perl
+# are written in Perl (from the author)
 CONFIGURE_ARGS+=--with-perl
 # if server has less than 256 MB RAM
 CONFIGURE_ARGS+=--enable-tagged-hash
@@ -30,7 +42,7 @@ CONFIGURE_ARGS+=--enable-tagged-hash
 CONFIGURE_ARGS+=--disable-static
 
 # Most available filters seem to be written in Perl these days,
-# so you can safely leave out TCL support.
+# so you can safely leave out TCL support (from the author)
 #CONFIGURE_ARGS+=--with-tcl
 # Do not create shared libraries
 #CONFIGURE_ARGS+=--disable-shared
@@ -54,36 +66,37 @@ MAN8=	actived.8 actsync.8 actsyncd.8 archive.8 batcher.8 buffchan.8 \
 	pgpverify.8 prunehistory.8 pullnews.8 scanlogs.8 send-uucp.8 sm.8 \
 	tally.control.8 tally.unwanted.8 writelog.8
 
+pre-extract:
+	@${ECHO} ">> building inn2 with NEWSSPOOL=${NEWSSPOOL}..."
+
 pre-install:
 	${MKDIR} ${PREFIX}/news
-	${MKDIR} -m 0755 ${PREFIX}/news/sbin && \
-		chown news.news ${PREFIX}/news/sbin
+	chown news.news ${PREFIX}/news
+	${MKDIR} ${NEWSSPOOL}/news
+	chown news.news ${NEWSSPOOL}
 
 update: build
 	@(cd ${WRKSRC} ; ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} update)
+	@${MAKE} ${.MAKEFLAGS} compress-man
 	@${MAKE} ${.MAKEFLAGS} post-install
 
 post-install:
-	if [ ! -d /var/spool/news ]; then \
-		${MKDIR} -m 0775 /var/spool/news/articles; \
-		chown news.news /var/spool/news/articles; \
-		${MKDIR} -m 0775 /var/spool/news/cycbuffs; \
-		chown news.news /var/spool/news/cycbuffs; \
-		${MKDIR} -m 0775 /var/spool/news/incoming; \
-		chown news.news /var/spool/news/incoming; \
-		${MKDIR} -m 0775 /var/spool/news/incoming/bad; \
-		chown news.news /var/spool/news/incoming/bad; \
-		${MKDIR} -m 0775 /var/spool/news/innfeed; \
-		chown news.news /var/spool/news/innfeed; \
-		${MKDIR} -m 0775 /var/spool/news/outgoing; \
-		chown news.news /var/spool/news/outgoing; \
-		${MKDIR} -m 0775 /var/spool/news/overview; \
-		chown news.news /var/spool/news/overview; \
-		${MKDIR} -m 0775 /var/spool/news/tmp; \
-		chown news.news /var/spool/news/tmp; \
-		${MKDIR} -m 0775 /var/spool/news/uniover; \
-		chown news.news /var/spool/news/uniover; \
-	fi
+	${MKDIR} -m 0775 ${NEWSSPOOL}/articles
+	chown news.news ${NEWSSPOOL}/articles
+	${MKDIR} -m 0775 ${NEWSSPOOL}/cycbuffs
+	chown news.news ${NEWSSPOOL}/cycbuffs
+	${MKDIR} -m 0775 ${NEWSSPOOL}/incoming/bad
+	chown news.news ${NEWSSPOOL}/incoming/bad
+	${MKDIR} -m 0775 ${NEWSSPOOL}/innfeed
+	chown news.news ${NEWSSPOOL}/innfeed
+	${MKDIR} -m 0775 ${NEWSSPOOL}/outgoing
+	chown news.news ${NEWSSPOOL}/outgoing
+	${MKDIR} -m 0775 ${NEWSSPOOL}/overview
+	chown news.news ${NEWSSPOOL}/overview
+	${MKDIR} -m 0775 ${NEWSSPOOL}/tmp
+	chown news.news ${NEWSSPOOL}/tmp
+	${MKDIR} -m 0775 ${NEWSSPOOL}/uniover
+	chown news.news ${NEWSSPOOL}/uniover
 	${SED} <${FILESDIR}/innd.sh >${PREFIX}/etc/rc.d/innd.sh \
 		s+!!PREFIX!!+${PREFIX}+g && chmod +x ${PREFIX}/etc/rc.d/innd.sh
 	# make rnews work when getting news via uucp !
