@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	bgpq
-PORTVERSION=	1.0.7.2
+PORTVERSION=	1.0.7.6
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.lexa.ru/pub/domestic/snar/
 
