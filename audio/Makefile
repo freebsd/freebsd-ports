@@ -32,6 +32,7 @@
     SUBDIR += kmp3
     SUBDIR += kmpg
     SUBDIR += knapster
+    SUBDIR += krio
     SUBDIR += lame
     SUBDIR += libaudiofile
     SUBDIR += libcdaudio

@@ -1,0 +1,14 @@
+--- Makefile.orig	Wed Jul 21 21:39:27 1999
++++ Makefile	Sat Jan 29 12:27:42 2000
+@@ -2,9 +2,8 @@
+ 
+ CC	= g++
+ RIODIR  = rio107
+-CFLAGS	= -Wall -O1 -I/usr/X11R6/include/qt -I/usr/include/kde -I/usr/include/qt -I$(RIODIR)
+-# CFLAGS	= -DDEBUG_MESSAGES -Wall -O1 -I/usr/X11R6/include/qt -I/usr/include/kde -I/usr/include/qt -I$(RIODIR)
+-LDFLAGS	= -L/usr/X11R6/lib -L/usr/lib -L/usr/include -lqt -lkdecore -lkdeui -lkfile -lkfm -lX11 -lXext
++CFLAGS	+= -I${X11BASE}/include/X11/qt -I${LOCALBASE}/include -I${X11BASE}/include -I$(RIODIR)
++LDFLAGS	= -L${X11BASE}/lib -L${LOCALBASE}/lib -lqt -lkdecore -lkdeui -lkfile -lkfm -lX11 -lXext
+ DEST	= krio
+ OBJS	= Krio.o MainWin.o rio.o KRioListView.o
+ SOURCES = Krio/Krio.cpp Krio/MainWin.cpp $(RIODIR)/rio.cpp Krio/KRioListView.cpp
