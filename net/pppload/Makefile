@@ -13,9 +13,14 @@ MASTER_SITE_SUBDIR=		system/network/serial/ppp
 
 MAINTAINER=	ports@FreeBSD.org
 
-USE_QT_VER=	1
+USE_QT_VER=	3
 USE_GMAKE=	yes
+MAKE_ENV=	QTDIR=${X11BASE} PTHREAD_LIBS=${PTHREAD_LIBS}
 
 MAN1=		pppload.1
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/pppload ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/pppload.1 ${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>
