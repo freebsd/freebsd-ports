@@ -1,15 +1,15 @@
 # New ports collection makefile for:	xcin25
-# Version required:	xcin-2.5.1
-# Date created:		25 June 1999
+# Version required:	xcin-2.5.2b
+# Date created:		18 Oct 1999
 # Whom:			Keith Jang <jtjang@gcn.net.tw>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xcin-2.5.1
-PKGNAME=	zh-xcin-2.5.1
+DISTNAME=	xcin-2.5-19991017
+PKGNAME=	zh-xcin-2.5.2b
 CATEGORIES=	chinese x11
-MASTER_SITES=	ftp://xcin.linux.org.tw/pub/xcin/xcin/
+MASTER_SITES=	ftp://xcin.linux.org.tw/pub/xcin/xcin/devel/
 
 MAINTAINER=	jtjang@gcn.net.tw
 
@@ -43,9 +43,11 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/CopyRight ${PREFIX}/lib/X11/xcin25/doc
 	${INSTALL_MAN} ${WRKSRC}/doc/FAQ ${PREFIX}/lib/X11/xcin25/doc
 	${INSTALL_MAN} ${WRKSRC}/doc/README ${PREFIX}/lib/X11/xcin25/doc
+	${INSTALL_MAN} ${WRKSRC}/doc/README.En ${PREFIX}/lib/X11/xcin25/doc
 	${INSTALL_MAN} ${WRKSRC}/doc/SETUP ${PREFIX}/lib/X11/xcin25/doc
 	${INSTALL_MAN} ${WRKSRC}/doc/Todo ${PREFIX}/lib/X11/xcin25/doc
 	${INSTALL_MAN} ${WRKSRC}/doc/Usage ${PREFIX}/lib/X11/xcin25/doc
+	${INSTALL_MAN} ${WRKSRC}/doc/UserGuide ${PREFIX}/lib/X11/xcin25/doc
 	${MKDIR} ${PREFIX}/lib/X11/xcin25/doc/internal
 	${INSTALL_MAN} ${WRKSRC}/doc/internal/IMdkit \
 		${PREFIX}/lib/X11/xcin25/doc/internal
