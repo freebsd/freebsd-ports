@@ -86,7 +86,7 @@
     SUBDIR += icod
     SUBDIR += imanager
     SUBDIR += imlib
-    SUBDIR += imlib2-tmp
+    SUBDIR += imlib2
     SUBDIR += jbigkit
     SUBDIR += jgraph
     SUBDIR += jgv
