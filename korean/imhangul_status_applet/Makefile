@@ -13,6 +13,8 @@ MASTER_SITES=	http://download.kldp.net/imhangul/
 MAINTAINER=	cjh@FreeBSD.org
 COMMENT=	GNOME2 status applet of imhangul
 
+BROKEN=		Broken dependency
+
 RUN_DEPENDS=	${LOCALBASE}/lib/lib/gtk-2.0/immodules/im-hangul.so:${PORTSDIR}/korean/imhangul
 
 USE_X_PREFIX=	yes
