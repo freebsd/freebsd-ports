@@ -27,6 +27,7 @@
     SUBDIR += distribute
     SUBDIR += dkimap4
     SUBDIR += drac
+    SUBDIR += ecartis
     SUBDIR += elm
     SUBDIR += elm+ME
     SUBDIR += emh

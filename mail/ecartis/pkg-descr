@@ -1,0 +1,13 @@
+Listar is a open-source (GNU Licence) software package that adminsters 
+mailing lists (similar to Majordomo and Listserv).  Some of Listar's
+features include:
+
+       - A modular design structure, so that you can compile what you
+         need (and don't)
+       - The ability to strip down MIME messages and remove their
+         attachments.
+       - Ability to be run in a multi-Virtual Host configuration.
+
+Take a look at Listar's website to get a full feature list:
+ 
+WWW: http://www.listar.org/

@@ -1,0 +1,63 @@
+#!/bin/sh
+
+user=ecartis
+group=ecartis
+
+ask() {
+    local question default answer
+
+    question=$1
+    default=$2
+    if [ -z "${PACKAGE_BUILDING}" ]; then
+        read -p "${question} [${default}]? " answer
+    fi
+    if [ x${answer} = x ]; then
+        answer=${default}
+    fi
+    echo ${answer}
+}
+
+yesno() {
+    local dflt question answer
+
+    question=$1
+    dflt=$2
+    while :; do
+        answer=$(ask "${question}" "${dflt}")
+        case "${answer}" in
+        [Yy]*)          return 0;;
+        [Nn]*)          return 1;;
+        esac
+        echo "Please answer yes or no."
+    done
+}
+
+if [ x"$2" = xPRE-INSTALL ]; then
+    if pw groupshow "${group}" 2>/dev/null; then
+        echo "You already have a group \"${group}\", so I will use it."
+    else
+        echo "You need a group \"${group}\"."
+        if yesno "Would you like me to create it" y; then
+            pw groupadd ${group} -h - || exit
+            echo "Done."
+        else
+            echo "Please create it, and try again."
+            exit 1
+        fi
+    fi
+
+    if pw user show "${user}" 2>/dev/null; then
+        echo "You already have a user \"${user}\", so I will use it."
+    else
+        echo "You need a user \"${user}\"."
+        if yesno "Would you like me to create it" y; then
+            pw useradd ${user} -g ${group} -h - -d /nonexistent \
+                -s /nonexistent -c "Listar Listserver" || exit
+            echo "Done."
+        else
+            echo "Please create it, and try again."
+            exit 1
+        fi
+    fi
+
+fi
