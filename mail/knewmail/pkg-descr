@@ -1,0 +1,10 @@
+KNewMail is a KDE app designed to check your pop3 servers and/or local
+servers for waiting mail, then return the headers of the mail. It is a
+small app that will just sit in the panel and can either check the
+servers at preset intervals, or only when forced. KNewMail will notify
+you by popup message, sound, and/or the header list.
+
+WWW: http://www.slac.com/mpilone/knewmail_home/
+
+- Tomer Weller
+wellers@netvision.net.il
