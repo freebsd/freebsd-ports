@@ -10,6 +10,24 @@ in the release notes.
 
 All ports committers are allowed to commit to this file.
 
+20050314:
+AUTHOR: edwin@FreeBSD.org
+  New variable for in /etc/make.conf: IGNORE_MASTER_SITE_xxx
+
+  If you prefer a certain mastersite for a collection of master-sites,
+  set this in your /etc/make.conf:
+
+	MASTER_SITE_xxx=http://z.x.y/%SUBDIR%/
+
+  If you insist on only using the ones you specify, set this in
+  your /etc/make.conf:
+
+	IGNORE_MASTER_SITE_xxx=yes
+	MASTER_SITE_xxx=http://z.x.y/%SUBDIR%/
+
+  Use "make -V MASTER_SITES" to see the differences.
+
+
 20050313:
 AUTHOR: ahze@FreeBSD.org, kwm@FreeBSD.org
   The following changes were committed:
