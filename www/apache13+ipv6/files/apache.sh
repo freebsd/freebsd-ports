@@ -1,15 +1,32 @@
 #!/bin/sh
+# $FreeBSD$
 
-case "$1" in
-start)
-	[ -x %%PREFIX%%/sbin/apachectl ] && %%PREFIX%%/sbin/apachectl start > /dev/null && echo -n ' apache'
-	;;
-stop)
-	[ -r /var/run/httpd.pid ] && %%PREFIX%%/sbin/apachectl stop > /dev/null && echo -n ' apache'
-	;;
-*)
-	echo "Usage: `basename $0` {start|stop}" >&2
-	;;
-esac
+# PROVIDE: apache
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: FreeBSD shutdown
 
-exit 0
+# Define these apache_* variables in one of these files:
+#       /etc/rc.conf
+#       /etc/rc.conf.local
+#       /etc/rc.conf.d/apache
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+apache_enable="NO"
+apache_flags=""
+apache_pidfile="/var/run/httpd.pid"
+
+. %%RC_SUBR%%
+
+name="apache"
+rcvar=`set_rcvar`
+command="%%PREFIX%%/sbin/httpd"
+
+load_rc_config $name
+
+pidfile="${apache_pidfile}"
+
+start_precmd="`/usr/bin/limits -e -U www`"
+
+run_rc_command "$1"
