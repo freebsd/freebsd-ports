@@ -6,6 +6,7 @@
     SUBDIR += citrix_ica
     SUBDIR += dict
     SUBDIR += ding
+    SUBDIR += geonext
     SUBDIR += ispell
     SUBDIR += ispell-alt
     SUBDIR += ispell-neu
