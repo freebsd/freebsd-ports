@@ -3,7 +3,7 @@
 # Date created:			14 September, 1997
 # Whom:				kline
 #
-# $Id: Makefile,v 1.1 1997/09/03 22:56:51 kline Exp kline $
+# $Id: Makefile,v 1.1.1.1 1997/10/11 04:13:38 obrien Exp $
 #
 
 DISTNAME=	cbb-0.73
@@ -13,15 +13,17 @@ MASTER_SITES=	ftp://ftp.me.umn.edu/pub/finance/ \
 
 MAINTAINER=	kline@thought.org
 
-RUN_DEPENDS=	wish4.2:${PORTSDIR}/x11/tk42
+#	extern.conf could easily be patched to use `plan' over `ical'
+RUN_DEPENDS=	wish4.2:${PORTSDIR}/x11/tk42 \
+		ical:${PORTSDIR}/misc/ical
 LIB_DEPENDS=    tk42\\.1\\.:${PORTSDIR}/x11/tk42
 
 NO_BUILD=       yes
 USE_PERL5=	yes
 
 pre-configure:
-	@${MV} ${WRKSRC}/install.pl ${WRKSRC}/install.pl.in
-	@${SED} -e "s:/usr/local:${PREFIX}:"  -e "s:lib/cbb:share/cbb:" \
+	${MV} ${WRKSRC}/install.pl ${WRKSRC}/install.pl.in
+	${SED} -e "s:/usr/local:${PREFIX}:"  -e "s:lib/cbb:share/cbb:" \
 		${WRKSRC}/install.pl.in > ${WRKSRC}/install.pl
 
 .include <bsd.port.mk>
