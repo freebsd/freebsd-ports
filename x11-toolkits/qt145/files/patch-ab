@@ -1,0 +1,13 @@
+--- ./src/Makefile.in.org	Tue Nov 17 06:19:22 1998
++++ ./src/Makefile.in	Thu Jan  7 00:04:13 1999
+@@ -24,8 +24,8 @@
+ 
+ TARGET	= qt
+ DESTDIR = ../lib/
+-VER_MAJ = 1
+-VER_MIN = 42
++VER_MAJ = 2
++VER_MIN = 0
+ 
+ ####### Files
+ 

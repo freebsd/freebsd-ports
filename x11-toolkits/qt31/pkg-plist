@@ -1,5 +1,5 @@
 lib/libqt.so
-lib/libqt.so.1.41
+lib/libqt.so.2
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 bin/moc
