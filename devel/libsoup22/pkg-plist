@@ -33,13 +33,13 @@ include/soup/libwsdl/wsdl-typecodes.h
 include/soup/libwsdl/wsdl.h
 lib/libsoup-apache.a
 lib/libsoup-apache.so
-lib/libsoup-apache.so.5
+lib/libsoup-apache.so.6
 lib/libsoup.a
 lib/libsoup.so
-lib/libsoup.so.5
+lib/libsoup.so.6
 lib/libwsdl.a
 lib/libwsdl.so
-lib/libwsdl.so.5
+lib/libwsdl.so.6
 libdata/pkgconfig/soup.pc
 share/aclocal/soup.m4
 @dirrm share/doc/soup
