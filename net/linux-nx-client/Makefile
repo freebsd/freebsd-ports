@@ -6,17 +6,17 @@
 #
 
 PORTNAME=		linux-nx-client
-PORTVERSION=		1.3.2.7
+PORTVERSION=		1.4.0
 CATEGORIES=		net
-MASTER_SITES=		http://www.nomachine.com/download/nxclient/${PORTVERSION:R}/Linux-Static-Tar/
-DISTNAME=		nxclient-${PORTVERSION:R}-${PORTVERSION:E}.i386
+MASTER_SITES=		http://www.nomachine.com/download/nxclient/${PORTVERSION}/Linux-Static-Tar/
+DISTNAME=		nxclient-${PORTVERSION}-91.i386
 
 MAINTAINER=		jylefort@brutele.be
 COMMENT=		The NoMachine NX client
 
 RUN_DEPENDS=		${LINUXBASE}/usr/lib/libjpeg.so.62:${PORTSDIR}/graphics/linux-jpeg
 
-WRKSRC=			${WRKDIR}/nxclient-install
+NO_WRKSUBDIR=		yes
 USE_X_PREFIX=		yes
 USE_LINUX=		yes
 ONLY_FOR_ARCHS=		i386
@@ -30,6 +30,8 @@ ICONS3232=		nx.png nxclient-admin.png nxclient-wizard.png
 # because as a side effect it brands the binary as FreeBSD.
 STRIP=
 
+PLIST_SUB+=		PORTVERSION=${PORTVERSION}
+
 post-extract:
 	${CP} ${NXSRC}/share/applnk/NX\ Client\ for\ Linux/* ${WRKSRC}
 
@@ -37,9 +39,9 @@ do-install:
 	${MKDIR} ${NXDST}/bin
 	${INSTALL_PROGRAM} ${NXSRC}/bin/* ${NXDST}/bin
 	${MKDIR} ${NXDST}/lib
-	${INSTALL_DATA} ${NXSRC}/lib/libXcomp.so.${PORTVERSION:R} ${NXDST}/lib
-	${LN} -sf libXcomp.so.${PORTVERSION:R} ${NXDST}/lib/libXcomp.so
-	${LN} -sf libXcomp.so.${PORTVERSION:R} ${NXDST}/lib/libXcomp.so.1
+	${INSTALL_DATA} ${NXSRC}/lib/libXcomp.so.${PORTVERSION} ${NXDST}/lib
+	${LN} -sf libXcomp.so.${PORTVERSION} ${NXDST}/lib/libXcomp.so
+	${LN} -sf libXcomp.so.${PORTVERSION} ${NXDST}/lib/libXcomp.so.1
 	${MKDIR} ${NXDST}/share
 	${INSTALL_DATA} ${NXSRC}/share/client.id_dsa.key ${NXDST}/share
 	${MKDIR} ${NXDST}/share/images
@@ -61,7 +63,7 @@ do-install:
 .endfor
 
 	${MKDIR} ${PREFIX}/bin
-.for f in nxclient nxproxy nxssh
+.for f in nxclient nxprint nxproxy nxssh
 	${ECHO_CMD} "#!/bin/sh" > ${WRKSRC}/${f}
 	${ECHO_CMD} "export NXDIR=${NXDST}" >> ${WRKSRC}/${f}
 	${ECHO_CMD} "exec \$$NXDIR/bin/${f} \"\$$@\"" >> ${WRKSRC}/${f}

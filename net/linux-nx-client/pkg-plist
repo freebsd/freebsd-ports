@@ -1,12 +1,14 @@
 bin/nxclient
+bin/nxprint
 bin/nxproxy
 bin/nxssh
 lib/linux-nx-client/bin/nxclient
+lib/linux-nx-client/bin/nxprint
 lib/linux-nx-client/bin/nxproxy
 lib/linux-nx-client/bin/nxssh
 lib/linux-nx-client/lib/libXcomp.so
 lib/linux-nx-client/lib/libXcomp.so.1
-lib/linux-nx-client/lib/libXcomp.so.1.3.2
+lib/linux-nx-client/lib/libXcomp.so.%%PORTVERSION%%
 lib/linux-nx-client/share/client.id_dsa.key
 lib/linux-nx-client/share/images/about-down.png
 lib/linux-nx-client/share/images/about-up.png
@@ -34,6 +36,8 @@ lib/linux-nx-client/share/images/nx.png
 lib/linux-nx-client/share/images/nxclient-admin.png
 lib/linux-nx-client/share/images/nxclient-wizard.png
 lib/linux-nx-client/share/images/printer-shared.png
+lib/linux-nx-client/share/images/printer_default_icon.png
+lib/linux-nx-client/share/images/printer_icon.png
 lib/linux-nx-client/share/images/refresh-dsb.png
 lib/linux-nx-client/share/images/refresh.png
 lib/linux-nx-client/share/images/remove-dsb.png
@@ -66,6 +70,9 @@ share/gnome/pixmaps/nxclient-wizard.png
 @dirrm lib/linux-nx-client/share/images
 @dirrm lib/linux-nx-client/share
 @dirrm lib/linux-nx-client
+@unexec rmdir %D/share/gnome/applications 2>/dev/null || true
+@unexec rmdir %D/share/gnome/pixmaps 2>/dev/null || true
+@unexec rmdir %D/share/gnome 2>/dev/null || true
 @cwd %%LOCALBASE%%
 share/icons/crystalsvg/48x48/nx-desktop.png
 share/icons/crystalsvg/32x32/nx.png
@@ -75,3 +82,9 @@ share/applnk/Internet/nxclient-admin.desktop
 share/applnk/Internet/nxclient-help.desktop
 share/applnk/Internet/nxclient-wizard.desktop
 share/applnk/Internet/nxclient.desktop
+@unexec rmdir %D/share/icons/crystalsvg/48x48 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg 2>/dev/null || true
+@unexec rmdir %D/share/icons 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Internet 2>/dev/null || true
+@unexec rmdir %D/share/applnk 2>/dev/null || true
