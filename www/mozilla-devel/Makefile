@@ -160,7 +160,7 @@ do-install:
 	if [ ! -d ${PREFIX}/lib/browser_plugins ]; then \
 	    ${MKDIR} ${PREFIX}/lib/browser_plugins ; \
 	fi
-	if [ ! -L ${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ]; then
+	if [ ! -L ${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ]; then \
 	    ${LN} -sf ${LOCALBASE}/jdk1.3.1/jre/plugin/i386/ns600/libjavaplugin_oji.so \
 	    	${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ; \
 	fi
