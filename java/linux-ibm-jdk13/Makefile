@@ -16,8 +16,10 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	perky@python.or.kr
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper
-RUN_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper
+BUILD_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper \
+		${X11BASE}/lib/X11/fonts/TrueType/wadalab-gothic.ttf:${PORTSDIR}/japanese/truetypefonts
+RUN_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper \
+		${X11BASE}/lib/X11/fonts/TrueType/wadalab-gothic.ttf:${PORTSDIR}/japanese/truetypefonts
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-SDK//}
 PLIST_SUB+=	TARGET_PREFIX=${TARGET_PREFIX:S/^${PREFIX}\///}
@@ -60,6 +62,7 @@ do-install:
 	${LOCALBASE}/bin/registervm "${TARGET_PREFIX}/bin/java # IBM-JDK${PORTVERSION}_${PORTREVISION}"
 
 post-install:
+	${LN} -sf ${X11BASE}/lib/X11/fonts/TrueType/wa*ttf ${TARGET_PREFIX}/jre/lib/fonts/
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

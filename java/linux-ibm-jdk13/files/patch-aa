@@ -1,0 +1,52 @@
+--- jre/lib/fonts/fonts.dir.orig	Mon Oct 29 15:18:21 2001
++++ jre/lib/fonts/fonts.dir	Mon Oct 29 15:18:54 2001
+@@ -1,4 +1,4 @@
+-227
++267
+ tnrwt_j.ttf -monotype-timesnewromanwt-medium-r-normal--0-0-0-0-p-0-iso10646-1
+ tnrwt_j.ttf -monotype-timesnewromanwt-medium-r-normal--0-0-0-0-p-0-iso8859-15
+ tnrwt_j.ttf -monotype-timesnewromanwt-medium-r-normal--0-0-0-0-p-0-iso8859-10
+@@ -226,3 +226,43 @@
+ Thonburi.ttf -ibm-thonburi-medium-r-normal--0-0-0-0-p-0-iso10646-1
+ Thonburi.ttf -ibm-thonburi-medium-r-normal--0-0-0-0-p-0-tis620-0
+ Thonburi.ttf -ibm-thonburi-medium-r-normal--0-0-0-0-p-0-iso8859-1
++ai=-0.2:sw=1.205078125:watanabe-mincho.ttf -watanabe-mincho-medium-ro-normal--0-0-0-0-p-0-jisx0208.1983-0
++ai=0.2:sw=1.205078125:watanabe-mincho.ttf -watanabe-mincho-medium-o-normal--0-0-0-0-p-0-jisx0208.1983-0
++ai=-0.4:sw=1.205078125:watanabe-mincho.ttf -watanabe-mincho-medium-ri-normal--0-0-0-0-p-0-jisx0208.1983-0
++ai=0.4:sw=1.205078125:watanabe-mincho.ttf -watanabe-mincho-medium-i-normal--0-0-0-0-p-0-jisx0208.1983-0
++sw=1.205078125:watanabe-mincho.ttf -watanabe-mincho-medium-r-normal--0-0-0-0-p-0-jisx0208.1983-0
++ai=-0.2:sw=0.9640625:bw=0.625:watanabe-mincho.ttf -watanabe-mincho-medium-ro-normal--0-0-0-0-p-0-iso8859-1
++ai=0.2:sw=0.9640625:bw=0.625:watanabe-mincho.ttf -watanabe-mincho-medium-o-normal--0-0-0-0-p-0-iso8859-1
++ai=-0.4:sw=0.9640625:bw=0.625:watanabe-mincho.ttf -watanabe-mincho-medium-ri-normal--0-0-0-0-p-0-iso8859-1
++ai=0.4:sw=0.9640625:bw=0.625:watanabe-mincho.ttf -watanabe-mincho-medium-i-normal--0-0-0-0-p-0-iso8859-1
++sw=0.9640625:bw=0.625:watanabe-mincho.ttf -watanabe-mincho-medium-r-normal--0-0-0-0-p-0-iso8859-1
++ab=y:ai=-0.2:sw=1.205078125:watanabe-mincho.ttf -watanabe-mincho-obold-ro-normal--0-0-0-0-p-0-jisx0208.1983-0
++ab=y:ai=0.2:sw=1.205078125:watanabe-mincho.ttf -watanabe-mincho-obold-o-normal--0-0-0-0-p-0-jisx0208.1983-0
++ab=y:ai=-0.4:sw=1.205078125:watanabe-mincho.ttf -watanabe-mincho-obold-ri-normal--0-0-0-0-p-0-jisx0208.1983-0
++ab=y:ai=0.4:sw=1.205078125:watanabe-mincho.ttf -watanabe-mincho-obold-i-normal--0-0-0-0-p-0-jisx0208.1983-0
++ab=y:sw=1.205078125:watanabe-mincho.ttf -watanabe-mincho-obold-r-normal--0-0-0-0-p-0-jisx0208.1983-0
++ab=y:ai=-0.2:sw=0.9640625:bw=0.625:watanabe-mincho.ttf -watanabe-mincho-obold-ro-normal--0-0-0-0-p-0-iso8859-1
++ab=y:ai=0.2:sw=0.9640625:bw=0.625:watanabe-mincho.ttf -watanabe-mincho-obold-o-normal--0-0-0-0-p-0-iso8859-1
++ab=y:ai=-0.4:sw=0.9640625:bw=0.625:watanabe-mincho.ttf -watanabe-mincho-obold-ri-normal--0-0-0-0-p-0-iso8859-1
++ab=y:ai=0.4:sw=0.9640625:bw=0.625:watanabe-mincho.ttf -watanabe-mincho-obold-i-normal--0-0-0-0-p-0-iso8859-1
++ab=y:sw=0.9640625:sw=1.205078125:bw=0.625:watanabe-mincho.ttf -watanabe-mincho-obold-r-normal--0-0-0-0-p-0-iso8859-1
++ai=-0.2:sw=1.205078125:wadalab-gothic.ttf -wadalab-gothic-medium-ro-normal--0-0-0-0-p-0-jisx0208.1983-0
++ai=0.2:sw=1.205078125:wadalab-gothic.ttf -wadalab-gothic-medium-o-normal--0-0-0-0-p-0-jisx0208.1983-0
++ai=-0.4:sw=1.205078125:wadalab-gothic.ttf -wadalab-gothic-medium-ri-normal--0-0-0-0-p-0-jisx0208.1983-0
++ai=0.4:sw=1.205078125:wadalab-gothic.ttf -wadalab-gothic-medium-i-normal--0-0-0-0-p-0-jisx0208.1983-0
++sw=1.205078125:wadalab-gothic.ttf -wadalab-gothic-medium-r-normal--0-0-0-0-p-0-jisx0208.1983-0
++ai=-0.2:sw=0.9640625:bw=0.625:wadalab-gothic.ttf -wadalab-gothic-medium-ro-normal--0-0-0-0-p-0-iso8859-1
++ai=0.2:sw=0.9640625:bw=0.625:wadalab-gothic.ttf -wadalab-gothic-medium-o-normal--0-0-0-0-p-0-iso8859-1
++ai=-0.4:sw=0.9640625:bw=0.625:wadalab-gothic.ttf -wadalab-gothic-medium-ri-normal--0-0-0-0-p-0-iso8859-1
++ai=0.4:sw=0.9640625:bw=0.625:wadalab-gothic.ttf -wadalab-gothic-medium-i-normal--0-0-0-0-p-0-iso8859-1
++sw=0.9640625:bw=0.625:wadalab-gothic.ttf -wadalab-gothic-medium-r-normal--0-0-0-0-p-0-iso8859-1
++ab=y:ai=-0.2:sw=1.205078125:wadalab-gothic.ttf -wadalab-gothic-obold-ro-normal--0-0-0-0-p-0-jisx0208.1983-0
++ab=y:ai=0.2:sw=1.205078125:wadalab-gothic.ttf -wadalab-gothic-obold-o-normal--0-0-0-0-p-0-jisx0208.1983-0
++ab=y:ai=-0.4:sw=1.205078125:wadalab-gothic.ttf -wadalab-gothic-obold-ri-normal--0-0-0-0-p-0-jisx0208.1983-0
++ab=y:ai=0.4:sw=1.205078125:wadalab-gothic.ttf -wadalab-gothic-obold-i-normal--0-0-0-0-p-0-jisx0208.1983-0
++ab=y:sw=1.205078125:wadalab-gothic.ttf -wadalab-gothic-obold-r-normal--0-0-0-0-p-0-jisx0208.1983-0
++ab=y:ai=-0.2:sw=0.9640625:bw=0.625:wadalab-gothic.ttf -wadalab-gothic-obold-ro-normal--0-0-0-0-p-0-iso8859-1
++ab=y:ai=0.2:sw=0.9640625:bw=0.625:wadalab-gothic.ttf -wadalab-gothic-obold-o-normal--0-0-0-0-p-0-iso8859-1
++ab=y:ai=-0.4:sw=0.9640625:bw=0.625:wadalab-gothic.ttf -wadalab-gothic-obold-ri-normal--0-0-0-0-p-0-iso8859-1
++ab=y:ai=0.4:sw=0.9640625:bw=0.625:wadalab-gothic.ttf -wadalab-gothic-obold-i-normal--0-0-0-0-p-0-iso8859-1
++ab=y:sw=0.9640625:bw=0.625:wadalab-gothic.ttf -wadalab-gothic-obold-r-normal--0-0-0-0-p-0-iso8859-1
