@@ -12,8 +12,8 @@
     SUBDIR += jfconv
     SUBDIR += jpilot
     SUBDIR += libmal
-    SUBDIR += malsync
     SUBDIR += makeztxt
+    SUBDIR += malsync
     SUBDIR += mdbconv
     SUBDIR += p5-Palm
     SUBDIR += palmos-sdk

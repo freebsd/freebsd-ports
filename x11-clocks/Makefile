@@ -1,6 +1,5 @@
 # $FreeBSD$
 #
-    SUBDIR += zclock
 
     SUBDIR += abclock
     SUBDIR += asclock
@@ -38,5 +37,6 @@
     SUBDIR += xmms-alarm
     SUBDIR += xtimer
     SUBDIR += xtu
+    SUBDIR += zclock
 
 .include <bsd.port.subdir.mk>

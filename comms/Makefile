@@ -1,6 +1,5 @@
 # $FreeBSD$
 #
-    SUBDIR += zssh
 
     SUBDIR += acfax
     SUBDIR += asmodem
@@ -55,5 +54,6 @@
     SUBDIR += yaps
     SUBDIR += yawmppp
     SUBDIR += zmtx-zmrx
+    SUBDIR += zssh
 
 .include <bsd.port.subdir.mk>

@@ -1,6 +1,5 @@
 # $FreeBSD$
 #
-    SUBDIR += yencode
 
     SUBDIR += PicMonger
     SUBDIR += atp
@@ -65,5 +64,6 @@
     SUBDIR += xmitbin
     SUBDIR += xrn
     SUBDIR += xvnews
+    SUBDIR += yencode
 
 .include <bsd.port.subdir.mk>

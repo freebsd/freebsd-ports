@@ -1,6 +1,5 @@
 # $FreeBSD$
 #
-    SUBDIR += yelp
 
     SUBDIR += 9term
     SUBDIR += XFree86
@@ -40,8 +39,8 @@
     SUBDIR += gmrun
     SUBDIR += gnoclip
     SUBDIR += gnome
-    SUBDIR += gnome2
     SUBDIR += gnome-fifth-toe
+    SUBDIR += gnome2
     SUBDIR += gnome2-fifth-toe
     SUBDIR += gnomeapplets
     SUBDIR += gnomeapplets2
@@ -175,5 +174,6 @@
     SUBDIR += xwatchwin
     SUBDIR += xwit
     SUBDIR += xzoom
+    SUBDIR += yelp
 
 .include <bsd.port.subdir.mk>
