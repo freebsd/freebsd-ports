@@ -17,10 +17,13 @@ MAINTAINER=	yoichi@eken.phys.nagoya-u.ac.jp
 
 RUN_DEPENDS=	${ELISPDIR}/egg/egg.el:${PORTSDIR}/editors/tamago
 
+EMACS_PORT_NAME?=	emacs20
+
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
-ELISPDIR=	${PREFIX}/share/emacs/site-lisp
+ELISPDIR=	${PREFIX}/${EMACS_LIBDIR_WITH_VER}/site-lisp
+PLIST_SUB=	ELISPDIR="${EMACS_LIBDIR_WITH_VER}/site-lisp"
 
 do-install:
 	${MKDIR} ${ELISPDIR}
