@@ -10,6 +10,13 @@ etc/AquaGatekeeper.cfg.sample
 %%PORTDOCS%%%%DOCSDIR%%/OperationPrinciples.htm
 %%PORTDOCS%%%%DOCSDIR%%/RevisionHistory.htm
 %%PORTDOCS%%%%DOCSDIR%%/default.css
+%%PORTDOCS%%%%DOCSDIR%%/Rus/AquaGatekeeper.htm
+%%PORTDOCS%%%%DOCSDIR%%/Rus/CommandLineOptions.htm
+%%PORTDOCS%%%%DOCSDIR%%/Rus/ConfigSyntax.htm
+%%PORTDOCS%%%%DOCSDIR%%/Rus/OperationPrinciples.htm
+%%PORTDOCS%%%%DOCSDIR%%/Rus/RevisionHistory.htm
+%%PORTDOCS%%%%DOCSDIR%%/Rus/default.css
 %%EXAMPLESDIR%%/Example.cfg
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Rus
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
