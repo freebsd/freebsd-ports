@@ -1,11 +1,6 @@
 bin/sced
-share/doc/sced/Makefile
-share/doc/sced/elk_guide.mm
-share/doc/sced/elk_guide.ps
-share/doc/sced/guide.mm
-share/doc/sced/guide.ps
-@dirrm share/doc/sced
-lib/sced/tutorials/starting.html
 lib/sced/scenerc
-@dirrm lib/sced/tutorials
+share/doc/sced/guide.dvi
+share/doc/sced/guide.tex
 @dirrm lib/sced
+@dirrm share/doc/sced
