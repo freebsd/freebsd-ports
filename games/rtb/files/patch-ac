@@ -1,0 +1,16 @@
+--- Documentation/Makefile.am.orig
++++ Documentation/Makefile.am
+
+41,42c41,42
+<       RealTimeBattle.html RealTimeBattle.dvi RealTimeBattle.info RealTimeBattle.txt \
+<       note-files note-files-html
+---
+>       RealTimeBattle.html RealTimeBattle.dvi RealTimeBattle.info \
+>       note-files
+46c46
+<            RealTimeBattle.html note-files-html
+---
+>            RealTimeBattle.html
+49,50d48
+< 
+< note-files-html: BUGS.html FAQ.html ChangeLog.html TODO.html CVS-Help.html

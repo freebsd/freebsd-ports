@@ -1,0 +1,16 @@
+--- Documentation/Makefile.in.orig
++++ Documentation/Makefile.in
+
+287,288c287,288
+<       RealTimeBattle.html RealTimeBattle.dvi RealTimeBattle.info RealTimeBattle.txt \
+<       note-files note-files-html
+---
+>       RealTimeBattle.html RealTimeBattle.dvi RealTimeBattle.info \
+>       note-files
+292c292
+<            RealTimeBattle.html note-files-html
+---
+>            RealTimeBattle.html
+295,296d294
+< 
+< note-files-html: BUGS.html FAQ.html ChangeLog.html TODO.html CVS-Help.html
