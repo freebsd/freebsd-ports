@@ -1,0 +1,65 @@
+share/doc/commons-lang/org/apache/commons/lang/builder/ToStringStyle.SimpleToStringStyle.html
+share/doc/commons-lang/org/apache/commons/lang/builder/package-tree.html
+share/doc/commons-lang/org/apache/commons/lang/builder/package-frame.html
+share/doc/commons-lang/org/apache/commons/lang/builder/CompareToBuilder.html
+share/doc/commons-lang/org/apache/commons/lang/builder/EqualsBuilder.html
+share/doc/commons-lang/org/apache/commons/lang/builder/HashCodeBuilder.html
+share/doc/commons-lang/org/apache/commons/lang/builder/StandardToStringStyle.html
+share/doc/commons-lang/org/apache/commons/lang/builder/ToStringBuilder.html
+share/doc/commons-lang/org/apache/commons/lang/builder/ToStringStyle.html
+share/doc/commons-lang/org/apache/commons/lang/builder/ToStringStyle.DefaultToStringStyle.html
+share/doc/commons-lang/org/apache/commons/lang/builder/ToStringStyle.MultiLineToStringStyle.html
+share/doc/commons-lang/org/apache/commons/lang/builder/ToStringStyle.NoFieldNameToStringStyle.html
+share/doc/commons-lang/org/apache/commons/lang/builder/package-summary.html
+share/doc/commons-lang/org/apache/commons/lang/enum/Enum.html
+share/doc/commons-lang/org/apache/commons/lang/enum/package-tree.html
+share/doc/commons-lang/org/apache/commons/lang/enum/package-frame.html
+share/doc/commons-lang/org/apache/commons/lang/enum/package-summary.html
+share/doc/commons-lang/org/apache/commons/lang/enum/Enum.Entry.html
+share/doc/commons-lang/org/apache/commons/lang/enum/EnumUtils.html
+share/doc/commons-lang/org/apache/commons/lang/enum/ValuedEnum.html
+share/doc/commons-lang/org/apache/commons/lang/exception/NestableError.html
+share/doc/commons-lang/org/apache/commons/lang/exception/package-tree.html
+share/doc/commons-lang/org/apache/commons/lang/exception/package-frame.html
+share/doc/commons-lang/org/apache/commons/lang/exception/Nestable.html
+share/doc/commons-lang/org/apache/commons/lang/exception/ExceptionUtils.html
+share/doc/commons-lang/org/apache/commons/lang/exception/NestableDelegate.html
+share/doc/commons-lang/org/apache/commons/lang/exception/NestableException.html
+share/doc/commons-lang/org/apache/commons/lang/exception/NestableRuntimeException.html
+share/doc/commons-lang/org/apache/commons/lang/exception/package-summary.html
+share/doc/commons-lang/org/apache/commons/lang/CharRange.html
+share/doc/commons-lang/org/apache/commons/lang/CharSet.html
+share/doc/commons-lang/org/apache/commons/lang/CharSetUtils.html
+share/doc/commons-lang/org/apache/commons/lang/NumberRange.html
+share/doc/commons-lang/org/apache/commons/lang/NumberUtils.html
+share/doc/commons-lang/org/apache/commons/lang/ObjectUtils.html
+share/doc/commons-lang/org/apache/commons/lang/ObjectUtils.Null.html
+share/doc/commons-lang/org/apache/commons/lang/RandomStringUtils.html
+share/doc/commons-lang/org/apache/commons/lang/SerializationUtils.html
+share/doc/commons-lang/org/apache/commons/lang/StringUtils.html
+share/doc/commons-lang/org/apache/commons/lang/SystemUtils.html
+share/doc/commons-lang/org/apache/commons/lang/package-summary.html
+share/doc/commons-lang/org/apache/commons/lang/SerializationException.html
+share/doc/commons-lang/org/apache/commons/lang/package-tree.html
+share/doc/commons-lang/org/apache/commons/lang/package-frame.html
+share/doc/commons-lang/serialized-form.html
+share/doc/commons-lang/packages.html
+share/doc/commons-lang/package-list
+share/doc/commons-lang/overview-tree.html
+share/doc/commons-lang/overview-summary.html
+share/doc/commons-lang/overview-frame.html
+share/doc/commons-lang/index.html
+share/doc/commons-lang/index-all.html
+share/doc/commons-lang/help-doc.html
+share/doc/commons-lang/deprecated-list.html
+share/doc/commons-lang/stylesheet.css
+share/doc/commons-lang/allclasses-frame.html
+share/java/classes/commons-lang-1.0.jar
+@dirrm share/doc/commons-lang/org/apache/commons/lang/builder
+@dirrm share/doc/commons-lang/org/apache/commons/lang/enum
+@dirrm share/doc/commons-lang/org/apache/commons/lang/exception
+@dirrm share/doc/commons-lang/org/apache/commons/lang
+@dirrm share/doc/commons-lang/org/apache/commons
+@dirrm share/doc/commons-lang/org/apache
+@dirrm share/doc/commons-lang/org
+@dirrm share/doc/commons-lang
