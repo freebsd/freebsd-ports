@@ -77,10 +77,4 @@ share/locale/wa/LC_MESSAGES/bug-buddy.mo
 share/locale/zh_CN/LC_MESSAGES/bug-buddy.mo
 share/locale/zh_TW/LC_MESSAGES/bug-buddy.mo
 @dirrm share/gnome/omf/bug-buddy
-@dirrm share/gnome/help/bug-buddy/C
-@dirrm share/gnome/help/bug-buddy
-@dirrm share/gnome/bug-buddy/bugzilla/ximian
-@dirrm share/gnome/bug-buddy/bugzilla/gnome
-@dirrm share/gnome/bug-buddy/bugzilla
-@dirrm share/gnome/bug-buddy
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/bug-buddy/bug-buddy-C.omf 2>/dev/null || /usr/bin/true
