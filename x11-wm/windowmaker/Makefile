@@ -65,7 +65,7 @@ post-patch:
 	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/WPrefs.app/Paths.c
 	@${PERL} -pi -e "s|%%PERL%%|${PERL}|g" ${WRKSRC}/util/wm-oldmenu2new
 	@${PERL} -pi -e "s|/usr/local/GNUstep|${PREFIX}/GNUstep|g" \
-		${WRKSRC}/WindowMaker/menu*
+		${WRKSRC}/WindowMaker/*menu*
 
 post-install:
 	@${MKDIR} ${PREFIX}/share/WindowMaker/Sounds

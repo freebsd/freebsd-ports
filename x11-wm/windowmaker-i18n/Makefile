@@ -71,6 +71,8 @@ pre-extract:
 post-patch:
 	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/WPrefs.app/Paths.c
 	@${PERL} -pi -e "s|%%PERL%%|${PERL}|g" ${WRKSRC}/util/wm-oldmenu2new
+	@${PERL} -pi -e "s|/usr/local/GNUstep|${PREFIX}/GNUstep|g" \
+		${WRKSRC}/WindowMaker/*menu*
 .if defined(JA_CATALOGFILE) && ${JA_CATALOGFILE} != ""
 	@${CP} ${WRKDIR}/${JA_CATALOGFILE}/WindowMaker.ja.po \
 		${WRKSRC}/po/ja.po
