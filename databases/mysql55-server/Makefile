@@ -3,16 +3,19 @@
 # Date created:				26 Jan 1998
 # Whom:					Josh Tiefenbach <josh@ican.net>
 #
-# $Id: Makefile,v 1.14 1998/01/13 04:48:26 asami Exp $
+# $Id: Makefile,v 1.15 1998/01/26 18:24:42 jfitz Exp $
 #
 
 DISTNAME=	mysql-3.21.21a-beta
 PKGNAME=	mysql-3.21.21b
 CATEGORIES=	databases
 MASTER_SITES=	http://www.buoy.com/mysql/Downloads/MySQL-3.21/ \
-					http://mysql.polaris.ca/Downloads/MySQL-3.21/ \
-					http://www.tcx.se/Downloads/MySQL-3.21/ 
+		http://mysql.polaris.ca/Downloads/MySQL-3.21/ \
+		http://www.tcx.se/Downloads/MySQL-3.21/
+
 MAINTAINER=	josh@ican.net
+
+MAN1=		mysql.1
 
 USE_GMAKE=	YES
 USE_PERL5=	YES
@@ -31,7 +34,9 @@ pre-install:
 	@ ${SETENV} ${MAKE_ENV} /usr/bin/perl ${SCRIPTDIR}/check_old_version
 
 post-install:
-	cd ${WRKSRC} && ${WRKSRC}/scripts/mysql_install_db
+	${MKDIR} -p ${PREFIX}/share/mysql/mysql
+	${CP} ${WRKSRC}/data/mysql/*.frm ${PREFIX}/share/mysql/mysql
+	${PREFIX}/bin/mysql_install_db
 	@ /usr/bin/killall mysqld
 	@ ${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/mysql.sh
 	@ ${ECHO} "#" >> ${PREFIX}/etc/rc.d/mysql.sh
