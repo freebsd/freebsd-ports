@@ -19,6 +19,7 @@
     SUBDIR += dxpc
     SUBDIR += dynamag
     SUBDIR += ebuttons
+    SUBDIR += ecore
     SUBDIR += efancylauncher
     SUBDIR += emu
     SUBDIR += erun
