@@ -25,6 +25,7 @@
     SUBDIR += gnome-icons-aqua-fusion
     SUBDIR += gnome-icons-cool-gorilla
     SUBDIR += gnome-icons-crystal
+    SUBDIR += gnome-icons-edge
     SUBDIR += gnome-icons-gentoo-test
     SUBDIR += gnome-icons-iris
     SUBDIR += gnome-icons-lila
