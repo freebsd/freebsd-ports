@@ -1,0 +1,5 @@
+lib/libmhash.la
+lib/libmhash.so.1
+lib/libmhash.so
+lib/libmhash.a
+include/mhash.h

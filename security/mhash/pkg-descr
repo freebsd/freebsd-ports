@@ -1,0 +1,4 @@
+Libmhash is a library which implements some hash algorithms like
+crc32, md5 and sha-1.
+
+See http://sasweb.de/mhash/
