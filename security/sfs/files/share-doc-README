@@ -150,7 +150,7 @@ for details.
 *** SFS configuration files:
 
 [ The following section is taken nearly verbatim from
-<URL:http://www.fs.net/sfs/@new-york.lcs.mit.edu,u83s4uk49nt8rmp4uwmt2exvz6d3cavh/pub/sfswww/sfs.html#SFS%20configuration>. ]
+<URL:http://www.fs.net/sfswww/sfs.html#SFS%20configuration>. ]
 
 SFS comprises a number of programs, many of which have configuration
 files. All programs look for configuration files in two directories--first

@@ -9,7 +9,7 @@
 PORTNAME=	sfs
 PORTVERSION=	0.7.2
 CATEGORIES=	security net
-MASTER_SITES=	http://www.fs.net/sfs/@new-york.lcs.mit.edu,u83s4uk49nt8rmp4uwmt2exvz6d3cavh/pub/sfswww/dist/
+MASTER_SITES=	http://www.fs.net/sfswww/dist/
 
 MAINTAINER=	handler@grendel.net
 COMMENT=	Self-Certifying File System: A secure global network file system
