@@ -1,0 +1,18 @@
+The SDPA (SemiDefinite Programming Algorithm) is a software package for
+solving semidefinite program (SDP). It is based on a Mehrotra-type
+predictor-corrector infeasible primal-dual interior-point method.
+The SDPA handles the standard form SDP and its dual. It is implemented in C++
+language utilizing the LAPACK for matrix computation. The SDPA incorporates
+dynamic memory allocation and deallocation. So, the maximum size of an SDP
+to be solved depends on the size of memory which users' computers install.
+The SDPA enjoys the following features:
+
+   1. Callable library of the SDPA is available.
+   2. Efficient method for computing the search directions when an SDP
+      to be solved is large scale and sparse.
+   3. Block diagonal matrix structure and sparse matrix structure in 
+      data matrices are available.
+   4. Some information on infeasibility of a semidefinite program to be solved
+      is provided. 
+
+WWW: http://www.is.titech.ac.jp/~yamashi9/sdpa/
