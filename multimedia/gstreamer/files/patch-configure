@@ -1,6 +1,6 @@
---- configure.orig	Thu Feb 26 14:03:31 2004
-+++ configure	Thu Feb 26 14:03:31 2004
-@@ -21858,7 +21858,7 @@
+--- configure.orig	Fri Jun  4 18:19:18 2004
++++ configure	Fri Jun  4 18:20:27 2004
+@@ -21877,7 +21877,7 @@
  
  
    EXP_VAR=LOCALEDIR
@@ -9,7 +9,7 @@
  
      prefix_save=$prefix
    exec_prefix_save=$exec_prefix
-@@ -21961,7 +21961,7 @@
+@@ -21981,7 +21981,7 @@
  echo $ECHO_N "checking to see if compiler understands -Werror... $ECHO_C" >&6
  
    save_CFLAGS="$CFLAGS"
@@ -18,12 +18,12 @@
  
    cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
-@@ -22011,7 +22011,7 @@
+@@ -22031,7 +22031,7 @@
    CFLAGS="$save_CFLAGS"
  
    if test "X$flag_ok" = Xyes ; then
--    GST_ERROR="$GST_ERROR -Werror"
-+    GST_ERROR="$GST_ERROR"
+-    GST_ERROR_CFLAGS="$GST_ERROR_CFLAGS -Werror"
++    GST_ERROR_CFLAGS="$GST_ERROR_CFLAGS"
      true
    else
-     GST_ERROR="$GST_ERROR"
+ 

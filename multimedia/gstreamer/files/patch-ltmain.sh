@@ -1,6 +1,6 @@
---- ltmain.sh.orig	Tue Oct 28 09:26:50 2003
-+++ ltmain.sh	Sat Feb 21 15:30:25 2004
-@@ -1280,7 +1280,7 @@
+--- ltmain.sh.orig	Sat Jun  5 09:33:39 2004
++++ ltmain.sh	Tue Jun  8 23:46:07 2004
+@@ -1359,7 +1359,7 @@
  	  esac
  	elif test "X$arg" = "X-lc_r"; then
  	 case $host in
@@ -9,7 +9,7 @@
  	   # Do not include libc_r directly, use -pthread flag.
  	   continue
  	   ;;
-@@ -1290,8 +1290,16 @@
+@@ -1374,8 +1374,16 @@
  	continue
  	;;
  
@@ -26,7 +26,15 @@
  	continue
  	;;
  
-@@ -3000,6 +3008,9 @@
+@@ -1859,6 +1867,7 @@
+ 	    finalize_deplibs="$deplib $finalize_deplibs"
+ 	  else
+ 	    deplibs="$deplib $deplibs"
++	    test "$linkmode" = lib && newdependency_libs="$deplib $newdependency_libs"
+ 	  fi
+ 	  continue
+ 	  ;;
+@@ -3075,6 +3084,9 @@
  	    # problems, so we reset it completely
  	    verstring=
  	    ;;
@@ -36,7 +44,7 @@
  	  *)
  	    verstring="0.0"
  	    ;;
-@@ -5428,10 +5439,12 @@
+@@ -5550,10 +5562,12 @@
  	fi
  
  	# Install the pseudo-library for information purposes.
