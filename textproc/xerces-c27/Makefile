@@ -105,7 +105,7 @@ pre-everything::
 	@${ECHO} 'NOPORTDOCS	do not copy documentation'
 	@${ECHO} 'DEBUG		include debugging information, do not strip'
 	@${ECHO} ''
-	@${ECHO} 'Also you may set TRANSODER to the following values (without -D):'
+	@${ECHO} 'Also you may set TRANSCODER to the following values (without -D):'
 	@${ECHO} ''
 	@${ECHO} 'TRANSCODER=[icu|IconvFBSD|native]	default: IconvFBSD'
 	@${ECHO} ''
