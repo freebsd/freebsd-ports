@@ -18,7 +18,7 @@ Y2K=            http://www.gnu.org/software/year2000.html
 USE_AUTOCONF=	yes
 USE_GMAKE=	yes
 CONFIGURE_TARGET=	${MACHINE_ARCH}--freebsd
-.if !defined(NO_X11)
+.if !defined(WITHOUT_X11)
 CONFIGURE_ARGS=	--with-x-toolkit --with-pop
 USE_XLIB=	yes
 .else
@@ -30,16 +30,14 @@ MAN1=		emacs.1 etags.1 ctags.1
 PLIST_SUB=	EMACS_VER=20.6 EMACS_ARCH=${CONFIGURE_TARGET}
 WRKSRC=		${WRKDIR}/emacs-20.6
 
-.if defined(USE_XPG4)
-.if (${USE_XPG4} == "YES" || ${USE_XPG4} == "yes")
+.if defined(WITH_XPG4)
 CONFIGURE_ARGS+=	--with-xpg4
-.endif
 .endif
 
 pre-fetch:
-.if !defined(USE_XPG4)
+.if !defined(WITH_XPG4)
 	@${ECHO_MSG} "NOTE: You can have international locale library support "
-	@${ECHO_MSG} "by adding \"USE_XPG4=YES\" to argument of make."
+	@${ECHO_MSG} "by adding \"WITH_XPG4=yes\" to argument of make."
 .endif
 
 pre-build:

@@ -23,18 +23,19 @@ BROKEN=		doesn\'t build on the alpha yet
 Y2K=		http://www.postgresql.org/y2k.html
 
 # if you want to use the tcl/tk frontend pgaccess, then you need to build
-# postgresql with tcl support by typing: make USE_TCL=yes
-.if defined(USE_TCL)
+# postgresql with tcl support by typing: make WITH_TCL=yes
+.if defined(WITH_TCL)
 TCL_INCDIR=	${LOCALBASE}/include/tcl8.0
 TK_INCDIR=	${LOCALBASE}/include/tk8.0
-MAKE_ENV=	USE_TCL=true TCL_INCDIR=${TCL_INCDIR}
-LIB_DEPENDS=	tcl80.1:${PORTSDIR}/lang/tcl80 tk80.1:${PORTSDIR}/x11-toolkits/tk80
-WITH_TCL=	--with-tcl --with-tclconfig="${LOCALBASE}/lib/tcl8.0 ${LOCALBASE}/lib/tk8.0"
+MAKE_ENV=	WITH_TCL=true TCL_INCDIR=${TCL_INCDIR}
+LIB_DEPENDS=	tcl80.1:${PORTSDIR}/lang/tcl80 \
+		tk80.1:${PORTSDIR}/x11-toolkits/tk80
+CONFIGURE_TCL=	--with-tcl --with-tclconfig="${LOCALBASE}/lib/tcl8.0 ${LOCALBASE}/lib/tk8.0"
 .endif
 
-# if you want jdbc, type make USE_JDBC=yes
+# if you want jdbc, type make WITH_JDBC=yes
 # Honors JAVA_HOME if you have it set, and don't want the dependency.
-.if defined(USE_JDBC)
+.if defined(WITH_JDBC)
 JAVA_HOME?=	${LOCALBASE}/jdk1.1.8
 BUILD_DEPENDS=	${JAVA_HOME}/bin/javac:${PORTSDIR}/java/jdk
 #MAKE_ENV+=	JAVA_HOME=${JAVA_HOME}
@@ -50,7 +51,8 @@ HAS_CONFIGURE=	YES
 CONFIGURE_ARGS= --prefix=${PREFIX}/pgsql \
 		--enable-locale \
 		--with-template=`uname -s | ${TR} '[A-Z]' '[a-z]'` \
-		--with-includes="${PREFIX}/include ${TCL_INCDIR} ${TK_INCDIR}" ${WITH_TCL} \
+		--with-includes="${PREFIX}/include ${TCL_INCDIR} ${TK_INCDIR}" \
+		${CONFIGURE_TCL} \
 		--with-libraries=${PREFIX}/lib
 
 INSTALL_TARGET= install install-man
@@ -79,22 +81,20 @@ MANPREFIX=	${PREFIX}/pgsql
 pre-fetch:
 	@${ECHO_MSG} "To install and run postgresql you need to compile kernel with:"
 	@${ECHO_MSG} "        options    \"SYSVSHM, SYSVSEM, SYSVMSG\""
-.if !defined(USE_TCL)
+.if !defined(WITH_TCL)
 	@${ECHO_MSG} "To build the \"PostgreSQL to Tcl interface library\", libpgtcl, type:"
-	@${ECHO_MSG} "    make USE_TCL=yes"
+	@${ECHO_MSG} "    make WITH_TCL=yes"
 .else
 	@${ECHO_MSG} "Building PostgreSQL with \"libpgtcl\"."
 .endif
-
-.if !defined(USE_JDBC)
+.if !defined(WITH_JDBC)
 	@ ${ECHO_MSG} "To build Java (JDBC) support, type:"
-	@ ${ECHO_MSG} "   make USE_JDBC=yes"
+	@ ${ECHO_MSG} "   make WITH_JDBC=yes"
 .else
 	@ ${ECHO_MSG} "Building PostgreSQL with \"postgresql.jar\"."
 .endif
 
 post-patch:
-
 	@ ${MV} ${WRKSRC}/template/freebsd ${WRKSRC}/template/freebsd.orig
 	@ ${SED} -e 's#CFLAGS:-O2 -m486 -pipe#CFLAGS:${CFLAGS}#' \
 		-e 's#USE_LOCALE:no#USE_LOCALE:yes#' \
@@ -103,9 +103,8 @@ post-patch:
 	@ ${SED} -e 's=!!PREFIX!!=${PREFIX}=g' \
 		${WRKSRC}/Makefile.global.in.old \
 		>> ${WRKSRC}/Makefile.global.in
-
 # pgaccess (accidentally?) removed from distribution, so leave it for now
-#.if defined(USE_TCL)
+#.if defined(WITH_TCL)
 #	@ ${MV} ${WRKSRC}/bin/pgaccess/pgaccess.tcl \
 #		${WRKSRC}/bin/pgaccess/pgaccess.tcl.orig
 #	@ ${SED} -e "s=/usr/bin/wish=`/usr/bin/which wish8.0`=" \
@@ -114,14 +113,12 @@ post-patch:
 #.endif
 
 post-build:
-
-.if defined(USE_JDBC)
+.if defined(WITH_JDBC)
 	@ cd ${WRKSRC}/interfaces/jdbc && ${GMAKE}
 .if !defined(NOPORTDOCS)
 	@ cd ${WRKSRC}/interfaces/jdbc && ${GMAKE} examples
 .endif
 .endif
-
 	@ ${ECHO} "------------------------------------------------------------"
 	@ ${ECHO} "Dump existing databases, before installing new db version !!"
 	@ ${ECHO} "Detailed instructions, see"
@@ -167,14 +164,12 @@ post-install:
 	@ ${CHMOD} 554 ${PREFIX}/etc/rc.d/pgsql.sh
 	@ ${CHOWN} root.pgsql ${PREFIX}/etc/rc.d/pgsql.sh
 	@ ${INSTALL_DATA} ${FILESDIR}/post-install-notes ${PREFIX}/pgsql
-
-.if defined(USE_TCL)
-	${CP} ${TMPPLIST} ${TMPPLIST}.notcl
-	${CAT} ${PKGDIR}/PLIST.tcl ${TMPPLIST}.notcl > ${TMPPLIST}
-	${RM} ${TMPPLIST}.notcl
+.if defined(WITH_TCL)
+	@${CP} ${TMPPLIST} ${TMPPLIST}.notcl
+	@${CAT} ${PKGDIR}/PLIST.tcl ${TMPPLIST}.notcl > ${TMPPLIST}
+	@${RM} ${TMPPLIST}.notcl
 .endif
-
-.if defined(USE_JDBC)
+.if defined(WITH_JDBC)
 	@ ${MKDIR} -m 0555 ${PREFIX}/share/java
 	@ ${INSTALL_DATA} ${WRKSRC}/interfaces/jdbc/postgresql.jar \
 			  ${PREFIX}/share/java/postgresql.jar
@@ -194,7 +189,6 @@ post-install:
 	@ ${ECHO_MSG} "---------------------------------------------------------"
 .endif
 .endif
-
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/pgsql
 	@ ${GMAKE} -C ${WRKDIR}/${DISTNAME}/doc install

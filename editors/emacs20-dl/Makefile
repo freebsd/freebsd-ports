@@ -28,7 +28,7 @@ USE_GMAKE=	yes
 MAKE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 EMACS_VER=	20.6
 CONFIGURE_TARGET=	${MACHINE_ARCH}--freebsd
-.if !defined(NO_X11)
+.if !defined(WITHOUT_X11)
 CONFIGURE_ARGS= --with-x-toolkit --with-pop
 USE_XLIB=       yes
 .else
@@ -43,10 +43,8 @@ PLIST_SUB=	EMACS_VER=${EMACS_VER} EMACS_ARCH=${CONFIGURE_TARGET} \
 SCRIPTS_ENV=	SED=${SED} MV=${MV} \
 		DOC_FILE=${DOC_FILE}
 
-.if defined(USE_XPG4)
-.if (${USE_XPG4} == "YES" || ${USE_XPG4} == "yes")
+.if defined(WITH_XPG4)
 CONFIGURE_ARGS+=	--with-xpg4
-.endif
 .endif
 
 pre-build:

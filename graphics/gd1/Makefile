@@ -15,7 +15,7 @@ MAINTAINER=	billf@FreeBSD.org
 
 LIB_DEPENDS=	png.3:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
-.if defined(WANT_X11)
+.if defined(WITH_X11)
 LIB_DEPENDS+=	ttf.4:${PORTSDIR}/print/freetype \
 		Xpm.4:${PORTSDIR}/graphics/xpm
 
@@ -23,9 +23,9 @@ USE_XLIB=	YES
 .endif
 
 pre-fetch:
-.if !defined(WANT_X11)
+.if !defined(WITH_X11)
 	@${ECHO} -n "If you want to compile in X support use "
-	@${ECHO} "'make -DWANT_X11' instead"
+	@${ECHO} "'make -DWITH_X11' instead"
 .endif
 
 pre-install:

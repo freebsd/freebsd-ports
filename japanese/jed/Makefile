@@ -25,7 +25,7 @@ JP_VERSION=	067
 DIST_SUBDIR=	jed
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	JED_ROOT="${JED_ROOT}" X_EXTRA_LIBS="-lxpg4 -lcurses"
-CONFIGURE_ARGS=	--enable-x-locale=no --with-canna="${WITH_CANNA}"
+CONFIGURE_ARGS=	--enable-x-locale=no
 ALL_TARGET=	${BINSTUFF} getmail
 MAN1=		jed.1 rgrep.1
 
@@ -34,10 +34,10 @@ BINSTUFF=	jed rgrep
 
 .include <bsd.port.pre.mk>
 
-.if defined(NO_CANNA)
-WITH_CANNA=	no
+.if defined(WITHOUT_CANNA)
+CONFIGURE_ARGS+= --with-canna=no
 .else
-WITH_CANNA=	yes
+CONFIGURE_ARGS+= --with-canna=yes
 LIBDEP_CANNA=	canna.1:${PORTSDIR}/japanese/Canna
 .endif
 
@@ -46,11 +46,11 @@ LIBDEP_CANNA=	canna.1:${PORTSDIR}/japanese/Canna
 XJED_BROKEN=	yes
 .endif
 
-.if defined(NO_X11)
-NO_XJED=	yes
+.if defined(WITHOUT_X11)
+WITHOUT_XJED=	yes
 .endif
 
-.if defined(NO_XJED)
+.if defined(WITHOUT_XJED) || defined(XJED_BROKEN)
 PLIST_SUB=	XJED_ENTRY="@comment xjed is not installed"
 .else
 USE_XLIB=	yes
@@ -64,14 +64,14 @@ _INFODIR=	${WRKSRC}/info
 _LIBDIR=	${WRKSRC}/lib
 
 pre-fetch:
-.if !defined(NO_CANNA)
-	@${ECHO_MSG} "To build this port without Canna, define \"NO_CANNA\"."
+.if !defined(WITHOUT_CANNA)
+	@${ECHO_MSG} "To build this port without Canna, define \"WITHOUT_CANNA\"."
 .endif
-.if !defined(NO_XJED)
+.if !defined(WITHOUT_XJED)
 .if defined(XJED_BROKEN)
 	@${ECHO_MSG} "Sorry, I will not build xjed since it is broken on 3.x-STABLE for the present."
 .else
-	@${ECHO_MSG} "To build this port without xjed, define \"NO_XJED\"."
+	@${ECHO_MSG} "To build this port without xjed, define \"WITHOUT_XJED\"."
 .endif
 .endif
 

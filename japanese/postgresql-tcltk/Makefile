@@ -18,28 +18,27 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src
 PLISTS=
 
 # if you want to use the tcl/tk frontend pgaccess, then you need to build
-# postgresql with tcl support by typing: make USE_TCL=yes
-.if defined(USE_TCL)
+# postgresql with tcl support by typing: make WITH_TCL=yes
+.if defined(WITH_TCL)
 TCL_INCDIR=	${PREFIX}/include/tcl8.0jp
 TK_INCDIR=	${PREFIX}/include/tk8.0jp
 MAKE_ENV=	USE_TCL=true USE_TK=true TCL_INCDIR=${TCL_INCDIR}
-WITH_TCL=	--with-tcl
-WITH_TK=	--with-tk
-WITH_TCLCONFIG=	--with-tclconfig=${PREFIX}/lib/tcl8.0jp
-WITH_TKCONFIG=	--with-tkconfig=${PREFIX}/lib/tk8.0jp
+CONFIGURE_ARGS= --with-tcl --with-tk \
+		--with-tclconfig=${PREFIX}/lib/tcl8.0jp \
+		--with-tkconfig=${PREFIX}/lib/tk8.0jp
 LIB_DEPENDS=	tcl80jp.1:${PORTSDIR}/japanese/tcl80 \
 		tk80jp.1:${PORTSDIR}/japanese/tk80
 PLISTS+=	PLIST.tcl
 .endif
 .if defined(MULTIBYTE)
-WITH_MB=	--with-mb=${MULTIBYTE}
+CONFIGURE_ARGS+= --with-mb=${MULTIBYTE}
 .endif
-.if defined(USE_PERL)
-WITH_PERL=      --with-perl
+.if defined(WITH_PERL)
+CONFIGURE_ARGS+= --with-perl
 PLISTS+=	PLIST.pl
 .endif
-.if defined(USE_ODBC)
-WITH_ODBC=      --with-odbc
+.if defined(WITH_ODBC)
+CONFIGURE_ARGS+= --with-odbc
 PLISTS+=	PLIST.odbc
 .endif
 
@@ -48,13 +47,10 @@ NO_PACKAGE=	"Requires ${PGSQL_UID} uid"
 USE_GMAKE=	YES
 MAKEFILE=	GNUmakefile
 HAS_CONFIGURE=	YES
-CONFIGURE_ARGS= --prefix=${PREFIX}/${INSTALL_DIR} \
+CONFIGURE_ARGS+= --prefix=${PREFIX}/${INSTALL_DIR} \
 		--with-template=`uname -s | ${TR} '[A-Z]' '[a-z]'` \
-		${WITH_TCL} ${WITH_TCLCONFIG} \
-		${WITH_TK} ${WITH_TKCONFIG} \
 		--with-includes="${PREFIX}/include ${TCL_INCDIR} ${TK_INCDIR}" \
-		--with-libraries=${PREFIX}/lib \
-		${WITH_MB} ${WITH_PERL} ${WITH_ODBC}
+		--with-libraries=${PREFIX}/lib
 
 INSTALL_TARGET= install install-man
 
@@ -89,14 +85,14 @@ PGSQL_UID=	pgsql
 PGSQL_GID=	pgsql
 
 pre-fetch:
-.if !defined(USE_TCL) & !defined(USE_PERL) & !defined(USE_ODBC) & !defined(MULTIBYTE)
+.if !defined(WITH_TCL) & !defined(WITH_PERL) & !defined(WITH_ODBC) & !defined(MULTIBYTE)
 
 	@${ECHO_MSG} "To build the \"MULTIBYTE PostgreSQL\", type:"
 	@${ECHO_MSG} "    make MULTIBYTE={EUC_JP,EUC_CN,EUC_KR,EUC_TW,UNICODE,MULE_INTERNAL,LATIN1-5}"
-	@${ECHO_MSG} "          USE_TCL=yes, USE_PERL=yes, USE_ODBC=yes"
+	@${ECHO_MSG} "          WITH_TCL=yes, WITH_PERL=yes, WITH_ODBC=yes"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "To build the \"PostgreSQL to Tcl interface library\", libpgtcl, type:"
-	@${ECHO_MSG} "		make USE_TCL=yes"
+	@${ECHO_MSG} "		make WITH_TCL=yes"
 .else
 	@${ECHO_MSG} "Building PostgreSQL with \"libpgtcl\"."
 .endif
@@ -115,15 +111,14 @@ post-build:
 .for i in ${PLISTS} PLIST
 	${CAT} ${PKGDIR}/${i} >> ${WRKDIR}/PLIST
 .endfor
-.if defined(USE_TCL)
+.if defined(WITH_TCL)
 	${CAT} ${PKGDIR}/PLIST.tcl.dirrm >> ${WRKDIR}/PLIST
 .endif
-.if defined(USE_ODBC)
+.if defined(WITH_ODBC)
 	${CAT} ${PKGDIR}/PLIST.odbc.dirrm >> ${WRKDIR}/PLIST
-	${CAT} ${PKGDIR}/PLIST.dirrm >> ${WRKDIR}/PLIST
-.else
-	${CAT} ${PKGDIR}/PLIST.dirrm >> ${WRKDIR}/PLIST
 .endif
+	${CAT} ${PKGDIR}/PLIST.dirrm >> ${WRKDIR}/PLIST
+
 pre-install:
 .if defined(PACKAGE_BUILDING)
 	${RM} -rf ${PREFIX}/${INSTALL_DIR}

@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 # Default image format is GIF.
-# If you prefer PNG to GIF, define USE_PNG (`make -DUSE_PNG`).
+# If you prefer PNG to GIF, define WITH_PNG (`make -DWITH_PNG`).
 
 PORTNAME=	latex2html
 PORTVERSION=	${VERSION}j${JP_VERSION}
@@ -24,7 +24,7 @@ RUN_DEPENDS=	${PREFIX}/bin/latex:${PORTSDIR}/print/latex \
 		${PREFIX}/bin/gs:${PORTSDIR}/print/ghostscript5 \
 		${LOCALBASE}/bin/anytopnm:${PORTSDIR}/graphics/netpbm
 
-.ifdef USE_PNG
+.ifdef WITH_PNG
 RUN_DEPENDS +=	${X11BASE}/bin/pnmtopng:${PORTSDIR}/graphics/pnmtopng
 .endif
 
@@ -55,7 +55,7 @@ post-patch:
 			"s|LATEX2HTMLDIR\s*=.*;|LATEX2HTMLDIR='${L2HDIR}';|; s|^use lib.*;|use lib '${L2HDIR}';|;" \
 			${WRKDIR}/$$file; \
 	done
-.ifdef USE_PNG
+.ifdef WITH_PNG
 	@${PERL} -pi -e "s|IMAGE_TYPE=.*;|IMAGE_TYPE='png';|" \
 		${WRKDIR}/jlatex2html.config
 .endif

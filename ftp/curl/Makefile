@@ -17,7 +17,7 @@ MASTER_SITES=	http://curl.haxx.nu/stuff/ \
 
 MAINTAINER=	kris@FreeBSD.org
 
-.if defined(USE_SSL)
+.if defined(WITH_SSL)
 USE_OPENSSL=   RSA
 .endif
  

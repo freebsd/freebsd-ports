@@ -16,7 +16,7 @@ PATCHFILES=	lame3.51.patch.gz
 
 MAINTAINER=	yoshiaki@kt.rim.or.jp
 
-.if !defined(NO_X11)
+.if !defined(WITHOUT_X11)
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 .endif
 
@@ -24,7 +24,7 @@ PATCH_DIST_STRIP = -p1
 
 WRKSRC= 	${WRKDIR}/dist10/lsf/encoder/
 USE_GMAKE=	YES
-MAKE_ENV=	NO_X11=${NO_X11}
+MAKE_ENV=	WITHOUT_X11=${WITHOUT_X11}
 ALL_TARGET=	lame
 RESTRICTED=	Condition is not clear
 

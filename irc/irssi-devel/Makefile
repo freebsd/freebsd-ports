@@ -14,7 +14,7 @@ MAINTAINER=	jim@FreeBSD.org
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 		PropList.2:${PORTSDIR}/devel/libPropList
-.if defined(USE_GNOME)
+.if defined(WITH_GNOME)
 LIB_DEPENDS+=	gnome.3:${PORTSDIR}/x11/gnomelibs
 .endif
 
@@ -33,7 +33,7 @@ CONFIGURE_ARGS=	--without-pthreads --without-socks --with-textui \
 		--with-proplist=${LOCALBASE} --without-servertest \
 		--disable-nls
 
-.if defined(USE_GNOME)
+.if defined(WITH_GNOME)
 PLIST=		${PKGDIR}/PLIST.gnome
 .endif
 
@@ -45,9 +45,9 @@ CONFIGURE_ARGS+= --enable-ipv6
 CONFIGURE_ARGS+= --disable-ipv6
 .endif
 
-.if defined(USE_GNOME)
+.if defined(WITH_GNOME)
 CONFIGURE_ARGS+= --with-gnome
-.if defined(USE_PANEL)
+.if defined(WITH_PANEL)
 CONFIGURE_ARGS+= --with-gnome-panel
 .else
 CONFIGURE_ARGS+= --without-gnome-panel

@@ -33,11 +33,11 @@ major=		6
 temp_prefix=	${WRKSRC}/installed
 
 # Support building on systems with or without X11 installed.
-.ifdef NO_X11
+.ifdef WITHOUT_X11
 PLIST=		${WRKDIR}/PLIST.noX11
 .else
 pre-fetch:
-	@${ECHO_MSG} "To build this port without X11, define \"NO_X11\"."
+	@${ECHO_MSG} "To build this port without X11, define \"WITHOUT_X11\"."
 
 PLIST=		${WRKDIR}/PLIST
 MAN1+=		formsedit.1 replayheap.1 showheap.1 shownew.1 showthread.1

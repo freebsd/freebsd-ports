@@ -35,18 +35,18 @@ TMPDIR=		${WRKDIR}/tmp
 
 .include <bsd.port.pre.mk>
 
-.if defined(USE_CDROM)
+.if defined(WITH_CDROM)
 .if !exists(/cdrom/linux/office51/setup.zip)
 IGNORE="Please mount the Sun StarOffice 5.1 CDROM onto /cdrom and run make again."
 .endif
 .else	# FTP/web download
 DISTFILES+=	${DISTNAME}${EXTRACT_SUFX}
 .if !exists(${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE="Please manually download ${DISTNAME}${EXTRACT_SUFX} from http://www.sun.com/staroffice.  Put ${DISTNAME}${EXTRACT_SUFX} into the directory ${_DISTDIR} and run make again.  Or, if you have the Sun StarOffice 5.1 CDROM, please run 'make USE_CDROM=yes'"
+IGNORE="Please manually download ${DISTNAME}${EXTRACT_SUFX} from http://www.sun.com/staroffice.  Put ${DISTNAME}${EXTRACT_SUFX} into the directory ${_DISTDIR} and run make again.  Or, if you have the Sun StarOffice 5.1 CDROM, please run 'make WITH_CDROM=yes'"
 .endif
 .endif
 
-.if defined(USE_CDROM)
+.if defined(WITH_CDROM)
 do-extract:
 	@${MKDIR} ${WRKSRC}/office51
 	@cd ${WRKSRC}/office51 && ${LN} -s /cdrom/linux/office51/* .

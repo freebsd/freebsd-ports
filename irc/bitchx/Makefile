@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.bitchx.com/pub/BitchX/source/ \
 
 MAINTAINER=	calle.madestrand@norrgarden.se
 
-.if defined(USE_GNOME)
+.if defined(WITH_GNOME)
 LIB_DEPENDS=	gnome.3:${PORTSDIR}/x11/gnomelibs
 .endif
 
@@ -22,7 +22,7 @@ GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 WRKSRC=		${WRKDIR}/BitchX
 USE_AUTOCONF=	yes
 USE_GMAKE=	yes
-.if defined(USE_GNOME)
+.if defined(WITH_GNOME)
 CONFIGURE_ARGS+=	--with-plugins --with-gtk --enable-sound
 .else
 CONFIGURE_ARGS+=	--with-plugins --without-gtk
@@ -39,9 +39,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 MAKE_ENV+=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 		INSTALL_DATA="${INSTALL_DATA}"
 
-.if !defined(USE_GNOME)
+.if !defined(WITH_GNOME)
 pre-extract:
-	@${ECHO} "You can add hooks for GNOME by defining USE_GNOME"
+	@${ECHO} "You can add hooks for GNOME by defining WITH_GNOME"
 .endif
 
 pre-patch:
@@ -54,7 +54,7 @@ post-install:
 	${CP} -r ${WRKSRC}/bitchx-docs/* ${PREFIX}/share/bx/help
 	${INSTALL_DATA} ${WRKSRC}/doc/bxfaq.html ${PREFIX}/share/doc/bitchx
 .endif
-.if defined(USE_GNOME)
+.if defined(WITH_GNOME)
 	@${ECHO} bin/gtkBitchX >> ${TMPPLIST}
 	@${ECHO} bin/gtkBitchX-1.0c16 >> ${TMPPLIST}
 	@${ECHO} share/bx/plugins/nicklist.so >> ${TMPPLIST}

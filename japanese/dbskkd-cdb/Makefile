@@ -34,9 +34,8 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if defined(USE_INSTALLED_JISYO) && ${USE_INSTALLED_JISYO} == YES || \
-    exists(${LOCALBASE}/share/skk/${SKKJISYO}) && \
-    (!defined(USE_INSTALLED_JISYO) || ${USE_INSTALLED_JISYO} != NO)
+.if defined(WITH_JISYO) || (exists(${LOCALBASE}/share/skk/${SKKJISYO}) \
+    && !defined(WITHOUT_JISYO))
 pre-build::
 	@${CP} ${LOCALBASE}/share/skk/${SKKJISYO} ${WRKSRC}
 .else
@@ -45,9 +44,8 @@ pre-build::
 	@${CP} ${PORTSDIR}/japanese/skk-jisyo/work/*/jisyo/${SKKJISYO} ${WRKSRC}
 .endif
 
-.if defined(USE_INSTALLED_CDB) && ${USE_INSTALLED_CDB} == YES || \
-    exists(${LOCALBASE}/lib/libcdb.a) && exists(${LOCALBASE}/bin/cdbmake) && \
-    (!defined(USE_INSTALLED_CDB) || ${USE_INSTALLED_CDB} != NO)
+.if defined(WITH_CDB) || (exists(${LOCALBASE}/lib/libcdb.a) && \
+    exists(${LOCALBASE}/bin/cdbmake) && !defined(WITHOUT_CDB))
 pre-build::
 	@${CP} ${LOCALBASE}/lib/libcdb.a ${LOCALBASE}/bin/cdbmake ${WRKSRC}
 	@(cd ${WRKSRC}; SKKJISYO=${SKKJISYO} ./makeskkcdb.sh)

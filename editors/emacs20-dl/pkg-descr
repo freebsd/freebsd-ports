@@ -15,7 +15,7 @@ warning message may be displayed:
 
 	Warning: locale not supported by C library, locale unchanged
 
-If you complain about this message, type `make install USE_XPG4=YES'
+If you complain about this message, type `make install WITH_XPG4=yes'
 at the "${PORTSDIR}/editors/japanese" directory to re-make this package.
 
 WWW: http://www.m17n.org/mule/dynamic-loading/

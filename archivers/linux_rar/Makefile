@@ -41,7 +41,7 @@ post-fetch:
 
 pre-configure:
 	@${ECHO_MSG} "To install unrar bundled with this package,"
-	@${ECHO_MSG} "set variable WITH_UNRAR=YES."
+	@${ECHO_MSG} "set variable WITH_UNRAR=yes."
 
 do-install:
 	@${MKDIR} ${PREFIX}/share/doc/rar ${PREFIX}/share/rar

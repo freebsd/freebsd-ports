@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/unstable/v${PORTVERSION}/ \
 
 MAINTAINER=	vanilla@FreeBSD.org
 
-.if defined(USE_PERL)
+.if !defined(WITHOUT_PERL)
 BUILD_DEPENDS=	perldl:${PORTSDIR}/math/PDL \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk
 RUN_DEPENDS=	perldl:${PORTSDIR}/math/PDL \
@@ -39,7 +39,7 @@ USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 
-.if !defined(USE_PERL)
+.if defined(WITHOUT_PERL)
 CONFIGURE_ARGS=	--disable-perl
 .endif
 
@@ -51,11 +51,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 MAN1=		gimp.1 gimptool.1
 MAN5=		gimprc.5
 
-.if !defined(WITH_GNOME) && exists(${X11BASE}/bin/gnome-config)
-WITH_GNOME=	yes
-.endif
-
-.if !defined(USE_PERL)
+.if defined(WITHOUT_PERL)
 PLISTORIG=		${PKGDIR}/PLIST
 PLIST=			${WRKDIR}/PLIST
 .else
@@ -66,7 +62,8 @@ pre-fetch:
 	@${ECHO} "'make -DWITHOUT_PERL' instead"
 .endif
 
-.if defined(WITH_GNOME) && ${WITH_GNOME} == yes
+.if defined(WITH_GNOME) || (exists(${X11BASE}/bin/gnome-config) \
+    && !defined(WITHOUT_GNOME))
 LIB_DEPENDS+=	gtkxmhtml.3:${PORTSDIR}/x11/gnomelibs
 pre-install:
 	@${CAT} ${PLISTORIG} > ${PLIST}

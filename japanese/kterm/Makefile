@@ -36,27 +36,22 @@ DOCDIR=		${PREFIX}/share/doc/kterm
 
 .if !defined(PACKAGE_BUILDING)
 
-.if defined(USE_XAW3DLIB) && defined(USE_NEXTAWLIB)
-.if (${USE_XAW3DLIB} == "YES") && (${USE_NEXTAWLIB} == "YES")
+.if defined(WITH_XAW3DLIB) && defined(WITH_NEXTAWLIB)
 .BEGIN:
-	@${ECHO} "Error: \$${USE_XAW3DLIB} and \$${USE_NEXTAWLIB} cannot be specified simultaneously!"
+	@${ECHO} "Error: \$${WITH_XAW3DLIB} and \$${WITH_NEXTAWLIB} cannot be specified simultaneously!"
 	@${FALSE}
-.endif
-.elif defined(USE_XAW3DLIB)
-.if (${USE_XAW3DLIB} == "YES")
+.elif defined(WITH_XAW3DLIB)
 LIB_DEPENDS+=	Xaw3d.6:${PORTSDIR}/x11-toolkits/Xaw3d
 post-patch:
 	@${ECHO_MSG}  "===>  Applying Xaw3d scrollbar patch"
 	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/patch-Xaw3d
-.endif
-.elif defined(USE_NEXTAWLIB)
-.if (${USE_NEXTAWLIB} == "YES")
+.elif defined(WITH_NEXTAWLIB)
 LIB_DEPENDS+=	neXtaw.6:${PORTSDIR}/x11-toolkits/neXtaw
 post-patch:
 	@${ECHO_MSG}  "===>  Applying neXtaw scrollbar patch"
 	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/patch-neXtaw
 .endif
-.endif
+
 .endif
 
 post-install:

@@ -12,7 +12,7 @@ MASTER_SITES=   http://glade.pn.org/
 
 MAINTAINER=     ade@FreeBSD.org
 
-.if defined(USE_GNOME)
+.if defined(WITH_GNOME)
 LIB_DEPENDS=	gnome.3:${PORTSDIR}/x11/gnomelibs
 PLIST_GNOME=	${PKGDIR}/PLIST.gnome
 .else
@@ -32,13 +32,13 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		GTK_CONFIG="${GTK_CONFIG}" \
 		LIBS="-L${LOCALBASE}/libs"
 
-.if !defined(USE_GNOME)
+.if !defined(WITH_GNOME)
 pre-extract:
-	@${ECHO} "You can add hooks for GNOME by defining USE_GNOME"
+	@${ECHO} "You can add hooks for GNOME by defining WITH_GNOME"
 .endif
 
 post-patch:
-.if !defined(USE_GNOME)
+.if !defined(WITH_GNOME)
 	@cd ${WRKSRC} && ${PATCH} ${PATCH_ARGS} < ${FILESDIR}/patch-nognome
 .endif
 
