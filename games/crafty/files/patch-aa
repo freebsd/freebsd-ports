@@ -1,5 +1,5 @@
---- Makefile.orig	Tue Apr  3 12:43:10 2001
-+++ Makefile	Tue Apr  3 12:45:43 2001
+--- Makefile.orig	Fri Feb  8 18:48:49 2002
++++ Makefile	Sat Sep  7 16:05:47 2002
 @@ -21,7 +21,7 @@
  #     SGI        {SGI Workstation running Irix (SYSV/R4) Unix}
  #     SUN        {Sun SparcStation running Solaris (SYSV/R4) Unix}
@@ -9,7 +9,7 @@
  #     NetBSD     {multi-architecture running NetBSD (Unix)}
  #     Cygwin     {80X86 running Cygwin under Win32 (Unix)}
  #   
-@@ -142,14 +142,23 @@
+@@ -142,16 +142,25 @@
  		asm='X86.o' \
  		crafty-make
  
@@ -24,8 +24,8 @@
  		opt='$(opt) -DCOMPACT_ATTACKS -DUSE_ATTACK_FUNCTIONS \
  		     -DUSE_ASSEMBLY_A -DUSE_ASSEMBLY_B -DFAST' \
  		asm=X86-elf.o \
-+		crafty-make
-+
+ 		crafty-make
+ 
 +# This should work for non-i386 FreeBSD (e.g. Alpha)
 +freebsd-generic:
 +	$(MAKE) target=FreeBSD \
@@ -33,6 +33,17 @@
 +		CFLAGS='$(CFLAGS)' \
 +		LDFLAGS='$(LDFLAGS)' \
 +		opt='$(opt) -DCOMPACT_ATTACKS -DUSE_ATTACK_FUNCTIONS -DFAST' \
- 		crafty-make
- 
++		crafty-make
++
  freebsd-pgcc:
+ 	$(MAKE) target=FreeBSD \
+ 		CC=gcc CXX='$$(CC)' \
+@@ -368,7 +377,7 @@
+ 		crafty
+ 
+ crafty:	$(objects) 
+-	$(CC) $(LDFLAGS) -o crafty $(objects) -lm  $(LIBS)
++	$(CXX) $(LDFLAGS) -o crafty $(objects) -lm  $(LIBS)
+ 	@rm -f X86-elf.S
+ 	@rm -f X86-aout.S
+ 
