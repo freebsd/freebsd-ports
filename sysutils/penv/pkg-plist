@@ -2,9 +2,20 @@ bin/penv
 @unexec if cmp -s %D/etc/penv.conf %D/etc/penv.conf.default; then rm -f %D/etc/penv.conf; fi
 etc/penv.conf.default
 @exec [ -f %B/penv.conf ] || cp %B/%f %B/penv.conf
-%%PORTDOCS%%share/doc/penv/html/created.with.vim.gif
+%%PORTDOCS%%share/doc/penv/html/docbook.css
 %%PORTDOCS%%share/doc/penv/html/index.html
+%%PORTDOCS%%share/doc/penv/html/penv-compat.html
+%%PORTDOCS%%share/doc/penv/html/penv-history.html
+%%PORTDOCS%%share/doc/penv/html/penv-install.html
+%%PORTDOCS%%share/doc/penv/html/penv-src.html
+%%PORTDOCS%%share/doc/penv/html/penv-usage.html
+%%PORTDOCS%%share/doc/penv/html/penv.html
+%%PORTDOCS%%share/doc/penv/html/changes/changes.html
+%%PORTDOCS%%share/doc/penv/html/changes/changes.txt
+%%PORTDOCS%%share/doc/penv/txt/penv.txt
+%%PORTDOCS%%@dirrm share/doc/penv/html/changes
 %%PORTDOCS%%@dirrm share/doc/penv/html
+%%PORTDOCS%%@dirrm share/doc/penv/txt
 %%PORTDOCS%%@dirrm share/doc/penv
 @exec mkdir -p %%DBDIR%%
 @unexec rmdir %%DBDIR%% 2>/dev/null || true
