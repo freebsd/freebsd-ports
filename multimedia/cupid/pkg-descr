@@ -1,0 +1,13 @@
+[ excerpt from developer's web site ]
+
+Cupid is a modern, complete video/audio capture solution for the
+Linux/GNOME desktop. It is based on the GStreamer multimedia
+framework, which is the de facto multimedia framework on the Linux
+and UNIX desktop. Using GStreamer, it supports a variety of container
+formats and video/audio codecs. Likewise, it supports all the current
+video and audio kernel interfaces, and can be extended to supports
+other systems than Linux simply by writing a GStreamer plugin.
+
+WWW: http://ronald.bitfreak.net/me/cupid.php
+
+-- lioux@FreeBSD.org
