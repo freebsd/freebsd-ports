@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qmrtg
-PORTVERSION=	0.5.6
+PORTVERSION=	0.5.7
 CATEGORIES=	mail net-mgmt
 MASTER_SITES=	http://dev.publicshout.org/qmrtg/download/
 
