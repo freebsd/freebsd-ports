@@ -1,5 +1,5 @@
-*** sbdsp.c.orig	Mon Jul 26 12:58:00 1993
---- sbdsp.c	Mon Oct 31 18:26:56 1994
+*** sbdsp.c.orig	Thu Aug 18 06:11:01 1994
+--- sbdsp.c	Mon Jan 27 02:47:53 1997
 ***************
 *** 21,27 ****
   #include <i386/isa/sblast.h>
@@ -18,18 +18,18 @@
   #include <sys/sb.h>
   #endif
 ***************
-*** 77,83 ****
-  	ioctl(fileno(ft->fp), DSP_IOCTL_VOICE, &off);
+*** 78,84 ****
   	ioctl(fileno(ft->fp), DSP_IOCTL_SPEED, &ft->info.rate);
-  #elif defined(LINUXSOUND)
+  #else
+  #if defined(LINUXSOUND)
 ! 	ioctl(fileno(ft->fp), SNDCTL_DSP_SPEED, ft->info.rate);
   #else
   	ioctl(fileno(ft->fp), DSP_IOCTL_VOICE, 0);
   	ioctl(fileno(ft->fp), DSP_IOCTL_SPEED, ft->info.rate);
---- 77,87 ----
-  	ioctl(fileno(ft->fp), DSP_IOCTL_VOICE, &off);
+--- 78,88 ----
   	ioctl(fileno(ft->fp), DSP_IOCTL_SPEED, &ft->info.rate);
-  #elif defined(LINUXSOUND)
+  #else
+  #if defined(LINUXSOUND)
 !   #if SOUND_VERSION >= 200
 ! 	ioctl(fileno(ft->fp), SOUND_PCM_WRITE_RATE, &ft->info.rate);
 !   #else
@@ -39,17 +39,17 @@
   	ioctl(fileno(ft->fp), DSP_IOCTL_VOICE, 0);
   	ioctl(fileno(ft->fp), DSP_IOCTL_SPEED, ft->info.rate);
 ***************
-*** 143,149 ****
-  	ioctl(fileno(ft->fp), DSP_IOCTL_SPEED, &ft->info.rate);
-  #elif defined(LINUXSOUND)
+*** 148,154 ****
+  #else
+  #if defined(LINUXSOUND)
   	ioctl(fileno(ft->fp), SNDCTL_DSP_SYNC, 0);
 ! 	ioctl(fileno(ft->fp), SNDCTL_DSP_SPEED, ft->info.rate);
   #else
   	ioctl(fileno(ft->fp), DSP_IOCTL_VOICE, 1);
   	ioctl(fileno(ft->fp), DSP_IOCTL_SPEED, ft->info.rate);
---- 147,157 ----
-  	ioctl(fileno(ft->fp), DSP_IOCTL_SPEED, &ft->info.rate);
-  #elif defined(LINUXSOUND)
+--- 152,162 ----
+  #else
+  #if defined(LINUXSOUND)
   	ioctl(fileno(ft->fp), SNDCTL_DSP_SYNC, 0);
 !   #if SOUND_VERSION >= 200
 ! 	ioctl(fileno(ft->fp), SOUND_PCM_WRITE_RATE, &ft->info.rate);
