@@ -6143,6 +6143,7 @@ ports_editors	ports/editors
 ports_egcs	ports/lang/egcs
 ports_emulators	ports/emulators
 ports_f2c	ports/lang/f2c
+ports_finance	ports/finance
 ports_french	ports/french
 ports_ftp	ports/ftp
 ports_games	ports/games
@@ -6164,6 +6165,7 @@ ports_mail	ports/mail
 ports_math	ports/math
 ports_mbone	ports/mbone
 ports_misc	ports/misc
+ports_multimedia	ports/multimedia
 ports_net	ports/net
 ports_news	ports/news
 ports_ntp	ports/net/ntp
@@ -6174,6 +6176,7 @@ ports_openssl	ports/security/openssl
 ports_palm	ports/palm
 ports_patch	ports/devel/patch
 ports_picobsd	ports/picobsd
+ports_portuguese	ports/portuguese
 ports_pr	ports/comms/pr
 ports_print	ports/print
 ports_russian	ports/russian
