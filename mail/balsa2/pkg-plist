@@ -2,19 +2,41 @@ bin/balsa
 etc/CORBA/servers/balsa.gnorba
 etc/sound/events/balsa.soundlist
 etc/sound/events/email.soundlist
-lib/libbalsasrv.a
-share/gnome/pixmaps/balsa/attachment.png
-share/gnome/pixmaps/balsa/balsa_icon.png
-share/gnome/pixmaps/balsa/balsa_logo.png
+share/gnome/gnome/help/balsa/C/g327.htm
+@exec ln -sf t1.htm %D/share/gnome/gnome/help/balsa/C/index.html
+@unexec rm -f %D/share/gnome/gnome/help/balsa/C/index.html
+share/gnome/gnome/help/balsa/C/t1.htm
+share/gnome/gnome/help/balsa/C/topic.dat
+share/gnome/gnome/help/balsa/C/x188.htm
+share/gnome/gnome/help/balsa/C/x24.htm
+share/gnome/gnome/help/balsa/C/x244.htm
+share/gnome/gnome/help/balsa/C/x277.htm
+share/gnome/gnome/help/balsa/C/x324.htm
+share/gnome/gnome/help/balsa/C/x35.htm
+share/gnome/idl/balsa.idl
+share/gnome/pixmaps/balsa/attachment.png 
+share/gnome/pixmaps/balsa/balsa-logo.png 
+share/gnome/pixmaps/balsa/balsa-top.png 
+share/gnome/pixmaps/balsa/balsa-watermark.png 
+share/gnome/pixmaps/balsa/balsa_icon.png 
+share/gnome/pixmaps/balsa/balsa_logo.png 
 share/gnome/sounds/balsa/newmail.wav
 share/gnome/sounds/balsa/startup.wav
+share/locale/da/LC_MESSAGES/balsa.mo
 share/locale/de/LC_MESSAGES/balsa.mo
 share/locale/es/LC_MESSAGES/balsa.mo
+share/locale/et/LC_MESSAGES/balsa.mo
 share/locale/fi/LC_MESSAGES/balsa.mo
 share/locale/fr/LC_MESSAGES/balsa.mo
 share/locale/ga/LC_MESSAGES/balsa.mo
 share/locale/it/LC_MESSAGES/balsa.mo
 share/locale/ko/LC_MESSAGES/balsa.mo
+share/locale/nl/LC_MESSAGES/balsa.mo
 share/locale/no/LC_MESSAGES/balsa.mo
+share/locale/pl/LC_MESSAGES/balsa.mo
+share/locale/pt_BR/LC_MESSAGES/balsa.mo
+share/locale/ru/LC_MESSAGES/balsa.mo
 @dirrm share/gnome/sounds/balsa
 @dirrm share/gnome/pixmaps/balsa
+@dirrm share/gnome/gnome/help/balsa/C
+@dirrm share/gnome/gnome/help/balsa

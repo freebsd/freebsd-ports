@@ -1,12 +1,12 @@
 # New ports collection makefile for:	balsa
-# Version required:			0.4.9.5
+# Version required:			0.6.0
 # Date created:				02 December 1998
 # Whom:					Glenn Johnson <gljohns@bellsouth.net>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	balsa-0.4.9.5
+DISTNAME=	balsa-0.6.0
 CATEGORIES=	mail gnome
 MASTER_SITES=	ftp://ftp.balsa.net/pub/balsa/
 
@@ -17,12 +17,14 @@ LIB_DEPENDS=	gnome.3:${PORTSDIR}/x11/gnomelibs \
 		PropList.2:${PORTSDIR}/devel/libPropList
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
+GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
 
 USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
 LIBTOOLFILES=	configure libmutt/configure
 CONFIGURE_ENV=	CPPFLAGS='-I${LOCALBASE}/include' \
 		GTK_CONFIG='${GTK_CONFIG}' \
+		GLIB_CONFIG='${GLIB_CONFIG}' \
 		LIBS='-L${LOCALBASE}/lib'
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
 		--datadir=${PREFIX}/share/gnome \
