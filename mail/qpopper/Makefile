@@ -31,7 +31,8 @@ MAN8=		qpopauth.8 qpopper.8
 
 post-patch:
 	cd ${WRKSRC} && \
-		${PERL} -pi.orig -e "s:/usr/local:${PREFIX}:g" man/popper.8
+		${PERL} -pi.orig -e "s:/usr/local:${PREFIX}:g" \
+			man/popper.8 man/popauth.8
 
 do-install:
 	cd ${WRKSRC} && \
