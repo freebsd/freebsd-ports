@@ -30,7 +30,7 @@ USE_IMLIB=	yes
 CONFIGURE_ARGS+=--disable-gdk-pixbuf
 .endif
 .if defined(WITH_GPGME)
-LIB_DEPENDS+=	gpgme.4:${PORTSDIR}/security/gpgme
+LIB_DEPENDS+=	gpgme.5:${PORTSDIR}/security/gpgme
 RUN_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg
 CONFIGURE_ARGS+=--enable-gpgme
 .else
