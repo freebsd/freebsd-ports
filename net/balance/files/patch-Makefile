@@ -1,0 +1,17 @@
+--- Makefile.orig	Tue Oct  2 09:53:26 2001
++++ Makefile	Tue Oct  2 09:53:52 2001
+@@ -1,12 +1,12 @@
+ # $Id: Makefile,v 1.20 2001/09/15 22:30:46 tommy Exp $
+ 
+ #CFLAGS=-g -I.
+-CFLAGS=-O
++#CFLAGS=-O
+ 
+ # uncomment for Solaris:
+ # LIBRARIES=-lsocket -lnsl
+ 
+-CC=gcc
++#CC=gcc
+ RELEASE=2.33
+ 
+ balance:	balance.c
