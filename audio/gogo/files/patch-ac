@@ -1,5 +1,22 @@
---- Makefile.orig	Fri Apr 28 13:11:32 2000
-+++ Makefile	Mon Jul  3 01:49:47 2000
+--- Makefile.orig	Fri Dec 15 17:35:55 2000
++++ Makefile	Sun Dec 24 13:53:37 2000
+@@ -5,14 +5,14 @@
+ 
+ #use Enhanced 3D Now!
+ #you need modified NASM to use this option
+-USE_E3DN=yes
++USE_E3DN=no
+ 
+ #use VBR
+ USE_VBR =yes
+ 
+ #use multi-thread
+ #OS must be Linux with libc6, FreeBSD-4.0R with linuxthreads or BeOS 
+-USE_MT=yes
++#USE_MT=yes
+ 
+ #define if OS is BeOS
+ #OS=BeOS
 @@ -30,15 +30,15 @@
  endif
  
