@@ -473,6 +473,7 @@
     SUBDIR += p5-Net-RawIP
     SUBDIR += p5-Net-RawSock
     SUBDIR += p5-Net-Rendezvous
+    SUBDIR += p5-Net-Rsh
     SUBDIR += p5-Net-SAP
     SUBDIR += p5-Net-SCP
     SUBDIR += p5-Net-SFTP
