@@ -7,6 +7,7 @@
 
 PORTNAME=	motoya-ttfonts
 PORTVERSION=	0.20040116
+PORTREVISION=	1
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	#
 #		You must accept following MOTOYA freefont LICENSE[1], and regist
