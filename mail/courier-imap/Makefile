@@ -7,7 +7,7 @@
 
 PORTNAME=	courier-imap
 PORTVERSION=	2.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -47,6 +47,7 @@ CONFIGURE_ENV=	CFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 # WITH_FAM:			Build in fam support for IDLE command
 # WITH_DRAC:			Build in DRAC support
 # WITH_TRASHQUOTA:		Include deleted mails in the quota
+# WITH_GDBM:			Use gdbm files instead of bdb
 #
 
 CONFDIR?=	${PREFIX}/etc/${PORTNAME}
@@ -78,6 +79,17 @@ CONFIGURE_ARGS=	--without-authshadow \
 		--enable-unicode \
 		--disable-root-check \
 		--with-locking-method=fcntl
+
+# Without explicitly mentioning this, if gdbm libraries are present,
+# they are silently picked up and used by courier-imap in place of
+# the standard db (v1) files.
+#
+.if defined(WITH_GDBM)
+LIB_DEPENDS+=	gdbm.3:${PORTSDIR}/databases/gdbm
+CONFIGURE_ARGS+=	--with-db=gdbm
+.else
+CONFIGURE_ARGS+=	--with-db=db
+.endif
 
 .if !defined(WITH_VPOPMAIL)
 CONFIGURE_ARGS+=--without-authvchkpw
