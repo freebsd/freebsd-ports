@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.eterm.org/download/ \
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	Eterm-${PORTVERSION}
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER?=	olgeni@FreeBSD.org
 
 BUILD_DEPENDS=	man2html:${PORTSDIR}/textproc/man2html
 
@@ -23,7 +23,7 @@ LIB_DEPENDS=	Imlib2.1:${PORTSDIR}/graphics/imlib2 \
 USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
-CONFIGURE_ARGS=	--enable-trans --enable-utmp \
+CONFIGURE_ARGS?=--enable-trans --enable-utmp \
 		--enable-xim --with-theme-update \
 		--with-backspace=bs --without-terminfo
 
