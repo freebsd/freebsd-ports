@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	t1lib
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	libs/graphics
@@ -25,7 +25,7 @@ CONFIGURE_ARGS+=	--without-x
 .endif
 
 USE_GMAKE=	yes
-WRKSRC=		${WRKDIR}/T1-${PORTVERSION}
+WRKSRC=		${WRKDIR}/T1Lib-${PORTVERSION}
 
 # DOCS depends on LaTeX and LaTeX-babel module
 #.if defined(NOPORTDOCS)
