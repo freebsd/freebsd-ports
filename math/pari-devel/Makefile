@@ -7,9 +7,9 @@
 
 PORTNAME=	pari
 PORTVERSION=	${MAJOR_VERSION}.${MINOR_VERSION}.${REV_VERSION}.a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
-MASTER_SITES= http://pari.math.u-bordeaux.fr/pub/pari/unstable/
+MASTER_SITES=	http://pari.math.u-bordeaux.fr/pub/pari/unstable/
 DISTNAME=	pari-${MAJOR_VERSION}.${MINOR_VERSION}.${REV_VERSION}.alpha
 
 MAINTAINER=	yoshiaki@kt.rim.or.jp

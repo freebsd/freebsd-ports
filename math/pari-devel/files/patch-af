@@ -1,5 +1,17 @@
---- config/Makefile.SH.orig	Mon Dec 20 00:47:02 2004
-+++ config/Makefile.SH	Sun Jan  9 18:26:30 2005
+
+$FreeBSD$
+
+--- config/Makefile.SH.orig
++++ config/Makefile.SH
+@@ -176,7 +176,7 @@
+ CC_FLAVOR  =
+ CC         = $CC \$(CC_FLAVOR)
+ CPPFLAGS   = $CPPFLAGS
+-CFLAGS     = $CFLAGS
++CFLAGS     = $CFLAGS -fPIC
+ DLCFLAGS   = $DLCFLAGS
+ LD_FLAVOR  = \$(CC_FLAVOR)
+ LD         = $LD \$(LD_FLAVOR)
 @@ -238,9 +238,12 @@
  INCLUDEDIR= \$(DESTDIR)$includedir
  LIBDIR    = \$(DESTDIR)$libdir
