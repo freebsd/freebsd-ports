@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cvsnt
-PORTVERSION=	2.0.34
+PORTVERSION=	2.0.51
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cvsnt.org/archive/ \
 		http://homepages.nildram.co.uk/~tmhoyle/
@@ -15,7 +15,8 @@ MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	CVS clone
 
 USE_LIBLTDL=	yes
-USE_LIBTOOL_VER=	13
+USE_INC_LIBTOOL_VER=	13
+USE_RC_SUBR=	yes
 CONFIGURE_ARGS=	--enable-fork
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GETOPT_LONG=yes
@@ -31,5 +32,16 @@ PLIST_SUB=	GSERVER=""
 .else
 PLIST_SUB=	GSERVER="@comment "
 .endif
+RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
+
+STARTUPDIR=	etc/rc.d
+STARTUPFILES=	cvslockd.sh
+
+post-install:
+.for file in ${STARTUPFILES}
+	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${FILESDIR}/${file} > ${WRKDIR}/${file}
+	${INSTALL_SCRIPT} ${WRKDIR}/${file} ${PREFIX}/${STARTUPDIR}/${file}
+.endfor
 
 .include <bsd.port.mk>

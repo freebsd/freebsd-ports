@@ -4,6 +4,7 @@ bin/cvslockd
 bin/rcs2log
 bin/rcsdiff
 bin/rlog
+etc/rc.d/cvslockd.sh
 etc/cvsnt/PServer.example
 lib/cvsnt/ca.pem
 lib/cvsnt/ext_protocol.so
