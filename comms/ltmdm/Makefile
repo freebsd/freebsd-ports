@@ -7,7 +7,7 @@
 
 PORTNAME=	ltmdm
 PORTVERSION=	1.4
-PORTREVISION=	8
+PORTREVISION=	7
 CATEGORIES=	comms
 MASTER_SITES=	http://www.dons.net.au/~darius/ \
 		http://soupnazi.org/FreeBSD/ports/distfiles/
