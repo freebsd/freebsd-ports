@@ -7,7 +7,7 @@
 
 PORTNAME=	snes9x
 PORTVERSION=	1.34a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.snes9x.com/zips/
 DISTNAME=	s9xs134a
