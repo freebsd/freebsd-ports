@@ -8,7 +8,9 @@
 PORTNAME=	nvu
 PORTVERSION=	0.60
 CATEGORIES=	www
-MASTER_SITES=	http://cvs.nvu.com/download/
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		http://cvs.nvu.com/download/
+MASTER_SITE_SUBDIR=	ahze
 DISTNAME=	${PORTNAME}-${PORTVERSION}-sources
 
 MAINTAINER=	ahze@FreeBSD.org
