@@ -1,0 +1,21 @@
+--- Imakefile.orig	Fri Oct 20 21:12:09 2000
++++ Imakefile	Sun Aug 17 23:39:01 2003
+@@ -1,13 +1,15 @@
+ XCOMM LOCAL_LIBRARIES = -lImlib -lX11 -lXext
+-LOCAL_LIBRARIES = -lXpm -lX11 -lXext
++XCOMM LOCAL_LIBRARIES = -lXpm -lX11 -lXext
++LOCAL_LIBRARIES = ${LDFLAGS}
+ 
+ SRCS = TolleUhr.c XCC.c
+ OBJS = TolleUhr.o XCC.o
+ 
+-CDEBUGFLAGS = -O2 -g -Wall
++XCOMM CDEBUGFLAGS = -O2 -g -Wall
+ 
+ XCOMM CCOPTIONS= -DUSE_IMLIB
+-CCOPTIONS= -DUSE_XPM
++XCOMM CCOPTIONS= -DUSE_XPM
++CCOPTIONS = ${CPPFLAGS}
+ 
+ ComplexProgramTargetNoMan(xtu)
+ 
