@@ -32,6 +32,47 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="249a8c42-6973-11d9-ae49-000c41e2cdad">
+    <topic>zgv -- exploitable heap overflows</topic>
+    <affects>
+      <package>
+	<name>zgv</name>
+	<range><lt>5.8_1</lt></range>
+      </package>
+      <package>
+	<name>xzgv</name>
+	<range><lt>0.8_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>infamous41md reports:</p>
+	<blockquote cite="http://marc.theaimsgroup.com/?l=bugtraq&amp;m=109886210702781">
+	  <p>zgv uses malloc() frequently to allocate memory for storing
+	    image data.  When calculating how much to allocate, user
+	    supplied data from image headers is multiplied and/or added
+	    without any checks for arithmetic overflows.  We can
+	    overflow numerous calculations, and cause small buffers to
+	    be allocated.  Then we can overflow the buffer, and
+	    eventually execute code.  There are a total of
+	    11 overflows that are exploitable to execute arbitrary
+	    code.</p>
+	</blockquote>
+	<p>These bugs exist in both zgv and xzgv.</p>
+      </body>
+    </description>
+    <references>
+      <mlist msgid="20041025210717.2799d9c1.infamous41md@hotpop.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=109886210702781</mlist>
+      <mlist msgid="20041027233907.A3678@netdirect.ca">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=109898111915661</mlist>
+      <url>http://rus.members.beeb.net/xzgv.html</url>
+      <url>http://www.svgalib.org/rus/zgv/</url>
+    </references>
+    <dates>
+      <discovery>2004-10-26</discovery>
+      <entry>2005-01-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a77849a5-696f-11d9-ae49-000c41e2cdad">
     <topic>mozilla -- insecure permissions for some downloaded files</topic>
     <affects>
