@@ -125,8 +125,10 @@ lib/System.Xml.dll
 lib/System.dll
 lib/corlib.dll
 lib/libmono.a
+lib/libmono.so
 lib/libmono.so.0
 lib/liboldmono.a
+lib/liboldmono.so
 lib/liboldmono.so.0
 libdata/pkgconfig/mono.pc
 share/mono/cil/cil-opcodes.xml
