@@ -2453,6 +2453,7 @@ hffzip		ports/archivers/hffzip
 hfs		ports/emulators/hfs
 hfsutils	ports/emulators/hfsutils
 hgrep		ports/textproc/hgrep
+highlight	ports/textproc/highlight
 hinfo		ports/net/hinfo
 histring	ports/misc/histring
 hlfl		ports/security/hlfl
