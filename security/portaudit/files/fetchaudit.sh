@@ -33,6 +33,7 @@
 
 # defaults
 daily_status_portaudit_enable="YES"
+daily_status_portaudit_expiry="2"
 
 # If there is a global system configuration file, suck it in.
 #
@@ -48,7 +49,7 @@ portaudit_confs
 rc=0
 case "$daily_status_portaudit_enable" in
 	""|[Yy][Ee][Ss])
-		if [ ! -f "${portaudit_dir}/${portaudit_filename}" ] || ! checkexpiry_auditfile 3; then
+		if [ ! -f "${portaudit_dir}/${portaudit_filename}" ] || ! checkexpiry_auditfile "${daily_status_portaudit_expiry}"; then
 			echo ""
 			echo "Updating audit database."
 			fetch_auditfile && rc=1 || rc=2
