@@ -1,0 +1,34 @@
+bin/pango-config
+bin/pango-querymodules
+etc/pango/pango.modules
+etc/pango/pangox.aliases
+include/pango/pango-attributes.h
+include/pango/pango-context.h
+include/pango/pango-coverage.h
+include/pango/pango-engine.h
+include/pango/pango-font.h
+include/pango/pango-fontmap.h
+include/pango/pango-glyph.h
+include/pango/pango-item.h
+include/pango/pango-layout.h
+include/pango/pango-modules.h
+include/pango/pango-types.h
+include/pango/pango-utils.h
+include/pango/pango.h
+include/pango/pangox.h
+lib/libpango.a
+lib/libpango.so
+lib/libpango.so.0
+lib/libpangox.a
+lib/libpangox.so
+lib/libpangox.so.0
+lib/pango/modules/pango-arabic.so
+lib/pango/modules/pango-basic.so
+lib/pango/modules/pango-devanagari.so
+lib/pango/modules/pango-hangul.so
+lib/pango/modules/pango-tamil.so
+lib/pango/modules/pango-thai.so
+@dirrm lib/pango/modules
+@dirrm lib/pango
+@dirrm include/pango
+@dirrm etc/pango
