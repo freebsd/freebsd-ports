@@ -21,7 +21,13 @@ NO_PACKAGE=	"Too many questions"
 
 #
 # Currently we support two db's: msql and mysql
+# When running in batch mode default to mysql support, because it's
+# a free and very popular database !
 #
+.if defined(BATCH)
+PHP_DBTYPE=mysql
+.endif
+
 .if !defined(PHP_DBTYPE)
 pre-fetch:
 	@ ${ECHO}
