@@ -7844,7 +7844,6 @@ rtb		ports/games/rtb
 rtc		ports/emulators/rtc
 rtcw		ports/games/rtcw
 rtcw-paks	ports/games/rtcw-paks
-rtf2htm		ports/textproc/rtf2htm
 rtf2latex	ports/print/rtf2latex
 rtfm		ports/misc/rtfm
 rtfreader	ports/textproc/rtfreader

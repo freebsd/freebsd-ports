@@ -413,7 +413,6 @@
     SUBDIR += roap
     SUBDIR += rot
     SUBDIR += rotix
-    SUBDIR += rtf2htm
     SUBDIR += rtfreader
     SUBDIR += rubber
     SUBDIR += ruby-amatch
