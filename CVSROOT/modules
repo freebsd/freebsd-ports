@@ -7515,6 +7515,7 @@ staroffice60	ports/editors/staroffice60
 starplot	ports/astro/starplot
 stars		ports/astro/stars
 startslip	src/sbin/startslip
+startup-notification	ports/x11/startup-notification
 stat		ports/sysutils/stat
 staticcharge	ports/net/staticcharge
 sted		ports/editors/sted
