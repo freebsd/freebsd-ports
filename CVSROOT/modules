@@ -3522,6 +3522,7 @@ lbdb		ports/mail/lbdb
 lbpp		ports/devel/lbpp
 lbrate		ports/archivers/lbrate
 lbreakout	ports/games/lbreakout
+lbreakout2	ports/games/lbreakout2
 lc		ports/misc/lc
 lcdproc		ports/sysutils/lcdproc
 lcms		ports/graphics/lcms
