@@ -6,6 +6,51 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20040820:
+  AFFECTS: users of japanese/ptex-tetex, japanese/xdvik, and japanese/dvipsk
+  AUTHOR: hrs@FreeBSD.org
+
+  japanese/ptex-tetex, japanese/xdvik, and japanese/dvipsk now
+  look for the texmf.cnf file in $TEXMF/web2c-ptex/texmf.cnf first,
+  while some utilities included in the original teTeX distribution
+  such as kpsepath(1) look for the file in $TEXMF/web2c/texmf.cnf
+  first.  This is for separating the pTeX's texmf.cnf and
+  the original TeX's texmf.cnf, and you do not have to copy or
+  link the file $TEXMF/web2c-ptex/texmf.cnf to $TEXMF/web2c/.
+  To lookup pTeX path by using kpsepath(1) and so on, please
+  set TEXMFCNF environment variable as described in
+  $TEXMF/web2c-ptex/texmf.cnf.  For more detail, see
+  $TEXMF/web2c-ptex/texmf.cnf and $TEXMF/web2c/texmf.cnf.
+
+20040820:
+  AFFECTS: users of japanese/platex209-*
+  AUTHOR: hrs@FreeBSD.org
+
+  japanese/platex209-* are renamed to japanese/platex209 and
+  now depend on japanese/ptex-tetex.  While EUC-JP and JIS
+  encoding can be used by default, but Shift JIS is no longer
+  supported because it makes very difficult to maintain other
+  pTeX related ports.  However, "ptex --kanji=sjis" still works,
+  so it can be used if all of macro files under share/texmf are
+  converted to Shift JIS encoding manually.
+
+20040820:
+  AFFECTS: users of japanese/dvipsk-vflib
+  AUTHOR: hrs@FreeBSD.org
+
+  japanese/dvipsk-vflib has been removed because it is not maintained
+  for a long time.  While japanese/dvipsk itself has no support to
+  rendering vector fonts, this and Ghostscript give almost the same
+  functionality.
+
+20040820:
+  AFFECTS: users of japanese/xdvik-vflib
+  AUTHOR: hrs@FreeBSD.org
+
+  japanese/xdvik-vflib has been renamed to japanese/xdvik because
+  it has nothing to do with VFLib now.  It depends on and uses
+  FreeType2 to render vector fonts.
+
 20040817:
   AFFECTS: users of www/apache2
   AUTHOR: clement@FreeBSD.org
