@@ -110,8 +110,8 @@ with a web browser and follow the \"Download\" link for the\n\
 \"Java(TM) SDK ${JDK_VERSION}\". You will be required to log in and register,\n\
 but you can create an account on this page.  After registration and\n\
 accepting the Sun Community Source License, select \"J2SESDK\" and\n\
-download the file \"${SRCFILE}\".  Please place this file in\n\
-/usr/ports/distfiles.\n
+download the source file, ${SRCFILE}.  Please place this file in\n\
+${DISTDIR}.\n
 .endif
 
 # Check for patchset
@@ -122,7 +122,7 @@ The source distribution exists on your system, but due to\n\
 licensing restrictions you still need to download the\n\
 patchset, ${PATCHSETFILE}, from\n\
 http://www.eyesbeyond.com/freebsddom/java/jdk13.html.\n\
-Please place the patchset in /usr/ports/distfiles.\n
+Please place the patchset in ${DISTDIR}.\n
 .endif
 
 pre-patch:
