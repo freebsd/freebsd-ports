@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	srd-fpw
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.4a
 CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/srd/
 DISTNAME=	srd-fpw${PORTVERSION}-src
