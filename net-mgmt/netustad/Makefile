@@ -18,7 +18,7 @@ MAN8=		netustad.8 netustadpasswd.8
 MAN5=		netustad.conf.5
 
 USE_RC_SUBR=	yes
-SED_SCRIPT+=    -e '{ s,%%PREFIX%%,${PREFIX},g; }'
+SED_SCRIPT+=	-e '{ s,%%PREFIX%%,${PREFIX},g; }'
 
 post-build:
 	@${SED} ${SED_SCRIPT} ${FILESDIR}/netustad.sh >${WRKDIR}/netustad.sh
