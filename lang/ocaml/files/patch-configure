@@ -1,14 +1,24 @@
---- configure.orig	Thu Sep 25 10:17:13 2003
-+++ configure	Mon Feb  2 12:54:26 2004
-@@ -559,6 +559,7 @@
+--- configure.orig	Thu Sep 25 01:17:13 2003
++++ configure	Mon Feb  2 04:21:43 2004
+@@ -559,6 +559,8 @@
    powerpc-*-darwin*)            arch=power; model=ppc; system=rhapsody;;
    arm*-*-linux*)                arch=arm; system=linux;;
    ia64-*-linux*)                arch=ia64; system=linux;;
++  ia64-*-freebsd*)		arch=ia64; system=freebsd;;
 +  amd64-*-freebsd*)		arch=amd64; system=freebsd;;
    x86_64-*-linux*)              arch=amd64; system=linux;;
  esac
  
-@@ -1097,116 +1098,14 @@
+@@ -621,7 +623,7 @@
+   power,*,bsd)      aspp='gcc'; asppflags='-c -DSYS_$(SYSTEM)';;
+   power,*,rhapsody) ;;
+   arm,*,linux)      aspp='gcc'; asppflags='-c -DSYS_$(SYSTEM)';;
+-  ia64,*,linux)     asflags=-xexplicit
++  ia64,*,*)     asflags=-xexplicit
+                     aspp='gcc'; asppflags='-c -DSYS_$(SYSTEM) -Wa,-xexplicit';;
+   amd64,*,*)        aspp='gcc'; asppflags='-c -DSYS_$(SYSTEM)';;
+ esac
+@@ -1097,116 +1099,14 @@
  x11_include="not found"
  x11_link="not found"
  
