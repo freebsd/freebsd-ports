@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	gucharmap
-PORTVERSION=	0.4.0
-PORTREVISION=	1
+PORTVERSION=	0.6.0
 CATEGORIES=	misc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.4
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.6
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	marcus@FreeBSD.org
@@ -22,6 +21,7 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gtk20
+WANT_GNOME=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
@@ -30,9 +30,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 .include <bsd.port.pre.mk>
 
-.if exists(${X11BASE}/libdata/pkgconfig/libgnomeui-2.0.pc) || \
-	defined(WITH_GNOME)
-LIB_DEPENDS+=	gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui
+.if ${HAVE_GNOME:Mlibgnomeui}!=""
+USE_GNOME+=	libgnomeui
 PKGNAMESUFFIX=	-gnome
 .else
 CONFIGURE_ARGS=	--disable-gnome
