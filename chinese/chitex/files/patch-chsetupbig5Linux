@@ -1,5 +1,5 @@
---- chsetupbig5Linux.orig	Tue Oct  9 22:20:46 2001
-+++ chsetupbig5Linux	Tue Dec  4 23:46:18 2001
+--- chsetupbig5Linux.orig	Tue Oct  9 07:20:46 2001
++++ chsetupbig5Linux	Thu May 23 20:42:24 2002
 @@ -57,7 +57,7 @@
  
     gawkbin=awk
@@ -510,12 +510,12 @@
  
 -gunzip -dc ../../nuwpstfm.tgz|tar xvf -
 -cp -f nuwpstj*.tfm $texmf/fonts/tfm/chinese/nuwpstj
-+gunzip -dc /usr/ports/distfiles/chitex/nuwpstfm.tgz|tar xf -
++gunzip -dc ${DISTDIR}/chitex/nuwpstfm.tgz|tar xf -
 +cp -v -f nuwpstj*.tfm $texmf/fonts/tfm/chinese/nuwpstj
  /bin/rm -f nuwpstj*.tfm
 -gunzip -dc ../../moekatfm.tgz|tar xvf -
 -cp -f moe_kai*.tfm $texmf/fonts/tfm/chinese/moe_kai
-+gunzip -dc /usr/ports/distfiles/chitex/moekatfm.tgz|tar xf -
++gunzip -dc ${DISTDIR}/chitex/moekatfm.tgz|tar xf -
 +cp -v -f moe_kai*.tfm $texmf/fonts/tfm/chinese/moe_kai
  /bin/rm -f moe_kai*.tfm
  
@@ -593,7 +593,7 @@
  #
  
 -ttfgzfiles=`ls ../*.ttf.gz`
-+ttfgzfiles=`ls /usr/ports/distfiles/chitex/*.ttf.gz`
++ttfgzfiles=`ls ${DISTDIR}/chitex/*.ttf.gz`
  
 -clear
 +#clear
@@ -602,7 +602,7 @@
  echo " "
  cd ..
 -ls *.ttf.gz
-+ls /usr/ports/distfiles/chitex/*.ttf.gz
++ls ${DISTDIR}/chitex/*.ttf.gz
  cd $SAVEPWD
  #echo "              $ttfgzfiles "
  echo " "
@@ -627,7 +627,7 @@
  mkdir pfb
  cd pfb
 -moekaifiles=`/bin/ls ../../moekai*.tgz`
-+moekaifiles=`/bin/ls /usr/ports/distfiles/chitex/moekai*.tgz`
++moekaifiles=`/bin/ls ${DISTDIR}/chitex/moekai*.tgz`
  for tgzfile in $moekaifiles
  do
 -   gunzip -dc $tgzfile|tar xvf -
@@ -646,7 +646,7 @@
  done
  
 -nwdsungfiles=`/bin/ls ../../nwdsung*.tgz`
-+nwdsungfiles=`/bin/ls /usr/ports/distfiles/chitex/nwdsung*.tgz`
++nwdsungfiles=`/bin/ls ${DISTDIR}/chitex/nwdsung*.tgz`
  for tgzfile in $nwdsungfiles
  do
 -   gunzip -dc $tgzfile|tar xvf -
@@ -665,11 +665,11 @@
  
  #ngbfiles=`/bin/ls ../../nwdgkai.tgz;/bin/ls ../../nuwgsung.tgz`
 -ngbfiles="../../nwdgkai.tgz  ../../nuwgsung.tgz"
-+ngbfiles="/usr/ports/distfiles/chitex/nwdgkai.tgz /usr/ports/distfiles/chitex/nuwgsung.tgz"
++ngbfiles="${DISTDIR}/chitex/nwdgkai.tgz ${DISTDIR}/chitex/nuwgsung.tgz"
  for tgzfile in $ngbfiles
  do
 -   if test "$tgzfile" = "../../nuwgsung.tgz"; then
-+   if test "$tgzfile" = "/usr/ports/distfiles/chitex/nuwgsung.tgz"; then
++   if test "$tgzfile" = "${DISTDIR}/chitex/nuwgsung.tgz"; then
        ngbdir="nuwpstj_pfb"
     else
        ngbdir="ngkai00mp_pfb"
@@ -1029,6 +1029,17 @@
  #   /bin/rm -f $cmd
  done
  
+@@ -1351,8 +1358,8 @@
+ #cd $SAVEPWD
+ cd $bindir
+ chmod +x *
+-chmod +s chaddpfbname
+-chmod +s chadd
++chmod u+s chaddpfbname
++chmod u+s chadd
+ 
+ echo "       End of compiling some c files and copy to $bindir"
+ if test "$stopask" = "y"; then
 @@ -1370,31 +1377,31 @@
  
  ##### copy (update) *.tex files #######

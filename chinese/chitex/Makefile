@@ -7,6 +7,7 @@
 
 PORTNAME=	chitex
 PORTVERSION=	6.1.2p7.8
+PORTREVISION=	1
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://dongpo.math.ncu.edu.tw/tex-archive/local/chitex/chitex/unix/%SUBDIR%/ \
 		ftp://freebsd.sinica.edu.tw/pub/statue/chitex/%SUBDIR%/
@@ -36,6 +37,6 @@ do-extract:
 
 do-install:
 	@(cd ${WRKSRC} && \
-	  $(SH) chsetupbig5Linux )
+	  /usr/bin/env DISTDIR=${DISTDIR} $(SH) chsetupbig5Linux )
 
 .include <bsd.port.mk>
