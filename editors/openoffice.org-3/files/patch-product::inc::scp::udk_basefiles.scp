@@ -1,0 +1,18 @@
+--- ../product/inc/scp/udk_basefiles.scp.orig	Fri Jun  7 20:15:12 2002
++++ ../product/inc/scp/udk_basefiles.scp	Tue Jul 16 15:26:15 2002
+@@ -2,6 +2,7 @@
+ 
+ // Temporary solution/hack: at the moment libstdc++.so and libgcc_s.so are needed for unxlngi4 environment
+ // (setup is linked against it).
++#if ( defined ( LINUX ))
+ #if ( defined( _gcc3 ) && defined( C300 ) )
+ 
+ File gid_File_Lib_gcc
+@@ -42,6 +43,7 @@
+     Name        = STRING(libstdc++.so.3);
+     Styles      = (NETWORK,RELATIVE);
+ End
++#endif
+ #endif
+ #endif
+ 

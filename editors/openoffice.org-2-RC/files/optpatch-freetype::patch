@@ -1,0 +1,208 @@
+Index: files/patch-freetype::patch
+===================================================================
+RCS file: files/patch-freetype::patch
+diff -N files/patch-freetype::patch
+--- /dev/null	1 Jan 1970 00:00:00 -0000
++++ files/patch-freetype::patch	4 Aug 2002 15:27:42 -0000
+@@ -0,0 +1,201 @@
++diff -ur ../freetype/freetype-2.0.5.patch oo641d_patched/freetype/freetype-2.0.5.patch
++--- ../freetype/freetype-2.0.5.patch	Fri Apr  5 21:07:34 2002
+++++ ../freetype/freetype-2.0.5.patch	Sat Mar  9 18:04:17 2002
++@@ -1,118 +1,79 @@
++-*** misc/freetype-2.0.5/builds/compiler/visualc.mk	Thu Dec 14 00:44:33 2000
++---- misc/build/freetype-2.0.5/builds/compiler/visualc.mk	Wed Nov  7 16:11:47 2001
++-***************
++-*** 63,69 ****
++-  #   ANSI compliance.
++-  #
++-  ifndef CFLAGS
++-!   CFLAGS := /nologo /c /Ox /G5 /W3 /WX
++-  endif
++-  
++-  # ANSIFLAGS: Put there the flags used to make your compiler ANSI-compliant.
++---- 63,69 ----
++-  #   ANSI compliance.
++-  #
++-  ifndef CFLAGS
++-!   CFLAGS := /nologo /c /Ox /G5 /W3 /WX /MT /Gd -D_CTYPE_DISABLE_MACROS
++-  endif
++-  
++-  # ANSIFLAGS: Put there the flags used to make your compiler ANSI-compliant.
++-*** misc/freetype-2.0.5/builds/unix/ltmain.sh	Thu Jun  7 19:36:17 2001
++---- misc/build/freetype-2.0.5/builds/unix/ltmain.sh	Wed Nov  7 16:11:47 2001
++-***************
++-*** 631,637 ****
++-      if test "$build_old_libs" = yes; then
++-        if test "$pic_mode" != yes; then
++-  	# Don't build PIC code
++-! 	command="$base_compile $srcfile"
++-        else
++-  	# All platforms use -DPIC, to notify preprocessed assembler code.
++-  	command="$base_compile $srcfile $pic_flag -DPIC"
++---- 631,637 ----
++-      if test "$build_old_libs" = yes; then
++-        if test "$pic_mode" != yes; then
++-  	# Don't build PIC code
++-! 	command="$base_compile $srcfile -DPIC $pic_flag"
++-        else
++-  	# All platforms use -DPIC, to notify preprocessed assembler code.
++-  	command="$base_compile $srcfile $pic_flag -DPIC"
++-*** misc/freetype-2.0.5/include/freetype/config/ftmodule.h	Mon Jan  1 18:25:21 2001
++---- misc/build/freetype-2.0.5/include/freetype/config/ftmodule.h	Wed Nov  7 16:11:47 2001
++-***************
++-*** 1,7 ****
++---- 1,9 ----
++-  FT_USE_MODULE(autohint_module_class)
++-  FT_USE_MODULE(cff_driver_class)
++-  FT_USE_MODULE(t1cid_driver_class)
++-+ /*
++-  FT_USE_MODULE(pcf_driver_class)
++-+ */
++-  FT_USE_MODULE(psaux_module_class)
++-  FT_USE_MODULE(psnames_module_class)
++-  FT_USE_MODULE(ft_raster1_renderer_class)
++-***************
++-*** 9,12 ****
++---- 11,16 ----
++-  FT_USE_MODULE(ft_smooth_renderer_class)
++-  FT_USE_MODULE(tt_driver_class)
++-  FT_USE_MODULE(t1_driver_class)
++-+ /*
++-  FT_USE_MODULE(winfnt_driver_class)
++-+ */
++-*** misc/freetype-2.0.5/include/freetype/config/ftoption.h	Tue Aug 21 10:50:45 2001
++---- misc/build/freetype-2.0.5/include/freetype/config/ftoption.h	Wed Nov  7 16:11:47 2001
++-***************
++-*** 70,76 ****
++---- 70,79 ----
++-    /*   All convenience functions are declared as such in their             */
++-    /*   documentation.                                                      */
++-    /*                                                                       */
++-+ /*
++-  #undef FT_CONFIG_OPTION_NO_CONVENIENCE_FUNCS
++-+ */
++-+ #define FT_CONFIG_OPTION_NO_CONVENIENCE_FUNCS
++-  
++-  
++-    /*************************************************************************/
++-***************
++-*** 108,116 ****
++-    /*   use a vector `plotter' format that isn't supported when this        */
++-    /*   macro is undefined.                                                 */
++-    /*                                                                       */
++-  #define FT_CONFIG_OPTION_ALTERNATE_GLYPH_FORMATS
++-  
++-- 
++-    /*************************************************************************/
++-    /*                                                                       */
++-    /* Glyph Postscript Names handling                                       */
++---- 111,121 ----
++-    /*   use a vector `plotter' format that isn't supported when this        */
++-    /*   macro is undefined.                                                 */
++-    /*                                                                       */
++-+ /*
++-  #define FT_CONFIG_OPTION_ALTERNATE_GLYPH_FORMATS
++-+ */
++-+ #undef FT_CONFIG_OPTION_ALTERNATE_GLYPH_FORMATS
++-  
++-    /*************************************************************************/
++-    /*                                                                       */
++-    /* Glyph Postscript Names handling                                       */
++-*** misc/build/freetype-2.0.5/builds/unix/ltmain.sh.orig	Mon Jan  7 14:21:35 2002
++---- misc/build/freetype-2.0.5/builds/unix/ltmain.sh	Mon Jan  7 14:21:40 2002
++-***************
++-*** 2251,2257 ****
++-  	  ;;
++-  
++-  	irix)
++-! 	  major=`expr $current - $age + 1`
++-  	  verstring="sgi$major.$revision"
++-  
++-  	  # Add in all the interfaces that we are compatible with.
++---- 2251,2257 ----
++-  	  ;;
++-  
++-  	irix)
++-! 	  major=`expr $current - $age`
++-  	  verstring="sgi$major.$revision"
++-  
++-  	  # Add in all the interfaces that we are compatible with.
+++diff -ur misc/freetype-2.0.5/builds/compiler/visualc.mk misc/build/freetype-2.0.5/builds/compiler/visualc.mk
+++--- misc/freetype-2.0.5/builds/compiler/visualc.mk	Thu Dec 27 14:47:57 2001
++++++ misc/build/freetype-2.0.5/builds/compiler/visualc.mk	Thu Dec 27 14:49:17 2001
+++@@ -63,7 +63,7 @@
+++ #   ANSI compliance.
+++ #
+++ ifndef CFLAGS
+++-  CFLAGS := /nologo /c /Ox /G5 /W3 /WX
++++  CFLAGS := /nologo /c /Ox /G5 /W3 /WX /MT /Gd -D_CTYPE_DISABLE_MACROS
+++ endif
+++ 
+++ # ANSIFLAGS: Put there the flags used to make your compiler ANSI-compliant.
+++diff -ur misc/freetype-2.0.5/builds/unix/ltmain.sh misc/build/freetype-2.0.5/builds/unix/ltmain.sh
+++--- misc/freetype-2.0.5/builds/unix/ltmain.sh	Thu Dec 27 14:47:56 2001
++++++ misc/build/freetype-2.0.5/builds/unix/ltmain.sh	Thu Dec 27 14:49:17 2001
+++@@ -631,7 +631,7 @@
+++     if test "$build_old_libs" = yes; then
+++       if test "$pic_mode" != yes; then
+++ 	# Don't build PIC code
+++-	command="$base_compile $srcfile"
++++	command="$base_compile $srcfile -DPIC $pic_flag"
+++       else
+++ 	# All platforms use -DPIC, to notify preprocessed assembler code.
+++ 	command="$base_compile $srcfile $pic_flag -DPIC"
+++diff -ur misc/freetype-2.0.5/include/freetype/config/ftmodule.h misc/build/freetype-2.0.5/include/freetype/config/ftmodule.h
+++--- misc/freetype-2.0.5/include/freetype/config/ftmodule.h	Thu Dec 27 14:47:57 2001
++++++ misc/build/freetype-2.0.5/include/freetype/config/ftmodule.h	Thu Dec 27 14:49:17 2001
+++@@ -1,7 +1,9 @@
+++ FT_USE_MODULE(autohint_module_class)
+++ FT_USE_MODULE(cff_driver_class)
+++ FT_USE_MODULE(t1cid_driver_class)
++++/*
+++ FT_USE_MODULE(pcf_driver_class)
++++*/
+++ FT_USE_MODULE(psaux_module_class)
+++ FT_USE_MODULE(psnames_module_class)
+++ FT_USE_MODULE(ft_raster1_renderer_class)
+++@@ -9,4 +11,6 @@
+++ FT_USE_MODULE(ft_smooth_renderer_class)
+++ FT_USE_MODULE(tt_driver_class)
+++ FT_USE_MODULE(t1_driver_class)
++++/*
+++ FT_USE_MODULE(winfnt_driver_class)
++++*/
+++diff -ur misc/freetype-2.0.5/include/freetype/config/ftoption.h misc/build/freetype-2.0.5/include/freetype/config/ftoption.h
+++--- misc/freetype-2.0.5/include/freetype/config/ftoption.h	Thu Dec 27 14:47:57 2001
++++++ misc/build/freetype-2.0.5/include/freetype/config/ftoption.h	Thu Dec 27 14:51:15 2001
+++@@ -70,7 +70,10 @@
+++   /*   All convenience functions are declared as such in their             */
+++   /*   documentation.                                                      */
+++   /*                                                                       */
++++/*
+++ #undef FT_CONFIG_OPTION_NO_CONVENIENCE_FUNCS
++++*/
++++#define FT_CONFIG_OPTION_NO_CONVENIENCE_FUNCS
+++ 
+++ 
+++   /*************************************************************************/
+++@@ -108,8 +111,10 @@
+++   /*   use a vector `plotter' format that isn't supported when this        */
+++   /*   macro is undefined.                                                 */
+++   /*                                                                       */
++++/*
+++ #define FT_CONFIG_OPTION_ALTERNATE_GLYPH_FORMATS
+++-
++++*/
++++#undef FT_CONFIG_OPTION_ALTERNATE_GLYPH_FORMATS
+++ 
+++   /*************************************************************************/
+++   /*                                                                       */
+++@@ -338,7 +343,7 @@
+++   /* By undefining this, you will only compile the code necessary to load  */
+++   /* TrueType glyphs without hinting.                                      */
+++   /*                                                                       */
+++-#undef  TT_CONFIG_OPTION_BYTECODE_INTERPRETER
++++#define  TT_CONFIG_OPTION_BYTECODE_INTERPRETER
+++ 
+++ 
+++   /*************************************************************************/

@@ -1,0 +1,11 @@
+--- ../vcl/util/makefile.pmk.orig	Mon Aug  5 01:39:41 2002
++++ ../vcl/util/makefile.pmk	Mon Aug  5 01:40:03 2002
+@@ -64,7 +64,7 @@
+ PROJECTPCHSOURCE=$(PRJ)$/util$/vclpch
+ PDBTARGET=vcl
+ 
+-.IF "$(OS)" != "MACOSX"
++.IF "$(OS)" != "MACOSX" && "$(OS)" != "FREEBSD"
+ .IF "$(remote)" != ""
+ USE_BUILTIN_RASTERIZER=true
+ .ENDIF
