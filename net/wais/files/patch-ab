@@ -1,72 +1,81 @@
-*** Makefile.ORIG	Tue Mar 15 20:30:00 1994
---- Makefile	Sat Mar 18 23:28:59 1995
+*** Makefile.old	Wed May  3 08:55:29 1995
+--- Makefile	Tue Nov 12 21:25:49 1996
 ***************
-*** 15,21 ****
-  # 
-  # Revision 1.5  92/02/27  10:07:24  jonathan
-  # got rid of automatic setting of TOP.  Used Simon's approach instead.
-!  
-  # Revision 1.4  92/02/13  12:27:53  jonathan
-  # Removed references to seeker.
-  # 
---- 15,21 ----
-  # 
-  # Revision 1.5  92/02/27  10:07:24  jonathan
-  # got rid of automatic setting of TOP.  Used Simon's approach instead.
-! #
-  # Revision 1.4  92/02/13  12:27:53  jonathan
-  # Removed references to seeker.
-  # 
+*** 97,109 ****
+  default: 
+  	@echo "You have to specify which system to build for."
+  	@echo "Say 'make <system>', where <system> is one of the following:"
+! 	@echo "aix, bsdi, dynix, hpux, irix-cc, irix-gcc, linux, osf,"
+  	@echo "solaris, sunos, ultrix-cc or ultrix-gcc"
+  
+  all:
+  	@echo "You have to specify which system to build for."
+  	@echo "Say 'make <system>', where <system> is one of the following:"
+! 	@echo "aix, bsdi, dynix, hpux, irix-cc, irix-gcc, linux, osf,"
+  	@echo "solaris, sunos, ultrix-cc or ultrix-gcc"
+  
+  aix::
+--- 97,109 ----
+  default: 
+  	@echo "You have to specify which system to build for."
+  	@echo "Say 'make <system>', where <system> is one of the following:"
+! 	@echo "aix, bsdi, dynix, freebsd, hpux, irix-cc, irix-gcc, linux, osf,"
+  	@echo "solaris, sunos, ultrix-cc or ultrix-gcc"
+  
+  all:
+  	@echo "You have to specify which system to build for."
+  	@echo "Say 'make <system>', where <system> is one of the following:"
+! 	@echo "aix, bsdi, dynix, freebsd, hpux, irix-cc, irix-gcc, linux, osf,"
+  	@echo "solaris, sunos, ultrix-cc or ultrix-gcc"
+  
+  aix::
 ***************
-*** 118,124 ****
-  # Use this version of CFLAGS for Linux with gcc
-  # CFLAGS = -O2 -ansi -m486 -fwritable-strings -I$(SUPDIR) -DTELL_USER -DUSG -DSECURE_SERVER -DRELEVANCE_FEEDBACK -DBOOLEANS -DPARTIALWORD -DLITERAL -DSOUND -DBIBDB -DLINUX
+*** 118,123 ****
+--- 118,128 ----
   
-! CFLAGS = -ansi -I$(SUPDIR) -DTELL_USER -DUSG -DSECURE_SERVER -DRELEVANCE_FEEDBACK -DBOOLEANS -DPARTIALWORD -DLITERAL -DSOUND -DBIBDB
+  dynix::
+  	$(MAKE) -f Makefile.dynix TOP=$(TOP)
++ 	touch $(TOP)/$(RELEASE)
++ 	@echo "Welcome to freeWAIS version $(VERSION)"
++ 
++ freebsd::
++ 	$(MAKE) -f Makefile.freebsd TOP=$(TOP)
+  	touch $(TOP)/$(RELEASE)
+  	@echo "Welcome to freeWAIS version $(VERSION)"
   
-  # Solaris should use
-  #LIB = -ltcpip -lsocket -lnsl
---- 118,124 ----
-  # Use this version of CFLAGS for Linux with gcc
-  # CFLAGS = -O2 -ansi -m486 -fwritable-strings -I$(SUPDIR) -DTELL_USER -DUSG -DSECURE_SERVER -DRELEVANCE_FEEDBACK -DBOOLEANS -DPARTIALWORD -DLITERAL -DSOUND -DBIBDB -DLINUX
-  
-! CFLAGS = -ansi -I$(SUPDIR) -DTELL_USER -DUSG -DSECURE_SERVER -DRELEVANCE_FEEDBACK -DBOOLEANS -DPARTIALWORD -DLITERAL -DSOUND -DBIBDB -D__bsdi__
-  
-  # Solaris should use
-  #LIB = -ltcpip -lsocket -lnsl
+*** Makefile.freebsd.orig	Wed Nov 13 00:13:50 1996
+--- Makefile.freebsd	Wed Nov 13 00:24:30 1996
 ***************
-*** 133,139 ****
-  #Solaris machines don't use -k
-  MFLAGS = -k
+*** 149,155 ****
+  # -DSOLARIS for SunOS 5.2 (Solaris 2.2) machines.
+  #
+  # Use this version of CFLAGS for BSDI
+! CFLAGS = -I$(INCLUDE) -DBSD43 -DTELL_USER -DUSG -DSECURE_SERVER -DRELEVANCE_FEEDBACK -DBOOLEANS -DPARTIALWORD -DLITERAL -DSOUND -DBIBDB
   
-! MAKE = make $(MFLAGS) 
+  #
+  # Flag definitions
+--- 149,155 ----
+  # -DSOLARIS for SunOS 5.2 (Solaris 2.2) machines.
+  #
+  # Use this version of CFLAGS for BSDI
+! CFLAGS = -I$(INCLUDE) -D__bsdi__ -DBSD43 -DTELL_USER -DUSG -DSECURE_SERVER -DRELEVANCE_FEEDBACK -DBOOLEANS -DPARTIALWORD -DLITERAL -DSOUND -DBIBDB
   
-  #default: config.h lib ir ui bin doc x tags
-  default: config.h lib ir ui bin x check
---- 133,141 ----
-  #Solaris machines don't use -k
-  MFLAGS = -k
+  #
+  # Flag definitions
+//***************
+//*** 216,222 ****
+  	cd $(SRCDIR)/server; $(MAKE) CC=$(CC) CFLAGS="$(CFLAGS)" \
+  	INCLUDE="$(INCLUDE)" RANLIB=$(RANLIB) TOP=$(TOP) LIBS="$(LIBS)"
   
-! MAKE = gmake $(MFLAGS) 
-! 
-! all: config.h lib ir ui bin
+! clients: ui waissearch waisq swais # xwais
   
-  #default: config.h lib ir ui bin doc x tags
-  default: config.h lib ir ui bin x check
-***************
-*** 169,175 ****
-  # you may have to edit the CFLAGS in the Makefile yourself.
+  waissearch:: 
+  	cd $(CLIENTDIR)/waissearch; $(MAKE) CC=$(CC) CFLAGS="$(CFLAGS)" \
+--- 216,222 ----
+  	cd $(SRCDIR)/server; $(MAKE) CC=$(CC) CFLAGS="$(CFLAGS)" \
+  	INCLUDE="$(INCLUDE)" RANLIB=$(RANLIB) TOP=$(TOP) LIBS="$(LIBS)"
   
-  x::
-! 	cd x; xmkmf; make depend; make
-  #	cd x; (env TOP=$(TOP) CC=$(CC) CFLAGS="$(CFLAGS)" MAKE="$(MAKE)" ./makex.sh)
+! clients: ui waissearch waisq swais xwais
   
-  bin::
---- 171,177 ----
-  # you may have to edit the CFLAGS in the Makefile yourself.
-  
-  x::
-! 	cd x; xmkmf; ${MAKE} depend; ${MAKE}
-  #	cd x; (env TOP=$(TOP) CC=$(CC) CFLAGS="$(CFLAGS)" MAKE="$(MAKE)" ./makex.sh)
-  
-  bin::
+  waissearch:: 
+  	cd $(CLIENTDIR)/waissearch; $(MAKE) CC=$(CC) CFLAGS="$(CFLAGS)" \
