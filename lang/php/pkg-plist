@@ -1,0 +1,5 @@
+bin/php
+etc/php3.ini-dist
+%%PHPDOCDIR%%/CODING_STANDARDS
+%%PHPDOCDIR%%/LICENSE
+@dirrm %%PHPDOCDIR%%
