@@ -1,6 +1,15 @@
---- configure.in.orig	Fri Dec  1 02:14:22 2000
-+++ configure.in	Tue Dec  5 02:43:13 2000
-@@ -471,10 +471,10 @@
+--- configure.in.orig	Tue Feb 13 02:19:24 2001
++++ configure.in	Sat Feb 17 05:17:02 2001
+@@ -65,7 +65,7 @@
+ #
+ AC_ENABLE_SHARED(no)
+ AC_ENABLE_STATIC(yes)
+-AC_LIBLTDL_CONVENIENCE
++AC_LIBLTDL_INSTALLABLE
+ # Substitute INCLTDL and LIBLTDL in the Makefiles
+ AC_SUBST(INCLTDL)
+ AC_SUBST(LIBLTDL)
+@@ -487,10 +487,10 @@
  LIB_THREAD=''
  if test "$with_threads" != 'no'
  then
@@ -14,3 +23,35 @@
    LIBS="$LIB_THREAD $LIBS"
    CPPFLAGS="$DEF_THREAD $CPPFLAGS"
  fi
+@@ -1021,6 +1021,22 @@
+     AC_MSG_RESULT()
+     failed=0;
+     passed=0;
++
++    OLD_LDFLAGS="$LDFLAGS"
++    OLD_CPPFLAGS="$CPPFLAGS"
++    if test -d "$builddir/libxml/include"
++    then
++       :
++    else
++       xml_config=''
++       AC_CHECK_PROGS(xml_config,xml2-config,)dnl
++       if test -n "$xml_config"
++       then
++          LDFLAGS=-L`$xml_config --prefix`/lib" $LDFLAGS" 2> /dev/null
++          CPPFLAGS=`$xml_config --cflags`" $CPPFLAGS" 2> /dev/null
++       fi
++    fi
++
+     AC_CHECK_HEADER(libxml/parser.h,passed=`expr $passed + 1`,failed=`expr $failed + 1`)
+     AC_CHECK_LIB(xml2,xmlParseExternalEntity,passed=`expr $passed + 1`,failed=`expr $failed + 1`,)
+     AC_MSG_CHECKING(if XML package is complete)
+@@ -1030,6 +1046,8 @@
+     then
+ 	AC_MSG_RESULT(no -- some components failed test)
+         have_xml='no (failed tests)'
++        CPPFLAGS="$OLD_CPPFLAGS"
++        LDFLAGS="$OLD_LDFLAGS"
+     else
+ 	LIB_XML='-lxml2'
+ 	LIBS="$LIB_XML $LIBS"
