@@ -21,6 +21,10 @@ RESTRICTED=	"no commercial use"
 
 WRKSRC=		${WRKDIR}/JSDK2.0
 
+.if defined(BATCH) || defined(PACKAGE_BUILDING)
+IGNORE=		"Should be fetched manually"
+.endif
+
 do-fetch:
 	@if [ ! -f ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ]; then \
 		${ECHO} "=========================================================="; \
