@@ -57,11 +57,13 @@ checkout-files:
 post-patch: patch-makefile patch-conf-file
 
 patch-makefile:
-	@${PERL} -pi.fbsd -e 's|(install)|$$1 -c| if (!/:/);' \
+	@${PERL} -pi.fbsd \
+		-e 's|(install)|$$1 -c| if (!/:/);s|CFLAGS=|CFLAGS+=|' \
 		${WRKSRC}/Makefile
 
 patch-conf-file:
-	@${PERL} -pi.fbsd -e 's|^|#| if (!/^#|DEFAULT|MAGIC/);s|/usr/ucb:||;' \
+	@${PERL} -pi.fbsd \
+		-e 's|^|#| if (!/^#|DEFAULT|MAGIC/);s|/usr/ucb:||' \
 		${WRKSRC}/${CONF_FILE}
 
 # Post-install
