@@ -15,7 +15,7 @@
  #if defined(sys5) || defined(BSDI)
  extern char *crypt P__((CONST char *, CONST char *));
  #else
-+#if ! defined(__FreeBSD__)
++#if ! (defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__))
  extern char *crypt P__((u_char *, u_char *));
  #endif
 +#endif
