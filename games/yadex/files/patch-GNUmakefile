@@ -1,23 +1,45 @@
---- GNUmakefile.orig	Tue Dec 12 16:49:00 2000
-+++ GNUmakefile	Sun Jun 17 22:43:27 2001
-@@ -22,7 +22,10 @@
- 
- # Where you want "make install" to put things.
- # Typical values : "/usr", "/usr/local" and "/opt".
--PREFIX = /usr/local
-+PREFIX?= /usr/local
-+
-+# Make a PREFIX def available to the source
-+DEFINES += -DPREFIX=\"$(PREFIX)\"
- 
- # Which OS ?
- OS := $(shell uname -s | tr A-Z a-z)
-@@ -352,7 +355,7 @@
- else
-   INST_CFGDIR = $(PREFIX)/etc/yadex/$(VERSION)
+--- GNUmakefile.orig	Sun Dec 28 23:23:56 2003
++++ GNUmakefile	Mon Mar 21 16:31:11 2005
+@@ -67,8 +67,8 @@
+     X11LIBDIR     = /usr/openwin/lib
+     X11INCLUDEDIR = /usr/openwin/include
+   else
+-    X11LIBDIR     = /usr/X11R6/lib
+-    X11INCLUDEDIR = /usr/X11R6/include
++    X11LIBDIR     = $(X11BASE)/lib
++    X11INCLUDEDIR = $(X11BASE)/include
+   endif
  endif
--INST_YGDDIR = $(PREFIX)/share/games/yadex/$(VERSION)
-+INST_YGDDIR = $(PREFIX)/share/yadex/$(VERSION)
- ifdef FHS_MAN
-   INST_MANDIR = $(PREFIX)/share/man/man6
- else
+ 
+@@ -79,13 +79,13 @@
+ #CXX =
+ 
+ # Options used when compiling Atclib.
+-CFLAGS = -O
++#CFLAGS = -O
+ 
+ # Options used when compiling and linking Yadex.
+ # ld is invoked through the C++ compiler so
+ # LDFLAGS should not contain options that mean
+ # something to the C++ compiler.
+-CXXFLAGS = -O
++#CXXFLAGS = -O
+ #CXXFLAGS += -DWHITE_BACKGROUND
+ #LDFLAGS  =
+ 
+@@ -395,12 +395,10 @@
+ 	@scripts/mkinstalldirs $(MANDIR)
+ 	@scripts/mkinstalldirs $(MANDIR)/man6
+ 	@scripts/mkinstalldirs $(SHAREDIR)
+-	$(OBJDIR)/install -m 755 $(OBJDIR)/yadex $(BINDIR)/yadex-$(VERSION)
+ 	rm -f $(BINDIR)/yadex
+-	ln -s yadex-$(VERSION) $(BINDIR)/yadex
+-	$(OBJDIR)/install -m 644 doc/yadex.6 $(MANDIR)/man6/yadex-$(VERSION).6
+-	rm -f $(MANDIR)/man6/yadex.6
+-	ln -s yadex-$(VERSION).6 $(MANDIR)/man6/yadex.6
++	$(OBJDIR)/install -m 755 $(OBJDIR)/yadex $(BINDIR)/yadex
++	rm -f $(MANDIR)/man6/yadex.6*
++	$(OBJDIR)/install -m 644 doc/yadex.6 $(MANDIR)/man6/yadex.6
+ 	$(OBJDIR)/install -m 644 -d $(SHAREDIR) $(YGD)
+ 	$(OBJDIR)/install -m 644 -d $(ETCDIR) yadex.cfg
+ 	@echo "---------------------------------------------------------------"

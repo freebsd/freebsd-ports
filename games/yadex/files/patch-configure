@@ -1,0 +1,70 @@
+--- configure.orig	Mon Mar 21 16:22:56 2005
++++ configure	Mon Mar 21 16:25:54 2005
+@@ -24,15 +24,12 @@
+ APPNAME=yadex
+ VERSION=`cat VERSION`
+ 
+-CC=
+-CXX=
+ HAVE_GETTIMEOFDAY=
+ HAVE_NANOSLEEP=
+ HAVE_SNPRINTF=
+ HAVE_USLEEP=
+ INTERFACE=x11				# "bgi" or "x11"
+ PLATFORM=unix				# "dos" or "unix"
+-PREFIX=/usr/local
+ 
+ 
+ #
+@@ -400,44 +397,14 @@
+ mkdir -p $BUILDDIR
+ 
+ #
+-#	FHS paths
++#	FreeBSD hier(7) paths
+ #
+-if expr "$PREFIX" : '//*usr/*$' >/dev/null
+-then
+-  BINDIR=/usr/bin		# FHS-ly correct is /usr/games
+-  ETCDIR=/etc/$APPNAME/%v
+-  ETCDIRNV=/etc/$APPNAME
+-  MANDIR=/usr/share/man
+-  SHAREDIR=/usr/share/games/$APPNAME/%v
+-  SHAREDIRNV=/usr/share/games/$APPNAME
+-elif expr "$PREFIX" : '//*usr//*local/*$' >/dev/null
+-then
+-  BINDIR=/usr/local/bin		# FHS-ly correct is /usr/local/games
+-  ETCDIR=/etc/$APPNAME/%v
+-  ETCDIRNV=/etc/$APPNAME
+-  MANDIR=/usr/local/man
+-  SHAREDIR=/usr/local/share/games/$APPNAME/%v
+-  SHAREDIRNV=/usr/local/share/games/$APPNAME
+-elif expr "$PREFIX" : '//*opt/*$' >/dev/null
+-then
+-  echo '/opt ? Surely you mean /opt/something, Mr. Feynman !' 1>&2
+-  exit 1
+-elif expr "$PREFIX" : '//*opt//*[^/]' >/dev/null
+-then
+-  BINDIR=$PREFIX/bin
+-  ETCDIR=/etc/opt/`expr "$PREFIX" : '//*opt//*\(.*\)'`
+-  ETCDIRNV=
+-  MANDIR=$PREFIX/man
+-  SHAREDIR=$PREFIX/share
+-  SHAREDIRNV=
+-else					# Probably /home/joe/*
+-  BINDIR=$PREFIX/bin
+-  ETCDIR=$PREFIX/etc
+-  ETCDIRNV=
+-  MANDIR=$PREFIX/man
+-  SHAREDIR=$PREFIX/share
+-  SHAREDIRNV=
+-fi
++BINDIR=$PREFIX/bin
++ETCDIR=$PREFIX/etc
++ETCDIRNV=
++MANDIR=$PREFIX/man
++SHAREDIR=$PREFIX/share/$APPNAME
++SHAREDIRNV=
+ 
+ #
+ #	Write Makefile.config
