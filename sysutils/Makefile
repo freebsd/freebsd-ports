@@ -146,6 +146,7 @@
     SUBDIR += gkleds2
     SUBDIR += gkrellflynn
     SUBDIR += gkrellm
+    SUBDIR += gkrellm-trayicons
     SUBDIR += gkrellm2
     SUBDIR += gkrellmouse
     SUBDIR += gkrellmwho
