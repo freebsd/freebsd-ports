@@ -189,7 +189,7 @@ CONFIGURE_ARGS+=	--without-sane
 .endif
 
 .if defined(WITH_PDF)
-LIB_DEPENDS+=	pdf.6:${PORTSDIR}/print/pdflib \
+LIB_DEPENDS+=	pdf.7:${PORTSDIR}/print/pdflib \
 		panda.0:${PORTSDIR}/print/panda
 CONFIGURE_ARGS+=	--with-libpdf --with-libpanda
 .else
