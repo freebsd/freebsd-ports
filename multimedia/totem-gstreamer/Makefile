@@ -11,8 +11,10 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A Gstreamer-based video player for the Gnome 2 desktop
 
 MASTERDIR=	${.CURDIR}/../totem
-WITH_GSTREAMER_OVERRIDE=	yes
 
+OPTIONS=
+
+WITH_GSTREAMER=	yes
 CONFLICTS=	totem-[0-9]*
 
 .include "${MASTERDIR}/Makefile"

@@ -34,10 +34,15 @@ share/gnome/help/totem/es/figures/totem_volume_maximum_button.png
 share/gnome/help/totem/es/figures/totem_volume_mute_button.png
 share/gnome/help/totem/es/legal.xml
 share/gnome/help/totem/es/totem.xml
+share/gnome/help/totem/ru/legal.xml
+share/gnome/help/totem/ru/totem.xml
+share/gnome/help/totem/ru/figures/totem_start_window.png
+share/gnome/help/totem/ru/figures/totem_screenshot.png
 share/gnome/mime-info/totem.keys
 share/gnome/omf/totem/totem-C.omf
 share/gnome/omf/totem/totem-de.omf
 share/gnome/omf/totem/totem-es.omf
+share/gnome/omf/totem/totem-ru.omf
 share/gnome/pixmaps/media-player-48.png
 share/gnome/pixmaps/vanity.png
 share/gnome/totem/filmholes-big-left.png
@@ -53,6 +58,7 @@ share/gnome/totem/properties.glade
 share/gnome/totem/rhythmbox-volume-max.png
 share/gnome/totem/rhythmbox-volume-zero.png
 share/gnome/totem/screenshot.glade
+share/gnome/totem/skip_to.glade
 share/gnome/totem/stock-tool-brightness-contrast-22.png
 share/gnome/totem/stock_media_next.png
 share/gnome/totem/stock_media_pause.png
@@ -87,6 +93,7 @@ share/locale/gu/LC_MESSAGES/totem.mo
 share/locale/he/LC_MESSAGES/totem.mo
 share/locale/hr/LC_MESSAGES/totem.mo
 share/locale/hu/LC_MESSAGES/totem.mo
+share/locale/id/LC_MESSAGES/totem.mo
 share/locale/is/LC_MESSAGES/totem.mo
 share/locale/it/LC_MESSAGES/totem.mo
 share/locale/ja/LC_MESSAGES/totem.mo
@@ -117,6 +124,8 @@ share/locale/zh_CN/LC_MESSAGES/totem.mo
 share/locale/zh_TW/LC_MESSAGES/totem.mo
 @dirrm share/gnome/totem
 @dirrm share/gnome/omf/totem
+@dirrm share/gnome/help/totem/ru/figures
+@dirrm share/gnome/help/totem/ru
 @dirrm share/gnome/help/totem/es/figures
 @dirrm share/gnome/help/totem/es
 @dirrm share/gnome/help/totem/de/figures
@@ -124,5 +133,7 @@ share/locale/zh_TW/LC_MESSAGES/totem.mo
 @dirrm share/gnome/help/totem/C/figures
 @dirrm share/gnome/help/totem/C
 @dirrm share/gnome/help/totem
+%%GSTREAMER%%@unexec rmdir lib/mozilla/plugins 2>/dev/null || /usr/bin/true
+%%GSTREAMER%%@unexec rmdir lib/mozilla 2>/dev/null || /usr/bin/true
 @exec update-desktop-database > /dev/null || /usr/bin/true
 @unexec update-desktop-database > /dev/null || /usr/bin/true
