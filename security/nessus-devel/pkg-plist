@@ -1,3 +1,4 @@
+etc/rc.d/nessusd.sh.sample
 bin/nessus
 bin/nessus-mkcert-client
 bin/nessus-mkrand
