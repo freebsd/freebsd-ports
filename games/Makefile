@@ -177,6 +177,7 @@
     SUBDIR += mahjong
     SUBDIR += mangband
     SUBDIR += marathon-evil
+    SUBDIR += marbles
     SUBDIR += merlin
     SUBDIR += mindfocus
     SUBDIR += mindguard

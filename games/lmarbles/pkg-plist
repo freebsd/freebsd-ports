@@ -1,0 +1,80 @@
+bin/marbles
+share/marbles/empty.prfs
+share/marbles/gfx/board.bmp
+share/marbles/gfx/f_red.bmp
+share/marbles/gfx/f_small.bmp
+share/marbles/gfx/f_white.bmp
+share/marbles/gfx/f_yellow.bmp
+share/marbles/gfx/figure.bmp
+share/marbles/gfx/lights.bmp
+share/marbles/gfx/logo.bmp
+share/marbles/gfx/m_frame.bmp
+share/marbles/gfx/m_sframe.bmp
+share/marbles/gfx/marbles.bmp
+share/marbles/gfx/metal/arrow_d.bmp
+share/marbles/gfx/metal/arrow_l.bmp
+share/marbles/gfx/metal/arrow_r.bmp
+share/marbles/gfx/metal/arrow_u.bmp
+share/marbles/gfx/metal/background.bmp
+share/marbles/gfx/metal/barrier_lr.bmp
+share/marbles/gfx/metal/barrier_ud.bmp
+share/marbles/gfx/metal/floor.bmp
+share/marbles/gfx/metal/teleport0.bmp
+share/marbles/gfx/metal/teleport1.bmp
+share/marbles/gfx/metal/teleport2.bmp
+share/marbles/gfx/metal/teleport3.bmp
+share/marbles/gfx/metal/wall.bmp
+share/marbles/gfx/metal/wall_crumble.bmp
+share/marbles/gfx/stone/arrow_d.bmp
+share/marbles/gfx/stone/arrow_l.bmp
+share/marbles/gfx/stone/arrow_r.bmp
+share/marbles/gfx/stone/arrow_u.bmp
+share/marbles/gfx/stone/background.bmp
+share/marbles/gfx/stone/barrier_lr.bmp
+share/marbles/gfx/stone/barrier_ud.bmp
+share/marbles/gfx/stone/floor.bmp
+share/marbles/gfx/stone/teleport0.bmp
+share/marbles/gfx/stone/teleport1.bmp
+share/marbles/gfx/stone/teleport2.bmp
+share/marbles/gfx/stone/teleport3.bmp
+share/marbles/gfx/stone/wall.bmp
+share/marbles/gfx/stone/wall_crumble.bmp
+share/marbles/gfx/tiny.sdlfnt
+share/marbles/gfx/title.bmp
+share/marbles/gfx/wood/arrow_d.bmp
+share/marbles/gfx/wood/arrow_l.bmp
+share/marbles/gfx/wood/arrow_r.bmp
+share/marbles/gfx/wood/arrow_u.bmp
+share/marbles/gfx/wood/background.bmp
+share/marbles/gfx/wood/barrier_lr.bmp
+share/marbles/gfx/wood/barrier_ud.bmp
+share/marbles/gfx/wood/floor.bmp
+share/marbles/gfx/wood/teleport0.bmp
+share/marbles/gfx/wood/teleport1.bmp
+share/marbles/gfx/wood/teleport2.bmp
+share/marbles/gfx/wood/teleport3.bmp
+share/marbles/gfx/wood/wall.bmp
+share/marbles/gfx/wood/wall_crumble.bmp
+share/marbles/levels/Original
+share/marbles/sound/alarm.wav
+share/marbles/sound/arrow.wav
+share/marbles/sound/click.wav
+share/marbles/sound/explode.wav
+share/marbles/sound/score.wav
+share/marbles/sound/select.wav
+share/marbles/sound/stop.wav
+share/marbles/sound/teleport.wav
+%%PORTDOCS%%share/doc/marbles/arrow.jpg
+%%PORTDOCS%%share/doc/marbles/arrow2.jpg
+%%PORTDOCS%%share/doc/marbles/crumble.jpg
+%%PORTDOCS%%share/doc/marbles/manual.html
+%%PORTDOCS%%share/doc/marbles/marbles.jpg
+%%PORTDOCS%%share/doc/marbles/teleport.jpg
+%%PORTDOCS%%@dirrm share/doc/marbles
+@dirrm share/marbles/gfx/metal
+@dirrm share/marbles/gfx/stone
+@dirrm share/marbles/gfx/wood
+@dirrm share/marbles/gfx
+@dirrm share/marbles/levels
+@dirrm share/marbles/sound
+@dirrm share/marbles
