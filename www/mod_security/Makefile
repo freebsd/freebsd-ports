@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_security
-PORTVERSION=	1.8
+PORTVERSION=	1.8.2
 CATEGORIES=	www security
 MASTER_SITES=	http://www.modsecurity.org/download/ \
 		${MASTER_SITE_SOURCEFORGE}
