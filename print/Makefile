@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.45 1997/06/11 06:22:39 andreas Exp $
+# $Id: Makefile,v 1.46 1997/07/27 03:33:23 chuckr Exp $
 #
 
     SUBDIR += a2ps
@@ -11,6 +11,7 @@
     SUBDIR += dvi2tty
     SUBDIR += dvi2xx
     SUBDIR += dvips
+    SUBDIR += dvips2ascii
     SUBDIR += dviselect
     SUBDIR += enscript
     SUBDIR += ghostscript
