@@ -5,7 +5,7 @@
  #define TRPGDELETEFILE(file) remove((file))
  
 +#  if defined(__FreeBSD__)
-+#    include <sys/inttypes.h>
++#    include <inttypes.h>
 +typedef int64_t  int64;
 +#  else
 +
