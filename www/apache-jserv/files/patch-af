@@ -16,7 +16,7 @@
 +			i += size;
 +		}
 +		stream.close();
-+                return new ByteArrayInputStream(data);;
++                return new ByteArrayInputStream(data);
              } else {
                  return null;
              }
