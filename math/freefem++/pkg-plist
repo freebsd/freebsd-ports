@@ -1,5 +1,6 @@
 bin/FreeFem++
 bin/FreeFem++-glx
+%%MPI%%bin/FreeFem++-mpi
 bin/FreeFem++-nw
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
@@ -101,10 +102,10 @@ bin/FreeFem++-nw
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/periodic4.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/plot.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/readmesh.edp
-%%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/refnoumf.edp
-%%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/refumf.edp
+%%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/ref.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/region.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/regtests.edp
+%%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/regtests.m4
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/saverestore.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/schwarz-gc.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/schwarz-no-overlap.edp
