@@ -6195,6 +6195,7 @@ squeak3		ports/lang/squeak3
 squid24		ports/www/squid24
 squidclients	ports/www/squidclients
 squidguard	ports/www/squidguard
+squidpurge	ports/www/squidpurge
 squidtimes	ports/www/squidtimes
 squirm		ports/www/squirm
 squishdot	ports/www/squishdot
