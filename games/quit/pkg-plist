@@ -1,0 +1,4 @@
+bin/quit
+share/doc/quit/README
+share/doc/quit/quit.txt
+@dirrm share/doc/quit
