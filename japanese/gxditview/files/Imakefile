@@ -1,0 +1,6 @@
+#define IHaveSubdirs
+
+SUBDIRS= src/xditview
+
+MakeSubdirs($(SUBDIRS))
+DependSubdirs($(SUBDIRS))
