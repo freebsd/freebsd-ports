@@ -335,7 +335,8 @@ foreach my $thisdir (@dirs) {
 print <<EOF;
 You're done! The new port $portname has been completely imported in
 the tree. Don't forget to add the creator's name and email address to
-the Contributors' List if they are not already there.
+the Contributors' List if they are not already there. To do this, edit
+doc/en_US.ISO8859-1/articles/contributors/contrib.additional.sgml.
 EOF
 
 sub warnx {
