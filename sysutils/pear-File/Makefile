@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	File
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 PORTEPOCH=	1
 CATEGORIES=	sysutils www pear
 
