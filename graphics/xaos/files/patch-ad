@@ -1,0 +1,77 @@
+--- src/util/catalog.c--	Thu Mar  5 03:19:12 1998
++++ src/util/catalog.c	Fri Jul  3 15:47:35 1998
+@@ -1,6 +1,13 @@
++#if defined(HAVE_SYS_PARAM_H)
++#include <sys/param.h>
++#endif
+ #ifndef _plan9_
+ #include <string.h>
++#if (!defined(BSD) || (BSD < 199506))
+ #include <malloc.h>
++#else
++#include <stdlib.h>
++#endif
+ #include <string.h>
+ #else
+ #include <u.h>
+--- src/util/png.c--	Thu Mar  5 03:19:12 1998
++++ src/util/png.c	Fri Jul  3 15:46:07 1998
+@@ -1,3 +1,6 @@
++#if defined(HAVE_SYS_PARAM_H)
++#include <sys/param.h>
++#endif
+ #ifndef _plan9_
+ #include <aconfig.h>
+ #ifdef USE_PNG
+@@ -5,7 +8,9 @@
+ #endif
+ #include <stdlib.h>
+ #include <stdio.h>
++#if (!defined(BSD) || (BSD < 199506))
+ #include <malloc.h>
++#endif
+ #include <errno.h>
+ #else
+ #include <u.h>
+--- src/util/timers.c--	Fri Jul  3 16:35:49 1998
++++ src/util/timers.c	Fri Jul  3 16:37:16 1998
+@@ -21,17 +21,26 @@
+  *
+  * All ugly architecture depended timing code is separated into this file..
+  */
++#if defined(HAVE_SYS_PARAM_H)
++#include <sys/param.h>
++#endif
+ #ifdef _plan9_
+ #include <u.h>
+ #include <stdio.h>
+ #include <libc.h>
+ #else
+ #include <aconfig.h>
++#if (!defined(BSD) || (BSD < 199506))
+ #include <malloc.h>
++#else
++#include <stdlib.h>
++#endif
+ #include <stdio.h>
+ #include <unistd.h>
+ #ifndef _MAC
++#if (!defined(BSD) || (BSD < 199506))
+ #include <malloc.h>
++#endif
+ #endif
+ #ifdef __BEOS__
+ #include <OS.h>
+--- src/util/xstdio.c--	Thu Mar  5 03:19:12 1998
++++ src/util/xstdio.c	Fri Jul  3 15:49:40 1998
+@@ -1,6 +1,9 @@
++#if defined(HAVE_SYS_PARAM_H)
++#include <sys/param.h>
++#endif
+ #ifndef _plan9_
+ #include <string.h>
+-#ifdef __EMX__
++#if (defined(__EMX__) || defined(BSD))
+ #include <sys/types.h>
+ #endif
+ #include <dirent.h>
