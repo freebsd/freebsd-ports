@@ -1,5 +1,39 @@
-*** Makefile.orig	Thu Mar  2 16:53:34 1995
---- Makefile	Fri Mar  3 07:37:29 1995
+*** Makefile.orig	Fri Mar  3 16:16:46 1995
+--- Makefile	Sun Mar  5 17:47:06 1995
+***************
+*** 11,17 ****
+  #  hpalib, hplow, hp3, dec, solaris, sparc, linux, freebsd, sgi, 
+  #  soundblaster, aix, next.
+  # gmake needed to handle this file in FreeBSD and NeXTStep
+! MACHINE = sparc
+  VERSION = 4.22
+  
+  # The name of your C compiler. For most machines this will be
+--- 11,17 ----
+  #  hpalib, hplow, hp3, dec, solaris, sparc, linux, freebsd, sgi, 
+  #  soundblaster, aix, next.
+  # gmake needed to handle this file in FreeBSD and NeXTStep
+! MACHINE = freebsd
+  VERSION = 4.22
+  
+  # The name of your C compiler. For most machines this will be
+***************
+*** 23,29 ****
+  # User interface type. Right now, this is Unix as there are no alternatives.
+  UI = Unix/./
+  
+! PREFIX=/users/algo/espie/pub
+  # Destination directory for tracker binaries and manpage.
+  #
+  # If you don't wish to use the 'make install' and 'make install.man'
+--- 23,29 ----
+  # User interface type. Right now, this is Unix as there are no alternatives.
+  UI = Unix/./
+  
+! PREFIX=/usr/local
+  # Destination directory for tracker binaries and manpage.
+  #
+  # If you don't wish to use the 'make install' and 'make install.man'
 ***************
 *** 32,38 ****
   MAN_DIR = $(PREFIX)/man
