@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	bash
-PORTVERSION=	2.05b.004
+PORTVERSION=	2.05b.007
 PORTREVISION?=	0
 CATEGORIES=	shells
 MASTER_SITES=	${MASTER_SITE_GNU} \
@@ -21,7 +21,8 @@ DISTFILES+=	bash-doc-${PORTVERSION:C/\....$//}.tar.gz
 PATCH_SITES=	ftp://ftp.cwru.edu/pub/bash/bash-2.05b-patches/ \
 		${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	obrien
-PATCHFILES=	bash205b-001 bash205b-002 bash205b-003 bash205b-004
+PATCHFILES=	bash205b-001 bash205b-002 bash205b-003 bash205b-004 \
+		bash205b-005 bash205b-006 bash205b-007
 
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	The GNU Bourne Again Shell
