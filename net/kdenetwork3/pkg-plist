@@ -13,9 +13,7 @@ bin/krfb_httpd
 bin/ksirc
 bin/ktalkd
 bin/ktalkdlg
-bin/lisa
 bin/mail.local
-bin/reslisa
 bin/rssclient
 bin/rssservice
 include/rss/article.h
@@ -63,16 +61,12 @@ lib/kde3/kcm_krfb.la
 lib/kde3/kcm_krfb.so
 lib/kde3/kcm_ktalkd.la
 lib/kde3/kcm_ktalkd.so
-lib/kde3/kcm_lanbrowser.la
-lib/kde3/kcm_lanbrowser.so
 lib/kde3/kded_kinetd.la
 lib/kde3/kded_kinetd.so
 lib/kde3/kdict_panelapplet.la
 lib/kde3/kdict_panelapplet.so
 lib/kde3/khtml_kget.la
 lib/kde3/khtml_kget.so
-lib/kde3/kio_lan.la
-lib/kde3/kio_lan.so
 lib/kde3/knewsticker_panelapplet.la
 lib/kde3/knewsticker_panelapplet.so
 lib/kde3/kopete_aim.la
@@ -158,9 +152,6 @@ share/applications/kde/kppplogview.desktop
 share/applications/kde/krdc.desktop
 share/applications/kde/krfb.desktop
 share/applications/kde/ksirc.desktop
-share/applnk/.hidden/kcmkiolan.desktop
-share/applnk/.hidden/kcmlisa.desktop
-share/applnk/.hidden/kcmreslisa.desktop
 share/applnk/.hidden/knewstickerstub.desktop
 share/apps/kconf_update/knewsticker.upd
 share/apps/kconf_update/knt-0.1-0.2.pl
@@ -240,8 +231,6 @@ share/apps/kicker/applets/knewsticker.desktop
 share/apps/kicker/applets/kpfapplet.desktop
 share/apps/kinetd/eventsrc
 share/apps/knewsticker/eventsrc
-share/apps/konqsidebartng/virtual_folders/services/lisa.desktop
-share/apps/konqueror/dirtree/remote/lan.desktop
 share/apps/kopete/eventsrc
 share/apps/kopete/icons/crystalsvg/128x128/apps/aim_protocol.png
 share/apps/kopete/icons/crystalsvg/128x128/apps/icq_protocol.png
@@ -1742,7 +1731,6 @@ share/apps/ksirc/relnotes
 share/apps/ksirc/servers.ini
 share/apps/ksirc/servers.txt
 share/apps/ksirc/sirc.help.gz
-share/apps/lisa/README
 share/config.kcfg/historyconfig.kcfg
 share/config/ksircrc
 share/config/ktalkdrc
@@ -1898,9 +1886,6 @@ share/doc/HTML/en/ktalkd/index.docbook
 share/doc/HTML/en/kwifimanager/common
 share/doc/HTML/en/kwifimanager/index.cache.bz2
 share/doc/HTML/en/kwifimanager/index.docbook
-share/doc/HTML/en/lisa/common
-share/doc/HTML/en/lisa/index.cache.bz2
-share/doc/HTML/en/lisa/index.docbook
 share/icons/crystalsvg/128x128/apps/kdict.png
 share/icons/crystalsvg/128x128/apps/kopete.png
 share/icons/crystalsvg/128x128/apps/kppp.png
@@ -1994,9 +1979,7 @@ share/services/kopete_translator.desktop
 share/services/kopete_webpresence.desktop
 share/services/kopete_yahoo.desktop
 share/services/kpfpropertiesdialogplugin.desktop
-share/services/lan.protocol
 share/services/rdp.protocol
-share/services/rlan.protocol
 share/services/rssservice.desktop
 share/services/vnc.protocol
 share/servicetypes/kinetdmodule.desktop
@@ -2022,7 +2005,6 @@ share/sounds/ktalkd.wav
 @dirrm share/icons/hicolor/16x16/apps
 @dirrm share/icons/hicolor/16x16
 @dirrm share/icons/crystalsvg/22x22/apps
-@dirrm share/doc/HTML/en/lisa
 @dirrm share/doc/HTML/en/kwifimanager
 @dirrm share/doc/HTML/en/ktalkd
 @dirrm share/doc/HTML/en/ksirc
@@ -2042,7 +2024,6 @@ share/sounds/ktalkd.wav
 @dirrm share/doc/HTML/en/kcontrol/kcmtalkd
 @dirrm share/doc/HTML/en/kcontrol
 @dirrm share/config.kcfg
-@dirrm share/apps/lisa
 @dirrm share/apps/ksirc/pics/emoticons
 @dirrm share/apps/ksirc/pics
 @dirrm share/apps/ksirc/icons/crystalsvg/64x64/apps
@@ -2292,12 +2273,6 @@ share/sounds/ktalkd.wav
 @dirrm share/apps/kopete/icons/crystalsvg
 @dirrm share/apps/kopete/icons
 @dirrm share/apps/kopete
-@dirrm share/apps/konqueror/dirtree/remote
-@dirrm share/apps/konqueror/dirtree
-@dirrm share/apps/konqueror
-@dirrm share/apps/konqsidebartng/virtual_folders/services
-@dirrm share/apps/konqsidebartng/virtual_folders
-@dirrm share/apps/konqsidebartng
 @dirrm share/apps/knewsticker
 @dirrm share/apps/kinetd
 @dirrm share/apps/kicker/applets

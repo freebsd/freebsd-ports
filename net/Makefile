@@ -260,6 +260,7 @@
     SUBDIR += lam
     SUBDIR += lam7
     SUBDIR += lambdamoo
+    SUBDIR += lanbrowsing
     SUBDIR += latd
     SUBDIR += ldap2dns
     SUBDIR += ldapbrowser
