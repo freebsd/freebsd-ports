@@ -179,7 +179,6 @@ bin/communicator-%%BROWSER_VER%%
 %%NSUBDIR%%/spell/pen4s324.dat
 %%NSUBDIR%%/vreg
 @dirrm %%NSUBDIR%%/spell
-@dirrm %%NSUBDIR%%/plugins
 @dirrm %%NSUBDIR%%/nethelp/netscape/trouble
 @dirrm %%NSUBDIR%%/nethelp/netscape/shared
 @dirrm %%NSUBDIR%%/nethelp/netscape/news
@@ -195,4 +194,3 @@ bin/communicator-%%BROWSER_VER%%
 @dirrm %%NSUBDIR%%/java/classes/aix
 @dirrm %%NSUBDIR%%/java/classes
 @dirrm %%NSUBDIR%%/java
-@dirrm %%NSUBDIR%%

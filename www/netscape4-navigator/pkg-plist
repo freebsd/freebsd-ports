@@ -135,7 +135,6 @@ bin/navigator-%%BROWSER_VER%%
 %%NSUBDIR%%/plugins/libnullplugin.so
 %%NSUBDIR%%/registry
 %%NSUBDIR%%/vreg
-@dirrm %%NSUBDIR%%/plugins
 @dirrm %%NSUBDIR%%/nethelp/netscape/shared
 @dirrm %%NSUBDIR%%/nethelp/netscape/netcastr
 @dirrm %%NSUBDIR%%/nethelp/netscape/navigatr
@@ -148,4 +147,3 @@ bin/navigator-%%BROWSER_VER%%
 @dirrm %%NSUBDIR%%/java/classes/aix
 @dirrm %%NSUBDIR%%/java/classes
 @dirrm %%NSUBDIR%%/java
-@dirrm %%NSUBDIR%%
