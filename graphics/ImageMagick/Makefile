@@ -31,16 +31,16 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2	# XXX
-LIB_DEPENDS=	fpx.1:${PORTSDIR}/graphics/libfpx \
-		jbig.1:${PORTSDIR}/graphics/jbigkit \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		lcms.1:${PORTSDIR}/graphics/lcms \
-		png.5:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	fpx:${PORTSDIR}/graphics/libfpx \
+		jbig:${PORTSDIR}/graphics/jbigkit \
+		jpeg:${PORTSDIR}/graphics/jpeg \
+		lcms:${PORTSDIR}/graphics/lcms \
+		png:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		freetype.8:${PORTSDIR}/print/freetype2 \
-		xml2.5:${PORTSDIR}/textproc/libxml2
+		freetype:${PORTSDIR}/print/freetype2 \
+		xml2:${PORTSDIR}/textproc/libxml2
 .if !exists(/usr/bin/bzip2)
-LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
+LIB_DEPENDS+=	bz2:${PORTSDIR}/archivers/bzip2
 .endif
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
@@ -100,7 +100,7 @@ RUN_DEPENDS+=	gs:${PORTSDIR}/print/ghostscript-gnu-nox11
 CONFIGURE_ARGS+=	--without-x --without-mpeg2 --without-wmf
 PLIST_SUB+=	X11='@comment '
 .else
-LIB_DEPENDS+=	mpeg2.0:${PORTSDIR}/graphics/libmpeg2 \
+LIB_DEPENDS+=	mpeg2:${PORTSDIR}/graphics/libmpeg2 \
 		wmf.2:${PORTSDIR}/graphics/libwmf
 BUILD_DEPENDS+=	gs:${PORTSDIR}/print/ghostscript-gnu
 RUN_DEPENDS+=	gs:${PORTSDIR}/print/ghostscript-gnu
