@@ -111,7 +111,6 @@
     SUBDIR += fspclient
     SUBDIR += fspd
     SUBDIR += fugu
-    SUBDIR += furi
     SUBDIR += gabber
     SUBDIR += gaim
     SUBDIR += gale
