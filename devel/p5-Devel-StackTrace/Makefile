@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Devel-StackTrace
-PORTVERSION=	1.05
+PORTVERSION=	1.08
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Devel
@@ -16,7 +16,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	erwin@FreeBSD.org
 COMMENT=	Stack trace and stack trace frame objects
 
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
 
 MAN3=		Devel::StackTrace.3
 

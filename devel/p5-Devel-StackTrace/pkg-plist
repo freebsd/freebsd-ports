@@ -1,5 +1,3 @@
 %%SITE_PERL%%/Devel/StackTrace.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/StackTrace/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/StackTrace
 @unexec rmdir %D/%%SITE_PERL%%/Devel 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel 2>/dev/null || true
