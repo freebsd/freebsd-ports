@@ -7,7 +7,7 @@
 
 PORTNAME=	xt
 PORTVERSION=	19991105
-CATEGORIES=	textproc
+CATEGORIES=	textproc java
 MASTER_SITES=	ftp://ftp.jclark.com/pub/xml/
 DISTNAME=	${PORTNAME}
 
