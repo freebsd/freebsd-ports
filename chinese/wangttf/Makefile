@@ -44,7 +44,7 @@ do-install:
 	@${ECHO_MSG} "===> Running ttfm.sh"
 .for i in ${DISTFILES}
 	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${i} ${FONTDIR}
-	-@${PREFIX}/bin/ttfm.sh --add xttfm ${i}
+	-@${LOCALBASE}/bin/ttfm.sh --add xttfm ${i}
 .endfor
 	@${ECHO_MSG} "===> Running fc-cache"
 	-@${X11BASE}/bin/fc-cache -f -v ${XFONTDIR}
