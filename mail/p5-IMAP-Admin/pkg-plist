@@ -1,0 +1,8 @@
+share/examples/p5-IMAP-Admin/create.pl
+share/examples/p5-IMAP-Admin/delete.pl
+lib/perl5/site_perl/%%PERL_VER%%/IMAP/Admin.pm
+lib/perl5/site_perl/%%PERL_VER%%/auto/IMAP/Admin/autosplit.ix
+@dirrm share/examples/p5-IMAP-Admin
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/IMAP/Admin
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/IMAP
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/IMAP

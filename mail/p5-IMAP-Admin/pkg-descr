@@ -1,0 +1,3 @@
+IMAP-Admin is a Perl module for basic IMAP server administration. With
+this module it's easy to make Perl scripts to create new and remove obsolete
+IMAP accounts, set user quotas on Cyrus server etc.
