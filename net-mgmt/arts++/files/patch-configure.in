@@ -1,0 +1,10 @@
+--- ./configure.in.orig	Wed Sep 25 16:45:26 2002
++++ ./configure.in	Wed Sep 25 16:45:55 2002
+@@ -240,6 +240,7 @@
+ AC_TRY_CPP([#include <iostream>],AC_DEFINE(HAVE_IOSTREAM))
+ AC_TRY_CPP([#include <iomanip>],AC_DEFINE(HAVE_IOMANIP))
+ AC_TRY_CPP([#include <strstream>],AC_DEFINE(HAVE_STRSTREAM))
++AC_TRY_CPP([#include <ostream>],AC_DEFINE(HAVE_OSTREAM))
+ 
+ AC_CHECK_LIB(nsl, inet_ntoa)
+ AC_CHECK_LIB(socket, socket)

@@ -1,0 +1,13 @@
+--- ./classes/include/artslocal.h.in.orig	Wed Sep 25 16:48:31 2002
++++ ./classes/include/artslocal.h.in	Wed Sep 25 16:49:06 2002
+@@ -90,4 +90,10 @@
+ //---------------------------------------------------------------------------
+ #undef HAVE_STRSTREAM
+ 
++//---------------------------------------------------------------------------
++//  If <ostream> exists, HAVE_OSTREAM should be non-zero.  Else
++//  HAVE_OSTREAM should be zero and our source will use <ostream.h>
++//---------------------------------------------------------------------------
++#undef HAVE_OSTREAM
++
+ 

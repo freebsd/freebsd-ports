@@ -1,0 +1,181 @@
+--- ./classes/include/Ipv4PrefixPatricia.hh.in.orig	Fri Jan 21 07:21:59 2000
++++ ./classes/include/Ipv4PrefixPatricia.hh.in	Wed Sep 25 16:38:10 2002
+@@ -80,6 +80,9 @@
+  *  December 1998
+  */
+ //----------------------------------------------------------------------------
++
++template <class Type> class Ipv4PrefixPatricia;
++
+ template <class Type>
+ class Ipv4PrefixPatricia
+ {
+@@ -215,7 +218,7 @@
+     //  class variables
+     //------------------------------------------------------------------------
+     Ipv4PrefixPatricia<Type>            *nodePtr;
+-    vector<VlsmListEntry>::iterator    vlsmIter;
++    typename vector<VlsmListEntry>::iterator    vlsmIter;
+     bool                               wentLeft;
+     bool                               wentRight;
+     
+@@ -227,7 +230,7 @@
+     StackEntry()
+     {
+       this->nodePtr = (Ipv4PrefixPatricia<Type> *)0;
+-      this->vlsmIter = (vector<VlsmListEntry>::iterator)0;
++      this->vlsmIter = (typename vector<VlsmListEntry>::iterator)0;
+       this->wentLeft = false;
+       this->wentRight = false;
+     }
+@@ -253,7 +256,7 @@
+     ~StackEntry()
+     {
+       this->nodePtr = (Ipv4PrefixPatricia<Type> *)0;
+-      this->vlsmIter = (vector<VlsmListEntry>::iterator)0;
++      this->vlsmIter = (typename vector<VlsmListEntry>::iterator)0;
+     }
+     
+     //-------------------------------------------------------------------------
+@@ -297,7 +300,7 @@
+     vector<StackEntry>            nodeStack;
+     Ipv4PrefixPatricia<Type>     *nodePtr;
+     bool                          end;
+-    VlsmList::iterator            vlsmIter;
++    typename VlsmList::iterator            vlsmIter;
+     
+     //------------------------------------------------------------------------
+     //                                iterator()                               
+@@ -366,7 +369,7 @@
+     //------------------------------------------------------------------------
+     iterator & operator ++ (int foo)
+     {
+-      vector<StackEntry>::iterator       stackIter;
++      typename vector<StackEntry>::iterator       stackIter;
+       uint32_t                           bitNum;
+       Ipv4PrefixPatricia<Type>          *leftNode;
+       Ipv4PrefixPatricia<Type>          *rightNode;
+@@ -501,7 +504,7 @@
+   public:
+     vector<StackEntry>           nodeStack;
+     Ipv4PrefixPatricia<Type>    *nodePtr;
+-    VlsmList::reverse_iterator   vlsmIter;
++    typename VlsmList::reverse_iterator   vlsmIter;
+     bool                         end;
+     
+     //------------------------------------------------------------------------
+@@ -556,7 +559,7 @@
+     //------------------------------------------------------------------------
+     reverse_iterator & operator ++ (int foo)
+     {
+-      vector<StackEntry>::iterator       stackIter;
++      typename vector<StackEntry>::iterator       stackIter;
+       uint32_t                           bitNum;
+       Ipv4PrefixPatricia<Type>          *leftNode;
+       Ipv4PrefixPatricia<Type>          *rightNode;
+@@ -721,7 +724,7 @@
+   {
+     StackEntry                        stackEntry;
+     iterator                          retIter;
+-    vector<StackEntry>::iterator      stackIter;
++    typename vector<StackEntry>::iterator      stackIter;
+     Ipv4PrefixPatricia<Type>         *leftNode;
+     Ipv4PrefixPatricia<Type>         *rightNode;
+     uint32_t                          bitNum;
+@@ -799,7 +802,7 @@
+   {
+     StackEntry                        stackEntry;
+     reverse_iterator                  retIter;
+-    vector<StackEntry>::iterator      stackIter;
++    typename vector<StackEntry>::iterator      stackIter;
+     Ipv4PrefixPatricia<Type>         *leftNode;
+     Ipv4PrefixPatricia<Type>         *rightNode;
+     uint32_t                          bitNum;
+@@ -912,7 +915,7 @@
+   {
+     iterator                          retIter;
+     Ipv4PrefixPatricia<Type>           *treeNode, *nextNode;
+-    vector<VlsmListEntry>::iterator   vlsmIter;
++    typename vector<VlsmListEntry>::iterator   vlsmIter;
+     
+     treeNode = this;
+     nextNode = treeNode->lft;
+@@ -955,7 +958,7 @@
+   {
+     iterator                          retIter;
+     Ipv4PrefixPatricia<Type>           *treeNode, *nextNode;
+-    vector<VlsmListEntry>::iterator   vlsmIter;
++    typename vector<VlsmListEntry>::iterator   vlsmIter;
+     
+     treeNode = this;
+     nextNode = treeNode->lft;
+@@ -1026,7 +1029,7 @@
+   //--------------------------------------------------------------------------
+   pair<iterator,bool> & insert(const value_type & value)
+   {
+-    static pair<Ipv4PrefixPatricia<Type>::iterator,bool>  retVal;
++    static pair<typename Ipv4PrefixPatricia<Type>::iterator,bool>  retVal;
+     
+     retVal = _insert(value);
+     if (retVal.second) {
+@@ -1043,7 +1046,7 @@
+   //  
+   //--------------------------------------------------------------------------
+   inline void
+-  visit(void (*visitFunc)(VlsmList::iterator & value, void *),
++  visit(void (*visitFunc)(typename VlsmList::iterator & value, void *),
+         void *other)
+   {
+     _visit(this->lft,visitFunc,other,33);
+@@ -1078,7 +1081,7 @@
+     }
+ 
+     bool                  foundVlsmEntry = false;
+-    VlsmList::iterator    vlsmDeleteIter;
++    typename VlsmList::iterator    vlsmDeleteIter;
+     
+     for (vlsmDeleteIter = dnode->vlsmVect.begin();
+          vlsmDeleteIter != dnode->vlsmVect.end(); vlsmDeleteIter++) {
+@@ -1231,7 +1234,7 @@
+     }
+ 
+     bool                  foundVlsmEntry = false;
+-    VlsmList::iterator    vlsmDeleteIter;
++    typename VlsmList::iterator    vlsmDeleteIter;
+     
+     for (vlsmDeleteIter = dnode->vlsmVect.begin();
+          vlsmDeleteIter != dnode->vlsmVect.end(); vlsmDeleteIter++) {
+@@ -1361,7 +1364,7 @@
+   uint32_t erase(const iterator & start, const iterator & finish)
+   {
+     vector<key_type>             keyVector;
+-    vector<key_type>::iterator   keyVectorIter;
++    typename vector<key_type>::iterator   keyVectorIter;
+     iterator                     iter;
+     uint32_t                     numErased = 0;
+     
+@@ -1455,7 +1458,7 @@
+   {
+     Ipv4PrefixPatricia<Type> *p, *t, *x;
+     uint32_t                  i = 32;
+-    VlsmList::iterator        vlsmIter;
++    typename VlsmList::iterator        vlsmIter;
+     
+     p = this;
+     t = lft;
+@@ -1553,13 +1556,13 @@
+   //--------------------------------------------------------------------------
+   inline void
+   _visit(Ipv4PrefixPatricia<Type> *head,
+-         void (*visitFunc)(VlsmList::iterator & value, void *),
++         void (*visitFunc)(typename VlsmList::iterator & value, void *),
+          void *other, uint32_t bitNum)
+   {
+     Ipv4PrefixPatricia<Type> *p;
+     Ipv4PrefixPatricia<Type> *leftNode;
+     Ipv4PrefixPatricia<Type> *rightNode;
+-    VlsmList::iterator        vlsmIter;
++    typename VlsmList::iterator        vlsmIter;
+     
+     p = head;
+     leftNode = head->lft;
