@@ -72,7 +72,6 @@ lib/vmware/lib/help/Wizpath.htm
 lib/vmware/lib/help/toc.htm
 lib/vmware/lib/modules/vmmon_smp.ko
 lib/vmware/lib/modules/vmmon_up.ko
-lib/vmware/lib/modules/vmnet.ko
 lib/vmware/lib/xkeymap/be101
 lib/vmware/lib/xkeymap/be104
 lib/vmware/lib/xkeymap/chde101
@@ -121,9 +120,9 @@ share/doc/vmware/SAMBA-LICENSE
 @exec mknod /compat/linux/dev/hda b 0 0x00010002
 @exec mknod /compat/linux/dev/hdb b 0 0x0001000a
 @exec ln -s %D/etc/vmware /etc/vmware
-@exec mknod /dev/vmmon c 200 0
-@exec mknod /dev/vmnet1 c 201 1
-@unexec rm -f /etc/vmware /dev/vmmon /dev/vmnet1 /compat/linux/bin/df /compat/linux/dev/tty[0-9]* /compat/linux/dev/hd? /compat/linux/dev/null
+@exec mknod /compat/linux/dev/vmmon c 200 0
+@exec mknod /compat/linux/dev/vmnet1 c 149 65537
+@unexec rm -f /etc/vmware /compat/linux/dev/vmmon /compat/linux/dev/vmnet1 /compat/linux/bin/df /compat/linux/dev/tty[0-9]* /compat/linux/dev/hd? /compat/linux/dev/null
 @dirrm etc/vmware
 @dirrm lib/vmware/bin
 @dirrm lib/vmware/lib/floppies

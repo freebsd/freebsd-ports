@@ -3,7 +3,7 @@
 # Whom:			vns@delta.odessa.ua
 #
 # $FreeBSD$
-# $vmFreeBSD: vmware/vmmon-only/freebsd/port/Makefile,v 1.9 2000/01/23 22:29:24 vsilyaev Exp $
+# $vmFreeBSD: vmware/vmmon-only/freebsd/port/Makefile,v 1.15 2000/07/31 00:54:32 vsilyaev Exp $
 #
 
 PORTNAME=	vmware2
@@ -18,17 +18,15 @@ MASTER_SITES=	http://www4.vmware.com/software/ \
 		ftp://mirror.aarnet.edu.au/pub/vmware/software/
 DISTNAME=	VMware-${PORTVERSION:R}-${PORTVERSION:E}
 
-PATCH_SITES=	${MASTER_SITE_LOCAL} \
-		http://www.mindspring.com/~vsilyaev/vmware/files/ \
+PATCH_SITES=	http://www.mindspring.com/~vsilyaev/vmware/files/ \
 		ftp://mirror.aarnet.edu.au/pub/vmware/freebsd/ \
 		http://mirror.aarnet.edu.au/pub/vmware/freebsd/
-PATCH_SITE_SUBDIR=	knu
-PATCHFILES=	vmmon-freebsd-0.97-b1.tar.gz \
-		vmnet-freebsd-0.11.tar.gz
+PATCHFILES=	vmmon-freebsd-0.98.tar.gz \
+		vmnet-freebsd-0.21.tar.gz
 
 # Feel free to post your questions/reports/suggestions on this port to
 # freebsd-emulation mailing list with the following maintainer address CC'ed.
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	vns@delta.odessa.ua
 
 RUN_DEPENDS=	${LINUX_DIR}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base \
 		${LINUX_DIR}/dev/rtc:${PORTSDIR}/emulators/rtc
@@ -75,6 +73,7 @@ setoptions:
 		${FILESDIR}/config > ${WRKDIR}/config
 
 	${SED} 	-e 's;@@PREFIX@@;${PREFIX};' \
+		-e 's;@@LINUX_DIR@@;${LINUX_DIR};' \
 		-e 's;@@NETWORKING@@;${VMNET_NETWORKING};' \
 		-e 's;@@HOST_IP@@;${VMNET_HOST_IP};' \
 		-e 's;@@NETMASK@@;${VMNET_NETMASK};' \
