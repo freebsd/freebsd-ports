@@ -1,6 +1,7 @@
 bin/iconv
 include/iconv.h
 include/libcharset.h
+include/localcharset.h
 lib/libcharset.a
 lib/libcharset.so
 lib/libcharset.so.1
