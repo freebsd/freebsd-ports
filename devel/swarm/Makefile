@@ -8,7 +8,7 @@
 PORTNAME=	swarm
 PORTVERSION=	1.4.1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.santafe.edu/pub/swarm/
+MASTER_SITES=	ftp://ftp.santafe.edu/pub/swarm/src/swarm/
 
 MAINTAINER=	horance@freedom.ie.cycu.edu.tw
 
