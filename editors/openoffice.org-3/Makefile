@@ -11,29 +11,29 @@ PORTREVISION=	1
 CATEGORIES+=	editors
 MASTER_SITES+=	${MASTER_SITE_LOCAL} \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
-		ftp://ftp.mozilla.org/pub/mozilla.org/mozilla/releases/mozilla1.7b/src/:moz \
+		${MASTER_SITE_MOZILLA:S,%SUBDIR%,mozilla/releases/mozilla1.7b/src/&,}:mozsrc \
 		http://ftp.services.openoffice.org/pub/OpenOffice.org/contrib/helpcontent/:help
-
 MASTER_SITE_SUBDIR=	maho/openoffice.org
 DISTFILES+=	OOo_${BUILD_NR}${MILESTONE}_${SNAPDATE}_source.tar.bz2 gpc231.tar.Z:gpc
 EXTRACT_ONLY=	OOo_${BUILD_NR}${MILESTONE}_${SNAPDATE}_source.tar.bz2
 
 MAINTAINER=	openoffice@FreeBSD.org
+COMMENT?=	Integrated wordprocessor/dbase/spreadheet/drawing/chart/browser(developer version)
 
-BROKEN=		"Bison 1.875d is required, and setup fails"
+BROKEN=         "Bison 1.875a or newer is required, and doesn't work atm"
 
-SNAPDATE=	20041016
+SNAPDATE=	20041122
 NO_LATEST_LINK=	yes
 USE_GNOME=	gtk20
 MOZILLA_PROJECT=	cws_srx645_mozooo.20041016.tar.gz
 MOZILLA_SOURCE=		mozilla-source-1.7b-source.tar.gz
 .if !defined(WITHOUT_MOZILLA)
-DISTFILES+=	${MOZILLA_PROJECT} ${MOZILLA_SOURCE}:moz
+DISTFILES+=	${MOZILLA_PROJECT}:moz ${MOZILLA_SOURCE}:mozsrc
 USE_GNOME+=	orbit gtk12
 .endif
 
 USE_PERL5=	yes
-USE_BISON=	yes
+#USE_BISON=	yes #this bison should be later than bison1.875a
 USE_REINPLACE=	yes
 USE_BZIP2=	yes
 
@@ -48,7 +48,6 @@ JAVA_BUILD=	jdk
 
 LANG_PKGNAME?=	en-US
 LANG_EXT?=	01
-LANG_CONFIGURE_ARG?=	ENUS
 
 .if defined(L10NHELP)
 DISTFILES+=	${L10NHELP}:help
@@ -58,29 +57,30 @@ DISTFILES+=	helpcontent_49_unix.tgz:help
 L10NHELPS+=	helpcontent_49_unix.tgz
 .endif
 
-COMMENT?=	Integrated wordprocessor/dbase/spreadheet/drawing/chart/browser(developer version)
 BUILD_NR=		680
-MILESTONE=		m56
+MILESTONE=		m62
 RELEASE_NR=		2.0
 DIST_SUBDIR=		openoffice2.0
 SIMPLEOSVER!=		${UNAME} -r | ${SED} -e 's/\.//' | ${SED} -e 's/\..*//'
-BUILD_DEPENDS+=	gcc32:${PORTSDIR}/lang/gcc32
+# gcc 3.3
+BUILD_DEPENDS+=	gcc33:${PORTSDIR}/lang/gcc33
 # FIXME
 .if defined(WITH_CCACHE)
 BUILD_DEPENDS+=	ccache:${PORTSDIR}/devel/ccache
-CC=	ccache gcc32
-CXX=	ccache g++32
+CC=	ccache gcc33
+CXX=	ccache g++33
 .else
-CC=	gcc32
-CXX=	g++32
+CC=	gcc33
+CXX=	g++33
 .endif
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip \
 		gcp:${PORTSDIR}/sysutils/coreutils \
+		epm:${PORTSDIR}/devel/epm \
 		gpatch:${PORTSDIR}/devel/patch \
 		${X11BASE}/lib/libXft.so:${PORTSDIR}/x11-fonts/libXft \
 		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
-		bison1875:${PORTSDIR}/devel/bison1875
+		bison-devel:${PORTSDIR}/devel/bison-devel
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		mng.1:${PORTSDIR}/graphics/libmng \
@@ -119,7 +119,7 @@ CONFIGURE_ARGS+=	--disable-mozilla
 .if defined(ALL_LOCALIZED_LANGS)
 CONFIGURE_ARGS+=	--with-lang=ALL
 .else
-CONFIGURE_ARGS+=	--with-lang=${LANG_CONFIGURE_ARG}
+CONFIGURE_ARGS+=	--with-lang=${LANG_PKG_NAME}
 .endif
 
 .if defined(WITH_DEBUG)
@@ -161,8 +161,8 @@ post-extract:
 	@${ECHO_MSG} "===>  Extracting All available L10NHELPs"
 	@${MKDIR} ${WRKDIR}/L10NHELP
 	@cd ${WRKDIR}/L10NHELP ; \
-	for file in ${L10NHELPS}; do \
-		${CAT} ${DISTDIR}/${DIST_SUBDIR}/$$file | ${GZIP_CMD} -d | ${TAR} xf - ; \
+	for helpfile in ${L10NHELPS}; do \
+		${CAT} ${DISTDIR}/${DIST_SUBDIR}/$$helpfile | ${GZIP_CMD} -d | ${TAR} xf - ; \
 	done
 .endif
 .if !defined(WITHOUT_MOZILLA)
@@ -183,7 +183,7 @@ do-build:
 	@${CP} ${WRKDIR}/L10NHELP/*.zip ${WRKSRC}/solver/${BUILD_NR}/unxfbsd.pro/pck
 .endif
 .if !defined(WITHOUT_MOZILLA)
-	cd ${WRKSRC}/moz.runtime ; ${SETENV} "BUILD_MOZAB=TRUE" ${TCSH} -c 'source ../FreeBSDEnv.Set ; build.pl ; dmake zip' ; cp unxfbsd.pro/zipped/FREEBSD*.zip ../moz/zipped
+	cd ${WRKSRC}/moz.runtime ; ${SETENV} "BUILD_MOZAB=TRUE" ${TCSH} -c 'source ../FreeBSDEnv.Set ; build.pl ; dmake zip' ; ${CP} unxfbsd.pro/zipped/FREEBSD*.zip ../moz/zipped
 .endif
 	@cd ${WRKSRC} ;	${TCSH} -c 'source FreeBSDEnv.Set ; dmake'
 
