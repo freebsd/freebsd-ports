@@ -1,17 +1,14 @@
-
-$FreeBSD$
-
---- Makefile.in.orig	Fri Sep 28 12:30:28 2001
-+++ Makefile.in	Fri Sep 28 12:37:31 2001
-@@ -141,9 +141,9 @@
+--- Makefile.in.orig	Tue Oct 15 16:51:17 2002
++++ Makefile.in	Tue Oct 15 16:52:07 2002
+@@ -154,9 +154,9 @@
  gnomelocaledir = @gnomelocaledir@
  l = @l@
  
--SUBDIRS = gal po intl tests docs art
-+SUBDIRS = gal po intl docs art
+-SUBDIRS = gal po intl tests docs art macros
++SUBDIRS = gal po intl docs art macros
  
 -confexecdir = $(libdir)
 +confexecdir = $(sysconfdir)
  confexec_DATA = galConf.sh 
  
- EXTRA_DIST =  	gal.spec.in			galConf.sh.in			MAINTAINERS			AUTHORS				xml-i18n-extract.in		xml-i18n-merge.in		xml-i18n-update.in
+ EXTRA_DIST = \
