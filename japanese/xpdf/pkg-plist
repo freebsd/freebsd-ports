@@ -4,7 +4,7 @@ share/xpdf/japanese/ISO-2022-JP.unicodeMap
 share/xpdf/japanese/README
 share/xpdf/japanese/Shift-JIS.unicodeMap
 @unexec mv -f %D/etc/xpdfrc %D/etc/xpdfrc.japan
-@unexec grep -F -v --file=%D/share/xpdf/japanese/dot.xpdfrc %D/etc/xpdfrc.japan > %D/etc/xpdfrc
+@unexec (umask 222; grep -F -v --file=%D/share/xpdf/japanese/dot.xpdfrc %D/etc/xpdfrc.japan > %D/etc/xpdfrc)
 share/xpdf/japanese/dot.xpdfrc
 @unexec rm -f %D/etc/xpdfrc.japan
 @dirrm share/xpdf/japanese
