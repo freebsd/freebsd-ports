@@ -63,6 +63,7 @@
     SUBDIR += fping
     SUBDIR += freewais-sf
     SUBDIR += fspclient
+    SUBDIR += gabber
     SUBDIR += gaim
     SUBDIR += gated
     SUBDIR += gatekeeper
