@@ -12,7 +12,7 @@ MASTER_SITES=	http://sunsite.dk/allegro/
 
 MAINTAINER=	olgeni@FreeBSD.org
 
-USE_AUTOCONF=	yes
+USE_AUTOCONF_VER=213
 USE_GMAKE=	yes
 MAKEFILE=	makefile
 INSTALLS_SHLIB=	yes
@@ -24,6 +24,10 @@ PLIST_SUB+=	FULL=""
 INSTALL_TARGET=	mini-install
 PLIST_SUB+=	FULL="@comment "
 .endif
+
+pre-configure:
+	${PERL} -pi -e "s@AUTOHEADER = autoheader@AUTOHEADER =${AUTOHEADER}@g" \
+		${WRKSRC}/makefile.in
 
 pre-build:
 	cd ${WRKSRC} && ${GMAKE} depend
