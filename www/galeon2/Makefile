@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	galeon2
-PORTVERSION=	1.3.13
+PORTVERSION=	1.3.13a
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://osdn.dl.sourceforge.net/sourceforge/galeon/
@@ -38,6 +38,7 @@ HEADERS_SUFX=
 .endif
 .endif
 
+WRKSRC=		${WRKDIR}/${PORTNAME:S/2$//}-${PORTVERSION:S/a$//}
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomeui
@@ -89,8 +90,6 @@ post-patch:
 	@${FIND} ${WRKSRC} -name "intltool-merge.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|mkdir $$lang or|mkdir $$lang, 0777 or| ; \
 		 s|^push @INC, "/.*|push @INC, "${LOCALBASE}/share/intltool";|'
-	@${CP} ${FILESDIR}/mkinstalldirs ${WRKSRC}
-	@${CHMOD} a+x ${WRKSRC}/mkinstalldirs
 
 post-configure:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g ; \
