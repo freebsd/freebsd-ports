@@ -1,5 +1,8 @@
---- libnautilus-private/nautilus-volume-monitor.c.orig	Thu Jul 11 13:11:51 2002
-+++ libnautilus-private/nautilus-volume-monitor.c	Wed Jul 24 00:25:40 2002
+
+$FreeBSD$
+
+--- libnautilus-private/nautilus-volume-monitor.c.orig	Wed Aug 28 16:37:20 2002
++++ libnautilus-private/nautilus-volume-monitor.c	Tue Sep 10 01:42:20 2002
 @@ -59,6 +59,18 @@
  #include <sys/types.h>
  #include <unistd.h>
@@ -28,7 +31,7 @@
  #define setmntent(f,m) fopen(f,m)
  #endif
  
-@@ -503,6 +515,11 @@
+@@ -501,6 +513,11 @@
  		return TRUE;
  	}
  #endif
@@ -40,7 +43,7 @@
  
  #ifdef SOLARIS_MNT
  	if (eel_str_has_prefix (ent->mnt_special, "/vol/")) {
-@@ -524,10 +541,15 @@
+@@ -522,10 +539,15 @@
  static GList *
  get_removable_volumes (NautilusVolumeMonitor *monitor)
  {
@@ -59,7 +62,7 @@
  	char * fs_opt;
  #ifdef HAVE_SYS_MNTTAB_H
          MountTableEntry ent_storage;
-@@ -535,26 +557,27 @@
+@@ -533,26 +555,27 @@
  #ifdef HAVE_GETMNTINFO
  	int count, index;
  #endif
@@ -92,13 +95,13 @@
  		return NULL;
  	}
  	
-@@ -589,9 +612,21 @@
+@@ -587,9 +610,21 @@
  				(monitor, volume, ent->mnt_type, volumes);
  		}
  	}
 +#elif defined (HAVE_SETFSENT)
 +	while ((fsent = getfsent ()) != NULL) {
-+	    	if (strstr (fsent->fs_mntops, "noauto") == 0) {
++	    	if (strstr (fsent->fs_mntops, "noauto") != NULL) {
 +		    	volume = create_volume (fsent->fs_spec, fsent->fs_file);
 +			volumes = finish_creating_volume_and_prepend
 +				(monitor, volume, fsent->fs_vfstype, volumes);
@@ -115,7 +118,7 @@
  	
  #ifdef HAVE_CDDA
  	volume = create_volume (CD_AUDIO_PATH, CD_AUDIO_PATH);
-@@ -621,7 +656,7 @@
+@@ -619,7 +654,7 @@
        return result;
  }
  
@@ -124,7 +127,7 @@
  
  static gboolean
  volume_is_removable (const NautilusVolume *volume)
-@@ -945,23 +980,33 @@
+@@ -963,23 +998,34 @@
  
  
  
@@ -137,20 +140,21 @@
 -        FILE *fh;
          GList *volumes;
 +#ifndef HAVE_SETFSENT
-+	FILE *fh;
          MountTableEntry ent;
++	FILE *fh;
 +#else
-+	int fh;
-+	struct fstab *ent;
++        MountTableEntry *ent;
++	int fh, index;
 +#endif
          NautilusVolume *volume;
  
  	volumes = NULL;
          
- 	fh = setmntent (MOUNT_TABLE_PATH, "r");
 +#ifndef HAVE_SETFSENT
+ 	fh = setmntent (MOUNT_TABLE_PATH, "r");
  	if (fh == NULL) {
 +#else
++        fh = getmntinfo (&ent, MNT_WAIT);
 +	if (fh == 0) {
 +#endif
  		return NULL;
@@ -160,30 +164,24 @@
          while (! getmntent(fh, &ent)) {
                  volume = create_volume (ent.mnt_special, ent.mnt_mountp);
                  volume->is_removable = has_removable_mntent_options (&ent);
-@@ -970,6 +1015,22 @@
+@@ -988,6 +1034,16 @@
          }
  
  	fclose (fh);
 +#else
-+	while ((ent = getfsent ()) != NULL) {
-+	    	if (strcmp(ent->fs_vfstype, "swap") == 0)
-+		    	continue;
-+		volume = create_volume (ent->fs_spec, ent->fs_file);
-+		if (strstr (ent->fs_mntops, "noauto") == 0)
-+		    	volume->is_removable = TRUE;
-+		else
-+		    	volume->is_removable = FALSE;
-+		volumes = finish_creating_volume_and_prepend
-+			(monitor, volume, ent->fs_vfstype, volumes);
-+	}
-+
-+	endfsent();
++        /* getmentinfo returns a pointer to static data. Do not free. */
++        for (index = 0; index < fh; index++) {
++		volume = create_volume (ent[index].f_mntfromname,
++					ent[index].f_mntonname);
++                volume->is_removable = has_removable_mntent_options (ent + index);
++                volumes = finish_creating_volume_and_prepend
++					(monitor, volume, ent[index].f_fstypename, volumes);
++        }
 +#endif
-+
  
          return volumes;
  }
-@@ -1747,7 +1808,7 @@
+@@ -1765,7 +1821,7 @@
  	for (node = volume_list; node != NULL; node = node->next) {
  		volume = node->data;
  		
