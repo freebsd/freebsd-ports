@@ -1,12 +1,12 @@
 # New ports collection makefile for:	bnetd
-# Version required:	0.4.6
+# Version required:	0.4.11
 # Date created:		24 April 1999
 # Whom:			Ying-Chieh Liao <ijliao@csie.nctu.edu.tw>
 #
-# $Id: Makefile,v 1.3 1999/05/13 09:18:13 asami Exp $
+# $Id: Makefile,v 1.4 1999/07/09 00:49:29 cpiazza Exp $
 #
 
-DISTNAME=	bnetd-0.4.9
+DISTNAME=	bnetd-0.4.11
 CATEGORIES=	games net
 MASTER_SITES=	http://www.bnetd.org/files/
 
@@ -16,14 +16,17 @@ MAN1=		bnchat.1 bnetd.1 bnftp.1 bnpass.1
 MAN4=		bnetd.conf.4 bntext.4
 MLINKS=		bntext.4 bnmotd.txt.4 bntext.4 bnnews.txt.4
 
+do-configure:
+	@(cd ${WRKSRC}/src; ./configure)
+
 do-build:
 	@(cd ${WRKSRC}/src; ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS})
 
 do-install:
-	cd ${WRKSRC}/bin; ${INSTALL_PROGRAM} bnchat bnftp bnpass ${PREFIX}/bin
+	cd ${WRKSRC}/bin; ${INSTALL_PROGRAM} bnbot bnchat bnftp bnpass ${PREFIX}/bin
 	cd ${WRKSRC}/sbin; ${INSTALL_PROGRAM} bnetd ${PREFIX}/sbin
 	cd ${WRKSRC}/man; ${INSTALL_MAN} ${MAN1} ${MAN1PREFIX}/man/man1; ${INSTALL_MAN} ${MAN4} ${MAN4PREFIX}/man/man4
-	${MKDIR} ${PREFIX}/bnetd; ${CP} -R ${WRKSRC}/files ${WRKSRC}/users ${WRKSRC}/conf ${PREFIX}/bnetd
+	${MKDIR} ${PREFIX}/bnetd; ${CP} -R ${WRKSRC}/files ${WRKSRC}/users ${WRKSRC}/conf ${WRKSRC}/reports ${PREFIX}/bnetd
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/bnetd.sh ]; then \
