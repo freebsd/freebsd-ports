@@ -1,0 +1,25 @@
+
+$FreeBSD$
+
+--- lib/runtime_tools/c_src/Makefile.in.orig	Sun Aug 31 14:46:12 2003
++++ lib/runtime_tools/c_src/Makefile.in	Sun Aug 31 14:47:00 2003
+@@ -107,7 +107,8 @@
+ ifdef soname
+ 	$(LD) $(LDFLAGS) $(soname) trace_ip_drv.so -o $@ $^ -lc $(LIBS)
+ else
+-	$(LD) $(LDFLAGS) -o $@ $^ -lc $(LIBS)
++	# $(LD) $(LDFLAGS) -o $@ $^ -lc $(LIBS)
++	$(LD) $(LDFLAGS) -o $@ $^
+ endif
+ 
+ $(LIBDIR)/trace_file_drv.so: $(TRACE_FILE_DRV_OBJS)
+@@ -115,7 +116,8 @@
+ ifdef soname
+ 	$(LD) $(LDFLAGS) $(soname) trace_file_drv.so -o $@ $^ -lc $(LIBS)
+ else
+-	$(LD) $(LDFLAGS) -o $@ $^ -lc $(LIBS)
++	# $(LD) $(LDFLAGS) -o $@ $^ -lc $(LIBS)
++	$(LD) $(LDFLAGS) -o $@ $^
+ endif
+ 
+ $(LIBDIR)/trace_ip_drv.dll: $(TRACE_IP_DRV_OBJS)

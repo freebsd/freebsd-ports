@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- lib/asn1/c_src/Makefile.in.orig	Sun Aug 31 14:45:35 2003
++++ lib/asn1/c_src/Makefile.in	Sun Aug 31 14:45:42 2003
+@@ -131,7 +131,7 @@
+ 	$(CC) -c $(CFLAGS) -o $(OBJ_FILES) $(C_FILES) 
+ 
+ $(SHARED_OBJ_FILES): $(OBJ_FILES) $(LIBDIR)
+-	$(LD) $(LDFLAGS) $(LD_INCL_EI) -o $(SHARED_OBJ_FILES) $(OBJ_FILES) $(LD_EI) $(CLIB_FLAGS) $(LIBS) 
++	$(LD) $(LDFLAGS) $(LD_INCL_EI) -o $(SHARED_OBJ_FILES) $(OBJ_FILES) $(LD_EI)
+ 
+ $(LIBDIR):
+ 	-mkdir -p $(LIBDIR)
