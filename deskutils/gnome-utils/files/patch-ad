@@ -1,44 +1,28 @@
---- ltmain.sh.orig	Fri Oct  2 21:17:15 1998
-+++ ltmain.sh	Fri Oct  2 21:17:53 1998
-@@ -923,6 +923,16 @@
-         versuffix="$current.$revision"
-         ;;
+--- gdialog/dialog.h.orig	Tue Jan  5 17:55:34 1999
++++ gdialog/dialog.h	Tue Jan  5 17:55:48 1999
+@@ -36,24 +36,7 @@
+ #include <gnome.h>
+ #endif
  
-+      freebsd)
-+        version_vars="$version_vars major versuffix"
-+        major="$current"
-+	if [ $PORTOBJFORMAT = elf ]; then
-+        versuffix="$current";
-+	else
-+        versuffix="$current.$revision";
-+	fi
-+        ;;
-+
-       *)
-         $echo "$modename: unknown library version type \`$version_type'" 1>&2
-         echo "Fatal configuration error.  See the $PACKAGE docs for more information." 1>&2
---- ltconfig.orig	Fri Oct  2 21:17:56 1998
-+++ ltconfig	Fri Oct  2 21:18:47 1998
-@@ -1105,10 +1105,21 @@
-   finish_eval='for lib in `ls $libdir/*.ixlibrary 2>/dev/null`; do libname=`$echo "$lib" | sed '\''s%^.*/\([^/]*\)\.ixlibrary$%\1%'\''`; test $rm /sys/libs/${libname}_ixlibrary.a; $show "(cd /sys/libs && $LN_S $lib ${libname}_ixlibrary.a)"; (cd /sys/libs && $LN_S $lib ${libname}_ixlibrary.a) || exit 1; done'
-   ;;
+-#ifdef ultrix
+-#  include <cursesX.h>
+-#else
+-#  if defined(USE_NCURSES) && !defined(RENAMED_NCURSES)
+-#    include <ncurses.h>
+-#  else
+-#    ifndef _XOPEN_SOURCE_EXTENDED
+-#        define hacked 1
+-#        define _XOPEN_SOURCE_EXTENDED
+-#        define _ACS_COMPAT_CODE
+-#    endif
+-#    include <curses.h>
+-#    ifdef hacked
+-#        undef _XOPEN_SOURCE_EXTENDED
+-#        undef _ACS_COMPAT_CODE
+-#    endif
+-#  endif
+-#endif
++#include <ncurses.h>
  
--freebsd2* | freebsd3*)
-+freebsd2*)
-   version_type=sunos
-   library_names_spec='$libname.so.$versuffix $libname.so'
-   finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
-+  shlibpath_var=LD_LIBRARY_PATH
-+  ;;
-+
-+freebsd3*)
-+  version_type=freebsd
-+  library_names_spec='$libname.so.$versuffix $libname.so'
-+  if [ $PORTOBJFORMAT = elf ]; then
-+  finish_cmds='PATH="\$PATH:/sbin" OBJFORMAT="$PORTOBJFORMAT" ldconfig -m $libdir'
-+  else
-+  finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
-+  fi
-   shlibpath_var=LD_LIBRARY_PATH
-   ;;
- 
+ /*
+  * Change these if you want

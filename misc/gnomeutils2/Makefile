@@ -1,13 +1,13 @@
 # New ports collection makefile for:   gnomeutils
-# Version required:    0.30
+# Version required:    0.99.1
 # Date created:        03 July 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/10/10 15:59:18 vanilla Exp $
 #
 
-DISTNAME=	gnome-utils-0.30
-PKGNAME=        gnomeutils-0.30
+DISTNAME=	gnome-utils-0.99.1
+PKGNAME=        gnomeutils-0.99.1
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.jimpick.com/pub/mirrors/gnome/sources/ \
 		ftp://ftp.gnome.org/pub/GNOME/sources/
@@ -18,13 +18,15 @@ LIB_DEPENDS=	gnome.0:${PORTSDIR}/x11/gnomelibs \
 		gtop.0:${PORTSDIR}/devel/libgtop
 
 USE_X_PREFIX=	yes
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
 		--datadir=${PREFIX}/share/gnome \
 		--with-gnome=${X11BASE}
 CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include \
 		-I${X11BASE}/include" \
-		GTK_CONFIG="${X11BASE}/bin/gtk11-config" \
+		GTK_CONFIG="${X11BASE}/bin/gtk11d-config" \
+		GLIB_CONFIG="${LOCALBASE}/bin/glib11d-config" \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lxpg4"
 
 MAN1=		gtt.1
