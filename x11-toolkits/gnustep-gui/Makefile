@@ -94,4 +94,8 @@ do-install:
 	@(cd ${WRKSRC}; . ${PREFIX}/System/Makefiles/GNUstep.sh; \
 		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
 
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} > 500030
+CONFIGURE_ARGS+=	--disable-gsnd
+.endif
 .include <bsd.port.post.mk>
