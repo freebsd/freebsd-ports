@@ -4,15 +4,16 @@
 # Date created:         Fri Dec 01, 1995
 # Whom:                 obrien@cs.ucdavis.edu
 #
-# $Id: Makefile,v 1.19 1999/03/12 15:52:27 scrappy Exp $
+# $Id: Makefile,v 1.20 1999/04/14 00:27:12 scrappy Exp $
 #
 
 DISTNAME=	${PKGNAME}.src
 PKGNAME=	minicom-1.82.1
 CATEGORIES=	comms
-MASTER_SITES=	ftp://ftp.cistron.nl/pub/people/miquels/software/  \
-		${MASTER_SITE_SUNSITE}  \
+MASTER_SITES=	${MASTER_SITE_SUNSITE}  \
 		http://www.clinet.fi/~walker/
+		http://www.pp.clinet.fi/~walker/  \
+		ftp://ftp.cistron.nl/pub/people/miquels/software/
 MASTER_SITE_SUBDIR=	apps/serialcomm/dialout
 
 MAINTAINER=     obrien@FreeBSD.org
