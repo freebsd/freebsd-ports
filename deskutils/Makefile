@@ -17,6 +17,7 @@
     SUBDIR += ical
     SUBDIR += korganizer
     SUBDIR += kproject
+    SUBDIR += loserjabber
     SUBDIR += moneydance
     SUBDIR += notebook
     SUBDIR += offix-trash
