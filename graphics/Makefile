@@ -31,6 +31,7 @@
     SUBDIR += blender
     SUBDIR += blender-devel
     SUBDIR += bmeps
+    SUBDIR += bmp-rootvis
     SUBDIR += bugle
     SUBDIR += cadubi
     SUBDIR += cairo
