@@ -1,0 +1,11 @@
+--- 3dpong.c	Mon Jan 26 20:33:47 1998
++++ /home/andy/tmp/wrk/3dpong.c	Tue Mar 10 20:58:20 1998
+@@ -1651,7 +1651,7 @@
+   
+   if (use_sound == 1)
+     {
+-       sprintf(cmd, "/bin/cat sounds/%s.au > /dev/audio &", aufile);
++       sprintf(cmd, "/bin/cat " PREFIX "/share/3dpong/%s.au > /dev/audio &", aufile);
+   
+        system(cmd);
+     }
