@@ -1829,6 +1829,7 @@ gnubile		ports/net/gnubile
 gnuboy		ports/emulators/gnuboy
 gnucash		ports/deskutils/gnucash
 gnuchess	ports/games/gnuchess
+gnugadu		ports/net/gnugadu
 gnugo		ports/games/gnugo
 gnuinfo		ports/www/gnuinfo
 gnujsp		ports/www/gnujsp
