@@ -1,6 +1,6 @@
---- ../setup2/mow/source/loader/loader.c.orig	Sun Mar  3 01:41:47 2002
-+++ ../setup2/mow/source/loader/loader.c	Sun Mar  3 01:42:19 2002
-@@ -603,6 +603,14 @@
+--- ../setup2/mow/source/loader/loader.c.orig	Thu Dec 13 17:44:58 2001
++++ ../setup2/mow/source/loader/loader.c	Wed Apr  3 01:07:58 2002
+@@ -615,6 +615,14 @@
  "    LD_LIBRARY_PATH=.:./lib:$LD_LIBRARY_PATH\n" \
  "    export LD_LIBRARY_PATH\n" \
  "    ;;\n" \
