@@ -110,6 +110,7 @@
     SUBDIR += ghtool
     SUBDIR += gicq
     SUBDIR += gkrellm_snmp
+    SUBDIR += gkrellmqst
     SUBDIR += gnet
     SUBDIR += gnomba
     SUBDIR += gnome-vnc
