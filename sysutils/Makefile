@@ -69,6 +69,7 @@
     SUBDIR += doconfig
     SUBDIR += du2ps
     SUBDIR += dump9660
+    SUBDIR += duplicity
     SUBDIR += durep
     SUBDIR += dvd+rw-tools
     SUBDIR += dvdtape
