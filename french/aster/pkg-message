@@ -1,0 +1,11 @@
+run_aster a été installé dans le répertoire %%inst_dir%%/tcl.
+
+Pour lancer Code_Aster via ASTK, entrez :
+%%inst_dir%%/outils/astk
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+run_aster has been installed in the directory %%inst_dir%%/tcl.
+
+To run Code_Aster through ASTK, type:
+%%inst_dir%%/outils/astk
