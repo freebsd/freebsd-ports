@@ -48,3 +48,5 @@ pre-patch:
 .else
 WRKSRC?=		${WRKDIR}/licq-${TIMESTAMP}/plugins/${PORTNAME}
 .endif
+
+PLIST_SUB+=		LICQ_DEVEL=""

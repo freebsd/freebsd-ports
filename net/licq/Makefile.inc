@@ -27,3 +27,4 @@ USE_GMAKE=		yes
 USE_NEWGCC=		yes
 USE_BZIP2=		yes
 WRKSRC?=		${WRKDIR}/${DISTNAME}/plugins/${PORTNAME}-${PORTVERSION}
+PLIST_SUB+=		LICQ_DEVEL="@comment "
