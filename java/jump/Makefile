@@ -6,17 +6,13 @@
 #
 
 PORTNAME=	jump
-PORTVERSION=	0.4.1
-PORTREVISION=	1
+PORTVERSION=	0.5
 CATEGORIES=	java math
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://www.metaverse.nl/~ernst/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	jump-math
 
 MAINTAINER=	znerd@FreeBSD.org
 COMMENT=	Java library for arbitrary precision computations
-
-BROKEN=		Checksum mismatch
 
 BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/apache-ant
 
@@ -31,13 +27,18 @@ ANT_TARGET=	jar apidocs
 JAVASHAREDIR=	${PREFIX}/share/java
 JARDIR=		${JAVASHAREDIR}/classes
 JARFILE=	${PORTNAME}.jar
+DESTJARFILE=	${PORTNAME}.jar
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	${WRKSRC}/build/apidocs
+.endif
 
 do-build:
-	@cd ${WRKSRC} && ${ANT} ${ANT_TARGET}
+	cd ${WRKSRC} && ${ANT} ${ANT_TARGET}
 
 do-install:
-	@${ECHO} -n ">> Installing JAR as ${JARDIR}/${JARFILE}..."
-	@${CP} ${WRKSRC}/build/${JARFILE} ${JARDIR}/
+	@${ECHO} -n ">> Installing JAR as ${JARDIR}/${DESTJARFILE}..."
+	@${CP} ${WRKSRC}/build/${JARFILE} ${JARDIR}/${DESTJARFILE}
 	@${ECHO} " [ DONE ]"
 
 .if !defined(NOPORTDOCS)
