@@ -1,14 +1,14 @@
 
 $FreeBSD$
 
---- makefile.orig	Mon Feb 26 13:19:04 2001
-+++ makefile	Fri Mar  2 11:43:00 2001
-@@ -10,34 +10,35 @@
+--- makefile.orig	Sun Apr 15 10:25:06 2001
++++ makefile	Tue Apr 17 14:16:28 2001
+@@ -10,34 +10,34 @@
  
  # For the Gnome desktop stuff to work, prefix must point to where Gnome thinks it is.
  # "h@h@" is printed here when gnome-config unavailable. Seems harmless.
 -gnomeprefix:=$(shell gnome-config --prefix 2>/dev/null)
-+gnomeprefix=$(PREFIX)
++gnomeprefix:=$(PREFIX)
  ifdef gnomeprefix
    prefix=$(gnomeprefix)
 -  datadir=$(gnomeprefix)/share
@@ -29,10 +29,8 @@ $FreeBSD$
  
  #CXXFLAGS= -g -DGTK -DSCI_LEXER -DSYSCONF_PATH=\"$(SYSCONF_PATH)\" -Wwrite-strings
 -INCLUDEDIRS=-I ../../scintilla/include -I ../src
--CXXBASEFLAGS= -DGTK -DSCI_LEXER -DSYSCONF_PATH=\"$(SYSCONF_PATH)\" -W -Wall
 +INCLUDEDIRS=-I $(X11BASE)/include/scintilla -I ../src
-+CXXBASEFLAGS= -DGTK -DSCI_LEXER -DSYSCONF_PATH=\"$(SYSCONF_PATH)\" -W -Wall \
-+	      $(shell $(GTK_CONFIG) --cflags)
+ CXXBASEFLAGS=-W -Wall -DGTK -DSCI_LEXER -DSYSCONF_PATH=\"$(SYSCONF_PATH)\" $(INCLUDEDIRS)
  
  ifdef DEBUG
 -CXXFLAGS=-DDEBUG $(CXXBASEFLAGS)
@@ -43,13 +41,13 @@ $FreeBSD$
  endif
  
  .cxx.o:
--	$(CC) `gtk-config --cflags` $(INCLUDEDIRS) $(CXXFLAGS) -c $< -o $@
-+	$(CC) $(INCLUDEDIRS) $(CXXFLAGS) -c $< -o $@
+-	$(CC) `gtk-config --cflags` $(CXXFLAGS) -c $< -o $@
++	$(CC) $(shell $(GTK_CONFIG) --cflags) $(CXXFLAGS) -c $< -o $@
  
  all: $(PROG)
  
-@@ -55,8 +56,8 @@
- 	../../scintilla/gtk/LexVB.o
+@@ -51,8 +51,8 @@
+ LEXEROBJS=$(wildcard ../../scintilla/gtk/Lex*.o)
  
  $(PROG): SciTEGTK.o SciTEBase.o SciTEBuffers.o SciTEIO.o Exporters.o \
 -SciTEProps.o ../../scintilla/bin/scintilla.a $(LEXEROBJS)
@@ -59,7 +57,7 @@ $FreeBSD$
  
  # SciTE-static no longer builds. Kept here in case of later need.
  SciTE-static: SciTEGTK.o SciTEBase.o SciTEBuffers.o SciTEIO.o Exporters.o SciTEProps.o \
-@@ -83,12 +84,12 @@
+@@ -66,12 +66,12 @@
  # This is OK - just means no SciTE in the Gnome Applications menu
  # Dead:	install -D SciTEGTK.properties $(SYSCONF_PATH)/SciTEGlobal.properties
  install:
