@@ -1,0 +1,14 @@
+--- src/GtkEditor/gtkeditor/gtkhint.c.orig	Mon Dec  6 01:40:45 1999
++++ src/GtkEditor/gtkeditor/gtkhint.c	Mon Feb 28 01:41:00 2000
+@@ -31,7 +31,11 @@
+ #include <gtk/gtktext.h>
+ 
+ #include "gtkeditor.h"
++#ifdef __FreeBSD__
++#include <gnuregex.h>
++#else
+ #include "regex.h"
++#endif
+ #include "gtkhint.h"
+ 
+ 
