@@ -1,0 +1,37 @@
+#!/bin/sh
+# Pre-configure script for mailagent.
+#   This script asks for information specific to the machine and writes
+#   given values to work/mailagent-3.0/config.sh to set the default
+#   values for COnfigure script so that Configure doesn't request any
+#   input.
+
+while [ X$addr = X ]; do
+    echo -n "Enter your complete E-mail address> " ; read addr
+done
+
+while [ X$host = X ]; do
+    echo -n "Enter fully qualified name of this host (`hostname`)>" ; read host
+    if [ X$host = X ]; then
+        host=`hostname`
+    fi
+done
+
+maildomain=`echo $addr | awk -F@ '{printf("%s", $2)}'`
+if [ `echo $maildomain | tr A-Z a-z` = `echo $host | tr A-Z a-z` ]; then
+    d_hidnet=undef
+    hiddennet=''
+else
+    d_hidnet=define
+    hiddennet=$maildomain
+fi
+
+echo -n "Enter the name of your organization> "; read orgname
+
+cat >${WRKSRC}/config.sh <<EOM
+#!/bin/sh
+cf_email='$addr'
+d_flockonly='define'
+d_hidnet='$d_hidnet'
+hiddennet='$hiddennet'
+orgname='$orgname'
+EOM

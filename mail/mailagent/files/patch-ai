@@ -1,0 +1,19 @@
+*** agent/mailhelp.SH.orig	Wed Mar 22 05:51:24 1995
+--- agent/mailhelp.SH	Thu Jul 25 19:56:16 1996
+***************
+*** 17,23 ****
+  echo "Extracting agent/mailhelp (with variable substitutions)"
+  $spitshell >mailhelp <<!GROK!THIS!
+  $startperl
+! 	eval "exec perl -S \$0 \$*"
+  		if \$running_under_some_shell;
+  
+  # $Id: mailhelp.SH,v 3.0.1.2 1995/03/21 12:55:04 ram Exp $
+--- 17,23 ----
+  echo "Extracting agent/mailhelp (with variable substitutions)"
+  $spitshell >mailhelp <<!GROK!THIS!
+  $startperl
+! 	eval "exec $perlpath -S \$0 \$*"
+  		if \$running_under_some_shell;
+  
+  # $Id: mailhelp.SH,v 3.0.1.2 1995/03/21 12:55:04 ram Exp $

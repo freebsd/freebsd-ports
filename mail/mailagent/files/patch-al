@@ -1,0 +1,19 @@
+*** agent/package.SH.orig	Thu Aug 10 15:34:35 1995
+--- agent/package.SH	Thu Jul 25 19:54:42 1996
+***************
+*** 17,23 ****
+  echo "Extracting agent/package (with variable substitutions)"
+  $spitshell >package <<!GROK!THIS!
+  $startperl
+! 	eval "exec perl -S \$0 \$*"
+  		if \$running_under_some_shell;
+  
+  # $Id: package.SH,v 3.0.1.6 1995/08/07 16:15:18 ram Exp $
+--- 17,23 ----
+  echo "Extracting agent/package (with variable substitutions)"
+  $spitshell >package <<!GROK!THIS!
+  $startperl
+! 	eval "exec $perlpath -S \$0 \$*"
+  		if \$running_under_some_shell;
+  
+  # $Id: package.SH,v 3.0.1.6 1995/08/07 16:15:18 ram Exp $
