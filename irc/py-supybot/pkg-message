@@ -1,6 +1,11 @@
 Supybot is installed. 
 
 For a quick start create a new directory from which to run
-your bot and run the supybot-wizard command from within it.
+your bot and run the supybot-wizard command from within it
+to create a config file and subdirectories.
+
+If you are want to use the Factoids, GrabQuote, Words (and
+possibly a few other) plugins, you need to install the
+databases/py-PySQLite port.
 
 For more information see the GETTING_STARTED document.
