@@ -3,7 +3,7 @@
 # Date created:				7 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.6 1998/08/07 23:56:50 asami Exp $
+# $Id: Makefile,v 1.7 1998/08/20 07:56:20 asami Exp $
 #
 
 DISTNAME=	workplace-1.0.a3
@@ -15,10 +15,10 @@ MAINTAINER=	andy@icc.surw.chel.su
 
 LIB_DEPENDS=	gtk\\.1\\.:${PORTSDIR}/x11-toolkits/gtk
 
-BROKEN=		gtk update
-
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/gtk10" \
+		LIBS="-L${LOCALBASE}/lib"
 
 pre-configure:
 	@ ${RM} ${WRKSRC}/config.cache
