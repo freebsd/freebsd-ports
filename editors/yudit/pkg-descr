@@ -1,0 +1,6 @@
+yudit is a unicode text editor for the X Window System.
+It does not need localized environment or unicode fonts.
+It supports simultanious processing of many languages,
+input methods, conversions for local character standards.
+The package includes conversion utilities, and it also
+has support for postscript printing.
