@@ -1,0 +1,5 @@
+bin/nano
+share/locale/es/LC_MESSAGES/nano.mo
+share/locale/de/LC_MESSAGES/nano.mo
+share/locale/fr/LC_MESSAGES/nano.mo
+share/locale/it/LC_MESSAGES/nano.mo

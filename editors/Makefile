@@ -59,6 +59,7 @@
     SUBDIR += muggy
     SUBDIR += mule
     SUBDIR += mule-common
+    SUBDIR += nano
     SUBDIR += nedit
     SUBDIR += nvi-m17n
     SUBDIR += nvi-perl
