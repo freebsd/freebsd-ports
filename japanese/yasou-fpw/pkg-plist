@@ -1,0 +1,8 @@
+share/dict/yasou-fpw/yasou/data/honmon
+share/dict/yasou-fpw/catalogs
+@dirrm share/dict/yasou-fpw/yasou/data
+@dirrm share/dict/yasou-fpw/yasou
+@dirrm share/dict/yasou-fpw
+%%PORTDOCS%%%%DOCSDIR%%/readme.fpw
+%%PORTDOCS%%%%DOCSDIR%%/yasoufpw.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

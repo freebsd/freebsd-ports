@@ -425,6 +425,7 @@
     SUBDIR += xvi-sjis
     SUBDIR += xyagamo
     SUBDIR += xyaku
+    SUBDIR += yasou-fpw
     SUBDIR += yc.el
     SUBDIR += zangband
     SUBDIR += zipcodes
