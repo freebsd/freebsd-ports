@@ -1,0 +1,5 @@
+Xin reads from standard input and splits the data up into sections,
+piping each section to a separate command. Optionally it can pad each
+section with zeros.
+
+WWW: http://www.kyne.com.au/~mark/software/xin.php
