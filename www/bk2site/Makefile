@@ -35,6 +35,7 @@ ICONSDIR?=	share/${PORTNAME}
 
 MAN1=		bk2site.1
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix="${PREFIX}" --enable-standard-datadir
@@ -43,11 +44,11 @@ CONFIGURE_ENV=	CPPFLAGS=-Wno-deprecated
 PLIST_SUB=	CGIDIR="${CGIDIR}" ICONSDIR="${ICONSDIR}"
 
 post-patch:
-	@${PERL} -pi -e 's,/etc/bk2site,${PREFIX}/etc/bk2site,' \
+	@${REINPLACE_CMD} -e 's,/etc/bk2site,${PREFIX}/etc/bk2site,' \
 	${WRKSRC}/dot.bk2siterc ${WRKSRC}/search.pl ${WRKSRC}/bk2site.1 \
 	${WRKSRC}/bk2site.html
-	@${PERL} -pi -e 's,/icons/,/icons/bk2site/,' ${WRKSRC}/*
-	@${PERL} -pi -e 's,long int l,time_t l,' ${WRKSRC}/reference.C
+	@${REINPLACE_CMD} -e 's,/icons/,/icons/bk2site/,' ${WRKSRC}/*
+	@${REINPLACE_CMD} -e 's,long int l,time_t l,' ${WRKSRC}/reference.C
 
 post-install:
 	${MKDIR} ${PREFIX}/etc/${PORTNAME}
