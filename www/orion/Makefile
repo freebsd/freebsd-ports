@@ -48,22 +48,3 @@ post-install:
 	@echo "${PORTTITLE} ${PORTVERSION} has been installed in ${ORION_DESTDIR}."
 
 .include <bsd.port.post.mk>
-
-
-# Portrevision from 1 to 2 (version is still 1.4.5)
-# Changed reference to linux-jdk1.2.2 into linux-jdk1.3.0 in the shell script,
-#     since the port depends on linux-jdk1.3.0.
-# Fixed a few typos and other issues in the shell script
-# No longer installing a link from ${PREFIX}/orion -> ${PREFIX}/orion1.4.5
-# Making all directories under ${PREFIX}/orion1.4.5 a+x
-# Added one mirror site for the DISTFILE
-# Renamed shell script from `orion.sh' to `orionctl' (similar to `apachectl')
-# Installing the shell script in the ${PREFIX}/bin/ directory and symlinking
-#    from ${PREFIX}/etc/rc.d/orion.sh to the former file, making sure that the
-#    shell script is +x
-# Including the shell script in ${FILESDIR} instead of downloading
-
-# TODO: Create a new account for Orion so it won't run as root
-# TODO: Support restarting Orion with the shell script script
-# TODO: Support obtaining status info from a running Orion instance
-# TODO: Add a man page for `orionctl'
