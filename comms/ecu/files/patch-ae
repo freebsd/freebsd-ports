@@ -1,0 +1,31 @@
+--- pprintf.c.orig	Fri Jul 18 00:04:43 2003
++++ pprintf.c	Fri Jul 18 00:06:19 2003
+@@ -40,7 +40,7 @@
+ #if !defined(BUILDING_PROTOTYPES)
+ 
+ #include <stdio.h>
+-#include <varargs.h>
++#include <stdarg.h>
+ 
+ /* This must be a typedef not a #define! */
+ typedef char *pointer;
+@@ -50,9 +50,7 @@
+ 	pprintf(format,va_alist)
+ --------------------------------------------------------------------------*/
+ void
+-pprintf(format, va_alist)
+-char *format;
+-va_dcl
++pprintf(char *format, ...)
+ {
+ 	va_list args;
+ 	char c;
+@@ -62,7 +60,7 @@
+     char accum_string[ACCUM_MAX_ALLOWABLE + 1024]; /* fairly fail-safe */
+ 	char *dp = accum_string;
+ 
+-	va_start(args);
++	va_start(args, format);
+ 
+ 	tempfmt[0] = '%';
+ 	while (c = *format++)
