@@ -235,6 +235,7 @@
     SUBDIR += namazu
     SUBDIR += namazu2
     SUBDIR += navi2ch-emacs20
+    SUBDIR += navi2ch-emacs21
     SUBDIR += navi2ch-xemacs21-mule
     SUBDIR += ndtpd
     SUBDIR += ne
