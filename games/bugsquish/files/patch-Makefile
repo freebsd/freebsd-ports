@@ -1,5 +1,5 @@
---- Makefile.orig	Fri Apr 19 04:15:27 2002
-+++ Makefile	Mon Jul  5 17:23:01 2004
+--- Makefile.orig	Fri Apr 19 17:15:27 2002
++++ Makefile	Fri Nov 26 23:05:54 2004
 @@ -9,8 +9,8 @@
  
  # User-definable stuff:
@@ -20,19 +20,15 @@
          -D$(NOSOUNDFLAG) -D$(TARGET_DEF)
  
  
-@@ -29,11 +29,11 @@
+@@ -29,8 +29,9 @@
  IMAGE=-lSDL_image
  NOSOUNDFLAG=__SOUND
  SDL_LIB=$(SDL_LDFLAGS) $(MIXER) $(IMAGE)
 -SDL_CFLAGS := $(shell sdl-config --cflags)
 -SDL_LDFLAGS := $(shell sdl-config --libs)
-+SDL_CFLAGS := $(shell sdl11-config --cflags)
-+SDL_LDFLAGS := $(shell sdl11-config --libs)
++SDL_CONFIG ?=sdl-config
++SDL_CFLAGS := $(shell $(SDL_CONFIG) --cflags)
++SDL_LDFLAGS := $(shell $(SDL_CONFIG) --libs)
  
--installbin = install -g root -o root -m 755 
--installdat = install -g root -o root -m 644
-+installbin = ${BSD_INSTALL_BIN}
-+installdat = ${BSD_INSTALL_DATA}
- 
- 
- # Make commands:
+ installbin = install -g root -o root -m 755 
+ installdat = install -g root -o root -m 644
