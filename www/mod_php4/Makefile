@@ -3,99 +3,99 @@
 # Date created:		Wed Sep  3 18:28:20 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.42 1997/10/04 14:52:58 andreas Exp $
+# $Id$
 #
 
-DISTNAME=       apache_1.2.5
-PKGNAME=	apache-php-1.2.5
+DISTNAME=	apache_1.2.6
+PKGNAME=	apache-1.2.6-php3.0
 CATEGORIES=	www
-MASTER_SITES=   ftp://www.apache.org/apache/dist/ \
-		ftp://ftp.nerosworld.com/pub/php/dist/ \
-		ftp://ftp.u-aizu.ac.jp/pub/net/www/php/ \
-		ftp://ftpza.co.za/pub/mirrors/php/
-DISTFILES=	apache_1.2.5.tar.gz php-2.0.1.tar.gz
+MASTER_SITES=	ftp://www.apache.org/apache/dist/ \
+		http://ca.php.net/distributions/
+DISTFILES=	apache_1.2.6.tar.gz php-3.0.tar.gz
 
-MAINTAINER=     andreas@FreeBSD.ORG
+MAINTAINER=	andreas@FreeBSD.ORG
 
-NO_PACKAGE=	"Too many questions"
-
-#
-# Currently we support two db's: msql and mysql
-# When running in batch mode default to mysql support, because it's
-# a free and very popular database !
-#
-.if defined(BATCH)
-PHP_DBTYPE=mysql
-.endif
-
-.if !defined(PHP_DBTYPE)
-pre-fetch:
-	@ ${ECHO}
-	@ ${ECHO} "You must set variable PHP_DBTYPE to msql or mysql by typing"
-	@ ${ECHO} "make PHP_DBTYPE=[ msql | mysql ]"
-	@ ${FALSE}
-
-.elif defined(PHP_DBTYPE)
-.if ${PHP_DBTYPE} == msql
 BUILD_DEPENDS=	${PREFIX}/lib/libgd.a:${PORTSDIR}/graphics/gd \
-		msql:${PORTSDIR}/databases/msql
-PATCHDIR=	${.CURDIR}/patches.msql
+		gmake:${PORTSDIR}/devel/gmake
 
-.elif ${PHP_DBTYPE} == mysql
-BUILD_DEPENDS=	${PREFIX}/lib/libgd.a:${PORTSDIR}/graphics/gd \
-		mysql:${PORTSDIR}/databases/mysql
-PATCHDIR=	${.CURDIR}/patches.mysql
-.endif
+NO_PACKAGE=	"Support for different databases via make-variable"
+
+MAN1=		htpasswd.1
+MAN8=		httpd.8
+DOCDIR=		${PREFIX}/share/doc/apache
+
+.if defined(PATCH_DEBUG)
+PATCH_DIST_ARGS= -d ${WRKSRC}/src -E ${PATCH_DIST_STRIP}
+.else
+PATCH_DIST_ARGS= -d ${WRKSRC}/src --forward --quiet -E ${PATCH_DIST_STRIP}
 .endif
 
 # Set it for local-supplied patch, f.e.
-VERS_ID = php-2.0.1/andreas
+VERS_ID = PHP-3.0
+
+PHP3_CONF_ARGS=	--prefix=${PREFIX} \
+		--with-system-regex --with-apache=${WRKSRC} \
+		--with-config-file-path=${PREFIX}/lib --disable-debug
+
+.if !defined(PHP3_DBTYPE) || ${PHP3_DBTYPE} != msql && ${PHP3_DBTYPE} != mysql && ${PHP3_DBTYPE} != pgsql
+pre-fetch:
+	@ ${ECHO}
+	@ ${ECHO} "You must set variable PHP3_DBTYPE to msql, mysql or pgsql by typing"
+	@ ${ECHO} "make PHP3_DBTYPE=[ msql | mysql | pgsql ]"
+	@ ${FALSE}
+.elif defined(PHP3_DBTYPE)
+.if ${PHP3_DBTYPE} == msql
+BUILD_DEPENDS+=		msql:${PORTSDIR}/databases/msql
+PHP3_CONF_ARGS+=	--with-msql=${PREFIX}
+.elif ${PHP3_DBTYPE} == mysql
+BUILD_DEPENDS+=		mysql:${PORTSDIR}/databases/mysql
+PHP3_CONF_ARGS+=	--with-mysql=${PREFIX}
+.elif ${PHP3_DBTYPE} == pgsql
+BUILD_DEPENDS+=		${PREFIX}/pgsql/bin/psql:${PORTSDIR}/databases/postgresql
+PHP3_CONF_ARGS+=	--with-pgsql=${PREFIX}/pgsql
+.endif
+.endif
 
 .if defined(VERS_ID)
 post-patch:
-	@ cd ${WRKSRC}/src && \
-	${MV}  Configuration Configuration.old && \
+	@cd ${WRKSRC}/src && \
+	${MV} Configuration Configuration.old && \
 	${SED} 's;^#*OPTIM=.*;OPTIM= -DSERVER_SUBVERSION=\\"${VERS_ID}\\";' \
 	< Configuration.old > Configuration
 .endif
 
 pre-configure:
-.if !defined(PHP_DBTYPE)
-	@ ${ECHO}
-	@ ${ECHO} "You must set variable PHP_DBTYPE to msql or mysql by typing"
-	@ ${ECHO} "make PHP_DBTYPE=[ msql | mysql ]"
-	@ ${FALSE}
-.else
-	( cd ${WRKDIR}/php-2.0.1; ${SED} "s#@@PREFIX@@#${PREFIX}#" < ${FILESDIR}/install.patch | patch)
-	( cd ${WRKDIR}/php-2.0.1; ./install )
-	( cd ${WRKDIR}/php-2.0.1/src; make )
-	( cd ${WRKDIR}/php-2.0.1/src \
-	&& ${CP} mod_php.c mod_php.h libphp.a ../../apache_1.2.5/src )
-	( cd ${WRKDIR}/apache_1.2.5/src \
-	&& ${ECHO} "Module php_module mod_php.o" \
-	>> Configuration )
-.if ${PHP_DBTYPE} == msql
-	( cd ${WRKDIR}/apache_1.2.5/src \
-	&& ${ECHO} "EXTRA_LIBS=-lmd libphp.a -L${PREFIX}/lib -lmsql -lgd -lm" \
-	>> Configuration )
-.else
-	( cd ${WRKDIR}/apache_1.2.5/src \
-	&& ${ECHO} "EXTRA_LIBS=-lmd libphp.a -L${PREFIX}/lib/mysql -lmysqlclient -L${PREFIX}/lib -lgd -lm" \
-	>> Configuration )
-.endif
+	( cd ${WRKDIR}/php-3.0 \
+	&& CC="${CC}" CFLAGS="${CFLAGS}" ./configure ${PHP3_CONF_ARGS} \
+	&& ${GMAKE} install )
+	${ECHO} "Module php3_module mod_php3.o" >> ${WRKSRC}/src/Configuration
+.if defined(PHP3_DBTYPE) && ${PHP3_DBTYPE} == msql
+	${ECHO} "EXTRA_LIBS=-lmd libphp3.a -L${PREFIX}/lib -lmsql -lgd -lm" >> ${WRKSRC}/src/Configuration
+.elif defined(PHP3_DBTYPE) && ${PHP3_DBTYPE} == mysql
+	${ECHO} "EXTRA_LIBS=-lmd libphp3.a -L${PREFIX}/lib/mysql -lmysqlclient -L${PREFIX}/lib -lgd -lm"  >> ${WRKSRC}/src/Configuration
+.elif defined(PHP3_DBTYPE) && ${PHP3_DBTYPE} == pgsql
+	${ECHO} "EXTRA_LIBS=-lmd libphp3.a -L${PREFIX}/pgsql/lib -lpq -L${PREFIX}/lib -lgd -lm" >> ${WRKSRC}/src/Configuration
 .endif
 
 post-install:
-	@ if [ ! -f ${PREFIX}/etc/rc.d/apache.sh ]; then \
+	@if [ ! -f ${PREFIX}/etc/rc.d/apache.sh ]; then \
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/apache.sh startup file."; \
-		${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/apache.sh; \
-		${ECHO} "[ -x ${PREFIX}/sbin/httpd ] && ${PREFIX}/sbin/httpd && ${ECHO} -n ' httpd'" >> ${PREFIX}/etc/rc.d/apache.sh; \
+		${SED} 's;PREFIX;${PREFIX};' < ${FILESDIR}/apache.sh.tmpl > \
+		${PREFIX}/etc/rc.d/apache.sh; \
 		chmod 751 ${PREFIX}/etc/rc.d/apache.sh; \
 	fi
-	${ECHO} "AddType application/x-httpd-php .phtml" \
-		> ${PREFIX}/etc/apache/srm.conf.php
-	@ ${ECHO} "Don't forget to enable php support in \
-		${PREFIX}/etc/apache/srm.conf"
-	@ ${ECHO} "See ${PREFIX}/etc/apache/srm.conf.php"
+.for i in ${MAN1}
+	${INSTALL_MAN} ${WRKSRC}/support/$i ${PREFIX}/man/man1
+.endfor
+.for i in ${MAN8}
+	${INSTALL_MAN} ${WRKSRC}/support/$i ${PREFIX}/man/man8
+.endfor
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCDIR}
+.for i in README LICENSE ABOUT_APACHE
+	${INSTALL_DATA} ${WRKSRC}/$i ${DOCDIR}
+.endfor
+	@cd ${WRKSRC}/htdocs; tar cf - . | (cd ${DOCDIR}; tar xf -)
+.endif
 
 .include <bsd.port.mk>

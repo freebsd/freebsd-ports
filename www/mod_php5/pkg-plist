@@ -1,11 +1,106 @@
-etc/rc.d/apache.sh
-@exec mkdir -p %D/www/cgi-bin %D/www/data
-etc/apache/httpd.conf-dist
-etc/apache/srm.conf-dist
-etc/apache/srm.conf.php
 etc/apache/access.conf-dist
+etc/apache/httpd.conf-dist
 etc/apache/mime.types-dist
+etc/apache/srm.conf-dist
+etc/rc.d/apache.sh
+man/man1/htpasswd.1.gz
+man/man8/httpd.8.gz
 sbin/httpd
+share/doc/apache/ABOUT_APACHE
+share/doc/apache/LICENSE
+share/doc/apache/README
+share/doc/apache/apache_pb.gif
+share/doc/apache/index.html
+share/doc/apache/manual/LICENSE
+share/doc/apache/manual/TODO
+share/doc/apache/manual/bind.html
+share/doc/apache/manual/cgi_path.html
+share/doc/apache/manual/content-negotiation.html
+share/doc/apache/manual/custom-error.html
+share/doc/apache/manual/dns-caveats.html
+share/doc/apache/manual/env.html
+share/doc/apache/manual/footer.html
+share/doc/apache/manual/handler.html
+share/doc/apache/manual/header.html
+share/doc/apache/manual/host.html
+share/doc/apache/manual/images/home.gif
+share/doc/apache/manual/images/index.gif
+share/doc/apache/manual/images/sub.gif
+share/doc/apache/manual/index.html
+share/doc/apache/manual/install.html
+share/doc/apache/manual/install_1_1.html
+share/doc/apache/manual/invoking.html
+share/doc/apache/manual/keepalive.html
+share/doc/apache/manual/location.html
+share/doc/apache/manual/man-template.html
+share/doc/apache/manual/misc/API.html
+share/doc/apache/manual/misc/FAQ.html
+share/doc/apache/manual/misc/client_block_api.html
+share/doc/apache/manual/misc/compat_notes.html
+share/doc/apache/manual/misc/descriptors.html
+share/doc/apache/manual/misc/fin_wait_2.html
+share/doc/apache/manual/misc/footer.html
+share/doc/apache/manual/misc/header.html
+share/doc/apache/manual/misc/howto.html
+share/doc/apache/manual/misc/index.html
+share/doc/apache/manual/misc/known_bugs.html
+share/doc/apache/manual/misc/known_client_problems.html
+share/doc/apache/manual/misc/nopgp.html
+share/doc/apache/manual/misc/perf-bsd44.html
+share/doc/apache/manual/misc/perf-dec.html
+share/doc/apache/manual/misc/perf.html
+share/doc/apache/manual/misc/security_tips.html
+share/doc/apache/manual/misc/vif-info.html
+share/doc/apache/manual/misc/windoz_keepalive.html
+share/doc/apache/manual/mod/core.html
+share/doc/apache/manual/mod/directives.html
+share/doc/apache/manual/mod/footer.html
+share/doc/apache/manual/mod/header.html
+share/doc/apache/manual/mod/index.html
+share/doc/apache/manual/mod/mod_access.html
+share/doc/apache/manual/mod/mod_actions.html
+share/doc/apache/manual/mod/mod_alias.html
+share/doc/apache/manual/mod/mod_asis.html
+share/doc/apache/manual/mod/mod_auth.html
+share/doc/apache/manual/mod/mod_auth_anon.html
+share/doc/apache/manual/mod/mod_auth_db.html
+share/doc/apache/manual/mod/mod_auth_dbm.html
+share/doc/apache/manual/mod/mod_auth_msql.html
+share/doc/apache/manual/mod/mod_browser.html
+share/doc/apache/manual/mod/mod_cern_meta.html
+share/doc/apache/manual/mod/mod_cgi.html
+share/doc/apache/manual/mod/mod_cookies.html
+share/doc/apache/manual/mod/mod_digest.html
+share/doc/apache/manual/mod/mod_dir.html
+share/doc/apache/manual/mod/mod_dld.html
+share/doc/apache/manual/mod/mod_env.html
+share/doc/apache/manual/mod/mod_example.html
+share/doc/apache/manual/mod/mod_expires.html
+share/doc/apache/manual/mod/mod_headers.html
+share/doc/apache/manual/mod/mod_imap.html
+share/doc/apache/manual/mod/mod_include.html
+share/doc/apache/manual/mod/mod_info.html
+share/doc/apache/manual/mod/mod_log_agent.html
+share/doc/apache/manual/mod/mod_log_common.html
+share/doc/apache/manual/mod/mod_log_config.html
+share/doc/apache/manual/mod/mod_log_referer.html
+share/doc/apache/manual/mod/mod_mime.html
+share/doc/apache/manual/mod/mod_negotiation.html
+share/doc/apache/manual/mod/mod_proxy.html
+share/doc/apache/manual/mod/mod_rewrite.html
+share/doc/apache/manual/mod/mod_status.html
+share/doc/apache/manual/mod/mod_userdir.html
+share/doc/apache/manual/mod/mod_usertrack.html
+share/doc/apache/manual/multilogs.html
+share/doc/apache/manual/new_features_1_0.html
+share/doc/apache/manual/new_features_1_1.html
+share/doc/apache/manual/new_features_1_2.html
+share/doc/apache/manual/process-model.html
+share/doc/apache/manual/stopping.html
+share/doc/apache/manual/suexec.html
+share/doc/apache/manual/unixware.html
+share/doc/apache/manual/vhosts-in-depth.html
+share/doc/apache/manual/virtual-host.html
 www/icons/README
 www/icons/a.gif
 www/icons/alert.black.gif
@@ -82,3 +177,13 @@ www/icons/uu.gif
 www/icons/uuencoded.gif
 www/icons/world1.gif
 www/icons/world2.gif
+@exec mkdir -p %D/www/cgi-bin %D/www/data
+@dirrm share/doc/apache/manual/images
+@dirrm share/doc/apache/manual/misc
+@dirrm share/doc/apache/manual/mod
+@dirrm share/doc/apache/manual
+@dirrm share/doc/apache
+@dirrm www/cgi-bin
+@dirrm www/data
+@dirrm www/icons
+@dirrm www

@@ -1,21 +1,16 @@
-                                 Apache / PHP
+Apache is an HTTP server designed as a plug-in replacement for the
+NCSA server version 1.3 (or 1.4). It fixes numerous bugs in the
+NCSA server and includes many frequently requested new features,
+and has an API which allows it to be extended to meet users' needs
+more easily.
 
-What is it?
------------
+The documentation available as of the date of this release is also
+included, in HTML format, in the htdocs/manual/ directory. For the
+most up-to-date documentation, visit us on the WWW, at:
 
-Apache is an HTTP server designed as a plug-in replacement for the NCSA
-server version 1.3 (or 1.4). It fixes numerous bugs in the NCSA server and
-includes many frequently requested new features, and has an API which
-allows it to be extended to meet users' needs more easily.
+	http://www.apache.org/
 
-This version includes support for the dynamic page language php,
-which is a more comprehensive embedded language than SSI, with
-built-in support for various databases (such as mSQL, mySQL, 
-postgresql, Oracle, Sybase) and page counters.
+Visit Apache Week, the best place for the latest Apache news and
+information. New issue every Friday:
 
-For more information about apache dynamic pages and php, see:
-
-	http://www.apacheweek.com/features/dynamicpages/
-	http://php.iquest.net/
-
--andreas
+	http://www.apacheweek.com/
