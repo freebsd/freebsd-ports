@@ -25,7 +25,7 @@ USE_RUBY_EXTCONF=	yes
 
 CDDB_DISTNAME=	cddb-0.2
 CDDB_WRKSRC=	${WRKDIR}/example
-NO_BUILD=	yes
+
 INSTALL_TARGET=	site-install
 
 DOCS=		audiofile.html audiofile.rd
