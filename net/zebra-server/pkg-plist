@@ -1,6 +1,8 @@
 bin/zebraidx
 bin/zebrash
 bin/zebrasrv
+include/zebraapi.h
+include/zebraver.h
 share/doc/zebra-server/zebra.html
 share/doc/zebra-server/zebra.pdf
 share/doc/zebra-server/administration.html
@@ -18,6 +20,7 @@ share/doc/zebra-server/future.html
 share/doc/zebra-server/generic-ids.html
 share/doc/zebra-server/indexdata.html
 share/doc/zebra-server/installation.html
+share/doc/zebra-server/installation.win32.html
 share/doc/zebra-server/internal-representation.html
 share/doc/zebra-server/introduction.html
 share/doc/zebra-server/license.html
