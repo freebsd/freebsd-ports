@@ -3,7 +3,7 @@
 # Date created:				26 Jan 1998
 # Whom:					Josh Tiefenbach <josh@ican.net>
 #
-# $Id: Makefile,v 1.58 1999/07/04 14:55:11 dirk Exp $
+# $Id: Makefile,v 1.59 1999/07/05 18:11:36 dirk Exp $
 #
 
 DISTNAME=	mysql-3.22.24
@@ -15,17 +15,18 @@ MASTER_SITES=	http://www.fh-wolfenbuettel.de/ftp/pub/database/mysql/Downloads/My
 		ftp://ftp.plig.net/pub/mysql/Downloads/MySQL-3.22/ \
 		ftp://ftp.sunet.se/pub/unix/databases/relational/mysql/Downloads/MySQL-3.22/
 
-MAINTAINER=	dirk@FreeBSD.ORG
+MAINTAINER=	dirk@FreeBSD.org
 
 .if ${MACHINE_ARCH} == "alpha"
 BROKEN=		doesn\'t build on the alpha yet
 .endif
 
-Y2K=            http://www.tcx.se/Manual_chapter/manual_Introduction.html#Year_2000_compliance
+Y2K=		http://www.tcx.se/Manual_chapter/manual_Introduction.html#Year_2000_compliance
 
+DB_DIR?=	/var/db/mysql
 USE_PERL5=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ARGS=	--localstatedir=/var/db/mysql \
+CONFIGURE_ARGS=	--localstatedir=${DB_DIR} \
 		--without-perl \
 		--without-debug \
 		--without-readline \
@@ -71,14 +72,27 @@ pre-fetch:
 .endif
 
 pre-install:
-.if !defined(PACKAGE_BUILDING)
-	@${SETENV} ${MAKE_ENV} ${PERL5} ${SCRIPTDIR}/check_old_version
+.if !defined(PACKAGE_BUILDING) && exists(${DB_DIR}) && !defined(OVERWRITE_DB)
+	@${ECHO} "You appear to already have a mysql database directory in ${DB_DIR}."
+	@${ECHO} ""
+	@${ECHO} "In order to preserve your existing data, you should:"
+	@${ECHO} "	- dump all your databases"
+	@${ECHO} "	- kill mysql if it is running"
+	@${ECHO} "	- delete the ${DB_DIR} directory"
+	@${ECHO} "	- run 'make install'"
+	@${ECHO} "	- start up mysql"
+	@${ECHO} "	- re-create all of your database"
+	@${ECHO} "	- re-load your data"
+	@${ECHO} ""
+	@${ECHO} "If you understand the consequences of this upgrade, please re-build this"
+	@${ECHO} "port with the environment variable OVERWRITE_DB defined."
+	@${FALSE}
 .endif
 
 post-install:
 .if !defined(PACKAGE_BUILDING)
 	${PREFIX}/bin/mysql_install_db
-	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${SETENV} DB_DIR=${DB_DIR} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
 	@${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/mysql-server.sh
 	@${ECHO} "#" >> ${PREFIX}/etc/rc.d/mysql-server.sh
