@@ -6,6 +6,7 @@
 #
 
 PORTNAME=	php3
+PORTREVISION=	1
 CATEGORIES=	lang
 
 MASTERDIR=	${.CURDIR}/../../www/mod_php3
