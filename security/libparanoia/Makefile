@@ -6,7 +6,7 @@
 
 PORTNAME=	libparanoia
 PORTVERSION=	1.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.lexa.ru/pub/domestic/snar/
 
@@ -14,6 +14,7 @@ MAINTAINER=	snar@paranoia.ru
 COMMENT=	Safe (in the mean of stack smashing) reincarnation of strcpy et al
 
 ONLY_FOR_ARCHS=	i386
+USE_REINPLACE=	yes
 
 INSTALLS_SHLIB=	yes
 
@@ -26,6 +27,11 @@ BROKEN=		You need to have libc sources installed in /usr/src/lib/libc \
 .endif
 
 .include <bsd.port.pre.mk>
+
+pre-patch:
+	@${REINPLACE_CMD} -e 's|\(SIGSEGV\),\(getpid()\)|\2,\1|; \
+		s|#include <varargs.h>||' \
+		${WRKSRC}/stentry.c
 
 .if ${OSVERSION} >= 500039
 post-patch:
