@@ -1,4 +1,4 @@
 bin/gmrun
-etc/gmrunrc
+share/gnome/gmrun/gmrunrc
 %%PORTDOCS%%share/doc/gmrun/README
 %%PORTDOCS%%@dirrm share/doc/gmrun

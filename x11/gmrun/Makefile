@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gmrun
-PORTVERSION=	0.8.1
+PORTVERSION=	0.9
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,7 +19,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack gtk12 glib12
+USE_GNOME=	gnomeprefix gnomehack gtk20
 
 .include <bsd.port.pre.mk>
 
@@ -27,13 +27,7 @@ USE_GNOME=	gnomeprefix gnomehack gtk12 glib12
 BROKEN=         "Does not compile (bad C++ code)"
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|PACKAGE_DATA_DIR\"|\"${PREFIX}/etc|' ${WRKSRC}/src/prefs.cc
-
-do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/src/gmrun ${PREFIX}/bin
-	@${INSTALL_DATA} ${WRKSRC}/config/gmrunrc ${PREFIX}/etc
+post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
