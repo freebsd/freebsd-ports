@@ -19,7 +19,7 @@ http_port='3000'
 https_port='3001'
 
 # Directory for ntop.access.log
-logdir='%%LOGDIR%%/ntop.access.log'
+logdir='%%LOGDIR%%'
 
 # Specify any additional arguments here - see ntop(8)
 additional_args='-E'
@@ -28,12 +28,12 @@ additional_args='-E'
 # End of user-configurable variables
 #----------------------------------------------------------------------
 
-args='-d -t0'
+args='-d -L'
 
 [ ! -z $interfaces ] && args="$args -i $interfaces"
 [ ! -z $http_port ] && args="$args -w $http_port"
 [ ! -z $https_port ] && args="$args -W $https_port"
-[ ! -z $logdir ] && args="$args -a ${logdir}"
+[ ! -z $logdir ] && args="$args -a ${logdir}/ntop.access.log"
 [ ! -z $userid ] && args="$args -u $userid"
 [ ! -z "$additional_args" ] && args="$args $additional_args"
 
