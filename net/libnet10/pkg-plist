@@ -7,38 +7,24 @@ include/libnet/libnet-macros.h
 include/libnet/libnet-ospf.h
 include/libnet/libnet-structures.h
 lib/libnet.a
-lib/libpwrite
+lib/libpwrite.a
 share/doc/libnet/CHANGELOG
 share/doc/libnet/CHANGELOG-NEWFUNCTIONS
 share/doc/libnet/COPYING
 share/doc/libnet/README
-share/doc/libnet/README.asn.1
-share/doc/libnet/README.bpf
-share/doc/libnet/README.legacy-applications
-share/doc/libnet/README.libnet-config
-share/doc/libnet/README.linux
-share/doc/libnet/README.rawsockets
 share/doc/libnet/TODO-1.0
 share/doc/libnet/TODO-1.1
-share/doc/libnet/html/1.html
-share/doc/libnet/html/2.html
-share/doc/libnet/html/3.html
-share/doc/libnet/html/4.html
-share/doc/libnet/html/5.html
-share/doc/libnet/html/6.html
-share/doc/libnet/html/7.html
-share/doc/libnet/html/contrib.html
-share/doc/libnet/html/examples/libnet-example-1.c
-share/doc/libnet/html/examples/libnet-example-2.c
-share/doc/libnet/html/examples/libnet-example-3.c
-share/doc/libnet/html/examples/libnet-example-4.c
-share/doc/libnet/html/fig-3a.gif
-share/doc/libnet/html/figure-1.gif
-share/doc/libnet/html/figure-2.gif
-share/doc/libnet/html/figure-3.gif
-share/doc/libnet/html/figure-3a.gif
-share/doc/libnet/html/lrm.html
-@dirrm share/doc/libnet/html/examples
-@dirrm share/doc/libnet/html
+share/doc/libnet/examples/libnet-example-1.c
+share/doc/libnet/examples/libnet-example-2.c
+share/doc/libnet/examples/libnet-example-3.c
+share/doc/libnet/examples/libnet-example-4.c
+share/doc/libnet/ancillary/README.asn.1
+share/doc/libnet/ancillary/README.bpf
+share/doc/libnet/ancillary/README.legacy-applications
+share/doc/libnet/ancillary/README.libnet-config
+share/doc/libnet/ancillary/README.linux
+share/doc/libnet/ancillary/README.rawsockets
+@dirrm share/doc/libnet/ancillary
+@dirrm share/doc/libnet/examples
 @dirrm share/doc/libnet
 @dirrm include/libnet

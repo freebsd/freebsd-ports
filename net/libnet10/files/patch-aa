@@ -1,31 +1,29 @@
---- configure.orig	Wed Oct 27 11:47:27 1999
-+++ configure	Sat Apr 22 04:01:09 2000
-@@ -903,7 +903,7 @@
- 
+--- configure.in.orig	Wed Jan 17 12:59:30 2001
++++ configure.in	Mon Jul  2 19:18:50 2001
+@@ -50,10 +50,10 @@
+ dnl Use these compiler flags if we have gcc.
+ dnl
  if test $ac_cv_prog_gcc = yes; then
-     CCOPTS='-O3 -funroll-loops -fomit-frame-pointer -Wall'
+-dnl if test -z $CFLAGS; then 
+-    CCOPTS='-O2 -funroll-loops -fomit-frame-pointer -Wall'
 -    CFLAGS="$CCOPTS"
-+    CFLAGS?="$CCOPTS"
+-dnl fi
++    if test -z "$CFLAGS"; then 
++        CCOPTS='-O2 -funroll-loops -fomit-frame-pointer -Wall'
++        CFLAGS="$CCOPTS"
++    fi
  fi
  
- # Check whether --with-pf_packet or --without-pf_packet was given.
-@@ -1497,8 +1497,8 @@
- 
-     LIBNET_CONFIG_DEFINES="-DLIBNET_BSDISH_OS -DLIBNET_BSD_BYTE_SWAP \
-         -DHAVE_SOCKADDR_SA_LEN"
--    MAN_PREFIX="$prefix/man/man3/"
--    LIB_PREFIX="$prefix/lib/aout"
-+    MAN_PREFIX="$prefix/man/"
-+    LIB_PREFIX="$prefix/lib/"
+ dnl
+@@ -163,8 +163,9 @@
+     LIB_PREFIX="$prefix/lib/aout"
      INC_PREFIX="$prefix/include/"
      BIN_PREFIX="$prefix/bin/"
-     echo "$ac_t""Note: support/bpf-lkm/etherspoof contains the lkm source \
-@@ -1517,7 +1517,7 @@
- 
-     LIBNET_CONFIG_DEFINES="-DLIBNET_BSDISH_OS -DLIBNET_BSD_BYTE_SWAP"
-     MAN_PREFIX="$prefix/man/man3/"
--    LIB_PREFIX="$prefix/lib/aout"
-+    LIB_PREFIX="$prefix/lib/"
-     INC_PREFIX="$prefix/include/"
-     BIN_PREFIX="$prefix/bin/"
+-    AC_MSG_RESULT(Note: support/bpf-lkm/etherspoof contains the lkm source \
+-required to spoof ethernet frames)
++dnl etherspoof lkm is horrible and only necesary on < RELENG_4
++dnl     AC_MSG_RESULT(Note: support/bpf-lkm/etherspoof contains the lkm source \
++dnl required to spoof ethernet frames)
+     ln -sf FreeBSD support/bpf-lkm/etherspoof
      ;;
+ 
