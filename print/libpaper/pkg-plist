@@ -1,0 +1,7 @@
+bin/paperconf
+include/paper.h
+lib/libpaper.a
+lib/libpaper.la
+lib/libpaper.so
+lib/libpaper.so.2
+sbin/paperconfig
