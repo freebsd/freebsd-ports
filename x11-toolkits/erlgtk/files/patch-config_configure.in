@@ -1,26 +1,23 @@
 
 $FreeBSD$
 
---- config/configure.in.orig	Thu May  2 01:42:15 2002
-+++ config/configure.in	Mon Sep  1 11:11:00 2003
-@@ -69,9 +69,10 @@
+--- config/configure.in.orig	Tue Sep  2 14:17:18 2003
++++ config/configure.in	Tue Nov  4 13:08:00 2003
+@@ -64,7 +64,7 @@
+    EXISTS_FLAG=""
+ fi
  
- GTK_VERSION=`$GTK_CONFIG --version | awk -F. '{ print $1*65536+$2*256+$3 }'`
- GTK_CFLAGS=`$GTK_CONFIG --cflags`
-+GDK_PIXBUF_CFLAGS=`$GDK_PIXBUF_CONFIG --cflags`
- GTK_LIBS=`$GTK_CONFIG --libs`
+-AC_MSG_RESULT(PGK_CONFIG = $PKG_CONFIG)
++AC_MSG_RESULT(PKG_CONFIG = $PKG_CONFIG)
+ AC_MSG_RESULT(GTK_CONFIG = $GTK_CONFIG)
+ AC_MSG_RESULT(GNOME_CONFIG = $GNOME_CONFIG)
+ AC_MSG_RESULT(GDK_PIXBUF_CONFIG = $GDK_PIXBUF_CONFIG)
+@@ -107,7 +107,7 @@
+ fi
  
--GTK_CFLAGS="-DGTK_VERSION=$GTK_VERSION $GTK_CFLAGS $GTK_XCFLAGS"
-+GTK_CFLAGS="-DGTK_VERSION=$GTK_VERSION $GTK_CFLAGS $GDK_PIXBUF_CFLAGS $GTK_XCFLAGS"
- 
- 
- if test "x$GNOME" != "xno"; then
-@@ -122,7 +123,7 @@
- ERLC_FLAGS=
- EI_DIR=`$ERLC eiconf.erl; $ERL -noshell -s eiconf`
- EI_CFLAGS="-I$EI_DIR/include"
--EI_LIBS="-L$EI_DIR/lib -lerl_interface -lei"
-+EI_LIBS="-L$EI_DIR/lib -lerl_interface_st -lei_st"
- dnl
- dnl Check if the erl_interface is capable of represent/store functions
- dnl
+ AC_MSG_RESULT(GTK_DO = $GTK_DO)
+-if test "x$GTK" == "x-2.0"; then
++if test "x$GTK" = "x-2.0"; then
+ 	GTK_REL="2";
+ else
+ 	GTK_REL=""
