@@ -16,7 +16,7 @@ MASTER_SITES=	http://www4.vmware.com/software/ \
 		http://www.vmware.co.uk/software/ \
 		http://mirror.aarnet.edu.au/pub/vmware/software/ \
 		ftp://mirror.aarnet.edu.au/pub/vmware/software/
-DISTNAME=	VMware-1.1.2-364
+DISTNAME=	VMware-${PORTVERSION:R}-${PORTVERSION:E}
 
 PATCH_SITES=	http://www.mindspring.com/~vsilyaev/vmware/files/ \
 		ftp://mirror.aarnet.edu.au/pub/vmware/freebsd/ \
@@ -24,7 +24,9 @@ PATCH_SITES=	http://www.mindspring.com/~vsilyaev/vmware/files/ \
 PATCHFILES=	vmmon-freebsd-0.94.tar.gz \
 		vmnet-freebsd-0.10.tar.gz
 
-MAINTAINER=	freebsd-emulation@FreeBSD.org
+# Feel free to post your questions/reports/suggestions on this port to
+# freebsd-emulation mailing list with the following maintainer address CC'ed.
+MAINTAINER=	ak@freenet.co.uk
 
 RUN_DEPENDS=	${LINUX_DIR}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
 
