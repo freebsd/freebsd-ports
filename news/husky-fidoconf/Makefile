@@ -12,6 +12,7 @@ CATEGORIES=	news mail
 DISTNAME=	${PORTNAME}_${PORTVERSION}-${PORTREVISION}
 
 MAINTAINER=	fjoe@FreeBSD.org
+COMMENT=	Configuration library for Husky Fidosoft Project
 
 LIB_DEPENDS=	smapi.2:${PORTSDIR}/news/husky-smapi
 RUN_DEPENDS=	${BUILD_DEPENDS}

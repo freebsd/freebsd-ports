@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.physcip.uni-stuttgart.de:8080/fidosoft.husky/
 DISTNAME=	huskybse-${PORTVERSION}-src
 
 MAINTAINER=	fjoe@FreeBSD.org
+COMMENT=	Common files for Husky Fidosoft Project
 
 WRKSRC=		${WRKDIR}/huskybse-${PORTVERSION}
 NO_BUILD=	yes

@@ -12,6 +12,7 @@ CATEGORIES=	news mail
 DISTNAME=	${PORTNAME}_${PORTVERSION}-${PORTREVISION}
 
 MAINTAINER=	fjoe@FreeBSD.org
+COMMENT=	Fix message base
 
 LIB_DEPENDS=	smapi.2:${PORTSDIR}/news/husky-smapi
 
