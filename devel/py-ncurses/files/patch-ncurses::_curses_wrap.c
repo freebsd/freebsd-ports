@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- ncurses/_curses_wrap.c.orig	Sat Apr 22 23:52:02 2000
-+++ ncurses/_curses_wrap.c	Tue Mar 13 19:23:42 2001
+--- ncurses/_curses_wrap.c.orig	Sun Apr 23 05:52:02 2000
++++ ncurses/_curses_wrap.c	Sun Dec 15 05:30:05 2002
 @@ -1136,7 +1136,7 @@
  extern bool isendwin();
  extern bool is_linetouched(WINDOW *,int );
@@ -42,6 +39,15 @@ $FreeBSD$
  extern int waddch(WINDOW *,const chtype );
  extern int waddchnstr(WINDOW *,const chtype *,int );
  extern int waddnstr(WINDOW *,const char *,int );
+@@ -1252,7 +1252,7 @@
+ extern int mcprint(char *,int );
+ extern int has_key(int );
+ extern char *_nc_tracebits();
+-extern char *_tracechar(const unsigned char );
++/*extern char *_tracechar(const unsigned char );*/
+ extern void trace(const unsigned int );
+ extern const char *_nc_visbuf(const char *);
+ extern void GetYX(WINDOW *,int *,int *);
 @@ -4442,7 +4442,8 @@
  }
  
