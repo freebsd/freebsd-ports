@@ -1,5 +1,5 @@
 %%SITE_PERL%%/Net/QMTP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/QMTP/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/QMTP
-@unexec rmdir %%SITE_PERL%%/Net 2>/dev/null || true
-@unexec rmdir %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
+@unexec rmdir %%PREFIX%%/%%SITE_PERL%%/Net 2>/dev/null || true
+@unexec rmdir %%PREFIX%%/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
