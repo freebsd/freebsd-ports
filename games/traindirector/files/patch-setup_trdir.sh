@@ -1,5 +1,5 @@
---- setup_trdir.sh.orig	Sat Dec 13 02:34:25 2003
-+++ setup_trdir.sh	Sat Dec 13 02:36:42 2003
+--- setup_trdir.sh.orig	Wed Feb 18 15:03:49 2004
++++ setup_trdir.sh	Wed Feb 18 15:10:49 2004
 @@ -6,9 +6,9 @@
  # edit the folowing line
  #
@@ -12,36 +12,48 @@
  ##################################################################"
  echo "*********************************"
  echo "*  Traindirector Installation   *"
-@@ -16,25 +16,26 @@
+@@ -16,7 +16,7 @@
  echo
  echo  "Making traindir samples directory....."
  echo 
 -TDHOMEDIR="$HOME/traindir"
--ICONDIR="$HOME/traindir/tdicons"
 +TDHOMEDIR="$HOME/.traindir"
-+ICONDIR="$HOME/.traindir/tdicons"
+ ICONDIR="$TDHOMEDIR/tdicons"
+ LOCALEDIR="$TDHOMEDIR/locales"
+ if ! test -d $TDHOMEDIR  ; then
+@@ -37,7 +37,7 @@
  
- mkdir $TDHOMEDIR
- mkdir $ICONDIR
+ case $CHOIX in
+     "2") FLNAME=".traindir.it"
+-         echo " Avette schelto Italiano"
++         echo "Avete scelto l'italiano"
+          STRING='locale .it';;
+ 	 	 
+     "3") FLNAME=".traindir.fr"
+@@ -54,9 +54,7 @@
+     cp -f $SAMPLE/traindir/locales/$FLNAME $HOME/.traindir/
+ fi
  
--cp $SAMPLE/traindir/* $TDHOMEDIR
--cp $SAMPLE/traindir/tdicons/*.*  $ICONDIR
-+cp -R $SAMPLE/traindir/* $TDHOMEDIR
+-cp -f $SAMPLE/traindir/* $TDHOMEDIR
+-cp -f $SAMPLE/traindir/tdicons/*.*  $ICONDIR 
+-
++cp -f -R $SAMPLE/traindir/* $TDHOMEDIR
+ 
  echo
  echo   "Creating startup script......"
- echo
- echo   "#!/bin/sh" > start-traindir
- echo   "# Startup file for traindirector" >> start-traindir
- echo   "#" >> start-traindir
--echo   "TDHOME=\"$HOME/traindir\"" >> start-traindir
-+echo   "TDHOME=\"$HOME/.traindir\"" >> start-traindir
- echo   "export TDHOME" >> start-traindir
- echo   "echo starting Traindirector" >> start-traindir
- echo   "$TRAINDIR/traindir" >> start-traindir
+@@ -64,11 +62,13 @@
+ echo   "#!/bin/sh" > $HOME/traindir.sh
+ echo   "# Startup file for traindirector" >> $HOME/traindir.sh
+ echo   "#" >> $HOME/sstart-traindir
+-echo   "TDHOME=\"$HOME/traindir\"" >> $HOME/traindir.sh
++echo   "TDHOME=\"$HOME/.traindir\"" >> $HOME/traindir.sh
+ echo   "export TDHOME" >> $HOME/traindir.sh
+ echo   "echo starting Traindirector" >> $HOME/traindir.sh
+ echo   "$TRAINDIR/traindir" >> $HOME/traindir.sh
  
- chmod 0775 start-traindir
+ chmod 0775 $HOME/traindir.sh
  echo "Installation complete"
--echo "You can run ~/start-traindir from a X console"
+-echo "You can run ~/traindir.sh from a X console"
 \ No newline at end of file
 +echo "a script file 'start-traindir' has been created in the current"
 +echo "directory. You can launch it to start the simulation, or move it"
