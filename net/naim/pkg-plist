@@ -1,9 +1,14 @@
 bin/naim
 bin/nirc
+bin/nicq
+bin/nlily
 bin/sendim.sh
 lib/naim/libnsocket.so.0
 lib/naim/libnsocket.so
 lib/naim/libnsocket.la
+lib/naim/libnstatus.so.0
+lib/naim/libnstatus.so
+lib/naim/libnstatus.la
 @dirrm lib/naim
 share/doc/naim/commands.txt
 share/doc/naim/keyboard.txt
