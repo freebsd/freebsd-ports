@@ -47,9 +47,24 @@ SEDLIST=	-e 's,XX_PREFIX_XX,${PREFIX},' \
 SEDLIST+=	-e 's/^EXIM_MONITOR/\#EXIM_MONITOR/'
 .endif
 
+# BROKEN: the USE_LDAP stuff will not work until the openldap port
+# builds a shared liblber.
+.if defined(USE_LDAP) && ${USE_LDAP} == YES
+LIB_DEPENDS+=	lber.1:${PORTSDIR}/net/openldap
+SEDLIST+=	-e 's,XX_LDAP_LIBS_XX,-L${PREFIX}/lib -llber -lldap,' \
+		-e 's,XX_LDAP_INCLUDE_XX,-I${PREFIX}/include,' \
+		-e 's,XX_LDAP_TYPE_XX,${LDAP_LIB_TYPE},' \
+		-e 's,^\# LOOKUP_LDAP,LOOKUP_LDAP,'
+.else
+SEDLIST+=	-e 's,XX_LDAP_[^ ]*_XX,,' \
+		-e 's,^LDAP_LIB_TYPE,\#LDAP_LIB_TYPE,'
+.endif
+
 .if defined(USE_MYSQL) && ${USE_MYSQL} == YES
+LIB_DEPENDS+=	mysqlclient.6:${PORTSDIR}/databases/mysql322-client
 SEDLIST+=	-e 's,XX_MYSQL_LIBS_XX,-L${PREFIX}/lib/mysql -lmysqlclient,' \
-		-e 's,XX_MYSQL_INCLUDE_XX,-I${PREFIX}/include/mysql,'
+		-e 's,XX_MYSQL_INCLUDE_XX,-I${PREFIX}/include/mysql,' \
+		-e 's,^\# LOOKUP_MYSQL,LOOKUP_MYSQL,'
 .else
 SEDLIST+=	-e 's,XX_MYSQL_[^ ]*_XX,,'
 .endif
