@@ -52,6 +52,17 @@ share/gnome/totem/properties.glade
 share/gnome/totem/uri.glade
 share/gnome/totem/vanity.glade
 share/gnome/totem/vanity.png
+share/gnome/help/totem/C/totem.xml
+share/gnome/help/totem/C/legal.xml
+share/gnome/help/totem/C/figures/totem_next_button.png
+share/gnome/help/totem/C/figures/totem_pause_button.png
+share/gnome/help/totem/C/figures/totem_play_button.png
+share/gnome/help/totem/C/figures/totem_previous_button.png
+share/gnome/help/totem/C/figures/totem_show_playlist_button.png
+share/gnome/help/totem/C/figures/totem_start_window.png
+share/gnome/help/totem/C/figures/totem_volume_maximum_button.png
+share/gnome/help/totem/C/figures/totem_volume_mute_button.png
+share/gnome/omf/totem/totem-C.omf
 share/locale/am/LC_MESSAGES/totem.mo
 share/locale/az/LC_MESSAGES/totem.mo
 share/locale/bg/LC_MESSAGES/totem.mo
@@ -90,6 +101,10 @@ share/locale/uk/LC_MESSAGES/totem.mo
 share/locale/vi/LC_MESSAGES/totem.mo
 share/locale/zh_CN/LC_MESSAGES/totem.mo
 share/locale/zh_TW/LC_MESSAGES/totem.mo
+@dirrm share/gnome/help/totem/C/figures
+@dirrm share/gnome/help/totem/C
+@dirrm share/gnome/help/totem
+@dirrm share/gnome/omf/totem
 @dirrm share/gnome/totem
 @dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@x-msvideo
 @dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@x-ms-wmv
