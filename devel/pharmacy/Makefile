@@ -8,7 +8,8 @@
 PORTNAME=	pharmacy
 PORTVERSION=	0.2.1
 CATEGORIES=	devel gnome
-MASTER_SITES=	http://home.earthlink.net/~nawalker/pharmacy/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR= ${PORTNAME}
 
 MAINTAINER=	jedgar@FreeBSD.org
 
