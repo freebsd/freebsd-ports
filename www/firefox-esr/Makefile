@@ -7,7 +7,7 @@
 
 PORTNAME=	firefox
 PORTVERSION=	1.0.1.p
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${REALVERSION}
@@ -18,10 +18,9 @@ COMMENT=	Web browser based on the browser portion of Mozilla
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
-		mng.1:${PORTSDIR}/graphics/libmng \
-		freetype.9:${PORTSDIR}/print/freetype2
-BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
-		freetype-config:${PORTSDIR}/print/freetype2
+		mng.1:${PORTSDIR}/graphics/libmng
+BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
+RUN_DEPENDS=	Xvfb:${X_VFBSERVER_PORT}
 
 ALL_TARGET=	default
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
@@ -139,7 +138,8 @@ post-patch:
 .for ii in modules/libpref/src/init extensions/sroaming/resources/content/prefs \
 	embedding/minimo
 	${MV} ${WRKSRC}/${ii}/all.js ${WRKSRC}/${ii}/all.js.bak
-	${SED} -e '/accessibility.typeaheadfind.enablesound/s/true/false/' \
+	${SED} -e '/accessibility.typeaheadfind.enablesound/s/true/false/ ; \
+		/dom.disable_window_open_feature.toolbar/s/false/true/' \
 	< ${WRKSRC}/${ii}/all.js.bak > ${WRKSRC}/${ii}/all.js
 .endfor
 .for ii in ${PKGCONFIG_FILES}
@@ -171,7 +171,8 @@ pre-install:
 	@${RM} -rf ${FAKEDIR}/lib/${PORTNAME}/lib/${PORTNAME}-${REALVERSION}/chrome/en-${ii}${jj}
 .endfor
 .endfor
-	@${SED} -e 's|%%MOZDIR%%|${LOCAL_PREFIX}/lib/${PORTNAME}-${REALVERSION}|g' \
+	@${SED} -e 's|%%MOZDIR%%|${LOCAL_PREFIX}/lib/${PORTNAME}-${REALVERSION}|g ; \
+		s|%%X11BASE%%|${X11BASE}|g' \
 		< ${MASTERDIR}/pkg-install.in > ${PKGINSTALL}
 	@${SED} -e 's|%%MOZDIR%%|${LOCAL_PREFIX}/lib/${PORTNAME}-${REALVERSION}|g' \
 		< ${MASTERDIR}/pkg-deinstall.in > ${PKGDEINSTALL}

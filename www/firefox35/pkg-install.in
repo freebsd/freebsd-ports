@@ -15,6 +15,7 @@ PATH=/bin:/usr/bin
 MOZDIR=%%MOZDIR%%
 REGXPCOM=${MOZDIR}/regxpcom
 REGCHROME=${MOZDIR}/regchrome
+FIREFOX=${MOZDIR}/firefox-bin
 
 echo "===> Building Chrome's registry..."
 rm -rf ${MOZDIR}/chrome/overlayinfo
@@ -26,5 +27,9 @@ rm -rf ${MOZDIR}/extensions
 cd ${MOZDIR} || exit 1
 ./run-mozilla.sh ${REGXPCOM} || true
 ./run-mozilla.sh ${REGCHROME} || true
+
+# Instantiate the extension space as root.
+su - root -c "%%X11BASE%%/bin/xinit %%MOZDIR%%/run-mozilla.sh ${FIREFOX} -install-global-extension -- %%X11BASE%%/bin/Xvfb :1001" > /dev/null 2>&1
+su - root -c "%%X11BASE%%/bin/xinit %%MOZDIR%%/run-mozilla.sh ${FIREFOX} -install-global-theme -- %%X11BASE%%/bin/Xvfb :1001" > /dev/null 2>&1
 
 exit 0
