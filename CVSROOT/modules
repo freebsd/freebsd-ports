@@ -8648,6 +8648,7 @@ ru-X11		ports/russian/X.language
 ru-apache13	ports/russian/apache13
 ru-apache13-modssl	ports/russian/apache13-modssl
 ru-aspell	ports/russian/aspell
+ru-bogofilter	ports/russian/bogofilter
 ru-cyrproxy	ports/russian/cyrproxy
 ru-d1489	ports/russian/d1489
 ru-elm		ports/russian/elm.language
