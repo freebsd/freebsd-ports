@@ -1,0 +1,16 @@
+sitecopy is for copying locally stored websites to remote web servers.
+The program will upload files to the server which have changed locally, 
+and delete files from the server which have been removed locally, to keep
+the remote site synchronized with the local site, with a single command.
+The aim is to remove the hassle of uploading and deleting individual files
+using an FTP client. sitecopy will also optionally try to spot files you move
+locally, and move them remotely.
+
+sitecopy is designed to not care about what is actually on the remote
+server - it simply keeps a record of what it THINKS is in on the remote
+server, and works from that. 
+
+http://www.orton.demon.co.uk/
+
+- Nik
+nik@FreeBSD.ORG
