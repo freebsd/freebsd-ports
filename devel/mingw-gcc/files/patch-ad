@@ -1,0 +1,11 @@
+--- gcc/f/com.h.orig	Wed Jan 12 11:57:10 2005
++++ gcc/f/com.h	Wed Jan 12 11:57:37 2005
+@@ -310,7 +310,7 @@
+ void ffecom_finish_progunit (void);
+ tree ffecom_get_invented_identifier (const char *pattern, const char *text,
+ 				     int number);
+-ffeinfoKindtype ffecom_gfrt_basictype (ffecomGfrt ix);
++ffeinfoBasictype ffecom_gfrt_basictype (ffecomGfrt ix);
+ ffeinfoKindtype ffecom_gfrt_kindtype (ffecomGfrt ix);
+ void ffecom_init_0 (void);
+ void ffecom_init_2 (void);
