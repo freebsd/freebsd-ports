@@ -1,10 +1,15 @@
+http://www.openoffice.org/issues/show_bug.cgi?id=40182
+
+o catch up recent unxlngi6.mk
+o -Wl,-z,defs -> comment out
+
 Index: solenv/inc/unxfbsdi.mk
 ===================================================================
 RCS file: /cvs/tools/solenv/inc/unxfbsdi.mk,v
 retrieving revision 1.11
 diff -u -r1.11 unxfbsdi.mk
 --- solenv/inc/unxfbsdi.mk	20 Sep 2004 08:37:13 -0000	1.11
-+++ solenv/inc/unxfbsdi.mk	21 Nov 2004 14:26:32 -0000
++++ solenv/inc/unxfbsdi.mk	10 Jan 2005 07:44:44 -0000
 @@ -60,16 +60,26 @@
  #
  #*************************************************************************
@@ -24,7 +29,7 @@ diff -u -r1.11 unxfbsdi.mk
  #LINKOUTPUT_FILTER=" |& $(SOLARENV)$/bin$/msg_filter"
  
 +# _PTHREADS is needed for the stl
-+CDEFS+= -DX86 -D_PTHREADS -D_REENTRANT -DNEW_SOLAR -D_USE_NAMESPACE=1 -DSTLPORT_VERSION=450
++CDEFS+=$(PTHREAD_CFLAGS) -DX86 -D_PTHREADS -D_REENTRANT -DNEW_SOLAR -D_USE_NAMESPACE=1 -DSTLPORT_VERSION=400
 +
 +# enable visibility define in "sal/types.h"
 +.IF "$(HAVE_GCC_VISIBILITY_FEATURE)" == "TRUE"
@@ -36,28 +41,29 @@ diff -u -r1.11 unxfbsdi.mk
  .IF "$(SOLAR_JAVA)"!=""
  JAVADEF=-DSOLAR_JAVA
  .IF "$(debug)"==""
-@@ -77,96 +87,82 @@
- .ELSE
- JAVA_RUNTIME=-ljava_g
- .ENDIF
-+.ENDIF 
-+
-+# define default arch flags when needed
-+.IF "$(ARCH_FLAGS)"==""
-+ARCH_FLAGS=-mcpu=pentiumpro
- .ENDIF
- 
- # name of C++ Compiler
+@@ -83,90 +93,82 @@
  CXX*=g++
  # name of C Compiler
  CC*=gcc
-+# flags for C and C++ Compiler
-+CFLAGS+=-Wuninitialized -fmessage-length=0 -c $(INCLUDE)
++.IF "$(SYSBASE)"!=""
++CFLAGS_SYSBASE:=-isystem $(SYSBASE)$/usr$/include
++CXX+:=$(CFLAGS_SYSBASE)
++CC+:=$(CFLAGS_SYSBASE)
++.ENDIF          # "$(SYSBASE)"!=""
++CFLAGS+=-Wreturn-type -fmessage-length=0 -c $(INCLUDE)
++.IF "$(PRODUCT)"!=""
++CFLAGS+=-Wuninitialized
++.ENDIF
  
 -# filter for supressing verbose messages from linker
 -# not needed at the moment
 -LINKOUTPUT_FILTER=" |& $(SOLARENV)$/bin$/msg_filter"
--
++# flags to enable build with symbols; required for crashdump feature
++.IF "$(ENABLE_SYMBOLS)"=="SMALL"
++CFLAGSENABLESYMBOLS=-g1
++.ELSE
++CFLAGSENABLESYMBOLS=-g # was temporarily commented out, reenabled before Beta
+ 
 -# options for C and C++ Compiler
 -CDEFS+=	-D_USE_NAMESPACE=1 -DX86 -DNEW_SOLAR -DSTLPORT_VERSION=450 -DOSVERSION=$(OSVERSION)
 -CDEFS+= $(PTHREAD_CFLAGS) -D_REENTRANT
@@ -65,11 +71,6 @@ diff -u -r1.11 unxfbsdi.mk
 -# flags for C and C++ Compile
 -CFLAGS+= -w -c $(INCLUDE)
 -CFLAGS+= -I/usr/X11R6/include
-+# flags to enable build with symbols; required for crashdump feature
-+.IF "$(ENABLE_SYMBOLS)"=="SMALL"
-+CFLAGSENABLESYMBOLS=-g1
-+.ELSE
-+CFLAGSENABLESYMBOLS=-g
 +.ENDIF
  
  # flags for the C++ Compiler
@@ -77,7 +78,7 @@ diff -u -r1.11 unxfbsdi.mk
 -CFLAGSCXX= -pipe -fno-rtti
 -CFLAGSCXX+= -Wno-ctor-dtor-privacy
 -
-+CFLAGSCC= -pipe $(ARCH_FLAGS)
++CFLAGSCC= -pipe -mtune=pentiumpro
  # Flags for enabling exception handling
 -CFLAGSEXCEPTIONS= -fexceptions
 -CFLAGS_NO_EXCEPTIONS= -fno-exceptions
@@ -111,7 +112,8 @@ diff -u -r1.11 unxfbsdi.mk
  
 -# Compiler flags for profilin
 -CFLAGSPROF=     -pg
-+CFLAGSCXX= -pipe $(ARCH_FLAGS)
++# -fpermissive should be removed as soon as possible
++CFLAGSCXX= -pipe -mtune=pentiumpro
 +CFLAGSCXX+= -Wno-ctor-dtor-privacy
  
 +# Compiler flags for compiling static object in single threaded environment with graphical user interface
@@ -123,11 +125,11 @@ diff -u -r1.11 unxfbsdi.mk
 +# Compiler flags for compiling static object in multi threaded environment with character user interface
 +CFLAGSOBJCUIMT=
 +# Compiler flags for compiling shared object in multi threaded environment with graphical user interface
-+CFLAGSSLOGUIMT=-fPIC
++CFLAGSSLOGUIMT=-fpic
 +# Compiler flags for compiling shared object in multi threaded environment with character user interface
-+CFLAGSSLOCUIMT=-fPIC
++CFLAGSSLOCUIMT=-fpic
 +# Compiler flags for profiling
-+CFLAGSPROF=	-pg
++CFLAGSPROF=
  # Compiler flags for debugging
 -CFLAGSDEBUG=	-g
 +CFLAGSDEBUG=-g
@@ -145,17 +147,18 @@ diff -u -r1.11 unxfbsdi.mk
 -CFLAGSOUTOBJ= -o
 -
 +# Compiler flags for enabling optimazations
-+# CFLAGSOPT=-O2
-+# reduce to -O1 to avoid optimisation problems
-+CFLAGSOPT=-O1
++.IF "$(PRODUCT)"!=""
++CFLAGSOPT=-Os -fno-strict-aliasing		# optimizing for products
++.ELSE 	# "$(PRODUCT)"!=""
++CFLAGSOPT=   							# no optimizing for non products
++.ENDIF	# "$(PRODUCT)"!=""
 +# Compiler flags for disabling optimazations
 +CFLAGSNOOPT=-O0
 +# Compiler flags for discibing the output path
 +CFLAGSOUTOBJ=-o
  # Enable all warnings
--CFLAGSWALL=-Wall
+ CFLAGSWALL=-Wall
 -
-+CFLAGSWALL=-Wall -Wfloat-equal -Weffc++ -Wold-style-cast -Woverloaded-virtual -Wshadow -Wpointer-arith -Wcast-align -Wsign-compare -Winline
  # Set default warn level
 -CFLAGSDFLTWARN=-w
 +CFLAGSDFLTWARN=
@@ -168,12 +171,12 @@ diff -u -r1.11 unxfbsdi.mk
  
  # name of linker
 -LINK=$(CC)
-+LINK*=$(CC)
++LINK*=$(CXX)
  
  # default linker flags
 -# LINKFLAGSRUNPATH*=-Wl,-rpath\''$$ORIGIN'\'
 -LINKFLAGS=$(LINKFLAGSRUNPATH)
-+LINKFLAGSDEFS*=-z defs
++LINKFLAGSDEFS*=#-Wl,-z,defs
 +LINKFLAGSRUNPATH*=-Wl,-rpath,\''$$ORIGIN'\'
 +LINKFLAGS=-z combreloc $(LINKFLAGSDEFS) $(LINKFLAGSRUNPATH)
  
@@ -185,7 +188,7 @@ diff -u -r1.11 unxfbsdi.mk
  
  # linker flags for linking shared libraries
  LINKFLAGSSHLGUI= -shared
-@@ -177,23 +173,19 @@
+@@ -177,23 +179,19 @@
  LINKFLAGSDEBUG=-g
  LINKFLAGSOPT=
  
@@ -216,7 +219,7 @@ diff -u -r1.11 unxfbsdi.mk
  STDOBJGUI=
  STDSLOGUI=
  STDOBJCUI=
-@@ -201,24 +193,30 @@
+@@ -201,24 +199,25 @@
  
  # libraries for linking applications
  STDLIBCUIST=-lm
@@ -238,13 +241,8 @@ diff -u -r1.11 unxfbsdi.mk
 -# STLport always needs pthread.
 -LIBSTLPORT=$(DYNAMIC) -lstlport_gcc $(STDLIBCPP) $(PTHREAD_LIBS)
 -LIBSTLPORTST=$(STATIC) -lstlport_gcc $(DYNAMIC) $(PTHREAD_LIBS)
-+.IF "$(USE_SYSTEM_STL)"=="YES"
-+LIBSTLPORT=$(DYNAMIC) -lstdc++
-+LIBSTLPORTST=$(STATIC) $(DYNAMIC)
-+.ELSE
-+LIBSTLPORT=$(DYNAMIC) -lstlport_gcc -lstdc++
++LIBSTLPORT=$(DYNAMIC) -lstlport_gcc
 +LIBSTLPORTST=$(STATIC) -lstlport_gcc $(DYNAMIC)
-+.ENDIF
 +
 +#FILLUPARC=$(STATIC) -lsupc++ $(DYNAMIC)
  
@@ -255,7 +253,7 @@ diff -u -r1.11 unxfbsdi.mk
  
  # tool for generating import libraries
  IMPLIB=
-@@ -237,3 +235,4 @@
+@@ -237,3 +236,4 @@
  DLLPOSTFIX=fi
  DLLPRE=lib
  DLLPOST=.so

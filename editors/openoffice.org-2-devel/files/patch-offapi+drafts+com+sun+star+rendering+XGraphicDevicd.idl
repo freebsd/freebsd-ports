@@ -1,0 +1,23 @@
+http://www.openoffice.org/issues/show_bug.cgi?id=40177
+
+Contains an illigal char.
+build breaks at odk project
+like
+ERROR : diff diff -br ../../unxfbsd.pro/bin/odk680/idl/drafts/com/sun/star/rendering/XGraphicDevice.idl /work/ports/editors/openoffice-2.0-devel/work/solver/680/unxfbsd.pro/idl/drafts/com/sun/star/rendering/XGraphicDevice.idl
+
+Index: offapi/drafts/com/sun/star/rendering/XGraphicDevice.idl
+===================================================================
+RCS file: /cvs/api/offapi/drafts/com/sun/star/rendering/XGraphicDevice.idl,v
+retrieving revision 1.4
+diff -u -r1.4 XGraphicDevice.idl
+--- offapi/drafts/com/sun/star/rendering/XGraphicDevice.idl	26 Nov 2004 18:01:15 -0000	1.4
++++ offapi/drafts/com/sun/star/rendering/XGraphicDevice.idl	31 Dec 2004 03:53:28 -0000
+@@ -136,7 +136,7 @@
+ 	/** Query the physical resolution of the device in pixel per
+         millimeter. 
+ 
+-        Á special value of 0 here indicates 'unknown', i.e. at the
++        A special value of 0 here indicates 'unknown', i.e. at the
+         time of rendering undetermined or possibly infinite
+         resolution.
+ 	 */

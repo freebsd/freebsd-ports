@@ -1,6 +1,6 @@
 http://www.openoffice.org/issues/show_bug.cgi?id=27753
-The isnan() macro is a new feature of C99 and not yet part of C++.
 
+The isnan() macro is a new feature of C99 and not yet part of C++.
 Index: source/helper/strhelper.cxx
 ===================================================================
 RCS file: /cvs/gsl/psprint/source/helper/strhelper.cxx,v

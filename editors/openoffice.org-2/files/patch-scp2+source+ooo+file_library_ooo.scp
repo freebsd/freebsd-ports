@@ -1,0 +1,22 @@
+http://www.openoffice.org/issues/show_bug.cgi?id=40186
+
+The name of resultant library is libxml2.so.7, not libxml2.so.2.5.11 
+
+Index: scp2/source/ooo/file_library_ooo.scp
+===================================================================
+RCS file: /cvs/installation/scp2/source/ooo/file_library_ooo.scp,v
+retrieving revision 1.75
+diff -u -r1.75 file_library_ooo.scp
+--- scp2/source/ooo/file_library_ooo.scp	23 Dec 2004 09:49:51 -0000	1.75
++++ scp2/source/ooo/file_library_ooo.scp	30 Dec 2004 13:01:14 -0000
+@@ -2027,7 +2027,9 @@
+     TXT_FILE_BODY;
+     Styles = (PACKED);
+     Dir = gid_Dir_Program;
+-  #ifdef UNX
++  #if defined(FREEBSD)
++    Name = STRING(CONCAT3(libxml2,UNXSUFFIX,.7));
++  #elif defined(UNX)
+     Name = STRING(CONCAT3(libxml2,UNXSUFFIX,.2.5.11));
+   #else
+     Name = "libxml2.dll";
