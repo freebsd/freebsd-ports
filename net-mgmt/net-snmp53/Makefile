@@ -66,9 +66,7 @@ post-install:
 		${INSTALL_DATA} $$F ${PREFIX}/share/examples/ucd-snmp ; done
 	@if [ ! -f ${STARTUP_FILE} ]; then \
 		${ECHO} "Creating ${PREFIX}/etc/rc.d/snmpd.sh startup file."; \
-		${ECHO} "#!/bin/sh" > ${STARTUP_FILE}; \
-		${ECHO} "[ -x ${PREFIX}/sbin/snmpd ] && ${PREFIX}/sbin/snmpd && ${ECHO} -n ' snmpd'" >> ${STARTUP_FILE}; \
-		${CHMOD} 751 ${STARTUP_FILE}; \
+		${INSTALL_SCRIPT} -m 751 ${FILESDIR}/snmpd.sh.sample ${STARTUP_FILE}; \
 	 fi
 
 .include <bsd.port.post.mk>

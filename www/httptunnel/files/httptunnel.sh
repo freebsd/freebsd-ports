@@ -16,21 +16,35 @@ HTCPROXYBUFFER=1K		# Buffer size for buffered proxies
 HTCBROWSER='Mozilla/4.7 [en] (X11; I; Linux 2.2.12 i386)'  # Pretend to be this
 HTCARGS=-S			# Any other arguments required
 
-if [ -n "$HTSPORT" -a -x /usr/local/bin/hts ]; then
-	[ -n "$HTSFORWARD" ] && args="-F $HTSFORWARD"
-	[ -n "$HTSDEVICE" ] && args="-d $HTSDEVICE"
-	/usr/local/bin/hts $args $HTSPORT && echo -n ' hts'
-fi
-
-if [ -n "$HTCPORT" -a -x /usr/local/bin/htc ]; then
-	set --
-	[ -n "$HTCFORWARD" ] && set -- -F $HTCFORWARD
-	[ -n "$HTCDEVICE" ] && set -- -d $HTCDEVICE
-	[ -n "$HTCBROWSER" ] && set -- -U "$HTCBROWSER" "$@"
-	if [ -n "$HTCPROXY" ]; then
-		[ -n "$HTCPROXYBUFFER" ] && set -- -B $HTCPROXYBUFFER "$@"
-		[ -n "$HTCPROXYAUTH" ] && set -- -A $HTCPROXYAUTH "$@"
-        	set -- -P $HTCPROXY "$@"
+case $1 in
+start)
+	if [ -n "$HTSPORT" -a -x $HTS ]; then
+		[ -n "$HTSFORWARD" ] && args="-F $HTSFORWARD"
+		[ -n "$HTSDEVICE" ] && args="-d $HTSDEVICE"
+		/usr/local/bin/hts $args $HTSPORT && echo -n ' hts'
 	fi
-	/usr/local/bin/htc "$@" $HTCARGS $HTCPORT && echo -n ' htc'
-fi
+
+	if [ -n "$HTCPORT" -a -x $HTC ]; then
+		set --
+		[ -n "$HTCFORWARD" ] && set -- -F $HTCFORWARD
+		[ -n "$HTCDEVICE" ] && set -- -d $HTCDEVICE
+		[ -n "$HTCBROWSER" ] && set -- -U "$HTCBROWSER" "$@"
+		if [ -n "$HTCPROXY" ]; then
+			[ -n "$HTCPROXYBUFFER" ] && set -- -B $HTCPROXYBUFFER "$@"
+			[ -n "$HTCPROXYAUTH" ] && set -- -A $HTCPROXYAUTH "$@"
+        		set -- -P $HTCPROXY "$@"
+		fi
+		/usr/local/bin/htc "$@" $HTCARGS $HTCPORT && echo -n ' htc'
+	fi
+	;;
+stop)
+	killall htc && echo -n ' htc'
+	killall hts && echo -n ' hts'
+	;;
+*)
+	echo "Usage: `basename $0` {start|stop}" >&2
+	exit 64
+	;;
+esac
+
+exit 0

@@ -1,6 +1,19 @@
 #!/bin/sh
 
-if [ -f __PRERFIX__/etc/adzapper.conf ]; then
-	__PREFIX__/sbin/adzapper &
-	test $? -eq 0 && echo -n ' adzapper'
-fi
+case $1 in
+start)
+	if [ -f __PREFIX__/etc/adzapper.conf ]; then
+		__PREFIX__/sbin/adzapper &
+		test $? -eq 0 && echo -n ' adzapper'
+	fi
+	;;
+stop)
+	killall adzapper && echo -n ' adzapper'
+	;;
+*)
+	echo "Usage: `basename $0` {start|stop}" >&2
+	exit 64
+	;;
+esac
+
+exit 0

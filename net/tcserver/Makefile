@@ -56,9 +56,7 @@ do-install:
 post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/elsa.sh ]; then \
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/elsa.sh startup file."; \
-		${ECHO}  "#!/bin/sh" > ${PREFIX}/etc/rc.d/elsa.sh; \
-		${ECHO} "[ -x ${PREFIX}/sbin/elsa ] && ${PREFIX}/sbin/elsa -d ${PREFIX}/etc > /dev/null & && ${ECHO} -n ' elsa'" >> ${PREFIX}/etc/rc.d/elsa.sh; \
-		${CHMOD} 555 ${PREFIX}/etc/rc.d/elsa.sh; \
+		${INSTALL_SCRIPT} ${FILESDIR}/elsa.sh ${PREFIX}/etc/rc.d/elsa.sh; \
 	fi
 
 .include <bsd.port.post.mk>

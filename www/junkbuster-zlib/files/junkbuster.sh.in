@@ -1,5 +1,19 @@
 #!/bin/sh
-test -d JDIR -a -x PREFIX/sbin/junkbuster -a -f JDIR/configfile || exit 1
-cd JDIR
-su -m nobody -c "PREFIX/sbin/junkbuster configfile &"
-echo -n " junkbuster"
+
+case $1 in
+start)
+	test -d JDIR -a -x PREFIX/sbin/junkbuster -a -f JDIR/configfile || exit 1
+	cd JDIR
+	su -m nobody -c "PREFIX/sbin/junkbuster configfile &"
+	echo -n " junkbuster"
+	;;
+stop)
+	killall junkbuster && echo -n " junkbuster"
+	;;
+*)
+	echo "Usage: `basename $0` {start|stop}" >&2
+	exit 64
+	;;
+esac
+
+exit 0

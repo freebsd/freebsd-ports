@@ -34,9 +34,7 @@ post-install:
 .endfor
 .if !exists(${PREFIX}/etc/rc.d/rplayd.sh)
 	@${ECHO} "===>   Installing ${PREFIX}/etc/rc.d/rplayd.sh startup file"
-	@${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/rplayd.sh
-	@${ECHO} "[ -x ${PREFIX}/sbin/rplayd ] && ( ${PREFIX}/sbin/rplayd & ) && ${ECHO} -n ' rplayd'" >> ${PREFIX}/etc/rc.d/rplayd.sh
-	@${CHMOD} 751 ${PREFIX}/etc/rc.d/rplayd.sh
+	@${INSTALL_SCRIPT} -m 751 ${FILESDIR}/rplayd.sh ${PREFIX}/etc/rc.d/rplayd.sh
 .endif
 .if !exists(${PREFIX}/etc/rplay.hosts)
 	@${ECHO} localhost > ${PREFIX}/etc/rplay.hosts

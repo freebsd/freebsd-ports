@@ -32,9 +32,8 @@ do-install:
 post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/bnetd.sh ]; then \
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/bnetd.sh startup file."; \
-		${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/bnetd.sh; \
-		${ECHO} "cd ${PREFIX}; [ -x sbin/bnetd -a -f bnetd/conf/bnetd.conf ] && sbin/bnetd -c bnetd/conf/bnetd.conf > /dev/null && ${ECHO} -n ' bnetd'" >> ${PREFIX}/etc/rc.d/bnetd.sh; \
-		${CHMOD} 751 ${PREFIX}/etc/rc.d/bnetd.sh; \
+		${INSTALL_SCRIPT} -m 751 ${FILESDIR}/bnetd.sh \
+			${PREFIX}/etc/rc.d/bnetd.sh; \
 	fi
 
 .include <bsd.port.mk>

@@ -24,11 +24,7 @@ MAN8=		xinetd.8 xinetd.log.8
 post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/xinetd.sh ]; then \
 		${ECHO} "Install ${PREFIX}/etc/rc.d/xinetd.sh startup file."; \
-		${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/xinetd.sh; \
-		${ECHO} "[ -x ${PREFIX}/sbin/xinetd ] &&" >> ${PREFIX}/etc/rc.d/xinetd.sh; \
-		${ECHO} "${PREFIX}/sbin/xinetd -pid 2> /var/run/xinetd.pid &&" >> ${PREFIX}/etc/rc.d/xinetd.sh; \
-		${ECHO} "${ECHO} -n ' xinetd'" >> ${PREFIX}/etc/rc.d/xinetd.sh; \
-		${CHMOD} 751 ${PREFIX}/etc/rc.d/xinetd.sh; \
+		${INSTALL_SCRIPT} -m 751 ${FILESDIR}/xinetd.sh ${PREFIX}/etc/rc.d/xinetd.sh; \
 	fi
 	strip ${PREFIX}/sbin/xinetd
 

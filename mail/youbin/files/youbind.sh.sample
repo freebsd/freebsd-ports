@@ -5,6 +5,19 @@
 #   If this program is used on your system, great care must be taken
 #   to avoid any security problem.
 #
-if [ -x @PREFIX@/sbin/youbind ]; then
-    @PREFIX@/sbin/youbind ; echo -n ' youbind'
-fi
+
+case "$1" in
+start)
+	if [ -x @PREFIX@/sbin/youbind ]; then
+	    @PREFIX@/sbin/youbind ; echo -n ' youbind'
+	fi
+stop)
+	killall youbind && echo -n ' youbind'
+	;;
+*)
+	echo "Usage: `basename $0` {start|stop}" >&2
+	exit 64
+	;;
+esac
+
+exit 0

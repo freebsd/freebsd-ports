@@ -53,9 +53,7 @@ do-install:
 	@${ECHO} "pidfile=/var/run/thttpd.pid" >> ${PREFIX}/etc/thttpd.conf.sample
 	@if [ ! -f ${PREFIX}/etc/rc.d/thttpd.sh ]; then \
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/thttpd.sh startup file."; \
-		${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/thttpd.sh; \
-		${ECHO} "[ -x ${PREFIX}/sbin/thttpd_wrapper ] && ${PREFIX}/sbin/thttpd_wrapper && ${ECHO} -n ' thttpd'" >> ${PREFIX}/etc/rc.d/thttpd.sh; \
-		${CHMOD} 751 ${PREFIX}/etc/rc.d/thttpd.sh; \
+		${INSTALL_SCRIPT} -m 751 ${FILESDIR}/thttpd.sh ${PREFIX}/etc/rc.d/thttpd.sh; \
 	fi
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/thttpd

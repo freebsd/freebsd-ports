@@ -153,11 +153,7 @@ do-install:
 	@if [ ! -f ${startup_script} ]; then \
 	    ${ECHO_MSG} "Installing ${startup_script} file"; \
 	    test -d ${startup_dir} || ${MKDIR} ${startup_dir}; \
-	    ${ECHO} "#!/bin/sh" > ${startup_script}; \
-	    ${ECHO} "${ECHO} -n ' Modula-3'" >> ${startup_script}; \
-	    ${ECHO} "${LDCONFIG} -m ${PREFIX}/lib/m3/FreeBSD2" \
-		>> ${startup_script}; \
-	    ${CHMOD} 755 ${startup_script}; \
+	    ${INSTALL_SCRIPT} ${FILESDIR}/50.m3.sh ${startup_script}; \
 	fi
 	@${ECHO_MSG} "Running ldconfig"
 	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib/m3/FreeBSD2
