@@ -71,6 +71,7 @@
     SUBDIR += sirc
     SUBDIR += sircd
     SUBDIR += slirc
+    SUBDIR += srvx
     SUBDIR += tirc
     SUBDIR += tircproxy
     SUBDIR += tkirc
