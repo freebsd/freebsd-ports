@@ -39,7 +39,7 @@ lib/libbonoboui-2.so.0
 lib/libglade/2.0/libbonobo.so
 libdata/bonobo/servers/Bonobo_Sample_Controls.server
 libdata/pkgconfig/libbonoboui-2.0.pc
-share/gnome/gnome-2.0/ui/Bonobo_Sample_Hello.xml
+share/gnome2/gnome-2.0/ui/Bonobo_Sample_Hello.xml
 share/locale/az/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/bg/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/ca/LC_MESSAGES/libbonoboui-2.0.mo

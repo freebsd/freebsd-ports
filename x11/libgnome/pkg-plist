@@ -90,9 +90,9 @@ share/doc/libgnome/x2848.html
 share/doc/libgnome/x3212.html
 share/doc/libgnome/x4054.html
 share/doc/libgnome/x9.html
-share/gnome/sgml/docbook/gnome-customization-0.1/gnome-custom.xsl
-share/gnome/sgml/docbook/gnome-customization-0.1/gnome-customization.xsl
-share/gnome/sgml/docbook/gnome-customization-0.1/l10n.xml
+share/gnome2/sgml/docbook/gnome-customization-0.1/gnome-custom.xsl
+share/gnome2/sgml/docbook/gnome-customization-0.1/gnome-customization.xsl
+share/gnome2/sgml/docbook/gnome-customization-0.1/l10n.xml
 share/locale/az/LC_MESSAGES/libgnome-2.0.mo
 share/locale/da/LC_MESSAGES/libgnome-2.0.mo
 share/locale/de/LC_MESSAGES/libgnome-2.0.mo
@@ -118,10 +118,10 @@ share/locale/uk/LC_MESSAGES/libgnome-2.0.mo
 share/locale/wa/LC_MESSAGES/libgnome-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/libgnome-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/libgnome-2.0.mo
-@dirrm share/gnome/sgml/docbook/gnome-customization-0.1
-@dirrm share/gnome/sgml/docbook
-@dirrm share/gnome/sgml
-@dirrm share/gnome
+@dirrm share/gnome2/sgml/docbook/gnome-customization-0.1
+@dirrm share/gnome2/sgml/docbook
+@dirrm share/gnome2/sgml
+@dirrm share/gnome2
 @dirrm share/doc/libgnome
 @dirrm include/libgnome-2.0/libgnome
 @dirrm include/libgnome-2.0

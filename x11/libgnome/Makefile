@@ -7,6 +7,7 @@
 
 PORTNAME=	libgnome
 PORTVERSION=	1.114.0
+PORTREVISION=	1
 CATEGORIES?=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-beta3
@@ -25,8 +26,8 @@ USE_ESOUND=	yes
 USE_BISON=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
-		--datadir=${PREFIX}/share/gnome \
+CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome2 \
+		--datadir=${PREFIX}/share/gnome2 \
 		--with-html-dir=${PREFIX}/share/doc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
