@@ -19,6 +19,7 @@ include/magick/image.h
 include/magick/magick.h
 include/magick/memory.h
 include/magick/monitor.h
+include/magick/quantize.h
 include/magick/utility.h
 include/magick/version.h
 include/magick/widget.h
