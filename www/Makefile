@@ -739,6 +739,7 @@
     SUBDIR += webstats
     SUBDIR += webstone
     SUBDIR += webstone-ssl
+    SUBDIR += wget4web
     SUBDIR += wiliki
     SUBDIR += winhelpcgi
     SUBDIR += wml
