@@ -1,25 +1,19 @@
-*** support/makefiles/Makefile.fbs.bak	Fri Feb 17 20:36:56 1995
---- support/makefiles/Makefile.fbs	Thu Jan 30 16:32:32 1997
+*** support/makefiles/Makefile.fbs.bak	Mon Mar  3 12:11:54 1997
+--- support/makefiles/Makefile.fbs	Sun Apr 27 21:13:35 1997
 ***************
-*** 4,13 ****
+*** 8,14 ****
   LIBC   = /usr/lib/libc.a
   IFLAGS = 
   LFLAGS = 
 ! CFLAGS = -O ${IFLAGS} ${LFLAGS} -DNO_MALLOC_PROTO
   
-! SRCS   = fnmatch.c strcasestr.c authuser.c ftw.c
-! OBJS   = fnmatch.o strcasestr.o authuser.o ftw.o
-  
-  all: $(OBJS)
-  	-rm -f libsupport.a
---- 4,13 ----
+  SRCS   = strcasestr.c authuser.c ftw.c
+  OBJS   = strcasestr.o authuser.o ftw.o
+--- 8,14 ----
   LIBC   = /usr/lib/libc.a
   IFLAGS = 
   LFLAGS = 
 ! CFLAGS += ${IFLAGS} ${LFLAGS} -DNO_MALLOC_PROTO
   
-! SRCS   = strcasestr.c authuser.c ftw.c
-! OBJS   = strcasestr.o authuser.o ftw.o
-  
-  all: $(OBJS)
-  	-rm -f libsupport.a
+  SRCS   = strcasestr.c authuser.c ftw.c
+  OBJS   = strcasestr.o authuser.o ftw.o
