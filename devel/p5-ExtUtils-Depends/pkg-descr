@@ -1,0 +1,16 @@
+This module tries to make it easy to build Perl extensions that use
+functions and typemaps provided by other perl extensions.  This means
+that a perl extension is treated like a shared library that provides
+also a C and an XS interface besides the perl one.  This works as long
+as the base extension is loaded with the RTLD_GLOBAL flag (usually done
+with a
+
+	sub dl_load_flags {0x01}
+
+in the main .pm file) if you need to use functions defined in the
+module.
+
+WWW: http://search.cpan.org/dist/ExtUtils-Depends/
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
