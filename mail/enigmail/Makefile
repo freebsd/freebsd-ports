@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	enigmail
-PORTVERSION=	0.83.4
+PORTVERSION=	0.83.3
 PORTREVISION=	0
 CATEGORIES=	mail security
 MASTER_SITES=	http://mozdev.secsup.org/enigmail/src/ \
