@@ -61,6 +61,9 @@ do-install:
 	    ; ${MV} lnxcc_driver lnxcc_driver.Linux			\
 	    ; ${SED} -e 's/-dynamic-linker/-g             /g'		\
 		     -e 's|/lib/ld-linux.so.2|-g                |g'	\
+		     -e 's|-D__linux__|-D__FreeBSD|g'			\
+		     -e 's|-D__linux....|-D__FreeBSD__|g'		\
+		     -e 's|-Dlinux|-D_____|g'				\
 		lnxcc_driver.Linux >lnxcc_driver			\
 		; ${CHMOD} 555 lnxcc_driver
 # the shared libs gives us trouble right now, so only offer .a's

@@ -156,6 +156,8 @@ usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/include/va_list.h
 usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/include/varargs.h
 usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/man/man1/ccc.1
 usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/man/man8/protect_headers_setup.8
+usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/man/rsml
+usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/man/sml
 usr/man/man1/ccc.1
 usr/man/man8/protect_headers_setup.8
 usr/man/rsml
@@ -163,14 +165,13 @@ usr/man/sml
 @dirrm usr/doc/ccc-6.2.9.504/Language_Reference
 @dirrm usr/doc/ccc-6.2.9.504/Programmers_Guide
 @dirrm usr/doc/ccc-6.2.9.504
+@dirrm usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/bin
 @dirrm usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/include/alpha
 @dirrm usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/include/gnu
 @dirrm usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/include/sys
 @dirrm usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/include
 @dirrm usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/man/man1
 @dirrm usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/man/man8
-@dirrm usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/man/rsml
-@dirrm usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/man/sml
 @dirrm usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/man
 @dirrm usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux
 @dirrm usr/lib/compaq/ccc-6.2.9.504-2
