@@ -1,0 +1,81 @@
+diff -ru Wnn.org/jd/jserverrc Wnn/jd/jserverrc
+--- Wnn.org/jd/jserverrc	Mon Sep  6 10:47:31 1993
++++ Wnn/jd/jserverrc	Tue Feb 10 07:58:43 1998
+@@ -20,7 +20,9 @@
+ ;readfile wnncons/tankan3.dic
+ 
+ ;         n nbun hindo len jiri flag jisho sbn dbn_len sbn_cnt suji kana eisuu kigou toji fuzoku kai
+-def_param 2 10   2     40  100  200  20    1   40      -40     40   -100 40    80    40   100    40
++;def_param 2 10   2     40  100  200  20    1   40      -40     40   -100 40    80    40   100    40
++; New Parameter
++def_param 2 10   2     45  100  200  5     1   40      -100    200  -100 200   80    200  200    200
+ 
+ ;set_giji_eisuu '-' '_' 0x20 \x5c ^M '変' 1234 012 \o12
+ set_giji_eisuu '-' '_' 0x20 '―' '＿' '￣' '!' '?' '.' ',' ':' ';' '：' '；' '？' '！' '，' '．' '・'
+diff -ru Wnn.org/jd/wnnenvrc.omr Wnn/jd/wnnenvrc.omr
+--- Wnn.org/jd/wnnenvrc.omr	Mon Sep  6 10:47:34 1993
++++ Wnn/jd/wnnenvrc.omr	Tue Feb 10 07:58:56 1998
+@@ -19,4 +19,7 @@
+ ;setdic wnncons/tankan3.dic	-			1 1 1 - - 0
+ 
+ ;;       N nsho hindo len jiri flag jisho sbn dbn_len sbn_cnt suuji kana eisuu kigou toji_kakko fuzokogo kaikakko
+-setparam 2 10   2     40  100  200  20    1   40      -40     40    -100 40    80    40         100      40
++;setparam 2 10   2     40  100  200  20    1   40      -40     40    -100 40    80    40         100      40
++; New Parameter
++setparam 2 10   2     45  100  200  5     1   40      -100    200   -100 200   80    200        200      200
++
+diff -ru Wnn.org/jd/wnnenvrc.rem Wnn/jd/wnnenvrc.rem
+--- Wnn.org/jd/wnnenvrc.rem	Mon Sep  6 10:47:36 1993
++++ Wnn/jd/wnnenvrc.rem	Tue Feb 10 07:59:06 1998
+@@ -19,4 +19,6 @@
+ ;setdic wnncons/tankan3.dic -  1 1 1 - - 0
+ 
+ ;;       N nsho hindo len jiri flag jisho sbn dbn_len sbn_cnt suuji kana eisuu kigou toji_kakko fuzokogo kaikakko
+-setparam 2 10   2     40  100  200  20    1   40      -40     40    -100 40    80    40         100      40
++;setparam 2 10   2     40  100  200  20    1   40      -40     40    -100 40    80    40         100      40
++; New Parameter
++setparam 2 10   2     45  100  200  5     1   40      -100    200   -100 200   80    200        200      200
+diff -ru Wnn.org/jd/wnnenvrc.rev Wnn/jd/wnnenvrc.rev
+--- Wnn.org/jd/wnnenvrc.rev	Mon Sep  6 10:47:37 1993
++++ Wnn/jd/wnnenvrc.rev	Tue Feb 10 07:59:15 1998
+@@ -19,4 +19,6 @@
+ ;setdic wnncons/tankan3.dic !@WNN_DIC_DIR/wnncons/tankan3.frq  1 1 1 - - 0
+ 
+ ;;       N nsho hindo len jiri flag jisho sbn dbn_len sbn_cnt suuji kana eisuu kigou toji_kakko fuzokogo kaikakko
+-setparam 2 10   2     40  100  200  20    1   40      -40     40    -100 40    80    40         100      40
++;setparam 2 10   2     40  100  200  20    1   40      -40     40    -100 40    80    40         100      40
++; New Parameter
++setparam 2 10   2     45  100  200  5     1   40      -100    200   -100 200   80    200        200      200
+diff -ru Wnn.org/jd/wnnenvrc_R.omr Wnn/jd/wnnenvrc_R.omr
+--- Wnn.org/jd/wnnenvrc_R.omr	Wed Aug 25 15:11:40 1993
++++ Wnn/jd/wnnenvrc_R.omr	Tue Feb 10 07:59:24 1998
+@@ -19,4 +19,6 @@
+ ;setdic wnncons/tankan3.dic	-			1 1 1 - - 1
+ 
+ ;;       N nsho hindo len jiri flag jisho sbn dbn_len sbn_cnt suuji kana eisuu kigou toji_kakko fuzokogo kaikakko
+-setparam 2 10   2     45  1    80   5     1   50      -20     400   -10  100   -100  200        0        200
++;setparam 2 10   2     45  1    80   5     1   50      -20     400   -10  100   -100  200        0        200
++; New Parameter
++setparam 2 10   2     45  100  200  5     1   40      -100    200   -100 200   80    200        200      200
+diff -ru Wnn.org/jd/wnnenvrc_R.rem Wnn/jd/wnnenvrc_R.rem
+--- Wnn.org/jd/wnnenvrc_R.rem	Wed Aug 25 15:11:48 1993
++++ Wnn/jd/wnnenvrc_R.rem	Tue Feb 10 07:59:34 1998
+@@ -19,4 +19,6 @@
+ ;setdic wnncons/tankan3.dic -  1 1 1 - - 1
+ 
+ ;;       N nsho hindo len jiri flag jisho sbn dbn_len sbn_cnt suuji kana eisuu kigou toji_kakko fuzokogo kaikakko
+-setparam 2 10   2     45  1    80   5     1   50      -20     400   -10  100   -100  200        0        200
++;setparam 2 10   2     45  1    80   5     1   50      -20     400   -10  100   -100  200        0        200
++; New Parameter
++setparam 2 10   2     45  100  200  5     1   40      -100    200   -100 200   80    200        200      200
+diff -ru Wnn.org/jd/wnnenvrc_R.rev Wnn/jd/wnnenvrc_R.rev
+--- Wnn.org/jd/wnnenvrc_R.rev	Wed Aug 25 15:11:54 1993
++++ Wnn/jd/wnnenvrc_R.rev	Tue Feb 10 07:59:42 1998
+@@ -19,4 +19,6 @@
+ ;setdic wnncons/tankan3.dic -  1 1 1 - - 1
+ 
+ ;;       N nsho hindo len jiri flag jisho sbn dbn_len sbn_cnt suuji kana eisuu kigou toji_kakko fuzokogo kaikakko
+-setparam 2 10   2     45  1    80   5     1   50      -20     400   -10  100   -100  200        0        200
++;setparam 2 10   2     45  1    80   5     1   50      -20     400   -10  100   -100  200        0        200
++; New Parameter
++setparam 2 10   2     45  100  200  5     1   40      -100    200   -100 200   80    200        200      200

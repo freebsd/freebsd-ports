@@ -1,0 +1,25 @@
+--- Imakefile.~1~	Tue Oct  4 08:18:46 1994
++++ Imakefile	Tue Feb 10 11:29:58 1998
+@@ -4,7 +4,7 @@
+ #define IHaveSubdirs
+ #define PassCDebugFlags 'CDEBUGFLAGS=$(CDEBUGFLAGS)'
+ 
+-#if BuildWnn || BuildXwnmo
++#if BuildWnn
+ WNNDIR = Wnn
+ #endif
+ #if BuildCWnn
+--- ./Xwnmo/jd/ximconf.~1~	Thu Feb 12 10:20:17 1998
++++ ./Xwnmo/jd/ximconf	Thu Feb 12 10:32:59 1998
+@@ -18,8 +18,8 @@
+ 		zh_TW	zh_TW.ucns	2,1,2	True	Yincoding
+ zh_CN.eucCN|zh_CN.ugb	\
+ 		zh_CN	zh_CN.ugb	2,1,2	True	Yincoding
+-ja|ja_JP.eucJP|ja_JP.ujis|ja_JP.mscode|ja_JP.SJIS|ja_JP.jis8|ja_JP.jis7|ja_JP.pjis \
+-		ja_JP	ja_JP.ujis	2,1,2	True	Normal
++ja|ja_JP.EUC|ja_JP.eucJP|ja_JP.ujis|ja_JP.mscode|ja_JP.SJIS|ja_JP.jis8|ja_JP.jis7|ja_JP.pjis \
++		ja_JP	ja_JP.EUC	2,1,2	True	Normal
+ 
+-setdefaultlocale	ja_JP.ujis
++setdefaultlocale	ja_JP.EUC
+ setworldlocale	wr_WR.ct

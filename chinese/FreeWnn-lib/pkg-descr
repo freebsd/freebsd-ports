@@ -35,8 +35,8 @@ E-mail.
 
 
 Mr. Yoshio KATAYAMA <kate@pfu.co.jp> fixed many bugs for Wnn4.2.
-Patches for those are in 'Wnn4.2.patch.tar.gz' and are applied in this
-port.
+Patches for those are in 'Wnn4.2.patch-YYMMDD.tar.gz' and are applied
+in this port.
 
 [Notice]
 When compiling this port, if $LOCALBASE is not '/usr/local' and/or

@@ -2,7 +2,7 @@ This is Wnn4.2, a Japanese/Chinese/Korean input method.  It is
 included primarily so that we can compile mule-2.1, a multilingual
 emacs.
 
-Only the Japanese version is build for this port.
+Only the Japanese version is built for this port.
 
 Note that binaries and libraries go to /usr/local, while man pages and 
 includes go to /usr/X11R6.  That's the way it was designed, I don't
@@ -13,10 +13,10 @@ know why.
 
 -------------------------------------------------------------------
 
-This also include some patches for FreeBSD or bugfix.
-If use this patches, you can compile Wnn-4.2 under XFree86 3.1.2E
- or later(X11Release6.1).
-If there are any problem in this patches, please know me via E-mail.
+This also include some patches for FreeBSD or bugfixes.
+If use these patches, you can compile Wnn-4.2 under XFree86 3.1.2E
+ or later (X11Release6.1).
+If there are any problem in these patches, please tell me via E-mail.
 
 Hidekazu Kuroki
 (hidekazu@cs.titech.ac.jp)
@@ -24,14 +24,17 @@ Hidekazu Kuroki
 -------------------------------------------------------------------
 
 Mr. Yoshio KATAYAMA <kate@pfu.co.jp> fixed many bugs for Wnn4.2.
-Patches for those are in 'Wnn4.2.patch.tar.gz' and are applied in this
-port.
+Patches for those are in 'Wnn4.2.patch-YYMMDD.tar.gz' and are applied
+in this port.
 
 [Notice]
-When compiling by this ports, if $LOCALBASE is not '/usr/local' and/or
+(1) When compiling this port, if $LOCALBASE is not '/usr/local' and/or
 $X11BASE is not '/usr/X11R6' then you should properly change two lines
 '@cwd /usr/local' and '@cwd /usr/X11R6' in
 $PORTSDIR/japanese/Wnn/pkg/PLIST.
+
+(2) You must set a environment variable JSERVER if you use a client of
+Wnn.
 
 -- S. Taoka
 <taoka@infonets.hiroshima-u.ac.jp>

@@ -110,6 +110,41 @@ lib/wnn/zh_TW/rk_p/mode
 lib/wnn/zh_TW/rk_p/2A_CTRL
 lib/wnn/zh_TW/rk_z/mode
 lib/wnn/zh_TW/rk_z/2A_CTRL
+@comment Xwnmo
+lib/wnn/ja_JP/uumrc_vi.xim
+lib/wnn/ja_JP/uumrc_e.xim
+lib/wnn/ja_JP/uumrc.xim
+lib/wnn/ja_JP/uumkey.xim
+lib/wnn/ja_JP/uumkey_v.xim
+lib/wnn/ja_JP/uumkey_e.xim
+lib/wnn/ja_JP/xim.msg
+lib/wnn/ja_JP/xjutil.msg
+lib/wnn/ko_KR/uumkey.xim
+lib/wnn/ko_KR/uumrc.xim
+lib/wnn/ko_KR/xim.msg
+lib/wnn/ko_KR/xjutil.msg
+lib/wnn/lt_LN/uumkey.xim
+lib/wnn/lt_LN/uumrc.xim
+lib/wnn/lt_LN/xim.msg
+lib/wnn/zh_CN/uumkey.xim
+lib/wnn/zh_CN/uumkey_p.xim
+lib/wnn/zh_CN/uumrc.xim
+lib/wnn/zh_CN/uumrc_p.xim
+lib/wnn/zh_CN/uumrc_z.xim
+lib/wnn/zh_CN/xim.msg
+lib/wnn/zh_CN/xjutil.msg
+lib/wnn/zh_TW/uumkey.xim
+lib/wnn/zh_TW/uumkey_p.xim
+lib/wnn/zh_TW/uumrc.xim
+lib/wnn/zh_TW/uumrc_p.xim
+lib/wnn/zh_TW/uumrc_z.xim
+lib/wnn/zh_TW/xim.msg
+lib/wnn/zh_TW/xjutil.msg
+lib/wnn/cvt_xim_tbl
+lib/wnn/ximconf
+lib/wnn/ximrc
+lib/wnn/ximrc_vi
+@comment END Xwnmo
 @dirrm lib/wnn/zh_CN/rk_z
 @dirrm lib/wnn/zh_CN/rk_p
 @dirrm lib/wnn/zh_CN/rk
@@ -124,6 +159,11 @@ lib/wnn/zh_TW/rk_z/2A_CTRL
 @dirrm lib/wnn/zh_TW/dic/usr
 @dirrm lib/wnn/zh_TW/dic
 @dirrm lib/wnn/zh_TW
+@comment Xwnmo
+@dirrm lib/wnn/ja_JP
+@dirrm lib/wnn/lt_LN
+@dirrm lib/wnn/ko_KR
+@comment END Xwnmo
 @dirrm lib/wnn
 bin/cWnn4/cserver
 bin/cWnn4/tserver
@@ -204,6 +244,16 @@ share/doc/zh-Wnn/manual.en/preface
 @dirrm share/doc/zh-Wnn/manual
 @dirrm share/doc/zh-Wnn
 @cwd /usr/X11R6
+@comment Xwnmo
+bin/xwnmo
+bin/killxwnmo
+bin/xjutil
+lib/X11/app-defaults/Xwnmo
+@comment END Xwnmo
+lib/libcwnn4.so
+lib/libcwnn4.so.1.0
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 lib/libcwnn.a
 include/cwnn/jllib.h
 include/cwnn/jslib.h
@@ -213,3 +263,27 @@ include/cwnn/commonhd.h
 include/cwnn/cplib.h
 include/cwnn/msg.h
 @dirrm include/cwnn
+man/man1/cwdreg.1.gz
+man/man1/cdicsort.1.gz
+man/man1/cwddel.1.gz
+man/man1/cdtoa.1.gz
+man/man1/catof.1.gz
+man/man1/catod.1.gz
+man/man1/cwnnstat.1.gz
+man/man1/cwnnkill.1.gz
+man/man1/cuum.1.gz
+man/man1/cserver.1.gz
+man/man4/cst_end.4.gz
+man/man4/cwnn.4.gz
+man/man4/cenv.4.gz
+man/man4/ckey.4.gz
+@comment Xwnmo
+man/man1/xwnmo.1.gz
+man/man1/ximrc.1.gz
+man/man1/ximconf.1.gz
+man/man1/cvt_fun_tbl.1.gz
+man/man1/cvt_meta_tbl.1.gz
+man/man1/killxwnmo.1.gz
+man/man1/cvt_xim_tbl.1.gz
+man/man1/xjutil.1.gz
+@comment END Xwnmo

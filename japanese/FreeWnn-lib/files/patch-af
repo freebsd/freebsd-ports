@@ -35,7 +35,7 @@
  #endif	/* JAPANESE */
  #ifdef	CHINESE
 -    fprintf(stderr, "wnnstat [-weEdDfFSUJBC] [-L lang_name] [server_name]\n");
-+    fprintf(stderr, "wnnstat [-weEdDfFUBCV] [-L lang_name] [server_name]\n");
++    fprintf(stderr, "cwnnstat [-weEdDfFUBCV] [-L lang_name] [server_name]\n");
  #endif	/* CHINESE */
  #ifdef KOREAN
 -    fprintf(stderr, "kwnnstat [-weEdDfFKU] [-L lang_name] [server_name]\n");

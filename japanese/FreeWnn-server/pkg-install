@@ -93,23 +93,32 @@ POST-INSTALL)
       ja-Wnn-4.2)
 	sys_dirs="${PKG_PREFIX}/lib/wnn/ja_JP/dic/pubdic ${PKG_PREFIX}/lib/wnn/ja_JP/dic/wnncons"
 	usr_dirs=${PKG_PREFIX}/lib/wnn/ja_JP/dic/usr
-	wnntouch=${PKG_PREFIX}/bin/Wnn4/wnntouch
 	wnnserver=${PKG_PREFIX}/bin/Wnn4/jserver
+	wnntouch=${PKG_PREFIX}/bin/Wnn4/wnntouch
+	wnnstat=${PKG_PREFIX}/bin/Wnn4/wnnstat
 	wnnname=Wnn
+	wnn_socket=/tmp/jd_sockV4
+	wnn_lang=ja_JP
 	;;
       zh-Wnn-4.2)
 	sys_dirs="${PKG_PREFIX}/lib/wnn/zh_CN/dic/sys ${PKG_PREFIX}/lib/wnn/zh_TW/dic/sys"
 	usr_dirs="${PKG_PREFIX}/lib/wnn/zh_CN/dic/usr ${PKG_PREFIX}/lib/wnn/zh_TW/dic/usr"
-	wnntouch=${PKG_PREFIX}/bin/cWnn4/cwnntouch
 	wnnserver=${PKG_PREFIX}/bin/cWnn4/cserver
+	wnntouch=${PKG_PREFIX}/bin/cWnn4/cwnntouch
+	wnnstat=${PKG_PREFIX}/bin/cWnn4/cwnnstat
 	wnnname=cWnn
+	wnn_socket=/tmp/cd_sockV4
+	wnn_lang=zh_CN
 	;;
       ko-Wnn-4.2)
 	sys_dirs="${PKG_PREFIX}/lib/wnn/ko_KR/dic/sys"
 	usr_dirs=${PKG_PREFIX}/lib/wnn/ko_KR/dic/usr
-	wnntouch=${PKG_PREFIX}/bin/kWnn4/kwnntouch
 	wnnserver=${PKG_PREFIX}/bin/kWnn4/kserver
+	wnntouch=${PKG_PREFIX}/bin/kWnn4/kwnntouch
+	wnnstat=${PKG_PREFIX}/bin/kWnn4/kwnnstat
 	wnnname=kWnn
+	wnn_socket=/tmp/kd_sockV4
+	wnn_lang=ko_KR
 	;;
     esac
 
@@ -129,10 +138,28 @@ POST-INSTALL)
       echo "Installing ${startup_script} startup file.";
       echo '#!/bin/sh' > ${startup_script};
       echo "wnn=${wnnserver}" >> ${startup_script};
-      echo 'if [ -f $wnn ]; then' >> ${startup_script};
-      echo "    echo -n ' ${wnnname}'" >> ${startup_script};
-      echo '    $wnn' >> ${startup_script};
+      echo 'if [ -x $wnn ]; then' >> ${startup_script};
+      echo "    ${wnnstat} -L ${wnn_lang} localhost > /dev/null 2>&1" >> ${startup_script};
+      echo '    if [ $? = 255 ]; then' >> ${startup_script};
+      echo "        rm -f ${wnn_socket}" >> ${startup_script};
+      echo "        echo -n ' ${wnnname}'" >> ${startup_script};
+      echo '        $wnn' >> ${startup_script};
+      echo "    fi" >> ${startup_script};
       echo "fi" >> ${startup_script};
+      if [ $1 = zh-Wnn-4.2 ]; then
+	wnnserver=${PKG_PREFIX}/bin/cWnn4/tserver
+	wnn_lang=zh_TW
+	wnn_socket=/tmp/td_sockV4
+	echo "wnn=${wnnserver}" >> ${startup_script};
+	echo 'if [ -x $wnn ]; then' >> ${startup_script};
+	echo "    ${wnnstat} -L ${wnn_lang} localhost > /dev/null 2>&1" >> ${startup_script};
+	echo '    if [ $? = 255 ]; then' >> ${startup_script};
+	echo "        rm -f ${wnn_socket}" >> ${startup_script};
+	echo "        echo -n ' ${wnnname}'" >> ${startup_script};
+	echo '        $wnn' >> ${startup_script};
+	echo "    fi" >> ${startup_script};
+	echo "fi" >> ${startup_script};
+      fi
       chmod 755 ${startup_script};
       chown bin.bin ${startup_script};
     fi
