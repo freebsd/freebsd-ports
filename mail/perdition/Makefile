@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	perdition
-PORTVERSION=	0.1.7
+PORTVERSION=	0.1.8
 CATEGORIES=	mail net security
 MASTER_SITES=	ftp://perdition.sourceforge.net/pub/perdition/%SUBDIR%/ \
 		ftp://ftp.au.vergenet.net/pub/perdition/%SUBDIR%/ \
