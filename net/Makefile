@@ -317,6 +317,7 @@
     SUBDIR += p5-Net-ParseWhois
     SUBDIR += p5-Net-Patricia
     SUBDIR += p5-Net-Pcap
+    SUBDIR += p5-Net-Radius
     SUBDIR += p5-Net-RawIP
     SUBDIR += p5-Net-SNMP
     SUBDIR += p5-Net-SSH
