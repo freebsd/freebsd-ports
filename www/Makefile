@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.83 1998/06/27 10:47:54 andreas Exp $
+# $Id: Makefile,v 1.84 1998/06/28 12:44:56 andreas Exp $
 #
 
     SUBDIR += Mosaic         # requires Motif
@@ -12,6 +12,7 @@
     SUBDIR += arena
     SUBDIR += ashe           # requires Motif
     SUBDIR += aswedit
+    SUBDIR += boa
     SUBDIR += cgihtml
     SUBDIR += cgiparse
     SUBDIR += checkbot
