@@ -1,0 +1,9 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBD/LDAP/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/DBD/LDAP.pm
+lib/perl5/site_perl/%%PERL_VER%%/JLdap.pm
+lib/perl5/site_perl/%%PERL_VER%%/auto/DBD/LDAP/autosplit.ix
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/auto/DBD/LDAP 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/auto/DBD 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/DBD 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBD/LDAP 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBD 2>/dev/null || true
