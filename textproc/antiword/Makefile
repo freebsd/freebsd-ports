@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	antiword
-PORTVERSION=	0.34
+PORTVERSION=	0.35
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.winfield.demon.nl/linux/
 
