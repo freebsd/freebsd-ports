@@ -5,15 +5,23 @@
 # $FreeBSD$
 
 PORTNAME=	nhc98
-PORTVERSION=	1.08
+PORTVERSION=	1.10
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.cs.york.ac.uk/pub/haskell/${PORTNAME}/
 DISTNAME=	${PORTNAME}src-${PORTVERSION}
 
 PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	patch-1.08-ghc5.02 \
-		patch-1.08-hmake \
-		patch-1.08-hat-makefile
+PATCHFILES=	patch-1.10-IO \
+		patch-1.10-arrow \
+		patch-1.10-blockbuffer \
+		patch-1.10-commas \
+		patch-1.10-counter \
+		patch-1.10-hp2graph \
+		patch-1.10-keywords \
+		patch-1.10-lhs \
+		patch-1.10-patterns \
+		patch-1.10-hiding \
+		patch-1.10-ghc5.02
 
 MAINTAINER=	obraun@informatik.unibw-muenchen.de
 
@@ -60,6 +68,7 @@ pre-fetch:
 # into the build directory. The configure option won't work in the
 # ports system.
 pre-install:
+	${RM} -f ${WRKSRC}/include/*.orig
 	${SED} -e "s#LIBDIR=.*##" \
 	       < ${WRKSRC}/targets/ix86-FreeBSD/config.cache \
 	       > ${WRKSRC}/targets/ix86-FreeBSD/config.cache.fix1
