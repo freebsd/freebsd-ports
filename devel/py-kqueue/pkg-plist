@@ -1,0 +1,3 @@
+@exec mkdir -p %D/lib/python1.5/site-packages
+lib/python1.5/site-packages/kqsyscallmodule.so
+lib/python1.5/site-packages/KQueue.py
