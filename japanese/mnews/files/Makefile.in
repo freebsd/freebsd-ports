@@ -1,0 +1,254 @@
+# 1 "temp.c"
+ 
+
+
+
+
+SHELL	= /bin/sh
+
+ARCH	= _386BSD
+WHEN    = date
+WHO     = whoami
+WHERE   = hostname
+CC	= /usr/bin/cc
+LIBS	=  -ltermcap
+RANLIB	= ranlib
+INSTALL	= 
+CC_FLAG	= -O -DDONT_HAVE_FTIME
+BIN_DIR	= @PREFIX@/bin
+LIB_DIR	= @PREFIX@/lib/mnews
+MAN_DIR	= @PREFIX@/man
+
+CONNECT_OPT = -DNNTP -DNSPL
+CONS_OPT  = -DNEWSPOST -DMAILSEND -DJNAMES -DMH -DUCBMAIL -DRMAIL -DMIME -DPAGER -DFCC -DTERMCAP
+CONF_OPT  = -DCTRL_L -DCOMPLETION -DXOVER -DREF_SORT
+MOD_OPT   =  -DJNHASH
+CPP_FLAG1 = -DMNEWS -DJIS_INPUT $(CONF_OPT) -D$(ARCH)
+CPP_FLAG2 = $(CONS_OPT) $(CPP_FLAG1)
+C_FLAG1	= $(CPP_FLAG1) $(CC_FLAG)
+C_FLAG2	= $(CPP_FLAG2) $(CC_FLAG)
+RM	= rm
+RM_FLAG	= -f
+EXE     = mnews
+
+
+NEWSPOST_OBJ = newspost.o
+
+
+MAILSEND_OBJ = mailsend.o
+
+
+
+JNAMES_OBJ = jnhash.o
+
+
+
+
+
+MH_OBJ = mh.o
+
+
+UCBMAIL_OBJ = ucbmail.o
+
+
+RMAIL_OBJ = rmail.o
+
+
+
+
+
+PAGER_OBJ = pager.o
+
+
+FCC_OBJ = fcc.o
+
+
+MIME_OBJ = mime.o
+
+
+
+
+BASE_OBJ   = mnews.o group.o article.o mark.o compat.o 		nntplib.o kanjilib.o termlib.o
+
+OPTION_OBJ = $(NEWSPOST_OBJ) $(MAILSEND_OBJ) $(JNAMES_OBJ) 		$(MH_OBJ) $(UCBMAIL_OBJ) $(RMAIL_OBJ) $(BOARD_OBJ) 		$(PAGER_OBJ) $(FCC_OBJ) $(MIME_OBJ) $(YOUBIN_OBJ)
+
+
+OBJ     = mnews.o group.o article.o mark.o mh.o ucbmail.o rmail.o board.o 		newspost.o mailsend.o pager.o fcc.o mime.o compat.o 		nntplib.o kanjilib.o termlib.o 		jnames.o jnhash.o
+
+
+
+SRC     = mnews.c group.c article.c mark.c mh.c ucbmail.c rmail.c board.c 		newspost.c mailsend.c pager.c fcc.c mime.c compat.c 		nntplib.c kanjilib.c termlib.c termdos.c 		inetbios.c jnames.c jnhash.c youbin.c
+
+
+
+INC     = mnews.h group.h article.h mark.h mh.h ucbmail.h rmail.h board.h 		newspost.h mailsend.h pager.h fcc.h mime.h compat.h 		nntplib.h kanjilib.h termlib.h site_DOS.h site_X68.h 		inetbios.h
+
+
+
+C_OBJ   = config.o
+C_SRC   = config.c
+C_INC   = config.h
+SITE    = site_dep.h
+DOC1    = mnews.doc mnews.1 read1ST.doc readme.doc update.doc FAQ.doc 		board.doc present.doc
+
+DOC2    = prerel.doc
+ETC     = board.sh board.csh combine.sh _mnews.smp 		jnames.smp jnames.fj jnames.jp jnames.tnn
+
+INFO    = inst_inf.h
+MAKE1   = config.sh config.jsh Makefile.obj
+MAKE2   = Makefile.src Makefile.MSC Makefile.TCC Makefile.X68
+SRC_DIST = mnews_src.tar
+OBJ_DIST = mnews_$(ARCH)_obj.tar
+EXE_DIST = mnews_$(ARCH)_exe.tar
+
+all: $(EXE)
+
+obj: $(OBJ)
+
+$(EXE): $(BASE_OBJ) $(OPTION_OBJ) $(C_OBJ)
+	$(CC) $(CC_FLAG) -o $@ $(BASE_OBJ) $(OPTION_OBJ) $(C_OBJ) $(LIBS)
+	strip $@
+	chmod 755 $@
+	chmod 644 $(DOC1) $(DOC2)
+
+.c.o: $(INC)
+	$(CC) $(C_FLAG2) -c $*.c
+
+$(C_OBJ): $(C_SRC) $(C_INC) $(SITE) $(INFO)
+	$(CC) $(C_FLAG2) $(CONNECT_OPT) -c config.c
+
+$(INFO): $(C_SRC) $(C_INC) $(SITE) $(SRC) $(INC)
+	-$(RM) $(RM_FLAG) $(INFO)
+	@echo "Making "'"'$(INFO)'"'
+	touch $(INFO)
+	@echo "/*"                                         >> $(INFO)
+	@echo " * Mini News Reader Install Information"    >> $(INFO)
+	@echo " */"                                        >> $(INFO)
+	@echo ""                                           >> $(INFO)
+	@echo "#define	CONS_OPT	"'"'$(CONS_OPT)'"' >> $(INFO)
+	@echo "#define	CONF_OPT	"'"'$(CONF_OPT)'"' >> $(INFO)
+	@echo "#define	ARCH_OPT	"'"'$(ARCH)'"'     >> $(INFO)
+	@echo "#define	INSTALL_HOST	"'"'`$(WHERE)`'"'  >> $(INFO)
+	@echo "#define	INSTALL_USER	"'"'`$(WHO)`'"'    >> $(INFO)
+	@echo "#define	INSTALL_DATE	"'"'`$(WHEN)`'"'   >> $(INFO)
+
+$(SITE):
+	@echo "You must run config.sh or config.jsh first."
+
+nntplib.o: nntplib.c nntplib.h compat.h
+	$(CC) $(C_FLAG1) $(CONNECT_OPT) -c $*.c
+
+kanjilib.o: kanjilib.c kanjilib.h compat.h
+	$(CC) $(C_FLAG1) -DDELETE_X0212 -c $*.c
+
+termlib.o: termlib.c termlib.h compat.h
+	$(CC) $(C_FLAG2) -c $*.c
+
+jnames.o: jnames.c
+	$(CC) $(C_FLAG2) -c $*.c
+
+jnhash.o: jnhash.c kanjilib.h compat.h
+	$(CC) $(C_FLAG2) -c $*.c
+
+youbin.o: youbin.c $(INC)
+	$(CC) $(C_FLAG2) -c $*.c
+
+mnews.o: mnews.c $(INC)
+	$(CC) $(C_FLAG2) -c $*.c
+
+group.o: group.c $(INC)
+	$(CC) $(C_FLAG2) -c $*.c
+
+article.o: article.c $(INC)
+	$(CC) $(C_FLAG2) -c $*.c
+
+mark.o: mark.c $(INC)
+	$(CC) $(C_FLAG2) -c $*.c
+
+mh.o: mh.c $(INC)
+	$(CC) $(C_FLAG2) -c $*.c
+
+ucbmail.o: ucbmail.c $(INC)
+	$(CC) $(C_FLAG2) -c $*.c
+
+rmail.o: rmail.c $(INC)
+	$(CC) $(C_FLAG2) -c $*.c
+
+board.o: board.c $(INC)
+	$(CC) $(C_FLAG2) -c $*.c
+
+newspost.o: newspost.c $(INC)
+	$(CC) $(C_FLAG2) -c $*.c
+
+mailsend.o: mailsend.c $(INC)
+	$(CC) $(C_FLAG2) -c $*.c
+
+pager.o: pager.c $(INC)
+	$(CC) $(C_FLAG2) -c $*.c
+
+fcc.o: fcc.c $(INC)
+	$(CC) $(C_FLAG2) -c $*.c
+
+mime.o: mime.c $(INC)
+	$(CC) $(C_FLAG2) -c $*.c
+
+compat.o: compat.c $(INC)
+	$(CC) $(C_FLAG2) -c $*.c
+
+install: all
+	cp $(EXE) $(BIN_DIR)
+	chmod 755 $(BIN_DIR)/$(EXE)
+	@if [ -f default-domain ] ; then 		cp default-domain $(LIB_DIR) ; 		chmod 644 $(LIB_DIR)/default-domain ; 	fi
+
+
+
+	@if [ -f "/sbin/i860" ] ; then 		"/sbin/i860" ; 		if [ $? -eq 0 ]; then 			echo "Change group & permission." ; 			chgrp mail $(BIN_DIR)/$(EXE) ; 			chmod g+s $(BIN_DIR)/$(EXE) ; 		fi ; 	fi
+
+
+
+
+
+
+
+	@if [ -d $(MAN_DIR)/japanese/man1 ] ; then 		cp mnews.1 $(MAN_DIR)/japanese/man1 ; 		chmod 644 $(MAN_DIR)/japanese/man1/mnews.1 ; 	fi
+
+
+
+	@if [ -d $(MAN_DIR)/man1 ] ; then 		cp mnews.1 $(MAN_DIR)/man1 ; 		chmod 644 $(MAN_DIR)/man1/mnews.1 ; 	fi
+
+
+
+
+help:
+	@echo "--- Mini News Reader Makefile [Source Version] ---"
+	@echo "make          --- make executable file"
+	@echo "make install  --- install executable & manual file"
+	@echo "make clean    --- remove backup & object file"
+	@echo "make remove   --- remove object file"
+	@echo "make help     --- print help message"
+	@echo "make src_dist --- archive source & document file"
+	@echo "make obj_dist --- archive object & document file"
+	@echo "make bin_dist --- archive executable & document file"
+
+clean:
+	-$(RM) $(RM_FLAG) $(EXE) $(OBJ) $(C_OBJ) $(INFO) *~ \#* *\#
+
+remove:
+	-$(RM) $(RM_FLAG) $(EXE) $(OBJ) $(C_OBJ) $(INFO)
+
+src_dist:
+	tar cvfh $(SRC_DIST) $(SRC) $(INC) $(C_SRC) $(C_INC) $(ETC) 		$(DOC1) $(DOC2) $(MAKE1) $(MAKE2)
+
+	gzip -f $(SRC_DIST)
+
+obj_dist: $(OBJ)
+	tar cvfh $(OBJ_DIST) $(OBJ) $(C_SRC) $(C_INC) $(ETC) $(DOC1) $(MAKE1)
+	gzip -f $(OBJ_DIST)
+
+bin_dist: $(EXE)
+	tar cvfh $(EXE_DIST) $(EXE) $(ETC) $(DOC1)
+	gzip -f $(EXE_DIST)
+
+touch:
+	touch $(SRC) $(INC) $(C_SRC) $(C_INC) $(ETC) 		$(DOC1) $(DOC2) $(MAKE1) $(MAKE2)
+
