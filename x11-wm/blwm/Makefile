@@ -8,7 +8,8 @@
 PORTNAME=	blwm
 PORTVERSION=	1.0.4
 CATEGORIES=	x11-wm portuguese
-MASTER_SITES=	http://labdid.if.usp.br/~blanes/arquivos/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	trevor
 
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Portuguese derivative of qvwm, simplified to conserve resources
