@@ -1,0 +1,38 @@
+share/Choices/MIME-icons/video_mpeg.xpm
+share/Choices/MIME-icons/application_pdf.xpm
+share/Choices/MIME-icons/application_postscript.xpm
+share/Choices/MIME-icons/application_x-class-file.xpm
+share/Choices/MIME-icons/application_x-gunzip.xpm
+share/Choices/MIME-icons/application_x-jar-file.xpm
+share/Choices/MIME-icons/application_x-tar.xpm
+share/Choices/MIME-icons/application_x-vvsh.xpm
+share/Choices/MIME-icons/application_zip.xpm
+share/Choices/MIME-icons/audio.xpm
+share/Choices/MIME-icons/audio_x-mod.xpm
+share/Choices/MIME-icons/image.xpm
+share/Choices/MIME-icons/image_gif.xpm
+share/Choices/MIME-icons/image_jpeg.xpm
+share/Choices/MIME-icons/image_x-xpixmap.xpm
+share/Choices/MIME-icons/special_block-device.xpm
+share/Choices/MIME-icons/text.xpm
+share/Choices/MIME-icons/special_char-device.xpm
+share/Choices/MIME-icons/special_directory.xpm
+share/Choices/MIME-icons/special_executable.xpm
+share/Choices/MIME-icons/special_pipe.xpm
+share/Choices/MIME-icons/special_socket.xpm
+share/Choices/MIME-icons/text_html.xpm
+share/Choices/MIME-icons/text_plain.xpm
+share/Choices/MIME-icons/text_x-C++.xpm
+share/Choices/MIME-icons/text_x-c.xpm
+share/Choices/MIME-icons/text_x-java.xpm
+share/Choices/MIME-icons/text_x-lyx.xpm
+share/Choices/MIME-icons/text_x-python.xpm
+share/Choices/MIME-icons/video.xpm
+share/Choices/MIME-icons/application.xpm
+share/Choices/MIME-info/Standard
+share/Choices/MIME-types/application_postscript
+share/Choices/MIME-types/text
+@dirrm share/Choices/MIME-types
+@dirrm share/Choices/MIME-info
+@dirrm share/Choices/MIME-icons
+@dirrm share/Choices
