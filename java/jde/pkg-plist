@@ -1,6 +1,7 @@
 bin/jtags
 %%EMACS_VERSION_SITE_LISPDIR%%/jde/beanshell.el
 %%EMACS_VERSION_SITE_LISPDIR%%/jde/beanshell.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/jde/java.bnf
 %%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-ant.el
 %%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-ant.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/jde/jde-bug.el

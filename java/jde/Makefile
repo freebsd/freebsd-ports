@@ -7,6 +7,7 @@
 
 PORTNAME=	jde
 PORTVERSION=	2.2.8
+PORTREVISION=	1
 CATEGORIES=	java elisp
 MASTER_SITES=	http://jdee.sunsite.dk/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
@@ -40,7 +41,7 @@ post-patch:
 
 do-install:
 	${MKDIR} ${LISPDIR}
-.for i in *.el *.elc
+.for i in *.el *.elc *.bnf
 	${INSTALL_DATA} ${BUILD_WRKSRC}/${i} ${LISPDIR}
 .endfor
 	${MKDIR} ${JAVADIR}
