@@ -1,0 +1,10 @@
+bin/rast
+bin/sgmls
+bin/sgmlsasp
+share/doc/sgmls/ChangeLog
+share/doc/sgmls/INSTALL
+share/doc/sgmls/LICENSE
+share/doc/sgmls/NEWS
+share/doc/sgmls/README
+share/doc/sgmls/TODO
+@dirrm share/doc/sgmls
