@@ -5,13 +5,8 @@
 # configure - gs driver preconfiguration, manual driver selection
 # by Andreas Klemm <andreas@FreeBSD.org>
 
-#
-# XXX - needs some rework for gs v 6.50,
-#       therefore currently disabled in Makefile
-#
-
 # driverselection
-/usr/bin/dialog --title "Ghostscript 6 driver configuration" --clear \
+/usr/bin/dialog --title "AFPL Ghostscript driver configuration" --clear \
 	--checklist "\n\
 This new ghostscript driver configuration dialog allows you to choose \n\
 only those gs drivers, you really need. Don't think too economical, since \n\
@@ -33,10 +28,11 @@ Have fun with this new configuration style !     -andreas \n\n\
   "m8510"    "C.Itoh M8510 printer" OFF \
   "coslw2p"  "CoStar LabelWriter II II/Plus" OFF \
   "coslwxl"  "CoStar LabelWriter XL" OFF \
+  "stp"      "Configurable Canon/Epson/Lexmark/HP driver (Gimp-Print)" ON \
   "uniprint" "Configurable ESC/P,ESC/P2,HP-RTL/PCL,P2X mono/color driver" ON \
   "lj250"    "DEC LJ250 Companion color printer" OFF \
   "declj250" "DEC LJ250 driver (alternate)" OFF \
-  "ap3250"   "Epson AP3250" OFF \
+  "ap3250"   "Epson ActionPrinter 3250" OFF \
   "epson"    "Epson-compatible dot matrix, 9/24-pin" OFF \
   "eps9mid"  "Epson-compatible 9-pin, interleaved lines, medium resol" OFF \
   "eps9high" "Epson-compatible 9-pin, interleaved lines, triple resol" OFF \
@@ -45,6 +41,7 @@ Have fun with this new configuration style !     -andreas \n\n\
   "epsonc"   "Epson LQ-2550 and Fujitsu 3400/2400/1200 color" OFF \
   "st800"    "Epson Stylus 800 printer" OFF \
   "stcolor"  "Epson Stylus Color and II/IIs/1500 (see driver docu)" OFF \
+  "photoex"  "Epson Stylus Color Photo, Photo EX, Photo 700" OFF \
   "lp2563"   "HP 2563B line printer" OFF \
   "dnj650c"  "HP DesignJet 650C" OFF \
   "deskjet"  "HP DeskJet and DeskJet Plus" ON \
@@ -55,8 +52,12 @@ Have fun with this new configuration style !     -andreas \n\n\
   "cdjmono"  "HP DeskJet 500/510/520/540C b/w printing" ON \
   "cdj500"   "HP DeskJet 500/540C (same as cdjcolor)" OFF \
   "cdj550"   "HP DeskJet 550C/560C/660C/660Cse" ON \
-  "cdj850"   "HP DeskJet 670/690/850/855/870/890/1100/1600" ON \
-  "cdj970"   "HP DeskJet 970, 3rd party" ON \
+  "cdj670"   "HP DeskJet 670/690 (HP8XX driver)" ON \
+  "cdj850"   "HP DeskJet 850/855/870/1100 (HP8XX driver)" ON \
+  "cdj880"   "HP DeskJet 880 (HP8XX driver)" ON \
+  "cdj890"   "HP DeskJet 890 (HP8XX driver)" ON \
+  "cdj1600"  "HP DeskJet 1600 (HP8XX driver)" ON \
+  "cdj970"   "HP DeskJet 970CXi (HP970 driver)" ON \
   "laserjet" "HP LaserJet" ON \
   "ljetplus" "HP LaserJet Plus" ON \
   "ljet2p"   "HP LaserJet IId/IIp/III* with TIFF compression" ON \
@@ -76,20 +77,29 @@ Have fun with this new configuration style !     -andreas \n\n\
   "paintjet" "HP PaintJet color printer (alternate)" OFF \
   "pjxl300"  "HP PaintJet XL300, DeskJet 1200C color printer, HP CopyJet" ON \
   "pxlmono"  "HP PCL XL black-and-white printers (LaserJet 5 and 6 family)" ON \
-  "pxlcolor" "HP PCL XL color printers (none available yet)" ON \
+  "pxlcolor" "HP PCL XL color printers (Color LaserJet 4500/5000)" ON \
   "pcl3"     "HP PCL 3+ (DeskJet 500/500C/510/520/540/550C/560C/850C/855C)" ON \
+  "hpdj"     "HP PCL 3+ (old drv.)" ON \
+  "hpijs"    "HP PhotoSmart/DeskJet series (HP developed driver)" ON \
   "ibmpro"   "IBM 9-pin Proprinter" OFF \
   "jetp3852" "IBM Jetprinter ink-jet color (Model #3852)" OFF \
   "imagen"   "Imagen ImPress printers" OFF \
   "fs600"    "Kyocera FS-600 (600 dpi)" OFF \
   "lxm5700m" "Lexmark 5700 monotone" OFF \
   "cp50"     "Mitsubishi CP50 color" OFF \
-  "necp6"    "NEC P6/P6+/P60, 360x360 DPI resol" OFF \
+  "necp6"    "NEC PinWriter P6/P6+/P60, 360x360 DPI resol" OFF \
   "oce9050"  "OCE 9050 printer" OFF \
   "oki182"   "Okidata MicroLine 182" OFF \
   "okiibm"   "Okidata MicroLine IBM-compatible printers" OFF \
+  "atx23"    "Practical Automation ATX-23 label printer" OFF \
+  "atx24"    "Practical Automation ATX-24 label printer" OFF \
+  "atx38"    "Practical Automation ATX-38 label printer" OFF \
   "r4081"    "Ricoh 4081 laser printer" OFF \
   "sj48"     "StarJet 48 inkjet printer" OFF \
+  "t4693d2"  "Tektronix 4693d color, 2 bits per R/G/B component" OFF \
+  "t4693d4"  "Tektronix 4693d color, 4 bits per R/G/B component" OFF \
+  "t4693d8"  "Tektronix 4693d color, 8 bits per R/G/B component" OFF \
+  "tek4696"  "Tektronix 4695/4696 inkjet plotter" OFF \
   "bmpmono"  "BMP Monochrome" ON \
   "bmpgray"  "BMP 8-bit gray" ON \
   "bmp16"    "BMP 4-bit EGA/VGA" ON \
@@ -148,36 +158,32 @@ Have fun with this new configuration style !     -andreas \n\n\
   "png16"    "PNG 4-bit color Portable Network Graphics" ON \
   "png256"   "PNG 8-bit color Portable Network Graphics" ON \
   "png16m"   "PNG 24-bit color Portable Network Graphics" ON \
-  "psmono"   "PostScript, Level 1, monochrome image" ON \
+  "psmono"   "PostScript (Level 1) monochrome image" ON \
   "psgray"   "PostScript (Level 1) 8-bit gray image" ON \
   "psrgb"    "PostScript (Level 2) 24-bit color image" ON \
   "pswrite"  "PostScript output (like PostScript Distillery)" ON \
   "epswrite" "EPS output (like PostScript Distillery)" ON \
   "sgirgb"   "SGI RGB pixmap format" OFF \
   "sunhmono" "Harlequin variant of 1-bit Sun raster file" OFF \
-  "t4693d2"  "Tektronix 4693d color, 2 bits per R/G/B component" OFF \
-  "t4693d4"  "Tektronix 4693d color, 4 bits per R/G/B component" OFF \
-  "t4693d8"  "Tektronix 4693d color, 8 bits per R/G/B component" OFF \
-  "tek4696"  "Tektronix 4695/4696 inkjet plotter" OFF \
   "tiffcrle" "TIFF CCITT RLE 1 dim = Group 3 fax with no EOLs" ON \
   "tiffg3"   "TIFF Group 3 fax with EOLs" ON \
   "tiffg32d" "TIFF Group 3 2-D fax" ON \
   "tiffg4"   "TIFF Group 4 fax" ON \
   "tiff12nc" "TIFF 12-bit RGB, no compression" ON \
-  "tiff24nc" "TIFF 24-bit RGB, no compression, NeXT std. format)" ON \
+  "tiff24nc" "TIFF 24-bit RGB, no compression, NeXT std. format" ON \
   "tifflzw"  "TIFF LZW,      tag = 5,     mono" ON \
   "tiffpack" "TIFF PackBits, tag = 32773, mono" ON \
-  "x11"      "X Windows version 11, release >=4" ON \
-  "x11alpha" "X Windows masquer. as device with alpha capability" ON \
-  "x11cmyk"  "X Windows masquer. as 1-bit-per-plane CMYK device" ON \
-  "x11cmyk2" "X Windows as a 2-bit-per-plane CMYK device" OFF \
-  "x11cmyk4" "X Windows as a 4-bit-per-plane CMYK device" OFF \
-  "x11cmyk8" "X Windows as an 8-bit-per-plane CMYK device" OFF \
-  "x11gray2" "X Windows as a 2-bit gray-scale device" ON \
-  "x11gray4" "X Windows as a 4-bit gray-scale device" ON \
-  "x11mono"  "X Windows masquer. as black-and-white device" ON \
-  "x11rg16x" "X Windows with G5/B5/R6 pixel layout for testing" ON \
-  "x11rg32x" "X Windows with G11/B10/R11 pixel layout for testing" ON \
+  "x11"      "X Window System version 11, release >=4" ON \
+  "x11alpha" "X Window System masquer. as device with alpha capability" ON \
+  "x11cmyk"  "X Window System masquer. as 1-bit-per-plane CMYK device" ON \
+  "x11cmyk2" "X Window System as a 2-bit-per-plane CMYK device" OFF \
+  "x11cmyk4" "X Window System as a 4-bit-per-plane CMYK device" OFF \
+  "x11cmyk8" "X Window System as an 8-bit-per-plane CMYK device" OFF \
+  "x11gray2" "X Window System as a 2-bit gray-scale device" ON \
+  "x11gray4" "X Window System as a 4-bit gray-scale device" ON \
+  "x11mono"  "X Window System masquer. as black-and-white device" ON \
+  "x11rg16x" "X Window System with G5/B5/R6 pixel layout for testing" ON \
+  "x11rg32x" "X Window System with G11/B10/R11 pixel layout for testing" ON \
 2> /tmp/checklist.tmp.$$
 
 retval=$?

@@ -1,0 +1,19 @@
+--- lib/gs_init.ps.orig	Mon Apr  9 15:20:03 2001
++++ lib/gs_init.ps	Wed Jun 20 04:05:12 2001
+@@ -1263,7 +1263,7 @@
+ % Set the default screen and BG/UCR.
+ /.setdefaultbgucr {
+   systemdict /setblackgeneration known {
+-    { pop 0 } dup setblackgeneration setundercolorremoval
++    {} dup setblackgeneration setundercolorremoval
+   } if
+ } bind def
+ /.useloresscreen {	% - .useloresscreen <bool>
+@@ -1815,3 +1815,7 @@
+ (END GC) VMDEBUG
+ 
+ % The interpreter will run the initial procedure (start).
++
++% unofficial patch:
++% make it possible to print from within acroread pdf viewer
++/Default currenthalftone /Halftone defineresource pop
