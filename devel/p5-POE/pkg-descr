@@ -1,8 +1,10 @@
-POE is a framework for building Perl programs that lends itself naturally
-to tasks which involve reacting to external data.
+POE is a general purpose multitasking and networking framework.
 
-POE does standard event loop things, cooperative multitasking,
-network clients and servers; includes a high level class library that takes
-care of event driven I/O; provides a framework for portable program components.
+POE does standard event loop things, cooperative multitasking, network
+clients and servers; includes a high level class library that takes care
+of event driven I/O; provides a framework for portable program components.
 
 WWW: http://poe.perl.org/
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
