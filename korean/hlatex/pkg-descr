@@ -1,0 +1,13 @@
+HLaTeX
+======
+
+This is a \LaTeX package to use Hangul with \LaTeX.
+With this package, you can run latex on KSC 5601 based Korean LaTeX
+file to produce a professionally looking Korean documents. You can
+typeset all Korean characters defined in KSC 5601, including Korean
+Symbol, Hangul and Hanja.
+
+Currently it can be used with teTeX-0.4.
+
+--
+Ports by CHOI Junho <cjh@kr.freebsd.org>
