@@ -1,6 +1,6 @@
---- src/rrd_tool.c.orig	Wed Nov 24 17:06:43 1999
-+++ src/rrd_tool.c	Fri Nov 26 15:41:04 1999
-@@ -202,12 +202,12 @@
+--- src/rrd_tool.c.orig	Tue Jun 13 20:56:08 2000
++++ src/rrd_tool.c	Tue Jun 13 20:56:10 2000
+@@ -317,12 +317,12 @@
  	    datai=data;
  	    printf("           ");
  	    for (i = 0; i<ds_cnt;i++)
@@ -11,8 +11,8 @@
 -	        printf("%10lu:", i);
 +	        printf("%10lu: ", i);
  	        for (ii = 0; ii < ds_cnt; ii++)
--		    printf(" %13.2f", *(datai++));
-+		    printf(" %14.2f ", *(datai++));
+-		    printf(" %0.10e", *(datai++));
++		    printf(" %0.10e ", *(datai++));
  	        printf("\n");
  	    }
  	    for (i=0;i<ds_cnt;i++)
