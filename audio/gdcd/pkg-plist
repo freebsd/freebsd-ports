@@ -11,3 +11,4 @@ share/pixmaps/gdcd/rock.png
 share/pixmaps/gdcd/soundtrack.png
 share/pixmaps/gdcd/unknown.png
 @dirrm share/pixmaps/gdcd
+@unexec rmdir %d/share/pixmaps 2>/dev/null || true

@@ -1,0 +1,15 @@
+--- source/coverart.c.orig	Sun Jan  9 06:34:31 2000
++++ source/coverart.c	Thu Jun 29 01:12:36 2000
+@@ -197,7 +197,12 @@
+          return -1;
+       }
+ 
++#ifdef HAVE_STRERROR_R
+       strerror_r(rc, message, 64);
++#else
++      strncpy (message, strerror (rc), 64);
++      message[63]='\0';
++#endif
+       fputs("Error invoking pthread_create: ", stderr);
+       fputs(message, stderr);
+       fputc('\n', stderr);

@@ -1,0 +1,30 @@
+--- images/Makefile.am.orig	Fri Sep  3 09:26:05 1999
++++ images/Makefile.am	Thu Jun 29 01:36:05 2000
+@@ -3,15 +3,15 @@
+ EXTRA_DIST=blues.png data.png folk.png jazz.png misc.png newage.png nodisc.png reggae.png rock.png soundtrack.png unknown.png
+ 
+ install-data-am:
+-	$(mkinstalldirs) ${prefix}/share/gdcd
+-	$(INSTALL) -m 644 blues.png ${prefix}/share/gdcd
+-	$(INSTALL) -m 644 data.png ${prefix}/share/gdcd
+-	$(INSTALL) -m 644 folk.png ${prefix}/share/gdcd
+-	$(INSTALL) -m 644 jazz.png ${prefix}/share/gdcd
+-	$(INSTALL) -m 644 misc.png ${prefix}/share/gdcd
+-	$(INSTALL) -m 644 newage.png ${prefix}/share/gdcd
+-	$(INSTALL) -m 644 nodisc.png ${prefix}/share/gdcd
+-	$(INSTALL) -m 644 reggae.png ${prefix}/share/gdcd
+-	$(INSTALL) -m 644 rock.png ${prefix}/share/gdcd
+-	$(INSTALL) -m 644 soundtrack.png ${prefix}/share/gdcd
+-	$(INSTALL) -m 644 unknown.png ${prefix}/share/gdcd
++	$(mkinstalldirs) ${datadir}/pixmaps/gdcd
++	$(INSTALL_DATA) blues.png ${datadir}/pixmaps/gdcd
++	$(INSTALL_DATA) data.png ${datadir}/pixmaps/gdcd
++	$(INSTALL_DATA) folk.png ${datadir}/pixmaps/gdcd
++	$(INSTALL_DATA) jazz.png ${datadir}/pixmaps/gdcd
++	$(INSTALL_DATA) misc.png ${datadir}/pixmaps/gdcd
++	$(INSTALL_DATA) newage.png ${datadir}/pixmaps/gdcd
++	$(INSTALL_DATA) nodisc.png ${datadir}/pixmaps/gdcd
++	$(INSTALL_DATA) reggae.png ${datadir}/pixmaps/gdcd
++	$(INSTALL_DATA) rock.png ${datadir}/pixmaps/gdcd
++	$(INSTALL_DATA) soundtrack.png ${datadir}/pixmaps/gdcd
++	$(INSTALL_DATA) unknown.png ${datadir}/pixmaps/gdcd
