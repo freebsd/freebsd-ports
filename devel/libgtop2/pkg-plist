@@ -66,6 +66,7 @@ lib/libgtop_sysdeps-2.0.so.2
 lib/libgtop_sysdeps_suid-2.0.a
 lib/libgtop_sysdeps_suid-2.0.so
 lib/libgtop_sysdeps_suid-2.0.so.2
+libdata/pkgconfig/gnome-support-2.0.pc
 libdata/pkgconfig/libgtop-2.0.pc
 share/locale/am/LC_MESSAGES/libgtop-2.0.mo
 share/locale/ar/LC_MESSAGES/libgtop-2.0.mo
@@ -79,9 +80,8 @@ share/locale/cy/LC_MESSAGES/libgtop-2.0.mo
 share/locale/da/LC_MESSAGES/libgtop-2.0.mo
 share/locale/de/LC_MESSAGES/libgtop-2.0.mo
 share/locale/el/LC_MESSAGES/libgtop-2.0.mo
-share/locale/et/LC_MESSAGES/libgtop-2.0.mo
 share/locale/es/LC_MESSAGES/libgtop-2.0.mo
-share/locale/es_ES/LC_MESSAGES/libgtop-2.0.mo
+share/locale/et/LC_MESSAGES/libgtop-2.0.mo
 share/locale/fa/LC_MESSAGES/libgtop-2.0.mo
 share/locale/fi/LC_MESSAGES/libgtop-2.0.mo
 share/locale/fr/LC_MESSAGES/libgtop-2.0.mo
@@ -109,9 +109,11 @@ share/locale/ro/LC_MESSAGES/libgtop-2.0.mo
 share/locale/ru/LC_MESSAGES/libgtop-2.0.mo
 share/locale/sk/LC_MESSAGES/libgtop-2.0.mo
 share/locale/sl/LC_MESSAGES/libgtop-2.0.mo
+share/locale/sq/LC_MESSAGES/libgtop-2.0.mo
 share/locale/sr/LC_MESSAGES/libgtop-2.0.mo
 share/locale/sr@Latn/LC_MESSAGES/libgtop-2.0.mo
 share/locale/sv/LC_MESSAGES/libgtop-2.0.mo
+share/locale/ta/LC_MESSAGES/libgtop-2.0.mo
 share/locale/tr/LC_MESSAGES/libgtop-2.0.mo
 share/locale/uk/LC_MESSAGES/libgtop-2.0.mo
 share/locale/vi/LC_MESSAGES/libgtop-2.0.mo
