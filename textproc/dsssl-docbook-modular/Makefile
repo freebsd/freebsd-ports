@@ -3,7 +3,7 @@
 # Date created:		16 March 1998
 # Whom:			Jun Kuriyama <kuriyama@opt.phys.waseda.ac.jp>
 #
-# $Id: Makefile,v 1.10 1998/11/07 03:36:39 asami Exp $
+# $Id: Makefile,v 1.11 1998/11/08 00:10:40 kuriyama Exp $
 #
 
 DISTNAME=	db123
@@ -13,7 +13,7 @@ MASTER_SITES=	http://nwalsh.com/docbook/dsssl/
 EXTRACT_SUFX=	.zip
 
 PATCH_SITES=	http://www.freebsd.org/~kuriyama/distfiles/
-PATCHFILES=	db123jpja-981107.diff.gz
+PATCHFILES=	db123jpja-981109.diff.gz
 #PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	kuriyama@FreeBSD.ORG
