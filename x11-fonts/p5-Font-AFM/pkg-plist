@@ -1,0 +1,18 @@
+lib/perl5/site_perl/%%PERL_VER%%/Font/AFM.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/Metrics/Courier.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/Metrics/CourierBold.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/Metrics/CourierBoldOblique.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/Metrics/CourierOblique.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/Metrics/Helvetica.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/Metrics/HelveticaBold.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/Metrics/HelveticaBoldOblique.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/Metrics/HelveticaOblique.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/Metrics/TimesBold.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/Metrics/TimesBoldItalic.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/Metrics/TimesItalic.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/Metrics/TimesRoman.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Font/AFM/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Font/AFM
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Font 2>/dev/null || true
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Font/Metrics
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Font 2>/dev/null || true
