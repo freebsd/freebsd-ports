@@ -26,13 +26,7 @@ USE_GMAKE=		yes
 USE_AUTOCONF_VER=	253
 USE_GNOME=		libgnomeui
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
 post-install:
 	@${CAT} pkg-message
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
