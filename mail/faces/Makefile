@@ -4,7 +4,7 @@
 # Whom:			Lars Koeller <Lars_Koeller@odie.physik2.uni-rostock.de>
 #			Andreas Klemm <andreas@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.7 1998/09/19 01:51:19 hoek Exp $
+# $Id: Makefile,v 1.8 1998/09/21 01:55:45 steve Exp $
 #
 
 DISTNAME=	faces-1.6.1
@@ -14,6 +14,7 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
 
+USE_XLIB=	yes
 WRKSRC=		$(WRKDIR)/faces
 MAN1=		compface.1 faces.1 face_update.1
 MAN3=		compface.3

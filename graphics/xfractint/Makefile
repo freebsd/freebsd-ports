@@ -3,7 +3,7 @@
 # Date created:         7 Sept 1995
 # Whom:                 cacho@mexicano.gdl.iteso.mx
 #
-# $Id: Makefile,v 1.2 1996/11/18 11:29:38 asami Exp $
+# $Id: Makefile,v 1.3 1997/10/07 11:48:30 tg Exp $
 #
 
 DISTNAME=       xfrac304
@@ -14,6 +14,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.ORG
 
+USE_XLIB=	yes
 NO_WRKSUBDIR=	yes
 MAN1=		xfractint.1
 

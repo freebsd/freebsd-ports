@@ -3,7 +3,7 @@
 # Date created:			Mon  6 Jul 12:00:06 CEST 1998
 # Whom:				Udo Schweigert <Udo.Schweigert@mchp.siemens.de>
 #
-# $Id: Makefile,v 1.2 1998/10/12 18:38:00 jseger Exp $
+# $Id: Makefile,v 1.3 1998/10/13 04:18:50 jseger Exp $
 #
 
 DISTNAME=	coolmail-1.3
@@ -14,6 +14,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	Udo.Schweigert@mchp.siemens.de
 
+USE_XLIB=	yes
 PATCH_STRIP=	-p1
 
 MAN1=		coolmail.1
