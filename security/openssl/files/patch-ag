@@ -1,0 +1,11 @@
+--- apps/dgst.c.orig	Mon Dec 21 20:00:13 1998
++++ apps/dgst.c	Tue Jan 19 16:16:38 1999
+@@ -187,7 +187,7 @@
+ 				err++;
+ 				continue;
+ 				}
+-			printf("%s(%s)= ",name,argv[i]);
++			printf("%s (%s) = ",name,argv[i]);
+ 			do_fp(buf,inp,separator);
+ 			BIO_reset(bmd);
+ 			}
