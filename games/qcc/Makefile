@@ -20,7 +20,8 @@ WRKSRC=		${WRKDIR}/send
 MAKEFILE=	makefile
 
 post-extract:
-		@${REINPLACE_CMD} -e '/^CFLAGS/d' ${WRKSRC}/makefile
+		@${REINPLACE_CMD} -E '/^CFLAGS/d; s/cc( -c)? \$$\(C/$$(CC)\1 \$$\(C/' \
+			${WRKSRC}/makefile
 
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/qcc ${PREFIX}/bin
