@@ -1,5 +1,5 @@
---- main.c.orig	Wed Oct 15 05:58:41 2003
-+++ main.c	Wed Oct 15 06:02:22 2003
+--- main.c.orig	Mon Dec 22 23:26:47 2003
++++ main.c	Mon Dec 22 23:27:23 2003
 @@ -9,7 +9,7 @@
  /* +-------------------------------------------------------------------+ */
  
@@ -9,7 +9,15 @@
  #include <syslog.h>
  #include <pwd.h>
  #include <grp.h>
-@@ -170,14 +170,11 @@
+@@ -51,6 +51,7 @@
+ extern char	*getpass(), *crypt();
+ 
+ char	*Progname;
++int	fatal(char *s, ...);
+ char    *format_cmd();
+ char    *GetCode();
+ cmd_t	*Find();
+@@ -170,14 +171,11 @@
  	return Go(new, num, argc, argv);
  }
  
@@ -26,7 +34,7 @@
  	vfprintf(stderr, s, ap);
  	fputc('\n', stderr);
  	va_end(ap);
-@@ -448,29 +445,17 @@
+@@ -448,35 +446,28 @@
  	char		*cp, *np;
  	struct passwd	*pw;
  	struct group	*gr;
@@ -50,15 +58,29 @@
 -	}
 -
  	if ((cp = FindOpt(cmd, "gid")) == NULL) {
- 		;		/* don't have a default */
+-		;		/* don't have a default */
++		if (setgid(0) < 0)
++			fatal("Unable to set gid to default", cp);
  	} else {
  		for (cp=GetField(cp, str); cp!=NULL; cp=GetField(cp, str)) {
 -			if ((gr = getgrnam(cp)) != NULL)
 +			if ((gr = getgrnam(str)) != NULL)
  				gidset[ngroups++] = gr->gr_gid;
++			else
++				gidset[ngroups++] = atoi(str);
  		}
  		if (ngroups == 0) 
-@@ -533,6 +518,18 @@
+-			fatal("Unable to setgid to any group");
++			fatal("Unable to set gid to any group");
+ 		if (setgroups(ngroups, gidset) < 0)
+-			fatal("Set group failed");
++			fatal("Unable to set auxiliary groups");
++		if (setgid(gidset[0]) < 0)
++			fatal("Unable to set gid to %s", gidset[0]);
+ 	}
+ 
+ 	if ((cp = FindOpt(cmd, "umask")) == NULL) {
+@@ -533,6 +524,17 @@
  			new_envp[curenv++] = environ[i];
  	}
  	new_envp[curenv] = NULL;
@@ -70,8 +92,7 @@
 +		if ((pw = getpwnam(cp)) == NULL) {
 +			if (setuid(atoi(cp)) < 0)
 +				fatal("Unable to set uid to %s", cp);
-+		}
-+		if (setuid(pw->pw_uid) < 0)
++		} else if (setuid(pw->pw_uid) < 0)
 +			fatal("Unable to set uid to %s", cp);
 +	}
  
