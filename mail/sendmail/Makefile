@@ -47,9 +47,9 @@ PKGMESSAGE=	${WRKSRC}/pkg-message
 
 .if defined(SENDMAIL_WITH_SMTPS)
 .if !defined(SENDMAIL_WITH_TLS) && !defined(WITH_TLS)
-.BEGIN:
-	@${ECHO_CMD} "DEPENDENCY NOTE: SENDMAIL_WITH_TLS will be enabled to support SENDMAIL_WITH_SMTPS"
 SENDMAIL_WITH_TLS=yes
+pre-configure:
+	@${ECHO_CMD} "DEPENDENCY NOTE: SENDMAIL_WITH_TLS will be enabled to support SENDMAIL_WITH_SMTPS"
 .endif
 .endif
 
