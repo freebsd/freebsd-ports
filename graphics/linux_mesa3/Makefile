@@ -18,24 +18,23 @@ DISTFILES=		MesaLib-${PORTVERSION}${EXTRACT_SUFX} \
 
 MAINTAINER=		mastake@msel.t.u-tokyo.ac.jp
 
-BUILD_DEPENDS=	${PREFIX}/lib/ld-linux.so.2:${PORTSDIR}/emulators/linux_base \
-		${PREFIX}/usr/bin/gcc:${PORTSDIR}/devel/linux_devtools
-RUN_DEPENDS=	${PREFIX}/lib/ld-linux.so.2:${PORTSDIR}/emulators/linux_base
+BUILD_DEPENDS=	${LINUXBASE}/lib/ld-linux.so.2:${PORTSDIR}/emulators/linux_base \
+		${LINUXBASE}/usr/bin/gcc:${PORTSDIR}/devel/linux_devtools
 
 USE_BZIP2=		yes
 ONLY_FOR_ARCHS=		i386
-PREFIX=			/compat/linux
+USE_LINUX_PREFIX=	yes
 WRKSRC=			${WRKDIR}/Mesa-${PORTVERSION}
 NO_FILTER_SHLIBS=	yes
 NO_MTREE=		yes
 
-INSTALL=		${PREFIX}/usr/bin/install
+INSTALL=		${LINUXBASE}/usr/bin/install
 
 GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	#
 CONFIGURE_ARGS=		--libdir="${PREFIX}/usr/X11R6/lib" \
 			--includedir="${PREFIX}/usr/X11R6/include"
-CONFIGURE_ENV=		PATH="/compat/linux/bin:/compat/linux/usr/bin:${PATH}"\
+CONFIGURE_ENV=		PATH="${LINUXBASE}/bin:${LINUXBASE}/usr/bin:${PATH}" \
 			GL_MAJOR_VER="${GL_MAJOR_VER}" \
 			GL_MINOR_VER="${GL_MINOR_VER}" \
 			GLUT_MAJOR_VER="${GLUT_MAJOR_VER}" \
@@ -45,11 +44,21 @@ GL_MINOR_VER=		3
 GLUT_MAJOR_VER=		3
 GLUT_MINOR_VER=		8
 
-MAKE_ENV=		PATH=${PREFIX}/usr/bin:${PATH}
+MAKE_ENV=		PATH=${LINUXBASE}/usr/bin:${PATH}
+STRIP_CMD=		${LINUXBASE}/usr/bin/strip
 
-.include <bsd.port.pre.mk>
+PLIST_SUB+=		GL_MAJOR_VER=${GL_MAJOR_VER} \
+			GL_MINOR_VER=${GL_MINOR_VER} \
+			GLUT_MAJOR_VER=${GLUT_MAJOR_VER} \
+			GLUT_MINOR_VER=${GLUT_MINOR_VER}
 
 post-install:
-	${PREFIX}/sbin/ldconfig
+	${STRIP_CMD} ${PREFIX}/usr/X11R6/lib/libglut.so.${GLUT_MAJOR_VER}.${GLUT_MINOR_VER}.0
+	@for R in GL GLU; do \
+		${STRIP_CMD} ${PREFIX}/usr/X11R6/lib/lib$$R.so.${GL_MAJOR_VER}.${GL_MINOR_VER}.0; \
+		${LN} -s lib$$R.so ${PREFIX}/usr/X11R6/lib/libMesa$$R.so; \
+		${LN} -s lib$$R.so.${GL_MAJOR_VER} ${PREFIX}/usr/X11R6/lib/libMesa$$R.so.${GL_MAJOR_VER}; \
+	done
+	${LINUXBASE}/sbin/ldconfig
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
