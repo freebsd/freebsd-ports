@@ -3,7 +3,7 @@
 # Date created:		10 November 1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.18 1997/01/08 08:09:56 adam Exp $
+# $Id: Makefile,v 1.19 1997/01/08 11:41:53 adam Exp $
 #
 
 DISTNAME=	dgd-lpmud
@@ -30,7 +30,7 @@ do-build:
 	@cd ${WRKDIR}/mud/bin; make
 
 do-install:
-	@tar -C ${WRKDIR} -cf - `grep '^[a-z]' ${PKGDIR}/PLIST` \
+	@tar -C ${WRKSRC} -cf - `grep '^[a-z]' ${PKGDIR}/PLIST` \
 		| tar -C ${PREFIX}/dgd -xpf -
 
 .include <bsd.port.mk>
