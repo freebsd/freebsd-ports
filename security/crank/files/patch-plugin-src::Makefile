@@ -1,0 +1,15 @@
+--- plugin-src/Makefile.orig	Wed Apr 18 23:52:38 2001
++++ plugin-src/Makefile	Wed Apr 18 23:56:10 2001
+@@ -1,10 +1,10 @@
+ CC = gcc
+-CFLAGS = -Wall -pedantic -fPIC -g `gtk-config --cflags` -I..
++CFLAGS += -fPIC `gtk-config --cflags` -I..
+ 
+ all: monoalphabetic.key-controls.so statistics.n-grams.so monoalphabetic.hillclimb-cracker.so text.simple-filters.so utilities.notepad.so
+ 
+ monoalphabetic.key-controls.so: monoalphabetic.key-controls.o common.monoalphabetic.o
+-	$(CC) $(CFLAGS) -g -shared -o $@ $< common.monoalphabetic.o -lc
++	$(CC) $(CFLAGS) -g -shared -o $@ $< common.monoalphabetic.o
+ 
+ statistics.n-grams.so: statistics.n-grams.o common.statistics.n-grams.o
+ 	$(CC) $(CFLAGS) -g -shared -o $@ $< common.statistics.n-grams.o

@@ -1,0 +1,11 @@
+Crank is short for "CRyptANalysis toolKit", and its overall purpose is to
+provide a powerful and extensible environment for solving classical
+(pen-and-paper) ciphers, providing as much automation as possible. Classical
+ciphers include common schemes like monoalphabetic substitutions, where each
+letter of the alphabet is mapped to another (usually different) letter
+consistently through the text. The first version of Crank is restricting
+itself to these special ciphers. Other algorithms forever devoid of Crank's
+attentions include Enigma, RSA, DES, MurkelFish, or anything else invented
+after 1900.  They're hard(er).
+
+WWW: http://crank.sourceforge.net/
