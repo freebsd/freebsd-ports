@@ -7,14 +7,14 @@
 
 PORTNAME=	pkgconfig
 PORTVERSION=	0.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	gnome@FreeBSD.org
 
-DISTFILES=	pkgconfig-0.5.0.tar.gz glib-1.2.10.tar.gz
+BUILD_DEPENDS=	/nonexistent:${PORTSDIR}/devel/glib12:patch
 
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
@@ -28,7 +28,8 @@ MAN1=		pkg-config.1
 
 post-extract:
 	@${RM} -rf ${WRKSRC}/glib-1.2.8
-	@${CP} -R ${WRKSRC}/../glib-1.2* ${WRKSRC}/glib-1.2.8
+	@${CP} -R ${WRKDIRPREFIX}${.CURDIR}/../../devel/glib12/work/glib-1.2* \
+		${WRKSRC}/glib-1.2.8
 
 post-install:
 	${MKDIR} ${PREFIX}/libdata/pkgconfig
