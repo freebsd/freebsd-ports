@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WWW-Search-AltaVista
-PORTVERSION=	2.02
+PORTVERSION=	2.03
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	WWW/MTHURN
@@ -25,5 +25,6 @@ MAN3=		WWW::Search::AltaVista.3 \
 		WWW::Search::AltaVista::AdvancedNews.3 \
 		WWW::Search::AltaVista::AdvancedWeb.3 \
 		WWW::Search::AltaVista::News.3 \
-		WWW::Search::AltaVista::Intranet.3
+		WWW::Search::AltaVista::Intranet.3 \
+		WWW::Search::AltaVista::Intranet3.3
 .include <bsd.port.mk>

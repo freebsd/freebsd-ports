@@ -4,6 +4,7 @@ lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/AltaVista/NL.pm
 lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/AltaVista/AdvancedNews.pm
 lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/AltaVista/AdvancedWeb.pm
 lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/AltaVista/Intranet.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/AltaVista/Intranet3.pm
 lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/AltaVista/News.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/WWW/Search/AltaVista/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/WWW/Search/AltaVista
