@@ -3,10 +3,11 @@
 # Date created:		Wed Sep  3 18:28:20 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.39 1997/09/03 18:45:12 andreas Exp $
+# $Id: Makefile,v 1.40 1997/09/03 18:49:53 andreas Exp $
 #
 
 DISTNAME=       apache_1.2.1
+PKGNAME=	apache-php-1.2.1
 CATEGORIES=	www
 MASTER_SITES=   ftp://www.apache.org/apache/dist/ \
 		ftp://ftp.nerosworld.com/pub/php/dist/ \
