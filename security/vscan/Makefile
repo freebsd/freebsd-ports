@@ -7,6 +7,7 @@
 
 PORTNAME=	uvscan
 PORTVERSION=	4.40e
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://download.nai.com/products/evaluation/virusscan/english/cmdline/bsd/v4.40/
 DISTNAME=	vbsd440e
@@ -59,7 +60,7 @@ do-install:
 .endif
 
 post-install:
-	${LN} -sf ${PREFIX}/lib/libbsdfv.so \
-		${PREFIX}/lib/libbsdfv.so.4
+	${LN} -sf ${PREFIX}/lib/libbsdfv.so.4 \
+		${PREFIX}/lib/libbsdfv.so
 
 .include <bsd.port.mk>
