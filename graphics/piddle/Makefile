@@ -15,7 +15,6 @@ DISTFILES=	${DISTNAME}-5.tgz
 MAINTAINER=	dom@myrddin.demon.co.uk
 
 USE_PYTHON=	yes
-WRKSRC=		${WRKDIR}/${PKGNAME}
 NO_BUILD=	yes
 
 PIDDLEDIR=	${PYTHON_SITELIBDIR}/piddle
