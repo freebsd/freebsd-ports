@@ -49,6 +49,7 @@
     SUBDIR += karamba
     SUBDIR += kbirthday
     SUBDIR += kdepim3
+    SUBDIR += kickpim
     SUBDIR += kluje
     SUBDIR += knowit
     SUBDIR += kronolith
