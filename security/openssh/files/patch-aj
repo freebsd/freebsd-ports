@@ -1,19 +1,26 @@
---- ./lib/Makefile.orig	Tue Nov 16 16:50:53 1999
-+++ ./lib/Makefile	Tue Nov 16 16:52:01 1999
-@@ -4,7 +4,7 @@
- SRCS=   authfd.c authfile.c bufaux.c buffer.c canohost.c channels.c \
- 	cipher.c compat.c compress.c crc32.c deattack.c fingerprint.c \
- 	hostfile.c log.c match.c mpaux.c nchan.c packet.c readpass.c \
--	rsa.c tildexpand.c ttymodes.c uidswap.c xmalloc.c
-+	rsa.c strlcpy.c tildexpand.c ttymodes.c uidswap.c xmalloc.c
+--- /usr/ports/distfiles/OpenSSH-1.2/src/usr.bin/ssh/ssh-keygen/Makefile	Wed Oct 27 12:54:49 1999
++++ ./ssh-keygen/Makefile	Tue Nov 23 19:28:07 1999
+@@ -2,20 +2,13 @@
  
- NOPROFILE= yes
- NOPIC=	yes
-@@ -13,6 +13,7 @@
- 	@echo -n
+ PROG=	ssh-keygen
+ BINOWN=	root
+-
+-.if (${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "powerpc" || \
+-	${MACHINE_ARCH} == "hppa")
+-BINMODE=0000
+-.else
+-BINMODE?=555
+-.endif
+-
+-BINDIR=	/usr/bin
++BINMODE=555
++BINDIR=	/bin
+ MAN=	ssh-keygen.1
  
- .include <bsd.own.mk>
-+.include "../Makefile.inc"
+ SRCS=	ssh-keygen.c log-client.c
  
- .if (${KERBEROS} == "yes")
- CFLAGS+= -DKRB4 -I/usr/include/kerberosIV
+ .include <bsd.prog.mk>
+ 
+-LDADD+=	-lcrypto -lutil -lz
++LDADD+=	${CRYPTOLIBS} -lutil -lz
+ DPADD+=	${LIBCRYPTO} ${LIBDES} ${LIBUTIL} ${LIBZ}

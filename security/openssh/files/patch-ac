@@ -1,10 +1,24 @@
---- readconf.h.dist	Fri Nov 19 23:32:48 1999
-+++ readconf.h	Fri Nov 19 23:48:22 1999
-@@ -54,6 +54,7 @@
-   int compression;		/* Compress packets in both directions. */
-   int compression_level;	/* Compression level 1 (fast) to 9 (best). */
-   int keepalives;		/* Set SO_KEEPALIVE. */
-+  int tis_authentication;	/* TIS client-side authentication */
-   LogLevel log_level;		/* Level for logging. */
+--- /usr/ports/distfiles/OpenSSH-1.2/src/usr.bin/ssh/includes.h	Tue Nov  2 16:21:02 1999
++++ ./includes.h	Tue Nov 23 19:20:38 1999
+@@ -24,12 +24,12 @@
+ #include <sys/select.h>
+ #include <sys/param.h>
+ #include <sys/ioctl.h>
+-#include <sys/endian.h>
+ #include <sys/stat.h>
+ #include <sys/wait.h>
+ #include <sys/time.h>
+ #include <sys/un.h>
+ #include <sys/resource.h>
++#include <machine/endian.h>
  
-   int port;			/* Port to connect. */
+ #include <netinet/in.h>
+ #include <netinet/in_systm.h>
+@@ -38,7 +38,6 @@
+ #include <arpa/inet.h>
+ #include <netdb.h>
+ 
+-#include <netgroup.h>
+ #include <stdio.h>
+ #include <ctype.h>
+ #include <errno.h>

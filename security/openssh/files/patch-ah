@@ -1,8 +1,8 @@
---- /usr/ports/distfiles/OpenSSH-1.2/src/usr.bin/ssh/ssh-agent/Makefile	Wed Oct 27 12:54:49 1999
-+++ ./ssh-agent/Makefile	Tue Nov 23 19:27:38 1999
+--- /usr/ports/distfiles/OpenSSH-1.2/src/usr.bin/ssh/ssh-add/Makefile	Wed Oct 27 12:54:48 1999
++++ ./ssh-add/Makefile	Tue Nov 23 19:26:48 1999
 @@ -2,20 +2,13 @@
  
- PROG=	ssh-agent
+ PROG=	ssh-add
  BINOWN=	root
 -
 -.if (${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "powerpc" || \
@@ -13,14 +13,15 @@
 -.endif
 -
 -BINDIR=	/usr/bin
+-MAN=	ssh-add.1
 +BINMODE=555
 +BINDIR=	/bin
- MAN=	ssh-agent.1
++MAN1=	ssh-add.1
  
- SRCS=	ssh-agent.c log-client.c
+ SRCS=	ssh-add.c log-client.c
  
  .include <bsd.prog.mk>
  
 -LDADD+=	-lcrypto -lutil -lz
 +LDADD+=	${CRYPTOLIBS} -lutil -lz
- DPADD+=	${LIBCRYPTO} ${LIBDES} ${LIBUTIL} ${LIBZ}
+ DPADD+= ${LIBCRYPTO} ${LIBDES} ${LIBUTIL} ${LIBZ}
