@@ -1,7 +1,0 @@
-This is "meta-port" for Japanized KDE version 2 desktop environment.
-Japanization is done by applying patches distributed by JKUG.
-
-Use this port before using /usr/ports/x11/kde2.
-Use the packages from this port after the original packages.
-
-WWW: http://www.kde.gr.jp/patch/
