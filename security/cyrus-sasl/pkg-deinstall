@@ -24,6 +24,13 @@ delete_sasldb() {
 	fi
 }
 
+delete_user() {
+	if pw usershow cyrus 2>/dev/null 1>&2; then
+		echo "To delete Cyrus user permanently, use 'pw userdel cyrus'"
+	fi
+
+}
+
 # This should really be uninstalled by Sendmail
 
 sendmail_conf() {
@@ -42,6 +49,7 @@ case $2 in
 		sendmail_conf
 		;;
 	POST-DEINSTALL)
+		delete_user
 		;;
 
 esac
