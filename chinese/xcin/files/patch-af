@@ -1,0 +1,27 @@
+--- src/Makefile.in.org	Fri Sep 10 19:54:58 1999
++++ src/Makefile.in	Fri Sep 10 19:55:52 1999
+@@ -149,7 +149,7 @@
+ 
+ install_xcin: xcin $(KBMS) $(INPUT0) tsintab
+ 	if [ ! -d $(PATH_XCIN_BIN) ]; then $(INSTALL_DIR) $(PATH_XCIN_BIN); fi
+-	$(INSTALL) xcin $(PATH_XCIN_BIN)
++	$(INSTALL_PROGRAM) xcin $(PATH_XCIN_BIN)
+ 	echo $(PATH_XCIN_BIN)/xcin >> filelist
+ 
+ 	if [ ! -d $(PATH_XCIN_DIR) ]; then $(INSTALL_DIR) $(PATH_XCIN_DIR); fi
+@@ -159,13 +159,13 @@
+ 
+ install_cin2tab: cin2tab
+ 	if [ ! -d $(PATH_XCIN_DIR) ]; then $(INSTALL_DIR) $(PATH_XCIN_DIR); fi
+-	$(INSTALL) cin2tab $(PATH_XCIN_DIR)
++	$(INSTALL_PROGRAM) cin2tab $(PATH_XCIN_DIR)
+ 	echo $(PATH_XCIN_DIR)/cin2tab >> filelist
+ 
+ install_tsintools: tsintools
+ 	if [ ! -d $(PATH_XCIN_DIR) ]; then $(INSTALL_DIR) $(PATH_XCIN_DIR); fi
+ 	for f in $(TSINTOOLS); do\
+-            $(INSTALL) $$f $(PATH_XCIN_DIR); echo $(PATH_XCIN_DIR)/$$f >> filelist;\
++            $(INSTALL_PROGRAM) $$f $(PATH_XCIN_DIR); echo $(PATH_XCIN_DIR)/$$f >> filelist;\
+ 	done
+ 
+ install_tsintabsrc:
