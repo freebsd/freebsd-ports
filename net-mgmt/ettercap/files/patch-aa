@@ -1,34 +1,29 @@
---- Makefile.in.orig	Tue Jul 10 01:28:52 2001
-+++ Makefile.in	Tue Jul 10 01:28:26 2001
-@@ -17,7 +17,7 @@
- BINDIR   = @bindir@
- MANDIR   = @mandir@
- SHAREDIR = ${prefix}/share/@PROG@
--DOCDIR   = ${prefix}/doc/@PROG@-@VERSION@
-+DOCDIR   = ${prefix}/share/doc/@PROG@-@VERSION@
- DOC      = COPYING README README.PLUGINS CHANGELOG HISTORY AUTHORS TODO THANKS KNOWN-BUGS PORTINGS
- 
- DEBUG    = @DEBUG@
-@@ -53,12 +53,13 @@
- 	$(INSTALL) -m 644 ./etter.conf $(DESTDIR)$(SHAREDIR)
- 	$(INSTALL) -m 644 ./etter.filter $(DESTDIR)$(SHAREDIR)
- 	$(INSTALL) -m 644 ./etter.ssl.crt $(DESTDIR)$(SHAREDIR)
+--- Makefile.in.orig	Sun Dec 30 22:44:42 2001
++++ Makefile.in	Sun Dec 30 22:48:42 2001
+@@ -60,9 +60,6 @@
+ 	$(INSTALL) -m 644 ./etter.filter.ssh $(DESTDIR)$(DATADIR)
+ 	$(INSTALL) -m 644 ./etter.passive.os.fp $(DESTDIR)$(DATADIR)
+ 	$(INSTALL) -m 644 ./etter.ssl.crt $(DESTDIR)$(DATADIR)
 -	$(INSTALL) -d $(DESTDIR)$(DOCDIR)
 -	$(INSTALL) -m 644 $(DOC) $(DESTDIR)$(DOCDIR)
--	$(INSTALL) -m 644 ./docs/*/* $(DESTDIR)$(DOCDIR)
+-	$(INSTALL) -m 644 ./docs/[a-z]*/[a-z]* $(DESTDIR)$(DOCDIR)
  	$(INSTALL) -d $(DESTDIR)$(MANDIR)/man8
  	$(INSTALL) -m 644 $(PROG).8 $(DESTDIR)$(MANDIR)/man8/$(PROG).8
+ 	@echo
+@@ -76,6 +73,10 @@
+ 	@echo "=============================================================="
+ 	@echo
  
 +install-doc:
 +	$(INSTALL) -d $(DESTDIR)$(DOCDIR)
 +	$(INSTALL) -m 644 $(DOC) $(DESTDIR)$(DOCDIR)
-+	$(INSTALL) -m 644 ./docs/*/* $(DESTDIR)$(DOCDIR)
- 
++	$(INSTALL) -m 644 ./docs/[a-z]*/[a-z]* $(DESTDIR)$(DOCDIR)
  plug-ins:
  	cd plugins && make && cd ..
-@@ -112,4 +113,4 @@
- 
- targz: distro
- 	mv $(PROG)-$(VERSION).tar.gz $(PROG)-$(VERSION)-@SERIAL@.tar.gz
--	chmod 644 $(PROG)-$(VERSION)-@SERIAL@.tar.gz
-+	chmod 644 $(PROG)-$(VERSION)-@SERIAL@.tar.gz
+ 	cp -f ./plugins/[a-zH]*/ec_*.so ./
+@@ -158,4 +159,4 @@
+ 	@rm -f ettercap
+ 	@shtool tarball -o $(PROG)-$(VERSION)-@SERIAL@.tar.gz -c 'gzip -9' -e '\.o,\.prj,\.gz,\.bak,\.so,\.log,CVS' ./ etter.*
+ 	@chmod 644 $(PROG)-$(VERSION)-@SERIAL@.tar.gz
+-	@ls -Hs $(PROG)-$(VERSION)-@SERIAL@.tar.gz
++	@ls -Hs $(PROG)-$(VERSION)-@SERIAL@.tar.gz

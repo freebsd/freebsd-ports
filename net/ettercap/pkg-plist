@@ -1,23 +1,23 @@
-bin/ettercap
-%%PORTDOCS%%share/doc/ettercap-%%PORTVERSION%%/AUTHORS
-%%PORTDOCS%%share/doc/ettercap-%%PORTVERSION%%/CHANGELOG
-%%PORTDOCS%%share/doc/ettercap-%%PORTVERSION%%/COPYING
-%%PORTDOCS%%share/doc/ettercap-%%PORTVERSION%%/HISTORY
-%%PORTDOCS%%share/doc/ettercap-%%PORTVERSION%%/KNOWN-BUGS
-%%PORTDOCS%%share/doc/ettercap-%%PORTVERSION%%/PORTINGS
-%%PORTDOCS%%share/doc/ettercap-%%PORTVERSION%%/README
-%%PORTDOCS%%share/doc/ettercap-%%PORTVERSION%%/README.fr
-%%PORTDOCS%%share/doc/ettercap-%%PORTVERSION%%/README.it
-%%PORTDOCS%%share/doc/ettercap-%%PORTVERSION%%/README.PLUGINS
-%%PORTDOCS%%share/doc/ettercap-%%PORTVERSION%%/README.PLUGINS.fr
-%%PORTDOCS%%share/doc/ettercap-%%PORTVERSION%%/README.PLUGINS.it
-%%PORTDOCS%%share/doc/ettercap-%%PORTVERSION%%/THANKS
-%%PORTDOCS%%share/doc/ettercap-%%PORTVERSION%%/TODO
-%%PORTDOCS%%share/doc/ettercap-%%PORTVERSION%%/ettercap.fr.8.in
-share/ettercap/etter.conf
-share/ettercap/etter.filter
-share/ettercap/etter.ssl.crt
+sbin/ettercap
+share/doc/ettercap/COPYING
+share/doc/ettercap/README
+share/doc/ettercap/README.PLUGINS
+share/doc/ettercap/CHANGELOG
+share/doc/ettercap/HISTORY
+share/doc/ettercap/AUTHORS
+share/doc/ettercap/TODO
+share/doc/ettercap/THANKS
+share/doc/ettercap/KNOWN-BUGS
+share/doc/ettercap/PORTINGS
+share/doc/ettercap/INSTALL
+share/doc/ettercap/ettercap.fr.8.in
 share/ettercap/mac-fingerprints
 share/ettercap/nmap-os-fingerprints
+share/ettercap/etter.conf
+share/ettercap/etter.dns
+share/ettercap/etter.filter
+share/ettercap/etter.filter.ssh
+share/ettercap/etter.passive.os.fp
+share/ettercap/etter.ssl.crt
+@dirrm share/doc/ettercap
 @dirrm share/ettercap
-%%PORTDOCS%%@dirrm share/doc/ettercap-%%PORTVERSION%%
