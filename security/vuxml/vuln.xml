@@ -32,6 +32,45 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e9f9d232-0cb2-11d9-8a8a-000c41e2cdad">
+    <topic>mozilla --- security icon spoofing</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>0.9</lt></range>
+      </package>
+      <package>
+        <name>linux-mozilla</name>
+        <name>linux-mozilla-devel</name>
+        <range><lt>1.7</lt></range>
+      </package>
+      <package>
+	<name>mozilla</name>
+	<range><lt>1.7,2</lt></range>
+      </package>
+      <package>
+	<name>mozilla-gtk1</name>
+	<range><lt>1.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Under certain situations it is possible for the security icon
+	  which Mozilla displays when connected to a site using SSL to
+	  be spoofed.  This could be used to make so-called "phishing
+	  attacks" more difficult to detect.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0761</cvename>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=240053</url>
+    </references>
+    <dates>
+      <discovery>2004-04-08</discovery>
+      <entry>2004-09-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7c188c55-0cb0-11d9-8a8a-000c41e2cdad">
     <topic>mozilla --- NULL bytes in FTP URLs</topic>
     <affects>
