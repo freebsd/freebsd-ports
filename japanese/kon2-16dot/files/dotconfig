@@ -1,0 +1,18 @@
+INCDIR  = %%CURDIR%%/work/kon/include
+LIB     = %%CURDIR%%/work/kon/lib/libgon.a
+
+TOPDIR	= %%PREFIX%%
+BINDIR	= $(TOPDIR)/bin
+LIBDIR	= $(TOPDIR)/etc
+MANDIR	= $(TOPDIR)/man/ja_JP.ujis/man1
+FONTDIR	= $(TOPDIR)/fonts
+CONFIG_NAME = kon.cfg
+OPTS    = -DCONFIG_NAME=\"$(LIBDIR)/$(CONFIG_NAME)\" -I$(INCDIR)
+CFLAGS  = -O -Wall $(OPTS)
+LD      = gcc $(CFLAGS)
+RM      = rm -f
+INSTALL = install -c -s
+SUBDIRS = lib src font # tools
+
+HAS_VGA = HAS_VGA
+FLD_BDF = FLD_BDF

@@ -1,0 +1,1246 @@
+diff -c -r Makefile Makefile
+*** Makefile	Mon Jan 24 15:09:55 1994
+--- Makefile	Sat Jun 24 12:22:33 1995
+***************
+*** 1,6 ****
+  VERSION	= 0.99
+  
+! SUBDIRS = lib src font tools
+  
+  ifeq (.config,$(wildcard .config))
+  include .config
+--- 1,6 ----
+  VERSION	= 0.99
+  
+! SUBDIRS = lib src font #tools
+  
+  ifeq (.config,$(wildcard .config))
+  include .config
+***************
+*** 32,38 ****
+  	do (cd $$i && echo cleaning all in $$i && $(MAKE) clean);\
+  	done
+  
+! install: makedir instbin
+  	@if [ -f $(LIBDIR)/$(CONFIG_NAME) ]; then\
+  		mv $(LIBDIR)/$(CONFIG_NAME) $(LIBDIR)/$(CONFIG_NAME)'.org';\
+  		echo $(LIBDIR)/$(CONFIG_NAME)': file exists ... renamed !!';\
+--- 32,38 ----
+  	do (cd $$i && echo cleaning all in $$i && $(MAKE) clean);\
+  	done
+  
+! install: makedir instbin instfont
+  	@if [ -f $(LIBDIR)/$(CONFIG_NAME) ]; then\
+  		mv $(LIBDIR)/$(CONFIG_NAME) $(LIBDIR)/$(CONFIG_NAME)'.org';\
+  		echo $(LIBDIR)/$(CONFIG_NAME)': file exists ... renamed !!';\
+***************
+*** 44,51 ****
+--- 44,58 ----
+  	@sh tools/makedir $(BINDIR)
+  	@sh tools/makedir $(LIBDIR)
+  	@sh tools/makedir $(MANDIR)
++ 	@sh tools/makedir $(FONTDIR)
+  
+  instbin:
+  	@for i in $(SUBDIRS);\
+  	do (cd $$i && echo installing all in $$i && $(MAKE) install);\
++ 	done
++ 
++ instfont:
++ 	@for i in k14.bdf 7x14rk.bdf; do\
++ 	install -c /usr/ports/distfiles/$$i $(FONTDIR);\
++ 	gzip -f -9 $(FONTDIR)/$$i;\
+  	done
+diff -c -r README.FreeBSD README.FreeBSD
+*** README.FreeBSD	Sat Jun 24 12:41:42 1995
+--- README.FreeBSD	Sat Jun 24 12:22:28 1995
+***************
+*** 0 ****
+--- 1,64 ----
++ 			KON for FreeBSD ver 0.1
++ 
++ 							1995-06-04
++ 							小倉 貴
++ 							<ogura@st.rim.or.jp>
++ 
++   はじめに kon for FreeBSD は、linux の日本語コンソールである kon-0.99.4e
++ と kon for NetBSD(NetBSD-0.9 がリリースされた当時に移植されたもの)をベース
++ に移植したものです。
++ 
++   特徴として、シェアードメモリにフォントの情報を置くので多くの仮想コンソー
++ ル上で kon を起動してもメモリを多く使用しないことがあります。また、作者の
++ 手抜き、技術力の低さからオリジナルの kon-0.99.4e より多くの機能が削除され
++ ています。対応していない機能については選択できない用にしています。
++ 
++ 
++ インストールの仕方
++ 
++   1.1	カーネルにシェアードメモリを設定する。/usr/src/sys/i386/conf/GENERIC
++ 	ファイルに"options	SYSVSHM"の行を追加後、
++ 	config GENERIC;cd ../../compile/GENERIC
++ 	make depend;make all;cp kernel /
++ 	などを実行してリブートしてください。
++ 
++   1.2	このディレクトリで make config を実行してください。VGA は必ず[y]に
++ 	してください。フォントの選択はどれか一つは必ず[y]にしてください。
++ 
++   1.3	.config ファイルを実行モジュールをインストールするディレクトリや、
++ 	kon.cfg / man ファイルの格納先などを変更してください。デフォルトで
++ 	は以下の用になっています。
++ 		/usr/local/bin			実行モジュール格納先
++ 		/usr/local/etc			kon.cfg ファイル格納先
++ 		/usr/local/man/ja_JP.ujis/man1	man ファイル格納先
++ 
++   1.4	kon.cfg ファイルをフォントにあわせて変更してください。記述方法な
++ 	どは doc 以下のファイルを参考にしてください。使用するフォントは
++ 	デフォルトでは linux の日本語パッケージである JE の publicfont 
++ 	の k14 と ank フォントを gzip 形式で /usr/share/fonts 以下に格納
++ 	するようになっています。
++ 
++   1.5	make;make install を実行してください。
++ 
++ 
++ トラブルシューティング
++ 
++ 	  kon がうまく起動しない時には、シェアードメモリが利用できるか確
++ 	認してください。 また、画面が真っ暗でもほとんどの場合ハングはし
++ 	ていませんから"exit" や "CTRL+D"、"CTRL+C" などで kon を終了させ
++ 	"vidcontrol VGA_80x30"を実行して見てください。また、XFree86-3.1
++ 	とほぼ同じ方法でコンソール上に文字を表示しているのでＸが利用でき
++ 	ることを確認してみてください。
++ 
++ 	
++   本ソフトウェア(kon for FreeBSD)はフリーソフトウェアであり、変更・配布は
++ 自由に行っていただいて結構です。ただ、バグや感想などを私宛にメールでもし
++ ていただければ幸いです。
++   また、kon for FreeBSD を使ってハードウェアや他のソフトウェアに問題が発生
++ しても責任をとることはできません。
++ 
++   最後に、kon の作者である真鍋さん<manabe@papilio.tutics.tut.ac.jp>と
++ kon for NetBSD の作者である鵜飼さん<ukai@hplj.hpl.hp.com>、テストに協力し
++ てくださった皆様、ありがとうございました。
++ 
++ 						小倉 貴<ogura@st.rim.or.jp>
+diff -c -r config.in config.in
+*** config.in	Sun May  8 17:50:41 1994
+--- config.in	Sat Jun 24 12:22:28 1995
+***************
+*** 1,14 ****
+  Support VGA driver
+  HAS_VGA y
+- Support J31SX driver
+- HAS_J31SX y
+- Support MOUSE driver
+- HAS_MOUSE y
+  Install Minix/V font loader
+  FLD_MINIX y
+- Install $fontx2 font loader
+- FLD_BDF y
+  Install .bdf font loader
+! FLD_FONTX2 y
+! Install J3100ROM font loader
+! FLD_J31ROM y
+--- 1,6 ----
+  Support VGA driver
+  HAS_VGA y
+  Install Minix/V font loader
+  FLD_MINIX y
+  Install .bdf font loader
+! FLD_BDF y
+diff -c -r font/Makefile font/Makefile
+*** font/Makefile	Mon May  9 23:43:13 1994
+--- font/Makefile	Sat Jun 24 12:22:28 1995
+***************
+*** 1,4 ****
+! OBJ	= fld.o minix.o fontx2.o bdf.o j3100.o
+  
+  ifeq (../.config,$(wildcard ../.config))
+  include ../.config
+--- 1,4 ----
+! OBJ	= fld.o minix.o fontx2.o bdf.o # j3100.o
+  
+  ifeq (../.config,$(wildcard ../.config))
+  include ../.config
+diff -c -r font/fld.c font/fld.c
+*** font/fld.c	Wed May 11 14:29:35 1994
+--- font/fld.c	Sat Jun 24 12:22:28 1995
+***************
+*** 37,43 ****
+--- 37,45 ----
+  u_char *FontLoadMinix();
+  u_char *FontLoadFontx();
+  u_char *FontLoadBdf();
++ #if defined(linux)
+  u_char *FontLoadJ3100();
++ #endif
+  
+  static struct {
+      char *type;
+***************
+*** 56,62 ****
+--- 58,68 ----
+      int	shmid;
+      struct shmid_ds shmseg;
+  
++ #if defined(linux)
+      shmkey = ftok(CONFIG_NAME, fnum);
++ #elif defined(__FreeBSD__)
++     shmkey = 5000 + (fnum & 0x7F);
++ #endif
+      if ((shmid = shmget(shmkey, sizeof(struct fontInfo), 0444)) < 0)
+  	return;
+      shmctl(shmid, IPC_STAT, &shmseg);
+***************
+*** 71,77 ****
+--- 77,87 ----
+      extern int forceLoad;
+  
+      if (forceLoad) return(EOF);
++ #if defined(linux)
+      shmkey = ftok(SHMEM_NAME, fnum);
++ #elif defined(__FreeBSD__)
++     shmkey = 5000 + (fnum & 0x7F);
++ #endif
+      if (shmget(shmkey, 1, 0444) == EOF) return(EOF);
+      return(0);
+  }
+***************
+*** 82,89 ****
+      key_t shmkey;
+      int	shmid;
+      u_char *shmbuff;
+!     
+      shmkey = ftok(SHMEM_NAME, fi->type);
+      shmid = shmget(shmkey, fi->size+sizeof(struct fontInfo),
+  		   IPC_CREAT|0666);
+      shmbuff = shmat(shmid, 0, 0);
+--- 92,103 ----
+      key_t shmkey;
+      int	shmid;
+      u_char *shmbuff;
+! 
+! #if defined(linux)
+      shmkey = ftok(SHMEM_NAME, fi->type);
++ #elif defined(__FreeBSD__)
++     shmkey = 5000 + (fi->type & 0x0000007F);
++ #endif
+      shmid = shmget(shmkey, fi->size+sizeof(struct fontInfo),
+  		   IPC_CREAT|0666);
+      shmbuff = shmat(shmid, 0, 0);
+***************
+*** 120,126 ****
+--- 134,144 ----
+      int shmid;
+      struct fontInfo *fi;
+  
++ #if defined(linux)
+      shmkey = ftok(CONFIG_NAME, fnum);
++ #elif defined(__FreeBSD__)
++     shmkey = 5000 + (fnum & 0x7F);
++ #endif
+      if ((shmid = shmget(shmkey, sizeof(struct fontInfo), 0444)) < 0)
+  	return(0);
+      fi = (struct fontInfo*)shmat(shmid, 0, SHM_RDONLY);
+***************
+*** 223,232 ****
+  		argv[0], type); 
+  	exit(EOF);
+      }
+      if (!fontLoaders[i].loader)
+  	font = FontLoadJ3100(argc, argv);
+      else
+! 	font = fontLoaders[i].loader(fp);
+      if (font == NULL) {
+  	fprintf(stderr, "%s> Can not load font.\n", argv[0]);
+  	exit(EOF);
+--- 241,252 ----
+  		argv[0], type); 
+  	exit(EOF);
+      }
++ #if defined(linux)
+      if (!fontLoaders[i].loader)
+  	font = FontLoadJ3100(argc, argv);
+      else
+! #endif
+!       font = fontLoaders[i].loader(fp);
+      if (font == NULL) {
+  	fprintf(stderr, "%s> Can not load font.\n", argv[0]);
+  	exit(EOF);
+diff -c -r include/config.h include/config.h
+*** include/config.h	Sat Jun 24 12:41:57 1995
+--- include/config.h	Sat Jun 24 12:34:57 1995
+***************
+*** 0 ****
+--- 1,39 ----
++ 
++ /*
++ 	KON - Kanji ON Linux Console -
++ 	Copyright (C) 1992, 1993
++ 		MAEDA Atusi (mad@math.keio.ac.jp)
++ 		Takashi MANABE (manabe@tut.ac.jp)
++ 
++ 	KON is free software; you can redistribute it and/or modify it
++ 	under the terms of the GNU General Public License as published by
++ 	the Free Software Foundation; either version 2 of the License, or
++ 	(at your option) any later version.
++ 
++ 	KON is distributed in the hope that it will be useful, but
++ 	WITHOUT ANY WARRANTY; without even the implied warranty of
++ 	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
++ 	See the GNU General Public License for more details.
++ 
++ 	You should have received a copy of the GNU General Public License
++ 	along with this program; if not, write to the Free Software
++ 	Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
++ */
++ 
++ /*
++ 	NOTE: This is automatically generated config.
++ 	>>>>>>>>>>>>>> DO NOT EDIT !! <<<<<<<<<<<<<<
++ */
++ 
++ #ifndef	CONFIG_H
++ #define	CONFIG_H
++ 
++ 
++ /* Support VGA driver */
++ #define HAS_VGA
++ 
++ /* Install Minix/V font loader */
++ 
++ /* Install .bdf font loader */
++ #define FLD_BDF
++ #endif
+diff -c -r include/defs.h include/defs.h
+*** include/defs.h	Tue Mar  9 00:29:44 1993
+--- include/defs.h	Sat Jun 24 12:22:28 1995
+***************
+*** 22,27 ****
+--- 22,29 ----
+  #ifndef DEFS_H
+  #define DEFS_H
+  
++ #undef FALSE
++ #undef TRUE
+  typedef	enum {FALSE, TRUE} bool;
+  
+  #define	FAILURE	(-1)
+diff -c -r include/version.h include/version.h
+*** include/version.h	Thu Jul  7 23:19:16 1994
+--- include/version.h	Sat Jun 24 12:22:28 1995
+***************
+*** 1 ****
+! #define VERSION "ver.0.99.4e (07/07)"
+--- 1 ----
+! #define VERSION "ver.0.1 (06/04)"
+diff -c -r include/vga.h include/vga.h
+*** include/vga.h	Mon Jul  4 14:43:29 1994
+--- include/vga.h	Sat Jun 24 12:22:29 1995
+***************
+*** 48,54 ****
+--- 48,58 ----
+  #define	VGAATTR_CNT	21
+  #define	EGAATTR_CNT	20
+  
++ #if defined(linux)
+  #define GRAPH_BASE 0xA0000
++ #elif defined(__FreeBSD__)
++ #define GRAPH_BASE 0x0
++ #endif
+  #define FONT_SIZE  0x2000
+  
+  #define	VGA_FONT_SIZE	128
+diff -c -r kon.cfg kon.cfg
+*** kon.cfg	Mon May  9 22:11:28 1994
+--- kon.cfg	Sat Jun 24 12:37:32 1995
+***************
+*** 55,61 ****
+  	VGA
+  	640 680 776 808 480 491 493 524
+  	1
+! 	79 29
+  
+  # Pels: Pallette value definition for VGA, VGAFM drivers
+  
+--- 55,61 ----
+  	VGA
+  	640 680 776 808 480 491 493 524
+  	1
+! 	79 23
+  
+  # Pels: Pallette value definition for VGA, VGAFM drivers
+  
+***************
+*** 114,119 ****
+--- 114,122 ----
+  	63 63 63
+  
+  # Startup command definition (usually font loading commands are specified)
++ bdf-zcat:Startup
++ 	gzip -cd /usr/local/fonts/k14.bdf.gz | /usr/local/bin/fld -t bdf -n
++ 	gzip -cd /usr/local/fonts/7x14rk.bdf.gz | /usr/local/bin/fld -t bdf -n
+  minix:
+  	/usr/bin/fld.minix -n /usr/share/fonts/publicfont.ank
+  	/usr/bin/fld.minix -n /usr/share/fonts/publicfont.k14
+***************
+*** 126,136 ****
+  fontx-zcat:
+  	zcat /dos/lib/font/jpnhn16x.Z | /usr/bin/fld.fontx -n
+  	zcat /dos/lib/font/jpnzn16x.Z | /usr/bin/fld.fontx -n
+! minix-gzip:Startup
+! 	/usr/bin/fld -t fontx -n /usr/share/fonts/vga.fnt
+! 	gzip -d < /usr/share/fonts/pubfont.k.gz | /usr/bin/fld -t minix -n
+! #	gzip -d < /usr/share/fonts/vga.fnt.gz | /usr/bin/fld.fontx -n
+! #	gzip -d < /usr/share/fonts/pubfont.a.gz | /usr/bin/fld.minix -n
+  fontx-gzip:
+  	gzip -d < /dos/lib/font/jpnhn16x.z | /usr/bin/fld.fontx -n
+  	gzip -d < /dos/lib/font/jpnzn16x.z | /usr/bin/fld.fontx -n
+--- 129,137 ----
+  fontx-zcat:
+  	zcat /dos/lib/font/jpnhn16x.Z | /usr/bin/fld.fontx -n
+  	zcat /dos/lib/font/jpnzn16x.Z | /usr/bin/fld.fontx -n
+! minix-gzip:
+! 	gzip -cd /usr/share/fonts/publicfont.k14.gz | /usr/local/bin/fld -t minix -n
+! 	gzip -cd /usr/share/fonts/publicfont.ank.gz | /usr/local/bin/fld -t minix -n
+  fontx-gzip:
+  	gzip -d < /dos/lib/font/jpnhn16x.z | /usr/bin/fld.fontx -n
+  	gzip -d < /dos/lib/font/jpnzn16x.z | /usr/bin/fld.fontx -n
+diff -c -r lib/Makefile lib/Makefile
+*** lib/Makefile	Tue May  3 17:07:13 1994
+--- lib/Makefile	Sat Jun 24 12:22:29 1995
+***************
+*** 8,14 ****
+  all:	$(LIB)
+  
+  $(LIB):	$(OBJ)
+! 	$(AR) rcs $(LIB) $(OBJ)
+  
+  depend .depend:
+  	$(CC) $(CFLAGS) -M *.c > .depend
+--- 8,15 ----
+  all:	$(LIB)
+  
+  $(LIB):	$(OBJ)
+! 	$(AR) rc $(LIB) $(OBJ)
+! 	ranlib $(LIB)
+  
+  depend .depend:
+  	$(CC) $(CFLAGS) -M *.c > .depend
+diff -c -r lib/font.c lib/font.c
+*** lib/font.c	Wed May 11 14:30:09 1994
+--- lib/font.c	Sat Jun 24 12:22:29 1995
+***************
+*** 36,42 ****
+--- 36,46 ----
+      int	shmid;
+      struct shmid_ds shmseg;
+  
++ #if defined(linux)
+      shmkey = ftok(CONFIG_NAME, fnum);
++ #elif defined(__FreeBSD__)
++     shmkey = 5000 + (fnum & 0x7F);
++ #endif
+      if ((shmid = shmget(shmkey, sizeof(struct fontInfo), 0444)) < 0)
+  	return;
+      shmctl(shmid, IPC_STAT, &shmseg);
+***************
+*** 51,57 ****
+--- 55,65 ----
+      key_t shmkey;
+      int shmid;
+  
++ #if defined(linux)
+      shmkey = ftok(CONFIG_NAME, fnum);
++ #elif defined(__FreeBSD__)
++     shmkey = 5000 + (fnum & 0x7F);
++ #endif
+      if ((shmid = shmget(shmkey, sizeof(struct fontInfo), 0444)) < 0) return(0);
+      return((u_char*)shmat(shmid, 0, SHM_RDONLY));
+  }
+diff -c -r lib/sockface.c lib/sockface.c
+*** lib/sockface.c	Mon Mar 15 00:01:34 1993
+--- lib/sockface.c	Sat Jun 24 12:22:29 1995
+***************
+*** 26,32 ****
+--- 26,34 ----
+  #include	<sys/file.h>
+  #include	<sys/types.h>
+  #include	<sys/socket.h>
++ #ifdef linux
+  #include	<sys/vt.h>
++ #endif
+  #include	<sys/ioctl.h>
+  
+  #include	<interface.h>
+***************
+*** 43,49 ****
+  void	SocketKill(int sfd)
+  {
+  	close(sfd);
+! /*	unlink(socketName);*/
+  }
+  
+  int	SocketRecCommand(int fd, struct messageHeader *mh)
+--- 45,51 ----
+  void	SocketKill(int sfd)
+  {
+  	close(sfd);
+! 	unlink("/tmp/.kon");
+  }
+  
+  int	SocketRecCommand(int fd, struct messageHeader *mh)
+***************
+*** 62,75 ****
+--- 64,83 ----
+  
+  int	SocketSearchName(struct sockaddr *sa, int fd)
+  {
++ #ifdef linux
+  	struct	vt_stat vs;
++ #endif
+  
+  	bzero(sa, sizeof(struct sockaddr));
+  	sa->sa_family = AF_UNIX;
++ #if defined(linux)
+  	if (ioctl(fd, VT_GETSTATE, &vs) < 0) {
+  		return EOF;
+  	}
+  	sprintf(sa->sa_data, "%s%d", SOCKET_BASENAME, vs.v_active);
++ #elif defined(__FreeBSD__)
++ 	sprintf(sa->sa_data, "%s", SOCKET_BASENAME);
++ #endif
+  	return(0);
+  }
+  
+***************
+*** 83,89 ****
+--- 91,101 ----
+  	SocketSearchName(&sa, fd);
+  	s = socket(AF_UNIX, SOCK_STREAM, 0);
+  
++ #if defined(linux)
+  	len = sizeof(sa.sa_family) + strlen(sa.sa_data);
++ #elif defined(__FreeBSD__)
++ 	len = sizeof(sa.sa_family) + strlen(sa.sa_data) + 1;
++ #endif
+  	if (connect(s, &sa, len) == -1) s = EOF;
+  	return(s);
+  }
+diff -c -r src/Makefile src/Makefile
+*** src/Makefile	Sat May 14 16:52:34 1994
+--- src/Makefile	Sat Jun 24 12:22:29 1995
+***************
+*** 28,33 ****
+--- 28,36 ----
+  
+  clean:
+  	$(RM) -f *.o $(KON) *~ .depend
++ 	@for i in $(SUBDIRS);\
++ 	do (cd $$i && echo cleaning in $$i && $(MAKE) clean) || exit;\
++ 	done
+  
+  install: $(KON)
+  	$(INSTALL) -m 4755 $(KON) $(BINDIR)
+diff -c -r src/child.c src/child.c
+*** src/child.c	Thu May 12 19:48:36 1994
+--- src/child.c	Sat Jun 24 12:22:30 1995
+***************
+*** 20,25 ****
+--- 20,28 ----
+  #include	<stdlib.h>
+  #include	<string.h>
+  #include	<unistd.h>
++ #ifdef __FreeBSD__
++ #include        <errno.h>
++ #endif
+  
+  #include	<getcap.h>
+  
+***************
+*** 81,99 ****
+  
+  	RunStartupCmd();
+  
+  	sprintf(buff, "TERMCAP=:co#%d:li#%d:tc=console:",
+  		dInfo.txmax + 1, dInfo.tymax + 1);
+  	tcap = strdup(buff);
+  	putenv(tcap);
+  
+  	if (startupMessage) {
+! 	    printf("\rKON " VERSION ", Copyright (C) 1993, 1994 Takashi MANABE and MAEDA Atusi\r\n"
+  		   "KON comes with \x1b[4mABSOLUTELY NO WARRANTY\x1b[m.\r\n"
+  		   "KON is free software, and you are welcome to redistribute it\r\n"
+  		   "KON under certain conditions; show COPYING for details.\r\n");
+  	}
+  	printf("KON using VT number %c.\n\n",
+  	       *(ttyname(fileno(errfp))+8));
+  	fflush(stdout);
+  
+  	if (execProg)
+--- 84,113 ----
+  
+  	RunStartupCmd();
+  
++ #if defined(linux)
+  	sprintf(buff, "TERMCAP=:co#%d:li#%d:tc=console:",
+  		dInfo.txmax + 1, dInfo.tymax + 1);
++ #elif defined(__FreeBSD__)
++     sprintf(buff,"TERM=vt100");
++ #endif
+  	tcap = strdup(buff);
+  	putenv(tcap);
+  
+  	if (startupMessage) {
+! 	    printf("\rKON for Linux 0.99.4e, Copyright (C) 1993, 1994 Takashi MANABE and MAEDA Atusi\r\n"
+  		   "KON comes with \x1b[4mABSOLUTELY NO WARRANTY\x1b[m.\r\n"
+  		   "KON is free software, and you are welcome to redistribute it\r\n"
+  		   "KON under certain conditions; show COPYING for details.\r\n");
++ #if defined(__FreeBSD__)
++ 	    printf("\rKON for FreeBSD-2.x ver0.01 Takashi OGURA\r\n");
++ #endif
+  	}
+  	printf("KON using VT number %c.\n\n",
++ #if defined(linux)
+  	       *(ttyname(fileno(errfp))+8));
++ #elif defined(__FreeBSD__)
++ 	       *(ttyname(fileno(errfp))+9));
++ #endif
+  	fflush(stdout);
+  
+  	if (execProg)
+diff -c -r src/display/Makefile src/display/Makefile
+*** src/display/Makefile	Mon Jul  4 14:46:12 1994
+--- src/display/Makefile	Sat Jun 24 12:22:30 1995
+***************
+*** 18,24 ****
+  all:	$(DISP)
+  
+  $(DISP):	$(OBJS)
+! 	$(AR) rcs $(DISP) $(OBJS)
+  
+  depend .depend:
+  	$(CC) $(CFLAGS) -M *.c > .depend
+--- 18,25 ----
+  all:	$(DISP)
+  
+  $(DISP):	$(OBJS)
+! 	$(AR) rc $(DISP) $(OBJS)
+! 	ranlib $(DISP)
+  
+  depend .depend:
+  	$(CC) $(CFLAGS) -M *.c > .depend
+diff -c -r src/display/svga.c src/display/svga.c
+*** src/display/svga.c	Mon Jul  4 14:39:28 1994
+--- src/display/svga.c	Sat Jun 24 12:22:30 1995
+***************
+*** 33,40 ****
+--- 33,42 ----
+  #include	<string.h>
+  #include	<unistd.h>
+  #include	<sys/mman.h>
++ #if defined(linux)
+  #include	<linux/mm.h>
+  #include	<sys/kd.h>
++ #endif
+  #undef free
+  #include	<stdlib.h>
+  
+diff -c -r src/display/vga.c src/display/vga.c
+*** src/display/vga.c	Mon Jul  4 14:47:22 1994
+--- src/display/vga.c	Sat Jun 24 12:22:30 1995
+***************
+*** 33,40 ****
+--- 33,47 ----
+  #include	<string.h>
+  #include	<unistd.h>
+  #include	<sys/mman.h>
++ #if defined(linux)
+  #include	<linux/mm.h>
+  #include	<sys/kd.h>
++ #elif defined(__FreeBSD__)
++ #include	<vm/vm_param.h>
++ #include	<sys/ioctl.h>
++ #include	<machine/console.h>
++ vm_size_t page_size;
++ #endif
+  #undef free
+  #include	<stdlib.h>
+  
+***************
+*** 567,572 ****
+--- 574,580 ----
+  {
+      int	devMem;
+  
++ #if defined(linux)
+      ioperm(VGAMISC_IN, 1, 1);
+      if (!(PortInb(VGAMISC_IN)&0x01)) { /* monochrome VGA */
+  	vgaCrtAddr = 0x3B4;
+***************
+*** 594,599 ****
+--- 602,621 ----
+  	Perror("/dev/mem");
+  	return FAILURE;
+      }
++ #elif defined(__FreeBSD__)
++     if (ioctl(0, KDENABIO,0) < 0) {
++       Perror("ioctl CONSOLE_IO_ENABLE");
++       return FAILURE;
++     }
++     if (ioctl(0, KDSETMODE,KD_GRAPHICS) < 0) {
++       Perror("ioctl CONSOLE_IO_ENABLE");
++       return FAILURE;
++     }
++     if ((devMem = open("/dev/vga", O_RDWR|O_NDELAY) ) < 0) {
++ 	Perror("/dev/mem");
++ 	return FAILURE;
++     }
++ #endif
+      if ((gramMem = valloc(dInfo.gsize)) == NULL ||
+  	(fontBuff1 = malloc(FONT_SIZE)) == NULL ||
+  	(savePlane3 && (fontBuff2 = malloc(FONT_SIZE)) == NULL)) {
+***************
+*** 604,613 ****
+--- 626,642 ----
+  				    (caddr_t)gramMem,
+  				    dInfo.gsize,
+  				    PROT_READ|PROT_WRITE,
++ #if defined(linux)
+  				    MAP_SHARED|MAP_FIXED,
++ #elif defined(__FreeBSD__)
++ 				    MAP_FILE|MAP_SHARED|MAP_FIXED,
++ #endif
+  				    devMem,
+  				    GRAPH_BASE
+  				    );
++ #if defined(__FreeBSD__)
++     ioctl(devMem, TIOCFLUSH);
++ #endif
+      close(devMem);
+      if ((long)gramMem < 0) {
+  	Perror("mmap");
+***************
+*** 620,625 ****
+--- 649,655 ----
+  void VgaDetach(void)
+  {
+      gramHead = 0;
++ #if defined(linux)
+      ioperm(vgaCrtAddr, 1, 0);
+      ioperm(VGAATTR_A_O, 1, 0);
+      ioperm(VGAGRP_ADDR, 1, 0);
+***************
+*** 634,640 ****
+      ioperm(VGAMISC_OUT, 1, 0);
+      ioperm(vgaSt1Addr, 1, 0);
+      ioperm(VGAPAL_DATA, 1, 0);
+!     
+      munmap(gramMem, dInfo.gsize);
+      
+      SafeFree((void **)&gramMem);
+--- 664,671 ----
+      ioperm(VGAMISC_OUT, 1, 0);
+      ioperm(vgaSt1Addr, 1, 0);
+      ioperm(VGAPAL_DATA, 1, 0);
+! #endif
+! 
+      munmap(gramMem, dInfo.gsize);
+      
+      SafeFree((void **)&gramMem);
+diff -c -r src/main.c src/main.c
+*** src/main.c	Sun May 15 23:21:17 1994
+--- src/main.c	Sat Jun 24 12:22:30 1995
+***************
+*** 31,41 ****
+--- 31,46 ----
+  {
+      char	*p;
+  
++ #if defined(linux)
+      fprintf(stderr, "Kanji ON Linux console " VERSION "\n\n");
++ #elif defined(__FreeBSD__)
++     fprintf(stderr, "Kanji ON FreeBSD console " VERSION "\n\n");
++ #endif
+      if (geteuid() != 0) {
+  	fprintf(stderr, "can not get I/O permissions.\n");
+  	exit(EXIT_FAILURE);
+      }
++ 
+      ChangeNewConsole();
+      TermInit(argc - 1, argv + 1);
+      if (ReadConfig(CONFIG_NAME) < 0) {
+diff -c -r src/sock.c src/sock.c
+*** src/sock.c	Thu May 12 13:35:44 1994
+--- src/sock.c	Sat Jun 24 12:22:30 1995
+***************
+*** 68,81 ****
+  {
+      int	len, sfd;
+      struct	sockaddr sinfo;
+!     
+      sprintf(sinfo.sa_data, "/tmp/.kon%s", tty);
+      unlink(sinfo.sa_data);
+      if ((sfd = socket(AF_UNIX, SOCK_STREAM, 0)) < 0) {
+  	PerrorExit(sinfo.sa_data);
+      }
+      sinfo.sa_family = AF_UNIX;
+      len = sizeof(sinfo.sa_family) + strlen(sinfo.sa_data);
+      if (bind(sfd, &sinfo, len) < 0) {
+  	message("can't bind socket");
+  	PerrorExit(sinfo.sa_data);
+--- 68,89 ----
+  {
+      int	len, sfd;
+      struct	sockaddr sinfo;
+! 
+! #if defined(linux)
+      sprintf(sinfo.sa_data, "/tmp/.kon%s", tty);
++ #elif defined(__FreeBSD__)
++     sprintf(sinfo.sa_data, "/tmp/.kon");
++ #endif
+      unlink(sinfo.sa_data);
+      if ((sfd = socket(AF_UNIX, SOCK_STREAM, 0)) < 0) {
+  	PerrorExit(sinfo.sa_data);
+      }
+      sinfo.sa_family = AF_UNIX;
++ #if defined(linux)
+      len = sizeof(sinfo.sa_family) + strlen(sinfo.sa_data);
++ #elif defined(__FreeBSD__)
++     len = sizeof(sinfo.sa_family) + strlen(sinfo.sa_data) + 1;
++ #endif
+      if (bind(sfd, &sinfo, len) < 0) {
+  	message("can't bind socket");
+  	PerrorExit(sinfo.sa_data);
+diff -c -r src/term.c src/term.c
+*** src/term.c	Tue May 17 19:39:31 1994
+--- src/term.c	Sat Jun 24 12:22:30 1995
+***************
+*** 22,32 ****
+--- 22,40 ----
+  #include	<stdlib.h>
+  #include	<unistd.h>
+  #include	<string.h>
++ #if defined(linux)
+  #include	<termio.h>
++ #elif defined(__FreeBSD__)
++ #include	<termios.h>
++ #include	<machine/console.h>
++ #define termio termios
++ #endif
+  #include	<signal.h>
+  #include	<errno.h>
++ #if defined(linux)
+  #include	<sys/vt.h>
+  #include	<sys/kd.h>
++ #endif
+  #include	<sys/time.h>
+  #include	<sys/ioctl.h>
+  #include	<sys/file.h>
+***************
+*** 46,51 ****
+--- 54,66 ----
+  #include	<sock.h>
+  #include	<mouse.h>
+  
++ #ifdef __FreeBSD__
++ #define TCSETA     TIOCSETA
++ #define TCGETA     TIOCGETA
++ #define SIGCLD     SIGCHLD
++ #define XCASE 0
++ #endif
++ 
+  int	masterPty;			 /* master pseudo-tty file descriptor */
+  
+  #define	MAX_TTYNAME	10
+***************
+*** 92,98 ****
+  static void	ExitPty(int signum)
+  {
+      int	stat;
+!     
+      if (wait3(&stat, WNOHANG, 0) != childPid) {
+  	TextMode();
+  	kill(0, SIGTSTP);
+--- 107,116 ----
+  static void	ExitPty(int signum)
+  {
+      int	stat;
+! 
+! #if defined(__FreeBSD__)
+!     signal(SIGCLD, SIG_DFL);
+! #endif
+      if (wait3(&stat, WNOHANG, 0) != childPid) {
+  	TextMode();
+  	kill(0, SIGTSTP);
+***************
+*** 322,328 ****
+--- 340,350 ----
+      }
+  
+      chown("/dev/tty0", getuid(), getgid());
++ #if defined(linux)
+      sockFd = SocketInit(ttyname(0) + 8);
++ #elif defined(__FreeBSD__)
++     sockFd = SocketInit(ttyname(0) + 9);
++ #endif
+      init.socket = TRUE;
+  
+      /* Get old tio of 0 */
+***************
+*** 353,360 ****
+--- 375,394 ----
+  	newTio.c_oflag &= ~OPOST;
+  	newTio.c_cc[VMIN] = 1;
+  	newTio.c_cc[VTIME] = 0;
++ #if defined(__FreeBSD__)
++ 	newTio.c_cc[VDISCARD] = _POSIX_VDISABLE;
++ 	newTio.c_cc[VLNEXT] = _POSIX_VDISABLE;
++ 	newTio.c_cc[VSTART] = _POSIX_VDISABLE;
++       	newTio.c_cc[VSTOP] = _POSIX_VDISABLE;
++       	newTio.c_cc[VINTR] = _POSIX_VDISABLE;
++ 	newTio.c_cc[VSUSP] = _POSIX_VDISABLE;
++ 	newTio.c_cc[VDSUSP] = _POSIX_VDISABLE;
++ 	newTio.c_cc[VQUIT] = _POSIX_VDISABLE;
++ #endif
+  	newTio.c_cflag |= CS8;
++ #ifdef linux
+  	newTio.c_line = 0;
++ #endif
+  	ioctl(0, TCSETA, &newTio);
+  	/* VGA initialize */
+  	VtStart();
+***************
+*** 371,376 ****
+--- 405,419 ----
+  	/* I'm child */
+  	/* Make me process leader */
+  	setsid();
++ #if defined(__FreeBSD__)
++ 	{
++ 	  int devtty;
++ 	  if ((devtty = open("/dev/tty",O_RDWR|O_NDELAY)) >= 0) {
++ 	    ioctl(devtty, TIOCNOTTY, (char *)0);
++ 	    close(devtty);
++ 	  }
++ 	}
++ #endif
+  	/* Open TTY(slave) */
+  	if ((slavePty = open(ptyName, O_RDWR)) < 0) {
+  	    PerrorExit(ptyName);
+***************
+*** 378,383 ****
+--- 421,429 ----
+  	close(masterPty);
+  	/* Set old tio to TTY */
+  	ioctl(slavePty, TCSETA, &oldTio);
++ #ifdef __FreeBSD__
++ 	ioctl(slavePty, TIOCSCTTY, (char *)0);
++ #endif
+  	/* Set std??? to pty */
+  	dup2(slavePty, 0);
+  	dup2(slavePty, 1);
+***************
+*** 390,396 ****
+--- 436,446 ----
+  {
+      int cfd;
+  
++ #if defined(linux)
+      if ((cfd = open("/dev/console", 0)) < 0) {
++ #elif defined(__FreeBSD__)
++     if ((cfd = open("/dev/vga", 0)) < 0) {
++ #endif
+  	PerrorExit("/dev/console");
+      }
+      ioctl(cfd, VT_ACTIVATE, orgVtNum);
+***************
+*** 399,417 ****
+--- 449,475 ----
+  
+  void ChangeNewConsole()
+  {
++ #if defined(linux)
+      struct vt_stat vts;
++ #endif
+      int cfd, vfd, vtNum, child, parent, mode;
+      char vtty[MAX_TTYNAME + 1];
+  
++ #if defined(linux)
+      if ((cfd = open("/dev/console", 0)) < 0)
++ #elif defined(__FreeBSD__)
++     if ((cfd = open("/dev/vga", 0)) < 0)
++ #endif
+  	fatal("can't open /dev/console");
+      ioctl(cfd, KDGETMODE, &mode);
+      if (mode == KD_TEXT) {
+  	close(cfd);
+  	return;
+      }
++ #if defined(linux)
+      ioctl(cfd, VT_GETSTATE, &vts);
+      orgVtNum = vts.v_active;
++ #endif
+      ioctl(cfd, VT_OPENQRY, &vtNum);
+      if (vtNum < 0)
+  	fatal("can't get free VC");
+***************
+*** 423,429 ****
+--- 481,491 ----
+  	pause();
+      }
+      setsid();
++ #if defined(linux)
+      sprintf(vtty, "/dev/tty%d", vtNum);
++ #elif defined(__FreeBSD__)
++     sprintf(vtty, "/dev/ttyv%d", vtNum);
++ #endif
+      if ((vfd = open(vtty, O_RDWR)) < 0)
+  	fatal("can't open %s", vtty);
+      if (ioctl(cfd, VT_ACTIVATE, vtNum) != 0)
+diff -c -r src/utmp.c src/utmp.c
+*** src/utmp.c	Wed Sep 22 20:31:12 1993
+--- src/utmp.c	Sat Jun 24 12:22:31 1995
+***************
+*** 38,43 ****
+--- 38,44 ----
+  
+  void	SetUtmp(char *tty)
+  {
++ #ifdef linux
+  	struct utmp	utmp;
+  	struct passwd	*pw;
+  	struct group	*ttygrp;
+***************
+*** 63,72 ****
+--- 64,75 ----
+  		ttyGid = -1;
+  	chmod(tty, 0622);
+  	chown(tty, getuid(), ttyGid);
++ #endif
+  }
+  
+  void	ResetUtmp(char *tty)
+  {
++ #ifdef linux
+  	struct utmp	utmp, *utp;
+  	char	*tn;
+  
+***************
+*** 84,87 ****
+--- 87,91 ----
+  	endutent();
+  	chmod(tty, 0600);
+  	chown(tty, 0, ttyGid);
++ #endif
+  }
+diff -c -r src/vc.c src/vc.c
+*** src/vc.c	Mon May 23 23:33:25 1994
+--- src/vc.c	Sat Jun 24 12:22:31 1995
+***************
+*** 24,35 ****
+--- 24,44 ----
+  #include	<stdlib.h>
+  #include	<string.h>
+  #include	<unistd.h>
++ #if defined(linux)
+  #include	<sys/vt.h>
++ #endif
+  #include	<fcntl.h>
+  #include	<signal.h>
++ #if defined(linux)
+  #include	<termio.h>
++ #elif defined(__FreeBSD__)
++ #include	<termios.h>
++ #include	<machine/console.h>
++ #endif
+  #include	<sys/ioctl.h>
++ #ifdef linux
+  #include	<sys/kd.h>
++ #endif
+  
+  #include	<mem.h>
+  #include	<getcap.h>
+***************
+*** 257,263 ****
+      vtm.relsig = 0;
+      vtm.acqsig = 0;
+      ioctl(0, VT_SETMODE, &vtm);
+!     
+      con.text_mode = TRUE;
+      SetTextMode();
+      ioctl(masterPty, TIOCSWINSZ, &text_win);
+--- 266,274 ----
+      vtm.relsig = 0;
+      vtm.acqsig = 0;
+      ioctl(0, VT_SETMODE, &vtm);
+! #if defined(__FreeBSD__)
+!     ioctl(0, VT_RELDISP, 1);
+! #endif
+      con.text_mode = TRUE;
+      SetTextMode();
+      ioctl(masterPty, TIOCSWINSZ, &text_win);
+***************
+*** 270,275 ****
+--- 281,289 ----
+  
+      con.text_mode = FALSE;
+      ioctl(0, KDSETMODE, KD_GRAPHICS);
++ #if defined(__FreeBSD__)
++     ioctl(0, VT_RELDISP, VT_ACKACQ);
++ #endif
+      signal(SIGUSR1, LeaveVC);
+      signal(SIGUSR2, EnterVC);
+      vtm.mode = VT_PROCESS;
+***************
+*** 295,303 ****
+  static
+      void	LeaveVC(int signum)
+  {
+      signal(SIGUSR1, LeaveVC);  /* should use sigaction()? */
+      if (busy) {
+! 	release = TRUE;
+  	return;
+      }
+      release = FALSE;
+--- 309,318 ----
+  static
+      void	LeaveVC(int signum)
+  {
++ 
+      signal(SIGUSR1, LeaveVC);  /* should use sigaction()? */
+      if (busy) {
+!         release = TRUE;
+  	return;
+      }
+      release = FALSE;
+***************
+*** 319,324 ****
+--- 334,340 ----
+      if (!con.active) {
+  	con.active = TRUE;
+  	GraphMode();
++     signal(SIGUSR2, EnterVC);
+  #ifdef	HAS_MOUSE
+  	if (mInfo.has_mouse) {
+  	    MouseStart();
+***************
+*** 794,809 ****
+--- 810,829 ----
+  static int	ConfigBeep(const char *confstr)
+  {
+      beepCount = atoi(confstr) * 10000;
++ #if defined(linux)
+      ioperm(COUNTER_ADDR, 1, TRUE);
++ #endif
+      return SUCCESS;
+  }
+  
+  void	Beep(void)
+  {
+      if (!con.active) return;
++ #ifdef linux
+      PortOutb(PortInb(COUNTER_ADDR)|3, COUNTER_ADDR);
+      usleep(beepCount);
+      PortOutb(PortInb(COUNTER_ADDR)&0xFC, COUNTER_ADDR);
++ #endif
+  }
+  
+  static int	ConfigInterval(const char *confstr)
+***************
+*** 852,858 ****
+--- 872,880 ----
+      SafeFree((void **)&textBuff);
+      SafeFree((void **)&attrBuff);
+      SafeFree((void **)&flagBuff);
++ #ifdef linux
+      ioperm(COUNTER_ADDR, 1, FALSE);
++ #endif
+      
+      SafeFree((void **)&videoName);
+  }
+diff -c -r src/vt.c src/vt.c
+*** src/vt.c	Sat Jun 11 16:48:44 1994
+--- src/vt.c	Sat Jun 24 12:22:31 1995
+***************
+*** 21,27 ****
+--- 21,31 ----
+  #include	<stdio.h>
+  #include	<unistd.h>
+  #include	<string.h>
++ #if defined(linux)
+  #include	<termio.h>
++ #elif defined(__FreeBSD__)
++ #include	<termios.h>
++ #endif
+  #include	<malloc.h>
+  #include	<sys/types.h>
+  
+diff -c -r tools/Configure tools/Configure
+*** tools/Configure	Sat Mar 26 19:10:24 1994
+--- tools/Configure	Sat Jun 24 12:22:31 1995
+***************
+*** 50,70 ****
+  
+  cat << 'END' >> $CONFIG_MK
+  
+! TOPDIR	= 
+! BINDIR	= $(TOPDIR)/usr/bin
+  LIBDIR	= $(TOPDIR)/etc
+! MANDIR	= $(TOPDIR)/usr/man/ja_JP.ujis/man1
+  CONFIG_NAME = kon.cfg
+  OPTS    = -DCONFIG_NAME=\"$(LIBDIR)/$(CONFIG_NAME)\" -I$(INCDIR)
+  CFLAGS  = -O -Wall $(OPTS)
+  LD      = gcc $(CFLAGS)
+  RM      = rm -f
+  INSTALL = install -c -s
+! SUBDIRS = lib src font tools
+  
+  END
+  
+! echo "KON Kanji ON Linux console"
+  
+  while read mess
+  do
+--- 50,70 ----
+  
+  cat << 'END' >> $CONFIG_MK
+  
+! TOPDIR	= /usr/local
+! BINDIR	= $(TOPDIR)/bin
+  LIBDIR	= $(TOPDIR)/etc
+! MANDIR	= $(TOPDIR)/man/ja_JP.ujis/man1
+  CONFIG_NAME = kon.cfg
+  OPTS    = -DCONFIG_NAME=\"$(LIBDIR)/$(CONFIG_NAME)\" -I$(INCDIR)
+  CFLAGS  = -O -Wall $(OPTS)
+  LD      = gcc $(CFLAGS)
+  RM      = rm -f
+  INSTALL = install -c -s
+! SUBDIRS = lib src font # tools
+  
+  END
+  
+! echo "KON Kanji ON FreeBSD console"
+  
+  while read mess
+  do
+diff -c -r tools/makedir tools/makedir
+*** tools/makedir	Tue Mar 23 08:44:32 1993
+--- tools/makedir	Sat Jun 24 12:36:23 1995
+***************
+*** 7,21 ****
+  	echo 'ok'
+  else
+  	echo ' not exist'
+- 	echo -n 'make' "'$1'" '? '
+- 	read yn
+- 	if [ "$yn" = "n" -o "$yn" = "N" ]
+- 	then
+- 		exit 1
+- 	fi
+  	mkdir -p $1
+- 	if [ $? != 0 ]
+- 	then
+- 		exit 1
+- 	fi
+  fi
+--- 7,11 ----
