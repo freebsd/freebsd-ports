@@ -1,0 +1,8 @@
+usr/doc/SDL-1.2.2/BUGS
+usr/doc/SDL-1.2.2/COPYING
+usr/doc/SDL-1.2.2/CREDITS
+usr/doc/SDL-1.2.2/README-SDL.txt
+usr/lib/libSDL-1.1.so.0
+usr/lib/libSDL-1.2.so.0
+usr/lib/libSDL-1.2.so.0.0.2
+@dirrm usr/doc/SDL-1.2.2
