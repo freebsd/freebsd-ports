@@ -105,6 +105,12 @@
 #
 # WITH_LIBTHEORA=yes
 #
+# WITHOUT_TRANSCODE=yes
+#  Disable transcode of multimedia via transcode (multimedia/transcode).
+#  This option allows you to convert a media file, dvd, A/V stream, etc
+#  in to another format. This also allows you to transcode multimedia
+#  on-the-fly and stream to a network and/or local playback.
+#
 # Other Knobs:
 #
 # DEBUG=yes
@@ -524,6 +530,10 @@ USE_SDL=	yes
 CONFIGURE_ARGS+=--enable-sdl
 .else
 CONFIGURE_ARGS+=--disable-sdl
+.endif
+
+.if !defined(WITHOUT_TRANSCODE)
+RUN_DEPENDS+=	transcode:${PORTSDIR}/multimedia/transcode
 .endif
 
 .if !defined(WITHOUT_HTTPD) && defined(WITH_SSL)
