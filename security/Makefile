@@ -320,6 +320,7 @@
     SUBDIR += pear-Auth_HTTP
     SUBDIR += pear-Auth_SASL
     SUBDIR += pear-Crypt_CBC
+    SUBDIR += pear-Crypt_RC4
     SUBDIR += pear-File_Passwd
     SUBDIR += pear-Text_Password
     SUBDIR += pf
