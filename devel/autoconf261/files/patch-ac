@@ -1,9 +1,9 @@
---- standards.texi.orig	Fri Oct 11 11:32:48 1996
-+++ standards.texi	Fri Jun 13 16:26:11 1997
+--- standards.texi.orig	Tue Jan  5 08:29:22 1999
++++ standards.texi	Sat Jan 23 23:36:36 1999
 @@ -4,12 +4,13 @@
  @settitle GNU Coding Standards
- @c UPDATE THIS DATE WHENEVER YOU MAKE CHANGES!
- @set lastupdate 9 September 1996
+ @c This date is automagically updated when you save this file:
+ @set lastupdate August 26, 1998
 +@dircategory Programming & development tools
  @c %**end of header
  

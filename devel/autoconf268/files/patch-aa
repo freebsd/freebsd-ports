@@ -1,14 +1,16 @@
---- ./Makefile.in.org	Wed Nov 22 10:09:44 1995
-+++ ./Makefile.in	Thu Mar 28 23:02:49 1996
-@@ -131,15 +131,15 @@
- 	*) echo Error: Autoconf requires GNU m4 1.1 or later; exit 1 ;; \
- 	esac
+--- Makefile.in.orig	Tue Jan  5 08:27:16 1999
++++ Makefile.in	Sat Jan 23 23:29:33 1999
+@@ -141,7 +141,7 @@
+ 
+ install: all $(M4FILES) acconfig.h installdirs install-info
  	for p in $(ASCRIPTS); do \
 -	  $(INSTALL_PROGRAM) $$p $(bindir)/`echo $$p|sed '$(transform)'`; \
 +	  $(INSTALL) $$p $(bindir)/`echo $$p|sed '$(transform)'`; \
  	done
- 	for i in $(M4FILES) acconfig.h; do \
- 	$(INSTALL_DATA) $(srcdir)/$$i $(acdatadir)/$$i; \
+ 	for i in $(M4FROZEN); do \
+ 	  $(INSTALL_DATA) $$i $(acdatadir)/$$i; \
+@@ -150,9 +150,9 @@
+ 	  $(INSTALL_DATA) $(srcdir)/$$i $(acdatadir)/$$i; \
  	done
  	-if test -f autoscan; then \
 -	$(INSTALL_PROGRAM) autoscan $(bindir)/`echo autoscan|sed '$(transform)'`; \
