@@ -7,30 +7,31 @@
 
 PORTNAME=	qmail-notify
 PORTVERSION=	0.93
+PORTREVISION=	1
 CATEGORIES=	mail
-MASTER_SITES=	http://untroubled.org/qmail-notify/
+MASTER_SITES=	http://untroubled.org/${PORTNAME}/
 
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Delayed delivery notification for qmail
 
-EXAMPLES=	cron.hourly message.txt
-DOCS=		ANNOUNCEMENT NEWS README TODO
+CFLAGS+=	-DHAVE_SRANDOM
+LDFLAGS?=	-s
 
-pre-build:
-	${ECHO_CMD} ${PREFIX}/bin   > ${WRKSRC}/conf-bin
-	${ECHO_CMD} ${CC} ${CFLAGS} -DHAVE_SRANDOM > ${WRKSRC}/conf-cc
+DOCS=		NEWS README TODO
+EXAMPLES=	cron.hourly message.txt
+
+do-configure:
+	${ECHO_CMD} "${PREFIX}/bin"	> ${WRKSRC}/conf-bin
+	${ECHO_CMD} "${CC} ${CFLAGS}"	> ${WRKSRC}/conf-cc
+	${ECHO_CMD} "${CC} ${LDFLAGS}"	> ${WRKSRC}/conf-ld
 
 do-install:
 	cd ${WRKSRC} && ./installer
 	@${MKDIR} ${EXAMPLESDIR}
-.for file in ${EXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${EXAMPLESDIR}
-.endfor
+	cd ${WRKSRC} && ${INSTALL_DATA} ${EXAMPLES} ${EXAMPLESDIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
