@@ -17,7 +17,7 @@ EXTRACT_ONLY=	${RPMFILE}
 
 MAINTAINER=	taoka@FreeBSD.org
 
-BUILD_DEPENDS=  rpm2cpio:${PORTSDIR}/misc/rpm2cpio
+BUILD_DEPENDS=  rpm2cpio:${PORTSDIR}/archivers/rpm2cpio
 .if defined(SLAVE_PORT)
 RUN_DEPENDS=	stsmon:${PORTSDIR}/print/bjfiltercom \
 		pstops:${PORTSDIR}/print/psutils-${PAPERSIZE}

@@ -30,6 +30,8 @@
     SUBDIR += pkzip
     SUBDIR += ppunpack
     SUBDIR += rar
+    SUBDIR += rpm
+    SUBDIR += rpm2cpio
     SUBDIR += ruby-zlib
     SUBDIR += sectar
     SUBDIR += ucl

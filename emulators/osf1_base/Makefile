@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.rpm
 
 MAINTAINER=	obrien@FreeBSD.org
 
-BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/misc/rpm2cpio
+BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm2cpio
 
 ONLY_FOR_ARCHS=	alpha
 

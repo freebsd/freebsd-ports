@@ -13,8 +13,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}.i386.rpm
 
 MAINTAINER=	sanpei@FreeBSD.org
 
-BUILD_DEPENDS=	rpm:${PORTSDIR}/misc/rpm \
-		rpm2cpio:${PORTSDIR}/misc/rpm2cpio
+BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm
 RUN_DEPENDS=	${LINUX_BASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base \
 		${LINUX_BASE}/usr/lib/libjpeg.so.62.0.0:${PORTSDIR}/graphics/linux-jpeg \
 		${LINUX_BASE}/usr/lib/libpng.so.2.1.0.3:${PORTSDIR}/graphics/linux-png

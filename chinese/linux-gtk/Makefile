@@ -14,7 +14,7 @@ DISTFILES=	gtk+-1.2.6-7CLE.i386.rpm
 
 MAINTAINER=	keith@FreeBSD.org
 
-BUILD_DEPENDS=	rpm:${PORTSDIR}/misc/rpm
+BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
 RUN_DEPENDS=	/compat/linux/CLE-0.9p1:${PORTSDIR}/chinese/cle_base
 
 DIST_SUBDIR=	zh-rpm

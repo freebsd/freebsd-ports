@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.rpm
 
 MAINTAINER=	cjh@FreeBSD.org
 
-BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/misc/rpm
+BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm
 
 USE_X_PREFIX=	yes
 

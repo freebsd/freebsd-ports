@@ -17,7 +17,7 @@ EXTRACT_ONLY=
 
 MAINTAINER=		keith@FreeBSD.org
 
-RUN_DEPENDS=		rpm:${PORTSDIR}/misc/rpm
+RUN_DEPENDS=		rpm:${PORTSDIR}/archivers/rpm
 
 ONLY_FOR_ARCHS=		i386
 DIST_SUBDIR=		zh-rpm
