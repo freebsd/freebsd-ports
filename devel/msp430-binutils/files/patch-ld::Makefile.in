@@ -1,5 +1,5 @@
 --- ld/Makefile.in.orig	Thu Apr 24 16:36:07 2003
-+++ ld/Makefile.in	Tue Feb 24 16:26:34 2004
++++ ld/Makefile.in	Mon Mar  1 16:17:01 2004
 @@ -366,26 +366,33 @@
  	emipslit.o \
  	emipslnews.o \
@@ -45,12 +45,14 @@
  	emsp430x311.o \
  	emsp430x312.o \
  	emsp430x313.o \
-@@ -395,17 +402,20 @@
+@@ -395,17 +402,22 @@
  	emsp430x325.o \
  	emsp430x336.o \
  	emsp430x337.o \
 +	emsp430x412.o \
 +	emsp430x413.o \
++	emsp430x415.o \
++	emsp430x417.o \
 +	emsp430xE423.o \
 +	emsp430xE425.o \
 +	emsp430xE427.o \
@@ -72,7 +74,7 @@
  	enews.o \
  	ens32knbsd.o \
  	eor32.o \
-@@ -1744,6 +1754,14 @@
+@@ -1744,6 +1756,14 @@
  emn10200.c: $(srcdir)/emulparams/mn10200.sh \
    $(srcdir)/emultempl/elf32.em $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
  	${GENSCRIPTS} mn10200 "$(tdir_mn10200)"
@@ -87,7 +89,7 @@
  emsp430x1101.c: $(srcdir)/emulparams/msp430x1101.sh \
    $(srcdir)/emultempl/generic.em $(srcdir)/scripttempl/elf32msp430.sc \
    ${GEN_DEPENDS}
-@@ -1764,78 +1782,86 @@
+@@ -1764,78 +1784,86 @@
    $(srcdir)/emultempl/generic.em $(srcdir)/scripttempl/elf32msp430.sc \
    ${GEN_DEPENDS}
  	${GENSCRIPTS} msp430x1132 "$(tdir_msp430x1132)"
@@ -210,7 +212,7 @@
  emsp430x311.c: $(srcdir)/emulparams/msp430x311.sh \
    $(srcdir)/emultempl/generic.em $(srcdir)/scripttempl/elf32msp430_3.sc \
    ${GEN_DEPENDS}
-@@ -1872,42 +1898,62 @@
+@@ -1872,42 +1900,70 @@
    $(srcdir)/emultempl/generic.em $(srcdir)/scripttempl/elf32msp430_3.sc \
    ${GEN_DEPENDS}
  	${GENSCRIPTS} msp430x337 "$(tdir_msp430x337)"
@@ -227,46 +229,54 @@
 -	${GENSCRIPTS} msp430x436 "$(tdir_msp430x436)"
 -emsp430x437.c: $(srcdir)/emulparams/msp430x437.sh \
 +	${GENSCRIPTS} msp430x413 "$(tdir_msp430x413)"
-+emsp430xE423.c: $(srcdir)/emulparams/msp430xE423.sh \
++emsp430x415.c: $(srcdir)/emulparams/msp430x415.sh \
    $(srcdir)/emultempl/generic.em $(srcdir)/scripttempl/elf32msp430.sc \
    ${GEN_DEPENDS}
 -	${GENSCRIPTS} msp430x437 "$(tdir_msp430x437)"
 -emsp430x167.c: $(srcdir)/emulparams/msp430x167.sh \
-+	${GENSCRIPTS} msp430xE423 "$(tdir_msp430xE423)"
-+emsp430xE425.c: $(srcdir)/emulparams/msp430xE425.sh \
++	${GENSCRIPTS} msp430x415 "$(tdir_msp430x415)"
++emsp430x417.c: $(srcdir)/emulparams/msp430x417.sh \
    $(srcdir)/emultempl/generic.em $(srcdir)/scripttempl/elf32msp430.sc \
    ${GEN_DEPENDS}
 -	${GENSCRIPTS} msp430x167 "$(tdir_msp430x167)"
 -emsp430x168.c: $(srcdir)/emulparams/msp430x167.sh \
-+	${GENSCRIPTS} msp430xE425 "$(tdir_msp430xE425)"
-+emsp430xE427.c: $(srcdir)/emulparams/msp430xE427.sh \
++	${GENSCRIPTS} msp430x417 "$(tdir_msp430x417)"
++emsp430xE423.c: $(srcdir)/emulparams/msp430xE423.sh \
    $(srcdir)/emultempl/generic.em $(srcdir)/scripttempl/elf32msp430.sc \
    ${GEN_DEPENDS}
 -	${GENSCRIPTS} msp430x168 "$(tdir_msp430x168)"
 -emsp430x169.c: $(srcdir)/emulparams/msp430x169.sh \
-+	${GENSCRIPTS} msp430xE427 "$(tdir_msp430xE427)"
-+emsp430xW423.c: $(srcdir)/emulparams/msp430xW423.sh \
++	${GENSCRIPTS} msp430xE423 "$(tdir_msp430xE423)"
++emsp430xE425.c: $(srcdir)/emulparams/msp430xE425.sh \
    $(srcdir)/emultempl/generic.em $(srcdir)/scripttempl/elf32msp430.sc \
    ${GEN_DEPENDS}
 -	${GENSCRIPTS} msp430x169 "$(tdir_msp430x169)"
 -emsp430x155.c: $(srcdir)/emulparams/msp430x155.sh \
-+	${GENSCRIPTS} msp430xW423 "$(tdir_msp430xW423)"
-+emsp430xW425.c: $(srcdir)/emulparams/msp430xW425.sh \
++	${GENSCRIPTS} msp430xE425 "$(tdir_msp430xE425)"
++emsp430xE427.c: $(srcdir)/emulparams/msp430xE427.sh \
    $(srcdir)/emultempl/generic.em $(srcdir)/scripttempl/elf32msp430.sc \
    ${GEN_DEPENDS}
 -	${GENSCRIPTS} msp430x155 "$(tdir_msp430x155)"
 -emsp430x156.c: $(srcdir)/emulparams/msp430x156.sh \
-+	${GENSCRIPTS} msp430xW425 "$(tdir_msp430xW425)"
-+emsp430xW427.c: $(srcdir)/emulparams/msp430xW427.sh \
++	${GENSCRIPTS} msp430xE427 "$(tdir_msp430xE427)"
++emsp430xW423.c: $(srcdir)/emulparams/msp430xW423.sh \
    $(srcdir)/emultempl/generic.em $(srcdir)/scripttempl/elf32msp430.sc \
    ${GEN_DEPENDS}
 -	${GENSCRIPTS} msp430x156 "$(tdir_msp430x156)"
 -emsp430x157.c: $(srcdir)/emulparams/msp430x157.sh \
-+	${GENSCRIPTS} msp430xW427 "$(tdir_msp430xW427)"
-+emsp430x435.c: $(srcdir)/emulparams/msp430x435.sh \
++	${GENSCRIPTS} msp430xW423 "$(tdir_msp430xW423)"
++emsp430xW425.c: $(srcdir)/emulparams/msp430xW425.sh \
    $(srcdir)/emultempl/generic.em $(srcdir)/scripttempl/elf32msp430.sc \
    ${GEN_DEPENDS}
 -	${GENSCRIPTS} msp430x157 "$(tdir_msp430x157)"
++	${GENSCRIPTS} msp430xW425 "$(tdir_msp430xW425)"
++emsp430xW427.c: $(srcdir)/emulparams/msp430xW427.sh \
++  $(srcdir)/emultempl/generic.em $(srcdir)/scripttempl/elf32msp430.sc \
++  ${GEN_DEPENDS}
++	${GENSCRIPTS} msp430xW427 "$(tdir_msp430xW427)"
++emsp430x435.c: $(srcdir)/emulparams/msp430x435.sh \
++  $(srcdir)/emultempl/generic.em $(srcdir)/scripttempl/elf32msp430.sc \
++  ${GEN_DEPENDS}
 +	${GENSCRIPTS} msp430x435 "$(tdir_msp430x435)"
 +emsp430x436.c: $(srcdir)/emulparams/msp430x436.sh \
 +  $(srcdir)/emultempl/generic.em $(srcdir)/scripttempl/elf32msp430.sc \

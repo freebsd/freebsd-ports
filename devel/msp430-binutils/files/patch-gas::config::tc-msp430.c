@@ -1,5 +1,5 @@
 --- gas/config/tc-msp430.c.orig	Tue Mar  4 19:34:40 2003
-+++ gas/config/tc-msp430.c	Tue Feb 24 16:07:33 2004
++++ gas/config/tc-msp430.c	Mon Mar  1 16:09:21 2004
 @@ -71,18 +71,19 @@
  };
  
@@ -65,7 +65,7 @@
    {"msp430x311", MSP430_ISA_31, bfd_mach_msp31},
    {"msp430x312", MSP430_ISA_31, bfd_mach_msp31},
    {"msp430x313", MSP430_ISA_31, bfd_mach_msp31},
-@@ -116,23 +132,23 @@
+@@ -116,23 +132,25 @@
    {"msp430x325", MSP430_ISA_32, bfd_mach_msp32},
    {"msp430x336", MSP430_ISA_33, bfd_mach_msp33},
    {"msp430x337", MSP430_ISA_33, bfd_mach_msp33},
@@ -77,6 +77,8 @@
 +
 +  {"msp430x412", MSP430_ISA_41, bfd_mach_msp41},
 +  {"msp430x413", MSP430_ISA_41, bfd_mach_msp41},
++  {"msp430x415", MSP430_ISA_41, bfd_mach_msp41},
++  {"msp430x417", MSP430_ISA_41, bfd_mach_msp41},
 +
 +  {"msp430xE423", MSP430_ISA_42, bfd_mach_msp42},
 +  {"msp430xE425", MSP430_ISA_42, bfd_mach_msp42},
@@ -100,7 +102,7 @@
  
    {NULL, 0, 0}
  };
-@@ -186,14 +202,19 @@
+@@ -186,14 +204,19 @@
  	     "                  msp430x1101 msp430x1111\n"
  	     "                  msp430x1121 msp430x1122 msp430x1132\n"
  	     "                  msp430x122  msp430x123\n"
@@ -114,13 +116,14 @@
  	     "                  msp430x311  msp430x312  msp430x313  msp430x314  msp430x315\n"
  	     "                  msp430x323  msp430x325\n"
  	     "                  msp430x336  msp430x337\n"
- 	     "                  msp430x412  msp430x413\n"
+-	     "                  msp430x412  msp430x413\n"
++	     "                  msp430x412  msp430x413  msp430x415  msp430x417\n"
 +	     "                  msp430xE423 msp430xE425 msp430E427\n"
 +	     "                  msp430xW423 msp430xW425 msp430W427\n"
  	     "                  msp430x435  msp430x436  msp430x437\n"
  	     "                  msp430x447  msp430x448  msp430x449\n"));
  
-@@ -979,11 +1000,7 @@
+@@ -979,11 +1002,7 @@
  	  else if (x == 4)
  	    {
  #ifdef PUSH_1X_WORKAROUND
@@ -133,7 +136,7 @@
  		{
  		  /* Remove warning as confusing.
  		     as_warn(_("Hardware push bug workaround")); */
-@@ -1000,11 +1017,7 @@
+@@ -1000,11 +1019,7 @@
  	  else if (x == 8)
  	    {
  #ifdef PUSH_1X_WORKAROUND
