@@ -15,8 +15,9 @@ MASTER_SITES=	ftp://ftp.cs.toronto.edu/pub/c-news/ \
 		ftp://ftp.redcom.ru/pub/unix/usenet/c-news/ \
 		ftp://ftp.mc.hik.se/pub/unix/news/c-news/ \
 		ftp://ftp.dinoex.org/pub/c-news/
+DISTNAME=	c-news
 EXTRACT_SUFX=	.tar.Z
-DISTFILES=	c-news${EXTRACT_SUFX} \
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		pgpverify-1.12
 
 PATCH_SITES=	ftp://ftp.lan-ks.de/pub/c-news/ \
@@ -33,7 +34,7 @@ PATCHFILES=	c-news-patch-fileart.c c-news-patch-namecheck.awk \
 
 MAINTAINER=	dirk.meyer@dinoex.sub.org
 
-DIST_SUBDIR=	c-news
+DIST_SUBDIR=	${DISTNAME}
 NO_WRKSUBDIR=	yes
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAKEFILE=	makefile
