@@ -67,15 +67,6 @@ do-install:
 .for program in ${MAN1}
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${program:R} ${PREFIX}/bin
 .endfor
-.for script in pgpdecode pgpencrypt pgpsign
-	${SED} -e 's,@@PREFIX@@,${PREFIX},g' ${FILESDIR}/${script} > \
-		${WRKSRC}/bin/${script}
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/${script} ${PREFIX}/bin
-.endfor
-	${SED} -e 's,@@PREFIX@@,${PREFIX},g' ${FILESDIR}/dot.pinerc.pgp.sample \
-		> ${WRKSRC}/dot.pinerc.pgp.sample
-	${INSTALL_DATA} ${WRKSRC}/dot.pinerc.pgp.sample \
-		${PREFIX}/etc/dot.pinerc.pgp.sample
 .for manpage in ${MAN1}
 	${INSTALL_MAN} ${WRKSRC}/doc/${manpage} ${PREFIX}/man/man1
 .endfor
@@ -90,5 +81,11 @@ do-install:
 post-install:
 	${PREFIX}/bin/pine -P ${PREFIX}/etc/pine.conf -conf >${WRKSRC}/pine.conf
 	${INSTALL_DATA} ${WRKSRC}/pine.conf ${PREFIX}/etc/pine.conf
+
+	@${ECHO_MSG}
+	@${ECHO_MSG} "***************************************************************************"
+	@${ECHO_MSG} "*** To use pgp with Pine, take a look at the mail/pine-pgp-filters port ***"
+	@${ECHO_MSG} "***************************************************************************"
+	@${ECHO_MSG}
 
 .include <bsd.port.mk>

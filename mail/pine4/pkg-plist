@@ -4,12 +4,8 @@
 bin/pico
 bin/pilot
 bin/pine
-bin/pgpencrypt
-bin/pgpdecode
-bin/pgpsign
 bin/rpdump
 bin/rpload
-etc/dot.pinerc.pgp.sample
 @exec %D/bin/pine -P %D/etc/pine.conf -conf >%D/etc/pine.conf.tmp
 @exec /bin/mv %D/etc/pine.conf.tmp %D/etc/pine.conf
 %%PORTDOCS%%share/doc/pine/brochure.txt
