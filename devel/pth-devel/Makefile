@@ -4,9 +4,11 @@
 #
 # $FreeBSD$
 #
+FORBIDDEN=	"devel/pth is newer"
 
 PORTNAME=	pth
 PORTVERSION=	1.4a2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://alpha.gnu.org/gnu/pth/ \
 		ftp://ftp.engelschall.com/sw/pth/
@@ -17,12 +19,15 @@ NO_LATEST_LINK=	yes
 NO_CDROM=	yes
 
 INSTALLS_SHLIB=	yes
+LDCONFIG_DIRS=	%%PREFIX%%/lib/pth
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--enable-pthread \
 		--enable-syscall-soft \
 		--enable-optimize \
-		--enable-batch
+		--enable-batch \
+		--includedir="${PREFIX}/include/pth" \
+		--libdir="${PREFIX}/lib/pth"
 
 MAN1=		pth-config.1 pthread-config.1
 MAN3=		pth.3 pthread.3
