@@ -30,3 +30,9 @@
 .if "\*[.T]"nippon" \{\
 .	sOl eucJP
 .\}
+.\"
+.\" Include in troff mode always (hack for non typewriter-like devices.)
+.\"
+.if t \{\
+.	sOl eucJP
+.\}

@@ -7,11 +7,13 @@
 
 PORTNAME=	groff
 PORTVERSION=	0.100
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese print
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	groff
+MASTER_SITES=	${MASTER_SITE_GNU} \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	groff okazaki/groff
 DISTNAME=	${PORTNAME}-1.15
+DISTFILES=	${DISTNAME}.tar.gz ${TMAC_DISTNAME}.tar.gz
 
 PATCH_SITES=	${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR= okazaki
@@ -19,6 +21,9 @@ PATCHFILES=	${DISTNAME}-jgroff-${PORTVERSION}-pl1.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	okazaki@FreeBSD.org
+
+TMAC_DATE=	20010207
+TMAC_DISTNAME=	tmac-${TMAC_DATE}
 
 USE_GMAKE=	yes
 USE_AUTOCONF=	yes
@@ -29,9 +34,8 @@ CONFIGURE_ENV=	INSTALL="${INSTALL}" \
 		INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
 		INSTALL_DATA="${INSTALL_DATA}" \
 		INSTALL_MAN="${INSTALL_MAN}"
-PLIST_SUB=	PORTDOCDIR="${PORTDOCDIR}"
 
-TMACBASE=	/usr/share/tmac
+TMACBASE=	${WRKDIR}/${TMAC_DISTNAME}
 TMACDIR=	share/groff/tmac
 MDOCDIR=	${TMACDIR}/mdoc
 LOCALEDIR=	${MDOCDIR}/locale
@@ -52,34 +56,20 @@ MAN5=		groff_font.5 groff_out.5
 MAN7=		groff_char.7 groff_man.7 groff_mdoc.7 groff_mdoc.samples.7 \
 		groff_me.7 groff_mm.7 groff_mmse.7 groff_ms.7 groff_msafer.7
 
-TMACFILES=	tmac.an tmac.andoc tmac.orig_me tmac.vgrind \
-		eqnrc troffrc
-.if exists(${TMACBASE}/tmac.groff_an)
-PLIST_SUB+=	TMAC_GROFF_AN:=""
-TMACFILES+=	tmac.groff_an
-.else
-PLIST_SUB+=	TMAC_GROFF_AN:="@comment "
-.endif
-MDOCFILES=	doc-common doc-syms
+TMACFILES=	tmac.X tmac.a4 \
+		tmac.an tmac.andoc tmac.arkup \
+		tmac.doc tmac.dvi tmac.html \
+		tmac.latin1 tmac.lbp tmac.m \
+		tmac.man tmac.mandoc tmac.markup tmac.mdoc \
+		tmac.me tmac.ms tmac.mse \
+		tmac.orig_me tmac.pspic tmac.s tmac.safer \
+		tmac.trace tmac.tty tmac.tty-char tmac.vgrind \
+		eqnrc troffrc troffrc-end
+MDOCFILES=	doc-common doc-ditroff doc-nroff doc-syms
 LOCALEFILES=	locale-list eucJP
 
 DOCUMENTS=	ChangeLog.jp NEWS PROBLEMS README README.jp \
 		doc/meintro.me doc/meref.me doc/pic.ms
-
-.if exists(${TMACBASE}/locale/hyphen.us-ru)
-WITH_TMAC_LOCALE=	yes
-.else
-# There is no valid locale subdirectory.
-WITHOUT_TMAC_LOCALE=	yes
-PERL_ARGS= -e 's,^\@dirrm *share/groff/tmac/locale\n$$,,;'
-.if exists(${TMACBASE}/hyphen.us-ru)
-# hyphen.us-ru is in TMACBASE.
-PERL_ARGS+= -e 's,locale/(hyphen.us-ru)$$,$$1,;'
-.else
-# There is no hyphen.us-ru.
-PERL_ARGS+= -e 's,^.*hyphen.us-ru\n$$,,;'
-.endif
-.endif
 
 TROFFRC_FILTER=	-e 's,^(.do ds troffrc!koi8-r tmac.tty)$$,$$1\n.do ds troffrc!nippon tmac.tty,;'
 EQNRC_FILTER=	-e 's,^(ifdef koi8-r ! define n %1% !)$$,$$1\nifdef nippon ! define n %1% !,;'
@@ -99,18 +89,18 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MAKE} install-documents
 .endif
-	${CP} -p ${TMACFILES:S|^|${TMACBASE}/|g} ${PREFIX}/${TMACDIR}
-	${CP} -p ${MDOCFILES:S|^|${TMACBASE}/mdoc/|g} ${PREFIX}/${MDOCDIR}
+.for FILE in ${TMACFILES}
+	${INSTALL_DATA} ${TMACBASE}/${FILE} ${PREFIX}/${TMACDIR}
+.endfor
+.for FILE in ${MDOCFILES}
+	${INSTALL_DATA} ${TMACBASE}/mdoc/${FILE} ${PREFIX}/${MDOCDIR}
+.endfor
 	${MKDIR} ${PREFIX}/${LOCALEDIR}
-	${INSTALL_DATA} ${LOCALEFILES:S|^|${FILESDIR}/|g} ${PREFIX}/${LOCALEDIR}
-.if defined(WITH_TMAC_LOCALE) && !defined(WITHOUT_TMAC_LOCALE)
-	${CP} -pr ${TMACBASE}/locale ${PREFIX}/${TMACDIR}
-.elif exists(${TMACBASE}/hyphen.us-ru)
-	${CP} -p ${TMACBASE}/hyphen.us-ru ${PREFIX}/${TMACDIR}
-.endif
-.if defined(PERL_ARGS) && !empty(PERL_ARGS)
-	${PERL} -pi ${PERL_ARGS} ${TMPPLIST}
-.endif
+.for FILE in ${LOCALEFILES}
+	${INSTALL_DATA} ${FILESDIR}/${FILE} ${PREFIX}/${LOCALEDIR}
+.endfor
+	${MKDIR} ${PREFIX}/${TMACDIR}/locale
+	${INSTALL_DATA} ${TMACBASE}/locale/hyphen.* ${PREFIX}/${TMACDIR}/locale
 .if defined(TROFFRC_FILTER) && !empty(TROFFRC_FILTER)
 	${PERL} -pi ${TROFFRC_FILTER} ${PREFIX}/${TMACDIR}/troffrc
 .endif
