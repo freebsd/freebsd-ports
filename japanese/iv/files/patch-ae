@@ -1,16 +1,27 @@
-*** src/lib/IV/Imakefile.orig	Tue Jan 16 19:11:42 1996
---- src/lib/IV/Imakefile	Wed Jan 17 10:09:20 1996
-***************
-*** 18,28 ****
-      $(DISPATCH)/iohandler.$(CCSUFFIX)
-  #endif
-  
-- #ifdef SharedCCFlags
-- #undef SharedCCFlags
-- #define SharedCCFlags -PIC
-- #endif
-- 
-  INTERVIEWS = $(SRC)/../InterViews
-  IV_2_6	   = $(SRC)/../IV-2_6
-  IV_X11	   = $(SRC)/../IV-X11
---- 18,23 ----
+--- src/lib/IV/Imakefile.orig	Wed Oct  7 13:46:44 1998
++++ src/lib/IV/Imakefile	Wed Oct  7 15:57:25 1998
+@@ -18,11 +18,6 @@
+     $(DISPATCH)/iohandler.$(CCSUFFIX)
+ #endif
+ 
+-#ifdef SharedCCFlags
+-#undef SharedCCFlags
+-#define SharedCCFlags -PIC
+-#endif
+-
+ INTERVIEWS = $(SRC)/../InterViews
+ IV_2_6	   = $(SRC)/../IV-2_6
+ IV_X11	   = $(SRC)/../IV-X11
+@@ -37,7 +32,11 @@
+ 	$(OS)$(SLASH)*.$(CCSUFFIX)
+ 	/* TIFF not included because it can't use the same flags */
+ LIB	   = IV
+-VERSION	   = 3.1
++.if ${PORTOBJFORMAT} == "elf"
++VERSION	   = 3
++.else
++VERSION    = 3.1
++.endif
+ 
+ KIT_CCFLAGS = KitFlags
+ LIBPATHS   = -DIV_LIBALL='"$(ABSLIBALLDIR)"' -DX_LIBDIR='"$(XLIBDIR)"'
