@@ -19,7 +19,7 @@
       dummy.tv_usec = 0L;
   
 +     /*Go to background.  This part was modified locally by Masafumi NAKANE
-+         <max@wide.ad.jp>, and is used only on FreeBSD./*
++         <max@wide.ad.jp>, and is used only on FreeBSD.*/
 + #ifdef __FreeBSD__
 +     if (daemon(1, 1) == -1) {
 + 	    perror("daemon");
