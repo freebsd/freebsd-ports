@@ -8,7 +8,7 @@
 +/**/#MORECCFLAGS=-DOW_I18N_L3 -DSHAPE -DSVR4 -DSYSV -DIDENT -x O4
  
 +/**/# For FreeBSD
-+MORECCFLAGS=-DOW_I18N_L3 -DSHAPE -DMAXPID=30000 -DREGEXP -DXPM
++MORECCFLAGS=-DOW_I18N_L3 -DSHAPE -DMAXPID=30000 -DREGEXP -DXPM -DXVIEW32
  /**/#
  /**/# Set MORELDFLAGS to any link options you want.  Be sure to add -lxpm if you
  /**/# want to include XPM support.  For a generic Solaris 1.x
@@ -85,30 +85,52 @@
 +depend:: olvwmrc.c
  
  #include <XView.prog>
---- defaults.c.orig	Thu Jan 13 15:36:03 1994
-+++ defaults.c	Mon Oct 19 12:52:39 1998
-@@ -30,9 +30,7 @@
- #include <X11/Xutil.h>
- #include <X11/Xatom.h>
- #include <X11/Xresource.h>
--#ifdef OW_I18N_L4
- #include <sys/param.h>
--#endif
- 
- #include "i18n.h"
- #include "ollocale.h"
-@@ -90,7 +88,11 @@
- #ifdef SVR4
- 	    if (sysinfo(SI_HOSTNAME, hostname, sizeof(hostname)) != -1) {
- #else
-+#ifdef BSD
-+	    if (0 == gethostname(hostname, sizeof(hostname))) {
-+#else
- 	    if (0 == gethostname(hostname, sizeof(hostname), &namelen)) {
-+#endif
- #endif
- 		(void) strcat(filename, hostname);
- 		fileDB = XrmGetFileDatabase(filename);
+*** defaults.c.orig	Thu Jan 13 16:36:03 1994
+--- defaults.c	Sun Jan 24 20:50:32 1999
+***************
+*** 30,38 ****
+  #include <X11/Xutil.h>
+  #include <X11/Xatom.h>
+  #include <X11/Xresource.h>
+- #ifdef OW_I18N_L4
+  #include <sys/param.h>
+- #endif
+  
+  #include "i18n.h"
+  #include "ollocale.h"
+--- 30,36 ----
+***************
+*** 90,97 ****
+--- 88,99 ----
+  #ifdef SVR4
+  	    if (sysinfo(SI_HOSTNAME, hostname, sizeof(hostname)) != -1) {
+  #else
++ #ifdef BSD
++ 	    if (0 == gethostname(hostname, sizeof(hostname))) {
++ #else
+  	    if (0 == gethostname(hostname, sizeof(hostname), &namelen)) {
+  #endif
++ #endif
+  		(void) strcat(filename, hostname);
+  		fileDB = XrmGetFileDatabase(filename);
+  	    }
+***************
+*** 159,165 ****
+  	    return appDB;
+      }
+  
+!     appDB = XrmGetFileDatabase("/usr/lib/X11/app-defaults/Olwm");
+      return appDB;
+  }
+  
+--- 161,167 ----
+  	    return appDB;
+      }
+  
+!     appDB = XrmGetFileDatabase("/usr/X11R6/lib/X11/app-defaults/Olwm");
+      return appDB;
+  }
+  
 --- gif.c.orig	Thu Jan 13 15:36:06 1994
 +++ gif.c	Mon Oct 19 13:46:15 1998
 @@ -56,6 +56,10 @@
@@ -138,7 +160,7 @@
  
  #include <sys/types.h>
 +#include <sys/param.h>
-+#if !(defined(BSD) && (BSD >= 199306))
++#ifndef __STDC__
  #include <malloc.h>
 +#else
 +#include <stdlib.h>
@@ -185,30 +207,68 @@
  #endif
  
  	if (!deadChildren)
---- screen.c.orig	Mon Oct 19 14:21:32 1998
-+++ screen.c	Fri Nov 20 16:55:00 1998
-@@ -66,6 +66,13 @@
-  *-------------------------------------------------------------------------*/
- List	*ScreenInfoList;			/* List of managed screens */
- extern	Bool BoolString();
-+static	updateScreenWorkspaceColor();
-+static	updateScreenWindowColor();
-+static	updateScreenForegroundColor();
-+static	updateScreenBackgroundColor();
-+static	updateScreenBorderColor();
-+static	updateScreenInputFocusColor();
-+static	updateScreenGlyphFont();
- 
- /*-------------------------------------------------------------------------
-  *	Local Data
-@@ -282,6 +289,7 @@
- 		     	case PseudoColor:
- 			case GrayScale:
- 		     	case DirectColor:
-+			case TrueColor:
- 		    		return True;
- 				/*NOTREACHED*/
- 		    		break;
+*** screen.c.orig	Sun Jan 24 20:03:43 1999
+--- screen.c	Sun Jan 24 20:58:29 1999
+***************
+*** 66,71 ****
+--- 66,78 ----
+   *-------------------------------------------------------------------------*/
+  List	*ScreenInfoList;			/* List of managed screens */
+  extern	Bool BoolString();
++ static	updateScreenWorkspaceColor();
++ static	updateScreenWindowColor();
++ static	updateScreenForegroundColor();
++ static	updateScreenBackgroundColor();
++ static	updateScreenBorderColor();
++ static	updateScreenInputFocusColor();
++ static	updateScreenGlyphFont();
+  
+  /*-------------------------------------------------------------------------
+   *	Local Data
+***************
+*** 282,287 ****
+--- 289,295 ----
+  		     	case PseudoColor:
+  			case GrayScale:
+  		     	case DirectColor:
++ 			case TrueColor:
+  		    		return True;
+  				/*NOTREACHED*/
+  		    		break;
+***************
+*** 523,529 ****
+   *      Construct bitmap search path as follows:
+   *	      $OPENWINHOME/etc/workspace/patterns
+   *	      $OPENWINHOME/include/X11/include/bitmaps
+!  *	      /usr/X11/include/X11/include/bitmaps
+   *
+   * REMIND: this should be cleaned up so that it doesn't use a fixed-size
+   * array.
+--- 531,537 ----
+   *      Construct bitmap search path as follows:
+   *	      $OPENWINHOME/etc/workspace/patterns
+   *	      $OPENWINHOME/include/X11/include/bitmaps
+!  *	      /usr/X11R6/include/X11/include/bitmaps
+   *
+   * REMIND: this should be cleaned up so that it doesn't use a fixed-size
+   * array.
+***************
+*** 546,552 ****
+  	(void)sprintf(bmPath, "%s/include/X11/bitmaps",owHome);
+  	bitmapSearchPath[i++] = MemNewString(bmPath);
+  
+! 	bitmapSearchPath[i++] = MemNewString("/usr/X11/include/X11/bitmaps");
+  	bitmapSearchPath[i] = (char *)NULL;
+  }
+  
+--- 554,560 ----
+  	(void)sprintf(bmPath, "%s/include/X11/bitmaps",owHome);
+  	bitmapSearchPath[i++] = MemNewString(bmPath);
+  
+! 	bitmapSearchPath[i++] = MemNewString("/usr/X11R6/include/X11/bitmaps");
+  	bitmapSearchPath[i] = (char *)NULL;
+  }
+  
 --- st.c.orig	Thu Jan 13 15:36:18 1994
 +++ st.c	Mon Oct 19 14:12:31 1998
 @@ -14,6 +14,7 @@
