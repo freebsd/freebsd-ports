@@ -1,4 +1,4 @@
-bin/genkeys
+bin/ntp-genkeys
 bin/ntpd
 bin/ntpdate
 bin/ntpdc
@@ -47,6 +47,7 @@ bin/tickadj
 %%PORTDOCS%%share/doc/ntp/driver38.htm
 %%PORTDOCS%%share/doc/ntp/driver39.htm
 %%PORTDOCS%%share/doc/ntp/driver40.htm
+%%PORTDOCS%%share/doc/ntp/driver42.html
 %%PORTDOCS%%share/doc/ntp/driver4.htm
 %%PORTDOCS%%share/doc/ntp/driver5.htm
 %%PORTDOCS%%share/doc/ntp/driver6.htm
@@ -157,7 +158,6 @@ bin/tickadj
 %%PORTDOCS%%share/doc/ntp/pic/radio2.jpg
 %%PORTDOCS%%share/doc/ntp/pic/sheepb.jpg
 %%PORTDOCS%%share/doc/ntp/pic/stack1a.jpg
-%%PORTDOCS%%share/doc/ntp/pic/thumbs.db
 %%PORTDOCS%%share/doc/ntp/pic/tonea.gif
 %%PORTDOCS%%share/doc/ntp/pic/wingdorothy.gif
 %%PORTDOCS%%share/doc/ntp/porting.htm
@@ -168,7 +168,6 @@ bin/tickadj
 %%PORTDOCS%%share/doc/ntp/rdebug.htm
 %%PORTDOCS%%share/doc/ntp/refclock.htm
 %%PORTDOCS%%share/doc/ntp/release.htm
-%%PORTDOCS%%share/doc/ntp/thumbs.db
 %%PORTDOCS%%share/doc/ntp/tickadj.htm
 %%PORTDOCS%%@dirrm share/doc/ntp/pic
 %%PORTDOCS%%@dirrm share/doc/ntp/hints
