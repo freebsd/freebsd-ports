@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.75 1995/08/14 08:43:59 asami Exp $
+# $Id: Makefile,v 1.76 1995/08/19 08:00:01 asami Exp $
 #
 
    SUBDIR += FWF
@@ -10,7 +10,6 @@
    SUBDIR += emiclock
    SUBDIR += emu
    SUBDIR += fvwm
-   SUBDIR += g3view
    SUBDIR += iv
    SUBDIR += olvwm
    SUBDIR += piewm
@@ -19,6 +18,7 @@
    SUBDIR += tk
    SUBDIR += tk4
    SUBDIR += tvtwm
+   SUBDIR += viewfax
    SUBDIR += x3270
    SUBDIR += xbuffy
    SUBDIR += xcb
