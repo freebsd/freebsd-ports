@@ -1,4 +1,5 @@
-%%LOCALBASE%%/bin/unregistervm "%D/%%T%%/bin/java"
+@unexec %%LOCALBASE%%/bin/unregistervm "%D/%%T%%/bin/java"
+@exec %%LOCALBASE%%/bin/registervm "%D/%%T%%/bin/java # Linux-Sun-JDK%%PORTVERSION%%"
 %%T%%/jre/bin/java
 %%T%%/jre/bin/keytool
 %%T%%/jre/bin/policytool
