@@ -118,6 +118,7 @@
     SUBDIR += squid20
     SUBDIR += squid21
     SUBDIR += squid22
+    SUBDIR += squid23
     SUBDIR += squidclients
     SUBDIR += squidtimes
     SUBDIR += squirm

@@ -23,6 +23,7 @@ etc/squid/errors/ERR_READ_ERROR
 etc/squid/errors/ERR_READ_TIMEOUT
 etc/squid/errors/ERR_SHUTTING_DOWN
 etc/squid/errors/ERR_SOCKET_FAILURE
+etc/squid/errors/ERR_TOO_BIG
 etc/squid/errors/ERR_UNSUP_REQ
 etc/squid/errors/ERR_URN_RESOLVE
 etc/squid/errors/ERR_WRITE_ERROR

@@ -1,13 +1,13 @@
 # New ports collection makefile for:	squid
-# Version required:	2.2.STABLE5
+# Version required:	2.3.STABLE1
 # Date created:		Thu Nov  7 00:53:18 WST 1996
 # Whom:			Peter Wemm <peter@freebsd.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	squid-2.2.STABLE5
-PKGNAME=	squid-2.2
+DISTNAME=	squid-2.3.STABLE1
+PKGNAME=	squid-2.3
 CATEGORIES=	www
 MASTER_SITES=  \
 	ftp://squid.nlanr.net/pub/squid-2/STABLE/ \
@@ -18,7 +18,7 @@ EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	peter@freebsd.org
 
-DIST_SUBDIR=	squid2.2
+DIST_SUBDIR=	squid2.3
 PATCH_DIST_STRIP= -p0
 GNU_CONFIGURE=	yes
 # Follow the apache port's lead...
