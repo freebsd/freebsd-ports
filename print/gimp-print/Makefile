@@ -12,8 +12,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	dgilbert@velocet.ca
 
-BROKEN=		"Configure fails"
-
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 USE_GMAKE=	yes
@@ -30,7 +28,7 @@ MAN8=	cups-calibrate.8
 .if defined(WITHOUT_CUPS)
 PLIST_SUB+=	CUPS="@comment "
 .else
-LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-base
+LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
 CONFIGURE_ARGS+=	--with-cups=${PREFIX}
 PLIST_SUB+=	CUPS=""
 .endif
@@ -38,7 +36,7 @@ PLIST_SUB+=	CUPS=""
 .if defined(WITHOUT_IJS)
 PLIST_SUB+=	IJS="@comment "
 .else
-LIB_DEPENDS=	ijs.1:${PORTSDIR}/print/libijs
+LIB_DEPENDS+=	ijs.1:${PORTSDIR}/print/libijs
 CONFIGURE_ARGS+=	--with-ijs=yes 
 PLIST_SUB+=	IJS=""
 .endif
