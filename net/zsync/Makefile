@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gordon@FreeBSD.org
 COMMENT=	A file transfer program
 
 PLIST_FILES=	bin/zsync bin/zsyncmake
