@@ -8,7 +8,10 @@
 DISTNAME=	cku190
 PKGNAME=	kermit-5a.190
 CATEGORIES+=	comms
-MASTER_SITES=	ftp://kermit.columbia.edu/kermit/archives/
+MASTER_SITES=	ftp://kermit.columbia.edu/kermit/archives/ \
+		ftp://ftp.th-darmstadt.de/pub/networking/kermit/ \
+		ftp://ftp.std.com/customers2/src/telcom/
+		      
 EXTRACT_SUFX=	.tar.gz
 
 NO_WRKSUBDIR=	yes
