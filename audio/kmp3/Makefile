@@ -15,7 +15,6 @@ MAINTAINER=	mb@imp.ch
 LIB_DEPENDS=	kdecore.3:${PORTSDIR}/x11/kdelibs11 \
 		QwSpriteField.7:${PORTSDIR}/converters/kdesupport11
 
-FETCH_BEFORE_ARGS+= -b
 USE_QT=		yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
