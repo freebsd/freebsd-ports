@@ -7,7 +7,7 @@
 
 PORTNAME=	libraries
 PORTVERSION=	4.3.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XFREE:S/$/:x/} \
 		${MASTER_SITE_LOCAL:S/$/:local/}
@@ -85,7 +85,8 @@ post-extract:
 		${WRKSRC}/lib/Xdmcp/Wraphelp.c
 
 post-patch:
-	${CP} ${MASTERDIR}/files/nls::Compose::microsoft-cp1251 ${WRKSRC}/nls/Compose/microsoft-cp1251
+	${CP} ${FILESDIR}/nls::Compose::microsoft-cp1251 ${WRKSRC}/nls/Compose/microsoft-cp1251
+	${MKDIR} ${WRKSRC}/exports/lib
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/programs/proxymngr/PM.h \
