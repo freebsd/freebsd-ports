@@ -1,0 +1,15 @@
+--- config.guess.orig	Fri Oct 23 14:26:33 1998
++++ config.guess	Thu Dec  3 20:56:57 1998
+@@ -474,7 +474,11 @@
+ 	echo ${UNAME_MACHINE}-pc-bsdi${UNAME_RELEASE}
+ 	exit 0 ;;
+     *:FreeBSD:*:*)
+-	echo ${UNAME_MACHINE}-unknown-freebsd`echo ${UNAME_RELEASE}|sed -e 's/[-(].*//'`
++	if test -x /usr/bin/objformat -a "elf" = "`/usr/bin/objformat`"; then
++		echo ${UNAME_MACHINE}-unknown-freebsdelf`echo ${UNAME_RELEASE}|sed -e 's/[-(].*//'`
++	else
++		echo ${UNAME_MACHINE}-unknown-freebsd`echo ${UNAME_RELEASE}|sed -e 's/[-(].*//'`
++	fi
+ 	exit 0 ;;
+     *:NetBSD:*:*)
+ 	echo ${UNAME_MACHINE}-unknown-netbsd`echo ${UNAME_RELEASE}|sed -e 's/[-_].*/\./'`

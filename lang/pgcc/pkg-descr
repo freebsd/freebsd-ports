@@ -1,0 +1,15 @@
+The Pentium Compiler GROUP's PGCC
+
+The Pentium Compiler Group was formed to create a version of GCC supporting
+x86 specific optimizations.  Their work is based off of Cygnus's EGCS
+compiler suite.
+
+More Info: 
+	http://www.gcc.ml.org/
+
+
+Beware: This port installs new versions of "gcc", "g++", "c++", "egcc",
+"eg++" and so forth into the "${PREFIX}/bin" directory.
+Mind your PATHs if you don't want to use this compiler by default.
+
+- David O'Brien <obrien@NUXI.com>
