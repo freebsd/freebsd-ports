@@ -1,13 +1,13 @@
 # New ports collection makefile for: free-libiberty
-# Version required:	0.1
+# Version required:	0.2
 # Date created: 	30 October 1999
 # Whom:			James Howard <howardjp@wam.umd.edu>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	libiberty-0.1
-PKGNAME=	freelibiberty-0.1
+DISTNAME=	libiberty-0.2
+PKGNAME=	freelibiberty-0.2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.wam.umd.edu/pub/howardjp/software/libiberty/ \
 		http://www.wam.umd.edu/~howardjp/software/libiberty/ \
