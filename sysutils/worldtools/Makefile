@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	worldtools
-PORTVERSION=	1.2
+PORTVERSION=	1.3.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://anarcat.ath.cx/software/distfiles/
 
