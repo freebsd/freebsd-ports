@@ -115,4 +115,5 @@ share/examples/ns2/wireless-shadowing-test.tcl
 share/examples/ns2/wireless-shadowing-vis-test.tcl
 share/examples/ns2/wireless-test.tcl
 share/examples/ns2/wireless.tcl
+share/examples/ns2/worm.tcl
 @dirrm share/examples/ns2

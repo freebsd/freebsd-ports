@@ -1,0 +1,21 @@
+--- Makefile.in.orig	Thu Mar 11 00:22:57 2004
++++ Makefile.in	Thu Mar 11 00:26:46 2004
+@@ -60,14 +60,15 @@
+ DEFINE	= -DTCP_DELAY_BIND_ALL -DNO_TK @V_DEFINE@ @V_DEFINES@ @DEFS@ -DNS_DIFFUSION -DSMAC_NO_SYNC -DCPP_NAMESPACE=@CPP_NAMESPACE@ -DUSE_SINGLE_ADDRESS_SPACE -Drng_test
+ 
+ INCLUDES = \
+-	-I. @V_INCLUDE_X11@ \
+-	@V_INCLUDES@ \
++	-I. \
+ 	-I./tcp -I./sctp -I./common -I./link -I./queue \
+ 	-I./adc -I./apps -I./mac -I./mobile -I./trace \
+ 	-I./routing -I./tools -I./classifier -I./mcast \
+ 	-I./diffusion3/lib/main -I./diffusion3/lib \
+ 	-I./diffusion3/lib/nr -I./diffusion3/ns \
+-	-I./diffusion3/filter_core -I./asim/ -I./qs
++	-I./diffusion3/filter_core -I./asim/ -I./qs \
++	@V_INCLUDE_X11@ \
++	@V_INCLUDES@ 
+ 
+ 
+ LIB	= \
