@@ -14,14 +14,14 @@ MASTER_SITES=	http://www.webdav.org/cadaver/
 MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
-		expat.4:${PORTSDIR}/textproc/expat2
+		expat.4:${PORTSDIR}/textproc/expat2 \
+		neon.23:${PORTSDIR}/www/neon
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt"
 CONFIGURE_ARGS=	--enable-netrc \
-		--with-included-neon \
 		--with-expat
 ALL_TARGET=	cadaver
 
