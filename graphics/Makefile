@@ -324,6 +324,7 @@
     SUBDIR += paintlib
     SUBDIR += panorama
     SUBDIR += passepartout
+    SUBDIR += pear-Image_Color
     SUBDIR += pecl-imagick
     SUBDIR += peps
     SUBDIR += pgperl
