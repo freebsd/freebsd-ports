@@ -124,7 +124,6 @@
     SUBDIR += libworkman
     SUBDIR += linux-esound
     SUBDIR += linux-libaudiofile
-    SUBDIR += linux-realplayer
     SUBDIR += linux-vsound
     SUBDIR += lopster
     SUBDIR += mad
@@ -286,7 +285,6 @@
     SUBDIR += xmix
     SUBDIR += xmixer
     SUBDIR += xmmix
-    SUBDIR += xmms
     SUBDIR += xmms-a52dec
     SUBDIR += xmms-bonk
     SUBDIR += xmms-crossfade
