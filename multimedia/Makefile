@@ -42,6 +42,7 @@
     SUBDIR += gxanim
     SUBDIR += gxine
     SUBDIR += gxmms
+    SUBDIR += handbrake
     SUBDIR += hayes
     SUBDIR += kaffeine
     SUBDIR += kaffeine-mozilla
