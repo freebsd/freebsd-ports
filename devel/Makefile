@@ -374,6 +374,7 @@
     SUBDIR += moonshine
     SUBDIR += motor
     SUBDIR += mprof
+    SUBDIR += msp430-binutils
     SUBDIR += msrc0
     SUBDIR += nana
     SUBDIR += nasm
