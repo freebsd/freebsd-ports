@@ -3,7 +3,7 @@
 # Date created:         3 Dec 1996
 # Whom:                 paulo@isr.uc.pt
 #
-# $Id: Makefile,v 1.2 1999/05/09 17:47:51 flathill Exp $
+# $Id: Makefile,v 1.3 1999/05/11 02:05:36 flathill Exp $
 #
 
 DISTNAME=	povray31
@@ -18,6 +18,8 @@ MAINTAINER=	olli@fromme.com
 
 #BUILD_DEPENDS=  unzip:${PORTSDIR}/archivers/unzip
 LIB_DEPENDS=	png.3:${PORTSDIR}/graphics/png
+
+DIST_SUBDIR=	povray31
 
 #
 #   I think all of this needs some explanation.
