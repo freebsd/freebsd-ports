@@ -1,0 +1,7 @@
+This program is a much more convient version of the ttcp program.
+It uses inetd (or simulates its behaviour) to start off the remote
+side program which will send/receive data. Both sides measure the time
+and number of bytes transfered. The local side will print the measures.
+The format of the output can be specified on the commandline.
+
+Bill Fumerola <billf@chc-chimes.com>

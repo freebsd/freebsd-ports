@@ -1,0 +1,31 @@
+--- Makefile.old	Wed Oct  7 15:12:25 1998
++++ Makefile	Mon Dec  7 23:03:15 1998
+@@ -109,12 +109,12 @@
+ #INC=	
+ 
+ ## For FreeBSD
+-#ARCH=	-DFreeBSD
+-#LIB=
+-#OPT=	-O2
+-#CC=	cc
+-#DBG=	
+-#INC=	
++ARCH=	-DFreeBSD
++LIB=
++OPT=	-O2
++CC=	cc
++DBG=	
++INC=	
+ 
+ ## For SGI IRIX 5.3, 6.2 (cc or gcc)
+ #ARCH=
+@@ -151,7 +151,8 @@
+ VERSION=	1.4
+ prefix=		/usr/local/dist/DIR/nttcp-$(VERSION)
+ #prefix=		/usr/local
+-CFLAGS =	$(ARCH) $(DBG) $(DEF) $(INC) $(OPT) -DVERSION=\"$(VERSION)\"
++#CFLAGS =	$(ARCH) $(DBG) $(DEF) $(INC) $(OPT) -DVERSION=\"$(VERSION)\"
++CFLAGS =	$(ARCH) $(CFLG) -DVERSION=\"$(VERSION)\"
+ LFLAGS = 	$(DBG) 
+ 
+ nttcp:		nttcp.o support.o
