@@ -12,7 +12,7 @@ CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://download.freshmeat.net/themes/qnxtheme/
 DISTNAME=	qnxtheme-default-${PORTVERSION}
 
-MAINTAINER=	flynn@energyhq.homeip.net
+MAINTAINER=	flynn@energyhq.es.eu.org
 COMMENT=	QNX-inspired theme for GTK1 and GTK2
 
 .if defined(WITH_GTK2)
