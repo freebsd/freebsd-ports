@@ -217,6 +217,7 @@ ssh-*			ports/security/ssh*	Crypto; export-controlled
 apache*-ssl		ports/www/apache13-ssl	Crypto; export-controlled
 so51a_lnx_01.tar	ports/editors/staroffice5	May not be distributed.
 stonx-*			ports/emulators/stonx	Contains ROM (C) by Atari
+stuffit			ports/archivers/stuffit	Shareware -- should not redistribute
 su2-1.3.tar.gz		ports/sysutils/su2	Don't sell for profit.
 swing11.tar.Z		ports/java/jfc		Don't distribute without
 						value-added application.
