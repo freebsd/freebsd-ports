@@ -1944,6 +1944,7 @@ gnome		ports/x11/gnome
 gnome2		ports/x11/gnome2
 gnome--		ports/x11-toolkits/gnome--
 gnome-commander	ports/x11-fm/gnome-commander
+gnome-devel	ports/devel/gnome-devel
 gnome-fifth-toe	ports/x11/gnome-fifth-toe
 gnome-look	ports/x11-toolkits/gnome-look
 gnome-vnc	ports/net/gnome-vnc
