@@ -15,7 +15,6 @@
     SUBDIR += eterm
     SUBDIR += gau
     SUBDIR += ghostscript-gnu-korfont
-    SUBDIR += ghostscript55httf
     SUBDIR += gtkcomm
     SUBDIR += h2ps
     SUBDIR += han
