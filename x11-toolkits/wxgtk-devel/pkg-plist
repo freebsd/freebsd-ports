@@ -279,6 +279,7 @@ include/wx/protocol/file.h
 include/wx/protocol/ftp.h
 include/wx/protocol/http.h
 include/wx/protocol/protocol.h
+include/wx/quantize.h
 include/wx/radiobox.h
 include/wx/radiobut.h
 include/wx/regex.h
