@@ -1,0 +1,18 @@
+bin/gtweakui-menus
+bin/gtweakui-session
+bin/gtweakui-nautilus
+share/gnome/gTweakUI/g.png
+share/gnome/gTweakUI/menus0.png
+share/gnome/gTweakUI/menus1.png
+share/gnome/gTweakUI/menus2.png
+share/gnome/gTweakUI/menus3.png
+share/gnome/gTweakUI/menus.glade
+share/gnome/gTweakUI/session.glade
+share/gnome/gTweakUI/nautilus.glade
+share/gnome/gTweakUI/about.glade
+share/gnome/gTweakUI/notice.glade
+share/gnome/gTweakUI/bullet.png
+share/gnome/applications/gtweakui-menus.desktop
+share/gnome/applications/gtweakui-session.desktop
+share/gnome/applications/gtweakui-nautilus.desktop
+@dirrm share/gnome/gTweakUI

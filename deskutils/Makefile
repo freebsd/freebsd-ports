@@ -47,6 +47,7 @@
     SUBDIR += gtimer
     SUBDIR += gtkjournal
     SUBDIR += gtodo
+    SUBDIR += gtweakui
     SUBDIR += gucharmap
     SUBDIR += gworkspace
     SUBDIR += howm
