@@ -1,0 +1,10 @@
+--- Makefile.in.orig	Thu Dec 11 19:52:20 2003
++++ Makefile.in	Wed Dec 17 00:58:53 2003
+@@ -13,6 +13,7 @@
+ FLEX=flex
+ 
+ CPPFLAGS = -DSYSCONFDIR="\"$(sysconfdir)\""
++LDFLAGS += -L@libdir@
+ LIBS = @LIBS@
+ XML_LIBS = @XML_LIBS@
+ MAGICK_LIBS = @MAGICK_LIBS@
