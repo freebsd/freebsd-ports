@@ -6,8 +6,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=       libnet-1.0606
-PKGNAME=        p5-Net-1.0606
+DISTNAME=       libnet-1.0607
+PKGNAME=        p5-Net-1.0607
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
