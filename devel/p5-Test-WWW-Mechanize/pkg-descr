@@ -1,0 +1,4 @@
+Test::WWW::Mechanize is a subclass of WWW::Mechanize that incorporates
+features for web application testing.
+
+WWW: http://search.cpan.org/dist/Test-WWW-Mechanize/
