@@ -110,6 +110,7 @@ MathPlanner	ports/editors/MathPlanner
 Mosaic		ports/www/Mosaic
 MuSE		ports/audio/muse
 NeTraMet	ports/net/NeTraMet
+NoCatAuth-Gateway	ports/net/NoCatAuth-Gateway
 NoCatSplash	ports/net/NoCatSplash
 ORBacus		ports/devel/ORBacus
 ORBit		ports/devel/ORBit
