@@ -1,0 +1,21 @@
+***********************************************************************
+ Please test your scalapack installation
+ Example programs are located at /usr/local/share/SCALAPACK/examples
+
+ Test programs are located at /usr/local/share/SCALAPACK/TESTING
+
+ Example:
+  % cd /usr/local/share/SCALAPACK/TESTING
+  % /usr/local/mpich/bin/mpirun -np 4 xcbrd
+  % /usr/local/mpich/bin/mpirun -np 4 xcdblu
+   etc., etc. ...
+
+  to perform all the tests,
+  % cd /usr/local/share/SCALAPACK/TESTING
+  % csh
+  % foreach i (x*)
+  ? /usr/local/mpich/bin/mpirun -np 4 $i >& ~/$i.log
+  ? end
+You can change -np 4 to any number to meet your environment.
+See files at /usr/local/share/doc/scalapack for detail.
+**********************************************************************
