@@ -9,7 +9,7 @@
 DISTNAME=	glTron-0.46
 PKGNAME=	gltron-0.46
 CATEGORIES=	games
-MASTER_SITES=	http://www.ards.net/Andreas/
+MASTER_SITES=	http://www.ards.net/Andreas/gltron/
 
 MAINTAINER=	andy@icc.surw.chel.su
 
