@@ -1,0 +1,11 @@
+--- src/statfs.c.orig   Sat Dec 11 07:04:56 2004
++++ src/statfs.c        Sat Dec 11 07:05:34 2004
+@@ -30,6 +30,8 @@
+ CONST_INT (MNT_DEFEXPORTED)
+ CONST_INT (MNT_EXPORTANON)
+ CONST_INT (MNT_EXKERB)
++CONST_INT (MNT_WAIT)
++CONST_INT (MNT_NOWAIT)
+ 
+ 
+ /*
