@@ -291,5 +291,6 @@ xteddy-*		ports/games/xteddy	Don't sell for profit
 zh-chitex		ports/chinese/chitex	Don't sell for profit
 zh-moettf/*		ports/chinese/moettf	Contact Taiwan Ministry of
 						Education for commercial use
+zh-ntuttf/*		ports/chinese/ntuttf	No commercial use
 ztelnet-*		ports/net/ztelnet	zmodem code has 
 						restrictive copyright
