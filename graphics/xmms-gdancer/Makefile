@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xmms-gdancer
-PORTVERSION=	0.4.5
-PORTREVISION=	1
+PORTVERSION=	0.4.6
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.figz.com/gdancer/files/
 DISTNAME=	gdancer-$(PORTVERSION)
@@ -19,6 +18,7 @@ LIB_DEPENDS=	xmms.3:${PORTSDIR}/multimedia/xmms
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12 gdkpixbuf
+USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 
 GNU_CONFIGURE=	yes
