@@ -15,20 +15,17 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A window manager for the adult in you
 
-LIB_DEPENDS=	gconf-2:${PORTSDIR}/devel/gconf2 \
-		glade-2.0.0:${PORTSDIR}/devel/libglade2 \
-		startup-notification-1.0:${PORTSDIR}/x11/startup-notification
+LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomehier
+USE_GNOME=	gnomeprefix gnomehack gnomehier gconf2 libglade2
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 MAKE_ENV=	G_CHARSET_ALIAS="${LOCALBASE}/libdata/charset.alias"
 
 post-patch:

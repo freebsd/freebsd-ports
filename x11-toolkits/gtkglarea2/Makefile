@@ -16,10 +16,8 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An OpenGL widget for the GTK+2 GUI toolkit
 
-LIB_DEPENDS=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20
-
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomehack
+USE_GNOME=	gnomehack gtk20
 USE_BZIP2=	yes
 USE_MESA=	yes
 USE_LIBTOOL=	yes
