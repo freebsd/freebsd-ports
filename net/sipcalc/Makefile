@@ -6,23 +6,25 @@
 #
 
 PORTNAME=	sipcalc
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.routemeister.net/projects/sipcalc/files/
 
-MAINTAINER=	Janos.Mohacsi@dante.org.uk
+MAINTAINER=	Janos.Mohacsi@bsd.hu
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
 GNU_CONFIGURE=	yes
 MAN1=		sipcalc.1
 
+DOC_FILES=	doc/sipcalc.txt
+
 post-install:
-	@${ECHO} '======================================================='
-	@${ECHO} 'If you want CGI support copy sipcalc-www to your CGI '
-	@${ECHO} 'directory. Copy also the docs/web.html into the appropriate '
-	@${ECHO} 'web directory. This is not done, since CGI and web setup'
-	@${ECHO} 'has to be done according to your local policy.'
-	@${ECHO} '======================================================='
+.ifndef(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in ${DOC_FILES}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
