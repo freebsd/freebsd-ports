@@ -8,4 +8,5 @@ share/doc/ifhp/LPRng.jpg
 share/doc/ifhp/LPRngT-L.jpg
 share/doc/ifhp/LPRngT-S.jpg
 share/doc/ifhp/ifhp-S.jpg
-@dirrm  share/doc/ifhp
+@dirrm libexec/filters
+@dirrm share/doc/ifhp
