@@ -37,7 +37,7 @@ include/libonyx/thd.h
 include/libonyx/tsd.h
 include/libonyx/libonyx_defs.h
 lib/libonyx.so
-lib/libonyx.so.4
+lib/libonyx.so.5
 lib/libonyx.a
 share/onyx/doc/ps/onyx.ps
 share/onyx/doc/pdf/onyx.pdf
