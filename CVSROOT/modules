@@ -9290,6 +9290,7 @@ ruby-rfilter	ports/mail/ruby-rfilter
 ruby-ri		ports/lang/ruby-ri
 ruby-rica	ports/irc/ruby-rica
 ruby-rice	ports/irc/ruby-rice
+ruby-rjudy	ports/devel/ruby-rjudy
 ruby-rmagick	ports/graphics/ruby-rmagick
 ruby-rmail	ports/mail/ruby-rmail
 ruby-robjectteam	ports/devel/ruby-robjectteam
