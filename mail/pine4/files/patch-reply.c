@@ -1,6 +1,6 @@
---- pine/reply.c.orig	Wed Jan 24 18:35:05 2001
-+++ pine/reply.c	Sun Feb 11 12:15:03 2001
-@@ -4967,23 +4967,24 @@
+--- pine/reply.c.orig	Tue Aug  7 15:52:03 2001
++++ pine/reply.c	Fri Sep 28 00:29:19 2001
+@@ -4997,23 +4997,24 @@
  char *
  generate_message_id()
  {

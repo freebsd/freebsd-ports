@@ -1,9 +1,9 @@
-*** imap/Makefile.orig	Thu Jan 28 01:33:11 1999
---- imap/Makefile	Tue Feb  9 21:35:37 1999
+*** imap/Makefile.orig	Mon Jul  2 23:25:17 2001
+--- imap/Makefile	Fri Sep 28 00:19:45 2001
 ***************
-*** 379,390 ****
+*** 362,373 ****
+  	$(TOOLS)/$@ "$(LN)" src/ansilib c-client
   	$(TOOLS)/$@ "$(LN)" src/charset c-client
-  	sh -c '(test -d src/kerberos) && ($(LN) `pwd`/src/kerberos/* c-client) || true'
   	$(TOOLS)/$@ "$(LN)" src/osdep/$(SYSTEM) c-client
 ! 	$(TOOLS)/$@ "$(LN)" src/mtest mtest
 ! 	$(TOOLS)/$@ "$(LN)" src/ipopd ipopd
@@ -13,10 +13,10 @@
 ! build:	OSTYPE rebuild rebuildclean bundled
   
   OSTYPE:
-  	@echo Building c-client for $(OS)...
---- 379,390 ----
+  	@echo Building c-client for $(BUILDTYPE)...
+--- 362,373 ----
+  	$(TOOLS)/$@ "$(LN)" src/ansilib c-client
   	$(TOOLS)/$@ "$(LN)" src/charset c-client
-  	sh -c '(test -d src/kerberos) && ($(LN) `pwd`/src/kerberos/* c-client) || true'
   	$(TOOLS)/$@ "$(LN)" src/osdep/$(SYSTEM) c-client
 ! #	$(TOOLS)/$@ "$(LN)" src/mtest mtest
 ! #	$(TOOLS)/$@ "$(LN)" src/ipopd ipopd
@@ -26,4 +26,4 @@
 ! build:	OSTYPE rebuild rebuildclean # bundled
   
   OSTYPE:
-  	@echo Building c-client for $(OS)...
+  	@echo Building c-client for $(BUILDTYPE)...

@@ -1,6 +1,6 @@
---- imap/src/osdep/unix/Makefile.orig	Tue Oct 31 13:56:45 2000
-+++ imap/src/osdep/unix/Makefile	Mon Dec 18 01:59:06 2000
-@@ -74,7 +74,7 @@
+--- imap/src/osdep/unix/Makefile.orig	Wed Aug 29 12:15:15 2001
++++ imap/src/osdep/unix/Makefile	Fri Sep 28 00:08:24 2001
+@@ -97,7 +97,7 @@
  # Commands possibly overriden by the individual port
  
  ARRC=ar rc
@@ -9,7 +9,7 @@
  LN=ln -s
  RANLIB=ranlib
  
-@@ -92,7 +92,7 @@
+@@ -115,7 +115,7 @@
   dummy.o pseudo.o netmsg.o flstring.o fdstring.o \
   rfc822.o nntp.o smtp.o imap4r1.o pop3.o \
   unix.o mbox.o mbx.o mmdf.o tenex.o mtx.o news.o phile.o mh.o mx.o
@@ -18,7 +18,7 @@
  
  CAT=cat
  MAKE=make
-@@ -194,8 +194,9 @@
+@@ -217,8 +217,9 @@
  	 SPOOLDIR=/var \
  	 ACTIVEFILE=/usr/local/news/lib/active \
  	 RSHPATH=/usr/bin/rsh \

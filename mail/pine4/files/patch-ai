@@ -1,7 +1,26 @@
-*** pine/send.c.orig	Thu Feb  4 20:17:39 1999
---- pine/send.c	Tue Feb  9 21:34:37 1999
+*** pine/send.c.Dist	Mon Aug 27 10:54:33 2001
+--- pine/send.c	Fri Sep 28 00:19:47 2001
 ***************
-*** 7083,7095 ****
+*** 47,54 ****
+   ====*/
+  
+  #include "headers.h"
+! #include "../c-client/smtp.h"
+! #include "../c-client/nntp.h"
+  
+  
+  #ifndef TCPSTREAM
+--- 47,54 ----
+   ====*/
+  
+  #include "headers.h"
+! #include "c-client/smtp.h"
+! #include "c-client/nntp.h"
+  
+  
+  #ifndef TCPSTREAM
+***************
+*** 7689,7701 ****
   		body->subtype = cpystr("octet-stream");
   	    }
   
@@ -15,7 +34,7 @@
   	}
       }
   
---- 7083,7099 ----
+--- 7689,7705 ----
   		body->subtype = cpystr("octet-stream");
   	    }
   
@@ -34,7 +53,7 @@
       }
   
 ***************
-*** 8034,8040 ****
+*** 8659,8665 ****
   
   	switch (body->encoding) {	/* all else needs filtering */
   	  case ENC8BIT:			/* encode 8BIT into QUOTED-PRINTABLE */
@@ -42,7 +61,7 @@
   	    break;
   
   	  case ENCBINARY:		/* encode binary into BASE64 */
---- 8038,8045 ----
+--- 8663,8670 ----
   
   	switch (body->encoding) {	/* all else needs filtering */
   	  case ENC8BIT:			/* encode 8BIT into QUOTED-PRINTABLE */
@@ -52,7 +71,7 @@
   
   	  case ENCBINARY:		/* encode binary into BASE64 */
 ***************
-*** 8136,8142 ****
+*** 8761,8767 ****
   	     && !(so_puts(so, "Content-Transfer-Encoding: ")
   		  && so_puts(so, body_encodings[(body->encoding==ENCBINARY)
   						? ENCBASE64
@@ -60,7 +79,7 @@
   						  ? ENCQUOTEDPRINTABLE
   						  : (body->encoding <= ENCMAX)
   						    ? body->encoding
---- 8141,8147 ----
+--- 8766,8772 ----
   	     && !(so_puts(so, "Content-Transfer-Encoding: ")
   		  && so_puts(so, body_encodings[(body->encoding==ENCBINARY)
   						? ENCBASE64

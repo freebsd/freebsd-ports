@@ -1,24 +1,7 @@
-*** pico/osdep/os-bsf.h.orig	Wed Jul  8 19:37:28 1998
---- pico/osdep/os-bsf.h	Fri Jul 10 12:57:37 1998
+*** pico/osdep/os-bsf.h.orig	Wed Feb  7 14:53:26 2001
+--- pico/osdep/os-bsf.h	Thu Sep 27 23:56:53 2001
 ***************
-*** 23,29 ****
-  
-  #define  USE_DIRENT
-  #include <sys/types.h>
-! #include <sys/dir.h>
-  #include <stdlib.h>
-  #include <string.h>
-  
---- 23,29 ----
-  
-  #define  USE_DIRENT
-  #include <sys/types.h>
-! #include <dirent.h>
-  #include <stdlib.h>
-  #include <string.h>
-  
-***************
-*** 152,158 ****
+*** 153,159 ****
   /*
    * Place where mail gets delivered (for pico's new mail checking)
    */
@@ -26,7 +9,7 @@
   
   /*
    * What and where the tool that checks spelling is located.  If this is
---- 152,158 ----
+--- 153,159 ----
   /*
    * Place where mail gets delivered (for pico's new mail checking)
    */
