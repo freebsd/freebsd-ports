@@ -1,13 +1,13 @@
 # New ports collection makefile for:	xminesweep
-# Version required:	2.1
-# Date created:		22 December 1994
+# Version required:	3.0
+# Date created:		31 Januar 1995
 # Whom:			janek
 #
 
-DISTNAME=	xminesweep2.1
-# EXTRACT_SUFX=	.tar.Z
+DISTNAME=	xminesweep3.0
+EXTRACT_SUFX=	.tar.Z
 USE_IMAKE=	yes
 INSTALL_MANPAGES=	yes
-MASTER_SITES=	ftp://ftp.cs.columbia.edu/archives/X11R5/contrib/
+MASTER_SITES=	ftp://ftp.icm.edu.pl/pub/X11/contrib/games/
 
 .include <bsd.port.mk>
