@@ -3976,6 +3976,7 @@ linux-netscape47-navigator	ports/www/linux-netscape47-navigator
 linux-netscape6	ports/www/linux-netscape6
 linux-openmotif	ports/x11-toolkits/linux-openmotif
 linux-opera	ports/www/linux-opera
+linux-phoenix	ports/www/linux-phoenix
 linux-png	ports/graphics/linux-png
 linux-q3ademo	ports/games/linux-q3ademo
 linux-realplayer	ports/audio/linux-realplayer
