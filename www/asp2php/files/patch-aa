@@ -1,6 +1,6 @@
 --- Makefile	Fri Jun 30 12:30:49 2000
 +++ Makefile.new	Thu Jun 29 15:50:22 2000
-@@ -1,24 +1,25 @@
+@@ -1,24 +1,23 @@
 -
 -default:
 -	gcc -c general.c
@@ -18,8 +18,6 @@
 -	gcc -c session.c
 -	gcc -o asp2php asp2php.c conditionals.o database.o \
 +CC		?= cc
-+GTK_CONFIG	?= gtk12-config
-+INSTALL_PROGRAM	?= install -c -s -o root -g wheel -m 755
 +
 +all:
 +	$(CC) -c general.c
@@ -61,8 +59,8 @@
 -	@echo "gtk2asp2php: Use from current directory"
 -
 -
-+	$(INSTALL_PROGRAM) asp2php $(PREFIX)/bin
-+	$(INSTALL_PROGRAM) unipiss $(PREFIX)/bin
++	$(BSD_INSTALL_PROGRAM) asp2php $(PREFIX)/bin
++	$(BSD_INSTALL_PROGRAM) unipiss $(PREFIX)/bin
  
 +install-gtk:
-+	$(INSTALL_PROGRAM) gtkasp2php $(PREFIX)/bin
++	$(BSD_INSTALL_PROGRAM) gtkasp2php $(PREFIX)/bin

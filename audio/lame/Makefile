@@ -16,35 +16,27 @@ PATCHFILES=	lame${PORTVERSION}.patch.gz
 
 MAINTAINER=	yoshiaki@kt.rim.or.jp
 
-.if !defined(WITHOUT_X11)
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
-.endif
-
 PATCH_DIST_STRIP = -p1
 
 WRKSRC= 	${WRKDIR}/dist10/lsf/encoder/
-USE_GMAKE=	YES
-MAKE_ENV=	WITHOUT_X11=${WITHOUT_X11}
+USE_GMAKE=	yes
+WANT_GTK=	yes
 ALL_TARGET=	lame
 RESTRICTED=	Condition is not clear
 
-.if !defined(WITHOUT_X11)
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
-MAKE_ENV+=	GTK_CONFIG="${GTK_CONFIG}"
-.endif
-
 MAN1=		lame.1
 
-do-install:
-	@( cd ${WRKSRC}; ${INSTALL_PROGRAM} lame ${PREFIX}/bin )
-	@( cd ${WRKSRC}; ${INSTALL_MAN} doc/man/lame.1 \
-	 ${PREFIX}/man/man1 )
+.include <bsd.port.pre.mk>
+
+.if defined(HAVE_GTK)
+USE_GTK=	yes
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/lame
-	@${INSTALL_MAN} ${WRKSRC}/doc/html/*.html \
+	${INSTALL_DATA} ${WRKSRC}/doc/html/*.html \
 	 ${WRKSRC}/doc/html/*.css ${PREFIX}/share/doc/lame
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -5,12 +5,12 @@
    if test "x$gtk_config_prefix" != "x" ; then
       gtk_config_args="$gtk_config_args --prefix=$gtk_config_prefix"
 -     GTK_CONFIG=$gtk_config_prefix/bin/gtk-config
-+     GTK_CONFIG=$gtk_config_prefix/bin/gtk12-config
++     GTK_CONFIG=${GTK_CONFIG}
    fi
    if test "x$gtk_config_exec_prefix" != "x" ; then
       gtk_config_args="$gtk_config_args --exec-prefix=$gtk_config_exec_prefix"
 -     GTK_CONFIG=$gtk_config_exec_prefix/bin/gtk-config
-+     GTK_CONFIG=$gtk_config_exec_prefix/bin/gtk12-config
++     GTK_CONFIG=${GTK_CONFIG}
    fi
    if test "X$GTK_CONFIG" = "X"; then
      # Extract the first word of "gtk-config", so it can be a program name with args.
