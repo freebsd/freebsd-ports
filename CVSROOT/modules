@@ -2898,6 +2898,7 @@ gperiodic	ports/biology/gperiodic
 gpgme		ports/security/gpgme
 gpgme03		ports/security/gpgme03
 gphoto2		ports/graphics/gphoto2
+gphpedit	ports/editors/gphpedit
 gpkgdep		ports/sysutils/gpkgdep
 gplbp		ports/misc/gplbp
 gplink		ports/misc/gplink
