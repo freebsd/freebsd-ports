@@ -11,4 +11,11 @@ want a real database). JDB is very good at doing things like:
       histograms, correlations)
     * reformatting data for graphing programs
 
+Rather than hand-code scripts to do each special case, JDB provides
+higher-level functions.
+
+JDB is built on flat-ASCII databases.  By storing data in simple text
+files and processing it with pipelines it is easy to experiment (in
+the shell) and look at the output.
+
 WWW: http://www.isi.edu/~johnh/SOFTWARE/JDB/index.html

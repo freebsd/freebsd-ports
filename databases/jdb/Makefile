@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	jdb
-PORTVERSION=	1.11
+PORTVERSION=	1.12
 CATEGORIES=	databases perl5
 MASTER_SITES=	http://www.isi.edu/~johnh/SOFTWARE/JDB/
 
 MAINTAINER=	larse@isi.edu
 
 USE_PERL5=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --datadir=${PREFIX}/lib/jdb
 
