@@ -1,0 +1,11 @@
+--- lib/glob.h.orig	Sun Oct 20 14:19:39 2002
++++ lib/glob.h	Sun Oct 20 14:19:56 2002
+@@ -47,7 +47,7 @@
+ #endif /* C++ or ANSI C.  */
+ 
+ /* We need `size_t' for the following definitions.  */
+-#ifndef __size_t
++#if !defined(__size_t) && !defined(__FreeBSD__)
+ # if defined __GNUC__ && __GNUC__ >= 2
+ typedef __SIZE_TYPE__ __size_t;
+ # else
