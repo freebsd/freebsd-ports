@@ -1,0 +1,11 @@
+CVSTrac is a bug and patch-set tracking system for use with CVS
+appropriate for use on projects with up to a few hundred developers.
+CVSTrac is designed for low-ceremony development - it provides
+mechanisms for tracking changes and bugs without unnecessary
+restrictions. It has a built-in Wiki and ticketing system. Both
+of these functions can be linked to the CVS tree.
+
+WWW: http://www.cvstrac.org/
+
+Bruce
+bms@spc.org
