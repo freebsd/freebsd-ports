@@ -3,10 +3,10 @@
 # Date created:		Sept 19, 1997
 # Whom:			jfieber
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/09/19 21:19:25 jfieber Exp $
 #
 
-DISTNAME=	html-4.0
+DISTNAME=	html-4.0b
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://fallout.campusview.indiana.edu/pub/sgml/
 
