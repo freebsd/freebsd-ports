@@ -10,18 +10,7 @@ $FreeBSD$
 -DEFS = @CUPS_CFLAGS@ @DEFS@ -I. -I$(srcdir) -I../.. -DCUPS_DATADIR=\"$(pkgdatadir)\" -DGIMP_PRINT_VERSION=\"$(VERSION)\"
 -INCLUDES = @INCLUDES@ $(LIBGIMPPRINT_CFLAGS)
 +DEFS = @DEFS@ -I. -I$(srcdir) -I../.. -DCUPS_DATADIR=\"$(pkgdatadir)\" -DGIMP_PRINT_VERSION=\"$(VERSION)\"
-+INCLUDES = @INCLUDES@ $(LIBGIMPPRINT_CFLAGS) @CUPS_CFLAGS@ 
++INCLUDES = @INCLUDES@ $(LIBGIMPPRINT_CFLAGS) $(CUPS_CFLAGS)
  LIBPRINTUT = $(top_builddir)/lib/libprintut.la
  LIBS = $(INTLLIBS) @LIBS@
- 
---- src/cups/Makefile.in.orig	Fri Sep  5 02:16:48 2003
-+++ src/cups/Makefile.in	Fri Sep  5 02:17:15 2003
-@@ -765,7 +765,7 @@
- 	for language in $(LINGUAS) ; do \
- 	  mkdir ppd/$$language ; \
- 	  echo "$$language:" ; \
--	  LANGUAGE=$$language ./genppd --prefix=ppd/$$language --catalog=`pwd`/catalog/share/locale ; \
-+	  LANG=$$language ./genppd --prefix=ppd/$$language --catalog=`pwd`/catalog/share/locale ; \
- 	done
- 	$(RM) -r catalog
  
