@@ -59,7 +59,7 @@ do-install:
 	${CP} installed-chrome.txt.orig installed-chrome.txt; \
 	${CAT} ${FILESDIR}/installed-chrome.txt >> installed-chrome.txt)
 	(cd ${PREFIX}/lib/mozilla; \
-	${ENV} LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. ./regxpcom; \
-	${ENV} LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. ./regchrome)
+	${SETENV} LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. ./regxpcom; \
+	${SETENV} LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. ./regchrome)
 
 .include <bsd.port.post.mk>
