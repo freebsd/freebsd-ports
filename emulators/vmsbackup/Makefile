@@ -7,7 +7,7 @@
 
 DISTNAME=	vmsbackup
 PKGNAME=	vmsbackup-3.0
-CATEGORIES+=	emulation sysutils
+CATEGORIES+=	emulators sysutils
 MASTER_SITES=	ftp://ftp.cs.uni-sb.de/pub/utils/
 # slightly different version
 # MASTER_SITES+=	ftp://ftp.uni-passau.de/pub/unix/system/backup/
