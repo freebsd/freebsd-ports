@@ -3,9 +3,9 @@ bin/xglyph
 include/t1lib.h
 include/t1libx.h
 lib/libt1.a
-lib/libt1x.a
 lib/libt1.so
 lib/libt1.so.1
+lib/libt1x.a
 lib/libt1x.so
 lib/libt1x.so.1
 share/t1lib/t1lib.config
