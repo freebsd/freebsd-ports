@@ -1368,6 +1368,38 @@ makesum:
 .endif
 .endif
 
+.PHONY: master-sites-all
+.if !target(master-sites-all)
+master-sites-all:
+	@${_FETCHDISTFILES_ENV}; \
+	set -- -t ''; \
+	. '${DISTFILES_SH}'
+.endif
+
+.PHONY: master-sites
+.if !target(master-sites)
+master-sites:
+	@${_FETCHDISTFILES_ENV}; \
+	set -- -t 'DEFAULT'; \
+	. '${DISTFILES_SH}'
+.endif
+
+.PHONY: patch-sites-all
+.if !target(patch-sites-all)
+patch-sites-all:
+	@${_FETCHDISTFILES_ENV}; \
+	set -- -T ''; \
+	. '${DISTFILES_SH}'
+.endif
+
+.PHONY: patch-sites
+.if !target(patch-sites)
+patch-sites:
+	@${_FETCHDISTFILES_ENV}; \
+	set -- -T 'DEFAULT'; \
+	. '${DISTFILES_SH}'
+.endif
+
 .PHONY: migratesum
 .if !target(migratesum)
 migratesum:
