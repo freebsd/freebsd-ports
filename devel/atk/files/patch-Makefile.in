@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- Makefile.in.orig	Wed Aug  1 20:32:06 2001
++++ Makefile.in	Wed Aug  1 20:33:45 2001
+@@ -96,7 +96,7 @@
+ STRIP = @STRIP@
+ VERSION = @VERSION@
+ 
+-SUBDIRS = atk tests docs
++SUBDIRS = atk
+ 
+ EXTRA_DIST =  	atk-uninstalled.pc.in		atk.pc.in
+ 
