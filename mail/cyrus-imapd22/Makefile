@@ -3,7 +3,7 @@
 # Date created:					May 4th 1997
 # Whom:						jfitz@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.9 1998/09/25 10:07:46 asami Exp $
+# $Id: Makefile,v 1.10 1998/11/04 01:18:33 jdp Exp $
 #
 
 DISTNAME=	cyrus-imapd-v1.5.14
@@ -47,7 +47,7 @@ post-install:
 		${INSTALL_DATA} ${WRKSRC}/doc/html/* ${PREFIX}/share/doc/cyrus/html
 .endif
 		${INSTALL_DATA} ${FILESDIR}/imapd.conf ${PREFIX}/etc
-		${INSTALL} -d -m 750 -o cyrus -g cyrus /var/spool/imapd \
+		${INSTALL} -d -m 750 -o cyrus -g cyrus /var/spool/imap \
 			${PREFIX}/etc/imap \
 			${PREFIX}/etc/imap/user \
 			${PREFIX}/etc/imap/quota \
