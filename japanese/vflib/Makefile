@@ -20,6 +20,8 @@ BUILD_DEPENDS=	xmkmf:${PORTSDIR}/devel/imake-4
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/TrueType/kochi-mincho.ttf:${PORTSDIR}/japanese/kochi-ttfonts
 
+BROKEN=		"Broken dependency"
+
 VFLIB_VERSION=	2.25.6
 PLIST_SUB=	VFLIB_VERSION=${VFLIB_VERSION}
 
