@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pygtk-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	marc@informatik.uni-bremen.de
+MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	glade-2.0.0:${PORTSDIR}/devel/libglade2 \
 		gtkgl-2.0:${PORTSDIR}/x11-toolkits/gtkglarea2
