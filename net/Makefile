@@ -363,7 +363,7 @@
     SUBDIR += opengk
     SUBDIR += openh323
     SUBDIR += openh323proxy
-    SUBDIR += openldap
+    SUBDIR += openldap12
     SUBDIR += openldap2
     SUBDIR += openmcu
     SUBDIR += openslp
