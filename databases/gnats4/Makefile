@@ -26,10 +26,21 @@ CONFLICTS=		gnats-3.*
 PKGMESSAGE=		${WRKDIR}/pkg-message
 PKGINSTALL=		${WRKDIR}/pkg-install
 
-GNATSDBBASE?=		/var/db
+.ifdef WANT_FREEFALL_CFG
+EXTRA_PATCHES+=		${PATCHDIR}/extrapatch-*
 
-CONFIGURE_ARGS=		--sharedstatedir=${GNATSDBBASE}/gnats \
-			--datadir=${GNATSDBBASE}
+GNATSDBDIR=		${DATADIR}
+
+CONFIGURE_ARGS+=	--with-gnats-default-db=${GNATSDBDIR}/gnats-db
+
+WITH_SUBMITTER_ID=	current-users
+WITH_ORGANIZATION=	FreeBSD
+WITH_GNATSD_SERVICE=	support
+.endif
+
+GNATSDBDIR?=		/var/db/gnats
+
+CONFIGURE_ARGS+=	--sharedstatedir=${GNATSDBDIR}
 
 .ifdef WITH_SUBMITTER_ID
 CONFIGURE_ARGS+=	--with-submitter=${WITH_SUBMITTER_ID}
@@ -43,7 +54,7 @@ CONFIGURE_ARGS+=	--with-organization=${WITH_ORGANIZATION:Q}
 CONFIGURE_ARGS+=	--with-gnats-service=${WITH_GNATSD_SERVICE}
 .endif
 
-PLIST_SUB=		GNATSDBDIR=${GNATSDBBASE}/gnats
+PLIST_SUB=		GNATSDBDIR=${GNATSDBDIR}
 
 MAN1=			edit-pr.1 query-pr.1 send-pr.1
 MAN5=			databases.5 dbconfig.5
@@ -72,6 +83,7 @@ CONFLICTS+=		${PKGNAMEPREFIX}${PORTNAME}-client-4.*
 .endif
 
 pre-everything::
+.if !defined(PACKAGE_BUILDING) && !defined(WANT_FREEFALL_CFG)
 	@${ECHO} "============================================================="
 	@${ECHO}
 	@${ECHO} "You can build ${PKGNAME} with the following options:"
@@ -83,11 +95,15 @@ pre-everything::
 	@${ECHO}
 	@${ECHO} "============================================================="
 	@${ECHO}
+.endif
+
+pre-configure:
+	@${ECHO_CMD} 'RELEASE_TAG="\`uname -srm\`"' > ${WRKSRC}/release-info
 
 post-build:
 	@for doc in pkg-message pkg-install; do \
 		${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
-			-e 's,%%GNATSDBDIR%%,${GNATSDBBASE}/gnats,g' \
+			-e 's,%%GNATSDBDIR%%,${GNATSDBDIR},g' \
 			${PKGDIR}/$${doc} >${WRKDIR}/$${doc} ; \
 	done
 
