@@ -47,11 +47,6 @@ pre-patch:
 	@${MV} ${WRKSRC}/config/i386/freebsd.h ${WRKSRC}/config/i386/freebsd-aout.h
 	@${MV} ${WRKSRC}/config/i386/freebsd-elf.h ${WRKSRC}/config/i386/freebsd.h
 
-post-patch:
-.if ${OSVERSION} >= 500000
-	@${REINPLACE_CMD} -e 's|elf_i386|elf_i386_fbsd|' ${WRKSRC}/config/i386/freebsd.h
-.endif
-
 pre-configure:
 	@# Keep from running `autoconf' and `autoheader' since we modified
 	@# configure.in by patching it.
