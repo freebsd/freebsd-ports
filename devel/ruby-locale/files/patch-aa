@@ -1,0 +1,8 @@
+--- extconf.rb.orig	Fri Apr 14 13:20:58 2000
++++ extconf.rb	Tue Aug 15 21:16:38 2000
+@@ -1,4 +1,5 @@
+ require 'mkmf'
+ 
+ have_header 'locale.h'
++have_library 'xpg4', 'setlocale'
+ create_makefile 'locale'

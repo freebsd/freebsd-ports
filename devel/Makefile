@@ -266,6 +266,7 @@
     SUBDIR += ruby-amstd
     SUBDIR += ruby-date2
     SUBDIR += ruby-intl
+    SUBDIR += ruby-locale
     SUBDIR += ruby-optparse
     SUBDIR += ruby-property
     SUBDIR += ruby-racc
