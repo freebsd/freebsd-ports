@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	xemacs-libs-packages
-PORTVERSION=	2.3
+PORTVERSION=	2.4
 CATEGORIES=	editors elisp
 MASTER_SITES=	${MASTER_SITE_XEMACS} \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	packages kiri
 DISTFILES=	\
 		Sun-1.13-pkg.tar.gz \
-		edebug-1.13-pkg.tar.gz \
+		edebug-1.14-pkg.tar.gz \
 		eieio-1.01-pkg.tar.gz \
 		sounds-au-1.10-pkg.tar.gz \
 		sounds-wav-1.10-pkg.tar.gz \
