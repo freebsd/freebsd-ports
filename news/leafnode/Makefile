@@ -1,27 +1,27 @@
-# New ports collection makefile for:	leafnode
-# Date created:		10 April 1996
+#
 # Whom:			Brian Somers <brian@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	leafnode
-PORTVERSION=	1.9.24
+PORTVERSION=	1.9.25
 CATEGORIES=	news
-MASTER_SITES=	ftp://wpxx02.toxi.uni-wuerzburg.de/pub/ \
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}/leafnode/ \
+		http://www.dt.e-technik.uni-dortmund.de/~ma/${PORTNAME}/ \
+		ftp://wpxx02.toxi.uni-wuerzburg.de/pub/ \
 		http://www.Awfulhak.org/leafnode/ \
-		${MASTER_SITE_SUNSITE} \
+		${MASTER_SITE_SUNSITE}/system/news/transport/ \
 		ftp://ftp.karlsruhe.org/pub/news/servers/leafnode/ \
 		ftp://ftp.stikman.com/pub/leafnode/ \
-		ftp://ftp.gigabell.net/pub/leafnode/ \
-		http://www.dt.e-technik.uni-dortmund.de/~ma/leafnode/
-MASTER_SITE_SUBDIR=	system/news/transport
+		ftp://ftp.gigabell.net/pub/leafnode/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.rel
 
 MAINTAINER=	brian@FreeBSD.org
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
+USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--quiet --sysconfdir=${LOCALBASE}/etc/leafnode \
 		--with-lockfile=/var/spool/lock/news/leafnode.lck \
@@ -31,12 +31,18 @@ MAN1=		newsq.1
 MAN8=		applyfilter.8 checkgroups.8 fetchnews.8 leafnode.8 texpire.8
 
 post-install:
+		${INSTALL_SCRIPT} ${WRKSRC}/setup-daemontools.sh ${LOCALBASE}/sbin/
 .if !defined(NOPORTDOCS)
 		${MKDIR} ${LOCALBASE}/share/doc/${PORTNAME}
-		for i in ChangeLog CREDITS FAQ INSTALL NEWS README \
-			 README.FIRST TODO ; do \
+		for i in ChangeLog COPYING CREDITS FAQ INSTALL NEWS README \
+			 README-FQDN README-FQDN.html README-daemontools README.FIRST TODO \
+			 TROUBLESHOOTING TROUBLESHOOTING.html ; do \
 		  ${INSTALL_MAN} ${WRKSRC}/$$i \
 			${LOCALBASE}/share/doc/${PORTNAME} ; done
+		${MKDIR} ${LOCALBASE}/share/doc/${PORTNAME}/doc_german
+		for i in INSTALL_de LIESMICH-daemontools README README_de ${MAN1} ${MAN8} ; do \
+		  ${INSTALL_MAN} ${WRKSRC}/doc_german/$$i \
+			${LOCALBASE}/share/doc/${PORTNAME}/doc_german ; done
 .endif
 		${CAT} pkg-message
 

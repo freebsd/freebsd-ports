@@ -1,18 +1,40 @@
 bin/newsq
 etc/leafnode/config.example
+etc/leafnode/nntp.rules.dist
+etc/leafnode/run.tcpd.dist
+etc/leafnode/run.tcpserver.dist
+etc/leafnode/Makefile.dist
+etc/leafnode/UNINSTALL-daemontools
 sbin/leafnode
 sbin/fetchnews
 sbin/texpire
 sbin/checkgroups
 sbin/applyfilter
-sbin/lsort
+sbin/setup-daemontools.sh
 share/doc/leafnode/ChangeLog
+share/doc/leafnode/COPYING
 share/doc/leafnode/CREDITS
 share/doc/leafnode/FAQ
 share/doc/leafnode/INSTALL
 share/doc/leafnode/NEWS
 share/doc/leafnode/README
+share/doc/leafnode/README-FQDN
+share/doc/leafnode/README-FQDN.html
+share/doc/leafnode/README-daemontools
 share/doc/leafnode/README.FIRST
 share/doc/leafnode/TODO
-@dirrm etc/leafnode
+share/doc/leafnode/TROUBLESHOOTING
+share/doc/leafnode/TROUBLESHOOTING.html
+share/doc/leafnode/doc_german/INSTALL_de
+share/doc/leafnode/doc_german/LIESMICH-daemontools
+share/doc/leafnode/doc_german/README
+share/doc/leafnode/doc_german/README_de
+share/doc/leafnode/doc_german/newsq.1
+share/doc/leafnode/doc_german/applyfilter.8
+share/doc/leafnode/doc_german/checkgroups.8
+share/doc/leafnode/doc_german/fetchnews.8
+share/doc/leafnode/doc_german/leafnode.8
+share/doc/leafnode/doc_german/texpire.8
+@dirrm share/doc/leafnode/doc_german
 @dirrm share/doc/leafnode
+@dirrm etc/leafnode
