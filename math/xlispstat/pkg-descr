@@ -1,0 +1,37 @@
+This is XLISP-STAT 3.44 Release 3 for generic bsd systems (with simple
+tektronix graphics from the gnuplot system), or X11.
+
+XLISP-STAT is a statistical environment based on a dialect of the Lisp
+language called XLISP. Originally developed for the Apple Macintosh,
+XLISP-STAT is now also available for UNIX workstations using the X11
+window system and for Microsoft Windows. To facilitate statistical
+computations, standard Lisp functions for addition, logarithms, etc.,
+have been modified to operate on lists and arrays of numbers, and a
+number of basic statistical functions have been added.  Many of these
+functions have been written in Lisp, and additional functions can be
+added easily by a user.  Several basic forms of plots, including
+histograms, scatterplots, rotatable plots and scatterplot matrices are
+provided.  These plots support various forms of interactive
+highlighting operations and can be linked so points highlighted in one
+plot will be highlighted in all linked plots. Interactions with the
+plots are controlled by the mouse, menus and dialog boxes. An
+object-oriented programming system is used to allow menus, dialogs,
+and the response to mouse actions to be customized.
+
+Updates to this system will be posted periodically in the anonymous
+ftp directory of umnstat.stat.umn.edu (128.101.51.1).
+
+A tutorial introduction to the system is available. It is written
+primarily for the Macintosh version, but the differences to the UNIX
+version are minor; see below. The tutorial is available as a set of
+LaTeX files in xlispstat.doc.tar.Z at the ftp address above.
+
+For further information contact
+
+                Luke Tierney
+                School of Statistics
+                University of Minnesota
+                Minneapolis, Mn. 55455
+
+                luke@umnstat.stat.umn.edu
+
