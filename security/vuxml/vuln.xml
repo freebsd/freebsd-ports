@@ -239,8 +239,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <topic>xchat remotely exploitable buffer overflow (Socks5)</topic>
     <affects>
       <package>
-	<name>xchat</name>
-	<range><ge>1.8</ge><lt>2.0.9</lt></range>
+	<name>xchat2</name>
+	<range><ge>1.8</ge><lt>2.0.8_2</lt></range>
       </package>
     </affects>
     <description>
@@ -262,6 +262,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-04-05</discovery>
       <entry>2004-04-23</entry>
+      <modified>2004-05-03</modified>
     </dates>
   </vuln>
 
