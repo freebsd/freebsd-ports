@@ -1,0 +1,11 @@
+--- configure.orig	Fri Nov 15 17:59:05 2002
++++ configure	Fri Nov 15 17:59:20 2002
+@@ -1327,6 +1327,8 @@
+ #### Load the Tcl/Tk configuration files 
+ . $tclconfig/tclConfig.sh
+ . $tkconfig/tkConfig.sh
++TCL_LIB_FILE=`eval "echo ${TCL_LIB_FILE}"`
++TK_LIB_FILE=`eval "echo ${TK_LIB_FILE}"`
+ 
+ if test -z "$TCL_EXEC_PREFIX"; then TCL_EXEC_PREFIX="$TCL_PREFIX"; fi
+ if test -z "$TK_EXEC_PREFIX"; then TK_EXEC_PREFIX="$TK_PREFIX"; fi
