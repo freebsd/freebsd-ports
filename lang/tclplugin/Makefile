@@ -1,15 +1,15 @@
 # New ports collection makefile for:	tclplugin2.0.3
-# Version required:	2.0.4-beta
 # Date created:		Sat Nov  8 10:46:42 CET 1997
 # Whom:			andreas
 #
 # $FreeBSD$
 #
 
-DISTNAME=	tclplug20-src
-PKGNAME=	tclplugin-2.0
+PORTNAME=	tclplugin
+PORTVERSION=	2.0
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/plugin/
+DISTNAME=	tclplug20-src
 
 MAINTAINER=	ports@FreeBSD.org
 

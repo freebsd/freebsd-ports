@@ -1,16 +1,16 @@
 # New ports collection makefile for:	perl5
-# Version required:	5.005_02
 # Date created:		16 April 1995
 # Whom:			markm
 #
 # $FreeBSD$
 #
 
-DISTNAME=	perl5.005_02
-PKGNAME=	perl-5.00502
+PORTNAME=	perl
+PORTVESION=	5.00502
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	ftp://ftp.digital.com/pub/plan/perl/CPAN/src/5.0/ \
 		ftp://ftp.cdrom.com/pub/perl/CPAN/src/5.0/
+DISTNAME=	perl5.005_02
 
 MAINTAINER=	markm@FreeBSD.org
 

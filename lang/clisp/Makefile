@@ -1,16 +1,16 @@
 # New ports collection makefile for:    clisp
-# Version required:     1999-07-22
 # Date created:         Feb  5 2000
 # Whom:                 Jeff Brown <jabrown@caida.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	clisp-1999-07-22
-PKGNAME=	clisp-1999.07.22
+PORTNAME=	clisp
+PORTVERSION=	1999.07.22
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp2.cons.org/pub/lisp/clisp/source/ \
 		ftp://ftp.cdrom.com/pub/lisp/clisp/source/
+DISTNAME=	clisp-1999-07-22
 
 MAINTAINER=	jabrown@caida.org
 

@@ -1,17 +1,17 @@
 # New ports collection makefile for:   siod
-# Version required:    3.4
 # Date created:        28 April 1999
 # Whom:                jkoshy
 #
 # $FreeBSD$
 #
 
-DISTNAME=	siod
-PKGNAME=	siod-3.4
+PORTNAME=	siod
+PORTVERSION=	3.4
 CATEGORIES=	lang
 MASTER_SITES=	http://people.delphi.com/gjc/\
 		ftp://ftp.std.com/pub/gjc/ \
 		http://freefall.freebsd.org/~jkoshy/PORTS/
+DISTNAME=	siod
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jkoshy@FreeBSD.org

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	logo
-# Version required:	4.6
 # Date created:		22 October 1994
 # Whom:			jkh
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ucblogo-4.6
+PORTNAME=	ucblogo
+PORTVERSION=	4.6
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://anarres.cs.berkeley.edu/pub/ucblogo/

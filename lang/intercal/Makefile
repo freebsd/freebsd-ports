@@ -1,12 +1,12 @@
 # New ports collection makefile for:	intercal
-# Version required:    0.19
 # Date created:        20 March 1998
 # Whom:                Matthew Hunt <mph@freebsd.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	intercal-0.19
+PORTNAME=	intercal
+PORTVERSION=	0.19
 CATEGORIES=	lang
 MASTER_SITES=	http://www.tuxedo.org/~esr/intercal/
 

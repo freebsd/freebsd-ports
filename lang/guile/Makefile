@@ -1,12 +1,12 @@
 # New ports collection makefile for:	guile
-# Version required:	1.3.4
 # Date created:		2 November 1997
 # Whom:			jseger@FreeBSD.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	guile-1.3.4
+PORTNAME=	guile
+PORTVERSION=	1.3.4
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.guile.org/pub/

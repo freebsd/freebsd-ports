@@ -1,23 +1,22 @@
 # New ports collection makefile for:	JDK documentation
-# Version required:	1.1.8
 # Date created:		Mon Mar  8 10:10:42 EET 1999
 # Whom:			Martti Kuparinen <martti.kuparinen@ericsson.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	jdk118-doc
-PKGNAME=	jdk-doc-1.1.8
+PORTNAME=	jdk-doc
+PORTVERSION=	1.1.8
 CATEGORIES=	java
+DISTNAME=	jdk118-doc
 
 MAINTAINER=	martti.kuparinen@ericsson.com
 
 RESTRICTED=	"This software is under license and export control."
 IS_INTERACTIVE=	"Requires manual fetch"
-VERSION=	1.1.8
-WRKSRC=		${WRKDIR}/jdk${VERSION}
+WRKSRC=		${WRKDIR}/jdk${PORTVERSION}
 NO_BUILD=	yes
-PLIST_SUB+=	VERSION=${VERSION}
+PLIST_SUB+=	VERSION=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
@@ -37,9 +36,9 @@ do-fetch:
 .endif
 
 do-install:
-	${MKDIR} ${PREFIX}/jdk${VERSION}
+	${MKDIR} ${PREFIX}/jdk${PORTVERSION}
 	(cd ${WRKSRC} && ${TAR} -cf - docs) \
-		| (cd ${PREFIX}/jdk${VERSION} && ${TAR} -xf -)
+		| (cd ${PREFIX}/jdk${PORTVERSION} && ${TAR} -xf -)
 	@${CAT} ${PKGMESSAGE} | ${SED} s+!!PREFIX!!+${PREFIX}+g
 
 .include <bsd.port.post.mk>

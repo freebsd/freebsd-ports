@@ -1,15 +1,15 @@
 # New ports collection makefile for:	itcl
-# Version required:	3.0.1
 # Date created:		Aug 17 1996
 # Whom:			chuckr
 #
 # $FreeBSD$
 #
 
-DISTNAME=	itcl3.0.1
-PKGNAME=	itcl-3.0.1
+PORTNAME=	itcl
+PORTVERSION=	3.0.1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.tcltk.com/pub/itcl/
+DISTNAME=	itcl3.0.1
 
 MAINTAINER=	dmlb@ragnet.demon.co.uk
 

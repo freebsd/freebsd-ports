@@ -1,15 +1,15 @@
 # New ports collection makefile for:	sr
-# Version required:		2.3.1
 # Date created:			2 Jun 1997
 # Whom:				Ruslan Shevchenko <rssh@satori.ipri.kiev.ua>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	sr231
-PKGNAME=	sr-2.3.1
+PORTNAME=	sr
+PORTVERSION=	2.3.1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.cs.arizona.edu/sr/
+DISTNAME=	sr231
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	rssh@cki.ipri.kiev.ua

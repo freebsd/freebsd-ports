@@ -1,12 +1,12 @@
 # New ports collection makefile for:	Java Cryptograph Extension
-# Version required:	1.1
 # Date created:		2000/02/11
 # Whom:			Kensaku Masuda <greg@greg.rim.or.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	jce-aba-1.1
+PORTNAME=	jce-aba
+PORTVERSION=	1.1
 CATEGORIES=	java
 MASTER_SITES=	http://www.openjce.org/
 

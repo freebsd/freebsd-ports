@@ -1,13 +1,13 @@
 # ex:ts=8
 # Ports collection makefile for:	gcc
-# Version required:			2.8.1
 # Date created:				17 Jan 1998
 # Whom:					David O'Brien <obrien@NUXI.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gcc-2.7.2.3
+PORTNAME=	gcc
+PORTVERSION=	2.7.2.3
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}  \
 		ftp://ftp.gnu.org/gnu/libg++/  \

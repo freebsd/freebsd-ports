@@ -1,11 +1,11 @@
 # New ports collection makefile for:	ghc
-# Version required:			4.06
 # Date created:				28 August 1999
 # Whom:					Simon Marlow <simonmar@microsoft.com>
 #
 # $FreeBSD$
 
-DISTNAME=	ghc-4.06
+PORTNAME=	ghc
+PORTVERSION=	4.06
 CATEGORIES=	lang
 MASTER_SITES=	http://www.haskell.org/ghc/dist/4.06/
 DISTFILES=	ghc-4.06-src${EXTRACT_SUFX} ghc-4.06-x86-hc${EXTRACT_SUFX}

@@ -1,15 +1,15 @@
 # New ports collection makefile for:    Java Servlet Developpers Kit
-# Version required:	2.0
 # Date created:		1999/05/29
 # Whom:			Kensaku Masuda <greg@greg.rim.or.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	jsdk20-solaris2-sparc
-PKGNAME=	jsdk-2.0
+PORTNAME=	jsdk
+PORTVERSION=	2.0
 CATEGORIES=	java
 MASTER_SITES=	
+DISTNAME=	jsdk20-solaris2-sparc
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	greg@greg.rim.or.jp

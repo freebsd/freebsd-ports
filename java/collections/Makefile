@@ -1,14 +1,14 @@
 # New ports collection makefile for:    JDK1.1 Collections package
-# Version required:	1.1
 # Date created:		1999/08/08
 # Whom:			Jose Marques
 #
 # $FreeBSD$
 #
 
-DISTNAME=	collections1_1
-PKGNAME=	collections-1.1
+PORTNAME=	collections
+PORTVERSION=	1.1
 CATEGORIES=	java
+DISTNAME=	collections1_1
 EXTRACT_SUFX=	.zip
 
 MAINTAINER=	noway@nohow.demon.co.uk

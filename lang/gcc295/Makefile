@@ -1,13 +1,13 @@
 # ex:ts=8
 # Ports collection makefile for:	egcs
-# Version required: 0.0
 # Date created:				9 Jan 1998
 # Whom:					John Polstra <jdp@polstra.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gcc-2.95.2
+PORTNAME=	gcc
+PORTVERSION=	2.95.2
 CATEGORIES=	lang java
 MASTER_SITES=	ftp://egcs.cygnus.com/pub/egcs/releases/${DISTNAME}/  \
 		ftp://ftp.ninemoons.com/pub/mirrors/egcs/releases/${DISTNAME}/ \

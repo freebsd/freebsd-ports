@@ -1,15 +1,15 @@
 # New ports collection makefile for:	cos
-# Version required:	1.0
 # Date created:		1999/07/05
 # Whom:			Jose Marques <noway@nohow.demon.co.uk>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	cos
-PKGNAME=	cos-1.0
+PORTNAME=	cos
+PORTVERSION=	1.0
 CATEGORIES=	java
 MASTER_SITES=	http://www.servlets.com/resources/com.oreilly.servlet/
+DISTNAME=	cos
 
 MAINTAINER=	noway@nohow.demon.co.uk
 

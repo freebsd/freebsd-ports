@@ -1,16 +1,16 @@
 # New ports collection makefile for:   slib
-# Version required:    2c0
 # Date created:        01 April 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	slib2c5
-PKGNAME=	slib-2c5
+PORTNAME=	slib
+PORTVERSION=	2c5
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	scm
+DISTNAME=	slib2c5
 
 MAINTAINER=	nakai@FreeBSD.org
 

@@ -1,15 +1,15 @@
 # New ports collection makefile for:	tcl8.0
-# Version required:	8.0
 # Date created:		19 August 1997
 # Whom:			jkh
 #
 # $FreeBSD$
 #
 
-DISTNAME=	tcl8.0.5
-PKGNAME=	tcl-8.0.5
+PORTNAME=	tcl
+PORTVERSION=	8.0.5
 CATEGORIES=	lang tcl80
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_0/
+DISTNAME=	tcl8.0.5
 
 MAINTAINER=	cwt@freebsd.org
 

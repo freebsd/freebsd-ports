@@ -1,6 +1,5 @@
 # ex:ts=8 
 # Ports collection makefile for:	egcs 
-# Version required: 0.0
 # Date created:				9 Jan 1998
 # Whom:					John Polstra <jdp@polstra.com>
 #
@@ -10,8 +9,8 @@
 SNAPDATE=	2000-03-13
 SNAPVER=	${SNAPDATE:S/-//g}
 
-DISTNAME=	gcc-2.96
-PKGNAME=	gcc-devel-${SNAPVER}
+PORTNAME=	gcc-devel
+PORTVERSION=	${SNAPVER}
 CATEGORIES=	lang java
 MASTER_SITES=	ftp://ftp.freesoftware.com/pub/egcs/snapshots/${SNAPDATE}/  \
 		ftp://egcs.cygnus.com/pub/egcs/snapshots/${SNAPDATE}/  \

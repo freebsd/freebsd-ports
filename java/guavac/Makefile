@@ -1,12 +1,12 @@
 # New ports collection makefile for:   guavac
-# Version required:    1.2
 # Date created:        10 October 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	guavac-1.2
+PORTNAME=	guavac
+PORTVERSION=	1.2
 CATEGORIES=	java
 MASTER_SITES=	ftp://ftp.yggdrasil.com/pub/dist/devel/compilers/guavac/
 

@@ -1,12 +1,12 @@
 # New ports collection makefile for:    kaffe
-# Version required:     1.0.b4
 # Date created:         20 February 1995
 # Whom:                 Tim Wilkinson <tim@sarc.city.ac.uk>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	kaffe-1.0.5
+PORTNAME=	kaffe
+PORTVERSION=	1.0.5
 CATEGORIES=	java
 MASTER_SITES=	ftp://ftp.kaffe.org/pub/kaffe/
 

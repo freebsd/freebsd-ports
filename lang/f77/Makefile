@@ -1,15 +1,15 @@
 # Ports collection makefile for:	f77-freebsd
-# Version required: 			0.3
 # Date created:				19 JAN 1999
 # Whom:					Steven G. Kargl
 #
 # $FreeBSD$
 #
 
-DISTNAME=	f77-freebsd.0.3
-PKGNAME=	f77-0.3
+PORTNAME=	f77
+PORTVERSION=	0.3
 CATEGORIES=	lang
 MASTER_SITES=	ftp://troutmask.apl.washington.edu/pub/
+DISTNAME=	f77-freebsd.0.3
 
 MAINTAINER=	kargl@troutmask.apl.washington.edu
 

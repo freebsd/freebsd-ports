@@ -1,17 +1,17 @@
 # New ports collection makefile for:    moscow-ml
-# Version required:     1.43
 # Date created:         2 August 1998
 # Whom:                 chuckr
 #
 # $FreeBSD$
 #
 
-DISTNAME=       mos14src
-PKGNAME=        moscow_ml-1.4
+PORTNAME=	moscow_ml
+PORTVERSION=	1.4
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.dina.kvl.dk/pub/mosml/ \
 		ftp://ftp.csd.uu.se/pub/mirror/mosml/ \
 		ftp://ftp.dcs.ed.ac.uk/pub/ml/Moscow/
+DISTNAME=	mos14src
 
 MAINTAINER=	chuckr@freefall.FreeBSD.org
 

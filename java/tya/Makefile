@@ -5,10 +5,11 @@
 # $FreeBSD$
 #
 
-DISTNAME=	tya17
-PKGNAME=	tya-1.7
+PORTNAME=	tya
+PORTVERSION=	1.7
 CATEGORIES=	java
 MASTER_SITES=	http://sax.sax.de/~adlibit/
+DISTNAME=	tya17
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jburkhol@home.com

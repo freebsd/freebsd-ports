@@ -1,15 +1,15 @@
 # ports collection makefile for:	pbasic
-# Version required:	2.0-950813
 # Date created:		13th August 1995
 # Whom:			Julian Stacey <jhs@freebsd.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	pbasic-2.0-950813
-PKGNAME=	pbasic-2.0
+PORTNAME=	pbasic
+PORTVERSION=	2.0
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_LOCAL}
+DISTNAME=	${PORTNAME}-${PORTVERSION}-950813
 
 MAINTAINER=	asami@FreeBSD.org
 # Ask jhs@freebsd.org if you want newer sources or author's latest e-mail

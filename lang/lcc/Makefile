@@ -1,13 +1,13 @@
 # ex:ts=8
 # Ports collection makefile for:  lcc
-# Version required: 0.0
 # Date created:			  Sat Dec 7, 1996
 # Whom:				  David O'Brien (obrien@cs.ucdavis.edu)
 #
 # $FreeBSD$
 #
 
-DISTNAME=	lcc-3.6
+PORTNAME=	lcc
+PORTVERSION=	3.6
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.cs.princeton.edu/pub/packages/lcc/
 

@@ -1,20 +1,21 @@
 # New ports collection makefile for:	pm3-base
-# Version required:	1.1.13
 # Date created:		6 Feb 2000
 # Whom:			John Polstra <jdp@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	pm3-base-${VERSION}
+PORTNAME=	pm3-base
+PORTVERSION=	1.1.13
 CATEGORIES=	lang
 MASTER_SITES=	http://people.FreeBSD.org/~jdp/distfiles/pm3/
 DISTFILES=	${BOOTSTRAP} \
-		pm3-${VERSION}-src.tar.bz2
+		pm3-${PORTVERSION}-src.tar.bz2
 
 MAINTAINER=	jdp@FreeBSD.org
 
 DIST_SUBDIR=	pm3
+WRKSRC=		${WRKDIR}/pm3-base-${PORTVERSION}
 INSTALL_TARGET=	all
 MAKE_ARGS+=	M3OPTIONS="-DBUILD_ALL -DSHIP_ALL"
 MAN1=		m3bundle.1
@@ -23,7 +24,7 @@ PLIST_SUB+=	SOVERSION=${SOVERSION} TARGET=${TARGET} \
 SCRIPTS_ENV+=	TARGET=${TARGET}
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-WRKSRC=		${WRKDIR}/pm3-${VERSION}
+WRKSRC=		${WRKDIR}/pm3-${PORTVERSION}
 
 PROGS=		bin/m3build \
 		bin/m3bundle \
@@ -37,7 +38,6 @@ PROGS=		bin/m3build \
 		bin/sgmltom3 \
 		lib/m3/${TARGET}/m3cgc1
 SOVERSION=	7
-VERSION=	1.1.13
 
 .include <bsd.port.pre.mk>
 
@@ -45,16 +45,16 @@ VERSION=	1.1.13
 TARGET=		FreeBSD2
 TARGETDIR=	freebsd-2
 WORDSIZE=	32
-BOOTSTRAP=	pm3-${VERSION}-${TARGET}-boot.tar.bz2
+BOOTSTRAP=	pm3-${PORTVERSION}-${TARGET}-boot.tar.bz2
 .elif ${ARCH} == "i386"
 .if ${OSVERSION} < 400011
 TARGET=		FreeBSD3
 TARGETDIR=	freebsd-3
-BOOTSTRAP=	pm3-${VERSION}-${TARGET}-boot.tar.bz2
+BOOTSTRAP=	pm3-${PORTVERSION}-${TARGET}-boot.tar.bz2
 .else
 TARGET=		FreeBSD4
 TARGETDIR=	freebsd-4
-BOOTSTRAP=	pm3-${VERSION}a-${TARGET}-boot.tar.bz2
+BOOTSTRAP=	pm3-${PORTVERSION}a-${TARGET}-boot.tar.bz2
 .endif
 WORDSIZE=	32
 .elif ${ARCH} == "alpha"
@@ -65,7 +65,7 @@ CFLAGS+=	-mieee
 TARGET=		FBSD_ALPHA
 TARGETDIR=	fbsd-alpha
 WORDSIZE=	64
-BOOTSTRAP=	pm3-${VERSION}a-${TARGET}-boot.tar.bz2
+BOOTSTRAP=	pm3-${PORTVERSION}a-${TARGET}-boot.tar.bz2
 .endif
 
 .if empty(TARGET)

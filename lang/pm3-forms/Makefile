@@ -1,12 +1,12 @@
 # New ports collection makefile for:	pm3-forms
-# Version required:	1.1.13
 # Date created:		6 Feb 2000
 # Whom:			John Polstra <jdp@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	pm3-forms-${VERSION}
+PORTNAME=	pm3-forms
+PORTVERSION=	1.1.13
 CATEGORIES=	lang
 DISTFILES=
 
@@ -21,7 +21,7 @@ INSTALL_TARGET=	all
 MAN1=		formsedit.1
 PLIST_SUB+=	SOVERSION=${SOVERSION} TARGET=${TARGET} \
 		TARGETDIR=${TARGETDIR} WORDSIZE=${WORDSIZE}
-WRKSRC=		${WRKDIRPREFIX}${.CURDIR}/../pm3-base/work/pm3-${VERSION}
+WRKSRC=		${WRKDIRPREFIX}${.CURDIR}/../pm3-base/work/pm3-${PORTVERSION}
 
 BUILDDIRS=	network/www/web \
 		graphics/gr-libs/jvideo \
@@ -32,7 +32,6 @@ BUILDDIRS=	network/www/web \
 L1=		${PREFIX}/lib/m3/${TARGET}/
 PROGS=		bin/formsedit
 SOVERSION=	7
-VERSION=	1.1.13
 # hack to work around bsd.port.mk problem
 USE_BZIP2=	yes
 
