@@ -20,5 +20,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${X11BASE}/include/qt2 -I${LOCALBASE}/include/gd" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 USE_GMAKE=	yes
+USE_AUTOMAKE=	yes
 
 .include <bsd.port.mk>
