@@ -137,6 +137,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_ELISPDIR%%/.keep_me
 @unexec rmdir %D/%%RUBY_ELISPDIR%% 2>/dev/null || true
 @unexec rmdir %D/lib/ruby 2>/dev/null || true
+%%PORTDOCS%%%%RUBY_DOCDIR%%/NEWS
 %%PORTDOCS%%%%RUBY_DOCDIR%%/README
 %%PORTDOCS%%%%RUBY_DOCDIR%%/README.jp
 %%PORTDOCS%%%%RUBY_DOCDIR%%/README.EXT
