@@ -1,0 +1,201 @@
+$FreeBSD$
+
+diff -N src/solaris/classes/sun/awt/motif/font.properties.ru.bsd
+--- ../src/solaris/classes/sun/awt/motif/font.properties.ru.bsd	1 Jan 1970 00:00:00 -0000
++++ ../src/solaris/classes/sun/awt/motif/font.properties.ru.bsd	18 Oct 2002 03:02:35 -0000
+@@ -0,0 +1,195 @@
++#
++# @(#)font.properties.linux	1.7 01/04/21
++#
++#  Copyright 1997-2001 by Sun Microsystems, Inc.,
++# 901 San Antonio Road, Palo Alto, California, 94303, U.S.A.
++# All rights reserved.
++#
++# This software is the confidential and proprietary information
++# of Sun Microsystems, Inc. ("Confidential Information").  You
++# shall not disclose such Confidential Information and shall use
++# it only in accordance with the terms of the license agreement
++# you entered into with Sun.
++#
++
++#
++# FreeBSD version derived from the Linux version derived from the
++# version for SunOS 5.5.1 Notice that
++# we use the .ttf files shipped in the JDK distribution.
++#
++
++# Serif font definition
++#
++serif.0=-*-times new roman-medium-r-normal-*-*-%d-*-*-*-*-koi8-u
++
++serif.italic.0=-*-times new roman-medium-i-normal-*-*-%d-*-*-*-*-koi8-u
++
++serif.bold.0=-*-times new roman-bold-r-normal-*-*-%d-*-*-*-*-koi8-u
++
++serif.bolditalic.0=-*-times new roman-bold-i-normal-*-*-%d-*-*-*-*-koi8-u
++
++# SansSerif font definition
++#
++sansserif.0=-*-arial-medium-r-normal--*-%d-*-*-*-*-koi8-u
++
++sansserif.italic.0=-*-arial-medium-i-normal--*-%d-*-*-*-*-koi8-u
++
++sansserif.bold.0=-*-arial-bold-r-normal--*-%d-*-*-*-*-koi8-u
++
++sansserif.bolditalic.0=-*-arial-bold-i-normal--*-%d-*-*-*-*-koi8-u
++
++# Monospaced font definition
++#
++monospaced.0=-*-courier new-medium-r-normal--*-%d-*-*-*-*-koi8-u
++
++monospaced.italic.0=-*-courier new-medium-r-normal--*-%d-*-*-*-*-koi8-u
++
++monospaced.bold.0=-*-courier new-medium-r-normal--*-%d-*-*-*-*-koi8-u
++
++monospaced.bolditalic.0=-*-courier new-medium-r-normal--*-%d-*-*-*-*-koi8-u
++
++# Dialog font definition
++#
++dialog.0=-*-arial-medium-r-normal--*-%d-*-*-*-*-koi8-u
++
++dialog.italic.0=-*-arial-medium-i-normal--*-%d-*-*-*-*-koi8-u
++
++dialog.bold.0=-*-arial-bold-r-normal--*-%d-*-*-*-*-koi8-u
++
++dialog.bolditalic.0=-*-arial-bold-i-normal--*-%d-*-*-*-*-koi8-u
++
++# DialogInput font definition
++#
++dialoginput.0=-*-courier new-medium-r-normal--*-%d-*-*-*-*-koi8-u
++
++dialoginput.italic.0=-*-courier new-medium-i-normal--*-%d-*-*-*-*-koi8-u
++
++dialoginput.bold.0=-*-courier new-bold-r-normal--*-%d-*-*-*-*-koi8-u
++
++dialoginput.bolditalic.0=-*-courier new-bold-i-normal--*-%d-*-*-*-*-koi8-u
++
++# Default font definition
++#
++default.char=274f
++
++# name aliases
++#
++alias.timesroman=serif
++alias.helvetica=sansserif
++alias.courier=monospaced
++
++# for backward compatibility
++#uncomment with urw fonts
++#zapfdingbats.0=--zapf dingbats-medium-r-normal--*-%d-*-*-*-*-adobe-fontspecific
++
++# Static FontCharset info.
++#
++# This information is used by the font which is not indexed by Unicode.
++# Such fonts can use their own subclass of FontCharset.
++#
++# This information can be overriden by describing more specific style.
++# For example
++#
++#  fontcharset.serif.plain.3=SpecialSymbols
++#  means serif.plain.3 font's index can be retrieved with the convert() method
++#  of instance of SpecialSymbols and what kind of characters serif.plain.3 font
++#  has can be judged with the isCovered() method of instance of SpecialSymbols.
++#
++fontcharset.serif.0=sun.io.CharToByteISO8859_1
++fontcharset.serif.1=sun.awt.CharToByteSymbol
++
++fontcharset.sansserif.0=sun.io.CharToByteISO8859_1
++fontcharset.sansserif.1=sun.awt.CharToByteSymbol
++
++fontcharset.monospaced.0=sun.io.CharToByteISO8859_1
++fontcharset.monospaced.1=sun.awt.CharToByteSymbol
++
++fontcharset.dialog.0=sun.io.CharToByteISO8859_1
++fontcharset.dialog.1=sun.awt.CharToByteSymbol
++
++fontcharset.dialoginput.0=sun.io.CharToByteISO8859_1
++fontcharset.dialoginput.1=sun.awt.CharToByteSymbol
++
++#replace font line if you have zapf fonts
++#fontcharset.zapfdingbats.0=sun.io.CharToByteISO8859_1
++
++# exclusion info.
++#
++# This information describe exclusion ranges for each fonts.
++#
++# 'exclusion.serif.plain.0' overrides 'exclusion.serif.0', and
++# 'exclusion.serif.0' overrides exclusion.0, and so on.
++#
++
++# XFontSet string
++# X11 only properties
++#
++
++fontset.serif.plain=\
++-*-*-medium-r-normal--*-%d-*-*-*-*-koi8-u
++
++fontset.serif.italic=\
++-*-*-medium-i-normal--*-%d-*-*-*-*-koi8-u
++
++fontset.serif.bold=\
++-*-*-demibold-r-normal--*-%d-*-*-*-*-koi8-u
++
++fontset.serif.bolditalic=\
++-*-*-demibold-i-normal--*-%d-*-*-*-*-koi8-u
++
++fontset.sansserif.italic=\
++-*-arial-medium-i-normal--*-%d-*-*-*-*-koi8-u
++
++fontset.sansserif.bold=\
++-*-arial-bold-r-normal--*-%d-*-*-*-*-koi8-u
++
++fontset.sansserif.bolditalic=\
++-*-arial-bold-i-normal--*-%d-*-*-*-*-koi8-u
++
++fontset.sansserif.plain=\
++-*-arial-medium-r-normal--*-%d-*-*-*-*-koi8-u
++
++fontset.monospaced.italic=\
++-*-*-medium-r-normal-sans-*-%d-*-*-m-*-koi8-u
++
++fontset.monospaced.bold=\
++-*-*-bold-r-normal-sans-*-%d-*-*-m-*-koi8-u
++
++fontset.monospaced.bolditalic=\
++-*-*-bold-r-normal-sans-*-%d-*-*-m-*-koi8-u
++
++fontset.monospaced.plain=\
++-*-*-medium-r-normal-sans-*-%d-*-*-m-*-koi8-u
++
++fontset.dialog.italic=\
++-*-*-medium-i-normal-sans-*-%d-*-*-*-*-koi8-u
++
++fontset.dialog.bold=\
++-*-*-bold-r-normal-sans-*-%d-*-*-*-*-koi8-u
++
++fontset.dialog.bolditalic=\
++-*-*-bold-i-normal-sans-*-%d-*-*-*-*-koi8-u
++
++fontset.dialog.plain=\
++-*-*-medium-r-normal-sans-*-%d-*-*-*-*-koi8-u
++
++fontset.dialoginput.italic=\
++-*-*-medium-r-normal-sans-*-%d-*-*-m-*-koi8-u
++
++fontset.dialoginput.bold=\
++-*-*-bold-r-normal-sans-*-%d-*-*-m-*-koi8-u
++
++fontset.dialoginput.bolditalic=\
++-*-*-bold-r-normal-sans-*-%d-*-*-m-*-koi8-u
++
++fontset.dialoginput.plain=\
++-*-*-medium-r-normal-sans-*-%d-*-*-m-*-koi8-u
++
++#uncomment with urw fonts
++#fontset.zapfdingbats=\
++#--zapf dingbats-medium-r-normal--*-%d-*-*-*-*-adobe-fontspecific
++
++#
++fontset.default=\
++-*-*-medium-r-normal-sans-*-%d-*-*-*-*-koi8-u
++#
