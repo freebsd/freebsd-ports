@@ -3,15 +3,15 @@
 # Date created:        01 April 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.1.1.1 1998/08/25 14:22:27 vanilla Exp $
+# $Id: Makefile,v 1.2 1998/10/26 13:15:54 vanilla Exp $
 #
 
 DISTNAME=	slib2c0
-PKGNAME=        slib-2c0
+PKGNAME=	slib-2c0
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.gnome.org/pub/GNOME/extra-src/
 
-MAINTAINER=	Nakai@technologist.com
+MAINTAINER=	nacai@iname.com
 
 BUILD_DEPENDS=	scheme48:${PORTSDIR}/lang/scheme48
 

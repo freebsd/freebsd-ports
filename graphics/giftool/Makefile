@@ -3,14 +3,14 @@
 # Date created:        14 October 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.3 1996/12/07 09:28:43 max Exp $
+# $Id: Makefile,v 1.4 1997/06/04 07:34:49 asami Exp $
 #
 
 DISTNAME=	giftool-1.0
 CATEGORIES=	graphics
-MASTER_SITES=   ftp://ftp.sbs.de/pub/www/tools/giftool/
+MASTER_SITES=	ftp://ftp.sbs.de/pub/www/tools/giftool/
 
-MAINTAINER=	Nakai@Mlab.t.u-tokyo.ac.jp
+MAINTAINER=	nacai@iname.com
 
 NO_CDROM=	"Shareware"
 

@@ -3,16 +3,16 @@
 # Date created:        31 October 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.4 1997/04/30 03:18:00 asami Exp $
+# $Id: Makefile,v 1.5 1998/08/05 09:30:50 asami Exp $
 #
 
 DISTNAME=	GB
-PKGNAME=        vgb-0.7
+PKGNAME=	vgb-0.7
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 DISTFILES=	VGB.tar.Z
 
-MAINTAINER=	Nakai@Mlab.t.u-tokyo.ac.jp
+MAINTAINER=	nacai@iname.com
 
 USE_X_PREFIX=	yes
 CONFIGURE_ENV=  X11BASE=${X11BASE}

@@ -3,7 +3,7 @@
 # Date created:        17 June 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.22 1999/01/05 02:23:53 vanilla Exp $
+# $Id: Makefile,v 1.23 1999/01/07 10:45:06 vanilla Exp $
 #
 
 DISTNAME=	gnome-libs-0.99.2
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.jimpick.com/pub/mirrors/gnome/sources/ \
 		ftp://gnomeftp.wgn.net/pub/gnome/sources/ \
 		ftp://ftp.gnome.org/pub/GNOME/sources/
 
-MAINTAINER=	Nakai@technologist.com
+MAINTAINER=	nacai@iname.com
 
 BUILD_DEPENDS=	gettext:${PORTSDIR}/devel/gettext
 RUN_DEPENDS=	gettext:${PORTSDIR}/devel/gettext

@@ -3,15 +3,15 @@
 # Date created:         20 Oct 1996
 # Whom:                 Yukihiro Nakai <nakai@mlab.t.u-tokyo.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/01/12 05:42:39 max Exp $
 #
 
 DISTNAME=	whirlgif
-PKGNAME=        whirlgif-2.01
-CATEGORIES=    graphics
-MASTER_SITES=   http://www.msg.net/utility/whirlgif/
+PKGNAME=	whirlgif-2.01
+CATEGORIES=	graphics
+MASTER_SITES=	http://www.msg.net/utility/whirlgif/
 
-MAINTAINER=     nakai@mlab.t.u-tokyo.ac.jp
+MAINTAINER=	nacai@iname.com
 
 MAN1=		whirlgif.1
 

@@ -3,7 +3,7 @@
 # Date created:		20 October 1996
 # Whom:			Yukihiro Nakai <nakai@mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.8 1998/07/24 12:50:47 vanilla Exp $
+# $Id: Makefile,v 1.9 1998/08/25 00:44:14 asami Exp $
 #
 
 DISTNAME=	xrubik-5.4.4
@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games/xpuzzles
 
-MAINTAINER=	nakai@technologist.com
+MAINTAINER=	nacai@iname.com
 
 WRKSRC=		${WRKDIR}/xrubik
 USE_IMAKE=	yes

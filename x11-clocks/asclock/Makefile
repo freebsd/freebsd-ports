@@ -3,7 +3,7 @@
 # Date created:        20 June 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.4 1998/09/22 22:32:03 asami Exp $
+# $Id: Makefile,v 1.5 1998/11/29 12:43:11 asami Exp $
 #
 
 DISTNAME=	asclock
@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=		applications
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	Nakai@Mlab.t.u-tokyo.ac.jp
+MAINTAINER=	nacai@iname.com
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 

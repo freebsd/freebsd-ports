@@ -3,7 +3,7 @@
 # Date created:        20 August 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/12/15 21:30:02 jseger Exp $
 #
 
 DISTNAME=	vpce03f_freebsd
@@ -12,7 +12,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	http://www.fortunecity.com/roswell/vanthal/10/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	Nakai@Mlab.t.u-tokyo.ac.jp
+MAINTAINER=	nacai@iname.com
 
 NO_WRKSUBDIR=	yes
 USE_XLIB=	yes

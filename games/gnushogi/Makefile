@@ -3,7 +3,7 @@
 # Date created:        9 October 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1996/11/17 11:44:57 asami Exp $
+# $Id: Makefile,v 1.2 1997/01/03 11:33:00 obrien Exp $
 #
 
 DISTNAME=	gnushogi-1.2p03
@@ -11,7 +11,7 @@ PKGNAME=	gnushogi-1.2.3
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GNU}
 
-MAINTAINER=	Nakai@Mlab.t.u-tokyo.ac.jp
+MAINTAINER=	nacai@iname.com
 
 DOCFILES= BOOKFILES CHANGES CONTRIB COPYING GENERAL INSTALL PORTING \
 	README-FIRST listserv.ref shogi.rules tutorial1.gam tutorial2.gam

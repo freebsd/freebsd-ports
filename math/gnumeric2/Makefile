@@ -3,7 +3,7 @@
 # Date created:				08 October 1998
 # Whom:					Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.3 1998/11/18 12:09:05 asami Exp $
+# $Id: Makefile,v 1.4 1999/01/05 08:00:33 vanilla Exp $
 #
 
 DISTNAME=	gnumeric-0.5
@@ -11,10 +11,10 @@ CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.jimpick.com/pub/mirrors/gnome/sources/ \
 		ftp://ftp.gnome.org/pub/GNOME/sources/
 
-MAINTAINER=	Nakai@technologist.com
+MAINTAINER=	nacai@iname.com
 
-LIB_DEPENDS=	xml.0:${PORTSDIR}/textproc/libxml
-LIB_DEPENDS+=	gnome.0:${PORTSDIR}/x11/gnomelibs
+LIB_DEPENDS=	xml.0:${PORTSDIR}/textproc/libxml \
+		gnome.1:${PORTSDIR}/x11/gnomelibs
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes

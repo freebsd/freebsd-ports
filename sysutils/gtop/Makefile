@@ -3,7 +3,7 @@
 # Date created:        28 September 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.2 1998/10/12 06:13:47 vanilla Exp $
+# $Id: Makefile,v 1.3 1999/01/01 06:44:35 vanilla Exp $
 #
 
 DISTNAME=	gtop-0.99.0
@@ -12,9 +12,9 @@ MASTER_SITES=	ftp://ftp.jimpick.com/pub/mirrors/gnome/sources/ \
 		ftp://ftp.gnome.org/pub/GNOME/sources/
 #		ftp://ftp.home-of-linux.org/pub/gtop/0.28.1/
 
-MAINTAINER=	Nakai@technologist.com
+MAINTAINER=	nacai@iname.com
 
-LIB_DEPENDS=	gnome.0:${PORTSDIR}/x11/gnomelibs \
+LIB_DEPENDS=	gnome.1:${PORTSDIR}/x11/gnomelibs \
 		gtop.0:${PORTSDIR}/devel/libgtop
 
 USE_X_PREFIX=	yes

@@ -3,7 +3,7 @@
 # Date created:        19 Januruary 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.11 1998/09/17 00:32:58 asami Exp $
+# $Id: Makefile,v 1.12 1998/12/23 01:33:52 steve Exp $
 #
 
 DISTNAME=	mlvwm089
@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.bioele.nuee.nagoya-u.ac.jp/member/tak/mlvwm/ \
 		http://www.bioele.nuee.nagoya-u.ac.jp/member/tak/
 DISTFILES=	mlvwm089.tgz mini-icons.tar.gz
 
-MAINTAINER=	Nakai@technologist.com
+MAINTAINER=	nacai@iname.com
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 

@@ -3,7 +3,7 @@
 # Date created:         20 July 1997
 # Whom:                 Yukihiro Nakai<Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.4 1999/01/07 02:31:40 simokawa Exp $
+# $Id: Makefile,v 1.5 1999/01/12 07:07:19 flathill Exp $
 #
 
 DISTNAME=	snes116a
@@ -12,7 +12,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	http://www.snes9x.com/zips/
 EXTRACT_SUFX=	.zip
 
-MAINTAINER=	Nacai@iname.com
+MAINTAINER=	nacai@iname.com
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 BUILD_DEPENDS+=	egcc:${PORTSDIR}/lang/pgcc

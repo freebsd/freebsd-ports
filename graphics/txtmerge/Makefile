@@ -3,7 +3,7 @@
 # Date created:		20 Oct 1996
 # Whom:			Yukihiro Nakai <nakai@mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.3 1997/10/17 13:17:14 itojun Exp $
+# $Id: Makefile,v 1.4 1998/03/23 04:56:22 asami Exp $
 #
 
 DISTNAME=	txtmerge101
@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.cs.uni-magdeburg.de/pub/www/xanime/ \
 		ftp://ftp.doc.ic.ac.uk/computing/information-systems/WWW/xanime/
 
-MAINTAINER=	Nakai@Mlab.t.u-tokyo.ac.jp
+MAINTAINER=	nacai@iname.com
 
 BROKEN=		build
 

@@ -3,7 +3,7 @@
 # Date created:        21 August 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/10/19 14:29:02 vanilla Exp $
 #
 
 DISTNAME=	ggv-0.26
@@ -11,9 +11,9 @@ CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.jimpick.com/pub/mirrors/gnome/sources/ \
 		ftp://ftp.gnome.org/pub/GNOME/sources/
 
-MAINTAINER=	Nakai@technologist.com
+MAINTAINER=	nacai@iname.com
 
-LIB_DEPENDS=	gnome.0:${PORTSDIR}/x11/gnomelibs
+LIB_DEPENDS=	gnome.1:${PORTSDIR}/x11/gnomelibs
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
