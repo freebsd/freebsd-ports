@@ -152,6 +152,7 @@
     SUBDIR += ilu
     SUBDIR += imake
     SUBDIR += imake-4
+    SUBDIR += jakarta-ant
     SUBDIR += jam
     SUBDIR += kdbg
     SUBDIR += kdelibdocs
