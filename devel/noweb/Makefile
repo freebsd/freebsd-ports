@@ -27,6 +27,9 @@ MLINKS=		notangle.1 noweave.1	notangle.1 nountangle.1
 NOWEBTEXDIR=	${PREFIX}/share/texmf-local/tex/plain/noweb
 NOWEBLATEXDIR=	${PREFIX}/share/texmf-local/tex/latex/noweb
 
+post-patch:
+	@${TOUCH} ${WRKSRC}/c/modules.[ch]
+
 post-build:
 	@(cd ${WRKSRC} && ${SH} ${WRKSRC}/awkname awk)
 

@@ -1,0 +1,21 @@
+--- c/modules.nw.orig	Wed Mar 28 14:44:00 2001
++++ c/modules.nw	Mon Nov 10 09:25:05 2003
+@@ -197,11 +197,17 @@
+ out as a special case.
+ This change probably blows the case where the module being expanded is
+ empty.
++
++If the lookup fails then the module (or chunk) is an undefined name.
++We complain about it but want to output the original source.
++We just wrap it in the bogus chunk name in the angle brackets 
++that it must have had in the input and output it. (Tim Daly Nov 13, 2002)
+ <<expand a module>>=
+ newmod = lookup(p->contents);
+ if (newmod==NULL) {
+-    errormsg (Error, "undefined chunk name: @<<%s@>>", p->contents);
++    errormsg (Error, "ignoring undefined chunk name: @<<%s@>>", p->contents);
+     error=Error;
++    printf("@<<%s@>>",p->contents);
+ } else {
+     int retcode;
+     if (*locformat == 0 && partial_distance == 0) {
