@@ -2,6 +2,7 @@ etc/freetds/interfaces
 include/bkpublic.h
 include/cspublic.h
 include/cstypes.h
+include/ctlib.h
 include/ctpublic.h
 include/dblib.h
 include/sqldb.h
