@@ -1,0 +1,17 @@
+NAME
+       mei - initialize 3.5" magneto-optical disk medium
+
+SYNOPSIS
+       mei  [-isucvqh] [-n x] [-b boot-file] [-d SCSI-device] [-l
+       volume-label]
+
+DESCRIPTION
+       mei formats 3.5" magneto-optical (MO) disk for MS-DOS file
+       system.
+
+       Supported  medium types are 128MB, 230MB, 540MB and 640MB.
+       Supported format types are IBM standard format  and  semi-
+       IBM  format of super-floppy formats.  Below are statistics
+       of each medium and format.
+
+comes with magneto-optical disk ejection tool, "moe".
