@@ -27,6 +27,8 @@ MAKE_ENV+=	QTDIR=${QTDIR}
 
 DOC_FILES=	COPYING ChangeLog INSTALL README TODO
 
+BROKEN=		"Missing dependency"
+
 do-configure:
 	@cd ${CONFIGURE_WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} ${QMAKE}
