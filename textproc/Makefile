@@ -125,6 +125,7 @@
     SUBDIR += py-expat
     SUBDIR += py-martel
     SUBDIR += py-mxTextTools
+    SUBDIR += py-trex
     SUBDIR += py-xml
     SUBDIR += rand
     SUBDIR += rman
