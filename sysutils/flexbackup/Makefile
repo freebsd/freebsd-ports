@@ -1,14 +1,15 @@
 # New ports collection makefile for:    flexbackup
-# Version required:     0.9.6
-# Date created:         Mon Sep 27 21:35:45 MST 1999
+# Version required:     0.9.7
+# Date created:         Tue Oct 19 22:46:36 MST 1999
 # Whom:                 John Reynolds <jreynold@primenet.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=       flexbackup-0.9.6
+DISTNAME=       flexbackup-0.9.7
 CATEGORIES=     sysutils
-MASTER_SITES=  	http://members.home.com/edwinh/flexbackup/tarball/ \
+MASTER_SITES=   http://www.bluecherry.net/~edwinh/flexbackup/tarball/ \
+		http://members.home.com/edwinh/flexbackup/tarball/ \
 		http://metalab.unc.edu/pub/linux/system/backup/
 
 MAINTAINER=     jreynold@primenet.com
@@ -20,8 +21,8 @@ NO_BUILD  = yes
 USE_PERL5 = yes
 
 post-configure:
-	@${INSTALL_DATA} ${WRKSRC}/flexbackup.conf ${WRKSRC}/flexbackup.conf.sample
-	@${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/flexbackup.README
+	@cp ${WRKSRC}/flexbackup.conf ${WRKSRC}/flexbackup.conf.sample
+	@cp ${WRKSRC}/README ${WRKSRC}/flexbackup.README
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/flexbackup ${PREFIX}/bin
@@ -30,6 +31,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/flexbackup.README ${PREFIX}/share/flexbackup
 
 post-install:
-	@${CAT} ${PKGDIR}/MESSAGE
+	@cat ${PKGDIR}/MESSAGE
 
 .include <bsd.port.mk>
