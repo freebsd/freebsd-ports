@@ -7,9 +7,7 @@
 #
 
 PORTNAME=	wine
-# We will skip the 2000.06.14 snapshot of Wine as this proved to be
-# somewhat unstable (also on other platforms).
-PORTVERSION=	2000.05.26
+PORTVERSION=	2000.07.16
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	ALPHA/wine/development
@@ -22,7 +20,8 @@ LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 
 WRKSRC=		${WRKDIR}/wine-${PORTVERSION:S/.//g}
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS=-Wl,-rpath,${PREFIX}/lib/wine
+CONFIGURE_ARGS=	--disable-opengl
+CONFIGURE_ENV= LIBS=-Wl,-rpath,${PREFIX}/lib/wine
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib/wine
 MAN1=		wine.1
@@ -48,7 +47,7 @@ pre-extract:
 post-patch:
 	@${PERL} -pi.sofix -e 's/SOVERSION = 1.0/SOVERSION = 1/g' \
 		${WRKSRC}/Makefile.in
-.for F in avifil32/Makefile.in comctl32/Makefile.in commdlg/Makefile.in dciman32/Makefile.in ddraw/Makefile.in dinput/Makefile.in dplayx/Makefile.in dsound/Makefile.in gdi/Makefile.in icmp/Makefile.in imagehlp/Makefile.in imm32/Makefile.in lzexpand/Makefile.in mpr/Makefile.in msacm/Makefile.in msacm32/Makefile.in msnet32/Makefile.in msvideo/Makefile.in odbc32/Makefile.in ole32/Makefile.in oleaut32/Makefile.in olecli/Makefile.in oledlg/Makefile.in olepro32/Makefile.in olesvr/Makefile.in opengl32/Makefile.in psapi/Makefile.in rasapi32/Makefile.in richedit/Makefile.in setupx/Makefile.in shell32/Makefile.in sound/Makefile.in stress/Makefile.in tapi32/Makefile.in ttydrv/Makefile.in urlmon/Makefile.in user/Makefile.in version/Makefile.in win32s/Makefile.in win87em/Makefile.in winaspi/Makefile.in windebug/Makefile.in wing/Makefile.in wininet/Makefile.in winmm/Makefile.in winmm/joystick/Makefile.in winmm/mcianim/Makefile.in winmm/mciavi/Makefile.in winmm/mcicda/Makefile.in winmm/mciseq/Makefile.in winmm/mciwave/Makefile.in winmm/midimap/Makefile.in winmm/wavemap/Makefile.in winmm/wineoss/Makefile.in winsock/Makefile.in winspool/Makefile.in x11drv/Makefile.in
+.for F in avifil32/Makefile.in comctl32/Makefile.in commdlg/Makefile.in crtdll/Makefile.in dciman32/Makefile.in ddraw/Makefile.in dinput/Makefile.in dplay/Makefile.in dplayx/Makefile.in dsound/Makefile.in gdi/Makefile.in icmp/Makefile.in imagehlp/Makefile.in imm32/Makefile.in kernel/Makefile.in lzexpand/Makefile.in mpr/Makefile.in msacm/Makefile.in msacm32/Makefile.in msnet32/Makefile.in msvideo/Makefile.in odbc32/Makefile.in ole32/Makefile.in oleaut32/Makefile.in olecli/Makefile.in oledlg/Makefile.in olepro32/Makefile.in olesvr/Makefile.in opengl32/Makefile.in psapi/Makefile.in rasapi32/Makefile.in richedit/Makefile.in rpcrt4/Makefile.in serialui/Makefile.in setupapi/Makefile.in setupx/Makefile.in shell32/Makefile.in shfolder/Makefile.in shlwapi/Makefile.in sound/Makefile.in stress/Makefile.in tapi32/Makefile.in ttydrv/Makefile.in urlmon/Makefile.in user/Makefile.in version/Makefile.in win32s/Makefile.in win87em/Makefile.in winaspi/Makefile.in windebug/Makefile.in wineps/Makefile.in wing/Makefile.in wininet/Makefile.in winmm/Makefile.in winmm/joystick/Makefile.in winmm/mcianim/Makefile.in winmm/mciavi/Makefile.in winmm/mcicda/Makefile.in winmm/mciseq/Makefile.in winmm/mciwave/Makefile.in winmm/midimap/Makefile.in winmm/wavemap/Makefile.in winmm/wineoss/Makefile.in winsock/Makefile.in winspool/Makefile.in wow32/Makefile.in wsock32/Makefile.in x11drv/Makefile.in
 	@${PERL} -pi.sofix -e 's/SOVERSION = 1.0/SOVERSION = 1/g' \
 		${WRKSRC}/dlls/${F}
 .endfor

@@ -1,17 +1,10 @@
-Index: Makefile.in
-===================================================================
-RCS file: /home/wine/wine/Makefile.in,v
-retrieving revision 1.79
-diff -c -3 -p -r1.79 Makefile.in
-*** Makefile.in	2000/04/24 17:17:49	1.79
---- Makefile.in	2000/05/29 14:30:26
-*************** uninstall_programs: dummy
-*** 209,215 ****
-  
-  install::
-  	for i in $(INSTALLSUBDIRS); do (cd $$i && $(MAKE) install) || exit 1; done
-- 	-$(LDCONFIG)
-  
-  uninstall::
-  	for i in $(INSTALLSUBDIRS); do (cd $$i && $(MAKE) uninstall) || exit 1; done
---- 209,214 ----
+--- Makefile.in.old	Tue Jul 18 18:36:26 2000
++++ Makefile.in	Tue Jul 18 18:36:36 2000
+@@ -147,7 +147,6 @@
+ 	[ -d $(bindir) ] || $(MKDIR) $(bindir)
+ 	$(INSTALL_PROGRAM) wine $(bindir)/wine
+ 	$(INSTALL_PROGRAM) loader/dos/dosmod $(bindir)/dosmod
+-	-$(LDCONFIG)
+ 
+ uninstall:: $(INSTALLSUBDIRS:%=%/__uninstall__)
+ 	cd $(libdir) && $(RM) libwine.a libwine.so libwine.so.$(SOVERSION)
