@@ -9320,6 +9320,7 @@ zoneinfo	src/share/zoneinfo
 zoo		ports/archivers/zoo
 zope		ports/www/zope
 zope-cmf	ports/www/zope-cmf
+zope-cmfforum	ports/www/zope-cmfforum
 zope-guf	ports/www/zope-guf
 zope-zmysqlda	ports/www/zope-zmysqlda
 zope-zpt	ports/www/zope-zpt
