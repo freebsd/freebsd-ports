@@ -1,0 +1,11 @@
+--- doc/Makefile.in.orig	Thu Mar  4 10:28:04 2004
++++ doc/Makefile.in	Thu Mar  4 10:28:18 2004
+@@ -185,7 +185,7 @@
+ tmpdir = @tmpdir@
+ varprefix = @varprefix@
+ 
+-SUBDIRS = manual ja pl ru sk
++SUBDIRS = manual
+ 
+ man_MANS = gendiff.1 rpm.8 rpmbuild.8 rpm2cpio.8
+ 

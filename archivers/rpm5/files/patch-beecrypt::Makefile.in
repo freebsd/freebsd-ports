@@ -1,0 +1,22 @@
+--- beecrypt/Makefile.in.orig	Wed Feb 13 16:03:22 2002
++++ beecrypt/Makefile.in	Wed Mar  3 11:14:53 2004
+@@ -243,8 +243,8 @@
+ 	$(mkinstalldirs) $(DESTDIR)$(libdir)
+ 	@list='$(lib_LTLIBRARIES)'; for p in $$list; do \
+ 	  if test -f $$p; then \
+-	    echo "$(LIBTOOL)  --mode=install $(INSTALL) $$p $(DESTDIR)$(libdir)/$$p"; \
+-	    $(LIBTOOL)  --mode=install $(INSTALL) $$p $(DESTDIR)$(libdir)/$$p; \
++	    echo "$(LIBTOOL)  --mode=install $(INSTALL_DATA) $$p $(DESTDIR)$(libdir)/$$p"; \
++	    $(LIBTOOL)  --mode=install $(INSTALL_DATA) $$p $(DESTDIR)$(libdir)/$$p; \
+ 	  else :; fi; \
+ 	done
+ 
+@@ -478,7 +478,7 @@
+ install-exec-am: install-libLTLIBRARIES
+ install-exec: install-exec-recursive
+ 
+-install-data-am: install-pkgincludeHEADERS
++install-data-am:
+ install-data: install-data-recursive
+ 
+ install-am: all-am

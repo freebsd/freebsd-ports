@@ -53,6 +53,7 @@
     SUBDIR += rox-archive
     SUBDIR += rpm
     SUBDIR += rpm2cpio
+    SUBDIR += rpm4
     SUBDIR += ruby-bz2
     SUBDIR += ruby-zip
     SUBDIR += sectar

@@ -1,0 +1,85 @@
+--- rpmio/Makefile.in.orig	Thu Feb 14 16:58:37 2002
++++ rpmio/Makefile.in	Thu Mar  4 00:55:37 2004
+@@ -197,7 +197,7 @@
+ 	-I$(top_srcdir)/build \
+ 	-I$(top_srcdir)/lib \
+ 	-I$(top_srcdir)/beecrypt \
+-	-I$(top_srcdir)/popt \
++	@WITH_POPT_INCLUDE@ \
+ 	@WITH_ZLIB_INCLUDE@ \
+ 	@INCPATH@
+ 
+@@ -209,7 +209,7 @@
+ 
+ noinst_HEADERS = rpmio_internal.h rpmpgp.h
+ 
+-LIBS = @LIBS@ @WITH_ZLIB_LIB@ -lrt -lpthread
++LIBS = @LIBS@ @WITH_ZLIB_LIB@
+ 
+ BEECRYPTLOBJS = $(shell cat $(top_builddir)/beecrypt/listobjs)
+ 
+@@ -222,18 +222,18 @@
+ librpmio_la_DEPENDENCIES = .created
+ 
+ tdigest_SOURCES = tdigest.c
+-tdigest_LDADD =  librpmio.la $(top_builddir)/popt/libpopt.la
++tdigest_LDADD =  librpmio.la @WITH_POPT_LIB@
+ 
+ trpmio_SOURCES = trpmio.c
+-trpmio_LDADD =  librpmio.la $(top_builddir)/popt/libpopt.la
++trpmio_LDADD =  librpmio.la @WITH_POPT_LIB@
+ 
+ tkey_SOURCES = tkey.c
+ tkey_LDFLAGS = -all-static
+-tkey_LDADD =  librpmio.la $(top_builddir)/popt/libpopt.la
++tkey_LDADD =  librpmio.la @WITH_POPT_LIB@
+ 
+ tring_SOURCES = tring.c
+ tring_LDFLAGS = -all-static
+-tring_LDADD =  librpmio.la $(top_builddir)/popt/libpopt.la
++tring_LDADD =  librpmio.la @WITH_POPT_LIB@
+ 
+ dumpasn1_SOURCES = dumpasn1.c
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+@@ -248,15 +248,17 @@
+ librpmio_la_OBJECTS =  digest.lo macro.lo rpmio.lo rpmlog.lo \
+ rpmmalloc.lo rpmpgp.lo rpmrpc.lo strcasecmp.lo stubs.lo url.lo ugid.lo
+ tdigest_OBJECTS =  tdigest.$(OBJEXT)
+-tdigest_DEPENDENCIES =  librpmio.la $(top_builddir)/popt/libpopt.la
+-tdigest_LDFLAGS = 
++tdigest_DEPENDENCIES =  librpmio.la
++tdigest_LDFLAGS = @WITH_POPT_LIB@
+ tkey_OBJECTS =  tkey.$(OBJEXT)
+-tkey_DEPENDENCIES =  librpmio.la $(top_builddir)/popt/libpopt.la
++tkey_DEPENDENCIES =  librpmio.la
++tkey_LDFLAGS = @WITH_POPT_LIB@
+ tring_OBJECTS =  tring.$(OBJEXT)
+-tring_DEPENDENCIES =  librpmio.la $(top_builddir)/popt/libpopt.la
++tring_DEPENDENCIES =  librpmio.la
++tring_LDFLAGS = @WITH_POPT_LIB@
+ trpmio_OBJECTS =  trpmio.$(OBJEXT)
+-trpmio_DEPENDENCIES =  librpmio.la $(top_builddir)/popt/libpopt.la
+-trpmio_LDFLAGS = 
++trpmio_DEPENDENCIES =  librpmio.la
++trpmio_LDFLAGS = @WITH_POPT_LIB@
+ dumpasn1_OBJECTS =  dumpasn1.$(OBJEXT)
+ dumpasn1_LDADD = $(LDADD)
+ dumpasn1_DEPENDENCIES = 
+@@ -461,7 +463,7 @@
+ install-exec-am: install-libLTLIBRARIES
+ install-exec: install-exec-am
+ 
+-install-data-am: install-pkgincHEADERS install-data-local
++install-data-am: install-pkgincHEADERS
+ install-data: install-data-am
+ 
+ install-am: all-am
+@@ -535,7 +537,7 @@
+ 	mv .librpmio.la librpmio.la
+ 
+ $(top_builddir)/beecrypt/listobjs:
+-	make -C $(top_builddir)/beecrypt listobjs
++	$(MAKE) -C $(top_builddir)/beecrypt listobjs
+ 
+ .created: $(top_builddir)/beecrypt/listobjs
+ 	for lo in $(BEECRYPTLOBJS); do \
