@@ -1,10 +1,8 @@
---- Imakefile.orig	Thu Nov  4 19:43:09 1999
-+++ Imakefile	Fri Nov 26 17:17:54 1999
-@@ -4,6 +4,7 @@
- SYS_LIBRARIES = MathLibrary
-         DEPLIBS = $(DEPXMULIB) $(DEPXTOOLLIB) $(DEPXLIB)
- LOCAL_LIBRARIES = $(XMULIB) $(XTOOLLIB) $(XLIB) $(XPMLIB)
-+CDEBUGFLAGS     = __CFLAGS__
- 
+--- Imakefile.orig	Fri Nov  5 09:43:09 1999
++++ Imakefile	Wed Nov  1 07:59:39 2000
+@@ -8,4 +8,4 @@
  SRCS = speyes.c
  OBJS = speyes.o getopt.o getopt1.o
+ 
+-ComplexProgramTarget(speyes)
++ComplexProgramTargetNoMan(speyes)
