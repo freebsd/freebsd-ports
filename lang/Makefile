@@ -39,6 +39,7 @@
     SUBDIR += elisp-manual
     SUBDIR += elk
     SUBDIR += emacs-lisp-intro
+    SUBDIR += embryo
     SUBDIR += eperl
     SUBDIR += erlang
     SUBDIR += erlang-doc
