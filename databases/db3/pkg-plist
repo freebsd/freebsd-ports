@@ -20,4 +20,9 @@ lib/libdb3.so.3
 lib/libdb3_cxx.a
 lib/libdb3_cxx.so
 lib/libdb3_cxx.so.3
+%%WITHTCL%%lib/libdb_tcl-3.3.a
+%%WITHTCL%%lib/libdb_tcl-3.3.so
+%%WITHTCL%%lib/libdb_tcl-3.3.so.3
+%%WITHTCL%%lib/libdb_tcl.so
+%%WITHTCL%%lib/libdb_tcl-3.so
 @dirrm include/db3
