@@ -14,7 +14,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	gmarco@giovannelli.it
 
-PATCHDIR=
 HAS_CONFIGURE=	yes
 
 MAN1=	xtail.1
