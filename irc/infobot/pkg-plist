@@ -1,0 +1,84 @@
+share/infobot-%%VERSION%%/IMPORTANT:_read_REVISIONS_and_infobot.html
+share/infobot-%%VERSION%%/README
+share/infobot-%%VERSION%%/REVISIONS
+share/infobot-%%VERSION%%/doc/infobot_guide.html
+share/infobot-%%VERSION%%/doc/how_to_fix_files_uploaded_from_windows_to_unix.txt
+share/infobot-%%VERSION%%/factpacks/rfc_index.fact
+share/infobot-%%VERSION%%/factpacks/country_net_codes.fact
+share/infobot-%%VERSION%%/factpacks/old_test_meanings.fact
+share/infobot-%%VERSION%%/factpacks/peri_abb_and_num.fact
+share/infobot-%%VERSION%%/factpacks/rx_codes.fact
+share/infobot-%%VERSION%%/factpacks/areacodes.txt
+share/infobot-%%VERSION%%/factpacks/airport.txt
+share/infobot-%%VERSION%%/factpacks/html.txt
+share/infobot-%%VERSION%%/factpacks/techdict.txt
+share/infobot-%%VERSION%%/factpacks/security.fact
+share/infobot-%%VERSION%%/factpacks/ports.fact
+share/infobot-%%VERSION%%/files/infobot.config
+share/infobot-%%VERSION%%/files/sane-are.txt
+share/infobot-%%VERSION%%/files/infobot.crontab
+share/infobot-%%VERSION%%/files/infobot-are.txt
+share/infobot-%%VERSION%%/files/infobot-is.txt
+share/infobot-%%VERSION%%/files/infobot.help
+share/infobot-%%VERSION%%/files/infobot.users
+share/infobot-%%VERSION%%/files/sane-is.txt
+share/infobot-%%VERSION%%/files/sane-ignore.txt
+share/infobot-%%VERSION%%/files/magic8.txt
+share/infobot-%%VERSION%%/infobot
+share/infobot-%%VERSION%%/scripts/unupdate_dbs
+share/infobot-%%VERSION%%/scripts/run_if_needed.pl
+share/infobot-%%VERSION%%/scripts/README.scripts
+share/infobot-%%VERSION%%/scripts/makepasswd
+share/infobot-%%VERSION%%/scripts/track2fact.pl
+share/infobot-%%VERSION%%/scripts/update_db
+share/infobot-%%VERSION%%/scripts/get_stuff.pl
+share/infobot-%%VERSION%%/scripts/curl
+share/infobot-%%VERSION%%/scripts/dump_db
+share/infobot-%%VERSION%%/src/Question.pl
+share/infobot-%%VERSION%%/src/DNS.pl
+share/infobot-%%VERSION%%/src/Help.pl
+share/infobot-%%VERSION%%/src/Reply.pl
+share/infobot-%%VERSION%%/src/Setup.pl
+share/infobot-%%VERSION%%/src/Internic.pl
+share/infobot-%%VERSION%%/src/Statement.pl
+share/infobot-%%VERSION%%/src/Irc.pl
+share/infobot-%%VERSION%%/src/Misc.pl
+share/infobot-%%VERSION%%/src/DBM.pl
+share/infobot-%%VERSION%%/src/Norm.pl
+share/infobot-%%VERSION%%/src/Params.pl
+share/infobot-%%VERSION%%/src/User.pl
+share/infobot-%%VERSION%%/src/Update.pl
+share/infobot-%%VERSION%%/src/IrcExtras.pl
+share/infobot-%%VERSION%%/src/ANSI.pl
+share/infobot-%%VERSION%%/src/Process.pl
+share/infobot-%%VERSION%%/src/myRoutines.pl
+share/infobot-%%VERSION%%/src/Traceroute.pl
+share/infobot-%%VERSION%%/src/CTCP.pl
+share/infobot-%%VERSION%%/src/IrcHooks.pl
+share/infobot-%%VERSION%%/src/Math.pl
+share/infobot-%%VERSION%%/src/nickometer.pl
+share/infobot-%%VERSION%%/src/Search.pl
+share/infobot-%%VERSION%%/src/NOAA.pl
+share/infobot-%%VERSION%%/src/insult.pl
+share/infobot-%%VERSION%%/src/Speller.pl
+share/infobot-%%VERSION%%/src/METAR2.pl
+share/infobot-%%VERSION%%/src/babel.pl
+share/infobot-%%VERSION%%/src/Slashdot3.pl
+share/infobot-%%VERSION%%/src/W3Search.pl
+share/infobot-%%VERSION%%/src/Zephyr/Zephyr.pl
+share/infobot-%%VERSION%%/src/Zephyr/ZephyrExtras.pl
+share/infobot-%%VERSION%%/src/Zephyr/ZephyrHooks.pl
+share/infobot-%%VERSION%%/src/Zephyr/Zephyr_README
+share/infobot-%%VERSION%%/src/RDF.pl
+share/infobot-%%VERSION%%/src/purldoc.pl
+share/infobot-%%VERSION%%/src/Zippy.pl
+share/infobot-%%VERSION%%/src/exchange.pl
+share/infobot-%%VERSION%%/src/excuse.pl
+share/infobot-%%VERSION%%/src/Extras.pl
+@dirrm share/infobot-%%VERSION%%/doc
+@dirrm share/infobot-%%VERSION%%/factpacks
+@dirrm share/infobot-%%VERSION%%/files
+@dirrm share/infobot-%%VERSION%%/scripts
+@dirrm share/infobot-%%VERSION%%/src/Zephyr
+@dirrm share/infobot-%%VERSION%%/src
+@dirrm share/infobot-%%VERSION%%/

@@ -1,0 +1,15 @@
+This is a package of Infobot, by Kevin Lenzo <lenzo@cs.cmu.edu>
+
+The infobot connects to an Internet Relay Chat (IRC) server, joins 
+some channels (maybe), and begins accumulating factoids. To run one, 
+download the source, uncompress it, untar it, edit the config files, 
+and it up. 
+
+The default install dir is /usr/local/share/infobot-0.xx.x since it 
+doesn't really belong in the Perl tree, by default. If you want 
+it installed elsewhere,use the -p option to change the PREFIX.
+
+WWW: http://www.infobot.org/
+
+- Kevin Meltzer (a.k.a. {KM} on EFNet #perl)
+perlguy@perlguy.com
