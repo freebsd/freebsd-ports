@@ -6,12 +6,12 @@
 #
 
 PORTNAME=		samba
-PORTVERSION=		3.0.3.r1
+PORTVERSION=		3.0.4
 PORTREVISION?=		0
 PORTEPOCH?=		1
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
-MASTER_SITE_SUBDIR=	rc . pre
+MASTER_SITE_SUBDIR=	. rc pre
 DISTNAME=		${PORTNAME}-${PORTVERSION:S/.p/pre/:S/.r/rc/}
 
 MAINTAINER?=		timur@gnu.org
@@ -19,12 +19,12 @@ COMMENT?=		A free SMB and CIFS client and server for UNIX
 
 CONFLICTS?=		ja-samba-2.* samba-2.* sharity-light-1.*
 
-USE_BZIP2=		yes
 USE_ICONV=		yes
-USE_AUTOCONF_VER=	253
+GNU_CONFIGURE=		yes
+#USE_AUTOCONF_VER=	253
 
 LATEST_LINK?=		${PKGNAMEPREFIX}${PORTNAME}-3${PKGNAMESUFFIX}
-EXAMPLESDIR=		${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}-3${PKGNAMESUFFIX}
+EXAMPLESDIR=		${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 WRKSRC=			${WRKDIR}/${DISTNAME}/source
 
 # directories
@@ -230,7 +230,6 @@ CONFIGURE_ARGS+=	--without-ldap
 
 .if !defined(SAMBA_SUBPORT)
 
-MLINKS=		samba.7 Samba.7
 MAN1=		findsmb.1 nmblookup.1 log2pcap.1 rpcclient.1 \
 		smbget.1 smbcacls.1 smbclient.1 smbcontrol.1 smbsh.1 \
 		smbstatus.1 smbtar.1 testparm.1 testprns.1 vfstest.1 \
@@ -338,28 +337,17 @@ post-install:
 .endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
+	@${CP} -Rp ${WRKDIR}/${DISTNAME}/docs/registry ${DOCSDIR}
+.for d in devel guide howto
+	@${CP} -Rp ${WRKDIR}/${DISTNAME}/docs/htmldocs/${d} ${DOCSDIR}
+.endfor
 	@${INSTALL_DATA} ${FILESDIR}/README.FreeBSD ${DOCSDIR}
-	for i in ${WRKDIR}/${DISTNAME}/README				\
-			${WRKDIR}/${DISTNAME}/COPYING			\
-			${WRKDIR}/${DISTNAME}/Manifest			\
-			${WRKDIR}/${DISTNAME}/Read-Manifest-Now		\
-			${WRKDIR}/${DISTNAME}/Roadmap			\
-			${WRKDIR}/${DISTNAME}/WHATSNEW.txt		\
-			${WRKDIR}/${DISTNAME}/docs/THANKS		\
-			${WRKDIR}/${DISTNAME}/docs/history ; do		\
-		${INSTALL_DATA} $$i ${DOCSDIR} ;			\
-	done
-	for i in registry htmldocs htmldocs/images ; do		\
-		${MKDIR} ${DOCSDIR}/$$i ;				\
-		for j in ${WRKDIR}/${DISTNAME}/docs/$$i/* ; do		\
-		    if [ -f $$j ]; then					\
-		    	${INSTALL_DATA} $$j ${DOCSDIR}/$$i ;		\
-		    fi; 						\
-		done							\
-	done
+.for f in README COPYING Manifest Read-Manifest-Now Roadmap \
+		WHATSNEW.txt docs/THANKS docs/history
+	@${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/${f} ${DOCSDIR}
+.endfor
 .endif
 	@${CAT} ${PKGMESSAGE}
-
 # !SAMBA_SUBPORT
 .endif
 
