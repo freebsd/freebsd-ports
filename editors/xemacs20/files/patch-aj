@@ -1,0 +1,22 @@
+--- man/texinfo.texi.orig	Fri Feb 25 23:26:45 2000
++++ man/texinfo.texi	Fri Feb 25 23:29:30 2000
+@@ -654,8 +654,8 @@
+ 
+ How to Obtain @TeX{}
+ 
+-* New Texinfo Mode Commands::   The updating commands are especially useful.
+-* New Commands::                Many newly described @@-commands.
++@c * New Texinfo Mode Commands::   The updating commands are especially useful.
++@c * New Commands::                Many newly described @@-commands.
+ @end detailmenu
+ @end menu
+ 
+@@ -14204,7 +14204,7 @@
+ (thousandths of an inch) remain on the current page.  @xref{need, ,
+ @code{@@need}}.@refill
+ 
+-@item @@node @var{name, next, previous, up}
++@item @@node @var{name}, @var{next}, @var{previous}, @var{up}
+ Define the beginning of a new node in Info, and serve as a locator for
+ references for @TeX{}.  @xref{node, , @code{@@node}}.@refill
+ 
