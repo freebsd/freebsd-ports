@@ -41,6 +41,7 @@
     SUBDIR += beacon
     SUBDIR += beacon-server
     SUBDIR += bfilter
+    SUBDIR += bindtest
     SUBDIR += bing
     SUBDIR += binkd
     SUBDIR += blam
