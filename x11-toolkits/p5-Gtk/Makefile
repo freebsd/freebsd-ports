@@ -3,13 +3,13 @@
 # Date created:		28 Oct 1997
 # Whom:	      		Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
-# $Id: Makefile,v 1.6 1998/05/14 07:51:13 vanilla Exp $
+# $Id: Makefile,v 1.7 1998/05/16 21:14:53 vanilla Exp $
 #
 
 DISTNAME=	Gtk-0.2.1
 PKGNAME=	p5-Gtk-0.2.1
 CATEGORIES=	x11 lang perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPA{}
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Gtk
 
 MAINTAINER=	vanilla@FreeBSD.ORG
