@@ -1,5 +1,5 @@
---- config/cf/FreeBSD.cf-3.3.6	Sat Feb 12 06:36:11 2000
-+++ config/cf/FreeBSD.cf	Tue Feb 15 00:25:54 2000
+--- config/cf/FreeBSD.cf.orig	Fri Dec  3 10:35:04 1999
++++ config/cf/FreeBSD.cf	Fri Aug  4 04:06:42 2000
 @@ -69,7 +69,7 @@
  #define MkdirHierCmd		mkdir -p
  
@@ -9,5 +9,72 @@
  #define PreProcessCmd		CppCmd
  #define StandardCppDefines	-traditional
  #if defined(UseInstalled) && (!defined(XF86LinkKit) || !XF86LinkKit)
-
-
+@@ -132,12 +132,12 @@
+  * reason for FreeBSD to assume that it knows where X libraries are installed 
+  * and they can remove it from the list of directories they add to ld.so.cache 
+  * in their /etc/rc file.
++ *
++ * For the ELF case, we default to the ExtraLoadFlags in bsdLib.rules
+  */
+ #if OSMajorVersion > 2 || (OSMajorVersion == 2 && OSMinorVersion >= 2)
+ #ifndef ExtraLoadFlags
+-#if UseElfFormat
+-#define ExtraLoadFlags		-Wl,-rpath,$(USRLIBDIRPATH)
+-#else
++#if !UseElfFormat
+ #define ExtraLoadFlags		-Wl,-R,$(USRLIBDIRPATH)
+ #endif
+ #endif
+@@ -317,7 +317,12 @@
+ # define AsmDefines		AsmElfDefines
+ #endif
+ 
++#ifdef i386Architecture
+ #define ServerExtraDefines GccGasOption XFree86ServerDefines
++#endif
++#ifdef AlphaArchitecture
++#define ServerExtraDefines GccGasOption XFree86ServerDefines -D_XSERVER64
++#endif
+ 
+ #define StandardDefines	-DCSRG_BASED
+ 
+@@ -342,14 +347,14 @@
+ /* The GCC strength-reduce bug is fixed for FreeBSD 2.1.5 and later */
+ #ifndef DefaultGcc2i386Opt
+ #if OSMajorVersion > 2 || (OSMajorVersion == 2 && OSMinorVersion > 1) || (OSMajorVersion == 2 && OSMinorVersion == 1 && OSTeenyVersion >= 5)
+-#define DefaultGcc2i386Opt -O2
++#define DefaultGcc2i386Opt
+ #endif
+ #endif
+ 
+ #ifdef i386Architecture
+ # define OptimizedCDebugFlags DefaultGcc2i386Opt
+ #else
+-# define OptimizedCDebugFlags -O2
++# define OptimizedCDebugFlags
+ #endif
+ 
+ #ifndef PreIncDir
+@@ -458,14 +463,18 @@
+ #define DlLibrary		/**/
+ #endif
+ 
++#ifdef AlphaArchitecture
++#define IoLibrary		-lio
++#else
++#define IoLibrary		/**/
++#endif
++
+ #if BuildDynamicLoading
+-#define ServerExtraSysLibs	DlLibrary
++#define ServerExtraSysLibs	DlLibrary IoLibrary
+ #else
+-#define ServerExtraSysLibs	/**/
++#define ServerExtraSysLibs	IoLibrary
+ #endif
+ 
+ #include <bsdLib.rules>
+ 
+-#ifdef i386Architecture
+ #include <xfree86.cf>
+-#endif
