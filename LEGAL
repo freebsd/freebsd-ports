@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.131 1999/03/30 17:57:44 taoka Exp $
+# $Id: LEGAL,v 1.132 1999/03/31 14:22:19 dirk Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -107,6 +107,8 @@ sdr-2.5*		ports/mbone/sdr25	Crypto; export-controlled
 sharefonts-*		ports/x11-fonts/sharefonts	Shareware.  Cannot be
 						distributed w/o prior
 						authorization.
+shorten-*		ports/audio/shorten	May not be sold. May not be
+						distributed if modified.
 sim-2.3.tar.gz		ports/emulators/sim	No commercial use
 socks5-*		ports/net/socks5	No commercial use
 ssh-*			ports/security/ssh*	Crypto; export-controlled
