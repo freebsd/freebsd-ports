@@ -15,11 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C library that handles the new Yahoo! Messenger protocol
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
-RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
-
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack glib20
+USE_GNOME=	glib20 gnomehack gnometarget
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
