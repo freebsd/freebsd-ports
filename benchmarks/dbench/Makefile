@@ -16,9 +16,9 @@ COMMENT=	A simulation of the Ziff-Davis netbench benchmark
 WRKSRC=		${WRKDIR}/dbench
 USE_REINPLACE=	yes
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
-PLIST_FILES=	dbench tbench tbench_srv
+PLIST_FILES=	bin/dbench bin/tbench bin/tbench_srv
 
 do-install:
-	cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PLIST_FILES} ${PREFIX}/bih
+	cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PLIST_FILES:T} ${PREFIX}/bin
 
 .include <bsd.port.mk>
