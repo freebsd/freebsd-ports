@@ -1,0 +1,16 @@
+Gatekeeper (gk) is a H323 GateKeeper based on the OpenH323 project.
+It is released with the GPL (GNU Public Licence)
+
+A H323 Gatekeeper manages multiple H323 clients on a network
+and provides a nice user name to IP mapping.
+
+As it follows the H323 standard, it is compatible with H323
+client programs inclding voxilla, OhPhone, OpenPhone and MS NetMeeting.
+
+It makes use of PWLib and the OpenH323 stack from Equivalence Ltd Pty
+
+It's currently maintained by Jan Willamowius <jan@willamowius.de>
+http://www.willamowius.de/openh323gk.html
+
+Also see
+http://www.openh323.org
