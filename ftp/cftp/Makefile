@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	cftp
-PORTVERSION=	0.9.3
-CATEGORIES=	ftp
-MASTER_SITES=	ftp://sunsite.univie.ac.at/pub/nih/cftp/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	andy
+PORTVERSION=	0.10
+CATEGORIES=	ftp ipv6
+MASTER_SITES=	ftp://ftp.giga.or.at/pub/nih/cftp/ \
+		ftp://sunsite.univie.ac.at/pub/nih/cftp/
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -18,9 +17,9 @@ GNU_CONFIGURE=	yes
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${PREFIX}/share/doc/cftp
+	@${MKDIR} ${PREFIX}/share/doc/cftp
 .for file in AUTHORS ChangeLog NEWS README THANKS TODO
-	@ ${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/cftp
+	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/cftp
 .endfor
 .endif
 
