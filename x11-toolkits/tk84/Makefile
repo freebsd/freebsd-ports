@@ -40,7 +40,7 @@ MANCOMPRESSED=	no
 
 .ifdef (WITH_THREADS)
 CONFIGURE_ARGS+=	--enable-threads
-PKGNAMESUFFIX?=         -threads
+PKGNAMESUFFIX?=		-threads
 .endif
 
 MAN1=	wish.1
