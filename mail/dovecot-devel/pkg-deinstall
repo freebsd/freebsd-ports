@@ -1,55 +1,65 @@
 #! /bin/sh
+#
+# ex:ts=4
 
 ask() {
-    local question default answer
+	local question default answer
 
-    question=$1
-    default=$2
-    if [ -z "${PACKAGE_BUILDING}" -a -z "${BATCH}" ]; then
-	read -p "${question} [${default}]? " answer
-    fi
-    echo ${answer:-${default}}
+	question=$1
+	default=$2
+	if [ -z "${PACKAGE_BUILDING}" -a -z "${BATCH}" ]; then
+		read -p "${question} [${default}]? " answer
+	fi
+	echo ${answer:-${default}}
 }
 
 yesno() {
-    local question default answer
+	local question default answer
 
-    question=$1
-    default=$2
-    while :; do
-	answer=$(ask "${question}" "${default}")
-	case "${answer}" in
-	[Yy]*)	return 0;;
-	[Nn]*)	return 1;;
-	esac
-	echo "Please answer yes or no."
-    done
+	question=$1
+	default=$2
+	while :; do
+		answer=$(ask "${question}" "${default}")
+		case "${answer}" in
+		[Yy]*)	return 0;;
+		[Nn]*)	return 1;;
+		esac
+		echo "Please answer yes or no."
+	done
 }
 
 delete_account() {
-    local u
+	local u
 
-    u=$1
-    if yesno "Do you want me to remove user \"${u}\"" n; then
-	pw userdel -n ${u}
-	echo "Done."
-    fi
+	u=$1
+	if yesno "Do you want me to remove user \"${u}\"" n; then
+		pw userdel -n ${u}
+		echo "Done."
+	fi
 }
 
 case $2 in
 
 DEINSTALL)
-    if ps -axc | grep -qw dovecot; then
-	if yesno "Dovecot is still running. Shall I stop it?" y; then
-	    killall dovecot
-	    sleep 2
-	else
-	    echo "OK ... I hope you know what you are doing."
+	if ps -axc | grep -qw dovecot; then
+		if yesno "Dovecot is still running. Shall I stop it?" y; then
+			killall dovecot
+			sleep 2
+		else
+			echo "OK ... I hope you know what you are doing."
+		fi
 	fi
-    fi
 
-    delete_account dovecot
-    delete_account dovecot-auth
-    ;;
+	delete_account dovecot
+	delete_account dovecot-auth
+
+	base=/var/dovecot
+	DIRLIST="${base}/ssl/private ${base}/ssl/certs ${base}/ssl ${base}/private \
+		${base}/login ${base}/auth ${base} /var/run/dovecot"
+	echo "Cleaning up \"${base}\"."
+	for directory in ${DIRLIST}; do
+		rmdir ${directory} 2>/dev/null || :
+	done
+	;;
 
 esac

@@ -2,93 +2,93 @@
 #
 #	$FreeBSD$
 #
-
-base=/var/dovecot
+# ex:ts=4
 
 ask() {
-    local question default answer
+	local question default answer
 
-    question=$1
-    default=$2
-    if [ -z "${PACKAGE_BUILDING}" -a -z "${BATCH}" ]; then
-	read -p "${question} [${default}]? " answer
-    fi
-    echo ${answer:-${default}}
+	question=$1
+	default=$2
+	if [ -z "${PACKAGE_BUILDING}" -a -z "${BATCH}" ]; then
+		read -p "${question} [${default}]? " answer
+	fi
+	echo ${answer:-${default}}
 }
 
 yesno() {
-    local question default answer
+	local question default answer
 
-    question=$1
-    default=$2
-    while :; do
-	answer=$(ask "${question}" "${default}")
-	case "${answer}" in
-	[Yy]*)	return 0;;
-	[Nn]*)	return 1;;
-	esac
-	echo "Please answer yes or no."
-    done
+	question=$1
+	default=$2
+	while :; do
+		answer=$(ask "${question}" "${default}")
+		case "${answer}" in
+		[Yy]*)	return 0;;
+		[Nn]*)	return 1;;
+		esac
+		echo "Please answer yes or no."
+	done
 }
 
 make_account() {
-    local u g gcos
+	local u g gcos
 
-    u=$1
-    g=$2
-    gcos=$3
+	u=$1
+	g=$2
+	gcos=$3
 
-    if pw group show "${g}" >/dev/null 2>&1; then
-	echo "You already have a group \"${g}\", so I will use it."
-    else
-	echo "You need a group \"${g}\"."
-	if which -s pw && yesno "Would you like me to create it" y
-	then
-	    pw groupadd ${g} || exit
-	    echo "Done."
+	if pw group show "${g}" >/dev/null 2>&1; then
+		echo "You already have a group \"${g}\", so I will use it."
 	else
-	    echo "Please create it, and try again."
-	    exit 1
+		echo "You need a group \"${g}\"."
+		if which -s pw && yesno "Would you like me to create it" y
+		then
+			pw groupadd ${g} || exit
+			echo "Done."
+		else
+			echo "Please create it, and try again."
+			exit 1
+		fi
 	fi
-    fi
     
-    if pw user show "${u}" >/dev/null 2>&1; then
-	echo "You already have a user \"${u}\", so I will use it."
-    else
-	echo "You need a user \"${u}\"."
-	if which -s pw && yesno "Would you like me to create it" y
-	then
-	    pw useradd ${u} -g ${g} -h - -s /sbin/nologin -c "${gcos}" || exit
-	    echo "Done."
+	if pw user show "${u}" >/dev/null 2>&1; then
+		echo "You already have a user \"${u}\", so I will use it."
 	else
-	    echo "Please create it, and try again."
-	    exit 1
+		echo "You need a user \"${u}\"."
+		if which -s pw && yesno "Would you like me to create it" y
+		then
+			pw useradd ${u} -g ${g} -h - -s /sbin/nologin -c "${gcos}" || exit
+			echo "Done."
+		else
+			echo "Please create it, and try again."
+			exit 1
+		fi
 	fi
-    fi
 }
 
 case $2 in
 
 PRE-INSTALL)
-    make_account dovecot dovecot "Dovecot"
-    make_account dovecot-auth dovecot-auth "Dovecot Auth"
-    ;;
+	make_account dovecot dovecot "Dovecot"
+	make_account dovecot-auth dovecot-auth "Dovecot Auth"
+	;;
 
 POST-INSTALL)
-    DIRLIST="${base} ${base}/auth ${base}/ssl ${base}/ssl/certs \
-	${base}/ssl/private ${base}/login /var/run/dovecot"
-    echo "Fixing ownerships and modes in \"${base}\"."
-    for directory in ${DIRLIST}; do
-	if [ ! -d "${directory}" ]; then
-	    mkdir -p ${directory}
-	    echo "Created directory: ${directory}"
-	fi
-    done
-    chown -R root:wheel      ${base}
-    chown -R dovecot:dovecot ${base}/auth ${base}/ssl
-    chown    root:dovecot    ${base}/login /var/run/dovecot
-    chmod 0750 ${base}/login
-    chmod 0700 /var/run/dovecot
-    ;;
+	base=/var/dovecot
+	DIRLIST="${base} ${base}/auth ${base}/ssl ${base}/ssl/certs \
+		${base}/ssl/private ${base}/login /var/run/dovecot"
+	echo "Fixing ownerships and modes in \"${base}\"."
+	for directory in ${DIRLIST}; do
+		if [ ! -d "${directory}" ]; then
+			mkdir -p ${directory}
+			echo "Created directory: ${directory}"
+		fi
+	done
+	chown -R root:wheel      ${base}
+	chown -R dovecot:dovecot ${base}/auth ${base}/ssl
+	chown    root:dovecot    ${base}/login /var/run/dovecot
+	chmod 0750 ${base}/login
+	chmod 0700 /var/run/dovecot
+	;;
 
 esac

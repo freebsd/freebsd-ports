@@ -1,3 +1,4 @@
+# ex:ts=8
 # New ports collection makefile for:	dovecot
 # Date created:				12/08/2002
 # Whom:			Dominic Marks <dominic.marks@btinternet.com>
@@ -7,7 +8,7 @@
 
 PORTNAME=	dovecot
 PORTVERSION=	0.99.10.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/
 
@@ -33,55 +34,61 @@ DOCS=		auth.txt configuration.txt design.txt \
 		nfs.txt dovecot-ldap.conf dovecot-pgsql.conf \
 		dovecot-openssl.cnf securecoding.txt
 
-#.include <bsd.port.pre.mk>
+.include <bsd.port.pre.mk>
 
-## SASL2 support      -> WITH_SASL2=1
+## SASL2 support
+OPTIONS+=	SASL2 "SASL2 support" off
 #
 # SASL provides authentication support to
 # session-based protocols. This is can be
 # used by dovecot for authentication sources.
 #
 .if defined(WITH_SASL2)
-LIB_DEPENDS+=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS+=		sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 CONFIGURE_ARGS+=	--with-cyrus-sasl2
 .endif
 
-## VPopMail Support   -> WITH_VPOPMAIL=1
+## VPopMail Support
+OPTIONS+=	VPOPMAIL  "VPopMail support" off
 #
 # vpopmail provides easy authentication and
 # multi-domain features. It was originally
 # created for use with Qmail.
 #
 .if defined(WITH_VPOPMAIL)
-VPOPMAIL=	${LOCALBASE}/vpopmail/bin/vchkpw
-BUILD_DEPENDS+=	${VPOPMAIL}:${PORTSDIR}/mail/vpopmail
+VPOPMAIL=		${LOCALBASE}/vpopmail/bin/vchkpw
+BUILD_DEPENDS+=		${VPOPMAIL}:${PORTSDIR}/mail/vpopmail
 CONFIGURE_ARGS+=	--with-vpopmail
 .endif
 
-## OpenLDAP Support   -> WITH_LDAP=1
+## OpenLDAP Support
+OPTIONS+=	LDAP  "OpenLDAP support" off
 #
 # LDAP is the light-weight directory access
 # protocol and can be used by Dovecot for its
 # user database.
 #
 .if defined(WITH_LDAP)
-USE_OPENLDAP=	yes
+USE_OPENLDAP=		yes
 CONFIGURE_ARGS+=	--with-ldap
 .endif
 
-## PostgreSQL Support -> WITH_PGSQL=1
+## PostgreSQL Support
+OPTIONS+=	PGSQL  "PostgreSQL support" off
 #
 # PostgreSQL is a powerful SQL database that
 # can be used to store user tables.
 #
 .if defined(WITH_PGSQL)
-LIB_DEPENDS+=	pq.3:${PORTSDIR}/databases/postgresql7
+LIB_DEPENDS+=		pq.3:${PORTSDIR}/databases/postgresql7
 CONFIGURE_ARGS+=	--with-pgsql
 .endif
 
-pre-configure:
-	@${ECHO_MSG} "=> ${PORTNAME} options: see ${MAKEFILE} for descriptions"
-	@${SED} -ne 's,^##,=> ,p' ${MAKEFILE}
+.if ${OSVERSION} >= 500038
+RC_SUBR?=	/etc/rc.subr
+.else
+USE_RC_SUBR=	yes
+.endif
 
 pre-build:
 	@${REINPLACE_CMD} -e 's,%%SSLDIR%%,/var/dovecot/ssl,' \
@@ -90,9 +97,15 @@ pre-build:
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},' \
 		${WRKSRC}/dovecot-example.conf
 
+post-build:
+	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
+		-e 's,%%RC_SUBR%%,${RC_SUBR},g' \
+		${FILESDIR}/dovecot.sh >${WRKDIR}/dovecot.sh
+
+pre-install:
+	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+
 do-install:
-	@${SETENV} ${SCRIPTS_ENV} \
-		${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 	@${MKDIR} ${PREFIX}/libexec/dovecot
 	${INSTALL_PROGRAM} \
 		${WRKSRC}/src/imap/imap \
@@ -103,21 +116,18 @@ do-install:
 			${PREFIX}/libexec/dovecot/
 	${INSTALL_DATA} ${WRKSRC}/dovecot-example.conf ${PREFIX}/etc/
 	${INSTALL_PROGRAM} ${WRKSRC}/src/master/dovecot ${PREFIX}/sbin/
-	@${SETENV} ${SCRIPTS_ENV} \
-		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	${INSTALL_SCRIPT} -m 751 ${FILESDIR}/dovecot.sh.sample \
-		${PREFIX}/etc/rc.d/dovecot.sh.sample
+	${INSTALL_SCRIPT} ${WRKDIR}/dovecot.sh ${PREFIX}/etc/rc.d/
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for document in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/doc/${document} ${DOCSDIR}
-.endfor
-	@${INSTALL_DATA} ${FILESDIR}/README.FreeBSD ${DOCSDIR}
+	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+	${INSTALL_DATA} ${FILESDIR}/README.FreeBSD ${DOCSDIR}
 .endif
+
+post-install:
+	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
 		-e 's,%%DOCSDIR%%,${DOCSDIR},g' \
 		${.CURDIR}/pkg-message >${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
-#.include <bsd.port.post.mk>
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

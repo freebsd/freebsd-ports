@@ -1,15 +1,15 @@
 ---------------------------------------------------------------------
  
  You can get default configured IMAP and POP3 services running by
- copying the following sample files to the given locations. In this
- simple configuration Dovecot will authenticate users against the
- systems passwd file and use the default /var/mail/$USER mbox files.
+ copying the sample configuration file to the given location and then
+ enabling dovecot in /etc/rc.conf.
+ In this simple configuration Dovecot will authenticate users against
+ the systems passwd file and use the default /var/mail/$USER mbox
+ files.
 
-  %%PREFIX%%/etc/dovecot-example.conf
-   -> %%PREFIX%%/etc/dovecot.conf
+  cd %%PREFIX%%/etc; cp dovecot-example.conf dovecot.conf
   
-  %%PREFIX%%/etc/rc.d/dovecot.sh.sample
-   -> %%PREFIX%%/etc/rc.d/dovecot.sh
+  echo dovecot_enable="YES" >> /etc/rc.conf
  
  Further information on configuration can be found in:
 

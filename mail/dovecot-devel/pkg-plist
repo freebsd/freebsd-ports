@@ -1,5 +1,6 @@
+@comment $FreeBSD$
 etc/dovecot-example.conf
-etc/rc.d/dovecot.sh.sample
+etc/rc.d/dovecot.sh
 libexec/dovecot/dovecot-auth
 libexec/dovecot/imap
 libexec/dovecot/imap-login
@@ -7,24 +8,17 @@ libexec/dovecot/pop3
 libexec/dovecot/pop3-login
 @dirrm libexec/dovecot
 sbin/dovecot
+%%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD
 %%PORTDOCS%%%%DOCSDIR%%/auth.txt
 %%PORTDOCS%%%%DOCSDIR%%/configuration.txt
 %%PORTDOCS%%%%DOCSDIR%%/design.txt
+%%PORTDOCS%%%%DOCSDIR%%/dovecot-ldap.conf
+%%PORTDOCS%%%%DOCSDIR%%/dovecot-openssl.cnf
+%%PORTDOCS%%%%DOCSDIR%%/dovecot-pgsql.conf
 %%PORTDOCS%%%%DOCSDIR%%/index.txt
 %%PORTDOCS%%%%DOCSDIR%%/mail-storages.txt
 %%PORTDOCS%%%%DOCSDIR%%/mkcert.sh
 %%PORTDOCS%%%%DOCSDIR%%/multiaccess.txt
 %%PORTDOCS%%%%DOCSDIR%%/nfs.txt
-%%PORTDOCS%%%%DOCSDIR%%/dovecot-ldap.conf
-%%PORTDOCS%%%%DOCSDIR%%/dovecot-pgsql.conf
-%%PORTDOCS%%%%DOCSDIR%%/dovecot-openssl.cnf
 %%PORTDOCS%%%%DOCSDIR%%/securecoding.txt
-%%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec rmdir /var/dovecot/auth 2>/dev/null || true
-@unexec rmdir /var/dovecot/login 2>/dev/null || true
-@unexec rmdir /var/dovecot/ssl/certs 2>/dev/null || true
-@unexec rmdir /var/dovecot/ssl/private 2>/dev/null || true
-@unexec rmdir /var/dovecot/ssl 2>/dev/null || true
-@unexec rmdir /var/dovecot 2>/dev/null || true
-@unexec rmdir /var/run/dovecot 2>/dev/null || true
