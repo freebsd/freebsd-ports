@@ -1,3 +1,33 @@
+arm-palmos/bin/ar
+arm-palmos/bin/as
+arm-palmos/bin/c++
+arm-palmos/bin/g++
+arm-palmos/bin/gcc
+arm-palmos/bin/ld
+arm-palmos/bin/nm
+arm-palmos/bin/ranlib
+arm-palmos/bin/strip
+arm-palmos/include/errno.h
+arm-palmos/include/malloc.h
+arm-palmos/include/setjmp.h
+arm-palmos/include/stdio.h
+arm-palmos/include/sys/types.h
+arm-palmos/lib/ldscripts/armelf.x
+arm-palmos/lib/ldscripts/armelf.xbn
+arm-palmos/lib/ldscripts/armelf.xc
+arm-palmos/lib/ldscripts/armelf.xn
+arm-palmos/lib/ldscripts/armelf.xr
+arm-palmos/lib/ldscripts/armelf.xs
+arm-palmos/lib/ldscripts/armelf.xsc
+arm-palmos/lib/ldscripts/armelf.xu
+arm-palmos/lib/ldscripts/armpalmos.x
+arm-palmos/lib/ldscripts/armpalmos.xbn
+arm-palmos/lib/ldscripts/armpalmos.xc
+arm-palmos/lib/ldscripts/armpalmos.xn
+arm-palmos/lib/ldscripts/armpalmos.xr
+arm-palmos/lib/ldscripts/armpalmos.xu
+arm-palmos/lib/libc.a
+arm-palmos/lib/libstdc++.a
 m68k-palmos/bin/nm
 m68k-palmos/bin/strip
 m68k-palmos/bin/ar
@@ -29,15 +59,51 @@ m68k-palmos/lib/libm.a
 m68k-palmos/lib/text_64k
 m68k-palmos/lib/text_64k_palmos3
 m68k-palmos/include/sys/types.h
-m68k-palmos/include/ctype.h
 m68k-palmos/include/errno.h
 m68k-palmos/include/malloc.h
 m68k-palmos/include/setjmp.h
 m68k-palmos/include/stdio.h
-m68k-palmos/include/string.h
 m68k-palmos/include/stdlib.h
 m68k-palmos/include/mathf.h
 m68k-palmos/include/math.h
+lib/gcc-lib/arm-palmos/3.3.1/cc1
+lib/gcc-lib/arm-palmos/3.3.1/cc1plus
+lib/gcc-lib/arm-palmos/3.3.1/collect2
+lib/gcc-lib/arm-palmos/3.3.1/crtbegin.o
+lib/gcc-lib/arm-palmos/3.3.1/crtend.o
+lib/gcc-lib/arm-palmos/3.3.1/crti.o
+lib/gcc-lib/arm-palmos/3.3.1/crtn.o
+lib/gcc-lib/arm-palmos/3.3.1/include/README
+lib/gcc-lib/arm-palmos/3.3.1/include/float.h
+lib/gcc-lib/arm-palmos/3.3.1/include/iso646.h
+lib/gcc-lib/arm-palmos/3.3.1/include/limits.h
+lib/gcc-lib/arm-palmos/3.3.1/include/stdarg.h
+lib/gcc-lib/arm-palmos/3.3.1/include/stdbool.h
+lib/gcc-lib/arm-palmos/3.3.1/include/stddef.h
+lib/gcc-lib/arm-palmos/3.3.1/include/syslimits.h
+lib/gcc-lib/arm-palmos/3.3.1/include/unwind.h
+lib/gcc-lib/arm-palmos/3.3.1/include/varargs.h
+lib/gcc-lib/arm-palmos/3.3.1/install-tools/fixinc.sh
+lib/gcc-lib/arm-palmos/3.3.1/install-tools/fixincl
+lib/gcc-lib/arm-palmos/3.3.1/install-tools/gsyslimits.h
+lib/gcc-lib/arm-palmos/3.3.1/install-tools/include/README
+lib/gcc-lib/arm-palmos/3.3.1/install-tools/include/float.h
+lib/gcc-lib/arm-palmos/3.3.1/install-tools/include/iso646.h
+lib/gcc-lib/arm-palmos/3.3.1/install-tools/include/limits.h
+lib/gcc-lib/arm-palmos/3.3.1/install-tools/include/stdarg.h
+lib/gcc-lib/arm-palmos/3.3.1/install-tools/include/stdbool.h
+lib/gcc-lib/arm-palmos/3.3.1/install-tools/include/stddef.h
+lib/gcc-lib/arm-palmos/3.3.1/install-tools/include/unwind.h
+lib/gcc-lib/arm-palmos/3.3.1/install-tools/include/varargs.h
+lib/gcc-lib/arm-palmos/3.3.1/install-tools/mkheaders
+lib/gcc-lib/arm-palmos/3.3.1/install-tools/mkheaders.conf
+lib/gcc-lib/arm-palmos/3.3.1/libgcc.a
+lib/gcc-lib/arm-palmos/3.3.1/specs
+lib/gcc-lib/arm-palmos/3.3.1/thumb/crtbegin.o
+lib/gcc-lib/arm-palmos/3.3.1/thumb/crtend.o
+lib/gcc-lib/arm-palmos/3.3.1/thumb/crti.o
+lib/gcc-lib/arm-palmos/3.3.1/thumb/crtn.o
+lib/gcc-lib/arm-palmos/3.3.1/thumb/libgcc.a
 lib/gcc-lib/m68k-palmos/2.95.3-kgpd/include/syslimits.h
 lib/gcc-lib/m68k-palmos/2.95.3-kgpd/include/stdarg.h
 lib/gcc-lib/m68k-palmos/2.95.3-kgpd/include/stddef.h
@@ -79,11 +145,27 @@ lib/gcc-lib/m68k-palmos/2.95.3-kgpd/specs
 lib/gcc-lib/m68k-palmos/2.95.3-kgpd/cpp0
 lib/gcc-lib/m68k-palmos/2.95.3-kgpd/mown-gp/libgcc.a
 lib/gcc-lib/m68k-palmos/2.95.3-kgpd/libgcc.a
-lib/libbfd.la
-lib/libbfd.a
-lib/libopcodes.la
-lib/libopcodes.a
 lib/libmmalloc.a
+bin/arm-palmos-addr2line
+bin/arm-palmos-ar
+bin/arm-palmos-as
+bin/arm-palmos-c++
+bin/arm-palmos-c++filt
+bin/arm-palmos-cpp
+bin/arm-palmos-g++
+bin/arm-palmos-gcc
+bin/arm-palmos-gcc-3.3.1
+bin/arm-palmos-gccbug
+bin/arm-palmos-gcov
+bin/arm-palmos-ld
+bin/arm-palmos-nm
+bin/arm-palmos-objcopy
+bin/arm-palmos-objdump
+bin/arm-palmos-ranlib
+bin/arm-palmos-readelf
+bin/arm-palmos-size
+bin/arm-palmos-strings
+bin/arm-palmos-strip
 bin/build-prc
 bin/m68k-palmos-size
 bin/m68k-palmos-objdump
@@ -96,7 +178,6 @@ bin/m68k-palmos-readelf
 bin/m68k-palmos-nm
 bin/m68k-palmos-strip
 bin/m68k-palmos-as
-bin/m68k-palmos-gasp
 bin/m68k-palmos-ld
 bin/m68k-palmos-gdb
 bin/palmdev-prep
@@ -107,86 +188,67 @@ bin/m68k-palmos-c++
 bin/m68k-palmos-g++
 bin/m68k-palmos-cpp
 bin/m68k-palmos-gcc
-include/bfd.h
-include/ansidecl.h
-include/symcat.h
-include/bfdlink.h
+bin/m68k-palmos-trapfilt
 info/dir
 info/bfd.info
 info/bfd.info-1
-info/bfd.info-2
-info/bfd.info-3
-info/bfd.info-4
-info/bfd.info-5
-info/bfd.info-6
-info/bfd.info-7
-info/bfd.info-8
-info/bfd.info-9
 info/prc-tools.info
 info/binutils.info
-info/binutils.info-1
-info/binutils.info-2
-info/binutils.info-3
 info/standards.info
 info/configure.info
 info/configure.info-1
 info/configure.info-2
 info/configure.info-3
 info/as.info
-info/as.info-1
-info/as.info-2
-info/as.info-3
-info/as.info-4
-info/as.info-5
-info/as.info-6
-info/as.info-7
-info/as.info-8
-info/as.info-9
-info/as.info-10
-info/gasp.info
 info/ld.info
-info/ld.info-1
-info/ld.info-2
-info/ld.info-3
-info/ld.info-4
-info/ld.info-5
-info/ld.info-6
 info/cpp.info
-info/cpp.info-1
-info/cpp.info-2
-info/cpp.info-3
 info/gcc.info
-info/gcc.info-1
-info/gcc.info-10
-info/gcc.info-11
-info/gcc.info-12
-info/gcc.info-13
-info/gcc.info-14
-info/gcc.info-15
-info/gcc.info-16
-info/gcc.info-17
-info/gcc.info-18
-info/gcc.info-19
-info/gcc.info-2
-info/gcc.info-20
-info/gcc.info-21
-info/gcc.info-22
-info/gcc.info-23
-info/gcc.info-24
-info/gcc.info-25
-info/gcc.info-26
-info/gcc.info-27
-info/gcc.info-28
-info/gcc.info-29
-info/gcc.info-3
-info/gcc.info-30
-info/gcc.info-4
-info/gcc.info-5
-info/gcc.info-6
-info/gcc.info-7
-info/gcc.info-8
-info/gcc.info-9
-@unexec rmdir %D/m68k-palmos/sys-include 2>/dev/null || true
+info/gccint.info
+info/gdb.info
+info/gdb.info-1
+info/gdb.info-10
+info/gdb.info-11
+info/gdb.info-12
+info/gdb.info-13
+info/gdb.info-14
+info/gdb.info-15
+info/gdb.info-2
+info/gdb.info-3
+info/gdb.info-4
+info/gdb.info-5
+info/gdb.info-6
+info/gdb.info-7
+info/gdb.info-8
+info/gdb.info-9
+info/gdbint.info
+info/gdbint.info-1
+info/gdbint.info-2
+info/gdbint.info-3
+info/gdbint.info-4
+info/gdbint.info-5
+info/gdbint.info-6
+info/gdbint.info-7
+info/mmalloc.info
+info/stabs.info
+info/stabs.info-1
+info/stabs.info-2
+info/stabs.info-3
+info/stabs.info-4
+share/prc-tools/include/EntryPoints.h
+share/prc-tools/include/NewTypes.h
+share/prc-tools/include/PalmOS.h
+share/prc-tools/include/Pilot.h
+share/prc-tools/include/Standalone.h
+share/prc-tools/include/ctype.h
+share/prc-tools/include/stdint.h
+share/prc-tools/include/stdlib.h
+share/prc-tools/include/string.h
+@dirrm arm-palmos/bin
+@dirrm arm-palmos/include/sys
+@dirrm arm-palmos/include
+@dirrm arm-palmos/lib/ldscripts
+@dirrm arm-palmos/lib
+@dirrm arm-palmos
 @dirrm m68k-palmos/lib/mown-gp
 @dirrm m68k-palmos/lib/ldscripts
 @dirrm m68k-palmos/lib
@@ -194,25 +256,16 @@ info/gcc.info-9
 @dirrm m68k-palmos/include
 @dirrm m68k-palmos/bin
 @dirrm m68k-palmos
+@dirrm lib/gcc-lib/arm-palmos/3.3.1/include
+@dirrm lib/gcc-lib/arm-palmos/3.3.1/install-tools/include
+@dirrm lib/gcc-lib/arm-palmos/3.3.1/install-tools
+@dirrm lib/gcc-lib/arm-palmos/3.3.1/thumb
+@dirrm lib/gcc-lib/arm-palmos/3.3.1
+@dirrm lib/gcc-lib/arm-palmos
 @dirrm lib/gcc-lib/m68k-palmos/2.95.3-kgpd/mown-gp
 @dirrm lib/gcc-lib/m68k-palmos/2.95.3-kgpd/include
 @dirrm lib/gcc-lib/m68k-palmos/2.95.3-kgpd
 @dirrm lib/gcc-lib/m68k-palmos
 @dirrm lib/gcc-lib
-@unexec rmdir %D/libexec 2>/dev/null || true
-@unexec rmdir %D/libdata 2>/dev/null || true
-@unexec rmdir %D/lib 2>/dev/null || true
-@unexec rmdir %D/info 2>/dev/null || true
-@unexec rmdir %D/include 2>/dev/null || true
-@unexec rmdir %D/bin 2>/dev/null || true
-@unexec rmdir %D/man/man1 2>/dev/null || true
-@unexec rmdir %D/man/man2 2>/dev/null || true
-@unexec rmdir %D/man/man3 2>/dev/null || true
-@unexec rmdir %D/man/man4 2>/dev/null || true
-@unexec rmdir %D/man/man5 2>/dev/null || true
-@unexec rmdir %D/man/man6 2>/dev/null || true
-@unexec rmdir %D/man/man7 2>/dev/null || true
-@unexec rmdir %D/man/man8 2>/dev/null || true
-@unexec rmdir %D/man/man9 2>/dev/null || true
-@unexec rmdir %D/man/mann 2>/dev/null || true
-@unexec rmdir %D/man 2>/dev/null || true
+@dirrm share/prc-tools/include
+@dirrm share/prc-tools

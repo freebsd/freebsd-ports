@@ -1,0 +1,11 @@
+--- gcc/Makefile.in.orig	Sat Feb  7 10:51:36 2004
++++ gcc/Makefile.in	Sat Feb  7 10:50:59 2004
+@@ -659,7 +659,7 @@
+ # -I$(@D) and -I$(srcdir)/$(@D) cause the subdirectory of the file
+ # currently being compiled, in both source trees, to be examined as well.
+ INCLUDES = -I. -I$(@D) -I$(srcdir) -I$(srcdir)/$(@D) \
+-	   -I$(srcdir)/config -I$(srcdir)/../include
++	   -I$(srcdir)/config -I$(srcdir)/../include -I/usr/include
+ 
+ # Always use -I$(srcdir)/config when compiling.
+ .c.o:
