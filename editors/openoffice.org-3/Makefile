@@ -7,7 +7,7 @@
 
 PORTNAME=	openoffice
 PORTVERSION=	1.1.0
-PORTREVERSION=	1
+PORTREVISION=	1
 CATEGORIES+=	editors
 MASTER_SITES+=	ftp://openofficeorg.secsup.org/pub/software/openoffice/stable/%SUBDIR%/ \
 		ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/stable/%SUBDIR%/ \
@@ -444,7 +444,7 @@ register-mozilla:
 	@${CP} ${WRKDIR}/mozilla/work/mozilla/dist/bin/regxpcom ${WRKDIR}/mozilla-runtime/
 	@-${RM} ${WRKDIR}/mozilla-runtime/components/component.reg
 	@cd ${WRKDIR}/mozilla-runtime && export MOZILLA_FIVE_HOME=. \
-		&& export LD_LIBRARY_PATH=.:./lib && ./regxpcom 
+		&& export LD_LIBRARY_PATH=.:./lib && ./regxpcom
 	@${CP} ${WRKDIR}/mozilla-runtime/components/xpti.dat \
 		${WRKDIR}/mozilla-runtime/components/xptitemp.dat
 	@${RM} ${WRKDIR}/FREEBSDGCCIruntime.zip ${WRKDIR}/mozilla-runtime/regxpcom
