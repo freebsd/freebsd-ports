@@ -1,0 +1,10 @@
+--- Makefile.orig	Sat Apr 29 20:56:31 2000
++++ Makefile	Sat Apr 29 20:56:43 2000
+@@ -7,6 +7,7 @@
+ SHLIB_MAJOR=1
+ SHLIB_MINOR=4
+ CFLAGS+=-I/usr/src/lib/libc/locale -I/usr/src/lib/libc/stdio/ 
++NOPROFILE=yes
+ 
+ #you should add -DPARANOIDAL_ROOT to CFLAGS. In that case, only 
+ #setugid(2) processes and processes with uid or euid == 0 will 

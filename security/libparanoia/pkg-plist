@@ -1,6 +1,5 @@
 lib/libparanoia.a
-lib/libparanoia_p.a
 lib/libparanoia.so
-lib/libparanoia.so.1.3
+lib/libparanoia.so.1.4
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
