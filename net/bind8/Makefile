@@ -19,6 +19,7 @@ MASTER_SITES=	ftp://ftp.isc.org/isc/bind/src/${PORTVERSION}/ \
 		ftp://ftp.grolier.fr/pub/isc/bind/src/${PORTVERSION}/
 
 DISTFILES=	bind-src.tar.gz bind-doc.tar.gz
+DIST_SUBDIR=	bind-${PORTVERSION}
 
 MAINTAINER=	DougB@FreeBSD.org
 
