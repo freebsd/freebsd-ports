@@ -75,7 +75,7 @@
   /* The name of the default referrer log (= referer_log). Use "none" for none.
      Can be a list, separated by commas. */
   
-! #define BROWSER_LOG "/var/logs/httpd-agent.log"
+! #define BROWSER_LOG "/var/log/httpd-agent.log"
   /* The name of the default browser log (= agent_log) similarly. */
   
 ! #define ERROR_LOG "/var/log/httpd-error.log"
