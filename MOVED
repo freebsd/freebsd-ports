@@ -525,3 +525,9 @@ x11/gnomeres_applet||2003-08-19|removed as part of GNOME 1.4 desktop phase out
 x11/finder||2003-08-19|removed as part of GNOME 1.4 desktop phase out
 x11-clocks/zclock||2003-08-19|removed as part of GNOME 1.4 desktop phase out
 x11/stockticker_applet||2003-08-19|removed as part of GNOME 1.4 desktop phase out
+net/ekg|polish/ekg|2003-08-19|moved to new polish category
+net/gnugadu|polish/gnugadu|2003-08-19|moved to new polish category
+misc/pl-sms|polish/sms|2003-08-19|moved to new polish category
+misc/kde3-i18n-pl|polish/kde3-i18n|2003-08-19|moved to new polish category
+misc/koffice-i18n-pl|polish/koffice-i18n|2003-08-19|moved to new polish category
+textproc/pl-aspell|polish/pl-aspell|2003-08-19|moved to new polish category
