@@ -16,8 +16,6 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}beta-src
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	Tools for remote and centralized audit data collection
 
-BROKEN=		"Bad pkg-plist"
-
 .if defined(WITH_MYSQL)
 LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 .endif
