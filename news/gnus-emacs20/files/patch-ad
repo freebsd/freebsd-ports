@@ -1,0 +1,22 @@
+--- texi/Makefile.in~	Thu Jan  4 08:16:11 2001
++++ texi/Makefile.in	Mon Jan 29 14:08:22 2001
+@@ -137,16 +137,16 @@
+ 	for file in $$list; do \
+ 	  for ifile in `echo $$file $$file-[0-9] $$file-[0-9][0-9]`; do \
+ 	    if test -f $$ifile; then \
+-	      echo " $(INSTALL_DATA) $$ifile $(infodir)/$$ifile"; \
+-	      $(INSTALL_DATA) $$ifile $(infodir)/$$ifile; \
++	      echo " $(INSTALL_DATA) $$ifile $(infodir)/$$ifile.info"; \
++	      $(INSTALL_DATA) $$ifile $(infodir)/$$ifile.info; \
+ 	    else : ; fi; \
+ 	  done; \
+ 	done
+ 	@if $(SHELL) -c 'install-info --version | sed 1q | fgrep -s -v -i debian' >/dev/null 2>&1; then \
+ 	  list='$(INFO_DEPS)'; \
+ 	  for file in $$list; do \
+-	    echo " install-info --info-dir=$(infodir) $(infodir)/$$file";\
+-	    install-info --info-dir=$(infodir) $(infodir)/$$file || :;\
++	    echo " install-info --info-dir=$(infodir) $(infodir)/$$file.info";\
++	    install-info --info-dir=$(infodir) $(infodir)/$$file.info || :;\
+ 	  done; \
+ 	else : ; fi

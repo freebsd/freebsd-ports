@@ -11,6 +11,7 @@
     SUBDIR += dnews
     SUBDIR += fidogate
     SUBDIR += glitter
+    SUBDIR += gnus-emacs20
     SUBDIR += grn
     SUBDIR += gup
     SUBDIR += ifmail
