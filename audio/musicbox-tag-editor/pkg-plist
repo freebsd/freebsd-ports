@@ -1,0 +1,6 @@
+bin/musicbox-tag-editor
+share/gnome/applications/musicbox.desktop
+share/gnome/musicbox/edit.pl
+share/gnome/musicbox/musicbox.glade
+share/gnome/pixmaps/musicbox.png
+@dirrm share/gnome/musicbox
