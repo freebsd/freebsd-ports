@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.13 1995/08/18 08:53:54 asami Exp $
+# $Id: Makefile,v 1.14 1995/10/03 11:45:09 asami Exp $
 #
 
     SUBDIR += blas
@@ -15,5 +15,6 @@ RESTRICTED += maxima (license required)
     SUBDIR += xgraph
     SUBDIR += xlispstat
     SUBDIR += xspread
+    SUBDIR += xvgr
 
 .include <bsd.port.subdir.mk>
