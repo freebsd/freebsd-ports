@@ -1,0 +1,5 @@
+lib/perl5/site_perl/%%PERL_VER%%/Business/OnlinePayment/Jettis.pm
+lib/perl5/site_perl/%%PERL_VER%%/auto/Business/OnlinePayment/Jettis/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/Jettis/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/Jettis
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Business/OnlinePayment/Jettis
