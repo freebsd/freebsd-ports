@@ -25,8 +25,8 @@ USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
 CONFIGURE_ARGS=	--with-sdl-config="sdl11-config" \
-		--with-cflags="-pthread" \
-		--with-ldflags="-lc_r"
+		--with-cflags="${PTHREAD_CFLAGS}" \
+		--with-ldflags="${PTHREAD_LIBS}"
 INSTALL_TARGET=	site-install
 
 .include <bsd.port.pre.mk>
