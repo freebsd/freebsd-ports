@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Geo-Weather
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	misc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		ftp://ftp.innercite.com/pub/perl/
