@@ -6,6 +6,7 @@ bin/GenTone
 bin/InfoAudio
 bin/LPanal
 bin/LPsyn
+bin/PQevalAudio
 bin/ResampAudio
 include/AO.h
 include/AObase.h
@@ -63,6 +64,7 @@ share/afsp/filters/TIA_IRS_FIR_8k.cof
 %%DOCSDIR%%/audio/InfoAudio.html
 %%DOCSDIR%%/audio/LPanal.html
 %%DOCSDIR%%/audio/LPsyn.html
+%%DOCSDIR%%/audio/PQevalAudio.html
 %%DOCSDIR%%/audio/ResampAudio.html
 %%DOCSDIR%%/libtsp/AF/AFclose.html
 %%DOCSDIR%%/libtsp/AF/AFdReadData.html
@@ -72,7 +74,7 @@ share/afsp/filters/TIA_IRS_FIR_8k.cof
 %%DOCSDIR%%/libtsp/AF/AFopnRead.html
 %%DOCSDIR%%/libtsp/AF/AFopnWrite.html
 %%DOCSDIR%%/libtsp/AF/AFsetFileType.html
-%%DOCSDIR%%/libtsp/AF/AFsetHinfo.html
+%%DOCSDIR%%/libtsp/AF/AFsetInfo.html
 %%DOCSDIR%%/libtsp/AF/AFsetNHpar.html
 %%DOCSDIR%%/libtsp/AF/AFsetSpeaker.html
 @dirrm include/libtsp
