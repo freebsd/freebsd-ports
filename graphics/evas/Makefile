@@ -18,7 +18,8 @@ LIB_DEPENDS=	Imlib2.1:${PORTSDIR}/graphics/imlib2
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/freetype1 \
+			  -I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 CONFIGURE_ARGS=	--disable-gl
 INSTALLS_SHLIB=	yes
