@@ -3,7 +3,7 @@
 # Date created:		11 March 1997
 # Whom:			taguchi@tohoku.iij.ad.jp
 #
-# $Id: Makefile,v 1.4 1997/09/14 21:36:06 max Exp $
+# $Id: Makefile,v 1.5 1998/07/03 23:06:30 steve Exp $
 #
 
 DISTNAME=	tcl7.6p2
@@ -17,7 +17,7 @@ PATCHFILES=	tcl7.6jp-patch.gz
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
-GNU_CONFIGURE=	yes
+USE_AUTOCONF=	yes
 CONFIGURE_ARGS=	--enable-shared
 CONFIGURE_ENV=  PORTSDIR=${PORTSDIR}
 
@@ -44,9 +44,12 @@ pre-install:
 	cd ${WRKSRC} && ${MAKE} -f Makefile.lib PREFIX=${PREFIX} VERSION=${VERSION} install
 
 post-install:
-	${LDCONFIG} -m ${PREFIX}/lib
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 test:
-	cd ${WRKSRC} && ${MAKE} test
+	cd ${WRKSRC} && ${SETENV} PORTOBJFORMAT=${PORTOBJFORMAT} ${MAKE} test
+
+install-man:
+	cd ${WRKSRC} && ${SETENV} PORTOBJFORMAT=${PORTOBJFORMAT} ${MAKE} install-man
 
 .include <bsd.port.mk>
