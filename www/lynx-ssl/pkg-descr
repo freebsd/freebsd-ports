@@ -1,0 +1,8 @@
+lynx is a program that allows a user to access World-Wide Web servers
+and other information servers.  It uses only ascii representation so
+that it can be used from ascii-terminals and dial-in lines.
+
+http://lynx.browser.org/
+
+This version contains the ssl patch from Mark Mentovai <mark@moxienet.com>
+available at http://www.moxienet.com/lynx/
