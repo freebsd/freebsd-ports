@@ -6,32 +6,27 @@
 #
 
 PORTNAME=	mrt
-PORTVERSION=	2.1.2a
+PORTVERSION=	2.2.2a
 CATEGORIES=	net ipv6
-MASTER_SITES=	ftp://ftp.merit.edu/net-research/mrt/ \
-		ftp://ftp.merit.edu/net-research/mrt/old_versions/
-DISTNAME=	mrt-${PORTVERSION}-src
+MASTER_SITES=	ftp://ftp.merit.edu/net-research/mrt/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/mrt-${VERBASE}/src
-GNU_CONFIGURE=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
+
 USE_AUTOCONF=	yes
 
-VERBASE=	2.1.2a
+MAN8=		mrtd.8
 
-MAN8=	mrtd.8
 EXAMPLES=	programs/bgpsim/bgpsim.conf programs/bgpsim/bgpsim6.conf \
-		programs/mrtd/mrtd.conf programs/mrtd/mrtd.ripng.conf \
-		programs/mrtd/solaris.ripng.conf
-
-#post-extract:
-#	(${CHDIR} ${WRKSRC}/..; ./make-sym-links kame)
+		programs/mrtd/mrtd.conf programs/mrtd/mrtd.pim.conf \
+		programs/mrtd/mrtd.ripng.conf programs/mrtd/solaris.ripng.conf
 
 post-install:
-	${MKDIR} ${PREFIX}/share/examples/mrt
-	for i in ${EXAMPLES}; do \
-		${INSTALL_DATA} ${WRKSRC}/$$i ${PREFIX}/share/examples/mrt; \
-	done
+	@${MKDIR} ${PREFIX}/share/examples/mrt
+.for file in ${EXAMPLES}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/examples/mrt
+.endfor
 
 .include <bsd.port.mk>
