@@ -1,0 +1,10 @@
+TTH translates TeX source that uses the Plain macro package, or
+LaTeX, into a near equivalent in HTML.  It is extremely fast and
+completely portable. It produces web documents that are more compact
+and managable, and faster-viewing, than those from other converters,
+because it really translates the equations, instead of converting them
+into images.
+
+For more information see the homepage at
+
+http://hutchinson.belmont.ma.us/tth/tth.html

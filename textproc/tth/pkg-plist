@@ -1,0 +1,8 @@
+bin/l2h
+bin/latex2gif
+bin/ps2gif
+bin/tth
+man/man1/tth.1.gz
+share/doc/tth/license.txt
+share/doc/tth/tth_manual.html
+@dirrm share/doc/tth
