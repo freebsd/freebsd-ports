@@ -1,0 +1,41 @@
+libexec/ninix/_kawari8.so
+share/kawari/license.txt
+share/kawari/readme.1st
+share/kawari/document/banners/kawalinks.png
+share/kawari/document/banners/kawari.png
+share/kawari/document/banners/kawaribts.png
+share/kawari/document/banners/kawariplus.png
+share/kawari/document/banners/kawarisf.png
+share/kawari/document/banners/kawari_bbs.png
+share/kawari/document/banners/kawari_logo.png
+share/kawari/document/banners/kpcg_banner.png
+share/kawari/document/images/logo.png
+share/kawari/document/images/logo2.png
+share/kawari/document/images/ver_731.png
+share/kawari/document/images/ver_790.png
+share/kawari/document/images/ver_800.png
+share/kawari/document/images/ver_810.png
+share/kawari/document/index.html
+share/kawari/document/kawari.css
+share/kawari/document/kis_reference.html
+share/kawari/document/kiu_specbnf.txt
+share/kawari/document/kosui.html
+share/kawari/document/license.html
+share/kawari/document/programming.html
+share/kawari/document/programming_1.html
+share/kawari/document/programming_2.html
+share/kawari/document/programming_3.html
+share/kawari/document/programming_4.html
+share/kawari/document/programming_5.html
+share/kawari/document/start.html
+share/kawari/document/story.html
+share/kawari/document/tips.html
+share/kawari/document/users.html
+share/kawari/document/convert.html
+share/kawari/document/errormes.html
+share/kawari/build/build.txt
+@dirrm share/kawari/document/banners
+@dirrm share/kawari/document/images
+@dirrm share/kawari/document
+@dirrm share/kawari/build
+@dirrm share/kawari
