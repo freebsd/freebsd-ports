@@ -1,0 +1,11 @@
+
+========================================================================
+Please set environment variable to choose skin you like.
+
+Ex.
+% setenv timidity_skin ~/.x11amp/Skins/timidity/
+or
+% setenv timidity_skin /dos/programs/winamp/skins/winamp.zip
+
+========================================================================
+
