@@ -1,7 +1,7 @@
 @comment $FreeBSD$
 bin/icehelp
 bin/icesh
-%%ESOUND%%bin/icesound
+bin/icesound
 bin/icewm
 %%GNOMEDESKTOP%%bin/icewm-menu-gnome2
 bin/icewmbg

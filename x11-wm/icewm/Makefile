@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	icewm
-PORTVERSION=	1.2.11
-PORTREVISION=	1
+PORTVERSION=	1.2.12
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,6 +25,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 CONFIGURE_ARGS=	--enable-shaped-decorations \
+		--enable-guievents \
 		--with-cfgdir=${DATADIR} \
 		--with-libdir=${DATADIR} \
 		--with-kdedatadir=${LOCALBASE}/share \
@@ -35,28 +35,38 @@ CONFIGURE_ARGS=	--enable-shaped-decorations \
 .include <bsd.port.pre.mk>
 
 .if ${HAVE_GNOME:Mgnomedesktop}!=""
-USE_GNOME+=	gnomedesktop imlib
-CONFIGURE_ARGS+=	--with-imlib --without-xpm --enable-menus-gnome2 \
-			--enable-guievents --with-icesound=esound
+USE_GNOME+=	gnomedesktop
+CONFIGURE_ARGS+=	--enable-menus-gnome2
 INSTALL_TARGET=		install install-gnome
-PLIST_SUB+=	ESOUND="" GNOMEDESKTOP=""
+PLIST_SUB+=	GNOMEDESKTOP=""
 PKGNAMESUFFIX=	-gnome
 .else
+PLIST_SUB+=	GNOMEDESKTOP="@comment "
+.endif
+
+.if ${HAVE_GNOME:Mimlib}!=""
+USE_GNOME+=	imlib
+CONFIGURE_ARGS+=	--with-imlib
+.else
 USE_XPM=	yes
-CONFIGURE_ARGS+=	--without-imlib --with-xpm
+CONFIGURE_ARGS+=	--without-imlib
+.endif
+
 .if ${HAVE_GNOME:Mesound}!=""
 USE_GNOME+=	esound
-CONFIGURE_ARGS+=	--enable-guievents --with-icesound=esound
-PLIST_SUB+=	ESOUND="" GNOMEDESKTOP="@comment "
+CONFIGURE_ARGS+=	--with-icesound=esound
 .else
-PLIST_SUB+=	ESOUND="@comment " GNOMEDESKTOP="@comment "
-.endif
+CONFIGURE_ARGS+=	--with-icesound=oss
 .endif
 
 .if ${XFREE86_VERSION} < 4 || defined(WITHOUT_XFT)
 CONFIGURE_ARGS+=	--enable-corefonts --disable-xfreetype
 .else
 LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/Xft
+.endif
+
+.if ${ARCH} != "i386" || defined(WITHOUT_X86_ASM)
+CONFIGURE_ARGS+=	--disable-x86-asm
 .endif
 
 post-patch:
