@@ -1,0 +1,11 @@
+Tools to manipulate UNIX mailboxes.
+Example of use messarge as www interface
+to mail archive included (like mhonarc,
+but original UNIX mailboxes used).
+Converts Russian encodings as appropriate.
+Multipart messages and multimedia extensions
+processing included. Extremely fast response
+for operations with indexed mailboxes.
+Very flexible.
+
+WWW: http://www.links.ru/soft/messarge/

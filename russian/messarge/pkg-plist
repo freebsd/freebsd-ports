@@ -1,0 +1,18 @@
+bin/mesraw
+bin/mesdbc
+bin/mesarc
+bin/mestun
+share/examples/messarge/README
+share/examples/messarge/establi.sh
+share/examples/messarge/format
+share/examples/messarge/index.html
+share/examples/messarge/m.shtml
+share/examples/messarge/mailquo.shtml
+share/examples/messarge/mesbin.cgi
+share/examples/messarge/message.shtml
+share/examples/messarge/message.shtml.f
+share/examples/messarge/s.shtml
+share/examples/messarge/t.shtml
+share/examples/messarge/write.shtml
+@dirrm share/examples/messarge
+@unexec rmdir %D/share/examples 2>/dev/null || true
