@@ -10,7 +10,7 @@ DISTNAME=	xjewel-1.6
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.warwick.ac.uk/pub/x11/ \
 		ftp://ftp.x.org/R5contrib/ \
-		ftp://ftp.cdrom.com/pub/X11/R5contrib/
+		ftp://ftp.freesoftware.com/pub/X11/R5contrib/
 EXTRACT_SUFX=	.tar.z
 
 MAINTAINER=	jmz@FreeBSD.org
