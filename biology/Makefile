@@ -18,6 +18,7 @@
     SUBDIR += psi88
     SUBDIR += rasmol
     SUBDIR += seaview
+    SUBDIR += sim4
     SUBDIR += tinker
     SUBDIR += xdrawchem
     SUBDIR += xmolwt
