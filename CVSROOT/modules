@@ -1801,6 +1801,7 @@ gkrellmqst	ports/net/gkrellmqst
 gkrellmseti	ports/astro/gkrellmseti
 gkrellmss	ports/audio/gkrellmss
 gkrellmvolume	ports/audio/gkrellmvolume
+gkrellmwireless	ports/net/gkrellmwireless
 gkrellscore	ports/misc/gkrellscore
 gkrellweather	ports/misc/gkrellweather
 glacier		ports/mail/glacier
