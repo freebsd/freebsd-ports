@@ -37,6 +37,7 @@
     SUBDIR += fontedit
     SUBDIR += fortunelock
     SUBDIR += fsck_ext2fs
+    SUBDIR += ftrace
     SUBDIR += gcombust
     SUBDIR += gkrellm
     SUBDIR += glload

@@ -1,0 +1,8 @@
+--- ftrace.orig	Sat Jan  6 14:11:37 2001
++++ ftrace	Sat Jan  6 14:11:24 2001
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ if [ "$1" = "-i" ]; then
+ 	export FTRACEIGNOREME=1

@@ -1,0 +1,16 @@
+--- Makefile.orig	Fri Jan  5 18:40:20 2001
++++ Makefile	Sat Jan  6 14:11:10 2001
+@@ -1,11 +1,10 @@
+-PREFIX = /usr/local
+ BINDIR = $(PREFIX)/bin
+ LIBDIR = $(PREFIX)/lib
+ 
+ CC = gcc
+ LD = ld
+-CFLAGS = -Wall -O3 -DPIC -fPIC -D_REENTRANT
+-LDFLAGS = -shared -ldl
++CFLAGS += -Wall -O3 -DPIC -fPIC -D_REENTRANT
++LDFLAGS = -shared
+ OBJS = ftrace.o
+ 
+ .PHONY:	all clean install
