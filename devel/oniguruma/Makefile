@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	oniguruma
-PORTVERSION=	2.2.4
+PORTVERSION=	2.2.5
 CATEGORIES=	devel
 MASTER_SITES=	http://www.geocities.jp/kosako1/oniguruma/archive/ \
 		${MASTER_SITE_RUBY}
 MASTER_SITE_SUBDIR=	contrib
-DISTNAME=	onigd20040304
+DISTNAME=	onigd20040316
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
