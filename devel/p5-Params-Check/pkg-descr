@@ -1,0 +1,5 @@
+Params::Check is a generic input parsing/checking mechanism.  It allows
+you to validate input via a template. The only requirement is that the
+arguments must be named.
+
+WWW: http://search.cpan.org/dist/Params-Check

@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Params/Check.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Params/Check/.packlist
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Params/Check 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Params 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Params 2>/dev/null || true
