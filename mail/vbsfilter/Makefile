@@ -31,7 +31,7 @@ LDFLAGS+=	-L$(LOCALBASE)/lib
 
 .if exists(${LOCALBASE}/include/libmilter/mfdef.h) \
 || defined(SENDMAIL_MILTER_IN_BASE)
-LIBS+=		-lmilter -lsm -lsmutil
+LIBS+=		-lmilter
 .else
 LIBS+=		-lmilter -lsmutil
 .endif
