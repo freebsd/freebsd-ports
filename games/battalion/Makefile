@@ -8,7 +8,7 @@
 PORTNAME=	battalion
 PORTVERSION=	1.4
 CATEGORIES=	games
-MASTER_SITES=	http://www.evl.uic.edu/aej/
+MASTER_SITES=	http://www.evl.uic.edu/aej/BATTALION/
 DISTFILES=	battalionSource1.4.tar.Z battalionSUN4.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
