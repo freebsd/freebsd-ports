@@ -21,8 +21,8 @@ WWW: http://openlab.ring.gr.jp/edict/srd-fpw/
    ;; a directory having img.dat installed by the package ja-srd-fpw 
 (setq srd-fpw-sound-directory "/cdrom/srd/DATA")
    ;; a directory having srdra.bnd in CD-ROM
-(setq play-realaudio-process "rvplayer")
-(setq display-image-process "display")
+(setq srd-fpw-play-realaudio-process "realplay")
+(setq srd-fpw-display-image-process "display")
 (if (featurep 'xemacs)
     (progn
       (setq srd-fpw-image-inline t)
