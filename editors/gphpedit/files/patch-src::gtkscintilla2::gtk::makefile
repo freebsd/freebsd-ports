@@ -1,0 +1,48 @@
+--- src/gtkscintilla2/scintilla/gtk/makefile.orig	Wed Nov  3 07:44:13 2004
++++ src/gtkscintilla2/scintilla/gtk/makefile	Sat Dec 18 14:06:07 2004
+@@ -8,7 +8,7 @@
+ # To force GTK+ 1 build, define GTK1 on the make command line.
+ 
+ .SUFFIXES: .cxx .o .h .a
+-CC = g++
++CC ?= g++
+ AR = ar
+ RANLIB = touch
+ 
+@@ -31,29 +31,29 @@
+ endif
+ 
+ ifdef DEBUG
+-CXXFLAGS=-DDEBUG -g $(CXXBASEFLAGS) $(THREADFLAGS)
++CXXFLAGS+=-DDEBUG -g $(CXXBASEFLAGS) $(THREADFLAGS)
+ else
+-CXXFLAGS=-DNDEBUG -Os $(CXXBASEFLAGS) $(THREADFLAGS)
++CXXFLAGS+=-DNDEBUG $(CXXBASEFLAGS) $(THREADFLAGS)
+ endif
+ 
+ # If explicit setting of GTK1 or GTK2 then use that else look for
+ # pkg-config which is an OK indication that GTK2 is available
+ ifdef GTK2
+-CONFIGFLAGS=pkg-config --cflags gtk+-2.0
++CONFIGFLAGS=pkg-config --cflags gtk+-2.0 gthread-2.0
+ else
+ ifdef GTK1
+-CONFIGFLAGS=gtk-config --cflags
++CONFIGFLAGS=gtk-config --cflags gthread
+ else
+ ifneq (,$(findstring /,$(shell whereis pkg-config)))
+-CONFIGFLAGS=pkg-config --cflags gtk+-2.0
++CONFIGFLAGS=pkg-config --cflags gtk+-2.0 gthread-2.0
+ else
+-CONFIGFLAGS=gtk-config --cflags
++CONFIGFLAGS=gtk-config --cflags gthread
+ endif
+ endif
+ endif
+ 
+ .cxx.o:
+-	$(CC) `$(CONFIGFLAGS)` $(CXXFLAGS) -c $<
++	$(CC) -DPIC -fpic `$(CONFIGFLAGS)` $(CXXFLAGS) -c $<
+ 
+ LEXOBJS=LexCPP.o LexCSS.o LexEScript.o LexHTML.o LexPerl.o LexSQL.o LexVB.o
+ 

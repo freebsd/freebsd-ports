@@ -1,0 +1,37 @@
+--- src/gtkscintilla2/Makefile.orig	Wed Nov  3 07:27:52 2004
++++ src/gtkscintilla2/Makefile	Sat Dec 18 14:10:04 2004
+@@ -2,7 +2,7 @@
+ 
+ NAME = GtkScintilla2
+ LIB_NAME = gtkscintilla2
+-VERSION = 0.1.0
++VERSION = 0
+ PREFIX = $(shell pkg-config --variable=prefix gtk+-2.0)
+ 
+ SCINTILLA_DIR = ./scintilla
+@@ -10,12 +10,12 @@
+ SCINTILLA_LIB = $(SCINTILLA_DIR)/bin/scintilla.a
+ SCINTILLA_IFACE = $(SCINTILLA_INCLUDE)/Scintilla.iface
+ LEXERS = $(wildcard $(SCINTILLA_DIR)/gtk/Lex*.o)
+-CFLAGS = $(shell pkg-config --cflags gtk+-2.0) -g -Wall -DGTK -DSCI_LEXER
+-LDFLAGS_PRE = $(shell pkg-config --libs gtk+-2.0) -DGTK2
++CFLAGS += $(shell pkg-config --cflags gtk+-2.0 gthread-2.0) -Wall -DGTK -DSCI_LEXER -DPIC -fpic
++LDFLAGS_PRE = $(shell pkg-config --libs gtk+-2.0 gthread-2.0) -DGTK2
+ LDFLAGS_POST =  $(LEXERS)  $(SCINTILLA_LIB) -lstdc++
+ 
+-CC = gcc
+-LD = gcc
++CC ?= gcc
++LD = $(CC)
+ AR = ar
+ 
+ STATIC_LIB = lib$(LIB_NAME).a
+@@ -23,7 +23,7 @@
+ 
+ LIB_DIR = $(PREFIX)/lib
+ INCLUDE_DIR = $(PREFIX)/include/$(LIB_NAME)
+-PKG_CONFIG_DIR = $(PREFIX)/lib/pkgconfig
++PKG_CONFIG_DIR = $(PREFIX)/libdata/pkgconfig
+ 
+ all: $(STATIC_LIB) $(SHARED_LIB)
+ 

@@ -1,0 +1,10 @@
+--- gphpedit.desktop.in.orig	Sat Dec 18 14:14:16 2004
++++ gphpedit.desktop.in	Sat Dec 18 14:14:39 2004
+@@ -5,5 +5,5 @@
+ Terminal=false
+ MultipleArgs=true
+ Type=Application
+-Categories=Application;Development;X-Red-Hat-Base;
+-Icon=/usr/share/pixmaps/gphpedit.png
++Categories=Application;Development
++Icon=gphpedit.png
