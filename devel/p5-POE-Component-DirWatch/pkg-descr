@@ -1,0 +1,11 @@
+POE::Component::DirWatch watches a directory for files.  It creates a
+separate session which invokes a user-supplied callback as soon as it
+finds a file in the directory.
+
+Its primary intended use is processing a "drop-box" style directory,
+such as an FTP upload directory.
+
+WWW: http://search.cpan.org/search?dist=POE-Component-DirWatch
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
