@@ -1,19 +1,25 @@
---- Makefile.orig	Wed May 17 00:31:04 2000
-+++ Makefile	Thu Jun  8 17:41:26 2000
-@@ -1,8 +1,10 @@
- 
+--- Makefile	2002/02/14 03:34:07	1.1
++++ Makefile	2002/02/14 03:53:34
+@@ -2,14 +2,16 @@
  SHELL=/bin/sh
+ 
+ # To assist in cross-compiling
 -CC=gcc
 +CC?=gcc
+ AR=ar
+ RANLIB=ranlib
+ LDFLAGS=
+ 
+ # Suitably paranoid flags to avoid bugs in gcc-2.7
  BIGFILES=-D_FILE_OFFSET_BITS=64
 -CFLAGS=-Wall -Winline -O2 -fomit-frame-pointer -fno-strength-reduce $(BIGFILES)
 +CFLAGS?=-O2
 +CFLAGS+=-Wall -Winline -fomit-frame-pointer -fno-strength-reduce $(BIGFILES)
 +SOFLAGS=-fPIC -fpic -DPIC
  
- OBJS= blocksort.o  \
-       huffman.o    \
-@@ -12,10 +14,18 @@
+ # Where you want it installed when you do 'make install'
+ PREFIX=/usr
+@@ -23,10 +25,18 @@
        decompress.o \
        bzlib.o
  
@@ -27,37 +33,36 @@
 +      bzlib.so
  
 -bzip2: libbz2.a bzip2.o
--	$(CC) $(CFLAGS) -o bzip2 bzip2.o -L. -lbz2
+-	$(CC) $(CFLAGS) $(LDFLAGS) -o bzip2 bzip2.o -L. -lbz2
 +all: libbz2.so.1 libbz2.a bzip2 bzip2recover test
 +
 +bzip2: libbz2.so.1 libbz2.a bzip2.o
 +	$(CC) $(CFLAGS) -o bzip2 bzip2.o libbz2.a
  
  bzip2recover: bzip2recover.o
- 	$(CC) $(CFLAGS) -o bzip2recover bzip2recover.o
-@@ -29,6 +39,10 @@
- 		ranlib libbz2.a ; \
+ 	$(CC) $(CFLAGS) $(LDFLAGS) -o bzip2recover bzip2recover.o
+@@ -40,6 +50,10 @@
+ 		$(RANLIB) libbz2.a ; \
  	fi
  
 +libbz2.so.1: $(SO_OBJS)
 +	$(CC) -shared -Wl,-soname -Wl,libbz2.so.1 -o libbz2.so.1 $(SO_OBJS)
 +	ln -sf libbz2.so.1 libbz2.so
 +
+ check: test
  test: bzip2
  	@cat words1
- 	./bzip2 -1  < sample1.ref > sample1.rb2
-@@ -69,12 +83,27 @@
- 	chmod a+r $(PREFIX)/lib/libbz2.a
+@@ -98,9 +112,25 @@
  
+ distclean: clean
  clean: 
 -	rm -f *.o libbz2.a bzip2 bzip2recover \
 +	rm -f *.o *.so libbz2.a libbz2.so.1 bzip2 bzip2recover \
  	sample1.rb2 sample2.rb2 sample3.rb2 \
  	sample1.tst sample2.tst sample3.tst
- 
--blocksort.o: blocksort.c
++
 +blocksort.so: blocksort.c
- 	@cat words0
++	@cat words0
 +	$(CC) $(CFLAGS) $(SOFLAGS) -c blocksort.c -o blocksort.so
 +huffman.so: huffman.c
 +	$(CC) $(CFLAGS) $(SOFLAGS) -c huffman.c -o huffman.so
@@ -71,8 +76,6 @@
 +	$(CC) $(CFLAGS) $(SOFLAGS) -c decompress.c -o decompress.so
 +bzlib.so: bzlib.c
 +	$(CC) $(CFLAGS) $(SOFLAGS) -c bzlib.c -o bzlib.so
-+
-+blocksort.o: blocksort.c
- 	$(CC) $(CFLAGS) -c blocksort.c
- huffman.o: huffman.c
- 	$(CC) $(CFLAGS) -c huffman.c
+ 
+ blocksort.o: blocksort.c
+ 	@cat words0
