@@ -16,18 +16,25 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	The Free Software Foundation's core utilities
 
-CONFLICTS=	sh-utils-* fileutils-* textutils-* id-utils-*
+CONFLICTS=	sh-utils-[0-9]* fileutils-[0-9]* textutils-[0-9]* id-utils-[0-9]*
 
 USE_GPG?=	yes
 SIG_FILES=	${DISTNAME}${EXTRACT_SUFX}.sig
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--program-prefix=g
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
 
 USE_GMAKE=	yes
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.endif
 
 INFO=		coreutils
 
@@ -51,6 +58,9 @@ post-patch:
 .if !defined(WITH_SUID)
 	@${REINPLACE_CMD} -e "s/u\+s/u\+w/g" ${WRKSRC}/src/Makefile.in
 .endif
+
+post-build:
+	@${REINPLACE_CMD} -e "s/ lib / /g" ${WRKSRC}/Makefile
 
 post-install: install-info
 
