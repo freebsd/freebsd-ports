@@ -1,14 +1,14 @@
---- configure.in.orig	Wed Jul 25 09:39:21 2001
-+++ configure.in	Sun Oct  7 23:20:24 2001
-@@ -1098,6 +1098,7 @@
+--- configure.in.orig	Thu Oct 16 00:37:12 2003
++++ configure.in	Thu Oct 16 00:40:18 2003
+@@ -1104,6 +1104,7 @@
  dnl Straightforward OS determination
  case "$canonical" in
    *-*-linux*    ) opsys=linux ;;
-+  *-*-freebsd* ) opsys=freebsd ;;
++  *-*-freebsd*  ) opsys=freebsd ;;
    *-*-netbsd*   ) opsys=netbsd ;;
    *-*-openbsd*	) opsys=openbsd ;;
    *-*-nextstep* ) opsys=nextstep ;;
-@@ -3661,21 +3662,24 @@
+@@ -3782,21 +3783,24 @@
      test "$ac_cv_func_crypt" != "yes" && { AC_CHECK_LIB(crypt, crypt) }
    fi
    dnl Back to our regularly scheduled wnn hunting
@@ -20,13 +20,13 @@
 +  if test "$with_wnn6" = "yes"; then
 +    AC_CHECK_LIB(wnn6,jl_fi_dic_list_e,libwnn=wnn6,
 +      AC_CHECK_LIB(wnn6_fromsrc,jl_fi_dic_list_e,libwnn=wnn6_fromsrc,
-+	AC_CHECK_LIB(wnn,jl_fi_dic_list_e,libwnn=wnn, [with_wnn6=no; with_wnn=no])))
++       AC_CHECK_LIB(wnn,jl_fi_dic_list_e,libwnn=wnn, [with_wnn6=no; with_wnn=no])))
 +  else
 +    if test -z "$with_wnn" -o "$with_wnn" = "yes"; then
 +      AC_CHECK_LIB(wnn,jl_dic_list_e,libwnn=wnn,
-+	AC_CHECK_LIB(wnn4,jl_dic_list_e,libwnn=wnn4,
-+	  AC_CHECK_LIB(wnn6,jl_fi_dic_list_e,[libwnn=wnn6; with_wnn6=yes],
-+	    AC_CHECK_LIB(wnn6_fromsrc,jl_fi_dic_list_e, [libwnn=wnn6_fromsrc; with_wnn6=yes],with_wnn=no))))
++       AC_CHECK_LIB(wnn4,jl_dic_list_e,libwnn=wnn4,
++         AC_CHECK_LIB(wnn6,jl_fi_dic_list_e,[libwnn=wnn6; with_wnn6=yes],
++           AC_CHECK_LIB(wnn6_fromsrc,jl_fi_dic_list_e, [libwnn=wnn6_fromsrc; with_wnn6=yes],with_wnn=no))))
 +    fi
    fi
    test -z "$with_wnn" && with_wnn=yes
@@ -42,12 +42,12 @@
    fi
  
    dnl Autodetect canna
-@@ -4257,7 +4261,7 @@
+@@ -4401,7 +4405,7 @@
  dnl Check for Berkeley DB.
  if test "$with_database_berkdb" != "no"; then
    AC_MSG_CHECKING(for Berkeley db.h)
 -  for header in "db/db.h" "db.h"; do
 +  for header in "/usr/include/db.h" "db/db.h" "db.h"; do
+     case "$opsys" in
+         *freebsd*)
      AC_TRY_COMPILE([
- #include <stdlib.h>
- #if !(defined __GLIBC__ && __GLIBC_MINOR__ >= 1)

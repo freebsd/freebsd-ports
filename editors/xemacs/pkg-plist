@@ -150,8 +150,8 @@ lib/xemacs-%%XEMACS_VER%%/etc/photos/dv.png
 lib/xemacs-%%XEMACS_VER%%/etc/photos/dvm.png
 lib/xemacs-%%XEMACS_VER%%/etc/photos/fabrice.png
 lib/xemacs-%%XEMACS_VER%%/etc/photos/fabricem.png
-lib/xemacs-21.4.12/etc/photos/golubev.png
-lib/xemacs-21.4.12/etc/photos/golubevm.png
+lib/xemacs-%%XEMACS_VER%%/etc/photos/golubev.png
+lib/xemacs-%%XEMACS_VER%%/etc/photos/golubevm.png
 lib/xemacs-%%XEMACS_VER%%/etc/photos/hniksic.png
 lib/xemacs-%%XEMACS_VER%%/etc/photos/hniksicm.png
 lib/xemacs-%%XEMACS_VER%%/etc/photos/jan.png
