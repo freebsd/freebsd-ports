@@ -33,7 +33,7 @@ CONFIGURE_ARGS+=--with-qt-dir=${X11BASE} \
 		--with-extra-libs=${LOCALBASE}/lib
 CONFIGURE_ENV+= LIBQT="-lqt2" MOC="${MOC}" LIBQTFILE="libqt2" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-Wl,-export-dynamic -L${LOCALBASE}/lib -lqt2 -ljpeg -lstdc++ -lgcc"
+		LIBS="-Wl,-export-dynamic -L${LOCALBASE}/lib -ljpeg -lstdc++ -lgcc"
 USE_GMAKE=	yes
 PLIST_SUB+=	LIBVER="${SOMAJOR}"
 

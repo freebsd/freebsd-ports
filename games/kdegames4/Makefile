@@ -25,7 +25,7 @@ CONFIGURE_ARGS+=--with-qt-dir=${X11BASE} \
 		--with-qt-libraries=${X11BASE}/lib \
 		--with-extra-libs=${LOCALBASE}/lib
 CONFIGURE_ENV+=	MOC="${MOC}" LIBQT="-lqt2" LIBQTFILE="libqt2" \
-		LIBS="-Wl,-export-dynamic -lqt2 -L${LOCALBASE}/lib -ljpeg -lgcc -lstdc++" \
+		LIBS="-Wl,-export-dynamic -L${LOCALBASE}/lib -ljpeg -lgcc -lstdc++" \
 		CPPFLAGS="-I${LOCALBASE}/include"
 USE_GMAKE=	yes
 
