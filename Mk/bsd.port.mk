@@ -912,7 +912,7 @@ MTREE_FILE=	/etc/mtree/BSD.local.dist
 .endif
 MTREE_CMD?=	/usr/sbin/mtree
 .if ${OSVERSION} >= 500010
-MTREE_ARGS?=	-U -f ${MTREE_FILE} -d -e -p -L
+MTREE_ARGS?=	-U -f ${MTREE_FILE} -L -d -e -p
 .else
 MTREE_ARGS?=	-U -f ${MTREE_FILE} -d -e -p
 .endif
