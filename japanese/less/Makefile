@@ -32,7 +32,7 @@ MAN1=		jless.1 jlesskey.1
 
 DOCDIR=		${PREFIX}/share/doc/less
 READMES=	README.iso README.regex README.iso.jp README.regex.jp
-XGTAGS=		${DISTNAME}-iso${PORTVERSION:E}+gtags
+XGTAGS=		${DISTNAME}-iso${PORTVERSION:E}+gtags-20010110
 
 post-patch:
 	(cd ${WRKSRC} ; \
