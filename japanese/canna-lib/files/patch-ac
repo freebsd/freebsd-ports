@@ -1,5 +1,5 @@
 --- Canna.conf.orig	Thu Nov 28 04:27:01 1996
-+++ Canna.conf	Wed Nov 14 18:14:10 2001
++++ Canna.conf	Mon Nov 19 20:41:21 2001
 @@ -128,14 +128,15 @@
   * $Id: Canna.conf,v 3.13 1996/11/28 10:27:01 kon Exp $
   */
@@ -23,7 +23,13 @@
  
  wcharDefinition = -DCANNA_WCHAR
  Wlib =
-@@ -148,7 +149,7 @@
+@@ -143,12 +144,12 @@
+ 
+ cannaOwner = bin
+ cannaGroup = bin
+-
+ cannaOwnerGroup = -o $(cannaOwner) -g $(cannaGroup)
++cannaOwnerDefinition = -DcannaOwner="$(cannaOwner)"
  
  pointerIntegerDef =
  
@@ -41,3 +47,12 @@
  
  /* locale ディレクトリを持っている場合は以下を記述する */
  /* #define LOCALE_DIR /usr/lib/locale */
+@@ -273,7 +274,7 @@
+  * ここから下は変更しないようにしてください。
+  */
+ 
+- CANNASERVER_DEFINES = $(wcharDefinition)
++ CANNASERVER_DEFINES = $(wcharDefinition) $(cannaOwnerDefinition)
+           RK_DEFINES = $(pointerIntegerDef)
+          RKC_DEFINES = $(wcharDefinition)
+        UILIB_DEFINES = $(wcharDefinition) $(pointerIntegerDef) \
