@@ -8,8 +8,8 @@
 PORTNAME=	spruce
 PORTVERSION=	0.6.5
 CATEGORIES=	mail
-MASTER_SITES=	http://www.xtorshun.org/spruce/v0.6/ \
-		http://fundy.linuxberg.com/files/x11/network/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	erich@tacni.net
 
