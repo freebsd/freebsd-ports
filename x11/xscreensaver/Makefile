@@ -20,9 +20,7 @@ USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_MESA=	yes
 USE_GTK=	yes
-.if defined(WITH_GNOME)
 WANT_GNOME=	yes
-.endif
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-pam --with-gl --with-gle --with-xpm --with-xml \
 		--with-hackdir=${PREFIX}/bin/xscreensaver-hacks/ \
@@ -31,11 +29,12 @@ CONFIGURE_ARGS=	--without-pam --with-gl --with-gle --with-xpm --with-xml \
 
 .include <bsd.port.pre.mk>
 
-.if defined(HAVE_GNOME)
+.if defined(HAVE_GNOME) && defined(WITH_GNOME)
 USE_GNOME=	yes
 CONFIGURE_ARGS+=	--with-gnome
 .else
 CONFIGURE_ARGS+=	--without-gnome
+PLIST_SUB+=	GNOME:="@comment "
 .endif
 
 CONFIGURE_ENV=	X_CFLAGS=-I${LOCALBASE}/include/gnome-xml
