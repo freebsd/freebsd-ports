@@ -1,0 +1,5 @@
+This module allows you to calculate digests while reading or writing
+file handles. This avoids the case you need to reread the same
+content to compute the digests after written a file.
+
+WWW: http://search.cpan.org/dist/IO-Digest/
