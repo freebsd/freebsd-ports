@@ -4,6 +4,11 @@ bin/moc2
 bin/msg2qm
 bin/qt20fix
 bin/qtrename140
+include/qt2/jri.h
+include/qt2/jri_md.h
+include/qt2/jritypes.h
+include/qt2/npapi.h
+include/qt2/npupp.h
 include/qt2/q1xcompatibility.h
 include/qt2/qabstractlayout.h
 include/qt2/qaccel.h
@@ -269,6 +274,7 @@ share/doc/qt2/PORTING
 share/doc/qt2/README
 share/doc/qt2/README.QT
 share/doc/qt2/changes-2.1.0
+share/doc/qt2/changes-2.1.1
 share/doc/qt2/html/aboutqt.html
 share/doc/qt2/html/abstractwidgets.html
 share/doc/qt2/html/accelerators.html
@@ -290,6 +296,7 @@ share/doc/qt2/html/buttongroup-w.png
 share/doc/qt2/html/buttongroups-main-cpp.html
 share/doc/qt2/html/buyhowto.html
 share/doc/qt2/html/changes21.html
+share/doc/qt2/html/changes211.html
 share/doc/qt2/html/checklists-main-cpp.html
 share/doc/qt2/html/classes.html
 share/doc/qt2/html/collection.html
@@ -300,6 +307,7 @@ share/doc/qt2/html/credits.html
 share/doc/qt2/html/cursor-cursor-cpp.html
 share/doc/qt2/html/customlayout-main-cpp.html
 share/doc/qt2/html/customlayout.html
+share/doc/qt2/html/datastreamformat.html
 share/doc/qt2/html/dclock-main-cpp.html
 share/doc/qt2/html/debug.html
 share/doc/qt2/html/design.html
