@@ -43,6 +43,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 CONFIGURE_ARGS=	--enable-xft
 MAKEFILE=	GNUmakefile
 
+ONLY_FOR_ARCHS=	i386
+
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/include/wv.h)
@@ -60,10 +62,6 @@ GNOME_ENABLED=		yes
 LIB_DEPENDS+=		gucharmap.3:${PORTSDIR}/deskutils/gucharmap
 .else
 CONFIGURE_ARGS+=	--enable-cmap=no
-.endif
-
-.if ${OSVERSION} < 500000 || ${ARCH} == "alpha"
-ONLY_FOR_ARCHS=	i386
 .endif
 
 pre-everything::
