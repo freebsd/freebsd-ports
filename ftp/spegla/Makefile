@@ -4,16 +4,18 @@
 # Date created:         Sun Apr 19 16:17:25 PDT 1998
 # Whom:                 Jordan Hubbard <jkh@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1998/04/20 01:57:29 jkh Exp $
+# $Id: Makefile,v 1.2 1998/04/20 22:25:19 asami Exp $
 #
 
-DISTNAME=	spegla-0.93p2
+DISTNAME=	spegla-1.03
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.luth.se/pub/unix/mirror/
+MASTER_SITES=	ftp://ftp.luth.se/pub/unix/mirror/ \
+		ftp://subzero.campus.luth.se/pub/spegla/
 
-MAINTAINER=     jkh@FreeBSD.org
+MAINTAINER=	jkh@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/spegla
+MANCOMPRESSED=	yes
+MAN1=		spegla.1
 
 post-install:
 	@${MKDIR} ${PREFIX}/share/examples/spegla
