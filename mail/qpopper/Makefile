@@ -165,7 +165,9 @@ CONFIGURE_ARGS+=	--enable-standalone
 # accept -y command line option which allows the user to specify a
 # different logging facility.
 .if defined(WITH_Y_OPTION)
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-popper::pop_init.c
+EXTRA_PATCHES+= \
+		${FILESDIR}/extra-patch-popper::pop_init.c \
+		${FILESDIR}/extra-patch-popper::main.c
 .endif
 
 # The default is to build without SSL/TLS support.
