@@ -2,8 +2,8 @@ bin/mei
 bin/moe
 man/man1/mei.1.gz
 man/man1/moe.1.gz
-man/ja_JP.EUC/man1/mei.1.gz
-man/ja_JP.EUC/man1/moe.1.gz
+man/ja/man1/mei.1.gz
+man/ja/man1/moe.1.gz
 share/doc/mei/mdt.txt
 share/doc/mei/mospec.txt
 share/doc/mei/msdos.txt
