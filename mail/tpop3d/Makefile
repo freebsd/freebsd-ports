@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tpop3d
-PORTVERSION=	1.3.4
+PORTVERSION=	1.3.5
 CATEGORIES=	mail
 MASTER_SITES=	http://www.ex-parrot.com/~chris/tpop3d/
 
@@ -24,6 +24,7 @@ USE_PERL5=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-auth-other \
+		--enable-tcp-wrappers \
 		--with-mailspool-directory=/var/mail
 
 .if !defined(WITHOUT_MYSQL)
