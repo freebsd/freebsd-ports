@@ -14,11 +14,12 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sobomax@FreeBSD.org
 
+BUILD_DEPENDS=	automake:${PORTSDIR}/devel/automake
+
 WRKSRC=		${WRKDIR}/BitNotes
 
 USE_X_PREFIX=	yes
 USE_AUTOCONF=	yes
-USE_AUTOMAKE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
