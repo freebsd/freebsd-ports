@@ -1,0 +1,6 @@
+This is a port of RedHat 8.0 "Bluecurve" theme for GTK/GNOME.
+It won't install RedHat logos and pixmaps, but only the required
+theme engines.
+
+- Ryzhyk Eugeney
+rzheka@users.sourceforge.net
