@@ -48,10 +48,10 @@ pre-fetch:
 
 pre-patch:
 .if !defined(WITH_OPENPTY)
-	${PATCH} -s < ${PATCHDIR}/optpatch-WITHOUT_OPENPTY
+	cd ${PYTHON_WRKSRC} && ${PATCH} -s < ${PATCHDIR}/optpatch-WITHOUT_OPENPTY
 .endif
 .if defined(WANT_EAPI)
-	${PATCH} -s < ${PATCHDIR}/optpatch-WANT_EAPI
+	cd ${WRKSRC} && ${PATCH} -p2 -s < ${PATCHDIR}/optpatch-WANT_EAPI
 .endif
 
 pre-configure:
