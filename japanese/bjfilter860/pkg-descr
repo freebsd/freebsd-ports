@@ -1,0 +1,38 @@
+This port is for a printer filter of Canon BJ F860. The filter is
+called Canon Bubble Jet Print Filter for Linux and there exist the
+filters for other Canon bubble jet printers. By using this driver you
+can print out as high quality as you use the Windows driver. See the
+below URLs:
+
+WWW: http://www.canon-sales.co.jp/drv-upd/linux/bjlinux100.html
+     file:/usr/local/share/doc/bjfiltercom-1.1_1/html/README.HTM
+     file:/usr/local/share/doc/bjfiltercom-1.1_1/html/INDEX.HTM
+     file:/usr/local/share/doc/bjfiltercom-1.1_1/html/FAQ.HTM
+
+And then this port has filters filter860 and filter860_gui which are
+useful to print out more than one page. If you use it, you add the
+next entry into /etc/printcap.
+
+bjfilter860|Canon BJ F860:\
+        :lp=/dev/lpt0:\
+        :sh:\
+        :if=/usr/local/libexec/bjfilter860/filter860:\
+        :sd=/var/spool/lpd/bjfilter860:\
+        :mx#0:\
+        :lf=/var/log/lpd-errs
+bjfilter860_gui|Canon BJ F860 with GUI:\
+        :lp=/dev/lpt0:\
+        :sh:\
+        :if=/usr/local/libexec/ja-bjfilter860/filter860_gui:\
+        :sd=/var/spool/lpd/bjfilter860_gui:\
+        :mx#0:\
+        :lf=/var/log/lpd-errs
+
+Notice: If you use filter860_gui then the host which you are using
+have to run X and be the printer saver (connected the printer Canon BJ).
+
+*********************************************************************
+To run with Japanese messages, you should execute with "env LANG=ja_JP"
+in a command line. For example,
+  env LANG=ja_JP bjfilter --gui --model BJF860 sample.bmp > /dev/lpt0
+*********************************************************************
