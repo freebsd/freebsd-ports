@@ -1,0 +1,21 @@
+--- libgeda-config.in.orig	Sat May 29 20:13:37 1999
++++ libgeda-config.in	Sat Mar 10 21:32:04 2001
+@@ -3,8 +3,8 @@
+ # This script is based on gtk-config from gtk+ 1.2.x
+ # Adapted for use in gEDA by Ales V. Hvezda
+ 
+-libgeda_libs="@libgeda_libs@"
+-libgeda_cflags="@libgeda_cflags@"
++libgeda_libs="@libgdgeda_ldflags@"
++libgeda_cflags="@libgdgeda_cflags@"
+ 
+ prefix=@prefix@
+ exec_prefix=@exec_prefix@
+@@ -82,6 +82,6 @@
+ 
+ if test "$echo_libs" = "yes"; then
+ 	libdirs=-L${exec_prefix}/lib
+-	echo ${libdirs} -lgeda 
++	echo ${libdirs} -lgeda ${libgeda_libs}
+ fi      
+ 

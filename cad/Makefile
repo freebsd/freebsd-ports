@@ -10,6 +10,7 @@
     SUBDIR += irsim
     SUBDIR += iverilog
     SUBDIR += kaskade
+    SUBDIR += libgeda
     SUBDIR += magic
     SUBDIR += mars
     SUBDIR += oregano

@@ -1,0 +1,14 @@
+bin/libgeda-config
+include/libgeda/colors.h
+include/libgeda/defines.h
+include/libgeda/funcs.h
+include/libgeda/globals.h
+include/libgeda/o_types.h
+include/libgeda/pcb_struct.h
+include/libgeda/prototype.h
+include/libgeda/struct.h
+include/libgeda/libgeda.h
+lib/libgeda.so.12
+lib/libgeda.so
+lib/libgeda.a
+@dirrm include/libgeda
