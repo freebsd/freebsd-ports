@@ -121,6 +121,7 @@ share/mnogosearch/create/pgsql/ispell.txt
 share/mnogosearch/create/pgsql/multi.txt
 share/mnogosearch/create/pgsql/news-extension.txt
 share/mnogosearch/create/pgsql/server.txt
+share/mnogosearch/create/pgsql/to_use_with_tags.txt
 share/mnogosearch/create/pgsql/track.txt
 share/mnogosearch/create/sapdb/README
 share/mnogosearch/create/sapdb/categories.ins

@@ -1,15 +1,6 @@
---- src/search.c.orig	Wed Feb 28 15:28:10 2001
-+++ src/search.c	Mon Apr 23 06:46:50 2001
-@@ -431,7 +431,7 @@
- 					s=str+1;
- 					while((*s)&&(isdigit(*s)))s++;
- 					j=atoi(UdmTrim(s,"= \t\r\n"));
--					if((i>0)&&(i<MAXRANDOM)){
-+					if((i>=0)&&(i<MAXRANDOM)){
- 						frand=rand();
- 						frand=frand/RAND_MAX*j;
- 						Randoms[i]=frand;
-@@ -1225,7 +1225,7 @@
+--- src/search.c.bak	Tue May 15 13:08:14 2001
++++ src/search.c	Fri May 18 16:22:44 2001
+@@ -1239,7 +1239,7 @@
  int i;
  time_t tclock;
  	tclock=time(0);
@@ -18,26 +9,3 @@
  	for(i=0;i<MAXRANDOM;i++)
  		Randoms[i]=0;
  }
-@@ -1269,7 +1269,8 @@
- 		strcpy(template,env);
- 
- 	if((env=getenv("QUERY_STRING"))){
--		strcpy(query_string,env);
-+		strncpy(query_string,env,UDMSTRSIZ-1);
-+		query_string[UDMSTRSIZ-1] = '\0';
- 		if((env=getenv("REDIRECT_STATUS"))){
- 
- 			/* Check Apache internal redirect  */
-@@ -1316,8 +1317,10 @@
- 		/* or under server which do not   */
- 		/* pass an empty QUERY_STRING var */
- 
--		if(argv[1])
--			sprintf(query_string,"q=%s",argv[1]);
-+		if(argv[1]) {
-+			strcpy(query_string, "q=");
-+			strncat(query_string, argv[1], UDMSTRSIZ-1-2);
-+		}
- 		if(!template[0])
- 			sprintf(template,"%s/%s", UDM_CONF_DIR,"search.htm");
- 	}

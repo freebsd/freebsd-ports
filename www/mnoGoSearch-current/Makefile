@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mnogosearch
-PORTVERSION=    3.1.12
-PORTREVISION=   3
+PORTVERSION=    3.1.13
 CATEGORIES=	www databases
 MASTER_SITES=	http://search.mnogo.ru/Download/
 
@@ -24,6 +23,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --enable-phrase \
 		--enable-shared \
 		--enable-freebsd-pthreads \
+		--with-openssl \
 		--sysconfdir=${PREFIX}/etc/mnogosearch \
 		--localstatedir=/var/mnogosearch
 
