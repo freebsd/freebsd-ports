@@ -3,12 +3,12 @@
 # Date created:				October 20th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.6 1997/04/20 13:52:43 wosch Exp $
+#   $Id: Makefile,v 1.7 1997/04/20 21:26:38 jfitz Exp $
 #
 
 DISTNAME=	Convert-UU-0.04
 PKGNAME=	p5-Convert-UU-0.04
-CATEGORIES=	misc perl5
+CATEGORIES=	converters perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Convert
 
