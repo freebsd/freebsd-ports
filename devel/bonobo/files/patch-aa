@@ -1,19 +1,54 @@
---- configure.orig	Fri Oct  8 12:58:58 1999
-+++ configure	Fri Oct  8 13:06:30 1999
-@@ -4454,6 +4454,8 @@
- if eval "test \"`echo '$''{'ac_cv_func_$ac_func'+set}'`\" = set"; then
+--- configure.orig	Wed Jan 26 08:41:19 2000
++++ configure	Fri Jan 28 12:09:41 2000
+@@ -2291,8 +2291,8 @@
+ LD="$LD" LDFLAGS="$LDFLAGS" LIBS="$LIBS" \
+ LN_S="$LN_S" NM="$NM" RANLIB="$RANLIB" \
+ DLLTOOL="$DLLTOOL" AS="$AS" OBJDUMP="$OBJDUMP" \
+-${CONFIG_SHELL-/bin/sh} $ac_aux_dir/ltconfig --no-reexec \
+-$libtool_flags --no-verify $ac_aux_dir/ltmain.sh $host \
++${CONFIG_SHELL-/bin/sh} /usr/local/share/libtool/ltconfig --no-reexec \
++$libtool_flags --no-verify --disable-ltlibs /usr/local/share/libtool/ltmain.sh $host \
+ || { echo "configure: error: libtool configure failed" 1>&2; exit 1; }
+ 
+ # Reload cache, that may have been modified by ltconfig
+@@ -2306,7 +2306,7 @@
+ 
+ 
+ # This can be used to rebuild libtool when needed
+-LIBTOOL_DEPS="$ac_aux_dir/ltconfig $ac_aux_dir/ltmain.sh"
++LIBTOOL_DEPS="/usr/local/share/libtool/ltconfig --disable-ltlibs /usr/local/share/libtool/ltmain.sh"
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -4538,6 +4538,8 @@
+ if eval "test \"`echo '$''{'ac_cv_header_$ac_safe'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
  else
 +  ac_save_LIBS="$LIBS"
 +LIBS="-lintl  $LIBS"
    cat > conftest.$ac_ext <<EOF
- #line 4459 "configure"
+ #line 4543 "configure"
  #include "confdefs.h"
-@@ -4488,6 +4490,7 @@
-   eval "ac_cv_func_$ac_func=no"
+@@ -4557,6 +4559,7 @@
+   eval "ac_cv_header_$ac_safe=no"
  fi
  rm -f conftest*
 +LIBS="$ac_save_LIBS"
  fi
+ if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+@@ -5245,10 +5248,10 @@
+       *) # Relative path.
+         ac_sub_cache_file="$ac_dots$cache_file" ;;
+       esac
+-  case "$ac_given_INSTALL" in
+-        [/$]*) INSTALL="$ac_given_INSTALL" ;;
+-        *) INSTALL="$ac_dots$ac_given_INSTALL" ;;
+-        esac
++#  case "$ac_given_INSTALL" in
++#        [/$]*) INSTALL="$ac_given_INSTALL" ;;
++#        *) INSTALL="$ac_dots$ac_given_INSTALL" ;;
++#        esac
  
- if eval "test \"`echo '$ac_cv_func_'$ac_func`\" = yes"; then
+       echo "running ${CONFIG_SHELL-/bin/sh} $ac_sub_configure $ac_sub_configure_args --cache-file=$ac_sub_cache_file --srcdir=$ac_sub_srcdir"
+       # The eval makes quoting arguments work.
