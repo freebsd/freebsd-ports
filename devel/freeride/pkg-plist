@@ -171,33 +171,6 @@ bin/freeride
 %%RUBY_SITELIBDIR%%/freeride/redist/rrb/cui_interface.rb
 %%RUBY_SITELIBDIR%%/freeride/redist/rrb/completion.rb
 %%RUBY_SITELIBDIR%%/freeride/redist/rrb/common_visitor.rb
-%%RUBY_SITELIBDIR%%/freeride/redist/rexml/xpath.rb
-%%RUBY_SITELIBDIR%%/freeride/redist/rexml/xmldecl.rb
-%%RUBY_SITELIBDIR%%/freeride/redist/rexml/text.rb
-%%RUBY_SITELIBDIR%%/freeride/redist/rexml/streamlistener.rb
-%%RUBY_SITELIBDIR%%/freeride/redist/rexml/source.rb
-%%RUBY_SITELIBDIR%%/freeride/redist/rexml/rexml.rb
-%%RUBY_SITELIBDIR%%/freeride/redist/rexml/parseexception.rb
-%%RUBY_SITELIBDIR%%/freeride/redist/rexml/parent.rb
-%%RUBY_SITELIBDIR%%/freeride/redist/rexml/node.rb
-%%RUBY_SITELIBDIR%%/freeride/redist/rexml/namespace.rb
-%%RUBY_SITELIBDIR%%/freeride/redist/rexml/instruction.rb
-%%RUBY_SITELIBDIR%%/freeride/redist/rexml/functions.rb
-%%RUBY_SITELIBDIR%%/freeride/redist/rexml/element.rb
-%%RUBY_SITELIBDIR%%/freeride/redist/rexml/document.rb
-%%RUBY_SITELIBDIR%%/freeride/redist/rexml/doctype.rb
-%%RUBY_SITELIBDIR%%/freeride/redist/rexml/comment.rb
-%%RUBY_SITELIBDIR%%/freeride/redist/rexml/child.rb
-%%RUBY_SITELIBDIR%%/freeride/redist/rexml/cdata.rb
-%%RUBY_SITELIBDIR%%/freeride/redist/rexml/dtd/notationdecl.rb
-%%RUBY_SITELIBDIR%%/freeride/redist/rexml/dtd/entitydecl.rb
-%%RUBY_SITELIBDIR%%/freeride/redist/rexml/dtd/elementdecl.rb
-%%RUBY_SITELIBDIR%%/freeride/redist/rexml/dtd/dtd.rb
-%%RUBY_SITELIBDIR%%/freeride/redist/rexml/dtd/attlistdecl.rb
-%%RUBY_SITELIBDIR%%/freeride/redist/rexml/README
-%%RUBY_SITELIBDIR%%/freeride/redist/rexml/attribute.rb
-%%RUBY_SITELIBDIR%%/freeride/redist/rexml/GPL.txt
-%%RUBY_SITELIBDIR%%/freeride/redist/rexml/LICENSE.txt
 %%RUBY_SITELIBDIR%%/freeride/redist/%%RUBY_ARCH%%/rrb_ripper.so
 %%RUBY_SITELIBDIR%%/freeride/redist/%%RUBY_ARCH%%/rrb_reflection.so
 %%RUBY_SITELIBDIR%%/freeride/redist/%%RUBY_ARCH%%/ripper.so
@@ -209,10 +182,8 @@ bin/freeride
 @dirrm %%RUBY_SITELIBDIR%%/freeride/redist/runit/cui
 @dirrm %%RUBY_SITELIBDIR%%/freeride/redist/runit
 @dirrm %%RUBY_SITELIBDIR%%/freeride/redist/rrb
-@dirrm %%RUBY_SITELIBDIR%%/freeride/redist/rexml/dtd
-@dirrm %%RUBY_SITELIBDIR%%/freeride/redist/rexml
 @dirrm %%RUBY_SITELIBDIR%%/freeride/redist/%%RUBY_ARCH%%
-@dirrm %%RUBY_SITELIBDIR%%/freeride/redist/
+@dirrm %%RUBY_SITELIBDIR%%/freeride/redist
 @dirrm %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_util_logger
 @dirrm %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_tools_source_parser
 @dirrm %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_tools_rrb
@@ -236,5 +207,5 @@ bin/freeride
 @dirrm %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_fox_gui
 @dirrm %%RUBY_SITELIBDIR%%/freeride/plugins/rubyide_commands
 @dirrm %%RUBY_SITELIBDIR%%/freeride/plugins
-@dirrm %%RUBY_SITELIBDIR%%/freeride/config/
-@dirrm %%RUBY_SITELIBDIR%%/freeride/
+@dirrm %%RUBY_SITELIBDIR%%/freeride/config
+@dirrm %%RUBY_SITELIBDIR%%/freeride
