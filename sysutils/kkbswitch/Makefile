@@ -22,8 +22,6 @@ CONFIGURE_ARGS += 	--with-qt-dir=${QT_PREFIX} \
 			--with-extra-includes=${LOCALBASE}/include \
 			--with-extra-libs=${LOCALBASE}/lib
 
-CONFIGURE_TARGET=
-
 DOCSDIR=		share/doc/HTML/en/${PORTNAME}
 
 OPTIONS=		RU_UA_LAYOUT	"With additional RU_UA keyboard layout" on
@@ -41,5 +39,4 @@ CONFIGURE_ARGS+=	--disable-ru-ua-layout
 PLIST_SUB+=		LAYOUT="@comment "
 .endif
 
-.include "${PORTSDIR}/x11/kde3/Makefile.kde"
 .include <bsd.port.post.mk>
