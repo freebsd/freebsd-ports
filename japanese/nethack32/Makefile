@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-3.2.2
 PATCH_SITES=	ftp://mitsuko.jaist.ac.jp/pub/nethack/
 PATCHFILES=	j${PORTNAME}-${PORTVERSION}.gz
 
-MAINTAINER=	max@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A dungeon explorin', slashin', hackin' game
 
 NO_LATEST_LINK=	yes

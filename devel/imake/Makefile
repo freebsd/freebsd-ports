@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.xfree86.org/pub/XFree86/3.3.6/source/ \
 DISTNAME=	X336src-1
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	max@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Imake and other utilities from XFree86
 
 MANUAL_PACKAGE_BUILD=	installs/removes files also in the XFree86 port
