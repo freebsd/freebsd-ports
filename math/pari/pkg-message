@@ -1,18 +1,22 @@
-*************************************************************************
-Copyright notice:
+This is PARI/GP, version 2.1.x (*).
 
-This is version 1.39 of PARI, (c) 1989-1993 by
-C. Batut, D. Bernardi, H. Cohen and M. Olivier.
+PARI/GP Number Theory-oriented Computer Algebra System
+        Copyright (C) 2000 The PARI Group, Bordeaux.
 
-This software is intended as a service to the scientific community,
-but the authors cannot be held responsible for any consequences,
-either direct or indirect, which the use of this package may have. 
-It can be freely copied and spread, as long as no files are modified, and
-that the whole package (source and manual), including this README file
-is included.
+PARI/GP is free software; you can redistribute it and/or modify it under the
+terms of the GNU General Public License as published by the Free Software
+Foundation. It is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY WHATSOEVER.
+
+Check the License for details. You should have received a copy of it, along
+with the package; see the file 'COPYING'. If not, write to the Free Software
+Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+
+==========================================================================
 *****
-Original copyright is in pari-1.39.03/src/README in the distfile:
-pari-1.39.03.tar.gz
+Original copyright is in pari-2.1.1/README in the distfile:
+pari-2.1.1.tar.gz
+
 
 This distfile can be found in /cdrom/ports/distfiles or 
 ftp://ftp.freebsd.org/pub/FreeBSD/distfiles/.
