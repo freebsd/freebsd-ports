@@ -9,5 +9,19 @@ man/man1/vdcomp.1.gz
 man/man1/xcmap.1.gz
 man/man1/xvpictoppm.1.gz
 share/doc/xv/README
+share/doc/xv/README.PNG
+share/doc/xv/epsf.ps
+share/doc/xv/xpm.ps
 share/doc/xv/xvdocs.ps
+share/doc/xv/xvtitle.ps
+share/doc/xv/help
+share/doc/xv/bmp.doc
+share/doc/xv/gif.ack
+share/doc/xv/gif.aspect
+share/doc/xv/gif87.doc
+share/doc/xv/gif89.doc
+share/doc/xv/CHANGELOG.jp-ext
+share/doc/xv/README.PhotoCD
+share/doc/xv/README.xv310a-ext-5.3.3.ja
+share/doc/xv/magic.add
 @dirrm share/doc/xv
