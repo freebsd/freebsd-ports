@@ -1,0 +1,5 @@
+This is a DBI-for-Ruby.  It is designed to behave like the DBI you
+know from Perl.
+
+Author:	Rainer Perl <rainer.perl@sprytech.com>
+WWW:	http://www.sprytech.com/~rainer.perl/ruby/
