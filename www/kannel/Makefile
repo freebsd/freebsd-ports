@@ -7,7 +7,7 @@
 PORTNAME=	kannel
 PORTVERSION=	1.0.3
 CATEGORIES=	www
-MASTER_SITES=	http://www.kannel.org/download/${PORTVERSION}/
+MASTER_SITES=	http://www.kannel.3glab.org/download/${PORTVERSION}/
 DISTNAME=	gateway-${PORTVERSION}
 
 MAINTAINER=	martti.kuparinen@iki.fi
@@ -16,7 +16,7 @@ LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2
 
 USE_AUTOCONF=	yes
 USE_GMAKE=	yes
-WRKSRC=		${WRKDIR}/gateway-${PORTVERSION}/
+WRKSRC=		${WRKDIR}/${DISTNAME}/
 CFLAGS+=	${PTHREAD_LIBS}
 CONFIGURE_ARGS+=	--with-malloc=native
 
