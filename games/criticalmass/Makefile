@@ -7,6 +7,7 @@
 
 PORTNAME=	criticalmass
 PORTVERSION=	0.97
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	criticalmass
@@ -24,6 +25,8 @@ USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -L${X11BASE}/lib" \
 		CPPFLAGS="${CFLAGS} -I${X11BASE}/include"
+
+MAN6=		critter.6
 
 SDLINCPFILES=	utilities/GLBitmapCollection.cpp utilities/GLExtension.hpp \
 		utilities/GLTexture.hpp utilities/PNG.hpp
