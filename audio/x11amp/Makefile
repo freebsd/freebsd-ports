@@ -6,28 +6,24 @@
 #
 
 PORTNAME=	x11amp
-PORTVERSION=	0.8
+PORTVERSION=	0.9.b1.1
 CATEGORIES=	audio
-MASTER_SITES=	ftp://www.se.opensound.com/pub/oss/ossapps/
-DISTNAME=	${PORTNAME}-freebsd-${PORTVERSION}
-EXTRACT_SUFX=	.tar.gz
+MASTER_SITES=	ftp://ftp.cs.tu-berlin.de/pub/misc/x11amp/0.9/ \
+		ftp://ftp.sci-nnov.ru/pub/FreeBSD/ports/distfiles/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/-beta/}
 
 MAINTAINER=	dburr@FreeBSD.org
 
-NO_BUILD=		YES
-NO_FILTER_SHLIBS=	YES
 
-.include <bsd.port.pre.mk>
+USE_XLIB=	yes
+USE_GTK=	yes
+USE_ESOUND=	yes
+USE_LIBTOOL=	yes
+LIBTOOLFILES=	configure libx11amp/configure
+CONFIGURE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
+MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 
-.if ${PORTOBJFORMAT} == "elf"
-STRIP=
-DISTNAME=	x11amp-freebsd-0.8-elf
-ROOT=		${WRKDIR}/usr/local
-.else
-ROOT=		${WRKDIR}/x11amp
-.endif
+post-extract:
+	@${CP} ${FILESDIR}/main.xpm ${WRKSRC}/x11amp/defskin
 
-do-install:
-	@tar -cpf - -C ${ROOT} . | tar -xpf - -C ${PREFIX}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

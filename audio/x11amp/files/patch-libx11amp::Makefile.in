@@ -1,0 +1,23 @@
+
+$FreeBSD$
+
+--- libx11amp/Makefile.in.orig	Mon Apr 12 04:21:04 1999
++++ libx11amp/Makefile.in	Mon Nov 26 19:58:56 2001
+@@ -45,7 +45,7 @@
+ AUTOMAKE = @AUTOMAKE@
+ AUTOHEADER = @AUTOHEADER@
+ 
+-INSTALL = @INSTALL@
++INSTALL = /usr/bin/install -c -o root -g wheel
+ INSTALL_PROGRAM = @INSTALL_PROGRAM@ $(AM_INSTALL_PROGRAM_FLAGS)
+ INSTALL_DATA = @INSTALL_DATA@
+ INSTALL_SCRIPT = @INSTALL_SCRIPT@
+@@ -77,7 +77,7 @@
+ lib_LTLIBRARIES = libx11amp.la
+ 
+ libx11amp_la_LDFLAGS = -export-dynamic -version-info 9:0:9 @GLIB_LIBS@
+-CFLAGS = -O2 @GLIB_CFLAGS@
++CFLAGS += @GLIB_CFLAGS@
+ 
+ libx11amp_la_SOURCES = configfile.c configfile.h x11ampctrl.c x11ampctrl.h
+ 

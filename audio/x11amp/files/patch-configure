@@ -1,0 +1,41 @@
+
+$FreeBSD$
+
+--- configure.orig	Tue Apr 13 23:33:00 1999
++++ configure	Mon Nov 26 20:10:50 2001
+@@ -2202,14 +2202,14 @@
+   
+   rm -f conf.gtktest
+ 
+-echo $ac_n "checking for pthread_create in -lpthread""... $ac_c" 1>&6
+-echo "configure:2207: checking for pthread_create in -lpthread" >&5
++echo $ac_n "checking for pthread_create in ${PTHREAD_LIBS}""... $ac_c" 1>&6
++echo "configure:2207: checking for pthread_create in ${PTHREAD_LIBS}" >&5
+ ac_lib_var=`echo pthread'_'pthread_create | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lpthread  $LIBS"
++LIBS="${PTHREAD_LIBS}  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 2215 "configure"
+ #include "confdefs.h"
+@@ -2243,7 +2243,7 @@
+ #define $ac_tr_lib 1
+ EOF
+ 
+-  LIBS="-lpthread $LIBS"
++  LIBS="${PTHREAD_LIBS} $LIBS"
+ 
+ else
+   echo "$ac_t""no" 1>&6
+@@ -2495,7 +2495,7 @@
+   HAVE_ESD_FALSE=
+ fi
+ 
+-CFLAGS=$GTK_CFLAGS
++CFLAGS="$CFLAGS $GTK_CFLAGS"
+ LIBS=$GTK_LIBS
+ 
+ echo $ac_n "checking for thread-safe Xlib""... $ac_c" 1>&6
