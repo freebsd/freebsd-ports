@@ -2,9 +2,7 @@ bin/dbiproxy
 bin/dbish
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBI.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Bundle/DBI.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBD/ADO.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBD/ExampleP.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBD/Multiplex.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBD/NullP.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBD/Proxy.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBD/Sponge.pm
