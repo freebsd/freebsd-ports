@@ -1,20 +1,16 @@
---- gimptool.in.orig	Sat Feb 20 19:48:58 1999
-+++ gimptool.in	Sat Feb 20 19:49:37 1999
-@@ -198,7 +198,7 @@
-     | --install-script | --install-admin-script)
+--- gimptool.in.orig	Wed Aug 25 18:49:22 1999
++++ gimptool.in	Tue Oct 12 13:31:37 1999
+@@ -209,11 +209,11 @@
+     | --uninstall-script | --uninstall-admin-script )
        case $1 in
-         --install-bin)
+         --*install-bin)
 -          install_cmd="@INSTALL_PROGRAM@"
 +          install_cmd="@INSTALL_SCRIPT@"
            install_dir="$HOME/@gimpdir@/plug-ins"
            ;;
          --install-bin-strip)
-@@ -206,7 +206,7 @@
+-          install_cmd="@INSTALL_PROGRAM@ -s"
++          install_cmd="@INSTALL_SCRIPT@ -s"
            install_dir="$HOME/@gimpdir@/plug-ins"
            ;;
-         --install-admin-bin)
--          install_cmd="@INSTALL_PROGRAM@"
-+          install_cmd="@INSTALL_SCRIPT@"
-           install_dir="$plug_in_dir/plug-ins"
-           ;;
-         --install-admin-bin-strip)
+         --*install-admin-bin)

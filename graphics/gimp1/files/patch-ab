@@ -1,5 +1,5 @@
---- plug-ins/url/url.c.orig	Sat May 30 15:32:36 1998
-+++ plug-ins/url/url.c	Sun Jun  7 10:09:34 1998
+--- plug-ins/common/url.c.orig	Sat May 30 15:32:36 1998
++++ plug-ins/common/url.c	Sun Jun  7 10:09:34 1998
 @@ -146,8 +146,8 @@
      }
    else if (pid == 0)

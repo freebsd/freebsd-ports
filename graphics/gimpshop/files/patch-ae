@@ -1,5 +1,5 @@
---- plug-ins/plugindetails/plugindetails.c.orig	Sat Mar 27 07:53:38 1999
-+++ plug-ins/plugindetails/plugindetails.c	Sat May 22 21:24:31 1999
+--- plug-ins/common/plugindetails.c.orig	Sat Mar 27 07:53:38 1999
++++ plug-ins/common/plugindetails.c	Sat May 22 21:24:31 1999
 @@ -25,6 +25,7 @@
  #include <stdio.h>
  #include <string.h>
