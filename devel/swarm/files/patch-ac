@@ -1,13 +1,30 @@
---- Makefile.in.orig	Wed Jan 27 22:34:30 1999
-+++ Makefile.in	Wed Jan 27 22:49:33 1999
-@@ -370,8 +370,8 @@
- install-data-local:
- 	$(INSTALL_DATA) swarmconfig.h $(includedir)
- 	$(mkinstalldirs) $(bindir) $(datadir)/swarm
--	$(INSTALL_PROGRAM) $(top_builddir)/libtool $(bindir)/libtool-swarm
--	if test $(SWARM_INSTALL) = install-sh; then $(INSTALL_PROGRAM) $(srcdir)/install-sh $(bindir); fi
-+	$(INSTALL_SCRIPT) $(top_builddir)/libtool $(bindir)/libtool-swarm
-+	if test $(SWARM_INSTALL) = install-sh; then $(INSTALL_SCRIPT) $(srcdir)/install-sh $(bindir); fi
+--- configure.orig	Sat May 18 16:08:11 2002
++++ configure	Sun May 19 06:09:30 2002
+@@ -1691,8 +1691,8 @@
+ LD="$LD" LDFLAGS="$LDFLAGS" LIBS="$LIBS" \
+ LN_S="$LN_S" NM="$NM" RANLIB="$RANLIB" \
+ DLLTOOL="$DLLTOOL" AS="$AS" OBJDUMP="$OBJDUMP" \
+-${CONFIG_SHELL-/bin/sh} $ac_aux_dir/ltconfig --no-reexec \
+-$libtool_flags --no-verify $ac_aux_dir/ltmain.sh $host \
++${CONFIG_SHELL-/bin/sh} /usr/local/share/libtool/ltconfig --no-reexec \
++$libtool_flags --no-verify --disable-ltlibs /usr/local/share/libtool/ltmain.sh $host \
+ || { echo "configure: error: libtool configure failed" 1>&2; exit 1; }
  
- # Tell versions [3.59,3.63) of GNU make to not export all variables.
- # Otherwise a system limit (for SysV at least) may be exceeded.
+ # Reload cache, that may have been modified by ltconfig
+@@ -1706,7 +1706,7 @@
+ 
+ 
+ # This can be used to rebuild libtool when needed
+-LIBTOOL_DEPS="$ac_aux_dir/ltconfig $ac_aux_dir/ltmain.sh"
++LIBTOOL_DEPS="/usr/local/share/libtool/ltconfig /usr/local/share/libtool/ltmain.sh"
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -5049,6 +5049,7 @@
+       JAVAINCLUDES="$JAVAINCLUDES -I$jdkincludedir/freebsd"
+       threads=green
+       proc=i386
++      JAVACMD="\${jdkdir}/bin/java"
+     elif test -f $expand_jdkincludedir/irix/jni_md.h; then
+       JAVAINCLUDES="$JAVAINCLUDES -I$jdkincludedir/irix"
+       threads=green
