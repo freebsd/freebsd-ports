@@ -1,6 +1,6 @@
 # New ports collection makefile for:	zh-xemacs21
 # Date created:		1 October 2000
-# Whom:			Jing-Tang Keith Jang <keith@freebsd.sinica.edu.tw>
+# Whom:			Jing-Tang Keith Jang <keith@FreeBSD.org>
 #
 # $FreeBSD$
 #
