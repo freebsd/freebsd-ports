@@ -60,14 +60,73 @@ lib/perl5/site_perl/%%PERL_VER%%/Template/Tools/ttree.pod
 lib/perl5/site_perl/%%PERL_VER%%/Template/Tutorial.pod
 lib/perl5/site_perl/%%PERL_VER%%/Template/View.pm
 share/tt2/docs/README
+share/tt2/docs/html/FAQ/FAQ.html
+share/tt2/docs/html/FAQ/index.html
+share/tt2/docs/html/Library/HTML.html
+share/tt2/docs/html/Library/PostScript.html
+share/tt2/docs/html/Library/Splash.html
+share/tt2/docs/html/Library/index.html
+share/tt2/docs/html/Manual/Config.html
+share/tt2/docs/html/Manual/Credits.html
+share/tt2/docs/html/Manual/Directives.html
+share/tt2/docs/html/Manual/Filters.html
+share/tt2/docs/html/Manual/Internals.html
+share/tt2/docs/html/Manual/Intro.html
+share/tt2/docs/html/Manual/Plugins.html
+share/tt2/docs/html/Manual/Refs.html
+share/tt2/docs/html/Manual/Syntax.html
+share/tt2/docs/html/Manual/Variables.html
+share/tt2/docs/html/Manual/Views.html
+share/tt2/docs/html/Manual/index.html
+share/tt2/docs/html/Modules/Template.html
+share/tt2/docs/html/Modules/Template/Base.html
+share/tt2/docs/html/Modules/Template/Config.html
+share/tt2/docs/html/Modules/Template/Constants.html
+share/tt2/docs/html/Modules/Template/Context.html
+share/tt2/docs/html/Modules/Template/Document.html
+share/tt2/docs/html/Modules/Template/Exception.html
+share/tt2/docs/html/Modules/Template/Filters.html
+share/tt2/docs/html/Modules/Template/Iterator.html
+share/tt2/docs/html/Modules/Template/Parser.html
+share/tt2/docs/html/Modules/Template/Plugin.html
+share/tt2/docs/html/Modules/Template/Plugin/Autoformat.html
+share/tt2/docs/html/Modules/Template/Plugin/CGI.html
+share/tt2/docs/html/Modules/Template/Plugin/DBI.html
+share/tt2/docs/html/Modules/Template/Plugin/Datafile.html
+share/tt2/docs/html/Modules/Template/Plugin/Date.html
+share/tt2/docs/html/Modules/Template/Plugin/Directory.html
+share/tt2/docs/html/Modules/Template/Plugin/Dumper.html
+share/tt2/docs/html/Modules/Template/Plugin/File.html
+share/tt2/docs/html/Modules/Template/Plugin/Format.html
+share/tt2/docs/html/Modules/Template/Plugin/Iterator.html
+share/tt2/docs/html/Modules/Template/Plugin/Pod.html
+share/tt2/docs/html/Modules/Template/Plugin/Table.html
+share/tt2/docs/html/Modules/Template/Plugin/URL.html
+share/tt2/docs/html/Modules/Template/Plugin/View.html
+share/tt2/docs/html/Modules/Template/Plugin/Wrap.html
+share/tt2/docs/html/Modules/Template/Plugin/XML/DOM.html
+share/tt2/docs/html/Modules/Template/Plugin/XML/RSS.html
+share/tt2/docs/html/Modules/Template/Plugin/XML/Simple.html
+share/tt2/docs/html/Modules/Template/Plugin/XML/XPath.html
+share/tt2/docs/html/Modules/Template/Plugins.html
+share/tt2/docs/html/Modules/Template/Provider.html
+share/tt2/docs/html/Modules/Template/Service.html
+share/tt2/docs/html/Modules/Template/Stash.html
+share/tt2/docs/html/Modules/Template/Test.html
+share/tt2/docs/html/Modules/index.html
 share/tt2/docs/html/README
+share/tt2/docs/html/Release/Changes.html
+share/tt2/docs/html/Release/README.html
+share/tt2/docs/html/Release/TODO.html
+share/tt2/docs/html/Release/index.html
+share/tt2/docs/html/Tools/index.html
+share/tt2/docs/html/Tools/tpage.html
+share/tt2/docs/html/Tools/ttree.html
+share/tt2/docs/html/Tutorial/Tutorial.html
+share/tt2/docs/html/Tutorial/index.html
 share/tt2/docs/html/index.html
 share/tt2/docs/lib/config
 share/tt2/docs/lib/docset/config
-share/tt2/docs/lib/docset/index
-share/tt2/docs/lib/docset/info
-share/tt2/docs/lib/docset/maker
-share/tt2/docs/lib/docset/meta
 share/tt2/docs/lib/footer
 share/tt2/docs/lib/header
 share/tt2/docs/lib/link
@@ -156,6 +215,35 @@ share/tt2/docs/style/splash/pagemenu
 share/tt2/docs/style/splash/section
 share/tt2/docs/ttree.cfg
 share/tt2/examples/README
+share/tt2/examples/html/README
+share/tt2/examples/html/html/bars.html
+share/tt2/examples/html/html/headers.html
+share/tt2/examples/html/html/index.html
+share/tt2/examples/html/html/links.html
+share/tt2/examples/html/html/lists.html
+share/tt2/examples/html/html/menus.html
+share/tt2/examples/html/html/rgb.html
+share/tt2/examples/html/html/tables.html
+share/tt2/examples/html/ps/index.html
+share/tt2/examples/html/ps/marks.html
+share/tt2/examples/html/splash/bar.html
+share/tt2/examples/html/splash/box.html
+share/tt2/examples/html/splash/button.html
+share/tt2/examples/html/splash/colours.html
+share/tt2/examples/html/splash/config.html
+share/tt2/examples/html/splash/dropbox.html
+share/tt2/examples/html/splash/frame.html
+share/tt2/examples/html/splash/icon.html
+share/tt2/examples/html/splash/index.html
+share/tt2/examples/html/splash/menu.html
+share/tt2/examples/html/splash/menubar.html
+share/tt2/examples/html/splash/panel.html
+share/tt2/examples/html/splash/pulldown.html
+share/tt2/examples/html/splash/tab.html
+share/tt2/examples/html/splash/tabbox.html
+share/tt2/examples/html/splash/tabsbox.html
+share/tt2/examples/html/splash/tabset.html
+share/tt2/examples/html/splash/text.html
 share/tt2/examples/lib/README
 share/tt2/examples/lib/config
 share/tt2/examples/lib/example/README
@@ -232,52 +320,104 @@ share/tt2/examples/lib/examples/ps/marks/6
 share/tt2/examples/lib/examples/ps/marks/7
 share/tt2/examples/lib/examples/ps/marks/8
 share/tt2/examples/lib/examples/ps/marks/9
-share/tt2/examples/lib/examples/splash/buttons/1
-share/tt2/examples/lib/examples/splash/buttons/2
-share/tt2/examples/lib/examples/splash/buttons/3
-share/tt2/examples/lib/examples/splash/buttons/4
-share/tt2/examples/lib/examples/splash/buttons/5
-share/tt2/examples/lib/examples/splash/buttons/6
-share/tt2/examples/lib/examples/splash/buttons/7
+share/tt2/examples/lib/examples/splash/bar/1
+share/tt2/examples/lib/examples/splash/bar/2
+share/tt2/examples/lib/examples/splash/bar/3
+share/tt2/examples/lib/examples/splash/bar/4
+share/tt2/examples/lib/examples/splash/bar/5
+share/tt2/examples/lib/examples/splash/bar/6
+share/tt2/examples/lib/examples/splash/bar/7
+share/tt2/examples/lib/examples/splash/bar/8
+share/tt2/examples/lib/examples/splash/box/1
+share/tt2/examples/lib/examples/splash/box/2
+share/tt2/examples/lib/examples/splash/box/3
+share/tt2/examples/lib/examples/splash/box/4
+share/tt2/examples/lib/examples/splash/box/5
+share/tt2/examples/lib/examples/splash/box/6
+share/tt2/examples/lib/examples/splash/button/1
+share/tt2/examples/lib/examples/splash/button/2
+share/tt2/examples/lib/examples/splash/button/3
+share/tt2/examples/lib/examples/splash/button/4
+share/tt2/examples/lib/examples/splash/button/5
+share/tt2/examples/lib/examples/splash/button/6
+share/tt2/examples/lib/examples/splash/button/7
 share/tt2/examples/lib/examples/splash/config/1
 share/tt2/examples/lib/examples/splash/dropbox/1
 share/tt2/examples/lib/examples/splash/dropbox/2
 share/tt2/examples/lib/examples/splash/dropbox/3
 share/tt2/examples/lib/examples/splash/dropbox/4
 share/tt2/examples/lib/examples/splash/dropbox/5
-share/tt2/examples/lib/examples/splash/menus/1
-share/tt2/examples/lib/examples/splash/menus/2
-share/tt2/examples/lib/examples/splash/menus/3
-share/tt2/examples/lib/examples/splash/menus/4
-share/tt2/examples/lib/examples/splash/menus/5
-share/tt2/examples/lib/examples/splash/menus/6
-share/tt2/examples/lib/examples/splash/menus/7
-share/tt2/examples/lib/examples/splash/tabs/1
-share/tt2/examples/lib/examples/splash/tabs/2
-share/tt2/examples/lib/examples/splash/tabs/3
-share/tt2/examples/lib/examples/splash/tabs/4
-share/tt2/examples/lib/examples/splash/tabs/5
-share/tt2/examples/lib/examples/splash/tabsets/1
-share/tt2/examples/lib/examples/splash/tabsets/2
-share/tt2/examples/lib/examples/splash/tabsets/3
-share/tt2/examples/lib/examples/splash/tabsets/4
-share/tt2/examples/lib/examples/splash/tabsets/5
+share/tt2/examples/lib/examples/splash/frame/1
+share/tt2/examples/lib/examples/splash/frame/2
+share/tt2/examples/lib/examples/splash/frame/3
+share/tt2/examples/lib/examples/splash/frame/4
+share/tt2/examples/lib/examples/splash/frame/5
+share/tt2/examples/lib/examples/splash/icon/1
+share/tt2/examples/lib/examples/splash/icon/2
+share/tt2/examples/lib/examples/splash/icon/3
+share/tt2/examples/lib/examples/splash/icon/4
+share/tt2/examples/lib/examples/splash/icon/5
+share/tt2/examples/lib/examples/splash/icon/6
+share/tt2/examples/lib/examples/splash/icon/7
+share/tt2/examples/lib/examples/splash/menu/1
+share/tt2/examples/lib/examples/splash/menu/2
+share/tt2/examples/lib/examples/splash/menu/3
+share/tt2/examples/lib/examples/splash/menu/4
+share/tt2/examples/lib/examples/splash/menu/5
+share/tt2/examples/lib/examples/splash/menubar/1
+share/tt2/examples/lib/examples/splash/menubar/2
+share/tt2/examples/lib/examples/splash/menubar/3
+share/tt2/examples/lib/examples/splash/panel/1
+share/tt2/examples/lib/examples/splash/panel/2
+share/tt2/examples/lib/examples/splash/panel/3
+share/tt2/examples/lib/examples/splash/panel/6
+share/tt2/examples/lib/examples/splash/panel/7
+share/tt2/examples/lib/examples/splash/pulldown/1
+share/tt2/examples/lib/examples/splash/pulldown/2
+share/tt2/examples/lib/examples/splash/pulldown/3
+share/tt2/examples/lib/examples/splash/pulldown/4
+share/tt2/examples/lib/examples/splash/pulldown/5
+share/tt2/examples/lib/examples/splash/tab/1
+share/tt2/examples/lib/examples/splash/tab/2
+share/tt2/examples/lib/examples/splash/tab/3
+share/tt2/examples/lib/examples/splash/tab/4
+share/tt2/examples/lib/examples/splash/tab/5
+share/tt2/examples/lib/examples/splash/tab/6
+share/tt2/examples/lib/examples/splash/tabbox/1
+share/tt2/examples/lib/examples/splash/tabbox/2
+share/tt2/examples/lib/examples/splash/tabbox/3
+share/tt2/examples/lib/examples/splash/tabbox/4
+share/tt2/examples/lib/examples/splash/tabsbox/1
+share/tt2/examples/lib/examples/splash/tabsbox/2
+share/tt2/examples/lib/examples/splash/tabsbox/3
+share/tt2/examples/lib/examples/splash/tabsbox/4
+share/tt2/examples/lib/examples/splash/tabset/1
+share/tt2/examples/lib/examples/splash/tabset/2
+share/tt2/examples/lib/examples/splash/tabset/3
+share/tt2/examples/lib/examples/splash/tabset/4
 share/tt2/examples/lib/examples/splash/text/1
 share/tt2/examples/lib/examples/splash/text/2
 share/tt2/examples/lib/examples/splash/text/3
 share/tt2/examples/lib/examples/splash/text/4
+share/tt2/examples/lib/examples/splash/text/5
 share/tt2/examples/lib/menu
 share/tt2/examples/lib/page
 share/tt2/examples/lib/source
-share/tt2/examples/lib/test/README
-share/tt2/examples/lib/test/bar
-share/tt2/examples/lib/test/button
-share/tt2/examples/lib/test/menu
-share/tt2/examples/lib/test/menubar
-share/tt2/examples/lib/test/panel
-share/tt2/examples/lib/test/tab
-share/tt2/examples/lib/test/tabsbox
-share/tt2/examples/lib/test/text
+share/tt2/examples/lib/splash/about/bar
+share/tt2/examples/lib/splash/about/box
+share/tt2/examples/lib/splash/about/button
+share/tt2/examples/lib/splash/about/dropbox
+share/tt2/examples/lib/splash/about/frame
+share/tt2/examples/lib/splash/about/icon
+share/tt2/examples/lib/splash/about/menu
+share/tt2/examples/lib/splash/about/menubar
+share/tt2/examples/lib/splash/about/panel
+share/tt2/examples/lib/splash/about/pulldown
+share/tt2/examples/lib/splash/about/tab
+share/tt2/examples/lib/splash/about/tabbox
+share/tt2/examples/lib/splash/about/tabsbox
+share/tt2/examples/lib/splash/about/tabset
+share/tt2/examples/lib/splash/about/text
 share/tt2/examples/src/html/bars.html
 share/tt2/examples/src/html/headers.html
 share/tt2/examples/src/html/index.html
@@ -288,83 +428,535 @@ share/tt2/examples/src/html/rgb.html
 share/tt2/examples/src/html/tables.html
 share/tt2/examples/src/ps/index.html
 share/tt2/examples/src/ps/marks.html
-share/tt2/examples/src/splash/buttons.html
+share/tt2/examples/src/splash/bar.html
+share/tt2/examples/src/splash/box.html
+share/tt2/examples/src/splash/button.html
+share/tt2/examples/src/splash/colours.html
 share/tt2/examples/src/splash/config.html
 share/tt2/examples/src/splash/dropbox.html
+share/tt2/examples/src/splash/frame.html
+share/tt2/examples/src/splash/icon.html
 share/tt2/examples/src/splash/index.html
-share/tt2/examples/src/splash/menus.html
-share/tt2/examples/src/splash/tabs.html
-share/tt2/examples/src/splash/tabsets.html
+share/tt2/examples/src/splash/menu.html
+share/tt2/examples/src/splash/menubar.html
+share/tt2/examples/src/splash/panel.html
+share/tt2/examples/src/splash/pulldown.html
+share/tt2/examples/src/splash/tab.html
+share/tt2/examples/src/splash/tabbox.html
+share/tt2/examples/src/splash/tabsbox.html
+share/tt2/examples/src/splash/tabset.html
 share/tt2/examples/src/splash/text.html
 share/tt2/examples/ttree.cfg
-share/tt2/images/splash/aqua/botleft.png
-share/tt2/images/splash/aqua/botright.png
-share/tt2/images/splash/aqua/neg/botleft.png
-share/tt2/images/splash/aqua/neg/botright.png
-share/tt2/images/splash/aqua/neg/topleft.png
-share/tt2/images/splash/aqua/neg/topright.png
-share/tt2/images/splash/aqua/square.png
-share/tt2/images/splash/aqua/topleft.png
-share/tt2/images/splash/aqua/topright.png
-share/tt2/images/splash/bud/botleft.png
-share/tt2/images/splash/bud/botright.png
-share/tt2/images/splash/bud/neg/botleft.png
-share/tt2/images/splash/bud/neg/botright.png
-share/tt2/images/splash/bud/neg/topleft.png
-share/tt2/images/splash/bud/neg/topright.png
-share/tt2/images/splash/bud/square.png
-share/tt2/images/splash/bud/topleft.png
-share/tt2/images/splash/bud/topright.png
-share/tt2/images/splash/leaf/botleft.png
-share/tt2/images/splash/leaf/botright.png
-share/tt2/images/splash/leaf/neg/botleft.png
-share/tt2/images/splash/leaf/neg/botright.png
-share/tt2/images/splash/leaf/neg/topleft.png
-share/tt2/images/splash/leaf/neg/topright.png
-share/tt2/images/splash/leaf/square.png
-share/tt2/images/splash/leaf/topleft.png
-share/tt2/images/splash/leaf/topright.png
-share/tt2/images/splash/lilac/botleft.png
-share/tt2/images/splash/lilac/botright.png
-share/tt2/images/splash/lilac/neg/botleft.png
-share/tt2/images/splash/lilac/neg/botright.png
-share/tt2/images/splash/lilac/neg/topleft.png
-share/tt2/images/splash/lilac/neg/topright.png
-share/tt2/images/splash/lilac/square.png
-share/tt2/images/splash/lilac/topleft.png
-share/tt2/images/splash/lilac/topright.png
-share/tt2/images/splash/marine/botleft.png
-share/tt2/images/splash/marine/botright.png
-share/tt2/images/splash/marine/neg/botleft.png
-share/tt2/images/splash/marine/neg/botright.png
-share/tt2/images/splash/marine/neg/topleft.png
-share/tt2/images/splash/marine/neg/topright.png
-share/tt2/images/splash/marine/square.png
-share/tt2/images/splash/marine/topleft.png
-share/tt2/images/splash/marine/topright.png
-share/tt2/images/splash/mauve/botleft.png
-share/tt2/images/splash/mauve/botright.png
-share/tt2/images/splash/mauve/neg/botleft.png
-share/tt2/images/splash/mauve/neg/botright.png
-share/tt2/images/splash/mauve/neg/topleft.png
-share/tt2/images/splash/mauve/neg/topright.png
-share/tt2/images/splash/mauve/square.png
-share/tt2/images/splash/mauve/topleft.png
-share/tt2/images/splash/mauve/topright.png
-share/tt2/images/splash/mint/botleft.png
-share/tt2/images/splash/mint/botright.png
-share/tt2/images/splash/mint/neg/botleft.png
-share/tt2/images/splash/mint/neg/botright.png
-share/tt2/images/splash/mint/neg/topleft.png
-share/tt2/images/splash/mint/neg/topright.png
-share/tt2/images/splash/mint/square.png
-share/tt2/images/splash/mint/topleft.png
-share/tt2/images/splash/mint/topright.png
-share/tt2/images/splash/sky/botleft.png
-share/tt2/images/splash/sky/botright.png
-share/tt2/images/splash/sky/square.png
-share/tt2/images/splash/sky/topleft.png
-share/tt2/images/splash/sky/topright.png
+share/tt2/images/splash/aqua/bl.gif
+share/tt2/images/splash/aqua/box.gif
+share/tt2/images/splash/aqua/br.gif
+share/tt2/images/splash/aqua/diamond.gif
+share/tt2/images/splash/aqua/dot.gif
+share/tt2/images/splash/aqua/down.gif
+share/tt2/images/splash/aqua/left.gif
+share/tt2/images/splash/aqua/minus.gif
+share/tt2/images/splash/aqua/negbox.gif
+share/tt2/images/splash/aqua/plus.gif
+share/tt2/images/splash/aqua/posbox.gif
+share/tt2/images/splash/aqua/right.gif
+share/tt2/images/splash/aqua/ring.gif
+share/tt2/images/splash/aqua/ringdot.gif
+share/tt2/images/splash/aqua/tl.gif
+share/tt2/images/splash/aqua/tr.gif
+share/tt2/images/splash/aqua/up.gif
+share/tt2/images/splash/black/bl.gif
+share/tt2/images/splash/black/box.gif
+share/tt2/images/splash/black/br.gif
+share/tt2/images/splash/black/diamond.gif
+share/tt2/images/splash/black/dot.gif
+share/tt2/images/splash/black/down.gif
+share/tt2/images/splash/black/left.gif
+share/tt2/images/splash/black/minus.gif
+share/tt2/images/splash/black/negbox.gif
+share/tt2/images/splash/black/plus.gif
+share/tt2/images/splash/black/posbox.gif
+share/tt2/images/splash/black/right.gif
+share/tt2/images/splash/black/ring.gif
+share/tt2/images/splash/black/ringdot.gif
+share/tt2/images/splash/black/tl.gif
+share/tt2/images/splash/black/tr.gif
+share/tt2/images/splash/black/up.gif
+share/tt2/images/splash/blood/bl.gif
+share/tt2/images/splash/blood/box.gif
+share/tt2/images/splash/blood/br.gif
+share/tt2/images/splash/blood/diamond.gif
+share/tt2/images/splash/blood/dot.gif
+share/tt2/images/splash/blood/down.gif
+share/tt2/images/splash/blood/left.gif
+share/tt2/images/splash/blood/minus.gif
+share/tt2/images/splash/blood/negbox.gif
+share/tt2/images/splash/blood/plus.gif
+share/tt2/images/splash/blood/posbox.gif
+share/tt2/images/splash/blood/right.gif
+share/tt2/images/splash/blood/ring.gif
+share/tt2/images/splash/blood/ringdot.gif
+share/tt2/images/splash/blood/tl.gif
+share/tt2/images/splash/blood/tr.gif
+share/tt2/images/splash/blood/up.gif
+share/tt2/images/splash/blue/bl.gif
+share/tt2/images/splash/blue/box.gif
+share/tt2/images/splash/blue/br.gif
+share/tt2/images/splash/blue/diamond.gif
+share/tt2/images/splash/blue/dot.gif
+share/tt2/images/splash/blue/down.gif
+share/tt2/images/splash/blue/left.gif
+share/tt2/images/splash/blue/minus.gif
+share/tt2/images/splash/blue/negbox.gif
+share/tt2/images/splash/blue/plus.gif
+share/tt2/images/splash/blue/posbox.gif
+share/tt2/images/splash/blue/right.gif
+share/tt2/images/splash/blue/ring.gif
+share/tt2/images/splash/blue/ringdot.gif
+share/tt2/images/splash/blue/tl.gif
+share/tt2/images/splash/blue/tr.gif
+share/tt2/images/splash/blue/up.gif
+share/tt2/images/splash/blue25/bl.gif
+share/tt2/images/splash/blue25/box.gif
+share/tt2/images/splash/blue25/br.gif
+share/tt2/images/splash/blue25/diamond.gif
+share/tt2/images/splash/blue25/dot.gif
+share/tt2/images/splash/blue25/down.gif
+share/tt2/images/splash/blue25/left.gif
+share/tt2/images/splash/blue25/minus.gif
+share/tt2/images/splash/blue25/negbox.gif
+share/tt2/images/splash/blue25/plus.gif
+share/tt2/images/splash/blue25/posbox.gif
+share/tt2/images/splash/blue25/right.gif
+share/tt2/images/splash/blue25/ring.gif
+share/tt2/images/splash/blue25/ringdot.gif
+share/tt2/images/splash/blue25/tl.gif
+share/tt2/images/splash/blue25/tr.gif
+share/tt2/images/splash/blue25/up.gif
+share/tt2/images/splash/blue50/bl.gif
+share/tt2/images/splash/blue50/box.gif
+share/tt2/images/splash/blue50/br.gif
+share/tt2/images/splash/blue50/diamond.gif
+share/tt2/images/splash/blue50/dot.gif
+share/tt2/images/splash/blue50/down.gif
+share/tt2/images/splash/blue50/left.gif
+share/tt2/images/splash/blue50/minus.gif
+share/tt2/images/splash/blue50/negbox.gif
+share/tt2/images/splash/blue50/plus.gif
+share/tt2/images/splash/blue50/posbox.gif
+share/tt2/images/splash/blue50/right.gif
+share/tt2/images/splash/blue50/ring.gif
+share/tt2/images/splash/blue50/ringdot.gif
+share/tt2/images/splash/blue50/tl.gif
+share/tt2/images/splash/blue50/tr.gif
+share/tt2/images/splash/blue50/up.gif
+share/tt2/images/splash/blue75/bl.gif
+share/tt2/images/splash/blue75/box.gif
+share/tt2/images/splash/blue75/br.gif
+share/tt2/images/splash/blue75/diamond.gif
+share/tt2/images/splash/blue75/dot.gif
+share/tt2/images/splash/blue75/down.gif
+share/tt2/images/splash/blue75/left.gif
+share/tt2/images/splash/blue75/minus.gif
+share/tt2/images/splash/blue75/negbox.gif
+share/tt2/images/splash/blue75/plus.gif
+share/tt2/images/splash/blue75/posbox.gif
+share/tt2/images/splash/blue75/right.gif
+share/tt2/images/splash/blue75/ring.gif
+share/tt2/images/splash/blue75/ringdot.gif
+share/tt2/images/splash/blue75/tl.gif
+share/tt2/images/splash/blue75/tr.gif
+share/tt2/images/splash/blue75/up.gif
+share/tt2/images/splash/bud/bl.gif
+share/tt2/images/splash/bud/box.gif
+share/tt2/images/splash/bud/br.gif
+share/tt2/images/splash/bud/diamond.gif
+share/tt2/images/splash/bud/dot.gif
+share/tt2/images/splash/bud/down.gif
+share/tt2/images/splash/bud/left.gif
+share/tt2/images/splash/bud/minus.gif
+share/tt2/images/splash/bud/negbox.gif
+share/tt2/images/splash/bud/plus.gif
+share/tt2/images/splash/bud/posbox.gif
+share/tt2/images/splash/bud/right.gif
+share/tt2/images/splash/bud/ring.gif
+share/tt2/images/splash/bud/ringdot.gif
+share/tt2/images/splash/bud/tl.gif
+share/tt2/images/splash/bud/tr.gif
+share/tt2/images/splash/bud/up.gif
+share/tt2/images/splash/green/bl.gif
+share/tt2/images/splash/green/box.gif
+share/tt2/images/splash/green/br.gif
+share/tt2/images/splash/green/diamond.gif
+share/tt2/images/splash/green/dot.gif
+share/tt2/images/splash/green/down.gif
+share/tt2/images/splash/green/left.gif
+share/tt2/images/splash/green/minus.gif
+share/tt2/images/splash/green/negbox.gif
+share/tt2/images/splash/green/plus.gif
+share/tt2/images/splash/green/posbox.gif
+share/tt2/images/splash/green/right.gif
+share/tt2/images/splash/green/ring.gif
+share/tt2/images/splash/green/ringdot.gif
+share/tt2/images/splash/green/tl.gif
+share/tt2/images/splash/green/tr.gif
+share/tt2/images/splash/green/up.gif
+share/tt2/images/splash/green25/bl.gif
+share/tt2/images/splash/green25/box.gif
+share/tt2/images/splash/green25/br.gif
+share/tt2/images/splash/green25/diamond.gif
+share/tt2/images/splash/green25/dot.gif
+share/tt2/images/splash/green25/down.gif
+share/tt2/images/splash/green25/left.gif
+share/tt2/images/splash/green25/minus.gif
+share/tt2/images/splash/green25/negbox.gif
+share/tt2/images/splash/green25/plus.gif
+share/tt2/images/splash/green25/posbox.gif
+share/tt2/images/splash/green25/right.gif
+share/tt2/images/splash/green25/ring.gif
+share/tt2/images/splash/green25/ringdot.gif
+share/tt2/images/splash/green25/tl.gif
+share/tt2/images/splash/green25/tr.gif
+share/tt2/images/splash/green25/up.gif
+share/tt2/images/splash/green50/bl.gif
+share/tt2/images/splash/green50/box.gif
+share/tt2/images/splash/green50/br.gif
+share/tt2/images/splash/green50/diamond.gif
+share/tt2/images/splash/green50/dot.gif
+share/tt2/images/splash/green50/down.gif
+share/tt2/images/splash/green50/left.gif
+share/tt2/images/splash/green50/minus.gif
+share/tt2/images/splash/green50/negbox.gif
+share/tt2/images/splash/green50/plus.gif
+share/tt2/images/splash/green50/posbox.gif
+share/tt2/images/splash/green50/right.gif
+share/tt2/images/splash/green50/ring.gif
+share/tt2/images/splash/green50/ringdot.gif
+share/tt2/images/splash/green50/tl.gif
+share/tt2/images/splash/green50/tr.gif
+share/tt2/images/splash/green50/up.gif
+share/tt2/images/splash/green75/bl.gif
+share/tt2/images/splash/green75/box.gif
+share/tt2/images/splash/green75/br.gif
+share/tt2/images/splash/green75/diamond.gif
+share/tt2/images/splash/green75/dot.gif
+share/tt2/images/splash/green75/down.gif
+share/tt2/images/splash/green75/left.gif
+share/tt2/images/splash/green75/minus.gif
+share/tt2/images/splash/green75/negbox.gif
+share/tt2/images/splash/green75/plus.gif
+share/tt2/images/splash/green75/posbox.gif
+share/tt2/images/splash/green75/right.gif
+share/tt2/images/splash/green75/ring.gif
+share/tt2/images/splash/green75/ringdot.gif
+share/tt2/images/splash/green75/tl.gif
+share/tt2/images/splash/green75/tr.gif
+share/tt2/images/splash/green75/up.gif
+share/tt2/images/splash/grey25/bl.gif
+share/tt2/images/splash/grey25/box.gif
+share/tt2/images/splash/grey25/br.gif
+share/tt2/images/splash/grey25/diamond.gif
+share/tt2/images/splash/grey25/dot.gif
+share/tt2/images/splash/grey25/down.gif
+share/tt2/images/splash/grey25/left.gif
+share/tt2/images/splash/grey25/minus.gif
+share/tt2/images/splash/grey25/negbox.gif
+share/tt2/images/splash/grey25/plus.gif
+share/tt2/images/splash/grey25/posbox.gif
+share/tt2/images/splash/grey25/right.gif
+share/tt2/images/splash/grey25/ring.gif
+share/tt2/images/splash/grey25/ringdot.gif
+share/tt2/images/splash/grey25/tl.gif
+share/tt2/images/splash/grey25/tr.gif
+share/tt2/images/splash/grey25/up.gif
+share/tt2/images/splash/grey50/bl.gif
+share/tt2/images/splash/grey50/box.gif
+share/tt2/images/splash/grey50/br.gif
+share/tt2/images/splash/grey50/diamond.gif
+share/tt2/images/splash/grey50/dot.gif
+share/tt2/images/splash/grey50/down.gif
+share/tt2/images/splash/grey50/left.gif
+share/tt2/images/splash/grey50/minus.gif
+share/tt2/images/splash/grey50/negbox.gif
+share/tt2/images/splash/grey50/plus.gif
+share/tt2/images/splash/grey50/posbox.gif
+share/tt2/images/splash/grey50/right.gif
+share/tt2/images/splash/grey50/ring.gif
+share/tt2/images/splash/grey50/ringdot.gif
+share/tt2/images/splash/grey50/tl.gif
+share/tt2/images/splash/grey50/tr.gif
+share/tt2/images/splash/grey50/up.gif
+share/tt2/images/splash/grey75/bl.gif
+share/tt2/images/splash/grey75/box.gif
+share/tt2/images/splash/grey75/br.gif
+share/tt2/images/splash/grey75/diamond.gif
+share/tt2/images/splash/grey75/dot.gif
+share/tt2/images/splash/grey75/down.gif
+share/tt2/images/splash/grey75/left.gif
+share/tt2/images/splash/grey75/minus.gif
+share/tt2/images/splash/grey75/negbox.gif
+share/tt2/images/splash/grey75/plus.gif
+share/tt2/images/splash/grey75/posbox.gif
+share/tt2/images/splash/grey75/right.gif
+share/tt2/images/splash/grey75/ring.gif
+share/tt2/images/splash/grey75/ringdot.gif
+share/tt2/images/splash/grey75/tl.gif
+share/tt2/images/splash/grey75/tr.gif
+share/tt2/images/splash/grey75/up.gif
+share/tt2/images/splash/leaf/bl.gif
+share/tt2/images/splash/leaf/box.gif
+share/tt2/images/splash/leaf/br.gif
+share/tt2/images/splash/leaf/diamond.gif
+share/tt2/images/splash/leaf/dot.gif
+share/tt2/images/splash/leaf/down.gif
+share/tt2/images/splash/leaf/left.gif
+share/tt2/images/splash/leaf/minus.gif
+share/tt2/images/splash/leaf/negbox.gif
+share/tt2/images/splash/leaf/plus.gif
+share/tt2/images/splash/leaf/posbox.gif
+share/tt2/images/splash/leaf/right.gif
+share/tt2/images/splash/leaf/ring.gif
+share/tt2/images/splash/leaf/ringdot.gif
+share/tt2/images/splash/leaf/tl.gif
+share/tt2/images/splash/leaf/tr.gif
+share/tt2/images/splash/leaf/up.gif
+share/tt2/images/splash/lilac/bl.gif
+share/tt2/images/splash/lilac/box.gif
+share/tt2/images/splash/lilac/br.gif
+share/tt2/images/splash/lilac/diamond.gif
+share/tt2/images/splash/lilac/dot.gif
+share/tt2/images/splash/lilac/down.gif
+share/tt2/images/splash/lilac/left.gif
+share/tt2/images/splash/lilac/minus.gif
+share/tt2/images/splash/lilac/negbox.gif
+share/tt2/images/splash/lilac/plus.gif
+share/tt2/images/splash/lilac/posbox.gif
+share/tt2/images/splash/lilac/right.gif
+share/tt2/images/splash/lilac/ring.gif
+share/tt2/images/splash/lilac/ringdot.gif
+share/tt2/images/splash/lilac/tl.gif
+share/tt2/images/splash/lilac/tr.gif
+share/tt2/images/splash/lilac/up.gif
+share/tt2/images/splash/marine/bl.gif
+share/tt2/images/splash/marine/box.gif
+share/tt2/images/splash/marine/br.gif
+share/tt2/images/splash/marine/diamond.gif
+share/tt2/images/splash/marine/dot.gif
+share/tt2/images/splash/marine/down.gif
+share/tt2/images/splash/marine/left.gif
+share/tt2/images/splash/marine/minus.gif
+share/tt2/images/splash/marine/negbox.gif
+share/tt2/images/splash/marine/plus.gif
+share/tt2/images/splash/marine/posbox.gif
+share/tt2/images/splash/marine/right.gif
+share/tt2/images/splash/marine/ring.gif
+share/tt2/images/splash/marine/ringdot.gif
+share/tt2/images/splash/marine/tl.gif
+share/tt2/images/splash/marine/tr.gif
+share/tt2/images/splash/marine/up.gif
+share/tt2/images/splash/mauve/bl.gif
+share/tt2/images/splash/mauve/box.gif
+share/tt2/images/splash/mauve/br.gif
+share/tt2/images/splash/mauve/diamond.gif
+share/tt2/images/splash/mauve/dot.gif
+share/tt2/images/splash/mauve/down.gif
+share/tt2/images/splash/mauve/left.gif
+share/tt2/images/splash/mauve/minus.gif
+share/tt2/images/splash/mauve/negbox.gif
+share/tt2/images/splash/mauve/plus.gif
+share/tt2/images/splash/mauve/posbox.gif
+share/tt2/images/splash/mauve/right.gif
+share/tt2/images/splash/mauve/ring.gif
+share/tt2/images/splash/mauve/ringdot.gif
+share/tt2/images/splash/mauve/tl.gif
+share/tt2/images/splash/mauve/tr.gif
+share/tt2/images/splash/mauve/up.gif
+share/tt2/images/splash/mint/bl.gif
+share/tt2/images/splash/mint/box.gif
+share/tt2/images/splash/mint/br.gif
+share/tt2/images/splash/mint/diamond.gif
+share/tt2/images/splash/mint/dot.gif
+share/tt2/images/splash/mint/down.gif
+share/tt2/images/splash/mint/left.gif
+share/tt2/images/splash/mint/minus.gif
+share/tt2/images/splash/mint/negbox.gif
+share/tt2/images/splash/mint/plus.gif
+share/tt2/images/splash/mint/posbox.gif
+share/tt2/images/splash/mint/right.gif
+share/tt2/images/splash/mint/ring.gif
+share/tt2/images/splash/mint/ringdot.gif
+share/tt2/images/splash/mint/tl.gif
+share/tt2/images/splash/mint/tr.gif
+share/tt2/images/splash/mint/up.gif
+share/tt2/images/splash/navy/bl.gif
+share/tt2/images/splash/navy/box.gif
+share/tt2/images/splash/navy/br.gif
+share/tt2/images/splash/navy/diamond.gif
+share/tt2/images/splash/navy/dot.gif
+share/tt2/images/splash/navy/down.gif
+share/tt2/images/splash/navy/left.gif
+share/tt2/images/splash/navy/minus.gif
+share/tt2/images/splash/navy/negbox.gif
+share/tt2/images/splash/navy/plus.gif
+share/tt2/images/splash/navy/posbox.gif
+share/tt2/images/splash/navy/right.gif
+share/tt2/images/splash/navy/ring.gif
+share/tt2/images/splash/navy/ringdot.gif
+share/tt2/images/splash/navy/tl.gif
+share/tt2/images/splash/navy/tr.gif
+share/tt2/images/splash/navy/up.gif
+share/tt2/images/splash/purple/bl.gif
+share/tt2/images/splash/purple/box.gif
+share/tt2/images/splash/purple/br.gif
+share/tt2/images/splash/purple/diamond.gif
+share/tt2/images/splash/purple/dot.gif
+share/tt2/images/splash/purple/down.gif
+share/tt2/images/splash/purple/left.gif
+share/tt2/images/splash/purple/minus.gif
+share/tt2/images/splash/purple/negbox.gif
+share/tt2/images/splash/purple/plus.gif
+share/tt2/images/splash/purple/posbox.gif
+share/tt2/images/splash/purple/right.gif
+share/tt2/images/splash/purple/ring.gif
+share/tt2/images/splash/purple/ringdot.gif
+share/tt2/images/splash/purple/tl.gif
+share/tt2/images/splash/purple/tr.gif
+share/tt2/images/splash/purple/up.gif
+share/tt2/images/splash/red/bl.gif
+share/tt2/images/splash/red/box.gif
+share/tt2/images/splash/red/br.gif
+share/tt2/images/splash/red/diamond.gif
+share/tt2/images/splash/red/dot.gif
+share/tt2/images/splash/red/down.gif
+share/tt2/images/splash/red/left.gif
+share/tt2/images/splash/red/minus.gif
+share/tt2/images/splash/red/negbox.gif
+share/tt2/images/splash/red/plus.gif
+share/tt2/images/splash/red/posbox.gif
+share/tt2/images/splash/red/right.gif
+share/tt2/images/splash/red/ring.gif
+share/tt2/images/splash/red/ringdot.gif
+share/tt2/images/splash/red/tl.gif
+share/tt2/images/splash/red/tr.gif
+share/tt2/images/splash/red/up.gif
+share/tt2/images/splash/red25/bl.gif
+share/tt2/images/splash/red25/box.gif
+share/tt2/images/splash/red25/br.gif
+share/tt2/images/splash/red25/diamond.gif
+share/tt2/images/splash/red25/dot.gif
+share/tt2/images/splash/red25/down.gif
+share/tt2/images/splash/red25/left.gif
+share/tt2/images/splash/red25/minus.gif
+share/tt2/images/splash/red25/negbox.gif
+share/tt2/images/splash/red25/plus.gif
+share/tt2/images/splash/red25/posbox.gif
+share/tt2/images/splash/red25/right.gif
+share/tt2/images/splash/red25/ring.gif
+share/tt2/images/splash/red25/ringdot.gif
+share/tt2/images/splash/red25/tl.gif
+share/tt2/images/splash/red25/tr.gif
+share/tt2/images/splash/red25/up.gif
+share/tt2/images/splash/red50/bl.gif
+share/tt2/images/splash/red50/box.gif
+share/tt2/images/splash/red50/br.gif
+share/tt2/images/splash/red50/diamond.gif
+share/tt2/images/splash/red50/dot.gif
+share/tt2/images/splash/red50/down.gif
+share/tt2/images/splash/red50/left.gif
+share/tt2/images/splash/red50/minus.gif
+share/tt2/images/splash/red50/negbox.gif
+share/tt2/images/splash/red50/plus.gif
+share/tt2/images/splash/red50/posbox.gif
+share/tt2/images/splash/red50/right.gif
+share/tt2/images/splash/red50/ring.gif
+share/tt2/images/splash/red50/ringdot.gif
+share/tt2/images/splash/red50/tl.gif
+share/tt2/images/splash/red50/tr.gif
+share/tt2/images/splash/red50/up.gif
+share/tt2/images/splash/red75/bl.gif
+share/tt2/images/splash/red75/box.gif
+share/tt2/images/splash/red75/br.gif
+share/tt2/images/splash/red75/diamond.gif
+share/tt2/images/splash/red75/dot.gif
+share/tt2/images/splash/red75/down.gif
+share/tt2/images/splash/red75/left.gif
+share/tt2/images/splash/red75/minus.gif
+share/tt2/images/splash/red75/negbox.gif
+share/tt2/images/splash/red75/plus.gif
+share/tt2/images/splash/red75/posbox.gif
+share/tt2/images/splash/red75/right.gif
+share/tt2/images/splash/red75/ring.gif
+share/tt2/images/splash/red75/ringdot.gif
+share/tt2/images/splash/red75/tl.gif
+share/tt2/images/splash/red75/tr.gif
+share/tt2/images/splash/red75/up.gif
+share/tt2/images/splash/rose/bl.gif
+share/tt2/images/splash/rose/box.gif
+share/tt2/images/splash/rose/br.gif
+share/tt2/images/splash/rose/diamond.gif
+share/tt2/images/splash/rose/dot.gif
+share/tt2/images/splash/rose/down.gif
+share/tt2/images/splash/rose/left.gif
+share/tt2/images/splash/rose/minus.gif
+share/tt2/images/splash/rose/negbox.gif
+share/tt2/images/splash/rose/plus.gif
+share/tt2/images/splash/rose/posbox.gif
+share/tt2/images/splash/rose/right.gif
+share/tt2/images/splash/rose/ring.gif
+share/tt2/images/splash/rose/ringdot.gif
+share/tt2/images/splash/rose/tl.gif
+share/tt2/images/splash/rose/tr.gif
+share/tt2/images/splash/rose/up.gif
+share/tt2/images/splash/scarlet/bl.gif
+share/tt2/images/splash/scarlet/box.gif
+share/tt2/images/splash/scarlet/br.gif
+share/tt2/images/splash/scarlet/diamond.gif
+share/tt2/images/splash/scarlet/dot.gif
+share/tt2/images/splash/scarlet/down.gif
+share/tt2/images/splash/scarlet/left.gif
+share/tt2/images/splash/scarlet/minus.gif
+share/tt2/images/splash/scarlet/negbox.gif
+share/tt2/images/splash/scarlet/plus.gif
+share/tt2/images/splash/scarlet/posbox.gif
+share/tt2/images/splash/scarlet/right.gif
+share/tt2/images/splash/scarlet/ring.gif
+share/tt2/images/splash/scarlet/ringdot.gif
+share/tt2/images/splash/scarlet/tl.gif
+share/tt2/images/splash/scarlet/tr.gif
+share/tt2/images/splash/scarlet/up.gif
+share/tt2/images/splash/sky/bl.gif
+share/tt2/images/splash/sky/box.gif
+share/tt2/images/splash/sky/br.gif
+share/tt2/images/splash/sky/diamond.gif
+share/tt2/images/splash/sky/dot.gif
+share/tt2/images/splash/sky/down.gif
+share/tt2/images/splash/sky/left.gif
+share/tt2/images/splash/sky/minus.gif
+share/tt2/images/splash/sky/negbox.gif
+share/tt2/images/splash/sky/plus.gif
+share/tt2/images/splash/sky/posbox.gif
+share/tt2/images/splash/sky/right.gif
+share/tt2/images/splash/sky/ring.gif
+share/tt2/images/splash/sky/ringdot.gif
+share/tt2/images/splash/sky/tl.gif
+share/tt2/images/splash/sky/tr.gif
+share/tt2/images/splash/sky/up.gif
+share/tt2/images/splash/white/bl.gif
+share/tt2/images/splash/white/box.gif
+share/tt2/images/splash/white/br.gif
+share/tt2/images/splash/white/diamond.gif
+share/tt2/images/splash/white/dot.gif
+share/tt2/images/splash/white/down.gif
+share/tt2/images/splash/white/left.gif
+share/tt2/images/splash/white/minus.gif
+share/tt2/images/splash/white/negbox.gif
+share/tt2/images/splash/white/plus.gif
+share/tt2/images/splash/white/posbox.gif
+share/tt2/images/splash/white/right.gif
+share/tt2/images/splash/white/ring.gif
+share/tt2/images/splash/white/ringdot.gif
+share/tt2/images/splash/white/tl.gif
+share/tt2/images/splash/white/tr.gif
+share/tt2/images/splash/white/up.gif
 share/tt2/images/tt2power.gif
 share/tt2/images/ttdotorg.gif
 share/tt2/templates/README
@@ -427,22 +1019,22 @@ share/tt2/templates/ps/tiles
 share/tt2/templates/splash/bar
 share/tt2/templates/splash/box
 share/tt2/templates/splash/button
-share/tt2/templates/splash/cell
 share/tt2/templates/splash/config
 share/tt2/templates/splash/dropbox
+share/tt2/templates/splash/frame
+share/tt2/templates/splash/homelink
 share/tt2/templates/splash/icon
 share/tt2/templates/splash/menu
 share/tt2/templates/splash/menubar
-share/tt2/templates/splash/pane
 share/tt2/templates/splash/panel
-share/tt2/templates/splash/row
+share/tt2/templates/splash/pulldown
 share/tt2/templates/splash/tab
 share/tt2/templates/splash/tabbox
-share/tt2/templates/splash/table
 share/tt2/templates/splash/tabsbox
 share/tt2/templates/splash/tabset
-share/tt2/templates/splash/tabspanel
 share/tt2/templates/splash/text
+share/tt2/templates/splash/ttdotorg
+share/tt2/templates/splash/ttpower
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Template
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Template/Tools
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin/XML
@@ -456,20 +1048,35 @@ share/tt2/templates/splash/text
 @dirrm share/tt2/templates/pod
 @dirrm share/tt2/templates/html
 @dirrm share/tt2/templates
+@dirrm share/tt2/images/splash/white
 @dirrm share/tt2/images/splash/sky
-@dirrm share/tt2/images/splash/mint/neg
+@dirrm share/tt2/images/splash/scarlet
+@dirrm share/tt2/images/splash/rose
+@dirrm share/tt2/images/splash/red75
+@dirrm share/tt2/images/splash/red50
+@dirrm share/tt2/images/splash/red25
+@dirrm share/tt2/images/splash/red
+@dirrm share/tt2/images/splash/purple
+@dirrm share/tt2/images/splash/navy
 @dirrm share/tt2/images/splash/mint
-@dirrm share/tt2/images/splash/mauve/neg
 @dirrm share/tt2/images/splash/mauve
-@dirrm share/tt2/images/splash/marine/neg
 @dirrm share/tt2/images/splash/marine
-@dirrm share/tt2/images/splash/lilac/neg
 @dirrm share/tt2/images/splash/lilac
-@dirrm share/tt2/images/splash/leaf/neg
 @dirrm share/tt2/images/splash/leaf
-@dirrm share/tt2/images/splash/bud/neg
+@dirrm share/tt2/images/splash/grey75
+@dirrm share/tt2/images/splash/grey50
+@dirrm share/tt2/images/splash/grey25
+@dirrm share/tt2/images/splash/green75
+@dirrm share/tt2/images/splash/green50
+@dirrm share/tt2/images/splash/green25
+@dirrm share/tt2/images/splash/green
 @dirrm share/tt2/images/splash/bud
-@dirrm share/tt2/images/splash/aqua/neg
+@dirrm share/tt2/images/splash/blue75
+@dirrm share/tt2/images/splash/blue50
+@dirrm share/tt2/images/splash/blue25
+@dirrm share/tt2/images/splash/blue
+@dirrm share/tt2/images/splash/blood
+@dirrm share/tt2/images/splash/black
 @dirrm share/tt2/images/splash/aqua
 @dirrm share/tt2/images/splash
 @dirrm share/tt2/images
@@ -477,14 +1084,24 @@ share/tt2/templates/splash/text
 @dirrm share/tt2/examples/src/ps
 @dirrm share/tt2/examples/src/html
 @dirrm share/tt2/examples/src
-@dirrm share/tt2/examples/lib/test
+@dirrm share/tt2/examples/lib/splash/about
+@dirrm share/tt2/examples/lib/splash
 @dirrm share/tt2/examples/lib/examples/splash/text
-@dirrm share/tt2/examples/lib/examples/splash/tabsets
-@dirrm share/tt2/examples/lib/examples/splash/tabs
-@dirrm share/tt2/examples/lib/examples/splash/menus
+@dirrm share/tt2/examples/lib/examples/splash/tabset
+@dirrm share/tt2/examples/lib/examples/splash/tabsbox
+@dirrm share/tt2/examples/lib/examples/splash/tabbox
+@dirrm share/tt2/examples/lib/examples/splash/tab
+@dirrm share/tt2/examples/lib/examples/splash/pulldown
+@dirrm share/tt2/examples/lib/examples/splash/panel
+@dirrm share/tt2/examples/lib/examples/splash/menubar
+@dirrm share/tt2/examples/lib/examples/splash/menu
+@dirrm share/tt2/examples/lib/examples/splash/icon
+@dirrm share/tt2/examples/lib/examples/splash/frame
 @dirrm share/tt2/examples/lib/examples/splash/dropbox
 @dirrm share/tt2/examples/lib/examples/splash/config
-@dirrm share/tt2/examples/lib/examples/splash/buttons
+@dirrm share/tt2/examples/lib/examples/splash/button
+@dirrm share/tt2/examples/lib/examples/splash/box
+@dirrm share/tt2/examples/lib/examples/splash/bar
 @dirrm share/tt2/examples/lib/examples/splash
 @dirrm share/tt2/examples/lib/examples/ps/marks
 @dirrm share/tt2/examples/lib/examples/ps
@@ -499,6 +1116,10 @@ share/tt2/templates/splash/text
 @dirrm share/tt2/examples/lib/examples
 @dirrm share/tt2/examples/lib/example
 @dirrm share/tt2/examples/lib
+@dirrm share/tt2/examples/html/splash
+@dirrm share/tt2/examples/html/ps
+@dirrm share/tt2/examples/html/html
+@dirrm share/tt2/examples/html
 @dirrm share/tt2/examples
 @dirrm share/tt2/docs/style/splash
 @dirrm share/tt2/docs/style/plain
@@ -516,6 +1137,16 @@ share/tt2/templates/splash/text
 @dirrm share/tt2/docs/src
 @dirrm share/tt2/docs/lib/docset
 @dirrm share/tt2/docs/lib
+@dirrm share/tt2/docs/html/Tutorial
+@dirrm share/tt2/docs/html/Tools
+@dirrm share/tt2/docs/html/Release
+@dirrm share/tt2/docs/html/Modules/Template/Plugin/XML
+@dirrm share/tt2/docs/html/Modules/Template/Plugin
+@dirrm share/tt2/docs/html/Modules/Template
+@dirrm share/tt2/docs/html/Modules
+@dirrm share/tt2/docs/html/Manual
+@dirrm share/tt2/docs/html/Library
+@dirrm share/tt2/docs/html/FAQ
 @dirrm share/tt2/docs/html
 @dirrm share/tt2/docs
 @dirrm share/tt2
