@@ -1,0 +1,11 @@
+--- config_h.in.orig	Tue Nov  7 11:17:21 1995
++++ config_h.in	Tue Sep 28 04:00:50 1999
+@@ -12,7 +12,7 @@
+ #define SAVENAME "SC.SAVE"
+ 
+ /*  The default file viewer */
+-#define DFLT_PAGER "less"
++/* #define DFLT_PAGER "less" */
+ 
+ /*  Define CRYPT_PATH if you want crypt support compiled in */
+ #undef CRYPT_PATH
