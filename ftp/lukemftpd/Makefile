@@ -15,6 +15,7 @@ MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/misc/lukemftp/old/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enhanced ftp server from NetBSD
 
+FORBIDDEN=	http://vuxml.freebsd.org/c4b025bb-f05d-11d8-9837-000c41e2cdad.html
 DEPRECATED=	"lukemftpd was renamed to tnftpd"
 EXPIRATION_DATE=2004-08-30
 USE_REINPLACE=	yes
