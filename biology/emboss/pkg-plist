@@ -63,6 +63,7 @@ bin/backtranseq
 bin/banana
 bin/btwisted
 bin/chaos
+bin/charge
 bin/checktrans
 bin/chips
 bin/cirdna
@@ -79,6 +80,7 @@ bin/dbiblast
 bin/dbifasta
 bin/dbiflat
 bin/dbigcg
+bin/degapseq
 bin/descseq
 bin/diffseq
 bin/digest
@@ -214,6 +216,7 @@ share/EMBOSS/acd/backtranseq.acd
 share/EMBOSS/acd/banana.acd
 share/EMBOSS/acd/btwisted.acd
 share/EMBOSS/acd/chaos.acd
+share/EMBOSS/acd/charge.acd
 share/EMBOSS/acd/checktrans.acd
 share/EMBOSS/acd/chips.acd
 share/EMBOSS/acd/cirdna.acd
@@ -781,6 +784,7 @@ share/doc/EMBOSS/programs/html/dbiblast.html
 share/doc/EMBOSS/programs/html/dbifasta.html
 share/doc/EMBOSS/programs/html/dbiflat.html
 share/doc/EMBOSS/programs/html/dbigcg.html
+share/doc/EMBOSS/programs/html/degapseq.html
 share/doc/EMBOSS/programs/html/descseq.html
 share/doc/EMBOSS/programs/html/diffseq.html
 share/doc/EMBOSS/programs/html/digest.html
@@ -1010,6 +1014,7 @@ share/doc/EMBOSS/programs/text/cirdna.txt
 share/doc/EMBOSS/programs/text/clique.txt
 share/doc/EMBOSS/programs/text/codcmp.txt
 share/doc/EMBOSS/programs/text/coderet.txt
+share/doc/EMBOSS/programs/text/complex.txt
 share/doc/EMBOSS/programs/text/compseq.txt
 share/doc/EMBOSS/programs/text/cons.txt
 share/doc/EMBOSS/programs/text/consense.txt
@@ -1024,6 +1029,7 @@ share/doc/EMBOSS/programs/text/dbiblast.txt
 share/doc/EMBOSS/programs/text/dbifasta.txt
 share/doc/EMBOSS/programs/text/dbiflat.txt
 share/doc/EMBOSS/programs/text/dbigcg.txt
+share/doc/EMBOSS/programs/text/degapseq.txt
 share/doc/EMBOSS/programs/text/descseq.txt
 share/doc/EMBOSS/programs/text/diffseq.txt
 share/doc/EMBOSS/programs/text/digest.txt
