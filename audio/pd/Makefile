@@ -36,9 +36,11 @@ pre-configure:
 
 post-configure:
 	${CP} ${WRKSRC}/makefile ${WRKSRC}/makefile.orig
-	${SED} -e \
-"s:^INCLUDE = :INCLUDE = -I${LOCALBASE}/include/tk8.3 -I${LOCALBASE}/include/tcl8.3 -I${X11BASE}/include :g; s:^LIB =:LIB =${PTHREAD_LIBS}:g; s:^CFLAGS =:CFLAGS+=${PTHREAD_CFLAGS}:g" < ${WRKSRC}/makefile.orig \
-		> ${WRKSRC}/makefile
+	${SED} -e "s:^INCLUDE = :INCLUDE = -I${LOCALBASE}/include/tk8.3 \
+		-I${LOCALBASE}/include/tcl8.3 -I${X11BASE}/include :g; \
+		s:^LIB =:LIB =${PTHREAD_LIBS}:g; \
+		s:^CFLAGS =:CFLAGS+=${PTHREAD_CFLAGS}:g" \
+		< ${WRKSRC}/makefile.orig > ${WRKSRC}/makefile
 
 pre-install:
 	${RM} -f ${PLIST}
