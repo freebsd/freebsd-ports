@@ -69,7 +69,6 @@
     SUBDIR += edonkey-tool-hash
     SUBDIR += edonkey-tool-slist
     SUBDIR += elscreen
-    SUBDIR += emma
     SUBDIR += estic
     SUBDIR += ewipe
     SUBDIR += explosions
@@ -110,7 +109,6 @@
     SUBDIR += gnome-icon-theme
     SUBDIR += gnomehier
     SUBDIR += gnomemimedata
-    SUBDIR += gnomepm
     SUBDIR += gnomesword
     SUBDIR += gnomeuserdocs2
     SUBDIR += gnuls
@@ -267,9 +265,6 @@
     SUBDIR += p5-Data-Buffer
     SUBDIR += p5-File-CounterFile
     SUBDIR += p5-File-Sort
-    SUBDIR += p5-Finance-Currency-Convert
-    SUBDIR += p5-Finance-Quote
-    SUBDIR += p5-Finance-QuoteHist
     SUBDIR += p5-Geo-Weather
     SUBDIR += p5-I18N-Charset
     SUBDIR += p5-I18N-LangTags
@@ -303,7 +298,6 @@
     SUBDIR += qbrew
     SUBDIR += qlas
     SUBDIR += qmc
-    SUBDIR += quantlib
     SUBDIR += quick-lounge-applet
     SUBDIR += quotes
     SUBDIR += quranref
@@ -372,7 +366,6 @@
     SUBDIR += wmmand
     SUBDIR += wmpal
     SUBDIR += wmproxyper
-    SUBDIR += wmstock
     SUBDIR += wmtunlo
     SUBDIR += wmweather
     SUBDIR += wmweather+
@@ -391,7 +384,6 @@
     SUBDIR += xless
     SUBDIR += xosd
     SUBDIR += xpns
-    SUBDIR += xquote
     SUBDIR += xrmap
     SUBDIR += xtail
     SUBDIR += xtar
