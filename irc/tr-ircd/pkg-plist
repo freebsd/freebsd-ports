@@ -4,17 +4,17 @@ bin/ircpasswd
 etc/ircd.motd
 etc/kline.conf
 etc/rc.d/tr-ircd.sh.sample
-include/md5/closeout.h
-include/md5/config.h
-include/md5/error.h
-include/md5/getline.h
-include/md5/getopt.h
-include/md5/gnukludge.h
-include/md5/md5.h
-include/md5/sys2.h
-include/md5/system.h
-include/md5/version-etc.h
-include/md5/xalloc.h
+include/tr-ircd/md5/closeout.h
+include/tr-ircd/md5/config.h
+include/tr-ircd/md5/error.h
+include/tr-ircd/md5/getline.h
+include/tr-ircd/md5/getopt.h
+include/tr-ircd/md5/gnukludge.h
+include/tr-ircd/md5/md5.h
+include/tr-ircd/md5/sys2.h
+include/tr-ircd/md5/system.h
+include/tr-ircd/md5/version-etc.h
+include/tr-ircd/md5/xalloc.h
 include/tr-ircd/blalloc.h
 include/tr-ircd/capabflag.h
 include/tr-ircd/chanmode.h
@@ -108,6 +108,7 @@ lib/tr-ircd/modules/m_display.so
 lib/tr-ircd/modules/m_dkey.so
 lib/tr-ircd/modules/m_error.so
 lib/tr-ircd/modules/m_exclude.so
+lib/tr-ircd/modules/m_fakeip.so
 lib/tr-ircd/modules/m_globops.so
 lib/tr-ircd/modules/m_gnotice.so
 lib/tr-ircd/modules/m_goper.so
@@ -302,7 +303,7 @@ share/tr-ircd/help/en_us/watch
 share/tr-ircd/help/en_us/who
 share/tr-ircd/help/en_us/whois
 share/tr-ircd/help/en_us/whowas
-@dirrm include/md5
+@dirrm include/tr-ircd/md5
 @dirrm include/tr-ircd
 @dirrm lib/tr-ircd/chanmodes
 @dirrm lib/tr-ircd/contrib
