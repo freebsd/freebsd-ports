@@ -22,6 +22,9 @@ USE_RUBY=	yes
 
 NO_BUILD=	yes
 
+do-patch:
+	${GREP} -Frl priviledge ${WRKSRC} | xargs ${RUBY} -i -pe 'gsub /priviledge/, "privilege"'
+
 do-install:
 	cd ${WRKSRC} && ${RUBY} install.rb
 	${MKDIR} ${PREFIX}/share/zsh/site-functions
