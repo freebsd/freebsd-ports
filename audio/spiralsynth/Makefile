@@ -26,15 +26,18 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 
 DOC_FILES=	CHANGES COPYING README
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 500112
-BROKEN=         "errors in linking"
-USE_GCC=	2.95
-.endif
-
 post-patch:
-.for ii in Makefile.in PluginLink.sh SpiralSound/Output.h
+.for ii in \
+        Makefile.in \
+        PluginLink.sh \
+        SpiralInfo.C \
+        SpiralSound/Midi.h \
+        SpiralSound/Output.h \
+        SpiralSound/SpiralInfo.h \
+        SpiralSound/Synth.C \
+        SpiralSound/Synth.h \
+        SpiralSound/_SynthInfo.C \
+        Synth.h
 	${MV} ${WRKSRC}/${ii} ${WRKSRC}/${ii}.orig
 	${SED} -e 's|-O3|${PTHREAD_CFLAGS}|g ; \
 			s|CC	=|CC?	=|g ; \
@@ -44,6 +47,8 @@ post-patch:
 			s|LINK	=	g++|LINK	=	${CXX}|g ; \
 			s|-lm|${PTHREAD_LIBS} -lm|g ; \
 			s|/usr/X11R6|${X11BASE}|g ; \
+			s|iostream.h|iostream|g ;\
+			s|<strstream>|<sstream>|g ;\
 			s|machine/soundcard|sys/soundcard|g' \
 			< ${WRKSRC}/${ii}.orig \
 			> ${WRKSRC}/${ii}
@@ -85,4 +90,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
