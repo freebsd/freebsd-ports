@@ -82,6 +82,7 @@
     SUBDIR += waveplay
     SUBDIR += wmcdplay
     SUBDIR += wmmixer
+    SUBDIR += wmmp3
     SUBDIR += wmsound
     SUBDIR += wmtune
     SUBDIR += workman
