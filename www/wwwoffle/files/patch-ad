@@ -1,0 +1,11 @@
+--- cache/Makefile.in~	Sat Oct  6 15:04:17 2001
++++ cache/Makefile.in	Tue Feb 26 19:55:17 2002
+@@ -93,7 +93,7 @@
+ 	  echo "WWWOFFLE: " ;\
+ 	  exit 1 )
+ 	[ ! -x $(SPOOLDIR)/html ] || mv $(SPOOLDIR)/html $(SPOOLDIR)/html.old
+-	cd html ; rm default ; ln -sf $(DEFLANG) default
++	cd html ; rm -f default ; ln -sf $(DEFLANG) default
+ 	$(TAR) cf $(SPOOLDIR)/html.tar html && cd $(SPOOLDIR) && $(TAR) xpf html.tar && rm html.tar
+ 	cd $(SPOOLDIR)/html && ./fixup-install.sh $(LOCALHOST):$(HTTP_PORT) && rm fixup-install.sh
+ # Now fix the ownerships that tar preserved, we needed to use 'tar xpf' to get round root's umask.

@@ -1,11 +1,11 @@
---- misc.c.orig	Thu Apr 20 15:20:56 2000
-+++ misc.c	Thu Apr 20 15:21:12 2000
-@@ -28,7 +28,7 @@
- #include "errors.h"
- #include "proto.h"
- #include "config.h"
+--- src/miscencdec.c.orig	Sun Nov 18 11:39:53 2001
++++ src/miscencdec.c	Tue Feb 26 21:03:13 2002
+@@ -35,7 +35,7 @@
+ #endif
+ 
+ #include "misc.h"
 -#include "md5.h"
 +#include <md5.h>
  
  
- /*++++++++++++++++++++++++++++++++++++++
+ /* To understand why the URLDecode*() and URLEncode*() functions are coded this way see README.URL */

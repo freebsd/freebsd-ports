@@ -1,161 +1,64 @@
---- Makefile.orig	Wed May 30 03:29:03 2001
-+++ Makefile	Thu Oct 25 14:42:19 2001
-@@ -18,11 +18,11 @@
- LOCALHOST=localhost:8080
+--- src/Makefile.in-	Tue Feb 26 20:52:36 2002
++++ src/Makefile.in	Tue Feb 26 20:53:46 2002
+@@ -37,7 +37,7 @@
+ CFLAGS=@CFLAGS@
  
- # For UNIX.
--INSTDIR=/usr/local
--SPOOLDIR=/var/spool/wwwoffle
--CONFDIR=/var/spool/wwwoffle
-+INSTDIR=$(PREFIX)
-+SPOOLDIR=$(SPOOL)/wwwoffle
-+CONFDIR=$(PREFIX)/etc
- MANDIR=$(INSTDIR)/man
--DOCDIR=$(INSTDIR)/doc/wwwoffle
-+DOCDIR=$(INSTDIR)/share/doc/wwwoffle
+ LD=@CC@
+-LDFLAGS=@LDFLAGS@
++LDFLAGS=@LDFLAGS@ -lmd
  
- # For Cygwin (win32).
- #INSTDIR=/wwwoffle
-@@ -53,14 +53,13 @@
+ LEX=@LEX@
  
- ########
- 
--CC=gcc
--CFLAGS=-O2 -Wall -g
-+CC?=gcc
- 
- # This is used in the FreeBSD port (http://www.freebsd.org/ports/).
- #CFLAGS=-O2 -Wall
- 
--LD=gcc
--LDFLAGS=-g
-+LD=$(CC)
-+LDFLAGS=-s
- 
- # For HP/UX this is a good idea.
- #LDFLAGS=
-@@ -86,15 +85,15 @@
- #USE_ZLIB=0
- 
- # The option to use IPv6 sockets if required.
--#USE_IPV6=1
-+USE_IPV6=1
- 
- # The option to use IPv6 sockets if required.
--USE_IPV6=0
-+#USE_IPV6=0
- 
- ########
- 
- INCLUDE=
--LIBRARY=-lz
-+LIBRARY+=-lz -lmd
- 
- # To compile without zlib
- #LIBRARY=
-@@ -164,7 +163,7 @@
- 	     http.o ftp.o finger.o ssl.o \
+@@ -131,7 +131,7 @@
  	     refresh.o messages.o parse.o spool.o \
- 	     $(DOC_PARSERS)\
--	     configfile.o config.o errors.o io.o misc.o proto.o sockets.o md5.o
-+	     configfile.o config.o errors.o io.o misc.o proto.o sockets.o
+ 	     document.o html.o xml.o vrml.o javaclass.o \
+ 	     configrdwr.o configmisc.o configdata.o configfunc.o \
+-	     errors.o io.o miscurl.o miscencdec.o headbody.o proto.o sockets.o md5.o
++	     errors.o io.o miscurl.o miscencdec.o headbody.o proto.o sockets.o
  
  wwwoffle : $(WWWOFFLE_OBJ)
  	$(LINK) $(WWWOFFLE_OBJ) -o $@ $(LIBRARY)
-@@ -176,7 +175,7 @@
- 	      $(DOC_PARSERS) \
- 	      gifmodify.o htmlmodify.o \
- 	      connect.o control.o configedit.o search.o index.o messages.o monitor.o parse.o purge.o refresh.o spool.o \
--	      configfile.o config.o errors.o io.o misc.o proto.o sockets.o md5.o
-+	      configfile.o config.o errors.o io.o misc.o proto.o sockets.o
+@@ -145,7 +145,7 @@
+ 	      connect.o control.o configedit.o search.o index.o messages.o monitor.o \
+               parse.o purge.o refresh.o spool.o \
+ 	      configrdwr.o configmisc.o configdata.o configfunc.o \
+-	      errors.o io.o miscurl.o miscencdec.o headbody.o proto.o sockets.o md5.o
++	      errors.o io.o miscurl.o miscencdec.o headbody.o proto.o sockets.o
  
  wwwoffled : $(WWWOFFLED_OBJ)
  	$(LINK) $(WWWOFFLED_OBJ) -o $@ $(LIBRARY)
-@@ -187,7 +186,7 @@
- 	           http.o ftp.o finger.o ssl.o \
+@@ -157,7 +157,7 @@
  	           spool.o \
  		   messages.o parse.o \
--	           configfile.o config.o errors.o io.o misc.o proto.o sockets.o md5.o
-+	           configfile.o config.o errors.o io.o misc.o proto.o sockets.o
+ 	           configrdwr.o configmisc.o configdata.o configfunc.o \
+-	           errors.o io.o miscurl.o miscencdec.o headbody.o proto.o sockets.o md5.o
++	           errors.o io.o miscurl.o miscencdec.o headbody.o proto.o sockets.o
  
  wwwoffle-tools : $(WWWOFFLE_TOOLS_OBJ)
  	$(LINK) $(WWWOFFLE_TOOLS_OBJ) -o $@ $(LIBRARY)
-@@ -197,7 +196,7 @@
- CONVERT_OBJ=convert-cache.o \
+@@ -168,7 +168,7 @@
  	    http.o ftp.o finger.o ssl.o \
  	    messages.o parse.o \
--	    configfile.o config.o errors.o io.o misc.o proto.o sockets.o spool.o md5.o
-+	    configfile.o config.o errors.o io.o misc.o proto.o sockets.o spool.o
+ 	    configrdwr.o configmisc.o configdata.o configfunc.o \
+-	    errors.o io.o miscurl.o miscencdec.o headbody.o proto.o sockets.o spool.o md5.o
++	    errors.o io.o miscurl.o miscencdec.o headbody.o proto.o sockets.o spool.o
  
  convert-cache : $(CONVERT_OBJ)
  	$(LINK) $(CONVERT_OBJ) -o $@ $(LIBRARY)
-@@ -207,7 +206,7 @@
- UNCOMPRESS_OBJ=uncompress-cache.o \
+@@ -179,7 +179,7 @@
  	       http.o ftp.o finger.o ssl.o \
  	       messages.o parse.o \
--	       configfile.o config.o errors.o io.o misc.o proto.o sockets.o spool.o md5.o
-+	       configfile.o config.o errors.o io.o misc.o proto.o sockets.o spool.o
+ 	       configrdwr.o configmisc.o configdata.o configfunc.o \
+-	       errors.o io.o miscurl.o miscencdec.o headbody.o proto.o sockets.o spool.o md5.o
++	       errors.o io.o miscurl.o miscencdec.o headbody.o proto.o sockets.o spool.o
  
  uncompress-cache : $(UNCOMPRESS_OBJ)
  	$(LINK) $(UNCOMPRESS_OBJ) -o $@ $(LIBRARY)
-@@ -308,15 +307,15 @@
+@@ -233,7 +233,6 @@
+ proto.o      : proto.c                 misc.h                             proto.h
+ sockets.o    : sockets.c                               errors.h sockets.h \
+               sockets4.c sockets6.c
+-md5.o        : md5.c md5.h
  
- install_binary : programs
- 	[ -x $(INSTDIR)/bin ] || $(INSTALL) -d -m 755 $(INSTDIR)/bin
--	$(INSTALL) -c -m 755 wwwoffle $(INSTDIR)/bin
--	$(INSTALL) -c -m 755 wwwoffle-tools $(INSTDIR)/bin
-+	$(INSTALL_PROGRAM) wwwoffle $(INSTDIR)/bin
-+	$(INSTALL_PROGRAM) wwwoffle-tools $(INSTDIR)/bin
- 	ln -sf wwwoffle-tools $(INSTDIR)/bin/wwwoffle-ls
- 	ln -sf wwwoffle-tools $(INSTDIR)/bin/wwwoffle-mv
- 	ln -sf wwwoffle-tools $(INSTDIR)/bin/wwwoffle-rm
- 	ln -sf wwwoffle-tools $(INSTDIR)/bin/wwwoffle-read
- 	ln -sf wwwoffle-tools $(INSTDIR)/bin/wwwoffle-write
- 	[ -x $(INSTDIR)/sbin ] || $(INSTALL) -d -m 755 $(INSTDIR)/sbin
--	$(INSTALL) -c -m 755 wwwoffled $(INSTDIR)/sbin
-+	$(INSTALL_PROGRAM) wwwoffled $(INSTDIR)/sbin
+ ######## SOURCE FILES ########
  
- install_binary-win32 : programs
- 	[ -x $(INSTDIR)/bin ] || $(INSTALL) -d -m 755 $(INSTDIR)/bin
-@@ -338,17 +337,17 @@
- install_man :
- 	[ -x $(MANDIR) ] || $(INSTALL) -d -m 755 $(MANDIR)
- 	[ -x $(MANDIR)/man1 ] || $(INSTALL) -d -m 755 $(MANDIR)/man1
--	$(INSTALL) -c -m 644 wwwoffle.man $(MANDIR)/man1/wwwoffle.1
-+	$(INSTALL_MAN) -c -m 644 wwwoffle.man $(MANDIR)/man1/wwwoffle.1
- 	[ -x $(MANDIR)/man5 ] || $(INSTALL) -d -m 755 $(MANDIR)/man5
- 	sed -e 's%SPOOLDIR%$(SPOOLDIR)%' -e 's%CONFDIR%$(CONFDIR)%' < wwwoffle.conf.man > wwwoffle.conf.man.install
--	$(INSTALL) -c -m 644 wwwoffle.conf.man.install $(MANDIR)/man5/wwwoffle.conf.5
-+	$(INSTALL_MAN) -c -m 644 wwwoffle.conf.man.install $(MANDIR)/man5/wwwoffle.conf.5
- 	[ -x $(MANDIR)/man8 ] || $(INSTALL) -d -m 755 $(MANDIR)/man8
--	$(INSTALL) -c -m 644 wwwoffled.man $(MANDIR)/man8/wwwoffled.8
-+	$(INSTALL_MAN) -c -m 644 wwwoffled.man $(MANDIR)/man8/wwwoffled.8
- 
- install_doc :
- 	[ -x $(DOCDIR) ] || $(INSTALL) -d -m 755 $(DOCDIR)
- 	for file in CHANGES.CONF CONVERT COPYING FAQ INSTALL NEWS README README.* ; do \
--	  $(INSTALL) -c -m 644 $$file $(DOCDIR)/$$file ;\
-+	  $(INSTALL_MAN) -c -m 644 $$file $(DOCDIR)/$$file ;\
- 	done
- 	[ "x$(LANG)" = "x" ] || [ ! -d lang-$(LANG) ] || ( cd lang-$(LANG) && \
- 	  for file in CHANGES.CONF CONVERT COPYING FAQ INSTALL NEWS README README.* ; do \
-@@ -387,8 +386,8 @@
- 	cd $(SPOOLDIR)/html && ./fixup-install.sh $(SPOOLDIR) $(LOCALHOST) && rm ./fixup-install.sh
- # Now fix the permissions that tar preserved, we needed to use 'tar xpf' to get round root's umask.
- # These two will fail unless you are root, that is OK because the owner is already you.
--	-chown -R 0 $(SPOOLDIR)/html > /dev/null 2>&1
--	-chgrp -R 0 $(SPOOLDIR)/html > /dev/null 2>&1
-+	-chown -R ${BINOWN} $(SPOOLDIR)/html > /dev/null 2>&1
-+	-chgrp -R ${BINGRP} $(SPOOLDIR)/html > /dev/null 2>&1
- 
- install_config :
- 	sed -e 's%SPOOLDIR%$(SPOOLDIR)%' -e 's%CONFDIR%$(CONFDIR)%' < wwwoffle.conf > wwwoffle.conf.install
-@@ -398,7 +397,7 @@
- 	  echo "WWWOFFLE: There is already a config file $(CONFDIR)/wwwoffle.conf." ;\
- 	  echo "WWWOFFLE: Run 'upgrade-config.pl $(CONFDIR)/wwwoffle.conf' to upgrade it." ;\
- 	  echo "WWWOFFLE: " )
--	[  ! -f $(CONFDIR)/wwwoffle.conf ] || $(INSTALL) -c -m 640 wwwoffle.conf.install $(CONFDIR)/wwwoffle.conf.install
-+	$(INSTALL_DATA) wwwoffle.conf.install $(CONFDIR)/wwwoffle.conf.default
- 	[    -f $(CONFDIR)/wwwoffle.conf ] || $(INSTALL) -c -m 640 wwwoffle.conf.install $(CONFDIR)/wwwoffle.conf
- 
- install_fixup-win32:
