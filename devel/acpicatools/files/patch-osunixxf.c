@@ -1,6 +1,6 @@
---- osunixxf.c.orig	Mon May 20 23:27:31 2002
-+++ osunixxf.c	Fri Jun  7 22:23:11 2002
-@@ -728,7 +728,7 @@
+--- acpica-unix-20030523/osunixxf.c.orig	Sat May 24 09:11:02 2003
++++ acpica-unix-20030523/osunixxf.c	Thu Jun 12 17:03:26 2003
+@@ -815,7 +815,7 @@
      UINT32                  milliseconds)
  {
  
