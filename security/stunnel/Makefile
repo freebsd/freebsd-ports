@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.stunnel.org/download/stunnel/src/ \
 		ftp://ftp.cryptoarchive.net/pub/cryptoarchive/mirrors/opensores.thebunker.net/pub/mirrors/stunnel/
 
 MAINTAINER=	roam@FreeBSD.org
+COMMENT=	"SSL encryption wrapper for standard network daemons"
 
 USE_OPENSSL=	YES
 USE_REINPLACE=	YES

@@ -14,6 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 MASTER_SITE_SUBDIR=	libs .
 
 MAINTAINER=	roam@FreeBSD.org
+COMMENT=	"A public ELF file access library"
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-shared

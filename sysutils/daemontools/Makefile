@@ -26,6 +26,7 @@ MANCOMPRESSED=	no
 .endif
 
 MAINTAINER=	roam@FreeBSD.org
+COMMENT=	"Service monitoring and logging utilities by djb"
 
 WRKSRC=		${WRKDIR}/admin/${DISTNAME}/src
 NO_PACKAGE=	"Unsure of djb\'s license"

@@ -1,1 +1,0 @@
-A TCP proxy, demonstrating use of the kevent(2)/kqueue(2) API

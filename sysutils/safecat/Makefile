@@ -11,6 +11,7 @@ CATEGORIES=	sysutils mail
 MASTER_SITES=	http://www.nb.net/~lbudney/linux/software/safecat/
 
 MAINTAINER=	roam@FreeBSD.org
+COMMENT=	"Safely write data to a directory using D. J. Bernstein's Maildir ideology"
 
 USE_REINPLACE=	yes
 

@@ -11,6 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.adel.nursat.kz/apg/download/
 
 MAINTAINER=	roam@FreeBSD.org
+COMMENT=	"An automated password generator"
 
 MAN1=		apg.1 apgbfm.1
 MAN8=		apgd.8

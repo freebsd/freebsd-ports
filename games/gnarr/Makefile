@@ -11,6 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.sacredchao.net/freednd/gnarr/
 
 MAINTAINER=	roam@FreeBSD.org
+COMMENT=	"A program for generating battle cries"
 
 MAN6=		gnarr.6
 

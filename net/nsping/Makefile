@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	roam
 DISTFILES=	nsping.tar.gz
 
 MAINTAINER=	roam@FreeBSD.org
+COMMENT=	"DNS \"ping\""
 
 MAN8=		nsping.8
 
