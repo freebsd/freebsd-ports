@@ -3,11 +3,18 @@ etc/gconf/gconf.xml.defaults/apps/gnome-pkgview/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnome-pkgview/%gconf.xml
 etc/gconf/schemas/gnome-pkgview.schemas
 share/gnome/applications/gnome-pkgview.desktop
-share/gnome/pixmaps/gnome-pkgview/logo.png
+share/gnome/pixmaps/gnome-pkgview/debian.png
+share/gnome/pixmaps/gnome-pkgview/gentoo.png
+share/gnome/pixmaps/gnome-pkgview/gnome.png
+share/gnome/pixmaps/gnome-pkgview/mandrake.png
 share/gnome/pixmaps/gnome-pkgview/pkgview.png
+share/gnome/pixmaps/gnome-pkgview/redhat.png
+share/gnome/pixmaps/gnome-pkgview/slackware.png
+share/gnome/pixmaps/gnome-pkgview/suse.png
 share/locale/am/LC_MESSAGES/gnome-pkgview.mo
 share/locale/az/LC_MESSAGES/gnome-pkgview.mo
 share/locale/be/LC_MESSAGES/gnome-pkgview.mo
+share/locale/bg/LC_MESSAGES/gnome-pkgview.mo
 share/locale/ca/LC_MESSAGES/gnome-pkgview.mo
 share/locale/cs/LC_MESSAGES/gnome-pkgview.mo
 share/locale/da/LC_MESSAGES/gnome-pkgview.mo
@@ -21,6 +28,7 @@ share/locale/it/LC_MESSAGES/gnome-pkgview.mo
 share/locale/ja/LC_MESSAGES/gnome-pkgview.mo
 share/locale/ko/LC_MESSAGES/gnome-pkgview.mo
 share/locale/lv/LC_MESSAGES/gnome-pkgview.mo
+share/locale/ml/LC_MESSAGES/gnome-pkgview.mo
 share/locale/ms/LC_MESSAGES/gnome-pkgview.mo
 share/locale/nl/LC_MESSAGES/gnome-pkgview.mo
 share/locale/no/LC_MESSAGES/gnome-pkgview.mo
