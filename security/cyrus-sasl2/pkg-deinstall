@@ -15,6 +15,16 @@ SASLDB_NAME=${PKG_PREFIX}/etc/%%SASLDB%%
 CYRUS_USER=${CYRUS_USER:=%%CYRUS_USER%%}
 CYRUS_GROUP=${CYRUS_GROUP:=%%CYRUS_GROUP%%}
 
+remove_file()
+{
+	file=$1
+
+	if cmp -s ${file} ${file}.tmp; then
+		rm -f ${file}
+	fi
+	rm -f ${file}.tmp
+}
+
 # delete sasldb database
 
 delete_sasldb() {
@@ -42,10 +52,7 @@ delete_user() {
 sendmail_conf() {
 	if [ -f ${PKG_PREFIX}/lib/sasl2/Sendmail.conf ]; then
 		echo "pwcheck_method: auxprop" > ${PKG_PREFIX}/lib/sasl2/Sendmail.conf.tmp
-		if cmp -s ${PKG_PREFIX}/lib/sasl2/Sendmail.conf ${PKG_PREFIX}/lib/sasl2/Sendmail.conf.tmp; then
-			rm -f ${PKG_PREFIX}/lib/sasl2/Sendmail.conf
-		fi
-		rm -f ${PKG_PREFIX}/lib/sasl2/Sendmail.conf.tmp
+		remove_file ${PKG_PREFIX}/lib/sasl2/Sendmail.conf
 	fi
 }
 
