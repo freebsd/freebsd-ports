@@ -178,7 +178,7 @@ share/icons/Industrial/scalable/filesystems/gnome-fs-trash-full.svg
 share/icons/Industrial/scalable/filesystems/gnome-fs-directory.icon
 share/icons/Industrial/index.theme
 share/gnome/themes/Industrial/metacity-1/metacity-theme-1.xml
-share/gnome/themes/Industrial/index.theme
+share/themes/Industrial/index.theme
 %%XMMS%%share/xmms/Skins/Industrial/balance.bmp
 %%XMMS%%share/xmms/Skins/Industrial/cbuttons.bmp
 %%XMMS%%share/xmms/Skins/Industrial/eq_ex.bmp
