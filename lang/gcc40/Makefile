@@ -26,6 +26,7 @@ DISTFILES=	\
 
 MAINTAINER=	obrien@FreeBSD.org
 
+BROKEN=		'snapshot not available at this time'
 NO_CDROM=	'dated material'
 LATEST_LINK=	gcc31
 
