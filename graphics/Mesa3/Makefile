@@ -3,21 +3,22 @@
 # Date created:         Tue Feb  7 12:02:49  1995
 # Whom:                 hsu
 #
-# $Id: Makefile,v 1.21 1997/11/22 02:05:20 jseger Exp $
+# $Id: Makefile,v 1.22 1998/02/15 17:13:13 jseger Exp $
 #
 
 DISTNAME=       MesaLib-2.6
 PKGNAME=	Mesa-2.6
 CATEGORIES=	graphics
 MASTER_SITES= 	ftp://iris.ssec.wisc.edu/pub/Mesa/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} MesaDemos-2.6.tar.gz
 
 MAINTAINER=	jseger@FreeBSD.ORG
 
 WRKSRC=		${WRKDIR}/${PKGNAME}
 
-ALL_TARGET=	freebsd
+ALL_TARGET=	freebsd-386
 USE_X11=	yes
-LIBS=		libMesaGL libMesaGLU
+LIBS=		libMesaGL libMesaGLU libMesaaux libMesatk
 SHLIB_VERSION=	13.6
 
 do-install:
@@ -33,6 +34,8 @@ do-install:
 .endfor
 	@${MKDIR} ${PREFIX}/include/GL
 	${INSTALL_DATA} ${WRKSRC}/include/GL/* ${PREFIX}/include/GL
+	${INSTALL_DATA} ${WRKSRC}/include/glaux.h ${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/include/gltk.h ${PREFIX}/include
 	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
