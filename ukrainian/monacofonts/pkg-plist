@@ -1,0 +1,8 @@
+lib/X11/fonts/koi8u-monaco/italic09.pcf.gz
+lib/X11/fonts/koi8u-monaco/italic12.pcf.gz
+lib/X11/fonts/koi8u-monaco/roman09.pcf.gz
+lib/X11/fonts/koi8u-monaco/roman10.pcf.gz
+lib/X11/fonts/koi8u-monaco/roman12.pcf.gz
+lib/X11/fonts/koi8u-monaco/fonts.dir
+lib/X11/fonts/koi8u-monaco/fonts.alias
+@dirrm lib/X11/fonts/koi8u-monaco

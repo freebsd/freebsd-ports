@@ -1,0 +1,9 @@
+Monaco  KOI8-U  Cyrillic fonts for X11  systems in BDF format.  Total of
+five bitmap fonts.
+
+This  port  installs  PCF  versions  of  the  fonts  and  generates  the
+fonts.alias file, which provides, for the koi8-u and koi8-r encodings --
+some applications have the encodings  (such as koi8-r) harcoded in them,
+but koi8-u is a superset of koi8-r.
+
+WWW: http://www.brama.com/compute/unix.html
