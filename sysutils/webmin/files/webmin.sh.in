@@ -5,7 +5,7 @@
 case $1 in
 
 	start)
-		LD_PRELOAD=/usr/lib/libpam.so.1
+		LD_PRELOAD=/usr/lib/libpam.so
 		export LD_PRELOAD
 		if [ -x !!PREFIX!!/etc/webmin/start ]; then
 			!!PREFIX!!/etc/webmin/start >/dev/null
