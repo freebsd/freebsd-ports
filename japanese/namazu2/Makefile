@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	namazu2
-PORTVERSION=	2.0.3
+PORTVERSION=	2.0.4
 CATEGORIES=	japanese textproc
 MASTER_SITES=	http://www.namazu.org/stable/
 DISTNAME=	namazu-${PORTVERSION}
