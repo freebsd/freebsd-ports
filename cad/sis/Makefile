@@ -10,7 +10,7 @@ PORTVERSION=		1.2.1
 CATEGORIES=		cad
 MASTER_SITES=		ftp://ic.eecs.berkeley.edu/pub/Sis/
 DISTNAME=		${PORTNAME}-1.2
-EXTRACT_SUFX=   	.tar.Z
+EXTRACT_SUFX=		.tar.Z
 
 PATCH_SITES=		ftp://ic.eecs.berkeley.edu/pub/Sis/
 PATCHFILES=		sis-1.2.patch1.Z

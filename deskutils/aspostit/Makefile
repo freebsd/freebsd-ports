@@ -15,7 +15,7 @@ MAINTAINER=	kris@FreeBSD.org
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg/
 
-USE_X_PREFIX=   yes
+USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_GMAKE=	yes
 

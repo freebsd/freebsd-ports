@@ -15,7 +15,7 @@ MAINTAINER=	pst@FreeBSD.org
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= --with-lispdir=${PREFIX}/share/emacs/site-lisp \
+CONFIGURE_ARGS=	--with-lispdir=${PREFIX}/share/emacs/site-lisp \
 		--with-full-gnats \
 		--with-release-based
 
@@ -27,7 +27,7 @@ MAN8=		mkcat.8 rmcat.8 mkdist.8 queue-pr.8 file-pr.8 gen-index.8
 
 # this stops the configuration program from pulling installation
 # information in from the standard freebsd send-pr program
-CONFIGURE_ENV=  SEND_PR=/usr/bin/false
+CONFIGURE_ENV=	SEND_PR=/usr/bin/false
 
 # the gnats distribution comes with a lot of baggage we don't want to install
 # just install gnats

@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=   	pq.2:${PORTSDIR}/databases/postgresql7
+LIB_DEPENDS=	pq.2:${PORTSDIR}/databases/postgresql7
 
 USE_PERL5=	yes
 

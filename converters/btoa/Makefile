@@ -22,6 +22,6 @@ MAKEFILE=	Makefile.sun
 MAN1=		btoa.1
 
 # Turn off the default from bsd.port.mk (-p0), which screws things up
-PATCH_DIST_STRIP=  
+PATCH_DIST_STRIP=
 
 .include <bsd.port.mk>
