@@ -1,0 +1,16 @@
+etc/rc.d/masqmail.sh
+etc/masqmail/masqmail.conf-dist
+etc/masqmail/masqmail.get-dist
+etc/masqmail/masqmail.route-dist
+sbin/masqmail
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/INSTALL
+%%DOCSDIR%%/NEWS
+%%DOCSDIR%%/README
+%%DOCSDIR%%/THOUGHTS
+%%DOCSDIR%%/TODO
+%%DOCSDIR%%/install.html
+@dirrm etc/masqmail
+@dirrm %%DOCSDIR%%
+@unexec rmdir /var/log/masqmail 2>/dev/null || true

@@ -155,6 +155,7 @@
     SUBDIR += mairix
     SUBDIR += majorcool
     SUBDIR += majordomo
+    SUBDIR += masqmail
     SUBDIR += mavbiff
     SUBDIR += mb2md
     SUBDIR += mboxcheck-applet
