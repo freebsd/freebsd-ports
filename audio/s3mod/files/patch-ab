@@ -28,7 +28,7 @@
  	make CC=gcc CFLAGS=-O2 DEFINES="-DLINUX -DGUS" s3mod
 +
 +freebsd:
-+	$(MAKE) CFLAGS="$(CFLAGS)" DEFINES="-DGUS" s3mod
++	$(MAKE) CFLAGS="$(CFLAGS)" DEFINES="" s3mod
  
  s3mod:	$(OBJS)
  	$(CC) $(CFLAGS) -o s3mod $(OBJS) $(LFLAGS) $(LIBS)
