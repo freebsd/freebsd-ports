@@ -1,0 +1,11 @@
+--- Imakefile.orig	Sat Feb 13 16:01:41 1999
++++ Imakefile	Sat Feb 13 16:02:13 1999
+@@ -13,7 +13,7 @@
+ 
+ DEFINES = -DSHAPE -DXQUOTE
+ INCLUDES = -I$(INCROOT)/X11
+-SYS_LIBRARIES = -lXm -lXpm $(XMULIB) $(XTOOLLIB) -lXext $(XLIB) -lm
++SYS_LIBRARIES = $(MOTIFLIB) -lXpm $(XMULIB) $(XTOOLLIB) -lXext $(XLIB) -lm
+ DEPLIBS = 
+ 
+ SRCS =  about.c color.c file.c help.c optdetail.c option.c optnet.c \
