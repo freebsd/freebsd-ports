@@ -5,4 +5,5 @@ bin/poedit
 %%GNOME:%%share/gnome/pixmaps/poedit.xpm
 %%GNOME:%%share/gnome/poedit/help.zip
 %%GNOME:%%share/gnome/poedit/resources.zip
-@dirrm share/gnome/poedit
+%%GNOME:%%share/gnome/locale/cs/LC_MESSAGES/poedit.mo
+%%GNOME:%%@dirrm share/gnome/poedit
