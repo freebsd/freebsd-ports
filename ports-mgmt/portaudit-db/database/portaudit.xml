@@ -91,7 +91,7 @@ This file is in the public domain.
     </description>
     <references>
       <mlist msgid="FB24803D1DF2A34FA59FC157B77C970502D684B7@idserv04.idef.com">http://lists.freebsd.org/pipermail/freebsd-ports/2004-June/013878.html</mlist>
-      <url>http://www.idefense.com/application/poi/display?id=114&amp;type=vulnerabilities</url>
+      <url>http://www.idefense.com/application/poi/display?id=114&amp;type=vulnerabilities&amp;flashstatus=false</url>
       <cvename>CAN-2004-0640</cvename>
       <url>http://www.osvdb.org/7594</url>
       <url>http://secunia.com/advisories/12032</url>
@@ -112,5 +112,668 @@ This file is in the public domain.
 
   <vuln vid="9fb5bb32-d6fa-11d8-b479-02e0185c0b53">
     <cancelled superseded="40800696-c3b0-11d8-864c-02e0185c0b53"/>
+  </vuln>
+
+  <vuln vid="78348ea2-ec91-11d8-b913-000c41e2cdad">
+    <cancelled superseded="ab166a60-e60a-11d8-9b0a-000347a4fa7d"/>
+  </vuln>
+
+  <vuln vid="ab166a60-e60a-11d8-9b0a-000347a4fa7d">
+    <topic>Acrobat Reader handling of malformed uuencoded pdf files</topic>
+    <affects>
+      <package>
+        <name>acroread</name>
+        <range><lt>5.09</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Remote exploitation of an input validation error in the uudecoding
+          feature of Adobe Acrobat Reader (Unix) 5.0 allows an attacker to execute
+          arbitrary code.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.osvdb.org/7429</url>
+      <url>http://freshmeat.net/releases/164883</url>
+      <cvename>CAN-2004-0630</cvename>
+      <cvename>CAN-2004-0631</cvename>
+      <url>http://secunia.com/advisories/12285</url>
+      <url>http://www.idefense.com/application/poi/display?id=124&amp;type=vulnerabilities&amp;flashstatus=false</url>
+      <url>http://www.idefense.com/application/poi/display?id=125&amp;type=vulnerabilities&amp;flashstatus=false</url>
+    </references>
+    <dates>
+      <discovery>2004-03-30</discovery>
+      <entry>2004-08-04</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="603fe36d-ec9d-11d8-b913-000c41e2cdad">
+    <cancelled superseded="a4bd1cd3-eb25-11d8-978e-00e018f69096"/>
+  </vuln>
+
+  <vuln vid="cd95b452-eca6-11d8-afa6-ed04757064bb">
+    <cancelled superseded="a4bd1cd3-eb25-11d8-978e-00e018f69096"/>
+  </vuln>
+
+  <vuln vid="a4bd1cd3-eb25-11d8-978e-00e018f69096">
+    <topic>KDElibs temporary directory vulnerability</topic>
+    <affects>
+      <package>
+        <name>kdelibs</name>
+        <range><lt>3.2.3_5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>In some cases the
+          integrity of symlinks used by KDE are not ensured and that
+          these symlinks can be pointing to stale locations. This can
+          be abused by a local attacker to create or truncate arbitrary
+          files or to prevent KDE applications from functioning
+          correctly (Denial of Service).</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.kde.org/info/security/advisory-20040811-1.txt</url>
+      <cvename>CAN-2004-0689</cvename>
+      <url>http://www.osvdb.org/8589</url>
+      <url>http://secunia.com/advisories/12276</url>
+    </references>
+    <dates>
+      <discovery>2004-06-23</discovery>
+      <entry>2004-08-12</entry>
+      <modified>2004-08-13</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="608ceab8-eca3-11d8-afa6-ed04757064bb">
+    <topic>DCOPServer Temporary Filename Vulnerability</topic>
+    <affects>
+      <package>
+        <name>kdelibs</name>
+        <range><lt>3.2.3_4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>KDE's DCOPServer creates
+          temporary files in an insecure manner. Since the temporary
+          files are used for authentication related purposes this can
+          potentially allow a local attacker to compromise the account of
+          any user which runs a KDE application.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.kde.org/info/security/advisory-20040811-2.txt</url>
+      <cvename>CAN-2004-0690</cvename>
+      <url>http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=261386</url>
+      <url>http://www.osvdb.org/8590</url>
+      <url>http://secunia.com/advisories/12276</url>
+    </references>
+    <dates>
+      <discovery>2004-07-25</discovery>
+      <entry>2004-08-12</entry>
+      <modified>2004-08-13</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="641859e8-eca1-11d8-b913-000c41e2cdad">
+    <cancelled superseded="2e395baa-eb26-11d8-978e-00e018f69096"/>
+  </vuln>
+
+  <vuln vid="2e395baa-eb26-11d8-978e-00e018f69096">
+    <topic>Konqueror frame injection vulnerability</topic>
+    <affects>
+      <package>
+        <name>kdebase</name>
+        <range><lt>3.2.3_1</lt></range>
+      </package>
+      <package>
+        <name>kdelibs</name>
+        <range><lt>3.2.3_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>The Konqueror webbrowser allows websites to load webpages into
+          a frame of any other frame-based webpage that the user may have open.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.kde.org/info/security/advisory-20040811-3.txt</url>
+      <cvename>CAN-2004-0721</cvename>
+      <url>http://secunia.com/advisories/11978</url>
+      <url>http://www.heise.de/newsticker/meldung/48793</url>
+      <url>http://bugs.kde.org/show_bug.cgi?id=84352</url>
+    </references>
+    <dates>
+      <discovery>2004-07-01</discovery>
+      <entry>2004-08-11</entry>
+      <modified>2004-08-13</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="2de14f7a-dad9-11d8-b59a-00061bc2ad93">
+    <topic>Multiple Potential Buffer Overruns in Samba</topic>
+    <affects>
+      <package>
+	<name>samba</name>
+        <range><ge>3.*</ge><lt>3.0.5,1</lt></range>
+	<range><lt>2.2.10</lt></range>
+      </package>
+      <package>
+	<name>ja-samba</name>
+	<range><lt>2.2.10.*</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Evgeny Demidov discovered that the Samba server has a
+          buffer overflow in the Samba Web Administration Tool (SWAT)
+          on decoding Base64 data during HTTP Basic Authentication.
+          Versions 3.0.2 through 3.0.4 are affected.</p>
+        <p>Another buffer overflow bug has been found in the code
+          used to support the "mangling method = hash" smb.conf
+          option. The default setting for this parameter is "mangling
+          method = hash2" and therefore not vulnerable. Versions
+          between 2.2.0 through 2.2.9 and 3.0.0 through 3.0.4 are affected.
+	  </p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0600</cvename>
+      <cvename>CAN-2004-0686</cvename>
+      <mlist msgid="web-53121174@cgp.agava.net">http://www.securityfocus.com/archive/1/369698</mlist>
+      <mlist msgid="200407222031.25086.bugtraq@beyondsecurity.com">http://www.securityfocus.com/archive/1/369706</mlist>
+      <url>http://www.samba.org/samba/whatsnew/samba-3.0.5.html</url>
+      <url>http://www.samba.org/samba/whatsnew/samba-2.2.10.html</url>
+      <url>http://www.osvdb.org/8190</url>
+      <url>http://www.osvdb.org/8191</url>
+      <url>http://secunia.com/advisories/12130</url>
+    </references>
+    <dates>
+      <discovery>2004-07-14</discovery>
+      <entry>2004-07-21</entry>
+      <modified>2004-07-22</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="7a9d5dfe-c507-11d8-8898-000d6111a684">
+    <topic>isc-dhcp3-server buffer overflow in logging mechanism</topic>
+    <affects>
+      <package>
+	<name>isc-dhcp3-{relay,server}</name>
+	<range><ge>3.0.1.r12</ge><lt>3.0.1.r14</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A buffer overflow exists in the logging functionality
+	  of the DHCP daemon which could lead to Denial of Service
+	  attacks and has the potential to allow attackers to
+	  execute arbitrary code.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0460</cvename>
+      <url>http://www.osvdb.org/7237</url>
+      <uscertta>TA04-174A</uscertta>
+      <certvu>317350</certvu>
+      <mlist msgid="BAY13-F94UHMuEEkHMz0005c4f7@hotmail.com">http://www.securityfocus.com/archive/1/366801</mlist>
+      <mlist msgid="40DFAB69.1060909@sympatico.ca">http://www.securityfocus.com/archive/1/367286</mlist>
+    </references>
+    <dates>
+      <discovery>2004-06-22</discovery>
+      <entry>2004-06-25</entry>
+      <modified>2004-06-28</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="3a408f6f-9c52-11d8-9366-0020ed76ef5a">
+    <topic>libpng denial-of-service</topic>
+    <affects>
+      <package>
+	<name>linux-png</name>
+	<range><le>1.0.14_3</le></range>
+	<range><ge>1.2.*</ge><le>1.2.2</le></range>
+      </package>
+      <package>
+	<name>png</name>
+	<range><lt>1.2.5_4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Steve Grubb reports a buffer read overrun in
+	  libpng's png_format_buffer function.  A specially
+	  constructed PNG image processed by an application using
+	  libpng may trigger the buffer read overrun and possibly
+	  result in an application crash.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0421</cvename>
+      <url>http://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=120508</url>
+      <url>http://rhn.redhat.com/errata/RHSA-2004-181.html</url>
+      <url>http://secunia.com/advisories/11505</url>
+      <url>http://www.osvdb.org/5726</url>
+      <bid>10244</bid>
+    </references>
+    <dates>
+      <discovery>2004-04-29</discovery>
+      <entry>2004-05-02</entry>
+      <modified>2004-08-10</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="e5e2883d-ceb9-11d8-8898-000d6111a684">
+    <topic>MySQL authentication bypass / buffer overflow</topic>
+    <affects>
+      <package>
+        <name>mysql-server</name>
+        <range><ge>4.1.*</ge><lt>4.1.3</lt></range>
+        <range><ge>5.*</ge><le>5.0.0_2</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>By submitting a carefully crafted authentication packet, it is possible
+          for an attacker to bypass password authentication in MySQL 4.1. Using a
+          similar method, a stack buffer used in the authentication mechanism can
+          be overflowed.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.nextgenss.com/advisories/mysql-authbypass.txt</url>
+      <url>http://dev.mysql.com/doc/mysql/en/News-4.1.3.html</url>
+      <url>http://secunia.com/advisories/12020</url>
+      <url>http://www.osvdb.org/7475</url>
+      <url>http://www.osvdb.org/7476</url>
+      <mlist msgid="Pine.LNX.4.44.0407080940550.9602-200000@pineapple.shacknet.nu">http://archives.neohapsis.com/archives/vulnwatch/2004-q3/0003.html</mlist>
+    </references>
+    <dates>
+      <discovery>2004-07-01</discovery>
+      <entry>2004-07-05</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="74d06b67-d2cf-11d8-b479-02e0185c0b53">
+    <topic>multiple vulnerabilities in ethereal</topic>
+    <affects>
+      <package>
+	<name>ethereal{,-lite}</name>
+	<name>tethereal{,-lite}</name>
+	<range><lt>0.10.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Issues have been discovered in multiple protocol dissectors.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.ethereal.com/appnotes/enpa-sa-00014.html</url>
+      <cvename>CAN-2004-0504</cvename>
+      <cvename>CAN-2004-0505</cvename>
+      <cvename>CAN-2004-0506</cvename>
+      <cvename>CAN-2004-0507</cvename>
+      <url>http://secunia.com/advisories/11608</url>
+      <bid>10347</bid>
+      <url>http://www.osvdb.org/6131</url>
+      <url>http://www.osvdb.org/6132</url>
+      <url>http://www.osvdb.org/6133</url>
+      <url>http://www.osvdb.org/6134</url>
+    </references>
+    <dates>
+      <discovery>2004-05-13</discovery>
+      <entry>2004-07-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="265c8b00-d2d0-11d8-b479-02e0185c0b53">
+    <topic>multiple vulnerabilities in ethereal</topic>
+    <affects>
+      <package>
+	<name>ethereal{,-lite}</name>
+	<name>tethereal{,-lite}</name>
+	<range><lt>0.10.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Issues have been discovered in multiple protocol dissectors.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.ethereal.com/appnotes/enpa-sa-00015.html</url>
+      <cvename>CAN-2004-0633</cvename>
+      <cvename>CAN-2004-0634</cvename>
+      <cvename>CAN-2004-0635</cvename>
+      <url>http://secunia.com/advisories/12024</url>
+      <bid>10672</bid>
+      <url>http://www.osvdb.org/7536</url>
+      <url>http://www.osvdb.org/7537</url>
+      <url>http://www.osvdb.org/7538</url>
+    </references>
+    <dates>
+      <discovery>2004-07-06</discovery>
+      <entry>2004-07-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="4764cfd6-d630-11d8-b479-02e0185c0b53">
+    <topic>PHP memory_limit and strip_tags() vulnerabilities</topic>
+    <affects>
+      <package>
+        <name>php4</name>
+        <name>php4-{cgi,cli,dtc,horde,nms}</name>
+        <name>mod_php4-twig</name>
+        <range><lt>4.3.8</lt></range>
+      </package>
+      <package>
+        <name>mod_php4</name>
+        <range><lt>4.3.8,1</lt></range>
+      </package>
+      <package>
+        <name>php5</name>
+        <name>php5-{cgi,cli}</name>
+        <range><lt>5.0.0</lt></range>
+      </package>
+      <package>
+        <name>mod_php5</name>
+        <range><lt>5.0.0,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Stefan Esser has reported two vulnerabilities in PHP, which can
+          be exploited by malicious people to bypass security functionality
+          or compromise a vulnerable system. An error within PHP's memory_limit
+          request termination allows remote code execution on PHP servers
+          with activated memory_limit. A binary safety problem within PHP's
+          strip_tags() function may allow injection of arbitrary tags in
+          Internet Explorer and Safari browsers.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.php.net/ChangeLog-4.php</url>
+      <url>http://www.php.net/ChangeLog-5.php</url>
+      <url>http://security.e-matters.de/advisories/112004.html</url>
+      <url>http://security.e-matters.de/advisories/122004.html</url>
+      <url>http://secunia.com/advisories/12064</url>
+      <url>http://www.osvdb.org/7870</url>
+      <url>http://www.osvdb.org/7871</url>
+      <cvename>CAN-2004-0594</cvename>
+      <cvename>CAN-2004-0595</cvename>
+    </references>
+    <dates>
+      <discovery>2007-07-07</discovery>
+      <entry>2004-07-15</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="730db824-e216-11d8-9b0a-000347a4fa7d">
+    <topic>Mozilla / Firefox user interface spoofing vulnerability</topic>
+    <affects>
+      <package>
+        <name>firefox</name>
+        <range><le>0.9.1_1</le></range>
+      </package>
+      <package>
+        <name>linux-mozilla</name>
+        <range><le>1.7.1</le></range>
+      </package>
+      <package>
+        <name>linux-mozilla-devel</name>
+        <range><le>1.7.1</le></range>
+      </package>
+      <package>
+        <name>mozilla</name>
+        <range><le>1.7.1,2</le></range>
+        <range><ge>1.8.*,2</ge><le>1.8.a2,2</le></range>
+      </package>
+      <package>
+        <name>mozilla-gtk1</name>
+        <range><le>1.7.1_1</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>A vulnerability has been reported in Mozilla and Firefox,
+          allowing malicious websites to spoof the user interface.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://bugzilla.mozilla.org/show_bug.cgi?id=252198</url>
+      <url>http://www.nd.edu/~jsmith30/xul/test/spoof.html</url>
+      <url>http://secunia.com/advisories/12188</url>
+      <bid>10832</bid>
+      <cvename>CAN-2004-0764</cvename>
+    </references>
+    <dates>
+      <discovery>2004-07-19</discovery>
+      <entry>2004-07-30</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f9e3e60b-e650-11d8-9b0a-000347a4fa7d">
+    <topic>libpng stack-based buffer overflow and other code concerns</topic>
+    <affects>
+      <package>
+        <name>png</name>
+        <range><le>1.2.5_7</le></range>
+      </package>
+      <package>
+        <name>linux-png</name>
+        <range><le>1.0.14_3</le></range>
+        <range><ge>1.2.*</ge><le>1.2.2</le></range>
+      </package>
+      <package>
+        <name>firefox</name>
+        <range><lt>0.9.3</lt></range>
+      </package>
+      <package>
+        <name>thunderbird</name>
+        <range><lt>0.7.3</lt></range>
+      </package>
+      <package>
+        <name>linux-mozilla</name>
+        <range><lt>1.7.2</lt></range>
+      </package>
+      <package>
+        <name>linux-mozilla-devel</name>
+        <range><lt>1.7.2</lt></range>
+      </package>
+      <package>
+        <name>mozilla</name>
+        <range><lt>1.7.2,2</lt></range>
+        <range><ge>1.8.*,2</ge><le>1.8.a2,2</le></range>
+      </package>
+      <package>
+        <name>mozilla-gtk1</name>
+        <range><lt>1.7.2</lt></range>
+      </package>
+      <package>
+        <name>netscape-{communicator,navigator}</name>
+        <range><le>4.78</le></range>
+      </package>
+      <package>
+        <name>linux-netscape-{communicator,navigator}</name>
+        <name>{ja,ko}-netscape-{communicator,navigator}-linux</name>
+        <range><le>4.8</le></range>
+      </package>
+      <package>
+        <name>{,ja-}netscape7</name>
+        <range><le>7.1</le></range>
+      </package>
+      <package>
+        <name>{de-,fr-,pt_BR-}netscape7</name>
+        <range><le>7.02</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Chris Evans has discovered multiple vulnerabilities in libpng,
+          which can be exploited by malicious people to compromise a
+          vulnerable system or cause a DoS (Denial of Service).</p>
+      </body>
+    </description>
+    <references>
+      <mlist msgid="Pine.LNX.4.58.0408041840080.20655@sphinx.mythic-beasts.com">http://www.securityfocus.com/archive/1/370853</mlist>
+      <url>http://scary.beasts.org/security/CESA-2004-001.txt</url>
+      <url>http://www.osvdb.org/8312</url>
+      <url>http://www.osvdb.org/8313</url>
+      <url>http://www.osvdb.org/8314</url>
+      <url>http://www.osvdb.org/8315</url>
+      <url>http://www.osvdb.org/8316</url>
+      <cvename>CAN-2004-0597</cvename>
+      <cvename>CAN-2004-0598</cvename>
+      <cvename>CAN-2004-0599</cvename>
+      <certvu>388984</certvu>
+      <certvu>236656</certvu>
+      <certvu>160448</certvu>
+      <certvu>477512</certvu>
+      <certvu>817368</certvu>
+      <certvu>286464</certvu>
+      <url>http://secunia.com/advisories/12219</url>
+      <url>http://secunia.com/advisories/12232</url>
+      <url>http://bugzilla.mozilla.org/show_bug.cgi?id=251381</url>
+      <uscertta>TA04-217A</uscertta>
+      <url>http://dl.sourceforge.net/sourceforge/libpng/ADVISORY.txt</url>
+    </references>
+    <dates>
+      <discovery>2004-08-04</discovery>
+      <entry>2004-08-04</entry>
+      <modified>2004-08-12</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="abe47a5a-e23c-11d8-9b0a-000347a4fa7d">
+    <topic>Mozilla certificate spoofing</topic>
+    <affects>
+      <package>
+        <name>firefox</name>
+        <range><ge>0.9.1</ge><le>0.9.2</le></range>
+      </package>
+      <package>
+        <name>linux-mozilla</name>
+        <range><lt>1.7.2</lt></range>
+      </package>
+      <package>
+        <name>linux-mozilla-devel</name>
+        <range><lt>1.7.2</lt></range>
+      </package>
+      <package>
+        <name>mozilla</name>
+        <range><lt>1.7.2,2</lt></range>
+        <range><ge>1.8.*,2</ge><le>1.8.a2,2</le></range>
+      </package>
+      <package>
+        <name>mozilla-gtk1</name>
+        <range><lt>1.7.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Mozilla and Mozilla Firefox contains a flaw that may
+          allow a malicious user to spoof SSL certification.</p>
+      </body>
+    </description>
+    <references>
+      <mlist msgid="003a01c472ba$b2060900$6501a8c0@sec">http://www.securityfocus.com/archive/1/369953</mlist>
+      <url>http://www.cipher.org.uk/index.php?p=advisories/Certificate_Spoofing_Mozilla_FireFox_25-07-2004.advisory</url>
+      <url>http://secunia.com/advisories/12160</url>
+      <url>http://bugzilla.mozilla.org/show_bug.cgi?id=253121</url>
+      <url>http://www.osvdb.org/8238</url>
+      <bid>10796</bid>
+      <cvename>CAN-2004-0763</cvename>
+    </references>
+    <dates>
+      <discovery>2004-07-25</discovery>
+      <entry>2004-07-30</entry>
+      <modified>2004-08-05</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="a713c0f9-ec54-11d8-9440-000347a4fa7d">
+    <topic>ImageMagick png vulnerability fix</topic>
+    <affects>
+      <package>
+        <name>ImageMagick{,-nox11}</name>
+        <range><lt>6.0.4.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Glenn Randers-Pehrson has contributed a fix for the png
+          vulnerabilities discovered by Chris Evans.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://studio.imagemagick.org/pipermail/magick-users/2004-August/013218.html</url>
+      <url>http://freshmeat.net/releases/169228</url>
+      <url>http://secunia.com/advisories/12236</url>
+      <url>http://www.freebsd.org/ports/portaudit/f9e3e60b-e650-11d8-9b0a-000347a4fa7d.html</url>
+    </references>
+    <dates>
+      <discovery>2004-08-04</discovery>
+      <entry>2004-08-04</entry>
+      <modified>2004-08-12</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="0139e7e0-e850-11d8-9440-000347a4fa7d">
+    <topic>CVStrac remote code execution vulnerability</topic>
+    <affects>
+      <package>
+        <name>cvstrac</name>
+        <range><lt>1.1.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>CVStrac contains a flaw that may allow a remote attacker
+          to execute arbitrary commands.</p>
+      </body>
+    </description>
+    <references>
+      <mlist>http://www.securityfocus.com/archive/1/370955</mlist>
+      <url>http://secunia.com/advisories/12090</url>
+      <url>http://www.osvdb.org/8373</url>
+      <url>http://www.cvstrac.org/cvstrac/chngview?cn=316</url>
+    </references>
+    <dates>
+      <discovery>2000-00-00</discovery>
+      <entry>2004-08-13</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="5b8f9a02-ec93-11d8-b913-000c41e2cdad">
+    <topic>gaim remotely exploitable vulnerabilities in MSN component</topic>
+    <affects>
+      <package>
+	<name>{ja-,}gaim</name>
+	<range><lt>0.81_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Sebastian Krahmer discovered several remotely exploitable
+          buffer overflow vulnerabilities in the MSN component of
+          gaim.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0500</cvename>
+      <url>http://secunia.com/advisories/12125</url>
+      <url>http://www.osvdb.org/8382</url>
+      <url>http://www.suse.com/de/security/2004_25_gaim.html</url>
+    </references>
+    <dates>
+      <discovery>2004-08-12</discovery>
+      <entry>2004-08-12</entry>
+      <modified>2004-08-12</modified>
+    </dates>
   </vuln>
 </vuxml>
