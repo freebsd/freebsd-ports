@@ -1,8 +1,14 @@
---- dlxsim/Makefile.orig	Sat Dec 26 13:14:21 1998
-+++ dlxsim/Makefile	Sat Dec 26 13:14:41 1998
-@@ -11,7 +11,7 @@
- CC = cc
- CFLAGS = -g -I. -Itcl
+--- dlxsim/Makefile.orig	Tue Dec 18 12:26:43 1990
++++ dlxsim/Makefile	Fri Mar  9 22:23:17 2001
+@@ -7,11 +7,10 @@
+ LIBS = tcl/tcl.a
+ #LIBS = tcl/tcl.a -lBSD
+ 
+-CC = gcc
+-CC = cc
+-CFLAGS = -g -I. -Itcl
++CC ?= cc
++CFLAGS += -g -I. -Itcl
  DEST = /tmp_mnt/home/ginger/pnh/bly/bin/$(MACHINE)/
 -DEST = ../bin
 +DEST = ../bin/

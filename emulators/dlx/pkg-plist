@@ -6,3 +6,4 @@ share/doc/dlx/dlxsim.tex
 share/doc/dlx/manual.tex
 share/doc/dlx/report.tex
 share/doc/dlx/report2.tex
+@dirrm share/doc/dlx

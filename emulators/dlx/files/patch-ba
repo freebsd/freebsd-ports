@@ -1,5 +1,16 @@
 --- gcc/Makefile.orig	Tue Aug 14 12:29:46 1990
-+++ gcc/Makefile	Sat Dec 26 13:49:36 1998
++++ gcc/Makefile	Fri Mar  9 22:25:52 2001
+@@ -21,8 +21,8 @@
+ # Variables that exist for you to override.
+ # See below for how to change them for certain systems.
+ 
+-CFLAGS = -g $(XCFLAGS)
+-CC = cc
++CFLAGS += -g $(XCFLAGS)
++CC ?= cc
+ BISON = bison
+ BISONFLAGS = -v
+ AR = ar
 @@ -45,9 +45,11 @@
  # Directory where sources are, from where we are.
  srcdir = .
