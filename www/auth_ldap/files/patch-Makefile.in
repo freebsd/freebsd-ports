@@ -1,0 +1,43 @@
+--- Makefile.in.orig	Wed Jul  4 16:37:55 2001
++++ Makefile.in	Wed Jun  4 21:17:22 2003
+@@ -14,11 +14,11 @@
+ AIX_LDFLAGS_SHLIB=@AIX_LDFLAGS_SHLIB@
+ MYCC=@MYCC@
+ 
+-all: auth_ldap.so
++all: mod_auth_ldap.so
+ 
+ html: FAQ.html Changes.html auth_ldap.html
+ 
+-OBJS=auth_ldap.o auth_ldap_config.o auth_ldap_cache.o auth_ldap_cache_mgr.o
++OBJS=mod_auth_ldap.o auth_ldap_config.o auth_ldap_cache.o auth_ldap_cache_mgr.o
+ 
+ CFLAGS=`$(APXS) -q CFLAGS` $(FRONTPAGE) $(SSL) $(SHARED_CACHE) $(OPENLDAP)
+ CFLAGS_SHLIB=`$(APXS) -q CFLAGS_SHLIB` 
+@@ -27,7 +27,7 @@
+ LD_SHLIB=`$(APXS) -q LD_SHLIB`
+ LDFLAGS_SHLIB=$(EXTRA_LDFLAGS) `$(APXS) -q LDFLAGS_SHLIB` $(AIX_LDFLAGS_SHLIB)
+ 
+-auth_ldap.so: $(OBJS) $(AIX_EXP)
++mod_auth_ldap.so: $(OBJS) $(AIX_EXP)
+ 	@echo $(LD_SHLIB) $(LDFLAGS_SHLIB) -o $@ $(OBJS) $(LIBS)
+ 	@$(LD_SHLIB) $(LDFLAGS_SHLIB) -o $@ $(OBJS) $(LIBS) 
+ 
+@@ -46,7 +46,7 @@
+ 	cd .. && tar cvzf $$tar $$dirname/ --exclude-from=/tmp/excl.$$$$; \
+ 	rm -f /tmp/excl.$$$$
+ 
+-install: auth_ldap.so
++install: mod_auth_ldap.so
+ 	$(APXS) -i $(ACTIVATE) auth_ldap.so
+ 
+ clean:
+@@ -58,7 +58,7 @@
+ $(AIX_EXP):
+ 	@echo auth_ldap_module > $@
+ 
+-auth_ldap.o: auth_ldap.h auth_ldap_cache_mgr.h
++mod_auth_ldap.o: auth_ldap.h auth_ldap_cache_mgr.h
+ auth_ldap_config.o: auth_ldap.h auth_ldap_cache_mgr.h
+ auth_ldap_cache.o: auth_ldap.h auth_ldap_cache_mgr.h
+ auth_ldap_cache_mgr.o: auth_ldap.h auth_ldap_cache_mgr.h
