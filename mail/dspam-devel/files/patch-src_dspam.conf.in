@@ -1,0 +1,55 @@
+--- src/dspam.conf.in.orig	Thu Dec 30 04:05:39 2004
++++ src/dspam.conf.in	Thu Dec 30 04:14:16 2004
+@@ -34,7 +34,7 @@
+ # the user DSPAM is processing mail for. This configuration parameter is only 
+ # necessary if you plan on allowing untrusted processing.
+ #
+-#UntrustedDeliveryAgent "/usr/bin/procmail -d %u"
++#UntrustedDeliveryAgent "@delivery_agent@"
+ 
+ #
+ # Quarantine Agent: DSPAM's default behavior is to quarantine all mail it 
+@@ -42,7 +42,7 @@
+ # a quarantine agent which will be called with all messages DSPAM thinks is
+ # spam. Use %u to specify the user DSPAM is processing mail for.
+ #
+-#QuarantineAgent	"/usr/bin/procmail -d spam"
++#QuarantineAgent	"@delivery_agent@"
+ 
+ #
+ # OnFail: What to do if local delivery or quarantine should fail. If set
+@@ -169,7 +169,7 @@
+ # Storage driver settings: Specific to a particular storage driver. Uncomment
+ # the configuration specific to your installation, if applicable.
+ #
+-#MySQLServer    	/var/lib/mysql/mysql.sock
++#MySQLServer    	/tmp/mysql.sock
+ #MySQLPort
+ #MySQLUser 	     	dspam
+ #MySQLPass    		changeme
+@@ -375,6 +375,7 @@
+ # without processing. Value is in bytes.
+ #
+ #MaxMessageSize 4194304
++MaxMessageSize 307200
+ 
+ #
+ # Daemonized Server: If you are running DSPAM as a daemonized server using
+@@ -388,6 +389,7 @@
+ #ServerQueueSize	32
+ #ServerPass.Relay1	"secret"
+ #ServerPass.Relay2	"password"
++# keep this is sync with /usr/local/etc/rc.d/dspam.rc script
+ #ServerPID		/var/run/dspam.pid
+ 
+ # If you wish to use a local domain socket instead of a TCP socket, uncomment
+@@ -395,7 +397,8 @@
+ # you are running the client and server on the same machine, as it eliminates
+ # much of the bandwidth overhead.
+ #
+-#ServerDomainSocketPath  "/tmp/dspam.sock"
++# keep this is sync with /usr/local/etc/rd.d/dspam.rc script
++#ServerDomainSocketPath  "/var/run/dspam.sock"
+ 
+ #
+ # Client Mode: If you are running DSPAM in client/server mode, uncomment and

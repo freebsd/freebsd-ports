@@ -1,5 +1,5 @@
 This file documents some of the problems you may encounter when
-upgrading dspam port.  I will try our best to minimize these disruptions,
+upgrading dspam port.  I will try my best to minimize these disruptions,
 but sometimes they are unavoidable.
 
 You should get into the habit of checking this file for changes each
@@ -10,12 +10,61 @@ also the UPGRADING enclosed in the dspam distribution. You can see it by doing
 in the port directory:
 make extract;  more `find . -type f -maxdepth 2 -name UPGRADING`
 
+###########################################################################
+# dspam-devel-3.3.4
+#
+
+Users on 4.x are kindly asked to report problems ASAP
+I would like to fix them before the freeze on 31. Thanks !
+
+The daemon mode seems to be completead now, so the port act like it should:
+- if enabled with WITH_DEAMON we install the rc script; to start it at
+boot put 'dspam_enable="YES"' in /etc/rc.conf and set the appropriate
+options in dspam.conf
+- read section "2.3 Client/Server Mode" from dspam README to learn how to
+use dspam in daemon mode
+- a simple portupgrade from previous versions will work with no problems
+with your current setup, even if compiled with WITH_DEAMON (default)
+
+- change default DB back-end to MySQL to make daemon mode work for package
+building
+- add MySQL v5.0.x support -- MYSQL50
+(based on ports/74761 by Gea-Suan Lin <gslin@netnews.NCTU.edu.tw>)
+- USE_MYSQL and have make describe output right
+
+- change of name: SQLITE --> SQLITE2, as we now have sqlite3 support
+- add Sqlite v3.x support -- SQLITE3
+- add BNR_DEBUG option
+- drop QUARANTINE_AGENT as is not supported by ./configure anymore and
+set in dspam.conf UntrustedDeliveryAgent and QuarantineAgent to default to
+TrustedDeliveryAgent, but leave them commented out
+(ports/75548 by Julien Gabel)
+- change default DSPAM_HOME_MODE to 0770
+(ports/75549 by Julien Gabel <jpeg@thilelli.net>)
+- DSPAM_HOME_{OWNER,GROUP} default to DSPAM_{OWNER,GROUP}
+- default maximum message size to 300KB in dspam.conf
+- correct long-standing copy/paste bug (DSPAM_{GROUP,MODE} were set to
+DSPAM_HOME_{GROUP,MODE})
+- USE_MYSQL and have make describe output right
+- add support for exim [2] which we build with the same database back-end
+as dspam if possible ( suggested, incorrectly, in ports/74762 by 
+Shahbaz Javeed <sjaveed@adderpit.com> )
+- fix PREF_EXT and BDB4 cases as well in our Makefile
+
+
+#############################################################################
+# dspam-devel=3.3.0.a.20041203.1245_1 (entry added post-factum, it was an 
+#                   automated update approved by me but not under my control)
+#
+
+- chase dependecy for sqlite
+
 
 ############################################################################
 # dspam-devel-3.3.0.a.20041201.1330
 #
 
-Say hello to the daemonized dspam! Enable it at compile-time with DAEMON option.
+Say hello to the daemonized dspam! Enble it at compile-time with DAEMON option.
 
 - it speaks LMTP:
 LHLO
@@ -35,8 +84,6 @@ DATA
 - to do next: client
 
 - remember that all this is experimental and it may change at any time.
-
-- fix PREX_EXT and BDB4 handling in the port Makefile to really enable them.
 
 
 ############################################################################

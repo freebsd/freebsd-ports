@@ -13,13 +13,6 @@
 %%MYSQL%% See %%EXAMPLESDIR%%/mysql/README
 %%MYSQL%% for instructions on how to configure DSPAM - MySQL interaction.
 %%MYSQL%%
-%%MYSQL%% BACKUP FIRST !!!
-%%MYSQL%%
-%%MYSQL%% To modify a 2.x database use and use it with dspam 3.x use:
-%%MYSQL%% %%EXAMPLESDIR%%/mysql/2x_to_3x_db.sql
-%%MYSQL%% To modify a 3.1.0  *mysql4.0* use :
-%%MYSQL%% %%EXAMPLESDIR%%/mysql/310_to_320.my.sql
-%%MYSQL%%
 %%PGSQL%%
 %%PGSQL%% See %%EXAMPLESDIR%%/pgsql/README
 %%PGSQL%% for instructions on how to configure PostrgreSQL
@@ -58,27 +51,24 @@
 %%CGI%% See %%DOCSDIR%%/README 
 %%CGI%% especially the CGI and Trusted Users sections for more info.
 %%CGI%% If you have problems (after upgrading) check permissions.
+%%DAEMON%%
+%%DAEMON%% To enable the dspam deamon put dspam_enable="YES" in your
+%%DAEMON%% /etc/rc.conf
+
 
   See %%DOCSDIR%%/RELEASE.NOTES 
   for new things in this %%PKGNAME%% and 
   %%DOCSDIR%%/CHANGELOG
   for the full list of changes.
-  Preference extensions are NOT yet integrated in this port, 
-  feel free to test and send patches.
-
- ***************************** WARNING: ***************************************
- Almost everything regarding how dspam must be configured has changed.
- If you are upgrading from 2.x or 3.x be sure to read
- %%DOCSDIR%%/UPDATING
- ******************************************************************************
 
  ---- %%PKGNAME%% is considered to be a DEVELOPMENT release.  ---
  Reporting problems, asking questions:
- - small typos, etc. to the maintainer
- - FreeBSD specific port-related problems/questions: ports@, maintainer cc'ed
- - FreeBSD specific patches, doc enhancements: send-pr maintainer cc'ed
- - dspam specific questions: dspam mailling list (maintainer cc'ed if you like)
- - dspam specific patches: dspam/dspam-dev mailling list (maintainer cc'ed if you like)
+ - FreeBSD specific port-related problems/questions/paches: maintainer 
+(and ports@ if you fell the need); send-pr only if you get no timely reply
+ - dspam specific questions: dspam/dspam-dev mailling list (maintainer cc'ed 
+ if you like)
+ - dspam specific patches: dspam/dspam-dev mailling list (maintainer cc'ed if 
+ you like)
  Please be sure to include in your email/pr relevant information such as:
  uname -a, dspam --version, /var/db/ports/dspam-devel/options, MTA setup.
  If needed rebuild WITH_DEBUG and to turn on debugging see DebugOpt in dsapm.conf
