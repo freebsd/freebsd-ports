@@ -1,0 +1,7 @@
+tclCheck is a program that carries out sanity checking of the brackets and
+their nesting in tcl scripts. It can also print out the "skeleton" of the
+program.
+
+This is tclCheck version 1.1.8
+
+-sander
