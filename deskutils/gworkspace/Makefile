@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gworkspace
-PORTVERSION=	0.5.2
+PORTVERSION=	0.5.3
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.gnustep.it/enrico/gworkspace/ \
 		http://www.imago.ro/gworkspace/
@@ -20,7 +20,6 @@ WRKSRC=		${WRKDIR}/GWorkspace-${PORTVERSION}
 GUN_CONFIGURE=	yes
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
-ALL_TARGET=
 
 .ifdef WITHOUT_GHOSTSCRIPT
 PLIST_SUB+=	PDFVIEW="@comment "
