@@ -32,24 +32,24 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   "http://www.vuxml.org/dtd/vuxml-1/vuxml-10.dtd">
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
 
-  <vuln vid="1ed556e6-734f-11d8-868e-000347dd607f">
-    <topic>mod_python denial of service vulnerability</topic>
+  <vuln vid="1a448eb7-6988-11d8-873f-0020ed76ef5a">
+    <topic>mod_python denial-of-service vulenerability in parse_qs</topic>
     <affects>
       <package>
-	<name>mod_python</name>
-	<range><ge>2.7.0</ge><lt>2.7.10</lt></range>
-	<range><ge>3.0.0</ge><lt>3.0.4</lt></range>
+        <name>mod_python</name>
+	<range><ge>2.7</ge><lt>2.7.10</lt></range>
+	<range><ge>3.0</ge><lt>3.0.4</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>The Apache Software Foundation reports that a specific
-	  query string processed by mod_python would cause the
-	  httpd process to crash.</p>
+        <p>An attacker may cause Apache with mod_python to crash
+          by using a specially constructed query string.</p>
       </body>
     </description>
     <references>
       <cvename>CAN-2003-0973</cvename>
+      <bid>9129</bid>
       <url>http://www.modpython.org/pipermail/mod_python/2003-November/014532.html</url>
       <url>http://www.modpython.org/pipermail/mod_python/2004-January/014879.html</url>
     </references>
@@ -394,35 +394,6 @@ misc.c:
       <discovery>2004-02-18</discovery>
       <entry>2004-02-18</entry>
       <modified>2004-03-03</modified>
-    </dates>
-  </vuln>
-
-  <vuln vid="1a448eb7-6988-11d8-873f-0020ed76ef5a">
-    <topic>mod_python denial-of-service vulenerability in parse_qs</topic>
-    <affects>
-      <package>
-        <name>mod_python</name>
-        <range><lt>2.7.10</lt></range>
-        <range><lt>3.0.4</lt></range>
-      </package>
-    </affects>
-    <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>An attacker may cause Apache with mod_python to crash
-          by using a specially constructed query string.</p>
-        <p><em>Note:</em> It was announced that this bug was fixed in
-          mod_python 2.7.9 also.  However, there are only changes in
-          documentation between 2.7.8 and 2.7.9.</p>
-      </body>
-    </description>
-    <references>
-      <cvename>CAN-2003-0973</cvename>
-      <bid>9129</bid>
-      <url>http://www.modpython.org/pipermail/mod_python/2003-November/014532.html</url>
-    </references>
-    <dates>
-      <discovery>2003-11-28</discovery>
-      <entry>2004-03-03</entry>
     </dates>
   </vuln>
 
