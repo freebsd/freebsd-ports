@@ -6,16 +6,13 @@
 #
 
 PORTNAME=	demos
-PORTVERSION=	5.0.2
-PORTREVISION=	1
+PORTVERSION=	6.2.1
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:sf/} \
-		${MASTER_SITE_LOCAL:S/$/:local/}
-MASTER_SITE_SUBDIR=	mesa3d/:sf \
-			anholt/:local
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	mesa3d/
 PKGNAMEPREFIX=	mesa-
-DISTFILES=	MesaDemos-${PORTVERSION}${EXTRACT_SUFX}:sf \
-		MesaLib-${PORTVERSION}${EXTRACT_SUFX}:sf
+DISTFILES=	MesaDemos-${PORTVERSION}${EXTRACT_SUFX} \
+		MesaLib-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenGL demos distributed with Mesa
@@ -26,32 +23,60 @@ USE_BZIP2=	yes
 USE_REINPLACE=	yes
 MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
-MAKEFILE=	Makefile.X11
-ALL_TARGET=	targets
-WRKSRC=		${WRKDIR}/Mesa-${PORTVERSION}/demos
-SHAREDIR=	${PREFIX}/share/mesa-demos
+ALL_TARGET=
+MAKE_ARGS=	SUBDIRS=progs/demos
+WRKSRC=		${WRKDIR}/Mesa-${PORTVERSION}
+DATADIR=	${PREFIX}/share/mesa-demos
+
+DEMO_PROGS=	bounce clearspd cubemap drawpix fire gamma gears geartrain \
+		glinfo gloss gltestperf glutfx ipers isosurf lodbias morph3d \
+		multiarb occlude osdemo paltex pixeltex pointblast ray \
+		readpix reflect renormal shadowtex spectex stex3d teapot \
+		terrain tessdemo texcyl texdown texenv texobj trispd tunnel \
+		tunnel2
+DEMO_IMAGES=	bw.rgb girl.rgb reflect.rgb s128.rgb tile.rgb tree2.rgba \
+		tree3.rgb wrs_logo.rgb
+DEMO_DATA=	geartrain.dat isosurf.dat terrain.dat
+
+# Generate packing list
+.for prog in ${DEMO_PROGS}
+PLIST_FILES+=	bin/${prog}
+.endfor
+.for img in ${DEMO_IMAGES}
+PLIST_FILES+=	share/mesa-demos/images/${img}
+.endfor
+.for dat in ${DEMO_DATA}
+PLIST_FILES+=	share/mesa-demos/data/${dat}
+.endfor
+PLIST_DIRS=	share/mesa-demos/images share/mesa-demos/data share/mesa-demos
+
+post-extract:
+	${CP} ${FILESDIR}/config ${WRKSRC}/configs/current
+	${REINPLACE_CMD} -e 's|../images/|${DATADIR}/images/|g' \
+		-e 's|geartrain.dat|${DATADIR}/data/geartrain.dat|g' \
+		-e 's|terrain.dat|${DATADIR}/data/terrain.dat|g' \
+		-e 's|isosurf.dat|${DATADIR}/data/isosurf.dat|g' \
+		${WRKSRC}/progs/demos/*.c
+
+do-install:
+	@for prog in ${DEMO_PROGS}; do \
+		${INSTALL_PROGRAM} ${WRKSRC}/progs/demos/$$prog \
+			${PREFIX}/bin ; \
+	done
+	${MKDIR} ${PREFIX}/share/mesa-demos/images
+	${MKDIR} ${PREFIX}/share/mesa-demos/data
+	@for img in ${DEMO_IMAGES}; do \
+		${INSTALL_DATA} ${WRKSRC}/progs/images/$$img \
+			${DATADIR}/images ; \
+	done
+	@for dat in ${DEMO_DATA}; do \
+		${INSTALL_DATA} ${WRKSRC}/progs/demos/$$dat ${DATADIR}/data ; \
+	done
 
 .include <bsd.port.pre.mk>
 
-.if ${X_WINDOW_SYSTEM:L} == xorg
-IGNORE=		does not build with X.Org
+.if ${X_WINDOW_SYSTEM:L} != xorg
+IGNORE=         does not build with XFree86
 .endif
-
-post-extract:
-	${REINPLACE_CMD} -e 's|../images/|${SHAREDIR}/images/|g' \
-		-e 's|geartrain.dat|${SHAREDIR}/data/geartrain.dat|g' \
-		-e 's|terrain.dat|${SHAREDIR}/data/terrain.dat|g' \
-		-e 's|isosurf.dat|${SHAREDIR}/data/isosurf.dat|g' \
-		${WRKSRC}/*.c
-
-post-install:
-	${MKDIR} ${PREFIX}/share/mesa-demos/images
-	${MKDIR} ${PREFIX}/share/mesa-demos/data
-	@for img in `${LS} ${WRKDIR}/Mesa-${PORTVERSION}/images/*.rgb`; do \
-		${INSTALL_DATA} $$img ${SHAREDIR}/images ; \
-	done
-	@for dat in `${LS} ${WRKSRC}/*.dat`; do \
-		${INSTALL_DATA} $$dat ${SHAREDIR}/data ; \
-	done
 
 .include <bsd.port.post.mk>

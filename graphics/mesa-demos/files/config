@@ -1,0 +1,29 @@
+# Configuration for mesa-demos port for FreeBSD
+# Taken from Mesa CVS mesa/Mesa/configs/freebsd Rev 1.2
+# $FreeBSD$
+#
+
+# Set and remember $CFLAGS, $CXXFLAGS, $CC and $CXX before they are
+# overriden in default include
+
+_CC := $(CC)
+_CXX := $(CXX)
+_CFLAGS := -fPIC -pedantic -I$(X11BASE)/include -DUSE_XSHM -DHZ=100 $(CFLAGS)
+_CXXFLAGS := -fPIC -pedantic $(CXXFLAGS)
+
+include $(TOP)/configs/default
+
+CONFIG_NAME = FreeBSD
+
+# Now reset compiler and flags
+CC = $(_CC)
+CXX = $(_CXX)
+CFLAGS = $(_CFLAGS)
+CXXFLAGS = $(_CXXFLAGS)
+
+GLUT_CFLAGS = -fexceptions
+
+LIB_DIR = $(X11BASE)/lib
+
+APP_LIB_DEPS = -L$(LIB_DIR) -l$(GLUT_LIB) -l$(GLU_LIB) -l$(GL_LIB) -lXext -lXmu -lXi -lX11 -lm
+
