@@ -1,5 +1,5 @@
 sbin/delegated
 share/examples/delegate/delegated.sh
-share/doc/delegate/Manual.txt
+share/doc/delegate/Manual.htm
 @dirrm share/doc/delegate
 @dirrm share/examples/delegate
