@@ -29,6 +29,7 @@ DB3		"Berkeley DB3 (required if SASL also built with DB3)" "$status_DB3" \
 DB40		"Berkeley DB4.0 (required if SASL also built with DB4.0)" "$status_DB40" \
 DB41		"Berkeley DB4.1 (required if SASL also built with DB4.1)" "$status_DB41" \
 DB42		"Berkeley DB4.2 (required if SASL also built with DB4.2)" "$status_DB42" \
+DB43		"Berkeley DB4.3 (required if SASL also built with DB4.3)" "$status_DB43" \
 MySQL		"MySQL map lookups (choose version with WITH_MYSQL_VER)" "$status_MySQL" \
 PgSQL		"PostgreSQL map lookups (choose with DEFAULT_PGSQL_VER)" "$status_PgSQL" \
 OpenLDAP	"OpenLDAP map lookups (choose ver. with WITH_OPENLDAP_VER)" "$status_OpenLDAP" \
@@ -110,7 +111,7 @@ while [ "$1" ]; do
 			;;
 		DB3)
 			if [ "X$BDB_SELECTED" != "X" ]; then
-				/usr/bin/dialog --msgbox "Select exactly one of the DB3, DB40, DB41 and DB42 options." 5 60 > /dev/stderr
+				/usr/bin/dialog --msgbox "Select exactly one of the DB3, DB40, DB41, DB42 and DB43 options." 5 60 > /dev/stderr
 				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 				exit 1
 			fi
@@ -122,7 +123,7 @@ while [ "$1" ]; do
 			;;
 		DB40)
 			if [ "X$BDB_SELECTED" != "X" ]; then
-				/usr/bin/dialog --msgbox "Select exactly one of the DB3, DB40, DB41 and DB42 options." 5 60 > /dev/stderr
+				/usr/bin/dialog --msgbox "Select exactly one of the DB3, DB40, DB41, DB42 and DB43 options." 5 60 > /dev/stderr
 				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 				exit 1
 			fi
@@ -134,7 +135,7 @@ while [ "$1" ]; do
 			;;
 		DB41)
 			if [ "X$BDB_SELECTED" != "X" ]; then
-				/usr/bin/dialog --msgbox "Select exactly one of the DB3, DB40, DB41 and DB42 options." 5 60 > /dev/stderr
+				/usr/bin/dialog --msgbox "Select exactly one of the DB3, DB40, DB41, DB42 and DB43 options." 5 60 > /dev/stderr
 				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 				exit 1
 			fi
@@ -146,7 +147,7 @@ while [ "$1" ]; do
 			;;
 		DB42)
 			if [ "X$BDB_SELECTED" != "X" ]; then
-				/usr/bin/dialog --msgbox "Select exactly one of the DB3, DB40, DB41 and DB42 options." 5 60 > /dev/stderr
+				/usr/bin/dialog --msgbox "Select exactly one of the DB3, DB40, DB41, DB42 and DB43 options." 5 60 > /dev/stderr
 				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 				exit 1
 			fi
@@ -155,6 +156,18 @@ while [ "$1" ]; do
 			echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib/db42/ -ldb"
 			echo "DB_SUFFIX=	+db42"
 			BDB_SELECTED="42"
+			;;
+		DB43)
+			if [ "X$BDB_SELECTED" != "X" ]; then
+				/usr/bin/dialog --msgbox "Select exactly one of the DB3, DB40, DB41, DB42 and DB43 options." 5 60 > /dev/stderr
+				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+				exit 1
+			fi
+			echo "LIB_DEPENDS+=	db-4.3.0:\${PORTSDIR}/databases/db43"
+			echo "POSTFIX_CCARGS+=	-I\${LOCALBASE}/include/db43"
+			echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib/db43/ -ldb"
+			echo "DB_SUFFIX=	+db43"
+			BDB_SELECTED="43"
 			;;
 		MySQL)
 			echo "USE_MYSQL=YES"
