@@ -17,6 +17,7 @@ RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
 USE_XLIB=	yes
 USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	CFLAGS="${CFLAGS}"
@@ -26,9 +27,10 @@ DOCS=		ChangeLog gnu-xhippo.html screenshot.jpeg xhippo.html.gz \
 
 .include <bsd.port.pre.mk>
 
-.if ${HAVE_GNOME:Mgtk12}!=""
-USE_GNOME=	gtk12
-PKGNAMESUFFIX=	-gtk
+.if ${HAVE_GNOME:Mgnomelibs}!=""
+USE_GNOME+=	gnomelibs
+PKGNAMESUFFIX=	-gnome
+CONFIGURE_ARGS+=	--with-gnome
 .endif
 
 post-install:
