@@ -20,7 +20,7 @@ required_files=${prefix}/etc/nagios/nagios.cfg
 
 NagiosBin=${prefix}/bin/nagios
 NagiosCfg=${prefix}/etc/nagios/nagios.cfg
-NagiosVar=%%NAGIOSDIR%%
+NagiosVar=/var/spool/nagios
 NagiosLog=${NagiosVar}/status.log
 NagiosTmp=${NagiosVar}/nagios.tmp
 NagiosSav=${NagiosVar}/status.sav
@@ -30,7 +30,7 @@ NagiosRun=${NagiosVar}/nagios.lock
 pidfile=${NagiosRun}
 command=${NagiosBin}
 command_args="-d $NagiosCfg"
-nagios_user=%%NAGIOSUSER%%
+nagios_user=nagios
 
 start_precmd=start_precmd
 stop_postcmd=stop_postcmd

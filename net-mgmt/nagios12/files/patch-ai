@@ -1,0 +1,25 @@
+--- daemon-init.in.orig	Thu Apr 18 06:27:13 2002
++++ daemon-init.in	Sun May 19 08:39:29 2002
+@@ -68,11 +68,8 @@
+ 
+ 
+ # Source function library
+-# Solaris doesn't have an rc.d directory, so do a test first
+-if [ -f /etc/rc.d/init.d/functions ]; then
+-	. /etc/rc.d/init.d/functions
+-elif [ -f /etc/init.d/functions ]; then
+-	. /etc/init.d/functions
++if [ -f @sysconfdir@/functions ]; then
++. @sysconfdir@/functions
+ fi
+ 
+ prefix=@prefix@
+@@ -102,7 +99,7 @@
+ 
+ 	start)
+ 		echo "Starting network monitor: nagios"
+-		su -l $Nagios -c "touch $NagiosVar/nagios.log $NagiosSav"
++		su -m $Nagios -c "touch $NagiosVar/nagios.log $NagiosSav"
+ 		rm -f $NagiosCmd
+ 		$NagiosBin -d $NagiosCfg
+ 		if [ -d $NagiosLckDir ]; then touch $NagiosLckDir/$NagiosLckFile; fi
