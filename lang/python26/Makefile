@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	python
-PORTVERSION=	2.4.c1
+PORTVERSION=	2.5.a0.000000
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -13,6 +13,8 @@ DISTFILES=	${PYTHON_DISTFILE}
 
 MAINTAINER=	perky@FreeBSD.org
 COMMENT?=	An interpreted object-oriented programming language
+
+IGNORE=		is not available yet
 
 DIST_SUBDIR=	python
 WRKSRC=		${PYTHON_WRKSRC}
