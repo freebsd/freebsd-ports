@@ -2061,6 +2061,7 @@ gnushogi	ports/games/gnushogi
 gnustep		ports/devel/gnustep
 gnustep-back	ports/x11-toolkits/gnustep-back
 gnustep-base	ports/lang/gnustep-base
+gnustep-examples	ports/misc/gnustep-examples
 gnustep-gui	ports/x11-toolkits/gnustep-gui
 gnustep-guile	ports/lang/gnustep-guile
 gnustep-make	ports/devel/gnustep-make
