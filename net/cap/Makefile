@@ -61,7 +61,7 @@ READMES=	applications/papif applications/lwsrv applications/aufs \
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
+BROKEN=		"Does not compile: needs stdarg.h instead of varargs.h"
 .endif
 
 pre-patch:
