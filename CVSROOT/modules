@@ -3918,6 +3918,7 @@ libidn		ports/devel/libidn
 libijs		ports/print/libijs
 libimg		ports/graphics/libimg
 libiodbc	ports/databases/libiodbc
+libirman	ports/comms/libirman
 libj2dplot	ports/x11-toolkits/libj2dplot
 libjparser	ports/x11-toolkits/libjparser
 libjsearch	ports/x11-toolkits/libjsearch
