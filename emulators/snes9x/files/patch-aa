@@ -1,0 +1,58 @@
+--- Makefile.linux.orig	Mon Dec 21 14:40:08 1998
++++ Makefile.linux	Sun Jan 10 10:32:23 1999
+@@ -1,8 +1,8 @@
+-ZSNESFX=1
++#ZSNESFX=1
+ ASMCPU=1
+ #SPC700ASM=1
+ NETPLAY=1
+-UNZIP=1
++#UNZIP=1
+ 
+ ifdef ZSNESFX
+ FXOBJ=i386/zsnes.o
+@@ -47,8 +47,8 @@
+ UNZIPDEFINES=-DUNZIP_SUPPORT
+ endif
+ 
+-CCC = gcc
+-CC = gcc
++CCC = egcc
++CC = egcc
+ NASM = nasm
+ 
+ INCLUDES=-I/usr/X11R6/include -I/usr/local/include
+@@ -58,7 +58,7 @@
+ -Ii386 \
+ -I. \
+ -Iunzip \
+--DJOYSTICK_SUPPORT \
++#-DJOYSTICK_SUPPORT \
+ -DZLIB \
+ -DNO_INLINE_SET_GET \
+ -DVAR_CYCLES \
+@@ -84,9 +84,9 @@
+ LDLIBS = -L/usr/X11R6/lib
+ 
+ ifdef NETPLAY
+-all: offsets snes9x ssnes9x s9xserver
++all: offsets snes9x s9xserver
+ else
+-all: offsets snes9x ssnes9x
++all: offsets snes9x
+ endif
+ 
+ #ggisnes9x
+@@ -101,10 +101,10 @@
+ 	./offsets >i386/offsets.h
+ 
+ snes9x: $(OBJECTS) unix/x11.o
+-	$(CCC) $(INCLUDES) -o $@ $(OBJECTS) unix/x11.o $(LDLIBS) -lXext -lX11 -lXxf86dga -lXxf86vm -lgz -lm
++	$(CCC) $(INCLUDES) -o $@ $(OBJECTS) unix/x11.o $(LDLIBS) -lXext -lX11 -lXxf86dga -lXxf86vm -lz -lm
+ 
+ xf86snes9x: $(OBJECTS) unix/xf86.o
+-	$(CCC) $(INCLUDES) -o $@ $(OBJECTS) unix/xf86.o $(LDLIBS) -lXext -lX11 -lXxf86dga -lXxf86vm -lgz -lm
++	$(CCC) $(INCLUDES) -o $@ $(OBJECTS) unix/xf86.o $(LDLIBS) -lXext -lX11 -lXxf86dga -lXxf86vm -lz -lm
+ 	/bin/chmod u+s xf86snes9x
+ 
+ ssnes9x: $(OBJECTS) unix/svga.o

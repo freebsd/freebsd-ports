@@ -1,0 +1,40 @@
+--- unix/unix.cpp.orig	Mon Dec 21 15:09:16 1998
++++ unix/unix.cpp	Sun Jan 10 10:28:58 1999
+@@ -71,6 +71,10 @@
+ #if defined(__sun) && defined(__GNUC__)
+ typedef void (*SIG_PF)();
+ #endif
++#if defined (__FreeBSD__)
++typedef void (*SIG_PF)();
++#endif
++
+ 
+ #include "snes9x.h"
+ #include "memmap.h"
+@@ -302,7 +306,7 @@
+     Settings.SoundBufferSize = 0;
+     Settings.SPCTo65c816Ratio = 2;
+     Settings.DisableSoundEcho = FALSE;
+-    Settings.APUEnabled = TRUE;
++    Settings.APUEnabled = FALSE;
+     Settings.H_Max = (100 * SNES_CYCLES_PER_SCANLINE) / 100;
+     Settings.SkipFrames = AUTO_FRAMERATE;
+     Settings.Shutdown = TRUE;
+@@ -983,7 +987,7 @@
+ #if defined(__linux)
+     sa.sa_handler = (SIG_PF) SoundTrigger;
+ #else
+-    sa.sa_handler = (SIG_PF) SoundTrigger;
++    sa.sa_handler = (void*) SoundTrigger;
+ #endif
+ 
+ #if defined (SA_RESTART)
+@@ -1615,7 +1619,7 @@
+     stretch = get_config_int("Graphics", "Scale", 0);
+     _vsync = get_config_int("Graphics", "VSync", 0);
+ 
+-    Settings.APUEnabled = get_config_int("Sound", "APUEnabled", TRUE);
++    Settings.APUEnabled = get_config_int("Sound", "APUEnabled", FALSE);
+     Settings.SoundPlaybackRate = get_config_int("Sound", "SoundPlaybackRate", 4);
+     Settings.Stereo = get_config_int("Sound", "Stereo", TRUE);
+     Settings.SoundBufferSize = get_config_int("Sound", "SoundBufferSize", 256);
