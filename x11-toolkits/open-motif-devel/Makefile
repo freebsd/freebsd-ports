@@ -24,7 +24,7 @@ NO_MTREE=	yes
 USE_X_PREFIX=	yes
 NO_WRKSUBDIR=	yes
 EXTRACT_ONLY=	# don't exact the tarball
-NO_BUILD=	binary distrubition
+NO_BUILD=	binary distribution
 NO_PKG_REGISTER=do-install: target will take care of this
 
 do-install:
