@@ -6471,6 +6471,7 @@ plasma-kmod	ports/graphics/plasma-kmod
 platon		ports/biology/platon
 play		ports/audio/play
 playmidi	ports/audio/playmidi
+plb		ports/net/plb
 plib		ports/x11-toolkits/plib
 plone		ports/www/plone
 plor		ports/news/plor
