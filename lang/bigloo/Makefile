@@ -7,7 +7,7 @@
 
 PORTNAME=	bigloo
 PORTVERSION=	2.6b
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang scheme
 MASTER_SITES=	ftp://ftp-sop.inria.fr/mimosa/fp/Bigloo/ \
 		ftp://kaolin.unice.fr/pub/Bigloo/
@@ -36,14 +36,17 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 
 INSTALL_INFO?=	install-info
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|prefix/doc|prefix/share/doc|' ${WRKSRC}/configure
+
 post-configure:
-	${REINPLACE_CMD} -e 's/BGL_HAVE_SENDFILE 1/BGL_HAVE_SENDFILE 0/' \
+	@${REINPLACE_CMD} -e 's/BGL_HAVE_SENDFILE 1/BGL_HAVE_SENDFILE 0/' \
 		${WRKSRC}/lib/${PORTVERSION}/bigloo_config.h
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
+#BROKEN=		"Does not compile on !i386"
 .endif
 
 post-install: install-info
