@@ -3,7 +3,7 @@
 # Date created:		9 Jan 1998
 # Whom:			John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.2 1998/01/13 05:18:16 asami Exp $
+# $Id: Makefile,v 1.3 1998/01/14 07:24:54 obrien Exp $
 #
 
 DISTNAME=	egcs-1.0.1
@@ -16,7 +16,7 @@ MAINTAINER=	jdp@polstra.com
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CONFIGURE_ARGS=	i386-unknown-freebsd
+CONFIGURE_ARGS=	--with-gnu-as --with-gnu-ld i386-unknown-freebsd
 MAN1=		cccp.1 g++.1 g77.1 gcc.1
 
 FME=${PREFIX}
