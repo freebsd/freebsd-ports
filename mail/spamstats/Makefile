@@ -7,13 +7,15 @@
 
 PORTNAME=	spamstats
 PORTVERSION=	0.5b
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.gryzor.com/tools/
 
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	A tool to generate statistics for spamd of Mail::SpamAssassin
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
+		${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip
 
 USE_PERL5=	yes
 NO_BUILD=	yes
