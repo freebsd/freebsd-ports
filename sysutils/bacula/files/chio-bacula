@@ -8,11 +8,11 @@
 #  Changer Command = "path-to-this-script/chio-bacula" %c %o %S %a
 #    you will have the following input to this script:
 #
-#  chio-bacula "changer-device" "command" "slot" "archive-device"
-#
+#  chio-bacula "changer-device" "command" "slot" "archive-device" "drive-index"
+#                  $1              $2       $3        $4               $5
 #  for example:
 #
-#  chio-bacula /dev/sg0 load 1 /dev/nst0 (on a FreeBSD system)
+#  chio-bacula /dev/sg0 load 1 /dev/nst0 0     (on a FreeBSD system)
 #
 #  If you need to to an offline, refer to the drive as $4
 #    e.g.   mt -f $f offline
@@ -29,37 +29,53 @@
 # The labes of the virtual barcode reader are located in the BARCODE_FILE
 SIMULATE_BARCODE=true
 BARCODE_FILE=/usr/local/etc/bacula-barcodes
+MTX=/bin/chio
+# Set default values (see case statement below for
+# free mapping of drive index and tape device
+TAPE=/dev/nrsa0
+DRIVE=0
+# Time to wait for (un)loading
+SLEEP=20
 
 me=$(basename $0)
 
 # Debug
 logger -p user.err "$me $@"
 
+# The changer device
 if [ -z "$1" ] ; then
     usage;
+else
+    CHANGER=$1
 fi
-
+# The command
 if [ -z "$2" ] ; then
     usage;
+else
+    COMMAND=$2
 fi
-
-MTX=/bin/chio
-CHANGER=$1
-COMMAND=$2
+# The slot number
 if [ ! -z "$3" ]; then
     SLOT=$3
 fi
+# Set tape device
 if [ ! -z "$4" ]; then
     TAPE=$4
-else
-    TAPE=/dev/nrsa2
 fi
-
-# Time to wait for loading
-SLEEP=20
-# What drive of the autochanger should be used primary
-# At the moment bacula (1.31a) could not deal with more than one drive
-DRIVE=1
+# Set drive for chio as you need
+# here you can also map to any tape device
+case $5 in
+    0)
+	DRIVE=0
+	#DRIVE=1
+	#TAPE=/dev/nrsa2
+	;;
+    1)
+	DRIVE=1
+	#DRIVE=0
+	#TAPE=/dev/nrsa1
+	;;
+esac
 
 usage()
 {
@@ -67,7 +83,7 @@ usage()
   echo "The $me script for bacula"
   echo "--------------------------------------"
   echo ""
-  echo "usage: $me <changer-device> <command> [slot] [devicename of tapedrive]"
+  echo "usage: $me <changer-device> <command> [slot] [devicename of tapedrive] [drive index]"
   echo ""
   echo "Valid commands:"
   echo ""
