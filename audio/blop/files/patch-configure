@@ -1,0 +1,11 @@
+--- configure.orig	Wed Feb 19 05:23:43 2003
++++ configure	Mon Mar  1 01:25:03 2004
+@@ -843,7 +843,7 @@
+   CFLAGS="-pipe -Wall -O0 -g"
+ else
+   CPU=$(uname -m)
+-    CFLAGS="-pipe -Wall -O3 -DNO_DEBUG -Wno-unused -ffast-math -fomit-frame-pointer -fstrength-reduce -funroll-loops -fmove-all-movables -fPIC -DPIC"
++    CFLAGS="$CFLAGS -DNO_DEBUG -fPIC -DPIC"
+ 
+ fi
+ 
