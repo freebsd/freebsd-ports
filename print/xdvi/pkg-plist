@@ -1,2 +1,5 @@
 bin/xdvi
 bin/MakeTeXPK
+@dirrm share/texmf/fonts/pk
+@dirrm share/texmf/fonts
+@dirrm share/texmf
