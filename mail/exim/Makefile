@@ -88,11 +88,15 @@ POSTGRESQL_PORT?=	databases/postgresql7
 EXIM_USER?=	mailnull
 EXIM_GROUP?=	mail
 
+LOGDIR?=	/var/log/exim
+LOG_FILE_PATH?=	${LOGDIR}/%slog
+
 SED_SCRIPT=	-e 's,%%PREFIX%%,${PREFIX},g' \
 		-e 's,%%DOCSDIR%%,${DOCSDIR},g' \
 		-e 's,%%EXAMPLESDIR%%,${EXAMPLESDIR},g' \
 		-e 's,%%EXIM_USER%%,${EXIM_USER},g' \
-		-e 's,%%EXIM_GROUP%%,${EXIM_GROUP},g'
+		-e 's,%%EXIM_GROUP%%,${EXIM_GROUP},g' \
+		-e 's,%%LOGDIR%%,${LOGDIR},g'
 
 PLIST_SUB=	EXIM_VERSION="${EXIM_VERSION}-${PORTREVISION}" \
 		EXIM_USER=${EXIM_USER} \
@@ -170,6 +174,9 @@ WITH_DEFAULT_CHARSET?=	ISO-8859-1
 #WITHOUT_AUTH_PLAINTEXT=	yes
 #WITHOUT_AUTH_SPA=		yes
 #
+# Enable built-in Exim support for radius (RFC 2865) authentication
+#WITH_AUTH_RADIUS=		yes
+#
 # Disable built-in Exim support for additional mailbox formats.
 #WITHOUT_MAILDIR=	yes
 #WITHOUT_MAILSTORE=	yes
@@ -216,6 +223,7 @@ SEDLIST=	-e 's,XX_PREFIX_XX,${PREFIX},' \
 		-e 's,XX_EXIM_USER_XX,${EXIM_USER},' \
 		-e 's,XX_EXIM_GROUP_XX,${EXIM_GROUP},' \
 		-e 's,XX_LOCALBASE_XX,${LOCALBASE},' \
+		-e 's,XX_LOG_FILE_PATH_XX,${LOG_FILE_PATH},' \
 		-e 's,XX_DEFAULT_CHARSET_XX,${WITH_DEFAULT_CHARSET},'
 
 .if defined(WITH_EXIMON)
@@ -334,6 +342,14 @@ SEDLIST+=	-e 's,^\# AUTH_PLAINTEXT=,AUTH_PLAINTEXT=,'
 
 .if !defined(WITHOUT_AUTH_SPA)
 SEDLIST+=	-e 's,^\# AUTH_SPA=,AUTH_SPA=,'
+.endif
+
+.if defined(WITH_AUTH_RADIUS)
+LIB_DEPENDS+=	radiusclient.0:${PORTSDIR}/net/radiusclient
+SEDLIST+=	-e 's,XX_RADIUS_LIBS_XX,-L${LOCALBASE}/lib -lradiusclient,' \
+		-e 's,^\# RADIUS_CONFIG_FILE=,RADIUS_CONFIG_FILE=${LOCALBASE},'
+.else
+SEDLIST+=	-e 's,XX_RADIUS_LIBS_XX,,'
 .endif
 
 .if defined(WITH_PGSQL)

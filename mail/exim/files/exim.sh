@@ -24,7 +24,7 @@ rcvar=`set_rcvar`
 
 command=%%PREFIX%%/sbin/exim
 pidfile=/var/run/exim.pid
-required_dirs=/var/log/exim
+required_dirs=%%LOGDIR%%
 required_files=%%PREFIX%%/etc/exim/configure
 
 start_precmd=start_precmd
