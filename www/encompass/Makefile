@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	encompass
-PORTVERSION=	0.1.0
+PORTVERSION=	0.1.2
 CATEGORIES=	www gnome
 MASTER_SITES=	http://www.geocities.com/lordzephyroth/
 
@@ -16,7 +16,8 @@ LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
 		gtkhtml.3:${PORTSDIR}/www/gtkhtml \
 		glibwww.1:${PORTSDIR}/www/glibwww2 \
 		gconf.8:${PORTSDIR}/devel/gconf
-RUN_DEPENDS=	gnomecc:${PORTSDIR}/sysutils/gnomecontrolcenter
+RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore \
+		${X11BASE}/share/gnome/sounds/login.wav:${PORTSDIR}/audio/gnomeaudio
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 

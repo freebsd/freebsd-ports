@@ -1,5 +1,5 @@
---- Makefile.orig	Mon Jul 24 01:21:31 2000
-+++ Makefile	Wed Jul 26 15:39:07 2000
+--- Makefile.orig	Fri Aug  4 03:36:56 2000
++++ Makefile	Fri Aug  4 10:14:58 2000
 @@ -1,11 +1,11 @@
 -CC = gcc
 +#CC = gcc
@@ -18,7 +18,7 @@
  INSTALL = $(prefix)/bin/install -c
  exec_prefix = ${prefix}
  bindir = $(exec_prefix)/bin
-@@ -18,13 +18,15 @@
+@@ -18,13 +18,16 @@
  all: encompass
  
  install: all
@@ -32,6 +32,7 @@
 +	$(BSD_INSTALL_PROGRAM) encompass $(bindir)/encompass
 +	$(BSD_INSTALL_DATA) ../encompass.desktop $(prefix)/share/gnome/apps/Internet/encompass.desktop
 +	$(MKDIR) $(prefix)/share/gnome/pixmaps/encompass
++	$(BSD_INSTALL_DATA) ../pixmaps/encompass.png $(prefix)/share/gnome/pixmaps/
 +	$(BSD_INSTALL_DATA) ../pixmaps/encompass/* $(prefix)/share/gnome/pixmaps/encompass/
 +	$(MKDIR) $(prefix)/share/gnome/help/encompass/C
 +	$(BSD_INSTALL_DATA) ../help/encompass/C/* $(prefix)/share/gnome/help/encompass/C/
