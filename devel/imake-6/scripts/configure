@@ -21,6 +21,7 @@ echo "#define LibpngDir ${LOCALBASE}"		>> $F
 echo "#define NothingOutsideProjectRoot YES"	>> $F
 
 cat $F >> ${WRKDIR}/xc/config/cf/xf86site.def
+cat $F >> ${WRKDIR}/xc/config/cf/xorgsite.def
 
 echo "#define ProjectRoot ${PREFIX}" > ${WRKDIR}/xc/config/cf/host.def
 
