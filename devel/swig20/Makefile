@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	swig
-PORTVERSION=	1.3.16
+PORTVERSION=	1.3.19
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,6 +18,7 @@ BUILD_DEPENDS=		autoconf:${PORTSDIR}/devel/autoconf
 
 VER=		${PORTVERSION:R}
 
+# Supported languages: guile perl php4 python ruby tcl ocaml pike java
 SWIG_LANGUAGES?=	guile perl php4 python ruby tcl
 .for lang in ${SWIG_LANGUAGES}
 WANT_SWIG_${lang:U}=	yes
