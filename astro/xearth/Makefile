@@ -3,7 +3,7 @@
 # Date created:         29 October 1995
 # Whom:                 piero
 #
-# $Id: Makefile,v 1.10 1998/09/16 02:24:47 steve Exp $
+# $Id: Makefile,v 1.11 1998/12/10 17:24:33 vanilla Exp $
 #
 
 DISTNAME=	xearth-1.0
@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://cag.lcs.mit.edu/pub/tuna/ \
 		${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR= applications
 
-MAINTAINER=	ports@FreeBSD.ORG
+MAINTAINER=	andrews@technologist.com
 
 USE_IMAKE=	yes
 
