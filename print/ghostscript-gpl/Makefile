@@ -7,6 +7,7 @@
 
 PORTNAME=	ghostscript
 PORTVERSION=	${GS_VERSION}
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:gs_srcs,gs_fonts,bjc250/} \
@@ -18,7 +19,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:gs_srcs,gs_fonts,bjc250/} \
 		http://www.ucatv.ne.jp/~taeko/software/gs/:lips \
 		http://www.humblesoft.com/pub/:epag \
 		http://www.epkowa.on.arena.ne.jp/gslpd/data/V306/:eplaser \
-		http://www.hi.is.uec.ac.jp/~osamuw/gdevnpdl/:npdl \
 		http://www.linuxprinting.org/download/printing/samsung-gdi/:gdi \
 		http://www.linuxprinting.org/download/printing/:lxm3200 \
 		http://homepage.powerup.com.au/~pbwest/lexmark/:lx5000 \
@@ -43,7 +43,6 @@ DISTFILES=	${GS_SRCS}:gs_srcs \
 		${EPAG_SRCS}:epag \
 		${EPLASER_SRCS}:eplaser \
 		${MJC_SRCS}:ports_jp \
-		${NPDL_SRCS}:npdl \
 		${GDI_SRCS}:gdi \
 		${LXM3200_SRCS}:lxm3200 \
 		${LX5000_SRCS}:lx5000 \
@@ -197,12 +196,6 @@ MJC_VERS=	0.8
 MJC_NAME=	gdevmjc-${MJC_VERS}
 MJC_SRCS=	${MJC_NAME}.tar.gz
 
-# NPDL - additional driver for NEC Printer Description Language printers
-NPDL=		npdl
-NPDL_VERS=	1.6.3
-NPDL_NAME=	gdevnpdl-${NPDL_VERS}
-NPDL_SRCS=	${NPDL_NAME}.tar.gz
-
 # GDI - additional driver for Samsung SmartGDI laser printers
 GDI=		gdi
 GDI_NAME=	Samsung-SmartGDI-all-GS
@@ -292,9 +285,6 @@ post-extract:
 	${ECHO_MSG} ">>>   extracting ${MJC_SRCS} ..."
 	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${MJC_SRCS}
 	${LN} -sf ${MJC_NAME} ${WRKSRC}/${MJC}
-# for NPDL driver
-	${ECHO_MSG} ">>>   extracting ${NPDL_SRCS} ..."
-	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${NPDL_SRCS}
 # for GDI driver
 	${ECHO_MSG} ">>>   extracting ${GDI_SRCS} ..."
 	${TAR} -C ${WRKSRC}/src -xzf ${DISTDIR}/${DIST_SUBDIR}/${GDI_SRCS}
@@ -366,7 +356,7 @@ pre-configure:
 		>> ${WRKSRC}/src/contrib.mak
 # for EPAG driver
 	${ECHO_MSG} ">>>   adding ${EPAG} driver to contrib.mak ..."
-	${SED} -e 's:npdl:epag:g' ${WRKSRC}/${NPDL_NAME}/gdevnpdl.mak \
+	${CAT} ${FILESDIR}/epag.contrib.mak \
 		>> ${WRKSRC}/src/contrib.mak
 # for EPLASER driver
 	${ECHO_MSG} ">>>   adding ${EPLASER} driver to contrib.mak ..."
@@ -377,10 +367,6 @@ pre-configure:
 # for MJC driver
 	${ECHO_MSG} ">>>   adding ${MJC} driver to contrib.mak ..."
 	${CAT} ${WRKSRC}/${MJC_NAME}/gdevmjc.mak \
-		>> ${WRKSRC}/src/contrib.mak
-# for NPDL driver
-	${ECHO_MSG} ">>>   adding ${NPDL} driver to contrib.mak ..."
-	${CAT} ${WRKSRC}/${NPDL_NAME}/gdevnpdl.mak \
 		>> ${WRKSRC}/src/contrib.mak
 # for GDI driver
 	${ECHO_MSG} ">>>   adding ${GDI} driver to contrib.mak ..."
@@ -431,7 +417,8 @@ pre-build:
 .endfor
 # for LIPS driver
 	${ECHO_MSG} ">>>   creating symlinks for ${LIPS} ..."
-.for i in gdevlips.[ch] gdevlprn.[ch] gdevl4r.c gdevl4v.c gdevespg.c gdevrpdl.c
+.for i in gdevlips.[ch] gdevlprn.[ch] gdevl4r.c gdevl4v.c gdevespg.c \
+	gdevnpdl.c gdevrpdl.c
 	${LN} -sf ${WRKSRC}/${LIPS_NAME}/${i} ${WRKSRC}/src
 .endfor
 # for EPAG driver
@@ -452,11 +439,6 @@ pre-build:
 .for i in gdevmjc.c mjbarrie.c mjbksep.c mjespdtc.c mjespdtm.c mjespdty.c \
 	mjgrnsp.c mjgrnsp2.c mjhtocmy.c mjmtx2.c mjvtbl.c
 	${LN} -sf ${WRKSRC}/${MJC_NAME}/${i} ${WRKSRC}/src
-.endfor
-# for NPDL driver
-	${ECHO_MSG} ">>>   creating symlinks for ${NPDL} ..."
-.for i in gdevnpdl.c
-	${LN} -sf ${WRKSRC}/${NPDL_NAME}/${i} ${WRKSRC}/src
 .endfor
 # for LXM3200 driver
 	${ECHO_MSG} ">>>   creating symlinks for ${LXM3200} ..."
@@ -567,13 +549,6 @@ post-install:
 .for i in MJ700V2C.FAQ README.mjc README.mje README.noz cpem.doc
 	${INSTALL_DATA} ${WRKSRC}/${MJC_NAME}/${i} \
 		${DOCSDIR}/${GS_VERSION}/${MJC}
-.endfor
-# for NPDL driver
-	${ECHO_MSG} ">>>   installing ${NPDL} docs ..."
-	${MKDIR} ${DOCSDIR}/${GS_VERSION}/${NPDL}
-.for i in gdevnpdl.jis
-	${INSTALL_DATA} ${WRKSRC}/${NPDL_NAME}/${i} \
-		${DOCSDIR}/${GS_VERSION}/${NPDL}
 .endfor
 # for GDI driver
 	${ECHO_MSG} ">>>   installing ${GDI} docs ..."
