@@ -1,0 +1,12 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/POE/Component/Client/POP3/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/POE/Component/Client/POP3.pm
+%%PORTDOCS%%%%EXAMPLESDIR%%/test.perl
+%%PORTDOCS%%%%EXAMPLESDIR%%/term.perl
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/POE/Component/Client/POP3
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/POE/Component/Client 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/POE/Component/Client 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/POE/Component 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/POE/Component 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/POE 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/POE 2>/dev/null || true
