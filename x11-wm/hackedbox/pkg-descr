@@ -1,7 +1,12 @@
-Openbox is based on, and similar to, blackbox.  In this port/package,
-bsetbg and bsetroot are renamed to osetbg and osetroot in order to
-avoid conflict with blackbox.
+Hackedbox is based upon the popular Blackbox window manager.  It
+aims to be fast and free of bloat.  Several Blackbox features,
+including the toolbar and Slit, have been removed in Hackedbox.  No
+new features are planned, only optimizations and fixes.
 
-Internationalization/localization does not work in this port.
+In this port/package, blackbox, bsetbg and bsetroot are renamed to
+hackedbox, hsetbg and hsetroot in order to avoid conflict with the
+corresponding programs from the blackbox port/package.
 
-WWW: http://openbox.sunsite.dk/
+WWW: http://scrudgeware.org/hackedbox/
+
+- Dominic <dominic_marks@btinternet.com>

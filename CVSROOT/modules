@@ -2178,6 +2178,7 @@ gzip		src/gnu/usr.bin/gzip
 h2n		ports/net/h2n
 ha		ports/archivers/ha
 hack		src/games/hack
+hackedbox	ports/x11-wm/hackedbox
 hagelslag	ports/net/hagelslag
 halflifeserver	ports/games/halflifeserver
 handbook	doc/en_US.ISO8859-1/books/handbook
