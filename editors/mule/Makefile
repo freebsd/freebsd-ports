@@ -3,7 +3,7 @@
 # Date created:		22 November 1994
 # Whom:			Satoshi Asami (asami)
 #
-# $Id: Makefile,v 1.1.1.1 1994/11/22 23:59:13 asami Exp $
+# $Id: Makefile,v 1.2 1994/11/24 00:08:17 asami Exp $
 #
 
 DISTNAME=	mule-2.1
@@ -16,7 +16,11 @@ CONFIGURE_ARGS=	i386--freebsd --prefix=${PREFIX} --with-x-toolkit \
 		  --wnn-includes=/usr/X11R6/include/wnn --terminal-face
 WRKSRC=		${WRKDIR}/emacs-19.27
 PATCHFILES=	diff-19.27-2.1.gz
+.if !defined(MASTER_SITE_OVERRIDE)
 PATCHSITE=	sh.wide.ad.jp:/JAPAN/mule/
+.else
+PATCHSITE=	${MASTER_SITE_OVERRIDE}
+.endif
 DEPENDS=	${PORTSDIR}/utils/Wnn
 
 pre-fetch:
