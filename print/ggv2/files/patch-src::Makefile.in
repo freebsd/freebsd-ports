@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- src/Makefile.in	2001/11/12 12:29:36	1.1
++++ src/Makefile.in	2001/11/12 12:31:39
+@@ -139,7 +139,7 @@
+ 
+ SUBDIRS = stock
+ 
+-INCLUDES =  	-I$(includedir)						$(GNOME_INCLUDEDIR)					-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"
++INCLUDES =  	-I$(includedir)						$(GNOME_INCLUDEDIR)					-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"	$(EXTRA_GNOME_CFLAGS)
+ 
+ 
+ @BONOBO_TRUE@bonobo_components = bonobo-application-ps
