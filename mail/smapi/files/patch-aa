@@ -1,0 +1,16 @@
+--- makefile.bsd.orig	Wed Apr  5 00:47:31 2000
++++ makefile.bsd	Fri Jun 30 17:54:59 2000
+@@ -1,10 +1,10 @@
+ # Legacy makefile for building on FreeBSD
+ # No support for the Husky build environment.
+ 
+-CC=	gcc
+-CFLAGS=	-Wall
++CC?=	gcc
++CFLAGS+=-Wall
+ CDEFS=	-DUNIX
+-COPT=	-O3 
++#COPT=	-O3 
+ # add the following for FreeBSD/i386
+ # -fomit-frame-pointer -fstrength-reduce -m486
+ LIB=	ar
