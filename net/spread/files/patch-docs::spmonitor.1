@@ -1,0 +1,18 @@
+--- docs/spmonitor.1	Thu Dec 13 02:01:49 2001
++++ docs/spmonitor.1	Mon Dec  8 00:00:34 2003
+@@ -27,13 +27,11 @@
+ Use an alternate configuration file
+ .I config-file
+ instead of
+-.IR ./spread.conf .
++.IR /etc/spread.conf .
+ .SH FILES
+-.I ./spread.conf
++.I /etc/spread.conf
+ .RS
+ The default config file location. 
+-.I /etc/spread.conf 
+-is also searched if a local file is not found.
+ .SH BUGS
+ The spmonitor works by sending UDP packets to the Spread daemon, so if network 
+ losses occur, commands or status reports can be lost. It can also lose reports
