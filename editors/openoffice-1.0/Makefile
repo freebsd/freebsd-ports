@@ -47,7 +47,7 @@ IGNORE="Please manually download ${DISTNAME}${EXTRACT_SUFX} from http://www.sun.
 .if defined(USE_CDROM)
 do-extract:
 	@${MKDIR} ${WRKSRC}/office51
-	@cd ${WRKSRC}/office51 && ${LN} -s -v /cdrom/linux/office51/* .
+	@cd ${WRKSRC}/office51 && ${LN} -s /cdrom/linux/office51/* .
 .endif
 
 post-extract:
