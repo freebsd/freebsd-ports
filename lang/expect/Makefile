@@ -3,7 +3,7 @@
 # Whom:			pst
 # Version required:	5.25
 #
-# $Id: Makefile,v 1.26 1997/11/10 11:27:34 asami Exp $
+# $Id: Makefile,v 1.27 1997/12/05 10:58:51 tg Exp $
 #
 
 DISTNAME=	expect
@@ -14,8 +14,7 @@ MASTER_SITES=	http://expect.nist.gov/ \
 
 MAINTAINER=	ports@freebsd.org
 
-LIB_DEPENDS=	tcl80\\.1\\.:${PORTSDIR}/lang/tcl80 \
-		tk80\\.1:${PORTSDIR}/x11/tk80
+LIB_DEPENDS=	tk80\\.1:${PORTSDIR}/x11/tk80
 
 WRKSRC=		${WRKDIR}/expect-5.25
 
