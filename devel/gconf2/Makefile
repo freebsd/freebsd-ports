@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gconf
-PORTVERSION=	0.12
-PORTREVISION=	1
+PORTVERSION=	1.0.0
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/GConf
@@ -15,14 +14,13 @@ DISTNAME=	GConf-${PORTVERSION}
 
 MAINTAINER=	ade@FreeBSD.org
 
-LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
-		guile.9:${PORTSDIR}/lang/guile \
+LIB_DEPENDS=	guile.9:${PORTSDIR}/lang/guile \
 		oaf.0:${PORTSDIR}/devel/oaf
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
-USE_GNOME=	yes
+USE_GNOMELIBS=	yes
 INSTALL_SHLIBS=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"

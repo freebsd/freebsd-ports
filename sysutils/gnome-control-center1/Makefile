@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnomecontrolcenter
-PORTVERSION=	1.2.2
-PORTREVISION=	2
+PORTVERSION=	1.4.0.1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/control-center
@@ -15,7 +14,8 @@ DISTNAME=	control-center-${PORTVERSION}
 
 MAINTAINER=	ade@FreeBSD.org
 
-LIB_DEPENDS=	gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
+LIB_DEPENDS=	gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf \
+		gnomevfs.0:${PORTSDIR}/devel/gnomevfs
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

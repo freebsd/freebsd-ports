@@ -76,6 +76,7 @@
     SUBDIR += wrapper
     SUBDIR += wterm
     SUBDIR += x3270
+    SUBDIR += xalf
     SUBDIR += xaniroc
     SUBDIR += xantfarm
     SUBDIR += xautolock

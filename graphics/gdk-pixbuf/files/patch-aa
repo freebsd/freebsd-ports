@@ -1,13 +1,14 @@
---- configure.orig	Tue Nov  9 15:22:08 1999
-+++ configure	Mon Nov 15 14:07:02 1999
-@@ -3078,8 +3078,8 @@
- #define USE_GMODULE 1
- EOF
+--- configure.orig	Thu Apr 26 18:41:47 2001
++++ configure	Fri Apr 27 16:39:52 2001
+@@ -3593,4 +3593,4 @@
  
 -   GMODULE_LIBS="`glib-config --libs gmodule`"
 -   GMODULE_FLAGS="`glib-config --cflags gmodule`"
 +   GMODULE_LIBS="`$GLIB_CONFIG --libs gmodule`"
 +   GMODULE_FLAGS="`$GLIB_CONFIG --cflags gmodule`"
     
-    
-    echo "$ac_t""yes" 1>&6
+@@ -4470,3 +4470,3 @@
+ if test "x$with_html_dir" = "x" ; then
+-  HTML_DIR='${datadir}/gnome/html'
++  HTML_DIR='${datadir}/html'
+ else

@@ -5,7 +5,7 @@
  
  
 -libpanel_applet_la_LDFLAGS = -version-info 0:1:0 -rpath $(libdir)
-+libpanel_applet_la_LDFLAGS = -version-info 4:0:0 -rpath $(libdir)
++libpanel_applet_la_LDFLAGS = -version-info 5:0:0 -rpath $(libdir)
  libpanel_applet_la_LIBADD = $(ORB_LIBS) -lm $(DL_LIB)
  
  libpanel_status_la_SOURCES =  	status-docklet.c 	$(CORBA_SRCLIST)
@@ -14,7 +14,7 @@
  
  
 -libpanel_status_la_LDFLAGS = -version-info 0:0:0 -rpath $(libdir)
-+libpanel_status_la_LDFLAGS = -version-info 4:0:0 -rpath $(libdir)
++libpanel_status_la_LDFLAGS = -version-info 5:0:0 -rpath $(libdir)
  libpanel_status_la_LIBADD = $(ORB_LIBS) -lm $(DL_LIB)
  
  BUILT_SOURCES = $(CORBA_SRCLIST)
@@ -38,37 +38,32 @@
  	append_desktop_menu (menu_bar);
  
  	gtk_box_pack_start (GTK_BOX (foo->hbox), menu_bar, FALSE, FALSE, 0);
---- panel/menu.c.orig	Tue May 23 01:00:43 2000
-+++ panel/menu.c	Fri May 26 15:10:21 2000
-@@ -82,7 +82,7 @@
- 	/*just load the menus from disk, don't make the widgets
- 	  this just reads the .desktops of the top most directory
+--- panel/main.c.orig	Fri Jan 12 17:54:08 2001
++++ panel/main.c	Mon Feb 26 19:55:27 2001
+@@ -153,3 +153,3 @@
+ 
+-	merge_main_dir = gnome_datadir_file("gnome/apps/");
++	merge_main_dir = gnome_datadir_file("apps");
+ 	merge_main_dir_len = merge_main_dir != NULL ? strlen (merge_main_dir) : 0;
+--- panel/menu.c.orig	Fri Apr 27 15:46:00 2001
++++ panel/menu.c	Fri May  4 15:11:16 2001
+@@ -147,3 +147,3 @@
  	  and a level down*/
--	char *menu = gnome_datadir_file("gnome/apps");
-+	char *menu = gnome_datadir_file("apps");
- 	if(menu)
- 		fr_read_dir(NULL,menu,NULL,2);
- 	g_free(menu);
-@@ -2709,7 +2709,7 @@
- create_system_menu(GtkWidget *menu, gboolean fake_submenus, gboolean fake,
- 		   gboolean title)
+-	menu = gnome_datadir_file ("gnome/apps");
++	menu = gnome_datadir_file ("apps");
+ 	if (menu != NULL)
+@@ -3436,3 +3436,3 @@
  {
 -	char *menudir = gnome_datadir_file ("gnome/apps");
 +	char *menudir = gnome_datadir_file ("apps");
  
- 	if (menudir &&
- 	    g_file_test (menudir, G_FILE_TEST_ISDIR)) {
-@@ -3598,8 +3598,8 @@
- 	gtk_menu_append (GTK_MENU (submenu), submenuitem);
- 	gtk_signal_connect(GTK_OBJECT(submenuitem), "activate",
+@@ -4543,4 +4543,4 @@
  			   GTK_SIGNAL_FUNC(add_menu_to_panel),
--			   "gnome/apps/");
--	setup_internal_applet_drag(submenuitem, "MENU:gnome/apps/");
-+			   "apps/");
-+	setup_internal_applet_drag(submenuitem, "MENU:apps/");
+-			   "gnome/apps");
+-	setup_internal_applet_drag(submenuitem, "MENU:gnome/apps");
++			   "apps");
++	setup_internal_applet_drag(submenuitem, "MENU:apps");
  
- 	submenuitem = gtk_menu_item_new ();
- 	gtk_widget_lock_accelerators (menuitem);
 --- panel/menu-properties.c.orig	Sat Sep  9 19:52:26 2000
 +++ panel/menu-properties.c	Mon Sep 25 14:28:44 2000
 @@ -40,7 +40,7 @@

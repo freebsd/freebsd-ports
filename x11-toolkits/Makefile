@@ -65,6 +65,7 @@
     SUBDIR += p5-GtkXmHTML
     SUBDIR += p5-Tcl-Tk
     SUBDIR += p5-Tk
+    SUBDIR += panel--
     SUBDIR += pango
     SUBDIR += paragui
     SUBDIR += pike-gtk

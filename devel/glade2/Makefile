@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	glade
-PORTVERSION=	0.5.11
+PORTVERSION=	0.6.2
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/glade
@@ -16,6 +16,7 @@ MAINTAINER=	ade@FreeBSD.org
 USE_X_PREFIX=	yes
 USE_GNOME=	yes
 USE_LIBTOOL=	yes
+CONFIGURE_ARGS=	--with-bonobo
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/libs"
 

@@ -58,7 +58,7 @@
     SUBDIR += git
     SUBDIR += gman
     SUBDIR += gnomepm
-    SUBDIR += gnomeusersguide
+    SUBDIR += gnomeuserdocs
     SUBDIR += gnomeutils
     SUBDIR += gnuls
     SUBDIR += gone

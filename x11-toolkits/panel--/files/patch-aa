@@ -1,0 +1,7 @@
+--- Makefile.in.orig	Tue May 23 18:20:42 2000
++++ Makefile.in	Wed Feb 28 14:30:24 2001
+@@ -104,3 +104,3 @@
+ 
+-confexecdir = $(libdir)
++confexecdir = $(sysconfdir)
+ confexec_DATA = panelmmConf.sh

@@ -6,20 +6,19 @@
 #
 
 PORTNAME=	bonobo
-PORTVERSION=	0.37
+PORTVERSION=	1.0.3
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	unstable/sources/bonobo
+MASTER_SITE_SUBDIR=	stable/sources/bonobo
 
 MAINTAINER=	ade@FreeBSD.org
 
-LIB_DEPENDS=	gnomeprint.13:${PORTSDIR}/print/gnomeprint \
-		oaf.0:${PORTSDIR}/devel/oaf
+LIB_DEPENDS=	gnomeprint.16:${PORTSDIR}/print/gnomeprint
 
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
-USE_GNOME=	yes
+USE_GNOMECTRL=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 LIBTOOLFILES=	configure libefs/configure
@@ -32,5 +31,10 @@ pre-patch:
 	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
 		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
 		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
+
+# XXX: hack - will be fixed in next release - say hi to
+#      GNOME release engineering :)
+post-patch:
+	@find ${WRKSRC} -name '*.idl' | xargs touch
 
 .include <bsd.port.mk>

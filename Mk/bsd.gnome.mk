@@ -186,11 +186,24 @@ pre-everything::
 # USE_GNOMECTRL	- Says that the port uses the GNOME control center.
 # USE_GNOME		- Says that the port uses the GNOME desktop environment.
 
-# Ports outside of the offical GNOME distribution should probably not be
-# using USE_GNOMELIBS or USE_GNOMECTRL, unless they have a very good reason. 
-# Most GNOME ports require USE_GNOME for the correct remove of directories
-# in ${X11BASE}/share/gnome.  Ports using GNOME should also have
-# USE_X_PREFIX defined.
+# These are the only "entry points" into the GNOME distribution that will
+# be supported.  If you need to use a port that is (say) part of
+# the controlcenter metaport, then simply request USE_GNOMECTRL=YES.
+#
+# Any explicit depends on any of the ports that make up the x11/gnome
+# metaport will be periodically eradicated by marking the port BROKEN.
+# Please use the guidelines above to help everybody maintain a cohesive
+# FreeBSD/GNOME environment.
+#
+# Unless you're experienced with the GNOME system, we highly recommend
+# simply using USE_GNOME=yes if you have GNOME related ports you wish
+# to commit.  This will certainly be a *guaranteed* interface that won't
+# be broken without significant warning.  Practically all of your target
+# audience will already have the x11/gnome metaport installed, so there
+# will be minimal inconvenience in terms of excessive downloads.
+#
+# Ports using GNOME should also have USE_X_PREFIX defined.
+# (Perhaps we should add it??  XXX: aDe)
  
 .if defined(USE_GNOME)
 USE_GNOMECTRL=	yes
@@ -274,7 +287,7 @@ CONFIGURE_ARGS+=--localstatedir=${PREFIX}/share/gnome
 .if !defined(HAVE_GNOME) || ${CONFIGURE_ARGS:S/--datadir=//} == ${CONFIGURE_ARGS}
 CONFIGURE_ARGS+=--datadir=${PREFIX}/share/gnome
 .endif
-LIB_DEPENDS+=	gnome.4:${PORTSDIR}/x11/gnomelibs
+LIB_DEPENDS+=	gnome.5:${PORTSDIR}/x11/gnomelibs
 GNOME_CONFIG?=	${X11BASE}/bin/gnome-config
 CONFIGURE_ENV+=	GNOME_CONFIG="${GNOME_CONFIG}"
 MAKE_ENV+=		GNOME_CONFIG="${GNOME_CONFIG}"
@@ -286,10 +299,10 @@ PLIST_SUB+=		GNOME:="" NOGNOME:="@comment " DATADIR="share/gnome"
 .endif
 .endif
 .if defined(USE_GNOMECTRL)
-LIB_DEPENDS+=	capplet.4:${PORTSDIR}/sysutils/gnomecontrolcenter
+LIB_DEPENDS+=	capplet.5:${PORTSDIR}/sysutils/gnomecontrolcenter
 .endif
 .if defined(USE_GNOME)
-LIB_DEPENDS+=	panel_applet.4:${PORTSDIR}/x11/gnomecore
+LIB_DEPENDS+=	panel_applet.5:${PORTSDIR}/x11/gnomecore
 .endif
 .if defined(WANT_GNOME) && !defined(HAVE_GNOME)
 PLIST_SUB+=		GNOME:="@comment " NOGNOME:="" DATADIR="share"

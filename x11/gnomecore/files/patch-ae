@@ -16,7 +16,7 @@
  DEFS = @DEFS@ -I. -I$(srcdir) -I../..
  LIBS = @LIBS@
 -libfish_applet_la_LDFLAGS = 
-+libfish_applet_la_LDFLAGS = -version-info 4:0:0
++libfish_applet_la_LDFLAGS = -version-info 5:0:0
  libfish_applet_la_LIBADD = 
  libfish_applet_la_OBJECTS =  fish.lo
  COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
@@ -27,7 +27,7 @@
  DEFS = @DEFS@ -I. -I$(srcdir) -I../..
  LIBS = @LIBS@
 -libgen_util_applet_la_LDFLAGS = 
-+libgen_util_applet_la_LDFLAGS = -version-info 4:0:0
++libgen_util_applet_la_LDFLAGS = -version-info 5:0:0
  libgen_util_applet_la_LIBADD = 
  libgen_util_applet_la_OBJECTS =  main.lo mailcheck.lo popcheck.lo \
  printer.lo clock.lo

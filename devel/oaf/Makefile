@@ -6,25 +6,22 @@
 #
 
 PORTNAME=	oaf
-PORTVERSION=	0.6.2
+PORTVERSION=	0.6.5
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/oaf
 
 MAINTAINER=	ade@FreeBSD.org
 
-LIB_DEPENDS=	ORBit.2:${PORTSDIR}/devel/ORBit \
-		popt.0:${PORTSDIR}/devel/popt \
-		xml.5:${PORTSDIR}/textproc/libxml
+LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GLIB=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
-CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
-		--datadir=${PREFIX}/share/gnome \
-		--enable-static --enable-shared \
+USE_GNOMELIBS=	yes
+CONFIGURE_ARGS= --enable-static --enable-shared \
 		--disable-more-warnings
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lintl"

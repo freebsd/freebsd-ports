@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnomemc
-PORTVERSION=	4.5.51
+PORTVERSION=	4.5.54
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/mc
@@ -21,5 +21,9 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-edit -with-ncurses
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+
+post-patch:
+	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+		's|\$\(libdir\)/mc|\$\(datadir\)/mc|g'
 
 .include <bsd.port.mk>

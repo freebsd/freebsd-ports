@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ggv
-PORTVERSION=	0.95
+PORTVERSION=	1.0
 CATEGORIES=	print gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/ggv
@@ -18,6 +18,7 @@ RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript6
 USE_X_PREFIX=	yes
 USE_GNOME=	yes
 USE_LIBTOOL=	yes
+CONFIGURE_ARGS=	--with-bonobo
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 

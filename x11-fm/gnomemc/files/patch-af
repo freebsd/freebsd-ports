@@ -1,66 +1,49 @@
---- Makefile.in.orig	Wed May 10 17:58:00 2000
-+++ Makefile.in	Tue May 16 13:25:57 2000
-@@ -5,8 +5,8 @@
- @MCFGR@@MCF@
+--- Makefile.in.orig	Sun Mar 18 12:20:52 2001
++++ Makefile.in	Wed Mar 28 18:16:22 2001
+@@ -159,3 +159,3 @@
  
- foreigndirs=pc
--codedirs=vfs lib doc slang gtkedit edit src gnome new_icons icons idl syntax
--unixdirs=intl $(codedirs) doc-gnome @POSUB@
-+codedirs=vfs lib gtkedit gnome new_icons icons idl syntax
-+unixdirs=intl $(codedirs) @POSUB@
- alldirs=$(unixdirs) $(foreigndirs) 
- subdirs=$(alldirs)
+-SUBDIRS = vfs lib doc slang gtkedit edit src gnome new_icons 	idl syntax intl doc-gnome po pc
++SUBDIRS = vfs lib gtkedit gnome new_icons idl syntax intl po
  
-@@ -45,8 +45,6 @@
- install: installdirs
- 	@for I in $(unixdirs); do cd $$I; $(MAKE) DESTDIR=$(DESTDIR) $@ || exit 1; cd ..; done
- 	$(INSTALL_DATA) $(srcdir)/FAQ $(DESTDIR)$(mclibdir)/FAQ
--	$(INSTALL_PROGRAM) mcfn_install $(DESTDIR)$(suppbindir)/mcfn_install
--	chmod +x $(DESTDIR)$(suppbindir)/mcfn_install
- 	@echo "Please verify that the configuration values are correctly"
- 	@echo "set in the mc.ext file in $(mclibdir)"
+@@ -174,3 +174,3 @@
+ CONFIG_HEADER = config.h
+-CONFIG_CLEAN_FILES =  Make.common mc.spec mcfn_install
++CONFIG_CLEAN_FILES =  Make.common mc.spec
+ DATA =  $(noinst_DATA)
+--- lib/Makefile.in.orig	Sun Mar 18 12:20:57 2001
++++ lib/Makefile.in	Wed Mar 28 18:19:55 2001
+@@ -161,4 +161,2 @@
+ desktopdir = $(mclibdir)/desktop-scripts
+-suppbindir = $(mclibdir)/bin
+-tidir = $(mclibdir)/term
+ confdir = $(sysconfdir)
+@@ -176,5 +174,3 @@
+ conf_DATA = mc.global
+-suppbin_SCRIPTS = mc.csh mc.sh
+ desktop_DATA = startup.links README.desktop
+-ti_DATA = README.xterm linux.ti xterm.ad xterm.ti ansi.ti vt100.ti xterm.tcap
  
-@@ -57,12 +55,8 @@
+@@ -188,6 +184,5 @@
+ CONFIG_CLEAN_FILES =  mc.ext mc.sh mc.csh
+-SCRIPTS =  $(noinst_SCRIPTS) $(suppbin_SCRIPTS)
++SCRIPTS =  $(noinst_SCRIPTS)
+ 
+-DATA =  $(conf_DATA) $(desktop_DATA) $(mclib_DATA) $(noinst_DATA) \
+-$(ti_DATA)
++DATA =  $(conf_DATA) $(desktop_DATA) $(mclib_DATA) $(noinst_DATA)
+ 
+@@ -340,4 +335,4 @@
+ 
+-install-data-am: install-suppbinSCRIPTS install-confDATA \
+-		install-desktopDATA install-mclibDATA install-tiDATA
++install-data-am: install-confDATA \
++		install-desktopDATA install-mclibDATA
+ install-data: install-data-am
+@@ -356,5 +351,4 @@
  installdirs:
- 	$(MKINSTALLDIRS) $(DESTDIR)$(bindir) $(DESTDIR)$(mclibdir)
- 	$(MKINSTALLDIRS) $(DESTDIR)$(mandir) $(DESTDIR)$(man8dir)
--	$(MKINSTALLDIRS) $(DESTDIR)$(icondir) $(DESTDIR)$(suppbindir)
--	$(MKINSTALLDIRS) $(DESTDIR)$(tidir) $(DESTDIR)$(extfsdir)
-+	$(MKINSTALLDIRS) $(DESTDIR)$(icondir) $(DESTDIR)$(extfsdir)
- 	$(MKINSTALLDIRS) $(DESTDIR)$(idldir) $(DESTDIR)$(syntaxdir)
--
--mcfninstall:
--	-/bin/sh ./mcfn_install
+-	$(mkinstalldirs)  $(DESTDIR)$(suppbindir) $(DESTDIR)$(confdir) \
+-		$(DESTDIR)$(desktopdir) $(DESTDIR)$(mclibdir) \
+-		$(DESTDIR)$(tidir)
++	$(mkinstalldirs)  $(DESTDIR)$(confdir) \
++		$(DESTDIR)$(desktopdir) $(DESTDIR)$(mclibdir)
  
- uninstall:
- 	@for I in $(unixdirs); do cd $$I; $(MAKE) $@ || exit 1; cd ..; done
---- lib/Makefile.in.orig	Wed May 10 17:58:01 2000
-+++ lib/Makefile.in	Tue May 16 13:27:02 2000
-@@ -15,16 +15,11 @@
- LIBFILES_IN = mc.ext.in mc-gnome.ext.in
- LIBFILES_OUT = mc.ext mc-gnome.ext mc.csh mc.sh
- LIBFILES_CONST = mc.hint mc.hint.es mc.hint.cs mc.hint.ru mc.lib mc.menu cedit.menu edit.indent.rc
--SUPPBIN_IN = mc.csh.in mc.sh.in
--SUPPBIN_OUT =  mc.csh mc.sh
- DESKTOP_FILES = startup.links README.desktop
--TIFILES = README.xterm linux.ti xterm.ad xterm.ti ansi.ti vt100.ti xterm.tcap
- 
- DISTLIB = \
- 	$(LIBFILES_IN) 		\
- 	$(LIBFILES_CONST) 	\
--	$(SUPPBIN_IN)           \
--	$(TIFILES) 		\
- 	$(DESKTOP_FILES)	\
- 	Makefile.in tdiff 	\
- 	xnc.hlp ncurses.h 	\
-@@ -61,10 +56,6 @@
- 	do $(INSTALL_DATA) $(srcdir)/$$I $(DESTDIR)$(mclibdir)/$$I; done
- 	for I in $(LIBFILES_OUT); \
- 	do $(INSTALL_DATA) $(builddir)/lib/$$I $(DESTDIR)$(mclibdir)/$$I; done
--	for I in $(SUPPBIN_OUT); \
--	do $(INSTALL_PROGRAM) -m 755 $(builddir)/lib/$$I $(DESTDIR)$(suppbindir)//$$I; done
--	for I in $(TIFILES); \
--	do $(INSTALL_DATA) $(srcdir)/$$I $(DESTDIR)$(tidir)/$$I; done
- 	$(MKINSTALLDIRS) $(DESTDIR)$(confdir)
- 	$(INSTALL_DATA) $(srcdir)/mc.global $(DESTDIR)$(confdir)
- 	$(MKINSTALLDIRS) $(DESTDIR)$(desktopdir)

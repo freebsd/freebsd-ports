@@ -1,0 +1,13 @@
+--- lib/xalflaunch.c.orig	Sun Apr  1 03:19:25 2001
++++ lib/xalflaunch.c	Sun Apr  1 03:20:36 2001
+@@ -38,6 +38,10 @@
+ static void restore_env();
+ static long int launch_pid = 0;
+ 
++#ifdef __FreeBSD__
++static void _init(void) __attribute__ ((section (".init")));
++#endif
++
+ void
+ _init () {
+     char *pid_string;

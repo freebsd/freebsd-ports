@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	bugbuddy
-PORTVERSION=	1.2
+PORTVERSION=	2.0.1
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	stable/sources/bug-buddy
+MASTER_SITE_SUBDIR=	unstable/sources/bug-buddy
 DISTNAME=	bug-buddy-${PORTVERSION}
 
 MAINTAINER=	nakai@FreeBSD.org
-
-LIB_DEPENDS=	glade.4:${PORTSDIR}/devel/libglade
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

@@ -1,0 +1,11 @@
+etc/panelmmConf.sh
+include/panel--.h
+include/panel--/applet-main.h
+include/panel--/applet.h
+include/panel--/private/applet-main_p.h
+include/panel--/private/applet_p.h
+lib/libpanelmm.a
+lib/libpanelmm.so
+lib/libpanelmm.so.0
+@dirrm include/panel--/private
+@dirrm include/panel--

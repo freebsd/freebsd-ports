@@ -77,6 +77,7 @@ lib/libgtop_sysdeps_suid.so.1
 share/locale/az/LC_MESSAGES/libgtop.mo
 share/locale/da/LC_MESSAGES/libgtop.mo
 share/locale/de/LC_MESSAGES/libgtop.mo
+share/locale/el/LC_MESSAGES/libgtop.mo
 share/locale/es/LC_MESSAGES/libgtop.mo
 share/locale/es_DO/LC_MESSAGES/libgtop.mo
 share/locale/es_GT/LC_MESSAGES/libgtop.mo
