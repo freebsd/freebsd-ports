@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.90 1998/01/21 07:08:49 ache Exp $
+# $Id: Makefile,v 1.91 1998/02/11 07:46:59 tg Exp $
 #
 
     SUBDIR += ElectricFence
@@ -33,6 +33,7 @@
     SUBDIR += lclint
     SUBDIR += libdlmalloc
     SUBDIR += libmalloc
+    SUBDIR += libproplist
     SUBDIR += libslang
     SUBDIR += linux_devel
     SUBDIR += linux_kdump
