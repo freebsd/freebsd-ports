@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libutils
-PORTVERSION=	0.7.14
+PORTVERSION=	1.0
 CATEGORIES=	lang
 MASTER_SITES=	http://savannah.gnu.org/download/nsl/ \
 		http://iling.nw.ru/~artem/downloads/ \
@@ -17,6 +17,9 @@ MAINTAINER=	chris@unixpages.org
 
 USE_LIBTOOL=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix=${PREFIX}
 INSTALLS_SHLIB=	yes
+
+MAN3=		libutils.3
 
 .include <bsd.port.mk>
