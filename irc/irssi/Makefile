@@ -7,7 +7,7 @@
 
 PORTNAME=	irssi
 PORTVERSION=	0.8.6
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES+=	irc ipv6	# `+=' is for slave ports
 MASTER_SITES=	http://irssi.org/files/
 
@@ -24,11 +24,11 @@ CONFIGURE_ARGS+=	--without-socks --without-bot --with-textui \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 400014
-CONFIGURE_ARGS+= --enable-ipv6
-.else
+#.if ${OSVERSION} >= 400014
+#CONFIGURE_ARGS+= --enable-ipv6
+#.else
 CONFIGURE_ARGS+= --disable-ipv6
-.endif
+#.endif
 
 pre-configure:
 	@cd ${WRKSRC} && ${MV} irssi.conf irssi.conf.sample
