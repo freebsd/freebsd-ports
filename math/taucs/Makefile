@@ -26,9 +26,8 @@ ALL_TARGET=
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not compile"
-.endif
+post-configure:
+	cd ${WRKSRC}; ${PATCH} <${FILESDIR}/extra-patch-build-FreeBSD-makefile
 
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/lib/FreeBSD/libtaucs.a ${PREFIX}/lib

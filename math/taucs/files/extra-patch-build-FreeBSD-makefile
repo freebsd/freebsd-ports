@@ -1,0 +1,11 @@
+--- build/FreeBSD/makefile.orig	Mon May  3 20:08:53 2004
++++ build/FreeBSD/makefile	Mon May  3 20:09:20 2004
+@@ -42,7 +42,7 @@
+ 	- $(DIROBJ)taucs_c99_complex_test$(EXEEXT) build/FreeBSD/taucs_config_tests.h
+ 	- $(CILKC) -c $(CILKFLAGS) $(STDDEFS) $(STDINCS) \
+ 	  $(DIRPROGS)taucs_cilk_test.c \
+-	  $(CILKOUTFLG)$(DIROBJ)taucs_cilk_test$(OBJEXT)
++	  $(CILKOUTFLG)$(DIROBJ)taucs_cilk_test$(OBJEXT) || rm $(DIROBJ)taucs_cilk_test$(OBJEXT)
+ 	- $(LD) $(LDFLAGS) \
+ 	  $(LOUTFLG)$(DIROBJ)taucs_cilk_test$(EXEEXT) \
+ 	  $(DIROBJ)taucs_cilk_test$(OBJEXT) $(LIBS)
