@@ -1,5 +1,5 @@
-include/mcve.h
-lib/libmcve.a
-lib/libmcve.la
-lib/libmcve.so
-lib/libmcve.so.3
+include/libmonetra_compat.h
+include/monetra.h
+lib/libmonetra.a
+lib/libmonetra.la
+lib/libmonetra.so.4

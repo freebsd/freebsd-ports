@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	libmcve
-PORTVERSION=	3.2.2
-PORTREVISION=	1
+PORTVERSION=	4.1
+#PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.mcve.com/pub/libmcve/
+DISTNAME=	libmonetra-${PORTVERSION}
+MASTER_SITES=	ftp://ftp.mcve.com/pub/libmonetra/
 
 MAINTAINER=	brad@mcve.com
 COMMENT=	Library to allow credit card processing through MCVE
