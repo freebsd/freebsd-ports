@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gurlchecker
-PORTVERSION=	0.6.1
+PORTVERSION=	0.6.2
 CATEGORIES=	www gnome
 MASTER_SITES=	http://savannah.nongnu.org/download/gurlchecker/stable/0.6/
 
