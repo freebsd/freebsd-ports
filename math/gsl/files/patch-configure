@@ -1,0 +1,26 @@
+--- configure.orig	Thu Aug 14 14:28:38 2003
++++ configure	Tue Dec  2 00:34:58 2003
+@@ -7923,6 +7923,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -9586,6 +9587,15 @@
+     *-*-*openbsd*)
+         ac_cv_c_ieee_interface=openbsd
+         ;;
++    sparc64-*-*bsd*)
++        ac_cv_c_ieee_interface=unknown
++	;;
++    amd64-*-*bsd*)
++        ac_cv_c_ieee_interface=unknown
++	;;
++    ia64-*-*bsd*)
++        ac_cv_c_ieee_interface=unknown
++	;;
+     *-*-*bsd*)
+         ac_cv_c_ieee_interface=freebsd
+         ;;
