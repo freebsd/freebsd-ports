@@ -60,7 +60,7 @@ CONFIGURE_ARGS+=--with-bdb-incdir=${LOCALBASE}/include/db42 --with-bdb=db-4.2
 .else
 BROKEN=		"WITH_BDB_VER must be 3, 4, 41 or 42"
 .endif
-CONFIGURE_ARGS+=--with-dblib=berkeley --with-bdb-libdir=${PREFIX}/lib
+CONFIGURE_ARGS+=--with-dblib=berkeley --with-bdb-libdir=${LOCALBASE}/lib
 .else
 CONFIGURE_ARGS+=--with-dblib=ndbm
 .endif
@@ -74,7 +74,7 @@ WANT_OPENLDAP_VER=	${WITH_OPENLDAP_VER}
 BROKEN=		"this port requires OpenLDAP >= 2.0"
 .endif
 USE_OPENLDAP=	yes
-CONFIGURE_ARGS+=--with-ldap=${PREFIX}
+CONFIGURE_ARGS+=--with-ldap=${LOCALBASE}
 .endif
 
 .include <bsd.port.pre.mk>
