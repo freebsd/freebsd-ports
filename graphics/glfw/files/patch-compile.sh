@@ -1,5 +1,5 @@
 --- compile.sh.orig	Wed Jan  8 12:19:48 2003
-+++ compile.sh	Sat Jan 24 18:39:15 2004
++++ compile.sh	Mon Mar  1 19:15:54 2004
 @@ -69,10 +69,10 @@
  ##########################################################################
  if [ "x$force_gcc" = xyes ]; then
@@ -76,12 +76,6 @@
 -  cat conftest.c >&5
 -fi
 -rm -f conftest*
--
--echo " sysconf support: ""$has_sysconf" 1>&6
--if [ "x$has_sysconf" = xyes ]; then
--   CFLAGS="$CFLAGS -D_GLFW_HAS_SYSCONF"
--fi
--echo " " 1>&6
 +#if { (eval echo $config_script: \"$link\") 1>&5; (eval $link) 2>&5; }; then
 +#  rm -rf conftest*
 +#  has_sysconf=yes
@@ -90,7 +84,12 @@
 +#  cat conftest.c >&5
 +#fi
 +#rm -f conftest*
-+
+ 
+-echo " sysconf support: ""$has_sysconf" 1>&6
+-if [ "x$has_sysconf" = xyes ]; then
+-   CFLAGS="$CFLAGS -D_GLFW_HAS_SYSCONF"
+-fi
+-echo " " 1>&6
 +#echo " sysconf support: ""$has_sysconf" 1>&6
 +#if [ "x$has_sysconf" = xyes ]; then
 +#   CFLAGS="$CFLAGS -D_GLFW_HAS_SYSCONF"
@@ -99,19 +98,26 @@
  
  
  ##########################################################################
-@@ -337,7 +339,8 @@
+@@ -337,17 +339,18 @@
  ##########################################################################
  # Post fixups
  ##########################################################################
 -if [ "x$CC" = xgcc ]; then
+-  CFLAGS_SPEED="-c -I. -I.. $CFLAGS -O3 -ffast-math -Wall"
+-  CFLAGS="-c -I. -I.. $CFLAGS -Os -Wall"
+-  CFLAGS_LINK="-O3 -ffast-math -Wall"
 +CFLAGS_NO_COMPILE="${CFLAGS}"
 +if [ "x$use_gcc" = xyes ]; then
-   CFLAGS_SPEED="-c -I. -I.. $CFLAGS -O3 -ffast-math -Wall"
-   CFLAGS="-c -I. -I.. $CFLAGS -Os -Wall"
-   CFLAGS_LINK="-O3 -ffast-math -Wall"
-@@ -346,8 +349,8 @@
-   CFLAGS="-c -I. -I.. $CFLAGS -O"
-   CFLAGS_LINK="-O"
++  CFLAGS_SPEED="-c -I. -I.. $CFLAGS -Wall"
++  CFLAGS="-c -I. -I.. $CFLAGS -Wall"
++  CFLAGS_LINK="-Wall"
+ else
+-  CFLAGS_SPEED="-c -I. -I.. $CFLAGS -O"
+-  CFLAGS="-c -I. -I.. $CFLAGS -O"
+-  CFLAGS_LINK="-O"
++  CFLAGS_SPEED="-c -I. -I.. $CFLAGS"
++  CFLAGS="-c -I. -I.. $CFLAGS"
++  CFLAGS_LINK=""
  fi
 -CFLAGS_LINK="-I../include $CFLAGS_LINK"
 -LFLAGS="$LFLAGS -L../lib/x11 -s -lglfw -lGLU $LIBS -lpthread -lm"
