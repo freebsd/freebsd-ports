@@ -1,8 +1,23 @@
-lib/libtix4141.so.1.0
-@exec ldconfig -m %B
 bin/tixwish4.1.4.1
 @exec ln -s %D/%F %B/tixwish
 @unexec rm %B/tixwish
+include/tix.h
+include/tix/generic/tix.h
+include/tix/generic/tixDef.h
+include/tix/generic/tixForm.h
+include/tix/generic/tixGrData.h
+include/tix/generic/tixGrid.h
+include/tix/generic/tixHList.h
+include/tix/generic/tixImgXpm.h
+include/tix/generic/tixInt.h
+include/tix/generic/tixItcl.h
+include/tix/generic/tixPatchLevel.h
+include/tix/generic/tixPort.h
+include/tix/generic/tixTList.h
+include/tix/unix/tixUnixInt.h
+include/tix/unix/tixUnixPort.h
+lib/libtix4141.so.1.0
+@exec /sbin/ldconfig -m %B
 man/mann/BtnBox.n.gz
 man/mann/Balloon.n.gz
 man/mann/ChkList.n.gz
@@ -80,6 +95,7 @@ share/tix4.1/bitmaps/minus.xpm
 share/tix4.1/bitmaps/minusarm.gif
 share/tix4.1/bitmaps/minusarm.xbm
 share/tix4.1/bitmaps/minusarm.xpm
+share/tix4.1/bitmaps/mktransgif.tcl
 share/tix4.1/bitmaps/network.xbm
 share/tix4.1/bitmaps/no_entry.gif
 share/tix4.1/bitmaps/no_entry.xpm
@@ -231,6 +247,7 @@ share/tix4.1/FileCmpt.tcl
 share/tix4.1/FileDlg.tcl
 share/tix4.1/FileEnt.tcl
 share/tix4.1/FileUtil.tcl
+share/tix4.1/FloatEnt.tcl
 share/tix4.1/Grid.tcl
 share/tix4.1/HList.tcl
 share/tix4.1/HListDD.tcl

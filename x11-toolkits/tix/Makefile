@@ -1,9 +1,9 @@
 # New ports collection makefile for:	tix
-# Version required:	1.4b2
+# Version required:	4.1b2
 # Date created:		22 December 1996
 # Whom:			Thomas Gellekum <tg@freebsd.org>
 #
-# $Id: Makefile,v 1.1.1.1 1996/12/30 07:13:50 tg Exp $
+# $Id: Makefile,v 1.2 1997/01/02 07:12:33 tg Exp $
 #
 
 DISTNAME=	Tix4.1b2
@@ -17,9 +17,10 @@ LIB_DEPENDS=	tk41\\.1\\.:${PORTSDIR}/x11/tk41
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-tk40 --enable-tk41 --enable-tk41-shared \
-		--with-tcl75_src_dir=/usr/src/contrib/tcl \
-		--with-tk41_src_dir="${PORTSDIR}/x11/tk41/work/tk4.1" \
+		--with-tcl75_src_dir=/usr/include/tcl \
+		--with-tk41_src_dir="${PREFIX}/include/tk" \
 		--with-extra_ldflags="-L${PREFIX}/lib"
+# this should probably be added to bsd.port.mk
 CONFIGURE_ENV=	PREFIX=${PREFIX}
 MAN1=		tixwish.1 
 MANN=		BtnBox.n Balloon.n ChkList.n Destroy.n ComboBox.n Control.n \
@@ -31,21 +32,17 @@ MANN=		BtnBox.n Balloon.n ChkList.n Destroy.n ComboBox.n Control.n \
 		Select.n StdBBox.n TixIntro.n Tree.n Utils.n Wm.n compound.n \
 		pixmap.n tix.n
 
-pre-extract:
-.if !exists(/usr/src/contrib/tcl)
-	@echo "Tix wants access to the Tcl source."
-	@echo "Please install /usr/src/contrib/tcl"
-	@echo "from the FreeBSD source distribution."
-	@false
-.endif
-.if !exists(${PORTSDIR}/x11/tk41/work/tk4.1)
-	@cd ${PORTSDIR}/x11/tk41; make extract
-.endif
-
 post-install:
 	@${MKDIR} ${PREFIX}/man/man1
 	@mv ${PREFIX}/man/mann/tixwish.1 ${PREFIX}/man/man1
 	@ln -sf ${PREFIX}/bin/tixwish4.1.4.1 ${PREFIX}/bin/tixwish
-	ldconfig -m ${PREFIX}/lib
+	/sbin/ldconfig -m ${PREFIX}/lib
+.for dir in generic unix
+	@${MKDIR} ${PREFIX}/include/tix/${dir}
+	${INSTALL_DATA} ${WRKSRC}/${dir}/*.h ${PREFIX}/include/tix/${dir}
+.endfor
+	${RM} ${PREFIX}/include/tix/generic/tix.h
+	@# These two files are the same
+	/bin/ln -sf ../../tix.h ${PREFIX}/include/tix/generic
 
 .include <bsd.port.mk>
