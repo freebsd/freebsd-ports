@@ -8,8 +8,7 @@
 PORTNAME=	xaniroc
 PORTVERSION=	1.02
 CATEGORIES=	x11
-MASTER_SITES=	ftp://ftp.freebird.org/unixware/freebird/x11/utils/ \
-		ftp://netlab1.usu.edu/pub/mirror/freebird/x11/utils/
+MASTER_SITES=	ftp://ftp.42.org/pub/orphan/
 DISTNAME=	${PORTNAME}	
 EXTRACT_SUFX=	.src.tar.Z
 
