@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	winetools
-PORTVERSION=	1.20
+PORTVERSION=	1.25a
 CATEGORIES=	emulators linux
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/%SUBDIR%/winetools/}
 PKGNAMEPREFIX=	linux-
-DISTNAME=	${PORTNAME}-${PORTVERSION}.setup.sh
-EXTRACT_SUFX=
-EXTRACT_ONLY=
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	blackend@FreeBSD.org
 COMMENT=	A setup and configuration tool for WINE
@@ -28,7 +26,6 @@ BRANDELF?=	/usr/bin/brandelf
 STRIP=
 
 post-extract:
-	@${TAIL} +179 ${DISTDIR}/${DISTFILES} | ${TAR} -xzf - -C ${WRKDIR} ${PORTNAME}
 	@${BRANDELF} -t Linux ${WRKDIR}/${PORTNAME}
 
 do-install:
