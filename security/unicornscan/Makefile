@@ -7,6 +7,7 @@
 
 PORTNAME=	unicornscan
 PORTVERSION=	0.4.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.dyadsecurity.com/unicornscan/
 
@@ -28,7 +29,7 @@ PKGMESSAGE=     ${WRKDIR}/pkg-message
 # system require libpcap 0.8.x to be installed.
 
 .if ${OSVERSION} < 503000
-BUILD_DEPENDS+= libpcap:${PORTSDIR}/net/libpcap
+BUILD_DEPENDS+=	${PREFIX}/lib/libpcap.a:${PORTSDIR}/net/libpcap
 .endif
 
 # Systems newer then 502103 include the getopt_long
