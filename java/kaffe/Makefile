@@ -16,7 +16,8 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		ungif.5:${PORTSDIR}/graphics/libungif \
 		png.4:${PORTSDIR}/graphics/png
 
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
+LIBTOOLFLAGS=
 INSTALLS_SHLIB=	yes
 
 MAN1=		kaffe.1
