@@ -407,6 +407,8 @@ lib/wine/winedefault.reg
 %%PORTDOCS%%share/doc/wine/README.regapi
 %%PORTDOCS%%share/doc/wine/psdrv.reg
 %%PORTDOCS%%@dirrm share/doc/wine
+@unexec if [ -f %D/lib/wine/glu32.dll.so    ]; then rm %D/lib/wine/glu32.dll.so; fi
+@unexec if [ -f %D/lib/wine/opengl32.dll.so ]; then rm %D/lib/wine/opengl32.dll.so; fi
 @dirrm lib/wine/reg
 @dirrm lib/wine
 @dirrm include/wine/msvcrt/sys
