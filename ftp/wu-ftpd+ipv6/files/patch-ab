@@ -1,6 +1,6 @@
---- makefiles/Makefile.fbs.orig	Mon Sep 20 06:21:11 1999
-+++ makefiles/Makefile.fbs	Wed Oct 20 21:40:46 1999
-@@ -24,7 +24,9 @@
+--- makefiles/Makefile.fbs.orig	Sun Jul  2 00:56:26 2000
++++ makefiles/Makefile.fbs	Tue Sep  4 10:34:51 2001
+@@ -24,19 +24,21 @@
  #
  
  DESTDIR=
@@ -10,7 +10,25 @@
 +ETCDIR=         ${DESTDIR}${PREFIX}/etc
  
  BINDIR=		${DESTDIR}${PREFIX}/bin
- BINOWN=		bin
+-BINOWN=		bin
+-BINGRP=		bin
++BINOWN=		root
++BINGRP=		wheel
+ 
+ SBINDIR=	${DESTDIR}${PREFIX}/libexec
+-SBINOWN=	bin
+-SBINGRP=	bin
++SBINOWN=	root
++SBINGRP=	wheel
+ 
+ MANDIR=		${DESTDIR}${PREFIX}/man
+-MANOWN=		bin
+-MANGRP=		bin
++MANOWN=		root
++MANGRP=		wheel
+ 
+ INSTALL=	install
+ 
 @@ -52,14 +54,20 @@
  	@if [ ! -e ${SBINDIR} ]; then \
  		${INSTALL} -o ${SBINOWN} -g ${SBINGRP} -m 755 -d ${SBINDIR} ; \

@@ -1,5 +1,5 @@
---- src/ftpd.c	Sat Jul  1 14:17:39 2000
-+++ src/ftpd.c.new	Sat Jul  8 21:48:05 2000
+--- src/ftpd.c.orig	Sun Jul  2 01:17:39 2000
++++ src/ftpd.c	Tue Sep  4 10:36:51 2001
 @@ -1662,9 +1662,9 @@
      /* Display s/key challenge where appropriate. */
  
@@ -21,6 +21,24 @@
  #ifdef LOG_FAILED		/* 27-Apr-93      EHK/BM          */
  		syslog(LOG_INFO, "failed login from %s",
  		       remoteident);
+@@ -6274,7 +6274,7 @@
+ 	if (s) {
+ 	    int i = ntohs(pasv_addr.sin_port);
+ 	    sprintf(s, "PASV port %i assigned to %s", i, remoteident);
+-	    syslog(LOG_DEBUG, s);
++	    syslog(LOG_DEBUG, "%s", s);
+ 	    free(s);
+ 	}
+     }
+@@ -6289,7 +6289,7 @@
+ 	char *s = calloc(128 + strlen(remoteident), sizeof(char));
+ 	if (s) {
+ 	    sprintf(s, "PASV port assignment assigned for %s", remoteident);
+-	    syslog(LOG_DEBUG, s);
++	    syslog(LOG_DEBUG, "%s", s);
+ 	    free(s);
+ 	}
+     }
 @@ -6435,7 +6435,7 @@
  	dirlist = ftpglob(whichfiles);
  	sdirlist = dirlist;	/* save to free later */
@@ -46,3 +64,12 @@
      }
  
      if (dout != NULL) {
+@@ -7274,7 +7272,7 @@
+     int which;
+     struct aclmember *entry = NULL;
+     (void) acl_getclass(class);
+-    while (getaclentry("port-allow", &entry)) {
++    while (getaclentry("pasv-allow", &entry)) {
+ 	if ((ARG0 != NULL) && (strcasecmp(class, ARG0) == 0))
+ 	    for (which = 1; (which < MAXARGS) && (ARG[which] != NULL); which++) {
+ 		if (hostmatch(ARG[which], remoteaddr, NULL))
