@@ -10,16 +10,14 @@ PORTNAME=	spegla
 PORTVERSION=	1.1p4
 PORTREVISION=	2
 CATEGORIES=	ftp ipv6
-MASTER_SITES=	ftp://ftp.luth.se/pub/unix/mirror/ \
-		ftp://subzero.campus.luth.se/pub/spegla/
+MASTER_SITES=  ftp://subzero.campus.luth.se/pub/spegla/
+#              ftp://ftp.luth.se/pub/unix/mirror/
 
 PATCH_SITES=	http://www.imasy.or.jp/~ume/ipv6/
 PATCHFILES=	${DISTNAME}-ipv6-20020129-3.diff.gz
 
 MAINTAINER=	jkh@FreeBSD.org
 COMMENT=	A mirror program for FTP sites (written in C)
-
-BROKEN=		"Checksum mismatch"
 
 MANCOMPRESSED=	yes
 MAN1=		spegla.1
