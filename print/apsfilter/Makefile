@@ -7,7 +7,7 @@
 
 PORTNAME=	apsfilter
 PORTVERSION=	7.2.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	http://www.apsfilter.org/download/
 
@@ -75,7 +75,7 @@ RUN_DEPENDS+=	htmldoc:${PORTSDIR}/textproc/htmldoc
 RUN_DEPENDS+=	psnup:${PORTSDIR}/print/psutils-letter
 .if !defined(WITHOUT_X11)
 # "xxx to ps" filter utilities that require X
-RUN_DEPENDS+=	acroread4:${PORTSDIR}/print/acroread4
+RUN_DEPENDS+=	acroread5:${PORTSDIR}/print/acroread5
 RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
 RUN_DEPENDS+=	dvips:${PORTSDIR}/print/teTeX
 RUN_DEPENDS+=	wmf2eps:${PORTSDIR}/graphics/libwmf

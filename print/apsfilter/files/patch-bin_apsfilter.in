@@ -1,0 +1,13 @@
+--- bin/apsfilter.in.orig	Sun May 11 09:32:08 2003
++++ bin/apsfilter.in	Sun May 11 09:32:48 2003
+@@ -1040,7 +1040,9 @@
+ 		${ACROREAD_OPTS:--level2 -fast}"
+ 
+     cat > "$APS_TMPDIR/pdf"
+-    if find_filter acroread4; then
++    if find_filter acroread5; then
++	eval acroread5 $ACROREAD_OPTS -pairs "$APS_TMPDIR/pdf" /dev/stdout
++    elif find_filter acroread4; then
+ 	eval acroread4 $ACROREAD_OPTS -pairs "$APS_TMPDIR/pdf" /dev/stdout
+     elif find_filter acroread; then
+ 	eval acroread $ACROREAD_OPTS -pairs "$APS_TMPDIR/pdf" /dev/stdout
