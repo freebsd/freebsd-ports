@@ -20,6 +20,8 @@ PATCHFILES=	${PORTNAME}_${PORTVERSION}-${PORTREVISION}.diff.gz
 MAINTAINER=	alexs@snark.rinet.ru
 COMMENT=	Modular converter between charsets and filter
 
+BROKEN=		"Does not fetch"
+
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
 
