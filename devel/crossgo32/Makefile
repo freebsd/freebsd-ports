@@ -12,8 +12,8 @@ PORTVERSION=	1.3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		ftp://sourceware.cygnus.com/pub/crossgcc/
-DISTFILES=	crosstree-${PORTVERSION}${EXTRACT_SUFX} \
-		dosrel-1.0${EXTRACT_SUFX}
+DISTNAME=	crosstree-${PORTVERSION}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} dosrel-1.0${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 
