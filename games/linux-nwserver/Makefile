@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	linux-nwserver
-PORTVERSION=	1.27
+PORTVERSION=	1.28
 CATEGORIES=	games linux
-MASTER_SITES=	http://nwdownloads.bioware.com/neverwinternights/linux/127/
-DISTNAME=	linuxserver127
+MASTER_SITES=	http://nwdownloads.bioware.com/neverwinternights/linux/128/
+DISTNAME=	linuxserver128
 
 MAINTAINER=	tiamat@telegraph.spb.ru
 COMMENT=	Neverwinter Nights Linux (x86) Dedicated Server
