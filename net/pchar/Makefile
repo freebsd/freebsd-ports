@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	pchar
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.employees.org/~bmah/Software/pchar/
 
