@@ -15,5 +15,3 @@ share/locale/eo/LC_MESSAGES/kspread.mo
 share/locale/eo/LC_MESSAGES/kspreadcalc_calc.mo
 share/locale/eo/LC_MESSAGES/kugar.mo
 share/locale/eo/LC_MESSAGES/kword.mo
-@dirrm share/locale/eo/LC_MESSAGES
-@dirrm share/locale/eo

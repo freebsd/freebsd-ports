@@ -16,7 +16,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Localized messages and documentation for koffice
 
-IGNORE=		This port will be activated shortly
+BROKEN=		Does not build anything
 
 BUILD_DEPENDS=	xgettext:${PORTSDIR}/devel/gettext
 
