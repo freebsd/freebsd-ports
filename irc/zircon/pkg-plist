@@ -21,6 +21,7 @@ lib/zircon/gifs/text.gif
 lib/zircon/gifs/unlock.gif
 lib/zircon/gifs/zircon.gif
 lib/zircon/gifs/zlogo.gif
+lib/zircon/help/Netspaces
 lib/zircon/help/Zircon/Bindings
 lib/zircon/help/Zircon/CommandLine
 lib/zircon/help/Zircon/Environment
@@ -51,6 +52,7 @@ lib/zircon/lib/Consts.tcl
 lib/zircon/lib/Control.tcl
 lib/zircon/lib/DALnet.tcl
 lib/zircon/lib/Entry.tcl
+lib/zircon/lib/Frame.tcl
 lib/zircon/lib/Friend.tcl
 lib/zircon/lib/Friends.tcl
 lib/zircon/lib/Help.tcl
