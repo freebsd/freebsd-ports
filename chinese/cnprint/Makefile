@@ -39,7 +39,7 @@ do-extract:
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/${i} ${WRKSRC}
 .endfor
 	cd ${WRKSRC} ; \
-	${TAR} plzvxf hbf.tar.gz ; ${MV} hbf/* . ; \
+	${TAR} pzvxf hbf.tar.gz ; ${MV} hbf/* . ; \
 	${RM} -fr hbf ; \
 	${GUNZIP_CMD} *.gz || ${TRUE}
 
