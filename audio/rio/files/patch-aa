@@ -1,0 +1,18 @@
+*** app.cpp	Mon Feb  1 17:55:34 1999
+--- rio.bsd/app.cpp	Sat Feb  6 21:00:07 1999
+***************
+*** 27,32 ****
+--- 27,39 ----
+  	#include	<stdlib.h>
+  	#define		SIZE_MAXPATH			_MAX_PATH
+  
++ #elif defined(__FreeBSD__)
++ 	// FreeBSD g++
++ 	// (anybody know if this stuff applies more generally to other BSDs?)
++ 	#include	<unistd.h>
++ 	#include	<sys/syslimits.h>
++ 	#define		SIZE_MAXPATH			PATH_MAX
++ 
+  #elif defined(__linux__)
+  	// linux g++
+  	#include	<unistd.h>

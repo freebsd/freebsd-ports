@@ -1,0 +1,40 @@
+*** rio.cpp	Mon Feb  1 17:55:34 1999
+--- rio.bsd/rio.cpp	Sat Feb  6 21:00:22 1999
+***************
+*** 49,54 ****
+--- 49,65 ----
+  	#define		CLOCK_SECOND			1000
+  	#define		DELETEARRAY				delete[]
+  
++ #elif defined(__FreeBSD__)
++ 	// FreeBSD g++
++ 	// (anybody know if this stuff applies more generally to other BSDs?)
++ 	#include	<fcntl.h>
++ 	#include	<unistd.h>
++ 	#include	<machine/cpufunc.h>
++ 	#define		OUTPORT(p,v)			outb( p, v )
++ 	#define		INPORT(p)				inb( p )
++ 	#define		CLOCK_SECOND			CLOCKS_PER_SEC
++ 	#define		DELETEARRAY				delete[]
++ 
+  #elif defined(__linux__)
+  	// linux g++
+  	#include	<unistd.h>
+***************
+*** 201,206 ****
+--- 212,226 ----
+  	m_iPortData = m_iPortBase + OFFSET_PORT_DATA;
+  	m_iPortStatus = m_iPortBase + OFFSET_PORT_STATUS;
+  	m_iPortControl = m_iPortBase + OFFSET_PORT_CONTROL;
++ 
++ 	// if FreeBSD
++ 	#if defined(__FreeBSD__)
++ 		// Request direct access to memory addresses
++ 		if (open("/dev/io", O_RDONLY) < 0) {
++ 			LogError( CRIO_ERROR_IOPRERM, "open(/dev/io) failed, reason '%s'", SZERROR );
++ 			return FALSE;
++ 		}
++ 	#endif
+  
+  	// if linux
+  	#if defined(__linux__)

@@ -1,0 +1,8 @@
+This is a port of the Diamond Rio tool originally written for Linux, Win32 and
+DOS. It consists of a single binary, 'rio', with which you can list those files
+currently on the Rio, transfer files to or from the device, delete files, etc.
+
+http://www.world.co.uk/sba/rio.htm
+
+Dermot McNally
+derm@ibm.net
