@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cvsweb
-PORTVERSION=	${REV_ZELLER}.${REV_KNU}
+PORTVERSION=	2.0.0
 CATEGORIES=	devel www
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.iDaemons.org/distfiles/
@@ -17,10 +17,6 @@ MAINTAINER=	knu@FreeBSD.org
 NO_BUILD=	yes
 
 USE_PERL5=	yes
-
-# This version of cvsweb is Zeller's version + knu's enhancements.
-REV_ZELLER=	1.112
-REV_KNU=	1.82
 
 # Specify where your repository belongs.
 # (You can reconfigure it after installation anyway)
@@ -47,8 +43,6 @@ CONFFILES=	cvsweb.conf \
 		cvsweb.conf-ruby
 
 PLIST_SUB=	CGIDIR="${CGIDIR}" ICONSDIR="${ICONSDIR}"
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 post-patch:
 	${PERL} -i -pe "\

@@ -6,13 +6,9 @@ file.
 The cvsweb script has been written by Bill Fenner <fenner@FreeBSD.org>
 for the FreeBSD project, improved visually and functionally by Henner
 Zeller <zeller@think.de>, Henrik Nordstrom <hno@hem.passagen.se>, and
-Ken Coar <Ken.Coar@Golux.Com>, to be adopted by the NetBSD project.
+Ken Coar <Ken.Coar@Golux.Com>, then Akinori MUSHA <knu@FreeBSD.org>
+brought it back to the FreeBSD community and made further
+improvements.
 
-Akinori MUSHA <knu@FreeBSD.org> is adding more enhancements and doing
-some cleanups over Zeller's version.
-
-As space is lacking to list all the improvements over the original,
-please refer to the documents after the installation.
-
-WWW:	http://www.idaemons.org/~knu/cvsweb/
-Author:	Akinori MUSHA <knu@FreeBSD.org>
+WWW:	http://www.FreeBSD.org/cgi/cvsweb.cgi/projects/cvsweb/
+Author:	the FreeBSD Project
