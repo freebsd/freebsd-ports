@@ -1,8 +1,8 @@
-bin/nps-config
-include/nps.h
-lib/libnps.a
-lib/libnps.la
-lib/libnps.so
-lib/libnps.so.9
+bin/pth-config
+include/pth.h
+lib/libpth.a
+lib/libpth.la
+lib/libpth.so
+lib/libpth.so.10
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B

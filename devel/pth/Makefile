@@ -1,23 +1,22 @@
-# New ports collection makefile for:   nps
-# Version required:		1.0b1
+# New ports collection makefile for:   pth
+# Version required:		1.0b2
 # Date Created:			23 May 1999
 # Whom:				Ralf S. Engelschall
 #
-# $Id: Makefile,v 1.14 1999/06/26 13:57:48 rse Exp $
+# $Id: Makefile,v 1.15 1999/06/28 13:29:35 rse Exp $
 #
 
-DISTNAME=	nps-1.0b1
+DISTNAME=	pth-1.0b2
 CATEGORIES=	devel
-MASTER_SITES=	http://www.engelschall.com/sw/nps/ \
-		ftp://ftp.engelschall.com/sw/nps/
+MASTER_SITES=	ftp://alpha.gnu.org/gnu/pth/
 
 MAINTAINER=	rse@engelschall.com
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --enable-batch
 
-MAN1=		nps-config.1
-MAN3=		nps.3
+MAN1=		pth-config.1
+MAN3=		pth.3
 
 post-build:
 	@${ECHO_MSG} "===>  Use 'make test' to run a quick test suite."
