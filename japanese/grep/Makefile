@@ -12,8 +12,7 @@ CATEGORIES=	japanese textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	grep
 
-PATCH_SITES=	ftp://ftp.lab.kdd.co.jp/Usenet/fj.sources/1994/jun/ \
-		ftp://ftp.hipecs.hokudai.ac.jp/pub/GNU/jp/
+PATCH_SITES=	ftp://ftp.hipecs.hokudai.ac.jp/pub/GNU/jp/
 PATCHFILES=	grep-2.0-mb1.04.diff.gz
 PATCH_DIST_STRIP=	-p1
 
