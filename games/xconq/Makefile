@@ -6,26 +6,26 @@
 #
 
 PORTNAME=	xconq
-PORTVERSION=	7.3.3
+PORTVERSION=	7.4.1
 CATEGORIES=	games
-MASTER_SITES=	ftp://sourceware.cygnus.com/pub/xconq/ \
+MASTER_SITES=	ftp://sources.redhat.com/pub/xconq/ \
 		ftp://ftp.freesoftware.com/pub/sourceware/xconq/ \
 		ftp://unix.hensa.ac.uk/mirrors/sourceware.cygnus.com/pub/xconq/
 
-MAINTAINER=	croyle@gelemna.org
+MAINTAINER=	ports@freebsd.org
 
-LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
+LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-tclconfig=${PREFIX}/lib/tcl8.0 \
-		--with-tkconfig=${PREFIX}/lib/tk8.0 \
+CONFIGURE_ARGS=	--with-tclconfig=${PREFIX}/lib/tcl8.3 \
+		--with-tkconfig=${PREFIX}/lib/tk8.3 \
 		--enable-alternate-scoresdir=${SCOREDIR}
 
 USE_XLIB=	yes
 USE_GMAKE=	yes
 
-CFLAGS+=	-I ${PREFIX}/include/tcl8.0 \
-		-I ${PREFIX}/include/tk8.0
+CFLAGS+=	-I ${PREFIX}/include/tcl8.3 \
+		-I ${PREFIX}/include/tk8.3
 
 MAN6=		xconq.6
 

@@ -93,6 +93,7 @@ share/xconq/doc/xcdesign_58.html
 share/xconq/doc/xcdesign_59.html
 share/xconq/doc/xcdesign_6.html
 share/xconq/doc/xcdesign_60.html
+share/xconq/doc/xcdesign_61.html
 share/xconq/doc/xcdesign_7.html
 share/xconq/doc/xcdesign_8.html
 share/xconq/doc/xcdesign_9.html
@@ -160,7 +161,6 @@ share/xconq/doc/xconq_63.html
 share/xconq/doc/xconq_64.html
 share/xconq/doc/xconq_65.html
 share/xconq/doc/xconq_66.html
-share/xconq/doc/xconq_67.html
 share/xconq/doc/xconq_7.html
 share/xconq/doc/xconq_8.html
 share/xconq/doc/xconq_9.html
@@ -168,6 +168,7 @@ share/xconq/doc/xconq_toc.html
 share/xconq/images/advt24x26.gif
 share/xconq/images/advt32x32.gif
 share/xconq/images/advt44x48.gif
+share/xconq/images/ancient.gif
 share/xconq/images/animals32.gif
 share/xconq/images/beach44x48.gif
 share/xconq/images/civmisc.gif
@@ -177,6 +178,10 @@ share/xconq/images/dirt24x26.gif
 share/xconq/images/dirt44x48.gif
 share/xconq/images/dwellings32.gif
 share/xconq/images/eur44x48.gif
+share/xconq/images/flags16x16.gif
+share/xconq/images/flags8x8.gif
+share/xconq/images/heroes.gif
+share/xconq/images/monsters.gif
 share/xconq/images/river24x26.gif
 share/xconq/images/river44x48.gif
 share/xconq/images/river88x96.gif
@@ -184,6 +189,7 @@ share/xconq/images/riverc24x26.gif
 share/xconq/images/riverc44x48.gif
 share/xconq/images/road24x26.gif
 share/xconq/images/road44x48.gif
+share/xconq/images/road48x33i.gif
 share/xconq/images/rr24x26.gif
 share/xconq/images/rr44x48.gif
 share/xconq/images/sea.gif
@@ -191,6 +197,7 @@ share/xconq/images/settlers.gif
 share/xconq/images/splash.gif
 share/xconq/images/stdt24x26.gif
 share/xconq/images/stdt44x48.gif
+share/xconq/images/stdt48x33i.gif
 share/xconq/images/stdta88x96.gif
 share/xconq/images/stdtb88x96.gif
 share/xconq/images/tran24x26.gif
@@ -201,6 +208,7 @@ share/xconq/imfapp.tcl
 share/xconq/lib/1756.g
 share/xconq/lib/1757.g
 share/xconq/lib/1805.g
+share/xconq/lib/3rd-age.g
 share/xconq/lib/advances.g
 share/xconq/lib/advterr.g
 share/xconq/lib/africa-1850.g
@@ -215,12 +223,12 @@ share/xconq/lib/beirut.g
 share/xconq/lib/blasts.imf
 share/xconq/lib/cave.g
 share/xconq/lib/cherbourg.g
-share/xconq/lib/chess.g
 share/xconq/lib/civ2.g
 share/xconq/lib/classic.g
 share/xconq/lib/cobra.g
 share/xconq/lib/colors.imf
 share/xconq/lib/coral-sea.g
+share/xconq/lib/coral-sea-th.g
 share/xconq/lib/crater-lake.g
 share/xconq/lib/duel.g
 share/xconq/lib/dwellings.imf
@@ -251,6 +259,7 @@ share/xconq/lib/insects.imf
 share/xconq/lib/intro.g
 share/xconq/lib/lhs.g
 share/xconq/lib/lhsunit.g
+share/xconq/lib/lord-rings.g
 share/xconq/lib/magellan.g
 share/xconq/lib/magnuszew.g
 share/xconq/lib/mars.g
@@ -280,6 +289,7 @@ share/xconq/lib/ng-japanese.g
 share/xconq/lib/ng-misc.g
 share/xconq/lib/ng-nickname.g
 share/xconq/lib/ng-ships.g
+share/xconq/lib/ng-swedish.g
 share/xconq/lib/ng-weird.g
 share/xconq/lib/normandy.g
 share/xconq/lib/nw-europe.g
@@ -295,7 +305,6 @@ share/xconq/lib/places.imf
 share/xconq/lib/postmodern.g
 share/xconq/lib/quest.g
 share/xconq/lib/red-october.g
-share/xconq/lib/rising-sun.g
 share/xconq/lib/rom-civ-war.g
 share/xconq/lib/roman.g
 share/xconq/lib/russian-rev.g
@@ -314,12 +323,14 @@ share/xconq/lib/t-cent-eur.g
 share/xconq/lib/t-e1-river.g
 share/xconq/lib/t-e50-river.g
 share/xconq/lib/t-eastmed.g
+share/xconq/lib/t-midearth.g
 share/xconq/lib/t-near-east.g
 share/xconq/lib/t-normandy.g
 share/xconq/lib/t-nw-eur.g
 share/xconq/lib/t-pacific.g
 share/xconq/lib/t-roman.g
 share/xconq/lib/t-russia.g
+share/xconq/lib/tailhook.g
 share/xconq/lib/tank.g
 share/xconq/lib/tanks.imf
 share/xconq/lib/terrain.imf
