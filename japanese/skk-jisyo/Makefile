@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	skk-jisyo
-PORTVERSION?=	200403
+PORTVERSION?=	200408
 CATEGORIES=	japanese
 MASTER_SITES?=	http://www.tkd.ne.jp/~toru/skk/
 DISTFILES?=	SKK-JISYO.L.${PORTVERSION}${SKK_JISYO_SUFFIX}.gz \
@@ -14,7 +14,7 @@ DISTFILES?=	SKK-JISYO.L.${PORTVERSION}${SKK_JISYO_SUFFIX}.gz \
 		SKK-JISYO.S.${PORTVERSION}${SKK_JISYO_SUFFIX}.gz
 DIST_SUBDIR=	skk-jisyo
 
-MAINTAINER?=	yoichi@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Jisyo (dictionary) files for the SKK Japanese-input software
 
 NO_WRKSUBDIR=	yes
