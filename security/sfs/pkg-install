@@ -4,10 +4,6 @@ if [ -n "${PACKAGE_BUILDING}" ]; then
 	exit 0
 fi
 
-if [ "$2" != "POST-INSTALL" ]; then
-	exit 0
-fi
-
 KEYFILE="$PKG_PREFIX/etc/sfs/sfs_host_key"
 
 USER=sfs
@@ -18,75 +14,79 @@ PW=/usr/sbin/pw
 
 SFSDIR=/var/spool/sfs
 
-echo -n "Checking for group '$GROUP'... "
+if [ "$2" = "PRE-INSTALL" ]; then
+	echo -n "Checking for group '$GROUP'... "
 
-if ! ${PW} groupshow $GROUP >/dev/null 2>&1; then
-	echo -n "doesn't exist, adding... "
-	if ${PW} groupadd $GROUP -g ${GID}; then
-		echo "success."
+	if ! ${PW} groupshow $GROUP >/dev/null 2>&1; then
+		echo -n "doesn't exist, adding... "
+		if ${PW} groupadd $GROUP -g ${GID}; then
+			echo "success."
+		else
+			echo "FAILED!"
+			exit 1
+		fi
 	else
-		echo "FAILED!"
-		exit 1
+		echo "exists."
 	fi
-else
-	echo "exists."
-fi
 
-echo -n "Checking for user '$USER'... "
+	echo -n "Checking for user '$USER'... "
 
-if ! ${PW} usershow $USER >/dev/null 2>&1; then
-	echo -n "doesn't exist, adding... "
-	if ${PW} useradd $USER -u ${UID} -c 'Self-Certifying File System' -d /nonexistent -g $GROUP -s /sbin/nologin -h -; then
-		echo "success."
+	if ! ${PW} usershow $USER >/dev/null 2>&1; then
+		echo -n "doesn't exist, adding... "
+		if ${PW} useradd $USER -u ${UID} -c 'Self-Certifying File System' -d /nonexistent -g $GROUP -s /sbin/nologin -h -; then
+			echo "success."
+		else
+			echo "FAILED!"
+			exit 1
+		fi
 	else
-		echo "FAILED!"
-		exit 1
-	fi
-else
-	echo "exists."
-fi
-
-echo -n "Checking for SFS directory ($SFSDIR)... "
-
-if [ -d "$SFSDIR" ]; then
-	echo "already exists."
-else
-	echo -n "creating... "
-	if mkdir $SFSDIR; then
-		echo "success."
-	else
-		echo "FAILED!"
-		exit 1
+		echo "exists."
 	fi
 fi
 
-if ! chmod 750 $SFSDIR; then
-	echo "chmod 750 $SFSDIR FAILED!"
-	exit 1
+if [ "$2" = "POST-INSTALL" ]; then
+	echo -n "Checking for SFS directory ($SFSDIR)... "
+
+	if [ -d "$SFSDIR" ]; then
+		echo "already exists."
+	else
+		echo -n "creating... "
+		if mkdir $SFSDIR; then
+			echo "success."
+		else
+			echo "FAILED!"
+			exit 1
+		fi
+	fi
+
+	if ! chmod 750 $SFSDIR; then
+		echo "chmod 750 $SFSDIR FAILED!"
+		exit 1
+	fi
+
+	if ! chown $USER:$GROUP $SFSDIR; then
+		echo "chown $USER:$GROUP $SFSDIR FAILED!"
+		exit 1
+	fi
+
+	echo -n "Checking for SFS host key ($KEYFILE)... "
+
+	if [ -f "$KEYFILE" ]; then
+		echo "already exists, not generating."
+	else
+		echo "doesn't exist, generating."
+		echo "Starting sfscd for entropy services."
+		$PKG_PREFIX/sbin/sfscd
+		echo -n "Sleeping ten seconds to give sfscd time to start up... "
+		sleep 10
+		echo "done."
+		$PKG_PREFIX/bin/sfskey gen -KP -l `uname -n` $KEYFILE
+		echo -n "Key generation done, killing sfscd... "
+		kill -TERM `cat /var/run/sfscd.pid`
+		echo "done."
+	fi
+
+	cat $PKG_PREFIX/share/doc/sfs/WELCOME
 fi
-
-if ! chown $USER:$GROUP $SFSDIR; then
-	echo "chown $USER:$GROUP $SFSDIR FAILED!"
-	exit 1
-fi
-
-echo -n "Checking for SFS host key ($KEYFILE)... "
-
-if [ -f "$KEYFILE" ]; then
-	echo "already exists, not generating."
-else
-	echo "doesn't exist, generating."
-	echo "Starting sfscd for entropy services."
-	$PKG_PREFIX/sbin/sfscd
-	echo -n "Sleeping ten seconds to give sfscd time to start up... "
-	sleep 10
-	echo "done."
-	$PKG_PREFIX/bin/sfskey gen -KP -n `uname -n` $KEYFILE
-	echo -n "Key generation done, killing sfscd... "
-	kill -TERM `cat /var/run/sfscd.pid`
-	echo "done."
-fi
-
-cat $PKG_PREFIX/share/doc/sfs/WELCOME
 
 exit 0

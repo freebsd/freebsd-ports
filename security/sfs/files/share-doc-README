@@ -61,7 +61,7 @@ nfs_client_enable="YES"
 4) Reboot. You should now have a working SFS client, which you can test
    via the following command:
 
-$ cat /sfs/sfs.fs.net:eu4cvv6wcnzscer98yn4qjpjnn9iv6pi/CONGRATULATIONS
+$ cat /sfs/@sfs.fs.net,uzwadtctbjb3dg596waiyru8cx5kb4an/CONGRATULATIONS
 You have set up a working SFS client.
 
 *** Setting up an SFS server
@@ -127,10 +127,10 @@ Export /usr/ports /ports
 7) Reboot. You should now have a working SFS server. sfssd will emit a
    message into /var/log/messages like the following:
 
-sfsrwsd: serving <hostname>:<SFS key>
+sfsrwsd: serving /sfs/@<hostname>,<SFS key>
 
    From a DIFFERENT machine with an SFS client already installed
-   and running, attempt to access /sfs/<hostname>:<SFS key>. Note
+   and running, attempt to access /sfs/@<hostname>,<SFS key>. Note
    that the SFS client machine will have to be able to connect to
    TCP port 4 on the SFS server machine. Note also that you must
    test your SFS server from a separate SFS client machine to avoid
@@ -150,7 +150,7 @@ for details.
 *** SFS configuration files:
 
 [ The following section is taken nearly verbatim from
-<URL:http://www.fs.net/sfs/new-york.lcs.mit.edu:85xq6pznt4mgfvj4mb23x6b8adak55ue/pub/sfswww/sfs.html#SFS%20configuration>. ]
+<URL:http://www.fs.net/sfs/@new-york.lcs.mit.edu,u83s4uk49nt8rmp4uwmt2exvz6d3cavh/pub/sfswww/sfs.html#SFS%20configuration>. ]
 
 SFS comprises a number of programs, many of which have configuration
 files. All programs look for configuration files in two directories--first
