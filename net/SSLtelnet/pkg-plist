@@ -1,0 +1,3 @@
+bin/telnet
+libexec/telnetd
+@exec ( [ -f %D/certs/telnetd.pem ] && exit ; echo "Making certificate files" ; cd %D/certs ; ssleay req -new -x509 -nodes -days 365 -out telnetd.pem -keyout telnetd.pem; ln -s telnetd.pem `ssleay x509 -noout -hash < telnetd.pem`.0 ; chmod 644 %D/certs/telnetd.pem )

@@ -1,0 +1,57 @@
+--- ../../SSLtelnet-0.11/Makefile	Sat Aug  2 16:08:25 1997
++++ ./Makefile	Sun Mar 29 18:28:44 1998
+@@ -47,7 +47,7 @@
+ 
+ # the location where SSLeay is installed ... 
+ # - expect a include and lib directory under here 
+-SSLTOP=/usr/local/ssl
++SSLTOP=$(PREFIX)
+ 
+ INSTALLTOP=$(SSLTOP)
+ 
+@@ -83,8 +83,8 @@
+ #LDADD=$(sockslib) -ltermcap -lcurses
+   
+ # uncomment the next two lines for linux
+-CC = gcc -DLINUX -DTERMIOS $(socksflags)
+-LDADD = $(sockslib) -lbsd -lncurses
++#CC = gcc -DLINUX -DTERMIOS $(socksflags)
++#LDADD = $(sockslib) -lbsd -lncurses
+ 
+ ##OLD Linux stuff
+ #CC = gcc -DLINUX -DUSE_SHADOW $(socksflags) 
+@@ -95,6 +95,10 @@
+ #BSD386
+ #CC = gcc -DBSD386 -DTERMCAP $(socksflags)
+ #LDADD = -ltermcap $(sockslib) 
++
++#BSD386
++CC = gcc -DTERMCAP $(socksflags)
++LDADD = -ltermcap $(sockslib) 
+   
+ all:
+ 	@-mkdir bin 2>/dev/null
+@@ -145,12 +149,11 @@
+ tar:    clean
+ 	(cd ..; tar cf $(TARFILE) $(DIRECTORY); /bin/rm -f $(TARFILE).Z $(TARFILE).gz >/dev/null 2>&1 ; $(COMPRESS) $(TARFILE) )
+ 
+-install: telnet telnetd /dev/null
+-	@-mkdir -p $(INSTALLTOP)/bin 2>/dev/null
++install: telnet telnetd
+ 	cp bin/telnet $(INSTALLTOP)/bin/telnet
+ 	chmod 755 $(INSTALLTOP)/bin/telnet
+-	cp bin/telnetd $(INSTALLTOP)/bin/telnetd
+-	chmod 755 $(INSTALLTOP)/bin/telnetd
++	cp bin/telnetd $(INSTALLTOP)/libexec/telnetd
++	chmod 755 $(INSTALLTOP)/libexec/telnetd
+ 	@echo "*****************************************************"
+ 	@echo "* Do not forget to make the certificate for telnetd *"
+ 	@echo "* either manually or via \"make certificate\"       *"
+@@ -158,6 +161,7 @@
+ 
+ certificate:
+ 	(\
++	[ -f $(INSTALLTOP)/certs/telnetd.pem ] && exit; \
+ 	cd $(INSTALLTOP)/certs; \
+ 	ssleay req -new -x509 -nodes -days 365 -out telnetd.pem -keyout telnetd.pem; \
+ 	ln -s telnetd.pem `ssleay x509 -noout -hash < telnetd.pem`.0 ;\
