@@ -8,6 +8,7 @@
 PORTNAME=	gkrellm
 PORTVERSION=	2.0.1
 CATEGORIES=	sysutils ipv6
+DISTNAME=	${PORTNAME}-2.0.1a
 MASTER_SITES=	http://web.wt.net/~billw/gkrellm/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ume
@@ -15,6 +16,8 @@ MASTER_SITE_SUBDIR=	ume
 MAINTAINER=	ume@FreeBSD.org
 
 LIB_DEPENDS=	gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

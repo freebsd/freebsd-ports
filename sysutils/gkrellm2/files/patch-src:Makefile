@@ -2,12 +2,6 @@ Index: src/Makefile
 diff -u src/Makefile.orig src/Makefile
 --- src/Makefile.orig	Thu Sep  5 00:45:29 2002
 +++ src/Makefile	Thu Sep  5 17:51:25 2002
-@@ -1,4 +1,5 @@
- PACKAGE ?= gkrellm
-+PACKAGE_D ?= gkrellmd
- PKG_CONFIG ?= pkg-config
- EXTRAOBJS ?= md5c.o
- BINMODE ?= 755
 @@ -21,7 +22,7 @@
  
  PKG_LIB = `$(PKG_CONFIG) --libs gtk+-2.0 gthread-2.0`
