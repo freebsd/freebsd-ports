@@ -8421,6 +8421,7 @@ ruby-amrita	ports/textproc/ruby-amrita
 ruby-amstd	ports/devel/ruby-amstd
 ruby-asp	ports/www/ruby-asp
 ruby-aspectr	ports/devel/ruby-aspectr
+ruby-atk	ports/accessibility/ruby-atk
 ruby-audiofile	ports/audio/ruby-audiofile
 ruby-avl	ports/devel/ruby-avl
 ruby-bdb	ports/databases/ruby-bdb
