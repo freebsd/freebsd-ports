@@ -7716,6 +7716,7 @@ synergy 	ports/sysutils/synergy
 syntax_tools	ports/devel/syntax_tools
 sysconftool	ports/devel/sysconftool
 syslog-ng	ports/sysutils/syslog-ng
+sysmon		ports/net/sysmon
 systemg		ports/x11-fm/systemg
 szip		ports/archivers/szip
 t-gnus		ports/news/t-gnus
