@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	bob@fly.homeunix.org
 COMMENT=	Text based card game, the objective is to get rid of all your cards
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}
 
 do-build:
 	@cd ${WRKSRC} && ${CC} ${CFLAGS} ${PORTNAME}.c -o ${PORTNAME}
