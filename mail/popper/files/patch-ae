@@ -10,14 +10,16 @@
   SRCS=	pop_dele.c pop_dropcopy.c pop_get_command.c pop_get_subcommand.c \
   	pop_init.c pop_last.c pop_list.c pop_log.c pop_lower.c pop_msg.c \
   	pop_parse.c pop_pass.c pop_quit.c pop_rset.c pop_send.c pop_stat.c \
---- 3,12 ----
+--- 3,14 ----
   
   #               Defines are described in the INSTALL document.
   
 ! SUBDIR=popauth
 ! 
-! PROG=popper
-! MAN8=popper.8
+! PROG=	popper
+! MAN8=	popper.8					# FreeBSD
+! MAN=	popper.8					# NetBSD/OpenBSD
+! 
   SRCS=	pop_dele.c pop_dropcopy.c pop_get_command.c pop_get_subcommand.c \
   	pop_init.c pop_last.c pop_list.c pop_log.c pop_lower.c pop_msg.c \
   	pop_parse.c pop_pass.c pop_quit.c pop_rset.c pop_send.c pop_stat.c \
@@ -44,7 +46,7 @@
   
   .include <bsd.prog.mk>
 - 
---- 14,45 ----
+--- 16,47 ----
   	xtnd_xlst.c pop_uidl.c pop_rpop.c pop_apop.c md5.c
   #SRCS+=	flock.c mktemp.c
   
