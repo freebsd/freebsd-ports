@@ -2,9 +2,6 @@ Delay is a program that counts down the number of seconds specified
 on its command line.
 In this way, it's sort of like the standard sleep(1) command, except
 for the fact that it provides feedback of the time remaining.
-With version 1.2 you can also 'delay' until a given time specification.
-Version 1.3 adds the possibility to launch a command at the
-end of the delay time.
 
 Here some usage example:
 delay 1d 2:03:04.5
@@ -12,8 +9,8 @@ delay 1d 2h 3m 4.5s
 delay 93785.5
 delay until 4 pm -- cdplay
 delay until noon tomorrow
-delay until midnight 13 september 2000
-delay until now + 5 minutes
+delay until midnight 4 october 2003
+delay until now +5 minutes
 delay 15s -- top
 
 It allows for short, long, and customized messages for the display of 
