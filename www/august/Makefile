@@ -11,8 +11,7 @@ PORTNAME=	august
 PORTVERSION=	0.63b
 PORTREVISION=	1
 CATEGORIES=	www editors
-MASTER_SITES=	http://www.bostream.nu/johanb/august/ \
-		http://www.lls.se/~johanb/august/
+MASTER_SITES=	http://www.bostream.nu/johanb/august/
 DISTNAME=	${PORTNAME}${PORTVERSION}.src
 
 MAINTAINER=	trevor@FreeBSD.org
