@@ -12,19 +12,21 @@
 # release you can generally build it cleanly from the source - Doug
 
 PORTNAME=	bind9
-PORTVERSION=	9.2.1
+PORTVERSION=	9.2.2.rc1
 CATEGORIES=	net ipv6
 MASTER_SITES=	${MASTER_SITE_ISC} \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/bind9/${ISCVERSION}/,}
 MASTER_SITE_SUBDIR=	bind9/${ISCVERSION}
-DISTFILES=	bind-9.2.1.tar.gz
+DISTFILES=	bind-${ISCVERSION}.tar.gz
 
 MAINTAINER=	DougB@FreeBSD.org
 
-ISCVERSION=	9.2.1
+# ISC releases things like 9.2.2rc1, which our versioning doesn't like
+ISCVERSION=	9.2.2rc1
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps
+CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps --disable-threads \
+		--with-randomdev=/dev/random
 
 .include <bsd.port.pre.mk>
 
@@ -33,11 +35,18 @@ USE_OPENSSL=	yes
 CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
 .endif
 
-.if ${OSVERSION} > 500030
-CONFIGURE_ARGS+=	--enable-threads
+.if defined(PORT_REPLACES_BASE_BIND9)
+PKGNAMESUFFIX=	-base
+PREFIX=		/usr
+BIND_DESTETC=	/etc/namedb
+CONFIGURE_ARGS+=	--prefix=${PREFIX} \
+			--sysconfdir=${BIND_DESTETC} \
+			--mandir=${MANPREFIX}/man
 .else
-CONFIGURE_ARGS+=	--disable-threads
+BIND_DESTETC=	${PREFIX}/etc
 .endif
+
+PLIST_SUB=	BIND_DESTETC="${BIND_DESTETC}"
 
 MAN1=	dig.1 host.1
 MAN3=	lwres.3 lwres_addr_parse.3 lwres_buffer.3 lwres_buffer_add.3 \
@@ -79,29 +88,24 @@ MAN8=	dnssec-keygen.8 dnssec-makekeyset.8 dnssec-signkey.8 dnssec-signzone.8 \
 	rndc-confgen.8 rndc.8
 
 WRKSRC=	${WRKDIR}/bind-${ISCVERSION}
-DIR=	${WRKSRC}/bin/
 post-patch:
 .for FILE in check/named-checkconf.8 named/named.8 nsupdate/nsupdate.8 \
 	rndc/rndc.8
-	@ ${MV} ${DIR}/${FILE} ${DIR}/${FILE}.Dist
-	@ ${SED} -e 's#/etc/named.conf#${PREFIX}/etc/named.conf#g' \
-		-e 's#/etc/rndc.conf#${PREFIX}/etc/rndc.conf#g' \
-		${DIR}/${FILE}.Dist > ${DIR}/${FILE}
+	@ ${MV} ${WRKSRC}/bin/${FILE} ${WRKSRC}/bin/${FILE}.Dist
+	@ ${SED} -e 's#/etc/named.conf#${BIND_DESTETC}/named.conf#g' \
+		-e 's#/etc/rndc.conf#${BIND_DESTETC}/rndc.conf#g' \
+		${WRKSRC}/bin/${FILE}.Dist > ${WRKSRC}/bin/${FILE}
 .endfor
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/bin/rndc/rndc.conf \
-		${PREFIX}/etc/rndc.conf.sample
-
+		${BIND_DESTETC}/rndc.conf.sample
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/bind9/arm
-	${INSTALL_DATA} ${WRKSRC}/doc/arm/Bv9ARM*html \
-		${PREFIX}/share/doc/bind9/arm
-	${MKDIR} ${PREFIX}/share/doc/bind9/misc
-	${INSTALL_DATA} ${WRKSRC}/doc/misc/[a-z]* \
-		${PREFIX}/share/doc/bind9/misc
+	${MKDIR} ${DOCSDIR}/arm ${DOCSDIR}/misc
+	${INSTALL_DATA} ${WRKSRC}/doc/arm/Bv9ARM*html ${DOCSDIR}/arm
+	${INSTALL_DATA} ${WRKSRC}/doc/misc/[a-z]* ${DOCSDIR}/misc
 	${CP} ${WRKSRC}/CHANGES ${WRKSRC}/COPYRIGHT ${WRKSRC}/FAQ \
-		${WRKSRC}/README ${PREFIX}/share/doc/bind9/
+		${WRKSRC}/README ${DOCSDIR}/
 .endif
 
 .include <bsd.port.post.mk>
