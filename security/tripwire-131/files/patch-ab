@@ -1,62 +1,29 @@
-*** Makefile	Mon Jul 25 10:59:41 1994
---- Makefile	Thu Jan  2 12:04:35 1997
-***************
-*** 34,36 ****
-  # you can use ANSI C if you like, but K&R is equally fine.
-! CC     = cc			# common
-  #CC     = gcc			# also common
---- 34,36 ----
-  # you can use ANSI C if you like, but K&R is equally fine.
-! #CC     = cc			# common
-  #CC     = gcc			# also common
-***************
-*** 38,40 ****
-  
-! CFLAGS = -O			# common 
-  #CFLAGS = -g 			# common 
---- 38,40 ----
-  
-! #CFLAGS = -O			# common 
-  #CFLAGS = -g 			# common 
-***************
-*** 60,66 ****
-  #CPP	= /lib/cpp		# on older systems
-  
-  # make sure libraries are not linked dynamically (as a security measure)
-! LDFLAGS=			# common
-  #LDFLAGS= -non_shared		# OSF/1
-  #LDFLAGS= -Bstatic		# SunOS 4 (cannot statically link tripwire
-                            	#          on Solaris 2.3)
---- 60,67 ----
-  #CPP	= /lib/cpp		# on older systems
-  
-  # make sure libraries are not linked dynamically (as a security measure)
-! LDFLAGS= -static
-! #LDFLAGS=			# common
-  #LDFLAGS= -non_shared		# OSF/1
-  #LDFLAGS= -Bstatic		# SunOS 4 (cannot statically link tripwire
-                            	#          on Solaris 2.3)
-
-
---- src/Makefile.orig	Mon Jul 25 10:40:54 1994
-+++ src/Makefile	Sun May 28 15:52:25 2000
-@@ -3,7 +3,7 @@
- # 	Tripwire build
- #
+--- Makefile.orig	Tue May  4 01:31:00 1999
++++ Makefile	Thu May 11 19:44:50 2000
+@@ -10,11 +10,11 @@
+ ###
  
--CFLAGS = -O
-+#CFLAGS = -O
+ # destination directory for final executables
+-DESTDIR = /usr/local/bin/tw
+-DATADIR = /var/tripwire
++DESTDIR = /usr/local/bin
++DATADIR = /var/adm/tcheck
  
- OFILES = 	config.parse.o main.o list.o ignorevec.o dbase.build.o \
- 		utils.o preen.o preen.interp.o preen.report.o \
-@@ -103,8 +103,9 @@
- .c.o:
- 	$(CC) $(CFLAGS) -c $<
+ # destination for man pages
+-MANDIR  = /usr/man		# This needs to change to reflect the path
++MANDIR  = /usr/local/man	# This needs to change to reflect the path
+                         # on your system
  
--install:	tripwire
-+install:	tripwire siggen
- 	$(INSTALL) tripwire $(DESTDIR)
-+	$(INSTALL) siggen $(DESTDIR)
+ # system utilities
+@@ -109,10 +109,8 @@
+ 	$(INSTALL) -d $(DESTDIR)
+ 	(cd src; make INSTALL=$(INSTALL) DESTDIR=$(DESTDIR) install)
+ 	(cd man; make INSTALL=$(INSTALL) MANDIR=$(MANDIR) install)
+-	(cd configs; $(INSTALL) -m 444 tw.config $(DESTDIR))
+-	chmod 555 $(DESTDIR)
+ 	$(INSTALL) -m 0755 -d $(DATADIR)
+-	$(INSTALL) -m 444 tests/tw.db_TEST $(DATADIR)
++	(cd configs; $(INSTALL) -m 444 tw.config $(DATADIR))
  
- clean:
- 	-rm -f $(OFILES) config.lex.c config.pre.c y.tab.c lex.yy.c help.c \
+ test:	all
+ 	(cd tests; make HOSTNAME=$(HOSTNAME) DIST=$(DIST) SHELL=$(SHELL) \

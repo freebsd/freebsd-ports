@@ -99,7 +99,7 @@
     SUBDIR += tcp_wrapper
     SUBDIR += trinokiller
     SUBDIR += tripwire
-    SUBDIR += tripwire131
+    SUBDIR += tripwire-131
     SUBDIR += vscan
     SUBDIR += whisker
     SUBDIR += xinetd
