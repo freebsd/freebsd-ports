@@ -3,7 +3,7 @@
 # Date created:         30 Oct 1997
 # Whom:                 sec@42.org
 #
-# $Id: Makefile,v 1.5 1998/08/17 00:43:43 steve Exp $
+# $Id: Makefile,v 1.6 1998/08/17 20:16:36 asami Exp $
 #
 
 DISTNAME=	sendfile-19980712
@@ -12,8 +12,6 @@ CATEGORIES=	net
 MASTER_SITES=   ftp://ftp.uni-stuttgart.de/pub/unix/comm/sendfile/current/
 
 MAINTAINER=	sec@42.org
-
-BROKEN=		fetch
 
 WRKSRC=		${WRKDIR}/${PKGNAME}
 HAS_CONFIGURE=	yes
