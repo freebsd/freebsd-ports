@@ -1,4 +1,4 @@
-bin/xlincity
+%%PROG%%
 share/lincity/colour.pal
 share/lincity/help/ask-dir.hlp
 share/lincity/help/blacksmith.hlp
@@ -19,18 +19,22 @@ share/lincity/help/farm.hlp
 share/lincity/help/fast.hlp
 share/lincity/help/finance.hlp
 share/lincity/help/firestation.hlp
+share/lincity/help/fonttest.hlp
 share/lincity/help/food.hlp
 share/lincity/help/goods.hlp
 share/lincity/help/health.hlp
+share/lincity/help/housing.hlp
 share/lincity/help/index.hlp
 share/lincity/help/industryh.hlp
 share/lincity/help/industryl.hlp
 share/lincity/help/infowin.hlp
 share/lincity/help/jobs.hlp
 share/lincity/help/keyboard.hlp
+share/lincity/help/loadgame.hlp
 share/lincity/help/market.hlp
 share/lincity/help/market2.hlp
 share/lincity/help/medium.hlp
+share/lincity/help/menu.hlp
 share/lincity/help/mill.hlp
 share/lincity/help/mini-screen.hlp
 share/lincity/help/monument.hlp
@@ -44,10 +48,12 @@ share/lincity/help/msb-pol.hlp
 share/lincity/help/msb-power.hlp
 share/lincity/help/msb-starve.hlp
 share/lincity/help/msb-ub40.hlp
+share/lincity/help/newgame.hlp
 share/lincity/help/opening.hlp
 share/lincity/help/openload.hlp
 share/lincity/help/ore.hlp
 share/lincity/help/oremine.hlp
+share/lincity/help/other-costs.hlp
 share/lincity/help/park.hlp
 share/lincity/help/pause.hlp
 share/lincity/help/pbar-coal.hlp
@@ -59,6 +65,7 @@ share/lincity/help/pbar-ore.hlp
 share/lincity/help/pbar-pop.hlp
 share/lincity/help/pbar-steel.hlp
 share/lincity/help/pbar-tech.hlp
+share/lincity/help/pbar.hlp
 share/lincity/help/pollution.hlp
 share/lincity/help/port.hlp
 share/lincity/help/pottery.hlp
@@ -235,6 +242,7 @@ share/lincity/icons/med-offl.csi
 share/lincity/icons/med-offr.csi
 share/lincity/icons/med-onl.csi
 share/lincity/icons/med-onr.csi
+share/lincity/icons/menu-button.csi
 share/lincity/icons/mill-button.csi
 share/lincity/icons/mill0.csi
 share/lincity/icons/mill1.csi
@@ -272,7 +280,6 @@ share/lincity/icons/oremine1.csi
 share/lincity/icons/oremine2.csi
 share/lincity/icons/oremine3.csi
 share/lincity/icons/oremine4.csi
-share/lincity/icons/oremine4.csi.old
 share/lincity/icons/oremine5.csi
 share/lincity/icons/oremine6.csi
 share/lincity/icons/oremine7.csi
@@ -463,6 +470,7 @@ share/lincity/messages/blacksmithup.mes
 share/lincity/messages/coalmineup.mes
 share/lincity/messages/coalpowerup.mes
 share/lincity/messages/cricketup.mes
+share/lincity/messages/didcoalsurvey.mes
 share/lincity/messages/error.mes
 share/lincity/messages/fire.mes
 share/lincity/messages/firestationup.mes
@@ -507,6 +515,10 @@ share/lincity/opening/alt-8x8
 share/lincity/opening/bad_times.scn
 share/lincity/opening/do_image
 share/lincity/opening/good_times.scn
+share/lincity/opening/iso8859-1-8x8.fnt
+share/lincity/opening/iso8859-1-8x8.raw
+share/lincity/opening/iso8859-2-8x8.fnt
+share/lincity/opening/iso8859-2-8x8.raw
 share/lincity/opening/open.pov
 share/lincity/opening/open.tga.gz
 share/lincity/opening/scrawl_s.fnt
@@ -516,6 +528,8 @@ share/lincity/opening/text2
 share/lincity/opening/text3
 share/lincity/opening/winfont_16x16.fnt
 share/lincity/opening/winfont_8x8.fnt
+share/locale/ca/LC_MESSAGES/lincity.mo
+share/locale/it/LC_MESSAGES/lincity.mo
 @dirrm share/lincity/opening
 @dirrm share/lincity/messages
 @dirrm share/lincity/icons
