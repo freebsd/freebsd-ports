@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wxgtk
-PORTVERSION= 	2.2.2
+PORTVERSION= 	2.2.4
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://wesley.informatik.uni-freiburg.de/pub/linux/wxxt/source/
 DISTNAME=	wxGTK-${PORTVERSION}

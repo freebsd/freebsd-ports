@@ -329,7 +329,10 @@ share/locale/de/LC_MESSAGES/wxstd.mo
 share/locale/fi/LC_MESSAGES/wxstd.mo
 share/locale/fr/LC_MESSAGES/wxstd.mo
 share/locale/it/LC_MESSAGES/wxstd.mo
+share/locale/nl/LC_MESSAGES/wxstd.mo
 share/locale/ru/LC_MESSAGES/wxstd.mo
+share/locale/sv/LC_MESSAGES/wxstd.mo
+share/locale/zh/LC_MESSAGES/wxstd.mo
 share/wx/afm/Cour.afm
 share/wx/afm/CourBo.afm
 share/wx/afm/CourBoO.afm
@@ -342,6 +345,7 @@ share/wx/afm/TimesBo.afm
 share/wx/afm/TimesBoO.afm
 share/wx/afm/TimesO.afm
 share/wx/afm/TimesRo.afm
+share/wx/afm/Zapf.afm
 share/wx/gs_afm/Cour.afm
 share/wx/gs_afm/CourBo.afm
 share/wx/gs_afm/CourBoO.afm
@@ -354,16 +358,17 @@ share/wx/gs_afm/TimesBo.afm
 share/wx/gs_afm/TimesBoO.afm
 share/wx/gs_afm/TimesO.afm
 share/wx/gs_afm/TimesRo.afm
-@dirrm include/wx/generic
-@dirrm include/wx/gtk
-@dirrm include/wx/html
-@dirrm include/wx/protocol
-@dirrm include/wx/unix
-@dirrm include/wx
+share/wx/gs_afm/Zapf.afm
+@dirrm share/wx/gs_afm
+@dirrm share/wx/afm
+@dirrm share/wx
 @dirrm lib/wx/include/wx/gtk
 @dirrm lib/wx/include/wx
 @dirrm lib/wx/include
 @dirrm lib/wx
-@dirrm share/wx/afm
-@dirrm share/wx/gs_afm
-@dirrm share/wx
+@dirrm include/wx/unix
+@dirrm include/wx/protocol
+@dirrm include/wx/html
+@dirrm include/wx/gtk
+@dirrm include/wx/generic
+@dirrm include/wx
