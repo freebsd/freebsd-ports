@@ -1,0 +1,6 @@
+Apache::ParseLog provides an easy way to parse the Apache log
+files, using an object-oriented constructs. The data obtained
+using this module are generic enough that it is flexible to
+use the data for your own applications, such as CGI, simple
+text-only report generater, feeding RDBMS, data for Perl/Tk-based
+GUI application, etc.
