@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	tksol
-PORTVERSION=	1.4
-CATEGORIES=	games tk82
-MASTER_SITES=	http://www.ibiblio.org/pub/Linux/games/solitaires/ \
-		http://www.gtlib.cc.gatech.edu/pub/linux/games/solitaires/ \
-		http://ftp.fi.muni.cz/pub/linux/metalab.unc.edu/games/solitaires/ \
-		ftp://metalab.unc.edu/pub/linux/games/solitaires/
+PORTVERSION=	1.7
+CATEGORIES=	games tk84
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	games/solitaires
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
@@ -20,28 +18,25 @@ COMMENT=	A version of the card game solitaire
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_REINPLACE=	yes
+
 NO_BUILD=	yes
+USE_REINPLACE=	yes
+
 MAN6=		tksol.6
-MANCOMPRESSED=	yes
-
-TKSOLDIR=	${PREFIX}/share/games/tksol
-
-post-extract:
-	@${RM} -rf ${WRKSRC}/downbitmaps/.xvpics
 
 post-patch:
-	@${REINPLACE_CMD} -e "s;/usr/bin/wish;${PREFIX}/bin/wish8.4;" \
-		-e "s;/usr/local/lib/tksol;${TKSOLDIR};g" \
-		 ${WRKSRC}/tksol
+	@${REINPLACE_CMD} -e 's|/usr/bin/wish|${PREFIX}/bin/wish8.4|g ; \
+		 s|/usr/local/lib/tksol|${DATADIR}|g' ${WRKSRC}/tksol
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/tksol ${PREFIX}/bin
-	${MKDIR} ${TKSOLDIR}
-.for dir in cardbitmaps downbitmaps pictures
-	cd ${WRKSRC}; tar -cpf - ${dir} | \
-		(cd ${TKSOLDIR}; tar -xpf -)
+	${INSTALL_MAN} ${WRKSRC}/${MAN6} ${MANPREFIX}/man/man6
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.xbm ${DATADIR}
+.for dir in cardbacks cards pictures
+	${TAR} -C ${WRKSRC} --exclude ".xvpics" -cf - ${dir} | \
+		${TAR} -C ${DATADIR} --unlink -xf -
 .endfor
-	${INSTALL_MAN} ${WRKSRC}/${MAN6}.gz ${PREFIX}/man/man6
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
 
 .include <bsd.port.mk>
