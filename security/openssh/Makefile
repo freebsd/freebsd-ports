@@ -9,7 +9,8 @@
 DISTNAME=	src/usr.bin/ssh
 PKGNAME=	OpenSSH-1.2
 CATEGORIES=	security net
-MASTER_SITES=	# See ${CVS_SITES}
+# ${MASTER_SITES} is only for if CVS won't work, period.
+MASTER_SITES=	ftp://internat.FreeBSD.org/pub/Crypto/misc/
 
 MAINTAINER=	green@FreeBSD.org
 
@@ -23,7 +24,9 @@ DISTFILES!=	${CAT} ${FILESDIR}/distfiles
 
 CFLAGS+=	-DHAVE_OPENPTY
 CVS_CMD?=	cvs -z3
-CVS_DATE=	Fri Nov 19 20:25:38 EST 1999
+CVS_DATE=	Sun Nov 21 11:22:08 EST 1999
+SED?=		/usr/bin/sed
+CVS_DATE_!=	${ECHO} -n ${CVS_DATE} | ${SED} 's/[ \t:]/_/g'
 CVS_SITES=	anoncvs@anoncvs1.ca.openbsd.org:/cvs \
 		:pserver:anoncvs@anoncvs1.usa.openbsd.org:/cvs
 CRYPTOLIBS=	-L${PREFIX}/lib -lcrypto
@@ -50,6 +53,13 @@ WRKSRC=		${WRKDIR}/ssh
 do-fetch:
 	@if [ ! -e ${STAMPFILE} ] || \
 	    [ "X${CVS_DATE}" != "X$$(${CAT} ${STAMPFILE})" ]; then \
+		if [ -e ${DISTDIR}/${PKGNAME}.${CVS_DATE_}.tar.gz ]; then \
+			cd ${DISTDIR}; \
+			${TAR} xfz ${PKGNAME}.${CVS_DATE_}.tar.gz \
+			    ${DISTFILES}; \
+			${ECHO} -n ${CVS_DATE} > ${STAMPFILE}; \
+			exit; \
+		fi; \
 		unset CVS_RSH CVS_SERVER || ${TRUE}; \
 		if [ -n "${PORTS_CVS_RSH}" ]; then \
 			export CVS_RSH="${PORTS_CVS_RSH}"; \
@@ -65,9 +75,34 @@ do-fetch:
 			fi \
 		done; \
 		${ECHO_MSG} ">> Couldn't CVS checkout ${PKGNAME}.  Please try to retrieve"; \
-		${ECHO_MSG} ">> this port manually into ${_DISTDIR} and try again."; \
+		${ECHO_MSG} ">> a snapshot with \"make fetchsrctarball\" and try again."; \
 		exit 1; \
 	fi
+
+makesrctarball: fetch
+	@cd ${DISTDIR}; \
+	${ECHO_MSG} ">> Creating source tarball in ${DISTDIR}"; \
+	${ECHO_MSG} ">> \"${PKGNAME}.${CVS_DATE_}.tar.gz\"."; \
+	${TAR} cfz ${PKGNAME}.${CVS_DATE_}.tar.gz ${PKGNAME}
+
+fetchsrctarball:
+	@cd ${DISTDIR}; \
+	file=${PKGNAME}.${CVS_DATE_}.tar.gz; \
+	if [ -e $$file ]; then \
+		exit; \
+	fi; \
+	${ECHO_MSG} ">> $$file doesn't seem to exist on this system."; \
+	for site in ${MASTER_SITES}; do \
+		${ECHO_MSG} ">> Attempting to fetch from $${site}."; \
+		if ${SETENV} ${FETCH_ENV} ${FETCH_CMD} ${FETCH_BEFORE_ARGS} \
+		    $${site}$${file}; then \
+			exit; \
+		fi; \
+	done; \
+	${ECHO_MSG} ">> Couldn't fetch $$file."; \
+	${ECHO_MSG} ">> Please try to retrieve this file manually into"; \
+	${ECHO_MSG" ">> ${_DISTDIR} and try again."; \
+	exit 1
 
 do-extract:
 	@${MKDIR} ${WRKDIR}
