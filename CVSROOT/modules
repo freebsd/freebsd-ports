@@ -3946,6 +3946,7 @@ linplasma	ports/graphics/linplasma
 linpopup	ports/net/linpopup
 linprocfs	src/sys/compat/linprocfs
 linux-acu	ports/sysutils/linux-acu
+linux-beonex	ports/www/linux-beonex
 linux-blackdown-jdk12	ports/java/linux-blackdown-jdk12
 linux-blackdown-jdk13	ports/java/linux-blackdown-jdk13
 linux-blackdown-jdk14	ports/java/linux-blackdown-jdk14
