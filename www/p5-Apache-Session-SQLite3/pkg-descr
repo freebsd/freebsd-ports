@@ -1,0 +1,9 @@
+This module is an implementation of Apache::Session. 
+It uses the DBD::SQLite backing store. It requires DBD::SQLite 
+version 1.00 or above, due to its use of SQLite3 API for BLOB support. 
+Also, an extra LastUpdated field is populated with the current time().
+
+There is no need to create the data source file beforehand; 
+this module creates the session table automatically.
+
+WWW:	http://search.cpan.org/dist/Apache-Session-SQLite3/
