@@ -1,0 +1,17 @@
+ptkdb is a debugger for perl that uses Perl/Tk for a user interface.
+
+Features include:
+	Hot Variable Inspection
+	Breakpoint Control Panel
+	Expression List
+	Subroutine Tree
+
+To debug a script using ptkdb invoke perl like this:
+	perl -d:ptkdb myscript.pl
+
+ptkdb can easily be used to debug CGI scripts if your webserver box is
+capable of running Perl/Tk applications. Just change the shebang line of your
+scripts to:
+	#! /usr/bin/perl -w -d:ptkdb
+
+WWW: http://search.cpan.org/search?dist=Devel-ptkdb
