@@ -1,0 +1,2 @@
+%%RUBY_SITELIBDIR%%/DBD/Msql/Msql.rb
+@dirrm %%RUBY_SITELIBDIR%%/DBD/Msql
