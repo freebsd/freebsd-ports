@@ -38,6 +38,7 @@
     SUBDIR += lwm
     SUBDIR += mlvwm
     SUBDIR += olvwm
+    SUBDIR += oroborus
     SUBDIR += piewm
     SUBDIR += pwm
     SUBDIR += qlwm
