@@ -16,6 +16,12 @@ ALL_TARGET=	depend all
 
 MAN1=		webredirect.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500035
+BROKEN=		"Does not compile on 5.0"
+.endif
+
 pre-build:
 	@${TOUCH} ${WRKSRC}/incu/depend.mk
 
@@ -26,4 +32,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
