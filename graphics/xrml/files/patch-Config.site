@@ -1,0 +1,88 @@
+--- Config.site.orig	Fri Jan 31 19:45:18 2003
++++ Config.site 	Fri Jan 31 19:46:38 2003
+@@ -1,8 +1,8 @@
+-# Configuration data for Linux
++# Configuration data for FreeBSD
+ 
+ # with GCC:
+-CC = gcc 
+-CXX = g++ 
++CC = %%CC%%
++CXX = %%CXX%%
+ MAKEDEPEND = gcc -M
+ PROFLAGS = # -pg 		# for profiling
+ DEBUGFLAGS = -g  		# for debugging
+@@ -10,19 +10,19 @@
+ # If you have a processor of a type prior to a Pentium PRO or
+ # Pentium II, omit the -march=i686 flag or you'll get an invalid operation
+ # exception when you start RenderPark.
+-OPTFLAGS = -O3 -Wall -pedantic -Wno-long-long -mieee-fp -malign-double -march=i686
++OPTFLAGS = %%CXXFLAGS%% #-O3 -Wall -pedantic -Wno-long-long -mieee-fp -malign-double -march=i686
+ CXXFLAGS = # C++ specific flags
+ 
+ # no ranlib command on Linux. Use 'touch' instead.
+-RANLIB = touch
++RANLIB = ranlib
+ 
+ # See 0COMPILATIONFLAGS to see what flags you can set if you care.
+ EXTRAFLAGS = -DDEFAULT_GAMMA=2.2 -DNOPOOLS
+ 
+ ################################################################
+ # uncomment the following definitions in order to make shared libraries
+-#MKLIB = mklib.linux
+-#MKLIBFLAGS = -fPIC
++MKLIB = mklib.freebsd
++MKLIBFLAGS = -fPIC
+ #LIBEXT = so
+ 
+ ################################################################
+@@ -48,8 +48,8 @@
+ 
+ # OpenGL include files and library appear to be in /usr/include
+ # and /usr/lib normally on recent Linux systems
+-DRIVERFLAGS = -I/usr/include $(HWFLAGS)
+-DRIVERLIBS = -L/usr/lib -lGLU -lGL
++DRIVERFLAGS = -I${X11BASE}/include $(HWFLAGS)
++DRIVERLIBS = -L${X11BASE}/lib -lGLU -lGL
+ 
+ # Mesa (free OpenGL-like library: www.mesa3d.org)
+ # On recent systems, 'MesaGL' is installed as 'GL' and 'MesaGLU' as 'GLU' and
+@@ -75,14 +75,14 @@
+ ################################################################
+ # X window system flags and files:
+ 
+-X11HOME = /usr/X11R6
++X11HOME = ${X11BASE}
+ XINCLUDES = -I$(X11HOME)/include 
+ XLIBS = -L$(X11HOME)/lib -lXt -lXmu -lX11 $(CCMALLOCLIB) 
+ # CCMALLOCLIB = -lccmalloc -ldl
+ 
+-# MOTIFHOME = /usr/X11R6
++MOTIFHOME = ${X11BASE}
+ # lesstif:
+-MOTIFHOME = /usr/X11R6/LessTif/Motif1.2
++#MOTIFHOME = /usr/X11R6/LessTif/Motif1.2
+ # MOTIFHOME = /usr/local/Motif
+ MOTIFINCLUDES = -I$(MOTIFHOME)/include
+ # -lXpm library necessary for Motif >=2.0, not for Motif <2.0
+@@ -93,7 +93,7 @@
+ # TIFF support
+ # if you don't want/need TIFF support, uncomment all the following lines
+ #TIFFHOME = /usr/local/graphics
+-TIFFHOME = /usr
++TIFFHOME = ${LOCALBASE}
+ 
+ # flags: -DNO_TIFF if you have no TIFF library,
+ #        -DOLD_TIFF if you have an old TIFF library without the high dynamic 
+@@ -111,9 +111,9 @@
+ 
+ # Some tiff installation require that you also link with the jpeg and
+ # zlib libraries.
+-TIFFLIB = -L$(TIFFHOME)/lib -ltiff -ljpeg -lz
++TIFFLIB = -L$(TIFFHOME)/lib -ltiff
+ 
+ 
+ ################################################################
+ # C++/so import filter
+-DLLIB = -ldl
++#DLLIB = -ldl
