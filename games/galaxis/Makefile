@@ -8,7 +8,7 @@
 PORTNAME=	galaxis
 PORTVERSION=	1.2
 CATEGORIES=	games
-MASTER_SITES=	http://www.tuxedo.org/~esr/
+MASTER_SITES=	http://www.tuxedo.org/~esr/galaxis/
 
 MAINTAINER=	ports@FreeBSD.org
 
