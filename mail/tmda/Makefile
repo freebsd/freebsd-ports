@@ -8,8 +8,8 @@
 PORTNAME=	tmda
 PORTVERSION=	0.58
 CATEGORIES=	mail python
-MASTER_SITES=	http://software.libertine.org/tmda/releases/ \
-		http://software.libertine.org/tmda/releases/old/
+MASTER_SITES=	http://tmda.net/releases/ \
+		http://tmda.net/releases/old/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mwm@mired.org

@@ -21,8 +21,8 @@ lib/%%PYTHON_VERSION%%/site-packages/TMDA/HMAC.py
 lib/%%PYTHON_VERSION%%/site-packages/TMDA/HMAC.pyc
 lib/%%PYTHON_VERSION%%/site-packages/TMDA/MTA.py
 lib/%%PYTHON_VERSION%%/site-packages/TMDA/MTA.pyc
-lib/%%PYTHON_VERSION%%/site-packages/TMDA/SMTP.py 
-lib/%%PYTHON_VERSION%%/site-packages/TMDA/SMTP.pyc 
+lib/%%PYTHON_VERSION%%/site-packages/TMDA/SMTP.py
+lib/%%PYTHON_VERSION%%/site-packages/TMDA/SMTP.pyc
 lib/%%PYTHON_VERSION%%/site-packages/TMDA/Util.py
 lib/%%PYTHON_VERSION%%/site-packages/TMDA/Util.pyc
 lib/%%PYTHON_VERSION%%/site-packages/TMDA/Version.py
