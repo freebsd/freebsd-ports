@@ -1,0 +1,10 @@
+icod is a utility to convert Windows-format icon files
+(.ico) to X-format pixmaps (.xpm).
+
+It will extract all icon images from each specified
+.ico file and write out each image to a filename
+consisting of the basename of the image, the size, and
+the bit depth.
+
+- Chris D. Faulhaber
+jedgar@fxp.org
