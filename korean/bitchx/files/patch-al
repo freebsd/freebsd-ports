@@ -1,0 +1,19 @@
+--- source/misc.c.orig	Tue Jul  4 18:01:52 2000
++++ source/misc.c	Thu Dec 21 11:03:09 2000
+@@ -2427,6 +2427,8 @@
+ 		switch(type)
+ 		{
+ 		case T_A :
++			if (dlen != sizeof(struct in_addr))
++				return 0; 
+ 			rptr->re_he.h_length = dlen;
+ 			if (ans == 1)
+ 				rptr->re_he.h_addrtype=(class == C_IN) ?
+@@ -2473,6 +2475,7 @@
+ 			*alias = NULL;
+ 			break;
+ 		default :
++			cp += dlen ;
+ 			break;
+ 		}
+ 	}
