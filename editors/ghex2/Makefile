@@ -1,22 +1,29 @@
-# New ports collection makefile for:	ghex
-# Date created:				9th June 2000
-# Whom:					Ade Lovett <ade@FreeBSD.org>
+# New ports collection makefile for:	ghex2
+# Date created:				15 September 2002
+# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	ghex
-PORTVERSION=	1.2.1
+PORTNAME=	ghex2
+PORTVERSION=	1.99.1
 CATEGORIES=	editors gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	stable/sources/ghex
+MASTER_SITE_SUBDIR=	2.0.2/sources/${PORTNAME:S/2$//}
+DISTNAME=	${PORTNAME:S/2$//}-${PORTVERSION}
+DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 
+LIB_DEPENDS=	gailutil.17:${PORTSDIR}/x11-toolkits/gail \
+		gnomeprintui-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui \
+		gnomeui-2.0:${PORTSDIR}/x11-toolkits/libgnomeui
+
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOMENG=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomelibs gnomeprint
+USE_GNOME=	gnomeprefix gnomehack
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
