@@ -289,6 +289,7 @@
     SUBDIR += xmms-pipe
     SUBDIR += xmms-quix3dn
     SUBDIR += xmms-shn
+    SUBDIR += xmms-sid
     SUBDIR += xmms-sndfile
     SUBDIR += xmms-sndstretch
     SUBDIR += xmms-tfmx
