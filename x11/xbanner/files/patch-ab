@@ -1,0 +1,19 @@
+*** xb_check.c.orig	Mon Jan 18 23:27:31 1999
+--- xb_check.c	Mon Jan 18 23:31:08 1999
+***************
+*** 145,151 ****
+  }
+  
+  /* boolean that checks if a string is numeric */
+! int isnumber(char *s)
+  {
+    if(atoi(s)==0 && *s!='0')
+      return 0;
+--- 145,151 ----
+  }
+  
+  /* boolean that checks if a string is numeric */
+! int isnumb(char *s)
+  {
+    if(atoi(s)==0 && *s!='0')
+      return 0;
