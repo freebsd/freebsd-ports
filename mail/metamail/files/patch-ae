@@ -1,0 +1,21 @@
+*** metamail/splitmail.c.orig	Sun Jun 18 13:13:56 1995
+--- metamail/splitmail.c	Sun Jun 18 13:14:48 1995
+***************
+*** 41,48 ****
+  #define VERBOSEDELIVERYCMD VerboseDeliveryCmd
+  #else
+  extern char *getenv();
+! #define NORMALDELIVERYCMD "/usr/lib/sendmail -t -oi"
+! #define VERBOSEDELIVERYCMD "/usr/lib/sendmail -t -v -oi"
+  #endif
+  
+  usageexit() {
+--- 41,48 ----
+  #define VERBOSEDELIVERYCMD VerboseDeliveryCmd
+  #else
+  extern char *getenv();
+! #define NORMALDELIVERYCMD "/usr/sbin/sendmail -t -oi"
+! #define VERBOSEDELIVERYCMD "/usr/sbin/sendmail -t -v -oi"
+  #endif
+  
+  usageexit() {
