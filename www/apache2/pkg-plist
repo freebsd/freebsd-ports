@@ -1,5 +1,3 @@
-bin/apr-config
-bin/apu-config
 @unexec if cmp -s %D/etc/apache2/highperformance.conf %D/etc/apache2/highperformance-std.conf; then rm -f %D/etc/apache2/highperformance.conf; fi
 etc/apache2/highperformance-std.conf
 @exec [ -f %B/highperformance.conf ] || cp %B/%f %B/highperformance.conf
@@ -125,8 +123,10 @@ include/apache2/util_md5.h
 include/apache2/util_script.h
 include/apache2/util_time.h
 include/apache2/util_xml.h
+lib/apache2/apr-config
 lib/apache2/apr.exp
 lib/apache2/aprutil.exp
+lib/apache2/apu-config
 lib/apache2/libapr.a
 lib/apache2/libapr.la
 lib/apache2/libapr.so

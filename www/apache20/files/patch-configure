@@ -1,6 +1,6 @@
---- configure.orig	Thu May  2 05:53:00 2002
-+++ configure	Wed May  8 16:12:46 2002
-@@ -1503,7 +1503,7 @@
+--- configure.orig	Thu Oct  3 14:43:28 2002
++++ configure	Wed Jan  8 19:58:11 2003
+@@ -1520,7 +1520,7 @@
        $srcdir/config.layout > $pldconf
    layout_name=$LAYOUT
    . $pldconf
@@ -9,7 +9,25 @@
    for var in prefix exec_prefix bindir sbindir libexecdir mandir \
               sysconfdir datadir errordir iconsdir htdocsdir cgidir \
               includedir localstatedir runtimedir logfiledir libdir \
-@@ -15077,6 +15077,9 @@
+@@ -2627,7 +2627,7 @@
+   esac
+ 
+   # The eval makes quoting arguments work.
+-  if eval $ac_abs_srcdir/configure $ac_configure_args --cache-file=$ac_sub_cache_file --srcdir=$ac_abs_srcdir "$apache_apr_flags --prefix=$prefix --exec-prefix=$exec_prefix --libdir=$libdir --includedir=$includedir --bindir=$bindir --datadir=$datadir --with-installbuilddir=$installbuilddir"
++  if eval $ac_abs_srcdir/configure $ac_configure_args --cache-file=$ac_sub_cache_file --srcdir=$ac_abs_srcdir "$apache_apr_flags --prefix=$prefix --exec-prefix=$exec_prefix --libdir=$libdir --includedir=$includedir --bindir=$libdir --datadir=$datadir --with-installbuilddir=$installbuilddir"
+   then :
+     echo "srclib/apr configured properly"
+   else
+@@ -2908,7 +2908,7 @@
+   esac
+ 
+   # The eval makes quoting arguments work.
+-  if eval $ac_abs_srcdir/configure $ac_configure_args --cache-file=$ac_sub_cache_file --srcdir=$ac_abs_srcdir "--with-apr=../apr --prefix=$prefix --exec-prefix=$exec_prefix --libdir=$libdir --includedir=$includedir --bindir=$bindir"
++  if eval $ac_abs_srcdir/configure $ac_configure_args --cache-file=$ac_sub_cache_file --srcdir=$ac_abs_srcdir "--with-apr=../apr --prefix=$prefix --exec-prefix=$exec_prefix --libdir=$libdir --includedir=$includedir --bindir=$libdir"
+   then :
+     echo "srclib/apr-util configured properly"
+   else
+@@ -15652,6 +15652,9 @@
  
  cat >>confdefs.h <<_ACEOF
  #define SERVER_CONFIG_FILE "${rel_sysconfdir}/${progname}.conf"
