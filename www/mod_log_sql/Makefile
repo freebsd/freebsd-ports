@@ -5,9 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	mod_log_mysql
-PORTVERSION=	1.14
+PORTVERSION=	1.16
 CATEGORIES=	www databases
-MASTER_SITES=	http://www.grubbybaby.com/mod_log_mysql/
+MASTER_SITES=	http://www.grubbybaby.com/mod_log_sql/
+DISTFILES=	mod_log_sql-${PORTVERSION}
 
 MAINTAINER=	lev@serebryakov.spb.ru
 
@@ -26,17 +27,17 @@ HAVE_MOD_SSL=
 MOD_SSL_HEADER=	${LOCALBASE}/include/apache/mod_ssl.h
 
 .if exists(${MOD_SSL_HEADER})
-HAVE_MOD_SSL=	-DWANT_SSL_LOGGING
 do-configure:
 	@${ECHO_MSG} "Make with mod_ssl support"
 .else
 do-configure:
 	@${ECHO_MSG} "Make without mod_ssl support"
+	@${PERL} -pi -e 's/#define WANT_SSL_LOGGING/#undef WANT_SSL_LOGGING/' ${WRKSRC}/mod_log_mysql.c
 .endif
 
 do-build:
 	@cd ${WRKSRC} && ${APXS} -c -o ${PORTNAME}.so -I${LOCALBASE}/include \
-		-L${LOCALBASE}/lib/mysql -lmysqlclient -DMYSQLSOCKET=\\\"/tmp/mysql.sock\\\" ${HAVE_MOD_SSL} ${PORTNAME}.c
+		-L${LOCALBASE}/lib/mysql -lmysqlclient ${PORTNAME}.c
 
 do-install:
 	cd ${WRKSRC} && ${APXS} -i -n${PORTNAME:S/^mod_//}  -A ${PORTNAME}.so
