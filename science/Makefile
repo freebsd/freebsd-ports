@@ -1,6 +1,7 @@
 # $FreeBSD$
 #
 
+    SUBDIR += 2dhf
     SUBDIR += bblimage
     SUBDIR += chemtool
 #    SUBDIR += chemtool-devel

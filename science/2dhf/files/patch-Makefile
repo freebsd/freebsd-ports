@@ -1,0 +1,35 @@
+--- Makefile.orig	Sat Jan 18 08:19:53 2003
++++ Makefile	Thu Jul 24 17:40:01 2003
+@@ -55,8 +55,9 @@
+ 
+ # set system type/compiler
+ # available keywords are: cray, dec, ibm, lahey, linux, sgi, solaris
++# and freebsd
+ 
+-SYSTEM = linux
++SYSTEM = freebsd
+ 
+ # if BLAS library is available set the BLAS variable to yes
+ BLAS = no
+@@ -145,6 +146,21 @@
+ 
+ 	CC = gcc
+ 	CFLAGS =
++endif	
++
++# FreeBSD 
++ifeq ($(SYSTEM),freebsd)
++	FC = %%FC%%
++	FFLAGS = %%FFLAGS%%
++#	-fstrength-reduce -funroll-loops
++#	FFLAGS = -O1 -malign-double 
++#       FFLAGS = -g -C 
++	FFLAGS_ADD =  -w -ffixed-line-length-none
++	FLIB = -L%%LOCALBASE%%/lib -lf77blas -latlas
++	BLAS = yes
++
++	CC = %%CC%%
++	CFLAGS = %%CFLAGS%%
+ endif	
+ 
+ # SGI
