@@ -7,10 +7,30 @@ share/xml/docbook/%%DTD_VERSION%%/dbgenent.mod
 share/xml/docbook/%%DTD_VERSION%%/dbhierx.mod
 share/xml/docbook/%%DTD_VERSION%%/dbnotnx.mod
 share/xml/docbook/%%DTD_VERSION%%/dbpoolx.mod
-@unexec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% remove %%DOCBOOKDIR%%/docbook.cat
+@unexec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% remove CATALOG %%DOCBOOKDIR%%/docbook.cat
 share/xml/docbook/%%DTD_VERSION%%/docbook.cat
 @exec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% add CATALOG %%DOCBOOKDIR%%/docbook.cat
 share/xml/docbook/%%DTD_VERSION%%/docbookx.dtd
+@exec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% add public "-//OASIS//ELEMENTS DocBook XML Information Pool V4.1.2//EN" file://%%DOCBOOKDIR%%/dbpoolx.mod
+@exec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% add public "-//OASIS//DTD DocBook XML V4.1.2//EN" file://%%DOCBOOKDIR%%/docbookx.dtd
+@exec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% add public "-//OASIS//ENTITIES DocBook XML Character Entities V4.1.2//EN" file://%%DOCBOOKDIR%%/dbcentx.mod
+@exec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% add public "-//OASIS//ENTITIES DocBook XML Notations V4.1.2//EN" file://%%DOCBOOKDIR%%/dbnotnx.mod
+@exec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% add public "-//OASIS//ENTITIES DocBook XML Additional General Entities V4.1.2//EN" file://%%DOCBOOKDIR%%/dbgenent.mod
+@exec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% add public "-//OASIS//ELEMENTS DocBook XML Document Hierarchy V4.1.2//EN" file://%%DOCBOOKDIR%%/dbhierx.mod
+@exec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% add public "-//OASIS//DTD XML Exchange Table Model 19990315//EN" file://%%DOCBOOKDIR%%/soextblx.dtd
+@exec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% add public "-//OASIS//DTD DocBook XML CALS Table Model V4.1.2//EN" file://%%DOCBOOKDIR%%/calstblx.dtd
+@exec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% add rewriteSystem "http://www.oasis-open.org/docbook/xml/4.1.2" file://%%DOCBOOKDIR%%
+@exec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% add rewriteURI "http://www.oasis-open.org/docbook/xml/4.1.2" file://%%DOCBOOKDIR%%
+@unexec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% remove public "-//OASIS//ELEMENTS DocBook XML Information Pool V4.1.2//EN"
+@unexec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% remove public "-//OASIS//DTD DocBook XML V4.1.2//EN"
+@unexec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% remove public "-//OASIS//ENTITIES DocBook XML Character Entities V4.1.2//EN"
+@unexec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% remove public "-//OASIS//ENTITIES DocBook XML Notations V4.1.2//EN"
+@unexec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% remove public "-//OASIS//ENTITIES DocBook XML Additional General Entities V4.1.2//EN"
+@unexec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% remove public "-//OASIS//ELEMENTS DocBook XML Document Hierarchy V4.1.2//EN"
+@unexec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% remove public "-//OASIS//DTD XML Exchange Table Model 19990315//EN"
+@unexec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% remove public "-//OASIS//DTD DocBook XML CALS Table Model V4.1.2//EN"
+@unexec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% remove rewriteSystem "http://www.oasis-open.org/docbook/xml/4.1.2"
+@unexec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% remove rewriteURI "http://www.oasis-open.org/docbook/xml/4.1.2"
 share/xml/docbook/%%DTD_VERSION%%/ent/iso-amsa.ent
 share/xml/docbook/%%DTD_VERSION%%/ent/iso-amsb.ent
 share/xml/docbook/%%DTD_VERSION%%/ent/iso-amsc.ent
