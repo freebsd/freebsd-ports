@@ -62,6 +62,11 @@ CONFIGURE_ARGS+=	--with-pgsql
 CONFIGURE_ARGS+=	--with-privsep
 .endif
 
+# different certificate file location?
+.if defined(WITH_CERTFILE)
+CONFIGURE_ARGS+=	--with-certfile=${WITH_CERTFILE}
+.endif
+
 # if mysql or ldap are disabled, enable pam
 .if !defined(WITH_LDAP) && !defined(WITH_MYSQL) && !defined(WITH_PGSQL)
 CONFIGURE_ARGS+=	--with-pam
@@ -99,6 +104,7 @@ pre-fetch:
 	@${ECHO_MSG} "WITH_MYSQL=1          - Support for users in MySQL databases"
 	@${ECHO_MSG} "WITH_PGSQL=1          - Support for users in PostgreSQL databases"
 	@${ECHO_MSG} "WITH_PRIVSEP=1        - Enable privilege separation"
+	@${ECHO_MSG} "WITH_CERTFILE=/path   - Set different location of certificate file for TLS"
 	@${ECHO_MSG} "WITH_LANG=lang        - Enable compilation of language support, lang is one of"
 	@${ECHO_MSG} "  english, german, romanian, french, french-funny, polish, spanish,"
 	@${ECHO_MSG} "  dutch, italian, brazilian-portuguese, danish, slovak, korean,"
