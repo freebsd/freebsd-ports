@@ -1,0 +1,22 @@
+bin/kwebget
+share/applnk/Internet/kwebget.desktop
+share/doc/HTML/de/kwebget/index-1.html
+share/doc/HTML/de/kwebget/index-2.html
+share/doc/HTML/de/kwebget/index-3.html
+share/doc/HTML/de/kwebget/index-4.html
+share/doc/HTML/de/kwebget/index-5.html
+share/doc/HTML/de/kwebget/index.html
+share/doc/HTML/de/kwebget/logotp3.gif
+share/doc/HTML/en/kwebget/index-1.html
+share/doc/HTML/en/kwebget/index-2.html
+share/doc/HTML/en/kwebget/index-3.html
+share/doc/HTML/en/kwebget/index-4.html
+share/doc/HTML/en/kwebget/index-5.html
+share/doc/HTML/en/kwebget/index.html
+share/doc/HTML/en/kwebget/logotp3.gif
+share/icons/hicolor/32x32/apps/kwebget.png
+share/icons/locolor/16x16/apps/mini-kwebget.png
+share/locale/de/LC_MESSAGES/kwebget.mo
+share/locale/fr/LC_MESSAGES/kwebget.mo
+@dirrm share/doc/HTML/de/kwebget
+@dirrm share/doc/HTML/en/kwebget

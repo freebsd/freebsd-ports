@@ -28,6 +28,7 @@
     SUBDIR += jmirror
     SUBDIR += junglemonkey
     SUBDIR += kmago
+    SUBDIR += kwebget
     SUBDIR += lftp
     SUBDIR += llnlxdir
     SUBDIR += llnlxftp
