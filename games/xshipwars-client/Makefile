@@ -14,7 +14,7 @@ DISTFILES=	xsw1.23.tgz stimages1.3.tgz
 MAINTAINER=	troll@digitalspark.net
 
 WRKSRC=		${WRKDIR}/xsw1.23/client
-
+USE_XLIB=	YES
 USE_GMAKE=	YES
 MAKEFILE=	Makefile.FreeBSD
 
