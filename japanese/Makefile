@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.113 1998/04/28 15:21:04 kuriyama Exp $
+# $Id: Makefile,v 1.114 1998/05/02 14:06:35 kuriyama Exp $
 #
 
     SUBDIR += Canna
@@ -13,6 +13,7 @@
     SUBDIR += dserver
     SUBDIR += dvi2ps
     SUBDIR += dvi2tty
+    SUBDIR += dvipsk
     SUBDIR += ebw3
     SUBDIR += elvis
     SUBDIR += escpf
