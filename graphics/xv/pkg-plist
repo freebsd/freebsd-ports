@@ -1,4 +1,3 @@
-@cwd /usr/X11R6
 bin/xv
 bin/bggen
 bin/vdcomp

@@ -60,15 +60,3 @@
  
  DEFINES= $(SCO) $(UNIX) $(NODIRENT) $(VPRINTF) $(TIMERS) \
  	$(HPUX7) $(JPEG) $(TIFF) $(PDS) $(DXWM) $(RAND) \
---- ./vdcomp.c.org	Thu Dec 22 14:34:47 1994
-+++ ./vdcomp.c	Wed Jul  5 03:39:26 1995
-@@ -108,7 +108,8 @@
-      !defined(bsd43)                     && \
-      !defined(aux)                       && \
-      !defined(__bsdi__)                  && \
--     !defined(sequent)
-+     !defined(sequent)			 && \
-+     !defined(__FreeBSD__)
- 
- #  if defined(hp300) || defined(hp800) || defined(NeXT)
- #   include <sys/malloc.h>                /* it's in 'sys' on HPs and NeXT */
