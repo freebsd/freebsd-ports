@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=		math
 MASTER_SITES=		http://www.angelfire.com/linux/linuxjeff/mtrxmath/files/
 
-MAINTAINER=		greid@ukug.uk.freebsd.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=	A small tool for matrix mathemetics
 
 USE_GETOPT_LONG=yes

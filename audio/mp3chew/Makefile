@@ -14,7 +14,7 @@ MASTER_SITES=	# none left
 # the project isn't available on freshmeat.net anymore.
 # informed maintainer - edwin 20021226
 
-MAINTAINER=	greid@ukug.uk.freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program to rename mismatched and garbled MP3 filenames
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

@@ -13,7 +13,7 @@ DISTNAME=	mudsh
 EXTRACT_SUFX=
 EXTRACT_ONLY=
 
-MAINTAINER=	greid@ukug.uk.freebsd.org
+MAINTAINER=	ports@FreeBSD.og
 COMMENT=	An "intelligent" game-like shell
 
 NO_WRKSUBDIR=	yes

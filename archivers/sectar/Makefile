@@ -11,7 +11,7 @@ CATEGORIES=		archivers
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	star
 
-MAINTAINER=		greid@ukug.uk.freebsd.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A program to create encrypted tar archives
 
 USE_GETOPT_LONG=	yes

@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://software.senko.net/pub/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	greid@ukug.uk.freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A file modification/creation watcher
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
