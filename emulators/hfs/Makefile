@@ -8,7 +8,7 @@
 PORTNAME=	hfs
 PORTVERSION=	0.37
 CATEGORIES=	emulators
-MASTER_SITES=	ftp://ftp.obs-besancon.fr/pub/outgoing/
+MASTER_SITES=	ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/jmz/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/./_/}
 
 MAINTAINER=	jmz@FreeBSD.org
