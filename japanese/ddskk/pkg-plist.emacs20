@@ -23,8 +23,6 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-develop.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-dic.el
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-dic.elc
-%%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-e21.el
-%%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-e21.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-gadget.el
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-gadget.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-isearch.el
