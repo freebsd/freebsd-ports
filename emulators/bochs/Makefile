@@ -9,7 +9,7 @@
 PORTNAME=	bochs
 PORTVERSION=	2000.0325
 CATEGORIES= 	emulators
-MASTER_SITES= 	ftp://ftp.bochs.com/pub/
+MASTER_SITES= 	ftp://ftp.bochs.com/bochs/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/}a
 
 MAINTAINER=	ports@FreeBSD.org
