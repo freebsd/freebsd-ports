@@ -1,0 +1,9 @@
+       Syncal  reads  a  current  ical calendar file, an archived
+       ical calendar file from the last time syncal was run,  and
+       a  Palm  device DateBook database and reconciles them.  It
+       creates a new ical calendar file which replaces  both  the
+       current and archived ones and updates the Pilot DateBookDB
+       to coincide with them.
+
+       Once syncal is started, the user must  invoke  HotSync  on
+       the target device.
