@@ -18,9 +18,12 @@ DISTNAME=	${PORTNAME}_${PORTVERSION:S/.p/pre/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Multibody Dynamic Simulation Library
 
+LIB_DEPENDS=	glut.3:${PORTSDIR}/graphics/libglut
+
 USE_BZIP2=	yes
 USE_GL=		yes
 USE_GMAKE=	yes
+USE_PERL5_BUILD=yes
 MAKE_ENV=	OPENGLINCDIR="${X11BASE}/include" \
 		OPENGLLIBDIR="${X11BASE}/lib" \
 		CXXFLAGS="${CXXFLAGS} ${PTHREAD_CFLAGS}" \
