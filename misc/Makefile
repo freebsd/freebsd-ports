@@ -68,7 +68,6 @@
     SUBDIR += gtkfind
     SUBDIR += gtl
     SUBDIR += gwhich
-    SUBDIR += gyvescm
     SUBDIR += hello
     SUBDIR += heyu
     SUBDIR += iselect
