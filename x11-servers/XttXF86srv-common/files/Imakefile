@@ -35,7 +35,7 @@ initialize::
 	${ECHO_MSG} "  Now checking your XFree86 environment."; \
 	rm -f ${CONFFILE}; \
 	${ECHO} "#define FreeTypeLibDir ${LOCALBASE}/lib" >> ${CONFFILE}; \
-	${ECHO} "#define FreeTypeIncDir ${LOCALBASE}/include" >> ${CONFFILE}; \
+	${ECHO} "#define FreeTypeIncDir ${LOCALBASE}/include/freetype" >> ${CONFFILE}; \
 	${ECHO} "#undef XF86SVGAServer" >> ${CONFFILE}; \
 	${ECHO} "#undef XF86VGA16Server" >> ${CONFFILE}; \
 	${ECHO} "#undef XF86VGA16DualServer" >> ${CONFFILE}; \

@@ -16,8 +16,10 @@ include/X11/fonts/codeconv/xttcommon.h
 lib/modules/codeconv/ARABIC.so
 lib/modules/codeconv/ARMSCII8.so
 lib/modules/codeconv/BIG5.so
+lib/modules/codeconv/BIG5ETEN.so
 lib/modules/codeconv/DOSENCODING.so
 lib/modules/codeconv/GB2312.so
+lib/modules/codeconv/GEORGIAN.so
 lib/modules/codeconv/ISO8859_1.so
 lib/modules/codeconv/ISO8859_10.so
 lib/modules/codeconv/ISO8859_11.so
@@ -42,7 +44,7 @@ lib/modules/codeconv/TCVN.so
 lib/modules/codeconv/VISCII.so
 lib/libfont.a
 lib/libfont.so
-lib/libfont.so.1.1
+lib/libfont.so.1.3
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @dirrm share/doc/Xtt
