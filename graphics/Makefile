@@ -12,6 +12,7 @@
     SUBDIR += aero
     SUBDIR += aview
     SUBDIR += camediaplay
+    SUBDIR += chbg
     SUBDIR += cqcam
     SUBDIR += dc20ctrl
     SUBDIR += dc20pack
