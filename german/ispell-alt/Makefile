@@ -5,14 +5,13 @@
 # $FreeBSD$
 #
 
+PORTNAME=	ispell
+CATEGORIES=	german
+PKGNAMESUFFIX=	-alt-19991219
+
 MAINTAINER=	alex@FreeBSD.org
 
 ISPELL_DEALT=	yes
-PORTNAME=	ispell
-PORTVERSION=	19991219
-PORTREVISION=	3
-CATEGORIES=	german
-PKGNAMESUFFIX=	-alt
 MASTERDIR=	${.CURDIR}/../../textproc/ispell
 
 .if exists(${.CURDIR}/Makefile.local)
@@ -20,4 +19,3 @@ MASTERDIR=	${.CURDIR}/../../textproc/ispell
 .endif
 
 .include        "${MASTERDIR}/Makefile"
-
