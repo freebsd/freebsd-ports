@@ -6,10 +6,13 @@
 #
 
 PORTNAME=	macopix
-PORTVERSION=	0.9.0
+PORTVERSION=	1.0.2
 PORTREVISION=	0
 CATEGORIES=	games
 MASTER_SITES=	http://kurumi.sakura.ne.jp/~chimari/macopix/
+.if defined(WITH_GTK2)
+PKGNAMESUFFIX=	-gtk2
+.endif
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${RESTRICTED_FILES}
 
 MAINTAINER=	esu@yk.rim.or.jp
@@ -29,15 +32,22 @@ RESTRICTED_FILES= \
 		macopix-mascot-pia2-ja-1.00.tar.gz \
 		macopix-mascot-triangle_heart-ja-1.00.tar.gz \
 		macopix-mascot-tsukihime-ja-1.00.tar.gz \
-		macopix-mascot-marimite-ja-0.70.tar.gz
+		macopix-mascot-marimite-ja-0.80.tar.gz
 
 USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
+.if defined(WITH_GTK2)
+USE_GNOME=	gtk20
+.else
 USE_GNOME=	gtk12 gdkpixbuf
+.endif
 USE_GMAKE=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-transform-name=""
+.if defined(WITH_GTK2)
+CONFIGURE_ARGS+=	--with-gtk2
+.endif
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include"
 
