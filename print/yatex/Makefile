@@ -15,7 +15,7 @@ MAINTAINER=	taoka@FreeBSD.org
 
 .if defined(XEMACS-MULE)
 BUILD_DEPENDS=	xemacs:${PORTSDIR}/japanese/xemacs21-canna \
-		${LOCALBASE}/lib/xemacs/xemacs-packages/pkginfo/MANIFEST.zenirc:${PORTSDIR}/editors/xemacs-sumo-packages \
+		{LOCALBASE}/${EMACS_PACKAGESDIR}/../xemacs-packages/lisp/texinfo/texinfo.el:${PORTSDIR}/editors/xemacs-packages \
 		nkf:${PORTSDIR}/japanese/nkf
 .endif
 PKGINSTALL=	${WRKDIR}/INSTALL
