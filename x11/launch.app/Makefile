@@ -13,6 +13,8 @@ DISTNAME=	${PORTNAME:S/l/L/}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+FORBIDDEN=	"Buffer overflows in setuid root code"
+
 LIB_DEPENDS=	wraster.4:${PORTSDIR}/x11-wm/windowmaker
 
 WRKSRC=		${WRKDIR}/${PORTNAME:S/l/L/}
