@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.86 1998/08/10 00:13:25 steve Exp $
+# $Id: Makefile,v 1.87 1998/08/12 22:52:22 asami Exp $
 #
 
     SUBDIR += EZWGL
@@ -24,7 +24,6 @@
     SUBDIR += gifmerge
     SUBDIR += giftool
     SUBDIR += giftrans
-#    SUBDIR += gimp-devel
     SUBDIR += gimp-manual
     SUBDIR += gimp1
     SUBDIR += gplot
