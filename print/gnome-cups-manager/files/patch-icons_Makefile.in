@@ -1,0 +1,15 @@
+--- icons/Makefile.in.orig	Tue Jul 15 13:57:05 2003
++++ icons/Makefile.in	Tue Jul 15 13:58:07 2003
+@@ -118,10 +118,10 @@
+ WARN_CFLAGS = @WARN_CFLAGS@
+ cxxflags_set = @cxxflags_set@
+ 
+-devicedir = $(datadir)/icons/gnome/48x48/devices
++devicedir = $(prefix)/$(DATADIRNAME)/icons/gnome/48x48/devices
+ device_DATA = gnome-dev-printer-network.png gnome-dev-printer-new.png
+ 
+-emblemdir = $(datadir)/icons/gnome/48x48/emblems
++emblemdir = $(prefix)/$(DATADIRNAME)/icons/gnome/48x48/emblems
+ emblem_DATA = emblem-default.png emblem-paused.png
+ 
+ pixmapdir = $(datadir)/pixmaps/gnome-cups-manager
