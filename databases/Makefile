@@ -23,6 +23,7 @@
     SUBDIR += fastdb
     SUBDIR += firebird
     SUBDIR += firebird-devel
+    SUBDIR += fireprofile
     SUBDIR += freetds
     SUBDIR += gadfly
     SUBDIR += gauche-gdbm
