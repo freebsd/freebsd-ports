@@ -25,7 +25,7 @@ SCRIPTS_ENV+=	WRKDIR="${WRKDIR}"
 
 WEBMIN_MODULES=	sendmail-0.91-1.wbm.gz bind8-0.91-1.wbm.gz
 WEBMIN_THEMES=
-		
+
 post-extract:
 	@if [ "${WEBMIN_MODULES}" != "" ]; then \
 		for webmin_module in ${WEBMIN_MODULES}; do \
@@ -76,7 +76,7 @@ post-install:
 	@cd ${PREFIX} ; find lib/webmin -type f -o -type l | sort \
 		> ${WRKDIR}/PLIST.lib-webmin
 	@cd ${PREFIX} ; find lib/webmin -type d | sort -r \
-	    	| ${SED} -e 's/^/@dirrm /g' \
+		| ${SED} -e 's/^/@dirrm /g' \
 		>> ${WRKDIR}/PLIST.lib-webmin
 
 	@${ECHO} "r ${TMPPLIST}"		> ${WRKDIR}/ex.script
