@@ -8745,6 +8745,7 @@ sudoscript	ports/security/sudoscript
 sunclock	ports/astro/sunclock
 sup_port	ports/net/sup
 super		ports/security/super
+super_methane_brothers	ports/games/super_methane_brothers
 superkaramba	ports/deskutils/superkaramba
 superlu		ports/math/superlu
 superlu_mt	ports/math/superlu_mt
