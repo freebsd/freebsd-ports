@@ -6749,6 +6749,7 @@ p5-Inline-Tcl	ports/devel/p5-Inline-Tcl
 p5-Ioctl	ports/devel/p5-Ioctl
 p5-JUNOScript	ports/net-mgmt/p5-JUNOScript
 p5-Jabber-Connection	ports/net/p5-Jabber-Connection
+p5-Kwiki	ports/www/p5-Kwiki
 p5-LEGO-RCX	ports/misc/p5-LEGO-RCX
 p5-LJ-Cache	ports/sysutils/p5-LJ-Cache
 p5-LJ-SpellCheck	ports/textproc/p5-LJ-SpellCheck
