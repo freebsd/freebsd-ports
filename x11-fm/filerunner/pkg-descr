@@ -1,3 +1,5 @@
 Filemanager with FTP capabilities. Uses Tcl/Tk.
 Author: hch@cd.chalmers.se <Henrik Harmsen>
-Copying is free. Commercial Usage: US$20. Personal usage: free.
+
+FileRunner is distributed under the GNU General Public License since
+FileRunner version 2.4.1
