@@ -86,6 +86,7 @@
     SUBDIR += lupe
     SUBDIR += mgapdesk
     SUBDIR += mlterm
+    SUBDIR += multi-aterm
     SUBDIR += multi-gnome-terminal
     SUBDIR += mxico
     SUBDIR += numlockx
