@@ -1,5 +1,5 @@
---- makefile.orig	Sun Nov 28 17:17:52 1999
-+++ makefile	Mon Dec 13 16:32:31 1999
+--- Makefile.orig	Fri May  5 12:57:18 2000
++++ Makefile	Thu May 11 16:03:04 2000
 @@ -7,13 +7,12 @@
  
  ####### Compiler, tools and options
@@ -8,12 +8,13 @@
 -CFLAGS	=	-Wall -W -O2 -fno-strength-reduce
 -INCPATH	=	-I$(QTDIR)/include
 -LINK	=	g++
-+CFLAGS	+=	-Wall -W -fno-strength-reduce
-+INCPATH	=	-I$(X11BASE)/include/qt2 -I$(X11BASE)/include
-+LINK	=	$(CC)
- LFLAGS	=	
+-LFLAGS	=	-static
 -LIBS	=	-L$(QTDIR)/lib -lqt -L/usr/X11R6/lib -lX11
 -MOC	=	moc
++CFLAGS	+=	-Wall -W -fno-strength-reduce
++INCPATH	=	-I$(X11BASE)/include/qt2 -I$(X11BASE)/include
++LINK	=	$(CXX)
++LFLAGS	=	
 +LIBS	=	-L$(X11BASE)/lib -lqt2 -lX11
 +MOC	=	moc2
  

@@ -6,19 +6,17 @@
 #
 
 PORTNAME=	qcad
-PORTVERSION=	1.3.3
+PORTVERSION=	1.4.0
 CATEGORIES=	cad
-MASTER_SITES=	http://www.ultraviolet.org/qcad/
-DISTNAME=	qcad_source
+MASTER_SITES=	http://download.sourceforge.net/qcad/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	will@FreeBSD.org
 
 USE_XLIB=	yes
-MAKEFILE=	makefile
 MAKE_ENV=	CC="${CXX}"
 USE_QT2=	yes
-
-BROKEN=		"Compiler error"
+NO_WRKSUBDIR=	yes
 
 QCADDIR=	${PREFIX}/lib/qcad
 QCADDOCDIR=	${PREFIX}/share/doc/qcad
