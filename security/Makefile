@@ -25,6 +25,7 @@
     SUBDIR += gag
     SUBDIR += gnupg
     SUBDIR += gnupg-rsa
+    SUBDIR += gpa
     SUBDIR += gpasman
     SUBDIR += gtkportscan
     SUBDIR += heimdal
