@@ -1,54 +1,18 @@
---- config/Makefile.in.orig	Thu Apr 12 15:27:32 2001
-+++ config/Makefile.in	Fri May 11 07:01:47 2001
-@@ -129,11 +129,11 @@
- 	$(mkinstalldirs) $(DESTDIR)$(configdir)
- 	@list='$(config_DATA)'; for p in $$list; do \
+--- config/Makefile.in.orig	Thu Aug 30 12:02:31 2001
++++ config/Makefile.in	Thu Aug 30 12:03:21 2001
+@@ -136,11 +136,11 @@
+ 	$(mkinstalldirs) $(DESTDIR)$(pkgconfdir)
+ 	@list='$(pkgconf_DATA)'; for p in $$list; do \
  	  if test -f $(srcdir)/$$p; then \
--	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(configdir)/$$p"; \
--	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(configdir)/$$p; \
-+	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(configdir)/$$p.dist"; \
-+	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(configdir)/$$p.dist; \
+-	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(pkgconfdir)/$$p"; \
+-	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(pkgconfdir)/$$p; \
++	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(pkgconfdir)/$$p.dist"; \
++	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(pkgconfdir)/$$p.dist; \
  	  else if test -f $$p; then \
--	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(configdir)/$$p"; \
--	    $(INSTALL_DATA) $$p $(DESTDIR)$(configdir)/$$p; \
-+	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(configdir)/$$p.dist"; \
-+	    $(INSTALL_DATA) $$p $(DESTDIR)$(configdir)/$$p.dist; \
+-	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(pkgconfdir)/$$p"; \
+-	    $(INSTALL_DATA) $$p $(DESTDIR)$(pkgconfdir)/$$p; \
++	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(pkgconfdir)/$$p.dist"; \
++	    $(INSTALL_DATA) $$p $(DESTDIR)$(pkgconfdir)/$$p.dist; \
  	  fi; fi; \
  	done
  
-@@ -145,16 +145,6 @@
- 
- install-pamDATA: $(pam_DATA)
- 	@$(NORMAL_INSTALL)
--	$(mkinstalldirs) $(DESTDIR)$(pamdir)
--	@list='$(pam_DATA)'; for p in $$list; do \
--	  if test -f $(srcdir)/$$p; then \
--	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(pamdir)/$$p"; \
--	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(pamdir)/$$p; \
--	  else if test -f $$p; then \
--	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(pamdir)/$$p"; \
--	    $(INSTALL_DATA) $$p $(DESTDIR)$(pamdir)/$$p; \
--	  fi; fi; \
--	done
- 
- uninstall-pamDATA:
- 	@$(NORMAL_UNINSTALL)
-@@ -209,7 +199,7 @@
- install-strip:
- 	$(MAKE) $(AM_MAKEFLAGS) AM_INSTALL_PROGRAM_FLAGS=-s install
- installdirs:
--	$(mkinstalldirs)  $(DESTDIR)$(configdir) $(DESTDIR)$(pamdir)
-+	$(mkinstalldirs)  $(DESTDIR)$(configdir)
- 
- 
- mostlyclean-generic:
-@@ -258,9 +248,6 @@
- 
- @USE_PAM_TRUE@netatalk:
- @USE_PAM_TRUE@	cp -f $(PAMD) netatalk
--
--@USE_PAM_TRUE@install-data-local: netatalk
--@USE_PAM_TRUE@	$(INSTALL) netatalk $(DESTDIR)$(pamdir)/
- 
- # Tell versions [3.59,3.63) of GNU make to not export all variables.
- # Otherwise a system limit (for SysV at least) may be exceeded.

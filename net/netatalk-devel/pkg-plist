@@ -32,6 +32,7 @@ bin/nbplkup
 bin/nbprgstr
 bin/nbpunrgstr
 bin/netatalk-config
+bin/netatalkshorternamelinks.pl
 bin/pap
 bin/papstatus
 bin/parsecode
@@ -74,27 +75,34 @@ etc/afpd.conf.dist
 @unexec if cmp -s %D/etc/atalkd.conf %D/etc/atalkd.conf.dist; then rm -f %D/etc/atalkd.conf; fi
 etc/atalkd.conf.dist
 @exec [ ! -f %B/atalkd.conf ] && cp %B/%f %B/atalkd.conf
-@unexec if cmp -s %D/etc/netatalk.conf %D/etc/netatalk.conf.dist; then rm -f %D/etc/netatalk.conf; fi
-etc/netatalk.conf.dist
-@exec [ ! -f %B/netatalk.conf ] && cp %B/%f %B/netatalk.conf
-@unexec if cmp -s %D/etc/netatalk.pamd %D/etc/netatalk.pamd.dist; then rm -f %D/etc/netatalk.pamd; fi
-etc/netatalk.pamd.dist
-@exec [ ! -f %B/netatalk.pamd ] && cp %B/%f %B/netatalk.pamd
 @unexec if cmp -s %D/etc/papd.conf %D/etc/papd.conf.dist; then rm -f %D/etc/papd.conf; fi
 etc/papd.conf.dist
 @exec [ ! -f %B/papd.conf ] && cp %B/%f %B/papd.conf
 etc/nls/maccode.437
 etc/nls/maccode.850
 etc/nls/maccode.iso8859-1
+etc/nls/maccode.iso8859-1.adapted
 etc/rc.d/netatalk.sh
 etc/uams/uams_clrtxt.so
 etc/uams/uams_dhx.so
 %%NETATALKPAM%%etc/uams/uams_dhx_pam.so
+%%NETATALKPAM%%etc/uams/uams_dhx_pam.a
+%%NETATALKPAM%%etc/uams/uams_dhx_pam.la
 etc/uams/uams_dhx_passwd.so
+etc/uams/uams_dhx_passwd.a
+etc/uams/uams_dhx_passwd.la
 etc/uams/uams_guest.so
+etc/uams/uams_guest.a
+etc/uams/uams_guest.la
 %%NETATALKPAM%%etc/uams/uams_pam.so
+%%NETATALKPAM%%etc/uams/uams_pam.a
+%%NETATALKPAM%%etc/uams/uams_pam.la
 etc/uams/uams_passwd.so
+etc/uams/uams_passwd.a
+etc/uams/uams_passwd.la
 etc/uams/uams_randnum.so
+etc/uams/uams_randnum.a
+etc/uams/uams_randnum.la
 @dirrm etc/nls
 @dirrm etc/uams
 include/atalk/adouble.h
@@ -133,3 +141,4 @@ include/netatalk/phase2.h
 lib/libatalk.a
 lib/libatalk.la
 share/aclocal/netatalk.m4
+share/netatalk/pagecount.ps
