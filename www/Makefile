@@ -439,7 +439,6 @@
     SUBDIR += screem
     SUBDIR += sidplug
     SUBDIR += sitecopy
-    SUBDIR += skipstone
     SUBDIR += slash
     SUBDIR += smarty
     SUBDIR += smb2www
