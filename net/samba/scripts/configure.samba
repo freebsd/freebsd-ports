@@ -11,7 +11,7 @@ if [ "${BATCH}" ]; then
 		set ${SAMBA_OPTIONS}
 	fi
 else
-	/usr/bin/dialog --title "configuration options" --clear \
+	/usr/bin/dialog --title "samba configuration options" --clear \
 		--checklist "\n\
 Please select desired options:" -1 -1 12 \
 syslog		"With syslog support" OFF \
