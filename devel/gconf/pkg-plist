@@ -16,7 +16,9 @@ include/gconf/1/gconf/gconf-listeners.h
 include/gconf/1/gconf/gconf-schema.h
 include/gconf/1/gconf/gconf-value.h
 include/gconf/1/gconf/gconf.h
+lib/GConf/1/libgconfbackend-bdb.a
 lib/GConf/1/libgconfbackend-bdb.so
+lib/GConf/1/libgconfbackend-xml.a
 lib/GConf/1/libgconfbackend-xml.so
 lib/libgconf-1.a
 lib/libgconf-1.so
@@ -43,6 +45,7 @@ share/locale/it/LC_MESSAGES/GConf.mo
 share/locale/ja/LC_MESSAGES/GConf.mo
 share/locale/ko/LC_MESSAGES/GConf.mo
 share/locale/nl/LC_MESSAGES/GConf.mo
+share/locale/nn/LC_MESSAGES/GConf.mo
 share/locale/no/LC_MESSAGES/GConf.mo
 share/locale/pt_BR/LC_MESSAGES/GConf.mo
 share/locale/ru/LC_MESSAGES/GConf.mo
