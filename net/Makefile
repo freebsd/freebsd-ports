@@ -176,6 +176,7 @@
     SUBDIR += kdenetwork2
     SUBDIR += kdetelnet
     SUBDIR += kicq
+    SUBDIR += kinkatta
     SUBDIR += kmsn
     SUBDIR += kmud
     SUBDIR += konverse

@@ -1,0 +1,109 @@
+bin/kinkatta
+share/applnk/Internet/kinkatta.desktop
+share/apps/kinkatta/icons/hicolor/22x22/actions/history.png
+share/apps/kinkatta/icons/hicolor/22x22/actions/kinkatta_bell.png
+share/apps/kinkatta/icons/hicolor/22x22/actions/kinkatta_block.png
+share/apps/kinkatta/icons/hicolor/22x22/actions/kinkatta_buddy_add.png
+share/apps/kinkatta/icons/hicolor/22x22/actions/kinkatta_buddy_remove.png
+share/apps/kinkatta/icons/hicolor/22x22/actions/kinkatta_chat_link.png
+share/apps/kinkatta/icons/hicolor/22x22/actions/kinkatta_palette.png
+share/apps/kinkatta/icons/hicolor/22x22/actions/kinkatta_pen.png
+share/apps/kinkatta/icons/hicolor/22x22/actions/kinkatta_smilies.png
+share/apps/kinkatta/icons/hicolor/22x22/actions/kinkatta_textbig.png
+share/apps/kinkatta/icons/hicolor/22x22/actions/kinkatta_textnormal.png
+share/apps/kinkatta/icons/hicolor/22x22/actions/kinkatta_textsmall.png
+share/apps/kinkatta/icons/hicolor/22x22/actions/kinkatta_time.png
+share/apps/kinkatta/icons/hicolor/22x22/actions/kinkatta_warn.png
+share/apps/kinkatta/icons/locolor/16x16/actions/kinkatta_block.png
+share/apps/kinkatta/icons/locolor/16x16/actions/kinkatta_buddy_add.png
+share/apps/kinkatta/icons/locolor/16x16/actions/kinkatta_buddy_remove.png
+share/apps/kinkatta/icons/locolor/16x16/actions/kinkatta_changepassword.png
+share/apps/kinkatta/icons/locolor/16x16/actions/kinkatta_chat_link.png
+share/apps/kinkatta/icons/locolor/16x16/actions/kinkatta_getaway.png
+share/apps/kinkatta/icons/locolor/16x16/actions/kinkatta_palette.png
+share/apps/kinkatta/icons/locolor/16x16/actions/kinkatta_pen.png
+share/apps/kinkatta/icons/locolor/16x16/actions/kinkatta_textbig.png
+share/apps/kinkatta/icons/locolor/16x16/actions/kinkatta_textnormal.png
+share/apps/kinkatta/icons/locolor/16x16/actions/kinkatta_textsmall.png
+share/apps/kinkatta/icons/locolor/16x16/actions/kinkatta_time.png
+share/apps/kinkatta/icons/locolor/16x16/actions/kinkatta_warn.png
+share/apps/kinkatta/pics/away_big.png
+share/apps/kinkatta/pics/big.png
+share/apps/kinkatta/pics/buddy_admin.png
+share/apps/kinkatta/pics/buddy_aol.png
+share/apps/kinkatta/pics/buddy_away.png
+share/apps/kinkatta/pics/buddy_info.png
+share/apps/kinkatta/pics/buddy_oscar.png
+share/apps/kinkatta/pics/buddy_unknown.png
+share/apps/kinkatta/pics/chat.png
+share/apps/kinkatta/pics/chat_big.png
+share/apps/kinkatta/pics/chatroom.png
+share/apps/kinkatta/pics/config_away.png
+share/apps/kinkatta/pics/config_chat.png
+share/apps/kinkatta/pics/config_deny.png
+share/apps/kinkatta/pics/config_main.png
+share/apps/kinkatta/pics/config_network.png
+share/apps/kinkatta/pics/config_profile.png
+share/apps/kinkatta/pics/config_sound.png
+share/apps/kinkatta/pics/config_text.png
+share/apps/kinkatta/pics/dock_away.png
+share/apps/kinkatta/pics/dock_offline.png
+share/apps/kinkatta/pics/dock_online.png
+share/apps/kinkatta/pics/face_angel.png
+share/apps/kinkatta/pics/face_bigsmile.png
+share/apps/kinkatta/pics/face_bsmile.png
+share/apps/kinkatta/pics/face_burp.png
+share/apps/kinkatta/pics/face_crossedlips.png
+share/apps/kinkatta/pics/face_cry.png
+share/apps/kinkatta/pics/face_embarrassed.png
+share/apps/kinkatta/pics/face_glasses.png
+share/apps/kinkatta/pics/face_kiss.png
+share/apps/kinkatta/pics/face_luke.png
+share/apps/kinkatta/pics/face_moneymouth.png
+share/apps/kinkatta/pics/face_oneeye.png
+share/apps/kinkatta/pics/face_sad.png
+share/apps/kinkatta/pics/face_scream.png
+share/apps/kinkatta/pics/face_smile.png
+share/apps/kinkatta/pics/face_think.png
+share/apps/kinkatta/pics/face_tongue.png
+share/apps/kinkatta/pics/face_wink.png
+share/apps/kinkatta/pics/face_yell.png
+share/apps/kinkatta/pics/icon_gaim.png
+share/apps/kinkatta/pics/icon_kit.png
+share/apps/kinkatta/pics/icon_tik.png
+share/apps/kinkatta/pics/info_big.png
+share/apps/kinkatta/pics/kinkatta.png
+share/apps/kinkatta/pics/kinkatta_bell.png
+share/apps/kinkatta/pics/kinkatta_block.png
+share/apps/kinkatta/pics/kinkatta_buddy_add.png
+share/apps/kinkatta/pics/kinkatta_buddy_remove.png
+share/apps/kinkatta/pics/kinkatta_changepassword.png
+share/apps/kinkatta/pics/kinkatta_folder_closed.png
+share/apps/kinkatta/pics/kinkatta_folder_create.png
+share/apps/kinkatta/pics/kinkatta_folder_open.png
+share/apps/kinkatta/pics/kinkatta_folder_remove.png
+share/apps/kinkatta/pics/kinkatta_getaway.png
+share/apps/kinkatta/pics/kinkatta_small.png
+share/apps/kinkatta/pics/kinkatta_small_blink.png
+share/apps/kinkatta/pics/kinkattalogo.png
+share/apps/kinkatta/pics/list_pounce.png
+share/apps/kinkatta/pics/smilies.png
+share/apps/kinkatta/sounds/BuddyArrive.au
+share/apps/kinkatta/sounds/BuddyLeave.au
+share/apps/kinkatta/sounds/Receive.au
+share/apps/kinkatta/sounds/Send.au
+share/icons/hicolor/16x16/apps/kinkatta.png
+share/icons/hicolor/32x32/apps/kinkatta.png
+share/icons/hicolor/48x48/apps/kinkatta.png
+share/icons/locolor/16x16/apps/kinkatta.png
+share/icons/locolor/32x32/apps/kinkatta.png
+@dirrm share/apps/kinkatta/sounds
+@dirrm share/apps/kinkatta/pics
+@dirrm share/apps/kinkatta/icons/locolor/16x16/actions
+@dirrm share/apps/kinkatta/icons/locolor/16x16
+@dirrm share/apps/kinkatta/icons/locolor
+@dirrm share/apps/kinkatta/icons/hicolor/22x22/actions/
+@dirrm share/apps/kinkatta/icons/hicolor/22x22
+@dirrm share/apps/kinkatta/icons/hicolor
+@dirrm share/apps/kinkatta/icons
+@dirrm share/apps/kinkatta
