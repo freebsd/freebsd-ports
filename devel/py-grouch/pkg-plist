@@ -1,3 +1,5 @@
+%%PORTDOCS%%share/doc/grouch/CHANGES.txt
+%%PORTDOCS%%share/doc/grouch/LICENSE.txt
 %%PORTDOCS%%share/doc/grouch/README.txt
 %%PORTDOCS%%share/doc/grouch/checking.txt
 %%PORTDOCS%%share/doc/grouch/schema.txt
