@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 CATEGORIES=	audio
 MASTER_SITES=	http://www.linuks.mine.nu/modplugplay/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ehaupt@critical.ch
 COMMENT=	A commandline music mod player using libmodplug
 
 LIB_DEPENDS=	modplug.0:${PORTSDIR}/audio/libmodplug
