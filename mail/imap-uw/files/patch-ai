@@ -1,0 +1,99 @@
+--- src/imapd/imapd.c.old	Sat Nov 18 05:16:29 2000
++++ src/imapd/imapd.c	Sun Dec 31 18:53:25 2000
+@@ -17,7 +17,7 @@
+  * The full text of our legal notices is contained in the file called
+  * CPYRIGHT, included with this Distribution.
+  */
+-
++
+ /* Primary I/O calls */
+ 
+ #define PBIN getchar		/* primary byte input */
+@@ -43,6 +43,11 @@
+ #include "c-client.h"
+ #include <sys/stat.h>
+ 
++#ifdef DRAC_AUTH
++#include <netinet/in.h>
++#include <arpa/inet.h>
++#include <stdlib.h>
++#endif /* DRAC_AUTH */
+ 
+ /* Timeouts and timers */
+ 
+@@ -66,7 +71,7 @@
+ #define SELECT 1
+ #define OPEN 2
+ #define LOGOUT 3
+-
++
+ /* Body text fetching */
+ 
+ typedef struct text_args {
+@@ -98,7 +103,7 @@
+   char *date;			/* current date */
+   STRING *message;		/* strintstruct of message */
+ } MSGDATA;
+-
++
+ /* Function prototypes */
+ 
+ int main (int argc,char *argv[]);
+@@ -181,6 +186,12 @@
+ 
+ /* Global storage */
+ 
++#ifdef DRAC_AUTH
++#define DRACTIMEOUT 10*60       /* check every 10 minutes */
++time_t lastdrac = 0;          /* time of last drac check */
++extern char *getenv ();
++#endif /* DRAC_AUTH */
++
+ char *version = "2000.284";	/* version number of this server */
+ time_t alerttime = 0;		/* time of last alert */
+ time_t sysalerttime = 0;	/* time of last system alert */
+@@ -1131,6 +1142,44 @@
+ 	      lasterror ());
+       return;
+     }
++
++#ifdef DRAC_AUTH
++    if (time (0) > lastdrac + DRACTIMEOUT)
++    {
++        FILE *dracconf;
++        char host[100];
++        char *drachost;
++        char *err;
++        char *p;
++
++        if ( (dracconf = fopen(ETC_DIR "/dracd.host", "r")) == NULL)
++        {
++          syslog (LOG_INFO, "dracd: error opening /etc/mail/dracd.host config file");
++          exit(1);
++        }
++
++        fgets(host, 100, dracconf);
++        p = strchr(host, '\n');
++        if(p != NULL)
++          *p = '\0';
++        fclose(dracconf);
++
++        if( drachost = (host) )
++        {
++            struct sockaddr_in sin;
++            int sinlen = sizeof (struct sockaddr_in);
++            char *client = getpeername (0,(struct sockaddr *) &sin,(void *) &sinlen) ?
++              "UNKNOWN" : inet_ntoa (sin.sin_addr);
++
++            lastdrac = time(0);
++
++            if (dracauth(drachost, inet_addr(client), &err) != 0)
++                syslog (LOG_INFO, err);
++            else
++                syslog (LOG_INFO, "dracd: authorized ip %s", client);
++        }
++    }
++#endif /* DRAC_AUTH */
+ 				/* change in number of messages? */
+     if (existsquelled || (nmsgs != stream->nmsgs)) {
+       PSOUT ("* ");

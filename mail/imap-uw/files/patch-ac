@@ -20,11 +20,17 @@
 +#CCLIENTLIB = $C/c-client.a
  CC = `cat $C/CCTYPE`
 -CFLAGS = -I$C `cat $C/CFLAGS` $(EXTRACFLAGS) -DANOFILE=\"$(ANO)\" \
++.if defined(WITH_DRAC)
++CFLAGS = `cat $C/CFLAGS` -DANOFILE=\"$(ANO)\" -DETC_DIR=\"$(PREFIX)/etc\" \
++	-DALERTFILE=\"$(ALERT)\" -DUSERALERTFILE=\"$(USERALERT)\" -DDRAC_AUTH
++LDFLAGS = $(EXTRALDFLAGS) `cat $C/LDFLAGS` -ldrac
++.else
 +CFLAGS = `cat $C/CFLAGS` -DANOFILE=\"$(ANO)\" \
  	-DALERTFILE=\"$(ALERT)\" -DUSERALERTFILE=\"$(USERALERT)\"
 -LDFLAGS = $(CCLIENTLIB) `cat $C/LDFLAGS`
 +
 +LDFLAGS = $(EXTRALDFLAGS) `cat $C/LDFLAGS`
++.endif
  
  all:	imapd
  

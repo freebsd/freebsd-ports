@@ -1,6 +1,6 @@
---- src/ipopd/Makefile.orig	Tue Apr 14 15:41:55 1998
-+++ src/ipopd/Makefile	Fri Jul  7 00:27:30 2000
-@@ -32,29 +32,22 @@
+--- src/ipopd/Makefile.old	Wed Oct 25 01:55:07 2000
++++ src/ipopd/Makefile	Sun Dec 31 18:23:16 2000
+@@ -19,29 +19,27 @@
  
  
  C = ../c-client
@@ -13,8 +13,13 @@
  CC = `cat $C/CCTYPE`
 -CFLAGS = -I$C `cat $C/CFLAGS`
 -LDFLAGS = $(CCLIENTLIB) `cat $C/LDFLAGS`
++.if defined(WITH_DRAC)
++CFLAGS = `cat $C/CFLAGS` -DDRAC_AUTH -DETC_DIR=\"$(PREFIX)/etc\"
++LDFLAGS = `cat $C/LDFLAGS` -ldrac
++.else
 +CFLAGS = `cat $C/CFLAGS`
 +LDFLAGS = `cat $C/LDFLAGS`
++.endif
  
  ipopd: ipop2d ipop3d
  

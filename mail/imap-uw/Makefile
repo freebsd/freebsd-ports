@@ -20,6 +20,9 @@ DISTFILES=	${DISTNAME}.tar.Z \
 MAINTAINER=	petef@databits.net
 
 LIB_DEPENDS=	c-client4.8:${PORTSDIR}/mail/cclient
+.if defined(WITH_DRAC)
+BUILD_DEPENDS=	${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
+.endif
 
 MAN8=		ipopd.8 imapd.8
 ALL_TARGET=	bsf
@@ -45,6 +48,16 @@ do-install:
 		${WRKSRC}/src/imapd/imapd.8c ${PREFIX}/man/man8/imapd.8
 	${INSTALL_MAN} \
 		${WRKSRC}/src/ipopd/ipopd.8c ${PREFIX}/man/man8/ipopd.8
+
+.if defined(WITH_DRAC)
+post-install:
+	@${ECHO} "================================================================================"
+	@${ECHO} "To have DRAC working, you must create ${PREFIX}/etc/dracd.host, containing"
+	@${ECHO} "the hostname of the DRAC server:"
+	@${ECHO}
+	@${ECHO} "localhost"
+	@${ECHO} "================================================================================"
+.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
