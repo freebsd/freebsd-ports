@@ -89,8 +89,9 @@ do-configure:
 	${SED} -e "s=%%PREFIX%%=${PREFIX}=" -e "s=%%LOCALBASE%%=${LOCALBASE}=" \
 		${SITE} > ${WCONF}/site.config.m4
 
-.if ! defined(SENDMAIL_WITHOUT_MILTER)
 post-build:
+	( cd ${WRKSRC}/doc/op && ${MAKE} op.txt )
+.if ! defined(SENDMAIL_WITHOUT_MILTER)
 	( cd ${WRKSRC}/libmilter && ${MAKE} )
 .endif
 
@@ -156,6 +157,7 @@ post-install:
 		${TAR} -C ${PREFIX}/share/sendmail -xf -
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/doc/op/op.ps ${DOCSDIR}/op.ps
+	${INSTALL_DATA} ${WRKSRC}/doc/op/op.txt ${DOCSDIR}/op.txt
 	${INSTALL_DATA} ${WRKSRC}/devtools/README ${DOCSDIR}/DEVTOOLS
 	${INSTALL_DATA} ${WRKSRC}/sendmail/README ${DOCSDIR}/SENDMAIL
 	${INSTALL_DATA} ${WRKSRC}/mail.local/README ${DOCSDIR}/MAIL.LOCAL
