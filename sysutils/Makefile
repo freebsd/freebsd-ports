@@ -399,6 +399,7 @@
     SUBDIR += xcpustate
     SUBDIR += xdu
     SUBDIR += xfce4-battery-plugin
+    SUBDIR += xfce4-fsguard-plugin
     SUBDIR += xfce4-mcs-manager
     SUBDIR += xfce4-mcs-plugins
     SUBDIR += xfce4-minicmd-plugin

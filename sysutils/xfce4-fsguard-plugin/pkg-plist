@@ -1,0 +1,5 @@
+@comment $FreeBSD$
+lib/xfce4/panel-plugins/libfsguard.so
+lib/xfce4/panel-plugins/libfsguard.la
+lib/xfce4/panel-plugins/libfsguard.a
+@unexec rmdir %D/lib/xfce4/panel-plugins 2>/dev/null || true
