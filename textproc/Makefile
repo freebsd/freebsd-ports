@@ -41,6 +41,7 @@
     SUBDIR += grap
     SUBDIR += gsed
     SUBDIR += gtkdiff
+    SUBDIR += gutenbook
     SUBDIR += gxditview
     SUBDIR += hevea
     SUBDIR += htdig
