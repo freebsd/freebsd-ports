@@ -3,11 +3,11 @@
 # Date created:        28 March 1997
 # Whom:                Carey Jones <mcj@acquiesce.org>
 # 
-# $Id: Makefile,v 1.3 1997/06/29 11:26:01 obrien Exp $
+# $Id: Makefile,v 1.4 1997/07/09 10:21:56 max Exp $
 #
 
-DISTNAME=	slrn0.9.4.2
-PKGNAME=	slrn-0.9.4.2
+DISTNAME=	slrn0.9.4.3
+PKGNAME=	slrn-0.9.4.3
 CATEGORIES=	news
 MASTER_SITES=	ftp://space.mit.edu/pub/davis/slrn/ \
 		ftp://ftp.uni-stuttgart.de/pub/unix/misc/slang/ \
