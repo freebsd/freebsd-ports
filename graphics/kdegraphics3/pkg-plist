@@ -1,0 +1,151 @@
+bin/kdvi
+bin/kfax
+bin/kfract
+bin/kghostview
+bin/kpaint
+bin/kview
+share/applnk/Graphics/Fractal.kdelnk
+share/applnk/Graphics/KFax.kdelnk
+share/applnk/Graphics/Kdvi.kdelnk
+share/applnk/Graphics/Paint.kdelnk
+share/applnk/Graphics/kghostview.kdelnk
+share/applnk/Utilities/KView.kdelnk
+share/apps/kdvi/toolbar/back.xpm
+share/apps/kdvi/toolbar/fileopen.xpm
+share/apps/kdvi/toolbar/fileprint.xpm
+share/apps/kdvi/toolbar/finish.xpm
+share/apps/kdvi/toolbar/forward.xpm
+share/apps/kdvi/toolbar/forwpage.xpm
+share/apps/kdvi/toolbar/largetext.xpm
+share/apps/kdvi/toolbar/reload.xpm
+share/apps/kdvi/toolbar/smalltext.xpm
+share/apps/kdvi/toolbar/start.xpm
+share/apps/kdvi/toolbar/viewmag+.xpm
+share/apps/kdvi/toolbar/viewmag-.xpm
+share/apps/kfax/pics/kfax.tif
+share/apps/kfax/pics/kfaxlogo.xpm
+share/apps/kpaint/toolbar/circle.xpm
+share/apps/kpaint/toolbar/editcopy.xpm
+share/apps/kpaint/toolbar/editcut.xpm
+share/apps/kpaint/toolbar/editpaste.xpm
+share/apps/kpaint/toolbar/ellipse.xpm
+share/apps/kpaint/toolbar/filefloppy.xpm
+share/apps/kpaint/toolbar/filenew.xpm
+share/apps/kpaint/toolbar/fileopen.xpm
+share/apps/kpaint/toolbar/line.xpm
+share/apps/kpaint/toolbar/pen.xpm
+share/apps/kpaint/toolbar/rectangle.xpm
+share/apps/kpaint/toolbar/spraycan.xpm
+share/apps/kpaint/toolbar/viewmag+.xpm
+share/apps/kpaint/toolbar/viewmag-.xpm
+share/doc/HTML/en/kdvi/index.html
+share/doc/HTML/en/kfax/index-1.html
+share/doc/HTML/en/kfax/index-2.html
+share/doc/HTML/en/kfax/index-3.html
+share/doc/HTML/en/kfax/index-4.html
+share/doc/HTML/en/kfax/index-5.html
+share/doc/HTML/en/kfax/index-6.html
+share/doc/HTML/en/kfax/index.html
+share/doc/HTML/en/kfax/logotp3.gif
+share/doc/HTML/en/kfract/index.html
+share/doc/HTML/en/kfract/kfract.gif
+share/doc/HTML/en/kghostview/index-1.html
+share/doc/HTML/en/kghostview/index-2.html
+share/doc/HTML/en/kghostview/index-3.html
+share/doc/HTML/en/kghostview/index-4.html
+share/doc/HTML/en/kghostview/index-5.html
+share/doc/HTML/en/kghostview/index-6.html
+share/doc/HTML/en/kghostview/index.html
+share/doc/HTML/en/kpaint/Technic.gif
+share/doc/HTML/en/kpaint/index.html
+share/doc/HTML/en/kpaint/kpaint.html
+share/doc/HTML/en/kview/index.html
+share/doc/HTML/en/kview/kview.gif
+share/doc/HTML/en/kview/toolbar1.xpm
+share/doc/HTML/en/kview/toolbar2.xpm
+share/doc/HTML/fi/kdvi/index.html
+share/icons/kdvi.xpm
+share/icons/kfax.xpm
+share/icons/kfract.xpm
+share/icons/kghostview.xpm
+share/icons/kpaint.xpm
+share/icons/mini/kdvi.xpm
+share/icons/mini/kfax.xpm
+share/icons/mini/kghostview.xpm
+share/icons/mini/kpaint.xpm
+share/locale/cs/LC_MESSAGES/kdvi.mo
+share/locale/cs/LC_MESSAGES/kghostview.mo
+share/locale/cs/LC_MESSAGES/kpaint.mo
+share/locale/de/LC_MESSAGES/kdvi.mo
+share/locale/de/LC_MESSAGES/kghostview.mo
+share/locale/de/LC_MESSAGES/kpaint.mo
+share/locale/es/LC_MESSAGES/kdvi.mo
+share/locale/es/LC_MESSAGES/kghostview.mo
+share/locale/es/LC_MESSAGES/kpaint.mo
+share/locale/fi/LC_MESSAGES/kdvi.mo
+share/locale/fi/LC_MESSAGES/kghostview.mo
+share/locale/fi/LC_MESSAGES/kpaint.mo
+share/locale/fr/LC_MESSAGES/kdvi.mo
+share/locale/fr/LC_MESSAGES/kghostview.mo
+share/locale/fr/LC_MESSAGES/kpaint.mo
+share/locale/hr/LC_MESSAGES/kghostview.mo
+share/locale/hr/LC_MESSAGES/kpaint.mo
+share/locale/hu/LC_MESSAGES/kpaint.mo
+share/locale/it/LC_MESSAGES/kghostview.mo
+share/locale/it/LC_MESSAGES/kpaint.mo
+share/locale/nl/LC_MESSAGES/kghostview.mo
+share/locale/nl/LC_MESSAGES/kpaint.mo
+share/locale/pl/LC_MESSAGES/kdvi.mo
+share/locale/pl/LC_MESSAGES/kghostview.mo
+share/locale/pl/LC_MESSAGES/kpaint.mo
+share/locale/pt/LC_MESSAGES/kdvi.mo
+share/locale/pt/LC_MESSAGES/kghostview.mo
+share/locale/pt/LC_MESSAGES/kpaint.mo
+share/locale/ru/LC_MESSAGES/kghostview.mo
+share/locale/ru/LC_MESSAGES/kpaint.mo
+share/locale/sv/LC_MESSAGES/kghostview.mo
+share/locale/sv/LC_MESSAGES/kpaint.mo
+@dirrm share/locale/sv/LC_MESSAGES
+@dirrm share/locale/sv
+@dirrm share/locale/ru/LC_MESSAGES
+@dirrm share/locale/ru
+@dirrm share/locale/pt/LC_MESSAGES
+@dirrm share/locale/pt
+@dirrm share/locale/pl/LC_MESSAGES
+@dirrm share/locale/pl
+@dirrm share/locale/nl/LC_MESSAGES
+@dirrm share/locale/nl
+@dirrm share/locale/it/LC_MESSAGES
+@dirrm share/locale/it
+@dirrm share/locale/hu/LC_MESSAGES
+@dirrm share/locale/hu
+@dirrm share/locale/hr/LC_MESSAGES
+@dirrm share/locale/hr
+@dirrm share/locale/fr/LC_MESSAGES
+@dirrm share/locale/fr
+@dirrm share/locale/fi/LC_MESSAGES
+@dirrm share/locale/fi
+@dirrm share/locale/es/LC_MESSAGES
+@dirrm share/locale/es
+@dirrm share/locale/de/LC_MESSAGES
+@dirrm share/locale/de
+@dirrm share/locale/cs/LC_MESSAGES
+@dirrm share/locale/cs
+@dirrm share/doc/HTML/fi/kdvi
+@dirrm share/doc/HTML/fi
+@dirrm share/doc/HTML/en/kview
+@dirrm share/doc/HTML/en/kpaint
+@dirrm share/doc/HTML/en/kghostview
+@dirrm share/doc/HTML/en/kfract
+@dirrm share/doc/HTML/en/kfax
+@dirrm share/doc/HTML/en/kdvi
+@dirrm share/doc/HTML/en
+@dirrm share/doc/HTML
+@dirrm share/apps/kpaint/toolbar
+@dirrm share/apps/kpaint
+@dirrm share/apps/kfax/pics
+@dirrm share/apps/kfax
+@dirrm share/apps/kdvi/toolbar
+@dirrm share/apps/kdvi
+@dirrm share/applnk/Utilities
+@dirrm share/applnk/Graphics
