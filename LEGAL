@@ -39,6 +39,7 @@ bzip-*			ports/archivers/bzip	Some algorithms used may
 						use could render you liable 
 						to unfriendly legal action.
 cap60/*			ports/net/cap		Don't sell for profit
+cc010911rh71.tar	ports/lang/icc		No redistribution allowed
 cfs-*			ports/security/cfs	Crypto; export-controlled
 classes111_01.zip	ports/databases/jdbc-oracle816  This software is 
 						under license and export 
