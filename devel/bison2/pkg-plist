@@ -4,6 +4,7 @@ share/bison.hairy
 share/bison.simple
 @unexec install-info --delete %D/info/bison.info %D/info/dir
 info/bison.info
+@exec install-info %D/info/bison.info %D/info/dir
 share/locale/de/LC_MESSAGES/bison.mo
 share/locale/es/LC_MESSAGES/bison.mo
 share/locale/fr/LC_MESSAGES/bison.mo
