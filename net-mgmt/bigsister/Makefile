@@ -20,11 +20,19 @@ RUN_DEPENDS=	\
 		${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD \
 		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net \
-		${SITE_PERL}/${PERL_ARCH}/SNMP.pm:${PORTSDIR}/net-mgmt/p5-SNMP \
 		${SITE_PERL}/SNMP_Session.pm:${PORTSDIR}/net-mgmt/p5-SNMP_Session \
 		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI
 
+# net-snmp provides SNMP.pm. ucd-snmp does not; requires p5-SNMP.
+# Depend on net-snmp by default.
+.if defined(WITH_UCDSNMP)
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/SNMP.pm:${PORTSDIR}/net-mgmt/p5-SNMP
+.else
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/SNMP.pm:${PORTSDIR}/net-mgmt/net-snmp
+.endif
+
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 USE_RC_SUBR=	yes
 USE_REINPLACE=	yes
 NO_BUILD=	yes
