@@ -3,12 +3,11 @@
 # Date created:		17 October 1997
 # Whom:			itojun@itojun.org
 #
-# $Id: Makefile,v 1.9 1998/02/17 12:58:39 itojun Exp $
+# $Id: Makefile,v 1.10 1998/02/22 08:35:01 fenner Exp $
 #
 
 # can't use PORTSDIR here, since we haven't included bsd.port.mk
 FILESDIR=	${.CURDIR}/../../misc/ewipe/files
-PATCHDIR=	${.CURDIR}/../../misc/ewipe/patches
 PKGDIR=		${.CURDIR}/../../misc/ewipe/pkg
 COMMENT=	${.CURDIR}/pkg/COMMENT
 
