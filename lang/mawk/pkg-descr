@@ -1,0 +1,11 @@
+Version 1.3 implements a new internal design for arrays:
+
+Extensive redesign of array data structures to support large arrays and
+fast access to arrays created with split.  Many of the ideas in the
+new design were inspired by reading "The Design and Implementation of
+Dynamic Hashing Sets and Tables in Icon" by William Griswold and
+Gregg Townsend, SPE 23,351-367.
+
+Bug reports, comments, questions, etc. to 
+Mike Brennan, brennan@whidbey.com.
+ftp site: ftp.whidbey.net in ~/pub/brennan
