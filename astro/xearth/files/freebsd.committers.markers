@@ -11,7 +11,6 @@
 
 -33.55,		151.1,		"bde"				# Sydney, Australia.
 -37.7,		144.9,		"jb,danny,thepish,benno"	# Melbourne, Vic Australia
--15.8,		-47.9,		"dcs"				# Brasilia, DF, Brazil
  35.7,		139.6		"     knu"			# Tokyo, Japan
 -34.14,		138.77,		"grog"				# (CORE) Echunga, SA Australia
 -34.53,		138.35,		"newton, markp"	align=left	# Adelaide, SA Australia
@@ -58,6 +57,7 @@
  55.87,		-4.26,		"roger"				# Glasgow, UK
  56.0,		-4.5,		"gary"		align=left	# Glasgow, UK
  53.20,		-6.15,		"dwmalone"	align=left	# Dublin, Ireland
+-15.8,		-47.9,		"dcs"				# Brasilia, DF, Brazil
 -15.8,		-47.9,		"lioux"				# Brasilia, DF, Brazil
  42.1411,	-70.8453,	"jeh"				# Hanover, MA, USA
  42.34,		-71.19,		"wollman"			# Brighton, MA, USA
