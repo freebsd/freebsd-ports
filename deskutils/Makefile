@@ -12,6 +12,7 @@
     SUBDIR += dailystrips
     SUBDIR += gaddr
     SUBDIR += gcal
+    SUBDIR += gdeskcal
     SUBDIR += gemcal
     SUBDIR += genius
     SUBDIR += glabels
