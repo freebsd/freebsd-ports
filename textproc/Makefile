@@ -135,6 +135,8 @@
     SUBDIR += p5-Parse-Syslog
     SUBDIR += p5-RADIUS-UserFile
     SUBDIR += p5-RDF-Notation3
+    SUBDIR += p5-Regexp-Common
+    SUBDIR += p5-SVG
     SUBDIR += p5-Sort-ArbBiLex
     SUBDIR += p5-Sort-Fields
     SUBDIR += p5-Sort-PolySort
@@ -143,8 +145,6 @@
     SUBDIR += p5-String-Scanf
     SUBDIR += p5-String-ShellQuote
     SUBDIR += p5-String-Strip
-    SUBDIR += p5-Regexp-Common
-    SUBDIR += p5-SVG
     SUBDIR += p5-Text-Autoformat
     SUBDIR += p5-Text-Balanced
     SUBDIR += p5-Text-Bind
@@ -265,6 +265,7 @@
     SUBDIR += source-highlight
     SUBDIR += sp
     SUBDIR += tclExpat
+    SUBDIR += tclxml
     SUBDIR += tdtd.el
     SUBDIR += tex2im
     SUBDIR += texi2html
