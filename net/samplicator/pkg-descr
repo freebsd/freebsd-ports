@@ -1,0 +1,9 @@
+This small program receives UDP datagrams on a given port, and resends
+those datagrams to a specified set of receivers.  In addition, a
+sampling divisor N may be specified individually for each receiver,
+which will then only receive one in N of the received packets.
+
+WWW: http://www.switch.ch/tf-tant/floma/sw/samplicator/
+
+- Michael Lyngbol
+lyngbol@wheel.dk
