@@ -76,7 +76,6 @@
     SUBDIR += gnustep-base
     SUBDIR += gnustep-guile
     SUBDIR += gnustep-objc
-    SUBDIR += gpc
     SUBDIR += gprolog
     SUBDIR += guile
     SUBDIR += helium

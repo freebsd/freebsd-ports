@@ -56,7 +56,6 @@
     SUBDIR += edict
     SUBDIR += edict-fpw
     SUBDIR += edict-sdic
-    SUBDIR += ee
     SUBDIR += eijiro-fpw
     SUBDIR += elisa10x8
     SUBDIR += elisa8x8
@@ -146,7 +145,6 @@
     SUBDIR += kbanner
     SUBDIR += kcc
     SUBDIR += kde3-i18n
-    SUBDIR += kdevelop
     SUBDIR += kdrill
     SUBDIR += kinput2-canna
     SUBDIR += kinput2-canna+freewnn

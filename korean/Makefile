@@ -10,7 +10,6 @@
     SUBDIR += baekmukfonts-bdf
     SUBDIR += baekmukfonts-ttf
     SUBDIR += bitchx
-    SUBDIR += byeoroo
     SUBDIR += elm
     SUBDIR += engdic
     SUBDIR += eterm

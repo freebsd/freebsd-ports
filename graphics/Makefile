@@ -305,7 +305,6 @@
     SUBDIR += ruby-gdk_imlib
     SUBDIR += ruby-gdk_pixbuf
     SUBDIR += ruby-gdk_pixbuf2
-    SUBDIR += ruby-gimp
     SUBDIR += ruby-gnomecanvas2
     SUBDIR += ruby-graph
     SUBDIR += ruby-image_size
