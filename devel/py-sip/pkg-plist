@@ -1,1 +1,4 @@
-%%PYTHON_SITELIBDIR%%/libsip.so
+bin/sip
+%%PYTHON_INCLUDEDIR%%/sip.h
+%%PYTHON_SITELIBDIR%%/sip.so
+%%PYTHON_SITELIBDIR%%/sipconfig.py
