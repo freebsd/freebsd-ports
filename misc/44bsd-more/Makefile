@@ -24,10 +24,11 @@ EXAMPDIR=	${PREFIX}/share/examples/44bsd-more
 post-extract:
 	-cd ${WRKSRC} && co -d${RELDATE} RCS/*,v
 
-do-patch:
+post-patch:
 	${PERL} -pi.orig -e \
 	    's!/usr/share/misc/more.help!${PREFIX}/share/misc/44bsd-more.help!'\
 	    ${WRKSRC}/pathnames.h
+	${CP} ${FILESDIR}/queue.h ${WRKSRC}
 
 do-install:
 	${MKDIR} ${EXAMPDIR}
