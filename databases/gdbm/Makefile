@@ -11,14 +11,16 @@ CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gdbm
 
-MAINTAINER=	bjn@visi.com
+MAINTAINER=	clefevre@citeweb.net
 
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 
 MAN3=		gdbm.3
 
+INSTALL_INFO?=	install-info
+
 post-install:
-	@install-info ${PREFIX}/info/gdbm.info ${PREFIX}/info/dir
+	@${INSTALL_INFO} ${PREFIX}/info/${PORTNAME}.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>

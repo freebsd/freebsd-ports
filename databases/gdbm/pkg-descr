@@ -1,6 +1,9 @@
-GNU `dbm' is a library of functions implementing a hashed database
-on a disk file.  The software was written by Philip A. Nelson.
+The GNU `dbm' is a library of database functions that use extendible
+hashing and works similar to the standard UNIX `dbm' functions.
+These routines are provided to a programmer needing to create and
+manipulate a hashed database.
 
-Port to FreeBSD 2.1 by
-Brent J. Nordquist <bjn@visi.com>
-Mon Apr  8 06:27:31  1996
+This library exists in the FreeBSD base collection, but the GNU
+version has added functionality that is sometimes useful.
+
+WWW: http://www.gnu.org/software/gdbm/gdbm.html
