@@ -1191,6 +1191,7 @@
     SUBDIR += pyumlgraph
     SUBDIR += qextmdi
     SUBDIR += qmake
+    SUBDIR += qsa
     SUBDIR += qssl
     SUBDIR += qtk
     SUBDIR += ragel

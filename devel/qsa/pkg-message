@@ -1,0 +1,10 @@
+
+To add the QSA documentation to your QT-Assistant's profile, execute
+
+assistant -addContentfile %%PREFIX%%/share/doc/qsa/html/*.xml to add the docs
+
+and
+
+assistant -removeContentfile %%PREFIX%%/share/doc/qsa/html/*.xml to remove them
+
+

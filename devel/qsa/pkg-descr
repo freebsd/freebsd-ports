@@ -1,0 +1,5 @@
+Qt Script for Applications is a cross-platform toolkit that allows developers
+to make their C++ applications scriptable using an interpreted scripting
+language, Qt Script (based on ECMAScript/JavaScript). 
+
+WWW:	http://www.trolltech.com/products/qsa/
