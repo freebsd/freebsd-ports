@@ -30,6 +30,7 @@
     SUBDIR += cjk-lyx
     SUBDIR += clibpdf
     SUBDIR += cmpsfont
+    SUBDIR += cpp2latex
     SUBDIR += cups
     SUBDIR += detex
     SUBDIR += dvi2tty
