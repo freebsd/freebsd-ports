@@ -1,6 +1,15 @@
---- gcc/Makefile.in.orig	Thu Feb 25 12:40:16 1999
-+++ gcc/Makefile.in	Mon Mar  1 04:36:40 1999
-@@ -793,7 +793,7 @@
+--- gcc/Makefile.in.orig	Fri Aug 13 16:46:55 1999
++++ gcc/Makefile.in	Sat Oct 27 23:11:06 2001
+@@ -108,7 +108,7 @@
+ MAKEINFO = `if [ -f $(objdir)/../texinfo/makeinfo/Makefile ] ; \
+ 	then echo $(objdir)/../texinfo/makeinfo/makeinfo ; \
+ 	else echo makeinfo ; fi`
+-MAKEINFOFLAGS =
++MAKEINFOFLAGS = --no-split
+ TEXI2DVI = texi2dvi
+ # For GNUmake: let us decide what gets passed to recursive makes.
+ MAKEOVERRIDES =
+@@ -802,7 +802,7 @@
  	rm -f config.run
  
  $(srcdir)/configure: $(srcdir)/configure.in
@@ -9,7 +18,7 @@
  
  # cstamp-h.in controls rebuilding of config.in.
  # It is named cstamp-h.in and not stamp-h.in so the mostlyclean rule doesn't
-@@ -806,7 +806,7 @@
+@@ -815,7 +815,7 @@
  # ??? Newer versions have a maintainer mode that may be useful here.
  $(srcdir)/config.in: $(srcdir)/cstamp-h.in
  $(srcdir)/cstamp-h.in: $(srcdir)/configure.in $(srcdir)/acconfig.h

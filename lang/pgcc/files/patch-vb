@@ -1,0 +1,11 @@
+--- gcc/f/Make-lang.in.orig	Mon Jun  7 15:44:57 1999
++++ gcc/f/Make-lang.in	Sat Oct 27 22:25:27 2001
+@@ -229,7 +229,7 @@
+ 	esac
+ 	if [ -f lang-f77 ]; then \
+ 	  rm -f $(srcdir)/f/g77.info-*; \
+-	  $(MAKEINFO) -I$(srcdir)/f -o f/g77.info $(srcdir)/f/g77.texi; \
++	  $(MAKEINFO) $(MAKEINFOFLAGS) -I$(srcdir)/f -o f/g77.info $(srcdir)/f/g77.texi; \
+ 	else true; fi
+ 
+ f/g77.dvi: $(srcdir)/f/g77.texi $(srcdir)/f/bugs.texi \
