@@ -1,0 +1,33 @@
+--- src/Makefile--	Sat Aug  1 19:13:01 1998
++++ src/Makefile	Sat Aug  1 19:44:49 1998
+@@ -27,10 +27,10 @@
+ #    make install
+ #
+ 
+-BIN     =/usr/local/etc
++BIN     = ${PREFIX}/bin
+ 
+ #CC     =gcc
+-CFLAGS  =-O
++CFLAGS  =-O -DHAVE_SYS_PARAM_H
+ 
+ #CFLAGS	=-g                    # debug
+ #CFLAGS =-g -DDEBUGMODE
+@@ -51,7 +51,7 @@
+ obj::
+ 	(cd ../obj/$(UNAME); make)
+ 
+-UNAME = `uname|tr -d '/'``uname -r|tr -d '/'`
++UNAME = `uname|tr -d '/'`
+ dir::
+ 	-@ mkdir ../obj
+ 	-@ mkdir ../obj/$(UNAME)
+@@ -74,7 +74,7 @@
+ 	etags *.c *.h
+ 
+ install::
+-	cp -p dbsc dbsd ../script/dbs_view $(BIN)
++	cp -p dbsc dbsd ../../script/dbs_view $(BIN)
+ 
+ dbsc: dbsc.o scan.o dbs.o
+ 	$(CC) $(BSTATIC) dbsc.o scan.o dbs.o -o $@ -lm $(LDFLAGS)
