@@ -4,7 +4,7 @@
 # Date created:				September 30th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.28 1998/11/15 15:36:06 ache Exp $
+# $Id: Makefile,v 1.29 1999/02/02 02:57:08 asami Exp $
 #
 
 DISTNAME=       libwww-perl-5.36
@@ -15,9 +15,9 @@ MASTER_SITE_SUBDIR=     LWP
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
-BUILD_DEPENDS= 	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/i386-freebsd/MD5.pm:${PORTSDIR}/security/p5-MD5 \
-		${PREFIX}/lib/perl5/site_perl/${PERL_VER}/i386-freebsd/Net/FTP.pm:${PORTSDIR}/net/p5-Net \
-		${PREFIX}/lib/perl5/site_perl/${PERL_VER}/i386-freebsd/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
+BUILD_DEPENDS= 	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/MD5.pm:${PORTSDIR}/security/p5-MD5 \
+		${PREFIX}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Net/FTP.pm:${PORTSDIR}/net/p5-Net \
+		${PREFIX}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
 		${PREFIX}/lib/perl5/site_perl/${PERL_VER}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser
 
 USE_PERL5=	YES
