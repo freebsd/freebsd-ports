@@ -130,6 +130,7 @@
     SUBDIR += modlogan
     SUBDIR += nfbtrans
     SUBDIR += nicetext
+    SUBDIR += nl-aspell
     SUBDIR += nl-ispell
     SUBDIR += no-ispell
     SUBDIR += openjade

@@ -1,0 +1,6 @@
+Aspell with Dutch dictionary.
+
+Note: if you build from ports, prefer textproc/aspell, it will let you
+      select dictionaries for several languages.
+
+WWW: http://tinf2.vub.ac.be/~dvermeir/software/dv/nl-aspell/index.html
