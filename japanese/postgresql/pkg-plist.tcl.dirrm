@@ -1,0 +1,5 @@
+@dirrm %%INSTALL_DIR%%/pgaccess/images
+@dirrm %%INSTALL_DIR%%/pgaccess/lib/help
+@dirrm %%INSTALL_DIR%%/pgaccess/lib/languages
+@dirrm %%INSTALL_DIR%%/pgaccess/lib
+@dirrm %%INSTALL_DIR%%/pgaccess

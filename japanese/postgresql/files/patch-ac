@@ -1,0 +1,11 @@
+--- interfaces/libpgtcl/Makefile.in.orig	Mon Feb  8 07:10:45 1999
++++ interfaces/libpgtcl/Makefile.in	Tue Jun 15 19:32:36 1999
+@@ -27,7 +27,7 @@
+ 
+ OBJS= pgtcl.o pgtclCmds.o pgtclId.o
+ 
+-SHLIB_LINK+= -L../libpq -lpq
++SHLIB_LINK+= -L../libpq -lpq -lcrypt
+ 
+ # If crypt is a separate library, rather than part of libc, it may need
+ # to be referenced separately to keep (broken) linkers happy.  (This is

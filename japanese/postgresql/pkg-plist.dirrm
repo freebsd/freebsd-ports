@@ -1,0 +1,27 @@
+@exec /usr/bin/su -l pgsql -c '%D/%%INSTALL_DIR%%/bin/initdb --pglib=%D/%%INSTALL_DIR%%/lib --pgdata=%D/%%INSTALL_DIR%%/data'
+@exec mkdir -p %D/%%INSTALL_DIR%%/include/port/freebsd
+@dirrm %%INSTALL_DIR%%/include/port/freebsd
+@dirrm %%INSTALL_DIR%%/include/port
+@unexec rm -rf %D/pgsql/data
+@unexec rm -rf %D/pgsql/errlog
+@dirrm share/doc/%%INSTALL_DIR%%/src/sgml/ref
+@dirrm share/doc/%%INSTALL_DIR%%/src/sgml
+@dirrm share/doc/%%INSTALL_DIR%%/src/graphics
+@dirrm share/doc/%%INSTALL_DIR%%/src
+@dirrm share/doc/%%INSTALL_DIR%%
+@dirrm %%INSTALL_DIR%%/man/manl
+@dirrm %%INSTALL_DIR%%/man/man5
+@dirrm %%INSTALL_DIR%%/man/man3
+@dirrm %%INSTALL_DIR%%/man/man1
+@dirrm %%INSTALL_DIR%%/man
+@dirrm %%INSTALL_DIR%%/lib
+@dirrm %%INSTALL_DIR%%/include/utils
+@dirrm %%INSTALL_DIR%%/include/libpq++
+@dirrm %%INSTALL_DIR%%/include/libpq
+@dirrm %%INSTALL_DIR%%/include/lib
+@dirrm %%INSTALL_DIR%%/include/executor
+@dirrm %%INSTALL_DIR%%/include/commands
+@dirrm %%INSTALL_DIR%%/include/access
+@dirrm %%INSTALL_DIR%%/include
+@dirrm %%INSTALL_DIR%%/bin
+@dirrm %%INSTALL_DIR%%

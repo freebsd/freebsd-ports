@@ -1,0 +1,67 @@
+--- bin/pg_passwd/pg_passwd.c.orig	Thu May 27 16:00:40 1999
++++ bin/pg_passwd/pg_passwd.c	Tue Jun 15 19:27:47 1999
+@@ -26,11 +26,17 @@
+ 
+ #endif
+ 
++#ifndef _POSIX_SOURCE
++# define       _PASSWORD_LEN   128     /* max length, not containing NULL */
++#endif
++
++
+ char	   *comname;
+ static void	usage(FILE *stream);
+ static void	read_pwd_file(char *filename);
++static void	encrypt_pwd(char key[9], char salt[3], char passwd[_PASSWORD_LEN+1]);
++int		check_pwd(char key[9], char passwd[_PASSWORD_LEN+1]);
+ static void	write_pwd_file(char *filename, char *bkname);
+-static void	encrypt_pwd(char key[9], char salt[3], char passwd[14]);
+ static void	prompt_for_username(char *username);
+ static void	prompt_for_password(char *prompt, char *password);
+ 
+@@ -158,7 +164,7 @@
+ 
+ 		if (q != NULL)
+ 			*(q++) = '\0';
+-		if (strlen(p) != 13)
++		if (strlen(p) > _PASSWORD_LEN)
+ 		{
+ 			fprintf(stderr, "WARNING: %s: line %d: illegal password length.\n",
+ 					filename, npwds + 1);
+@@ -222,7 +228,7 @@
+ }
+ 
+ static void
+-encrypt_pwd(char key[9], char salt[3], char passwd[14])
++encrypt_pwd(char key[9], char salt[3], char passwd[_PASSWORD_LEN+1])
+ {
+ 	int			n;
+ 
+@@ -254,9 +260,7 @@
+ 
+ #ifdef NOT_USED
+ static int
+-check_pwd(char key[9], char passwd[14])
+ {
+-	char		shouldbe[14];
+ 	char		salt[3];
+ 
+ 	salt[0] = passwd[0];
+@@ -264,7 +268,7 @@
+ 	salt[2] = '\0';
+ 	encrypt_pwd(key, salt, shouldbe);
+ 
+-	return strncmp(shouldbe, passwd, 13) == 0 ? 1 : 0;
++	return strncmp(shouldbe, passwd, _PASSWORD_LEN) == 0 ? 1 : 0;
+ }
+ #endif
+ 
+@@ -339,7 +343,7 @@
+ 	char		salt[3];
+ 	char		key[9],
+ 				key2[9];
+-	char		e_passwd[14];
++	char		e_passwd[_PASSWORD_LEN+1];
+ 	int			i;
+ 
+ 	comname = argv[0];
