@@ -1,0 +1,22 @@
+Paraller::Pvm is a perl interface to the Parallel Virtual Machine (PVM)
+Message Passing System.
+
+The PVM message passing system enables a programmer to configure a group
+of (possibly heterogenous) computers connected by a network into a
+parallel virtual machine.
+
+Using PVM, applications can be developed which spawns parallel processes
+onto nodes in the virtual machine to perform specific tasks.  These
+parallel tasks can also periodically exchange information using a set of
+message passing functions developed for the system.
+
+PVM applications have mostly been developed in the scientific and
+engineering fields.  However applications for real-time and
+client/server systems can also be developed.  PVM simply provides a
+convenient way for managing parallel tasks and communications without
+need for rexec or socket level programming.
+
+WWW: http://search.cpan.org/dist/Parallel-Pvm/
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
