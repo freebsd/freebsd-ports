@@ -1,14 +1,7 @@
-The tools include programs to clip, rotate, scale, and position
-GIF images.  It includes an X11 viewer, and code to dump GIFs to an
-Epson-compatible printer in graphics mode, and several conversion utilities.
+GIF loading and saving shared library.  (Saving uses an uncompressed gif
+algorithm that does not use LZW compression.)
 
-The library includes program-callable entry points for reading and writing
-GIF files, an 8x8 utility font for embedding text in GIFs, and an error
-handler.  GIF manipulation can be done at a relatively low level by
-sequential I/O (which automatically does/undoes image compression) or at
-a higher level by slurping an entire GIF into allocated core.
+See /usr/local/share/doc/libungif directory for more information
+on libungif's capabilities.
 
-See /usr/local/share/doc/giflib directory for more information
-on GIFLIB's capabilities.
-
-WWW: http://prtr-13.ucsc.edu/~badger/software/giflib.shtml
+WWW: http://prtr-13.ucsc.edu/~badger/software/libungif/
