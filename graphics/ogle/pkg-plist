@@ -7,12 +7,12 @@ include/ogle/msgevents.h
 lib/ogle/libdvdcontrol.a
 lib/ogle/libdvdcontrol.la
 lib/ogle/libdvdcontrol.so
-lib/ogle/libdvdcontrol.so.5
+lib/ogle/libdvdcontrol.so.6
 lib/ogle/libmsgevents.a
 lib/ogle/libmsgevents.la
 lib/ogle/libmsgevents.so
 lib/ogle/libmsgevents.so.4
-lib/ogle/ogle_a52
+lib/ogle/ogle_audio
 lib/ogle/ogle_ac3_p
 lib/ogle/ogle_cli
 lib/ogle/ogle_ctrl

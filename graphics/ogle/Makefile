@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ogle
-PORTVERSION=	0.8.2
-PORTREVISION=	1
+PORTVERSION=	0.8.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.dtek.chalmers.se/groups/dvd/dist/
 
@@ -21,8 +20,8 @@ LIB_DEPENDS=	a52.0:${PORTSDIR}/audio/liba52 \
 USE_SUBMAKE=	yes
 USE_XLIB=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include"
 CONFIGURE_ARGS=	--with-libjpeg=${LOCALBASE} \
 		--with-dvdread=${LOCALBASE} \
 		--with-liba52=${LOCALBASE}
@@ -43,16 +42,12 @@ post-patch:
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 .endif
 	@${PERL} -pi -e "s|%%X11BASE%%|${X11BASE}|" ${WRKSRC}/scripts/ogle.in
-	@${PERL} -pi -e 's|(xmlversion.h>)|libxml/\1|; \
-		s|(-la52)|\1 ${LIBA52_DEP_LIBS}|' \
+	@${PERL} -pi -e 's|(-la52)|\1 ${LIBA52_DEP_LIBS}|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 pre-configure:
 	@${TOUCH} `find -E ${WRKSRC} -regex ".*Makefile\.(am|in)"`
 	@${TOUCH} ${WRKSRC}/configure.in ${WRKSRC}/configure
-
-post-configure:
-	@${LN} -sf ${LOCALBASE}/bin/libtool ${WRKSRC}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
