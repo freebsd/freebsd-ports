@@ -1,1 +1,3 @@
-C++ wrapper for gtk, a x11 graphics library
+C++ wrapper for Gtk+, Pango, Atk, and Glib.
+
+WWW: http://gtkmm.sourceforge.net/
