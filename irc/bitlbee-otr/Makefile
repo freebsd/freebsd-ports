@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	bitlbee
-PORTVERSION=	0.82
-PORTREVISION=	1
+PORTVERSION=	0.84
 CATEGORIES=	irc
 MASTER_SITES=	http://get.bitlbee.org/src/
 
@@ -17,16 +16,18 @@ COMMENT=	An IRC to other chat networks gateway
 MAN8=		bitlbee.8
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= --prefix=${PREFIX} --mandir=${PREFIX}/man --config=${PREFIX}/etc/bitlbee
+CONFIGURE_ARGS=	--mandir=${PREFIX}/man --config=${PREFIX}/etc/bitlbee
 USE_GMAKE=	yes
 USE_GNOME=	glib20
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .if defined(WITH_MSN)
-LIB_DEPENDS=	soup-2.0.0:${PORTSDIR}/devel/libsoup
+LIB_DEPENDS=	gnutls.7:${PORTSDIR}/security/gnutls
+CONFIGURE_ARGS+=--msn=1
 pre-configure:
 	@${ECHO_CMD} "MSN support will be enabled."
 .else
+CONFIGURE_ARGS+=--msn=0
 pre-configure:
 	@${ECHO_CMD} "Type \"make -DWITH_MSN\" if you want enable MSN support."
 .endif
@@ -35,11 +36,11 @@ post-build:
 	@${CAT} pkg-message | ${SED} -e 's|%%PREFIX%%|${PREFIX}|' > ${PKGMESSAGE}
 
 pre-install:
-	@mkdir -p -m 700 ${PREFIX}/etc/bitlbee
+	@${MKDIR} -m 700 ${PREFIX}/etc/bitlbee
 
 post-install:
-	@cp ${WRKSRC}/bitlbee.conf ${PREFIX}/etc/bitlbee/bitlbee.conf.orig
-	@cp ${WRKSRC}/motd.txt ${PREFIX}/etc/bitlbee/motd.txt.orig
+	@${CP} ${WRKSRC}/bitlbee.conf ${PREFIX}/etc/bitlbee/bitlbee.conf.orig
+	@${CP} ${WRKSRC}/motd.txt ${PREFIX}/etc/bitlbee/motd.txt.orig
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
