@@ -203,6 +203,7 @@ lib/libuninameslist.so.0
 %%PORTDOCS%%share/doc/pfaedit/findprobs-hint.png
 %%PORTDOCS%%share/doc/pfaedit/findprobs-paths.png
 %%PORTDOCS%%share/doc/pfaedit/findprobs-random.png
+%%PORTDOCS%%share/doc/pfaedit/findprobs-refs.png
 %%PORTDOCS%%share/doc/pfaedit/findprobs.png
 %%PORTDOCS%%share/doc/pfaedit/fontinfo-anchors.png
 %%PORTDOCS%%share/doc/pfaedit/fontinfo-cid.png
