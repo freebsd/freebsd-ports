@@ -17,19 +17,16 @@ DISTNAME=	Xtheater-${PORTVERSION:S/.p/-pre/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MPEG-1 player in GTK+ capable of playing MPEG-1 format streams
 
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
-		smpeg.1:${PORTSDIR}/multimedia/smpeg
+LIB_DEPENDS=	smpeg.1:${PORTSDIR}/multimedia/smpeg
 
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
-
+USE_SDL=	sdl
 USE_BZIP2=	yes
 USE_GNOME=	gtk12
 USE_GL=		yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
-		SDL_CONFIG="${SDL_CONFIG}"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-gl
 
 CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}
