@@ -3,9 +3,6 @@ bin/sodipodi-bonobo
 share/gnome/apps/Graphics/sodipodi.desktop
 share/gnome/oaf/GNOME_Sodipodi.oafinfo
 share/gnome/pixmaps/sodipodi.png
-share/gnome/sodipodi/Makefile
-share/gnome/sodipodi/Makefile.am
-share/gnome/sodipodi/Makefile.in
 share/gnome/sodipodi/add.xpm
 share/gnome/sodipodi/al_bottom_in.xpm
 share/gnome/sodipodi/al_bottom_out.xpm
@@ -187,6 +184,7 @@ share/gnome/sodipodi/zoom_select.xpm
 share/locale/ca/LC_MESSAGES/sodipodi.mo
 share/locale/da/LC_MESSAGES/sodipodi.mo
 share/locale/de/LC_MESSAGES/sodipodi.mo
+share/locale/es/LC_MESSAGES/sodipodi.mo
 share/locale/et/LC_MESSAGES/sodipodi.mo
 share/locale/fr/LC_MESSAGES/sodipodi.mo
 share/locale/ga/LC_MESSAGES/sodipodi.mo
