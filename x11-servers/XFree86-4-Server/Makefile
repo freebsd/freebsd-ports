@@ -7,7 +7,7 @@
 
 PORTNAME=	Server
 PORTVERSION=	4.3.0
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	x11-servers
 MASTER_SITES=	${MASTER_SITE_XFREE:S/$/:x/} \
 		${MASTER_SITE_LOCAL:S/$/:local/}
@@ -25,13 +25,13 @@ EXTRACT_ONLY=	X430src-1.tgz \
 MAINTAINER=	anholt@freebsd.org
 COMMENT=	XFree86-4 X server and related programs
 
-.for pf in patch-savage-pci-id patch-alpha_video.c patch-Pci.h patch-radeondri \
+.for pf in patch-savage-pci-id patch-alpha_video.c patch-Pci.h \
 	patch-r128_driver.c patch-mga_driver.c patch-xkbInit.c patch-radeon_dri.c \
 	patch-mga_dri.c patch-nv_driver.c patch-nv_setup.c patch-int10-generic.c \
 	patch-radeon_cursor.c patch-radeon_reg.h patch-smi \
 	patch-libc_wrapper.c patch-xf86-common-Imakefile patch-loader-Imakefile \
 	patch-loader-elfloader.c patch-bsd-Imakefile patch-bsd-bsdResource.c \
-	patch-bus-Imakefile patch-r200_vtxtmp_x86.S patch-radeon_vtxtmp_x86.S \
+	patch-bus-Imakefile \
 	patch-compiler.h patch-os-support_Imakefile patch-bsd_Imakefile \
 	patch-freebsdPci.c patch-bus_Imakefile patch-xf86Sbus.h patch-loader.c \
 	patch-Sbus.c patch-elfloader.c patch-xfree86.cf patch-FreeBSD.cf \
@@ -96,15 +96,14 @@ NOT_FOR_ARCHS=		ia64
 .include "${.CURDIR}/../../x11/XFree86-4-libraries/Makefile.inc"
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == i386 ||  ${ARCH} == alpha
+.if ${ARCH} == i386 || ${ARCH} == alpha
+RUN_DEPENDS+=		${X11BASE}/lib/modules/dri/r200_dri.so:${PORTSDIR}/graphics/dri
 BuildXF86DRI=		YES
 PLIST_SUB+=		DRI=""
-XBUILD_DIRS+=		lib/XThrStub lib/X11 lib/Xext lib/GL
-XINSTALL_DIRS+=		lib/GL/mesa/src/drv
 .else
 BuildXF86DRI=		NO
 PLIST_SUB+=		DRI="@comment "
-.endif # i386
+.endif
 
 .if ${ARCH} == ia64
 PLIST_SUB+=	IA64_NA="@comment "
