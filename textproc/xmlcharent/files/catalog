@@ -1,0 +1,56 @@
+PUBLIC "ISO 8879:1986//ENTITIES Added Latin 1//EN//XML"
+"iso-lat1.ent"
+
+PUBLIC "ISO 8879:1986//ENTITIES Added Latin 2//EN//XML"
+"iso-lat2.ent"
+
+PUBLIC "ISO 8879:1986//ENTITIES Greek Letters//EN//XML"
+"iso-grk1.ent"
+
+PUBLIC "ISO 8879:1986//ENTITIES Monotoniko Greek//EN//XML"
+"iso-grk2.ent"
+
+PUBLIC "ISO 8879:1986//ENTITIES Russian Cyrillic//EN//XML"
+"iso-cyr1.ent"
+
+PUBLIC "ISO 8879:1986//ENTITIES Non-Russian Cyrillic//EN//XML"
+"iso-cyr2.ent"
+
+PUBLIC "ISO 8879:1986//ENTITIES Numeric and Special Graphic//EN//XML"
+"iso-num.ent"
+
+PUBLIC "ISO 8879:1986//ENTITIES Diacritical Marks//EN//XML"
+"iso-dia.ent"
+
+PUBLIC "ISO 8879:1986//ENTITIES Publishing//EN//XML"
+"iso-pub.ent"
+
+PUBLIC "ISO 8879:1986//ENTITIES Box and Line Drawing//EN//XML"
+"iso-box.ent"
+
+PUBLIC "ISO 8879:1986//ENTITIES General Technical//EN//XML"
+"iso-tech.ent"
+
+PUBLIC "ISO 8879:1986//ENTITIES Greek Symbols//EN//XML"
+"iso-grk3.ent"
+
+PUBLIC "ISO 8879:1986//ENTITIES Alternative Greek Symbols//EN//XML"
+"iso-grk4.ent"
+
+PUBLIC "ISO 8879:1986//ENTITIES Added Math Symbols: Ordinary//EN//XML"
+"iso-amso.ent"
+
+PUBLIC "ISO 8879:1986//ENTITIES Added Math Symbols: Binary Operators//EN//XML"
+"iso-amsb.ent"
+
+PUBLIC "ISO 8879:1986//ENTITIES Added Math Symbols: Relations//EN//XML"
+"iso-amsr.ent"
+
+PUBLIC "ISO 8879:1986//ENTITIES Added Math Symbols: Negated Relations//EN//XML"
+"iso-amsn.ent"
+
+PUBLIC "ISO 8879:1986//ENTITIES Added Math Symbols: Arrow Relations//EN//XML"
+"iso-amsa.ent"
+
+PUBLIC "ISO 8879:1986//ENTITIES Added Math Symbols: Delimiters//EN//XML"
+"iso-amsc.ent"
