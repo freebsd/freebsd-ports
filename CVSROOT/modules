@@ -4368,6 +4368,7 @@ mod_dav		ports/www/mod_dav
 mod_dtcl	ports/www/mod_dtcl
 mod_extract_forwarded	ports/www/mod_extract_forwarded
 mod_fastcgi	ports/www/mod_fastcgi
+mod_filter	ports/www/mod_filter
 mod_frontpage	ports/www/mod_frontpage
 mod_gzip	ports/www/mod_gzip
 mod_hosts_access	ports/www/mod_hosts_access
