@@ -8,7 +8,7 @@
 PORTNAME=	gnuinfo
 PORTVERSION=	1.3
 CATEGORIES=	www
-MASTER_SITES=	http://user.cs.tu-berlin.de/~kraxel/info2html/
+MASTER_SITES=	http://www.wohnheim.uni-ulm.de/allerlei/
 
 MAINTAINER=	nox@jelal.kn-bremen.de
 
