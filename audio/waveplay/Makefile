@@ -6,10 +6,10 @@
 #
 
 PORTNAME=		waveplay
-PORTVERSION=		2000.12.10
+PORTVERSION=		2001.09.24
 CATEGORIES=		audio
 MASTER_SITES=		http://sore.totto.to/~ysonoda/FreeBSD/ports/
-DISTNAME=		waveplay-20001210
+DISTNAME=		waveplay-20010924
 
 MAINTAINER=		yshd@na.rim.or.jp
 
