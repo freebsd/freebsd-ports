@@ -667,7 +667,8 @@ MANCOMPRESSED?=	no
 .endif
 
 .if defined(USE_QT)
-LIB_DEPENDS+=	qt.2:${PORTSDIR}/x11-toolkits/qt142
+LIB_DEPENDS+=	qt.3:${PORTSDIR}/x11-toolkits/qt145
+USE_NEWGCC=	yes
 .endif
 
 .if defined(USE_QT2)
@@ -1317,7 +1318,7 @@ _MANPAGES:=	${_MANPAGES:S/$/.gz/}
 
 .if ${OSVERSION} >= 300000
 # You need an upgrade kit or make world newer than this
-BSDPORTMKVERSION=	19990501
+BSDPORTMKVERSION=	20000201
 .if exists(/var/db/port.mkversion)
 VERSIONFILE=	/var/db/port.mkversion
 .else
