@@ -1,0 +1,8 @@
+This program sends CDP (Cisco Discovery Protocol) packets out on selected
+interfaces and tells the connected switch (Cisco only) where the host is
+connected.
+
+WWW: http://sourceforge.net/projects/scdp/
+
+-arved
+arved@arved.de
