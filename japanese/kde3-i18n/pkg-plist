@@ -256,12 +256,14 @@ share/locale/ja/LC_MESSAGES/desktop_kdesdk.mo
 share/locale/ja/LC_MESSAGES/desktop_kdetoys.mo
 share/locale/ja/LC_MESSAGES/desktop_kdeutils.mo
 share/locale/ja/LC_MESSAGES/dirfilterplugin.mo
+share/locale/ja/LC_MESSAGES/dockbarextension.mo
 share/locale/ja/LC_MESSAGES/domtreeviewer.mo
 share/locale/ja/LC_MESSAGES/drkonqi.mo
 share/locale/ja/LC_MESSAGES/dub.mo
 share/locale/ja/LC_MESSAGES/extensionproxy.mo
 share/locale/ja/LC_MESSAGES/ffrs.mo
 share/locale/ja/LC_MESSAGES/filetypes.mo
+share/locale/ja/LC_MESSAGES/flashkard.mo
 share/locale/ja/LC_MESSAGES/fontinst.mo
 share/locale/ja/LC_MESSAGES/gideon.mo
 share/locale/ja/LC_MESSAGES/htmlsearch.mo
@@ -481,6 +483,7 @@ share/locale/ja/LC_MESSAGES/klock.mo
 share/locale/ja/LC_MESSAGES/kmahjongg.mo
 share/locale/ja/LC_MESSAGES/kmail.mo
 share/locale/ja/LC_MESSAGES/kmailcvt.mo
+share/locale/ja/LC_MESSAGES/kmathtool.mo
 share/locale/ja/LC_MESSAGES/kmcop.mo
 share/locale/ja/LC_MESSAGES/kmenuedit.mo
 share/locale/ja/LC_MESSAGES/kmessedwords.mo
@@ -490,6 +493,7 @@ share/locale/ja/LC_MESSAGES/kmines.mo
 share/locale/ja/LC_MESSAGES/kminipagerapplet.mo
 share/locale/ja/LC_MESSAGES/kmix.mo
 share/locale/ja/LC_MESSAGES/kmoon.mo
+share/locale/ja/LC_MESSAGES/kmplot.mo
 share/locale/ja/LC_MESSAGES/kmrml.mo
 share/locale/ja/LC_MESSAGES/knewsticker.mo
 share/locale/ja/LC_MESSAGES/knode.mo
@@ -514,10 +518,12 @@ share/locale/ja/LC_MESSAGES/kpaint.mo
 share/locale/ja/LC_MESSAGES/kpartapp.mo
 share/locale/ja/LC_MESSAGES/kpartsaver.mo
 share/locale/ja/LC_MESSAGES/kpat.mo
+share/locale/ja/LC_MESSAGES/kpercentage.mo
 share/locale/ja/LC_MESSAGES/kpersonalizer.mo
 share/locale/ja/LC_MESSAGES/kpf.mo
 share/locale/ja/LC_MESSAGES/kpilot.mo
 share/locale/ja/LC_MESSAGES/kpoker.mo
+share/locale/ja/LC_MESSAGES/kpovmodeler.mo
 share/locale/ja/LC_MESSAGES/kppp.mo
 share/locale/ja/LC_MESSAGES/kppplogview.mo
 share/locale/ja/LC_MESSAGES/kprinter.mo
@@ -569,6 +575,7 @@ share/locale/ja/LC_MESSAGES/ktux.mo
 share/locale/ja/LC_MESSAGES/kuick_plugin.mo
 share/locale/ja/LC_MESSAGES/kuickshow.mo
 share/locale/ja/LC_MESSAGES/kuser.mo
+share/locale/ja/LC_MESSAGES/kverbos.mo
 share/locale/ja/LC_MESSAGES/kview.mo
 share/locale/ja/LC_MESSAGES/kview_scale.mo
 share/locale/ja/LC_MESSAGES/kviewbrowserplugin.mo

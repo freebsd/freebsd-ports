@@ -2070,9 +2070,6 @@ share/icons/locolor/32x32/apps/lskat.png
 share/mimelnk/application/x-kolf.desktop
 share/mimelnk/application/x-kourse.desktop
 share/services/atlantik.protocol
-@dirrm share/services
-@dirrm share/mimelnk/application
-@dirrm share/mimelnk
 @dirrm share/icons/locolor/32x32/apps
 @dirrm share/icons/locolor/32x32
 @dirrm share/icons/locolor/16x16/apps
@@ -2080,19 +2077,9 @@ share/services/atlantik.protocol
 @dirrm share/icons/locolor
 @dirrm share/icons/hicolor/32x32/apps
 @dirrm share/icons/hicolor/32x32
-@dirrm share/icons/hicolor
 @dirrm share/icons/crystalsvg/48x48/apps
-@dirrm share/icons/crystalsvg/48x48
 @dirrm share/icons/crystalsvg/32x32/apps
-@dirrm share/icons/crystalsvg/32x32/actions
-@dirrm share/icons/crystalsvg/32x32
-@dirrm share/icons/crystalsvg/22x22/actions
-@dirrm share/icons/crystalsvg/22x22
 @dirrm share/icons/crystalsvg/16x16/apps
-@dirrm share/icons/crystalsvg/16x16/actions
-@dirrm share/icons/crystalsvg/16x16
-@dirrm share/icons/crystalsvg
-@dirrm share/icons
 @dirrm share/doc/HTML/en/megami
 @dirrm share/doc/HTML/en/lskat
 @dirrm share/doc/HTML/en/kwin4
@@ -2122,10 +2109,7 @@ share/services/atlantik.protocol
 @dirrm share/doc/HTML/en/katomic
 @dirrm share/doc/HTML/en/kasteroids
 @dirrm share/doc/HTML/en/atlantik
-@dirrm share/doc/HTML/en
-@dirrm share/doc/HTML
 @dirrm share/config/magic
-@dirrm share/config
 @dirrm share/apps/megami
 @dirrm share/apps/lskat/grafix
 @dirrm share/apps/lskat
@@ -2243,7 +2227,6 @@ share/services/atlantik.protocol
 @dirrm share/apps/atlantik/icons/crystalsvg
 @dirrm share/apps/atlantik/icons
 @dirrm share/apps/atlantik
-@dirrm share/apps
 @dirrm share/applnk/Toys
 @dirrm share/applnk/Games/TacticStrategy
 @dirrm share/applnk/Games/Kidsgames
@@ -2251,8 +2234,6 @@ share/services/atlantik.protocol
 @dirrm share/applnk/Games/Board
 @dirrm share/applnk/Games/Arcade
 @dirrm share/applnk/Games
-@dirrm share/applnk
-@dirrm lib/kde3
 @dirrm include/kolf
 @dirrm include/kgame
 @dirrm include/atlantik/ui

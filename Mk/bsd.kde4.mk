@@ -93,7 +93,7 @@ CONFIGURE_ENV+=        MOC="${MOC}" QTDIR="${QTDIR}"
 
 # Yeah, it's namespace pollution, but this is really the best place for this
 # stuff. Arts does NOT use it anymore.
-KDE_VERSION=		3.1.1
+KDE_VERSION=		3.1.2
 KDE_ORIGVER=	${KDE_VERSION}
 KDE_PREFIX?=	${LOCALBASE}
 

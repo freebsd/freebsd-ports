@@ -133,6 +133,8 @@ include/noatun/winskinvis.h
 include/plugin_deps.h
 lib/kaboodle.la
 lib/kaboodle.so
+lib/kde3/kcm_audiocd.la
+lib/kde3/kcm_audiocd.so
 lib/kde3/kcm_kmix.la
 lib/kde3/kcm_kmix.so
 lib/kde3/kfile_au.la
@@ -147,6 +149,8 @@ lib/kde3/kfile_ogg.la
 lib/kde3/kfile_ogg.so
 lib/kde3/kfile_wav.la
 lib/kde3/kfile_wav.so
+lib/kde3/kio_audiocd.la
+lib/kde3/kio_audiocd.so
 lib/kde3/kmix_panelapplet.la
 lib/kde3/kmix_panelapplet.so
 lib/kde3/libkaboodlepart.la
@@ -374,6 +378,7 @@ share/applnk/Multimedia/kmix.desktop
 share/applnk/Multimedia/krec.desktop
 share/applnk/Multimedia/kscd.desktop
 share/applnk/Multimedia/noatun.desktop
+share/applnk/Settings/Sound/audiocd.desktop
 share/apps/aktion/aktion_part.rc
 share/apps/aktion/toolbar/ak_maximize.png
 share/apps/aktion/toolbar/ak_setup.png
@@ -917,6 +922,7 @@ share/mimelnk/application/x-artsbuilder.desktop
 share/mimelnk/audio/x-karaoke.desktop
 share/mimelnk/interface/x-winamp-skin.desktop
 share/mimelnk/text/xmcd.desktop
+share/services/audiocd.protocol
 share/services/kaboodle_component.desktop
 share/services/kfile_au.desktop
 share/services/kfile_avi.desktop

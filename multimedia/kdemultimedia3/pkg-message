@@ -11,4 +11,13 @@ For example, if you have an IDE/ATAPI CD-ROM device:
 
 	ln -sf /dev/racd0c /dev/cdrom
 	chmod 666 /dev/racd0c
+
+Additional instructions for using the audiocd:/ kioslave:
+
+If you have an SCSI CD-ROM or if you have an IDE/ATAPI drive AND 
+you have activated ATAPICAM in your kernel, change the permissions for
+the CAM transport layer and CAM passthrough layer devices to 666, i.e.: 
+
+	chmod 666 /dev/xpt0 /dev/pass0
+ 
 ======================================================================
