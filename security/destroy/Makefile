@@ -6,15 +6,21 @@
 #
 
 PORTNAME=	destroy
-PORTVERSION=	20030307
-PORTREVISION=	1
+PORTVERSION=	20040310
 CATEGORIES=	security
-MASTER_SITES=	http://www.freebsdhackers.net/destroy/
+MASTER_SITES=	http://www.freebsdhackers.net/destroy/ \
+		http://www.impurity.org/mirrors/destroy/
 
 MAINTAINER=	shane@freebsdhackers.net
-COMMENT=	A program to destroy files on the hard disk and unlink them
+COMMENT=	A program to securely destroy files on the hard disk
 
-PLIST_FILES=	bin/destroy
 USE_GMAKE=	yes
+
+MAN1=		destroy.1
+PLIST_FILES=	bin/destroy
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/destroy ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/destroy.1 ${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>
