@@ -12,7 +12,7 @@ CATEGORIES=	japanese perl5
 MASTER_SITES=	http://ftp.infonets.hiroshima-u.ac.jp/~taoka/FreeBSD/tt/
 EXTRACT_SUFX=	# none
 
-MAINTAINER=	taoka@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automatically create a Japanese font environment by TrueType fonts
 
 RUN_DEPENDS=	mkres.pl:${PORTSDIR}/japanese/p5-mkres \

@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	shige
 DISTNAME=	${PORTNAME}${VERSION}${MINOR_VERSION}
 
 
-MAINTAINER=	shige@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A terminal-based World-Wide Web Client with multi-byte modification
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${VERSION:S/./-/g}

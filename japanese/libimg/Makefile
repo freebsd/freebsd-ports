@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.neosoft.com/pub/tcl/sorted/packages-8.0/graphics/Img/1.2
 		http://www.aaa-int.or.jp/~jfactory/TkStep/dist/
 DISTNAME=	img${PORTVERSION}
 
-MAINTAINER=	kiri@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enhanced Tk adding support for many other Image formats
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/tcl8.0jp/tclIndex:${PORTSDIR}/japanese/tcl80 \

@@ -12,7 +12,7 @@ CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/edict/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	taoka@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Japanese <-> English Dictionary (EPWING V1 format)
 
 USE_ZIP=	yes

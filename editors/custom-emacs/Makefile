@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.dina.kvl.dk/pub/Staff/Per.Abrahamsen/custom/ \
 		ftp://ftp.win.ne.jp/pub/word/elisp/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
-MAINTAINER?=	shige@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	The Custom Library for emacs
 
 # custom library

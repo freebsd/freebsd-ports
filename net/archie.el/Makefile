@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.cis.ohio-state.edu/pub/elisp-lisp/interfaces/ \
 DISTNAME=	archie.el
 EXTRACT_SUFX=	.Z
 
-MAINTAINER=	taoka@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A mock-interface to Archie for Emacs
 
 RUN_DEPENDS=	archie:${PORTSDIR}/net/archie

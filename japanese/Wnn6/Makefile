@@ -11,7 +11,7 @@ CATEGORIES=	japanese
 DISTNAME=	OMRONWnn6
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	taoka@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Japanese input method (this is not free)
 
 IGNOREFILES=	${DISTFILES}

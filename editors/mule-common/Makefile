@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.m17n.org/pub/mule/ \
 DISTFILES=	mule-${MULE_VERSION}-${EMACS_VERSION}.tar.gz \
 		mule-${MULE_VERSION}-${EMACS_VERSION}.patch-981002.tar.gz
 
-MAINTAINER=	taoka@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	For a multilingual emacs, emacs lisp files, info pages, etc (except executables)
 
 MULE_VERSION=	2.3

@@ -12,7 +12,7 @@ LIB_DEPENDS=	VFlib2.24:${PORTSDIR}/japanese/vflib
 
 CATEGORIES=	japanese
 
-MAINTAINER=	mita@jp.FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 # dirty, but this is required for version independent-ness
 CONFIGURE_ARGS=		--with-vfontcap=`${LS} -1 ${LOCALBASE}/share/VFlib/*/vfontcap | tail -1`

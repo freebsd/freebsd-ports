@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	. kiri
 DISTNAME=	SeizeDesktop-${PORTVERSION}
 EXTRACT_ONLY=	# extracted directly in install target
 
-MAINTAINER=	kiri@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A customizer of desktop screen environment
 
 RUN_DEPENDS=	${RUN_DEP_LIST}

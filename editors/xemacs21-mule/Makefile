@@ -18,7 +18,7 @@ DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX} \
 		${DISTNAME}-elc${EXTRACT_SUFX} ${DISTNAME}-info${EXTRACT_SUFX}
 DIST_SUBDIR=	xemacs
 
-MAINTAINER=	kiri@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	XEmacs(stable version) text editor with mule(Only the executables)
 
 USE_GNOME=	#

@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-MAINTAINER?=	kiri@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	Message interface to Emacs Window (version 2) for emacs20
 
 # Mew major version

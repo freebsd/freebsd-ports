@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	x11
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	taoka@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display X11 color names and colors
 
 USE_IMAKE=	yes

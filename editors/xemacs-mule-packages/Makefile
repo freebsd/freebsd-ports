@@ -22,7 +22,7 @@ DISTFILES=	\
 		skk-1.23-pkg.tar.gz
 DIST_SUBDIR=	xemacs
 
-MAINTAINER=	kiri@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XEmacs elisp packages for Mule(mule-packages)
 
 NO_BUILD=	yes

@@ -10,7 +10,7 @@ PORTVERSION=	2.0
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://www.seki.ee.kagu.sut.ac.jp/~sakai/
 
-MAINTAINER=	kiri@pis.toba-cmt.ac.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A clock with eyes following the mouse pointer
 
 #ALL_TARGET=	all

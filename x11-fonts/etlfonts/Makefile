@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.etl.go.jp/pub/mule/fonts/
 DISTNAME=	non-cjk
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	mita@jp.FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 supplemental fonts
 
 BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}

@@ -52,7 +52,7 @@ DISTNAME=	${PORTNAME}-${ZSH_VER}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-doc${EXTRACT_SUFX}
 .endif
 
-MAINTAINER=	shige@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Z shell (development version)
 
 ZSH_VER=	4.1.1

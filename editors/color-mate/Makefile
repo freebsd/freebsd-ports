@@ -10,7 +10,7 @@ PORTVERSION=	10.5
 CATEGORIES=	editors elisp
 MASTER_SITES=	http://www.netlab.is.tsukuba.ac.jp/~yokota/archive/
 
-MAINTAINER=	taoka@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Color customizing module for Emacsen
 
 BUILD_DEPENDS=	lndir:${PORTSDIR}/x11/XFree86 \

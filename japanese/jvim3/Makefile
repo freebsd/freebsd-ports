@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.vim.org/pub/vim/unix/ \
 DISTFILES=	vim-3.0.tar.gz \
 		${JPATCH}
 
-MAINTAINER=	taoka@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Japanized Vim-3.0
 
 NO_LATEST_LINK=	YES	# waiting for jgrep, jfold, jcat

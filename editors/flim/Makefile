@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.m17n.org/pub/mule/flim/flim-1.14/ \
 		ftp://ftp.eos.hokudai.ac.jp/pub/GNU/emacs/mule/flim/flim-1.14/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
-MAINTAINER?=	shige@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	FLIM, message representation or encoding elisp library for emacs21
 
 PORTCLASS?=	master

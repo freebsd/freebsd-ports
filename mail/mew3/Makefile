@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.mew.org/pub/Mew/release/ \
 		${MASTER_SITE_PORTS_JP}
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
-MAINTAINER?=	kiri@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Message interface to Emacs Window (version 3) for emacs21
 
 # Mew major version

@@ -12,7 +12,7 @@ CATEGORIES=	editors
 MASTER_SITES=		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	emacs
 
-MAINTAINER=	shige@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libraries of (GNU) Emacs Input Method
 
 LATEST_LINK=	leim21

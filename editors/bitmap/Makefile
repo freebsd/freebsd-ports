@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.jpl.org/pub/elisp/bitmap/ \
 DISTNAME=	bitmap-mule-${BITMAP_DISTVER}
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
-MAINTAINER?=	shige@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Bitmap-mule, Package to use bitmap in Emacs21
 
 # ports version

@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.mew.org/pub/Mew/old/ \
 		${MASTER_SITE_PORTS_JP}
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
-MAINTAINER?=	kiri@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Message interface to Emacs Window for emacs
 
 # distfile version

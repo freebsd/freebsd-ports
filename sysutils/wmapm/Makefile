@@ -10,7 +10,7 @@ PORTVERSION=	3.1
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://nis-www.lanl.gov/~mgh/WindowMaker/
 
-MAINTAINER=	taoka@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Laptop battery status display for WindowMaker
 
 ONLY_FOR_ARCHS=	i386

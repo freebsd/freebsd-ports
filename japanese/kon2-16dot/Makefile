@@ -20,7 +20,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		k14.bdf 7x14rk.bdf \
 		jiskan16.bdf 8x16rk.bdf
 
-MAINTAINER?=	shige@FreeBSD.org # '+=' is for slave ports
+MAINTAINER?=	ports@FreeBSD.org # '+=' is for slave ports
 COMMENT=	Kanji On Console -- Display kanji characters on your own console
 
 ONLY_FOR_ARCHS=	i386

@@ -12,7 +12,7 @@ CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/ASCIIdates98/
 DISTNAME=	${PORTNAME:S/-fpw//}-${PORTVERSION}
 
-MAINTAINER=	taoka@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Japanese dictionary for PC terms in '98 ASCII Dates Book (EPWING V1 format)
 
 USE_ZIP=	yes

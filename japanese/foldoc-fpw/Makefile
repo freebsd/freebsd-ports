@@ -12,7 +12,7 @@ CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/foldoc/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	taoka@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Free On-line Dictionary of Computing (EPWING V1 format)
 
 USE_ZIP=	yes

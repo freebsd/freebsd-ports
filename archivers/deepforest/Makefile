@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	kiri
 DISTNAME=	DeepForest-${PORTVERSION}
 EXTRACT_ONLY=	# extracted directly in install target
 
-MAINTAINER=	kiri@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple compress utilty using on JDE
 
 RUN_DEPENDS=	${RUN_DEP_LIST}

@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	japanese elisp
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/mypaedia/
 
-MAINTAINER=	taoka@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A supplement file to use "mypaedia" on lookup
 
 RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox \

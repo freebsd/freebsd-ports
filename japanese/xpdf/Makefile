@@ -12,7 +12,7 @@ CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/
 DISTNAME=	xpdf-japanese
 
-MAINTAINER=	mita@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese xpdf font support
 
 RUN_DEPENDS=	xpdf:${PORTSDIR}/graphics/xpdf \

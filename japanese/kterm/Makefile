@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	applications kterm shige/kterm
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		README.wallpaper.ja
 
-MAINTAINER=	shige@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An xterm that speaks Japanese
 
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf

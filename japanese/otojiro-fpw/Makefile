@@ -13,7 +13,7 @@ MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/eijiro/ \
 		http://member.nifty.ne.jp/~satomii/freepwing/archive/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.a/a/}-src
 
-MAINTAINER=	taoka@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OTOJIRO English - Japanese Dictionary (EPWING V1 format)
 
 EXTRACT_DEPENDS=${LOCALBASE}/share/doc/freepwing/fpwutils.mk:${PORTSDIR}/japanese/freepwing

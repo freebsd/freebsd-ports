@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.m17n.org/pub/mule/dynamic-loading/emacs-canna/ \
 		${MASTER_SITE_PORTS_JP} 
 DISTNAME=	emacs-canna-${PORTVERSION}
 
-MAINTAINER=	shige@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dynamic loading module input method `Canna' on Emacs
 
 LIB_DEPENDS=	canna.1:${PORTSDIR}/japanese/Canna

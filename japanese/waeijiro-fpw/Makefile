@@ -13,7 +13,7 @@ CATEGORIES=	japanese
 MASTER_SITES=	http://www.dsl.gr.jp/~tf/pool/
 #DISTNAME=	${PORTNAME}${PORTVERSION}-src
 
-MAINTAINER=	taoka@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WAEIJIRO English - Japanese Dictionary (EPWING V1 format)
 
 EXTRACT_DEPENDS=${LOCALBASE}/share/doc/freepwing/fpwutils.mk:${PORTSDIR}/japanese/freepwing

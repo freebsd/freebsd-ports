@@ -12,7 +12,7 @@ CATEGORIES=	japanese elisp
 MASTER_SITES=	http://openlab.ring.gr.jp/skk/maintrunk/legacy/
 DISTNAME=	skk${SKK10_VER}
 
-MAINTAINER?=	shige@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	Emacs-lisp frontend for the SKK-10 Japanese Input Method
 
 USE_BZIP2=	YES

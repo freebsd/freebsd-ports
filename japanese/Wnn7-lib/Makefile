@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.omronsoft.co.jp/pub/Wnn7/sdk_source/
 DISTNAME=	Wnn7SDK
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	taoka@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Include files and a library of Wnn7
 
 BUILD_DEPENDS=	imake:${X_IMAKE_PORT}

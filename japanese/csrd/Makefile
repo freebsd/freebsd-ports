@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/csrd/
 
-MAINTAINER=	taoka@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility for Shogakukan Random House English-Japanese Dictionary
 
 MAKEFILE=	makefile.unx

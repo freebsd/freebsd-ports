@@ -20,7 +20,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		jtex-1.52.tar.gz
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	kiri@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Virtual font kit (n2a,a2n,a2bk,p2pn)
 
 BUILD_DEPENDS=	${AFMDIR}/GothicBBB-Medium-H:${PORTSDIR}/japanese/japaneseAFM
