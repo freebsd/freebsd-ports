@@ -1,0 +1,2 @@
+Running Apache (and CGI/Perl/PHP) inside a chroot jail can be tricky. 
+Read CAVEATS for known problems and solutions.
