@@ -7,14 +7,13 @@
 #
 
 PORTNAME=	terminality
-PORTVERSION=	1.9
+PORTVERSION=	2.0
 CATEGORIES=	devel
 MASTER_SITES= 	http://members.optushome.com.au/darkmoon7/code/tn/
 DISTNAME=	tn-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/tn
 USE_GMAKE=	yes
 MAKE_ENV=	CPP=${CXX} INSTALL="${INSTALL}" INSTALL_DATA="${INSTALL_DATA}"
 
