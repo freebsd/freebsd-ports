@@ -36,6 +36,10 @@
 # - support for multiple architectures is inefficient
 # - output is messy
 # - on my system, the first 20 kB of each distfile are fetched
+#   (this can be suppressed by adding FETCH_BEFORE_ARGS=-s to the make options,
+#   in which case the word "Unknown" appears by itself on a line
+#   where otherwise there would be a "size unknown" error, and "size
+#   mismatch" errors are not detected)
 # - needs manual setup of /mnt/
 #
 # placed in the public domain by Trevor Johnson
