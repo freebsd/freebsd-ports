@@ -79,6 +79,10 @@ USE_BISON=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64"
+BROKEN=		"Build fails on sparc64"
+.endif
+
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 # FreeBSD 5.0 Needs to have libgmp port to support gmp.
