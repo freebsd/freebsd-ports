@@ -1,0 +1,5 @@
+Chicken is a compiler for the programming language Scheme supporting
+most of the features as described in the Revised^5 Report on the
+Algorithmic Language Scheme.
+
+WWW: http://www.call-with-current-continuation.org/chicken.html
