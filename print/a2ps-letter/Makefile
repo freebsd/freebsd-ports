@@ -3,7 +3,7 @@
 # Date created:         15 July 1998
 # Whom:                 Chuck Robey (chuckr@freebsd.org)
 #
-# $Id: Makefile,v 1.18 1998/07/21 11:13:52 asami Exp $
+# $Id: Makefile,v 1.19 1998/07/21 13:48:19 asami Exp $
 #
 
 DISTNAME=	a2ps-4.10.3
@@ -44,7 +44,7 @@ pre-configure:
 	${ECHO} ${PAPERSIZE} > ${WRKDIR}/.media
 
 post-install:
-	${LDCONFIG} -R ${PREFIX}/lib
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 	strip ${PREFIX}/bin/a2ps
 	(cd ${WRKSRC}/doc; ${MAKE} install)
 

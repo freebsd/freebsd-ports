@@ -249,9 +249,10 @@ info/regex.info-3
 @exec install-info --info-dir=%D/info %D/info/a2ps.info
 @exec install-info --info-dir=%D/info %D/info/ogonkify.info
 include/liba2ps.h
-lib/liba2ps.so.1.0
+lib/liba2ps.so.1
 lib/liba2ps.a
-@exec /bin/ldconfig -m %D/lib
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @dirrm share/a2ps/ps
 @dirrm share/a2ps/afm  
 @dirrm share/a2ps/fonts 
