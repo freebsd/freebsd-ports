@@ -1,4 +1,6 @@
 @unexec if cmp -s %D/etc/mplayerplug-in.conf %D/etc/mplayerplug-in.conf.dist; then rm -f %D/etc/mplayerplug-in.conf; fi
 etc/mplayerplug-in.conf.dist
+@unexec if cmp -s %D/etc/mplayerplug-in.types %D/etc/mplayerplug-in.types.dist; then rm -f %D/etc/mplayerplug-in.types; fi
+etc/mplayerplug-in.types.dist
 lib/browser_plugins/mplayerplug-in.so
 @unexec rmdir %D/lib/browser_plugins 2>/dev/null || /usr/bin/true
