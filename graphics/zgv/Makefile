@@ -30,7 +30,7 @@ MAN1=		zgv.1
 .endif
 .if !defined(NOPORTDOCS)
 INFO=		zgv
-PORTDOCS=	NEWS README SECURITY TODO
+PORTDOCS=	NEWS README SECURITY TODO INSTALL
 .endif
 
 post-patch:
@@ -41,6 +41,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/sample.zgvrc ${PREFIX}/etc/zgvrc.sample
 .if !defined(NOPORTDOCS)
 	${INSTALL_DATA} ${WRKSRC}/doc/zgv ${PREFIX}/${INFO_PATH}/zgv.info
+	install-info ${PREFIX}/${INFO_PATH}/zgv.info ${PREFIX}/${INFO_PATH}/dir
 	${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
