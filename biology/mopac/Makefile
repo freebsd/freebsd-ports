@@ -3,16 +3,16 @@
 # Date created:  1997-04-23
 # Whom:	 Ryo MIYAMOTO <rmiya@cc.hirosaki-u.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/01 08:06:43 taoka Exp $
+# $Id: Makefile,v 1.2 1999/05/07 05:12:13 taoka Exp $
 #
 
 DISTNAME=	mopac7
 PKGNAME=	mopac-7.02
 CATEGORIES=	biology
-MASTER_SITES=	ftp://ccl.osc.edu/pub/chemistry/software/SOURCES/FORTRAN/mopac7_sources/
+MASTER_SITES=	ftp://ftp.ccl.net/pub/chemistry/software/SOURCES/FORTRAN/mopac7_sources/
 DISTFILES=	mopac7.tar.Z  mopac7-man.tar.Z
 
-PATCH_SITES=	ftp://ccl.osc.edu/pub/chemistry/software/LINUX/mopac7/old-version-95.06.21/
+PATCH_SITES=   ftp://ftp.ccl.net/pub/chemistry/software/LINUX/mopac7/old-version-95.06.21/
 PATCHFILES=	mopac7-linux.diff.Z
 PATCH_DIST_STRIP=	-p1
 
