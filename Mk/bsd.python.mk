@@ -11,9 +11,9 @@ Python_Include_MAINTAINER=	tg@FreeBSD.org
 
 # This file contains some variable definitions that are supposed to
 # make your life easier when dealing with ports related to the Python
-# language. It's automatically included when USE_PYTHON, PYTHON_VERSION or
-# USE_PYDISTUTILS is defined in the ports' makefile. Define PYTHON_VERSION
-# to override the defaults that USE_PYTHON would give you.
+# language. It's automatically included when USE_PYTHON or PYTHON_VERSION
+# is defined in the ports' makefile. Define PYTHON_VERSION to override the
+# defaults that USE_PYTHON would give you.
 #
 # The variables:
 #
