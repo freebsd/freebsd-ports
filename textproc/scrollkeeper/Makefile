@@ -7,7 +7,7 @@
 
 PORTNAME=	scrollkeeper
 PORTVERSION=	0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		${MASTER_SITE_GNOME:S,%SUBDIR%,stable/sources/scrollkeeper,}
@@ -17,11 +17,11 @@ MAINTAINER=	sobomax@FreeBSD.org
 
 LIB_DEPENDS=	xml.5:${PORTSDIR}/textproc/libxml
 
-# It has to go in X_PREFIX to work with the rest of GNOME, for which
-# scrollkeeper was primarily designed in the first place.  It's an
-# exceptionally deep dependency (gnomelibs needs it), so to put it
-# in the right place, we have to do this kludge
-USE_X_PREFIX=	yes
+# Don't use USE_X_PREFIX - the port doesn't really require X11 to run.
+# The reason why it should be in X11BASE is that GNOME is the primary
+# (only?) consumer of this port, and BadThings[tm] happen if it's not
+# put in the right place.
+PREFIX?=        ${X11BASE}
 
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
