@@ -299,7 +299,7 @@ MASTER_SITE_REDHAT_LINUX+= \
 # servers at the DNS lookup level. (safe to use with "fetch -A")
 #
 MASTER_SITE_RINGSERVER+=	\
-	ftp://ftp.dnsbalance.ring.gr.jp/pub/%SUBDIR%/ \
+	ftp://www.dnsbalance.ring.gr.jp/pub/%SUBDIR%/ \
 	http://www.t.ring.gr.jp/archives/%SUBDIR%/
 
 MASTER_SITE_RUBY+= \
