@@ -8147,6 +8147,7 @@ wmlmmon		ports/sysutils/wmlmmon
 wmlongrun	ports/sysutils/wmlongrun
 wmlpq		ports/print/wmlpq
 wmmail		ports/mail/wmmail
+wmmaiload	ports/mail/wmmaiload
 wmmand		ports/misc/wmmand
 wmmatrix	ports/x11/wmmatrix
 wmmemload	ports/sysutils/wmmemload
