@@ -1,0 +1,9 @@
+libHTTPD can be used to add basic web server capabilities to an
+application or embedded device. The library handles both static and
+dynamically generated content, has very low overheads, and provides many
+features to simplify the creation of web based application interfaces. 
+
+This is a version modified for persistent connections by the author of
+daapd.
+
+WWW: http://www.deleet.de/projekte/daap/daapd/

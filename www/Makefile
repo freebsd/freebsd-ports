@@ -151,6 +151,7 @@
     SUBDIR += larbin
     SUBDIR += libghttp
     SUBDIR += libgtkhtml
+    SUBDIR += libhttpd-persistent
     SUBDIR += libwww
     SUBDIR += linkchecker
     SUBDIR += links

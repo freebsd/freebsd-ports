@@ -1,0 +1,7 @@
+include/httpd.h
+lib/libhttpd.a
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/HISTORY
+%%PORTDOCS%%%%DOCSDIR%%/License
+%%PORTDOCS%%%%DOCSDIR%%/FAQ.txt
+%%PORTDOCS%%%%DOCSDIR%%/libhttpd.pdf
