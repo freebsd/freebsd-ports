@@ -21,7 +21,7 @@ SCRIPT=		${PORTNAME}.pl
 BUILD_DEPENDS+=	irssi:${PORTSDIR}/irc/irssi
 BUILD_DEPENDS+=	cowsay:${PORTSDIR}/games/cowsay
 RUN_DEPENDS+=	figlet:${PORTSDIR}/misc/figlet
-RUN_DEPENDS+=	p5-Term-ANSIColor:${PORTSDIR}/devel/p5-Term-ANSIColor
+RUN_DEPENDS+=	${SITE_PERL}/Term/ANSIColor.pm:${PORTSDIR}/devel/p5-Term-ANSIColor
 
 .include <bsd.port.pre.mk>
 
