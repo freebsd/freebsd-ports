@@ -28,6 +28,12 @@ MAKE_ARGS=	PREFIX="${PREFIX}" CC="${CC}" CPP="${CXX}" \
 		LIBS="`imlib-config --libs` -lXpm" \
 		LIB_DIRS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 440003 || ${OSVERSION} >= 500000 && ${OSVERSION} < 500027
+CFLAGS+=	-DNEED_STRCASESTR
+.endif
+
 pre-patch:
 	@${REINPLACE_CMD} -e 's|make |\$$\(MAKE\) |g' ${WRKSRC}/Makefile
 	@${FIND} ${WRKSRC}/endeavour -type f | ${XARGS} ${REINPLACE_CMD} -e \
@@ -39,4 +45,4 @@ pre-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/endeavour/endeavour ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
