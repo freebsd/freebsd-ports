@@ -62,7 +62,7 @@ LIB_DEPENDS+=		gucharmap.3:${PORTSDIR}/deskutils/gucharmap
 CONFIGURE_ARGS+=	--enable-cmap=no
 .endif
 
-.if ${OSVERSION} < 500000
+.if ${OSVERSION} < 500000 || ${ARCH} == "alpha"
 ONLY_FOR_ARCHS=	i386
 .endif
 
