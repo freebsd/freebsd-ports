@@ -1,5 +1,4 @@
 include/regex.h
 lib/libtre.a
-lib/libtre.la
 lib/libtre.so
 lib/libtre.so.0
