@@ -1,0 +1,13 @@
+--- install/Makefile.in.orig	Tue Mar 27 13:41:45 2001
++++ install/Makefile.in	Tue Mar 27 13:42:15 2001
+@@ -197,8 +197,8 @@
+ @USE_GNOME_TRUE@install-gnome:
+ @USE_GNOME_TRUE@	mkdir -p $(GNOME_DATA_DIR)/pixmaps
+ @USE_GNOME_TRUE@	install -m 644 $(top_srcdir)/src/bitmaps/appicon.xpm $(GNOME_DATA_DIR)/pixmaps/poedit.xpm
+-@USE_GNOME_TRUE@	mkdir -p $(GNOME_DATA_DIR)/gnome/apps/Development
+-@USE_GNOME_TRUE@	install -m 644 $(srcdir)/poedit.desktop $(GNOME_DATA_DIR)/gnome/apps/Development
++@USE_GNOME_TRUE@	mkdir -p $(GNOME_DATA_DIR)/apps/Development
++@USE_GNOME_TRUE@	install -m 644 $(srcdir)/poedit.desktop $(GNOME_DATA_DIR)/apps/Development
+ @USE_GNOME_TRUE@	mkdir -p $(GNOME_DATA_DIR)/mime-info
+ @USE_GNOME_TRUE@	install -m 644 $(srcdir)/poedit.mime $(GNOME_DATA_DIR)/mime-info
+ @USE_GNOME_TRUE@	install -m 644 poedit.keys $(GNOME_DATA_DIR)/mime-info
