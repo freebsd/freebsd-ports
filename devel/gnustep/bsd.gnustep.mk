@@ -8,10 +8,10 @@
 # Options for user to customize in /etc/make.conf:
 # ================================================
 #
-# WANT_GNUSTEP_XDPS=yes
+# WITH_GNUSTEP_XDPS=yes
 #	use xdps as backend instead of xlib.
 #
-# WANT_GNUSTEP_LIBART=yes
+# WITH_GNUSTEP_LIBART=yes
 #	use libart as backend instead of xlib.
 #
 #
@@ -92,10 +92,10 @@ RUN_DEPENDS+=	${COMBOLIBDIR}/libgnustep-gui.so:${PORTSDIR}/${GNUSTEP_GUI_PORT}
 # using any backend
 #
 .if defined(USE_GNUSTEP_BACK)
-.if defined(WANT_GNUSTEP_XDPS)
+.if defined(WITH_GNUSTEP_XDPS)
 GNUSTEP_WITH_XDPS=yes
 .else
-.if defined(WANT_GNUSTEP_LIBART)
+.if defined(WITH_GNUSTEP_LIBART)
 USE_GNUSTEP_LIBART=yes
 .else
 USE_GNUSTEP_XLIB=yes
