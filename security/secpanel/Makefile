@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	secpanel
-PORTVERSION=	0.32
+PORTVERSION=	0.41
 CATEGORIES=	security
 MASTER_SITES=	http://www.pingx.net/secpanel/
 
@@ -28,12 +28,13 @@ post-patch:
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/src/bin/secpanel ${PREFIX}/bin
 	@${MKDIR} ${PREFIX}/share/secpanel
-.for file in default.config default.profile gui.tcl listserver.tcl \
-	secpanel.dist secpanel.wait
+.for file in convert_history.tcl default.config default.profile \
+	gui.tcl keydistribute.tcl listserver.tcl secpanel.dist secpanel.wait
 	${INSTALL_SCRIPT} ${WRKSRC}/src/lib/secpanel/${file} ${PREFIX}/share/secpanel
 .endfor
 	@${MKDIR} ${PREFIX}/share/secpanel/images
-.for file in configs.gif connects.gif keys.gif profiles.gif scp.gif
+.for file in arrow_left.gif arrow_right.gif configs.gif connects.gif \
+	folder.gif keys.gif profiles.gif scp.gif sscreen.gif
 	${INSTALL_DATA} ${WRKSRC}/src/lib/secpanel/images/${file} \
 		${PREFIX}/share/secpanel/images
 .endfor
