@@ -1,8 +1,9 @@
-tac_plus provides Cisco systems routers and access servers
-with authentication, authorisation and accounting services.
- 
-A configuration file controls the details of authentication,
-authorisation and accounting.
+tacacs+ services network requests for authentication
+and authorization, verifies identities, grants or denies
+authorizations, and logs accounting records. 
+
+Details are described at:
+http://www.cisco.com/warp/public/146/187.html
 
 -- Igor
 igor@zynaps.ru
