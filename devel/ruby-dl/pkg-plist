@@ -3,6 +3,7 @@ bin/h2rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dl/drives.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dl/getch.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dl/libc.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dl/msgbox.rb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/dl
 %%PORTDOCS%%%%RUBY_DOCDIR%%/dl/Changes
 %%PORTDOCS%%%%RUBY_DOCDIR%%/dl/README

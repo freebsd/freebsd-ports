@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dl
-PORTVERSION=	1.0
+PORTVERSION=	1.0.1
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://kt-www.jaist.ac.jp/~ttate/ftp/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
