@@ -23,10 +23,6 @@ BINMODE=	4755
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500035
-BROKEN=		"Does not compile on 5.0"
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rio ${PREFIX}/bin
 
