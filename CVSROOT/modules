@@ -2932,6 +2932,7 @@ hs-hpl		ports/devel/hs-hpl
 hs-hsql		ports/databases/hs-hsql
 hs-idoc		ports/devel/hs-idoc
 hs-popenhs	ports/devel/hs-popenhs
+hs-port		ports/x11-toolkits/hs-port
 hs-tclhaskell-ghc	ports/devel/hs-tclhaskell-ghc
 hs-uni		ports/devel/hs-uni
 hsetroot	ports/graphics/hsetroot
