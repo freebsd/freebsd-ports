@@ -1,13 +1,16 @@
---- misc/Makefile.in.orig	Fri May  1 14:47:40 1998
-+++ misc/Makefile.in	Thu Dec  3 20:11:52 1998
-@@ -164,10 +164,8 @@
- 	@list='$(lisp_LISP)'; for p in $$list; do \
- 	  if test -f "$$p"; then d= ; else d="$(srcdir)/"; fi; \
- 	  echo " $(INSTALL_DATA) $$d$$p $(DESTDIR)$(lispdir)/$$p"; \
--	  $(INSTALL_DATA) $$d$$p $(DESTDIR)$(lispdir)/$$p; \
- 	  if test -f $${p}c; then \
- 	    echo " $(INSTALL_DATA) $${p}c $(DESTDIR)$(lispdir)/$${p}c"; \
--	    $(INSTALL_DATA) $${p}c $(DESTDIR)$(lispdir)/$${p}c; \
- 	  else : ; fi; \
- 	done
- 
+
+$FreeBSD$
+
+--- misc/Makefile.in.orig	Sat Sep 15 03:48:07 2001
++++ misc/Makefile.in	Mon Nov 26 13:54:29 2001
+@@ -165,10 +165,8 @@
+ 	  list='$(lisp_LISP)'; for p in $$list; do \
+ 	    if test -f "$$p"; then d= ; else d="$(srcdir)/"; fi; \
+ 	    echo " $(INSTALL_DATA) $$d$$p $(DESTDIR)$(lispdir)/$$p"; \
+-	    $(INSTALL_DATA) $$d$$p $(DESTDIR)$(lispdir)/$$p; \
+ 	    if test -f $${p}c; then \
+ 	      echo " $(INSTALL_DATA) $${p}c $(DESTDIR)$(lispdir)/$${p}c"; \
+-	      $(INSTALL_DATA) $${p}c $(DESTDIR)$(lispdir)/$${p}c; \
+ 	    else : ; fi; \
+ 	  done; \
+ 	else : ; fi

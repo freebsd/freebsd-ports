@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gettext
-PORTVERSION=	0.10.38
-PORTREVISION=	1
+PORTVERSION=	0.10.40
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gettext
@@ -19,8 +18,8 @@ LIB_DEPENDS=	giconv.2:${PORTSDIR}/converters/libiconv
 NO_LATEST_LINK=	yes
 
 USE_BISON=	yes
-USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
@@ -42,7 +41,7 @@ pre-configure:
 BINFILES=	gettext msgcmp msgcomm msgfmt msgmerge msgunfmt \
 		ngettext xgettext
 PLIST=		${WRKDIR}/PLIST
-LIBTOOLFLAGS=	--disable-ltlibs --disable-shared
+CONFIGURE_ARGS=	--disable-shared
 .undef MAN3
 .undef INSTALLS_SHLIB
 

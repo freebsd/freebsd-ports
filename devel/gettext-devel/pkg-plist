@@ -45,6 +45,8 @@ share/doc/gettext/ngettext.3.html
 share/doc/gettext/textdomain.3.html
 share/emacs/site-lisp/po-mode.el
 share/gettext/ABOUT-NLS
+share/gettext/intl/COPYING.LIB-2
+share/gettext/intl/COPYING.LIB-2.1
 share/gettext/intl/ChangeLog
 share/gettext/intl/Makefile.in
 share/gettext/intl/VERSION
