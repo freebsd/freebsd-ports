@@ -225,6 +225,7 @@
     SUBDIR += mod_layout2
     SUBDIR += mod_limitipconn
     SUBDIR += mod_log_sql
+    SUBDIR += mod_macro
     SUBDIR += mod_mp3
     SUBDIR += mod_musicindex
     SUBDIR += mod_mylo
