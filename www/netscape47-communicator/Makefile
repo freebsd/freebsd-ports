@@ -12,26 +12,35 @@ PORTVERSION?=	${BROWSER_VER}
 .include <bsd.port.pre.mk>
 .endif
 
-.if ${ARCH} == "i386"
-MASTER_SITES?=	ftp://ftp.netscape.com./pub/communicator/english/4.74/unix/unsupported/freebsd/complete_install/
-DISTFILES?=	communicator-v474-us.x86-unknown-freebsd.tar.gz
-.elif ${ARCH} == "alpha"
-MASTER_SITES?=	ftp://ftp.netscape.com./pub/communicator/english/4.74/unix/supported/dec_unix40/complete_install/
-DISTFILES?=	communicator-v474-us.alpha-dec-osf4.0.tar.gz
-.endif
-
-ONLY_FOR_ARCHS?=	i386 alpha
+MASTER_SITES=	ftp://ftp.netscape.com/pub/communicator/english/${NETSCAPE_DIST_SUBDIR}/ \
+		ftp://ftp.spin.ad.jp/pub/WWW/netscape/communicator/english/${NETSCAPE_DIST_SUBDIR}/ \
+		ftp://ftp.sunet.se/pub/www/Netscape/communicator/english/${NETSCAPE_DIST_SUBDIR}/ \
+		ftp://ftp.hi.is/pub/mirrors/ftp.netscape.com/pub/communicator/english/${NETSCAPE_DIST_SUBDIR}/ \
+		ftp://ftp.unicamp.br/pub6/netscape/communicator/english/${NETSCAPE_DIST_SUBDIR}/ \
+		ftp://the.ausmac.net/wd2a/security/cryptography/128bit-browsers/Netscape/${NETSCAPE_DIST_SUBDIR}/
+DISTFILES=	${BROWSER}-v474-us.${NETSCAPE_DIST_TAG}.tar.gz
 
 MASTERDIR=	${.CURDIR}/../netscape4-communicator
-.if ${ARCH} == "i386"
-WRKSRC?=	${WRKDIR}/${BROWSER}-v474.x86-unknown-freebsd
-.elif ${ARCH} == "alpha"
-WRKSRC?=	${WRKDIR}/${BROWSER}-v474.alpha-dec-osf4.0
+WRKSRC?=	${WRKDIR}/${BROWSER}-v474.${NETSCAPE_DIST_TAG}
+ONLY_FOR_ARCHS?=	i386 alpha
+
+.if ${ARCH} == "alpha"
+NETSCAPE_DIST_ARCH=	supported/dec_unix40
+NETSCAPE_DIST_TAG=	alpha-dec-osf4.0
+.endif
+
+NETSCAPE_DIST_ARCH?=	unsupported/freebsd # | supported/dec_unix40 | supported/linux22 | unsupported/bsdi21
+NETSCAPE_DIST_GRADE?=	complete_install # | navigator_standalone
+NETSCAPE_DIST_SUBDIR?=	${BROWSER_VER}/unix/${NETSCAPE_DIST_ARCH}/${NETSCAPE_DIST_GRADE}
+NETSCAPE_DIST_TAG?=	x86-unknown-freebsd # | x86-unknown-linux2.2 | x86-bsdi-bsd2 | alpha-dec-osf4.0
+
+.if defined(BROWSER) && ${BROWSER} == 'navigator'
+NETSCAPE_DIST_GRADE=	navigator_standalone
 .endif
 
 BROWSER_VER=	4.74
 INFILE_HEAD?=	'Communicator,4.74.0.20000707'
-NO_AUTOADMIN=	yes
-NO_FORTIFY=	'Not available for current version'
+NO_AUTOADMIN=	'Not available'
+NO_FORTIFY=	'No need for 4.74'
 
 .include "${MASTERDIR}/Makefile"

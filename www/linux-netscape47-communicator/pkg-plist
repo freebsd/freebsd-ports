@@ -170,8 +170,10 @@ bin/%%BROWSER%%-%%BROWSER_VER%%
 %%NSUBDIR%%/XKeysymDB
 %%NSUBDIR%%/movemail
 %%NSUBDIR%%/netscape-dynMotif
-%%NSUBDIR%%/plugins/libnullplugin.so
+%%NSUBDIR%%/plugins/ShockwaveFlash.class
 %%NSUBDIR%%/plugins/cpPack1.jar
+%%NSUBDIR%%/plugins/libflashplayer.so
+%%NSUBDIR%%/plugins/libnullplugin.so
 %%NSUBDIR%%/libnullplugin-dynMotif.so
 %%NSUBDIR%%/libjsd.so
 %%NSUBDIR%%/bookmark.htm
