@@ -21,6 +21,7 @@ pgreplicate_flags=""
 load_rc_config pgreplicate
 
 name=pgreplicate
+rcvar=`set_rcvar`
 command=%%PREFIX%%/bin/pgreplicate
 pgreplicate_user=pgsql
 stop_cmd="pgreplicate_stop"
