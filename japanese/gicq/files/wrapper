@@ -1,0 +1,4 @@
+#!/bin/sh
+export GDK_CONV
+eval @PREFIX@/libexec/ja-gtk/user-setup
+exec @PREFIX@/bin/gicq.bin
