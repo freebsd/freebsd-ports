@@ -26,6 +26,7 @@ USE_GL=		yes
 USE_MESA=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack
+USE_GCC=	3.3
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lXext" \
