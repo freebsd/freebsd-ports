@@ -8,8 +8,8 @@
 PORTNAME=	notebook
 PORTVERSION=	1.0.1
 CATEGORIES=	deskutils
-MASTER_SITES=	ftp://ftp.newplanetsoftware.com/pub/notebook/source/ \
-		ftp://ftp.cs.itu.edu.tr/pub/linux/x11/jx/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	lioux
 DISTNAME=	Notebook_source-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org

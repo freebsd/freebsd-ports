@@ -8,8 +8,8 @@
 PORTNAME=	systemg
 PORTVERSION=	1.0.1
 CATEGORIES=	x11-fm
-MASTER_SITES=	ftp://ftp.newplanetsoftware.com/pub/systemg/source/ \
-		ftp://ftp.cs.itu.edu.tr/pub/linux/x11/jx/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	lioux
 DISTNAME=	SystemG_source-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
