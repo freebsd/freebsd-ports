@@ -7,20 +7,18 @@
 
 PORTNAME=	grail
 PORTVERSION=	0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=grail
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An extensible Internet browser written entirely in Python
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 
-IGNORE=		"Doesn\'t seem to work with Python 2.x"
-
-USE_PYTHON=	yes
+USE_PYTHON=	-2.2
 GRAILSUBDIR=	share/grail
 GRAILDIR=	${PREFIX}/${GRAILSUBDIR}
 DIRS_CMD=	${SED} -e '/^@dirrm/bok' -e 'D' -e ':ok' -e 's,@dirrm ,,' < ${PLIST}
@@ -43,7 +41,8 @@ do-install:
 		${INSTALL_DATA} ${WRKSRC}/$$file ${GRAILDIR}/$$file;   \
 	done
 	@${ECHO_MSG} === Installing grail script...
-	@${SED} 's,%%GRAILDIR%%,${GRAILDIR},g' <${FILESDIR}/grail >    \
+	@${SED} -e 's,%%GRAILDIR%%,${GRAILDIR},g' \
+		-e 's,%%PYTHON_CMD%%,${PYTHON_CMD},g' <${FILESDIR}/grail > \
 		${WRKDIR}/grail.tmp
 	@${INSTALL_SCRIPT} ${WRKDIR}/grail.tmp ${PREFIX}/bin/grail
 	@${RM} ${WRKDIR}/grail.tmp

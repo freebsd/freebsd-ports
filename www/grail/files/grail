@@ -1,2 +1,2 @@
 #!/bin/sh
-exec python %%GRAILDIR%%/grail.py ${1+"$@"}
+exec %%PYTHON_CMD%% %%GRAILDIR%%/grail.py ${1+"$@"}
