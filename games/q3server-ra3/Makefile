@@ -46,7 +46,7 @@ Q3SUBDIR?=	${PORTNAME}
 Q3DIR=		usr/games/quake3/${Q3SUBDIR}/
 
 PLIST_SUB+=	Q3DIR="${Q3DIR}"
-INSTALL_DIR=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m ${BINMODE}
+INSTALL_DIR=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 755
 SORT?=		/usr/bin/sort
 
 Q3SERVER_PORT=	${.CURDIR}/../q3server

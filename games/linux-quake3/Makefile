@@ -23,7 +23,7 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 Q3DIR=		usr/games/quake3/
 PLIST_SUB+=	Q3DIR="${Q3DIR}"
-INSTALL_DIR=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m ${BINMODE}
+INSTALL_DIR=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 755
 
 do-extract:
 	@${RM} -rf ${WRKDIR}

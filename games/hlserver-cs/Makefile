@@ -38,7 +38,7 @@ WRKSRC?=		${WRKDIR}/${PORTNAME}
 .endif
 PLIST_SUB+=	${PLIST_SUB_MASTER}
 
-INSTALL_DIR=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m ${BINMODE}
+INSTALL_DIR=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 755
 SORT?=		/usr/bin/sort
 
 HALFLIFESERVER_PORT=	${.CURDIR}/../halflifeserver
