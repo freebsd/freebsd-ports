@@ -20,12 +20,18 @@ LIB_DEPENDS=	kdecore.3:${PORTSDIR}/x11/kdelibs11 \
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/kmikmod
 USE_QT=		yes
-GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS}" \
-		INSTALL_SCRIPT="${INSTALL_SCRIPT}"
+WANT_ESOUND=	yes
+USE_LIBTOOL=	yes
+LIBTOOLFILES=	configure libmikmod/configure
+
+.include <bsd.port.pre.mk>
+
+.if defined(HAVE_ESOUND)
+USE_ESOUND=	yes
+.endif
 
 pre-configure:
 	cd ${WRKSRC}/libmikmod; ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

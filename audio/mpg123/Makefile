@@ -22,9 +22,7 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	jkoshy@freebsd.org
 
-.if defined(OPT_ESOUND)
-LIB_DEPENDS=	esd.2:${PORTSDIR}/audio/esound
-.endif
+WANT_ESOUND=	yes
 
 MAN1=		mpg123.1
 
@@ -34,18 +32,14 @@ MAN1=		mpg123.1
 MAKE_ENV+=	USE_INET6=yes
 .endif
 
-.if defined(OPT_ESOUND)
+.if defined(HAVE_ESOUND)
+USE_ESOUND=	yes
 ALL_TARGET=	freebsd-esd
 .else
 ALL_TARGET=	freebsd
 .endif
 
 pre-configure:
-.if !defined(OPT_ESOUND) && exists(${PREFIX}/lib/libesd.a)
-	@${ECHO_MSG} "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
-	@${ECHO_MSG} "Note: you can set OPT_ESOUND to \"yes\" to compile mpg123 with esd support."
-	@${ECHO_MSG} "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
-.endif
 .if ${MACHINE_ARCH} == "i386"
 .if !defined(OPT_ARCH) || ((${OPT_ARCH} != "i486") && (${OPT_ARCH} != "i586") \
     && (${OPT_ARCH} != "3dnow"))
@@ -67,10 +61,6 @@ OPT_ARCH?=	i486
 
 .if defined(OPT_ARCH)
 MAKE_ARGS+=	OPT_ARCH=${OPT_ARCH}
-.endif
-
-.if defined(OPT_ESOUND)
-MAKE_ARGS+=	OPT_ESOUND=${OPT_ESOUND}
 .endif
 
 .include <bsd.port.post.mk>

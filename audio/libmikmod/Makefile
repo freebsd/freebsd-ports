@@ -12,8 +12,7 @@ MASTER_SITES=	http://www.mikmod.darkorb.net/libmikmod/
 
 MAINTAINER=	mharo@FreeBSD.org
 
-LIB_DEPENDS=	esd.2:${PORTSDIR}/audio/esound
-
+USE_ESOUND=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes

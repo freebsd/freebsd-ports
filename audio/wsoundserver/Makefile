@@ -16,20 +16,13 @@ MAINTAINER=	sobomax@FreeBSD.org
 BUILD_DEPENDS=	wmaker:${PORTSDIR}/x11-wm/windowmaker
 LIB_DEPENDS=	PropList.2:${PORTSDIR}/devel/libPropList \
 		audiofile.0:${PORTSDIR}/audio/libaudiofile \
-		dockapp.1:${PORTSDIR}/x11-wm/libdockapp \
-		${ESD_DEPENDS}
+		dockapp.1:${PORTSDIR}/x11-wm/libdockapp
 RUN_DEPENDS=	wmaker:${PORTSDIR}/x11-wm/windowmaker
 
 USE_X_PREFIX=	yes
+WANT_ESOUND=	yes
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
-
-.if defined(WITH_ESD)
-ESD_DEPENDS=	esd.2:${PORTSDIR}/audio/esound
-CONFIGURE_ARGS+=--enable-esd
-.else
-ESD_DEPENDS=
-.endif
 
 MAN1=		get-wsound-flags.1x getsoundset.1x setsoundset.1x \
 			wsoundplay.1x wsoundserver.1x
@@ -40,4 +33,11 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/WMSound \
 		${PREFIX}/etc/WindowMaker/WMSound
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if defined(HAVE_ESOUND)
+USE_ESOUND=	yes
+CONFIGURE_ARGS+=--enable-esd
+.endif
+
+.include <bsd.port.post.mk>

@@ -54,7 +54,7 @@
 +CFLAGS +=-Wall -ansi -pedantic ${ARCHOPT} \
 +	 -DREAD_MMAP -DUSE_MMAP -DOSS -DTERM_CONTROL
 +
-+.if defined(OPT_ESOUND)
++.if defined(HAVE_ESOUND)
 +CFLAGS +=-I${LOCALBASE}/include
 +LDFLAGS+=-L${LOCALBASE}/lib
 +.endif
