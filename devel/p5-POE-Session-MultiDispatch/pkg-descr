@@ -13,6 +13,3 @@ then executed in that same order (unless you muck around with said
 order).
 
 WWW: http://search.cpan.org/dist/POE-Session-MultiDispatch/
-
--- Sergey Skvortsov
-skv@FreeBSD.org
