@@ -3,17 +3,17 @@
 # Date created:         30 Oct 1997
 # Whom:                 sec@42.org
 #
-# $Id: Makefile,v 1.8 1999/02/23 15:25:30 joerg Exp $
+# $Id: Makefile,v 1.9 1999/02/28 07:15:05 obrien Exp $
 #
 
 DISTNAME=	sendfile-19990215
 PKGNAME=	sendfile-2.1
 CATEGORIES=	net
-MASTER_SITES=   ftp://ftp.uni-stuttgart.de/pub/unix/comm/sendfile/current/
+MASTER_SITES=   ftp://ftp.uni-stuttgart.de/pub/unix/comm/sendfile/current/ \
+		ftp://infodrom.north.de/pub/unix/network/sendfile/ \
+		ftp://ftp.fu-berlin.de/unix/network/sendfile/current/
 
 MAINTAINER=	sec@42.org
-
-BROKEN= 'single mastersite unreachable'
 
 WRKSRC=		${WRKDIR}/${PKGNAME}
 HAS_CONFIGURE=	yes
