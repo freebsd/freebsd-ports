@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.74 1999/05/04 13:01:33 dburr Exp $
+# $Id: Makefile,v 1.75 1999/05/06 14:29:54 taoka Exp $
 #
 
     SUBDIR += AbiWord
@@ -17,8 +17,12 @@
     SUBDIR += emacs20
     SUBDIR += emacs20-dl
     SUBDIR += gnotepad+
+    SUBDIR += flim-emacs
+    SUBDIR += flim-emacs-current
     SUBDIR += flim-emacs20
     SUBDIR += flim-emacs20-current
+    SUBDIR += flim-mule
+    SUBDIR += flim-mule-current
     SUBDIR += gxedit
     SUBDIR += hexedit
     SUBDIR += jed
@@ -38,8 +42,12 @@
     SUBDIR += psgml-emacs20
     SUBDIR += psgml-mule
     SUBDIR += sam
+    SUBDIR += semi-emacs
+    SUBDIR += semi-emacs-current
     SUBDIR += semi-emacs20
     SUBDIR += semi-emacs20-current
+    SUBDIR += semi-mule
+    SUBDIR += semi-mule-current
     SUBDIR += staroffice
     SUBDIR += sted
     SUBDIR += textedit
