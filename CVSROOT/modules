@@ -1660,6 +1660,7 @@ eif		ports/games/eif
 eiffel		ports/lang/eiffel
 eights		ports/games/eights
 eispack		ports/math/eispack
+ejabberd	ports/net/ejabberd
 eject		ports/sysutils/eject
 ekg		ports/polish/ekg
 el-aspell	ports/textproc/el-aspell
