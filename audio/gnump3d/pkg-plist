@@ -1,31 +1,31 @@
-bin/mp3d
-bin/mp3d-top
-etc/mp3d.conf
-etc/mp3d/README
-etc/mp3d/default/error.html
-etc/mp3d/default/index.html
-etc/mp3d/default/results.html
-etc/mp3d/default/search.html
-etc/mp3d/default/stats.html
-etc/mp3d/nausicaa/error.html
-etc/mp3d/nausicaa/index.html
-etc/mp3d/nausicaa/results.html
-etc/mp3d/nausicaa/search.html
-etc/mp3d/nausicaa/stats.html
-etc/mp3d/simple/config.ini
-etc/mp3d/simple/error.html
-etc/mp3d/simple/index.html
-etc/mp3d/simple/results.html
-etc/mp3d/simple/search.html
-etc/mp3d/simple/stats.html
-etc/mp3d/split/config.ini
-etc/mp3d/split/error.html
-etc/mp3d/split/index.html
-etc/mp3d/split/results.html
-etc/mp3d/split/search.html
-etc/mp3d/split/stats.html
-@dirrm etc/mp3d/split
-@dirrm etc/mp3d/simple
-@dirrm etc/mp3d/nausicaa
-@dirrm etc/mp3d/default
-@dirrm etc/mp3d
+bin/gnump3d
+bin/gnump3d-top
+etc/gnump3d/gnump3d.conf
+etc/gnump3d/default/error.html
+etc/gnump3d/default/index.html
+etc/gnump3d/default/results.html
+etc/gnump3d/default/search.html
+etc/gnump3d/default/stats.html
+etc/gnump3d/default/style.css
+etc/gnump3d/nausicaa/error.html
+etc/gnump3d/nausicaa/index.html
+etc/gnump3d/nausicaa/results.html
+etc/gnump3d/nausicaa/search.html
+etc/gnump3d/nausicaa/stats.html
+etc/gnump3d/simple/config.ini
+etc/gnump3d/simple/error.html
+etc/gnump3d/simple/index.html
+etc/gnump3d/simple/results.html
+etc/gnump3d/simple/search.html
+etc/gnump3d/simple/stats.html
+etc/gnump3d/split/config.ini
+etc/gnump3d/split/error.html
+etc/gnump3d/split/index.html
+etc/gnump3d/split/results.html
+etc/gnump3d/split/search.html
+etc/gnump3d/split/stats.html
+@dirrm etc/gnump3d/split
+@dirrm etc/gnump3d/simple
+@dirrm etc/gnump3d/nausicaa
+@dirrm etc/gnump3d/default
+@dirrm etc/gnump3d
