@@ -1,5 +1,5 @@
 bin/xcoral
-%%PORTDOCS%%share/doc/xcoral/xcoral-3.40.ps
+%%PORTDOCS%%share/doc/xcoral/xcoral-%%PORTVERSION%%.ps
 %%PORTDOCS%%share/doc/xcoral/xcoral-card.ps
 share/xcoral/DEPEND
 share/xcoral/README

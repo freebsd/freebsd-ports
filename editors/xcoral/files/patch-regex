@@ -1,0 +1,38 @@
+This patch makes xcoral use the standard GNU regular expression library,
+installed on FreeBSD as -lgnuregex, instead of compiling its own (of the
+same version).
+
+	-mi
+
+--- Makefile.in	Thu Nov 15 16:29:49 2001
++++ Makefile.in	Tue Apr  8 19:06:20 2003
+@@ -15,5 +15,5 @@
+ @SET_MAKE@
+ 
+-LDOPTIONS    = @LDFLAGS@
++LDOPTIONS    = @LDFLAGS@ -lgnuregex
+ 
+ XCORALLIBDIR = \"$(XC_LIBDIR)\"
+@@ -32,5 +32,5 @@
+                file_dict.c proc_dict.c gen.tab.c lex.yy.c ie_func.c mode.c \
+                input_str.c process.c warn_box.c dial_box.c fs_box.c list_box.c \
+-               man_box.c justify.c macros.c ctr_version.c color_area.c regex.c \
++               man_box.c justify.c macros.c ctr_version.c color_area.c \
+                selection.c tool_bar.c buttons_bits.c tbox.c
+ 
+@@ -44,5 +44,5 @@
+                global_dict.o file_dict.o proc_dict.o ie_func.o mode.o \
+                input_str.o process.o warn_box.o dial_box.o fs_box.o list_box.o \
+-               man_box.o justify.o macros.o ctr_version.o color_area.o regex.o \
++               man_box.o justify.o macros.o ctr_version.o color_area.o \
+                selection.o tool_bar.o buttons_bits.o tbox.o @ALLOCA@
+ 
+--- bm_search.c	Sun Sep 20 12:49:08 1998
++++ bm_search.c	Tue Apr  8 19:04:23 2003
+@@ -58,5 +58,5 @@
+ #include <sys/types.h>
+ #define const
+-#include "regex.h"
++#include <gnuregex.h>
+ 
+ #include "main_text.h"
