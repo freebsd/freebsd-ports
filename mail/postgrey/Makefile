@@ -62,6 +62,7 @@ pre-install:
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/postgrey ${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKDIR}/postgrey.sh ${PREFIX}/etc/rc.d
+	${MKDIR} ${PREFIX}/etc/postfix
 .for i in ${ETCFILES}
 	${INSTALL_DATA} ${WRKSRC}/postgrey_${i} ${PREFIX}/etc/postfix/dist-postgrey_${i}
 .endfor
