@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Mon Apr 30 00:59:12 2001
++++ src/Makefile.in	Mon Apr 30 00:59:20 2001
+@@ -9,7 +9,7 @@
+ 	../libdockapp/dapixmap.c ../libdockapp/darect.c
+ OBJS = $(SRCS:.c=.o)
+ 
+-CFLAGS = -Wall -g -O2 -I. -I../libdockapp `@PATH_GTKCONFIG@ --cflags` \
++CFLAGS += -Wall -g -I. -I../libdockapp `@PATH_GTKCONFIG@ --cflags` \
+ 	`@PATH_XMMSCONFIG@ --cflags` \
+ 	-DDATA_DIR=\"`@PATH_XMMSCONFIG@ --data-dir`\"
+ LDFLAGS = @LIBS@ -lXpm `@PATH_GTKCONFIG@ --libs` `@PATH_XMMSCONFIG@ --libs` \
