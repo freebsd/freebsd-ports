@@ -1,7 +1,7 @@
 # New ports collection makefile for:	p5-Apache
-# Version required:			1.19
-# Date created:				April 26th 1997
-# Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
+# Version required:			1.21
+# Date created:				November 5th 1999
+# Whom:	      				Sheldon Hearn <sheldonh@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	Apache
 
 MAINTAINER=	sheldonh@FreeBSD.org
 
-RUN_DEPENDS=	${PREFIX}/sbin/apxs:${PORTSDIR}/www/apache13
+BUILD_DEPENDS=	${PREFIX}/sbin/apxs:${PORTSDIR}/www/apache13
 
 USE_PERL5=	YES
 
