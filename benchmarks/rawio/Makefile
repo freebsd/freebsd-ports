@@ -11,7 +11,7 @@ PORTVERSION=	1.1
 CATEGORIES=	benchmarks
 MASTER_SITES=	ftp://ftp.lemis.com/pub/
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	grog@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
 MAN1=		rawio.1
