@@ -1,0 +1,15 @@
+--- Makefile.orig	Thu Feb  7 21:33:59 2002
++++ Makefile	Tue Nov 19 12:55:52 2002
+@@ -26,9 +26,9 @@
+ 
+ # Please use a reasonably recent GNU make.
+ 
+-CXX=g++
+-CXXFLAGS=-g -O2 -Wall -W -Wwrite-strings -Wmissing-prototypes
+-LDFLAGS=
++CXX?=g++
++CXXFLAGS=-g -O2 -Wall -W -Wwrite-strings -Wmissing-prototypes -I/usr/local/include
++LDFLAGS= -L/usr/local/lib -lgnugetopt
+ 
+ OBJS=main.o picport.o hexfile.o program.o
+ PROG=picprog

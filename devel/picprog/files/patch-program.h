@@ -1,10 +1,9 @@
---- program.h.orig	Fri May 30 22:24:52 1997
-+++ program.h	Tue Nov 19 12:40:53 2002
-@@ -31,6 +31,8 @@
+--- program.h.orig	Tue Nov 19 12:53:12 2002
++++ program.h	Tue Nov 19 12:53:20 2002
+@@ -31,6 +31,7 @@
  #ifndef H_PROGRAM
  #define H_PROGRAM
  
-+#include <unistd.h>
 +#define HAVE_DECL_GETOPT 1
  #include <getopt.h>
  
