@@ -1,4 +1,3 @@
-bin/eventserv
 bin/hidl
 bin/idl
 bin/idlcpp
@@ -17,19 +16,11 @@ include/OB/Basic.h
 include/OB/CORBA.h
 include/OB/Config.h
 include/OB/Context.h
-include/OB/CosEventChannelAdmin.h
-include/OB/CosEventChannelAdmin_skel.h
-include/OB/CosEventComm.h
-include/OB/CosEventComm_skel.h
 include/OB/CosNaming.h
 include/OB/CosNaming_skel.h
 include/OB/CosProperty.h
 include/OB/CosProperty_impl.h
 include/OB/CosProperty_skel.h
-include/OB/CosTypedEventChannelAdmin.h
-include/OB/CosTypedEventChannelAdmin_skel.h
-include/OB/CosTypedEventComm.h
-include/OB/CosTypedEventComm_skel.h
 include/OB/Current.h
 include/OB/DII.h
 include/OB/DSI.h
@@ -51,6 +42,7 @@ include/OB/IntRep.h
 include/OB/IntRepMember.h
 include/OB/IntRepMember_skel.h
 include/OB/IntRep_skel.h
+include/OB/NTService.h
 include/OB/NamedValue.h
 include/OB/Narrow_impl.h
 include/OB/Net.h
@@ -74,14 +66,12 @@ include/OB/TypeCode.h
 include/OB/Util.h
 include/OB/Windows.h
 include/OB/X11.h
-lib/libCosEvent.a
 lib/libCosNaming.a
 lib/libCosProperty.a
 lib/libIDL.a
 lib/libOB.a
 lib/libOBTest.a
 lib/libOBX11.a
-man/man1/idl.1.gz
 share/doc/ORBacus/LICENSE
 @dirrm share/doc/ORBacus
 @dirrm include/OB
