@@ -24,12 +24,9 @@ COMMENT=	PINE(tm) -- a Program for Internet News & Email
 RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 
 # Define "WITH_LDAP" to include ldap support.
-# If the ldap port is installed somewhere other than /usr/local, define
-# LDAP_PREFIX as well.
 #
 .if defined(WITH_LDAP)
-LDAP_PREFIX?=	${LOCALBASE}
-BUILD_DEPENDS+=	${LDAP_PREFIX}/lib/libldap.a:${PORTSDIR}/net/openldap12
+USE_OPENLDAP=	yes
 .endif
 
 .if defined(WITHOUT_SSL)
