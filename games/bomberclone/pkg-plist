@@ -18,6 +18,11 @@ share/bomberclone/tileset/uccia_garbage/dead.wav
 share/bomberclone/tileset/uccia_garbage/block.png
 share/bomberclone/tileset/uccia_garbage/background.png
 @dirrm share/bomberclone/tileset/uccia_garbage
+share/bomberclone/tileset/tricked/stone.png
+share/bomberclone/tileset/tricked/dead.wav
+share/bomberclone/tileset/tricked/block.png
+share/bomberclone/tileset/tricked/background.png
+@dirrm share/bomberclone/tileset/tricked
 share/bomberclone/tileset/supermario/stonebackup.png
 share/bomberclone/tileset/supermario/stone.png
 share/bomberclone/tileset/supermario/block.png
@@ -169,6 +174,8 @@ share/bomberclone/gfx/font0.png
 include/bomberclone/udp.h
 include/bomberclone/sysfunc.h
 include/bomberclone/sound.h
+include/bomberclone/single.h
+include/bomberclone/player.h
 include/bomberclone/packets.h
 include/bomberclone/ogcache-client.h
 include/bomberclone/network.h
@@ -176,10 +183,12 @@ include/bomberclone/menugui.h
 include/bomberclone/menu.h
 include/bomberclone/map.h
 include/bomberclone/keybinput.h
+include/bomberclone/keyb.h
 include/bomberclone/gfx.h
 include/bomberclone/flyingitems.h
 include/bomberclone/font.h
 include/bomberclone/chat.h
 include/bomberclone/bomberclone.h
+include/bomberclone/bomb.h
 include/bomberclone/basic.h
 @dirrm include/bomberclone
