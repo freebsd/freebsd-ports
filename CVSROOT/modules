@@ -75,6 +75,7 @@ taginfo		CVSROOT taginfo
 AbiWord		ports/editors/AbiWord
 CaribbeanStud	ports/games/CaribbeanStud
 Cgraph		ports/graphics/Cgraph
+Coin		ports/graphics/Coin
 ETHOberonV4	ports/lang/ETHOberonV4
 EZWGL		ports/graphics/EZWGL
 ElectricFence	ports/devel/ElectricFence
