@@ -1,7 +1,7 @@
---- Makefile.old	Wed Jan  2 20:05:02 2002
-+++ Makefile	Sat Jan  5 01:38:46 2002
-@@ -15,12 +15,12 @@
- PRG_MENCODER = mencoder
+--- Makefile.orig	Tue May 21 09:11:05 2002
++++ Makefile	Tue May 21 09:14:55 2002
+@@ -18,12 +18,12 @@
+ endif
  
  #prefix = /usr/local
 -BINDIR = ${prefix}/bin
@@ -14,23 +14,23 @@
 -INSTALL = install
 +INSTALL = @${BSD_INSTALL_PROGRAM}
  
- SRCS_COMMON = adpcm.c xacodec.c cpudetect.c mp_msg.c ac3-iec958.c dec_audio.c dec_video.c msvidc.c cinepak.c fli.c qtrle.c codec-cfg.c cfgparser.c my_profile.c RTjpegN.c minilzo.c nuppelvideo.c
- SRCS_MENCODER = mencoder.c $(SRCS_COMMON) libao2/afmt.c divx4_vbr.c libvo/aclib.c libvo/img_format.c
-@@ -186,38 +186,12 @@
- 
- install: $(ALL_PRG)
- 	if test ! -d $(BINDIR) ; then mkdir -p $(BINDIR) ; fi
--	$(INSTALL) -m 755 -s $(PRG) $(BINDIR)/$(PRG)
+ SRCS_COMMON = xacodec.c cpudetect.c codec-cfg.c cfgparser.c my_profile.c spudec.c playtree.c playtreeparser.c asxparser.c vobsub.c subreader.c find_sub.c
+ SRCS_MENCODER = mencoder.c mp_msg-mencoder.c $(SRCS_COMMON) libao2/afmt.c divx4_vbr.c libvo/aclib.c libvo/osd.c libvo/sub.c libvo/font_load.c me-opt-reg.c
+@@ -220,44 +220,11 @@
+ ifeq ($(VIDIX),yes)
+ 	$(DO_MAKE)
+ endif
+-	if test ! -d $(BINDIR) ; then mkdir -p $(BINDIR) ; fi
+ 	$(INSTALL) -m 755 -s $(PRG) $(BINDIR)/$(PRG)
 -ifeq ($(GUI),yes)
 -	-ln -sf $(BINDIR)/$(PRG) $(BINDIR)/gmplayer
 -endif
-+	$(INSTALL) $(PRG) $(BINDIR)/$(PRG)
- 	if test ! -d $(MANDIR)/man1 ; then mkdir -p $(MANDIR)/man1; fi
+-	if test ! -d $(MANDIR)/man1 ; then mkdir -p $(MANDIR)/man1; fi
 -	$(INSTALL) -c -m 644 DOCS/mplayer.1 $(MANDIR)/man1/mplayer.1
-+	@${BSD_INSTALL_MAN}  DOCS/mplayer.1 $(MANDIR)/man1/mplayer.1
++	@${BSD_INSTALL_MAN} DOCS/mplayer.1 $(MANDIR)/man1/mplayer.1
  ifeq ($(MENCODER),yes)
  	$(INSTALL) -m 755 -s $(PRG_MENCODER) $(BINDIR)/$(PRG_MENCODER)
--	$(INSTALL) -c -m 644 DOCS/mencoder.1 $(MANDIR)/man1/mencoder.1
+ 	-ln -sf $(MANDIR)/man1/mplayer.1 $(MANDIR)/man1/mencoder.1
 -endif
 -	@if test ! -d $(DATADIR) ; then mkdir -p $(DATADIR) ; fi
 -	@if test ! -d $(DATADIR)/font ; then mkdir -p $(DATADIR)/font ; fi
@@ -47,14 +47,18 @@
 -	@if test -f $(CONFDIR)/codecs.conf.old ; then mv -f $(CONFDIR)/codecs.conf.old $(CONFDIR)/codecs.conf.older ; fi
 -	@if test -f $(CONFDIR)/codecs.conf ; then mv -f $(CONFDIR)/codecs.conf $(CONFDIR)/codecs.conf.old ; fi
 -	$(INSTALL) -c -m 644 etc/codecs.conf $(CONFDIR)/codecs.conf
--
+-ifeq ($(DVDKIT),yes)
+-ifeq ($(DVDKIT_SHARED),yes)
+-	if test ! -d $(LIBDIR) ; then mkdir -p $(LIBDIR) ; fi
+-	$(INSTALL) -m 755 -s libmpdvdkit/libmpdvdkit.so $(LIBDIR)/libmpdvdkit.so
+-endif
+-endif
 -ifeq ($(CSS_USE),yes)
 -	@echo "Following task requires root privs. If it fails don't panic"
 -	@echo "however it means you can't use fibmap_mplayer."
 -	@echo "Without this (or without running mplayer as root) you won't be"
 -	@echo "able to play encrypted DVDs."
 -	-$(INSTALL) -o 0 -g 0 -m 4755 -s $(PRG_FIBMAP) $(BINDIR)/$(PRG_FIBMAP)
-+	@${BSD_INSTALL_MAN} DOCS/mencoder.1 $(MANDIR)/man1/mencoder.1
  endif
  
  uninstall:
