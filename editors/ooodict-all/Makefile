@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ooodict
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES+=	editors
 MASTER_SITES+=	http://dict.progbits.com/
 DISTFILES+=	${LANGDIST}
