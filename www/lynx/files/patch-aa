@@ -1,13 +1,41 @@
---- makefile.in.orig	Tue May 25 21:13:02 1999
-+++ makefile.in	Tue May 25 23:27:44 1999
-@@ -407,8 +407,8 @@
- 	PATH=$(srcdir):$$PATH; export PATH; $(SHELL) -c '$(srcdir)/cfg_defs.sh'
+--- makefile.in.orig	Sat Apr  1 04:33:40 2000
++++ makefile.in	Sun Apr 16 06:57:08 2000
+@@ -379,22 +379,19 @@
+ 		fi ; \
+ 		)'
+ 	@-rm -f $(HELPDIR)/help_files.sed
+-	@echo Updating $(libdir)/lynx.cfg
+-	$(SHELL) -c 'if test -f $(LIBDIR)/lynx.cfg ; then \
+-		mv $(LIBDIR)/lynx.cfg $(LIBDIR)/lynx.tmp ; \
+-	else \
+-		cp $(srcdir)/lynx.cfg $(LIBDIR)/lynx.tmp ; \
+-	fi'
+-	@echo Updating $(libdir)/lynx.cfg to point to installed help-files
++	@echo Updating $(libdir)/lynx.cfg.default
++	cp $(srcdir)/lynx.cfg $(LIBDIR)/lynx.tmp
++	@echo Updating $(libdir)/lynx.cfg.default to point to installed help-files
+ 	@ECHO_CC@sed	-e '/^HELPFILE:http/s@^@#@' \
+ 		-e '/^#HELPFILE:file/s@#@@' \
+ 		-e '/^HELPFILE:file/s@/PATH_TO/lynx_help@$(helpdir)@' \
+ 		-e '/^[A-Z_]*:/s@/PATH_TO/lynx_doc@$(docdir)@' \
+ 		-e '/^HELPFILE:file/s@$$@$(COMPRESS_EXT)@' \
+ 		-e '/^HELPFILE:file/s@$(COMPRESS_EXT)$(COMPRESS_EXT)$$@$(COMPRESS_EXT)@' \
+-		$(LIBDIR)/lynx.tmp >$(LIBDIR)/lynx.cfg
+-	chmod 644 $(LIBDIR)/lynx.cfg
++		$(LIBDIR)/lynx.tmp >$(LIBDIR)/lynx.cfg.default
++	chmod 644 $(LIBDIR)/lynx.cfg.default
+ 	-rm -f $(LIBDIR)/lynx.tmp
++	-[ ! -f $(LIBDIR)/lynx.cfg ] && $(INSTALL_DATA) $(LIBDIR)/lynx.cfg.default $(LIBDIR)/lynx.cfg
+ 
+ LYHelp.h : help_files.sed LYHelp.hin
+ 	@echo Creating $@
+@@ -416,8 +413,7 @@
+ 	$(SHELL) -c '$(srcdir)/cfg_defs.sh $(srcdir)'
  
  install-cfg : $(LIBDIR)
 -	-mv -f $(LIBDIR)/lynx.cfg $(LIBDIR)/lynx.oldcfg
 -	$(INSTALL_DATA) $(srcdir)/lynx.cfg $(LIBDIR)/lynx.cfg
 +	$(INSTALL_DATA) $(srcdir)/lynx.cfg $(LIBDIR)/lynx.cfg.default
-+	-[ ! -f $(libdir)/lynx.cfg ] && $(INSTALL_DATA) $(srcdir)/lynx.cfg $(libdir)/lynx.cfg
  
  install-lss : $(LIBDIR)
  	-mv -f $(LIBDIR)/lynx.lss $(LIBDIR)/lynx.oldlss
