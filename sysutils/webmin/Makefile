@@ -25,9 +25,13 @@ USE_PERL5=	yes
 SCRIPTS_ENV+=	WRKDIR="${WRKDIR}"
 
 WEBMIN_MODULES=	bind8-1.030-1.wbm.gz \
+		dhcpd-1.030-2.wbm.gz \
 		firewall-1.030-2.wbm.gz \
+		fsdump-1.030-1.wbm.gz \
+		sendmail-1.030-1.wbm.gz \
 		squid-1.030-1.wbm.gz \
-		sshd-1.030-1.wbm.gz
+		sshd-1.030-1.wbm.gz \
+		telnet-1.030-1.wbm.gz
 
 WEBMIN_THEMES=
 
