@@ -1,0 +1,15 @@
+================================================================================
+
+Also remember to add to your Apache configuration in the appropriate context:
+
+PythonPath "['/path/to/foo', '/path/to/bar']"
+AddHandler python-program .py
+PythonHandler foobar
+PythonDebug On
+
+Where PythonPath includes the paths to at least the Python libdir, its
+site-packages dir, and to the dir where your Python programs are. Also consider
+including the dir to mod_python if your Python distribution is installed in a
+non-standard location. For more information, see http://www.modpython.org/.
+
+================================================================================
