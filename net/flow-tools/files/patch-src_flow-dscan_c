@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_flow-dscan_c,v 1.1 2003/04/15 21:31:57 avsm Exp $
+--- src/flow-dscan.c.orig	Tue Apr 15 19:53:40 2003
++++ src/flow-dscan.c	Tue Apr 15 19:54:03 2003
+@@ -105,7 +105,7 @@ int main(int argc, char **argv)
+   struct dscan_dst *ddp, *ddp2;
+   struct dscan_sup *dsp_src, *dsp_dst;
+   u_long hash;
+-  char fmt_buf1[64], fmt_buf2[64], fmt_buf3[64], fmt_buf4[54];
++  char fmt_buf1[64], fmt_buf2[64], fmt_buf3[64], fmt_buf4[64];
+   int do_dump, do_load;
+   int filter_www, filter_mcast, filter_input, filter_output;
+   char in_tbl[65536], out_tbl[65536];
