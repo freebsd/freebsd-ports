@@ -8,7 +8,7 @@
 
 DISTNAME=	cyrus-imapd-v1.5.19
 PKGNAME=	cyrus-1.5.19
-CATEGORIES=	mail tcl80
+CATEGORIES=	mail tcl82
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		http://www.freebsd.org/~stb/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		ftp://ftp.hanse.de/sites/transit/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/
@@ -17,14 +17,14 @@ MAINTAINER=	stb@FreeBSD.org
 
 Y2K=		http://andrew2.andrew.cmu.edu/cyrus/imapd/y2k.html
 
-LIB_DEPENDS=	tcl80.1:${PORTSDIR}/lang/tcl80
+LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--with-cyrus-prefix=${PREFIX}/cyrus \
 		--with-cyrus-group=cyrus \
 		--with-login=unix_pwcheck \
-		--with-tclsh=${PREFIX}/bin/tclsh8.0 \
+		--with-tclsh=${PREFIX}/bin/tclsh8.2 \
 		--with-auth=unix \
 		--with-com-err
 
@@ -59,8 +59,8 @@ post-install:
 			${PREFIX}/share/doc/cyrus/html
 		@${ECHO} share/doc/cyrus/html/${file}.html >>${TMPPLIST}
 .endfor
-		@${ECHO} "@dirrm share/doc/cyrus/html"
-		@${ECHO} "@dirrm share/doc/cyrus"
+		@${ECHO} "@dirrm share/doc/cyrus/html" >>${TMPPLIST}
+		@${ECHO} "@dirrm share/doc/cyrus" >>${TMPPLIST}
 .endif
 		${INSTALL_DATA} ${FILESDIR}/imapd.conf \
 			${PREFIX}/etc/imapd.conf.dist
