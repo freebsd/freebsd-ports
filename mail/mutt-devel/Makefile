@@ -17,7 +17,7 @@ MASTER_SITES=	ftp://ftp.guug.de/pub/mutt/ \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/mutt-international/ \
 		ftp://ftp.gwdg.de/pub/unix/mail/mutt/international/ \
 		ftp://ftp.iks-jena.de/pub/mitarb/lutz/crypt/software/pgp/mutt/
-DISTNAME=	${PKGNAME}i
+DISTNAME=	${PORTNAME}-${PORTVERSION}i
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} charmaps-0.0.tar.gz
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
