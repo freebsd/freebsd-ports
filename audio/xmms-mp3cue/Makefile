@@ -25,8 +25,8 @@ PLIST_SUB=	PORTDOCS=${DISTNAME}
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
-CONFIGURE_ENV=	CFLAGS="-fPIC"
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} -fPIC"
 .endif
 
 post-patch:
