@@ -14,6 +14,7 @@
     SUBDIR += battstat-applet
     SUBDIR += bchunk
     SUBDIR += bkpupsd
+    SUBDIR += blimitd
     SUBDIR += bubblemon-dockapp
     SUBDIR += cd-write
     SUBDIR += cd9660_unicode

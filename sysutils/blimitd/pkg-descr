@@ -1,0 +1,6 @@
+This program is designed to enforce some of the user limits that can be
+configured in login.conf. It currently only supports the idletime
+capability.
+
+Andrew Stevenson
+andrew@ugh.net.au
