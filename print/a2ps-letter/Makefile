@@ -16,6 +16,7 @@ DISTFILES=	a2ps-${PORTVERSION}${EXTRACT_SUFX} sheets.map
 MAINTAINER=	chuckr@FreeBSD.org
 
 GNU_CONFIGURE=	yes
+INSTALL_SHLIBS=	yes
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAN1=		a2ps.1 ogonkify.1 card.1 psmandup.1 fixps.1 pdiff.1 psset.1
 

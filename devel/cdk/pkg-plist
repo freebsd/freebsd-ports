@@ -29,8 +29,6 @@ include/cdk/viewer.h
 lib/libcdk.a
 lib/libcdk.so
 lib/libcdk.so.1
-@exec /sbin/ldconfig -m %B
-@unexec /sbin/ldconfig -R
 share/doc/cdk/BUGS
 share/doc/cdk/EXPANDING
 share/doc/cdk/INSTALL

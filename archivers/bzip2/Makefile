@@ -17,6 +17,8 @@ MAINTAINER=	obrien@FreeBSD.org
 
 FETCH_BEFORE_ARGS=	-b
 
+INSTALL_SHLIBS=	yes
+
 MAN1=		bzip2.1
 MLINKS=		bzip2.1 bunzip2.1   bzip2.1 bzcat.1   bzip2.1 bz2cat.1 \
 		bzip2.1 bzip2recover.1
@@ -37,8 +39,5 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/manual* ${PREFIX}/share/doc/bzip2
 	${PREFIX}/bin/bzip2 -f ${PREFIX}/share/doc/bzip2/manual.ps
 .endif
-
-post-install:
-	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

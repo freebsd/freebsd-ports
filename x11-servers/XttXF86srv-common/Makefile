@@ -21,6 +21,7 @@ RUN_DEPENDS+=	mkttfdir:${PORTSDIR}/print/perlftlib
 VERSION=	1.3
 PATCHLEVEL=	0
 SERVER?=	common
+INSTALL_SHLIBS=	yes
 .if !defined(USE_SHARED_WRKSRC) && defined(COMPILE_ALL_SERVERS_AT_ONCE)
 USE_SHARED_WRKSRC= YES
 .endif
@@ -158,7 +159,6 @@ do-install:
 	@( \
 	cd ${WRKSRC}/lib/font; \
 	${SETENV} ${MAKE_ENV} ${MAKE} install; \
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib; \
 	${INSTALL_SCRIPT} ${FILESDIR}/mkfontdir.pl ${PREFIX}/bin; \
 	${MKDIR} ${DOCDIR}; \
 	${INSTALL_DATA} ${XTTDIR}/doc/[0A-Z]*.eng ${DOCDIR}; \

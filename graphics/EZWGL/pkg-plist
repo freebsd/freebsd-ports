@@ -2,8 +2,6 @@ include/EZ.h
 lib/libEZ.a
 lib/libEZ.so
 lib/libEZ.so.1
-@exec /sbin/ldconfig -m %B
-@unexec /sbin/ldconfig -R
 share/doc/EZ/html/applications.html
 share/doc/EZ/html/documentation.html
 share/doc/EZ/html/download.html

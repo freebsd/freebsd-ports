@@ -14,8 +14,6 @@ lib/libBLTlite.a
 lib/libBLTlite24.a
 lib/libBLTlite24.so
 lib/libBLTlite24.so.2
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 lib/blt2.4/NEWS
 lib/blt2.4/PROBLEMS
 lib/blt2.4/README

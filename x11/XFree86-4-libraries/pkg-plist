@@ -420,8 +420,6 @@ lib/libpsres.so.1
 lib/libxf86config.a
 lib/libxkbfile.a
 lib/libxkbui.a
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @dirrm include/DPS
 @dirrm include/GL
 @dirrm include/X11/fonts/codeconv

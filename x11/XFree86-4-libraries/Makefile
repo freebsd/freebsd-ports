@@ -21,6 +21,7 @@ MAINTAINER=	taguchi@tohoku.iij.ad.jp
 BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake-4
 
 PREFIX?=	${X11BASE}
+INSTALL_SHLIBS=	yes
 MTREE_FILE=	/etc/mtree/BSD.x11.dist
 DIST_SUBDIR=	xc
 WRKSRC=		${WRKDIR}/xc
@@ -51,8 +52,5 @@ DISTFILES+=	Wraphelp.c
 IGNOREFILES=	Wraphelp.c
 .endif
 .endif
-
-post-install:
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

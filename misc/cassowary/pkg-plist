@@ -50,8 +50,6 @@ lib/libcassowary.la
 lib/libcassowary.so
 lib/libcassowary.so.0
 lib/libconstraints.a
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @dirrm include/cassowary
 @dirrm lib/cassowary/bench
 @dirrm lib/cassowary/tests

@@ -76,8 +76,6 @@ lib/libefs.so
 lib/libefs.so.0
 lib/libstorage_efs.so
 lib/libstorage_fs.so
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 share/gnome/bonobo/html/bonobo-api.sgml
 share/gnome/bonobo/html/bonobo-decl.txt
 share/gnome/bonobo/html/bonobo-sections.txt
