@@ -3,10 +3,10 @@
 # Date created:		17 June 1996
 # Whom:			adam
 #
-# $Id: Makefile,v 1.24 1997/03/14 03:58:18 adam Exp $
+# $Id: Makefile,v 1.25 1997/04/15 23:25:37 adam Exp $
 #
 
-DISTNAME=	dgd-net-1.1
+DISTNAME=	dgd-net-1.1p2
 DISTFILES=	dgd-1.1.tar.gz
 CATEGORIES=	net lang
 MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/lpmud/drivers/dgd/ \
@@ -17,7 +17,9 @@ PATCH_SITES=	ftp://ftp.lysator.liu.se/pub/lpmud/drivers/dgd/patches/ \
 		ftp://ftp.lysator.liu.se/pub/lpmud/drivers/dgd/pkg/ \
 		ftp://ftp.veda.is/pub/mud/dgd/patches/ \
 		ftp://ftp.dreamlabs.com/pub/mud/dgd/patches/
-PATCHFILES=	net-10.dgd-1.1.gz
+PATCHFILES=	net-10.dgd-1.1.gz \
+		1.1p1.gz \
+		1.1p1-1.1p2.gz
 
 MAINTAINER=	adam@veda.is
 
