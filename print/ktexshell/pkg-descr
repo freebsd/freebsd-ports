@@ -1,0 +1,21 @@
+KTeXShell is a KDE frontend to the popular TeX/LaTeX-
+typesetting system. The indended audience is the difference
+between all (explicit and implicit) TeX-users and the users
+of tools like LyX or KLyX. That means: KTeXShell does
+only provide a frontend to TeX and the related programs,
+while the user has to keep on coding his documents in the
+TeX language. In other words: This is for TeX hackers.
+
+Some Features:
+--------------
+
+- TeX, Editor, Viewer... are called from menu or toolbar
+- new primary files can be generated from templates
+- TeX formats, editors and viewers can be configured as well
+  as template- and working directory
+- in case of TeX errors, an error handling dialog helps you
+  to proceed
+- Integrated tools: at present we have makeindex and a generic
+  dvips-call (for printing)
+
+WWW: http://ktexshell.sourceforge.net/

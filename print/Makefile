@@ -58,6 +58,7 @@
     SUBDIR += ifhp
     SUBDIR += jadetex
     SUBDIR += klyx
+    SUBDIR += ktexshell
     SUBDIR += latex
     SUBDIR += latex2rtf
     SUBDIR += lilypond

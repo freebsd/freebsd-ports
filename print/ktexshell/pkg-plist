@@ -1,0 +1,11 @@
+bin/ktexshell
+share/doc/HTML/en/ktexshell/index.html
+share/doc/HTML/en/ktexshell/index-1.html
+share/doc/HTML/en/ktexshell/index-2.html
+share/doc/HTML/en/ktexshell/index-3.html
+share/doc/HTML/en/ktexshell/index-4.html
+share/doc/HTML/en/ktexshell/index-5.html
+share/doc/HTML/en/ktexshell/index-6.html
+share/doc/HTML/en/ktexshell/logotp3.png
+share/applnk/Applications/ktexshell.kdelnk
+@dirrm share/doc/HTML/en/ktexshell
