@@ -1,7 +1,6 @@
 %%PYTHON_SITELIBDIR%%/_rl_accel.so
 @unexec rm -f %D/%%PYTHON_SITELIBDIR%%/reportlab/fonts/*.fastmap
 %%PYTHON_SITELIBDIR%%/pyHnj.so
-%%PYTHON_SITELIBDIR%%/sgmlop.so
 %%PYTHON_SITELIBDIR%%/reportlab/README
 %%PYTHON_SITELIBDIR%%/reportlab/__init__.py
 %%PYTHON_SITELIBDIR%%/reportlab/__init__.pyc
@@ -130,6 +129,9 @@
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/dotbox.py
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/dotbox.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/dotbox.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/doughnut.py
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/doughnut.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/doughnut.pyo
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/legends.py
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/legends.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/legends.pyo
@@ -187,6 +189,9 @@
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/widgets/__init__.py
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/widgets/__init__.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/widgets/__init__.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/widgets/eventcal.py
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/widgets/eventcal.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/widgets/eventcal.pyo
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/widgets/flags.py
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/widgets/flags.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/widgets/flags.pyo
@@ -248,6 +253,9 @@
 %%PYTHON_SITELIBDIR%%/reportlab/lib/sequencer.py
 %%PYTHON_SITELIBDIR%%/reportlab/lib/sequencer.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/lib/sequencer.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/lib/set_ops.py
+%%PYTHON_SITELIBDIR%%/reportlab/lib/set_ops.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/lib/set_ops.pyo
 %%PYTHON_SITELIBDIR%%/reportlab/lib/setup.py
 %%PYTHON_SITELIBDIR%%/reportlab/lib/setup.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/lib/setup.pyo
@@ -439,6 +447,9 @@
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_pdfgen_general.py
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_pdfgen_general.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_pdfgen_general.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/test/test_pdfgen_links.py
+%%PYTHON_SITELIBDIR%%/reportlab/test/test_pdfgen_links.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/test/test_pdfgen_links.pyo
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_pdfgen_pagemodes.py
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_pdfgen_pagemodes.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_pdfgen_pagemodes.pyo
@@ -451,6 +462,9 @@
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_general.py
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_general.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_general.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_indents.py
+%%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_indents.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_indents.pyo
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_paragraphs.py
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_paragraphs.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_paragraphs.pyo
@@ -472,6 +486,9 @@
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_source_chars.py
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_source_chars.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_source_chars.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/test/test_table_layout.py
+%%PYTHON_SITELIBDIR%%/reportlab/test/test_table_layout.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/test/test_table_layout.pyo
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_tools_pythonpoint.py
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_tools_pythonpoint.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_tools_pythonpoint.pyo
@@ -590,12 +607,8 @@
 %%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/styles/projection.pyo
 %%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/styles/standard.py
 %%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/styles/standard.pyc
+%%PYTHON_SITELIBDIR%%/sgmlop.so
 %%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/styles/standard.pyo
-%%PORTDOCS%%share/doc/reportlab/graphguide.pdf
-%%PORTDOCS%%share/doc/reportlab/graphics_reference.pdf
-%%PORTDOCS%%share/doc/reportlab/reference.pdf
-%%PORTDOCS%%share/doc/reportlab/userguide.pdf
-%%PORTDOCS%%@dirrm share/doc/reportlab
 @dirrm %%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/styles
 @dirrm %%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint/demos
 @dirrm %%PYTHON_SITELIBDIR%%/reportlab/tools/pythonpoint
@@ -625,3 +638,8 @@
 @dirrm %%PYTHON_SITELIBDIR%%/reportlab/demos/colors
 @dirrm %%PYTHON_SITELIBDIR%%/reportlab/demos
 @dirrm %%PYTHON_SITELIBDIR%%/reportlab
+%%PORTDOCS%%%%DOCSDIR%%/graphguide.pdf
+%%PORTDOCS%%%%DOCSDIR%%/graphics_reference.pdf
+%%PORTDOCS%%%%DOCSDIR%%/reference.pdf
+%%PORTDOCS%%%%DOCSDIR%%/userguide.pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

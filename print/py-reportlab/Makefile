@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	reportlab
-PORTVERSION=	1.17
+PORTVERSION=	1.18
 CATEGORIES=	print python
-MASTER_SITES=	ftp://ftp.reportlab.com/
+MASTER_SITES=	http://216.92.220.143/ftp/ \
+		ftp://ftp.reportlab.com/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	ReportLab_${PORTVERSION:S/./_/}
 EXTRACT_SUFX=	.tgz
@@ -24,21 +25,15 @@ WRKSRC=		${WRKDIR}/reportlab
 MAKE_ENV=	PACKAGE_PATH="${REPORTLABDIR}"
 
 REPORTLABDIR=	${PYTHONPREFIX_SITELIBDIR}/reportlab
-DOCDIR=		${PREFIX}/share/doc/reportlab
+DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
 post-patch:
-	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/rl_config.py
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/rl_config.py
 
 post-install:
-#	${MKDIR} ${REPORTLABDIR}/fonts
-#.for fontfile in LeERC___.AFM LeERC___.PFB
-#	(cd ${WRKSRC}/fonts; \
-#		${INSTALL_DATA} ${fontfile} ${REPORTLABDIR}/fonts)
-#.endfor
-
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/*.pdf ${DOCDIR}
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/*.pdf ${DOCSDIR}
 .endif
 
 	@${CAT} ${PKGMESSAGE}
