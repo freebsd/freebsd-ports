@@ -847,6 +847,7 @@ chrootuid	ports/security/chrootuid
 chtml		ports/www/chtml
 cider		ports/cad/cider
 cidr		ports/net/cidr
+cil		ports/devel/cil
 cim		ports/lang/cim
 cinc		ports/emulators/cinc
 cingb		ports/emulators/cingb
