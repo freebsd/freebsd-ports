@@ -3724,6 +3724,7 @@ lptcontrol	src/usr.sbin/lptcontrol
 lrzsz		ports/comms/lrzsz
 ls		src/bin/ls
 lsdb		ports/databases/lsdb
+lsdb-emacs20	ports/databases/lsdb-emacs20
 lsdev		src/usr.sbin/lsdev
 lsh		ports/security/lsh
 lsmlib		ports/sysutils/lsmlib
