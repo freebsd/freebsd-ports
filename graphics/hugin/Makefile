@@ -1,4 +1,4 @@
-# New ports collection makefile for:   panorama-tools
+# New ports collection makefile for:   hugin
 # Date created:        26 august 2004
 # Whom:                cartola (Carlos E. G. Carvalho)
 #
@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	hugin
-PORTVERSION=	0.4.r1
+PORTVERSION=	0.5.b2
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.openit.com.br/distfiles/
-DISTNAME=	${PORTNAME}-0.4pre_src
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME}-0.5-beta2
 
 MAINTAINER=	cartola@openit.com.br
-COMMENT=	An easy to use cross-platform GUI for Panorama Tools
+COMMENT=	A GUI for Panorama Tools, to stitch panoramic images
 
 BUILD_DEPENDS=	PTOptimizer:${PORTSDIR}/graphics/libpano12 \
 		vigra-config:${PORTSDIR}/graphics/vigra
@@ -21,15 +22,16 @@ LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		fftw:${PORTSDIR}/math/fftw \
 		wx_gtk2:${PORTSDIR}/x11-toolkits/wxgtk2 \
-		wx_gtk2_xrc:${PORTSDIR}/x11-toolkits/wxgtk2-contrib
+		wx_gtk2_xrc:${PORTSDIR}/x11-toolkits/wxgtk2-contrib \
+		boost_date_time:${PORTSDIR}/devel/boost
 RUN_DEPENDS=	PTOptimizer:${PORTSDIR}/graphics/libpano12 \
 		PTStitcher:${PORTSDIR}/graphics/linux-panorama-tools
 
-WRKSRC=		${WRKDIR}/hugin
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
-USE_IMAKE=	yes
+USE_BZIP2=	yes
 
-DOCSDIR=        ${PREFIX}/share/hugin/xrc/data
+DOCSDIR=	${PREFIX}/share/hugin/xrc/data
 
 .include <bsd.port.mk>
