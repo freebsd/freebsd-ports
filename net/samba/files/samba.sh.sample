@@ -1,13 +1,22 @@
 #!/bin/sh
 smbspool=/var/spool/samba
+pidfiledir=/var/run
 smbd=/usr/local/sbin/smbd
 nmbd=/usr/local/sbin/nmbd
 
-if [ -f $smbd ]; then
-	if [ -d $smbspool ]; then
-		rm -f $smbspool/*
+# start
+if [ "x$1" = "x" -o "x$1" = "xstart" ]; then
+	if [ -f $smbd ]; then
+		if [ -d $smbspool ]; then
+			rm -f $smbspool/*
+		fi
+		echo -n ' Samba'
+		$smbd -D
+		$nmbd -D
 	fi
-	echo -n ' Samba'
-	$smbd -D
-	$nmbd -D
+
+# stop
+elif [ "x$1" = "xstop" ]; then
+	kill `cat $pidfiledir/smbd.pid`
+	kill `cat $pidfiledir/nmbd.pid`
 fi
