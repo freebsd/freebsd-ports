@@ -1776,6 +1776,7 @@ gcc30		ports/lang/gcc30
 gcc31		ports/lang/gcc31
 gcc32		ports/lang/gcc32
 gcc33		ports/lang/gcc33
+gchemutils	ports/science/gchemutils
 gcl		ports/lang/gcl
 gcolor		ports/graphics/gcolor
 gcombust	ports/sysutils/gcombust
