@@ -4,7 +4,7 @@
 
 if [ ! "X"${BATCH} = "X" ] ; then
 
-PRINTER_JAPAN=' epag300.dev epag600.dev mjc180.dev mjc360.dev mjc720.dev mj500c.dev lips3.dev lips4.dev lips4c.dev rpdlA3.dev rpdlA4.dev rpdlB4.dev rpdlB5.dev bj10v.dev bj10vh.dev dmprt.dev npdl.dev'
+PRINTER_JAPAN=' epag.dev mjc180.dev mjc360.dev mjc720.dev mj500c.dev lips3.dev lips4.dev lips4c.dev rpdlA3.dev rpdlA4.dev rpdlB4.dev rpdlB5.dev bj10v.dev bj10vh.dev dmprt.dev npdl.dev'
 
 sed -e "s;XINCLUDE=-I/usr/local/X/include;XINCLUDE=-I/usr/X11R6/include;" \
     -e "s;XLIBDIRS=-L/usr/X11/lib;XLIBDIRS=-L/usr/X11R6/lib;" \
@@ -84,8 +84,7 @@ Have fun with this new configuration style !     -andreas \n\n\
    "djet500c" "HP DeskJet 500C alternate driver, not for 550/560C" OFF \
    "dmprt"    "Generic Printer" ON \
    "dnj650c"  "HP DesignJet 650C" OFF \
-   "epag300"  "Epson ESC/PS laser printer 300dpi, mono" ON \
-   "epag600"  "Epson ESC/PS laser printer 600dpi, mono" ON \
+   "epag"     "Epson ESC/Page laser printer 60-600dpi, mono" ON \
    "mjc180"   "Epson MachJet series  180dpi, CMYK" ON \
    "mjc360"   "Epson MachJet series  360dpi, CMYK" ON \
    "mjc720"   "Epson MachJet series  720dpi, CMYK" ON \
