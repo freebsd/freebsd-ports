@@ -200,6 +200,7 @@
     SUBDIR += p5-postgresql-plperl
     SUBDIR += p5-sqlrelay
     SUBDIR += pear-DB
+    SUBDIR += pear-DB_DataObject
     SUBDIR += pear-DB_Pager
     SUBDIR += pear-MDB
     SUBDIR += pear-sqlite
