@@ -46,7 +46,6 @@ post-patch:
 
 post-install:
 	${FIND} ${PREFIX}/man/cat* -type l -name '*.0' -delete
-	${FIND} ${PREFIX}/man/fr/cat* -type l -name '*.0' -delete
 .ifdef CUPS_OVERWRITE_BASE
 	${SH} ${PKGINSTALL} placeholder POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
