@@ -4,7 +4,7 @@
 # Date created:			  Mon Dec 23, 1998
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.1.1.1 1998/12/30 04:27:21 obrien Exp $
+# $Id: Makefile,v 1.2 1999/04/16 06:53:30 mharo Exp $
 #
 
 DISTNAME=	dlx
@@ -15,10 +15,14 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=     obrien@FreeBSD.org
 
+.if ${MACHINE_ARCH} == alpha
+BROKEN=		won\'t build on alpha
+.endif
+
 MAN1=		dlxcc.1
 
 do-configure:
-	cd ${WRKSRC}/gcc ; config.gcc dlx
+	cd ${WRKSRC}/gcc ; ./config.gcc dlx
 
 do-build:
 	cd ${WRKSRC}/dlxsim ; make install
