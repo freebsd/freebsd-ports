@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sablot
-PORTVERSION=	0.5.0
-PORTREVISION=	2
+PORTVERSION=	0.5.2
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://www.rubycolor.org/arc/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -27,15 +26,22 @@ CONFIGURE_ARGS=	--with-sablot-lib="${LOCALBASE}" \
 		--with-expat="${LOCALBASE}"
 INSTALL_TARGET=	site-install
 
-DOCS=		README		doc/*
+DOCS_EN=	README	\
+		doc/sablot.html \
+		doc/sablot.rd
+DOCS_JA=	doc/sablot_ja.html \
+		doc/sablot.rd.ja
 
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
 	${CP} -R ${WRKSRC}/sample/* ${RUBY_EXAMPLESDIR}/${PORTNAME}/
-	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}
-.for f in ${DOCS}
+	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}/ja
+.for f in ${DOCS_EN}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/
+.endfor
+.for f in ${DOCS_JA}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/ja/
 .endfor
 .endif
 
