@@ -1,0 +1,52 @@
+--- nova/exact_backtrack.c.orig	Fri May 15 00:41:14 1992
++++ nova/exact_backtrack.c	Thu Aug  3 22:34:01 2000
+@@ -9,6 +9,10 @@
+  */
+ #include "nova.h"
+ 
++#ifdef __FreeBSD__
++extern char *a_inter_b(char *a, char *b, int constr_card, int dim);
++#endif
++
+ /******************************************************************************
+ *                         Upper level backtracking                            *
+ ******************************************************************************/
+@@ -836,7 +840,11 @@
+     SONS_LINK *son_scanner;
+     CONSTRAINT_E *scanner,*constrptr,*inter_ptr,*exist_son(); 
+     char *new_code,*inter_code,*gen_newcode_cat1(),*gen_newcode_cat2(),
+-	 *gen_newcode_cat3(),*a_inter_b();
++	 *gen_newcode_cat3()
++#ifndef __FreeBSD__
++	 ,*a_inter_b()
++#endif
++	 ;
+     int level;
+     BOOLEAN ok_to_code;
+       
+@@ -1161,7 +1169,11 @@
+ {
+ 
+     FATHERS_LINK *father_scanner;
+-    char *ft_inter,*a_inter_b(),*prov_ptr;
++    char *ft_inter,
++#ifndef __FreeBSD__
++    *a_inter_b(),
++#endif
++    *prov_ptr;
+     BOOLEAN flag;
+     int i;
+ 
+@@ -1340,7 +1352,11 @@
+ {
+ 
+     CONSTRAINT_E *constrptr;
+-    char *inter_code,*inter_constr,*a_inter_b(),*c1_inter_c2();
++    char *inter_code,*inter_constr,
++#ifndef __FreeBSD_
++    *a_inter_b(),
++#endif
++    *c1_inter_c2();
+     int i,state_pos1,state_pos2;
+ 
+     for (i = graph_depth-1; i >= 0; i--) {

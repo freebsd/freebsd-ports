@@ -4,44 +4,44 @@
 
 MACHINE	= FreeBSD
 SRCDIR	= ${.CURDIR}
-X11	= /usr/X11R6
+X11	= ${X11BASE}
 
 SIS	= $(SRCDIR)/sis
 CAD	= $(SRCDIR)/cad
 LIBDIR	= $(PREFIX)/lib/sis
 
-CC	= cc
+CC	?= cc
 
 all:
-	cd sis; make -f Makefile.nooct SIS=$(SIS) LIBDIR=$(LIBDIR) CAD=$(CAD) CC=$(CC); cd ..
-	cd utility; make CAD=$(CAD) CC=$(CC) libutility.a; \
+	cd sis; $(MAKE) -f Makefile.nooct SIS=$(SIS) LIBDIR=$(LIBDIR) CAD=$(CAD) CC=$(CC); cd ..
+	cd utility; $(MAKE) CAD=$(CAD) CC=$(CC) libutility.a; \
 	mv libutility.a $(CAD)/lib; cd ..
-	cd options; make CAD=$(CAD) CC=$(CC) liboptions.a; \
+	cd options; $(MAKE) CAD=$(CAD) CC=$(CC) liboptions.a; \
 	mv liboptions.a $(CAD)/lib; cd ..
-	cd jedi; make CAD=$(CAD) CC=$(CC); cd ..
-	cd espresso; make CAD=$(CAD) CC=$(CC); cd ..
-	cd nova; make CAD=$(CAD) SIS=$(SIS) CC=$(CC); cd ..
-	cd sred; make SIS=$(SIS) CC=$(CC); cd ..
-	cd stamina; make MACHINE=$(MACHINE) CC=$(CC) SIS=$(SIS); cd ..
-	cd vst2blif; make MACHINE=$(MACHINE) CC=$(CC); cd ..
-	cd blif2vst; make MACHINE=$(MACHINE) CC=$(CC); cd ..
-	cd xsis; make SIS=$(SIS) MACHINE=$(MACHINE) X11=$(X11) CC=$(CC); cd ..
+	cd jedi; $(MAKE) CAD=$(CAD) CC=$(CC); cd ..
+	cd espresso; $(MAKE) CAD=$(CAD) CC=$(CC); cd ..
+	cd nova; $(MAKE) CAD=$(CAD) SIS=$(SIS) CC=$(CC); cd ..
+	cd sred; $(MAKE) SIS=$(SIS) CC=$(CC); cd ..
+	cd stamina; $(MAKE) MACHINE=$(MACHINE) CC=$(CC) SIS=$(SIS); cd ..
+	cd vst2blif; $(MAKE) MACHINE=$(MACHINE) CC=$(CC); cd ..
+	cd blif2vst; $(MAKE) MACHINE=$(MACHINE) CC=$(CC); cd ..
+	cd xsis; $(MAKE) SIS=$(SIS) MACHINE=$(MACHINE) X11=$(X11) CC=$(CC); cd ..
 
 clean:
-	cd sis; make SIS=$(SIS) CAD=$(CAD) clean; cd ..
-	cd utility; make clean; cd ..
+	cd sis; $(MAKE) SIS=$(SIS) CAD=$(CAD) clean; cd ..
+	cd utility; $(MAKE) clean; cd ..
 	-rm $(CAD)/lib/libutility.a
-	cd options; make clean; cd ..
+	cd options; $(MAKE) clean; cd ..
 	-rm $(CAD)/lib/liboptions.a
-	cd jedi; make clean; cd ..
-	cd stamina; make clean; cd ..
-	cd sred; make clean; cd ..
-	cd nova; make clean; cd ..
-	cd espresso; make clean; cd ..
-	cd vst2blif; make clean; cd ..
-	cd blif2vst; make clean; cd ..
-	cd xsis; make clean; cd ..
-	cd stamina; make cleanall; cd ..
-	cd sis; make strip_depend; rm -rf lib/*; cd ..
+	cd jedi; $(MAKE) clean; cd ..
+	cd stamina; $(MAKE) clean; cd ..
+	cd sred; $(MAKE) clean; cd ..
+	cd nova; $(MAKE) clean; cd ..
+	cd espresso; $(MAKE) clean; cd ..
+	cd vst2blif; $(MAKE) clean; cd ..
+	cd blif2vst; $(MAKE) clean; cd ..
+	cd xsis; $(MAKE) clean; cd ..
+	cd stamina; $(MAKE) cleanall; cd ..
+	cd sis; $(MAKE) strip_depend; rm -rf lib/*; cd ..
 	-rm -rf make.out Makefile
 

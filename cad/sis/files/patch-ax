@@ -1,0 +1,25 @@
+--- stamina/mimi/stack.c.orig	Sat Jul 16 07:58:59 1994
++++ stamina/mimi/stack.c	Thu Aug  3 22:34:02 2000
+@@ -20,6 +20,10 @@
+ static int **top_of_stack;
+ static int **stack_ptr;
+ 
++#ifdef __FreeBSD__
++static _push(int *operand);
++#endif
++
+ /* Emulation of the stack operation */
+ /* This routine guarantees compact use of memory */
+ /* But is must pay for it in terms of time */
+@@ -85,9 +89,9 @@
+ (void) printf("Push %s %s \n",states[state1]->state_name,states[state2]->state_name);
+ #endif
+ 	if (state2 >  state1)
+-	_push(&xstack[(num_st-state1-2)*(num_st-state1-1)/2-state2+num_st-1]);
++	_push((int *)&xstack[(num_st-state1-2)*(num_st-state1-1)/2-state2+num_st-1]);
+ 	else
+-	_push(&xstack[(num_st-state2-2)*(num_st-state2-1)/2-state1+num_st-1]);
++	_push((int *)&xstack[(num_st-state2-2)*(num_st-state2-1)/2-state1+num_st-1]);
+ }
+ 
+ static

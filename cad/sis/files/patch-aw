@@ -1,0 +1,13 @@
+--- stamina/mimi/main.c.orig	Sat Jul 16 07:58:55 1994
++++ stamina/mimi/main.c	Thu Aug  3 22:34:02 2000
+@@ -23,6 +23,10 @@
+ struct u user;
+ long t_start;
+ 
++#ifdef __FreeBSD__
++static usage(char *prog);
++#endif
++
+ main(argc,argv)
+ char **argv;
+ {

@@ -1,0 +1,26 @@
+--- xsis/main.c.orig	Sat Jul 16 07:55:57 1994
++++ xsis/main.c	Thu Aug  3 22:34:03 2000
+@@ -242,7 +242,11 @@
+ 	xsis_world.child_status = XSIS_IDLE;
+ 	xsis_tty_block (xsis_world.sis_pty,0);
+ 	if (xsis_world.debug) printf("Starting %s, PID %d.\n",sis_exec,pid);
++#if defined(SIGCLD)
+ 	signal (SIGCLD,catch_sigcld);
++#else
++	signal (SIGCHLD,catch_sigcld);
++#endif
+ 	xsis_main (argc,argv);
+ 	close (master);
+     }
+@@ -253,7 +257,11 @@
+ 	    return (-1);
+ 	} else {
+ 	    terminfo.c_oflag &= ~ONLCR;	/* Don't map NL on output.	*/
++#if defined(TAB3)
+ 	    terminfo.c_oflag &= ~TAB3;	/* Don't expand tabs on output.	*/
++#else
++	    terminfo.c_oflag &= ~OXTABS;
++#endif
+ 	    terminfo.c_lflag |= ECHO;	/* Echo all input.		*/
+ 	    terminfo.c_lflag |= ICANON;	/* Use canonical input.		*/
+ 	    if (tcsetattr (slave, TCSADRAIN, &terminfo) != 0) {

@@ -1,0 +1,11 @@
+--- sis/main/Makefile.orig	Sat Jul 16 07:48:37 1994
++++ sis/main/Makefile	Thu Aug  3 22:34:02 2000
+@@ -61,7 +61,7 @@
+ 
+ version.o: version.c
+ 	$(CC) $(CFLAGS) -c "-DCUR_DATE=\"`date`\"" \
+-			"-DLIBRARY=\"$(SIS)/sis_lib\"" version.c
++			"-DLIBRARY=\"$(LIBDIR)/sis_lib\"" version.c
+ 
+ #----------------------------------------------------------------------
+ 
