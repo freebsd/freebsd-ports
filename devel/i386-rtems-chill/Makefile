@@ -7,18 +7,17 @@
 
 PORTNAME=	chill
 PORTVERSION=	2.95.2
+PORTREVISION=	9
 CATEGORIES=	devel
-MASTER_SITES=   ftp://ftp.oarcorp.com/pub/rtems/betas/rtems-4.5.0-beta/c_tools/source/ \
-		http://www.thehousleys.net/rtems-4.5.0b3/
+MASTER_SITES=   ftp://ftp.oarcorp.com/pub/rtems/snapshots/c_tools/source/ \
+		http://rtems.thehousleys.net/
 DISTFILES=	${CHILLNAME}.tar.gz ${NEWLIBNAME}.tar.gz
-PATCHFILES=	${CHILLNAME}-rtems-20000531.diff.gz \
-		${NEWLIBNAME}-rtems-20000606.diff.gz
-PATCH_SITES=	ftp://ftp.oarcorp.com/pub/rtems/betas/rtems-4.5.0-beta/c_tools/source/ \
-		http://www.thehousleys.net/rtems-4.5.0b3/
+PATCHFILES=	${CHILLNAME}-rtems-20000724.diff.gz \
+		${NEWLIBNAME}-rtems-20000828.diff.gz
+PATCH_SITES=	ftp://ftp.oarcorp.com/pub/rtems/snapshots/c_tools/source/ \
+		http://rtems.thehousleys.net/
 
 MAINTAINER=	jim@thehousleys.net
-
-BUILD_DEPENDS=	autoheader:${PORTSDIR}/devel/autoconf
 
 DIST_SUBDIR=	rtems
 
@@ -29,13 +28,14 @@ NEWLIBNAME=	newlib-1.8.2
 MASTERDIR=	${.CURDIR}/../i386-rtems-chill
 PLIST=		${PKGDIR}/PLIST.${LCLTARGET}
 
-BUILD_DEPENDS=	${LCLTARGET}-gcc:${PORTSDIR}/devel/${LCLTARGET}-gcc
+BUILD_DEPENDS=	autoheader:${PORTSDIR}/devel/autoconf \
+		${LCLTARGET}-gcc:${PORTSDIR}/devel/${LCLTARGET}-gcc
 RUN_DEPENDS=	${LCLTARGET}-gcc:${PORTSDIR}/devel/${LCLTARGET}-gcc
 
 PKGNAMEPREFIX=	${LCLTARGET}-
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-ALL_TARGET=	all info
+ALL_TARGET=	all
 
 CONFIGURE_TARGET?=	--target=${LCLTARGET}
 CONFIGURE_ARGS?=	--with-gnu-as --with-gnu-ld --verbose \
@@ -68,8 +68,5 @@ do-build:
 do-install:
 	@(cd ${WRKDIR}/build-${LCLTARGET} && \
 	${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
-
-post-install:
-	@install-info ${PREFIX}/info/chill.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>

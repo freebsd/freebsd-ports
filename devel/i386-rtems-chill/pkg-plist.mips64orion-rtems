@@ -1,7 +1,26 @@
 bin/mips64orion-rtems-chill
-@unexec install-info --delete %D/info/chill.info %D/info/dir
-info/chill.info
-@exec install-info %D/info/chill.info %D/info/dir
 lib/gcc-lib/mips64orion-rtems/2.95.2/libchill.a
 lib/gcc-lib/mips64orion-rtems/2.95.2/cc1chill
 lib/gcc-lib/mips64orion-rtems/2.95.2/chillrt0.o
+lib/gcc-lib/mips64orion-rtems/2.95.2/el/mips1/libchill.a
+lib/gcc-lib/mips64orion-rtems/2.95.2/el/mips1/chillrt0.o
+lib/gcc-lib/mips64orion-rtems/2.95.2/el/libchill.a
+lib/gcc-lib/mips64orion-rtems/2.95.2/el/chillrt0.o
+lib/gcc-lib/mips64orion-rtems/2.95.2/mips1/libchill.a
+lib/gcc-lib/mips64orion-rtems/2.95.2/mips1/chillrt0.o
+lib/gcc-lib/mips64orion-rtems/2.95.2/single/el/mips1/libchill.a
+lib/gcc-lib/mips64orion-rtems/2.95.2/single/el/mips1/chillrt0.o
+lib/gcc-lib/mips64orion-rtems/2.95.2/single/el/libchill.a
+lib/gcc-lib/mips64orion-rtems/2.95.2/single/el/chillrt0.o
+lib/gcc-lib/mips64orion-rtems/2.95.2/single/mips1/libchill.a
+lib/gcc-lib/mips64orion-rtems/2.95.2/single/mips1/chillrt0.o
+lib/gcc-lib/mips64orion-rtems/2.95.2/single/libchill.a
+lib/gcc-lib/mips64orion-rtems/2.95.2/single/chillrt0.o
+lib/gcc-lib/mips64orion-rtems/2.95.2/soft-float/el/mips1/libchill.a
+lib/gcc-lib/mips64orion-rtems/2.95.2/soft-float/el/mips1/chillrt0.o
+lib/gcc-lib/mips64orion-rtems/2.95.2/soft-float/el/libchill.a
+lib/gcc-lib/mips64orion-rtems/2.95.2/soft-float/el/chillrt0.o
+lib/gcc-lib/mips64orion-rtems/2.95.2/soft-float/mips1/libchill.a
+lib/gcc-lib/mips64orion-rtems/2.95.2/soft-float/mips1/chillrt0.o
+lib/gcc-lib/mips64orion-rtems/2.95.2/soft-float/libchill.a
+lib/gcc-lib/mips64orion-rtems/2.95.2/soft-float/chillrt0.o
