@@ -8,7 +8,9 @@
 PORTNAME=	nh2ps
 PORTVERSION=	2.3.1
 CATEGORIES=	korean print
-MASTER_SITES=	ftp://jazz.snu.ac.kr/pub/unix/util/nh2ps/
+MASTER_SITES=	ftp://ftp.kr.freebsd.org/pub/users/cjh/nh2ps/
+
+MAINTAINER=	cjh@FreeBSD.org
 
 MAN1=		nh2ps.1
 

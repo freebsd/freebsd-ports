@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://cglab.snu.ac.kr/pub/hangul/n3f/tar/ \
 		ftp://ftp.kreonet.re.kr/pub/hangul/cair-archive/fonts/
 DISTNAME=       pinetree.precomposed-${PORTVERSION}-bdf
 
+MAINTAINER=	cjh@FreeBSD.org
+
 USE_X_PREFIX=	yes
 
 WRKSRC=		${WRKDIR}/pinetree.precomposed/bdf

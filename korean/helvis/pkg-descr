@@ -7,4 +7,4 @@ helvis also supports EUC codeset, including Hangul. Other EUC codeset
 is not tested.
 
 --
-Port by Choi Jun Ho <junker@jazz.snu.ac.kr>
+CHOI Junho <cjh@FreeBSD.org>

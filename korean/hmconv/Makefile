@@ -9,8 +9,10 @@ PORTNAME=	hmconv
 PORTVERSION=	1.0.3
 CATEGORIES=	korean mail
 MASTER_SITES=	ftp://ftp.kaist.ac.kr/pub/hangul/code/hmconv/ \
-		ftp://sunsite.kren.nm.kr/pub/packages/hangul/code/hmconv/
+		ftp://ftp.kreonet.re.kr/pub/hangul/cair-archive/code/hmconv/
 DISTNAME=	hmconv1.0pl3
+
+MAINTAINER=	cjh@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/hmconv
 

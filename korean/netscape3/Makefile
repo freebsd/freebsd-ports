@@ -12,6 +12,8 @@ MASTER_SITES=	ftp://archive:oldies@archive.netscape.com/archive/navigator/intl/3
 		http://www.bpel.tutics.tut.ac.jp/~take/Netscape/etc/
 DISTFILES=	netscape-ko-v301.alpha-dec-osf2.0.tar.gz NLS.tar.gz
 
+MAINTAINER=	cjh@FreeBSD.org
+
 RUN_DEPENDS=	${PREFIX}/bin/netscape:${PORTSDIR}/www/netscape3 \
 		${X11BASE}/lib/X11/fonts/local/hgm12.pcf.gz:${PORTSDIR}/korean/hanyangfonts
 

@@ -7,4 +7,4 @@ It can convert between KS C 5601 and ISO-2022-KR.
 Original version is by Jungshik Shin <jshin@minerva.cis.yale.edu>.
 
 --
-Ports by Choi Jun Ho <junker@jazz.snu.ac.kr>
+CHOI Junho <cjh@FreeBSD.org>

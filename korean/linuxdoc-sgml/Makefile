@@ -8,7 +8,9 @@
 PORTNAME=	linuxdoc-sgml
 PORTVERSION=	1.6bh2
 CATEGORIES=	korean textproc
-MASTER_SITES=	ftp://jazz.snu.ac.kr/pub/unix/util/tools/
+MASTER_SITES=	ftp://ftp.kr.freebsd.org/pub/users/cjh/sgml-tools-ko/old/
+
+MAINTAINER=	cjh@FreeBSD.org
 
 USE_PERL5=	yes
 MAN1=		sgml2html.1 sgml2latex.1 sgml2rtf.1 sgmls.1 \

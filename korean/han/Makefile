@@ -8,8 +8,9 @@
 PORTNAME=	han
 PORTVERSION=	1.0fb
 CATEGORIES=	korean
-MASTER_SITES=	ftp://ftp.kr.freebsd.org/pub/FreeBSD-kr/distfiles/ \
-		ftp://jazz.snu.ac.kr/pub/unix/FreeBSD-kr/source/han/
+MASTER_SITES=	ftp://ftp.kr.freebsd.org/pub/FreeBSD-kr/distfiles/
+
+MAINTAINER=	cjh@FreeBSD.org
 
 ONLY_FOR_ARCHS=	i386
 

@@ -10,6 +10,8 @@ PORTVERSION=	1.42
 CATEGORIES=	korean www
 MASTER_SITES=	ftp://cglab.snu.ac.kr/pub/hangul/n3f/applications/
 
+MAINTAINER=	cjh@FreeBSD.org
+
 do-install:
 	${MKDIR} ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/nhpf ${PREFIX}/bin

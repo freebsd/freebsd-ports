@@ -10,4 +10,4 @@ fonts, "n3f-5" (N-byte 3BeolSik hangul Font 5), "n3f-5b" (the bold font),
 that you can print hangul homepages with every PostScript printer. 
 
 --
-Ports by Choi Jun Ho <junker@jazz.snu.ac.kr>
+CHOI Junho <cjh@FreeBSD.org>

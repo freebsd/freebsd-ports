@@ -3,7 +3,8 @@ Hangul X11 fonts(Johab)
 
 It is Korean fonts for X11, used in hanterm, hanemacs, or so. It need to be
 installed before hanterm and hanemacs. Its encoding is not standard(-johab*),
-so it cannot be used in i18n-ed program of X11.
+so it cannot be used in i18n-ed program of X11. But Mozilla(open source
+netscape web browser) can use these fonts for displaying.
 
 --
-Ports by CHOI Junho <junker@jazz.snu.ac.kr>
+CHOI Junho <cjh@FreeBSD.org>

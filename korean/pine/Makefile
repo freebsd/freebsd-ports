@@ -16,8 +16,10 @@ MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/old/ \
 DISTNAME=       pine3.96
 DISTFILES=	pine3.96.tar.Z pine396k2.tar.gz
 
-PATCH_SITES=	ftp://jazz.snu.ac.kr/pub/unix/util/misc/
+PATCH_SITES=	ftp://ftp.kr.freebsd.org/pub/users/cjh/unix-app/misc/
 PATCHFILES=	pico-3.96-hangul.patch
+
+MAINTAINER=	cjh@FreeBSD.org
 
 MAKE_ENV=	FILESDIR=${FILESDIR}
 MAN1= 		pine.1 pico.1 pilot.1
