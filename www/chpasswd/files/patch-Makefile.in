@@ -1,0 +1,27 @@
+--- Makefile.in.orig	Wed Feb 11 14:56:26 2004
++++ Makefile.in	Wed Feb 11 14:57:15 2004
+@@ -1,13 +1,13 @@
+ # Makefile.in for chpasswd.cgi
+ 
+-CC 		= gcc
++CC 		?= gcc
+ LANGUAGE 	= @LANGUAGE@
+ CGIDIR 		= @CGIDIR@
+ SRCDIR 		= .
+ VPATH 		= .
+ INSTALL 	= cp
+ LIBCRYPT 	= @CRYPTLIB@
+-CFLAGS 		= -O2 -w $(DEFINES)
++CFLAGS 		+= -w $(DEFINES)
+ PREFIX		= @prefix@
+ DEFS 		= -I. @DEFS@ -DPREFIX=\"@prefix@\" 
+ 
+@@ -43,7 +43,7 @@
+ 	@if test ! -f $(PREFIX)/chpasswd.log; then \
+                 echo "touch $(PREFIX)/chpasswd.log"; \
+ 	        touch $(PREFIX)/chpasswd.log; \
+-	        chmod 777 $(PREFIX)/chpasswd.log; \
++	        chmod 775 $(PREFIX)/chpasswd.log; \
+         fi
+ 
+ uninstall:
