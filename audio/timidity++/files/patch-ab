@@ -1,11 +1,11 @@
---- timidity/timidity.c.orig	Sat Sep 18 15:39:51 1999
-+++ timidity/timidity.c	Sat Sep 18 15:40:21 1999
-@@ -2444,7 +2444,7 @@
- {
-     int i;
-     static int drums[] = DEFAULT_DRUMCHANNELS;
+--- timidity/timidity.c.orig	Fri Nov 19 10:11:24 1999
++++ timidity/timidity.c	Wed Nov 24 17:15:31 1999
+@@ -45,7 +45,7 @@
+ #endif /* BORLANDC_EXCEPTION */
+ #include <signal.h>
+ 
 -#if defined(__FreeBSD__)
 +#if defined(__FreeBSD__) && !defined(__alpha__)
-     fp_except_t fpexp;
+ #include <floatingpoint.h> /* For FP exceptions */
+ #endif
  
-     fpexp = fpgetmask();

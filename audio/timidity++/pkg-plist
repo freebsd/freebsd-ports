@@ -3,8 +3,7 @@ share/doc/timidity/C/README.dl
 share/doc/timidity/C/README.sf
 share/doc/timidity/ja/README.dl
 share/doc/timidity/ja/README.sf
+@dirrm lib/timidity
 @dirrm share/doc/timidity/C
 @dirrm share/doc/timidity/ja
 @dirrm share/doc/timidity
-@exec mkdir %D/lib/timidity
-@dirrm lib/timidity
