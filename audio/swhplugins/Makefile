@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	swhplugins
-PORTVERSION=	0.4.7
+PORTVERSION=	0.4.11
 CATEGORIES=	audio
 MASTER_SITES=	http://plugin.org.uk/releases/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
@@ -20,10 +20,10 @@ LIB_DEPENDS=	fftw3.3:${PORTSDIR}/math/fftw3
 # includes assember code
 ONLY_FOR_ARCHS=	i386 amd64
 
-USE_GNOME=	gnometarget lthack
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_INC_LIBTOOL_VER=	13
+USE_LIBTOOL_VER=	15
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 INSTALLS_SHLIB=	yes

@@ -47,6 +47,7 @@ lib/ladspa/imp_1199.so
 lib/ladspa/impulse_1885.so
 lib/ladspa/inv_1429.so
 lib/ladspa/karaoke_1409.so
+lib/ladspa/latency_1914.so
 lib/ladspa/lcr_delay_1436.so
 lib/ladspa/lowpass_iir_1891.so
 lib/ladspa/ls_filter_1908.so
@@ -89,6 +90,7 @@ lib/ladspa/valve_1209.so
 lib/ladspa/valve_rect_1405.so
 lib/ladspa/vynil_1905.so
 lib/ladspa/wave_terrain_1412.so
+lib/ladspa/xfade_1915.so
 lib/ladspa/zm1_1428.so
 share/ladspa/rdf/swh-plugins.rdf
 share/ladspa/rdf/swh-scales.rdf
