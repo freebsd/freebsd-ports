@@ -5,33 +5,33 @@
 # $FreeBSD$
 #
 
-PORTNAME=	shadow-BitTorrent
-PORTVERSION=	5.8.11
-CATEGORIES?=	net python
-MASTER_SITES=	http://home.gil.com.au/~cbadsl/shadow/ \
-		http://mediahost.inetsalestech.com/shadow/
+PORTNAME=	BitTornado
+PORTVERSION=	0.2.0
+CATEGORIES?=	net python ipv6
+MASTER_SITES=	http://e.scarywater.net/bt/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	BitTorrent-experimental-S-${PORTVERSION}
 
 MAINTAINER=	sw@gegenunendlich.de
-COMMENT?=	Experimental BitTorrent client with enhanced features
+COMMENT?=	An extended BitTorrent peer-to-peer tool for distributing files
 
-CONFLICTS=	py??-BitTorrent-*
+CONFLICTS=	py??-*[Bb]it[Tt]orrent*
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 USE_REINPLACE=	yes
 
-WRKSRC=		${WRKDIR}/bittorrent-CVS-shadowsclient
+WRKSRC=		${WRKDIR}/${PORTNAME}-CVS
 
 DOC_FILES=	BUILD.windows.txt FAQ.txt IMPORTANT-multitracker-readme.txt \
 		INSTALL.unix.txt LICENSE.txt README.txt \
 		README-experimental.txt credits.txt multitracker-spec.txt \
-		webseed-spec.txt
+		README-Psyco.txt todo.txt webseed-spec.txt
+EXTRA_DOC_FILES=	multitracker/README.txt
 
 # required for GUI
 .ifndef(WITHOUT_GUI)
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/wxPython/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython
 PLIST_SUB+=	GUI=''
+EXTRA_PATCHES+=	${FILESDIR}/extra-gui-patch-setup.py
 .else
 EXTRA_PATCHES+=	${FILESDIR}/extra-nogui-patch-setup.py
 PLIST_SUB+=	GUI='@comment '
@@ -57,6 +57,9 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 .for file in ${DOC_FILES}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+.for file in ${EXTRA_DOC_FILES}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}/`${ECHO} ${file} | ${SED} -e 's|/|_|g'`
 .endfor
 .endif
 

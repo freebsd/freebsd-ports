@@ -515,6 +515,8 @@
     SUBDIR += pvm++
     SUBDIR += pxe
     SUBDIR += py-GeoIP
+    SUBDIR += py-bittornado
+    SUBDIR += py-bittornado-core
     SUBDIR += py-bittorrent
     SUBDIR += py-bittorrent-core
     SUBDIR += py-fngrab
