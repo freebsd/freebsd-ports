@@ -9,7 +9,7 @@ PORTNAME=	chrootuid
 PORTVERSION=	1.2
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.porcupine.org/pub/security/ \
-		ftp://coast.cs.purdue.edu/pub/tools/unix/chrootuid/
+		ftp://ftp.cerias.purdue.edu/pub/tools/unix/sysutils/chrootuid/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 EXTRACT_SUFX=	.shar.Z
 
