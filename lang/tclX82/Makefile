@@ -3,7 +3,7 @@
 # Date created:		6 February 1996
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.24 1998/09/25 10:05:08 asami Exp $
+# $Id: Makefile,v 1.25 1998/10/11 19:51:36 smace Exp $
 #
 
 DISTNAME=	tclX8.0.2
@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://ftp.neosoft.com/pub/tcl/tclx-distrib/
 MAINTAINER=	jseger@FreeBSD.ORG
 
 LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
+
+FILE_DEPENDS=	${PORTSDIR}/x11-toolkits/tk80
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 GNU_CONFIGURE=	yes

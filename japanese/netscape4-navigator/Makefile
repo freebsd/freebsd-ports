@@ -3,16 +3,15 @@
 # Date created:		13 Mar 1998
 # Whom:			sada
 #
-# $Id: Makefile,v 1.5 1998/10/09 04:22:20 asami Exp $
+# $Id: Makefile,v 1.6 1998/10/09 22:27:52 asami Exp $
 #
 
 MAINTAINER=	sada@e-mail.ne.jp
 
-FILESDIR=	${MASTER_DIR}/files
-PATCHDIR=	${MASTER_DIR}/patches
+MASTERDIR=	${.CURDIR}/../netscape4-communicator
+PKGDIR=		${.CURDIR}/pkg
 
 BROWSER_NAME=	navigator
 MANFILE=	${.CURDIR}/files/${MAN1}
-MASTER_DIR=	${.CURDIR}/../netscape4-communicator
 
-.include "${MASTER_DIR}/Makefile"
+.include	"${MASTERDIR}/Makefile"

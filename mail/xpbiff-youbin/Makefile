@@ -3,7 +3,7 @@
 # Date created:         7 April 1997
 # Whom:                 Yoshiro MIHIRA <sanpei@yy.cs.keio.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/08/24 15:46:06 itojun Exp $
 #
 
 # can't use PORTSDIR here, since we haven't included bsd.port.mk
@@ -12,10 +12,11 @@ PKGNAME=	xpbiff-youbin-1.27
 MAINTAINER=	sanpei@yy.cs.keio.ac.jp
 
 YOUBIN=		yes
-FILESDIR=	${.CURDIR}/../xpbiff/files
-PATCHDIR=	${.CURDIR}/../xpbiff/patches
-PLIST=		${.CURDIR}/../xpbiff/pkg/PLIST
+MASTERDIR=	${.CURDIR}/../xpbiff
+PKGDIR=		${.CURDIR}/pkg
+PLIST=		${MASTERDIR/pkg/PLIST
 
 RUN_DEPENDS=	youbin:${PORTSDIR}/mail/youbin
 
-.include "${.CURDIR}/../xpbiff/Makefile"
+
+.include	"${MASTERDIR}/Makefile"

@@ -3,7 +3,7 @@
 # Date created:		07 Oct 1998
 # Whom:			Shigeyuki FUKUSHIMA (shige@kuis.kyoto-u.ac.jp)
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/10/27 22:06:53 kuriyama Exp $
 #
 
 PKGNAME=	ja-xv-3.10a
@@ -11,9 +11,8 @@ CATEGORIES=	japanese graphics
 
 MAINTAINER=	shige@kuis.kyoto-u.ac.jp
 
-# can't use PORTSDIR here, since we haven't included bsd.port.mk
-FILESDIR=	${.CURDIR}/../../graphics/xv/files
-PATCHDIR=	${.CURDIR}/../../graphics/xv/patches
+MASTERDIR=	${.CURDIR}/../../graphics/xv
+PKGDIR=		${.CURDIR}/pkg
 
 MAKE_ENV=	LOCALE_EXTENSION=-DTV_L10N
 
@@ -30,4 +29,4 @@ do-install:
 	fi
 	@${LN} -sf ${PREFIX}/bin/ja-xv ${PREFIX}/bin/xv
 
-.include <${.CURDIR}/../../graphics/xv/Makefile>
+.include "${MASTERDIR}/Makefile"

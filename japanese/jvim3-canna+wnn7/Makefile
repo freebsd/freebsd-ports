@@ -3,7 +3,7 @@
 # Date created:		98/11/17
 # Whom:			Satoshi TAOKA <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1998/10/20 15:52:55 kuriyama Exp $
+# $Id: Makefile,v 1.2 1998/11/24 19:47:57 sada Exp $
 #
 
 PKGNAME=	ja-jvim-canna+wnn6-3.0.1.3i
@@ -11,4 +11,7 @@ PKGNAME=	ja-jvim-canna+wnn6-3.0.1.3i
 CANNA=		yes
 WNN6=		yes
 
-.include "${.CURDIR}/../jvim3/Makefile"
+MASTERDIR=	${.CURDIR}/../jvim3
+PKGDIR=		${.CURDIR}/pkg
+
+.include "${MASTERDIR}/Makefile"

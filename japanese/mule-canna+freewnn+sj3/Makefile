@@ -3,7 +3,7 @@
 # Date created:		7 July 1997
 # Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id: Makefile,v 1.2 1997/09/14 21:35:07 max Exp $
+# $Id: Makefile,v 1.3 1998/10/07 08:11:35 asami Exp $
 #
 
 PKGNAME=	ja-mule-canna+sj3+wnn4-2.3
@@ -13,4 +13,7 @@ CANNA=		yes
 SJ3=		yes
 WNN4=		yes
 
-.include "${.CURDIR}/../../editors/mule/Makefile"
+MASTERDIR=	${.CURDIR}/../../editors/mule
+PKGDIR=		${.CURDIR}/pkg
+
+.include "${MASTERDIR}/Makefile"

@@ -3,11 +3,13 @@
 # Date created:		5 Sep 1997
 # Whom:			Satoshi TAOKA <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/07/09 14:33:46 kuriyama Exp $
 #
 
 PKGNAME=	ja-onew-canna+wnn4-2.2.10
 CANNA=		yes
 WNN4=		yes
 
-.include "${.CURDIR}/../onew-wnn4/Makefile"
+MASTERDIR=	${.CURDIR}/../onew-wnn4
+
+.include	"${MASTERDIR}/Makefile"

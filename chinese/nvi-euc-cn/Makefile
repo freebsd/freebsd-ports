@@ -3,18 +3,15 @@
 # Date created:		6 Mar 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.12 1998/06/26 09:16:43 obrien Exp $
+# $Id: Makefile,v 1.13 1998/11/19 04:46:43 itojun Exp $
 #
-
-# can't use PORTSDIR here, since we haven't included bsd.port.mk
-FILESDIR=	${.CURDIR}/../../editors/nvi-m17n/files
-PATCHDIR=	${.CURDIR}/../../editors/nvi-m17n/patches
-PKGDIR=		${.CURDIR}/../../editors/nvi-m17n/pkg
-COMMENT=	${.CURDIR}/pkg/COMMENT
 
 PKGNAME=	zh-nvi-euccn-1.79.19981119
 
-.include <${.CURDIR}/../../editors/nvi-m17n/Makefile>
+MASTERDIR=	${.CURDIR}/../../editors/nvi-m17n
+COMMENT=	${.CURDIR}/pkg/COMMENT
+
+.include "${MASTERDIR}/Makefile"
 
 CATEGORIES=	chinese editors
 

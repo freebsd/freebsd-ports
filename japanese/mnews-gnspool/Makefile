@@ -3,17 +3,16 @@
 # Date created:			23 Sep 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/08/24 01:33:16 steve Exp $
 #
 
 PKGNAME=	ja-mnews-gnspool-1.21
 
 RUN_DEPENDS=	gnspool:${PORTSDIR}/japanese/gn-gnspool
 
-FILESDIR=	${.CURDIR}/../mnews/files
-PKGDIR=		${.CURDIR}/../mnews/pkg
+MASTERDIR=	${.CURDIR}/../mnews
 COMMENT=	${.CURDIR}/pkg/COMMENT
 
 GNSPOOL=	1
 
-.include "../mnews/Makefile"
+.include "${MASTERDIR}/Makefile"
