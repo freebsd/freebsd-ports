@@ -1,4 +1,4 @@
-Post-Install Notes for Majordomo v1.93
+Post-Install Notes for Majordomo v1.94
 ======================================
 
 Before you can use Majordomo, you will need to complete a few steps
@@ -18,13 +18,15 @@ manually:
 	  be done by adding a line similar to the following to 
 	  /etc/sendmail.cf :
 
-	  OA/etc/aliases.majordomo (for 8.6.x Sendmail)
+	  OA/usr/local/majordomo/aliases.majordomo
+	  (for 8.6.x Sendmail)
 	  
-	  O AliasFile=/etc/aliases,/etc/aliases.majordomo (for 8.7.x Sendmail)
+	  O AliasFile=/etc/aliases,/usr/local/majordomo/aliases.majordomo
+	  (for 8.7.x and up)
 
 	  or a line similar to the following to your m4 macros file :
 
-	  define(`ALIAS_FILE',/etc/aliases,/etc/aliases.majordomo')
+	  define(`ALIAS_FILE',/etc/aliases,/usr/local/majordomo/aliases.majordomo')
 
 
 Enjoy Majordomo!

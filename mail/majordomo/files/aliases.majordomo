@@ -18,7 +18,7 @@ majordom: majordomo-owner
 #bounces-approval:owner-bounces
 #owner-bounces-outgoing:owner-bounces
 
-#bounces: "|/usr/local/majordomo/wrapper resend -l bounces -h thud.cdrom.com bounces-outgoing"
+#bounces: "|/usr/local/majordomo/wrapper resend -l bounces -h %%HOSTNAME%% bounces-outgoing"
 
 #bounces-outgoing::include:/usr/local/majordomo/lists/bounces
 
@@ -34,7 +34,7 @@ owner-test-l-digest-outgoing:owner-test-l
 test-l-approval:owner-test-l 
 test-l-digest-approval:owner-test-l
 
-test-l: "|/usr/local/majordomo/wrapper resend -l test-l -h thud.cdrom.com test-l-outgoing"
+test-l: "|/usr/local/majordomo/wrapper resend -l test-l -h %%HOSTNAME%% test-l-outgoing"
 test-l-digest:test-l
 test-l-outgoing::include:/usr/local/majordomo/lists/test-l,
 	"|/usr/local/majordomo/wrapper archive -a -m -f /usr/local/majordomo/lists/test-l.archive/test-l.archive",
@@ -65,7 +65,7 @@ test-l-digest-request: "|/usr/local/majordomo/wrapper majordomo -l test-l-digest
 #owner-listname-outgoing:owner-listname
 #listname-approval:owner-listname 
 
-#listname: "|/usr/local/majordomo/wrapper resend -l listname -h thud.cdrom.com listname-outgoing"
+#listname: "|/usr/local/majordomo/wrapper resend -l listname -h %%HOSTNAME%% listname-outgoing"
 #listname-outgoing::include:/usr/local/majordomo/lists/listname
 
 #listname-request: "|/usr/local/majordomo/wrapper majordomo -l listname"
@@ -78,7 +78,7 @@ test-l-digest-request: "|/usr/local/majordomo/wrapper majordomo -l test-l-digest
 #owner-listname-outgoing:owner-listname
 #listname-approval:owner-listname 
 
-#listname: "|/usr/local/majordomo/wrapper resend -l listname -h thud.cdrom.com listname-outgoing"
+#listname: "|/usr/local/majordomo/wrapper resend -l listname -h %%HOSTNAME%% listname-outgoing"
 #listname-outgoing::include:/usr/local/majordomo/lists/listname,
 #	"|/usr/local/majordomo/wrapper archive -a -m -f /usr/local/majordomo/lists/listname.archive/listname.archive"
 
@@ -95,7 +95,7 @@ test-l-digest-request: "|/usr/local/majordomo/wrapper majordomo -l test-l-digest
 #listname-approval:owner-listname 
 #listname-digest-approval:owner-listname
 
-#listname: "|/usr/local/majordomo/wrapper resend -l listname -h thud.cdrom.com listname-outgoing"
+#listname: "|/usr/local/majordomo/wrapper resend -l listname -h %%HOSTNAME%% listname-outgoing"
 #listname-digest:listname
 #listname-outgoing::include:/usr/local/majordomo/lists/listname,
 #	"|/usr/local/majordomo/wrapper digest -r -C -l listname-digest listname-digest-outgoing"
@@ -115,7 +115,7 @@ test-l-digest-request: "|/usr/local/majordomo/wrapper majordomo -l test-l-digest
 #listname-approval:owner-listname 
 #listname-digest-approval:owner-listname
 
-#listname: "|/usr/local/majordomo/wrapper resend -l listname -h thud.cdrom.com listname-outgoing"
+#listname: "|/usr/local/majordomo/wrapper resend -l listname -h %%HOSTNAME%% listname-outgoing"
 #listname-digest:listname
 #listname-outgoing::include:/usr/local/majordomo/lists/listname,
 #	"|/usr/local/majordomo/wrapper archive -a -m -f /usr/local/majordomo/lists/listname.archive/listname.archive",
