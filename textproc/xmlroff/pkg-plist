@@ -26,6 +26,7 @@ include/libfo-0.3/libfo/fo-xsl-formatter.c
 include/libfo-0.3/libfo/fo-xsl-formatter.h
 include/libfo-0.3/libfo/fo-xslt-transformer.h
 include/libfo-0.3/property/fo-property.h
+include/libfo-0.3/util/fo-hash-table.h
 lib/libfo-0.3.a
 lib/libfo-0.3.so
 lib/libfo-0.3.so.300
@@ -91,6 +92,7 @@ libdata/pkgconfig/libfo-0.3.pc
 %%DOCSDIR%%/areas.html
 %%DOCSDIR%%/background-color.html
 %%DOCSDIR%%/baseline-shift.html
+%%DOCSDIR%%/basic-interface.html
 %%DOCSDIR%%/basic-link.html
 %%DOCSDIR%%/bidi-override.html
 %%DOCSDIR%%/block-container.html
@@ -262,6 +264,7 @@ libdata/pkgconfig/libfo-0.3.pc
 %%DOCSDIR%%/title.html
 %%DOCSDIR%%/unicode-bidi.html
 %%DOCSDIR%%/up.png
+%%DOCSDIR%%/utility-objects.html
 %%DOCSDIR%%/widows.html
 %%DOCSDIR%%/width.html
 %%DOCSDIR%%/wrap-option.html
@@ -271,6 +274,7 @@ libdata/pkgconfig/libfo-0.3.pc
 %%DOCSDIR%%/xmlroff-FoDocGP.html
 %%DOCSDIR%%/xmlroff-FoError.html
 %%DOCSDIR%%/xmlroff-FoFontDesc.html
+%%DOCSDIR%%/xmlroff-FoHashTable.html
 %%DOCSDIR%%/xmlroff-FoLayout.html
 %%DOCSDIR%%/xmlroff-FoLibfoContext.html
 %%DOCSDIR%%/xmlroff-FoNeutralFoIface.html
@@ -284,7 +288,6 @@ libdata/pkgconfig/libfo-0.3.pc
 %%DOCSDIR%%/xmlroff-block-progression-dimensionminimum.html
 %%DOCSDIR%%/xmlroff-block-progression-dimensionoptimum.html
 %%DOCSDIR%%/xmlroff-border.html
-%%DOCSDIR%%/xmlroff-code-rules.html
 %%DOCSDIR%%/xmlroff-float.html
 %%DOCSDIR%%/xmlroff-fo-block-area.html
 %%DOCSDIR%%/xmlroff-fo-block-block-area.html
@@ -296,6 +299,7 @@ libdata/pkgconfig/libfo-0.3.pc
 %%DOCSDIR%%/xmlroff-fo-list-item-body-area.html
 %%DOCSDIR%%/xmlroff-fo-list-item-label-area.html
 %%DOCSDIR%%/xmlroff-fo-page-sequence-area.html
+%%DOCSDIR%%/xmlroff-fo-property-border-color.html
 %%DOCSDIR%%/xmlroff-fo-region-body-area.html
 %%DOCSDIR%%/xmlroff-fo-retrieve-marker.html
 %%DOCSDIR%%/xmlroff-fo-table-area.html
@@ -347,6 +351,7 @@ share/xml/libfo-0.3.1/xmlroff.fo
 @dirrm share/xml/libfo-0.3.1
 @unexec rmdir %D/share/xml 2>/dev/null || true
 @dirrm %%DOCSDIR%%
+@dirrm include/libfo-0.3/util
 @dirrm include/libfo-0.3/property
 @dirrm include/libfo-0.3/libfo
 @dirrm include/libfo-0.3/fo
