@@ -1,0 +1,28 @@
+--- configure.orig	Fri Jun 20 11:55:40 2003
++++ configure	Fri Jun 20 11:57:22 2003
+@@ -3094,6 +3094,9 @@
+ echo "${ECHO_T}$am_cv_CC_dependencies_compiler_type" >&6
+ CCDEPMODE=depmode=$am_cv_CC_dependencies_compiler_type
+ 
++_CPPFLAGS="$CPPFLAGS"
++CPPFLAGS="$CPPFLAGS `gnome-config --cflags print`"
++
+ 
+ 
+ if
+@@ -3168,6 +3171,7 @@
+ fi
+ 
+ 
++CPPFLAGS="$_CPPFLAGS"
+ 
+ ac_ext=c
+ ac_cpp='$CPP $CPPFLAGS'
+@@ -15765,6 +15769,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'

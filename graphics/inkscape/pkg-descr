@@ -1,0 +1,9 @@
+Inkscape seeks to become a full featured open source SVG editor.
+Derived from the highly popular Sodipodi codebase, Inkscape strives
+to build full XML, SVG, and CSS2 compliance.
+
+Features include alpha blending, node editing, svg-to-png export,
+and more. Project aims for capabilities similar to Illustrator,
+CorelDraw, Visio, etc.
+
+WWW: http://www.inkscape.org
