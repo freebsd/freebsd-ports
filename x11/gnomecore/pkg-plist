@@ -242,6 +242,7 @@ share/gnome/help/gnome-feedback/C/ln7.html
 share/gnome/help/gnome-feedback/no/gnome-feedback.sgml
 share/gnome/help/gnome-feedback/no/index.html
 share/gnome/help/gnome-feedback/no/ln7.html
+share/gnome/help/gnome-terminal/C/LEGALNOTICE.html
 share/gnome/help/gnome-terminal/C/authors.html
 share/gnome/help/gnome-terminal/C/classes.html
 share/gnome/help/gnome-terminal/C/config.html
@@ -429,6 +430,7 @@ share/gnome/help/mailcheck_applet/no/ln10.html
 share/gnome/help/mailcheck_applet/no/mailcheck.sgml
 share/gnome/help/mailcheck_applet/no/mailcheck_applet.sgml
 share/gnome/help/mailcheck_applet/no/topic.dat
+share/gnome/help/panel/C/LEGALNOTICE.html
 share/gnome/help/panel/C/appletadd.html
 share/gnome/help/panel/C/applets.html
 share/gnome/help/panel/C/authors.html
