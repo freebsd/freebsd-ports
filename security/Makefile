@@ -48,6 +48,7 @@
     SUBDIR += firewalk
     SUBDIR += flawfinder
     SUBDIR += fpm
+    SUBDIR += fragroute
     SUBDIR += fragrouter
     SUBDIR += fressh
     SUBDIR += fsh
