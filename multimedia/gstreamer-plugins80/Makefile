@@ -137,6 +137,11 @@ post-patch:
 .if ${GST_PLUGIN}!="base"
 	@${REINPLACE_CMD} -E -e 's|ac_config_files=\"*\"|ac_config_files="$$ac_config_files Makefile ${GST_PLUGIN_MAKEFILES}" #|' \
 		${WRKSRC}/configure
+.else
+.for f in ${GST_ALL_PLUGINS}
+	@${REINPLACE_CMD} -e 's|ext/${f}/Makefile||g' \
+		${WRKSRC}/configure
+.endfor
 .endif
 
 post-build:
@@ -153,7 +158,7 @@ post-install:
 . endfor
 .endif
 # register plugins
-	-@${X11BASE}/bin/gst-register-${GST_VERSION} \
-		--gst-registry=${PREFIX}/share/gnome/cache/gstreamer-${GST_VERSION}/registry.xml 2>/dev/null
+	-@${X11BASE}/bin/gst-register-${VERSION} \
+		--gst-registry=${PREFIX}/share/gnome/cache/gstreamer-${VERSION}/registry.xml 2>/dev/null
 
 .include <bsd.port.post.mk>

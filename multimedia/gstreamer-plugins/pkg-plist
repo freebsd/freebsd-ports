@@ -186,5 +186,5 @@ share/locale/vi/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
 @dirrm include/gstreamer-%%VERSION%%/gst/audio
 @unexec rmdir %D/include/gstreamer-%%VERSION%%/gst 2>/dev/null || true
 @unexec rmdir %D/include/gstreamer-%%VERSION%% 2>/dev/null || true
-@exec %D/bin/gst-register --gst-registry=%D/share/gnome/cache/gstreamer-${VERSION}/registry.xml 2>/dev/null || true
-@unexec %D/bin/gst-register --gst-registry=%D/share/gnome/cache/gstreamer-${VERSION}/registry.xml 2>/dev/null || true
+@exec %D/bin/gst-register --gst-registry=%D/share/gnome/cache/gstreamer-%%VERSION%%/registry.xml 2>/dev/null || true
+@unexec %D/bin/gst-register --gst-registry=%D/share/gnome/cache/gstreamer-%%VERSION%%/registry.xml 2>/dev/null || true
