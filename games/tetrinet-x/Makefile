@@ -19,6 +19,12 @@ WRKSRC=		${WRKDIR}/tetrinetx-${PORTVERSION}
 
 INSTALLDIR=	${PREFIX}/tetrinet-x
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 do-build:
 	(cd ${WRKDIR}/tetrinetx-1.13.16/src && \
 	gcc -O2 -fno-strength-reduce -Wall main.c -o ../bin/tetrix.freebsd)
@@ -44,4 +50,4 @@ post-install:
 	@${ECHO} ""
 	@${ECHO} ""
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

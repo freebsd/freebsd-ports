@@ -19,6 +19,12 @@ NO_WRKSUBDIR=	yes
 
 PORTSDOC=	README fujiplay.lsm mx700-commands.html
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 do-install:
 	(cd ${WRKDIR}; ${INSTALL_PROGRAM} fujiplay yycc2ppm ${PREFIX}/bin)
 .if !defined(NOPORTDOCS)
@@ -28,4 +34,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

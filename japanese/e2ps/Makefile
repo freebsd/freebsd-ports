@@ -15,8 +15,15 @@ COMMENT=	Text file to postscript converter (with Japanese support)
 
 WRKSRC=		${WRKDIR}/e2ps
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/e2ps ${PREFIX}/bin
 	${LN} -sf ${PREFIX}/bin/e2ps ${PREFIX}/bin/e2lpr
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

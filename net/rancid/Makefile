@@ -38,6 +38,12 @@ MAN5=		env.5 lg.conf.5 cloginrc.5 router.db.5
 
 CONFIG_FILES=	bin/env util/lg/lg.conf
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 post-install:
 	@ ${SED} -e "s:%%INSTDIR%%:${PREFIX}/rancid:g" pkg-message >${PKGMESSAGE}
 .if !defined(BATCH)
@@ -52,4 +58,4 @@ post-install:
 	fi
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -13,6 +13,12 @@ MASTER_SITES=	ftp://ftp.csl.sony.co.jp/pub/kjc/
 MAINTAINER=	kjc@csl.sony.co.jp
 COMMENT=	Tele Traffic Tapper, a network traffic monitoring tool
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 # the tcl/tk LIB_DEPENDS has to match that of ports/x11-toolkits/blt.
 LIB_DEPENDS=	BLT24.2:${PORTSDIR}/x11-toolkits/blt \
 		tcl83.1:${PORTSDIR}/lang/tcl83 \
@@ -22,4 +28,4 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install install-man
 MAN1=		ttt.1 tttprobe.1 tttview.1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
