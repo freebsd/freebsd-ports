@@ -1,4 +1,4 @@
-@cwd /usr/local
+@exec mkdir -p %D/share/emacs/site-lisp
 @exec mkdir -p %D/lib/mule/site-lisp
 @exec mkdir -p %D/lib/mule/lock
 @exec chmod 777 %D/lib/mule/lock
