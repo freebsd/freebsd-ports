@@ -3,7 +3,7 @@
 # Date created:				22 June 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/07/12 23:43:22 steve Exp $
 #
 
 DISTNAME=		bb-1.2
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	games
 
 MAINTAINER=		andy@icc.surw.chel.su
 
-LIB_DEPENDS=		aa\\.1\\.:${PORTSDIR}/graphics/aalib
+LIB_DEPENDS=		aa.1:${PORTSDIR}/graphics/aalib
 
 MAKEFILE=		makefile
 GNU_CONFIGURE=		yes
