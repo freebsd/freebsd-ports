@@ -33,4 +33,10 @@ CONFIGURE_ARGS=	--with-oss
 
 MAN1=		xzx.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386" && ${OSVERSION} >= 502102
+BROKEN=		"Does not compile on !i386 5.x"
+.endif
+
+.include <bsd.port.post.mk>
