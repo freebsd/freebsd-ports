@@ -25,4 +25,10 @@ CONFIGURE_ENV=	\
 	CPPFLAGS="${PTHREAD_CFLAGS} `${GTK_CONFIG} --cflags` -fPIC" \
 	LDFLAGS="${PTHREAD_LIBS} `${GTK_CONFIG} --libs` -lGL -lGLU -lglut"
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502000
+BROKEN=		"Configure fails"
+.endif
+
+.include <bsd.port.post.mk>
