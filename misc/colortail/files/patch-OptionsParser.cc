@@ -1,20 +1,20 @@
---- OptionsParser.cc.orig	Thu Aug  5 01:23:39 1999
-+++ OptionsParser.cc	Tue Jan 28 13:11:52 2003
-@@ -136,6 +136,8 @@
- 	       {
- 		  if (optarg[pos] == ',')
- 		  {
-+		     filename.put('\0');
-+
- 		     // found seperator
- 		     // set filename in options class
- 		     o->cfg_filenames[o->nr_cfg_files] = filename.str();
-@@ -152,6 +154,8 @@
+--- OptionsParser.cc.orig	Thu Aug  5 08:23:39 1999
++++ OptionsParser.cc	Thu Feb  5 19:49:47 2004
+@@ -18,7 +18,7 @@
+ */
  
- 		  if (optarg[pos] == '\0')
- 		  {
-+		     filename.put('\0');
-+
- 		     // found end of string
- 		     // set filename in options class
- 		     o->cfg_filenames[o->nr_cfg_files] = filename.str();
+ #include <iostream.h>
+-#include <strstream.h>
++#include <strstream>
+ #include <string.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+@@ -130,7 +130,7 @@
+ 	    int loop = 1;
+ 	    while (loop)
+ 	    {
+-	       ostrstream filename;
++	       std::ostrstream filename;
+ 
+ 	       while (1)
+ 	       {
