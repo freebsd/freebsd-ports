@@ -6,14 +6,16 @@
 
 PORTNAME=	nicetext
 PORTVERSION=	0.9
+PORTREVISION=	1
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.nicetext.com/pub/ctgi/nicetext/src/ \
+MASTER_SITES=	http://www.nicetext.com/pub/ctgi/nicetext/src/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert files to pseudo-natural-language text and back again
 
-USE_GMAKE=	YES
-MAKE_FLAGS=	CXXFLAGS="${CXXFLAGS} -pedantic" CFLAGS="${CFLAGS} -pedantic"
+USE_REINPLACE=	yes
+USE_GMAKE=	yes
+CFLAGS+=	-fpermissive
 
 MAN1=		bitcp.1 dct2mstr.1 expgram.1 genmodel.1 gramtest.1 impkimmo.1 \
 		impmsc.1 impwbstr.1 listword.1 nicetext.1 nttpd.1 printint.1 \
@@ -22,15 +24,14 @@ PROGRAMS=	bitcp dct2mstr expgram genmodel gramtest impkimmo impmsc \
 		impwbstr listword nicetext nttpd printint rinfo scramble \
 		sortdct txt2dct
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
+post-patch:
+	@${FIND} ${WRKSRC} -name "Makefile" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|gcc|$${CC}|g ; \
+		 s|g++|$${CXX}|g'
 
 post-install:
 	@${ECHO_CMD} "#!/bin/sh" > ${WRKSRC}/bin/qstart-nttpd
-	@${ECHO_CMD} ${PREFIX}/bin/"nttpd -b " ${PREFIX}/share/examples/nicetext/database >> ${WRKSRC}/bin/qstart-nttpd
+	@${ECHO_CMD} ${PREFIX}/bin/"nttpd -b " ${EXAMPLESDIR}/database >> ${WRKSRC}/bin/qstart-nttpd
 	${CHMOD} a+rx ${WRKSRC}/bin/qstart-nttpd
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/qstart-nttpd ${PREFIX}/bin/
 .for f in ${MAN1}
@@ -40,54 +41,15 @@ post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${f} ${PREFIX}/bin/
 .endfor
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/nicetext/
-	${INSTALL_MAN} ${WRKSRC}/doc/* ${PREFIX}/share/doc/nicetext/
-	${INSTALL_MAN} ${WRKSRC}/COPYRIGHT ${PREFIX}/share/doc/nicetext/
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/COPYRIGHT ${DOCSDIR}
+	${TAR} -C ${WRKSRC}/doc --exclude "*.bak" -cf - . | \
+		${TAR} -C ${DOCSDIR} --unlink -xf -
+	@${CHOWN} -R ${SHAREOWN}:${SHAREMODE} ${DOCSDIR}
+	@${MKDIR} ${EXAMPLESDIR}
+	${TAR} -C ${WRKSRC}/examples --exclude "*.bak" -cf - . | \
+		${TAR} -C ${EXAMPLESDIR} --unlink -xf -
+	@${CHOWN} -R ${SHAREOWN}:${SHAREMODE} ${EXAMPLESDIR}
 .endif
-	${MKDIR} ${PREFIX}/share/examples/
-	${MKDIR} ${PREFIX}/share/examples/nicetext/
-	${INSTALL_DATA} ${WRKSRC}/examples/Makefile ${PREFIX}/share/examples/nicetext/
-	${INSTALL_DATA} ${WRKSRC}/examples/README.TXT ${PREFIX}/share/examples/nicetext/
-	${MKDIR} ${PREFIX}/share/examples/nicetext/database/
-	${INSTALL_DATA} ${WRKSRC}/examples/database/* ${PREFIX}/share/examples/nicetext/database/
-	${MKDIR} ${PREFIX}/share/examples/nicetext/texts/
-	${INSTALL_DATA} ${WRKSRC}/examples/texts/Makefile ${PREFIX}/share/examples/nicetext/texts/
-	${MKDIR} ${PREFIX}/share/examples/nicetext/texts/fabl/
-	${INSTALL_DATA} ${WRKSRC}/examples/texts/fabl/* ${PREFIX}/share/examples/nicetext/texts/fabl/
-	${MKDIR} ${PREFIX}/share/examples/nicetext/texts/jfk/
-	${INSTALL_DATA} ${WRKSRC}/examples/texts/jfk/* ${PREFIX}/share/examples/nicetext/texts/jfk/
-	${MKDIR} ${PREFIX}/share/examples/nicetext/texts/wizoz/
-	${INSTALL_DATA} ${WRKSRC}/examples/texts/wizoz/* ${PREFIX}/share/examples/nicetext/texts/wizoz/
-	${MKDIR} ${PREFIX}/share/examples/nicetext/texts/shak/
-	${INSTALL_DATA} ${WRKSRC}/examples/texts/shak/* ${PREFIX}/share/examples/nicetext/texts/shak/
-	${MKDIR} ${PREFIX}/share/examples/nicetext/tutorial/
-	${INSTALL_DATA} ${WRKSRC}/examples/tutorial/Makefile ${PREFIX}/share/examples/nicetext/tutorial/
-	${INSTALL_DATA} ${WRKSRC}/examples/tutorial/README.TXT ${PREFIX}/share/examples/nicetext/tutorial/
-	${MKDIR} ${PREFIX}/share/examples/nicetext/tutorial/1/
-	${INSTALL_DATA} ${WRKSRC}/examples/tutorial/1/* ${PREFIX}/share/examples/nicetext/tutorial/1/
-	${MKDIR} ${PREFIX}/share/examples/nicetext/tutorial/2/
-	${INSTALL_DATA} ${WRKSRC}/examples/tutorial/2/Makefile ${PREFIX}/share/examples/nicetext/tutorial/2/
-	${INSTALL_DATA} ${WRKSRC}/examples/tutorial/2/README.TXT ${PREFIX}/share/examples/nicetext/tutorial/2/
-	${INSTALL_DATA} ${WRKSRC}/examples/tutorial/2/sample.txt ${PREFIX}/share/examples/nicetext/tutorial/2/
-	${INSTALL_DATA} ${WRKSRC}/examples/tutorial/2/secret.txt ${PREFIX}/share/examples/nicetext/tutorial/2/
-	${MKDIR} ${PREFIX}/share/examples/nicetext/tutorial/2/words
-	${INSTALL_DATA} ${WRKSRC}/examples/tutorial/2/words/* ${PREFIX}/share/examples/nicetext/tutorial/2/words/
-	${MKDIR} ${PREFIX}/share/examples/nicetext/tutorial/3/
-	${INSTALL_DATA} ${WRKSRC}/examples/tutorial/3/* ${PREFIX}/share/examples/nicetext/tutorial/3/
-	${MKDIR} ${PREFIX}/share/examples/nicetext/words/wlist/
-	${INSTALL_DATA} ${WRKSRC}/examples/words/wlist/Makefile ${PREFIX}/share/examples/nicetext/words/wlist/
-	${MKDIR} ${PREFIX}/share/examples/nicetext/words/wlist/gutenberg/
-	${INSTALL_DATA} ${WRKSRC}/examples/words/wlist/gutenberg/* ${PREFIX}/share/examples/nicetext/words/wlist/gutenberg/
-	${MKDIR} ${PREFIX}/share/examples/nicetext/words/wlist/web2/
-	${INSTALL_DATA} ${WRKSRC}/examples/words/wlist/web2/* ${PREFIX}/share/examples/nicetext/words/wlist/web2/
-	${MKDIR} ${PREFIX}/share/examples/nicetext/words/twlist/
-	${INSTALL_DATA} ${WRKSRC}/examples/words/twlist/Makefile ${PREFIX}/share/examples/nicetext/words/twlist/
-	${MKDIR} ${PREFIX}/share/examples/nicetext/words/twlist/impkimmo/
-	${INSTALL_DATA} ${WRKSRC}/examples/words/twlist/impkimmo/* ${PREFIX}/share/examples/nicetext/words/twlist/impkimmo/
-	${MKDIR} ${PREFIX}/share/examples/nicetext/words/twlist/mitlist/
-	${INSTALL_DATA} ${WRKSRC}/examples/words/twlist/mitlist/* ${PREFIX}/share/examples/nicetext/words/twlist/mitlist/
-	${MKDIR} ${PREFIX}/share/examples/nicetext/words/twlist/numeric/
-	${INSTALL_DATA} ${WRKSRC}/examples/words/twlist/numeric/* ${PREFIX}/share/examples/nicetext/words/twlist/numeric/
-	${MKDIR} ${PREFIX}/share/examples/nicetext/words/twlist/rhyme/
-	${INSTALL_DATA} ${WRKSRC}/examples/words/twlist/rhyme/* ${PREFIX}/share/examples/nicetext/words/twlist/rhyme/
-.include <bsd.port.post.mk>
+
+.include <bsd.port.mk>
