@@ -56,20 +56,3 @@
   
   # if you are compiling on a previously unsupported system, modify
   # this generic entry!!
-***************
-*** 406,412 ****
-  # FreeBSD doesn't have or need ranlib. (ignore the error message about that :)
-  freebsd-ncurses:
-  	cd WWW/Library/freebsd; $(MAKE) LYFLAGS="$(SITE_LYDEFS)"
-! 	cd src; $(MAKE) all MCFLAGS="$(CFLAGS) -DFANCY_CURSES -DNCURSES -DUNIX \
-  		-DNO_TTYTYPE -DNO_CUSERID -DLOCALE \
-  		-I../$(WWWINC) $(SITE_DEFS)" \
-  		LIBS="-lncurses -lmytinfo \
---- 406,412 ----
-  # FreeBSD doesn't have or need ranlib. (ignore the error message about that :)
-  freebsd-ncurses:
-  	cd WWW/Library/freebsd; $(MAKE) LYFLAGS="$(SITE_LYDEFS)"
-! 	cd src; $(MAKE) all MCFLAGS="$(CFLAGS) -DFANCY_CURSES -DNCURSES -DNCURSESHEADER -DUNIX \
-  		-DNO_TTYTYPE -DNO_CUSERID -DLOCALE \
-  		-I../$(WWWINC) $(SITE_DEFS)" \
-  		LIBS="-lncurses -lmytinfo \
