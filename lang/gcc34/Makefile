@@ -6,34 +6,32 @@
 # $FreeBSD$
 #
 
-PORTNAME=	gcc
-PORTVERSION=	3.4.4
-PORTREVISION=	20041210
+PORTNAME=	gcc-ooo
+PORTVERSION=	3.4.1
 CATEGORIES=	lang java
-VERSIONSTRING=	3.4-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC} \
-		http://web.inter.NL.net/hcc/Haj.Ten.Brugge/:bc
-MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
+		${MASTER_SITE_LOCAL}
 DISTFILES=	\
-		gcc-core-${VERSIONSTRING}${EXTRACT_SUFX} \
-		gcc-g++-${VERSIONSTRING}${EXTRACT_SUFX} \
-		gcc-g77-${VERSIONSTRING}${EXTRACT_SUFX} \
-		gcc-java-${VERSIONSTRING}${EXTRACT_SUFX} \
-		gcc-objc-${VERSIONSTRING}${EXTRACT_SUFX} \
-		gcc-testsuite-${VERSIONSTRING}${EXTRACT_SUFX}
+		gcc-core-${PORTVERSION}${EXTRACT_SUFX} \
+		gcc-g++-${PORTVERSION}${EXTRACT_SUFX} \
+		gcc-testsuite-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER?=	gerald@FreeBSD.org
-COMMENT?=	GNU Compiler Collection 3.4
+PATCH_DIST_STRIP=	-p1
 
-LATEST_LINK?=	gcc34${PKGNAMESUFFIX}
+MAINTAINER?=	openoffice@FreeBSD.org
+COMMENT?=	GNU Compiler Collection for OpenOffice.org
 
+LATEST_LINK?=	No
+
+PATCHFILES+=	GCC3.4.0VisibilityPatch2.diff
+PATCH_SITES+=	http://www.nedprod.com/TnFOX/patches/
+PATCH_STRIP=	-p1
 USE_BISON=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
 USE_REINPLACE=	yes
 
-PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure
 NOMANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4
 
@@ -44,15 +42,13 @@ CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
 .else
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 .endif
-
-.if ${ARCH} == amd64  ||  ${ARCH} == ia64  ||  ${ARCH} == sparc64
 WITHOUT_LIBJAVA=	yes
-.endif
 
-SRCDIR=		${WRKDIR}/gcc-${VERSIONSTRING}
+SRCDIR=		${WRKDIR}/gcc-${PORTVERSION}
+PATCH_WRKSRC=	${SRCDIR}
 WRKSRC=		${WRKDIR}/build
-SUFFIX=		34
-TARGLIB=	${PREFIX}/lib/gcc/${CONFIGURE_TARGET}/${PORTVERSION}
+SUFFIX=		-ooo
+TARGLIB=	${PREFIX}/lib/gcc-ooo/${CONFIGURE_TARGET}/${PORTVERSION}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls \
 		--with-system-zlib \
@@ -72,19 +68,10 @@ ALL_TARGET=	bootstrap-lean
 PLIST_SUB=	GCC_VER=${PORTVERSION} GNU_HOST=${CONFIGURE_TARGET}
 MAN1=		cpp${SUFFIX}.1 \
 		g++${SUFFIX}.1 \
-		g77-${SUFFIX}.1 \
 		gcc${SUFFIX}.1 \
-		gcov${SUFFIX}.1 \
-		gcj${SUFFIX}.1 \
-		gcjh${SUFFIX}.1 \
-		gij${SUFFIX}.1 \
-		grepjar${SUFFIX}.1 \
-		jar${SUFFIX}.1 \
-		jcf-dump${SUFFIX}.1 \
-		jv-scan${SUFFIX}.1 jv-convert${SUFFIX}.1 \
-		rmic${SUFFIX}.1 rmiregistry${SUFFIX}.1
+		gcov${SUFFIX}.1
 MAN7=		fsf-funding.7 gfdl.7 gpl.7
-INFO=		cpp cppinternals g77 gcc gccinstall gccint gcj fastjar
+INFO=		cpp cppinternals gcc gccinstall gccint
 
 .if defined(WITHOUT_LIBJAVA)
 CONFIGURE_ARGS+=	--disable-libgcj
@@ -117,7 +104,7 @@ check: build
 	cd ${WRKSRC}; export RUNTESTFLAGS='--target_board ''unix{-pthread}'''; ${GMAKE} -sk check
 
 post-install: fake-manpages
-.for f in c++ g77 gcc g++ cpp gcov ${CONFIGURE_TARGET}-gcc ${CONFIGURE_TARGET}-g++ gcj gcjh gij jv-scan jcf-dump jv-convert jar grepjar rmic rmiregistry
+.for f in c++ gcc g++ cpp gcov ${CONFIGURE_TARGET}-gcc ${CONFIGURE_TARGET}-g++ gcj gcjh gij jv-scan jcf-dump jv-convert jar grepjar rmic rmiregistry
 	# gij and jv-convert, for example, are not built on all platforms.
 	if [ -e ${PREFIX}/bin/${f}${SUFFIX} ]; then \
 	  ${STRIP_CMD} ${PREFIX}/bin/${f}${SUFFIX}; \
@@ -127,15 +114,13 @@ post-install: fake-manpages
 	           ${PREFIX}/man/man1/${f}${SUFFIX}.1; \
 	fi
 .endfor
-	${MV} -f ${PREFIX}/bin/g77${SUFFIX} ${PREFIX}/bin/g77-${SUFFIX}
-	-${MV} -f ${PREFIX}/man/man1/g77${SUFFIX}.1 ${PREFIX}/man/man1/g77-${SUFFIX}.1
 	# These libraries are moved from PREFIX/lib to avoid conflicts with
 	# the stock compiler.
-.for f in libstdc++ libsupc++ libg2c libfrtbegin libobjc ${EXTRA_SHLIB}
+.for f in libstdc++ libsupc++ ${EXTRA_SHLIB}
 	${MV} -f ${PREFIX}/lib/${f}.* ${TARGLIB}
 .endfor
-	-${MV} -f ${PREFIX}/lib/ieee ${TARGLIB}
-	-${MV} -f ${PREFIX}/lib/libgcj.* ${TARGLIB}
+#	-${MV} -f ${PREFIX}/lib/ieee ${TARGLIB}
+#	-${MV} -f ${PREFIX}/lib/libgcj.* ${TARGLIB}
 	${RM} -f ${PREFIX}/lib/libiberty.a
 	${RM} -f ${TARGLIB}/*.la
 	# Handle target libraries and GCJ include files.
@@ -147,7 +132,7 @@ post-install: fake-manpages
 	        | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.lib ;\
 	fi
 .endfor
-	(${ECHO_CMD} "@unexec rmdir %D/lib/gcc/${CONFIGURE_TARGET} 2>&1 || true" ; ${ECHO_CMD} "@unexec rmdir %D/lib/gcc 2>&1 || true") >> ${WRKDIR}/PLIST.lib
+	(${ECHO_CMD} "@unexec rmdir %D/lib/gcc-ooo/${CONFIGURE_TARGET} 2>&1 || true" ; ${ECHO_CMD} "@unexec rmdir %D/lib/gcc-ooo 2>&1 || true") >> ${WRKDIR}/PLIST.lib
 	${ECHO_CMD} "r ${TMPPLIST}"		> ${WRKDIR}/ex.script
 	${ECHO_CMD} "/Insert PLIST.lib"		>> ${WRKDIR}/ex.script
 	${ECHO_CMD} "d"				>> ${WRKDIR}/ex.script
@@ -161,11 +146,11 @@ cklatest:
 	@-ncftpls -l ${SITE} | ${GREP} 'LATEST.*3\.4'
 .endfor
 
-.include <bsd.port.post.mk>
-
 fake-manpages:
 	# man pages can only be generated if Perl >= 5.6 is installed, so
 	# fake them on 4.x systems.
 .for mp in ${_MANPAGES}
 	( ${TEST} -e ${mp} || ${TOUCH} ${TOUCH_FLAGS} ${mp} )
 .endfor
+
+.include <bsd.port.post.mk>
