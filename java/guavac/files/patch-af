@@ -1,0 +1,20 @@
+--- man/Makefile.in.orig	Tue Mar  4 03:21:07 1997
++++ man/Makefile.in	Mon Jun 30 18:40:06 1997
+@@ -55,13 +55,13 @@
+ 	cd $(srcdir) && for file in $(PRODUCT).1; do \
+ 	  $(INSTALL_DATA) $$file $(mandir)/man1/$$file; \
+ 	done
+-	cd $(srcdir) && for file in $(PRODUCT).man; do \
+-	  $(INSTALL_DATA) $$file $(mandir)/cat1/$$file; \
+-	done
++#	cd $(srcdir) && for file in $(PRODUCT).man; do \
++#	  $(INSTALL_DATA) $$file $(mandir)/cat1/$$file; \
++#	done
+ 
+ uninstall:
+ 	rm -f $(mandir)/man1/$(PRODUCT).1
+-	rm -f $(mandir)/cat1/$(PRODUCT).man
++#	rm -f $(mandir)/cat1/$(PRODUCT).man
+ 
+ mostlyclean:
+ 	rm -f *.tmp
