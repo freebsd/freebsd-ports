@@ -7,9 +7,10 @@
 # There are many ways to select which extensions you want to enable, either
 # in interactive mode or in batch mode.
 #
-# By default, the enabled extensions are: CTYPE, DOM, PCRE, POSIX, SESSION,
-# SIMPLEXML, SPL, SQLITE, TOKENIZER and XML. This behaviour can be changed
-# overriding the PHP5_OPTIONS variable (e.g. PHP5_OPTIONS="EXT1 EXT2 EXT3").
+# By default, the enabled extensions are: CTYPE, DOM, ICONV, PCRE, POSIX,
+# SESSION, SIMPLEXML, SPL, SQLITE, TOKENIZER and XML.
+# This behaviour can be changed overriding the PHP5_OPTIONS variable
+# (e.g. PHP5_OPTIONS="EXT1 EXT2 EXT3").
 #
 # Another way is to use the WITH_<EXT> and WITHOUT_<EXT> knobs, for additional
 # and default extensions respectively (implies batch mode).
@@ -20,7 +21,7 @@
 #
 
 PORTNAME=	php5
-PORTVERSION=	5.0.0.a6
+PORTVERSION=	5.0.0.r2
 PORTREVISION=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	http://www.php.net/distributions/:release \
@@ -30,9 +31,7 @@ MASTER_SITES=	http://www.php.net/distributions/:release \
 		http://gr.php.net/distributions/:release \
 		http://fr.php.net/distributions/:release \
 		http://es.php.net/distributions/:release \
-		http://se.php.net/distributions/:release \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	ale
+		http://se.php.net/distributions/:release
 .if defined(WITHOUT_CLI) && !defined(WITHOUT_APACHE)
 PKGNAMEPREFIX=	mod_
 .else
@@ -44,7 +43,8 @@ PKGNAMESUFFIX=	-cli
 .endif
 .endif
 .endif
-DISTNAME=	php-${PORTVERSION:S/.a/a/}
+DISTNAME=	php-${PORTVERSION:S/.r/RC/}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:release
 
 MAINTAINER?=	ale@FreeBSD.org
 COMMENT?=	PHP Scripting Language (Apache Module and CLI)
@@ -83,7 +83,7 @@ CONFIGURE_ARGS+=--with-regex=apache
 .endif
 .endif
 
-EXT_DIR=	20040316
+EXT_DIR=	20040412
 SAPI_FILE=	"@comment "
 
 CONFLICTS=	php5-cli-5* mod_php5-5* php5-cgi-5*
@@ -131,12 +131,12 @@ PLIST_SUB+=	CLI=""
 
 ALL_OPTIONS=	BCMATH BZIP2 CALENDAR CDB CRACK CTYPE CURL DB4 DBASE DBX DIO \
 		DOM EXIF FILEPRO FTP GD GDBM GETTEXT GMP ICONV IMAP INTERBASE \
-		INIFILE MBSTRING MCVE MCRYPT MHASH MIME MING MNOGOSEARCH MSSQL \
+		INIFILE MBSTRING MCVE MCRYPT MHASH MING MNOGOSEARCH MSSQL \
 		MYSQL MYSQLI NCURSES OPENLDAP OPENSSL ORACLE PCNTL PCRE PDFLIB \
 		POSIX POSTGRESQL PSPELL READLINE RECODE SESSION SHMOP \
 		SIMPLEXML SNMP SOAP SOCKETS SPL SQLITE SYBASEDB SYBASECT \
 		SYSVSEM SYSVSHM TIDY TOKENIZER UNIXODBC WDDX XML XMLRPC XSL \
-		YAZ YP ZLIB
+		YP ZLIB
 
 .for opt in ${ALL_OPTIONS}
 .if defined(WITH_${opt}) || defined(WITHOUT_${opt})
@@ -151,7 +151,7 @@ IS_INTERACTIVE=	yes
 WRKDIR?=	${WRKDIRPREFIX}${.CURDIR}/work
 PHP5_OPTFILE?=	${HOME}/php5_options
 
-PHP5_OPTIONS?=	CTYPE DOM PCRE POSIX SESSION SIMPLEXML SPL SQLITE TOKENIZER XML
+PHP5_OPTIONS?=	CTYPE DOM ICONV PCRE POSIX SESSION SIMPLEXML SPL SQLITE TOKENIZER XML
 
 .for opt in ${ALL_OPTIONS}
 .if defined(WITH_${opt})
@@ -364,10 +364,6 @@ LIB_DEPENDS+=	mhash.2:${PORTSDIR}/security/mhash
 CONFIGURE_ARGS+=--with-mhash=${LOCALBASE}
 .endif
 
-.if defined(WITH_MIME)
-CONFIGURE_ARGS+=--with-mime-magic=/usr/share/misc/magic.mime
-.endif
-
 .if defined(WITH_MING)
 LIB_DEPENDS+=	ming.3:${PORTSDIR}/graphics/ming
 CONFIGURE_ARGS+=--with-ming=${LOCALBASE}
@@ -534,11 +530,6 @@ CONFIGURE_ARGS+=--with-xmlrpc --with-expat-dir=${LOCALBASE}
 .if defined(WITH_XSL)
 LIB_DEPENDS+=	xslt.2:${PORTSDIR}/textproc/libxslt
 CONFIGURE_ARGS+=--with-xsl=${LOCALBASE}
-.endif
-
-.if defined(WITH_YAZ)
-LIB_DEPENDS+=	yaz.2:${PORTSDIR}/net/yaz
-CONFIGURE_ARGS+=--with-yaz=${LOCALBASE}/bin
 .endif
 
 .if defined(WITH_YP)

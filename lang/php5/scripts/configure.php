@@ -37,7 +37,7 @@ GD		"GD library support" ${WITH_GD:-OFF} \
 GDBM		"GDBM database support (dba)" ${WITH_GDBM:-OFF} \
 GETTEXT		"gettext library support" ${WITH_GETTEXT:-OFF} \
 GMP		"GNU MP support" ${WITH_GMP:-OFF} \
-ICONV		"iconv support" ${WITH_ICONV:-OFF} \
+ICONV		"iconv support" ${WITH_ICONV:-ON} \
 IMAP		"IMAP support" ${WITH_IMAP:-OFF} \
 INIFILE		"INI file support (dba)" ${WITH_INIFILE:-OFF} \
 INTERBASE	"Interbase 6 database support (Firebird)" ${WITH_INTERBASE:-OFF} \
@@ -45,7 +45,6 @@ MBSTRING	"multibyte string support" ${WITH_MBSTRING:-OFF} \
 MCVE		"MCVE support (implies OPENSSL)" ${WITH_MCVE:-OFF} \
 MCRYPT		"Encryption support" ${WITH_MCRYPT:-OFF} \
 MHASH		"Crypto-hashing support" ${WITH_MHASH:-OFF} \
-MIME		"mime_magic support" ${WITH_MIME:-OFF} \
 MING		"ming shockwave flash support" ${WITH_MING:-OFF} \
 MNOGOSEARCH	"mnoGoSearch support" ${WITH_MNOGOSEARCH:-OFF} \
 MSSQL		"MS-SQL database support" ${WITH_MSSQL:-OFF} \
@@ -82,7 +81,6 @@ WDDX		"WDDX support (implies XML)" ${WITH_WDDX:-OFF} \
 XML		"XML support" ${WITH_XML:-OFF} \
 XMLRPC		"XMLRPC-EPI support (implies ICONV)" ${WITH_XMLRPC:-OFF} \
 XSL		"XSL support" ${WITH_XSL:-OFF} \
-YAZ		"YAZ support (ANSI/NISO Z39.50)" ${WITH_YAZ:-OFF} \
 YP		"YP/NIS support" ${WITH_YP:-OFF} \
 ZLIB		"ZLIB support" ${WITH_ZLIB:-OFF} \
 2> $tempfile

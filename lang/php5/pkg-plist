@@ -67,6 +67,7 @@ include/php/Zend/zend_ts_hash.h
 include/php/Zend/zend_types.h
 include/php/Zend/zend_variables.h
 include/php/acconfig.h
+include/php/ext/libxml/php_libxml.h
 include/php/ext/mbstring/mb_gpc.h
 include/php/ext/mbstring/mbstring.h
 include/php/ext/mbstring/php_mbregex.h
@@ -227,6 +228,7 @@ lib/php/build/shtool
 %%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Frontend/CLI.php
 @dirrm include/php/TSRM
 @dirrm include/php/Zend
+@dirrm include/php/ext/libxml
 @dirrm include/php/ext/mbstring
 @dirrm include/php/ext/session
 @dirrm include/php/ext/sqlite/libsqlite/src
