@@ -14,7 +14,8 @@ DISTNAME=	${RUBY_DISTNAME}
 DIST_SUBDIR=	ruby
 
 PATCH_SITES=	http://www.ruby-lang.org/~knu/
-PATCHFILES=	ruby-${RUBY_VERSION}-${RUBY_SNAPSHOTDATE}.patch.gz
+PATCHFILES=	${PORTNAME}-${RUBY_VERSION}-${RUBY_SNAPSHOTDATE}.patch.gz \
+		${PORTNAME}-freebsd-libc_r.patch.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	knu@FreeBSD.org
