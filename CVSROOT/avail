@@ -4,9 +4,9 @@
 # being in access.
 #
 unavail
-avail||CVSROOT
-avail||distrib
-avail||doc
-avail||ports
-avail||src
-avail||www
+avail|joe,peter|CVSROOT
+avail|joe,peter|distrib
+avail|joe,peter|doc
+avail|joe,peter|ports
+avail|joe,peter|src
+avail|joe,peter|www
