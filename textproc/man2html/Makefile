@@ -3,7 +3,7 @@
 # Date created:				29 August 1998
 # Whom:                			Dima Sivachenko <demon@gpad.ac.ru>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/11/22 22:33:31 billf Exp $
 #
 
 DISTNAME=	man2html3.0.1
@@ -21,10 +21,10 @@ MAN1=  		man2html.1
 
 post-patch:
 
-	if [ -f ${CGIDIR} ] ; then \
-		${MV} ${WRKSRC}/man.cgi ${WRKSRC}/man.cgi.pre_sed ; \
-		${CAT} ${WRKSRC}/man.cgi.pre_sed | \
-		${GREP} -Ev -e "/opt/|/openwin/" \
+	@ if [ -f ${CGIDIR} ] ; then \
+		@ ${MV} ${WRKSRC}/man.cgi ${WRKSRC}/man.cgi.pre_sed ; \
+		@ ${CAT} ${WRKSRC}/man.cgi.pre_sed | \
+		@ ${GREP} -Ev -e "/opt/|/openwin/" \
 		> ${WRKSRC}/man.cgi ; \
 	fi
 
