@@ -7,7 +7,7 @@
 
 PORTNAME=	horde
 PORTVERSION=	2.2.4
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.horde.org/pub/horde/				\
 		ftp://ftp.au.horde.org/pub/horde/			\
@@ -15,31 +15,27 @@ MASTER_SITES=	ftp://ftp.horde.org/pub/horde/				\
 		ftp://ftp.it.horde.org/pub/mirror/horde.org/horde/	\
 		ftp://ftp.nl.horde.org/mirror/horde-ftp/pub/horde/	\
 		ftp://ftp.pt.horde.org/pub/horde-ftp/horde/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-RC2
 
 MAINTAINER=	thierry@pompo.net
 COMMENT=	A common code-base used by Horde applications, written in PHP
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
 #-----------------------------------------------------------------------
-# You may define this option:
+# You may define these options:
 #
-# - WITHOUT_SUPPORTED_DB: if you run a database not in the ports tree;
+# - WITH_APACHE2: if you run Apache2;
+#
+# - WITHOUT_SUPPORTED_DB: if you run a database not in the ports tree.
 #
 #-----------------------------------------------------------------------
 
-LIB_DEPENDS+=	intl.5:${PORTSDIR}/devel/gettext
-.if !defined(WITHOUT_MCAL)
-LIB_DEPENDS+=	mcal.0:${PORTSDIR}/misc/libmcal
-.endif
+BUILD_DEPENDS=	pear:${PORTSDIR}/lang/php4-horde
 # Remark: pear-XML_sql2xml is included, but never used.
-RUN_DEPENDS=	${PEARDIR}/Date.php:${PORTSDIR}/devel/pear-Date			\
+RUN_DEPENDS=	${BUILD_DEPENDS}						\
+		${PEARDIR}/Date.php:${PORTSDIR}/devel/pear-Date			\
 		${PEARDIR}/HTML/Common.php:${PORTSDIR}/devel/pear-HTML_Common	\
 		${PEARDIR}/Log.php:${PORTSDIR}/sysutils/pear-Log		\
 		${PEARDIR}/Mail/mime.php:${PORTSDIR}/mail/pear-Mail_Mime
 
-IS_INTERACTIVE=	'need to build php4 with XML support.'
 NO_BUILD=	yes
 USE_REINPLACE=	yes
 
@@ -48,7 +44,7 @@ LDD=		/usr/bin/ldd
 REINPLACE_ARGS=	-i.beforeHorde
 DOCS=		COPYING README docs/CHANGES docs/CODING_STANDARDS \
 		docs/CONTRIBUTING docs/CREDITS docs/HACKING docs/INSTALL \
-		docs/TRANSLATIONS
+		docs/TRANSLATIONS docs/SECURITY
 CONFFILE=	horde.php html.php lang.php mime_drivers.php mime_mapping.php \
 		motd.php prefs.php registry.php
 SUB_DIRS=	config graphics lib locale po scripts templates util
