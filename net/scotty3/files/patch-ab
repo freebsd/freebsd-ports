@@ -1,6 +1,6 @@
---- ../tkined/apps/snmp_monitor.tcl	Mon Sep  2 18:30:19 1996
-+++ ..//tkined/apps/snmp_monitor.tcl	Mon Mar  3 14:43:52 1997
-@@ -482,8 +482,11 @@
+--- ../tkined/apps/snmp_monitor.tcl.orig	Thu Feb  3 23:11:40 2000
++++ ../tkined/apps/snmp_monitor.tcl	Wed Jun  7 16:02:39 2000
+@@ -517,8 +517,11 @@
  
  	set args $ip
  	set i 0
