@@ -3,7 +3,7 @@
 # Date created:        15 November 1998
 # Whom:                Josh Gilliam <josh@quick.net>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/03/19 08:15:39 taoka Exp $
 #
 
 DISTNAME=	kvidtune-0.4.1
@@ -13,15 +13,13 @@ MASTER_SITE_SUBDIR= unstable/apps/admin
 
 MAINTAINER=	josh@quick.net
 
-LIB_DEPENDS=	kdecore.1:${PORTSDIR}/x11/kdelibs \
-		kdeui.1:${PORTSDIR}/x11/kdelibs \
-		kfm.1:${PORTSDIR}/x11/kdelibs \
-		kfile.1:${PORTSDIR}/x11/kdelibs
+LIB_DEPENDS=	kdecore.2:${PORTSDIR}/x11/kdelibs11 \
+		kdeui.2:${PORTSDIR}/x11/kdelibs11 \
+		kfm.2:${PORTSDIR}/x11/kdelibs11 \
+		kfile.2:${PORTSDIR}/x11/kdelibs11
 
 USE_QT=		yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CONFIGURE_ENV=	CXXFLAGS="$(CXXFLAGS)" \
-		INSTALL_SCRIPT="$(INSTALL_SCRIPT)"
 
 .include <bsd.port.mk>
