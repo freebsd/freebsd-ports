@@ -1,0 +1,17 @@
+bin/cdict
+share/chinese/cdict/back.gif
+share/chinese/cdict/exit.gif
+share/chinese/cdict/exitmask.xbm
+share/chinese/cdict/help.gif
+share/chinese/cdict/helpmask.xbm
+share/chinese/cdict/hzfont/fonts.dir
+share/chinese/cdict/hzfont/hz16.pcf
+share/chinese/cdict/hzfont/yb10x20.pcf
+share/chinese/cdict/icon.gif
+share/chinese/cdict/iconmask.xbm
+share/chinese/cdict/license
+share/chinese/cdict/readme
+share/chinese/cdict/transdic
+share/chinese/cdict/yblib
+@dirrm share/chinese/cdict/hzfont
+@dirrm share/chinese/cdict
