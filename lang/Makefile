@@ -85,7 +85,6 @@
     SUBDIR += jython
     SUBDIR += klone
     SUBDIR += lcc
-    SUBDIR += libobjects
     SUBDIR += librep
     SUBDIR += linux-j
     SUBDIR += logo
