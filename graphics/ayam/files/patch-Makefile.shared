@@ -1,5 +1,5 @@
 --- Makefile.shared.orig	Sat Mar 27 03:17:07 2004
-+++ Makefile.shared	Tue Jun 15 15:38:05 2004
++++ Makefile.shared	Wed Jul  7 10:55:22 2004
 @@ -4,7 +4,7 @@
  # Makefile for Ayam (shared version)
  
@@ -96,9 +96,11 @@
  
  # Aqsis
 -AQSISDIR = /usr/local/aqsis
+-AQSISINCDIR = $(AQSISDIR)/include
+-AQSISLIBDIR = $(AQSISDIR)/lib
 +AQSISDIR = ${LOCALBASE}
- AQSISINCDIR = $(AQSISDIR)/include
- AQSISLIBDIR = $(AQSISDIR)/lib
++AQSISINCDIR = $(AQSISDIR)/include/aqsis
++AQSISLIBDIR = $(AQSISDIR)/lib/aqsis
  # if you do not use Aqsis libslxargs as libslcargs replacement:
 -AQSISOBJS = 
 +#AQSISOBJS = 
