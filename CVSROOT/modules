@@ -5918,6 +5918,7 @@ p5-Mail-Box-Parser-C	ports/mail/p5-Mail-Box-Parser-C
 p5-Mail-Box1	ports/mail/p5-Mail-Box1
 p5-Mail-Bulkmail	ports/mail/p5-Mail-Bulkmail
 p5-Mail-CClient	ports/mail/p5-Mail-CClient
+p5-Mail-ClamAV	ports/mail/p5-Mail-ClamAV
 p5-Mail-Ezmlm	ports/mail/p5-Mail-Ezmlm
 p5-Mail-FilterXML	ports/mail/p5-Mail-FilterXML
 p5-Mail-Folder	ports/mail/p5-Mail-Folder
