@@ -3,14 +3,15 @@
 # Code fragment used by other scripts for commonality
 
 buildenv () {
-    branch=$1
+    pb=$1
+    branch=$2
 
     case "x$branch" in
 	x4)
-	    export XFREE86_VERSION=3
+	    export XFREE86_VERSION=4
 	    ;;
 	x4-exp)
-	    export XFREE86_VERSION=3
+	    export XFREE86_VERSION=4
 	    ;;
 	x5)
 	    export XFREE86_VERSION=4
@@ -38,6 +39,8 @@ buildenv () {
     export PORTOBJFORMAT=elf
     export USA_RESIDENT=yes
 
+    # Need to make it fetch a full set say once a week to catch distfiles
+    # which change md5 sum but not name
     export MASTER_SITE_OVERRIDE='ftp://ftp-master.freebsd.org/pub/FreeBSD/ports/distfiles/${DIST_SUBDIR}/'
 
     # XXX Are these supposed to be used for release CD builds?
