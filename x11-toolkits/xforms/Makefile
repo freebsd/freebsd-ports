@@ -13,6 +13,8 @@ CATEGORIES=	x11-toolkits graphics
 MASTER_SITES=	ftp://ncmir.ucsd.edu/pub/xforms/OpenSource/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-release
 EXTRACT_SUFX=	.tgz
+USE_REINPLACE=	yes
+REINPLACE_ARGS=	-i ""
 
 MAINTAINER=	mikeh@FreeBSD.ORG
 
@@ -25,5 +27,14 @@ INSTALLS_SHLIB=	yes
 NO_FILTER_SHLIBS=	yes
 
 MAN1=		fdesign.1 fd2ps.1
+
+post-patch:
+	${REINPLACE_CMD} -e 's|-O4|${CFLAGS}|' ${WRKSRC}/Imakefile
+.if defined(X11BASE)
+.	if ${X11BASE} != "/usr/X11R6"
+	${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' \
+		${WRKSRC}/image/rgb_db.c
+.	endif
+.endif
 
 .include <bsd.port.mk>
