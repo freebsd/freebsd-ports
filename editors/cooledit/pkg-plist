@@ -7,6 +7,7 @@ bin/coolmessage
 bin/coollistbox
 bin/coolquery
 bin/coolinput
+lib/libCw.so
 lib/libCw.so.1
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
