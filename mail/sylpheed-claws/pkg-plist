@@ -165,17 +165,24 @@ share/locale/zh_TW.Big5/LC_MESSAGES/sylpheed-claws.mo
 share/pixmaps/sylpheed-claws.png
 share/sylpheed-claws/OOo2sylpheed.pl
 share/sylpheed-claws/calypso_convert.pl
+share/sylpheed-claws/convert_mbox.pl
 share/sylpheed-claws/eud2gc.py
 share/sylpheed-claws/filter_conv.pl
+share/sylpheed-claws/freshmeat_search.pl
 share/sylpheed-claws/gif2xface.pl
 share/sylpheed-claws/google_msgid.pl
+share/sylpheed-claws/google_search.pl
 share/sylpheed-claws/gpg-sign-syl
 share/sylpheed-claws/kmail2sylpheed.pl
 share/sylpheed-claws/kmail2sylpheed_v2.pl
 share/sylpheed-claws/launch_firebird
+share/sylpheed-claws/maildir2sylpheed.pl
+share/sylpheed-claws/multiwebsearch.conf
+share/sylpheed-claws/multiwebsearch.pl
 share/sylpheed-claws/newscache_clean.pl
 share/sylpheed-claws/outlook2sylpheed.pl
 share/sylpheed-claws/tb2sylpheed
+share/sylpheed-claws/vcard2xml.py
 %%THEMES%%share/sylpheed-claws/themes/Crystal/.directory
 %%THEMES%%share/sylpheed-claws/themes/Crystal/close.xpm
 %%THEMES%%share/sylpheed-claws/themes/Crystal/continue.xpm
@@ -201,94 +208,189 @@ share/sylpheed-claws/tb2sylpheed
 %%THEMES%%share/sylpheed-claws/themes/Crystal/properties.xpm
 %%THEMES%%share/sylpheed-claws/themes/Crystal/search.xpm
 %%THEMES%%share/sylpheed-claws/themes/Crystal/up_arrow.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/README
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/address.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/address_book.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/book.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/category.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/checkbox_off.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/checkbox_on.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/clip.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/clipkey.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/close.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/complete.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/continue.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/deleted.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/dir_close.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/dir_close_hrm.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/dir_open.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/dir_open_hrm.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/down_arrow.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/drafts_close.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/drafts_open.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/edit_extern.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/error.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/exec.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/folder.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/forwarded.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/gpg_signed.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/group.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/ignorethread.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/inbox.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/inbox_close.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/inbox_close_hrm.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/inbox_hrm.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/inbox_open.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/inbox_open_hrm.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/insert_file.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/interface.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/jpilot.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/key.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/ldap.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/linewrap.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/locked.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/mail.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/mail_attach.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/mail_compose.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/mail_forward.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/mail_receive.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/mail_receive_all.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/mail_reply.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/mail_reply_to_all.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/mail_reply_to_author.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/mail_send.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/mail_send_queue.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/mail_sign.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/mark.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/new.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/news_compose.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/notice_error.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/notice_note.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/notice_warn.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/outbox.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/outbox_close.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/outbox_close_hrm.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/outbox_hrm.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/outbox_open.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/outbox_open_hrm.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/paste.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/preferences.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/properties.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/queue_close.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/queue_close_hrm.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/queue_open.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/queue_open_hrm.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/quicksearch.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/regular.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/replied.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/search.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/sylpheed.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/sylpheed_logo.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/trash.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/trash_close.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/trash_close_hrm.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/trash_open.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/trash_open_hrm.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/unread.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/up_arrow.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/vcard.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/work_offline.xpm
-%%THEMES%%share/sylpheed-claws/themes/Graphitte/work_online.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/README
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/address.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/address_book.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/address_search.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/book.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/category.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/checkbox_off.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/checkbox_on.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/clip.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/clipkey.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/close.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/complete.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/continue.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/deleted.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/dir_close.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/dir_close_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/dir_open.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/dir_open_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/down_arrow.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/drafts_close.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/drafts_open.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/edit_extern.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/error.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/exec.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/folder.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/forwarded.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/gpg_signed.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/group.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/ignorethread.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/inbox.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/inbox_close.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/inbox_close_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/inbox_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/inbox_open.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/inbox_open_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/insert_file.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/interface.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/jpilot.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/key.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/ldap.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/linewrap.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/locked.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/mail.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/mail_attach.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/mail_compose.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/mail_forward.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/mail_receive.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/mail_receive_all.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/mail_reply.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/mail_reply_to_all.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/mail_reply_to_author.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/mail_send.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/mail_send_queue.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/mail_sign.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/mark.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/mime_application.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/mime_audio.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/mime_image.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/mime_message.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/mime_text_enriched.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/mime_text_html.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/mime_text_plain.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/mime_unknown.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/new.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/news_compose.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/notice_error.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/notice_note.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/notice_warn.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/outbox.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/outbox_close.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/outbox_close_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/outbox_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/outbox_open.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/outbox_open_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/paste.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/preferences.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/privacy_expired.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/privacy_failed.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/privacy_passed.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/privacy_signed.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/privacy_unknown.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/privacy_warn.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/properties.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/queue_close.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/queue_close_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/queue_open.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/queue_open_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/quicksearch.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/regular.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/replied.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/search.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/sylpheed_logo.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/trash.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/trash_close.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/trash_close_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/trash_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/trash_open.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/trash_open_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/unread.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/up_arrow.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/vcard.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/work_offline.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/work_online.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/ChangeLog
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/INSTALL
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/README.txt
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/address.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/address_book.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/book.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/category.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/checkbox_off.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/checkbox_on.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/clip.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/clipkey.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/close.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/complete.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/continue.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/deleted.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/dir_close.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/dir_open.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/down_arrow.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/drafts_close.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/drafts_open.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/edit_extern.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/error.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/exec.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/forwarded.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/group.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/ignore_thread.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/ignorethread.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/inbox.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/inbox_close.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/inbox_open.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/insert_file.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/interface.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/jpilot.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/key.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/ldap.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/linewrap.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/locked.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/mail.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/mail_attach.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/mail_compose.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/mail_forward.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/mail_receive.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/mail_receive_all.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/mail_reply.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/mail_reply_to_all.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/mail_reply_to_author.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/mail_reply_to_list.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/mail_send.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/mail_send_queue.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/mail_sign.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/mark.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/messageview_text.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/new.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/news_compose.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/notice_error.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/notice_note.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/notice_warn.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/outbox.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/outbox_close.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/outbox_open.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/paste.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/pgp_signed.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/preferences.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/print.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/properties.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/queue.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/queue_close.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/queue_open.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/quicksearch.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/replied.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/search.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/trash_close.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/trash_close_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/trash_open.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/trash_open_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/unread.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/up_arrow.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/vcard.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/work_offline.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/work_online.xpm
 %%THEMES%%share/sylpheed-claws/themes/INSTALL
 %%THEMES%%share/sylpheed-claws/themes/Kovico-sylpheed/address.xpm
 %%THEMES%%share/sylpheed-claws/themes/Kovico-sylpheed/address_book.xpm
@@ -516,6 +618,191 @@ share/sylpheed-claws/tb2sylpheed
 %%THEMES%%share/sylpheed-claws/themes/Plain_and_Bluish/up_arrow.xpm
 %%THEMES%%share/sylpheed-claws/themes/Plain_and_Bluish/vcard.xpm
 %%THEMES%%share/sylpheed-claws/themes/README
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/README
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/address.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/address_book.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/book.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/checkbox_off.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/checkbox_on.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/clip.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/clipkey.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/close.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/complete.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/continue.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/deleted.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/dir_close.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/dir_close_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/dir_open.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/dir_open_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/down_arrow.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/drafts_close.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/drafts_close_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/drafts_open.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/drafts_open_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/edit_extern.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/error.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/exec.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/forwarded.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/gpg_signed.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/inbox_close.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/inbox_close_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/inbox_open.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/inbox_open_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/insert_file.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/interface.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/jpilot.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/key.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/ldap.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/linewrap.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/locked.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/mail.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/mail_attach.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/mail_compose.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/mail_forward.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/mail_receive.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/mail_receive_all.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/mail_reply.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/mail_reply_to_all.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/mail_reply_to_author.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/mail_send.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/mail_send_queue.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/mail_sign.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/mark.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/messageview_text.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/mime_application.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/mime_audio.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/mime_gpg_expired.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/mime_gpg_failed.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/mime_gpg_passed.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/mime_gpg_signed.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/mime_gpg_unknown.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/mime_image.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/mime_text_enriched.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/mime_text_html.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/mime_text_plain.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/mime_unknown.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/new.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/notice_warn.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/outbox_close.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/outbox_close_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/outbox_open.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/outbox_open_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/queue_close.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/queue_close_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/queue_open.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/queue_open_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/quicksearch.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/replied.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/trash_close.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/trash_close_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/trash_open.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/trash_open_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/unread.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/work_offline.xpm
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/work_online.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/ChangeLog
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/README
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/address.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/address_book.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/address_search.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/book.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/category.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/checkbox_off.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/checkbox_on.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/clip.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/clipkey.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/close.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/complete.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/continue.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/deleted.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/dir_close.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/dir_close_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/dir_open.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/dir_open_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/down_arrow.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/drafts_close.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/drafts_close_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/drafts_open.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/drafts_open_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/edit_extern.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/error.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/exec.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/folder.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/forwarded.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/gpg_signed.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/group.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/ignore_thread.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/ignorethread.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/inbox_close.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/inbox_close_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/inbox_open.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/inbox_open_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/insert_file.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/interface.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/jpilot.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/key.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/ldap.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/linewrap.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/locked.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/mail.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/mail_attach.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/mail_compose.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/mail_forward.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/mail_receive.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/mail_receive_all.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/mail_reply.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/mail_reply_to_all.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/mail_reply_to_author.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/mail_reply_to_list.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/mail_send.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/mail_send_queue.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/mail_sign.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/mark.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/messageview_text.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/mime_application.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/mime_application_octet_stream.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/mime_audio.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/mime_gpg_expired.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/mime_gpg_failed.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/mime_gpg_passed.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/mime_gpg_signed.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/mime_gpg_unknown.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/mime_image.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/mime_message.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/mime_text_enriched.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/mime_text_html.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/mime_text_plain.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/mime_unknown.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/new.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/news_compose.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/notice_error.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/notice_note.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/notice_warn.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/outbox_close.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/outbox_close_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/outbox_open.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/outbox_open_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/paste.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/preferences.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/print.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/properties.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/queue_close.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/queue_close_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/queue_open.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/queue_open_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/quicksearch.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/regular.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/replied.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/search.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/trash_close.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/trash_close_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/trash_open.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/trash_open_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/unread.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/up_arrow.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/vcard.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/work_offline.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/work_online.xpm
 %%THEMES%%share/sylpheed-claws/themes/XeNtish/README
 %%THEMES%%share/sylpheed-claws/themes/XeNtish/address.xpm
 %%THEMES%%share/sylpheed-claws/themes/XeNtish/address_book.xpm
@@ -691,6 +978,84 @@ share/sylpheed-claws/tb2sylpheed
 %%THEMES%%share/sylpheed-claws/themes/mongrel/news_compose.xpm
 %%THEMES%%share/sylpheed-claws/themes/mongrel/work_offline.xpm
 %%THEMES%%share/sylpheed-claws/themes/mongrel/work_online.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/INSTALL
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/address.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/address_book.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/book.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/checkbox_off.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/checkbox_on.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/close.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/complete.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/continue.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/delete.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/deleted.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/dir_close.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/dir_close_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/dir_open.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/dir_open_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/down_arrow.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/drafts_close.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/drafts_close_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/drafts_open.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/drafts_open_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/edit_extern.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/error.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/exec.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/forwarded.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/gpg_signed.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/inbox_close.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/inbox_close_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/inbox_open.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/inbox_open_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/insert_file.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/interface.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/jpilot.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/key.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/linewrap.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/locked.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/mail.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/mail_attach.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/mail_compose.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/mail_forward.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/mail_receive.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/mail_receive_all.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/mail_reply.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/mail_reply_to_all.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/mail_reply_to_author.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/mail_send.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/mail_send_queue.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/mail_sign.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/mark.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/messageview_text.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/mime_audio.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/mime_gpg_expired.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/mime_gpg_failed.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/mime_gpg_passed.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/mime_gpg_signed.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/mime_gpg_unknown.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/mime_image.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/mime_text_enriched.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/mime_text_html.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/mime_text_plain.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/mime_unknown.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/new.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/news_compose.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/notice_warn.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/outbox_close.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/outbox_close_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/outbox_open.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/outbox_open_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/queue_close.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/queue_open.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/quicksearch.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/replied.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/trash_close.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/trash_close_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/trash_open.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/trash_open_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/unread.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/work_offline.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/work_online.xpm
 %%THEMES%%share/sylpheed-claws/themes/mozilla/README
 %%THEMES%%share/sylpheed-claws/themes/mozilla/address_book.xpm
 %%THEMES%%share/sylpheed-claws/themes/mozilla/close.xpm
@@ -716,6 +1081,87 @@ share/sylpheed-claws/tb2sylpheed
 %%THEMES%%share/sylpheed-claws/themes/mozilla/news_compose.xpm
 %%THEMES%%share/sylpheed-claws/themes/mozilla/work_offline.xpm
 %%THEMES%%share/sylpheed-claws/themes/mozilla/work_online.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/README
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/address.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/address_book.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/book.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/checkbox_off.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/checkbox_on.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/clip.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/clipkey.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/close.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/complete.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/continue.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/delete.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/deleted.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/dir_close.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/dir_close_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/dir_open.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/dir_open_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/down_arrow.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/drafts_close.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/drafts_close_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/drafts_open.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/drafts_open_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/edit_extern.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/error.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/exec.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/forwarded.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/gpg_signed.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/inbox_close.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/inbox_close_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/inbox_open.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/inbox_open_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/insert_file.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/interface.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/jpilot.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/key.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/linewrap.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/locked.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/mail.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/mail_attach.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/mail_compose.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/mail_forward.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/mail_receive.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/mail_receive_all.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/mail_reply.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/mail_reply_to_all.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/mail_reply_to_author.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/mail_send.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/mail_send_queue.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/mail_sign.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/mark.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/messageview_text.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/mime_audio.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/mime_gpg_expired.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/mime_gpg_failed.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/mime_gpg_passed.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/mime_gpg_signed.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/mime_gpg_unknown.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/mime_image.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/mime_text_enriched.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/mime_text_html.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/mime_text_plain.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/mime_unknown.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/new.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/notice_warn.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/outbox_close.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/outbox_close_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/outbox_open.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/outbox_open_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/queue_close.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/queue_close_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/queue_open.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/queue_open_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/quicksearch.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/replied.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/trash_close.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/trash_close_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/trash_open.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/trash_open_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/unread.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/work_offline.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/work_online.xpm
 %%THEMES%%share/sylpheed-claws/themes/stw/address.xpm
 %%THEMES%%share/sylpheed-claws/themes/stw/address_book.xpm
 %%THEMES%%share/sylpheed-claws/themes/stw/book.xpm
@@ -776,101 +1222,6 @@ share/sylpheed-claws/tb2sylpheed
 %%THEMES%%share/sylpheed-claws/themes/stw/unread.xpm
 %%THEMES%%share/sylpheed-claws/themes/stw/up_arrow.xpm
 %%THEMES%%share/sylpheed-claws/themes/stw/vcard.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/ChangeLog
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/README
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/address.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/address_book.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/book.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/category.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/checkbox_off.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/checkbox_on.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/clip.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/clipkey.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/close.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/complete.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/continue.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/deleted.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/dir_close.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/dir_close_hrm.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/dir_open.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/dir_open_hrm.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/down_arrow.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/drafts_close.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/drafts_close_hrm.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/drafts_open.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/drafts_open_hrm.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/edit_extern.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/error.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/exec.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/forwarded.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/group.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/ignore_thread.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/ignorethread.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/inbox.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/inbox_close.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/inbox_close_hrm.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/inbox_hrm.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/inbox_open.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/inbox_open_hrm.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/insert_file.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/interface.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/jpilot.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/key.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/ldap.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/linewrap.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/locked.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/mail.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/mail_attach.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/mail_compose.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/mail_forward.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/mail_receive.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/mail_receive_all.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/mail_reply.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/mail_reply_to_all.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/mail_reply_to_author.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/mail_reply_to_list.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/mail_send.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/mail_send_queue.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/mail_sign.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/mark.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/messageview_text.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/new.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/news_compose.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/notice_error.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/notice_note.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/notice_warn.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/outbox.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/outbox_close.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/outbox_close_hrm.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/outbox_hrm.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/outbox_open.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/outbox_open_hrm.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/paste.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/pgp_signed.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/preferences.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/print.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/properties.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/queue.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/queue_close.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/queue_close_hrm.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/queue_hrm.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/queue_open.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/queue_open_hrm.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/quicksearch.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/replied.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/search.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/trash_close.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/trash_close_harm.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/trash_close_hrm.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/trash_open.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/trash_open_harm.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/trash_open_hrm.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/unread.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/up_arrow.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/vcard.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/work.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/work_offline.xpm
-%%THEMES%%share/sylpheed-claws/themes/sylzilla/work_online.xpm
 %%THEMES%%share/sylpheed-claws/themes/tml02c/address.xpm
 %%THEMES%%share/sylpheed-claws/themes/tml02c/address_book.xpm
 %%THEMES%%share/sylpheed-claws/themes/tml02c/book.xpm
@@ -938,22 +1289,89 @@ share/sylpheed-claws/tb2sylpheed
 %%THEMES%%share/sylpheed-claws/themes/tml02c/vcard.xpm
 %%THEMES%%share/sylpheed-claws/themes/tml02c/work_offline.xpm
 %%THEMES%%share/sylpheed-claws/themes/tml02c/work_online.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/README
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/address_book.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/book.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/close.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/complete.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/dir_close.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/dir_close_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/dir_open.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/dir_open_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/down_arrow.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/draft_close.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/draft_open.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/drafts_close.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/drafts_open.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/edit_extern.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/exec.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/forwarded.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/gpg_signed.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/ignorethread.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/inbox_close.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/inbox_close_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/inbox_open.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/inbox_open_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/insert_file.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/interface.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/linewrap.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/mail.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/mail_attach.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/mail_compose.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/mail_forward.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/mail_receive.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/mail_receive_all.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/mail_reply.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/mail_reply_to_all.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/mail_reply_to_author.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/mail_send.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/mail_send_queue.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/mail_sign.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/new.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/news_compose.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/outbox_close.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/outbox_close_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/outbox_open.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/outbox_open_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/paste.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/preferences.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/queue_close.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/queue_close_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/queue_open.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/queue_open_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/quicksearch.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/replied.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/trash_close.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/trash_close_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/trash_open.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/trash_open_hrm.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/unread.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/up.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/up_arrow.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/vcard.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/work_offline.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/work_online.xpm
 share/sylpheed-claws/update-po
 share/sylpheed-claws/uudec
 %%THEMES%%@dirrm share/sylpheed-claws/themes/Crystal
-%%THEMES%%@dirrm share/sylpheed-claws/themes/Graphitte
+%%THEMES%%@dirrm share/sylpheed-claws/themes/Graphitte-0.9.7
+%%THEMES%%@dirrm share/sylpheed-claws/themes/GurUnix
 %%THEMES%%@dirrm share/sylpheed-claws/themes/Kovico-sylpheed
 %%THEMES%%@dirrm share/sylpheed-claws/themes/New_Session
 %%THEMES%%@dirrm share/sylpheed-claws/themes/Phoenity
 %%THEMES%%@dirrm share/sylpheed-claws/themes/Plain_and_Bluish
+%%THEMES%%@dirrm share/sylpheed-claws/themes/Skypilot Clawssic
+%%THEMES%%@dirrm share/sylpheed-claws/themes/SylZilla
 %%THEMES%%@dirrm share/sylpheed-claws/themes/XeNtish
 %%THEMES%%@dirrm share/sylpheed-claws/themes/black
 %%THEMES%%@dirrm share/sylpheed-claws/themes/blue_anarchy
 %%THEMES%%@dirrm share/sylpheed-claws/themes/mongrel
+%%THEMES%%@dirrm share/sylpheed-claws/themes/mongrel2
 %%THEMES%%@dirrm share/sylpheed-claws/themes/mozilla
+%%THEMES%%@dirrm share/sylpheed-claws/themes/orbit-claws
 %%THEMES%%@dirrm share/sylpheed-claws/themes/stw
-%%THEMES%%@dirrm share/sylpheed-claws/themes/sylzilla
 %%THEMES%%@dirrm share/sylpheed-claws/themes/tml02c
+%%THEMES%%@dirrm share/sylpheed-claws/themes/tom_2.1
 %%THEMES%%@dirrm share/sylpheed-claws/themes
 @dirrm share/sylpheed-claws
 @unexec rmdir %D/share/pixmaps 2>/dev/null || true

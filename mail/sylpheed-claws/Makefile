@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sylpheed-claws
-PORTVERSION=	0.9.6
-PORTREVISION=	1
+PORTVERSION=	0.9.8
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws
@@ -21,7 +20,7 @@ COMMENT=	A lightweight and very featureful GTK+ based e-mail and news client
 
 LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 
-THEMEVERSION=	20030712
+THEMEVERSION=	20031130
 THEMEFILE=	sylpheed-iconset-${THEMEVERSION}.tar.gz
 
 USE_BZIP2=	yes
@@ -38,6 +37,8 @@ USE_OPENSSL=		yes
 CONFIGURE_ARGS=		--enable-openssl --with-openssl-includes=${OPENSSLINC} \
 			--with-openssl-libs=${OPENSSLLIB}
 .endif
+
+CPIO?=	/usr/bin/cpio
 
 .include <bsd.port.pre.mk>
 
@@ -148,16 +149,17 @@ post-install:
 	@${MKDIR} ${DATADIR}
 	@cd ${WRKSRC}/tools && \
 		${INSTALL_SCRIPT} OOo2sylpheed.pl calypso_convert.pl \
-		eud2gc.py filter_conv.pl gif2xface.pl google_msgid.pl \
+		convert_mbox.pl eud2gc.py filter_conv.pl freshmeat_search.pl \
+		gif2xface.pl google_msgid.pl google_search.pl \
 		gpg-sign-syl kmail2sylpheed.pl kmail2sylpheed_v2.pl \
-		launch_firebird newscache_clean.pl outlook2sylpheed.pl \
-		tb2sylpheed update-po uudec ${DATADIR}
+		launch_firebird maildir2sylpheed.pl multiwebsearch.conf \
+		multiwebsearch.pl newscache_clean.pl outlook2sylpheed.pl \
+		tb2sylpheed update-po uudec vcard2xml.py ${DATADIR}
 .if !defined(WITHOUT_THEMES)
 	@${MKDIR} ${DATADIR}/themes
-	@cd ${WRKDIR}/${THEMEFILE:C/.tar.gz//} && for d in `${FIND} .`; do \
-		if ${TEST} -d $${d}; then ${MKDIR} ${DATADIR}/themes/$${d}; else \
-		${INSTALL_DATA} $${d} ${DATADIR}/themes/$${d}; fi; \
-	done
+	@cd ${WRKDIR}/${THEMEFILE:C/.tar.gz//} && ${FIND} . -print | \
+		${GREP} -v xvpics | \
+		${CPIO} -pdu -R ${BINOWN}:${BINGRP} --quiet ${DATADIR}/themes/
 .endif
 	@${INSTALL_SCRIPT} ${WRKSRC}/tools/sylpheed-switcher ${PREFIX}/bin
 	@${INSTALL_SCRIPT} ${WRKSRC}/tools/sylprint.pl ${PREFIX}/bin
