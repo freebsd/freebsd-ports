@@ -8905,6 +8905,7 @@ zangband	ports/games/zangband
 zclock		ports/x11-clocks/zclock
 zebedee		ports/security/zebedee
 zebra		ports/net/zebra
+zebra-devel	ports/net/zebra-devel
 zebra-pj		ports/net/zebra-pj
 zebra-server	ports/net/zebra-server
 zed		ports/editors/zed
