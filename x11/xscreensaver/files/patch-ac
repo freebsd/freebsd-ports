@@ -1,0 +1,14 @@
+--- hacks/webcollage.orig	Thu Sep  9 20:45:45 1999
++++ hacks/webcollage	Thu Sep  9 20:46:42 1999
+@@ -81,6 +81,11 @@
+ if (!-r $wordlist) {
+     $wordlist = "/usr/share/lib/dict/words";    # irix
+ }
++
++if (!-r $wordlist) {
++    $wordlist = "/usr/share/dict/words";	# BSD
++}
++
+ die "$wordlist doesn't exist!\n" unless (-r $wordlist);
+ 
+ 
