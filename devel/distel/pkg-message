@@ -1,0 +1,9 @@
+======================================================================
+
+Quick start instructions: add the following code to your $HOME/.erlang
+file to enable distel in your default OTP environment.
+
+  code:add_path ("/usr/local/share/distel/ebin").
+  c:l (distel).
+
+======================================================================
