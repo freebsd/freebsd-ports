@@ -623,6 +623,13 @@ OSVERSION!=	/usr/sbin/sysctl -n kern.osreldate
 .endif
 .endif
 
+# Special macro for doing in-place file editing using regexps
+.if ${OSVERSION} <= 500033
+REINPLACE_CMD?=	${PERL} -p -i.bak
+.else
+REINPLACE_CMD?=	${SED}  -i.bak
+.endif
+
 # Get the object format.
 .if !defined(PORTOBJFORMAT)
 PORTOBJFORMAT!=	test -x /usr/bin/objformat && /usr/bin/objformat || echo aout
