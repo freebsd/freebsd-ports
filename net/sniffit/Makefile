@@ -15,6 +15,7 @@ MASTER_SITES=	http://reptile.rug.ac.be/~coder/sniffit/files/  \
 MASTER_SITE_SUBDIR=	obrien
 DISTNAME=	sniffit.0.3.7.beta
 
+FORBIDDEN=	"contains remotely exploitable buffer overflow"
 PATCH_SITES=	http://ftp.debian.org/debian/dists/stable/main/source/net/
 PATCHFILES=	sniffit_0.3.7.beta-6.1.diff.gz
 PATCH_DIST_STRIP=	-p1
