@@ -10,13 +10,13 @@ PORTREVISION=	4
 CATEGORIES=	japanese games
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	Japanized NetHack
 
 MASTERDIR=	${.CURDIR}/../../games/nethack34
 
 FILESDIR=	${.CURDIR}/files
 PATCHDIR=	${.CURDIR}/files
 MD5_FILE=	${.CURDIR}/distinfo
-COMMENTFILE=	${.CURDIR}/pkg-comment
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 
