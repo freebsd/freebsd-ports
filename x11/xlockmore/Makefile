@@ -45,6 +45,10 @@ CONFIGURE_ENV+=		XLOCKLIBS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS+=	--without-mesagl --without-opengl
 .endif
 
+.if defined(WITH_DISABLE_ALLOW_ROOT)
+CONFIGURE_ARGS+=	--disable-allow-root
+.endif
+
 .if ${XFREE86_VERSION} >= 4
 post-configure:
 	${PERL} -pi -e 's/-lXdpms//g' ${WRKSRC}/modes/Makefile
