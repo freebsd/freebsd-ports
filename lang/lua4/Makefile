@@ -1,6 +1,6 @@
 # New ports collection makefile for: 	lua
 # Date created:				27 June 1999
-# Whom:					Richard Kiss <richard@homemail.com>
+# Whom:					Richard Kiss <him@richardkiss.com>
 #
 # $FreeBSD$
 #
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.tecgraf.puc-rio.br/pub/lua/ \
 		ftp://ftp.uni-trier.de/pub/languages/lua/ \
 		ftp://ftp.gwdg.de/pub/languages/lua/
 
-MAINTAINER=	richard@homemail.com
+MAINTAINER=	him@richardkiss.com
 COMMENT=	Small, compilable scripting language providing easy access to C code
 
 LATEST_LINK=	lua4
