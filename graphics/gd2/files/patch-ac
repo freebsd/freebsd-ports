@@ -1,6 +1,6 @@
---- Makefile.orig	Sun Jun  4 03:26:12 2000
-+++ Makefile	Thu Nov  9 14:53:41 2000
-@@ -3,18 +3,22 @@
+--- Makefile.orig	Fri Feb  2 05:23:56 2001
++++ Makefile	Sat Feb  3 09:24:57 2001
+@@ -3,11 +3,11 @@
  #If you do not have gcc, change the setting for COMPILER, but you must
  #use an ANSI standard C compiler (NOT the old SunOS 4.1.3 cc
  #compiler; get gcc if you are still using it). 
@@ -13,101 +13,92 @@
 +#AR=ar
  
  #If you don't have FreeType, libjpeg and/or Xpm installed, including the
- #header files, uncomment this (default).
--CFLAGS=-O
-+#CFLAGS=-O
+ #header files, uncomment this (default). You really must install
+@@ -16,8 +16,10 @@
+ 
  #If you do have FreeType, libjpeg and/or Xpm fully installed, uncomment a
  #variation of this and comment out the line above. See also LIBS below.
--#CFLAGS=-O  -DHAVE_XPM -DHAVE_JPEG -DHAVE_LIBTTF
+-CFLAGS=-O -DHAVE_LIBXPM -DHAVE_LIBPNG -DHAVE_LIBJPEG \
+-	-DHAVE_LIBFREETYPE -DHAVE_LIBTTF 
++CFLAGS+=-DHAVE_LIBPNG -DHAVE_LIBJPEG -DHAVE_LIBFREETYPE
 +.if defined(WITH_X11)
-+CFLAGS+=-DHAVE_XPM -DHAVE_JPEG
-+.else
-+CFLAGS+=-DHAVE_JPEG -DHAVE_LIBTTF
++CFLAGS+=-DHAVE_LIBXPM
 +.endif
  
- #If you don't have FreeType and/or Xpm fully installed, uncomment this
- #(default).
-@@ -23,7 +27,7 @@
+ #To use the old FreeType 1.x library, add this additional #define
+ #to the line above
+@@ -30,13 +32,15 @@
  #Some systems are very picky about link order. They don't all agree
  #on the right order, either.
  
--LIBS=-lm -lgd -lpng -lz
-+LIBS=-lm -lgd -lpng -lz -ljpeg -lttf
+-#LIBS=-lgd -lpng -lz
++LIBS=-lgd -lpng -lz -ljpeg -lfreetype -lm
  
  #If you do have FreeType, JPEG and/or Xpm fully installed, uncomment a 
  #variation of this and comment out the line above. Note that
-@@ -33,14 +37,19 @@
- #Some systems are very picky about link order. They don't all agree
- #on the right order, either.
+ #Xpm requires X11. See also CFLAGS above.
  
--#LIBS=-lm -lgd -lpng -lz -ljpeg -lttf -lXpm -lX11
+-LIBS=-lgd -lpng -lz -ljpeg -lfreetype -lm -lttf
 +.if defined(WITH_X11)
-+LIBS+= -lXpm -lX11
++LIBS+=-lXpm -lX11
 +.endif
  
- #Typical install locations for freetype, zlib, xpm, libjpeg and libpng header files.
- #If yours are somewhere else, change this. 
- #-I. is important to ensure that the version of gd you are installing
- #is used, and not an older release in your directory tree somewhere.
+ #Note: for Freetype 1.x, use DHAVE_LIBTTF and -lttf instead.
  
--INCLUDEDIRS=-I. -I/usr/local/include -I/usr/include/X11 -I/usr/X11R6/include/X11
-+INCLUDEDIRS=-I. -I${LOCALBASE}/include -I${LOCALBASE}/include/freetype
+@@ -45,7 +49,10 @@
+ #ensure that the version of gd you are installing is used, and not an 
+ #older release in your directory tree somewhere.
+ 
+-INCLUDEDIRS=-I. -I/usr/include/freetype2 -I/usr/include/X11 -I/usr/X11R6/include/X11 -I/usr/local/include 
++INCLUDEDIRS=-I. -I${LOCALBASE}/include/freetype2 -I${LOCALBASE}/include
 +.if defined(WITH_X11)
 +INCLUDEDIRS+=-I${X11BASE}/include/X11 -I${X11BASE}/include
 +.endif
  
  #Typical install locations for freetype, zlib, xpm and libpng libraries.
  #If yours are somewhere else, other than a standard location
-@@ -48,16 +57,19 @@
- #-L. as this allows the gd library itself to be found.
- #Put -L. first so that old versions of the gd library elsewhere
+@@ -55,16 +62,19 @@
  #on your system can't cause conflicts while building a new one.
+ #This line shouldn't hurt if you don't actually have some of the
+ #optional libraries and directories.
 -LIBDIRS=-L. -L/usr/local/lib -L/usr/lib/X11 -L/usr/X11R6/lib
-+LIBDIRS=-L. -L$(LOCALBASE)/lib
++LIBDIRS=-L. -L${LOCALBASE}/lib -Wl,--rpath,${LOCALBASE}/lib
 +.if defined(WITH_X11)
-+LIBDIRS+=-L$(X11BASE)/lib
++LIBDIRS+=-L${X11BASE}/lib -Wl,--rpath,${X11BASE}/lib
 +.endif
  
  #Location where libgd.a should be installed by "make install".
 -INSTALL_LIB=/usr/local/lib
-+INSTALL_LIB=$(PREFIX)/lib
++INSTALL_LIB=${PREFIX}/lib
  
  #Location where .h files should be installed by "make install".
 -INSTALL_INCLUDE=/usr/local/include
-+INSTALL_INCLUDE=$(PREFIX)/include/gd
++INSTALL_INCLUDE=${PREFIX}/include/gd
  
  #Location where useful non-test programs should be installed by "make install".
 -INSTALL_BIN=/usr/local/bin
-+INSTALL_BIN=$(PREFIX)/bin
++INSTALL_BIN=${PREFIX}/bin
  
  #
  #
-@@ -65,36 +77,43 @@
- #
- #
+@@ -74,34 +84,44 @@
  
--VERSION=1.8.1
-+VERSION=1.8.2
+ VERSION=1.8.4
  
 -CC=$(COMPILER) $(INCLUDEDIRS)
 -LINK=$(CC) $(LIBDIRS) $(LIBS)
-+CC+= $(INCLUDEDIRS)
++CC+=$(INCLUDEDIRS)
 +#LINK=$(CC) $(LIBDIRS) $(LIBS)
  
  PROGRAMS=$(BIN_PROGRAMS) $(TEST_PROGRAMS)
  
  BIN_PROGRAMS=pngtogd pngtogd2 gdtopng gd2topng gd2copypal gdparttopng webpng
- TEST_PROGRAMS=gdtest gddemo gd2time gdtestttf
+ TEST_PROGRAMS=gdtest gddemo gd2time gdtestft gdtestttf
  
 -all: libgd.a $(PROGRAMS)
-+.SUFFIXES: .c .so .o
-+
-+.c.so:
-+	${CC} -fpic -DPIC ${CFLAGS} -c ${.IMPSRC} -o ${.TARGET}
-+
-+all: libgd.a libgd.so.1 $(PROGRAMS)
++SOVER=2
  
- install: libgd.a $(BIN_PROGRAMS)
+-install: libgd.a $(BIN_PROGRAMS)
 -	sh ./install-item 644 libgd.a $(INSTALL_LIB)/libgd.a
 -	sh ./install-item 755 pngtogd $(INSTALL_BIN)/pngtogd
 -	sh ./install-item 755 pngtogd2 $(INSTALL_BIN)/pngtogd2
@@ -125,52 +116,63 @@
 -	sh ./install-item 644 gdfontmb.h $(INSTALL_INCLUDE)/gdfontmb.h
 -	sh ./install-item 644 gdfonts.h $(INSTALL_INCLUDE)/gdfonts.h
 -	sh ./install-item 644 gdfontt.h $(INSTALL_INCLUDE)/gdfontt.h
-+	$(INSTALL) -c -m 644 libgd.a $(INSTALL_LIB)/libgd.a
-+	$(INSTALL) -c -m 755 pngtogd $(INSTALL_BIN)/pngtogd
-+	$(INSTALL) -c -m 755 libgd.so.1 $(INSTALL_LIB)/libgd.so.1
-+	ln -sf libgd.so.1 $(INSTALL_LIB)/libgd.so
-+	$(INSTALL) -c -m 755 pngtogd2 $(INSTALL_BIN)/pngtogd2
-+	$(INSTALL) -c -m 755 gdtopng $(INSTALL_BIN)/gdtopng
-+	$(INSTALL) -c -m 755 gd2topng $(INSTALL_BIN)/gd2topng
-+	$(INSTALL) -c -m 755 gd2copypal $(INSTALL_BIN)/gd2copypal
-+	$(INSTALL) -c -m 755 gdparttopng $(INSTALL_BIN)/gdparttopng
-+	$(INSTALL) -c -m 755 webpng $(INSTALL_BIN)/webpng
-+	$(INSTALL) -c -m 755 bdftogd $(INSTALL_BIN)/bdftogd
-+	$(INSTALL) -c -m 644 gd.h $(INSTALL_INCLUDE)/gd.h
-+	$(INSTALL) -c -m 644 gdcache.h $(INSTALL_INCLUDE)/gdcache.h
-+	$(INSTALL) -c -m 644 gd_io.h $(INSTALL_INCLUDE)/gd_io.h
-+	$(INSTALL) -c -m 644 gdfontg.h $(INSTALL_INCLUDE)/gdfontg.h
-+	$(INSTALL) -c -m 644 gdfontl.h $(INSTALL_INCLUDE)/gdfontl.h
-+	$(INSTALL) -c -m 644 gdfontmb.h $(INSTALL_INCLUDE)/gdfontmb.h
-+	$(INSTALL) -c -m 644 gdfonts.h $(INSTALL_INCLUDE)/gdfonts.h
-+	$(INSTALL) -c -m 644 gdfontt.h $(INSTALL_INCLUDE)/gdfontt.h
++.SUFFIXES: .c .so .o
++
++.c.so:
++	$(CC) -fpic -DPIC $(CFLAGS) -o $@ -c $<
++
++all: libgd.a libgd.so.$(SOVER) $(PROGRAMS)
++
++install: libgd.a libgd.so.$(SOVER) $(BIN_PROGRAMS)
++	-mkdir -p $(INSTALL_LIB) $(INSTALL_INCLUDE) $(INSTALL_BIN)
++	${BSD_INSTALL_DATA} libgd.a $(INSTALL_LIB)/libgd.a
++	${BSD_INSTALL_DATA} libgd.so.$(SOVER) $(INSTALL_LIB)/libgd.so.$(SOVER)
++	-ln -sf libgd.so.$(SOVER) $(INSTALL_LIB)/libgd.so
++	${BSD_INSTALL_PROGRAM} pngtogd $(INSTALL_BIN)/pngtogd
++	${BSD_INSTALL_PROGRAM} pngtogd2 $(INSTALL_BIN)/pngtogd2
++	${BSD_INSTALL_PROGRAM} gdtopng $(INSTALL_BIN)/gdtopng
++	${BSD_INSTALL_PROGRAM} gd2topng $(INSTALL_BIN)/gd2topng
++	${BSD_INSTALL_PROGRAM} gd2copypal $(INSTALL_BIN)/gd2copypal
++	${BSD_INSTALL_PROGRAM} gdparttopng $(INSTALL_BIN)/gdparttopng
++	${BSD_INSTALL_PROGRAM} webpng $(INSTALL_BIN)/webpng
++	${BSD_INSTALL_SCRIPT} bdftogd $(INSTALL_BIN)/bdftogd
++	${BSD_INSTALL_DATA} gd.h $(INSTALL_INCLUDE)/gd.h
++	${BSD_INSTALL_DATA} gdcache.h $(INSTALL_INCLUDE)/gdcache.h
++	${BSD_INSTALL_DATA} gd_io.h $(INSTALL_INCLUDE)/gd_io.h
++	${BSD_INSTALL_DATA} gdfontg.h $(INSTALL_INCLUDE)/gdfontg.h
++	${BSD_INSTALL_DATA} gdfontl.h $(INSTALL_INCLUDE)/gdfontl.h
++	${BSD_INSTALL_DATA} gdfontmb.h $(INSTALL_INCLUDE)/gdfontmb.h
++	${BSD_INSTALL_DATA} gdfonts.h $(INSTALL_INCLUDE)/gdfonts.h
++	${BSD_INSTALL_DATA} gdfontt.h $(INSTALL_INCLUDE)/gdfontt.h
  
  gddemo: gddemo.o libgd.a
  	$(CC) gddemo.o -o gddemo	$(LIBDIRS) $(LIBS)
-@@ -129,16 +148,19 @@
+@@ -138,18 +158,21 @@
  gdtestttf: gdtestttf.o libgd.a
- 	$(CC) gdtestttf.o -o gdtestttf	$(LIBDIRS) $(LIBS)
+ 	$(CC) --verbose gdtestttf.o -o gdtestttf $(LIBDIRS) $(LIBS)
  
 -libgd.a: gd.o gd_gd.o gd_gd2.o gd_io.o gd_io_dp.o gd_io_file.o gd_ss.o \
-+OBJS=   gd.o gd_gd.o gd_gd2.o gd_io.o gd_io_dp.o gd_io_file.o gd_ss.o \
++OBJS= gd.o gd_gd.o gd_gd2.o gd_io.o gd_io_dp.o gd_io_file.o gd_ss.o \
  	gd_io_ss.o gd_png.o gd_jpeg.o gdxpm.o gdfontt.o gdfonts.o gdfontmb.o gdfontl.o \
--	gdfontg.o gdtables.o gdttf.o gdcache.o gdkanji.o  wbmp.o gd_wbmp.o \
--	gd.h gdfontt.h gdfonts.h gdfontmb.h gdfontl.h gdfontg.h
-+	gdfontg.o gdtables.o gdttf.o gdcache.o gdkanji.o  wbmp.o gd_wbmp.o
-+INCS= 	gd.h gdfontt.h gdfonts.h gdfontmb.h gdfontl.h gdfontg.h
+ 	gdfontg.o gdtables.o gdft.o gdttf.o gdcache.o gdkanji.o wbmp.o \
+-	gd_wbmp.o gdhelpers.o gd.h gdfontt.h gdfonts.h gdfontmb.h gdfontl.h \
++	gd_wbmp.o gdhelpers.o
++INCS= gd.h gdfontt.h gdfonts.h gdfontmb.h gdfontl.h \
+ 	gdfontg.h gdhelpers.h
 +
 +libgd.a:	$(INCS) $(OBJS)
  	rm -f libgd.a
 -	$(AR) rc libgd.a gd.o gd_gd.o gd_gd2.o gd_io.o gd_io_dp.o \
 -		gd_io_file.o gd_ss.o gd_io_ss.o gd_png.o gd_jpeg.o gdxpm.o \
 -		gdfontt.o gdfonts.o gdfontmb.o gdfontl.o gdfontg.o \
--		gdtables.o gdttf.o gdcache.o gdkanji.o wbmp.o gd_wbmp.o
+-		gdtables.o gdft.o gdttf.o gdcache.o gdkanji.o wbmp.o \
+-		gd_wbmp.o gdhelpers.o
 +	$(AR) rc libgd.a $(OBJS)
  	-ranlib libgd.a
 +
-+libgd.so.1:   $(INCS) $(OBJS:.o=.so)
-+	$(CC) -shared -Wl,-x -Wl,-assert -Wl,pure-text -Wl,-soname,$@ -o $@ $(OBJS:.o=.so) $(LIBDIRS) $(LIBS)
-+	ln -sf libgd.so.1 libgd.so
++libgd.so.$(SOVER):	$(INCS) $(OBJS:.o=.so)
++	$(CC) -shared -Wl,-x,-soname,$@ -o $@ $(OBJS:.o=.so) $(LIBDIRS) $(LIBS)
++	ln -sf libgd.so.$(SOVER) libgd.so
  
  clean:
  	rm -f *.o *.a ${PROGRAMS} test/gdtest.jpg test/gdtest.wbmp
