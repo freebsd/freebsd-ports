@@ -1,13 +1,46 @@
---- man/message.texi.orig	Mon Oct 13 19:20:17 1997
-+++ man/message.texi	Mon Oct 13 19:21:06 1997
-@@ -11,6 +11,10 @@
+--- man/message.texi.orig	Sun May 17 02:50:48 1998
++++ man/message.texi	Sat Sep 19 11:00:29 1998
+@@ -10,12 +10,11 @@
+ @end iftex
  @setchapternewpage odd
  
- @ifinfo
+-@dircategory Editors
++@ifinfo
 +@dircategory The Emacs editor and associated tools
-+@direntry
+ @direntry
+-* Message: (message).	Mail and news composition mode that goes with Gnus.
 +* Message: (message).		Message, the Emacs message composition mode.
-+@end direntry
+ @end direntry
+-
+-@ifinfo
  
  This file documents Message, the Emacs message composition mode.
  
+--- man/dired-x.texi.orig	Sat Sep 19 11:19:06 1998
++++ man/dired-x.texi	Sat Sep 19 11:20:22 1998
+@@ -19,9 +19,9 @@
+ @c dired-x.el REVISION NUMBER
+ @settitle Dired Extra Version 2 User's Manual
+ 
+-@dircategory Editors
++@dircategory The Emacs editor and associated tools
+ @direntry
+-* Dired-X: (dired-x).   Dired Extra Features.
++* Dired-X: (dired-x).		Dired Extra Features.
+ @end direntry
+ 
+ @iftex
+--- man/ediff.texi.orig	Sat Sep 19 11:20:38 1998
++++ man/ediff.texi	Sat Sep 19 11:21:14 1998
+@@ -14,9 +14,9 @@
+ @synindex fn cp
+ @synindex pg cp
+ 
+-@dircategory Editors
++@dircategory The Emacs editor and associated tools
+ @direntry
+-* Ediff: (ediff).       A visual interface for comparing and merging programs.
++* Ediff: (ediff).		A visual interface for comparing and merging programs.
+ @end direntry
+ 
+ @iftex
