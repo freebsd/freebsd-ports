@@ -1,10 +1,8 @@
-proxycheck is a simple tool that may be used to check whether a given
+Proxycheck is a simple tool that may be used to check whether a given
 host or set of hosts has open proxy server running.
 
-See http://www.corpit.ru/mjt/proxycheck.html for more information.
-
-proxycheck was written by Michael Tokarev and comes ready to contribute
-results to DSBL.org.
+Proxycheck comes ready to contribute results to DSBL.org.  It was
+written by Michael Tokarev.
 
 WWW: http://www.corpit.ru/mjt/proxycheck.html
 

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	proxycheck
-PORTVERSION=	0.45a
+PORTVERSION=	0.49a
 CATEGORIES=	security
 MASTER_SITES=	http://www.corpit.ru/mjt/proxycheck/ \
 		http://www.it.ca/~paul/src/
@@ -15,6 +15,8 @@ MAINTAINER=	paul+ports@it.ca
 COMMENT=	Check for open proxy servers
 
 MAN1=		proxycheck.1
+
+HAS_CONFIGURE=	yes
 
 do-install:
 		@${INSTALL_PROGRAM} ${WRKSRC}/proxycheck ${PREFIX}/sbin/
