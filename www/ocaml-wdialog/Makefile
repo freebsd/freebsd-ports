@@ -18,9 +18,8 @@ COMMENT=	Advanced system to create dialog-centric web applications
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		ocamlfind:${PORTSDIR}/devel/ocaml-findlib \
-		${LOCALBASE}/lib/ocaml/site-lib/pcre/pcre.a:${PORTSDIR}/devel/ocaml-pcre \
-		${LOCALBASE}/lib/ocaml/site-lib/cgi/cgi.a:${PORTSDIR}/www/ocaml-net \
 		${LOCALBASE}/lib/ocaml/site-lib/pxp-engine/pxp_engine.a:${PORTSDIR}/textproc/ocaml-pxp
+RUN_DEPENDS=	${LOCALBASE}/lib/ocaml/site-lib/pxp-engine/pxp_engine.a:${PORTSDIR}/textproc/ocaml-pxp
 
 USE_GMAKE=	yes
 
