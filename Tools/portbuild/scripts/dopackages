@@ -20,7 +20,7 @@ errorexit () {
 }
 
 usage () {
-  echo "usage: [-continue] [-nofinish] [-finish] [-restart] [-ftp] [-cdrom] [-nodummy] [-nobuild] [-noindex] [-noduds] [-nocvsup] [-nocvs] [-noportscvs] [-norestr] [-plistcheck] branch date"
+  echo "usage: [-continue] [-nofinish] [-finish] [-restart] [-ftp] [-cdrom] [-nodummy] [-nobuild] [-noindex] [-noduds] [-nocvsup] [-nocvs] [-noportscvs] [-norestr] [-plistcheck] [-distfiles] branch date"
   errorexit 1
 }
 
@@ -204,6 +204,7 @@ restart=0
 cont=0
 finish=0
 nofinish=0
+dodistfiles=0
 
 # optional arguments
 while [ $# -gt 2 ]; do
@@ -240,6 +241,9 @@ while [ $# -gt 2 ]; do
       ;;
     x-ftp)
       ftp=1
+      ;;
+    x-distfiles)
+      dodistfiles=1
       ;;
     x-continue)
       cont=1
@@ -281,6 +285,10 @@ if [ "$norestr" = 1 ]; then
   export NO_RESTRICTED=1
 fi
 
+if [ "$dodistfiles" = 1 ]; then
+  export WANT_DISTFILES=1
+fi
+
 if [ "$plistcheck" = 1 ]; then
   export PLISTCHECK=1
 fi
@@ -305,7 +313,7 @@ if [ "$skipstart" = 0 ]; then
     cvs -qR update -PAd
     # XXX Check for conflicts
   fi
-  date > ${pb}/${arch}/cvsdone
+  date > ${pb}/${arch}/${branch}/cvsdone
 
   echo "================================================"
   echo "running cvs update on ${pb}/${arch}/doc"
@@ -424,8 +432,8 @@ if [ "$skipstart" = 0 ]; then
 #    chown -RL ${user} errors logs packages
 
     echo "error logs in ${pb}/${arch}/archive/errorlogs/e.${branch}.${date}"
-    cp -p ${pb}/${arch}/cvsdone ${pb}/${arch}/archive/errorlogs/e.${branch}.${date}/cvsdone
-    cp -p ${pb}/${arch}/cvsdone ${pb}/${arch}/archive/errorlogs/a.${branch}.${date}/cvsdone
+    cp -p ${pb}/${arch}/${branch}/cvsdone ${pb}/${arch}/archive/errorlogs/e.${branch}.${date}/cvsdone
+    cp -p ${pb}/${arch}/${branch}/cvsdone ${pb}/${arch}/archive/errorlogs/a.${branch}.${date}/cvsdone
     cp -p ${pb}/${arch}/${branch}/ports/${INDEXFILE} ${pb}/${arch}/archive/errorlogs/e.${branch}.${date}/INDEX
     cp -p ${pb}/${arch}/${branch}/ports/${INDEXFILE} ${pb}/${arch}/archive/errorlogs/a.${branch}.${date}/INDEX
 
