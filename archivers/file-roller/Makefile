@@ -20,18 +20,12 @@ RUN_DEPENDS=	bzip:${PORTSDIR}/archivers/bzip \
 		rar:${PORTSDIR}/archivers/rar \
 		lzop:${PORTSDIR}/archivers/lzop
 
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomeprefix gnomehack libglade gnomevfs bonobo
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-
-post-patch:
-	@${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|\$$\(datadir\)/gnome/apps|\$$\(datadir\)/apps|g ; \
-		 s|\$$\(datadir\)/gnome/help|\$$\(datadir\)/help|g ; \
-		 s|\$$\(datadir\)/locale|\$$\(prefix\)/share/locale|g'
 
 post-install:
 .if !defined(NOPORTDOCS)
