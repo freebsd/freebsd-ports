@@ -36,6 +36,20 @@ DEMOS_SRC=	${WRKSRC}/demos/programs
 .error You have `USE_MOTIF' variable defined either in environment or in make(1) arguments. Please undefine and try again.
 .endif
 
+.if defined(WITH_JDK_PATCH)
+
+PKGNAMESUFFIX=	-jdk
+WITHOUT_OPENMOTIF_DEMOS=	YES
+WITHOUT_OPENMOTIF_MANUALS=	YES
+
+.if exists(${WITH_JDK_PATCH})
+EXTRA_PATCHES+=	${WITH_JDK_PATCH}
+.else
+.error "wrong WITH_JDK_PATCH value"
+.endif
+
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
