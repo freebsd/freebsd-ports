@@ -308,6 +308,7 @@
     SUBDIR += xemacs21-wnn6
     SUBDIR += xfig
     SUBDIR += xjman
+    SUBDIR += xjtext
     SUBDIR += xklock
     SUBDIR += xmsgsaver
     SUBDIR += xnetmaj
