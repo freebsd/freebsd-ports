@@ -1,0 +1,53 @@
+--- Makefile.dist.orig	Sun Aug 15 15:54:30 2004
++++ Makefile.dist	Sun Aug 15 16:09:04 2004
+@@ -30,8 +30,8 @@
+ # number of ways. See the man page and the documentation in
+ # doc/graft.{html,pdf,ps,txt}.
+ 
+-PACKAGEDIR	= /pkgs
+-TARGETDIR	= /pkgs
++PACKAGEDIR	= %%GRAFT_PACKAGEDIR%%
++TARGETDIR	= %%GRAFT_TARGETDIR%%
+ 
+ # You should only need to change the value of TOP to reflect the
+ # installation directory for graft if it is different from your default
+@@ -40,10 +40,10 @@
+ # these values, you may be confused about what graft is for. Please
+ # re-read the documentation in doc/graft.{html,pdf,ps,txt}.
+ 
+-TOP		= $(PACKAGEDIR)/graft-$(VERSION)
++TOP		= %%PREFIX%%
+ BIN		= $(TOP)/bin
+-MAN		= $(TOP)/man
+-DOC		= $(TOP)/doc
++MAN		= %%MANPREFIX%%/man
++DOC		= %%DOCSDIR%%
+ 
+ # The final grafted location of perl. See the bootstrap section in
+ # the documentation in doc/graft.{html,pdf,ps,txt}. This value will be
+@@ -55,7 +55,7 @@
+ #
+ #	#!/usr/bin/perl -w
+ 
+-PERL		= /pkgs/bin/perl
++PERL		= %%PERL%%
+ 
+ # The location of the perl executable used to build the graft
+ # executable. You'll need to change this only if you do not have a fixed
+@@ -68,7 +68,7 @@
+ # The graft log file. All of graft's actions will be logged in this file.
+ # If you don't want any logging, set this to /dev/null.
+ 
+-LOGFILE		= /var/log/graft
++LOGFILE		= %%GRAFT_LOGFILE%%
+ 
+ # The names of the special graft control files. GRAFT-IGNORE controls
+ # the exclusion of subdirectories, GRAFT-EXCLUDE controls the exclusion
+@@ -206,7 +206,6 @@
+ 		    mkdir -p $(DOC);			\
+ 		    cp doc/$$i $(DOC);			\
+ 		    chmod 644 $(DOC)/$$i;		\
+-		    touch $(DOC)/$(GRAFT-IGNORE);	\
+ 		done
+ 
+ bin:		all

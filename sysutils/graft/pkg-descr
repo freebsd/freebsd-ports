@@ -1,0 +1,5 @@
+Symlink manager for installing multiple versions of software packages
+under a common hierarchy. Simplifies installation/deinstallation and
+PATH management.
+
+WWW: http://www.gormand.com.au/peters/tools/graft/graft.html
