@@ -16,10 +16,12 @@
 PORTNAME=	gnat
 PORTVERSION=	3.14p
 CATEGORIES=	lang
-MASTER_SITES=	ftp://cs.nyu.edu/pub/gnat/${PORTVERSION}/ \
-		${MASTER_SITE_LOCAL} ${MASTER_SITE_GNU}
+MASTER_SITES=	ftp://cs.nyu.edu/pub/gnat/${PORTVERSION}/:gnat \
+		${MASTER_SITE_LOCAL}:boot \
+		${MASTER_SITE_GNU}:gcc
 MASTER_SITE_SUBDIR=	gcc deischen/gcc .
-DISTFILES=	${GNATNAME}.tgz gcc-2.8.1.tar.gz
+DISTFILES=	${GNATNAME}.tgz:gnat \
+		gcc-2.8.1.tar.gz:gcc
 
 MAINTAINER=	eischen@vigrid.com
 
@@ -91,7 +93,8 @@ BROKEN=	"Cannot build with or for an aout compiler."
 .endif
 
 .if empty(have_boot)
-DISTFILES+=	gnat-3.13p-boot.tar.gz
+ONLY_FOR_ARCHS=	i386
+DISTFILES+=	gnat-3.13p-boot.tar.gz:boot
 # Warning!  You need the trailing slash on GCC_EXEC_PREFIX.
 COMPILEDATA=	GCC_EXEC_PREFIX=${WRKDIR}/adaboot/lib/gcc-lib/ \
 		ADA_INCLUDE_PATH=${WRKDIR}/adaboot/lib/gcc-lib/adainclude \
