@@ -22,6 +22,9 @@ WRKSRC=		${WRKDIR}/vmware-freebsd-tools
 
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=	yes
+.if !defined(BATCH)
+IS_INTERACTIVE=	yes
+.endif
 
 RESTRICTED=	"Not sure if we can redistribute this."
 .if defined(PACKAGE_BUILDING)
