@@ -68,6 +68,9 @@ $PROG_MV =	'/bin/mv';		# mv(1)
 #
 # Make sure that these are also described in the rcstemplate to
 # make their usage clear to committers.
+#
+# In addition any of these entries that are left blank are removed
+# from the commit message at commit time.
 %TEMPLATE_HEADERS = (
 #	"Reviewed by"		=> '.*',
 #	"Submitted by"		=> '.*',
@@ -148,8 +151,6 @@ $MAIL_TRANSFORM = "";
 #$MAIL_TRANSFORM = sub {
 #	add_cvsweb_entry("http://www.example.org/cgi-bin/cvsweb.cgi", @_);
 #};
-
-
 
 # A function for post-processing a log message
 # and outputing it with URLs to a cvsweb.cgi in.
