@@ -9,7 +9,7 @@ PORTNAME=	ami
 PORTVERSION=	1.2.2
 CATEGORIES=	korean x11
 MASTER_SITES=	http://download.kldp.net/ami/ \
-		http://www.kr.freebsd.org/~hwang/ami/:hjdic
+		http://www.kr.freebsd.org/~hwang/ami/:hjdic \
 		ftp://ftp.kr.freebsd.org/pub/FreeBSD-kr/distfiles/:amidic
 DISTFILES=	${DISTNAME}.tar.gz hanja.dic.gz:hjdic ami.dic:amidic
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
