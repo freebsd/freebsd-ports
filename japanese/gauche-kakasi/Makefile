@@ -13,10 +13,8 @@ MASTER_SITE_SUBDIR=	gauche
 DISTNAME=	Gauche-${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fuyuki@nigredo.org
 COMMENT=	KAKASI binding for Gauche
-
-BROKEN=		Broken dependency
 
 BUILD_DEPENDS=	gosh:${PORTSDIR}/lang/gauche
 RUN_DEPENDS=	${BUILD_DEPENDS}
@@ -28,6 +26,10 @@ CONFIGURE_ARGS=	--with-kakasi=${PREFIX}
 DOCSDIR=	${PREFIX}/share/doc/gauche/${PORTNAME}
 PLIST_SUB=	VERSION="`gauche-config -V`" \
 		TARGET="${CONFIGURE_TARGET}"
+
+pre-install:
+	${MKDIR} `gauche-config --sitelibdir`
+	${MKDIR} `gauche-config --sitearchdir`
 
 post-install:
 .if !defined(NOPORTDOCS)
