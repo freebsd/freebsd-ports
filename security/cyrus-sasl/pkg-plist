@@ -85,8 +85,6 @@ sbin/pwcheck_pam
 %%JAVASASL%%@dirrm share/java/classes/sasl/javax
 %%JAVASASL%%@dirrm share/java/classes/sasl/CyrusSasl
 %%JAVASASL%%@dirrm share/java/classes/sasl
-%%JAVASASL%%@unexec rmdir %D/share/java/classes || true
-%%JAVASASL%%@unexec rmdir %D/share/java || true
 @dirrm lib/sasl
 @cwd /var
 @exec install -d -m 770 -o cyrus -g cyrus %D/pwcheck
