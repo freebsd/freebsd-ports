@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	arch
-PORTVERSION=	1.0.p5
+PORTVERSION=	1.0.p16
 CATEGORIES=	devel
 MASTER_SITES=	ftp://regexps.com/pub/src/${PORTNAME}/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/pre/}
 
 MAINTAINER=	wjv@FreeBSD.org
-
-BROKEN=		"Does not fetch"
 
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
@@ -39,6 +37,7 @@ post-install:
 	@ ${INSTALL_DATA} ${WRKSRC}/docs/${format}/*.${format} \
 	  ${DOCSDIR}/${format}
 .endfor
+	@ ${INSTALL_DATA} ${WRKSRC}/docs/examples/README* ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
