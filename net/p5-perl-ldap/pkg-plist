@@ -1,48 +1,49 @@
-lib/perl5/site_perl/%%PERL_VER%%/Bundle/Net/LDAP.pm
-lib/perl5/site_perl/%%PERL_VER%%/LWP/Protocol/ldap.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP.pod
-lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/ASN.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Bind.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Constant.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Constant.pod
-lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Control.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Control/Paged.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Control/ProxyAuth.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Control/Sort.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Control/SortResult.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Control/VLV.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Control/VLVResponse.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/DSML.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Entry.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Entry.pod
-lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Examples.pod
-lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Extension.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Extension/SetPassword.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Extra.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/FAQ.pod
-lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Filter.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Filter.pod
-lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/LDIF.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/LDIF.pod
-lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Message.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Message.pod
-lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/RFC.pod
-lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Reference.pod
-lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Schema.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Schema.pod
-lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Search.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Search.pod
-lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Security.pod
-lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Util.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/LDAPS.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/perl-ldap/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Control
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP/Extension
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/LDAP
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Bundle/Net
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/perl-ldap
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Bundle 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Net 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/LWP/Protocol 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/LWP 2>/dev/null || true
+%%SITE_PERL%%/Bundle/Net/LDAP.pm
+%%SITE_PERL%%/LWP/Protocol/ldap.pm
+%%SITE_PERL%%/Net/LDAP.pm
+%%SITE_PERL%%/Net/LDAP.pod
+%%SITE_PERL%%/Net/LDAP/ASN.pm
+%%SITE_PERL%%/Net/LDAP/Bind.pm
+%%SITE_PERL%%/Net/LDAP/Constant.pm
+%%SITE_PERL%%/Net/LDAP/Control.pm
+%%SITE_PERL%%/Net/LDAP/Control/Paged.pm
+%%SITE_PERL%%/Net/LDAP/Control/ProxyAuth.pm
+%%SITE_PERL%%/Net/LDAP/Control/Sort.pm
+%%SITE_PERL%%/Net/LDAP/Control/SortResult.pm
+%%SITE_PERL%%/Net/LDAP/Control/VLV.pm
+%%SITE_PERL%%/Net/LDAP/Control/VLVResponse.pm
+%%SITE_PERL%%/Net/LDAP/DSML.pm
+%%SITE_PERL%%/Net/LDAP/Entry.pm
+%%SITE_PERL%%/Net/LDAP/Entry.pod
+%%SITE_PERL%%/Net/LDAP/Examples.pod
+%%SITE_PERL%%/Net/LDAP/Extension.pm
+%%SITE_PERL%%/Net/LDAP/Extension/SetPassword.pm
+%%SITE_PERL%%/Net/LDAP/Extra.pm
+%%SITE_PERL%%/Net/LDAP/FAQ.pod
+%%SITE_PERL%%/Net/LDAP/Filter.pm
+%%SITE_PERL%%/Net/LDAP/Filter.pod
+%%SITE_PERL%%/Net/LDAP/LDIF.pm
+%%SITE_PERL%%/Net/LDAP/LDIF.pod
+%%SITE_PERL%%/Net/LDAP/Message.pm
+%%SITE_PERL%%/Net/LDAP/Message.pod
+%%SITE_PERL%%/Net/LDAP/RFC.pod
+%%SITE_PERL%%/Net/LDAP/Reference.pod
+%%SITE_PERL%%/Net/LDAP/RootDSE.pm
+%%SITE_PERL%%/Net/LDAP/Schema.pm
+%%SITE_PERL%%/Net/LDAP/Schema.pod
+%%SITE_PERL%%/Net/LDAP/Search.pm
+%%SITE_PERL%%/Net/LDAP/Search.pod
+%%SITE_PERL%%/Net/LDAP/Security.pod
+%%SITE_PERL%%/Net/LDAP/Util.pm
+%%SITE_PERL%%/Net/LDAPI.pm
+%%SITE_PERL%%/Net/LDAPS.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/perl-ldap/.packlist
+@dirrm %%SITE_PERL%%/Net/LDAP/Control
+@dirrm %%SITE_PERL%%/Net/LDAP/Extension
+@dirrm %%SITE_PERL%%/Net/LDAP
+@dirrm %%SITE_PERL%%/Bundle/Net
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/perl-ldap
+@unexec rmdir %D/%%SITE_PERL%%/Bundle 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Net 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/LWP/Protocol 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/LWP 2>/dev/null || true
