@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.169 1998/11/16 15:39:05 vanilla Exp $
+# $Id: Makefile,v 1.170 1998/11/24 09:15:53 flathill Exp $
 #
 
     SUBDIR += 3dc
@@ -9,6 +9,7 @@
     SUBDIR += agm
     SUBDIR += an
     SUBDIR += angband
+    SUBDIR += antipolix
     SUBDIR += awele
     SUBDIR += battalion
     SUBDIR += blackjack
