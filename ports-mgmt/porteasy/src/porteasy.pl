@@ -33,7 +33,7 @@ use strict;
 use Fcntl;
 use Getopt::Long;
 
-my $VERSION	= "2.7.1";
+my $VERSION	= "2.7.2";
 my $COPYRIGHT	= "Copyright (c) 2000-2002 Dag-Erling Smørgrav. " .
 		  "All rights reserved.";
 
@@ -80,7 +80,6 @@ my $need_deps;			# Need dependency information
 my $have_index;			# Index has been read
 my %ports;			# Maps ports to their directory.
 my %pkgname;			# Inverse of the above map
-my %portname;			# Port names (including prefix, but no version)
 my %masterport;			# Maps ports to their master ports
 my %reqd;			# Ports that need to be installed
 my %have_dep;			# Dependencies that are already present
@@ -444,9 +443,6 @@ sub add_installed() {
 	next if ($port eq "." || $port eq ".." || ! -d "$dbdir/$port");
 	if (!defined($origin = get_origin($port))) {
 	    bsd::warn("$port has no \@origin line\n");
-	    if (!$have_index) {
-		read_index();
-	    }
 	    if (!defined($origin = $ports{$port})) {
 		bsd::warnx("installed port %s is unknown", $port);
 	    }
@@ -677,11 +673,9 @@ sub update_ports_tree(@) {
 
 	    # Find the port's package name
 	    if (!exists($pkgname{$port})) {
-		$makev = capture(\&make, ($port, "-VPKGNAMEPREFIX",
-					  "-VPORTNAME", "-VPKGNAME"));
-		if ($makev =~ m/^(\S*)\n(\S+)\n(\S+)\n?$/s) {
-		    $portname{$port} = $1.$2;
-		    $pkgname{$port} = $3;
+		$makev = capture(\&make, ($port, "-VPKGNAME"));
+		if ($makev =~ m/^\s*(\S+)\s*$/s) {
+		    $pkgname{$port} = $1;
 		} else {
 		    bsd::warnx("failed to obtain package name for $port");
 		}
@@ -824,11 +818,6 @@ sub cmp_version($$) {
 	return '=';
     }
 
-    # Isolate the version number
-    if (substr($inst, 0, length($portname{$port})) ne $portname{$port}) {
-	return '?';
-    }
-
     # Compare port epochs
     if ((($a) = ($inst =~ m/,(\d+)$/)) ||
 	(($b) = ($pkgname{$port} =~ m/,(\d+)$/))) {
@@ -840,8 +829,8 @@ sub cmp_version($$) {
     }
 
     # Split it into components
-    my @a = split('.', substr($inst, length($portname{$port})));
-    my @b = split('.', substr($pkgname{$port}, length($portname{$port})));
+    my @a = split(/[\._-]/, $inst);
+    my @b = split(/[\._-]/, $pkgname{$port});
 
     # Compare the components one by one
     while (@a && @b) {
