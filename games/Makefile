@@ -188,6 +188,7 @@
     SUBDIR += xpilot
     SUBDIR += xpipeman
     SUBDIR += xpuyo
+    SUBDIR += xpuyopuyo
     SUBDIR += xpuzzletama
     SUBDIR += xpyraminx
     SUBDIR += xqf
