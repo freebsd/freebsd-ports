@@ -5,7 +5,6 @@ lib/perl5/site_perl/%%PERL_VER%%/GraphViz/Small.pm
 lib/perl5/site_perl/%%PERL_VER%%/GraphViz/Regex.pm
 lib/perl5/site_perl/%%PERL_VER%%/GraphViz/XML.pm
 lib/perl5/site_perl/%%PERL_VER%%/GraphViz/No.pm
-lib/perl5/site_perl/%%PERL_VER%%/GraphViz/Remote.pm
 lib/perl5/site_perl/%%PERL_VER%%/GraphViz/Parse/Yapp.pm
 lib/perl5/site_perl/%%PERL_VER%%/GraphViz/Parse/RecDescent.pm
 lib/perl5/site_perl/%%PERL_VER%%/GraphViz/Parse/Yacc.pm
