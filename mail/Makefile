@@ -310,6 +310,7 @@
     SUBDIR += qmailadmin
     SUBDIR += qmailanalog
     SUBDIR += qpopper
+    SUBDIR += qsf
     SUBDIR += qtools
     SUBDIR += queue-repair
     SUBDIR += raysfilter
