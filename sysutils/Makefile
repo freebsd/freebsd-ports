@@ -133,6 +133,7 @@
     SUBDIR += fontedit
     SUBDIR += fonteditfs
     SUBDIR += fortunelock
+    SUBDIR += freebsd-sha1
     SUBDIR += freecolor
     SUBDIR += freedt
     SUBDIR += freesbie
