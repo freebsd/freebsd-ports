@@ -32,6 +32,46 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="7c188c55-0cb0-11d9-8a8a-000c41e2cdad">
+    <topic>mozilla --- NULL bytes in FTP URLs</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>0.9.3</lt></range>
+      </package>
+      <package>
+        <name>linux-mozilla</name>
+        <name>linux-mozilla-devel</name>
+        <range><lt>1.7.2</lt></range>
+      </package>
+      <package>
+	<name>mozilla</name>
+	<range><lt>1.7.2,2</lt></range>
+	<range><ge>1.8.a</ge></range>
+      </package>
+      <package>
+	<name>mozilla-gtk1</name>
+	<range><lt>1.7.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>When handling FTP URLs containing NULL bytes, Mozilla will
+	  interpret the file content as HTML.  This may allow unexpected
+	  execution of Javascript when viewing plain text or other file
+	  types via FTP.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0760</cvename>
+      <url>http://bugzilla.mozilla.org/show_bug.cgi?id=250906</url>
+    </references>
+    <dates>
+      <discovery>2004-07-11</discovery>
+      <entry>2004-09-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6e740881-0cae-11d9-8a8a-000c41e2cdad">
     <topic>mozilla --- automated file upload</topic>
     <affects>
@@ -39,6 +79,10 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<name>mozilla</name>
 	<range><ge>1.7.a,2</ge><lt>1.7</lt></range>
 	<range><ge>1.8.a,2</ge><lt>1.8.a2,2</lt></range>
+      </package>
+      <package>
+	<name>mozilla-gtk1</name>
+	<range><ge>1.7.a</ge><lt>1.7</lt></range>
       </package>
     </affects>
     <description>
@@ -613,7 +657,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <topic>mozilla --- SOAPParameter integer overflow</topic>
     <affects>
       <package>
-	<name>firebird</name>
+	<name>firefox</name>
 	<range><lt>0.9</lt></range>
       </package>
       <package>
@@ -653,6 +697,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-08-02</discovery>
       <entry>2004-09-14</entry>
+      <modified>2004-09-22</modified>
     </dates>
   </vuln>
 
