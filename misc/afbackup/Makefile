@@ -22,6 +22,12 @@ WRKSRC=		${WRKDIR}/afbackup-3.3.5
 PLIST=		${WRKSRC}/pkg-plist
 BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile"
+.endif
+
 .if ! defined(NO_DES)
 USE_OPENSSL=	yes
 CONFIG_WITH_DES=	--with-des --with-des-header=openssl/des.h \
@@ -193,4 +199,4 @@ post-install:
 	@${ECHO} "-------------------------------------------------------------------"
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
