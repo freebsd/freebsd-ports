@@ -24,6 +24,7 @@ RUN_DEPENDS=	kwm:${PORTSDIR}/x11/kdebase11 \
 		kmoon:${PORTSDIR}/x11-clocks/kdetoys11
 
 NO_BUILD=	yes
+NO_LATEST_LINK=	yes
 
 do-install:	# empty
 
