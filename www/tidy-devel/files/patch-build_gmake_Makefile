@@ -1,5 +1,5 @@
---- build/gmake/Makefile.orig	Tue Mar  8 08:58:10 2005
-+++ build/gmake/Makefile	Tue Mar  8 23:50:24 2005
+--- build/gmake/Makefile.orig	Fri Mar 25 08:58:05 2005
++++ build/gmake/Makefile	Sat Apr  2 22:31:51 2005
 @@ -58,8 +58,8 @@
  PROJECT=tidy
  
@@ -20,21 +20,23 @@
  INCDIR = ${TOPDIR}/include
  APPDIR = ${TOPDIR}/console
  SRCDIR = ${TOPDIR}/src
-@@ -78,12 +78,12 @@
+@@ -78,14 +78,14 @@
  # CFLAGS etc..
  # For optimised builds, flags such as "-O2" should be added and -D_DEBUG=1
  # disabled.
 -CC= gcc
--CFLAGS= -g -Wall -Wno-switch -Wno-parentheses -Wno-unused -I $(INCDIR)
+-CFLAGS= -g -Wall -Wno-switch -Wno-parentheses -I $(INCDIR)
 +#CC= gcc
 +CFLAGS+= -I $(INCDIR)
+ # flags only supported with gcc 3.x
+ # CFLAGS += -Wunused-parameter
  
 -OTHERCFLAGS=
 -OTHERCFLAGS+= -D_DEBUG=1 -DHAS_VSNPRINTF=1
 -# OTHERCFLAGS+= -DSUPPORT_ACCESSIBILITY_CHECKS=1 -DSUPPORT_UTF16_ENCODINGS=1 -DSUPPORT_ASIAN_ENCODINGS=1
 +#OTHERCFLAGS=
 +#OTHERCFLAGS+= -D_DEBUG=1 -DHAS_VSNPRINTF=1
-+OTHERCFLAGS= -DSUPPORT_ACCESSIBILITY_CHECKS=1 -DSUPPORT_UTF16_ENCODINGS=1 -DSUPPORT_ASIAN_ENCODINGS=1 -DHAS_VSNPRINTF=1
++OTHERCFLAGS+= -DSUPPORT_ACCESSIBILITY_CHECKS=1 -DSUPPORT_UTF16_ENCODINGS=1 -DSUPPORT_ASIAN_ENCODINGS=1 -DHAS_VSNPRINTF=1
  ifdef SUPPORT_UTF16_ENCODINGS
  CFLAGS += -DSUPPORT_UTF16_ENCODINGS=$(SUPPORT_UTF16_ENCODINGS)
  endif
