@@ -3,7 +3,7 @@
 # Date created:		Fri Mar 27 17:26:42 KST 1998
 # Whom:			CHOI Junho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.5 1999/08/27 22:29:33 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ko-kaistfonts-ksc-1.0

@@ -3,7 +3,7 @@
 # Date created:         22 Mar 1997
 # Whom:                 Choi Jun Ho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.7 1998/11/18 11:38:57 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       hanyang-font-pcf

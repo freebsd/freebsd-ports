@@ -3,7 +3,7 @@
 # Date created:		12 Mar 1998
 # Whom:			CHOI Junho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.6 1999/06/22 16:46:14 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	hanemacs-19.34b-1

@@ -3,7 +3,7 @@
 # Date created:         2 Apr 1997
 # Whom:                 Choi Jun Ho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.7 1998/12/05 10:35:17 kuriyama Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	nh2ps-2.3.1

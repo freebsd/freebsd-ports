@@ -3,7 +3,7 @@
 # Date created:		05 Jun 1999
 # Whom:			CHOI Junho <cjh@kr.freebsd.org>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	ami-0.1.3

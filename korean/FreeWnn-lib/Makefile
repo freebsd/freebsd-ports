@@ -3,7 +3,7 @@
 # Date created:		20 July 1997
 # Whom:			Satoshi Taoka <taoka@FreeBSD.org>
 #
-# $Id: Makefile,v 1.6 1998/12/01 03:06:25 asami Exp $
+# $FreeBSD$
 #
 
 PKGNAME=	ko-Wnn-4.2

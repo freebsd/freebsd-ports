@@ -3,7 +3,7 @@
 # Date created:		Fri Mar 27 10:32:46 KST 1998
 # Whom:			CHOI Junho <cjh@kr.freebsd.org>
 #
-# $Id: Makefile,v 1.8 1999/05/02 19:27:22 mharo Exp $
+# $FreeBSD$
 #
 # based on print/ghostscript5 and japanese/vfghostscript5
 # use Adobe's CID-keyed font sameple(korean) because there are no

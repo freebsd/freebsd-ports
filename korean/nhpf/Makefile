@@ -3,7 +3,7 @@
 # Date created:         25 May 1997
 # Whom:                 Choi Jun Ho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.2 1997/04/28 08:46:19 max Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	nhpf-1.42

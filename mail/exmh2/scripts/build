@@ -1,6 +1,6 @@
 #! /bin/sh
 #
-# $Id: build,v 1.6 1998/03/20 09:28:16 markm Exp $
+# $FreeBSD$
 #
 
 VERSION="`sed -ne 's/^set vers \(.*\)/\1/p' ${WRKSRC}/exmh.install`"

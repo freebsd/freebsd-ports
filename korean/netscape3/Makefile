@@ -3,7 +3,7 @@
 # Date created:		6 Apr 1995
 # Whom:			CHOI Junho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.7 1998/11/23 07:49:49 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	netscape-3.04

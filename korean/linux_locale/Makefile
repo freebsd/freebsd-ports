@@ -3,7 +3,7 @@
 # Date created:         Apr 20 1999
 # Whom:                 cjh@kr.freebsd.org
 #
-# $Id: Makefile,v 1.1.1.1 1999/05/25 22:14:20 kuriyama Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	linux_locale-ko-1.0

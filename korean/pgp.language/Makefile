@@ -3,7 +3,7 @@
 # Date created:         22 Jul 1998
 # Whom:                 CHOI Junho <cjh@kr.freebsd.org>
 #
-# $Id: Makefile,v 1.5 1999/07/22 04:39:57 cpiazza Exp $
+# $FreeBSD$
 #
 # This is based on ja-pgp.
 #

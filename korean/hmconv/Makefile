@@ -3,7 +3,7 @@
 # Date created:         31 Mar 1997
 # Whom:                 Choi Jun Ho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.1.1.1 1997/05/09 10:37:23 max Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	hmconv1.0pl3

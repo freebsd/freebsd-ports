@@ -6,7 +6,7 @@
 #
 # k3 means pico hangul patch
 #
-# $Id: Makefile,v 1.9 1998/12/18 11:19:01 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       pine3.96

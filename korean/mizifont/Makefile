@@ -3,7 +3,7 @@
 # Date created:		16 Mar 1998
 # Whom:			CHOI Junho <cjh@kr.freebsd.org>
 #
-# $Id: Makefile,v 1.9 1999/07/22 04:39:55 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xfntmizi-1.1-2.noarch

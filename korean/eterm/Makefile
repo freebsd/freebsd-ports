@@ -3,7 +3,7 @@
 # Date created:        8 Jun 1999
 # Whom:                Oh Junseon <hollywar@mail.holywar.net>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	Eterm-0.8.9

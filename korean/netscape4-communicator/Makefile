@@ -3,7 +3,7 @@
 # Date created:		25 Oct 1998
 # Whom:			CHOI Junho <cjh@kr.freebsd.org>
 #
-# $Id: Makefile,v 1.11 1999/04/02 03:45:46 steve Exp $
+# $FreeBSD$
 #
 # based on japanese/netscape4-*
 

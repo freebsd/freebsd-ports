@@ -3,7 +3,7 @@
 # Date created:		25 Oct 1998
 # Whom:			CHOI Junho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.10 1999/02/12 14:44:56 kuriyama Exp $
+# $FreeBSD$
 #
 # based on japanese/netscape4-*
 

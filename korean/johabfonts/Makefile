@@ -3,7 +3,7 @@
 # Date created:		15 Mar 1998
 # Whom:			CHOI Junho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.6 1998/11/21 20:08:04 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       hanterm304fonts

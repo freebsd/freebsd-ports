@@ -3,7 +3,7 @@
 # Date created:         2 Apr 1997
 # Whom:                 Choi Jun Ho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.5 1997/12/05 00:08:05 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	linuxdoc-sgml-1.6bh2

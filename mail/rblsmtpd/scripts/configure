@@ -2,7 +2,7 @@
 #
 # Set up daemontools for the *BSD environment...
 #
-# @(#) $Id: configure,v 1.1.1.1 1998/07/09 10:18:38 dburr Exp $
+# @(#) $FreeBSD$
 #
 
 # Tune the options we're given.

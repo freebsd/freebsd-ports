@@ -3,7 +3,7 @@
 # Date created:		3 Jun 1999
 # Whom:			hollywar
 #
-# $Id: Makefile,v 1.1.1.1 1999/08/25 06:07:42 taoka Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	bitchx-kr-75p1

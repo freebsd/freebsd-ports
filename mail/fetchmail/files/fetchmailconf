@@ -3,7 +3,7 @@
 # Wrapper for the real fetchmailconf.  Checks whether Python is installed,
 # and runs the real fetchmailconf or alerts the user, as appropriate.
 #
-#	$Id$
+# $FreeBSD$
 
 PREFIX=@PREFIX@
 

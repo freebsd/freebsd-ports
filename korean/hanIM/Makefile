@@ -3,7 +3,7 @@
 # Date created:         17 Mar 1998
 # Whom:                 CHOI Junho <cjh@kr.freebsd.org
 #
-# $Id: Makefile,v 1.1.1.1 1999/05/29 08:32:13 kuriyama Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       hanIM-${HANIM_VER}-${HANIM_VER_PL}.i386

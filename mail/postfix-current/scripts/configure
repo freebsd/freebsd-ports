@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $Id: configure,v 1.1.1.1 1999/03/29 20:15:08 torstenb Exp $
+# $FreeBSD$
 
 mv ${WRKSRC}/global/mail_params.h ${WRKSRC}/global/mail_params.h.bak
 sed <${WRKSRC}/global/mail_params.h.bak >${WRKSRC}/global/mail_params.h s+!!PREFIX!!+$PREFIX+g

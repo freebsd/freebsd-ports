@@ -3,7 +3,7 @@
 # Date created:		2 Apr 1997
 # Whom:			Choi Jun Ho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.2 1997/09/22 16:21:58 max Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       PS-HLaTeX-pfb

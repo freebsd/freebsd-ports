@@ -3,7 +3,7 @@
 # Date created:		04 Jun 1999
 # Whom:			CHOI Junho <cjh@kr.freebsd.org>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	byeoroo-0.0.19990605.3

@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $Id: configure,v 1.2 1996/11/17 23:43:03 torstenb Exp $
+# $FreeBSD$
 
 sed <${FILESDIR}/EDITME >${WRKSRC}/conf/EDITME s+!!PREFIX!!+$PREFIX+g
 sed <${FILESDIR}/freebsd2.0 >${WRKSRC}/conf/os/freebsd2.0 s+!!PREFIX!!+$PREFIX+g

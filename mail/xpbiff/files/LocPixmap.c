@@ -2,7 +2,7 @@
 
 /* * Last edited: Sep 17 14:39 1991 (mallet) */
 /*
- * $Id: LocPixmap.c,v 1.3 1991/09/18 18:28:27 mallet Exp $
+ * $FreeBSD$
  *
  * Copyright 1991 Lionel Mallet
  *
