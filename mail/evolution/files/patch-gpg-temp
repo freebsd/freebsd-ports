@@ -1,0 +1,84 @@
+diff -u -r1.2.8.1 camel-mime-filter-canon.c
+--- camel/camel-mime-filter-canon.c	21 Jan 2003 03:07:05 -0000	1.2.8.1
++++ camel/camel-mime-filter-canon.c	26 Feb 2003 23:12:09 -0000
+@@ -26,6 +26,7 @@
+ #include <config.h>
+ #endif
+ 
++#include <stdio.h>
+ #include <string.h>
+ #include <ctype.h>
+ 
+@@ -170,7 +171,7 @@
+ 	if (len)
+ 		filter(f, in, len, prespace, out, outlen, outprespace);
+ 
+-	/* the data didn't contain an eol or was too short for "From ", we only need to check for "From" and add an eol */
++	/* the data didn't contain an eol or was too short for "From ", we only need to check for "From" */
+ 	if (f->backlen) {
+ 		inptr = (unsigned char *)f->backbuf;
+ 		inend = (unsigned char *)f->backbuf + f->backlen;
+@@ -195,20 +196,7 @@
+ 			while (o>starto && (o[-1] == ' ' || o[-1] == '\t' || o[-1]=='\r'))
+ 				o--;
+ 		}
+-		/* check end of line canonicalisation */
+-		if (o>starto) {
+-			if (flags & CAMEL_MIME_FILTER_CANON_CRLF) {
+-				if (o[-1] != '\r')
+-					*o++ = '\r';
+-			} else {
+-				if (o[-1] == '\r')
+-					o--;
+-			}
+-		}
+-
+-		/* and always finish with an eol */
+-		*o++ = '\n';
+-
++		
+ 		*outlen = o - *out;
+ 		
+ 		f->backlen = 0;
+diff -u -r1.24 camel-stream-filter.c
+--- camel/camel-stream-filter.c	19 Jul 2002 11:25:02 -0000	1.24
++++ camel/camel-stream-filter.c	26 Feb 2003 23:12:10 -0000
+@@ -19,11 +19,16 @@
+  * Boston, MA 02111-1307, USA.
+  */
+ 
++
++#ifdef HAVE_CONFIG_H
++#include <config.h>
++#endif
++
++#include <stdio.h>
+ #include <string.h>
+ #include "camel-stream-filter.h"
+ 
+ #define d(x)
+-/*#include <stdio.h>*/
+ 
+ /* use my malloc debugger? */
+ /*extern void g_check(void *mp);*/
+@@ -368,10 +373,18 @@
+ {
+ 	CamelStreamFilter *filter = (CamelStreamFilter *)stream;
+ 	struct _CamelStreamFilterPrivate *p = _PRIVATE(filter);
+-
++	struct _filter *f;
++	
+ 	if (p->filteredlen > 0)
+ 		return FALSE;
+-
++	
++	f = p->filters;
++	while (f) {
++		if (f->filter->backlen > 0)
++			return FALSE;
++		f = f->next;
++	}
++	
+ 	return camel_stream_eos(filter->source);
+ }
+ 
