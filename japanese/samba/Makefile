@@ -20,8 +20,9 @@ MAINTAINER=	nakaji@jp.FreeBSD.org
 COMMENT=	A free SMB and CIFS client and server for UNIX
 
 BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
-SAMBA_VERSION=		2.2.7b
+SAMBA_VERSION=		2.2.8a
 SAMBA_JA_VERSION=	1.0
 
 USE_BZIP2=	yes
@@ -74,7 +75,7 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/samba.sh.sample
 SAMPLE_CONFIG=	${SAMBA_CONFDIR}/smb.conf.default
 
-CONFIGURE_ARGS=	--with-i18n-swat --with-included-gettext \
+CONFIGURE_ARGS=	--with-i18n-swat \
 		--libdir=${SAMBA_CONFDIR} \
 		--localstatedir=${VARDIR} --with-swatdir=${PREFIX}/share/swat \
 		--with-lockdir=${VARDIR}/db/samba \
@@ -86,7 +87,9 @@ CONFIGURE_ARGS=	--with-i18n-swat --with-included-gettext \
 
 .include <bsd.port.pre.mk>
 
-CONFIGURE_ENV+=	TESTDIR=/tmp
+CONFIGURE_ENV+=	TESTDIR=/tmp \
+		CPPFLAGS=-I${LOCALBASE}/include \
+		LDFLAGS=-L${LOCALBASE}/lib
 
 .if defined(WITH_SYSLOG)
 CONFIGURE_ARGS+=	--with-syslog
