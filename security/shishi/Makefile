@@ -7,37 +7,33 @@
 #
 
 PORTNAME=	shishi
-PORTVERSION=	0.0.8
+PORTVERSION=	0.0.12
 CATEGORIES=	security
 MASTER_SITES=	http://josefsson.org/${PORTNAME}/releases/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free implementation of the Kerberos 5 network security system
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
-		intl.5:${PORTSDIR}/devel/gettext \
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \
 		idn.12:${PORTSDIR}/devel/libidn \
-		gcrypt.6:${PORTSDIR}/security/libgcrypt \
-		tasn1.2:${PORTSDIR}/security/libtasn1 \
-		gnutls.7:${PORTSDIR}/security/gnutls
+		tasn1.2:${PORTSDIR}/security/libtasn1
 
-USE_GNOME=	gnomehack
-USE_LIBTOOL=	yes
+USE_GNOME=	gnomehack gnometarget pkgconfig
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		MAKEINFO="makeinfo --no-split"
+CONFIGURE_ARGS=	--without-libgcrypt --disable-starttls \
+		--with-db-dir=/var/shishi
 INSTALLS_SHLIB=	yes
 
-INFO=	shishi
-MAN1=	shishi.1
+INFO=		shishi
 
 post-extract:
 	@${RM} -f ${WRKSRC}/doc/shishi.info*
 
 post-install:
-	@(cd ${WRKSRC}/doc/man ; \
-		${LS} *.3 | ${SED} 's,^,man/man3/,' >> ${TMPPLIST})
+	@${SED} 's:/usr/local:${PREFIX}:g' ${PKGMESSAGE}
 
+.include "Makefile.man"
 .include <bsd.port.mk>

@@ -1,16 +1,18 @@
+bin/shisa
 bin/shishi
-sbin/shishid
-etc/shishi.conf
-include/shishi.h
+etc/shishi/shisa.conf
+etc/shishi/shishi.conf
+etc/shishi/shishi.skel
+include/shisa.h
 include/shishi-int.h
+include/shishi.h
+lib/libshisa.a
+lib/libshisa.so
+lib/libshisa.so.0
 lib/libshishi.a
 lib/libshishi.so
 lib/libshishi.so.0
 libdata/pkgconfig/shishi.pc
+sbin/shishid
 share/locale/sv/LC_MESSAGES/shishi.mo
-share/gtk-doc/html/shishi/c4.html
-share/gtk-doc/html/shishi/index.html
-share/gtk-doc/html/shishi/shishi-shishi.html
-share/gtk-doc/html/shishi/index.sgml
-%%DATADIR%%/shishi.skel
-@dirrm %%DATADIR%%
+@unexec rmdir %D/etc/shishi 2>/dev/null || true
