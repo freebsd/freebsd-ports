@@ -1,11 +1,14 @@
---- makefile.orig	Fri Mar 14 04:34:48 1997
-+++ makefile	Mon Oct 12 19:17:11 1998
-@@ -2,17 +2,18 @@
+--- makefile.orig	Fri Mar 14 19:34:48 1997
++++ makefile	Wed Jun 21 02:59:31 2000
+@@ -1,18 +1,19 @@
+ .KEEP_STATE:
  
- CFLAGS = -O2
- CC = gcc
+-CFLAGS = -O2
+-CC = gcc
 -XLIB = -L/usr/X11/lib  -lXaw3d -lXmu -lXt
 -
++CFLAGS ?= -O2
++CC ?= gcc
 +XLIB = -L$(X11BASE)/lib  -lXaw -lXmu -lXt
 +.if $(PORTOBJFORMAT) == "elf"
 +XLIB+= -Wl,-rpath,$(X11BASE)/lib

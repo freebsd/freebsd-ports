@@ -1,4 +1,4 @@
-# New ports collection makefile for:	asfsm
+# New ports collection makefile for:	asmon
 # Date created:		27 Sep 1999
 # Whom:			jack
 #
@@ -8,8 +8,8 @@
 PORTNAME=	asmon
 PORTVERSION=	0.60
 CATEGORIES=	sysutils afterstep
-MASTER_SITES=	ftp://ftp.afterstep.org/apps/asmon/ \
-		http://www.tigr.net/afterstep/as-apps/download/asmon/
+MASTER_SITES=	${MASTER_SITE_AFTERSTEP}
+MASTER_SITE_SUBDIR=	apps/asmon
 
 MAINTAINER=	jack@germanium.xtalwind.net
 
