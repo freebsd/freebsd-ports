@@ -3,7 +3,7 @@
 # Date created:         Fr  27 Sep 1996 11:47:35 MET DST
 # Whom:                 Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.1.1.1 1996/09/27 11:47:05 andreas Exp $
+# $Id: Makefile,v 1.2 1996/09/27 20:55:50 andreas Exp $
 #
 
 DISTNAME=       bzip-0.21
@@ -19,13 +19,10 @@ pre-install:
 
 do-install:
 	rm -f ${PREFIX}/bin/bzip ${PREFIX}/bin/bzip
-	${INSTALL} -C -s -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} \
-		${WRKSRC}/bzip ${PREFIX}/bin/bzip
+	${INSTALL_PROGRAM} ${WRKSRC}/bzip ${PREFIX}/bin/bzip
 	ln ${PREFIX}/bin/bzip ${PREFIX}/bin/bunzip
-	${INSTALL} -C -o ${BINOWN} -g ${BINGRP} -m ${NOBINMODE} \
-		${WRKSRC}/bzip.1 ${PREFIX}/man/man1/bzip.1
-	${INSTALL} -C -o ${BINOWN} -g ${BINGRP} -m ${NOBINMODE} \
-		${WRKSRC}/bzip.1 ${PREFIX}/man/man1/bunzip.1
+	${INSTALL_MAN} ${WRKSRC}/bzip.1 ${PREFIX}/man/man1/bzip.1
+	${INSTALL_MAN} ${WRKSRC}/bzip.1 ${PREFIX}/man/man1/bunzip.1
 .if !defined(NOMANCOMPRESS)
 	gzip -9nf ${PREFIX}/man/man1/bzip.1
 	gzip -9nf ${PREFIX}/man/man1/bunzip.1

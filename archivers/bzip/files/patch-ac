@@ -1,0 +1,27 @@
+--- bzip.c.orig	Sat Sep 28 03:32:05 1996
++++ bzip.c	Sat Sep 28 03:37:53 1996
+@@ -3132,11 +3132,6 @@
+    signal (SIGBUS,  mySIGSEGVorSIGBUScatcher);
+    #endif
+ 
+-   if ( ! (argc > 1 && strcmp ( "-Q", argv[1] ) == 0) )
+-      fprintf ( stderr,
+-                "BZIP, a block-sorting file compressor.  "
+-                "Version 0.21, 25-August-96.\n" );
+-
+    #if DEBUG
+       if ( ! (argc > 1 && strcmp ( "-Q", argv[1] ) == 0) )
+          fprintf ( stderr, "BZIP: *** compiled with debugging ON ***\n" );
+@@ -3206,6 +3201,12 @@
+                          exit ( 1 );
+                          break;
+          }
++
++   if (verbose) {
++      fprintf ( stderr,
++                "BZIP, a block-sorting file compressor.  "
++                "Version 0.21, 25-August-96.\n" );
++   }
+ 
+    if ( opMode == OM_FILE_TO_STDOUT && numFileNames != 1) {
+       fprintf ( stderr, "%s: Option -c requires you to supply exactly one filename.\n",
