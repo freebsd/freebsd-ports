@@ -101,45 +101,75 @@ share/FlightGear/Aircraft-uiuc/models/x15/index.html
 share/FlightGear/Aircraft-uiuc/models/x15/linear.html
 share/FlightGear/Aircraft-uiuc/models/x15/refs.html
 share/FlightGear/Aircraft-uiuc/runfgfs.bat
-share/FlightGear/Aircraft-yasim/747.xml
-share/FlightGear/Aircraft-yasim/README.j3cub
-share/FlightGear/Aircraft-yasim/README.p51d
-share/FlightGear/Aircraft-yasim/README.pa28-161
 share/FlightGear/Aircraft-yasim/README.yasim
-share/FlightGear/Aircraft-yasim/a10cl-yasim.xml
-share/FlightGear/Aircraft-yasim/a10fl-yasim.xml
-share/FlightGear/Aircraft-yasim/a10wl-yasim.xml
-share/FlightGear/Aircraft-yasim/a4.xml
-share/FlightGear/Aircraft-yasim/b52-yasim.xml
-share/FlightGear/Aircraft-yasim/c172.xml
-share/FlightGear/Aircraft-yasim/c310.xml
-share/FlightGear/Aircraft-yasim/dc3.xml
-share/FlightGear/Aircraft-yasim/harrier.xml
-share/FlightGear/Aircraft-yasim/j3cub.xml
-share/FlightGear/Aircraft-yasim/p51d.xml
-share/FlightGear/Aircraft-yasim/pa28-161.xml
-share/FlightGear/Aircraft-yasim/seahawk-WV908-yasim.xml
-share/FlightGear/Aircraft-yasim/seahawk-yasim.xml
-share/FlightGear/Aircraft-yasim/seahawkpair-yasim.xml
-share/FlightGear/Aircraft-yasim/tsr2-yasim.xml
-share/FlightGear/Aircraft-yasim/yf23-yasim.xml
-share/FlightGear/Aircraft/737-jsbsim-set.xml
-share/FlightGear/Aircraft/737-set.xml
+share/FlightGear/Aircraft/737/737-jsbsim-set.xml
+share/FlightGear/Aircraft/737/737-set.xml
 share/FlightGear/Aircraft/737/737.xml
-share/FlightGear/Aircraft/747-set.xml
-share/FlightGear/Aircraft/747-yasim-set.xml
+share/FlightGear/Aircraft/737/737panel.readme
+share/FlightGear/Aircraft/737/Instruments/737-engines.xml
+share/FlightGear/Aircraft/737/Instruments/EADI.xml
+share/FlightGear/Aircraft/737/Instruments/Textures/737-engines.rgb
+share/FlightGear/Aircraft/737/Instruments/Textures/adihsi.rgb
+share/FlightGear/Aircraft/737/Instruments/Textures/blank-256x256.rgb
+share/FlightGear/Aircraft/737/Instruments/Textures/eadi_ladder.rgb
+share/FlightGear/Aircraft/737/Instruments/fuel-quantity.xml
+share/FlightGear/Aircraft/737/Panels/737-invis-1024x1024.rgb
+share/FlightGear/Aircraft/737/Panels/737-panel.xml
 share/FlightGear/Aircraft/747/747-panel.xml
+share/FlightGear/Aircraft/747/747-set.xml
 share/FlightGear/Aircraft/747/747-sound.xml
+share/FlightGear/Aircraft/747/747-yasim-set.xml
+share/FlightGear/Aircraft/747/747.xml
+share/FlightGear/Aircraft/747/Models/boeing747-400-ai-jw.ac
+share/FlightGear/Aircraft/747/Models/boeing747-400-ai-jw.rgb
+share/FlightGear/Aircraft/747/Models/boeing747-400-ai-jw.xcf
+share/FlightGear/Aircraft/747/Models/boeing747-400-ai-jw.xml
+share/FlightGear/Aircraft/747/Models/boeing747-400-alt-jw.ac
+share/FlightGear/Aircraft/747/Models/boeing747-400-alt-jw.rgb
+share/FlightGear/Aircraft/747/Models/boeing747-400-alt-jw.xml
+share/FlightGear/Aircraft/747/Models/boeing747-400-asi-jw.ac
+share/FlightGear/Aircraft/747/Models/boeing747-400-asi-jw.rgb
+share/FlightGear/Aircraft/747/Models/boeing747-400-asi-jw.xml
+share/FlightGear/Aircraft/747/Models/boeing747-400-bezel-jw.rgb
+share/FlightGear/Aircraft/747/Models/boeing747-400-efis-common-jw-01.rgb
+share/FlightGear/Aircraft/747/Models/boeing747-400-efis-common-jw-01.xcf
+share/FlightGear/Aircraft/747/Models/boeing747-400-efisp-jw.ac
+share/FlightGear/Aircraft/747/Models/boeing747-400-efisp-jw.rgb
+share/FlightGear/Aircraft/747/Models/boeing747-400-efisp-jw.xcf
+share/FlightGear/Aircraft/747/Models/boeing747-400-efisp-jw.xml
+share/FlightGear/Aircraft/747/Models/boeing747-400-enav-jw-01.rgb
+share/FlightGear/Aircraft/747/Models/boeing747-400-enav-jw-01.xcf
+share/FlightGear/Aircraft/747/Models/boeing747-400-enav-jw-02.rgb
+share/FlightGear/Aircraft/747/Models/boeing747-400-enav-jw-02.xcf
+share/FlightGear/Aircraft/747/Models/boeing747-400-enav-jw.ac
+share/FlightGear/Aircraft/747/Models/boeing747-400-enav-jw.xml
 share/FlightGear/Aircraft/747/Models/boeing747-400-jw-01.rgb
 share/FlightGear/Aircraft/747/Models/boeing747-400-jw-02.rgb
 share/FlightGear/Aircraft/747/Models/boeing747-400-jw-03.rgb
-share/FlightGear/Aircraft/747/Models/boeing747-400-jw-04.rgb
-share/FlightGear/Aircraft/747/Models/boeing747-400-jw-05.rgb
-share/FlightGear/Aircraft/747/Models/boeing747-400-jw-06.rgb
-share/FlightGear/Aircraft/747/Models/boeing747-400-jw-07.rgb
-share/FlightGear/Aircraft/747/Models/boeing747-400-jw-08.rgb
 share/FlightGear/Aircraft/747/Models/boeing747-400-jw.ac
 share/FlightGear/Aircraft/747/Models/boeing747-400-jw.xml
+share/FlightGear/Aircraft/747/Models/boeing747-400-mcp-jw.ac
+share/FlightGear/Aircraft/747/Models/boeing747-400-mcp-jw.rgb
+share/FlightGear/Aircraft/747/Models/boeing747-400-mcp-jw.xcf
+share/FlightGear/Aircraft/747/Models/boeing747-400-mcp-jw.xml
+share/FlightGear/Aircraft/747/Models/boeing747-400-pfd-jw-01.rgb
+share/FlightGear/Aircraft/747/Models/boeing747-400-pfd-jw-01.xcf
+share/FlightGear/Aircraft/747/Models/boeing747-400-pfd-jw-02.rgb
+share/FlightGear/Aircraft/747/Models/boeing747-400-pfd-jw-02.xcf
+share/FlightGear/Aircraft/747/Models/boeing747-400-pfd-jw-03.rgb
+share/FlightGear/Aircraft/747/Models/boeing747-400-pfd-jw-03.xcf
+share/FlightGear/Aircraft/747/Models/boeing747-400-pfd-jw-04.rgb
+share/FlightGear/Aircraft/747/Models/boeing747-400-pfd-jw-04.xcf
+share/FlightGear/Aircraft/747/Models/boeing747-400-pfd-jw.ac
+share/FlightGear/Aircraft/747/Models/boeing747-400-pfd-jw.xml
+share/FlightGear/Aircraft/747/Models/digits.rgb
+share/FlightGear/Aircraft/747/Models/digits.xcf
+share/FlightGear/Aircraft/A320/A320-jsbsim-set.xml
+share/FlightGear/Aircraft/A320/A320-set.xml
+share/FlightGear/Aircraft/A320/A320.xml
+share/FlightGear/Aircraft/A320/Models/a320-fb-af-01.rgb
+share/FlightGear/Aircraft/A320/Models/a320-fb.ac
+share/FlightGear/Aircraft/A320/Models/a320-fb.xml
 share/FlightGear/Aircraft/Generic/README
 share/FlightGear/Aircraft/Generic/generic-electrical.xml
 share/FlightGear/Aircraft/Instruments-3d/asi-260-knot.ac
@@ -148,6 +178,9 @@ share/FlightGear/Aircraft/Instruments-3d/asi-260-knot.xml
 share/FlightGear/Aircraft/Instruments-3d/attitude-indicator.ac
 share/FlightGear/Aircraft/Instruments-3d/attitude-indicator.rgb
 share/FlightGear/Aircraft/Instruments-3d/attitude-indicator.xml
+share/FlightGear/Aircraft/Instruments-3d/mag-compass.ac
+share/FlightGear/Aircraft/Instruments-3d/mag-compass.rgb
+share/FlightGear/Aircraft/Instruments-3d/mag-compass.xml
 share/FlightGear/Aircraft/Instruments/Textures/accel.rgb
 share/FlightGear/Aircraft/Instruments/Textures/airsp1.rgb
 share/FlightGear/Aircraft/Instruments/Textures/airsp2.rgb
@@ -361,8 +394,6 @@ share/FlightGear/Aircraft/Instruments/vor2-c172s.xml
 share/FlightGear/Aircraft/Instruments/vsi-c172s.xml
 share/FlightGear/Aircraft/Instruments/vsi.xml
 share/FlightGear/Aircraft/Instruments/xpdr-kt76c.xml
-share/FlightGear/Aircraft/OV10-jsbsim-set.xml
-share/FlightGear/Aircraft/OV10-set.xml
 share/FlightGear/Aircraft/OV10/Models/OV10.ac
 share/FlightGear/Aircraft/OV10/Models/OV10.mdl
 share/FlightGear/Aircraft/OV10/Models/ov10.xml
@@ -375,12 +406,13 @@ share/FlightGear/Aircraft/OV10/Models/ov10_5.rgb
 share/FlightGear/Aircraft/OV10/Models/ov10_6.rgb
 share/FlightGear/Aircraft/OV10/Models/ov10_7.rgb
 share/FlightGear/Aircraft/OV10/Models/ov10_8.rgb
+share/FlightGear/Aircraft/OV10/OV10-jsbsim-set.xml
 share/FlightGear/Aircraft/OV10/OV10-read-me.html
+share/FlightGear/Aircraft/OV10/OV10-set.xml
 share/FlightGear/Aircraft/OV10/OV10.xml
 share/FlightGear/Aircraft/OV10/Sounds/OV10-sound.xml
 share/FlightGear/Aircraft/OV10/Sounds/turboprop1.wav
 share/FlightGear/Aircraft/OV10/ov10
-share/FlightGear/Aircraft/T38-set.xml
 share/FlightGear/Aircraft/T38/Instruments/IVSI-6kfpm.xml
 share/FlightGear/Aircraft/T38/Instruments/T38-ADI.xml
 share/FlightGear/Aircraft/T38/Instruments/T38-HSI.xml
@@ -388,24 +420,40 @@ share/FlightGear/Aircraft/T38/Instruments/T38-airspeed.xml
 share/FlightGear/Aircraft/T38/Instruments/T38-altimeter.xml
 share/FlightGear/Aircraft/T38/Instruments/T38-flaps.xml
 share/FlightGear/Aircraft/T38/Instruments/T38-gear.xml
+share/FlightGear/Aircraft/T38/Instruments/T38-throttle.xml
 share/FlightGear/Aircraft/T38/Instruments/Textures/T38-altimeter.rgb
 share/FlightGear/Aircraft/T38/Instruments/Textures/aero.rgb
 share/FlightGear/Aircraft/T38/Instruments/Textures/engine.rgb
+share/FlightGear/Aircraft/T38/Instruments/Textures/fuel.rgb
+share/FlightGear/Aircraft/T38/Instruments/Textures/fuelflow.rgb
 share/FlightGear/Aircraft/T38/Instruments/Textures/gmeter.rgb
 share/FlightGear/Aircraft/T38/Instruments/Textures/ivsi-6kfpm.rgb
 share/FlightGear/Aircraft/T38/Instruments/Textures/n1.rgb
+share/FlightGear/Aircraft/T38/Instruments/Textures/nozzle.rgb
+share/FlightGear/Aircraft/T38/Instruments/Textures/oilpressure.rgb
 share/FlightGear/Aircraft/T38/Instruments/Textures/t38-ADI.rgb
 share/FlightGear/Aircraft/T38/Instruments/Textures/t38-airspeed.rgb
 share/FlightGear/Aircraft/T38/Instruments/Textures/t38-flaps.rgb
 share/FlightGear/Aircraft/T38/Instruments/Textures/t38-gear.rgb
 share/FlightGear/Aircraft/T38/Instruments/Textures/t38-hsi.rgb
+share/FlightGear/Aircraft/T38/Instruments/Textures/throttle.rgb
 share/FlightGear/Aircraft/T38/Instruments/aero.xml
+share/FlightGear/Aircraft/T38/Instruments/egt-0.xml
+share/FlightGear/Aircraft/T38/Instruments/egt-1.xml
 share/FlightGear/Aircraft/T38/Instruments/engine.xml
+share/FlightGear/Aircraft/T38/Instruments/ff-0.xml
+share/FlightGear/Aircraft/T38/Instruments/ff-1.xml
+share/FlightGear/Aircraft/T38/Instruments/fuel-0.xml
+share/FlightGear/Aircraft/T38/Instruments/fuel-1.xml
 share/FlightGear/Aircraft/T38/Instruments/gmeter.xml
 share/FlightGear/Aircraft/T38/Instruments/n1-0.xml
 share/FlightGear/Aircraft/T38/Instruments/n1-1.xml
+share/FlightGear/Aircraft/T38/Instruments/nozzle-0.xml
+share/FlightGear/Aircraft/T38/Instruments/nozzle-1.xml
+share/FlightGear/Aircraft/T38/Instruments/oilpressure-0.xml
+share/FlightGear/Aircraft/T38/Instruments/oilpressure-1.xml
 share/FlightGear/Aircraft/T38/Models/T38-model.xml
-share/FlightGear/Aircraft/T38/Models/T38.mdl
+share/FlightGear/Aircraft/T38/Models/T38.ac
 share/FlightGear/Aircraft/T38/Models/t38_0.rgb
 share/FlightGear/Aircraft/T38/Models/t38_1.rgb
 share/FlightGear/Aircraft/T38/Models/t38_10.rgb
@@ -423,7 +471,9 @@ share/FlightGear/Aircraft/T38/Panels/Textures/T38-panel.rgb
 share/FlightGear/Aircraft/T38/Sounds/T38-engines.wav
 share/FlightGear/Aircraft/T38/Sounds/T38-sound.xml
 share/FlightGear/Aircraft/T38/T38-electrical.xml
+share/FlightGear/Aircraft/T38/T38-jsbsim-set.xml
 share/FlightGear/Aircraft/T38/T38-read-me.html
+share/FlightGear/Aircraft/T38/T38-set.xml
 share/FlightGear/Aircraft/T38/T38.xml
 share/FlightGear/Aircraft/UIUC/Models/opus/opus-model.xml
 share/FlightGear/Aircraft/UIUC/Models/opus/opus.mdl
@@ -457,6 +507,7 @@ share/FlightGear/Aircraft/UIUC/fkdr1-v1-nl/README.fkdr1.html
 share/FlightGear/Aircraft/UIUC/fkdr1-v1-nl/aircraft.dat
 share/FlightGear/Aircraft/UIUC/marchetti-v1/README.marchetti.html
 share/FlightGear/Aircraft/UIUC/marchetti-v1/aircraft.dat
+share/FlightGear/Aircraft/UIUC/ornithopter/README.orni.html
 share/FlightGear/Aircraft/UIUC/ornithopter/aircraft.dat
 share/FlightGear/Aircraft/UIUC/ornithopter/flap.dat
 share/FlightGear/Aircraft/UIUC/sopwithCamel-v1-nl/CDfa.dat
@@ -471,8 +522,6 @@ share/FlightGear/Aircraft/UIUC/wrightFlyer1903-v1-nl/Cmfa2.dat
 share/FlightGear/Aircraft/UIUC/wrightFlyer1903-v1-nl/Cmfade6.dat
 share/FlightGear/Aircraft/UIUC/wrightFlyer1903-v1-nl/README.wrightFlyer1903.html
 share/FlightGear/Aircraft/UIUC/wrightFlyer1903-v1-nl/aircraft.dat
-share/FlightGear/Aircraft/X15-jsbsim-set.xml
-share/FlightGear/Aircraft/X15-set.xml
 share/FlightGear/Aircraft/X15/Instruments/Textures/x15-faces-1.rgb
 share/FlightGear/Aircraft/X15/Instruments/Textures/x15-faces-2.rgb
 share/FlightGear/Aircraft/X15/Instruments/X15-accelerometer-face.xml
@@ -515,29 +564,124 @@ share/FlightGear/Aircraft/X15/Models/x157.rgb
 share/FlightGear/Aircraft/X15/Models/x158.rgb
 share/FlightGear/Aircraft/X15/Panels/Textures/x15-bg.rgb
 share/FlightGear/Aircraft/X15/Panels/X15-panel.xml
+share/FlightGear/Aircraft/X15/X15-jsbsim-set.xml
+share/FlightGear/Aircraft/X15/X15-set.xml
 share/FlightGear/Aircraft/X15/X15.xml
-share/FlightGear/Aircraft/a10/A10cl.3ds
-share/FlightGear/Aircraft/a10/A10fl.3ds
-share/FlightGear/Aircraft/a10/A10wl.3ds
-share/FlightGear/Aircraft/a10/a10-mini-panel.xml
-share/FlightGear/Aircraft/a10/a10-panel-01.rgb
-share/FlightGear/Aircraft/a10/a10-panel-02.rgb
-share/FlightGear/Aircraft/a10/a10-panel-03.rgb
-share/FlightGear/Aircraft/a10/a10-panel-04.rgb
-share/FlightGear/Aircraft/a10/a10-panel-11.rgb
-share/FlightGear/Aircraft/a10/a10-panel-12.rgb
-share/FlightGear/Aircraft/a10/a10-panel-bg.rgb
+share/FlightGear/Aircraft/a10/Huds/a10-fgtbi.xml
+share/FlightGear/Aircraft/a10/Huds/a10-hud1.xml
+share/FlightGear/Aircraft/a10/Huds/a10-hudcard.xml
+share/FlightGear/Aircraft/a10/Huds/a10-hudladder.xml
+share/FlightGear/Aircraft/a10/Huds/a10-instrlabel.xml
+share/FlightGear/Aircraft/a10/Models/A10cl.3ds
+share/FlightGear/Aircraft/a10/Models/A10fl.3ds
+share/FlightGear/Aircraft/a10/Models/A10wl.3ds
+share/FlightGear/Aircraft/a10/Models/a10cl-model.xml
+share/FlightGear/Aircraft/a10/Models/a10fl-model.xml
+share/FlightGear/Aircraft/a10/Models/a10wl-model.xml
+share/FlightGear/Aircraft/a10/Panels/Instruments/Textures/accel.rgb
+share/FlightGear/Aircraft/a10/Panels/Instruments/Textures/aoa-indexer.rgb
+share/FlightGear/Aircraft/a10/Panels/Instruments/Textures/aoa.rgb
+share/FlightGear/Aircraft/a10/Panels/Instruments/Textures/attitude-indicator.rgb
+share/FlightGear/Aircraft/a10/Panels/Instruments/Textures/bendix-kx155.rgb
+share/FlightGear/Aircraft/a10/Panels/Instruments/Textures/bezel.rgb
+share/FlightGear/Aircraft/a10/Panels/Instruments/Textures/bezel1.rgb
+share/FlightGear/Aircraft/a10/Panels/Instruments/Textures/blister.rgb
+share/FlightGear/Aircraft/a10/Panels/Instruments/Textures/faces-1.rgb
+share/FlightGear/Aircraft/a10/Panels/Instruments/Textures/faces-3-trans.rgb
+share/FlightGear/Aircraft/a10/Panels/Instruments/Textures/faces-3.rgb
+share/FlightGear/Aircraft/a10/Panels/Instruments/Textures/faces-6.rgb
+share/FlightGear/Aircraft/a10/Panels/Instruments/Textures/faces-LE-misc1-trans.rgb
+share/FlightGear/Aircraft/a10/Panels/Instruments/Textures/faces-LE-misc1.rgb
+share/FlightGear/Aircraft/a10/Panels/Instruments/Textures/faces-LE1-trans.rgb
+share/FlightGear/Aircraft/a10/Panels/Instruments/Textures/faces-LE1.rgb
+share/FlightGear/Aircraft/a10/Panels/Instruments/Textures/faces-LE2-trans.rgb
+share/FlightGear/Aircraft/a10/Panels/Instruments/Textures/faces-LE2.rgb
+share/FlightGear/Aircraft/a10/Panels/Instruments/Textures/faces-LE3-trans.rgb
+share/FlightGear/Aircraft/a10/Panels/Instruments/Textures/faces-LE3.rgb
+share/FlightGear/Aircraft/a10/Panels/Instruments/Textures/faces-LE4.rgb
+share/FlightGear/Aircraft/a10/Panels/Instruments/Textures/flaps.rgb
+share/FlightGear/Aircraft/a10/Panels/Instruments/Textures/gyro-fronts.rgb
+share/FlightGear/Aircraft/a10/Panels/Instruments/Textures/handles-trans.rgb
+share/FlightGear/Aircraft/a10/Panels/Instruments/Textures/handles.rgb
+share/FlightGear/Aircraft/a10/Panels/Instruments/Textures/hsi.rgb
+share/FlightGear/Aircraft/a10/Panels/Instruments/Textures/led.rgb
+share/FlightGear/Aircraft/a10/Panels/Instruments/Textures/maintc.rgb
+share/FlightGear/Aircraft/a10/Panels/Instruments/Textures/misc-1-trans.rgb
+share/FlightGear/Aircraft/a10/Panels/Instruments/Textures/misc-1.rgb
+share/FlightGear/Aircraft/a10/Panels/Instruments/Textures/navcom-radios.rgb
+share/FlightGear/Aircraft/a10/Panels/Instruments/Textures/plusminus.rgb
+share/FlightGear/Aircraft/a10/Panels/Instruments/Textures/switches.rgb
+share/FlightGear/Aircraft/a10/Panels/Instruments/Textures/warning-lamps.rgb
+share/FlightGear/Aircraft/a10/Panels/Instruments/a10-attitude-indicator.xml
+share/FlightGear/Aircraft/a10/Panels/Instruments/adf-radio.xml
+share/FlightGear/Aircraft/a10/Panels/Instruments/altimeter.xml
+share/FlightGear/Aircraft/a10/Panels/Instruments/aoa-indexer.xml
+share/FlightGear/Aircraft/a10/Panels/Instruments/aoa.xml
+share/FlightGear/Aircraft/a10/Panels/Instruments/asi-1k-knot-trans.xml
+share/FlightGear/Aircraft/a10/Panels/Instruments/asi-1k-knot.xml
+share/FlightGear/Aircraft/a10/Panels/Instruments/autopilot-elev-adj-factor.xml
+share/FlightGear/Aircraft/a10/Panels/Instruments/autopilot-max-aileron.xml
+share/FlightGear/Aircraft/a10/Panels/Instruments/autopilot-max-roll-deg.xml
+share/FlightGear/Aircraft/a10/Panels/Instruments/autopilot-roll-out-deg.xml
+share/FlightGear/Aircraft/a10/Panels/Instruments/autopilot-roll-out-smooth-deg.xml
+share/FlightGear/Aircraft/a10/Panels/Instruments/autopilot-target-climb-rate.xml
+share/FlightGear/Aircraft/a10/Panels/Instruments/autopilot-target-descent-rate.xml
+share/FlightGear/Aircraft/a10/Panels/Instruments/autopilot.xml
+share/FlightGear/Aircraft/a10/Panels/Instruments/brakes.xml
+share/FlightGear/Aircraft/a10/Panels/Instruments/clock.xml
+share/FlightGear/Aircraft/a10/Panels/Instruments/controls-trans.xml
+share/FlightGear/Aircraft/a10/Panels/Instruments/controls.xml
+share/FlightGear/Aircraft/a10/Panels/Instruments/dme.xml
+share/FlightGear/Aircraft/a10/Panels/Instruments/engine-egt-degf-trans.xml
+share/FlightGear/Aircraft/a10/Panels/Instruments/engine-egt-degf.xml
+share/FlightGear/Aircraft/a10/Panels/Instruments/engine-fuel-flow-gph-trans.xml
+share/FlightGear/Aircraft/a10/Panels/Instruments/engine-fuel-flow-gph.xml
+share/FlightGear/Aircraft/a10/Panels/Instruments/engine-n1-trans.xml
+share/FlightGear/Aircraft/a10/Panels/Instruments/engine-n2-trans.xml
+share/FlightGear/Aircraft/a10/Panels/Instruments/engine-prop-thrust-trans.xml
+share/FlightGear/Aircraft/a10/Panels/Instruments/engine-prop-thrust.xml
+share/FlightGear/Aircraft/a10/Panels/Instruments/fuel-tot-gal-trans.xml
+share/FlightGear/Aircraft/a10/Panels/Instruments/fuel-tot-gal.xml
+share/FlightGear/Aircraft/a10/Panels/Instruments/fueltank-gal_us.xml
+share/FlightGear/Aircraft/a10/Panels/Instruments/gear-indicator.xml
+share/FlightGear/Aircraft/a10/Panels/Instruments/gyro.xml
+share/FlightGear/Aircraft/a10/Panels/Instruments/hsi.xml
+share/FlightGear/Aircraft/a10/Panels/Instruments/mach-trans.xml
+share/FlightGear/Aircraft/a10/Panels/Instruments/magcompass.xml
+share/FlightGear/Aircraft/a10/Panels/Instruments/markerbeacon.xml
+share/FlightGear/Aircraft/a10/Panels/Instruments/nav1.xml
+share/FlightGear/Aircraft/a10/Panels/Instruments/navcom-kx155.xml
+share/FlightGear/Aircraft/a10/Panels/Instruments/pilot-g.xml
+share/FlightGear/Aircraft/a10/Panels/Instruments/single-throttle-quadrant-trans.xml
+share/FlightGear/Aircraft/a10/Panels/Instruments/single-throttle-quadrant.xml
+share/FlightGear/Aircraft/a10/Panels/Instruments/three-step-flap-quadrant-trans.xml
+share/FlightGear/Aircraft/a10/Panels/Instruments/three-step-flap-quadrant.xml
+share/FlightGear/Aircraft/a10/Panels/Instruments/turn.xml
+share/FlightGear/Aircraft/a10/Panels/Instruments/vertical.xml
+share/FlightGear/Aircraft/a10/Panels/Textures/a10-panel-bg.rgb
+share/FlightGear/Aircraft/a10/Panels/Textures/panel-trans-mini-bg.rgb
+share/FlightGear/Aircraft/a10/Panels/a10-mini-panel.xml
+share/FlightGear/Aircraft/a10/Panels/a10-vfr-panel.xml
+share/FlightGear/Aircraft/a10/Sounds/Samples/flaps.wav
+share/FlightGear/Aircraft/a10/Sounds/Samples/gear-lck.wav
+share/FlightGear/Aircraft/a10/Sounds/Samples/gear.wav
+share/FlightGear/Aircraft/a10/Sounds/Samples/jet.wav
+share/FlightGear/Aircraft/a10/Sounds/Samples/rumble.wav
+share/FlightGear/Aircraft/a10/Sounds/Samples/squeal.wav
+share/FlightGear/Aircraft/a10/Sounds/Samples/stall.wav
+share/FlightGear/Aircraft/a10/Sounds/Samples/whine.wav
+share/FlightGear/Aircraft/a10/Sounds/Samples/wind.wav
+share/FlightGear/Aircraft/a10/Sounds/a10-sound.xml
+share/FlightGear/Aircraft/a10/Systems/a10-electrical.xml
 share/FlightGear/Aircraft/a10/a10-readme.txt
-share/FlightGear/Aircraft/a10/a10-vfr-panel.xml
-share/FlightGear/Aircraft/a10/a10cl-model.xml
-share/FlightGear/Aircraft/a10/a10fl-model.xml
-share/FlightGear/Aircraft/a10/a10wl-model.xml
-share/FlightGear/Aircraft/a10cl-yasim-set.xml
-share/FlightGear/Aircraft/a10wl-yasim-set.xml
-share/FlightGear/Aircraft/a4-3d-set.xml
-share/FlightGear/Aircraft/a4-set.xml
-share/FlightGear/Aircraft/a4-uiuc-set.xml
-share/FlightGear/Aircraft/a4-yasim-set.xml
+share/FlightGear/Aircraft/a10/a10-yasim-set.xml
+share/FlightGear/Aircraft/a10/a10-yasim.xml
+share/FlightGear/Aircraft/a10/a10cl-yasim-set.xml
+share/FlightGear/Aircraft/a10/a10cl-yasim.xml
+share/FlightGear/Aircraft/a10/a10fl-yasim-set.xml
+share/FlightGear/Aircraft/a10/a10fl-yasim.xml
+share/FlightGear/Aircraft/a10/a10wl-yasim-set.xml
+share/FlightGear/Aircraft/a10/a10wl-yasim.xml
 share/FlightGear/Aircraft/a4/Models/READMEmodel.txt
 share/FlightGear/Aircraft/a4/Models/a4-blue-0.rgb
 share/FlightGear/Aircraft/a4/Models/a4-blue-1.rgb
@@ -556,22 +700,122 @@ share/FlightGear/Aircraft/a4/Models/attitude.ac
 share/FlightGear/Aircraft/a4/Models/attitude.rgb
 share/FlightGear/Aircraft/a4/Models/attitude.xml
 share/FlightGear/Aircraft/a4/Sounds/uiuc/a4-sound-uiuc.xml
+share/FlightGear/Aircraft/a4/a4-3d-set.xml
 share/FlightGear/Aircraft/a4/a4-panel.xml
+share/FlightGear/Aircraft/a4/a4-set.xml
 share/FlightGear/Aircraft/a4/a4-sound.xml
+share/FlightGear/Aircraft/a4/a4-sound.xml.new
+share/FlightGear/Aircraft/a4/a4-uiuc-set.xml
+share/FlightGear/Aircraft/a4/a4-yasim-set.xml
+share/FlightGear/Aircraft/a4/a4.xml
 share/FlightGear/Aircraft/a4/aoa-panel.xml
 share/FlightGear/Aircraft/a4/fuel-gauge.rgb
 share/FlightGear/Aircraft/a4/fuel-gauge.xml
 share/FlightGear/Aircraft/a4/transparent-bg.rgb
-share/FlightGear/Aircraft/airwaveXtreme150-set.xml
-share/FlightGear/Aircraft/airwaveXtreme150-v1-nl-uiuc-set.xml
 share/FlightGear/Aircraft/airwaveXtreme150/Models/uiuc/hgldr-cs/README.TXT
 share/FlightGear/Aircraft/airwaveXtreme150/Models/uiuc/hgldr-cs/hgldr-cs-model.xml
 share/FlightGear/Aircraft/airwaveXtreme150/Models/uiuc/hgldr-cs/hgldr_cs.0af
 share/FlightGear/Aircraft/airwaveXtreme150/Models/uiuc/hgldr-cs/hgldr_cs.1af
 share/FlightGear/Aircraft/airwaveXtreme150/Models/uiuc/hgldr-cs/hgldr_cs.mdl
 share/FlightGear/Aircraft/airwaveXtreme150/Sounds/uiuc/airwaveXtreme150-sound.xml
-share/FlightGear/Aircraft/asw20-set.xml
-share/FlightGear/Aircraft/asw20-v1-nl-uiuc-set.xml
+share/FlightGear/Aircraft/airwaveXtreme150/airwaveXtreme150-set.xml
+share/FlightGear/Aircraft/airwaveXtreme150/airwaveXtreme150-v1-nl-uiuc-set.xml
+share/FlightGear/Aircraft/an225/Huds/an225-fgtbi.xml
+share/FlightGear/Aircraft/an225/Huds/an225-hud1.xml
+share/FlightGear/Aircraft/an225/Huds/an225-hudcard.xml
+share/FlightGear/Aircraft/an225/Huds/an225-hudladder.xml
+share/FlightGear/Aircraft/an225/Huds/an225-instrlabel.xml
+share/FlightGear/Aircraft/an225/Models/AN225-003-002d11.ac
+share/FlightGear/Aircraft/an225/Models/AN225-tx-001.rgb
+share/FlightGear/Aircraft/an225/Models/an225-model.xml
+share/FlightGear/Aircraft/an225/Panels/Instruments/Textures/accel.rgb
+share/FlightGear/Aircraft/an225/Panels/Instruments/Textures/aoa-indexer.rgb
+share/FlightGear/Aircraft/an225/Panels/Instruments/Textures/aoa.rgb
+share/FlightGear/Aircraft/an225/Panels/Instruments/Textures/attitude-indicator.rgb
+share/FlightGear/Aircraft/an225/Panels/Instruments/Textures/bendix-kx155.rgb
+share/FlightGear/Aircraft/an225/Panels/Instruments/Textures/bezel.rgb
+share/FlightGear/Aircraft/an225/Panels/Instruments/Textures/bezel1.rgb
+share/FlightGear/Aircraft/an225/Panels/Instruments/Textures/blister.rgb
+share/FlightGear/Aircraft/an225/Panels/Instruments/Textures/faces-1.rgb
+share/FlightGear/Aircraft/an225/Panels/Instruments/Textures/faces-3-trans.rgb
+share/FlightGear/Aircraft/an225/Panels/Instruments/Textures/faces-3.rgb
+share/FlightGear/Aircraft/an225/Panels/Instruments/Textures/faces-6.rgb
+share/FlightGear/Aircraft/an225/Panels/Instruments/Textures/faces-LE-misc1-trans.rgb
+share/FlightGear/Aircraft/an225/Panels/Instruments/Textures/faces-LE-misc1.rgb
+share/FlightGear/Aircraft/an225/Panels/Instruments/Textures/flaps.rgb
+share/FlightGear/Aircraft/an225/Panels/Instruments/Textures/gyro-fronts.rgb
+share/FlightGear/Aircraft/an225/Panels/Instruments/Textures/handles-trans.rgb
+share/FlightGear/Aircraft/an225/Panels/Instruments/Textures/handles.rgb
+share/FlightGear/Aircraft/an225/Panels/Instruments/Textures/hsi.rgb
+share/FlightGear/Aircraft/an225/Panels/Instruments/Textures/led.rgb
+share/FlightGear/Aircraft/an225/Panels/Instruments/Textures/maintc.rgb
+share/FlightGear/Aircraft/an225/Panels/Instruments/Textures/misc-1-trans.rgb
+share/FlightGear/Aircraft/an225/Panels/Instruments/Textures/misc-1.rgb
+share/FlightGear/Aircraft/an225/Panels/Instruments/Textures/navcom-radios.rgb
+share/FlightGear/Aircraft/an225/Panels/Instruments/Textures/switches.rgb
+share/FlightGear/Aircraft/an225/Panels/Instruments/Textures/trans-green-bg.rgb
+share/FlightGear/Aircraft/an225/Panels/Instruments/Textures/trans-orange-bg.rgb
+share/FlightGear/Aircraft/an225/Panels/Instruments/Textures/trans-purple-bg.rgb
+share/FlightGear/Aircraft/an225/Panels/Instruments/Textures/trans-yellow-bg.rgb
+share/FlightGear/Aircraft/an225/Panels/Instruments/Textures/warning-lamps.rgb
+share/FlightGear/Aircraft/an225/Panels/Instruments/adf-radio.xml
+share/FlightGear/Aircraft/an225/Panels/Instruments/aoa-indexer.xml
+share/FlightGear/Aircraft/an225/Panels/Instruments/attitude-indicator.xml
+share/FlightGear/Aircraft/an225/Panels/Instruments/autopilot.xml
+share/FlightGear/Aircraft/an225/Panels/Instruments/brakes.xml
+share/FlightGear/Aircraft/an225/Panels/Instruments/clock.xml
+share/FlightGear/Aircraft/an225/Panels/Instruments/controls-trans.xml
+share/FlightGear/Aircraft/an225/Panels/Instruments/controls.xml
+share/FlightGear/Aircraft/an225/Panels/Instruments/digital-accl.xml
+share/FlightGear/Aircraft/an225/Panels/Instruments/digital-agl.xml
+share/FlightGear/Aircraft/an225/Panels/Instruments/digital-alt.xml
+share/FlightGear/Aircraft/an225/Panels/Instruments/digital-aoa.xml
+share/FlightGear/Aircraft/an225/Panels/Instruments/digital-ap-elev-adj-factor.xml
+share/FlightGear/Aircraft/an225/Panels/Instruments/digital-ap-max-roll-deg.xml
+share/FlightGear/Aircraft/an225/Panels/Instruments/digital-ap-speed-kt.xml
+share/FlightGear/Aircraft/an225/Panels/Instruments/digital-ap-target-climb-rate.xml
+share/FlightGear/Aircraft/an225/Panels/Instruments/digital-ap-target-descent-rate.xml
+share/FlightGear/Aircraft/an225/Panels/Instruments/digital-engine.xml
+share/FlightGear/Aircraft/an225/Panels/Instruments/digital-fuel-tank.xml
+share/FlightGear/Aircraft/an225/Panels/Instruments/digital-fuel-tot.xml
+share/FlightGear/Aircraft/an225/Panels/Instruments/digital-kias.xml
+share/FlightGear/Aircraft/an225/Panels/Instruments/digital-mach.xml
+share/FlightGear/Aircraft/an225/Panels/Instruments/digital-reheat.xml
+share/FlightGear/Aircraft/an225/Panels/Instruments/digital-vsi.xml
+share/FlightGear/Aircraft/an225/Panels/Instruments/digital-wgt.xml
+share/FlightGear/Aircraft/an225/Panels/Instruments/dme.xml
+share/FlightGear/Aircraft/an225/Panels/Instruments/four-step-flap-quadrant-trans.xml
+share/FlightGear/Aircraft/an225/Panels/Instruments/four-step-flap-quadrant.xml
+share/FlightGear/Aircraft/an225/Panels/Instruments/gear-indicator.xml
+share/FlightGear/Aircraft/an225/Panels/Instruments/gyro.xml
+share/FlightGear/Aircraft/an225/Panels/Instruments/hsi.xml
+share/FlightGear/Aircraft/an225/Panels/Instruments/magcompass.xml
+share/FlightGear/Aircraft/an225/Panels/Instruments/markerbeacon.xml
+share/FlightGear/Aircraft/an225/Panels/Instruments/nav1.xml
+share/FlightGear/Aircraft/an225/Panels/Instruments/navcom-kx155.xml
+share/FlightGear/Aircraft/an225/Panels/Instruments/single-throttle-quadrant-trans.xml
+share/FlightGear/Aircraft/an225/Panels/Instruments/single-throttle-quadrant.xml
+share/FlightGear/Aircraft/an225/Panels/Instruments/turn.xml
+share/FlightGear/Aircraft/an225/Panels/Textures/an225-panel-bg.rgb
+share/FlightGear/Aircraft/an225/Panels/Textures/panel-trans-mini-bg.rgb
+share/FlightGear/Aircraft/an225/Panels/an225-mini-panel.xml
+share/FlightGear/Aircraft/an225/Panels/an225-vfr-panel.xml
+share/FlightGear/Aircraft/an225/Sounds/Samples/flaps.wav
+share/FlightGear/Aircraft/an225/Sounds/Samples/gear-lck.wav
+share/FlightGear/Aircraft/an225/Sounds/Samples/gear.wav
+share/FlightGear/Aircraft/an225/Sounds/Samples/jet.wav
+share/FlightGear/Aircraft/an225/Sounds/Samples/rumble.wav
+share/FlightGear/Aircraft/an225/Sounds/Samples/squeal.wav
+share/FlightGear/Aircraft/an225/Sounds/Samples/stall.wav
+share/FlightGear/Aircraft/an225/Sounds/Samples/whine.wav
+share/FlightGear/Aircraft/an225/Sounds/Samples/wind.wav
+share/FlightGear/Aircraft/an225/Sounds/an225-sound.xml
+share/FlightGear/Aircraft/an225/Systems/an225-electrical.xml
+share/FlightGear/Aircraft/an225/an225-yasim-set.xml
+share/FlightGear/Aircraft/an225/an225-yasim.xml
+share/FlightGear/Aircraft/as350/as350-set.xml
+share/FlightGear/Aircraft/as350/as350-yasim-set.xml
+share/FlightGear/Aircraft/as350/as350.xml
 share/FlightGear/Aircraft/asw20/Models/uiuc/asw20-stuck/README.TXT
 share/FlightGear/Aircraft/asw20/Models/uiuc/asw20-stuck/asw20-stuck-model.xml
 share/FlightGear/Aircraft/asw20/Models/uiuc/asw20-stuck/asw20.mdl
@@ -591,26 +835,106 @@ share/FlightGear/Aircraft/asw20/Models/uiuc/asw20-stuck/asw20mp_.caf
 share/FlightGear/Aircraft/asw20/Models/uiuc/asw20-stuck/asw20mp_.daf
 share/FlightGear/Aircraft/asw20/Models/uiuc/asw20-stuck/asw20mp_.eaf
 share/FlightGear/Aircraft/asw20/Sounds/uiuc/asw20-sound.xml
-share/FlightGear/Aircraft/b52-yasim-set.xml
-share/FlightGear/Aircraft/b52/B52-F-020.ac
-share/FlightGear/Aircraft/b52/B52-F-L-Plan.rgb
-share/FlightGear/Aircraft/b52/B52-F-R-Plan.rgb
-share/FlightGear/Aircraft/b52/B52-F-Side.rgb
-share/FlightGear/Aircraft/b52/B52-F.3ds
-share/FlightGear/Aircraft/b52/B52.3ds
-share/FlightGear/Aircraft/b52/b52-mini-panel.xml
-share/FlightGear/Aircraft/b52/b52-model.xml
-share/FlightGear/Aircraft/b52/b52-panel-01.rgb
-share/FlightGear/Aircraft/b52/b52-panel-02.rgb
-share/FlightGear/Aircraft/b52/b52-panel-03.rgb
-share/FlightGear/Aircraft/b52/b52-panel-04.rgb
-share/FlightGear/Aircraft/b52/b52-panel-11.rgb
-share/FlightGear/Aircraft/b52/b52-panel-12.rgb
-share/FlightGear/Aircraft/b52/b52-panel-bg.rgb
+share/FlightGear/Aircraft/asw20/asw20-set.xml
+share/FlightGear/Aircraft/asw20/asw20-v1-nl-uiuc-set.xml
+share/FlightGear/Aircraft/b52/Huds/b52-fgtbi.xml
+share/FlightGear/Aircraft/b52/Huds/b52-hud1.xml
+share/FlightGear/Aircraft/b52/Huds/b52-hudcard.xml
+share/FlightGear/Aircraft/b52/Huds/b52-hudladder.xml
+share/FlightGear/Aircraft/b52/Huds/b52-instrlabel.xml
+share/FlightGear/Aircraft/b52/Models/B52-F-020a.ac
+share/FlightGear/Aircraft/b52/Models/B52-F-L-Plan.rgb
+share/FlightGear/Aircraft/b52/Models/B52-F-R-Plan.rgb
+share/FlightGear/Aircraft/b52/Models/B52-F-Side.rgb
+share/FlightGear/Aircraft/b52/Models/b52-model.xml
+share/FlightGear/Aircraft/b52/Panels/Instruments/Textures/accel.rgb
+share/FlightGear/Aircraft/b52/Panels/Instruments/Textures/aoa-indexer.rgb
+share/FlightGear/Aircraft/b52/Panels/Instruments/Textures/aoa.rgb
+share/FlightGear/Aircraft/b52/Panels/Instruments/Textures/attitude-indicator.rgb
+share/FlightGear/Aircraft/b52/Panels/Instruments/Textures/bendix-kx155.rgb
+share/FlightGear/Aircraft/b52/Panels/Instruments/Textures/bezel.rgb
+share/FlightGear/Aircraft/b52/Panels/Instruments/Textures/bezel1.rgb
+share/FlightGear/Aircraft/b52/Panels/Instruments/Textures/blister.rgb
+share/FlightGear/Aircraft/b52/Panels/Instruments/Textures/faces-1.rgb
+share/FlightGear/Aircraft/b52/Panels/Instruments/Textures/faces-3-trans.rgb
+share/FlightGear/Aircraft/b52/Panels/Instruments/Textures/faces-3.rgb
+share/FlightGear/Aircraft/b52/Panels/Instruments/Textures/faces-6.rgb
+share/FlightGear/Aircraft/b52/Panels/Instruments/Textures/faces-LE-misc1-trans.rgb
+share/FlightGear/Aircraft/b52/Panels/Instruments/Textures/faces-LE-misc1.rgb
+share/FlightGear/Aircraft/b52/Panels/Instruments/Textures/flaps.rgb
+share/FlightGear/Aircraft/b52/Panels/Instruments/Textures/gyro-fronts.rgb
+share/FlightGear/Aircraft/b52/Panels/Instruments/Textures/handles-trans.rgb
+share/FlightGear/Aircraft/b52/Panels/Instruments/Textures/handles.rgb
+share/FlightGear/Aircraft/b52/Panels/Instruments/Textures/hsi.rgb
+share/FlightGear/Aircraft/b52/Panels/Instruments/Textures/led.rgb
+share/FlightGear/Aircraft/b52/Panels/Instruments/Textures/maintc.rgb
+share/FlightGear/Aircraft/b52/Panels/Instruments/Textures/misc-1-trans.rgb
+share/FlightGear/Aircraft/b52/Panels/Instruments/Textures/misc-1.rgb
+share/FlightGear/Aircraft/b52/Panels/Instruments/Textures/navcom-radios.rgb
+share/FlightGear/Aircraft/b52/Panels/Instruments/Textures/switches.rgb
+share/FlightGear/Aircraft/b52/Panels/Instruments/Textures/trans-green-bg.rgb
+share/FlightGear/Aircraft/b52/Panels/Instruments/Textures/trans-orange-bg.rgb
+share/FlightGear/Aircraft/b52/Panels/Instruments/Textures/trans-purple-bg.rgb
+share/FlightGear/Aircraft/b52/Panels/Instruments/Textures/trans-yellow-bg.rgb
+share/FlightGear/Aircraft/b52/Panels/Instruments/Textures/warning-lamps.rgb
+share/FlightGear/Aircraft/b52/Panels/Instruments/adf-radio.xml
+share/FlightGear/Aircraft/b52/Panels/Instruments/aoa-indexer.xml
+share/FlightGear/Aircraft/b52/Panels/Instruments/attitude-indicator.xml
+share/FlightGear/Aircraft/b52/Panels/Instruments/autopilot.xml
+share/FlightGear/Aircraft/b52/Panels/Instruments/brakes.xml
+share/FlightGear/Aircraft/b52/Panels/Instruments/clock.xml
+share/FlightGear/Aircraft/b52/Panels/Instruments/controls-trans.xml
+share/FlightGear/Aircraft/b52/Panels/Instruments/controls.xml
+share/FlightGear/Aircraft/b52/Panels/Instruments/digital-accl.xml
+share/FlightGear/Aircraft/b52/Panels/Instruments/digital-agl.xml
+share/FlightGear/Aircraft/b52/Panels/Instruments/digital-alt.xml
+share/FlightGear/Aircraft/b52/Panels/Instruments/digital-aoa.xml
+share/FlightGear/Aircraft/b52/Panels/Instruments/digital-ap-elev-adj-factor.xml
+share/FlightGear/Aircraft/b52/Panels/Instruments/digital-ap-max-roll-deg.xml
+share/FlightGear/Aircraft/b52/Panels/Instruments/digital-ap-speed-kt.xml
+share/FlightGear/Aircraft/b52/Panels/Instruments/digital-ap-target-climb-rate.xml
+share/FlightGear/Aircraft/b52/Panels/Instruments/digital-ap-target-descent-rate.xml
+share/FlightGear/Aircraft/b52/Panels/Instruments/digital-engine.xml
+share/FlightGear/Aircraft/b52/Panels/Instruments/digital-fuel-tank.xml
+share/FlightGear/Aircraft/b52/Panels/Instruments/digital-fuel-tot.xml
+share/FlightGear/Aircraft/b52/Panels/Instruments/digital-kias.xml
+share/FlightGear/Aircraft/b52/Panels/Instruments/digital-mach.xml
+share/FlightGear/Aircraft/b52/Panels/Instruments/digital-reheat.xml
+share/FlightGear/Aircraft/b52/Panels/Instruments/digital-vsi.xml
+share/FlightGear/Aircraft/b52/Panels/Instruments/digital-wgt.xml
+share/FlightGear/Aircraft/b52/Panels/Instruments/dme.xml
+share/FlightGear/Aircraft/b52/Panels/Instruments/gear-indicator.xml
+share/FlightGear/Aircraft/b52/Panels/Instruments/gyro.xml
+share/FlightGear/Aircraft/b52/Panels/Instruments/hsi.xml
+share/FlightGear/Aircraft/b52/Panels/Instruments/magcompass.xml
+share/FlightGear/Aircraft/b52/Panels/Instruments/markerbeacon.xml
+share/FlightGear/Aircraft/b52/Panels/Instruments/nav1.xml
+share/FlightGear/Aircraft/b52/Panels/Instruments/navcom-kx155.xml
+share/FlightGear/Aircraft/b52/Panels/Instruments/single-reheat-quadrant-trans.xml
+share/FlightGear/Aircraft/b52/Panels/Instruments/single-reheat-quadrant.xml
+share/FlightGear/Aircraft/b52/Panels/Instruments/single-step-flap-quadrant-trans.xml
+share/FlightGear/Aircraft/b52/Panels/Instruments/single-step-flap-quadrant.xml
+share/FlightGear/Aircraft/b52/Panels/Instruments/single-throttle-quadrant-trans.xml
+share/FlightGear/Aircraft/b52/Panels/Instruments/single-throttle-quadrant.xml
+share/FlightGear/Aircraft/b52/Panels/Instruments/turn.xml
+share/FlightGear/Aircraft/b52/Panels/Textures/b52-panel-bg.rgb
+share/FlightGear/Aircraft/b52/Panels/Textures/panel-trans-mini-bg.rgb
+share/FlightGear/Aircraft/b52/Panels/b52-mini-panel.xml
+share/FlightGear/Aircraft/b52/Panels/b52-vfr-panel.xml
+share/FlightGear/Aircraft/b52/Sounds/Samples/flaps.wav
+share/FlightGear/Aircraft/b52/Sounds/Samples/gear-lck.wav
+share/FlightGear/Aircraft/b52/Sounds/Samples/gear.wav
+share/FlightGear/Aircraft/b52/Sounds/Samples/jet.wav
+share/FlightGear/Aircraft/b52/Sounds/Samples/rumble.wav
+share/FlightGear/Aircraft/b52/Sounds/Samples/squeal.wav
+share/FlightGear/Aircraft/b52/Sounds/Samples/stall.wav
+share/FlightGear/Aircraft/b52/Sounds/Samples/whine.wav
+share/FlightGear/Aircraft/b52/Sounds/Samples/wind.wav
+share/FlightGear/Aircraft/b52/Sounds/b52-sound.xml
+share/FlightGear/Aircraft/b52/Systems/b52-electrical.xml
 share/FlightGear/Aircraft/b52/b52-readme.txt
-share/FlightGear/Aircraft/b52/b52-sound.xml
-share/FlightGear/Aircraft/b52/b52-vfr-panel.xml
-share/FlightGear/Aircraft/beech99-v1-uiuc-set.xml
+share/FlightGear/Aircraft/b52/b52-yasim-set.xml
+share/FlightGear/Aircraft/b52/b52-yasim.xml
 share/FlightGear/Aircraft/beech99/Models/READMEmodel.txt
 share/FlightGear/Aircraft/beech99/Models/beech99-model.xml
 share/FlightGear/Aircraft/beech99/Models/beech99.ac
@@ -626,17 +950,65 @@ share/FlightGear/Aircraft/beech99/Models/beech_998.rgb
 share/FlightGear/Aircraft/beech99/Models/beech_999.rgb
 share/FlightGear/Aircraft/beech99/Models/uiuc/beech99/beech99-model.xml
 share/FlightGear/Aircraft/beech99/Sounds/uiuc/beech99-sound.xml
-share/FlightGear/Aircraft/c172-3d-set.xml
-share/FlightGear/Aircraft/c172-3d-yasim-set.xml
-share/FlightGear/Aircraft/c172-610x-jsbsim-set.xml
-share/FlightGear/Aircraft/c172-610x-set.xml
-share/FlightGear/Aircraft/c172-base.xml
-share/FlightGear/Aircraft/c172-ifr-set.xml
-share/FlightGear/Aircraft/c172-larcsim-set.xml
-share/FlightGear/Aircraft/c172-set.xml
-share/FlightGear/Aircraft/c172-yasim-set.xml
+share/FlightGear/Aircraft/beech99/beech99-v1-uiuc-set.xml
+share/FlightGear/Aircraft/bell206/bell206-set.xml
+share/FlightGear/Aircraft/bell206/bell206-yasim-set.xml
+share/FlightGear/Aircraft/bell206/bell206.xml
+share/FlightGear/Aircraft/bo105/Models/bo105.ac
+share/FlightGear/Aircraft/bo105/Models/bo105.xml
+share/FlightGear/Aircraft/bo105/bo105-set.xml
+share/FlightGear/Aircraft/bo105/bo105-yasim-set.xml
+share/FlightGear/Aircraft/bo105/bo105.xml
+share/FlightGear/Aircraft/c172-fs-set.xml
+share/FlightGear/Aircraft/c172/Instruments.high/Textures/blister.rgb
+share/FlightGear/Aircraft/c172/Instruments.high/Textures/brake.rgb
+share/FlightGear/Aircraft/c172/Instruments.high/Textures/compass-ribbon.rgb
+share/FlightGear/Aircraft/c172/Instruments.high/Textures/egauge.rgb
+share/FlightGear/Aircraft/c172/Instruments.high/Textures/faces-1.rgb
+share/FlightGear/Aircraft/c172/Instruments.high/Textures/faces-2.rgb
+share/FlightGear/Aircraft/c172/Instruments.high/Textures/faces-3.rgb
+share/FlightGear/Aircraft/c172/Instruments.high/Textures/faces-4.rgb
+share/FlightGear/Aircraft/c172/Instruments.high/Textures/faces-5.rgb
+share/FlightGear/Aircraft/c172/Instruments.high/Textures/faces-6.rgb
+share/FlightGear/Aircraft/c172/Instruments.high/Textures/flaps.rgb
+share/FlightGear/Aircraft/c172/Instruments.high/Textures/knobs.rgb
+share/FlightGear/Aircraft/c172/Instruments.high/Textures/led.rgb
+share/FlightGear/Aircraft/c172/Instruments.high/Textures/logo.rgb
+share/FlightGear/Aircraft/c172/Instruments.high/Textures/misc-1.rgb
+share/FlightGear/Aircraft/c172/Instruments.high/Textures/panel-bg-2.rgb
+share/FlightGear/Aircraft/c172/Instruments.high/Textures/radios-1.rgb
+share/FlightGear/Aircraft/c172/Instruments.high/adf-radio.xml
+share/FlightGear/Aircraft/c172/Instruments.high/adf.xml
+share/FlightGear/Aircraft/c172/Instruments.high/airspeed.xml
+share/FlightGear/Aircraft/c172/Instruments.high/altimeter.xml
+share/FlightGear/Aircraft/c172/Instruments.high/autopilot.xml
+share/FlightGear/Aircraft/c172/Instruments.high/brakes.xml
+share/FlightGear/Aircraft/c172/Instruments.high/clock.xml
+share/FlightGear/Aircraft/c172/Instruments.high/controls.xml
+share/FlightGear/Aircraft/c172/Instruments.high/dme.xml
+share/FlightGear/Aircraft/c172/Instruments.high/egt.xml
+share/FlightGear/Aircraft/c172/Instruments.high/flap.xml
+share/FlightGear/Aircraft/c172/Instruments.high/fuel.xml
+share/FlightGear/Aircraft/c172/Instruments.high/gyro.xml
+share/FlightGear/Aircraft/c172/Instruments.high/horizon.xml
+share/FlightGear/Aircraft/c172/Instruments.high/logo.xml
+share/FlightGear/Aircraft/c172/Instruments.high/magcompass.xml
+share/FlightGear/Aircraft/c172/Instruments.high/manifold-press.xml
+share/FlightGear/Aircraft/c172/Instruments.high/markerbeacon.xml
+share/FlightGear/Aircraft/c172/Instruments.high/mixture-knob.xml
+share/FlightGear/Aircraft/c172/Instruments.high/nav1.xml
+share/FlightGear/Aircraft/c172/Instruments.high/nav2.xml
+share/FlightGear/Aircraft/c172/Instruments.high/navcom1-radio.xml
+share/FlightGear/Aircraft/c172/Instruments.high/navcom2-radio.xml
+share/FlightGear/Aircraft/c172/Instruments.high/oil.xml
+share/FlightGear/Aircraft/c172/Instruments.high/rpm.xml
+share/FlightGear/Aircraft/c172/Instruments.high/throttle-knob.xml
+share/FlightGear/Aircraft/c172/Instruments.high/turn.xml
+share/FlightGear/Aircraft/c172/Instruments.high/vacamp.xml
+share/FlightGear/Aircraft/c172/Instruments.high/vertical.xml
 share/FlightGear/Aircraft/c172/Models/c172-01.rgb
 share/FlightGear/Aircraft/c172/Models/c172-02.rgb
+share/FlightGear/Aircraft/c172/Models/c172-car.xml
 share/FlightGear/Aircraft/c172/Models/c172-dpm.ac
 share/FlightGear/Aircraft/c172/Models/c172-dpm.xml
 share/FlightGear/Aircraft/c172/Panels/Textures/c172r-panel-01.rgb
@@ -653,6 +1025,7 @@ share/FlightGear/Aircraft/c172/Panels/Textures/panel-trans-mini-bg.rgb
 share/FlightGear/Aircraft/c172/Panels/Textures/shaped-bg.rgb
 share/FlightGear/Aircraft/c172/Panels/Textures/transparent-bg.rgb
 share/FlightGear/Aircraft/c172/Panels/c172-610x-panel.xml
+share/FlightGear/Aircraft/c172/Panels/c172-fullscr.xml
 share/FlightGear/Aircraft/c172/Panels/c172-fullscreen.xml
 share/FlightGear/Aircraft/c172/Panels/c172-ifr-panel.xml
 share/FlightGear/Aircraft/c172/Panels/c172-mini-panel.xml
@@ -661,36 +1034,50 @@ share/FlightGear/Aircraft/c172/Panels/c172-trans-panel.xml
 share/FlightGear/Aircraft/c172/Panels/c172-vfr-panel.xml
 share/FlightGear/Aircraft/c172/Panels/c172r-panel.xml
 share/FlightGear/Aircraft/c172/README.c172
+share/FlightGear/Aircraft/c172/c172-3d-set.xml
+share/FlightGear/Aircraft/c172/c172-3d-yasim-set.xml
+share/FlightGear/Aircraft/c172/c172-610x-jsbsim-set.xml
+share/FlightGear/Aircraft/c172/c172-610x-set.xml
+share/FlightGear/Aircraft/c172/c172-base.xml
 share/FlightGear/Aircraft/c172/c172-electrical.xml
+share/FlightGear/Aircraft/c172/c172-ifr-set.xml
+share/FlightGear/Aircraft/c172/c172-larcsim-set.xml
+share/FlightGear/Aircraft/c172/c172-set.xml
 share/FlightGear/Aircraft/c172/c172-sound.xml
-share/FlightGear/Aircraft/c172p-3d-jsbsim-set.xml
-share/FlightGear/Aircraft/c172p-3d-set.xml
-share/FlightGear/Aircraft/c172p-base.xml
-share/FlightGear/Aircraft/c172p-jsbsim-base.xml
-share/FlightGear/Aircraft/c172p-jsbsim-set.xml
-share/FlightGear/Aircraft/c172p-set.xml
+share/FlightGear/Aircraft/c172/c172-yasim-set.xml
+share/FlightGear/Aircraft/c172/c172-yasim.xml
 share/FlightGear/Aircraft/c172p/Models/c172p-01.rgb
 share/FlightGear/Aircraft/c172p/Models/c172p-02.rgb
 share/FlightGear/Aircraft/c172p/Models/c172p-2d-panel.xml
 share/FlightGear/Aircraft/c172p/Models/c172p-int-01.rgb
 share/FlightGear/Aircraft/c172p/Models/c172p.ac
 share/FlightGear/Aircraft/c172p/Models/c172p.xml
+share/FlightGear/Aircraft/c172p/Models/labels/labelbcn.xml
+share/FlightGear/Aircraft/c172p/Models/labels/labellng.xml
+share/FlightGear/Aircraft/c172p/Models/labels/labelnav.xml
+share/FlightGear/Aircraft/c172p/Models/labels/labelpto.xml
+share/FlightGear/Aircraft/c172p/Models/labels/labelsto.xml
+share/FlightGear/Aircraft/c172p/Models/labels/labeltax.xml
+share/FlightGear/Aircraft/c172p/c172p-3d-jsbsim-set.xml
+share/FlightGear/Aircraft/c172p/c172p-3d-set.xml
+share/FlightGear/Aircraft/c172p/c172p-base.xml
+share/FlightGear/Aircraft/c172p/c172p-jsbsim-base.xml
+share/FlightGear/Aircraft/c172p/c172p-jsbsim-set.xml
+share/FlightGear/Aircraft/c172p/c172p-set.xml
 share/FlightGear/Aircraft/c172p/c172p.xml
-share/FlightGear/Aircraft/c172r-3d-jsbsim-set.xml
-share/FlightGear/Aircraft/c172r-3d-set.xml
-share/FlightGear/Aircraft/c172r-3d-yasim-set.xml
-share/FlightGear/Aircraft/c172r-base.xml
-share/FlightGear/Aircraft/c172r-jsbsim-base.xml
-share/FlightGear/Aircraft/c172r-jsbsim-set.xml
-share/FlightGear/Aircraft/c172r-set.xml
-share/FlightGear/Aircraft/c172r-yasim-base.xml
-share/FlightGear/Aircraft/c172r-yasim-set.xml
 share/FlightGear/Aircraft/c172r/README.c172r
+share/FlightGear/Aircraft/c172r/c172r-3d-jsbsim-set.xml
+share/FlightGear/Aircraft/c172r/c172r-3d-set.xml
+share/FlightGear/Aircraft/c172r/c172r-3d-yasim-set.xml
+share/FlightGear/Aircraft/c172r/c172r-base.xml
+share/FlightGear/Aircraft/c172r/c172r-jsbsim-base.xml
+share/FlightGear/Aircraft/c172r/c172r-jsbsim-set.xml
+share/FlightGear/Aircraft/c172r/c172r-set.xml
+share/FlightGear/Aircraft/c172r/c172r-yasim-base.xml
+share/FlightGear/Aircraft/c172r/c172r-yasim-set.xml
 share/FlightGear/Aircraft/c172r/c172r.xml
-share/FlightGear/Aircraft/c172x-set.xml
+share/FlightGear/Aircraft/c172x/c172x-set.xml
 share/FlightGear/Aircraft/c172x/c172x.xml
-share/FlightGear/Aircraft/c182-jsbsim-set.xml
-share/FlightGear/Aircraft/c182-set.xml
 share/FlightGear/Aircraft/c182/Panels/Textures/c182s-panel-01.rgb
 share/FlightGear/Aircraft/c182/Panels/Textures/c182s-panel-02.rgb
 share/FlightGear/Aircraft/c182/Panels/Textures/c182s-panel-03.rgb
@@ -699,15 +1086,11 @@ share/FlightGear/Aircraft/c182/Panels/Textures/c182s-panel-05.rgb
 share/FlightGear/Aircraft/c182/Panels/Textures/c182s-panel-06.rgb
 share/FlightGear/Aircraft/c182/Panels/c182s-panel.xml
 share/FlightGear/Aircraft/c182/README.c182
+share/FlightGear/Aircraft/c182/c182-3d-jsbsim-set.xml
+share/FlightGear/Aircraft/c182/c182-jsbsim-set.xml
+share/FlightGear/Aircraft/c182/c182-set.xml
 share/FlightGear/Aircraft/c182/c182-sound.xml
 share/FlightGear/Aircraft/c182/c182.xml
-share/FlightGear/Aircraft/c310-3d-set.xml
-share/FlightGear/Aircraft/c310-base.xml
-share/FlightGear/Aircraft/c310-ifr-set.xml
-share/FlightGear/Aircraft/c310-jsbsim-base.xml
-share/FlightGear/Aircraft/c310-set.xml
-share/FlightGear/Aircraft/c310-yasim-base.xml
-share/FlightGear/Aircraft/c310-yasim-set.xml
 share/FlightGear/Aircraft/c310/310-panel-bg.rgb
 share/FlightGear/Aircraft/c310/Models/c310-01.rgb
 share/FlightGear/Aircraft/c310/Models/c310-02.rgb
@@ -715,8 +1098,10 @@ share/FlightGear/Aircraft/c310/Models/c310-2d-panel.xml
 share/FlightGear/Aircraft/c310/Models/c310-dpm.ac
 share/FlightGear/Aircraft/c310/Models/c310-dpm.xml
 share/FlightGear/Aircraft/c310/README.c310
+share/FlightGear/Aircraft/c310/c310-base.xml
 share/FlightGear/Aircraft/c310/c310-electrical.xml
 share/FlightGear/Aircraft/c310/c310-ifr-panel.xml
+share/FlightGear/Aircraft/c310/c310-jsbsim-base.xml
 share/FlightGear/Aircraft/c310/c310-mini-panel.xml
 share/FlightGear/Aircraft/c310/c310-panel-01.rgb
 share/FlightGear/Aircraft/c310/c310-panel-02.rgb
@@ -725,14 +1110,13 @@ share/FlightGear/Aircraft/c310/c310-panel-04.rgb
 share/FlightGear/Aircraft/c310/c310-panel-11.rgb
 share/FlightGear/Aircraft/c310/c310-panel-12.rgb
 share/FlightGear/Aircraft/c310/c310-sound.xml
+share/FlightGear/Aircraft/c310/c310-sound.xml.new
 share/FlightGear/Aircraft/c310/c310-vfr-panel.xml
+share/FlightGear/Aircraft/c310/c310-yasim-base.xml
+share/FlightGear/Aircraft/c310/c310-yasim-set.xml
+share/FlightGear/Aircraft/c310/c310-yasim.xml
 share/FlightGear/Aircraft/c310/c310.xml
-share/FlightGear/Aircraft/c310dpm-3d-set.xml
-share/FlightGear/Aircraft/c310u3a-3d-jsbsim-set.xml
-share/FlightGear/Aircraft/c310u3a-3d-set.xml
-share/FlightGear/Aircraft/c310u3a-jsbsim-set.xml
-share/FlightGear/Aircraft/c310u3a-set.xml
-share/FlightGear/Aircraft/c310u3a-yasim-set.xml
+share/FlightGear/Aircraft/c310/c310dpm-3d-set.xml
 share/FlightGear/Aircraft/c310u3a/Models/READMEmodel.txt
 share/FlightGear/Aircraft/c310u3a/Models/c310u3a.ac
 share/FlightGear/Aircraft/c310u3a/Models/c310u3a.xml
@@ -747,7 +1131,14 @@ share/FlightGear/Aircraft/c310u3a/Models/cess_u3a7.rgb
 share/FlightGear/Aircraft/c310u3a/Models/cess_u3a8.rgb
 share/FlightGear/Aircraft/c310u3a/Models/cess_u3a9.rgb
 share/FlightGear/Aircraft/c310u3a/Models/cess_u3aa.rgb
+share/FlightGear/Aircraft/c310u3a/c310-3d-set.xml
+share/FlightGear/Aircraft/c310u3a/c310-ifr-set.xml
+share/FlightGear/Aircraft/c310u3a/c310-set.xml
+share/FlightGear/Aircraft/c310u3a/c310u3a-3d-jsbsim-set.xml
 share/FlightGear/Aircraft/c310u3a/c310u3a-3d-panel.xml
+share/FlightGear/Aircraft/c310u3a/c310u3a-3d-set.xml
+share/FlightGear/Aircraft/c310u3a/c310u3a-jsbsim-set.xml
+share/FlightGear/Aircraft/c310u3a/c310u3a-jsbsim.xml
 share/FlightGear/Aircraft/c310u3a/c310u3a-panel-01.rgb
 share/FlightGear/Aircraft/c310u3a/c310u3a-panel-02.rgb
 share/FlightGear/Aircraft/c310u3a/c310u3a-panel-03.rgb
@@ -757,28 +1148,36 @@ share/FlightGear/Aircraft/c310u3a/c310u3a-panel-06.rgb
 share/FlightGear/Aircraft/c310u3a/c310u3a-panel-07.rgb
 share/FlightGear/Aircraft/c310u3a/c310u3a-panel-08.rgb
 share/FlightGear/Aircraft/c310u3a/c310u3a-panel.xml
-share/FlightGear/Aircraft/c310u3a/c310u3a.xml
+share/FlightGear/Aircraft/c310u3a/c310u3a-set.xml
+share/FlightGear/Aircraft/c310u3a/c310u3a-yasim-set.xml
 share/FlightGear/Aircraft/c310u3a/transparent-bg.rgb
-share/FlightGear/Aircraft/cub-set.xml
-share/FlightGear/Aircraft/dc3-set.xml
-share/FlightGear/Aircraft/dc3-yasim-set.xml
+share/FlightGear/Aircraft/ch47/ch47-set.xml
+share/FlightGear/Aircraft/ch47/ch47-yasim-set.xml
+share/FlightGear/Aircraft/ch47/ch47.xml
 share/FlightGear/Aircraft/dc3/Models/dc3-01.rgb
 share/FlightGear/Aircraft/dc3/Models/dc3-02.rgb
 share/FlightGear/Aircraft/dc3/Models/dc3-dpm.ac
 share/FlightGear/Aircraft/dc3/Models/dc3-dpm.xml
-share/FlightGear/Aircraft/f104-jsbsim-set.xml
-share/FlightGear/Aircraft/f104-set.xml
+share/FlightGear/Aircraft/dc3/dc3-set.xml
+share/FlightGear/Aircraft/dc3/dc3-yasim-set.xml
+share/FlightGear/Aircraft/dc3/dc3.xml
+share/FlightGear/Aircraft/f104/Models/f104.ac
+share/FlightGear/Aircraft/f104/Models/f104.rgb
+share/FlightGear/Aircraft/f104/Models/f104.xml
+share/FlightGear/Aircraft/f104/f104-jsbsim-set.xml
+share/FlightGear/Aircraft/f104/f104-set.xml
 share/FlightGear/Aircraft/f104/f104.xml
-share/FlightGear/Aircraft/f15-jsbsim-set.xml
-share/FlightGear/Aircraft/f15-set.xml
+share/FlightGear/Aircraft/f15/f15-jsbsim-set.xml
+share/FlightGear/Aircraft/f15/f15-set.xml
 share/FlightGear/Aircraft/f15/f15.xml
-share/FlightGear/Aircraft/f16-jsbsim-set.xml
-share/FlightGear/Aircraft/f16-set.xml
 share/FlightGear/Aircraft/f16/Hud/default.xml
 share/FlightGear/Aircraft/f16/Hud/hudcard.xml
 share/FlightGear/Aircraft/f16/Hud/hudladder.xml
 share/FlightGear/Aircraft/f16/Hud/instrlabel.xml
 share/FlightGear/Aircraft/f16/Hud/tbi.xml
+share/FlightGear/Aircraft/f16/Models/f16.ac
+share/FlightGear/Aircraft/f16/Models/f16.rgb
+share/FlightGear/Aircraft/f16/Models/f16.xml
 share/FlightGear/Aircraft/f16/Panels/Textures/f16panel-00.rgb
 share/FlightGear/Aircraft/f16/Panels/Textures/f16panel-01.rgb
 share/FlightGear/Aircraft/f16/Panels/Textures/f16panel-02.rgb
@@ -799,15 +1198,42 @@ share/FlightGear/Aircraft/f16/Panels/kias.xml
 share/FlightGear/Aircraft/f16/Panels/nozzle.xml
 share/FlightGear/Aircraft/f16/Panels/oil.xml
 share/FlightGear/Aircraft/f16/Panels/rpm.xml
+share/FlightGear/Aircraft/f16/f16-jsbsim-set.xml
+share/FlightGear/Aircraft/f16/f16-set.xml
 share/FlightGear/Aircraft/f16/f16.xml
-share/FlightGear/Aircraft/fkdr1-v1-nl-uiuc-set.xml
 share/FlightGear/Aircraft/fkdr1/Sounds/fkdr1-sound.xml
-share/FlightGear/Aircraft/harrier-set.xml
-share/FlightGear/Aircraft/harrier-yasim-set.xml
-share/FlightGear/Aircraft/j3cub-3d-set.xml
-share/FlightGear/Aircraft/j3cub-3d-yasim-set.xml
-share/FlightGear/Aircraft/j3cub-set.xml
-share/FlightGear/Aircraft/j3cub-yasim-set.xml
+share/FlightGear/Aircraft/fkdr1/fkdr1-v1-nl-uiuc-set.xml
+share/FlightGear/Aircraft/fokker100/Models/fokker100.ac
+share/FlightGear/Aircraft/fokker100/Models/fokker100.rgb
+share/FlightGear/Aircraft/fokker100/Models/fokker100.xml
+share/FlightGear/Aircraft/fokker100/fokker100-jsbsim-set.xml
+share/FlightGear/Aircraft/fokker100/fokker100.xml
+share/FlightGear/Aircraft/fokker50/Models/fokker50.ac
+share/FlightGear/Aircraft/fokker50/Models/fokker50.rgb
+share/FlightGear/Aircraft/fokker50/Models/fokker50.xml
+share/FlightGear/Aircraft/fokker50/Models/propeller.rgb
+share/FlightGear/Aircraft/fokker50/fokker50-jsbsim-set.xml
+share/FlightGear/Aircraft/fokker50/fokker50.xml
+share/FlightGear/Aircraft/harrier/harrier-set.xml
+share/FlightGear/Aircraft/harrier/harrier-yasim-set.xml
+share/FlightGear/Aircraft/harrier/harrier.xml
+share/FlightGear/Aircraft/j22/Huds/j22-fgtbi.xml
+share/FlightGear/Aircraft/j22/Huds/j22-hud1.xml
+share/FlightGear/Aircraft/j22/Huds/j22-hudcard.xml
+share/FlightGear/Aircraft/j22/Huds/j22-hudladder.xml
+share/FlightGear/Aircraft/j22/Huds/j22-instrlabel.xml
+share/FlightGear/Aircraft/j22/Models/gear.rgb
+share/FlightGear/Aircraft/j22/Models/interior.rgb
+share/FlightGear/Aircraft/j22/Models/j22.ac
+share/FlightGear/Aircraft/j22/Models/j22.xml
+share/FlightGear/Aircraft/j22/Models/pilot.head.rgb
+share/FlightGear/Aircraft/j22/Models/skin-green-gray-body.rgb
+share/FlightGear/Aircraft/j22/Models/skin-green-gray-tail.rgb
+share/FlightGear/Aircraft/j22/Models/skin-green-gray-wing.above.rgb
+share/FlightGear/Aircraft/j22/Models/skin-green-gray-wing.under.rgb
+share/FlightGear/Aircraft/j22/j22-readme.txt
+share/FlightGear/Aircraft/j22/j22-set.xml
+share/FlightGear/Aircraft/j22/j22-yasim.xml
 share/FlightGear/Aircraft/j3cub/Models/j3alt.ac
 share/FlightGear/Aircraft/j3cub/Models/j3alt.rgb
 share/FlightGear/Aircraft/j3cub/Models/j3alt.xml
@@ -828,16 +1254,22 @@ share/FlightGear/Aircraft/j3cub/Models/j3oil.xml
 share/FlightGear/Aircraft/j3cub/Models/j3tach.ac
 share/FlightGear/Aircraft/j3cub/Models/j3tach.rgb
 share/FlightGear/Aircraft/j3cub/Models/j3tach.xml
-share/FlightGear/Aircraft/marchetti-set.xml
-share/FlightGear/Aircraft/marchetti-v1-uiuc-set.xml
+share/FlightGear/Aircraft/j3cub/README.j3cub
+share/FlightGear/Aircraft/j3cub/cub-electrical.xml
+share/FlightGear/Aircraft/j3cub/cub-set.xml
+share/FlightGear/Aircraft/j3cub/j3cub-3d-set.xml
+share/FlightGear/Aircraft/j3cub/j3cub-3d-yasim-set.xml
+share/FlightGear/Aircraft/j3cub/j3cub-set.xml
+share/FlightGear/Aircraft/j3cub/j3cub-yasim-set.xml
+share/FlightGear/Aircraft/j3cub/j3cub.xml
 share/FlightGear/Aircraft/marchetti/Sounds/uiuc/marchetti-sound.xml
-share/FlightGear/Aircraft/ornithopter-uiuc-set.xml
+share/FlightGear/Aircraft/marchetti/marchetti-set.xml
+share/FlightGear/Aircraft/marchetti/marchetti-v1-uiuc-set.xml
 share/FlightGear/Aircraft/ornithopter/Models/C-GPTR-003.rgb
 share/FlightGear/Aircraft/ornithopter/Models/C-GPTR-8-4.ac
 share/FlightGear/Aircraft/ornithopter/Models/ornithopter-8-4-model.xml
 share/FlightGear/Aircraft/ornithopter/Sounds/ornithopter-sound.xml
-share/FlightGear/Aircraft/p51d-set.xml
-share/FlightGear/Aircraft/p51d-yasim-set.xml
+share/FlightGear/Aircraft/ornithopter/ornithopter-uiuc-set.xml
 share/FlightGear/Aircraft/p51d/Models/hotspotgrid.rgb
 share/FlightGear/Aircraft/p51d/Models/p51d-jw-01.rgb
 share/FlightGear/Aircraft/p51d/Models/p51d-jw-01.xcf
@@ -929,26 +1361,40 @@ share/FlightGear/Aircraft/p51d/Models/p51d-jw-vsi.xml
 share/FlightGear/Aircraft/p51d/Models/p51d-jw.ac
 share/FlightGear/Aircraft/p51d/Models/p51d-jw.xml
 share/FlightGear/Aircraft/p51d/Models/transparent-bg.rgb
+share/FlightGear/Aircraft/p51d/README.p51d
 share/FlightGear/Aircraft/p51d/Sounds/p51d_rpm1.wav
 share/FlightGear/Aircraft/p51d/Sounds/p51d_starter.wav
 share/FlightGear/Aircraft/p51d/Sounds/p51d_startup.wav
+share/FlightGear/Aircraft/p51d/p51d-set.xml
 share/FlightGear/Aircraft/p51d/p51d-sound.xml
+share/FlightGear/Aircraft/p51d/p51d-yasim-set.xml
 share/FlightGear/Aircraft/p51d/p51d.xml
-share/FlightGear/Aircraft/pa28-161-base.xml
-share/FlightGear/Aircraft/pa28-161-set.xml
-share/FlightGear/Aircraft/pa28-161-yasim-base.xml
-share/FlightGear/Aircraft/pa28-161-yasim-set.xml
 share/FlightGear/Aircraft/pa28-161/Models/pa28-161.ac
 share/FlightGear/Aircraft/pa28-161/Models/pa28-161.xml
 share/FlightGear/Aircraft/pa28-161/Models/panel-2d.xml
-share/FlightGear/Aircraft/pa28-base.xml
-share/FlightGear/Aircraft/seahawk-WV908-yasim-set.xml
-share/FlightGear/Aircraft/seahawk-yasim-set.xml
+share/FlightGear/Aircraft/pa28-161/README.pa28-161
+share/FlightGear/Aircraft/pa28-161/pa28-161-base.xml
+share/FlightGear/Aircraft/pa28-161/pa28-161-set.xml
+share/FlightGear/Aircraft/pa28-161/pa28-161-yasim-base.xml
+share/FlightGear/Aircraft/pa28-161/pa28-161-yasim-set.xml
+share/FlightGear/Aircraft/pa28-161/pa28-161.xml
+share/FlightGear/Aircraft/pa28-161/pa28-base.xml
+share/FlightGear/Aircraft/paraglider/Models/paraglider_model.xml
+share/FlightGear/Aircraft/paraglider/Models/pg.ac
+share/FlightGear/Aircraft/paraglider/Models/pglid_cs0.rgb
+share/FlightGear/Aircraft/paraglider/Models/pglid_cs1.rgb
+share/FlightGear/Aircraft/paraglider/Models/pglid_cs2.rgb
+share/FlightGear/Aircraft/paraglider/para
+share/FlightGear/Aircraft/paraglider/paraglider-jsbsim-set.xml
+share/FlightGear/Aircraft/paraglider/paraglider-set.xml
+share/FlightGear/Aircraft/paraglider/paraglider.xml
 share/FlightGear/Aircraft/seahawk/SeaHawk-WV908.ac
 share/FlightGear/Aircraft/seahawk/SeaHawk.3ds
 share/FlightGear/Aircraft/seahawk/SeaHawk.ac
 share/FlightGear/Aircraft/seahawk/SeaHawkpair.3ds
 share/FlightGear/Aircraft/seahawk/seahawk-WV908-model.xml
+share/FlightGear/Aircraft/seahawk/seahawk-WV908-yasim-set.xml
+share/FlightGear/Aircraft/seahawk/seahawk-WV908-yasim.xml
 share/FlightGear/Aircraft/seahawk/seahawk-mini-panel.xml
 share/FlightGear/Aircraft/seahawk/seahawk-model.xml
 share/FlightGear/Aircraft/seahawk/seahawk-panel-01.rgb
@@ -962,13 +1408,22 @@ share/FlightGear/Aircraft/seahawk/seahawk-readme.txt
 share/FlightGear/Aircraft/seahawk/seahawk-tx-00.rgb
 share/FlightGear/Aircraft/seahawk/seahawk-tx-01.rgb
 share/FlightGear/Aircraft/seahawk/seahawk-vfr-panel.xml
+share/FlightGear/Aircraft/seahawk/seahawk-yasim-set.xml
+share/FlightGear/Aircraft/seahawk/seahawk-yasim.xml
 share/FlightGear/Aircraft/seahawk/seahawkpair-model.xml
-share/FlightGear/Aircraft/seahawkpair-yasim-set.xml
-share/FlightGear/Aircraft/shuttle-jsbsim-set.xml
-share/FlightGear/Aircraft/shuttle-set.xml
+share/FlightGear/Aircraft/seahawk/seahawkpair-yasim-set.xml
+share/FlightGear/Aircraft/seahawk/seahawkpair-yasim.xml
+share/FlightGear/Aircraft/sgs126/Instruments/Textures/glider-misc.rgb
+share/FlightGear/Aircraft/sgs126/Instruments/yaw-string.xml
+share/FlightGear/Aircraft/sgs126/Panels/Textures/glider-panel.rgb
+share/FlightGear/Aircraft/sgs126/Panels/glider-panel.xml
+share/FlightGear/Aircraft/sgs126/glider-sound.xml
+share/FlightGear/Aircraft/sgs126/null-electrical.xml
+share/FlightGear/Aircraft/sgs126/sgs126-jsbsim-set.xml
+share/FlightGear/Aircraft/sgs126/sgs126.xml
+share/FlightGear/Aircraft/shuttle/shuttle-jsbsim-set.xml
+share/FlightGear/Aircraft/shuttle/shuttle-set.xml
 share/FlightGear/Aircraft/shuttle/shuttle.xml
-share/FlightGear/Aircraft/sopwithCamel-set.xml
-share/FlightGear/Aircraft/sopwithCamel-v1-nl-uiuc-set.xml
 share/FlightGear/Aircraft/sopwithCamel/Models/uiuc/sopwithCamel/README.TXT
 share/FlightGear/Aircraft/sopwithCamel/Models/uiuc/sopwithCamel/Sop-panel.bmp
 share/FlightGear/Aircraft/sopwithCamel/Models/uiuc/sopwithCamel/cambelg.ac
@@ -986,8 +1441,8 @@ share/FlightGear/Aircraft/sopwithCamel/Models/uiuc/sopwithCamel/cambelg9.rgb
 share/FlightGear/Aircraft/sopwithCamel/Models/uiuc/sopwithCamel/camel.txt
 share/FlightGear/Aircraft/sopwithCamel/Models/uiuc/sopwithCamel/sopwithCamel-model.xml
 share/FlightGear/Aircraft/sopwithCamel/Sounds/uiuc/sopwithCamel-sound.xml
-share/FlightGear/Aircraft/t6texan2-jsbsim-set.xml
-share/FlightGear/Aircraft/t6texan2-set.xml
+share/FlightGear/Aircraft/sopwithCamel/sopwithCamel-set.xml
+share/FlightGear/Aircraft/sopwithCamel/sopwithCamel-v1-nl-uiuc-set.xml
 share/FlightGear/Aircraft/t6texan2/Models/T6Texan2.mdl
 share/FlightGear/Aircraft/t6texan2/Models/t62_0.rgb
 share/FlightGear/Aircraft/t6texan2/Models/t62_1.rgb
@@ -1000,28 +1455,110 @@ share/FlightGear/Aircraft/t6texan2/Models/t62_7.rgb
 share/FlightGear/Aircraft/t6texan2/Sounds/t6texan2-sound.xml
 share/FlightGear/Aircraft/t6texan2/Sounds/turboprop1.wav
 share/FlightGear/Aircraft/t6texan2/t6
+share/FlightGear/Aircraft/t6texan2/t6texan2-jsbsim-set.xml
 share/FlightGear/Aircraft/t6texan2/t6texan2-read-me.html
+share/FlightGear/Aircraft/t6texan2/t6texan2-set.xml
 share/FlightGear/Aircraft/t6texan2/t6texan2.xml
-share/FlightGear/Aircraft/tsr2-yasim-set.xml
-share/FlightGear/Aircraft/tsr2/TSR2.3ds
-share/FlightGear/Aircraft/tsr2/tsr2-mini-panel.xml
-share/FlightGear/Aircraft/tsr2/tsr2-model.xml
-share/FlightGear/Aircraft/tsr2/tsr2-panel-01.rgb
-share/FlightGear/Aircraft/tsr2/tsr2-panel-02.rgb
-share/FlightGear/Aircraft/tsr2/tsr2-panel-03.rgb
-share/FlightGear/Aircraft/tsr2/tsr2-panel-04.rgb
-share/FlightGear/Aircraft/tsr2/tsr2-panel-11.rgb
-share/FlightGear/Aircraft/tsr2/tsr2-panel-12.rgb
-share/FlightGear/Aircraft/tsr2/tsr2-panel-bg.rgb
+share/FlightGear/Aircraft/tsr2/Huds/tsr2-fgtbi.xml
+share/FlightGear/Aircraft/tsr2/Huds/tsr2-hud1.xml
+share/FlightGear/Aircraft/tsr2/Huds/tsr2-hudcard.xml
+share/FlightGear/Aircraft/tsr2/Huds/tsr2-hudladder.xml
+share/FlightGear/Aircraft/tsr2/Huds/tsr2-instrlabel.xml
+share/FlightGear/Aircraft/tsr2/Models/TSR2-009-031e.ac
+share/FlightGear/Aircraft/tsr2/Models/TSR2-tx-001.rgb
+share/FlightGear/Aircraft/tsr2/Models/tsr2-model.xml
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/Textures/accel.rgb
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/Textures/aoa-indexer.rgb
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/Textures/aoa.rgb
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/Textures/attitude-indicator.rgb
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/Textures/bendix-kx155.rgb
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/Textures/bezel.rgb
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/Textures/bezel1.rgb
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/Textures/blister.rgb
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/Textures/faces-1.rgb
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/Textures/faces-3-trans.rgb
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/Textures/faces-3.rgb
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/Textures/faces-6.rgb
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/Textures/faces-LE-misc1-trans.rgb
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/Textures/faces-LE-misc1.rgb
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/Textures/flaps.rgb
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/Textures/gyro-fronts.rgb
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/Textures/handles-trans.rgb
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/Textures/handles.rgb
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/Textures/hsi.rgb
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/Textures/led.rgb
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/Textures/maintc.rgb
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/Textures/misc-1-trans.rgb
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/Textures/misc-1.rgb
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/Textures/navcom-radios.rgb
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/Textures/switches.rgb
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/Textures/trans-green-bg.rgb
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/Textures/trans-orange-bg.rgb
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/Textures/trans-purple-bg.rgb
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/Textures/trans-yellow-bg.rgb
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/Textures/warning-lamps.rgb
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/adf-radio.xml
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/aoa-indexer.xml
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/attitude-indicator.xml
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/autopilot.xml
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/brakes.xml
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/clock.xml
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/controls-trans.xml
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/controls.xml
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/digital-accl.xml
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/digital-agl.xml
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/digital-alt.xml
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/digital-aoa.xml
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/digital-ap-elev-adj-factor.xml
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/digital-ap-max-roll-deg.xml
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/digital-ap-speed-kt.xml
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/digital-ap-target-climb-rate.xml
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/digital-ap-target-descent-rate.xml
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/digital-engine.xml
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/digital-fuel-tank.xml
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/digital-fuel-tot.xml
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/digital-kias.xml
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/digital-mach.xml
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/digital-reheat.xml
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/digital-vsi.xml
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/digital-wgt.xml
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/dme.xml
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/gear-indicator.xml
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/gyro.xml
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/hsi.xml
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/magcompass.xml
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/markerbeacon.xml
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/nav1.xml
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/navcom-kx155.xml
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/single-reheat-quadrant-trans.xml
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/single-reheat-quadrant.xml
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/single-throttle-quadrant-trans.xml
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/single-throttle-quadrant.xml
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/three-step-flap-quadrant-trans.xml
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/three-step-flap-quadrant.xml
+share/FlightGear/Aircraft/tsr2/Panels/Instruments/turn.xml
+share/FlightGear/Aircraft/tsr2/Panels/Textures/panel-trans-mini-bg.rgb
+share/FlightGear/Aircraft/tsr2/Panels/Textures/tsr2-panel-bg.rgb
+share/FlightGear/Aircraft/tsr2/Panels/tsr2-mini-panel.xml
+share/FlightGear/Aircraft/tsr2/Panels/tsr2-vfr-panel.xml
+share/FlightGear/Aircraft/tsr2/Sounds/Samples/flaps.wav
+share/FlightGear/Aircraft/tsr2/Sounds/Samples/gear-lck.wav
+share/FlightGear/Aircraft/tsr2/Sounds/Samples/gear.wav
+share/FlightGear/Aircraft/tsr2/Sounds/Samples/jet.wav
+share/FlightGear/Aircraft/tsr2/Sounds/Samples/rumble.wav
+share/FlightGear/Aircraft/tsr2/Sounds/Samples/squeal.wav
+share/FlightGear/Aircraft/tsr2/Sounds/Samples/stall.wav
+share/FlightGear/Aircraft/tsr2/Sounds/Samples/whine.wav
+share/FlightGear/Aircraft/tsr2/Sounds/Samples/wind.wav
+share/FlightGear/Aircraft/tsr2/Sounds/tsr2-sound.xml
+share/FlightGear/Aircraft/tsr2/Systems/tsr2-electrical.xml
 share/FlightGear/Aircraft/tsr2/tsr2-readme.txt
-share/FlightGear/Aircraft/tsr2/tsr2-vfr-panel.xml
-share/FlightGear/Aircraft/ufo-set.xml
+share/FlightGear/Aircraft/tsr2/tsr2-yasim-set.xml
+share/FlightGear/Aircraft/tsr2/tsr2-yasim.xml
 share/FlightGear/Aircraft/ufo/Models/ufo.ac
-share/FlightGear/Aircraft/ufo/Models/ufo.rgb
+share/FlightGear/Aircraft/ufo/Models/ufo.xml
+share/FlightGear/Aircraft/ufo/ufo-set.xml
 share/FlightGear/Aircraft/ufo/ufo-sound.xml
-share/FlightGear/Aircraft/wrightFlyer1903-3d-set.xml
-share/FlightGear/Aircraft/wrightFlyer1903-set.xml
-share/FlightGear/Aircraft/wrightFlyer1903-v1-nl-uiuc-set.xml
 share/FlightGear/Aircraft/wrightFlyer1903/Models/WrightFlyer-pb-jw-01.rgb
 share/FlightGear/Aircraft/wrightFlyer1903/Models/WrightFlyer-pb-jw-02.rgb
 share/FlightGear/Aircraft/wrightFlyer1903/Models/WrightFlyer-pb-jw-03.rgb
@@ -1030,32 +1567,174 @@ share/FlightGear/Aircraft/wrightFlyer1903/Models/WrightFlyer-pb-jw.ac
 share/FlightGear/Aircraft/wrightFlyer1903/Models/WrightFlyer-pb-jw.xml
 share/FlightGear/Aircraft/wrightFlyer1903/Models/uiuc/03Flyer/03Flyer-model.xml
 share/FlightGear/Aircraft/wrightFlyer1903/Sounds/uiuc/wrightFlyer1903-sound.xml
-share/FlightGear/Aircraft/x24-set.xml
-share/FlightGear/Aircraft/x24b-jsbsim-set.xml
-share/FlightGear/Aircraft/x24b-set.xml
+share/FlightGear/Aircraft/wrightFlyer1903/wrightFlyer1903-3d-set.xml
+share/FlightGear/Aircraft/wrightFlyer1903/wrightFlyer1903-set.xml
+share/FlightGear/Aircraft/wrightFlyer1903/wrightFlyer1903-v1-nl-uiuc-set.xml
+share/FlightGear/Aircraft/x24b/x24-set.xml
+share/FlightGear/Aircraft/x24b/x24b-jsbsim-set.xml
+share/FlightGear/Aircraft/x24b/x24b-set.xml
 share/FlightGear/Aircraft/x24b/x24b.xml
-share/FlightGear/Aircraft/yf23-yasim-set.xml
-share/FlightGear/Aircraft/yf23/YF23-000.rgb
-share/FlightGear/Aircraft/yf23/YF23-2-13d.ac
-share/FlightGear/Aircraft/yf23/yf23-mini-panel.xml
-share/FlightGear/Aircraft/yf23/yf23-model.xml
-share/FlightGear/Aircraft/yf23/yf23-panel-01.rgb
-share/FlightGear/Aircraft/yf23/yf23-panel-02.rgb
-share/FlightGear/Aircraft/yf23/yf23-panel-03.rgb
-share/FlightGear/Aircraft/yf23/yf23-panel-04.rgb
-share/FlightGear/Aircraft/yf23/yf23-panel-11.rgb
-share/FlightGear/Aircraft/yf23/yf23-panel-12.rgb
-share/FlightGear/Aircraft/yf23/yf23-panel-bg.rgb
+share/FlightGear/Aircraft/yf23/Huds/yf23-fgtbi.xml
+share/FlightGear/Aircraft/yf23/Huds/yf23-hud1.xml
+share/FlightGear/Aircraft/yf23/Huds/yf23-hudcard.xml
+share/FlightGear/Aircraft/yf23/Huds/yf23-hudladder.xml
+share/FlightGear/Aircraft/yf23/Huds/yf23-instrlabel.xml
+share/FlightGear/Aircraft/yf23/Models/YF23-5-1h4.ac
+share/FlightGear/Aircraft/yf23/Models/YF23-tx-002.rgb
+share/FlightGear/Aircraft/yf23/Models/yf23-model.xml
+share/FlightGear/Aircraft/yf23/Models/yf23-model.xml.new
+share/FlightGear/Aircraft/yf23/Panels/Instruments/Textures/accel.rgb
+share/FlightGear/Aircraft/yf23/Panels/Instruments/Textures/aoa-indexer.rgb
+share/FlightGear/Aircraft/yf23/Panels/Instruments/Textures/aoa.rgb
+share/FlightGear/Aircraft/yf23/Panels/Instruments/Textures/attitude-indicator.rgb
+share/FlightGear/Aircraft/yf23/Panels/Instruments/Textures/bendix-kx155.rgb
+share/FlightGear/Aircraft/yf23/Panels/Instruments/Textures/bezel.rgb
+share/FlightGear/Aircraft/yf23/Panels/Instruments/Textures/bezel1.rgb
+share/FlightGear/Aircraft/yf23/Panels/Instruments/Textures/blister.rgb
+share/FlightGear/Aircraft/yf23/Panels/Instruments/Textures/faces-1.rgb
+share/FlightGear/Aircraft/yf23/Panels/Instruments/Textures/faces-3-trans.rgb
+share/FlightGear/Aircraft/yf23/Panels/Instruments/Textures/faces-3.rgb
+share/FlightGear/Aircraft/yf23/Panels/Instruments/Textures/faces-6.rgb
+share/FlightGear/Aircraft/yf23/Panels/Instruments/Textures/faces-LE-misc1-trans.rgb
+share/FlightGear/Aircraft/yf23/Panels/Instruments/Textures/faces-LE-misc1.rgb
+share/FlightGear/Aircraft/yf23/Panels/Instruments/Textures/flaps.rgb
+share/FlightGear/Aircraft/yf23/Panels/Instruments/Textures/gyro-fronts.rgb
+share/FlightGear/Aircraft/yf23/Panels/Instruments/Textures/handles-trans.rgb
+share/FlightGear/Aircraft/yf23/Panels/Instruments/Textures/handles.rgb
+share/FlightGear/Aircraft/yf23/Panels/Instruments/Textures/hsi.rgb
+share/FlightGear/Aircraft/yf23/Panels/Instruments/Textures/led.rgb
+share/FlightGear/Aircraft/yf23/Panels/Instruments/Textures/maintc.rgb
+share/FlightGear/Aircraft/yf23/Panels/Instruments/Textures/misc-1-trans.rgb
+share/FlightGear/Aircraft/yf23/Panels/Instruments/Textures/misc-1.rgb
+share/FlightGear/Aircraft/yf23/Panels/Instruments/Textures/navcom-radios.rgb
+share/FlightGear/Aircraft/yf23/Panels/Instruments/Textures/switches.rgb
+share/FlightGear/Aircraft/yf23/Panels/Instruments/Textures/trans-green-bg.rgb
+share/FlightGear/Aircraft/yf23/Panels/Instruments/Textures/trans-orange-bg.rgb
+share/FlightGear/Aircraft/yf23/Panels/Instruments/Textures/trans-purple-bg.rgb
+share/FlightGear/Aircraft/yf23/Panels/Instruments/Textures/trans-yellow-bg.rgb
+share/FlightGear/Aircraft/yf23/Panels/Instruments/Textures/warning-lamps.rgb
+share/FlightGear/Aircraft/yf23/Panels/Instruments/adf-radio.xml
+share/FlightGear/Aircraft/yf23/Panels/Instruments/aoa-indexer.xml
+share/FlightGear/Aircraft/yf23/Panels/Instruments/attitude-indicator.xml
+share/FlightGear/Aircraft/yf23/Panels/Instruments/autopilot.xml
+share/FlightGear/Aircraft/yf23/Panels/Instruments/brakes.xml
+share/FlightGear/Aircraft/yf23/Panels/Instruments/clock.xml
+share/FlightGear/Aircraft/yf23/Panels/Instruments/controls-trans.xml
+share/FlightGear/Aircraft/yf23/Panels/Instruments/controls.xml
+share/FlightGear/Aircraft/yf23/Panels/Instruments/digital-accl.xml
+share/FlightGear/Aircraft/yf23/Panels/Instruments/digital-agl.xml
+share/FlightGear/Aircraft/yf23/Panels/Instruments/digital-alt.xml
+share/FlightGear/Aircraft/yf23/Panels/Instruments/digital-aoa.xml
+share/FlightGear/Aircraft/yf23/Panels/Instruments/digital-ap-elev-adj-factor.xml
+share/FlightGear/Aircraft/yf23/Panels/Instruments/digital-ap-max-roll-deg.xml
+share/FlightGear/Aircraft/yf23/Panels/Instruments/digital-ap-speed-kt.xml
+share/FlightGear/Aircraft/yf23/Panels/Instruments/digital-ap-target-climb-rate.xml
+share/FlightGear/Aircraft/yf23/Panels/Instruments/digital-ap-target-descent-rate.xml
+share/FlightGear/Aircraft/yf23/Panels/Instruments/digital-engine.xml
+share/FlightGear/Aircraft/yf23/Panels/Instruments/digital-fuel-tank.xml
+share/FlightGear/Aircraft/yf23/Panels/Instruments/digital-fuel-tot.xml
+share/FlightGear/Aircraft/yf23/Panels/Instruments/digital-kias.xml
+share/FlightGear/Aircraft/yf23/Panels/Instruments/digital-mach.xml
+share/FlightGear/Aircraft/yf23/Panels/Instruments/digital-reheat.xml
+share/FlightGear/Aircraft/yf23/Panels/Instruments/digital-vsi.xml
+share/FlightGear/Aircraft/yf23/Panels/Instruments/digital-wgt.xml
+share/FlightGear/Aircraft/yf23/Panels/Instruments/dme.xml
+share/FlightGear/Aircraft/yf23/Panels/Instruments/gear-indicator.xml
+share/FlightGear/Aircraft/yf23/Panels/Instruments/gyro.xml
+share/FlightGear/Aircraft/yf23/Panels/Instruments/hsi.xml
+share/FlightGear/Aircraft/yf23/Panels/Instruments/magcompass.xml
+share/FlightGear/Aircraft/yf23/Panels/Instruments/markerbeacon.xml
+share/FlightGear/Aircraft/yf23/Panels/Instruments/nav1.xml
+share/FlightGear/Aircraft/yf23/Panels/Instruments/navcom-kx155.xml
+share/FlightGear/Aircraft/yf23/Panels/Instruments/single-reheat-quadrant-trans.xml
+share/FlightGear/Aircraft/yf23/Panels/Instruments/single-reheat-quadrant.xml
+share/FlightGear/Aircraft/yf23/Panels/Instruments/single-throttle-quadrant-trans.xml
+share/FlightGear/Aircraft/yf23/Panels/Instruments/single-throttle-quadrant.xml
+share/FlightGear/Aircraft/yf23/Panels/Instruments/three-step-flap-quadrant-trans.xml
+share/FlightGear/Aircraft/yf23/Panels/Instruments/three-step-flap-quadrant.xml
+share/FlightGear/Aircraft/yf23/Panels/Instruments/turn.xml
+share/FlightGear/Aircraft/yf23/Panels/Textures/panel-trans-mini-bg.rgb
+share/FlightGear/Aircraft/yf23/Panels/Textures/yf23-panel-bg.rgb
+share/FlightGear/Aircraft/yf23/Panels/yf23-mini-panel.xml
+share/FlightGear/Aircraft/yf23/Panels/yf23-vfr-panel.xml
+share/FlightGear/Aircraft/yf23/Sounds/Samples/flaps.wav
+share/FlightGear/Aircraft/yf23/Sounds/Samples/gear-lck.wav
+share/FlightGear/Aircraft/yf23/Sounds/Samples/gear.wav
+share/FlightGear/Aircraft/yf23/Sounds/Samples/jet.wav
+share/FlightGear/Aircraft/yf23/Sounds/Samples/rumble.wav
+share/FlightGear/Aircraft/yf23/Sounds/Samples/squeal.wav
+share/FlightGear/Aircraft/yf23/Sounds/Samples/stall.wav
+share/FlightGear/Aircraft/yf23/Sounds/Samples/whine.wav
+share/FlightGear/Aircraft/yf23/Sounds/Samples/wind.wav
+share/FlightGear/Aircraft/yf23/Sounds/yf23-sound.xml
+share/FlightGear/Aircraft/yf23/Systems/yf23-electrical.xml
 share/FlightGear/Aircraft/yf23/yf23-readme.txt
-share/FlightGear/Aircraft/yf23/yf23-vfr-panel.xml
-share/FlightGear/Airports/default.apt.gz
-share/FlightGear/Airports/runways.mk4
-share/FlightGear/Airports/simple.mk4
+share/FlightGear/Aircraft/yf23/yf23-yasim-set.xml
+share/FlightGear/Aircraft/yf23/yf23-yasim.xml
+share/FlightGear/Airports/basic.dat.gz
+share/FlightGear/Airports/runways.dat.gz
 share/FlightGear/Astro/planets.gz
 share/FlightGear/Astro/stars
 share/FlightGear/AtlasPalette
 share/FlightGear/COPYING
 share/FlightGear/ChangeLog
+share/FlightGear/Data/SkyClouds/cloud1.cld
+share/FlightGear/Data/SkyClouds/cloud10.cld
+share/FlightGear/Data/SkyClouds/cloud11.cld
+share/FlightGear/Data/SkyClouds/cloud12.cld
+share/FlightGear/Data/SkyClouds/cloud2.cld
+share/FlightGear/Data/SkyClouds/cloud3.cld
+share/FlightGear/Data/SkyClouds/cloud4.cld
+share/FlightGear/Data/SkyClouds/cloud5.cld
+share/FlightGear/Data/SkyClouds/cloud6.cld
+share/FlightGear/Data/SkyClouds/cloud7.cld
+share/FlightGear/Data/SkyClouds/cloud8.cld
+share/FlightGear/Data/SkyClouds/cloud9.cld
+share/FlightGear/Data/SkyClouds/field37.cld
+share/FlightGear/Data/SkyClouds/field56.cld
+share/FlightGear/Data/SkyClouds/valley.cld
+share/FlightGear/Docs-mini/AptNavFAQ.FlightGear.html
+share/FlightGear/Docs-mini/FG-FAQ.v3
+share/FlightGear/Docs-mini/FlightGear-FAQ.html
+share/FlightGear/Docs-mini/README.Cygwin
+share/FlightGear/Docs-mini/README.IO
+share/FlightGear/Docs-mini/README.IRIX
+share/FlightGear/Docs-mini/README.IRIX.new
+share/FlightGear/Docs-mini/README.JSBSim
+share/FlightGear/Docs-mini/README.JSBsim
+share/FlightGear/Docs-mini/README.Joystick
+share/FlightGear/Docs-mini/README.Linux
+share/FlightGear/Docs-mini/README.MSVC
+share/FlightGear/Docs-mini/README.MacOS
+share/FlightGear/Docs-mini/README.SimGear
+share/FlightGear/Docs-mini/README.Unix
+share/FlightGear/Docs-mini/README.Win32
+share/FlightGear/Docs-mini/README.Win32-X
+share/FlightGear/Docs-mini/README.anoncvs
+share/FlightGear/Docs-mini/README.autoconf
+share/FlightGear/Docs-mini/README.commands
+share/FlightGear/Docs-mini/README.conditions
+share/FlightGear/Docs-mini/README.cygwin
+share/FlightGear/Docs-mini/README.electrical
+share/FlightGear/Docs-mini/README.extensions
+share/FlightGear/Docs-mini/README.fgjs
+share/FlightGear/Docs-mini/README.gui
+share/FlightGear/Docs-mini/README.logging
+share/FlightGear/Docs-mini/README.msvc
+share/FlightGear/Docs-mini/README.multiplayer
+share/FlightGear/Docs-mini/README.plib
+share/FlightGear/Docs-mini/README.properties
+share/FlightGear/Docs-mini/README.protocol
+share/FlightGear/Docs-mini/README.running
+share/FlightGear/Docs-mini/README.src
+share/FlightGear/Docs-mini/README.uiuc
+share/FlightGear/Docs-mini/README.xmlhud
+share/FlightGear/Docs-mini/README.xmlpanel
+share/FlightGear/Docs-mini/README.xmlsound
+share/FlightGear/Docs-mini/README.xmlsyntax
+share/FlightGear/Docs-mini/model-howto.html
+share/FlightGear/Docs-mini/model.jpg
+share/FlightGear/Docs-mini/properties.txt
 share/FlightGear/Docs/FGShortRef.css
 share/FlightGear/Docs/FGShortRef.html
 share/FlightGear/Docs/FGShortRef.pdf
@@ -1106,7 +1785,7 @@ share/FlightGear/Docs/README.minipanel
 share/FlightGear/Docs/README.xmlhud
 share/FlightGear/Docs/README.xmlpanel.html
 share/FlightGear/Docs/Serial/nmeafaq.txt
-share/FlightGear/Docs/fschool_0.0.2.pdf
+share/FlightGear/Docs/fschool_0.0.3.pdf
 share/FlightGear/Docs/getstart.pdf
 share/FlightGear/Docs/index.html
 share/FlightGear/Docs/model-howto.html
@@ -1211,13 +1890,17 @@ share/FlightGear/Docs/source/tab8.tex
 share/FlightGear/Docs/source/takeoff.tex
 share/FlightGear/Docs/source/title.tex
 share/FlightGear/Engine/CFM56.xml
+share/FlightGear/Engine/CFM56_5_sim.xml
 share/FlightGear/Engine/CFM56_nozzle.xml
 share/FlightGear/Engine/CFM56_sim.xml
+share/FlightGear/Engine/F100-PW-229_sim.xml
 share/FlightGear/Engine/J85-GE-5.xml
 share/FlightGear/Engine/J85-GE-5_sim.xml
 share/FlightGear/Engine/J85_nozzle.xml
 share/FlightGear/Engine/PT6A-68_sim.xml
+share/FlightGear/Engine/PW125B_sim.xml
 share/FlightGear/Engine/T76_sim.xml
+share/FlightGear/Engine/Tay-651_sim.xml
 share/FlightGear/Engine/XLR99.xml
 share/FlightGear/Engine/direct.xml
 share/FlightGear/Engine/engIO360C.xml
@@ -1230,6 +1913,7 @@ share/FlightGear/Engine/prop30FP2B.xml
 share/FlightGear/Engine/propC10v.xml
 share/FlightGear/Engine/propC6v.xml
 share/FlightGear/Engine/propC8v.xml
+share/FlightGear/Engine/propDA-R352_6-123-F_2.xml
 share/FlightGear/Engine/prop_75in2f.xml
 share/FlightGear/Engine/prop_81in2v.xml
 share/FlightGear/Engine/prop_generic2f.xml
@@ -1278,18 +1962,23 @@ share/FlightGear/Huds/Instruments/Minimal/instrlabel.xml
 share/FlightGear/Huds/Minimal/default.xml
 share/FlightGear/Input/Joysticks/CH/pro-pedals-usb.xml
 share/FlightGear/Input/Joysticks/CH/pro-yoke-usb.xml
+share/FlightGear/Input/Joysticks/Default/four-axis-joystick.xml
 share/FlightGear/Input/Joysticks/Default/joystick.xml
 share/FlightGear/Input/Joysticks/LewEngineering/RC-transmitter-hitecLaser4.xml
 share/FlightGear/Input/Joysticks/Logitech/wingman-extreme-digital-3d-win.xml
 share/FlightGear/Input/Joysticks/Logitech/wingman-extreme-digital-3d.xml
 share/FlightGear/Input/Joysticks/Logitech/wingman-force.xml
 share/FlightGear/Input/Joysticks/Logitech/wingman-rumblepad-usb.xml
+share/FlightGear/Input/Joysticks/Microsoft/sidewinder-force-feed-pro.xml
 share/FlightGear/Input/Joysticks/Microsoft/sidewinder-force-feed.xml
 share/FlightGear/Input/Joysticks/Microsoft/sidewinder-precision-pro.xml
+share/FlightGear/Input/Joysticks/Microsoft/sidewinder.xml
 share/FlightGear/Input/Joysticks/Saitek/Cyborg-3d-Rumble-Force.xml
 share/FlightGear/Input/Joysticks/Saitek/Cyborg-Gold-3d-USB.xml
 share/FlightGear/Input/Joysticks/Saitek/X45.xml
 share/FlightGear/Input/Joysticks/Saitek/X8-30.xml
+share/FlightGear/Input/Joysticks/ThrustMaster/Attack-Throttle.xml
+share/FlightGear/Input/Joysticks/ThrustMaster/FCS.xml
 share/FlightGear/Lighting/ambient
 share/FlightGear/Lighting/diffuse
 share/FlightGear/Lighting/sky
@@ -1328,10 +2017,14 @@ share/FlightGear/Models/Buildings/cube-21.rgb
 share/FlightGear/Models/Buildings/cube-22.rgb
 share/FlightGear/Models/Buildings/cube-23.rgb
 share/FlightGear/Models/Buildings/cube-apartment.ac
+share/FlightGear/Models/Buildings/hosshop.ac
+share/FlightGear/Models/Buildings/hosshop.rgb
 share/FlightGear/Models/Buildings/oil-tanks.ac
 share/FlightGear/Models/Buildings/oil-tanks.rgb
 share/FlightGear/Models/Buildings/red-barn.ac
 share/FlightGear/Models/Buildings/red-barn.rgb
+share/FlightGear/Models/Buildings/shop.ac
+share/FlightGear/Models/Buildings/shop.rgb
 share/FlightGear/Models/Buildings/silo.ac
 share/FlightGear/Models/Buildings/silo.rgb
 share/FlightGear/Models/Buildings/small-glass-office-building.ac
@@ -1342,6 +2035,8 @@ share/FlightGear/Models/Buildings/tower-hexa-3.rgb
 share/FlightGear/Models/Buildings/tower-hexa.ac
 share/FlightGear/Models/Buildings/water-tower.ac
 share/FlightGear/Models/Buildings/water-tower.rgb
+share/FlightGear/Models/Buildings/weapshop.ac
+share/FlightGear/Models/Buildings/weapshop.rgb
 share/FlightGear/Models/Fauna/cow.ac
 share/FlightGear/Models/Fauna/cow.rgb
 share/FlightGear/Models/Geometry/Aim91x.ac
@@ -1350,7 +2045,8 @@ share/FlightGear/Models/Geometry/Tower1x.ac
 share/FlightGear/Models/Geometry/Towerax.ac
 share/FlightGear/Models/Geometry/glider.ac
 share/FlightGear/Models/Geometry/rocket.ac
-share/FlightGear/Models/Geometry/saratoga.obj
+share/FlightGear/Models/Geometry/saratoga.ac
+share/FlightGear/Models/Geometry/saratoga.rgb
 share/FlightGear/Models/Geometry/tuxcopter.ac
 share/FlightGear/Models/Trees/billboard-tree.ac
 share/FlightGear/Models/Trees/billboard-tree.xml
@@ -1366,7 +2062,9 @@ share/FlightGear/NEWS
 share/FlightGear/Navaids/ReadMe.FG226.txt
 share/FlightGear/Navaids/default.fix.gz
 share/FlightGear/Navaids/default.ils.gz
+share/FlightGear/Navaids/default.ils.old.gz
 share/FlightGear/Navaids/default.nav.gz
+share/FlightGear/Navaids/default.nav.old.gz
 share/FlightGear/Navaids/range.high
 share/FlightGear/Navaids/range.low
 share/FlightGear/Navaids/range.term
@@ -1375,7 +2073,10 @@ share/FlightGear/Protocol/f1serial.xml
 share/FlightGear/README
 share/FlightGear/Scenery/w130n30/w122n37/1Q4.btg.gz
 share/FlightGear/Scenery/w130n30/w122n37/23Q.btg.gz
+share/FlightGear/Scenery/w130n30/w122n37/2CL1.btg.gz
+share/FlightGear/Scenery/w130n30/w122n37/4CA3.btg.gz
 share/FlightGear/Scenery/w130n30/w122n37/4CA8.btg.gz
+share/FlightGear/Scenery/w130n30/w122n37/5CL2.btg.gz
 share/FlightGear/Scenery/w130n30/w122n37/5CL3.btg.gz
 share/FlightGear/Scenery/w130n30/w122n37/8Q1.btg.gz
 share/FlightGear/Scenery/w130n30/w122n37/958400.btg.gz
@@ -1443,8 +2144,16 @@ share/FlightGear/Scenery/w130n30/w122n37/958458.stg
 share/FlightGear/Scenery/w130n30/w122n37/958459.btg.gz
 share/FlightGear/Scenery/w130n30/w122n37/958459.stg
 share/FlightGear/Scenery/w130n30/w122n37/C83.btg.gz
+share/FlightGear/Scenery/w130n30/w122n37/CA33.btg.gz
+share/FlightGear/Scenery/w130n30/w122n37/CA34.btg.gz
+share/FlightGear/Scenery/w130n30/w122n37/CA48.btg.gz
 share/FlightGear/Scenery/w130n30/w122n37/CA54.btg.gz
 share/FlightGear/Scenery/w130n30/w122n37/CA67.btg.gz
+share/FlightGear/Scenery/w130n30/w122n37/CA70.btg.gz
+share/FlightGear/Scenery/w130n30/w122n37/CL05.btg.gz
+share/FlightGear/Scenery/w130n30/w122n37/CL52.btg.gz
+share/FlightGear/Scenery/w130n30/w122n37/CL64.btg.gz
+share/FlightGear/Scenery/w130n30/w122n37/CL86.btg.gz
 share/FlightGear/Scenery/w130n30/w122n37/KLVK.btg.gz
 share/FlightGear/Scenery/w130n30/w122n37/KNRC.btg.gz
 share/FlightGear/Scenery/w130n30/w122n37/KRHV.btg.gz
@@ -1453,8 +2162,49 @@ share/FlightGear/Scenery/w130n30/w122n37/KSJC.btg.gz
 share/FlightGear/Scenery/w130n30/w122n37/KTCY.btg.gz
 share/FlightGear/Scenery/w130n30/w122n37/O29.btg.gz
 share/FlightGear/Scenery/w130n30/w122n37/Q99.btg.gz
+share/FlightGear/Scenery/w130n30/w123n37/02Q.btg.gz
+share/FlightGear/Scenery/w130n30/w123n37/0Q2.btg.gz
+share/FlightGear/Scenery/w130n30/w123n37/1-mar-plz-wall.rgb
+share/FlightGear/Scenery/w130n30/w123n37/1-maritime-plz-fb.ac
+share/FlightGear/Scenery/w130n30/w123n37/1-maritime-plz-fb.xml
+share/FlightGear/Scenery/w130n30/w123n37/1-market-plz-fb.ac
+share/FlightGear/Scenery/w130n30/w123n37/1-market-plz-wall-1.rgb
+share/FlightGear/Scenery/w130n30/w123n37/101-cal-st-fb.ac
+share/FlightGear/Scenery/w130n30/w123n37/101-cal-st-fb.xml
+share/FlightGear/Scenery/w130n30/w123n37/101-cal-st-wall-1.rgb
+share/FlightGear/Scenery/w130n30/w123n37/101-cal-st-wall-2.rgb
+share/FlightGear/Scenery/w130n30/w123n37/101-cal-st-wall-3.rgb
+share/FlightGear/Scenery/w130n30/w123n37/15CA.btg.gz
+share/FlightGear/Scenery/w130n30/w123n37/16CA.btg.gz
+share/FlightGear/Scenery/w130n30/w123n37/17CA.btg.gz
+share/FlightGear/Scenery/w130n30/w123n37/1CL3.btg.gz
+share/FlightGear/Scenery/w130n30/w123n37/333-bush-fb.ac
+share/FlightGear/Scenery/w130n30/w123n37/333-bush-fb.xml
+share/FlightGear/Scenery/w130n30/w123n37/333-bush-wall-1.rgb
+share/FlightGear/Scenery/w130n30/w123n37/425-market-st-fb.ac
+share/FlightGear/Scenery/w130n30/w123n37/425-mkt-st-wall-2.rgb
+share/FlightGear/Scenery/w130n30/w123n37/425-mkt-st-wall.rgb
+share/FlightGear/Scenery/w130n30/w123n37/44-mont-1.rgb
+share/FlightGear/Scenery/w130n30/w123n37/44-montgomery-fb.ac
+share/FlightGear/Scenery/w130n30/w123n37/44Q.btg.gz
+share/FlightGear/Scenery/w130n30/w123n37/45Q.btg.gz
+share/FlightGear/Scenery/w130n30/w123n37/4Q2.btg.gz
+share/FlightGear/Scenery/w130n30/w123n37/50-fremont-fb.ac
+share/FlightGear/Scenery/w130n30/w123n37/50-frmnt-wall-1.rgb
+share/FlightGear/Scenery/w130n30/w123n37/50-frmnt-wall-2.rgb
+share/FlightGear/Scenery/w130n30/w123n37/50-frmnt-wall-3.rgb
+share/FlightGear/Scenery/w130n30/w123n37/50-frmnt-wall-4.rgb
+share/FlightGear/Scenery/w130n30/w123n37/525-market-st-fb.ac
+share/FlightGear/Scenery/w130n30/w123n37/525-mkt-st-wall-1.rgb
+share/FlightGear/Scenery/w130n30/w123n37/555-market-st-fb.ac
+share/FlightGear/Scenery/w130n30/w123n37/55CA.btg.gz
+share/FlightGear/Scenery/w130n30/w123n37/575-market-st-fb.ac
+share/FlightGear/Scenery/w130n30/w123n37/575-mkt-st-wall.rgb
 share/FlightGear/Scenery/w130n30/w123n37/59CA.btg.gz
+share/FlightGear/Scenery/w130n30/w123n37/5CA3.btg.gz
 share/FlightGear/Scenery/w130n30/w123n37/6Q6.btg.gz
+share/FlightGear/Scenery/w130n30/w123n37/737-01.rgb
+share/FlightGear/Scenery/w130n30/w123n37/737-static.ac
 share/FlightGear/Scenery/w130n30/w123n37/942018.btg.gz
 share/FlightGear/Scenery/w130n30/w123n37/942018.stg
 share/FlightGear/Scenery/w130n30/w123n37/942019.btg.gz
@@ -1501,16 +2251,82 @@ share/FlightGear/Scenery/w130n30/w123n37/942074.btg.gz
 share/FlightGear/Scenery/w130n30/w123n37/942074.stg
 share/FlightGear/Scenery/w130n30/w123n37/942075.btg.gz
 share/FlightGear/Scenery/w130n30/w123n37/942075.stg
+share/FlightGear/Scenery/w130n30/w123n37/CA14.btg.gz
+share/FlightGear/Scenery/w130n30/w123n37/CA26.btg.gz
+share/FlightGear/Scenery/w130n30/w123n37/CA27.btg.gz
+share/FlightGear/Scenery/w130n30/w123n37/CA30.btg.gz
+share/FlightGear/Scenery/w130n30/w123n37/CA63.btg.gz
+share/FlightGear/Scenery/w130n30/w123n37/CL41.btg.gz
 share/FlightGear/Scenery/w130n30/w123n37/CL77.btg.gz
 share/FlightGear/Scenery/w130n30/w123n37/KCCR.btg.gz
+share/FlightGear/Scenery/w130n30/w123n37/KCSY.btg.gz
 share/FlightGear/Scenery/w130n30/w123n37/KHAF.btg.gz
 share/FlightGear/Scenery/w130n30/w123n37/KHWD.btg.gz
+share/FlightGear/Scenery/w130n30/w123n37/KJMC.btg.gz
 share/FlightGear/Scenery/w130n30/w123n37/KNUQ.btg.gz
 share/FlightGear/Scenery/w130n30/w123n37/KOAK.btg.gz
 share/FlightGear/Scenery/w130n30/w123n37/KPAO.btg.gz
+share/FlightGear/Scenery/w130n30/w123n37/KSFO-maint-1-fb.ac
+share/FlightGear/Scenery/w130n30/w123n37/KSFO-terminal-fb.ac
 share/FlightGear/Scenery/w130n30/w123n37/KSFO.btg.gz
 share/FlightGear/Scenery/w130n30/w123n37/KSQL.btg.gz
+share/FlightGear/Scenery/w130n30/w123n37/baybridge-fb.ac
+share/FlightGear/Scenery/w130n30/w123n37/baybridge-fb.xml
+share/FlightGear/Scenery/w130n30/w123n37/bb-mixedforest.rgb
+share/FlightGear/Scenery/w130n30/w123n37/bb-side.rgb
+share/FlightGear/Scenery/w130n30/w123n37/bb-susp.rgb
+share/FlightGear/Scenery/w130n30/w123n37/bofa-sf-1.rgb
+share/FlightGear/Scenery/w130n30/w123n37/bofa-sf-2.rgb
+share/FlightGear/Scenery/w130n30/w123n37/bofa-sf-3.rgb
+share/FlightGear/Scenery/w130n30/w123n37/bofa-sf-fb.ac
+share/FlightGear/Scenery/w130n30/w123n37/bofa-sf-fb.xml
+share/FlightGear/Scenery/w130n30/w123n37/bofa-sf.rgb
+share/FlightGear/Scenery/w130n30/w123n37/calcent-1.rgb
+share/FlightGear/Scenery/w130n30/w123n37/calcent-2.rgb
+share/FlightGear/Scenery/w130n30/w123n37/calcent-3.rgb
+share/FlightGear/Scenery/w130n30/w123n37/calcent-4.rgb
+share/FlightGear/Scenery/w130n30/w123n37/calcent-fb.ac
+share/FlightGear/Scenery/w130n30/w123n37/candlestickpark-fb.ac
+share/FlightGear/Scenery/w130n30/w123n37/candlestickpark-fb.xml
+share/FlightGear/Scenery/w130n30/w123n37/citicorp-center-fb.ac
+share/FlightGear/Scenery/w130n30/w123n37/citicorp-top.rgb
+share/FlightGear/Scenery/w130n30/w123n37/citicorp-wall.rgb
+share/FlightGear/Scenery/w130n30/w123n37/emb-1-fb.ac
+share/FlightGear/Scenery/w130n30/w123n37/emb-1-fb.xml
+share/FlightGear/Scenery/w130n30/w123n37/emb-2-fb.ac
+share/FlightGear/Scenery/w130n30/w123n37/emb-2-fb.xml
+share/FlightGear/Scenery/w130n30/w123n37/emb-3-fb.ac
+share/FlightGear/Scenery/w130n30/w123n37/emb-3-fb.xml
+share/FlightGear/Scenery/w130n30/w123n37/emb-4-fb.ac
+share/FlightGear/Scenery/w130n30/w123n37/emb-4-fb.xml
+share/FlightGear/Scenery/w130n30/w123n37/emb-cell-1.rgb
+share/FlightGear/Scenery/w130n30/w123n37/emb-cell-2.rgb
+share/FlightGear/Scenery/w130n30/w123n37/emb-top-1.rgb
+share/FlightGear/Scenery/w130n30/w123n37/ggb-fb.ac
+share/FlightGear/Scenery/w130n30/w123n37/ggb-fb.xml
+share/FlightGear/Scenery/w130n30/w123n37/ggb-road-3.rgb
+share/FlightGear/Scenery/w130n30/w123n37/ggb-struct-1.rgb
+share/FlightGear/Scenery/w130n30/w123n37/ggb-struct-2.rgb
+share/FlightGear/Scenery/w130n30/w123n37/ggb-susp.rgb
+share/FlightGear/Scenery/w130n30/w123n37/ggb-wall-1.rgb
 share/FlightGear/Scenery/w130n30/w123n37/ksfo-international-terminal.ac
+share/FlightGear/Scenery/w130n30/w123n37/road-3-fb.rgb
+share/FlightGear/Scenery/w130n30/w123n37/russ-bld-fb.ac
+share/FlightGear/Scenery/w130n30/w123n37/russ-bld-fb.xml
+share/FlightGear/Scenery/w130n30/w123n37/russ-wall-1.rgb
+share/FlightGear/Scenery/w130n30/w123n37/russ-wall-2.rgb
+share/FlightGear/Scenery/w130n30/w123n37/russ-wall-3.rgb
+share/FlightGear/Scenery/w130n30/w123n37/russ-wall-4.rgb
+share/FlightGear/Scenery/w130n30/w123n37/sanmateo-fb.ac
+share/FlightGear/Scenery/w130n30/w123n37/sutro-fb.ac
+share/FlightGear/Scenery/w130n30/w123n37/sutro-fb.rgb
+share/FlightGear/Scenery/w130n30/w123n37/sutro-fb.xml
+share/FlightGear/Scenery/w130n30/w123n37/telesis-tower-fb.ac
+share/FlightGear/Scenery/w130n30/w123n37/telesis-wall-1.rgb
+share/FlightGear/Scenery/w130n30/w123n37/telesis-wall-2.rgb
+share/FlightGear/Scenery/w130n30/w123n37/terminal.rgb
+share/FlightGear/Scenery/w130n30/w123n37/transamerica-fb.ac
+share/FlightGear/Scenery/w130n30/w123n37/transamerica-fb.rgb
 share/FlightGear/Sounds/coughing.wav
 share/FlightGear/Sounds/cranking.wav
 share/FlightGear/Sounds/engstart.wav
@@ -1528,6 +2344,10 @@ share/FlightGear/Sounds/thunder.wav
 share/FlightGear/Sounds/wasp.wav
 share/FlightGear/Sounds/whine.wav
 share/FlightGear/Sounds/wind.wav
+share/FlightGear/Textures.high/Runway/.xvpics/asphalt.rgb
+share/FlightGear/Textures.high/Runway/.xvpics/concrete.rgb
+share/FlightGear/Textures.high/Runway/.xvpics/pa_taxiway.rgb
+share/FlightGear/Textures.high/Runway/.xvpics/pc_taxiway.rgb
 share/FlightGear/Textures.high/Runway/pa_0r.rgb
 share/FlightGear/Textures.high/Runway/pa_11.rgb
 share/FlightGear/Textures.high/Runway/pa_1c.rgb
@@ -1555,6 +2375,9 @@ share/FlightGear/Textures.high/Runway/pa_C.rgb
 share/FlightGear/Textures.high/Runway/pa_L.rgb
 share/FlightGear/Textures.high/Runway/pa_R.rgb
 share/FlightGear/Textures.high/Runway/pa_aim.rgb
+share/FlightGear/Textures.high/Runway/pa_centerline.rgb
+share/FlightGear/Textures.high/Runway/pa_dspl_arrows.rgb
+share/FlightGear/Textures.high/Runway/pa_dspl_thresh.rgb
 share/FlightGear/Textures.high/Runway/pa_rest.rgb
 share/FlightGear/Textures.high/Runway/pa_taxiway.rgb
 share/FlightGear/Textures.high/Runway/pa_threshold.rgb
@@ -1590,6 +2413,9 @@ share/FlightGear/Textures.high/Runway/pc_C.rgb
 share/FlightGear/Textures.high/Runway/pc_L.rgb
 share/FlightGear/Textures.high/Runway/pc_R.rgb
 share/FlightGear/Textures.high/Runway/pc_aim.rgb
+share/FlightGear/Textures.high/Runway/pc_centerline.rgb
+share/FlightGear/Textures.high/Runway/pc_dspl_arrows.rgb
+share/FlightGear/Textures.high/Runway/pc_dspl_thresh.rgb
 share/FlightGear/Textures.high/Runway/pc_rest.rgb
 share/FlightGear/Textures.high/Runway/pc_taxiway.rgb
 share/FlightGear/Textures.high/Runway/pc_threshold.rgb
@@ -1599,8 +2425,14 @@ share/FlightGear/Textures.high/Runway/pc_tz_one_b.rgb
 share/FlightGear/Textures.high/Runway/pc_tz_three.rgb
 share/FlightGear/Textures.high/Runway/pc_tz_two_a.rgb
 share/FlightGear/Textures.high/Runway/pc_tz_two_b.rgb
+share/FlightGear/Textures.high/Sky.save/cirrus.rgba
+share/FlightGear/Textures.high/Sky.save/mostlycloudy.rgba
+share/FlightGear/Textures.high/Sky.save/mostlysunny.rgba
+share/FlightGear/Textures.high/Sky.save/overcast.rgb
+share/FlightGear/Textures.high/Terrain/builtup.rgb
 share/FlightGear/Textures.high/Terrain/irrcrop.rgb
 share/FlightGear/Textures.high/Terrain/mixedcrop.rgb
+share/FlightGear/Textures/.xvpics/Splash4.rgb
 share/FlightGear/Textures/Credits
 share/FlightGear/Textures/Runway/dirt_rwy.rgb
 share/FlightGear/Textures/Runway/grass_rwy.rgb
@@ -1632,6 +2464,9 @@ share/FlightGear/Textures/Runway/pa_C.rgb
 share/FlightGear/Textures/Runway/pa_L.rgb
 share/FlightGear/Textures/Runway/pa_R.rgb
 share/FlightGear/Textures/Runway/pa_aim.rgb
+share/FlightGear/Textures/Runway/pa_centerline.rgb
+share/FlightGear/Textures/Runway/pa_dspl_arrows.rgb
+share/FlightGear/Textures/Runway/pa_dspl_thresh.rgb
 share/FlightGear/Textures/Runway/pa_rest.rgb
 share/FlightGear/Textures/Runway/pa_taxiway.rgb
 share/FlightGear/Textures/Runway/pa_threshold.rgb
@@ -1667,6 +2502,9 @@ share/FlightGear/Textures/Runway/pc_C.rgb
 share/FlightGear/Textures/Runway/pc_L.rgb
 share/FlightGear/Textures/Runway/pc_R.rgb
 share/FlightGear/Textures/Runway/pc_aim.rgb
+share/FlightGear/Textures/Runway/pc_centerline.rgb
+share/FlightGear/Textures/Runway/pc_dspl_arrows.rgb
+share/FlightGear/Textures/Runway/pc_dspl_thresh.rgb
 share/FlightGear/Textures/Runway/pc_rest.rgb
 share/FlightGear/Textures/Runway/pc_taxiway.rgb
 share/FlightGear/Textures/Runway/pc_threshold.rgb
@@ -1681,13 +2519,19 @@ share/FlightGear/Textures/Sky/cirrus.rgba
 share/FlightGear/Textures/Sky/cloud.rgba
 share/FlightGear/Textures/Sky/few.rgba
 share/FlightGear/Textures/Sky/halo.rgba
+share/FlightGear/Textures/Sky/halo.rgba.old
 share/FlightGear/Textures/Sky/moon.rgba
+share/FlightGear/Textures/Sky/mostlysunny.rgba.save
 share/FlightGear/Textures/Sky/overcast.rgb
 share/FlightGear/Textures/Sky/scattered.rgba
 share/FlightGear/Textures/Splash1.rgb
 share/FlightGear/Textures/Splash2.rgb
 share/FlightGear/Textures/Splash3.rgb
+share/FlightGear/Textures/Splash4.rgb
+share/FlightGear/Textures/Splash5.rgb
+share/FlightGear/Textures/Terrain/.xvpics/wash.rgb
 share/FlightGear/Textures/Terrain/Town.rgb
+share/FlightGear/Textures/Terrain/airport.rgb
 share/FlightGear/Textures/Terrain/asphault.rgb
 share/FlightGear/Textures/Terrain/builtup.rgb
 share/FlightGear/Textures/Terrain/cropgrass.rgb
@@ -1709,12 +2553,15 @@ share/FlightGear/Textures/Terrain/mixedforest.rgb
 share/FlightGear/Textures/Terrain/resgrid.rgb
 share/FlightGear/Textures/Terrain/rock.rgb
 share/FlightGear/Textures/Terrain/rocks-desert.rgb
+share/FlightGear/Textures/Terrain/sand.rgb
 share/FlightGear/Textures/Terrain/shrub.rgb
 share/FlightGear/Textures/Terrain/snow.rgb
 share/FlightGear/Textures/Terrain/tidal.rgb
 share/FlightGear/Textures/Terrain/unknown.rgb
+share/FlightGear/Textures/Terrain/wash.rgb
 share/FlightGear/Textures/Terrain/water-lake.rgb
 share/FlightGear/Textures/Terrain/water.rgb
+share/FlightGear/Textures/splash.rgb
 share/FlightGear/Thanks
 share/FlightGear/Timezone/Africa/Abidjan
 share/FlightGear/Timezone/Africa/Accra
@@ -3266,6 +4113,7 @@ share/FlightGear/Translations/strings-it.xml
 share/FlightGear/Translations/strings-nl.xml
 share/FlightGear/Translations/strings-pl-win.xml
 share/FlightGear/Translations/strings-pl.xml
+share/FlightGear/Weather/MetarObs.txt.test
 share/FlightGear/Weather/MetarStations
 share/FlightGear/gui/dialogs/air.xml
 share/FlightGear/gui/dialogs/aircraft.xml
@@ -3278,7 +4126,11 @@ share/FlightGear/gui/dialogs/location.xml
 share/FlightGear/gui/dialogs/logging.xml
 share/FlightGear/gui/dialogs/presets.xml
 share/FlightGear/gui/dialogs/radios.xml
+share/FlightGear/gui/dialogs/rendering.xml
+share/FlightGear/gui/dialogs/replay.xml
 share/FlightGear/gui/dialogs/system-failures.xml
+share/FlightGear/gui/dialogs/timeofday.xml
+share/FlightGear/gui/dialogs/weather.xml
 share/FlightGear/gui/dialogs/winds.xml
 share/FlightGear/gui/menubar.xml
 share/FlightGear/joysticks.xml
@@ -3292,6 +4144,7 @@ share/FlightGear/options.xml
 share/FlightGear/preferences.xml
 share/FlightGear/runfgfs.bat
 share/FlightGear/version
+@dirrm share/FlightGear/man
 @dirrm share/FlightGear/gui/dialogs
 @dirrm share/FlightGear/gui
 @dirrm share/FlightGear/Weather
@@ -3356,10 +4209,16 @@ share/FlightGear/version
 @dirrm share/FlightGear/Timezone/America
 @dirrm share/FlightGear/Timezone/Africa
 @dirrm share/FlightGear/Timezone
+@dirrm share/FlightGear/Textures/Terrain/.xvpics
 @dirrm share/FlightGear/Textures/Terrain
 @dirrm share/FlightGear/Textures/Sky
 @dirrm share/FlightGear/Textures/Runway
+@dirrm share/FlightGear/Textures/Panel
+@dirrm share/FlightGear/Textures/.xvpics
 @dirrm share/FlightGear/Textures.high/Terrain
+@dirrm share/FlightGear/Textures.high/Sky.save
+@dirrm share/FlightGear/Textures.high/Sky
+@dirrm share/FlightGear/Textures.high/Runway/.xvpics
 @dirrm share/FlightGear/Textures.high/Runway
 @dirrm share/FlightGear/Textures.high
 @dirrm share/FlightGear/Textures
@@ -3371,6 +4230,7 @@ share/FlightGear/version
 @dirrm share/FlightGear/Protocol
 @dirrm share/FlightGear/Navaids
 @dirrm share/FlightGear/Models/Trees
+@dirrm share/FlightGear/Models/Textures
 @dirrm share/FlightGear/Models/Geometry
 @dirrm share/FlightGear/Models/Fauna
 @dirrm share/FlightGear/Models/Buildings
@@ -3379,6 +4239,10 @@ share/FlightGear/version
 @dirrm share/FlightGear/Models/3ds
 @dirrm share/FlightGear/Models
 @dirrm share/FlightGear/Lighting
+@dirrm share/FlightGear/Instruments/Default/Textures
+@dirrm share/FlightGear/Instruments/Default
+@dirrm share/FlightGear/Instruments
+@dirrm share/FlightGear/Input/Joysticks/ThrustMaster
 @dirrm share/FlightGear/Input/Joysticks/Saitek
 @dirrm share/FlightGear/Input/Joysticks/Microsoft
 @dirrm share/FlightGear/Input/Joysticks/Logitech
@@ -3404,14 +4268,32 @@ share/FlightGear/version
 @dirrm share/FlightGear/Docs/source/FlightGearSchool/pics/app_charts
 @dirrm share/FlightGear/Docs/source/FlightGearSchool/pics
 @dirrm share/FlightGear/Docs/source/FlightGearSchool/en
+@dirrm share/FlightGear/Docs/source/FlightGearSchool/de
 @dirrm share/FlightGear/Docs/source/FlightGearSchool
 @dirrm share/FlightGear/Docs/source
 @dirrm share/FlightGear/Docs/Serial
 @dirrm share/FlightGear/Docs/InstallGuide/html
 @dirrm share/FlightGear/Docs/InstallGuide
+@dirrm share/FlightGear/Docs-mini
 @dirrm share/FlightGear/Docs
+@dirrm share/FlightGear/Data/Terrain
+@dirrm share/FlightGear/Data/SkyClouds
+@dirrm share/FlightGear/Data/SkyBoxes
+@dirrm share/FlightGear/Data/Models/PittsBiplane
+@dirrm share/FlightGear/Data/Models
+@dirrm share/FlightGear/Data
+@dirrm share/FlightGear/Atlas
 @dirrm share/FlightGear/Astro
 @dirrm share/FlightGear/Airports
+@dirrm share/FlightGear/Aircraft/yf23/Systems
+@dirrm share/FlightGear/Aircraft/yf23/Sounds/Samples
+@dirrm share/FlightGear/Aircraft/yf23/Sounds
+@dirrm share/FlightGear/Aircraft/yf23/Panels/Textures
+@dirrm share/FlightGear/Aircraft/yf23/Panels/Instruments/Textures
+@dirrm share/FlightGear/Aircraft/yf23/Panels/Instruments
+@dirrm share/FlightGear/Aircraft/yf23/Panels
+@dirrm share/FlightGear/Aircraft/yf23/Models
+@dirrm share/FlightGear/Aircraft/yf23/Huds
 @dirrm share/FlightGear/Aircraft/yf23
 @dirrm share/FlightGear/Aircraft/x24b
 @dirrm share/FlightGear/Aircraft/wrightFlyer1903/Sounds/uiuc
@@ -3422,6 +4304,15 @@ share/FlightGear/version
 @dirrm share/FlightGear/Aircraft/wrightFlyer1903
 @dirrm share/FlightGear/Aircraft/ufo/Models
 @dirrm share/FlightGear/Aircraft/ufo
+@dirrm share/FlightGear/Aircraft/tsr2/Systems
+@dirrm share/FlightGear/Aircraft/tsr2/Sounds/Samples
+@dirrm share/FlightGear/Aircraft/tsr2/Sounds
+@dirrm share/FlightGear/Aircraft/tsr2/Panels/Textures
+@dirrm share/FlightGear/Aircraft/tsr2/Panels/Instruments/Textures
+@dirrm share/FlightGear/Aircraft/tsr2/Panels/Instruments
+@dirrm share/FlightGear/Aircraft/tsr2/Panels
+@dirrm share/FlightGear/Aircraft/tsr2/Models
+@dirrm share/FlightGear/Aircraft/tsr2/Huds
 @dirrm share/FlightGear/Aircraft/tsr2
 @dirrm share/FlightGear/Aircraft/t6texan2/Sounds
 @dirrm share/FlightGear/Aircraft/t6texan2/Models
@@ -3433,7 +4324,14 @@ share/FlightGear/version
 @dirrm share/FlightGear/Aircraft/sopwithCamel/Models
 @dirrm share/FlightGear/Aircraft/sopwithCamel
 @dirrm share/FlightGear/Aircraft/shuttle
+@dirrm share/FlightGear/Aircraft/sgs126/Panels/Textures
+@dirrm share/FlightGear/Aircraft/sgs126/Panels
+@dirrm share/FlightGear/Aircraft/sgs126/Instruments/Textures
+@dirrm share/FlightGear/Aircraft/sgs126/Instruments
+@dirrm share/FlightGear/Aircraft/sgs126
 @dirrm share/FlightGear/Aircraft/seahawk
+@dirrm share/FlightGear/Aircraft/paraglider/Models
+@dirrm share/FlightGear/Aircraft/paraglider
 @dirrm share/FlightGear/Aircraft/pa28-161/Models
 @dirrm share/FlightGear/Aircraft/pa28-161
 @dirrm share/FlightGear/Aircraft/p51d/Sounds
@@ -3447,16 +4345,28 @@ share/FlightGear/version
 @dirrm share/FlightGear/Aircraft/marchetti
 @dirrm share/FlightGear/Aircraft/j3cub/Models
 @dirrm share/FlightGear/Aircraft/j3cub
+@dirrm share/FlightGear/Aircraft/j22/Models
+@dirrm share/FlightGear/Aircraft/j22/Huds
+@dirrm share/FlightGear/Aircraft/j22
+@dirrm share/FlightGear/Aircraft/harrier
+@dirrm share/FlightGear/Aircraft/fokker50/Models
+@dirrm share/FlightGear/Aircraft/fokker50
+@dirrm share/FlightGear/Aircraft/fokker100/Models
+@dirrm share/FlightGear/Aircraft/fokker100
 @dirrm share/FlightGear/Aircraft/fkdr1/Sounds
+@dirrm share/FlightGear/Aircraft/fkdr1/Models
 @dirrm share/FlightGear/Aircraft/fkdr1
 @dirrm share/FlightGear/Aircraft/f16/Panels/Textures
 @dirrm share/FlightGear/Aircraft/f16/Panels
+@dirrm share/FlightGear/Aircraft/f16/Models
 @dirrm share/FlightGear/Aircraft/f16/Hud
 @dirrm share/FlightGear/Aircraft/f16
 @dirrm share/FlightGear/Aircraft/f15
+@dirrm share/FlightGear/Aircraft/f104/Models
 @dirrm share/FlightGear/Aircraft/f104
 @dirrm share/FlightGear/Aircraft/dc3/Models
 @dirrm share/FlightGear/Aircraft/dc3
+@dirrm share/FlightGear/Aircraft/ch47
 @dirrm share/FlightGear/Aircraft/c310u3a/Models
 @dirrm share/FlightGear/Aircraft/c310u3a
 @dirrm share/FlightGear/Aircraft/c310/Models
@@ -3466,18 +4376,33 @@ share/FlightGear/version
 @dirrm share/FlightGear/Aircraft/c182
 @dirrm share/FlightGear/Aircraft/c172x
 @dirrm share/FlightGear/Aircraft/c172r
+@dirrm share/FlightGear/Aircraft/c172p/Models/labels
 @dirrm share/FlightGear/Aircraft/c172p/Models
 @dirrm share/FlightGear/Aircraft/c172p
 @dirrm share/FlightGear/Aircraft/c172/Panels/Textures
 @dirrm share/FlightGear/Aircraft/c172/Panels
 @dirrm share/FlightGear/Aircraft/c172/Models
+@dirrm share/FlightGear/Aircraft/c172/Instruments.high/Textures
+@dirrm share/FlightGear/Aircraft/c172/Instruments.high
 @dirrm share/FlightGear/Aircraft/c172
+@dirrm share/FlightGear/Aircraft/bo105/Models
+@dirrm share/FlightGear/Aircraft/bo105
+@dirrm share/FlightGear/Aircraft/bell206
 @dirrm share/FlightGear/Aircraft/beech99/Sounds/uiuc
 @dirrm share/FlightGear/Aircraft/beech99/Sounds
 @dirrm share/FlightGear/Aircraft/beech99/Models/uiuc/beech99
 @dirrm share/FlightGear/Aircraft/beech99/Models/uiuc
 @dirrm share/FlightGear/Aircraft/beech99/Models
 @dirrm share/FlightGear/Aircraft/beech99
+@dirrm share/FlightGear/Aircraft/b52/Systems
+@dirrm share/FlightGear/Aircraft/b52/Sounds/Samples
+@dirrm share/FlightGear/Aircraft/b52/Sounds
+@dirrm share/FlightGear/Aircraft/b52/Panels/Textures
+@dirrm share/FlightGear/Aircraft/b52/Panels/Instruments/Textures
+@dirrm share/FlightGear/Aircraft/b52/Panels/Instruments
+@dirrm share/FlightGear/Aircraft/b52/Panels
+@dirrm share/FlightGear/Aircraft/b52/Models
+@dirrm share/FlightGear/Aircraft/b52/Huds
 @dirrm share/FlightGear/Aircraft/b52
 @dirrm share/FlightGear/Aircraft/asw20/Sounds/uiuc
 @dirrm share/FlightGear/Aircraft/asw20/Sounds
@@ -3485,6 +4410,17 @@ share/FlightGear/version
 @dirrm share/FlightGear/Aircraft/asw20/Models/uiuc
 @dirrm share/FlightGear/Aircraft/asw20/Models
 @dirrm share/FlightGear/Aircraft/asw20
+@dirrm share/FlightGear/Aircraft/as350
+@dirrm share/FlightGear/Aircraft/an225/Systems
+@dirrm share/FlightGear/Aircraft/an225/Sounds/Samples
+@dirrm share/FlightGear/Aircraft/an225/Sounds
+@dirrm share/FlightGear/Aircraft/an225/Panels/Textures
+@dirrm share/FlightGear/Aircraft/an225/Panels/Instruments/Textures
+@dirrm share/FlightGear/Aircraft/an225/Panels/Instruments
+@dirrm share/FlightGear/Aircraft/an225/Panels
+@dirrm share/FlightGear/Aircraft/an225/Models
+@dirrm share/FlightGear/Aircraft/an225/Huds
+@dirrm share/FlightGear/Aircraft/an225
 @dirrm share/FlightGear/Aircraft/airwaveXtreme150/Sounds/uiuc
 @dirrm share/FlightGear/Aircraft/airwaveXtreme150/Sounds
 @dirrm share/FlightGear/Aircraft/airwaveXtreme150/Models/uiuc/hgldr-cs
@@ -3495,6 +4431,15 @@ share/FlightGear/version
 @dirrm share/FlightGear/Aircraft/a4/Sounds
 @dirrm share/FlightGear/Aircraft/a4/Models
 @dirrm share/FlightGear/Aircraft/a4
+@dirrm share/FlightGear/Aircraft/a10/Systems
+@dirrm share/FlightGear/Aircraft/a10/Sounds/Samples
+@dirrm share/FlightGear/Aircraft/a10/Sounds
+@dirrm share/FlightGear/Aircraft/a10/Panels/Textures
+@dirrm share/FlightGear/Aircraft/a10/Panels/Instruments/Textures
+@dirrm share/FlightGear/Aircraft/a10/Panels/Instruments
+@dirrm share/FlightGear/Aircraft/a10/Panels
+@dirrm share/FlightGear/Aircraft/a10/Models
+@dirrm share/FlightGear/Aircraft/a10/Huds
 @dirrm share/FlightGear/Aircraft/a10
 @dirrm share/FlightGear/Aircraft/X15/Panels/Textures
 @dirrm share/FlightGear/Aircraft/X15/Panels
@@ -3529,8 +4474,13 @@ share/FlightGear/version
 @dirrm share/FlightGear/Aircraft/Instruments-3d
 @dirrm share/FlightGear/Aircraft/Instruments
 @dirrm share/FlightGear/Aircraft/Generic
+@dirrm share/FlightGear/Aircraft/A320/Models
+@dirrm share/FlightGear/Aircraft/A320
 @dirrm share/FlightGear/Aircraft/747/Models
 @dirrm share/FlightGear/Aircraft/747
+@dirrm share/FlightGear/Aircraft/737/Panels
+@dirrm share/FlightGear/Aircraft/737/Instruments/Textures
+@dirrm share/FlightGear/Aircraft/737/Instruments
 @dirrm share/FlightGear/Aircraft/737
 @dirrm share/FlightGear/Aircraft-yasim
 @dirrm share/FlightGear/Aircraft-uiuc/models/x15
@@ -3546,6 +4496,7 @@ share/FlightGear/version
 @dirrm share/FlightGear/Aircraft-uiuc/models/cessna310
 @dirrm share/FlightGear/Aircraft-uiuc/models/cessna172
 @dirrm share/FlightGear/Aircraft-uiuc/models/boeing747
+@dirrm share/FlightGear/Aircraft-uiuc/models/beech99
 @dirrm share/FlightGear/Aircraft-uiuc/models
 @dirrm share/FlightGear/Aircraft-uiuc/X15
 @dirrm share/FlightGear/Aircraft-uiuc/TwinOtterWingIce
