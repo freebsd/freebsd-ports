@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	teapot
-PORTVERSION=	1.05
+PORTVERSION=	1.06
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.moria.de/~michael/teapot/
 
@@ -20,10 +20,9 @@ MAN1=		teapot.1
 
 EXAMPLES=	examples/asqrt examples/asqrt.README examples/blink \
 		examples/counter examples/counter.README examples/life \
-		examples/life.README examples/sqrt examples/sqrt.README
+		examples/life.README examples/graphtest.sh examples/sqrt \
+		examples/sqrt.README
 PORTDOCS=	doc/teapot.doc doc/teapot.html doc/teapot.ps
-
-EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}
 
 post-build:
 	@cd ${WRKSRC}/doc && ${MAKE} teapot.doc teapot.html teapot.ps
