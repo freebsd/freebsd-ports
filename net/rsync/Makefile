@@ -17,12 +17,18 @@ MASTER_SITES=	ftp://samba.anu.edu.au/pub/rsync/  \
 
 MAINTAINER=	obraun@FreeBSD.org
 
+.if defined(WITH_POPT_PORT)
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
+.endif
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
+.if defined(WITH_POPT_PORT)
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+.else
+CONFIGURE_ARGS=	--with-included-popt
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -37,12 +43,19 @@ EXTRA_PATCHES=	${FILESDIR}/ssh-patch-*
 .endif
 
 .if ${OSVERSION} >= 400014
-CONFIGURE_ARGS=	--disable-debug --enable-ipv6
+CONFIGURE_ARGS+=	--disable-debug --enable-ipv6
 .else
-CONFIGURE_ARGS=	--disable-debug --disable-ipv6
+CONFIGURE_ARGS+=	--disable-debug --disable-ipv6
 .endif
 MAN1=		rsync.1
 MAN5=		rsyncd.conf.5
+
+.if !defined(WITH_POPT_PORT)
+pre-everything::
+	@${ECHO_CMD} "rsync comes with an included version of popt."
+	@${ECHO_CMD} "To build rsync with devel/popt instead,"
+	@${ECHO_CMD} "hit Ctrl-C now and define WITH_POPT_PORT"
+.endif
 
 pre-configure:
 	@${REINPLACE_CMD} -e 's:/etc/:${PREFIX}/etc/:g'  \
