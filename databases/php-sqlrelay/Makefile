@@ -35,14 +35,12 @@ CONFIGURE_ARGS=	${SQLRELAY_CONFIGURE_ARGS} \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
-BROKEN=		"Configure fails on amd64"
-.endif
-
 do-extract:
 	${MKDIR} ${WRKDIR}
 	${LN} -fs `${SQLRELAY_WRKSRC_CMD}` ${WRKSRC}
 	${RM} -f ${WRKSRC}/config.cache
+	${CP} ${TEMPLATES}/config.sub ${WRKSRC}
+	${CP} ${TEMPLATES}/config.guess ${WRKSRC}
 
 pre-install:
 	${MKDIR} `php-config --extension-dir`

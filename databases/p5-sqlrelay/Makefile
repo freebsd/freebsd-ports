@@ -41,6 +41,8 @@ do-extract:
 	${MKDIR} ${WRKDIR}
 	${LN} -fs `${SQLRELAY_WRKSRC_CMD}` ${WRKSRC}
 	${RM} -f ${WRKSRC}/config.cache
+	${CP} ${TEMPLATES}/config.sub ${WRKSRC}
+	${CP} ${TEMPLATES}/config.guess ${WRKSRC}
 
 do-build:
 	for dir in ${WRKSRC}/src/api/perl/*; do \
