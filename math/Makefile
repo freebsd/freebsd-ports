@@ -23,6 +23,7 @@
     SUBDIR += dcdflib
     SUBDIR += djbfft
     SUBDIR += eispack
+    SUBDIR += eukleides
     SUBDIR += eval
     SUBDIR += femlab
     SUBDIR += fftpack
