@@ -17,6 +17,8 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
+#include <getopt.h>
+#include <errno.h>
 
 #define BLKSIZE 1024
 
@@ -35,53 +37,63 @@ int	f;
 int main(argc, argv)
 int argc; char **argv;
 {
+	struct addrinfo hints, *res, *res0;
+	char *cause = NULL;
+	int ch, proto, error;
 	register int i;
 
-	if (argc!=3)
-	{
-		fprintf(stderr, "usage: tcpblast destination nblkocks\n");
-		fprintf(stderr, "blocksize: %d bytes\n", BLKSIZE);
+	memset(&hints, 0, sizeof(hints));
+	hints.ai_family = PF_UNSPEC;
+	hints.ai_socktype = SOCK_STREAM;
+
+	while ((ch = getopt(argc, argv, "46")) != -1) {
+		switch (ch) {
+		case '4':
+			hints.ai_family = PF_INET;
+			break;
+		case '6':
+			hints.ai_family = PF_INET6;
+			break;
+		}
+	}
+	argc -= optind;
+	argv += optind;
+	if (argc != 2) {
+		fprintf(stderr,
+			"usage: tcpblast [-4] [-6] destination nblkocks\n"
+			"blocksize: %d bytes %d\n", BLKSIZE, argc);
 		exit(1);
 	}
 
-	nblocks = atoi(argv[2]);
-	if (nblocks<=1 || nblocks>=10000)
-	{
+	nblocks = atoi(argv[1]);
+	if (nblocks<=1 || nblocks>=10000) {
 		fprintf(stderr, "tcpblast: 1 < nblocks <= 10000 \n");
 		exit(1);
 	}
 
-	bzero((char *)&sock_in, sizeof (sock_in));
-	sock_in.sin_family = AF_INET;
-	f = socket(AF_INET, SOCK_STREAM, 0);
-	if (f < 0) {
-		perror("tcpblast: socket");
-		exit(3);
-	}
-	if (bind(f, (struct sockaddr*) &sock_in, sizeof (sock_in)) < 0) {
-		perror("tcpblast: bind");
-		exit(1);
-	}
-
-	host = gethostbyname(argv[1]);
-	if (host) {
-		sock_in.sin_family = host->h_addrtype;
-		bcopy(host->h_addr, &sock_in.sin_addr, host->h_length);
-	} else {
-		sock_in.sin_family = AF_INET;
-		sock_in.sin_addr.s_addr = inet_addr(argv[1]);
-		if (sock_in.sin_addr.s_addr == -1) {
-			fprintf(stderr, "tcpblast: %s unknown host\n", argv[1]);
-			exit(1);
+	error = getaddrinfo(argv[0], "discard", &hints, &res0);
+	if (error)
+		errx(1, "%s", gai_strerror(error));
+	f = -1;
+	cause = "no addresses";
+	errno = EADDRNOTAVAIL;
+	for (res = res0; res; res = res->ai_next) {
+		f = socket(res->ai_family, res->ai_socktype, res->ai_protocol);
+		if (f < 0) {
+			cause = "socket";
+			continue;
 		}
+		if (connect(f, res->ai_addr, res->ai_addrlen) < 0) {
+			cause = "connect";
+			close(f);
+			f = -1;
+			continue;
+		}
+		break;
 	}
-	sock_in.sin_port = htons(9);
-
-	if (connect(f, (struct sockaddr*) &sock_in, sizeof(sock_in)) <0)
-	{
-		perror("tcpblast connect:");
-		exit(1);
-	}
+	if (f < 0)
+		err(1, cause);
+	freeaddrinfo(res);
 
 	if (gettimeofday(&ti, &tiz) < 0)
 	{

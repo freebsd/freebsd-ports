@@ -7,8 +7,8 @@
 # port's source files are in src dir in portball
 
 PORTNAME=	tcpblast
-PORTVERSION=	1.0
-CATEGORIES=	benchmarks net
+PORTVERSION=	1.1
+CATEGORIES=	benchmarks net ipv6
 DISTFILES=	# none
 
 MAINTAINER=	ports@FreeBSD.org
