@@ -3,7 +3,7 @@
 # Date created:		27 September 1997
 # Whom:			winter@jurai.net
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/09/27 22:34:20 joerg Exp $
 #
 
 DISTNAME=	setquota-0.1
@@ -13,5 +13,8 @@ MASTER_SITES=	ftp://ftp.jurai.net/users/winter/
 MAINTAINER=     winter@jurai.net
 
 WRKSRC=		${WRKDIR}/setquota/
+
+MAN8=		getquota.8 setquota.8
+MANCOMPRESSED=	yes
 
 .include <bsd.port.mk>

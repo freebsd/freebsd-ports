@@ -3,7 +3,7 @@
 # Date created:		14 March 97
 # Whom:			Lars Koeller <Lars.Koeller@Uni-Bielefeld.DE>
 #
-# $Id: Makefile,v 1.17 1998/09/30 19:32:35 gj Exp $
+# $Id: Makefile,v 1.18 1998/10/09 10:01:32 obrien Exp $
 #
 
 DISTNAME=	xperfmon++
@@ -18,6 +18,7 @@ DISTFILES=	xperfmon++v1.1.tar.Z
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
 
 USE_IMAKE=	yes
+MAN1=		xperfmon++.1
 
 pre-configure:
 	if [ -e /usr/lib/libdevstat.a -o -e /usr/lib/aout/libdevstat.a ]; then \

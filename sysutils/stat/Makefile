@@ -3,12 +3,15 @@
 # Date created:         16 Februar 1996
 # Whom:                 wosch
 #
-# $Id: Makefile,v 1.3 1997/08/09 00:28:49 wosch Exp $
+# $Id: Makefile,v 1.4 1997/08/21 22:58:18 wosch Exp $
 
 DISTNAME=       stat-1.3
 CATEGORIES=	sysutils
 MASTER_SITES=   http://www.freebsd.org/~wosch/src/
 
 MAINTAINER=     wosch@FreeBSD.org
+
+MAN1=		stat.1
+MANCOMPRESSED=	yes
 
 .include <bsd.port.mk>
