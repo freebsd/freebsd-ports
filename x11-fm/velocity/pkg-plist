@@ -1,0 +1,45 @@
+bin/velocity
+share/gnome/applications/velocity.desktop
+share/gnome/pixmaps/velocity/advanced.png
+share/gnome/pixmaps/velocity/behavior.png
+share/gnome/pixmaps/velocity/bin.png
+share/gnome/pixmaps/velocity/desktop.png
+share/gnome/pixmaps/velocity/druid-left.png
+share/gnome/pixmaps/velocity/druid-top.png
+share/gnome/pixmaps/velocity/puzzle-piece.png
+share/gnome/pixmaps/velocity/puzzle.png
+share/gnome/pixmaps/velocity/themes.png
+share/gnome/pixmaps/velocity/velocity.png
+share/gnome/velocity/plugins/audio.so
+share/gnome/velocity/plugins/burn.so
+share/gnome/velocity/scripts/audio-to-mp3
+share/gnome/velocity/scripts/audio-to-ogg
+share/gnome/velocity/scripts/create-tarball
+share/gnome/velocity/scripts/line-word-count
+share/gnome/velocity/scripts/pdf-to-postscript
+share/gnome/velocity/scripts/postscript-to-pdf
+share/gnome/velocity/scripts/terminal-here
+share/gnome/velocity/scripts/uncompress
+share/gnome/velocity/templates/abiword-document
+share/gnome/velocity/templates/data/abiword-document
+share/gnome/velocity/templates/data/dia-document
+share/gnome/velocity/templates/data/gimp-image
+share/gnome/velocity/templates/data/gnumeric-document
+share/gnome/velocity/templates/data/html-document
+share/gnome/velocity/templates/data/shell-script
+share/gnome/velocity/templates/data/velocity-script
+share/gnome/velocity/templates/data/word-document
+share/gnome/velocity/templates/dia-document
+share/gnome/velocity/templates/gimp-image
+share/gnome/velocity/templates/gnumeric-document
+share/gnome/velocity/templates/html-document
+share/gnome/velocity/templates/plain-text
+share/gnome/velocity/templates/shell-script
+share/gnome/velocity/templates/velocity-script
+share/gnome/velocity/templates/word-document
+@dirrm share/gnome/velocity/templates/data
+@dirrm share/gnome/velocity/templates
+@dirrm share/gnome/velocity/scripts
+@dirrm share/gnome/velocity/plugins
+@dirrm share/gnome/velocity
+@dirrm share/gnome/pixmaps/velocity

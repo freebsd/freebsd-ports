@@ -1,0 +1,11 @@
+--- src/callbacks.h	Tue Nov 18 20:35:08 2003
++++ src/callbacks.orig	Tue Nov 18 20:36:27 2003
+@@ -27,7 +27,7 @@
+ #include <gnome.h>
+ #include <sys/types.h>
+ #include <signal.h>
+-#include <wait.h>
++#include <sys/wait.h>
+ #include <gnome.h>
+ #include <libgnomevfs/gnome-vfs.h>
+ #include <gtk/gtkdnd.h>

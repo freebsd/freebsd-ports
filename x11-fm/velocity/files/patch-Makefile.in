@@ -1,0 +1,29 @@
+--- Makefile.in.orig	Tue Aug 26 03:15:13 2003
++++ Makefile.in	Wed Dec 10 20:58:53 2003
+@@ -189,7 +189,7 @@
+ CONFIG_HEADER = config.h
+ CONFIG_CLEAN_FILES = velocity.spec velocity.desktop
+ DIST_SOURCES =
+-DATA = $(gnomemenu_DATA) $(velocitydoc_DATA)
++DATA = $(gnomemenu_DATA)
+ 
+ 
+ RECURSIVE_TARGETS = info-recursive dvi-recursive pdf-recursive \
+@@ -533,7 +533,7 @@
+ all-am: Makefile $(DATA) config.h
+ installdirs: installdirs-recursive
+ installdirs-am:
+-	$(mkinstalldirs) $(DESTDIR)$(gnomemenudir) $(DESTDIR)$(velocitydocdir)
++	$(mkinstalldirs) $(DESTDIR)$(gnomemenudir)
+ 
+ install: install-recursive
+ install-exec: install-exec-recursive
+@@ -575,7 +575,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-gnomemenuDATA install-velocitydocDATA
++install-data-am: install-gnomemenuDATA
+ 
+ install-exec-am:
+ 
