@@ -1,7 +1,7 @@
 #!/bin/sh
 
 outgoing_queue_time=15m
-mta=exim
+mta=sendmail
 
 case "$mta" in
 	exim)

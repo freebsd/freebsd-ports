@@ -1,8 +1,26 @@
---- ../MailScanner-install-4.32.2.orig/docs/man/MailScanner.8	Mon May 31 13:43:07 2004
-+++ docs/man/MailScanner.8	Mon Jul 12 14:21:55 2004
-@@ -1,4 +1,4 @@
--.TH "MailScanner" "8" "4.31.4" "Julian Field" "Mail"
-+.TH "MailScanner" "8" "4.32.2" "Julian Field" "Mail"
+--- ../MailScanner-install-4.32.4.orig/docs/man/MailScanner.8	Wed Jul 28 13:28:57 2004
++++ docs/man/MailScanner.8	Wed Jul 28 13:29:39 2004
+@@ -1,10 +1,10 @@
+-.TH "MailScanner" "8" "4.32.2" "Julian Field" "Mail"
++.TH "MailScanner" "8" "4.32.4" "Julian Field" "Mail"
  .SH "NAME"
  .LP 
  MailScanner \- Virus/Spam Scanner for Sendmail, Exim and Postfix
+ .SH "SYNOPSIS"
+ .LP 
+-\fBMailScanner\fR [\fIconfigfile\fR]
++\fBMailScanner\fR [\fI\-v\fR] [\fIconfigfile\fR]
+ 
+ .SH "DESCRIPTION"
+ .LP 
+@@ -24,6 +24,10 @@
+ 
+ .LP 
+ The main process then spawns \fIn\fR number of child processes. \fIn\fR is configured in [\fIconfigfile\fR] with the option "Max Children". Each process waits for messages to appear in the "Incoming Queue Dir", processes these messages and then puts them in the "Outgoing Queue Dir". You may need to adjust the configuration of your MTA (or the startup of your MTA) to make it work with MailScanner.
++
++.TP 
++\fB\-v\fR
++Prints version information for Mailscanner and all used perl\-modules.
+ 
+ .SH "MTA SETUP"
+ .LP 

@@ -1,9 +1,42 @@
---- ../MailScanner-install-4.32.2.orig/docs/man/MailScanner.8.html	Mon May 31 13:43:07 2004
-+++ docs/man/MailScanner.8.html	Mon Jul 12 14:22:05 2004
+--- ../MailScanner-install-4.32.4.orig/docs/man/MailScanner.8.html	Wed Jul 28 13:28:57 2004
++++ docs/man/MailScanner.8.html	Wed Jul 28 13:29:15 2004
 @@ -1,5 +1,5 @@
  <!-- Creator     : groff version 1.19 -->
--<!-- CreationDate: Wed May 26 14:39:52 2004 -->
-+<!-- CreationDate: Mon Jul 12 14:19:46 2004 -->
+-<!-- CreationDate: Mon Jul 12 14:19:46 2004 -->
++<!-- CreationDate: Wed Jul 28 13:28:03 2004 -->
  <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
  "http://www.w3.org/TR/html4/loose.dtd">
  <html>
+@@ -39,7 +39,8 @@
+ <tr valign="top" align="left">
+ <td width="11%"></td>
+ <td width="89%">
+-<p><b>MailScanner</b> [<i>configfile</i>]</p>
++<p><b>MailScanner</b> [<i>&minus;v</i>]
++[<i>configfile</i>]</p>
+ </td>
+ </table>
+ <a name="DESCRIPTION"></a>
+@@ -70,6 +71,22 @@
+ the &quot;Outgoing Queue Dir&quot;. You may need to adjust
+ the configuration of your MTA (or the startup of your MTA)
+ to make it work with MailScanner.</p>
++</td>
++</table>
++<!-- TABS -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="4" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="3%">
++
++<p><b>&minus;v</b></p>
++</td>
++<td width="8%"></td>
++<td width="78%">
++
++<p>Prints version information for Mailscanner and all used
++perl&minus;modules.</p>
+ </td>
+ </table>
+ <a name="MTA SETUP"></a>
