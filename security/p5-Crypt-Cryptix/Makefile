@@ -8,7 +8,9 @@
 PORTNAME=	Cryptix
 PORTVERSION=	1.16
 CATEGORIES=	security perl5
-MASTER_SITES=	http://www.cryptix.org/dist/
+MASTER_SITES=	http://www.ntua.gr/cryptix/dist/ \
+		ftp://opensores.thebunker.net/pub/mirrors/cryptix/master.cryptix.org/dist/ \
+		http://www.cypherpunks.to/~cryptix/dist/
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
