@@ -1,0 +1,148 @@
+*** Makefile~	Thu Nov 13 23:49:08 1997
+--- Makefile	Wed Dec  3 00:48:04 1997
+***************
+*** 11,19 ****
+  HAVE_KDE=1
+  
+! QTDIR	= /usr/lib/qt
+! X11DIR	= /usr/X11
+  
+  # Needed only if you have KDE, otherwise leave it alone
+! KDEDIR	= /opt/kde
+  
+  # Uncomment, if you need debug info in the prog.
+--- 11,19 ----
+  HAVE_KDE=1
+  
+! QTDIR	= $(X11BASE)
+! X11DIR	= $(X11BASE)
+  
+  # Needed only if you have KDE, otherwise leave it alone
+! KDEDIR	= $(PREFIX)
+  
+  # Uncomment, if you need debug info in the prog.
+***************
+*** 24,28 ****
+  SHELL   = /bin/sh
+  CC	= gcc
+! MOC	= /usr/bin/moc
+  install = /usr/bin/install -c
+  
+--- 24,28 ----
+  SHELL   = /bin/sh
+  CC	= gcc
+! MOC	= $(X11BASE)/bin/moc
+  install = /usr/bin/install -c
+  
+***************
+*** 31,35 ****
+  X11LIBDIR	= $(X11DIR)/lib
+  X11INCDIR	= $(X11DIR)/include
+! QTINCDIR	= $(QTDIR)/include
+  QTLIBDIR	= $(QTDIR)/lib
+  KDEINCDIR	= $(KDEDIR)/include 
+--- 31,35 ----
+  X11LIBDIR	= $(X11DIR)/lib
+  X11INCDIR	= $(X11DIR)/include
+! QTINCDIR	= $(QTDIR)/include/X11/qt
+  QTLIBDIR	= $(QTDIR)/lib
+  KDEINCDIR	= $(KDEDIR)/include 
+***************
+*** 43,66 ****
+  INSTALL_DIR_PRIVATE = $(install) -d -m 0700
+  
+- ifdef HAVE_KDE
+  BINDIR = $(KDEDIR)/bin
+  DATADIR = $(KDEDIR)/share/apps/ktamaga
+  HELPDIR = $(KDEDIR)/share/doc/HTML/default/ktamaga
+- else
+- 
+- # If you compile the X11-only (non-KDE) version see these:
+- BINDIR	= /usr/X11/bin
+- # the DATADIR is still hardcoded in tamaga.h, so take care if you change it
+- DATADIR	= /usr/lib/X11/tamaga
+- HELPDIR = /usr/doc/tamaga
+- endif
+  
+  ###########################################################
+  
+- ifdef HAVE_KDE
+  KINC	= -I $(KDEINCDIR)
+  KLIB	= -L $(KDELIBDIR) -lkdecore -lkdeui -lXext
+  KDEF	= -DUSEKDE
+- endif
+  
+  INCLUDES	= -I $(QTINCDIR) -I $(X11INCDIR) $(KINC)
+--- 43,55 ----
+***************
+*** 70,74 ****
+  # maybe -DSTDC_HEADERS needed instead of -DHAVE_CONFIG_H
+  
+! CFLAGS	= $(DEBUG_FL) -O2 -fno-strength-reduce -Wall -W $(INCLUDES) $(DEFINES)
+  LFLAGS  = $(DEBUG_FL) $(LIBS)
+  
+--- 59,63 ----
+  # maybe -DSTDC_HEADERS needed instead of -DHAVE_CONFIG_H
+  
+! CFLAGS	= $(DEBUG_FL) -O2 -fno-strength-reduce -Wall -W $(INCLUDES) $(DEFINES) -DX11BASE=\"$(X11BASE)\"
+  LFLAGS  = $(DEBUG_FL) $(LIBS)
+  
+***************
+*** 84,92 ****
+  SRCMETA =	mlwin.cpp mconf.cpp mconfData.cpp mtlcd.cpp
+  OBJMETA =	mlwin.o mconf.o mconfData.o mtlcd.o
+- ifdef HAVE_KDE
+  TARGET	=	ktamaga
+- else
+- TARGET	=	xtamaga
+- endif
+  
+  ####### Implicit rules
+--- 73,77 ----
+***************
+*** 122,134 ****
+  
+  install: $(TARGET)
+- ifdef HAVE_KDE
+  	@echo "--------------------------------------------"
+  	@echo "       Installing KTamaga, for KDE"
+  	@echo "--------------------------------------------"
+- else
+- 	@echo "--------------------------------------------"
+- 	@echo "       Installing xTamaga, fot X-Win"
+- 	@echo "--------------------------------------------"
+- endif
+  	$(INSTALL_DIR) $(BINDIR)
+  	$(INSTALL) $(TARGET) $(BINDIR)
+--- 107,113 ----
+***************
+*** 137,141 ****
+  	$(INSTALL_DATA) HTMLdoc/* $(HELPDIR)
+  
+- ifdef HAVE_KDE
+  	$(INSTALL_DIR) $(KDEDIR)/share/applnk/Games
+  	$(INSTALL_DATA) KTamaga.kdelnk $(KDEDIR)/share/applnk/Games
+--- 116,119 ----
+***************
+*** 143,147 ****
+  	$(INSTALL_DIR) $(KDEDIR)/share/icons
+  	$(INSTALL_DATA) ktamaga.xpm $(KDEDIR)/share/icons
+- endif
+  
+  	$(INSTALL_DIR) $(DATADIR)
+--- 121,124 ----
+** tamaga.h~	Thu Nov 13 23:55:28 1997
+--- tamaga.h	Thu Nov 13 23:56:18 1997
+***************
+*** 28,32 ****
+  
+  // The Data dir for the X-only version
+! #define XDATPATH	"/usr/lib/X11/tamaga"
+  
+  //------------------------------------
+--- 28,32 ----
+  
+  // The Data dir for the X-only version
+! #define XDATPATH	X11BASE "/lib/X11/tamaga"
+  
+  //------------------------------------
