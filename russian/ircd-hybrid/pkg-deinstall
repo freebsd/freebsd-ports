@@ -1,0 +1,54 @@
+#! /bin/sh
+
+ask() {
+    local question default answer
+
+    question=$1
+    default=$2
+    if [ -z "${PACKAGE_BUILDING}" -a -z "${BATCH}" ]; then
+	read -p "${question} [${default}]? " answer
+    fi
+    echo ${answer:-${default}}
+}
+
+yesno() {
+    local question default answer
+
+    question=$1
+    default=$2
+    while :; do
+	answer=$(ask "${question}" "${default}")
+	case "${answer}" in
+	[Yy]*)	return 0;;
+	[Nn]*)	return 1;;
+	esac
+	echo "Please answer yes or no."
+    done
+}
+
+delete_account() {
+    local u
+
+    u=$1
+    if yesno "Do you want me to remove user \"${u}\"" n; then
+	pw userdel -n ${u}
+	echo "Done."
+    fi
+}
+
+case $2 in
+
+DEINSTALL)
+    if ps -axc | grep -qw ircd; then
+	if yesno "ircd is still running. Shall I stop it?" y; then
+	    killall ircd
+	    sleep 2
+	else
+	    echo "OK ... I hope you know what you are doing."
+	fi
+    fi
+
+    delete_account ircdru
+    ;;
+
+esac
