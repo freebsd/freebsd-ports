@@ -4,10 +4,10 @@
 # Date created:			  Tue Nov 04, 1997
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.2 1997/01/25 18:08:40 obrien Exp $
+# $Id: Makefile,v 1.1.1.1 1997/11/05 11:38:43 obrien Exp $
 #
 
-PKGNAME=	tcpshow-1.0
+DISTNAME=	tcpshow-1.0
 CATEGORIES=	net security
 MASTER_SITES=	http://www.cs.berkeley.edu/~daw/mike/
 DISTFILES=	tcpshow.c tcpshow.1
