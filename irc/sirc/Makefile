@@ -3,7 +3,7 @@
 # Date created:                      4 May 1998
 # Whom:                              Studded <Studded@dal.net>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/05/07 05:20:19 mph Exp $
 #
 # If you need SOCKS support, define SOCKS_SERVER with
 # the name of your SOCKS proxy and remove the '#'.
@@ -47,8 +47,6 @@ do-patch:
 	@${SED} 's%PREFIX\=%PREFIX\=${PREFIX}%' ${WRKSRC}/sirc-proto \
 		> ${WRKSRC}/sirc
 .endif
-
-NO_CONFIGURE=	"There is no configure or makefile in the source"
 
 do-build:
 	${CC} ${CFLAGS} ${WRKSRC}/ssfe.c -o ${WRKSRC}/ssfe -ltermcap
