@@ -20,6 +20,31 @@ IS_INTERACTIVE=	YES
 PORTDOCS=	Manual.htm tutor-jp.htm tutor-en.htm
 PLIST_FILES=	sbin/delegated etc/rc.d/delegated.sh-dist
 
+pre-everything::
+.if !defined(FORCE_BUILD) || ${FORCE_BUILD}!="YES"
+	@${ECHO_MSG} "*********************************************************************"
+	@${ECHO_MSG} "*   WARNING!     WARNING!     WARNING!     WARNING!     WARNING!    *"
+	@${ECHO_MSG} "* This program has known security problems which may allow a remote *"
+	@${ECHO_MSG} "* attacker to take control of your machine.                         *"
+	@${ECHO_MSG} "* See FreeBSD security advisory 00:04 for more information.         *"
+	@${ECHO_MSG} "*                                                                   *"
+	@${ECHO_MSG} "* It is strongly recommended that you avoid using this program.     *"
+	@${ECHO_MSG} "*                                                                   *"
+	@${ECHO_MSG} "* If you would like to use this program despite the danger, run     *"
+	@${ECHO_MSG} "* make with \`\`FORCE_BUILD=YES''                                     *"
+	@${ECHO_MSG} "*   WARNING!     WARNING!     WARNING!     WARNING!     WARNING!    *"
+	@${ECHO_MSG} "*********************************************************************"
+	@${FALSE}
+.else
+	@${ECHO_MSG} "*********************************************************************"
+	@${ECHO_MSG} "*   WARNING!     WARNING!     WARNING!     WARNING!     WARNING!    *"
+	@${ECHO_MSG} "* You have chosen to build an insecure program.                     *"
+	@${ECHO_MSG} "* This program has known security problems which may allow a remote *"
+	@${ECHO_MSG} "* attacker to take control of your machine.                         *"
+	@${ECHO_MSG} "* See FreeBSD security advisory 00:04 for more information.         *"
+	@${ECHO_MSG} "*********************************************************************"
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/delegated ${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${FILESDIR}/delegated.sh \
