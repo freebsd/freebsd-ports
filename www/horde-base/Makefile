@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	horde
-PORTVERSION=	1.2.6
-PORTREVISION=	1
+PORTVERSION=	1.2.7
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.horde.org/pub/horde/tarballs/
 
@@ -68,6 +67,14 @@ pre-everything::
 	@${ECHO_MSG} ""
 .endif
 
+pre-install:
+	@if [ -f ${HORDEDIR}/index.php ]; then \
+		${ECHO_MSG} "" ; \
+		${ECHO_MSG} "Please deinstall the port www/horde-devel." ; \
+		${ECHO_MSG} "" ; \
+		${FALSE} ; \
+	 fi
+
 do-install:
 	${MKDIR}  ${HORDEDIR}
 	${MKDIR}  ${PHPLIBDIR}
@@ -83,6 +90,8 @@ do-install:
 	${PERL} -pi -e "s:config/horde:${HORDEDIR}/config/horde:g" ${HORDESBIN}/horde_setup.sh
 	${PERL} -pi -e "s:imp/config:${HORDEDIR}/imp/config:g" ${HORDESBIN}/horde_setup.sh
 	${PERL} -pi -e "s:chmod 444 :chmod 444 ${HORDEDIR}/:g" ${HORDESBIN}/horde_setup.sh
+	${CHMOD} u+x ${HORDESBIN}/horde_secure.sh
+	${CHMOD} u+x ${HORDESBIN}/horde_setup.sh
 	${PERL} -pi -e "s:go to the top level directory for your installation and run:run:g" ${HORDEDIR}/setup.php3
 	${PERL} -pi -e "s:sh ./install.sh:${HORDESBIN}/horde_setup.sh:g" ${HORDEDIR}/setup.php3
 	${PERL} -pi -e "s:sh ./install.sh:${HORDESBIN}/horde_setup.sh:g" ${HORDEDIR}/templates/index/horde_notconfigured.inc
@@ -108,15 +117,14 @@ do-install:
 	@(if [ -f ${APACHE_CONF} ] ; then \
 	    (if [ ! -f ${APACHE_CONF}.beforeHorde ] ; then \
 		${ECHO} "===> Updating httpd.conf..." ; \
-		${CP} -p ${.CURDIR}/httpd.conf.phplib ${WRKDIR}/httpd.conf.phplib.orig ; \
+		${CP} -p ${MASTERDIR}/httpd.conf.phplib ${WRKDIR}/httpd.conf.phplib ; \
 		${PERL} -pi -e "s:/home/httpd/html/horde:${HORDEDIR}:g" ${WRKDIR}/httpd.conf.phplib ; \
 		${PERL} -pi -e "s:/home/httpd/phplib:${PHPLIBDIR}:g" ${WRKDIR}/httpd.conf.phplib ; \
 		${CP} -p ${APACHE_CONF} ${APACHE_CONF}.beforeHorde ; \
 		${GREP} -qw 'phplib' ${APACHE_CONF} || ${CAT} ${WRKDIR}/httpd.conf.phplib >> ${APACHE_CONF} ; \
-		${RM} ${.CURDIR}/httpd.conf.phplib ; \
-		${MV} ${.CURDIR}/httpd.conf.phplib.orig ${.CURDIR}/httpd.conf.phplib ; \
 	    fi) ; \
 	fi)
+	${CHOWN} -R www:www ${HORDEDIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for FILE in ${DOCS}
