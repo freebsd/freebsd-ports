@@ -1,8 +1,8 @@
-*** configure.orig	Tue Sep  2 17:14:05 2003
---- configure	Tue Sep  2 17:14:21 2003
+*** configure.orig	Mon Apr 12 09:41:56 2004
+--- configure	Mon Apr 12 09:42:55 2004
 ***************
-*** 7666,7671 ****
---- 7666,7672 ----
+*** 8185,8190 ****
+--- 8185,8191 ----
   
   # This can be used to rebuild libtool when needed
   LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -10,3 +10,37 @@
   
   # Always use our own libtool.
   LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+***************
+*** 14905,14911 ****
+  #define IM_JA_BINDIR "$IM_JA_BINDIR"
+  _ACEOF
+  
+! IM_JA_DATADIR="$im_ja_prefix/share/im-ja"
+  
+  cat >>confdefs.h <<_ACEOF
+  #define IM_JA_DATADIR "$IM_JA_DATADIR"
+--- 14906,14912 ----
+  #define IM_JA_BINDIR "$IM_JA_BINDIR"
+  _ACEOF
+  
+! IM_JA_DATADIR="$im_ja_prefix/share/gnome/im-ja"
+  
+  cat >>confdefs.h <<_ACEOF
+  #define IM_JA_DATADIR "$IM_JA_DATADIR"
+***************
+*** 14918,14924 ****
+  _ACEOF
+  
+  
+! PIXMAPDIR="$im_ja_prefix/share/pixmaps"
+  
+  cat >>confdefs.h <<_ACEOF
+  #define PIXMAPDIR "$PIXMAPDIR"
+--- 14919,14925 ----
+  _ACEOF
+  
+  
+! PIXMAPDIR="$im_ja_prefix/share/gnome/pixmaps"
+  
+  cat >>confdefs.h <<_ACEOF
+  #define PIXMAPDIR "$PIXMAPDIR"
