@@ -20,6 +20,7 @@ USE_LIBTOOL=	yes
 LIBTOOLFILES=	glib-1.2.8/configure
 LIBTOOLFLAGS=	--disable-ltlibs \
 		--disable-shared
+CONFIGURE_ARGS=	--disable-threads
 MAKE_ENV=	PKGCONF_BUILD=yes
 
 PLIST_SUB=	LOCALBASE=${LOCALBASE} X11BASE=${X11BASE}
