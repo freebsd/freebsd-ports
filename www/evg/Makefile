@@ -33,7 +33,7 @@ do-install:
 	@ ${MKDIR} ${PYTHON_SITELIBDIR}
 	@ ${INSTALL_DATA} ${WRKSRC}/eclipthtml.py ${PYTHON_SITELIBDIR}
 	@ ${INSTALL_SCRIPT} ${WRKSRC}/evg ${PREFIX}/bin
-.ifndef{NOPORTDOC}
+.if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${PREFIX}/share/doc/evg
 	@ ${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/evg
 .endif
