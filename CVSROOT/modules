@@ -66,6 +66,7 @@ taginfo		CVSROOT taginfo
 44bsd-hunt	ports/games/44bsd-hunt
 44bsd-more	ports/misc/44bsd-more
 44bsd-rdist	ports/net/44bsd-rdist
+4g8		ports/net/4g8
 4stattack	ports/games/4stattack
 4va		ports/graphics/4va
 54321		ports/games/54321
@@ -1896,7 +1897,6 @@ foomatic-db-engine	ports/print/foomatic-db-engine
 fooseti		ports/astro/fooseti
 fop		ports/textproc/fop
 forg		ports/net/forg
-forgate		ports/net/forgate
 forkbomb	ports/benchmarks/forkbomb
 forte		ports/java/forte
 forth		ports/lang/forth
