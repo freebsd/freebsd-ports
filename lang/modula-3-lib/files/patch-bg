@@ -9,8 +9,8 @@ This also adds separate wrapper files for network related functions to the
 m3makefile, for SOCKS support.
 
 Index: m3/m3core/src/runtime/FreeBSD2/m3makefile
---- m3makefile.orig	Tue Sep 17 16:48:03 1996
-+++ m3makefile	Thu Oct 24 16:11:02 1996
+--- m3/m3core/src/runtime/FreeBSD2/m3makefile.orig	Tue Sep 17 16:48:03 1996
++++ m3/m3core/src/runtime/FreeBSD2/m3makefile	Thu Oct 24 16:11:02 1996
 @@ -13,6 +13,30 @@
  c_source       ("RTThreadC")
  c_source       ("RTHeapDepC")

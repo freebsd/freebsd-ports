@@ -58,8 +58,8 @@ Index: m3/m3tohtml/src/m3makefile
 RCS file: /home/jdp/m3-cvs/m3/m3tohtml/src/m3makefile,v
 retrieving revision 1.1.1.2
 diff -u -r1.1.1.2 m3makefile
---- m3makefile	1996/09/24 05:29:00	1.1.1.2
-+++ m3makefile	1996/09/24 05:35:10
+--- m3/m3tohtml/src/m3makefile	1996/09/24 05:29:00	1.1.1.2
++++ m3/m3tohtml/src/m3makefile	1996/09/24 05:35:10
 @@ -10,6 +10,7 @@
  % m3_option ("-Y0@/udir/kalsow/pkg/m3/compiler/DS/m3c@-tDS3100@")
  % override (m3tools, "/udir/kalsow/pkgs")
