@@ -1,0 +1,14 @@
+GNU Postscript/PDF interpriter.
+This port depends on print/ghostscript-cjk that is internationalized
+version of ghostscript.  This port simply adds necessary configuration
+as /usr/local/share/ghostscript/*/lib/CIDFnmap.ko
+
+To install more fancy fonts edit the CIDFnmap.kr file.
+To know how to edit, /usr/local/share/doc/ghostscript/CJK/README.kr
+is helpful.
+
+Internationalization information:
+For those who are interested in reading also Chinese and Japanese PS files,
+one can simply add either or both of chinese/ghostscript-gnu-cjk  and 
+japanese/ghostscript-gnu-cjk.   There is no conflict in adding and removing 
+these ports.  Have fun!

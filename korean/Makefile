@@ -15,6 +15,7 @@
     SUBDIR += eterm
     SUBDIR += ftghostscript5
     SUBDIR += gau
+    SUBDIR += ghostscript-gnu-cjk
     SUBDIR += ghostscript55httf
     SUBDIR += gtkcomm
     SUBDIR += h2ps
