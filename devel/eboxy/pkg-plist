@@ -2,9 +2,17 @@ bin/eboxy
 include/eboxy/eboxyplugin.h
 include/eboxy/pluginconstants.h
 include/eboxy/plugintypes.h
-lib/eboxy/filebrowser.so
+lib/eboxy/libbasewidgets.a
+lib/eboxy/libbasewidgets.so
+lib/eboxy/libbasewidgets.so.0
+lib/eboxy/plugins/generic/filebrowser.so
+lib/eboxy/plugins/generic/simplemusic.so
+lib/eboxy/plugins/interface/libsdl_gui.so
 lib/libeboxyplugin.a
-share/eboxy/eboxy.dtd
-@dirrm share/eboxy
+%%DATADIR%%/eboxy.dtd
+@dirrm %%DATADIR%%
+@dirrm lib/eboxy/plugins/interface
+@dirrm lib/eboxy/plugins/generic
+@dirrm lib/eboxy/plugins
 @dirrm lib/eboxy
 @dirrm include/eboxy

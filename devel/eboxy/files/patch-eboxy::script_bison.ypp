@@ -1,0 +1,10 @@
+--- eboxy/script_bison.ypp.orig	Thu May 20 16:46:55 2004
++++ eboxy/script_bison.ypp	Thu May 20 21:20:13 2004
+@@ -24,6 +24,7 @@
+ #include <cstring>
+ #include <cmath>
+ #include <string>
++#include <cstdio>
+ #include <cstdlib>
+ #include <iostream>
+ #include <map>
