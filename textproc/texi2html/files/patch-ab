@@ -1,0 +1,11 @@
+--- Makefile.am.orig	Tue Jul 11 13:04:34 2000
++++ Makefile.am	Thu Sep  7 21:52:29 2000
+@@ -8,7 +8,7 @@
+               MySimple.pm MySimple.pod version.texi
+ info_TEXINFOS = texi2html.texi
+ 
+-htmldir = $(prefix)/html
++htmldir = $(prefix)/share/doc/texi2html
+ html_DATA    = texi2html.html
+ 
+ TEXI2HTML = texi2html

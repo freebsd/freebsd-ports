@@ -8,9 +8,9 @@
 PORTNAME=	cgihtml
 PORTVERSION= 	1.69
 CATEGORIES=	devel www
-MASTER_SITES=	ftp://ftp.eekim.com/pub/users/eekim/cgihtml/
+MASTER_SITES=	ftp://hcs.harvard.edu/pub/web/tools/cgihtml/
 
-MAINTAINER=	i.vaudrey@bigfoot.com
+MAINTAINER=	roam@orbitel.bg
 
 INSTALLS_SHLIB=	yes
 
