@@ -1,25 +1,23 @@
 # New ports collection makefile for:    lynx
-# http://www.nyu.edu/pages/wsn/subir/lynx.html
+# http://www.crl.com/~subir/lynx.html
 # http://www.wfbr.edu/dir/lynx/
-# Version required:     2.6
+# Version required:     2.6fm
 # Date created:         15 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.32 1996/11/18 14:15:15 asami Exp $
+# $Id: Makefile,v 1.33 1996/12/18 21:33:18 ache Exp $
 #
 
-DISTNAME=       lynx2-6
-PKGNAME=        lynx-2.6
+DISTNAME=       lynx2-6fm
+PKGNAME=        lynx-2.6fm
 CATEGORIES=	www
-MASTER_SITES=   ftp://ftp2.cc.ukans.edu/pub/lynx/lynx2-6/ \
-		ftp://ftp.more.net/pub/mirrors/lynx/ \
+MASTER_SITES=   http://www.slcc.edu/lynx/fote/ \
 		http://www.wfbr.edu/lynx/
-DISTFILES=      ${DISTNAME}.zip lynx2-6mods.zip
-
-#PATCH_SITES=    http://www.nyu.edu/pages/wsn/subir/lynx/patches/
-#PATCHFILES=     2-6-patch11.txt
+DISTFILES=      ${DISTNAME}.zip
 
 MAINTAINER=	ache@FreeBSD.ORG
+
+WRKSRC=         ${WRKDIR}/lynx2-6FM
 
 BUILD_DEPENDS=  unzip:${PORTSDIR}/archivers/unzip
 
@@ -29,7 +27,3 @@ ALL_TARGET=     freebsd-ncurses
 MAN1=		lynx.1
 
 .include <bsd.port.mk>
-
-# must be after bsd.port.mk
-
-#PATCH_DIST_ARGS+= -d ${WRKSRC}/src
