@@ -1,0 +1,18 @@
+--- doc/Makefile.in.orig	Sun Sep 10 19:25:39 2000
++++ doc/Makefile.in	Sun Sep 10 19:26:24 2000
+@@ -37,6 +37,7 @@
+ pkgdatadir = $(datadir)/@PACKAGE@
+ pkglibdir = $(libdir)/@PACKAGE@
+ pkgincludedir = $(includedir)/@PACKAGE@
++docdir = $(datadir)/doc/@PACKAGE@
+ 
+ top_builddir = ..
+ 
+@@ -78,7 +79,6 @@
+ SUBDIRS_VAR = @SUBDIRS_VAR@
+ VERSION = @VERSION@
+ 
+-docdir = $(pkgdatadir)/doc
+ 
+ doc_DATA = yaz.sgml profiles.sgml  yaz.txt yaz.ps profiles.txt profiles.ps yaz.html  yaz-1.html yaz-2.html yaz-3.html yaz-4.html yaz-5.html  yaz-6.html yaz-7.html yaz-8.html yaz-9.html
+ 

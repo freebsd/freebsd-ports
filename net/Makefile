@@ -277,6 +277,7 @@
     SUBDIR += xtraceroute
     SUBDIR += xtradius
     SUBDIR += xwhois
+    SUBDIR += yaz
     SUBDIR += ytalk
     SUBDIR += zebra
     SUBDIR += zephyr
