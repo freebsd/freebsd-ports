@@ -14,6 +14,7 @@ MAINTAINER=	pat@FreeBSD.org
 COMMENT=	3-dimensional viewer for star charts
 
 USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
 USE_XPM=	yes
@@ -23,10 +24,10 @@ MAKE_ENV=	DATADIR="${DATADIR}" \
 MAN1=		starplot.1 starconvert.1
 
 pre-patch:
-	@${PERL} -pi.orig -e 's|DATADIR|${DATADIR}|; s|DOCDIR|${DOCSDIR}|; \
+	@${REINPLACE_CMD} -e 's|DATADIR|${DATADIR}|; s|DOCDIR|${DOCSDIR}|; \
 		s|BINARYNAME|${PORTNAME}|; s|CONVERTNAME|starconvert|' \
 		${WRKSRC}/doc/man/*
-	@${PERL} -pi.orig -e 's|/usr/local/share/starplot|${DATADIR}|; \
+	@${REINPLACE_CMD} -e 's|/usr/local/share/starplot|${DATADIR}|; \
 		s|/usr/local/share/doc/starplot|${DOCSDIR}|' \
 		${WRKSRC}/gui/starplot.h
 
