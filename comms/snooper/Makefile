@@ -9,7 +9,8 @@ PORTNAME=	snooper
 PORTVERSION=	1999.12.02
 PORTREVISION=	1
 CATEGORIES=	comms
-MASTER_SITES=	ftp://ftp.foretune.co.jp/pub/tools/snooper/
+# distribution disappeared from mastersite in October 2002
+MASTER_SITES=	# ftp://ftp.foretune.co.jp/pub/tools/snooper/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 
 MAINTAINER=	ports@FreeBSD.org
