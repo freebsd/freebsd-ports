@@ -20,6 +20,10 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	cjh@FreeBSD.org
 COMMENT=	Create iso9660/Rock Ridge/Joliet filesystems supporting Korean
 
+BROKEN=			"conflicts with sysutils/cdrtools*"
+DEPRECATED=		"superseded by sysutils/cdrtools-cjk"
+EXPIRATION_DATE=	2004-07-01
+
 MAN8=		apple_driver.8 isoinfo.8 mkhybrid.8 mkisofs.8
 USE_GMAKE=	yes
 MAKE_ENV=	COPTX="-DBSD_SCSI_SENSE_BUG"
