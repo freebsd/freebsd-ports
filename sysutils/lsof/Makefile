@@ -43,6 +43,7 @@ CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=	-n freebsd
 CONFIGURE_ENV=	LSOF_CC="${CC}"
 FREEBSD_SYS?=	/usr/src/sys
+PLIST_FILES=	sbin/lsof
 MAN8=		lsof.8
 
 SRCBALL_NAME=	${DISTNAME:S/_W$//}_src
@@ -96,5 +97,11 @@ pre-configure:
 	@${ECHO} ""
 .endif
 .endif
+
+post-install:
+	cd ${PREFIX} && \
+	    ${FIND} -s share/lsof -type f -o -type l >>${TMPPLIST} ;\
+	    ${FIND} -d share/lsof -type d \
+	        | ${SED} -e 's/^/@dirrm /g' >>${TMPPLIST}
 
 .include <bsd.port.post.mk>
