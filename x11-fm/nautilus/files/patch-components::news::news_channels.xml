@@ -2,12 +2,15 @@
 $FreeBSD$
 
 --- components/news/news_channels.xml	2001/11/12 13:38:02	1.1
-+++ components/news/news_channels.xml	2001/11/12 13:39:31
-@@ -8,6 +8,7 @@
++++ components/news/news_channels.xml	2001/11/12 17:24:48
+@@ -8,8 +8,10 @@
  	<rss_channel name="Beyond 2000" uri="http://beyond2000.com/b2k.rdf" show="false" open="false"/>
  	<rss_channel name="CNet" uri="http://www.newsisfree.com/export.php3?_f=rss91&amp;_w=f&amp;_i=1443" show="false" open="false"/>
  	<rss_channel name="CNN" uri="http://www.cnn.com/cnn.rss" show="false" open="false"/>
 +	<rss_channel name="Daily Daemon News" uri="http://daily.daemonnews.org/ddn.rdf.php3" show="false" open="false"/>
  	<rss_channel name="Dictionary.com" uri="http://www.dictionary.com/wordoftheday/wotd.rss" show="false" open="false"/>
  	<rss_channel name="DVD Review" uri="http://www.dvdreview.com/rss/newschannel.rss" show="false" open="false"/>
++	<rss_channel name="FreeBSD Newsflash" uri="http://www.freebsd.org/news/news.rdf" show="false" open="false"/>
  	<rss_channel name="Freshmeat" uri="http://freshmeat.net/backend/fm.rdf" show="false" open="false"/>
+ 	<rss_channel name="GNOME News" uri="http://news.gnome.org/gnome-news/rdf" show="false" open="false"/>	
+ 	<rss_channel name="Internet.com" uri="http://headlines.internet.com/internetnews/prod-news/news.rss" show="false" open="false"/>
