@@ -19,7 +19,7 @@ do-install:
 	${CP} -Rp ${WRKDIR}/opt/fsgs ${PREFIX}/fsgs
 	${CP} ${WRKDIR}/release/fsgs ${PREFIX}/fsgs/fsgs
 	${CP} ${WRKDIR}/release/fsgs_static ${PREFIX}/fsgs/fsgs_static
-	${CHOWN} -R games.games ${PREFIX}/fsgs
+	${CHOWN} -R games:games ${PREFIX}/fsgs
 	${CHMOD} 4711 ${PREFIX}/fsgs/fsgs ${PREFIX}/fsgs/fsgs_static
 	${INSTALL_SCRIPT} ${FILESDIR}/fsgs.sh ${PREFIX}/etc/rc.d/fsgs.sh
 	@${CAT} ${PKGMESSAGE}
