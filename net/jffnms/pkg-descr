@@ -1,0 +1,7 @@
+JFFNMS is a Network Management System designed to
+mantain a IP SNMP / Syslog / Tacacs+  Network. It
+can be used to monitor any standards compilant SNMP
+device, Server, TCP port or Custom Poller, also it
+has some Cisco oriented features.
+
+WWW: http://jffnms.sourceforge.net/

@@ -1,0 +1,11 @@
+# jffnms crontab file
+# Created by Sergey Akifyev <asa@gascom.ru>
+JFFNMS=%JFFNMSDIR%/engine
+PATH=${PATH}:/bin:/usr/bin:%LOCALBASE%/bin:/sbin:/usr/sbin:/%LOCALBASE%/sbin	# JFFNMS
+*/1 * * * * cd $JFFNMS && php -q consolidate.php >/dev/null 2>&1
+*/5 * * * * cd $JFFNMS && php -q poller.php >/dev/null 2>&1
+*/30 * * * * cd $JFFNMS && php -q rrd_analizer.php >/dev/null 2>&1
+*/30 * * * * cd $JFFNMS && php -q autodiscovery_interfaces.php > /dev/null 2>&1
+02 4 * * * cd $JFFNMS && php -q tftp_get_host_config.php >/dev/null 2>&1
+02 5 * * * cd $JFFNMS && php -q cleanup_raw_tables.php >/dev/null 2>&1
+20 5 * * * cd $JFFNMS && sh tmpwatch.sh $JFFNMS >/dev/null 2>&1
