@@ -1,31 +1,52 @@
-*** ../../wmmon/Makefile.FreeBSD-3.0~	Thu Nov 12 18:39:57 1998
---- ../../wmmon/Makefile.FreeBSD-3.0	Fri Jan  1 23:33:27 1999
+*** ../../wmmon.app/wmmon/Makefile.orig	Tue May 19 17:13:16 1998
+--- ../../wmmon.app/wmmon/Makefile	Mon May 24 21:38:45 1999
 ***************
-*** 3,9 ****
-  #
-  LIBDIR		= -L/usr/X11R6/lib
-  LIBS		= -lXpm -lXext -lX11 -lkvm -ldevstat
-! CFLAGS		= -g -Wall -I/usr/X11R6/include
-  OBJS		=	wmmon.o \
-  			../wmgeneral/wmgeneral.o \
-  			../wmgeneral/misc.o \
---- 3,10 ----
-  #
-  LIBDIR		= -L/usr/X11R6/lib
-  LIBS		= -lXpm -lXext -lX11 -lkvm -ldevstat
+*** 1,19 ****
+! LIBDIR = -L/usr/X11R6/lib
+! LIBS   = -lXpm -lXext -lX11
+! OBJS =  wmmon.o \
+! 		../wmgeneral/wmgeneral.o \
+! 		../wmgeneral/misc.o \
+! 		../wmgeneral/list.o
+! 
+  
+  .c.o:
+! 	cc -c -O2 -Wall $< -o $*.o
+  
+! wmmon: $(OBJS)
+! 	cc -o wmmon $^ $(LIBDIR) $(LIBS)
+  
+  clean::
+! 	for i in $(OBJS) ; do \
+! 		rm $$i;\
+! 	done
+! 	rm wmmon
+--- 1,28 ----
+! #
+! # Makefile for FreeBSD 3.x and 4.0 versions of wmmon
+! #
+! LIBDIR		= -L/usr/X11R6/lib
+! LIBS		= -lXpm -lXext -lX11 -lkvm -ldevstat
 ! CFLAGS		?= -O2
 ! CFLAGS		+= -g -Wall -I/usr/X11R6/include
-  OBJS		=	wmmon.o \
-  			../wmgeneral/wmgeneral.o \
-  			../wmgeneral/misc.o \
-***************
-*** 24,27 ****
-  	rm -f $(PROG)
+! OBJS		=	wmmon.o \
+! 			../wmgeneral/wmgeneral.o \
+! 			../wmgeneral/misc.o \
+! 			../wmgeneral/list.o
+! PROG	= wmmon
   
-  install::
-! 	install -c -g kmem -m 4755 -o root $(PROG) /usr/X11R6/bin
---- 25,28 ----
-  	rm -f $(PROG)
+  .c.o:
+! 	${CC} -c $(CFLAGS) $< -o $*.o
+! 
+! $(PROG): $(OBJS)
+! 	${CC} -o $@ $> -lXext $(LIBDIR) $(LIBS)
   
-  install::
-! 	install -c -g kmem -m 4755 -o root $(PROG) ${PREFIX}/bin
+! all:: $(PROG)
+  
+  clean::
+! 	rm -f $(OBJS)
+! 	rm -f $(PROG)
+! 
+! install::
+! 	install -c -g kmem -m 2755 -o root $(PROG) ${PREFIX}/bin
+! 
