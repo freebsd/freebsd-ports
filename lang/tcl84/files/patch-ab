@@ -1,15 +1,6 @@
---- configure.orig	Tue Dec 14 22:59:18 1999
-+++ configure	Wed Jan  5 00:56:06 2000
-@@ -4648,7 +4648,7 @@
-     EXTRA_CFLAGS=""
-     TCL_EXPORT_FILE_SUFFIX=""
-     UNSHARED_LIB_SUFFIX=""
--    TCL_TRIM_DOTS='`echo ${VERSION} | tr -d .`'
-+    TCL_TRIM_DOTS=`echo ${VERSION} | tr -d .`
-     ECHO_VERSION='`echo ${VERSION}`'
-     TCL_LIB_VERSIONS_OK=ok
-     CFLAGS_DEBUG=-g
-@@ -4892,7 +4892,7 @@
+--- configure.orig	Thu Feb 10 06:09:57 2000
++++ configure	Mon Apr 24 14:58:01 2000
+@@ -4902,7 +4902,7 @@
  	    LDFLAGS="-Wl,-Bexport"
  	    LD_SEARCH_FLAGS=""
  	    ;;
@@ -18,80 +9,24 @@
  	    # Not available on all versions:  check for include file.
  	    ac_safe=`echo "dlfcn.h" | sed 'y%./+-%__p_%'`
  echo $ac_n "checking for dlfcn.h""... $ac_c" 1>&6
-@@ -4922,16 +4922,20 @@
- fi
- if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
-   echo "$ac_t""yes" 1>&6
--  
- 		SHLIB_CFLAGS="-fpic"
--		SHLIB_LD="ld -Bshareable -x"
- 		SHLIB_LD_LIBS=""
- 		SHLIB_SUFFIX=".so"
- 		DL_OBJS="tclLoadDl.o"
- 		DL_LIBS=""
- 		LDFLAGS=""
- 		LD_SEARCH_FLAGS=""
--		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.1.0'
-+	if eval "test \"`echo ${PORTOBJFORMAT}`\" = elf" ; then
-+		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.so.1'
-+		SHLIB_LD="ld -shared -x -soname \$@"
-+	else
-+		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.so.1.0'
-+		SHLIB_LD="ld -Bshareable -x"
-+	fi
- 	    
- else
-   echo "$ac_t""no" 1>&6
-@@ -4954,17 +4958,6 @@
+@@ -4986,19 +4986,9 @@
+ 	    # FreeBSD doesn't handle version numbers with dots.
+ 
  	    UNSHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.a'
++	    SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.1'
  	    TCL_LIB_VERSIONS_OK=nodots
  	    ;;
 -	FreeBSD-*)
 -	    # FreeBSD 3.* and greater have ELF.
--	    SHLIB_CFLAGS="-fpic"
+-	    SHLIB_CFLAGS="-fPIC"
 -	    SHLIB_LD="ld -Bshareable -x"
 -	    SHLIB_LD_LIBS=""
 -	    SHLIB_SUFFIX=".so"
 -	    DL_OBJS="tclLoadDl.o"
 -	    DL_LIBS=""
--	    LDFLAGS=""
+-	    LDFLAGS="-export-dynamic"
 -	    LD_SEARCH_FLAGS=""
 -	    ;;
  	NEXTSTEP-*)
  	    SHLIB_CFLAGS=""
  	    SHLIB_LD="cc -nostdlib -r"
-@@ -5371,7 +5364,7 @@
- 	SHARED_LIB_SUFFIX='${VERSION}\$\{DBGX\}${SHLIB_SUFFIX}'
-     fi
-     if test "$UNSHARED_LIB_SUFFIX" = "" ; then
--	UNSHARED_LIB_SUFFIX='${VERSION}\$\{DBGX\}.a'
-+	UNSHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.a'
-     fi
- 
-     
-@@ -5628,11 +5621,7 @@
- # up the Tcl library.
- 
- if test "$SHARED_BUILD" = "0" -o $TCL_NEEDS_EXP_FILE = 0; then
--    if test "${TCL_LIB_VERSIONS_OK}" = "ok"; then
--        TCL_LIB_FLAG="-ltcl${TCL_VERSION}\${TCL_DBGX}"
--    else
--        TCL_LIB_FLAG="-ltcl`echo ${TCL_VERSION} | tr -d .`\${TCL_DBGX}"
--    fi
-+    TCL_LIB_FLAG="-ltcl${TCL_TRIM_DOTS}\${TCL_DBGX}"
-     TCL_BUILD_LIB_SPEC="-L`pwd` ${TCL_LIB_FLAG}"
-     TCL_LIB_SPEC="-L${exec_prefix}/lib ${TCL_LIB_FLAG}"
- else
-@@ -5678,11 +5667,7 @@
- 
- TCL_STUB_LIB_FILE=${STUB_LIB_FILE}
- 
--if test "${TCL_LIB_VERSIONS_OK}" = "ok"; then
--    TCL_STUB_LIB_FLAG="-ltclstub${TCL_VERSION}\${TCL_DBGX}"
--else
--    TCL_STUB_LIB_FLAG="-ltclstub`echo ${TCL_VERSION} | tr -d .`\${TCL_DBGX}"
--fi
-+TCL_STUB_LIB_FLAG="-ltclstub${TCL_TRIM_DOTS}\${TCL_DBGX}"
- 
- TCL_BUILD_STUB_LIB_SPEC="-L`pwd` ${TCL_STUB_LIB_FLAG}"
- TCL_STUB_LIB_SPEC="-L${exec_prefix}/lib ${TCL_STUB_LIB_FLAG}"

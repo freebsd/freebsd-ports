@@ -1,5 +1,5 @@
---- Makefile.in.orig	Wed Nov  3 21:37:24 1999
-+++ Makefile.in	Sun Nov 21 15:31:00 1999
+--- Makefile.in.orig	Thu Feb 10 06:09:57 2000
++++ Makefile.in	Mon Apr 24 09:58:51 2000
 @@ -48,7 +48,9 @@
  SCRIPT_INSTALL_DIR = $(INSTALL_ROOT)$(TCL_LIBRARY)
  
@@ -38,11 +38,10 @@
  
  libraries:
  
-@@ -394,8 +396,14 @@
+@@ -394,8 +396,13 @@
  ${TCL_LIB_FILE}: ${OBJS} ${STUB_LIB_FILE}
  	rm -f ${TCL_LIB_FILE}
  	@MAKE_LIB@
-+	ln -sf ${TCL_LIB_FILE} libtcl${SHORT_TCL_VER}.so
  	$(RANLIB) ${TCL_LIB_FILE}
  
 +libtcl${SHORT_TCL_VER}.a: ${OBJS}
@@ -53,9 +52,9 @@
  ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
  	rm -f ${STUB_LIB_FILE}
  	@MAKE_STUB_LIB@
-@@ -504,8 +512,13 @@
- 	@echo "Installing $(TCL_LIB_FILE)"
- 	chmod +x $(SRC_DIR)/install-sh
+@@ -506,8 +514,13 @@
+ 	    fi
+ 	@echo "Installing $(TCL_LIB_FILE) to $(LIB_INSTALL_DIR)/"
  	@$(INSTALL_DATA) $(TCL_LIB_FILE) $(LIB_INSTALL_DIR)/$(TCL_LIB_FILE)
 +	@ln -sf $(TCL_LIB_FILE) $(LIB_INSTALL_DIR)/libtcl${SHORT_TCL_VER}.so
  	@(cd $(LIB_INSTALL_DIR); $(RANLIB) $(TCL_LIB_FILE))
@@ -65,19 +64,21 @@
 +	@(cd $(LIB_INSTALL_DIR); $(RANLIB) libtcl${SHORT_TCL_VER}.a)
 +	@chmod 555 $(LIB_INSTALL_DIR)/libtcl${SHORT_TCL_VER}.a
  	@if test "$(TCL_BUILD_EXP_FILE)" != ""; then \
- 	    echo "Installing $(TCL_EXP_FILE)"; \
+ 	    echo "Installing $(TCL_EXP_FILE) to $(LIB_INSTALL_DIR)/"; \
  	    $(INSTALL_DATA) $(TCL_BUILD_EXP_FILE) \
-@@ -514,7 +527,8 @@
- 	@echo "Installing tclsh"
+@@ -515,8 +528,9 @@
+ 	    fi
+ 	@echo "Installing tclsh as $(BIN_INSTALL_DIR)/tclsh$(VERSION)"
  	@$(INSTALL_PROGRAM) tclsh $(BIN_INSTALL_DIR)/tclsh$(VERSION)
- 	@echo "Installing tclConfig.sh"
+-	@echo "Installing tclConfig.sh to $(LIB_INSTALL_DIR)/"
 -	@$(INSTALL_DATA) tclConfig.sh $(LIB_INSTALL_DIR)/tclConfig.sh
++	@echo "Installing tclConfig.sh to $(SCRIPT_INSTALL_DIR)/"
 +	@mkdir -p $(SCRIPT_INSTALL_DIR)
 +	@$(INSTALL_DATA) tclConfig.sh $(SCRIPT_INSTALL_DIR)/tclConfig.sh
  	@if test "$(TCL_STUB_LIB_FILE)" != "" ; then \
- 	    echo "Installing $(TCL_STUB_LIB_FILE)"; \
+ 	    echo "Installing $(TCL_STUB_LIB_FILE) to $(LIB_INSTALL_DIR)/"; \
  	    $(INSTALL_DATA) $(STUB_LIB_FILE) \
-@@ -522,8 +536,8 @@
+@@ -524,8 +538,8 @@
  	    fi
  
  install-libraries: libraries
@@ -88,58 +89,46 @@
  	    do \
  	    if [ ! -d $$i ] ; then \
  		echo "Making directory $$i"; \
-@@ -542,11 +556,20 @@
- 		fi; \
- 	    done;
- 	chmod +x $(SRC_DIR)/install-sh
+@@ -547,10 +561,16 @@
+ 	    chmod +x $(SRC_DIR)/install-sh; \
+ 	    fi
+ 	@echo "Installing header files";
 -	@for i in $(GENERIC_DIR)/tcl.h $(GENERIC_DIR)/tclDecls.h ; \
-+	@echo "Installing libraries, tcl.h and other headers"
 +	@for i in $(GENERIC_DIR)/*.h ; \
- 	    do \
- 	    echo "Installing $$i"; \
--	    $(INSTALL_DATA) $$i $(INCLUDE_INSTALL_DIR); \
-+	    $(INSTALL_DATA) $$i $(GENERIC_INCLUDE_INSTALL_DIR); \
- 	    done;
-+	@for i in $(UNIX_DIR)/*.h ; \
 +	    do \
-+	    echo "Installing $$i"; \
-+	    $(INSTALL_DATA) $$i $(UNIX_INCLUDE_INSTALL_DIR); \
++	    $(INSTALL_DATA) $$i $(GENERIC_INCLUDE_INSTALL_DIR); \
 +	    done;
++	@for i in $(UNIX_DIR)/*.h ; \
+ 	    do \
+-	    $(INSTALL_DATA) $$i $(INCLUDE_INSTALL_DIR); \
++	    $(INSTALL_DATA) $$i $(UNIX_INCLUDE_INSTALL_DIR); \
+ 	    done;
 +	@ln -sf $(GENERIC_INCLUDE_INSTALL_DIR)/tcl.h $(INCLUDE_INSTALL_DIR)/tcl.h
 +	@ln -sf $(GENERIC_INCLUDE_INSTALL_DIR)/tclDecls.h $(INCLUDE_INSTALL_DIR)/tclDecls.h
-+
+ 	@echo "Installing library files to $(SCRIPT_INSTALL_DIR)";
  	@for i in $(TOP_DIR)/library/*.tcl $(TOP_DIR)/library/tclIndex $(UNIX_DIR)/tclAppInit.c $(UNIX_DIR)/ldAix; \
  	    do \
- 	    echo "Installing $$i"; \
-@@ -579,21 +602,19 @@
- 	@cd $(TOP_DIR)/doc; for i in *.1; \
- 	    do \
- 	    echo "Installing doc/$$i"; \
--	    rm -f $(MAN1_INSTALL_DIR)/$$i; \
-+	    rm -f $(MAN1_INSTALL_DIR)/$$i ; \
- 	    sed -e '/man\.macros/r man.macros' -e '/man\.macros/d' \
- 		    $$i > $(MAN1_INSTALL_DIR)/$$i; \
+@@ -591,7 +611,6 @@
  	    chmod 444 $(MAN1_INSTALL_DIR)/$$i; \
  	    done;
--	$(UNIX_DIR)/mkLinks $(MAN1_INSTALL_DIR)
+ 	@echo "Cross-linking top-level (.1) docs";
+-	@$(UNIX_DIR)/mkLinks $(MAN1_INSTALL_DIR)
+ 	@echo "Installing C API (.3) docs";
  	@cd $(TOP_DIR)/doc; for i in *.3; \
  	    do \
- 	    echo "Installing doc/$$i"; \
--	    rm -f $(MAN3_INSTALL_DIR)/$$i; \
-+	    rm -f $(MAN3_INSTALL_DIR)/$$i ; \
- 	    sed -e '/man\.macros/r man.macros' -e '/man\.macros/d' \
- 		    $$i > $(MAN3_INSTALL_DIR)/$$i; \
+@@ -601,7 +620,6 @@
  	    chmod 444 $(MAN3_INSTALL_DIR)/$$i; \
  	    done;
--	$(UNIX_DIR)/mkLinks $(MAN3_INSTALL_DIR)
+ 	@echo "Cross-linking C API (.3) docs";
+-	@$(UNIX_DIR)/mkLinks $(MAN3_INSTALL_DIR)
+ 	@echo "Installing command (.n) docs";
  	@cd $(TOP_DIR)/doc; for i in *.n; \
  	    do \
- 	    echo "Installing doc/$$i"; \
-@@ -602,7 +623,14 @@
- 		    $$i > $(MANN_INSTALL_DIR)/$$i; \
+@@ -611,7 +629,14 @@
  	    chmod 444 $(MANN_INSTALL_DIR)/$$i; \
  	    done;
--	$(UNIX_DIR)/mkLinks $(MANN_INSTALL_DIR)
+ 	@echo "Cross-linking command (.n) docs";
+-	@$(UNIX_DIR)/mkLinks $(MANN_INSTALL_DIR)
 +	@echo "**********"
 +	@echo "IMPORTANT:"
 +	@echo "**********"
