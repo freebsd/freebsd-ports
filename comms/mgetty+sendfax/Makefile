@@ -3,8 +3,10 @@
 # Date created:         21 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.18 1997/04/05 16:41:27 jmz Exp $
+# $Id: Makefile,v 1.19 1997/11/08 01:23:48 jmz Exp $
 #
+
+BROKEN=		package
 
 DISTNAME=	mgetty1.1.9-Aug17
 PKGNAME=	mgetty-1.1.9
