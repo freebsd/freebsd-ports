@@ -182,3 +182,5 @@ share/doc/euler/style.css
 @dirrm share/doc/euler/images
 @dirrm share/doc/euler/reference/german
 @dirrm share/doc/euler/reference
+@dirrm share/doc/euler
+@dirrm share/euler
