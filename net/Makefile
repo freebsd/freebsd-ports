@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.278 1999/06/23 00:45:09 cpiazza Exp $
+# $Id: Makefile,v 1.279 1999/06/25 20:21:43 jseger Exp $
 #
 
     SUBDIR += IglooFTP
@@ -141,6 +141,7 @@
     SUBDIR += p5-Net-Telnet
     SUBDIR += p5-Net-Whois
     SUBDIR += p5-SNMP
+    SUBDIR += p5-SNMP_Session
     SUBDIR += p5-Socks
     SUBDIR += p5-URI
     SUBDIR += p5-pRPC
