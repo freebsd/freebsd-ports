@@ -3,7 +3,7 @@
 # Date created:		So   6 Apr 1997 04:25:57 MET DST
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.2 1997/04/06 09:10:26 andreas Exp $
+# $Id: Makefile,v 1.3 1997/04/06 09:16:04 andreas Exp $
 #
 
 DISTNAME=	nethack-3.2.2
@@ -23,7 +23,6 @@ LIB_DEPENDS=	qt\\.1\\.:${PORTSDIR}/x11/qt
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 RUN_DEPENDS=	auplay:${PORTSDIR}/audio/nas
 
-BROKEN=		As long as nas is broken in -current which is needed for sound
 EXTRACT_ONLY=	nethack-3.2.2.tar.gz
 USE_GMAKE=	yes
 SHELL=		/bin/sh
