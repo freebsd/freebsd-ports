@@ -17,7 +17,7 @@ share/python1.4/NumPy/RandomArray.pyc
 share/python1.4/NumPy/UserArray.py
 share/python1.4/NumPy/UserArray.pyc
 share/python1.4/NumPy/fast_umathmodule.so
-share/python1.4/NumPy/fftpackmodule.so
+share/python1.4/NumPy/fftpack.so
 share/python1.4/NumPy/lapack_litemodule.so
 share/python1.4/NumPy/multiarraymodule.so
 share/python1.4/NumPy/ranlibmodule.so
