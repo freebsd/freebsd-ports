@@ -1,0 +1,26 @@
+eclipse/features/de.jayefem.log4e.feature_0.7.6/eclipse_update_120.jpg
+eclipse/features/de.jayefem.log4e.feature_0.7.6/feature.properties
+eclipse/features/de.jayefem.log4e.feature_0.7.6/feature.xml
+eclipse/features/de.jayefem.log4e.feature_0.7.6/general.css
+eclipse/features/de.jayefem.log4e.feature_0.7.6/license.html
+eclipse/plugins/de.jayefem.log4e.help_0.7.6/doc.zip
+eclipse/plugins/de.jayefem.log4e.help_0.7.6/plugin.properties
+eclipse/plugins/de.jayefem.log4e.help_0.7.6/plugin.xml
+eclipse/plugins/de.jayefem.log4e.help_0.7.6/toc.xml
+eclipse/plugins/de.jayefem.log4e_0.7.6/about.html
+eclipse/plugins/de.jayefem.log4e_0.7.6/about.ini
+eclipse/plugins/de.jayefem.log4e_0.7.6/about.properties
+eclipse/plugins/de.jayefem.log4e_0.7.6/eclipse32.gif
+eclipse/plugins/de.jayefem.log4e_0.7.6/lib/commons-logging.jar
+eclipse/plugins/de.jayefem.log4e_0.7.6/lib/log4j-1.2.8.jar
+eclipse/plugins/de.jayefem.log4e_0.7.6/log4e.jar
+eclipse/plugins/de.jayefem.log4e_0.7.6/plugin.properties
+eclipse/plugins/de.jayefem.log4e_0.7.6/plugin.xml
+eclipse/plugins/de.jayefem.log4e_0.7.6/welcome.xml
+@dirrm eclipse/features/de.jayefem.log4e.feature_0.7.6
+@dirrm eclipse/plugins/de.jayefem.log4e_0.7.6/lib
+@dirrm eclipse/plugins/de.jayefem.log4e_0.7.6
+@dirrm eclipse/plugins/de.jayefem.log4e.help_0.7.6
+@unexec rmdir %D/eclipse/plugins 2>/dev/null || true
+@unexec rmdir %D/eclipse/features 2>/dev/null || true
+@unexec rmdir %D/eclipse 2>/dev/null || true

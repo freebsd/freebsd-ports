@@ -1,0 +1,12 @@
+Log4E
+
+Log4E is a free Eclipse Plugin which helps you to use your logger easily
+in Java Projects. The Plugin Log4E is not bound to any special logging
+framework. Thus you might be able to adapt to your own logger by defining
+your own templates using the preferences. It has active support for Log4j,
+Commons Logging and JDK 1.4 logging. Use the context menu of a java file
+or the context menu of an editor and get to the submenu "Log4".
+Notice that the editor submenu provides additional tasks.
+Every of the following tasks can be invoked either on class or on method level.
+
+WWW: http://log4e.jayefem.de
