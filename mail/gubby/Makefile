@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gubby
-PORTVERSION=	0.4.2
+PORTVERSION=	0.5.0
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,12 +18,32 @@ COMMENT=	A program showing where new mail has been placed
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-LDFLAGS+=	-lncurses -ltermcap
-CFLAGS+=	-felide-constructors -fno-default-inline
+LDFLAGS+=	-lncurses
+CFLAGS+=	-fno-exceptions -fno-rtti
 
 do-build:
 	cd ${WRKSRC} && \
-	${CXX} ${CFLAGS} -o ${PORTNAME} -Iinclude/ ${LDFLAGS} src/gubby.cpp
+	${CXX} -c ${CFLAGS} -Iinclude/ -o src/curswin.o src/curswin.cpp && \
+	${CXX} -c ${CFLAGS} -Iinclude/ -o src/die.o src/die.cpp && \
+	${CXX} -c ${CFLAGS} -Iinclude/ -o src/exists.o src/exists.cpp && \
+	${CXX} -c ${CFLAGS} -Iinclude/ -o src/filechange.o src/filechange.cpp && \
+	${CXX} -c ${CFLAGS} -Iinclude/ -o src/folder.o src/folder.cpp && \
+	${CXX} -c ${CFLAGS} -Iinclude/ -o src/folders.o src/folders.cpp && \
+	${CXX} -c ${CFLAGS} -Iinclude/ -o src/getopts.o src/getopts.cpp && \
+	${CXX} -c ${CFLAGS} -Iinclude/ -o src/grep.o src/grep.cpp && \
+	${CXX} -c ${CFLAGS} -Iinclude/ -o src/gubby.o src/gubby.cpp && \
+	${CXX} -c ${CFLAGS} -Iinclude/ -o src/gubbycfg.o src/gubbycfg.cpp && \
+	${CXX} -c ${CFLAGS} -Iinclude/ -o src/gubbyopts.o src/gubbyopts.cpp && \
+	${CXX} -c ${CFLAGS} -Iinclude/ -o src/guess.o src/guess.cpp && \
+	${CXX} -c ${CFLAGS} -Iinclude/ -o src/initcurs.o src/initcurs.cpp && \
+	${CXX} -c ${CFLAGS} -Iinclude/ -o src/keys.o src/keys.cpp && \
+	${CXX} -c ${CFLAGS} -Iinclude/ -o src/runscreen.o src/runscreen.cpp && \
+	${CXX} -c ${CFLAGS} -Iinclude/ -o src/screens.o src/screens.cpp && \
+	${CXX} -c ${CFLAGS} -Iinclude/ -o src/versioninfo.o src/versioninfo.cpp && \
+	${CXX} -s ${CFLAGS} src/curswin.o src/die.o src/exists.o src/filechange.o src/folder.o \
+	src/folders.o src/getopts.o src/grep.o src/gubby.o src/gubbycfg.o src/gubbyopts.o \
+	src/guess.o src/initcurs.o src/keys.o src/runscreen.o src/screens.o src/versioninfo.o \
+	${LDFLAGS} -o ${PORTNAME}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gubby ${PREFIX}/bin
