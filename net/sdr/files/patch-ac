@@ -1,0 +1,27 @@
+Index: src/sdr.h
+===================================================================
+RCS file: /tilde/fenner/conf/sdr/cvs/sdr/src/sdr.h,v
+retrieving revision 1.7
+diff -c -r1.7 sdr.h
+*** 1.7	1996/11/12 17:33:22
+--- sdr.h	1996/11/12 17:39:10
+***************
+*** 147,156 ****
+--- 147,163 ----
+  };
+    
+  struct sap_header {
++ #if BYTE_ORDER == BIG_ENDIAN
+    u_int version:3;
+    u_int type:3;
+    u_int enc:1;
+    u_int compress:1;
++ #else
++   u_int compress:1;
++   u_int enc:1;
++   u_int type:3;
++   u_int version:3;
++ #endif
+    u_int authlen:8;
+    u_int msgid:16;
+    u_int src;
