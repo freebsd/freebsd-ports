@@ -8,19 +8,16 @@
 
 PORTNAME=	clarence
 PORTVERSION=	0.4.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math python
 MASTER_SITES=	http://clay.ll.pl/download/
 
 MAINTAINER=	psh@iki.fi
 COMMENT=	Programmer's calculator
 
-BROKEN=		"Broken dependency after python 2.4 update"
-
 USE_GNOME=	pygtk2
 USE_REINPLACE=	yes
 USE_PYTHON=	yes
-PYTHON_VERSION=	python2.3
 NO_BUILD=	yes
 MAN1=		clarence.1
 PLIST_FILES=	bin/clarence
