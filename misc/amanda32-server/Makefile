@@ -35,12 +35,16 @@ pre-fetch:
 	@${ECHO} ""
 	@${ECHO} "    -DWITH_PLOT to enable ploting, requires X11 libraries"
 	@${ECHO} "    -DWITH_SAMBA to enable the use of smbclient"
+	@${ECHO} "    AMANDA_SERVER=server to specify a server name"
+	@${ECHO} "        The default is `uname -n`"
+	@${ECHO} "    AMANDA_TAPE=tape to specify the default tape device"
+	@${ECHO} "        The default is /dev/nrsa0"
+	@${ECHO} "    AMANDA_CONFIG=config to specify the default configuation"
+	@${ECHO} "        The default is user"
 	@${ECHO} ""
 
-RUN_DEPENDS=	amrecover:${.CURDIR}/../amanda24-client
-BUILD_DEPENDS=	amrecover:${.CURDIR}/../amanda24-client
-#RUN_DEPENDS=	amrecover:${PORTSDIR}/misc/amanda24-client
-#BUILD_DEPENDS=	amrecover:${PORTSDIR}/misc/amanda24-client
+RUN_DEPENDS=	amrecover:${PORTSDIR}/misc/amanda24-client
+BUILD_DEPENDS=	amrecover:${PORTSDIR}/misc/amanda24-client
 
 CONFIGURE_ARGS=	--libexecdir=${PREFIX}/libexec/amanda \
 		--with-amandahosts --with-fqdn \
@@ -62,13 +66,36 @@ PLIST_SUB+=	PLOT='@comment '
 .endif
 
 .if defined (WITH_SMBCLIENT)
-BUILD_DEPEND+=	smbclient:${PORTSDIR}/net/samba
-RUN_DEPEND+=	smbclient:${PORTSDIR}/net/samba
+BUILD_DEPENDS+=	smbclient:${PORTSDIR}/net/samba
+RUN_DEPENDS+=	smbclient:${PORTSDIR}/net/samba
 CONFIGURE_ARGS+=	--with-smbclient=${PREFIX}/bin/smbclient
+.endif
+
+.if defined (AMANDA_SERVER)
+CONFIGURE_ARGS+=	--with-index-server=${AMANDA_SERVER}
+CONFIGURE_ARGS+=	--with-tape-server=${AMANDA_SERVER}
+.endif
+
+.if defined (AMANDA_TAPE)
+CONFIGURE_ARGS+=	--with-tape-device=${AMANDA_TAPE}
+.endif
+
+.if defined (AMANDA_CONFIG)
+CONFIGURE_ARGS+=	--with-config=${AMANDA_CONFIG}
 .endif
 
 # amanda24-client part
 .else
+
+pre-fetch:
+	@${ECHO} ""
+	@${ECHO} "You may use the following build options:"
+	@${ECHO} ""
+	@${ECHO} "    AMANDA_SERVER=server to specify a server name"
+	@${ECHO} "        The default is `uname -n`"
+	@${ECHO} "    AMANDA_CONFIG=config to specify the default configuation"
+	@${ECHO} "        The default is user"
+	@${ECHO} ""
 
 CONFIGURE_ARGS=	--libexecdir=${PREFIX}/libexec/amanda \
 		--with-amandahosts --with-fqdn \
@@ -85,6 +112,15 @@ post-install:
 		${WRKSRC}/example/chg-scsi.conf \
 		${WRKSRC}/example/disklist \
 		${PREFIX}/share/examples/amanda
+
+.if defined (AMANDA_SERVER)
+CONFIGURE_ARGS+=	--with-index-server=${AMANDA_SERVER}
+CONFIGURE_ARGS+=	--with-tape-server=${AMANDA_SERVER}
+.endif
+
+.if defined (AMANDA_CONFIG)
+CONFIGURE_ARGS+=	--with-config=${AMANDA_CONFIG}
+.endif
 
 .endif
 
