@@ -35,18 +35,21 @@ WRKDIRBASE=	${WRKDIRPREFIX}${.CURDIR:S,/editors/mule-common$,,}
 		japanese/mule-canna+freewnn \
 		japanese/mule-canna+freewnn+sj3 \
 		japanese/mule-canna+sj3+wnn6 \
+		japanese/mule-canna+sj3+wnn7 \
 		japanese/mule-canna+sj3 \
 		japanese/mule-canna+wnn6 \
+		japanese/mule-canna+wnn7 \
 		japanese/mule-freewnn \
 		japanese/mule-freewnn+sj3 \
 		japanese/mule-sj3 \
 		japanese/mule-sj3+wnn6 \
+		japanese/mule-sj3+wnn7 \
 		japanese/mule-wnn6 \
+		japanese/mule-wnn7 \
 		korean/mule-freewnn
-.if exists(${WRKDIRBASE}/${dir}/work/.install_done)
-WRKDIR=		${WRKDIRBASE}/${dir}/work
-.elif exists(${WRKDIRBASE}/${dir}/work/.build_done)
+.if exists(${WRKDIRBASE}/${dir}/work/.build_done.${dir:S,editors/,,:S,chinese/,zh-,:S,japanese/,ja-,:S,korean/,ko-,}-${PORTVERSION}${_SUF1}${_SUF2})
 WRKDIR?=	${WRKDIRBASE}/${dir}/work
+MULEPKG?=	${dir:S,editors/,,:S,chinese/,zh-,:S,japanese/,ja-,:S,korean/,ko-,}-${PORTVERSION}${_SUF1}${_SUF2}
 .endif
 .endfor
 WRKSRC=		${WRKDIR}/emacs-${EMACS_VERSION}
@@ -63,8 +66,10 @@ BROKEN=		First you should build install a port for mule except mule-common
 .endif
 .endif
 
-INSTALL_COOKIE=	${WRKDIR}/.install_done-${PKGNAME}
-PACKAGE_COOKIE=	${WRKDIR}/.package_done-${PKGNAME}
+EXTRACT_COOKIE=		${WRKDIR}/.extract_done.${MULEPKG}
+CONFIGURE_COOKIE=	${WRKDIR}/.configure_done.${MULEPKG}
+BUILD_COOKIE=		${WRKDIR}/.build_done.${MULEPKG}
+PATCH_COOKIE=		${WRKDIR}/.patch_done.${MULEPKG}
 TMPPLIST=	${WRKDIR}/.PLIST.mktmp-${PKGNAME}
 PLIST_SUB=	EMACS_VERSION=${EMACS_VERSION} EMACS_ARCH=${CONFIGURE_TARGET}
 
