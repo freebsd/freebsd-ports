@@ -1,15 +1,15 @@
 # New ports collection makefile for:	majordomo
-# Version required:	1.94.1
+# Version required:	1.94.2
 # Date created:		23 October 1996
 # Whom:			jfitz@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.7 1996/12/20 03:32:37 jfitz Exp $
+# $Id: Makefile,v 1.8 1996/12/27 06:24:57 jfitz Exp $
 #
 
-DISTNAME=	majordomo-1.94.1
+DISTNAME=	majordomo-1.94.2
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.greatcircle.com/pub/majordomo/ \
-		ftp://ftp.sgi.com/other/majordomo/ \
+MASTER_SITES=	ftp://ftp.greatcircle.com/pub/majordomo/1.94.2/ \
+		ftp://ftp.sgi.com/other/majordomo/1.94.2/ \
 		ftp://ftp-europe.sgi.com/other/majordomo/
 EXTRACT_SUFX=   .tar.Z
 
@@ -26,12 +26,13 @@ MAN8=		majordomo.8
 pre-configure:
 		@ ${SETENV} ${MAKE_ENV} /usr/bin/perl ${SCRIPTDIR}/createuser
 		@ ${CP} ${FILESDIR}/aliases.majordomo ${WRKSRC}
+		@ ${RM} ${WRKSRC}/wrapper
 
 pre-install:
 		@ ${CP} ${WRKSRC}/sample.cf ${WRKSRC}/majordomo.cf
 
 post-install:
-		@ ln -sf ${PREFIX}/majordomo/archive2.pl ${PREFIX}/majordomo/archive
+		@ ln -sf archive2.pl ${PREFIX}/majordomo/archive
 		@ for dir in tmp lists/test-l.archive lists/test-l-digest.archive digests/test-l-digest doc; do \
 			${MKDIR} -p ${PREFIX}/majordomo/$$dir; \
 		done
@@ -55,8 +56,8 @@ post-install:
 		@ for file in test-l test-l-digest test-l.passwd test-l.info; do \
 			${INSTALL_DATA} ${FILESDIR}/$$file ${PREFIX}/majordomo/lists; \
 		done
-		@ ln -sf ${PREFIX}/majordomo/lists/test-l.info ${PREFIX}/majordomo/lists/test-l-digest.info
-		@ ln -sf ${PREFIX}/majordomo/lists/test-l.passwd ${PREFIX}/majordomo/lists/test-l-digest.passwd
+		@ ln -sf test-l.info ${PREFIX}/majordomo/lists/test-l-digest.info
+		@ ln -sf test-l.passwd ${PREFIX}/majordomo/lists/test-l-digest.passwd
 		@ /bin/chmod 660 ${PREFIX}/majordomo/lists/test-l.passwd
 		@ /usr/sbin/chown -R majordom.majordom ${PREFIX}/majordomo/lists
 		@ /bin/chmod -R 664 ${PREFIX}/majordomo/lists
