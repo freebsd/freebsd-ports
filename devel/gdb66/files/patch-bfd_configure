@@ -1,7 +1,7 @@
 --- bfd/configure.orig	Tue Oct 30 18:30:22 2001
-+++ bfd/configure	Thu Jan 31 08:57:54 2002
++++ bfd/configure	Mon Feb 11 16:24:31 2002
 @@ -5018,3 +5018,3 @@
  	;;
 -  i[3456]86-*-bsd* | i[34567]86-*-freebsd[1234] | i[34567]86-*-freebsd[1234]\.* | i[34567]86-*-freebsd*aout*)
-+  i[3456]86-*-bsd* | i[34567]86-*-freebsd[123] | i[34567]86-*-freebsd[123]\.* | i[34567]86-*-freebsd4\.[01] | i[34567]86-*-freebsd*aout*)
++  i[3456]86-*-bsd* | i[34567]86-*-freebsd[123] | i[34567]86-*-freebsd[123]\.* | i[34567]86-*-freebsd4\.[01234]* | i[34567]86-*-freebsd*aout*)
  	COREFILE=trad-core.lo
