@@ -22,7 +22,6 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	khera@kciLink.com
 
 USE_SUBMAKE=	yes
-IS_INTERACTIVE=	yes
 
 MAN1=	mailq.1 newaliases.1 postalias.1 postcat.1 postconf.1 postdrop.1 \
 	postfix.1 postkick.1 postlock.1 postlog.1 postmap.1 postqueue.1 \
@@ -61,7 +60,7 @@ post-patch:
 	${ECHO} "all: default" >> Makefile)
 
 pre-install:
-	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 .if defined(NOPORTDOCS)
 READMEDIR=no
@@ -107,7 +106,7 @@ do-install:
 .endif
 
 post-install:
-	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 # need to fixup ${PREFIX}/etc/postfix/postfix-files to indicate compressed
 # man pages, since the ports software compresses them after this step, and
 # if we run etc/postfix/post-install again during package installation,
