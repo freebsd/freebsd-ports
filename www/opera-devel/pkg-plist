@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/opera-devel
 %%DOCSDIR%%/LICENSE
 %%DOCSDIR%%/help
@@ -44,6 +45,7 @@ bin/opera-devel
 %%DATADIR%%/help/toc.html
 %%DATADIR%%/help/toolbars.html
 %%DATADIR%%/help/windows.html
+%%DATADIR%%/hhd.ssr
 %%DATADIR%%/images/background.gif
 %%DATADIR%%/images/blank.gif
 %%DATADIR%%/images/drive.gif
@@ -72,10 +74,10 @@ bin/opera-devel
 %%DATADIR%%/java/opera.policy
 %%DATADIR%%/jsconsole.html
 %%DATADIR%%/lngcode.txt
-%%DATADIR%%/locale/english.lng
 %%DATADIR%%/locale/en/default.adr
 %%DATADIR%%/locale/en/lngcode.txt
 %%DATADIR%%/locale/en/search.ini
+%%DATADIR%%/locale/english.lng
 %%DATADIR%%/opera6.adr
 %%DATADIR%%/plugins/libnpp.so
 %%DATADIR%%/plugins/operamotifwrapper
@@ -110,7 +112,6 @@ bin/opera-devel
 %%DATADIR%%/styles/user/textonly.css
 %%DATADIR%%/styles/user/userstyle.ini
 %%DATADIR%%/styles/wml.css
-%%DATADIR%%/hhd.ssr
 @dirrm %%DATADIR%%/styles/user
 @dirrm %%DATADIR%%/styles
 @dirrm %%DATADIR%%/skin
@@ -125,14 +126,11 @@ bin/opera-devel
 @dirrm %%DATADIR%%/bin
 @dirrm %%DATADIR%%
 @dirrm %%DOCSDIR%%
-
-%%KDE:%%share/applnk/Internet/opera.desktop
-%%KDE2:%%share/applnk/Networking/WWW/opera.desktop
-%%GNOMELNK:%%share/gnome/apps/Internet/opera.desktop
-%%GNOME:%%share/gnome/pixmaps/opera.xpm
-%%KDE2:%%@dirrm share/applnk/Networking/WWW
-
+%%KDE%%share/applnk/Internet/opera-devel.desktop
+%%KDE2%%share/applnk/Networking/WWW/opera-devel.desktop
+%%GNOMELNK%%share/gnome/apps/Internet/opera-devel.desktop
+%%GNOME%%share/gnome/pixmaps/opera.xpm
+%%KDE2%%@dirrm share/applnk/Networking/WWW
 @cwd /etc/X11
-wmconfig/opera
-%%APPLNK:%%applnk/Internet/opera.desktop
-
+wmconfig/opera-devel
+%%APPLNK%%applnk/Internet/opera-devel.desktop

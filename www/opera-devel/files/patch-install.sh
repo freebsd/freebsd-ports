@@ -1,5 +1,5 @@
 --- install.sh.orig	Fri Dec 19 14:45:42 2003
-+++ install.sh	Wed Dec 31 14:59:00 2003
++++ install.sh	Sun Feb 15 21:02:32 2004
 @@ -108,8 +108,8 @@
  
      if test ${os} = 'FreeBSD' -o ${os} = 'OpenBSD'; then
@@ -115,6 +115,39 @@
       # Shorcuts and Icons
  	icons
  	gnome
+@@ -1305,13 +1275,13 @@
+ {
+     # arg1 = location
+ 
+-    wmconfig_file="${1}/opera"
++    wmconfig_file="${1}/opera-devel"
+ 
+-    wmconfig_contain='opera name "Opera"
++    wmconfig_contain='opera name "Opera Beta"
+ opera description "Opera Web Browser"
+ opera icon "opera.xpm"
+ opera mini-icon "opera.xpm"
+-opera exec "opera &"
++opera exec "opera-devel &"
+ opera group "Internet"'
+ 
+     echo "${wmconfig_contain}" > ${wmconfig_file}
+@@ -1322,12 +1292,12 @@
+ {
+     # arg1 = location
+ 
+-    desktop_file="${1}/opera.desktop"
++    desktop_file="${1}/opera-devel.desktop"
+ 
+     desktop_contain='[Desktop Entry]
+-Name=Opera
++Name=Opera Beta
+ Comment=Web Browser
+-Exec=opera
++Exec=opera-devel
+ Icon=opera.xpm
+ Terminal=0
+ Type=Application'
 @@ -1361,22 +1331,22 @@
  
      debug_msg 0 "in icons()"
