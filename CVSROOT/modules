@@ -1612,6 +1612,7 @@ dpsearch	ports/www/dpsearch
 drac		ports/mail/drac
 dragstack	ports/deskutils/dragstack
 drbl		ports/mail/drbl
+drexelsnmp	ports/java/drexelsnmp
 drgeo		ports/math/drgeo
 dri		ports/graphics/dri
 dri-devel	ports/graphics/dri-devel
