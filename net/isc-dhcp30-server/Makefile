@@ -8,7 +8,7 @@
 
 PORTNAME=	dhcp
 PORTVERSION=	3.0.1.r12
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	dhcp dhcp/dhcp-3.0-history
@@ -22,6 +22,16 @@ COMMENT?=	The ISC Dynamic Host Configuration Protocol server
 USE_REINPLACE=	yes
 USE_RC_SUBR=	yes
 
+SUBSYS?=	server
+
+.if ${SUBSYS} == client
+OPTIONS=	INTERFACE_POLLING "interface polling support" on
+.endif
+.if ${SUBSYS} == server
+OPTIONS=	DHCP_PARANOIA "add -user, -group and -chroot options" on \
+		DHCP_JAIL "add -chroot and -jail options" on
+.endif
+
 .include <bsd.port.pre.mk>
 
 # Global variables
@@ -31,8 +41,6 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--subsys ${SUBSYS}
 ALL_TARGET=	all.${SUBSYS}
 INSTALL_TARGET=	install.${SUBSYS}
-
-SUBSYS?=	server
 
 .if ${SUBSYS} == client
 MAN5=		dhclient.conf.5 dhclient.leases.5
@@ -117,17 +125,6 @@ REINPLACE_SUB=	PREFIX=${PREFIX}
 RCSCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 PKGMESSAGE_SUB=	PREFIX=${PREFIX} MAN1PREFIX=${MAN1PREFIX}
 
-# Pre-everything
-#
-
-.if ${SUBSYS} == client && !defined(WITHOUT_INTERFACE_POLLING)
-pre-everything::
-	@${ECHO_MSG}
-	@${ECHO_MSG} "If you want to compile without interface polling support."
-	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITHOUT_INTERFACE_POLLING=yes\""
-	@${ECHO_MSG}
-.endif
-
 # Post-extract
 #
 
@@ -155,6 +152,14 @@ patch-scripts:
 patch-site-conf:
 .if ${SUBSYS} == client && !defined(WITHOUT_INTERFACE_POLLING)
 	@${ECHO_CMD} CFLAGS += -DENABLE_POLLING_MODE >> ${WRKSRC}/site.conf
+.endif
+.if ${SUBSYS} == server
+.if !defined(WITHOUT_DHCP_PARANOIA)
+	@${ECHO_CMD} CFLAGS += -DPARANOIA >> ${WRKSRC}/site.conf
+.endif
+.if !defined(WITHOUT_DHCP_JAIL)
+	@${ECHO_CMD} CFLAGS += -DJAIL >> ${WRKSRC}/site.conf
+.endif
 .endif
 
 patch-makefile-conf:
