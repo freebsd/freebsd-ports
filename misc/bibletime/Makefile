@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	bibletime
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	wvengen@stack.nl
 COMMENT=	A powerful Bible study application for KDE3
-
-BROKEN=		"Does not compile"
 
 LIB_DEPENDS=	sword.1:${PORTSDIR}/misc/sword
 .if !defined(NOPORTDOCS)
