@@ -1,12 +1,12 @@
 # New ports collection makefile for:	gftp
-# Version required:	1.13
+# Version required:	2.0.1
 # Date Created:		21 Feb 1999
 # Whom:			Damjan Marion <dmarion@open.hr>
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/03 01:38:52 steve Exp $
+# $Id: Makefile,v 1.2 1999/04/27 00:37:35 taoka Exp $
 #
 
-DISTNAME=	gftp-1.13
+DISTNAME=	gftp-2.0.1
 CATEGORIES=	net
 MASTER_SITES=	http://www.newwave.net/~masneyb/
 
@@ -17,10 +17,14 @@ LIB_DEPENDS=	gtk12.1:${PORTSDIR}/x11-toolkits/gtk12
 USE_AUTOCONF=	yes
 USE_X_PREFIX=	yes
 
-post-install:
-	strip ${PREFIX}/bin/gftp
-
 pre-install:
 	find ${WRKSRC} -name \*.orig -exec ${RM} -f \{} \;
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/gftp ${PREFIX}/bin
+	@${MKDIR} ${PREFIX}/share/gftp
+.for i in sample.gftp/*
+	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/gftp
+.endfor
 
 .include <bsd.port.mk>
