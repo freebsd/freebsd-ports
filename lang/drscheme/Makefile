@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	drscheme
-PORTVERSION=	204
+PORTVERSION=	205
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://download.plt-scheme.org/bundles/${PORTVERSION}/plt/ \
 		http://www.cs.utah.edu/plt/download/${PORTVERSION}/plt/ \
 		ftp://ftp.pasteur.fr/pub/computing/Scheme/plt-scheme/${PORTVERSION}/plt/ \
 		ftp://archive.informatik.uni-tuebingen.de/unix/language/plt/${PORTVERSION}/plt/ \
+		ftp://infogroep.be/pub/plt/bundles/${PORTVERSION}/plt/ \
 		ftp://morpheus.wish.com.mx/pub/plt/${PORTVERSION}/plt/
-DISTNAME=	plt.src.x
+DISTNAME=	plt-${PORTVERSION}.src.x
 
-MAINTAINER=	jkoshy@freebsd.org
+MAINTAINER=	jkoshy@FreeBSD.org
 COMMENT=	An interactive, integrated, graphical Scheme programming environment
 
 DIST_SUBDIR=	drscheme/${PORTVERSION}
