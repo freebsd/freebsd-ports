@@ -1,0 +1,5 @@
+  gdcd is a CD player for the X Window System which uses the GIMP Tool
+Kit (GTK) and libcdaudio.  It is in quite early development at this point,
+but should become quite a bit more functional as time goes on.
+
+WWW: http://cdcd.undergrid.net/gdcd/
