@@ -1,8 +1,11 @@
---- Makefile.in.orig	Sat May  3 20:35:46 2003
-+++ Makefile.in	Wed Jun 18 20:04:48 2003
-@@ -7,6 +7,8 @@
+--- Makefile.in.orig	Sat Jan 24 14:20:52 2004
++++ Makefile.in	Mon Jul  5 14:33:14 2004
+@@ -5,8 +5,10 @@
+ prefix = @prefix@
+ exec_prefix = @exec_prefix@
  VPATH = @srcdir@
- LIBTOOL = $(srcdir)/libtool
+-LIBTOOL = $(srcdir)/libtool
++LIBTOOL?= $(srcdir)/libtool
  INSTALL = @INSTALL@
 +INSTALL_PROGRAM = @INSTALL_PROGRAM@
 +INSTALL_DATA = @INSTALL_DATA@

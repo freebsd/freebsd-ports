@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gigabase
-PORTVERSION=	3.22
+PORTVERSION=	3.23
 CATEGORIES=	databases
 MASTER_SITES=	http://www.garret.ru/~knizhnik/
 
@@ -16,7 +16,7 @@ COMMENT=	Object-Relational Database Management System
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=	13
+USE_LIBTOOL_VER=	15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS?=--prefix=${LOCALBASE}
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}"
