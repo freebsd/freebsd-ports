@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gossip
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION}
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.4
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GTK2 Jabber Instant Messaging client
@@ -21,5 +21,7 @@ USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomeui
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
