@@ -7,14 +7,16 @@
 #
 
 DISTNAME=	olvwm4
-USE_IMAKE=	yes
-MASTER_SITES=	ftp://ftp.x.org/R5contrib/
+PKGNAME=	olvwm-4.1
 CATEGORIES+=	x11
-EXTRACT_SUFX=	.tar.Z
+MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 DISTFILES=	olvwm4.tar.Z olvwm4.Patch01.Z
 EXTRACT_ONLY=	olvwm4.tar.Z
-NO_WRKSUBDIR=	yes
+
 LIB_DEPENDS=	xview\\.3\\.:${PORTSDIR}/x11/xview-lib
+
+NO_WRKSUBDIR=	yes
+USE_IMAKE=	yes
 
 pre-patch:
 	@echo "Applying olvwm4 Patch01"
