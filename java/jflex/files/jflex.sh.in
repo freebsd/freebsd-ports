@@ -1,0 +1,14 @@
+#!/bin/sh 
+#
+# Replacement for the script that came with JFlex
+# because bash is not necessarily on a FreeBSD
+# machine. Also, we know where the jar is.
+#
+# Conor McDermottroe <ports@mcdermottroe.com>
+#
+# $FreeBSD$
+
+# Allow the user to override where JFlex.jar lives
+JAVAJARDIR="${JAVAJARDIR:-"%%JAVAJARDIR%%"}"
+
+"%%LOCALBASE%%/bin/java" -jar "${JAVAJARDIR}/JFlex.jar" "$@"

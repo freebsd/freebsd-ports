@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/jflex
 %%JAVAJARDIR%%/JFlex.jar
 %%EXAMPLESDIR%%/binary/Makefile
@@ -49,6 +50,7 @@ bin/jflex
 %%EXAMPLESDIR%%/java/Makefile
 %%EXAMPLESDIR%%/java/README
 %%EXAMPLESDIR%%/java/TestLexer.java
+%%EXAMPLESDIR%%/java/build.xml
 %%EXAMPLESDIR%%/java/java.flex
 %%EXAMPLESDIR%%/java/java12.cup
 %%EXAMPLESDIR%%/java/lexer-output.good
