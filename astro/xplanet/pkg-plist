@@ -1,9 +1,19 @@
-bin/xplanet
-bin/xplanetbg
 bin/tkxplanet
 bin/tzcoord.pl
+bin/xplanet
+bin/xplanetbg
 share/xplanet/earth.jpg
-share/xplanet/earth-markers.txt
-share/xplanet/mars-markers.txt
-share/xplanet/moon-markers.txt
+share/xplanet/fonts/README
+share/xplanet/fonts/helr____.ttf
+share/xplanet/images/README
+share/xplanet/images/earth.jpg
+share/xplanet/images/night.jpg
+share/xplanet/images/smile.png
+share/xplanet/markers/earth
+share/xplanet/markers/mars
+share/xplanet/markers/moon
+share/xplanet/rgb.txt
+@dirrm share/xplanet/markers
+@dirrm share/xplanet/images
+@dirrm share/xplanet/fonts
 @dirrm share/xplanet
