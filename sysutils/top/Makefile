@@ -48,6 +48,10 @@ FREEBSDFILES=	machine.c sigdesc.h top.local.1
 
 OSREV!=		${UNAME} -r | ${TR} -cd A-Za-z0-9
 
+.if ${OSVERSION} >= 490102 && ${OSVERSION} < 500000
+BROKEN=		"Does not fetch on 4.10"
+.endif
+
 .if ${OSVERSION} < 470000
 IGNORE=		"This port is not supported for this OS version."
 .endif
