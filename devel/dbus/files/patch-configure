@@ -1,6 +1,27 @@
---- configure.orig	Thu Jul 22 01:12:36 2004
-+++ configure	Thu Jul 22 01:13:22 2004
-@@ -24198,14 +24198,14 @@
+--- configure.orig	Sun Jul 25 03:43:08 2004
++++ configure	Sun Jul 25 03:54:07 2004
+@@ -23359,17 +23359,15 @@
+ if test x$have_abstract_sockets = xyes ; then
+    abstract_sockets=1
+    DBUS_PATH_OR_ABSTRACT=abstract
++   cat >>confdefs.h <<_ACEOF
++#define HAVE_ABSTRACT_SOCKETS $abstract_sockets
++_ACEOF
+ else
+    abstract_sockets=0
+    DBUS_PATH_OR_ABSTRACT=path
+ fi
+ 
+ 
+-cat >>confdefs.h <<_ACEOF
+-#define HAVE_ABSTRACT_SOCKETS $abstract_sockets
+-_ACEOF
+-
+-
+ # this is used in addresses to prefer abstract, e.g.
+ # unix:path=/foo or unix:abstract=/foo
+ 
+@@ -24198,14 +24196,14 @@
  echo "${ECHO_T}not found" >&6
  fi
  

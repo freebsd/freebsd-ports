@@ -1,0 +1,14 @@
+--- python/dbus_bindings.pyx.in.orig	Tue Oct 28 19:06:07 2003
++++ python/dbus_bindings.pyx.in	Sun Jul 25 03:17:42 2004
+@@ -1,5 +1,11 @@
+ # -*- Mode: Python -*-
+ 
++cdef extern from "sys/types.h":
++    ctypedef size_t
++
++cdef extern from "sys/cdefs.h":
++    ctypedef __signed
++
+ #include "dbus_h_wrapper.h"
+ 
+ cdef extern from "stdlib.h":

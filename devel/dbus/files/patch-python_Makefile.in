@@ -1,0 +1,21 @@
+--- python/Makefile.in.orig	Sun Jul 25 03:19:00 2004
++++ python/Makefile.in	Sun Jul 25 03:19:40 2004
+@@ -237,7 +237,7 @@
+ dbusbindings_LTLIBRARIES = dbus_bindings.la
+ 
+ dbus_bindings_la_LDFLAGS = -module -avoid-version -fPIC -export-symbols-regex initdbus_bindings
+-dbus_bindings_la_LIBADD = $(top_builddir)/dbus/libdbus-1.la $(top_builddir)/glib/libdbus-glib-1.la
++dbus_bindings_la_LIBADD =
+ nodist_dbus_bindings_la_SOURCES = dbus_bindings.c
+ 
+ EXTRA_DIST = \
+@@ -257,8 +257,7 @@
+ CONFIG_CLEAN_FILES =
+ LTLIBRARIES = $(dbusbindings_LTLIBRARIES)
+ 
+-dbus_bindings_la_DEPENDENCIES = $(top_builddir)/dbus/libdbus-1.la \
+-	$(top_builddir)/glib/libdbus-glib-1.la
++dbus_bindings_la_DEPENDENCIES =
+ nodist_dbus_bindings_la_OBJECTS = dbus_bindings.lo
+ dbus_bindings_la_OBJECTS = $(nodist_dbus_bindings_la_OBJECTS)
+ 
