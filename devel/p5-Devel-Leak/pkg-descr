@@ -1,0 +1,17 @@
+Devel::Leak has two functions NoteSV and CheckSV.
+
+NoteSV walks the perl internal table of allocated SVs (scalar values) -
+(which actually contains arrays and hashes too), and records their
+addresses in a table.  It returns a count of these "things", and stores
+a pointer to the table (which is obtained from the heap using malloc())
+in its argument.
+
+CheckSV is passed argument which holds a pointer to a table created by
+NoteSV.  It re-walks the perl-internals and calls sv_dump() for any
+"things" which did not exist when NoteSV was called.  It returns a count
+of the number of "things" now allocated.
+
+WWW: http://search.cpan.org/search?dist=Devel-Leak
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
