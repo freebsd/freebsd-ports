@@ -1042,6 +1042,7 @@
     SUBDIR += p5-Term-Prompt
     SUBDIR += p5-Term-Query
     SUBDIR += p5-Term-ReadKey
+    SUBDIR += p5-Term-ReadLine-Gnu
     SUBDIR += p5-Term-ReadLine-Zoid
     SUBDIR += p5-Term-Screen
     SUBDIR += p5-Term-Shell
