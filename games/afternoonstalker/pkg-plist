@@ -1,0 +1,13 @@
+bin/afternoonstalker
+share/afternoonstalker/level1.set
+share/afternoonstalker/sounds/bat-killed.wav
+share/afternoonstalker/sounds/gun-pickup.wav
+share/afternoonstalker/sounds/new-life.wav
+share/afternoonstalker/sounds/player-bullet.wav
+share/afternoonstalker/sounds/player-hit.wav
+share/afternoonstalker/sounds/robot-bullet.wav
+share/afternoonstalker/sounds/robot-hit.wav
+share/afternoonstalker/sounds/shooting-blanks.wav
+share/afternoonstalker/sounds/spider-killed.wav
+@dirrm share/afternoonstalker/sounds
+@dirrm share/afternoonstalker
