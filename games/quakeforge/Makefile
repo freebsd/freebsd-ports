@@ -16,7 +16,7 @@ MASTER_SITES+=	http://www.devolution.com/~slouken/SDL/projects/quake/data/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${WADFILE}
 .endif
 
-MAINTAINER=	darius@dons.net.au
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	${ACLOCAL}:${PORTSDIR}/devel/automake14
 LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12 \
