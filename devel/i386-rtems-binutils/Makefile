@@ -36,17 +36,13 @@ CONFIGURE_ARGS?=	--verbose
 CONFIGURE_WRKSRC?=	${WRKDIR}/build-${LCLTARGET}
 CONFIGURE_SCRIPT?=	../${BINNAME}/configure
 
+PATCH_DIST_STRIP?=	-p1
+
 MAN1=		${LCLTARGET}-ar.1 ${LCLTARGET}-nm.1 ${LCLTARGET}-objdump.1 \
 		${LCLTARGET}-ranlib.1 ${LCLTARGET}-size.1 \
 		${LCLTARGET}-strings.1 ${LCLTARGET}-strip.1 \
 		${LCLTARGET}-objcopy.1 ${LCLTARGET}-addr2line.1 \
 		${LCLTARGET}-nlmconv.1 ${LCLTARGET}-as.1 ${LCLTARGET}-ld.1
-
-.if defined(PATCH_DEBUG)
-PATCH_DIST_ARGS=   -d ${WRKDIR} -E ${PATCH_DIST_STRIP}
-.else
-PATCH_DIST_ARGS=   -d ${WRKDIR} --forward --quiet -E ${PATCH_DIST_STRIP}
-.endif
 
 pre-configure:
 	@(cd ${WRKDIR} ; ${MKDIR} build-${LCLTARGET})
