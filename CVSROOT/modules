@@ -3528,6 +3528,7 @@ mahjong		ports/games/mahjong
 mahogany	ports/mail/mahogany
 mail		src/usr.bin/mail
 mail.local	src/libexec/mail.local
+mail2procmailrc	ports/mail/mail2procmailrc
 mailagent	ports/mail/mailagent
 mailcrypt	ports/mail/mailcrypt
 maildrop	ports/mail/maildrop
