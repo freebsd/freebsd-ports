@@ -83,10 +83,10 @@ while [ "$1" ]; do
 			echo "LIB_DEPENDS+=	freetype.7:\${PORTSDIR}/print/freetype2"
 			echo "LIB_DEPENDS+=	png.5:\${PORTSDIR}/graphics/png"
 			echo "LIB_DEPENDS+=	jpeg.9:\${PORTSDIR}/graphics/jpeg"
-			echo "CONFIGURE_ARGS+=--with-gd=\${PREFIX} \\"
-			echo "		--with-freetype-dir=\${PREFIX} \\"
-			echo "		--with-jpeg-dir=\${PREFIX} \\"
-			echo "		--with-png-dir=\${PREFIX}"
+			echo "CONFIGURE_ARGS+=--with-gd=\${LOCALBASE} \\"
+			echo "		--with-freetype-dir=\${LOCALBASE} \\"
+			echo "		--with-jpeg-dir=\${LOCALBASE} \\"
+			echo "		--with-png-dir=\${LOCALBASE}"
 			;;
 		\"zlib\")
 			echo "CONFIGURE_ARGS+=--with-zlib"
@@ -94,44 +94,44 @@ while [ "$1" ]; do
 			;;
 		\"mcrypt\")
 			echo "LIB_DEPENDS+=	mcrypt.6:\${PORTSDIR}/security/libmcrypt"
-			echo "CONFIGURE_ARGS+=--with-mcrypt=\${PREFIX}"
+			echo "CONFIGURE_ARGS+=--with-mcrypt=\${LOCALBASE}"
 			;;
 		\"mhash\")
 			echo "LIB_DEPENDS+=	mhash.2:\${PORTSDIR}/security/mhash"
-			echo "CONFIGURE_ARGS+=--with-mhash=\${PREFIX}"
+			echo "CONFIGURE_ARGS+=--with-mhash=\${LOCALBASE}"
 			;;
 		\"pdflib\")
 			echo "LIB_DEPENDS+=	pdf.3:\${PORTSDIR}/print/pdflib3"
 			echo "LIB_DEPENDS+=	jpeg.9:\${PORTSDIR}/graphics/jpeg"
 			echo "LIB_DEPENDS+=	png.5:\${PORTSDIR}/graphics/png"
 			echo "LIB_DEPENDS+=	tiff.4:\${PORTSDIR}/graphics/tiff"
-			echo "CONFIGURE_ARGS+=--with-pdflib=\${PREFIX} \\"
+			echo "CONFIGURE_ARGS+=--with-pdflib=\${LOCALBASE} \\"
 			echo "		--with-zlib-dir=/usr \\"
-			echo "		--with-jpeg-dir=\${PREFIX} \\"
-			echo "		--with-png-dir=\${PREFIX} \\"
-			echo "		--with-tiff-dir=\${PREFIX}"
+			echo "		--with-jpeg-dir=\${LOCALBASE} \\"
+			echo "		--with-png-dir=\${LOCALBASE} \\"
+			echo "		--with-tiff-dir=\${LOCALBASE}"
 			;;
 		\"IMAP\")
 			echo "LIB_DEPENDS+=	c-client4.8:\${PORTSDIR}/mail/cclient"
-			echo "CONFIGURE_ARGS+=--with-imap=\${PREFIX}"
+			echo "CONFIGURE_ARGS+=--with-imap=\${LOCALBASE}"
 			;;
 		\"IMAP-SSL\")
-			echo "CONFIGURE_ARGS+=--with-imap-ssl=\${PREFIX}"
+			echo "CONFIGURE_ARGS+=--with-imap-ssl=\${LOCALBASE}"
 			if [ -z "$IMAP" ]; then
 				set $* \"IMAP\"
 			fi
  			;;
 		\"MySQL\")
 			echo "LIB_DEPENDS+=	mysqlclient.10:\${PORTSDIR}/databases/mysql323-client"
-			echo "CONFIGURE_ARGS+=--with-mysql=\${PREFIX}"
+			echo "CONFIGURE_ARGS+=--with-mysql=\${LOCALBASE}"
 			;;
 		\"PostgreSQL\")
 			echo "LIB_DEPENDS+=	pq.2:\${PORTSDIR}/databases/postgresql7"
-			if [ -x ${PREFIX}/pgsql/bin/postgres -a ! -x ${PREFIX}/bin/postgres ]; then
-				PGPREFIX=${PREFIX}/pgsql
+			if [ -x ${LOCALBASE}/pgsql/bin/postgres -a ! -x ${LOCALBASE}/bin/postgres ]; then
+				PGPREFIX=${LOCALBASE}/pgsql
 			else
-				PGPREFIX=${PREFIX}
-				echo "CFLAGS+=-I\${PREFIX}/include/pgsql"
+				PGPREFIX=${LOCALBASE}
+				echo "CFLAGS+=-I\${LOCALBASE}/include/pgsql"
 			fi
 			echo "PGPREFIX=${PGPREFIX}"
 			echo "CONFIGURE_ARGS+=--with-pgsql=\${PGPREFIX}"
@@ -142,7 +142,7 @@ while [ "$1" ]; do
 			;;
 		\"SybaseDB\")
 			echo "LIB_DEPENDS+=	sybdb.0:\${PORTSDIR}/databases/freetds"
-			echo "CONFIGURE_ARGS+=--with-sybase=\${PREFIX}"
+			echo "CONFIGURE_ARGS+=--with-sybase=\${LOCALBASE}"
 			if [ "$SYBASECT" ]; then
 				echo "SybaseDB and SybaseCT are mutually exclusive." > /dev/stderr
 				rm -f ${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
@@ -152,7 +152,7 @@ while [ "$1" ]; do
 			;;
 		\"SybaseCT\")
 			echo "LIB_DEPENDS+=	ct.0:\${PORTSDIR}/databases/freetds"
-			echo "CONFIGURE_ARGS+=--with-sybase-ct=\${PREFIX}"
+			echo "CONFIGURE_ARGS+=--with-sybase-ct=\${LOCALBASE}"
 			if [ "$SYBASEDB" ]; then
 				echo "SybaseDB and SybaseCT are mutually exclusive." > /dev/stderr
 				rm -f ${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
@@ -162,7 +162,7 @@ while [ "$1" ]; do
 			;;
 		\"Interbase\")
 			echo "LIB_DEPENDS+=	gds.1:\${PORTSDIR}/databases/firebird"
-			echo "CONFIGURE_ARGS+=--with-interbase=\${PREFIX}/firebird"
+			echo "CONFIGURE_ARGS+=--with-interbase=\${LOCALBASE}/firebird"
 			;;
 		\"dBase\")
 			echo "CONFIGURE_ARGS+=--with-dbase"
@@ -170,28 +170,28 @@ while [ "$1" ]; do
 		\"OpenLDAP1\")
 			echo "LIB_DEPENDS+=	ldap.1:\${PORTSDIR}/net/openldap"
 			echo "LIB_DEPENDS+=	lber.1:\${PORTSDIR}/net/openldap"
-			echo "CONFIGURE_ARGS+=--with-ldap=\${PREFIX}"
+			echo "CONFIGURE_ARGS+=--with-ldap=\${LOCALBASE}"
 			if [ "$OPENLDAP2" ]; then
 				echo "OpenLDAP1 and OpenLDAP2 are mutually exclusive." > /dev/stderr
 				rm -f ${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
 				exit 1
 			fi
 			if [ -f /usr/lib/libkrb.a -a -f /usr/lib/libdes.a -a ! -L /usr/lib/libdes.a ]; then
-				LIBS="${LIBS} -lkrb -ldes -L\${PREFIX}/lib"
+				LIBS="${LIBS} -lkrb -ldes -L\${LOCALBASE}/lib"
 			fi
 			OPENLDAP1=1
 			;;
 		\"OpenLDAP2\")
 			echo "LIB_DEPENDS+=	ldap.2:\${PORTSDIR}/net/openldap2"
 			echo "LIB_DEPENDS+=	lber.2:\${PORTSDIR}/net/openldap2"
-			echo "CONFIGURE_ARGS+=--with-ldap=\${PREFIX}"
+			echo "CONFIGURE_ARGS+=--with-ldap=\${LOCALBASE}"
 			if [ "$OPENLDAP1" ]; then
 				echo "OpenLDAP1 and OpenLDAP2 are mutually exclusive." > /dev/stderr
 				rm -f ${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
 				exit 1
 			fi
 			if [ -f /usr/lib/libkrb.a -a -f /usr/lib/libdes.a -a ! -L /usr/lib/libdes.a ]; then
-				LIBS="${LIBS} -lkrb -ldes -L\${PREFIX}/lib"
+				LIBS="${LIBS} -lkrb -ldes -L\${LOCALBASE}/lib"
 			fi
 			OPENLDAP2=1
 			;;
@@ -201,19 +201,19 @@ while [ "$1" ]; do
 			;;
 		\"SNMP\")
 			echo "LIB_DEPENDS+=	snmp.4:\${PORTSDIR}/net/net-snmp"
-			echo "CONFIGURE_ARGS+=--with-snmp=\${PREFIX} --enable-ucd-snmp-hack"
+			echo "CONFIGURE_ARGS+=--with-snmp=\${LOCALBASE} --enable-ucd-snmp-hack"
 			echo "USE_OPENSSL=	yes"
 			LIBS="${LIBS} -L\${OPENSSLBASE}/lib -lcrypto -lssl"
 			;;
 		\"XML\")
 			echo "LIB_DEPENDS+=	expat.2:\${PORTSDIR}/textproc/expat2"
-			echo "CONFIGURE_ARGS+=--with-xml --with-expat-dir=\${PREFIX}"
+			echo "CONFIGURE_ARGS+=--with-xml --with-expat-dir=\${LOCALBASE}"
 			XML=1
 			;;
 		\"XSLT\")
 			echo "LIB_DEPENDS+=	sablot.70:\${PORTSDIR}/textproc/sablotron"
-			echo "CONFIGURE_ARGS+=--with-sablot=\${PREFIX}"
-			echo "CONFIGURE_ARGS+=--with-expat-dir=\${PREFIX}"
+			echo "CONFIGURE_ARGS+=--with-sablot=\${LOCALBASE}"
+			echo "CONFIGURE_ARGS+=--with-expat-dir=\${LOCALBASE}"
 			if [ -z "$XML" ]; then
 				set $* \"XML\"
 			fi
@@ -223,27 +223,27 @@ while [ "$1" ]; do
 			;;
 		\"DOMXML\")
 			echo "LIB_DEPENDS+=	xml2.5:\${PORTSDIR}/textproc/libxml2"
-			echo "CONFIGURE_ARGS+=--with-dom=\${PREFIX}"
+			echo "CONFIGURE_ARGS+=--with-dom=\${LOCALBASE}"
 			;;
 		\"FTP\")
 			echo "CONFIGURE_ARGS+=--enable-ftp"
 			;;
 		\"CURL\")
-			echo "CONFIGURE_ARGS+=--with-curl=\${PREFIX}"
-			echo "BUILD_DEPENDS+=	\${PREFIX}/lib/libcurl.a:\${PORTSDIR}/ftp/curl"
+			echo "CONFIGURE_ARGS+=--with-curl=\${LOCALBASE}"
+			echo "BUILD_DEPENDS+=	\${LOCALBASE}/lib/libcurl.a:\${PORTSDIR}/ftp/curl"
                         ;;
 		\"gettext\")
 			echo "LIB_DEPENDS+=	intl.1:\${PORTSDIR}/devel/gettext"
-			echo "CONFIGURE_ARGS+=--with-gettext=\${PREFIX}"
+			echo "CONFIGURE_ARGS+=--with-gettext=\${LOCALBASE}"
 			;;
 		\"iconv\")
 			echo "LIB_DEPENDS+=	iconv.2:\${PORTSDIR}/converters/iconv"
-			echo "CONFIGURE_ARGS+=--with-iconv=\${PREFIX}"
+			echo "CONFIGURE_ARGS+=--with-iconv=\${LOCALBASE}"
 			ICONV=1
 			;;
 		\"pspell\")
 			echo "LIB_DEPENDS+=	pspell.4:\${PORTSDIR}/textproc/pspell"
-			echo "CONFIGURE_ARGS+=--with-pspell=\${PREFIX}"
+			echo "CONFIGURE_ARGS+=--with-pspell=\${LOCALBASE}"
 			;;
 		\"mbregex\")
 			${CAT} << EOF
@@ -275,10 +275,10 @@ EOF
 			;;
 		\"ming\")
 			echo "LIB_DEPENDS+=	ming.3:\${PORTSDIR}/graphics/ming"
-			echo "CONFIGURE_ARGS+=--with-ming=\${PREFIX}"
+			echo "CONFIGURE_ARGS+=--with-ming=\${LOCALBASE}"
 			;;
 		\"MCAL\")
-			echo "CONFIGURE_ARGS+=--with-mcal=\${PREFIX}"
+			echo "CONFIGURE_ARGS+=--with-mcal=\${LOCALBASE}"
 			echo "LIB_DEPENDS+=	mcal.0:\${PORTSDIR}/misc/libmcal"
 			;;
 		\"sockets\")
