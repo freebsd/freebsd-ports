@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	twig
-PORTVERSION=	2.7.7
-PORTREVISION=	2
+PORTVERSION=	2.8.0
 CATEGORIES=	www mail
-MASTER_SITES=	http://www.informationgateway.org/download/
+MASTER_SITES=	http://www.informationgateway.org/download/ \
+		ftp://ftp.informationgateway.org/pub/
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Web Based Email Client and Scheduler
@@ -26,7 +26,7 @@ NO_BUILD=	YES
 PHP3_PORT?=	www/mod_php3
 TWIG?=		www/data-dist/twig
 PLIST_SUB+=	TWIG=${TWIG}
-ROOTFILES=	index.php3 test.php3 goto.php3
+ROOTFILES=	index.php test.php goto.php
 CONFFILES=	.htaccess mailfooter.inc.php3.sample
 USERFILES=	announcements.inc.php3 config.inc.php3 dbconfig.inc.php3 \
 		defaults.inc.php3 footer.inc.php3 header.inc.php3 \
