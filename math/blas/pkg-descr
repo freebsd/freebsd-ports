@@ -1,0 +1,5 @@
+This is BLAS 1, 2, and 3 from research.att.com. I cleaned up the makefile
+and created a second() function. This is used by linpack, eispack, and
+lapack.
+BLAS stands for Basic Linear Algebra (System?). It is a Fortran library, but
+can be called from C, C++, or whatever.
