@@ -1,6 +1,9 @@
---- Makefile.in.orig	Thu Oct 26 10:25:54 2000
-+++ Makefile.in	Thu Oct 26 23:55:44 2000
-@@ -76,7 +76,7 @@
+
+$FreeBSD$
+
+--- Makefile.in.orig	Wed Aug 29 13:57:11 2001
++++ Makefile.in	Sun Jan 27 10:19:21 2002
+@@ -82,7 +82,7 @@
  man_MANS = scrot.1
  
  docs_DATA = README AUTHORS ChangeLog TODO
@@ -9,3 +12,19 @@
  
  EXTRA_DIST =  scrot.spec scrot.1 $(docs_DATA)
  
+@@ -195,6 +195,7 @@
+ 	$(MAKE) $(AM_MAKEFLAGS) uninstall-man1
+ 
+ install-docsDATA: $(docs_DATA)
++.if !defined(NO_DOC)
+ 	@$(NORMAL_INSTALL)
+ 	$(mkinstalldirs) $(DESTDIR)$(docsdir)
+ 	@list='$(docs_DATA)'; for p in $$list; do \
+@@ -206,6 +207,7 @@
+ 	    $(INSTALL_DATA) $$p $(DESTDIR)$(docsdir)/$$p; \
+ 	  fi; fi; \
+ 	done
++.endif
+ 
+ uninstall-docsDATA:
+ 	@$(NORMAL_UNINSTALL)
