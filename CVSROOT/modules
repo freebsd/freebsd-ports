@@ -3758,6 +3758,7 @@ linpack		ports/math/linpack
 linplasma	ports/graphics/linplasma
 linpopup	ports/net/linpopup
 linprocfs	src/sys/compat/linprocfs
+linux-acu	ports/sysutils/linux-acu
 linux-blackdown-jdk12	ports/java/linux-blackdown-jdk12
 linux-blackdown-jdk13	ports/java/linux-blackdown-jdk13
 linux-bmrt	ports/graphics/linux-bmrt
