@@ -14,4 +14,6 @@ MAINTAINER=	sada@FreeBSD.org
 MASTERDIR=	${.CURDIR}/../xjman
 WRKSRC=		${WRKDIR}/man/ja_JP.eucJP
 
+FORBIDDEN=	"already included in original XF86-3 distribution."
+
 .include "${MASTERDIR}/Makefile"
