@@ -33,8 +33,12 @@ USE_X_PREFIX=	yes
 BROKEN=		"Does not compile"
 .endif
 
-post-configure:
-	${PERL} -pi -e "s:<wait.h:<sys/wait.h:g" ${WRKSRC}/*.c
+pre-patch:
+.for ii in analysis_highlighting.c main.c playback.c print.c
+	${MV} ${WRKSRC}/${ii} ${WRKSRC}/${ii}.orig
+	${SED} -e "s:<wait.h:<sys/wait.h:g" < ${WRKSRC}/${ii}.orig \
+		> ${WRKSRC}/${ii}
+.endfor
 
 pre-install:
 	${ECHO_CMD} bin/${PORTNAME} > ${PLIST}
@@ -51,12 +55,12 @@ do-install:
 	${MKDIR} ${PREFIX}/share/denemo
 	${INSTALL_PROGRAM} ${WRKSRC}/denemo ${PREFIX}/bin
 .for i in ${SHARED}
-	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/denemo
+	${INSTALL_DATA} ${WRKSRC}/$i ${DATADIR}
 .endfor
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/${DOCDIR}
+	${MKDIR} ${DOCSDIR}
 .for i in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/${DOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
 .endfor
 .endif
 
