@@ -1,0 +1,29 @@
+--- SNMP.xs.orig	Mon Jun  7 18:02:57 1999
++++ SNMP.xs	Sat Aug 28 01:06:54 1999
+@@ -1778,6 +1778,7 @@
+            struct variable_list *vars;
+            struct variable_list *last_vars;
+            struct tree *tp;
++            struct sockaddr_in *pduIp;
+ 	   oid *oid_arr;
+ 	   int oid_arr_len = MAX_OID_LEN;
+            SV *tmp_sv;
+@@ -1861,14 +1862,15 @@
+                                    &pdu->enterprise_length) != SUCCESS) {
+ 		  if (verbose) warn("invalid enterprise id: %s", enterprise);
+ 	      }
++               pduIp = (struct sockaddr_in *)&(pdu->agent_addr);
+               if (agent && strlen(agent)) {
+-                 pdu->agent_addr.sin_addr.s_addr = __parse_address(agent);
+-                 if (pdu->agent_addr.sin_addr.s_addr == -1 && verbose) {
++                 pduIp->sin_addr.s_addr = __parse_address(agent);
++                 if (pduIp->sin_addr.s_addr == -1 && verbose) {
+                     warn("invalid agent address: %s", agent);
+                     goto err;
+                  }
+               } else {
+-                 pdu->agent_addr.sin_addr.s_addr = get_myaddr();
++                 pduIp->sin_addr.s_addr = get_myaddr();
+               }
+               pdu->trap_type = generic;
+               pdu->specific_type = specific;
