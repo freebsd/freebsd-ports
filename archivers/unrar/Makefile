@@ -6,25 +6,27 @@
 #
 
 PORTNAME=	unrar
-PORTVERSION=	2.50
+PORTVERSION=	3.00
 CATEGORIES=	archivers
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	ache
+MASTER_SITES=	http://files2.rarlab.com/rar/
+DISTNAME=	unrarsrc
 
 MAINTAINER=	ache@FreeBSD.org
 
 NO_WRKSUBDIR=	Yes
-NO_LATEST_LINK= yes
 
-do-build:
-	cd ${WRKSRC} && \
-		${CC} ${CFLAGS} -D_UNIX unrar.c -o unrar
+ALL_TARGET=	makeunrar
+
+post-patch:
+	@${SED} -e 's|c++|${CXX}|g' -e 's|-O2|${CXXFLAGS}|g' \
+		${WRKSRC}/makefile.gcc > ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL} -d -m 755 -o ${SHAREOWN} -g ${SHAREGRP} \
-		${PREFIX}/share/doc/unrar
-	cd ${WRKSRC} && ${INSTALL_PROGRAM} unrar ${PREFIX}/bin
-	cd ${WRKSRC} && ${INSTALL_MAN} readme.txt license.txt \
-		${PREFIX}/share/doc/unrar
+	${INSTALL_PROGRAM} ${WRKSRC}/unrar ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/license.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
