@@ -1,13 +1,13 @@
 # New ports collection makefile for:	Coccon
-# Version required:	1.4
+# Version required:	1.5
 # Date created:		27 June 1999
 # Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	Cocoon_1.4
-PKGNAME=	cocoon-1.4
+DISTNAME=	Cocoon_1.5
+PKGNAME=	cocoon-1.5
 CATEGORIES=	textproc www java
 MASTER_SITES=	http://java.apache.org/cocoon/dist/
 EXTRACT_SUFX=	.jar
@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PREFIX}/libexec/apache/mod_jserv.so:${PORTSDIR}/www/apache-jserv
 
 EXTRACT_CMD=	${PREFIX}/${JAVASUBDIR}/bin/jar
 EXTRACT_BEFORE_ARGS=	xf
-EXTRACT_AFTER_ARGS=	
+EXTRACT_AFTER_ARGS=
 NO_WRKSUBDIR=	YES
 NO_BUILD=	YES
 
@@ -29,10 +29,10 @@ JAVASUBDIR=	jdk1.1.8
 do-install:
 	@${MKDIR} ${PREFIX}/share/java/classes ${PREFIX}/share/java/cocoon
 	@(cd ${WRKSRC}/bin; \
-	  ${INSTALL_DATA} Cocoon.jar fop.091.jar openxml.106.jar xslp.19990832.jar \
+	  ${INSTALL_DATA} Cocoon.jar fop.0110.jar openxml.106-fix.jar xslp.19991017-fix.jar \
 		${PREFIX}/share/java/classes)
 	@(cd ${WRKSRC}; \
-	 ${CP} -R [L-Rd-i]* ${PREFIX}/share/java/cocoon)
+	 ${CP} -R [LRd-i]* ${PREFIX}/share/java/cocoon)
 	@${INSTALL_DATA} ${WRKSRC}/bin/cocoon.properties \
 		${PREFIX}/etc/apache/cocoon.properties.default
 
