@@ -18,7 +18,6 @@ MASTER_SITES=	ftp://ftp.sterling.com/zsh/ \
 
 MAINTAINER=	torstenb@FreeBSD.org
 
-NO_LATEST_LINK=	yes
 GNU_CONFIGURE=	yes
 MAN1=		zsh.1 zshbuiltins.1 zshcompctl.1 zshexpn.1 zshmisc.1 \
 		zshoptions.1 zshall.1 zshparam.1 zshzle.1

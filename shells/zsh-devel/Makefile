@@ -17,6 +17,7 @@ MASTER_SITES=	ftp://ftp.zsh.org/zsh/ \
 
 MAINTAINER=	shige@FreeBSD.org
 
+NO_LATEST_LINK=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-zsh-mem --enable-zsh-secure-free --enable-dynamic
 MAN1=		zsh.1 zshbuiltins.1 zshcompctl.1 zshexpn.1 zshmisc.1 \
