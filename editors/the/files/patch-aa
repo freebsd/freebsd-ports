@@ -1,41 +1,53 @@
-*** Makefile.in.orig	Mon Aug  2 18:24:26 1999
---- Makefile.in	Mon Sep  6 21:22:42 1999
+*** Makefile.in.orig	Sat Jan 15 13:37:34 2000
+--- Makefile.in	Tue Feb  1 20:31:45 2000
 ***************
-*** 16,22 ****
+*** 16,28 ****
   srcdir		= @srcdir@
   prefix		= @prefix@
   exec_prefix	= @exec_prefix@
 ! libdir		= $(exec_prefix)/lib
   includedir		= $(exec_prefix)/include
   docdir		= $(srcdir)/doc
+  contribdir		= $(srcdir)/contrib
   thisdir		=@thisdir@
---- 16,22 ----
+  
+! INSTALL		= @INSTALL@
+  INSTALL_DATA	= @INSTALL_DATA@
+  
+  HTML_EXT		= @HTML_EXT@
+--- 16,28 ----
   srcdir		= @srcdir@
   prefix		= @prefix@
   exec_prefix	= @exec_prefix@
-! datadir		= $(exec_prefix)/share
+! libdir		= $(exec_prefix)/libdata
   includedir		= $(exec_prefix)/include
   docdir		= $(srcdir)/doc
+  contribdir		= $(srcdir)/contrib
   thisdir		=@thisdir@
+  
+! INSTALL_PROGRAM	= @INSTALL_PROGRAM@
+  INSTALL_DATA	= @INSTALL_DATA@
+  
+  HTML_EXT		= @HTML_EXT@
 ***************
-*** 30,36 ****
+*** 31,37 ****
   CFLAGS		= @CFLAGS@
   
   INCDIR		= $(srcdir)
 ! CPPFLAGS	= -I. -I$(INCDIR) @DEFS@ @SYS_DEFS@ -DTHE_HOME_DIRECTORY=\"$(prefix)/THE/\"
   
-  CCFLAGS		= -c $(CFLAGS) $(CPPFLAGS) @MH_CURSES_INC@ @MH_REXX_INC@
+  CCFLAGS		= -c $(CFLAGS) $(CPPFLAGS) @MH_REXX_INC@ @MH_CURSES_INC@
   
---- 30,36 ----
+--- 31,37 ----
   CFLAGS		= @CFLAGS@
   
   INCDIR		= $(srcdir)
-! CPPFLAGS	= -I. -I$(INCDIR) @DEFS@ @SYS_DEFS@ -DTHE_HOME_DIRECTORY=\"$(datadir)/THE/\"
+! CPPFLAGS	= -I. -I$(INCDIR) @DEFS@ @SYS_DEFS@ -DTHE_HOME_DIRECTORY=\"$(libdir)/THE/\"
   
-  CCFLAGS		= -c $(CFLAGS) $(CPPFLAGS) @MH_CURSES_INC@ @MH_REXX_INC@
+  CCFLAGS		= -c $(CFLAGS) $(CPPFLAGS) @MH_REXX_INC@ @MH_CURSES_INC@
   
 ***************
-*** 163,185 ****
+*** 186,208 ****
   
   install: the the.man THE_Help.txt
   	$(INSTALL_DATA) -m 755 -d $(exec_prefix)/bin
@@ -58,28 +70,28 @@
 ! 	$(INSTALL_DATA) $(srcdir)/THE_Help.txt $(prefix)/THE/THE_Help.txt
   
   clean:
-  	-rm -f *.o trace the manext *.man *$(HTML_EXT) *.new
---- 163,185 ----
+  	-rm -f *.o trace the manext *.man *$(HTML_EXT) *.new config.log config.cache config.status
+--- 186,208 ----
   
   install: the the.man THE_Help.txt
   	$(INSTALL_DATA) -m 755 -d $(exec_prefix)/bin
-! 	$(INSTALL_DATA) -m 755 -d $(datadir)/THE
-! 	$(INSTALL) -m 755 $(srcdir)/the $(exec_prefix)/bin/the
-! 	$(INSTALL_DATA) $(srcdir)/the.man $(datadir)/THE/the.man
-! 	$(INSTALL_DATA) $(srcdir)/append.the   $(datadir)/THE/append.the
-! 	$(INSTALL_DATA) $(srcdir)/comm.the     $(datadir)/THE/comm.the
-! 	$(INSTALL_DATA) $(srcdir)/build.the    $(datadir)/THE/build.the
-! 	$(INSTALL_DATA) $(srcdir)/setbuild.the $(datadir)/THE/setbuild.the
-! 	$(INSTALL_DATA) $(srcdir)/uncomm.the   $(datadir)/THE/uncomm.the
-! 	$(INSTALL_DATA) $(srcdir)/total.the    $(datadir)/THE/total.the
-! 	$(INSTALL_DATA) $(srcdir)/match.the    $(datadir)/THE/match.the
-! 	$(INSTALL_DATA) $(srcdir)/rm.the       $(datadir)/THE/rm.the
-! 	$(INSTALL_DATA) $(srcdir)/words.the    $(datadir)/THE/words.the
-! 	$(INSTALL_DATA) $(srcdir)/l.the        $(datadir)/THE/l.the
-! 	$(INSTALL_DATA) $(srcdir)/compile.the  $(datadir)/THE/compile.the
-! 	$(INSTALL_DATA) $(srcdir)/spell.the    $(datadir)/THE/spell.the
-! 	$(INSTALL_DATA) $(srcdir)/demo.the     $(datadir)/THE/demo.the
-! 	$(INSTALL_DATA) $(srcdir)/THE_Help.txt $(datadir)/THE/THE_Help.txt
+! 	$(INSTALL_DATA) -m 755 -d $(libdir)/THE
+! 	$(INSTALL_PROGRAM) ./the $(exec_prefix)/bin/the
+! 	$(INSTALL_DATA) ./the.man $(libdir)/THE/the.man
+! 	$(INSTALL_DATA) $(srcdir)/append.the   $(libdir)/THE/append.the
+! 	$(INSTALL_DATA) $(srcdir)/comm.the     $(libdir)/THE/comm.the
+! 	$(INSTALL_DATA) $(srcdir)/build.the    $(libdir)/THE/build.the
+! 	$(INSTALL_DATA) $(srcdir)/setbuild.the $(libdir)/THE/setbuild.the
+! 	$(INSTALL_DATA) $(srcdir)/uncomm.the   $(libdir)/THE/uncomm.the
+! 	$(INSTALL_DATA) $(srcdir)/total.the    $(libdir)/THE/total.the
+! 	$(INSTALL_DATA) $(srcdir)/match.the    $(libdir)/THE/match.the
+! 	$(INSTALL_DATA) $(srcdir)/rm.the       $(libdir)/THE/rm.the
+! 	$(INSTALL_DATA) $(srcdir)/words.the    $(libdir)/THE/words.the
+! 	$(INSTALL_DATA) $(srcdir)/l.the        $(libdir)/THE/l.the
+! 	$(INSTALL_DATA) $(srcdir)/compile.the  $(libdir)/THE/compile.the
+! 	$(INSTALL_DATA) $(srcdir)/spell.the    $(libdir)/THE/spell.the
+! 	$(INSTALL_DATA) $(srcdir)/demo.the     $(libdir)/THE/demo.the
+! 	$(INSTALL_DATA) $(srcdir)/THE_Help.txt $(libdir)/THE/THE_Help.txt
   
   clean:
-  	-rm -f *.o trace the manext *.man *$(HTML_EXT) *.new
+  	-rm -f *.o trace the manext *.man *$(HTML_EXT) *.new config.log config.cache config.status

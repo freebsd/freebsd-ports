@@ -1,0 +1,22 @@
+*** execute.c.orig	Thu Dec 23 19:20:28 1999
+--- execute.c	Tue Feb  1 20:40:04 2000
+***************
+*** 4253,4258 ****
+--- 4253,4259 ----
+           draw_cursor(FALSE);
+           default_button = 0;
+           editfield_col = -1;
++ #if defined(PDCURSES_MOUSE_ENABLED) || defined(NCURSES_MOUSE_VERSION)
+           if ( rc == RC_READV_TERM_MOUSE )
+           {
+              /*
+***************
+*** 4267,4272 ****
+--- 4268,4274 ----
+           {
+              continue;
+           }
++ #endif
+        }
+        else
+        {
