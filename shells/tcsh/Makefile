@@ -18,7 +18,7 @@ Y2K=		ftp://ftp.astron.com/pub/tcsh/Y2K
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} >= 400021
 NO_BUILD=	yes
-PLIST=		${PKGDIR}/PLIST.nobuild
+PLIST=		${PKGDIR}/pkg-plist.nobuild
 DISTFILES=	# empty
 
 do-patch:
