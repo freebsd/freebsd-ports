@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.4
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	gnomemm.9:${PORTSDIR}/x11-toolkits/gnome--
+LIB_DEPENDS=	gnomemm-1.2.10:${PORTSDIR}/x11-toolkits/gnome--
 
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes
