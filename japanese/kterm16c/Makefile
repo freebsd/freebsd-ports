@@ -36,6 +36,7 @@ USE_XPM=	yes
 
 .if ${XFREE86_VERSION} == 4
 EXTRACT_DEPENDS+=bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
+BUILD_DEPENDS+=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
 .endif
 
 DOCDIR=		${PREFIX}/share/doc/kterm16c
