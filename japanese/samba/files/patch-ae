@@ -1,0 +1,36 @@
+*** nmbd/nmbd_winsserver.c.orig	Wed Jul 21 10:25:11 1999
+--- nmbd/nmbd_winsserver.c	Mon Dec 27 04:46:26 1999
+***************
+*** 152,158 ****
+    start_async_dns();
+  #endif
+  
+!   pstrcpy(fname,lp_lockdir());
+    trim_string(fname,NULL,"/");
+    pstrcat(fname,"/");
+    pstrcat(fname,WINS_LIST);
+--- 152,158 ----
+    start_async_dns();
+  #endif
+  
+!   pstrcpy(fname,"/var/db");
+    trim_string(fname,NULL,"/");
+    pstrcat(fname,"/");
+    pstrcat(fname,WINS_LIST);
+***************
+*** 1551,1557 ****
+  	  }
+    }
+  
+!   slprintf(fname,sizeof(fname),"%s/%s", lp_lockdir(), WINS_LIST);
+    all_string_sub(fname,"//", "/", 0);
+    slprintf(fnamenew,sizeof(fnamenew),"%s.%u", fname, (unsigned int)getpid());
+  
+--- 1551,1557 ----
+  	  }
+    }
+  
+!   slprintf(fname,sizeof(fname),"%s/%s", "/var/db", WINS_LIST);
+    all_string_sub(fname,"//", "/", 0);
+    slprintf(fnamenew,sizeof(fnamenew),"%s.%u", fname, (unsigned int)getpid());
+  
