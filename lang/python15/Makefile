@@ -46,7 +46,7 @@ CONFIGURE_ENV+=		LDFLAGS="-pthread ${LDFLAGS}"
 #
 .if exists(/usr/src/contrib/libgmp/gmp-impl.h)
 SETUP_LOCAL+=	Setup.gmp
-PLIST_GMP=	${PKGDIR}/PLIST.gmp
+PLIST_GMP=	${PKGDIR}/pkg-plist.gmp
 .endif
 
 #
@@ -55,7 +55,7 @@ PLIST_GMP=	${PKGDIR}/PLIST.gmp
 # while extending or managing Python.
 #
 .if !defined(WITHOUT_TOOLS)
-PLIST_TOOLS=	${PKGDIR}/PLIST.Tools
+PLIST_TOOLS=	${PKGDIR}/pkg-plist.Tools
 .endif
 
 post-extract:
@@ -93,7 +93,7 @@ pre-install:
 	${INSTALL_DATA} ${WRKSRC}/Lib/${platform}/*                    \
 		${PREFIX}/lib/python1.5/${platform}/
 .endfor
-	@sort -r -o ${PLIST} ${PLIST_TK} ${PLIST_GMP} ${PLIST_TOOLS} ${PKGDIR}/PLIST
+	@sort -r -o ${PLIST} ${PLIST_TK} ${PLIST_GMP} ${PLIST_TOOLS} ${PKGDIR}/pkg-plist
 
 post-install:
 	strip ${PREFIX}/bin/python
