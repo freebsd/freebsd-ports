@@ -583,6 +583,7 @@
     SUBDIR += xvier
     SUBDIR += xvmahjongg
     SUBDIR += xvmines
+    SUBDIR += xwelltris
     SUBDIR += xword
     SUBDIR += xworm
     SUBDIR += xzip

@@ -1,0 +1,16 @@
+XWelltris is a tetris like popular game.
+
+  Imaging that you are looking into the glass from the top. You see four
+walls and the bottom. The flat 2d figures falling down from the walls one
+by one. You can move these figures from one wall to another or rotate them.
+If the figure leave the wall then it moves on the bottom while another
+figure is pushed. You need to form full rows and/or columns on the bottom.
+When you form such row, it disappear and you receive additional empty space
+on the bottom and scores :). The more rows disappear at a time, the more
+scores you have. If you can't place the whole figure on the bottom, then it
+stays on the wall and this wall became frozen (you can't place figures on
+it) for a while. After nth rows were successfully cleared, you will receive
+bonus figure and go to to the next level - game speed will be increased.
+Your task is to play more longer and earn more scores.
+
+WWW: http://www.xnc.dubna.su/xwelltris/
