@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		Lingua-EN-Sentence
-PORTVERSION=		0.22
+PORTVERSION=		0.23
 CATEGORIES=		textproc perl5
 MASTER_SITES=		http://www.cpan.org/authors/id/S/SH/SHLOMOY/
 PKGNAMEPREFIX=		p5-
