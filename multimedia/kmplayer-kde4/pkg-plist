@@ -1,4 +1,5 @@
 bin/kmplayer
+bin/kxvplayer
 lib/kde3/kmplayer.la
 lib/kde3/kmplayer.so
 lib/kde3/libkmplayerpart.la
