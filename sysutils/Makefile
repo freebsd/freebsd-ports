@@ -500,6 +500,7 @@
     SUBDIR += xsysstats
     SUBDIR += xvidcap
     SUBDIR += xwipower
+    SUBDIR += xwlans
     SUBDIR += yawho
     SUBDIR += zidrav
     SUBDIR += zisofs-tools
