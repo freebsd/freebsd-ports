@@ -91,7 +91,7 @@ post-patch:
 			${REINPLACE_CMD} -e \
 				's|-O2|${CFLAGS}|'
 post-install:
-.if defined(WITHOUT_MPEG4IP)
+.if defined(WITHOUT_MPEG4IP) && !defined(HAS_MP4V2)
 	@${INSTALL_DATA} ${WRKSRC}/common/mp4v2/systems.h ${PREFIX}/include
 .endif
 
