@@ -19,3 +19,4 @@ share/guile/gtk/threads.scm
 @dirrm share/guile-gtk
 @dirrm share/guile/gtk-1.2
 @dirrm share/guile/gtk
+@dirrm share/guile
