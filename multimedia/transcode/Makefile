@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=  transcode
+PORTNAME=	transcode
 PORTVERSION=	0.6.0
 PORTREVISION=	1
 CATEGORIES=	graphics
@@ -18,14 +18,23 @@ MAINTAINER=	hendrik@scholz.net
 .if !defined(WITHOUT_LAME)
 BUILD_DEPENDS+= mp3rtp:${PORTSDIR}/audio/lame-devel
 CONFIGURE_ARGS+= --with-lame
+PLIST_SUB+=	WITH_LAME=""
+.else
+PLIST_SUB+=	WITH_LAME="@comment "
 .endif
 .if defined(WITH_LIBDV)
 BUILD_DEPENDS+= encodedv:${PORTSDIR}/graphics/libdv
 CONFIGURE_ARGS+= --with-dv --with-dv-includes=${LOCALBASE} --with-dv-libs=${LOCALBASE}
+PLIST_SUB+=	WITH_LIBDV=""
+.else
+PLIST_SUB+=	WITH_LIBDV="@comment "
 .endif
 .if defined(WITH_LIBA52)
 BUILD_DEPENDS+= a52dec:${PORTSDIR}/audio/liba52
 CONFIGURE_ARGS+= --with-a52
+PLIST_SUB+=	WITH_LIBA52=""
+.else
+PLIST_SUB+=	WITH_LIBA52="@comment "
 .endif
 .if defined(WITH_NASM)
 BUILD_DEPENDS+= nasm:${PORTSDIR}/devel/nasm

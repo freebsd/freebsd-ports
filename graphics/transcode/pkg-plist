@@ -69,10 +69,10 @@ lib/transcode/filter_dnr.so
 lib/transcode/filter_dnr.la
 lib/transcode/filter_testframe.so
 lib/transcode/filter_testframe.la
-lib/transcode/import_mp3.la
-lib/transcode/import_mp3.so
-lib/transcode/a52_decore.la
-lib/transcode/a52_decore.so
-lib/transcode/import_dv.la
-lib/transcode/import_dv.so
+%%WITH_LAME%%lib/transcode/import_mp3.la
+%%WITH_LAME%%lib/transcode/import_mp3.so
+%%WITH_LIBA52%%lib/transcode/a52_decore.la
+%%WITH_LIBA52%%lib/transcode/a52_decore.so
+%%WITH_LIBDV%%lib/transcode/import_dv.la
+%%WITH_LIBDV%%lib/transcode/import_dv.so
 @dirrm lib/transcode
