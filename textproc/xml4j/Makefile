@@ -8,7 +8,7 @@
 PORTNAME=	xml4j
 PORTVERSION=	3.1.1
 CATEGORIES=	textproc
-MASTER_SITES=	http://apps.alphaworks.ibm.com/technologies/xml4j/
+MASTER_SITES=	http://www.alphaworks.ibm.com/aw.nsf/download/xml4j/
 DISTNAME=	XML4J-J-bin.${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
