@@ -27,6 +27,7 @@ MAKE_ENV=	LN="${LN}" RANLIB="${RANLIB}"
 MAKEFILE=	GNUmakefile
 INSTALL_TARGET=	install.bin install.lib install.data install-dev
 INSTALLS_SHLIB=	yes
+NO_CDROM=	"Not allowed to sell"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g ; \
