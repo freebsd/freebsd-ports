@@ -6,18 +6,22 @@
 #
 
 PORTNAME=	micq
-PORTVERSION=	0.4.4
+PORTVERSION=	0.4.5
 CATEGORIES=	net
-MASTER_SITES=   ftp://micq.chatzone.org/pub/micq/V0.4.4/
+MASTER_SITES=   ftp://micq.chatzone.org/pub/micq/V0.4.5/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	andrew@chg.ru
+
+# There is something strange with distfile, so next line is really needed.
+WRKSRC=		${WRKDIR}/micq-0.4.4
 
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/micq ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 		${MKDIR} ${PREFIX}/share/doc/micq
 		${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/micq
+		${INSTALL_DATA} ${WRKSRC}/CHANGELOG ${PREFIX}/share/doc/micq
 .endif
 
 .include <bsd.port.mk>
