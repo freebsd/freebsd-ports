@@ -3,14 +3,14 @@
 # Date created:         20 Sep 1998
 # Whom:                 msmith
 #
-# $Id: Makefile,v 1.6 1999/01/07 02:31:46 simokawa Exp $
+# $Id: Makefile,v 1.7 1999/02/09 23:43:30 msmith Exp $
 #
 
 DISTNAME=       linux
 PKGNAME=	citrix_ica-3.0.15
 CATEGORIES=	comms
 MASTER_SITES=   "Distfile must be fetched manually"
-EXTRACT_SUFX=	.tar.z
+EXTRACT_SUFX=	.tar.gz
 
 MAINTAINER=     msmith@FreeBSD.ORG
 
@@ -30,7 +30,7 @@ BINDIR=		${PREFIX}/bin
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE='The source to this port may not be automatically fetched due to licensing restrictions.  You MUST fetch the source manually after reading and agreeing to the license at: http://download.citrix.com/download.asp?client=LINUX   Once ${DISTFILES} has been downloaded, move it to ${DISTDIR} and then restart this build.'
+IGNORE='The distribution file for this port may not be automatically fetched due to licensing restrictions.  You MUST fetch the file manually after reading and agreeing to the license at: http://download.citrix.com/download.asp?client=LINUX   Once ${DISTFILES} has been downloaded, move it to ${DISTDIR} and then restart this build.'
 .endif
 
 do-install:
