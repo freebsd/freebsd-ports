@@ -21,11 +21,8 @@ MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unix/ \
 DISTNAME=	vim-${PORTVERSION:C/\.[0-9]*$//}
 
 PATCH_SITES=	${MASTER_SITES:S/unix/patches/}
-PATCHFILES!=	p=0 ; \
-		while [ $$p -le ${PATCHLEVEL} ] ; do \
-			printf "${PORTVERSION:C/\.[0-9]*$//}.%03d " $$p ; \
-			p=$$(($$p + 1)) ; \
-		done
+PATCHFILES!=	jot -s " " -w ${PORTVERSION:C/\.[0-9]*$//}.%03d  \
+			${PATCHLEVEL} 0 ${PATCHLEVEL}
 #	bits to remove
 BADPATCHES=	000 012 027 035 048 053 064 070 073 087 093 106 107 115 116 117 119 121 122 123 125 135 137 138 161 162 164 165 179 186 205 207 227 250 251 254 255 256 260 262 268
 .for p in ${BADPATCHES}
