@@ -6,15 +6,9 @@
 #
 
 PORTNAME=	libjconv
-PORTVERSION=	2.8
-PORTREVISION=	1
+PORTVERSION=	2.8.1
 CATEGORIES=	japanese
-MASTER_SITES=	ftp://ftp.rpmlinux.com/kondara/%SUBDIR%/ \
-		ftp://ftp.jp.psi.net/pub/Linux/kondara/%SUBDIR%/ \
-		ftp://ftp.kddlabs.co.jp/Linux/packages/Kondara/pub/Kondara/%SUBDIR%/ \
-		ftp://mirror.nucba.ac.jp/mirror/Kondara/%SUBDIR%/ \
-		ftp://ftp.riken.go.jp/pub/Linux/kondara/%SUBDIR%/
-MASTER_SITE_SUBDIR=	Jirai/SOURCES
+MASTER_SITES=	http://www.kondara.org/libjconv/
 
 MAINTAINER=	knu@FreeBSD.org
 
