@@ -18,6 +18,7 @@ BDBMINOR=		${BDBVER:E:S/^\.//}
 BDBDIR=			BerkeleyDB.${BDBVER}
 CONFIGURE_ARGS=		--enable-compat185 --enable-dump185 \
 			--enable-cxx --enable-dynamic \
+			--enable-rpc \
 			--with-uniquename \
 			--includedir=${PREFIX}/include/${PORTNAME} \
 			--libdir=${PREFIX}/lib/${PORTNAME} \
