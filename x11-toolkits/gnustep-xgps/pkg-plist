@@ -1,4 +1,10 @@
-System/Headers/gnustep/xgps/SharedX/XGGeneric.h
+System/Headers/gnustep/xgps/XGContext.h
+System/Headers/gnustep/xgps/XGContextPrivate.h
+System/Headers/gnustep/xgps/XGContextWindow.h
+System/Headers/gnustep/xgps/XGGState.h
+System/Headers/gnustep/xgps/XGGStateOps.h
+System/Headers/gnustep/xgps/XGGeneric.h
+System/Headers/gnustep/xgps/XGGeometry.h
 System/Library/Bundles/libgnustep-xgps.bundle/Contents/Info.plist
 System/Library/Bundles/libgnustep-xgps.bundle/Resources/Info-gnustep.plist
 System/Library/Bundles/libgnustep-xgps.bundle/Resources/Info.plist
@@ -16,6 +22,4 @@ System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/gpbs
 @dirrm System/Library/Bundles/libgnustep-xgps.bundle/Resources
 @dirrm System/Library/Bundles/libgnustep-xgps.bundle/Contents
 @dirrm System/Library/Bundles/libgnustep-xgps.bundle
-@dirrm System/Library/Bundles
-@dirrm System/Headers/gnustep/xgps/SharedX
 @dirrm System/Headers/gnustep/xgps

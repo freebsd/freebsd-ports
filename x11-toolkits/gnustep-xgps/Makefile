@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnustep-xgps
-PORTVERSION=	0.7.0
+PORTVERSION=	0.7.5
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/core/
 
