@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mplayerplug-in
-PORTVERSION=	2.70
-PORTREVISION=	2
+PORTVERSION=	2.80
 CATEGORIES=	www multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mplayerplug-in
@@ -33,7 +32,7 @@ USE_GMAKE=	yes
 PLUGINSFILES=	mplayerplug-in.so mplayerplug-in.xpt
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -DBSD" \
 		LDFLAGS="-L${X11BASE}/lib"
 
 .if !defined(WITH_MOZILLA)
