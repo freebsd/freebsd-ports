@@ -13,7 +13,7 @@
   #define NOV
   
   /* Optional */
-! #define NOV_DIRECTORY "/var/news"
+! #define NOV_DIRECTORY "/var/news/over.view"
   
   /*********************** NETWORK DEPENDENT DEFINITIONS **********************
    *
