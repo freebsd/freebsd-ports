@@ -195,6 +195,8 @@ README=	${TEMPLATES}/README.top
 .else
 README=	${TEMPLATES}/README.category
 .endif
+COMMENT?=	${.CURDIR}/pkg/COMMENT
+DESCR?=		${.CURDIR}/pkg/DESCR
 
 HTMLIFY=	sed -e 's/&/\&amp;/g' -e 's/>/\&gt;/g' -e 's/</\&lt;/g'
 
@@ -210,26 +212,29 @@ README.html:
 .else
 	@echo -n '<a href="'${entry}/README.html'">'"`cd ${entry}; make package-name | ${HTMLIFY}`</a>: " >> $@.tmp
 .endif
-.if exists(${entry}/pkg/COMMENT)
-	@${HTMLIFY} ${entry}/pkg/COMMENT >> $@.tmp
-.else
-	@echo "(no description)" >> $@.tmp
-.endif
+	@cat `cd ${entry}; make -V COMMENT` | ${HTMLIFY} >> $@.tmp
 .endfor
 	@sort -t '>' +1 -2 $@.tmp > $@.tmp2
-.if exists(${.CURDIR}/pkg/DESCR)
-	@${HTMLIFY} ${.CURDIR}/pkg/DESCR > $@.tmp3
+.if exists(${DESCR})
+	@${HTMLIFY} ${DESCR} > $@.tmp3
 .else
 	@> $@.tmp3
 .endif
+.if exists(${COMMENT})
+	@${HTMLIFY} ${COMMENT} > $@.tmp4
+.else
+	@> $@.tmp4
+.endif
 	@cat ${README} | \
 		sed -e 's/%%CATEGORY%%/'"`basename ${.CURDIR}`"'/g' \
+			-e '/%%COMMENT%%/r$@.tmp4' \
+			-e '/%%COMMENT%%/d' \
 			-e '/%%DESCR%%/r$@.tmp3' \
 			-e '/%%DESCR%%/d' \
 			-e '/%%SUBDIR%%/r$@.tmp2' \
 			-e '/%%SUBDIR%%/d' \
 		> $@
-	@rm -f $@.tmp $@.tmp2 $@.tmp3
+	@rm -f $@.tmp $@.tmp2 $@.tmp3 $@.tmp4
 
 .if !defined(NOPRECIOUSMAKEVARS)
 .MAKEFLAGS: \
