@@ -25,6 +25,6 @@ do-install:
 	@${MKDIR} ${PREFIX}/share/java/starlogo
 	@${INSTALL_SCRIPT} ${WRKSRC}/starlogo-unix ${PREFIX}/bin/starlogo
 	@(cd ${WRKSRC} && ${TAR} -c -f - .) \
-		| (cd ${PREFIX}/share/java/starlogo && && ${TAR} --unlink -x -f -)
+		| (cd ${PREFIX}/share/java/starlogo && ${TAR} --unlink -x -f -)
 
 .include <bsd.port.mk>
