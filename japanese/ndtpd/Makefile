@@ -3,7 +3,7 @@
 # Date created:			4 Aug 1998
 # Whom:				Motoyuki Kasahara <m-kasahr@sra.co.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.4 1998/08/10 12:21:16 steve Exp $
 #
 
 DISTNAME=	ndtpd-2.0.3
@@ -35,6 +35,8 @@ APPENDIXFILES=	chujiten-2.3.tar.gz \
 		readers2-2.0.tar.gz
 
 MAINTAINER=	m-kasahr@sra.co.jp
+
+BROKEN_ELF=	yes
 
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
