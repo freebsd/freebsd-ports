@@ -7070,6 +7070,7 @@ p5-XML-RegExp	ports/textproc/p5-XML-RegExp
 p5-XML-SAX	ports/textproc/p5-XML-SAX
 p5-XML-SAX-Base	ports/textproc/p5-XML-SAX-Base
 p5-XML-SAX-Expat	ports/textproc/p5-XML-SAX-Expat
+p5-XML-SAX-ExpatXS	ports/textproc/p5-XML-SAX-ExpatXS
 p5-XML-SAX-Machines	ports/textproc/p5-XML-SAX-Machines
 p5-XML-SAX-Simple	ports/textproc/p5-XML-SAX-Simple
 p5-XML-SAX-Writer	ports/textproc/p5-XML-SAX-Writer
