@@ -1,0 +1,39 @@
+tcpdump(1) hacked to better understand SMB packets. 
+smbtcpdump gives the ability to interpret NBT and SMB packets in a fair bit
+of detail.
+
+To capture all SMB packets going to or from host "fred" try this:
+
+	tcpdump -i eth0 -s 1500 port 139 host fred
+
+If you want name resolution or browse packets then try ports 137 and
+138 respectively.
+
+Example Output:
+
+Here is a sample of a capture of a "SMBsearch" directory search. If
+you don't get output that looks like this then smbtcpdump is not working
+correctly.
+
+NBT Session Packet
+Flags=0x0
+Length=57
+
+SMB PACKET: SMBsearch (REQUEST)
+SMB Command   =  0x81
+Error class   =  0x0
+Error code    =  0
+Flags1        =  0x8
+Flags2        =  0x3
+Tree ID       =  2048
+Proc ID       =  11787
+UID           =  2048
+MID           =  11887
+Word Count    =  2
+smbvwv[]=
+Count=98
+Attrib=HIDDEN SYSTEM DIR 
+smbbuf[]=
+Path=\????????.???
+BlkType=0x5
+BlkLen=0
