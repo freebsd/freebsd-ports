@@ -31,6 +31,7 @@ share/gnome/omf/balsa/balsa-C.omf
 share/gnome/pixmaps/gnome-balsa2.png
 share/gnome/sounds/balsa/newmail.wav
 share/gnome/sounds/balsa/startup.wav
+share/locale/am/LC_MESSAGES/balsa.mo
 share/locale/az/LC_MESSAGES/balsa.mo
 share/locale/bg/LC_MESSAGES/balsa.mo
 share/locale/ca/LC_MESSAGES/balsa.mo
@@ -45,6 +46,7 @@ share/locale/fi/LC_MESSAGES/balsa.mo
 share/locale/fr/LC_MESSAGES/balsa.mo
 share/locale/ga/LC_MESSAGES/balsa.mo
 share/locale/he/LC_MESSAGES/balsa.mo
+share/locale/hi/LC_MESSAGES/balsa.mo
 share/locale/hu/LC_MESSAGES/balsa.mo
 share/locale/it/LC_MESSAGES/balsa.mo
 share/locale/ja/LC_MESSAGES/balsa.mo
