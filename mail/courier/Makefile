@@ -74,7 +74,8 @@ CONFIGURE_ARGS=	--disable-root-check --with-db=db \
 		--with-calendardir=${CALENDIR} \
 		--with-default-maildrop=${MAILDROPDEFAULT} \
 		--enable-workarounds-for-imap-client-bugs
-CONFIGURE_ENV=	PATH="${PATH}:${SCRIPTDIR}"
+
+PATH:=${PATH}:${SCRIPTDIR}
 
 # Respect the make.conf(5) NOUUCP setting
 WITH_TRANSPORT=	local esmtp dsn
