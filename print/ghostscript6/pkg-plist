@@ -428,9 +428,19 @@ share/ghostscript/fonts/u004006t.pfm
 share/ghostscript/fonts/z003034l.afm
 share/ghostscript/fonts/z003034l.pfb
 share/ghostscript/fonts/z003034l.pfm
+share/ghostscript/hpdj/LGPL.txt
+share/ghostscript/hpdj/NEWS
+share/ghostscript/hpdj/README.hpdj
+share/ghostscript/hpdj/example.mdf
+share/ghostscript/hpdj/hpdj.html
+share/ghostscript/hpdj/margins-A4.ps
+share/ghostscript/hpdj/margins-A4Rotated.ps
+share/ghostscript/hpdj/margins-Letter.ps
+share/ghostscript/hpdj/margins-LetterRotated.ps
 @dirrm share/ghostscript/%%GS_VERSION%%/doc
 @dirrm share/ghostscript/%%GS_VERSION%%/examples
 @dirrm share/ghostscript/%%GS_VERSION%%/lib
 @dirrm share/ghostscript/%%GS_VERSION%%
 @dirrm share/ghostscript/fonts
+@dirrm share/ghostscript/hpdj
 @dirrm share/ghostscript
