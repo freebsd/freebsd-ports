@@ -19,14 +19,9 @@ FETCH_CMD=	/usr/bin/fetch
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
-
 pre-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|/usr/local/share|$$(datadir)|g'
+	@${RM} ${WRKSRC}/config.cache
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
