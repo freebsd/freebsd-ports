@@ -1,0 +1,38 @@
+This patches fix actual BUGS in the Scotty code:
+	. any Tcl above 8.2 will also work fine;
+	. icmp.test no longer causes crashes -- an off-by-one
+	  error in argument parsing code was the reason for
+	  occasional segfaults
+	. TUBS-REGISTRATION was renamed to TUBS-SMI, but the
+	  mibs.test did not know about it
+There still are some test failures, but  I think (hope), they are due to
+mistakes in the tests themselves.
+
+	-mi
+
+--- ../tnm/generic/tnmInit.c	Wed Oct  6 05:35:57 1999
++++ ../tnm/generic/tnmInit.c	Thu Mar  8 19:49:33 2001
+@@ -431,3 +431,3 @@
+ #ifdef USE_TCL_STUBS
+-    if (Tcl_InitStubs(interp, "8.2", 1) == NULL) {
++    if (Tcl_InitStubs(interp, TCL_VERSION, 0) == NULL) {
+ 	return TCL_ERROR;
+--- ../tnm/generic/tnmIcmp.c	Wed Oct  6 05:07:04 1999
++++ ../tnm/generic/tnmIcmp.c	Fri Mar  9 17:58:05 2001
+@@ -273,6 +273,6 @@
+      * Parse the options.
+      */
+ 
+-    while (1) {
++    while (x < objc) {
+ 	code = TnmGetTableKeyFromObj(interp, icmpOptionTable,
+ 				     objv[x], "option");
+--- ../tnm/tests/mib.test	Fri Feb 11 14:43:38 2000
++++ ../tnm/tests/mib.test	Fri Mar  9 18:25:48 2001
+@@ -30,1 +30,1 @@
+-lappend tnm(mibs) TUBS-REGISTRATION TUBS-IBR-TEST-MIB
++lappend tnm(mibs) TUBS-SMI TUBS-IBR-TEST-MIB
+@@ -689,2 +689,2 @@
+     mib info files *SMI
+-} {RFC1155-SMI SNMPv2-SMI}
++} {RFC1155-SMI SNMPv2-SMI TUBS-SMI}
