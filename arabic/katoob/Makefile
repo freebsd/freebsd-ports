@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	arabeyes
 MAINTAINER=	samy@kerneled.com
 COMMENT=	Light-weight, bidirectional editor for arabic texts
 
+BROKEN=		"Does not compile"
+
 MAN1=		katoob.1
 
 USE_GMAKE=		yes
