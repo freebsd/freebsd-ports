@@ -1,11 +1,107 @@
---- configure-orig	Mon Oct 21 10:42:02 2002
-+++ configure	Mon Oct 21 10:42:15 2002
-@@ -2676,7 +2676,7 @@
+--- configure.orig	Thu Jan  8 11:48:38 2004
++++ configure	Thu Jan  8 11:53:04 2004
+@@ -2543,7 +2543,7 @@
  $extendedecho "SYSVLOCATION = \${PREFIX}$sysvdir" >>Makefile
  $extendedecho "CGIBINLOCATION = \${PREFIX}$cgidir" >>Makefile
  $extendedecho "MANUALFILES = \${PREFIX}$mandir" >>Makefile
 -$extendedecho "LOGLOCATION = \${PREFIX}$logdir" >>Makefile
-+$extendedecho "LOGLOCATION = $logdir" >>Makefile
++$extendedecho "LOGLOCATION = \$logdir" >>Makefile
+ $extendedecho "LOGROTATELOCATION = \${PREFIX}$logrotatedir" >>Makefile
  echo "PROXYUSER = $runas_usr" >>Makefile
  echo "PROXYGROUP = $runas_grp" >>Makefile
- echo "PIDDIR = $piddir" >>Makefile
+@@ -2708,27 +2708,6 @@
+                         rm -f dansguardian.bsdv
+                 fi
+                 cat autoconf/bsdv.in > dansguardian.bsdv
+-                $extendedecho "        [ -x $prefixdir$bindir\c" >> dansguardian.bsdv
+-                $extendedecho "dansguardian ] && $prefixdir$bindir\c" >> dansguardian.bsdv
+-                echo "dansguardian > /dev/null && $extendedecho ' dansguardian\c'" >> dansguardian.bsdv
+-                echo "        ;;" >> dansguardian.bsdv
+-                echo "stop)" >> dansguardian.bsdv
+-                $extendedecho "        $prefixdir$bindir\c" >> dansguardian.bsdv
+-                echo "dansguardian -q" >> dansguardian.bsdv
+-                $extendedecho "        [ -r /tmp/\c" >> dansguardian.bsdv
+-                echo ".dguardianipc ] && $extendedecho ' dansguardian\c'" >> dansguardian.bsdv
+-                echo "        rm -f /tmp/.dguardianipc" >> dansguardian.bsdv
+-                echo "        ;;" >> dansguardian.bsdv
+-                echo "restart)" >> dansguardian.bsdv
+-                echo "        \$0 stop" >> dansguardian.bsdv
+-                echo "        \$0 start" >> dansguardian.bsdv
+-                echo "        ;;" >> dansguardian.bsdv
+-                echo "*)" >> dansguardian.bsdv
+-                echo "        echo \"Usage: `basename \$0` {start|stop|restart}\" >&2" >> dansguardian.bsdv
+-                echo "        ;;" >> dansguardian.bsdv
+-                echo "esac" >> dansguardian.bsdv
+-                echo "exit 0" >> dansguardian.bsdv
+-                chmod u+x dansguardian.bsdv
+ 	;;
+ 	NetBSD*)
+ 		if [ -f dansguardian.bsdv ]; then
+@@ -2875,7 +2854,7 @@
+ echo "# Log file location" >>dansguardian.conf
+ echo "# " >>dansguardian.conf
+ echo "# Defines the log directory and filename." >>dansguardian.conf
+-echo "#loglocation = '/var/log/dansguardian/access.log'" >>dansguardian.conf
++echo "#loglocation = '/var/log/dansguardian.log'" >>dansguardian.conf
+ echo "" >>dansguardian.conf
+ echo "" >>dansguardian.conf
+ echo "# Network Settings" >>dansguardian.conf
+@@ -3362,9 +3341,9 @@
+ echo "#!/bin/sh" >logrotation
+ echo "# DansGuardian logrotation script for version 2.7.6" >>logrotation
+ echo "" >>logrotation
+-echo "LOG_DIR=$prefixdir$logdir" >>logrotation
++echo "LOG_DIR=$logdir" >>logrotation
+ echo "NUM_LOGS=4" >>logrotation
+-echo "LOG=\$LOG_DIR/access.log" >>logrotation
++echo "LOG=\$LOG_DIR/dansguardian.log" >>logrotation
+ echo "" >>logrotation
+ 
+ case `uname -s` in
+@@ -3380,7 +3359,7 @@
+ 	;;
+ 	FreeBSD*)
+ 	        $extendedecho "$prefixdir$sysvdir\c" >>logrotation
+-	        echo "dansguardian.sh stop > /dev/null" >>logrotation
++	        echo "start-dg.sh stop > /dev/null" >>logrotation
+ 	        echo "" >>logrotation
+ 	;;
+ 	NetBSD*)
+@@ -3437,7 +3416,7 @@
+ 	;;
+ 	FreeBSD*)
+ 	        $extendedecho "$prefixdir$sysvdir\c" >>logrotation
+-	        echo "dansguardian.sh start > /dev/null" >>logrotation
++	        echo "start-dg.sh start > /dev/null" >>logrotation
+ 	        echo "" >>logrotation
+ 	;;
+ 	NetBSD*)
+@@ -3464,8 +3443,8 @@
+ 	rm -f logrotate.dansguardian
+ fi
+ 
+-$extendedecho "$prefixdir$logdir\c" >>logrotate.dansguardian
+-echo "access.log {" >>logrotate.dansguardian
++$extendedecho "$logdir\c" >>logrotate.dansguardian
++echo "dansguardian.log {" >>logrotate.dansguardian
+ echo "  rotate 4" >>logrotate.dansguardian
+ echo "  weekly" >>logrotate.dansguardian
+ echo "  sharedscripts" >>logrotate.dansguardian
+@@ -3481,7 +3460,7 @@
+ 	;;
+ 	FreeBSD*)
+ 	        $extendedecho "    $prefixdir$sysvdir\c" >>logrotate.dansguardian
+-	        echo "dansguardian.sh stop > /dev/null" >>logrotate.dansguardian
++	        echo "start-dg.sh stop > /dev/null" >>logrotate.dansguardian
+ 	;;
+ 	NetBSD*)
+ 	        $extendedecho "    $prefixdir$sysvdir\c" >>logrotate.dansguardian
+@@ -3512,7 +3491,7 @@
+ 	;;
+ 	FreeBSD*)
+ 	        $extendedecho "    $prefixdir$sysvdir\c" >>logrotate.dansguardian
+-	        echo "dansguardian.sh start > /dev/null" >>logrotate.dansguardian
++	        echo "start-dg.sh start > /dev/null" >>logrotate.dansguardian
+ 	;;
+ 	NetBSD*)
+ 	        $extendedecho "    $prefixdir$sysvdir\c" >>logrotate.dansguardian
