@@ -1,75 +1,46 @@
-# New ports collection makefile for:	pbm2ppa
+# New ports collection makefile for:	pnm2ppa
 # Date created:		18 November 1998
 # Whom:			smace@freebsd.org
 #
 # $FreeBSD$
 #
 
-PORTNAME=	pbm2ppa
-PORTVERSION=	0.8.6
+PORTNAME=	pnm2ppa
+PORTVERSION=	1.04
 CATEGORIES=	print
-MASTER_SITES=	http://www.httptech.com/ppa/files/
-DISTFILES=	ppa-${PORTVERSION}.tar.gz
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript55 \
 		enscript:${PORTSDIR}/print/enscript-letter
 
-USE_GMAKE=	yes
+MAN1=		pnm2ppa.1
 
-HPMODEL?=	720
-ALL_TARGET=	${HPMODEL}
-
-pre-configure:
-.if ${HPMODEL} != 720 && ${HPMODEL} != 820 && ${HPMODEL} != 1000
-	@${ECHO} "HPMODEL is invalid: ${HPMODEL}."
-	@${ECHO} "You must specify the model of your printer:"
-	@${ECHO} "720 -- HP720 family (HP 722C, etc.)"
-	@${ECHO} "820 -- HP820 family"
-	@${ECHO} "1000 -- HP820 family"
-	@${FALSE}
-.endif
-.if !defined(PAPERSIZE)
-	@${ECHO}
-	@${ECHO} "No PAPERSIZE environment variable found, will default to enscript-letter"
-	@${ECHO}
-.endif
+post-patch:
+	@${SED} -e "s:%%PREFIX%%:${PREFIX}:g" \
+		${WRKSRC}/pnm2ppa.conf > ${WRKSRC}/pnm2ppa.conf.sample
+	@${SED} -e "s:%%PREFIX%%:${PREFIX}:g" \
+		${WRKSRC}/docs/en/pnm2ppa.1 > ${WRKSRC}/pnm2ppa.1
+	@${SED} -e "s:%%PREFIX%%:${PREFIX}:g" \
+	        -e "s:%%LOCALBASE%%:${LOCALBASE}:g" \
+		${FILESDIR}/asciippafilter.SH > ${WRKSRC}/asciippafilter
+	@${SED} -e "s:%%PREFIX%%:${PREFIX}:g" \
+	        -e "s:%%LOCALBASE%%:${LOCALBASE}:g" \
+		${FILESDIR}/ppafilter.SH > ${WRKSRC}/ppafilter
 
 do-install:
-	${SED} s#CHANGETHIS#${PREFIX}# < ${FILESDIR}/ppafilter.SH > ${WRKSRC}/ppafilter
-	${SED} s#CHANGETHIS#${PREFIX}# < ${FILESDIR}/asciippafilter.SH > ${WRKSRC}/asciippafilter
-	cd ${WRKSRC} && \
-		(${INSTALL_PROGRAM} pbm2ppa pbmtpg \
-			${PREFIX}/bin; \
-		${INSTALL_DATA} pbm2ppa.conf.hp${HPMODEL} \
-			${PREFIX}/etc/pbm2ppa.conf; \
-		${INSTALL_SCRIPT} ppafilter asciippafilter \
-			${PREFIX}/bin )
-
-post-install:
-	@${ECHO}
-	@${ECHO} "To configure your printcap to print either ascii"
-	@${ECHO} "or Postscript files, add the following lines to your"
-	@${ECHO} "/etc/printcap file"
-	@${ECHO}
-	@${ECHO} "	lp|ascii|unix:\\"
-	@${ECHO} "	        :lp=/dev/lpt0:\\"
-	@${ECHO} "	        :sd=/var/spool/lpd:\\"
-	@${ECHO} "	        :if=/usr/local/bin/asciippafilter:\\"
-	@${ECHO} "	        :mx#0:\\"
-	@${ECHO} "	        :sh:"
-	@${ECHO}
-	@${ECHO} "	ps:\\"
-	@${ECHO} "	        :lp=/dev/lpt0:\\"
-	@${ECHO} "	        :sd=/var/spool/ps:\\"
-	@${ECHO} "	        :if=/usr/local/bin/ppafilter:\\"
-	@${ECHO} "	        :mx#0:\\"
-	@${ECHO} "	        :sh:"
-	@${ECHO}
-	@${ECHO} "Please be sure that you install the proper flavor of"
-	@${ECHO} "enscript, either A4 or Letter, by setting the PAPERSIZE"
-	@${ECHO} "environment variable."
-	@${ECHO}
+	${INSTALL_PROGRAM} ${WRKSRC}/calibrate_ppa ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/pnm2ppa ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/asciippafilter ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/ppafilter ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/pnm2ppa.1 ${MANPREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/pnm2ppa.conf.sample ${PREFIX}/etc
+.if !exists(${PREFIX}/etc/pnm2ppa.conf)
+	${CP} ${PREFIX}/etc/pnm2ppa.conf.sample ${PREFIX}/etc/pnm2ppa.conf
+.endif
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

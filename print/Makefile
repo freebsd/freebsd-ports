@@ -74,7 +74,7 @@
     SUBDIR += nenscript
     SUBDIR += offix-printer
     SUBDIR += p5-Text-PDF
-    SUBDIR += pbm2ppa
+    SUBDIR += pnm2ppa
     SUBDIR += pclprint
     SUBDIR += pdflib
     SUBDIR += pdflib3

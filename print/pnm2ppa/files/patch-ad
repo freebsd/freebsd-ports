@@ -1,0 +1,29 @@
+--- pnm2ppa.conf.orig	Sun Oct 29 00:02:57 2000
++++ pnm2ppa.conf	Tue Jan 30 22:07:29 2001
+@@ -1,7 +1,7 @@
+ # Sample configuration file 
+ #
+ # This file will be automatically read upon startup if it is placed in
+-# /etc/pnm2ppa.conf
++# %%PREFIX%%/etc/pnm2ppa.conf
+ #
+ # uncomment entries by removing "#" to activate them.
+ #
+@@ -26,7 +26,7 @@
+ # in addition to the syslog. (Note: on BeOS,  syslog messages are
+ # diverted to stderr; use "silent 1" to suppress them.)
+ # Note: the "silent 1" keyword is only accepted from the system 
+-# configuration  file (/etc/pnm2ppa.conf), and not from configuration files 
++# configuration  file (%%PREFIX%%/etc/pnm2ppa.conf), and not from configuration files 
+ # specified  with the pnm2ppa option "-f".
+ 
+ #silent 1
+@@ -105,7 +105,7 @@
+ #------------Color correct curve Gamma parameters-------------------------
+ # Gamma color correction values for Red, Green and Blue:
+ # (Note: a more effective method of color correction is to use
+-# a calibration file /etc/pnm2ppa.gamma, in which case these
++# a calibration file %%PREFIX%%/etc/pnm2ppa.gamma, in which case these
+ # Gamma values will not be used.  See COLOR.html or COLOR.txt) 
+ # The pnm2ppa option --noGamma suppresses color correction.
+ 

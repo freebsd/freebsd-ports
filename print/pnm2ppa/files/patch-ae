@@ -1,0 +1,13 @@
+--- pnm2ppa.h.orig	Mon Oct 23 11:40:36 2000
++++ pnm2ppa.h	Tue Jan 30 21:28:49 2001
+@@ -20,8 +20,8 @@
+ 
+ #ifdef __PNM2PPA_C__
+ 
+-static char *defaultcfgfile = "/etc/pnm2ppa.conf";
+-static char *defaultgammafile = "/etc/pnm2ppa.gamma";
++static char *defaultcfgfile = CONFDIR "/pnm2ppa.conf";
++static char *defaultgammafile = CONFDIR "/pnm2ppa.gamma";
+ 
+ static ppaPrinter_t printer;
+ 
