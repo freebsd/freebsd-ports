@@ -245,11 +245,11 @@ if [ "$nobuild" = 0 ]; then
   make -k -j$count -f ../../Makefile > ../../make.1 2>&1 </dev/null
   echo "ended at $(date)"
   rm XFree86-3.*.tgz Motif-*.tgz
-  md5 *.tgz > CHECKSUM.MD5
   ${pb}/scripts/chopindex ${pb}/usr/ports/INDEX ${pb}/${branch}/packages > \
     ${pb}/${branch}/packages/INDEX
   echo $(ls -1 ${pb}/${branch}/packages/All | wc -l) "packages built"
   echo $(cat ${pb}/${branch}/packages/INDEX | wc -l) "lines in INDEX"
+  md5 *.tgz > CHECKSUM.MD5
   echo $(echo $(du -sk ${pb}/${branch}/packages | awk '{print $1}') / 1024 | bc) "MB of packages"
   echo $(echo $(du -sk ${pb}/distfiles | awk '{print $1}') / 1024 | bc) "MB of distfiles"
   cd ${pb}/${branch}
