@@ -114,6 +114,7 @@
     SUBDIR += fmio
     SUBDIR += freebirth
     SUBDIR += funktrackergold
+    SUBDIR += gaim-festival
     SUBDIR += gdam
     SUBDIR += gdesklets-cornerxmms
     SUBDIR += gdesklets-xmms
