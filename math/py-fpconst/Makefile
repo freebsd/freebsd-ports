@@ -7,7 +7,7 @@
 PORTNAME=		fpconst
 PORTVERSION=		0.6.0
 CATEGORIES=		math python
-MASTER_SITES=		http://www.analytics.washington.edu/Zope/projects/fpconst/
+MASTER_SITES=		http://www.analytics.washington.edu/downloads/fpconst/
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=		rui@ruilopes.com
