@@ -1,26 +1,28 @@
 # New ports collection makefile for:    gnuplot
-# Version required:     beta336
-# Date created:         11 January 1997
+# Version required:     beta340
+# Date created:         19 April 1998
 # Whom:                 chuckr
 #
-# $Id: Makefile,v 1.14 1998/03/28 20:02:10 ache Exp $
+# $Id: Makefile,v 1.15 1998/03/31 00:39:01 asami Exp $
 #
 
-DISTNAME=	gnuplot-beta336
-PKGNAME=	gnuplot-336
+DISTNAME=	gnuplot-beta340
+PKGNAME=	gnuplot-340
 CATEGORIES=	math graphics
-MASTER_SITES=	http://www.ipc.chiba-u.ac.jp/~yamaga/gnuplot%2B/3.6base/
+MASTER_SITES=	ftp://ftp.che.wisc.edu/pub/gnuplot/
 
 MAINTAINER=	chuckr@FreeBSD.org
 
 LIB_DEPENDS=    png\\.2\\.:${PORTSDIR}/graphics/png
+BUILD_DEPENDS	$(PREFIX)/lib/libgd.a:${PORTSDIR}/graphics/gd
 
 WRKSRC=		${WRKDIR}/gnuplot
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--exec-prefix=${PREFIX} \
 		--includedir=${PREFIX}/include --libdir=${PREFIX}/lib \
 		--with-x --without-linux-vga \
-		--with-gnu-readline --with-lasergnu --with-png 
+		--with-gd=$(PREFIX)/lib \
+		--with-gnu-readline --with-lasergnu --with-png
 
 MAN1=		gnuplot.1 lasergnu.1
 
