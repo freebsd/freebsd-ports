@@ -1,0 +1,24 @@
+--- util/wmaker.inst.in	2001/01/08 01:41:27	1.1
++++ util/wmaker.inst.in	2001/01/08 01:48:25
+@@ -65,12 +65,18 @@
+ 	elif [ "$file" = "WMRootMenu" ]; then
+ 		if [ "$LOCALE" ]; then
+             	    if [ -f $GLOBALDIR/plmenu.${LOCALE%_*} ]; then
+-                	cp $GLOBALDIR/plmenu.${LOCALE%_*} $GSDIR/Defaults/WMRootMenu
++                	sed -e "s|\$HOME/GNUstep|$GSDIR|g" \
++				-e "s:#wmdatadir#:$GLOBALDIR:g" \
++					$GLOBALDIR/plmenu.${LOCALE%_*} > $GSDIR/Defaults/WMRootMenu
+ 		    else
+-			cp $GLOBALDIR/plmenu $GSDIR/Defaults/WMRootMenu
++			sed -e "s|\$HOME/GNUstep|$GSDIR|g" \
++				-e "s:#wmdatadir#:$GLOBALDIR:g" \
++					$GLOBALDIR/plmenu > $GSDIR/Defaults/WMRootMenu
+             	    fi
+         	else
+-            	    cp $GLOBALDIR/plmenu $GSDIR/Defaults/WMRootMenu
++            	    sed -e "s|\$HOME/GNUstep|$GSDIR|g" \
++				-e "s:#wmdatadir#:$GLOBALDIR:g" \
++					$GLOBALDIR/plmenu > $GSDIR/Defaults/WMRootMenu
+         	fi
+ 	else
+ 		if test "x$GNUSTEP_USER_ROOT" = "x"; then

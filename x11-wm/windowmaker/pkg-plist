@@ -75,9 +75,11 @@ bin/setstyle
 bin/wdwrite
 bin/wkdemenu.pl
 bin/wm-oldmenu2new
+bin/wmagnify
 bin/wmaker
 bin/wmaker.inst
 bin/wmsetbg
+bin/wmsetup
 bin/wsetfont
 bin/wxcopy
 bin/wxpaste
@@ -86,17 +88,20 @@ etc/WindowMaker/WMRootMenu
 etc/WindowMaker/WMState
 etc/WindowMaker/WMWindowAttributes
 etc/WindowMaker/WindowMaker
-include/WINGs.h
-include/WINGsP.h
+include/WINGs/WINGs.h
+include/WINGs/WINGsP.h
+include/WINGs/WUtil.h
+include/WINGs/wtabledelegates.h
+include/WINGs/wtableview.h
 include/WMaker.h
-include/WUtil.h
 include/wraster.h
+lib/libExtraWINGs.a
 lib/libWINGs.a
 lib/libWMaker.a
 lib/libWUtil.a
 lib/libwmfun.a
 lib/libwmfun.so
-lib/libwmfun.so.0
+lib/libwmfun.so.1
 lib/libwraster.a
 lib/libwraster.so
 lib/libwraster.so.3
@@ -133,6 +138,7 @@ share/WindowMaker/Icons/EscherTriangle.xpm
 share/WindowMaker/Icons/Fish5.dir.xpm
 share/WindowMaker/Icons/Football.xpm
 share/WindowMaker/Icons/FootballUS.xpm
+share/WindowMaker/Icons/Ftp.png
 share/WindowMaker/Icons/GNUstep.tiff
 share/WindowMaker/Icons/GNUstep.xpm
 share/WindowMaker/Icons/GNUstep3D.tiff
@@ -143,6 +149,7 @@ share/WindowMaker/Icons/GNUterm.tiff
 share/WindowMaker/Icons/GNUterm.xpm
 share/WindowMaker/Icons/Gear.xpm
 share/WindowMaker/Icons/Ghost.xpm
+share/WindowMaker/Icons/GreenWilber.png
 share/WindowMaker/Icons/HP-16C-48.xpm
 share/WindowMaker/Icons/HandOpen.xpm
 share/WindowMaker/Icons/HandPointing.xpm
@@ -150,19 +157,27 @@ share/WindowMaker/Icons/HandPointingLeft.xpm
 share/WindowMaker/Icons/HandPunch.xpm
 share/WindowMaker/Icons/HandReach.xpm
 share/WindowMaker/Icons/HeroSandwich.dir.xpm
+share/WindowMaker/Icons/ICQ.png
 share/WindowMaker/Icons/LadyBug48x48.xpm
 share/WindowMaker/Icons/Microphone.xpm
+share/WindowMaker/Icons/Mozilla.png
+share/WindowMaker/Icons/Netscape.png
 share/WindowMaker/Icons/Netscape.xpm
 share/WindowMaker/Icons/NewsAgent.xpm
 share/WindowMaker/Icons/PDF.xpm
 share/WindowMaker/Icons/Padlock.xpm
 share/WindowMaker/Icons/Paint.xpm
+share/WindowMaker/Icons/Pen.png
+share/WindowMaker/Icons/Pencil.png
 share/WindowMaker/Icons/Pencils.24.xpm
 share/WindowMaker/Icons/Penguin.xpm
 share/WindowMaker/Icons/Radio.xpm
+share/WindowMaker/Icons/Real.png
 share/WindowMaker/Icons/Reference.xpm
 share/WindowMaker/Icons/Rumi.xpm
+share/WindowMaker/Icons/Shell.png
 share/WindowMaker/Icons/Snail.xpm
+share/WindowMaker/Icons/Speaker.png
 share/WindowMaker/Icons/T2-Film.xpm
 share/WindowMaker/Icons/TagIcon.xpm
 share/WindowMaker/Icons/TapeIcon1.xpm
@@ -176,6 +191,7 @@ share/WindowMaker/Icons/TrueDie48.xpm
 share/WindowMaker/Icons/WheelbarrowFull.xpm
 share/WindowMaker/Icons/WordEditor.xpm
 share/WindowMaker/Icons/Wrench-12bit.xpm
+share/WindowMaker/Icons/XChat.png
 share/WindowMaker/Icons/bomb2.xpm
 share/WindowMaker/Icons/clip.tiff
 share/WindowMaker/Icons/clip.xpm
@@ -243,7 +259,11 @@ share/WindowMaker/Styles/Golden.style
 share/WindowMaker/Styles/Green.style
 share/WindowMaker/Styles/GreyBlue.style
 share/WindowMaker/Styles/Gtk.style
+share/WindowMaker/Styles/IRednBlue.style
+share/WindowMaker/Styles/Interlace.style
 share/WindowMaker/Styles/LightBlue.style
+share/WindowMaker/Styles/NewBlue.style
+share/WindowMaker/Styles/NightSky.style
 share/WindowMaker/Styles/Pastel.style
 share/WindowMaker/Styles/Pink.style
 share/WindowMaker/Styles/Pumpkin.style
@@ -275,6 +295,7 @@ share/WindowMaker/Themes/SteelBlueSilk.style
 share/WindowMaker/autostart.sh
 share/WindowMaker/exitscript.sh
 share/WindowMaker/menu
+share/WindowMaker/menu.bg
 share/WindowMaker/menu.ca
 share/WindowMaker/menu.cz
 share/WindowMaker/menu.da
@@ -294,6 +315,7 @@ share/WindowMaker/menu.nl
 share/WindowMaker/menu.no
 share/WindowMaker/menu.pl
 share/WindowMaker/menu.pt
+share/WindowMaker/menu.ro
 share/WindowMaker/menu.ru
 share/WindowMaker/menu.se
 share/WindowMaker/menu.sl
@@ -301,17 +323,22 @@ share/WindowMaker/menu.tr
 share/WindowMaker/menu.zh_CN
 share/WindowMaker/menu.zh_TW.Big5
 share/WindowMaker/plmenu
+share/WindowMaker/plmenu.bg
 share/WindowMaker/plmenu.da
 share/WindowMaker/plmenu.de
+share/WindowMaker/plmenu.es
 share/WindowMaker/plmenu.fi
 share/WindowMaker/plmenu.fr
 share/WindowMaker/plmenu.hr
 share/WindowMaker/plmenu.it
 share/WindowMaker/plmenu.ko
 share/WindowMaker/plmenu.pl
+share/WindowMaker/plmenu.ro
 share/WindowMaker/plmenu.zh_CN
 share/WindowMaker/wmmacros
 share/WindowMaker/xtree.dat
+share/locale/bg/LC_MESSAGES/WPrefs.mo
+share/locale/bg/LC_MESSAGES/WindowMaker.mo
 share/locale/cs/LC_MESSAGES/WPrefs.mo
 share/locale/cs/LC_MESSAGES/WindowMaker.mo
 share/locale/da/LC_MESSAGES/WindowMaker.mo
@@ -362,6 +389,7 @@ share/locale/zh_TW.Big5/LC_MESSAGES/WindowMaker.mo
 @dirrm share/WindowMaker/Backgrounds
 @dirrm share/WindowMaker
 @dirrm share/WINGs
+@dirrm include/WINGs
 @dirrm etc/WindowMaker
 @dirrm GNUstep/Apps/WPrefs.app/xpm
 @dirrm GNUstep/Apps/WPrefs.app/tiff

@@ -1,5 +1,5 @@
---- libwmfun-0.0.3/libwmfun/Makefile.in.orig	Tue Feb 15 16:04:35 2000
-+++ libwmfun-0.0.3/libwmfun/Makefile.in	Tue Feb 15 15:44:31 2000
+--- plugins/libwmfun/Makefile.in.orig	Thu Jan  4 12:16:06 2001
++++ plugins/libwmfun/Makefile.in	Fri Jan  5 12:47:05 2001
 @@ -38,7 +38,7 @@
  pkglibdir = $(libdir)/@PACKAGE@
  pkgincludedir = $(includedir)/@PACKAGE@
@@ -9,7 +9,7 @@
  
  ACLOCAL = @ACLOCAL@
  AUTOCONF = @AUTOCONF@
-@@ -69,6 +69,8 @@
+@@ -70,6 +70,8 @@
  RANLIB = @RANLIB@
  VERSION = @VERSION@
  
@@ -17,8 +17,17 @@
 +
  lib_LTLIBRARIES = libwmfun.la
  
- libwmfun_la_SOURCES = bilinear.c 		fade.c 		generic.c 		generic.h 		getopt.c 		getopt.h 		getopt1.c 		wave.c
-@@ -104,12 +106,12 @@
+ libwmfun_la_LDFLAGS = -version-info 1:0:1
+@@ -86,7 +88,7 @@
+ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+ LIBS = @LIBS@
+-libwmfun_la_LIBADD = 
++libwmfun_la_LIBADD = -lfreetype
+ libwmfun_la_OBJECTS =  bilinear.lo fade.lo generic.lo getopt.lo \
+ getopt1.lo wave.lo drawstring.lo
+ CFLAGS = @CFLAGS@
+@@ -107,12 +109,12 @@
  all: all-redirect
  .SUFFIXES:
  .SUFFIXES: .S .c .lo .o .s
@@ -36,4 +45,13 @@
 +#	  && CONFIG_FILES=$(subdir)/$@ CONFIG_HEADERS= $(SHELL) ./config.status
  
  
- mostlyclean-libLTLIBRARIES:
+ config.h: stamp-h
+@@ -275,7 +277,7 @@
+ install: install-am
+ uninstall-am: uninstall-libLTLIBRARIES
+ uninstall: uninstall-am
+-all-am: Makefile $(LTLIBRARIES) config.h
++all-am: Makefile $(LTLIBRARIES)
+ all-redirect: all-am
+ install-strip:
+ 	$(MAKE) $(AM_MAKEFLAGS) AM_INSTALL_PROGRAM_FLAGS=-s install
