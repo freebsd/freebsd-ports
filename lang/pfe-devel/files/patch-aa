@@ -1,0 +1,11 @@
+--- memory-sub.c.orig	Fri Nov 24 21:44:19 2000
++++ memory-sub.c	Fri Nov 24 21:45:15 2000
+@@ -133,7 +133,7 @@
+     memset(&ar, 0, sizeof(ar));
+ 
+     if (!mode) mode = 0664;
+-    f = open (name, O_CREAT|O_TRUNC|O_SYNC|O_WRONLY, mode);
++    f = open (name, O_CREAT|O_TRUNC|O_FSYNC|O_WRONLY, mode);
+     
+     if (f != -1)
+     {
