@@ -7,6 +7,7 @@
     SUBDIR += manpages
     SUBDIR += phone
     SUBDIR += staroffice5
+    SUBDIR += staroffice52
     SUBDIR += webalizer
     SUBDIR += webalizer2
 
