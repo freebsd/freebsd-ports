@@ -16,7 +16,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE} \
 MASTER_SITE_SUBDIR=	speedtouch
 DISTFILES=		${SPEEDTOUCH}.tar.gz ${ALCATELDRIVER}
 
-MAINTAINER=		brian@Awfulhak.org
+MAINTAINER=		ports@freebsd-services.com
 
 HAS_CONFIGURE=		yes
 SPEEDTOUCH=		speedtouch-1_0
