@@ -23,6 +23,8 @@ BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 
 DOWNLOADVERSION=2.5.22
 
+CONFLICTS=	mldonkey-devel-[0-9]* mldonkey-{core,gui}-devel-[0.9]*
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-pthread --enable-ocamlver=3
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DOWNLOADVERSION}
