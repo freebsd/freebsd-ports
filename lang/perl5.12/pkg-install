@@ -6,7 +6,7 @@ fi
 
 INCLUDEDIR=/usr/include
 
-install -d ${PKG_PREFIX}/lib/perl5/site_perl/5.8.0/mach
+install -d ${SITE_PERL}/${PERL_ARCH}
 cd ${INCLUDEDIR} && ${PKG_PREFIX}/bin/h2ph *.h machine/*.h sys/*.h
 
 
