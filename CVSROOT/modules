@@ -3886,6 +3886,7 @@ libjtoolbar	ports/x11-toolkits/libjtoolbar
 libjtree	ports/x11-toolkits/libjtree
 libkadm		src/eBones/libkadm
 libkern		src/sys/libkern
+libksba		ports/security/libksba
 libkvm		src/lib/libkvm
 liblug		ports/graphics/liblug
 libm		src/lib/libm
