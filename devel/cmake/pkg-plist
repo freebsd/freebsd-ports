@@ -126,6 +126,17 @@ bin/ctest
 %%DATADIR%%/Modules/Platform/Windows.cmake
 %%DATADIR%%/Modules/Platform/Xenix.cmake
 %%DATADIR%%/Modules/Platform/gcc.cmake
+%%DATADIR%%/Modules/CMakeTestForFreeVC.cxx
+%%DATADIR%%/Modules/CMakeVS8FindMake.cmake
+%%DATADIR%%/Modules/FindDCMTK.cmake
+%%DATADIR%%/Modules/FindKDE.cmake
+%%DATADIR%%/Modules/FindPHP4.cmake
+%%DATADIR%%/Modules/FindPerlLibs.cmake
+%%DATADIR%%/Modules/FindPike.cmake
+%%DATADIR%%/Modules/FindRuby.cmake
+%%DATADIR%%/Modules/FindSWIG.cmake
+%%DATADIR%%/Modules/FindwxWidgets.cmake
+%%DATADIR%%/Modules/MacOSXBundleInfo.plist.in
 %%DATADIR%%/Modules/TestBigEndian.c
 %%DATADIR%%/Modules/TestBigEndian.cmake
 %%DATADIR%%/Modules/TestCXXAcceptsFlag.cmake
@@ -135,12 +146,26 @@ bin/ctest
 %%DATADIR%%/Modules/TestForAnsiForScope.cxx
 %%DATADIR%%/Modules/TestForSTDNamespace.cmake
 %%DATADIR%%/Modules/TestForSTDNamespace.cxx
+%%DATADIR%%/Modules/UseSWIG.cmake
 %%DATADIR%%/Modules/UseVTK40.cmake
 %%DATADIR%%/Modules/UseVTKBuildSettings40.cmake
 %%DATADIR%%/Modules/UseVTKConfig40.cmake
+%%DATADIR%%/Modules/UsewxWidgets.cmake
 %%DATADIR%%/Modules/Use_wxWindows.cmake
 %%DATADIR%%/Modules/readme.txt
-%%DATADIR%%/Templates/install-sh
+%%DATADIR%%/Templates/CMakeDotNetSystemConfig.cmake
+%%DATADIR%%/Templates/CMakeVisualStudio6Configurations.cmake
+%%DATADIR%%/Templates/CMakeWindowsSystemConfig.cmake
+%%DATADIR%%/Templates/DLLFooter.dsptemplate
+%%DATADIR%%/Templates/DLLHeader.dsptemplate
+%%DATADIR%%/Templates/EXEFooter.dsptemplate
+%%DATADIR%%/Templates/EXEHeader.dsptemplate
+%%DATADIR%%/Templates/EXEWinHeader.dsptemplate
+%%DATADIR%%/Templates/TestDriver.cxx.in
+%%DATADIR%%/Templates/UtilityFooter.dsptemplate
+%%DATADIR%%/Templates/UtilityHeader.dsptemplate
+%%DATADIR%%/Templates/staticLibFooter.dsptemplate
+%%DATADIR%%/Templates/staticLibHeader.dsptemplate
 %%DATADIR%%/include/cmCPluginAPI.h
 @dirrm %%DATADIR%%/include
 @dirrm %%DATADIR%%/Templates
