@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	utilities
 MAINTAINER=	ports@FreeBSD.org
 
 USE_IMAKE=	yes
+MAN1=		xxgdb.1
 
 # This isn't included in the original Imakefile for some reason.
 #  Yes, I know this will recompile the program every time, but
