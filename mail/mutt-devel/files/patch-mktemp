@@ -7,9 +7,9 @@
 -  snprintf (s, _POSIX_PATH_MAX, "%s/mutt-%s-%d-%d", NONULL (Tempdir), NONULL(Hostname), (int) getpid (), Counter++);
 +  char t[7];
 +  snprintf (t, 7, "-%05d", Counter++);
-+  snprintf (s, _POSIX_PATH_MAX-7, "%s/mutt-%s-XXXXXXXX", NONULL(Tempdir), NONULL(Hostname));
++  snprintf (s, _POSIX_PATH_MAX-6, "%s/mutt-%s-XXXXXXXX", NONULL(Tempdir), NONULL(Hostname));
 +  mktemp (s);
-+  strncat(s, t, _POSIX_PATH_MAX);
++  strncat(s, t, 6);
    dprint (1, (debugfile, "%s:%d: mutt_mktemp returns \"%s\".\n", src, line, s));
    unlink (s);
  }
