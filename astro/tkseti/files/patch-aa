@@ -1,14 +1,14 @@
---- tkseti.orig	Fri Jun  8 16:23:37 2001
-+++ tkseti	Mon Jun 11 10:22:48 2001
+--- tkseti.orig	Fri Jan 23 03:58:46 2004
++++ tkseti	Sat Jan 31 21:55:01 2004
 @@ -1,6 +1,6 @@
  #!/bin/sh
  # the next line restarts using wish \
 -exec wish "$0" ${1+"$@"}
-+exec wish8.3 "$0" ${1+"$@"}
++exec wish8.4 "$0" ${1+"$@"}
  #############################################################################
  # Visual Tcl v1.20 Project
  #
-@@ -189,11 +189,11 @@
+@@ -194,11 +194,11 @@
      TkSETI can be started if the client is already running, or it can start
      the client manually or automatically for you. This is explained in the
      Setup section that follows.
@@ -25,7 +25,19 @@
  
      tkseti ~/setiathome
  
-@@ -551,7 +551,7 @@
+@@ -368,6 +368,11 @@
+     KDE's kfm:  kfmclient openURL $url
+     lynx:       xterm -e lynx $url
+     
++
++    The following command is used in this FreeBSD port:
++
++    mozilla (no wrapper): /bin/sh -c "mozilla -remote 'openurl($url,new-window)'||exec mozilla $url"
++
+     Proxy Host
+     ==========
+ 
+@@ -564,7 +569,7 @@
      if {[catch {info nameofexecutable} nameofexecutable]} {
          set nameofexecutable wish
      }
@@ -34,7 +46,7 @@
  
      if {[lsearch $argv "--help"] >= 0} {
          puts \n$seti(usage)
-@@ -566,7 +566,7 @@
+@@ -579,7 +584,7 @@
      option add *highlightBackground grey85 user
  
      if {$argc == 0} {
@@ -43,3 +55,21 @@
      } {
          set seti(setidir) [lindex $argv 0]
          if {[string index $seti(setidir) 0] != "/"} {
+@@ -4871,7 +4876,7 @@
+     update idletasks
+     Window show $widget(tkseti)
+     
+-    set seti(tksetiURL)     "http://www.cuug.ab.ca/~macdonal/tkseti/tkseti.html"
++    set seti(tksetiURL)     "http://phileimer.9online.fr/tkseti/CHANGES"
+ 
+ #    set seti(statefile)     $seti(setidir)/state.txt
+ #    set seti(workfile)      $seti(setidir)/work_unit.txt
+@@ -4951,7 +4956,7 @@
+     set seti(_howto_kill)     {kill -KILL $pid}
+     set seti(_howto_pause)    {kill -STOP $pid}
+     set seti(_howto_cont)     {kill -CONT $pid}
+-    set seti(_howto_browse)   {/bin/csh -c "netscape -remote openURL\\\\($url,new-window\\\\) || exec netscape $url"}
++    set seti(_howto_browse)   {/bin/sh -c "mozilla -remote 'openurl($url,new-window)'||exec mozilla $url"}
+     set seti(_howto_statnet)  {}
+     set seti(_howto_startnet) {}
+     set seti(_howto_stopnet)  {}

@@ -1,0 +1,12 @@
+***************************************************************************
+
+Make sure the user has write access to the setiathome directory!
+
+tkseti will look for the client files in the directory /var/db/setiathome .
+If you've run the client elsewhere, or run more than one client, just 
+specify the setiathome client directory on the tkseti command line. For
+example:
+
+	tkseti ~/setiathome
+
+***************************************************************************
