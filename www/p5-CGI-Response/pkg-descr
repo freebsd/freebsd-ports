@@ -1,0 +1,19 @@
+CGI::Response is a Perl5 module for constructing responses to
+ Common Gateway Interface (CGI) requests. It is designed to be
+ light-weight and efficient for the most common tasks, and also
+ to provide access to all HTTP response features for more
+ advanced CGI applications.
+
+There are two ways to use CGI::Response.
+For basic applications, the Simple Interface provides a number
+ of plain functions that cover the most commonly-used CGI
+ response headers.
+More advanced applications may employ the Full Interface object
+ methods to access any HTTP header, or to add experimental or
+ non-standard headers. Both interfaces try to generate reasonable
+ defaults whenever possible.
+
+WWW: http://search.cpan.org/dist/CGI-Response/
+
+- Guy P.
+guy@device.dyndns.org

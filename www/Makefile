@@ -400,6 +400,7 @@
     SUBDIR += p5-CGI-Framework
     SUBDIR += p5-CGI-Kwiki
     SUBDIR += p5-CGI-Minimal
+    SUBDIR += p5-CGI-Response
     SUBDIR += p5-CGI-SSI
     SUBDIR += p5-CGI-Session
     SUBDIR += p5-CGI-SpeedyCGI
