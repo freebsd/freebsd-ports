@@ -1,0 +1,15 @@
+The program works by generating a low resolution fractal (400 points) for a
+particular range. Then the fractal is divided into quarters. The each quarter
+is given a score based on the number of colours active in it. This method is
+fairly effective at keeping the program focused on an active area of the
+fractal, although there is much improvement to be done. There is also an
+option (on by default) to select a randomly choosen quadrant than the one with
+the highest score if the randomly choosen quadrant has a score that is at least
+80% of the highest score. This process of selecting a quadrant is repeated a
+fixed number of times (by default, 10 times). At this point, a high resolution
+(in terms of floating point precision), image is created and saved to disk.
+The cutoff value is very high, which is required for deep_zooms. To help avoid
+endless cylces a binary tree of the hashes of all previous iterations is stored
+and checked against the current iteration.
+
+WWW: http://members.rogers.com/rowley-c/deep_zoom/

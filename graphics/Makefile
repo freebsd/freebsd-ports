@@ -31,6 +31,7 @@
     SUBDIR += dc20ctrl
     SUBDIR += dc20pack
     SUBDIR += dc3play
+    SUBDIR += deep_zoom
     SUBDIR += dia
     SUBDIR += diacanvas
     SUBDIR += divx4linux
