@@ -22,6 +22,9 @@ WRKSRC=		${WRKDIR}/vnc_unixsrc
 USE_IMAKE=	yes
 ALL_TARGET=	World
 NO_INSTALL_MANPAGES=	yes
+XFREE86_HTML_MAN=	no
+
+MAN1=		Xvnc.1 vncviewer.1 vncpasswd.1 vncconnect.1 vncserver.1
 
 .if exists(${X11BASE}/share/vnc/classes/index.vnc)
 IGNORE=		"vnc has already been installed, please uninstall it first."
@@ -35,7 +38,7 @@ post-patch:
 		s,^#!/usr/bin/perl,#!${PERL},g" ${WRKSRC}/vncserver
 
 do-install:
-	@(cd ${WRKSRC}; ./vncinstall ${PREFIX}/bin)
+	@(cd ${WRKSRC}; ./vncinstall ${PREFIX}/bin ${PREFIX}/man)
 .for file in Xvnc vncviewer vncpasswd vncconnect
 	@strip ${PREFIX}/bin/${file}
 .endfor
