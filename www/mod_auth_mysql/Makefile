@@ -30,7 +30,6 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-mysql=${PREFIX} \
 		--with-apxs=${APXS}
 
-.include <bsd.port.pre.mk>
 .include "${PORTSDIR}/www/apache2/Makefile.modules.3rd"
 
 post-install:
@@ -41,4 +40,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
