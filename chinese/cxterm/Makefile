@@ -24,6 +24,13 @@ MAINTAINER=	obrien@FreeBSD.org
 WRKSRC=		${WRKDIR}/cxterm-5.0
 USE_IMAKE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${XFREE86_VERSION} == 4
+BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
+RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
+.endif
+
 XMKMF=		xmkmf
 ALL_TARGET=	xrelease Makefiles includes all
 
@@ -42,4 +49,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/Doc/input.doc ${PREFIX}/share/doc/cxterm
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

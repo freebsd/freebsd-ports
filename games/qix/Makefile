@@ -14,6 +14,14 @@ MASTER_SITE_SUBDIR=	jmz
 MAINTAINER=	jmz@FreeBSD.org
 
 USE_X_PREFIX=	yes
+
+.include <bsd.port.pre.mk>
+
+.if ${XFREE86_VERSION} == 4
+BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
+RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
+.endif
+
 MAN1=		qix.1
 
 FONTSDIR=	lib/X11/fonts/local
@@ -24,4 +32,4 @@ do-configure:
 	@${SED} -e s:/usr/local:${PREFIX}: -e s:/usr/X11R6:${PREFIX}: \
 	  < ${WRKSRC}/Makefile~ > ${WRKSRC}/Makefile
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

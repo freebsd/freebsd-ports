@@ -16,6 +16,14 @@ EXTRACT_SUFX=	.tar.z
 MAINTAINER=	jmz@FreeBSD.org
 
 USE_IMAKE=	yes
+
+.include <bsd.port.pre.mk>
+
+.if ${XFREE86_VERSION} == 4
+BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
+RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
+.endif
+
 MAN6=		xjewel.6
 
 FONTSDIR=	lib/X11/fonts/local
@@ -29,4 +37,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/bitmaps/seven_seg.pcf.gz ${PREFIX}/${FONTSDIR}
 	@(cd ${PREFIX}/${FONTSDIR} ; mkfontdir)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

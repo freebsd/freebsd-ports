@@ -17,6 +17,13 @@ PATCHFILES=	j${PORTNAME}-${PORTVERSION}.gz
 
 MAINTAINER=	max@FreeBSD.org
 
+.include <bsd.port.pre.mk>
+
+.if ${XFREE86_VERSION} == 4
+BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
+RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
+.endif
+
 USE_XPM=	yes
 USE_GMAKE=	yes
 MAN6=		dlb.6 dgn_comp.6 lev_comp.6 nethack.6 recover.6
@@ -50,4 +57,4 @@ post-install:
 .endfor
 	${CAT} ${PKGDIR}/MESSAGE
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

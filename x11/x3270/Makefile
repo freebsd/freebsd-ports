@@ -13,12 +13,18 @@ MASTER_SITE_SUBDIR=	applications
 
 MAINTAINER=     volf@oasis.IAEhv.nl
 
-WRKSRC=		${WRKDIR}/x3270-3.1.1
 USE_IMAKE=	yes
-MAN1=		x3270.1 x3270if.1 x3270-script.1 ibm_hosts.1
-MANCOMPRESSED=	yes
 
 .include <bsd.port.pre.mk>
+
+.if ${XFREE86_VERSION} == 4
+BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
+RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
+.endif
+
+WRKSRC=		${WRKDIR}/x3270-3.1.1
+MAN1=		x3270.1 x3270if.1 x3270-script.1 ibm_hosts.1
+MANCOMPRESSED=	yes
 
 pre-install:
 .if !exists(${X11BASE}/lib/X11/fonts/local)
