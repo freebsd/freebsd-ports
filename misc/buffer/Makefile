@@ -8,7 +8,7 @@
 PORTNAME=	buffer
 PORTVERSION=	1.17.1
 CATEGORIES=	misc
-MASTER_SITES=	http://people.FreeBSD.org/~steve/distfiles/
+MASTER_SITES=	${MASTER_SITE_LOCAL:S^%SUBDIR%^steve^}
 
 MAINTAINER=	jonny@jonny.eng.br
 
