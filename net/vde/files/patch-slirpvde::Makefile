@@ -1,0 +1,20 @@
+--- slirpvde/Makefile	Sat Jan 29 15:02:08 2005
++++ slirpvde/Makefile	Sun Jan 30 14:02:57 2005
+@@ -3,7 +3,7 @@
+ tcp_timer.o udp.o \
+ bootp.o
+ 
+-CFLAGS=-I. -DVDE
++CFLAGS+=-I. -DVDE
+ 
+ all: libslirp.a slirpvde
+ 
+@@ -34,7 +34,7 @@
+ udp.o: udp.c ip_icmp.h
+ 
+ slirpvde: slirpvde.o libslirp.a
+-	$(CC) -o slirpvde slirpvde.o libslirp.a
++	$(CC) $(LDFLAGS) -o slirpvde slirpvde.o libslirp.a
+ 
+ clean:
+ 	rm -rf *.o slirpvde libslirp.a
