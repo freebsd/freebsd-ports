@@ -16,6 +16,7 @@ MAINTAINER=		cedric@cedric.trix.net
 USE_KDELIBS_VER=3
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_AUTOMAKE_VER=15
 USE_AUTOMAKE=	yes
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 CONFIGURE_ARGS+=	--prefix=${LOCALBASE}
