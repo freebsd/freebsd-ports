@@ -214,6 +214,7 @@ bin/gaphor
 %%DATADIR%%/plugins/pynsource/plugin.xml
 %%DATADIR%%/plugins/pynsource/pynsource.py
 %%DATADIR%%/plugins/pynsource/pynsource.pyc
+share/locale/nl/LC_MESSAGES/gaphor.mo
 @dirrm %%DATADIR%%/plugins/pynsource
 @dirrm %%DATADIR%%/plugins/plugineditor
 @dirrm %%DATADIR%%/plugins/liveobjectbrowser
