@@ -1,5 +1,5 @@
---- Makefile.in.orig	Tue Jul 29 03:25:42 2003
-+++ Makefile.in	Tue Jul 29 09:40:50 2003
+--- Makefile.in.orig	Sat Sep 13 07:18:20 2003
++++ Makefile.in	Fri Oct  3 23:27:19 2003
 @@ -84,7 +84,7 @@
  
  SUBDIRS = src data
