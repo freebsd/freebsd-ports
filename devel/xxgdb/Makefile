@@ -3,7 +3,7 @@
 # Date created:		2 May 1995
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.5 1996/11/18 09:52:36 asami Exp $
+# $Id: Makefile,v 1.6 1997/12/25 22:29:15 asami Exp $
 #
 
 DISTNAME=	xxgdb-1.12
@@ -20,7 +20,7 @@ USE_IMAKE=	yes
 #  we have the cookie anyway and it's much easier this way
 #  than modifying the Imakefile.
 post-build:
-	cd ${WRKSRC}; gcc -o xxgdbiowin -m486 -O2 xxgdbiowin.c
+	cd ${WRKSRC}; gcc -o xxgdbiowin -O2 xxgdbiowin.c
 
 post-install:
 	install -c -s ${WRKSRC}/xxgdbiowin ${PREFIX}/bin
