@@ -1,0 +1,4 @@
+#!/bin/sh
+THOTDIR=%%PREFIX%%/share/thot
+export THOTDIR
+exec %%PREFIX%%/bin/thot
