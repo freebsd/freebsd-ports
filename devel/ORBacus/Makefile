@@ -9,7 +9,7 @@
 DISTNAME=	OB-3.2.1
 PKGNAME=	ORBacus-3.2.1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.ooc.com/pub/OB/3.2
+MASTER_SITES=	ftp://ftp.ooc.com/pub/OB/3.2/
 
 MAINTAINER=	ejc@bazzle.com
 
