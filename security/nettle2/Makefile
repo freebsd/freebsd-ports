@@ -22,8 +22,8 @@ USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
 		MAKEINFO="makeinfo --no-split"
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-extract:
 	@${RM} -f ${WRKSRC}/nettle.info*
