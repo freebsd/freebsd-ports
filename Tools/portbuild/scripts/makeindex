@@ -1,16 +1,18 @@
 #!/bin/sh
-# usage: $0 branch
+# usage: $0 arch branch
 
 # -j# to make index
 # XXX corrupts index file because of lack of synchronization?
 #INDEXJOBS=1
 
 pb=/var/portbuild
-. ${pb}/portbuild.conf
+arch=$1
+shift
+. ${pb}/${arch}/portbuild.conf
 . ${pb}/scripts/buildenv
 
 usage () {
-  echo "usage: makeindex branch"
+  echo "usage: makeindex arch branch"
   exit 1
 }
 
@@ -21,12 +23,15 @@ fi
 case "x$1" in
   x4)
     branch=4
+    INDEXFILE=INDEX
     ;;
   x4-exp)
     branch=4-exp
+    INDEXFILE=INDEX
     ;;
   x5)
     branch=5
+    INDEXFILE=INDEX-5
     ;;
   *)
     usage
@@ -34,7 +39,7 @@ case "x$1" in
 esac
 
 # Set up the build env variables
-buildenv ${pb} ${branch}
+buildenv ${pb} ${arch} ${branch}
 
 unset DISPLAY
 
@@ -46,6 +51,6 @@ cd ${PORTSDIR}
 make index
 # remove extra spaces in dependency list -- this causes problems
 # Also transform the dummy paths to their canonical locations
-sed -e 's/  */ /g' -e 's/|  */|/g' -e 's/  *|/|/g' -e "s,${LOCALBASE},/usr/local," -e "s,${X11BASE},/usr/X11R6," INDEX > INDEX.tmp
+sed -e 's/  */ /g' -e 's/|  */|/g' -e 's/  *|/|/g' -e "s,${LOCALBASE},/usr/local," -e "s,${X11BASE},/usr/X11R6," ${INDEXFILE} > ${INDEXFILE}.tmp
 
-mv -f INDEX.tmp INDEX
+mv -f ${INDEXFILE}.tmp ${INDEXFILE}
