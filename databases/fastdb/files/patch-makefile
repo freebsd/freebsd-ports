@@ -1,6 +1,6 @@
---- makefile.orig	Tue Feb 18 20:58:28 2003
-+++ makefile	Thu Mar 27 20:58:31 2003
-@@ -32,6 +32,6 @@
+--- makefile.orig	Thu Dec  4 13:21:49 2003
++++ makefile	Thu Dec  4 13:26:32 2003
+@@ -32,8 +32,8 @@
  SUFF=
  else
  ifneq (,$(findstring FreeBSD,$(OSTYPE)))
@@ -9,6 +9,8 @@
 +TFLAGS=-D_REENTRANT ${PTHREAD_CFLAGS}
 +THRLIBS=${PTHREAD_LIBS}
  else 
+ TFLAGS=-D_REENTRANT -D_THREAD_SAFE
+ THRLIBS=-lpthread
 @@ -65,7 +65,7 @@
  
  WEB_EXAMPLES = cgistub bugdb clidb
@@ -18,25 +20,23 @@
  
  # Possible FastDB compile time parameters (-Dxxx should be added to DEFS macro):
  # 1. USE_LOCALE_SETTINGS - use C locale for string comparison operations
-@@ -101,13 +101,13 @@
+@@ -107,13 +107,12 @@
  DEFS = -DUSE_QUEUE_MANAGER -DUSE_LOCALE_SETTINGS
  
- #CFLAGS = $(TFLAGS) -c -Wall -O5 -g $(DEFS) 
--CFLAGS = -c -Wall -O0 -g $(DEFS) $(TFLAGS)
+ #CFLAGS = $(TFLAGS) -c -Wall -O5 -g  -fPIC $(DEFS) 
+-CFLAGS = -c -Wall -O0 -g -fPIC $(DEFS) $(TFLAGS)
 +CFLAGS = -c ${CXXFLAGS} $(DEFS) $(TFLAGS) -fPIC
- #CFLAGS = -c -Wall -O0 -DFASTDB_DEBUG=DEBUG_TRACE -g $(DEFS) $(TFLAGS)
--SHFLAGS=-shared
-+SHFLAGS = -shared -Wl,-soname,$@
+ #CFLAGS = -c -Wall -O0 -fPIC -DFASTDB_DEBUG=DEBUG_TRACE -g $(DEFS) $(TFLAGS)
+ SHFLAGS=-shared -Wl,-soname,$@
  
- 
+-
  LD = $(CC)
 -LDFLAGS = -g $(TFLAGS)
 +LDFLAGS = $(TFLAGS)
  
  AR = ar
  ARFLAGS = -cru
-@@ -326,18 +326,15 @@
- 
+@@ -354,13 +354,12 @@
  install: subsql installlib
  	mkdir -p $(BINSPATH)
 -	cp subsql $(BINSPATH)
@@ -52,8 +52,4 @@
 +	${BSD_INSTALL_PROGRAM} $(FASTDB_LIB) $(CLI_LIB) $(FASTDB_SHARED) $(CLI_SHARED) $(LIBSPATH)
  	cd $(LIBSPATH); ln -f -s $(FASTDB_SHARED) libfastdb$(SUFF).so
  	cd $(LIBSPATH); ln -f -s $(CLI_SHARED) libcli$(SUFF).so
--
--
  
- uninstall:
- 	rm -fr $(INCSPATH)
