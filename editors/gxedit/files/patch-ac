@@ -1,15 +1,6 @@
---- gxedit.c.orig	Fri Oct 30 19:55:24 1998
-+++ gxedit.c	Wed Nov  4 16:27:37 1998
-@@ -4482,7 +4482,7 @@
-  }
-  fputs((char *)gtk_editable_get_chars(GTK_EDITABLE (text), 0, gtk_text_get_length(GTK_TEXT(text))),fd);
-  if(fd!=NULL) fclose(fd);
-- sprintf(temp, "/usr/bin/emacs %s &", tmp_name);
-+ sprintf(temp, "/usr/local/bin/emacs %s &", tmp_name);
-  system(temp);
- }
- 
-@@ -6765,6 +6765,7 @@
+--- gxedit.c.orig	Mon Nov 23 04:30:47 1998
++++ gxedit.c	Tue Nov 24 00:58:23 1998
+@@ -6569,6 +6569,7 @@
   if(tooltips)
    gtk_tooltips_set_tip(tips, menuitem, "HTML reference", "");
  
@@ -17,7 +8,7 @@
   menuitem = gtk_menu_item_new_with_label("System information");
   gtk_menu_append(GTK_MENU(menu), menuitem);
   gtk_signal_connect_object(GTK_OBJECT(menuitem), "activate",
-@@ -6772,6 +6773,7 @@
+@@ -6576,6 +6577,7 @@
   gtk_widget_show(menuitem);
   if(tooltips)
    gtk_tooltips_set_tip(tips, menuitem, "Run Xproc", "");

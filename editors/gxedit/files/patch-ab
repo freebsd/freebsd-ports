@@ -1,23 +1,19 @@
---- Makefile.orig	Fri Oct 30 20:02:16 1998
-+++ Makefile	Sun Nov  1 17:45:10 1998
-@@ -1,13 +1,12 @@
+--- Makefile.orig	Mon Nov 23 04:54:57 1998
++++ Makefile	Tue Nov 24 02:02:35 1998
+@@ -1,9 +1,9 @@
  BIN_DIR =
  INSTALL_DIR = /usr/X11R6/bin/
 -CFLAGS = `gtk-config --cflags` -I/usr/local/include -I. -O -Wall
-+CFLAGS += `gtk11-config --cflags` -I/usr/local/include -I. -DX_LOCALE
- GTKEDITOR_CFLAGS = -I../gtkeditor-0.0.2-1
++CFLAGS += `gtk11-config --cflags` -I/usr/local/include -I.
+ GTKEDITOR_CFLAGS = -I../gtkeditor-0.0.3
  GNOME_CFLAGS = -DUSE_GNOME
 -LIBS = `gtk-config --libs`
 +LIBS = `gtk11-config --libs`
  GNOME_LIBS = -lgnomesupport -lgnome -lgnomeui
- OBJS = bindings.o gxedit.o net.o
- GTKEDITOR_OBJS = ../gtkeditor-0.0.2-1/gtkeditor.o ../gtkeditor-0.0.2-1/regex.o
--CC = gcc
- 
- all:
- 	@echo "Use ./setup"
-@@ -22,7 +21,7 @@
- 	$(CC) $(CFLAGS) -c bindings.c
+ OBJS = bindings.o gxedit.o net.o utils.o
+ GTKEDITOR_OBJS = ../gtkeditor-0.0.3/gtkeditor.o ../gtkeditor-0.0.3/regex.o -L../gtkeditor-0.0.3 -lgtkeditor -lregex
+@@ -23,7 +23,7 @@
+ 	$(CC) $(CFLAGS) -c utils.c
  	$(CC) $(CFLAGS) -o $(BIN_DIR)gxedit $(OBJS) $(LIBS)
  	@(rm -f ./.chk_config)
 -	(cd xproc-src; make BIN_DIR=../; cd ..)
@@ -25,7 +21,7 @@
  	@echo "You should delete your ~/.gxedit file to allow GXedit to re-create it if you're upgrading GXedit."
  
  gxe-with-gtkeditor:
-@@ -55,7 +54,7 @@
+@@ -58,7 +58,7 @@
  
  install:
  	cp $(BIN_DIR)gxedit $(INSTALL_DIR)gxedit
