@@ -15,9 +15,9 @@ DIST_SUBDIR=	erlang
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A polygon mesh modeler written in Erlang
 
-BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
-RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang \
+BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang \
 		${LOCALBASE}/lib/erlang/lib/esdl/include/sdl.hrl:${PORTSDIR}/devel/esdl
+RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
 
 MAKE_ENV=	ESDL_PATH=${LOCALBASE}/lib/erlang/lib/esdl
 PLIST_SUB=	VERSION="${PORTVERSION}"
