@@ -1,0 +1,65 @@
+bin/activation-client
+bin/bonobo-activation-empty-server
+bin/bonobo-activation-run-query
+bin/bonobo-activation-server
+bin/bonobo-activation-sysconf
+bin/bonobo-slay
+etc/bonobo-activation/bonobo-activation-config.xml
+include/bonobo-activation-2.0/bonobo-activation/Bonobo_Activation_types.h
+include/bonobo-activation-2.0/bonobo-activation/Bonobo_GenericFactory.h
+include/bonobo-activation-2.0/bonobo-activation/Bonobo_Unknown.h
+include/bonobo-activation-2.0/bonobo-activation/bonobo-activation-activate.h
+include/bonobo-activation-2.0/bonobo-activation/bonobo-activation-async.h
+include/bonobo-activation-2.0/bonobo-activation/bonobo-activation-base-service.h
+include/bonobo-activation-2.0/bonobo-activation/bonobo-activation-id.h
+include/bonobo-activation-2.0/bonobo-activation/bonobo-activation-init.h
+include/bonobo-activation-2.0/bonobo-activation/bonobo-activation-register.h
+include/bonobo-activation-2.0/bonobo-activation/bonobo-activation-server-info.h
+include/bonobo-activation-2.0/bonobo-activation/bonobo-activation-shlib.h
+include/bonobo-activation-2.0/bonobo-activation/bonobo-activation-version.h
+include/bonobo-activation-2.0/bonobo-activation/bonobo-activation.h
+lib/libbonobo-activation.so
+lib/libbonobo-activation.so.3
+libdata/bonobo/servers/Bonobo_CosNaming_NamingContext.server
+libdata/bonobo/servers/broken.server
+libdata/bonobo/servers/empty.server
+libdata/bonobo/servers/plugin.server
+libdata/pkgconfig/bonobo-activation-2.0.pc
+share/idl/bonobo-activation-2.0/Bonobo_ActivationContext.idl
+share/idl/bonobo-activation-2.0/Bonobo_Activation_types.idl
+share/idl/bonobo-activation-2.0/Bonobo_GenericFactory.idl
+share/idl/bonobo-activation-2.0/Bonobo_ObjectDirectory.idl
+share/idl/bonobo-activation-2.0/Bonobo_Unknown.idl
+share/locale/az/LC_MESSAGES/bonobo-activation.mo
+share/locale/da/LC_MESSAGES/bonobo-activation.mo
+share/locale/de/LC_MESSAGES/bonobo-activation.mo
+share/locale/el/LC_MESSAGES/bonobo-activation.mo
+share/locale/es/LC_MESSAGES/bonobo-activation.mo
+share/locale/fi/LC_MESSAGES/bonobo-activation.mo
+share/locale/fr/LC_MESSAGES/bonobo-activation.mo
+share/locale/ga/LC_MESSAGES/bonobo-activation.mo
+share/locale/gl/LC_MESSAGES/bonobo-activation.mo
+share/locale/hu/LC_MESSAGES/bonobo-activation.mo
+share/locale/it/LC_MESSAGES/bonobo-activation.mo
+share/locale/ja/LC_MESSAGES/bonobo-activation.mo
+share/locale/ko/LC_MESSAGES/bonobo-activation.mo
+share/locale/nl/LC_MESSAGES/bonobo-activation.mo
+share/locale/nn/LC_MESSAGES/bonobo-activation.mo
+share/locale/no/LC_MESSAGES/bonobo-activation.mo
+share/locale/pl/LC_MESSAGES/bonobo-activation.mo
+share/locale/pt_BR/LC_MESSAGES/bonobo-activation.mo
+share/locale/ro/LC_MESSAGES/bonobo-activation.mo
+share/locale/ru/LC_MESSAGES/bonobo-activation.mo
+share/locale/sk/LC_MESSAGES/bonobo-activation.mo
+share/locale/sl/LC_MESSAGES/bonobo-activation.mo
+share/locale/sv/LC_MESSAGES/bonobo-activation.mo
+share/locale/ta/LC_MESSAGES/bonobo-activation.mo
+share/locale/tr/LC_MESSAGES/bonobo-activation.mo
+share/locale/uk/LC_MESSAGES/bonobo-activation.mo
+share/locale/zh_TW/LC_MESSAGES/bonobo-activation.mo
+@dirrm share/idl/bonobo-activation-2.0
+@dirrm libdata/bonobo/servers
+@dirrm libdata/bonobo
+@dirrm include/bonobo-activation-2.0/bonobo-activation
+@dirrm include/bonobo-activation-2.0
+@dirrm etc/bonobo-activation
