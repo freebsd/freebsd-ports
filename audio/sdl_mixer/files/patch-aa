@@ -1,23 +1,22 @@
 
 $FreeBSD$
 
---- Makefile.in.orig	Wed Dec 19 00:04:36 2001
-+++ Makefile.in	Wed Dec 19 14:31:08 2001
-@@ -93,7 +93,7 @@
+--- Makefile.in.orig
++++ Makefile.in
+@@ -254,7 +254,7 @@
+ lib_LTLIBRARIES = libSDL_mixer.la
  SUBDIRS = @MUSIC_SUBDIRS@
- DIST_SUBDIRS = mikmod timidity native_midi
- 
+ DIST_SUBDIRS = mikmod timidity native_midi native_midi_gpl
 -libSDL_mixerincludedir = $(includedir)/SDL
 +libSDL_mixerincludedir = $(includedir)/SDL11
- libSDL_mixerinclude_HEADERS =  	SDL_mixer.h
+ libSDL_mixerinclude_HEADERS = \
+ 	SDL_mixer.h
  
+@@ -297,7 +297,6 @@
  
-@@ -109,7 +109,7 @@
- EXTRA_DIST =  	CHANGES				VisualC.zip			PBProjects.tar.gz		MPWmake.sea.bin			CWprojects.sea.hqx		SDL_mixer.spec			SDL_mixer.spec.in		autogen.sh
- 
- 
--libSDL_mixer_la_LDFLAGS =  	-release $(LT_RELEASE)		-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
-+libSDL_mixer_la_LDFLAGS =  	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
- 
- libSDL_mixer_la_LIBADD = $(MIKMOD_LIB) $(TIMIDITY_LIB) $(NATIVE_MIDI_LIB)
+ libSDL_mixer_la_LDFLAGS = \
+ 	-no-undefined		\
+-	-release $(LT_RELEASE)	\
+ 	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) \
+ 	-export-symbols-regex Mix_.*
  
