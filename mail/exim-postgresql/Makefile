@@ -9,6 +9,7 @@ PKGNAMESUFFIX=	-postgresql
 CATEGORIES=	mail
 PKGDIR=		../exim
 FILESDIR=	${PKGDIR}/files
+PATCHDIR=	${PKGDIR}/files
 
 WITH_PGSQL=	yes
 
