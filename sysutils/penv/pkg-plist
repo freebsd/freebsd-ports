@@ -1,0 +1,6 @@
+bin/penv
+etc/penv.conf.default
+%%PORTDOCS%%share/doc/penv/html/created.with.vim.gif
+%%PORTDOCS%%share/doc/penv/html/index.html
+%%PORTDOCS%%@dirrm share/doc/penv/html
+%%PORTDOCS%%@dirrm share/doc/penv
