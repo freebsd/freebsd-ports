@@ -17,7 +17,6 @@
     SUBDIR += ical
     SUBDIR += ithought
     SUBDIR += kdepim
-    SUBDIR += kdepim2
     SUBDIR += korganizer
     SUBDIR += kproject
     SUBDIR += loserjabber
