@@ -1,12 +1,12 @@
 # Ports collection makefile for:  pnet
 # Date created:			  Fri Jul 13 01:08:14 EDT 2001
-# Whom:				  Michael Johnson <ahze@ahze.net>
+# Whom:				  Michael Johnson <ahze@rgv.net>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	pnet
-PORTVERSION=	0.2.8
+PORTVERSION=	0.3.0
 CATEGORIES=	lang
 MASTER_SITES=	http://www.southern-storm.com.au/download/
 
