@@ -8,8 +8,7 @@
 PORTNAME=	postfixadmin
 PORTVERSION=	2.0.3
 CATEGORIES=	mail
-MASTER_SITES=	http://high5.net/postfixadmin/download.php/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	# See FETCH_SITE
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	rob@debank.tv
@@ -21,15 +20,14 @@ RUN_DEPENDS+=	${LOCALBASE}/libexec/apache2/libphp4.so:${PORTSDIR}/www/mod_php4
 RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
 .endif
 
-WWW_USER?=	www
-WWW_GROUP?=	www
-
 NO_BUILD=	yes
+FETCH_SITE=	http://high5.net/postfixadmin/download.php
 FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}
 
 do-fetch:
+		@${ECHO_MSG} ">> Attempting to fetch from ${FETCH_SITE}."
 		${FETCH_CMD} ${FETCH_BEFORE_ARGS} \
-		${MASTER_SITES}?file=${DISTNAME}${EXTRACT_SUFX}
+		    ${FETCH_SITE}?file=${DISTNAME}${EXTRACT_SUFX}
 
 post-patch:
 		${FIND} ${WRKSRC} -name '*.orig' -delete
@@ -55,9 +53,8 @@ do-install:
 			${CP} ${PREFIX}/www/postfixadmin/config.inc.php.sample \
 				${PREFIX}/www/postfixadmin/config.inc.php
 
-
 post-install:
-		@${CHOWN} -R ${WWW_USER}:${WWW_GROUP} ${PREFIX}/www/postfixadmin
+		@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/www/postfixadmin
 		@${CHMOD} 640 ${PREFIX}/www/postfixadmin/*.php ${PREFIX}/www/postfixadmin/*.css
 		@${CHMOD} 640 ${PREFIX}/www/postfixadmin/admin/*.php
 		@${CHMOD} 640 ${PREFIX}/www/postfixadmin/users/*.php
