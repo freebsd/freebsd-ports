@@ -4,7 +4,7 @@
 # Date created:         Sat July 20, 1996
 # Whom:                 David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.25 1998/09/16 04:14:26 obrien Exp $
+# $Id: Makefile,v 1.26 1998/12/01 09:40:48 obrien Exp $
 #
 
 DISTNAME=	lsof_4.38_W
@@ -23,7 +23,7 @@ WRKSRC=		${WRKDIR}/${SRCBALL_NAME}
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=	-n freebsd
-MAN1=		lsof.1
+MAN8=		lsof.8
 
 SRCBALL_NAME=	${DISTNAME:S/_W$//}
 
@@ -48,7 +48,7 @@ pre-patch:
 
 do-install:
 	${INSTALL} ${COPY} ${STRIP} -o ${BINOWN} -m 2755 -g kmem ${WRKSRC}/lsof ${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/lsof.man ${PREFIX}/man/man1/lsof.1
+	${INSTALL_MAN} ${WRKSRC}/lsof.man ${PREFIX}/man/man1/lsof.8
 	@${MKDIR} ${PREFIX}/share/lsof
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/* ${PREFIX}/share/lsof
 	@/bin/chmod 0444 ${PREFIX}/share/lsof/00*
