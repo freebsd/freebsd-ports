@@ -165,6 +165,7 @@
     SUBDIR += ggsd
     SUBDIR += ghtool
     SUBDIR += gicq
+    SUBDIR += gini
     SUBDIR += gkrellm_snmp
     SUBDIR += gkrellmqst
     SUBDIR += gkrellmwireless
