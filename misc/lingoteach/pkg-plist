@@ -1,22 +1,36 @@
 bin/lingoteach-gtk
-include/lingoteach/conf.h
-include/lingoteach/data.h
-include/lingoteach/iterator.h
-include/lingoteach/language.h
-include/lingoteach/lesson.h
-include/lingoteach/meaning.h
-include/lingoteach/sound.h
-info/lingoteach.info
-lib/liblingoteach.a
-lib/liblingoteach.la
-lib/liblingoteach.so
-lib/liblingoteach.so.0
+%%PORTDOCS%%share/doc/lingoteach/img/first-start.png
+%%PORTDOCS%%share/doc/lingoteach/img/pref-general.png
+%%PORTDOCS%%share/doc/lingoteach/img/pref-lesson.png
+%%PORTDOCS%%share/doc/lingoteach/img/pref-module.png
+%%PORTDOCS%%share/doc/lingoteach/img/pref-system.png
+%%PORTDOCS%%share/doc/lingoteach/img/use-filter.png
+%%PORTDOCS%%share/doc/lingoteach/img/use-multichoice.png
+%%PORTDOCS%%share/doc/lingoteach/img/use-onebyone.png
+%%PORTDOCS%%share/doc/lingoteach/img/use-search.png
+%%PORTDOCS%%share/doc/lingoteach/index.html
+%%PORTDOCS%%share/doc/lingoteach/lingoteach-conf.html
+%%PORTDOCS%%share/doc/lingoteach/lingoteach-install.html
+%%PORTDOCS%%share/doc/lingoteach/lingoteach-use.html
+%%PORTDOCS%%share/doc/lingoteach/lingoteach.css
+%%PORTDOCS%%share/doc/lingoteach/ln-legal.html
+share/lingoteach/AUTHORS
+share/lingoteach/COPYING
+share/lingoteach/README
 share/lingoteach/data/basic.xml
-share/lingoteach/data/freedict.xml
 share/lingoteach/data/language.dtd
 share/lingoteach/data/language.xml
 share/lingoteach/data/lingoteach.dtd
 share/lingoteach/data/rules.en.txt
+share/locale/da/LC_MESSAGES/lingoteach.mo
+share/locale/de/LC_MESSAGES/lingoteach.mo
+share/locale/eo/LC_MESSAGES/lingoteach.mo
+share/locale/fr/LC_MESSAGES/lingoteach.mo
+share/locale/hu/LC_MESSAGES/lingoteach.mo
+share/locale/id/LC_MESSAGES/lingoteach.mo
+share/locale/pt_BR/LC_MESSAGES/lingoteach.mo
+share/locale/sv/LC_MESSAGES/lingoteach.mo
 @dirrm share/lingoteach/data
 @dirrm share/lingoteach
-@dirrm include/lingoteach
+%%PORTDOCS%%@dirrm share/doc/lingoteach/img
+%%PORTDOCS%%@dirrm share/doc/lingoteach
