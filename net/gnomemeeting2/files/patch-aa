@@ -1,5 +1,5 @@
-*** configure.in.orig	Fri Dec  7 06:35:07 2001
---- configure.in	Fri Dec  7 07:24:28 2001
+*** configure.in.orig	Tue Dec  4 21:52:21 2001
+--- configure.in	Fri Dec  7 19:00:01 2001
 *************** fi
 *** 58,64 ****
   AC_ARG_WITH(ptlib-libs, [  --with-ptlib-libs=PFX       Location of PTLib libs.],
@@ -87,6 +87,23 @@
   
   dnl *********************************************************************
   dnl * Gdk-pixbuf ********************************************************
+*************** dnl ** GNOME ***************************
+*** 225,231 ****
+  dnl *********************************************************************
+  
+  GNOMEMEETING_INCLUDES="$GNOMEMEETING_INCLUDES $H323_CFLAGS $GDK_PIXBUF_CFLAGS $GCONF_CFLAGS $GNORBA_CFLAGS $ORBIT_CFLAGS"
+! GNOMEMEETING_LDADD="$GNOMEMEETING_LDADD $GNOME_LIBDIR $GTK_LIBS $GNOMEGNORBA_LIBS $LDAP_LIBS $H323_LIBS `gtk-config --libs gthread` $GDK_PIXBUF_LIBS $GCONF_LIBS $GNORBA_LIBS $ORBIT_LIBS"
+  
+  GNOME_COMPILE_WARNINGS
+  GNOME_X_CHECKS
+--- 227,233 ----
+  dnl *********************************************************************
+  
+  GNOMEMEETING_INCLUDES="$GNOMEMEETING_INCLUDES $H323_CFLAGS $GDK_PIXBUF_CFLAGS $GCONF_CFLAGS $GNORBA_CFLAGS $ORBIT_CFLAGS"
+! GNOMEMEETING_LDADD="$GNOMEMEETING_LDADD $GNOME_LIBDIR $GTK_LIBS $GNOMEGNORBA_LIBS $LDAP_LIBS $H323_LIBS `$GTK_CONFIG --libs gthread` $GDK_PIXBUF_LIBS $GCONF_LIBS $GNORBA_LIBS $ORBIT_LIBS"
+  
+  GNOME_COMPILE_WARNINGS
+  GNOME_X_CHECKS
 *************** dnl ####################################
 *** 236,242 ****
   dnl  Check for LDAP if available.
