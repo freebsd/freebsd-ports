@@ -15,20 +15,18 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/-pre/}
 MAINTAINER=	stefan@fafoe.narf.at
 COMMENT=	A slideshow presentation tool to write slides in Python or XML
 
-LIB_DEPENDS=	SDL_ttf.3:${PORTSDIR}/graphics/sdl_ttf \
-		SDL_image.10:${PORTSDIR}/graphics/sdl_image \
-		xml2.5:${PORTSDIR}/textproc/libxml2 \
+LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 		smpeg.1:${PORTSDIR}/multimedia/smpeg
 
 WRKSRC=		${WRKDIR}/${DISTNAME:C/-pre.*//}
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 USE_PYTHON=	yes
 USE_REINPLACE=	yes
+USE_SDL=	image ttf
 CONFIGURE_ARGS+=	--disable-gtk-gui
-CONFIGURE_ENV+=	SDL_CONFIG="${SDL_CONFIG}" LDFLAGS="-lstdc++"
+CONFIGURE_ENV+=	LDFLAGS="-lstdc++"
 
 .include <bsd.port.pre.mk>
 
