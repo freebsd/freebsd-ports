@@ -32,6 +32,66 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="bdd1537b-354c-11d9-a9e7-0001020eed82">
+    <topic>sudo -- privilege escalation with bash scripts</topic>
+    <affects>
+      <package>
+	<name>sudo</name>
+	<range><lt>1.6.8.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Sudo Security Alerts reports:</p>
+	<blockquote cite="http://www.courtesan.com/sudo/alerts/bash_functions.html">
+	  <p>A flaw in exists in sudo's environment sanitizing prior
+	    to sudo version 1.6.8p2 that could allow a malicious user
+	    with permission to run a shell script that utilized the
+	    bash shell to run arbitrary commands.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.courtesan.com/sudo/alerts/bash_functions.html</url>
+    </references>
+    <dates>
+      <discovery>2004-11-11</discovery>
+      <entry>2004-11-13</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="d656296b-33ff-11d9-a9e7-0001020eed82">
+    <topic>ruby -- CGI DoS</topic>
+    <affects>
+      <package>
+	<name>ruby</name>
+	<name>ruby_r</name>
+	<name>ruby_static</name>
+	<range><lt>1.8.2.p3</lt></range>
+      </package>
+      <package>
+	<name>ruby-1.7.0</name>
+	<range><ge>a2001.05.12</ge><le>a2001.05.26</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Ruby CGI.rb module contains a bug which can cause the
+	  CGI module to go into an infinite loop, thereby causing a
+	  denial-of-service situation on the web server by using all
+	  available CPU time.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0983</cvename>
+      <url>http://www.debian.org/security/2004/dsa-586</url>
+    </references>
+    <dates>
+      <discovery>2004-11-06</discovery>
+      <entry>2004-11-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ba13dc13-340d-11d9-ac1b-000d614f7fad">
   <topic>samba -- potential remote DoS vulnerability</topic>
     <affects>
