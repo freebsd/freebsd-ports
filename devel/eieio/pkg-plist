@@ -5,8 +5,6 @@ info/eieio.info
 %%EMACS_VERSION_SITE_LISPDIR%%/eieio/call-tree.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/eieio/chart.el
 %%EMACS_VERSION_SITE_LISPDIR%%/eieio/chart.elc
-%%EMACS_VERSION_SITE_LISPDIR%%/eieio/compare-strings.el
-%%EMACS_VERSION_SITE_LISPDIR%%/eieio/compare-strings.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/eieio/eieio-base.el
 %%EMACS_VERSION_SITE_LISPDIR%%/eieio/eieio-base.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/eieio/eieio-comp.el
