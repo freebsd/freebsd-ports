@@ -20,7 +20,7 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
 DOCDIR=		${PREFIX}/share/doc/py-mx
-MXHDRDIR=	${PREFIX}/lib/${PYTHON_VERSION}/site-packages/mx/stdlib
+MXHDRDIR=	${PYTHONPREFIX_SITELIBDIR}/mx/stdlib
 
 post-install:
 	@${MKDIR} ${DOCDIR}

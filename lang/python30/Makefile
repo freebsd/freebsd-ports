@@ -76,20 +76,20 @@ PLATFORMS=plat-freebsd3 plat-freebsd4 plat-freebsd5
 
 pre-install:
 .for platform in ${PLATFORMS}
-	${MKDIR} ${PYTHON_LIBDIR}/${platform}
+	${MKDIR} ${PYTHONPREFIX_LIBDIR}/${platform}
 .for file in IN.py regen
 	${INSTALL_DATA} ${WRKSRC}/Lib/${platform}/${file} \
-		${PYTHON_LIBDIR}/${platform}/
+		${PYTHONPREFIX_LIBDIR}/${platform}/
 .endfor
 .endfor
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/emacs/site-lisp
-	${INSTALL_DATA} ${WRKSRC}/Misc/python-mode.el ${PREFIX}/share/emacs/site-lisp
-	@${MKDIR} ${PYTHON_SITELIBDIR}
+	${INSTALL_DATA} ${WRKSRC}/Misc/python-mode.el \
+		${PREFIX}/share/emacs/site-lisp
+	@${MKDIR} ${PYTHONPREFIX_SITELIBDIR}
 .if !defined(NOPORTDOCS)
 	@cd ${WRKSRC}; tar -c --exclude='*CVS*' -f - Tools | \
-		(cd ${PYTHON_LIBDIR}; tar xf -)
+		(cd ${PYTHONPREFIX_LIBDIR}; tar xf -)
 	@${MKDIR} ${DEMODIR}
 	@cd ${WRKSRC}/Demo; tar -c --exclude='*CVS*' -f - * | \
 		(cd ${DEMODIR}; tar xf -)
