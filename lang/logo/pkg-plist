@@ -447,7 +447,7 @@ lib/logo/helpfiles/writepos
 lib/logo/helpfiles/writer
 lib/logo/helpfiles/xcor
 lib/logo/helpfiles/ycor
-%%PORTDOCS%%share/doc/logo/usermanual
+%%PORTDOCS%%%%DOCSDIR%%/usermanual
 %%WITH_FULL_DOCS%%info/ucblogo.info
 %%WITH_FULL_DOCS%%info/ucblogo.info-1
 %%WITH_FULL_DOCS%%info/ucblogo.info-2
@@ -511,5 +511,5 @@ share/examples/logo/csls/ttt
 @dirrm lib/logo
 @dirrm share/examples/logo/csls
 @dirrm share/examples/logo
-%%WITH_FULL_DOCS%%@dirrm share/doc/logo/html
-%%PORTDOCS%%@dirrm share/doc/logo
+%%WITH_FULL_DOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

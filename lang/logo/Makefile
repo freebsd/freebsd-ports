@@ -64,15 +64,16 @@ pre-fetch:
 
 do-install:
 .for d in lib/logo lib/logo/logolib \
-	lib/logo/helpfiles share/examples/logo/csls share/doc/logo
+	lib/logo/helpfiles share/examples/logo/csls
 	${MKDIR} ${PREFIX}/$d
 .endfor
 	${INSTALL_PROGRAM} ${WRKSRC}/logo ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/logolib/* ${PREFIX}/lib/logo/logolib/
 	${INSTALL_DATA} ${WRKSRC}/helpfiles/* ${PREFIX}/lib/logo/helpfiles/
 	${INSTALL_DATA} ${WRKSRC}/csls/* ${PREFIX}/share/examples/logo/csls/
-.if !defined(NOPORTSDOCS)
-	${INSTALL_DATA} ${WRKSRC}/usermanual $(PREFIX)/share/doc/logo
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/usermanual ${DOCSDIR}
 .endif
 .if defined(WITH_FULL_DOCS)
 	cd ${WRKSRC}/emacs/ ;${SETENV} ${MAKE_ENV} ${GMAKE} install-docs
