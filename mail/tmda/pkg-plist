@@ -91,6 +91,7 @@ bin/tmda-sendmail
 @dirrm %%PYTHON_SITELIBDIR%%/TMDA
 %%PORTDOCS%%%%DOCSDIR%%/CODENAMES
 %%PORTDOCS%%%%DOCSDIR%%/CRYPTO
+%%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADE
 %%PORTDOCS%%%%DOCSDIR%%/bugs.html
@@ -119,15 +120,22 @@ bin/tmda-sendmail
 %%PORTDOCS%%%%DOCSDIR%%/tmda-vdomains.html
 %%PORTDOCS%%%%DOCSDIR%%/trouble.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%EXAMPLESDIR%%/contrib/collectaddys
-%%EXAMPLESDIR%%/contrib/def2html
-%%EXAMPLESDIR%%/contrib/printcdb
-%%EXAMPLESDIR%%/contrib/printdbm
-%%EXAMPLESDIR%%/contrib/sendit.sh
-%%EXAMPLESDIR%%/contrib/tmda.el
-%%EXAMPLESDIR%%/contrib/vadduser-tmda
-@dirrm %%EXAMPLESDIR%%/contrib
+%%EXAMPLESDIR%%/collectaddys
+%%EXAMPLESDIR%%/def2html
+%%EXAMPLESDIR%%/printcdb
+%%EXAMPLESDIR%%/printdbm
 %%EXAMPLESDIR%%/sample.config
+%%EXAMPLESDIR%%/sendit.sh
+%%EXAMPLESDIR%%/smtp-check-sender
+%%EXAMPLESDIR%%/tmda.el
+%%EXAMPLESDIR%%/tofmipd.init
+%%EXAMPLESDIR%%/tofmipd.sysconfig
+%%EXAMPLESDIR%%/update-internaldomains
+%%EXAMPLESDIR%%/vadduser-tmda
+%%EXAMPLESDIR%%/vmailmgr-vdir.sh
+%%EXAMPLESDIR%%/vpopmail-vdir.sh
+%%EXAMPLESDIR%%/vtmdarc
+%%EXAMPLESDIR%%/wrapfd3.sh
 @dirrm %%EXAMPLESDIR%%
 %%DATADIR%%/bounce.txt
 %%DATADIR%%/confirm_accept.txt
