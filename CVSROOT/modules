@@ -1690,6 +1690,7 @@ fox-devel		ports/x11-toolkits/fox-devel
 fox-xunicode	ports/x11-toolkits/fox-xunicode
 fpc		ports/lang/fpc
 fping		ports/net/fping
+fpl		ports/lang/fpl
 fpm		ports/security/fpm
 fpp		ports/devel/fpp
 fprobe		ports/net/fprobe
