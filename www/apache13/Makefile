@@ -3,7 +3,7 @@
 # Date created:         Fri Aug 25 16:42:36 CDT 1995
 # Whom:                 ache@nagual.pp.ru
 #
-# $Id: Makefile,v 1.47 1998/04/21 21:57:36 ache Exp $
+# $Id: Makefile,v 1.48 1998/04/22 12:38:13 asami Exp $
 #
 
 DISTNAME=       apache_1.3b6
@@ -14,6 +14,8 @@ MASTER_SITES=   ftp://www.apache.org/apache/dist/
 #PATCH_SITES=    ftp://www.apache.org/apache/dist/patches/apply_to_1.3b6/
 
 MAINTAINER=     ache@freebsd.org
+
+BROKEN=		package
 
 NO_LATEST_LINK=	yes
 
