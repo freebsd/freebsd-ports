@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pam_ldap
-PORTVERSION=	1.6.1
+PORTVERSION=	1.6.4
 CATEGORIES=	security net
 MASTER_SITES=	http://www.padl.com/download/ \
 		ftp://ftp.padl.com/pub/
@@ -15,7 +15,14 @@ DISTNAME=	pam_ldap-${PORTVERSION:S/.//g}
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	A pam module for authenticating with LDAP
 
-.include <bsd.port.pre.mk>
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.//g}
+CONFIGURE_ARGS=	--with-ldap-lib=openldap \
+		--with-ldap-dir=${LOCALBASE} \
+		--with-ldap-conf-file=${PREFIX}/etc/ldap.conf \
+		--with-ldap-secret-file=${PREFIX}/etc/ldap.secret
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 .if !defined(WITHOUT_LDAP_V3)
 LIB_DEPENDS=	ldap.2:${PORTSDIR}/net/openldap20 \
@@ -24,15 +31,6 @@ LIB_DEPENDS=	ldap.2:${PORTSDIR}/net/openldap20 \
 LIB_DEPENDS=	ldap.1:${PORTSDIR}/net/openldap12 \
 		lber.1:${PORTSDIR}/net/openldap12
 .endif
-
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.//g}
-CONFIGURE_ARGS=	--with-ldap-lib=openldap \
-		--with-ldap-dir=${LOCALBASE} \
-		--with-ldap-conf-file=${PREFIX}/etc/ldap.conf \
-		--with-ldap-secret-file=${PREFIX}/etc/ldap.secret
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 post-extract:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${TOUCH} -f
@@ -47,4 +45,4 @@ post-install:
 	@${ECHO} "login    auth    sufficient    ${PREFIX}/lib/pam_ldap.so"
 	@${ECHO} "================================================================================"
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
