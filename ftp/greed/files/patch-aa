@@ -1,5 +1,5 @@
---- Makefile.orig	Wed Apr 21 07:09:00 1999
-+++ Makefile	Fri Apr 23 23:28:02 1999
+--- Makefile.orig	Tue May  4 09:49:31 1999
++++ Makefile	Thu May  6 07:12:36 1999
 @@ -4,10 +4,10 @@
  
  # Where to install binary and manpage on "make install":
@@ -12,17 +12,17 @@
  
  ###################################################
  ######                                       ######
-@@ -52,11 +52,10 @@
+@@ -50,11 +50,10 @@
  #CFLAGS='-DI386_ASSEM -DREAL_IS_FLOAT -DLINUX -Wall -O2 -m486 -fomit-frame-pointer -funroll-all-loops -finline-functions -ffast-math -malign-loops=2 -malign-jumps=2 -malign-functions=2'
  
  freebsd:
 -	$(MAKE) CC=cc LDFLAGS= \
 +	$(MAKE) LDFLAGS= \
  		OBJECTS= \
--		CFLAGS='-Wall -ansi -pedantic -O4 -m486 -fomit-frame-pointer \
+-		CFLAGS='-Wall -ansi -pedantic -O4 -m486 \
 -			-funroll-all-loops -ffast-math -DROT_I386 \
 -			-DI386_ASSEM -DREAL_IS_FLOAT -DUSE_MMAP' \
-+		CFLAGS='-fomit-frame-pointer -funroll-all-loops -ffast-math \
++		CFLAGS='-funroll-all-loops -ffast-math \
 +			-DREAL_IS_FLOAT -DUSE_MMAP ${FLAGS}' \
  		greed
  
