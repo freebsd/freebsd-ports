@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libol
-PORTVERSION=	0.3.12
+PORTVERSION=	0.3.13
 CATEGORIES=	devel
 MASTER_SITES=	http://www.balabit.com/downloads/libol/0.3/
 
