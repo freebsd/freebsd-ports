@@ -1,4 +1,9 @@
 bin/slurm
-%%PORTDOCS%%share/doc/slurm/README
-%%PORTDOCS%%share/doc/slurm/KEYS
-%%PORTDOCS%%@dirrm share/doc/slurm
+%%PORTDOCS%%/share/slurm/blue.theme
+%%PORTDOCS%%/share/slurm/cyan.theme
+%%PORTDOCS%%/share/slurm/foo.theme
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/KEYS
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm share/slurm
