@@ -1,26 +1,43 @@
-This emulator does a good job of emulating an Apple IIGS. Various IIGS
-hardware devices are also emulated (see README file) but this version
-is still an alpha so you might find a few things missing.
+General Notes
+=============
+
+This emulator does a great job of emulating an Apple IIGS. Various
+IIGS hardware devices are also emulated but this version is still an
+alpha quality release so you might find a few things missing.
 
 XGS requires a copy of the IIGS ROM to boot up and this port should
 attempt to FTP a copy of it from the Asimov archives (if it is still
 available). If you have to obtain a copy of it manually then all you
-should need to do is drop it in the distfiles directory to allow the
-port to build. The md5 checksum file is specifically for the version 1
-ROM so you may have to alter it should you decide to use a version 3
-ROM. Also, this ROM cannot be distributed due to copyright reasons.
+should need to do is drop it in the xgs subdirectory of the distfiles
+directory to allow the port to build. This ROM cannot be distributed
+due to copyright reasons.
 
-Please check out the README file in either the working directory or
-/usr/local/share/xgs/ (or equivalent on your system). As this package
-has no man pages you will need to pick up the basics from there. All
-author credits can be found in these files also.
+Version Specific Notes
+======================
 
-When loading disk images be sure to use the full path of the
-file you're loading.  
+Disk emulation has improved considerably. Many images available on the
+net will now load. 
+
+A new disk image format has been adopted and further support for other
+image types have been added. Also most of the utilities have been
+consolidated into one program. Be sure to check the docs on this one. 
+
+Sound emulation is currently broken and I'm looking for help in this
+area as I lack experience with sound programming. If you are able to
+assist, or even better, have some patches you can send me please
+contact me on the email address below.
+
+Finally
+=======
+
+Please check out the files in /usr/local/share/doc/xgs (or equivalent
+on your system). As this package has no man pages you will need to
+pick up the basics from there. All author credits can be found in
+these files also.
 
 Check out the following for all sorts of Apple II goodies:
 
-	http://www.asimov.net/
+	ftp://ftp.apple.asimov.net/pub/apple_II/
 	http://www.optera.com/~invid/emulators/XGS/
 	comp.emulators.apple2
 
@@ -28,4 +45,5 @@ Share and enjoy,
 
 Joel...
 :->
-suttonj@interconnect.com.au
+sutton@aardvark.apana.org.au
+
