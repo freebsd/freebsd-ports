@@ -3,14 +3,16 @@
 # Date created:				Oct 9 1996
 # Whom:	      				Matthew Stein <matt@bdd.net>
 #
-#   $Id: Makefile,v 1.5 1996/11/19 14:16:51 asami Exp $
+#   $Id: Makefile,v 1.6 1996/12/07 12:49:35 asami Exp $
 
 PKGNAME=	postgres95-1.08
 CATEGORIES=	databases
-MASTER_SITES=	ftp://ftp.ki.net/pub/postgres95/ \
-		ftp://ftp.luga.or.at/pub/postgres95/ \
-		ftp://ftp.jaist.ac.jp/pub/dbms/postgres95/ \
-		ftp://cal011111.student.utwente.nl/pub/postgres95/
+MASTER_SITES=	ftp://ftp.PostgreSQL.org/pub/oldstuff/ \
+		ftp://ftp.jaist.ac.jp/pub/dbms/postgres95/oldstuff/ \
+		ftp://postgres95.vnet.net:/pub/postgres95/oldstuff/ \
+		ftp://ftp.itm.tu-clausthal.de/pub/mirrors/postgres95/oldstuff/ \
+		ftp://rocker.sch.bme.hu/pub/mirrors/postgreSQL/oldstuff/ \
+		ftp://ftp.luga.or.at/pub/postgres95/ 
 
 DISTFILES=	postgres95-1.08.tar.gz \
 		flex-2.5.2.tgz
