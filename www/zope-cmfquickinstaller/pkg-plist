@@ -1,0 +1,28 @@
+%%ZOPEBASEDIR%%/lib/python/Products/CMFQuickInstallerTool/AUTHORS
+%%ZOPEBASEDIR%%/lib/python/Products/CMFQuickInstallerTool/ChangeLog
+%%ZOPEBASEDIR%%/lib/python/Products/CMFQuickInstallerTool/DEPENDS
+%%ZOPEBASEDIR%%/lib/python/Products/CMFQuickInstallerTool/InstalledProduct.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFQuickInstallerTool/InstalledProduct.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/CMFQuickInstallerTool/QuickInstallerTool.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFQuickInstallerTool/QuickInstallerTool.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/CMFQuickInstallerTool/README.txt
+%%ZOPEBASEDIR%%/lib/python/Products/CMFQuickInstallerTool/SkinRegistrar.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFQuickInstallerTool/SkinRegistrar.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/CMFQuickInstallerTool/__init__.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFQuickInstallerTool/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/CMFQuickInstallerTool/__pkginfo__.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFQuickInstallerTool/__pkginfo__.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/CMFQuickInstallerTool/refresh.txt
+%%ZOPEBASEDIR%%/lib/python/Products/CMFQuickInstallerTool/tool.gif
+%%ZOPEBASEDIR%%/lib/python/Products/CMFQuickInstallerTool/version.txt
+%%ZOPEBASEDIR%%/lib/python/Products/CMFQuickInstallerTool/forms/install_products_form.pt
+%%ZOPEBASEDIR%%/lib/python/Products/CMFQuickInstallerTool/forms/installed_product_overview.pt
+%%ZOPEBASEDIR%%/lib/python/Products/CMFQuickInstallerTool/interfaces/__init__.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFQuickInstallerTool/interfaces/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/CMFQuickInstallerTool/interfaces/interface.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFQuickInstallerTool/interfaces/interface.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/CMFQuickInstallerTool/interfaces/portal_quickinstaller.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFQuickInstallerTool/interfaces/portal_quickinstaller.pyc
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFQuickInstallerTool/forms
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFQuickInstallerTool/interfaces
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFQuickInstallerTool

@@ -594,6 +594,7 @@
     SUBDIR += zope-cmf13
     SUBDIR += zope-cmfforum
     SUBDIR += zope-cmfphoto
+    SUBDIR += zope-cmfquickinstaller
     SUBDIR += zope-exuserfolder
     SUBDIR += zope-formulator
     SUBDIR += zope-guf
