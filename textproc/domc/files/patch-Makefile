@@ -1,11 +1,11 @@
---- Makefile.orig	Sat Oct 27 13:40:45 2001
-+++ Makefile	Thu Nov 22 03:34:09 2001
-@@ -1,13 +1,13 @@
+--- Makefile.orig	Thu Dec 20 19:16:25 2001
++++ Makefile	Sun Dec 30 11:43:57 2001
+@@ -1,26 +1,26 @@
 -INSTDIR   = /usr/local
 +INSTDIR   = ${PREFIX}
- OBJS      = lib/expatls.o lib/events.o lib/node.o lib/dom.o lib/stack.o
+ OBJS      = src/expatls.o src/events.o src/node.o src/dom.o src/msgno.o src/stack.o
  LIBNAME   = domc
--SONAME    = lib$(LIBNAME).so.0.5.0
+-SONAME    = lib$(LIBNAME).so.0.5.8
 -SOVERSION = lib$(LIBNAME).so.0.5
 +SONAME    = lib$(LIBNAME).so.${SHLIB_MAJOR}
 +SOVERSION = lib$(LIBNAME).so.${SHLIB_MAJOR}
@@ -18,10 +18,21 @@
  
  example:
  	$(MAKE) -C examples
-@@ -25,5 +25,5 @@
- 	@echo "Expat was not removed however"
+ 
+ install:
+-	cp src/dom.h $(INSTDIR)/include/dom.h
+-	cp src/msgno.h $(INSTDIR)/include/msgno.h
+-	cp $(SONAME) $(INSTDIR)/lib
+-	cd $(INSTDIR)/lib && ln -sf $(SONAME) $(SOVERSION) && ln -sf $(SONAME) lib$(LIBNAME).so
++	${BSD_INSTALL_DATA} src/dom.h $(INSTDIR)/include/dom.h
++	${BSD_INSTALL_DATA} src/msgno.h $(INSTDIR)/include/msgno.h
++	${BSD_INSTALL_DATA} $(SONAME) $(INSTDIR)/lib
++	ln -sf $(SONAME) $(INSTDIR)/lib/lib$(LIBNAME).so
+ 
+ clean:
+ 	rm $(OBJS) $(SONAME) $(INSTDIR)/include/dom.h $(INSTDIR)/include/msgno.h $(INSTDIR)/lib/$(SONAME) $(INSTDIR)/lib/$(SOVERSION) $(INSTDIR)/lib/lib$(LIBNAME).so
+ 	if [ -f examples/d5.o ]; then $(MAKE) -C examples clean; fi
  
  .c.o:
--	gcc -Wall -Iinclude -Llib -fPIC -DPIC -c -o $*.o $<
-+	${CC} ${CFLAGS} -I${LOCALBASE}/include/xml -Iinclude -Llib -fPIC -DPIC -c -o $*.o $<
- 
+-	gcc -Wall -I../include -Isrc -Lsrc -fPIC -DPIC -c -o $*.o $<
++	${CC} ${CFLAGS} -I${LOCALBASE}/include/xml -I../include -Isrc -Lsrc -fPIC -DPIC -c -o $*.o $<

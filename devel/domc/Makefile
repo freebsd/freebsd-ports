@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	domc
-PORTVERSION=	0.5.1
+PORTVERSION=	0.5.8
 CATEGORIES=	devel
 MASTER_SITES=	http://auditorymodels.org/domc/src/
 EXTRACT_SUFX=	.tgz
@@ -22,11 +22,7 @@ MAKE_ENV=	SHLIB_MAJOR="${SHLIB_MAJOR}"
 INSTALLS_SHLIB=	yes
 PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
 
-do-install:
-	${INSTALL_DATA} ${WRKSRC}/include/dom.h ${PREFIX}/include
-	${CAT} ${WRKSRC}/include/stack.h >> ${PREFIX}/include/dom.h
-	${INSTALL_DATA} ${WRKSRC}/libdomc.so.${SHLIB_MAJOR} ${PREFIX}/lib
-	${LN} -sf libdomc.so.${SHLIB_MAJOR} ${PREFIX}/lib/libdomc.so
+post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/*.* ${DOCSDIR}
