@@ -30,7 +30,6 @@ sbin/cfkey
 sbin/cfrun
 sbin/cfservd
 sbin/vicf
-share/emacs/site-lisp/cfengine.el
 share/cfengine/cf.chflags.example
 share/cfengine/cf.freebsd.example
 share/cfengine/cf.ftp.example
@@ -46,11 +45,16 @@ share/cfengine/cf.sun4.example
 share/cfengine/cf.users.example
 share/cfengine/cfagent.conf-advanced.example
 share/cfengine/cfagent.conf.example
+share/cfengine/cfengine.el
 share/cfengine/cfrc.example
 share/cfengine/cfrun.hosts.example
 share/cfengine/cfservd.conf.example
+share/cfengine/html/cfengine-Reference.html
+share/cfengine/html/cfengine-Tutorial.html
 share/cfengine/update.conf.example
-share/doc/cfengine/cfengine-Reference.html
-share/doc/cfengine/cfengine-Tutorial.html
+share/nls/POSIX
+share/nls/en_US.US-ASCII
+@dirrm share/cfengine/html
+@dirrm share/cfengine/doc
 @dirrm share/cfengine
-@dirrm share/doc/cfengine
+@dirrm doc/cfengine-2.0.8p1
