@@ -6348,6 +6348,7 @@ openssh-portable	ports/security/openssh-portable
 openssl-beta	ports/security/openssl-beta
 openthreads	ports/devel/openthreads
 opentop		ports/devel/opentop
+openttd		ports/games/openttd
 openuniverse	ports/astro/openuniverse
 openupsd	ports/sysutils/openupsd
 openverse	ports/net/openverse
