@@ -9,7 +9,6 @@ PORTNAME=	xscreensaver-gnome
 PORTVERSION=	4.16
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://www.jwz.org/xscreensaver/ \
-		http://ftp.uni-koeln.de/windows/xcontrib/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	adamw
 DISTNAME=	xscreensaver-${PORTVERSION}
