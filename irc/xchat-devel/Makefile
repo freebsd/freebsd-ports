@@ -5,41 +5,40 @@
 # $FreeBSD$
 #
 
-PORTNAME=	xchat
-PORTVERSION=	1.5.7
-PORTREVISION=	1
-CATEGORIES=	irc gnome
-MASTER_SITES=	http://xchat.org/files/source/1.5/ \
-		http://xchat.linuxpower.org/files/source/1.5/
+PORTNAME=		xchat
+PORTVERSION=		1.5.8
+CATEGORIES=		irc gnome
+MASTER_SITES=		http://xchat.org/files/source/1.5/ \
+			http://xchat.linuxpower.org/files/source/1.5/
 
-MAINTAINER=	jim@FreeBSD.org
+MAINTAINER=		jim@FreeBSD.org
 
-USE_X_PREFIX=	yes
-USE_BZIP2=	yes
-USE_GMAKE=	yes
-USE_PERL5=	yes
-USE_IMLIB=	yes
-WANT_GNOME=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-python
+USE_X_PREFIX=		yes
+USE_BZIP2=		yes
+USE_GMAKE=		yes
+USE_PERL5=		yes
+USE_IMLIB=		yes
+WANT_GNOME=		yes
+GNU_CONFIGURE=		yes
+CONFIGURE_ARGS=		--disable-python
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_SOCKS)
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libsocks5.a:${PORTSDIR}/net/socks5
-CONFIGURE_ARGS+=--enable-socks
+BUILD_DEPENDS+=		${LOCALBASE}/lib/libsocks5.a:${PORTSDIR}/net/socks5
+CONFIGURE_ARGS+=	--enable-socks
 .endif
 
 .if defined(WITH_SSL)
-USE_OPENSSL=	YES
-CONFIGURE_ARGS+=--enable-openssl
+USE_OPENSSL=		YES
+CONFIGURE_ARGS+=	--enable-openssl
 .endif
 
 .if defined(HAVE_GNOME)
-USE_GNOME=	yes
-CONFIGURE_ARGS+=--enable-gnome --enable-panel --enable-gdk-pixbuf
+USE_GNOME=		yes
+CONFIGURE_ARGS+=	--enable-gnome --enable-panel --enable-gdk-pixbuf
 .else
-CONFIGURE_ARGS+=--disable-gnome --disable-gdk-pixbuf
+CONFIGURE_ARGS+=	--disable-gnome --disable-gdk-pixbuf
 .endif
 
 pre-patch:
