@@ -105,7 +105,7 @@ RUN_DEPENDS+=	${LOCALBASE}/libexec/imapd:${PORTSDIR}/mail/imap-uw
 RUN_DEPENDS+=	${LOCALBASE}/bin/wvHtml:${PORTSDIR}/textproc/wv
 .endif
 .if !defined(WITHOUT_XL)
-RUN_DEPENDS+=	${LOCALBASE}/bin/xlHtml:${PORTSDIR}/textproc/xlhtml
+RUN_DEPENDS+=	${LOCALBASE}/bin/xlhtml:${PORTSDIR}/textproc/xlhtml
 .endif
 .if !defined(WITHOUT_ZIP)
 RUN_DEPENDS+=	${LOCALBASE}/bin/zipinfo:${PORTSDIR}/archivers/unzip
