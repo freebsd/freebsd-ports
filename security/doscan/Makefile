@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	doscan
-PORTVERSION=	0.2.3
+PORTVERSION=	0.2.5
 CATEGORIES=	security net
 MASTER_SITES=	http://static.enyo.de/fw/releases/doscan/
 
