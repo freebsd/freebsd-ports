@@ -15,7 +15,7 @@ MASTER_SITES+=	http://ny1.mirror.openoffice.org/developer/%SUBDIR%/ \
 		http://ny1.mirror.openoffice.org/miscellaneous/helpcontent/:help \
 		http://people.freebsd.org/~mbr/ooo/:moz
 MASTER_SITE_SUBDIR=	${PORTVERSION}
-DISTFILES+=	oo_${PORTVERSION}_src.tar.bz2 neon.tgz:moz expat.tgz:moz
+DISTFILES+=	oo_${PORTVERSION}_src.tar.bz2 neon.tgz:moz expat.tgz:moz \
 		gpc231.tar.Z:gpc patch-openoffice-mozilla101-2002-10-14:moz
 .if defined(L10NHELP)
 DISTFILES+=	${L10NHELP:S/$/:help/}
