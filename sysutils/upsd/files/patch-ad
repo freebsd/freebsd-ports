@@ -1,0 +1,32 @@
+--- apc.c.orig	Fri Aug  2 23:44:22 1996
++++ apc.c	Tue Dec  8 16:59:03 1998
+@@ -164,12 +164,12 @@
+ 			}
+ 			if((r->type & T_TYPE) == T_BINARY) {
+ 				if(!bcmp(v1.val.binary, v0.val.binary, r->size)) {
+-					syslog(LOG_WARNING, "apc_tune: toggle wraparound");
++					syslog(LOG_WARNING, "apc_tune: toggle wraparound register %s", r->name);
+ 					return 1;
+ 				}
+ 			} else {
+ 				if(v1.val.number == v0.val.number) {
+-					syslog(LOG_WARNING, "apc_tune: toggle wraparound");
++					syslog(LOG_WARNING, "apc_tune: toggle wraparound register %s", r->name);
+ 					return 1;
+ 				}
+ 			}
+--- apc_static.c.orig	Fri Aug  2 23:44:23 1996
++++ apc_static.c	Tue Dec  8 16:56:57 1998
+@@ -91,9 +91,12 @@
+ 	{SMART_LOWBATDUR, {number: 7}},
+ 	{SMART_LOWBATDUR, {number: 10}},
+ 
++	/* several models accept different values here */
+ 	{SMART_WAKEUPBCAP, {number: 0}},
+ 	{SMART_WAKEUPBCAP, {number: 10}},
++	{SMART_WAKEUPBCAP, {number: 15}},
+ 	{SMART_WAKEUPBCAP, {number: 25}},
++	{SMART_WAKEUPBCAP, {number: 50}},
+ 	{SMART_WAKEUPBCAP, {number: 90}},
+ 	{SMART_WAKEUPBCAP, {number: 100}},
+ 
