@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	healthd
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.2
 PORTREVISION=	0
 CATEGORIES=	sysutils ipv6
 MASTER_SITES=	http://healthd.thehousleys.net/
