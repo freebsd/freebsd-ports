@@ -1,0 +1,13 @@
+F-Prot Antivirus for BSD Workstations utilizes the renowned F-Prot
+Antivirus scanning engine for primary scan but has in addition to
+that a system of internal heuristics devised to search for unknown
+viruses.
+
+This version of F-Prot is a command line on-demand scanner.
+
+Please note that the license explicitly permits that F-Prot Antivirus
+for BSD Workstations is free for personal users on personal
+workstations. For any other use please consult their website for
+licensing information.
+
+WWW: http://www.f-prot.com/

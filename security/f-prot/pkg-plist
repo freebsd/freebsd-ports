@@ -1,0 +1,43 @@
+bin/f-prot
+f-prot/CHANGES
+f-prot/ENGLISH.TX0
+f-prot/INSTALL.bsd_ws
+f-prot/LICENSE
+f-prot/MACRO.DEF
+f-prot/README
+f-prot/SIGN.DEF
+f-prot/SIGN2.DEF
+f-prot/doc_ws/add_info.html
+f-prot/doc_ws/auto_updt.html
+f-prot/doc_ws/comm_scan.html
+f-prot/doc_ws/index.html
+f-prot/doc_ws/inf_eicar.gif
+f-prot/doc_ws/inst_pro.html
+f-prot/doc_ws/license.html
+f-prot/doc_ws/loc_files.html
+f-prot/doc_ws/macro_scanning_options.html
+f-prot/doc_ws/main_feat.html
+f-prot/doc_ws/man_updt.html
+f-prot/doc_ws/norm_scan.gif
+f-prot/doc_ws/per_scan.html
+f-prot/doc_ws/reporting_options.html
+f-prot/doc_ws/scanning_options.html
+f-prot/doc_ws/screenshot.jpg
+f-prot/doc_ws/sys_req.html
+f-prot/doc_ws/test_eicar.html
+f-prot/doc_ws/test_inst.html
+f-prot/doc_ws/updater.html
+f-prot/doc_ws/updater_req.html
+f-prot/doc_ws/updt_macro.gif
+f-prot/doc_ws/updt_sign.gif
+f-prot/doc_ws/updt_signature.gif
+f-prot/f-prot
+f-prot/f-prot.sh
+f-prot/install-f-prot.pl
+f-prot/man_pages/check-updates.pl.8
+f-prot/man_pages/f-prot.1
+f-prot/tools/check-updates.pl
+@dirrm f-prot/doc_ws
+@dirrm f-prot/man_pages
+@dirrm f-prot/tools
+@dirrm f-prot/
