@@ -34,7 +34,7 @@ CONFIGURE_ARGS+=--enable-ipv6
 CONFIGURE_ARGS+=--disable-ipv6
 .endif
 
-.if ${HAVE_GNOME:Mgtk12}!=""
+.if !defined(WITHOUT_GNOME) && ${HAVE_GNOME:Mgtk12}!=""
 USE_GNOME+=	gtk12
 PKGNAMESUFFIX=	-gtk
 USE_XLIB=	yes
