@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	scummvm-tools
-PORTVERSION=	0.4.1
-PORTREVISION=	2
+PORTVERSION=	0.6.0
 CATEGORIES=	games emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	scummvm
@@ -16,17 +15,23 @@ MAINTAINER=	alexander@trull.com
 COMMENT=	Tools for use with the SCUMMVM game emulator
 
 RUN_DEPENDS=	scummvm:${PORTSDIR}/games/scummvm
+BUILD_DEPENDS=	lame:${PORTSDIR}/audio/lame \
+		flac:${PORTSDIR}/audio/flac \
+		oggenc:${PORTSDIR}/audio/vorbis-tools \
+		oggdec:${PORTSDIR}/audio/vorbis-tools
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 
-pre-patch:
-	@${REINPLACE_CMD} -e 's@:= -g -O@+= ${CFLAGS}@' \
-		${WRKSRC}/Makefile
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BUILD_DEPENDS+= gcc32:${PORTSDIR}/lang/gcc32
+.endif
 
 do-install:
-.for i in extract rescumm descumm descumm6 simon1decr simon2mp3
+.for i in descumm extract md5table mm_nes_extract queenrebuild rescumm
 	@${INSTALL_PROGRAM} ${WRKSRC}/$i ${PREFIX}/bin
 .endfor
 
@@ -35,4 +40,11 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+post-patch:
+	@${REINPLACE_CMD} -e 's@:= -g -O@+= ${CFLAGS}@' ${WRKSRC}/Makefile
+.if ${OSVERSION} < 500000
+	@${REINPLACE_CMD} -e 's/gcc/gcc32/g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's/g\+\+/g\+\+32/g' ${WRKSRC}/Makefile
+.endif
+
+.include <bsd.port.post.mk>
