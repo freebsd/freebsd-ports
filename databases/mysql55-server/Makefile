@@ -1,13 +1,13 @@
 # ports collection makefile for:	MySQL
-# Version required:			v3.22.11-beta
+# Version required:			v3.22.13-beta
 # Date created:				26 Jan 1998
 # Whom:					Josh Tiefenbach <josh@ican.net>
 #
-# $Id: Makefile,v 1.36 1998/12/22 18:01:41 dirk Exp $
+# $Id: Makefile,v 1.37 1998/12/23 19:36:43 obrien Exp $
 #
 
-DISTNAME=	mysql-3.22.11-beta
-PKGNAME=	mysql-3.22.11b
+DISTNAME=	mysql-3.22.13-beta
+PKGNAME=	mysql-3.22.13b
 CATEGORIES=	databases
 MASTER_SITES=	http://www.fh-wolfenbuettel.de/ftp/pub/database/mysql/Downloads/MySQL-3.22/ \
 		ftp://ftp.digex.net/pub/database/mysql/Downloads/MySQL-3.22/ \
@@ -16,8 +16,6 @@ MASTER_SITES=	http://www.fh-wolfenbuettel.de/ftp/pub/database/mysql/Downloads/My
 		ftp://ftp.sunet.se/pub/unix/databases/relational/mysql/Downloads/MySQL-3.22/
 
 MAINTAINER=	dirk@FreeBSD.ORG
-
-BROKEN='fetch -- 3.22.13-beta is the current distfile'
 
 MANUAL_PACKAGE_BUILD=	incompatible with mysql321
 NO_LATEST_LINK=	yes

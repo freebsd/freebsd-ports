@@ -1,29 +1,38 @@
---- scripts/mysql_install_db.sh.orig	Sun Nov 22 04:57:20 1998
-+++ scripts/mysql_install_db.sh	Sun Dec  6 23:58:49 1998
-@@ -10,8 +10,8 @@
+--- scripts/mysql_install_db.sh.orig	Wed Dec  9 12:48:04 1998
++++ scripts/mysql_install_db.sh	Wed Dec 23 23:39:46 1998
+@@ -11,8 +11,8 @@
+ ldata=@localstatedir@
+ mdata=$ldata/mysql
  
- mdata=@localstatedir@/mysql
- 
--# Are we are doing a rpm install?
+-# Are we doing an rpm install?
 -if test "$1" = "-IN-RPM"; then IN_RPM=1; shift; fi
 +# pretend we're doing an RPM install
 +IN_RPM=1
  
  if test ! -x @libexecdir@/mysqld
  then
-@@ -31,12 +31,9 @@
+@@ -27,8 +27,6 @@
+   fi
+ fi
+ 
+-# On IRIX hostname is in /usr/bsd so add this to the path
+-PATH=$PATH:/usr/bsd
  hostname=`hostname`		# Install this too in the user table
+ 
+ # Check if hostname is valid
+@@ -44,12 +42,9 @@
+ fi
  
  # Create database directories mysql & test
 -if test -z "$IN_RPM"
 -then
--  if test ! -d @localstatedir@; then mkdir @localstatedir@; fi
--  if test ! -d @localstatedir@/mysql; then mkdir @localstatedir@/mysql; fi
--  if test ! -d @localstatedir@/test; then mkdir @localstatedir@/test; fi
+-  if test ! -d $ldata; then mkdir $ldata; fi
+-  if test ! -d $ldata/mysql; then mkdir $ldata/mysql; fi
+-  if test ! -d $ldata/test; then mkdir $ldata/test; fi
 -fi
-+if test ! -d @localstatedir@; then mkdir @localstatedir@; fi
-+if test ! -d @localstatedir@/mysql; then mkdir @localstatedir@/mysql; fi
-+if test ! -d @localstatedir@/test; then mkdir @localstatedir@/test; fi
++if test ! -d $ldata; then mkdir $ldata; fi
++if test ! -d $ldata/mysql; then mkdir $ldata/mysql; fi
++if test ! -d $ldata/test; then mkdir $ldata/test; fi
  
  # Initialize variables
  c_d="" i_d=""
