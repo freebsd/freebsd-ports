@@ -1,12 +1,12 @@
 # New ports collection makefile for:	grepmail
-# Version required:			4.1
+# Version required:			4.11
 # Date created:				20 November 1999
 # Whom:					Chris D. Faulhaber <jedgar@fxp.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	grepmail-4.1
+DISTNAME=	grepmail-4.11
 CATEGORIES=	mail
 MASTER_SITES=	http://www.cs.virginia.edu/~dwc3q/code/
 
