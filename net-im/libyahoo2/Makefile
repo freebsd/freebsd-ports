@@ -21,8 +21,14 @@ USE_GNOME=	glib20 gnomehack gnometarget
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Wall -ansi -pedantic||g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-g -Wall||g' ${WRKSRC}/src/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
