@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		openldap
-PORTVERSION=		2.2.19
+PORTVERSION=		2.2.23
 PORTREVISION=		${OPENLDAP_PORTREVISION}
 CATEGORIES=		net databases
 MASTER_SITES=		ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
@@ -126,6 +126,8 @@ CONFIGURE_ARGS+=	--with-cyrus-sasl
 CONFIGURE_ARGS+=	--without-cyrus-sasl
 .endif
 
+CONFIGURE_SED+=		-e 's,(-lssl) +(-lcrypto),\2 \1,'
+
 .if defined(CLIENT_ONLY)
 # client specific configuration
 
@@ -150,9 +152,13 @@ PLIST_SUB+=		MODULES=""
 PLIST_SUB+=		MODULES="@comment "
 .endif
 
+SED_MODULES=		-e 's/\(moduleload[ 	]*back_[a-z]*\)\.la/\1/'
+
 .if defined(WITH_DYNAMIC_BACKENDS)
 BACKEND_ENABLE=		"mod"
 BACKEND_PLIST=		""
+SED_MODULES+=		-e 's/\# *\(modulepath\)/\1/' \
+			-e 's/\# *\(moduleload[ 	]*back_bdb\)/\1/'
 .else
 BACKEND_ENABLE=		"yes"
 BACKEND_PLIST=		"@comment "
@@ -176,6 +182,10 @@ CONFIGURE_ARGS+=	--enable-dyngroup
 
 .if defined(WITH_PROXYCACHE)
 CONFIGURE_ARGS+=	--enable-proxycache
+.endif
+
+.if defined(WITH_ACI)
+CONFIGURE_ARGS+=	--enable-aci
 .endif
 
 .if defined(WITHOUT_BDB)
@@ -272,8 +282,9 @@ INSTALLS_SHLIB=		yes
 PLIST_SUB+=		SLAPI="@comment "
 .endif
 
-.if defined(WITH_CLDAP)
-CPPFLAGS+=		-DLDAP_CONNECTIONLESS
+.if defined(WITH_SLP)
+CONFIGURE_ARGS+=	--enable-slp
+LIB_DEPENDS+=		slp.1:${PORTSDIR}/net/openslp
 .endif
 
 # Include tcp-wrapper support
@@ -282,6 +293,10 @@ CONFIGURE_ARGS+=	--enable-wrappers
 .endif
 
 # end of client/server specific configuration
+.endif
+
+.if defined(WITH_CLDAP)
+CPPFLAGS+=		-DLDAP_CONNECTIONLESS
 .endif
 
 CPPFLAGS+=		${PTHREAD_CFLAGS} \
@@ -328,11 +343,13 @@ pre-everything::
 	@${ECHO} "WITH_SHELL            with Shell backend"
 	@${ECHO} "WITH_ODBC             with SQL backend"
 	@${ECHO} "WITH_ODBC_TYPE        select ODBC interface (iODBC or unixODBC)"
-	@${ECHO} "WITH_SLAPI            with Netscape SLAPI plugin API
+	@${ECHO} "WITH_SLP              with SLPv2 (RFC 2608) support"
+	@${ECHO} "WITH_SLAPI            with Netscape SLAPI plugin API"
 	@${ECHO} "WITHOUT_TCP_WRAPPERS  without tcp wrapper support"
 	@${ECHO} "WITHOUT_BDB           without BerkeleyDB support"
 	@${ECHO} "WITH_DYNGROUP         with Dynamic Group overlay"
 	@${ECHO} "WITH_PROXYCACHE       with Proxy Cache overlay"
+	@${ECHO} "WITH_ACI              with per-object ACIs (experimental)"
 	@${ECHO} "WITH_DYNAMIC_BACKENDS build backends as modules"
 .if defined(DFOSVERSION) || ${OSVERSION} >= 500038
 	@${ECHO} "WITH_RCORDER          slapd(1) should start early in the boot process"
@@ -344,8 +361,7 @@ pre-everything::
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,%LOCALSTATEDIR%/run/,${LDAP_RUN_DIR}/,g' \
-		-e 's,\(back_[a-z]*\).la,\1,g' \
-		${WRKSRC}/servers/slapd/slapd.conf
+		${SED_MODULES} ${WRKSRC}/servers/slapd/slapd.conf
 .if defined(CONFIGURE_SED)
 	@${REINPLACE_CMD} -E ${CONFIGURE_SED} \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
