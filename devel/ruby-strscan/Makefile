@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	strscan
-PORTVERSION=	0.6.2
-PORTREVISION=	1
+PORTVERSION=	0.6.3
 CATEGORIES=	devel ruby
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		http://www9.xdsl.ne.jp/~aamine/soft/ \
 		http://www.xdsl.ne.jp/Cd/aamine/soft/
 MASTER_SITE_SUBDIR=	knu
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
