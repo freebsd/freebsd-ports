@@ -23,9 +23,15 @@ STRIP=
 MAN1=		pl.1 plrc.1 plld.1
 PLIST_SUB=	DISTNAME=${DISTNAME} ARCH=${ARCH} OS=${OPSYS:L}
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		"Broken pkg-plist"
+.endif
+
 post-install:
 .for f in pl plld plrc
 	@${STRIP_CMD} ${PREFIX}/lib/${DISTNAME}/bin/${ARCH}-${OPSYS:L}/$f
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
