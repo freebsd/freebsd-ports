@@ -103,9 +103,6 @@
 %%PYTHON_SITELIBDIR%%/pysnmp/mapping/udp/asynrole.py
 %%PYTHON_SITELIBDIR%%/pysnmp/mapping/udp/asynrole.pyc
 %%PYTHON_SITELIBDIR%%/pysnmp/mapping/udp/asynrole.pyo
-%%PYTHON_SITELIBDIR%%/pysnmp/mapping/udp/bulkrole.py
-%%PYTHON_SITELIBDIR%%/pysnmp/mapping/udp/bulkrole.pyc
-%%PYTHON_SITELIBDIR%%/pysnmp/mapping/udp/bulkrole.pyo
 %%PYTHON_SITELIBDIR%%/pysnmp/mapping/udp/error.py
 %%PYTHON_SITELIBDIR%%/pysnmp/mapping/udp/error.pyc
 %%PYTHON_SITELIBDIR%%/pysnmp/mapping/udp/error.pyo
@@ -139,27 +136,6 @@
 %%PYTHON_SITELIBDIR%%/pysnmp/proto/api/generic/rfc1905.py
 %%PYTHON_SITELIBDIR%%/pysnmp/proto/api/generic/rfc1905.pyc
 %%PYTHON_SITELIBDIR%%/pysnmp/proto/api/generic/rfc1905.pyo
-%%PYTHON_SITELIBDIR%%/pysnmp/proto/cli/__init__.py
-%%PYTHON_SITELIBDIR%%/pysnmp/proto/cli/__init__.pyc
-%%PYTHON_SITELIBDIR%%/pysnmp/proto/cli/__init__.pyo
-%%PYTHON_SITELIBDIR%%/pysnmp/proto/cli/error.py
-%%PYTHON_SITELIBDIR%%/pysnmp/proto/cli/error.pyc
-%%PYTHON_SITELIBDIR%%/pysnmp/proto/cli/error.pyo
-%%PYTHON_SITELIBDIR%%/pysnmp/proto/cli/ucd/__init__.py
-%%PYTHON_SITELIBDIR%%/pysnmp/proto/cli/ucd/__init__.pyc
-%%PYTHON_SITELIBDIR%%/pysnmp/proto/cli/ucd/__init__.pyo
-%%PYTHON_SITELIBDIR%%/pysnmp/proto/cli/ucd/rfc1157.py
-%%PYTHON_SITELIBDIR%%/pysnmp/proto/cli/ucd/rfc1157.pyc
-%%PYTHON_SITELIBDIR%%/pysnmp/proto/cli/ucd/rfc1157.pyo
-%%PYTHON_SITELIBDIR%%/pysnmp/proto/cli/ucd/rfc1905.py
-%%PYTHON_SITELIBDIR%%/pysnmp/proto/cli/ucd/rfc1905.pyc
-%%PYTHON_SITELIBDIR%%/pysnmp/proto/cli/ucd/rfc1905.pyo
-%%PYTHON_SITELIBDIR%%/pysnmp/proto/cli/ucd/v1.py
-%%PYTHON_SITELIBDIR%%/pysnmp/proto/cli/ucd/v1.pyc
-%%PYTHON_SITELIBDIR%%/pysnmp/proto/cli/ucd/v1.pyo
-%%PYTHON_SITELIBDIR%%/pysnmp/proto/cli/ucd/v2c.py
-%%PYTHON_SITELIBDIR%%/pysnmp/proto/cli/ucd/v2c.pyc
-%%PYTHON_SITELIBDIR%%/pysnmp/proto/cli/ucd/v2c.pyo
 %%PYTHON_SITELIBDIR%%/pysnmp/proto/error.py
 %%PYTHON_SITELIBDIR%%/pysnmp/proto/error.pyc
 %%PYTHON_SITELIBDIR%%/pysnmp/proto/error.pyo
@@ -181,12 +157,7 @@
 %%PYTHON_SITELIBDIR%%/pysnmp/proto/v2c.py
 %%PYTHON_SITELIBDIR%%/pysnmp/proto/v2c.pyc
 %%PYTHON_SITELIBDIR%%/pysnmp/proto/v2c.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/pysnmp/proto/cli/ucd
-@dirrm %%PYTHON_SITELIBDIR%%/pysnmp/proto/cli
 @dirrm %%PYTHON_SITELIBDIR%%/pysnmp/proto/api/generic
-@dirrm %%PYTHON_SITELIBDIR%%/pysnmp/proto/api/alpha
-@dirrm %%PYTHON_SITELIBDIR%%/pysnmp/proto/api
-@dirrm %%PYTHON_SITELIBDIR%%/pysnmp/proto
 @dirrm %%PYTHON_SITELIBDIR%%/pysnmp/mapping/udp
 @dirrm %%PYTHON_SITELIBDIR%%/pysnmp/mapping
 @dirrm %%PYTHON_SITELIBDIR%%/pysnmp/compat/snmpy
@@ -196,16 +167,6 @@
 @dirrm %%PYTHON_SITELIBDIR%%/pysnmp/asn1/encoding/ber
 @dirrm %%PYTHON_SITELIBDIR%%/pysnmp/asn1/encoding
 @dirrm %%PYTHON_SITELIBDIR%%/pysnmp/asn1
-@dirrm %%PYTHON_SITELIBDIR%%/pysnmp
-%%PORTDOCS%%%%EXAMPLESDIR%%/asyncmgr.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/snmpagent.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/snmpbulk.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/snmpbulkwalk.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/snmpget.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/snmpset.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/snmptrap.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/snmptrapd.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/snmpwalk.py
 %%PORTDOCS%%%%DOCSDIR%%/asn1/base-asn1-objects.html
 %%PORTDOCS%%%%DOCSDIR%%/asn1/base-choicetypeasn1-objects.html
 %%PORTDOCS%%%%DOCSDIR%%/asn1/base-recordtypeasn1-objects.html
@@ -217,12 +178,12 @@
 %%PORTDOCS%%%%DOCSDIR%%/asn1/encoding/ber/base-variable-objects.html
 %%PORTDOCS%%%%DOCSDIR%%/asn1/encoding/ber/base.html
 %%PORTDOCS%%%%DOCSDIR%%/asn1/encoding/ber/error.html
-%%PORTDOCS%%%%DOCSDIR%%/asn1/encoding/ber/intro.html
+%%PORTDOCS%%%%DOCSDIR%%/asn1/encoding/ber/index.html
 %%PORTDOCS%%%%DOCSDIR%%/asn1/encoding/ber/univ.html
 %%PORTDOCS%%%%DOCSDIR%%/asn1/encoding/error.html
-%%PORTDOCS%%%%DOCSDIR%%/asn1/encoding/intro.html
+%%PORTDOCS%%%%DOCSDIR%%/asn1/encoding/index.html
 %%PORTDOCS%%%%DOCSDIR%%/asn1/error.html
-%%PORTDOCS%%%%DOCSDIR%%/asn1/intro.html
+%%PORTDOCS%%%%DOCSDIR%%/asn1/index.html
 %%PORTDOCS%%%%DOCSDIR%%/asn1/univ-boolean-objects.html
 %%PORTDOCS%%%%DOCSDIR%%/asn1/univ-choice-example.html
 %%PORTDOCS%%%%DOCSDIR%%/asn1/univ-integer-example.html
@@ -234,55 +195,41 @@
 %%PORTDOCS%%%%DOCSDIR%%/asn1/univ-string-example.html
 %%PORTDOCS%%%%DOCSDIR%%/asn1/univ-string-objects.html
 %%PORTDOCS%%%%DOCSDIR%%/asn1/univ.html
-%%PORTDOCS%%%%DOCSDIR%%/compat/intro.html
-%%PORTDOCS%%%%DOCSDIR%%/compat/snmpy/intro.html
+%%PORTDOCS%%%%DOCSDIR%%/compat/index.html
+%%PORTDOCS%%%%DOCSDIR%%/compat/snmpy/index.html
 %%PORTDOCS%%%%DOCSDIR%%/error-objects.html
 %%PORTDOCS%%%%DOCSDIR%%/error.html
-%%PORTDOCS%%%%DOCSDIR%%/intro.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/mapping/error.html
-%%PORTDOCS%%%%DOCSDIR%%/mapping/intro.html
+%%PORTDOCS%%%%DOCSDIR%%/mapping/index.html
 %%PORTDOCS%%%%DOCSDIR%%/mapping/udp/asynrole-objects-agent.html
 %%PORTDOCS%%%%DOCSDIR%%/mapping/udp/asynrole-objects-manager.html
 %%PORTDOCS%%%%DOCSDIR%%/mapping/udp/asynrole.html
-%%PORTDOCS%%%%DOCSDIR%%/mapping/udp/bulkrole-manager-objects.html
-%%PORTDOCS%%%%DOCSDIR%%/mapping/udp/bulkrole.html
 %%PORTDOCS%%%%DOCSDIR%%/mapping/udp/error.html
-%%PORTDOCS%%%%DOCSDIR%%/mapping/udp/intro.html
+%%PORTDOCS%%%%DOCSDIR%%/mapping/udp/index.html
 %%PORTDOCS%%%%DOCSDIR%%/mapping/udp/role-agent-objects.html
 %%PORTDOCS%%%%DOCSDIR%%/mapping/udp/role-manager-objects.html
 %%PORTDOCS%%%%DOCSDIR%%/mapping/udp/role.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/api/alpha/index.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/api/alpha/pdutypes-pdutypes-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/api/alpha/pdutypes.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/api/alpha/rfc1155-rfc1902-choice-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/api/alpha/rfc1155-rfc1902-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/api/alpha/rfc1155-rfc1902.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/api/alpha/rfc1157-rfc1905-message-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/api/alpha/rfc1157-rfc1905-request-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/api/alpha/rfc1157-rfc1905-response-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/api/alpha/rfc1157-rfc1905-varbind-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/api/alpha/rfc1157-rfc1905.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/api/alpha/rfc1157-trap-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/api/alpha/rfc1905-getbulkrequest-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/api/alpha/v1-v2c.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/api/alpha/versions-protoid-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/api/alpha/versions.html
 %%PORTDOCS%%%%DOCSDIR%%/proto/api/error.html
-%%PORTDOCS%%%%DOCSDIR%%/proto/api/generic/error.html
-%%PORTDOCS%%%%DOCSDIR%%/proto/api/generic/intro.html
-%%PORTDOCS%%%%DOCSDIR%%/proto/api/generic/rfc1157-getrequestpdu-objects.html
-%%PORTDOCS%%%%DOCSDIR%%/proto/api/generic/rfc1157-getresponsepdu-objects.html
-%%PORTDOCS%%%%DOCSDIR%%/proto/api/generic/rfc1157-message-objects.html
-%%PORTDOCS%%%%DOCSDIR%%/proto/api/generic/rfc1157-trappdu-objects.html
-%%PORTDOCS%%%%DOCSDIR%%/proto/api/generic/rfc1157.html
-%%PORTDOCS%%%%DOCSDIR%%/proto/api/generic/rfc1905-getbulkrequestpdu-objects.html
-%%PORTDOCS%%%%DOCSDIR%%/proto/api/generic/rfc1905-getrequestpdu-objects.html
-%%PORTDOCS%%%%DOCSDIR%%/proto/api/generic/rfc1905-message-objects.html
-%%PORTDOCS%%%%DOCSDIR%%/proto/api/generic/rfc1905-responsepdu-objects.html
-%%PORTDOCS%%%%DOCSDIR%%/proto/api/generic/rfc1905.html
-%%PORTDOCS%%%%DOCSDIR%%/proto/api/intro.html
-%%PORTDOCS%%%%DOCSDIR%%/proto/cli/error.html
-%%PORTDOCS%%%%DOCSDIR%%/proto/cli/intro.html
-%%PORTDOCS%%%%DOCSDIR%%/proto/cli/ucd/error.html
-%%PORTDOCS%%%%DOCSDIR%%/proto/cli/ucd/intro.html
-%%PORTDOCS%%%%DOCSDIR%%/proto/cli/ucd/rfc1157-getrequestpdu-objects.html
-%%PORTDOCS%%%%DOCSDIR%%/proto/cli/ucd/rfc1157-setrequestpdu-objects.html
-%%PORTDOCS%%%%DOCSDIR%%/proto/cli/ucd/rfc1157-trappdu-objects.html
-%%PORTDOCS%%%%DOCSDIR%%/proto/cli/ucd/rfc1157.html
-%%PORTDOCS%%%%DOCSDIR%%/proto/cli/ucd/rfc1905-getrequestpdu-objects.html
-%%PORTDOCS%%%%DOCSDIR%%/proto/cli/ucd/rfc1905-setrequestpdu-objects.html
-%%PORTDOCS%%%%DOCSDIR%%/proto/cli/ucd/rfc1905-trappdu-objects.html
-%%PORTDOCS%%%%DOCSDIR%%/proto/cli/ucd/rfc1905.html
-%%PORTDOCS%%%%DOCSDIR%%/proto/cli/ucd/v1-message-objects.html
-%%PORTDOCS%%%%DOCSDIR%%/proto/cli/ucd/v1.html
-%%PORTDOCS%%%%DOCSDIR%%/proto/cli/ucd/v2c-message-objects.html
-%%PORTDOCS%%%%DOCSDIR%%/proto/cli/ucd/v2c.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/api/index.html
 %%PORTDOCS%%%%DOCSDIR%%/proto/error.html
-%%PORTDOCS%%%%DOCSDIR%%/proto/intro.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/index.html
 %%PORTDOCS%%%%DOCSDIR%%/proto/rfc1155-example.html
 %%PORTDOCS%%%%DOCSDIR%%/proto/rfc1155.html
 %%PORTDOCS%%%%DOCSDIR%%/proto/rfc1157-errorstatus-objects.html
@@ -292,19 +239,16 @@
 %%PORTDOCS%%%%DOCSDIR%%/proto/rfc1902.html
 %%PORTDOCS%%%%DOCSDIR%%/proto/rfc1905-errorstatus-objects.html
 %%PORTDOCS%%%%DOCSDIR%%/proto/rfc1905.html
-%%PORTDOCS%%%%DOCSDIR%%/proto/v1-getrequest-example.html
-%%PORTDOCS%%%%DOCSDIR%%/proto/v1-getrequest-objects.html
-%%PORTDOCS%%%%DOCSDIR%%/proto/v1-getresponse-example.html
-%%PORTDOCS%%%%DOCSDIR%%/proto/v1-request-example.html
-%%PORTDOCS%%%%DOCSDIR%%/proto/v1.html
-%%PORTDOCS%%%%DOCSDIR%%/proto/v2c-getrequest-example.html
-%%PORTDOCS%%%%DOCSDIR%%/proto/v2c-getrequest-objects.html
-%%PORTDOCS%%%%DOCSDIR%%/proto/v2c-request-example.html
-%%PORTDOCS%%%%DOCSDIR%%/proto/v2c-response-example.html
-%%PORTDOCS%%%%DOCSDIR%%/proto/v2c.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/proto/cli/ucd
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/proto/cli
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/proto/api/generic
+%%PORTDOCS%%%%EXAMPLESDIR%%/agent/getrsp.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/agent/nextrsp.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/agent/traporig.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/manager/getgen.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/manager/nextgen.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/manager/traprecv.py
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/manager
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/agent
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/proto/api/alpha
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/proto/api
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/proto
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/mapping/udp
@@ -315,4 +259,3 @@
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/asn1/encoding
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/asn1
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
