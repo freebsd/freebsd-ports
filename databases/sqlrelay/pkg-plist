@@ -63,8 +63,6 @@ lib/libsqlrutil.a
 lib/libsqlrutil.la
 lib/libsqlrutil.so
 lib/libsqlrutil.so.0
-lib/sqlrelay/pkgIndex.tcl
-lib/sqlrelay/sqlrelay.so
 share/doc/sqlrelay/api/c++/sqlrclient.h.html
 share/doc/sqlrelay/api/c/sqlrclientwrapper.h.html
 share/doc/sqlrelay/api/java/allclasses-frame.html
@@ -143,9 +141,6 @@ share/doc/sqlrelay/programming/zope/testzsqlmethod.gif
 share/doc/sqlrelay/programming/zope/zsqlmethod.gif
 share/doc/sqlrelay/programming/zope/zsqlmethodresultset.gif
 share/doc/sqlrelay/running.html
-@dirrm lib/sqlrelay
-@dirrm sqlrelay/tmp
-@dirrm sqlrelay/debug
 @dirrm sqlrelay/cache
 @dirrm sqlrelay
 @dirrm share/doc/sqlrelay/programming/zope
