@@ -16,7 +16,7 @@ COMMENT=	A PHP and MySQL based blogging platform
 
 USE_BZIP2=	YES
 
-USE_PHP=	mysql pcre
+USE_PHP=	mysql pcre session
 PHP4_PORT?=	www/mod_php4
 NO_BUILD=	YES
 WANT_PHP_WEB=	YES
