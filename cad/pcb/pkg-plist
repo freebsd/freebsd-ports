@@ -43,4 +43,3 @@ lib/X11/pcb/m4/plcc.inc
 lib/X11/pcb/m4/to.inc
 @dirrm lib/X11/pcb/m4
 @dirrm lib/X11/pcb
-man/man1/pcb.1.gz

@@ -2,9 +2,6 @@ bin/irsim
 bin/ifsim
 bin/h2a
 bin/inet2sim
-man/man1/irsim.1.gz
-man/man3/irsim-analyzer.3.gz
-man/man5/netchange.5.gz
 lib/irsim/scmos1_6um.prm
 lib/irsim/scmos2um.prm
 lib/irsim/scmos100.prm

@@ -353,16 +353,6 @@ lib/sis/sis_lib/stdcell2_2.genlib
 lib/sis/sis_lib/asynch.genlib
 lib/sis/RELEASE-NOTES-1.2
 lib/sis/SIS_paper.ps.gz
-man/man1/espresso.1.gz
-man/man1/jedi.1.gz
-man/man1/nova.1.gz
-man/man1/sis.1.gz
-man/man1/sred.1.gz
-man/man1/stamina.1.gz
-man/man1/vst2blif.1.gz
-man/man1/xsis.1.gz
-man/man5/espresso.5.gz
-man/man5/pla.5.gz
 @dirrm lib/sis/sis_lib/help
 @dirrm lib/sis/sis_lib
 @dirrm lib/sis

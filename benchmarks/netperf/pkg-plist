@@ -9,5 +9,3 @@ netperf/snapshot_script
 share/doc/netperf/netperf.ps.gz
 @dirrm netperf
 @dirrm share/doc/netperf
-man/man1/netperf.1.gz
-man/man1/netserver.1.gz
