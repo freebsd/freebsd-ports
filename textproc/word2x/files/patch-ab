@@ -1,0 +1,727 @@
+*** col-align.cc.old	Fri Apr 11 00:16:44 1997
+--- col-align.cc	Fri Jul 24 16:55:04 1998
+***************
+*** 40,46 ****
+  	}
+  	if (strlen(cdp)>(unsigned) max_wd[2])
+  	    max_wd[2]=strlen(cdp);
+! 	for (lt_sp=0, sc=cdp; isspace(*sc); sc++, lt_sp++)
+  	{
+  	    if (*sc==CH_SUSPECT)
+  		align_set=1;
+--- 40,46 ----
+  	}
+  	if (strlen(cdp)>(unsigned) max_wd[2])
+  	    max_wd[2]=strlen(cdp);
+! 	for (lt_sp=0, sc=cdp; isspace((unsigned char)*sc); sc++, lt_sp++)
+  	{
+  	    if (*sc==CH_SUSPECT)
+  		align_set=1;
+***************
+*** 52,58 ****
+  	{
+  	    if (*sc==CH_SUSPECT)
+  		align_set=1;
+! 	    if (isspace(*sc))
+  		rt_sp++;
+  	    else
+  		rt_sp=0;
+--- 52,58 ----
+  	{
+  	    if (*sc==CH_SUSPECT)
+  		align_set=1;
+! 	    if (isspace((unsigned char)*sc))
+  		rt_sp++;
+  	    else
+  		rt_sp=0;
+*** html-embed.cc.old	Wed Apr 23 04:25:09 1997
+--- html-embed.cc	Fri Jul 24 17:05:52 1998
+***************
+*** 83,89 ****
+      res=new(tblock);
+      while (inp<stop)
+      {
+! 	if (isspace(*inp) && *inp!='\n')
+  	{
+  	    inp++;
+  	    continue;
+--- 83,89 ----
+      res=new(tblock);
+      while (inp<stop)
+      {
+! 	if (isspace((unsigned char)*inp) && *inp!='\n')
+  	{
+  	    inp++;
+  	    continue;
+***************
+*** 179,209 ****
+  	     * \hbox{72 dpi} but not catch 12 * 18 (which should become
+  	     * 12\times 18).
+  	     */
+! 	    if (isdigit(*inp) || *inp=='-' || *inp=='+')
+  	    {
+  
+  		/* Scan forward to see what comes text */
+  		scn=inp;		
+  		if (*scn=='-' || *scn=='+')
+  		    scn++;	// Skip sign	
+! 		while (scn<stop && isdigit(*scn))
+  		    scn++;	// Skip number
+  		if (*scn=='.')
+  		{
+  		    scn++;
+! 		    while (scn<stop && isdigit(*scn))
+  			scn++;	//  Hanlde decimals number
+  		}
+  
+  		/* Now start looking at what comes next */
+  		while (scn<stop)
+  		{
+! 		    if (isspace(*scn))
+  		    {
+  			scn++;
+  			continue;
+  		    }
+! 		    if (isupper(*scn) || islower(*scn))
+  			flg=1;
+  		    else
+  			flg=0;
+--- 179,209 ----
+  	     * \hbox{72 dpi} but not catch 12 * 18 (which should become
+  	     * 12\times 18).
+  	     */
+! 	    if (isdigit((unsigned char)*inp) || *inp=='-' || *inp=='+')
+  	    {
+  
+  		/* Scan forward to see what comes text */
+  		scn=inp;		
+  		if (*scn=='-' || *scn=='+')
+  		    scn++;	// Skip sign	
+! 		while (scn<stop && isdigit((unsigned char)*scn))
+  		    scn++;	// Skip number
+  		if (*scn=='.')
+  		{
+  		    scn++;
+! 		    while (scn<stop && isdigit((unsigned char)*scn))
+  			scn++;	//  Hanlde decimals number
+  		}
+  
+  		/* Now start looking at what comes next */
+  		while (scn<stop)
+  		{
+! 		    if (isspace((unsigned char)*scn))
+  		    {
+  			scn++;
+  			continue;
+  		    }
+! 		    if (isupper((unsigned char)*scn) || islower((unsigned char)*scn))
+  			flg=1;
+  		    else
+  			flg=0;
+***************
+*** 215,221 ****
+  	     * This section is meant to catch strings and render them nicely
+  	     * in a mbox.
+  	     */
+! 	    if (islower(*inp) || isupper(*inp) || flg)
+  	    {
+  		res->add("\\text{"); 		
+  		if (flg)	// If flag set then add everything up to scn
+--- 215,221 ----
+  	     * This section is meant to catch strings and render them nicely
+  	     * in a mbox.
+  	     */
+! 	    if (islower((unsigned char)*inp) || isupper((unsigned char)*inp) || flg)
+  	    {
+  		res->add("\\text{"); 		
+  		if (flg)	// If flag set then add everything up to scn
+***************
+*** 228,239 ****
+  		}
+  
+  		flg=0;		// Re-use flg
+! 		while (inp<stop && (islower(*inp) || isupper(*inp)
+! 				    || isspace(*inp)
+  				    || *inp=='_'
+  				    || *inp=='^'))
+  		{
+! 		    if (isspace(*inp))
+  		    {
+  			flg=1;
+  			inp++;
+--- 228,239 ----
+  		}
+  
+  		flg=0;		// Re-use flg
+! 		while (inp<stop && (islower((unsigned char)*inp) || isupper((unsigned char)*inp)
+! 				    || isspace((unsigned char)*inp)
+  				    || *inp=='_'
+  				    || *inp=='^'))
+  		{
+! 		    if (isspace((unsigned char)*inp))
+  		    {
+  			flg=1;
+  			inp++;
+*** latex-embed.cc.old	Tue Apr 21 04:37:11 1998
+--- latex-embed.cc	Fri Jul 24 17:05:52 1998
+***************
+*** 255,261 ****
+      res=new(tblock);
+      while (inp<stop)
+      {
+! 	if (isspace(*inp) && *inp!='\n')
+  	{
+  	    inp++;
+  	    continue;
+--- 255,261 ----
+      res=new(tblock);
+      while (inp<stop)
+      {
+! 	if (isspace((unsigned char)*inp) && *inp!='\n')
+  	{
+  	    inp++;
+  	    continue;
+***************
+*** 302,308 ****
+  
+  	    default:
+  		mid=inp;
+! 		for (mid=inp; !isspace(*mid) && *mid!='('; mid++) ;
+  	        for (end=mid; *end!='('; end++)
+  		{
+  		    if (*end=='\0')
+--- 302,308 ----
+  
+  	    default:
+  		mid=inp;
+! 		for (mid=inp; !isspace((unsigned char)*mid) && *mid!='('; mid++) ;
+  	        for (end=mid; *end!='('; end++)
+  		{
+  		    if (*end=='\0')
+***************
+*** 353,383 ****
+  	     * \hbox{72 dpi} but not catch 12 * 18 (which should become
+  	     * 12\times 18).
+  	     */
+! 	    if (isdigit(*inp) || *inp=='-' || *inp=='+')
+  	    {
+  
+  		/* Scan forward to see what comes text */
+  		scn=inp;		
+  		if (*scn=='-' || *scn=='+')
+  		    scn++;	// Skip sign	
+! 		while (scn<stop && isdigit(*scn))
+  		    scn++;	// Skip number
+  		if (*scn=='.')
+  		{
+  		    scn++;
+! 		    while (scn<stop && isdigit(*scn))
+  			scn++;	//  Hanlde decimals number
+  		}
+  
+  		/* Now start looking at what comes next */
+  		while (scn<stop)
+  		{
+! 		    if (isspace(*scn))
+  		    {
+  			scn++;
+  			continue;
+  		    }
+! 		    if (isupper(*scn) || islower(*scn))
+  			flg=1;
+  		    else
+  			flg=0;
+--- 353,383 ----
+  	     * \hbox{72 dpi} but not catch 12 * 18 (which should become
+  	     * 12\times 18).
+  	     */
+! 	    if (isdigit((unsigned char)*inp) || *inp=='-' || *inp=='+')
+  	    {
+  
+  		/* Scan forward to see what comes text */
+  		scn=inp;		
+  		if (*scn=='-' || *scn=='+')
+  		    scn++;	// Skip sign	
+! 		while (scn<stop && isdigit((unsigned char)*scn))
+  		    scn++;	// Skip number
+  		if (*scn=='.')
+  		{
+  		    scn++;
+! 		    while (scn<stop && isdigit((unsigned char)*scn))
+  			scn++;	//  Hanlde decimals number
+  		}
+  
+  		/* Now start looking at what comes next */
+  		while (scn<stop)
+  		{
+! 		    if (isspace((unsigned char)*scn))
+  		    {
+  			scn++;
+  			continue;
+  		    }
+! 		    if (isupper((unsigned char)*scn) || islower((unsigned char)*scn))
+  			flg=1;
+  		    else
+  			flg=0;
+***************
+*** 389,395 ****
+  	     * This section is meant to catch strings and render them nicely
+  	     * in a mbox.
+  	     */
+! 	    if (islower(*inp) || isupper(*inp) || flg)
+  	    {
+  		res->add("\\text{"); 		
+  		if (flg)	// If flag set then add everything up to scn
+--- 389,395 ----
+  	     * This section is meant to catch strings and render them nicely
+  	     * in a mbox.
+  	     */
+! 	    if (islower((unsigned char)*inp) || isupper((unsigned char)*inp) || flg)
+  	    {
+  		res->add("\\text{"); 		
+  		if (flg)	// If flag set then add everything up to scn
+***************
+*** 402,413 ****
+  		}
+  
+  		flg=0;		// Re-use flg
+! 		while (inp<stop && (islower(*inp) || isupper(*inp)
+! 				    || isspace(*inp)
+  				    || *inp=='_'
+  				    || *inp=='^'))
+  		{
+! 		    if (isspace(*inp))
+  		    {
+  			flg=1;
+  			inp++;
+--- 402,413 ----
+  		}
+  
+  		flg=0;		// Re-use flg
+! 		while (inp<stop && (islower((unsigned char)*inp) || isupper((unsigned char)*inp)
+! 				    || isspace((unsigned char)*inp)
+  				    || *inp=='_'
+  				    || *inp=='^'))
+  		{
+! 		    if (isspace((unsigned char)*inp))
+  		    {
+  			flg=1;
+  			inp++;
+*** latex-fmt.cc.old	Tue Apr 21 05:21:38 1998
+--- latex-fmt.cc	Fri Jul 24 16:55:05 1998
+***************
+*** 203,228 ****
+  
+      while (st<fence)
+      {
+! 	if (isspace(*st))
+  	{
+  	    st++;
+  	    continue;
+  	}
+! 	if (isdigit(*st))
+  	{
+  	    n=0;
+! 	    while (st<fence && isdigit(*st))
+  	    {
+  		n=n*10+(*st)-'0';
+  		st++;
+  	    }
+! 	    if (!isspace(*st))
+  		return -1;
+  	    else
+  		return n;
+  
+  	}
+! 	if (isupper(*st) && isspace(*(st+1)))
+  	    return (*st)-'A'+1;
+  
+  	/* Nothing else understood at this time */
+--- 203,228 ----
+  
+      while (st<fence)
+      {
+! 	if (isspace((unsigned char)*st))
+  	{
+  	    st++;
+  	    continue;
+  	}
+! 	if (isdigit((unsigned char)*st))
+  	{
+  	    n=0;
+! 	    while (st<fence && isdigit((unsigned char)*st))
+  	    {
+  		n=n*10+(*st)-'0';
+  		st++;
+  	    }
+! 	    if (!isspace((unsigned char)*st))
+  		return -1;
+  	    else
+  		return n;
+  
+  	}
+! 	if (isupper((unsigned char)*st) && isspace((unsigned char)*(st+1)))
+  	    return (*st)-'A'+1;
+  
+  	/* Nothing else understood at this time */
+***************
+*** 354,360 ****
+  		    while(1)
+  		    {
+  			n=0;
+! 			for (c=0; i<l && isdigit(pt[i]); i++, c++)
+  			    n=n*10+pt[i]-'0';
+  			if (c==0)
+  			    break;
+--- 354,360 ----
+  		    while(1)
+  		    {
+  			n=0;
+! 			for (c=0; i<l && isdigit((unsigned char)pt[i]); i++, c++)
+  			    n=n*10+pt[i]-'0';
+  			if (c==0)
+  			    break;
+***************
+*** 392,398 ****
+  		    op.add('\\');
+  		    op.add(sects[unit]);
+  		    op.add((i>0) ? "{" : "*{");
+! 		    while(isspace(pt[i])) i++;
+  		    pt+=i;
+  		    do_add=1;
+  		}
+--- 392,398 ----
+  		    op.add('\\');
+  		    op.add(sects[unit]);
+  		    op.add((i>0) ? "{" : "*{");
+! 		    while(isspace((unsigned char)pt[i])) i++;
+  		    pt+=i;
+  		    do_add=1;
+  		}
+*** reader.cc.old	Tue Apr 21 04:21:55 1998
+--- reader.cc	Fri Jul 24 17:05:52 1998
+***************
+*** 54,60 ****
+  	{
+  	    if ((c=fgetc(in))==EOF)
+  		break;
+! 	    if (c<' ' || c>126)
+  		break;
+  	}
+  	if (i==ST_ASC_VCHARS)
+--- 54,60 ----
+  	{
+  	    if ((c=fgetc(in))==EOF)
+  		break;
+! 	    if (c<' ' || c==127)
+  		break;
+  	}
+  	if (i==ST_ASC_VCHARS)
+***************
+*** 107,113 ****
+  	{
+  	    if ((c=fgetc(in))==EOF)
+  		goto re_feed;
+! 	    if (c>=' ' && c<127)
+  		asc++;
+  	    else
+  		asc=0;
+--- 107,113 ----
+  	{
+  	    if ((c=fgetc(in))==EOF)
+  		goto re_feed;
+! 	    if (c>=' ' && c!=127)
+  		asc++;
+  	    else
+  		asc=0;
+***************
+*** 421,427 ****
+      while (1)
+      {
+  	/* Skip spaces */
+! 	while (isspace(*scan))
+  	    scan++;
+  
+  	/* Look for binary operator */
+--- 421,427 ----
+      while (1)
+      {
+  	/* Skip spaces */
+! 	while (isspace((unsigned char)*scan))
+  	    scan++;
+  
+  	/* Look for binary operator */
+***************
+*** 430,441 ****
+  	{
+  	    /* skip spaces */
+  	    scan++;
+! 	    while (isspace(*scan))
+  		scan++;
+  
+  	    /* Grab next word */
+  	    blvl=0;
+! 	    while (!isspace(*scan) || blvl>0)
+  	    {
+  		switch(*scan)
+  		{
+--- 430,441 ----
+  	{
+  	    /* skip spaces */
+  	    scan++;
+! 	    while (isspace((unsigned char)*scan))
+  		scan++;
+  
+  	    /* Grab next word */
+  	    blvl=0;
+! 	    while (!isspace((unsigned char)*scan) || blvl>0)
+  	    {
+  		switch(*scan)
+  		{
+***************
+*** 478,484 ****
+      while (scan>=s)
+      {
+  	/* Skip spaces */
+! 	while (scan>=s && isspace(*scan))
+  	    scan--;
+  	if (scan<s)
+  	    return s;
+--- 478,484 ----
+      while (scan>=s)
+      {
+  	/* Skip spaces */
+! 	while (scan>=s && isspace((unsigned char)*scan))
+  	    scan--;
+  	if (scan<s)
+  	    return s;
+***************
+*** 489,502 ****
+  	{
+  	    /* skip spaces */
+  	    scan--;
+! 	    while (scan>=s && isspace(*scan))
+  		scan--;
+  	    if (scan<s)
+  		return s;
+  
+  	    /* Grab next word */
+  	    blvl=0;
+! 	    while (!isspace(*scan) || blvl>0 )
+  	    {
+  		switch(*scan)
+  		{
+--- 489,502 ----
+  	{
+  	    /* skip spaces */
+  	    scan--;
+! 	    while (scan>=s && isspace((unsigned char)*scan))
+  		scan--;
+  	    if (scan<s)
+  		return s;
+  
+  	    /* Grab next word */
+  	    blvl=0;
+! 	    while (!isspace((unsigned char)*scan) || blvl>0 )
+  	    {
+  		switch(*scan)
+  		{
+***************
+*** 793,804 ****
+      int i,n;
+  
+      /* Determine initial number, if any */
+!     if (!isdigit(txt[0]))
+  	n=-1;
+      else
+      {
+  	n=i=0;
+! 	for (n=0, i=0; isdigit(txt[i]); i++)
+  	    n=n*10+txt[i]-'0';
+      }
+  
+--- 793,804 ----
+      int i,n;
+  
+      /* Determine initial number, if any */
+!     if (!isdigit((unsigned char)txt[0]))
+  	n=-1;
+      else
+      {
+  	n=i=0;
+! 	for (n=0, i=0; isdigit((unsigned char)txt[i]); i++)
+  	    n=n*10+txt[i]-'0';
+      }
+  
+***************
+*** 818,824 ****
+      if (txt[0]=='a')
+      {
+  	i=(txt[1]=='.') ? 2 : 1;
+! 	if (isspace(txt[i]))
+  	{
+  	    nl=new(struct list_info);
+  	    nl->list_type=LIST_ENUM_ALPHA;
+--- 818,824 ----
+      if (txt[0]=='a')
+      {
+  	i=(txt[1]=='.') ? 2 : 1;
+! 	if (isspace((unsigned char)txt[i]))
+  	{
+  	    nl=new(struct list_info);
+  	    nl->list_type=LIST_ENUM_ALPHA;
+***************
+*** 835,841 ****
+      if (txt[0]=='A')
+      {
+  	i=(txt[1]=='.') ? 2 : 1;
+! 	if (isspace(txt[i]))
+  	{
+  	    nl=new(struct list_info);
+  	    nl->list_type=LIST_ENUM_ALPHA;
+--- 835,841 ----
+      if (txt[0]=='A')
+      {
+  	i=(txt[1]=='.') ? 2 : 1;
+! 	if (isspace((unsigned char)txt[i]))
+  	{
+  	    nl=new(struct list_info);
+  	    nl->list_type=LIST_ENUM_ALPHA;
+***************
+*** 951,962 ****
+      int i,n;
+  
+      /* Determine initial number. This will not change */
+!     if (!isdigit(txt[0]))
+  	n=-1;
+      else
+      {
+  	n=i=0;
+! 	for (n=0, i=0; isdigit(txt[i]); i++)
+  	    n=n*10+txt[i]-'0';
+      }
+  
+--- 951,962 ----
+      int i,n;
+  
+      /* Determine initial number. This will not change */
+!     if (!isdigit((unsigned char)txt[0]))
+  	n=-1;
+      else
+      {
+  	n=i=0;
+! 	for (n=0, i=0; isdigit((unsigned char)txt[i]); i++)
+  	    n=n*10+txt[i]-'0';
+      }
+  
+***************
+*** 972,978 ****
+  	    {
+  		if (txt[i]=='.')
+  		    i++;
+! 		while (isspace(txt[i]))
+  		    i++;
+  		if ((s=(char *) alloca(i+1))==NULL)
+  		{
+--- 972,978 ----
+  	    {
+  		if (txt[i]=='.')
+  		    i++;
+! 		while (isspace((unsigned char)txt[i]))
+  		    i++;
+  		if ((s=(char *) alloca(i+1))==NULL)
+  		{
+***************
+*** 1008,1014 ****
+  	case LIST_BULLET:
+  	    if (txt[0]==lp->ldata.lbullet)
+  	    {
+! 		for (i=0; (isspace(txt[i])); i++ ) ;
+  		if ((s=(char *) alloca(2))==NULL)
+  		{
+  		    fprintf(stderr,
+--- 1008,1014 ----
+  	case LIST_BULLET:
+  	    if (txt[0]==lp->ldata.lbullet)
+  	    {
+! 		for (i=0; (isspace((unsigned char)txt[i])); i++ ) ;
+  		if ((s=(char *) alloca(2))==NULL)
+  		{
+  		    fprintf(stderr,
+***************
+*** 1029,1035 ****
+  		t=new(tok)(T_ITEM, s, tok::TOK_START);
+  		lp->last_item->enqueue(t);
+  
+! 		while (isspace(*(++txt)));
+  		t=new(tok)(T_PARAGRAPH, txt, tok::TOK_START);
+  		lp->last_item->enqueue(t);
+  
+--- 1029,1035 ----
+  		t=new(tok)(T_ITEM, s, tok::TOK_START);
+  		lp->last_item->enqueue(t);
+  
+! 		while (isspace((unsigned char)*(++txt)));
+  		t=new(tok)(T_PARAGRAPH, txt, tok::TOK_START);
+  		lp->last_item->enqueue(t);
+  
+***************
+*** 1070,1077 ****
+  		t=new(tok)(T_ITEM, s, tok::TOK_START);
+  		lp->last_item->enqueue(t);
+  
+! 		for (i=0; (!isspace(txt[i])); i++ ) ;
+! 		for ( ;(isspace(txt[i])); i++) ;
+  		t=new(tok)(T_PARAGRAPH, txt+i, tok::TOK_START);
+  		lp->last_item->enqueue(t);
+  
+--- 1070,1077 ----
+  		t=new(tok)(T_ITEM, s, tok::TOK_START);
+  		lp->last_item->enqueue(t);
+  
+! 		for (i=0; (!isspace((unsigned char)txt[i])); i++ ) ;
+! 		for ( ;(isspace((unsigned char)txt[i])); i++) ;
+  		t=new(tok)(T_PARAGRAPH, txt+i, tok::TOK_START);
+  		lp->last_item->enqueue(t);
+  
+*** wordwrap.cc.old	Tue Apr 21 05:26:10 1998
+--- wordwrap.cc	Fri Jul 24 16:55:05 1998
+***************
+*** 29,35 ****
+      {
+  	/* FIXME: huge words might cause an oversize line */
+  	/* (this is not a typesetting program like *roff) */
+! 	if (isspace(*sc) || *sc=='\n' || *sc=='\0')
+  	{
+  	    if (wlen+flg>croom)
+  	    {
+--- 29,35 ----
+      {
+  	/* FIXME: huge words might cause an oversize line */
+  	/* (this is not a typesetting program like *roff) */
+! 	if (isspace((unsigned char)*sc) || *sc=='\n' || *sc=='\0')
+  	{
+  	    if (wlen+flg>croom)
+  	    {
+*** html-fmt.cc.bak	Tue Apr 21 04:31:20 1998
+--- html-fmt.cc	Fri Jul 24 17:15:39 1998
+***************
+*** 33,38 ****
+--- 33,39 ----
+      { 0xAE, "(R)" },	     // reserved sign
+      { 0xB3, "&gt;=" },	     // Greater than or = came out as B3
+      { 0xBB, "&gt;&gt;" },	     // Closing >> quotes (28th element)
++ #if 0
+      { 0xDF, "&szlig;" },	     // beta
+      { 0xE4, "&aumt;" },		     // a with umlualt
+      { 0xE9, "&egrave;" },	     // e grave??
+***************
+*** 40,45 ****
+--- 41,47 ----
+      { 0xF6, "&oumt" },		     // o with umlualt
+      { 0xFA, "\\.u" },		     // u with dot?
+      { 0xFC, "&uumt;" },		     // u with umlualt.
++ #endif
+  };
+  
+  tblock *__html_do_map(const char *s)
