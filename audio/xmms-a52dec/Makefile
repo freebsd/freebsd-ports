@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	xmms-a52dec
 
 MAINTAINER=	verm@drunkmonk.net
 
-LIB_DEPENDS=	xmms.3:${PORTSDIR}/audio/xmms \
+LIB_DEPENDS=	xmms.3:${PORTSDIR}/multimedia/xmms \
 		a52.0:${PORTSDIR}/audio/liba52
 RUN_DEPENDS=	${X11BASE}/lib/xmms/Output/libOSSSurround.so:${PORTSDIR}/audio/xmms-osssurround
 

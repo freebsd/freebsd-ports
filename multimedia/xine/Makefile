@@ -41,7 +41,7 @@ MAN1=		aaxine.1 xine.1 xine-bugreport.1 xine-check.1 xine-remote.1
 .if !defined(WITHOUT_WIN32_CODECS)
 RUN_DEPENDS=	${CODEC_DETECTION_FILE}:${CODEC_PORT}
 
-CODEC_PORT=	${PORTSDIR}/graphics/win32-codecs
+CODEC_PORT=	${PORTSDIR}/multimedia/win32-codecs
 CODEC_DETECTION_FILE!=	${MAKE} -f ${CODEC_PORT}/Makefile -V CODEC_DETECTION_FILE
 .endif
 .endif

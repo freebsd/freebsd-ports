@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	arved
 
 MAINTAINER=	arved@FreeBSD.org
 
-LIB_DEPENDS=	xmms.3:${PORTSDIR}/audio/xmms
+LIB_DEPENDS=	xmms.3:${PORTSDIR}/multimedia/xmms
 
 USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes

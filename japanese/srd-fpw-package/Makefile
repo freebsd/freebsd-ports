@@ -14,7 +14,7 @@ MAINTAINER=	taoka@FreeBSD.org
 
 RUN_DEPENDS=	display:${PORTSDIR}/graphics/ImageMagick
 # Your PC does not have an audio card always.
-#		realplay:${PORTSDIR}/audio/linux-realplayer
+#		realplay:${PORTSDIR}/multimedia/linux-realplayer
 
 NO_BUILD=	yes
 PLIST_SUB=	PKGNAME=${PKGNAME}

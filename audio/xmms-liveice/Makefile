@@ -13,7 +13,7 @@ DISTNAME=	liveice-xmms
 
 MAINTAINER=	esk@ira.uka.de
 
-LIB_DEPENDS=	xmms.3:${PORTSDIR}/audio/xmms
+LIB_DEPENDS=	xmms.3:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame
 
 WRKSRC=		${WRKDIR}/LiveIce-1.0.0

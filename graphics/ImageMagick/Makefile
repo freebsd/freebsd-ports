@@ -107,7 +107,7 @@ RUN_DEPENDS+=	gs:${PORTSDIR}/print/ghostscript-gnu-nox11
 CONFIGURE_ARGS+=	--without-x --without-mpeg2
 PLIST_SUB+=	X11='@comment '
 .else
-LIB_DEPENDS+=	mpeg2.0:${PORTSDIR}/graphics/libmpeg2
+LIB_DEPENDS+=	mpeg2.0:${PORTSDIR}/multimedia/libmpeg2
 BUILD_DEPENDS+=	gs:${PORTSDIR}/print/ghostscript-gnu
 RUN_DEPENDS+=	gs:${PORTSDIR}/print/ghostscript-gnu
 USE_XLIB=	yes

@@ -13,7 +13,7 @@ DISTNAME=	quix3dn-${PORTVERSION}-freebsd
 
 MAINTAINER=	alex@FreeBSD.org
 
-RUN_DEPENDS=	xmms:${PORTSDIR}/audio/xmms
+RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
 USE_X_PREFIX=	yes
 NO_BUILD=	yes

@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.theorie.physik.uni-goettingen.de/~ostreich/transcode/pr
 
 MAINTAINER=	hendrik@scholz.net
 
-LIB_DEPENDS=	dvdread.2:${PORTSDIR}/graphics/libdvdread \
+LIB_DEPENDS=	dvdread.2:${PORTSDIR}/multimedia/libdvdread \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
@@ -108,7 +108,7 @@ ONLY_FOR_ARCHS=	i386
 .endif
 
 .if defined(WITH_AVIFILE)
-LIB_DEPENDS+=	aviplay:${PORTSDIR}/graphics/avifile
+LIB_DEPENDS+=	aviplay:${PORTSDIR}/multimedia/avifile
 PLIST_SUB+=	WITH_AVIFILE=""
 .else
 CONFIGURE_ARGS+=	--with-avifile-mods=no \
@@ -133,14 +133,14 @@ PLIST_SUB+=	WITH_LIBXML2="@comment "
 .endif
 
 .if defined(WITH_FFMPEG) && !defined(WITHOUT_FFMPEG)
-BUILD_DEPENDS+=	${LOCALBASE}/bin/ffmpeg:${PORTSDIR}/graphics/ffmpeg
+BUILD_DEPENDS+=	${LOCALBASE}/bin/ffmpeg:${PORTSDIR}/multimedia/ffmpeg
 PLIST_SUB+=	WITH_FFMPEG=""
 .else
 PLIST_SUB+=	WITH_FFMPEG="@comment "
 .endif
 
 .if defined(WITH_LIBDV)
-LIB_DEPENDS+=	dv.2:${PORTSDIR}/graphics/libdv
+LIB_DEPENDS+=	dv.2:${PORTSDIR}/multimedia/libdv
 PLIST_SUB+=	WITH_LIBDV=""
 CONFIGURE_ARGS+=	--with-pal-yuv=YV12
 .else
@@ -149,7 +149,7 @@ PLIST_SUB+=	WITH_LIBDV="@comment "
 .endif
 
 .if defined(WITH_OPENQUICKTIME)
-LIB_DEPENDS+=	openquicktime.0:${PORTSDIR}/graphics/openquicktime
+LIB_DEPENDS+=	openquicktime.0:${PORTSDIR}/multimedia/openquicktime
 .else
 CONFIGURE_ARGS+=	--with-openqt=no
 .endif
@@ -197,7 +197,7 @@ PLIST_SUB+=	WITH_OGG="@comment "
 .endif
 
 .if defined(WITH_MJPEG)
-LIB_DEPENDS+=	lavplay-1.6.0:${PORTSDIR}/graphics/mjpegtools
+LIB_DEPENDS+=	lavplay-1.6.0:${PORTSDIR}/multimedia/mjpegtools
 PLIST_SUB+=	WITH_MJPEG=""
 .else
 PLIST_SUB+=	WITH_MJPEG="@comment "

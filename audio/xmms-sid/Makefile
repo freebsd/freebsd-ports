@@ -13,8 +13,8 @@ MASTER_SITES=	http://www.tnsp.org/xs-files/
 MAINTAINER=	dyeske@yahoo.com
 
 LIB_DEPENDS=	sidplay.1:${PORTSDIR}/audio/libsidplay
-BUILD_DEPENDS=	xmms-config:${PORTSDIR}/audio/xmms
-RUN_DEPENDS=	xmms:${PORTSDIR}/audio/xmms
+BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
+RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

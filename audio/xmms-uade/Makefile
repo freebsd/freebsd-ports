@@ -13,7 +13,7 @@ DISTFILES=	uade-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	mbr@FreeBSD.org
 
-LIB_DEPENDS=	xmms.3:${PORTSDIR}/audio/xmms
+LIB_DEPENDS=	xmms.3:${PORTSDIR}/multimedia/xmms
 BUILD_DEPENDS=	lha:${PORTSDIR}/archivers/lha
 
 USE_X_PREFIX=	yes

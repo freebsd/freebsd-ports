@@ -14,9 +14,9 @@ DISTNAME=	xvs-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-BUILD_DEPENDS=	xmms-config:${PORTSDIR}/audio/xmms
+BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
-RUN_DEPENDS=	xmms:${PORTSDIR}/audio/xmms
+RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
 XML2_CONFIG?=	${LOCALBASE}/bin/xml2-config
 XMMS_CONFIG?=	${X11BASE}/bin/xmms-config

@@ -17,7 +17,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	nobutaka@FreeBSD.org
 
 LIB_DEPENDS=	xine.2:${PORTSDIR}/graphics/libxine \
-		dvdread.2:${PORTSDIR}/graphics/libdvdread
+		dvdread.2:${PORTSDIR}/multimedia/libdvdread
 
 USE_AUTOMAKE=	yes
 GNU_CONFIGURE=	yes

@@ -13,8 +13,8 @@ MASTER_SITES=	http://www.snika.uklinux.net/xmms-alarm/ \
 
 MAINTAINER=	chris@unixpages.org
 
-BUILD_DEPENDS=	xmms-config:${PORTSDIR}/audio/xmms
-RUN_DEPENDS=	xmms-config:${PORTSDIR}/audio/xmms
+BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
+RUN_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes

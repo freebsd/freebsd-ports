@@ -20,9 +20,9 @@ LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
 
 .if defined(WITH_XMMS)
 # id3lib is only used by the XMMS plugin
-BUILD_DEPENDS+=	xmms-config:${PORTSDIR}/audio/xmms
+BUILD_DEPENDS+=	xmms-config:${PORTSDIR}/multimedia/xmms
 LIB_DEPENDS+=	id3-3.7.13:${PORTSDIR}/audio/id3lib \
-		xmms.3:${PORTSDIR}/audio/xmms
+		xmms.3:${PORTSDIR}/multimedia/xmms
 CONFIGURE_ARGS+=--with-id3lib="${LOCALBASE}"
 PLIST_SUB=	XMMS=""
 .else

@@ -7,7 +7,7 @@
 
 PORTNAME=	mplayer-fonts
 PORTVERSION=	0.50
-CATEGORIES=	chinese graphics
+CATEGORIES=	chinese multimedia
 MASTER_SITES=	ftp://ftp.mplayerhq.hu/MPlayer/contrib/fonts/chinesefonts/ \
 		ftp://freebsd.sinica.edu.tw/pub/statue/mplayer/
 DISTFILES=	big5-kai.tar.bz big5-ming.tar.bz \
@@ -15,7 +15,7 @@ DISTFILES=	big5-kai.tar.bz big5-ming.tar.bz \
 
 MAINTAINER=	statue@freebsd.sinica.edu.tw
 
-RUN_DEPENDS=	${LOCALBASE}/share/mplayer/fonts:${PORTSDIR}/graphics/mplayer-fonts
+RUN_DEPENDS=	${LOCALBASE}/share/mplayer/fonts:${PORTSDIR}/multimedia/mplayer-fonts
 
 USE_BZIP2=	yes
 NO_BUILD=	yes

@@ -13,8 +13,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	dyeske@yahoo.com
 
-BUILD_DEPENDS=  xmms-config:${PORTSDIR}/audio/xmms
-RUN_DEPENDS=    xmms:${PORTSDIR}/audio/xmms
+BUILD_DEPENDS=  xmms-config:${PORTSDIR}/multimedia/xmms
+RUN_DEPENDS=    xmms:${PORTSDIR}/multimedia/xmms
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes

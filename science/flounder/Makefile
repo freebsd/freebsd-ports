@@ -26,7 +26,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 USE_GMAKE=	yes
 
 .if !defined(WITHOUT_AVIFILE)
-LIB_DEPENDS+=	aviplay:${PORTSDIR}/graphics/avifile
+LIB_DEPENDS+=	aviplay:${PORTSDIR}/multimedia/avifile
 CONFIGURE_ARGS+=	--enable-avifile
 .endif
 

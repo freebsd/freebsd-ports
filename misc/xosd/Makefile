@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.ignavus.net/
 MAINTAINER=	perky@FreeBSD.org
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
-		xmms.3:${PORTSDIR}/audio/xmms
+		xmms.3:${PORTSDIR}/multimedia/xmms
 
 XMMS_CONFIG?=	${X11BASE}/bin/xmms-config
 USE_X_PREFIX=	yes

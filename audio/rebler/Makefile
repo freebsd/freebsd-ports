@@ -14,8 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	mpeg2:${PORTSDIR}/graphics/libmpeg2 \
-		aviplay-0.7:${PORTSDIR}/graphics/avifile \
+LIB_DEPENDS=	mpeg2:${PORTSDIR}/multimedia/libmpeg2 \
+		aviplay-0.7:${PORTSDIR}/multimedia/avifile \
 		popt:${PORTSDIR}/devel/popt
 
 USE_BZIP2=	yes
