@@ -14,9 +14,14 @@ MASTER_SITE_SUBDIR=	mplayerplug-in
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	A Mozilla plugin for the MPlayer media player
 
+.if defined(WITH_MOZILLA) && WITH_MOZILLA=="firefox"
+BUILD_DEPENDS=	${X11BASE}/lib/firefox/lib/pkgconfig/mozilla-plugin.pc:${PORTSDIR}/www/firefox
+RUN_DEPENDS=	${X11BASE}/lib/firefox/lib/pkgconfig/mozilla-plugin.pc:${PORTSDIR}/www/firefox
+.else
 BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/mozilla-plugin${HEADERS_SUFX}.pc:${PORTSDIR}/www/mozilla${HEADERS_SUFX}
-RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer \
-		${X11BASE}/libdata/pkgconfig/mozilla-plugin${HEADERS_SUFX}.pc:${PORTSDIR}/www/mozilla${HEADERS_SUFX}
+RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/mozilla-plugin${HEADERS_SUFX}.pc:${PORTSDIR}/www/mozilla${HEADERS_SUFX}
+.endif
+RUN_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer
 
 HEADERS_SUFX=
 
@@ -44,9 +49,13 @@ HEADERS_SUFX=	-devel-gtk1
 CONFIGURE_ARGS+=	--disable-gtk2 \
 			--enable-gtk1
 .else
+.if ${WITH_MOZILLA}=="firefox"
+CONFIGURE_ENV+=		PKG_CONFIG_PATH=${X11BASE}/lib/firefox/lib/pkgconfig
+.else
 HEADERS_SUFX=	-gtk1
 CONFIGURE_ARGS+=	--disable-gtk2 \
 			--enable-gtk1
+.endif
 .endif
 .endif
 .endif
@@ -57,6 +66,7 @@ pre-everything::
 	@${ECHO_MSG} " By default this port uses www/mozilla for Gecko support, but you can"
 	@${ECHO_MSG} " change this by defining WITH_MOZILLA to one of the following values:"
 	@${ECHO_MSG}
+	@${ECHO_MSG} " firefox "
 	@${ECHO_MSG} " mozilla-devel "
 	@${ECHO_MSG} " mozilla-gtk1 "
 	@${ECHO_MSG} " mozilla-devel-gtk1 "
