@@ -918,6 +918,7 @@
     SUBDIR += xwpe
     SUBDIR += xxgdb
     SUBDIR += yacl
+    SUBDIR += yasm
     SUBDIR += z80-asm
     SUBDIR += zthread
     SUBDIR += zziplib
