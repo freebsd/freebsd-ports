@@ -52,4 +52,5 @@ share/icons/locolor/32x32/apps/kpuzzle.png
 share/locale/de/LC_MESSAGES/kpuzzle.mo
 @dirrm share/apps/kpuzzle/levels
 @dirrm share/apps/kpuzzle/data
+@dirrm share/apps/kpuzzle
 @dirrm share/doc/HTML/en/kpuzzle
