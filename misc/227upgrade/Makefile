@@ -3,14 +3,14 @@
 # Date created:		17 Dec 1998
 # Whom:			asami
 #
-# $Id: Makefile,v 1.5 1999/03/29 07:09:46 asami Exp $
+# $Id: Makefile,v 1.6 1999/04/21 04:59:56 asami Exp $
 #
 
 DISTNAME=	227upgrade-1998.03.08
 CATEGORIES=	misc
 DISTFILES=	# empty
 
-MAINTAINER=	asami@Freebsd.ORG
+MAINTAINER=	asami@FreeBSD.org
 
 .include <bsd.port.pre.mk>
 
