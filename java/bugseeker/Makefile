@@ -7,43 +7,45 @@
 
 PORTNAME=	bugseeker
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	java
-MASTER_SITES=	http://www.karmira.com/products/bugseeker2/download/
+MASTER_SITES=	#
 DISTNAME=	bugseeker2ee-1_0_2
-
-PATCH_SITES=	http://www.jollem.com/~ernst/
-PATCHFILES=	bugseeker2.sh.diff
 
 MAINTAINER=	ernst@jollem.com
 
-RUN_DEPENDS=	${LOCALBASE}/linux-jdk1.3.1/bin/java:${PORTSDIR}/java/linux-jdk13
+RUN_DEPENDS=	${JAVA_HOME}/bin/java:${PORTSDIR}/java/linux-jdk13
 
+NO_CDROM=	"License doesn\'t allow redistribution"
+RESTRICTED=	"Redistribution of repackaged binaries not permitted"
 NO_BUILD=	YES
 
 WRKSRC=		${WRKDIR}/bugseeker2
-PORTDESTDIR=	${PREFIX}/${PORTNAME}${PORTVERSION}
-PORTTITLE=	BugSeeker for Java 2 (Enterprise Edition)
-RECURSIVE_CP=	${CP} -R
+PLIST_SUB+=	T=${TARGET_DIR:S/^${PREFIX}\///}
+TARGET_DIR=	${PREFIX}/${PKGBASE}${PORTVERSION}
+JAVA_HOME?=	${LOCALBASE}/linux-jdk1.3.1
+DOWNLOAD_URL?=	http://www.karmira.com/store/index.html
 
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE='You must manually obtain the ${DISTNAME}${EXTRACT_SUFX} file from Karmira, at http://www.karmira.com/store/index.html'
+IGNORE=You must manually obtain the ${DISTNAME}${EXTRACT_SUFX} file from Karmira, at ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again
 .endif
 
 do-install:
-	@${MKDIR}                              ${PORTDESTDIR}
-	@${CP}           ${WRKSRC}/changes.txt ${PORTDESTDIR}/
-	@${CP}           ${WRKSRC}/license.txt ${PORTDESTDIR}/
-	@${CP}           ${WRKSRC}/readme.txt  ${PORTDESTDIR}/
-	@${MKDIR}                              ${PORTDESTDIR}/bin
-	@${CP}           ${WRKSRC}/bin/bugseeker2.sh ${PORTDESTDIR}/bin/bugseeker.sh
-	@${MKDIR}                              ${PORTDESTDIR}/lib
-	@${RECURSIVE_CP} ${WRKSRC}/lib/*       ${PORTDESTDIR}/lib/
-	@${MKDIR}                              ${PORTDESTDIR}/manual
-	@${RECURSIVE_CP} ${WRKSRC}/manual/*    ${PORTDESTDIR}/manual/
-
-post-install:
-	@echo "${PORTTITLE} has been installed in ${PORTDESTDIR}."
+	${CAT} ${WRKSRC}/bin/bugseeker2.sh \
+	| ${SED} "/%%TARGET_DIR%%/s//${TARGET_DIR:S/\//\\\//g}/" \
+	| ${SED} "/%%JAVA_HOME%%/s//${JAVA_HOME:S/\//\\\//g}/" \
+	> ${WRKSRC}/bin/bugseeker
+	${CHMOD} a+xr ${WRKSRC}/bin/bugseeker
+	${MKDIR} ${TARGET_DIR}
+	${CP} ${WRKSRC}/changes.txt ${TARGET_DIR}/
+	${CP} ${WRKSRC}/license.txt ${TARGET_DIR}/
+	${CP} ${WRKSRC}/readme.txt ${TARGET_DIR}/
+	${CP} ${WRKSRC}/bin/bugseeker ${PREFIX}/bin
+	${MKDIR} ${TARGET_DIR}/lib
+	${CP} -r ${WRKSRC}/lib/* ${TARGET_DIR}/lib/
+	${MKDIR} ${TARGET_DIR}/manual
+	${CP} -r ${WRKSRC}/manual/* ${TARGET_DIR}/manual/
 
 .include <bsd.port.post.mk>
