@@ -23,10 +23,13 @@ RUN_DEPENDS+=\
 	${PREFIX}/share/locale/uk/entry.desktop:${PORTSDIR}/ukrainian/kde3-i18n
 
 .for LANG in af ar az bg bs ca cs da el en_GB eo es et fi he hr hu id is it \
-	lt lv mt nb nl nn pl pt pt_BR ro sk sl sr sv ta th tr ven vi xh zu
+	lt lv mt nb nl nn pl ro sk sl sr sv ta th tr ven vi xh zu
 RUN_DEPENDS+=\
 ${PREFIX}/share/locale/${LANG}/entry.desktop:${PORTSDIR}/misc/kde3-i18n-${LANG}
 .endfor
+RUN_DEPENDS+=\
+${PREFIX}/share/locale/pt/entry.desktop:${PORTSDIR}/portuguese/kde3-i18n \
+${PREFIX}/share/locale/pt_BR/entry.desktop:${PORTSDIR}/portuguese/kde3-i18n-pt_BR
 .for ZH in zh_CN zh_TW
 RUN_DEPENDS+=\
 ${PREFIX}/share/locale/${ZH}/entry.desktop:${PORTSDIR}/chinese/kde3-i18n-${ZH}
