@@ -1,0 +1,23 @@
+# New ports collection makefile for:    bonnie
+# Version required:     
+# Date created:         26 September 1994
+# Whom:                 se
+#
+# $Id$
+#
+
+DISTNAME=       Bonnie
+PKGNAME=	bonnie-1.0
+CATEGORIES+=	utilities benchmarking
+MASTER_SITES=   ftp://ftp.sunet.se/pub/benchmark/Bonnie/ \
+		ftp://swedishchef.lerc.nasa.gov/drlabs/io/
+EXTRACT_SUFX=   .tar.Z
+
+MAINTAINER=	se@FreeBSD.org
+
+CFLAGS+=	-static
+
+post-install:
+	gzip -9nf ${PREFIX}/man/man1/bonnie.1
+
+.include <bsd.port.mk>
