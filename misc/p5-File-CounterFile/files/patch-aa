@@ -1,0 +1,20 @@
+--- CounterFile.pm.orig	Sat May 16 21:47:34 1998
++++ CounterFile.pm	Mon Apr  8 11:48:26 2002
+@@ -31,7 +31,7 @@
+ If the file name does not start with "/" or ".", then it is
+ interpreted as a file relative to C<$File::CounterFile::DEFAULT_DIR>.
+ The default value for this variable is initialized from the
+-environment variable C<TMPDIR>, or F</usr/tmp> is no environment
++environment variable C<TMPDIR>, or F</var/tmp> is no environment
+ variable is defined.  You may want to assign a different value to this
+ variable before creating counters.
+ 
+@@ -88,7 +88,7 @@
+ $DEFAULT_INITIAL = 0;                  # default initial counter value
+ 
+  # default location for counter files
+-$DEFAULT_DIR     = $ENV{TMPDIR} || "/usr/tmp";
++$DEFAULT_DIR     = $ENV{TMPDIR} || "/var/tmp";
+ 
+ # Experimental overloading.
+ use overload ('++'     => \&inc,
