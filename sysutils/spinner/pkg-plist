@@ -1,0 +1,3 @@
+bin/spinner
+%%PORTDOCS%%share/doc/spinner/README
+%%PORTDOCS%%@dirrm share/doc/spinner

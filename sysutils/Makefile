@@ -212,6 +212,7 @@
     SUBDIR += sloth
     SUBDIR += socket
     SUBDIR += socklog
+    SUBDIR += spinner
     SUBDIR += ssync
     SUBDIR += stat
     SUBDIR += stmpclean
