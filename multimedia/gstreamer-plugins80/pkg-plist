@@ -46,6 +46,7 @@ lib/gstreamer-%%VERSION%%/libgstaudiofilter.so
 lib/gstreamer-%%VERSION%%/libgstaudiorate.so
 lib/gstreamer-%%VERSION%%/libgstaudioscale.so
 lib/gstreamer-%%VERSION%%/libgstauparse.so
+lib/gstreamer-%%VERSION%%/libgstautodetect.so
 lib/gstreamer-%%VERSION%%/libgstavi.so
 lib/gstreamer-%%VERSION%%/libgstcdplayer.so
 lib/gstreamer-%%VERSION%%/libgstcdxaparse.so
@@ -55,6 +56,7 @@ lib/gstreamer-%%VERSION%%/libgstcutter.so
 lib/gstreamer-%%VERSION%%/libgstdebug.so
 lib/gstreamer-%%VERSION%%/libgstdecodebin.so
 lib/gstreamer-%%VERSION%%/libgstdeinterlace.so
+lib/gstreamer-%%VERSION%%/libgstdvdlpcmdec.so
 lib/gstreamer-%%VERSION%%/libgstefence.so
 lib/gstreamer-%%VERSION%%/libgsteffectv.so
 lib/gstreamer-%%VERSION%%/libgstequalizer.so
@@ -63,6 +65,7 @@ lib/gstreamer-%%VERSION%%/libgstffmpegcolorspace.so
 lib/gstreamer-%%VERSION%%/libgstfilter.so
 lib/gstreamer-%%VERSION%%/libgstflxdec.so
 lib/gstreamer-%%VERSION%%/libgstgamma.so
+lib/gstreamer-%%VERSION%%/libgstgconfelements.so
 lib/gstreamer-%%VERSION%%/libgstgoom.so
 lib/gstreamer-%%VERSION%%/libgstidct.so
 lib/gstreamer-%%VERSION%%/libgstinterleave.so
@@ -87,8 +90,10 @@ lib/gstreamer-%%VERSION%%/libgstoverlay.so
 lib/gstreamer-%%VERSION%%/libgstpassthrough.so
 lib/gstreamer-%%VERSION%%/libgstplaybin.so
 lib/gstreamer-%%VERSION%%/libgstplayondemand.so
+lib/gstreamer-%%VERSION%%/libgstpuzzle.so
 lib/gstreamer-%%VERSION%%/libgstqtdemux.so
 lib/gstreamer-%%VERSION%%/libgstresample.so
+lib/gstreamer-%%VERSION%%/libgstrfbsrc.so
 lib/gstreamer-%%VERSION%%/libgstriff.so
 lib/gstreamer-%%VERSION%%/libgstrmdemux.so
 lib/gstreamer-%%VERSION%%/libgstrtjpeg.so
@@ -100,6 +105,7 @@ lib/gstreamer-%%VERSION%%/libgstsmpte.so
 lib/gstreamer-%%VERSION%%/libgstspectrum.so
 lib/gstreamer-%%VERSION%%/libgstspeed.so
 lib/gstreamer-%%VERSION%%/libgststereo.so
+lib/gstreamer-%%VERSION%%/libgstsubparse.so
 lib/gstreamer-%%VERSION%%/libgstswitch.so
 lib/gstreamer-%%VERSION%%/libgstsynaesthesia.so
 lib/gstreamer-%%VERSION%%/libgsttagedit.so
@@ -159,6 +165,7 @@ share/locale/sq/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
 share/locale/sr/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
 share/locale/sv/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
 share/locale/uk/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
+share/locale/vi/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
 @dirrm lib/gstreamer-%%VERSION%%
 @dirrm include/gstreamer-%%VERSION%%/gst/xwindowlistener
 @dirrm include/gstreamer-%%VERSION%%/gst/xoverlay
