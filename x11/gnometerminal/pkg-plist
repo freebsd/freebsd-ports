@@ -166,6 +166,7 @@ share/locale/zh_TW/LC_MESSAGES/gnome-terminal.mo
 @dirrm share/gnome/help/gnome-terminal/es
 @dirrm share/gnome/help/gnome-terminal/de/figures
 @dirrm share/gnome/help/gnome-terminal/de
+@dirrm share/gnome/help/gnome-terminal/C/figures
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-terminal/profiles/Default
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-terminal/profiles
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-terminal/keybindings
