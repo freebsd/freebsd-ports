@@ -32,6 +32,52 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="18974c8a-1fbd-11d9-814e-0001020eed82">
+    <topic>apache13-modssl -- format string vulnerability in
+      proxy support</topic>
+    <affects>
+      <package>
+	<name>apache+mod_ssl</name>
+	<range><lt>1.3.31+2.8.19</lt></range>
+      </package>
+      <package>
+	<name>apache+mod_ssl+ipv6</name>
+	<range><lt>1.3.31+2.8.19</lt></range>
+      </package>
+      <package>
+	<name>ru-apache+mod_ssl</name>
+	<range><lt>1.3.31+30.20+2.8.19</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A OpenPKG Security Advisory reports:</p>
+	<blockquote cite="http://www.openpkg.org/security/OpenPKG-SA-2004.032-apache.html">
+	  <p>Triggered by a report to Packet Storm from Virulent, a
+	    format string vulnerability was found in mod_ssl, the
+	    Apache SSL/TLS interface to OpenSSL, version (up to and
+	    including) 2.8.18 for Apache 1.3.  The mod_ssl in Apache
+	    2.x is not affected.  The vulnerability could be
+	    exploitable if Apache is used as a proxy for HTTPS URLs
+	    and the attacker established a own specially prepared DNS
+	    and origin server environment.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>10736</bid>
+      <certvu>303448</certvu>
+      <cvename>CAN-2004-0700</cvename>
+      <url>http://www.openpkg.org/security/OpenPKG-SA-2004.032-apache.html</url>
+      <url>http://packetstormsecurity.org/0407-advisories/modsslFormat.txt</url>
+      <mlist msgid="20040716204207.GA45678@engelschall.com">http://marc.theaimsgroup.com/?l=apache-modssl&amp;m=109001100906749</mlist>
+    </references>
+    <dates>
+      <discovery>2004-07-16</discovery>
+      <entry>2004-10-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8e2e6ad8-1720-11d9-9fb9-00902788733b">
     <topic>tor -- remote DoS and loss of anonymity</topic>
     <affects>
