@@ -1,0 +1,20 @@
+--------------------------------------------------------------------
+Remember to set environment varible XMODIFIERS:
+
+  csh/tcsh: setenv XMODIFIERS @im=SCIM
+  sh/bash:  export XMODIFIERS='@im=SCIM'
+
+and set LANG, LC_CTYPE to one of the following values:
+
+  Simplified Chinese:
+    zh_CN.UTF-8, zh_CN.GB18030, zh_CN.GBK, zh_CN.GB2312, zh_CN.eucCN
+
+  Traditional Chinese:
+    zh_TW.UTF-8, zh_TW.Big5
+    zh_HK.UTF-8, zh_HK.Big5-HKSCS 
+
+To start the SCIM input method daemon, use command:
+
+  scim -d
+
+--------------------------------------------------------------------

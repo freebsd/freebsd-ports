@@ -104,6 +104,7 @@
     SUBDIR += qe
     SUBDIR += qterm
     SUBDIR += reciteword
+    SUBDIR += scim-chewing
     SUBDIR += scim-chinese
     SUBDIR += scim-tables
     SUBDIR += srecite

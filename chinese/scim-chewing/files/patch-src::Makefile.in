@@ -1,0 +1,25 @@
+--- src/Makefile.in.orig	Mon Nov 29 17:12:21 2004
++++ src/Makefile.in	Sat Dec  4 15:16:30 2004
+@@ -238,11 +238,12 @@
+ 	-I$(top_builddir) \
+ 	-I$(top_srcdir) \
+ 	-I$(top_srcdir)/src \
++	-I/usr/local/include \
+ 	-DSCIM_ICONDIR=\"@SCIM_ICONDIR@\" \
+ 	-DSCIM_CHEWING_ICON_FILE=\"@SCIM_ICONDIR@/scim-chewing.png\"
+ 
+ noinst_HEADERS = scim_chewing_imengine.h scim_chewing_config_entry.h
+-moduledir = @SCIM_MODULEDIR@/IMEngine
++moduledir = @SCIM_MODULEDIR@/1.0.0/IMEngine
+ module_LTLIBRARIES = chewing.la
+ chewing_la_SOURCES = scim_chewing_imengine.cpp
+ chewing_la_CFLAGS = @SCIM_CFLAGS@ @SCIM_DEBUG_FLAGS@
+@@ -256,7 +257,7 @@
+ 	@CHEWING_LIBS@
+ 
+ @SCIM_BUILD_SETUP_TRUE@SETUP_MODULE = chewing-imengine-setup.la
+-setupmoduledir = @SCIM_MODULEDIR@/SetupUI
++setupmoduledir = @SCIM_MODULEDIR@/1.0.0/SetupUI
+ setupmodule_LTLIBRARIES = $(SETUP_MODULE)
+ chewing_imengine_setup_la_SOURCES = scim_chewing_imengine_setup.cpp
+ chewing_imengine_setup_la_CFLAGS = \
