@@ -28,7 +28,7 @@ CONFIGURE_ARGS=	--with-python=${PYTHON_CMD}				\
 
 EG_SRC_DIR=	${WRKSRC}/pygnome/examples
 EG_DST_DIR=	${PREFIX}/share/examples/py-gnome
-PYGTK_DEP=	${PYTHON_LIBDIR}/site-packages/_gtkmodule.so:${PORTSDIR}/x11-toolkits/py-gtk
+PYGTK_DEP=	${PYTHON_SITELIBDIR}/_gtkmodule.so:${PORTSDIR}/x11-toolkits/py-gtk
 
 .if !defined(NOPORTDOCS)
 post-install:

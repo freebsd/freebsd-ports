@@ -13,8 +13,8 @@ MASTER_SITES=	http://webhome.idirect.com/~tekatch/anthony/ucu/
 
 MAINTAINER=	ports@FreeBSD.org
 
-RUN_DEPENDS=	${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages/GTK.py:${PORTSDIR}/x11-toolkits/py-gtk \
-		${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages/gnome/ui.py:${PORTSDIR}/x11-toolkits/py-gnome
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/GTK.py:${PORTSDIR}/x11-toolkits/py-gtk \
+		${PYTHON_SITELIBDIR}/gnome/ui.py:${PORTSDIR}/x11-toolkits/py-gnome
 
 USE_PYTHON=	yes
 USE_X_PREFIX=	yes
