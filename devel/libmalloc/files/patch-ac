@@ -1,0 +1,11 @@
+--- dumpheap.c.orig	Mon Apr  3 10:55:33 1995
++++ dumpheap.c	Tue Dec  1 02:08:08 1998
+@@ -94,7 +94,7 @@
+ 	}
+ 	if ( ! VALID_START_SIZE_FIELD(blk)) {
+ 		sprintf(buf, "  ** bad size field: tags = 0x%lx, 0x%lx\n",
+-			SIZEFIELD(blk), SIZEFIELD(blkend));
++			(unsigned long)SIZEFIELD(blk), (unsigned long)SIZEFIELD(blkend));
+ 		(void) fputs(buf, fp);
+ 		return 0;
+ 	}

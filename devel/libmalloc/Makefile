@@ -3,7 +3,7 @@
 # Date created:		11 January 1995
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.13 1997/11/22 01:04:30 asami Exp $
+# $Id: Makefile,v 1.14 1998/11/28 01:48:32 asami Exp $
 #
 
 DISTNAME=	malloc-1.18
@@ -14,9 +14,6 @@ MASTER_SITES=	ftp://ftp.cs.toronto.edu/pub/moraes/
 MAINTAINER=	obrien@FreeBSD.org
 
 .include <bsd.port.pre.mk>
-.if ${OSVERSION} >= 300000
-BROKEN=		mmap prototype mismatch
-.endif
 
 MANUAL_PACKAGE_BUILD=	installs malloc.h
 
