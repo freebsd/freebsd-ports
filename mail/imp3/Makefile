@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	imp
-PORTVERSION=	3.2.1
-PORTREVISION=	2
+PORTVERSION=	3.2.2
 CATEGORIES=	mail www
 MASTER_SITES=	ftp://ftp.horde.org/pub/imp/				\
 		ftp://ftp.au.horde.org/pub/horde/imp/			\
@@ -65,11 +64,7 @@ LIB_DEPENDS=	c-client4.8:${PORTSDIR}/mail/cclient
 
 .if defined(WITHOUT_TURBA)
 .if !defined(WITHOUT_LDAP)
-.if exists(${LOCALBASE}/lib/libldap.so.1)
-LIB_DEPENDS+=	ldap.1:${PORTSDIR}/net/openldap12
-.else
-LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap21-client
-.endif
+USE_OPENLDAP=	yes
 .endif
 RUN_DEPENDS+=	${LOCALBASE}/www/horde/index.php:${PORTSDIR}/www/horde2
 NOTURBA=	"@comment "
@@ -169,6 +164,10 @@ pre-everything::
 	@${ECHO_MSG} ""
 .endif
 
+post-patch:
+	@${RM} ${WRKSRC}/config/prefs.php.dist.orig
+	@${RM} ${WRKSRC}/config/servers.php.dist.orig
+
 pre-install:
 # N.B.: database dependencies are binded with mod_php#, neither by Horde nor IMP.
 	@if [ -f ${IMPDIR}/index.php3 ]; then \
@@ -219,7 +218,7 @@ pre-install:
 	fi
 .endif
 .if !defined(WITHOUT_SUPPORTED_DB)
-	@if ! ${LDD} ${PHPSO} | ${GREP} -q -e "libmysqlclient.so.10"; then \
+	@if ! ${LDD} ${PHPSO} | ${GREP} -q -e "libmysqlclient.so"; then \
 	 if ! ${LDD} ${PHPSO} | ${GREP} -q -e "libpq.so.3" ; then \
 	  if ! ${LDD} ${PHPSO} | ${GREP} -q -e "libsybdb.so.1" ; then \
 	   if ! ${LDD} ${PHPSO} | ${GREP} -q -e "libct.so.0" ; then \
