@@ -3649,6 +3649,7 @@ minimalist	ports/mail/minimalist
 mipsel-linux-binutils	ports/devel/mipsel-linux-binutils
 mipsel-linux-gcc	ports/devel/mipsel-linux-gcc
 mipsel-linux-kernel-headers	ports/devel/mipsel-linux-kernel-headers
+mird		ports/databases/mird
 mirror		ports/ftp/mirror
 mirrormagic	ports/games/mirrormagic
 misc-bb		ports/misc/bb
