@@ -32,7 +32,7 @@ do-configure:
 		CC="${CC}" CCFLAGS="${CFLAGS}"
 .for DIR in Unicode Jcode
 	${PERL} -pi -e "s:CCFLAGS = :CCFLAGS = ${CFLAGS}:g" ${WRKSRC}/${DIR}/Makefile
-	${PERL} -pi -e "s:CC = cc:CC = ${CC}:g" ${WRSRC}/${DIR}/Makefile
+	${PERL} -pi -e "s:CC = cc:CC = ${CC}:g" ${WRKSRC}/${DIR}/Makefile
 .endfor
 
 .include <bsd.port.post.mk>
