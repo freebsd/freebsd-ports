@@ -6536,6 +6536,7 @@ steghide	ports/security/steghide
 stella		ports/emulators/stella
 sting		ports/net/sting
 stk		ports/lang/STk
+stldoc		ports/lang/stldoc
 stlload		src/usr.sbin/stallion/stlload
 stlport		ports/devel/stlport
 stlstats	src/usr.sbin/stallion/stlstats
