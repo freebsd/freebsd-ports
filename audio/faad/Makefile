@@ -19,6 +19,8 @@ LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+NO_CDROM=	"Restrictive copyright (do not sell for profit)"
+
 USE_AUTOMAKE_VER=	15
 USE_AUTOHEADER_VER=	253
 AUTOMAKE_ARGS=	--add-missing
