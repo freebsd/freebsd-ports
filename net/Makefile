@@ -37,6 +37,7 @@
     SUBDIR += asterisk
     SUBDIR += b2bua
     SUBDIR += balance
+    SUBDIR += bandwidthd
     SUBDIR += bbsnet
     SUBDIR += bfilter
     SUBDIR += bgpq
