@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	nessus-plugins-0.98.4
+DISTNAME=	nessus-plugins-0.99.1
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.cis.fed.gov/pub/nessus/nessus-${NESSUS_REV}/ \
 		ftp://ftp.nessus.org/pub/nessus/nessus-${NESSUS_REV}/ \
