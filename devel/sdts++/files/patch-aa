@@ -1,0 +1,13 @@
+--- doc/sdts++.texi.orig	Wed Jan 12 00:48:47 2000
++++ doc/sdts++.texi	Fri Jul 28 09:12:44 2000
+@@ -7,6 +7,10 @@
+ @setfilename sdts++.info
+ @settitle @code{sdts++} Library
+ @setchapternewpage odd
++@dircategory C++ toolkit for reading and writing SDTS datasets
++@direntry
++* stds++: (sdts++).		C++ toolkit for reading and writing SDTS datasets
++@end direntry
+ 
+ @c Put functions in the concept index
+ @syncodeindex fn cp
