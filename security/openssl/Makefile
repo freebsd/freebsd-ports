@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	openssl
-PORTVERSION=	0.9.7
-PORTREVISION=	1
+PORTVERSION=	0.9.7a
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.openssl.org/source/ \
 		ftp://ftp.openssl.org/source/ \
@@ -18,49 +17,6 @@ MAINTAINER=	dinoex@FreeBSD.org
 
 .ifdef USE_OPENSSL
 .error You have `USE_OPENSSL' variable defined either in environment or in make(1) arguments. Please undefine and try again.
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if ${PORTOBJFORMAT} == "aout"
-MAKE_ARGS+=	WHOLE_ARCHIVE_FLAG=-Bforcearchive
-.else
-MAKE_ARGS+=	WHOLE_ARCHIVE_FLAG=--whole-archive
-.endif
-
-USE_PERL5=	yes
-.if defined(NOSHARED)
-PLIST_SUB+=	SHARED="@comment "
-.else
-PLIST_SUB+=	SHARED=""
-ALL_TARGET=	freebsd-shared all
-.if exists(/usr/lib/libcrypto.so.3)
-SHLIBVER=	4
-.else
-SHLIBVER=	3
-.endif
-MAKE_ENV+=	SHLIBVER=${SHLIBVER}
-PLIST_SUB+=	SHLIBVER=${SHLIBVER}
-INSTALLS_SHLIB=	yes
-.endif
-
-.if defined(OPENSSL_OVERWRITE_BASE)
-PKGNAMESUFFIX=	-overwrite-base
-PREFIX=		/usr
-.if exists(/usr/lib/libcrypto.so.3)
-SHLIBVER=	3
-.else
-SHLIBVER=	2
-.endif
-OPENSSLDIR=	/etc/ssl
-MANPREFIX=	${PREFIX}/openssl
-PLIST_SUB+=	MANDIR=""
-PLIST_SUB+=	NOBASE="@comment "
-.else
-OPENSSLDIR=	${PREFIX}/openssl
-MANPREFIX=	${PREFIX}
-PLIST_SUB+=	MANDIR="@comment "
-PLIST_SUB+=	NOBASE=""
 .endif
 
 MAKE_ENV+=	MANPREFIX=${MANPREFIX}
@@ -855,6 +811,49 @@ MLINKS=	dgst.1 md4.1 \
 	des_modes.7 DES.7 \
 	des_modes.7 Modes.7 \
 	des_modes.7 of.7
+
+.include <bsd.port.pre.mk>
+
+.if ${PORTOBJFORMAT} == "aout"
+MAKE_ARGS+=	WHOLE_ARCHIVE_FLAG=-Bforcearchive
+.else
+MAKE_ARGS+=	WHOLE_ARCHIVE_FLAG=--whole-archive
+.endif
+
+USE_PERL5=	yes
+.if defined(NOSHARED)
+PLIST_SUB+=	SHARED="@comment "
+.else
+PLIST_SUB+=	SHARED=""
+ALL_TARGET=	freebsd-shared all
+.if exists(/usr/lib/libcrypto.so.3)
+SHLIBVER=	4
+.else
+SHLIBVER=	3
+.endif
+MAKE_ENV+=	SHLIBVER=${SHLIBVER}
+PLIST_SUB+=	SHLIBVER=${SHLIBVER}
+INSTALLS_SHLIB=	yes
+.endif
+
+.if defined(OPENSSL_OVERWRITE_BASE)
+PKGNAMESUFFIX=	-overwrite-base
+PREFIX=		/usr
+.if exists(/usr/lib/libcrypto.so.3)
+SHLIBVER=	3
+.else
+SHLIBVER=	2
+.endif
+OPENSSLDIR=	/etc/ssl
+MANPREFIX=	${PREFIX}/openssl
+PLIST_SUB+=	MANDIR=""
+PLIST_SUB+=	NOBASE="@comment "
+.else
+OPENSSLDIR=	${PREFIX}/openssl
+MANPREFIX=	${PREFIX}
+PLIST_SUB+=	MANDIR="@comment "
+PLIST_SUB+=	NOBASE=""
+.endif
 
 .if defined(BATCH) || defined(OPENSSL_WITH_386)
 .if ${MACHINE_ARCH} == "i386"
