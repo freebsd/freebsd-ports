@@ -6,8 +6,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=       lynx2.8.3dev.15
-PKGNAME=        lynx-2.8.3dev.15
+DISTNAME=       lynx2.8.3dev.18
+PKGNAME=        lynx-2.8.3dev.18
 CATEGORIES=	www
 MASTER_SITES=   http://sol.slcc.edu/lynx/current/
 
