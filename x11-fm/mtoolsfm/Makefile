@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mtoolsfm
-PORTVERSION=	1.9.2
+PORTVERSION=	1.9.3
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.core-coutainville.org/MToolsFM/archive/SOURCES/
 DISTNAME=	MToolsFM-${PORTVERSION:R}-${PORTVERSION:E}
@@ -20,8 +20,7 @@ USE_GTK=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--with-conffile="${PREFIX}/etc/mtoolsfm.conf" \
-		--disable-gtktest
+CONFIGURE_ARGS=	--with-conffile="${PREFIX}/etc/mtoolsfm.conf"
 
 MAN1=		mtoolsfm.1
 
