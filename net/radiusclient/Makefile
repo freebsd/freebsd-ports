@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	radiusclient
-PORTVERSION=	0.3.2
-PORTREVISION=	1
+PORTVERSION=	0.4.5
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.cityline.net/pub/radiusclient/ \
-		ftp://ftp.ecrc.net//pub/netsw/net/ip/management/radius/
+MASTER_SITES=	http://download.berlios.de/radiusclient-ng/
 
 MAINTAINER=	maurice@castro.aus.net
 COMMENT=	Client library and basic utilities for Radius authenticated login
