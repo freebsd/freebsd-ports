@@ -306,5 +306,3 @@ share/locale/mt/LC_MESSAGES/webarchiver.mo
 share/locale/mt/charset
 share/locale/mt/entry.desktop
 share/locale/mt/flag.png
-@dirrm share/locale/mt/LC_MESSAGES
-@dirrm share/locale/mt
