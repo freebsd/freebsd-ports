@@ -31,7 +31,7 @@ PGY_DIR?=	/var/db/postgrey
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
-pre-everything::
+pre-extract:
 .if !defined(SKIP_BDB_CHECK) && !defined(PACKAGE_BUILDING)
 .if !defined(WITH_BDB_VER)
 	@${ECHO} "This port requires databases/p5-BerkeleyDB to be built with"
