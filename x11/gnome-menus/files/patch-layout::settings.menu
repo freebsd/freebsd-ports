@@ -1,6 +1,17 @@
---- layout/settings.menu.orig	Wed Jan  5 20:12:16 2005
-+++ layout/settings.menu	Tue Mar  1 01:28:57 2005
-@@ -15,9 +15,6 @@
+--- layout/settings.menu.orig	Wed Mar  9 11:49:53 2005
++++ layout/settings.menu	Fri Mar 25 11:45:22 2005
+@@ -6,18 +6,15 @@
+   <Name>Settings</Name>
+   <Directory>Settings.directory</Directory>
+ 
+-  <!-- Scan legacy dirs first, as later items take priority -->
++  <!-- Scan legacy dirs first, as later items take priority
+   <KDELegacyDirs/>
+   <LegacyDir>/etc/X11/applnk</LegacyDir>
+-  <LegacyDir>/usr/share/gnome/apps</LegacyDir>
++  <LegacyDir>/usr/share/gnome/apps</LegacyDir> -->
+ 
+   <!-- Read standard .directory and .desktop file locations -->
    <DefaultAppDirs/>
    <DefaultDirectoryDirs/>
  
