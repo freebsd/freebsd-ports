@@ -15,13 +15,10 @@ MAINTAINER=	pb@FreeBSD.org
 COMMENT=	Makes a DVD file structure from one or more MPEG2 streams
 
 LIB_DEPENDS=	dvdread.3:${PORTSDIR}/multimedia/libdvdread \
-		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
+		png.5:${PORTSDIR}/graphics/png
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
-.endif
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
