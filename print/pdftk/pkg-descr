@@ -1,0 +1,19 @@
+If PDF is electronic paper, then pdftk is an electronic staple-remover,
+hole-punch, binder, secret-decoder-ring, and X-Ray-glasses.
+Pdftk is a simple tool for doing everyday things with PDF documents.
+Keep one in the top drawer of your desktop and use it to:
+
+Merge PDF Documents
+Split PDF Pages into a New Document
+Decrypt Input as Necessary (Password Required)
+Encrypt Output as Desired
+Burst a PDF Document into Single Pages
+Report on PDF Metrics, including Metadata and Bookmarks
+Uncompress and Re-Compress Page Streams
+Repair Corrupted PDF (Where Possible)
+
+Pdftk is also an example of how to use a library of Java classes
+in a stand-alone C++ program. Specifically, it demonstrates how GCJ and CNI
+allow C++ code to use iText's (itext-paulo) Java classes.
+
+WWW: http://www.accesspdf.com/pdftk/
