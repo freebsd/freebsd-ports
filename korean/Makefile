@@ -5,7 +5,7 @@
     SUBDIR += acroread-korfont
     SUBDIR += afterstep
     SUBDIR += ami
-    SUBDIR += baekmuk-bdf
+    SUBDIR += baekmukfonts-bdf
     SUBDIR += bitchx
     SUBDIR += byeoroo
     SUBDIR += elm
