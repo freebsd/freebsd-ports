@@ -8,6 +8,7 @@ upgrades.
 
 20040703:
   AFFECTS: users of net/netatalk-devel
+  AUTHOR: marcus@FreeBSD.org
 
   Netatalk-devel has been converted to use RCng.  That means all of the
   netatalk daemons must be enabled in /etc/rc.conf before they will start
@@ -24,6 +25,7 @@ upgrades.
 
 20040701:
   AFFECTS: users of security/portaudit
+  AUTHOR: eik@FreeBSD.org
 
   The preference file format, as well as the periodic(8)
   names have changed. If you use the default settings,
@@ -41,12 +43,14 @@ upgrades.
 
 20040629:
   AFFECTS: users of net/daapd
+  AUTHOR: lth@FreeBSD.org
 
   Daapd must now be enabled in rc.conf. Add this to your /etc/rc.conf:
   daapd_enable="YES"
 
 20040626:
   AFFECTS: users of php4 and php5 with the PDFlib extension
+  AUTHOR: ale@FreeBSD.org
 
   The PDFlib extension has been removed from the archive and moved to PECL.
   Consequently to enable it you have to install print/pecl-pdflib.
@@ -54,35 +58,41 @@ upgrades.
 
 20040625:
   AFFECTS: users of ftp/pure-ftpd
+  AUTHOR: pav@FreeBSD.org
 
   Pure-ftpd must be enabled in rc.conf now. Add this to your /etc/rc.conf:
   pureftpd_enable="YES"
 
 20040622:
   AFFECTS: users of net/openslp
+  AUTHOR: kuriyama@FreeBSD.org
 
   The openslp port must now be enabled / disabled and configured in
   rc.conf.  See the script for details.
 
 20040619:
   AFFECTS: users of sysutils/webmin and sysutils/usermin
+  AUTHOR: olgeni@FreeBSD.org
 
   The webmin and usermin ports must now be enabled in rc.conf.
   See the pkg-message or script for details.
 
 20040618:
   AFFECTS: users of japanese/ptex-tetex
+  AUTHOR: hrs@FreeBSD.org
 
   The texmf.cnf file for pTeX is now installed in texmf/web2c-ptex.
 
 20040618:
   AFFECTS: users of japanese/ptex-pkfonts*
+  AUTHOR: hrs@FreeBSD.org
 
   The japanese/ptex-pkfonts* has been removed because pkfonts are
   already included in the teTeX distribution.
 
 20040618:
   AFFECTS: users of japanese/xdvik-vflib*
+  AUTHOR: hrs@FreeBSD.org
 
   The japanese/xdvik-vflib no longer supports VFlib2, and now depends on
   print/freetype2.  For the configuration details, see vfontmap file which
@@ -94,6 +104,7 @@ upgrades.
 
 20040618:
   AFFECTS: users of print/teTeX
+  AUTHOR: hrs@FreeBSD.org
 
   The print/teTeX has been split into print/teTeX-base and print/teTeX-texmf,
   and print/teTeX is now a meta-port for the two and print/dvipsk-tetex and
@@ -112,6 +123,7 @@ upgrades.
 
 20040615:
   AFFECTS: users of www/firefox
+  AUTHOR: gnome@FreeBSD.org
 
   The firefox-0.9 update has a special requirement before you can run it.
   You must first run firefox as root before running it as another user.
@@ -123,18 +135,21 @@ upgrades.
 
 20040608:
   AFFECTS: users of net/haproxy
+  AUTHOR: clement@FreeBSD.org
 
   The haproxy port must now be enabled / disabled and configured in
   rc.conf.  See the pkg-message or script for details.
 
 20040605:
   AFFECTS: users of www/apache2
+  AUTHOR: clement@FreeBSD.org
 
   The apache2 port must now be enabled / disabled and configured in
   rc.conf.  See the pkg-message or script for details.
 
 20040602:
   AFFECTS: users of sysutils/mkisofs and sysutils/mkisofs-devel
+  AUTHOR: netchild@FreeBSD.org, marius@FreeBSD.org
 
   sysutils/mkisofs and sysutils/mkisofs-devel were merged into
   sysutils/cdrtools and sysutils/cdrtools-devel respectively.
@@ -148,6 +163,7 @@ upgrades.
 
 20040531:
   AFFECTS: users of lang/perl5.8
+  AUTHOR: mat@FreeBSD.org, marcus@FreeBSD.org
 
   lang/perl5.8 has been updated to 5.8.4. you should update everything
   depending on perl, that is :
@@ -163,6 +179,7 @@ upgrades.
 
 20040529:
   AFFECTS: users of mail/mailman and japanese/mailman
+  AUTHOR: nork@FreeBSD.org
 
   In Mailman 2.1.5, some significant changes have been made to the
   file formats for qfiles and the pendings database.  See
@@ -171,6 +188,7 @@ upgrades.
 
 20040527:
   AFFECTS: users of net/openldap22-client
+  AUTHOR: eik@FreeBSD.org
 
   The OpenLDAP library soname has changed, requiring a recompilation
   of all dependent ports:
@@ -179,24 +197,28 @@ upgrades.
 
 20040525:
   AFFECTS: users of databases/postgresql-client
+  AUTHOR: mat@FreeBSD.org
 
   This port was removed because of dependencies problem. If you still want to
   have it, install databases/postgresql7 with -DWITHOUT_SERVER
 
 20040521:
   AFFECTS: users of irc/ircd-hybrid-ru
+  AUTHOR: krion@FreeBSD.org
 
   UID/GID were changed from 6667 to 555, please manually delete
   old entries from /etc/passwd /etc/master.passwd and /etc/group
 
 20040514:
   AFFECTS: users of audio/faad
+  AUTHOR: pav@FreeBSD.org
 
   If the compilation of faad fails, please manually delete older
   installed version of faad and reinstall from port.
 
 20040512:
   AFFECTS: users of print/teTeX
+  AUTHOR: hrs@FreeBSD.org
 
   The print/teTeX no longer installs dvipsk by default.  To build and
   install dvipsk, you have to specify WITH_DVIPSK, or the dvipsk utility
@@ -205,24 +227,28 @@ upgrades.
 
 20040504:
   AFFECTS: users of mail/drac
+  AUTHOR: nork@FreeBSD.org
 
   The "drac_flags" rc.conf(5) variable has been renamed to "dracd_flags".
   See the pkg-message or script for details.
 
 20040501:
   AFFECTS: users of www/apache13
+  AUTHOR: nork@FreeBSD.org
 
   The apache13 port must now be enabled / disabled and configured in
   rc.conf.  See the pkg-message or script for details.
 
 20040429:
   AFFECTS: users of sysutils/smartmontools
+  AUTHOR: nork@FreeBSD.org
 
   The smartmontools port must now be enabled / disabled and configured in
   rc.conf.  See the pkg-message or script for details.
 
 20040420:
   AFFECTS: users of sysutils/cdrtools
+  AUTHOR: netchild@FreeBSD.org
 
   The cdrecord program now uses ${PREFIX}/etc (e.g. /usr/local/etc) instead
   of /etc/default as the location of the global configuration file. If you
@@ -231,6 +257,7 @@ upgrades.
 
 20040420:
   AFFECTS: users of x11/kdebase3
+  AUTHOR: kde@FreeBSD.org
 
   If you update KDE from version 3.2.1 or earlier to version 3.2.2 while
   running a KDE session, newly opened instances of Konqueror might hang
@@ -241,6 +268,7 @@ upgrades.
 
 20040404:
   AFFECTS: GNOME desktop users
+  AUTHOR: gnome@FreeBSD.org
 
   GNOME has been updated to 2.6.  Simply portupgrading will cause serious
   problems if you are using the desktop itself.  If you are a GNOME desktop
@@ -254,12 +282,14 @@ upgrades.
 
 20040316:
   AFFECTS: users of net/isc-dhcp3-*
+  AUTHOR: des@FreeBSD.org
 
   The isc-dhcp3-* ports must now be enabled / disabled and configured in
   rc.conf.  See the pkg-message for details.
 
 20040313:
   AFFECTS: users of textproc/expat2
+  AUTHOR: marcus@FreeBSD.org
 
   Users of expat2 (and its many dependencies) should do the following to
   properly update expat2 and all of its dependencies:
@@ -268,6 +298,7 @@ upgrades.
 
 20040311:
   AFFECTS: users of databases/postgresql7
+  AUTHOR: osa@FreeBSD.org
 
   PostgreSQL 7.4.2 Released and release notes available at
   http://www.postgresql.org/news/173.html
@@ -280,6 +311,7 @@ upgrades.
 
 20040309:
   AFFECTS: users of x11/kdelibs3 and x11/kdebase3
+  AUTHOR: kde@FreeBSD.org
 
   If you update kdelibs from version 3.2.0 to version 3.2.1 while running
   a KDE 3.2.0 session, newly opened instances of Konqueror will silently
@@ -291,7 +323,8 @@ upgrades.
 
 20040309:
   AFFECTS: users of audio/arts and x11/kdebase
-
+  AUTHOR: kde@FreeBSD.org
+ 
   The arts port, PORTVERSION 1.2.1 does not include artswrapper anymore.
   Instead, artswrapper is now installed by a new port audio/artswrapper.
 
@@ -313,6 +346,7 @@ upgrades.
 
 20040305:
   AFFECTS: users of security/antivir-milter
+  AUTHOR: netchild@FreeBSD.org
 
   When updating from a previous version of security/antivir-milter you
   have to do the following after deinstalling the old port:
@@ -335,6 +369,7 @@ upgrades.
 
 20040226:
   AFFECTS: i386 users of ruby and portupgrade
+  AUTHOR: knu@FreeBSD.org
 
   Change the default version of ruby to 1.8 for i386.
 
@@ -367,6 +402,7 @@ upgrades.
 
 20040204:
   AFFECTS: 5.2-CURRENT users who started with a 5.2-RELEASE or older.
+  AUTHOR: obrien@FreeBSD.org
 
   Change the default version of perl to 5.8.
 
