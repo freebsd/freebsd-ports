@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cloop-utils
-PORTVERSION=	2.00
+PORTVERSION=	2.01
 PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://developer.linuxtag.net/knoppix/sources/
