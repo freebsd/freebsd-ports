@@ -2,4 +2,4 @@ This is an alternative to Exporter intended to provide a universal,
 lightweight subset of its functionality. It uses Exporter::Lite, so look
 there for details
 
-WWW: http://search.cpan.org/author/MSCHWERN/UNIVERSAL-exports/
+WWW: http://search.cpan.org/dist/UNIVERSAL-exports/
