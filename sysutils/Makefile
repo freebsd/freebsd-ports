@@ -139,6 +139,7 @@
     SUBDIR += gok
     SUBDIR += gpart
     SUBDIR += gpkgdep
+    SUBDIR += growspd
     SUBDIR += grub
     SUBDIR += gstopd
     SUBDIR += gtk-imonc
