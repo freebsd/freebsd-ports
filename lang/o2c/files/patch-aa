@@ -42,7 +42,7 @@
  	-rm -f o2c
 -	ln o2c_stage2 o2c
 +	cp o2c_stage2 o2c
-+	mkdir $(LIBPATH)
++	mkdir -p $(LIBPATH)
 +	cp system/_OGCC.c $(LIBPATH)
 +	cp system/_OGCC.h $(LIBPATH)
 +	cp system/ErrorList.Txt $(LIBPATH)
