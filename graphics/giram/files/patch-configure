@@ -1,0 +1,31 @@
+--- configure.orig	Thu Jan 17 01:15:12 2002
++++ configure	Thu Jan 17 01:17:15 2002
+@@ -4152,7 +4152,6 @@
+     #
+     have_pthread=no
+     mesa_requires_pthread=no
+-    if test "$ac_have_mesa_gl" = yes; then
+       echo $ac_n "checking for pthread_create in -pthread""... $ac_c" 1>&6
+ echo "configure:4158: checking for pthread_create in -pthread" >&5
+ ac_lib_var=`echo pthread'_'pthread_create | sed 'y%./+-%__p_%'`
+@@ -4240,12 +4239,7 @@
+ LIBS="$ac_save_LIBS"
+ 
+ fi
+-if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+-  echo "$ac_t""yes" 1>&6
+   mesa_requires_pthread=yes
+-else
+-  echo "$ac_t""no" 1>&6
+-fi
+ 
+   CPPFLAGS="$ac_save_CPPFLAGS"
+   LDFLAGS="$ac_save_LDFLAGS"
+@@ -4253,7 +4247,6 @@
+       if test "$mesa_requires_pthread" = yes; then
+         GL_LIBS="$GL_LIBS -pthread"
+       fi
+-    fi
+     # Check for OpenGL 1.1 features.
+     #
+     
