@@ -1,5 +1,5 @@
 --- depend.orig	Fri Oct 13 15:26:31 2000
-+++ depend	Mon Oct 16 17:55:07 2000
++++ depend	Tue Oct 17 17:46:26 2000
 @@ -1,4 +1,4 @@
 -SWIGINC= ../py_ext
 +SWIGINC= .
@@ -11,7 +11,7 @@
  
  ming_wrap.c: ${SWIGINC}/blocklist.i ${SWIGINC}/blocktypes.i ${SWIGINC}/ming.i ${SWIGINC}/swf.i
 -	swig -I${SWIGINC} -ruby ${SWIGINC}/ming.i
-+	swig1.3 -I${SWIGINC} -ruby ${SWIGINC}/ming.i
++	${SWIG} -I${SWIGINC} -ruby ${SWIGINC}/ming.i
  
  clean: clean_local
  
