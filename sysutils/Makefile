@@ -409,6 +409,7 @@
     SUBDIR += tree
     SUBDIR += ttyload
     SUBDIR += tua
+    SUBDIR += ucspi-ipc
     SUBDIR += ucspi-ssl
     SUBDIR += ucspi-tcp
     SUBDIR += ucspi-unix

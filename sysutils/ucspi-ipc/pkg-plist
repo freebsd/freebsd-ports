@@ -1,0 +1,17 @@
+bin/ipccat
+bin/ipcclient
+bin/ipccommand
+bin/ipcconnect
+bin/ipcconnect-io
+bin/ipcdo
+bin/ipcexec
+bin/ipcexec-config
+bin/ipcexecrules
+bin/ipcexecrulescheck
+bin/ipcperl
+bin/ipcrules
+bin/ipcrulescheck
+bin/ipcrun
+bin/ipcserver
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
