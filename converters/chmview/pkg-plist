@@ -1,2 +1,3 @@
 bin/chmview
 share/doc/chmview/chmformat.html
+@dirrm share/doc/chmview

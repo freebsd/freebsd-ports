@@ -7,6 +7,7 @@
 
 PORTNAME=	chmview
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	converters textproc
 MASTER_SITES=	http://trexinc.narod.ru/myprogs/files/
 DISTNAME=	chmview
