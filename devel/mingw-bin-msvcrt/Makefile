@@ -20,8 +20,17 @@ MAINTAINER=	doc@hisio.safenet.pl
 
 NO_MTREE=	yes
 NO_WRKSUBDIR=	yes
+NO_BUILD=	yes
+STRIP=
 
-post-extract:
-	@${CP} ${FILESDIR}/Makefile ${WRKDIR}
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/mingwm10.dll ${PREFIX}/bin
+	${MKDIR} ${PREFIX}/i386-mingw32msvc/lib
+	${MKDIR} ${PREFIX}/i386-mingw32msvc/include/sys
+	${INSTALL_DATA} ${WRKSRC}/lib/* ${PREFIX}/i386-mingw32msvc/lib/
+	${INSTALL_DATA} ${WRKSRC}/include/*.h ${PREFIX}/i386-mingw32msvc/include
+	${INSTALL_DATA} ${WRKSRC}/include/sys/* ${PREFIX}/i386-mingw32msvc/include/sys/
+	${INSTALL_DATA} ${WRKSRC}/mingw32/lib/* ${PREFIX}/i386-mingw32msvc/lib/
+	${INSTALL_DATA} ${WRKSRC}/mingw32/include/* ${PREFIX}/i386-mingw32msvc/include
 
 .include <bsd.port.mk>
