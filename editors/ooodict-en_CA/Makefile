@@ -13,6 +13,7 @@ CATEGORIES=	editors
 LANGPREFIX=	en
 LANGSUFFIX=	CA
 LANGDIST+=	en_CA.zip
+HYPHDIST+=	hyph_en_CA.zip
 MASTERDIR=	${.CURDIR}/../ooodict-all
 RDEP=		${PORTSDIR}/editors/openoffice
 

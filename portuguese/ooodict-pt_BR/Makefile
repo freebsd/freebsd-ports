@@ -13,6 +13,7 @@ CATEGORIES=	portuguese
 LANGPREFIX=	pt
 LANGSUFFIX=	BR
 LANGDIST+=	pt_BR.zip
+HYPHDIST+=	hyph_pt_BR.zip
 MASTERDIR=	${.CURDIR}/../../editors/ooodict-all
 RDEP=		${PORTSDIR}/portuguese/openoffice
 

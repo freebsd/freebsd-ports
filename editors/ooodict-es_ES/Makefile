@@ -13,6 +13,7 @@ CATEGORIES=	editors
 LANGPREFIX=	es
 LANGSUFFIX=	ES
 LANGDIST+=	es_ES.zip
+HYPHDIST+=	hyph_es.zip
 MASTERDIR=	${.CURDIR}/../ooodict-all
 RDEP=		${PORTSDIR}/editors/openoffice-es
 
