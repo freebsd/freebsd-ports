@@ -1,14 +1,11 @@
-
-$FreeBSD$
-
---- libgnomevfs/libcharset/Makefile.in	2002/03/17 14:28:57	1.1
-+++ libgnomevfs/libcharset/Makefile.in	2002/03/17 14:30:13
+--- libgnomevfs/libcharset/Makefile.in.orig	Mon May  6 15:14:48 2002
++++ libgnomevfs/libcharset/Makefile.in	Mon May  6 15:33:22 2002
 @@ -188,7 +188,7 @@
  cxxflags_set = @cxxflags_set@
  l = @l@
  
 -INCLUDES =  	-DLIBDIR=\"$(libdir)\"
-+INCLUDES =  	-DLIBDIR=\"$(prefix)/libdata\"
++INCLUDES =  	-DLIBDIR=\"%%LOCALBASE%%/libdata\"
  
  
  noinst_LTLIBRARIES = libcharset.la
