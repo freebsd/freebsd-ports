@@ -1,40 +1,118 @@
-diff -ruN ./sys/unix/Makefile.top ../nethack-3.2.2/sys/unix/Makefile.top
---- ./sys/unix/Makefile.top	Wed Dec 11 05:20:10 1996
-+++ ../nethack-3.2.2/sys/unix/Makefile.top	Sun Nov 22 00:26:55 1998
-@@ -16,14 +16,14 @@
- # make NetHack
- GAME     = nethack
- GAMEUID  = games
--GAMEGRP  = bin
-+GAMEGRP  = games
- 
- # Permissions - some places use setgid instead of setuid, for instance
- # See also the option "SECURE" in include/config.h
--GAMEPERM = 04755
--FILEPERM = 0644
-+GAMEPERM = 02755
-+FILEPERM = 0664
- EXEPERM  = 0755
--DIRPERM  = 0755
-+DIRPERM  = 0775
- 
- # GAMEDIR also appears in config.h as "HACKDIR".
+--- sys/unix/Makefile.src.orig	Sun Jun 16 03:02:10 2002
++++ sys/unix/Makefile.src	Sun Jun 16 03:09:37 2002
+@@ -147,19 +147,28 @@
+ # directories.  The ones given below is the usual spot for linux systems.
+ # The paths are for glibconfig.h and gnomesupport.h respectively.
  #
-@@ -32,13 +32,13 @@
- # therefore there should not be anything in GAMEDIR that you want to keep
- # (if there is, you'll have to do the installation by hand or modify the
- # instructions)
--GAMEDIR  = /usr/games/lib/$(GAME)dir
--SHELLDIR = /usr/games
-+GAMEDIR  = ${PREFIX}/lib/$(GAME)dir
-+SHELLDIR = ${PREFIX}/bin
+-GNOMEINC=-I/usr/lib/glib/include -I/usr/lib/gnome-libs/include -I../win/gnome
++GNOMEINC= $(shell ${GNOME_CONFIG} --cflags gnomeui)
  
- # per discussion in Install.X11
--VARDATND = 
-+# VARDATND = 
- # VARDATND = x11tiles pet_mark.xbm
--# VARDATND = x11tiles pet_mark.xbm rip.xpm
-+VARDATND = x11tiles pet_mark.xbm rip.xpm
+ # flags for debugging:
+ # CFLAGS = -g -I../include
++CFLAGS += -I../include
++ifeq ("$(GRAPHICS)","X11_GRAPHICS")
++CFLAGS += -DX11_GRAPHICS -I${X11BASE}/include
++endif
++ifeq ("$(GRAPHICS)","QT_GRAPHICS")
++CFLAGS += -DQT_GRAPHICS
++endif
++ifeq ("$(GRAPHICS)","GNOME_GRAPHICS")
++CFLAGS += -DGNOME_GRAPHICS
++endif
  
- VARDATD = data oracles options quest.dat rumors
- VARDAT = $(VARDATD) $(VARDATND)
+-CFLAGS = -W -g -O -I../include
+ LFLAGS =
+ 
+ # The Qt and Be window systems are written in C++, while the rest of
+ # NetHack is standard C.  If using Qt, uncomment the LD line here to get
+ # the C++ libraries linked in.
+-CXXFLAGS = $(CFLAGS) -I. -I$(QTDIR)/include
+-CXX=g++
++CXXFLAGS += -I. -I../include ${QTCPPFLAGS}
++#CXX=g++
+ #LD=g++
+ 
+ # flags for IPv6 support
+@@ -222,7 +231,26 @@
+ #
+ #
+ WINSRC = $(WINTTYSRC)
++ifeq ("$(GRAPHICS)","X11_GRAPHICS")
++WINSRC += $(WINX11SRC)
++endif
++ifeq ("$(GRAPHICS)","QT_GRAPHICS")
++WINSRC += $(WINQTSRC)
++endif
++ifeq ("$(GRAPHICS)","GNOME_GRAPHICS")
++WINSRC += $(WINGNOMESRC)
++endif
++
+ WINOBJ = $(WINTTYOBJ)
++ifeq ("$(GRAPHICS)","X11_GRAPHICS")
++WINOBJ += $(WINX11OBJ)
++endif
++ifeq ("$(GRAPHICS)","QT_GRAPHICS")
++WINOBJ += $(WINQTOBJ)
++endif
++ifeq ("$(GRAPHICS)","GNOME_GRAPHICS")
++WINOBJ += $(WINGNOMEOBJ)
++endif
+ 
+ # on some systems the termcap library is in -ltermcap or -lcurses
+ # on 386 Xenix, the -ltermlib tputs() seems not to work; use -lcurses instead
+@@ -242,19 +270,19 @@
+ #
+ # libraries for X11
+ # If USE_XPM is defined in config.h, you will also need -lXpm here.
+-WINX11LIB = -lXaw -lXmu -lXext -lXt -lX11
++WINX11LIB = -lXaw -lXmu -lXpm -lXext -lXt -lX11 -lSM -lICE -L${X11BASE}/lib
+ # WINX11LIB = -lXaw -lXmu -lXt -lX11
+ # WINX11LIB = -lXaw -lXmu -lXext -lXt -lXpm -lX11 -lm
+ # WINX11LIB = -lXaw -lXmu -lXpm -lXext -lXt -lX11 -lSM -lICE -lm # BSD/OS 2.0
+ #
+ # libraries for Qt
+-WINQTLIB = -L$(QTDIR)/lib -lqt
++WINQTLIB = ${QTCFGLIBS} ${LIBQT} -lgnuregex
+ #
+ # libraries for KDE (with Qt)
+ WINKDELIB = -lkdecore -lkdeui -lXext
+ #
+ # libraries for Gnome
+-WINGNOMELIB = -lgnomeui -lgnome -lart_lgpl -lgtk -lgdk -lpopt
++WINGNOMELIB = $(shell ${GNOME_CONFIG} --libs gnomeui) -lgnugetopt
+ #
+ # libraries for Gem port
+ WINGEMLIB = -le_gem -lgem
+@@ -263,6 +291,15 @@
+ WINBELIB = -lbe
+ 
+ WINLIB = $(WINTTYLIB)
++ifeq ("$(GRAPHICS)","X11_GRAPHICS")
++WINLIB += $(WINX11LIB)
++endif
++ifeq ("$(GRAPHICS)","QT_GRAPHICS")
++WINLIB += $(WINQTLIB)
++endif
++ifeq ("$(GRAPHICS)","GNOME_GRAPHICS")
++WINLIB += $(WINGNOMELIB)
++endif
+ 
+ # any other strange libraries your system needs (for Sysunix only -- the more
+ # specialized targets should already be right)
+@@ -472,13 +509,13 @@
+ 
+ # Qt windowport meta-object-compiler output
+ qt_kde0.moc: ../include/qt_kde0.h
+-	$(QTDIR)/bin/moc ../include/qt_kde0.h > qt_kde0.moc
++	${MOC} ../include/qt_kde0.h > qt_kde0.moc
+ 
+ qt_win.moc: ../include/qt_win.h
+-	$(QTDIR)/bin/moc ../include/qt_win.h > qt_win.moc
++	${MOC} ../include/qt_win.h > qt_win.moc
+ 
+ qttableview.moc: ../include/qttableview.h
+-	$(QTDIR)/bin/moc ../include/qttableview.h > qttableview.moc
++	${MOC} ../include/qttableview.h > qttableview.moc
+ 
+ $(MAKEDEFS): ../util/makedefs.c  $(CONFIG_H) ../include/permonst.h \
+ 		../include/objclass.h ../include/monsym.h \
