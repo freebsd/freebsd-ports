@@ -1,0 +1,44 @@
+# Set up the build variables which are used by a given build
+#
+# Code fragment used by other scripts for commonality
+
+buildenv () {
+    branch=$1
+
+    case "x$branch" in
+	x4)
+	    export XFREE86_VERSION=3
+	    ;;
+	x4-exp)
+	    export XFREE86_VERSION=3
+	    ;;
+	x5)
+	    export XFREE86_VERSION=4
+	    ;;
+	*)
+	    echo "buildvars: invalid branch"
+	    exit 1
+	    ;;
+    esac
+
+    # Have to use realpath because 'make index' doesn't deal with symlinks in PORTSDIR
+    # - kk 020311
+    export PORTSDIR=$(realpath ${pb}/${branch}/ports)
+    export SRCBASE=$(realpath ${pb}/${branch}/src)
+    export SRCPREFIX=${SRCBASE} #XXX Which one is canonical?
+
+    export OSVERSION=$(awk '/^#define __FreeBSD_version/ {print $3}' < ${SRCBASE}/sys/sys/param.h)
+    export OSREL=$(awk 'BEGIN {FS="\""}; /^REVISION/ {print $2}' < ${SRCBASE}/sys/conf/newvers.sh)
+    export BRANCH=$(awk 'BEGIN {FS="\""}; /^BRANCH/ {print $2}' < ${SRCBASE}/sys/conf/newvers.sh)
+
+    export BATCH=t
+    export HAVE_MOTIF=t
+    export PACKAGE_BUILDING=t
+    export PARALLEL_PACKAGE_BUILD=t
+    export PORTOBJFORMAT=elf
+
+    # XXX Probably old and mouldy
+    #export NO_RESTRICTED=t
+    #export FOR_CDROM=t
+    #export INDEX_NOSORT=t
+}
