@@ -44,7 +44,7 @@ CONFIGURE_ENV+=	CFLAGS="-I/usr/local/include -g" LDFLAGS=-L/usr/local/lib
 
 .if defined(WITH_MYSQL)
 MODULES:=$(MODULES):mod_sqlpw:mod_mysql
-LIB_DEPENDS+=	mysqlclient.6:${PORTSDIR}/databases/mysql322-client
+LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 CONFIGURE_ENV+=	CFLAGS="-I${PREFIX}/include/mysql" LDFLAGS="-L${PREFIX}/lib/mysql"
 .endif
 

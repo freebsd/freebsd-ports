@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.tamos.net/pub/dbMetrix/ \
 
 MAINTAINER=	joseph@randomnetworks.com
 
-LIB_DEPENDS=	mysqlclient.6:${PORTSDIR}/databases/mysql322-client
+LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 

@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.mysql.com/Downloads/Contrib/
 
 MAINTAINER=	mi@aldan.algebra.com
 
-LIB_DEPENDS=	mysqlclient.6:${PORTSDIR}/databases/mysql322-client \
+LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client \
 		${TCL_NODOT}:${PORTSDIR}/lang/${TCL_NODOT}
 
 TCL_VERSION?=	tcl8.3

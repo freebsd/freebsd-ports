@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-stable-${PORTVERSION}
 MAINTAINER=	nbm@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/libexec/apache/libphp3.so:${PORTSDIR}/www/mod_php3 \
-	${LOCALBASE}/lib/mysql/libmysqlclient.so:${PORTSDIR}/databases/mysql322-client
+	${LOCALBASE}/lib/mysql/libmysqlclient.so:${PORTSDIR}/databases/mysql323-client
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
 NO_BUILD=	YES

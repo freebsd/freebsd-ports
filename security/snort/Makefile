@@ -24,7 +24,7 @@ LDFLAGS+=	"-L${LOCALBASE}/lib"
 .endif
 
 .if defined(WITH_MYSQL)
-LIB_DEPENDS+=	mysqlclient.6:${PORTSDIR}/databases/mysql322-client
+LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 CONFIGURE_ARGS+=--with-mysql-includes=${LOCALBASE}/include/mysql \
 		--with-mysql-libraries=${LOCALBASE}/lib/mysql
 .endif

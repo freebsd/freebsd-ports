@@ -13,7 +13,7 @@ MASTER_SITES=	http://gd.tuwien.ac.at/db/mysql/mysql++/ \
 
 MAINTAINER=	mico@bsd.hu
 
-LIB_DEPENDS=	mysqlclient:${PORTSDIR}/databases/mysql322-client
+LIB_DEPENDS=	mysqlclient:${PORTSDIR}/databases/mysql323-client
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} -D_FIX_FOR_BSD_ "

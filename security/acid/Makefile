@@ -16,7 +16,7 @@ MAINTAINER=	foxfair@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13 \
 		${LOCALBASE}/libexec/apache/libphp3.so:${PORTSDIR}/www/mod_php3 \
-		${LOCALBASE}/libexec/mysqld:${PORTSDIR}/databases/mysql322-server \
+		${LOCALBASE}/libexec/mysqld:${PORTSDIR}/databases/mysql323-server \
 		${LOCALBASE}/bin/snort:${PORTSDIR}/security/snort
 
 post-configure:

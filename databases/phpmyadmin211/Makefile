@@ -13,7 +13,7 @@ DISTNAME=	phpMyAdmin_${PORTVERSION}
 
 MAINTAINER=	nbm@FreeBSD.org
 
-RUN_DEPENDS=	${LOCALBASE}/lib/mysql/libmysqlclient.so:${PORTSDIR}/databases/mysql322-client
+RUN_DEPENDS=	${LOCALBASE}/lib/mysql/libmysqlclient.so:${PORTSDIR}/databases/mysql323-client
 .if defined(WITH_PHP4)
 RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
 .else

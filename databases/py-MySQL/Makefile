@@ -13,7 +13,7 @@ DISTNAME=	MySQLmodule-${PORTVERSION}
 
 MAINTAINER=	dr@domix.de
 
-LIB_DEPENDS=	mysqlclient.6:${PORTSDIR}/databases/mysql322-client
+LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 
 USE_PYTHON=	yes
 ALL_TARGET=	MySQLmodule.so

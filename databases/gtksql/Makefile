@@ -24,7 +24,7 @@ USE_GTK=	yes
 .if defined(WITH_MYSQL) || (exists(${LOCALBASE}/lib/mysql/libmysqlclient.a) \
      && !defined(WITHOUT_MYSQL))
 HAVE_MYSQL=	yes
-LIB_DEPENDS+=	mysqlclient.6:${PORTSDIR}/databases/mysql322-client
+LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 .endif
 .if defined(WITH_PGSQL) || (exists(${LOCALBASE}/lib/libpq.a) \
      && !defined(WITHOUT_PGSQL))

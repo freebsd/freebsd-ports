@@ -36,7 +36,7 @@ RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail
 # If WITH_MYSQL is defined, build with MySQL extensions
 .if defined(WITH_MYSQL)
 ALL_TARGET=	it ${LANGUAGE} mysql
-LIB_DEPENDS+=	mysqlclient.6:${PORTSDIR}/databases/mysql322-client
+LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 .else
 ALL_TARGET=	it ${LANGUAGE}
 .endif

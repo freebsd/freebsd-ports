@@ -57,7 +57,7 @@ BIN2=	postalias postcat postconf postdrop postfix \
 	postkick postlock postlog postmap postsuper sendmail
 
 .if defined(WITH_MYSQL)
-BUILD_DEPENDS+=		${LOCALBASE}/lib/mysql/libmysqlclient.a:${PORTSDIR}/databases/mysql322-client
+BUILD_DEPENDS+=		${LOCALBASE}/lib/mysql/libmysqlclient.a:${PORTSDIR}/databases/mysql323-client
 POSTFIX_CCARGS+=	-DHAS_MYSQL -I${LOCALBASE}/include/mysql
 POSTFIX_AUXLIBS+=	${LOCALBASE}/lib/mysql/libmysqlclient.a -lm
 .endif

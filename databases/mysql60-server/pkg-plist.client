@@ -27,6 +27,6 @@ include/mysql/sslopt-usage.h
 include/mysql/sslopt-vars.h
 lib/mysql/libmysqlclient.a
 lib/mysql/libmysqlclient.so
-lib/mysql/libmysqlclient.so.6
+lib/mysql/libmysqlclient.so.10
 @dirrm include/mysql
 @dirrm lib/mysql

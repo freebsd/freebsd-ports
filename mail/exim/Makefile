@@ -85,7 +85,7 @@ SEDLIST+=	-e 's,XX_LDAP_[^ ]*_XX,,' \
 .endif
 
 .if defined(WITH_MYSQL)
-LIB_DEPENDS+=	mysqlclient.6:${PORTSDIR}/databases/mysql322-client
+LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 SEDLIST+=	-e 's,XX_MYSQL_LIBS_XX,-L${PREFIX}/lib/mysql -lmysqlclient,' \
 		-e 's,XX_MYSQL_INCLUDE_XX,-I${PREFIX}/include/mysql,' \
 		-e 's,^\# LOOKUP_MYSQL,LOOKUP_MYSQL,'
