@@ -27,7 +27,6 @@ MAKE_ENV=	${CONFIGURE_ENV}
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 
-# spurious, but i don't care
 .include <bsd.port.pre.mk>
 
 post-patch:
@@ -37,6 +36,9 @@ post-patch:
 	@${PERL} -pi -e 's@\bMAXINT\b@INT_MAX@g' \
 		${WRKSRC}/mpeglib/lib/util/render/x11/x11Surface.cpp \
 		${WRKSRC}/mpeglib/lib/util/render/x11/imageDeskX11.cpp
+.if ${MACHINE_ARCH} == "alpha"
+	@${PERL} -pi -e "s@-ffast-math@@g" ${WRKSRC}/kmidi/Makefile.in
+.endif
 
 post-install:
 	@${ECHO_MSG}
