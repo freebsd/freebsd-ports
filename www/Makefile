@@ -518,6 +518,7 @@
     SUBDIR += p5-Template-Plugin-MP3
     SUBDIR += p5-Template-Toolkit
     SUBDIR += p5-URI-Sequin
+    SUBDIR += p5-W3C-LogValidator
     SUBDIR += p5-WWW-Automate
     SUBDIR += p5-WWW-Babelfish
     SUBDIR += p5-WWW-Curl
