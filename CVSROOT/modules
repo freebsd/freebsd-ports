@@ -8102,6 +8102,7 @@ vgb-bin		ports/emulators/vgb-bin
 vgrind		src/usr.bin/vgrind
 vi		src/usr.bin/vi
 vi-libviet	ports/vietnamese/libviet
+vi-vi2vn	ports/vietnamese/vi2vn
 vi-vn7to8	ports/vietnamese/vn7to8
 vi-vnconvert	ports/vietnamese/vnconvert
 vi-vnelvis	ports/vietnamese/vnelvis
