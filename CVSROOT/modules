@@ -5489,6 +5489,7 @@ replay		ports/audio/replay
 reportmagic	ports/www/reportmagic
 repquota	src/usr.sbin/repquota
 restore		src/sbin/restore
+retawq		ports/www/retawq
 rev		src/usr.bin/rev
 revnetgroup	src/libexec/revnetgroup
 rexecd		src/libexec/rexecd
