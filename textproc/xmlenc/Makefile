@@ -6,42 +6,37 @@
 #
 
 PORTNAME=	xmlenc
-PORTVERSION=	0.43
+PORTVERSION=	0.44
 CATEGORIES=	textproc java
 MASTER_SITES=	http://${PORTNAME}.sourceforge.net/
 
 MAINTAINER=	znerd@FreeBSD.org
 COMMENT=	Light-weight XML encoding library for Java
 
-BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/apache-ant
+USE_JAVA=	yes
+USE_ANT=	yes
 
-USE_JAVA=	1.1+
-
-PLIST_SUB+=	T=${TARGET_DIR:S/^${PREFIX}\///}
-TARGET_DIR?=	${PREFIX}/share/java/${PORTNAME}-${PORTVERSION}
-ANT?=		${LOCALBASE}/bin/ant
 .if defined(NOPORTDOCS)
-ANT_TARGET=	jar
+ALL_TARGET=	jar
 .else
-ANT_TARGET=	jar javadoc
+ALL_TARGET=	jar javadoc
+PORTDOCS=	*
 .endif
-JAVASHAREDIR=	${PREFIX}/share/java
-JARDIR=		${JAVASHAREDIR}/classes
 JARFILE=	${PORTNAME}.jar
-
-do-build:
-	@cd ${WRKSRC} && ${ANT} ${ANT_TARGET}
+PLIST_FILES=	%%JAVAJARDIR%%/${JARFILE}
 
 do-install:
-	@${ECHO} -n ">> Installing JAR as ${JARDIR}/${JARFILE}..."
-	@${CP} ${WRKSRC}/build/${JARFILE} ${JARDIR}/
-	@${ECHO} " [ DONE ]"
+	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${JARFILE}..."
+	@${MKDIR} ${JAVAJARDIR}
+	@${INSTALL_DATA} ${WRKSRC}/build/${JARFILE} ${JAVAJARDIR}/
+	@${ECHO_MSG} " [ DONE ]"
 
 .if !defined(NOPORTDOCS)
-	@${ECHO} -n ">> Installing documentation in ${DOCSDIR}..."
-	@${MKDIR} ${DOCSDIR}
-	@${CP} -r ${WRKSRC}/build/javadoc/* ${DOCSDIR}
-	@${ECHO} " [ DONE ]"
+	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}/..."
+	@cd ${WRKSRC}/build/javadoc/ \
+	  && ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/{} \; \
+	  && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
+	@${ECHO_MSG} " [ DONE ]"
 .endif
 
 .include <bsd.port.mk>
