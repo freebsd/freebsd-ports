@@ -7,6 +7,7 @@
 
 PORTNAME=	scrollz
 PORTVERSION=	1.8l
+PORTREVISION=	1
 CATEGORIES=	irc ipv6
 MASTER_SITES=	ftp://ftp.scrollz.com/pub/ScrollZ/source/ \
 		ftp://ftp.stealth.net/pub/mirrors/ftp.scrollz.com/pub/ScrollZ/source
@@ -14,6 +15,7 @@ DISTNAME=	ScrollZ-${PORTVERSION}
 
 MAINTAINER=	petef@databits.net
 
+IS_INTERACTIVE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-ipv6
 
@@ -23,5 +25,12 @@ PLIST_SUB+=	SCROLLZ_VER="${PORTVERSION}"
 
 post-patch:
 	@${PERL} -pi -e 's!^IRCLIB =!IRCLIB ?=!' ${WRKSRC}/Makefile.in
+
+pre-build:
+.if !defined(BATCH)
+	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${CC} ${CFLAGS} -o SZdist \
+		SZdist.c)
+	@(cd $(WRKSRC); ./SZdist)
+.endif
 
 .include <bsd.port.mk>
