@@ -1,30 +1,35 @@
---- Makefile.orig	Sat Aug  4 02:49:43 2001
-+++ Makefile	Sat Aug  4 02:51:31 2001
-@@ -10,7 +10,6 @@
+--- Makefile.orig	Thu Aug 16 06:47:34 2001
++++ Makefile	Tue Jan 15 22:47:26 2002
+@@ -10,7 +10,7 @@
  
  
  
 -CC = gcc
++#CC = gcc
  
  # Please set RESUME_FILE and choose a secure place for the resume file 
  # before using mdcrack as root.
-@@ -47,7 +46,7 @@
+@@ -47,7 +47,7 @@
  BLOCK=-DBLOCKSIZE=50
  
  #full optimization
--CFLAGS =  -O3 -mpreferred-stack-boundary=4 -fforce-addr -funroll-loops -fomit-frame-pointer -ffast-math 
-+CFLAGS +=  -mpreferred-stack-boundary=4 -fforce-addr -funroll-loops -fomit-frame-pointer -ffast-math 
+-CFLAGS =  -O3 -fforce-addr -funroll-loops -fomit-frame-pointer -ffast-math 
++CFLAGS +=  -O3 -fforce-addr -funroll-loops -fomit-frame-pointer -ffast-math 
  
  
  
-@@ -328,8 +327,8 @@
+@@ -343,12 +343,8 @@
+ 
  install: 
- 	@make default
  	@echo
--	@echo  "Installing mdcrack in /usr/sbin/mdcrack"
--	cp bin/mdcrack /usr/sbin/mdcrack
-+	@echo  "Installing mdcrack in ${PREFIX}/bin/mdcrack"
-+	cp bin/mdcrack ${PREFIX}/bin/mdcrack
- 	@echo
+-	@echo -n "Installing mdcrack in /usr/sbin/mdcrack ..... "
+-	@cp bin/mdcrack /usr/sbin/mdcrack
+-	@echo "ok."
+-	@echo
+-	@echo -n "Installing mdcrack-version in /usr/sbin/mdcrack-version ..... "
+-	@echo $(CFLAGS) $(NCURSES) $(CPU) $(MDCRACK_OPTS) $(MDARCH) $(BLOCK) > /usr/sbin/mdcrack-version
++	@echo -n "Installing mdcrack in ${PREFIX}/bin/mdcrack ..... "
++	@cp bin/mdcrack ${PREFIX}/bin/mdcrack
  	@echo "ok."
  	@echo
+ 	@echo "-*-*-*-*-*-*-*-*-*-*-*-*-*-*-"
