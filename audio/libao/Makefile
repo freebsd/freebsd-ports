@@ -7,6 +7,7 @@
 
 PORTNAME=	libao
 PORTVERSION=	0.8.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.xiph.org/ogg/vorbis/download/ \
 		http://www.vorbis.com/files/rc3/unix/ \
@@ -37,7 +38,7 @@ PLIST_SUB=	ESOUND="@comment "
 .endif
 
 .if exists(${LOCALBASE}/bin/artsc-config)
-LIB_DEPENDS=	artsc.0:${PORTSDIR}/x11/kdelibs2
+LIB_DEPENDS=	artsc.0:${PORTSDIR}/audio/arts
 PLIST_SUB+=	ARTS=""
 .else
 PLIST_SUB+=	ARTS="@comment "
