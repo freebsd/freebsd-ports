@@ -3,7 +3,7 @@
 # Date created:		12 January 1996
 # Whom:			nate
 #
-# $Id: Makefile,v 1.13 1998/08/09 08:58:44 asami Exp $
+# $Id: Makefile,v 1.14 1998/09/15 11:45:53 asami Exp $
 #
 
 DISTNAME=	scanner
@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		ftp://ftp.cogsci.ed.ac.uk/pub/richard/
 
-MAINTAINER=	nate@FreeBSD.org
+MAINTAINER=	jkh@FreeBSD.org
 
 LIB_DEPENDS=    jpeg.9:${PORTSDIR}/graphics/jpeg
 
