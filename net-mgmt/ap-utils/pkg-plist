@@ -4,15 +4,4 @@ bin/ap-nwn
 sbin/ap-trapd
 share/locale/uk/LC_MESSAGES/ap-utils.mo
 %%PORTDOCS%%share/doc/ap-utils/FAQ
-%%PORTDOCS%%share/doc/ap-utils/README.atmel
-%%PORTDOCS%%share/doc/ap-utils/README.mrtg
-%%PORTDOCS%%share/doc/ap-utils/README.nwn
-%%PORTDOCS%%share/doc/ap-utils/README.trapd
-%%PORTDOCS%%share/doc/ap-utils/THANKS
-%%PORTDOCS%%share/doc/ap-utils/mib/AT76C510.mib
-%%PORTDOCS%%share/doc/ap-utils/mib/Dot11Ext.mib
-%%PORTDOCS%%share/doc/ap-utils/mib/Dot11Mib.mib
-%%PORTDOCS%%share/doc/ap-utils/mib/WlReg.mib
-%%PORTDOCS%%share/doc/ap-utils/mib/README
-%%PORTDOCS%%@dirrm share/doc/ap-utils/mib
 %%PORTDOCS%%@dirrm share/doc/ap-utils
