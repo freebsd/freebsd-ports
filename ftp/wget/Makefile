@@ -26,8 +26,8 @@ LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	CPPFLAGS=-I${PREFIX}/include \
-		LDFLAGS=-L${PREFIX}/lib
+CONFIGURE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include \
+		LDFLAGS=-L${LOCALBASE}/lib
 
 pre-build:
 	@${RM} -rf ${WRKSRC}/doc/wget.info*
