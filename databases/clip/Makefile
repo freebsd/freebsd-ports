@@ -7,17 +7,14 @@
 #
 
 PORTNAME=	clip
-PORTVERSION=	0.96
+PORTVERSION=	0.99
 CATEGORIES=	databases
-MASTER_SITES=	ftp://ftp.itk.ru/pub/clip/ \
-		ftp://slavik.eu.org/apps/development/compilers/clip/ \
+MASTER_SITES=	ftp://ftp.lastik.ru/clip/ \
 		ftp://ftp.linux.ru.net/mirrors/clip/
-DISTNAME=	${PORTNAME}-prg-${PORTVERSION}-1
+DISTNAME=	${PORTNAME}-prg-${PORTVERSION}-3
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-
-BROKEN=		"Does not fetch"
 
 USE_BISON=	yes
 USE_GMAKE=	yes

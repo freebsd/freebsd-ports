@@ -1,0 +1,10 @@
+--- cliplibs/clip-fcgi/Makefile	Mon Jun 17 14:31:04 2002
++++ cliplibs/clip-fcgi/Makefile	Mon Jun 17 14:31:34 2002
+@@ -35,6 +35,6 @@
+ 
+ clean:
+ 	rm -rf *.o *.bak *.a *.so hashcode.h *.dll *.exe names.h
+-	cd example && make clean
++	cd example && $(MAKE) clean
+ 
+ distclean: clean

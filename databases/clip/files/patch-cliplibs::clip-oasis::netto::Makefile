@@ -1,0 +1,16 @@
+--- cliplibs/clip-oasis/netto/Makefile	Mon Jun 17 14:31:04 2002
++++ cliplibs/clip-oasis/netto/Makefile	Mon Jun 17 14:32:10 2002
+@@ -10,11 +10,11 @@
+ all: $(TARGET)
+ 
+ $(TARGET):
+-	cd misc; make
++	cd misc; $(MAKE)
+ 	$(CLIPROOT)/bin/clip_makeslib $(TARGET) $(LIBS)
+ 
+ clean distclean*:
+-	cd misc; make clean
++	cd misc; $(MAKE) clean
+ 	rm -f $(LIBS) $(TARGET) $(RTARGET)
+ 
+ install: $(TARGET)
