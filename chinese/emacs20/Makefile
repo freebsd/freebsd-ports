@@ -8,7 +8,7 @@
 
 MASTERDIR=	${.CURDIR}/../../editors/emacs20
 
-MAINTAINER=	clive@CirX.ORG
+MAINTAINER=	clive@FreeBSD.org
 
 .if !defined(WITHOUT_X11)
 RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/local/kc15f.pcf.gz:${PORTSDIR}/chinese/kcfonts \

@@ -10,7 +10,7 @@ PORTVERSION=	1.4
 CATEGORIES=	games
 MASTER_SITES=	http://www.oz.nthu.edu.tw/~u860905/Xphotohunter/
 
-MAINTAINER=	clive@CirX.ORG
+MAINTAINER=	clive@FreeBSD.org
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
