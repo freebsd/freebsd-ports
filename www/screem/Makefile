@@ -43,9 +43,4 @@ post-patch:
 post-configure:
 	@${REINPLACE_CMD} -e 's|\/\* #undef HAVE_LIMITS_H \*\/|#define HAVE_LIMITS_H 1|g' ${WRKSRC}/config.h
 
-# HACK:  This allows test builds into a temporary directory, but in the REAL world,
-# gconf would have created this directory.
-pre-install:
-	@${MKDIR} ${PREFIX}/etc/gconf/gconf.xml.defaults
-
 .include <bsd.port.mk>
