@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	modlogan
-PORTVERSION=	0.8.12
-PORTREVISION=	1
+PORTVERSION=	0.8.13
 CATEGORIES=	textproc www
 MASTER_SITES=	http://jan.kneschke.de/projects/modlogan/download/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -20,8 +19,6 @@ LIB_DEPENDS=	adns.1:${PORTSDIR}/dns/adns \
 		gd.4:${PORTSDIR}/graphics/gd \
 		pcre.0:${PORTSDIR}/devel/pcre \
 		expat.5:${PORTSDIR}/textproc/expat2
-
-BROKEN=		"Broken pkg-plist"
 
 USE_GETTEXT=	yes
 .if defined(WITH_MYSQL)
