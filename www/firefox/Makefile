@@ -7,7 +7,7 @@
 
 PORTNAME=	firefox
 PORTVERSION=	1.0
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
@@ -144,6 +144,8 @@ post-patch:
 		${WRKSRC}/js/src/Makefile.in
 	@${REINPLACE_CMD} -e 's|libesd\.so\.\d+|${ESD_LIB}|g' \
 		${WRKSRC}/widget/src/gtk2/nsSound.cpp
+	@${REINPLACE_CMD} -E -e 's|libcups\.so\.[0-9]+|libcups.no|g' \
+		${WRKSRC}/gfx/src/gtk/nsDeviceContextSpecG.cpp
 .for ii in modules/libpref/src/init extensions/sroaming/resources/content/prefs \
 	embedding/minimo
 	@${REINPLACE_CMD} -e '/accessibility.typeaheadfind.enablesound/s/true/false/ ; \
