@@ -2220,6 +2220,7 @@ gnomeuserdocs2	ports/misc/gnomeuserdocs2
 gnomeutils	ports/misc/gnomeutils
 gnomeutils2	ports/misc/gnomeutils2
 gnomevfs	ports/devel/gnomevfs
+gnomevfs2	ports/devel/gnomevfs2
 gnomoku		ports/games/gnomoku
 gnosamba	ports/net/gnosamba
 gnotepad+	ports/editors/gnotepad+
