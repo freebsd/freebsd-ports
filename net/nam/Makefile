@@ -22,7 +22,7 @@ MANCOMPRESSED=	no
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcl-ver=8.3 --with-tk-ver=8.3
-
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 ALL_TARGET=	# empty
 
 post-patch:
