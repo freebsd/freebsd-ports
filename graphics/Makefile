@@ -203,6 +203,7 @@
     SUBDIR += libwmf
     SUBDIR += libwpcg
     SUBDIR += linplasma
+    SUBDIR += linux-ac3d
     SUBDIR += linux-bmrt
     SUBDIR += linux-imlib
     SUBDIR += linux-jpeg
