@@ -3,7 +3,7 @@
 # Date created:		Thu Nov  7 00:53:18 WST 1996
 # Whom:			Peter Wemm <peter@freebsd.org>
 #
-# $Id: Makefile,v 1.51 1998/06/09 15:08:06 peter Exp $
+# $Id: Makefile,v 1.52 1998/10/06 00:19:50 peter Exp $
 #
 
 DISTNAME=	squid-2.0.RELEASE
@@ -16,12 +16,14 @@ MASTER_SITES=  \
 	ftp://ftp.net.lut.ac.uk/squid/squid-2/
 EXTRACT_SUFX=	-src.tar.gz
 
-#PATCH_SITES+=   http://squid.nlanr.net/Squid/1.2.beta/
-#PATCHFILES+=    1.2.beta21-1.patches
+PATCH_SITES=	${MASTER_SITES}
+PATCHFILES=	diff-2.0.RELEASE-2.0.PATCH1.gz \
+		diff-2.0.PATCH1-2.0.PATCH2.gz
 
 MAINTAINER=	peter@freebsd.org
 
 DIST_SUBDIR=	squid2.0
+PATCH_DIST_STRIP= -p1
 GNU_CONFIGURE=	yes
 # Follow the apache port's lead...
 CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin  --sysconfdir=${PREFIX}/etc/squid \
