@@ -1,0 +1,8 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tie/NetAddr/IP/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Tie/NetAddr/sample.pl
+lib/perl5/site_perl/%%PERL_VER%%/Tie/NetAddr/IP.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tie/NetAddr/IP
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tie/NetAddr 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tie 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Tie/NetAddr 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Tie 2>/dev/null || true
