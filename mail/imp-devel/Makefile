@@ -208,7 +208,7 @@ pre-install:
 .if !defined(WITHOUT_SUPPORTED_DB)
 	@if ! ${LDCONFIG} -r | ${GREP} -q -e "mysqlclient.10" ; then \
 	 if ! ${LDCONFIG} -r | ${GREP} -q -e "pq.2" ; then \
-	  if ! ${LDCONFIG} -r | ${GREP} -q -e "sybdb.0" ; then \
+	  if ! ${LDCONFIG} -r | ${GREP} -q -e "sybdb.1" ; then \
 	   if ! ${LDCONFIG} -r | ${GREP} -q -e "ct.0" ; then \
 	    ${ECHO_MSG} "" ; \
 	    ${ECHO_MSG} "Please configure PHP with a database support." ; \
