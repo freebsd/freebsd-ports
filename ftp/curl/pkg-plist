@@ -58,6 +58,8 @@ lib/libcurl.so.%%SHLIB_VER%%
 %%PORTDOCS%%%%DOCSDIR%%/examples/ftpupload.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/getinfo.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/getinmemory.c
+%%PORTDOCS%%%%DOCSDIR%%/examples/htmltidy.c
+%%PORTDOCS%%%%DOCSDIR%%/examples/htmltitle.cc
 %%PORTDOCS%%%%DOCSDIR%%/examples/http-post.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/httpput.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/https.c
@@ -205,6 +207,7 @@ lib/libcurl.so.%%SHLIB_VER%%
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/libcurl-tutorial.pdf
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/libcurl.3
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/libcurl.html
+%%PORTDOCS%%%%DOCSDIR%%/libcurl/libcurl.m4
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/libcurl.pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/libcurl
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
