@@ -1,0 +1,8 @@
+Qtutils is a collection of command line programs for manipulating QuickTime
+videos. It includes, among other things, qtconv, which allows one to change
+the codec used by a QT file, qtsplit, which splits a QT file into several
+smaller QT files, and qtsg, which creates a QT slideshow from a series of
+images and a soundtrack. A script named vcdize also allows you to create
+VCDs or SVCDs out of QuickTime sources.
+
+WWW: http://www.flyn.org/#id2755780
