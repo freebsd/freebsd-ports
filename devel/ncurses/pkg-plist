@@ -3,11 +3,11 @@ bin/clear
 bin/infocmp
 bin/infotocap
 bin/reset
+bin/tack
 bin/tic
 bin/toe
 bin/tput
 bin/tset
-include/ncurses/curses.h
 include/ncurses/cursesapp.h
 include/ncurses/cursesf.h
 include/ncurses/cursesm.h
@@ -24,28 +24,29 @@ include/ncurses/term.h
 include/ncurses/termcap.h
 include/ncurses/unctrl.h
 lib/libform.a
+lib/libform.la
 lib/libform.so
-lib/libform.so.4
-lib/libform_g.a
-lib/libform_p.a
+lib/libform.so.5
 lib/libmenu.a
+lib/libmenu.la
 lib/libmenu.so
-lib/libmenu.so.4
-lib/libmenu_g.a
-lib/libmenu_p.a
+lib/libmenu.so.5
 lib/libncurses++.a
+lib/libncurses++.la
+lib/libncurses++.so
+lib/libncurses++.so.5
 lib/libncurses.a
+lib/libncurses.la
 lib/libncurses.so
-lib/libncurses.so.4
-lib/libncurses_g.a
-lib/libncurses_p.a
+lib/libncurses.so.5
 lib/libpanel.a
+lib/libpanel.la
 lib/libpanel.so
-lib/libpanel.so.4
-lib/libpanel_g.a
-lib/libpanel_p.a
-@exec /usr/bin/env /sbin/ldconfig -m %D/lib
-@unexec /usr/bin/env /sbin/ldconfig -R
+lib/libpanel.so.5
+lib/libtinfo.a
+lib/libtinfo.la
+lib/libtinfo.so
+lib/libtinfo.so.5
 share/doc/ncurses/ANNOUNCE
 share/doc/ncurses/INSTALL
 share/doc/ncurses/NEWS
@@ -54,6 +55,7 @@ share/doc/ncurses/TO-DO
 share/doc/ncurses/announce.html
 share/doc/ncurses/hackguide.doc
 share/doc/ncurses/hackguide.html
+share/doc/ncurses/index.html
 share/doc/ncurses/ncurses-intro.doc
 share/doc/ncurses/ncurses-intro.html
 share/examples/ncurses/Makefile
@@ -65,12 +67,29 @@ share/examples/ncurses/c++/Makefile
 share/examples/ncurses/c++/NEWS
 share/examples/ncurses/c++/PROBLEMS
 share/examples/ncurses/c++/README-first
+share/examples/ncurses/c++/cursesapp.cc
+share/examples/ncurses/c++/cursesapp.h
+share/examples/ncurses/c++/cursesf.cc
+share/examples/ncurses/c++/cursesf.h
+share/examples/ncurses/c++/cursesm.cc
+share/examples/ncurses/c++/cursesm.h
+share/examples/ncurses/c++/cursesmain.cc
 share/examples/ncurses/c++/cursesp.cc
 share/examples/ncurses/c++/cursesp.h
 share/examples/ncurses/c++/cursesw.cc
 share/examples/ncurses/c++/cursesw.h
+share/examples/ncurses/c++/cursslk.cc
+share/examples/ncurses/c++/cursslk.h
 share/examples/ncurses/c++/demo.cc
+share/examples/ncurses/c++/etip.h
+share/examples/ncurses/c++/internal.h
+share/examples/ncurses/cardfile.c
+share/examples/ncurses/cardfile.dat
+share/examples/ncurses/ditto.c
+share/examples/ncurses/dots.c
+share/examples/ncurses/filter.c
 share/examples/ncurses/firework.c
+share/examples/ncurses/firstlast.c
 share/examples/ncurses/gdc.6
 share/examples/ncurses/gdc.c
 share/examples/ncurses/hanoi.c
@@ -79,10 +98,13 @@ share/examples/ncurses/knight.c
 share/examples/ncurses/lrtest.c
 share/examples/ncurses/ncurses.c
 share/examples/ncurses/newdemo.c
+share/examples/ncurses/railroad.c
 share/examples/ncurses/rain.c
 share/examples/ncurses/tclock.c
 share/examples/ncurses/test.priv.h
+share/examples/ncurses/testaddch.c
 share/examples/ncurses/testcurs.c
+share/examples/ncurses/testscanw.c
 share/examples/ncurses/tracemunch
 share/examples/ncurses/view.c
 share/examples/ncurses/worm.c
@@ -121,6 +143,12 @@ share/misc/terminfo/7/730MTGr-24
 share/misc/terminfo/8/8510
 share/misc/terminfo/9/955-hb
 share/misc/terminfo/9/955-w
+share/misc/terminfo/E/Eterm
+share/misc/terminfo/E/Eterm-color
+share/misc/terminfo/L/LFT-PC850
+share/misc/terminfo/M/MtxOrb
+share/misc/terminfo/M/MtxOrb162
+share/misc/terminfo/M/MtxOrb204
 share/misc/terminfo/N/NCR260VT300WPP
 share/misc/terminfo/N/NCRVT100WPP
 share/misc/terminfo/P/P12
@@ -140,6 +168,12 @@ share/misc/terminfo/P/P9
 share/misc/terminfo/P/P9-8
 share/misc/terminfo/P/P9-8-W
 share/misc/terminfo/P/P9-W
+share/misc/terminfo/Q/Q306-8-pc
+share/misc/terminfo/Q/Q310-vip-H
+share/misc/terminfo/Q/Q310-vip-H-am
+share/misc/terminfo/Q/Q310-vip-Hw
+share/misc/terminfo/Q/Q310-vip-w
+share/misc/terminfo/Q/Q310-vip-w-am
 share/misc/terminfo/X/X-hpterm
 share/misc/terminfo/a/a210
 share/misc/terminfo/a/a80
@@ -248,7 +282,9 @@ share/misc/terminfo/a/altos7pc
 share/misc/terminfo/a/ambas
 share/misc/terminfo/a/ambassador
 share/misc/terminfo/a/amiga
+share/misc/terminfo/a/amiga-8bit
 share/misc/terminfo/a/amiga-h
+share/misc/terminfo/a/amiga-vnc
 share/misc/terminfo/a/amp219
 share/misc/terminfo/a/amp219w
 share/misc/terminfo/a/ampex-219
@@ -264,12 +300,34 @@ share/misc/terminfo/a/ampex232w
 share/misc/terminfo/a/ampex80
 share/misc/terminfo/a/annarbor4080
 share/misc/terminfo/a/ansi
+share/misc/terminfo/a/ansi+arrows
+share/misc/terminfo/a/ansi+csr
+share/misc/terminfo/a/ansi+cup
+share/misc/terminfo/a/ansi+erase
+share/misc/terminfo/a/ansi+idc
+share/misc/terminfo/a/ansi+idl
+share/misc/terminfo/a/ansi+idl1
+share/misc/terminfo/a/ansi+inittabs
+share/misc/terminfo/a/ansi+local
+share/misc/terminfo/a/ansi+local1
+share/misc/terminfo/a/ansi+pp
+share/misc/terminfo/a/ansi+rca
+share/misc/terminfo/a/ansi+rep
+share/misc/terminfo/a/ansi+sgr
+share/misc/terminfo/a/ansi+sgrbold
+share/misc/terminfo/a/ansi+sgrdim
+share/misc/terminfo/a/ansi+sgrso
+share/misc/terminfo/a/ansi+sgrul
+share/misc/terminfo/a/ansi+tabs
 share/misc/terminfo/a/ansi-color-2-emx
 share/misc/terminfo/a/ansi-color-3-emx
 share/misc/terminfo/a/ansi-emx
+share/misc/terminfo/a/ansi-generic
 share/misc/terminfo/a/ansi-m
 share/misc/terminfo/a/ansi-mini
 share/misc/terminfo/a/ansi-mono
+share/misc/terminfo/a/ansi-mr
+share/misc/terminfo/a/ansi-mtabs
 share/misc/terminfo/a/ansi-nt
 share/misc/terminfo/a/ansi.sys
 share/misc/terminfo/a/ansi.sys-old
@@ -452,7 +510,25 @@ share/misc/terminfo/b/bh4
 share/misc/terminfo/b/bitgraph
 share/misc/terminfo/b/blit
 share/misc/terminfo/b/bobcat
+share/misc/terminfo/b/bq300
+share/misc/terminfo/b/bq300-8
+share/misc/terminfo/b/bq300-8-pc
+share/misc/terminfo/b/bq300-8-pc-rv
+share/misc/terminfo/b/bq300-8-pc-w
+share/misc/terminfo/b/bq300-8-pc-w-rv
+share/misc/terminfo/b/bq300-8rv
+share/misc/terminfo/b/bq300-8w
+share/misc/terminfo/b/bq300-pc
+share/misc/terminfo/b/bq300-pc-rv
+share/misc/terminfo/b/bq300-pc-w
+share/misc/terminfo/b/bq300-pc-w-rv
+share/misc/terminfo/b/bq300-rv
+share/misc/terminfo/b/bq300-w
+share/misc/terminfo/b/bq300-w-8rv
+share/misc/terminfo/b/bq300-w-rv
 share/misc/terminfo/b/bsdos-pc
+share/misc/terminfo/b/bsdos-pc-m
+share/misc/terminfo/b/bsdos-pc-mono
 share/misc/terminfo/b/bsdos-pc-nobold
 share/misc/terminfo/b/bsdos-ppc
 share/misc/terminfo/b/bsdos-sparc
@@ -577,6 +653,7 @@ share/misc/terminfo/c/cx
 share/misc/terminfo/c/cx100
 share/misc/terminfo/c/cyb110
 share/misc/terminfo/c/cyb83
+share/misc/terminfo/c/cygwin
 share/misc/terminfo/d/d132
 share/misc/terminfo/d/d2
 share/misc/terminfo/d/d2-dg
@@ -592,16 +669,16 @@ share/misc/terminfo/d/d214-dg
 share/misc/terminfo/d/d215
 share/misc/terminfo/d/d215-7b
 share/misc/terminfo/d/d215-dg
-share/misc/terminfo/d/d216-dg
-share/misc/terminfo/d/d216-unix
-share/misc/terminfo/d/d216-unix-25
 share/misc/terminfo/d/d216+
 share/misc/terminfo/d/d216+25
 share/misc/terminfo/d/d216+dg
-share/misc/terminfo/d/d216e-dg
-share/misc/terminfo/d/d216e-unix
+share/misc/terminfo/d/d216-dg
+share/misc/terminfo/d/d216-unix
+share/misc/terminfo/d/d216-unix-25
 share/misc/terminfo/d/d216e+
 share/misc/terminfo/d/d216e+dg
+share/misc/terminfo/d/d216e-dg
+share/misc/terminfo/d/d216e-unix
 share/misc/terminfo/d/d217-dg
 share/misc/terminfo/d/d217-unix
 share/misc/terminfo/d/d217-unix-25
@@ -624,18 +701,18 @@ share/misc/terminfo/d/d411-7b
 share/misc/terminfo/d/d411-7b-w
 share/misc/terminfo/d/d411-dg
 share/misc/terminfo/d/d411-w
-share/misc/terminfo/d/d412-dg
-share/misc/terminfo/d/d412-unix
-share/misc/terminfo/d/d412-unix-w
-share/misc/terminfo/d/d412-unix-25
-share/misc/terminfo/d/d412-unix-s
-share/misc/terminfo/d/d412-unix-sr
 share/misc/terminfo/d/d412+
 share/misc/terminfo/d/d412+25
 share/misc/terminfo/d/d412+dg
 share/misc/terminfo/d/d412+s
 share/misc/terminfo/d/d412+sr
 share/misc/terminfo/d/d412+w
+share/misc/terminfo/d/d412-dg
+share/misc/terminfo/d/d412-unix
+share/misc/terminfo/d/d412-unix-25
+share/misc/terminfo/d/d412-unix-s
+share/misc/terminfo/d/d412-unix-sr
+share/misc/terminfo/d/d412-unix-w
 share/misc/terminfo/d/d413-dg
 share/misc/terminfo/d/d413-unix
 share/misc/terminfo/d/d413-unix-25
@@ -650,7 +727,6 @@ share/misc/terminfo/d/d414-unix-w
 share/misc/terminfo/d/d430-dg
 share/misc/terminfo/d/d430-dg-ccc
 share/misc/terminfo/d/d430-unix
-share/misc/terminfo/d/d430-unix-w
 share/misc/terminfo/d/d430-unix-25
 share/misc/terminfo/d/d430-unix-25-ccc
 share/misc/terminfo/d/d430-unix-ccc
@@ -658,6 +734,7 @@ share/misc/terminfo/d/d430-unix-s
 share/misc/terminfo/d/d430-unix-s-ccc
 share/misc/terminfo/d/d430-unix-sr
 share/misc/terminfo/d/d430-unix-sr-ccc
+share/misc/terminfo/d/d430-unix-w
 share/misc/terminfo/d/d430-unix-w-ccc
 share/misc/terminfo/d/d430c-dg
 share/misc/terminfo/d/d430c-dg-ccc
@@ -683,18 +760,18 @@ share/misc/terminfo/d/d461-7b
 share/misc/terminfo/d/d461-7b-w
 share/misc/terminfo/d/d461-dg
 share/misc/terminfo/d/d461-w
-share/misc/terminfo/d/d462-dg
-share/misc/terminfo/d/d462-unix
-share/misc/terminfo/d/d462-unix-25
-share/misc/terminfo/d/d462-unix-s
-share/misc/terminfo/d/d462-unix-sr
-share/misc/terminfo/d/d462-unix-w
 share/misc/terminfo/d/d462+
 share/misc/terminfo/d/d462+25
 share/misc/terminfo/d/d462+dg
 share/misc/terminfo/d/d462+s
 share/misc/terminfo/d/d462+sr
 share/misc/terminfo/d/d462+w
+share/misc/terminfo/d/d462-dg
+share/misc/terminfo/d/d462-unix
+share/misc/terminfo/d/d462-unix-25
+share/misc/terminfo/d/d462-unix-s
+share/misc/terminfo/d/d462-unix-sr
+share/misc/terminfo/d/d462-unix-w
 share/misc/terminfo/d/d462e-dg
 share/misc/terminfo/d/d463-dg
 share/misc/terminfo/d/d463-unix
@@ -743,12 +820,12 @@ share/misc/terminfo/d/dec-vt400
 share/misc/terminfo/d/decpro
 share/misc/terminfo/d/decwriter
 share/misc/terminfo/d/delta
-share/misc/terminfo/d/dg-ansi
-share/misc/terminfo/d/dg-generic
 share/misc/terminfo/d/dg+ccc
 share/misc/terminfo/d/dg+color
 share/misc/terminfo/d/dg+color8
 share/misc/terminfo/d/dg+fixed
+share/misc/terminfo/d/dg-ansi
+share/misc/terminfo/d/dg-generic
 share/misc/terminfo/d/dg100
 share/misc/terminfo/d/dg200
 share/misc/terminfo/d/dg210
@@ -785,6 +862,11 @@ share/misc/terminfo/d/dialogue80
 share/misc/terminfo/d/digilog
 share/misc/terminfo/d/dku7003
 share/misc/terminfo/d/dku7003-dumb
+share/misc/terminfo/d/dku7102
+share/misc/terminfo/d/dku7102-old
+share/misc/terminfo/d/dku7102-sna
+share/misc/terminfo/d/dku7103-sna
+share/misc/terminfo/d/dku7202
 share/misc/terminfo/d/dm1520
 share/misc/terminfo/d/dm1521
 share/misc/terminfo/d/dm2500
@@ -876,6 +958,7 @@ share/misc/terminfo/g/gator-52t
 share/misc/terminfo/g/gator-t
 share/misc/terminfo/g/gigi
 share/misc/terminfo/g/glasstty
+share/misc/terminfo/g/gnome
 share/misc/terminfo/g/go-225
 share/misc/terminfo/g/go140
 share/misc/terminfo/g/go140w
@@ -946,6 +1029,7 @@ share/misc/terminfo/h/heathkit-a
 share/misc/terminfo/h/hft
 share/misc/terminfo/h/hft-c
 share/misc/terminfo/h/hft-c-old
+share/misc/terminfo/h/hft-old
 share/misc/terminfo/h/hirez100
 share/misc/terminfo/h/hirez100-w
 share/misc/terminfo/h/hmod1
@@ -1055,6 +1139,7 @@ share/misc/terminfo/i/i3101
 share/misc/terminfo/i/i3164
 share/misc/terminfo/i/i400
 share/misc/terminfo/i/ibcs2
+share/misc/terminfo/i/ibm+color
 share/misc/terminfo/i/ibm-apl
 share/misc/terminfo/i/ibm-pc
 share/misc/terminfo/i/ibm-system1
@@ -1123,6 +1208,7 @@ share/misc/terminfo/i/iq120
 share/misc/terminfo/i/iq140
 share/misc/terminfo/i/iris-ansi
 share/misc/terminfo/i/iris-ansi-ap
+share/misc/terminfo/i/iris-ansi-net
 share/misc/terminfo/i/iris-color
 share/misc/terminfo/i/iris40
 share/misc/terminfo/j/jaixterm
@@ -1144,14 +1230,20 @@ share/misc/terminfo/k/klone+sgr-dumb
 share/misc/terminfo/k/kt7
 share/misc/terminfo/k/kt7ix
 share/misc/terminfo/k/kterm
+share/misc/terminfo/k/kterm-co
+share/misc/terminfo/k/kterm-color
 share/misc/terminfo/k/ktm
+share/misc/terminfo/k/kvt
 share/misc/terminfo/l/la120
 share/misc/terminfo/l/layer
+share/misc/terminfo/l/lft
+share/misc/terminfo/l/lft-pc850
 share/misc/terminfo/l/linux
 share/misc/terminfo/l/linux-c
 share/misc/terminfo/l/linux-c-nc
 share/misc/terminfo/l/linux-koi8
 share/misc/terminfo/l/linux-koi8r
+share/misc/terminfo/l/linux-lat
 share/misc/terminfo/l/linux-m
 share/misc/terminfo/l/linux-nic
 share/misc/terminfo/l/lisa
@@ -1168,6 +1260,7 @@ share/misc/terminfo/m/mac
 share/misc/terminfo/m/mac-w
 share/misc/terminfo/m/mach
 share/misc/terminfo/m/mach-bold
+share/misc/terminfo/m/mach-color
 share/misc/terminfo/m/macintosh
 share/misc/terminfo/m/macterminal-w
 share/misc/terminfo/m/mai
@@ -1180,6 +1273,7 @@ share/misc/terminfo/m/memhp
 share/misc/terminfo/m/mgr
 share/misc/terminfo/m/mgr-linux
 share/misc/terminfo/m/mgr-sun
+share/misc/terminfo/m/mgterm
 share/misc/terminfo/m/microb
 share/misc/terminfo/m/microbee
 share/misc/terminfo/m/microterm
@@ -1216,6 +1310,7 @@ share/misc/terminfo/m/modgraph
 share/misc/terminfo/m/modgraph2
 share/misc/terminfo/m/modgraph48
 share/misc/terminfo/m/mono-emx
+share/misc/terminfo/m/ms-vt100
 share/misc/terminfo/m/msk227
 share/misc/terminfo/m/msk22714
 share/misc/terminfo/m/msk227am
@@ -1354,6 +1449,7 @@ share/misc/terminfo/o/oabm85h
 share/misc/terminfo/o/oblit
 share/misc/terminfo/o/oc100
 share/misc/terminfo/o/oconcept
+share/misc/terminfo/o/ofcons
 share/misc/terminfo/o/ojerq
 share/misc/terminfo/o/oldibmpc3
 share/misc/terminfo/o/oldpc3
@@ -1421,6 +1517,7 @@ share/misc/terminfo/p/pcix
 share/misc/terminfo/p/pckermit
 share/misc/terminfo/p/pckermit12
 share/misc/terminfo/p/pckermit120
+share/misc/terminfo/p/pcmw
 share/misc/terminfo/p/pcplot
 share/misc/terminfo/p/pcvt25
 share/misc/terminfo/p/pcvt25w
@@ -1446,6 +1543,8 @@ share/misc/terminfo/p/pe6312
 share/misc/terminfo/p/pe7000c
 share/misc/terminfo/p/pe7000m
 share/misc/terminfo/p/pilot
+share/misc/terminfo/p/pmcons
+share/misc/terminfo/p/pmconsole
 share/misc/terminfo/p/printer
 share/misc/terminfo/p/prism12
 share/misc/terminfo/p/prism12-m
@@ -1486,11 +1585,21 @@ share/misc/terminfo/p/pt505
 share/misc/terminfo/p/pt505-22
 share/misc/terminfo/p/pt505-24
 share/misc/terminfo/p/pty
+share/misc/terminfo/q/qansi
+share/misc/terminfo/q/qansi-g
+share/misc/terminfo/q/qansi-m
+share/misc/terminfo/q/qansi-t
+share/misc/terminfo/q/qansi-w
 share/misc/terminfo/q/qdcons
 share/misc/terminfo/q/qdss
 share/misc/terminfo/q/qnx
 share/misc/terminfo/q/qnx4
+share/misc/terminfo/q/qnxm
+share/misc/terminfo/q/qnxt
 share/misc/terminfo/q/qnxt2
+share/misc/terminfo/q/qnxt4
+share/misc/terminfo/q/qnxtmono
+share/misc/terminfo/q/qnxw
 share/misc/terminfo/q/qume
 share/misc/terminfo/q/qume5
 share/misc/terminfo/q/qvt101
@@ -1521,6 +1630,8 @@ share/misc/terminfo/r/rbcomm
 share/misc/terminfo/r/rbcomm-nam
 share/misc/terminfo/r/rbcomm-w
 share/misc/terminfo/r/rca
+share/misc/terminfo/r/rcons
+share/misc/terminfo/r/rcons-color
 share/misc/terminfo/r/rebus3180
 share/misc/terminfo/r/regent
 share/misc/terminfo/r/regent100
@@ -1565,6 +1676,7 @@ share/misc/terminfo/s/sun-24
 share/misc/terminfo/s/sun-34
 share/misc/terminfo/s/sun-48
 share/misc/terminfo/s/sun-c
+share/misc/terminfo/s/sun-cgsix
 share/misc/terminfo/s/sun-cmd
 share/misc/terminfo/s/sun-e
 share/misc/terminfo/s/sun-e-s
@@ -1747,6 +1859,10 @@ share/misc/terminfo/t/tvi970
 share/misc/terminfo/t/tvi970-2p
 share/misc/terminfo/t/tvi970-vb
 share/misc/terminfo/t/tvipt
+share/misc/terminfo/t/tws-generic
+share/misc/terminfo/t/tws2102-sna
+share/misc/terminfo/t/tws2103
+share/misc/terminfo/t/tws2103-sna
 share/misc/terminfo/terminfo.src
 share/misc/terminfo/u/ultima2
 share/misc/terminfo/u/ultimaII
@@ -1759,6 +1875,7 @@ share/misc/terminfo/v/v200-nam
 share/misc/terminfo/v/v320n
 share/misc/terminfo/v/v3220
 share/misc/terminfo/v/v5410
+share/misc/terminfo/v/vanilla
 share/misc/terminfo/v/vapple
 share/misc/terminfo/v/vc103
 share/misc/terminfo/v/vc203
@@ -1787,6 +1904,13 @@ share/misc/terminfo/v/viewpoint
 share/misc/terminfo/v/viewpoint3a+
 share/misc/terminfo/v/viewpoint60
 share/misc/terminfo/v/viewpoint90
+share/misc/terminfo/v/vip
+share/misc/terminfo/v/vip-H
+share/misc/terminfo/v/vip-Hw
+share/misc/terminfo/v/vip-w
+share/misc/terminfo/v/vip7800-H
+share/misc/terminfo/v/vip7800-Hw
+share/misc/terminfo/v/vip7800-w
 share/misc/terminfo/v/visa50
 share/misc/terminfo/v/visual603
 share/misc/terminfo/v/vitty
@@ -1825,12 +1949,17 @@ share/misc/terminfo/v/vt125
 share/misc/terminfo/v/vt131
 share/misc/terminfo/v/vt132
 share/misc/terminfo/v/vt200
+share/misc/terminfo/v/vt200-8
+share/misc/terminfo/v/vt200-8bit
 share/misc/terminfo/v/vt200-js
+share/misc/terminfo/v/vt200-old
 share/misc/terminfo/v/vt200-w
 share/misc/terminfo/v/vt220
 share/misc/terminfo/v/vt220-8
+share/misc/terminfo/v/vt220-8bit
 share/misc/terminfo/v/vt220-js
 share/misc/terminfo/v/vt220-nam
+share/misc/terminfo/v/vt220-old
 share/misc/terminfo/v/vt220-w
 share/misc/terminfo/v/vt220d
 share/misc/terminfo/v/vt300
@@ -1865,6 +1994,8 @@ share/misc/terminfo/v/vt61.5
 share/misc/terminfo/w/wren
 share/misc/terminfo/w/wrenw
 share/misc/terminfo/w/wsiris
+share/misc/terminfo/w/wsvt25
+share/misc/terminfo/w/wsvt25m
 share/misc/terminfo/w/wy-75ap
 share/misc/terminfo/w/wy-99fgt
 share/misc/terminfo/w/wy-99fgta
@@ -1978,6 +2109,7 @@ share/misc/terminfo/w/wy75-w
 share/misc/terminfo/w/wy75-wvb
 share/misc/terminfo/w/wy75ap
 share/misc/terminfo/w/wy85
+share/misc/terminfo/w/wy85-8bit
 share/misc/terminfo/w/wy85-vb
 share/misc/terminfo/w/wy85-w
 share/misc/terminfo/w/wy85-wvb
@@ -2086,6 +2218,7 @@ share/misc/terminfo/w/wyse75-w
 share/misc/terminfo/w/wyse75-wvb
 share/misc/terminfo/w/wyse75ap
 share/misc/terminfo/w/wyse85
+share/misc/terminfo/w/wyse85-8bit
 share/misc/terminfo/w/wyse85-vb
 share/misc/terminfo/w/wyse85-w
 share/misc/terminfo/w/wyse85-wvb
@@ -2103,6 +2236,7 @@ share/misc/terminfo/x/x1750
 share/misc/terminfo/x/x68k
 share/misc/terminfo/x/x68k-ite
 share/misc/terminfo/x/x820
+share/misc/terminfo/x/xdku
 share/misc/terminfo/x/xenix
 share/misc/terminfo/x/xerox
 share/misc/terminfo/x/xerox-lm
@@ -2111,26 +2245,34 @@ share/misc/terminfo/x/xerox820
 share/misc/terminfo/x/xl83
 share/misc/terminfo/x/xtalk
 share/misc/terminfo/x/xterm
+share/misc/terminfo/x/xterm+sl
+share/misc/terminfo/x/xterm+sl-twm
 share/misc/terminfo/x/xterm-16color
 share/misc/terminfo/x/xterm-24
+share/misc/terminfo/x/xterm-256color
+share/misc/terminfo/x/xterm-88color
 share/misc/terminfo/x/xterm-8bit
+share/misc/terminfo/x/xterm-basic
 share/misc/terminfo/x/xterm-bold
 share/misc/terminfo/x/xterm-color
+share/misc/terminfo/x/xterm-hp
 share/misc/terminfo/x/xterm-new
 share/misc/terminfo/x/xterm-nic
+share/misc/terminfo/x/xterm-noapp
 share/misc/terminfo/x/xterm-old
 share/misc/terminfo/x/xterm-pcolor
 share/misc/terminfo/x/xterm-r5
 share/misc/terminfo/x/xterm-r6
+share/misc/terminfo/x/xterm-sco
 share/misc/terminfo/x/xterm-sun
+share/misc/terminfo/x/xterm-vt220
+share/misc/terminfo/x/xterm-vt52
 share/misc/terminfo/x/xterm-xf86-v32
 share/misc/terminfo/x/xterm-xf86-v33
 share/misc/terminfo/x/xterm-xf86-v333
 share/misc/terminfo/x/xterm-xf86-v40
 share/misc/terminfo/x/xterm-xfree86
 share/misc/terminfo/x/xterm-xi
-share/misc/terminfo/x/xterm+sl
-share/misc/terminfo/x/xterm+sl-twm
 share/misc/terminfo/x/xterm1
 share/misc/terminfo/x/xtermc
 share/misc/terminfo/x/xtermm
@@ -2169,46 +2311,50 @@ share/misc/terminfo/z/zt-1
 share/misc/terminfo/z/ztx
 share/misc/terminfo/z/ztx-1-a
 share/misc/terminfo/z/ztx11
-@dirrm include/ncurses
-@dirrm share/doc/ncurses
+@dirrm share/misc/terminfo/z
+@dirrm share/misc/terminfo/x
+@dirrm share/misc/terminfo/w
+@dirrm share/misc/terminfo/v
+@dirrm share/misc/terminfo/u
+@dirrm share/misc/terminfo/t
+@dirrm share/misc/terminfo/s
+@dirrm share/misc/terminfo/r
+@dirrm share/misc/terminfo/q
+@dirrm share/misc/terminfo/p
+@dirrm share/misc/terminfo/o
+@dirrm share/misc/terminfo/n
+@dirrm share/misc/terminfo/m
+@dirrm share/misc/terminfo/l
+@dirrm share/misc/terminfo/k
+@dirrm share/misc/terminfo/j
+@dirrm share/misc/terminfo/i
+@dirrm share/misc/terminfo/h
+@dirrm share/misc/terminfo/g
+@dirrm share/misc/terminfo/f
+@dirrm share/misc/terminfo/e
+@dirrm share/misc/terminfo/d
+@dirrm share/misc/terminfo/c
+@dirrm share/misc/terminfo/b
+@dirrm share/misc/terminfo/a
+@dirrm share/misc/terminfo/X
+@dirrm share/misc/terminfo/Q
+@dirrm share/misc/terminfo/P
+@dirrm share/misc/terminfo/N
+@dirrm share/misc/terminfo/M
+@dirrm share/misc/terminfo/L
+@dirrm share/misc/terminfo/E
+@dirrm share/misc/terminfo/9
+@dirrm share/misc/terminfo/8
+@dirrm share/misc/terminfo/7
+@dirrm share/misc/terminfo/6
+@dirrm share/misc/terminfo/5
+@dirrm share/misc/terminfo/4
+@dirrm share/misc/terminfo/3
+@dirrm share/misc/terminfo/2
+@dirrm share/misc/terminfo/1
+@dirrm share/misc/terminfo
+@dirrm share/misc/tabset
 @dirrm share/examples/ncurses/c++
 @dirrm share/examples/ncurses
-@dirrm share/misc/tabset
-@dirrm share/misc/terminfo/1
-@dirrm share/misc/terminfo/2
-@dirrm share/misc/terminfo/3
-@dirrm share/misc/terminfo/4
-@dirrm share/misc/terminfo/5
-@dirrm share/misc/terminfo/6
-@dirrm share/misc/terminfo/7
-@dirrm share/misc/terminfo/8
-@dirrm share/misc/terminfo/9
-@dirrm share/misc/terminfo/N
-@dirrm share/misc/terminfo/P
-@dirrm share/misc/terminfo/X
-@dirrm share/misc/terminfo/a
-@dirrm share/misc/terminfo/b
-@dirrm share/misc/terminfo/c
-@dirrm share/misc/terminfo/d
-@dirrm share/misc/terminfo/e
-@dirrm share/misc/terminfo/f
-@dirrm share/misc/terminfo/g
-@dirrm share/misc/terminfo/h
-@dirrm share/misc/terminfo/i
-@dirrm share/misc/terminfo/j
-@dirrm share/misc/terminfo/k
-@dirrm share/misc/terminfo/l
-@dirrm share/misc/terminfo/m
-@dirrm share/misc/terminfo/n
-@dirrm share/misc/terminfo/o
-@dirrm share/misc/terminfo/p
-@dirrm share/misc/terminfo/q
-@dirrm share/misc/terminfo/r
-@dirrm share/misc/terminfo/s
-@dirrm share/misc/terminfo/t
-@dirrm share/misc/terminfo/u
-@dirrm share/misc/terminfo/v
-@dirrm share/misc/terminfo/w
-@dirrm share/misc/terminfo/x
-@dirrm share/misc/terminfo/z
-@dirrm share/misc/terminfo
+@dirrm share/doc/ncurses
+@dirrm include/ncurses
