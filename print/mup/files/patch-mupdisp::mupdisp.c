@@ -1,5 +1,5 @@
---- mupdisp/mupdisp.c.orig	Wed Nov 27 20:49:30 2002
-+++ mupdisp/mupdisp.c	Wed Nov 27 23:03:09 2002
+--- mupdisp/mupdisp.c.orig	Tue Jun 22 09:18:32 2004
++++ mupdisp/mupdisp.c	Wed Mar  2 16:19:53 2005
 @@ -45,6 +45,10 @@
   *	chmod 4755 mupdisp
   */
@@ -20,3 +20,12 @@
  			signal(n, generalcleanup);
  		}
  	}
+@@ -314,7 +318,7 @@
+ 	int fd;
+ 
+ 
+-#ifdef linux
++#if defined(linux) || defined(__FreeBSD__)
+ 	if ((fd = mkstemp(tmpfname)) < 0) {
+ 		fprintf(stderr, "can't create temp file\n");
+ 		generalcleanup(1);
