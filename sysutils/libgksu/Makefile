@@ -7,6 +7,7 @@
 
 PORTNAME=	libgksu
 PORTVERSION=	1.2.5a
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://people.debian.org/~kov/gksu/libgksu1.2/
 DISTNAME=	${PORTNAME}1.2-${PORTVERSION}
@@ -17,7 +18,7 @@ COMMENT=	Library providing su and sudo functionality
 RUN_DEPENDS=	xauth:${X_CLIENTS_PORT} \
 		sudo:${PORTSDIR}/security/sudo
 
-USE_GNOME=	gnometarget pkgconfig
+USE_GNOME=	pkgconfig glib20
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-gtk-doc=no
 USE_LIBTOOL_VER=15
