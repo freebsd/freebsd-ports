@@ -1,0 +1,12 @@
+--- configure.orig	Sun Nov 24 16:32:01 2002
++++ configure	Sun Nov 24 16:32:36 2002
+@@ -1273,8 +1273,7 @@
+      ;;
+   *)
+      echo "$ac_t""$withval" 1>&6
+-     if test -f $withval/include/event.h -a -f
+-     $withval/lib/libevent.a; then
++     if test -f $withval/include/event.h -a -f $withval/lib/libevent.a; then
+         owd=`pwd`
+         if cd $withval; then withval=`pwd`; cd $owd; fi
+         EVENTINC="-I$withval/include"
