@@ -25,6 +25,7 @@ WRKSRC=		${WRKDIR}/graphviz-${GV_VERSION}/agraph
 GV_VERSION?=	1.7.7
 
 USE_PYTHON=	yes
+USE_PYDISTUTILS=	yes
 SWIG_CMD=	${LOCALBASE}/bin/swig
 PLIST_SUB=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S,^${LOCALBASE}/,,g}
 
@@ -33,13 +34,7 @@ post-patch:
 	@${MKDIR} ${WRKSRC}/graphviz
 	@${CP} ${DISTDIR}/graphviz/__init__.py ${WRKSRC}/graphviz
 
-do-build:
-	@cd ${WRKSRC} && ( \
-	  ${SWIG_CMD} -python gv.i; \
-	  ${PYTHON_CMD} setup.py build; \
-	)
-
-do-install:
-	@cd ${WRKSRC} && ${PYTHON_CMD} setup.py install
+pre-build:
+	@cd ${WRKSRC} && ${SWIG_CMD} -python gv.i
 
 .include <bsd.port.mk>
