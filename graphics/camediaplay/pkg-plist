@@ -1,0 +1,5 @@
+bin/camediaplay
+share/doc/camediaplay/README.english
+share/doc/camediaplay/README.japanese
+share/doc/camediaplay/PROTOCOL
+@dirrm share/doc/camediaplay
