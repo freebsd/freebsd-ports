@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	destroy
-PORTVERSION=	20040310
+PORTVERSION=	20040415
 CATEGORIES=	security
 MASTER_SITES=	http://www.freebsdhackers.net/destroy/ \
 		http://www.impurity.org/mirrors/destroy/
