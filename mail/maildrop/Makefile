@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	maildrop
-PORTVERSION=	1.3.8
+PORTVERSION=	1.5.0
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	courier
@@ -41,13 +41,14 @@ CONFIGURE_ARGS+=	--with-default-maildrop=${MAILDROPDEFAULT}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${CPPFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib"
 GNU_CONFIGURE=	yes
+USE_BZIP2=	yes
 
 .if defined(NOPORTDOCS)
 # Just install the binary and man pages, no extra documentation
 INSTALL_TARGET=	install-maildrop install-man
 .endif
 
-MAN1=		dotlock.1 mailbot.1 maildirmake.1 maildrop.1 makemime.1 \
+MAN1=		lockmail.1 mailbot.1 maildirmake.1 maildrop.1 makemime.1 \
 		reformail.1 reformime.1
 MAN5=		maildropex.5 maildropfilter.5 maildropgdbm.5
 MAN7=		maildirquota.7

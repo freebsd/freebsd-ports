@@ -1,6 +1,6 @@
---- maildrop/funcs.C.orig	Wed Feb 21 16:56:38 2001
-+++ maildrop/funcs.C	Wed Feb 21 16:57:06 2001
-@@ -110,13 +110,7 @@
+--- maildrop/funcs.C.orig	Tue Oct 29 15:43:32 2002
++++ maildrop/funcs.C	Tue Oct 29 15:43:51 2002
+@@ -110,14 +110,7 @@
  static GETGROUPS_T getprocgroup()
  {
  #if	HAS_GETPGRP
@@ -11,6 +11,7 @@
 -#else
 -	return ( getpgrp( getpid()) );
 -#endif
- #else
+-#else
  #if	HAS_GETPGID
  	return ( getpgid( 0 ) );
+ #else

@@ -1,6 +1,6 @@
---- Makefile.in.orig	Tue Nov 27 08:22:26 2001
-+++ Makefile.in	Thu Dec  6 23:26:43 2001
-@@ -27,7 +27,7 @@
+--- Makefile.in.orig	Tue Oct 29 15:42:15 2002
++++ Makefile.in	Tue Oct 29 15:42:52 2002
+@@ -29,7 +29,7 @@
  bindir = @bindir@
  sbindir = @sbindir@
  libexecdir = @libexecdir@
@@ -9,12 +9,12 @@
  sysconfdir = @sysconfdir@
  sharedstatedir = @sharedstatedir@
  localstatedir = @localstatedir@
-@@ -87,7 +87,7 @@
- EXTRA_DIST = UPGRADE.html UPGRADE.txt INSTALL.txt README README.postfix maildroptips.txt maildropldap.config maildropmysql.config
+@@ -105,7 +105,7 @@
+ EXTRA_DIST = README.html INSTALL.html UPGRADE.html README.postfix maildroptips.txt maildropldap.config maildropmysql.config automake.fix COPYING.GPL
  
  scriptdir = $(pkgdatadir)/scripts
 -htmldir = $(pkgdatadir)/html
 +htmldir = $(pkgdatadir)
- @INSTALL_USERDB_TRUE@USERDBHTML = @INSTALL_USERDB_TRUE@userdb.html makeuserdb.html userdbpw.html
+ 
+ @INSTALL_USERDB_TRUE@USERDBHTML = userdb.html makeuserdb.html userdbpw.html
  @INSTALL_USERDB_FALSE@USERDBHTML = 
- @INSTALL_USERDB_TRUE@USERDBMAN = @INSTALL_USERDB_TRUE@userdb.8 makeuserdb.8 userdbpw.8
