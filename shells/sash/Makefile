@@ -31,6 +31,5 @@ post-install:
 	@(${GREP} -v ${PREFIX}/bin/sash /etc/shells.bak; \
 		${ECHO} ${PREFIX}/bin/sash) > /etc/shells
 	@${RM} /etc/shells.bak
-	strip ${PREFIX}/bin/sash
 
 .include <bsd.port.mk>
