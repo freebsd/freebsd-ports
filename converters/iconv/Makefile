@@ -9,7 +9,7 @@ PORTNAME=	iconv
 PORTVERSION=	2.0
 PORTREVISION=	3
 CATEGORIES=	converters
-MASTER_SITES=	http://www.dante.net/staff/konstantin/FreeBSD/iconv/
+MASTER_SITES=	http://archive.dante.net/staff/konstantin/FreeBSD/iconv/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Charset conversion library and utilities
