@@ -1,5 +1,5 @@
---- configure.orig	Sat Oct 25 00:01:15 2003
-+++ configure	Sat Oct 25 00:14:56 2003
+--- configure.orig	Tue Nov  4 14:55:15 2003
++++ configure	Tue Nov  4 15:10:15 2003
 @@ -1580,10 +1580,10 @@
  
  # The aliases save the names the user supplied, while $host etc.
@@ -28,6 +28,36 @@
  LT_VERSION_INFO='-version-info ${LT_CURRENT}:${LT_REVISION}:${LT_AGE}'
  
  
+@@ -20821,7 +20821,7 @@
+ 
+ 
+   # this should go away soon
+-  need_gnome_support=yes
++  need_gnome_support=no
+ 
+ 
+ for ac_func in getopt_long
+@@ -30052,13 +30052,13 @@
+ 
+ fi;
+ 
+-if test "x$gnome_found" = xyes ; then
+-  LIBSUPPORT="$GNOME_LIBDIR -lgnomesupport"
+-  SUPPORTINCS="$GNOME_INCLUDEDIR"
+-else
+-  LIBSUPPORT='$(top_builddir)/support/libgnomesupport-2.0.la'
+-  SUPPORTINCS='-DNEED_GNOMESUPPORT_H -I$(top_builddir)/support -I$(top_srcdir)/support'
+-fi
++#if test "x$gnome_found" = xyes ; then
++#  LIBSUPPORT="$GNOME_LIBDIR -lgnomesupport"
++#  SUPPORTINCS="$GNOME_INCLUDEDIR"
++#else
++#  LIBSUPPORT='$(top_builddir)/support/libgnomesupport-2.0.la'
++#  SUPPORTINCS='-DNEED_GNOMESUPPORT_H -I$(top_builddir)/support -I$(top_srcdir)/support'
++#fi
+ 
+ case "$GNOME_LIBS" in
+ 	'*-lgnomesupport*' )
 @@ -30160,7 +30160,7 @@
  
  
