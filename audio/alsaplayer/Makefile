@@ -183,5 +183,5 @@ post-patch:
 post-configure:
 	@${REINPLACE_CMD} -e "s|CPPFLAGS = -I/usr/local/include|CPPFLAGS = |g" \
 		${WRKSRC}/app/Makefile
-       
+
 .include <bsd.port.post.mk>
