@@ -3,7 +3,7 @@
 # Date created:		12 May 1995
 # Whom:			me
 #
-# $Id: Makefile,v 1.18 1995/05/30 09:54:14 asami Exp $
+# $Id: Makefile,v 1.19 1995/08/08 10:35:06 asami Exp $
 #
 
 DISTNAME=	fvwm-1.24r
@@ -20,6 +20,7 @@ ALL_TARGET=	Makefiles all
 
 post-install:
 	@mkdir -p ${PREFIX}/include/X11/pixmaps
-	cp ${WRKSRC}/fvwm_icons/*.xpm ${PREFIX}/include/X11/pixmaps
+	${INSTALL} -c -o ${BINOWN} -g ${BINGRP} -m 444 \
+		${WRKSRC}/fvwm_icons/*.xpm ${PREFIX}/include/X11/pixmaps
 
 .include <bsd.port.mk>
