@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.cs.ucla.edu/pub/ispell-3.1/ \
 		ftp://ftp.kiarchive.ru/pub/unix/text/ispell/
 DISTNAME=	ispell-3.1
 
-MAINTAINER=	jmz@FreeBSD.org
+MAINTAINER?=	jmz@FreeBSD.org
 PATCH_SITES=	ftp://ftp.kiarchive.ru/pub/unix/text/ispell/
 ISPELL_FILES=	ispell-3.1.20.tar.gz
 HTML_PATCH=	ispell-html-mode.patch
