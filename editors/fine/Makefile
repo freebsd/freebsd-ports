@@ -18,7 +18,11 @@ USE_GMAKE=	yes
 USE_QT=		yes
 WRKSRC=		${WRKDIR}/fine
 
-MAKE_ENV=	CXX="${CXX}" CC="${CC}"
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 400004
+BROKEN=		'This program needs NEWGCC but links with QT, which is built with an old version.'
+.endif
 
 do-install:
 	@${MKDIR} ${PREFIX}/share/fine
@@ -28,4 +32,4 @@ do-install:
 .endfor
 	${INSTALL_PROGRAM} ${WRKSRC}/fine ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
