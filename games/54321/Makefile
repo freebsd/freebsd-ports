@@ -22,10 +22,14 @@ USE_SDL=	image sdl
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
 ALL_TARGET=	all size
+USE_REINPLACE=	yes
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/archs/FreeBSD
 	@${CP} ${FILESDIR}/variables.GNU ${WRKSRC}/archs/FreeBSD
+
+post-patch:
+	${REINPLACE_CMD} -e "s,ARCH,OPSYS," ${WRKSRC}/GNUmakefile
 
 post-build:
 	@${SED} -e "s;@PREFIX@;${PREFIX};g" \
