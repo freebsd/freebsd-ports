@@ -220,6 +220,7 @@
     SUBDIR += jtans
     SUBDIR += jumpnbump
     SUBDIR += jzip
+    SUBDIR += kanatest
     SUBDIR += kbilliards
     SUBDIR += kcheckers
     SUBDIR += kdegames3
