@@ -7,13 +7,10 @@
 
 PORTNAME=	ghostscript
 PORTVERSION=	${GS_VERSION}
-PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	print
-MASTER_SITES=	\
-		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/AFPL/fonts/:gs_fonts \
-		${MASTER_SITE_SOURCEFORGE:S/$/:gs_srcs,gs_fonts,bjc250/} \
-		http://hp.sourceforge.net/:hp2200 \
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:gs_srcs,gs_fonts,bjc250/} \
+		http://www.gelhaus.net/hp880c/1.4beta/:hp8xx \
 		http://www.harsch.net/Download/:dj970 \
 		http://plaza26.mbn.or.jp/~higamasa/gdevmd2k/:md2k \
 		${MASTER_SITE_PORTS_JP:S/$/:ports_jp,ports_jp_gs/} \
@@ -24,6 +21,7 @@ MASTER_SITES=	\
 		http://www.linuxprinting.org/download/printing/samsung-gdi/:gdi \
 		http://www.linuxprinting.org/download/printing/:lxm3200 \
 		http://homepage.powerup.com.au/~pbwest/lexmark/:lx5000 \
+		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/fonts/:gs_fonts \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/AFPL/gs${GS_VERSION:S/.//}/:gs_srcs
 MASTER_SITE_SUBDIR=	ghostscript/:gs_srcs,gs_fonts,ports_jp_gs \
 			bjc250gs/:bjc250 \
@@ -32,7 +30,7 @@ PKGNAMESUFFIX=	-afpl
 DISTFILES=	${GS_SRCS}:gs_srcs \
 		${GS_FONTS_STD}:gs_fonts \
 		${GS_FONTS_OTHER}:gs_fonts \
-		${HP2200_SRCS}:hp2200 \
+		${HP8XX_SRCS}:hp8xx \
 		${DJ970_SRCS}:dj970 \
 		${MD2K_SRCS}:md2k \
 		${ALPS_SRCS}:ports_jp_gs \
@@ -81,7 +79,7 @@ MLINKS=		gslp.1 gsbj.1 \
 		ps2pdf.1 ps2pdf13.1 \
 		ps2ps.1 eps2eps.1
 
-XCFLAGS=	-DUPD_SIGNAL=0
+XCFLAGS=	-DUPD_SIGNAL=0 -DSTDINT_TYPES_DEFINED=1
 
 .if defined(A4)
 XCFLAGS+=	-DA4
@@ -95,6 +93,11 @@ USE_XLIB=	yes
 
 .if defined(WITH_SVGALIB)
 LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
+.endif
+
+.if defined(WITH_FT_BRIDGE)
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libfreetype.a:${PORTSDIR}/print/freetype2
+MAKE_ENV+=	FT_BRIDGE=1 FT_ROOT="${WRKSRC}/freetype" FT_LIB_EXT=".a"
 .endif
 
 .if defined(WITH_SHLIB)
@@ -120,10 +123,10 @@ GS_FONTS_OTHER=	ghostscript-fonts-other-6.0.tar.gz
 
 # Additional Drivers:
 
-# HP2200 - additional driver for HP DeskJet 8xx and Business Inkjet 2200
-# http://hp.sourceforge.net/gs-hp2200.php
-HP2200=		hp2200
-HP2200_SRCS=	gs-hp2200.tar.gz
+# HP8XX - additional driver for HP DeskJet 812C/815C/832C/880C/882C/895C
+# http://www.gelhaus.net/hp880c/
+HP8XX=		cdj880
+HP8XX_SRCS=	gdevcd8.tar.gz
 
 # DJ970 - additional driver for HP DeskJet 970, supports duplex printing
 # http://www.harsch.net/Ghostscript/ghostscript.html
@@ -177,9 +180,9 @@ EPAG_NAME=	${EPAG}-${EPAG_VERS}
 EPAG_SRCS=	${EPAG_NAME}.tar.gz
 
 # EPLASER - additional driver for ESC/Page printers (Epson Kowa developed)
-# http://www.epkowa.co.jp/linux/lpd.html
+# http://www.epkowa.co.jp/english/linux_e/index.html
 EPLASER=	eplaser
-EPLASER_VERS=	3.1.1
+EPLASER_VERS=	3.1.3
 EPLASER_NAME=	${EPLASER}-${EPLASER_VERS}
 EPLASER_SRCS=	${EPLASER_NAME}-705.tgz
 
@@ -231,10 +234,9 @@ post-extract:
 # configure.batch, which update unix-gcc.mak to build gs with these
 # new devices !
 #
-# for HP2200 driver
-	${ECHO_MSG} ">>>   extracting ${HP2200_SRCS} ..."
-	${MKDIR} ${WRKSRC}/${HP2200}
-	${TAR} -C ${WRKSRC}/${HP2200} -xzf ${DISTDIR}/${DIST_SUBDIR}/${HP2200_SRCS}
+# for HP8XX driver
+	${ECHO_MSG} ">>>   extracting ${HP8XX_SRCS} ..."
+	${TAR} -C ${WRKSRC}/src -xzf ${DISTDIR}/${DIST_SUBDIR}/${HP8XX_SRCS}
 # for DJ970 driver
 	${ECHO_MSG} ">>>   extracting ${DJ970_SRCS} ..."
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/${DJ970_SRCS} ${WRKSRC}/src
@@ -302,9 +304,9 @@ post-patch:
 # advantage: you see unmodified makefiles after a pure make extract
 pre-configure:
 	${ECHO_MSG} ">>> in pre-configure ..."
-# for HP2200 driver
-	${ECHO_MSG} ">>>   adding ${HP2200} driver to contrib.mak ..."
-	${CAT} ${FILESDIR}/chp2200.contrib.mak \
+# for HP8XX driver
+	${ECHO_MSG} ">>>   adding ${HP8XX} driver to contrib.mak ..."
+	${CAT} ${FILESDIR}/cdj850.contrib.mak \
 		>> ${WRKSRC}/src/contrib.mak
 # for DJ970 driver
 	${ECHO_MSG} ">>>   adding ${DJ970} driver to contrib.mak ..."
@@ -370,11 +372,6 @@ pre-build:
 	${ECHO_MSG} ">>>   creating directories for compilation ..."
 	${MKDIR} ${WRKSRC}/obj
 	${MKDIR} ${WRKSRC}/bin
-# for HP2200 driver
-	${ECHO_MSG} ">>>   creating symlinks for ${HP2200} ..."
-.for i in gdevcd8.c
-	${LN} -sf ${WRKSRC}/${HP2200}/${i} ${WRKSRC}/src
-.endfor
 # for MD2K driver
 	${ECHO_MSG} ">>>   creating symlinks for ${MD2K} ..."
 .for i in gdevmd2k.c
@@ -424,12 +421,20 @@ pre-build:
 	${ECHO_MSG} ">>>   creating symlinks for ${LXM3200} ..."
 .for i in gdevlx32.c
 	${LN} -sf ${WRKSRC}/${LXM3200_NAME}/${i} ${WRKSRC}/src
-.endfor 
+.endfor
 # for LEX7000 driver
 	${ECHO_MSG} ">>>   creating symlinks for ${LEX7000} ..."
 .for i in gdevlx7.c
 	${LN} -sf ${WRKSRC}/${LEX7000}/src/${i} ${WRKSRC}/src
 .endfor
+.if defined(WITH_FT_BRIDGE)
+	${MKDIR} ${WRKSRC}/freetype/include
+	${LN} -sf ${LOCALBASE}/include/freetype2/freetype \
+		${WRKSRC}/freetype/include/freetype
+	${MKDIR} ${WRKSRC}/freetype/objs
+	${LN} -sf ${LOCALBASE}/lib/libfreetype.a \
+		${WRKSRC}/freetype/objs/freetype214MT_D.a
+.endif
 
 pre-install:
 	${ECHO_MSG} ">>> in pre-install ..."

@@ -1,5 +1,5 @@
 --- lips/gdevl4v.c.orig	Thu Nov  2 12:09:18 2000
-+++ lips/gdevl4v.c	Fri Sep 12 10:11:25 2003
++++ lips/gdevl4v.c	Wed Dec 10 19:42:42 2003
 @@ -230,41 +230,66 @@
  };
  
@@ -33,7 +33,7 @@
 +private int
 +lips4v_moveto(gx_device_vector * vdev, floatp x0, floatp y0, floatp x,
 +	       floatp y, gx_path_type_t type);
-+private int
+ private int
 +lips4v_lineto(gx_device_vector * vdev, floatp x0, floatp y0, floatp x,
 +	       floatp y, gx_path_type_t type);
 +private int
@@ -42,7 +42,8 @@
 +		gx_path_type_t type);
 +lips4v_closepath(gx_device_vector * vdev, floatp x, floatp y, floatp x_start,
 +		  floatp y_start, gx_path_type_t type);
-+
+ 
+-lips4v_beginpath(P2(gx_device_vector * vdev, gx_path_type_t type));
 +private int lips4v_endpath(gx_device_vector * vdev, gx_path_type_t type);
 +#else
 +private int lips4v_beginpage(P1(gx_device_vector * vdev));
@@ -56,9 +57,8 @@
 +private int
 +lips4v_setlogop(gx_device_vector * vdev, gs_logical_operation_t lop,
 +		 gs_logical_operation_t diff);
- private int
- 
--lips4v_beginpath(P2(gx_device_vector * vdev, gx_path_type_t type));
++private int
++
 +lips4v_beginpath(gx_device_vector * vdev, gx_path_type_t type);
  private int
 -lips4v_moveto(P6
@@ -120,3 +120,21 @@
  	lputs(s, paper);
      }
      pdev->prev_paper_size = paper_size;
+@@ -1881,7 +1906,7 @@
+ 	}
+ 	color_set_pure(&color, one);
+ 	code = gdev_vector_update_fill_color((gx_device_vector *) pdev,
+-					     &color);
++					     NULL, &color);
+     }
+     if (code < 0)
+ 	return 0;
+@@ -2026,7 +2051,7 @@
+     if (w <= 0 || h <= 0)
+ 	return 0;
+     if (depth > 1 ||
+-	gdev_vector_update_fill_color(vdev, pdcolor) < 0 ||
++	gdev_vector_update_fill_color(vdev, NULL, pdcolor) < 0 ||
+ 	gdev_vector_update_clip_path(vdev, pcpath) < 0 ||
+ 	gdev_vector_update_log_op(vdev, lop) < 0)
+ 	return gx_default_fill_mask(dev, data, data_x, raster, id,

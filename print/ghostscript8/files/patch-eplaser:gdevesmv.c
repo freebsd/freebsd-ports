@@ -1,15 +1,28 @@
---- eplaser/gdevesmv.c.orig	Tue Aug 26 19:45:23 2003
-+++ eplaser/gdevesmv.c	Tue Sep  9 22:08:25 2003
-@@ -34,8 +34,6 @@
+--- eplaser/gdevesmv.c.orig	Tue Oct 28 19:40:09 2003
++++ eplaser/gdevesmv.c	Wed Dec 17 00:50:58 2003
+@@ -34,10 +34,6 @@
  
   */
  
 -#include <stdlib.h>
 -#include <unistd.h>
- #include <string.h>
- 
+-#include <string.h>
+-
  #include "math_.h"
-@@ -407,6 +405,16 @@
+ #include "gx.h"
+ #include "gserrors.h"
+@@ -59,6 +55,10 @@
+ #include "gspath.h"
+ #include "gzpath.h"
+ 
++#include <stdlib.h>
++#include <unistd.h>
++#include <string.h>
++
+ /* ---------------- Device definition ---------------- */
+ 
+ /* Device procedures */
+@@ -428,6 +428,16 @@
  
  
  /* Vector device implementation */
@@ -26,7 +39,7 @@
  private int esmv_beginpage(P1(gx_device_vector * vdev));
  private int esmv_setfillcolor(P2(gx_device_vector * vdev, const gx_drawing_color * pdc));
  private int esmv_setstrokecolor(P2(gx_device_vector * vdev, const gx_drawing_color * pdc));
-@@ -415,10 +423,25 @@
+@@ -436,10 +446,25 @@
  private int esmv_setflat(P2(gx_device_vector * vdev, floatp flatness));
  private int esmv_setlogop(P3(gx_device_vector * vdev, gs_logical_operation_t lop, 
  			       gs_logical_operation_t diff));
@@ -52,7 +65,7 @@
  private int esmv_beginpath(P2(gx_device_vector * vdev, gx_path_type_t type));
  private int esmv_moveto(P6(gx_device_vector * vdev, floatp x0, floatp y0,
  			   floatp x, floatp y, gx_path_type_t type));
-@@ -431,6 +454,7 @@
+@@ -452,6 +477,7 @@
  				floatp x_start, floatp y_start, gx_path_type_t type));
  
  private int esmv_endpath(P2(gx_device_vector * vdev, gx_path_type_t type));
@@ -60,3 +73,21 @@
  private int esmv_setlinewidth(gx_device_vector * vdev, floatp width);
  private int esmv_setlinecap(gx_device_vector * vdev, gs_line_cap cap);
  private int esmv_setlinejoin(gx_device_vector * vdev, gs_line_join join);
+@@ -1688,7 +1714,7 @@
+             pdev->MaskState = 1;
+         }
+ 	color_set_pure(&color, one);
+-	code = gdev_vector_update_fill_color((gx_device_vector *) pdev, &color);
++	code = gdev_vector_update_fill_color((gx_device_vector *) pdev, NULL, &color);
+ 
+ 	/* ここを通過したら以下の色設定は無意味？ */
+     }
+@@ -1779,7 +1805,7 @@
+     if (w <= 0 || h <= 0) return 0;
+     
+     if (depth > 1 ||
+-	gdev_vector_update_fill_color(vdev, pdcolor) < 0 ||
++	gdev_vector_update_fill_color(vdev, NULL, pdcolor) < 0 ||
+ 	gdev_vector_update_clip_path(vdev, pcpath) < 0 ||
+ 	gdev_vector_update_log_op(vdev, lop) < 0
+ 	) 

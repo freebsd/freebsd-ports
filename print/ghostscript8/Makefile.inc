@@ -1,4 +1,4 @@
 # $FreeBSD$
 
-GS_VERSION=	8.11
+GS_VERSION=	8.13
 

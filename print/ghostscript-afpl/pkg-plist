@@ -76,8 +76,13 @@ share/ghostscript/%%GS_VERSION%%/Resource/CMap/Add-V
 share/ghostscript/%%GS_VERSION%%/Resource/CMap/Adobe-Japan1-0
 share/ghostscript/%%GS_VERSION%%/Resource/CMap/Adobe-Japan1-1
 share/ghostscript/%%GS_VERSION%%/Resource/CMap/Adobe-Japan1-2
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/ETHK-B5-H
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/ETHK-B5-V
 share/ghostscript/%%GS_VERSION%%/Resource/CMap/ETen-B5-H
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/ETen-B5-UCS2
 share/ghostscript/%%GS_VERSION%%/Resource/CMap/ETen-B5-V
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/ETenms-B5-H
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/ETenms-B5-V
 share/ghostscript/%%GS_VERSION%%/Resource/CMap/EUC-H
 share/ghostscript/%%GS_VERSION%%/Resource/CMap/EUC-V
 share/ghostscript/%%GS_VERSION%%/Resource/CMap/Ext-H
@@ -112,6 +117,10 @@ share/ghostscript/%%GS_VERSION%%/Resource/CMap/UniKS-UCS2-H
 share/ghostscript/%%GS_VERSION%%/Resource/CMap/UniKS-UCS2-V
 share/ghostscript/%%GS_VERSION%%/Resource/CMap/V
 share/ghostscript/%%GS_VERSION%%/Resource/CMap/WP-Symbol
+share/ghostscript/%%GS_VERSION%%/Resource/ColorSpace/DefaultCMYK
+share/ghostscript/%%GS_VERSION%%/Resource/ColorSpace/DefaultGray
+share/ghostscript/%%GS_VERSION%%/Resource/ColorSpace/DefaultRGB
+share/ghostscript/%%GS_VERSION%%/Resource/Decoding/Latin1
 share/ghostscript/%%GS_VERSION%%/Resource/Decoding/StandardEncoding
 share/ghostscript/%%GS_VERSION%%/Resource/Decoding/Unicode
 share/ghostscript/%%GS_VERSION%%/doc/API.htm
@@ -562,6 +571,7 @@ share/ghostscript/fonts/z003034l.pfm
 @dirrm share/ghostscript/%%GS_VERSION%%/examples
 @dirrm share/ghostscript/%%GS_VERSION%%/doc
 @dirrm share/ghostscript/%%GS_VERSION%%/Resource/Decoding
+@dirrm share/ghostscript/%%GS_VERSION%%/Resource/ColorSpace
 @dirrm share/ghostscript/%%GS_VERSION%%/Resource/CMap
 @dirrm share/ghostscript/%%GS_VERSION%%/Resource
 @unexec rmdir %D/share/ghostscript/%%GS_VERSION%% 2>/dev/null || true
