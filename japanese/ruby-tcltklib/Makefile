@@ -7,7 +7,7 @@
 
 CATEGORIES=	japanese
 
-MAINTAINER=	yasuf@bsdclub.org
+MAINTAINER=	knu@FreeBSD.org
 
 TCL_VERSION?=	80
 TK_VERSION?=	80

@@ -64,7 +64,7 @@ _RUBY_SUFFIX=		${RUBY_VER:S/.//}
 RUBY_VERSION?=		1.4.6
 RUBY_SUFFIX?=		${_RUBY_SUFFIX}
 .else
-RUBY_VERSION?=		1.6.0
+RUBY_VERSION?=		1.6.1
 RUBY_SUFFIX?=		# empty
 .endif
 
