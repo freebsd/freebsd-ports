@@ -1,5 +1,5 @@
 bin/mplayer
-bin/mencoder
+%%MENCODER%%bin/mencoder
 %%GMPLAYER%%bin/gmplayer
 %%PORTDOCS%%share/doc/mplayer/bugreports.html
 %%PORTDOCS%%share/doc/mplayer/cd-dvd.html
