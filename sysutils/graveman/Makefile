@@ -30,7 +30,7 @@ OPTIONS=	MP3 "MP3 Support" off \
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_MP3)
+.if defined(WITH_MP3)
 LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/libmad \
 		id3tag.2:${PORTSDIR}/audio/libid3tag
 RUN_DEPENDS+=	sox:${PORTSDIR}/audio/sox
@@ -38,7 +38,7 @@ RUN_DEPENDS+=	sox:${PORTSDIR}/audio/sox
 CONFIGURE_ARGS+=--disable-mp3
 .endif
 
-.if !defined(WITHOUT_OGG)
+.if defined(WITH_OGG)
 LIB_DEPENDS+=	ogg.5:${PORTSDIR}/audio/libogg \
 		vorbis.3:${PORTSDIR}/audio/libvorbis
 .else
