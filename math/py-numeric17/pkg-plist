@@ -38,3 +38,8 @@ lib/python1.5/site-packages/UserArray.pyo
 share/doc/NumPy/doc.html
 share/doc/NumPy/home.html
 @dirrm share/doc/NumPy
+share/examples/NumPy/mandelbrot.py
+share/examples/NumPy/mandelbrot.pyc
+share/examples/NumPy/sieve.py
+share/examples/NumPy/sieve.pyc
+@dirrm share/examples/NumPy
