@@ -1,3 +1,2 @@
 bin/hex
-share/doc/ja-hex/README
-@dirrm share/doc/ja-hex
+man/ja_JP.EUC/man1/hex.1.gz
