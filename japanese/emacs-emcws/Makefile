@@ -36,39 +36,36 @@ WITH_CANNA?=	YES
 WITH_SJ3?=	NO
 
 CONFIGURE_TARGET=	${MACHINE_ARCH}--freebsd
+
 .if !defined(NO_X11)
 CONFIGURE_ARGS=	--with-x-toolkit --with-pop
 USE_XLIB=	YES
 .else
 CONFIGURE_ARGS=	--with-x=no --with-pop
 .endif
-.if defined(WITH_WNN6)
+
 .if (${WITH_WNN6} == "yes" || ${WITH_WNN6} == "YES")
 CONFIGURE_ARGS+=--with-wnn --with-wnn-includes=${LOCALBASE}/include/wnn6/wnn \
 		--with-wnn-libraries=${LOCALBASE}/lib/libwnn6.so
 LIB_DEPENDS+=	wnn6.1:${PORTSDIR}/japanese/Wnn6-lib
 .endif
-.endif
-.if defined(WITH_FREEWNN)
+
 .if (${WITH_FREEWNN} == "yes" || ${WITH_FREEWNN} == "YES")
 CONFIGURE_ARGS+=--with-wnn --with-wnn-includes=${LOCALBASE}/include/wnn \
 		--with-wnn-libraries=${LOCALBASE}/lib/libwnn.so
 LIB_DEPENDS+=	wnn.0:${PORTSDIR}/japanese/FreeWnn-lib
 .endif
-.endif
-.if defined(WITH_CANNA)
+
 .if (${WITH_CANNA} == "yes" || ${WITH_CANNA} == "YES")
 CONFIGURE_ARGS+=	--with-canna \
 			--with-canna-includes=${LOCALBASE}/include \
 			--with-canna-libraries=${LOCALBASE}/lib
 LIB_DEPENDS+=		canna.1:${PORTSDIR}/japanese/Canna
 .endif
-.endif
-.if defined(WITH_SJ3)
+
 .if (${WITH_SJ3} == "yes" || ${WITH_SJ3} == "YES")
 CONFIGURE_ARGS+=	--with-sj3
 BUILD_DEPENDS+=		sj3serv:${PORTSDIR}/japanese/sj3
-.endif
 .endif
 
 DOC_FILE=	DOC-EMCWS-${EMACS_VER}.1
@@ -95,7 +92,6 @@ EMCWS_ELCS=	busyu.el \
 		wnn-client.el \
 		wnn-egg.el
 
-.if defined(WITH_WNN6) || defined(WITH_FREEWNN)
 .if (${WITH_WNN6} == "yes" || ${WITH_WNN6} == "YES") || (${WITH_FREEWNN} == "yes" || ${WITH_FREEWNN} == "YES")
 EMCWS_ELCS+=	egg.elc \
 		wnn-egg.elc
@@ -103,23 +99,20 @@ PLIST_SUB+=	WITH_WNN=""
 .else
 PLIST_SUB+=	WITH_WNN="@comment "
 .endif
-.endif
-.if defined(WITH_CANNA)
+
 .if (${WITH_CANNA} == "yes" || ${WITH_CANNA} == "YES")
 EMCWS_ELCS+=	canna.elc
 PLIST_SUB+=	WITH_CANNA=""
 .else
 PLIST_SUB+=	WITH_CANNA="@comment "
 .endif
-.endif
-.if defined(WITH_SJ3)
+
 .if (${WITH_SJ3} == "yes" || ${WITH_SJ3} == "YES")
 EMCWS_ELCS+=	sj3-client.elc \
 		sj3-egg.elc
 PLIST_SUB+=	WITH_SJ3=""
 .else
 PLIST_SUB+=	WITH_SJ3="@comment "
-.endif
 .endif
 
 MULE_PATCHED_ELS=	help.el help.elc \
