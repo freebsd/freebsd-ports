@@ -9,7 +9,7 @@ PORTNAME=	cdt
 PORTVERSION=	2.0.2
 PORTREVISION=	1
 CATEGORIES=	java devel
-MASTER_SITES=	http://download.eclipse.org/tools/cdt/releases/new/zips/
+MASTER_SITES=	http://download.eclipse.org/tools/cdt/releases/new/zips/${PORTVERSION}/
 PKGNAMEPREFIX=	eclipse-
 DISTNAME=	org.eclipse.cdt-${PORTVERSION}-linux.${ECLIPSE_ARCH}
 DIST_SUBDIR=	eclipse
@@ -18,8 +18,6 @@ MAINTAINER=	java@freebsd.org
 COMMENT=	C/C++ IDE for Eclipse
 
 RUN_DEPENDS=	${LOCALBASE}/eclipse:${PORTSDIR}/java/eclipse
-
-BROKEN=		Unfetchable
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
