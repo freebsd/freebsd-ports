@@ -1,0 +1,11 @@
+--- ./src/Makefile.org	Fri Nov 25 08:53:00 1994
++++ ./src/Makefile	Sat May  6 03:38:01 1995
+@@ -91,7 +91,7 @@
+ 	$(MAKE) O=$O CC=cc CFLAGS="$(CFLAGS) -Dvfork=fork" all
+ 
+ bsd:
+-	$(MAKE) O=$O CC=$(CC) CFLAGS="$CFLAGS -Duint='unsigned int'" all
++	$(MAKE) O=$O CC=$(CC) CFLAGS="$(CFLAGS)" all
+ 
+ Wall:
+ 	@$(MAKE) clean
