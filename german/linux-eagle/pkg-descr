@@ -1,0 +1,27 @@
+The EAGLE Layout Editor is an easy to use, yet powerful tool for designing
+printed circuit boards (PCBs). The name EAGLE is an acronym, which stands for
+Easily Applicable Graphical Layout Editor.
+
+The program consists of three main modules:
+
+o Layout Editor
+o Schematic Editor
+o Autorouter
+
+which are embedded in a single user interface. Therefore there is no need for
+converting netlists between schematics and layouts.
+
+This is a Light Freeware Edition. It has the following limitations:
+
+o The useable board area is limited to 100 x 80 mm (4 x 3.2 inches).
+o Only two signal layers can be used (Top and Bottom).
+o The schematic editor can only create one sheet.
+o Support is only available via email or through our forum (no fax or phone
+  support).
+o Use is limited to non-profit applications or evaluation purposes.
+
+Apart from these limitiations the EAGLE Light Edition can do anything the
+Professional Edition can do. You can even load, view and print drawings that
+exceed these limits!
+
+WWW: http://www.cadsoftusa.com
