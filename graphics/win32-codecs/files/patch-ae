@@ -1,0 +1,24 @@
+--- aclocal.m4.orig	Thu Oct 19 22:48:29 2000
++++ aclocal.m4	Thu Oct 19 22:49:17 2000
+@@ -552,8 +552,8 @@
+  LDFLAGS="-L$qt_libdir $X_LDFLAGS"
+ 
+  if test "$qt_libdir" ; then
+-  ac_QT_NAME=-lqt
+-  AC_CHECK_LIB(qt-mt, main,ac_QT_NAME=-lqt-mt)
++  ac_QT_NAME=-lqt2
++dnl  AC_CHECK_LIB(qt-mt, main,ac_QT_NAME=-lqt-mt)
+  fi;
+  LIBS="$LIBS $ac_QT_NAME -lXext -lX11 $LIBSOCKET"
+ 
+@@ -592,8 +592,8 @@
+  ])
+ else
+   have_qt="yes"
+-  ac_QT_NAME=-lqt
+-  AC_CHECK_LIB(qt-mt, main,ac_QT_NAME=-lqt-mt)
++  ac_QT_NAME=-lqt2
++dnl  AC_CHECK_LIB(qt-mt, main,ac_QT_NAME=-lqt-mt)
+   LIBS="$LIBS $ac_QT_NAME -lXext -lX11 $LIBSOCKET"
+ fi
+ 
