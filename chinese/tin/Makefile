@@ -1,13 +1,13 @@
 # New ports collection makefile for:	tin
-# Version required:	tin1.4-980202
+# Version required:	tin1.4-980226
 # Date created:		2 Dec 1997
 # Whom:			Yen-Shuo Su <yssu@CCCA.NCTU.edu.tw>
 #
-# $Id: Makefile,v 1.6 1998/02/01 02:09:05 vanilla Exp $
+# $Id: Makefile,v 1.7 1998/02/04 16:17:17 vanilla Exp $
 #
 
-DISTNAME=       tinpre-1.4-980202
-PKGNAME=        zh-tin-1.4.980202
+DISTNAME=       tinpre-1.4-980226
+PKGNAME=        zh-tin-1.4.980226
 CATEGORIES=	chinese news
 MASTER_SITES=   ftp://ftp.tin.org/pub/news/clients/tin/current/ \
 		ftp://nuxi.ucdavis.edu/pub/tin/ \
