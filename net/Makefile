@@ -1,7 +1,6 @@
-# $Id: Makefile,v 1.287 1999/07/26 18:16:51 sada Exp $
+# $Id: Makefile,v 1.288 1999/08/02 03:15:06 cpiazza Exp $
 #
 
-    SUBDIR += IglooFTP
     SUBDIR += SSLtelnet
     SUBDIR += archie
     SUBDIR += argus
@@ -9,7 +8,6 @@
     SUBDIR += arpwatch
     SUBDIR += ascend-radius
     SUBDIR += bb
-    SUBDIR += beroftpd
     SUBDIR += bind8
     SUBDIR += bing
     SUBDIR += binkd
@@ -18,7 +16,6 @@
     SUBDIR += bpft
     SUBDIR += brouted
     SUBDIR += cap
-    SUBDIR += cftp
     SUBDIR += choparp
     SUBDIR += ciscoconf
     SUBDIR += citrix_ica
@@ -32,7 +29,6 @@
     SUBDIR += coda_doc
     SUBDIR += coda_intro
     SUBDIR += coda_server
-    SUBDIR += curl
     SUBDIR += cvsup
     SUBDIR += cvsup-bin
     SUBDIR += cvsup-mirror
@@ -46,30 +42,22 @@
     SUBDIR += dnswalk
     SUBDIR += dnsutl
     SUBDIR += domtools
-    SUBDIR += downloader
     SUBDIR += echoping
     SUBDIR += etherboot
     SUBDIR += ethereal
     SUBDIR += fping
     SUBDIR += freewais-sf
     SUBDIR += fspclient
-    SUBDIR += ftpfind
-    SUBDIR += ftpmirror
-    SUBDIR += ftpsearch
-    SUBDIR += ftptool
     SUBDIR += gated
     SUBDIR += gaim
     SUBDIR += generic-nqs
-    SUBDIR += gftp
     SUBDIR += ggsd
     SUBDIR += gnome-icu
     SUBDIR += gnomenetwork
     SUBDIR += gnu-finger
     SUBDIR += gopher
     SUBDIR += gicq
-    SUBDIR += greed
     SUBDIR += gtksamba
-    SUBDIR += gtm
     SUBDIR += h2n
     SUBDIR += hesiod
     SUBDIR += icb
@@ -79,7 +67,6 @@
     SUBDIR += ipw
     SUBDIR += isc-dhcp2
     SUBDIR += ivs
-    SUBDIR += jmirror
     SUBDIR += kdenetwork11
     SUBDIR += kdenetwork11-i18n
     SUBDIR += kdetelnet
@@ -87,18 +74,13 @@
     SUBDIR += ksamba
     SUBDIR += ldap
     SUBDIR += ldapsdk
-    SUBDIR += lftp
     SUBDIR += libicq
     SUBDIR += libnet
     SUBDIR += libsocket++
     SUBDIR += licq
-    SUBDIR += llnlxdir
-    SUBDIR += llnlxftp
     SUBDIR += macipgw
     SUBDIR += mars_nwe
     SUBDIR += micq
-    SUBDIR += mirror
-    SUBDIR += moxftp
     SUBDIR += mpd
     SUBDIR += mpich
     SUBDIR += mrt
@@ -106,9 +88,6 @@
     SUBDIR += mtr
     SUBDIR += naim
     SUBDIR += nam
-    SUBDIR += ncftp
-    SUBDIR += ncftp2
-    SUBDIR += ncftp3
     SUBDIR += netatalk
     SUBDIR += netatalk-asun
     SUBDIR += netcat
@@ -121,7 +100,6 @@
     SUBDIR += ntop
     SUBDIR += ntp
     SUBDIR += nttcp
-    SUBDIR += omi
     SUBDIR += openldap
     SUBDIR += p5-Archie
     SUBDIR += p5-Net
@@ -135,7 +113,6 @@
     SUBDIR += p5-URI
     SUBDIR += p5-pRPC
     SUBDIR += pathchar
-    SUBDIR += pavuk
     SUBDIR += pcnfsd
     SUBDIR += perldap
     SUBDIR += pmf
@@ -143,7 +120,6 @@
     SUBDIR += pppload
     SUBDIR += pptpclient
     SUBDIR += ppxp
-    SUBDIR += proftpd
     SUBDIR += pvm
     SUBDIR += queso
     SUBDIR += radius
@@ -167,7 +143,6 @@
     SUBDIR += smbtcpdump
     SUBDIR += sniffit
     SUBDIR += socks5
-    SUBDIR += spegla
     SUBDIR += sup
     SUBDIR += tac_plus
     SUBDIR += tcpshow
@@ -186,18 +161,13 @@
     SUBDIR += ucd-snmp
     SUBDIR += vnc
     SUBDIR += wais
-    SUBDIR += wget
     SUBDIR += wide-dhcp
     SUBDIR += wmnet
-    SUBDIR += wxftp
-    SUBDIR += wu-ftpd
     SUBDIR += xarchie
     SUBDIR += xferstats
     SUBDIR += xicq
     SUBDIR += xipmsg
     SUBDIR += xwhois
-    SUBDIR += yafc
-    SUBDIR += yale-tftpd
     SUBDIR += ytalk
     SUBDIR += zebra
     SUBDIR += zephyr
