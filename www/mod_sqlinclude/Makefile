@@ -17,6 +17,8 @@ COMMENT=	An Apache module implementing config inclusion from MySQL databases
 USE_MYSQL=	yes
 DOCS=	CHANGES.txt README.txt test.sql
 
+BROKEN=		"Does not build"
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_APACHE2) || exists(${LOCALBASE}/include/apache2/apr.h)
