@@ -37,10 +37,6 @@ DISTFILES=	${PORTNAME}/source/Makefile \
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${PORTNAME}.tar.gz
 
-PATCH_SITES=	http://home.arcor.de/kay_lehmann/freebsd/ports/lgrind/
-PATCHFILES=	patch-Makefile.gz patch-source_Makefile.gz \
-		patch-source_lgrind.c.gz patch-source_regexp.c.gz
-
 MAINTAINER=	kay_lehmann@web.de
 COMMENT=	Produce beautiful listings of source code with LaTeX
 
