@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	webbench
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	benchmarks www
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/www/servers
@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	apps/www/servers
 MAINTAINER=	hsn@netmag.cz
 COMMENT=	Simple forking web benchmark
 
+USE_GETOPT_LONG=yes
 MAN1=		webbench.1
 
 .include <bsd.port.mk>
