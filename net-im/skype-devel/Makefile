@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	skype
-PORTVERSION=	0.91.0.3
+PORTVERSION=	0.92.0.2
 CATEGORIES=	net
 MASTER_SITES=	http://download.skype.com/linux/
 DISTNAME=	skype_ver-${PORTVERSION:C/\./_/g}-staticQT
@@ -38,7 +38,7 @@ PLIST_SUB+=	GNOME=""
 PLIST_SUB+=	GNOME="@comment "
 .endif
 
-WRKSRC=	${WRKDIR}/skype_ver_${PORTVERSION:C/\./_/g}-staticQT
+WRKSRC= ${WRKDIR}/skype_ver-${PORTVERSION:C/\./_/g}-staticQT
 
 do-build:
 	${BRANDELF} -t Linux ${WRKSRC}/skype
@@ -56,5 +56,15 @@ do-install:
 
 post-install:
 	@${ECHO} "Since skype uses a hadcoded path to the language files (/usr/share/skype) which a port isn't allowed to install files into, call_in.wav and the language files are not installed. As soon as skype learns how to use other paths, this will change." | fmt
+	@${ECHO}
+	@${ECHO} "Known good soundcards for the use with Skype:"
+	@${ECHO} " - SiS 7012 (snd_ich) based ones"
+	@${ECHO} " - CMedia CMI8738 (snd_cmi) based ones"
+	@${ECHO}
+	@${ECHO} "Probably bad soundcards for the use with Skype:"
+	@${ECHO} " - VIA on-board sound"
+	@${ECHO} " - Creative CT5880 (snd_es137x) based ones"
+	@${ECHO}
+	@${ECHO} "If your soundcard is not listed here, send the the output of 'cat /dev/sndstat' with a short note if it works or not to ${MAINTAINER} please." | fmt
 
 .include <bsd.port.post.mk>
