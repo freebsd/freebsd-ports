@@ -1,5 +1,5 @@
-*** source/Imakefile.orig	Tue Sep  2 10:38:18 1997
---- source/Imakefile	Tue Sep  2 10:39:42 1997
+*** source/Imakefile.orig	Tue Sep 19 02:22:29 1995
+--- source/Imakefile	Fri Mar  6 22:03:52 1998
 ***************
 *** 17,29 ****
   
@@ -19,7 +19,7 @@
   
               OBJS = $(SRCS:.c=.o)
   
-!               CC = gcc -O2
+!               CC = gcc -O $(CFLAGS)
        CDEBUGFLAGS = 
     EXTRA_INCLUDES = -I../include
   #
