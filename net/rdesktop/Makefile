@@ -23,6 +23,7 @@ USE_XLIB=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
+USE_REINPLACE=	yes
 
 MAN1=		rdesktop.1
 ALL_TARGET=
@@ -30,24 +31,26 @@ ALL_TARGET=
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 500023
-LIB_DEPENDS=	gmp.5:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 .endif
 
 do-patch:
 	@${EXTRACT_CMD} -dc ${_DISTDIR}/${PATCHFILES} | \
 		${PATCH} ${PATCH_DIST_ARGS}
 .if ${OSVERSION} > 500023
-	@${PERL} -pi.orig -e 's:-O2.*-Wall:${CFLAGS} -I${LOCALBASE}/include:g' \
+	@${REINPLACE_CMD} -e 's:-O2.*-Wall:${CFLAGS} -I${LOCALBASE}/include:g' \
 		${WRKSRC}/Makefile
-	@${PERL} -pi.orig -e 's:-lgmp:-L${LOCALBASE}/lib -lgmp:g' \
+	@${REINPLACE_CMD} -e 's:-lgmp:-L${LOCALBASE}/lib -lgmp:g' \
 		${WRKSRC}/Makefile
 .else
-	@${PERL} -pi.orig -e 's:-O2.*-Wall:${CFLAGS}:g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's:-O2.*-Wall:${CFLAGS}:g' ${WRKSRC}/Makefile
 .endif
-	@${PERL} -pi.orig -e 's:/usr/X11R6/:${X11BASE}/:g' ${WRKSRC}/Makefile
-	@${PERL} -pi.orig -e 's:^PREFIX.*:PREFIX=${PREFIX}:g' ${WRKSRC}/Makefile
-	@${PERL} -pi.orig -e 's:^install.*:install\: rdesktop:g' ${WRKSRC}/Makefile
-	@${PERL} -pi.orig -e 's:^.*\(INSTALL\) rdp-srvr.*::g' ${WRKSRC}/Makefile
-	@${PERL} -pi.orig -e 's:<endian.h>:<machine/endian.h>:g' ${WRKSRC}/rdesktop.h
+	@${REINPLACE_CMD} -e 's:/usr/X11R6/:${X11BASE}/:g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's:^PREFIX.*:PREFIX=${PREFIX}:g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's:^install.*:install\: rdesktop:g' \
+		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's:^.*\(INSTALL\) rdp-srvr.*::g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's:<endian.h>:<machine/endian.h>:g' \
+		${WRKSRC}/rdesktop.h
 
 .include <bsd.port.post.mk>
