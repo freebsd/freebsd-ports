@@ -5,6 +5,6 @@ features:
 - Uses libesmtp to deliver mail to any SMTP server
 - Really free code (BSD licensed)
 
-WWW: http://energyhq.homeip.net/gtk-send-pr.html
+WWW: http://www.energyhq.es.eu.org/gtk-send-pr.html
 
 -Miguel Mendez <flynn@energyhq.es.eu.org>
