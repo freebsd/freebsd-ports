@@ -12,6 +12,7 @@ CUPS_MASTER_SITES=\
 CUPS_VERSION=	1.1.18
 CUPS_REVISION=	0
 CUPS_PORTVER=	${CUPS_VERSION}.${CUPS_REVISION}
+CUPS_PORTREV=	3
 CUPS_PORTEPOCH=	0
 CUPS_FILESDIR=	${.CURDIR}/../../print/cups/files
 CUPS_ETCDIR=	${PREFIX}/etc/cups
@@ -53,6 +54,7 @@ GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS+=	--localstatedir=/var		\
 			--disable-pam			\
+			--disable-slp			\
 			--with-cups-user=${CUPSOWN}	\
 			--with-cups-group=${CUPSGRP}	\
 			--with-docdir=${CUPS_DOCSDIR}	\
