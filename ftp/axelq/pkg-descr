@@ -1,0 +1,4 @@
+axelq is a queue manager for the download accelerator axel. axelq basically
+reads some URLs, caches them and runs axel to download them.
+
+WWW: http://elektron.its.tudelft.nl/~hemmin98/axelq.html

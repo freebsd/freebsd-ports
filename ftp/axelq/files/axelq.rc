@@ -1,0 +1,20 @@
+# $etcdir/axelq.rc: system-wide configuration for axelq
+
+# Use command to specify the location (and command-line parameters) of axel,
+# e.g. command=/usr/local/bin/axel
+command=%%PREFIX%%/bin/axel
+
+# failaction specifies what to do when an error occurs. You can specify
+# ask, remove, maintain or move. ask makes axelq ask each time what to do.
+# remove will auto-remove the download and start the next. maintain will
+# retry and move will move the download to the end of the queue. This
+# setting is case-sensitive.
+#
+# NOTE: best is to keep this to its default. maintain will cause axelq to
+# retry until it dies. This is not good, since it will cause unnecessary
+# bandwidth consumption for both you and the server. This is rude.
+# move will act like maintain, if there is only one file in the queue.
+failaction=ask
+
+# qfile lets you specify where to store your queue.
+qfile=~/.axelq
