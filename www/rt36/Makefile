@@ -75,6 +75,7 @@ CONFIGURE_ARGS=	--prefix=${RT_PATH} \
 APACHE_PORT?=	${PORTSDIR}/www/apache13
 BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi \
 		${ARCH_PERL}/FCGI.pm:${PORTSDIR}/www/p5-FastCGI
+DEPENDS_ARGS+=	WITHOUT_MODPERL=yes
 .else
 BUILD_DEPENDS+=	${SITE_PERL}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI
 .if defined(WITH_APACHE2)
