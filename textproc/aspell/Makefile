@@ -6,14 +6,13 @@
 #
 
 PORTNAME?=	aspell
-PORTVERSION=	0.50.2
-PORTREVISION=	1
+PORTVERSION=	0.50.3
 CATEGORIES+=	textproc
 MASTER_SITES=	http://savannah.gnu.org/download/${PORTNAME}/rel/	\
 		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	aspell
-DISTFILES=	aspell-0.50.2.tar.gz	# needed for slave ports / options
-EXTRACT_ONLY=	aspell-0.50.2.tar.gz
+DISTFILES=	aspell-0.50.3.tar.gz	# needed for slave ports / options
+EXTRACT_ONLY=	aspell-0.50.3.tar.gz
 
 MAINTAINER?=	thierry@pompo.net
 
