@@ -3,7 +3,7 @@
 # Date created:		26 Apr 1995
 # Whom:			thomas@ghpc8.ihf.rwth-aachen.de
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1995/05/02 07:18:20 asami Exp $
 #
 
 DISTNAME=	octave-1.1.1
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.che.utexas.edu/pub/octave/
 
 MAINTAINER=	ports@FreeBSD.ORG
 
-EXEC_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
+RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
