@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rc_subr
-PORTVERSION=	1.13
+PORTVERSION=	1.16
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		ftp://ftp.westbend.net/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/
