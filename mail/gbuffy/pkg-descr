@@ -1,0 +1,15 @@
+GBuffy will poll multiple mailboxes for new mail. It will list the
+number of new messages in each mailbox you configure. It will also
+highlight the mailboxes which have new mail. Pressing the left mouse
+button on a mailbox with new mail will display the Sender and Subject
+of each new message. Additionally, GBuffy will display the X-Face
+header for messages which have them. Pressing the middle mouse button
+on a mailbox will launch the configured command, generally a command
+to read the mailbox with your favorite mailreader. Pressing the right
+mouse button will bring up the configure menu.
+   
+GBuffy is currently capable of watching MBOX, MMDF, Maildir and MH
+Folders.  This version also supports IMAP4rev1 and NNTP with XOVER.
+Support for an external program for notification is planned.
+
+WWW: http://www.fiction.net/blong/programs/gbuffy/
