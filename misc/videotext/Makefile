@@ -25,4 +25,10 @@ MAN1=		tunerctl.1 videotext.1 vtxget.1
 FONTSDIR=	lib/X11/fonts/local
 PLIST_SUB=	FONTSDIR=${FONTSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502102
+BROKEN=		"Does not build"
+.endif
+
+.include <bsd.port.post.mk>
