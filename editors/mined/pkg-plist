@@ -1,7 +1,23 @@
 bin/mined
+%%PORTDOCS%%%%DOCSDIR%%/help/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/help/README
+%%PORTDOCS%%%%DOCSDIR%%/help/Xdefaults.mined
+%%PORTDOCS%%%%DOCSDIR%%/help/bdf18to20
+%%PORTDOCS%%%%DOCSDIR%%/help/bdf18to20.sed
+%%PORTDOCS%%%%DOCSDIR%%/help/configure-xterm
+%%PORTDOCS%%%%DOCSDIR%%/help/lmined
+%%PORTDOCS%%%%DOCSDIR%%/help/makeprint
+%%PORTDOCS%%%%DOCSDIR%%/help/mined.desktop
 %%PORTDOCS%%%%DOCSDIR%%/help/mined.hlp
-%%PORTDOCS%%%%EXAMPLESDIR%%/configure-xterm
-%%PORTDOCS%%%%EXAMPLESDIR%%/mterm
-%%PORTDOCS%%%%EXAMPLESDIR%%/uterm
+%%PORTDOCS%%%%DOCSDIR%%/help/minedmar
+%%PORTDOCS%%%%DOCSDIR%%/help/minedmar.bat
+%%PORTDOCS%%%%DOCSDIR%%/help/mterm
+%%PORTDOCS%%%%DOCSDIR%%/help/profile.mined
+%%PORTDOCS%%%%DOCSDIR%%/help/umined
+%%PORTDOCS%%%%DOCSDIR%%/help/uprint
+%%PORTDOCS%%%%DOCSDIR%%/help/uterm
+%%PORTDOCS%%%%DOCSDIR%%/help/wmined
+%%PORTDOCS%%%%DOCSDIR%%/help/wmined.bat
+%%PORTDOCS%%%%DOCSDIR%%/help/xinitrc.mined
+%%PORTDOCS%%%%DOCSDIR%%/help/xmined
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/help
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%

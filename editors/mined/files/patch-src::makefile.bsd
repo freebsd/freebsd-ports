@@ -1,15 +1,15 @@
---- ./src/makefile.bsd.orig	Fri Mar 14 12:25:01 2003
-+++ ./src/makefile.bsd	Sat Dec 25 12:33:55 2004
-@@ -6,7 +6,7 @@
- # Where and how to install
- prefix	= $(PREFIX)
- bindir	= $(prefix)/bin
--helpdir	= $(prefix)/share/help
-+helpdir	= $(prefix)/share/doc/mined/help
- mandir	= $(prefix)/man
+--- ./src/makefile.bsd.orig	Sun Oct 31 07:34:57 2004
++++ ./src/makefile.bsd	Sat Feb  5 18:04:40 2005
+@@ -16,7 +16,7 @@
+ # directories for target "make localinstall"
+ lprefix	= $(root)/usr/local
+ lbindir	= $(lprefix)/bin
+-lhlpdir	= $(lprefix)/share/mined
++lhlpdir	= $(lprefix)/share/doc/mined/help
+ lmandir	= $(lprefix)/man
+ 
  INSTALL = install
- #INSTALL = /bin/cp -p
-@@ -54,7 +54,7 @@
+@@ -87,7 +87,7 @@
  # link options
  
  # link dynamically
@@ -18,7 +18,7 @@
  GLDOPTS=	# -static links statically
  
  
-@@ -62,7 +62,7 @@
+@@ -95,7 +95,7 @@
  # compiler selection and compiler-specific options
  # (source warnings, optimisation and debug)
  

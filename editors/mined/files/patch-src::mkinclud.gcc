@@ -1,0 +1,11 @@
+--- src/mkinclud.gcc.orig	Wed Jan  5 13:34:24 2005
++++ src/mkinclud.gcc	Sat Feb  5 22:14:23 2005
+@@ -40,7 +40,7 @@
+ # compilation mode options (optimisation and debug)
+ 
+ # Optimization flag/level:
+-OPT	= -O2
++#OPT	= -O2
+ 
+ # Debugging option
+ DEBUG	= # -ggdb -gstabs
