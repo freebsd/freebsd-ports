@@ -7,8 +7,6 @@ bin/ssh-askpass
 bin/ssh-keygen
 bin/make-ssh-known-hosts
 etc/ssh_config
-etc/ssh_host_key
-etc/ssh_host_key.pub
 etc/sshd_config
 man/man1/make-ssh-known-hosts.1.gz
 man/man1/scp.1.gz
