@@ -1,0 +1,11 @@
+--- htc.c.orig	Thu Aug 31 22:10:13 2000
++++ htc.c	Thu Aug 31 22:10:29 2000
+@@ -539,7 +539,7 @@
+ 		    arg.host_name, arg.host_port,
+ 		    arg.proxy_name, arg.proxy_port);
+       else
+-	log_notice ("connected to %s%d", arg.host_name, arg.host_port);
++	log_notice ("connected to %s:%d", arg.host_name, arg.host_port);
+ 
+       closed = FALSE;
+       time (&last_tunnel_write);
