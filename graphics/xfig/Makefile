@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}.full
 MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.4:${PORTSDIR}/graphics/png \
+		png.5:${PORTSDIR}/graphics/png \
 		Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 RUN_DEPENDS=	fig2dev:${PORTSDIR}/print/transfig
 

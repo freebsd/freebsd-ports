@@ -19,7 +19,7 @@ DIST_SUBDIR=	povray30
 
 MAINTAINER=	kris@FreeBSD.org
 
-LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 USE_XLIB=	yes
 MAN1=		povray.1

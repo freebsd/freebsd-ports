@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.libpng.org/pub/png/src/ \
 MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
-		png.4:${PORTSDIR}/graphics/png
+		png.5:${PORTSDIR}/graphics/png
 
 MAKEFILE=	Makefile.unx
 ALL_TARGET=	tiff2png

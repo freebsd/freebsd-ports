@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.4:${PORTSDIR}/graphics/png
+		png.5:${PORTSDIR}/graphics/png
 
 USE_GMAKE=	yes
 MAKE_ENV=	LN="${LN}" RANLIB="${RANLIB}"

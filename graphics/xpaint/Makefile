@@ -15,7 +15,7 @@ MASTER_SITES=	http://home.worldonline.dk/~torsten/xpaint/ \
 MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
-		png.4:${PORTSDIR}/graphics/png
+		png.5:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_IMAKE=	yes

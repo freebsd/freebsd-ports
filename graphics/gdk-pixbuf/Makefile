@@ -15,7 +15,7 @@ DISTNAME=	gdk-pixbuf-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS+=	png.4:${PORTSDIR}/graphics/png \
+LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 

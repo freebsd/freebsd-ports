@@ -20,7 +20,7 @@ MAINTAINER=	vanilla@FreeBSD.org
 LIB_DEPENDS=	aa.1:${PORTSDIR}/graphics/aalib \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		mpeg.1:${PORTSDIR}/graphics/mpeg-lib \
-		png.4:${PORTSDIR}/graphics/png \
+		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
 SHLIBVER?=	${PORTVERSION:S/1.2.//g}

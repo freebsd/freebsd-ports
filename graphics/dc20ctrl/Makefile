@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		png.4:${PORTSDIR}/graphics/png
+		png.5:${PORTSDIR}/graphics/png
 
 MAKE_ARGS=	-DUSE_JPEG -DUSE_TIFF -DUSE_PNG
 

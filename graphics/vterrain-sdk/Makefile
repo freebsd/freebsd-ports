@@ -18,7 +18,7 @@ MAINTAINER=	aa8vb@nc.rr.com
 
 LIB_DEPENDS=	netcdf.1:${PORTSDIR}/math/netcdf \
 		shp.1:${PORTSDIR}/devel/shapelib \
-		png.4:${PORTSDIR}/graphics/png \
+		png.5:${PORTSDIR}/graphics/png \
 		osg.1:${PORTSDIR}/graphics/osg \
 		projection.1:${PORTSDIR}/misc/projectionlib
 

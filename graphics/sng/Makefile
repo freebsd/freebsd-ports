@@ -16,7 +16,7 @@ MAINTAINER=	ijliao@FreeBSD.org
 
 BUILD_DEPENDS=	${X11BASE}/lib/X11/rgb.txt:${PORTSDIR}/x11/XFree86-4-clients
 RUN_DEPENDS=	${BUILD_DEPENDS}
-LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"

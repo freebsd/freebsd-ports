@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.engr.mun.ca/~holden/
 
 MAINTAINER=	jedgar@fxp.org
 
-LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		gd.2:${PORTSDIR}/graphics/gd
 
 do-configure:
