@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://www.fiction.net/blong/programs/
 DISTNAME=	ms-rtf
 
-MAINTAINER=	jim@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A portable application/ms-rtf parser
 
 ALL_TARGET=	rtfreader

@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	jim
 DISTNAME=	${PORTNAME}-1999-06-20
 
-MAINTAINER=	jim@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Workman library required by some audio apps
 
 WRKSRC=		${WRKDIR}/libworkman

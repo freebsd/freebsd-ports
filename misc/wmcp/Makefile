@@ -10,7 +10,7 @@ PORTVERSION=	1.2.8
 CATEGORIES=	misc windowmaker
 MASTER_SITES=	http://soupnazi.org/FreeBSD/ports/distfiles/
 
-MAINTAINER=	jim@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A dockable pager for Window Maker
 
 USE_X_PREFIX=	yes

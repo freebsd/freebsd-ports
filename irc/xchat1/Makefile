@@ -12,7 +12,7 @@ CATEGORIES+=		irc gnome ipv6
 MASTER_SITES=		http://xchat.org/files/source/1.8/ \
 			http://xchat.linuxpower.org/files/source/1.8/
 
-MAINTAINER?=		jim@FreeBSD.org
+MAINTAINER?=		ports@FreeBSD.org
 COMMENT=	An X11 IRC client using the GTK+ toolkit, and optionally, GNOME
 
 LIB_DEPENDS=		iconv.3:${PORTSDIR}/converters/libiconv

@@ -11,7 +11,7 @@ CATEGORIES=	x11-clocks windowmaker afterstep
 MASTER_SITES=	http://www.geocities.com/jl1n/wmtz/ \
 		http://soupnazi.org/FreeBSD/ports/distfiles/
 
-MAINTAINER=	jim@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dockapp that displays the time in different time zones
 
 USE_GMAKE=	yes

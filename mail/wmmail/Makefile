@@ -11,7 +11,7 @@ CATEGORIES=	mail windowmaker
 MASTER_SITES=	http://www.eecg.utoronto.ca/~chanb/WMMail.app/
 DISTNAME=	WMMail.app-${PORTVERSION}
 
-MAINTAINER=	jim@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A little mail notifier for the Window Maker dock
 
 LIB_DEPENDS=	PropList.2:${PORTSDIR}/devel/libPropList

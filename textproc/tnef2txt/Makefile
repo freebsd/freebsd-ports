@@ -10,7 +10,7 @@ PORTVERSION=	1.4
 CATEGORIES=	textproc converters
 MASTER_SITES=	http://www.fiction.net/blong/programs/tnef2txt/
 
-MAINTAINER=	jim@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A portable application/ms-tnef parser
 
 ALL_TARGET=	tnef2txt
