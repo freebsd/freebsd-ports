@@ -7,7 +7,7 @@
 
 PORTNAME=	cyrus-imapd
 PORTVERSION= 	2.0.12
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		ftp://ftp.hanse.de/sites/transit/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/
@@ -56,6 +56,11 @@ HTDOCS=		anoncvs bugs changes faq feedback index install-admin-mb \
 		install-perf install-prereq install-sieve install-snmpmon \
 		install-testing install-upgrade install mailing-list notes \
 		os overview questions readme sieve-protocol sieve
+
+post-patch:
+		@${SED} -e "s|/etc/|${PREFIX}/etc/|" ${WRKSRC}/tools/mkimap \
+			> ${WRKSRC}/tools/mkimap.new
+		@${MV} ${WRKSRC}/tools/mkimap.new ${WRKSRC}/tools/mkimap
 
 pre-install:
 		@ ${CP} ${WRKSRC}/man/quota.8 ${WRKSRC}/man/cyrquota.8

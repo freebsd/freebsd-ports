@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Start or stop cyrus-imapd
+# $FreeBSD$
+
 case "$1" in
 start)
 	if [ -x /usr/local/cyrus/bin/master -a \
@@ -11,7 +14,6 @@ start)
 	;;
 stop)
 	kill `ps -U cyrus | awk '/master/ {print $1}'` && echo -n ' imapd'
-		echo -n ' imapd'
 	;;
 *)
 	echo "Usage: `basename $0` {start|stop}" >&2
