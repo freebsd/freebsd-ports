@@ -17,6 +17,7 @@ MAINTAINER=	ijliao@FreeBSD.org
 LIB_DEPENDS=	vga.1:${PORTSDIR}/graphics/svgalib \
 		SDL-1.1.5:${PORTSDIR}/devel/sdl12
 
+USE_REINPLACE=	yes
 USE_XLIB=	yes
 USE_AUTOCONF=	yes
 GNU_CONFIGURE=	yes
@@ -27,7 +28,7 @@ CONFIGURE_ARGS=	--with-sdl
 
 post-patch:
 .for file in sys/sdl/sdl.c sys/sdl/keymap.c
-	@${PERL} -pi -e "s|SDL/|SDL11/|g" ${WRKSRC}/${file}
+	@${REINPLACE_CMD} -e "s|SDL/|SDL11/|g" ${WRKSRC}/${file}
 .endfor
 
 post-install:
