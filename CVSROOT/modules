@@ -4163,6 +4163,7 @@ oproute		ports/net/oproute
 oqtencoder	ports/graphics/oqtencoder
 oqtplayer	ports/graphics/oqtplayer
 orbitcpp	ports/devel/orbitcpp
+orchard-c	ports/textproc/orchard-c
 oregano		ports/cad/oregano
 orion		ports/www/orion
 oroborus	ports/x11-wm/oroborus
@@ -4538,6 +4539,7 @@ p5-News-Newsrc	ports/news/p5-News-Newsrc
 p5-Number-Format	ports/textproc/p5-Number-Format
 p5-OLE-Storage_Lite	ports/devel/p5-OLE-Storage_Lite
 p5-ORBit	ports/devel/p5-ORBit
+p5-Orchard-Perl	ports/textproc/p5-Orchard-Perl
 p5-PDF-Create	ports/textproc/p5-PDF-Create
 p5-PGP		ports/security/p5-PGP
 p5-PGP-Sign	ports/security/p5-PGP-Sign
