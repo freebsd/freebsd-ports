@@ -17,6 +17,8 @@ COMMENT=	A digital image warping program
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.//g}
 
+CONFLICTS=	libmorph*
+
 USE_X_PREFIX=	yes
 WANT_GNOME=	yes
 USE_LIBTOOL=	yes
@@ -25,6 +27,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 INSTALLS_SHLIB=	yes
 
 MAN1=		xmorph.1
+INFO=		xmorph
 
 .include <bsd.port.pre.mk>
 
@@ -37,5 +40,8 @@ PLIST_SUB+=	GTK2=""
 CONFIGURE_ARGS+=	--without-gtkmorph
 PLIST_SUB+=	GTK2="@comment "
 .endif
+
+post-extract:
+	@${RM} -f ${WRKSRC}/doc/*.info*
 
 .include <bsd.port.post.mk>

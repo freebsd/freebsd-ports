@@ -10,7 +10,6 @@ include/xmorph/spl-array.h
 include/xmorph/spline.h
 include/xmorph/tga.h
 include/xmorph/warp.h
-info/xmorph.info
 lib/libmorph.a
 lib/libmorph.so
 lib/libmorph.so.1
