@@ -43,6 +43,7 @@
     SUBDIR += erun
     SUBDIR += eterm
     SUBDIR += eweather
+    SUBDIR += fbpanel
     SUBDIR += fbsd-icons
     SUBDIR += fixesext
     SUBDIR += fluxbg
