@@ -32,6 +32,6 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/lfp-var/fonts.dir ${PREFIX}/lib/X11/fonts/lfpfonts-var
 
 post-install:
-	@${CAT} ${DESCR}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

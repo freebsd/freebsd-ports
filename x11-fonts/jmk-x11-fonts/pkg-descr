@@ -1,13 +1,4 @@
-Jim Knoble's font collection for X
-
-You'll have to add /usr/X11R6/lib/X11/fonts/jmk
-to your X font path by either:
-
-$ xset fp+ /usr/X11R6/lib/X11/fonts/jmk
-$ xset fp rehash
-
-or by adding it to your X-server configuration file (usually
-/etc/X11/XF86Config) and restarting the X-server.
+Jim Knoble's font collection for X.
 
 This font collection for X is under the terms of the GNU General
 Public License (GPL) version 2.0
