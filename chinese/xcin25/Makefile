@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xcin
-PORTVERSION=	2.5.2.1
+PORTVERSION=	2.5.2.2
 CATEGORIES=	chinese x11
 MASTER_SITES=	ftp://xcin.linux.org.tw/pub/xcin/xcin/
 
@@ -42,8 +42,12 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/${DOC} ${PREFIX}/lib/X11/xcin25/doc
 .endfor
 	${MKDIR} ${PREFIX}/lib/X11/xcin25/doc/En
+	${MKDIR} ${PREFIX}/lib/X11/xcin25/doc/En/internal
 .for En in README.En SETUP.En Usage.En UserGuide.En
 	${INSTALL_MAN} ${WRKSRC}/doc/En/${En} ${PREFIX}/lib/X11/xcin25/doc/En
+.endfor
+.for Eninternal in module.En structer.En
+	${INSTALL_MAN} ${WRKSRC}/doc/En/internal/${Eninternal} ${PREFIX}/lib/X11/xcin25/doc/En/internal
 .endfor
 	${MKDIR} ${PREFIX}/lib/X11/xcin25/doc/history
 	${INSTALL_MAN} ${WRKSRC}/doc/history/Changes-19991011 \
