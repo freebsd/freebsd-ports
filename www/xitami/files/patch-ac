@@ -1,15 +1,15 @@
---- src/sfl/sflproc.c.orig	Tue Sep 30 02:52:30 1997
-+++ src/sfl/sflproc.c	Sun Oct 12 18:39:01 1997
-@@ -1021,8 +1021,6 @@
+--- src/sfl/.vimbk/sflproc.c.vimbk	Sat Apr  1 18:11:24 2000
++++ src/sfl/sflproc.c	Tue Nov  7 11:29:34 2000
+@@ -1711,8 +1711,6 @@
          file_handle;
      char
          pid_buffer [10];
 -    struct flock
 -        lock_file;                      /*  flock() argument block           */
- 
-     /*  We recreate our process as a child of init.  The process continues   */
-     /*  to exit in the background.  UNIX calls wait() for all children of    */
-@@ -1065,17 +1063,21 @@
+ #endif
+     int
+         argi = 0,                       /*  Input arguments iterator         */
+@@ -1787,17 +1785,21 @@
  
      if (lockfile && strused (lockfile))
        {
@@ -37,4 +37,3 @@
 +        sprintf (pid_buffer, "%ld\n", (long)getpid ());
          write   (file_handle, pid_buffer, strlen (pid_buffer));
        }
- 
