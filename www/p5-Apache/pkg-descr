@@ -1,0 +1,29 @@
+       The Apache/Perl integration project brings together the
+       full power of the Perl programming language and the Apache
+       HTTP server.  This is achieved by linking the Perl runtime
+       library into the server and providing an object oriented
+       Perl interface to the server's C language API.  These
+       pieces are seamlessly glued together by the mod_perl
+       server plugin, making it is possible to write Apache
+       modules entirely in Perl.  In addition, the persistent
+       interpreter embedded in the server avoids the overhead of
+       starting an external interpreter and the penalty of Perl
+       start-up (compile) time.
+
+       Without question, the most popular Apache/Perl module is
+       Apache::Registry module.  This module emulates the CGI
+       environment, allowing programmers to write scripts that
+       run under CGI or mod_perl without change.  Existing CGI
+       scripts may require some changes, simply because a CGI
+       script has a very short lifetime of one HTTP request,
+       allowing you to get away with "quick and dirty" scripting.
+       Using mod_perl and Apache::Registry requires you to be
+       more careful, but it also gives new meaning to the work
+       "quick"!
+
+       Although it may be all you need, a speedy CGI replacement
+       is only a small part of this project. Callback hooks are
+       in place for each stage of a request.  Apache-Perl modules
+       may step in during the handler, header parser, uri
+       translate, authentication, authorization, access, type
+       check, fixup and logger stages of a request.

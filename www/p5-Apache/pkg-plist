@@ -1,0 +1,30 @@
+sbin/httpd_modperl
+share/doc/mod_perl/post-install-notes
+lib/perl5/man/man3/Apache::Debug.3.gz
+lib/perl5/man/man3/Apache.3.gz
+lib/perl5/man/man3/Apache::Constants.3.gz
+lib/perl5/man/man3/Apache::Options.3.gz
+lib/perl5/man/man3/Apache::Registry.3.gz
+lib/perl5/man/man3/Apache::Status.3.gz
+lib/perl5/man/man3/Bundle::Apache.3.gz
+lib/perl5/man/man3/mod_perl.3.gz
+lib/perl5/site_perl/Apache.pm
+lib/perl5/site_perl/Apache/CGI.pm
+lib/perl5/site_perl/Apache/Constants.pm
+lib/perl5/site_perl/Apache/Debug.pm
+lib/perl5/site_perl/Apache/MyConfig.pm
+lib/perl5/site_perl/Apache/Options.pm
+lib/perl5/site_perl/Apache/Registry.pm
+lib/perl5/site_perl/Apache/Status.pm
+lib/perl5/site_perl/Bundle/Apache.pm
+lib/perl5/site_perl/mod_perl.pod
+lib/perl5/site_perl/i386-freebsd/auto/Apache/Constants/Constants.bs
+lib/perl5/site_perl/i386-freebsd/auto/Apache/Constants/Constants.so
+lib/perl5/site_perl/i386-freebsd/auto/Apache/Apache.bs
+lib/perl5/site_perl/i386-freebsd/auto/Apache/Apache.so
+lib/perl5/site_perl/i386-freebsd/auto/mod_perl/.packlist
+@dirrm lib/perl5/site_perl/i386-freebsd/auto/mod_perl
+@dirrm lib/perl5/site_perl/i386-freebsd/auto/Apache/Constants
+@dirrm lib/perl5/site_perl/i386-freebsd/auto/Apache
+@dirrm lib/perl5/site_perl/Bundle
+@dirrm lib/perl5/site_perl/Apache
