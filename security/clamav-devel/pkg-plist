@@ -16,6 +16,8 @@ etc/clamav.conf.default
 @owner %%CLAMAVUSER%%
 @group %%CLAMAVGROUP%%
 %%DATADIR%%/mirrors.txt
+%%DATADIR%%/main.cvd
+%%DATADIR%%/daily.cvd
 @exec chown %%CLAMAVUSER%%:%%CLAMAVGROUP%% %B
 @dirrm %%DATADIR%%
 @unexec rmdir /var/run/clamav 2>/dev/null || true

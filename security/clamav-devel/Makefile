@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	20031030
+PORTVERSION=	20031112
 CATEGORIES=	security
 MASTER_SITES=	http://clamav.sourceforge.net/snapshot/
 PKGNAMESUFFIX=	-devel
@@ -36,9 +36,9 @@ CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 
-MAN1=		clamscan.1 freshclam.1 sigtool.1 clamdscan.1 clamav-milter.1
+MAN1=		clamscan.1 freshclam.1 sigtool.1 clamdscan.1
 MAN5=		clamav.conf.5
-MAN8=		clamd.8
+MAN8=		clamd.8 clamav-milter.8
 
 CONFLICTS=	clamav-0.*
 
