@@ -1,4 +1,4 @@
-share/octave/1.1.1/exec/i386-unknown-freebsd2.2/octtopnm
+share/octave/1.1.1/exec/i386-unknown-freebsd2.1/octtopnm
 share/octave/1.1.1/imagelib/default.img
 share/octave/1.1.1/m/control/abcddim.m
 share/octave/1.1.1/m/control/are.m
@@ -157,9 +157,9 @@ share/octave/1.1.1/m/statistics/skewness.m
 share/octave/1.1.1/m/statistics/std.m
 share/octave/1.1.1/m/strings/strcat.m
 share/octave/1.1.1/m/strings/strcmp.m
-share/octave/1.1.1/oct/i386-unknown-freebsd2.2
+share/octave/1.1.1/oct/i386-unknown-freebsd2.1
 share/octave/site/m
-share/octave/site/oct/i386-unknown-freebsd2.2
+share/octave/site/oct/i386-unknown-freebsd2.1
 bin/octave
 bin/octave-bug
 bin/octave-1.1.1
