@@ -21,8 +21,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/iperf ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/iperf
-.for file in README doc/index.html doc/jperf.gif doc/lib.html doc/release.html \
-		doc/ui_license.html
+.for file in README doc/index.html doc/jperf.gif doc/dast.gif \
+		doc/lib.html doc/ui_license.html
 	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/iperf
 .endfor
 .endif
