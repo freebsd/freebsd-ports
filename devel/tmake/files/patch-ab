@@ -9,28 +9,3 @@
  TMAKE_CFLAGS_DEBUG	= -g
  TMAKE_CFLAGS_SHLIB	= -fPIC
  TMAKE_CFLAGS_YACC	= -Wno-unused -Wno-parentheses
-@@ -31,7 +31,7 @@
- TMAKE_LIBDIR		= /usr/local/lib
- TMAKE_INCDIR_X11	= /usr/X11R6/include
- TMAKE_LIBDIR_X11	= /usr/X11R6/lib
--TMAKE_INCDIR_QT		= $(QTDIR)/include
-+TMAKE_INCDIR_QT		= $(QTDIR)/include/qt2
- TMAKE_LIBDIR_QT		= $(QTDIR)/lib
- TMAKE_INCDIR_OPENGL	= /usr/X11R6/include
- TMAKE_LIBDIR_OPENGL	= /usr/X11R6/lib
-@@ -51,12 +51,12 @@
- TMAKE_LIBS		=
- TMAKE_LIBS_X11		= -lXext -lX11 -lm
- TMAKE_LIBS_X11SM	= -lICE -lSM
--TMAKE_LIBS_QT		= -lqt
--TMAKE_LIBS_QT_THREAD	= -lqt-mt
-+TMAKE_LIBS_QT		= -lqtgl
-+TMAKE_LIBS_QT_THREAD	= -lqt2-mt
- TMAKE_LIBS_OPENGL	= -lGLU -lGL -lXmu
- TMAKE_LIBS_THREAD	= 
- 
--TMAKE_MOC		= $(QTDIR)/bin/moc
-+TMAKE_MOC		= $(QTDIR)/bin/moc2
- TMAKE_UIC		= $(QTDIR)/bin/uic
- 
- TMAKE_AR		= ar cqs
