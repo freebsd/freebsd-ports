@@ -38,7 +38,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|/usr|${PREFIX}|g" ${WRKSRC}/$i
 .endfor
 	@${REINPLACE_CMD} -e "s|%%CFLAGS%%|${CFLAGS}|g" ${WRKSRC}/zlib/Makefile
-	@${REINPLACE_CMD} -e "s|([\ \t(])T_USER|\1T_USERNAME|g" ${WRKSRC}/*.[chly]
+	@${REINPLACE_CMD} -e "s|\([\ \t(]\)T_USER|\1T_USERNAME|g" ${WRKSRC}/*.[chly]
 
 post-install:
 	@${MKDIR} ${DATADIR}
