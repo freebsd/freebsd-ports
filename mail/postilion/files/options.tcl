@@ -648,8 +648,8 @@ proc OptionsInit {} {
     # Message finding fields
     set option(msgfind_format) "%s%n%b%D"
 
-    # Should we warn about tk version 8.0
-    set option(warn_tk80) 1
+    # Should we warn about tk version 8.2
+    set option(warn_tk82) 1
 
     ## Ispell options
     # Turn Ispell On/Off
