@@ -1,0 +1,45 @@
+An important note from the port maintainer 
+				(Andreas Klemm <andreas@knobel.gun.de>)
+
+Please note: mapedit is NOT public domain software
+==================================================
+
+Credits and license terms
+=========================
+
+Copyright 1994 by Thomas Boutell. THIS IS NOT PUBLIC DOMAIN SOFTWARE.
+Commercial users must pay for it to continue using it after 30
+days. You need not register again when new versions are released.
+Please remit $25 to:
+
+Thomas Boutell
+426 Bellevue Ave. E Apt. 1
+Seattle, WA 98102 USA
+
+Nonprofit and educational users are required to send me a postcard!
+
+What is mapedit?
+================
+
+mapedit is a WYSIWYG (What You See Is What You Get) editor for
+imagemap files.
+
+Imagemap files are a feature of both NCSA and CERN httpd servers;
+they allow you to turn a GIF into a clickable map by designating
+polygons, circles and rectangles within the GIF and specifying a
+URL for each to link to.
+
+Unfortunately, creating good image maps by hand is a lot of work,
+because the points must be located using an editor not explicitly
+designed for the purpose.
+
+mapedit allows you to load your GIF image into a scrollable,
+resizable window and then draw polygons, circles and rectangles on
+top of it, specifying a URL for each. It also allows you to go back
+and delete these "hot spots", set a default URL for clicks outside
+of the "hot" areas, and so on. In addition, it allows you to
+associate comments of arbitrary length with each object if you have
+a server that accepts the NCSA imagemap format.
+
+Please take a look at the file /usr/X11R6/lib/X11/mapedit/mapedit.html
+for full usage documentation.
