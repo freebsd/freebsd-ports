@@ -48,6 +48,8 @@ COMMENT=		The base set of packages needed in Linux mode
 
 BUILD_DEPENDS=		rpm:${PORTSDIR}/archivers/rpm
 
+FORBIDDEN=	"X Pixmap parsing bugs--see <URL:https://rhn.redhat.com/errata/RHSA-2004-478.html> and <URL:https://rhn.redhat.com/errata/RHSA-2004-612.html>"
+
 CONFLICTS=	linux_base-6* linux_base-8* linux_base-deb* linux_base-gen* \
 		linux_base-rh* linux_base-suse*
 ONLY_FOR_ARCHS=		alpha i386
