@@ -21,6 +21,6 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
-CONFIGURE_TARGET=
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 .include <bsd.port.mk>
