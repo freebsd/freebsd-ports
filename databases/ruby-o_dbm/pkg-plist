@@ -1,0 +1,3 @@
+%%RUBY_SITELIBDIR%%/o_dbm.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/o_dbm/test-o_dbm.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/o_dbm
