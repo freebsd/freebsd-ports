@@ -3,11 +3,11 @@
 # Date created:		1 Ag 1997
 # Whom:			Pedro Giffuni (orig)
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/11/17 10:11:29 tg Exp $
 #
 
 DISTNAME=	xinvest-2.5.1
-CATEGORIES=	misc
+CATEGORIES=	deskutils
 MASTER_SITES=	http://sunsite.auc.dk/xinvest/	\
 		${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR= applications

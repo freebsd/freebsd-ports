@@ -3,11 +3,11 @@
 # Date created:		31 Jul 1996
 # Whom:			shanee@augusta.de
 #
-# $Id: Makefile,v 1.2 1996/11/26 07:33:14 asami Exp $
+# $Id: Makefile,v 1.3 1997/10/26 23:57:13 fenner Exp $
 #
 
 DISTNAME=	xmaddressbook-1.5.3
-CATEGORIES=	misc
+CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	office
 EXTRACT_SUFX=	.tar.Z

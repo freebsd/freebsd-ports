@@ -3,12 +3,12 @@
 # Date created:      28 Jun 1997
 # Whom:              Ruslan Shevchenko <ruslan@shevchenko.kiev.ua>
 #
-# $Id: Makefile,v 1.1.1.1 1998/05/06 12:35:01 tg Exp $
+# $Id: Makefile,v 1.2 1998/08/05 09:31:34 asami Exp $
 #
 
 DISTNAME=	Trash-2.4
 PKGNAME=	offix-trash-2.4
-CATEGORIES=	x11 offix
+CATEGORIES=	deskutils offix
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	desktop_managers/OffiX
 

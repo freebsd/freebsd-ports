@@ -3,11 +3,11 @@
 # Date created:				7 January 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/03/27 10:31:46 tg Exp $
 #
 
 DISTNAME=	teapot-1.01
-CATEGORIES=	misc
+CATEGORIES=	deskutils
 MASTER_SITES=	ftp://cantor.informatik.rwth-aachen.de/pub/unix/
 
 MAINTAINER=	andy@icc.surw.chel.su

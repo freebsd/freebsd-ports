@@ -3,11 +3,11 @@
 # Date created:		29 Sep 1997
 # Whom:			mi@aldan.ziplink.net
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/03/09 13:04:57 tg Exp $
 #
 
 DISTNAME=	xmdiary-3.0.1
-CATEGORIES=	misc
+CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	office
 DISTFILES=      ${DISTNAME}.tar.gz xmdfix.gz

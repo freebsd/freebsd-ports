@@ -3,13 +3,13 @@
 # Date created:				14 April 1996
 # Whom:	Daniel Eischen <deischen@iworks.InterWorks.org>
 #
-# $Id: Makefile,v 1.8 1998/03/22 18:01:28 obrien Exp $
+# $Id: Makefile,v 1.10 1998/04/17 18:05:17 obrien Exp $
 #
 
 #	Also update	ports/japanese/plan/ (ja-plan) when this port is updated
 
 DISTNAME=	plan-1.7.1
-CATEGORIES=	misc
+CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}  \
 		ftp://ftp.fu-berlin.de/pub/unix/graphics/plan/
 MASTER_SITE_SUBDIR=	applications

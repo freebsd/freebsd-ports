@@ -3,11 +3,11 @@
 # Date created:		26 Sep 1997
 # Whom:			mi
 #
-# $Id$
+# $Id: Makefile,v 1.2 1997/09/30 09:28:10 asami Exp $
 #
 
 DISTNAME=	XPostitPlus-2.3
-CATEGORIES=	x11
+CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	office
 

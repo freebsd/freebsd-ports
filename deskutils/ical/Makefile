@@ -3,11 +3,11 @@
 # Date created:         Mon Aug 28 13:35:31 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.16 1998/02/21 22:38:00 fenner Exp $
+# $Id: Makefile,v 1.18 1998/03/20 09:59:49 tg Exp $
 #
 
 DISTNAME=	ical-2.2
-CATEGORIES=	misc tk80
+CATEGORIES=	deskutils tk80
 MASTER_SITES=	http://www.research.digital.com/SRC/personal/Sanjay_Ghemawat/ical/icalbins/
 
 MAINTAINER=	erich@FreeBSD.ORG

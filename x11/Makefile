@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.220 1998/08/07 21:59:56 asami Exp $
+# $Id: Makefile,v 1.221 1998/08/07 22:02:54 asami Exp $
 #
 
     SUBDIR += FWF
@@ -74,7 +74,6 @@
     SUBDIR += rclock
     SUBDIR += rxvt
     SUBDIR += sharefonts
-    SUBDIR += sliderule
     SUBDIR += slingshot
     SUBDIR += swisswatch
     SUBDIR += sxpc
@@ -122,8 +121,6 @@
     SUBDIR += xmbdfed
     SUBDIR += xmold
     SUBDIR += xmove
-    SUBDIR += xpostit
-    SUBDIR += xpostitPlus
     SUBDIR += xprompt
     SUBDIR += xscreensaver
     SUBDIR += xskyroot
