@@ -16,7 +16,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Ruby library to use LV's encoding conversion engine
 
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/${LV_PORT}:configure
+EXTRACT_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/${LV_PORT}:configure
 
 LV_PORT=	misc/lv
 LV_WRKSRC_CMD=	cd ${PORTSDIR}/${LV_PORT} && ${MAKE} -V WRKSRC
