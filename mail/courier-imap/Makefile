@@ -37,7 +37,6 @@ PLIST_SUB=	OPENSSLFLAG="@comment "
 .endif
 
 CONFIGURE_ARGS=	--without-authshadow \
-		--without-authcram \
 		--sysconfdir=${PREFIX}/etc/courier-imap \
 		--with-userdb=${PREFIX}/etc/userdb \
 		--datadir=${PREFIX}/share/courier-imap \
@@ -97,6 +96,14 @@ CONFIGURE_ARGS+=	\
 .else
 CONFIGURE_ARGS+=	\
 		--without-authpam
+.endif
+
+if !defined(WITH_CRAM)
+CONFIGURE_ARGS+=	\
+		--without-authcram
+.else
+CONFIGURE_ARGS+=	\
+		--with-authcram
 .endif
 
 MAN1=		couriertcpd.1 maildirmake.1
