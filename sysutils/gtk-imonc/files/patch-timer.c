@@ -1,6 +1,6 @@
---- src/timer.c.orig	Mon May 17 23:58:51 2004
-+++ src/timer.c	Tue May 18 00:18:15 2004
-@@ -298,14 +298,14 @@
+--- src/timer.c.orig	Wed Jan 12 12:36:24 2005
++++ src/timer.c	Thu Feb 17 21:10:06 2005
+@@ -293,14 +293,14 @@
  				}
  				else
  				{
@@ -17,7 +17,7 @@
  				obytes += tmpbytes;
  				row[i] = get_bytes (tmpbytes, obytebuf);
  				break;
-@@ -1148,8 +1148,8 @@
+@@ -1165,8 +1165,8 @@
  		}
  		else
  		{

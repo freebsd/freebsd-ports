@@ -6,23 +6,18 @@
 #
 
 PORTNAME=	gtk-imonc
-PORTVERSION=	0.6.3
-PORTREVISION=	2
+PORTVERSION=	0.6.4.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://userpage.fu-berlin.de/~zeank/gtk-imonc/download/
 
 MAINTAINER=	aberg@doomnet.de
 COMMENT=	A GTK2-based imond-client to control an on(e) disc fli4l router
 
-BROKEN=		Incomplete pkg-plist
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-USE_GETTEXT=	yes
-USE_ICONV=	yes
 USE_REINPLACE=	yes
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 gnomehier
 USE_X_PREFIX=	yes
 
 post-patch:
