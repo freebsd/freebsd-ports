@@ -21,8 +21,10 @@ COMMENT=	A plugin for QT to connect to PostgreSQL-Databases
 
 DB=		psql
 
-LIB_DEPENDS+=	pq:${PORTSDIR}/databases/postgresql7 \
+LIB_DEPENDS+=	pq:${PORTSDIR}/${POSTGRESQL_PORT} \
 		qt-mt:${PORTSDIR}/x11-toolkits/qt33
+
+POSTGRESQL_PORT?=	databases/postgresql7
 
 USE_BZIP2=	yes
 PLUGIN=		plugins/src/sqldrivers/${DB}
