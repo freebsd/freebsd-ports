@@ -1,0 +1,19 @@
+*** ical.patch.org	Fri Sep 17 22:29:27 1999
+--- ical.patch	Fri Sep 17 22:29:59 1999
+***************
+*** 17,23 ****
+  +    "Okay" "Cancel"]
+  +    
+  +    if { $result} {
+! +        exec syncal >/dev/null
+  +        io_read [ical_leader]
+  +    }
+  +    cal option AmPm $dm_AmPm
+--- 17,23 ----
+  +    "Okay" "Cancel"]
+  +
+  +    if { $result} {
+! +        exec @@PREFIX@@/bin/syncal >/dev/null
+  +        io_read [ical_leader]
+  +    }
+  +    cal option AmPm $dm_AmPm
