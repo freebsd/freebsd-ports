@@ -157,6 +157,7 @@
     SUBDIR += py-sgrep
     SUBDIR += py-trex
     SUBDIR += py-xml
+    SUBDIR += py2html
     SUBDIR += rand
     SUBDIR += replaceit
     SUBDIR += rman
