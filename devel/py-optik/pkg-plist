@@ -1,18 +1,27 @@
 lib/%%PYTHON_VERSION%%/site-packages/optik/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/optik/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/optik/__init__.pyo
 lib/%%PYTHON_VERSION%%/site-packages/optik/errors.py
 lib/%%PYTHON_VERSION%%/site-packages/optik/errors.pyc
+lib/%%PYTHON_VERSION%%/site-packages/optik/errors.pyo
 lib/%%PYTHON_VERSION%%/site-packages/optik/option.py
 lib/%%PYTHON_VERSION%%/site-packages/optik/option.pyc
+lib/%%PYTHON_VERSION%%/site-packages/optik/option.pyo
 lib/%%PYTHON_VERSION%%/site-packages/optik/option_parser.py
 lib/%%PYTHON_VERSION%%/site-packages/optik/option_parser.pyc
+lib/%%PYTHON_VERSION%%/site-packages/optik/option_parser.pyo
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/optik
+%%EXAMPLES%%/caseless.py
+%%EXAMPLES%%/required_1.py
+%%EXAMPLES%%/required_2.py
+@dirrm %%EXAMPLES%%
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/advanced.txt
 %%PORTDOCS%%%%DOCSDIR%%/basic.txt
 %%PORTDOCS%%%%DOCSDIR%%/callbacks.txt
 %%PORTDOCS%%%%DOCSDIR%%/extending.txt
+%%PORTDOCS%%%%DOCSDIR%%/tao.txt
 %%PORTDOCS%%%%DOCSDIR%%/test/runall
 %%PORTDOCS%%%%DOCSDIR%%/test/test_basics.py
 %%PORTDOCS%%%%DOCSDIR%%/test/test_bool.py
