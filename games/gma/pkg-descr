@@ -1,0 +1,11 @@
+GMA or "The Go-Moku Apprentice" is a computerized go-moku player that learns
+playing the game entirely from its opponent.  It was written for fun by
+Johan Walles (d92-jwa@nada.kth.se) in October 1998.
+
+The goal of Go-Moku is to get five (or more) marks in a row (horisontally,
+vertically or diagonally).  You get to put one mark each time it is your turn.
+
+WWW: http://www.student.nada.kth.se/~d92-jwa/code/
+
+- Ying-Chieh Liao
+ijliao@csie.nctu.edu.tw
