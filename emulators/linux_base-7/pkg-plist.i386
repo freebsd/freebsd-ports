@@ -455,6 +455,7 @@ usr/lib/librpmio.so.0.0.0
 usr/lib/libslang.so.1
 usr/lib/libslang.so.1.4.2
 usr/lib/libstdc++-3-libc6.2-2-2.10.0.so
+usr/lib/libstdc++-libc6.1-1.so.2
 usr/lib/libstdc++-libc6.2-2.so.3
 usr/lib/libttf.so.2
 usr/lib/libttf.so.2.3.0

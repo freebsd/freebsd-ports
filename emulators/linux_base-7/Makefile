@@ -165,6 +165,13 @@ do-install:
 		${RM} -f ${LINUXBASE}/$$F; \
 	done
 	@${LN} -s /var/tmp ${LINUXBASE}/usr/tmp
+#
+# kludge for pre-compiled Netscape 6 and Mozilla
+#
+.if (${MACHINE_ARCH} == "i386")
+	@cd ${LINUXBASE}/usr/lib && \
+		${LN} -fs libstdc++-3-libc6.2-2-2.10.0.so libstdc++-libc6.1-1.so.2
+.endif
 
 post-install:
 	@${ECHO} ''
