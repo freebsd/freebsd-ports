@@ -94,7 +94,7 @@ EOF
     fi
 
     echo ""
-    if grep -q "^${group}:" /etc/group; then
+    if pw group show "${group}" 2>/dev/null; then
 	echo "You already have a group \"${group}\", so I will use it."
     else
 	echo "You need a group \"${group}\"."
@@ -111,7 +111,7 @@ EOF
 	fi
     fi
     
-    if grep -q "^${user}:" /etc/passwd; then
+    if pw user show "${user}" 2>/dev/null; then
 	echo "You already have a user \"${user}\", so I will use it."
     else
 	echo "You need a user \"${user}\"."
