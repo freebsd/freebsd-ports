@@ -3,7 +3,7 @@
 # Date created:		27 March 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.6 1996/06/14 07:59:34 asami Exp $
+# $Id: Makefile,v 1.7 1996/07/23 10:34:25 asami Exp $
 #
 
 DISTNAME=	nethack-3.2.1
@@ -22,6 +22,7 @@ pre-configure:
 	@cd ${WRKSRC}/sys/unix; ${SHELL} setup.sh
 
 post-install:
+	@cd ${WRKSRC}/doc; chmod 644 *.6
 	@cd ${WRKSRC}/doc; PREFIX=${PREFIX} ${MAKE} manpages
 .if !defined(NOMANCOMPRESS)
 	for file in dgn_comp dlb lev_comp nethack recover; do \
