@@ -1,0 +1,19 @@
+--- src/mozilla.cpp.orig	Mon Sep 30 07:27:17 2002
++++ src/mozilla.cpp	Mon Sep 30 07:28:14 2002
+@@ -62,6 +62,7 @@
+ #include "nsIContentViewerFile.h"
+ #include "nsIPrintOptions.h"
+ #include "nsIPrintSettings.h"
++#include "nsIPrintSettingsService.h"
+ #include "nsIWebBrowserPrint.h"
+ #include "skipstone-print.h"
+ #include "debug.h"
+@@ -203,7 +204,7 @@
+ #ifdef NS_WITH_SERVICE
+      	NS_WITH_SERVICE(nsIPrintOptions, options, kPrintOptionsCID, &result);
+ #else
+-     	nsCOMPtr<nsIPrintOptions> options = do_GetService(kPrintOptionsCID, &result);
++     	nsCOMPtr<nsIPrintSettingsService> options = do_GetService(kPrintOptionsCID, &result);
+ #endif     
+ 	if (NS_FAILED(result)) D_RETURN_ ( NS_ERROR_FAILURE );
+      
