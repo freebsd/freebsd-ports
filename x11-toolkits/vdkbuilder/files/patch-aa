@@ -1,0 +1,11 @@
+--- vdkbuilder/vdkb_acsupport.cc.orig	Mon Feb  7 16:42:58 2000
++++ vdkbuilder/vdkb_acsupport.cc	Mon Feb  7 16:56:02 2000
+@@ -93,7 +93,7 @@
+ 	;
+       else
+ 	{
+-	  sprintf(buff,"cp -a %s/res/%s %s/",
++	  sprintf(buff,"cp -pR %s/res/%s %s/",
+ 		  VDKB_DATADIR,
+ 		  tobecopied[t],
+ 		  (char*) tgtPath);
