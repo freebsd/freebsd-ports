@@ -9,6 +9,8 @@ bin/emacsclient
 bin/etags
 bin/m2ps
 bin/rcs-checkin
+lib/mule/19.28/etc/DOC
+lib/mule/19.28/etc/DOC-19.28.1
 lib/mule/19.28/i386--freebsd/cvtmail
 lib/mule/19.28/i386--freebsd/digest-doc
 lib/mule/19.28/i386--freebsd/emacsserver
