@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.109 1996/11/19 12:32:12 asami Exp $
+# $Id: Makefile,v 1.110 1996/11/25 10:15:55 tg Exp $
 #
 
     SUBDIR += FWF
@@ -24,8 +24,10 @@
     SUBDIR += gwm
     SUBDIR += iv
     SUBDIR += olvwm
+    SUBDIR += p5-Tk400
     SUBDIR += piewm
     SUBDIR += qt
+    SUBDIR += qvwm
     SUBDIR += rxvt
     SUBDIR += specJava
     SUBDIR += swisswatch
@@ -58,8 +60,8 @@
     SUBDIR += xscreensaver
     SUBDIR += xsnow
     SUBDIR += xtacy
+    SUBDIR += xview-clients
     SUBDIR += xview-config
     SUBDIR += xview-lib
-    SUBDIR += xview-clients
 
 .include <bsd.port.subdir.mk>
