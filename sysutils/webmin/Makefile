@@ -7,7 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	0.92
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/webmin/updates/ \
 		http://www.webmin.com/webmin/download/
@@ -24,8 +24,10 @@ USE_PERL5=	yes
 SCRIPTS_ENV+=	WRKDIR="${WRKDIR}"
 
 WEBMIN_MODULES=	useradmin-0.92-1.wbm.gz custom-0.92-1.wbm.gz \
-		jabber-0.92-1.wbm.gz bind8-0.92-1.wbm.gz
-WEBMIN_THEMES=
+		jabber-0.92-1.wbm.gz bind8-0.92-1.wbm.gz \
+		postgresql-0.92-1.wbm.gz mysql-0.92-1.wbm.gz \
+		proftpd-0.92-1.wbm.gz
+WEBMIN_THEMES=	mscstyle3-0.92-1.wbt.gz
 
 post-extract:
 	@if [ "${WEBMIN_MODULES}" != "" ]; then \
@@ -87,10 +89,14 @@ post-install:
 	@${ECHO_CMD} "x!"				>> ${WRKDIR}/ex.script
 	@${CP} -p ${TMPPLIST} ${TMPPLIST}.pre-lib-webmin
 	@cd ${WRKDIR} ; ex < ex.script
+# stop webmin if configured and enabled at startup
+	@[ -n "${BATCH}" ] || ([ ! -d ${PREFIX}/etc/webmin ] || [ ! -x ${PREFIX}/etc/rc.d/webmin.sh ] || ${PREFIX}/etc/rc.d/webmin.sh stop > /dev/null)
 # upgrade configuration if etc/webmin exists
 	@[ ! -d ${PREFIX}/etc/webmin ] || echo | nostart=Y ${PREFIX}/lib/webmin/setup.sh
 # run interactive setup if not in BATCH mode and no configuration exists
-	@[ -n "$BATCH" ] || ([ -d ${PREFIX}/etc/webmin ] || nostart=Y ${PREFIX}/lib/webmin/setup.sh)
+	@[ -n "${BATCH}" ] || ([ -d ${PREFIX}/etc/webmin ] || nostart=Y ${PREFIX}/lib/webmin/setup.sh)
+# start webmin again
+	@[ -n "${BATCH}" ] || ([ ! -d ${PREFIX}/etc/webmin ] || [ ! -x ${PREFIX}/etc/rc.d/webmin.sh ] || ${PREFIX}/etc/rc.d/webmin.sh start > /dev/null)
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
