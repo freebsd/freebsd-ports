@@ -402,6 +402,7 @@
     SUBDIR += xmailwatcher
     SUBDIR += xpbiff
     SUBDIR += xpbiff-youbin
+    SUBDIR += yadda
     SUBDIR += youbin
     SUBDIR += yuzu
     SUBDIR += zmailer
