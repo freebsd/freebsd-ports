@@ -24,10 +24,6 @@ USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
 CONFIGURE_ENV=	LDFLAGS="-lcrypto"
-_NO_KDE_FIXPTHREAD=	yes
-
-pre-configure:
-	${REINPLACE_CMD} -e 's|-pedantic ||g' ${WRKSRC}/configure
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/x11/kde3/Makefile.kde"
