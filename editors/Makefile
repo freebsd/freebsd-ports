@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.65 1999/01/16 07:44:10 kuriyama Exp $
+# $Id: Makefile,v 1.66 1999/01/18 04:09:36 steve Exp $
 #
 
     SUBDIR += apel-emacs
@@ -28,6 +28,7 @@
     SUBDIR += nvi-m17n
     SUBDIR += nvi-perl
     SUBDIR += offix-editor
+    SUBDIR += psgml-emacs
     SUBDIR += sam
     SUBDIR += semi-emacs20
     SUBDIR += semi-emacs20-current
