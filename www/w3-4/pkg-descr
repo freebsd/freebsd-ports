@@ -1,27 +1,10 @@
-w3-2.2.26 package is WWW browser package for emacs.
+Emacs/W3 is a full-featured web browser, written entirely in Emacs-Lisp,
+that supports all the bells and whistles you will find in use on the web
+today, including frames, tables, stylesheets, and much more. Emacs/W3
+runs on most major operating systems, including almost any flavor of Unix,
+Windows NT/95, AmigaDOS, OS/2, and VMS. 
 
-Info path and elisp load path would be set as follows :
-
-    Info path - /usr/local/info
-    load path - /usr/local/share/emacs/site-lisp/w3
-
-You may be happy by adding following lines to your .emacs file:
-
-	(setq url-keep-history t)
-	(setq url-be-asynchronous t)
-	(setq w3-default-homepage
-		"file://localhost/usr/share/doc/handbook/handbook.html")
-
-and copying .mosaic-hotlist-default file from /usr/local/share/examples/w3
-directory to your home directory.
-
-Setting above user environment would be only executed by
-/usr/local/share/examples/w3/user-install on your home directory. 
-
-If you want to get an typesetting manual, copy Makefile and w3.texi from
-/usr/local/share/doc/w3 and 'make w3.dvi'.
-
-If you have installed correctly, type "M-x w3". Enjoy!
-
-- Kiriyama Kazuhiko
-kiri@kiri.toba-cmt.ac.jp
+Emacs/W3 4.0 is the first major release of Emacs/W3 in almost a year, and
+is a major upgrade. Please read the documentation carefully if you are
+upgrading. If you run into any problems, please read the FAQ to see if
+you have run into a common problem. 
