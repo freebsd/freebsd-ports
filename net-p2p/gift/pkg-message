@@ -1,0 +1,13 @@
+giFT no longer contains any protocol plugins. Please install the respective
+ports: gift-fasttrack, gift-openft and gift-gnutella.
+
+After installing giFT and OpenFT you'll need to set them up.
+Be sure that you completely install any plugins you wish to use before this
+step. If you decide that you later wish to add a new plugin, you will need to
+re-run gift-setup after installation. Invocation of the setup tool is something
+like this:
+$ gift-setup
+
+Note that giFT and OpenFT will not work with the default setup, so make sure you
+read and understand all questions before answering or just pressing enter. To
+reconfigure giFT and OpenFT later, just run gift-setup again.

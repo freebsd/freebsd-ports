@@ -1,0 +1,16 @@
+What is giFT, you ask? giFT is a modular daemon capable of abstracting the
+communication between the end user and specific filesharing protocols
+(peer-to-peer or otherwise). The giFT project differs from many other similar
+projects in that it is a distribution of a standalone platform-independent
+daemon, a library for client/frontend development, and our own homegrown
+network, OpenFT. 
+
+
+The goal of this project is to ensure that user interface developers never waste
+time with the low-level details of a protocol and that network programmers never
+waste time with the user interface details. Along those same lines it allows end
+users to control which protocols they use no matter which giFT interface they
+have selected as their favorite. Any new filesharing network can be supported
+without any change to the user interface. 
+
+WWW: http://gift.sourceforge.net/
