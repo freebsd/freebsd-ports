@@ -5,12 +5,13 @@
 # $FreeBSD$
 #
 
-PORTNAME=	autoconf254
-PORTVERSION=	2.54
+PORTNAME=	autoconf257
+PORTVERSION=	2.57
 PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	autoconf
+DISTNAME=	autoconf-${PORTVERSION}
 
 MAINTAINER=	alane@FreeBSD.org
 
@@ -18,10 +19,7 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		help2man:${PORTSDIR}/misc/help2man
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
-.undef		NO_IGNORE
-BORKED=		"DON'T EVEN THINK ABOUT IT."
-BROKEN=		${BORKED}
-IGNORE=		"DAMN YOU BENTO. LEAVE THIS ALONE!"
+BROKEN=	This port is not finished yet
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -30,6 +28,7 @@ USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CONFIG_SHELL=/bin/sh
 CONFIGURE_ENV+=	M4=${LOCALBASE}/bin/gm4
+CONFIGURE_ARGS=	--program-suffix=257
 
 .if ${PORTNAME} == "autoconf"
 .if exists(${LOCALBASE}/bin/emacs)
@@ -71,7 +70,7 @@ pre-everything:
 
 post-install:
 .for FILE in ${GENERIC_TOOLS}
-	${INSTALL_SCRIPT} ${WRKSRC}/config/${FILE} ${PREFIX}/share/autoconf
+	${INSTALL_SCRIPT} ${WRKSRC}/config/${FILE} ${PREFIX}/share/autoconf257
 .endfor
 
 .include <bsd.port.mk>
