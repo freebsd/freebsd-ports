@@ -1,8 +1,8 @@
-# $Id: Makefile,v 1.43 1995/03/06 08:17:02 asami Exp $
+# $Id: Makefile,v 1.44 1995/03/09 00:51:20 asami Exp $
 #
 # restricted: pgp.usa_only pgp.non-usa_only 
 #
-SUBDIR= Canna Wnn amanda colorls cpm hfs iozone ispell less mshell mtools nkf \
+SUBDIR= amanda colorls cpm hfs iozone ispell less mshell mtools \
 	rman screen top tua xdu xsysstats 
 
 .include <bsd.port.subdir.mk>
