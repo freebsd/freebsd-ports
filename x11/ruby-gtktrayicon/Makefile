@@ -21,8 +21,6 @@ COMMENT=	Ruby binding for GtkTrayIcon
 BUILD_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2
 
-BROKEN=		"Configure fails"
-
 USE_RUBY=	yes
 USE_GNOME=	gtk20
 USE_RUBY_EXTCONF=	yes
