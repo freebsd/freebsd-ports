@@ -1,0 +1,19 @@
+#!/bin/sh
+# $FreeBSD$
+
+# The RPM database directory
+RPM_DATABASE_DIR=/var/lib/rpm
+
+# Provide instructions for initialising the RPM database.
+if [ "$2" = "POST-INSTALL" ]; then
+	if [ ! -d "${RPM_DATABASE_DIR}" ]; then
+		echo ""
+		echo "No RPM database found.  If you wish to use RPM to install"
+		echo "RPM packages the you will need to initialise the database"
+		echo "with the commands:"
+		echo ""
+		echo "	mkdir -p ${RPM_DATABASE_DIR}"
+		echo "	${PKG_PREFIX}/bin/rpm --initdb"
+		echo ""
+	fi
+fi

@@ -1,0 +1,20 @@
+--- python/Makefile.in.orig	Tue Mar  2 14:10:52 2004
++++ python/Makefile.in	Tue Mar  2 14:11:24 2004
+@@ -197,7 +197,7 @@
+ 	-I$(top_srcdir)/rpmdb \
+ 	-I$(top_srcdir)/rpmio \
+ 	-I$(top_srcdir)/beecrypt \
+-	-I$(top_srcdir)/popt \
++	@WITH_POPT_INCLUDE@ \
+ 	-I/usr/include/python${PYVER} \
+ 	@INCPATH@
+ 
+@@ -207,7 +207,7 @@
+ 	$(top_builddir)/lib/librpm.la \
+ 	$(top_builddir)/rpmdb/librpmdb.la \
+ 	$(top_builddir)/rpmio/librpmio.la \
+-	$(top_builddir)/popt/libpopt.la
++	@WITH_POPT_LIB@
+ 
+ 
+ LDADD = 

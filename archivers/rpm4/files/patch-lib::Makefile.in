@@ -1,0 +1,34 @@
+--- lib/Makefile.in.orig	Thu Feb 14 16:58:39 2002
++++ lib/Makefile.in	Thu Mar  4 01:03:02 2004
+@@ -194,7 +194,7 @@
+ 	-I$(top_srcdir)/rpmdb \
+ 	-I$(top_srcdir)/rpmio \
+ 	-I$(top_srcdir)/beecrypt \
+-	-I$(top_srcdir)/popt \
++	@WITH_POPT_INCLUDE@ \
+ 	@INCPATH@
+ 
+ 
+@@ -214,11 +214,10 @@
+ mylibpaths = \
+ 	-L$(top_builddir)/lib/.libs \
+ 	-L$(top_builddir)/rpmdb/.libs \
+-	-L$(top_builddir)/rpmio/.libs \
+-	-L$(top_builddir)/popt/.libs
++	-L$(top_builddir)/rpmio/.libs
+ 
+ 
+-mylibs = -lrpm -lrpmdb -lrpmio -lpopt @LIBS@ @INTLLIBS@ @LIBMISC@
++mylibs = -lrpm -lrpmdb -lrpmio @WITH_POPT_LIB@ @LIBS@ @INTLLIBS@ @LIBMISC@
+ LIBS = 
+ 
+ lib_LTLIBRARIES = librpm.la
+@@ -421,7 +420,7 @@
+ install-exec-am: install-libLTLIBRARIES
+ install-exec: install-exec-am
+ 
+-install-data-am: install-pkgincHEADERS install-data-local
++install-data-am: install-pkgincHEADERS
+ install-data: install-data-am
+ 
+ install-am: all-am

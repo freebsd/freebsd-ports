@@ -1,0 +1,98 @@
+--- tools/Makefile.in.orig	Thu Feb 14 16:58:42 2002
++++ tools/Makefile.in	Sun Sep  7 00:49:29 2003
+@@ -194,7 +194,7 @@
+ 	-I$(top_srcdir)/lib \
+ 	-I$(top_srcdir)/rpmdb \
+ 	-I$(top_srcdir)/rpmio \
+-	-I$(top_srcdir)/popt \
++	@WITH_POPT_INCLUDE@ \
+ 	@WITH_ZLIB_INCLUDE@ \
+ 	@INCPATH@ \
+ 	-I$(top_srcdir)/misc
+@@ -212,7 +212,6 @@
+ 	$(top_builddir)/lib/librpm.la \
+ 	$(top_builddir)/rpmdb/librpmdb.la \
+ 	$(top_builddir)/rpmio/librpmio.la \
+-	$(top_builddir)/popt/libpopt.la \
+ 	@WITH_ZLIB_LIB@ \
+ 	@INTLLIBS@
+ 
+@@ -249,61 +248,61 @@
+ rpminject_LDADD = $(LDADD)
+ rpminject_DEPENDENCIES =  $(top_builddir)/build/librpmbuild.la \
+ $(top_builddir)/lib/librpm.la $(top_builddir)/rpmdb/librpmdb.la \
+-$(top_builddir)/rpmio/librpmio.la $(top_builddir)/popt/libpopt.la
+-rpminject_LDFLAGS = 
++$(top_builddir)/rpmio/librpmio.la
++rpminject_LDFLAGS = @WITH_POPT_LIB@
+ rpmsort_OBJECTS =  rpmsort.$(OBJEXT)
+ rpmsort_LDADD = $(LDADD)
+ rpmsort_DEPENDENCIES =  $(top_builddir)/build/librpmbuild.la \
+ $(top_builddir)/lib/librpm.la $(top_builddir)/rpmdb/librpmdb.la \
+-$(top_builddir)/rpmio/librpmio.la $(top_builddir)/popt/libpopt.la
++$(top_builddir)/rpmio/librpmio.la
+ dump_SOURCES = dump.c
+ dump_OBJECTS =  dump.$(OBJEXT)
+ dump_LDADD = $(LDADD)
+ dump_DEPENDENCIES =  $(top_builddir)/build/librpmbuild.la \
+ $(top_builddir)/lib/librpm.la $(top_builddir)/rpmdb/librpmdb.la \
+-$(top_builddir)/rpmio/librpmio.la $(top_builddir)/popt/libpopt.la
+-dump_LDFLAGS = 
++$(top_builddir)/rpmio/librpmio.la
++dump_LDFLAGS = @WITH_POPT_LIB@
+ dumpdb_SOURCES = dumpdb.c
+ dumpdb_OBJECTS =  dumpdb.$(OBJEXT)
+ dumpdb_LDADD = $(LDADD)
+ dumpdb_DEPENDENCIES =  $(top_builddir)/build/librpmbuild.la \
+ $(top_builddir)/lib/librpm.la $(top_builddir)/rpmdb/librpmdb.la \
+-$(top_builddir)/rpmio/librpmio.la $(top_builddir)/popt/libpopt.la
+-dumpdb_LDFLAGS = 
++$(top_builddir)/rpmio/librpmio.la
++dumpdb_LDFLAGS = @WITH_POPT_LIB@
+ rpmarchive_SOURCES = rpmarchive.c
+ rpmarchive_OBJECTS =  rpmarchive.$(OBJEXT)
+ rpmarchive_LDADD = $(LDADD)
+ rpmarchive_DEPENDENCIES =  $(top_builddir)/build/librpmbuild.la \
+ $(top_builddir)/lib/librpm.la $(top_builddir)/rpmdb/librpmdb.la \
+-$(top_builddir)/rpmio/librpmio.la $(top_builddir)/popt/libpopt.la
+-rpmarchive_LDFLAGS = 
++$(top_builddir)/rpmio/librpmio.la
++rpmarchive_LDFLAGS = @WITH_POPT_LIB@
+ rpmheader_SOURCES = rpmheader.c
+ rpmheader_OBJECTS =  rpmheader.$(OBJEXT)
+ rpmheader_LDADD = $(LDADD)
+ rpmheader_DEPENDENCIES =  $(top_builddir)/build/librpmbuild.la \
+ $(top_builddir)/lib/librpm.la $(top_builddir)/rpmdb/librpmdb.la \
+-$(top_builddir)/rpmio/librpmio.la $(top_builddir)/popt/libpopt.la
+-rpmheader_LDFLAGS = 
++$(top_builddir)/rpmio/librpmio.la
++rpmheader_LDFLAGS = @WITH_POPT_LIB@
+ rpmlead_SOURCES = rpmlead.c
+ rpmlead_OBJECTS =  rpmlead.$(OBJEXT)
+ rpmlead_LDADD = $(LDADD)
+ rpmlead_DEPENDENCIES =  $(top_builddir)/build/librpmbuild.la \
+ $(top_builddir)/lib/librpm.la $(top_builddir)/rpmdb/librpmdb.la \
+-$(top_builddir)/rpmio/librpmio.la $(top_builddir)/popt/libpopt.la
+-rpmlead_LDFLAGS = 
++$(top_builddir)/rpmio/librpmio.la
++rpmlead_LDFLAGS = @WITH_POPT_LIB@
+ rpmsignature_SOURCES = rpmsignature.c
+ rpmsignature_OBJECTS =  rpmsignature.$(OBJEXT)
+ rpmsignature_LDADD = $(LDADD)
+ rpmsignature_DEPENDENCIES =  $(top_builddir)/build/librpmbuild.la \
+ $(top_builddir)/lib/librpm.la $(top_builddir)/rpmdb/librpmdb.la \
+-$(top_builddir)/rpmio/librpmio.la $(top_builddir)/popt/libpopt.la
+-rpmsignature_LDFLAGS = 
++$(top_builddir)/rpmio/librpmio.la
++rpmsignature_LDFLAGS = @WITH_POPT_LIB@
+ javadeps_OBJECTS =  javadeps.$(OBJEXT)
+ javadeps_LDADD = $(LDADD)
+ javadeps_DEPENDENCIES =  $(top_builddir)/build/librpmbuild.la \
+ $(top_builddir)/lib/librpm.la $(top_builddir)/rpmdb/librpmdb.la \
+-$(top_builddir)/rpmio/librpmio.la $(top_builddir)/popt/libpopt.la
+-javadeps_LDFLAGS = 
++$(top_builddir)/rpmio/librpmio.la
++javadeps_LDFLAGS = @WITH_POPT_LIB@
+ CFLAGS = @CFLAGS@
+ COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
