@@ -7,13 +7,11 @@
 
 PORTNAME=	irssi
 PORTVERSION=	0.8.1
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES+=	irc ipv6	# `+=' is for slave ports
 MASTER_SITES=	http://irssi.org/files/
 
 MAINTAINER?=	vanilla@FreeBSD.org
-
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 
 USE_BZIP2=	yes
 USE_PERL5=	yes
@@ -31,19 +29,13 @@ CONFIGURE_ARGS+= --enable-ipv6
 CONFIGURE_ARGS+= --disable-ipv6
 .endif
 
-pre-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g ; \
-		 s|USE_INCLUDED_LIBINTL=yes|#USE_INCLUDED_LIBINTL=yes|g ; \
-		 s|\$$\(top_builddir\)/intl/libintl.a|-lintl|g' ${WRKSRC}/configure
-
 pre-configure:
 	@cd ${WRKSRC} && ${MV} irssi.conf irssi.conf.sample
 
 post-install:
 	@if [ ! -f ${LOCALBASE}/etc/irssi.conf ]; then \
 		${ECHO} "Installing default configuration file."; \
-		${INSTALL_SCRIPT} -m 644 ${WRKSRC}/irssi.conf.sample ${LOCALBASE}/etc/irssi.conf ; \
+		${INSTALL_DATA} ${WRKSRC}/irssi.conf.sample ${LOCALBASE}/etc/irssi.conf ; \
 	fi
 
 .include <bsd.port.post.mk>
