@@ -1,5 +1,5 @@
---- src/doconfig/doconfig.c.orig	Sat Dec 16 18:08:03 2000
-+++ src/doconfig/doconfig.c	Sat Dec 16 18:49:52 2000
+--- src/doconfig/doconfig.c.orig	Thu Jun 19 03:24:48 2003
++++ src/doconfig/doconfig.c	Wed Oct 22 16:02:33 2003
 @@ -90,12 +90,18 @@
  #endif
  
@@ -20,7 +20,7 @@
      if ((pathname = getcwd(NULL, 255)) == NULL) {
  		printf("Can't get current path!\n");
  		exit(-1);
-@@ -112,13 +118,15 @@
+@@ -112,30 +118,16 @@
      cp = (char *)rindex(pathname, '\\');
      *cp = '\0';
  #endif
@@ -32,15 +32,25 @@
      sprintf(buf, "%s/src/client/ipglob.c", pathname);
      wripglob(buf);
 -
-+    } else {
-+    printf("Installing...\n");
-     if (access(EP, 0)) {
- 		printf("making directory %s\n", EP);
- 		if (mkdir(EP, 493)) {
-@@ -136,6 +144,7 @@
-     }
-     sprintf(buf, "%s/data/auth", EP);
+-    if (access(EP, 0)) {
+-		printf("making directory %s\n", EP);
+-		if (mkdir(EP, 493)) {
+-			printf("mkdir failed on %s, exiting.\n", EP);
+-			exit(-1);
+-		}
+-    }
+-    sprintf(buf, "%s/data", EP);
+-    if (access(buf, 0)) {
+-		printf("making directory %s\n", buf);
+-		if (mkdir(buf, 493)) {
+-			printf("mkdir failed on %s, exiting.\n", buf);
+-			exit(-1);
+-		}
+-    }
+-    sprintf(buf, "%s/data/auth", EP);
++    sprintf(buf, "%s/data/auth", pathname);
      wrauth(buf);
 +    }
      exit(0);
  }
+ 
