@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.code-aster.org/FICHIERS/metis/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Meshes partionning tool used by Code_Aster
 
+CONFLICTS=	metis-[0-9]*
+
 ALL_TARGET=	default
 MAKE_ENV+=	CC="${CC}" AR="${AR}" LD="${LD}" F77="${F77}"
 USE_REINPLACE=	yes
