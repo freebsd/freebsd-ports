@@ -1,6 +1,6 @@
 OSSP str - Generic String Library
-Copyright (c) 1999-2002 Ralf S. Engelschall <rse@engelschall.com>
-Copyright (c) 1999-2002 The OSSP Project <http://www.ossp.org/>
+Copyright (c) 1999-2003 Ralf S. Engelschall <rse@engelschall.com>
+Copyright (c) 1999-2003 The OSSP Project <http://www.ossp.org/>
 
 OSSP str is a generic string library written in ISO-C which
 provides functions for handling, matching, parsing, searching and
