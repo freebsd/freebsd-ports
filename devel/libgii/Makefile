@@ -24,13 +24,6 @@ USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 
-.if !exists(/usr/include/vgl.h)
-CONFIGURE_ARGS+=	--disable-vgl
-PLIST_SUB+=	VGL="@comment "
-.else
-PLIST_SUB+=	VGL=""
-.endif
-
 .if exists(/usr/include/kii/kii.h)
 CONFIGURE_ARGS+=	--enable-kii
 PLIST_SUB+=	KII=""
@@ -69,6 +62,13 @@ EXAMPLES=	demos/demo.c demos/filter.c \
 		demos/mhub.c demos/xsendbut.c
 
 .include <bsd.port.pre.mk>
+
+.if !exists(/usr/include/vgl.h) || ${MACHINE_ARCH} != "i386"
+CONFIGURE_ARGS+=	--disable-vgl
+PLIST_SUB+=	VGL="@comment "
+.else
+PLIST_SUB+=	VGL=""
+.endif
 
 post-configure:
 	@${REINPLACE_CMD} -e 's/\(deplibs\) -lc/\1/;' ${WRKSRC}/libtool
