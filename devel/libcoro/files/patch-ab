@@ -1,8 +1,7 @@
 --- arch/x86-freebsd/Makefile.in.orig	Tue Jul  4 13:19:55 2000
 +++ arch/x86-freebsd/Makefile.in	Tue Jul  4 13:21:33 2000
-@@ -1,10 +1,13 @@
+@@ -1,10 +1,12 @@
 -CFLAGS=-O2 -Wall
-+CFLAGS?=-O2 -Wall
  
  MAN=@MANSRC@
  LINST=@LINST@
