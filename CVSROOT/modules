@@ -960,6 +960,7 @@ cwtext		ports/textproc/cwtext
 cxconfig	src/sbin/i386/cxconfig
 cxref		ports/devel/cxref
 cxsc		ports/math/cxsc
+cybervrml97	ports/graphics/cybervrml97
 cymbaline	ports/audio/cymbaline
 cyrus		ports/mail/cyrus
 cyrus-imapd	ports/mail/cyrus-imapd
