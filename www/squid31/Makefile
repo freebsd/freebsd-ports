@@ -74,7 +74,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	2.5.6
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	www
 MASTER_SITES=	\
 		ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
@@ -103,7 +103,10 @@ PATCHFILES=	squid-2.5.STABLE6-ufs_no_valid_dir.patch \
 		squid-2.5.STABLE6-heap_segfault.patch \
 		squid-2.5.STABLE6-initgroups.patch \
 		squid-2.5.STABLE6-external_acl_newlines.patch \
-		squid-2.5.STABLE6-ntlm_fetch_string.patch
+		squid-2.5.STABLE6-ntlm_fetch_string.patch \
+		squid-2.5.STABLE6-ntlm_noreuse_leak.patch \
+		squid-2.5.STABLE6-ntlm_challengereuse_leak.patch \
+		squid-2.5.STABLE6-rotate_error.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	tmseck@netcologne.de
