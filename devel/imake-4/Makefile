@@ -14,13 +14,13 @@ MASTER_SITES=	${MASTER_SITE_XFREE} \
 		ftp://ftp.internat.FreeBSD.org/pub/FreeBSD/X11-Crypto/:wrap \
 		ftp://ftp3.za.FreeBSD.org/pub/FreeBSD/X11-Crypto/:wrap
 MASTER_SITE_SUBDIR=	${PORTVERSION}
+DISTFILES=	X${PORTVERSION:S/.//g}src-1.tgz
 EXTRACT_ONLY=	X${PORTVERSION:S/.//g}src-1.tgz
-DISTFILES=	X${PORTVERSION:S/.//g}src-1.tgz Wraphelp.c:wrap
-IGNOREFILES=	Wraphelp.c
 
-MAINTAINER=	taguchi@tohoku.iij.ad.jp
+MAINTAINER=	anholt@freebsd.org
 
 PREFIX?=	${X11BASE}
+USE_PERL5=	YES
 
 .include <bsd.port.pre.mk>
 
@@ -74,11 +74,11 @@ SCRIPTS_ENV+=	OSVERSION=${OSVERSION} \
 INSTALL_TARGET=	install install.man
 # ---
 # User Config:
-# All variables are same as Imake config macros.
+# All variables are the same as Imake config macros.
 # For more details, see ${WRKDIR}/xc/config/cf/README.
-# Followings will write to ${PFEFIX}/lib/X11/config/xf86site.def,
+# Following will write to ${PREFIX}/lib/X11/config/xf86site.def,
 # and all of XFree86-4-* ports will use them as default value.
-# Offcause, you can override them (at your own risk ;-).
+# Of course, you can override them (at your own risk ;-).
 # Read scripts/configure for more details.
 # ---
 HasSecureRPC?=		YES

@@ -1,14 +1,14 @@
 #!/bin/sh
 
-# This scripts work as following:
-# (1) cp current xf86site.def (it may be created by imake-4 ports) 
+# This script does the following:
+# (1) cp current xf86site.def (it is created by the imake-4 port) 
 #       to ${WRKDIR}/xc/config/cf.
-#     this means this ports use imake-4's config defaultly.
+#     this means this port uses imake-4's config for defaults.
 # (2) Generate temporal config for compiling.
 #     Some configs, such as `ForceNormalLib', `FreeBSDBuildXprog', are
-#     used for compiling this ports localy. so these configs will be generated
-#     this scripts. these configs will be stored to `host.def' file.
-#     but this host.def will never install. use local only.
+#     used locally for compiling this port, so these configs will be generated
+#     by this script. These configs will be stored to the `host.def' file,
+#     but this host.def will never be installed.
 
 ORIGDEF=$PREFIX/lib/X11/config/xf86site.def
 DESTDEF=$WRKDIR/xc/config/cf/xf86site.def
@@ -49,36 +49,9 @@ configure () {
     echo "#define XprtServer YES" >> $LOCALDEF
     echo "#define BuildServersOnly YES" >> $LOCALDEF
 
-    # Check Wraphelp.c
-    if [ $HasXdmAuth = DEFAULT ]; then
-	HasXdmAuth=$(awk '/^#define.*HasXdmAuth/ {print $3}' $ORIGDEF|tail -1)
-    fi
-
-    cpwh=NO
-    if [ $HasXdmAuth = YES ]; then
-	WH=$WRKDIR/xc/lib/Xdmcp/Wraphelp.c
-	if [ -f $WH ] ; then
-	    cpwh=SOURCE
-	elif [ -f $DISTDIR/xc/Wraphelp.c ] ; then
-	    cpwh=$DISTDIR/xc/Wraphelp.c
-	else
-	    echo "==> You must fetch USA-legal Wraphelp.c manually"
-	    echo "==> and put it to ${DISTDIR}/xc/."
-	    exit 1
-	fi
-	if [ X$cpwh != XNO -a X$cpwh != XSOURCE ]; then
-	    tr -d '\r' < $cpwh > $WH
-	fi
-    fi
-
     # Copy ORIGDEF to DESTDEF
     rm -f $DESTDEF
-    grep -v '#define.*HasXdmAuth' $ORIGDEF >> $DESTDEF
-    if [ $cpwh = NO ] ; then
-	echo "#define HasXdmAuth NO" >> $DESTDEF
-    else
-	echo "#define HasXdmAuth YES" >> $DESTDEF
-    fi
+    cp -f $ORIGDEF $DESTDEF
 
     # copy generated config to host.def
     cp -f $LOCALDEF $HOSTDEF

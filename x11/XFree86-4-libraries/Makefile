@@ -39,8 +39,7 @@ MTREE_FILE=		/etc/mtree/BSD.x11-4.dist
 INSTALLS_SHLIB=		yes
 DIST_SUBDIR=		xc
 WRKSRC=			${WRKDIR}/xc
-SCRIPTS_ENV=		HasXdmAuth=${HasXdmAuth} \
-			HasSecureRPC=${HasSecureRPC} \
+SCRIPTS_ENV=		HasSecureRPC=${HasSecureRPC} \
 			BuildPexExt=${BuildPexExt} \
 			BuildXinerama=${BuildXinerama} \
 			BuildXIE=${BuildXIE} \
@@ -59,7 +58,6 @@ MAN3=		Xaw.3 Xft.3
 # ---
 # Name          Default		Meaning
 # ----------------------------------------------------------------------------
-# HasXdmAuth	YES		support XDM-AUTHORIZATION-1.
 # HasSecureRPC	YES		build with SecureRPC (require FreeBSD-3 or later)
 # BuildPexExt	YES		build PEX extension
 # BuildXinerama	YES		build Xinerama extension
@@ -70,7 +68,6 @@ MAN3=		Xaw.3 Xft.3
 # ----------------------------------------------------------------------------
 # DEFAULT means ports will use values which set by ${PORTSDIR}/devel/imake-4
 #
-HasXdmAuth?=		YES
 HasSecureRPC?=		DEFAULT
 BuildPexExt?=		DEFAULT
 BuildXinerama?=		DEFAULT
@@ -88,6 +85,9 @@ PLIST_SUB+=	OSMESA:="@comment "
 .else
 PLIST_SUB+=	OSMESA:=""
 .endif
+
+post-extract:
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/Wraphelp.c ${WRKSRC}/lib/Xdmcp/
 
 post-patch:
 	cd ${WRKSRC}/nls; \

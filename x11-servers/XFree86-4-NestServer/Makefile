@@ -25,14 +25,14 @@ USE_IMAKE=		YES
 DIST_SUBDIR=		xc
 WRKSRC=			${WRKDIR}/xc
 PATCHDIR=		${.CURDIR}/../../x11/XFree86-4-libraries/files
-SCRIPTS_ENV=		HasXdmAuth=${HasXdmAuth}
 MAKE_ENV=		MAN_INSTALL_TARGET=installXnest.man
 ALL_TARGET=		FreeBSDPortsBuild
 INSTALL_TARGET=		installXnest installXserver.man
 MANCOMPRESSED=		yes
 MAN1=			Xnest.1 Xserver.1
 
-HasXdmAuth?=		YES
+post-extract:
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/Wraphelp.c ${WRKSRC}/lib/Xdmcp/
 
 do-configure:
 	cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure

@@ -30,7 +30,6 @@ PATCHDIR=		${.CURDIR}/../XFree86-4-libraries/files
 SCRIPTS_ENV=		InstallXdmConfig=${InstallXdmConfig} \
 			InstallXinitConfig=${InstallXinitConfig} \
 			InstallAppDefFiles=${InstallAppDefFiles} \
-			HasXdmAuth=${HasXdmAuth} \
 			HasSecureRPC=${HasSecureRPC} \
 			HasPam=${HasPam}
 MAKE_ENV=		PKGNAMEPREFIX=${PKGNAMEPREFIX} \
@@ -43,7 +42,6 @@ INSTALL_TARGET=		FreeBSDPortsInstall FreeBSDPortsInstall.man
 # XFree86 User Config:
 # Name          Default		Meaning
 # ----------------------------------------------------------------------------
-# HasXdmAuth	YES		support XDM-AUTHORIZATION-1.
 # HasSecureRPC	YES		build with SecureRPC (require FreeBSD-3 or later)
 # HasPam	YES		support PAM (require FreeBSD-3.1 or later)
 # InstallXdmConfig      YES     install config files for xdm.
@@ -55,7 +53,6 @@ INSTALL_TARGET=		FreeBSDPortsInstall FreeBSDPortsInstall.man
 InstallXdmConfig?=	DEFAULT
 InstallXinitConfig?=	DEFAULT
 InstallAppDefFiles?=	DEFAULT
-HasXdmAuth?=		YES
 HasSecureRPC?=		DEFAULT
 HasPam?=		DEFAULT
 
@@ -64,6 +61,7 @@ post-extract:
 	 ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
 	   ${DISTDIR}/${DIST_SUBDIR}/X${PORTVERSION:S/.//g}src-2.tgz \
 	    | ${TAR} -xf - xc/fonts/util )
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/Wraphelp.c ${WRKSRC}/lib/Xdmcp/
 
 post-patch:
 	cd ${WRKSRC}/nls; \
