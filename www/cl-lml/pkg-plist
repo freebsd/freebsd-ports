@@ -1,0 +1,15 @@
+lib/common-lisp/lml/api.lisp
+lib/common-lisp/lml/base.lisp
+lib/common-lisp/lml/downloads.lisp
+lib/common-lisp/lml/files.lisp
+lib/common-lisp/lml/package.lisp
+lib/common-lisp/lml/stdsite.lisp
+lib/common-lisp/lml/utils.lisp
+lib/common-lisp/lml/lml.asd
+lib/common-lisp/system-registry/lml.asd
+@dirrm lib/common-lisp/lml/
+%%PORTDOCS%%share/doc/cl-lml/Makefile
+%%PORTDOCS%%share/doc/cl-lml/make.lisp
+%%PORTDOCS%%share/doc/cl-lml/readme.html
+%%PORTDOCS%%share/doc/cl-lml/readme.lml
+%%PORTDOCS%%@dirrm share/doc/cl-lml/

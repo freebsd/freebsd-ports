@@ -53,6 +53,7 @@
     SUBDIR += chimera
     SUBDIR += chimera2
     SUBDIR += chtml
+    SUBDIR += cl-lml
     SUBDIR += comclear
     SUBDIR += crawl
     SUBDIR += css-mode.el
