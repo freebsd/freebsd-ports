@@ -7,18 +7,18 @@
 
 PORTNAME=	jdk
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	java devel
-MASTER_SITES=	ftp://ftp.tux.org/pub/java/JDK-1.2.2/i386/rc4/ \
+MASTER_SITES=	ftp://ftp.tux.org/pub/java/JDK-${PORTVERSION}/${ARCH}/FCS/ \
 		http://www.metaverse.nl/~ernst/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	znerd
 PKGNAMEPREFIX=	linux-
-DISTNAME=	${PORTNAME}-${PORTVERSION}-RC4-linux-i386-glibc-2.1.2
+DISTNAME=	j2sdk-${PORTVERSION}-FCS-linux-${ARCH}-glibc-2.1.3
 
 MAINTAINER=	znerd@FreeBSD.org
 
-RUN_DEPENDS=	/compat/linux/lib/ld.so:${PORTSDIR}/emulators/linux_base \
-		javavm:${PORTSDIR}/java/javavmwrapper
+RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 
 NO_CDROM=	"License doesn\'t allow distribution with fee"
 NO_PACKAGE=	"License doesn\'t allow binary distributions"
@@ -27,13 +27,15 @@ USE_LINUX=	YES
 ONLY_FOR_ARCHS=	i386
 
 USE_BZIP2=	YES
-WRKSRC=		${WRKDIR}/jdk1.2.2
+WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}
 NO_BUILD=	YES
+APP_HOME?=	${PREFIX}/${PKGBASE}${PORTVERSION}
+PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///}
 
 do-install:
-	${MKDIR} ${PREFIX}/linux-jdk1.2.2
+	${MKDIR} ${APP_HOME}
 	(cd ${WRKSRC} && tar --exclude "*.orig" -c -f - .) \
-		| (cd ${PREFIX}/linux-jdk1.2.2 && tar fx -)
-	${LOCALBASE}/bin/registervm "${PREFIX}/linux-jdk1.2.2/bin/java # Linux-JDK1.2.2"
+	| (cd ${APP_HOME} && tar fx -)
+	${LOCALBASE}/bin/registervm "${APP_HOME}/bin/java # Linux-JDK${PORTVERSION}"
 
 .include <bsd.port.mk>
