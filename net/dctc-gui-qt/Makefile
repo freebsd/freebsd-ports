@@ -35,7 +35,7 @@ post-configure:
 # uphold CC/CXX/CFLAGS
 # link against correct qt lib
 	@${REINPLACE_CMD} -E -e 's|^CC.+$$|CC=${CC}|; \
-		s|^CXX.+$$|CXX=${CXX}|; \
+		s|^CXX[[:space:]]*=.*$$|CXX=${CXX}|; \
 		s|^(CFLAGS.+)$$|\1 ${PTHREAD_CFLAGS}|; \
 		s|-lqt |-lqt-mt ${PTHREAD_LIBS:S/"//g} |' \
 		${WRKSRC}/Makefile
