@@ -1,0 +1,11 @@
+--- runtime/libraries/link/iiop/corba_excepts.c.orig	Sat Aug 30 00:59:48 2003
++++ runtime/libraries/link/iiop/corba_excepts.c	Sat Aug 30 01:00:15 2003
+@@ -254,7 +254,7 @@
+  * Define the allocators for the standard CORBA exceptions.
+  */
+ #define sys_except__alloc(name) \
+-name *##name##__alloc() { return (name *) flick_system_exception_alloc(); }
++name *name##__alloc() { return (name *) flick_system_exception_alloc(); }
+ 
+ sys_except__alloc(CORBA_UNKNOWN)
+ sys_except__alloc(CORBA_BAD_PARAM)

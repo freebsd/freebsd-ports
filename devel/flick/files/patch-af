@@ -1,0 +1,11 @@
+--- c/pfe/sun/p_calc_name.cc.orig	Sat Aug 30 00:32:44 2003
++++ c/pfe/sun/p_calc_name.cc	Sat Aug 30 00:32:59 2003
+@@ -84,7 +84,7 @@
+  * These functions are auxiliaries for the override methods above.
+  */
+ 
+-#define NAME_LITERAL_STR(type) names.literals[name_strings::##type##_lit].str
++#define NAME_LITERAL_STR(type) names.literals[name_strings::type##_lit].str
+ 
+ char *pg_sun::calc_operation_and_version_id(const char *basic_name)
+ {
