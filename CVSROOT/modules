@@ -6511,6 +6511,7 @@ prboom		ports/games/prboom
 prc-tools-binutils	ports/palm/prc-tools-binutils
 prc-tools-gcc	ports/palm/prc-tools-gcc
 prcs		ports/devel/prcs
+preferences.app	ports/deskutils/preferences.app
 prefix		src/usr.sbin/prefix
 premail		ports/mail/premail
 preview-latex	ports/print/preview-latex
