@@ -22,6 +22,8 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-tool
 		${PYTHON_SITELIBDIR}/OpenGL/__init__.py:${PORTSDIR}/graphics/py-opengl
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		Incomplete pkg-plist
+
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_GNOME=	gnomehack

@@ -18,6 +18,8 @@ COMMENT=	A general ide tool for GTK+/VDK
 
 LIB_DEPENDS=	vdk.6:${PORTSDIR}/x11-toolkits/vdk
 
+BROKEN=		Incomplete pkg-plist
+
 USE_X_PREFIX=	yes
 USE_GNOME=	gnometarget gtk20 lthack
 USE_REINPLACE=	yes
