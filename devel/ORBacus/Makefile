@@ -3,11 +3,11 @@
 # Whom:			ejc@bazzle.com
 # Version required:	3.0
 #
-# $Id: Makefile,v 1.19 1999/04/23 11:34:53 asami Exp $
+# $Id: Makefile,v 1.20 1999/05/01 00:27:16 asami Exp $
 #
 
-DISTNAME=	OB-3.1.2
-PKGNAME=	ORBacus-3.1.2
+DISTNAME=	OB-3.1.3
+PKGNAME=	ORBacus-3.1.3
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.ooc.com/pub/OB/3.1/
 
