@@ -8,8 +8,7 @@
 PORTNAME=	ascpu
 PORTVERSION=	1.9
 CATEGORIES=	sysutils afterstep
-MASTER_SITES=	http://www.tigr.net/afterstep/as-apps/download/ascpu/	\
-		ftp://ftp.gpad.ac.ru/pub/FreeBSD/distfiles/
+MASTER_SITES=	http://www.tigr.net/afterstep/download/ascpu/
 
 MAINTAINER=	demon@FreeBSD.org
 
