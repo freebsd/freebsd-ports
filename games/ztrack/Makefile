@@ -3,7 +3,7 @@
 # Date created:				1 May 1997
 # Whom: Andrey Zakhvatov <andy@icc.surw.chel.su>
 #
-#
+# $FreeBSD$
 #
 
 DISTNAME=	ztrack-1.0
