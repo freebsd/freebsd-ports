@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	chkrootkit
-PORTVERSION=	0.34
+PORTVERSION=	0.35
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.pangeia.com.br/pub/seg/pac/
 
