@@ -16,6 +16,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	roger@freebsd.org
 COMMENT=	A H323 Video Conferencing library
 
+BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/pwlib:build
+
 LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2
 
 .include <bsd.port.pre.mk>
