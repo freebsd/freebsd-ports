@@ -34,6 +34,10 @@ DATADIR=	${PREFIX}/share/gnome/${PORTNAME}
 CONFIGURE_ARGS+=	--disable-gnome
 .endif
 
+.if ${ARCH} != "i386" || defined(WITHOUT_X86_ASM)
+CONFIGURE_ARGS+=	--disable-asm
+.endif
+
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's| install-exec-local||g'
