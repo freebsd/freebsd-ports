@@ -7,9 +7,8 @@
 
 MASTERDIR=	${.CURDIR}/../nethack33
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A dungeon explorin', slashin', hackin' game (w/o X11 graphics)
+MAINTAINER=	glewis@FreeBSD.org
 
-WITH_TTY_GRAPHICS=	yes
+PKGNAMESUFFIX=	-nox11
 
 .include "${MASTERDIR}/Makefile"
