@@ -3,12 +3,12 @@ bin/mysqladmin
 bin/mysqldump
 bin/mysqlimport
 bin/mysqlshow
+bin/mysqltest
 etc/rc.d/mysql-client.sh
 include/mysql/dbug.h
 include/mysql/errmsg.h
 include/mysql/m_ctype.h
 include/mysql/m_string.h
-include/mysql/my_config.h
 include/mysql/my_global.h
 include/mysql/my_list.h
 include/mysql/my_net.h

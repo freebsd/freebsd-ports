@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	${MASTERPORTNAME}
-PORTVERSION=	3.23.24
+PORTVERSION=	3.23.26
 CATEGORIES=	databases
 MASTER_SITES=	http://download.sourceforge.net/mysql/ \
 		http://www.fh-wolfenbuettel.de/ftp/pub/database/mysql/Downloads/MySQL-3.23/ \
