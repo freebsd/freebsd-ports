@@ -19,8 +19,7 @@ DIST_SUBDIR=	eclipse
 MAINTAINER=	java@FreeBSD.ORG
 COMMENT=	Eclipse Language Pack Feature
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_SUB=	LANGPACKVER=${PORTVERSION}
