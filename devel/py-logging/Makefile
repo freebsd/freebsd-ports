@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	logging
-PORTVERSION=	0.4.6
+PORTVERSION=	0.4.7
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.red-dove.com/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,14 +18,11 @@ USE_PYDISTUTILS=	yes
 USE_PYTHON_PREFIX=	yes
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-logging
-EXAMPLEFILES=	README.txt app.py default.css events.xml log_*.py \
-		logconf.ini logconf.py logging.dtd logging.xml logrecv.py \
-		myapp.py mymodule.py
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${EXAMPLESDIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${EXAMPLEFILES} ${EXAMPLESDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${WRKSRC}/test/* ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
