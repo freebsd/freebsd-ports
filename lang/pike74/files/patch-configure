@@ -1,0 +1,46 @@
+--- configure.old	Sat Feb 21 19:42:58 2004
++++ configure	Sat Feb 21 19:46:56 2004
+@@ -24646,14 +24646,14 @@
+ 
+         if test "x$PTHREAD_CONFIG" = xno ; then
+ 
+-  echo "$as_me:24649: checking -pthread" >&5
+-echo $ECHO_N "checking -pthread... $ECHO_C" >&6
++  echo "$as_me:24649: checking %%PTHREAD_CFLAGS%%" >&5
++echo $ECHO_N "checking %%PTHREAD_CFLAGS%%... $ECHO_C" >&6
+   if test "${pike_cv_option_pthread+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+ 
+     OLD_CFLAGS="$CFLAGS"
+-    CFLAGS="$OLD_CFLAGS -pthread"
++    CFLAGS="$OLD_CFLAGS %%PTHREAD_CFLAGS%%"
+     old_ac_link="$ac_link"
+     ac_link="$old_ac_link 2>conftezt.out.2"
+     if test "$cross_compiling" = yes; then
+@@ -24760,10 +24760,10 @@
+ fi
+ 
+   if test x"$pike_cv_option_pthread" = "xyes" ; then
+-    CFLAGS="$CFLAGS -pthread"
++    CFLAGS="$CFLAGS %%PTHREAD_CFLAGS%%"
+     case "CFLAGS" in
+       OPTIMIZE)
+-        CFLAGS="$CFLAGS -pthread"
++        CFLAGS="$CFLAGS %%PTHREAD_CFLAGS%%"
+       ;;
+     esac
+     echo "$as_me:24769: result: yes" >&5
+@@ -24772,10 +24772,10 @@
+   else
+     echo "$as_me:24773: result: no" >&5
+ echo "${ECHO_T}no" >&6
+-    LIBS="$LIBS -lc_r"
++    LIBS="$LIBS %%PTHREAD_LIBS%%"
+   fi
+ 
+-          LD_FALLBACK_FLAGS="${LD_FALLBACK_FLAGS-} -lc_r"
++          LD_FALLBACK_FLAGS="${LD_FALLBACK_FLAGS-} %%PTHREAD_LIBS%%"
+ 
+           echo "$as_me:24780: checking Initial stack limit" >&5
+ echo $ECHO_N "checking Initial stack limit... $ECHO_C" >&6

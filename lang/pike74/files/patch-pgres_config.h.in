@@ -1,0 +1,14 @@
+--- modules/Postgres/pgres_config.h.in.orig	Tue Feb 24 23:12:34 2004
++++ modules/Postgres/pgres_config.h.in	Tue Feb 24 23:13:26 2004
+@@ -27,7 +27,11 @@
+  * thread-safe on a per-connection level (as opposed to non-threadsafe).
+  */
+ #ifdef HAVE_PQSETNONBLOCKING
++/*
++ * Thread safe PGSQL under Pike 7.4 is non working. So 
++ * failback to non Thread Safe
+ # define PQ_THREADSAFE 1
++ */
+ #endif
+ 
+ /* End of autoconfigurable section */
