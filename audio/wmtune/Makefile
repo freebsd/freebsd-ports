@@ -28,6 +28,10 @@ PATCH_ARGS	=-p0 -d ${WRKDIR}
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} != "i386" && !(${ARCH} == "alpha" && ${OSVERSION} >= 500000)
+BROKEN=		"Does not compile on !i386 or alpha 4.x"
+.endif
+
 .if !defined(WITH_RADIOTRACK)
 WMTUNE_DIFF=	wmtune.diff.gz
 pre-fetch:
