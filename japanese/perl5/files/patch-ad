@@ -1,5 +1,5 @@
---- hints/freebsd.sh.ORIG	Fri Jul 24 06:00:19 1998
-+++ hints/freebsd.sh	Thu Jul 30 16:04:24 1998
+--- hints/freebsd.sh.orig	Fri Jul 24 13:00:19 1998
++++ hints/freebsd.sh	Sat Oct 10 20:39:02 1998
 @@ -68,6 +68,7 @@
  	d_setreuid='define'
  	d_setegid='undef'
@@ -27,3 +27,30 @@
  	;;
  esac
  
+@@ -95,12 +102,20 @@
+ case "$osvers" in
+ 0.*|1.0*) ;;
+ 
+-3.0*)   if [ -e /usr/lib/aout ]; then
+-            libpth="/usr/lib/aout /usr/local/lib /usr/lib"
+-            glibpth="/usr/lib/aout /usr/local/lib /usr/lib"
+-        fi
+-        cccdlflags='-DPIC -fpic'
+-        lddlflags='-Bshareable'
++3.0*)	objformat=`objformat`
++	if [ x$objformat = xelf ]; then
++	    libpth="/usr/lib /usr/local/lib"
++	    glibpth="/usr/lib /usr/local/lib"
++	    ldflags="-Wl,-E "
++	    lddlflags="-shared "
++	else
++	    if [ -e /usr/lib/aout ]; then
++	        libpth="/usr/lib/aout /usr/local/lib /usr/lib"
++	        glibpth="/usr/lib/aout /usr/local/lib /usr/lib"
++	    fi
++	    lddlflags='-Bshareable'
++	fi
++	cccdlflags='-DPIC -fpic'
+         ;;
+ 
+ *)	cccdlflags='-DPIC -fpic'
