@@ -29,9 +29,12 @@ share/locale/hu/LC_MESSAGES/tsclient.mo
 share/locale/nl_NL/LC_MESSAGES/tsclient.mo
 share/locale/no_nb/LC_MESSAGES/tsclient.mo
 share/locale/pl/LC_MESSAGES/tsclient.mo
+share/locale/se/LC_MESSAGES/tsclient.mo
 share/locale/zh_CN/LC_MESSAGES/tsclient.mo
 @unexec rmdir share/locale/zh_CN/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir share/locale/zh_CN 2>/dev/null || true
+@unexec rmdir share/locale/se/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir share/locale/se 2>/dev/null || true
 @unexec rmdir share/locale/pl/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir share/locale/pl 2>/dev/null || true
 @unexec rmdir share/locale/no_bb/LC_MESSAGES 2>/dev/null || true
