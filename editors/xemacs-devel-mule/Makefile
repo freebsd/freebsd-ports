@@ -6,19 +6,15 @@
 #
 
 PORTNAME=	xemacs-devel-mule
-PORTVERSION=	${XEMACS_VER}
-.if defined(WNN6)
-.endif
+PORTVERSION=	${XEMACS_VER:S/-/./}
 CATEGORIES+=	editors
-MASTER_SITES=	${MASTER_SITE_XEMACS}
-MASTER_SITE_SUBDIR=	xemacs-${XEMACS_REL}
-DISTNAME=	xemacs-${XEMACS_VER}
-DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX} \
-		${DISTNAME}-elc${EXTRACT_SUFX} ${DISTNAME}-info${EXTRACT_SUFX}
+MASTER_SITES=	${MASTER_SITE_LOCAL:S|%SUBDIR%|kiri/xemacs|} \
+		${MASTER_SITE_XEMACS:S|%SUBDIR%|xemacs-${XEMACS_REL}|}
+DISTNAME=	xemacs-${XEMACS_VER:S/-b/./}
 DIST_SUBDIR=	xemacs
 
 MAINTAINER=	kiri@FreeBSD.org
-COMMENT?=	XEmacs(gamma version) text editor with mule(Only the executables)
+COMMENT?=	XEmacs(beta version) text editor with mule(Only the executables)
 
 .include <bsd.port.pre.mk>
 
@@ -28,37 +24,36 @@ RUN_DEPENDS=	${LOCALBASE}/lib/xemacs/xemacs-packages/etc/enriched.doc:${PORTSDIR
 .if defined(PKGNAMEPREFIX)
 RUN_DEPENDS+=	${LOCALBASE}/lib/xemacs-${XEMACS_VER}/lisp/x-win-xfree86.elc:${PORTSDIR}/editors/xemacs-devel-mule
 .endif
+.if !defined(WITHOUT_X11)
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		compface.1:${PORTSDIR}/mail/faces \
-		intl.4:${PORTSDIR}/devel/gettext \
+		compface.1:${PORTSDIR}/mail/faces
+USE_XLIB=	yes
+USE_XPM=	yes
+.endif
+LIB_DEPENDS+=	intl.4:${PORTSDIR}/devel/gettext \
 		${LIB_INPUT_METHOD}
 
 XEMACS_MAJOR_VER?=	21
-XEMACS_REL=		${XEMACS_MAJOR_VER}.4
-XEMACS_VER=		${XEMACS_MAJOR_VER}.4.12
+XEMACS_REL=		${XEMACS_MAJOR_VER}.5
+XEMACS_VER=		${XEMACS_MAJOR_VER}.5-b13
 XEMACS_ARCH=		${CONFIGURE_TARGET}
 
-USE_XLIB=	yes
+WRKSRC=		${WRKDIR}/xemacs-${XEMACS_VER:S/-b/./}
 STRIP=
-USE_AUTOCONF=	yes
+USE_AUTOCONF_VER=213
 CONFIGURE_TARGET=${MACHINE_ARCH}--freebsd
 
-CONFIGURE_ARGS=	--with-x11 \
-		--with-mule \
+CONFIGURE_ARGS=	--with-mule \
 		--x-includes=${X11BASE}/include \
 		--x-libraries=${X11BASE}/lib \
 		--site-libraries='${SITE_LIBRARIES}' \
 		--site-includes='${SITE_INCLUDES}' \
-		--with-xface \
 		--with-sound=native \
 		--with-site-lisp \
 		--with-pop \
 		--with-xfs \
-		--with-jpeg \
-		--with-png \
-		--with-tiff \
 		--with-ldap=no \
 		--infopath=${LOCALBASE}/lib/xemacs/info:${LOCALBASE}/info:${X11BASE}/info:/usr/info:${LOCALBASE}/lib/texmf/doc/info:/usr/lib/texmf/doc:/usr/share/info \
 		--with-clash-detection \
@@ -75,8 +70,6 @@ INSTALL_TARGET=	install-arch-dep
 PLIST=		${PKGDIR}/pkg-plist.arch-dep
 .if ${PKGNAMEPREFIX} == "ja-"
 DESCR=		${PKGDIR}/pkg-descr.ja
-MANLANG=	ja
-MAN1=		xemacs.1
 .endif
 .else
 MAN1=		ctags.1 etags.1 gnuattach.1 gnuclient.1 gnudoit.1 \
@@ -87,9 +80,12 @@ PKGDIR=		${.CURDIR}/../../editors/xemacs-devel-mule
 PLIST_SUB=	XEMACS_VER=${XEMACS_VER} XEMACS_ARCH=${XEMACS_ARCH}
 
 pre-fetch:
-.if !defined(WANT_GTK)
-	@${ECHO_MSG} "If you want to use GTK, please set the environment variable WANT_GTK and recompile."
-.endif
+.if defined(WITHOUT_X11)
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Set the environment variable WITHOUT_X11 if you "
+	@${ECHO_MSG} "do not want to use X11."
+CONFIGURE_ARGS+=	--without-x11
+.else
 .if !defined(WITHOUT_MOTIF)
 .if !defined(MOTIF_STATIC)
 	@${ECHO_MSG} ""
@@ -98,6 +94,7 @@ pre-fetch:
 	@${ECHO_MSG} "In this case, set the environment variable MOTIF_STATIC and recompile, "
 	@${ECHO_MSG} "which will force the use of athena widgets for dialogs."
 .endif
+CONFIG_ARGS+=	--with-jpeg=yes --with-png=yes --with-tiff=yes --with-xface=yes
 USE_MOTIF=	yes
 
 # hack to avoid shipping binaries linked with Motif
@@ -105,13 +102,6 @@ USE_MOTIF=	yes
 WITH_DIALOGS=	--with-dialogs=athena
 .else
 WITH_DIALOGS=	--with-dialogs=motif
-.endif
-
-.if defined(WANT_GTK)
-WITH_GTK=	--with-gtk=yes
-WITH_XPM=	--with-xpm=no
-USE_GNOME=	gtk12
-USE_XPM=	no
 .endif
 
 .if defined(PACKAGE_BUILDING)
@@ -122,7 +112,6 @@ WITH_MENUBARS?=	--with-menubars=lucid
 WITH_SCROLLBARS?=--with-scrollbars=motif
 WITH_WIDGETS?=	--with-widgets=motif
 .endif
-USE_XPM?=	yes
 WITH_XPM?=	--with-xpm
 WITH_XIM?=	--with-xim=xlib
 WITH_ATHENA?=	--with-athena=xaw
@@ -130,6 +119,7 @@ WITH_MENUBARS?=	--with-menubars=athena
 WITH_SCROLLBARS?=--with-scrollbars=athena
 WITH_DIALOGS?=	--with-dialogs=athena
 WITH_WIDGETS?=	--with-widgets=athena
+.endif
 
 BINNAMEEXT=		-mule
 .if defined(CANNA) && defined(FREEWNN)
@@ -181,16 +171,8 @@ post-install::
 	${MKDIR} ${PREFIX}/lib/xemacs/site-lisp
 	${CHMOD} 755 ${PREFIX}/lib/xemacs/site-lisp
 	${RM} -f ${PREFIX}/bin/send-pr
-.if defined(WANT_GTK)
-	@${ECHO_MSG} "Please be aware that GTK support is buggy. Do not report bugs to"
-	@${ECHO_MSG} "the maintainer."
-	@${ECHO_MSG} "Please also be aware that the package's name was automagically changed"
-	@${ECHO_MSG} "to ${PORTNAME}${PKGNAMESUFFIX}-${XEMACS_VER}."
-.endif
 .if defined(PKGNAMEPREFIX)
 .if ${PKGNAMEPREFIX} == "ja-"
-	@${MKDIR} ${PREFIX}/man/ja/man1
-	@${INSTALL_MAN} ${WRKSRC}/etc/xemacs-ja.1 ${PREFIX}/man/ja/man1/xemacs.1
 	@${LN} -sf ja ${PREFIX}/lib/xemacs/mule-packages/etc/app-defaults/ja_JP.eucJP
 .endif
 .endif
