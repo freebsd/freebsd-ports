@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- doc/Makefile	2001/06/19 15:18:58	1.1
++++ doc/Makefile	2001/06/19 15:19:16
+@@ -91,7 +91,7 @@
+ 			bfile=`echo $$file | sed 's/.gz$$//'`; \
+ 			gunzip < $$file > $(mandir)/$$bfile; \
+ 			chmod 644 $(mandir)/$$bfile; \
+-			chown root.bin $(mandir)/$$bfile; \
++			chown root:bin $(mandir)/$$bfile; \
+ 		done; \
+ 	done
+ endif
