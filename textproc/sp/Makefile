@@ -1,5 +1,5 @@
 # New ports collection makefile for:	sp
-# Version required:	1.2.1
+# Version required:	1.3
 # Date created:		April 26, 1997
 # Whom:			jfieber
 #
@@ -21,6 +21,7 @@ post-patch:
 post-install:
 	$(MKDIR) $(PREFIX)/include/sp
 	$(MKDIR) $(PREFIX)/share/doc/sp
+	$(RM) $(WRKSRC)/include/*.orig
 	for file in $(WRKSRC)/include/*;do $(INSTALL_DATA) $$file $(PREFIX)/include/sp;done
 	for file in $(WRKSRC)/doc/*;do $(INSTALL_DATA) $$file $(PREFIX)/share/doc/sp;done
 
