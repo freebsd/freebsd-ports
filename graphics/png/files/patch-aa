@@ -1,5 +1,5 @@
-*** makefile.orig	Fri Jan 26 10:38:44 1996
---- makefile	Tue Feb 20 00:55:17 1996
+*** makefile.orig	Fri Jun  7 04:49:32 1996
+--- makefile	Wed Jul 17 23:54:39 1996
 ***************
 *** 2,27 ****
   # Copyright (C) 1995 Guy Eric Schalnat, Group 42, Inc.
@@ -9,15 +9,15 @@
 ! CFLAGS=-I../zlib -O
 ! LDFLAGS=-L. -L../zlib/ -lpng -lz -lm
   
-  #RANLIB=ranlib
+! #RANLIB=ranlib
 ! RANLIB=echo
   
   # where make install puts libpng.a and png.h
 ! prefix=/usr/local
   
   OBJS = png.o pngrcb.o pngrutil.o pngtrans.o pngwutil.o \
-  	pngread.o pngio.o pngwrite.o pngrtran.o pngwtran.o \
-     pngmem.o pngerror.o pngpread.o
+  	pngread.o pngrio.o pngwio.o pngwrite.o pngrtran.o \
+  	pngwtran.o pngmem.o pngerror.o pngpread.o
   
 ! all: libpng.a pngtest
   
@@ -32,28 +32,28 @@
   # Copyright (C) 1995 Guy Eric Schalnat, Group 42, Inc.
   # For conditions of distribution and use, see copyright notice in png.h
   
-! VER=0.88
+! VER=0.89
 ! #CC=cc
 ! CFLAGS+=-I/usr/local/include
 ! LDFLAGS=-L. -L/usr/local/lib -lpng -lz -lm -static
   
-  #RANLIB=ranlib
+! RANLIB=ranlib
 ! #RANLIB=echo
   
   # where make install puts libpng.a and png.h
 ! prefix=${PREFIX}
   
   OBJS = png.o pngrcb.o pngrutil.o pngtrans.o pngwutil.o \
-  	pngread.o pngio.o pngwrite.o pngrtran.o pngwtran.o \
-     pngmem.o pngerror.o pngpread.o
+  	pngread.o pngrio.o pngwio.o pngwrite.o pngrtran.o \
+  	pngwtran.o pngmem.o pngerror.o pngpread.o
   
 ! .SUFFIXES: .c .so .o
+!   
+! .c.so:
+! 	${CC} -fpic -DPIC ${CFLAGS} -c ${.IMPSRC} -o ${.TARGET}
+! 
+! all: libpng.a libpng.so.${VER}
   
-+ .c.so:
-+ 	${CC} -fpic -DPIC ${CFLAGS} -c ${.IMPSRC} -o ${.TARGET}
-+ 
-+ all: libpng.a libpng.so.${VER}
-+   
   libpng.a: $(OBJS)
   	ar rc $@  $(OBJS)
   	$(RANLIB) $@
