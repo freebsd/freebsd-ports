@@ -7,6 +7,7 @@
 
 PORTNAME=	transcode
 PORTVERSION=	0.6.0.5
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.theorie.physik.uni-goettingen.de/~ostreich/transcode/pre/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.5$//g}pre5
@@ -74,6 +75,11 @@ WITH_XVID=	yes
 .endif
 
 .if exists(${LOCALBASE}/lib/liba52.so)
+.if exists(${LOCALBASE}/lib/liba52.la)
+LIBA52_DEP_LIBS!=	${GREP} dependency_libs ${LOCALBASE}/lib/liba52.la | ${CUT} -d \' -f 2
+.else
+LIBA52_DEP_LIBS=
+.endif
 WITH_LIBA52=	yes
 .endif
 
@@ -144,7 +150,10 @@ CONFIGURE_ARGS+=	--with-openqt=no
 LIB_DEPENDS+=	mpeg2.0:${PORTSDIR}/graphics/libmpeg2
 .endif
 .if defined(WITH_FAME)
-LIB_DEPENDS+=	fame.8:${PORTSDIR}/graphics/libfame
+LIB_DEPENDS+=	fame.10:${PORTSDIR}/graphics/libfame
+PLIST_SUB+=	WITH_FAME=""
+.else
+PLIST_SUB+=	WITH_FAME="@comment "
 .endif
 
 .if defined(WITH_XVID)
@@ -258,6 +267,9 @@ post-patch:
 	@${PERL} -pi -e 's|(seek)64|\1|' ${WRKSRC}/avilib/avidump.c
 	@${PERL} -pi -e 's|<SDL/|<|' ${WRKSRC}/filter/preview/display.h
 
+	@${PERL} -pi -e 's|(-la52)|\1 ${LIBA52_DEP_LIBS}|' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+
 pre-configure:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	@${PERL} -pi -e 's|-ldl||g' ${WRKSRC}/configure
@@ -267,5 +279,9 @@ post-install:
 	@${LN} -sf ${LOCALBASE}/lib/libxvidcore.so \
 		${PREFIX}/lib/transcode/libxvidcore.so
 .endif
+
+# Remove .la-files.
+
+	@${RM} ${PREFIX}/lib/transcode/*.la
 
 .include <bsd.port.post.mk>
