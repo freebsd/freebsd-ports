@@ -1,10 +1,11 @@
 bin/objc
+bin/objc1
+bin/postlink
 bin/cvtimport
-lib/objcrtgc.a
-lib/objcrt_g.a
-lib/objpak_g.a
-lib/objcrtr.a
-lib/objpakr.a
+lib/objcrt.a
+lib/objpak.a
+lib/_prelink.o
+lib/_predll.o
 lib/objchelp.txt
 lib/objcdlso.ld
 include/cakit/cakit.h
@@ -156,6 +157,7 @@ share/doc/objc/examples/dlopen.m
 share/doc/objc/examples/during.h
 share/doc/objc/examples/during.m
 share/doc/objc/examples/dynclass.m
+share/doc/objc/examples/esql.em
 share/doc/objc/examples/except.m
 share/doc/objc/examples/gdb.m
 share/doc/objc/examples/howmany.m
@@ -171,7 +173,6 @@ share/doc/objc/examples/super.m
 share/doc/objc/examples/tail.m
 share/doc/objc/examples/timeblock.m
 share/doc/objc/examples/varscope.m
-share/doc/objc/examples/postlink.map
 share/doc/objc/examples/Makefile
 share/doc/objc/html/cakit/BigInt.html
 share/doc/objc/html/cakit/CAObject.html
