@@ -1,0 +1,7 @@
+This program analyses logfiles in both the common log format and NCSA
+old format from WWW servers. It is designed to be fast on long
+logfiles and to produce attractive statistics.
+
+It was written by Stephen Turner (sret1@cam.ac.uk). For more details,
+see http://www.statslab.cam.ac.uk/~sret1/analog/ or Readme.html in
+/usr/local/share/analog.
