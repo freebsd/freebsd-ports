@@ -186,7 +186,6 @@
     SUBDIR += gnome-mud
     SUBDIR += gnome-vnc
     SUBDIR += gnomeicu2
-    SUBDIR += gnomemeeting
     SUBDIR += gnomemeeting2
     SUBDIR += gnometelnet
     SUBDIR += gnosamba
