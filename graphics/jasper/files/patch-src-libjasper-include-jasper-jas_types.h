@@ -8,7 +8,7 @@ $FreeBSD$
  /**********/
  #if !defined(INT_FAST64_MIN)
 -typedef longlong int_fast64_t;
-+typedef log long int_fast64_t;
++typedef long long int_fast64_t;
  #define INT_FAST64_MIN	LLONG_MIN
  #define INT_FAST64_MAX	LLONG_MAX
  #endif
