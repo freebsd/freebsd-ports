@@ -1,0 +1,12 @@
+bin/ccconfig
+%%SITE_PERL%%/%%PERL_ARCH%%/Convert/Binary/C.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Convert/Binary/C/Cached.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/Binary/C/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/Binary/C/C.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/Binary/C/C.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Convert/Binary/C
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/Binary/C
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Convert/Binary 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Convert 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/Binary 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert 2>/dev/null || true
