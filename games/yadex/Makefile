@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	yadex
-PORTVERSION=	1.5.1
+PORTVERSION=	1.5.2
 CATEGORIES=	games
 MASTER_SITES=	http://www.teaser.fr/~amajorel/yadex/
 
@@ -17,8 +17,7 @@ MAKEFILE=	GNUmakefile
 
 MAN6=		yadex.6 ybsp.6
 
-#pre-build:
-#	mv ${WRKDIR}/${DISTNAME}/Makefile ${WRKDIR}/${DISTNAME}/Makefile.orig
-#	mv ${WRKDIR}/${DISTNAME}/GNUmakefile ${WRKDIR}/${DISTNAME}/Makefile
+post-install:
+	${CHMOD} 644 ${PREFIX}/etc/yadex/1.5.2/yadex.cfg
 
 .include <bsd.port.mk>
