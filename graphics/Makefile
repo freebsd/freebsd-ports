@@ -115,6 +115,7 @@
     SUBDIR += gphoto2
     SUBDIR += gplot
     SUBDIR += gqview
+    SUBDIR += gqview-devel
     SUBDIR += gracula
     SUBDIR += graphviz
     SUBDIR += gridpix
