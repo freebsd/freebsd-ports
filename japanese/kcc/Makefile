@@ -21,7 +21,7 @@ MAN1=		kcc.1
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
+USE_GCC=2.95
 .endif
 
 .include <bsd.port.post.mk>
