@@ -4,20 +4,15 @@
 #
 # $FreeBSD$
 #
-# Maximal ssh package requires YES values for
-# WITH_PERL, WITH_TCPWRAP
-#
 
 PORTNAME=	ssh
 PORTVERSION=	1.2.33
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security ipv6
-MASTER_SITES=	ftp://ftp.tokyonet.ad.jp/pub/security/ssh/ \
-		ftp://ftp.tokyonet.ad.jp/pub/security/ssh/old/ \
-		ftp://ftp.dei.uc.pt/pub/ssh/ \
-		ftp://ftp.ssh.com/ \
-		ftp://ftp.nsysu.edu.tw/Unix/Security/ssh/old/ \
-		ftp://ftp.cronyx.ru/mirror/ssh/old/
+MASTER_SITES=	ftp://ftp.ssh.com/pub/ssh/ \
+		ftp://ftp.nsysu.edu.tw/Unix/Security/ssh/ \
+		ftp://ftp.cronyx.ru/mirror/ssh/ \
+		ftp://ftp.univie.ac.at/applications/ssh.com/
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -65,7 +60,7 @@ CONFIGURE_ARGS+= --without-idea
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 500023
-LIB_DEPENDS+=	gmp.3:${PORTSDIR}/math/libgmp-freebsd
+LIB_DEPENDS+=	gmp.6:${PORTSDIR}/math/libgmp4
 MAKE_ENV+=	GMPINCDIR="${LOCALBASE}/include" \
 		GMPLIBDIR="${LOCALBASE}/lib"
 .endif
