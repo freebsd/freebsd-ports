@@ -3,10 +3,10 @@
 # Date created:		15 Jan 1999
 # Whom:			john@nlc.net.au
 #
-# $Id: Makefile,v 1.3 1999/04/29 20:27:17 peter Exp $
+# $Id: Makefile,v 1.4 1999/05/01 03:14:59 steve Exp $
 #
 
-DISTNAME=	radiusd-cistron-1.5.4.3-beta16
+DISTNAME=	radiusd-cistron-1.5.4.3-beta18
 PKGNAME=	radiusd-cistron-1.5.4.3
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.cistron.nl/pub/people/miquels/radius/
