@@ -1,0 +1,3 @@
+bin/braincurses
+%%PORTDOCS%%share/doc/braincurses/README
+%%PORTDOCS%%@dirrm /share/doc/braincurses

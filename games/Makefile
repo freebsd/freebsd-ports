@@ -38,6 +38,7 @@
     SUBDIR += bomb
     SUBDIR += bomberinstinct
     SUBDIR += bombermaze
+    SUBDIR += braincurses
     SUBDIR += bs
     SUBDIR += bsp
     SUBDIR += bugsx
