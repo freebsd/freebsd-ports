@@ -1,0 +1,23 @@
+Code Crusader is a complete code development environment
+inspired by MetroWerks CodeWarrior.
+
+Some of the features include:
+    Project window automatically builds Makefile.
+    Integrates with Code Medic to provide rapid, efficient
+       develop-debug cycle.
+    Integrated support for make
+    Parses error messages from:
+       Absoft FORTRAN, bison, cc, CC, flex, gcc, c++, g77,
+       KAI C++(kcc), make
+    Hypertext-like interface to UNIX man pages
+    Graphical display of C++ inheritance hierarchy
+    Option to use other text editor if you don't like the built-in one.
+    Configurable button toolbars.
+    Hypertext on-line help
+    Support for scrolling via wheel mice.
+    API's for extending Code Crusader
+
+WWW: http://www.cco.caltech.edu/~jafl/jcc/
+
+-Davec
+davec@unforgettable.com
