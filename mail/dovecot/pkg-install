@@ -36,8 +36,8 @@ yesno() {
 }
 
 if [ x"$2" = xPRE-INSTALL ]; then
-    USER=imapd
-    GROUP=imapd
+    USER=dovecot
+    GROUP=dovecot
 
     if /usr/sbin/pw groupshow "${GROUP}" 2>/dev/null; then
         echo "You already have a group \"${GROUP}\", so I will use it."
@@ -57,7 +57,7 @@ if [ x"$2" = xPRE-INSTALL ]; then
     else
         if /usr/sbin/pw useradd ${USER} -g ${GROUP} -h - \
            -s /sbin/nologin \
-           -c "Imap Daemon"
+           -c "Dovecot"
 	then
 	    echo "Added user \"${USER}\"."
 	else
