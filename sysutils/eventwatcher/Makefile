@@ -7,12 +7,15 @@
 
 PORTNAME=	eventwatcher
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	sysutils kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	eventwatcher
 
 MAINTAINER=	lauri@kde.org
 COMMENT=	KDE log file/event viewer
+
+EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-old_configure
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
