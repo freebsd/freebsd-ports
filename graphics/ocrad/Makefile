@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ocrad
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,32 +18,23 @@ USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 USE_GETOPT_LONG=	yes
 USE_REINPLACE=	yes
+USE_GCC=	3.2
 
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
-		INSTALL_PROGRAM="${INSTALL_PROGRAM}"
+		CXX=${CXX}
 
 DOCS=		AUTHORS ChangeLog NEWS README TODO
 INFO=		ocrad
 MAN1=		ocrad.1
 
-STD_PATCH=	textline.cc recognize2.cc bitmap.cc main.cc
-
-.include <bsd.port.pre.mk>
-post-patch:
-.if ${OSVERSION} < 500000
-.for file in ${STD_PATCH}
-	@${REINPLACE_CMD} -e 's/std::isspace/isspace/g; s/std::getc/getc/g' \
-		-e 's/std::ungetc/ungetc/g; s/std::feof/feof/g' \
-		-e 's/std::ferror/ferror/g' ${WRKSRC}/${file}
-.endfor
-.endif
-
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/ocrad ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-post-install:
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
-	@${INSTALL_MAN} ${FILESDIR}/ocrad.1 ${PREFIX}/man/man1
+	@${MKDIR} ${DOCSDIR} && cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+	@${INSTALL_MAN} ${WRKSRC}/doc/ocrad.1 ${PREFIX}/man/man1
+	@${INSTALL_DATA} ${WRKSRC}/doc/ocrad.info ${PREFIX}/info
+	@install-info ${PREFIX}/info/ocrad.info ${PREFIX}/info/dir
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
