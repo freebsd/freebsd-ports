@@ -20,6 +20,8 @@ include/xine/video_overlay.h
 include/xine/xine_internal.h
 include/xine/xineintl.h
 include/xine/xineutils.h
+include/xine/xmllexer.h
+include/xine/xmlparser.h
 include/xine.h
 lib/libxine.so
 lib/libxine.so.0
@@ -29,12 +31,15 @@ lib/libxineutils.so.0
 lib/xine/plugins/xineplug_ao_out_esd.so
 lib/xine/plugins/xineplug_ao_out_oss.so
 lib/xine/plugins/xineplug_decode_a52.so
+lib/xine/plugins/xineplug_decode_cinepak.so
+lib/xine/plugins/xineplug_decode_cyuv.so
 lib/xine/plugins/xineplug_decode_divx4.so
 lib/xine/plugins/xineplug_decode_dts.so
 lib/xine/plugins/xineplug_decode_ff.so
 lib/xine/plugins/xineplug_decode_lpcm.so
 lib/xine/plugins/xineplug_decode_mad.so
 lib/xine/plugins/xineplug_decode_mpeg2.so
+lib/xine/plugins/xineplug_decode_msvc.so
 lib/xine/plugins/xineplug_decode_spu.so
 lib/xine/plugins/xineplug_decode_spucc.so
 lib/xine/plugins/xineplug_decode_sputext.so
@@ -61,6 +66,7 @@ lib/xine/plugins/xineplug_inp_stdin_fifo.so
 lib/xine/plugins/xineplug_inp_vcd.so
 lib/xine/plugins/xineplug_vo_out_aa.so
 lib/xine/plugins/xineplug_vo_out_opengl.so
+lib/xine/plugins/xineplug_vo_out_sdl.so
 lib/xine/plugins/xineplug_vo_out_syncfb.so
 lib/xine/plugins/xineplug_vo_out_xshm.so
 %%HAVE_LIBXV%%lib/xine/plugins/xineplug_vo_out_xv.so
@@ -136,12 +142,16 @@ share/xine/fonts/sans-16.xinefont.gz
 share/xine/fonts/sans-20.xinefont.gz
 share/xine/fonts/sans-24.xinefont.gz
 share/xine/fonts/sans-32.xinefont.gz
+share/xine/fonts/sanshu-16.xinefont.gz
+share/xine/fonts/sanshu-20.xinefont.gz
+share/xine/fonts/sanshu-24.xinefont.gz
+share/xine/fonts/sanshu-32.xinefont.gz
 share/xine/fonts/serif-16.xinefont.gz
 share/xine/fonts/serif-20.xinefont.gz
 share/xine/fonts/serif-24.xinefont.gz
 share/xine/fonts/serif-32.xinefont.gz
+share/xine/skins/xine_logo.mpg
 share/xine/skins/xine_logo.png
-share/xine/skins/xine_logo.zyuy2
 @dirrm include/xine
 @dirrm lib/xine/plugins
 @dirrm lib/xine
