@@ -1,0 +1,63 @@
+--- sample-configurations/basic.conf.orig	Tue Nov 18 02:23:12 1997
++++ sample-configurations/basic.conf	Mon Jan 26 22:45:53 1998
+@@ -1,3 +1,8 @@
++#
++# To have more informations about Proftpd configuration
++# look at : http://www.proftpd.org/
++#
++
+ # This is a basic ProFTPD configuration file (rename it to 
+ # 'proftpd.conf' for actual use.  It establishes a single server
+ # and a single anonymous login.  It assumes that you have a user/group
+@@ -23,24 +28,31 @@
+   AllowOverwrite		on
+ </Directory>
+ 
+-# A basic anonymous configuration, no upload directories.
+-<Anonymous ~ftp>
+-  User				ftp
+-  Group				ftp
+-  # We want clients to be able to login with "anonymous" as well as "ftp"
+-  UserAlias			anonymous ftp
+-
+-  # Limit the maximum number of anonymous logins
+-  MaxClients			10
+-
+-  # We want 'welcome.msg' displayed at login, and '.message' displayed
+-  # in each newly chdired directory.
+-  DisplayLogin			welcome.msg
+-  DisplayFirstChdir		.message
+-
+-  # Limit WRITE everywhere in the anonymous chroot
+-  <Limit WRITE>
+-    DenyAll
+-  </Limit>
+ 
+-</Anonymous>
++#########################################################################
++#									#
++# Uncomment lines with only one # to allow basic anonymous access	#
++#									#
++#########################################################################
++
++### A basic anonymous configuration, no upload directories.
++# <Anonymous ~ftp>
++#  User				ftp
++#  Group				ftp
++  ### We want clients to be able to login with "anonymous" as well as "ftp"
++  # UserAlias			anonymous ftp
++
++  ### Limit the maximum number of anonymous logins
++  # MaxClients			10
++
++  ### We want 'welcome.msg' displayed at login, and '.message' displayed
++  ### in each newly chdired directory.
++  # DisplayLogin			welcome.msg
++  # DisplayFirstChdir		.message
++
++  ### Limit WRITE everywhere in the anonymous chroot
++  # <Limit WRITE>
++  #  DenyAll
++  # </Limit>
++
++# </Anonymous>
