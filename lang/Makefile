@@ -115,6 +115,7 @@
     SUBDIR += klogoturtle
     SUBDIR += klone
     SUBDIR += lafontaine
+    SUBDIR += libjit
     SUBDIR += librep
     SUBDIR += libutils
     SUBDIR += linux-j

@@ -1,0 +1,12 @@
+--- tools/gen-apply.c.orig	Tue Apr 27 00:26:20 2004
++++ tools/gen-apply.c	Tue Apr 27 00:26:40 2004
+@@ -22,6 +22,9 @@
+ #include "jit-apply-func.h"
+ #include <stdio.h>
+ #include <config.h>
++#ifdef __FreeBSD__
++	#include <stdlib.h>
++#endif
+ #if HAVE_ALLOCA_H
+ 	#include <alloca.h>
+ #endif
