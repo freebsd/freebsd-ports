@@ -25,6 +25,10 @@ COMMENT=	FSF C/C++/JAVA-gcc-3.2.3 base-port for RTEMS development
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "amd64"
+BROKEN=		"Configure fails on amd64"
+.endif
+
 RTEMS_ARCH?=	i386
 LCLTARGET=	${RTEMS_ARCH}-rtems
 
