@@ -1,6 +1,6 @@
 # New ports collection makefile for:	jakarta-ant
 # Date created:		21 February 2001
-# Whom:			ernst@jollem.com
+# Whom:			znerd@FreeBSD.org
 #
 # $FreeBSD$
 #
@@ -9,13 +9,13 @@ PORTNAME=	jakarta-ant
 PORTVERSION=	1.4.1
 CATEGORIES=	devel java
 MASTER_SITES=	http://jakarta.apache.org/builds/${PORTNAME}/release/v${PORTVERSION}/bin/ \
-		http://metaverse.euronet.nl/~ernst/
+		http://www.metaverse.nl/~ernst/
 DISTFILES=	${DISTNAME}-bin${EXTRACT_SUFX} \
 		${DISTNAME}-optional.jar
 DIST_SUBDIR=	jakarta
 EXTRACT_ONLY=	${DISTNAME}-bin${EXTRACT_SUFX}
 
-MAINTAINER=	ernst@jollem.com
+MAINTAINER=	znerd@FreeBSD.org
 
 RUN_DEPENDS=	${JAVAVM}:${PORTSDIR}/java/javavmwrapper \
 		${LOCALBASE}/share/java/classes/crimson.jar:${PORTSDIR}/textproc/crimson
