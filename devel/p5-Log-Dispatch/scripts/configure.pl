@@ -1,4 +1,5 @@
 #! /usr/bin/perl -w
+# $FreeBSD$
 use strict;
 
 unless (defined $ENV{WRKDIRPREFIX} and
@@ -38,6 +39,11 @@ my @modules = (
      module => 'Email::MailSendmail',
      check  => 'Mail::Sendmail',
      port   => 'mail/p5-Mail-Sendmail',
+  },
+  {
+     module => 'Mail::Sender',
+     check  => 'Mail::Sender',
+     port   => 'mail/p5-Mail-Sender',
   },
   {
      module => 'Syslog',

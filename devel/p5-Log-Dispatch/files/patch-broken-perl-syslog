@@ -1,15 +1,17 @@
---- Dispatch/Syslog.pm.orig	Thu May 17 16:23:51 2001
-+++ Dispatch/Syslog.pm	Thu May 17 16:24:15 2001
-@@ -45,7 +45,7 @@
-     $self->{ident}    = $params{ident} || $0;
-     $self->{logopt}   = $params{logopt} || '';
-     $self->{facility} = $params{facility} || 'user';
--    $self->{socket}   = $params{socket} || 'unix';
-+    $self->{socket}   = $params{socket} || undef;
+$FreeBSD$
+
+--- Dispatch/Syslog.pm.orig	Sat Jun 22 01:10:31 2002
++++ Dispatch/Syslog.pm	Mon Jul  1 06:23:54 2002
+@@ -46,7 +46,7 @@
+ 			    facility => { type => SCALAR,
+ 					  default => 'user' },
+ 			    socket   => { type => SCALAR,
+-					  default => 'unix' },
++					  default => undef },
+ 			  } );
  
-     $self->{priorities} = [ 'DEBUG',
- 			    'INFO',
-@@ -56,7 +56,7 @@
+     $self->{ident}    = $p{ident};
+@@ -63,7 +63,7 @@
  			    'ALERT',
  			    'EMERG' ];
  
