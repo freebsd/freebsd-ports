@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.90 1998/08/21 03:17:25 ache Exp $
+# $Id: Makefile,v 1.91 1998/08/24 02:00:48 steve Exp $
 #
 
     SUBDIR += 4va
@@ -13,6 +13,7 @@
     SUBDIR += cqcam
     SUBDIR += dc3play
     SUBDIR += dore
+    SUBDIR += electriceyes
     SUBDIR += fbm
     SUBDIR += fli2gif
     SUBDIR += fnlib
