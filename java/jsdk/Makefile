@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	greg@greg.rim.or.jp
 
-RUN_DEPENDS=	${PREFIX}/jdk1.1.8/bin/java:${PORTSDIR}/java/jdk11
+USE_JAVA=	1.1+
 
 NO_CDROM=	"Sun has a funky license for this software"
 RESTRICTED=	"no commercial use"
