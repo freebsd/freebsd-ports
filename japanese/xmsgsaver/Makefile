@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	xmsgsaver
-PORTVERSION=	1.7
+PORTVERSION=	1.8.1
 CATEGORIES=	japanese misc
-MASTER_SITES=	http://delegate.uec.ac.jp:8081/club/koken/~kudoh/soft/
+MASTER_SITES=	http://www.xdsl.ne.jp/ga/cdr/soft/dl/
 
-MAINTAINER=	kudoh@koken.club.uec.ac.jp
+MAINTAINER=	cdr@ga.xdsl.ne.jp
 
 LIB_DEPENDS=	VFlib2.24:${PORTSDIR}/japanese/vflib
 
