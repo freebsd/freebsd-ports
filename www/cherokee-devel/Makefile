@@ -10,7 +10,7 @@ PORTVERSION=	0.4.2
 CATEGORIES=	www
 MASTER_SITES=	ftp://www.alobbs.com/cherokee/
 
-MAINTAINER=	oksala@videotron.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cherokee is an extremely fast and tiny web server
 
 #USE_AUTOCONF_VER=213
