@@ -3818,6 +3818,7 @@ lgrind		ports/print/lgrind
 lha		ports/archivers/lha
 liamail		ports/mail/liamail
 lib3ds		ports/graphics/lib3ds
+lib765		ports/emulators/lib765
 libIDL		ports/devel/libIDL
 libPropList	ports/devel/libPropList
 libU77		ports/devel/libU77
