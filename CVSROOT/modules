@@ -1680,6 +1680,7 @@ echolot		ports/net-mgmt/echolot
 echoping	ports/net/echoping
 ecl		ports/lang/ecl
 eclipse		ports/java/eclipse
+eclipse-EPIC	ports/java/eclipse-EPIC
 eclipse-cdt	ports/java/eclipse-cdt
 eclipse-checkstyle	ports/java/eclipse-checkstyle
 eclipse-clay-core	ports/java/eclipse-clay-core
