@@ -1,0 +1,9 @@
+POE::Component::Logger provides a simple logging component that uses
+Log::Dispatch::Config to drive it, allowing you to log to multiple
+places at once (e.g.  to STDERR and Syslog at the same time) and also to
+flexibly define your logger's output.
+
+WWW: http://search.cpan.org/search?dist=POE-Component-Logger
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
