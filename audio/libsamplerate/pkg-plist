@@ -17,3 +17,4 @@ libdata/pkgconfig/samplerate.pc
 %%PORTDOCS%%%%DOCSDIR%%/lists.html
 %%PORTDOCS%%%%DOCSDIR%%/quality.html
 %%PORTDOCS%%%%DOCSDIR%%/win32.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

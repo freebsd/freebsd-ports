@@ -320,6 +320,7 @@ share/texmf/tex/latex/html/url.sty
 share/texmf/tex/latex/html/verbatimfiles.sty
 @exec /usr/local/bin/mktexlsr
 @unexec /usr/local/bin/mktexlsr
+@dirrm lib/latex2html
 @dirrm share/doc/latex2html
 @dirrm share/latex2html/IndicTeX-HTML
 @dirrm share/latex2html/L2hos
