@@ -1,0 +1,8 @@
+--- version.c.org	Sun Oct  4 02:02:34 1998
++++ version.c	Sun Oct  4 02:10:53 1998
+@@ -643,4 +643,4 @@
+ 		for JIS X0212.1990.
+ */
+ 
+-char version[] = "332+iso248";
++char version[] = "332+iso248+regex_cs-lwp9k";
