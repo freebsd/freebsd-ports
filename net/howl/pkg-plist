@@ -1,30 +1,30 @@
 bin/mDNSBrowse
 bin/mDNSPublish
 bin/mDNSResponder
-include/howl/corby/buffer.h
-include/howl/corby/channel.h
-include/howl/corby/corby.h
-include/howl/corby/message.h
-include/howl/corby/object.h
-include/howl/corby/orb.h
-include/howl/discovery/discovery.h
-include/howl/discovery/text_record.h
-include/howl/howl.h
-include/howl/howl_dll.h
-include/howl/rendezvous/rendezvous.h
-include/howl/rendezvous/text_record.h
-include/howl/salt/address.h
-include/howl/salt/assert.h
-include/howl/salt/interface.h
-include/howl/salt/log.h
-include/howl/salt/salt.h
-include/howl/salt/signal.h
-include/howl/salt/socket.h
-include/howl/salt/time.h
-include/howl/salt/verrno.h
-include/howl/salt/vstdlib.h
-include/howl/salt/vstring.h
-include/howl/salt/vtypes.h
+include/howl-%%VERSION%%/corby/buffer.h
+include/howl-%%VERSION%%/corby/channel.h
+include/howl-%%VERSION%%/corby/corby.h
+include/howl-%%VERSION%%/corby/message.h
+include/howl-%%VERSION%%/corby/object.h
+include/howl-%%VERSION%%/corby/orb.h
+include/howl-%%VERSION%%/discovery/discovery.h
+include/howl-%%VERSION%%/discovery/text_record.h
+include/howl-%%VERSION%%/howl.h
+include/howl-%%VERSION%%/howl_dll.h
+include/howl-%%VERSION%%/rendezvous/rendezvous.h
+include/howl-%%VERSION%%/rendezvous/text_record.h
+include/howl-%%VERSION%%/salt/address.h
+include/howl-%%VERSION%%/salt/assert.h
+include/howl-%%VERSION%%/salt/interface.h
+include/howl-%%VERSION%%/salt/log.h
+include/howl-%%VERSION%%/salt/salt.h
+include/howl-%%VERSION%%/salt/signal.h
+include/howl-%%VERSION%%/salt/socket.h
+include/howl-%%VERSION%%/salt/time.h
+include/howl-%%VERSION%%/salt/verrno.h
+include/howl-%%VERSION%%/salt/vstdlib.h
+include/howl-%%VERSION%%/salt/vstring.h
+include/howl-%%VERSION%%/salt/vtypes.h
 lib/libhowl-%%VERSION%%.so.0
 lib/libhowl.a
 lib/libhowl.so
@@ -45,8 +45,8 @@ share/howl/help/txt_rec_str_iter-summary.html
 share/howl/help/txt_rec_str_iter.html
 @dirrm share/howl/help
 @dirrm share/howl
-@dirrm include/howl/salt
-@dirrm include/howl/rendezvous
-@dirrm include/howl/discovery
-@dirrm include/howl/corby
-@dirrm include/howl
+@dirrm include/howl-%%VERSION%%/salt
+@dirrm include/howl-%%VERSION%%/rendezvous
+@dirrm include/howl-%%VERSION%%/discovery
+@dirrm include/howl-%%VERSION%%/corby
+@dirrm include/howl-%%VERSION%%
