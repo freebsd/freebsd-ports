@@ -8771,6 +8771,7 @@ zclock		ports/x11-clocks/zclock
 zebedee		ports/security/zebedee
 zebra		ports/net/zebra
 zebra-server	ports/net/zebra-server
+zed		ports/editors/zed
 zephyr		ports/net/zephyr
 zh-CJK		ports/chinese/CJK
 zh-FAQ		doc/zh_TW.Big5/books/faq
