@@ -27,10 +27,6 @@ DOCS=	HVSC_Update.txt SID_file_format.txt
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502112
-BROKEN=         "Does not compile on FreeBSD >= 5.x"
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/Update ${PREFIX}/bin/HVSC-Update
 .if !defined(NOPORTDOCS)
