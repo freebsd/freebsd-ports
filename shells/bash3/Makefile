@@ -21,6 +21,7 @@ MAINTAINER=	obrien@FreeBSD.org
 GNU_CONFIGURE=	Yes
 CONFIGURE_ARGS=	--with-installed-readline
 CONFIGURE_ENV=	LDFLAGS=-static
+CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 MAN1=		bash.1 bashbug.1
 
 post-install:
