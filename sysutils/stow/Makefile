@@ -10,7 +10,7 @@ PORTNAME=	stow
 PORTVERSION=	1.3.2
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	stow
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -18,7 +18,9 @@ Y2K=		http://www.gnu.org/software/year2000.html
 
 GNU_CONFIGURE=	yes
 
-post-install:
-	install-info ${PREFIX}/info/stow.info ${PREFIX}/info/dir
+do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/stow ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/stow.info ${PREFIX}/info
+	@install-info ${PREFIX}/info/stow.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>
