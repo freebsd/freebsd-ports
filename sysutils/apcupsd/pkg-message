@@ -7,4 +7,8 @@ the serial line the USV is connected to, e.g.
   cd /dev
   ln -s cuaa1 usv
 
+Read the MANUAL to do site specific configuration
+assigenments! Especially have a detailed look into
+the chapter describing the shutdown procedure.
+
 **************************************************
