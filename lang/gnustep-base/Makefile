@@ -61,6 +61,7 @@ EXTRA_PATCHES+=	${FILESDIR}/NSFileManager.m.patch
 
 .include <bsd.port.pre.mk>
 
+PATH:=	${PREFIX}/System/Tools:${PATH}
 TARGLIB!=	(cd ${PORTSDIR}/${GNUSTEP_OBJC_PORT} && make -V TARGLIB)
 
 .if defined(WITH_GNUSTEP_DEVEL)
@@ -91,6 +92,3 @@ test:
 	@(cd ${WRKSRC}/Testing && . ${SYSTEMDIR}/Makefiles/GNUstep.sh; ${GMAKE})
 
 .include <bsd.port.post.mk>
-
-# bsd.autotools.mk clobbers MAKE_ENV
-MAKE_ENV+=	PATH=${AUTOTOOLS_PATH}:${PREFIX}/System/Tools:${PATH}
