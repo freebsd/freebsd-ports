@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	p5-Palm
-PORTVERSION=	1.2.4
+PORTVERSION=	1.3.0
 CATEGORIES=	palm perl5
 MASTER_SITES=	http://www.coldsync.org/download/
 
@@ -14,6 +14,7 @@ MAINTAINER=	arensb@ooblick.com
 COMMENT=	Perl 5 modules for reading and writing Palm database files
 
 PERL_CONFIGURE=	YES
+WRKSRC=		${WRKDIR}/p5-Palm-1.003_000
 
 # Just so that the .packlist conforms to reality
 NOMANCOMPRESS=	yes
