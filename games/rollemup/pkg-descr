@@ -1,0 +1,21 @@
+Roll 'm Up:Multi Ball, Multi Player, Multi Platform, Multi Media, Multi Cool
+
+This package contains a Linux-x86 version of the Lost Boys pinball game
+RollemUp , it is based on our cross-platform framework Lost Platform,
+now running on MS Windows, Macintosh, BeOS and linux.
+Tested with XFree86 in different display depths, OSS sound on an SB16.
+For more information on this version, as well as the upcoming LinuxPPC
+version check our site:
+
+WWW: www.medialab.lostboys.nl/rollemup/
+
+Lost Boys media lab
+---
+Known Problem
+	With pcm sound driver, sound is delayed about 10 seconds.
+	Please use with sys/i386/isa/snd(Voxware sound driver)
+	or OSS/FreeBSD sound driver, if you want to play with sound.
+
+	This problem is not related to Linux Emulator.
+
+MIHIRA Yoshiro

@@ -1,0 +1,15 @@
+License information:
+	http://www.medialab.lostboys.nl/content/showcase/license.html
+
+How to start:
+	exec ${PREFIX}/bin/rollemup
+
+Controls:
+	'/' for the Right Flipper
+	'Z' for the Left Flipper
+	'Enter' for the Plunger
+	'Space' for a Shake
+	'N' for a New Game
+	'P' to pause a Game
+	'Q' to Quit
+	'ESC' to abort the game
