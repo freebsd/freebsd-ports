@@ -16,6 +16,8 @@ DISTNAME=	magick-${PORTVERSION}
 MAINTAINER=	tim@n2it.net
 COMMENT=	Python bindings for ImageMagick
 
+BUILD_DEPENDS=	${PYNUMERIC}
+RUN_DEPENDS=	${PYNUMERIC}
 LIB_DEPENDS=	Magick.6:${PORTSDIR}/graphics/ImageMagick
 
 USE_PYTHON=	yes
