@@ -1,0 +1,19 @@
+*** Makefile.in.orig	Thu Feb 17 18:47:27 2000
+--- Makefile.in	Sat May  6 11:16:43 2000
+***************
+*** 15,21 ****
+  CC = @CC@
+  CPPFLAGS = @CPPFLAGS@
+  CFLAGS = $(CPPFLAGS) @CFLAGS@ `gnome-config --cflags gnome gnomeui`
+! LDFLAGS = @LDFLAGS@ `gnome-config --libs gnome gnomeui` `gtk-config --libs`
+  LIBS = @LIBS@ -lgdk_imlib -lzvt
+  INSTALL = @INSTALL@
+  
+--- 15,21 ----
+  CC = @CC@
+  CPPFLAGS = @CPPFLAGS@
+  CFLAGS = $(CPPFLAGS) @CFLAGS@ `gnome-config --cflags gnome gnomeui`
+! LDFLAGS = @LDFLAGS@ `gnome-config --libs gnome gnomeui` `${GTK_CONFIG} --libs`
+  LIBS = @LIBS@ -lgdk_imlib -lzvt
+  INSTALL = @INSTALL@
+  

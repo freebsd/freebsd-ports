@@ -1,0 +1,58 @@
+*** configure.in.orig	Sun Jan 23 17:13:12 2000
+--- configure.in	Fri May  5 06:56:50 2000
+***************
+*** 3,20 ****
+  AC_CONFIG_HEADER(config.h)
+  
+  
+! GTK_EXTRA_LIBS="`gtk-config --libs` -lgdk_imlib -lutil"
+  
+! VERSION=`gtk-config --version`
+! MAJOR=`echo $VERSION | cut -f 1 -d . -`
+! MINOR=`echo $VERSION | cut -f 2 -d . -`
+! MICRO=`echo $VERSION | cut -f 3 -d . -`
+  
+  GNOMEVERSION=`gnome-config --version`
+! GVERSION=`echo $GNOMEVERSION | cut -f 2 -d " " -`
+! GNOMEMAJOR=`echo $GVERSION | cut -f 1 -d . -`
+! GNOMEMINOR=`echo $GVERSION | cut -f 2 -d . -`
+! GNOMEMICRO=`echo $GVERSION | cut -f 3 -d . -`
+  
+  dnl Checks for programs.
+  AC_PROG_CC
+--- 3,20 ----
+  AC_CONFIG_HEADER(config.h)
+  
+  
+! GTK_EXTRA_LIBS="`$GTK_CONFIG --libs` -lgdk_imlib -lutil"
+  
+! VERSION=`$GTK_CONFIG --version`
+! MAJOR=`echo $VERSION | cut -f 1 -d .`
+! MINOR=`echo $VERSION | cut -f 2 -d .`
+! MICRO=`echo $VERSION | cut -f 3 -d .`
+  
+  GNOMEVERSION=`gnome-config --version`
+! GVERSION=`echo $GNOMEVERSION | cut -f 2 -d " "`
+! GNOMEMAJOR=`echo $GVERSION | cut -f 1 -d .`
+! GNOMEMINOR=`echo $GVERSION | cut -f 2 -d .`
+! GNOMEMICRO=`echo $GVERSION | cut -f 3 -d .`
+  
+  dnl Checks for programs.
+  AC_PROG_CC
+***************
+*** 42,48 ****
+  fi
+  
+  if let $(($GNOMEMINOR < 1)); then
+! 	if let $((GNOMEMICRO < 13)); then
+  		AC_MSG_ERROR([Gnome 1.0.13 or greater required!])
+  	fi
+  fi
+--- 42,48 ----
+  fi
+  
+  if let $(($GNOMEMINOR < 1)); then
+! 	if let $(($GNOMEMICRO < 13)); then
+  		AC_MSG_ERROR([Gnome 1.0.13 or greater required!])
+  	fi
+  fi

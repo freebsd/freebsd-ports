@@ -1,0 +1,8 @@
+PowerShell is a terminal emulator for the X11 Window System.  It is built
+on top of the GTK+ Toolkit (www.gtk.org) and GNOME (www.gnome.org).  It
+supports many very useful features such as the ability to have many
+terminals embedded in a single window, separated by notebook tabs.
+
+WWW: http://powershell.sourceforge.net
+
+Scott Moberly <smoberly@xavier.dyndns.org>
