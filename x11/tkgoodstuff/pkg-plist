@@ -196,7 +196,6 @@ lib/tkgoodstuff/sample-rc/home
 lib/tkgoodstuff/sample-rc/minimal
 lib/tkgoodstuff/sample-rc/stacks
 lib/tkgoodstuff/sample-rc/win95
-lib/tkgoodstuff/tcl/tclIndex
 lib/tkgoodstuff/tkgoodstuff
 @dirrm lib/tkgoodstuff/tcl
 @dirrm lib/tkgoodstuff/sample-rc
