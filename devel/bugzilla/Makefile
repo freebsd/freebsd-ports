@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bugzilla
-PORTVERSION=	2.14.4
+PORTVERSION=	2.16.2
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.mozilla.org/pub/${MASTER_SITE_SUBDIR}/ \
 		${MASTER_SITE_MOZILLA}
@@ -18,7 +18,9 @@ COMMENT=	Bug-tracking system developed by Mozilla Project
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 RUN_DEPENDS=	${PERL_SITEDIR}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${PERL_SITEDIR}/${PERL_ARCH}/Mysql.pm:${PORTSDIR}/databases/p5-Mysql \
-		${PERL_SITEDIR}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate
+		${PERL_SITEDIR}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate \
+		${PERL_SITEDIR}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit \
+		${PERL_SITEDIR}/Text/Wrap.pm:${PORTSDIR}/textproc/p5-Text-Tabs+Wrap
 
 .if !defined(WITHOUT_BUG_CHARTING_MODULES)
 RUN_DEPENDS+=	${PERL_SITEDIR}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD \
@@ -37,7 +39,7 @@ USE_REINPLACE=	yes
 
 NO_BUILD=	yes
 BINMODE=	700
-PKGMESSAGE=     ${WRKDIR}/pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 PERL_SITEDIR=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 
@@ -86,6 +88,7 @@ do-install:
 	${MKDIR} ${BUGZILLADIR}
 	find ${WRKSRC} \! -type d -maxdepth 1 \! -name UPGRADING* -exec \
 		${INSTALL_SCRIPT} {} ${BUGZILLADIR} \;
+	${TAR} -C ${WRKSRC} -cf - template css | ${TAR} --unlink -C ${BUGZILLADIR} -xf -
 .if !defined(NOPORTSDOCS)
 	${MKDIR} ${DOCSDIR}
 	${TAR} -C ${WRKSRC}/docs -cf - . | ${TAR} --unlink -C ${DOCSDIR} -xf -
@@ -100,4 +103,3 @@ post-install:
 .endif
 
 .include <bsd.port.mk>
-
