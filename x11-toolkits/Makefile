@@ -155,6 +155,7 @@
     SUBDIR += php-gtk
     SUBDIR += plib
     SUBDIR += pmw
+    SUBDIR += py-SciParam
     SUBDIR += py-anygui
     SUBDIR += py-gnome
     SUBDIR += py-gnome2

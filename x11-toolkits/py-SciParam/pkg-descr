@@ -1,0 +1,4 @@
+SciParam is a Python package to easily add additional quality control for
+entering scientific parameters in wxPython-based user interfaces.
+
+WWW: http://great-er.intevation.org/sciparam/
