@@ -1,0 +1,14 @@
+bin/bbconf
+share/bbconf/plugins/libbbconf.so
+share/bbconf/plugins/libkeybindings.so
+share/bbconf/plugins/libmenu.so
+share/bbconf/plugins/libthemes.so
+%%PORTDOCS%%share/doc/bbconf/AUTHORS
+%%PORTDOCS%%share/doc/bbconf/COPYING
+%%PORTDOCS%%share/doc/bbconf/ChangeLog
+%%PORTDOCS%%share/doc/bbconf/README
+%%PORTDOCS%%share/doc/bbconf/README.html
+%%PORTDOCS%%share/doc/bbconf/TODO
+%%PORTDOCS%%@dirrm share/doc/bbconf
+@dirrm share/bbconf/plugins
+@dirrm share/bbconf

@@ -1,0 +1,5 @@
+bbconf is the configuration utility for blackbox. It uses a plugin system,
+which means most of your favorite blackbox applications can be configured
+from within the same configurator.
+
+WWW: http://bbconf.sourceforge.net/

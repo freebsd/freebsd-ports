@@ -1,0 +1,29 @@
+$FreeBSD$
+
+--- Makefile.in.orig	Mon Nov  5 06:11:07 2001
++++ Makefile.in	Mon Nov  5 06:11:27 2001
+@@ -218,7 +218,7 @@
+ 
+ MAINTAINERCLEANFILES = subdirs configure.in acinclude.m4 configure.files 
+ 
+-docdir = $(prefix)/doc/bbconf
++docdir = $(prefix)/share/doc/bbconf
+ 
+ doc_DATA = AUTHORS COPYING ChangeLog README README.html TODO
+ 
+@@ -304,6 +304,7 @@
+ 	-rm -f config.h
+ uninstall-info-am:
+ install-docDATA: $(doc_DATA)
++.ifndef NOPORTDOCS
+ 	@$(NORMAL_INSTALL)
+ 	$(mkinstalldirs) $(DESTDIR)$(docdir)
+ 	@list='$(doc_DATA)'; for p in $$list; do \
+@@ -312,6 +313,7 @@
+ 	  echo " $(INSTALL_DATA) $$d$$p $(DESTDIR)$(docdir)/$$f"; \
+ 	  $(INSTALL_DATA) $$d$$p $(DESTDIR)$(docdir)/$$f; \
+ 	done
++.endif
+ 
+ uninstall-docDATA:
+ 	@$(NORMAL_UNINSTALL)
