@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	gd
-PORTVERSION=	0.40
-PORTREVISION=	1
+PORTVERSION=	0.42
 CATEGORIES=	graphics python
 MASTER_SITES=	http://newcenturycomputers.net/projects/download.cgi/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,7 +22,7 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_PYTHON_PREFIX=	yes
 PYSETUP=	Setup.py
-EXAMPLE_DIR=	${PREFIX}/share/examples/py-gd
+EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 
 post-patch:
 	${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' \
@@ -33,8 +32,8 @@ post-patch:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${EXAMPLE_DIR}
-	${INSTALL_DATA} ${WRKSRC}/gddemo.py ${EXAMPLE_DIR}
+	${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/gddemo.py ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
