@@ -1,6 +1,8 @@
 bin/pylupdate
 bin/pyuic
 %%PYTHON_SITELIBDIR%%/pyqtconfig.py
+%%PYTHON_SITELIBDIR%%/pyqtconfig.pyc
+%%PYTHON_SITELIBDIR%%/pyqtconfig.pyo
 %%PYTHON_SITELIBDIR%%/qt.so
 %%PYTHON_SITELIBDIR%%/qtcanvas.so
 %%PYTHON_SITELIBDIR%%/qtext.so
@@ -86,6 +88,7 @@ share/sip/qt/qmemarray.sip
 share/sip/qt/qmenubar.sip
 share/sip/qt/qmenudata.sip
 share/sip/qt/qmessagebox.sip
+share/sip/qt/qmetaobject.sip
 share/sip/qt/qmime.sip
 share/sip/qt/qmotifplusstyle.sip
 share/sip/qt/qmotifstyle.sip
@@ -168,6 +171,7 @@ share/sip/qt/qtranslator.sip
 share/sip/qt/qurl.sip
 share/sip/qt/qurlinfo.sip
 share/sip/qt/qurloperator.sip
+share/sip/qt/quuid.sip
 share/sip/qt/qvalidator.sip
 share/sip/qt/qvaluelist.sip
 share/sip/qt/qvariant.sip
@@ -201,6 +205,7 @@ share/sip/qtext/qextscintillacommand.sip
 share/sip/qtext/qextscintillacommandset.sip
 share/sip/qtext/qextscintilladocument.sip
 share/sip/qtext/qextscintillalexer.sip
+share/sip/qtext/qextscintillalexerbash.sip
 share/sip/qtext/qextscintillalexercpp.sip
 share/sip/qtext/qextscintillalexercsharp.sip
 share/sip/qtext/qextscintillalexerhtml.sip
