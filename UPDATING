@@ -6,6 +6,30 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20050201:
+  AFFECTS: users of lang/perl5 and lang/perl5.8
+  AUTHOR: tobez@FreeBSD.org
+
+  lang/perl5 has been updated to 5.6.2, and lang/perl5.8 has been
+  updated to 5.8.6. you should update everything depending on perl, that
+  is:
+
+    * first, upgrade your perl installation (use either lang/perl5 or
+      lang/perl5.8, the latter being recommended);
+    * for FreeBSD 4.X, run "use.perl port", so that the system knows you
+      have 5.8.6 or 5.6.2;  this step is not needed on FreeBSD 5.X and
+      FreeBSD -CURRENT;
+    * run some magic incantations to upgrade all ports depending on perl,
+      that is run something like :
+      portupgrade -f `(pkg_info -R perl-5\* |tail +4; \
+        find /usr/local/lib/perl5/site_perl/5.[68].[1245] -type f -print0 \
+        | xargs -0 pkg_which -fv | sed -e '/: ?/d' -e 's/.*: //')|sort -u`
+      This is likely to fail for a few ports, you'll have to upgrade them
+      afterwards by hand.
+      Please note, that this last step is, strictly speaking, not necessary,
+      if you are upgrading from 5.8.[45] to 5.8.6, or from 5.6.1 to
+      5.6.2.  But it is cleaner to do so anyway.
+
 20050130:
   AFFECTS: users of PostgreSQL
   AUTHOR: girgen@FreeBSD.org
