@@ -3,7 +3,7 @@
 # Date Created:		7 Sep 1997
 # Whom:			Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
-# $Id: Makefile,v 1.4 1998/02/21 22:37:59 fenner Exp $
+# $Id: Makefile,v 1.6 1998/03/12 08:05:26 vanilla Exp $
 #
 
 DISTNAME=	hfsutils-3.2
@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://ftp.ps.ucl.ac.uk/pub/mkhfs/
 MAINTAINER=	vanilla@FreeBSD.ORG
 
 LIB_DEPENDS=	tk81\\.1\\.:${PORTSDIR}/x11/tk81
+
+BROKEN=		fetch
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcl --with-tcl-libs=${PREFIX}/lib --with-tk --with-tk-libs=${PREFIX}/lib
