@@ -1,0 +1,11 @@
+--- ./bin/as_exec.orig	Mon Jan  3 18:31:30 2005
++++ ./bin/as_exec	Sun Jan 16 21:56:08 2005
+@@ -73,7 +73,7 @@
+ if [ `echo $fich | grep -c '@'` -ne 0 ]; then
+    $RCP_CMD $fich $pr_astk > /dev/null 2>&1
+ else
+-   \cp $fich $pr_astk > /dev/null 2>&1
++   cp $fich $pr_astk > /dev/null 2>&1
+ fi
+ if [ ! -f $pr_astk ]; then
+    echo "Profile copy failed"

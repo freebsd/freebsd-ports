@@ -1,0 +1,8 @@
+--- bin/as_serv.orig	Mon Dec 13 14:34:29 2004
++++ bin/as_serv	Mon Jan 17 21:00:14 2005
+@@ -1,4 +1,5 @@
+ #!?SHELL_EXECUTION?
++#set -o SH_WORD_SPLIT
+ 
+ #########################################################################
+ # COPYRIGHT (C) 2003         EDF R&D              WWW.CODE-ASTER.ORG    #

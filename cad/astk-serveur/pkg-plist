@@ -1,62 +1,61 @@
-%%CLIENT%%ASTK/ASTK_CLIENT/GPL.txt
-%%CLIENT%%ASTK/ASTK_CLIENT/bin/asjob
-%%CLIENT%%ASTK/ASTK_CLIENT/bin/astk
-%%CLIENT%%ASTK/ASTK_CLIENT/bin/bsf
-%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASJOB/asjob.info
-%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASJOB/asjob.tcl
-%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASJOB/asjob_main.tcl
-%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASJOB/init_asjob.tcl
-%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASJOB/listej.tcl
-%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/DOC/sdd_UL.txt
-%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/DOC/sdd_agla.txt
-%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/DOC/sdd_config.txt
-%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/DOC/sdd_ihm.txt
-%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/DOC/sdd_inv.txt
-%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/DOC/sdd_mots.txt
-%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/DOC/sdd_msg.txt
-%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/DOC/sdd_outils.txt
-%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/DOC/sdd_print.txt
-%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/DOC/sdd_profil.txt
-%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/DOC/sdd_rex.txt
-%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/DOC/sdd_sel.txt
-%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/HELP/ENG/item_110.txt
-%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/HELP/ENG/item_111.txt
-%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/HELP/ENG/item_190.txt
-%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/HELP/ENG/item_323.txt
-%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/HELP/FR/item_110.txt
-%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/HELP/FR/item_111.txt
-%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/HELP/FR/item_190.txt
-%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/HELP/FR/item_323.txt
-%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/RELNOTES
-%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/TODO
-%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/aide.tcl
-%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/astk.tcl
-%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/astk2run_aster.tcl
-%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/astkrc/ASTKRC_INFO.txt
-%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/astkrc/config_serveurs
-%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/astkrc/outils
-%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/astkrc/prefs
-%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/fichier.tcl
-%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/i_serv.tcl
-%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/ihm_agla.tcl
-%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/ihm_commun.tcl
-%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/ihm_etude.tcl
-%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/ihm_execution.tcl
-%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/ihm_liste.tcl
-%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/ihm_main.tcl
-%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/ihm_menu.tcl
-%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/ihm_outils.tcl
-%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/ihm_rex.tcl
-%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/ihm_satellite.tcl
-%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/ihm_status.tcl
-%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/init.tcl
-%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/init_agla.tcl
-%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/init_env.tcl
-%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/lance_calcul.tcl
-%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/options.tcl
-%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/tools.tcl
-%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/unites_logiques.tcl
-%%CLIENT%%ASTK/ASTK_CLIENT/lib/BSF/bsf.tcl
+%%CLIENT%%%%ASTKDIR%%/GPL.txt
+%%CLIENT%%%%ASTKDIR%%/bin/astk
+%%CLIENT%%%%ASTKDIR%%/bin/bsf
+%%CLIENT%%%%ASTKDIR%%/lib/ASJOB/asjob.info
+%%CLIENT%%%%ASTKDIR%%/lib/ASJOB/asjob.tcl
+%%CLIENT%%%%ASTKDIR%%/lib/ASJOB/asjob_main.tcl
+%%CLIENT%%%%ASTKDIR%%/lib/ASJOB/init_asjob.tcl
+%%CLIENT%%%%ASTKDIR%%/lib/ASJOB/listej.tcl
+%%CLIENT%%%%ASTKDIR%%/lib/ASTK/DOC/sdd_UL.txt
+%%CLIENT%%%%ASTKDIR%%/lib/ASTK/DOC/sdd_agla.txt
+%%CLIENT%%%%ASTKDIR%%/lib/ASTK/DOC/sdd_config.txt
+%%CLIENT%%%%ASTKDIR%%/lib/ASTK/DOC/sdd_ihm.txt
+%%CLIENT%%%%ASTKDIR%%/lib/ASTK/DOC/sdd_inv.txt
+%%CLIENT%%%%ASTKDIR%%/lib/ASTK/DOC/sdd_mots.txt
+%%CLIENT%%%%ASTKDIR%%/lib/ASTK/DOC/sdd_msg.txt
+%%CLIENT%%%%ASTKDIR%%/lib/ASTK/DOC/sdd_outils.txt
+%%CLIENT%%%%ASTKDIR%%/lib/ASTK/DOC/sdd_print.txt
+%%CLIENT%%%%ASTKDIR%%/lib/ASTK/DOC/sdd_profil.txt
+%%CLIENT%%%%ASTKDIR%%/lib/ASTK/DOC/sdd_rex.txt
+%%CLIENT%%%%ASTKDIR%%/lib/ASTK/DOC/sdd_sel.txt
+%%CLIENT%%%%ASTKDIR%%/lib/ASTK/HELP/ENG/item_110.txt
+%%CLIENT%%%%ASTKDIR%%/lib/ASTK/HELP/ENG/item_111.txt
+%%CLIENT%%%%ASTKDIR%%/lib/ASTK/HELP/ENG/item_190.txt
+%%CLIENT%%%%ASTKDIR%%/lib/ASTK/HELP/ENG/item_323.txt
+%%CLIENT%%%%ASTKDIR%%/lib/ASTK/HELP/FR/item_110.txt
+%%CLIENT%%%%ASTKDIR%%/lib/ASTK/HELP/FR/item_111.txt
+%%CLIENT%%%%ASTKDIR%%/lib/ASTK/HELP/FR/item_190.txt
+%%CLIENT%%%%ASTKDIR%%/lib/ASTK/HELP/FR/item_323.txt
+%%CLIENT%%%%ASTKDIR%%/lib/ASTK/RELNOTES
+%%CLIENT%%%%ASTKDIR%%/lib/ASTK/TODO
+%%CLIENT%%%%ASTKDIR%%/lib/ASTK/aide.tcl
+%%CLIENT%%%%ASTKDIR%%/lib/ASTK/astk.tcl
+%%CLIENT%%%%ASTKDIR%%/lib/ASTK/astk2run_aster.tcl
+%%CLIENT%%%%ASTKDIR%%/lib/ASTK/astkrc/ASTKRC_INFO.txt
+%%CLIENT%%%%ASTKDIR%%/lib/ASTK/astkrc/config_serveurs
+%%CLIENT%%%%ASTKDIR%%/lib/ASTK/astkrc/outils
+%%CLIENT%%%%ASTKDIR%%/lib/ASTK/astkrc/prefs
+%%CLIENT%%%%ASTKDIR%%/lib/ASTK/fichier.tcl
+%%CLIENT%%%%ASTKDIR%%/lib/ASTK/i_serv.tcl
+%%CLIENT%%%%ASTKDIR%%/lib/ASTK/ihm_agla.tcl
+%%CLIENT%%%%ASTKDIR%%/lib/ASTK/ihm_commun.tcl
+%%CLIENT%%%%ASTKDIR%%/lib/ASTK/ihm_etude.tcl
+%%CLIENT%%%%ASTKDIR%%/lib/ASTK/ihm_execution.tcl
+%%CLIENT%%%%ASTKDIR%%/lib/ASTK/ihm_liste.tcl
+%%CLIENT%%%%ASTKDIR%%/lib/ASTK/ihm_main.tcl
+%%CLIENT%%%%ASTKDIR%%/lib/ASTK/ihm_menu.tcl
+%%CLIENT%%%%ASTKDIR%%/lib/ASTK/ihm_outils.tcl
+%%CLIENT%%%%ASTKDIR%%/lib/ASTK/ihm_rex.tcl
+%%CLIENT%%%%ASTKDIR%%/lib/ASTK/ihm_satellite.tcl
+%%CLIENT%%%%ASTKDIR%%/lib/ASTK/ihm_status.tcl
+%%CLIENT%%%%ASTKDIR%%/lib/ASTK/init.tcl
+%%CLIENT%%%%ASTKDIR%%/lib/ASTK/init_agla.tcl
+%%CLIENT%%%%ASTKDIR%%/lib/ASTK/init_env.tcl
+%%CLIENT%%%%ASTKDIR%%/lib/ASTK/lance_calcul.tcl
+%%CLIENT%%%%ASTKDIR%%/lib/ASTK/options.tcl
+%%CLIENT%%%%ASTKDIR%%/lib/ASTK/tools.tcl
+%%CLIENT%%%%ASTKDIR%%/lib/ASTK/unites_logiques.tcl
+%%CLIENT%%%%ASTKDIR%%/lib/BSF/bsf.tcl
 %%CLIENT%%%%BWidget_DIR%%/CHANGES.txt
 %%CLIENT%%%%BWidget_DIR%%/ChangeLog
 %%CLIENT%%%%BWidget_DIR%%/LICENSE.txt
@@ -134,82 +133,111 @@
 %%CLIENT%%%%BWidget_DIR%%/widget.tcl
 %%CLIENT%%%%BWidget_DIR%%/wizard.tcl
 %%CLIENT%%%%BWidget_DIR%%/xpm2image.tcl
-%%CLIENT%%ASTK/ASTK_CLIENT/share/appli.tcl
-%%CLIENT%%ASTK/ASTK_CLIENT/share/config.tcl
-%%CLIENT%%ASTK/ASTK_CLIENT/share/file_funct.tcl
-%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/sans_helpB.gif
-%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_browseB.gif
-%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_browseS.gif
-%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_comp1.gif
-%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_compB.gif
-%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_compS.gif
-%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_configB.gif
-%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_deleteB.gif
-%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_deleteS.gif
-%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_dirS.gif
-%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_edit.gif
-%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_editS.gif
-%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_fileB.gif
-%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_fileS.gif
-%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_helpB.gif
-%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_helpS.gif
-%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_newB.gif
-%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_newS.gif
-%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_openB.gif
-%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_openRB.gif
-%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_openRS.gif
-%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_openS.gif
-%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_printB.gif
-%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_printS.gif
-%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_refreshB.gif
-%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_refreshS.gif
-%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_save.gif
-%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_upB.gif
-%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_upS.gif
-%%CLIENT%%ASTK/ASTK_CLIENT/share/ihm_tools.tcl
-%%CLIENT%%ASTK/ASTK_CLIENT/share/init_share.tcl
-%%CLIENT%%ASTK/ASTK_CLIENT/share/lire_mcles.tcl
-%%CLIENT%%ASTK/ASTK_CLIENT/share/locales.txt
-%%CLIENT%%ASTK/ASTK_CLIENT/share/messages.tcl
-%%CLIENT%%ASTK/ASTK_CLIENT/share/outils.tcl
-%%CLIENT%%ASTK/ASTK_CLIENT/share/preferences.tcl
-%%CLIENT%%ASTK/ASTK_CLIENT/share/print.tcl
-%%CLIENT%%ASTK/ASTK_CLIENT/share/remote_tools.tcl
-%%CLIENT%%ASTK/ASTK_CLIENT/share/tkselecteur.tcl
-%%SERV%%ASTK/ASTK_SERV/GPL.txt
-%%SERV%%ASTK/ASTK_SERV/bin/as_actu
-%%SERV%%ASTK/ASTK_SERV/bin/as_del
-%%SERV%%ASTK/ASTK_SERV/bin/as_edit
-%%SERV%%ASTK/ASTK_SERV/bin/as_exec
-%%SERV%%ASTK/ASTK_SERV/bin/as_info
-%%SERV%%ASTK/ASTK_SERV/bin/as_serv
-%%SERV%%ASTK/ASTK_SERV/bin/as_tail
-%%SERV%%ASTK/ASTK_SERV/bin/tool_stanley
-%%SERV%%ASTK/ASTK_SERV/conf/config
-%%SERV%%ASTK/ASTK_SERV/conf/config.%%vaster%%
-%%SERV%%ASTK/ASTK_SERV/conf/config.version
-%%SERV%%ASTK/ASTK_SERV/lib/astk2run_aster.tcl
-%%SERV%%ASTK/ASTK_SERV/lib/stanley_post.comm
-%%SERV%%ASTK/ASTK_SERV/lib/sub_script
-%%SERV%%ASTK/ASTK_SERV/lib/sum_tps.awk
-%%CLIENT%%@dirrm ASTK/ASTK_CLIENT/bin
-%%CLIENT%%@dirrm ASTK/ASTK_CLIENT/lib/ASJOB
-%%CLIENT%%@dirrm ASTK/ASTK_CLIENT/lib/ASTK/DOC
-%%CLIENT%%@dirrm ASTK/ASTK_CLIENT/lib/ASTK/HELP/ENG
-%%CLIENT%%@dirrm ASTK/ASTK_CLIENT/lib/ASTK/HELP/FR
-%%CLIENT%%@dirrm ASTK/ASTK_CLIENT/lib/ASTK/HELP
-%%CLIENT%%@dirrm ASTK/ASTK_CLIENT/lib/ASTK/astkrc
-%%CLIENT%%@dirrm ASTK/ASTK_CLIENT/lib/ASTK
-%%CLIENT%%@dirrm ASTK/ASTK_CLIENT/lib/BSF
-%%CLIENT%%@dirrm ASTK/ASTK_CLIENT/lib
-%%CLIENT%%@dirrm ASTK/ASTK_CLIENT/share/icons
+%%CLIENT%%%%ASTKDIR%%/share/appli.tcl
+%%CLIENT%%%%ASTKDIR%%/share/config.tcl
+%%CLIENT%%%%ASTKDIR%%/share/file_funct.tcl
+%%CLIENT%%%%ASTKDIR%%/share/icons/sans_helpB.gif
+%%CLIENT%%%%ASTKDIR%%/share/icons/vaio_browseB.gif
+%%CLIENT%%%%ASTKDIR%%/share/icons/vaio_browseS.gif
+%%CLIENT%%%%ASTKDIR%%/share/icons/vaio_comp1.gif
+%%CLIENT%%%%ASTKDIR%%/share/icons/vaio_compB.gif
+%%CLIENT%%%%ASTKDIR%%/share/icons/vaio_compS.gif
+%%CLIENT%%%%ASTKDIR%%/share/icons/vaio_configB.gif
+%%CLIENT%%%%ASTKDIR%%/share/icons/vaio_deleteB.gif
+%%CLIENT%%%%ASTKDIR%%/share/icons/vaio_deleteS.gif
+%%CLIENT%%%%ASTKDIR%%/share/icons/vaio_dirS.gif
+%%CLIENT%%%%ASTKDIR%%/share/icons/vaio_edit.gif
+%%CLIENT%%%%ASTKDIR%%/share/icons/vaio_editS.gif
+%%CLIENT%%%%ASTKDIR%%/share/icons/vaio_fileB.gif
+%%CLIENT%%%%ASTKDIR%%/share/icons/vaio_fileS.gif
+%%CLIENT%%%%ASTKDIR%%/share/icons/vaio_helpB.gif
+%%CLIENT%%%%ASTKDIR%%/share/icons/vaio_helpS.gif
+%%CLIENT%%%%ASTKDIR%%/share/icons/vaio_newB.gif
+%%CLIENT%%%%ASTKDIR%%/share/icons/vaio_newS.gif
+%%CLIENT%%%%ASTKDIR%%/share/icons/vaio_openB.gif
+%%CLIENT%%%%ASTKDIR%%/share/icons/vaio_openRB.gif
+%%CLIENT%%%%ASTKDIR%%/share/icons/vaio_openRS.gif
+%%CLIENT%%%%ASTKDIR%%/share/icons/vaio_openS.gif
+%%CLIENT%%%%ASTKDIR%%/share/icons/vaio_printB.gif
+%%CLIENT%%%%ASTKDIR%%/share/icons/vaio_printS.gif
+%%CLIENT%%%%ASTKDIR%%/share/icons/vaio_refreshB.gif
+%%CLIENT%%%%ASTKDIR%%/share/icons/vaio_refreshS.gif
+%%CLIENT%%%%ASTKDIR%%/share/icons/vaio_save.gif
+%%CLIENT%%%%ASTKDIR%%/share/icons/vaio_upB.gif
+%%CLIENT%%%%ASTKDIR%%/share/icons/vaio_upS.gif
+%%CLIENT%%%%ASTKDIR%%/share/ihm_tools.tcl
+%%CLIENT%%%%ASTKDIR%%/share/init_share.tcl
+%%CLIENT%%%%ASTKDIR%%/share/lire_mcles.tcl
+%%CLIENT%%%%ASTKDIR%%/share/locales.txt
+%%CLIENT%%%%ASTKDIR%%/share/messages.tcl
+%%CLIENT%%%%ASTKDIR%%/share/outils.tcl
+%%CLIENT%%%%ASTKDIR%%/share/preferences.tcl
+%%CLIENT%%%%ASTKDIR%%/share/print.tcl
+%%CLIENT%%%%ASTKDIR%%/share/remote_tools.tcl
+%%CLIENT%%%%ASTKDIR%%/share/tkselecteur.tcl
+%%SERV%%%%ASTKDIR%%/GPL.txt
+%%SERV%%%%ASTKDIR%%/bin/as_actu
+%%SERV%%%%ASTKDIR%%/bin/as_del
+%%SERV%%%%ASTKDIR%%/bin/as_edit
+%%SERV%%%%ASTKDIR%%/bin/as_exec
+%%SERV%%%%ASTKDIR%%/bin/as_info
+%%SERV%%%%ASTKDIR%%/bin/as_run
+%%SERV%%%%ASTKDIR%%/bin/as_serv
+%%SERV%%%%ASTKDIR%%/bin/as_tail
+%%SERV%%%%ASTKDIR%%/bin/tool_stanley
+%%SERV%%%%ASTKDIR%%/conf/aster_profile.sh
+%%SERV%%%%ASTKDIR%%/conf/config
+%%SERV%%%%ASTKDIR%%/conf/config_nodename
+%%SERV%%%%ASTKDIR%%/lib/HELP_as_run.txt
+%%SERV%%%%ASTKDIR%%/lib/as_build.py
+%%SERV%%%%ASTKDIR%%/lib/as_build.pyc
+%%SERV%%%%ASTKDIR%%/lib/as_build.pyo
+%%SERV%%%%ASTKDIR%%/lib/as_config.py
+%%SERV%%%%ASTKDIR%%/lib/as_config.pyc
+%%SERV%%%%ASTKDIR%%/lib/as_config.pyo
+%%SERV%%%%ASTKDIR%%/lib/as_exec.py
+%%SERV%%%%ASTKDIR%%/lib/as_exec.pyc
+%%SERV%%%%ASTKDIR%%/lib/as_exec.pyo
+%%SERV%%%%ASTKDIR%%/lib/as_maintenance.py
+%%SERV%%%%ASTKDIR%%/lib/as_maintenance.pyc
+%%SERV%%%%ASTKDIR%%/lib/as_maintenance.pyo
+%%SERV%%%%ASTKDIR%%/lib/as_option.py
+%%SERV%%%%ASTKDIR%%/lib/as_option.pyc
+%%SERV%%%%ASTKDIR%%/lib/as_option.pyo
+%%SERV%%%%ASTKDIR%%/lib/as_profil.py
+%%SERV%%%%ASTKDIR%%/lib/as_profil.pyc
+%%SERV%%%%ASTKDIR%%/lib/as_profil.pyo
+%%SERV%%%%ASTKDIR%%/lib/as_run.py
+%%SERV%%%%ASTKDIR%%/lib/as_run.pyc
+%%SERV%%%%ASTKDIR%%/lib/as_run.pyo
+%%SERV%%%%ASTKDIR%%/lib/as_system.py
+%%SERV%%%%ASTKDIR%%/lib/as_system.pyc
+%%SERV%%%%ASTKDIR%%/lib/as_system.pyo
+%%SERV%%%%ASTKDIR%%/lib/as_timer.py
+%%SERV%%%%ASTKDIR%%/lib/as_timer.pyc
+%%SERV%%%%ASTKDIR%%/lib/as_timer.pyo
+%%SERV%%%%ASTKDIR%%/lib/astk2run_aster.tcl
+%%SERV%%%%ASTKDIR%%/lib/stanley_post.comm
+%%SERV%%%%ASTKDIR%%/lib/sub_script
+%%SERV%%%%ASTKDIR%%/lib/sum_tps.awk
+%%CLIENT%%@dirrm %%ASTKDIR%%/bin
+%%CLIENT%%@dirrm %%ASTKDIR%%/lib/ASJOB
+%%CLIENT%%@dirrm %%ASTKDIR%%/lib/ASTK/DOC
+%%CLIENT%%@dirrm %%ASTKDIR%%/lib/ASTK/HELP/ENG
+%%CLIENT%%@dirrm %%ASTKDIR%%/lib/ASTK/HELP/FR
+%%CLIENT%%@dirrm %%ASTKDIR%%/lib/ASTK/HELP
+%%CLIENT%%@dirrm %%ASTKDIR%%/lib/ASTK/astkrc
+%%CLIENT%%@dirrm %%ASTKDIR%%/lib/ASTK
+%%CLIENT%%@dirrm %%ASTKDIR%%/lib/BSF
+%%CLIENT%%@dirrm %%ASTKDIR%%/lib
+%%CLIENT%%@dirrm %%ASTKDIR%%/share/icons
 %%CLIENT%%@dirrm %%BWidget_DIR%%/images
 %%CLIENT%%@dirrm %%BWidget_DIR%%/lang
 %%CLIENT%%@dirrm %%BWidget_DIR%%
-%%CLIENT%%@dirrm ASTK/ASTK_CLIENT/share
-%%CLIENT%%@dirrm ASTK/ASTK_CLIENT
-%%SERV%%@dirrm ASTK/ASTK_SERV/bin
-%%SERV%%@dirrm ASTK/ASTK_SERV/conf
-%%SERV%%@dirrm ASTK/ASTK_SERV/lib
-%%SERV%%@dirrm ASTK/ASTK_SERV
-@unexec rmdir %D/ASTK 2>/dev/null || true
+%%CLIENT%%@dirrm %%ASTKDIR%%/share
+%%SERV%%@dirrm %%ASTKDIR%%/bin
+%%SERV%%@dirrm %%ASTKDIR%%/conf
+%%SERV%%@dirrm %%ASTKDIR%%/lib
+@dirrm %%ASTKDIR%%
+@unexec rmdir %D/aster/ASTK 2>/dev/null || true
+@unexec rmdir %D/aster 2>/dev/null || true
