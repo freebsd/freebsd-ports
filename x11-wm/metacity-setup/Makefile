@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	metacity-setup
-PORTVERSION=	0.5.1
+PORTVERSION=	0.5.2
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://www.marcuscom.com/downloads/ \
-		http://plastercast.tzo.com/~plastercast/Projects/ \
+MASTER_SITES=	http://plastercast.tzo.com/~plastercast/Projects/ \
+		http://www.marcuscom.com/downloads/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	marcus
 
