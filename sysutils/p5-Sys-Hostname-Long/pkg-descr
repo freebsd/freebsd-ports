@@ -1,0 +1,8 @@
+How to get the host full name in perl on multiple operating systems
+(mac, windows, unix* etc)
+
+Attempt via many methods to get the systems full name. The Sys::Hostname
+class is the best and standard way to get the system hostname.
+However it is missing the long hostname.
+
+WWW: http://search.cpan.org/dist/Sys-Hostname-Long/
