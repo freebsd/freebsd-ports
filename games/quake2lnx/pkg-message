@@ -1,13 +1,12 @@
 ===================================================
 
     Install additional mission paks and mods in
-    ${PREFIX}/share/quake2lnx/ directory and be
-    sure to run executable binary from there as
-    well (that is, [sdl]quake2).  You also must
-    own full registered version of Quake II, or
-    rebuild the port with -DWITH_SHAREWARE_DATA
-    defined to install demo version data files.
-    Note that you don't need full version to be
-    able to run dedicated server.
+    ${DATADIR}/ directory.
+
+    You must also own full (registered) version
+    of Quake II, or rebuild the port with "make
+    -DWITH_SHAREWARE_DATA" to install demo ver-
+    sion data files.  Note that you do not need
+    full version to run dedicated server.
 
 ===================================================
