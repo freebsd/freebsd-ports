@@ -42,8 +42,8 @@ MAKE_ARGS+=		OPENSSL_CFLAGS="${OPENSSL_CFLAGS}"
 
 OPENSSLBASE=		${LOCALBASE}
 .if defined(USE_OPENSSL_BETA)
-OPENSSLDIR=		${OPENSSLBASE}/openssl-beta
-LIB_DEPENDS+=		crypto.3:${PORTSDIR}/security/openssl
+OPENSSLDIR=		${OPENSSLBASE}/openssl
+LIB_DEPENDS+=		crypto.3:${PORTSDIR}/security/openssl-beta
 .else
 OPENSSLDIR=		${OPENSSLBASE}/openssl
 LIB_DEPENDS+=		crypto.3:${PORTSDIR}/security/openssl
