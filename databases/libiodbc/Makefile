@@ -13,7 +13,7 @@ PORTVERSION=	3.0.5
 CATEGORIES=	databases
 MASTER_SITES=	http://www.iodbc.org/dist/
 
-MAINTAINER=	erikhb@bgnett.no
+MAINTAINER=	ebakke@trolltech.com
 
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes
