@@ -6,16 +6,18 @@
 #
 
 PORTNAME=	3dpong
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.sonic.net/pub/users/nbs/unix/x/3dpong/
-DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
 MAKEFILE=	makefile
 USE_X_PREFIX=	yes
-WRKSRC=		${WRKDIR}/3dpong
+
+post-patch:
+	@${PERL} -pi.fbsd -e 's.\tchmod .\t${CHMOD} .g' \
+		${WRKSRC}/makefile
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/3dpong ${PREFIX}/bin

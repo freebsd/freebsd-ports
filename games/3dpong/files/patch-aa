@@ -1,5 +1,5 @@
---- makefile	Sun Mar 15 05:43:34 1998
-+++ /home/andy/tmp/wrk/makefile	Sun Jul 11 12:55:29 1999
+--- makefile.orig	Sat Mar 14 20:43:34 1998
++++ makefile	Sun Jun 10 17:32:36 2001
 @@ -11,11 +11,28 @@
  
  # Makefile user-definable variables
@@ -32,6 +32,15 @@
  
  # uncomment for sunos/solaris
  #XLIB=-L/usr/openwin/lib -lX11
+@@ -33,7 +50,7 @@
+ # Makefile commands: 
+ 
+ all:	3dpong
+-	chmod 755 go handball sounds
++	chmod 755 sounds
+ 	chmod 644 *.c *.h makefile sounds/*.au *.txt
+ 
+ clean:
 @@ -43,7 +60,7 @@
  # Application:
  
