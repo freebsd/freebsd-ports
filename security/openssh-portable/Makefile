@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openssh
-PORTVERSION=	2.9p2
+PORTVERSION=	2.9.9p2
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/ \
 		ftp://ftp.op.net/pub/OpenBSD/OpenSSH/portable/ \
@@ -22,7 +22,7 @@ MAN8=	sftp-server.8 sshd.8
 CRYPTOLIBS=	-L${OPENSSLLIB} -lcrypto
 USE_OPENSSL=	YES
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS?=	--prefix=${PREFIX}
+CONFIGURE_ARGS?=	--prefix=${PREFIX} --with-md5-passwords
 
 .if exists(/usr/include/security/pam_modules.h)
 CONFIGURE_ARGS+=	--with-pam

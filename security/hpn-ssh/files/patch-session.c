@@ -1,6 +1,6 @@
---- session.c.orig	Sun Jun 10 17:22:44 2001
-+++ session.c	Sun Jun 10 17:23:22 2001
-@@ -514,6 +514,13 @@
+--- session.c.orig	Mon Sep 17 00:17:15 2001
++++ session.c	Wed Oct  3 14:18:36 2001
+@@ -437,6 +437,13 @@
  		log_init(__progname, options.log_level, options.log_facility, log_stderr);
  
  		/*
@@ -14,10 +14,11 @@
  		 * Create a new session and process group since the 4.4BSD
  		 * setlogin() affects the entire process group.
  		 */
-@@ -628,6 +635,13 @@
+@@ -551,6 +558,14 @@
+ 
  		/* Child.  Reinitialize the log because the pid has changed. */
  		log_init(__progname, options.log_level, options.log_facility, log_stderr);
- 
++
 +		/*
 +		 * Using login and executing a specific "command" are mutually
 +		 * exclusive, so turn off use_login if there's a command.
@@ -28,7 +29,7 @@
  		/* Close the master side of the pseudo tty. */
  		close(ptyfd);
  
-@@ -707,6 +721,11 @@
+@@ -682,6 +697,11 @@
  	time_t last_login_time;
  	struct passwd * pw = s->pw;
  	pid_t pid = getpid();
@@ -40,7 +41,7 @@
  
  	/*
  	 * Get IP address of client. If the connection is not a socket, let
-@@ -767,6 +786,21 @@
+@@ -742,6 +762,21 @@
  			printf("Last login: %s from %s\r\n", time_string, hostname);
  	}
  
@@ -62,7 +63,7 @@
  	do_motd();
  }
  
-@@ -1376,7 +1410,7 @@
+@@ -1340,7 +1375,7 @@
  	 * initgroups, because at least on Solaris 2.3 it leaves file
  	 * descriptors open.
  	 */
@@ -71,7 +72,7 @@
  		close(i);
  
  	/* Change current directory to the user\'s home directory. */
-@@ -1400,6 +1434,28 @@
+@@ -1376,6 +1411,28 @@
  	 * in this order).
  	 */
  	if (!options.use_login) {
