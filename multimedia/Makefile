@@ -141,6 +141,7 @@
     SUBDIR += vcdtools
     SUBDIR += vlc
     SUBDIR += win32-codecs
+    SUBDIR += x264
     SUBDIR += xanim
     SUBDIR += xawtv
     SUBDIR += xdvshow
