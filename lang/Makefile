@@ -109,7 +109,6 @@
     SUBDIR += njs
     SUBDIR += nml
     SUBDIR += nqc
-    SUBDIR += nsl
     SUBDIR += o2c
     SUBDIR += objc
     SUBDIR += ocaml
@@ -207,6 +206,7 @@
     SUBDIR += tclX82
     SUBDIR += tclplugin
     SUBDIR += tcltutor
+    SUBDIR += tensile
     SUBDIR += tinycobol
     SUBDIR += treecc
     SUBDIR += wamcc
