@@ -1,0 +1,12 @@
+Pointless is a presentation tool primarily targeted at the un*x
+world. Presentations are made using a simple markup-language (best
+described as a mix between TeX and Pod, and affectionately known as
+"The Pointless Language"). The resulting slideshow is rendered using
+FreeType and OpenGL for optimal visual quality. Hardware accelerated
+OpenGL is highly recommended but not required in order to run
+pointless.
+
+WWW: http://www.pointless.dk/
+
+- Christian
+xi@borderworlds.dk

@@ -289,6 +289,7 @@
     SUBDIR += phraze
     SUBDIR += pinfo
     SUBDIR += pl-sms
+    SUBDIR += pointless
     SUBDIR += porteasy
     SUBDIR += portell
     SUBDIR += projectionlib

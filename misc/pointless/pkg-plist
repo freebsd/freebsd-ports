@@ -1,0 +1,41 @@
+share/pointless/samples/bgtiled.pll
+share/pointless/samples/bgstretched.pll
+share/pointless/samples/code.pll
+share/pointless/samples/eps.pll
+share/pointless/samples/gnuplot.pll
+share/pointless/samples/koch5.eps
+share/pointless/samples/latex.pll
+share/pointless/samples/mpost.pll
+share/pointless/samples/pointless.png
+share/pointless/samples/vegetative_fog.png
+share/pointless/samples/viewme.pll
+share/pointless/fonts/FreeSans.ttf
+share/pointless/fonts/FreeSansBold.ttf
+share/pointless/fonts/FreeSansOblique.ttf
+share/pointless/fonts/FreeMonoBold.ttf
+share/pointless/templates/html/index.html
+share/pointless/templates/html/firstsingleshot.html
+share/pointless/templates/html/lastsingleshot.html
+share/pointless/templates/html/singleshot.html
+share/pointless/pointless.xpm
+share/pointless/README
+share/pointless/pointlessrc
+share/pointless/python/modules/pllbasics.py
+share/pointless/python/modules/eps.py
+share/pointless/python/modules/gnuplot.py
+share/pointless/python/merger.py
+share/pointless/python/plfiles.py
+share/pointless/python/pllcontroller.py
+share/pointless/python/pllog.py
+share/pointless/python/pllshared.py
+share/pointless/python/pllmodules.py
+share/pointless/python/ploptions.py
+share/pointless/python/pointless.py
+bin/pointless
+@dirrm share/pointless/samples
+@dirrm share/pointless/fonts
+@dirrm share/pointless/templates/html
+@dirrm share/pointless/templates
+@dirrm share/pointless/python/modules
+@dirrm share/pointless/python
+@dirrm share/pointless
