@@ -7,7 +7,7 @@
 PORTNAME=       mangband
 PORTVERSION=	0.5.4
 CATEGORIES=	games
-MASTER_SITES=   http://www.umr.edu/~keldon/MAngband/
+MASTER_SITES=	http://mangband.org/download/
 DISTNAME=       mangband-054
 
 MAINTAINER=     ports@freebsd.org
