@@ -7,7 +7,7 @@
 
 PORTNAME=	irssi
 PORTVERSION=	0.8.6
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES+=	irc	# `+=' is for slave ports
 MASTER_SITES=	http://irssi.org/files/
 
@@ -23,6 +23,13 @@ CONFIGURE_ARGS+=	--without-socks --without-bot --with-textui \
 		--with-perl-lib=site
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_PROXY)
+CONFIGURE_ARGS+=	--with-proxy
+PLIST_SUB+=	WITH_PROXY=""
+.else
+PLIST_SUB+=	WITH_PROXY="@comment "
+.endif
 
 #.if ${OSVERSION} >= 400014
 #CONFIGURE_ARGS+= --enable-ipv6
