@@ -251,7 +251,6 @@
     SUBDIR += kp
     SUBDIR += ksig
     SUBDIR += kwatch
-    SUBDIR += kwordquiz
     SUBDIR += latex-mk
     SUBDIR += lc
     SUBDIR += less
