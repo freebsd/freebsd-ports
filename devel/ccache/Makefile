@@ -31,7 +31,7 @@ PLIST_DIRS=	libexec/ccache
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_COMPILER_LINKS)
-GNU_COMPILERS=		295 33 34 35
+GNU_COMPILERS=		295 33 34 35 40
 CCACHE_COMPILERS=	cc c++ ${GNU_COMPILERS:S|^|gcc|} ${GNU_COMPILERS:S|^|g++|}
 .if ${ARCH}=="i386"
 CCACHE_COMPILERS+=	icc icpc
