@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	markus@FreeBSD.org
 COMMENT=	Advanced graphic calculator
 
+BROKEN=		Does not compile
+
 USE_KDELIBS_VER=	3
 USE_GL=		yes
 USE_GMAKE=	yes
