@@ -1,14 +1,6 @@
 --- configure.orig	Thu Sep 11 13:49:33 2003
-+++ configure	Fri Sep 19 16:37:59 2003
-@@ -8070,6 +8070,7 @@
- 
- # This can be used to rebuild libtool when needed
- LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
-+$ac_aux_dir/ltconfig $LIBTOOL_DEPS
- 
- # Always use our own libtool.
- LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -8999,7 +9000,7 @@
++++ configure	Sat Jan 17 00:49:23 2004
+@@ -8999,7 +8999,7 @@
    ;;
  esac
  fi
@@ -17,7 +9,7 @@
  
  if test -n "$HOSTNAME"; then
    echo "$as_me:$LINENO: result: $HOSTNAME" >&5
-@@ -9188,43 +9189,7 @@
+@@ -9188,43 +9188,7 @@
  echo "${ECHO_T}no" >&6
  fi
  
@@ -35,7 +27,7 @@
 -# BSD style
 -elif $PS -uaxww 2> /dev/null | grep $0 > /dev/null
 -then
--  FIND_PROC="$PS -uaxww | grep mysqld | grep \" \$\$PID \" > /dev/null"
+   FIND_PROC="$PS -uaxww | grep mysqld | grep \" \$\$PID \" > /dev/null"
 -# SysV style
 -elif $PS -ef 2> /dev/null | grep $0 > /dev/null
 -then
@@ -58,11 +50,10 @@
 -   { (exit 1); exit 1; }; }
 -  esac
 -fi
-+FIND_PROC="$PS -uaxww | grep mysqld | grep \" \$\$PID \" > /dev/null"
  
  echo "$as_me:$LINENO: result: \"$FIND_PROC\"" >&5
  echo "${ECHO_T}\"$FIND_PROC\"" >&6
-@@ -12509,8 +12474,16 @@
+@@ -12509,8 +12473,16 @@
      ;;
    *freebsd*)
      echo "Adding fix for interrupted reads"
@@ -73,34 +64,21 @@
 +       test "$OSVERSION" -lt "500000" || \
 +       test "$OSVERSION" -gt "500109"
 +    then
-+	CXXFLAGS="$CXXFLAGS -DMYSQLD_NET_RETRY_COUNT=1000000"
++      CXXFLAGS="$CXXFLAGS -DMYSQLD_NET_RETRY_COUNT=1000000"
 +    else
-+	CFLAGS="$CFLAGS -DHAVE_BROKEN_REALPATH"
-+	CXXFLAGS="$CXXFLAGS -DMYSQLD_NET_RETRY_COUNT=1000000 -DHAVE_BROKEN_REALPATH"
++      CFLAGS="$CFLAGS -DHAVE_BROKEN_REALPATH"
++      CXXFLAGS="$CXXFLAGS -DMYSQLD_NET_RETRY_COUNT=1000000 -DHAVE_BROKEN_REALPATH"
 +    fi
      ;;
    *netbsd*)
      echo "Adding flag -Dunix"
-@@ -13215,7 +13188,6 @@
-   echo $ECHO_N "(cached) $ECHO_C" >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-lc_r  $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
- #include "confdefs.h"
-@@ -13269,7 +13241,6 @@
- #define HAVE_LIBC_R 1
+@@ -13710,30 +13682,6 @@
+ #define HAVE_RESTARTABLE_SYSCALLS 1
  _ACEOF
  
--  LIBS="-lc_r $LIBS"
- 
- fi
- 
-@@ -13713,29 +13684,6 @@
- fi
- 
- 
+-fi
+-
+-
 -# Build optimized or debug version ?
 -# First check for gcc and g++
 -if test "$ac_cv_c_compiler_gnu" = "yes"
@@ -122,56 +100,6 @@
 -  DEBUG_CXXFLAGS="-g"
 -  DEBUG_OPTIMIZE_CXX=""
 -  OPTIMIZE_CXXFLAGS="-O"
--fi
--
- 
- # Check whether --with-debug or --without-debug was given.
- if test "${with_debug+set}" = set; then
-@@ -16088,10 +16036,6 @@
- ac_link='$CXX -o conftest$ac_exeext $CXXFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
- ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
- 
--if test "$ac_cv_cxx_compiler_gnu" = "yes"
--then
--  CXXFLAGS="$CXXFLAGS -Werror"
--fi
- mysql_cv_btype_last_arg_accept=none
- cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
-@@ -19229,14 +19173,6 @@
- ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
+ fi
  
  
--# Do not treat warnings as errors if we are linking against other libc
--# this is to work around gcc not being permissive on non-system includes
--# with respect to ANSI C++
--if test "$ac_cv_cxx_compiler_gnu" = "yes" -a "$with_other_libc" = "no"
--then
--  CXXFLAGS="$CXXFLAGS -Werror"
--fi
--
- cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
- #include "confdefs.h"
-@@ -19320,10 +19256,6 @@
- ac_link='$CXX -o conftest$ac_exeext $CXXFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
- ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
- 
--if test "$ac_cv_cxx_compiler_gnu" = "yes" -a "$with_other_libc" = "no"
--then
--  CXXFLAGS="$CXXFLAGS -Werror"
--fi
- cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
- #include "confdefs.h"
-@@ -19406,10 +19338,6 @@
- ac_link='$CXX -o conftest$ac_exeext $CXXFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
- ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
- 
--if test "$ac_cv_cxx_compiler_gnu" = "yes" -a "$with_other_libc" = "no"
--then
--  CXXFLAGS="$CXXFLAGS -Werror"
--fi
- cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
- #include "confdefs.h"
