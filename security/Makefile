@@ -347,6 +347,7 @@
     SUBDIR += whisker
     SUBDIR += xinetd
     SUBDIR += xmlsec
+    SUBDIR += xmlsec1
     SUBDIR += xspy
     SUBDIR += yafic
     SUBDIR += zebedee

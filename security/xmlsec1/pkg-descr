@@ -1,0 +1,9 @@
+XML Security Library is the latest stable of a C library based on
+LibXML2 and OpenSSL. The library was created with a goal to support
+major XML security standards:
+   - XML Signature
+   - XML Encryption
+   - Canonical XML (was included in libxml2)
+   - Exclusive Canonical XML (was included in libxml2)
+
+WWW: http://www.aleksey.com/xmlsec/
