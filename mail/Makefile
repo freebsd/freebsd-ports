@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.28 1996/10/15 04:58:30 max Exp $
+# $Id: Makefile,v 1.29 1996/10/24 13:48:20 jfitz Exp $
 #
 
     SUBDIR += elm
@@ -21,5 +21,6 @@
     SUBDIR += smail
     SUBDIR += xfmail
     SUBDIR += youbin
+    SUBDIR += xlbiff
 
 .include <bsd.port.subdir.mk>
