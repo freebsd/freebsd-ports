@@ -3,7 +3,7 @@
 # Date created:		18 August 1997
 # Whom:			Jonathan Hanna
 #
-# $Id: Makefile,v 1.1.1.1 1998/05/30 01:36:05 kuriyama Exp $
+# $Id: Makefile,v 1.2 1998/10/10 04:34:51 steve Exp $
 #
 
 DISTNAME=	edict-19981007
@@ -86,13 +86,11 @@ DATADIR=	${PREFIX}/share/dict/edict
 DOCDIR=		${PREFIX}/share/doc/xjdic
 MAN1=		xjdic.1
 
-NO_WRKSUBDIR=
+NO_WRKSUBDIR=	yes
 
 do-extract:
-.if !defined(NO_WRKDIR)
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
-.endif
 	@for file in ${SRCFILES}; do \
 		if ! (cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/$$file ${EXTRACT_AFTER_ARGS});\
 		then \

@@ -3,7 +3,7 @@
 # Date created:		So  21 Jun 1998 16:09:39 CEST
 # Whom:			Stefan Herrmann <stefan@asterix.webaffairs.net>
 #
-# $Id: Makefile,v 1.58 1998/12/02 20:32:02 billf Exp $
+# $Id: Makefile,v 1.59 1998/12/05 09:36:59 obrien Exp $
 #
 
 DISTNAME=	apache_${VERSION_APACHE}
@@ -125,7 +125,6 @@ clean:
 	@${MAKE} clean-depends
 .endif
 	@${ECHO_MSG} "===>  Cleaning for ${PKGNAME}"
-.if !defined(NO_WRKDIR)
 	@if [ -d ${WRKDIR} ]; then \
 		if [ -w ${WRKDIR} ]; then \
 			${RM} -rf ${WRKDIR}; \
@@ -133,9 +132,6 @@ clean:
 			${ECHO_MSG} "===>   ${WRKDIR} not writable, skipping"; \
 		fi; \
 	fi
-.else
-	@${RM} -f ${WRKDIR}/.*_done ${TMPPLIST}
-.endif
 	@${RM} -f Makefile.inc
 
 .if exists(Makefile.inc)
