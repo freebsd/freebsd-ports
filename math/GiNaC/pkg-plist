@@ -8,6 +8,7 @@ include/ginac/basic.h
 include/ginac/clifford.h
 include/ginac/color.h
 include/ginac/constant.h
+include/ginac/container_suppl.h
 include/ginac/ex.h
 include/ginac/expair.h
 include/ginac/expairseq.h
@@ -43,6 +44,6 @@ include/ginac/wildcard.h
 lib/libginac.a
 lib/libginac.so
 lib/libginac-1.1.so
-lib/libginac-1.1.so.3
+lib/libginac-1.1.so.5
 share/aclocal/ginac.m4
 @dirrm include/ginac
