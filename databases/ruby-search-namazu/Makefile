@@ -30,6 +30,8 @@ DOCS_JA=	${RUBY_RD_FILES:M*.ja.rd} \
 		${RUBY_RD_HTML_FILES:M*.ja.html}
 
 BROKEN=		"Does not install (cannot open Makefile)"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2004-04-21
 
 post-install: doc-install
 
