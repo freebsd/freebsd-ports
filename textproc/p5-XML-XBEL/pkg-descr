@@ -1,0 +1,4 @@
+XML::XBEL provides an object oriented interface for reading and
+writing XBEL files in Perl.
+
+WWW: http://search.cpan.org/dist/XML-XBEL/
