@@ -1,0 +1,6 @@
+A configuration file has been installed in ${PREFIX}/etc/rc.d/mgeupsd.sh.
+Examine it to make sure it is suitable for your system.
+
+A sample script that handles the various power messages has been placed in
+${PREFIX}/sbin/powerhandler.  You will probably want to edit it to suit
+your particular needs.
