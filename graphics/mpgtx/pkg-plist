@@ -4,4 +4,4 @@ bin/mpgsplit
 bin/mpgcat
 bin/mpginfo
 bin/mpgdemux
-bin/mp3tag
+bin/tagmp3
