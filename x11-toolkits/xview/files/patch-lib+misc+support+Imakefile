@@ -1,0 +1,11 @@
+--- misc/support/Imakefile.orig	Sun Apr  2 05:09:59 2000
++++ misc/support/Imakefile	Sun Apr  2 05:10:11 2000
+@@ -13,7 +13,7 @@
+ all::
+ 
+ install::
+-	$(MKDIRHIER) $(HELP_DEST) $(LIBRARY_DEST)
++	$(MKDIRHIER) $(DESTDIR)$(HELP_DEST) $(DESTDIR)$(LIBRARY_DEST)
+ 
+ InstallSupportList($(SUPPORTFILES),$(LIBRARY_DEST))
+ InstallNonExecList($(INFOFILES),$(HELP_DEST))

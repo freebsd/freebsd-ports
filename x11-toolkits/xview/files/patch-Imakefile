@@ -1,0 +1,22 @@
+--- Imakefile.orig	Mon Sep 29 00:02:44 2003
++++ Imakefile	Mon Sep 29 00:02:44 2003
+@@ -4,8 +4,8 @@
+ /**/# Top level Imakefile for ProductNameAndRelease
+ /**/# @(#)Imakefile	1.7 1/7/92 SMI
+ 
+-CC = cc
+-CFLAGS = -O 
++CC ?= cc
++CFLAGS += -fstrength-reduce -fpcc-struct-return 
+ 
+ #define IHaveSubdirs
+ #define PassCDebugFlags
+@@ -13,7 +13,7 @@
+            WORLDOPTS = 
+ /**/# If you want to make only the library, then start the build in the lib
+ /**/# subdirectory.  Be sure to do a 'make includes' in images and bitmaps first.
+-            COREDIRS = lib images bitmaps misc util
++            COREDIRS = lib images bitmaps misc util config
+ #if InstallOpenLookFonts 
+             FONTSDIR = fonts
+ #else

@@ -1,0 +1,24 @@
+--- ./clients/olwmslave/Imakefile.orig	Tue Jun 29 07:12:14 1993
++++ ./clients/olwmslave/Imakefile	Sat Apr  1 18:26:06 2000
+@@ -38,18 +38,18 @@ SRCS = 	\
+         mem.c \
+         olwmslave.c \
+         propsrecv.c \
+-        propswin.c
++        propswin.c ${GETTEXT.C}
+ 
+ 
+ OBJS = 	\
+         cmdstream.o \
+         help_file.o \
+-        helprecv.o \ 
++        helprecv.o \
+         helpwin.o \
+         mem.o \
+         olwmslave.o \
+         propsrecv.o \
+-        propswin.o
++        propswin.o ${GETTEXT.O}
+ 
+ 
+ ALLFILES = \

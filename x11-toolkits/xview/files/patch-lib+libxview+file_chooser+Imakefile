@@ -1,0 +1,55 @@
+--- ./lib/libxview/file_chooser/Imakefile.orig	Tue Jun 29 07:17:58 1993
++++ ./lib/libxview/file_chooser/Imakefile	Sat Apr  1 18:25:23 2000
+@@ -27,35 +27,35 @@ HDRSPRIVATE=	fchsr_impl.h flist_impl.h x
+ 		path_impl.h hist_impl.h
+ 
+ DATA_OBJS = fchsr_data.o\
+-	   flist_data.o\
+-	   path_data.o\
+-	   hist_data.o
++        flist_data.o\
++        path_data.o\
++        hist_data.o
+ 
+ TEXT_OBJS =\
+-	file_chsr.o\
++        file_chsr.o\
+         fc_layout.o\
+         file_list.o\
+         path.o\
+         xv_path_util.o\
+         hist_list.o\
+         hist_menu.o\
+-	fchsr_data.o\
+-        flist_data.o\ 
+-        path_data.o\ 
++        fchsr_data.o\
++        flist_data.o\
++        path_data.o\
+         hist_data.o
+ 
+ 
+ SRCS =\
+-	file_chsr.c\
+-	fc_layout.c\
+-	file_list.c\
+-	path.c\
+-	xv_path_util.c\
+-	hist_list.c\
+-	hist_menu.c\
+-	fchsr_data.c\
+-        flist_data.c\ 
+-        path_data.c\ 
++        file_chsr.c\
++        fc_layout.c\
++        file_list.c\
++        path.c\
++        xv_path_util.c\
++        hist_list.c\
++        hist_menu.c\
++        fchsr_data.c\
++        flist_data.c\
++        path_data.c\
+         hist_data.c
+ 
+ LIBTARGET = xview

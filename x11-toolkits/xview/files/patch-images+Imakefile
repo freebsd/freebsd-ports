@@ -1,0 +1,14 @@
+--- images/Imakefile.orig	Mon Sep 29 00:02:43 2003
++++ images/Imakefile	Mon Sep 29 00:02:40 2003
+@@ -99,9 +99,9 @@
+ 
+ ALLFILES = $(BITMAPS) $(ICONS) $(PIXRECTS) $(CURSORS) $(IMAGES)
+ 
+-all: $(SRCS)
++all:: $(SRCS)
+ 
+-BuildIncludes($(INCLUDES_SRCS),$(IMAGE_INCDIR),/**/)
++BuildIncludes($(INCLUDES_SRCS),$(IMAGE_INCDIR),.)
+ 
+ install:: $(SRCS)
+ 	$(MKDIRHIER) $(HEADER_DEST)/$(IMAGEINC)

@@ -422,8 +422,6 @@ include/xview/text.h
 include/xview/textsw.h
 include/xview/tty.h
 include/xview/ttysw.h
-include/xview/types.h
-include/xview/wait.h
 include/xview/win_enum.h
 include/xview/win_env.h
 include/xview/win_event.h
@@ -545,12 +543,12 @@ lib/X11/config/XView.obj
 lib/X11/config/XView.rules
 lib/X11/config/XView.tmpl
 lib/X11/config/XView.prog
-%%PORTDOCS%%share/doc/xview/bugform
-%%PORTDOCS%%share/doc/xview/dnd_api.txt
-%%PORTDOCS%%share/doc/xview/olgx_api.txt
-%%PORTDOCS%%share/doc/xview/olgx_api.ps
-%%PORTDOCS%%share/doc/xview/paper.ms
-%%PORTDOCS%%share/doc/xview/sel_api.txt
-%%PORTDOCS%%share/doc/xview/whats_new.ps
-%%PORTDOCS%%share/doc/xview/xview-info
-%%PORTDOCS%%@dirrm share/doc/xview
+%%PORTDOCS%%%%DOCSDIR%%/bugform
+%%PORTDOCS%%%%DOCSDIR%%/dnd_api.txt
+%%PORTDOCS%%%%DOCSDIR%%/olgx_api.txt
+%%PORTDOCS%%%%DOCSDIR%%/olgx_api.ps
+%%PORTDOCS%%%%DOCSDIR%%/paper.ms
+%%PORTDOCS%%%%DOCSDIR%%/sel_api.txt
+%%PORTDOCS%%%%DOCSDIR%%/whats_new.ps
+%%PORTDOCS%%%%DOCSDIR%%/xview-info
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -1,0 +1,33 @@
+--- config/XView.rules.orig	Mon Sep 29 00:02:17 2003
++++ config/XView.rules	Mon Sep 29 00:02:17 2003
+@@ -148,7 +148,7 @@ lib/**/libname.so.rev:: solist 						@@\
+ 	$(RM) $@~ sodir/lib/**/libname.so.xs.o				@@\
+ 	@if [ -f xstrings ]; then \                                     @@\
+         	$(RM) strings; $(CP) xstrings strings; fi               @@\
+-	(cd sodir; $(LD) -o ../$@~ $(SHLIBLDFLAGS) ?*.o)		@@\
++	(cd sodir; $(CC) -o ../$@~ -Wl,-soname,$@ $(SHLIBLDFLAGS) ?*.o)	@@\
+ 	-@if [ -f strings~ ]; then $(RM) strings~; else exit 0; fi	@@\
+ 	$(RM) $@  							@@\
+ 	$(MV) $@~ $@							@@\
+@@ -175,7 +175,8 @@ lib/**/libname.so.rev:: solist 						@@\
+ 	@if [ -f xstrings ]; then \                                     @@\
+         	$(RM) strings; $(CP) xstrings strings; fi               @@\
+ 	-@if [ ! -x objsort ];then $(CHMOD) 755 objsort;else exit 0;fi	@@\
+-	$(LD) `objsort objlist sodir` -o $@~ $(SHLIBLDFLAGS) 		@@\
++	$(CC) `objsort objlist sodir` -o $@~ -Wl,-soname,$@\            @@\
++		$(SHLIBLDFLAGS) 					@@\
+ 	@if [ -f strings~ ]; then $(RM) strings~; else exit 0; fi	@@\
+ 	$(RM) $@  							@@\
+ 	$(MV) $@~ $@							@@\ 
+@@ -366,9 +366,9 @@
+ #ifndef InstallSharedLibraryNoBuild
+ #define	InstallSharedLibraryNoBuild(libname,rev,dest)				@@\
+ install::  								@@\
+-        $(RM) /dest/lib/**/libname.so                                   @@\
++	$(RM) /dest/lib/**/libname.so                                   @@\
+ 	$(INSTALL) -c $(INSTSHAREDLIBFLAGS) lib/**/libname.so.rev dest	@@\
+-        (cd dest; $(LN) lib/**/libname.so.rev lib/**/libname.so)
++	(cd dest; $(LN) lib/**/libname.so.rev lib/**/libname.so)
+ 
+ #endif
+ 
