@@ -7,13 +7,14 @@
 
 PORTNAME=	ami
 PORTVERSION=	1.0.6
+PORTREVISION=	1
 CATEGORIES=	korean x11
 MASTER_SITES=	http://www.kr.freebsd.org/~hwang/ami/ \
 		http://master.debian-kr.org/~cwryu/archive/misc/
 DISTFILES=	${DISTNAME}.tar.gz hanja.dic.gz ami.dic
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
-MAINTAINER=	cjh@kr.freebsd.org
+MAINTAINER=	cjh@FreeBSD.org
 
 LIB_DEPENDS=    gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
 
@@ -41,16 +42,7 @@ post-build:
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hanjadic/hanja-hwp2ami ${PREFIX}/bin
-	# patch XLC_LOCALE for ko_KR.EUC(harmless)
-	if [ -f ${PREFIX}/lib/X11/locale/ko/XLC_LOCALE; then \
-	${MV} -f ${PREFIX}/lib/X11/locale/ko/XLC_LOCALE \
-		${PREFIX}/lib/X11/locale/ko/XLC_LOCALE.orig; \
-	fi
-	${INSTALL_DATA} ${FILESDIR}/XLC_LOCALE \
-		${PREFIX}/lib/X11/locale/ko/
 	${MKDIR} ${PREFIX}/share/doc/ami
-	${INSTALL_DATA} ${FILESDIR}/XLC_LOCALE \
-		${PREFIX}/share/doc/ami
 .for NAME in AUTHORS README NEWS ChangeLog
 	${INSTALL_DATA} ${WRKSRC}/${NAME} \
 		${PREFIX}/share/doc/ami
