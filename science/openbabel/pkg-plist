@@ -1,0 +1,9 @@
+bin/babel
+share/openbabel/aromatic.txt
+share/openbabel/atomtyp.txt
+share/openbabel/element.txt
+share/openbabel/extable.txt
+share/openbabel/phmodel.txt
+share/openbabel/resdata.txt
+share/openbabel/types.txt
+@dirrm share/openbabel

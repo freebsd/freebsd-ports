@@ -1,0 +1,19 @@
+Open Babel is a project designed to pick up where Babel left off, as a
+cross-platform program and library designed to interconvert between many
+file formats used in molecular modeling and computational chemistry.
+
+Features currently include:
+   * A huge variety of common chemical file formats
+   * Recognition of file type based on filename extension
+   * SMARTS matcher
+   * Flexible atom typer
+   * Gasteiger partial charge calculation
+   * Hydrogen addition and deletion
+   * Automatic feature perception (rings, hybridization, aromaticity)
+   * Multiple conformer storage within molecules
+   * Command line interface development class
+   * Bitvector class
+   * Open-source/Free Software under the GNU General Public License
+   * Cross platform (Windows, Linux, Mac OS X, SGI, Solaris, Dreamcast...)
+
+WWW: http://openbabel.sourceforge.net/
