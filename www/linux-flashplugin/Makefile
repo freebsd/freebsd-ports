@@ -7,38 +7,45 @@
 
 PORTNAME=	flashplugin
 PORTVERSION=	5.0r51
-CATEGORIES=	www graphics linux
+PORTREVISION=	1
+CATEGORIES=	www multimedia linux
 MASTER_SITES=	http://download.macromedia.com/pub/shockwave/flash/english/linux/${PORTVERSION}/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	flash_linux
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ports@brandon.dvalentine.com
 COMMENT=	The official Macromedia Flash Player for Linux Netscape and Opera
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
-NO_CDROM=	"Redistribution not allowed"
+
+NO_PACKAGE=	"Redistribution not allowed"
+RESTRICTED=	"Redistribution not allowed"
+
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/flash_linux
+LATEST_LINK=	flash5
 
 PLUGINSDIR=	lib/netscape-linux/plugins
-LIBFILES=	libflashplayer.so \
-		ShockwaveFlash.class
+LIBFILES=	libflashplayer.so ShockwaveFlash.class
+
+DOCSDIR?=	${PREFIX}/share/doc/${UNIQUENAME}
 
 PLIST_SUB=	PLUGINSDIR="${PLUGINSDIR}"
 
 do-install:
 	@${MKDIR} ${PREFIX}/lib/flash
-	@${MKDIR} ${PREFIX}/share/doc/flash
-	@${MKDIR} ${PREFIX}/${PLUGINSDIR}
 .for f in ${LIBFILES}
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/lib/flash/
-	@${LN} -sf ${PREFIX}/lib/flash/${f} ${PREFIX}/${PLUGINSDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/lib/flash
+.if exists(${PLUGINSDIR})
+	@${LN} -sf ${PREFIX}/lib/flash/${f} ${PREFIX}/${PLUGINSDIR}
+.endif
 .endfor
 .if !defined(NOPORTDOCS)
-	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/flash/
-	@${INSTALL_DATA} ${WRKSRC}/ReadMe.htm ${PREFIX}/share/doc/flash/
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/ReadMe.htm ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
