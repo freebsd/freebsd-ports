@@ -7,7 +7,7 @@
 
 PORTNAME=	e2fsprogs
 PORTVERSION=	1.35
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	matthias.andree@gmx.de
 COMMENT=	Utilities and library to manipulate an ext2 or ext3 filesystem
 
-.if !defined(DISABLE_NLS)
+.if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
 .endif
 
@@ -29,7 +29,7 @@ NO_FILTER_SHLIBS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-elf-shlibs --disable-fsck "--with-ldopts=-L${LOCALBASE}/lib"
 CONFIGURE_ENV+=	CPPFLAGS='-I${WRKSRC}/lib -I${LOCALBASE}/include'
-.if defined(DISABLE_NLS)
+.if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB=	NLS="@comment "
 .else
@@ -53,10 +53,10 @@ MAN8=	badblocks.8 debugfs.8 dumpe2fs.8 e2fsck.8 e2image.8 e2label.8 \
 
 pre-everything::
 	@${ECHO_CMD} "-------------------------------------------------------------"
-.if defined(DISABLE_NLS)
-	@${ECHO_CMD} "National language support disabled, -DDISABLE_NLS in effect. "
+.if defined(WITHOUT_NLS)
+	@${ECHO_CMD} "National language support disabled, -DWITHOUT_NLS in effect. "
 .else
-	@${ECHO_CMD} "Use -DDISABLE_NLS to build without national language support."
+	@${ECHO_CMD} "Use -DWITHOUT_NLS to build without national language support."
 .endif
 	@${ECHO_CMD} "-------------------------------------------------------------"
 
@@ -65,10 +65,6 @@ post-extract:
 		${WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 491000
-USE_GCC=	3.4
-.endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's|-DRESOURCE_TRACK||' ${WRKSRC}/e2fsck/Makefile.in
