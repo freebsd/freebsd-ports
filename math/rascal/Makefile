@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	rascal
-PORTVERSION=	0.2.8
+PORTVERSION=	0.2.9
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,10 +17,10 @@ MAINTAINER=	ports@FreeBSD.org
 LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
 
 USE_BISON=	yes
-
+USE_GNOME=	yes
 WRKSRC=		${WRKDIR}/Rascal-${PORTVERSION}
 USE_GMAKE=	yes
-ALL_TARGET=	
+ALL_TARGET=	rascal grascal
 
 MANCOMPRESSED=	yes
 MAN1=	rascal.1
@@ -28,6 +28,8 @@ MAN1=	rascal.1
 post-patch:
 	@${PERL} -pi -e "s,%%LOCALBASE%%,${LOCALBASE},g ; \
 		s,g\+\+,${CXX},g ; \
-		s,doc/,share/doc/,g" ${WRKSRC}/Makefile
+		s,doc/,share/doc/,g ; \
+		s,gnome-config,${GNOME_CONFIG},g ; \
+		s,CC,CXX,g" ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
