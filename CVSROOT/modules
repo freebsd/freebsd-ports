@@ -1003,6 +1003,7 @@ cnet		ports/net/cnet
 cnews		ports/news/cnews
 cnslock		ports/x11/cnslock
 coalesce	ports/biology/coalesce
+cocktail	ports/devel/cocktail
 coco		ports/textproc/coco
 cocoon		ports/textproc/cocoon
 cocor		ports/lang/cocor
