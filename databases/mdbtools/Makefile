@@ -6,29 +6,30 @@
 #
 
 PORTNAME=	mdbtools
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	databases
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		ftp://ftp.nuug.no/pub/anders/distfiles/ \
-		http://atreides.freenix.no/~anders/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	glib12
-GNU_CONFIGURE=	yes
-MAKE_ARGS+=	GLIB_CONFIG="${GLIB_CONFIG}"
+USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 
 DOCS=		AUTHORS ChangeLog HACKING NEWS README TODO INSTALL
 
+post-patch:
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} \
+		-e "s|glib-config|${GLIB_CONFIG}|g"
+
 .if !defined(NOPORTDOCS)
 post-install:
-	${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
+	@${MKDIR} ${DOCSDIR}
 .for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f}  ${PREFIX}/share/doc/${PORTNAME}/
+	${INSTALL_DATA} ${WRKSRC}/${f}  ${DOCSDIR}
 .endfor
 .endif
 
