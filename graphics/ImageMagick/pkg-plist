@@ -1,6 +1,8 @@
 bin/Magick++-config
 bin/Magick-config
+bin/Wand-config
 %%X11%%bin/animate
+bin/compare
 bin/composite
 %%WITH_CONJURE%%bin/conjure
 bin/convert
@@ -22,49 +24,84 @@ include/Magick++/Montage.h
 include/Magick++/Pixels.h
 include/Magick++/STL.h
 include/Magick++/TypeMetric.h
+include/magick/ImageMagick.h
 include/magick/PreRvIcccm.h
+include/magick/annotate.h
 include/magick/api.h
 include/magick/attribute.h
 include/magick/blob.h
 include/magick/cache.h
 include/magick/cache_view.h
-include/magick/command.h
+include/magick/client.h
+include/magick/coder.h
+include/magick/color.h
+include/magick/colorspace.h
+include/magick/compare.h
+include/magick/composite.h
 include/magick/compress.h
+include/magick/configure.h
+include/magick/conjure.h
+include/magick/constitute.h
+include/magick/convert.h
+include/magick/decorate.h
 include/magick/delegate.h
 include/magick/deprecate.h
-include/magick/drawing_wand.h
+include/magick/draw.h
+include/magick/effect.h
+include/magick/enhance.h
 include/magick/error.h
+include/magick/fx.h
 include/magick/gem.h
+include/magick/geometry.h
 include/magick/hashmap.h
+include/magick/identify.h
 include/magick/image.h
-include/magick/info.h
+include/magick/import.h
 include/magick/list.h
+include/magick/locale_.h
 include/magick/log.h
 include/magick/magic.h
 include/magick/magick.h
 include/magick/magick_config.h
-include/magick/magick_wand.h
+include/magick/memory_.h
+include/magick/methods.h
 include/magick/module.h
+include/magick/mogrify.h
 include/magick/monitor.h
+include/magick/montage.h
+include/magick/option.h
 include/magick/paint.h
-include/magick/pixel_wand.h
+include/magick/profile.h
 include/magick/quantize.h
+include/magick/random.h
 include/magick/registry.h
-include/magick/render.h
-include/magick/resource.h
-include/magick/semaphore.h
+include/magick/resize.h
+include/magick/resource_.h
+include/magick/segment.h
+include/magick/shear.h
 include/magick/signature.h
+include/magick/stream.h
+include/magick/string_.h
 include/magick/timer.h
+include/magick/token.h
+include/magick/transform.h
+include/magick/type.h
 include/magick/utility.h
 include/magick/version.h
-include/magick/widget.h
 include/magick/xwindow.h
-lib/ImageMagick/colors.mgk
-lib/ImageMagick/delegates.mgk
-lib/ImageMagick/english.mgk
-lib/ImageMagick/locale.mgk
-lib/ImageMagick/log.mgk
-lib/ImageMagick/magic.mgk
+include/wand/drawing_wand.h
+include/wand/magick_wand.h
+include/wand/pixel_iterator.h
+include/wand/pixel_wand.h
+lib/ImageMagick/config/colors.mgk
+lib/ImageMagick/config/configure.mgk
+lib/ImageMagick/config/delegates.mgk
+lib/ImageMagick/config/english.mgk
+lib/ImageMagick/config/locale.mgk
+lib/ImageMagick/config/type.mgk
+lib/ImageMagick/config/type-ghostscript.mgk
+lib/ImageMagick/config/type-solaris.mgk
+lib/ImageMagick/config/type-windows.mgk
 %%Q8%%%%MODULES%%lib/ImageMagick/modules-Q8/coders/art.la
 %%Q8%%%%MODULES%%lib/ImageMagick/modules-Q8/coders/art.so
 %%Q8%%%%MODULES%%lib/ImageMagick/modules-Q8/coders/avi.la
@@ -127,7 +164,6 @@ lib/ImageMagick/magic.mgk
 %%Q8%%%%MODULES%%lib/ImageMagick/modules-Q8/coders/meta.so
 %%Q8%%%%MODULES%%lib/ImageMagick/modules-Q8/coders/miff.la
 %%Q8%%%%MODULES%%lib/ImageMagick/modules-Q8/coders/miff.so
-%%Q8%%lib/ImageMagick/modules-Q8/coders/modules.mgk
 %%Q8%%%%MODULES%%lib/ImageMagick/modules-Q8/coders/mono.la
 %%Q8%%%%MODULES%%lib/ImageMagick/modules-Q8/coders/mono.so
 %%Q8%%%%MODULES%%lib/ImageMagick/modules-Q8/coders/mpc.la
@@ -308,7 +344,6 @@ lib/ImageMagick/magic.mgk
 %%Q16%%%%MODULES%%lib/ImageMagick/modules-Q16/coders/meta.so
 %%Q16%%%%MODULES%%lib/ImageMagick/modules-Q16/coders/miff.la
 %%Q16%%%%MODULES%%lib/ImageMagick/modules-Q16/coders/miff.so
-%%Q16%%lib/ImageMagick/modules-Q16/coders/modules.mgk
 %%Q16%%%%MODULES%%lib/ImageMagick/modules-Q16/coders/mono.la
 %%Q16%%%%MODULES%%lib/ImageMagick/modules-Q16/coders/mono.so
 %%Q16%%%%MODULES%%lib/ImageMagick/modules-Q16/coders/mpc.la
@@ -427,10 +462,6 @@ lib/ImageMagick/magic.mgk
 %%Q16%%%%MODULES%%lib/ImageMagick/modules-Q16/coders/yuv.so
 %%Q16%%%%MODULES%%lib/ImageMagick/modules-Q16/filters/analyze.la
 %%Q16%%%%MODULES%%lib/ImageMagick/modules-Q16/filters/analyze.so
-lib/ImageMagick/type-ghostscript.mgk
-lib/ImageMagick/type-solaris.mgk
-lib/ImageMagick/type-windows.mgk
-lib/ImageMagick/type.mgk
 lib/libMagick++.a
 lib/libMagick++.la
 lib/libMagick++.so
@@ -439,22 +470,32 @@ lib/libMagick.a
 lib/libMagick.la
 lib/libMagick.so
 lib/libMagick.so.6
+lib/libWand.a
+lib/libWand.la
+lib/libWand.so
+lib/libWand.so.6
 libdata/pkgconfig/ImageMagick++.pc
 libdata/pkgconfig/ImageMagick.pc
+libdata/pkgconfig/Wand.pc
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Image/Magick.pm
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick/.packlist
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick/Magick.a
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick/Magick.bs
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick/Magick.so
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick/autosplit.ix
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick/extralibs.ld
-share/ImageMagick-5.5.7/Copyright.txt
-share/ImageMagick-5.5.7/QuickStart.txt
+share/ImageMagick/config/coder.mgk
+share/ImageMagick/config/log.mgk
+share/ImageMagick/config/magic.mgk
+share/ImageMagick-6.0.1/LICENSE
+share/ImageMagick-6.0.1/Magick.pdf
+share/ImageMagick-6.0.1/NOTICE
+share/ImageMagick-6.0.1/QuickStart.txt
 %%PORTDOCS%%share/doc/ImageMagick/images/background.gif
+%%PORTDOCS%%share/doc/ImageMagick/images/dogwaffle.png
 %%PORTDOCS%%share/doc/ImageMagick/images/examples.jpg
 %%PORTDOCS%%share/doc/ImageMagick/images/granite.png
 %%PORTDOCS%%share/doc/ImageMagick/images/logo.png
 %%PORTDOCS%%share/doc/ImageMagick/images/magick.png
+%%PORTDOCS%%share/doc/ImageMagick/images/magick-icon.png
 %%PORTDOCS%%share/doc/ImageMagick/images/networkeleven.png
 %%PORTDOCS%%share/doc/ImageMagick/images/pair.png
 %%PORTDOCS%%share/doc/ImageMagick/images/patterns/bricks.png
@@ -514,18 +555,20 @@ share/ImageMagick-5.5.7/QuickStart.txt
 %%PORTDOCS%%share/doc/ImageMagick/images/screen.png
 %%PORTDOCS%%share/doc/ImageMagick/images/script.gif
 %%PORTDOCS%%share/doc/ImageMagick/images/sprite.png
-%%PORTDOCS%%share/doc/ImageMagick/images/star.png
-%%PORTDOCS%%share/doc/ImageMagick/images/top.jpg
+%%PORTDOCS%%share/doc/ImageMagick/images/star.gif
+%%PORTDOCS%%share/doc/ImageMagick/images/top.gif
 %%PORTDOCS%%share/doc/ImageMagick/images/twi.png
 %%PORTDOCS%%share/doc/ImageMagick/index.html
+%%PORTDOCS%%share/doc/ImageMagick/www/Authors.html
 %%PORTDOCS%%share/doc/ImageMagick/www/Changelog.html
 %%PORTDOCS%%share/doc/ImageMagick/www/Copyright.html
 %%PORTDOCS%%share/doc/ImageMagick/www/FAQ.html
-%%PORTDOCS%%share/doc/ImageMagick/www/INSTALL-mac.html
-%%PORTDOCS%%share/doc/ImageMagick/www/INSTALL-unix.html
-%%PORTDOCS%%share/doc/ImageMagick/www/INSTALL-vms.html
-%%PORTDOCS%%share/doc/ImageMagick/www/INSTALL-windows.html
+%%PORTDOCS%%share/doc/ImageMagick/www/ImageMagick.html
 %%PORTDOCS%%share/doc/ImageMagick/www/ImageMagickObject.html
+%%PORTDOCS%%share/doc/ImageMagick/www/Install-mac.html
+%%PORTDOCS%%share/doc/ImageMagick/www/Install-unix.html
+%%PORTDOCS%%share/doc/ImageMagick/www/Install-vms.html
+%%PORTDOCS%%share/doc/ImageMagick/www/Install-windows.html
 %%PORTDOCS%%share/doc/ImageMagick/www/Magick++/Blob.html
 %%PORTDOCS%%share/doc/ImageMagick/www/Magick++/Cache.fig
 %%PORTDOCS%%share/doc/ImageMagick/www/Magick++/Cache.png
@@ -564,7 +607,9 @@ share/ImageMagick-5.5.7/QuickStart.txt
 %%PORTDOCS%%share/doc/ImageMagick/www/Magick++/thumbnail-anatomy-plain.jpg
 %%PORTDOCS%%share/doc/ImageMagick/www/Magick++/thumbnail-sample-framed.jpg
 %%PORTDOCS%%share/doc/ImageMagick/www/Magick++/thumbnail-sample-plain.jpg
+%%PORTDOCS%%share/doc/ImageMagick/www/News.html
 %%PORTDOCS%%share/doc/ImageMagick/www/QuickStart.html
+%%PORTDOCS%%share/doc/ImageMagick/www/README.html
 %%PORTDOCS%%share/doc/ImageMagick/www/animate.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/animate.html
@@ -574,8 +619,10 @@ share/ImageMagick-5.5.7/QuickStart.txt
 %%PORTDOCS%%share/doc/ImageMagick/www/api/cache.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/cache_view.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/color.html
+%%PORTDOCS%%share/doc/ImageMagick/www/api/colorspace.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/composite.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/constitute.html
+%%PORTDOCS%%share/doc/ImageMagick/www/api/draw.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/decorate.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/deprecate.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/display.html
@@ -592,10 +639,11 @@ share/ImageMagick-5.5.7/QuickStart.txt
 %%PORTDOCS%%share/doc/ImageMagick/www/api/monitor.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/montage.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/paint.html
+%%PORTDOCS%%share/doc/ImageMagick/www/api/pixel_iterator.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/pixel_wand.html
+%%PORTDOCS%%share/doc/ImageMagick/www/api/profile.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/quantize.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/registry.html
-%%PORTDOCS%%share/doc/ImageMagick/www/api/render.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/resize.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/resource.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/segment.html
@@ -609,15 +657,18 @@ share/ImageMagick-5.5.7/QuickStart.txt
 %%PORTDOCS%%share/doc/ImageMagick/www/archives.html
 %%PORTDOCS%%share/doc/ImageMagick/www/cd.html
 %%PORTDOCS%%share/doc/ImageMagick/www/color.html
+%%PORTDOCS%%share/doc/ImageMagick/www/compare.html
 %%PORTDOCS%%share/doc/ImageMagick/www/composite.html
 %%PORTDOCS%%share/doc/ImageMagick/www/conjure.html
 %%PORTDOCS%%share/doc/ImageMagick/www/convert.html
 %%PORTDOCS%%share/doc/ImageMagick/www/cvs.html
 %%PORTDOCS%%share/doc/ImageMagick/www/display.html
+%%PORTDOCS%%share/doc/ImageMagick/www/download.html
 %%PORTDOCS%%share/doc/ImageMagick/www/formats.html
 %%PORTDOCS%%share/doc/ImageMagick/www/help.html
 %%PORTDOCS%%share/doc/ImageMagick/www/identify.html
 %%PORTDOCS%%share/doc/ImageMagick/www/import.html
+%%PORTDOCS%%share/doc/ImageMagick/www/index.html
 %%PORTDOCS%%share/doc/ImageMagick/www/install.html
 %%PORTDOCS%%share/doc/ImageMagick/www/magick-list.html
 %%PORTDOCS%%share/doc/ImageMagick/www/magick.css
@@ -632,7 +683,6 @@ share/ImageMagick-5.5.7/QuickStart.txt
 %%PORTDOCS%%share/doc/ImageMagick/www/sponsor.html
 %%PORTDOCS%%share/doc/ImageMagick/www/tools.html
 %%PORTDOCS%%share/doc/ImageMagick/www/topics.html
-%%PORTDOCS%%share/doc/ImageMagick/www/utilities.html
 %%PORTDOCS%%share/doc/ImageMagick/www/windows.html
 %%PORTDOCS%%@dirrm share/doc/ImageMagick/www/api
 %%PORTDOCS%%@dirrm share/doc/ImageMagick/www/Magick++
@@ -640,7 +690,8 @@ share/ImageMagick-5.5.7/QuickStart.txt
 %%PORTDOCS%%@dirrm share/doc/ImageMagick/images/patterns
 %%PORTDOCS%%@dirrm share/doc/ImageMagick/images
 %%PORTDOCS%%@dirrm share/doc/ImageMagick
-@dirrm share/ImageMagick-5.5.7
+@dirrm share/ImageMagick-6.0.1
+@dirrm share/ImageMagick/config
 @dirrm share/ImageMagick
 %%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick
 %%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image
@@ -651,6 +702,8 @@ share/ImageMagick-5.5.7/QuickStart.txt
 %%Q16%%@dirrm lib/ImageMagick/modules-Q16/filters
 %%Q16%%@dirrm lib/ImageMagick/modules-Q16/coders
 %%Q16%%@dirrm lib/ImageMagick/modules-Q16
+@dirrm lib/ImageMagick/config
 @dirrm lib/ImageMagick
+@dirrm include/wand
 @dirrm include/magick
 @dirrm include/Magick++
