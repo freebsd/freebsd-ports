@@ -3883,6 +3883,7 @@ linprocfs	src/sys/compat/linprocfs
 linux-acu	ports/sysutils/linux-acu
 linux-blackdown-jdk12	ports/java/linux-blackdown-jdk12
 linux-blackdown-jdk13	ports/java/linux-blackdown-jdk13
+linux-blackdown-jdk14	ports/java/linux-blackdown-jdk14
 linux-bmrt	ports/graphics/linux-bmrt
 linux-divxplayer	ports/graphics/linux-divxplayer
 linux-eagle	ports/cad/linux-eagle
