@@ -11,7 +11,8 @@ PORTCLASS=	slave
 
 EMACS_PORT_NAME=	xemacs21-mule
 
-CONFIGURE_ARGS=	--with-xemacs=${EMACS_CMD}
+CONFIGURE_ARGS=		--with-xemacs=${EMACS_CMD} \
+			--with-packagedir=${PREFIX}/${EMACS_PACKAGESDIR}
 EMACS_PACKAGESDIR=	lib/xemacs/site-packages
 LISPDIR=		${EMACS_PACKAGESDIR}/lisp/w3m
 ICONDIR=		${EMACS_PACKAGESDIR}/etc/w3m

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	emacs-w3m
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.5
 CATEGORIES=	www elisp
 MASTER_SITES=	http://emacs-w3m.namazu.org/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
@@ -17,7 +17,8 @@ MAINTAINER=	nobutaka@FreeBSD.org
 EMACS_PORT_NAME?=	emacs21
 
 CONFIGURE_ARGS?=	--with-emacs=${EMACS_CMD} \
-			--with-lispdir=${PREFIX}/${LISPDIR}
+			--with-lispdir=${PREFIX}/${LISPDIR} \
+			--with-icondir=${PREFIX}/${ICONDIR}
 LISPDIR?=	${EMACS_VERSION_SITE_LISPDIR}/w3m
 ICONDIR?=	${EMACS_LIBDIR_WITH_VER}/etc/w3m/icons
 ETCDIR?=	${EMACS_LIBDIR_WITH_VER}/etc/w3m
@@ -101,10 +102,10 @@ BUILD_DEPENDS+=	w3m:${PORTSDIR}/www/w3m-m17n
 RUN_DEPENDS+=		w3m:${PORTSDIR}/www/w3m-m17n
 
 .if !defined(HAVE_FLIM)
-pre-fetch:
-	@${ECHO_MSG}
-	@${ECHO_MSG} "NOTE: You can have shimbun support by adding \"WITH_SHIMBUN=yes\" to argument of make."
-	@${ECHO_MSG}
+pre-everything::
+	@${ECHO_MSG} "====>"
+	@${ECHO_MSG} "====> You can have shimbun support by adding \"WITH_SHIMBUN=yes\" to argument of make."
+	@${ECHO_MSG} "====>"
 .endif
 
 post-extract:
