@@ -1,0 +1,9 @@
+--- makefile.config.gcc.in.orig	Wed Aug 18 15:51:25 2004
++++ makefile.config.gcc.in	Wed Aug 18 15:52:03 2004
+@@ -44,5 +44,5 @@
+ 
+ MKCMA  = $(OCAMLMKLIB) -v -o $(1) -oc $(2) $(3) $(4)
+ MKCMXA = $(OCAMLMKLIB) -v -o $(1) -oc $(2) $(3) $(4)
+-MKCLIB = $(OCAMLMKLIB) -v -o $(1) -oc $(2) $(3) $(4)
++MKCLIB = $(OCAMLMKLIB) -v -o $(1) -L${LOCALBASE}/lib -oc $(2) $(3) $(4)
+ endif
