@@ -1,6 +1,6 @@
---- lib/Makefile.orig	Thu Mar 18 19:09:21 2004
-+++ lib/Makefile	Sun Apr  4 08:05:19 2004
-@@ -34,6 +34,8 @@
+--- lib/Makefile.orig	Sat Oct 16 19:29:23 2004
++++ lib/Makefile	Sun Nov 14 06:55:14 2004
+@@ -35,6 +35,8 @@
  # Library objects to be linked but not built by Makefile.common:
  LIBOBJECTS_X = util/shhopt.o util/nstring.o
  
@@ -9,14 +9,16 @@
  MANUALS3 = libnetpbm
  MANUALS5 = pbm pgm ppm pnm pam
  
-@@ -74,12 +76,15 @@
+@@ -76,13 +78,17 @@
  
  $(LIBOBJECTS): %.o: %.c $(HEADERLINKS)
  # Note that the user may have configured -I options into CFLAGS.
-+	$(CC) -c $(INCLUDES) $(CFLAGS) $(CADD) -o $@ $<
++	$(CC) -c $(INCLUDES) -DNDEBUG $(CFLAGS) \
++	  $(CFLAGS_PERSONAL) $(CADD) -o $@ $<
 +
 +$(SHLIBOBJECTS): %.lo: %.c $(HEADERLINKS)
- 	$(CC) -c $(INCLUDES) $(CFLAGS) $(CFLAGS_SHLIB) $(CADD) -o $@ $<
+ 	$(CC) -c $(INCLUDES) -DNDEBUG $(CFLAGS) $(CFLAGS_SHLIB) \
+ 	  $(CFLAGS_PERSONAL) $(CADD) -o $@ $<
  
  MAJ = $(NETPBM_MAJOR_RELEASE)
  MIN = $(NETPBM_MINOR_RELEASE)
@@ -26,7 +28,7 @@
  
  ifeq ($(NETPBMLIBTYPE),irixshared)
  # The libxxx.so link is needed to link the executables.
-@@ -104,12 +109,9 @@
+@@ -107,12 +113,9 @@
  # The $(SONAME) link is needed only to test the programs without
  # installing the libraries (in that case, you also need to direct the 
  # dynamic linker to the source directories, e.g. set LD_LIBRARY_PATH).
@@ -42,7 +44,7 @@
  endif
  
  ifeq ($(NETPBMLIBTYPE),dll)
-@@ -186,13 +188,10 @@
+@@ -189,13 +192,10 @@
  .PHONY: install.lib
  ifeq ($(NETPBMLIBTYPE),unixshared)
  # install a Unix-style shared library
@@ -60,7 +62,7 @@
  endif
  ifeq ($(NETPBMLIBTYPE),dll)
  #install a Windows DLL shared library
-@@ -222,23 +221,23 @@
+@@ -225,23 +225,23 @@
  # directory when you compile your programs.
  
  %_installhdr: $(PKGDIR)/include

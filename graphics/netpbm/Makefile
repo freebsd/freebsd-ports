@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	netpbm
-PORTVERSION=	10.24
+PORTVERSION=	10.25
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,6 +19,7 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		jbig.1:${PORTSDIR}/graphics/jbigkit
+#		jasper.4:${PORTSDIR}/graphics/jasper
 
 USE_PERL5=	yes
 USE_REINPLACE=	yes
@@ -48,6 +49,8 @@ pre-configure:
 		 s|%%LOCALBASE%%|${LOCALBASE}|g ; \
 		 s|%%X11BASE%%|${X11BASE}|g' ${WRKSRC}/pm_config.in.h
 	@${REINPLACE_CMD} -e 's|<shhopt.h>|<pm_shhopt.h>|g' ${WRKSRC}/lib/pm.h
+	@${REINPLACE_CMD} -e 's| jpeg2000||g' \
+		${WRKSRC}/converter/other/Makefile
 	@${CP} ${FILESDIR}/Makefile.config.FreeBSD ${WRKSRC}/Makefile.config
 	@${LN} -sf ${WRKSRC}/lib/util/shhopt.h ${WRKSRC}/lib/util/pm_shhopt.h
 	@${LN} -sf ${WRKSRC}/lib/util/nstring.h ${WRKSRC}/lib/util/pm_nstring.h
