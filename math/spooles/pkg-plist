@@ -137,11 +137,11 @@ lib/libspooles.a
 @dirrm include/spooles/ZV
 @dirrm include/spooles/misc
 @dirrm include/spooles
-%%PORTDOCS%%share/doc/spooles/AllInOne.ps.gz
-%%PORTDOCS%%share/doc/spooles/Eigen.ps.gz
-%%PORTDOCS%%share/doc/spooles/Install.ps.gz
-%%PORTDOCS%%share/doc/spooles/LinSol.ps.gz
-%%PORTDOCS%%share/doc/spooles/Ordering.ps.gz
-%%PORTDOCS%%share/doc/spooles/PP99.ps.gz
-%%PORTDOCS%%share/doc/spooles/ReferenceManual.ps.gz
-%%PORTDOCS%%@dirrm share/doc/spooles
+%%PORTDOCS%%%%DOCSDIR%%/AllInOne.ps.gz
+%%PORTDOCS%%%%DOCSDIR%%/Eigen.ps.gz
+%%PORTDOCS%%%%DOCSDIR%%/Install.ps.gz
+%%PORTDOCS%%%%DOCSDIR%%/LinSol.ps.gz
+%%PORTDOCS%%%%DOCSDIR%%/Ordering.ps.gz
+%%PORTDOCS%%%%DOCSDIR%%/PP99.ps.gz
+%%PORTDOCS%%%%DOCSDIR%%/ReferenceManual.ps.gz
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
