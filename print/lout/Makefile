@@ -3,7 +3,7 @@
 # Date created:      10/22/96
 # Whom:              oly@world.std.com
 #
-# $Id$
+# $Id: Makefile,v 1.5 1999/03/19 18:53:19 flathill Exp $
 #
 
 DISTNAME=	lout-3.13
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_TEX_CTAN}  \
 		ftp://ftp.cs.usyd.edu.au/jeff/lout/
 MASTER_SITE_SUBDIR=	support/lout
 
-MAINTAINER=	oly@world.std.com
+MAINTAINER=	ports@FreeBSD.org
 
 USE_GMAKE=	yes
 MAKEFILE=	makefile
