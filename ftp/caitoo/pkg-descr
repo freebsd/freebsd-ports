@@ -1,0 +1,11 @@
+ Caitoo
+========
+
+Caitoo (formerly known as KGet) is a download manager similar to
+Go!zilla(tm) or GetRight Download(tm). It keeps all your downloads
+in one dialog and you can add and remove transfers. Transfers can
+be paused, resumed, queued or scheduled. Dialogs display info about
+status of transfers - progress, size, speed and remaining time.
+Program supports drag & drop from KDE applications and Netscape.
+
+WWW: http://devel-home.kde.org/~caitoo/
