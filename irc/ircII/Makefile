@@ -8,7 +8,9 @@
 PORTNAME=	ircii
 PORTVERSION=	4.4Z
 CATEGORIES=	irc ipv6
-MASTER_SITES=	ftp://ircftp.au.eterna.com.au/pub/ircII/
+MASTER_SITES=	ftp://ftp.warped.com/pub/ircII/ \
+		ftp://ircftp.au.eterna.com.au/pub/ircII/ \
+		ftp://ftp.plig.net/pub/ircII/
 
 MAINTAINER=	anders@codefactory.se
 
