@@ -12,8 +12,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	libsigc \
 			sources/libsigc++/1.0
-			
-#DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Callback Framework for C++
