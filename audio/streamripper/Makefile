@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	streamripper
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.5
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://streamripper.sourceforge.net/dl/
 
 MAINTAINER=	trevor@FreeBSD.org
 
