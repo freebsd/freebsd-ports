@@ -8,8 +8,7 @@
 PORTNAME=	bfe
 PORTVERSION=	2mar2001
 CATEGORIES=	emulators
-MASTER_SITES=	http://www.qzx.com/bfe/
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	http://www.qzx.com/bfe/_download/
 
 MAINTAINER=	greid@FreeBSD.org
 
