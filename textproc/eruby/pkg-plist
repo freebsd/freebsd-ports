@@ -3,6 +3,7 @@ include/eruby.h
 lib/liberuby.so.09
 lib/liberuby.so
 lib/liberuby.a
+%%RUBY_SITEARCHLIBDIR%%/eruby.so
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/eruby/e2r.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/eruby/foo.rhtml
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/eruby/test.rb
