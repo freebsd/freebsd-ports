@@ -1,0 +1,5 @@
+lib/perl5/site_perl/%%PERL_VER%%/Exception/Class.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Exception/Class/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Exception
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Exception/Class
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Exception

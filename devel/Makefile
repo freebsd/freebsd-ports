@@ -322,6 +322,7 @@
     SUBDIR += p5-Dialog
     SUBDIR += p5-Errno
     SUBDIR += p5-Event
+    SUBDIR += p5-Exception-Class
     SUBDIR += p5-File-BasicFlock
     SUBDIR += p5-File-Binary
     SUBDIR += p5-File-Cache
