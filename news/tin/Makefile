@@ -7,6 +7,7 @@
 
 PORTNAME=	tin
 PORTVERSION=    1.5.12
+PORTREVISION=	1
 CATEGORIES+=	news ipv6
 MASTER_SITES=	ftp://ftp.tin.org/pub/news/clients/tin/v1.5/ \
 		ftp://nuxi.ucdavis.edu/pub/tin/v1.5/ \
