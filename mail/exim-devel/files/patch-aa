@@ -1,33 +1,15 @@
---- scripts/exim_install.orig	Mon Nov  9 19:01:40 1998
-+++ scripts/exim_install	Wed Nov 18 13:22:51 1998
-@@ -121,18 +121,4 @@
- fi
- 
--# If info directory is needed and doesn't exist, try to create it
--
--if [ "${INFO_DIRECTORY}" != "" -a ! -d "${INFO_DIRECTORY}" ]; then
--  echo mkdir -p ${INFO_DIRECTORY}
--  ${real} mkdir -p ${INFO_DIRECTORY}
--  if [ $? -ne 0 ]; then
--    echo $com ""
--    echo $com "**** Exim installation ${ver}failed ****"
--    exit 1
--  else
--    echo $com ${INFO_DIRECTORY} created
--  fi
--fi
--
- # If no arguments, install everything
- 
-@@ -202,4 +188,24 @@
- 
+--- scripts/exim_install.orig	Tue Dec  8 16:05:07 1998
++++ scripts/exim_install	Tue Dec  8 16:09:49 1998
+@@ -186,25 +186,39 @@
+   fi
+ done
  
 +# Install exim.sh startup script in FreeBSD's ${PREFIX}/etc/rc.d so that
 +# exim will start up on boot once sendmail is disabled and
 +# ${PREFIX}/etc/exim/configure is in place.
 +
 +echo $com ""
-+
+ 
 +if [ -f ${PREFIX}/etc/rc.d/exim.sh ]; then
 +  echo $com "${PREFIX}/etc/rc.d/exim.sh exists, not overwritten"
 +else
@@ -41,10 +23,9 @@
 +    exit 1
 +  fi
 +fi
-+
  
- # If there is no configuration file, install the default,
-@@ -208,9 +214,8 @@
+ # If there is no configuration file, install the default.
+ 
  echo $com ""
  
 -if [ ! -f ${CONFIGURE_FILE} ]; then
@@ -58,84 +39,12 @@
 +  ${real} ${CP} ../src/configure.default ${CONFIGURE_FILE}.sample
    if [ $? -ne 0 ]; then
      echo $com ""
-@@ -218,44 +223,44 @@
+     echo $com "**** Exim installation ${ver}failed ****"
      exit 1
    fi
 -else
 -  echo $com Configuration file ${CONFIGURE_FILE} already exists
 -fi
  
--# Install info files if required; the existence of the directory is
--# tested above.
-+# Install info files if the directory is defined and the Texinfo
-+# source documentation is present.
- 
--##### This enhancement is awaiting a shell equivalent of FreeBSD's
--##### 'install-info' command.
-+if [ "${INFO_DIRECTORY}" != "" -a -f ../doc/spec.texinfo ] ; then
-+  echo $com ""
-+  if [ ! -d "${INFO_DIRECTORY}" ] ; then
-+    echo mkdir -p ${INFO_DIRECTORY}
-+    ${real} mkdir -p ${INFO_DIRECTORY}
-+    if [ $? -ne 0 ]; then
-+      echo $com ""
-+      echo $com "**** Exim installation ${ver}failed ****"
-+      exit 1
-+    else
-+      echo $com ${INFO_DIRECTORY} created
-+    fi
-+  fi
- 
-+  echo $com Info installation directory is ${INFO_DIRECTORY}
-+  echo $com ""
- 
--# if [ "${INFO_DIRECTORY}" != "" ] ; then
--#   echo $com ""
--#   echo $com Info installation directory is ${INFO_DIRECTORY}
--#   echo $com ""
--#
--#   if [ -f ../doc/spec.texinfo ]; then
--#     makeinfo --no-split --output exim_overview.info ../doc/oview.texinfo
--#     echo ${CP} exim_overview.info ${INFO_DIRECTORY}
--#     ${real} ${CP} exim_overview.info ${INFO_DIRECTORY}
--#     install-info --section="Exim" \
--#         --entry "* Overview: (exim_overview).    Overview of the Exim system" \
--#         ${INFO_DIRECTORY}/exim_overview.info ${INFO_DIRECTORY}/dir
--#     makeinfo --no-split --output exim.info ../doc/spec.texinfo
--#     echo ${CP} exim.info ${INFO_DIRECTORY}
--#     ${real} ${CP} exim.info ${INFO_DIRECTORY}
--#     install-info --section="Exim" \
--#         --entry "* User guide: (exim).           Exim manual" \
--#         ${INFO_DIRECTORY}/exim.info ${INFO_DIRECTORY}/dir
--#     makeinfo --no-split --output exim_filter.info ../doc/filter.texinfo
--#     echo ${CP} exim_filter.info ${INFO_DIRECTORY}
--#     ${real} ${CP} exim_filter.info ${INFO_DIRECTORY}
--#     install-info --section="Exim" \
--#         --entry "* Filtering: (exim_filter).     Filtering mail with Exim" \
--#         ${INFO_DIRECTORY}/exim_filter.info ${INFO_DIRECTORY}/dir
--#   else
--#     echo $com "**** Texinfo documentation not found in doc directory ****"
--#     exit 1
--#   fi
--# fi
-+  makeinfo --no-split --output exim_overview.info ../doc/oview.texinfo
-+  echo ${CP} exim_overview.info ${INFO_DIRECTORY}
-+  ${real} ${CP} exim_overview.info ${INFO_DIRECTORY}
-+  install-info --section="Exim" \
-+      --entry "* Overview: (exim_overview).    Overview of the Exim system" \
-+      ${INFO_DIRECTORY}/exim_overview.info ${INFO_DIRECTORY}/dir
-+  makeinfo --no-split --output exim.info ../doc/spec.texinfo
-+  echo ${CP} exim.info ${INFO_DIRECTORY}
-+  ${real} ${CP} exim.info ${INFO_DIRECTORY}
-+  install-info --section="Exim" \
-+      --entry "* User guide: (exim).           Exim manual" \
-+      ${INFO_DIRECTORY}/exim.info ${INFO_DIRECTORY}/dir
-+  makeinfo --no-split --output exim_filter.info ../doc/filter.texinfo
-+  echo ${CP} exim_filter.info ${INFO_DIRECTORY}
-+  ${real} ${CP} exim_filter.info ${INFO_DIRECTORY}
-+  install-info --section="Exim" \
-+      --entry "* Filtering: (exim_filter).     Filtering mail with Exim" \
-+      ${INFO_DIRECTORY}/exim_filter.info ${INFO_DIRECTORY}/dir
-+fi
- 
- # Everything OK
+ # Install info files if the directory is defined and the Texinfo
+ # source documentation is present.

@@ -99,7 +99,7 @@ host_lookup_nets = 0.0.0.0/0
 # unscrupulous people out there who will make use of open relays to try to
 # disguise the source of unsolicited bulk mail.
 
-sender_host_accept_relay = localhost
+sender_net_accept_relay = 127.0.0.1/32
 
 
 # If you want Exim to support the "percent hack" for all your local domains,
