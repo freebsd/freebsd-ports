@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	inn
-PORTVERSION=	2.4.0
-PORTREVISION=	4
+PORTVERSION=	2.4.1
 CATEGORIES=	news ipv6
 MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	inn
 
-MAINTAINER=	sheepkiller@cultdeadsheep.org
+MAINTAINER=	clement@FreeBSD.org
 COMMENT=	InterNetNews -- the Internet meets Netnews
 
 NO_LATEST_LINK=	yes
@@ -20,7 +19,7 @@ USE_GMAKE=	yes
 USE_PERL5=	yes
 USE_OPENSSL=	yes
 
-CONFLICTS=	inn-stable-* inn-current
+CONFLICTS=	inn-stable-* inn-current-*
 
 .if exists(/var/news) && !defined(PACKAGE_BUILDING)
 INN_NEWSSPOOL?=/var/news
@@ -47,7 +46,7 @@ CONFIGURE_ARGS+=	--with-berkeleydb
 .    if !defined(WITH_BDB_VER)
 WITH_BDB_VER=	4
 .    endif
-.    if (${WITH_BDB_VER} == 3) || (${WITH_BDB_VER} == 4)
+.    if (${WITH_BDB_VER} == 3) || (${WITH_BDB_VER} == 4) || (${WITH_BDB_VER} == 41)
 LIB_DEPENDS+=		db${WITH_BDB_VER}:${PORTSDIR}/databases/db${WITH_BDB_VER}
 .    elif ${WITH_BDB_VER} == 2
 BROKEN=		"Does not compile with db2"
