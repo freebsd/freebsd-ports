@@ -1,0 +1,5 @@
+Ruby/PAM is a ruby extension module for accessing linux and solaris
+pam library.
+
+WWW:	http://kt-www.jaist.ac.jp/~ttate/lang/ruby/ruby-pam.html
+Author:	Takaaki Tateishi <ttate@jaist.ac.jp>
