@@ -15,6 +15,8 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Ruby module to provide Access Control List checks
 
+BROKEN=		Does not build
+
 USE_RUBY=	yes
 
 NO_BUILD=	yess
