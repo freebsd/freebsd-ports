@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mailman
-PORTVERSION=	2.1.2
+PORTVERSION=	2.1.3
 CATEGORIES=	mail
 MASTER_SITES=	http://www.list.org/ \
 		${MASTER_SITE_GNU} \
