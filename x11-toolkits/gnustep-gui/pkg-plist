@@ -1,10 +1,15 @@
+%%GNUSTEP_DEVEL%%System/Applications/md5Digest.app/Resources/Info-gnustep.plist
+%%GNUSTEP_DEVEL%%System/Applications/md5Digest.app/Resources/md5Digest.desktop
+%%GNUSTEP_DEVEL%%System/Applications/md5Digest.app/library_paths.openapp
+%%GNUSTEP_DEVEL%%System/Applications/md5Digest.app/md5Digest
+%%GNUSTEP_DEVEL%%System/Applications/md5Digest.app/stamp.make
 %%GNUSTEP_STABLE%%System/Libraries/Resources/gnustep-gui/Resources/English.lproj/Localizable.strings
 %%GNUSTEP_STABLE%%System/Libraries/Resources/gnustep-gui/Resources/Italian.lproj/Localizable.strings
 System/Library/Bundles/TextConverters/RTFConverter.bundle/Resources/Info-gnustep.plist
-System/Library/Bundles/TextConverters/RTFConverter.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/RTFConverter
+System/Library/Bundles/TextConverters/RTFConverter.bundle/%%NOFLAT%%RTFConverter
 System/Library/Bundles/TextConverters/RTFConverter.bundle/stamp.make
 System/Library/Bundles/libgmodel.bundle/Resources/Info-gnustep.plist
-System/Library/Bundles/libgmodel.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgmodel
+System/Library/Bundles/libgmodel.bundle/%%NOFLAT%%libgmodel
 System/Library/Bundles/libgmodel.bundle/stamp.make
 System/Library/ColorPickers/StandardPicker.bundle/Resources/English.lproj/StandardPicker.strings
 System/Library/ColorPickers/StandardPicker.bundle/Resources/French.lproj/StandardPicker.strings
@@ -14,11 +19,11 @@ System/Library/ColorPickers/StandardPicker.bundle/Resources/GSHSBColorPicker.tif
 System/Library/ColorPickers/StandardPicker.bundle/Resources/GSRGBColorPicker.tiff
 System/Library/ColorPickers/StandardPicker.bundle/Resources/Info-gnustep.plist
 System/Library/ColorPickers/StandardPicker.bundle/Resources/Swedish.lproj/StandardPicker.strings
-System/Library/ColorPickers/StandardPicker.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/StandardPicker
+System/Library/ColorPickers/StandardPicker.bundle/%%NOFLAT%%StandardPicker
 System/Library/ColorPickers/StandardPicker.bundle/stamp.make
 System/Library/ColorPickers/WheelPicker.bundle/Resources/GSWheelColorPicker.tiff
 System/Library/ColorPickers/WheelPicker.bundle/Resources/Info-gnustep.plist
-System/Library/ColorPickers/WheelPicker.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/WheelPicker
+System/Library/ColorPickers/WheelPicker.bundle/%%NOFLAT%%WheelPicker
 System/Library/ColorPickers/WheelPicker.bundle/stamp.make
 %%SYSTEMLIBRARY%%/Headers/AppKit/AppKit.h
 %%SYSTEMLIBRARY%%/Headers/AppKit/AppKitDefines.h
@@ -170,11 +175,11 @@ System/Library/ColorPickers/WheelPicker.bundle/stamp.make
 %%SYSTEMLIBRARY%%/Headers/gnustep/gui/IMConnectors.h
 %%SYSTEMLIBRARY%%/Headers/gnustep/gui/IMCustomObject.h
 %%SYSTEMLIBRARY%%/Headers/gnustep/gui/IMLoading.h
-%%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/ReleaseNotes/0.8.7/INSTALL
-%%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/ReleaseNotes/0.8.7/NEWS
-%%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/ReleaseNotes/0.8.7/README
-%%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/ReleaseNotes/0.8.7/ANNOUNCE
-%%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/ReleaseNotes/0.8.7/BUGS
+%%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/ReleaseNotes/%%VERSION%%/INSTALL
+%%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/ReleaseNotes/%%VERSION%%/NEWS
+%%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/ReleaseNotes/%%VERSION%%/README
+%%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/ReleaseNotes/%%VERSION%%/ANNOUNCE
+%%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/ReleaseNotes/%%VERSION%%/BUGS
 %%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Reference/.cvsignore
 %%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Reference/DefaultsSummary.gsdoc
 %%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Reference/GNUmakefile
@@ -184,7 +189,6 @@ System/Library/ColorPickers/WheelPicker.bundle/stamp.make
 %%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Reference/NSBundleAdditions.gsdoc
 %%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Reference/NSCoderAdditions.gsdoc
 %%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Reference/NSMutableAttributedStringAdditions.gsdoc
-%%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Reference/NSMutableParagraphStyle.gsdoc
 %%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Reference/NSStringAdditions.gsdoc
 %%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Reference/NSDocumentController.gsdoc
 %%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Reference/TypesAndConstants.gsdoc
@@ -409,7 +413,6 @@ System/Library/ColorPickers/WheelPicker.bundle/stamp.make
 %%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Reference/LanguageSetup.html
 %%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Reference/NSBundleAdditions.html
 %%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Reference/NSCoderAdditions.html
-%%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Reference/NSMutableParagraphStyle.html
 %%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Reference/NSMutableAttributedStringAdditions.html
 %%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Reference/NSStringAdditions.html
 %%GNUSTEP_DEVEL%%System/Library/Documentation/info/gnustep-gui.info
@@ -491,8 +494,12 @@ System/Library/ColorPickers/WheelPicker.bundle/stamp.make
 %%GNUSTEP_DEVEL%%System/Library/Images/common_retH.tiff
 %%GNUSTEP_DEVEL%%System/Library/Images/nsmapping.strings
 %%GNUSTEP_DEVEL%%System/Library/KeyBindings/DefaultKeyBindings.dict
-%%GNUSTEP_DEVEL%%System/Library/Libraries/Resources/gnustep-gui/English.lproj/GSPageLayout.gorm
-%%GNUSTEP_DEVEL%%System/Library/Libraries/Resources/gnustep-gui/English.lproj/GSPrintPanel.gorm
+%%GNUSTEP_DEVEL%%System/Library/Libraries/Resources/gnustep-gui/English.lproj/GSDataLinkPanel.gorm/data.classes
+%%GNUSTEP_DEVEL%%System/Library/Libraries/Resources/gnustep-gui/English.lproj/GSDataLinkPanel.gorm/objects.gorm
+%%GNUSTEP_DEVEL%%System/Library/Libraries/Resources/gnustep-gui/English.lproj/GSPageLayout.gorm/data.classes
+%%GNUSTEP_DEVEL%%System/Library/Libraries/Resources/gnustep-gui/English.lproj/GSPageLayout.gorm/objects.gorm
+%%GNUSTEP_DEVEL%%System/Library/Libraries/Resources/gnustep-gui/English.lproj/GSPrintPanel.gorm/data.classes
+%%GNUSTEP_DEVEL%%System/Library/Libraries/Resources/gnustep-gui/English.lproj/GSPrintPanel.gorm/objects.gorm
 %%GNUSTEP_DEVEL%%System/Library/Libraries/Resources/gnustep-gui/English.lproj/Localizable.strings
 %%GNUSTEP_DEVEL%%System/Library/Libraries/Resources/gnustep-gui/Italian.lproj/Localizable.strings
 %%GNUSTEP_STABLE%%%%SYSTEMLIBRARY%%/Libraries/Resources/English.lproj/GSPageLayout.gorm
@@ -889,9 +896,9 @@ System/Library/ColorPickers/WheelPicker.bundle/stamp.make
 %%GNUSTEP_STABLE%%%%SYSTEMLIBRARY%%/Libraries/Resources/PrinterTypes/Printers
 %%GNUSTEP_STABLE%%%%SYSTEMLIBRARY%%/Libraries/Resources/PrinterTypes/Spanish.lproj/Linotronic_300.ppd
 %%GNUSTEP_STABLE%%%%SYSTEMLIBRARY%%/Libraries/Resources/PrinterTypes/Swedish.lproj/Linotronic_300.ppd
-%%SYSTEMLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgnustep-gui.so
-%%SYSTEMLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgnustep-gui.so.%%MAJORVERSION%%
-%%SYSTEMLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgnustep-gui.so.%%VERSION%%
+%%SYSTEMLIBRARY%%/Libraries/%%NOFLAT%%libgnustep-gui.so
+%%SYSTEMLIBRARY%%/Libraries/%%NOFLAT%%libgnustep-gui.so.%%MAJORVERSION%%
+%%SYSTEMLIBRARY%%/Libraries/%%NOFLAT%%libgnustep-gui.so.%%VERSION%%
 %%GNUSTEP_DEVEL%%System/Library/PostScript/GSProlog.ps
 %%GNUSTEP_DEVEL%%System/Library/PostScript/PPD/English.lproj/AGFA_AccuSet.ppd
 %%GNUSTEP_DEVEL%%System/Library/PostScript/PPD/English.lproj/AGFA_AccuSetSF.ppd
@@ -1212,22 +1219,22 @@ System/Library/ColorPickers/WheelPicker.bundle/stamp.make
 %%GNUSTEP_STABLE%%System/Library/Model/SavePanel.gmodel
 %%GNUSTEP_STABLE%%System/Library/Model/SpellPanel.gmodel
 System/Library/Services/GSspell.service/Resources/Info-gnustep.plist
-System/Library/Services/GSspell.service/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/GSspell
+System/Library/Services/GSspell.service/%%NOFLAT%%GSspell
 System/Library/Services/example.service/Resources/Info-gnustep.plist
-System/Library/Services/example.service/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/example
+System/Library/Services/example.service/%%NOFLAT%%example
 System/Makefiles/Additional/gui.make
-System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/gnustep_sndd
-System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/gopen
-System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/make_services
-System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/set_show_service
-@dirrm System/Library/Services/example.service/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm System/Library/Services/example.service/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm System/Library/Services/example.service/%%GNU_ARCH%%
+System/Tools/%%NOFLAT%%gnustep_sndd
+System/Tools/%%NOFLAT%%gopen
+System/Tools/%%NOFLAT%%make_services
+System/Tools/%%NOFLAT%%set_show_service
+%%GNUSTEP_STABLE%%@dirrm System/Library/Services/example.service/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm System/Library/Services/example.service/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm System/Library/Services/example.service/%%GNU_ARCH%%
 @dirrm System/Library/Services/example.service/Resources
 @dirrm System/Library/Services/example.service
-@dirrm System/Library/Services/GSspell.service/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm System/Library/Services/GSspell.service/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm System/Library/Services/GSspell.service/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm System/Library/Services/GSspell.service/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm System/Library/Services/GSspell.service/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm System/Library/Services/GSspell.service/%%GNU_ARCH%%
 @dirrm System/Library/Services/GSspell.service/Resources
 @dirrm System/Library/Services/GSspell.service
 %%GNUSTEP_DEVEL%%@dirrm System/Library/PostScript/PPD/Swedish.lproj
@@ -1238,17 +1245,16 @@ System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/set_show_service
 %%GNUSTEP_DEVEL%%@dirrm System/Library/PostScript/PPD/English.lproj
 %%GNUSTEP_DEVEL%%@dirrm System/Library/PostScript/PPD
 %%GNUSTEP_DEVEL%%@dirrm System/Library/Libraries/Resources/gnustep-gui/Italian.lproj
+%%GNUSTEP_DEVEL%%@dirrm System/Library/Libraries/Resources/gnustep-gui/English.lproj/GSPrintPanel.gorm
+%%GNUSTEP_DEVEL%%@dirrm System/Library/Libraries/Resources/gnustep-gui/English.lproj/GSPageLayout.gorm
+%%GNUSTEP_DEVEL%%@dirrm System/Library/Libraries/Resources/gnustep-gui/English.lproj/GSDataLinkPanel.gorm
 %%GNUSTEP_DEVEL%%@dirrm System/Library/Libraries/Resources/gnustep-gui/English.lproj
 %%GNUSTEP_DEVEL%%@dirrm System/Library/Libraries/Resources/gnustep-gui
-%%GNUSTEP_DEVEL%%@dirrm System/Library/Documentation/info
 %%GNUSTEP_DEVEL%%@dirrm System/Library/Documentation/Developer/Gui/ReleaseNotes/%%VERSION%%
 %%GNUSTEP_DEVEL%%@dirrm System/Library/Documentation/Developer/Gui/ReleaseNotes
-%%GNUSTEP_DEVEL%%@dirrm System/Library/Documentation/Developer/Gui/Reference/Gui
 %%GNUSTEP_DEVEL%%@dirrm System/Library/Documentation/Developer/Gui/Reference
 %%GNUSTEP_DEVEL%%@dirrm System/Library/Documentation/Developer/Gui/Manual
 %%GNUSTEP_DEVEL%%@dirrm System/Library/Documentation/Developer/Gui
-%%GNUSTEP_DEVEL%%@dirrm System/Library/Documentation/Developer
-%%GNUSTEP_DEVEL%%@dirrm System/Library/Documentation
 %%GNUSTEP_STABLE%%@dirrm System/Library/Model
 %%GNUSTEP_STABLE%%@dirrm %%SYSTEMLIBRARY%%/Libraries/Resources/PrinterTypes/Swedish.lproj
 %%GNUSTEP_STABLE%%@dirrm %%SYSTEMLIBRARY%%/Libraries/Resources/PrinterTypes/Spanish.lproj
@@ -1261,28 +1267,28 @@ System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/set_show_service
 %%GNUSTEP_STABLE%%@dirrm %%SYSTEMLIBRARY%%/Libraries/Resources/Images
 @dirrm %%SYSTEMLIBRARY%%/Headers/gnustep/gui
 @dirrm %%SYSTEMLIBRARY%%/Headers/AppKit
-@dirrm System/Library/ColorPickers/WheelPicker.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm System/Library/ColorPickers/WheelPicker.bundle/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm System/Library/ColorPickers/WheelPicker.bundle/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm System/Library/ColorPickers/WheelPicker.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm System/Library/ColorPickers/WheelPicker.bundle/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm System/Library/ColorPickers/WheelPicker.bundle/%%GNU_ARCH%%
 @dirrm System/Library/ColorPickers/WheelPicker.bundle/Resources
 @dirrm System/Library/ColorPickers/WheelPicker.bundle
-@dirrm System/Library/ColorPickers/StandardPicker.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm System/Library/ColorPickers/StandardPicker.bundle/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm System/Library/ColorPickers/StandardPicker.bundle/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm System/Library/ColorPickers/StandardPicker.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm System/Library/ColorPickers/StandardPicker.bundle/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm System/Library/ColorPickers/StandardPicker.bundle/%%GNU_ARCH%%
 @dirrm System/Library/ColorPickers/StandardPicker.bundle/Resources/Swedish.lproj
 @dirrm System/Library/ColorPickers/StandardPicker.bundle/Resources/French.lproj
 @dirrm System/Library/ColorPickers/StandardPicker.bundle/Resources/English.lproj
 @dirrm System/Library/ColorPickers/StandardPicker.bundle/Resources
 @dirrm System/Library/ColorPickers/StandardPicker.bundle
 %%GNUSTEP_STABLE%%@dirrm System/Library/ColorPickers
-@dirrm System/Library/Bundles/libgmodel.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm System/Library/Bundles/libgmodel.bundle/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm System/Library/Bundles/libgmodel.bundle/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm System/Library/Bundles/libgmodel.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm System/Library/Bundles/libgmodel.bundle/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm System/Library/Bundles/libgmodel.bundle/%%GNU_ARCH%%
 @dirrm System/Library/Bundles/libgmodel.bundle/Resources
 @dirrm System/Library/Bundles/libgmodel.bundle
-@dirrm System/Library/Bundles/TextConverters/RTFConverter.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm System/Library/Bundles/TextConverters/RTFConverter.bundle/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm System/Library/Bundles/TextConverters/RTFConverter.bundle/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm System/Library/Bundles/TextConverters/RTFConverter.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm System/Library/Bundles/TextConverters/RTFConverter.bundle/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm System/Library/Bundles/TextConverters/RTFConverter.bundle/%%GNU_ARCH%%
 @dirrm System/Library/Bundles/TextConverters/RTFConverter.bundle/Resources
 @dirrm System/Library/Bundles/TextConverters/RTFConverter.bundle
 @dirrm System/Library/Bundles/TextConverters
@@ -1290,3 +1296,6 @@ System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/set_show_service
 %%GNUSTEP_STABLE%%@dirrm System/Libraries/Resources/gnustep-gui/Resources/English.lproj
 %%GNUSTEP_STABLE%%@dirrm System/Libraries/Resources/gnustep-gui/Resources
 %%GNUSTEP_STABLE%%@dirrm System/Libraries/Resources/gnustep-gui
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/md5Digest.app/Resources
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/md5Digest.app
+%%GNUSTEP_DEVEL%%@exec mkdir -p %D/System/Library/Documentation/Developer/Gui/Manual
