@@ -1,18 +1,4 @@
 ======================================================================
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!WARNING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!WARNING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!WARNING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-After installing Firefox, you must su - to root, and run ``firefox'' before
-running it as any other user.  If you do not su - to root, you may lose some
-of your user settings.  If you try to run Firefox as a normal user without
-first running it as root, the browser will not show up.  This is a known issue
-with Firefox, and they hope to address it in a future release.
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!WARNING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!WARNING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!WARNING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^SEE WARNING ABOVE^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 Any bug reports should be addressed to the maintainers at:
 	gnome@FreeBSD.org
 You may also Cc: freebsd-ports@freebsd.org. Please do not send
