@@ -23,6 +23,7 @@ USE_BISON=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomelibs libcapplet
 USE_LIBTOOL=	yes
+USE_REINPLACE=	yes
 
 CPPFLAGS=	-I${LOCALBASE}/include
 LIBS=		-L${LOCALBASE}/lib

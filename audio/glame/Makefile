@@ -19,6 +19,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 LIB_DEPENDS=	vorbis.2:${PORTSDIR}/audio/libvorbis \
 		ltdl.4:${PORTSDIR}/devel/libltdl
 
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget libglade
 USE_GMAKE=	yes

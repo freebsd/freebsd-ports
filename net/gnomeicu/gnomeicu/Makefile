@@ -23,6 +23,7 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack libglade2 gnomepanel libxml2
 USE_GMAKE=		yes
 USE_LIBTOOL=	yes
+USE_REINPLACE=	yes
 .if defined(WITH_DANTE)
 LIB_DEPENDS+=	socks.1:${PORTSDIR}/net/dante
 SOCKSFLAGS=	-Dconnect=Rconnect -Dbind=Rbind -Dgetsockname=Rgetsockname \

@@ -19,6 +19,7 @@ LIB_DEPENDS=	iodbc.3:${PORTSDIR}/databases/libiodbc
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS+=	-o ${LOCALBASE}
+USE_REINPLACE=	yes
 
 MAN3=		DBD::ODBC.3
 

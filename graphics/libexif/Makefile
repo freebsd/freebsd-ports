@@ -19,6 +19,7 @@ LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_LIBTOOL=	yes
+USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lintl"
 INSTALLS_SHLIB=	yes

@@ -28,6 +28,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix esound gtk12 imlib libxml orbit
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
+USE_REINPLACE=	yes
 LIBTOOLFILES=	configure libart_lgpl/configure
 CONFIGURE_ARGS=	--disable-test-gnome
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

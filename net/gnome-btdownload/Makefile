@@ -20,6 +20,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/BitTorrent/__init__.py:${PORTSDIR}/net/py-bitt
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	yes
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix
 GNU_CONFIGURE=	yes

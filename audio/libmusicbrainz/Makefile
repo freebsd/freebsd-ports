@@ -18,6 +18,7 @@ LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2
 
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

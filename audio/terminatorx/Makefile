@@ -19,6 +19,7 @@ LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile \
 		lrdf.1:${PORTSDIR}/textproc/liblrdf
 
 USE_BZIP2=	yes
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomehier gnometarget gtk20 libxml2
 USE_GMAKE=	yes
