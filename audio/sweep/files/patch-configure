@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- configure	2003/02/03 12:59:06	1.1
-+++ configure	2003/02/03 12:59:33
+--- configure.orig	Sat Apr 17 16:35:15 2004
++++ configure	Sat Apr 17 16:35:31 2004
 @@ -5761,6 +5761,7 @@
  
  # This can be used to rebuild libtool when needed
@@ -11,3 +8,12 @@ $FreeBSD$
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -6002,7 +6003,7 @@
+ done
+ 
+ 
+-ALL_LINGUAS="de el fr hu it pl ru en_AU"
++ALL_LINGUAS="de el fr hu it pl ru"
+ 
+   echo $ac_n "checking for inttypes.h""... $ac_c" 1>&6
+ echo "configure:6009: checking for inttypes.h" >&5
