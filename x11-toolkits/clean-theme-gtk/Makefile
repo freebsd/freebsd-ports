@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clean-theme-gtk
-PORTVERSION= 	0.2
+PORTVERSION= 	0.3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://progen.dynodns.net/dengen/cleantheme/
 
