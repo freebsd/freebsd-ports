@@ -13,7 +13,7 @@ DISTFILES=		vnc-3.3.3r1_unixsrc.tgz \
 			vnc-latest_doc.tgz
 EXTRACT_ONLY=		vnc-3.3.3r1_unixsrc.tgz
 
-MAINTAINER=	 	bmah@acm.org
+MAINTAINER=	 	bmah@freebsd.org
 
 USE_PERL5=		YES
 IGNOREFILES=		vnc-latest_doc.tgz
