@@ -1,7 +1,5 @@
 lib/X11/nls/nls.alias
-lib/X11/nls/nls.dir
 lib/X11/nls/ru_SU.KOI8-R
-lib/X11/nls/C
 lib/X11/fonts/cyrillic/100dpi/crox1c.pcf.gz
 lib/X11/fonts/cyrillic/100dpi/crox1cb.pcf.gz
 lib/X11/fonts/cyrillic/100dpi/crox1cbo.pcf.gz
