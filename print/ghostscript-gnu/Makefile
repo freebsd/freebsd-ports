@@ -18,7 +18,7 @@ MASTER_SITES=	${MASTER_SITE_GNU:S/$/:gs_fonts/} \
 		${MASTER_SITE_PORTS_JP:S/$/:ports_jp,ports_jp_gs/} \
 		http://www.ucatv.ne.jp/~taeko/software/gs/:lips \
 		http://www.humblesoft.com/pub/:epag \
-		http://www.epkowa.on.arena.ne.jp/pips/data/gs65_304/:eplaser \
+		http://www.epkowa.on.arena.ne.jp/pips/data/V306/:eplaser \
 		http://www.hi.is.uec.ac.jp/~osamuw/gdevnpdl/:npdl \
 		http://www.linuxprinting.org/download/printing/samsung-gdi/:gdi \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/gnu/fonts/:fonts \
@@ -61,7 +61,7 @@ USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	CC="${CC}" CXX="${CXX}" CFLAGS_STANDARD="${CFLAGS}" \
 		XCFLAGS="${XCFLAGS}"
-PLIST_SUB=	GS_VERSION=${PORTVERSION}
+PLIST_SUB=	GS_VERSION=${PORTVERSION} EPLASER_GSVERS=${EPLASER_GSVERS}
 
 MAN1=		ansi2knr.1 dvipdf.1 font2c.1 gs-hpdj.1 gs-pcl3.1 \
 		gs.1 gslp.1 gsnd.1 pcl3opts.1 pdf2dsc.1 pdf2ps.1 pdfopt.1 \
@@ -203,9 +203,10 @@ EPAG_SRCS=	${EPAG_NAME}.tar.gz
 # EPLASER - additional driver for ESC/Page printers (Epson Kowa developed)
 # http://www.epkowa.co.jp/linux/lpd.html
 EPLASER=	eplaser
-EPLASER_VERS=	3.0.4
+EPLASER_VERS=	3.0.6
+EPLASER_GSVERS=	652
 EPLASER_NAME=	${EPLASER}-${EPLASER_VERS}
-EPLASER_SRCS=	${EPLASER_NAME}-651.tgz
+EPLASER_SRCS=	${EPLASER_NAME}-${EPLASER_GSVERS}.tgz
 
 # MJC - additional driver for Epson MachJet series
 MJC=		mjc
@@ -608,7 +609,7 @@ post-install:
 # for EPLASER driver
 	${ECHO_MSG} ">>>   installing ${EPLASER} docs ..."
 	${MKDIR} ${DOCSDIR}/${PORTVERSION}/${EPLASER}
-.for i in readme-eplaser-651.euc readme-eplaser-651-jp.euc
+.for i in readme-eplaser-${EPLASER_GSVERS}.euc readme-eplaser-${EPLASER_GSVERS}-jp.euc
 	${INSTALL_DATA} ${WRKSRC}/${EPLASER_NAME}/${i} \
 		${DOCSDIR}/${PORTVERSION}/${EPLASER}
 .endfor
