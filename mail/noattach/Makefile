@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	noattach
-PORTVERSION=	1.0beta10
+PORTVERSION=	1.0beta11
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.rhnet.is/pub/noattach/
 
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/sendmail
 CFLAGS+=	${PTHREAD_CFLAGS:S=""==}
 FLAGS+=		${PTHREAD_LIBS}
 GNU_CONFIGURE=	yes
-DOCSFILES=	AUTHORS THANKS COPYING INSTALL NEWS README ChangeLog
+DOCSFILES=	AUTHORS THANKS COPYING INSTALL NEWS README TODO ChangeLog
 SAMPLEFILES=	README noattach.patterns noattach.patterns.johncon
 
 .include <bsd.port.pre.mk>
