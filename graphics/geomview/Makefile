@@ -31,13 +31,9 @@ MAN3=		anytopl.3 bdy.3 fsaparse.3 geomutil.3 lisp.3 plcombine.3 \
 		plconsol.3 pointlist.3 sweep.3
 MAN5=		discgrp.5 geomview.5 oogl.5
 
-# Set CPU type for Geomview make
-# Add ${FILESDIR} to PATH for "make install"
+# Set "CPU" type for Geomview make
 # Allow user to specify "make install MAPLE_LIB=foo" as geomview wants
-MAKE_ENV=	CPU=FreeBSD PATH=${FILESDIR}:${PATH} MAPLE_LIB=${MAPLE_LIB}
-
-post-extract:
-	-${CHMOD} +x ${FILESDIR}/nroff
+MAKE_ENV=	CPU=FreeBSD MAPLE_LIB=${MAPLE_LIB}
 
 pre-install:
 	${MKDIR} ${PREFIX}/share/geomview
