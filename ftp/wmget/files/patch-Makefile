@@ -1,0 +1,45 @@
+--- Makefile.orig	Sun Feb  9 05:04:20 2003
++++ Makefile	Tue Jan 27 16:34:31 2004
+@@ -46,16 +46,18 @@
+ 
+ # To specify a different prefix, you can override this on the command line
+ #	make PREFIX=/opt/dockapps install
+-PREFIX=		/usr/local
++X11BASE?=	/usr/X11R6
++PREFIX?=	${X11BASE}
+ 
+ INSTALLDIR=	install -d -m 755
+-INSTALLBIN=	install -m 555
+-INSTALLMAN=	install -m 444
+-CC=		gcc
+-CFLAGS=		-ansi -Wall -W -I/usr/X11R6/include -D_GNU_SOURCE
++INSTALLBIN=	$(INSTALL_PROGRAM)
++INSTALLMAN=	$(INSTALL_MAN)
++CC?=		gcc
++CFLAGS?=	-ansi -Wall -W
++CFLAGS+=	-I${X11BASE}/include -I${LOCALBASE}/include -D_GNU_SOURCE
+ # The following line is what I use during development
+ #CFLAGS:=	$(CFLAGS) -Werror -g
+-LDFLAGS=	-L/usr/X11R6/lib -lXpm -lXext -lX11 -lm -lcurl
++LDFLAGS+=	-L${X11BASE}/lib -L${LOCALBASE}/lib -lXpm -lXext -lX11 -lm -lcurl
+ DOCS=		wmget.1
+ 
+ VERSION:=	$(shell grep '\#define WMGET_VERSION ' wmget.h \
+@@ -107,7 +109,7 @@
+ ##### LIBRARY ##########################################################
+ 
+ dockapplib:
+-		make -C $(DALIBDIR)
++		${MAKE} -C $(DALIBDIR)
+ 
+ 
+ 
+@@ -130,7 +132,7 @@
+ 			wmget.html
+ 		sed -e '/^# DO NOT/q' < Makefile > Makefile.clean \
+ 		&& mv -f Makefile.clean Makefile
+-		make -C dockapp clean
++		${MAKE} -C dockapp clean
+ 
+ docclean:
+ 		rm -f $(DOCS)

@@ -81,6 +81,7 @@
     SUBDIR += wget
     SUBDIR += wget+ipv6
     SUBDIR += wget-devel
+    SUBDIR += wmget
     SUBDIR += wput
     SUBDIR += wu-ftpd
     SUBDIR += wu-ftpd+ipv6
