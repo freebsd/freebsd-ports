@@ -28,36 +28,35 @@ LIB_DEPENDS+=	wrap.7:${PORTSDIR}/security/tcp_wrapper
 USE_BZIP2=	yes
 CONFIGURE_ARGS+=	--with-tcp-wrappers \
 			--with-pkgconfdir=${PREFIX}/etc \
-#			--disable-ddp
 .if defined(WITH_PAM)
-PLIST_SUB+=             NETATALKPAM=""
+PLIST_SUB+=	NETATALKPAM=""
 .else
-CONFIGURE_ARGS+=		--without-pam
-PLIST_SUB+=             NETATALKPAM="@comment "
+CONFIGURE_ARGS+=	--without-pam
+PLIST_SUB+=	NETATALKPAM="@comment "
 .endif
 .if defined(WITH_SRVLOC)
 # Enable Service Location Protocol support.  This allows MacOS X < 10.1 to
 # pickup afpd servers in the network.
-CONFIGURE_ARGS+=		--enable-srvloc=${LOCALBASE}
+CONFIGURE_ARGS+=	--enable-srvloc=${LOCALBASE}
 .endif
 .if defined(WITH_FLOCK_LOCKS)
 # Disable byte locking, and do full file locking.  This _may_ help with some
 # Quark Express save issues.
-CONFIGURE_ARGS+=		--with-flock-locks
+CONFIGURE_ARGS+=	--with-flock-locks
 .endif
 .if defined(WITH_CNID)
 # Configure EXPERIMENTAL CNID DID support.  This is an attmept to make
 # DIDs more persistent by using a Berkeley database to store the DID values.
 # This should hopefully allow aliases to work between restarts of afpd.
 # This has been tested on MacOS 9.2.x and OS X.
-CONFIGURE_ARGS+=		--with-did=cnid \
-						--with-db3=${LOCALBASE}
-PLIST_SUB+=				NETATALKCNID=""
+CONFIGURE_ARGS+=	--with-did=cnid \
+			--with-db3=${LOCALBASE}
+PLIST_SUB+=	NETATALKCNID=""
 .else
 # This method of DID calculation is not persistent, but has been tested to
 # work with MacOS X (10.0.3-10.1.3) as well as MacOS 7-9.2.2.
-CONFIGURE_ARGS+=		--with-did=last
-PLIST_SUB+=             NETATALKCNID="@comment "
+CONFIGURE_ARGS+=	--with-did=last
+PLIST_SUB+=	NETATALKCNID="@comment "
 .endif
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
