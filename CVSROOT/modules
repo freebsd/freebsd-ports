@@ -8151,7 +8151,6 @@ xcept		ports/comms/xcept
 xchadance	ports/games/xchadance
 xchain		ports/games/xchain
 xchat		ports/irc/xchat
-xchat-devel	ports/irc/xchat-devel
 xchomp		ports/games/xchomp
 xcircuit	ports/cad/xcircuit
 xclasses	ports/x11-toolkits/xclasses
