@@ -1,0 +1,31 @@
+bin/gic2c
+@unexec if cmp -s %D/etc/ggi/libgiigic.conf %D/etc/ggi/libgiigic.conf.dist; then rm -f %D/etc/ggi/libgiigic.conf; fi
+etc/ggi/libgiigic.conf.dist
+@exec [ -f %B/libgiigic.conf ] || cp %B/%f %B/libgiigic.conf
+include/ggi/gic-defs.h
+include/ggi/gic.h
+include/ggi/gic_confmgr.h
+include/ggi/gic_structs.h
+include/ggi/gicaction_lazy.h
+lib/ggi/gic/recognizer/cheat.la
+lib/ggi/gic/recognizer/cheat.so
+lib/ggi/gic/recognizer/keys.la
+lib/ggi/gic/recognizer/keys.so
+lib/ggi/gic/recognizer/mousebutton.la
+lib/ggi/gic/recognizer/mousebutton.so
+lib/ggi/gic/recognizer/relmouse.la
+lib/ggi/gic/recognizer/relmouse.so
+lib/ggi/gic/recognizer/valuator.la
+lib/ggi/gic/recognizer/valuator.so
+lib/libgicaction.la
+lib/libgicaction.so
+lib/libgicaction.so.0
+lib/libgiigic.la
+lib/libgiigic.so
+lib/libgiigic.so.1
+@dirrm etc/ggi
+@dirrm include/ggi/internal
+@dirrm include/ggi
+@dirrm lib/ggi/gic/recognizer
+@dirrm lib/ggi/gic
+@dirrm lib/ggi

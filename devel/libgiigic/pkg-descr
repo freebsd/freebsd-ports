@@ -1,0 +1,8 @@
+libgiigic is a convinience library that works on top of libgii whereby gic
+stands for 'General Input Configuration'.
+It provides easy Descent/Forsaken style input configuration.
+It basically handles binding of keystrokes, mice and valuators to program
+actions. For short, it allows to configure input events with actions as you
+know from modern computer games.
+
+WWW: http://www.ggi-project.org/
