@@ -1,3 +1,5 @@
+$FreeBSD$
+
 --- gettext-tools/misc/po-mode.el.orig	Sun Jan 23 22:35:10 2000
 +++ gettext-tools/misc/po-mode.el	Sun Jan 23 22:35:39 2000
 @@ -330,7 +330,7 @@

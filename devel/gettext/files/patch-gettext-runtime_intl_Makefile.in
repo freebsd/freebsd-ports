@@ -1,3 +1,5 @@
+$FreeBSD$
+
 --- gettext-runtime/intl/Makefile.in.orig	Wed May 21 06:55:18 2003
 +++ gettext-runtime/intl/Makefile.in	Wed Jun 11 14:28:58 2003
 @@ -52,7 +52,7 @@

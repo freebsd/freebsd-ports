@@ -1,3 +1,5 @@
+$FreeBSD$
+
 --- config/ltmain.sh.orig	Tue Apr 15 19:22:56 2003
 +++ config/ltmain.sh	Wed Jun 11 14:15:07 2003
 @@ -1279,7 +1279,7 @@
