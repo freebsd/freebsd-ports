@@ -1,19 +1,29 @@
---- ./Wnn/jserver/de.c.org	Thu Aug 18 18:31:23 1994
-+++ ./Wnn/jserver/de.c	Fri Feb 28 01:13:16 1997
-@@ -264,7 +264,16 @@
+--- ./Wnn/jserver/de.c.orig	Fri Aug 19 10:31:23 1994
++++ ./Wnn/jserver/de.c	Fri Aug  1 18:54:55 1997
+@@ -65,6 +65,9 @@
+ 
+ #include <sys/ioctl.h>
+ 
++#if (defined(__unix__) || defined(unix)) && !defined(USG)
++#include <sys/param.h>
++#endif
+ #ifdef SYSVR2
+ #include <sys/param.h>
+ #ifndef SIGCHLD
+@@ -264,7 +267,16 @@
  	fclose(stdin);
  	fclose(stdout);
  	if(!noisy){
-+#ifndef __FreeBSD__
++#if !(defined(BSD) && (BSD >= 199306)) /* !4.4BSD-Lite by Taoka */
  	    fclose(stderr);
-+#else /* __FreeBSD__ */
++#else /* 4.4BSD-Lite */
 +	    int fd = open("/dev/null", O_WRONLY);
 +	    if (fd < 0) {
 +		xerror("Cannot open /dev/null\n");
 +	    }
 +	    dup2(fd, 2);
 +	    close(fd);
-+#endif /* __FreeBSD__ */
++#endif /* 4.4BSD-Lite */
  	}
  
  #if defined(hpux) || defined(SOLARIS)

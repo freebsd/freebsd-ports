@@ -20,3 +20,12 @@ If there are any problem in this patches, please know me via E-mail.
 
 Hidekazu Kuroki
 (hidekazu@cs.titech.ac.jp)
+
+-------------------------------------------------------------------
+
+Mr. Yoshio KATAYAMA <kate@pfu.co.jp> fixed many bugs for Wnn4.2.
+Patches for those are in 'Wnn4.2.patch.tar.gz' and are applied in this
+port.
+
+-- S. Taoka
+<taoka@infonets.hiroshima-u.ac.jp>

@@ -1,0 +1,20 @@
+--- ./Wnn/jlib.V3/jlib.h.orig	Tue Sep 17 06:30:30 1991
++++ ./Wnn/jlib.V3/jlib.h	Fri Sep  5 21:37:24 1997
+@@ -51,12 +51,14 @@
+ /*
+ 	Nihongo	Henkan	Library Header File
+ */
+-/*
+ #include <setjmp.h>
+-*/
+-
+ 
+ #define	w_char	unsigned short
++#ifndef WCHAR_T
++#define wchar_t	w_char
++#define wchar	w_char
++#define WCHAR_T
++#endif 
+ 
+ #define JLIB
+ 

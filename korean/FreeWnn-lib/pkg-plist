@@ -1,4 +1,5 @@
-@cwd /usr/local
+@cwd %%LOCALBASE%%
+etc/rc.d/kWnn.sh
 lib/wnn/cvt_key_empty
 lib/wnn/cvt_key_tbl
 lib/wnn/cvt_key_tbl.ST
@@ -30,6 +31,7 @@ lib/wnn/ko_KR/wnnstat.msg
 lib/wnn/serverdefs
 @dirrm lib/wnn/ko_KR/rk
 @dirrm lib/wnn/ko_KR/dic/sys
+@dirrm lib/wnn/ko_KR/dic/usr
 @dirrm lib/wnn/ko_KR/dic
 @dirrm lib/wnn/ko_KR
 @dirrm lib/wnn
@@ -44,7 +46,7 @@ bin/kWnn4/kwnnkill
 bin/kWnn4/kwnnstat
 bin/kWnn4/kwnntouch
 @dirrm bin/kWnn4
-@cwd /usr/X11R6
+@cwd %%X11BASE%%
 lib/libkwnn.a
 include/kwnn/commonhd.h
 include/kwnn/cplib.h

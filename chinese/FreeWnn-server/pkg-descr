@@ -20,3 +20,26 @@ If there are any problem in this patches, please know me via E-mail.
 
 Hidekazu Kuroki
 (hidekazu@cs.titech.ac.jp)
+
+-------------------------------------------------------------------
+
+This port is applied a patch for Xsi/jserver/b_index.c. This code is
+only used in a Chinese method 'cWnn'. But you are not able to use
+'Qianma' very well.
+
+That bug is cuased by what cWnn has codes depend on architectures
+about small-endian and big-endian machines.
+
+If there are any problem in this patch, please know Mr. Ito via
+E-mail.
+
+Hisashi ITO  <his@kuro.is.sci.toho-u.ac.jp>
+
+-------------------------------------------------------------------
+
+Mr. Yoshio KATAYAMA <kate@pfu.co.jp> fixed many bugs for Wnn4.2.
+Patches for those are in 'Wnn4.2.patch.tar.gz' and are applied in this
+port.
+
+-- S. Taoka
+<taoka@infonets.hiroshima-u.ac.jp>
