@@ -1,6 +1,5 @@
 # $FreeBSD$
 #
-    SUBDIR += zziplib
 
     SUBDIR += ElectricFence
     SUBDIR += ORBacus
@@ -428,5 +427,6 @@
     SUBDIR += xwpe
     SUBDIR += xxgdb
     SUBDIR += yacl
+    SUBDIR += zziplib
 
 .include <bsd.port.subdir.mk>
