@@ -1,6 +1,8 @@
 %%PORTDOCS%%share/doc/cc65/samples/Makefile
 %%PORTDOCS%%share/doc/cc65/samples/README
+%%PORTDOCS%%share/doc/cc65/samples/ascii.c
 %%PORTDOCS%%share/doc/cc65/samples/fire.c
+%%PORTDOCS%%share/doc/cc65/samples/gunzip65.c
 %%PORTDOCS%%share/doc/cc65/samples/hello.c
 %%PORTDOCS%%share/doc/cc65/samples/mousedemo.c
 %%PORTDOCS%%share/doc/cc65/samples/nachtm.c
@@ -11,6 +13,7 @@
 %%PORTDOCS%%share/doc/cc65/samples/geos/apphello1.grc
 %%PORTDOCS%%share/doc/cc65/samples/geos/apphello2.grc
 %%PORTDOCS%%share/doc/cc65/samples/geos/apprmvprot.grc
+%%PORTDOCS%%share/doc/cc65/samples/geos/appvector-demo.grc
 %%PORTDOCS%%share/doc/cc65/samples/geos/appyesno.grc
 %%PORTDOCS%%share/doc/cc65/samples/geos/dialog.c
 %%PORTDOCS%%share/doc/cc65/samples/geos/filesel.c
@@ -22,6 +25,7 @@
 %%PORTDOCS%%share/doc/cc65/samples/geos/inittab.c
 %%PORTDOCS%%share/doc/cc65/samples/geos/menu.c
 %%PORTDOCS%%share/doc/cc65/samples/geos/rmvprot.c
+%%PORTDOCS%%share/doc/cc65/samples/geos/vector-demo.c
 %%PORTDOCS%%share/doc/cc65/samples/geos/yesno.c
 %%PORTDOCS%%share/doc/cc65/samples/geos/ca65-vlir/Makefile
 %%PORTDOCS%%share/doc/cc65/samples/geos/ca65-vlir/cvthead.grc
@@ -38,12 +42,22 @@ share/doc/cc65/BUGS
 share/doc/cc65/CREDITS
 share/doc/cc65/Makefile
 share/doc/cc65/Makefile.orig
+share/doc/cc65/announce.txt
+share/doc/cc65/apple2.sgml
 share/doc/cc65/ar65.sgml
+share/doc/cc65/atari.sgml
+share/doc/cc65/c128.sgml
+share/doc/cc65/c16.sgml
+share/doc/cc65/c64.sgml
 share/doc/cc65/ca65.sgml
+share/doc/cc65/ca65html.sgml
+share/doc/cc65/cbm610.sgml
 share/doc/cc65/cc65.sgml
 share/doc/cc65/cl65.sgml
+share/doc/cc65/co65.sgml
 share/doc/cc65/coding.sgml
 share/doc/cc65/compile.txt
+share/doc/cc65/da65.sgml
 share/doc/cc65/debugging.sgml
 share/doc/cc65/dio.sgml
 share/doc/cc65/funcref.sgml
@@ -55,32 +69,55 @@ share/doc/cc65/intro.sgml
 share/doc/cc65/ld65.sgml
 share/doc/cc65/library.sgml
 share/doc/cc65/newvers.txt
+share/doc/cc65/plus4.sgml
 share/doc/cc65/readme.1st
-share/doc/cc65/announce.txt
 %%PORTDOCS%%@dirrm share/doc/cc65
 bin/ar65
 bin/ca65
+bin/ca65html
 bin/cc65
 bin/cl65
 bin/da65
 bin/grc
 bin/ld65
 bin/od65
-bin/ca65html
 lib/cc65/asminc/_file.inc
 lib/cc65/asminc/_heap.inc
+lib/cc65/asminc/atari.inc
 lib/cc65/asminc/ctype.inc
 lib/cc65/asminc/em-error.inc
 lib/cc65/asminc/em-kernel.inc
 lib/cc65/asminc/errno.inc
 lib/cc65/asminc/fcntl.inc
+lib/cc65/asminc/joy-error.inc
+lib/cc65/asminc/joy-kernel.inc
 lib/cc65/asminc/modload.inc
 lib/cc65/asminc/o65.inc
 lib/cc65/asminc/rs232.inc
+lib/cc65/asminc/ser-error.inc
+lib/cc65/asminc/ser-kernel.inc
+lib/cc65/asminc/signal.inc
+lib/cc65/asminc/stdio.inc
 lib/cc65/asminc/tgi-error.inc
 lib/cc65/asminc/tgi-kernel.inc
 lib/cc65/asminc/tgi-mode.inc
+lib/cc65/asminc/utsname.inc
 lib/cc65/asminc/zeropage.inc
+lib/cc65/emd/a2.lc.emd
+lib/cc65/emd/c128-georam.emd
+lib/cc65/emd/c128-ram.emd
+lib/cc65/emd/c128-ramcart.emd
+lib/cc65/emd/c128-reu.emd
+lib/cc65/emd/c128-vdc.emd
+lib/cc65/emd/c16-ram.emd
+lib/cc65/emd/c64-georam.emd
+lib/cc65/emd/c64-ram.emd
+lib/cc65/emd/c64-ramcart.emd
+lib/cc65/emd/c64-reu.emd
+lib/cc65/emd/c64-vdc.emd
+lib/cc65/emd/cbm510-ram.emd
+lib/cc65/emd/cbm610-ram.emd
+lib/cc65/emd/geos-vdc.emd
 lib/cc65/include/6502.h
 lib/cc65/include/_6525.h
 lib/cc65/include/_6526.h
@@ -88,10 +125,12 @@ lib/cc65/include/_6545.h
 lib/cc65/include/_6551.h
 lib/cc65/include/_antic.h
 lib/cc65/include/_gtia.h
+lib/cc65/include/_heap.h
 lib/cc65/include/_pbi.h
 lib/cc65/include/_pia.h
 lib/cc65/include/_pokey.h
 lib/cc65/include/_sid.h
+lib/cc65/include/_ted.h
 lib/cc65/include/_vdc.h
 lib/cc65/include/_vic.h
 lib/cc65/include/_vic2.h
@@ -109,7 +148,6 @@ lib/cc65/include/cbm510.h
 lib/cc65/include/cbm610.h
 lib/cc65/include/conio.h
 lib/cc65/include/ctype.h
-lib/cc65/include/em/em-kernel.h
 lib/cc65/include/dbg.h
 lib/cc65/include/dio.h
 lib/cc65/include/em.h
@@ -122,21 +160,29 @@ lib/cc65/include/limits.h
 lib/cc65/include/locale.h
 lib/cc65/include/modload.h
 lib/cc65/include/mouse.h
+lib/cc65/include/nes.h
 lib/cc65/include/o65.h
+lib/cc65/include/peekpoke.h
 lib/cc65/include/pet.h
 lib/cc65/include/plus4.h
 lib/cc65/include/rs232.h
+lib/cc65/include/serial.h
 lib/cc65/include/setjmp.h
+lib/cc65/include/signal.h
 lib/cc65/include/stdarg.h
 lib/cc65/include/stdbool.h
 lib/cc65/include/stddef.h
+lib/cc65/include/stdint.h
 lib/cc65/include/stdio.h
 lib/cc65/include/stdlib.h
 lib/cc65/include/string.h
+lib/cc65/include/supervision.h
 lib/cc65/include/tgi.h
 lib/cc65/include/time.h
+lib/cc65/include/unistd.h
 lib/cc65/include/vic20.h
 lib/cc65/include/zlib.h
+lib/cc65/include/em/em-kernel.h
 lib/cc65/include/geos/gconst.h
 lib/cc65/include/geos/gdisk.h
 lib/cc65/include/geos/gdlgbox.h
@@ -149,10 +195,15 @@ lib/cc65/include/geos/gsprite.h
 lib/cc65/include/geos/gstruct.h
 lib/cc65/include/geos/gsym.h
 lib/cc65/include/geos/gsys.h
+lib/cc65/include/joystick/joy-kernel.h
+lib/cc65/include/sys/types.h
+lib/cc65/include/sys/utsname.h
 lib/cc65/include/tgi/tgi-error.h
 lib/cc65/include/tgi/tgi-kernel.h
 lib/cc65/include/tgi/tgi-mode.h
 @dirrm lib/cc65/include/tgi
+@dirrm lib/cc65/include/sys
+@dirrm lib/cc65/include/joystick
 @dirrm lib/cc65/include/geos
 @dirrm lib/cc65/include/em
 @dirrm lib/cc65/include
@@ -174,21 +225,22 @@ lib/cc65/lib/cbm610.lib
 lib/cc65/lib/cbm610.o
 lib/cc65/lib/geos.lib
 lib/cc65/lib/geos.o
+lib/cc65/lib/nes.lib
+lib/cc65/lib/nes.o
 lib/cc65/lib/pet.lib
 lib/cc65/lib/pet.o
 lib/cc65/lib/plus4.lib
 lib/cc65/lib/plus4.o
+lib/cc65/lib/supervision.lib
+lib/cc65/lib/supervision.o
 lib/cc65/lib/vic20.lib
 lib/cc65/lib/vic20.o
-lib/cc65/emd/c128-georam.emd
-lib/cc65/emd/c128-ram.emd
-lib/cc65/emd/c128-reu.emd
-lib/cc65/emd/c64-georam.emd
-lib/cc65/emd/c64-ram.emd
-lib/cc65/emd/c64-reu.emd
-lib/cc65/emd/cbm510-ram.emd
-lib/cc65/emd/cbm610-ram.emd
+lib/cc65/tgi/a2.hi.tgi
+lib/cc65/tgi/a2.lo.tgi
+lib/cc65/tgi/c128-vdc.tgi
+lib/cc65/tgi/c128-vdc2.tgi
 lib/cc65/tgi/c64-hi.tgi
+lib/cc65/tgi/geos-tgi.tgi
 @dirrm lib/cc65/emd
 @dirrm lib/cc65/lib
 @dirrm lib/cc65/tgi
