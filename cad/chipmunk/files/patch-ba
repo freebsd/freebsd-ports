@@ -1,0 +1,13 @@
+--- psys/include/p2c/p2c.h.orig	Tue Jan  7 15:14:37 2003
++++ psys/include/p2c/p2c.h	Tue Jan  7 15:16:04 2003
+@@ -85,10 +85,6 @@
+ #include <unistd.h>
+ #endif
+ 
+-#if (!defined(BSD) && !defined(__sgi) && !defined(__alpha__)) 
+-# define log1p(X) log(1+(X))
+-#endif
+-
+ #if defined(rs6000) || defined(ultrix)
+ extern char *strdup();
+ extern char *strpbrk();

@@ -18,15 +18,5 @@ to Actel format with these tools (example).
 
 These tools were originally written for HP 200 Series ("Chipmunk")
 computers, and were later ported to Unix and the X Windows System.
-Many people contributed to the design and porting of these tools; we
-have made an attempt to credit authors in each package, and regret any
-omisions.  Carver Mead provided the inspiration, initiative, and
-financial support for many of the tools in this package; in several
-cases (wol and wolcomp) he wrote the original prototypes as well. The
-Systems Development Foundation, Hewlett Packard, and the Office of
-Naval Research were the main sources of funding for these tools. These
-tools are distributed under a license very similar to the GNU license;
-the minor changes protect Caltech from liability. Each tar file
-contains this license.
 
 WWW: http://www.cs.berkeley.edu/~lazzaro/chipmunk/
