@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	f-prot
-PORTVERSION=	4.4.1
+PORTVERSION=	4.4.2
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.i-scream.org/pub/ftp.f-prot.com/pub/bsd/ \
 		http://www.i-scream.org/pub/ftp.f-prot.com/pub/bsd/
@@ -39,6 +39,7 @@ do-install:
 
 	${INSTALL_SCRIPT} ${WRKSRC}/f-prot.sh ${PREFIX}/bin/f-prot
 	${INSTALL_MAN} ${WRKSRC}/man_pages/f-prot.1 ${MANPREFIX}/man/man1/
+	${CHMOD} 755 ${PREFIX}/f-prot/tools/check-updates.pl
 
 post-install:
 .if !defined(NOPORTDOCS)

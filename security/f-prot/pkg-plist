@@ -1,7 +1,6 @@
 bin/f-prot
 f-prot/CHANGES
 f-prot/ENGLISH.TX0
-f-prot/INSTALL.bsd_ws
 f-prot/LICENSE
 f-prot/README
 f-prot/f-prot
@@ -13,7 +12,6 @@ f-prot/tools/check-updates.pl
 %%PORTDOCS%%%%DOCSDIR%%/inf_eicar.gif
 %%PORTDOCS%%%%DOCSDIR%%/info_options.html
 %%PORTDOCS%%%%DOCSDIR%%/inst_pro.html
-%%PORTDOCS%%%%DOCSDIR%%/license.html
 %%PORTDOCS%%%%DOCSDIR%%/loc_files.html
 %%PORTDOCS%%%%DOCSDIR%%/macro_scanning_options.html
 %%PORTDOCS%%%%DOCSDIR%%/main_feat.html
