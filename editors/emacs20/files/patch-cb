@@ -1,9 +1,13 @@
 --- src/s/freebsd.h.orig	Tue May  2 21:29:10 2000
-+++ src/s/freebsd.h	Sun Sep 23 05:30:49 2001
-@@ -56,9 +56,16 @@
++++ src/s/freebsd.h	Sun Jan 12 01:06:02 2003
+@@ -56,9 +56,20 @@
  #ifdef __ELF__
  
  #define LD_SWITCH_SYSTEM
++
++#if __FreeBSD_version >= 500000
++#define LD_SWITCH_SYSTEM_TEMACS -znocombreloc
++#endif
 +
 +#ifdef __alpha__
 +#define START_FILES pre-crt0.o /usr/lib/crt1.o /usr/lib/crtbegin.o
