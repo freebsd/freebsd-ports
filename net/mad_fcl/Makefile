@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mad_fcl
-PORTVERSION=	0.8
+PORTVERSION=	1.0
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.atm.tut.fi/mad/download/
 DISTNAME=	${PORTNAME}_v${PORTVERSION}_src
