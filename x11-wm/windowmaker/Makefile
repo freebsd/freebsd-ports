@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	windowmaker
-PORTVERSION=	0.65.1
-PORTREVISION=	1
+PORTVERSION=	0.70.0
 CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	${MASTER_SITE_WINDOWMAKER}
 MASTER_SITE_SUBDIR=	source/release
@@ -19,7 +18,6 @@ BUILD_DEPENDS=	msgfmt-new:${PORTSDIR}/devel/gettext-devel
 LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		PropList.2:${PORTSDIR}/devel/libPropList \
 		intl.1:${PORTSDIR}/devel/gettext \
 		Hermes.1:${PORTSDIR}/graphics/Hermes
 RUN_DEPENDS=	${X11BASE}/share/WindowMaker/Themes/Checker.themed/style:${PORTSDIR}/graphics/wmicons
@@ -29,8 +27,8 @@ USE_PERL5=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 WANT_GNOME=	yes
-USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	X11BASE=${X11BASE} \
 		LIBS="-L${LOCALBASE}/lib -lintl" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
@@ -44,10 +42,11 @@ CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/include/X11/pixmaps \
 		--with-appspath="${PREFIX}/GNUstep/Apps" \
 		--enable-hermes \
 		--disable-debug
+CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 MANLANG=	"" sk
 MAN1=		geticonset.1x getstyle.1x seticons.1x setstyle.1x wdwrite.1x \
-		wmaker.1x wmsetbg.1x wsetfont.1x wxcopy.1x wxpaste.1x
+		wcopy.1x wmaker.1x wmsetbg.1x wsetfont.1x wxcopy.1x wxpaste.1x
 
 .include <bsd.port.pre.mk>
 
@@ -72,6 +71,8 @@ post-patch:
 
 post-install:
 	@${MKDIR} ${PREFIX}/share/WindowMaker/Sounds
+# 	XXX
+	@${INSTALL_MAN} ${PREFIX}/man/man1/wcopy.1x ${PREFIX}/man/sk/man1
 
 update-LINGUAS: extract
 	cd ${WRKSRC}/po && \
