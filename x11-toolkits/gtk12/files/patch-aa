@@ -1,18 +1,15 @@
---- Makefile.in.orig	Mon Jan  4 17:55:18 1999
-+++ Makefile.in	Tue Jan  5 07:34:01 1999
-@@ -118,9 +118,9 @@
- xinput_progs = @xinput_progs@
- 
+--- Makefile.in.orig	Mon Jan 18 08:16:41 1999
++++ Makefile.in	Thu Jan 21 04:51:44 1999
+@@ -122,7 +122,7 @@
  SRC_SUBDIRS = gdk gtk
--SUBDIRS = po $(SRC_SUBDIRS) docs
-+SUBDIRS = po $(SRC_SUBDIRS)
+ SUBDIRS = po $(SRC_SUBDIRS) docs
  
 -bin_SCRIPTS = gtk-config
 +bin_SCRIPTS = gtk11d-config
  
  EXTRA_DIST =	\
  	HACKING		\
-@@ -207,7 +207,7 @@
+@@ -209,7 +209,7 @@
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
  CONFIG_HEADER = config.h
@@ -21,7 +18,7 @@
  SCRIPTS =  $(bin_SCRIPTS)
  
  DATA =  $(m4data_DATA)
-@@ -261,7 +261,10 @@
+@@ -263,7 +263,10 @@
  	-rm -f config.h
  
  maintainer-clean-hdr:
@@ -33,7 +30,7 @@
  	cd $(top_builddir) && CONFIG_FILES=$@ CONFIG_HEADERS= ./config.status
  
  install-binSCRIPTS: $(bin_SCRIPTS)
-@@ -283,25 +286,6 @@
+@@ -285,25 +288,6 @@
  	  rm -f $(DESTDIR)$(bindir)/`echo $$p|sed '$(transform)'`; \
  	done
  
@@ -59,7 +56,7 @@
  # This directory's subdirectories are mostly independent; you can cd
  # into them and run `make' without going through this Makefile.
  # To change the values of `make' variables: instead of editing Makefiles,
-@@ -441,21 +425,19 @@
+@@ -443,21 +427,19 @@
  all-recursive-am: config.h
  	$(MAKE) all-recursive
  
@@ -85,7 +82,7 @@
  	@:
  
  uninstall: uninstall-recursive uninstall-am
-@@ -503,15 +485,15 @@
+@@ -505,15 +487,15 @@
  	-rm -f config.status
  
  .PHONY: mostlyclean-hdr distclean-hdr clean-hdr maintainer-clean-hdr \
@@ -104,9 +101,20 @@
  uninstall-am install-exec install-data install uninstall all \
  installdirs mostlyclean-generic distclean-generic clean-generic \
  maintainer-clean-generic clean mostlyclean distclean maintainer-clean
---- gdk/Makefile.in.orig	Mon Jan  4 17:55:21 1999
-+++ gdk/Makefile.in	Tue Jan  5 07:34:01 1999
-@@ -119,7 +119,7 @@
+--- docs/Makefile.in.orig	Thu Jan 21 04:51:49 1999
++++ docs/Makefile.in	Thu Jan 21 04:52:04 1999
+@@ -98,7 +98,7 @@
+ LT_RELEASE = @LT_RELEASE@
+ LT_REVISION = @LT_REVISION@
+ MAINT = @MAINT@
+-MAKEINFO = @MAKEINFO@
++MAKEINFO = @MAKEINFO@ --no-split
+ MKINSTALLDIRS = @MKINSTALLDIRS@
+ NM = @NM@
+ PACKAGE = @PACKAGE@
+--- gdk/Makefile.in.orig	Mon Jan 18 08:16:45 1999
++++ gdk/Makefile.in	Thu Jan 21 02:41:48 1999
+@@ -121,7 +121,7 @@
  
  gdkincludedir = $(includedir)/gdk
  
@@ -115,7 +123,7 @@
  
  INCLUDES = \
  	-DG_LOG_DOMAIN=\"Gdk\"	\
-@@ -130,7 +130,7 @@
+@@ -132,7 +132,7 @@
  	@GLIB_CFLAGS@		\
  	@x_cflags@ 
  
@@ -124,18 +132,18 @@
  	gdk.c		\
  	gdkcc.c		\
  	gdkcolor.c	\
-@@ -179,8 +179,8 @@
+@@ -181,8 +181,8 @@
  	@GLIB_LIBS@	\
  	-lm
  
 -libgdk_la_LDFLAGS = \
 -	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) -release $(LT_RELEASE) \
 +libgdk11d_la_LDFLAGS = \
-+	-version-info 1:2:0 \
++	-version-info 1:3:0 \
           @GLIB_LIBS@	\
           @x_ldflags@	\
           @x_libs@	\
-@@ -207,8 +207,8 @@
+@@ -209,8 +209,8 @@
  X_LIBS = @X_LIBS@
  X_EXTRA_LIBS = @X_EXTRA_LIBS@
  X_PRE_LIBS = @X_PRE_LIBS@
@@ -146,7 +154,7 @@
  gdkdraw.lo gdkevents.lo gdkfont.lo gdkgc.lo gdkglobals.lo gdkim.lo \
  gdkimage.lo gdkinput.lo gdkpixmap.lo gdkproperty.lo gdkrgb.lo \
  gdkrectangle.lo gdkregion.lo gdkselection.lo gdkvisual.lo gdkwindow.lo \
-@@ -231,8 +231,8 @@
+@@ -233,8 +233,8 @@
  
  TAR = tar
  GZIP = --best
@@ -157,7 +165,7 @@
  
  all: Makefile $(LTLIBRARIES) $(PROGRAMS) $(HEADERS)
  
-@@ -309,8 +309,8 @@
+@@ -311,8 +311,8 @@
  
  maintainer-clean-libtool:
  
@@ -168,9 +176,9 @@
  
  mostlyclean-binPROGRAMS:
  
---- gtk/Makefile.in.orig	Mon Jan  4 17:55:25 1999
-+++ gtk/Makefile.in	Tue Jan  5 07:37:26 1999
-@@ -121,7 +121,7 @@
+--- gtk/Makefile.in.orig	Mon Jan 18 08:16:47 1999
++++ gtk/Makefile.in	Thu Jan 21 02:41:48 1999
+@@ -123,7 +123,7 @@
  
  gtkincludedir = $(includedir)/gtk
  
@@ -179,7 +187,7 @@
  
  static_SOURCES = \
  	gtkaccelgroup.c		\
-@@ -231,7 +231,7 @@
+@@ -233,7 +233,7 @@
  	fnmatch.c		\
  	fnmatch.h
  
@@ -188,7 +196,7 @@
  	$(static_SOURCES)	\
  	gtkmarshal.c
  
-@@ -369,9 +369,8 @@
+@@ -371,9 +371,8 @@
  	../gdk/gdktypes.h \
  	../gdk/gdkrgb.h
  
@@ -196,11 +204,11 @@
 -	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)	\
 -	-release $(LT_RELEASE) 					\
 +libgtk11d_la_LDFLAGS = \
-+	-version-info 1:2:0 \
++	-version-info 1:3:0 \
  	@GLIB_LIBS@ 						\
  	@x_ldflags@						\
  	@x_libs@ 						\
-@@ -424,12 +423,12 @@
+@@ -429,12 +428,12 @@
  # testthreads
  
  DEPS =	\
@@ -217,7 +225,7 @@
  	@x_ldflags@					\
  	@x_libs@					\
  	@GLIB_LIBS@                                     \
-@@ -464,8 +463,8 @@
+@@ -469,8 +468,8 @@
  X_LIBS = @X_LIBS@
  X_EXTRA_LIBS = @X_EXTRA_LIBS@
  X_PRE_LIBS = @X_PRE_LIBS@
@@ -228,7 +236,7 @@
  gtkalignment.lo gtkarg.lo gtkarrow.lo gtkaspectframe.lo gtkbin.lo \
  gtkbindings.lo gtkbbox.lo gtkbox.lo gtkbutton.lo gtkcalendar.lo \
  gtkcheckbutton.lo gtkcheckmenuitem.lo gtkclist.lo gtkcolorsel.lo \
-@@ -521,10 +520,10 @@
+@@ -526,10 +525,10 @@
  
  TAR = tar
  GZIP = --best
@@ -242,7 +250,7 @@
  
  .SUFFIXES:
  .SUFFIXES: .S .c .lo .o .s
-@@ -601,8 +600,8 @@
+@@ -606,8 +605,8 @@
  
  maintainer-clean-libtool:
  
@@ -253,8 +261,8 @@
  
  mostlyclean-noinstPROGRAMS:
  
---- po/Makefile.in.in.orig	Mon Jan  4 17:54:31 1999
-+++ po/Makefile.in.in	Tue Jan  5 07:34:01 1999
+--- po/Makefile.in.in.orig	Mon Jan 18 07:58:44 1999
++++ po/Makefile.in.in	Thu Jan 21 02:41:48 1999
 @@ -18,7 +18,7 @@
  
  prefix = @prefix@
