@@ -2,7 +2,7 @@
 # Version required:	0.2
 # Date created:		28 June 1995
 # Whom:			janek@gaja.ipan.lublin.pl
-# $Id: Makefile,v 1.7 1998/01/08 18:52:04 fenner Exp $
+# $Id: Makefile,v 1.8 1998/02/01 23:23:51 fenner Exp $
 #
 
 DISTNAME=	cpm-0.2
@@ -13,5 +13,7 @@ MASTER_SITES=	ftp://sunsite.unc.edu/pub/Linux/distributions/slackware/source/ext
 # mirrored.
 
 MAINTAINER=	ports@FreeBSD.org
+
+BROKEN=		fetch
 
 .include <bsd.port.mk>
