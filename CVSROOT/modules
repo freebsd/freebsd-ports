@@ -2572,6 +2572,7 @@ isilo		ports/palm/isilo
 iso		src/share/doc/iso
 iso12083	ports/textproc/iso12083
 iso8879		ports/textproc/iso8879
+isoqlog		ports/mail/isoqlog
 ispell		ports/textproc/ispell
 isreal		ports/graphics/isreal
 isync		ports/mail/isync
