@@ -1,0 +1,16 @@
+--- doc/Makefile.in.orig	Fri Feb  8 06:01:17 2002
++++ doc/Makefile.in	Tue May 14 14:09:24 2002
+@@ -63,11 +63,11 @@
+ RANLIB = @RANLIB@
+ VERSION = @VERSION@
+ 
+-docdir = $(prefix)/doc
++docdir = $(prefix)/share/doc/cflow2vcg
+ doc_DATA = cflow2vcg.html cflow2vcg.jpg cflow2vcg_ext.jpg cflow2vcg_int.jpg            cflow2vcg.cflow cflow2vcg.vcg            cflow2vcg.rtf            cflow2vcg.txt
+ 
+ 
+-man_MANS = cflow2vcg.1
++man_MANS = 
+ 
+ EXTRA_DIST = cflow2vcg.sgm cflow2vcg.dsl              cflow2vcg.refentry.sgm cflow2vcg_man.sgm              $(doc_DATA)
+ 
