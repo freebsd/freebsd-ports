@@ -8,8 +8,7 @@
 PORTNAME=	indexme
 PORTVERSION=	0.1
 CATEGORIES=	www
-MASTER_SITES=	ftp://ukug.uk.freebsd.org/pub/lord_cj/	\
-		http://kyb.homepage.com/perl/
+MASTER_SITES=	ftp://users.uk.freebsd.org/pub/lord_cj/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	calle.madestrand@norrgarden.se
