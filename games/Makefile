@@ -108,6 +108,7 @@
     SUBDIR += hex
     SUBDIR += hlserver-cs
     SUBDIR += hlserver-dod
+    SUBDIR += hlserver-fa
     SUBDIR += hlserver-flf
     SUBDIR += icbm3d
     SUBDIR += icebreaker
