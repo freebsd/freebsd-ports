@@ -1,0 +1,14 @@
+--- configure.orig	Sun Jun 20 13:45:58 2004
++++ configure	Wed Aug 11 19:50:00 2004
+@@ -157,9 +157,9 @@
+ 
+ 
+ 
+-tagnames=`echo "$tagnames,CXX" | sed 's/^,//'`
++#tagnames=`echo "$tagnames,CXX" | sed 's/^,//'`
+ 
+-tagnames=`echo "$tagnames,F77" | sed 's/^,//'`
++#tagnames=`echo "$tagnames,F77" | sed 's/^,//'`
+ 
+ if expr a : '\(a\)' >/dev/null 2>&1; then
+   as_expr=expr

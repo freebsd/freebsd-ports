@@ -1,7 +1,6 @@
 bin/uprecords
 etc/uptimed.conf-dist
 lib/libuptimed.a
-lib/libuptimed.la
 lib/libuptimed.so
 lib/libuptimed.so.0
 sbin/uptimed

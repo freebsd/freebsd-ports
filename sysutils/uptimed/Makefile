@@ -5,12 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	uptimed
-PORTVERSION=	0.3.1
-PORTREVISION=	1
+PORTVERSION=	0.3.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://unixcode.org/downloads/uptimed/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=     . arved
+		http://people.fruitsalad.org/tap/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	andy@athame.co.uk
@@ -18,8 +16,8 @@ COMMENT=	Rob Kaper's uptime daemon
 
 PREFIX=		${LOCALBASE}
 
+USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${LOCALBASE}
 
