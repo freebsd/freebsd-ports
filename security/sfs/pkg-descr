@@ -1,0 +1,12 @@
+WWW: http://www.fs.net/
+
+SFS (Self-certifying File System) is a secure, global network file
+system. SFS names file systems by public keys. Every remote file
+server is mounted on a self-certifying pathname--a directory of the
+form /sfs/LOCATION:HOSTID, where LOCATION is a DNS hostname and
+HOSTID is a cryptographic hash of a public key. This naming scheme
+allows for completely decentralized control--anyone can create a
+file server, and any user can access any file server from any client.
+Various key management schemes can be built on top of SFS using
+symbolic links to map human-readable names to self-certifying
+pathnames.
