@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	office
 DISTFILES=      ${DISTNAME}.tar.gz xmdfix.gz
 
-MAINTAINER=	mi@aldan.ziplink.net
+MAINTAINER=	mi@aldan.algebra.com
 
 NO_CDROM=	"Don't sell for profit"
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
