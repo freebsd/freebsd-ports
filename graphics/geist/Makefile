@@ -7,7 +7,7 @@
 
 PORTNAME=	geist
 PORTVERSION=	0.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.linuxbrit.co.uk/downloads/
 
@@ -20,9 +20,14 @@ LIB_DEPENDS=	Imlib2.2:${PORTSDIR}/graphics/imlib2 \
 XML_CONFIG?=	${LOCALBASE}/bin/xml2-config
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
 USE_GNOME=	gtk12
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 		LIBS="-L${X11BASE}/lib" \
 		XML_CONFIG="${XML_CONFIG}"
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},' \
+		${WRKSRC}/src/test.xml
 
 .include <bsd.port.mk>
