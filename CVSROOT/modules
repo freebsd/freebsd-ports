@@ -8380,6 +8380,7 @@ pear-File_Fstab	ports/sysutils/pear-File_Fstab
 pear-File_Gettext	ports/sysutils/pear-File_Gettext
 pear-File_HtAccess	ports/security/pear-File_HtAccess
 pear-File_Passwd	ports/security/pear-File_Passwd
+pear-File_SMBPasswd	ports/security/pear-File_SMBPasswd
 pear-FSM	ports/devel/pear-FSM
 pear-HTML_BBCodeParser	ports/devel/pear-HTML_BBCodeParser
 pear-HTML_Common	ports/devel/pear-HTML_Common
