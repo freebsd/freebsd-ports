@@ -3,7 +3,7 @@
 # Date created:				18 June 1997
 # Whom:					koshy@india.hp.com
 #
-# $Id: Makefile,v 1.8 1998/12/01 08:38:55 asami Exp $
+# $Id: Makefile,v 1.9 1999/01/13 04:00:07 scrappy Exp $
 #
 
 DISTNAME=	MHonArc2.3.3
@@ -23,10 +23,6 @@ USE_PERL5=	Yes
 NO_BUILD=	Yes
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 300003
-BROKEN=		installs in /usr/local/local/lib/perl5
-.endif
 
 do-install:
 	cd ${WRKSRC} && ${PERL5} install.me -prefix ${PREFIX} -batch
