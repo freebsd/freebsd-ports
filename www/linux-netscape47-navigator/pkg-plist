@@ -1,4 +1,3 @@
-@cwd /usr/local
 bin/netscape
 lib/netscape/LICENSE
 lib/netscape/README
@@ -116,6 +115,3 @@ lib/netscape/nethelp/netscape/shared/Contents.htm
 lib/netscape/nethelp/netscape/shared/NetHelp1.css
 lib/netscape/spell/netscape.dic
 lib/netscape/spell/pen4s324.dat
-@cwd /usr/X11R6
-lib/X11/nls/C
-lib/X11/nls/nls.dir
