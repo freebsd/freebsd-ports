@@ -16,7 +16,8 @@ MAINTAINER=	lance@evitel.net
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-include-path="${PREFIX}"
+CONFIGURE_ARGS=	--with-include-path="${LOCALBASE}/include/" \
+		--with-lib-path="${LOCALBASE}/lib/"
 
 MAN1=		radgrep.1 radlast.1 raduse.1 radwho.1
 MAN8=		builddbm.8 radctl.8 radiusd.8 radping.8 radzap.8
