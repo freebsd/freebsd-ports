@@ -3348,6 +3348,7 @@ lastlogin	src/usr.sbin/lastlogin
 latex		ports/print/latex
 latex2html	ports/textproc/latex2html
 latex2rtf	ports/print/latex2rtf
+latex2slides	ports/print/latex2slides
 latte		ports/textproc/latte
 launch.app	ports/x11/launch.app
 lavaps		ports/sysutils/lavaps
