@@ -1,0 +1,8 @@
+--- Makefile.orig	Thu Aug 20 01:47:03 1998
++++ Makefile	Wed Nov  4 15:56:48 1998
+@@ -41,4 +41,3 @@
+ # below for an entry for your system.
+-CC=gcc
+-CFLAGS=-O -Wall
++CFLAGS+=-Wall
+ LDFLAGS=-s
