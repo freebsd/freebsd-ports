@@ -1,20 +1,22 @@
---- plugins/uploadWizard/Makefile.in.old	Sat Jan 31 01:09:09 2004
-+++ plugins/uploadWizard/Makefile.in	Sat Jan 31 01:14:46 2004
-@@ -179,7 +179,7 @@
+--- plugins/uploadWizard/Makefile.in.orig	Tue Mar 30 22:42:31 2004
++++ plugins/uploadWizard/Makefile.in	Tue Mar 30 22:43:33 2004
+@@ -267,8 +267,8 @@
+ 			localdriver.c
  
  
- uploadWizard_la_LDFLAGS = -avoid-version -module
--uploadWizard_la_LIBADD = $(NEONOBJS) 
-+uploadWizard_la_LIBADD = 
+-uploadWizard_la_LDFLAGS = -avoid-version -module $(NEON_CFLAGS)
+-uploadWizard_la_LIBADD = $(NEONOBJS) $(NEON_LIBS) 
++uploadWizard_la_LDFLAGS = -avoid-version -module
++uploadWizard_la_LIBADD =  
  
  config_h = $(top_builddir)/config.h
  obj_ext = o
-@@ -191,7 +191,7 @@
+@@ -279,7 +279,7 @@
+ CONFIG_CLEAN_FILES =
+ LTLIBRARIES = $(plugins_exec_LTLIBRARIES)
  
- DEFS = @DEFS@ -I. -I$(srcdir) -I../..
- LIBS = @LIBS@
--uploadWizard_la_DEPENDENCIES =  $(neon_dir)/*.lo
-+uploadWizard_la_DEPENDENCIES =  
- @HAVE_FNMATCH_FALSE@uploadWizard_la_OBJECTS =  netrc.lo rpmatch.lo \
- @HAVE_FNMATCH_FALSE@fnmatch.lo common.lo davdriver.lo fileset.lo ftp.lo \
- @HAVE_FNMATCH_FALSE@ftpdriver.lo rcfile.lo rshdriver.lo sitefiles.lo \
+-uploadWizard_la_DEPENDENCIES = $(neon_dir)/*.lo
++uploadWizard_la_DEPENDENCIES = 
+ am__uploadWizard_la_SOURCES_DIST = basename.h netrc.c netrc.h rpmatch.c \
+ 	fnmatch.c fnmatch.h common.c common.h davdriver.c fileset.c \
+ 	fileset.h frontend.h ftp.c ftp.h ftpdriver.c i18n.h protocol.h \
