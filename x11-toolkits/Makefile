@@ -78,6 +78,7 @@
     SUBDIR += qt145
     SUBDIR += qt22
     SUBDIR += qt22-static
+    SUBDIR += qt23
     SUBDIR += rep-gtk
     SUBDIR += ruby-fltk
     SUBDIR += ruby-fox
