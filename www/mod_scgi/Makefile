@@ -16,9 +16,8 @@ MAINTAINER=	dryice@liu.com.cn
 COMMENT=	Apache module that implements the client side of the SCGI protocol
 
 USE_APACHE=	yes
+USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/${APACHE_DIR}
-
-BROKEN=		"Does not build"
 
 .include <bsd.port.pre.mk>
 .if exists(${LOCALBASE}/include/apache2/apr.h)
@@ -32,6 +31,9 @@ PLIST_SUB=	APACHE_DIR=apache2
 APACHE_DIR=	apache1
 PLIST_SUB=	APACHE_DIR=apache
 .endif
+
+post-patch:
+	${REINPLACE_CMD} -E -e 's,apxs2?,${APXS},g' ${WRKSRC}/Makefile
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
