@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	cdpd
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.lexa.ru/pub/domestic/snar/
 
