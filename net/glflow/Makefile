@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	glflow
-PORTVERSION=	0.0.4
+PORTVERSION=	0.0.5
 PORTEPOCH=	1
 CATEGORIES=	net security
 MASTER_SITES=	http://night.rdslink.ro/dudu/glflow/
@@ -18,6 +18,9 @@ COMMENT=	A NetFlow tool for detecting DoS attacks
 PLIST_FILES=	bin/glflow
 PORTDOCS=	README
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-debug
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/glflow ${PREFIX}/bin
