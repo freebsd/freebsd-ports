@@ -66,7 +66,7 @@ post-install:
 .endif
 
 .if defined(GD_FONTS)
-BUILD_DEPENDS=	perl:${PORTSDIR}/lang/perl5
+USE_PERL5_BUILD=yes
 SCRIPTS_ENV+=	GD_FONTS="${GD_FONTS}"
 .endif
 
