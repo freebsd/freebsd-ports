@@ -21,7 +21,6 @@ BUILD_DEPENDS=		rpm:${PORTSDIR}/misc/rpm
 
 ONLY_FOR_ARCHS=		alpha i386
 DIST_SUBDIR=		rpm
-PREFIX=			/compat/linux
 EXTRACT_ONLY=
 NO_BUILD=		yes
 NO_FILTER_SHLIBS=	yes
@@ -47,7 +46,7 @@ UPDDIR=			updates/6.1/${MACHINE_ARCH}
 .if (${MACHINE_ARCH} == "i386")
 LIBC5_COMPAT=		ld.so-1.9.5-11.i386.rpm libc-5.3.12-31.i386.rpm
 RPM_BINUTILS=		binutils-2.9.1.0.23-6.i386.rpm
-RPM_GLIB=		glib-1.2.5-1.i386.rpm
+RPM_GLIB=
 RPM_GLIBC=		glibc-2.1.2-11.i386.rpm
 RPM_LDCONFIG=		ldconfig-1.9.5-15.i386.rpm
 RPM_RPM=		rpm-3.0.3-2.i386.rpm
@@ -97,7 +96,7 @@ RPM_SET3=		setserial-2.15-2.${MACHINE_ARCH}.rpm \
 			xpm-3.4k-1.${MACHINE_ARCH}.rpm
 
 DBPATH=			/var/lib/rpm
-RPMFLAGS=		--ignoreos --root ${PREFIX} --dbpath ${DBPATH} \
+RPMFLAGS=		--ignoreos --root ${LINUXBASE} --dbpath ${DBPATH} \
 			--nodeps --replacepkgs
 RPMDIR=			${DISTDIR}/${DIST_SUBDIR}
 
@@ -133,19 +132,19 @@ pre-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 do-install:
-	@${MKDIR} ${PREFIX}/${DBPATH}
-	@${MKDIR} ${PREFIX}/var/tmp
-	@rpm --initdb --root ${PREFIX} --dbpath ${DBPATH}
+	@${MKDIR} ${LINUXBASE}/${DBPATH}
+	@${MKDIR} ${LINUXBASE}/var/tmp
+	@rpm --initdb --root ${LINUXBASE} --dbpath ${DBPATH}
 #
 # Make sure we have a /dev/null in the chrooted environment.
 #
-	@${MKDIR} ${PREFIX}/dev
-	@${RM} -f ${PREFIX}/dev/null
-	@mknod ${PREFIX}/dev/null c 2 2
-	@${CHMOD} 666 ${PREFIX}/dev/null
+	@${MKDIR} ${LINUXBASE}/dev
+	@${RM} -f ${LINUXBASE}/dev/null
+	@mknod ${LINUXBASE}/dev/null c 2 2
+	@${CHMOD} 666 ${LINUXBASE}/dev/null
 .if defined(NEEDLOADLINK)
-	@${MKDIR} ${PREFIX}/compat
-	@${LN} -s / ${PREFIX}/compat/linux
+	@${MKDIR} ${LINUXBASE}/compat
+	@${LN} -s / ${LINUXBASE}/compat/linux
 .endif
 #
 # Install all packages. Ignore dependencies just
@@ -157,16 +156,16 @@ do-install:
 	done
 	@${ECHO} ${RPM_LDCONFIG}
 	@rpm -U ${RPMFLAGS} --noscripts ${RPMDIR}/${RPM_LDCONFIG}
-	@brandelf -t Linux ${PREFIX}/sbin/ldconfig
-	@${PREFIX}/sbin/ldconfig
-	@${TOUCH} ${PREFIX}/etc/ld.so.conf
+	@brandelf -t Linux ${LINUXBASE}/sbin/ldconfig
+	@${LINUXBASE}/sbin/ldconfig
+	@${TOUCH} ${LINUXBASE}/etc/ld.so.conf
 	@for R in ${RPM_SET2}; do \
 		${ECHO} $$R; \
 		rpm -U ${RPMFLAGS} ${RPMDIR}/$$R; \
 	done
 	@${ECHO} ${RPM_RPM}
 	@rpm -U ${RPMFLAGS} --noscripts ${RPMDIR}/${RPM_RPM}
-	@brandelf -t Linux ${PREFIX}/bin/rpm
+	@brandelf -t Linux ${LINUXBASE}/bin/rpm
 	@for R in ${RPM_SET3}; do \
 		${ECHO} $$R; \
 		rpm -U ${RPMFLAGS} ${RPMDIR}/$$R; \
@@ -181,20 +180,20 @@ do-install:
 #
 # Install yp.conf as a hint to NIS users
 #
-	${INSTALL} ${COPY} -m 644 ${FILESDIR}/yp.conf ${PREFIX}/etc
+	${INSTALL} ${COPY} -m 644 ${FILESDIR}/yp.conf ${LINUXBASE}/etc
 #
 # Finish
 #
 .if defined(NEEDLOADLINK)
-	@${RM} -rf ${PREFIX}/compat
+	@${RM} -rf ${LINUXBASE}/compat
 .endif
 	@for D in ${REMOVE_DIRS}; do \
-		${RM} -rf ${PREFIX}/$$D; \
+		${RM} -rf ${LINUXBASE}/$$D; \
 	done
 	@for F in ${REMOVE_FILES}; do \
-		${RM} ${PREFIX}/$$F; \
+		${RM} ${LINUXBASE}/$$F; \
 	done
-	@${LN} -s /var/tmp ${PREFIX}/usr/tmp
+	@${LN} -s /var/tmp ${LINUXBASE}/usr/tmp
 
 post-install:
 	@${ECHO} ''
