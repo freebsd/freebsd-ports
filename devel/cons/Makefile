@@ -1,12 +1,12 @@
 # New ports collection makefile for:	cons
-# Version required:     1.6a3
+# Version required:     1.6b1
 # Date created:		11 December 1998
 # Whom:			rv@fore.com
 #
 # $FreeBSD$
 #
 
-DISTNAME=	cons-1.6a3
+DISTNAME=	cons-1.6b1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.dsmit.com/cons/ \
 		http://www.telerama.com/~bgarcia/cons/
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/MD5.pm:${PORTSDIR}/securi
 
 USE_PERL5=	yes
 NO_BUILD=	yes
-PLIST_SUB=	CONS_VER=1.6a3
+PLIST_SUB=	CONS_VER=1.6b1
 
 MAN1=		cons.1
 DOCS=		CHANGES COPYRIGHT INSTALL MANIFEST README RELEASE cons.html
