@@ -6,10 +6,9 @@
 #
 
 PORTNAME=		auctex
-PORTVERSION=		10.0g
+PORTVERSION=		11.11
 CATEGORIES=		print elisp
-MASTER_SITES=		${MASTER_SITE_TEX_CTAN}
-MASTER_SITE_SUBDIR=	support/auctex
+MASTER_SITES=		ftp://ftp.dina.kvl.dk/pub/Staff/Per.Abrahamsen/auctex/
 
 MAINTAINER=		yoichi@FreeBSD.org
 
@@ -19,7 +18,7 @@ EMACS_PORT_NAME?=	emacs21
 EMACS_NO_RUN_DEPENDS=	yes
 LISPDIR=	${EMACS_SITE_LISPDIR}
 ALL_TARGET=	all contrib
-INSTALL_TARGET= install install-contrib
+INSTALL_TARGET=	install install-contrib
 MAKE_ARGS+=	lispdir=${PREFIX}/${LISPDIR}
 PLIST_SUB+=	LISPDIR=${LISPDIR}
 

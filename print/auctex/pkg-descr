@@ -21,3 +21,5 @@ your LaTeX documents fast and painlessly.
 documentation system.  That is, documentation for any command is just
 a key click away!  AUC TeX is written entirely in Emacs-Lisp, and hence
 you can easily add new features for your own needs.
+
+WWW: http://www.sunsite.dk/auctex/

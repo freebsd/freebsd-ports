@@ -99,6 +99,8 @@ share/doc/auctex/README
 %%LISPDIR%%/auctex/style/plfonts.elc
 %%LISPDIR%%/auctex/style/plhb.el
 %%LISPDIR%%/auctex/style/plhb.elc
+%%LISPDIR%%/auctex/style/prosper.el
+%%LISPDIR%%/auctex/style/prosper.elc
 %%LISPDIR%%/auctex/style/psfig.el
 %%LISPDIR%%/auctex/style/psfig.elc
 %%LISPDIR%%/auctex/style/report.el
@@ -111,11 +113,16 @@ share/doc/auctex/README
 %%LISPDIR%%/auctex/style/swedish.elc
 %%LISPDIR%%/auctex/style/varioref.el
 %%LISPDIR%%/auctex/style/varioref.elc
+%%LISPDIR%%/auctex/style/verbatim.el
+%%LISPDIR%%/auctex/style/verbatim.elc
 %%LISPDIR%%/auctex/style/virtex.el
 %%LISPDIR%%/auctex/style/virtex.elc
 @dirrm %%LISPDIR%%/auctex/style
 %%LISPDIR%%/auctex/tex-buf.el
 %%LISPDIR%%/auctex/tex-buf.elc
+%%LISPDIR%%/auctex/tex-font.el
+%%LISPDIR%%/auctex/tex-font.elc
+%%LISPDIR%%/auctex/tex-fptex.el
 %%LISPDIR%%/auctex/tex-info.el
 %%LISPDIR%%/auctex/tex-info.elc
 %%LISPDIR%%/auctex/tex-jp.el
