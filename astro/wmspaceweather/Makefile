@@ -16,6 +16,10 @@ COMMENT=	A DockApp that shows the weather at geosynchronous orbit
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/wmSpaceWeather
 
+# distfile is actually just a tar with suffix .tar.gz:
+EXTRACT_CMD=	${CAT}
+EXTRACT_BEFORE_ARGS=
+
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 ALL_TARGET=	clean all
