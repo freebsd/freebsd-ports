@@ -27,10 +27,10 @@ pre-build:
 	rm -f ${WRKSRC}/ia64sim
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ia64sim ${LOCALBASE}/bin/ia64sim
+	${INSTALL_PROGRAM} ${WRKSRC}/ia64sim ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/ia64sim
-	${INSTALL_DATA} ${WRKDIR}/ia64.doc ${PREFIX}/share/doc/ia64sim
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/doc/ia64user.txt ${WRKSRC}/readme ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
