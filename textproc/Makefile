@@ -103,6 +103,7 @@
     SUBDIR += wdiff
     SUBDIR += word2x
     SUBDIR += wordnet
+    SUBDIR += wv
     SUBDIR += xerces
     SUBDIR += xhtml
     SUBDIR += xlhtml
