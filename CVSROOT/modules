@@ -1428,6 +1428,7 @@ dvdtape		ports/sysutils/dvdtape
 dvi2tty		ports/print/dvi2tty
 dvi2xx		ports/print/dvi2xx
 dvipdfmx	ports/print/dvipdfmx
+dvipng		ports/graphics/dvipng
 dvips		ports/print/dvips
 dvips2ascii	ports/print/dvips2ascii
 dviselect	ports/print/dviselect
