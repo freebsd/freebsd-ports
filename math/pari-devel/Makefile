@@ -34,6 +34,10 @@ MLINKS=		gp.1 pari.1
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 HAVE_EMACS!=	${WHICH} emacs || ${ECHO} nope
 .if ${HAVE_EMACS} != "nope"
 PLIST=		${PKGDIR}/pkg-plist.emacs
