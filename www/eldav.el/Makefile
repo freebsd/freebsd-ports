@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	eldav.el
-PORTVERSION=	1
-PORTREVISION=	1
+PORTVERSION=	1.17
 CATEGORIES=	www elisp
 MASTER_SITES=	http://www.gohome.org/eldav/
 DISTNAME=	eldav.el
 EXTRACT_SUFX=	.gz
+DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	stolz@i2.informatik.rwth-aachen.de
 
