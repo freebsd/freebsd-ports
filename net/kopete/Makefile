@@ -17,6 +17,20 @@ MAINTAINER=	stefan.jahn@nemesis-sektor.de
 USE_KDELIBS_VER=3
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
+
+post-patch:
+	${REINPLACE_CMD} -e 's,305,306,' \
+		${WRKSRC}/kopete/libkopete/ui/appearanceconfig.cpp \
+		${WRKSRC}/kopete/libkopete/ui/appearanceconfig.h \
+		${WRKSRC}/kopete/libkopete/ui/kopetechatwindow.cpp \
+		${WRKSRC}/kopete/libkopete/ui/kopetecontactviewitem.cpp \
+		${WRKSRC}/kopete/libkopete/ui/kopetemetacontactlvi.cpp \
+		${WRKSRC}/kopete/libkopete/ui/kopetewindow.cpp \
+		${WRKSRC}/kopete/libkopete/kopeteprefs.cpp \
+		${WRKSRC}/kopete/libkopete/kopeteprefs.h \
+		${WRKSRC}/kopete/protocols/icq_new/icqchangestatus.cpp \
+		${WRKSRC}/kopete/protocols/irc/ircmessage.cpp
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/x11/kde3/Makefile.kde"
