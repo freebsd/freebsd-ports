@@ -6,26 +6,26 @@
 #
 
 PORTNAME=	grepmail
-PORTVERSION=	4.48
+PORTVERSION=	4.50
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
+MAINTAINER=	jedgar@FreeBSD.org
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate
 
-MAINTAINER=	jedgar@FreeBSD.org
-
+PERL_CONFIGURE=	yes
 USE_PERL5=	yes
 
 MAN1=		grepmail.1
 
-do-configure:
-		@${PERL} -pi.orig -e 's|_PERL_|${PERL}|' ${WRKSRC}/grepmail
-		@cd ${WRKSRC} && ${PERL} Makefile.PL
+post-extract:
+	# we don't want to build the FastReader module
+	@${RM} -f ${WRKSRC}/FastReader/Makefile.PL
 
-do-install:
-		${INSTALL_SCRIPT} ${WRKSRC}/grepmail ${PREFIX}/bin
-		${INSTALL_MAN} ${WRKSRC}/blib/man1/grepmail.1 ${MANPREFIX}/man/man1
+post-patch:
+	@${PERL} -pi -e 's!<STDIN>!"n"!' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
