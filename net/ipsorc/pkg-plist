@@ -1,3 +1,4 @@
 bin/ipmagic
 bin/magic
 %%PORTDOCS%%share/doc/ipsorc/README
+%%PORTDOCS%%@dirrm share/doc/ipsorc
