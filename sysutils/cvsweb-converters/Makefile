@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cvsweb-converters
-PORTVERSION=	0.2.2
+PORTVERSION=	0.2.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.sbox.TUGraz.at/home/d/dada/distfiles/
 
@@ -20,6 +20,7 @@ BUILD_DEPENDS=	${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI \
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 NO_BUILD=	yes
+USE_BZIP2=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 
