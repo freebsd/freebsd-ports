@@ -4,9 +4,14 @@ bin/pdvitype
 bin/platex
 bin/pltotf
 bin/ptex
-bin/tftopl
 bin/virptex
+share/texmf/web2c/platex-euc.fmt
+share/texmf/web2c/platex-jis.fmt
+share/texmf/web2c/platex-sjis.fmt
 share/texmf/web2c/platex.fmt
+share/texmf/web2c/ptex-euc.fmt
+share/texmf/web2c/ptex-jis.fmt
+share/texmf/web2c/ptex-sjis.fmt
 share/texmf/web2c/ptex.fmt
 share/texmf/web2c/ptex.pool
 share/texmf/web2c/texmf.cnf

@@ -1,4 +1,4 @@
-# New ports collection makefile for:	pTeX-euc
+# New ports collection makefile for:	pTeX
 # Date created:		05 Oct 1997
 # Whom:			max
 #
@@ -6,42 +6,46 @@
 #
 
 PORTNAME=	ptex
-PORTVERSION=	2.1.11
+PORTVERSION=	3.1.2
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/tetex/
 PKGNAMEPREFIX=	ja-
-PKGNAMESUFFIX=	-euc
-DISTNAME=	ptex-src-2.1.10
-DIST_SUBDIR=	teTeX/ptex
+DISTNAME=	${PORTNAME}-src-${PORTVERSION}
+DIST_SUBDIR=	teTeX
 
 MAINTAINER=	max@FreeBSD.org
-COMMENT=	Japanese pTeX files to support EUC character set
+COMMENT=	Japanese specific files for ASCII Japanese pTeX
 
-PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	ptex2.1.10-11.patch
+BUILD_DEPENDS=	${PREFIX}/share/texmf/ptex/plain/base/ptex.tex:${PORTSDIR}/japanese/ptex-base
+RUN_DEPENDS=	${PREFIX}/share/texmf/ptex/plain/base/ptex.tex:${PORTSDIR}/japanese/ptex-base
 
-BUILD_DEPENDS=	${PREFIX}/share/texmf/ptex/plain/base/ptex.tex:${PORTSDIR}/japanese/ptex-common
-RUN_DEPENDS=	${PREFIX}/share/texmf/ptex/plain/base/ptex.tex:${PORTSDIR}/japanese/ptex-common
-
-MANUAL_PACKAGE_BUILD=	incompatible with other versions of ptex-*
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	euc
-WRKSRC=	${WRKDIRPREFIX}${.CURDIR}/../ptex-common/work/teTeX-1.0/texk/web2c/${SRCDIR}
+CONFIGURE_ARGS=	${KANJICODE}
+WRKSRC=	${WRKDIRPREFIX}${.CURDIR}/../ptex-base/work/tetex-src-${TETEX_VERSION}/texk/web2c/${SRCDIR}
 ALL_TARGET=	default
 
-SRCDIR=		ptex-src-2.1.10
+KANJICODE?=	jis
+SRCDIR=		ptex-${PORTVERSION}
+TETEX_VERSION=	2.0.1
 BINARIES=	ptex pdvitype jbibtex pltotf tftopl
 
 pre-extract:
-.if !exists(${WRKDIRPREFIX}${.CURDIR}/../ptex-common/work/.build_done)
-	@(cd ${.CURDIR}/../ptex-common; \
+	@${ECHO} "The default kanji code is ${KANJICODE}."
+	@${ECHO} "You can change the kanji code at ptex runtime with the -kanji option."
+	@${ECHO} "e.g. ptex -kanji=sjis"
+	@${ECHO} "If you would like to change the default kanji code, run make as follows:"
+	@${ECHO} "    make KANJICODE=sjis"
+	@${ECHO} "for Shift-JIS.  KANJICODE can be one of sjis, jis or euc."
+	@sleep 10
+.if !exists(${WRKDIRPREFIX}${.CURDIR}/../ptex-base/work/.build_done.ja-ptex-base-${PORTVERSION})
+	@(cd ${.CURDIR}/../ptex-base; \
 	  ${SETENV} ${MAKE_ENV} ${MAKE})
 .endif
 
 post-extract:
 	@${RM} -rf ${WRKSRC}
-	@${MV} ${WRKDIR}/${SRCDIR} ${WRKDIRPREFIX}${.CURDIR}/../ptex-common/work/teTeX-1.0/texk/web2c
+	@${MV} ${WRKDIR}/${SRCDIR} ${WRKDIRPREFIX}${.CURDIR}/../ptex-base/work/tetex-src-${TETEX_VERSION}/texk/web2c
 
 pre-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
