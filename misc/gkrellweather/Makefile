@@ -1,0 +1,36 @@
+# New ports collection makefile for:	gkrellweather
+# Date Created:				Thu Jun 28 01:54:57 EDT 2001
+# Whom:					Patrick Li <pat@databits.net>
+# With help from:	Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	gkrellweather
+PORTVERSION=	0.2.7
+CATEGORIES=	misc
+MASTER_SITES=	http://www.cse.unsw.edu.au/~flam/repository/c/gkrellm/
+
+MAINTAINER=	pat@databits.net
+
+BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
+RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm \
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww
+
+USE_X_PREFIX=	yes
+USE_IMLIB=	yes
+MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
+		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
+ALL_TARGET=	${PORTNAME}.so
+
+PKGMESSAGE=	${DESCR}
+
+do-install:
+	@${INSTALL_SCRIPT} ${WRKSRC}/GrabWeather ${PREFIX}/bin
+	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.so \
+		${PREFIX}/libexec/gkrellm/plugins
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.mk>
