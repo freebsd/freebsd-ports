@@ -1,5 +1,5 @@
---- config.mk.in.orig	Wed Jun 27 13:59:14 2001
-+++ config.mk.in	Mon Jul  2 22:13:58 2001
+--- config.mk.in.orig	Fri Aug 10 12:23:03 2001
++++ config.mk.in	Sat Jan 12 00:49:44 2002
 @@ -2,19 +2,20 @@
  VPATH = @srcdir@
  
@@ -23,3 +23,12 @@
  tmpdir = ${localstatedir}/sqlrelay/tmp
  cachedir = ${localstatedir}/sqlrelay/cache
  
+@@ -133,7 +134,7 @@
+ 
+ # FreeTDS stuff
+ FREETDSINCLUDES = @FREETDSINCLUDES@
+-FREETDSLIBS = @FREETDSLIBS@
++FREETDSLIBS = @FREETDSLIBS@ @ICONVLIBS@
+ FREETDSSTATIC = @FREETDSSTATIC@
+ 
+ # Sybase stuff
