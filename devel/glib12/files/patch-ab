@@ -1,6 +1,6 @@
---- Makefile.in.orig	Tue May 11 05:06:36 1999
-+++ Makefile.in	Mon May 17 22:28:24 1999
-@@ -95,11 +95,11 @@
+--- Makefile.in.orig	Thu Oct  7 12:35:19 1999
++++ Makefile.in	Tue Oct 12 15:51:59 1999
+@@ -97,11 +97,11 @@
  
  AUTOMAKE_OPTIONS = 1.4
  
@@ -15,7 +15,7 @@
  
  BUILT_SOURCES = stamp-gc-h #note: not glibconfig.h
  
-@@ -132,7 +132,7 @@
+@@ -136,7 +136,7 @@
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
  CONFIG_HEADER = config.h
@@ -24,7 +24,7 @@
  LTLIBRARIES =  $(lib_LTLIBRARIES)
  
  
-@@ -232,7 +232,7 @@
+@@ -236,7 +236,7 @@
  maintainer-clean-hdr:
  glib.spec: $(top_builddir)/config.status glib.spec.in
  	cd $(top_builddir) && CONFIG_FILES=$@ CONFIG_HEADERS= $(SHELL) ./config.status
@@ -33,7 +33,7 @@
  	cd $(top_builddir) && CONFIG_FILES=$@ CONFIG_HEADERS= $(SHELL) ./config.status
  
  mostlyclean-libLTLIBRARIES:
-@@ -541,7 +541,6 @@
+@@ -545,7 +545,6 @@
  	      || exit 1; \
  	  fi; \
  	done
@@ -41,7 +41,7 @@
  
  info-am:
  info: info-recursive
-@@ -568,7 +567,7 @@
+@@ -572,7 +571,7 @@
  		uninstall-configincludeDATA uninstall-m4dataDATA \
  		uninstall-includeHEADERS
  uninstall: uninstall-recursive
@@ -50,16 +50,17 @@
  		$(HEADERS) config.h
  all-redirect: all-recursive-am
  install-strip:
-@@ -646,7 +645,8 @@
+@@ -650,7 +649,9 @@
  installdirs mostlyclean-generic distclean-generic clean-generic \
  maintainer-clean-generic clean mostlyclean distclean maintainer-clean
  
 -glib-config: glib-config.in
 +glib@LT_RELEASE@-config.in: glib-config.in
 +	cp glib-config.in glib@LT_RELEASE@-config.in
- 
- configure: configure.in acglib.m4		
++
  glibconfig.h: stamp-gc-h
+ 	@:
+ stamp-gc-h: config.status
 --- gmodule/Makefile.in.orig	Tue May 11 05:06:37 1999
 +++ gmodule/Makefile.in	Mon May 17 22:28:24 1999
 @@ -333,7 +333,7 @@
