@@ -1,0 +1,9 @@
+Disco is a passive IP discovery and fingerprinting utility
+designed to sit on segments distributed throughout a network to
+discover unique IP's on the network. In addition to IP
+discovery disco has the ability to passively fingerprint TCP
+SYN packets. The intention is for disco to discover IP's on the
+network, fingerprint the packet if necessary, and load into the
+Gherkin Scan Manager database for targeted host scans.
+
+WWW: http://www.altmode.com/disco
