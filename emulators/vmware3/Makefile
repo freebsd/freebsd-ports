@@ -25,7 +25,7 @@ RUN_DEPENDS=	${LINUXBASE}/dev/rtc:${PORTSDIR}/emulators/rtc
 RESTRICTED=	"Not sure if we can redistribute it"
 
 VMWARE_MIRROR_SITES=	\
-		ftp.hol.gr/pub/mirror/vmware/:vmware
+		ftp://ftp.hol.gr/pub/mirror/vmware/:vmware
 #		http://vmware-svca.www.conxion.com/software/:vmware \
 #		http://vmware-chil.www.conxion.com/software/:vmware \
 #		http://vmware-heva.www.conxion.com/software/:vmware \
