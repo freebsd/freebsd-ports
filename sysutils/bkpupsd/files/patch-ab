@@ -1,5 +1,5 @@
---- bkpupsd.c.old	Wed Aug  4 13:45:10 1999
-+++ bkpupsd.c	Wed Aug  4 13:55:24 1999
+--- src/bkpupsd.c.old	Wed Aug  4 13:45:10 1999
++++ src/bkpupsd.c	Wed Aug  4 13:55:24 1999
 @@ -27,9 +27,12 @@
   */
  
