@@ -216,7 +216,6 @@ lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.09/cpp
 lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.09/f771
 lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.09/include/README
 lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.09/include/exception
-lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.09/include/float.h
 lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.09/include/limits.h
 lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.09/include/math.h
 lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.09/include/new

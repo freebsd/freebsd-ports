@@ -3,9 +3,10 @@
 # Date created:		9 Jan 1998
 # Whom:			John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.9 1998/02/23 01:52:52 jdp Exp $
+# $Id: Makefile,v 1.10 1998/03/08 12:54:00 obrien Exp $
 #
 
+#	1998-03-08
 DISTNAME=	egcs-980221
 CATEGORIES=	lang
 MASTER_SITES=	ftp://egcs.cygnus.com/pub/egcs/snapshots/1998-02-21/ \
