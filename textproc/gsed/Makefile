@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sed
-PORTVERSION=	3.02
+PORTVERSION=	4.0.3
 PKGNAMEPREFIX=	g
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
@@ -19,6 +19,9 @@ MAINTAINER=	cyrille.lefevre@laposte.net
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
+CONFIGURE_ARGS=	--disable-nls
 USE_GMAKE=	yes
 
 MAN1=		gsed.1
@@ -49,7 +52,7 @@ post-install: install-sample-files
 install-sample-files:
 	@${MKDIR} ${SAMP_DIR}
 .for file in ${SAMP_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${SAMP_DIR}/${file}
+	@${INSTALL_DATA} ${WRKSRC}/testsuite/${file} ${SAMP_DIR}/${file}
 .endfor
 
 .include <bsd.port.mk>

@@ -1,11 +1,11 @@
---- doc/sed.texi.orig	Mon Jun 29 08:01:51 1998
-+++ doc/sed.texi	Thu Dec 28 02:05:37 2000
-@@ -25,7 +25,7 @@
+--- doc/sed.texi.orig	Tue Nov 19 20:54:46 2002
++++ doc/sed.texi	Wed Dec 18 00:49:10 2002
+@@ -23,7 +23,7 @@
+ @syncodeindex op fn
  
- @ifinfo
  @direntry
 -* sed: (sed).                   Stream EDitor.
-+* GNU sed: (sed).		Stream EDitor.
++* GNU sed: (sed).               Stream EDitor.
+ 
  @end direntry
- This file documents @sc{sed}, a stream editor.
  
