@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	omniORB
-PORTVERSION=	4.0.1
+PORTVERSION=	4.0.2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:L}
@@ -36,8 +36,7 @@ PLIST_SUB+=	STATIC="@comment "
 PLIST_SUB+=	STATIC=""
 .endif
 
-MAN1=		catior.1 genior.1 nameclt.1 obuildtree.1 ols.1 omake.1 \
-		omniNames.1 opriv.1 oshadow.1
+MAN1=		catior.1 genior.1 nameclt.1 omniNames.1 omniidl.1
 
 pre-configure:
 	@ ${MKDIR} ${CONFIGURE_WRKSRC}
