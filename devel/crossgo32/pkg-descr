@@ -1,0 +1,13 @@
+This package permits the creation of 32-bit DOS executables.
+The package is composed of the following utilities:
+GNU`s misc. utilities		binutils-1.7	
+The GNU's C Compiler		gcc-2.7.2.2  + crosspatch
+Cygnus's embedded libraries	newlib-1.7.1
+
+To run your programs you require an specific DPMI software available with 
+DJGPP. For more information about go32 take a look at 
+	http://www.delorie.com/DJGPP. 
+
+_________
+Pedro Giffuni S.
+pgiffuni@fps.biblos.unal.edu.co
