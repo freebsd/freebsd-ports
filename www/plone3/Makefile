@@ -18,6 +18,8 @@ COMMENT=	A user friendly implementation of the CMF written on top of ZOPE
 
 RUN_DEPENDS=	${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/CMFDefault/__init__.py:${PORTSDIR}/www/zope-cmf
 
+BROKEN=		"Broken pkg-plist"
+
 USE_ZOPE=	yes
 USE_PYTHON=	yes
 
