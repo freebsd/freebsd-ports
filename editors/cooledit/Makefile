@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	cooledit-3.12.0
+DISTNAME=	cooledit-3.13.2
 CATEGORIES=	editors
 MASTER_SITES= 	${MASTER_SITE_SUNSITE} \
 		http://www.netins.net/showcase/Comput-IT/cooledit/src/

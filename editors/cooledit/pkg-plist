@@ -1,13 +1,14 @@
 bin/coolbrowse
 bin/cooledit
+bin/cooledit-gdb
 bin/coolicon
 bin/coolinput
 bin/coollistbox
 bin/coolman
 bin/coolmessage
+bin/coolproject
 bin/coolquery
 bin/smalledit
-bin/ttyname_stop
 etc/coolicon.config.dist
 @exec if [ ! -f %D/etc/coolicon.config ]; then cp -p %D/%F %B/cooledit.config; fi 
 lib/libCw.a
@@ -15,12 +16,16 @@ lib/libCw.so
 lib/libCw.so.1
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+share/cooledit/Xmlrpclib.py
+share/cooledit/c_utils.py
 share/cooledit/global.py
+share/cooledit/sh_utils.py
+share/cooledit/zope_utils.py
 share/cooledit/syntax/ada95.syntax
 share/cooledit/syntax/c.syntax
 share/cooledit/syntax/changelog.syntax
 share/cooledit/syntax/diff.syntax
-share/cooledit/syntax/diffc.syntax
+share/cooledit/syntax/fortran.syntax
 share/cooledit/syntax/html.syntax
 share/cooledit/syntax/java.syntax
 share/cooledit/syntax/latex.syntax
