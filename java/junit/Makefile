@@ -7,47 +7,39 @@
 
 PORTNAME=	junit
 PORTVERSION=	3.7
+PORTREVISION=	1
 CATEGORIES=	java devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://www.metaverse.nl/~ernst/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	okazaki@FreeBSD.org
 
-RUN_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper
+USE_ZIP=	yes
+USE_JAVA=	1.1+
+NO_BUILD=	yes
+NO_BUILD_DEPENDS_JAVA=	yes
 
-JDK_VERSION?=	1.1.8
+.include <bsd.port.pre.mk>
 
-.if ${JDK_VERSION} == "1.1.8"
+.if ${USE_JAVA} == "1.1"
 RUN_DEPENDS+=	${LOCALBASE}/share/java/classes/jfc-1.1.1/swing.jar:${PORTSDIR}/java/jfc
 .endif
 
-FIND?=		/usr/bin/find
-
-USE_ZIP=	yes
-NO_BUILD=	yes
-
-JUNIT_SUBDIR=	${PORTNAME}-${PORTVERSION}
-JUNIT_DESTDIR=	${PREFIX}/share/java/${JUNIT_SUBDIR}
-
-PLIST_SUB=	JUNIT_SUBDIR=${JUNIT_SUBDIR}
 .if !defined(NOPORTDOCS)
 DATADIRS=	doc javadoc junit
 .endif
 
 do-install:
-	${MKDIR} ${PREFIX}/share/java/classes ${JUNIT_DESTDIR}
-	cd ${INSTALL_WRKSRC}; \
-		${INSTALL_DATA} junit.jar ${PREFIX}/share/java/classes; \
-		${INSTALL_DATA} README.html ${JUNIT_DESTDIR}; \
-		${INSTALL_DATA} src.jar ${JUNIT_DESTDIR}
+	${MKDIR} ${PREFIX}/share/java/classes ${DOCSDIR}
+	${INSTALL_DATA} ${INSTALL_WRKSRC}/junit.jar ${PREFIX}/share/java/classes
+	${INSTALL_DATA} ${INSTALL_WRKSRC}/README.html ${DOCSDIR}
 .if defined(DATADIRS)
 .for DIR in ${DATADIRS}
 	cd ${INSTALL_WRKSRC}; \
-		${FIND} ${DIR} -type d -exec ${MKDIR} ${JUNIT_DESTDIR}/\{} \; ;\
-		${FIND} ${DIR} -type f -exec ${INSTALL_DATA} \{} ${JUNIT_DESTDIR}/\{} \;
+		${FIND} ${DIR} -type d -exec ${MKDIR} ${DOCSDIR}/\{} \; ;\
+		${FIND} ${DIR} -type f -exec ${INSTALL_DATA} \{} ${DOCSDIR}/\{} \;
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
