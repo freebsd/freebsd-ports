@@ -6,22 +6,23 @@
 #
 
 PORTNAME=	qcad
-PORTVERSION=	1.5.4
+PORTVERSION=	2.0.1.1
+PORTREVISION=	1
 CATEGORIES=	cad
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src
+MASTER_SITES=	http://www.ribbonsoft.com/archives/qcad/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-${PORTREVISION}.src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Professional CAD system
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-${PORTREVISION}.src
 
 QTDIR?=		${X11BASE}
 
 USE_QT_VER=	3
 USE_REINPLACE=	yes
-MAKE_ENV=	QTDIR="${QTDIR}"
+USE_GMAKE=	yes
+MAKE_ENV=	QTDIR="${QTDIR}" QMAKESPEC="${X11BASE}/share/qt/mkspecs/freebsd-g++"
 
 .include <bsd.port.pre.mk>
 
@@ -29,24 +30,28 @@ MAKE_ENV=	QTDIR="${QTDIR}"
 CFLAGS+=	-O0
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|warn_on|warn_on thread|g' ${WRKSRC}/qcad.pro
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/rprgdef.h
+#post-patch:
+#	@${REINPLACE_CMD} -e 's|warn_on|warn_on thread|g' ${WRKSRC}/qcad.pro
+#	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/rprgdef.h
 
-do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} qmake \
-		-spec ${X11BASE}/share/qt/mkspecs/freebsd-g++ qcad.pro
+#do-configure:
+#	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} qmake \
+#		-spec ${X11BASE}/share/qt/mkspecs/freebsd-g++ qcad.pro
+
+do-build:
+	cd ${WRKSRC}/scripts && ${SETENV} ${MAKE_ENV} sh ./build_qcad.sh
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/qcad ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/qcad/qcad ${PREFIX}/bin/qcad
 	@${MKDIR} ${DATADIR}
-.for dir in cur doc fonts hatches libraries messages xpm
-	${TAR} -C ${WRKSRC} --exclude CVS --exclude hydraulics -cf - ${dir} | \
+	@${MKDIR} ${DATADIR}/libraries
+.for dir in fonts patterns qm scripts
+	${TAR} -C ${WRKSRC}/qcad --exclude CVS -cf - ${dir} | \
 		${TAR} -C ${DATADIR} --unlink -xf -
 .endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/*.dxf ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/qcad/examples/* ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.post.mk>
