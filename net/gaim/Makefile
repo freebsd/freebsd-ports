@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gaim
-PORTVERSION=	0.58
+PORTVERSION=	0.59
 CATEGORIES?=	net
 MASTER_SITES=	ftp://ftp.marko.net/pub/gaim/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -17,9 +17,11 @@ MAINTAINER?=	marcus@FreeBSD.org
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 USE_GTK=	yes
 WANT_ESOUND=	yes
 WANT_GNOME=	yes
+USE_PERL5=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
@@ -47,10 +49,10 @@ CONFIGURE_ARGS+=	--disable-esd
 .endif
 
 pre-patch:
-	@${PERL} -pi.orig -e 's|-lpthreads|${PTHREAD_LIBS:S/"//g}|g; \
+	@${REINPLACE_CMD} -e 's|-lpthreads|${PTHREAD_LIBS:S/"//g}|g; \
 		s|-lpthread|${PTHREAD_LIBS:S/"//g}|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in*" | xargs ${PERL} -pi -e \
-		's|\$$\(datadir\)/gnome/|\$$\(datadir\)/|g ; \
-		 s|\$$\(datadir\)/locale|\$$\(prefix\)/share/locale|g'
+	@find ${WRKSRC} -name "Makefile.in*" | xargs ${REINPLACE_CMD} -e \
+		's|[(]datadir[)]/gnome/|(datadir)/|g ; \
+		 s|[(]datadir[)]/locale|(prefix)/share/locale|g'
 
 .include <bsd.port.post.mk>
