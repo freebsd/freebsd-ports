@@ -1,0 +1,10 @@
+--- src/joystick/bsd/SDL_sysjoystick.c	Wed Feb 18 09:22:01 2004
++++ src/joystick/bsd/SDL_sysjoystick.c	Sun Oct 31 06:55:00 2004
+@@ -160,6 +160,7 @@
+ 			SDL_numjoysticks++;
+ 		} else {
+ 			free(joynames[nj.index]);
++			joynames[nj.index] = NULL;
+ 		}
+ 	}
+ 	for (i = 0; i < MAX_JOY_JOYS; i++) {
