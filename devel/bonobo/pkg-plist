@@ -256,6 +256,6 @@ share/locale/zh_TW/LC_MESSAGES/bonobo.mo
 @dirrm share/gnome/bonobo/docs
 @dirrm share/gnome/bonobo
 @dirrm lib/bonobo/plugin
-@dirrm lib/bonobo/monikers
-@dirrm lib/bonobo
 @dirrm include/gnome-1.0/bonobo
+@unexec /bin/rmdir %D/lib/bonobo/monikers 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/lib/bonobo 2>/dev/null || /usr/bin/true

@@ -6,16 +6,18 @@
 #
 
 PORTNAME=	bonobo
-PORTVERSION=	1.0.19
+PORTVERSION=	1.0.20
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/bonobo
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 
 BUILD_DEPENDS=	msgfmt-new:${PORTSDIR}/devel/gettext
 LIB_DEPENDS=	gnomeprint.16:${PORTSDIR}/print/gnomeprint
 
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
