@@ -3,7 +3,7 @@
 # Date created:         30 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.8 1995/04/22 16:49:58 jmz Exp $
+# $Id: Makefile,v 1.9 1995/11/22 13:18:03 asami Exp $
 #
 
 DISTNAME=	dvips
@@ -16,8 +16,11 @@ MAINTAINER=	jmz@FreeBSD.org
 
 IS_INTERACTIVE=	yes
 
+EXTRACT_CMD=	(zcat | dd 2>/dev/null | tar xf -)
+EXTRACT_ARGS=	<
+
 pre-install:
 	@mkdir -p ${PREFIX}/lib/texmf
-	@mkdir -p ${PREFIX}/man/man1
+
 
 .include <bsd.port.mk>
