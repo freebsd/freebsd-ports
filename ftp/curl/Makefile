@@ -44,11 +44,13 @@ PLIST_SUB=	SHLIB_VER="${SHLIB_VER}"
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
+.if !defined(WITHOUT_SSL)
+USE_OPENSSL=	yes
+.endif
 
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_SSL)
-.include "${PORTSDIR}/security/openssl/bsd.openssl.mk"
 CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE}
 .else
 CONFIGURE_ARGS=	--without-ssl
