@@ -6,22 +6,21 @@
 #
 
 PORTNAME=	firedns
-PORTVERSION=    0.1.28
-PORTREVISION=	1
-CATEGORIES=     net
-MASTER_SITES=   http://ares.penguinhosting.net/~ian/projects/ \
+PORTVERSION=	0.1.28
+PORTREVISION=	2
+CATEGORIES=	net
+MASTER_SITES=	http://ares.penguinhosting.net/~ian/projects/ \
 		http://www.wa.apana.org.au/~dean/sources/ \
 		ftp://ftp.wa.apana.org.au/pub/pc/unix/packages/
-DISTNAME=	firedns
-EXTRACT_SUFX=   -0.1.28.tar.gz
+DISTNAME=	firedns-${PORTVERSION}
 
-MAINTAINER=     dean@odyssey.apana.org.au
+MAINTAINER=	dean@odyssey.apana.org.au
 
 BUILD_DEPENDS=	${LOCALBASE}/include/firestring.h:${PORTSDIR}/misc/firestring
 
 GNU_CONFIGURE=	yes
-
-INSTALL_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAN3=		firedns_aton4.3 firedns_aton6.3 firedns_dnsbl_lookup.3 \
 		firedns_getip4.3 firedns_getip6.3 firedns_getmx.3 \
