@@ -1,0 +1,15 @@
+--- makefile.orig	Tue Jul 24 22:43:50 2001
++++ makefile	Tue Jul 24 22:46:15 2001
+@@ -4,10 +4,10 @@
+ # please see COPYING for further informations
+ #
+ 
+-CC=	gcc
++CFLAGS+=	`${XML2_CONFIG} --cflags`
+ STD=	_GNU_SOURCE
+ OBJS=	main.o lsm.o
+-LIBS=	-lxml2
++LIBS=	`${XML2_CONFIG} --libs`
+ 
+ .c.o:
+ 	$(CC) -c -Wall $(CFLAGS) -D$(STD) $<

@@ -78,6 +78,7 @@
     SUBDIR += log_analysis
     SUBDIR += logrotate
     SUBDIR += logtool
+    SUBDIR += lsmlib
     SUBDIR += lsof
     SUBDIR += maint
     SUBDIR += manck
