@@ -1,0 +1,11 @@
+--- xwindow.h.orig	Sat Sep  4 22:45:16 1999
++++ xwindow.h	Sat Jul  8 01:08:55 2000
+@@ -60,7 +60,7 @@
+     XSetLineAttributes(TheDisplay,TheGC,1,LineSolid,CapButt,JoinMiter);
+     XDrawLine(TheDisplay,TheWindow,TheGC,X1,Y1,X2,Y2);
+   }
+-  inline                mapRaised(void) {  XMapRaised(TheDisplay,TheWindow);}
++  inline void           mapRaised(void) {  XMapRaised(TheDisplay,TheWindow);}
+ };
+ 
+ #endif
