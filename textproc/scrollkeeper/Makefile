@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	scrollkeeper
-PORTVERSION=	0.3.12
-PORTREVISION=	4
+PORTVERSION=	0.3.14
 PORTEPOCH=	1
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -41,7 +40,8 @@ USE_REINPLACE=	yes
 USE_GNOME=	gnomehack gnomehier gnometarget libxslt
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --datadir=${PREFIX}/share/gnome \
-		--with-omfdirs=${PREFIX}/share/gnome/omf
+		--with-omfdirs=${PREFIX}/share/gnome/omf \
+		--with-xml-catalog=${LOCALBASE}/share/xml/catalog
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lintl" \
 		LOCALBASE="${LOCALBASE}"
@@ -66,13 +66,7 @@ post-patch:
 		's|[(]LN_S[)] -f -n|(LN_S) -f|g'
 	@${REINPLACE_CMD} -e 's|/usr/share/locale|${PREFIX}/share/locale|g' \
 		${WRKSRC}/libs/scrollkeeper.h.in
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
-		${WRKSRC}/cl/src/update.c
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-		${WRKSRC}/extract/dtds/Makefile.in \
-		${WRKSRC}/libs/Makefile.in
-
-pre-install:
-	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+		${WRKSRC}/extract/dtds/Makefile.in
 
 .include <bsd.port.post.mk>

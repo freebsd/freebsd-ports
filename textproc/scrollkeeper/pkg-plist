@@ -18,6 +18,8 @@ lib/libscrollkeeper.so
 lib/libscrollkeeper.so.0
 share/gnome/omf/scrollkeeper/writing_scrollkeeper_omf_files-C.omf
 share/gnome/scrollkeeper/Templates/C/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/am/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/az/scrollkeeper_cl.xml
 share/gnome/scrollkeeper/Templates/be/scrollkeeper_cl.xml
 share/gnome/scrollkeeper/Templates/ca/scrollkeeper_cl.xml
 share/gnome/scrollkeeper/Templates/cs/scrollkeeper_cl.xml
@@ -29,6 +31,7 @@ share/gnome/scrollkeeper/Templates/fr/scrollkeeper_cl.xml
 share/gnome/scrollkeeper/Templates/hu/scrollkeeper_cl.xml
 share/gnome/scrollkeeper/Templates/it/scrollkeeper_cl.xml
 share/gnome/scrollkeeper/Templates/ja/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/kn/scrollkeeper_cl.xml
 share/gnome/scrollkeeper/Templates/ko/scrollkeeper_cl.xml
 share/gnome/scrollkeeper/Templates/nl/scrollkeeper_cl.xml
 share/gnome/scrollkeeper/Templates/no/scrollkeeper_cl.xml
@@ -38,8 +41,11 @@ share/gnome/scrollkeeper/Templates/ro/scrollkeeper_cl.xml
 share/gnome/scrollkeeper/Templates/ru/scrollkeeper_cl.xml
 share/gnome/scrollkeeper/Templates/sl/scrollkeeper_cl.xml
 share/gnome/scrollkeeper/Templates/sk/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/sr/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/sr@Latn/scrollkeeper_cl.xml
 share/gnome/scrollkeeper/Templates/sv/scrollkeeper_cl.xml
 share/gnome/scrollkeeper/Templates/tr/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/uk/scrollkeeper_cl.xml
 share/gnome/scrollkeeper/Templates/vi/scrollkeeper_cl.xml
 share/gnome/scrollkeeper/Templates/zh_CN/scrollkeeper_cl.xml
 share/gnome/scrollkeeper/Templates/zh_TW/scrollkeeper_cl.xml
@@ -50,6 +56,7 @@ share/gnome/scrollkeeper/stylesheets/index.xsl
 share/gnome/scrollkeeper/stylesheets/toc.xsl
 share/gnome/xml/scrollkeeper/dtds/scrollkeeper-cl.dtd
 share/gnome/xml/scrollkeeper/dtds/scrollkeeper-omf.dtd
+share/locale/am/LC_MESSAGES/scrollkeeper.mo
 share/locale/az/LC_MESSAGES/scrollkeeper.mo
 share/locale/be/LC_MESSAGES/scrollkeeper.mo
 share/locale/ca/LC_MESSAGES/scrollkeeper.mo
@@ -62,6 +69,7 @@ share/locale/fr/LC_MESSAGES/scrollkeeper.mo
 share/locale/hu/LC_MESSAGES/scrollkeeper.mo
 share/locale/it/LC_MESSAGES/scrollkeeper.mo
 share/locale/ja/LC_MESSAGES/scrollkeeper.mo
+share/locale/kn/LC_MESSAGES/scrollkeeper.mo
 share/locale/ko/LC_MESSAGES/scrollkeeper.mo
 share/locale/nl/LC_MESSAGES/scrollkeeper.mo
 share/locale/no/LC_MESSAGES/scrollkeeper.mo
@@ -71,6 +79,8 @@ share/locale/ro/LC_MESSAGES/scrollkeeper.mo
 share/locale/ru/LC_MESSAGES/scrollkeeper.mo
 share/locale/sk/LC_MESSAGES/scrollkeeper.mo
 share/locale/sl/LC_MESSAGES/scrollkeeper.mo
+share/locale/sr/LC_MESSAGES/scrollkeeper.mo
+share/locale/sr@Latn/LC_MESSAGES/scrollkeeper.mo
 share/locale/sv/LC_MESSAGES/scrollkeeper.mo
 share/locale/tr/LC_MESSAGES/scrollkeeper.mo
 share/locale/uk/LC_MESSAGES/scrollkeeper.mo
@@ -90,6 +100,8 @@ share/locale/zh_TW/LC_MESSAGES/scrollkeeper.mo
 @dirrm share/gnome/scrollkeeper/Templates/uk
 @dirrm share/gnome/scrollkeeper/Templates/tr
 @dirrm share/gnome/scrollkeeper/Templates/sv
+@dirrm share/gnome/scrollkeeper/Templates/sr@Latn
+@dirrm share/gnome/scrollkeeper/Templates/sr
 @dirrm share/gnome/scrollkeeper/Templates/sl
 @dirrm share/gnome/scrollkeeper/Templates/sk
 @dirrm share/gnome/scrollkeeper/Templates/ru
@@ -98,8 +110,8 @@ share/locale/zh_TW/LC_MESSAGES/scrollkeeper.mo
 @dirrm share/gnome/scrollkeeper/Templates/pl
 @dirrm share/gnome/scrollkeeper/Templates/no
 @dirrm share/gnome/scrollkeeper/Templates/nl
-@dirrm share/gnome/scrollkeeper/Templates/nb
 @dirrm share/gnome/scrollkeeper/Templates/ko
+@dirrm share/gnome/scrollkeeper/Templates/kn
 @dirrm share/gnome/scrollkeeper/Templates/ja
 @dirrm share/gnome/scrollkeeper/Templates/it
 @dirrm share/gnome/scrollkeeper/Templates/hu
@@ -111,11 +123,14 @@ share/locale/zh_TW/LC_MESSAGES/scrollkeeper.mo
 @dirrm share/gnome/scrollkeeper/Templates/cs
 @dirrm share/gnome/scrollkeeper/Templates/ca
 @dirrm share/gnome/scrollkeeper/Templates/be
+@dirrm share/gnome/scrollkeeper/Templates/az
+@dirrm share/gnome/scrollkeeper/Templates/am
 @dirrm share/gnome/scrollkeeper/Templates/C
 @dirrm share/gnome/scrollkeeper/Templates
 @dirrm share/gnome/scrollkeeper
 @dirrm share/gnome/omf/scrollkeeper
 @unexec rm -f /var/log/scrollkeeper.log 2>/dev/null || true
 @unexec rm -rf /var/db/scrollkeeper 2>/dev/null || true
+@unexec %%LOCALBASE%%/bin/xmlcatalog --noout --del %D/share/gnome/xml/scrollkeeper/dtds/scrollkeeper-omf.dtd %%LOCALBASE%%/share/xml/catalog || true
 @exec touch -f /var/log/scrollkeeper.log
 @exec mkdir -p /var/db/scrollkeeper
