@@ -40,7 +40,7 @@ interesting fields when you do a "show":
  @END: NORUSERPASS
  		showfile.c smatch.c sprintb.c ssequal.c strindex.c trimcpy.c \
 -		uleq.c uprf.c vfgets.c formatdef.c m_msgdef.c
-+		uleq.c uprf.c vfgets.c formatdef.c m_msgdef.c rfc1384.c
++		uleq.c uprf.c vfgets.c formatdef.c m_msgdef.c rfc1342.c
  
  
  OFILES	=	add.o adios.o admonish.o addrsbr.o advertise.o advise.o \
@@ -49,7 +49,7 @@ interesting fields when you do a "show":
  @END: NORUSERPASS
  		showfile.o smatch.o sprintb.o ssequal.o strindex.o trimcpy.o \
 -		uleq.o uprf.o vfgets.o formatdef.o m_msgdef.o
-+		uleq.o uprf.o vfgets.o formatdef.o m_msgdef.o rfc1384.o
++		uleq.o uprf.o vfgets.o formatdef.o m_msgdef.o rfc1342.o
  
  @BEGIN: SHAREDLIB
  ODEFS	=	formatdef.o m_msgdef.o
