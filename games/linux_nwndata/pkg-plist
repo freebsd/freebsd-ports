@@ -1,251 +1,246 @@
-%%NWNDIR%%/./dialog.tlk
-%%NWNDIR%%/./data/2da.bif
-%%NWNDIR%%/./data/aurora_gui.bif
-%%NWNDIR%%/./data/aurora_tcn.bif
-%%NWNDIR%%/./data/aurora_tdc.bif
-%%NWNDIR%%/./data/aurora_tde.bif
-%%NWNDIR%%/./data/aurora_tdm.bif
-%%NWNDIR%%/./data/aurora_tds.bif
-%%NWNDIR%%/./data/aurora_tic.bif
-%%NWNDIR%%/./data/aurora_tin.bif
-%%NWNDIR%%/./data/aurora_tms.bif
-%%NWNDIR%%/./data/aurora_ttf.bif
-%%NWNDIR%%/./data/aurora_ttr.bif
-%%NWNDIR%%/./data/convo.bif
-%%NWNDIR%%/./data/editor.bif
-%%NWNDIR%%/./data/ini.bif
-%%NWNDIR%%/./data/loadscreens.bif
-%%NWNDIR%%/./data/misc.bif
-%%NWNDIR%%/./data/models_01.bif
-%%NWNDIR%%/./data/models_02.bif
-%%NWNDIR%%/./data/music.bif
-%%NWNDIR%%/./data/patch.bif
-%%NWNDIR%%/./data/scripts.bif
-%%NWNDIR%%/./data/sounds.bif
-%%NWNDIR%%/./data/templates.bif
-%%NWNDIR%%/./data/textures_01.bif
-%%NWNDIR%%/./data/textures_02.bif
-%%NWNDIR%%/./data/voicesets.bif
-%%NWNDIR%%/./dmvault/dungeonmaster.bic
-%%NWNDIR%%/./localvault/aluviandarkstar.bic
-%%NWNDIR%%/./localvault/claymanorin.bic
-%%NWNDIR%%/./localvault/daeris.bic
-%%NWNDIR%%/./localvault/daevaorn.bic
-%%NWNDIR%%/./localvault/diadanlocke.bic
-%%NWNDIR%%/./localvault/drax.bic
-%%NWNDIR%%/./localvault/freddifurpo.bic
-%%NWNDIR%%/./localvault/frederickgarvin.bic
-%%NWNDIR%%/./localvault/jaindvarkvasirso.bic
-%%NWNDIR%%/./localvault/jinn.bic
-%%NWNDIR%%/./localvault/jolenaleider.bic
-%%NWNDIR%%/./localvault/junoboram.bic
-%%NWNDIR%%/./localvault/kerith.bic
-%%NWNDIR%%/./localvault/kheldaraambarhin.bic
-%%NWNDIR%%/./localvault/laureencelest.bic
-%%NWNDIR%%/./localvault/merrickdupelade.bic
-%%NWNDIR%%/./localvault/ownka.bic
-%%NWNDIR%%/./localvault/raptrethanlis.bic
-%%NWNDIR%%/./localvault/torutaramoku.bic
-%%NWNDIR%%/./localvault/xandraloxdeteste.bic
-%%NWNDIR%%/./localvault/xavierwoo.bic
-%%NWNDIR%%/./localvault/zanzinabru.bic
-%%NWNDIR%%/./docs/NWN_OnlineManual.pdf
-%%NWNDIR%%/./docs/readme.txt
-%%NWNDIR%%/./EULA.txt
-%%NWNDIR%%/./modules/Contest Of Champions 0492.mod
-%%NWNDIR%%/./modules/DEMO - A Bucket of Gnolls.mod
-%%NWNDIR%%/./modules/DEMO - Goblins vs Kobolds.mod
-%%NWNDIR%%/./modules/DEMO - House of Doors.mod
-%%NWNDIR%%/./modules/DEMO - Thar be Rats! Yarrr!.mod
-%%NWNDIR%%/./modules/DEMO - The Cat Lady.mod
-%%NWNDIR%%/./modules/WW1-The Fields of Battle.mod
-%%NWNDIR%%/./modules/WW2-The Witch Hunters.mod
-%%NWNDIR%%/./music/mus_autorun.wav
-%%NWNDIR%%/./music/mus_bat_aribeth.bmu
-%%NWNDIR%%/./music/mus_bat_citboss.bmu
-%%NWNDIR%%/./music/mus_bat_city1.bmu
-%%NWNDIR%%/./music/mus_bat_city2.bmu
-%%NWNDIR%%/./music/mus_bat_city3.bmu
-%%NWNDIR%%/./music/mus_bat_dragon.bmu
-%%NWNDIR%%/./music/mus_bat_dung1.bmu
-%%NWNDIR%%/./music/mus_bat_dung2.bmu
-%%NWNDIR%%/./music/mus_bat_dung3.bmu
-%%NWNDIR%%/./music/mus_bat_endboss.bmu
-%%NWNDIR%%/./music/mus_bat_forboss.bmu
-%%NWNDIR%%/./music/mus_bat_forest1.bmu
-%%NWNDIR%%/./music/mus_bat_forest2.bmu
-%%NWNDIR%%/./music/mus_bat_lizboss.bmu
-%%NWNDIR%%/./music/mus_bat_rural1.bmu
-%%NWNDIR%%/./music/mus_castle.bmu
-%%NWNDIR%%/./music/mus_citydockday.bmu
-%%NWNDIR%%/./music/mus_citydocknite.bmu
-%%NWNDIR%%/./music/mus_citymarket.bmu
-%%NWNDIR%%/./music/mus_citynite.bmu
-%%NWNDIR%%/./music/mus_cityslumday.bmu
-%%NWNDIR%%/./music/mus_cityslumnite.bmu
-%%NWNDIR%%/./music/mus_citywealthy.bmu
-%%NWNDIR%%/./music/mus_crypt1.bmu
-%%NWNDIR%%/./music/mus_crypt2.bmu
-%%NWNDIR%%/./music/mus_evildungeon1.bmu
-%%NWNDIR%%/./music/mus_evildungeon2.bmu
-%%NWNDIR%%/./music/mus_forestday1.bmu
-%%NWNDIR%%/./music/mus_forestday2.bmu
-%%NWNDIR%%/./music/mus_forestnite.bmu
-%%NWNDIR%%/./music/mus_gendungeon1.bmu
-%%NWNDIR%%/./music/mus_mines1.bmu
-%%NWNDIR%%/./music/mus_mines2.bmu
-%%NWNDIR%%/./music/mus_richhouse.bmu
-%%NWNDIR%%/./music/mus_ruralday1.bmu
-%%NWNDIR%%/./music/mus_ruralday2.bmu
-%%NWNDIR%%/./music/mus_ruralnite.bmu
-%%NWNDIR%%/./music/mus_sewer.bmu
-%%NWNDIR%%/./music/mus_store.bmu
-%%NWNDIR%%/./music/mus_tavern1.bmu
-%%NWNDIR%%/./music/mus_tavern2.bmu
-%%NWNDIR%%/./music/mus_tavern3.bmu
-%%NWNDIR%%/./music/mus_tavern4.bmu
-%%NWNDIR%%/./music/mus_templeevil.bmu
-%%NWNDIR%%/./music/mus_templegood.bmu
-%%NWNDIR%%/./music/mus_templegood2.bmu
-%%NWNDIR%%/./music/mus_theme_argend.bmu
-%%NWNDIR%%/./music/mus_theme_aribev.bmu
-%%NWNDIR%%/./music/mus_theme_aribgd.bmu
-%%NWNDIR%%/./music/mus_theme_chap1.bmu
-%%NWNDIR%%/./music/mus_theme_chap2.bmu
-%%NWNDIR%%/./music/mus_theme_chap3.bmu
-%%NWNDIR%%/./music/mus_theme_chap4.bmu
-%%NWNDIR%%/./music/mus_theme_main.bmu
-%%NWNDIR%%/./music/mus_theme_maugrm.bmu
-%%NWNDIR%%/./music/mus_theme_morag.bmu
-%%NWNDIR%%/./music/mus_theme_nwn.bmu
-%%NWNDIR%%/./nwm/Chapter1.nwm
-%%NWNDIR%%/./nwm/Chapter1E.nwm
-%%NWNDIR%%/./nwm/Chapter2.nwm
-%%NWNDIR%%/./nwm/Chapter2E.nwm
-%%NWNDIR%%/./nwm/Chapter3.nwm
-%%NWNDIR%%/./nwm/Chapter4.nwm
-%%NWNDIR%%/./nwm/Prelude.nwm
-%%NWNDIR%%/./override/iit_medkit_001.tga
-%%NWNDIR%%/./override/m1q6f06pedistal.dlg
-%%NWNDIR%%/./override/nw_s2_wholeness.ncs
-%%NWNDIR%%/./override/nw_s2_wholeness.nss
-%%NWNDIR%%/./override/options_sound.gui
-%%NWNDIR%%/./override/serverlist_page1.gui
-%%NWNDIR%%/./texturepacks/GUI_32bit.erf
-%%NWNDIR%%/./texturepacks/Textures_Tpa.erf
-%%NWNDIR%%/./texturepacks/Textures_Tpc.erf
-%%NWNDIR%%/./texturepacks/Tiles_Tpa.erf
-%%NWNDIR%%/./texturepacks/Tiles_Tpb.erf
-%%NWNDIR%%/./texturepacks/Tiles_Tpc.erf
-%%NWNDIR%%/./chitin.key
-%%NWNDIR%%/./ambient/al_an_bughouse1.wav
-%%NWNDIR%%/./ambient/al_an_bughouse2.wav
-%%NWNDIR%%/./ambient/al_an_bugscave1.wav
-%%NWNDIR%%/./ambient/al_an_bugscave2.wav
-%%NWNDIR%%/./ambient/al_an_lizrdflk1.wav
-%%NWNDIR%%/./ambient/al_cv_castleamb1.wav
-%%NWNDIR%%/./ambient/al_cv_castleamb2.wav
-%%NWNDIR%%/./ambient/al_cv_castleamb3.wav
-%%NWNDIR%%/./ambient/al_cv_caveamb1.wav
-%%NWNDIR%%/./ambient/al_cv_caveamb2.wav
-%%NWNDIR%%/./ambient/al_cv_caveamb3.wav
-%%NWNDIR%%/./ambient/al_cv_cryptamb1.wav
-%%NWNDIR%%/./ambient/al_cv_cryptamb2.wav
-%%NWNDIR%%/./ambient/al_cv_cryptamb3.wav
-%%NWNDIR%%/./ambient/al_cv_evldunamb1.wav
-%%NWNDIR%%/./ambient/al_cv_evldunamb2.wav
-%%NWNDIR%%/./ambient/al_cv_evldunamb3.wav
-%%NWNDIR%%/./ambient/al_cv_hauntamb1.wav
-%%NWNDIR%%/./ambient/al_cv_hauntamb2.wav
-%%NWNDIR%%/./ambient/al_cv_hauntamb3.wav
-%%NWNDIR%%/./ambient/al_cv_houseamb1.wav
-%%NWNDIR%%/./ambient/al_cv_houseamb2.wav
-%%NWNDIR%%/./ambient/al_cv_houseamb3.wav
-%%NWNDIR%%/./ambient/al_cv_kitchamb1.wav
-%%NWNDIR%%/./ambient/al_cv_kitchamb2.wav
-%%NWNDIR%%/./ambient/al_cv_mineamb1.wav
-%%NWNDIR%%/./ambient/al_cv_mineamb2.wav
-%%NWNDIR%%/./ambient/al_cv_mineamb3.wav
-%%NWNDIR%%/./ambient/al_cv_seweramb1.wav
-%%NWNDIR%%/./ambient/al_cv_seweramb2.wav
-%%NWNDIR%%/./ambient/al_mg_airlab1.wav
-%%NWNDIR%%/./ambient/al_mg_earthlab1.wav
-%%NWNDIR%%/./ambient/al_mg_firelab1.wav
-%%NWNDIR%%/./ambient/al_mg_magicint1.wav
-%%NWNDIR%%/./ambient/al_mg_magicint2.wav
-%%NWNDIR%%/./ambient/al_mg_magicint3.wav
-%%NWNDIR%%/./ambient/al_mg_magicint4.wav
-%%NWNDIR%%/./ambient/al_mg_pitcry1.wav
-%%NWNDIR%%/./ambient/al_mg_waterlab1.wav
-%%NWNDIR%%/./ambient/al_na_frstdyamb1.wav
-%%NWNDIR%%/./ambient/al_na_frstdyamb2.wav
-%%NWNDIR%%/./ambient/al_na_frstdyamb3.wav
-%%NWNDIR%%/./ambient/al_na_frstdyscr1.wav
-%%NWNDIR%%/./ambient/al_na_frstmagic1.wav
-%%NWNDIR%%/./ambient/al_na_frstntamb1.wav
-%%NWNDIR%%/./ambient/al_na_frstntamb2.wav
-%%NWNDIR%%/./ambient/al_na_frstntscr1.wav
-%%NWNDIR%%/./ambient/al_na_lavalake1.wav
-%%NWNDIR%%/./ambient/al_na_sludglake1.wav
-%%NWNDIR%%/./ambient/al_pl_blacksmith.wav
-%%NWNDIR%%/./ambient/al_pl_riot1.wav
-%%NWNDIR%%/./ambient/al_pl_bordello1.wav
-%%NWNDIR%%/./ambient/al_pl_bordello2.wav
-%%NWNDIR%%/./ambient/al_pl_cityday1.wav
-%%NWNDIR%%/./ambient/al_pl_cityday2.wav
-%%NWNDIR%%/./ambient/al_pl_citynite.wav
-%%NWNDIR%%/./ambient/al_pl_combat1.wav
-%%NWNDIR%%/./ambient/al_pl_combat2.wav
-%%NWNDIR%%/./ambient/al_pl_combatmuf1.wav
-%%NWNDIR%%/./ambient/al_pl_combatmuf2.wav
-%%NWNDIR%%/./ambient/al_pl_marketday.wav
-%%NWNDIR%%/./ambient/al_pl_riot2.wav
-%%NWNDIR%%/./ambient/al_pl_slumday1.wav
-%%NWNDIR%%/./ambient/al_pl_slumday2.wav
-%%NWNDIR%%/./ambient/al_pl_slumnite.wav
-%%NWNDIR%%/./ambient/al_pl_talkinglrg.wav
-%%NWNDIR%%/./ambient/al_pl_talkingmed.wav
-%%NWNDIR%%/./ambient/al_pl_talkingsml.wav
-%%NWNDIR%%/./ambient/al_pl_tavhubbub1.wav
-%%NWNDIR%%/./ambient/al_pl_tavhubbub2.wav
-%%NWNDIR%%/./ambient/al_pl_templesday.wav
-%%NWNDIR%%/./ambient/al_pl_townday1.wav
-%%NWNDIR%%/./ambient/al_pl_townday2.wav
-%%NWNDIR%%/./ambient/al_pl_townnite.wav
-%%NWNDIR%%/./ambient/al_pl_whispers.wav
-%%NWNDIR%%/./ambient/al_pl_whispersf.wav
-%%NWNDIR%%/./ambient/al_pl_whispersm.wav
-%%NWNDIR%%/./ambient/al_wt_gustcavrn1.wav
-%%NWNDIR%%/./ambient/al_wt_gustchasm1.wav
-%%NWNDIR%%/./ambient/al_wt_gustdraft1.wav
-%%NWNDIR%%/./ambient/al_wt_gustgrass1.wav
-%%NWNDIR%%/./ambient/al_wt_rainhard1.wav
-%%NWNDIR%%/./ambient/al_wt_rainlight1.wav
-%%NWNDIR%%/./ambient/al_wt_stormlg1.wav
-%%NWNDIR%%/./ambient/al_wt_stormsm1.wav
-%%NWNDIR%%/./ambient/al_wt_windmed1.wav
-%%NWNDIR%%/./ambient/al_wt_windsoft1.wav
-%%NWNDIR%%/./ambient/al_wt_windstrng1.wav
-%%NWNDIR%%/./ambient/al_wt_windforst1.wav
-%%NWNDIR%%/./NWNv129.txt
-%%NWNDIR%%/./patch.key
-@unexec rmdir %D/%%NWNDIR%%/. 2>/dev/null || true
-@unexec rmdir %D/%%NWNDIR%%/./data 2>/dev/null || true
-@unexec rmdir %D/%%NWNDIR%%/./dmvault 2>/dev/null || true
-@unexec rmdir %D/%%NWNDIR%%/./localvault 2>/dev/null || true
-@unexec rmdir %D/%%NWNDIR%%/./docs 2>/dev/null || true
-@unexec rmdir %D/%%NWNDIR%%/./hak 2>/dev/null || true
-@unexec rmdir %D/%%NWNDIR%%/./modules 2>/dev/null || true
-@unexec rmdir %D/%%NWNDIR%%/./music 2>/dev/null || true
-@unexec rmdir %D/%%NWNDIR%%/./nwm 2>/dev/null || true
-@unexec rmdir %D/%%NWNDIR%%/./override 2>/dev/null || true
-@unexec rmdir %D/%%NWNDIR%%/./portraits 2>/dev/null || true
-@unexec rmdir %D/%%NWNDIR%%/./saves 2>/dev/null || true
-@unexec rmdir %D/%%NWNDIR%%/./servervault 2>/dev/null || true
-@unexec rmdir %D/%%NWNDIR%%/./texturepacks 2>/dev/null || true
-@unexec rmdir %D/%%NWNDIR%%/./ambient 2>/dev/null || true
-@unexec rmdir %D/%%NWNDIR%%/./logs 2>/dev/null || true
-@unexec rmdir %D/%%NWNDIR%%/./lib 2>/dev/null || true
-@unexec rmdir %D/%%NWNDIR%%/./database 2>/dev/null || true
-@unexec rmdir %D/%%NWNDIR%%/./tempclient 2>/dev/null || true
-
+%%NWNDIR%%/EULA.txt
+%%NWNDIR%%/NWNv129.txt
+%%NWNDIR%%/ambient/al_an_bughouse1.wav
+%%NWNDIR%%/ambient/al_an_bughouse2.wav
+%%NWNDIR%%/ambient/al_an_bugscave1.wav
+%%NWNDIR%%/ambient/al_an_bugscave2.wav
+%%NWNDIR%%/ambient/al_an_lizrdflk1.wav
+%%NWNDIR%%/ambient/al_cv_castleamb1.wav
+%%NWNDIR%%/ambient/al_cv_castleamb2.wav
+%%NWNDIR%%/ambient/al_cv_castleamb3.wav
+%%NWNDIR%%/ambient/al_cv_caveamb1.wav
+%%NWNDIR%%/ambient/al_cv_caveamb2.wav
+%%NWNDIR%%/ambient/al_cv_caveamb3.wav
+%%NWNDIR%%/ambient/al_cv_cryptamb1.wav
+%%NWNDIR%%/ambient/al_cv_cryptamb2.wav
+%%NWNDIR%%/ambient/al_cv_cryptamb3.wav
+%%NWNDIR%%/ambient/al_cv_evldunamb1.wav
+%%NWNDIR%%/ambient/al_cv_evldunamb2.wav
+%%NWNDIR%%/ambient/al_cv_evldunamb3.wav
+%%NWNDIR%%/ambient/al_cv_hauntamb1.wav
+%%NWNDIR%%/ambient/al_cv_hauntamb2.wav
+%%NWNDIR%%/ambient/al_cv_hauntamb3.wav
+%%NWNDIR%%/ambient/al_cv_houseamb1.wav
+%%NWNDIR%%/ambient/al_cv_houseamb2.wav
+%%NWNDIR%%/ambient/al_cv_houseamb3.wav
+%%NWNDIR%%/ambient/al_cv_kitchamb1.wav
+%%NWNDIR%%/ambient/al_cv_kitchamb2.wav
+%%NWNDIR%%/ambient/al_cv_mineamb1.wav
+%%NWNDIR%%/ambient/al_cv_mineamb2.wav
+%%NWNDIR%%/ambient/al_cv_mineamb3.wav
+%%NWNDIR%%/ambient/al_cv_seweramb1.wav
+%%NWNDIR%%/ambient/al_cv_seweramb2.wav
+%%NWNDIR%%/ambient/al_mg_airlab1.wav
+%%NWNDIR%%/ambient/al_mg_earthlab1.wav
+%%NWNDIR%%/ambient/al_mg_firelab1.wav
+%%NWNDIR%%/ambient/al_mg_magicint1.wav
+%%NWNDIR%%/ambient/al_mg_magicint2.wav
+%%NWNDIR%%/ambient/al_mg_magicint3.wav
+%%NWNDIR%%/ambient/al_mg_magicint4.wav
+%%NWNDIR%%/ambient/al_mg_pitcry1.wav
+%%NWNDIR%%/ambient/al_mg_waterlab1.wav
+%%NWNDIR%%/ambient/al_na_frstdyamb1.wav
+%%NWNDIR%%/ambient/al_na_frstdyamb2.wav
+%%NWNDIR%%/ambient/al_na_frstdyamb3.wav
+%%NWNDIR%%/ambient/al_na_frstdyscr1.wav
+%%NWNDIR%%/ambient/al_na_frstmagic1.wav
+%%NWNDIR%%/ambient/al_na_frstntamb1.wav
+%%NWNDIR%%/ambient/al_na_frstntamb2.wav
+%%NWNDIR%%/ambient/al_na_frstntscr1.wav
+%%NWNDIR%%/ambient/al_na_lavalake1.wav
+%%NWNDIR%%/ambient/al_na_sludglake1.wav
+%%NWNDIR%%/ambient/al_pl_blacksmith.wav
+%%NWNDIR%%/ambient/al_pl_bordello1.wav
+%%NWNDIR%%/ambient/al_pl_bordello2.wav
+%%NWNDIR%%/ambient/al_pl_cityday1.wav
+%%NWNDIR%%/ambient/al_pl_cityday2.wav
+%%NWNDIR%%/ambient/al_pl_citynite.wav
+%%NWNDIR%%/ambient/al_pl_combat1.wav
+%%NWNDIR%%/ambient/al_pl_combat2.wav
+%%NWNDIR%%/ambient/al_pl_combatmuf1.wav
+%%NWNDIR%%/ambient/al_pl_combatmuf2.wav
+%%NWNDIR%%/ambient/al_pl_marketday.wav
+%%NWNDIR%%/ambient/al_pl_riot1.wav
+%%NWNDIR%%/ambient/al_pl_riot2.wav
+%%NWNDIR%%/ambient/al_pl_slumday1.wav
+%%NWNDIR%%/ambient/al_pl_slumday2.wav
+%%NWNDIR%%/ambient/al_pl_slumnite.wav
+%%NWNDIR%%/ambient/al_pl_talkinglrg.wav
+%%NWNDIR%%/ambient/al_pl_talkingmed.wav
+%%NWNDIR%%/ambient/al_pl_talkingsml.wav
+%%NWNDIR%%/ambient/al_pl_tavhubbub1.wav
+%%NWNDIR%%/ambient/al_pl_tavhubbub2.wav
+%%NWNDIR%%/ambient/al_pl_templesday.wav
+%%NWNDIR%%/ambient/al_pl_townday1.wav
+%%NWNDIR%%/ambient/al_pl_townday2.wav
+%%NWNDIR%%/ambient/al_pl_townnite.wav
+%%NWNDIR%%/ambient/al_pl_whispers.wav
+%%NWNDIR%%/ambient/al_pl_whispersf.wav
+%%NWNDIR%%/ambient/al_pl_whispersm.wav
+%%NWNDIR%%/ambient/al_wt_gustcavrn1.wav
+%%NWNDIR%%/ambient/al_wt_gustchasm1.wav
+%%NWNDIR%%/ambient/al_wt_gustdraft1.wav
+%%NWNDIR%%/ambient/al_wt_gustgrass1.wav
+%%NWNDIR%%/ambient/al_wt_rainhard1.wav
+%%NWNDIR%%/ambient/al_wt_rainlight1.wav
+%%NWNDIR%%/ambient/al_wt_stormlg1.wav
+%%NWNDIR%%/ambient/al_wt_stormsm1.wav
+%%NWNDIR%%/ambient/al_wt_windforst1.wav
+%%NWNDIR%%/ambient/al_wt_windmed1.wav
+%%NWNDIR%%/ambient/al_wt_windsoft1.wav
+%%NWNDIR%%/ambient/al_wt_windstrng1.wav
+%%NWNDIR%%/chitin.key
+%%NWNDIR%%/data/2da.bif
+%%NWNDIR%%/data/aurora_gui.bif
+%%NWNDIR%%/data/aurora_tcn.bif
+%%NWNDIR%%/data/aurora_tdc.bif
+%%NWNDIR%%/data/aurora_tde.bif
+%%NWNDIR%%/data/aurora_tdm.bif
+%%NWNDIR%%/data/aurora_tds.bif
+%%NWNDIR%%/data/aurora_tic.bif
+%%NWNDIR%%/data/aurora_tin.bif
+%%NWNDIR%%/data/aurora_tms.bif
+%%NWNDIR%%/data/aurora_ttf.bif
+%%NWNDIR%%/data/aurora_ttr.bif
+%%NWNDIR%%/data/convo.bif
+%%NWNDIR%%/data/editor.bif
+%%NWNDIR%%/data/ini.bif
+%%NWNDIR%%/data/loadscreens.bif
+%%NWNDIR%%/data/misc.bif
+%%NWNDIR%%/data/models_01.bif
+%%NWNDIR%%/data/models_02.bif
+%%NWNDIR%%/data/music.bif
+%%NWNDIR%%/data/patch.bif
+%%NWNDIR%%/data/scripts.bif
+%%NWNDIR%%/data/sounds.bif
+%%NWNDIR%%/data/templates.bif
+%%NWNDIR%%/data/textures_01.bif
+%%NWNDIR%%/data/textures_02.bif
+%%NWNDIR%%/data/voicesets.bif
+%%NWNDIR%%/dialog.tlk
+%%NWNDIR%%/dmvault/dungeonmaster.bic
+%%NWNDIR%%/docs/NWN_OnlineManual.pdf
+%%NWNDIR%%/docs/readme.txt
+%%NWNDIR%%/localvault/aluviandarkstar.bic
+%%NWNDIR%%/localvault/claymanorin.bic
+%%NWNDIR%%/localvault/daeris.bic
+%%NWNDIR%%/localvault/daevaorn.bic
+%%NWNDIR%%/localvault/diadanlocke.bic
+%%NWNDIR%%/localvault/drax.bic
+%%NWNDIR%%/localvault/freddifurpo.bic
+%%NWNDIR%%/localvault/frederickgarvin.bic
+%%NWNDIR%%/localvault/jaindvarkvasirso.bic
+%%NWNDIR%%/localvault/jinn.bic
+%%NWNDIR%%/localvault/jolenaleider.bic
+%%NWNDIR%%/localvault/junoboram.bic
+%%NWNDIR%%/localvault/kerith.bic
+%%NWNDIR%%/localvault/kheldaraambarhin.bic
+%%NWNDIR%%/localvault/laureencelest.bic
+%%NWNDIR%%/localvault/merrickdupelade.bic
+%%NWNDIR%%/localvault/ownka.bic
+%%NWNDIR%%/localvault/raptrethanlis.bic
+%%NWNDIR%%/localvault/torutaramoku.bic
+%%NWNDIR%%/localvault/xandraloxdeteste.bic
+%%NWNDIR%%/localvault/xavierwoo.bic
+%%NWNDIR%%/localvault/zanzinabru.bic
+%%NWNDIR%%/modules/Contest Of Champions 0492.mod
+%%NWNDIR%%/modules/DEMO - A Bucket of Gnolls.mod
+%%NWNDIR%%/modules/DEMO - Goblins vs Kobolds.mod
+%%NWNDIR%%/modules/DEMO - House of Doors.mod
+%%NWNDIR%%/modules/DEMO - Thar be Rats! Yarrr!.mod
+%%NWNDIR%%/modules/DEMO - The Cat Lady.mod
+%%NWNDIR%%/modules/WW1-The Fields of Battle.mod
+%%NWNDIR%%/modules/WW2-The Witch Hunters.mod
+%%NWNDIR%%/music/mus_autorun.wav
+%%NWNDIR%%/music/mus_bat_aribeth.bmu
+%%NWNDIR%%/music/mus_bat_citboss.bmu
+%%NWNDIR%%/music/mus_bat_city1.bmu
+%%NWNDIR%%/music/mus_bat_city2.bmu
+%%NWNDIR%%/music/mus_bat_city3.bmu
+%%NWNDIR%%/music/mus_bat_dragon.bmu
+%%NWNDIR%%/music/mus_bat_dung1.bmu
+%%NWNDIR%%/music/mus_bat_dung2.bmu
+%%NWNDIR%%/music/mus_bat_dung3.bmu
+%%NWNDIR%%/music/mus_bat_endboss.bmu
+%%NWNDIR%%/music/mus_bat_forboss.bmu
+%%NWNDIR%%/music/mus_bat_forest1.bmu
+%%NWNDIR%%/music/mus_bat_forest2.bmu
+%%NWNDIR%%/music/mus_bat_lizboss.bmu
+%%NWNDIR%%/music/mus_bat_rural1.bmu
+%%NWNDIR%%/music/mus_castle.bmu
+%%NWNDIR%%/music/mus_citydockday.bmu
+%%NWNDIR%%/music/mus_citydocknite.bmu
+%%NWNDIR%%/music/mus_citymarket.bmu
+%%NWNDIR%%/music/mus_citynite.bmu
+%%NWNDIR%%/music/mus_cityslumday.bmu
+%%NWNDIR%%/music/mus_cityslumnite.bmu
+%%NWNDIR%%/music/mus_citywealthy.bmu
+%%NWNDIR%%/music/mus_crypt1.bmu
+%%NWNDIR%%/music/mus_crypt2.bmu
+%%NWNDIR%%/music/mus_evildungeon1.bmu
+%%NWNDIR%%/music/mus_evildungeon2.bmu
+%%NWNDIR%%/music/mus_forestday1.bmu
+%%NWNDIR%%/music/mus_forestday2.bmu
+%%NWNDIR%%/music/mus_forestnite.bmu
+%%NWNDIR%%/music/mus_gendungeon1.bmu
+%%NWNDIR%%/music/mus_mines1.bmu
+%%NWNDIR%%/music/mus_mines2.bmu
+%%NWNDIR%%/music/mus_richhouse.bmu
+%%NWNDIR%%/music/mus_ruralday1.bmu
+%%NWNDIR%%/music/mus_ruralday2.bmu
+%%NWNDIR%%/music/mus_ruralnite.bmu
+%%NWNDIR%%/music/mus_sewer.bmu
+%%NWNDIR%%/music/mus_store.bmu
+%%NWNDIR%%/music/mus_tavern1.bmu
+%%NWNDIR%%/music/mus_tavern2.bmu
+%%NWNDIR%%/music/mus_tavern3.bmu
+%%NWNDIR%%/music/mus_tavern4.bmu
+%%NWNDIR%%/music/mus_templeevil.bmu
+%%NWNDIR%%/music/mus_templegood.bmu
+%%NWNDIR%%/music/mus_templegood2.bmu
+%%NWNDIR%%/music/mus_theme_argend.bmu
+%%NWNDIR%%/music/mus_theme_aribev.bmu
+%%NWNDIR%%/music/mus_theme_aribgd.bmu
+%%NWNDIR%%/music/mus_theme_chap1.bmu
+%%NWNDIR%%/music/mus_theme_chap2.bmu
+%%NWNDIR%%/music/mus_theme_chap3.bmu
+%%NWNDIR%%/music/mus_theme_chap4.bmu
+%%NWNDIR%%/music/mus_theme_main.bmu
+%%NWNDIR%%/music/mus_theme_maugrm.bmu
+%%NWNDIR%%/music/mus_theme_morag.bmu
+%%NWNDIR%%/music/mus_theme_nwn.bmu
+%%NWNDIR%%/nwm/Chapter1.nwm
+%%NWNDIR%%/nwm/Chapter1E.nwm
+%%NWNDIR%%/nwm/Chapter2.nwm
+%%NWNDIR%%/nwm/Chapter2E.nwm
+%%NWNDIR%%/nwm/Chapter3.nwm
+%%NWNDIR%%/nwm/Chapter4.nwm
+%%NWNDIR%%/nwm/Prelude.nwm
+%%NWNDIR%%/override/iit_medkit_001.tga
+%%NWNDIR%%/override/m1q6f06pedistal.dlg
+%%NWNDIR%%/override/nw_s2_wholeness.ncs
+%%NWNDIR%%/override/nw_s2_wholeness.nss
+%%NWNDIR%%/override/options_sound.gui
+%%NWNDIR%%/override/serverlist_page1.gui
+%%NWNDIR%%/patch.key
+%%NWNDIR%%/texturepacks/GUI_32bit.erf
+%%NWNDIR%%/texturepacks/Textures_Tpa.erf
+%%NWNDIR%%/texturepacks/Textures_Tpc.erf
+%%NWNDIR%%/texturepacks/Tiles_Tpa.erf
+%%NWNDIR%%/texturepacks/Tiles_Tpb.erf
+%%NWNDIR%%/texturepacks/Tiles_Tpc.erf
+@dirrm %%NWNDIR%%/texturepacks
+@dirrm %%NWNDIR%%/servervault
+@dirrm %%NWNDIR%%/saves
+@dirrm %%NWNDIR%%/portraits
+@dirrm %%NWNDIR%%/override
+@dirrm %%NWNDIR%%/nwm
+@dirrm %%NWNDIR%%/music
+@dirrm %%NWNDIR%%/modules
+@dirrm %%NWNDIR%%/localvault
+@dirrm %%NWNDIR%%/hak
+@dirrm %%NWNDIR%%/docs
+@dirrm %%NWNDIR%%/dmvault
+@dirrm %%NWNDIR%%/data
+@dirrm %%NWNDIR%%/ambient
+@dirrm %%NWNDIR%%
