@@ -7,6 +7,7 @@
 
 PORTNAME=		afbinit
 PORTVERSION=		1.0
+PORTREVISION=		1
 CATEGORIES=		sysutils graphics
 MASTER_SITES=		${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/contrib/a/afbinit
