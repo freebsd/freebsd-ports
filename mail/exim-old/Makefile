@@ -7,6 +7,7 @@
 
 PORTNAME=	exim
 PORTVERSION=	3.35
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/email/exim/exim3/ \
 		http://www.exim.org/ftp/exim3/ \
@@ -204,7 +205,7 @@ pre-install:
 	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
-	${INSTALL_SCRIPT} ${FILESDIR}/exim.sh.sample ${PREFIX}/etc/rc.d
+	${INSTALL_SCRIPT} ${FILESDIR}/exim.sh ${PREFIX}/etc/rc.d
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/exim
 	${INSTALL_DATA} ${PI_NOTES_FILE} \
