@@ -3,15 +3,16 @@
 # Date created:		4 January 1999
 # Whom:			shige
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/01/04 20:58:32 sada Exp $
 #
 
 DISTNAME=	jls-0.1
 PKGNAME=	ja-ls-0.1
 CATEGORIES=	japanese
-MASTER_SITES=	http://www.yuasa.kuis.kyoto-u.ac.jp/~shige/FreeBSD/programs/
+MASTER_SITES=	http://www.freebsd.org/~shige/ports/ \
+		http://www.yuasa.kuis.kyoto-u.ac.jp/~shige/FreeBSD/programs/
 
-MAINTAINER=	shige@kuis.kyoto-u.ac.jp
+MAINTAINER=	shige@FreeBSD.ORG
 
 MAN1=		jls.1
 MANCOMPRESSED=	yes
