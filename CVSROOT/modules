@@ -1809,6 +1809,7 @@ fpr		src/usr.bin/fpr
 fr-abispell-fr-FR	ports/french/abispell-fr-FR
 fr-aspell       ports/french/aspell
 fr-daCode	ports/french/daCode
+fr-gfaim	ports/french/gfaim
 fr-ispell	ports/french/ispell
 fr-jdictionary-fre-hun	ports/french/jdictionary-fre-hun
 fr-kde3-i18n	ports/french/kde3-i18n
