@@ -11,7 +11,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	narayan_newton@yahoo.com
+MAINTAINER=	narayannewton@gmail.com
 COMMENT=	A XMMS plugin to hide the player
 
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
