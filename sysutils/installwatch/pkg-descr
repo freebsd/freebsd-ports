@@ -5,7 +5,7 @@ it monitors processes while they run. Installwatch works with every
 dynamically linked ELF program, by intercepting system calls that
 cause file system alterations.
 
-WWW: http://mayams.net/~izto/installwatch.html
+WWW: http://asic-linux.com.mx/~izto/checkinstall/installwatch.html
 
 - George Reid
 greid@ukug.uk.freebsd.org
