@@ -13,10 +13,11 @@ MASTER_SITE_SUBDIR=	cedet
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/beta/}
 
-MAINTAINER=	fuyuki@mj.0038.net
+MAINTAINER=	fuyuki@hadaly.org
 
 EMACS_PORT_NAME?=	emacs21
 
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 
 LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/speedbar
@@ -27,11 +28,11 @@ MUST_BE_RECOMPILED=	gud.el info.el rmail.el vhdl-mode.el
 
 EMACS_ARGS=	 -batch -l speedbar-compile-script -f batch-byte-compile
 
-pre-build:
+post-patch:
 .for i in ${MUST_BE_RECOMPILED}
 	${CP} `${FIND} ${PREFIX}/${EMACS_LIBDIR_WITH_VER}/lisp -name ${i}` \
 		${WRKSRC}
-	${PERL} -pi -e 's/speedbar-attached-frame/dframe-attached-frame/' \
+	${REINPLACE_CMD} -e 's/speedbar-attached-frame/dframe-attached-frame/' \
 		${WRKSRC}/${i}
 .endfor
 
