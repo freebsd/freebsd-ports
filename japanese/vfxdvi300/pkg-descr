@@ -1,6 +1,0 @@
-This is xdvi-17 + miyupath + markpage + toc + printdvi + VFlib patch.
-
-ja-vflib package is need to be installed in advance.
-This package can compile in 118dpi, 240dpi, 300dpi , 360dpi, 400dpi
-or 600dpi fonts.
-					MITA Yoshio <mita@jp.FreeBSD.org>
