@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xchat2
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.3
 CATEGORIES=	irc gnome ipv6
 MASTER_SITES=	http://xchat.org/files/source/2.0/ \
 		http://xchat.linuxpower.org/files/source/2.0/
@@ -20,7 +20,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
 USE_GNOME=	gnomeprefix gnomehack gtk20
-USE_LIBTOOL=	yes
+GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
@@ -38,24 +38,24 @@ CONFIGURE_ARGS+=	--enable-socks
 # openssl in now default in configure
 
 .if defined(WITH_PYTHON)
-USE_PYTHON=    yes
+USE_PYTHON=		yes
 CONFIGURE_ARGS+=	--enable-python
-PLIST_SUB+=	PYTHON=""
+PLIST_SUB+=		PYTHON=""
 .else
 CONFIGURE_ARGS+=	--disable-python
-PLIST_SUB+=	PYTHON="@comment "
+PLIST_SUB+=		PYTHON="@comment "
 .endif
 
 .if defined(WITH_TCL)
-LIB_DEPENDS=    tcl83.1:${PORTSDIR}/lang/tcl83
-CONFIGURE_ARGS+=	--enable-tcl=${LOCALBASE}/lib/tcl8.3
+LIB_DEPENDS=	tcl83.1:${PORTSDIR}/lang/tcl83
+CONFIGURE_ARGS+=--enable-tcl=${LOCALBASE}/lib/tcl8.3
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS} \
 		-I${LOCALBASE}/include/tcl8.3" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS} \
 		-L${LOCALBASE}/lib/tcl8.3"
 PLIST_SUB+=	TCL=""
 .else
-CONFIGURE_ARGS+=	--enable-tcl=no
+CONFIGURE_ARGS+=--enable-tcl=no
 PLIST_SUB+=	TCL="@comment "
 .endif
 
