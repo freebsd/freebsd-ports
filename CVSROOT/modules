@@ -5754,6 +5754,7 @@ netstrain	ports/net/netstrain
 nettest		ports/net/nettest
 nettle		ports/security/nettle
 nettoe		ports/games/nettoe
+netustad	ports/net-mgmt/netustad
 neverball	ports/games/neverball
 newfile		ports/devel/newfile
 newmail		ports/mail/newmail
