@@ -5,7 +5,7 @@
 # Date created:         10 Feb 1998
 # Whom:                 markm
 #
-# $Id: Makefile,v 1.25 1999/01/15 14:23:31 scrappy Exp $
+# $Id: Makefile,v 1.26 1999/03/11 21:47:15 scrappy Exp $
 #
 
 DISTNAME=	pgp50i
@@ -24,7 +24,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS= --prefix=${PREFIX}
 RESTRICTED=     "Crypto"
-MAN1=		pgp.1 pgpe.1 pgpk.1 pgps.1 pgpv.1
+MAN1=		pgp5.1 pgpe.1 pgpk.1 pgps.1 pgpv.1
 MAN5=		pgp.cfg.5
 MAN7=		pgp-integration.7 pgp-intro.7
 

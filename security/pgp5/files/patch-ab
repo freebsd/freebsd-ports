@@ -1,0 +1,21 @@
+--- man/Makefile.in.orig	Sat Feb  7 21:54:57 1998
++++ man/Makefile.in	Sun Feb 14 14:56:52 1999
+@@ -6,11 +6,16 @@
+ # $Id: Makefile.in,v 1.3.2.4.2.1 1997/08/27 03:57:21 quark Exp $
+ #
+ 
+-MAN1=pgp.1 pgpe.1 pgpk.1 pgps.1 pgpv.1
++# Change this to pgp5 if you want old and new versions in parallel
++INSTPGP=pgp5
++MAN1=$(INSTPGP).1 pgpe.1 pgpk.1 pgps.1 pgpv.1
+ MAN5=pgp.cfg.5
+ MAN7=pgp-integration.7 pgp-intro.7
+ 
+-install::
++$(INSTPGP).1:	pgp.1
++	$(LN_S) ${.OODATE} ${.TARGET}
++
++install:: $(INSTPGP).1
+ 	if test 'x$(MAN1)' != x; then \
+ 		if test ! -d $(DESTDIR)$(mandir)/man1; then \
+ 			mkdir -p $(DESTDIR)$(mandir)/man1; \
