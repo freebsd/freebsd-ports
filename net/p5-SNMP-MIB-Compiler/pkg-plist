@@ -1,0 +1,13 @@
+bin/mibbrowser
+bin/mibcompiler
+lib/perl5/site_perl/%%PERL_VER%%/SNMP/MIB/Compiler.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bundle/SNMP/MIB/Compiler.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/SNMP/MIB/Compiler/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/SNMP/MIB/Compiler
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/SNMP/MIB
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/SNMP
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/SNMP/MIB
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/SNMP
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Bundle/SNMP/MIB
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Bundle/SNMP
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Bundle 2>/dev/null || true
