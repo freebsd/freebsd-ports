@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- man/Makefile.in.orig	Mon May 21 15:30:41 2001
-+++ man/Makefile.in	Mon Aug 27 12:28:49 2001
+--- man/Makefile.in.orig	Mon May 21 08:34:42 2001
++++ man/Makefile.in	Sun Oct 27 22:09:17 2002
 @@ -10,7 +10,7 @@
  local_prefix = /usr/local
  exec_prefix = @exec_prefix@
@@ -12,3 +9,19 @@ $FreeBSD$
  htmldir = $(docdir)
  
  # Programs used by "make":
+@@ -35,7 +35,6 @@
+ 	cd $(srcdir) && for f in *.1 ; do echo $(INSTALL_DATA) $$f $(DESTDIR)$(mandir)/man1/$$f ; $(INSTALL_DATA) $$f $(DESTDIR)$(mandir)/man1/$$f ; done
+ 	if [ ! -d $(DESTDIR)$(mandir)/man3 ] ; then mkdir $(DESTDIR)$(mandir)/man3 ; fi
+ 	cd $(srcdir) && for f in *.3 ; do echo $(INSTALL_DATA) $$f $(DESTDIR)$(mandir)/man3/$$f ; $(INSTALL_DATA) $$f $(DESTDIR)$(mandir)/man3/$$f ; done
+-	if [ ! -d $(DESTDIR)$(prefix)/doc ] ; then mkdir $(DESTDIR)$(prefix)/doc ; fi
+ 	if [ ! -d $(DESTDIR)$(docdir) ] ; then mkdir $(DESTDIR)$(docdir) ; fi
+ 	if [ ! -d $(DESTDIR)$(htmldir) ] ; then mkdir $(DESTDIR)$(htmldir) ; fi
+ 	cd $(srcdir) && for f in *.html ; do echo $(INSTALL_DATA) $$f $(DESTDIR)$(htmldir)/$$f ; $(INSTALL_DATA) $$f $(DESTDIR)$(htmldir)/$$f ; done
+@@ -45,7 +44,6 @@
+ 	if [ ! -d $(DESTDIR)$(mandir) ] ; then mkdir $(DESTDIR)$(mandir) ; fi
+ 	if [ ! -d $(DESTDIR)$(mandir)/man1 ] ; then mkdir $(DESTDIR)$(mandir)/man1 ; fi
+ 	if [ ! -d $(DESTDIR)$(mandir)/man3 ] ; then mkdir $(DESTDIR)$(mandir)/man3 ; fi
+-	if [ ! -d $(DESTDIR)$(prefix)/doc ] ; then mkdir $(DESTDIR)$(prefix)/doc ; fi
+ 	if [ ! -d $(DESTDIR)$(docdir) ] ; then mkdir $(DESTDIR)$(docdir) ; fi
+ 	if [ ! -d $(DESTDIR)$(htmldir) ] ; then mkdir $(DESTDIR)$(htmldir) ; fi
+ 

@@ -1,6 +1,14 @@
---- lib/aliases.gperf.orig	Mon Jun 25 21:39:41 2001
-+++ lib/aliases.gperf	Sun May 19 21:08:32 2002
-@@ -42,6 +42,7 @@
+--- lib/aliases.gperf.orig	Wed May 29 10:16:47 2002
++++ lib/liases.gperf	Mon Oct 14 12:31:58 2002
+@@ -12,6 +12,7 @@
+ US, ei_ascii
+ CSASCII, ei_ascii
+ UTF-8, ei_utf8
++UTF8, ei_utf8
+ UCS-2, ei_ucs2
+ ISO-10646-UCS-2, ei_ucs2
+ CSUNICODE, ei_ucs2
+@@ -43,6 +44,7 @@
  JAVA, ei_java
  ISO-8859-1, ei_iso8859_1
  ISO_8859-1, ei_iso8859_1
@@ -8,7 +16,7 @@
  ISO_8859-1:1987, ei_iso8859_1
  ISO-IR-100, ei_iso8859_1
  CP819, ei_iso8859_1
-@@ -51,6 +52,7 @@
+@@ -52,6 +54,7 @@
  CSISOLATIN1, ei_iso8859_1
  ISO-8859-2, ei_iso8859_2
  ISO_8859-2, ei_iso8859_2
@@ -16,7 +24,7 @@
  ISO_8859-2:1987, ei_iso8859_2
  ISO-IR-101, ei_iso8859_2
  LATIN2, ei_iso8859_2
-@@ -58,6 +60,7 @@
+@@ -59,6 +62,7 @@
  CSISOLATIN2, ei_iso8859_2
  ISO-8859-3, ei_iso8859_3
  ISO_8859-3, ei_iso8859_3
@@ -24,7 +32,7 @@
  ISO_8859-3:1988, ei_iso8859_3
  ISO-IR-109, ei_iso8859_3
  LATIN3, ei_iso8859_3
-@@ -65,6 +68,7 @@
+@@ -66,6 +70,7 @@
  CSISOLATIN3, ei_iso8859_3
  ISO-8859-4, ei_iso8859_4
  ISO_8859-4, ei_iso8859_4
@@ -32,7 +40,7 @@
  ISO_8859-4:1988, ei_iso8859_4
  ISO-IR-110, ei_iso8859_4
  LATIN4, ei_iso8859_4
-@@ -72,12 +76,14 @@
+@@ -73,12 +78,14 @@
  CSISOLATIN4, ei_iso8859_4
  ISO-8859-5, ei_iso8859_5
  ISO_8859-5, ei_iso8859_5
@@ -47,7 +55,7 @@
  ISO_8859-6:1987, ei_iso8859_6
  ISO-IR-127, ei_iso8859_6
  ECMA-114, ei_iso8859_6
-@@ -86,6 +92,7 @@
+@@ -87,6 +94,7 @@
  CSISOLATINARABIC, ei_iso8859_6
  ISO-8859-7, ei_iso8859_7
  ISO_8859-7, ei_iso8859_7
@@ -55,7 +63,7 @@
  ISO_8859-7:1987, ei_iso8859_7
  ISO-IR-126, ei_iso8859_7
  ECMA-118, ei_iso8859_7
-@@ -95,12 +102,14 @@
+@@ -96,12 +104,14 @@
  CSISOLATINGREEK, ei_iso8859_7
  ISO-8859-8, ei_iso8859_8
  ISO_8859-8, ei_iso8859_8
@@ -70,7 +78,7 @@
  ISO_8859-9:1989, ei_iso8859_9
  ISO-IR-148, ei_iso8859_9
  LATIN5, ei_iso8859_9
-@@ -108,6 +117,7 @@
+@@ -109,6 +119,7 @@
  CSISOLATIN5, ei_iso8859_9
  ISO-8859-10, ei_iso8859_10
  ISO_8859-10, ei_iso8859_10
@@ -78,7 +86,7 @@
  ISO_8859-10:1992, ei_iso8859_10
  ISO-IR-157, ei_iso8859_10
  LATIN6, ei_iso8859_10
-@@ -115,11 +125,13 @@
+@@ -116,11 +127,13 @@
  CSISOLATIN6, ei_iso8859_10
  ISO-8859-13, ei_iso8859_13
  ISO_8859-13, ei_iso8859_13
@@ -92,7 +100,7 @@
  ISO_8859-14:1998, ei_iso8859_14
  ISO-IR-199, ei_iso8859_14
  LATIN8, ei_iso8859_14
-@@ -127,10 +139,12 @@
+@@ -128,10 +141,12 @@
  ISO-CELTIC, ei_iso8859_14
  ISO-8859-15, ei_iso8859_15
  ISO_8859-15, ei_iso8859_15
@@ -105,7 +113,7 @@
  ISO_8859-16:2000, ei_iso8859_16
  ISO-IR-226, ei_iso8859_16
  KOI8-R, ei_koi8_r
-@@ -251,12 +265,12 @@
+@@ -253,12 +268,12 @@
  CHINESE, ei_gb2312
  ISO-IR-165, ei_isoir165
  CN-GB-ISOIR165, ei_isoir165

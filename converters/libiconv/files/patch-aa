@@ -1,11 +1,14 @@
-
-$FreeBSD$
-
---- Makefile.in.orig	Tue Feb 20 21:43:19 2001
-+++ Makefile.in	Sun Mar 17 11:01:20 2002
-@@ -31,7 +31,7 @@
+--- Makefile.in.orig	Tue Apr 30 10:23:47 2002
++++ Makefile.in	Sun Oct 27 22:11:16 2002
+@@ -27,12 +27,12 @@
+ SHELL = /bin/sh
+ 
+ all : force
+-	builddir="`pwd`"; cd libcharset && $(MAKE) all && $(MAKE) install-lib libdir="$$builddir/lib" includedir="$$builddir/lib"
++	builddir="`pwd`"; cd libcharset && $(MAKE) all && $(MAKE) install-lib libdir="$$builddir/lib" includedir="$$builddir/lib" sysconfdir="$$builddir/lib"
  	cd lib && $(MAKE) all
  	cd src && $(MAKE) all
+ 	cd po && $(MAKE) all
  	cd man && $(MAKE) all
 -	if test -d tests; then cd tests && $(MAKE) all; fi
 +	#if test -d tests; then cd tests && $(MAKE) all; fi
