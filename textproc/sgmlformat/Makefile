@@ -34,7 +34,7 @@ RUN_DEPENDS=	nsgmls:${PORTSDIR}/textproc/jade
 RUN_DEPENDS+=	${PREFIX}/share/sgml/linuxdoc:${PORTSDIR}/textproc/linuxdoc \
 		${PREFIX}/share/sgml/docbook:${PORTSDIR}/textproc/docbook
 
-USE_PERL5=	yes
+USE_REINPLACE=	yes
 
 MAN1=		instant.1 sgmlfmt.1
 MAN5=		transpec.5
@@ -42,8 +42,8 @@ MANCOMPRESSED=	yes
 
 .if defined(WITH_OPENJADE)
 post-patch:
-	@${PERL} -pi -e 's,nsgmls,onsgmls,g' ${WRKSRC}/sgmlfmt/sgmlfmt.pl
-	@${PERL} -pi -e 's,nsgmls,onsgmls,g' ${WRKSRC}/instant/traninit.c
+	@${REINPLACE_CMD} -e 's,nsgmls,onsgmls,g' ${WRKSRC}/sgmlfmt/sgmlfmt.pl
+	@${REINPLACE_CMD} -e 's,nsgmls,onsgmls,g' ${WRKSRC}/instant/traninit.c
 .endif
 
 post-install:
