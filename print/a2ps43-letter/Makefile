@@ -6,11 +6,10 @@
 # $FreeBSD$
 #
 
-DISTNAME=	a2ps
+DISTNAME=	a2ps.V4.3
 PKGNAME=	a2ps-${PAPERSIZE}-4.3
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.imag.fr/archive/postscript/format.translators/
-DISTFILES=	a2ps.V4.3.tar.gz
 
 MAINTAINER=	obrien@FreeBSD.org
 
@@ -31,7 +30,7 @@ HEIGHT=11.64
 A4_PAPERSIZE=1
 .else
 .BEGIN:
-	@${ECHO} "Error: invalid value for PAPERSIZE: \"${PAPERSIZE}\"" 
+	@${ECHO} "Error: invalid value for PAPERSIZE: \"${PAPERSIZE}\""
 	@${ECHO} "Possible values are:  a4 or letter"
 	@${FALSE}
 .endif
