@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	lib/${PORTNAME}
 PKGNAMEPREFIX=	ossp-
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An ISO-C & Perl API and CLI for generating Universally Unique Identifiers (UUID)
+COMMENT=	ISO-C & Perl API and CLI for generating Universally Unique Identifiers
 
 CONFLICTS=	e2fsprogs-[0-9]*
 
@@ -24,7 +24,7 @@ CONFIGURE_ARGS+=	--disable-shared --enable-static
 MAN1=		uuid-config.1 uuid.1
 MAN3=		uuid.3
 
-.if !defined(WITHOUT_PERL)
+.if defined(WITH_PERL)
 USE_PERL5=	yes
 CONFIGURE_ENV+=	PERL=${PERL5}
 CONFIGURE_ARGS+=	--with-perl
@@ -38,4 +38,10 @@ PLIST_SUB+=		WITH_PERL='@comment '
 test:
 	cd ${WRKSRC}; ${MAKE} check
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_PERL) && ${PERL_LEVEL} < 500800
+IGNORE=	supports Perl 5.8.0 or above only
+.endif
+
+.include <bsd.port.post.mk>
