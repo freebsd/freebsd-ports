@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	linuxpluginwrapper
-PORTVERSION=	20041219
+PORTVERSION=	20050110
 PORTREVISION=	0
 CATEGORIES=	www linux emulators
 MASTER_SITES=	http://people.FreeBSD.org/~nork/distfiles/ \
@@ -30,13 +30,13 @@ USE_MOTIF=	yes
 ONLY_FOR_ARCHS=	i386
 MAKE_ENV=	EXAMPLESDIR=${EXAMPLESDIR} INSTALL_DATA="${INSTALL_DATA}"
 
+CONFLICTS=	flashpluginwrapper-*
 USE_XLIB=	yes
 USE_REINPLACE=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 .if		defined(WITHOUT_PLUGINS) || ${OSVERSION} < 500000
 PLIST=		${WRKDIR}/pkg-plist
 .endif
-CONFLICTS=	flashpluginwrapper-*
 
 .if		${OSVERSION} >= 503001
 LIBMAPCONF=	${EXAMPLESDIR}/libmap.conf-FreeBSD5-stable
