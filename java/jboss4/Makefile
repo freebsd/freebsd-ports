@@ -6,19 +6,20 @@
 #
 
 PORTNAME=	${APP_TITLE:L}
-PORTVERSION=	3.2.5
+PORTVERSION=	4.0.0
 CATEGORIES=	java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	jonc@chen.org.nz
-COMMENT=	JBoss 3.x, an open-source J2EE application server
+COMMENT=	JBoss 4.x, an open-source J2EE application server
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/ant:${PORTSDIR}/devel/apache-ant
 
-LATEST_LINK=	jboss3
-USE_JAVA=	1.4+
+LATEST_LINK=	jboss4
+USE_JAVA=	yes
+JAVA_VERSION=	1.4+
 
 USE_REINPLACE=	YES
 USE_BZIP2=	YES
