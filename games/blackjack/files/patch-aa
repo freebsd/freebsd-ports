@@ -8,7 +8,7 @@
 -LDFLAGS=-L$(QTDIR)/lib -lqt
 +INCLUDES=-I/usr/X11R6/include/X11/qt
 +LDFLAGS=-L/usr/X11R6/lib -lqt
- VERSION=1.0
+ VERSION=1.1
  
  # For systems that don't have install, use this
 @@ -24,12 +24,14 @@
