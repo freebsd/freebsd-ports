@@ -3,7 +3,7 @@
 # Date created:		21 October 1994
 # Whom:			smace
 #
-# $Id: Makefile,v 1.18 1998/10/26 15:36:57 smace Exp $
+# $Id: Makefile,v 1.19 1999/05/04 23:07:17 steve Exp $
 #
 
 DISTNAME=	olvwm4
@@ -19,7 +19,7 @@ PATCHFILES=	olvwm4.Patch01.Z \
 		olvwm4.Patch02.Z
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	brianfeldman@hotmail.com
+MAINTAINER=	green@FreeBSD.org
 
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview \
 		Xpm.4:${PORTSDIR}/graphics/xpm
