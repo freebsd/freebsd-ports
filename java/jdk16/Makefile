@@ -33,6 +33,8 @@ WRKSRC=		${WRKDIR}/control/make
 JDK_VERSION=	1.4.2
 JDK_PATCHSET_VERSION=	5
 
+SUN_LINUX_JDK_VERSION=  1.4.2_02
+
 .if !defined(WITH_LINUX_BOOTSTRAP)
 NATIVE_BOOTSTRAP_JDKS=	${LOCALBASE}/jdk1.4.2 \
 			${LOCALBASE}/jdk1.4.1
@@ -41,10 +43,13 @@ NATIVE_BOOTSTRAP_JDKS=	${LOCALBASE}/jdk1.4.2 \
 LINUX_BOOTSTRAP_JDKS=	${LOCALBASE}/linux-sun-jdk1.4.2_02 \
 			${LOCALBASE}/linux-sun-jdk1.4.2_01 \
 			${LOCALBASE}/linux-sun-jdk1.4.2 \
+			${LOCALBASE}/linux-sun-jdk1.4.1_02 \
+			${LOCALBASE}/linux-sun-jdk1.4.1_01 \
 			${LOCALBASE}/linux-sun-jdk1.4.1
 
 .include <bsd.port.pre.mk>
 
+# do we have valid native jdk installed?
 .if !defined(WITH_LINUX_BOOTSTRAP)
 .for CJDK in ${NATIVE_BOOTSTRAP_JDKS}
 .  if !defined(JDK14DIR) && exists(${CJDK}/bin/javac)
@@ -53,20 +58,22 @@ JDK14DIR=	${CJDK}
 .endfor
 .endif
 
+# do we have valid linux jdk installed?
 .if !defined(JDK14DIR)
-_NEED_BOOTSRAP_JDK=	YES
 .for CJDK in ${LINUX_BOOTSTRAP_JDKS}
 .  if !defined(JDK14DIR) && exists(${CJDK}/bin/javac)
 JDK14DIR=	${CJDK}
 WITH_LINUX_BOOTSTRAP=	YES
-.undef NEED_BOOTSTRAP_JDK
 .  endif
 .endfor
 .endif
 
-.if defined(_NEED_BOOTSTRAP_JDK)
-BUILD_DEPENDS+=	${JDK14DIR}/bin/javac:${PORTSDIR}/java/linux-sun-jdk14
+# if no valid jdk found, set dependency
+.if !defined(JDK14DIR)
+JDK14DIR?=	${LOCALBASE}/linux-sun-jdk${SUN_LINUX_JDK_VERSION}
 .endif
+
+BUILD_DEPENDS+=	${JDK14DIR}/bin/javac:${PORTSDIR}/java/linux-sun-jdk14
 
 # workaround to handle both 'zip' and 'tar.gz' distfiles
 USE_ZIP=	YES
