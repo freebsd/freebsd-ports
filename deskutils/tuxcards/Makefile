@@ -32,6 +32,6 @@ do-install:
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/en/*.* ${DOCSDIR}
 .endif
-	${CAT} pkg-message
+	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
