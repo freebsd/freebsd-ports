@@ -3,7 +3,7 @@
 # Date created:		31 December 1996
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.4 1997/05/22 07:53:29 tg Exp $
+# $Id: Makefile,v 1.5 1998/04/30 11:39:06 tg Exp $
 #
 
 DISTNAME=	wget-1.5.0
@@ -19,6 +19,5 @@ post-install:
 		sed -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
 	fi
 	-install-info ${PREFIX}/info/wget.info ${PREFIX}/info/dir
-	@strip ${PREFIX}/bin/wget
 
 .include <bsd.port.mk>
