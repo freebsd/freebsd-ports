@@ -3,7 +3,7 @@
 # Date created:         7 August 1995
 # Whom:                 torstenb
 #
-# $Id: Makefile,v 1.21 1998/09/17 00:50:50 asami Exp $
+# $Id: Makefile,v 1.22 1999/01/23 07:05:28 vanilla Exp $
 #
 
 DISTNAME=       Mosaic-src-2.7b5
@@ -11,7 +11,9 @@ PKGNAME=        mosaic-2.7b5
 CATEGORIES=     www
 MASTER_SITES=	ftp://ftp.ncsa.uiuc.edu/Web/Mosaic/Unix/source/
 
-LIB_DEPENDS=    jpeg.9:${PORTSDIR}/graphics/jpeg \
+MAINTAINER=	ports@FreeBSD.org
+
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.3:${PORTSDIR}/graphics/png \
 		Xpm.4:${PORTSDIR}/graphics/xpm \
 
