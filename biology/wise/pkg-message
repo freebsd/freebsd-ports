@@ -1,0 +1,15 @@
+Welcome to Wise2.2
+
+You must set your WISECONFIGDIR to the config directory before
+using the programs:
+
+in (t)csh:  setenv WISECONFIGDIR PREFIX/share/wise/
+in (ba)sh:  export WISECONFIGDIR=PREFIX/share/wise/
+
+To try an example:
+
+cd PREFIX/share/examples/wise
+genewise road.pep human.genomic
+
+[Replace 'PREFIX' above with the actual installation prefix,
+which by default is '/usr/local'.]

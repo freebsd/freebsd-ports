@@ -1,0 +1,13 @@
+"Wise2 is package that is focused on comparing DNA sequences at
+the level of its conceptual translation, regardless of sequencing
+error and introns. This really is a rewrite of the old wisetools
+package, which I wrote about 3 years ago.
+
+It can compare a single protein or a profile HMM to a genomic DNA
+sequence, and predict a gene structure. This is algorithm, called
+genewise, is one of the algorithms available in Wise2. There are
+other algorithms focused on EST data rather than genomic data, as
+well as some other algorithm curios."
+- from the web site (Ewan Birney)
+
+WWW: http://www.sanger.ac.uk/Software/Wise2

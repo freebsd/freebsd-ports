@@ -54,6 +54,7 @@
     SUBDIR += t_coffee
     SUBDIR += tinker
     SUBDIR += treeviewx
+    SUBDIR += wise
     SUBDIR += xdrawchem
     SUBDIR += xmolwt
 
