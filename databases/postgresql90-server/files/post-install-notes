@@ -1,25 +1,49 @@
+The PostgreSQL port has a collection of "side orders":
 
-Now that PostgreSQL is installed, you should read the documentation and
-implementation guides. These can be found at:
+p5-Pg
+  A perl5 API for client access to PostgreSQL databases.
 
-		http://www.PostgreSQL.org/docs
+postgresql-tcltk 
+  If you want tcl/tk client support. You get a neat GUI, pgaccess, as
+  a bonus!
 
-You may wish to subscribe to the PostgreSQL user-support mailing list.
-Send an e-mail to pgsql-questions-request@postgresql.org with the
-text "subscribe" in the message body.
+postgresql-jdbc
+  For Java JDBC support.
 
-If you built PostgreSQL with TCL/TK support, you can use the pgaccess
-utility to get a TCL/TK based database frontend for database
-operations. You do NOT need to install the pgaccess port separately.
+postgresql-odbc
+  For client access from unix applications using ODBC as access
+  method. Not needed to access unix PostgreSQL servers from Win32
+  using ODBC. See below.
 
-If you built in the TCL support, you can load the Pg package into your
-TCL scripts as easily as ``package require Pgtcl''.
+ruby-postgres, py-PyGreSQL
+  For client access to PostgreSQL databases using the ruby & python
+  languages.
 
-If you built with Java support, add
-/usr/local/share/java/classes/postgresql.jar to your classpath.
+postgresql-plperl, postgresql-pltcl & postgresql-plruby
+  For using perl5, tcl & ruby as procedural languages.
+
+etc etc...
 
 If you have many tables and many clients running, consider raising
 kern.maxfiles using sysctl(8).
 
-Use createlang(1) to install languages into your database.
-Supported languages are 'plpgsql', 'pltcl', 'pltclu', and 'plperl'.
+You should vacuum and backup your database regularly. There is a
+periodic script, /usr/local/share/postgresql/502.pgsql, that you may
+use.
+
+To allow many simultaneous connections to your PostgreSQL server, you
+should raise the SystemV shared memory limits in your kernel. Here are
+example values for allowing up to 180 clients (tinkering in
+postgresql.conf also needed, of course):
+  options         SYSVSHM
+  options         SYSVSEM
+  options         SYSVMSG
+  options         SHMMAXPGS=65536
+  options         SEMMNI=40
+  options         SEMMNS=240
+  options         SEMUME=40
+  options         SEMMNU=120
+
+If you plan to access your PostgreSQL server using ODBC, please
+consider running the SQL script /usr/local/share/postgresql/odbc.sql
+to get the functions required for ODBC compliance.

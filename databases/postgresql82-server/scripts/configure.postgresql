@@ -10,23 +10,24 @@ fi
 
 if [ ! "${BATCH}" ]; then
 	dialog --title "Backup your data NOW" \
-	--msgbox "`sed -e \"s#%%PREFIX%%#${PREFIX}#\" < ${FILESDIR}/pre-install-notes`" \
-	-1 -1
+	--yesno "As always, backup your data before
+upgrading. If the upgrade leads to a higher
+minor revision (e.g. 7.1.x -> 7.2, a dump
+and restore of all databases is
+required. This is *NOT* done by the port!
+
+Select 'Yes' to continue the installation." -1 -1
+	if [ $1 -eq 1 ] ; then exit 1; fi
 fi
 
 if [ "${BATCH}" ]; then
-	set \"MultiByte\" \"ODBC\" \"SSL\" \"TCL\" \"TCLTK\"
+	set \"MultiByte\" \"KRB5\"
 else
 	/usr/bin/dialog --title "configuration options" --clear \
 					--checklist "\n\
 Please select desired options:" -1 -1 7 \
-JDBC       "Java DataBase Connectivity" OFF \
 MultiByte  "Multibyte for Multilingualism" ON \
-ODBC       "Open Database Connectivity" ON \
-TCL        "Tcl" ON \
-TCLTK      "Tcl/Tk" ON \
-SSL        "Secure Socket Layer" ON \
-KRB5       "Kerberos 5" OFF \
+KRB5       "Kerberos 5" ON \
 2> /tmp/checklist.tmp.$$
 
 	retval=$?
@@ -52,81 +53,8 @@ exec > ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 
 while [ "$1" ]; do
 	case $1 in
-		\"JDBC\")
-			# We use JAVA_HOME if set correctly. If the user has
-			# specified a JVM with JAVA_HOME or via the javavmwrapper,
-			# we validate that it really exists. It is unnecessarily
-			# complicated and error prone to try to figure out the
-			# correct java version just to be able to determine a
-			# BUILD_DEPEND in this case. Instead, assume that a set
-			# JAVA_HOME together with simple sanity check mean we have
-			# an installed JVM, and we don't bother setting
-			# BUILD_DEPENDS.
-
-			echo "# JDBC"
-			# if JAVA_HOME is set and exists, use it
-			if [ "${JAVA_HOME}" -a -x "${JAVA_HOME}/bin/javac" ]; then
-				echo JAVA_HOME=${JAVA_HOME}
-			else
-				# No JAVA_HOME, check javavmwrapper's config file
-				if [ -r "${LOCALBASE}/etc/javavms" ]; then
-					VMS=`/usr/bin/sed 's|#.*||' < "${LOCALBASE}/etc/javavms" | uniq`
-					for JAVAVM in ${VMS}; do
-						if [ -x "${JAVAVM}" ]; then
-							JAVA_HOME=`echo ${JAVAVM} | /usr/bin/sed 's|/bin/java$||`
-							break
-						fi
-					done
-				fi
-				if [ "${JAVA_HOME}" -a -x "${JAVA_HOME}/bin/javac" ]; then
-					# yep, wrapper was good
-					echo JAVA_HOME=${JAVA_HOME}
-				else
-					# nothing, use our boring 1.1.8, the only native non-beta jdk :(
-					echo BUILD_DEPENDS+=    \${LOCALBASE}/jdk1.1.8/bin/javac:\${PORTSDIR}/java/jdk
-					echo JAVA_HOME=\${LOCALBASE}/jdk1.1.8
-				fi
-			fi
-			cat <<-EOF
-				BUILD_DEPENDS+=	\${LOCALBASE}/bin/ant:\${PORTSDIR}/devel/jakarta-ant
-				CONFIGURE_ENV+= ANT=\${LOCALBASE}/bin/ant
-				WITH_JDBC=YES
-				MAKE_ENV+=	JAVA_HOME=\${JAVA_HOME}
-				SCRIPTS_ENV+=	JAVA_HOME=\${JAVA_HOME}
-				CONFIGURE_ARGS+=	--with-java
-
-			EOF
-			;;
 		\"MultiByte\")
 			MULTIBYTE=1
-			;;
-		\"ODBC\")
-			cat <<-EOF
-				# ODBC
-				WITH_ODBC=YES
-				CONFIGURE_ARGS+=  --with-odbc
-
-			EOF
-			;;
-		\"TCL\")
-			TCL=1
-			;;
-		\"TCLTK\")
-			echo "#TCLTK"
-			echo WITH_TK=YES
-			echo
-			TCL=1
-			;;
-		\"SSL\")
-			cat <<-EOF
-				# SSL
-				USE_OPENSSL=    yes
-				CFLAGS+=	-DUSE_SSL
-				WITH_SSL=	yes
-				CONFIGURE_ENV+=	LDFLAGS="-L\${OPENSSLLIB} -lssl -lcrypto"
-				CONFIGURE_ARGS+=	--with-openssl
-
-			EOF
 			;;
 		\"KRB5\")
 			KRB5=1
@@ -144,7 +72,7 @@ done
 
 exec > /dev/stderr
 
-# if multibyte, determine charset
+# if multibyte, determine default charset
 echo "# Multibyte" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 
 if [ ! "${MULTIBYTE}" ]; then
@@ -153,25 +81,34 @@ else
 	if [ "${BATCH}" ]; then
 		set "nothing"
 	else
-		/usr/bin/dialog --title "configuration options" --clear \
+		/usr/bin/dialog --title "Default encoding system" --clear \
 						--radiolist "\n\
-Please select desired options:" -1 -1 16 \
+Please select the default encoding:" -1 -1 16 \
 nothing       "Default Encoding" ON \
-SQL_ASCII     "SQL_ASCII" OFF \
-LATIN1        "LATIN1" OFF \
-LATIN2        "LATIN2" OFF \
-LATIN3        "LATIN3" OFF \
-LATIN4        "LATIN4" OFF \
-LATIN5        "LATIN5" OFF \
-EUC_JP        "EUC_JP" OFF \
-EUC_CN        "EUC_CN" OFF \
-EUC_KR        "EUC_KR" OFF \
-EUC_TW        "EUC_TW" OFF \
-KOI8          "KOI8" OFF \
-UNICODE       "UNICODE" OFF \
-MULE_INTERNAL "MULE_INTERNAL" OFF \
-WIN           "WIN" OFF \
-ALT           "ALT" OFF \
+SQL_ASCII     "SQL_ASCII - ASCII" OFF \
+EUC_JP        "Japanese EUC" OFF \
+EUC_CN        "Chinese EUC" OFF \
+EUC_KR        "Korean EUC" OFF \
+EUC_TW        "Taiwan EUC" OFF \
+UNICODE       "Unicode (UTF-8)" OFF \
+MULE_INTERNAL "Mule internal code" OFF \
+LATIN1        "ISO 8859-1" OFF \
+LATIN2        "ISO 8859-2" OFF \
+LATIN3        "ISO 8859-3" OFF \
+LATIN4        "ISO 8859-4" OFF \
+LATIN5        "ISO 8859-9" OFF \
+LATIN6        "ISO 8859-10" OFF \
+LATIN7        "ISO 8859-13" OFF \
+LATIN8        "ISO 8859-14" OFF \
+LATIN9        "ISO 8859-15" OFF \
+LATIN10       "ISO 8859-16" OFF \
+ISO-8859-5    "ECMA-113 Latin/Cyrillic" OFF \
+ISO-8859-6    "ECMA-114 Latin/Arabic" OFF \
+ISO-8859-7    "ECMA-118 Latin/Greek" OFF \
+ISO-8859-8    "ECMA-121 Latin/Hebrew" OFF \
+KOI8          "KOI8-R(U)" OFF \
+WIN           "Windows CP1251" OFF \
+ALT           "Windows CP866" OFF \
 2> /tmp/checklist.tmp.$$
 
 		retval=$?
@@ -188,91 +125,41 @@ ALT           "ALT" OFF \
 	fi
 
     if [ "$1" = "nothing" ]; then
-		echo "CONFIGURE_ARGS+=	--enable-multibyte" \
+		echo "MULTIBYTE_ENCODING=yes" \
 			>> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 	else
-		echo "CONFIGURE_ARGS+=	--enable-multibyte=$1" \
+		echo "MULTIBYTE_ENCODING=$1" \
 			>> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 	fi
-fi
-echo
-
-if [ "${TCL}" ]; then
-	echo "# TCL" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
-	if [ "${BATCH}" ]; then
-		echo WITH_TCL=8.3  >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
-	else
-		dialog --title "TCL version" \
-			   --inputbox "Please enter TCL version. Default is 8.3." -1 -1 "8.3" \
-			2> /tmp/checklist.tmp.$$
-		retval=$?
-		if [ -s /tmp/checklist.tmp.$$ ]; then
-			set `cat /tmp/checklist.tmp.$$`
-		fi
-		rm -f /tmp/checklist.tmp.$$
-		case $retval in
-			0)	if [ -z "$*" ]; then
-					echo "Nothing selected"
-				fi
-				;;
-			1)	echo "Cancel pressed."
-				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
-				exit 1
-				;;
-		esac
-		echo WITH_TCL=$1 >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
-	fi
-	cat <<-EOF >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
-		CONFIGURE_ARGS+= --with-tcl --with-tclconfig="\${TCLCONFIG}"
-		TCLV=\${WITH_TCL:S/.//}
-		TCL_INCDIR=		\${LOCALBASE}/include/tcl\${WITH_TCL}
-		MAKE_ENV+=		TCL_INCDIR=\${TCL_INCDIR}
-		LIB_DEPENDS+=	tcl\${TCLV}:\${PORTSDIR}/lang/tcl\${TCLV}
-		TCLCONFIG=		"\${LOCALBASE}/lib/tcl\${WITH_TCL}"
-		.if defined(WITH_TK)
-		CONFIGURE_ARGS+= --with-tkconfig="\${TKCONFIG}"
-		TK_INCDIR=		\${LOCALBASE}/include/tk\${WITH_TCL}
-		CONFIGURE_ENV+=	WISH=\${LOCALBASE}/bin/wish\${WITH_TCL}
-		LIB_DEPENDS+=	tk\${TCLV}:\${PORTSDIR}/x11-toolkits/tk\${TCLV}
-		TKCONFIG=		"\${LOCALBASE}/lib/tk\${WITH_TCL}"
-		TCLCONFIG+=		\${TKCONFIG}
-		TCL_PLIST=     pkg-plist.tcl
-		.else
-		TCL_PLIST=     pkg-plist.notk
-		CONFIGURE_ARGS+=        --without-tk
-		.endif
-
-	EOF
 fi
 
 if [ "${KRB5}" ]; then
-	if [ "${BATCH}" ]; then
-		# never gets here, but what the heck...
-		echo KRB5_HOME=\${LOCALBASE} >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+	if [ -r "/usr/bin/krb5-config" ]; then
+		echo "	########################################################################"
+		echo "	### PostgreSQL does not build with Hiemdal kerberos. Edit            ###"
+		echo "	### /etc/make.conf and turn the knob MAKE_KERBEROS5 off and make     ###"
+		echo "	### world (or remove all traces of Hiemdal from your system by:      ###"
+		echo "	### rm -f /usr/bin/krb5-config /usr/lib/libkrb5.* /usr/include/krb5* ###"
+		echo "	########################################################################"
+		KRB5=""
 	else
-		dialog --inputbox "Please enter the KRB5_HOME path" -1 -1 "${KRB_HOME:-${LOCALBASE}}" \
-			2> /tmp/checklist.tmp.$$
-		retval=$?
-		if [ -s /tmp/checklist.tmp.$$ ]; then
-			set `cat /tmp/checklist.tmp.$$`
+		KRB5CONF="`which krb5-config`"
+		if [ "$KRB5CONF" ]; then
+			cat <<-EOF >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+				.if exists($KRB5CONF)
+				LIB_DEPENDS+=	krb5.3:${PORTSDIR}/security/krb5
+				CONFIGURE_ARGS+=	--with-krb5="`${KRB5CONF} --prefix krb5`"
+				CFLAGS+=	"`${KRB5CONF} --cflags krb5`"
+				LDFLAGS+=	"`${KRB5CONF} --libs krb5`"
+				.endif
+				EOF
+		else
+			echo "	########################################################"
+			echo "	### Unable to find krb5-config in your path.         ###"
+			echo "	### Please correct and build PostgreSQL again if you ###"
+			echo "	### want PostgreSQL to be compiled with kerberos     ###"
+			echo "	### support (ports/security/krb5).                   ###"
+			echo "	########################################################"
 		fi
-		rm -f /tmp/checklist.tmp.$$
-		case $retval in
-			0)	if [ -z "$*" ]; then
-					echo "No input"
-				fi
-				;;
-			1)	echo "Cancel pressed."
-				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
-				exit 1
-				;;
-		esac
-		echo KRB5_HOME=\"$1\" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 	fi
-	cat <<-EOF >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
-		.if defined(KRB5_HOME) && exists(\${KRB5_HOME})
-		CONFIGURE_KRB=	--with-krb5=\${KRB5_HOME}
-		.endif
-
-	EOF
 fi

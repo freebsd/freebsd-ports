@@ -1,8 +1,7 @@
-PostgreSQL is a robust, next-generation, Object-Relational DBMS (ORDBMS), 
-derived from the Berkeley Postgres database management system.  While 
-PostgreSQL retains the powerful object-relational data model, rich data types 
-and easy extensibility of Postgres, it replaces the PostQuel query language 
-with an extended subset of SQL.
+PostgreSQL is a sophisticated Object-Relational DBMS, supporting
+almost all SQL constructs, including subselects, transactions, and
+user-defined types and functions. It is the most advanced open-source
+database available anywhere. Commercial Support is also available.
 
 The original Postgres code was the effort of many graduate students, 
 undergraduate students, and staff programmers working under the direction of 
