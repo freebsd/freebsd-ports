@@ -181,6 +181,7 @@
     SUBDIR += cxxtest
     SUBDIR += darcs
     SUBDIR += darts
+    SUBDIR += datadesigner
     SUBDIR += ddd
     SUBDIR += decompyle
     SUBDIR += devhelp
