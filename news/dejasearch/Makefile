@@ -16,6 +16,7 @@ MAINTAINER=	kris@FreeBSD.ORG
 
 WRKSRC=		${WRKDIR}/dejasearch/
 
+USE_PERL5=	yes
 NO_BUILD=	yes
 
 do-install:
