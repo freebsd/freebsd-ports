@@ -3,3 +3,4 @@ lib/%%PYTHON_VERSION%%/site-packages/ming.py
 share/examples/%%PYTHON_VERSION%%/ming/shape.py
 share/examples/%%PYTHON_VERSION%%/ming/test.py
 @dirrm share/examples/%%PYTHON_VERSION%%/ming
+@unexec rmdir %D/share/examples/%%PYTHON_VERSION%% 2>/dev/null || true
