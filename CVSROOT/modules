@@ -7550,6 +7550,7 @@ pgpmoose	ports/news/pgpmoose
 pgpsendmail	ports/mail/pgpsendmail
 phalanx		ports/games/phalanx
 pharmacy	ports/devel/pharmacy
+phatbeat	ports/audio/phatbeat
 phex		ports/net/phex
 phluid		ports/x11-wm/phluid
 pho		ports/graphics/pho
