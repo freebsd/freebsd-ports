@@ -69,6 +69,7 @@ sbin/RunAccel
 sbin/RunCache
 sbin/client
 sbin/squid
+@exec mkdir -p %D/etc/squid/errors
 @exec mkdir -p %D/squid/cache
 @exec chown nobody:nogroup %D/squid/cache
 @exec mkdir -p %D/squid/logs
