@@ -19,7 +19,7 @@ COMMENT=	A library for reading and writing quicktime files
 LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
-		dv.3:${PORTSDIR}/multimedia/libdv
+		dv.4:${PORTSDIR}/multimedia/libdv
 
 USE_GL=		yes
 USE_GNOME=	gnometarget gtk12

@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	simokawa@FreeBSD.org
 COMMENT=	DV/RTP viewer
 
-LIB_DEPENDS=	dv.3:${PORTSDIR}/multimedia/libdv
+LIB_DEPENDS=	dv.4:${PORTSDIR}/multimedia/libdv
 
 PLIST_FILES=	bin/xdvshow
 GNU_CONFIGURE=		YES
