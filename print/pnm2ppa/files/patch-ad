@@ -1,5 +1,5 @@
---- pnm2ppa.conf.orig	Sun Oct 29 00:02:57 2000
-+++ pnm2ppa.conf	Tue Jan 30 22:07:29 2001
+--- pnm2ppa.conf.orig	Sun Nov 10 06:47:47 2002
++++ pnm2ppa.conf	Mon Nov 18 21:10:36 2002
 @@ -1,7 +1,7 @@
  # Sample configuration file 
  #
@@ -9,16 +9,16 @@
  #
  # uncomment entries by removing "#" to activate them.
  #
-@@ -26,7 +26,7 @@
- # in addition to the syslog. (Note: on BeOS,  syslog messages are
- # diverted to stderr; use "silent 1" to suppress them.)
- # Note: the "silent 1" keyword is only accepted from the system 
--# configuration  file (/etc/pnm2ppa.conf), and not from configuration files 
-+# configuration  file (%%PREFIX%%/etc/pnm2ppa.conf), and not from configuration files 
- # specified  with the pnm2ppa option "-f".
+@@ -44,7 +44,7 @@
+ log_info 1               # <= COMMENT THIS OUT TO GET THE NEW DEFAULT BEHAVIOR!
  
- #silent 1
-@@ -105,7 +105,7 @@
+ # Note: the "silent 1" and "log_info" keywords are only accepted from the 
+-# system configuration  file (/etc/pnm2ppa.conf), and not from configuration 
++# system configuration  file (%%PREFIX%%/etc/pnm2ppa.conf), and not from configuration 
+ # files specified  by users with the pnm2ppa option "-f".
+ 
+ #---------set the margins of the printed page-------------------
+@@ -123,7 +123,7 @@
  #------------Color correct curve Gamma parameters-------------------------
  # Gamma color correction values for Red, Green and Blue:
  # (Note: a more effective method of color correction is to use
