@@ -5,7 +5,7 @@
 #
 # $FreeBSD$
 #
-SNAPDATE=	2004-01-19
+SNAPDATE=	2004-01-26
 
 PORTNAME=	gcc
 PORTVERSION=	3.3.3
@@ -36,9 +36,11 @@ EXTRA_PATCHES=	${FILESDIR}/opt.patch-bc
 
 LATEST_LINK?=	gcc33${PKGNAMESUFFIX}
 
+USE_BISON=	yes
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
+USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
+USE_REINPLACE=	yes
 USE_SIZE=	yes
 
 PATCH_WRKSRC=	${SRCDIR}
@@ -55,14 +57,13 @@ CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 
 SRCDIR=		${WRKDIR}/gcc-${VERSIONSTRING}
 WRKSRC=		${WRKDIR}/build
+SUFFIX=		33
 TARGLIB=	${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${PORTVERSION}
 PLIST_SUB=	GCC_VER=${PORTVERSION} GNU_HOST=${CONFIGURE_TARGET}
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USE_BISON=	yes
 CONFIGURE_ARGS=	--disable-nls \
 		--with-system-zlib \
-		--program-suffix=33 \
+		--program-suffix=${SUFFIX} \
 		--with-gxx-include-dir=${TARGLIB}/include/c++/
 MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
 .if defined(WANT_SHAREDLIBS)
@@ -79,10 +80,19 @@ CONFIGURE_ARGS+=	--enable-threads
 CONFIGURE_ARGS+=	--enable-threads=posix
 .endif
 ALL_TARGET=	bootstrap-lean
-MAN1=		cpp33.1 g++33.1 g77-33.1 gcc33.1 gcov33.1 \
-		gcj33.1 gcjh33.1 gij33.1 grepjar33.1 jar33.1 \
-		jcf-dump33.1 jv-scan33.1 jv-convert33.1 \
-		rmic33.1 rmiregistry33.1
+MAN1=		cpp${SUFFIX}.1 \
+		g++${SUFFIX}.1 \
+		g77-${SUFFIX}.1 \
+		gcc${SUFFIX}.1 \
+		gcov${SUFFIX}.1 \
+		gcj${SUFFIX}.1 \
+		gcjh${SUFFIX}.1 \
+		gij${SUFFIX}.1 \
+		grepjar${SUFFIX}.1 \
+		jar${SUFFIX}.1 \
+		jcf-dump${SUFFIX}.1 \
+		jv-scan${SUFFIX}.1 jv-convert${SUFFIX}.1 \
+		rmic${SUFFIX}.1 rmiregistry${SUFFIX}.1
 MAN7=		fsf-funding.7 gfdl.7 gpl.7
 INFO=		cpp cppinternals g77 gcc gccint gcj fastjar
 
@@ -130,11 +140,11 @@ post-install:
 	done )
 .for f in c++ f77 gcc g++ cpp gcov ${CONFIGURE_TARGET}-gcc ${CONFIGURE_TARGET}-g++ gcj gcjh gij jv-scan jcf-dump jv-convert jar grepjar rmic rmiregistry
 	# gij and jv-convert, for example, are not built on all platforms.
-	if [ -e ${PREFIX}/bin/${f}33 ]; then \
-	  ${STRIP_CMD} ${PREFIX}/bin/${f}33; \
+	if [ -e ${PREFIX}/bin/${f}${SUFFIX} ]; then \
+	  ${STRIP_CMD} ${PREFIX}/bin/${f}${SUFFIX}; \
 	  ( ${TEST} ! -e ${PREFIX}/man/man1/${f}.1 \
 		|| ${MV} -f ${PREFIX}/man/man1/${f}.1 \
-		${PREFIX}/man/man1/${f}33.1 ); \
+		${PREFIX}/man/man1/${f}${SUFFIX}.1 ); \
 	fi
 .endfor
 	${MV} -f ${PREFIX}/bin/g7733 ${PREFIX}/bin/g77-33
