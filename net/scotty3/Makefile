@@ -7,7 +7,7 @@
 
 PORTNAME=	scotty
 PORTVERSION=	20000221
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net tcl84 tk84
 MASTER_SITES=	ftp://ftp.ibr.cs.tu-bs.de/pub/local/tkined/devel/
 DISTNAME=	${PORTNAME}-00-02-21
