@@ -1,3 +1,5 @@
-lib/scim-1.0/1.0.0/IMEngine/chewing.so
-lib/scim-1.0/1.0.0/SetupUI/chewing-imengine-setup.so
+lib/scim-1.0/IMEngine/chewing.so
+lib/scim-1.0/SetupUI/chewing-imengine-setup.so
 share/scim/icons/scim-chewing.png
+@unexec rmdir %D/lib/scim-1.0/IMEngine 2>/dev/null || true
+@unexec rmdir %D/lib/scim-1.0/SetupUI 2>/dev/null || true
