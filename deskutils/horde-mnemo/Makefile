@@ -6,23 +6,29 @@
 #
 
 PORTNAME=	mnemo
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	deskutils www
-MASTER_SITES=	ftp://ftp.horde.org/pub/mnemo/tarballs/%SUBDIR%/
-MASTER_SITE_SUBDIR=	. old
+MASTER_SITES=	ftp://ftp.horde.org/pub/mnemo/				\
+		ftp://ftp.au.horde.org/pub/horde/mnemo/			\
+		ftp://ftp.es.horde.org/pub/mnemo/			\
+		ftp://ftp.it.horde.org/pub/mirror/horde.org/mnemo/	\
+		ftp://ftp.nl.horde.org/mirror/horde-ftp/pub/mnemo/	\
+		ftp://ftp.pt.horde.org/pub/horde-ftp/mnemo/
 
 MAINTAINER=	thierry@pompo.net
 
 RUN_DEPENDS=	${LOCALBASE}/www/horde/imp/index.php:${PORTSDIR}/mail/imp3
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes
+USE_REINPLACE=	yes
+
+REINPLACE_ARGS=	-i.beforeMnemo
+
 PLIST_SUB=	HORDEDIR=${LHORDEDIR} MNEMODIR=${LMNEMODIR}
-USE_PERL5=	yes
 
 DOCS=		LICENSE README docs/CHANGES docs/CREDITS docs/INSTALL
-CONFFILE=	conf.php html.php menu.php prefs.php
-SUB_DIRS=	config graphics lib locale po scripts templates
+CONFFILE=	conf.php menu.php prefs.php
+SUB_DIRS=	config graphics lib locale po scripts templates util
 
 LHORDEDIR?=	www/horde
 LMNEMODIR?=	${LHORDEDIR}/mnemo
@@ -47,11 +53,12 @@ do-install:
 	@${CHOWN} -R www:www ${MNEMODIR}
 	@${CHMOD} -R o-rwx ${CONFDIR}
 	@${CP} -p ${FILESDIR}/httpd.conf.mnemo ${HORDE_INC}
-	@${PERL} -pi -e "s:/home/httpd/html/horde/mnemo:${MNEMODIR}:g"	\
+	@${REINPLACE_CMD} -e "s:/home/httpd/html/horde/mnemo:${MNEMODIR}:g"	\
 		${HORDE_INC}/httpd.conf.mnemo
+	@${RM} ${HORDE_INC}/httpd.conf.mnemo.beforeMnemo
 	@${CP} -p ${HORDEDIR}/config/registry.php		\
 		${HORDEDIR}/config/registry.php.beforeMnemo
-	@${PERL} -pi -e "s://UNCOMMENTWHENINSTMNEMO::" ${HORDEDIR}/config/registry.php
+	@${REINPLACE_CMD} -e "s://UNCOMMENTWHENINSTMNEMO::" ${HORDEDIR}/config/registry.php
 	@${CP} -p ${HORDEDIR}/config/registry.php		\
 		${HORDEDIR}/config/registry.php.afterMnemo
 .if !defined(NOPORTDOCS)
