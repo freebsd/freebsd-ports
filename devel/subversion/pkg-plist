@@ -9,6 +9,7 @@ include/subversion-1/svn-revision.txt
 include/subversion-1/svn_auth.h
 include/subversion-1/svn_base64.h
 include/subversion-1/svn_client.h
+include/subversion-1/svn_cmdline.h
 include/subversion-1/svn_config.h
 include/subversion-1/svn_dav.h
 include/subversion-1/svn_delta.h
@@ -91,7 +92,6 @@ lib/libsvn_wc-1.so.0
 %%PORTDOCS%%share/doc/subversion/COMMITTERS
 %%PORTDOCS%%share/doc/subversion/COPYING
 %%PORTDOCS%%share/doc/subversion/HACKING
-%%PORTDOCS%%share/doc/subversion/IDEAS
 %%PORTDOCS%%share/doc/subversion/INSTALL
 %%PORTDOCS%%share/doc/subversion/README
 %%PORTDOCS%%@dirrm share/doc/subversion

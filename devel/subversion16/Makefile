@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	0.29.0
+PORTVERSION=	0.30.0
 CATEGORIES=	devel
-MASTER_SITES=	http://subversion.tigris.org/files/documents/15/5977/
+MASTER_SITES=	http://svn.collab.net/tarballs/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=		bmah
 
@@ -15,7 +15,7 @@ MAINTAINER=	lev@freebsd.org
 COMMENT=	Version control system
 
 LIB_DEPENDS=	db4:${PORTSDIR}/databases/db4 \
-		neon.23:${PORTSDIR}/www/neon \
+		neon.24:${PORTSDIR}/www/neon \
 		expat.4:${PORTSDIR}/textproc/expat2
 
 INSTALLS_SHLIB=	yes
@@ -96,7 +96,7 @@ pre-install:
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	for f in BUGS CHANGES COMMITTERS COPYING HACKING IDEAS INSTALL README; do \
+	for f in BUGS CHANGES COMMITTERS COPYING HACKING INSTALL README; do \
 		${INSTALL_DATA} ${WRKSRC}/$$f ${DOCSDIR}; \
 	done
 .endif
