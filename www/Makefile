@@ -146,6 +146,7 @@
     SUBDIR += mgstat
     SUBDIR += mhonarc
     SUBDIR += micro_httpd
+    SUBDIR += mini_httpd
     SUBDIR += mmosaic
     SUBDIR += mnogosearch
     SUBDIR += mod_access_identd

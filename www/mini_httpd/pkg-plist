@@ -1,0 +1,5 @@
+etc/mini_httpd.cnf.sample
+etc/rc.d/mini_httpd.sh
+sbin/htpasswd
+sbin/mini_httpd
+sbin/mini_httpd_wrapper
