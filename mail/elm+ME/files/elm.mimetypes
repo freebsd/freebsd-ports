@@ -129,9 +129,11 @@ dms		text/vnd.DMClientScript
 #	----		-------		-----------		    ---------
 #
 #	message		rfc822				    [RFC2045,RFC2046]
+eml		message/rfc822
 #			partial				    [RFC2045,RFC2046]
 #			external-body			    [RFC2045,RFC2046]
 #			news			    [RFC 1036, Henry Spencer]
+nws		message/news
 #			http					    [RFC2616]
 #			delivery-status				    [RFC1894]
 #			disposition-notification		    [RFC2298]

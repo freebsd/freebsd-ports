@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	elm+ME
-PORTVERSION=	2.4.87
+PORTVERSION=	2.4.88
 PORTEPOCH=	1
 CATEGORIES=	mail
 DISTNAME=	${PORTNAME:S/+ME//}-${PORTVERSION:R}ME+${PORTVERSION:E}
@@ -62,6 +62,16 @@ MLINKS=		frm.1 nfrm.1	newmail.1 wnewmail.1
 
 DESTLIBDIR=	${PREFIX}/lib/${PORTNAME:S/+ME//}
 MIMETYPES=	elm.mimetypes
+
+#
+# Post-patch
+#
+
+# d_savegrpmboxid is currently broken using setgid(2) instead of setegid(2).
+# will probably be fixed in the next release, for instance, fake a patch.
+# the alternative would be to disable this option in pre-configure script.
+post-patch:
+	@${PERL} -pi.bsd -e 's,setgid,setegid,' ${WRKSRC}/lib/localmbx.c
 
 #
 # Post-configure
