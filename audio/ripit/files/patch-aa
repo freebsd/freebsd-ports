@@ -1,84 +1,101 @@
---- ripit.pl.orig	Mon May 22 15:27:36 2000
-+++ ripit.pl	Sun Sep 24 03:38:07 2000
-@@ -15,25 +15,32 @@
- #	--bitrate [rate] 	- Encode MP3 at this bitrate 
+--- ripit-orig.pl	Sun Sep 23 14:12:08 2001
++++ ripit.pl	Sun Sep 23 14:12:09 2001
+@@ -9,41 +9,43 @@
+ #		Create an M3U file
+ #
+ # Options:
+-#	[start_track] 		- rips from this track to last track
+-#	--halt 			- powers off the machine when finished
+-#			  	  if your configuration supports it
+-#	--bitrate [rate] 	- Encode MP3 at this bitrate 
++#	[start_track]		- rips from this track to last track
++#	--halt			- powers off the machine when finished
++#				  if your configuration supports it
++#	--bitrate [rate]	- Encode MP3 at this bitrate 
  #	--year [year]		- Tag MP3 with this year (included as CDDB
  #				  does not store this information)
--#       --device                - CDROM device to rip from
-+#	--device                - CDROM device to rip from
-+#	--numcpu		- Number of parrallel encoders to run
-+#	--outputdir		- Directory in which to place MP3s
-+#	--cdripper		- Which cdripper to use
-+#	--encoder		- Which encoder to use
+-#       --genre [genre]		- Overrides CDDB genre, e.g. rock,funk
+-#       --device [device]       - CDROM device to rip from
++#	--genre [genre]		- Overrides CDDB genre, e.g. rock,funk
++#	--device [device]	- CDROM device to rip from
+ #	--encopt [options]	- Parameters to pass to encoder
+ #	--encoder [encoder]	- Encoder to use, see below
+ #	--cdripper [ripper]	- Cdripper to use, see below
+ #	--cdopt [options]	- Parameters to pass to cdripper
+ #	--outputdir [dir]	- Where MP3s should go
++#	--numcpu [cpus]		- Number of parallel encoders to run
  #
- # Version 1.8 22/05/00 - Simon Quinn
+ # Version 2.0 20/08/01 - Simon Quinn
  #
- # Usage: ripit.pl [--halt] [--bitrate rate] 
--#                 [--year year] [--device cddevice] [start_track]
-+#                 [--year year] [--device cddevice] [--numcpu cpus]
-+#                 [--outputdir dir] [--cdripper ripper] [--encoder encoder]
-+#                 [start_track]
+ # Usage: ripit.pl [--halt] [--bitrate rate] [--year year] [--genre genre]
+-#                 [--device cddevice] [--encopt options] [--encoder encoder]
++#		  [--device cddevice] [--encopt options] [--encoder encoder]
+ #		  [--cdripper cdripper] [--cdopt options] [--outputdir dir] 
+-#	 	  [start_track]
++#		  [--numcpu cpus] [start_track]
  ####################################################################
  #
  # User configurable variables
  #
  
  $cddev 		= "/dev/cdrom";		# CD Audio device
--$outputdir 	= "/dosc/cdrip/";	# Where the MP3s should go
-+$outputdir 	= "/dosc/cdrip";	# Where the MP3s should go
+-$outputdir 	= "/tmp/cdrip/";	# Where the MP3s should go, 
++$outputdir 	= "/tmp/cdrip/";	# Where the MP3s should go,
+ 					# must have trailing /
  $bitrate	= 160;			# Bitrate for MP3s
- $encoder	= 1; 			# 0 - Bladeenc, 1 - Lame, 2 - Gogo
+-$encoder	= 0; 			# 0 - Lame, 1 - OggVorbis
++$encoder	= 0; 			# 0 - Lame, 1 - Gogo, 2 - OggVorbis
  $encopt		= "";			# options for mp3 encoder
- $cdripper	= 0;			# 0 - cdparanoia, 1 - cdda2wav,
--					# 2 - tosha, 3 - cdd
-+					# 2 - tosha, 3 - cdd, 4 - dagrab
+ $cdripper	= 0;			# 0 - dagrab,
+ 					# 1 - cdparanoia, 2 - cdda2wav,
+ 					# 3 - tosha, 4 - cdd
  $cdopt		= "";			# options for cdaudio ripper
 +$numcpu		= 1;			# Number of parallel encoders to run
  
- $use_underscore = 0;	# Use _ instead of spaces in filenames (1 yes, 0 no)
- 
-@@ -53,6 +60,9 @@
- require "flush.pl";
- use Getopt::Long;
+ $CDDB_HOST	= "freedb.freedb.org";  # set cddb host
+ $CDDB_PORT	= 8880;                 # set cddb port
+@@ -77,6 +79,9 @@
+ $nocddbinfo	= 1;    # Assume no CDDB info exists
+ $trackselection = "";   # Passed from command line
  
 +$ripper_died = 0;
-+$SIG{HUP} = \&catch_hup;
++$SIG{HUP} = \$catch_hup;
 +
- # Initialise global variables
- #
- $year		= "";	# Year of Audio CD - written to MP3 tag
-@@ -75,9 +85,19 @@
- if ( ! &GetOptions("halt" => \$haltonfinish, 
-                   "bitrate=i" => \$bitrate,
- 		  "year=i" => \$year,
--		  "device=s" => \$cddev) ) {
-+		  "device=s" => \$cddev,
-+		  "numcpu=i" => \$numcpu,
+ ####################################################
+ # Do the following:
+ #  1. Get command line parameters
+@@ -98,11 +103,16 @@
+ 		  "encoder=i" => \$encoder,
+ 		  "cdripper=i" => \$cdripper,
+ 		  "cdopt=s" => \$cdopt,
+-		  "outputdir=s" => \$outputdir ) ) {
+-   print "Usage: ripit.pl [--halt] [--bitrate rate] [--year year]
 +		  "outputdir=s" => \$outputdir,
-+		  "cdripper=i" => \$cdripper,
-+		  "cdopt=s" => \$cdopt,
-+		  "encoder=i" => \$encoder,
-+		  "encopt=s" => \$encopt) ) {
-    print "Usage: ripit.pl [--halt] [--bitrate rate] [--year year]
--                [--device cddevice] [start_track]\n";
-+                [--device cddevice] [--numcpu cpus] [--outputdir dir]
-+                [--cdripper cdripper] [--encoder encoder] [start_track]
-+                CD Rippers: 0 - cdparanoia, 1 - cdda2wav, 2 - tosha, 3 - cdd, 4 - dagrab
-+                Encoders:   0 - Bladeenc, 1 - Lame, 2 - Gogo\n";
-+
++		  "numcpu=i" => \$numcpu ) ) {
++   print "
++Usage: ripit.pl [--halt] [--bitrate rate] [--year year]
+                 [--device cddevice] [--encopt options] [--encoder encoder]
+ 		[--cdripper cdripper] [--cdopt options] [--outputdir dir] 
+-		[start_track]\n";
++		[--numcpu cpus] [start_track]
++Rippers: 0 - dagrab, 1 - cdparanoia, 2 - cdda2wav, 3 - tosha, 4 - cdd
++Encoders: 0 - Lame, 1 - Gogo, 2 - OggVorbis
++";
     exit 1;
  }
  
-@@ -113,7 +133,7 @@
+@@ -132,8 +142,8 @@
+ &create_dirs();				# Create directories MP3 files
  &rip_cd();				# Rip, Encode & Tag
  
- print "Waiting for MP3 Encoder to finish...\n";
+-print "Waiting for MP3 Encoder to finish...\n";
 -wait; 
-+while (wait != -1) {}; 
++print "Waiting for MP3 Encoder(s) to finish...\n";
++while (wait != -1) {};
  
  &create_m3u();			# Create the M3U file for the MP3 files
  
-@@ -137,6 +157,10 @@
+@@ -157,6 +167,10 @@
  
  exit;
  
@@ -89,16 +106,7 @@
  #
  # Create the track selection from the parameters passed
  # on the command line
-@@ -286,7 +310,7 @@
-   # Directory created will be: /outputdir/Artist - Album/
-   # The value must end in /
- 
--  $mp3dir = $outputdir.$artist." - ".$album."/";
-+  $mp3dir = $outputdir."/".$artist." - ".$album."/";
- 
-   if ($use_underscore == 1) { $mp3dir =~ s/ /_/g; }
- 
-@@ -340,24 +364,29 @@
+@@ -336,31 +350,37 @@
      $riptrackname = &get_trackname($_, $tracklist[$_ - 1]);
      $riptrackno = $_;
  
@@ -108,66 +116,66 @@
  
      # Choose the cdaudio ripper to use
      if ($cdripper == 0) {
+       if (system("dagrab -d $cddev -v $cdopt -f \"$riptrackname.rip\" $riptrackno")) {
+-         &printflush(RIPLOG,"cdparanoia failed on $tracklist[$_ - 1]\n");
++         &printflush(RIPLOG,"dagrab failed on $tracklist[$_ - 1]\n");
++         kill 1, @encoders;
+          die "dagrab failed on $tracklist[$_ - 1]";
+       }
+     }
+     elsif ($cdripper == 1) {
        if (system("cdparanoia -d $cddev $cdopt $riptrackno \"$riptrackname.rip\"")) {
           &printflush(RIPLOG,"cdparanoia failed on $tracklist[$_ - 1]\n");
 +         kill 1, @encoders;
           die "cdparanoia failed on $tracklist[$_ - 1]";
        }
      }
-     elsif ($cdripper == 1) {
+     elsif ($cdripper == 2) {
 -      if (system("cdda2wav -D $cddev -Q -H $cdopt -t $riptrackno \"$riptrackname.rip\"")) {
-+      if (system("cdda2wav -D $cddev -q -Q -H $cdopt -t $riptrackno - > \"$riptrackname.rip\"")) {
++      if (system("cdda2wav -D $cddev -q -Q -H $cdopt -t $riptrackno \"$riptrackname.rip\"")) {
           &printflush(RIPLOG,"cdda2wav failed on $tracklist[$_ - 1]\n");
 +         kill 1, @encoders;
           die "cdda2wav failed on $tracklist[$_ - 1]";
        }
      }
-     elsif ($cdripper == 2) {
+     elsif ($cdripper == 3) {
        if (system("tosha -d $cddev -f wav -t $riptrackno -o \"$riptrackname.rip\"")) {
-        &printflush(RIPLOG,"tosha failed on $tracklist[$_ - 1]\n");
-+       kill 1, @encoders;
-        die "tosha failed on $tracklist[$_ - 1]";
+-       &printflush(RIPLOG,"tosha failed on $tracklist[$_ - 1]\n");
+-       die "tosha failed on $tracklist[$_ - 1]";
++        &printflush(RIPLOG,"tosha failed on $tracklist[$_ - 1]\n");
++        kill 1, @encoders;
++        die "tosha failed on $tracklist[$_ - 1]";
        }
      }
-@@ -370,6 +399,13 @@
+     elsif ($cdripper == 4) {
+@@ -369,6 +389,7 @@
+       $cdd_dev =~ s/c$//;
+       if (system("cdd -t $riptrackno -q -f $cdd_dev - 2>/dev/null | sox -t cdr -x - \"$riptrackname.rip\"")) {
+         &printflush(RIPLOG,"cdd failed on $tracklist[$_ - 1]\n");
++        kill 1, @encoders;
          die "cdd failed on $tracklist[$_ - 1]";
        }
      }
-+    elsif ($cdripper == 4) {
-+      if (system("dagrab -d $cddev -f \"$riptrackname.rip\" $riptrackno")) {
-+         &printflush(RIPLOG,"dagrab failed on $tracklist[$_ - 1]\n");
-+         kill 1, @encoders;
-+         die "dagrab failed on $tracklist[$_ - 1]";
-+      }
-+    }
-     else {
-       die "No CD Ripper defined";
-     }
-@@ -379,11 +415,13 @@
+@@ -381,11 +402,13 @@
      rename "$riptrackname.rip","$riptrackname.wav";
  
      &printflush(RIPLOG,"Rip complete $tracklist[$_ - 1]\n");
 +    }
  
-     # Start the Encoder in the background. but only once
+-    # Start the Encoder in the background. but only once
 -    if ($startenc == 0) { 
 -      $startenc = 1;
 -      unless (fork) { &enc_cd(); }
++    # Start the Encoder in the background. but only once per CPU
 +    if ($startenc < $numcpu) { 
-+      sleep $startenc*5;
++      sleep $startenc * 5;
 +      $startenc = $startenc + 1;
 +      unless ($encoders[$startenc]=fork) { &enc_cd(); }
      }
  
    }
-@@ -399,24 +437,25 @@
- sub enc_cd {
-   my($i,$x,$ncount,$enc);
- 
--
-   foreach (@seltrack) {
- 
-     $riptrackname = &get_trackname($_, $tracklist[$_ - 1]);
+@@ -407,25 +430,33 @@
+     $riptrackno = $_;
      $ncount++;
   
 -    print "\nMP3 Encoding track ".$ncount." of ".($#seltrack + 1)."\n";
@@ -180,7 +188,7 @@
 +    while( ! -r "$riptrackname.wav" && ! -r "$riptrackname.mp3" ){ 
        $x++; 
        if ($x > 179) { die "MP3 encoder waited 30 minutes before giving up"; } 
-+      if ($ripper_died) { die "CD Ripper seems to have died - exiting"; } 
++      if ($ripper_died) { die "CD Ripper seems to have died - exiting"; }
        sleep 10;
      }
  
@@ -190,31 +198,41 @@
 +
      # Set the encoder we are going to use
      if ($encoder == 0) {
-       $enc = "bladeenc $encopt -QUIT -$bitrate \"$riptrackname.wav\" ";
-@@ -427,6 +466,9 @@
-     elsif ($encoder == 2) {
-       $enc = "gogo \"$riptrackname.wav\" \"$riptrackname.mp3\" $encopt -b $bitrate";
+       $enc = "lame $encopt -S -b $bitrate --tt \"$tracklist[$_ - 1]\" --ta \"$artist\" --tl \"$album\" --ty \"$year\" --tg \"$genre\" --tn $riptrackno --add-id3v2 \"$riptrackname.wav\" \"$riptrackname.mp3\"";
+     }
+     elsif ($encoder == 1) {
++      $enc = "gogo \"$riptrackname.wav\" \"$riptrackname.mp3\" $encopt -b $bitrate";
++    }
++    elsif ($encoder == 2) {
+       $enc = "oggenc $encopt -b $bitrate -t \"$tracklist[$_ - 1]\" -a \"$artist\" -l \"$album\" -d \"$year\" -N $riptrackno -o \"$riptrackname.ogg\" \"$riptrackname.wav\"";
      }
 +    else {
-+      die "No Encoder defined";
++      die "No encoder defined";
 +    }
  
      if ( ! system("$enc >$enclog 2>&1 </dev/null")) {
   
-@@ -443,6 +485,7 @@
+@@ -438,7 +469,8 @@
        &printflush(RIPLOG,"MP3 Encoder Failed on $tracklist[$_ - 1]\n");
        die "MP3 Encoder Failed on $tracklist[$_ - 1]";
      }
+-
 +    }
- 
++  
    }
    exit ;
-@@ -457,7 +500,7 @@
+ }
+@@ -452,10 +484,10 @@
    $file="$artist.m3u";
    if ($use_underscore == 1) { $file =~ s/ /_/g; }
  
--  system("cd \"$mp3dir\" ; ls -rt *.mp3 >\"$file\"");
-+  system("cd \"$mp3dir\" ; ls *.mp3 | sort >\"$file\"");
+-  if($encoder == 1) {
+-    system("cd \"$mp3dir\" ; ls -rt *.ogg >\"$file\"");
++  if($encoder == 2) {
++    system("cd \"$mp3dir\" ; ls *.ogg | sort >\"$file\"");
+   }
+   else {
+-    system("cd \"$mp3dir\" ; ls -rt *.mp3 >\"$file\"");
++    system("cd \"$mp3dir\" ; ls *.mp3 | sort >\"$file\"");
+   }
  }
- 
- # Writes the MP3 tag to the file. The standard is to use the 
