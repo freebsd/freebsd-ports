@@ -1,0 +1,41 @@
+*** tleap/Makefile.orig	Tue Jun 20 13:41:55 2000
+--- tleap/Makefile	Sun Sep 10 19:38:24 2000
+***************
+*** 5,13 ****
+  .SUFFIXES:
+  .SUFFIXES:  .c .o
+  
+- .c.o: $<
+- 	$(CC) -c $(CFLAGS) -DSYSV $<
+- 
+  #
+  #  Absolutely necessary routines
+  #
+--- 5,10 ----
+***************
+*** 76,81 ****
+--- 73,79 ----
+  OUL2P= utilLib2Pdb.o
+  
+  TLEAP_OBJ= $(OA) $(OG) $(OO) $(OL) $(OC)
++ all: teLeap$(SFX)
+  teLeap$(SFX): $(TLEAP_OBJ)
+  	$(CC) -o $@ $(TLEAP_OBJ) -lm
+  
+***************
+*** 409,415 ****
+  zMatrix.o: zMatrix.h
+  
+  install:  teLeap$(SFX)
+! 	mv teLeap$(SFX) $(BINDIR)
+  
+  uninstall: clean
+  	-rm $(BINDIR)/teLeap$(SFX)
+--- 407,413 ----
+  zMatrix.o: zMatrix.h
+  
+  install:  teLeap$(SFX)
+! 	mv teLeap$(SFX) $(PREFIX)/bin
+  
+  uninstall: clean
+  	-rm $(BINDIR)/teLeap$(SFX)

@@ -1,0 +1,13 @@
+*** cifparse/Makefile.orig	Thu Jan 14 16:21:50 1999
+--- cifparse/Makefile	Thu Jan 14 16:22:08 1999
+***************
+*** 11,16 ****
+--- 11,18 ----
+  	cifp.tab.o \
+  	cifparse.o
+  
++ all: cifparse.a
++ 
+  cifparse.a: $(CIFOBS)
+  	-rm cifparse.a
+  	$(AR) rv cifparse.a $(CIFOBS)

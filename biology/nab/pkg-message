@@ -1,0 +1,6 @@
+-------------------------------------------------------------------------------
+You must set the environment variable NABHOME before nab is used.  This is
+needed so that nab can find its residue and structure databases. This should be
+NABHOME=${PREFIX}/share/nab, where ${PREFIX} was the value of the PREFIX
+makefile variable when nab was built.
+-------------------------------------------------------------------------------

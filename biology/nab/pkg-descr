@@ -1,0 +1,20 @@
+This is version 4.2 of nab (nucleic acid builder), a computer language that
+is intended for use in creating, describing and modifying macromolecules,
+especially nucleic acids. Programs written in nab are translated into C,
+which in turn is compiled into machine code.
+
+Further general information can be obtained from our web page:
+
+WWW: http://www.scripps.edu/case
+
+Although we have been using this code for some time now, users should be
+aware that bugs may still exist.  Please see the file COPYING for the usual
+disclaimer of liability.  Further enhancements are planned, and will be
+announced on the web page.
+
+Please send comments and suggestions to Tom Macke (macke@scripps.edu) and/or
+to Dave Case (case@scripps.edu).  If you find the program useful, please
+send us a note outlining your applications.
+
+This port to FreeBSD by M. L. Dodson, Univ. of Texas Medical Branch, Galveston
+bdodson@scms.utmb.edu

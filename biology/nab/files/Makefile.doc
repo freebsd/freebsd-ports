@@ -1,0 +1,5 @@
+all:
+
+install:
+	gzip -nfc -9 nab.1 > nab.1.gz
+	${INSTALL_MAN} ${WRKSRC}/doc/nab.1.gz   ${PREFIX}/man/man1
