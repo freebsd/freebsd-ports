@@ -8862,6 +8862,7 @@ scud		ports/comms/scud
 scummvm		ports/games/scummvm
 scummvm-tools	ports/games/scummvm-tools
 scwm-icons	ports/graphics/scwm-icons
+sdcc		ports/lang/sdcc
 sdd		ports/sysutils/sdd
 sdf		ports/textproc/sdf
 sdig		ports/net-mgmt/sdig
