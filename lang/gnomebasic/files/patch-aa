@@ -1,0 +1,36 @@
+--- configure.orig	Mon Jun 12 07:07:43 2000
++++ configure	Wed Jun 28 10:19:30 2000
+@@ -3180,9 +3180,9 @@
+   
+   rm -f conf.glibtest
+ 
+-GMODULE_CFLAGS=`glib-config --cflags gmodule`
++GMODULE_CFLAGS=`$GLIB_CONFIG --cflags gmodule`
+ 
+-GMODULE_LIBS=`glib-config --libs gmodule`
++GMODULE_LIBS=`$GLIB_CONFIG --libs gmodule`
+ 
+ 
+ for ac_prog in 'bison -y' byacc
+@@ -3433,8 +3433,8 @@
+ 
+ echo $ac_n "checking for GTK >= 1.2.2""... $ac_c" 1>&6
+ echo "configure:3436: checking for GTK >= 1.2.2" >&5
+-if gtk-config --version > /dev/null 2>&1; then 
+-        vers=`gtk-config --version | awk 'BEGIN { FS = "."; } { printf "%d", ($1 * 1000 + $2) * 1000 + $3;}'`
++if $GTK_CONFIG --version > /dev/null 2>&1; then 
++        vers=`$GTK_CONFIG --version | awk 'BEGIN { FS = "."; } { printf "%d", ($1 * 1000 + $2) * 1000 + $3;}'`
+     if test "$vers" -ge 1002002; then
+         echo "$ac_t""found" 1>&6
+     else
+@@ -4044,8 +4044,8 @@
+ 
+ GB_LIBDIR='-L${libdir}'
+ GB_INCLUDEDIR='-I${includedir}'
+-GB_INCLUDEDIR="$GB_INCLUDEDIR `glib-config --cflags glib`"
+-GB_LIBS="-lgb `glib-config --libs glib`"
++GB_INCLUDEDIR="$GB_INCLUDEDIR `$GLIB_CONFIG --cflags glib`"
++GB_LIBS="-lgb `$GLIB_CONFIG --libs glib`"
+ 
+ 
+ 

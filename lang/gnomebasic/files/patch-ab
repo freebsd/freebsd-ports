@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Mon Jun 12 08:09:16 2000
++++ Makefile.in	Wed Jun 28 10:28:16 2000
+@@ -124,7 +124,7 @@
+ 
+ EXTRA_DIST = gbConf.sh.in
+ 
+-confexecdir = $(libdir)
++confexecdir = $(sysconfdir)
+ confexec_DATA = gbConf.sh
+ CLEANFILES =  gbConf.sh
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
