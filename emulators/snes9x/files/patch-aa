@@ -1,5 +1,5 @@
---- Makefile.orig	Wed Feb 28 15:29:58 2001
-+++ Makefile	Sat Mar 24 23:16:22 2001
+--- Makefile.orig	Wed Feb 28 12:29:58 2001
++++ Makefile	Sat Sep 28 20:50:19 2002
 @@ -4,7 +4,6 @@
  #SPC700ASM=1
  NETPLAY=1
@@ -51,7 +51,7 @@
  
 +ifdef USB_JOYSTICK_SUPPORT
 +CCFLAGS += -DJOYSTICK_SUPPORT
-+EXTRALIBS += -lusb
++EXTRALIBS += -lusbhid
 +endif
 +
  #-DSOUND

@@ -27,7 +27,7 @@ MAKE_ENV=	CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}" \
 USE_ZIP=	YES
 WRKSRC=		${WRKDIR}/release
 
-.if exists(/usr/lib/libusb.a)
+.if exists(/usr/lib/libusbhid.a)
 MAKE_ENV+=	USB_JOYSTICK_SUPPORT=yes
 .endif
 
