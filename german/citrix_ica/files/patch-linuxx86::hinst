@@ -1,0 +1,36 @@
+--- linuxx86/hinst.orig	Wed Sep  5 16:47:26 2001
++++ linuxx86/hinst	Tue Jan 22 00:15:59 2002
+@@ -1965,10 +1965,31 @@
+ #
+ ###############################################################################
+ 
++check_for_ns() {
++	BIN=`/usr/bin/file $1/plugins/libnullplugin.so | /usr/bin/awk '{print $11}'`
++	case ${BIN} in
++	\(SYSV\),)
++		NETSCAPE_DIR="$1"
++		PLUGIN_PATH="$s/plugins"
++	esac
++}
++
++NSCP="/usr/local/libexec/netscape \
++        /usr/local/libexec/netscape-linux \
++        /usr/local/netscape \
++        /usr/local/netscape-linux \
++        /usr/local/lib/netscape \
++        /usr/local/lib/netscape-linux \
++        $MOZILLA_HOME"
++
++for dir in ${NSCP}; do
++        if [ -e $dir/plugins/libnullplugin.so ]; then
++                check_for_ns $dir;
++        fi
++done
++
+ INST_DIR=$ICAInstDir
+ TMP_NAME=/tmp/ICAnetscape.$$
+-NETSCAPE_DIR="/usr/local/lib/netscape"
+-PLUGIN_PATH="/usr/local/netscape/plugins"
+ PLUGIN_NAME=npica.so
+ PLUGIN_CLASS=ICAClObj.class
+ 
