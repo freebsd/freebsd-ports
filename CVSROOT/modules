@@ -3118,6 +3118,7 @@ gtkglareamm	ports/x11-toolkits/gtkglarea--
 gtkglext	ports/x11-toolkits/gtkglext
 gtkglextmm	ports/x11-toolkits/gtkglextmm
 gtkgraph	ports/graphics/gtkgraph
+gtkguitune	ports/audio/gtkguitune
 gtkhtml		ports/www/gtkhtml
 gtkhtml3	ports/www/gtkhtml3
 gtkhx		ports/net/gtkhx
