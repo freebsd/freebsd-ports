@@ -40,6 +40,14 @@ pre-extract:
 	@${ECHO} "that when running, only when it has to enter the debugger...)"
 .endif
 
+post-patch:
+	@${PERL} -pi.sofix -e 's/SOVERSION = 1.0/SOVERSION = 1/g' \
+		${WRKSRC}/Makefile.in
+.for F in avifil32/Makefile.in comctl32/Makefile.in commdlg/Makefile.in dciman32/Makefile.in ddraw/Makefile.in dinput/Makefile.in dplayx/Makefile.in dsound/Makefile.in gdi/Makefile.in icmp/Makefile.in imagehlp/Makefile.in imm32/Makefile.in lzexpand/Makefile.in mpr/Makefile.in msacm/Makefile.in msacm32/Makefile.in msnet32/Makefile.in msvideo/Makefile.in odbc32/Makefile.in ole32/Makefile.in oleaut32/Makefile.in olecli/Makefile.in oledlg/Makefile.in olepro32/Makefile.in olesvr/Makefile.in opengl32/Makefile.in psapi/Makefile.in rasapi32/Makefile.in richedit/Makefile.in setupx/Makefile.in shell32/Makefile.in sound/Makefile.in stress/Makefile.in tapi32/Makefile.in ttydrv/Makefile.in urlmon/Makefile.in user/Makefile.in version/Makefile.in win32s/Makefile.in win87em/Makefile.in winaspi/Makefile.in windebug/Makefile.in wing/Makefile.in wininet/Makefile.in winmm/Makefile.in winmm/joystick/Makefile.in winmm/mcianim/Makefile.in winmm/mciavi/Makefile.in winmm/mcicda/Makefile.in winmm/mciseq/Makefile.in winmm/mciwave/Makefile.in winmm/midimap/Makefile.in winmm/wavemap/Makefile.in winmm/wineoss/Makefile.in winsock/Makefile.in winspool/Makefile.in x11drv/Makefile.in
+	@${PERL} -pi.sofix -e 's/SOVERSION = 1.0/SOVERSION = 1/g' \
+		${WRKSRC}/dlls/${F}
+.endfor
+
 post-configure:
 	cd ${WRKSRC} && make depend
 
