@@ -1,0 +1,7 @@
+#!/bin/sh
+
+LANG=ko_KR.EUC; export LANG
+LD_PRELOAD=/usr/lib/libxpg4.so.2; export LD_PRELOAD
+
+cd @PREFIX@/lib/mozilla
+exec ./mozilla "$@"

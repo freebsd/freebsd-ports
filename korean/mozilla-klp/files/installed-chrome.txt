@@ -1,0 +1,6 @@
+locale,install,url,jar:resource:/chrome/ko-KR.jar!/locale/ko-KR/global/
+locale,install,url,jar:resource:/chrome/ko-KR.jar!/locale/ko-KR/communicator/
+locale,install,url,jar:resource:/chrome/ko-KR.jar!/locale/ko-KR/messenger/
+locale,install,url,jar:resource:/chrome/ko-KR.jar!/locale/ko-KR/editor/
+locale,install,url,jar:resource:/chrome/ko-KR.jar!/locale/ko-KR/navigator/
+locale,install,select,ko-KR

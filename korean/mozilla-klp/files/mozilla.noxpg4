@@ -1,0 +1,6 @@
+#!/bin/sh
+
+LANG=ko_KR.EUC; export LANG
+
+cd @PREFIX@/lib/mozilla
+exec ./mozilla "$@"
