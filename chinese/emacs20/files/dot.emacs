@@ -15,6 +15,10 @@
 ;; -- Use Windows(tm) style selection
 ;;(custom-set-variables
 ;; '(pc-selection-mode t nil (pc-select)))
+;; -- It's possible to use Chinese with liece IRC client
+;;(custom-set-variables
+;;  '(liece-mime-charset-for-write (quote cn-big5))
+;;  '(liece-mime-charset-for-read (quote cn-big5)))
 ;; To make sure you get as much highlighting as possible
 ;; (global-font-lock-mode t)
 ;; (setq-default font-lock-maximum-decoration t)
