@@ -9449,6 +9449,7 @@ tpasm		ports/devel/tpasm
 tpg		ports/devel/tpg
 tpop3d		ports/mail/tpop3d
 tptest		ports/net/tptest
+tr-aspell	ports/textproc/tr-aspell
 tr-ircd		ports/irc/tr-ircd
 tr-openoffice-1.0	ports/editors/openoffice-1.0-tr
 tr2latex	ports/print/tr2latex
