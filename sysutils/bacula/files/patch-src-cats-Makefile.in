@@ -1,0 +1,32 @@
+--- src/cats/Makefile.in.orig	Fri Jan  3 22:09:11 2003
++++ src/cats/Makefile.in	Mon Feb 24 14:07:35 2003
+@@ -12,6 +12,7 @@
+ thisdir = src/cats
+ 
+ DEBUG=@DEBUG@
++MKDIR=$(topdir)/autoconf/mkinstalldirs
+ 
+ SQL_INC=@SQL_INCLUDE@
+ 
+@@ -70,13 +71,14 @@
+ 	(cd $(srcdir); $(RMF) Makefile; $(RMF) -r CVS)
+ 
+ install:
+-	$(INSTALL_SCRIPT) create_@DB_NAME@_database $(DESTDIR)$(sysconfdir)/create_@DB_NAME@_database
+-	$(INSTALL_SCRIPT) drop_@DB_NAME@_tables $(DESTDIR)$(sysconfdir)/drop_@DB_NAME@_tables
+-	$(INSTALL_SCRIPT) make_@DB_NAME@_tables $(DESTDIR)$(sysconfdir)/make_@DB_NAME@_tables
+-	$(INSTALL_SCRIPT) drop_bacula_tables $(DESTDIR)$(sysconfdir)/drop_bacula_tables
+-	$(INSTALL_SCRIPT) make_bacula_tables $(DESTDIR)$(sysconfdir)/make_bacula_tables
+-	$(INSTALL_SCRIPT) make_catalog_backup $(DESTDIR)$(sysconfdir)/make_catalog_backup  
+-	$(INSTALL_SCRIPT) delete_catalog_backup $(DESTDIR)$(sysconfdir)/delete_catalog_backup  
++	$(MKDIR) $(DESTDIR)$(datadir)/bacula
++	$(INSTALL_SCRIPT) create_@DB_NAME@_database $(DESTDIR)$(datadir)/bacula/create_@DB_NAME@_database
++	$(INSTALL_SCRIPT) drop_@DB_NAME@_tables $(DESTDIR)$(datadir)/bacula/drop_@DB_NAME@_tables
++	$(INSTALL_SCRIPT) make_@DB_NAME@_tables $(DESTDIR)$(datadir)/bacula/make_@DB_NAME@_tables
++	$(INSTALL_SCRIPT) drop_bacula_tables $(DESTDIR)$(datadir)/bacula/drop_bacula_tables
++	$(INSTALL_SCRIPT) make_bacula_tables $(DESTDIR)$(datadir)/bacula/make_bacula_tables
++	$(INSTALL_SCRIPT) make_catalog_backup $(DESTDIR)$(datadir)/bacula/make_catalog_backup  
++	$(INSTALL_SCRIPT) delete_catalog_backup $(DESTDIR)$(datadir)/bacula/delete_catalog_backup  
+ 
+ uninstall:
+ 	(cd $(DESTDIR)$(sysconfdir); $(RMF) create_@DB_NAME@_database)
