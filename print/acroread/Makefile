@@ -19,15 +19,16 @@ DISTNAME=	ar302osf
 EXTRACT_SUFX=	.tar.Z
 LATEST_LINK=	acroread3
 
-MAINTAINER=	tg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	View, distribute and print PDF documents
 
 .if ${ARCH} == "i386"
-USE_LINUX=	yes
+RUN_DEPENDS=${LINUXBASE}/lib/ld-linux.so.1:${PORTSDIR}/emulators/linux_base-6
 .elif ${ARCH} == "alpha"
 RUN_DEPENDS=	/compat/osf1/usr/shlib/libc.so:${PORTSDIR}/emulators/osf1_base
 .endif
 
+CONFLICTS=	acroread-5*
 ONLY_FOR_ARCHS=	i386 alpha
 
 NO_FILTER_SHLIBS=	yes
@@ -58,7 +59,7 @@ do-install:
 post-install:
 .if ${ARCH} == "i386"
 	@${REINPLACE_CMD} -e 's:Linux):FreeBSD|Linux):g' ${PREFIX}/Acrobat3/bin/acroread
-	@brandelf -t Linux ${PREFIX}/Acrobat3/Reader/intellinux/bin/acroread
+	@${BRANDELF} -t Linux ${PREFIX}/Acrobat3/Reader/intellinux/bin/acroread
 .elif ${ARCH} == "alpha"
 	@${REINPLACE_CMD} -e 's:OSF1):FreeBSD|OSF1):g' ${PREFIX}/Acrobat3/bin/acroread
 .endif
@@ -66,7 +67,7 @@ post-install:
 	  ${PATCH} --quiet < ${FILESDIR}/acroread.diff && \
 	  ${INSTALL_SCRIPT} ${PREFIX}/Acrobat3/bin/acroread \
 	    ${PREFIX}/bin/acroread3 && \
-	  ${RM} acroread.orig
+	  ${RM} acroread.orig acroread.bak
 	@${CHMOD} +x ${PREFIX}/bin/acroread3
 	[ -e ${PREFIX}/bin/acroread ] \
 	    || (cd ${PREFIX}/bin ; ${LN} -s acroread3 acroread)
