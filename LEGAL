@@ -152,6 +152,8 @@ mupad/*			ports/math/mupad	unsure to sell for profit
 mypaedia		ports/japanese/mypaedia-fpw The original dictionary is not free
 netscape-*-us-*		ports/www/netscape*	Crypto; export-controlled
 netshow-*		ports/graphics/netshow	Commercial software
+nntpcache-*		ports/news/nntpcache	Commercial or government use
+						requires licence
 nte-1.*			ports/mbone/nte		Crypto; export-controlled
 openssl-*		ports/security/openssl	Crypto; export/import-controlled
 Crypt-*			ports/security/p5-Crypt-*	Crypto; export-controlled
