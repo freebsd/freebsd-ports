@@ -14,11 +14,14 @@
 %%LIBC_TARG%%/include/msp430/dac12.h
 %%LIBC_TARG%%/include/msp430/dma.h
 %%LIBC_TARG%%/include/msp430/eprom.h
+%%LIBC_TARG%%/include/msp430/esp430e.h
 %%LIBC_TARG%%/include/msp430/flash.h
 %%LIBC_TARG%%/include/msp430/gpio.h
 %%LIBC_TARG%%/include/msp430/iostructures.h
 %%LIBC_TARG%%/include/msp430/lcd.h
 %%LIBC_TARG%%/include/msp430/mpy.h
+%%LIBC_TARG%%/include/msp430/scanif.h
+%%LIBC_TARG%%/include/msp430/sd16.h
 %%LIBC_TARG%%/include/msp430/slopeadc.h
 %%LIBC_TARG%%/include/msp430/svs.h
 %%LIBC_TARG%%/include/msp430/system_clock.h
@@ -40,6 +43,8 @@
 %%LIBC_TARG%%/include/msp430x32x.h
 %%LIBC_TARG%%/include/msp430x33x.h
 %%LIBC_TARG%%/include/msp430x41x.h
+%%LIBC_TARG%%/include/msp430xE42x.h
+%%LIBC_TARG%%/include/msp430xW42x.h
 %%LIBC_TARG%%/include/msp430x43x.h
 %%LIBC_TARG%%/include/msp430x44x.h
 %%LIBC_TARG%%/include/setjmp.h
