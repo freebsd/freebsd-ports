@@ -1,0 +1,37 @@
+--- Makefile.orig	Sat Nov 10 22:57:10 2001
++++ Makefile	Wed Dec 12 14:03:34 2001
+@@ -33,17 +33,17 @@
+ ifdef DEBUG
+ CFLAGS = -g3
+ else
+-CFLAGS = -O3
++CFLAGS = %%CFLAGS%%
+ endif
+ 
+ ifdef I18N
+-CFLAGS += -DPACKAGE=\"${PACKAGE}\" -D LOCALEDIR=\"${LOCALEDIR}\"
++CFLAGS += -DPACKAGE=\"${PACKAGE}\" -D LOCALEDIR=\"${LOCALEDIR}\" -I%%LOCALBASE%%/include
+ endif
+ 
+ all : rotix po
+ 
+ rotix : rot.o help.o rotix.o
+-	gcc -Wall $(CFLAGS) -o rotix rot.o help.o rotix.o
++	gcc -Wall $(CFLAGS) -o rotix rot.o help.o rotix.o -L%%LOCALBASE%%/lib -lintl
+ ifdef STRIP
+ ifndef DEBUG
+ 	strip rotix
+@@ -78,10 +78,10 @@
+ 	rm -f po/*.mo
+ 
+ install: rotix po
+-	install -D --mode=0755 rotix $(DESTDIR)$(BINDIR)/rotix
+-	install -D --mode=0644 rotix.1 $(DESTDIR)$(MANDIR)/man1/rotix.1
++	%%INSTALL_PROGRAM%% rotix $(DESTDIR)$(BINDIR)
++	%%INSTALL_MAN%% rotix.1 $(DESTDIR)$(MANDIR)/man1
+ ifdef I18N
+-	install -D --mode=0644 po/NL.mo $(DESTDIR)$(LOCALEDIR)/nl/LC_MESSAGES/rotix.mo
++	%%INSTALL_DATA%% po/NL.mo $(DESTDIR)$(LOCALEDIR)/nl/LC_MESSAGES/rotix.mo
+ endif
+ 	
+ uninstall:

@@ -196,6 +196,7 @@
     SUBDIR += replaceit
     SUBDIR += rman
     SUBDIR += rot
+    SUBDIR += rotix
     SUBDIR += rtf2htm
     SUBDIR += ruby-csv
     SUBDIR += ruby-erb
