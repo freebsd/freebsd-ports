@@ -1,6 +1,5 @@
-diff -u --new-file pppload-1.0/PPPStats.C ./PPPStats.C
---- pppload-1.0/PPPStats.C	Wed Sep 11 19:50:13 1996
-+++ ./PPPStats.C	Fri Jan 30 20:16:04 1998
+--- PPPStats.C.orig	Fri Jan 24 17:33:43 2003
++++ PPPStats.C	Fri Jan 24 17:33:27 2003
 @@ -19,16 +19,22 @@
  
  extern "C" {
@@ -27,7 +26,7 @@ diff -u --new-file pppload-1.0/PPPStats.C ./PPPStats.C
  
  typedef struct
  {
-@@ -53,38 +59,42 @@
+@@ -53,38 +59,44 @@
  		system( (const char*)options->cmd() );
  	}
  	
@@ -47,6 +46,8 @@ diff -u --new-file pppload-1.0/PPPStats.C ./PPPStats.C
 +	sprintf (ifreq.ifr_name, "%s%d",(const char*)options->device(),options->link());
 +
  	PPPStat = & PPPInfo->stats;
++    PPPStat->p.ppp_ibytes = 0;
++    PPPStat->p.ppp_obytes = 0;
  	memset (LastPPPStat, 0, sizeof (LastPPPStat));
  	
 -	if ( (ioctl (_s, SIOCDEVPRIVATE, (caddr_t) & ifreq) < 0) ||
@@ -81,7 +82,7 @@ diff -u --new-file pppload-1.0/PPPStats.C ./PPPStats.C
 +	    }
 +	  }
 +	  PPPStat->p.ppp_ibytes = 0;
-+          PPPStat->p.ppp_obytes = 0;
++      PPPStat->p.ppp_obytes = 0;
  	} else if ( !_isUp ) {
 -		_isUp = true;
 -		killTimer( _retryId );
@@ -95,7 +96,7 @@ diff -u --new-file pppload-1.0/PPPStats.C ./PPPStats.C
  	unsigned int rxDelta = PPPStat->p.ppp_ibytes - _rxTotal;
  	unsigned int txDelta = PPPStat->p.ppp_obytes - _txTotal;
  	_rxTotal = PPPStat->p.ppp_ibytes;
-@@ -92,4 +102,17 @@
+@@ -92,4 +104,17 @@
  	if ( rxDelta == _rxTotal ) rxDelta = 0;
  	if ( txDelta == _txTotal ) txDelta = 0;
  	emit changeStats( rxDelta, txDelta, _rxTotal, _txTotal );

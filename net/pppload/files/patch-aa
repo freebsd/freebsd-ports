@@ -1,59 +1,46 @@
---- Makefile.orig	Wed Sep 11 19:49:33 1996
-+++ Makefile	Fri May 24 04:04:33 2002
-@@ -1,24 +1,23 @@
- ####### Installation
- RM=rm -f
- LN=ln -sf
--INSTALL=install
--PREFIX=/usr
-+INSTALL=install -c
- BINDIR=$(PREFIX)/bin
- MANDIR=$(PREFIX)/man/man1
+--- Makefile.orig	Fri Jan 24 17:14:15 2003
++++ Makefile	Fri Jan 24 17:28:19 2003
+@@ -8,17 +8,14 @@
  
  ####### Directories
  
 -QTDIR   =   /usr/lib/qt
--BASEDIR	=	$(QTDIR)
--INCDIR	=	$(BASEDIR)/include
--LIBDIR	=	$(BASEDIR)/lib
-+INCDIR	=	$(X11BASE)/include/X11/qt1
-+LIBDIR	=	$(X11BASE)/lib
++QTDIR   =  	${X11BASE}
+ BASEDIR	=	$(QTDIR)
+ INCDIR	=	$(BASEDIR)/include
+ LIBDIR	=	$(BASEDIR)/lib
  
  ####### Compiler
  
 -CFLAGS	=	-pipe -O2 -m486 -Wall
 -LFLAGS	=	-L$(LIBDIR) -lqt
-+CFLAGS +=	-Wall
-+LFLAGS	=	-L$(LIBDIR) -lqt1
- LEXTRA	= 	
+-LEXTRA	= 	
 -CC		=	g++
-+CXX	?=	c++
-+CC	=	${CXX}
-+MOC	=	${X11BASE}/bin/moc1
++LFLAGS	=	-L$(LIBDIR) -lqt-mt ${PTHREAD_LIBS}
  
  #######	Files
  
-@@ -75,7 +74,7 @@
+@@ -51,14 +48,14 @@
+ .SUFFIXES: .C $(SUFFIXES)
  
- doc:
- 	../h2html-1.0/h2html $(HEADERS)
--	
-+
- srctar:
- 	make veryclean
- 	make doc
-@@ -100,77 +99,7 @@
- ####### Meta objects
+ .C.o:
+-	$(CC) -c $(CFLAGS) -I$(INCDIR) $<
++	$(CXX) -c $(CFLAGS) -I$(INCDIR) $<
  
- mPPPStats.C: PPPStats.H
--	moc -o mPPPStats.C PPPStats.H
-+	${MOC} -o mPPPStats.C PPPStats.H
- 	
- mMainWindow.C: MainWindow.H
--	moc -o mMainWindow.C MainWindow.H
--
--# DO NOT DELETE THIS LINE -- make depend depends on it.
--
+ #######	Build rules
+ 
+ all: $(TARGET)
+ 
+ $(TARGET): $(OBJECTS) $(OBJMETA)
+-	$(CC) $(OBJECTS) $(OBJMETA) -o $(TARGET) $(LFLAGS) $(LEXTRA)
++	$(CXX) $(OBJECTS) $(OBJMETA) -o $(TARGET) $(LFLAGS) $(LEXTRA)
+ 
+ depend: $(SRCMETA)
+ 	makedepend -I$(INCDIR) $(SOURCES) 2> /dev/null
+@@ -107,70 +104,9 @@
+ 
+ # DO NOT DELETE THIS LINE -- make depend depends on it.
+ 
 -pppload.o: /usr/lib/qt/include/qapp.h /usr/lib/qt/include/qwidget.h
 -pppload.o: /usr/lib/qt/include/qwindefs.h /usr/lib/qt/include/qobjdefs.h
 -pppload.o: /usr/lib/qt/include/qglobal.h /usr/lib/qt/include/qobject.h
@@ -121,4 +108,9 @@
 -Options.o: /usr/include/string.h /usr/include/features.h
 -Options.o: /usr/include/sys/cdefs.h
 -Options.o: /usr/lib/gcc-lib/i486-linux/2.7.2/include/stddef.h
-+	${MOC} -o mMainWindow.C MainWindow.H
++pppload.o: PPPStats.H MainWindow.H
++pppload.o: Options.H
++PPPStats.o: Options.H
++MainWindow.o: MainWindow.H
++MainWindow.o: Options.H
++Options.o: Options.H 
