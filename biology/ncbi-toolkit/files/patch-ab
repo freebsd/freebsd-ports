@@ -1,0 +1,19 @@
+--- corelib/ncbilcl.bsd.orig	Mon Apr  3 08:50:57 2000
++++ corelib/ncbilcl.bsd	Mon Apr  3 08:51:55 2000
+@@ -74,7 +74,6 @@
+ #include <stdio.h>
+ #include <ctype.h>
+ #include <string.h>
+-#include <malloc.h>
+ #include <memory.h>
+ #include <stdlib.h>
+ #include <math.h>
+@@ -84,7 +83,7 @@
+ 
+ /* Check if there are POSIX threads available */
+ #ifdef _POSIX_THREADS
+-#define POSIX_THREADS_AVAIL
++#define POSIX_THREADS_AVAIL_broken
+ #endif
+ 
+ 

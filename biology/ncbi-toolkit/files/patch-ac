@@ -1,0 +1,11 @@
+--- corelib/ncbienv.c.orig	Tue Jan 25 08:16:49 2000
++++ corelib/ncbienv.c	Mon Apr  3 08:56:02 2000
+@@ -183,6 +183,8 @@
+ 
+ #ifdef OS_UNIX
+ #include <pwd.h>
++#include <sys/param.h>
++#define LOGNAME_MAX MAXLOGNAME
+ #endif /* OS_UNIX */
+ #ifdef OS_MAC
+ #include <Gestalt.h>
