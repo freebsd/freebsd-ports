@@ -1,0 +1,19 @@
+*** Makefile.orig	Tue Apr 18 10:44:11 2000
+--- Makefile	Fri Sep 22 15:04:48 2000
+***************
+*** 11,17 ****
+  	set -e; for i in $(DIRS); do cd $$i; $(MAKE) all; cd ..; done
+  
+  opt:
+! 	set -e; for i in $(OPTDIRS); do cd $$i; $(MAKE) opt; cd ..; done
+  
+  clean_hot:
+  	for i in $(DIRS); do (cd $$i; $(MAKE) clean); done
+--- 11,17 ----
+  	set -e; for i in $(DIRS); do cd $$i; $(MAKE) all; cd ..; done
+  
+  opt:
+! 	cd lib; $(MAKE) opt
+  
+  clean_hot:
+  	for i in $(DIRS); do (cd $$i; $(MAKE) clean); done
