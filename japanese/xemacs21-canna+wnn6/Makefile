@@ -6,8 +6,6 @@
 # $FreeBSD$
 #
 
-PKGNAME=	ja-xemacs-canna+wnn6-20.4
-
 CANNA=		yes
 WNN6=		yes
 
