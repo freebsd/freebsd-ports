@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	hping
-PORTVERSION=	2.0.0r1
+PORTVERSION=	2.0.0r2
 PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	security net
 MASTER_SITES=	http://www.hping.org/
-DISTNAME=	hping2.0.0-rc1
+DISTNAME=	hping2.0.0-rc2
 
 MAINTAINER=	Nicolas.Jombart@hsc-labs.com
 
-WRKSRC=		${WRKDIR}/hping2
+WRKSRC=		${WRKDIR}/hping2-rc2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--force-libpcap
 USE_GMAKE=	yes
