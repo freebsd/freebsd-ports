@@ -7,6 +7,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	0.50.0.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://ftp.mplayerhq.hu/MPlayer/releases/ \
 		http://www.stud.uni-karlsruhe.de/~uedc/mplayer/ \
@@ -22,10 +23,10 @@ RUN_DEPENDS=	${LOCALBASE}/share/mplayer/fonts:${PORTSDIR}/graphics/mplayer-fonts
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_XLIB=	yes
-WANT_ESOUND=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
+CONFIGURE_ARGS=	--disable-esd
 
 MAN1=		mplayer.1
 MANCOMPRESSED=	no
@@ -51,10 +52,6 @@ LIB_DEPENDS+=	dvdcss.0:${PORTSDIR}/graphics/libdvdcss \
 		dvdread.2:${PORTSDIR}/graphics/libdvdread
 .endif
 
-.if defined(WITH_ESOUND) || defined(HAVE_ESOUND)
-USE_ESOUND=	yes
-.endif
-
 .if defined(WITH_SVGALIB)
 LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
 .endif
@@ -73,9 +70,6 @@ CONFIGURE_ARGS+=--disable-3dnow
 .endif
 .if defined(WITHOUT_DSP) || defined(WITHOUT_3DNOW) || ${OSVERSION} < 400021
 CONFIGURE_ARGS+=--disable-3dnowex
-.endif
-.if !(defined(WITH_ESOUND) || defined(HAVE_ESOUND))
-CONFIGURE_ARGS+=--disable-esd
 .endif
 .if defined(WITHOUT_SSE)
 CONFIGURE_ARGS+=--disable-mmx2 --disable-sse
@@ -106,9 +100,6 @@ pre-everything::
 .endif
 .if !defined(WITH_DVD)
 	@${ECHO_MSG} "You can enable DVD support by defining WITH_DVD."
-.endif
-.if !(defined(WITH_ESOUND) || defined(HAVE_ESOUND))
-	@${ECHO_MSG} "You can enable ESOUND sound support by defining WITH_ESOUND."
 .endif
 .if !defined(WITH_SVGALIB)
 	@${ECHO_MSG} "You can enable SVGALIB support by defining WITH_SVGALIB."
