@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnomeicu
-PORTVERSION=	0.96.1
-PORTREVISION=	2
+PORTVERSION=	0.98
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= gnomeicu
@@ -15,9 +14,10 @@ MASTER_SITE_SUBDIR= gnomeicu
 MAINTAINER=	gnome@FreeBSD.org
 
 USE_X_PREFIX=	yes
-USE_BZIP2=	yes
 USE_GNOME=	yes
 GNU_CONFIGURE=	yes
+USE_GMAKE=		yes
+BUILD_DEPENDS+=	gnet-config:${PORTSDIR}/net/gnet
 .if defined(WITH_DANTE)
 LIB_DEPENDS+=	socks.1:${PORTSDIR}/net/dante
 SOCKSFLAGS=	-Dconnect=Rconnect -Dbind=Rbind -Dgetsockname=Rgetsockname \
@@ -29,6 +29,10 @@ SOCKSFLAGS=	-Dconnect=Rconnect -Dbind=Rbind -Dgetsockname=Rgetsockname \
 		-Dwritev=Rwritev -Dsend=Rsend -Dsendmsg=Rsendmsg \
 		-Dread=Rread -Dreadv=Rreadv -Drecv=Rrecv -Drecvmsg=Rrecvmsg
 SOCKSLIBS=	-lsocks
+.elif defined(WITH_SOCKS5)
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libsocks5.a:${PORTSDIR}/net/socks5
+SOCKSFLAGS=	-DSOCKS -include ${LOCALBASE}/include/socks.h
+SOCKSLIBS=	-lsocks5
 .endif
 
 CONFIGURE_ARGS= --with-statusmenu

@@ -1,16 +1,29 @@
---- configure.orig	Tue Feb 27 13:35:06 2001
-+++ configure	Thu Apr 19 15:50:55 2001
-@@ -5039,5 +5039,5 @@
- 
--ac_safe=`echo "iconv.h" | sed 'y%./+-%__p_%'`
--echo $ac_n "checking for iconv.h""... $ac_c" 1>&6
--echo "configure:5043: checking for iconv.h" >&5
-+ac_safe=`echo "giconv.h" | sed 'y%./+-%__p_%'`
-+echo $ac_n "checking for giconv.h""... $ac_c" 1>&6
-+echo "configure:5043: checking for giconv.h" >&5
- if eval "test \"`echo '$''{'ac_cv_header_$ac_safe'+set}'`\" = set"; then
-@@ -5048,3 +5048,3 @@
+--- configure.orig	Mon Dec 24 17:17:59 2001
++++ configure	Mon Dec 24 17:18:21 2001
+@@ -3017,7 +3017,7 @@
+ #line 3018 "configure"
  #include "confdefs.h"
+ #include <stdlib.h>
 -#include <iconv.h>
 +#include <giconv.h>
- EOF
+ int main() {
+ iconv_t cd = iconv_open("","");
+        iconv(cd,NULL,NULL,NULL,NULL);
+@@ -3039,7 +3039,7 @@
+ #line 3040 "configure"
+ #include "confdefs.h"
+ #include <stdlib.h>
+-#include <iconv.h>
++#include <giconv.h>
+ int main() {
+ iconv_t cd = iconv_open("","");
+          iconv(cd,NULL,NULL,NULL,NULL);
+@@ -3077,7 +3077,7 @@
+ #include "confdefs.h"
+ 
+ #include <stdlib.h>
+-#include <iconv.h>
++#include <giconv.h>
+ extern
+ #ifdef __cplusplus
+ "C"
