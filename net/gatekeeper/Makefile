@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gatekeeper
-PORTVERSION=	0.12pre
+PORTVERSION=	0.12p
 CATEGORIES=	net
 MASTER_SITES=	http://www.willamowius.de/download/
 DISTNAME=	gk012pre
