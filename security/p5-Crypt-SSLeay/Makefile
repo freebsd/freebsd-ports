@@ -6,13 +6,17 @@
 #
 
 PORTNAME=	Crypt-SSLeay
-PORTVERSION=	0.40
+PORTVERSION=	0.41
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Crypt
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	erwin@lansing.dk
+
+BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/URI/URL.pm:${PORTSDIR}/net/p5-URI
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 RESTRICTED=	"Crypto; export-controlled"
 PERL_CONFIGURE=	yes
