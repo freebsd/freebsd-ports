@@ -1,0 +1,11 @@
+--- include/schily.h.orig	Mon Aug 30 16:50:46 1999
++++ include/schily.h	Sat Sep 18 17:25:57 1999
+@@ -34,7 +34,7 @@
+ #define _SCHILY_H
+ 
+ #ifndef _STANDARD_H
+-#include <standard.h.h>
++#include <standard.h>
+ #endif
+ 
+ #if	defined(_SIZE_T)     || defined(_T_SIZE_) || defined(_T_SIZE) || \

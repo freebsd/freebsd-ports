@@ -1,0 +1,33 @@
+--- mkisofs/scsi_cdr.c.orig	Sun Jul  2 23:11:23 2000
++++ mkisofs/scsi_cdr.c	Thu Aug 17 21:02:04 2000
+@@ -1791,7 +1791,7 @@
+ 	int	secsize;
+ {
+ 	struct scsi_mode_data md;
+-	int	count = sizeof(struct scsi_mode_header) +
++	int	count = sizeof(struct scg_scsi_mode_header) +
+ 			sizeof(struct scsi_mode_blockdesc);
+ 
+ 	(void)test_unit_ready(scgp);	/* clear any error situation */
+@@ -2462,8 +2462,8 @@
+ 		return (NULL);
+ 
+ 	mp = (struct cd_mode_page_2A *)
+-		(mode + sizeof(struct scsi_mode_header) +
+-		((struct scsi_mode_header *)mode)->blockdesc_len);
++		(mode + sizeof(struct scg_scsi_mode_header) +
++		((struct scg_scsi_mode_header *)mode)->blockdesc_len);
+ 
+ 	/*
+ 	 * Do some heuristics against pre SCSI-3/mmc VU page 2A
+@@ -2481,8 +2481,8 @@
+ 	if (val != 0 && val < 176)
+ 		return (NULL);
+ 
+-	len -= sizeof(struct scsi_mode_header) +
+-		((struct scsi_mode_header *)mode)->blockdesc_len;
++	len -= sizeof(struct scg_scsi_mode_header) +
++		((struct scg_scsi_mode_header *)mode)->blockdesc_len;
+ 	if (modep)
+ 		mp2 = (struct cd_mode_page_2A *)modep;
+ 	else

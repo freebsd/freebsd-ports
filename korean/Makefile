@@ -49,6 +49,7 @@
     SUBDIR += linuxdoc-sgml
     SUBDIR += linux_locale
     SUBDIR += mizifont
+    SUBDIR += mkisofs
     SUBDIR += mule-freewnn
     SUBDIR += munhwafonts-cid
     SUBDIR += netscape3
