@@ -55,5 +55,5 @@ bin/mxtar
 info/mtools.info
 @exec install-info %D/info/mtools.info %D/info/dir
 etc/mtools.conf
-@exec ln -fs %D/man/man1/mcopy.1.gz %D/man/man1/mwrite.1.gz
-@unexec rm %D/man/man1/mwrite.1.gz
+@comment @exec ln -fs %D/man/man1/mcopy.1.gz %D/man/man1/mwrite.1.gz
+@comment @unexec rm %D/man/man1/mwrite.1.gz
