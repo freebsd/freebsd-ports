@@ -2773,6 +2773,7 @@ javadc		ports/net/javadc
 javamail	ports/java/javamail
 javanns		ports/math/javanns
 javavmwrapper	ports/java/javavmwrapper
+javel		ports/java/javel
 jbigkit		ports/graphics/jbigkit
 jce-aba		ports/java/jce-aba
 jday		ports/astro/jday
