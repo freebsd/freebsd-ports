@@ -47,6 +47,7 @@
     SUBDIR += openssl
     SUBDIR += p5-Authen-PAM
     SUBDIR += p5-Authen-Radius
+    SUBDIR += p5-Crypt-CBC
     SUBDIR += p5-Crypt-DES
     SUBDIR += p5-Crypt-IDEA
     SUBDIR += p5-Digest-MD5
