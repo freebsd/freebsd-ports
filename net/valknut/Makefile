@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	dcgui
-PORTVERSION=	0.2.22
+PORTVERSION=	0.3.0
 CATEGORIES=	net
 MASTER_SITES=	http://download.berlios.de/dcgui/
 DISTNAME=	dcgui-qt-${PORTVERSION}
@@ -18,7 +18,6 @@ COMMENT=	A Direct Connect client QT GUI
 LIB_DEPENDS=	dc.0:${PORTSDIR}/net/dclib \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
-USE_X_PREFIX=	yes
 USE_QT_VER=	3
 USE_BZIP2=	yes
 USE_GMAKE=	yes
