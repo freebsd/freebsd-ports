@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	mpd-3.0b4
+DISTNAME=	mpd-3.0b5
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.whistle.com/pub/archie/mpd/
 
