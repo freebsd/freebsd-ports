@@ -1,12 +1,12 @@
 # New ports collection makefile for:	sketch
-# Version required:	0.6.2
+# Version required:	0.6.3
 # Date created:		04 November 1998
 # Whom:			Thomas Gellekum <tg@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	sketch-0.6.2
+DISTNAME=	sketch-0.6.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.online.de/home/sketch/
 
