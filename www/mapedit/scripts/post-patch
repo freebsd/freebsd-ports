@@ -1,3 +1,0 @@
-#! /bin/sh
-
-perl -pi -e "s|!!LOCALBASE!!|$LOCALBASE|" ${WRKSRC}/mapedit
