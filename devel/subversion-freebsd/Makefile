@@ -14,7 +14,7 @@ MAINTAINER=	rodrigc@attbi.com
 LIB_DEPENDS=	db4:${PORTSDIR}/databases/db4 \
 		neon.23:${PORTSDIR}/www/neon \
 		expat.4:${PORTSDIR}/textproc/expat2 \
-		apr:${PORTSDIR}/devel/apr
+		apr-0.9:${PORTSDIR}/devel/apr
 RUN_DEPENDS=	gdiff3:${PORTSDIR}/textproc/diffutils
 BUILD_DEPENDS=	gdiff3:${PORTSDIR}/textproc/diffutils
 
