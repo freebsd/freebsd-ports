@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	sylpheed
-PORTVERSION=	0.9.8.1
+PORTVERSION=	0.9.9
 PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://sylpheed.good-day.net/sylpheed/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.1/a/}
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A lightweight, featureful, and fast GTK+ based e-mail client
