@@ -7,7 +7,7 @@
 
 PORTNAME=	gtk2
 PORTVERSION=	2.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits linux
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
@@ -19,7 +19,7 @@ BUILD_DEPENDS+=	${LINUXBASE}/usr/lib/libglib-2.0.so.0:${PORTSDIR}/devel/linux-gl
 		${LINUXBASE}/usr/lib/libatk-1.0.so.0:${PORTSDIR}/accessibility/linux-atk \
 		${LINUXBASE}/usr/lib/libjpeg.so.62:${PORTSDIR}/graphics/linux-jpeg \
 		${LINUXBASE}/usr/lib/libpng12.so.0.1.2.7:${PORTSDIR}/graphics/linux-png \
-		${LINUXBASE}/usr/lib/libtiff.so.3.5:${PORTSDIR}/graphics/linux-tiff \
+		${LINUXBASE}/usr/lib/libtiff.so.3.6.1:${PORTSDIR}/graphics/linux-tiff \
 		${LINUXBASE}/usr/lib/libpango-1.0.so.0.200.1:${PORTSDIR}/x11-toolkits/linux-pango
 RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libX11.so.6:${PORTSDIR}/x11/linux-XFree86-libs \
 		${BUILD_DEPENDS}
