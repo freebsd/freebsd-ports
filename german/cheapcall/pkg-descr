@@ -1,0 +1,17 @@
+Cheap-call is a neat tcl utility for Pfennig-Füchse that always need
+to know which German call-by-call telephone provider is cheapest right
+now. One may choose between the (probably-always-out-of-date-) local
+database and the online one at http://www.billiger-telefonieren.de/.
+This port is probably useless for people outside Germany. Also, it's
+all in Sauerkrautish.
+
+Cheap-call ist ein kleines TCL-Script für Pfennig-Füchse, die immer
+den gerade billigsten Call-by-Call-Telefonprovider wissen müssen. Man
+kann zwischen der (vermutlich permanent veralteten) lokalen Datenbank
+und der Online-Datenbank bei http://www.billiger-telefonieren.de/.
+Dieser Port ist außerhalb Deutschlands vermutlich von geringem Nutzen.
+
+Die Doku ist (noch?) etwas knapp gehalten, sie findet sich unter
+http://www.billiger-telefonieren.de/documentation.shtml .
+
+WWW: http://www.billiger-telefonieren.de/
