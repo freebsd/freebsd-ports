@@ -1,13 +1,13 @@
 # New ports collection makefile for:	dgd-net
-# Version required:	1.0.102
+# Version required:	1.1
 # Date created:		17 June 1996
 # Whom:			adam
 #
-# $Id: Makefile,v 1.23 1997/03/10 03:35:02 adam Exp $
+# $Id: Makefile,v 1.24 1997/03/14 03:58:18 adam Exp $
 #
 
-DISTNAME=	dgd-net-1.0.102
-DISTFILES=	dgd-1.0.91.tar.gz
+DISTNAME=	dgd-net-1.1
+DISTFILES=	dgd-1.1.tar.gz
 CATEGORIES=	net lang
 MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/lpmud/drivers/dgd/ \
 		ftp://ftp.veda.is/pub/mud/dgd/ \
@@ -17,18 +17,7 @@ PATCH_SITES=	ftp://ftp.lysator.liu.se/pub/lpmud/drivers/dgd/patches/ \
 		ftp://ftp.lysator.liu.se/pub/lpmud/drivers/dgd/pkg/ \
 		ftp://ftp.veda.is/pub/mud/dgd/patches/ \
 		ftp://ftp.dreamlabs.com/pub/mud/dgd/patches/
-PATCHFILES=	1.0.91-1.0.92.gz \
-		1.0.92-1.0.93.gz \
-		1.0.93-1.0.94.gz \
-		1.0.94-1.0.95.gz \
-		1.0.95-1.0.96.gz \
-		1.0.96-1.0.97.gz \
-		1.0.97-1.0.98.gz \
-		1.0.98-1.0.99.gz \
-		1.0.99-1.0.100.gz \
-		1.0.100-1.0.101.gz \
-		1.0.101-1.0.102.gz \
-		net-10.dgd-102.gz
+PATCHFILES=	net-10.dgd-1.1.gz
 
 MAINTAINER=	adam@veda.is
 

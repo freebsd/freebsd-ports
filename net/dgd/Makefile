@@ -1,32 +1,22 @@
 # New ports collection makefile for:	dgd
-# Version required:	1.0.91
+# Version required:	1.1
 # Date created:		23 August 1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.70 1997/03/10 03:34:54 adam Exp $
+# $Id: Makefile,v 1.71 1997/03/14 03:57:59 adam Exp $
 #
 
-DISTNAME=	dgd-1.0.102
-DISTFILES=	dgd-1.0.91.tar.gz
+DISTNAME=	dgd-1.1
+#DISTFILES=	dgd-1.1.tar.gz
 CATEGORIES=	net lang
 MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/lpmud/drivers/dgd/ \
 		ftp://ftp.veda.is/pub/mud/dgd/ \
 		ftp://ftp.dreamlabs.com/pub/mud/dgd/
 
-PATCH_SITES=	ftp://ftp.lysator.liu.se/pub/lpmud/drivers/dgd/patches/ \
-		ftp://ftp.veda.is/pub/mud/dgd/patches/ \
-		ftp://ftp.dreamlabs.com/pub/mud/dgd/patches/
-PATCHFILES=	1.0.91-1.0.92.gz \
-		1.0.92-1.0.93.gz \
-		1.0.93-1.0.94.gz \
-		1.0.94-1.0.95.gz \
-		1.0.95-1.0.96.gz \
-		1.0.96-1.0.97.gz \
-		1.0.97-1.0.98.gz \
-		1.0.98-1.0.99.gz \
-		1.0.99-1.0.100.gz \
-		1.0.100-1.0.101.gz \
-		1.0.101-1.0.102.gz
+#PATCH_SITES=	ftp://ftp.lysator.liu.se/pub/lpmud/drivers/dgd/patches/ \
+#		ftp://ftp.veda.is/pub/mud/dgd/patches/ \
+#		ftp://ftp.dreamlabs.com/pub/mud/dgd/patches/
+#PATCHFILES=	1.1-1.1.1.gz
 
 MAINTAINER=	adam@veda.is
 
