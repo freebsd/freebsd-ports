@@ -110,9 +110,9 @@ pre-configure:
 	@${MKDIR} ${CONFIGURE_WRKSRC}
 
 post-build:
-	@echo "Consider running 'make check' before 'make install',"
-	@echo "especially if you have not built port on -STABLE or -CURRENT."
-	@echo "This assumes that you have the dejagnu port installed."
+	@${ECHO} "Consider running 'make check' before 'make install', especially
+	@${ECHO} "if you have not performed this build on -STABLE or -CURRENT."
+	@${ECHO} "This assumes that you have the dejagnu port installed."
 
 check: build
 	cd ${WRKSRC}; export RUNTESTFLAGS='--target_board ''unix{-pthread}'''; ${GMAKE} -sk check
