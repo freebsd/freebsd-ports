@@ -1,4 +1,3 @@
-etc/php.gtk/php.ini-dist
 lib/php/%%PHPEXTDIR%%/php_gtk.so
 %%EXAMPLESDIR%%/combobutton.php
 %%EXAMPLESDIR%%/fileselection.php
@@ -14,4 +13,3 @@ lib/php/%%PHPEXTDIR%%/php_gtk.so
 %%EXAMPLESDIR%%/testgtkrc2
 %%EXAMPLESDIR%%/window.xpm
 @dirrm %%EXAMPLESDIR%%
-@dirrm etc/php.gtk
