@@ -571,6 +571,7 @@
     SUBDIR += powerpc-rtems-gcj
     SUBDIR += powerpc-rtems-gdb
     SUBDIR += powerpc-rtems-objc
+    SUBDIR += ppl
     SUBDIR += prcs
     SUBDIR += projectcenter.app
     SUBDIR += pth
