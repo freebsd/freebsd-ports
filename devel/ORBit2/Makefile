@@ -3,10 +3,10 @@
 # Date Created:			16 Aug 1998
 # Whom:				Chia-liang Kao <clkao@CirX.ORG>
 #
-# $Id: Makefile,v 1.15 1999/03/09 01:08:50 nectar Exp $
+# $Id: Makefile,v 1.16 1999/04/08 18:08:31 steve Exp $
 #
 
-DISTNAME=	ORBit-0.4.0
+DISTNAME=	ORBit-0.4.2
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/ORBit
