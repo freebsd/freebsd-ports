@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openssl
-PORTVERSION=	0.0.7
+PORTVERSION=	0.0.8
 CATEGORIES=	security ruby
 MASTER_SITES=	http://klokan.sh.cvut.cz/~rokosm/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -28,6 +28,7 @@ DOCS=		ChangeLog README
 
 post-extract:
 	find ${WRKSRC} -type d -name CVS | xargs ${RM} -rf
+	find ${WRKSRC} -type f -name '*~' -delete
 
 post-install:
 .if !defined(NOPORTDOCS)
