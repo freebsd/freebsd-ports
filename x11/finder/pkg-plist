@@ -1,0 +1,5 @@
+bin/finder
+etc/CORBA/servers/finder.gnorba
+share/gnome/applets/Utility/finder.desktop
+share/gnome/pixmaps/apple.png
+share/gnome/pixmaps/finder.png

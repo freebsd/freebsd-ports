@@ -1,0 +1,51 @@
+--- Makefile.orig	Tue Sep  5 00:49:19 2000
++++ Makefile	Tue Sep  5 14:55:11 2000
+@@ -1,11 +1,11 @@
+-INCLUDE=`gnome-config --cflags gnome gnomeui gnorba applets gdk_pixbuf` -I. 
+-LIBS=`gnome-config --libs gnome gnomeui gnorba applets gdk_pixbuf` -L.
+-BIN=`gnome-config --bindir`
+-PIXMAP=`gnome-config --prefix`/share/pixmaps
+-DESKTOP=`gnome-config --prefix`/share/applets/Utility
+-GNORBA=`gnome-config --prefix`/etc/CORBA/servers
++INCLUDE=`$(X11BASE)/bin/gnome-config --cflags gnome gnomeui gnorba applets gdk_pixbuf` -I. 
++LIBS=`$(X11BASE)/bin/gnome-config --libs gnome gnomeui gnorba applets gdk_pixbuf` -L.
++BIN=`$(X11BASE)/bin/gnome-config --bindir`
++PIXMAP=`$(X11BASE)/bin/gnome-config --datadir`/pixmaps
++DESKTOP=`$(X11BASE)/bin/gnome-config --datadir`/applets/Utility
++GNORBA=`$(X11BASE)/bin/gnome-config --prefix`/etc/CORBA/servers
+ 
+-CC=gcc
++CC?=gcc
+ 
+ CFLAGS+=$(INCLUDE)
+ 
+@@ -23,20 +23,20 @@
+ compile: $(OBJS)
+ 
+ finder: 
+-	make -C gwmh
+-	make -C TaskMenu
+-	make $(OBJS)
+-	gcc $(CFLAGS) $(LIBS) -o finder $(OBJS) 
++	${MAKE} -C gwmh
++	${MAKE} -C TaskMenu
++	${MAKE} $(OBJS)
++	${CC} $(CFLAGS) $(LIBS) -o finder $(OBJS) 
+ 
+ clean:
+ 	rm -f $(OBJS) $(TARGETS)
+ 
+ install: $(INST)
+-	cp finder $(BIN)/finder
+-	cp apple.png $(PIXMAP)/apple.png
+-	cp finder.png $(PIXMAP)/finder.png
+-	cp finder.desktop $(DESKTOP)/finder.desktop
+-	cp finder.gnorba $(GNORBA)/finder.gnorba
++	$(BSD_INSTALL_PROGRAM) finder $(BIN)/finder
++	$(BSD_INSTALL_DATA) apple.png $(PIXMAP)/apple.png
++	$(BSD_INSTALL_DATA) finder.png $(PIXMAP)/finder.png
++	$(BSD_INSTALL_DATA) finder.desktop $(DESKTOP)/finder.desktop
++	$(BSD_INSTALL_DATA) finder.gnorba $(GNORBA)/finder.gnorba
+ 
+ uninstall:
+ 	rm -f $(BIN)/finder
