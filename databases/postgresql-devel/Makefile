@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	postgresql
-PORTVERSION?=	7.4.b3.2003.09.30
+PORTVERSION?=	7.4.b4.2003.10.03
 CATEGORIES?=	databases
 MASTER_SITES=	http://freebsd.sean.chittenden.org/ports/ \
 		http://people.freebsd.org/~seanc/ports/
@@ -17,6 +17,7 @@ DIST_SUBDIR=	postgresql
 MAINTAINER?=	seanc@FreeBSD.org
 COMMENT=	Development snapshots of PostgreSQL's latest features
 
+CONFIGURE_ENV+=	DOCBOOKSTYLE=${LOCALBASE}/share/sgml/docbook/3.1/
 USE_BZIP2=	YES
 USE_GMAKE=	YES
 USE_PERL5_BUILD=	YES
@@ -93,6 +94,23 @@ INSTALL_TARGET+=	install-all-headers
 MAKEFILE=	GNUmakefile
 .endif
 
+.if defined(WITHOUT_SPINLOCKS)
+CONFIGURE_ARGS+=	--disable-spinlocks
+.endif
+
+.if defined(WITH_CASSERT)
+CONFIGURE_ARGS+=	--enable-cassert
+.endif
+
+.if defined(WITH_JDBC)
+CONFIGURE_ARGS+=	--with-java
+.endif
+
+.if defined(WITH_KRB5)
+CONFIGURE_ARGS+=	--with-krb5="`${KRB5CONF} --prefix krb5`"
+LDFLAGS+=	`${KRB5CONF} --libs krb5`
+.endif
+
 .if defined(WITH_MIT_KRB5)
 KRB5CONF=	${LOCALBASE}/bin/krb5-config
 WITH_KRB5=	yes
@@ -104,13 +122,24 @@ LIB_DEPENDS+=	krb5.3:${PORTSDIR}/security/krb5
 WITH_KRB5=	yes
 .endif
 
-.if defined(WITH_KRB5)
-CONFIGURE_ARGS+=	--with-krb5="`${KRB5CONF} --prefix krb5`"
-LDFLAGS+=	`${KRB5CONF} --libs krb5`
-.endif
-
 .if defined(WITH_OPTIMIZED_CFLAGS)
 CFLAGS+= -O3 -funroll-loops
+.endif
+
+.if defined(WITH_PERL)
+CONFIGURE_ARGS+=	--with-perl
+.endif
+
+.if defined(WITH_PYTHON)
+CONFIGURE_ARGS+=	--with-python
+.endif
+
+.if defined(WITH_RENDEZVOUS)
+CONFIGURE_ARGS+=	--with-rendezvous
+.endif
+
+.if defined(WITH_TCL)
+CONFIGURE_ARGS+=	--with-tcl
 .endif
 
 pre-everything::
@@ -118,13 +147,19 @@ pre-everything::
 	@${ECHO} ""
 	@${ECHO} "${PORTNAME} has several tunables that can be used to configure PostgreSQL:"
 	@${ECHO} ""
+	@${ECHO} "	WITH_CASSERT		Builds with C Asserts (debug opt, slows perf)"
 	@${ECHO} "	WITH_DEBUG		Builds with debugging symbols"
 	@${ECHO} "	WITH_HEIMDAL_KRB5	Builds with Heimdal's kerberos support"
+	@${ECHO} "	WITH_JDBC		Builds with JDBC support"
 	@${ECHO} "	WITH_MIT_KRB5		Builds with MIT's kerberos support"
 	@${ECHO} "	WITH_OPTIMIZED_CFLAGS	Builds with compiler optimizations (-O3)"
+	@${ECHO} "	WITH_PERL		Builds with pl/Perl support"
+	@${ECHO} "	WITH_PYTHON		Builds with pl/Python support"
 	@${ECHO} "	WITH_PGBLOCKSIZE	It's possible to change the blocksize to \"16K\""
 	@${ECHO} "				or \"32K\" (defaults to 8K and different"
 	@${ECHO} "				block sizes require a dump, initdb, reload!)"
+	@${ECHO} "	WITH_RENDEZVOUS		Builds with Rendezvous support"
+	@${ECHO} "	WITH_TCL		Builds with pl/tcl support"
 	@${ECHO} "	WITHOUT_GETTEXT		Skips building with support for"
 	@${ECHO} "				internationalized error messages"
 	@${ECHO} "	WITHOUT_GNUGETOPT	Don't install GNU getopt (will"
@@ -132,6 +167,7 @@ pre-everything::
 	@${ECHO} "	WITHOUT_PGCRYPTO	Builds without pgcrypto support"
 	@${ECHO} "	WITHOUT_SERVER		Installs the headers and libraries for"
 	@${ECHO} "				PostgreSQL clients"
+	@${ECHO} "	WITHOUT_SPINLOCKS	Builds without spin locks"
 	@${ECHO} "	WITHOUT_SSL		Builds without OpenSSL support"
 	@${ECHO} ""
 	@${ECHO} ""
