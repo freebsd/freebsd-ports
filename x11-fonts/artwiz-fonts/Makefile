@@ -15,7 +15,6 @@ MAINTAINER=	dominic_marks@btinternet.com
 
 NO_BUILD=	yes
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 WRKSRC=		${WRKDIR}/fluxbox-${PORTNAME}
@@ -23,16 +22,13 @@ WRKSRC=		${WRKDIR}/fluxbox-${PORTNAME}
 FONTS=	anorexia aqui cure cursor drift edges gelly glisp-bold \
 	glisp lime mints-mild mints-strong nu snap
 FONTDIR=	${X11BASE}/lib/X11/fonts/${PORTNAME}/
-FONTEXT=	pcf.gz
+FILES=	${FONTS:S,$,.pcf.gz,} ${FILESDIR}/fonts.dir
 
 .include <bsd.port.pre.mk>
 
 do-install:
 	@${MKDIR} ${FONTDIR}
-.for FONT in ${FONTS}
-	@${INSTALL_DATA} ${WRKSRC}/${FONT}.${FONTEXT} ${FONTDIR}
-.endfor
-	@${INSTALL_DATA} ${FILESDIR}/fonts.dir ${FONTDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${FILES} ${FONTDIR}
 
 post-install:
 	@${SED} 's|$${X11BASE}|${X11BASE}|g' \
