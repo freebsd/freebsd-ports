@@ -34,7 +34,7 @@ MAKE_ENV+=	NO_PORTS=YES
 PLIST_SUB+=	PORTS=""
 CONFLICTS=	mod_auth_external-2.* mod_bandwidth-2.* mod_put-1.* \
 		mod_ticket-1.* mod_fastcgi-2.* mod_cvs-0.* mod_roaming-1.* \
-		mod_layout-3.*
+		mod_layout-3.* mod_macro-1.*
 .endif
 
 .if exists(${APXS})
