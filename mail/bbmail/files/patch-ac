@@ -1,0 +1,11 @@
+--- Timer.hh.orig	Fri Sep  6 20:19:18 2002
++++ Timer.hh	Fri Sep  6 20:19:35 2002
+@@ -47,7 +47,7 @@
+ 
+ 
+ class BTimer {
+-  friend BaseDisplay;
++  friend class BaseDisplay;
+ private:
+   BaseDisplay *display;
+   TimeoutHandler *handler;

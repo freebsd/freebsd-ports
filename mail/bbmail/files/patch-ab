@@ -1,0 +1,11 @@
+--- Basemenu.hh.orig	Fri Sep  6 20:19:14 2002
++++ Basemenu.hh	Fri Sep  6 20:19:26 2002
+@@ -133,7 +133,7 @@
+   char **u, *l, *e;
+   int f;
+ 
+-  friend Basemenu;
++  friend class Basemenu;
+ 
+ 
+ protected:
