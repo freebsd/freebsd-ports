@@ -1,0 +1,17 @@
+vlc -- the VideoLAN Client
+
+The vlc is distributed with a GPL license.  See the file COPYING in the
+base directory.
+
+The vlc is part of the VideoLAN project, a full MPEG2 client/server
+solution. The VideoLAN Client can also be used as a standalone program
+to play MPEG2 streams from a hard disk or a DVD.
+
+vlc@videolan.org is a mailing list for support and discussion
+
+The VideoLAN web site at http://www.videolan.org/ is a good start for
+information about MPEG and DVD playing. Have a look at the documentation
+section (http://www.videolan.org/doc.html), as well as the bookmarks.
+
+vlc is in it's early days.  It may be necessary to run it with with
+``-V x11'' to make it work.
