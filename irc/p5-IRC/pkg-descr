@@ -16,3 +16,5 @@ Net::IRC::Event
 Net::IRC::DCC
 
 See their respective man pages for details.
+
+WWW: http://www.funkplanet.com/irc/
