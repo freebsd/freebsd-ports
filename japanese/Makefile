@@ -21,14 +21,6 @@
     SUBDIR += balsa
     SUBDIR += bible_names-fpw
     SUBDIR += binder
-    SUBDIR += bjfilter360
-    SUBDIR += bjfilter850
-    SUBDIR += bjfilter850ug
-    SUBDIR += bjfilter860
-    SUBDIR += bjfilter870
-    SUBDIR += bjfilters600
-    SUBDIR += bjfilters630
-    SUBDIR += bjfilters6300
     SUBDIR += bookview
     SUBDIR += cannadic
     SUBDIR += canuum
