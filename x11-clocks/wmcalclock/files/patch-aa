@@ -1,11 +1,42 @@
---- Makefile.orig	Fri Feb 19 03:13:16 1999
-+++ Makefile	Tue Mar 16 21:07:25 1999
-@@ -1,5 +1,6 @@
+--- Makefile.orig	Sat Mar 27 15:46:38 1999
++++ Makefile	Sat Aug 12 01:01:35 2000
+@@ -1,8 +1,8 @@
 -CC     = gcc
 -CFLAGS = -O2 -Wall
+-INCDIR = -I/usr/X11R6/include/X11 -I/usr/X11R6/include
+-DESTDIR= /usr/X11R6
+-LIBDIR = -L/usr/X11R6/lib
 +CC     ?= gcc
 +CFLAGS ?= -O2
-+CFLAGS += -Wall
- INCDIR = -I/usr/X11R6/include/X11 -I/usr/X11R6/include
- DESTDIR= /usr/X11R6
- LIBDIR = -L/usr/X11R6/lib
++INCDIR = -I${X11BASE}/include
++DESTDIR= ${PREFIX}
++LIBDIR = -L${X11BASE}/lib
+ 
+ # for Linux
+ LIBS   = -lXpm -lX11 -lXext
+@@ -15,14 +15,14 @@
+ 
+ 
+ .c.o:
+-	$(CC) $(CFLAGS) -D$(shell echo `uname -s`) -c $< -o $*.o $(INCDIR)
++	$(CC) $(CFLAGS) -D$(OPSYS) -c $< -o $@ $(INCDIR)
+ 
+ 
+ all:	wmCalClock.o wmCalClock
+ 
+ wmCalClock.o: wmCalClock_master.xpm wmCalClock_mask.xbm
+ wmCalClock:	$(OBJS) 
+-	$(CC) $(COPTS) $(SYSTEM) -o wmCalClock $^ $(INCDIR) $(LIBDIR) $(LIBS)
++	$(CC) $(COPTS) $(SYSTEM) -o wmCalClock $(OBJS) $(LIBDIR) $(LIBS)
+ 
+ clean:
+ 	for i in $(OBJS) ; do \
+@@ -31,6 +31,6 @@
+ 	rm -f wmCalClock
+ 
+ install:: wmCalClock
+-	install -c -s -m 0755 wmCalClock $(DESTDIR)/bin
+-	install -c -m 0644 wmCalClock.1 $(DESTDIR)/man/man1 
++	${BSD_INSTALL_PROGRAM} wmCalClock $(DESTDIR)/bin
++	${BSD_INSTALL_MAN} wmCalClock.1 $(DESTDIR)/man/man1 
+ 

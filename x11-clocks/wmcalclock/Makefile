@@ -16,14 +16,8 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/Src
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
-USE_GMAKE=	yes
-
 ALL_TARGET=	clean all
 
 MAN1=		wmCalClock.1
-
-do-install:
-	${INSTALL_MAN} ${WRKSRC}/wmCalClock.1 ${PREFIX}/man/man1/
-	${INSTALL_PROGRAM} ${WRKSRC}/wmCalClock ${PREFIX}/bin/
 
 .include <bsd.port.mk>
