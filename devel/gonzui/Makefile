@@ -16,6 +16,8 @@ COMMENT=		A source code search engine
 BUILD_DEPENDS=	${RUBY_SITEARCHLIBDIR}/bdb.so:${PORTSDIR}/databases/ruby-bdb
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/bdb.so:${PORTSDIR}/databases/ruby-bdb
 
+BROKEN=		Missing dependency
+
 USE_RUBY=	yes
 GNU_CONFIGURE=	yes
 
