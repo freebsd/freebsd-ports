@@ -24,6 +24,7 @@ share/gnupg/options.skel
 %%PORTDOCS%%share/doc/gnupg/THANKS
 %%PORTDOCS%%share/doc/gnupg/TODO
 %%PORTDOCS%%share/doc/gnupg/VERSION
+share/locale/be/LC_MESSAGES/gnupg.mo
 share/locale/ca/LC_MESSAGES/gnupg.mo
 share/locale/cs/LC_MESSAGES/gnupg.mo
 share/locale/da/LC_MESSAGES/gnupg.mo
@@ -44,11 +45,14 @@ share/locale/pl/LC_MESSAGES/gnupg.mo
 share/locale/pt/LC_MESSAGES/gnupg.mo
 share/locale/pt_BR/LC_MESSAGES/gnupg.mo
 share/locale/ro/LC_MESSAGES/gnupg.mo
+share/locale/ru/LC_MESSAGES/gnupg.mo
 share/locale/sk/LC_MESSAGES/gnupg.mo
 share/locale/sv/LC_MESSAGES/gnupg.mo
 share/locale/tr/LC_MESSAGES/gnupg.mo
 share/locale/zh_TW/LC_MESSAGES/gnupg.mo
 @dirrm share/gnupg
+@unexec rmdir %D/share/locale/be/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/be 2>/dev/null || true
 @unexec rmdir %D/share/locale/ca/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/ca 2>/dev/null || true
 @unexec rmdir %D/share/locale/cs/LC_MESSAGES 2>/dev/null || true
@@ -89,6 +93,8 @@ share/locale/zh_TW/LC_MESSAGES/gnupg.mo
 @unexec rmdir %D/share/locale/pt_BR 2>/dev/null || true
 @unexec rmdir %D/share/locale/ro/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/ro 2>/dev/null || true
+@unexec rmdir %D/share/locale/ru/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/ru 2>/dev/null || true
 @unexec rmdir %D/share/locale/sk/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/sk 2>/dev/null || true
 @unexec rmdir %D/share/locale/sv/LC_MESSAGES 2>/dev/null || true
