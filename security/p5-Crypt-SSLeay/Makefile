@@ -18,7 +18,6 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/MIME/Ba
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/URI/URL.pm:${PORTSDIR}/net/p5-URI
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-RESTRICTED=	"Crypto; export-controlled"
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS+=	"/usr"
 USE_OPENSSL=	yes
