@@ -39,6 +39,7 @@
     SUBDIR += gnome-fifth-toe
     SUBDIR += gnomeapplets
     SUBDIR += gnomecore
+    SUBDIR += gnomedesktop
     SUBDIR += gnomelibs
     SUBDIR += gnomeres_applet
     SUBDIR += gswitchit_applet
