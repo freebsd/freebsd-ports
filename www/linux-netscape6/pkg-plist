@@ -1,17 +1,123 @@
-bin/netscape
-lib/netscape/LICENSE
 lib/netscape/README
-lib/netscape/netscape.bin
+lib/netscape/LICENSE
 lib/netscape/mailcap
+lib/netscape/Netscape.ad
 lib/netscape/movemail
 lib/netscape/bookmark.htm
-lib/netscape/Netscape.ad
+lib/netscape/java/classes/awt.properties
+lib/netscape/java/classes/font.properties
+lib/netscape/java/classes/font.properties.cs
+lib/netscape/java/classes/font.properties.el
+lib/netscape/java/classes/font.properties.hu
+lib/netscape/java/classes/font.properties.ja
+lib/netscape/java/classes/font.properties.ko
+lib/netscape/java/classes/font.properties.lt
+lib/netscape/java/classes/font.properties.lv
+lib/netscape/java/classes/font.properties.pl
+lib/netscape/java/classes/font.properties.ru
+lib/netscape/java/classes/font.properties.tr
+lib/netscape/java/classes/font.properties.zh
+lib/netscape/java/classes/font.properties.zh_GB2312
+lib/netscape/java/classes/font.properties.zh_TW
+lib/netscape/java/classes/font.properties.zh_TW_Big5
+lib/netscape/java/classes/aix/font.properties
+lib/netscape/java/classes/aix/font.properties.cs
+lib/netscape/java/classes/aix/font.properties.hu
+lib/netscape/java/classes/aix/font.properties.ja
+lib/netscape/java/classes/aix/font.properties.ko
+lib/netscape/java/classes/aix/font.properties.pl
+lib/netscape/java/classes/aix/font.properties.ru
+lib/netscape/java/classes/aix/font.properties.zh
+lib/netscape/java/classes/aix/font.properties.zh_TW
+lib/netscape/java/classes/hpux/font.properties
+lib/netscape/java/classes/hpux/font.properties.bg
+lib/netscape/java/classes/hpux/font.properties.cs
+lib/netscape/java/classes/hpux/font.properties.el
+lib/netscape/java/classes/hpux/font.properties.hr
+lib/netscape/java/classes/hpux/font.properties.hu
+lib/netscape/java/classes/hpux/font.properties.ja
+lib/netscape/java/classes/hpux/font.properties.ko
+lib/netscape/java/classes/hpux/font.properties.pl
+lib/netscape/java/classes/hpux/font.properties.ro
+lib/netscape/java/classes/hpux/font.properties.ru
+lib/netscape/java/classes/hpux/font.properties.sk
+lib/netscape/java/classes/hpux/font.properties.sl
+lib/netscape/java/classes/hpux/font.properties.tr
+lib/netscape/java/classes/hpux/font.properties.zh_GB2312
+lib/netscape/java/classes/hpux/font.properties.zh_TW_Big5
+lib/netscape/java/classes/hpux/font.properties.zh_TW_CNS11643
+lib/netscape/java/classes/font.properties.zh_TW_CNS11643
+lib/netscape/java/classes/irix/font.properties
+lib/netscape/java/classes/irix/font.properties.cs
+lib/netscape/java/classes/irix/font.properties.el
+lib/netscape/java/classes/irix/font.properties.hu
+lib/netscape/java/classes/irix/font.properties.ja
+lib/netscape/java/classes/irix/font.properties.ko
+lib/netscape/java/classes/irix/font.properties.zh_GB2312
+lib/netscape/java/classes/irix/font.properties.zh_TW_Big5
+lib/netscape/java/classes/irix/font.properties.zh_TW_CNS11643
 lib/netscape/java/classes/ifc11.jar
 lib/netscape/java/classes/iiop10.jar
 lib/netscape/java/classes/jae40.jar
 lib/netscape/java/classes/java40.jar
 lib/netscape/java/classes/jio40.jar
 lib/netscape/java/classes/jsd10.jar
+lib/netscape/java/classes/ldap10.jar
+lib/netscape/java/classes/scd10.jar
+lib/netscape/java/classes.old/awt.properties
+lib/netscape/java/classes.old/font.properties
+lib/netscape/java/classes.old/font.properties.cs
+lib/netscape/java/classes.old/font.properties.el
+lib/netscape/java/classes.old/font.properties.hu
+lib/netscape/java/classes.old/font.properties.ja
+lib/netscape/java/classes.old/font.properties.ko
+lib/netscape/java/classes.old/font.properties.lt
+lib/netscape/java/classes.old/font.properties.lv
+lib/netscape/java/classes.old/font.properties.pl
+lib/netscape/java/classes.old/font.properties.ru
+lib/netscape/java/classes.old/font.properties.tr
+lib/netscape/java/classes.old/font.properties.zh
+lib/netscape/java/classes.old/font.properties.zh_GB2312
+lib/netscape/java/classes.old/font.properties.zh_TW
+lib/netscape/java/classes.old/font.properties.zh_TW_Big5
+lib/netscape/java/classes.old/aix/font.properties
+lib/netscape/java/classes.old/aix/font.properties.cs
+lib/netscape/java/classes.old/aix/font.properties.hu
+lib/netscape/java/classes.old/aix/font.properties.ja
+lib/netscape/java/classes.old/aix/font.properties.ko
+lib/netscape/java/classes.old/aix/font.properties.pl
+lib/netscape/java/classes.old/aix/font.properties.ru
+lib/netscape/java/classes.old/aix/font.properties.zh
+lib/netscape/java/classes.old/aix/font.properties.zh_TW
+lib/netscape/java/classes.old/hpux/font.properties
+lib/netscape/java/classes.old/hpux/font.properties.bg
+lib/netscape/java/classes.old/hpux/font.properties.cs
+lib/netscape/java/classes.old/hpux/font.properties.el
+lib/netscape/java/classes.old/hpux/font.properties.hr
+lib/netscape/java/classes.old/hpux/font.properties.hu
+lib/netscape/java/classes.old/hpux/font.properties.ja
+lib/netscape/java/classes.old/hpux/font.properties.ko
+lib/netscape/java/classes.old/hpux/font.properties.pl
+lib/netscape/java/classes.old/hpux/font.properties.ro
+lib/netscape/java/classes.old/hpux/font.properties.ru
+lib/netscape/java/classes.old/hpux/font.properties.sk
+lib/netscape/java/classes.old/hpux/font.properties.sl
+lib/netscape/java/classes.old/hpux/font.properties.tr
+lib/netscape/java/classes.old/hpux/font.properties.zh_GB2312
+lib/netscape/java/classes.old/hpux/font.properties.zh_TW_Big5
+lib/netscape/java/classes.old/hpux/font.properties.zh_TW_CNS11643
+lib/netscape/java/classes.old/font.properties.zh_TW_CNS11643
+lib/netscape/java/classes.old/irix/font.properties
+lib/netscape/java/classes.old/irix/font.properties.cs
+lib/netscape/java/classes.old/irix/font.properties.el
+lib/netscape/java/classes.old/irix/font.properties.hu
+lib/netscape/java/classes.old/irix/font.properties.ja
+lib/netscape/java/classes.old/irix/font.properties.ko
+lib/netscape/java/classes.old/irix/font.properties.zh_GB2312
+lib/netscape/java/classes.old/irix/font.properties.zh_TW_Big5
+lib/netscape/java/classes.old/irix/font.properties.zh_TW_CNS11643
+lib/netscape/java/classes.old/ldap10.jar
+lib/netscape/java/classes.old/scd10.jar
 lib/netscape/nethelp/Back_dep.gif
 lib/netscape/nethelp/Back_dis.gif
 lib/netscape/nethelp/Back_sel.gif
@@ -30,6 +136,7 @@ lib/netscape/nethelp/Tool_dep.gif
 lib/netscape/nethelp/Tool_sel.gif
 lib/netscape/nethelp/Tool_up.gif
 lib/netscape/nethelp/Wait.gif
+lib/netscape/nethelp/netwatch.gif
 lib/netscape/nethelp/Blank.htm
 lib/netscape/nethelp/CntTool.htm
 lib/netscape/nethelp/IdxFill.htm
@@ -42,6 +149,8 @@ lib/netscape/nethelp/NoJSerr.htm
 lib/netscape/nethelp/Status.htm
 lib/netscape/nethelp/System.htm
 lib/netscape/nethelp/ToolUI.htm
+lib/netscape/nethelp/picsfail.htm
+lib/netscape/nethelp/picsfail.jar
 lib/netscape/nethelp/Button.js
 lib/netscape/nethelp/CntData.js
 lib/netscape/nethelp/CntTool.js
@@ -114,3 +223,20 @@ lib/netscape/nethelp/netscape/nscal/index.html
 lib/netscape/spell/netscape.dic
 lib/netscape/spell/pen4s324.dat
 lib/netscape/vreg
+lib/netscape/registry
+lib/netscape/netscape.bin
+lib/netscape/vreg.old
+@dirrm lib/netscape/spell lib/netscape/nethelp/netscape/shared
+@dirrm lib/netscape/nethelp/netscape/nscal
+@dirrm lib/netscape/nethelp/netscape/netcastr
+@dirrm lib/netscape/nethelp/netscape/navigatr
+@dirrm lib/netscape/nethelp/netscape/messengr
+@dirrm lib/netscape/nethelp/netscape/home
+@dirrm lib/netscape/nethelp/netscape/confernc
+@dirrm lib/netscape/nethelp/netscape/composer
+@dirrm lib/netscape/nethelp/netscape/collabra lib/netscape/nethelp/netscape
+@dirrm lib/netscape/nethelp lib/netscape/java/classes/irix
+@dirrm lib/netscape/java/classes/hpux lib/netscape/java/classes/aix
+@dirrm lib/netscape/java/classes.old/irix lib/netscape/java/classes.old/hpux
+@dirrm lib/netscape/java/classes.old/aix lib/netscape/java/classes.old
+@dirrm lib/netscape/java/classes lib/netscape/java lib/netscape/
