@@ -4,7 +4,7 @@
 # Date created:			  Fri Jan 24, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.2 1997/01/25 18:08:40 obrien Exp $
+# $Id: Makefile,v 1.3 1997/04/22 10:50:10 obrien Exp $
 #
 
 DISTNAME=	xwpe-1.4.2
@@ -13,6 +13,10 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}  \
 		ftp://ftp.uni-hannover.de/pub/mirror/linux-distrib/apps/editors/X/
 MASTER_SITE_SUBDIR=	apps/editors/X
 EXTRACT_SUFX=	.tgz
+
+PATCH_SITES=	http://www.rpi.edu/~payned/xwpe/
+PATCHFILES=	xwpe-cosmetic.patch xwpe-grep.patch \
+		xwpe-naming.patch xwpe-xchanges.patch
 
 MAINTAINER=     obrien@NUXI.com
 
@@ -29,12 +33,11 @@ INSTALL_TARGET= install_german
 .endif
 MAN1=		xwpe.1
 
-
 post-install:
 	@strip ${PREFIX}/bin/xwpe
 	@(cd ${PREFIX}/man/man1 ; \
 	for mp in xwe.1 wpe.1 we.1 ; \
-		do rm -f $$mp ; ln -sf xwpe.1.gz $$mp.gz ; done )
+		do ${RM} -f $$mp ; ln -sf xwpe.1.gz $$mp.gz ; done )
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/xwpe
 .if defined(GERMAN_LANG)
