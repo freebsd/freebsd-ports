@@ -14,21 +14,14 @@ EXTRACT_SUFX=
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-RUN_DEPENDS=	${JAVAVM}:${PORTSDIR}/java/jdk
+RUN_DEPENDS=	${JAVAVM}:${PORTSDIR}/java/javavmwrapper \
+		${LOCALBASE}/etc/javavms:${PORTSDIR}/java/jre
 
 USE_ZIP=	yes
 USE_XLIB=	yes
 NO_BUILD=	yes
 
-JDK_VERSION=	1.1.8
-JAVAVM=		${LOCALBASE}/jdk${JDK_VERSION}/bin/java
-
-.if defined(WITH_JIT)
-RUN_DEPENDS+=	${LOCALBASE}/jdk${JDK_VERSION}/lib/${ARCH}/green_threads/libshujit.so:${PORTSDIR}/java/shujit
-JAVAJIT=	shujit
-.else
-JAVAJIT=
-.endif
+JAVAVM=		${LOCALBASE}/bin/javavm
 
 INSTSBDR=	${PREFIX}/share/java/AdobeAcrobatViewer
 
