@@ -1,0 +1,11 @@
+--- Makefile.in.org	Sat Jan 17 23:11:44 1998
++++ Makefile.in	Sat Jan 17 23:12:55 1998
+@@ -28,7 +28,7 @@
+ # Directory to install `oleo' in.
+ bindir = $(exec_prefix)/bin
+ 
+-CFLAGS = @CFLAGS@ -DEUC_JP #-DDISABLE_CURSOR #-DGHOSTSCRIPT
++CFLAGS = @CFLAGS@ -DEUC_JP -DGHOSTSCRIPT #-DDISABLE_CURSOR
+ BISONFLAGS =
+ optional_libs = @LIBS@
+ extra_objs =@LIBOBJS@ @ALLOCA@

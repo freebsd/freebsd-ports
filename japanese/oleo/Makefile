@@ -3,7 +3,7 @@
 # Date created:		2 March 1997
 # Whom:			Yoshiro MIHIRA
 #
-# $Id: Makefile,v 1.3 1997/07/21 06:44:13 max Exp $
+# $Id: Makefile,v 1.4 1997/09/14 21:35:37 max Exp $
 #
 
 DISTNAME=	oleo-1.6
@@ -15,10 +15,10 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} oleo-doc.tar.gz
 
 PATCH_SITES=	http://www.hh.iij4u.or.jp/%7Ehayasida/oleo/
 PATCHFILES=	oleo-1.6-1.6jb2.diff.gz
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	sanpei@yy.cs.keio.ac.jp
 
-PATCH_DIST_STRIP=	-p1
 GNU_CONFIGURE=yes
 
 post-install:
