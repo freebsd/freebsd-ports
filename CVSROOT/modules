@@ -8343,6 +8343,7 @@ xmlsec		ports/security/xmlsec
 xmltex		ports/print/xmltex
 xmmix		ports/audio/xmmix
 xmms		ports/audio/xmms
+xmms-a52dec	ports/audio/xmms-a52dec
 xmms-alarm	ports/x11-clocks/xmms-alarm
 xmms-avi	ports/graphics/xmms-avi
 xmms-bonk	ports/audio/xmms-bonk
