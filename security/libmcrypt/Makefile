@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libmcrypt
-PORTVERSION=	2.5.5
+PORTVERSION=	2.5.6
 CATEGORIES=	security
 MASTER_SITES=	ftp://mcrypt.hellug.gr/pub/mcrypt/libmcrypt/ \
 		ftp://ftp.ntua.gr/pub/security/mcrypt/libmcrypt/
@@ -16,16 +16,11 @@ MAINTAINER=	ports@FreeBSD.org
 RESTRICTED=	"yes - cryptography"
 
 USE_PERL5=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-static
 INSTALLS_SHLIB=	yes
 
 MAN3=		mcrypt.3
-
-post-patch:
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|: install-pkglibLTLIBRARIES|:|g'
 
 .include <bsd.port.mk>
