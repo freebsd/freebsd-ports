@@ -30,13 +30,6 @@
  
  	while (0 != iLen) {
 -		if (-1 == (nr = write(fd, pcBuf, iLen))) {
-+		if (0 <= (nr = write(fd, pcBuf, iLen))) {
++		if (0 >= (nr = write(fd, pcBuf, iLen))) {
  			c2cooked();
  			fprintf(stderr, "%s: lost connection\n", progname);
-@@ -950,5 +950,5 @@
- 	iRem = iMax;
- 	i = 0;
--	while (0 < (nr = read(s, pcBuf+i, iRem))) {
-+	while (0 <= (nr = read(s, pcBuf+i, iRem))) {
- 		i += nr;
- 		iRem -= nr;
