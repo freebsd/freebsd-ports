@@ -1,0 +1,5 @@
+bin/byaccr
+%%RUBY_EXAMPLESDIR%%/byaccr/Parser.rb
+%%RUBY_EXAMPLESDIR%%/byaccr/Test.rb
+%%RUBY_EXAMPLESDIR%%/byaccr/cal.y
+@dirrm %%RUBY_EXAMPLESDIR%%/byaccr

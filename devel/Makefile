@@ -280,6 +280,7 @@
     SUBDIR += robodoc
     SUBDIR += rpc2
     SUBDIR += ruby-amstd
+    SUBDIR += ruby-byaccr
     SUBDIR += ruby-date2
     SUBDIR += ruby-filelock
     SUBDIR += ruby-intl
