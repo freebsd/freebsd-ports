@@ -1,10 +1,10 @@
---- aclocal.in.orig	Sat Feb  7 04:32:57 2004
-+++ aclocal.in	Sun Mar 14 17:03:19 2004
+--- aclocal.in.orig	Sat Apr 10 10:15:32 2004
++++ aclocal.in	Wed May 26 14:33:27 2004
 @@ -31,3 +31,3 @@
  {
 -  my $perllibdir = $ENV{'perllibdir'} || '@datadir@/@PACKAGE@-@APIVERSION@';
 +  my $perllibdir = $ENV{'perllibdir'} || '@datadir@/@PACKAGE@@APIPVERSION@';
-   unshift @INC, (split ':', $perllibdir);
+   unshift @INC, (split '@PATH_SEPARATOR@', $perllibdir);
 @@ -47,4 +47,5 @@
  # Note also that the versioned directory is handled later.
 -$acdir = '@datadir@/aclocal';
@@ -12,6 +12,11 @@
  $default_acdir = $acdir;
 +$acdir_x11 = '%%X11BASE%%/share/aclocal';
  # contains a list of directories, one per line, to be added
+@@ -411,3 +412,3 @@
+ 
+-  my $traces = ($ENV{AUTOM4TE} || 'autom4te');
++  my $traces = ($ENV{AUTOM4TE} || 'autom4te259');
+   $traces .= " --language Autoconf-without-aclocal-m4 ";
 @@ -622,7 +623,3 @@
  
 -  # Search the versioned directory near the end, and then the
