@@ -5907,6 +5907,7 @@ p5-PPerl	ports/devel/p5-PPerl
 p5-PV		ports/devel/p5-PV
 p5-Palm		ports/palm/p5-Palm
 p5-Parallel-ForkManager	ports/devel/p5-Parallel-ForkManager
+p5-Parallel-MPI	ports/net/p5-Parallel-MPI
 p5-ParallelUA	ports/www/p5-ParallelUA
 p5-Params-Validate	ports/devel/p5-Params-Validate
 p5-Parse-PerlConfig	ports/devel/p5-Parse-PerlConfig
