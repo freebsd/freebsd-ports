@@ -4557,6 +4557,7 @@ ldapdns		ports/dns/ldapdns
 ldapsdk		ports/net/ldapsdk
 ldapsh		ports/net/ldapsh
 ldmud		ports/games/ldmud
+ldouble		ports/math/ldouble
 ldvd9to5	ports/multimedia/ldvd9to5
 le		ports/editors/le
 leafnode	ports/news/leafnode
