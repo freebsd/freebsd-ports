@@ -8,7 +8,7 @@ lib/mame/cheat.dat
 lib/mame/conv2zip
 lib/mame/mamelist.txt
 lib/mame/mov
-lib/mame/readme.txt
+lib/mame/readme.dos
 lib/mame/whatsnew.txt
 man/man6/xmame.6.gz
 @dirrm lib/mame
