@@ -7,6 +7,7 @@
 
 PORTNAME=	ytalk
 PORTVERSION=	3.1.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.iagora.com/~espel/ytalk/
 
