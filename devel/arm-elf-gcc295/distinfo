@@ -1,3 +1,4 @@
-MD5 (gcc-core-2.95.2.tar.bz2) = ec486554bc3491f1ebbb3b850c12650a
-MD5 (gcc-g++-2.95.2.tar.bz2) = eaabfb6b09d5f0ada4d7ce45db8b7e52
-MD5 (gcc-objc-2.95.2.tar.bz2) = 44e0ba43e4c9b68e2ecaa7a50c1cddab
+MD5 (gcc-core-2.95.3.tar.bz2) = 56dc4de966a54e4c511f65e525f9c0fe
+MD5 (gcc-g++-2.95.3.tar.bz2) = ce600888f39443a25ad325cc886e7d16
+MD5 (gcc-objc-2.95.3.tar.bz2) = be118925cd045d0d6d294c27ddb09647
+MD5 (gcc-g77-2.95.3.tar.bz2) = 8ef7cb21c145fc5d4adff7f3f356ad38
