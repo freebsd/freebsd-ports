@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Params-Validate
-PORTVERSION=	0.65
+PORTVERSION=	0.67
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Devel/DROLSKY
@@ -23,8 +23,8 @@ MAN3=		Attribute::Params::Validate.3 Params::ValidateXS.3 \
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} >= 500600 && ${PERL_LEVEL} < 500800
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Attribute/Handlers.pm:${PORTSDIR}/devel/p5-Attribute-Handlers
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS+=	${SITE_PERL}/Attribute/Handlers.pm:${PORTSDIR}/devel/p5-Attribute-Handlers
+RUN_DEPENDS+=	${SITE_PERL}/Attribute/Handlers.pm:${PORTSDIR}/devel/p5-Attribute-Handlers
 .endif
 
 .include <bsd.port.post.mk>
