@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnutls
-PORTVERSION=	0.6.0
-PORTREVISION=	1
+PORTVERSION=	0.8.1
 CATEGORIES=	security net
 MASTER_SITES=	${MASTER_SITE_GNUPG} \
 	http://www.mirrors.wiretapped.net/security/network-security/gnutls/ \
@@ -19,11 +18,8 @@ MAINTAINER=	sergei@kolobov.com
 COMMENT=	GNU Transport Layer Security library
 
 LIB_DEPENDS=	gcrypt.6:${PORTSDIR}/security/libgcrypt \
-		tasn1.0:${PORTSDIR}/security/libtasn1
-
-.if defined(WITH_OPENCDK)
-LIB_DEPENDS+=	opencdk.5:${PORTSDIR}/security/opencdk
-.endif
+		tasn1.1:${PORTSDIR}/security/libtasn1 \
+		opencdk.6:${PORTSDIR}/security/opencdk
 
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
@@ -34,18 +30,7 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 DOCS=		AUTHORS NEWS README THANKS
 
-pre-configure:
-	@${ECHO_MSG} ""
-.if defined (WITH_OPENCDK)
-	@${ECHO_MSG} "Enabled OpenCDK support"
-.else
-	@${ECHO_MSG} "OpenCDK support is disabled by default"
-	@${ECHO_MSG} "Use WITH_OPENCDK=yes to enable"
-.endif
-	@${ECHO_MSG} ""
-
 post-install:
-	${RM} -f ${PREFIX}/lib/libgnutls.la ${PREFIX}/lib/libgnutls-extra.la
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/examples/*.c ${EXAMPLESDIR}
 .if !defined(NOPORTDOCS)
