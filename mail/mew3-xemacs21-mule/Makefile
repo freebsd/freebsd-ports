@@ -6,10 +6,10 @@
 #
 
 MAINTAINER=	kiri@FreeBSD.org
-COMMENT=	Message interface to Emacs Window (version 2) for xemacs21-mule
+COMMENT=	Message interface to Emacs Window (version 3) for xemacs21-mule
 
 # Mew major version
-MEW_MAJOR_VER=	2
+MEW_MAJOR_VER=	3
 
 # This is a slave port.
 MASTERDIR=	${.CURDIR}/../mew${MEW_MAJOR_VER}
@@ -26,9 +26,11 @@ MAKE_ENV=	EMACS_LIBDIR=${EMACS_LIBDIR} XEMACS_PKGNAME=${XEMACS_PKGNAME} \
 		XEMACS_PKGVER=${XEMACS_PKGVER} \
 		EMACS_PACKAGESDIR=${EMACS_PACKAGESDIR}
 PLIST_SUB=	EMACS_PACKAGESDIR=${EMACS_PACKAGESDIR}
+INFO=
 
-# use pkg-* files in ${.CURDIR}
+# use pkg-* files in ${.CURDIR} except for pkg-message
 PKGDIR=		${.CURDIR}
+PKGMESSAGE=	${MASTERDIR}/pkg-message
 
 # how to install
 ALL_TARGET=	package info jinfo
@@ -36,7 +38,6 @@ INSTALL_TARGET=	install-mule-package
 
 # for xemacs package
 XEMACS_PKGNAME=	mew${MEW_MAJOR_VER}
-XEMACS_PKGVER=	2.00
-#MEW_DOCDIR=	${EMACS_PACKAGESDIR}/etc/${XEMACS_PKGNAME}
+XEMACS_PKGVER=	3.00
 
 .include "${MASTERDIR}/Makefile"
