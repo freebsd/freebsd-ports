@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	unix2dos
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	converters
-MASTER_SITES=	http://www.fisicc-ufm.edu/~obonilla/files/ \
-		ftp://ftp.guug.org/pub/
+MASTER_SITES=	ftp://ftp.guug.org/pub/
 
-MAINTAINER=	obonilla@fisicc-ufm.edu
+MAINTAINER=	obonilla@galileo.edu
 
 MAN1=		unix2dos.1 dos2unix.1
 NO_WRKSUBDIR=	yes
