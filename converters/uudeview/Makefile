@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	uudeview
-PORTVERSION=	0.5.13
+PORTVERSION=	0.5.18
 CATEGORIES=	converters
-MASTER_SITES=	http://www.informatik.uni-frankfurt.de/~fp/uudeview/Apps/frank/ \
-		ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin/
+MASTER_SITES=	http://www.fpx.de/fp/Software/UUDeview/download/
 
 MAINTAINER=	hoek@FreeBSD.org
 
-LIB_DEPENDS=	uu.1:${PORTSDIR}/converters/uulib
+LIB_DEPENDS=	uu.2:${PORTSDIR}/converters/uulib
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--enable-inews=${PREFIX}/news/lib/inews \
 		--disable-tcl
 
@@ -27,7 +27,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} "===>  Installing documents to ${DOCSDIR}"
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/HOWTO ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/HISTORY ${DOCSDIR}
 	@${INSTALL_DATA} ${FILESDIR}/porting.notes ${DOCSDIR}
 .else
 	@${ECHO_MSG} "===>  Not installing available documents"
