@@ -1,0 +1,78 @@
+.Dd February 21, 2002
+.Dt %%CONTROL_SCRIPT_MANPAGE_TITLE%% 1
+.Os FreeBSD
+.Sh NAME
+.Nm %%CONTROL_SCRIPT_NAME%%
+.Nd %%APP_TITLE%% server control interface
+.Sh SYNOPSIS
+.Nm
+.Op Fl java-options
+.Ar {start|restart|stop}
+.Sh DESCRIPTION
+The
+.Nm
+program provides an restricted interface to the %%APP_TITLE%%
+application server. The
+.Nm
+program is only accessible to users in the 'www' group, and will
+only invoke the %%JAVA_PORT_OS_DESCRIPTION%% %%JAVA_PORT_VERSION%% JVM.
+.Pp
+Any Java options listed are handed off directly to the JVM. Any
+classpath options will be ignored.
+.Pp
+The program expects exactly one of the following terminating commands:
+.Bl -tag -width indent
+.It Ar start
+Start %%APP_TITLE%%, if it is not already running.
+.It Ar restart
+Restart %%APP_TITLE%%. If it is already running, then it will be stopped and
+then started right after that. Otherwise it will just be started up.
+.It Ar stop
+Stop %%APP_TITLE%%, if it is actually running.
+.El
+.Sh ERRORS
+The following error conditions are detected. They will be checked in the
+specified order. In each case an error message is printed with the name of the
+control program prepended.
+.Pp
+If no argument is passed, then a simple help message is printed and the
+program exists with error code 0.
+.Pp
+If at least one argument is passed, but it is different from
+.Ar start ,
+.Ar restart
+or
+.Ar stop
+then the help message is printed as well, and the program exits with error
+code 1.
+.Pp
+The following errors conditions are defined:
+.Bl -tag -width indent
+.It Em Illegal program argument (error code 1)
+.It Em PID file not found (error code 2)
+.It Em PID file too large (error code 3)
+.It Em PID file contains illegal character (error code 4)
+.It Em Kill of process failed (error code 5)
+.It Em %%APP_TITLE%% is already running (error code 6)
+.It Em %%APP_TITLE%% is not running (error code 7)
+.It Em Unable to chdir to the %%APP_TITLE%% home directory (error code 8)
+.It Em Unable to open the stdout log file (error code 9)
+.It Em Unable to open the stderr log file (error code 10)
+.It Em Unable to start %%APP_TITLE%% (error code 11)
+.El
+.Sh FILES
+.Bl -tag -width -indent
+.It Pa %%PID_FILE%%
+The %%APP_TITLE%% PID file that is used to store the process ID of the
+currently running process in. It is emptied as soon as the server is stopped
+and filled with the process ID when it is started. It should never be writable
+for anyone but
+.Em www ,
+.It Pa %%STARTUP_SCRIPT%%
+A script that starts the
+.Nm
+program. It is used to start %%APP_TITLE%% at startup time.
+.El
+.Sh AUTHORS
+.An Ernst de Haan Aq znerd@FreeBSD.org
+.An Jonathan Chen Aq jonc@chen.org.nz

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	${APP_TITLE:L}
-PORTVERSION=	3.2.3
-PORTREVISION=	1
+PORTVERSION=	3.2.4
 CATEGORIES=	java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -47,8 +46,10 @@ STDERR_LOG=	${LOG_DIR}/stderr.log
 AUTO_START?=	NO
 STOP_TIMEOUT?=	5
 PID_FILE=	/var/run/${APP_SHORTNAME}.pid
-JAR_FILE=	bin/run.jar
-DAEMONCTL_DIR=	${PORTSDIR}/www/jakarta-tomcat4/files
+JAVA_OPTS=	
+JAVA_CP=	bin/run.jar:${JAVA_HOME}/lib/tools.jar
+JAVA_MAIN=	org.jboss.Main
+DAEMONCTL_DIR=	${FILESDIR}
 DAEMONCTL_FILES=daemonctl.c daemonctl.1 startup.sh
 MAN1=		${CONTROL_SCRIPT_NAME}.1
 
@@ -66,17 +67,20 @@ do-configure:
 		-e "s|%%CONTROL_SCRIPT_MANPAGE_TITLE%%|${CONTROL_SCRIPT_MANPAGE_TITLE}|g;" \
 		-e "s|%%CONTROL_SCRIPT_NAME%%|${CONTROL_SCRIPT_NAME}|g;" \
 		-e "s|%%GROUP%%|${GROUP}|g;" \
-		-e "s|%%JAR_ARGS%%||g;" \
-		-e "s|%%JAVA_ARGS%%||g;" \
+		-e "s|%%JAVA_CP%%|${JAVA_CP}|g;" \
 		-e "s|%%JAVA_CMD%%|bin/java|g;" \
 		-e "s|%%JAVA_HOME%%|${JAVA_HOME}|g;" \
+		-e "s|%%JAVA_MAIN%%|${JAVA_MAIN}|g;" \
+		-e "s|%%JAVA_OPTS%%|${JAVA_OPTS}|g;" \
+		-e "s|%%JAVA_PORT_VERSION%%|${JAVA_PORT_VERSION}|g;" \
+		-e "s|%%JAVA_PORT_OS_DESCRIPTION%%|${JAVA_PORT_OS_DESCRIPTION}|g;" \
 		-e "s|%%JAR_FILE%%|${JAR_FILE}|g;" \
 		-e "s|%%LOG_DIR%%|${LOG_DIR}|g;" \
 		-e "s|%%PID_FILE%%|${PID_FILE}|g;" \
 		-e "s|%%PORTNAME%%|${PORTNAME}|g;" \
 		-e "s|%%PORTVERSION%%|${PORTVERSION}|g;" \
 		-e "s|%%PREFIX%%|${PREFIX}|g;" \
-		-e "s|%%STARTUP_SCRIPT_NAME%%|${STARTUP_SCRIPT_NAME}|g;" \
+		-e "s|%%STARTUP_SCRIPT%%|${STARTUP_SCRIPT}|g;" \
 		-e "s|%%STDERR_LOG%%|${STDERR_LOG}|g;" \
 		-e "s|%%STDOUT_LOG%%|${STDOUT_LOG}|g;" \
 		-e "s|%%STOP_TIMEOUT%%|${STOP_TIMEOUT}|g;" \
@@ -89,10 +93,8 @@ post-configure:
 	@${ECHO_CMD} "   Startup script location:  ${STARTUP_SCRIPT}"
 	@${ECHO_CMD} "   Location of JDK:          ${JAVA_HOME}"
 	@${ECHO_CMD} "   Location of Java port:    ${JAVA_PORT}"
-	@${ECHO_CMD} "   Using Jikes:              ${WITH_JIKES}"
+	@${ECHO_CMD} "   Startup Java Options:     ${JAVA_OPTS}"
 	@${ECHO_CMD} "   Running as (user/group):  ${USER}/${GROUP}"
-	@${ECHO_CMD} "   HTTP port:                ${HTTP_PORT}"
-	@${ECHO_CMD} "   RMI port:                 ${RMI_PORT}"
 	@${ECHO_CMD} "   Logfile stdout:           ${STDOUT_LOG}"
 	@${ECHO_CMD} "   Logfile stderr:           ${STDERR_LOG}"
 	@${ECHO_CMD} "   Starting after install:   ${AUTO_START}"
