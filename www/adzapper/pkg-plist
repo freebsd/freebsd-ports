@@ -1,5 +1,6 @@
 etc/adzapper.conf.sample
 sbin/adzapper
+etc/rc.d/adzapper.sh
 share/adzapper/README
 share/adzapper/adzapper.py
 share/adzapper/doc/CHANGELOG
