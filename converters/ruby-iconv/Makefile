@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	iconv
-PORTVERSION=	0.4.2.p3
-PORTREVISION=	1
+PORTVERSION=	0.4.2
 CATEGORIES=	converters ruby
 MASTER_SITES=	http://member.nifty.ne.jp/nokada/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/-pre/}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
