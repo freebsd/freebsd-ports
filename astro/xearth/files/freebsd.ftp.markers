@@ -20,7 +20,8 @@
 #              "ftp.de.FreeBSD.org"            # Aachen, DE (rwth-aachen)
 53.5,   -0.2,  "ftp.uk.FreeBSD.org"           # UK (Imperial College)
 53.5,   0.0    "ftp3.uk.FreeBSD.org"          # UK (Demon Internet@Thus)
-56.1,	10.2, "ftp.dk.FreeBSD.org"	      # ??, Denmark
+56.6,	10.2,	"ftp.dk.FreeBSD.org"		# Aarhus, Denmark (Tele Danmark)
+55.7,	12.6,	"ftp2.dk.FreeBSD.org"		# Copenhagen, Denmark (DKUUG co Tele Danmark Internet)
 60.2,   25.0, "nic.funet.fi"                  # Helsinki?, Finland
 48.9,    2.4, "ftp.fr.FreeBSD.org"             # Paris, France
 50.1,   14.4, "ftp.cz.FreeBSD.org"             # Czech Republic
