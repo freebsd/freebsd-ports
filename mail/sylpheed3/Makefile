@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sylpheed
-PORTVERSION=	0.3.13
+PORTVERSION=	0.3.14
 CATEGORIES=	mail
 MASTER_SITES=	http://www.kcn.ne.jp/~hiro-y/sylpheed/
 
