@@ -72,6 +72,7 @@
     SUBDIR += gindent
     SUBDIR += glade
     SUBDIR += glib12
+    SUBDIR += global
     SUBDIR += gmake
     SUBDIR += gnustep
     SUBDIR += gperf
