@@ -7,11 +7,10 @@
 #
 
 PORTNAME=	scribus
-PORTVERSION=	0.9.9
+PORTVERSION=	0.9.11
 CATEGORIES=	print editors
 MASTER_SITES=	http://web2.altmuehlnet.de/fschmid/ \
 		http://scribus.planetmirror.com/
-DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A comprehensive desktop publishing program
@@ -27,6 +26,8 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib/scribus/libs \
 		%%PREFIX%%/lib/scribus/plugins
+
+QTCFGLIBS+=	-lm
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
