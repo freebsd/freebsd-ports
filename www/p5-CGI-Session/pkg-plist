@@ -1,0 +1,37 @@
+lib/perl5/site_perl/%%PERL_VER%%/CGI/Session/DB_File.pm
+lib/perl5/site_perl/%%PERL_VER%%/CGI/Session/MD5.pm
+lib/perl5/site_perl/%%PERL_VER%%/CGI/Session/MySQL.pm
+lib/perl5/site_perl/%%PERL_VER%%/CGI/Session/File.pm
+lib/perl5/site_perl/%%PERL_VER%%/CGI/Session.pm
+lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/id.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/remote_addr.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/remote_host.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/close.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/_date_shortcuts.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/expires.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/ctime.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/atime.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/param_hashref.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/save_param.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/load_param.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/clear.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/error.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/delete.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/version.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/dump.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/TIEHASH.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/FETCH.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/STORE.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/DELETE.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/EXISTS.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/FIRSTKEY.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/NEXTKEY.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/CLEAR.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/CGI/Session/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/CGI/Session
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/CGI 2>/dev/null || true
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session 2>/dev/null || true
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/CGI/Session
+@unexec %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/CGI 2>/dev/null || true
