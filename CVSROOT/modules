@@ -7343,6 +7343,7 @@ smssend		ports/misc/smssend
 smtpclient	ports/mail/smtpclient
 smtpd		ports/mail/smtpd
 smtpfeed	ports/mail/smtpfeed
+smtpmap		ports/security/smtpmap
 smtpproxy	ports/mail/smtpproxy
 smtprc		ports/mail/smtprc
 smtpscan	ports/security/smtpscan
