@@ -435,13 +435,13 @@ HAVE_GNOME+=	${component}
 # backward compatibility with old ports that have not converted to the new
 # GNOME infrastructure.
 .if defined(USE_GTK)
-USE_GNOME=	gtk12
+USE_GNOME+=	gtk12
 .endif
 .if defined(USE_ESOUND)
-USE_GNOME=	esound
+USE_GNOME+=	esound
 .endif
 .if defined(USE_IMLIB)
-USE_GNOME=	imlib
+USE_GNOME+=	imlib
 .endif
 # End of obsolete macros
 
@@ -449,7 +449,7 @@ USE_GNOME=	imlib
 # Hack USE_GNOME to the modular infrastructure for port maintainers that
 # didn't do so themselves.  New ports should NOT set USE_GNOME=yes.
 . if ${USE_GNOME}=="yes"
-USE_GNOME=gnomeprefix gnomehack gtkhtml libpanel
+USE_GNOME+=gnomeprefix gnomehack gtkhtml libpanel
 . endif
 
 # Set a reasonable (overrideable) configure target for GNOME apps.
