@@ -289,6 +289,7 @@
     SUBDIR += libnet
     SUBDIR += libnet-devel
     SUBDIR += libnids
+    SUBDIR += libnss-mysql
     SUBDIR += libosip
     SUBDIR += librsync
     SUBDIR += libsmi

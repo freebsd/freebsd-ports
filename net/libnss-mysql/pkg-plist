@@ -1,0 +1,5 @@
+etc/libnss-mysql.cfg-dist
+etc/libnss-mysql-root.cfg-dist
+lib/nss_mysql.so.1
+lib/nss_mysql.so
+lib/nss_mysql.la

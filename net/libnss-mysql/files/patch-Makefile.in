@@ -1,0 +1,22 @@
+--- Makefile.in.orig	Sat Jul 12 21:43:29 2003
++++ Makefile.in	Sat Jul 12 21:45:55 2003
+@@ -492,16 +492,13 @@
+ 
+ 
+ install-data-hook:
+-	@if test ! -f ${DESTDIR}${sysconfdir}/libnss-mysql.cfg; then \
+ 		${srcdir}/mkinstalldirs ${DESTDIR}${sysconfdir}; \
+ 		${INSTALL_DATA} ${srcdir}/sample/@OS@/libnss-mysql.cfg \
+-			${DESTDIR}${sysconfdir}/libnss-mysql.cfg; \
+-	fi
+-	@if test ! -f ${DESTDIR}${sysconfdir}/libnss-mysql-root.cfg; then \
++			${DESTDIR}${sysconfdir}/libnss-mysql.cfg-dist; \
+ 		${srcdir}/mkinstalldirs ${DESTDIR}${sysconfdir}; \
+ 		${INSTALL_DATA} -m 600 ${srcdir}/sample/@OS@/libnss-mysql-root.cfg \
+-			${DESTDIR}${sysconfdir}/libnss-mysql-root.cfg; \
+-	fi
++			${DESTDIR}${sysconfdir}/libnss-mysql-root.cfg-dist; \
++
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
