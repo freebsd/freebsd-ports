@@ -1,0 +1,37 @@
+--- Makefile.tmpl.orig	Sun Apr 11 01:53:56 2004
++++ Makefile.tmpl	Wed Apr 21 17:48:38 2004
+@@ -68,7 +68,7 @@
+ <Linux>	rm -f *.o *core spamilter dnsblchk dnsblupd mxlookup iflookup
+ <ALL>	cd libspf; ${MAKE} $@
+ <ALL>
+-<BSD>install: spamilter install-dnsblchk install-ipfwmtad install-mxlookup install-startup
++<BSD>install: spamilter install-dnsblchk install-ipfwmtad install-mxlookup
+ <SunOS>install: spamilter install-dnsblchk install-mxlookup
+ <Linux>install: spamilter install-dnsblchk install-mxlookup
+ <ALL>	install -c -m ${BINMODE} -g ${BINGRP} -o ${BINOWN} spamilter ${BINDIR}
+@@ -92,14 +92,14 @@
+ <ALL>	cd ..; tar --exclude CVS -cfvz spamilter.tgz spamilter/*
+ <ALL>
+ <BSD>spamilter: Makefile ${SRCS} spamilter.o ${OBJS} libspf.a ${INCLUDES}
+-<BSD>	${CC} ${CFLAGS} -o spamilter spamilter.o ${OBJS} libspf.a ${LIBDIRS} ${LIBS}
++<BSD>	${CC} ${CFLAGS} -o spamilter spamilter.o ${OBJS} libspf.a ${LDFLAGS} ${LIBDIRS} ${LIBS}
+ <SunOS>spamilter: Makefile ${SRCS} ${NRSRCS} ${SVSRCS} spamilter.o libspf.a ${OBJS} ${NROBJS} ${SVOBJS} ${INCLUDES}
+ <SunOS>	${CC} ${CFLAGS} -o spamilter spamilter.o ${OBJS} libspf.a ${NROBJS} ${SVOBJS} ${LIBDIRS} ${LIBS}
+ <Linux>spamilter: Makefile ${SRCS} ${NRSRCS} spamilter.o ${OBJS} libspf.a ${NROBJS} ${INCLUDES}
+ <Linux>	${CC} ${CFLAGS} -o spamilter spamilter.o ${OBJS} libspf.a ${NROBJS} ${LIBDIRS} ${LIBS}
+ <ALL>
+ <BSD>dnsblchk: Makefile ${SRCS} dnsblchk.o ${OBJS} ${INCLUDES} dnsblchk.c
+-<BSD>	${CC} ${CFLAGS} -o dnsblchk dnsblchk.o dnsbl.o dns.o smisc.o misc.o mx.o smtp.o inet.o ifi.o ${LIBDIRS} ${LIBS}
++<BSD>	${CC} ${CFLAGS} -o dnsblchk dnsblchk.o dnsbl.o dns.o smisc.o misc.o mx.o smtp.o inet.o ifi.o ${LDFLAGS} ${LIBDIRS} ${LIBS}
+ <SunOS>dnsblchk: Makefile ${SRCS} ${NRSRCS} ${SVSRCS} dnsblchk.o ${OBJS} ${NROBJS} ${SVOBJS} ${INCLUDES} dnsblchk.c
+ <SunOS>	${CC} ${CFLAGS} -o dnsblchk dnsblchk.o dnsbl.o dns.o smisc.o misc.o mx.o smtp.o inet.o ifi.o ${NROBJS} ${SVOBJS} ${LIBDIRS} ${LIBS}
+ <Linux>dnsblchk: Makefile ${SRCS} ${NRSRCS} dnsblchk.o ${OBJS} ${NROBJS} ${INCLUDES} dnsblchk.c
+@@ -123,7 +123,7 @@
+ <SunOS>	${CC} ${CFLAGS} -o mxlookup mxlookup.o mx.o ${NROBJS} -lresolv
+ <ALL>	
+ <ALL>iflookup: Makefile iflookup.c ifi.c iflookup.o ifi.o ifi.h
+-<ALL>	${CC} ${CFLAGS} -o iflookup iflookup.o ifi.o ${LIBDIRS} ${LIBS}
++<ALL>	${CC} ${CFLAGS} -o iflookup iflookup.o ifi.o ${LDFLAGS} ${LIBDIRS} ${LIBS}
+ <ALL>
+ <ALL>libspf.a:
+ <ALL>	cd libspf; ${MAKE}

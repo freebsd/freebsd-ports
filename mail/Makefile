@@ -384,6 +384,7 @@
     SUBDIR += spambnc
     SUBDIR += spamd
     SUBDIR += spamguard
+    SUBDIR += spamilter
     SUBDIR += spamoracle
     SUBDIR += spampd
     SUBDIR += spamprobe
