@@ -10,6 +10,7 @@
 #                 from submission by Ed Alley <wea@llnl.gov>
 #          1.5.07 port by David H. Munro <munro1@llnl.gov>
 #          1.5.12 port by David H. Munro <munro1@llnl.gov>, 01/Nov/02
+#          1.5.14 port by David H. Munro <munro1@llnl.gov>, 01/Oct/03
 # 1.5.07 notes:
 # (1) info pages installed in PREFIX/info for consistency with other apps
 #     -- really should be in PREFIX/share/info
@@ -26,7 +27,7 @@
 #          1.5.08 replaces 1.5.07 infant mortality
 
 PORTNAME=	yorick
-PORTVERSION=	1.5.12
+PORTVERSION=	1.5.14
 CATEGORIES=	lang math
 MASTER_SITES=	ftp://ftp-icf.llnl.gov/pub/Yorick/
 EXTRACT_SUFX=	.tgz
@@ -42,7 +43,7 @@ MAKE_ARGS=	Y_HOME="${PREFIX}/lib/${PORTNAME}" Y_SITE="${DATADIR}" \
 MAN1=		yorick.1 gist.1
 INFO=		yorick
 
-MYPORTDOCS=	FILE_FORMATS README drat.doc drat.tex graph.doc hex.doc \
+PORTDOCS=	FILE_FORMATS README drat.doc drat.tex graph.doc hex.doc \
 		library.doc math.doc refs.pdf refs.ps refs.tex std.doc \
 		yorick.pdf yorick.ps yorick.tex
 
@@ -67,7 +68,7 @@ post-install:
 	@${CP} ${DATADIR}/i0/paths.i ${PREFIX}/lib/${PORTNAME}/bin/paths.i
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${MYPORTDOCS}
+.for file in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
 .endfor
 	@${LN} -sf ../doc/${PORTNAME} ${DATADIR}/doc
