@@ -31,6 +31,7 @@
     SUBDIR += py-wxPython
     SUBDIR += qt-i18n
     SUBDIR += qt142
+    SUBDIR += qt145
     SUBDIR += qt20
     SUBDIR += rep-gtk
     SUBDIR += ruby-gtk

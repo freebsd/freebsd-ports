@@ -1,61 +1,22 @@
---- configs/freebsd-g++-shared.orig	Tue Nov 17 15:19:01 1998
-+++ configs/freebsd-g++-shared	Thu Feb 25 09:03:29 1999
-@@ -1,30 +1,30 @@
- # Compiling
--SYSCONF_CC		= g++
-+SYSCONF_CC		= $(CXX)
- 
- # Compiling with support libraries
--SYSCONF_CFLAGS_X11	= -I/usr/X11R6/include
-+SYSCONF_CFLAGS_X11	= -I$(X11BASE)/include
- SYSCONF_CFLAGS_QT	= -I$(QTDIR)/include
--SYSCONF_CFLAGS_OPENGL	= -I/usr/X11R6/include
-+SYSCONF_CFLAGS_OPENGL	= -I$(X11BASE)/include
- 
- # Compiline YACC output
- SYSCONF_CFLAGS_YACC     = -Wno-unused -Wno-parentheses
- 
- # Linking with support libraries
- # X11
--SYSCONF_LFLAGS_X11	= -L/usr/X11R6/lib
-+SYSCONF_LFLAGS_X11	= -L$(X11BASE)/lib
- SYSCONF_LIBS_X11	= -lX11 -lXext
- # Qt, Qt+OpenGL
- SYSCONF_LFLAGS_QT	= -L$(QTDIR)/lib
- SYSCONF_LIBS_QT		= -lqt
- SYSCONF_LIBS_QT_OPENGL	= -lqgl
- # OpenGL
--SYSCONF_LFLAGS_OPENGL	= -L/usr/X11R6/lib
-+SYSCONF_LFLAGS_OPENGL	= -L$(X11BASE)/lib
- SYSCONF_LIBS_OPENGL	= -lMesaGL -lMesaGLU -lXmu -lXext -lm
- # Yacc
- SYSCONF_LIBS_YACC	= 
+--- configs/freebsd-g++-shared	Fri Feb 26 12:01:59 1999
++++ configs/freebsd-g++-shared.new	Sun Jan  2 17:11:37 2000
+@@ -25,7 +25,7 @@
  
  # Linking applications
--SYSCONF_LINK		= g++
-+SYSCONF_LINK		= $(CXX)
- SYSCONF_LFLAGS		= 
+ SYSCONF_LINK		= g++
+-SYSCONF_LFLAGS		= 
++SYSCONF_LFLAGS		= %%CXXFLAGS%%
  SYSCONF_LIBS		= 
  
-@@ -39,16 +39,27 @@
- #   - Place target in $(DESTDIR) - which has a trailing /
+ # Link flags shared objects
+@@ -40,15 +40,13 @@
  #   - Usually needs to incorporate $(VER_MAJ) and $(VER_MIN)
  #
--SYSCONF_LINK_SHLIB	= g++
-+SYSCONF_LINK_SHLIB	= $(CXX)
-+ifeq ($(PORTOBJFORMAT),elf)
-+SYSCONF_LINK_TARGET_SHARED	= lib$(TARGET).so.$(VER_MAJ)
-+SYSCONF_LINK_LIB_SHARED	=  $(SYSCONF_LINK_SHLIB) -shared  \
-+				     $(LFLAGS) -o $(SYSCONF_LINK_TARGET_SHARED) \
-+				     -Wl,-soname,$(SYSCONF_LINK_TARGET_SHARED) \
-+				     $(OBJECTS) $(OBJMOC) $(LIBS); \
-+				 mv $(SYSCONF_LINK_TARGET_SHARED) $(DESTDIR); \
-+				 cd $(DESTDIR); \
-+				 rm -f lib$(TARGET).so; \
-+				 ln -s $(SYSCONF_LINK_TARGET_SHARED) lib$(TARGET).so
-+else
- SYSCONF_LINK_TARGET_SHARED	= lib$(TARGET).so.$(VER_MAJ).$(VER_MIN)
- SYSCONF_LINK_LIB_SHARED	=  $(SYSCONF_LINK_SHLIB) -shared  \
+ SYSCONF_LINK_SHLIB	= g++
+-SYSCONF_LINK_TARGET_SHARED	= lib$(TARGET).so.$(VER_MAJ).$(VER_MIN)
+-SYSCONF_LINK_LIB_SHARED	=  $(SYSCONF_LINK_SHLIB) -shared  \
++SYSCONF_LINK_TARGET_SHARED	= lib$(TARGET).so.3
++SYSCONF_LINK_LIB_SHARED	=  $(SYSCONF_LINK_SHLIB) -shared %%CXXFLAGS%% \
  				     $(LFLAGS) -o $(SYSCONF_LINK_TARGET_SHARED) \
  				     $(OBJECTS) $(OBJMOC) $(LIBS); \
  				 mv $(SYSCONF_LINK_TARGET_SHARED) $(DESTDIR); \
@@ -63,24 +24,22 @@
 -				 rm -f lib$(TARGET).so lib$(TARGET).so.$(VER_MAJ); \
 -				 ln -s $(SYSCONF_LINK_TARGET_SHARED) lib$(TARGET).so; \
 -				 ln -s $(SYSCONF_LINK_TARGET_SHARED) lib$(TARGET).so.$(VER_MAJ)
-+				 rm -f lib$(TARGET).so; \
 +				 ln -s $(SYSCONF_LINK_TARGET_SHARED) lib$(TARGET).so
-+endif
  
  # Linking static libraries
  #   - Build the $(TARGET) library, eg. lib$(TARGET).a
-@@ -59,11 +70,11 @@
+@@ -59,11 +57,11 @@
  SYSCONF_LINK_LIB_STATIC	= rm -f $(DESTDIR)$(SYSCONF_LINK_TARGET_STATIC) ; \
- 				 $(SYSCONF_AR) $(DESTDIR)$(SYSCONF_LINK_TARGET_STATIC) $(OBJECTS) $(OBJMOC)
+ 				 $(SYSCONF_AR) $(DESTDIR)$(SYSCONF_LINK_TARGET_STATIC) $(OBJECTS) $(OBJMOC) 
  # Compiling application source
--SYSCONF_CFLAGS		= -pipe -O2 -fno-strength-reduce
-+SYSCONF_CFLAGS		= $(CXXFLAGS) -fno-strength-reduce
+-SYSCONF_CXXFLAGS	= -pipe -O2 -fno-strength-reduce
++SYSCONF_CXXFLAGS	= %%CXXFLAGS%% -fno-strength-reduce
  # Compiling library source
--SYSCONF_CFLAGS_LIB	= -O2 -fno-strength-reduce -fPIC
-+SYSCONF_CFLAGS_LIB	= $(CXXFLAGS) -fno-strength-reduce -fPIC
+-SYSCONF_CXXFLAGS_LIB	= -O2 -fno-strength-reduce -fPIC
++SYSCONF_CXXFLAGS_LIB	= %%CXXFLAGS%% -fno-strength-reduce -fPIC
  # Compiling shared-object source
--SYSCONF_CFLAGS_SHOBJ	= -O2 -fno-strength-reduce -fPIC
-+SYSCONF_CFLAGS_SHOBJ	= $(CXXFLAGS) -fno-strength-reduce -fPIC
+-SYSCONF_CXXFLAGS_SHOBJ	= -O2 -fno-strength-reduce -fPIC
++SYSCONF_CXXFLAGS_SHOBJ	= %%CXXFLAGS%% -fno-strength-reduce -fPIC
  # Default link type (stati linking is still be used where required)
  SYSCONF_LINK_LIB	= $(SYSCONF_LINK_LIB_SHARED)
  SYSCONF_LINK_TARGET	= $(SYSCONF_LINK_TARGET_SHARED)

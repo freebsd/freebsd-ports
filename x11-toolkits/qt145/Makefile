@@ -1,30 +1,36 @@
 # New ports collection makefile for:   qt
-# Version required:	1.42
+# Version required:	1.45
 # Date created:		30 Jul 1996
 # Whom:			searle@longacre.demon.co.uk
 #
 # $FreeBSD$
 #
 
-DISTNAME=	qt-1.42
+DISTNAME=	qt-1.45
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	andrews@technologist.com
 
 LIB_DEPENDS=	MesaGL.14:${PORTSDIR}/graphics/Mesa3
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-MAKE_ENV+=	QTDIR=${WRKSRC} CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
+USE_NEWGCC=	yes
+MAKE_ENV+=	QTDIR=${WRKSRC} CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" CC="${CC}"
 
 .include <bsd.port.pre.mk>
 
+VER_MAJ=	3
+VER_MIN=	0
 .if ${PORTOBJFORMAT} == "elf"
-VERSION=	2
+VERSION=	${VER_MAJ}
 .else
-VERSION=	2.0
+VERSION=	${VER_MAJ}.${VER_MIN}
 .endif
+
+MAKE_ENV+=	VERSION="${VERSION}" VER_MIN=${VER_MIN} VER_MAJ=${VER_MAJ}
+PLIST_SUB+=	VERSION="${VERSION}"
 
 MAN1=	moc.1
 MAN3=   QAccel.3qt QApplication.3qt QArray.3qt QAsyncIO.3qt \
@@ -41,8 +47,7 @@ MAN3=   QAccel.3qt QApplication.3qt QArray.3qt QAsyncIO.3qt \
 	QFileIconProvider.3qt QFileInfo.3qt QFocusData.3qt \
 	QFocusEvent.3qt QFont.3qt QFontInfo.3qt QFontMetrics.3qt \
 	QFrame.3qt QGArray.3qt QGCache.3qt QGCacheIterator.3qt \
-	QGDict.3qt QGDictIterator.3qt QGIFFormat.3qt QGIFFormatType.3qt \
-	QGLContext.3qt QGLFormat.3qt QGLWidget.3qt QGList.3qt \
+	QGDict.3qt QGDictIterator.3qt QGLContext.3qt QGLFormat.3qt QGLWidget.3qt QGList.3qt \
 	QGListIterator.3qt QGManager.3qt QGridLayout.3qt QGroupBox.3qt \
 	QHBoxLayout.3qt QHeader.3qt QIODevice.3qt QIODeviceSource.3qt \
 	QIconSet.3qt QImage.3qt QImageConsumer.3qt QImageDecoder.3qt \
@@ -86,8 +91,7 @@ MAN3=   QAccel.3qt QApplication.3qt QArray.3qt QAsyncIO.3qt \
 	qfileiconprovider.3qt qfileinfo.3qt qfocusdata.3qt \
 	qfocusevent.3qt qfont.3qt qfontinfo.3qt qfontmetrics.3qt \
 	qframe.3qt qgarray.3qt qgcache.3qt qgcacheiterator.3qt \
-	qgdict.3qt qgdictiterator.3qt qgifformat.3qt qgifformattype.3qt \
-	qglcontext.3qt qglformat.3qt qglist.3qt qglistiterator.3qt \
+	qgdict.3qt qgdictiterator.3qt qglcontext.3qt qglformat.3qt qglist.3qt qglistiterator.3qt \
 	qglwidget.3qt qgmanager.3qt qgridlayout.3qt qgroupbox.3qt \
 	qhboxlayout.3qt qheader.3qt qiconset.3qt qimage.3qt \
 	qimageconsumer.3qt qimagedecoder.3qt qimagedrag.3qt \
@@ -120,19 +124,24 @@ MAN3=   QAccel.3qt QApplication.3qt QArray.3qt QAsyncIO.3qt \
 	qwindow.3qt qwmatrix.3qt qxtapplication.3qt qxtwidget.3qt
 
 post-configure:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} freebsd-g++-shared
+	@${PERL} -pi -e "s:g\+\+:${CXX}:g" ${WRKSRC}/configs/freebsd-g++-shared
+	@${PERL} -pi -e "s:/usr/X11R6:${PREFIX}:g" ${WRKSRC}/configs/freebsd-g++-shared
+	@${PERL} -pi -e "s:%%CXXFLAGS%%:${CXXFLAGS}:g" ${WRKSRC}/configs/freebsd-g++-shared
+	@${PERL} -pi -e "s:%%VERSION%%:${VERSION}:g" ${WRKSRC}/configs/freebsd-g++-shared
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} freebsd-g++-shared)
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/moc $(PREFIX)/bin
-	${INSTALL_DATA} ${WRKSRC}/lib/libqt.so.${VERSION} $(PREFIX)/lib
-	${LN} -sf $(PREFIX)/lib/libqt.so.$(VERSION) $(PREFIX)/lib/libqt.so
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m $(PREFIX)/lib
-	${MKDIR} $(PREFIX)/include/X11/qt
-	${INSTALL_DATA} ${WRKSRC}/include/* $(PREFIX)/include/X11/qt
-	${INSTALL_MAN} ${WRKSRC}/man/man1/* $(PREFIX)/man/man1
-	${INSTALL_MAN} ${WRKSRC}/man/man3/* $(PREFIX)/man/man3
-	${MKDIR} ${PREFIX}/share/doc/qt
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/qt
-	${INSTALL_DATA} ${WRKSRC}/README.QT ${PREFIX}/share/doc/qt
+	@${INSTALL_PROGRAM} ${WRKSRC}/bin/moc $(PREFIX)/bin
+	@${INSTALL_DATA} ${WRKSRC}/lib/libqt.so.${VERSION} $(PREFIX)/lib
+	@${LN} -sf $(PREFIX)/lib/libqt.so.$(VERSION) $(PREFIX)/lib/libqt.so
+	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m $(PREFIX)/lib
+	@${MKDIR} $(PREFIX)/include/X11/qt
+	@${INSTALL_DATA} ${WRKSRC}/include/* $(PREFIX)/include/X11/qt
+	@${INSTALL_MAN} ${WRKSRC}/man/man1/* $(PREFIX)/man/man1
+	@${INSTALL_MAN} ${WRKSRC}/man/man3/* $(PREFIX)/man/man3
+	@${MKDIR} ${PREFIX}/share/doc/qt/html
+	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/qt
+	@${INSTALL_DATA} ${WRKSRC}/README.QT ${PREFIX}/share/doc/qt
+	@${INSTALL_DATA} ${WRKSRC}/html/* ${PREFIX}/share/doc/qt/html
 
 .include <bsd.port.post.mk>
