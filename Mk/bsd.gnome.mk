@@ -464,6 +464,7 @@ HAVE_GNOME+=	${component}
 # backward compatibility with old ports that have not converted to the new
 # GNOME infrastructure.
 .if defined(USE_GTK)
+USE_XLIB=	yes
 USE_GNOME+=	gtk12
 .endif
 # End of obsolete macros
