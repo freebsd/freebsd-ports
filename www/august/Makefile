@@ -9,7 +9,7 @@
 
 PORTNAME=	august
 PORTVERSION=	0.62b
-CATEGORIES=     www
+CATEGORIES=	www editors
 MASTER_SITES=	http://www.lls.se/~johanb/august/
 DISTNAME=	${PORTNAME}${PORTVERSION}.src
 
