@@ -3,7 +3,7 @@
 # Date created:			03 May 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.7 1997/09/14 21:35:50 max Exp $
+# $Id: Makefile,v 1.8 1998/08/30 20:35:41 max Exp $
 #
 
 DISTNAME=	qkcc100
@@ -22,9 +22,10 @@ EXTRACT_ARGS=	-q
 NO_WRKSUBDIR=	yes
 ALL_TARGET=
 MAN1=		qkc.1
+MANLANG=	ja
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/qkc ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/qkc.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/qkc.1 ${PREFIX}/man/ja/man1
 
 .include <bsd.port.mk>
