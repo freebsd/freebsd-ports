@@ -24,6 +24,10 @@ WRKSRC=			${WRKDIR}/chess-${PORTVERSION}
 LISPDIR=		${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}
 INFO=			chess
 
+BUILD_DEPENDS+= \
+	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/tree-widget/tree-widget.el:${PORTSDIR}/editors/tree-widget
+RUN_DEPENDS+=	${BUILD_DEPENDS}
+
 OPTIONS=	ENGINE_GNUCHESS "Gnuchess engine" off
 OPTIONS+=	ENGINE_CRAFTY "Crafty chess engine" off
 OPTIONS+=	ENGINE_PHALANX "Phalanx chess engine" off
