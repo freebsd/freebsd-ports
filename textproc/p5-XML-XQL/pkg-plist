@@ -1,0 +1,14 @@
+bin/xql.pl
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/XQL/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/XML/XQL.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/XQL/DOM.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/XQL/Date.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/XQL/Debug.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/XQL/DirXQL.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/XQL/Parser.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/XQL/Plus.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/XQL/Query.pod
+lib/perl5/site_perl/%%PERL_VER%%/XML/XQL/Strict.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/XQL/Tutorial.pod
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/XQL
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/XML/XQL

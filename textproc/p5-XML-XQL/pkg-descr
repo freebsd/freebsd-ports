@@ -1,0 +1,15 @@
+This is a Perl extension to XML::Parser. It adds a new 'Style' to
+XML::Parser, called 'Dom', that allows XML::Parser to build an Object
+Oriented datastructure with a DOM Level 1 compliant interface.
+
+The XML::XQL module implements the XQL (XML Query Language) proposal
+submitted to the XSL Working Group in September 1998. The spec can
+be found at
+
+http://www.w3.org/TandS/QL/QL98/pp/xql.html
+
+Most of the contents related to the XQL syntax can also be found
+in the XML::XQL::Tutorial that comes with this distribution. Note
+that XQL is not the same as XML-QL!
+
+WWW: http://search.cpan.org/search?dist=XML-XQL
