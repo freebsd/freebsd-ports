@@ -1,13 +1,13 @@
 # New ports collection makefile for:	mailagent
-# Version required:		3.0pl58
+# Version required:		3.0pl61
 # Date created:			23 Sep 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.21 1997/11/23 17:02:37 max Exp $
+# $Id: Makefile,v 1.22 1998/01/08 18:52:09 fenner Exp $
 #
 
-DISTNAME=		mailagent-3.0@58
-PKGNAME=		mailagent-3.0.58
+DISTNAME=		mailagent-3.0@61
+PKGNAME=		mailagent-3.0.61
 CATEGORIES=		mail
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/RAM
@@ -43,7 +43,9 @@ pre-extract:
 	  false; fi
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/examples/mailagent
-	${INSTALL_DATA} ${WRKSRC}/agent/examples/* ${PREFIX}/share/examples/mailagent
+	@${MKDIR} ${PREFIX}/share/examples/mailagent/agent
+	@${MKDIR} ${PREFIX}/share/examples/mailagent/misc
+	${INSTALL_DATA} ${WRKSRC}/agent/examples/* ${PREFIX}/share/examples/mailagent/agent
+	${CP} -pR ${WRKSRC}/misc/* ${PREFIX}/share/examples/mailagent/misc
 
 .include <bsd.port.mk>
