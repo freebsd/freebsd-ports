@@ -103,13 +103,13 @@ post-install:
 	install-info ${PREFIX}/info/${info}.info ${PREFIX}/info/dir
 .endfor
 	cd ${PREFIX} ;\
-	    find lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV} \
+	    ${FIND} lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV} \
 		-type f -o -type l >${WRKDIR}/PLIST.gcc-lib
-	${ECHO} "r ${TMPPLIST}"			> ${WRKDIR}/ex.script
-	${ECHO} "/Insert PLIST.gcc-lib"		>> ${WRKDIR}/ex.script
-	${ECHO} "d"				>> ${WRKDIR}/ex.script
-	${ECHO} "r ${WRKDIR}/PLIST.gcc-lib"	>> ${WRKDIR}/ex.script
-	${ECHO} "x!"				>> ${WRKDIR}/ex.script
+	${ECHO_CMD} "r ${TMPPLIST}"		> ${WRKDIR}/ex.script
+	${ECHO_CMD} "/Insert PLIST.gcc-lib"	>> ${WRKDIR}/ex.script
+	${ECHO_CMD} "d"				>> ${WRKDIR}/ex.script
+	${ECHO_CMD} "r ${WRKDIR}/PLIST.gcc-lib"	>> ${WRKDIR}/ex.script
+	${ECHO_CMD} "x!"			>> ${WRKDIR}/ex.script
 	${CP} -p ${TMPPLIST} ${TMPPLIST}.pre-gcc-lib
 	cd ${WRKDIR} ; ex < ex.script
 

@@ -46,7 +46,7 @@ do-install:
 	${INSTALL_DATA} ${_DISTDIR}/tex.poo ${TEXMF}/htexpformats
 	### build hlatex.fmt
 	( cd ${WRKDIR}/unpacked && \
-	  ${ECHO} "R\n" | ${PREFIX}/bin/htexpini hlatex.ltx || \
+	  ${ECHO_CMD} "R\n" | ${PREFIX}/bin/htexpini hlatex.ltx || \
 	  ${TRUE} )
 	${INSTALL_DATA} ${WRKDIR}/unpacked/hlatex.fmt \
 			${TEXMF}/htexpformats/

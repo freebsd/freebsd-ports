@@ -35,6 +35,6 @@ do-install:
 	${MV} ${GSLIB_DIR}/CIDFnmap  ${GSLIB_DIR}/CIDFnmap.orig.ko
 	${GREP} -v -e "CIDFnmap.ko" ${GSLIB_DIR}/CIDFnmap.orig.ko > \
 		${GSLIB_DIR}/CIDFnmap
-	${ECHO} '(CIDFnmap.ko) .runlibfile' >> ${GSLIB_DIR}/CIDFnmap
+	${ECHO_CMD} '(CIDFnmap.ko) .runlibfile' >> ${GSLIB_DIR}/CIDFnmap
 
 .include <bsd.port.mk>

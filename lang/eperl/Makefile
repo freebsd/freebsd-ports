@@ -33,11 +33,11 @@ CONFIGURE_ARGS= --with-perl=${PERL5}
 MAN1=	eperl.1
 
 test:
-	@(cd ${WRKSRC}; make test)
+	@(cd ${WRKSRC}; ${MAKE} test)
 
 post-patch:
-	@find ${WRKSRC} -type f -name "*.[ch]" | xargs ${GREP} -l strnstr | \
-		xargs ${PERL} -pi -e 's|strnstr|ePerl_strnstr|g'
+	@${FIND} ${WRKSRC} -type f -name "*.[ch]" | xargs ${GREP} -l strnstr | \
+		${XARGS} ${PERL} -pi -e 's|strnstr|ePerl_strnstr|g'
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/eperl ${PREFIX}/bin/eperl
@@ -54,9 +54,9 @@ do-install:
 	fi
 	${INSTALL_PROGRAM} ${WRKSRC}/eperl ${PREFIX}/www/cgi-bin/nph-eperl
 	@if [ ".`${GREP} x-httpd-eperl ${PREFIX}/etc/apache/srm.conf`" = . ]; then \
-		${ECHO} "AddType  application/x-httpd-eperl  .phtml .eperl .epl" \
+		${ECHO_CMD} "AddType  application/x-httpd-eperl  .phtml .eperl .epl" \
 			>>${PREFIX}/etc/apache/srm.conf; \
-		${ECHO} "Action   application/x-httpd-eperl  /cgi-bin/nph-eperl" \
+		${ECHO_CMD} "Action   application/x-httpd-eperl  /cgi-bin/nph-eperl" \
 			>>${PREFIX}/etc/apache/srm.conf; \
 		${ECHO} "Added knowledge about ePerl to Apache's srm.conf"; \
 	else \

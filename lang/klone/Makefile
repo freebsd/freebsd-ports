@@ -22,7 +22,7 @@ do-configure:
 		-e 's:%%CFLAGS%%:${CFLAGS}:' \
 		${FILESDIR}/freebsd > ${WRKSRC}/Configs/freebsd
 	@${CP} -f ${WRKSRC}/Configs/freebsd ${WRKSRC}/Config.freebsd
-	@${ECHO} "freebsd" > ${WRKSRC}/.dir
+	@${ECHO_CMD} "freebsd" > ${WRKSRC}/.dir
 	@${RM} -f makefile
 
 do-install:

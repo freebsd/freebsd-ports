@@ -88,7 +88,7 @@ do-install:
 	    ; mkdir -p ${PREFIX}/lib					\
 	    ; cc -c ld-linux.c -o ${PREFIX}/lib/ld-linux.so.2		\
 # cpio creates directories with stupid permissions
-	find ${PREFIX}/usr/lib/compaq -type d | xargs ${CHMOD} 755
+	${FIND} ${PREFIX}/usr/lib/compaq -type d | xargs ${CHMOD} 755
 # tweaks to compile FreeBSD bits better
 	${MV} ${CCC_ROOT}/alpha-linux/bin/comp.config \
 		${CCC_ROOT}/alpha-linux/bin/comp.config.ORIG
@@ -99,56 +99,56 @@ do-install:
 	${MKDIR} ${CCC_ROOT}/alpha-freebsd/include
 	${MKDIR} ${CCC_ROOT}/alpha-freebsd/lib
 	cd ${FILESDIR}/include ; \
-		find . -print0 \
+		${FIND} . -print0 \
 		| cpio -dump0 -R root:wheel ${CCC_ROOT}/alpha-freebsd/include
 	cd ${CCC_ROOT}/alpha-freebsd/include ; ${LN} -sf machine/stdarg.h .
 
 post-install:
 # fixup PLIST for the FreeBSD bits
 	cd ${PREFIX} ;\
-	    find ${CCC_DIR}/alpha-freebsd -type f -o -type l \
+	    ${FIND} ${CCC_DIR}/alpha-freebsd -type f -o -type l \
 	    					>${WRKDIR}/PLIST.alpha-freebsd
 	cd ${PREFIX} ;\
-	    find ${CCC_DIR}/alpha-freebsd -type d \
-	    | sed -e 's/^/@dirrm /g' \
+	    ${FIND} ${CCC_DIR}/alpha-freebsd -type d \
+	    | ${SED} -e 's/^/@dirrm /g' \
 	    | sort -r				>>${WRKDIR}/PLIST.alpha-freebsd
-	${ECHO} "r ${TMPPLIST}"				>  ${WRKDIR}/ex.script
-	${ECHO} "/Insert PLIST.alpha-freebsd"		>> ${WRKDIR}/ex.script
-	${ECHO} "d"					>> ${WRKDIR}/ex.script
-	${ECHO} "r ${WRKDIR}/PLIST.alpha-freebsd"	>> ${WRKDIR}/ex.script
-	${ECHO} "x!"					>> ${WRKDIR}/ex.script
+	${ECHO_CMD} "r ${TMPPLIST}"			>  ${WRKDIR}/ex.script
+	${ECHO_CMD} "/Insert PLIST.alpha-freebsd"	>> ${WRKDIR}/ex.script
+	${ECHO_CMD} "d"					>> ${WRKDIR}/ex.script
+	${ECHO_CMD} "r ${WRKDIR}/PLIST.alpha-freebsd"	>> ${WRKDIR}/ex.script
+	${ECHO_CMD} "x!"				>> ${WRKDIR}/ex.script
 	${CP} -p ${TMPPLIST} ${TMPPLIST}.pre-alpha-freebsd
 	cd ${WRKDIR} ; ex < ex.script
 # fixup PLIST for the AlphaLinux bits
 	cd ${PREFIX} ;\
-	    find ${CCC_DIR}/alpha-linux -type f -o -type l \
+	    ${FIND} ${CCC_DIR}/alpha-linux -type f -o -type l \
 	    					>${WRKDIR}/PLIST.alphalinux
-	${ECHO} "lib/ld-linux.so.2"		>>${WRKDIR}/PLIST.alphalinux
-	${ECHO} "@dirrm lib"		>>${WRKDIR}/PLIST.alphalinux
+	${ECHO_CMD} "lib/ld-linux.so.2"		>>${WRKDIR}/PLIST.alphalinux
+	${ECHO_CMD} "@dirrm lib"		>>${WRKDIR}/PLIST.alphalinux
 	cd ${PREFIX} ;\
-	    find ${CCC_DIR}/alpha-linux -type d \
-	    | sed -e 's/^/@dirrm /g' \
+	    ${FIND} ${CCC_DIR}/alpha-linux -type d \
+	    | ${SED} -e 's/^/@dirrm /g' \
 	    | sort -r				>>${WRKDIR}/PLIST.alphalinux
-	${ECHO} "r ${TMPPLIST}"				>  ${WRKDIR}/ex.script2
-	${ECHO} "/Insert PLIST.alphalinux"		>> ${WRKDIR}/ex.script2
-	${ECHO} "d"					>> ${WRKDIR}/ex.script2
-	${ECHO} "r ${WRKDIR}/PLIST.alphalinux"		>> ${WRKDIR}/ex.script2
-	${ECHO} "x!"					>> ${WRKDIR}/ex.script2
+	${ECHO_CMD} "r ${TMPPLIST}"			>  ${WRKDIR}/ex.script2
+	${ECHO_CMD} "/Insert PLIST.alphalinux"		>> ${WRKDIR}/ex.script2
+	${ECHO_CMD} "d"					>> ${WRKDIR}/ex.script2
+	${ECHO_CMD} "r ${WRKDIR}/PLIST.alphalinux"	>> ${WRKDIR}/ex.script2
+	${ECHO_CMD} "x!"				>> ${WRKDIR}/ex.script2
 	${CP} -p ${TMPPLIST} ${TMPPLIST}.pre-alphalinux
 	cd ${WRKDIR} ; ex < ex.script2
 # fixup PLIST for the docs bits
 	cd ${PREFIX} ;\
-	    find usr/doc/${CCC_REV:C/-1$//} -type f -o -type l \
+	    ${FIND} usr/doc/${CCC_REV:C/-1$//} -type f -o -type l \
 	    					>${WRKDIR}/PLIST.docs
 	cd ${PREFIX} ;\
-	    find usr/doc/${CCC_REV:C/-1$//} -type d \
-	    | sed -e 's/^/@dirrm /g' \
+	    ${FIND} usr/doc/${CCC_REV:C/-1$//} -type d \
+	    | ${SED} -e 's/^/@dirrm /g' \
 	    | sort -r				>>${WRKDIR}/PLIST.docs
-	${ECHO} "r ${TMPPLIST}"				>  ${WRKDIR}/ex.script3
-	${ECHO} "/Insert PLIST.docs"			>> ${WRKDIR}/ex.script3
-	${ECHO} "d"					>> ${WRKDIR}/ex.script3
-	${ECHO} "r ${WRKDIR}/PLIST.docs"		>> ${WRKDIR}/ex.script3
-	${ECHO} "x!"					>> ${WRKDIR}/ex.script3
+	${ECHO_CMD} "r ${TMPPLIST}"			>  ${WRKDIR}/ex.script3
+	${ECHO_CMD} "/Insert PLIST.docs"		>> ${WRKDIR}/ex.script3
+	${ECHO_CMD} "d"					>> ${WRKDIR}/ex.script3
+	${ECHO_CMD} "r ${WRKDIR}/PLIST.docs"		>> ${WRKDIR}/ex.script3
+	${ECHO_CMD} "x!"				>> ${WRKDIR}/ex.script3
 	${CP} -p ${TMPPLIST} ${TMPPLIST}.pre-docs
 	cd ${WRKDIR} ; ex < ex.script3
 
