@@ -1741,7 +1741,6 @@ gawk		ports/lang/gawk
 gbackground	ports/x11/gbackground
 gbase		ports/converters/gbase
 gbe		ports/emulators/gbe
-gbfs		ports/chinese/gbfs
 gbiff		ports/mail/gbiff
 gbuffy		ports/mail/gbuffy
 gcal		ports/deskutils/gcal
@@ -8118,6 +8117,7 @@ zh-firebird	ports/chinese/firebird
 zh-fortunetw	ports/chinese/fortunetw
 zh-gb2jis	ports/chinese/gb2jis
 zh-gb2ps	ports/chinese/gb2ps
+zh-gbfs		ports/chinese/gbfs
 zh-gbscript	ports/chinese/gbscript
 zh-ghostscript6	ports/chinese/ghostscript6
 zh-gnumeric	ports/chinese/gnumeric
@@ -8139,6 +8139,7 @@ zh-linux-netscape47-navigator	ports/chinese/linux-netscape47-navigator
 zh-linux_locale	ports/chinese/linux_locale
 zh-lunar	ports/chinese/lunar
 zh-mkisofs	ports/chinese/mkisofs
+zh-mplayer-fonts	ports/chinese/mplayer-fonts
 zh-moefonts-cid	ports/chinese/moefonts-cid
 zh-moettf	ports/chinese/moettf
 zh-mozilla-tclp	ports/chinese/mozilla-tclp
