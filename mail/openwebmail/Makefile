@@ -22,10 +22,6 @@ RUN_DEPENDS=	${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500113
-BROKEN=         "Segfault during install"
-.endif
-
 USE_PERL5=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
