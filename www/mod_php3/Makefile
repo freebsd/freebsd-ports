@@ -43,6 +43,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} php-${VERSION_PHP}${EXTRACT_SUFX}
 
 MAINTAINER=	dirk@FreeBSD.org
 
+FORBIDDEN=	"awaiting update"
+
 Y2K=		http://www.php.net/y2k.php3
 
 PHP_DISTDIR=	distributions
