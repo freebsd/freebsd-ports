@@ -22,7 +22,5 @@ lib/xemacs/site-packages/lisp/lookup/ndtp.el
 lib/xemacs/site-packages/lisp/lookup/sdicf.el
 lib/xemacs/site-packages/lisp/lookup/stem-english.el
 lib/xemacs/site-packages/pkginfo/MANIFEST.lookup
-@unexec install-info  --delete %D/lib/xemacs/site-packages/info/lookup.info %D/lib/xemacs/site-packages/info/dir
 lib/xemacs/site-packages/info/lookup.info
-@exec install-info %D/lib/xemacs/info/lookup.info %D/lib/xemacs/site-packages/info/dir
 @dirrm lib/xemacs/site-packages/lisp/lookup
