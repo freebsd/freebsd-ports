@@ -7,6 +7,7 @@
 
 PORTNAME=	PodParser
 PORTVERSION=	1.28
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Pod
@@ -23,16 +24,22 @@ MAN3=		Pod::Checker.3 Pod::Find.3 Pod::InputObjects.3 \
 		Pod::ParseUtils.3 Pod::Parser.3 Pod::PlainText.3 Pod::Select.3 \
 		Pod::Usage.3
 
-CONFLICTS=	perl-5.6.* perl-5.8.*
-
-post-patch:
-	@${FIND} ${WRKSRC} -name \*.orig -exec ${RM} {} \;
-
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500601
-BUILD_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
-RUN_DEPENDS+=	${BUILD_DEPENDS}
+PLIST_SUB=	PL_FILES=""
+
+.if ${PERL_LEVEL} < 500600
+BUILD_DEPENDS=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
+RUN_DEPENDS=	${BUILD_DEPENDS}
+.elif ${PERL_LEVEL} < 500802
+.undef		MAN1
+PLIST_SUB=	PL_FILES="@comment "
 .endif
+
+post-patch:
+.if ${PERL_LEVEL} >= 500600 && ${PERL_LEVEL} < 500802
+	@${PERL} -pi -e 'm,_FILES, && s,.,,sg' ${WRKSRC}/Makefile.PL
+.endif
+	@${FIND} ${WRKSRC} -name \*.orig -exec ${RM} {} \;
 
 .include <bsd.port.post.mk>

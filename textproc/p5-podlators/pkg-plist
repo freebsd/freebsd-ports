@@ -1,5 +1,5 @@
-bin/pod2man
-bin/pod2text
+%%PL_FILES%%bin/pod2man
+%%PL_FILES%%bin/pod2text
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/.packlist
 %%SITE_PERL%%/Pod/Man.pm
 %%SITE_PERL%%/Pod/ParseLink.pm

@@ -1,6 +1,6 @@
-bin/pod2usage
-bin/podchecker
-bin/podselect
+%%PL_FILES%%bin/pod2usage
+%%PL_FILES%%bin/podchecker
+%%PL_FILES%%bin/podselect
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Parser/.packlist
 %%SITE_PERL%%/Pod/Checker.pm
 %%SITE_PERL%%/Pod/Find.pm

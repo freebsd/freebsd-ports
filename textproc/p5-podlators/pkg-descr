@@ -7,6 +7,3 @@ Set of modules:
 * Pod::Text::Overstrike - convert POD data to formatted overstrike text
 
 WWW: http://search.cpan.org/dist/podlators/
-
--- Sergey Skvortsov
-skv@FreeBSD.org
