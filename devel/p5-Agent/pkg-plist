@@ -1,0 +1,8 @@
+lib/perl5/site_perl/%%PERL_VER%%/Agent.pm
+lib/perl5/site_perl/%%PERL_VER%%/Agent/Message.pm
+lib/perl5/site_perl/%%PERL_VER%%/Agent/Transport.pm
+lib/perl5/site_perl/%%PERL_VER%%/Agent/Transport/TCP.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Agent/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Agent
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Agent/Transport
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Agent

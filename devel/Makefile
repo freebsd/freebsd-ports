@@ -209,6 +209,7 @@
     SUBDIR += noweb
     SUBDIR += oaf
     SUBDIR += omniORB
+    SUBDIR += p5-Agent
     SUBDIR += p5-Alias
     SUBDIR += p5-AppConfig
     SUBDIR += p5-B-Graph
