@@ -6,8 +6,12 @@ libexec/fetchaddr
 libexec/lbdb-munge
 libexec/lbdb_lib
 libexec/munge
-libexec/m_inmail
-libexec/m_passwd
-libexec/m_finger
+libexec/munge-keeporder
 libexec/m_fido
+libexec/m_finger
+libexec/m_inmail
+libexec/m_muttalias
+libexec/m_passwd
+libexec/m_yppasswd
+libexec/tac
 etc/lbdb.rc
