@@ -15,6 +15,7 @@ LETTER		"LETTER printing"		OFF	\
 LETTERDJ	"LETTERDJ printing"		ON	\
 A4		"A4 printing"			OFF	\
 PS		"Postscript and PDF files"	ON	\
+ENCRYPTED_PDF	"Encrypted PDF files"		ON	\
 ASCII		"ASCII/English Text/Scripts"	ON	\
 MAIL		"Mail/News articles"		ON	\
 DVI		"TeX DVI files"			OFF	\
@@ -63,6 +64,10 @@ while [ "$1" ]; do
 		;;
 	\"PS\")
 		echo RUN_DEPENDS+=gs:${PORTSDIR}/print/ghostscript55
+		;;
+	\"ENCRYPTED_PDF\")
+		echo RUN_DEPENDS+=gs:${PORTSDIR}/print/ghostscript55
+		echo PDFENCRYPT=YES
 		;;
 	\"ASCII\")
 		case $PAPERSIZE in
