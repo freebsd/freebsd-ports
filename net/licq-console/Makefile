@@ -17,8 +17,8 @@ COMMENT=	Ncurses-based console plugin for Licq
 #USE_AUTOMAKE_VER=	15
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" \
 		LIBS="${PTHREAD_LIBS}"
-LICQ_PORT?=	${PORTSDIR}/net/licq
+LICQ_PORT?=	net/licq
 
 .include <bsd.port.pre.mk>
-.include "${LICQ_PORT}/Makefile.inc"
+.include "${PORTSDIR}/${LICQ_PORT}/Makefile.inc"
 .include <bsd.port.post.mk>
