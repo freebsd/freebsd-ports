@@ -1,20 +1,18 @@
-transproxy - transparently proxy HTTP and other requests.
+transproxy - transparently proxy HTTP requests.
 
-This program is used with Darren Reed's IPFILTER package and used
-to intercept things like http requests and divert them to a www proxy
-server (eg: squid), without requiring user intervention or configuration.
+This program is used with ipfw's fwd rules or Darren Reed's IPFILTER
+package, and is used to intercept HTTP requests and divert them to a
+HTTP proxy server (eg: squid), without requiring user intervention or
+configuration.
 
 It accepts connections on the redirected port, connects to the real proxy
-server and transports data between the two sockets.
+server, and transports data between the two sockets. The original HTTP
+request is modified to allow the HTTP proxy server to fetch the correct
+document. In most cases this doesn't cause any DNS activity.
 
 Unlike some other transparent proxy solutions, this does not require the
-proxy run on the machine itself.
+HTTP proxy server to run on the machine itself.
 
-Use something like:
-/usr/local/sbin/tproxy -b 127.0.0.1 -s 8081 [squidip] [squidport]
-
-(bind to localhost for safety), and the following ipnat rules:
-
-rdr ppp0 0.0.0.0/0 port 80 -> 127.0.0.1 port 8081
-rdr ppp1 0.0.0.0/0 port 80 -> 127.0.0.1 port 8081
-[..etc..]
+See /usr/local/sbin/tproxyrun for an example of how to add filter rules
+and start tproxy. Also see /usr/local/sbin/tproxywatch for an example of
+how to ensure that tproxy keeps running regardless of faults.

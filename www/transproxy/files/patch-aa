@@ -1,25 +1,40 @@
---- Makefile.dist	Mon Feb 17 22:41:07 1997
-+++ Makefile	Fri Mar 27 21:57:17 1998
-@@ -11,15 +11,15 @@
- #	PAY_THE_PENALTY		Slow down if they don't use proxy directly.
- #
+--- Makefile.orig	Mon Jul 12 11:55:33 1999
++++ Makefile	Mon Jul 12 12:55:57 1999
+@@ -56,15 +56,16 @@
+ #OPTIONS += -DHAVE_GETOPT_H
  
--OPTIONS=-DDNS_LOOKUPS #-DUSELESS_DNS_LOOKUPS
-+CFLAGS+=-DIPFILTER -DDNS_LOOKUPS #-DUSELESS_DNS_LOOKUPS
+ # You may need to touch PREFIX, CC and CFLAGS.
+-PREFIX = /usr/local
+-INSTALL_PROGRAM = install -c -m 555 -o bin -g bin
+-INSTALL_MAN = install -c -m 444 -o bin -g bin
+-
+-RM      = rm -f
+-CC      = gcc
+-CFLAGS  = -O2 -Wall $(OPTIONS)
+-LDFLAGS = -s
+-LIBS    += #-lresolv
++#PREFIX = /usr/local
++#INSTALL_PROGRAM = install -c -m 555 -o bin -g bin
++#INSTALL_MAN = install -c -m 444 -o bin -g bin
++
++#RM      = rm -f
++#CC      = gcc
++#CFLAGS  = -O2 -Wall $(OPTIONS)
++CFLAGS  += $(OPTIONS)
++#LDFLAGS = -s
++#LIBS    += #-lresolv
  
--CC=gcc
--CFLAGS=-O2 -m486 -Wall $(OPTIONS)
--LDFLAGS=-s
--LIBS= #-lresolv
-+#CC=gcc
-+#CFLAGS=-O2 -m486 -Wall $(OPTIONS)
-+#LDFLAGS=-s
-+#LIBS= #-lresolv
+ # You shouldn't need to touch anything below this.
+ all:		tproxy
+@@ -85,7 +86,7 @@
+ 	$(RM) tproxy
  
--RM=rm -f
--INSTALL=install
-+#RM=rm -f
-+#INSTALL=install
- 
- TARGETNAME=in.tproxyd
- 
+ install:	tproxy
+-	$(INSTALL_PROGRAM) tproxy $(PREFIX)/sbin
+-	$(INSTALL_PROGRAM) tproxyrun $(PREFIX)/sbin
+-	$(INSTALL_PROGRAM) tproxywatch $(PREFIX)/sbin
+-	$(INSTALL_MAN) tproxy.8 $(PREFIX)/man/man8
++	$(BSD_INSTALL_PROGRAM) tproxy $(PREFIX)/sbin
++	$(BSD_INSTALL_SCRIPT) tproxyrun $(PREFIX)/sbin
++	$(BSD_INSTALL_SCRIPT) tproxywatch $(PREFIX)/sbin
++	$(BSD_INSTALL_MAN) tproxy.8 $(PREFIX)/man/man8

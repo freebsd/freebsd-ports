@@ -1,1 +1,1 @@
-Transparent www proxy driver for IPFILTER (NOT ipfw!!)
+Transparent HTTP proxy for ipfw's fwd rule (or IPFILTER's ipnat command)
