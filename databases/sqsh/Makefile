@@ -5,11 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	sqsh
-PORTVERSION=	2.1
-PORTREVISION=	7
+PORTVERSION=	2.1.3
 CATEGORIES=	databases
-MASTER_SITES=	http://www.sqsh.org/
-EXTRACT_SUFX=	-src.tar.gz
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=		sqsh
 
 MAINTAINER=	kiesel@schlund.de
 COMMENT=	Interactive tool for querying Sybase database servers
@@ -29,7 +28,7 @@ MAN1=	sqsh.1
 PKGNAMESUFFIX=	-nox11
 .else
 USE_MOTIF=	yes
-CONFIGURE_ARGS+=	--with-motif
+CONFIGURE_ARGS+=	--with-motif --with-x
 .endif
 
 post-patch:
