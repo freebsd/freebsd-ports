@@ -7,4 +7,5 @@ current track number and the elapsed time of the track. Pressing the
 left mouse button on the "track" label causes Xcd to display the total
 number of the tracks and the total duration of the disk. Pressing the
 left mouse button on the "time" label causes xcd to display the
-duration of the current track.
+duration of the current track. Pressing the middle mouse button on 
+the "track" button allows to choose a track number to play.
