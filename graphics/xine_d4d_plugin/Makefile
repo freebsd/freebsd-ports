@@ -6,28 +6,20 @@
 #
 
 PORTNAME=	xine_d4d_plugin
-PORTVERSION=	0.3.1
-PORTREVISION=	2
+PORTVERSION=	0.3.2
 CATEGORIES=	graphics
-MASTER_SITES=	http://worldzone.net/technology/captaincss/ \
-		http://debianlinux.net/
-DISTFILES=	d4d031.txt
+MASTER_SITES=	http://debianlinux.net/ \
+		http://hermes.homelinux.net/xine/
 
 MAINTAINER=	gibbon@cocoa.freemail.ne.jp
 
-LIB_DEPENDS=	xine.1:${PORTSDIR}/graphics/libxine
+LIB_DEPENDS=	xine.2:${PORTSDIR}/graphics/libxine
 
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=		yes
 CONFIGURE_ENV=	THREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		THREAD_LIBS="${PTHREAD_LIBS}"
 INSTALLS_SHLIB=	yes
-
-do-extract:
-	(${MKDIR} ${WRKDIR}; \
-	 cd ${WRKDIR}; \
-	 ${SH} ${DISTDIR}/${DISTFILES}; \
-	 ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} ${EXTRACT_AFTER_ARGS})
 
 post-patch:
 	@${PERL} -pi -e \
