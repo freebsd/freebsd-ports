@@ -19,7 +19,7 @@ EXTRACT_ONLY=	X${PORTVERSION:S/.//g}src-1.tgz
 
 PATCH_SITES=		${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	anholt/patches-4.2.0/
-PATCHFILES=		patch-nvchips
+PATCHFILES=		patch-nvchips.gz
 
 MAINTAINER=	anholt@freebsd.org
 
