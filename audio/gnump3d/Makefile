@@ -1,4 +1,3 @@
-# ex:ts=8
 # Ports collection makefile for:	gnump3d
 # Date created:			May 27, 2002
 # Whom:				ijliao
@@ -8,6 +7,7 @@
 
 PORTNAME=	gnump3d
 PORTVERSION=	2.5b
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
