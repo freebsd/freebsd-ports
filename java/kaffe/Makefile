@@ -11,11 +11,13 @@ CATEGORIES=	java
 MASTER_SITES=	ftp://ftp.kaffe.org/pub/kaffe/v1.0.x-production/
 
 MAINTAINER=	xaa+ports@timewasters.nl
-COMMENT=	Multi-platform Java virtual machine including JIT compiler and AWT package
+COMMENT=	Multi-platform Java virtual machine with JIT compiler and AWT package
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		ungif.5:${PORTSDIR}/graphics/libungif \
 		png.5:${PORTSDIR}/graphics/png
+
+CONFLICTS=	kaffe-1.[!0].* javavmwrapper-2.*
 
 NOT_FOR_ARCHS=	amd64
 
