@@ -497,6 +497,7 @@
     SUBDIR += pfflowd
     SUBDIR += pfinger
     SUBDIR += phex
+    SUBDIR += phpldapadmin
     SUBDIR += pim6dd
     SUBDIR += pim6sd
     SUBDIR += pipsecd
