@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.20 1997/07/30 11:47:51 tg Exp $
+# $Id: Makefile,v 1.21 1997/08/19 07:17:51 fenner Exp $
 #
     SUBDIR += db
     SUBDIR += gdbm
@@ -13,5 +13,6 @@
     SUBDIR += p5-Pg
     SUBDIR += postgresql
     SUBDIR += typhoon
+    SUBDIR += xmbase-grok
 
 .include <bsd.port.subdir.mk>
