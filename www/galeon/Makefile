@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	galeon
-PORTVERSION=	1.2.8
+PORTVERSION=	1.2.9
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${X11BASE}/include/mozilla${HEADERS_SUFX}/gtkembedmoz/gtkmozembed
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 RUN_DEPENDS=	${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZILLA}
 
-MOZ_CONFIGURE_ARGS=--with-mozilla-snapshot="1.2"
+MOZ_CONFIGURE_ARGS=--with-mozilla-snapshot="1.3"
 
 .if !defined(WITH_MOZILLA)
 MOZILLA=	mozilla
@@ -49,6 +49,7 @@ HEADERS_SUFX=
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack bonobo libglade gnomevfs
+USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--with-mozilla-includes="${X11BASE}/include/mozilla${HEADERS_SUFX}" \

@@ -715,9 +715,9 @@ $FreeBSD$
 +END_GNOME_DECLS
 +
 +#endif /* NAUTILUS_VIEW_H */
---- src/Makefile.in.orig	Sun Feb 16 17:01:18 2003
-+++ src/Makefile.in	Sun Feb 16 17:03:10 2003
-@@ -250,7 +250,8 @@
+--- src/Makefile.in.orig	Mon Mar 24 14:30:07 2003
++++ src/Makefile.in	Mon Mar 24 14:31:36 2003
+@@ -251,7 +251,8 @@
  NAUTILUS_VIEW_SRC = \
  	galeon-nautilus-view.c \
  	galeon-nautilus-view.h \
@@ -727,10 +727,10 @@ $FreeBSD$
  
  
  @ENABLE_NAUTILUS_VIEW_TRUE@NAUTILUS_VIEW_SRC_TO_COMPILE = $(NAUTILUS_VIEW_SRC)
-@@ -442,7 +443,8 @@
- 	toolbar_editor_callbacks.c window.c window.h window_callbacks.c \
+@@ -445,7 +446,8 @@
  	window_notifiers.c window_notifiers.h xbel.c xlink.c xlink.h \
- 	galeon-nautilus-view.c galeon-nautilus-view.h eel-gtk-macros.h
+ 	mozilla/gcc2abi.cpp galeon-nautilus-view.c \
+ 	galeon-nautilus-view.h eel-gtk-macros.h
 -am__objects_1 = galeon-nautilus-view.$(OBJEXT)
 +am__objects_1 = galeon-nautilus-view.$(OBJEXT) \
 +		nautstub.$(OBJEXT)
