@@ -3,25 +3,21 @@
 # Date created:         4 May 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.20 1998/10/19 20:00:35 ache Exp $
+# $Id: Makefile,v 1.21 1999/02/03 11:11:56 asami Exp $
 #
 
 DISTNAME=       pgp26ru
 PKGNAME=        ru-pgp-2.6.3ia
 CATEGORIES=     russian
 MASTER_SITES=   ftp://ftp.kiarchive.ru/pub/unix/crypto/pgp/
-EXTRACT_SUFX=   .zip
 
 MAINTAINER=	ache@FreeBSD.ORG
 
 RESTRICTED=	"Crypto"
 
-BUILD_DEPENDS += unzip:${PORTSDIR}/archivers/unzip
 RUN_DEPENDS += ${PREFIX}/lib/pgp/config.txt:${PORTSDIR}/security/pgp
 
-EXTRACT_CMD=    unzip
-EXTRACT_BEFORE_ARGS=	-q
-EXTRACT_AFTER_ARGS=	# empty
+USE_ZIP=	YES
 NO_WRKSUBDIR=   YES
 NO_BUILD=       YES
 
