@@ -270,8 +270,6 @@ include/bitmaps/xfm_zoo.xbm
 include/bitmaps/xman.xbm
 include/bitmaps/zip.xbm
 include/bitmaps/zoo.xbm
-man/man1/files.1.gz
-man/man3/regexp.3.gz
 share/OffiX/FilesMagic
 share/OffiX/Filesrc
 @dirrm share/OffiX

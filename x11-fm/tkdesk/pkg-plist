@@ -555,10 +555,6 @@ lib/TkDesk/tk_lib/xmfbox.tcl
 lib/TkDesk/tkpatches.tcl
 lib/TkDesk/update.tcl
 lib/TkDesk/util.tcl
-man/man1/cd-tkdesk.1.gz
-man/man1/ed-tkdesk.1.gz
-man/man1/od-tkdesk.1.gz
-man/man1/tkdesk.1.gz
 @dirrm lib/TkDesk/cb_tools/bitmaps
 @dirrm lib/TkDesk/cb_tools
 @dirrm lib/TkDesk/configs/.trash

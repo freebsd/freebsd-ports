@@ -25,7 +25,6 @@ lib/jafm/zic/dir.zic
 lib/jafm/zic/cswap.zic
 lib/jafm/zic/try.zic
 lib/jafm/system.jafmrules
-man/man8/jafm.8.gz
 @dirrm lib/jafm/zic
 @dirrm lib/jafm/appl
 @dirrm lib/jafm
