@@ -30,6 +30,7 @@
     SUBDIR += gnome--
     SUBDIR += gnome-look
     SUBDIR += gnome-themes
+    SUBDIR += gnustep-back
     SUBDIR += gnustep-gui
     SUBDIR += gnustep-xgps
     SUBDIR += gob
