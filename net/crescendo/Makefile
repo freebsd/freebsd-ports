@@ -15,8 +15,8 @@ RUN_DEPENDS=	tf:${PORTSDIR}/net/tinyfugue
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
+USE_GNOME=	yes
 USE_LIBTOOL=	yes
-USE_GNOMELIBS=	yes
 CONFIGURE_ARGS+=	--enable-compile-warnings=yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
@@ -24,6 +24,11 @@ CFLAGS+=	-g
 PLIST_SUB=	DOCDIR=${DOCDIR}
 
 DOCDIR=		share/doc/${PORTNAME}
+
+pre-patch:
+	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
+		 s|\$\(prefix\)/share/|\$\(datadir\)/|g'
 
 post-install:
 .if !defined(NOPORTDOCS)
