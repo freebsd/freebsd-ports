@@ -1,0 +1,11 @@
+--- src/magic.c.orig	Wed Aug  2 13:21:00 2000
++++ src/magic.c	Wed Aug  2 13:21:26 2000
+@@ -234,7 +234,7 @@
+ 	    default:
+ 		mtypes[count].flags |= M_EQ;
+ 	    }
+-	    mtypes[count].value.number = strtol(cptr, &cptr, 0) & vmask;
++	    mtypes[count].value.number = strtoul(cptr, &cptr, 0) & vmask;
+ 	}
+ 	while(isspace(*cptr))
+ 	    cptr++;
