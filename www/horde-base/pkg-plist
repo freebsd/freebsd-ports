@@ -540,6 +540,7 @@ etc/horde/httpd.conf.horde
 %%HORDEDIR%%/rpc.php
 %%HORDEDIR%%/scripts/.htaccess
 %%HORDEDIR%%/scripts/SCRIPTS
+%%HORDEDIR%%/scripts/create-symlinks.php
 %%HORDEDIR%%/scripts/crond
 %%HORDEDIR%%/scripts/get_login.php
 %%HORDEDIR%%/scripts/http_login_refer.php
@@ -807,7 +808,6 @@ etc/horde/httpd.conf.horde
 %%HORDEDIR%%/themes/graphics/alerts/warning.png
 %%HORDEDIR%%/themes/graphics/az.png
 %%HORDEDIR%%/themes/graphics/blank.gif
-%%HORDEDIR%%/themes/graphics/block/add.png
 %%HORDEDIR%%/themes/graphics/block/down.png
 %%HORDEDIR%%/themes/graphics/block/large_down.png
 %%HORDEDIR%%/themes/graphics/block/large_left.png
