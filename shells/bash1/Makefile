@@ -17,12 +17,8 @@ COMMENT=	The GNU Bourne Again Shell -- old version
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} <= 501000 && ${MACHINE_ARCH} != i386
+.if ${MACHINE_ARCH} != i386
 BROKEN=		"does not compile on ${MACHINE_ARCH}"
-.endif
-
-.if ${OSVERSION} >= 501000
-BROKEN=		"does not compile on FreeBSD ${OSVERSION}"
 .endif
 
 NO_LATEST_LINK=	yes
