@@ -7,7 +7,7 @@
 
 PORTNAME=	emma
 PORTVERSION=	0.8.2
-CATEGORIES=	misc gnome python
+CATEGORIES=	misc gnome python finance
 MASTER_SITES=	http://rainbow.mimuw.edu.pl/~la181249/emma/packages/
 
 MAINTAINER=	ports@FreeBSD.org

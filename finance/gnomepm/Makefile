@@ -8,7 +8,7 @@
 PORTNAME=	gnomepm
 PORTVERSION=	0.9.3
 PORTREVISION=	1
-CATEGORIES=	misc gnome
+CATEGORIES=	misc gnome finance
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/g/${PORTNAME:S/gnome/gnome-/}
 DISTNAME=	${PORTNAME:S/gnome/gnome-/}_${PORTVERSION}.orig
