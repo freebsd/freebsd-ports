@@ -17,16 +17,16 @@ if [ -z "${BATCH}" ]; then
 Choisissez les composants que vous souhaitez télécharger et installer. \n\
 Appuyez sur la barre d'espace pour basculer entre les états \n\
 sélectionné et désélectionné." -1 -1 10 \
-"browser"	"navigateur (6576 ko)"					ON \
-"deflfrfr"	"profil français par défaut (26 ko)"		ON \
-"flash"		"plugin Flash (576 ko)"					ON \
-"jre"		"plugin Java (13808 ko)"				ON \
-"langfrfr"	"locale français (592 ko)"		ON \
-"mail"		"lecteur de courrier et de nouvelles (1824 ko)"	ON \
-"regfr"		"configurations régionales pour la France (54 ko)"	ON \
-"regus"		"configurations régionales pour les Etats-Unis (56 ko)"	ON \
-"spellchecker"	"vérificateur d'orthographe (832 ko)"		ON \
-"talkback"	"analyseur de problèmes (envoi à Netscape) (832 ko)"	ON \
+"browser"	"navigateur"						ON \
+"deflfrfr"	"profil français par défaut"			ON \
+"flash"		"plugin Flash"						ON \
+"jre"		"plugin Java"						ON \
+"langfrfr"	"locale français"					ON \
+"mail"		"lecteur de courrier et de nouvelles"			ON \
+"regfr"		"configurations régionales pour la France"		ON \
+"regus"		"configurations régionales pour les Etats-Unis"	ON \
+"spellchecker"	"vérificateur d'orthographe"				ON \
+"talkback"	"analyseur de problèmes (envoi à Netscape)"	ON \
 2> /tmp/checklist.tmp.$$
 
 retval=$?
@@ -48,7 +48,7 @@ esac
 echo "$choice" \
 	| sed -e "s/\"//g" \
 	| sed -e "s/mail/mail browser/g" \
-	| sed -e "s/browser/browser psm xpcom/g" \
+	| sed -e "s/browser/AIM browser psm xpcom/g" \
 	| sort -u \
 	| sed -e "s/ /.xpi /g" \
 	| sed -e "s/$/.xpi/g" \

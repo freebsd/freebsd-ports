@@ -1,7 +1,14 @@
-* WARNING *****************************************************************
-*    Users should back up their bookmark files (bookmarks.html).  There are
-* reports that this file can be clobbered the first time Netscape 6 is run.
-*    Problems may also exist when one launches Mozilla and Netscape 6
-* simultaneously.  Both use $HOME/.mozilla for preferences, but some
-* configuration files may be incompatible.
-***************************************************************************
+* WARNING **********************************************************************
+* This port has a security bug.  If a user enables Javascript, hostile Web     *
+* sites can track the URLs which the user visits after leaving the site.  Such *
+* URLs could contain passwords or other sensitive information.  To avoid this  *
+* bug, users can add the line:                                                 *
+*                                                                              *
+*       user_pref("capability.policy.default.Window.onunload", "noAccess");    *
+*                                                                              *
+* to their prefs.js files under ~/.mozilla/ (thanks to Sven Neuhaus for        *
+* reporting the bug, and to MadMaverick9 at Mozillazine for the work-around).  *
+*                                                                              *
+* See <URL:http://members.ping.de/~sven/mozbug/refcook.html> for a             *
+* demonstration and other work-arounds.                                        *
+********************************************************************************
