@@ -6,21 +6,22 @@
 #
 
 PORTNAME=	Auth_HTTP
-PORTVERSION=	2.0
+PORTVERSION=	2.1.4
 CATEGORIES=	security www pear
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR HTTP authentication methods
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR \
-		${PEARDIR}/Auth/Auth.php:${PORTSDIR}/security/pear-Auth
+BUILD_DEPENDS=	${PEARDIR}/Auth/Auth.php:${PORTSDIR}/security/pear-Auth
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CATEGORY=	Auth
 FILES=		HTTP.php
+TESTS=		sample.sql test_basic_simple.php test_digest_simple.php	\
+		test_digest_get.php test_digest_post.php
 
 post-extract:
-	(cd ${WRKSRC} && ln -s Auth_HTTP.php HTTP.php)
+	(cd ${WRKSRC} && ${LN} -s Auth_HTTP.php HTTP.php)
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
