@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ftpcopy
-PORTVERSION=	0.6.4
+PORTVERSION=	0.6.5
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	http://www.ohse.de/uwe/ftpcopy/
 
@@ -18,6 +18,11 @@ USE_PERL5_BUILD=	yes
 WRKSRC=		${WRKDIR}/web/${DISTNAME}
 
 MAN1=		ftpcopy.1 ftpcp.1 ftpls.1
+
+pre-build:
+	${ECHO} "${CC}" >${WRKSRC}/src/conf-cc
+	${ECHO} "${CPPFLAGS} ${CFLAGS}" >${WRKSRC}/src/conf-cflags
+	${ECHO} "${LDFLAGS}" >${WRKSRC}/src/conf-ldflags
 
 do-install:
 	cd ${WRKSRC}/compile && \
