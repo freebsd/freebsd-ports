@@ -185,7 +185,6 @@ share/gnome/control-center-2.0/capplets/screensaver-properties.desktop
 share/gnome/pixmaps/xscreensaver.xpm
 share/locale/ca/LC_MESSAGES/xscreensaver.mo
 share/locale/da/LC_MESSAGES/xscreensaver.mo
-share/locale/de/LC_MESSAGES/xscreensaver.mo
 share/locale/es/LC_MESSAGES/xscreensaver.mo
 share/locale/et/LC_MESSAGES/xscreensaver.mo
 share/locale/fi/LC_MESSAGES/xscreensaver.mo
