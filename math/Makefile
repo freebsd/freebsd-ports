@@ -184,6 +184,7 @@
     SUBDIR += ruby-algebra
     SUBDIR += ruby-bitset
     SUBDIR += ruby-bitvector
+    SUBDIR += ruby-fftw3
     SUBDIR += ruby-gmp
     SUBDIR += ruby-gnuplot
     SUBDIR += ruby-gsl
