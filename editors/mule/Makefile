@@ -6,8 +6,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=	mule-2.3
-PKGNAME?=	mule-2.3
+PORTNAME=	mule
+PORTVERSION=	2.3
 CATEGORIES?=	editors
 MASTER_SITES=	ftp://etlport.etl.go.jp/pub/mule/ \
 		ftp://ftp.mei.co.jp/archive/free/gnu/emacs/Mule/ \
