@@ -3,13 +3,13 @@
 # Date created:         20 Oct 1996
 # Whom:                 Yukihiro Nakai <nakai@mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.3 1996/11/18 11:25:30 asami Exp $
+# $Id: Makefile,v 1.4 1997/01/03 09:37:12 obrien Exp $
 #
 
 DISTNAME=		xeyes+2.01
 PKGNAME=		xeyes+-2.01
 CATEGORIES=		games
-MASTER_SITES=		ftp://ftp.eos.hokudai.ac.jp/pub/X/contrib/misc/
+MASTER_SITES=		ftp://ftp.eos.hokudai.ac.jp/pub/X11/contrib/misc/
 
 MAINTAINER=		nakai@mlab.t.u-tokyo.ac.jp
 
