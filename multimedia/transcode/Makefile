@@ -6,9 +6,7 @@
 #
 
 PORTNAME=	transcode
-PORTVERSION=	0.6.2
-PORTREVISION=	1
-DISTNAME=	${PORTNAME}-${PORTVERSION}.20021010
+PORTVERSION=	0.6.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.theorie.physik.uni-goettingen.de/~ostreich/transcode/pre/
 
@@ -29,7 +27,7 @@ CONFIGURE_ENV=	CFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 USE_REINPLACE=	yes
 
 MAN1=	avifix.1 avimerge.1 avisplit.1 avisync.1 tccat.1 tcdemux.1 \
-	tcprobe.1 tcscan.1 transcode.1
+	tcprobe.1 tcscan.1 transcode.1 tcextract.1 tcdecode.1 tcmodinfo.1
 
 .include <bsd.port.pre.mk>
 
@@ -302,5 +300,6 @@ post-install:
 	@${LN} -sf ${LOCALBASE}/lib/libxvidcore.so \
 		${PREFIX}/lib/transcode/libxvidcore.so
 .endif
+	@${RM} ${PREFIX}/lib/transcode/*.la
 
 .include <bsd.port.post.mk>
