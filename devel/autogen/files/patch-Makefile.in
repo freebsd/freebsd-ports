@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sun Sep 29 09:24:39 2002
++++ Makefile.in	Tue Oct 15 02:32:20 2002
+@@ -110,7 +110,7 @@
+ am__quote = @am__quote@
+ install_sh = @install_sh@
+ 
+-NOSHELL_DIRS = compat snprintfv autoopts agen5
++NOSHELL_DIRS = compat autoopts agen5
+ SHELL_DIRS = $(NOSHELL_DIRS) columns getdefs
+ SUBDIRS = @TOP_DIRLIST@
+ config_dist = config/missing config/misc.def config/libopts.def

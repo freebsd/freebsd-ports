@@ -1,0 +1,20 @@
+--- autoopts/Makefile.in.orig	Mon Oct 14 04:22:43 2002
++++ autoopts/Makefile.in	Tue Oct 15 21:45:17 2002
+@@ -117,7 +117,7 @@
+ DISTCLEANFILES = option*.3 libopts.????
+ MAINTAINERCLEANFILES = Makefile.in
+ 
+-INCLUDES = @INCLIST@
++INCLUDES = @INCLIST@ @GUILE_CPPFLAGS@
+ GENMAN = optionFree.3 optionLoadLine.3 optionProcess.3 optionRestore.3 \
+ optionSaveFile.3 optionSaveState.3 optionVersion.3
+ 
+@@ -148,7 +148,7 @@
+ 
+ libopts_la_SOURCES = $(HDRS) $(CSRC)
+ 
+-libopts_la_LIBADD = ../snprintfv/snprintfv/libsnprintfvc.la
++libopts_la_LIBADD = ../snprintfv/snprintfv/libsnprintfvc.la @GUILE_LDFLAGS@
+ libopts_la_LDFLAGS = -version-info @AO_CURRENT@:@AO_REVISION@:@AO_AGE@
+ 
+ libguileopts_la_SOURCES = guileopt.c
