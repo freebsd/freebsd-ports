@@ -20,7 +20,7 @@ MLINKS=	ssh.1 slogin.1
 MAN8=	sftp-server.8 sshd.8
 
 CRYPTOLIBS=	-L${OPENSSLLIB} -lcrypto
-USE_OPENSSL=	YES
+USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS?=	--prefix=${PREFIX} --with-md5-passwords
 CLEAN=		etc/ssh_config etc/sshd_config etc/moduli \
