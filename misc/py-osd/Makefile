@@ -7,6 +7,7 @@
 
 PORTNAME=	osd
 PORTVERSION=	0.2.12
+PORTREVISION=	1
 CATEGORIES=	misc python
 MASTER_SITES=	http://repose.cx/pyosd/ \
 		http://damien.kangaweb.com/moving/stuff/pyosd/
@@ -23,10 +24,18 @@ USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 USE_REINPLACE=	yes
 
-post-patch:
-		${REINPLACE_CMD} -e 's;_X11BASE_;${X11BASE};g' ${WRKSRC}/setup.py
+PORTDOCS=	AUTHORS ChangeLog ChangeLog.old README README.daemon pyosd.html
+DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
-post-extract:
-		@${MV} ${WRKSRC}/pyosd ${WRKSRC}/osd
+post-patch:
+		@${REINPLACE_CMD} -e 's;_X11BASE_;${X11BASE};g' ${WRKSRC}/setup.py
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for i in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
