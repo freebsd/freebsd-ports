@@ -1,36 +1,38 @@
-# New ports collection makefile for:   enlightenment
-# Version required:    0.14
-# Date created:        10 June 1997
-# Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
+# New ports collection makefile for:	enlightenment
+# Version required:		0.15.0-19990120
+# Date created:			10 June 1997
+# Whom:				Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.31 1999/01/05 08:09:17 vanilla Exp $
+# $Id: Makefile,v 1.32 1999/01/14 17:08:21 vanilla Exp $
 #
 
-DISTNAME=	enlightenment-0.14
-CATEGORIES=	x11-wm
-MASTER_SITES=	ftp://ftp.enlightenment.org/pub/enlightenment/enlightenment/ \
-		ftp://www.rasterman.com/pub/enlightenment/enlightenment/ \
-		ftp://ftp.labs.redhat.com/pub/imlib/TAR/
+DISTNAME=	enlightenment-0.15.0-19990120
+PKGNAME=	enlightenment-0.15.0
+CATEGORIES=	x11-wm gnome
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	enlightenment
 
 MAINTAINER=	vanilla@FreeBSD.ORG
 
-BUILD_DEPENDS=  ${LOCALBASE}/lib/perl5/site_perl/5.005/i386-freebsd/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk
 LIB_DEPENDS=	esd.1:${PORTSDIR}/audio/esound \
 		Fnlib.0:${PORTSDIR}/graphics/fnlib \
 		gif.3:${PORTSDIR}/graphics/giflib \
 		Imlib.2:${PORTSDIR}/graphics/imlib \
-		tiff.4:${PORTSDIR}/graphics/tiff34	
+		tiff.4:${PORTSDIR}/graphics/tiff34 \
+		ttf.3:${PORTSDIR}/print/freetype
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-fsstd
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS=-L${LOCALBASE}/lib
 
-WRKSRC=		${WRKDIR}/e
+WRKSRC=		${WRKDIR}/enlightenment-0.15.0
 
-post-install:
-		strip ${PREFIX}/bin/enlightenment
-		strip ${PREFIX}/bin/dox
+pre-patch:
+.if defined(XLOCALE)
+	${PATCH} ${PATCH_ARGS} < ${FILESDIR}/patch-xlocale
+.endif
 
 .include <bsd.port.mk>
