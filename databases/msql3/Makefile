@@ -12,6 +12,8 @@ CATEGORIES=	databases
 MAINTAINER=	vasallia@ukr.net
 COMMENT=	Version 3 of the Mini SQL relational database system
 
+CONFLICTS=	msql-2*
+
 INSTALLS_SHLIB=	YES
 USE_PERL5=	YES
 USE_REINPLACE=	YES
