@@ -178,7 +178,7 @@ share/AbiSuite-2.0/icons/abiword_16.xpm
 share/AbiSuite-2.0/icons/abiword_48.png
 share/AbiSuite-2.0/icons/abiword_48.tif
 share/AbiSuite-2.0/icons/abiword_48.xpm
-share/AbiSuite-2.0/icons/abiword_logo.xpm
+%%GNOME:%%share/AbiSuite-2.0/icons/abiword_logo.xpm
 share/AbiSuite-2.0/templates/A4.awt
 share/AbiSuite-2.0/templates/Business-Report.awt
 share/AbiSuite-2.0/templates/Employee-Directory.awt
