@@ -1,0 +1,7 @@
+The Excalibur Configuration package contains extensions to the Avalon Framework
+supporting configuration management.
+
+This Excalibur component is now deprecated but is still required by some Java
+packages.
+
+WWW:	http://excalibur.apache.org/deprecation.html
