@@ -3,11 +3,11 @@
 # Date created:         Sat July 20, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.7 1997/03/24 18:42:48 obrien Exp $
+# $Id: Makefile,v 1.8 1997/04/01 22:10:37 fenner Exp $
 #
 
-DISTNAME=	lsof_4.02_W
-PKGNAME=	lsof-4.02
+DISTNAME=	lsof_4.03_W
+PKGNAME=	lsof-4.03
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/  \
 		ftp://ftp.cert.dfn.de/pub/tools/admin/lsof/  \
