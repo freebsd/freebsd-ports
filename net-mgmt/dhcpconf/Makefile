@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	dhcpconf
-PORTVERSION=	0.7.0
-PORTREVISION=	2
+PORTVERSION=	0.7.3
+PORTREVISION=	0
 CATEGORIES=	net sysutils
-MASTER_SITES=	http://members.xoom.com/vschade/dhcp-conf/
+MASTER_SITES=	http://dhcp-conf.sourceforge.net/
 DISTNAME=	dhcp-conf
 EXTRACT_SUFX=	.tgz
 
@@ -20,7 +20,7 @@ LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm \
 		newt.51:${PORTSDIR}/devel/newt
 
 ALL_TARGET=	${DISTNAME}
-WRKSRC=		${WRKDIR}/${DISTNAME}_${PORTVERSION}
+WRKSRC=		${WRKDIR}/${DISTNAME}
 MAKE_ENV+=	PCFLAGS="${CFLAGS}"
 
 do-install:
