@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	HVSC-Update
-PORTVERSION=	2.8.2
-PORTREVISION=	1
+PORTVERSION=	2.8.3
 CATEGORIES=	audio emulators
 MASTER_SITES=	http://sidplay2.sourceforge.net/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
@@ -27,10 +26,6 @@ GNU_CONFIGURE=	yes
 DOCS=	HVSC_Update.txt SID_file_format.txt
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502000
-BROKEN=		"Does not compile"
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/Update ${PREFIX}/bin/HVSC-Update
