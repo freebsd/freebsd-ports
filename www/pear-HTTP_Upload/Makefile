@@ -7,6 +7,7 @@
 
 PORTNAME=	HTTP_Upload
 PORTVERSION=	0.8.1
+PORTREVISION=	1
 CATEGORIES=	www devel pear
 
 MAINTAINER=	ports@FreeBSD.org
@@ -15,17 +16,11 @@ COMMENT=	Easy and secure managment of files submitted via HTML Forms
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+CATEGORY=	HTTP
+FILES=		Upload.php
+EXAMPLES=	upload_example.php
+_EXAMPLESDIR=	docs
+
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
-
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/docs/upload_example.php ${DOCSDIR}
-	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
-.endif
-
-do-install:
-	@${CP} ${WRKSRC}/Upload.php ${PEARDIR}
-	@${CHOWN} ${SHAREOWN}:${SHAREGRP} ${PEARDIR}/Upload.php
-
 .include <bsd.port.post.mk>
