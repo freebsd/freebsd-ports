@@ -13,6 +13,7 @@ MASTER_SITES= 	${MASTER_SITE_SOURCEFORGE} \
 		ftp://sunsite.cnlab-switch.ch/mirror/ucd-snmp/ \
 		ftp://ftp.win.or.jp/pub/network/snmp/ucd-snmp/
 MASTER_SITE_SUBDIR= net-snmp
+DISTNAME=	ucd-snmp-${PORTVERSION}
 
 MAINTAINER=	billf@FreeBSD.org
 
