@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	amsn
-PORTVERSION=	0.71
-PORTREVISION=	1
+PORTVERSION=	0.80
 CATEGORIES=	net
 MASTER_SITES=	http://download.sourceforge.net/${PORTNAME}/
 
@@ -24,7 +23,7 @@ LIBDIR=		${PREFIX}/lib/msn
 DOCSDIR=	${PREFIX}/share/doc/amsn
 CORE=		FAQ HELP README amsn jwakeup langlist *tcl *htm*
 SUBDIR=		i lang s
-DOC_FILES=	LEEME TODO changelog
+DOC_FILES=	README TODO
 
 do-install:
 	@${MKDIR} ${LIBDIR}
