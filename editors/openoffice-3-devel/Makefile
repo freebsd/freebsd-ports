@@ -360,12 +360,12 @@ extract-mozilla:
 .if ! exists(${WRKDIR}/mozilla/Makefile)
 	@${ECHO_MSG} "===>  Extracting mozilla sub project"
 	@${MKDIR} ${WRKDIR}/mozilla
-	@${CP} -r ${PORTSDIR}/www/mozilla/files ${WRKDIR}/mozilla
-	@${CP} ${PORTSDIR}/www/mozilla/Makefile ${WRKDIR}/mozilla
-	@${CP} ${PORTSDIR}/www/mozilla/distinfo ${WRKDIR}/mozilla
-	@${CP} ${PORTSDIR}/www/mozilla/pkg-comment ${WRKDIR}/mozilla
-	@${CP} ${PORTSDIR}/www/mozilla/pkg-descr ${WRKDIR}/mozilla
-	@${CP} ${PORTSDIR}/www/mozilla/pkg-plist ${WRKDIR}/mozilla
+	@${CP} -r ${PORTSDIR}/www/mozilla-vendor/files ${WRKDIR}/mozilla
+	@${CP} ${PORTSDIR}/www/mozilla-vendor/Makefile ${WRKDIR}/mozilla
+	@${CP} ${PORTSDIR}/www/mozilla-vendor/distinfo ${WRKDIR}/mozilla
+	@${CP} ${PORTSDIR}/www/mozilla-vendor/pkg-comment ${WRKDIR}/mozilla
+	@${CP} ${PORTSDIR}/www/mozilla-vendor/pkg-descr ${WRKDIR}/mozilla
+	@${CP} ${PORTSDIR}/www/mozilla/pkg-message ${WRKDIR}/mozilla
 .endif
 	@cd ${WRKDIR}/mozilla && ${MAKE} extract WRKDIRPREFIX=""
 
