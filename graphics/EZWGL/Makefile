@@ -16,14 +16,15 @@ MAINTAINER=	ports@FreeBSD.org
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		png.3:${PORTSDIR}/graphics/png
 
-EXTRACT_AFTER_ARGS=	| ${TAR} --exclude 'CVS' -xf -
-
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
 .include "files/manpages"
+
+post-extract:
+	find ${WRKSRC} -name CVS | xargs ${RM} -rf
 
 post-install:
 .for file in ${MAN3}
