@@ -1,0 +1,7 @@
+%%SITE_PERL%%/DateTime/Calendar/Christian.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Calendar/Christian/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Calendar/Christian
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Calendar 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/DateTime/Calendar 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/DateTime 2>/dev/null || true
