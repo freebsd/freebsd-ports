@@ -1,80 +1,43 @@
---- ../sal/osl/unx/system.c.orig	Sun Mar 17 12:34:13 2002
-+++ ../sal/osl/unx/system.c	Wed Apr  3 01:03:36 2002
-@@ -195,6 +195,73 @@
- }
- #endif
+--- ../sal/osl/unx/system.c.orig	Tue Aug 20 15:49:46 2002
++++ ../sal/osl/unx/system.c	Thu Apr  3 21:56:32 2003
+@@ -74,7 +74,7 @@
+ static pthread_mutex_t getrtl_mutex = PTHREAD_MUTEX_INITIALIZER;
  
-+int getpwuid_r(uid_t uid, struct passwd *pwd, char *buffer,
-+           size_t buflen, struct passwd **result)
-+{
-+  struct passwd* res;
-+
-+  pthread_mutex_lock(&getrtl_mutex);
-+
-+  if ( res = getpwuid(uid) )
-+  {
-+    size_t pw_name, pw_passwd, pw_class, pw_gecos, pw_dir, pw_shell;
-+
-+    pw_name = strlen(res->pw_name)+1;
-+    pw_passwd = strlen(res->pw_passwd)+1;
-+    pw_class = strlen(res->pw_class)+1;
-+    pw_gecos = strlen(res->pw_gecos)+1;
-+    pw_dir = strlen(res->pw_dir)+1;
-+    pw_shell = strlen(res->pw_shell)+1;
-+
-+    if (pw_name+pw_passwd+pw_class+pw_gecos
-+                                 +pw_dir+pw_shell < buflen)
-+    {
-+      memcpy(pwd, res, sizeof(struct passwd));
-+
-+      strncpy(buffer, res->pw_name, pw_name);
-+      pwd->pw_name = buffer;
-+      buffer += pw_name;
-+
-+      strncpy(buffer, res->pw_passwd, pw_passwd);
-+      pwd->pw_passwd = buffer;
-+      buffer += pw_passwd;
-+
-+      strncpy(buffer, res->pw_class, pw_class);
-+      pwd->pw_class = buffer;
-+      buffer += pw_class;
-+
-+      strncpy(buffer, res->pw_gecos, pw_gecos);
-+      pwd->pw_gecos = buffer;
-+      buffer += pw_gecos;
-+
-+      strncpy(buffer, res->pw_dir, pw_dir);
-+      pwd->pw_dir = buffer;
-+      buffer += pw_dir;
-+
-+      strncpy(buffer, res->pw_shell, pw_shell);
-+      pwd->pw_shell = buffer;
-+      buffer += pw_shell;
-+
-+      *result = pwd ;
-+      res = 0 ;
-+
-+    } else {
-+
-+      res = ENOMEM ;
-+
-+    }      
-+  
-+  } else {
-+
-+    res = errno ;
-+ 
-+  } 
-+
-+  pthread_mutex_unlock(&getrtl_mutex);
-+
-+  return res;
-+}
-+
+ /* struct passwd differs on some platforms */
+-#if defined NETBSD || defined MACOSX || defined FREEBSD
++#if defined NETBSD || defined FREEBSD || defined MACOSX
+ #include <pwd.h>
+ #include <sys/types.h>
+ 
+@@ -134,7 +134,6 @@
+   	return res;
+ }
+ 
+-#if defined(NETBSD) || defined(MACOSX)
+ int getpwuid_r(uid_t uid, struct passwd *pwd, char *buffer,
+            size_t buflen, struct passwd **result)
+ {
+@@ -201,8 +200,8 @@
+ 
+   return res;
+ }
+-#endif
+ 
++#if defined NETBSD || defined MACOSX
  struct tm *localtime_r(const time_t *timep, struct tm *buffer)
  {
  	struct tm* res;
-@@ -518,3 +585,50 @@
+@@ -236,7 +235,8 @@
+ 
+ 	return res;
+ }
+-#endif  /* defined NETBSD || defined MACOSX */
++#endif  /* defined NETBSD || MACOSX */
++#endif  /* defined NETBSD || FREEBSD || MACOSX */
+ 
+ #ifdef SCO
+ #include <pwd.h>
+@@ -712,3 +712,50 @@
  }
  #endif
  
