@@ -17,7 +17,9 @@ MASTERDIR=	${.CURDIR}/../../editors/apel-emacs
 EMACS_NAME=	xemacs
 EMACS_PORT=	xemacs-mule
 EMACS_VER=	21.1.6
-EMACS_PACKAGESDIR=	lib/${EMACS_NAME}/${EMACS_NAME}-packages
+EMACS_PACKAGESDIR=	lib/${EMACS_NAME}/site-packages
+# packages-subdirectories which this port requires
+EMACS_PACKAGES_SUBDIRS=	lisp pkginfo
 
 # how to install
 ALL_TARGET=	package

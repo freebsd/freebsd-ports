@@ -52,6 +52,10 @@ RUN_DEPENDS=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT}
 BUILD_DEPENDS+=	${PREFIX}/${EMACS_LIBDIR_WITH_VER}/site-lisp/custom.el:${PORTSDIR}/editors/custom-${EMACS_PORT}
 RUN_DEPENDS+=	${PREFIX}/${EMACS_LIBDIR_WITH_VER}/site-lisp/custom.el:${PORTSDIR}/editors/custom-${EMACS_PORT}
 .endif
+.if defined(EMACS_PACKAGESDIR)
+BUILD_DEPENDS+=	${PREFIX}/${EMACS_PACKAGESDIR}/../xemacs-packages/lisp/xemacs-base/advice.el:${PORTSDIR}/editors/xemacs-sumo-packages
+RUN_DEPENDS+=	${PREFIX}/${EMACS_PACKAGESDIR}/../xemacs-packages/lisp/xemacs-base/advice.el:${PORTSDIR}/editors/xemacs-sumo-packages
+.endif
 
 SCRIPTS_ENV+=	EMACS_LIBDIR=${EMACS_LIBDIR} EMACS_VER=${EMACS_VER} \
 		EMACS_LIBDIR_WITH_VER=${EMACS_LIBDIR_WITH_VER} \
@@ -74,6 +78,11 @@ pre-configure:
 	@${CP} ${FILESDIR}/${APEL_SETUPEL}.in ${WRKDIR}
 .endif
 
+pre-install:
+.if defined(EMACS_PACKAGESDIR) && defined(EMACS_PACKAGES_SUBDIRS)
+	@${MAKE} mkdir-site-packages
+.endif
+
 post-install:
 .if defined(REQUIRE_SETUPEL) && (${REQUIRE_SETUPEL} == "YES")
 	@${MAKE} setupel-install
@@ -86,7 +95,15 @@ post-install:
 .endif
 
 
-# install functions
+###############################################################################
+#
+# local functions
+#
+mkdir-site-packages:
+	@(for i in ${EMACS_PACKAGES_SUBDIRS} ; do \
+		${MKDIR} ${PREFIX}/${EMACS_PACKAGESDIR}/$${i} ; \
+	done)
+
 doc-install:
 	@${MKDIR} ${PREFIX}/${APELDOCDIR}
 	@(cd ${WRKSRC} ; \
