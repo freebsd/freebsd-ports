@@ -1,16 +1,21 @@
-This is the FreeBSD Ports Collection.  Please refer to the FreeBSD
-Handbook on what to do with them.
+This is the FreeBSD Ports Collection.  For an easy to use
+WEB-based interface to it, please see:
 
-The FreeBSD Handbook is available from
+        http://www.freebsd.org/ports
 
-  file://localhost/usr/share/doc/handbook/handbook.html
+For general information on the ports collection, please see the
+FreeBSD Handbook which is available from:
 
-(that's the version on your machine) and
+        file://localhost/usr/share/doc/handbook/handbook.html
 
-  http://www.freebsd.org/handbook/handbook.html
+(if you installed the doc distribution on your machine)
 
-for the latest version from FreeBSD-current.
+Or:
+
+        http://www.freebsd.org/handbook/handbook.html
+
+for the latest official version from FreeBSD-current.
 
 The section "The Ports Collection" will tell you how to use the
-ports/packages and "Porting Applications" describes how you can
-contribute to the ports collection.
+ports and packages and the "Porting Applications" section
+describes how one can contribute to the ports collection.
