@@ -24,11 +24,15 @@
 %%SITE_PERL%%/auto/Data/Serializer/YAML/serialize.al
 %%SITE_PERL%%/auto/Data/Serializer/_compress.al
 %%SITE_PERL%%/auto/Data/Serializer/_create_token.al
+%%SITE_PERL%%/auto/Data/Serializer/_deb64.al
+%%SITE_PERL%%/auto/Data/Serializer/_decode.al
 %%SITE_PERL%%/auto/Data/Serializer/_decompress.al
 %%SITE_PERL%%/auto/Data/Serializer/_decrypt.al
 %%SITE_PERL%%/auto/Data/Serializer/_dedigest.al
 %%SITE_PERL%%/auto/Data/Serializer/_dehex.al
 %%SITE_PERL%%/auto/Data/Serializer/_deserialize.al
+%%SITE_PERL%%/auto/Data/Serializer/_enb64.al
+%%SITE_PERL%%/auto/Data/Serializer/_encode.al
 %%SITE_PERL%%/auto/Data/Serializer/_encrypt.al
 %%SITE_PERL%%/auto/Data/Serializer/_endigest.al
 %%SITE_PERL%%/auto/Data/Serializer/_enhex.al
