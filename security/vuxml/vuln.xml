@@ -32,6 +32,46 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ef410571-a541-11d9-a788-0001020eed82">
+    <topic>wu-ftpd -- remote globbing DoS vulnerability</topic>
+    <affects>
+      <package>
+	<name>wu-ftpd</name>
+	<range><lt>2.6.2_6</lt></range>
+      </package>
+      <package>
+	<name>wu-ftpd+ipv6</name>
+	<range><lt>2.6.2_7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>An iDEFENSE Security Advisory reports:</p>
+	<blockquote cite="http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110935886414939">
+	  <p>Remote exploitation of an input validation vulnerability
+	    in version 2.6.2 of WU-FPTD could allow for a denial of
+	    service of the system by resource exhaustion.</p>
+	  <p>The vulnerability specifically exists in the
+	    <code>wu_fnmatch()</code> function in wu_fnmatch.c. When a
+	    pattern containing a '*' character is supplied as input,
+	    the function calls itself recursively on a smaller
+	    substring. By supplying a string which contains a large
+	    number of '*' characters, the system will take a long time
+	    to return the results, during which time it will be using
+	    a large amount of CPU time.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-0256</cvename>
+      <mlist msgid="FB24803D1DF2A34FA59FC157B77C970503E249AF@idserv04.idef.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110935886414939</mlist>
+    </references>
+    <dates>
+      <discovery>2005-02-05</discovery>
+      <entry>2005-04-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5ebfe901-a3cb-11d9-b248-000854d03344">
     <topic>hashcash -- format string vulnerability</topic>
     <affects>
