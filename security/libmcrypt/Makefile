@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libmcrypt
-PORTVERSION=	2.4.10
+PORTVERSION=	2.4.15
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.hellug.gr/pub/unix/mcrypt/libmcrypt/ \
 		ftp://ftp.ntua.gr/pub/security/mcrypt/libmcrypt/
@@ -24,5 +24,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 INSTALLS_SHLIB=	yes
 
 MAN3=		mcrypt.3
+
+pre-build:
+	$(LN) -sf ${LOCALBASE}/bin/libtool ${WRKSRC}/libtool
 
 .include <bsd.port.mk>
