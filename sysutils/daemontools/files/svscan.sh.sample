@@ -1,6 +1,12 @@
 #!/bin/sh
 
-# Surely advice you to enable some of the below
+if ! PREFIX=$(expr $0 : "\(/.*\)/etc/rc\.d/$(basename $0)\$"); then
+    echo "$0: Cannot determine the PREFIX" >&2
+    exit 1
+fi
+
+# It would really, really be a Good Thing(tm)
+# for you to enable some of the below
 # control variables and the apropriate ulimit.
 # These are only examples.
 # Furthermore, you should think about additional
@@ -31,5 +37,26 @@
 #ulimit -s ${MINSEGMENT}
 #ulimit -u ${MAXCHILD}
 
-exec /bin/csh -cf '/usr/local/bin/svscan /var/service |& '\
-'/usr/local/bin/readproctitle service errors: ................................................................................................................................................................................................................................................................................................................................................................................................................ &'
+KILLALL=/usr/bin/killall
+SVC=${PREFIX}/bin/svc
+SVPROC=svscan
+SVSCAN=$PREFIX/bin/svscan
+READPROCTITLE=$PREFIX/bin/readproctitle
+SVDIR=/var/service
+
+case "$1" in
+  start)
+	echo -n " svscan"
+	exec env PATH=$PREFIX/sbin:$PREFIX/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH /bin/csh -cf "$SVSCAN $SVDIR |& $READPROCTITLE service errors: ................................................................................................................................................................................................................................................................................................................................................................................................................ &" > /dev/null
+	;;
+
+  stop)
+	echo -n " svscan: "
+	$KILLALL $SVPROC
+	$SVC -dx $SVDIR/* $SVDIR/*/log
+	;;
+
+  *)
+  	echo "Usage: $0 start | stop"
+	;;
+esac
