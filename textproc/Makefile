@@ -162,6 +162,7 @@
     SUBDIR += ruby-erb
     SUBDIR += ruby-gdome
     SUBDIR += ruby-html-parser
+    SUBDIR += ruby-mwdom
     SUBDIR += ruby-nqxml
     SUBDIR += ruby-qt2xml
     SUBDIR += ruby-rd-mode.el

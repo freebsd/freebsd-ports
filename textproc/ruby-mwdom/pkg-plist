@@ -1,0 +1,18 @@
+%%RUBY_SITELIBDIR%%/mwdom/builder/xmlscan.rb
+%%RUBY_SITELIBDIR%%/mwdom/core.rb
+%%RUBY_SITELIBDIR%%/mwdom/traversal.rb
+%%RUBY_SITELIBDIR%%/mwdom/visitor/domvisitor.rb
+%%RUBY_SITELIBDIR%%/mwdom/visitor/xhtmlwriter.rb
+%%RUBY_SITELIBDIR%%/mwdom/visitor/xmlwriter.rb
+@dirrm %%RUBY_SITELIBDIR%%/mwdom/builder
+@dirrm %%RUBY_SITELIBDIR%%/mwdom/visitor
+@dirrm %%RUBY_SITELIBDIR%%/mwdom
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/mwdom/ns1.xml
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/mwdom/ns2.xml
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/mwdom/parsetest.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/mwdom/rdf1.xml
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/mwdom/rdf2.xml
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/mwdom/testdoc.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/mwdom/visitortest.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/mwdom/xhtmltest.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/mwdom
