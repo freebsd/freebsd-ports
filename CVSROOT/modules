@@ -5839,6 +5839,7 @@ pib		ports/sysutils/pib
 pic2fig		ports/print/pic2fig
 picasm		ports/devel/picasm
 pico		ports/editors/pico
+picp		ports/devel/picp
 picprog		ports/devel/picprog
 picturebook	ports/graphics/picturebook
 piddle		ports/graphics/piddle
