@@ -1,0 +1,30 @@
+bin/xfdesktop
+etc/xfce4/menu.xml
+lib/xfce4/mcs-plugins/backdrop_settings.a
+lib/xfce4/mcs-plugins/backdrop_settings.la
+lib/xfce4/mcs-plugins/backdrop_settings.so
+lib/xfce4/mcs-plugins/workspaces_settings.a
+lib/xfce4/mcs-plugins/workspaces_settings.la
+lib/xfce4/mcs-plugins/workspaces_settings.so
+share/xfce4/backdrops/flower.png
+share/xfce4/backdrops/xfce4gradientcurve.png
+share/xfce4/backdrops/xfce4logo.png
+share/xfce4/backdrops/xfce-in-the-moon.png
+share/xfce4/backdrops/xfce-stripes.png
+share/xfce4/backdrops/xfce-stellar-tile.png
+share/xfce4/backdrops/xfce-turbulence.png
+share/xfce4/doc/C/images/root_menu.png
+share/xfce4/doc/C/images/root_menu2.png
+share/xfce4/doc/C/images/select_bg_color.png
+share/xfce4/doc/C/images/xfdesktop-background.png
+share/xfce4/doc/C/images/xfdesktop-workspace.png
+share/xfce4/doc/C/images/xfdesktop-list.png
+share/xfce4/doc/C/xfdesktop.html
+@unexec rmdir %D/etc/xfce4 2>/dev/null || true
+@unexec rmdir %D/lib/xfce4/mcs-plugins 2>/dev/null || true
+@unexec rmdir %D/lib/xfce4 2>/dev/null || true
+@dirrm share/xfce4/backdrops
+@unexec rmdir %D/share/xfce4/doc/C/images 2>/dev/null || true
+@unexec rmdir %D/share/xfce4/doc/C 2>/dev/null || true
+@unexec rmdir %D/share/xfce4/doc 2>/dev/null || true
+@unexec rmdir %D/share/xfce4 2>/dev/null || true
