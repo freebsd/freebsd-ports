@@ -8,7 +8,7 @@
 PORTNAME=	fly
 PORTVERSION=	1.6.5
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://www.unimelb.edu.au/pub/www/tools/unix/fly/
+MASTER_SITES=	# none
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple drawing language to generate GIFs on the fly
