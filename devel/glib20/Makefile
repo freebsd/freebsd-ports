@@ -3,7 +3,7 @@
 # Date Created:			28 July 1998
 # Whom:				Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.12 1999/01/05 00:56:06 vanilla Exp $
+# $Id: Makefile,v 1.13 1999/01/20 18:30:57 vanilla Exp $
 #
 
 DISTNAME=	glib-1.1.13
@@ -26,7 +26,12 @@ CONFIGURE_ARGS+=	--with-threads=none
 CONFIGURE_ARGS+=	--with-threads=uthread
 .endif
 
+MAN1=		glib-config.1
+
 post-install:
+	@if [ ! -f ${PREFIX}/info/dir ]; then \
+	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
+	 fi
 	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.post.mk>
