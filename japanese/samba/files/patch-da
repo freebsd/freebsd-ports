@@ -1,0 +1,11 @@
+--- lib/util.c~	Fri Oct 20 01:20:08 2000
++++ lib/util.c	Thu Jan 11 13:47:55 2001
+@@ -1605,7 +1605,7 @@
+    extend a file with ftruncate. Provide alternate implementation
+    for this */
+
+-#ifdef HAVE_FTRUNCATE_EXTEND
++#ifdef 0 /*HAVE_FTRUNCATE_EXTEND*/
+   return sys_ftruncate(fd, len);
+ #else
+   SMB_STRUCT_STAT st;

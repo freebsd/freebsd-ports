@@ -24,7 +24,7 @@ BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 Y2K=		http://us1.samba.org/samba/docs/sambay2k.html
 
 SAMBA_VERSION=		2.0.7
-SAMBA_JA_VERSION=	2.1
+SAMBA_JA_VERSION=	2.2
 
 # directories
 VARDIR=		/var
@@ -44,7 +44,8 @@ CONFIGURE_ARGS=	--with-i18n-swat --with-included-gettext \
 		--localstatedir=${VARDIR} --with-swatdir=${PREFIX}/share/swat \
 		--with-sambabook=${PREFIX}/share/swat/using_samba \
 		--with-lockdir=${VARDIR}/spool/lock \
-		--with-privatedir=${SAMBA_PRIVATE}
+		--with-privatedir=${SAMBA_PRIVATE} \
+		--prefix=${PREFIX}
 
 .if defined(KRB5_HOME) && exists(${KRB5_HOME})
 CONFIGURE_ARGS+=--with-krb5=${KRB5_HOME}
