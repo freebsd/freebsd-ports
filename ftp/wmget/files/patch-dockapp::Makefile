@@ -1,0 +1,17 @@
+--- dockapp/Makefile.orig	Sun Feb  9 04:08:07 2003
++++ dockapp/Makefile	Mon Jan  5 18:11:28 2004
+@@ -19,11 +19,11 @@
+ 
+ # Makefile for the dockapp library packaged in the ``wmget'' application.
+ 
+-
+ DAOBJS=		da_run.o da_x.o da_mouse.o
+ 
+-CFLAGS=		-ansi -Wall -W -Werror -g
+-LDFLAGS=	-L/usr/X11R6/lib -lXpm -lXext -lX11
++CFLAGS?=		-ansi -Wall -W -Werror -g
++CFLAGS+=	-I${X11BASE}/include
++LDFLAGS=	-L${X11BASE}/lib -lXpm -lXext -lX11
+ 
+ dockapp.a:	$(DAOBJS)
+ 		ar rcsv dockapp.a $(DAOBJS)

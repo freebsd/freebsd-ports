@@ -1,0 +1,10 @@
+wmget is a dock app for the GNU Window Maker window manager which makes it more
+convenient to perform long downloads in the background.
+
+This is useful if you tend to have dozens of windows open at a time and tend to
+do a lot of routine downloading. Just copy the link from your browser, middle-
+click on the wmget dockapp, and the download will start. No download windows or
+terminals required, and you can monitor the progress and stop the transfer if
+desired without opening or raising any windows or even changing desktops.
+
+WWW: http://amtrickey.net/wmget/
