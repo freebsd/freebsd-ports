@@ -1,3 +1,4 @@
+etc/rc.d/roxen.sh.sample
 pike/7.0.312/bin/hilfe
 pike/7.0.312/bin/pike
 pike/7.0.312/lib/modules/_Charset.pmod
