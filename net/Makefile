@@ -248,6 +248,7 @@
     SUBDIR += ldapdiff
     SUBDIR += ldapsdk
     SUBDIR += lft
+    SUBDIR += libbt
     SUBDIR += libconnect
     SUBDIR += libdnet
     SUBDIR += liberator
