@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xloadface
-PORTVERSION= 	1.6.1
+PORTVERSION=	1.6.1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.waseda.ac.jp/pub/X11others/
 
@@ -14,7 +14,7 @@ MAINTAINER=	kazu@jp.freebsd.org
 
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 
-PATCH_STRIP= 	-p1
+PATCH_STRIP=	-p1
 USE_IMAKE=	yes
 XLOADFACEDIR=	$(X11BASE)/lib/X11/xloadface
 

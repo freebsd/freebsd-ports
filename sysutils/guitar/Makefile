@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	guiTAR
-PORTVERSION= 	0.1.4
+PORTVERSION=	0.1.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://disq.bir.net.tr/guitar/ \
 		http://artemis.efes.net/disq/guitar/

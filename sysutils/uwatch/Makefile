@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	uwatch
-PORTVERSION= 	1.0
+PORTVERSION=	1.0
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.wam.umd.edu/pub/howardjp/software/uwatch/ \
 		http://www.wam.umd.edu/~howardjp/software/uwatch/ \

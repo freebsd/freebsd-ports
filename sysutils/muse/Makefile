@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	muse
-PORTVERSION= 	0.1
+PORTVERSION=	0.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.spatula.net/muse/
 

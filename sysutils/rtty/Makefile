@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rtty
-PORTVERSION= 	3.2
+PORTVERSION=	3.2
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.vix.com/pub/vixie/
 

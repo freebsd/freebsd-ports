@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmapm
-PORTVERSION= 	3.01
+PORTVERSION=	3.01
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://nis-www.lanl.gov/~mgh/WindowMaker/
 

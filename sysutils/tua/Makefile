@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tua
-PORTVERSION= 	4.0
+PORTVERSION=	4.0
 CATEGORIES=	sysutils
 MASTER_SITES=   ftp://ftp.vmunix.org/pub/misc/tua/
 

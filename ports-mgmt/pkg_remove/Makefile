@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pkg_remove
-PORTVERSION= 	1.0
+PORTVERSION=	1.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rr.iij4u.or.jp/~sada/scripts/
 DISTNAME=	pkg_remove

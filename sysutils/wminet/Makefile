@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wminet
-PORTVERSION= 	2.0.2
+PORTVERSION=	2.0.2
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://www.neotokyo.org/illusion/
 

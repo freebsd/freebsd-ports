@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nologin
-PORTVERSION= 	1.0
+PORTVERSION=	1.0
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.xmission.com/pub/users/s/softweyr/pub/
 DISTFILES=	nologin.c nologin.8

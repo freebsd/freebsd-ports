@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		doconfig
-PORTVERSION= 		1.1
+PORTVERSION=		1.1
 CATEGORIES=		sysutils
 MASTER_SITES=		ftp://ftp.cold.org/pub/brandon/
 

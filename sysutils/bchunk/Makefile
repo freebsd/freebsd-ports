@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bchunk
-PORTVERSION= 	1.0.0
+PORTVERSION=	1.0.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://hes.iki.fi/bchunk/ \
 		${MASTER_SITE_SUNSITE}

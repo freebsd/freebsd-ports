@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	consolehm
-PORTVERSION= 	1.2
+PORTVERSION=	1.2
 CATEGORIES=	sysutils
 MASTER_SITES= 	ftp://mongol.dhis.org/pub/consolehm/ \
 		http://www.es.co.nz/~mmuir/

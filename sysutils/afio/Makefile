@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	afio
-PORTVERSION= 	2.4.6
-CATEGORIES=     sysutils
+PORTVERSION=	2.4.6
+CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/backup
-EXTRACT_SUFX=   .tgz
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nox@jelal.hb.north.de
 

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	npadmin
-PORTVERSION= 	0.7
+PORTVERSION=	0.7
 CATEGORIES=	sysutils print
 MASTER_SITES=	ftp://ftp.penguincomputing.com/pub/prtools/
 

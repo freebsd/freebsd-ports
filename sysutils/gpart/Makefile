@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gpart
-PORTVERSION= 	0.1f
+PORTVERSION=	0.1f
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.stud.uni-hannover.de/user/76201/gpart/ \
 		${MASTER_SITE_SUNSITE}

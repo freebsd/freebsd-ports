@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	skill
-PORTVERSION= 	3.7.9
+PORTVERSION=	3.7.9
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://fast.cs.utah.edu/pub/skill/
 DISTNAME=	${PORTNAME}-3.7@P8

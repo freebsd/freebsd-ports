@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	flexbackup
-PORTVERSION= 	0.9.8
+PORTVERSION=	0.9.8
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.bluecherry.net/~edwinh/flexbackup/tarball/ \
 		http://members.home.com/flexbackup/tarball/ \

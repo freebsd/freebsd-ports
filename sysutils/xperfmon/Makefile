@@ -7,7 +7,7 @@
 
 PORTNAME=	xperfmon++
 PORTVERSION=	2.0
-CATEGORIES=     sysutils
+CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.uni-bielefeld.de/pub/systems/FreeBSD/lkoeller/ \
 		ftp://ftp.u-aizu.ac.jp/pub/misc/tools/xperfmon/ \
 		ftp://ftp.ibank.ru/pub/unix_src/benchmarks/

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmbattery
-PORTVERSION= 	1.11
+PORTVERSION=	1.11
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://kitenet.net/programs/code/wmbattery/
 DISTNAME=	${PORTNAME}

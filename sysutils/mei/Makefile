@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mei
-PORTVERSION= 	1.53
+PORTVERSION=	1.53
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.vector.co.jp/authors/VA001240/archive/ \
 		http://people.FreeBSD.org/~itojun/distfiles/

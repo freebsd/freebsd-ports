@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lmmon
-PORTVERSION= 	0.65
+PORTVERSION=	0.65
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.fxp.org/~jedgar/
 

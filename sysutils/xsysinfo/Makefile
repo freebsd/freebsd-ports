@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xsysinfo
-PORTVERSION= 	1.4a
+PORTVERSION=	1.4a
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://freebsd.csie.nctu.edu.tw/pub/jdli/source/
 

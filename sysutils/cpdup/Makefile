@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cpdup
-PORTVERSION= 	1.02
+PORTVERSION=	1.02
 CATEGORIES=	sysutils
 MASTER_SITES=   http://www.backplane.com/FreeBSDPorts/
 #MASTER_SITE_SUBDIR=	cp

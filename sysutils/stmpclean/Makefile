@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	stmpclean
-PORTVERSION= 	0.1
+PORTVERSION=	0.1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.mccme.ru/users/shalunov/
 

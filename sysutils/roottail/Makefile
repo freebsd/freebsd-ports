@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	roottail
-PORTVERSION= 	0.0.4b
+PORTVERSION=	0.0.4b
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.hypertek.net/misc/ \
 		http://www.fxp.org/~jedgar/

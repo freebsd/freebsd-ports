@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xlogmaster
-PORTVERSION= 	1.6.0
+PORTVERSION=	1.6.0
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://sunsite.doc.ic.ac.uk/packages/gnu/\
 		${MASTER_SITE_GNU}\

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	webmin
-PORTVERSION= 	0.79
+PORTVERSION=	0.79
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/webmin/download/
 

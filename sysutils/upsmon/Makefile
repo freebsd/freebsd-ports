@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	upsmon
-PORTVERSION= 	2.1.3
+PORTVERSION=	2.1.3
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://newcorridor.com/pub/upsmon/
 

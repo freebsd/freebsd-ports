@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	manck
-PORTVERSION= 	1.2
+PORTVERSION=	1.2
 CATEGORIES=	sysutils
 MASTER_SITES=   http://www.de.freebsd.org/~wosch/src/
 

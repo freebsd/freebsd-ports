@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xwatch
-PORTVERSION= 	0.1.0
+PORTVERSION=	0.1.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://hem.passagen.se/osk/
 

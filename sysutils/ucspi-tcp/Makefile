@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ucspi-tcp
-PORTVERSION= 	0.84
+PORTVERSION=	0.84
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://cr.yp.to/software/
 

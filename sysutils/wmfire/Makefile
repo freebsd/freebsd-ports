@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmfire
-PORTVERSION= 	0.0.3.9
+PORTVERSION=	0.0.3.9
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.zebra.net/~dm/wmfire/
 DISTNAME=	wmfire-0.0.3.9pre4
