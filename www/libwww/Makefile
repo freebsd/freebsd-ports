@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libwww
-PORTVERSION= 	5.2.8
+PORTVERSION= 	5.3.1
 CATEGORIES=	www devel
 MASTER_SITES=	http://www.w3.org/Library/Distribution/
 DISTNAME=	w3c-${PKGNAME}
@@ -22,11 +22,5 @@ MAKE_ENV=	objformat=${PORTOBJFORMAT}
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/modules/expat/xmlparse/xmlparse.h \
 		${PREFIX}/include/w3c-libwww/
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCDIR}/User
-	${CP} -R ${WRKSRC}/Library/User/* ${DOCDIR}/User
-	@${MKDIR} ${DOCDIR}/src
-	${CP} ${WRKSRC}/Library/src/*.html ${DOCDIR}/src
-.endif
 
 .include <bsd.port.mk>
