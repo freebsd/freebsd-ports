@@ -1,5 +1,5 @@
 --- Makefile.orig	Mon Mar  8 11:37:11 2004
-+++ Makefile	Thu Mar 18 13:32:20 2004
++++ Makefile	Wed Mar 24 00:53:21 2004
 @@ -1,7 +1,3 @@
 - 
 -PREFIX   = /usr/local
@@ -8,10 +8,11 @@
  PROG     = nntpswitchd
  INSTUTILS= nsstats.pl nsstats.sh updategroups
  
-@@ -14,9 +10,8 @@
+@@ -13,10 +9,8 @@
+ 
  DISTNAME = nntpswitch
  VERSION  = `/bin/sh version.sh`
- CC       = gcc
+-CC       = gcc
 -CFLAGS   = -pipe -g -O3 -Wall -D_VERSION=\"$(VERSION)\"
 -LDFLAGS  = 
 -LIBS     = -lm -ldl 
@@ -20,7 +21,18 @@
  _DIRNAME = $(DISTNAME)
  
  all:		protos config aconfig.o $(PROG) $(MODULES) updategroups
-@@ -82,7 +77,6 @@
+@@ -33,6 +27,10 @@
+ updategroups:	$(UGOBJS)
+ 		$(CC) $(LDFLAGS) $(CFLAGS) $(LIBS) $(UGOBJS) -o updategroups
+ 
++$(OBJS):	\
++%.o:		%.c
++		$(CC) $(LDFLAGS) $(CFLAGS) -fPIC $< -c -o $@
++
+ $(PROG):	$(OBJS)
+ 		$(CC) $(LDFLAGS) $(CFLAGS) $(OBJS) aconfig.o $(LIBS) -o $(PROG) 
+ 
+@@ -82,7 +80,6 @@
  		@if [ -f acct_radius.so ]; then cp acct_radius.so $(PREFIX)/lib/libacct_radius.so; fi
  		@if [ -f auth_postgres.so ]; then cp auth_postgres.so $(PREFIX)/lib/libauth_postgres.so; fi
  		@if [ -f auth_mysql.so ]; then cp auth_mysql.so $(PREFIX)/lib/libauth_mysql.so; fi
