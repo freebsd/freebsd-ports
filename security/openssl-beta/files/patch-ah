@@ -1,6 +1,26 @@
 --- config.orig	Sun Jan 17 15:20:20 1999
-+++ config	Tue Mar 23 23:26:36 1999
-@@ -282,15 +282,6 @@
++++ config	Tue Mar 30 12:58:19 1999
+@@ -125,16 +125,12 @@
+ 	echo "${MACHINE}-whatever-bsdi"; exit 0
+ 	;;
+ 
+-    FreeBSD:3*:*:*)
+-	echo "${MACHINE}-whatever-freebsd3"; exit 0
+-	;;
+-
+-    FreeBSD:*:*:*486*)
+-	echo "i486-whatever-freebsd"; exit 0
++    FreeBSD:[12]*:*:*)
++	echo "${MACHINE}-whatever-freebsd"; exit 0
+ 	;;
+ 
+     FreeBSD:*)
+-	echo "${MACHINE}-whatever-freebsd"; exit 0
++	echo "${MACHINE}-whatever-freebsd3"; exit 0
+ 	;;
+ 
+     NetBSD:*:*:*486*)
+@@ -282,15 +278,6 @@
  esac
  done
  
@@ -16,7 +36,7 @@
  # read the output of the embedded GuessOS 
  read GUESSOS
  
-@@ -334,7 +325,7 @@
+@@ -334,7 +321,7 @@
  # run Configure to check to see if we need to specify the 
  # compiler for the platform ... in which case we add it on
  # the end ... otherwise we leave it off
@@ -25,7 +45,7 @@
  if [ $? = "0" ]; then
    OUT="$OUT-$CC"
  fi
-@@ -349,7 +340,7 @@
+@@ -349,7 +336,7 @@
  if [ "$TEST" = "true" ]; then
    echo ./Configure $OUT $options
  else
