@@ -8215,6 +8215,7 @@ stow		ports/sysutils/stow
 stowES		ports/sysutils/stowES
 str		ports/devel/str
 strace		ports/devel/strace
+straw		ports/net/straw
 stream		ports/benchmarks/stream
 streamripper	ports/audio/streamripper
 streamtuner	ports/audio/streamtuner
