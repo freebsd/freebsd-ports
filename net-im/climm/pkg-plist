@@ -10,7 +10,6 @@ bin/micq
 %%PORTDOCS%%share/doc/micq/micq@48x48.png
 share/micq/C.i18n
 share/micq/bg.i18n
-share/micq/br.i18n
 share/micq/de.i18n
 share/micq/de@fun.i18n
 share/micq/de_CH.i18n
@@ -26,6 +25,7 @@ share/micq/ja.UTF-8.i18n
 share/micq/ja.i18n
 share/micq/nl.i18n
 share/micq/pl.i18n
+share/micq/pt.i18n
 share/micq/ro.i18n
 share/micq/ru.i18n
 share/micq/se.i18n
@@ -34,5 +34,5 @@ share/micq/sr.i18n
 share/micq/uk.i18n
 share/micq/yu.i18n
 share/micq/zh_CN.i18n
-%%PORTDOCS%%@dirrm share/doc/micq
 @dirrm share/micq
+%%PORTDOCS%%@dirrm share/doc/micq
