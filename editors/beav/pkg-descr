@@ -7,5 +7,3 @@ edit data in hex, octal, decimal, binary, ascii, or ebcdic formats.   You
 can display data in byte, word, or long word formats in either Intel or 
 Motorola byte ordering.   You can send the formatted display mode to a 
 file or printer.
-
-This is version 1.40.3.
