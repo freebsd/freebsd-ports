@@ -1,16 +1,14 @@
 # New ports collection makefile for:	bzip2
-# Version required:	0.1pl2
+# Version required:	0.9.0c
 # Date created:		19 Nov 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.3 1998/09/10 08:03:40 asami Exp $
+# $Id: Makefile,v 1.4 1998/09/23 00:57:45 steve Exp $
 #
 
-DISTNAME=	bzip2-0.1pl2
-PKGNAME=	bzip2-0.1p2
+DISTNAME=	bzip2-0.9.0c
 CATEGORIES=	archivers
-MASTER_SITES=	ftp://ftp.connectnet.com/pub/bzip/ \
-		http://www.muraroa.demon.co.uk/
+MASTER_SITES=	http://www.muraroa.demon.co.uk/
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -22,6 +20,11 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bzip2 ${PREFIX}/bin
 	${LN} -sf ${PREFIX}/bin/bzip2 ${PREFIX}/bin/bunzip2
 	${INSTALL_PROGRAM} ${WRKSRC}/bzip2recover ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/libbz2.a ${PREFIX}/lib
 	${INSTALL_MAN} ${WRKSRC}/bzip2.1 ${PREFIX}/man/man1
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/bzip2
+	${INSTALL_DATA} ${WRKSRC}/manual* ${PREFIX}/share/doc/bzip2
+.endif
 
 .include <bsd.port.mk>

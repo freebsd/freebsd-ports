@@ -1,3 +1,12 @@
 bin/bzip2
 bin/bunzip2
 bin/bzip2recover
+lib/libbz2.a
+share/doc/bzip2/manual.ps
+share/doc/bzip2/manual.texi
+share/doc/bzip2/manual_1.html
+share/doc/bzip2/manual_2.html
+share/doc/bzip2/manual_3.html
+share/doc/bzip2/manual_4.html
+share/doc/bzip2/manual_toc.html
+@dirrm share/doc/bzip2
