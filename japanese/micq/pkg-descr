@@ -1,0 +1,7 @@
+A text-based implementation of ICQ, independant of Mirabilis.
+Currently does not offer chat.  Still appears rough:  There's no
+command-line editing, and ANSI color codes are hardcoded in the
+program.
+
+- Seiichirou Hiraoka
+flathill@FreeBSD.ORG
