@@ -1,0 +1,5 @@
+@cwd /usr/local
+bin/jove
+bin/teachjove
+lib/jove
+man/cat1/jove.0
