@@ -7990,6 +7990,7 @@ wmtimebomb	ports/games/wmtimebomb
 wmtimer		ports/x11-clocks/wmtimer
 wmtop		ports/sysutils/wmtop
 wmtune		ports/audio/wmtune
+wmtunlo		ports/misc/wmtunlo
 wmtz		ports/x11-clocks/wmtz
 wmusic		ports/audio/wmusic
 wmwave		ports/net/wmwave
