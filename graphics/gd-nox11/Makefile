@@ -11,7 +11,7 @@ PKGNAMESUFFIX=		-nox11
 MAINTAINER=	dinoex@FreeBSD.org
 
 WITHOUT_X11=		yes
-MASTERDIR?=	${.CURDIR}/../gd
+MASTERDIR?=	${.CURDIR}/../gd2
 
 .if exists(${.CURDIR}/Makefile.local)
 .include "${.CURDIR}/Makefile.local"
