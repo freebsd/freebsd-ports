@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	mode-info
-PORTVERSION=	0.1.3
-CATEGORIES=	editors elisp
+PORTVERSION=	0.1.4
+CATEGORIES=	elisp
 MASTER_SITES=	http://namazu.org/~tsuchiya/elisp/
 
 MAINTAINER=	yoichi@FreeBSD.org
@@ -15,6 +15,7 @@ MAINTAINER=	yoichi@FreeBSD.org
 MI_INDEX+=	mi-emacs.idx
 MI_WITH_ELISP?=	yes
 MI_ELISP_LANG?=	en
+MI_WITH_MAKE?=	yes
 
 .if (${MI_WITH_ELISP} == "yes")
 .if (${MI_ELISP_LANG} == "en")
@@ -32,6 +33,15 @@ PLIST_SUB+=	MI_WITH_ELISP=""
 PLIST_SUB+=	MI_WITH_ELISP="@comment "
 .endif
 
+.if (${MI_WITH_MAKE} == "yes")
+BUILD_DEPENDS+= ${LOCALBASE}/info/make.info:${PORTSDIR}/devel/gmake
+RUN_DEPENDS+=	${LOCALBASE}/info/make.info:${PORTSDIR}/devel/gmake
+MI_INDEX+=	mi-make.idx
+PLIST_SUB+=	MI_WITH_MAKE=""
+.else
+PLIST_SUB+=	MI_WITH_MAKE="@comment "
+.endif
+
 EMACS_PORT_NAME?=	emacs21
 EMACS_NO_RUN_DEPENDS=	yes
 LISPDIR?=	${PREFIX}/${EMACS_SITE_LISPDIR}/${PORTNAME}
@@ -47,6 +57,7 @@ post-configure:
 .elif (${MI_ELISP_LANG} == "ja")
 	${ECHO_CMD} "(setq mode-info-elisp-titles (list \"elisp-ja\"))" >> ${WRKSRC}/elisp-comp
 .endif
+	${ECHO_CMD} "(setq mode-info-make-titles (list \"make\"))" >> ${WRKSRC}/elisp-comp
 post-install:
 .for i in ${MI_INDEX}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/mode-info/

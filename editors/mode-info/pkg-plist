@@ -14,6 +14,8 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/mode-info/mi-index.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/mode-info/mi-libc.el
 %%EMACS_VERSION_SITE_LISPDIR%%/mode-info/mi-libc.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/mode-info/mi-make.el
+%%EMACS_VERSION_SITE_LISPDIR%%/mode-info/mi-make.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/mode-info/mi-octave.el
 %%EMACS_VERSION_SITE_LISPDIR%%/mode-info/mi-octave.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/mode-info/mi-perl.el
@@ -28,6 +30,7 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/mode-info/mode-info.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/mode-info/mi-emacs.idx
 %%MI_WITH_ELISP%%%%EMACS_VERSION_SITE_LISPDIR%%/mode-info/mi-elisp.idx
+%%MI_WITH_MAKE%%%%EMACS_VERSION_SITE_LISPDIR%%/mode-info/mi-make.idx
 @dirrm %%EMACS_VERSION_SITE_LISPDIR%%/mode-info
 %%PORTDOCS%%share/doc/mode-info/ChangeLog
 %%PORTDOCS%%share/doc/mode-info/README
