@@ -294,6 +294,5 @@
     SUBDIR += xmysqladmin
     SUBDIR += zodb
     SUBDIR += zodb3
-    SUBDIR += zpygresqlda
 
 .include <bsd.port.subdir.mk>
