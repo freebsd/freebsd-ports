@@ -17,7 +17,8 @@ MASTER_SITES=	http://www.m-hollstein.de/libgxx/  \
 		${MASTER_SITE_GNU}
 
 PATCH_SITES=	http://www.m-hollstein.de/libgxx/  \
-		ftp://ftp.freebsd.org/pub/FreeBSD/ports/local-distfiles/obrien/
+		${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR=	obrien
 PATCHFILES=	${DISTNAME}-20000312.diff.gz
 PATCH_DIST_STRIP=	-p1
 

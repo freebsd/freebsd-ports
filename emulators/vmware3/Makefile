@@ -18,10 +18,11 @@ MASTER_SITES=	http://www4.vmware.com/software/ \
 		ftp://mirror.aarnet.edu.au/pub/vmware/software/
 DISTNAME=	VMware-${PORTVERSION:R}-${PORTVERSION:E}
 
-PATCH_SITES=	ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/knu/ \
+PATCH_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.mindspring.com/~vsilyaev/vmware/files/ \
 		ftp://mirror.aarnet.edu.au/pub/vmware/freebsd/ \
 		http://mirror.aarnet.edu.au/pub/vmware/freebsd/
+PATCH_SITE_SUBDIR=	knu
 PATCHFILES=	vmmon-freebsd-0.95.1.tar.gz \
 		vmnet-freebsd-0.11.tar.gz
 

@@ -10,7 +10,8 @@ PORTNAME=	sniffit
 PORTVERSION=	0.3.7b
 CATEGORIES=	net security
 MASTER_SITES=	http://reptile.rug.ac.be/~coder/sniffit/files/  \
-		ftp://ftp.freebsd.org/pub/FreeBSD/ports/local-distfiles/obrien/
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	obrien
 DISTNAME=	sniffit.0.3.7.beta
 
 MAINTAINER=	obrien@FreeBSD.org

@@ -8,7 +8,8 @@
 PORTNAME=	xcolors
 PORTVERSION= 	1.3
 CATEGORIES=	x11
-MASTER_SITES=	ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/ade/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	ade
 DISTNAME=	${PORTNAME}	
 
 MAINTAINER=	ade@FreeBSD.org

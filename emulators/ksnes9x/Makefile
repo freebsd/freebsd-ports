@@ -8,7 +8,8 @@
 PORTNAME=	ksnes9x
 PORTVERSION=	1.2
 CATEGORIES=	emulators
-MASTER_SITES=	ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/will/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	will
 
 MAINTAINER=	will@FreeBSD.org
 

@@ -8,7 +8,8 @@
 PORTNAME=	gmixer
 PORTVERSION=	0.98c
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/cpiazza/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	cpiazza
 
 MAINTAINER=	cpiazza@FreeBSD.org
 

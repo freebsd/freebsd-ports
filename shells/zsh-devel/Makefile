@@ -9,14 +9,15 @@ PORTNAME=	zsh
 PORTVERSION=	3.1.9
 CATEGORIES=	shells
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/knu/ \
+		${MASTER_SITE_LOCAL} \
 		ftp://ftp.zsh.org/%SUBDIR%/ \
 		ftp://ftp.sterling.com/%SUBDIR%/ \
 		ftp://ftp.rge.com/pub/%SUBDIR%/ \
 		ftp://ftp.fu-berlin.de/pub/unix/shells/%SUBDIR%/ \
 		ftp://ftp.ips.oz.au/pub/packages/%SUBDIR%/ \
 		ftp://ftp.uit.no/pub/unix/shells/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+# last one for ${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	${PORTNAME} knu
 DISTNAME=	${PORTNAME}-${ZSH_VER}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${ZSHFUNC_FILES}
