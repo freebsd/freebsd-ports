@@ -1,0 +1,29 @@
+--- Makefile.in.orig	Sun Oct 20 13:22:10 2002
++++ Makefile.in	Sun Oct 20 13:26:06 2002
+@@ -3,21 +3,21 @@
+ all: rtspproxy/rtspproxy
+ 
+ rtspproxy/rtspproxy: libapp/libapp.a librtsp/librtsp.a
+-	cd rtspproxy && make
++	cd rtspproxy && ${MAKE}
+ 
+ librtsp/librtsp.a:
+-	cd librtsp && make
++	cd librtsp && ${MAKE}
+ 
+ libapp/libapp.a:
+-	cd libapp && make
++	cd libapp && ${MAKE}
+ 
+ clean:
+ 	for D in rtspproxy librtsp libapp; do \
+-		cd $$D && make clean && cd ..; \
++		cd $$D && ${MAKE} clean && cd ..; \
+ 	done
+ 
+ distclean:
+ 	for D in rtspproxy librtsp libapp; do \
+-		cd $$D && make distclean && cd ..; \
++		cd $$D && ${MAKE} distclean && cd ..; \
+ 	done
+ 	rm Makefile
