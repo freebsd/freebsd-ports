@@ -25,8 +25,8 @@ CFLAGS+=	-I${LOCALBASE}/include
 USE_GMAKE=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,^CXXFLAGS =,CXXFLAGS+=,g ; \
-		s,^LBLIBS =,LBLIBS = -pthread -L${LOCALBASE}/lib,g" \
+	@${REINPLACE_CMD} -e "s,^CXXFLAGS =,CXXFLAGS+=${PTHREAD_CFLAGS},g ; \
+		s,^LBLIBS =,LBLIBS = ${PTHREAD_LIBS} -L${LOCALBASE}/lib,g" \
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e "s,crypto/,cryptopp/,g" ${WRKSRC}/src/main.cpp
 
