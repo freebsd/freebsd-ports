@@ -18,7 +18,7 @@ LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	-prefix=${PREFIX} --mandir=${PREFIX}/man --i18n=1
+CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${PREFIX}/man --i18n=1
 
 MAN1=		axel.1
 
