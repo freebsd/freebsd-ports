@@ -78,6 +78,7 @@ PLIST_TOOLS=	${PKGDIR}/PLIST.Tools
 
 post-extract:
 	cd ${WRKSRC}/Lib && ${SH} ${FILESDIR}/plat-freebsd4.sh
+	cd ${WRKSRC}/Lib && ${SH} ${FILESDIR}/plat-freebsd5.sh
 
 post-configure:
 	${CP} ${FILESDIR}/${SETUP_FILE} ${WRKSRC}/Modules/Setup
@@ -87,12 +88,14 @@ post-configure:
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 400000
-PLATFORMS=plat-freebsd2 plat-freebsd3
+.if ${OSVERSION} >= 500000
+PLATFORMS=plat-freebsd2 plat-freebsd3 plat-freebsd4
+.elif ${OSVERSION} >= 400000
+PLATFORMS=plat-freebsd2 plat-freebsd3 plat-freebsd5
 .elif ${OSVERSION} >= 300000
-PLATFORMS=plat-freebsd2 plat-freebsd4
-.else   
-PLATFORMS=plat-freebsd3 plat-freebsd4
+PLATFORMS=plat-freebsd2 plat-freebsd4 plat-freebsd5
+.else
+PLATFORMS=plat-freebsd3 plat-freebsd4 plat-freebsd5
 .endif
 
 pre-install:
