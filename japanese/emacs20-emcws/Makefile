@@ -22,8 +22,6 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	nakaji@jp.freebsd.org
 COMMENT=	Emacs + Canna + Wnn + Sj3
 
-Y2K=		http://www.gnu.org/software/year2000.html
-
 BUILD_DEPENDS=	emacs-${EMACS_VER}:${PORTSDIR}/editors/emacs20
 
 WRKSRC=		${WRKDIR}/emacs-${EMACS_VER}

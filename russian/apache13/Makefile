@@ -20,7 +20,6 @@ COMMENT=	The extremely popular Apache http server.  Very fast, very clean
 
 RA_VERSION=	30.17
 APACHE_VERSION=	1.3.27
-Y2K=		http://www.apache.org/docs/misc/FAQ.html#year2000
 
 #
 # Small hack for alternate processing patchfiles
