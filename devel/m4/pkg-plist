@@ -1,5 +1,32 @@
 bin/gm4
+@unexec install-info --delete %D/info/m4.info %D/info/dir
 info/m4.info
-info/m4.info-1
-info/m4.info-2
-info/m4.info-3
+@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
+@exec install-info %D/info/m4.info %D/info/dir
+share/examples/gm4/capitalize.m4
+share/examples/gm4/comments.m4
+share/examples/gm4/ddivert.m4
+share/examples/gm4/debug.m4
+share/examples/gm4/esyscmd.m4
+share/examples/gm4/exp.m4
+share/examples/gm4/file.m4
+share/examples/gm4/foreach.m4
+share/examples/gm4/forloop.m4
+share/examples/gm4/fstab.m4
+share/examples/gm4/hanoi.m4
+share/examples/gm4/incl-test.m4
+share/examples/gm4/include.m4
+share/examples/gm4/indir.m4
+share/examples/gm4/misc.m4
+share/examples/gm4/multiquotes.m4
+share/examples/gm4/patsubst.m4
+share/examples/gm4/pushpop.m4
+share/examples/gm4/regexp.m4
+share/examples/gm4/reverse.m4
+share/examples/gm4/sync-lines.m4
+share/examples/gm4/sysv-args.m4
+share/examples/gm4/trace.m4
+share/examples/gm4/translit.m4
+share/examples/gm4/undivert.m4
+share/examples/gm4/wrap.m4
+@dirrm share/examples/gm4
