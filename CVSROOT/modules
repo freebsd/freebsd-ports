@@ -950,6 +950,7 @@ crossword	ports/games/crossword
 crw		ports/graphics/crw
 cryptcat	ports/net/cryptcat
 cryptix-jce	ports/java/cryptix-jce
+cryptlib	ports/security/cryptlib
 cryptopp	ports/security/cryptopp
 cryptoslam	ports/games/cryptoslam
 cryptplug	ports/security/cryptplug
