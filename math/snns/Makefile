@@ -8,7 +8,8 @@
 PORTNAME=	snns
 PORTVERSION=	4.2
 CATEGORIES=	math
-MASTER_SITES=	ftp://ftp.informatik.uni-stuttgart.de/pub/SNNS/
+MASTER_SITES=	http://www-ra.informatik.uni-tuebingen.de/downloads/SNNS/ \
+		ftp://ftp.informatik.uni-stuttgart.de/pub/SNNS/
 DISTNAME=	SNNSv${PORTVERSION}
 DISTNAME=	SNNSv${PORTVERSION}
 
