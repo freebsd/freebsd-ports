@@ -6372,6 +6372,7 @@ postgresql7	ports/databases/postgresql7
 postgresql_autodoc	ports/databases/postgresql_autodoc
 postilion	ports/mail/postilion
 postmark	ports/benchmarks/postmark
+postnuke	ports/www/postnuke
 pound		ports/www/pound
 povchem		ports/biology/povchem
 povray		ports/graphics/povray
