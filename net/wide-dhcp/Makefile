@@ -3,7 +3,7 @@
 # Date created:         21 November 1995
 # Whom:                 Yoshiro MIHIRA <sanpei@yy.cs.keio.ac.jp>
 #
-# $Id: Makefile,v 1.11 1998/04/18 12:40:04 itojun Exp $
+# $Id: Makefile,v 1.12 1998/05/02 15:14:30 max Exp $
 #
 
 DISTNAME=       dhcp-1.4.0p1
@@ -13,7 +13,7 @@ MASTER_SITES=   ftp://sh.wide.ad.jp/WIDE/free-ware/dhcp/
 
 MAINTAINER=     hideyuki@sat.t.u-tokyo.ac.jp
 
-MAKE_ENV=	OSTYPE=`uname`
+MAKE_ENV=	OSTYPE=${OPSYS}
 
 MAN5=	dhcpdb.server.5 dhcpdb.pool.5 dhcpdb.relay.5
 MAN8=	dhcpc.8 dhcps.8 relay.8 dhcpm.8
