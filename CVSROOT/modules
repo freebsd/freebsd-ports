@@ -4601,6 +4601,7 @@ p5-PGP		ports/security/p5-PGP
 p5-PGP-Sign	ports/security/p5-PGP-Sign
 p5-POE		ports/devel/p5-POE
 p5-POE-Component-IRC	ports/irc/p5-POE-Component-IRC
+p5-POE-Component-Pcap	ports/devel/p5-POE-Component-Pcap
 p5-POE-Component-RSS	ports/devel/p5-POE-Component-RSS
 p5-PV		ports/devel/p5-PV
 p5-Palm		ports/palm/p5-Palm
