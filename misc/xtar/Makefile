@@ -3,11 +3,11 @@
 # Date created:		31 Jul 1996
 # Whom:			shanee@rabbit.augusta.de
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/11/25 09:47:11 tg Exp $
 #
 
 DISTNAME=	xtar-1.4
-CATEGORIES=	misc x11
+CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	utilities
 
