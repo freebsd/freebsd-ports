@@ -16,6 +16,7 @@ RUN_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/java:${PORTSDIR}/java/jdk
 
 USE_ZIP=	yes
 NO_BUILD=	yes
+RESTRICTED=	Testing purpose only (from README.TXT).
 
 do-install:
 	${INSTALL_DATA} ${WRKDIR}/bin/cryptix-jce-api.jar ${PREFIX}/share/java/classes/
