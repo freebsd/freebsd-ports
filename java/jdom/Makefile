@@ -6,23 +6,20 @@
 #
 
 PORTNAME=	jdom
-PORTVERSION=	1.0b10
+PORTVERSION=	1.0
+PORTEPOCH=	1
 CATEGORIES=	java textproc
-MASTER_SITES=	http://www.jdom.org/dist/source/archive/
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/[0-9]*\.[0-9]*//}
+MASTER_SITES=	http://www.jdom.org/dist/source/
 
 MAINTAINER=	znerd@FreeBSD.org
 COMMENT=	Java library for accessing and manipulating XML documents
 
-RUN_DEPENDS=	${LOCAL_JAVAJARDIR}/jaxen-jdom.jar:${PORTSDIR}/java/jaxen
+RUN_DEPENDS=	${JAVALIBDIR}/jaxen-jdom.jar:${PORTSDIR}/java/jaxen
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.2+
 USE_ANT=	yes
-USE_JIKES=	no
 
-LOCAL_JAVAJARDIR=	${JAVAJARDIR:S,^${PREFIX},${LOCALBASE},}
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/[0-9]*\.[0-9]*//}
 ALL_TARGET=	package
 .if !defined(NOPORTDOCS)
 ALL_TARGET+=	javadoc
@@ -30,7 +27,7 @@ OTHERDOCS=	README.txt TODO.txt CHANGES.txt COMMITTERS.txt LICENSE.txt
 PORTDOCS=	apidocs ${OTHERDOCS}
 .endif
 
-MAKE_ENV+=	CLASSPATH=${LOCAL_JAVAJARDIR}/jaxen-jdom.jar
+MAKE_ENV+=	CLASSPATH=${JAVALIBDIR}/jaxen-jdom.jar
 
 PLIST_FILES=	%%JAVAJARDIR%%/jdom.jar
 
@@ -51,6 +48,14 @@ do-install:
 	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR} > /dev/null 2>&1
 	@${INSTALL_DATA} ${OTHERDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
 	@${ECHO_MSG} " [ DONE ]"
+.endif
+
+.if !defined(NOPORTDOCS)
+post-install:
+	@${FIND} -s ${WRKSRC}/build/samples -not -type d | \
+		${SED} -ne 's,^${WRKSRC}/build/samples,${EXAMPLESDIR:S,${PREFIX}/,,},p' >> ${TMPPLIST}
+	@${FIND} -s -d ${WRKSRC}/build/samples -type d | \
+		${SED} -ne 's,^${WRKSRC}/build/samples,@dirrm ${EXAMPLESDIR:S,${PREFIX}/,,},p' >> ${TMPPLIST}
 .endif
 
 .include <bsd.port.mk>
