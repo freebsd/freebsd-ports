@@ -1,0 +1,12 @@
+--- lib/pvmgetarch.orig	Thu Sep 27 23:24:04 2001
++++ lib/pvmgetarch	Mon Mar 29 10:31:39 2004
+@@ -77,6 +77,9 @@
+ 	BSD/OS,i[3456]86 )      ARCH=BSD386 ;;
+ 	FreeBSD,i[3456]86 )     ARCH=FREEBSD ;;
+ 	FreeBSD,alpha )         ARCH=FREEBSD ;;
++	FreeBSD,amd64 )		ARCH=FREEBSD ;;
++	FreeBSD,ia64 )		ARCH=FREEBSD ;;
++	FreeBSD,sparc64 )	ARCH=FREEBSD ;;
+ 	SUPER-UX,SX-3 )         ARCH=SX3 ;;
+ 	uts,* )                 ARCH=UTS2 ;;
+ 	realix,M88* )           ARCH=M88K ;;
