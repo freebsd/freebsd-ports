@@ -1,0 +1,6 @@
+Qkc is a kanji code converter capable of SHIFT-JIS, EUC and JIS.
+Unlike nkf, qkc can handle multiple files at a time. Qkc also has
+functionality to change end-of-line characters, ie, from CR+LF to LF,
+or to CR, and vice versa.
+
+- Masafumi
