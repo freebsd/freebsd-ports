@@ -3,7 +3,7 @@
 # Date created:         08 August 1995
 # Whom:                 jkh
 #
-# $Id: Makefile,v 1.30 1998/05/07 08:22:02 tg Exp $
+# $Id: Makefile,v 1.31 1998/05/20 08:37:12 tg Exp $
 #
 
 DISTNAME=       pyth151
@@ -16,8 +16,8 @@ EXTRACT_SUFX=	.tgz
 PATCH_SITES=	http://www.python.org/1.5/patches-1.5.1/
 PATCHFILES=	_tkinter.1.txt bltinmodule.1.txt bltinmodule.2.txt \
 		ceval.1.txt configure.2.txt fileobject.1.txt freeze.1.txt \
-		gzip.1.txt imaplib.1.txt imaplib.2.txt import.1.txt \
-		object.1.txt \
+		gzip.1.txt imaplib.1.txt imaplib.2.txt imaplib.3.txt \
+		import.1.txt object.1.txt \
 		parsermodule.1.txt pcre.1.txt sgmllib.1.txt string.1.txt \
 		timemodule.1.txt urllib.1.txt urllib.2.txt zlibmodule.1.txt
 

@@ -9,6 +9,7 @@ MD5 (python/freeze.1.txt) = 7cb9266ba6db670cd019cf27c77468ef
 MD5 (python/gzip.1.txt) = 55140b037c55b19795ed4543986c2fd4
 MD5 (python/imaplib.1.txt) = ece2e50e69e7ec86c1a9cc310d5ae220
 MD5 (python/imaplib.2.txt) = f8cb53849055badd3037545a92d1a123
+MD5 (python/imaplib.3.txt) = 3a8180096777c690c5ffd8c4fbd6c38b
 MD5 (python/import.1.txt) = 15ab480458410b0450b07f3eedb15cda
 MD5 (python/object.1.txt) = f03bad9c3d67190232fce407b0c0fa51
 MD5 (python/parsermodule.1.txt) = 24e41667e705fbe310e8d8dd85da706d
