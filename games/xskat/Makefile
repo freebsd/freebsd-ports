@@ -3,12 +3,12 @@
 # Date created:		27 Apr 1996
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.7 1998/09/21 08:33:06 tg Exp $
+# $Id: Makefile,v 1.8 1998/09/28 02:25:26 steve Exp $
 #
 
 DISTNAME=	xskat-2.3.1
 CATEGORIES=	games
-MASTER_SITES=	http://www.draeger.com/~gerhardt/
+MASTER_SITES=	http://www.gulu.net/xskat/
 
 MAINTAINER=	tg@FreeBSD.ORG
 
