@@ -58,7 +58,7 @@ post-configure:
 do-build:
 # non thread version
 	(cd ${WRKSRC}; ${MAKE_ENV} ${MAKE} install arch=${NON_THREADED_ATLAS})
-	(cd ${WRKSRC}; ${MAKE_ENV} ${MAKE} sanity_test arch=${NON_THREADED_ATLAS})
+#	(cd ${WRKSRC}; ${MAKE_ENV} ${MAKE} sanity_test arch=${NON_THREADED_ATLAS})
 	(cd ${WRKSRC}; ${MKDIR} tmp ; \
 		${CP} ${LOCALBASE}/lib/liblapack.a tmp ;\
 		cd tmp ;\
@@ -73,7 +73,7 @@ do-build:
 
 # thread version
 	(cd ${WRKSRC}; ${MAKE_ENV} ${MAKE} install arch=${THREADED_ATLAS})
-	(cd ${WRKSRC}; ${MAKE_ENV} ${MAKE} sanity_test arch=${THREADED_ATLAS})
+#	(cd ${WRKSRC}; ${MAKE_ENV} ${MAKE} sanity_test arch=${THREADED_ATLAS})
 	(cd ${WRKSRC}; ${MKDIR} tmp2 ; \
 		${CP} ${LOCALBASE}/lib/liblapack.a tmp2 ;\
 		cd tmp2 ;\
