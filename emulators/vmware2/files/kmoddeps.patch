@@ -1,0 +1,12 @@
+--- vmmon-only/Makefile.FreeBSD.orig	Fri Jun 14 08:45:33 2002
++++ vmmon-only/Makefile.FreeBSD	Fri Jun 14 08:47:42 2002
+@@ -40,7 +40,9 @@
+ SRCS=		
+ 
+ # For 4.0-STABLE
++.if ${OSVERSION} < 500002
+ KMODDEPS=	linux
++.endif
+ 
+ INCLUDE = -I$(.CURDIR)/include -I$(.CURDIR)/common -I$(.CURDIR)/freebsd -I$(.CURDIR)/export/include -I/sys
+ INCLUDE += -I$(.CURDIR)/../vmnet-only/freebsd/

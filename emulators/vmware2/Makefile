@@ -109,6 +109,7 @@ post-patch:
 		${WRKSRC}/vmmon-only/freebsd/*.c \
 		${WRKSRC}/vmware-distrib/vmmon-only/freebsd/*.c
 .endif
+	cat ${FILESDIR}/kmoddeps.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
 
 setoptions:
 	${SED} 	-e 's;@@PREFIX@@;${PREFIX};' \
