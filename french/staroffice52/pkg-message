@@ -1,0 +1,16 @@
+StarOffice 5.2 Personal Installation How-To
+
+Ecrit par :      Darren Wiebe <dkwiebe@hagenhomes.com>
+		 and Martin Blapp <mb@imp.ch>
+
+Traducion:	 Eric Masson <e-masson@kisoft-services.com>
+
+Vous allez bientot terminer l'installation réseau de StarOffice 5.2.
+Une fois cela terminé, sortez de X11 et lancez le à nouveau sous votre profil
+habituel. Lancez alors "make install-user" et faites une installation "workstation".
+Changez le répertoire d'installation en $HOME/office52. Ajoutez alors $HOME/office52
+à votre path
+
+StarOffice est prêt à l'usage.
+
+Bonne Chance
