@@ -6,50 +6,91 @@
 #
 
 PORTNAME=	ssmtp
-PORTVERSION=	2.38
+PORTVERSION=	2.60.3
 CATEGORIES=	mail
-MASTER_SITES=	http://ftp.debian.org/debian/pool/main/s/ssmtp/ \
-		ftp://ftp.icm.edu.pl/pub/Linux/debian/pool/main/s/ssmtp/
-DISTNAME=	ssmtp_2.38-9
+MASTER_SITES=	http://ftp.us.debian.org/debian/%SUBDIR%/ \
+		http://http.us.debian.org/debian/%SUBDIR%/ \
+		http://ftp.debian.org/debian/%SUBDIR%/ \
+		http://ftp.egr.msu.edu/debian/%SUBDIR%/ \
+		http://mirrors.kernel.org/debian/%SUBDIR%/ \
+		http://archive.progeny.com/debian/%SUBDIR%/ \
+		http://debian.crosslink.net/debian/%SUBDIR%/ \
+		http://ftp-mirror.internap.com/pub/debian/%SUBDIR%/ \
+		http://ftp.cerias.purdue.edu/pub/os/debian/%SUBDIR%/ \
+		http://ftp.lug.udel.edu/debian/%SUBDIR%/ \
+		http://debian.lcs.mit.edu/debian/%SUBDIR%/ \
+		http://debian.teleglobe.net/%SUBDIR%/ \
+		http://debian.rutgers.edu/%SUBDIR%/ \
+		http://debian.oregonstate.edu/debian/%SUBDIR%/ \
+		http://mirrors.terrabox.com/debian/%SUBDIR%/ \
+		http://ftp.de.debian.org/debian/%SUBDIR%/ \
+		http://ftp.at.debian.org/debian/%SUBDIR%/ \
+		http://ftp.bg.debian.org/debian/%SUBDIR%/ \
+		http://ftp.cz.debian.org/debian/%SUBDIR%/ \
+		http://ftp.dk.debian.org/debian/%SUBDIR%/ \
+		http://ftp.ee.debian.org/debian/%SUBDIR%/ \
+		http://ftp.fi.debian.org/debian/%SUBDIR%/ \
+		http://ftp.fr.debian.org/debian/%SUBDIR%/ \
+		http://ftp.hr.debian.org/debian/%SUBDIR%/ \
+		http://ftp.hu.debian.org/debian/%SUBDIR%/ \
+		http://ftp.ie.debian.org/debian/%SUBDIR%/ \
+		http://ftp.is.debian.org/debian/%SUBDIR%/ \
+		http://ftp.it.debian.org/debian/%SUBDIR%/ \
+		http://ftp.nl.debian.org/debian/%SUBDIR%/ \
+		http://ftp.no.debian.org/debian/%SUBDIR%/ \
+		http://ftp.pl.debian.org/debian/%SUBDIR%/ \
+		http://ftp.si.debian.org/debian/%SUBDIR%/ \
+		http://ftp.es.debian.org/debian/%SUBDIR%/ \
+		http://ftp.se.debian.org/debian/%SUBDIR%/ \
+		http://ftp.tr.debian.org/debian/%SUBDIR%/ \
+		http://ftp.uk.debian.org/debian/%SUBDIR%/ \
+		http://ftp.au.debian.org/debian/%SUBDIR%/ \
+		http://ftp.wa.au.debian.org/debian/%SUBDIR%/ \
+		http://ftp.nz.debian.org/debian/%SUBDIR%/ \
+		http://ftp.jp.debian.org/debian/%SUBDIR%/ \
+		http://linux.csie.nctu.edu.tw/debian/%SUBDIR%/ \
+		http://debian.linux.org.tw/debian/%SUBDIR%/ \
+		http://linux.cdpa.nsysu.edu.tw/debian/%SUBDIR%/ \
+		http://ftp.br.debian.org/debian/%SUBDIR%/ \
+		http://ftp.cl.debian.org/debian/%SUBDIR%/
+MASTER_SITE_SUBDIR=	pool/main/s/ssmtp
+DISTNAME=	ssmtp_${PORTVERSION}
 
-IGNORE=		configures the hostname at compiletime instead of installtime
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Extremely simple MTA to get mail off the system to a mail hub
 
-MAINTAINER=	ns88@k.pl
-COMMENT=	Sendmail alternative for small routers (only for outgoing mail)
+WRKSRC=		${WRKDIR}/ssmtp-2.60
 
-WRKSRC=		${WRKDIR}/ssmtp-2.38
-USE_GMAKE=	true
+USE_OPENSSL=	yes
+
+GNU_CONFIGURE=  yes
+USE_GMAKE=	yes
+USE_REINPLACE=	yes
+
+CONFIGURE_ARGS=	--enable-ssl --enable-inet6
+
 MAN8=		ssmtp.8
 
-pre-install:
-	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 0755 \
-	${PREFIX}/etc/ssmtp
+post-configure:
+	@${REINPLACE_CMD} -e "s,/etc/ssl/certs/ssmtp.pem,${PREFIX}/etc/ssmtp/ssmtp.pem,g" \
+		${WRKSRC}/ssmtp.c ${WRKSRC}/ssmtp.conf
+	@${REINPLACE_CMD} -e "s, /etc, ${PREFIX}/etc,g" ${WRKSRC}/ssmtp.8
+
+replace:
+	@${REINPLACE_CMD} -e 's,^[^#],#&,g' /etc/mail/mailer.conf
+	@${ECHO_CMD} "sendmail	${PREFIX}/sbin/ssmtp" >> /etc/mail/mailer.conf
+	@${ECHO_CMD} "send-mail	${PREFIX}/sbin/ssmtp" >> /etc/mail/mailer.conf
+	@${ECHO_CMD} "mailq		${PREFIX}/sbin/ssmtp" >> /etc/mail/mailer.conf
+	@${ECHO_CMD} "newaliases	${PREFIX}/sbin/ssmtp" >> /etc/mail/mailer.conf
+	@${ECHO_CMD} "hoststat	/usr/bin/true" >> /etc/mail/mailer.conf
+	@${ECHO_CMD} "purgestat	/usr/bin/true" >> /etc/mail/mailer.conf
 
 post-install:
-	@PREFIX="${PREFIX}" ${SH} ${PKGINSTALL}
 	@${ECHO_MSG} --------------------------------------------------
 	@${ECHO_MSG}
 	@${ECHO_MSG} "To replace sendmail with ssmtp type make replace"
 	@${ECHO_MSG}
 	@${ECHO_MSG} --------------------------------------------------
+	@${SED} -e 's#/etc#${PREFIX}/etc#' ${PKGMESSAGE}
 
-.include <bsd.port.pre.mk>
-
-replace:
-.if ${OSVERSION} >= 400014
-	@${ECHO} backuping old /etc/mail/mailer.conf
-	@${MV} -f /etc/mail/mailer.conf /etc/mail/mailer.conf.old-ssmtp
-	@${ECHO} Replacing mailwarpper config
-	@${ECHO_CMD} "sendmail		${PREFIX}/sbin/ssmtp" > /etc/mail/mailer.conf
-	@${ECHO_CMD} "send-mail		${PREFIX}/sbin/ssmtp" >> /etc/mail/mailer.conf
-	@${ECHO_CMD} "mailq			/bin/echo" >> /etc/mail/mailer.conf
-	@${ECHO_CMD} "newaliases		/bin/echo" >> /etc/mail/mailer.conf
-.else
-	@${ECHO} backuping old /usr/sbin/sendmail
-	@${MV} -f /usr/sbin/sendmail /usr/sbin/sendmail.OFF
-	@${CHMOD} 000 /usr/sbin/sendmail.OFF
-	@${LN} -s ${PREFIX}/sbin/ssmtp /usr/sbin/sendmail
-	@${ECHO} Done !
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
