@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/robocode
 %%DATADIR%%/battles/intro.battle
 %%DATADIR%%/battles/sample.battle
@@ -96,7 +97,6 @@ bin/robocode
 %%DATADIR%%/robots/sample/RamFire.class
 %%DATADIR%%/robots/sample/RamFire.java
 %%DATADIR%%/robots/sample/RamFire.properties
-%%DATADIR%%/robots/sample/SittingDuck.data/count.dat
 %%DATADIR%%/robots/sample/SittingDuck.class
 %%DATADIR%%/robots/sample/SittingDuck.html
 %%DATADIR%%/robots/sample/SittingDuck.java
@@ -131,7 +131,6 @@ bin/robocode
 %%DATADIR%%/versions.txt
 @dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%/robots/sampleteam
-@dirrm %%DATADIR%%/robots/sample/SittingDuck.data
 @dirrm %%DATADIR%%/robots/sample
 @dirrm %%DATADIR%%/robots
 @dirrm %%DATADIR%%/license

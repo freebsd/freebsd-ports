@@ -21,8 +21,6 @@ JAVA_VERSION=	1.3+
 JAVA_EXTRACT=	yes
 JAVA_RUN=	yes
 
-JAVAVM=		${JAVA_HOME}/bin/java
-JAVAJAR=	${JAVA_HOME}/bin/jar
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
 USE_ZIP=	yes
@@ -33,17 +31,16 @@ NO_BUILD=	yes
 INSTFILES=	battles javadoc license robocode.ico \
 		robocode.jar robots templates versions.txt
 
-post-extract:
-	@cd ${WRKSRC} && ${JAVAJAR} xf ${WRKSRC}/extract.jar
+SUB_FILES=	robocode.sh
 
-do-configure:
-	@${SED} "s|%%PREFIX%%|${PREFIX}|g ; s|%%JAVAVM%%|${JAVAVM}|g" \
-		${FILESDIR}/robocode.sh > ${WRKDIR}/robocode.sh
+post-extract:
+	@cd ${WRKSRC} && ${JAR} xf ${WRKSRC}/extract.jar
 
 do-install:
-	@${MKDIR} ${DATADIR}
-	@cd ${WRKSRC} && ${TAR} -c -f - ${INSTFILES} | \
-		${TAR} --unlink -x -f - -C ${DATADIR}
+	@cd ${WRKSRC} && \
+		${FIND} ${INSTFILES} -type d -exec ${MKDIR} ${DATADIR}/{} \;
+	@cd ${WRKSRC} && \
+		${FIND} ${INSTFILES} -type f -exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
 	@${INSTALL_SCRIPT} ${WRKDIR}/robocode.sh ${PREFIX}/bin/robocode
 
 .include <bsd.port.mk>
