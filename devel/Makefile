@@ -90,6 +90,7 @@
     SUBDIR += cvsweb
     SUBDIR += cweb
     SUBDIR += cxref
+    SUBDIR += dbregc
     SUBDIR += ddd
     SUBDIR += devtodo
     SUBDIR += dia2code
