@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pcsc-lite
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://soth.at/PCSC-ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -19,6 +19,9 @@ COMMENT=	Ruby extension for the UNIX PC/SC Lite API (MUSCLE)
 LIB_DEPENDS=	pcsclite.0:${PORTSDIR}/devel/pcsc-lite
 
 USE_RUBY=	yes
+RUBY_VER=	1.8
+RUBY_WITH_PTHREAD=	yes
+CONFIGURE_ARGS+=	--with-pcsclite-dir="${PREFIX}"
 USE_RUBY_EXTCONF=	yes
 RUBY_SETUP=	install.rb
 
