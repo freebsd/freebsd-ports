@@ -7,7 +7,7 @@
 
 PORTNAME=	jakarta-tomcat
 PORTVERSION=	4.0.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www java
 MASTER_SITES=	http://jakarta.apache.org/builds/jakarta-tomcat-4.0/release/v${PORTVERSION}/bin/ \
 		http://www.metaverse.nl/~ernst/ \
@@ -47,7 +47,7 @@ REPLACE_FILES=	${FILESDIR}/daemonctl.c \
 		${WRKSRC}/conf/server.xml
 JAR_FILE=	bin/bootstrap.jar
 CONTROL_SCRIPT_MANPAGE_TITLE=	TOMCAT4CTL
-WRKDIR?=	work
+WRKDIR?=	${.CURDIR}/work
 
 .include <bsd.port.pre.mk>
 
