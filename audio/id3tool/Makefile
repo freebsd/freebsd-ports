@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	id3tool
-PORTVERSION=	1.1f
+PORTVERSION=	1.2
 CATEGORIES=	audio
-MASTER_SITES=	http://kitsumi.xware.cx/id3tool/
+MASTER_SITES=	http://nekohako.xware.cx/id3tool/
 
 MAINTAINER=	markp@FreeBSD.org
 
