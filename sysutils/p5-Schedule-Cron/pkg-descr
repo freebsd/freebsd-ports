@@ -17,5 +17,8 @@ and days of the week by name or coexistence of lists and ranges in the
 same field. And  even a bit more (like lists  and ranges with symbolic
 names).
 
+Author: Roland Huss <roland@console.de>
+WWW: http://search.cpan.org/search?dist=Schedule-Cron
+
 -Anton
 <tobez@FreeBSD.org>
