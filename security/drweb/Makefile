@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	drweb
-PORTVERSION=    4.28.2
-PORTREVISION=   1
+PORTVERSION=    4.29
 CATEGORIES=	security
-MASTER_SITES=   http://drweb.spb.ru/download/unix/
+MASTER_SITES=   ftp://ftp.drweb.ru/pub/unix/
 DISTFILES=      ${MAIN_NAME}.tgz
 
 MAINTAINER=	anton@chelcom.ru
