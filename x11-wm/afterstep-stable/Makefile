@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	afterstep
-PORTVERSION=	2.00.03
+PORTVERSION=	2.00.04
 CATEGORIES=	x11-wm afterstep
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -47,7 +47,7 @@ MAN1=		ASDatabase.1x ASDatabaseEntry.1x AfterStep.1x Align.1x \
 		MyBackground.1x MyFrame.1x MyStyle.1x Pager.1x \
 		PagerDecorations.1x Placement.1x SupportedHints.1x \
 		TbarLayout.1x Wharf.1x WharfSounds.1x WinList.1x WinTabs.1x \
-		asimagexml.1x
+		afterstep_faq.1x asimagexml.1x
 
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
