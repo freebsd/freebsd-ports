@@ -1,22 +1,23 @@
---- ace/wh/mystdlib.h.orig	Fri Jul  2 23:04:55 1999
-+++ ace/wh/mystdlib.h	Thu Jul 27 17:20:19 2000
-@@ -161,7 +161,7 @@
+--- ace/wh/mystdlib.h.orig	Mon Jul 16 23:04:45 2001
++++ ace/wh/mystdlib.h	Mon Aug 13 12:42:25 2001
+@@ -161,7 +161,8 @@
  #endif
  
  #if defined(POSIX) || defined(LINUX) || defined(SOLARIS) || defined(SGI) || \
--	defined(HP) || defined(WIN32)
-+	defined(HP) || defined(WIN32) || defined(FREEBSD)
+-	defined(HP) || defined(WIN32) || defined(INTEL_SOLARIS)
++	defined(HP) || defined(WIN32) || defined(INTEL_SOLARIS) || \
++	defined(FREEBSD)
  
  #ifdef WIN32
  #include <mbctype.h>
---- ace/wh/mydirent.h.orig	Mon Jan 11 01:51:40 1999
-+++ ace/wh/mydirent.h	Thu Jul 27 17:20:41 2000
+--- ace/wh/mydirent.h.orig	Mon Jul 16 23:04:45 2001
++++ ace/wh/mydirent.h	Mon Aug 13 12:41:59 2001
 @@ -55,7 +55,7 @@
  extern char *getwd(char *pathname) ;
  #endif /* HP || SOLARIS || WIN32 */
  
--#if defined (POSIX) || defined(SUN) || defined(SUNSVR4) || defined(SOLARIS) || defined(DEC) || defined(ALPHA) || defined(SGI) || defined(LINUX) || defined(HP)
-+#if defined (POSIX) || defined(SUN) || defined(SUNSVR4) || defined(SOLARIS) || defined(DEC) || defined(ALPHA) || defined(SGI) || defined(LINUX) || defined(HP) || defined(FREEBSD)
+-#if defined (POSIX) || defined(SUN) || defined(SUNSVR4) || defined(SOLARIS) || defined(DEC) || defined(ALPHA) || defined(SGI) || defined(LINUX) || defined(HP) || defined (INTEL_SOLARIS)
++#if defined (POSIX) || defined(SUN) || defined(SUNSVR4) || defined(SOLARIS) || defined(DEC) || defined(ALPHA) || defined(SGI) || defined(LINUX) || defined(HP) || defined (INTEL_SOLARIS) || defined (FREEBSD)
  #include <dirent.h>
    typedef struct dirent MYDIRENT ;
  #endif
