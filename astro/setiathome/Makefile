@@ -9,9 +9,7 @@ PORTVERSION?=	3.03
 PORTREVISION?=	5
 CATEGORIES?=	astro
 MASTER_SITES=	ftp://ftp.cdrom.com/pub/setiathome/ \
-		ftp://alien.ssl.berkeley.edu/pub/ \
-		ftp://setidata.ssl.berkeley.edu/pub/ \
-		ftp://serendip.ssl.berkeley.edu/pub/
+		ftp://alien.ssl.berkeley.edu/pub/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.${PORT_HOST}
 EXTRACT_SUFX=	.tar
 
