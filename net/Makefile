@@ -551,6 +551,7 @@
     SUBDIR += pear-Net_Dict
     SUBDIR += pear-Net_Finger
     SUBDIR += pear-Net_IPv6
+    SUBDIR += pear-Net_Ident
     SUBDIR += pear-Net_NNTP
     SUBDIR += pear-Net_POP3
     SUBDIR += pear-Net_Ping
