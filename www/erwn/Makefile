@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	erwn
-PORTVERSION=	0.3.1
+PORTVERSION=	0.5
 CATEGORIES=	www editors
-MASTER_SITES=	http://lisas.de/erwin/legacy/
+MASTER_SITES=	http://lisas.de/erwin/
 DISTNAME=	erwin-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -16,13 +16,16 @@ COMMENT=	Simple (at the moment) html editor based on GTK+
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gtk12
+USE_GNOME=	gtk20 libxml2 libgtkhtml
+USE_LIBTOOL=	yes
+
+MAN1=	erwin.1
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${ECHO} "===>   Installing README in ${PREFIX}/share/doc/erwin"
-	@${MKDIR} ${PREFIX}/share/doc/erwin && ${CHMOD} a+rx ${PREFIX}/share/doc/erwin
-	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/erwin
+	@${ECHO} "===>   Installing README in ${DOCSDIR}"
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
