@@ -10,7 +10,7 @@ DONE=no
 while [ "$DONE" != "yes" ];
 do 
 	if [ "$BATCH" = "yes" ]; then
-		CHOICE=18
+		CHOICE=19
 	else
 		echo "Select printers."
   		echo "Separate multiple entries with white spaces."
@@ -31,8 +31,9 @@ do
 		echo "15. NEC PC-PR150"
 		echo "16. NEC PC-PR201"
 		echo "17. NEC PC-PR1000 /4"
-		echo "18. All"
-		echo "19. Done"
+ 		echo "18. fax g3"
+ 		echo "19. All"
+ 		echo "20. Done"
 		echo -n "> "
 		read CHOICE
 		echo $CHOICE
@@ -108,16 +109,20 @@ do
 			echo "Added NEC PC-PR1000 /4."
 		;;
 		18)
-			PRINTER_DEVS='bj10v.dev bj10vh.dev bjc600j.dev bjc600jc.dev cdj500.dev cdj550.dev dj505j.dev dj505jc.dev dmprt.dev epag300.dev epag600.dev epag.dev jj100.dev lips3.dev lips4.dev lips4c.dev mag16.dev mag256.dev mjc180.dev mjc360.dev mjc720.dev mj500c.dev pr150.dev pr201.dev'
+			PRINTER_DEVS="$PRINTER_DEVS tiffg3.dev"
+			echo "Added G3 FAX."
+		;;
+ 		19)
+			PRINTER_DEVS='bj10v.dev bj10vh.dev bjc600j.dev bjc600jc.dev cdj500.dev cdj550.dev dj505j.dev dj505jc.dev dmprt.dev epag300.dev epag600.dev epag.dev jj100.dev lips3.dev lips4.dev lips4c.dev mag16.dev mag256.dev mjc180.dev mjc360.dev mjc720.dev mj500c.dev pr150.dev pr201.dev tiffg3.dev'
 			echo "All."
 			DONE=yes
 		;;
-		19)
+		20)
 			echo "Done."
 			DONE=yes
 		;;
 		*)
-			PRINTER_DEVS='bj10v.dev bj10vh.dev bjc600j.dev bjc600jc.dev cdj500.dev cdj550.dev dj505j.dev dj505jc.dev dmprt.dev epag300.dev epag600.dev epag.dev jj100.dev lips3.dev lips4.dev lips4c.dev mag16.dev mag256.dev mjc180.dev mjc360.dev mjc720.dev mj500c.dev pr150.dev pr201.dev'
+			PRINTER_DEVS='bj10v.dev bj10vh.dev bjc600j.dev bjc600jc.dev cdj500.dev cdj550.dev dj505j.dev dj505jc.dev dmprt.dev epag300.dev epag600.dev epag.dev jj100.dev lips3.dev lips4.dev lips4c.dev mag16.dev mag256.dev mjc180.dev mjc360.dev mjc720.dev mj500c.dev pr150.dev pr201.dev tiffg3.dev'
 			echo "All."
 			DONE=yes
 		;;
