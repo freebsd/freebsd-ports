@@ -24,6 +24,7 @@
 %%EMACS_LIBDIR%%/site-lisp/semi/mime-mc.el
 %%EMACS_LIBDIR%%/site-lisp/semi/mime-bbdb.el
 %%EMACS_LIBDIR%%/site-lisp/semi/mime-w3.el
+%%EMACS_LIBDIR%%/site-lisp/semi-setup.el
 @dirrm %%EMACS_LIBDIR%%/site-lisp/semi
 %%SEMIDOCDIR%%/ChangeLog
 %%SEMIDOCDIR%%/NEWS
