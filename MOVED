@@ -1050,3 +1050,4 @@ math/R-a4|math/R-project|2004-04-20|slave port removed
 irc/pure-xemacs-devel-mule|irc/pure-xemacs21-mule|2004-04-29|was for xemacs-21.4
 irc/irchat-pj-xemacs-devel-mule|irc/irchat-pj-xemacs21-mule|2004-04-29|was for xemacs-21.4
 devel/avrprog|devel/avrdude|2004-04-29|obsoleted by devel/avrdude
+math/R-project|math/R|2004-04-30|port renamed to match project name
