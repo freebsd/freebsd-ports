@@ -44,7 +44,7 @@ LIBTOOLFILES=
 CONFIGURE_ARGS=	--with-dbm-lib=gdbm
 
 .if defined(WITH_ESOUND)
-USE_ESOUND=	yes
+USE_GNOME+=	esound
 CONFIGURE_ARGS+=	--with-esd-sound
 .endif
 
