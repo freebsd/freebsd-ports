@@ -7,6 +7,7 @@
 
 PORTNAME=	balsa2
 PORTVERSION=	2.0.13
+PORTREVISION=	1
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://www.theochem.kth.se/~pawsa/balsa/ \
 		ftp://ftp.newton.cx/pub/balsa/
@@ -34,7 +35,7 @@ GNU_CONFIGURE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--enable-threads \
 		--enable-gtkhtml \
-		--enable-ldap \
+		--with-ldap \
 		--disable-more-warnings \
 		--with-ssl
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
