@@ -16,7 +16,7 @@ EXTRACT_ONLY=	# none
 MAINTAINER?=	kde@FreeBSD.org
 COMMENT=	Additional plugins and scripts for some KDE applications
 
-RUN_DEPENDS=	${ATLANTIKDESIGNER_DEP}:${PORTSDIR}/games/atlantikdesigner \
+RUN_DEPENDS=	${ATLANTIKDESIGNER_DEP}_2:${PORTSDIR}/games/atlantikdesigner \
 		${KADDRESSBOOKPLUG_DEP}:${PORTSDIR}/misc/kaddressbook-plugins \
 		${KATEPLUGINS_DEP}:${PORTSDIR}/editors/kate-plugins \
 		${KFILEPLUGINS_DEP}:${PORTSDIR}/misc/kfile-plugins \
@@ -25,7 +25,7 @@ RUN_DEPENDS=	${ATLANTIKDESIGNER_DEP}:${PORTSDIR}/games/atlantikdesigner \
 		${KONQPLUGINS_DEP}:${PORTSDIR}/misc/konq-plugins \
 		${KONTACTPLUG_DEP}:${PORTSDIR}/net/kontact-plugins \
 		${KSIG_DEP}:${PORTSDIR}/misc/ksig \
-		${NOATUNPLUG_DEP}:${PORTSDIR}/multimedia/noatun-plugins \
+		${NOATUNPLUG_DEP}_2:${PORTSDIR}/multimedia/noatun-plugins \
 		${RENAMEDLGPLUG_DEP}:${PORTSDIR}/misc/renamedlgplugins \
 		${VIMPART_DEP}:${PORTSDIR}/editors/vimpart
 
