@@ -169,6 +169,6 @@ post-install:
 	    ${INSTALL_DATA} ${WRKSRC}/texk/xdvik/$$i ${DOCSDIR}; \
 	done
 .endif
-	@${PREFIX}/bin/mktexlsr ${PREFIX}/share/texmf
+	@[ -x ${PREFIX}/bin/mktexlsr ] && ${PREFIX}/bin/mktexlsr ${PREFIX}/share/texmf
 
 .include <bsd.port.post.mk>
