@@ -97,5 +97,3 @@ share/locale/ja/LC_MESSAGES/gimageview.mo
 @dirrm share/gimageview/pixmaps
 @dirrm share/gimageview
 @unexec rmdir %D/share/locale/ja/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/ja 2>/dev/null || true
-@unexec rmdir %D/share/locale 2>/dev/null || true
