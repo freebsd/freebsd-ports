@@ -11,7 +11,7 @@ CATEGORIES=	mail www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= courier
 
-MAINTAINER=	oliver@freebsd.org
+MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	CGI Webmail client for Maildirs
 
 #
@@ -34,6 +34,7 @@ IMAGEURL?=	${WEBDATASUBDIR}
 
 #
 # set WITHOUT_CACHEDIR to disable the cache dir (can't set it with WITH_LDAP)
+# set WITHOUT_AUTHDAEMON to disable the usage of authdaemond
 # set CACHEOWNER to who you'd like to own the cache files
 # set CACHEDIR to where you'd like your cache directory to be
 # set WITH_LDAP for LDAP authentication and addressbook support
@@ -58,9 +59,10 @@ VCHKPWLOC?=	${LOCALBASE}/vpopmail
 
 # End of user variables
 
-USE_PERL5=	yes
+USE_PERL5=	YES
 HAS_CONFIGURE=	YES
 USE_BZIP2=	YES
+USE_REINPLACE=	YES
 
 CONFIGURE_ARGS= \
 	--enable-cgibindir=${CGIBINDIR}/${CGIBINSUBDIR} \
@@ -80,6 +82,14 @@ CONFIGURE_ARGS+=	--without-cachedir
 PLIST_SUB+=		CACHE=""
 CONFIGURE_ARGS+=	--with-cachedir=${CACHEDIR} \
 			--with-cacheowner=${CACHEOWNER}
+
+.endif
+.if !defined(WITHOUT_AUTHDAEMON)
+CONFIGURE_ARGS+=	--with-authdaemon
+PLIST_SUB+=		AUTHDFLAG=""
+.else
+CONFIGURE_ARGS+=	--without-authdaemon
+PLIST_SUB+=		AUTHDFLAG="@comment "
 .endif
 
 .if defined(WITH_LDAP)
@@ -182,5 +192,9 @@ MLINKS=		authlib.7 authcram.7 \
 		makeuserdb.8 vchkpw2userdb.8
 
 CONFIGURE_ARGS+=	${CONFIGURE_TARGET}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|^@INSTALLAUTHMODULES@$$|& @AUTHMODULES@|' \
+		${WRKSRC}/authlib/installlist.in
 
 .include <bsd.port.mk>
