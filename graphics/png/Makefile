@@ -9,8 +9,7 @@ PORTNAME=	png
 PORTVERSION=	1.2.5
 PORTREVISION=	7
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.libpng.org/pub/png/src/ \
-		ftp://swrinde.nde.swri.edu/pub/png/src/ \
+MASTER_SITES=	ftp://swrinde.nde.swri.edu/pub/png/src/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	lib${PORTNAME}
 DISTNAME=	lib${PORTNAME}-${PORTVERSION}
