@@ -1,0 +1,10 @@
+kenny.pl translates a given text from or to KennySpeak.
+KennySpeak looks like this:
+
+	"Ppfmfp ppmffm mfmppfmpm, fmpmfpmppffm'fpmmpp
+        pmpmffpmfpmfmppmpm Pmpmppppppppffm!"
+
+KennySpeak was invented by Kohan Ikin. kenny.pl was written by
+Christian Garbs.
+
+WWW: http://www.h.shuttle.de/mitch/kenny.en.html
