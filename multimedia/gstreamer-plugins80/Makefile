@@ -143,7 +143,10 @@ post-patch:
 
 # hermes is required for gstreamer-player to work
 # since it is currently the only colorspace plugin available
+# XXX However, it currently does not work on sparc64.
+.if ${ARCH} != "sparc64"
 WITH_HERMES=	yes
+.endif
 # gnomevfs is required for gstreamer-player to work
 WITH_GNOMEVFS=	yes
 # Add default MAD support.  This is required for rhythmbox to work.
