@@ -1,6 +1,6 @@
 --- Makefile.PL.orig	Mon May 28 17:12:36 2001
 +++ Makefile.PL	Mon May 28 17:14:23 2001
-@@ -55,7 +55,7 @@
+@@ -71,7 +71,7 @@
  EOI
  
  my %prerequisites;
@@ -9,7 +9,7 @@
  
  foreach (split /(^[-\s]+$)/m, $prerequisites) {
    print unless $auto;
-@@ -67,11 +67,7 @@
+@@ -83,11 +83,7 @@
    } 
  }
  
