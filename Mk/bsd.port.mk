@@ -3379,8 +3379,10 @@ do-configure:
 	@cd ${CONFIGURE_WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} \
 		${PERL5} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
+.if !defined(PERL_MODBUILD)
 	@cd ${CONFIGURE_WRKSRC} && \
 		${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' Makefile
+.endif
 .endif
 .if defined(USE_IMAKE)
 	@(cd ${CONFIGURE_WRKSRC}; ${SETENV} ${MAKE_ENV} ${XMKMF})
