@@ -6,6 +6,7 @@
 
 PORTNAME=	subversion
 PORTVERSION=	0.35.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://subversion.tigris.org/tarballs/
 
@@ -37,8 +38,7 @@ SVNREPOS?=	/home/svn/repos
 
 .if defined(WITH_MOD_DAV_SVN)
 WITH_APACHE2_APR=	yes
-CONFIGURE_ARGS+= \
-		--with-apxs=${APXS}
+CONFIGURE_ARGS+=	--with-apxs=${APXS}
 PLIST_SUB+=	MOD_DAV_SVN=""
 SVNGROUP?=	www
 .else
@@ -53,10 +53,16 @@ BUILD_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE2_PORT}
 RUN_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE2_PORT}
 CONFIGURE_ARGS+=--with-apr=${LOCALBASE}/lib/apache2/apr-config \
 		--with-apr-util=${LOCALBASE}/lib/apache2/apu-config
+APU_CONFIG=	${LOCALBASE}/lib/apache2/apu-config
+APU_PORT=	www/apache2
+OPT_NAME=	WITH_BERKELEYDB=db4
 .else
-LIB_DEPENDS+=  apr-0.9:${PORTSDIR}/devel/apr
+LIB_DEPENDS+=	apr-0.9:${PORTSDIR}/devel/apr
 CONFIGURE_ARGS+=--with-apr=${LOCALBASE} \
 		--with-apr-util=${LOCALBASE}
+APU_CONFIG=	${LOCALBASE}/bin/apu-config
+APU_PORT=	devel/apr
+OPT_NAME=	APR_UTIL_WITH_BERKELEY_DB=yes
 .endif
 
 .if defined(WITH_SVNSERVE_WRAPPER)
@@ -127,6 +133,22 @@ post-patch:
 	@${REINPLACE_CMD} "s#/etc/subversion#${PREFIX}/etc/subversion#g" ${WRKSRC}/subversion/libsvn_subr/config_file.c
 	@${REINPLACE_CMD} "s#/etc/subversion#${PREFIX}/etc/subversion#g" ${WRKSRC}/subversion/libsvn_subr/config_impl.h
 .endif
+
+pre-configure:
+	@if [ ! -x ${APU_CONFIG} ] ; then \
+		${ECHO_MSG} "" ; \
+		${ECHO_MSG} 'You select to use`'"${APU_PORT}' for apr library." ; \
+		${ECHO_MSG} 'It seems that `'"${APU_PORT}' is not properly installed." ; \
+		${ECHO_MSG} "" ; \
+		${FALSE} ; \
+	fi
+	@if [ `${APU_CONFIG} --db-version` != "4" ] ; then \
+		${ECHO_MSG} "" ; \
+		${ECHO_MSG} 'You should build `'"${APU_PORT}' with db4 support to use subversion with it." ; \
+		${ECHO_MSG} 'Please, rebuild `'"${APU_PORT}' with option "'`'"${OPT_NAME}' and try again." ; \
+		${ECHO_MSG} "" ; \
+		${FALSE} ; \
+	fi
 
 .if defined(WITH_MOD_DAV_SVN)
 pre-install:
