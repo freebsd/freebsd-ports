@@ -85,11 +85,4 @@ buildenv () {
 
     export FTP_PASSIVE_MODE=yes
     #export FETCH_BEFORE_ARGS=-vvv
-
-    # Need to make it fetch a full set say once a week to catch distfiles
-    # which change md5 sum but not name
-    if [ "X${FETCH_ORIGINAL}" = "X" ]; then
-	export MASTER_SITE_OVERRIDE='ftp://ftp-master.freebsd.org/pub/FreeBSD/ports/distfiles/${DIST_SUBDIR}/'
-    fi
-    export MASTER_SITE_OVERRIDE="${MASTER_SITE_OVERRIDE} ftp://pointyhat.freebsd.org/pub/FreeBSD/distfiles/\${DIST_SUBDIR}/"
 }
