@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		unison
-PORTVERSION= 		2.5.1
+PORTVERSION= 		2.6.11
 CATEGORIES=		net
 MASTER_SITES=		http://www.cis.upenn.edu/~bcpierce/unison/download/stable/unison-${PORTVERSION}/
 DISTNAME=		src
