@@ -1,5 +1,5 @@
---- b.c.orig	Fri Jan 20 09:38:25 1995
-+++ b.c	Tue Dec  7 13:35:11 1999
+--- b.c.orig	Fri Jan 20 13:38:25 1995
++++ b.c	Tue Dec 28 15:56:10 1999
 @@ -22,4 +22,7 @@
  #endif
  #include <errno.h>
@@ -23,12 +23,14 @@
 +    }
    if(b->changed) abrerr(b->name);
    if(b==errbuf) errbuf=0;
-@@ -1672,4 +1680,5 @@
+@@ -1672,5 +1680,6 @@
   long skip,amnt;
   char *n;
+- int nowrite=0;
 + struct stat sb;
-  int nowrite=0;
++ int nowrite=0,fh=-1;
  
+  if(!s || !s[0])
 @@ -1705,4 +1714,26 @@
    fi=fopen(n,"r");
    if(!fi) nowrite=0;
@@ -46,8 +48,8 @@
 +     already locked,      */
 +  
 +  if ((fi) && (!nowrite)) { 
-+    b->filehandle = dup (fileno (fi));
-+    nowrite = (flock (b->filehandle, LOCK_EX | LOCK_NB));
++    fh = dup( fileno(fi) ); 
++    nowrite = (flock (fh, LOCK_EX | LOCK_NB));
 +    }
 +/*printf ("nowrite flock=%i\n", nowrite); */
 +
@@ -56,3 +58,9 @@
 +
    }
   joesep(n);
+@@ -1762,4 +1793,5 @@
+ 
+  b->er=error;
++ if( fh != -1 ) b->filehandle = fh;
+  return b;
+  }
