@@ -58,3 +58,4 @@ share/icons/flyway_lg.png
 share/icons/flyway_sm.png
 @dirrm share/flyway
 @dirrm lib/flyway
+@unexec rmdir %D/share/icons 2> /dev/null || true
