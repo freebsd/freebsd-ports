@@ -34,6 +34,12 @@ INSTALL_TARGET=	site-install
 DOCS_EN=	README
 DOCS_JA=	ChangeLog.ja	README.ja
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not build on amd64 (missing -fPIC)"
+.endif
+
 post-extract:
 	${LN} -sf `cd ${PORTSDIR}/${TGIF_PORT}; ${MAKE} -V WRKSRC` ${WRKSRC}/tgif
 
@@ -54,4 +60,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
