@@ -5,3 +5,4 @@ bin/xwpe
 share/xwpe/help.key
 share/xwpe/help.xwpe
 share/xwpe/syntax_def
+@dirrm share/xwpe
