@@ -13,6 +13,8 @@ MASTER_SITES=		${MASTER_SITE_GNU} \
 MASTER_SITE_SUBDIR=	ncurses
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} terminfo.src.gz
 
+FORBIDDEN=		"buffer overflows reported--don't link setuid/setgid commands to this.  See http://www.securityfocus.com/templates/archive.pike?list=1&amp;msg=Pine.LNX.4.10.10010092242140.27629-100000@shell.solutions.fi " 
+
 MAINTAINER=		ports@FreeBSD.org
 
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
