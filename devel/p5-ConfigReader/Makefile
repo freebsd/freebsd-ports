@@ -3,7 +3,7 @@
 # Date created:				October 20th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.5 1997/05/24 13:17:00 jfitz Exp $
+#   $Id: Makefile,v 1.6 1997/06/24 18:43:08 jfitz Exp $
 #
 
 DISTNAME=	ConfigReader-0.5
@@ -19,7 +19,7 @@ USE_PERL5=	YES
 NO_BUILD=	YES
 
 do-install:
-		@ ${MKDIR} -p ${PREFIX}/lib/perl5/site_perl/ConfigReader/
+		@ ${MKDIR} ${PREFIX}/lib/perl5/site_perl/ConfigReader/
 		@ ${INSTALL_DATA} ${WRKSRC}/DirectiveStyle.pm ${PREFIX}/lib/perl5/site_perl/ConfigReader/
 		@ ${INSTALL_DATA} ${WRKSRC}/Spec.pm ${PREFIX}/lib/perl5/site_perl/ConfigReader/
 		@ ${INSTALL_DATA} ${WRKSRC}/Values.pm ${PREFIX}/lib/perl5/site_perl/ConfigReader/
