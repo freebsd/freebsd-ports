@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	mysql
-PORTVERSION=	4.0.14
+PORTVERSION=	4.0.15
 PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	ftp://mysql.secsup.org/pub/software/mysql/Downloads/MySQL-4.0/ \
@@ -124,8 +124,8 @@ pre-fetch:
 	@${ECHO} ""
 
 post-patch:
-	 @${REINPLACE_CMD} -e "s|SUBDIRS =|SUBDIRS = include @sql_server_dirs@ scripts support-files|g" ${WRKSRC}/Makefile.in
-	 @${REINPLACE_CMD} -e "s|install: install-am|install:|g" ${WRKSRC}/include/Makefile.in
+	@${REINPLACE_CMD} -e "s|SUBDIRS =|SUBDIRS = include @sql_server_dirs@ scripts support-files|g" ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e "s|install: install-am|install:|g" ${WRKSRC}/include/Makefile.in
 
 .if defined(WITH_OPENSSL) && defined(BUILD_STATIC)
 pre-configure:
@@ -135,10 +135,10 @@ pre-configure:
 
 post-install:
 .if !defined(PACKAGE_BUILDING)
-.if exists(${DB_DIR}) && defined(OVERWRITE_DB)
+.if exists(${DB_DIR}) && defined(OVERWRITE_DB) && ${OVERWRITE_DB:L} != "no"
 	@${RM} -r ${DB_DIR}/mysql ${DB_DIR}/test 2>/dev/null || true
 .endif
-.if !exists(${DB_DIR}) || defined(OVERWRITE_DB)
+.if !exists(${DB_DIR}) || (defined(OVERWRITE_DB) && ${OVERWRITE_DB:L} != "no")
 .if defined(SKIP_DNS_CHECK)
 	${PREFIX}/bin/mysql_install_db --force
 .else
@@ -171,7 +171,7 @@ LDCONFIG_DIRS=	%%PREFIX%%/lib/mysql
 CONFIGURE_ARGS+=--without-server
 
 post-patch:
-	 @${REINPLACE_CMD} -e "s|SUBDIRS =|SUBDIRS = include @sql_client_dirs@ tests man|g" ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e "s|SUBDIRS =|SUBDIRS = include @sql_client_dirs@ tests man|g" ${WRKSRC}/Makefile.in
 
 post-install:
 	@${SED} "s|%%PREFIX%%|${PREFIX}|g" < ${FILESDIR}/mysql-client.sh > ${PREFIX}/etc/rc.d/000.mysql-client.sh
