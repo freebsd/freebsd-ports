@@ -718,6 +718,7 @@
     SUBDIR += vicq
     SUBDIR += vls
     SUBDIR += vnc
+    SUBDIR += vnc2swf
     SUBDIR += vomit
     SUBDIR += vtun
     SUBDIR += wais

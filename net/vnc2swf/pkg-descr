@@ -1,0 +1,5 @@
+Vnc2swf is a recording tool for VNC.  It records VNC sessions and generates a
+Flash movie file (SWF).  It can be used as an X11 recorder or a Windows desktop
+recorder. 
+
+WWW: http://www.unixuser.org/~euske/vnc2swf/
