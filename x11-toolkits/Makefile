@@ -48,6 +48,7 @@
     SUBDIR += neXtaw
     SUBDIR += open-motif
     SUBDIR += open-motif-devel
+    SUBDIR += p5-GdkImlib
     SUBDIR += p5-Gtk
     SUBDIR += p5-Tcl-Tk
     SUBDIR += p5-Tk

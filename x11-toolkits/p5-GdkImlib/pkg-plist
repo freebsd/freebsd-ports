@@ -1,0 +1,11 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Gdk/ImlibImage.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Gdk/ImlibImage/Install/Files.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Gdk/ImlibImage/Install/GdkImlibTypes.h
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Gdk/ImlibImage/Install/pkg.typemap
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk/Gdk/ImlibImage/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk/Gdk/ImlibImage/ImlibImage.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk/Gdk/ImlibImage/ImlibImage.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk/Gdk/ImlibImage/autosplit.ix
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Gdk/ImlibImage/Install
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Gdk/ImlibImage
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk/Gdk/ImlibImage
