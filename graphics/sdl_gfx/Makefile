@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	sdl_gfx
-PORTVERSION=	2.0.10
-PORTREVISION=	2
+PORTVERSION=	2.0.11
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.ferzkopp.net/~aschiffler/Software/%SUBDIR%/
 MASTER_SITE_SUBDIR=	SDL_gfx-${PORTVERSION:R}
@@ -20,7 +19,7 @@ COMMENT=	SDL graphics drawing primitives and other support functions
 USE_SDL=	sdl
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=	13
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/SDL11 \
 		--disable-mmx
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
@@ -36,5 +35,7 @@ CFLAGS+=	-DUSE_MMX
 post-patch:
 	@${GREP} -lR "<SDL/SDL" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|<SDL/SDL|<SDL|g'
+	@${REINPLACE_CMD} -e \
+		's|$$(includedir)/SDL|$$(includedir)|g' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.post.mk>
