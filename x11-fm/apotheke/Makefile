@@ -14,13 +14,11 @@ MASTER_SITES=	ftp://ftp.berlios.de/pub/apotheke/
 MAINTAINER=	ports@freebsd.org
 COMMENT=	A CVS view for Nautilus
 
-LIB_DEPENDS=	nautilus.2:${PORTSDIR}/x11-fm/nautilus2
 RUN_DEPENDS=	ssh-askpass:${PORTSDIR}/security/openssh-askpass
 
-USE_GNOME=	gnomehack gnomeprefix
+USE_GNOME=	gnomehack gnomeprefix nautilus2
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 .include <bsd.port.mk>
