@@ -1,0 +1,20 @@
+--- src/show_image.c.orig	Sun Feb  8 04:09:16 1998
++++ src/show_image.c	Tue Feb 17 08:47:26 1998
+@@ -15,7 +15,7 @@
+ 
+ 
+ /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */ 
+-char *truncate(char *string, char endat)
++char *strtruncate(char *string, char endat)
+ {
+     char *endchar;
+     
+@@ -45,7 +45,7 @@
+     
+ 
+     strcpy(temp, pov.input_file_name);
+-    sprintf(imgfile, "%s", truncate(temp, '.'));
++    sprintf(imgfile, "%s", strtruncate(temp, '.'));
+ 
+     
+     /* 

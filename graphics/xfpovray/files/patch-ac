@@ -1,0 +1,24 @@
+--- src/Imakefile.orig	Tue Feb 10 04:41:01 1998
++++ src/Imakefile	Tue Feb 17 08:39:41 1998
+@@ -9,8 +9,8 @@
+ XCOMM * * * No need to edit below here * * *
+ 
+ XCOMM Directories for xfpovray, help files, and icons
+-   BINDIR = $(XFROOTDIR)/bin
+- XFLIBDIR = $(XFROOTDIR)/lib/xfpovray
++XCOMM   BINDIR = $(XFROOTDIR)/bin
++ XFLIBDIR = $(LIBDIR)/xfpovray
+ XFHELPDIR = $(XFLIBDIR)/help
+ 
+ SRCS =  $(TOP)/build_pages.c \
+@@ -46,8 +46,8 @@
+ 	$(TOP)/../help/Templates \
+ 	$(TOP)/../help/help_topics
+ 			
+-EXTRA_LIBRARIES = -L$(XFORMS_LIBDIR) ../flx/libflx.a -lforms -lm
+- EXTRA_INCLUDES = -I$(XFORMS_INCDIR) -I../flx
++EXTRA_LIBRARIES = ../flx/libflx.a -lxforms -lm
++ EXTRA_INCLUDES = -I../flx
+   EXTRA_DEFINES = -DHELP_DIR=\"$(XFHELPDIR)\"
+          LDLIBS = $(EXTRA_LIBRARIES) $(XLIB)
+ 
