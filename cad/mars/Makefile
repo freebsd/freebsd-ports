@@ -4,18 +4,22 @@
 # Date created:         Mon Nov 18, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.1.1.1 1996/11/25 01:07:50 obrien Exp $
+# $Id: Makefile,v 1.2 1996/11/25 01:26:24 obrien Exp $
 #
 
 DISTNAME=	MaRS-2.1
+PKGNAME=	mars-2.1
 CATEGORIES=	cad
-DISTSITE=	ftp://ftp.cs.umd.edu/pub/sdag/MaRS/
-MASTER_SITES=	${DISTSITE}
+MASTER_SITES=	ftp://ftp.cs.umd.edu/pub/sdag/MaRS/
+.if !defined(NOPORTDOCS)
+DISTFILES=	MaRS-2.1.tar.gz MaRS-2-doc.tar.gz
+.endif
 
 MAINTAINER=     obrien@cs.ucdavis.edu
 
 NO_WRKSUBDIR=	yes
-.if defined(HAVE_MOTIF) && defined(FORCE_MOTIF)
+EXTRCT_ONLY=	${DISTNAME}.tar.gz
+.if defined(HAVE_MOTIF) && !defined(PACKAGE_BUILDING)
 MAKEFILE=       Makefile.XMotif
 .elif defined(WITH_X) && (${WITH_X} == NO || ${WITH_X} == no)
 MAKEFILE=	Makefile.NoX
@@ -31,11 +35,8 @@ do-install:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/mars  \
-		&& chmod a+rx ${PREFIX}/share/doc/mars
-	@[ -f ${DISTDIR}/MaRS-2-doc.tar.gz ] || \
-	${FETCH_CMD} -o /${DISTDIR}/MaRS-2-doc.tar.gz  \
-		${DISTSITE}MaRS-2-doc.tar.gz
+	@${MKDIR} ${PREFIX}/share/doc/mars
+	@chmod a+rx ${PREFIX}/share/doc/mars
 	@(cd ${PREFIX}/share/doc ; \
 		${EXTRACT_CMD} xfpz /${DISTDIR}/MaRS-2-doc.tar.gz ; \
 		[ -d mars ] && ${RM} -rf mars; \
