@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.24 1996/02/22 10:35:56 tg Exp $
+# $Id: Makefile,v 1.25 1996/03/21 17:28:28 asami Exp $
 #
 
     SUBDIR += a2ps
@@ -23,6 +23,7 @@
     SUBDIR += texinfo
     SUBDIR += tr2latex
     SUBDIR += transfig
+    SUBDIR += unroff
     SUBDIR += xdvi
     SUBDIR += xtexshell
 
